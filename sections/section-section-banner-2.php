@@ -13,6 +13,9 @@
   $arrow              = avata_option('section_display_arrow_banner_2');
   $overlay            = avata_option('section_overlay_banner_2');
   
+  $avata_animation = esc_attr($avata_animation);
+  $avata_animation_delay = esc_attr($avata_animation_delay);
+  
   $avata_animation_delay_new = str_replace('s','',$avata_animation_delay);
   $avata_animation_delay_new = $avata_animation_delay_new+0.3;
   $avata_animation_delay_new = $avata_animation_delay_new.'s';

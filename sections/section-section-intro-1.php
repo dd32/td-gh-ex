@@ -6,6 +6,10 @@
   $section_image     = avata_option('section_image_intro_1');
   $layout            = avata_option('section_layout_intro_1');
   $fullwidth         = avata_option('section_fullwidth_intro_1');
+  
+  $avata_animation = esc_attr($avata_animation);
+  $avata_animation_delay = esc_attr($avata_animation_delay);
+  
   if(is_numeric($section_image))
 		$item['image'] = wp_get_attachment_image_url($section_image,'full');
   $container         = 'container';

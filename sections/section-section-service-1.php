@@ -5,6 +5,9 @@
   $service           = avata_option('section_items_service_1');
   $fullwidth         =  avata_option('section_fullwidth_service_1');
   
+  $avata_animation = esc_attr($avata_animation);
+  $avata_animation_delay = esc_attr($avata_animation_delay);
+  
   $columns           = avata_option('columns_service_1');
   $columns           = $columns==0?3:$columns;
   $column           = 12/$columns;

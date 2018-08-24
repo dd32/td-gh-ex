@@ -37,7 +37,7 @@ function avata_setup(){
 	add_theme_support( 'custom-logo' );
 	register_nav_menus( array('primary' => __( 'Primary Menu', 'avata' ),'home' => __( 'Front Page Main Menu', 'avata' )));
 	add_editor_style("editor-style.css");
-	add_image_size( 'blog', 609, 214 , true);
+
 	if ( !isset( $content_width ) ) $content_width = 1170;
 	
 	// Add theme support for selective refresh for widgets.
@@ -51,29 +51,6 @@ function avata_setup(){
 
 add_action( 'after_setup_theme', 'avata_setup' );
 
-
-/*****************************************/
-/******          WIDGETS     *************/
-/*****************************************/
-
-/*add_action('widgets_init', 'avata_register_widgets');
-
-function avata_register_widgets() {
-	global $avata_lite_sections;
-
-	$extra_class = 'avata-section-widgets';
-	foreach ( $avata_lite_sections as $k => $v ):
-        register_sidebar(
-            array (
-                'name'          => $v['name'],
-                'id'            => $k,
-                'before_widget' => '<span id="%1$s" class="'.$extra_class.'">',
-                'after_widget' => '</span>',
-            )
-        );
-		
-    endforeach;
-}*/
 
 /**
  * Selective Refresh
@@ -90,8 +67,8 @@ function avata_register_blogname_partials( WP_Customize_Manager $wp_customize ) 
 				if(!is_array($field['settings'])){
 					if(isset($field['type']) && ($field['type'] == 'text' || $field['type'] == 'textarea' || $field['type'] == 'editor' || $field['type'] == 'image' || $field['type'] == 'repeater' ) ){
 					$wp_customize->selective_refresh->add_partial( $field['settings'].'_selective', array(
-						'selector' => '.avata-'.$field['settings'],
-						'settings' => array( 'avata['.$field['settings'].']' ),
+						'selector' => '.avata-'.esc_attr($field['settings']),
+						'settings' => array( 'avata['.esc_attr($field['settings']).']' ),
 						'fallback_refresh' => false
 						) );
 					}
@@ -157,21 +134,19 @@ function avata_enqueue_scripts() {
 	wp_enqueue_script( 'masonry' );
 	
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
-	
-	
 		
 	$css = '';
 	/* custom sections */
 	
 	if ( 'blank' != get_header_textcolor() && '' != get_header_textcolor() ){
 		$header_color =  ' color:#' . get_header_textcolor() . ';';
-		$css .=  '.site-name,.site-tagline{'.$header_color.'}';
+		$css .=  '.site-name,.site-tagline{'.sanitize_hex_color($header_color).'}';
 	}else{
 		$css .=  '.site-name,.site-tagline{display:none;}';
 		}
 		
 	$menu_color_frontpage =  avata_option('menu_color_frontpage');
-	$css .=  ".homepage-header .main-nav > li > a,.homepage-header .main-nav > li > a span{color:".$menu_color_frontpage.";}";
+	$css .=  ".homepage-header .main-nav > li > a,.homepage-header .main-nav > li > a span{color:".sanitize_hex_color($menu_color_frontpage).";}";
 	
 	$anchors = array();
 	
@@ -213,10 +188,10 @@ function avata_enqueue_scripts() {
 		$content_typography = avata_option( 'content_typography_'.$j );
 		
 		if( $content_typography )
-			$css .= ".section-".$item." .section-content,.section-".$item." .section-content span,.section-".$item." .section-content h1,.section-".$item." .section-content h2,.section-".$item." .section-content h3,.section-".$item." .section-content h4,.section-".$item." .section-content h5,.section-".$item." .section-content h6{font-family:".$content_typography['font-family'].";color:".$content_typography['color'].";}.section-".$item." .social-icons a{border-color:".$content_typography['color'].";},.section-".$item." .social-icons i{color:".$content_typography['color'].";}";
+			$css .= ".section-".$item." .section-content,.section-".$item." .section-content span,.section-".$item." .section-content h1,.section-".$item." .section-content h2,.section-".$item." .section-content h3,.section-".$item." .section-content h4,.section-".$item." .section-content h5,.section-".$item." .section-content h6{font-family:".esc_attr($content_typography['font-family']).";color:".sanitize_hex_color($content_typography['color']).";}.section-".$item." .social-icons a{border-color:".sanitize_hex_color($content_typography['color']).";},.section-".$item." .social-icons i{color:".sanitize_hex_color($content_typography['color']).";}";
 		
 		
-		$css .= ".section-".$item."{background-image:url(".$background_image.");background-repeat:".$background_repeat.";background-position:".$background_position.";background-attachment:".$background_attachment.";}";
+		$css .= ".section-".$item."{background-image:url(".esc_url($background_image).");background-repeat:".esc_attr($background_repeat).";background-position:".esc_attr($background_position).";background-attachment:".esc_attr($background_attachment).";}";
 		
 		$css .= ".section-".$item."{background-color:".Kirki_Color::get_rgba( $background_color, $background_opacity ).";}";
 		//$css .= ".section-".$item.".fp-auto-height .section-content-wrap{background-color:".Kirki_Color::get_rgba( $background_color, $background_opacity ).";}";
@@ -224,13 +199,13 @@ function avata_enqueue_scripts() {
 		if( $full_background_image == 'yes' || $full_background_image == '1' )
 			$css .= ".section-".$item."{-webkit-background-size: cover;-moz-background-size: cover;-o-background-size: cover;background-size: cover;}";
 		
-		$css .= ".section-".$item.".fp-auto-height .section-content-wrap{padding-top:".$padding_top.";padding-bottom:".$padding_bottom.";}";
+		$css .= ".section-".$item.".fp-auto-height .section-content-wrap{padding-top:".esc_attr($padding_top).";padding-bottom:".esc_attr($padding_bottom).";}";
 
 	}
 	
 	wp_enqueue_script( 'avata-main', get_template_directory_uri().'/assets/js/main.js', array( 'jquery' ), $theme_info->get( 'Version' ), true );
 	
-	$nav_css3_border_color = avata_option("nav_css3_border_color");
+	$nav_css3_border_color = sanitize_hex_color(avata_option("nav_css3_border_color"));
 	
 	$css .=  "
 	.dotstyle-fillup li a,
@@ -259,7 +234,7 @@ function avata_enqueue_scripts() {
     box-shadow: 0 0 0 2px ".$nav_css3_border_color.";
 }";
 	
-	$nav_css3_color = avata_option("nav_css3_color");
+	$nav_css3_color = sanitize_hex_color(avata_option("nav_css3_color"));
 	
 	$css .=  ".dotstyle-fillup li a::after{
 	background-color: ".$nav_css3_color.";
@@ -302,7 +277,7 @@ function avata_enqueue_scripts() {
 	background: ".$nav_css3_color.";
 	}";
 // primary color
-$primary_color = avata_option("primary_color");
+$primary_color = sanitize_hex_color(avata_option("primary_color"));
 
 if( $primary_color == '#fff' || $primary_color == '#ffffff' ){
 	
@@ -464,7 +439,7 @@ $css .=  ".btn-primary {
 
 $css .=  ".work .overlay {background: ".Kirki_Color::get_rgba( $primary_color, '0.9' ).";}";
 
-$side_nav_padding = avata_option('side_nav_padding');
+$side_nav_padding = esc_attr(avata_option('side_nav_padding'));
 $css .=  ".dotstyle{
 	left: ".$side_nav_padding.";
 }
@@ -493,10 +468,10 @@ $css .=  ".dotstyle{
 	$sticky_header_opacity_frontpage = avata_option('sticky_header_opacity_frontpage');
 	
 	wp_localize_script( 'avata-main', 'avata_params', array(
-			'ajaxurl'  => admin_url('admin-ajax.php'),
+			'ajaxurl'  => esc_url(admin_url('admin-ajax.php')),
 			'menu_anchors'  => $anchors,
-			'autoscrolling' => $autoscrolling,
-			'sticky_header_opacity_frontpage'  => $sticky_header_opacity_frontpage,
+			'autoscrolling' => esc_attr($autoscrolling),
+			'sticky_header_opacity_frontpage'  => esc_attr($sticky_header_opacity_frontpage),
 		));
 }
 
@@ -764,7 +739,7 @@ function avata_get_comments_popup_link( $zero = false, $one = false, $more = fal
     $str = '<a href="';
     if ( $wpcommentsjavascript ) {
         if ( empty( $wpcommentspopupfile ) )
-            $home = home_url();
+            $home = esc_url(home_url());
         else
             $home = get_option('siteurl');
         $str .= $home . '/' . $wpcommentspopupfile . '?comments_popup=' . $id;
@@ -778,7 +753,7 @@ function avata_get_comments_popup_link( $zero = false, $one = false, $more = fal
     }
  
     if ( !empty( $css_class ) ) {
-        $str .= ' class="'.$css_class.'" ';
+        $str .= ' class="'.esc_attr($css_class).'" ';
     }
     $title = the_title_attribute( array('echo' => 0 ) );
  
@@ -816,7 +791,7 @@ function avata_get_comments_number_str( $zero = false, $one = false, $more = fal
  function avata_space_before_head(){
 	 
    $space_before_head = avata_option('header_code');
-   echo $space_before_head;
+   echo wp_kses_post($space_before_head);
    
  } 
 
@@ -828,7 +803,7 @@ add_action('wp_head', 'avata_space_before_head');
  function avata_space_before_body(){
 	 
    $space_before_body = avata_option('footer_code');
-   echo $space_before_body;
+   echo wp_kses_post($space_before_body);
    
  } 
 
@@ -838,7 +813,7 @@ add_action('wp_footer', 'avata_space_before_body');
  function avata_code_before_post(){
 	 
    $code_before_post = avata_option('code_before_post');
-   echo $code_before_post;
+   echo wp_kses_post($code_before_post);
    
  } 
  add_action('avata_before_post', 'avata_code_before_post');
@@ -847,7 +822,7 @@ add_action('wp_footer', 'avata_space_before_body');
   function avata_code_after_post(){
 	 
    $code_after_post = avata_option('code_after_post');
-   echo $code_after_post;
+   echo wp_kses_post($code_after_post);
    
  } 
  add_action('avata_after_post', 'avata_code_after_post'); 
@@ -856,7 +831,7 @@ add_action('wp_footer', 'avata_space_before_body');
  function avata_code_before_page(){
 	 
    $code_before_page = avata_option('code_before_page');
-   echo $code_before_page;
+   echo wp_kses_post($code_before_page);
    
  } 
  add_action('avata_before_page', 'avata_code_before_page');
@@ -865,7 +840,7 @@ add_action('wp_footer', 'avata_space_before_body');
   function avata_code_after_page(){
 	 
    $code_after_page = avata_option('code_after_page');
-   echo $code_after_page;
+   echo wp_kses_post($code_after_page);
    
  } 
  add_action('avata_after_page', 'avata_code_after_page'); 
@@ -897,78 +872,6 @@ function avata_get_sections(){
 	}
 	return $avata_sections;
 	}
-
-/*
-*  Allow tags
-*/
-add_action('init', 'avata_html_tags_code', 10);
-function avata_html_tags_code() {
-	
-	global $allowedposttags;
-	
-	$allowed_atts = array(
-		'align'      => array(),
-		'class'      => array(),
-		'type'       => array(),
-		'id'         => array(),
-		'dir'        => array(),
-		'lang'       => array(),
-		'style'      => array(),
-		'xml:lang'   => array(),
-		'src'        => array(),
-		'alt'        => array(),
-		'href'       => array(),
-		'rel'        => array(),
-		'rev'        => array(),
-		'target'     => array(),
-		'novalidate' => array(),
-		'type'       => array(),
-		'value'      => array(),
-		'name'       => array(),
-		'tabindex'   => array(),
-		'action'     => array(),
-		'method'     => array(),
-		'for'        => array(),
-		'width'      => array(),
-		'height'     => array(),
-		'data'       => array(),
-		'title'      => array(),
-	);
-	$allowedposttags['form']     = $allowed_atts;
-    $allowedposttags["script"] = array("src" => array(),"name" => array(),"id" => array(),"type" => array());
-	$allowedposttags['iframe'] = array (
-		'align'       => true,
-		'frameborder' => true,
-		'height'      => true,
-		'width'       => true,
-		'sandbox'     => true,
-		'seamless'    => true,
-		'scrolling'   => true,
-		'srcdoc'      => true,
-		'src'         => true,
-		'class'       => true,
-		'id'          => true,
-		'style'       => true,
-		'border'      => true,
-	);
-	
-	$allowedposttags["object"] = array("height" => array(), "width" => array());
-	$allowedposttags["param"] = array("name" => array(), "value" => array());
-	
-	$allowedposttags["embed"] = array(
-		"src" => array(),
-		"type" => array(),
-		"allowfullscreen" => array(),
-		"allowscriptaccess" => array(),
-		"height" => array(),
-		"width" => array()
-		);
-    $allowedposttags["style"] = array("type" => array());
-	$allowedposttags["link"] = array("rel" => array(),"href" => array(),"id" => array(),"type" => array(),"media" => array());
-	$allowedposttags["input"] = array("name" => array(),"id" => array(),"value" => array(),"class" => array(),"placeholder" => array(),"required" => array(),"type" => array(),'aria-required' => array());
-	$allowedposttags["select"] = array("name" => array(),"id" => array(),"value" => array(),"class" => array(),"required" => array(),"type" => array(),'aria-required' => array());
-	$allowedposttags["textarea"] = array("name" => array(),"id" => array(),"value" => array(),"class" => array(),"placeholder" => array(),"required" => array(),"type" => array(),'aria-required' => array());
-}
 
 
 /**
@@ -1054,7 +957,7 @@ function avata_get_topbar_content( $type = '' ){
 			
   				foreach($widgets as $item):
 				
-					$text = $item['text'];
+					$text = wp_kses_post($item['text']);
 					
 					$html .= '<span class="avata-microwidget">';
 					if( $item['link'] != '' ){
@@ -1074,7 +977,7 @@ function avata_get_topbar_content( $type = '' ){
 			if ( $menu_items = wp_get_nav_menu_items( $topbar_menu ) ) {
 			   foreach ( $menu_items as $menu_item ) {
 				  $current = ( $menu_item->object_id == get_queried_object_id() ) ? 'current' : '';
-				  $html .= '<li class="' . $current . '"><a href="' . $menu_item->url . '">' . $menu_item->title . '</a></li>';
+				  $html .= '<li class="' . esc_attr($current) . '"><a href="' . esc_url($menu_item->url) . '">' . wp_kses_post($menu_item->title) . '</a></li>';
 			   }
 			}
 			$html .= '</ul>';
@@ -1083,7 +986,7 @@ function avata_get_topbar_content( $type = '' ){
 		break;
 		case "topbar_text":
 			$html = avata_option( $type );
-			return $html;
+			return wp_kses_post($html);
 		
 		break;
 		

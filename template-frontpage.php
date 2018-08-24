@@ -57,7 +57,7 @@
 			do_action('avata_after_section');
 			echo '</section>';
 			
-			$menu_title         = avata_option('section_menu_title_'.$index );
+			$menu_title         = esc_attr(avata_option('section_menu_title_'.$index ));
 			$menu_slug          = esc_attr(avata_option('section_id_'.$index ));
 			
 			$current     = "";
@@ -83,7 +83,7 @@
 	if ( $hide_side_nav != '1' ){
 		$style = avata_option('nav_styling_css3_styles','fillup');
 ?>
-<div id="avata-nav" class="dotstyle dotstyle-align-<?php echo $side_nav_align;?> dotstyle-<?php echo $style;?>">
+<div id="avata-nav" class="dotstyle dotstyle-align-<?php echo $side_nav_align;?> dotstyle-<?php echo esc_attr($style);?>">
   <ul id="dotstyle-nav">
     <?php echo $sub_nav;?>
   </ul>

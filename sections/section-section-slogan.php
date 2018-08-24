@@ -6,6 +6,10 @@
   $btn_link          = avata_option('section_btn_link_slogan');
   $btn_target        = avata_option('section_btn_target_slogan');
   $fullwidth         =  avata_option('section_fullwidth_slogan');
+  
+  $avata_animation = esc_attr($avata_animation);
+  $avata_animation_delay = esc_attr($avata_animation_delay);
+  
   $container         = 'container';
   if ($fullwidth=='1')
  	 $container         = 'container-fullwidth';

@@ -9,8 +9,8 @@ function avata_widgets_init() {
 			if( $k!='0' && $k !='' )
 			register_sidebar(
 				array (
-					'name'          => $v,
-					'id'            => $k,
+					'name'          => esc_html($v),
+					'id'            => esc_attr($k),
 					'before_widget' => '<div id="%1$s" class="'.$extra_class.' %2$s">',
 					'after_widget' => '<span class="seperator extralight-border"></span></div>', 
 					'before_title' => '<h3 class="widget-title">', 
@@ -22,7 +22,7 @@ function avata_widgets_init() {
 	
 		
 		register_sidebar(array(
-			'name' => __('Footer Area One', 'avata'),
+			'name' => esc_html__('Footer Area One', 'avata'),
 			'id'   => 'footer-1',
 			'before_widget' => '<div id="%1$s" class="widget widget-box %2$s">', 
 			'after_widget' => '<span class="seperator extralight-border"></span></div>', 
@@ -30,7 +30,7 @@ function avata_widgets_init() {
 			'after_title' => '</h3>' 
 			));
 		register_sidebar(array(
-			'name' => __('Footer Area Two', 'avata'),
+			'name' => esc_html__('Footer Area Two', 'avata'),
 			'id'   => 'footer-2',
 			'before_widget' => '<div id="%1$s" class="widget widget-box %2$s">', 
 			'after_widget' => '<span class="seperator extralight-border"></span></div>', 
@@ -38,7 +38,7 @@ function avata_widgets_init() {
 			'after_title' => '</h3>' 
 			));
 		register_sidebar(array(
-			'name' => __('Footer Area Three', 'avata'),
+			'name' => esc_html__('Footer Area Three', 'avata'),
 			'id'   => 'footer-3',
 			'before_widget' => '<div id="%1$s" class="widget widget-box %2$s">', 
 			'after_widget' => '<span class="seperator extralight-border"></span></div>', 
@@ -46,7 +46,7 @@ function avata_widgets_init() {
 			'after_title' => '</h3>' 
 			));
 		register_sidebar(array(
-			'name' => __('Footer Area Four', 'avata'),
+			'name' => esc_html__('Footer Area Four', 'avata'),
 			'id'   => 'footer-4',
 			'before_widget' => '<div id="%1$s" class="widget widget-box %2$s">', 
 			'after_widget' => '<span class="seperator extralight-border"></span></div>', 

@@ -5,6 +5,10 @@
   $section_subtitle  = avata_option('section_subtitle_video_1');
   $video             = avata_option('section_url_video_1');
   $fullwidth         =  avata_option('section_fullwidth_slogan');
+  
+  $avata_animation = esc_attr($avata_animation);
+  $avata_animation_delay = esc_attr($avata_animation_delay);
+  
   $container         = 'container';
   if ($fullwidth=='1')
  	 $container         = 'container-fullwidth';

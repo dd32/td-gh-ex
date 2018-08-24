@@ -6,6 +6,9 @@
   $fullwidth         =  avata_option('section_fullwidth_team');
   $link_target       =  avata_option('link_target_team');
   
+  $avata_animation = esc_attr($avata_animation);
+  $avata_animation_delay = esc_attr($avata_animation_delay);
+  
   $columns           = avata_option('columns_team');
   $columns           = $columns==0?3:$columns;
   $column           = 12/$columns;

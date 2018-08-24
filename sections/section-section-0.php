@@ -5,6 +5,9 @@
   $section_content  = wp_kses_post(avata_option('section_content_0'));
   $fullwidth         =  avata_option('section_fullwidth_0');
   $container         = 'container';
+  $avata_animation = esc_attr($avata_animation);
+  $avata_animation_delay = esc_attr($avata_animation_delay);
+  
   if ($fullwidth=='1')
  	 $container         = 'container-fullwidth';
 

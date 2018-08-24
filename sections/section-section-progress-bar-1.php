@@ -6,6 +6,8 @@
   $progress_bar      = avata_option('section_progress_progress_bar_1');
   $layout            = avata_option('section_layout_progress_bar_1');
   $fullwidth         = avata_option('section_fullwidth_progress_bar_1');
+  $avata_animation = esc_attr($avata_animation);
+  $avata_animation_delay = esc_attr($avata_animation_delay);
 
   $container         = 'container';
   if ($fullwidth=='1')

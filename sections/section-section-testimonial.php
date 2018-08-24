@@ -4,6 +4,10 @@
   $section_subtitle  = avata_option('section_subtitle_testimonial');
   $testimonial       = avata_option('section_items_testimonial');
   $fullwidth         = avata_option('section_fullwidth_testimonial');
+  
+  $avata_animation = esc_attr($avata_animation);
+  $avata_animation_delay = esc_attr($avata_animation_delay);
+  
   $container         = 'container';
   if ($fullwidth=='1')
  	 $container         = 'container-fluid';

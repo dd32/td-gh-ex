@@ -6,6 +6,9 @@
   $fullwidth         = avata_option('section_fullwidth_gallery');
   $columns           = avata_option('columns_gallery');
   
+  $avata_animation = esc_attr($avata_animation);
+  $avata_animation_delay = esc_attr($avata_animation_delay);
+  
   $columns           = $columns==0?6:$columns;
   $column           = 12/$columns;
   if($columns == 5)

@@ -5,6 +5,9 @@
   $counter           = avata_option('section_items_counter');
   $fullwidth         = avata_option('section_fullwidth_counter');
   
+  $avata_animation = esc_attr($avata_animation);
+  $avata_animation_delay = esc_attr($avata_animation_delay);
+  
   $columns           = absint(avata_option('columns_counter'));
   $columns           = $columns==0?4:$columns;
   $column           = 12/$columns;

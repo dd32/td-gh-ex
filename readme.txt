@@ -2,7 +2,7 @@
 Contributors: HooThemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.0-trunk
-Version: 1.5.6
+Version: 1.5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready, custom-logo, featured-image-header, footer-widgets, right-sidebar, left-sidebar, e-commerce
@@ -33,10 +33,6 @@ Source: http://getbootstrap.com
 lightGallery, Copyright (c) 2017 Sachin N
 Licenses: GPLv3
 Source: http://sachinchoolur.github.io/lightGallery/
-
-respond.js, Copyright (c) 2012: Scott Jehl, Paul Irish, Nicholas Zakas.
-Licenses: MIT/BSD
-Source: https://cdnjs.com/libraries/respond.js/
 
 fullPage.js, Copyright (C) 2015 alvarotrigo.com - A project by Alvaro Trigo
 Licenses: MIT
@@ -89,7 +85,11 @@ https://www.pexels.com/photo/white-and-gray-pen-beside-succulent-flower-and-whit
 
 == Changelog ==
 
-= Version 1.5.6 = = 20/08/2018
+= Version 1.5.7 = = 24/08/2018
+* Removed image size
+* Fixed Escaping issues
+
+= Versin 1.5.6 = = 20/08/2018
 * Hide side nav bar on mobile
 * Fixed main navigation height issue on mobile
 

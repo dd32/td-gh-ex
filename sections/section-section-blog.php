@@ -13,6 +13,9 @@
   $fullwidth         =  avata_option('section_fullwidth_blog');
   $display_categories=  avata_option('section_display_categories_blog');
   
+  $avata_animation = esc_attr($avata_animation);
+  $avata_animation_delay = esc_attr($avata_animation_delay);
+  
   $columns           = $columns==0?4:$columns;
   $column           = 12/$columns;
   if($columns == 5)
