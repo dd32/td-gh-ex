@@ -12,8 +12,8 @@ if (post_password_required())
     <?php if (have_comments()) : ?>
         <div class="article-title">
             <h2>
-             <?php printf( _n( 'One Comment', '%1$s Comments', get_comments_number(), 'advent' ),
-		   number_format_i18n( get_comments_number() ), get_the_title() ); ?>   
+           <?php printf(/* translators: i is comment count*/ esc_html(_n( '%1$s Comment', '%1$s Comments', get_comments_number(), 'advent' )),
+             esc_html(number_format_i18n( get_comments_number()) ), get_the_title() ); ?>
             </h2>
         </div>
         <ol class="comment-list">

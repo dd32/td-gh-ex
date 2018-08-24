@@ -1,5 +1,5 @@
 === Advent ===
-Advent Theme by FasterThemes https://fasterthemes.com
+Advent Theme by FruitThemes https://fruitthemes.com
 
 === About Advent ===
 Advent is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Advent Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your needs.
@@ -15,7 +15,7 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
 == Copyright ==
-Advent WordPress Theme, Copyright 2017 fasterthemes.com
+Advent WordPress Theme, Copyright 2017 fruitthemes.com
 Advent is distributed under the terms of the GNU GPL
 
 
@@ -93,16 +93,8 @@ iv) Bootstrap files
 	Copyright: 2011-2014 Twitter, Inc
 	License: MIT
 	License URI: http://opensource.org/licenses/MIT
-
-vi) html5 js file
-============
-	Copyright: Alexander Farkas, Jonathan Neal, Paul Irish
-	Resource URI: https://code.google.com/p/html5shiv/
-	License: MIT/GPLv2
-	License URI: http://opensource.org/licenses/MIT
-	License URI: http://www.gnu.org/licenses/gpl-2.0.html 
-
-vii) slider
+	
+vi) slider
 ============
 	OwlCarousel 
 	jQuery OwlCarousel v1.3.3  

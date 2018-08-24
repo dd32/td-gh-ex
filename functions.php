@@ -62,7 +62,8 @@ function advent_setup() {
 	// This theme uses its own gallery styles.
 	add_filter('use_default_gallery_style', '__return_false' );
         
-    /* slug setup */	
+    /* slug setup */
+    add_theme_support( 'custom-logo');	
     add_theme_support( 'title-tag' );
 
     /* height width automaticly adjust for home slider */
@@ -86,17 +87,6 @@ function advent_font_url() {
 	return $advent_font_url;
 }
 
-/* top header background image on wp_head hook */
-add_action('wp_head','advent_header_bg');
-function advent_header_bg()
-{
-	$advent_options = get_option('advent_theme_options');
-	if (!empty($advent_options['headertop-bg'])) 
-	{
-		$advent_header_bg_img="<style> .header_bg { background :url('".$advent_options['headertop-bg']."'); } </style>";
-		echo $advent_header_bg_img;
-	}	
-}
 /* Set size of characher in excerpt */
 function advent_excerpt_length( $length ) {
 	return 63;
@@ -174,10 +164,24 @@ function advent_get_image_id($advent_image_url) {
     return $advent_attachment[0]; 
 }
 
+add_action( 'admin_menu', 'advent_admin_menu');
+function advent_admin_menu( ) {
+    add_theme_page( __('Pro Feature','advent'), __('Advent Pro','advent'), 'manage_options', 'advent-pro-buynow', 'advent_buy_now', 300 );   
+}
+function advent_buy_now(){ ?>
+<div class="advent_pro_version">
+  <a href="<?php echo esc_url('https://fruitthemes.com/wordpress-themes/adventpro/'); ?>" target="_blank">
+    <img src ="<?php echo esc_url(get_template_directory_uri()); ?>/images/advent_pro_features.png" width="70%" height="auto" />    
+  </a>
+</div>
+<?php
+}
+
 /*** Enqueue css and js files ***/
 require_once('functions/enqueue-files.php');
-/*** Theme Option ***/
-require_once('theme-options/themeoptions.php');
+
+/*** Customizer Option ***/
+require_once('functions/theme-customizer.php');
 /*** Theme Default Setup ***/
 require_once('functions/theme-default-setup.php');
 /*** Breadcrumbs ***/

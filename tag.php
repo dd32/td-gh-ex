@@ -8,7 +8,7 @@ get_header(); ?>
     <div class="breadcumb-bg">
         <div class="webpage-container container">
             <div class="site-breadcumb">
-                <h1><?php _e('Tag', 'advent');
+                <h1><?php esc_html_e('Tag', 'advent');
                     echo " : " . single_tag_title('', false); ?></h1>
                 <ol class="breadcrumb breadcrumb-menubar">
                     <li>
@@ -29,8 +29,8 @@ get_header(); ?>
                             <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo get_the_title(); ?></a>
                             <ul><?php advent_entry_meta(); ?></ul>
                         </div>
-                            <?php if ( has_post_thumbnail() ) :
-                            the_post_thumbnail( 'large', array( 'alt' => get_the_title(), 'class' => 'img-responsive') ); ?>
+                            <?php if ( has_post_thumbnail() ) : ?>
+                            <a href="<?php echo esc_url(get_permalink()); ?>"><?php the_post_thumbnail( 'large', array( 'alt' => get_the_title(), 'class' => 'img-responsive') ); ?></a>
 						<?php endif; ?> 
                         <div class="blog-info">
                             <?php the_excerpt(); ?>

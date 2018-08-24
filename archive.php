@@ -10,16 +10,16 @@ get_header(); ?>
             <div class="site-breadcumb">
                 <h1><?php
                     if (is_day()) :
-                        _e('Daily Archives', 'advent');
+                        esc_html_e('Daily Archives', 'advent');
                         echo " : " . get_the_date();
                     elseif (is_month()) :
-                        _e('Monthly Archives', 'advent');
+                        esc_html_e('Monthly Archives', 'advent');
                         echo " : " . get_the_date('F Y');
                     elseif (is_year()) :
-                        _e('Yearly Archives', 'advent');
+                        esc_html_e('Yearly Archives', 'advent');
                         echo " : " . get_the_date('Y');
                     else :
-                        _e('Archives', 'advent');
+                        esc_html_e('Archives', 'advent');
                     endif; ?>
                 </h1>
                 <ol class="breadcrumb breadcrumb-menubar">
@@ -43,9 +43,9 @@ get_header(); ?>
                             <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo get_the_title(); ?></a>
                             <ul><?php advent_entry_meta(); ?></ul>
                         </div>
-						<?php if ( has_post_thumbnail() ) :
-                            the_post_thumbnail( 'large', array( 'alt' => get_the_title(), 'class' => 'img-responsive') );
-                            endif; ?>   
+						<?php if ( has_post_thumbnail() ) : ?>
+                            <a href="<?php echo esc_url(get_permalink()); ?>"><?php the_post_thumbnail( 'large', array( 'alt' => get_the_title(), 'class' => 'img-responsive') ); ?></a>
+                           <?php endif; ?>   
                             
                         <div class="blog-info"><?php the_excerpt(); ?></div>
                     </div>

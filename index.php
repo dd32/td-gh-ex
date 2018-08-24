@@ -9,7 +9,7 @@ $advent_options = get_option('advent_theme_options'); ?>
     <div class="breadcumb-bg">
         <div class="webpage-container container">
             <div class="site-breadcumb">
-                <h1><?php _e('Blog', 'advent'); ?></h1>
+                <h1><?php esc_html_e('Blog', 'advent'); ?></h1>
             </div>
         </div>
     </div>    
@@ -26,7 +26,7 @@ $advent_options = get_option('advent_theme_options'); ?>
                         </div>
                         <?php if ( has_post_thumbnail() ) : ?>
 							<div class="blog-img">
-								<?php the_post_thumbnail( 'large', array( 'alt' => get_the_title(), 'class' => 'img-responsive') ); ?>
+								<a href="<?php echo esc_url(get_permalink()); ?>"><?php the_post_thumbnail( 'large', array( 'alt' => get_the_title(), 'class' => 'img-responsive') ); ?></a>
 							</div>
 						<?php endif; ?>
                         <div class="blog-info">

@@ -1,13 +1,13 @@
 /*
 Theme Name: Advent
-Theme URI: https://fasterthemes.com/wordpress-themes/advent/
-Author URI: https://fasterthemes.com/
-Author: Fasterthemes
+Theme URI: https://fruitthemes.com/wordpress-themes/advent/
+Author URI: https://fruitthemes.com/
+Author: FruitThemes
 Description: Advent is a lightweight, clean, super flexible and bootstrap based responsive theme for business or personal websites. Advent Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your needs.
-Version: 1.1
+Version: 2.0.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Advent WordPress Theme, Copyright 2017 fasterthemes.com
+Advent WordPress Theme, Copyright 2017 fruitthemes.com
 Advent is distributed under the terms of the GNU GPL
 Tags: left-sidebar, right-sidebar, custom-background, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments , translation-ready, custom-header
 Text Domain: advent
@@ -17,48 +17,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 */
 
 /**************************Normal CSS Start*********************/
-@font-face {
-    font-family: "Cabin Regular";
-    src: url('fonts/Cabin-Regular-webfont.eot?#iefix') format('embedded-opentype'),
-        url('fonts/Cabin-Regular-webfont.woff') format('woff'),
-        url('fonts/Cabin-Regular-webfont.ttf') format('truetype'),
-        url('fonts/Cabin-Regular-webfont.svg#Cabin-Regular-webfont') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Cabin Bold";
-    src: url('fonts/Cabin-Bold-webfont.eot?#iefix') format('embedded-opentype'),
-        url('fonts/Cabin-Bold-webfont.woff') format('woff'),
-        url('fonts/Cabin-Bold-webfont.ttf') format('truetype'),
-        url('fonts/Cabin-Bold-webfont.svg#Cabin-Bold-webfont') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "OpenSans";
-    src: url('fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
-        url('fonts/opensans-regular-webfont.woff') format('woff'),
-        url('fonts/opensans-regular-webfont.ttf') format('truetype'),
-        url('fonts/opensans-regular-webfont.svg#opensans-regular-webfont') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Open Sans Bold";
-    src: url('fonts/opensans-bold-webfont.eot?#iefix') format('embedded-opentype'),
-        url('fonts/opensans-bold-webfont.woff') format('woff'),
-        url('fonts/opensans-bold-webfont.ttf') format('truetype'),
-        url('fonts/opensans-bold-webfont.svg#opensans-bold-webfont') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-
-
-
 body{    
     color: #323232;
-    font-family:"OpenSans";
+    font-family:"Open Sans";
     background-color:#ffffff;	
 }
 .webpage-container{
@@ -110,11 +71,17 @@ img{
     transition: all 0.5s ease-in-out 0s;
     -webkit-transition: all 0.5s ease-in-out 0s;
 }
+.webpage-container .slogan {
+    max-width: 767px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 15px 0 40px;
+}
 .slogan > h1{
     color:#FFF;
-    font-size:54px;
+    font-size:44px;
     font-weight:normal;
-    font-family:"Cabin Regular";
+    font-family:"Cabin";
     line-height:1.3;
     margin-top:26px;
     margin-bottom:30px;
@@ -125,7 +92,7 @@ img{
     border: 1px solid #FFF;
     border-radius:2px;
     color:#ededed;
-    font-family:'Cabin Bold';
+    font-family:'Cabin';
     font-size:18px;	
     padding:12px 35px;
     text-transform: uppercase;
@@ -175,7 +142,7 @@ img{
 .main_menu  > ul > li > a {
     font-size:14px;
     color:#363f48;
-    font-family:'Cabin Regular';
+    font-family:'Cabin';
     padding: 5px 15px;	
     display:block;
     margin-bottom: 20px;
@@ -194,7 +161,7 @@ img{
 .main_menu  ul li ul > li > a {
     font-size:14px;
     color:#363f48;
-    font-family:'Cabin Regular';
+    font-family:'Cabin';
     padding: 5px 10px;
     margin-left:0;
     display:block;
@@ -382,7 +349,7 @@ img{
 .pro-features-info > h2{	
     font-size:24px;
     margin-bottom:15px;
-    font-family:"Open Sans Bold";	
+    font-family:"Open Sans";	
     text-transform: uppercase;
     text-align: center;
 }
@@ -414,7 +381,7 @@ img{
 }
 .works-left > h2{
     font-size:42px;	
-    font-family:"Cabin Bold";
+    font-family:"Cabin";
     margin-top:0px;
     line-height:1.1;
     text-transform: uppercase;	
@@ -431,7 +398,7 @@ img{
     color:#fd3329;
     border:1px solid #323232;
     border-radius:0;	
-    font-family:'cabin bold';
+    font-family:'cabin';
     padding:12px 20px;
     background-color:#FFF;
     text-transform: uppercase;
@@ -602,16 +569,20 @@ img{
     padding-left:0;
     margin:10px auto;
 }
-.blog-head ul li:before{
-    content: "\f111";
-    font-family: 'FontAwesome';
-    font-size: 7px;
-    padding: 0 10px 0 5px;
-    vertical-align: middle;
-}
+
 .blog-head ul li {
     display: inline;
     color: #363f48;
+    padding-right: 7px;
+    font-size: 13px;
+    color: #363f48;
+    line-height: 22px;
+}
+.post-meta {
+	margin:15px 0px;
+}
+.post-meta ul li i{
+	margin-right:5px;
 }
 .blog-head ul li span{
     color: #4d4d4d;
@@ -627,6 +598,7 @@ img{
 }
 .blog-info > p{
     text-align: justify;
+	line-height:24px;
 }
 .read-more > a{
     border: 1px solid #323232;
@@ -780,20 +752,22 @@ img{
     background-repeat: no-repeat;
     border: medium none;
     text-indent: -500px;
-    width: 19px;
-    right: 5%;
+    width: 23px;
+    right: 2%;
     position: absolute;
-    top: 48%;
+    top: 30%;
+    padding: 0px 5px 0px;
 }
 .sidebar-widget  > h3{	
     font-size: 1.1em;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 1.8em;
     margin-top: 20px;
     position: relative;
+    color: #181818;
 }
-.sidebar-widget  > h3:after {
-    background: none repeat scroll 0 0 #e6e6e6;
+.sidebar-widget > h3:after{
+	background: none repeat scroll 0 0 #e6e6e6;
     bottom: -0.8em;
     content: " ";
     height: 2px;
@@ -806,14 +780,20 @@ img{
     list-style: none outside none;
 }
 .sidebar-widget  > ul  li {
+    padding: 0 0 10px;
+    list-style: none outside none;
+     text-transform: uppercase;
+}
+.sidebar-widget ul li{
+	font-size: 14px;
     border-bottom: 1px solid #e6e6e6;
     padding: 10px 0;
     list-style: none outside none;
-     text-transform: capitalize;
+    text-transform: capitalize;
 }
 .sidebar-widget ul > li  ul {
     border-top: 1px solid #e6e6e6;
-    padding-left:: 20px;
+    padding-left: 20px;
     margin-top: 10px;
 }
 .sidebar-widget ul li ul li:last-child {
@@ -842,7 +822,7 @@ footer{
     width:170px;
     color:#fff;
     font-size:19px;
-    font-family:'cabin bold';
+    font-family:'cabin';
     text-decoration:none;
     text-transform: uppercase;
     transition: all 0.5s ease-in-out 0s;
@@ -856,8 +836,8 @@ footer{
 }
 
 .social-icon > i{
-    margin-right:15px;	
-    font-size:25px;
+/*     margin-right:15px;	
+    font-size:25px; */
 }
 .social-media > p{
     font-size:16px;
@@ -1170,15 +1150,28 @@ img.aligncenter {
     list-style: outside none none;
     padding: 10px 0;
 }
-.sidebar-widget ul > li {
-    padding: 10px 0;
-}
 .menu-logo {
     font-size: 22px;
 }
 
 .social-media a {
-    color:#fff;
+    text-align: center;
+    border: 1px solid #fff;
+    border-radius: 0;
+    margin: 0 10px;
+    padding: 5px 0px;
+    width: 70px;
+    color: #fff;
+    font-size: 14px;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+}
+.social-media p a{
+	border:0px;
+	margin:0px;
+	padding:0px;
 }
 .social-media a:hover {
     color:#fd3329;
@@ -1429,13 +1422,9 @@ section {
 
 /* comment replay box */
 .comment-reply-title {
-    border-bottom: 1px solid #e6e6e6;
-    color: #363f48;
-    margin-top: 0;
-    padding-bottom: 15px;
-    text-align: center;
-    text-transform: capitalize;
-    font-size:31px;
+    color: #fd3329;
+    text-transform: uppercase;
+    font-size: 18px;
 }
 .comment-notes {
     display: none;
@@ -1595,6 +1584,7 @@ textarea:focus{
     }
     .main_menu  ul > li > a {
         margin-bottom: 5px;
+        border: 0;
     }
     .main_menu  ul li {
         float: none;
@@ -1608,6 +1598,10 @@ textarea:focus{
         margin-left: 25px;
         position: relative;
         text-align: left;
+    }
+
+    .collapse.in {
+        border-top: 1px solid #ccc;
     }
     .main_menu  ul li ul {
         left: 0;
@@ -1627,12 +1621,6 @@ textarea:focus{
     }
     .main_menu > ul li ul{
         border: none;
-    }
-    .main_menu  ul li ul > li > a{
-        border: 1px solid transparent;
-    }
-    .main_menu  ul li ul > li > a:hover { 
-        border: 1px solid #363f48;
     }
     .main_menu  ul li ul ul {
         left: 0;
@@ -1769,6 +1757,8 @@ textarea:focus{
     }
     .main_menu ul{
         float:none;
+        margin: 0 auto;
+        display: inline-block;
     }
     .works-left > h2{ 
 		font-size: 34px;
@@ -1816,7 +1806,7 @@ textarea:focus{
 }
 @media only screen and (min-width: 768px) {
     .main_menu  > ul li ul {
-        min-width: 133px;        
+        min-width: 128px;        
     }
 }
 /* end media.css */

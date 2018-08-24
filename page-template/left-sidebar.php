@@ -26,11 +26,10 @@ get_header(); ?>
             <!-- Left Sidebar Content Start -->
             <div class="col-md-9 col-sm-8">
                 <div class="blog-details single">
-                    <?php while (have_posts()) : the_post(); 
-                        $advent_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'large');
-                        if ($advent_image[0] != "") { ?>
+                    <?php while (have_posts()) : the_post();                         
+                        if (has_post_thumbnail()) { ?>
                             <div class="blog-img">
-                                <img src="<?php echo esc_url($advent_image[0]); ?>" width="<?php echo $advent_image[1]; ?>" height="<?php echo $advent_image[2]; ?>" alt="<?php echo get_the_title(); ?>" class="img-responsive" />
+                                <?php the_post_thumbnail('large'); ?>
                             </div>
                         <?php } ?>
                         <div class="blog-info">
