@@ -2,7 +2,7 @@
 Contributors: wponlinesupport, anoopranawat
 Requires at least: WordPress 4.5
 Tested up to: WordPress 4.9.8
-Version:  1.0.2
+Version:  1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, blog,  left-sidebar,  right-sidebar,  custom-background,  custom-colors,  custom-menu,  featured-images,  full-width-template,  threaded-comments, footer-widgets,  sticky-post,  theme-options
@@ -50,11 +50,14 @@ Copyright (c) 2011, Thomas Griffin
 https://opensource.org/licenses/GPL-2.0
 
 Images for screenshot
-License: Creative Commons Zero (CC0) license (https://www.pexels.com/photo-license/)
-- https://www.pexels.com/
-- https://www.pexels.com/photo/photography-of-woman-sitting-on-chair-near-window-761872/
+License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
+- https://pixabay.com/
+- https://pixabay.com/en/person-woman-man-couple-people-3519503/
 
 == Changelog ==
+
+= 1.0.3 =
+* Updated License for image used in the screenshot.
 
 = 1.0.2 =
 * Fixed side bar scroll issue.
