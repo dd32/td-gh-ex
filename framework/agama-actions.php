@@ -42,7 +42,7 @@ if( ! function_exists( 'agama_social_share' ) ) {
         $visibility = esc_attr( get_theme_mod( 'agama_share_box_visibility', 'posts' ) );
         $icons      = get_theme_mod( 
             'agama_social_share_icons',
-            array( 'facebook', 'twitter', 'pinterest', 'google+', 'linkedin', 'rss', 'email' )
+            array( 'facebook', 'twitter', 'pinterest', 'gplus', 'linkedin', 'rss', 'email' )
         );
         
         // Check if Social Share is Enabled

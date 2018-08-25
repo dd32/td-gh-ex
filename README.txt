@@ -3,6 +3,9 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.3.7.1 - 25 August 2018 =
+* Fixed Google+ social share icon default parameter bug.
+
 = 1.3.7 - 25 August 2018 =
 * Updated infinite scroll to newest version.
 * Updated Isotope JS to latest version.
