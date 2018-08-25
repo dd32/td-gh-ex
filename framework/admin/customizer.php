@@ -213,7 +213,7 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 				'property'	=> 'color'
 			),
 			array(
-				'element'	=> '.mobile-menu-toggle-inner, .mobile-menu-toggle-inner::before, .mobile-menu-toggle-inner::after, .woocommerce span.onsale, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt',
+				'element'	=> '.mobile-menu-toggle-inner, .mobile-menu-toggle-inner::before, .mobile-menu-toggle-inner::after, .woocommerce span.onsale, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, .loader-ellips__dot',
 				'property'	=> 'background-color'
 			),
 			array(
@@ -1277,6 +1277,14 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		),
 		'default'		=> 'homepage'
 	) );
+    Kirki::add_field( 'agama_options', array(
+        'label'         => esc_html__( 'Front Page Boxes Heading', 'agama' ),
+        'tooltip'       => esc_html__( 'Set custom heading for front page boxes. Empty = Disabled', 'agama' ),
+        'section'       => 'agama_frontpage_general_section',
+        'settings'      => 'agama_frontpage_boxes_heading',
+        'type'          => 'text',
+        'default'       => esc_html__( 'Front Page Boxes', 'agama' )
+    ) );
 	#############################################################
 	# FRONTPAGE BOXES SECTION 1
 	#############################################################
@@ -2183,6 +2191,60 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'default'		=> ''
 	) );
 ###################################################################################
+# SHARE ICONS
+###################################################################################
+    Kirki::add_section( 'agama_share_icons_section', array(
+		'title'			=> esc_html__( 'Social Share', 'agama' ),
+		'capability'	=> 'edit_theme_options',
+		'priority'		=> 90,
+	) );
+    Kirki::add_field( 'agama_options', array(
+		'label'			=> esc_html__( 'Enable', 'agama' ),
+		'tooltip'	    => esc_html__( 'Enable social share icons ?', 'agama' ),
+		'section'		=> 'agama_share_icons_section',
+		'settings'		=> 'agama_share_box',
+		'type'			=> 'switch',
+		'default'		=> true
+	) );
+    Kirki::add_field( 'agama_options', array(
+		'label'			=> esc_html__( 'Visibility', 'agama' ),
+		'tooltip'	    => esc_html__( 'Select where to show share box.', 'agama' ),
+		'section'		=> 'agama_share_icons_section',
+		'settings'		=> 'agama_share_box_visibility',
+		'type'			=> 'select',
+		'choices'		=> array(
+			'posts'		=> esc_html__( 'Posts', 'agama' ),
+			'pages'		=> esc_html__( 'Pages', 'agama' ),
+			'all'		=> esc_html__( 'Post & Pages', 'agama' )
+		),
+		'default'		=> 'posts'
+	) );
+    Kirki::add_field( 'agama_options', array(
+        'label'         => esc_html__( 'Share Icons', 'agama' ),
+        'tooltip'       => esc_html__( 'Enable and sort share icons per your own needs.', 'agama' ),
+        'section'       => 'agama_share_icons_section',
+        'settings'      => 'agama_social_share_icons',
+        'type'          => 'sortable',
+        'choices'       => array(
+            'facebook'  => esc_html__( 'Facebook', 'agama' ),
+            'twitter'   => esc_html__( 'Twitter', 'agama' ),
+            'pinterest' => esc_html__( 'Pinterest', 'agama' ),
+            'gplus'     => esc_html__( 'Google+', 'agama' ),
+            'linkedin'  => esc_html__( 'LinkedIn', 'agama' ),
+            'rss'       => esc_html__( 'RSS', 'agama' ),
+            'email'     => esc_html__( 'Email', 'agama' )
+        ),
+        'default'       => array(
+            'facebook',
+            'twitter',
+            'pinterest',
+            'gplus',
+            'linkedin',
+            'rss',
+            'email'
+        )
+    ) );
+###################################################################################
 # WOOCOMMERCE
 ###################################################################################
     Kirki::add_panel( 'woocommerce', array(
@@ -2291,6 +2353,36 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		),
 		'default'		=> '#293744'
 	) );
+    Kirki::add_field( 'agama_options', array(
+        'label'         => esc_html__( 'Copyright Links Color', 'agama' ),
+        'tooltip'       => esc_html__( 'Set custom color for copyright links in footer area.', 'agama' ),
+        'section'       => 'agama_footer_styling_section',
+        'settings'      => 'agama_footer_site_info_links_color',
+        'type'          => 'color',
+        'transport'     => 'auto',
+        'output'        => array(
+            array(
+                'element'   => 'footer .site-info a',
+                'property'  => 'color'
+            )
+        ),
+        'default'       => '#cddeee'
+    ) );
+    Kirki::add_field( 'agama_options', array(
+        'label'         => esc_html__( 'Social Icons Color', 'agama' ),
+        'tooltip'       => esc_html__( 'Set custom color for social icons in footer area.', 'agama' ),
+        'section'       => 'agama_footer_styling_section',
+        'settings'      => 'agama_footer_social_icons_color',
+        'type'          => 'color',
+        'transport'     => 'auto',
+        'output'        => array(
+            array(
+                'element'   => 'footer .social a',
+                'property'  => 'color'
+            )
+        ),
+        'default'       => '#cddeee'
+    ) );
 #######################################
 # REMOVE SECTIONS
 #######################################
@@ -2508,6 +2600,9 @@ function customize_styles_agama_support( $input ) { ?>
         }
         #accordion-section-agama_social_icons_section h3:before {
             content: '\f230';
+        }
+        #accordion-section-agama_share_icons_section h3:before {
+            content: '\f1e0';
         }
         #accordion-panel-woocommerce h3:before {
             content: '\f291';

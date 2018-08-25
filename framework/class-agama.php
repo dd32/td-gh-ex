@@ -429,16 +429,6 @@ if( ! class_exists( 'Agama' ) ) {
 		<?php endif; ?>
 		<?php
 		}
-		
-		/** 
-		 * Agama Version
-		 *
-		 * @since 1.2.0
-		 * @return string
-		 */
-		static function version() {
-			return esc_attr( Agama_Core::version() );
-		}
 	}
 	new Agama;
 }
