@@ -69,6 +69,8 @@ Theta provides support at https://www.coothemes.com/forum/theta-all-theme/
 
 
 === Changelog ===
+=version 1.0.3 20180824=
+
 =version 1.0.2 20180822=
 
 =version 1.0.0 20180816=

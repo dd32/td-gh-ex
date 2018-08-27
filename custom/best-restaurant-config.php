@@ -634,7 +634,7 @@
 		'settings'    => 'footer_copy_code',
 		'label'       => esc_attr__( 'Footer Copyriht 2', 'best-restaurant' ),
 		'section'     => 'footer_option',
-		'default'     => __('Powered by <a href="http://wordpress.org/">WordPress</a>. Best Restaurant theme by <a href="https://www.coothemes.com/">CooThemes.com</a>.','best-restaurant')
+		'default'     => __('Powered by <a href="http://WordPress.org/">WordPress</a>. Best Restaurant theme by <a href="https://www.coothemes.com/">CooThemes.com</a>.','best-restaurant')
 
 
   )); 
@@ -644,7 +644,7 @@
 	  'type'		 => 'text',
 	  'settings'	 => 'facebook_link',
 	  'label'		 => __( 'Facebook Link', 'best-restaurant' ),
-	  'default'	 => '#',
+	  'default'	 => '',
 	  'section'	 => 'footer_option',
 	  'priority'	 => 10,
   ) ); 
@@ -653,7 +653,7 @@
 	  'type'		 => 'text',
 	  'settings'	 => 'twitter_link',
 	  'label'		 => __( 'Twitter Link', 'best-restaurant' ),
-	  'default'	 => '#',
+	  'default'	 => '',
 	  'section'	 => 'footer_option',
 	  'priority'	 => 10,
   ) );   
@@ -662,7 +662,7 @@
 	  'type'		 => 'text',
 	  'settings'	 => 'youtube_link',
 	  'label'		 => __( 'Youtube Link', 'best-restaurant' ),
-	  'default'	 => '#',
+	  'default'	 => '',
 	  'section'	 => 'footer_option',
 	  'priority'	 => 10,
   ) );   
@@ -671,7 +671,7 @@
 	  'type'		 => 'text',
 	  'settings'	 => 'pinterest_link',
 	  'label'		 => __( 'Pinterest Link', 'best-restaurant' ),
-	  'default'	 => '#',
+	  'default'	 => '',
 	  'section'	 => 'footer_option',
 	  'priority'	 => 10,
   ) ); 
@@ -680,7 +680,7 @@
 	  'type'		 => 'text',
 	  'settings'	 => 'google_plus_link',
 	  'label'		 => __( 'Google Plus Link', 'best-restaurant' ),
-	  'default'	 => '#',
+	  'default'	 => '',
 	  'section'	 => 'footer_option',
 	  'priority'	 => 10,
   ) );   
@@ -689,7 +689,7 @@
 	  'type'		 => 'text',
 	  'settings'	 => 'instagram_link',
 	  'label'		 => __( 'Instagram Link', 'best-restaurant' ),
-	  'default'	 => '#',
+	  'default'	 => '',
 	  'section'	 => 'footer_option',
 	  'priority'	 => 10,
   ) );

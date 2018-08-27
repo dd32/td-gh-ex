@@ -8,7 +8,7 @@
 				}else{echo '<br />';}
 			?>           
             <?php 
-			 	if(  get_theme_mod( 'facebook_link', '#' ) !=''  || get_theme_mod( 'twitter_link', '#' ) !='' || get_theme_mod( 'youtube_link', '#' ) !='' || get_theme_mod( 'pinterest_link', '#' ) !='' || get_theme_mod( 'google_plus_link', '#' ) !='' || get_theme_mod( 'instagram_link', '#' ) !='' ){
+			 	if(  get_theme_mod( 'facebook_link', '' ) !=''  || get_theme_mod( 'twitter_link', '' ) !='' || get_theme_mod( 'youtube_link', '' ) !='' || get_theme_mod( 'pinterest_link', '' ) !='' || get_theme_mod( 'google_plus_link', '' ) !='' || get_theme_mod( 'instagram_link', '' ) !='' ){
 			?>
         	<p class="ct_footer_follow"><?php echo __('Follow Us On','best-restaurant')?></p>
             <p class="ct_footer_bookmarks">

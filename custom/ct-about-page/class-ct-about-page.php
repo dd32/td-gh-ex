@@ -6,15 +6,15 @@
  * @subpackage Admin
  * @since 1.0.0
  */
-if ( ! class_exists( 'Coothemes_About_Page' ) ) {
+if ( ! class_exists( 'Best_Restaurant_About_Page' ) ) {
 	/**
 	 * Singleton class used for generating the about page of the theme.
 	 */
-	class Coothemes_About_Page {
+	class Best_Restaurant_About_Page {
 		/**
 		 * Define the version of the class.
 		 *
-		 * @var string $version The Coothemes_About_Page class version.
+		 * @var string $version The Best_Restaurant_About_Page class version.
 		 */
 		private $version = '1.0.0';
 		/**
@@ -72,22 +72,22 @@ if ( ! class_exists( 'Coothemes_About_Page' ) ) {
 		 */
 		private $notification;
 		/**
-		 * The single instance of Coothemes_About_Page
+		 * The single instance of Best_Restaurant_About_Page
 		 *
-		 * @var Coothemes_About_Page $instance The  Coothemes_About_Page instance.
+		 * @var Best_Restaurant_About_Page $instance The  Best_Restaurant_About_Page instance.
 		 */
 		private static $instance;
 
 		/**
-		 * The Main Coothemes_About_Page instance.
+		 * The Main Best_Restaurant_About_Page instance.
 		 *
-		 * We make sure that only one instance of Coothemes_About_Page exists in the memory at one time.
+		 * We make sure that only one instance of Best_Restaurant_About_Page exists in the memory at one time.
 		 *
 		 * @param array $config The configuration array.
 		 */
 		public static function init( $config ) {
-			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Coothemes_About_Page ) ) {
-				self::$instance = new Coothemes_About_Page;
+			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof Best_Restaurant_About_Page ) ) {
+				self::$instance = new Best_Restaurant_About_Page;
 				if ( ! empty( $config ) && is_array( $config ) ) {
 					self::$instance->config = $config;
 					self::$instance->setup_config();
@@ -171,7 +171,7 @@ if ( ! class_exists( 'Coothemes_About_Page' ) ) {
 				add_theme_page(
 					$this->menu_name, $title, 'activate_plugins', $this->theme_slug . '-welcome', array(
 						$this,
-						'Coothemes_about_page_render',
+						'Best_Restaurant_About_Page_render',
 					)
 				);
 			}
@@ -183,14 +183,14 @@ if ( ! class_exists( 'Coothemes_About_Page' ) ) {
 		public function activation_admin_notice() {
 			global $pagenow;
 			if ( is_admin() && ( 'themes.php' == $pagenow ) && isset( $_GET['activated'] ) ) {
-				add_action( 'admin_notices', array( $this, 'Coothemes_about_page_welcome_admin_notice' ), 99 );
+				add_action( 'admin_notices', array( $this, 'Best_Restaurant_About_Page_welcome_admin_notice' ), 99 );
 			}
 		}
 
 		/**
 		 * Display an admin notice linking to the about page
 		 */
-		public function Coothemes_about_page_welcome_admin_notice() {
+		public function Best_Restaurant_About_Page_welcome_admin_notice() {
 			if ( ! empty( $this->notification ) ) {
 				echo '<div class="updated notice is-dismissible">';
 				echo wp_kses_post( $this->notification );
@@ -201,7 +201,7 @@ if ( ! class_exists( 'Coothemes_About_Page' ) ) {
 		/**
 		 * Render the main content page.
 		 */
-		public function Coothemes_about_page_render() {
+		public function Best_Restaurant_About_Page_render() {
 
 			if ( ! empty( $this->config['welcome_title'] ) ) {
 				$welcome_title = $this->config['welcome_title'];
@@ -359,7 +359,7 @@ if ( ! class_exists( 'Coothemes_About_Page' ) ) {
 		}
 
 		/**
-		 * Get icon of wordpress.org plugin
+		 * Get icon of WordPress.org plugin
 		 *
 		 * @param array $arr array of image formats.
 		 *

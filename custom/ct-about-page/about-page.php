@@ -95,7 +95,6 @@ $config = array(
 		'features'            => array(
 			array(
 				'title'       => __( 'One-page Theme', 'best-restaurant' ),
-				//'description' => __( 'Responsive layout. Works on every device.', 'best-restaurant' ),
 				'is_in_lite'  => 'true',
 				'is_in_pro'   => 'true',
 			),
@@ -280,5 +279,5 @@ $config = array(
 	),
 
 );
-Coothemes_About_Page::init( apply_filters( 'best_restaurant_about_page_array', $config ) );
+Best_Restaurant_About_Page::init( apply_filters( 'best_restaurant_about_page_array', $config ) );
 
