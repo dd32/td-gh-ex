@@ -18,7 +18,6 @@ function advance_blogging_custom_header_setup() {
 		'height'                 => 400,
 		'wp-head-callback'       => 'advance_blogging_header_style',
 	) ) );
-
 }
 
 add_action( 'after_setup_theme', 'advance_blogging_custom_header_setup' );

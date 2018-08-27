@@ -30,8 +30,8 @@ function advance_blogging_customize_register( $wp_customize ) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('advance_blogging_theme_options',array(
-	        'default' => '',
-	        'sanitize_callback' => 'advance_blogging_sanitize_choices'
+        'default' => '',
+        'sanitize_callback' => 'advance_blogging_sanitize_choices'
 	)  );
 
 	$wp_customize->add_control('advance_blogging_theme_options',
@@ -135,17 +135,6 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'type'		=> 'url'
 	));
 
-	$wp_customize->add_setting('advance_blogging_subscribe',array(
-		'default'	=> '',
-		'sanitize_callback'	=> 'esc_url_raw'
-	));	
-	$wp_customize->add_control('advance_blogging_subscribe',array(
-		'label'	=> __('Add Subscribe link','advance-blogging'),
-		'section'	=> 'advance_blogging_topbar_header',
-		'setting'	=> 'advance_blogging_subscribe',
-		'type'		=> 'url'
-	));
-
 	//home page slider
 	$wp_customize->add_section( 'advance_blogging_slider_section' , array(
     	'title'      => __( 'Slider Settings', 'advance-blogging' ),
@@ -166,12 +155,12 @@ function advance_blogging_customize_register( $wp_customize ) {
 			'description' => 'Background Image Size (900x450 )',
 			'type'     => 'dropdown-pages'
 		) );
+	}
 
-	}	
 	// Category Post
 	$wp_customize->add_section('advance_blogging_category_post',array(
 		'title'	=> __('Category Post','advance-blogging'),
-		'description'=> __('This section will appear below the slider.','advance-blogging'),
+		'description'=> __('This section will appear on the right side of slider.','advance-blogging'),
 		'panel' => 'advance_blogging_panel_id',
 	));
 
@@ -200,7 +189,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 	// Latest Post
 	$wp_customize->add_section('advance_blogging_latest_post',array(
 		'title'	=> __('Latest Post','advance-blogging'),
-		'description'=> __('This section will appear below the category post.','advance-blogging'),
+		'description'=> __('This section will appear below the slider.','advance-blogging'),
 		'panel' => 'advance_blogging_panel_id',
 	));
 

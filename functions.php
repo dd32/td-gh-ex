@@ -138,7 +138,7 @@ function advance_blogging_font_url(){
 	$font_family[] = 'Playfair+Display:400,400i,700,700i,900,900i';
 
 	$query_args = array(
-		'family'	=> urlencode(implode('|',$font_family)),
+		'family'	=> rawurlencode(implode('|',$font_family)),
 	);
 	$font_url = add_query_arg($query_args,'//fonts.googleapis.com/css');
 	return $font_url;
@@ -172,7 +172,7 @@ function advance_blogging_sanitize_dropdown_pages( $page_id, $setting ) {
 }
 
 /*radio button sanitization*/
- function advance_blogging_sanitize_choices( $input, $setting ) {
+function advance_blogging_sanitize_choices( $input, $setting ) {
     global $wp_customize; 
     $control = $wp_customize->get_control( $setting->id ); 
     if ( array_key_exists( $input, $control->choices ) ) {

@@ -24,34 +24,29 @@
   <div class="topbar">
     <div class="container">    
       <div class="row">
-        <div class="col-md-6 social-icons ">
-          <?php if( get_theme_mod( 'advance_blogging_facebook_url','' ) != '') { ?>
+        <div class="col-md-11 social-icons ">
+          <?php if( get_theme_mod( 'advance_blogging_facebook_url' ) != '') { ?>
             <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
           <?php } ?>
-          <?php if( get_theme_mod( 'advance_blogging_twitter_url','' ) != '') { ?>
+          <?php if( get_theme_mod( 'advance_blogging_twitter_url' ) != '') { ?>
             <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_twitter_url','' ) ); ?>"><i class="fab fa-twitter" aria-hidden="true"></i></a>
           <?php } ?>
-          <?php if( get_theme_mod( 'advance_blogging_googleplus_url','' ) != '') { ?>
+          <?php if( get_theme_mod( 'advance_blogging_googleplus_url' ) != '') { ?>
             <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_googleplus_url','' ) ); ?>"><i class="fab fa-google-plus-g"></i></a>
           <?php } ?>
-          <?php if( get_theme_mod( 'advance_blogging_pinterest_url','' ) != '') { ?>
+          <?php if( get_theme_mod( 'advance_blogging_pinterest_url' ) != '') { ?>
             <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_pinterest_url','' ) ); ?>"><i class="fab fa-pinterest-p"></i></a>
           <?php } ?>
-          <?php if( get_theme_mod( 'advance_blogging_linkedin_url','' ) != '') { ?>
+          <?php if( get_theme_mod( 'advance_blogging_linkedin_url' ) != '') { ?>
             <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_linkedin_url','' ) ); ?>"><i class="fab fa-linkedin-in"></i></a>
           <?php } ?>
-          <?php if( get_theme_mod( 'advance_blogging_insta_url','' ) != '') { ?>
+          <?php if( get_theme_mod( 'advance_blogging_insta_url' ) != '') { ?>
             <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_insta_url','' ) ); ?>"><i class="fab fa-instagram"></i></a>
           <?php } ?>
-          <?php if( get_theme_mod( 'advance_blogging_youtube_url','' ) != '') { ?>
+          <?php if( get_theme_mod( 'advance_blogging_youtube_url' ) != '') { ?>
             <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_youtube_url','' ) ); ?>"><i class="fab fa-youtube" aria-hidden="true"></i></a>
           <?php } ?>
-        </div>        
-        <div class="col-md-4 top-subscribe">
-          <?php if( get_theme_mod( 'advance_blogging_subscribe','' ) != '') { ?>
-            <a class="subscribe" href="<?php echo esc_url( get_theme_mod( 'advance_blogging_subscribe','' ) ); ?>"><?php  esc_html_e( 'SUBSCRIBE','advance-blogging' ); ?></a>
-          <?php }?>
-        </div>        
+        </div>
         <div class="search-box col-md-1 col-sm-1">
           <span class="search-icon"><i class="fas fa-search"></i></span>
         </div>
@@ -82,11 +77,14 @@
           </div>
           <div class="clear"></div>
         </div>
-        <div class=" col-md-2 col-sm-2 cart m-0">          
-          <span class="cart-box"><i class="fab fa-opencart"></i><?php  esc_html_e( 'CART','advance-blogging' ); ?></span></a> 
-          <div class="top-cart-content">
-             <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
-          </div>       
+        <div class=" col-md-2 col-sm-2 cart m-0">
+          <?php if(class_exists('woocommerce')){ ?>
+            <span class="cart-box"><i class="fab fa-opencart"></i><?php  esc_html_e( 'CART','advance-blogging' ); ?></span></a> 
+            <div class="top-cart-content">
+               <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+            </div>
+          <?php }else {
+          echo '<h6>'.esc_html('Please Install Woocommerce Plugin','advance-blogging').'<h6>'; }?>      
         </div> 
       </div> 
     </div>

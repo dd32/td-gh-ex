@@ -10,6 +10,7 @@
 get_header(); ?>
 
 <?php do_action( 'advance_blogging_above_slider' ); ?>
+
 <section id="slider">
 	<div class="container-fluid">
 		<div class="row">
@@ -102,7 +103,7 @@ get_header(); ?>
 											    <?php the_post_thumbnail();  ?>
 												<div class="metabox">
 												    <div class="dateday"><?php echo esc_html( get_the_date( 'd') ); ?></div>
-												    <hr class="m-0 p-0">
+												    <hr class="metahr m-0 p-0">
 												    <div class="month"><?php echo esc_html( get_the_date( 'M' ) ); ?></div>
 												    <div class="year"><?php echo esc_html( get_the_date( 'Y' ) ); ?></div>
 												</div>
@@ -130,9 +131,9 @@ get_header(); ?>
 <?php do_action( 'advance_blogging_below_product_section' ); ?>
 
 <div class="container">
-  <?php while ( have_posts() ) : the_post(); ?>
-    <?php the_content(); ?>
-  <?php endwhile; // end of the loop. ?>
+	<?php while ( have_posts() ) : the_post(); ?>
+		<?php the_content(); ?>
+	<?php endwhile; // end of the loop. ?>
 </div>
 
 <?php get_footer(); ?>

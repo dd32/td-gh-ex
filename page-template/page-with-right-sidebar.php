@@ -8,7 +8,7 @@ get_header(); ?>
 <?php do_action( 'advance_blogging_header_page_right' ); ?>
 
 <div class="container">
-    <div class="middle-align row">       
+    <div class="middle-align row">
 		<div class="col-md-8" id="content-aa" >
             <?php while ( have_posts() ) : the_post(); ?>
                 <img src="<?php the_post_thumbnail_url('full'); ?>" width="100%">

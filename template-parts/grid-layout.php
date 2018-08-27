@@ -19,7 +19,7 @@
             <div class="box-content">
                 <h2><?php the_title();?></h2>
                 <p><?php echo the_excerpt(); ?></p>
-                <a href="<?php echo esc_url( the_permalink() );?>" class="blogbutton-small" title="<?php esc_html_e( 'READ MORE', 'advance-blogging' ); ?>"><?php esc_html_e('READ MORE','advance-blogging'); ?></a>
+                <a href="<?php echo esc_url( the_permalink() );?>" class="blogbutton-small" title="<?php esc_attr_e( 'READ MORE', 'advance-blogging' ); ?>"><?php esc_html_e('READ MORE','advance-blogging'); ?></a>
             </div>
             <div class="clearfix"></div> 
         </div>

@@ -19,8 +19,8 @@
 		<p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'advance-blogging' ); ?></p><br />
 		<?php get_search_form(); ?>
 	<?php else : ?>
-		<p><?php esc_html_e( 'Dont worry it happens to the best of us.', 'advance-blogging' ); ?></p><br />
-		<div class="read-moresec">
-			<a href="<?php echo esc_url( home_url() ); ?>" class="button"><?php esc_html_e( 'Back to Home Page', 'advance-blogging' ); ?></a>
-		</div>
+	<p><?php esc_html_e( 'Dont worry it happens to the best of us.', 'advance-blogging' ); ?></p><br />
+	<div class="read-moresec">
+		<a href="<?php echo esc_url( home_url() ); ?>" class="button"><?php esc_html_e( 'Back to Home Page', 'advance-blogging' ); ?></a>
+	</div>
 <?php endif; ?>

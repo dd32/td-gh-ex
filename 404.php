@@ -6,6 +6,7 @@
  */
 
 get_header(); ?>
+
 	<div id="content-aa">
 		<div class="container">
             <div class="page-content">
@@ -19,4 +20,5 @@ get_header(); ?>
             </div>
 		</div>
 	</div>
+	
 <?php get_footer(); ?>
