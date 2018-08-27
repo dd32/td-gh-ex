@@ -80,73 +80,7 @@ jQuery(document).ready(function($) {
 		  }
 		}
 	});
-
-	$('.avata-home-sections').fullpage({
-		menu: '',
-		anchors: avata_params.menu_anchors,
-		autoScrolling: autoScrolling,
-		fitToSection: false,
-		fixedElements: '#wpadminbar',
-		responsiveWidth: 919,
-		onLeave:  function(index, nextIndex, direction){
-			
-			if( nextIndex > 1 ){
-				$('#main-header').css({'background-color':'rgba(48, 48, 48, '+avata_params.sticky_header_opacity_frontpage+')'});
-			}else{
-				$('#main-header').css({'background':'transparent'});
-			}
-			
-			$('section').eq(index).find('.os-animation').each(function(){
-				var osAnimationClass = $(this).attr('data-os-animation'),
-				osAnimationDelay = $(this).attr('data-os-animation-delay');	
-				$(this).css({
-				  '-webkit-animation-delay':  osAnimationDelay,
-				  '-moz-animation-delay':     osAnimationDelay,
-				  'animation-delay':          osAnimationDelay
-			  });
-		
-			$(this).addClass('animated').addClass(osAnimationClass);
-			});
-		},
-		afterLoad: function(anchor, index){
-			
-			$('#dotstyle-nav li').removeClass('active');
-			$('#menu-main li a').removeClass('active');
-			$('#dotstyle-nav li a[href="#'+anchor+'"]').parent('li').addClass('active');
-			$('#menu-main li a[href="#'+anchor+'"]').addClass('active');
-					
-			$('section').eq(index-1).find('.os-animation').each(function(){
-			
-					var osAnimationClass = $(this).attr('data-os-animation'),
-					 osAnimationDelay = $(this).attr('data-os-animation-delay');	
-					 $(this).css({
-				  '-webkit-animation-delay':  osAnimationDelay,
-				  '-moz-animation-delay':     osAnimationDelay,
-				  'animation-delay':          osAnimationDelay
-			  });
-		
-			$(this).addClass('animated').addClass(osAnimationClass);
-			});
 	
-			
-		},
-		 afterRender: function () {
-			 if($('.avata-slider').length ){
-				 var options = $('.avata-slider').data('options');
-				 $('.avata-slider .avata-banner-bgimage').removeClass('avata-fullheight');
-				 if(typeof options.autoplay !='undefined' && options.autoplay === '1'){
-				setInterval(function () {
-					$.fn.fullpage.moveSlideRight();
-				}, parseInt(options.timeout));
-			 }
-			 }
-		},
-		
-	});
-	
-	/* Gallery */
-	$('#lightgallery').lightGallery();
-	$('.avate-video-container').lightGallery();
 	// Counter
 	var avataCounter = function() {
 		$('.avata-counter-style-1').waypoint( function( direction ) {
@@ -183,6 +117,76 @@ jQuery(document).ready(function($) {
 		} , { offset: '75%' } );
 	};
 	avataCounter();
+
+	$('.avata-home-sections').fullpage({
+		menu: '',
+		anchors: avata_params.menu_anchors,
+		autoScrolling: autoScrolling,
+		fitToSection: false,
+		fixedElements: '#wpadminbar',
+		responsiveWidth: 919,
+		onLeave:  function(index, nextIndex, direction){
+			
+			if( nextIndex > 1 ){
+				$('#main-header').css({'background-color':avata_params.navigation_background});
+				$('#main-header.transparent').css({'background':'transparent'});
+			}else{
+				$('#main-header').css({'background':avata_params.sticky_navigation_background});
+				$('#main-header.transparent').css({'background':'transparent'});
+			}
+			
+			$('section').eq(index).find('.os-animation').each(function(){
+				var osAnimationClass = $(this).attr('data-os-animation'),
+				osAnimationDelay = $(this).attr('data-os-animation-delay');	
+				$(this).css({
+				  '-webkit-animation-delay':  osAnimationDelay,
+				  '-moz-animation-delay':     osAnimationDelay,
+				  'animation-delay':          osAnimationDelay
+			  });
+		
+			$(this).addClass('animated').addClass(osAnimationClass);
+			});
+		},
+		afterLoad: function(anchor, index){
+			
+			$('#dotstyle-nav li').removeClass('active');
+			$('#menu-main li a').removeClass('active');
+			$('#dotstyle-nav li a[href="#'+anchor+'"]').parent('li').addClass('active');
+			$('#menu-main li a[href="#'+anchor+'"]').addClass('active');
+					
+			$('section').eq(index-1).find('.os-animation').each(function(){
+			
+					var osAnimationClass = $(this).attr('data-os-animation'),
+					 osAnimationDelay = $(this).attr('data-os-animation-delay');	
+					 $(this).css({
+				  '-webkit-animation-delay':  osAnimationDelay,
+				  '-moz-animation-delay':     osAnimationDelay,
+				  'animation-delay':          osAnimationDelay
+			  });
+		
+			$(this).addClass('animated').addClass(osAnimationClass);
+			});
+	
+			avataCounter();
+		},
+		 afterRender: function () {
+			 if($('.avata-slider').length ){
+				 var options = $('.avata-slider').data('options');
+				 $('.avata-slider .avata-banner-bgimage').removeClass('avata-fullheight');
+				 if(typeof options.autoplay !='undefined' && options.autoplay === '1'){
+				setInterval(function () {
+					$.fn.fullpage.moveSlideRight();
+				}, parseInt(options.timeout));
+			 }
+			 }
+		},
+		
+	});
+	
+	/* Gallery */
+	$('#lightgallery').lightGallery();
+	$('.avate-video-container').lightGallery();
+	
 		
 	/*testimonial*/
 	var owl = $('.owl-carousel-fullwidth');

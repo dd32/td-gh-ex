@@ -221,7 +221,7 @@ function avata_public_section_options($id,$default,$custom = false,$args ){
 					  'type' => 'typography',
 					  'output' => array(
 										  array(
-											  'element' => 'body .avata-section-'.$key.' .section-content',
+											  'element' => 'body .avata-section-'.$key.' .section-content  body .avata-section-'.$key.' p',
 										  ),
 									  ),
 					  
@@ -1763,6 +1763,7 @@ Kirki::add_field( 'avata', array(
 	'section'  => 'avata_frontpage_header',
 	'default'  => '1',
 	'priority' => 10,
+	'description' => __( 'Go to Avata: Colors & Background > Navigation Bar > Frontpage Menu Font Color to set front page menu font color( first level ).', 'avata' ),
 	//'transport' => 'refresh',
 	) );
 
@@ -1856,25 +1857,6 @@ Kirki::add_section( 'avata_panel_basic_settings', array(
     'priority'       => 11,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
-) );
-
-
-Kirki::add_field( 'avata', array(
-	'settings' => 'header_code',
-	'label'    => __( 'Header Tracking Code', 'avata' ),
-	'section'  => 'avata_panel_basic_settings',
-	'type'     => 'code',
-	'priority' => 10,
-	'default'  => '',
-) );
-
-Kirki::add_field( 'avata', array(
-	'settings' => 'footer_code',
-	'label'    => __( 'Footer Tracking Code', 'avata' ),
-	'section'  => 'avata_panel_basic_settings',
-	'type'     => 'code',
-	'priority' => 10,
-	'default'  => '',
 ) );
 
 Kirki::add_field( 'avata', array(

@@ -2,7 +2,7 @@
 Contributors: HooThemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.0-trunk
-Version: 1.5.7
+Version: 1.5.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, theme-options, custom-background, custom-menu, featured-images, threaded-comments, translation-ready, custom-logo, featured-image-header, footer-widgets, right-sidebar, left-sidebar, e-commerce
@@ -84,6 +84,14 @@ https://www.pexels.com/photo/white-and-gray-pen-beside-succulent-flower-and-whit
 
 
 == Changelog ==
+
+
+= Version 1.5.8 = = 28/08/2018
+* Fixed text align issue for section content
+* Fixed counter issue
+* Fixed logo issue on mobile
+* Fixed Transparent Header issue
+* Updated screenshot (No add)
 
 = Version 1.5.7 = = 24/08/2018
 * Removed image size

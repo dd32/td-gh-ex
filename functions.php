@@ -188,7 +188,7 @@ function avata_enqueue_scripts() {
 		$content_typography = avata_option( 'content_typography_'.$j );
 		
 		if( $content_typography )
-			$css .= ".section-".$item." .section-content,.section-".$item." .section-content span,.section-".$item." .section-content h1,.section-".$item." .section-content h2,.section-".$item." .section-content h3,.section-".$item." .section-content h4,.section-".$item." .section-content h5,.section-".$item." .section-content h6{font-family:".esc_attr($content_typography['font-family']).";color:".sanitize_hex_color($content_typography['color']).";}.section-".$item." .social-icons a{border-color:".sanitize_hex_color($content_typography['color']).";},.section-".$item." .social-icons i{color:".sanitize_hex_color($content_typography['color']).";}";
+			$css .= ".section-".$item." .section-content,.section-".$item." .section-content span,.section-".$item." .section-content h1,.section-".$item." .section-content h2,.section-".$item." .section-content h3,.section-".$item." .section-content h4,.section-".$item." .section-content h5,.section-".$item." .section-content h6{font-family:".$content_typography['font-family'].";color:".$content_typography['color'].";text-align:".$content_typography['text-align'].";text-transform:".$content_typography['text-transform'].";letter-spacing:".$content_typography['letter-spacing'].";}.section-".$item." .social-icons a{border-color:".$content_typography['color'].";},.section-".$item." .social-icons i{color:".$content_typography['color'].";}.section-".$item." ul{text-align:".$content_typography['text-align']."}";
 		
 		
 		$css .= ".section-".$item."{background-image:url(".esc_url($background_image).");background-repeat:".esc_attr($background_repeat).";background-position:".esc_attr($background_position).";background-attachment:".esc_attr($background_attachment).";}";
@@ -466,12 +466,15 @@ $css .=  ".dotstyle{
 	
 	$autoscrolling = avata_option('autoscrolling');
 	$sticky_header_opacity_frontpage = avata_option('sticky_header_opacity_frontpage');
+	$navigation_background = avata_option('navigation_background');
 	
 	wp_localize_script( 'avata-main', 'avata_params', array(
 			'ajaxurl'  => esc_url(admin_url('admin-ajax.php')),
 			'menu_anchors'  => $anchors,
 			'autoscrolling' => esc_attr($autoscrolling),
-			'sticky_header_opacity_frontpage'  => esc_attr($sticky_header_opacity_frontpage),
+			//'sticky_header_opacity_frontpage'  => esc_attr($sticky_header_opacity_frontpage),
+			'navigation_background' => Kirki_Color::get_rgba( $navigation_background['background-color'], $sticky_header_opacity_frontpage ),
+			'sticky_navigation_background'  => sanitize_hex_color($navigation_background['background-color']),
 		));
 }
 
@@ -786,28 +789,6 @@ function avata_get_comments_number_str( $zero = false, $one = false, $more = fal
     return apply_filters('comments_number', $output, $number);
 }
 
- // Code before </head>
-	
- function avata_space_before_head(){
-	 
-   $space_before_head = avata_option('header_code');
-   echo wp_kses_post($space_before_head);
-   
- } 
-
-add_action('wp_head', 'avata_space_before_head'); 
-
-
- // Code before </body>
-	
- function avata_space_before_body(){
-	 
-   $space_before_body = avata_option('footer_code');
-   echo wp_kses_post($space_before_body);
-   
- } 
-
-add_action('wp_footer', 'avata_space_before_body'); 
 
 // Code before post content
  function avata_code_before_post(){

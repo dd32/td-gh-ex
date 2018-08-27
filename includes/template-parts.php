@@ -27,17 +27,19 @@ function avata_main_header(){
 		 <div class="'.$logo_class.'">
 		  <div class="site-logo-div">';
 		  
-	if ( $logo!="") { 
+	if ( $logo != "" ) { 
 		$html .= '<a class="custom-logo-link"  rel="home" itemprop="url" href="'.esc_url(home_url('/')).'"> <img src="'.esc_url($logo).'" class="site-logo" alt="'.get_bloginfo('name').'" /> </a>';
-	 } 
-	
-	$html .= '<div class="name-box">
-	<a href="'.esc_url(home_url('/')).'">
+	 }else{
+		 $html .= '<div class="name-box">
+		<a href="'.esc_url(home_url('/')).'">
 	  <h2 class="site-name">' .get_bloginfo('name').'</h2>
 	  </a> <span class="site-tagline">
 	  '.get_bloginfo('description').'
-	  </span> </div>
-		  </div>
+	  </span> </div>';
+	
+	}
+
+		$html .= ' </div>
 		</div>
 	  </div>
 	  <div class="header-right-wrapper">
@@ -95,13 +97,17 @@ function avata_featured_header(){
 		  
 	if ( $logo != "" ) { 
 		$html .= '<a class="custom-logo-link"  rel="home" itemprop="url" href="'.esc_url(home_url('/')).'"> <img src="'.esc_url($logo).'" class="site-logo" alt="'.get_bloginfo('name').'" /> </a>';
-	 } 
-	
-	$html .= '<div class="name-box">
+	 }else{
+		$html .= '<div class="name-box">
 	<a href="'.esc_url(home_url('/')).'"><h1 class="site-name">' .get_bloginfo('name').'</h1></a>
 	<span class="site-tagline">
 	  '.get_bloginfo('description').'
 	  </span> </div>
+		  '; 
+		 
+	}
+	
+	$html .= '
 		  </div>
 		</div>
 	  </div>
