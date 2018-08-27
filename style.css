@@ -4,7 +4,7 @@ Description: AyaMagazine is Fully Responsive Magazine WordPress Theme perfect fo
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayamagazine
-Version: 1.0.4
+Version: 1.0.5
 Text Domain: ayamagazine
 Tags: blog, news, three-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -26,7 +26,7 @@ body {
 	overflow:hidden;
 }
 
-input, select, textarea, button, #container .button {
+input, select, textarea, button, #main .button {
 	font-family:inherit;
 }
 
@@ -323,7 +323,7 @@ pre {
 /* main content */
 #main-content,
 #main-content-full,
-#container {
+#main {
 	overflow:hidden;
 	padding:10px 0 0 0;
 }
@@ -474,7 +474,7 @@ button {
 input[type="submit"],
 button,
 .btn,
-#container .button {
+#main .button {
 	padding:8px 12px;
 	text-decoration:none;
 	font-weight:normal;
@@ -497,7 +497,7 @@ button,
 
 input[type="submit"]:hover,
 button:hover,
-#container .button:hover,
+#main .button:hover,
 .btn:hover {
 	color:#ffffff;
 	background-image: -ms-linear-gradient(top, #FF9318 0%, #E86165 100%);
@@ -1355,7 +1355,7 @@ dt.gallery-icon > a:before,
 @media screen and (min-width: 800px) {
 	
 	#main-content,
-	#container {
+	#main {
 		float:left;
 		margin:0 0 20px 2%;
 		width:63%;
@@ -1643,7 +1643,7 @@ dt.gallery-icon > a:before,
 	}
 
 	#main-content,
-	#container {
+	#main {
 		float:none;
 		clear:both;
 		margin:0 2% 10px 2%;
@@ -1797,7 +1797,7 @@ dt.gallery-icon > a:before,
 	input[type="submit"],
 	button,
 	.btn,
-	#container .button {
+	#main .button {
 		padding:6px 8px;
 	}
 
@@ -1894,7 +1894,7 @@ dt.gallery-icon > a:before,
 
 	
 	#main-content,
-	#container,
+	#main,
 	#hdrtop-searchform-subcontent {
 		margin-left:0;
 	}

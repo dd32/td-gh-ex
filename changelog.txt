@@ -1,3 +1,7 @@
+AyaMagazine 1.0.5, 2018-08-27
+------------------------
+- updating screenshot.png according to the new WordPress.org requirements
+
 AyaMagazine 1.0.4, 2018-08-04
 ------------------------
 - remove default demo content
