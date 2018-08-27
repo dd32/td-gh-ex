@@ -1,0 +1,174 @@
+<?php
+/**
+ * The template for displaying all single posts
+ *
+ * @package WordPress
+ * @subpackage adventure_travelling
+ * @since 1.0
+ * @version 1.0
+ */
+
+get_header(); ?>
+
+<div class="container">
+	<div id="primary" class="content-area">
+		
+		<?php
+        $sidebar_layout = get_theme_mod( 'adventure_travelling_sidebar_post_layout','right');
+        if($sidebar_layout == 'left'){ ?>
+	        <div class="row">
+	          	<div class="col-md-4 col-sm-4" id="theme-sidebar"><?php dynamic_sidebar('sidebar-1');?></div>
+	          	<div class="col-md-8 col-sm-8">
+	           		<?php
+						/* Start the Loop */
+						while ( have_posts() ) : the_post();
+
+							get_template_part( 'template-parts/post/single-post');	?>
+
+							<div class="navigation">
+					          	<?php
+					              	// Previous/next page navigation.
+					              	the_posts_pagination( array(
+					                  	'prev_text'          => __( 'Previous page', 'adventure-travelling' ),
+					                  	'next_text'          => __( 'Next page', 'adventure-travelling' ),
+					                  	'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'adventure-travelling' ) . ' </span>',
+					              	) );
+					          	?>
+					        </div>
+
+						<?php endwhile; // End of the loop.
+					?>
+	          	</div>
+	        </div>
+	        <div class="clearfix"></div>
+	    <?php }else if($sidebar_layout == 'right'){ ?>
+	        <div class="row">
+	          	<div class="col-md-8 col-sm-8">	           
+		            <?php
+						/* Start the Loop */
+						while ( have_posts() ) : the_post();
+
+							get_template_part( 'template-parts/post/single-post'); ?>
+
+							<div class="navigation">
+					          	<?php
+					              	// Previous/next page navigation.
+					              	the_posts_pagination( array(
+					                  	'prev_text'          => __( 'Previous page', 'adventure-travelling' ),
+					                  	'next_text'          => __( 'Next page', 'adventure-travelling' ),
+					                  	'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'adventure-travelling' ) . ' </span>',
+					              	) );
+					          	?>
+					        </div>
+
+						<?php endwhile; // End of the loop.
+					?>
+	          	</div>
+	          	<div class="col-md-4 col-sm-4" id="theme-sidebar"><?php dynamic_sidebar('sidebar-1');?></div>
+	        </div>
+	    <?php }else if($sidebar_layout == 'full'){ ?>
+	        <div class="full">
+	           <?php
+					/* Start the Loop */
+					while ( have_posts() ) : the_post();
+
+						get_template_part( 'template-parts/post/single-post'); ?>
+
+						<div class="navigation">
+				          	<?php
+				              	// Previous/next page navigation.
+				              	the_posts_pagination( array(
+				                  	'prev_text'          => __( 'Previous page', 'adventure-travelling' ),
+				                  	'next_text'          => __( 'Next page', 'adventure-travelling' ),
+				                  	'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'adventure-travelling' ) . ' </span>',
+				              	) );
+				          	?>
+				        </div>
+
+					<?php endwhile; // End of the loop.
+				?>
+          	</div>
+	    <?php }else if($sidebar_layout == 'three-column'){ ?>
+	        <div class="row">
+	          	<div class="col-md-3 col-sm-3" id="theme-sidebar"><?php dynamic_sidebar('sidebar-1');?></div>
+	          	<div class="col-md-6 col-sm-6">	           
+		            <?php
+						/* Start the Loop */
+						while ( have_posts() ) : the_post();
+
+							get_template_part( 'template-parts/post/single-post'); ?>
+
+							<div class="navigation">
+					          	<?php
+					              	// Previous/next page navigation.
+					              	the_posts_pagination( array(
+					                  	'prev_text'          => __( 'Previous page', 'adventure-travelling' ),
+					                  	'next_text'          => __( 'Next page', 'adventure-travelling' ),
+					                  	'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'adventure-travelling' ) . ' </span>',
+					              	) );
+					          	?>
+					        </div>
+
+						<?php endwhile; // End of the loop.
+					?>
+	          	</div>
+	          	<div class="col-md-3 col-sm-3" id="theme-sidebar"><?php dynamic_sidebar('sidebar-2');?></div>
+	        </div>
+	    <?php }else if($sidebar_layout == 'four-column'){ ?>
+	        <div class="row">
+	          	<div class="col-md-3 col-sm-3" id="theme-sidebar"><?php dynamic_sidebar('sidebar-1');?></div>
+	          	<div class="col-md-3 col-sm-3">	           
+		            <?php
+						/* Start the Loop */
+						while ( have_posts() ) : the_post();
+
+							get_template_part( 'template-parts/post/single-post'); ?>
+
+							<div class="navigation">
+					          	<?php
+					              	// Previous/next page navigation.
+					              	the_posts_pagination( array(
+					                  	'prev_text'          => __( 'Previous page', 'adventure-travelling' ),
+					                  	'next_text'          => __( 'Next page', 'adventure-travelling' ),
+					                  	'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'adventure-travelling' ) . ' </span>',
+					              	) );
+					          	?>
+					        </div>
+
+						<?php endwhile; // End of the loop.
+					?>
+	          	</div>
+	          	<div class="col-md-3 col-sm-3" id="theme-sidebar"><?php dynamic_sidebar('sidebar-2');?></div>
+	          	<div class="col-md-3 col-sm-3" id="theme-sidebar"><?php dynamic_sidebar('sidebar-3');?></div>
+	        </div>
+	    <?php }else if($sidebar_layout == 'grid'){ ?>
+	        <div class="row">
+	          	<div class="col-md-9 col-sm-9">	           
+		            <?php
+						/* Start the Loop */
+						while ( have_posts() ) : the_post();
+
+							get_template_part( 'template-parts/post/single-post'); ?>
+
+							<div class="navigation">
+					          	<?php
+					              	// Previous/next page navigation.
+					              	the_posts_pagination( array(
+					                  'prev_text'          => __( 'Previous page', 'adventure-travelling' ),
+					                  'next_text'          => __( 'Next page', 'adventure-travelling' ),
+					                  'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'adventure-travelling' ) . ' </span>',
+					              	) );
+					          	?>
+					        </div>
+
+						<?php endwhile; // End of the loop.
+					?>
+	          	</div>
+	        	<div class="col-md-3 col-sm-3" id="theme-sidebar"><?php dynamic_sidebar('sidebar-1');?></div>
+	        </div>
+	    <?php } ?>
+
+	</div>
+</div>
+
+<?php get_footer();
