@@ -12,3 +12,7 @@
     box-shadow: none;
     border: none;
 }
+#accordion-section-cresta_blogghiamo_buy_pro h3 {
+	background-color: #000000 !important;
+	color: #ffffff !important;
+}

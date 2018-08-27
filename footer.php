@@ -12,7 +12,7 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info smallPart">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'blogghiamo' ) ); ?>">
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'blogghiamo' ) ); ?>">
 			<?php
 			/* translators: %s: WordPress name */
 			printf( esc_html__( 'Proudly powered by %s', 'blogghiamo' ), 'WordPress' );

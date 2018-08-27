@@ -263,7 +263,7 @@ function blogghiamo_color_primary_register( $wp_customize ) {
         		</span>
         	</p>
 			<p style="text-align:center;" class="blogghiamo-upgrade-button">
-				<a style="margin: 10px;" target="_blank" href="http://crestaproject.com/demo/blogghiamo-pro/" class="button button-secondary">
+				<a style="margin: 10px;" target="_blank" href="https://crestaproject.com/demo/blogghiamo-pro/" class="button button-secondary">
 					<?php esc_html_e('Watch the demo', 'blogghiamo'); ?>
 				</a>
 				<a style="margin: 10px;" target="_blank" href="https://crestaproject.com/downloads/blogghiamo/" class="button button-secondary">
@@ -369,7 +369,7 @@ function blogghiamo_custom_css_styles() {
 	.navigation.pagination .nav-links span.current	{
 		color: <?php echo esc_html($box_color_second); ?>;
 	}
-	@media screen and (max-width: 1024px) {
+	@media screen and (max-width: 1025px) {
 		.main-navigation ul li .indicator {
 			color: <?php echo esc_html($box_color_second); ?>;
 		}
