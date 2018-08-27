@@ -209,6 +209,11 @@ require get_template_directory() . '/inc/custom-metabox.php';
 require get_template_directory() . '/inc/accesspress-widgets.php';
 
 /**
+ * Load Options AP-Mag Widgets
+ */
+require get_template_directory() . '/css/style.php';
+
+/**
  * Load Welcome Page
  */
 require get_template_directory() . '/welcome/welcome.php';

@@ -95,6 +95,25 @@ function optionsframework_options() {
             'name' => __( 'Basic Settings', 'accesspress-mag' ),
             'type' => 'heading'
             );
+
+    /*----------------General settings--------------------------*/
+    $options[] = array(
+            'name' => __( 'General Settings', 'accesspress-mag' ),
+            'id'   => 'general_settings',
+            'type' => 'groupstart'
+            );
+    $options[] = array(
+            'name' => __( 'Template Color', 'accesspress-mag' ) ,
+            /* translators: %s : customizer page link */
+            'desc' => esc_html__( 'Set the Template Color for the site.', 'accesspress-mag' ),
+            'id'   => 'template_color',    
+            'default' => '#dc3522',
+            'type' => 'color',  
+            );
+    $options[] = array(
+            'type' => 'groupend'
+            );
+
     /*----------------Background settings--------------------------*/
     $options[] = array(
             'name' => __( 'Background Settings', 'accesspress-mag' ),

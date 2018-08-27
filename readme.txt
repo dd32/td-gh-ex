@@ -72,6 +72,9 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.5.0
+ * Added Template Color Option
+
 Version 2.4.9
  * Fixed Comment Section author email field issue
  * Fixed Latest Post Widget issue
