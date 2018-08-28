@@ -5,7 +5,7 @@ Theme URI: https://tishonator.com/product/fgymm
 Author: tishonator
 Author URI: https://tishonator.com
 Text Domain: fgymm
-Version: 1.6.7
+Version: 1.6.8
 Tags: blog, entertainment, news, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -27,7 +27,7 @@ body {
 	overflow:hidden;
 }
 
-input, select, textarea, button, #container .button {
+input, select, textarea, button, #main .button {
 	font-family:inherit;
 }
 
@@ -376,7 +376,7 @@ aside {
 /* main content */
 #main-content,
 #main-content-full,
-#container {
+#main {
 	overflow:hidden;
 	padding:5px 0 0 0;
 }
@@ -689,7 +689,7 @@ input[type="submit"] {
 input[type="submit"],
 .search-button,
 .btn,
-#container .button {
+#main .button {
 	padding:8px 12px;
 	text-decoration:none;
 	font-weight:normal;
@@ -712,7 +712,7 @@ input[type="submit"],
 
 input[type="submit"]:hover,
 .search-button:hover,
-#container .button:hover,
+#main .button:hover,
 .btn:hover {
 	color:#ffffff;
 	background-image: -ms-linear-gradient(top, #08ab0f 0%, #81b441 100%);
@@ -1584,7 +1584,7 @@ img.wp-post-image {
 @media screen and (min-width: 800px) {
 	
 	#main-content,
-	#container {
+	#main {
 		float:left;
 		margin:0 0 20px 2%;
 		width:63%;
@@ -1943,7 +1943,7 @@ img.wp-post-image {
 	}
 
 	#main-content,
-	#container {
+	#main {
 		float:none;
 		clear:both;
 		margin:0 2% 10px 2%;
@@ -2166,7 +2166,7 @@ img.wp-post-image {
 	input[type="submit"],
 	.search-button,
 	.btn,
-	#container .button {
+	#main .button {
 		padding:6px 8px;
 	}
 
@@ -2339,7 +2339,7 @@ img.wp-post-image {
 	}
 	
 	#main-content,
-	#container {
+	#main {
 		margin-left:0;
 	}
 	

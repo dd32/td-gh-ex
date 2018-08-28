@@ -1,3 +1,7 @@
+fGymm 1.6.8, 2018-08-28
+------------------------
+- update screenshot according to latest WordPress requirements for screenshot
+
 fGymm 1.6.7, 2018-08-04
 ------------------------
 - display slider and homepage widgets only on static homepage
