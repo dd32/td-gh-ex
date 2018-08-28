@@ -1,3 +1,7 @@
+fCorpo 1.1.5, 2018-08-28
+------------------------
+- update screenshot according to latest WordPress requirements for screenshot
+
 fCorpo 1.1.4, 2018-08-04
 ------------------------
 - display slider and homepage widgets only on static homepage

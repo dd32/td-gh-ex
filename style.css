@@ -4,7 +4,7 @@ Description: fCorpo a perfect choice for your Corporate, Business, Company, Port
 Theme URI: https://tishonator.com/product/fcorpo
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 1.1.4
+Version: 1.1.5
 Text Domain: fcorpo
 Tags: blog, news, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, post-formats, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
@@ -26,7 +26,7 @@ body {
 	overflow:hidden;
 }
 
-input, select, textarea, button, #container .button {
+input, select, textarea, button, #main .button {
 	font-family:inherit;
 }
 
@@ -401,7 +401,7 @@ aside {
 /* main content */
 #main-content,
 #main-content-full,
-#container {
+#main {
 	overflow:hidden;
 	padding:10px 0 0 0;
 }
@@ -726,7 +726,7 @@ button {
 input[type="submit"],
 button,
 .btn,
-#container .button {
+#main .button {
 	padding:8px 12px;
 	text-decoration:none;
 	font-weight:normal;
@@ -750,7 +750,7 @@ button,
 .button:hover,
 input[type="submit"]:hover,
 button:hover,
-#container .button:hover,
+#main .button:hover,
 .btn:hover {
 	color:#ffffff;
 	background-image: -ms-linear-gradient(top, #a81010 0%, #c3512f 100%);
@@ -1605,7 +1605,7 @@ img.wp-post-image {
 	}
 	
 	#main-content,
-	#container {
+	#main {
 		float:left;
 		margin:0 0 20px 2%;
 		width:63%;
@@ -1903,7 +1903,7 @@ img.wp-post-image {
 	}
 
 	#main-content,
-	#container {
+	#main {
 		float:none;
 		clear:both;
 		margin:0 2% 10px 2%;
@@ -2110,7 +2110,7 @@ img.wp-post-image {
 
 	input[type="submit"],
 	.btn,
-	#container .button {
+	#main .button {
 		padding:6px 8px;
 	}
 
@@ -2280,7 +2280,7 @@ img.wp-post-image {
 	}
 	
 	#main-content,
-	#container {
+	#main {
 		margin-left:0;
 	}
 	
