@@ -5,7 +5,7 @@ Theme URI: https://sampression.com/themes/sampression-lite/
 Author: Sampression
 Author URI: https://www.sampression.com
 
-Version: 2.2
+Version: 2.2.1
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 */
@@ -252,7 +252,10 @@ Version 2.2
 = Added: Customizer Important Links
 = Added: Demo Data Import
 = Added: TGM Plugin Activation
-= Fixed: Images Optmized 
+= Fixed: Images Optimized 
+
+Version 2.2.1
+= Fixed: Style Sheet Updated
 
  == Child Theme Support ===
  Sampresson Lite supports child themes. Please use child themes for customization of "Sampression Lite". For further reading: https://codex.wordpress.org/Child_Themes.
