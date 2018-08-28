@@ -42,6 +42,9 @@ Activiation and Use
 
 == Changelog ==
 
+= 1.4.0 =
+* update screenshot according to latest WordPress requirements for screenshot
+
 = 1.3.9 =
 * display slider and homepage widgets only on static homepage
 * remove default widgets content
