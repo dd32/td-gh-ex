@@ -4,7 +4,7 @@ Tags: Blog, Custom Background, Custom Logo, Custom Menu, Custom-Colors, Custom H
 
 Requires at least: 4.9
 Tested up to: 4.9.8
-Stable tag: 1.0.0
+Stable tag: 1.0.4
 
 Author URI:  https://www.coothemes.com/
 Theme URI:  https://www.coothemes.com/theme-best-restaurant/
@@ -69,6 +69,8 @@ Theta provides support at https://www.coothemes.com/forum/theta-all-theme/
 
 
 === Changelog ===
+=version 1.0.4 20180828=
+
 =version 1.0.3 20180824=
 
 =version 1.0.2 20180822=
