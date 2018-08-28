@@ -1,6 +1,4 @@
 <?php
-// Exit if accessed directly
-if ( !defined('ABSPATH')) exit;
 /**
  * The template for displaying the footer.
  *
@@ -9,22 +7,22 @@ if ( !defined('ABSPATH')) exit;
  */
 ?>
 
- </div>
+</div>
 </div>
 <!-- #content-wrapper -->
 
-   <?php get_sidebar(); ?>
+<?php get_sidebar(); ?>
 
-	<footer id="footer">
-		<div class="container">
-			<div class="columns twelve">
-	            <?php do_action( 'sampression_credits' ); ?>
-	            <div id="btn-top-wrapper">
+<footer id="footer">
+	<div class="container">
+		<div class="columns twelve">
+			<?php do_action( 'sampression_credits' ); ?>
+			<div id="btn-top-wrapper">
 				<a href="javascript:pageScroll('.top');" class="btn-top"></a>
-				</div>
 			</div>
-		</div><!--.container-->
-	</footer><!--#footer-->
-	<?php wp_footer(); ?>
+		</div>
+	</div><!--.container-->
+</footer><!--#footer-->
+<?php wp_footer(); ?>
 </body>
 </html>

@@ -1,6 +1,6 @@
 # Sampression Lite Translation Master File
 # License: GNU General Public License v2 or later
-# License URI: http://www.gnu.org/licenses/gpl-2.0.html
+# License URI: https://www.gnu.org/licenses/gpl-2.0.html
 msgid ""
 msgstr ""
 "Project-Id-Version: Sampression Lite\n"
@@ -360,7 +360,7 @@ msgid "Proudly powered by"
 msgstr ""
 
 #: includes/functions.php:206
-msgid "http://wordpress.org/"
+msgid "https://wordpress.org/"
 msgstr ""
 
 #: includes/functions.php:206
@@ -372,7 +372,7 @@ msgid "A theme by"
 msgstr ""
 
 #: includes/functions.php:213
-msgid "http://www.sampression.com/"
+msgid "https://www.sampression.com/"
 msgstr ""
 
 #: includes/functions.php:213
