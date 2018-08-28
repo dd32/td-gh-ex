@@ -1,3 +1,7 @@
+fKidd 1.8.8, 2018-08-28
+------------------------
+- update screenshot according to latest WordPress requirements for screenshot
+
 fKidd 1.8.7, 2018-08-05
 ------------------------
 - fix issue with social sites RSS feeds
