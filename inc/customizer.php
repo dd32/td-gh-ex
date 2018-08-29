@@ -49,6 +49,19 @@ function animals_sanitize_checkbox( $input ) {
 		))
 	);
 	
+	$wp_customize->add_setting('footer_color', array(
+		'default' => '#191e1e',
+		'sanitize_callback'	=> 'sanitize_hex_color',
+	));
+	
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control($wp_customize,'footer_color',array(
+			'description'	=> __('Select background color for footer.','animals'),
+			'section' => 'colors',
+			'settings' => 'footer_color'
+		))
+	);
+	
 	$wp_customize->add_section('social_section',array(
 		'title'	=> __('Social Links','animals'),
 		'description'	=> __('Add your social links here.','animals'),
@@ -234,6 +247,9 @@ function animals_css(){
 					background-color:<?php echo esc_html(get_theme_mod('color_scheme','#fc9530')); ?>;
 				}
 				.shaper{ border-top:70px solid <?php echo esc_html(get_theme_mod('color_scheme','#fc9530')); ?>;}
+				.copyright-wrapper{
+					background-color:<?php echo esc_html(get_theme_mod('footer_color','#191e1e')); ?>;
+				}
 		</style>
 	<?php }
 add_action('wp_head','animals_css');

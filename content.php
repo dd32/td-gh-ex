@@ -9,7 +9,7 @@
             <h2 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h2>
             <?php if ( 'post' == get_post_type() ) : ?>
                 <div class="postmeta">
-                	<div class="post-date"><i class="fa fa-user"></i> <?php _e('By','animals'); ?> <?php echo get_the_author(); ?></div><!-- post-date -->  |
+                	<div class="post-date"><i class="fa fa-user"></i> <?php esc_html_e('By','animals'); ?> <?php echo get_the_author(); ?></div><!-- post-date -->  |
                     <div class="post-date"><i class="fa fa-calendar"></i> <?php echo get_the_date(); ?></div><!-- post-date -->
                     <div class="post-comment"> | <i class="fa fa-comments"></i> <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a></div>
                     <div class="post-categories"> | <i class="fa fa-sitemap"></i> <?php the_category( __( ', ', 'animals' )); ?></div>
@@ -27,7 +27,7 @@
         <?php if ( is_search() || !is_single() ) : // Only display Excerpts for Search ?>
             <div class="entry-summary">
                 <?php the_excerpt(); ?>
-                <p class="read-more"><a href="<?php the_permalink(); ?>"><?php _e('Read More &raquo;','animals'); ?></a></p>
+                <p class="read-more"><a href="<?php the_permalink(); ?>"><?php esc_attr_e('Read More &raquo;','animals'); ?></a></p>
             </div><!-- .entry-summary -->
         <?php else : ?>
             <div class="entry-content">
@@ -49,7 +49,7 @@
                     if ( $categories_list && animals_categorized_blog() ) :
                 ?>
                 <span class="cat-links">
-                    <?php printf( __( 'Posted in %1$s', 'animals' ), $categories_list ); ?>
+                    <?php printf( esc_attr_e( 'Posted in %1$s', 'animals' ), esc_attr($categories_list) ); ?>
                 </span>
                 <?php endif; // End if categories ?>
     
@@ -59,7 +59,7 @@
                     if ( $tags_list ) :
                 ?>
                 <span class="tags-links">
-                    <?php printf( __( 'Tagged %1$s', 'animals' ), $tags_list ); ?>
+                    <?php printf( esc_attr_e( 'Tagged %1$s', 'animals' ), esc_attr($tags_list) ); ?>
                 </span>
                 <?php endif; // End if $tags_list ?>
             <?php endif; // End if 'post' == get_post_type() ?>

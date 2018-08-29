@@ -29,11 +29,11 @@
 
 										<?php $description = get_bloginfo( 'description', 'display' );
 										if ( $description || is_customize_preview() ) : ?>
-										<p><?php echo $description; ?></p>
+										<p><?php echo esc_attr($description); ?></p>
 										<?php endif; ?>
                                     </div><!--logo-->					                  
                                     <div class="toggle">
-                                        <a class="toggleMenu" href="#"><?php _e('Menu','animals'); ?></a>
+                                        <a class="toggleMenu" href="#"><?php esc_html_e('Menu','animals'); ?></a>
                                     </div> 						
                                     <div class="main-nav">
                                         <?php wp_nav_menu( array('theme_location'  => 'primary', 'fallback_cb' => false) ); ?>							
@@ -66,9 +66,9 @@
             $i=1;
             foreach($img_arr as $url){ ?>
             <?php if(!empty($url)){ ?>
-            <img src="<?php echo $url; ?>" title="#slidecaption<?php echo $i; ?>" />
+            <img src="<?php echo esc_url($url); ?>" title="#slidecaption<?php echo esc_attr($i); ?>" />
             <?php }else{ ?>
-            <img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/slides/default-slide.jpg" title="#slidecaption<?php echo $i; ?>" />
+            <img src="<?php echo esc_url( get_template_directory_uri() ) ; ?>/images/slides/default-slide.jpg" title="#slidecaption<?php echo esc_attr($i); ?>" />
             <?php } ?>
             <?php $i++; }  ?>
         </div>   
@@ -79,10 +79,10 @@
 		$post = get_post($id); 
 		$content = apply_filters('the_content', substr(strip_tags($post->post_content), 0, 150)); 
 ?>                 
-<div id="slidecaption<?php echo $i; ?>" class="nivo-html-caption">
+<div id="slidecaption<?php echo esc_attr($i); ?>" class="nivo-html-caption">
     <div class="top-bar">
-    	<h2><?php echo $title; ?></h2>
-    	<?php echo $content; ?>
+    	<h2><?php echo esc_attr($title); ?></h2>
+    	<?php echo esc_attr($content); ?>
     	<a class="read-more" href="<?php the_permalink(); ?>"><?php echo esc_html(get_theme_mod('slidelink_text',__('Read More','animals'))); ?></a>
     </div>
 </div>      

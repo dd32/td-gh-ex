@@ -11,7 +11,7 @@
 
     <div class="entry-content">
         <div class="postmeta">
-                	<div class="post-date"><i class="fa fa-user"></i> <?php _e('By','animals'); ?> <?php echo get_the_author(); ?></div><!-- post-date -->  |
+                	<div class="post-date"><i class="fa fa-user"></i> <?php esc_html_e('By','animals'); ?> <?php echo get_the_author(); ?></div><!-- post-date -->  |
                     <div class="post-date"><i class="fa fa-calendar"></i> <?php echo get_the_date(); ?></div><!-- post-date -->
                     <div class="post-comment"> | <i class="fa fa-comments"></i> <a href="<?php comments_link(); ?>"><?php comments_number(); ?></a></div>
                     <div class="post-categories"> | <i class="fa fa-sitemap"></i> <?php the_category( __( ', ', 'animals' )); ?></div>

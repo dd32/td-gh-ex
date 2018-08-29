@@ -11,10 +11,10 @@ get_header(); ?>
     <div class="middle-align">
         <div class="error-404 not-found" id="sitefull">
             <header class="page-header">
-                <h1 class="title-404"><?php _e( '<strong>404</strong> Not Found', 'animals' ); ?></h1>
+                <h1 class="title-404"><?php esc_attr_e( '<strong>404</strong> Not Found', 'animals' ); ?></h1>
             </header><!-- .page-header -->
             <div class="page-content">
-                <p class="text-404"><?php _e( 'Looks like you have taken a wrong turn.....<br />Don\'t worry... it happens to the best of us.', 'animals' ); ?></p>
+                <p class="text-404"><?php esc_attr_e( 'Looks like you have taken a wrong turn.....<br />Don\'t worry... it happens to the best of us.', 'animals' ); ?></p>
                 
             </div><!-- .page-content -->
         </div>

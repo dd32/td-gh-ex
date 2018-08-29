@@ -12,7 +12,7 @@
 	<?php if (has_post_thumbnail()) : ?>
 		<a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('animals-homepage-thumb'); ?></a>
 	<?php else: ?>	
-		<a href="<?php the_permalink(); ?>"><img src="<?php echo get_stylesheet_directory_uri()."/images/dthumb.jpg"; ?>"></a>
+		<a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url(get_stylesheet_directory_uri())."/images/dthumb.jpg"; ?>"></a>
 	<?php endif; ?>	
 	</div>
 	
@@ -21,7 +21,7 @@
 		<?php 
 			if (strlen(get_the_title()) >= 85) { ?>
 				<h1 class="entry-title"><a href="<?php the_permalink(); ?>" data-title="<?php the_title(); ?>" rel="bookmark">
-		<?php echo substr(get_the_title(), 0, 84)."...";
+		<?php echo esc_attr(substr(get_the_title(), 0, 84))."...";
 		}
 				
 			else { ?>
