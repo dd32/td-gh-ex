@@ -1,0 +1,39 @@
+/*!
+Theme Name: Azauthority
+Theme URI: https://theaztheme.com/themes/azauthority/
+Author: The AZ Theme Team
+Author URI: https://theaztheme.com
+Description: AZ Authority is a fast, lightweight, mobile responsive WordPress theme built with speed, SEO Optimize. AZ Authority helps your authority site increase traffic, engage your visitors and Double Up earning. Demo: https://demo.theaztheme.com
+Version: 1.1.2
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: azauthority
+Tags: news, blog, two-columns, left-sidebar, right-sidebar, custom-colors, custom-menu, custom-logo, custom-background, featured-images, footer-widgets, theme-options, threaded-comments
+
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+
+// Bourbon
+// See: http://bourbon.io/docs/
+@import 'bourbon';
+
+// Susy
+// Susy grid system. See: http://susydocs.oddbird.net/en/latest/
+@import 'node_modules/susy/sass/susy';
+
+// Vendors
+@import 'assets/css/sass/vendors/modular-scale';
+
+// Add ons
+@import "sass/addons/_line-awesome-font-awesome";
+
+// Utilities
+// Sass tools and helpers used across the project.
+@import 'sass/utils/variables';
+@import 'sass/utils/mixins/mixins';
+
+// Base
+// Includes all the main AZAuthority css.
+@import "sass/partials/partials";
+@import 'sass/base/layout';

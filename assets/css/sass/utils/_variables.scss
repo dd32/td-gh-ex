@@ -1,0 +1,93 @@
+// Base color
+$color_border:		rgba(0,0,0,0.05);
+
+// layout sizes
+$desktop:			768px;
+$handheld:			650px;
+$container-width:	1170px;
+$responsive-width:  1230px;
+$single-container-width:   900px;
+$max-screen: 820px;
+
+$susy: (
+	columns: 12,
+	gutters: 1,
+	math: fluid,
+	output: float,
+	gutter-position: after,
+
+	use-custom: (
+		box-sizing: false
+	)
+);
+
+/*--------------------------------------------------------------
+# Layout Breakpoints
+--------------------------------------------------------------*/
+$desktop				: 970px;
+$laptop					: 768px;
+
+/*--------------------------------------------------------------
+# Font Sizes
+--------------------------------------------------------------*/
+$default-font-size		: 18;
+
+/*--------------------------------------------------------------
+# Font Families
+--------------------------------------------------------------*/
+$body-font				: 'PT Serif', Georgia, sans-serif; //Georgia, Times, "Times New Roman", serif; //Arial, Helvetica, sans-serif; //Georgia, Times, "Times New Roman", serif;//'PT Serif', serif;
+$heading-font			: 'Poppins', sans-serif;
+$widget-font			: 'p', sans-serif;
+$icon-font				: 'FontAwesome';
+
+/*--------------------------------------------------------------
+# Grid
+--------------------------------------------------------------*/
+$grid-columns			: 12;
+
+/*--------------------------------------------------------------
+# Color
+--------------------------------------------------------------*/
+$black-color			: #000000;
+$black-10				: rgba($black-color, 0.1);
+$black-20				: rgba($black-color, 0.2);
+$black-30				: rgba($black-color, 0.3);
+$black-40				: rgba($black-color, 0.4);
+$black-50				: rgba($black-color, 0.5);
+$black-60				: rgba($black-color, 0.6);
+$black-70				: rgba($black-color, 0.7);
+$black-80				: rgba($black-color, 0.8);
+$black-90				: rgba($black-color, 0.9);
+
+$white-color			: #ffffff;
+$white-10				: rgba($white-color, 0.1);
+$white-20				: rgba($white-color, 0.2);
+$white-30				: rgba($white-color, 0.3);
+$white-40				: rgba($white-color, 0.4);
+$white-50				: rgba($white-color, 0.5);
+$white-60				: rgba($white-color, 0.6);
+$white-70				: rgba($white-color, 0.7);
+$white-80				: rgba($white-color, 0.8);
+$white-90				: rgba($white-color, 0.9);
+
+
+$body-bg-color			: #ffffff;
+$body-color				: #333333;
+
+$default-color			: $black-color;
+$heading-color			: $black-color;
+
+$link-color				: #cc0000;
+
+$meta-color				: #999999;
+$meta-color-hover		: $link-color;
+
+$button-bg-color		: $black-color;
+$button-bg-color-hover	: $body-color;
+$button-color			: $white-color;
+
+$input-bg-color			: #dcdcdc;
+$input-bg-color-focus	: #ebebeb;
+$input-color			: $black-color;
+
+$border-color			: $black-20;

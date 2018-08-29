@@ -1,0 +1,104 @@
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
+.sub-arrow {
+		display: none;
+		color: #fff;
+		position: absolute;
+		right: 16px;
+		top: 14px;
+		cursor: pointer;
+}
+.main-navigation {
+	float: left;
+	-webkit-transition: all 0.35s ease;
+	-ms-transition: all 0.35s ease;
+	transition: all 0.35s ease;
+	background: #0e0e0e;
+	position: fixed;
+	height: 100%;
+	width: 280px;
+	left: 0;
+	top: 70px;
+	-webkit-transform: translateX(-100%);
+	-ms-transform: translateX(-100%);
+	transform: translateX(-100%);
+	z-index: 99999;
+
+ 	.sub-arrow {
+		display: block;
+	}
+
+
+	ul {
+		width: 100%;
+		list-style: none;
+		float: right;
+		margin: 0;
+		padding: 0;
+	}
+
+	li {
+		position: relative;
+		text-align: left;
+	}
+
+	a {
+		display: block;
+		text-decoration: none;
+		color: #ffffff;
+		height: 3.5em;
+		line-height: 3.5em;
+		padding: 0 0.75em;
+		border-bottom: 1px solid rgba(255,255,255,0.3);
+	}
+
+	li li a {
+		height: auto;
+		line-height: auto;
+	}
+
+	ul ul {
+		display: none;
+	}
+}
+
+.menu-toggle {
+	position: absolute;
+	top: 20px;
+	left: 20px;
+	-webkit-transform: rotate(0);
+	-moz-transform: rotate(0);
+	-o-transform: rotate(0);
+	transform: rotate(0);
+	-webkit-transition: .5s ease-in-out;
+	-moz-transition: .5s ease-in-out;
+	-o-transition: .5s ease-in-out;
+	transition: .5s ease-in-out;
+	cursor: pointer;
+	width: 40px;
+	height: 40px;
+}
+
+body.nav-open {
+	overflow: hidden;
+
+	&:before {
+		content: '';
+		position: fixed;
+		top: 0;
+		left: 0;
+		background: $black-color;
+		width: 100%;
+		height: 100%;
+		opacity: 0.5;
+		z-index: 2;
+	}
+
+	.main-navigation {
+		-webkit-transform: translateX(0);
+		-ms-transform: translateX(0);
+		transform: translateX(0);
+	}
+
+}

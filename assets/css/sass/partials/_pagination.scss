@@ -1,0 +1,21 @@
+/*--------------------------------------------------------------
+# Pagination
+--------------------------------------------------------------*/
+.pagination-default {
+	width: 100%;
+
+	.nav-previous,
+	.nav-next {
+		float: left;
+
+		a {
+			@include default-button();
+		}
+	}
+
+	.nav-next {
+		float: right;
+	}
+
+
+}

@@ -1,0 +1,30 @@
+/*--------------------------------------------------------------
+# EM Units with PX fallback
+# example: @include em("margin", 10, 5, 10, 5);
+# example: @include em("font-size", 14);
+--------------------------------------------------------------*/
+
+@mixin em($property, $values...) {
+	$n: length($values);
+	$i: 1;
+
+	//$pxlist: ();
+	$emlist: ();
+
+	@while $i <= $n {
+		$itemVal: (nth($values, $i));
+		@if $itemVal != "auto"{
+			//$pxlist: append($pxlist, $itemVal + px);
+			//$emlist: append($emlist, ($itemVal / 10) + em); // Use this if you've set HTML font size value to 62.5%
+			$emlist: append($emlist, ($itemVal / 16) + em);
+		} @else {
+			//$pxlist: append($pxlist, auto);
+			$emlist: append($emlist, auto);
+		}
+
+		$i: $i + 1;
+	}
+
+	//#{$property}: $pxlist;
+	#{$property}: $emlist;
+}

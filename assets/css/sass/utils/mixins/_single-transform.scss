@@ -1,0 +1,10 @@
+/*--------------------------------------------------------------
+# Single Transform
+# example: @include flat-button($greyBlue, white, 5px 15px);
+--------------------------------------------------------------*/
+
+@mixin single-transform($deg) {
+	-webkit-transform:rotate($deg);
+		-ms-transform:rotate($deg);
+	        transform:rotate($deg);
+}

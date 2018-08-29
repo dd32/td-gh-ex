@@ -1,0 +1,53 @@
+/*--------------------------------------------------------------
+# Accordion
+--------------------------------------------------------------*/
+.accordiongr {
+	width: 100%;
+	position: relative;
+	margin: 0 0 30px 0;
+
+
+	.agr-item {
+		width: 100%;
+		position: relative;
+		border: 1px solid $black-10;
+		margin: 0 0 2px 0;
+
+		.agr-title h3 {
+			position: relative;
+			background: #f5f5f5;
+			@include em('font-size', 18);
+			font-weight: normal;
+			margin: 0;
+			padding: 10px 25px 10px 20px;
+			cursor: pointer;
+
+			&:before {
+				font-family: $icon-font;
+				content: '\f184';
+				position: absolute;
+				right: 20px;
+				top: 50%;
+				margin-top: -12px;
+			}
+		}
+
+		&.agr-open {
+
+			h3:before {
+				content: '\f187';
+			}
+
+			.agr-description {
+				//display: block;
+			}
+
+		}
+
+		.agr-description {
+			display: none;
+			padding: 15px;
+		}
+	}
+
+}
