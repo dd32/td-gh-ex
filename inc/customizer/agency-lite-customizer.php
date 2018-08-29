@@ -104,7 +104,7 @@
 
 		$wp_customize->add_setting('agency_lite_slider_page_'.$home_slider.'_control',array(
 			'sanitize_callback' => 'absint',
-			'default'			=> ''
+			'default'			=> 0
 		));
 
 		$wp_customize->add_control('agency_lite_slider_page_'.$home_slider.'_control',array(
@@ -249,6 +249,7 @@
 
     $wp_customize->add_setting( 'agency_lite_about_page', array(
 	    'sanitize_callback' => 'absint',
+	    'default' => 0,
 	));
 
 
