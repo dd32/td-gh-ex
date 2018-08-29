@@ -47,6 +47,10 @@ Images
 
 
 == Changelog ==
+
+= 2.3.3 =
+** Added Dynamic Color Option
+
 = 2.3.1 =
 ** Minor Bug Fixes
 

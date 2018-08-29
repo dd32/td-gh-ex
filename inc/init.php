@@ -62,9 +62,14 @@ require $accesspress_store_customizer_file_path = accesspress_store_file_directo
 require $accesspress_store_widget_file_path = accesspress_store_file_directory('inc/widgets/accesspress-widget.php');
 
 /**
- * Load Welcome Page
+ * Load Woocommerce Hooks Page
 */
 require $accesspress_store_woocommerce_hooks_file_path = accesspress_store_file_directory('woocommerce/woocommerce-hooks.php');
+
+/**
+ * Load Dynamic Styles
+*/
+require $accesspress_store_woocommerce_hooks_file_path = accesspress_store_file_directory('css/style.php');
 
 /**
  * Load Welcome Page

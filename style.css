@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 2.3.2
+Version: 2.3.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -3496,12 +3496,12 @@ Responsive grid for pages
     cursor: pointer;
 }
 .aptf-tweet-content a {
-    color: #e24545 !important;
+    color: #e24545;
     font-size: 15px !important;
     line-height: 22px !important;
 }
 .aptf-tweet-content .aptf-tweet-name {
-    color: #e24545 !important;
+    color: #e24545;
     font-size: 15px !important;
     line-height: 20px !important;
     font-weight: 400 !important;
@@ -3921,19 +3921,19 @@ ul.products.list li.product .woocommerce-product-details__short-description{
     color: #ffffff !important;
 }
 .woocommerce .gridlist-buttonwrap .add_to_cart_button {
-    background: #e24545 !important;
+    background: #e24545;
     border: 2px solid #e24545;
     color: #fff !important;
 }
 .woocommerce ul.products li.product .price-cart .gridlist-buttonwrap a.button:hover,
 .woocommerce ul.products li.product .price-cart .added_to_cart:hover {
-    color: #e24545 !important;
-    background: #ffffff !important;
+    color: #e24545;
+    background: #ffffff;
     opacity: 1;
     border: 2px solid #e24545;
 }
 .woocommerce ul.products li.product .price-cart .gridlist-buttonwrap a.button:hover:before {
-    color: #e24545 !important;
+    color: #e24545;
 }
 .woocommerce .woocommerce-message {
     border: none;
@@ -3946,14 +3946,14 @@ ul.products.list li.product .woocommerce-product-details__short-description{
 .woocommerce a.button:hover,
 .woocommerce button.button:hover,
 .woocommerce input.button:hover {
-    color: #C05860 !important;
-    background: #FFF !important;
+    color: #C05860;
+    background: #FFF;
 }
 .woocommerce #respond input#submit,
 .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button {
-    background: #e24545 !important;
+    background: #e24545;
     color: #FFF !important;
     border-radius: 0px !important;
     border: 2px solid #e24545;
@@ -5034,7 +5034,7 @@ span.onsale:after,
 }
 
 .feature-prod-wrap a:hover{
-    color: #fff
+    color: #fff !important;
 }
 .new-prod-slide .slick-slide .item-wishlist:hover {
     background: #e24545;
@@ -5666,7 +5666,7 @@ li.cat-parent {
     width: 92%;
 }
 .woocommerce .widget_price_filter .ui-slider .ui-slider-range {
-    background-color: #cb3e3e !important;
+    background-color: #cb3e3e;
     border-radius: 0px;
 }
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
@@ -5688,7 +5688,7 @@ li.cat-parent {
 .woocommerce.widget_price_filter .price_slider_wrapper .price_slider_amount button {
     float: right;
     border-radius: 0px !important;
-    background: #e24545 !important;
+    background: #e24545;
     font-size: 14px;
     line-height: 36px;
     color: #ffffff;
@@ -5701,7 +5701,7 @@ li.cat-parent {
 .woocommerce .widget_price_filter .price_slider_amount button:hover {
     opacity: 1;
     background: #FFFFFF !important;
-    color: #E24545 !important;
+    color: #E24545;
     border: 2px solid #e24545;
 }
 .woocommerce.widget_price_filter .price_slider_wrapper .price_label {
@@ -5838,7 +5838,10 @@ ul.products.list li.product:last-child {
 }
 .gridlist-toggle a#grid.active,
 .gridlist-toggle a#grid:hover {
-    background: url("images/active.png") no-repeat scroll center center #e24545 !important;
+    background-image: url("images/active.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-color: #e24545;
     margin: 0px 5px;
 }
 .gridlist-toggle a#list {
@@ -5994,7 +5997,7 @@ ul.products.list li.product:last-child {
     font-family: 'Lato';
 }
 .content-area nav .nav-links a {
-    background: #e24545 !important;
+    background: #e24545;
 }
 .content-area #respond {
     background: #ffffff !important;

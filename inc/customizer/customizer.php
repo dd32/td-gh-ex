@@ -50,6 +50,18 @@ function accesspress_store_customize_register( $wp_customize ) {
 		)
 	);
 
+	$wp_customize->add_setting( 'tpl_color', array( 'default' => '#e24545', 'sanitize_callback' => 'sanitize_hex_color' ) );
+	$wp_customize->add_control( 
+	    new WP_Customize_Color_Control( 
+	    $wp_customize, 
+	    'tpl_color', 
+	    array(
+	        'label'      => __( 'Template Color', 'accesspress-store' ),
+	        'section'    => 'colors',
+	        'settings'   => 'tpl_color',
+	    ) ) 
+	);
+
 }
 add_action( 'customize_register', 'accesspress_store_customize_register' );
 
