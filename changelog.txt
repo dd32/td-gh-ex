@@ -1,5 +1,8 @@
 Best WP Changelog
 
+= 1.1.8 - August 30 2018 =
+* ADDED: New Screenshot
+
 = 1.1.7 - June 27 2018 =
 * ADDED: Premium Feature
 

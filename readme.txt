@@ -1,9 +1,9 @@
 == Best WP ==
 Contributors: Tsvetomir Tsvetanov
 Tags: two-columns, left-sidebar, grid-layout, flexible-header, custom-background, custom-menu, custom-colors, editor-style, featured-image-header, featured-images, threaded-comments, blog, news, portfolio
-Requires at least: 4.9.7
-Tested up to: 4.9.7
-Stable tag: 1.1.7
+Requires at least: 4.9.8
+Tested up to: 4.9.8
+Stable tag: 1.1.8
 Author URI: https://seosthemes.info/best-wordpress-theme/
 Theme URI: https://seosthemes.com/best-wordpress-theme/
 License: GNU General Public License version 3.0
