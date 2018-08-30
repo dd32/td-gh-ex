@@ -6,7 +6,7 @@
  */
 
 // Declare latest theme version
-$GLOBALS['alante_thinkup_theme_version'] = '1.1.4';
+$GLOBALS['alante_thinkup_theme_version'] = '1.1.5';
 
 // Setup content width 
 function alante_thinkup_content_width() {
