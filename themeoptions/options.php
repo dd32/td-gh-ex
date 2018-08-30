@@ -319,6 +319,13 @@
 	            'subtitle'=> __('Disabling this will just show the icon.', 'ascend'),
 	            'default' => 0,
             ),
+            array(
+				'id'=>'header_extras_search_woo',
+				'type' => 'switch', 
+				'title' => __('Search only Products?', 'ascend'),
+				'subtitle'=> __('Make the header search only products', 'ascend'),
+				'default' => 0,
+			),
 	    ),
 
 ) );
@@ -718,14 +725,6 @@ Redux::setSection( $opt_name, array(
             	'none' => __('None', 'ascend'),
 				),
             'default' => 'none',
-            'required' => array('site_layout','=','above'),
-        ),
-        array(
-            'id'=>'topbar_search_woo',
-            'type' => 'switch', 
-            'title' => __('Search only Products?', 'ascend'),
-            'subtitle'=> __('Make the topbar search only products', 'ascend'),
-            'default' => 0,
             'required' => array('site_layout','=','above'),
         ),
         array(

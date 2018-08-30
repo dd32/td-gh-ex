@@ -28,6 +28,10 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.3.3 | 30th August 2018 =
+* Fix: Issue with product header search.
+* Update: CSS for image gutenberg.
+
 = Version 1.3.2 | 8th August 2018 =
 * Fix: WC spinner showing when no quantity.
 * Fix: Mobile Cart Background.
