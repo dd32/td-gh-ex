@@ -18,6 +18,7 @@ if ( !defined( 'ABSPATH' ) ) exit;
 function aakriti_personal_blog_register_customizer_settings( $wp_customize ) {
 	
 	$default_settings = aakriti_personal_blog_default_settings();	
+	require get_template_directory() . '/includes/class-control-upg.php';
 
 	/***** Latest Post Settings *****/
 	$wp_customize->add_section( 'wpostheme_general_lastestpost_section', array(
@@ -634,6 +635,42 @@ function aakriti_personal_blog_register_customizer_settings( $wp_customize ) {
 										'description'	=> __('If you want to add the copyrights please use the following text - &copy {year} YOUR BRAND NAME', 'aakriti-personal-blog'),
 										'section'  => 'wpostheme_general_footer_section',
 									));	
+									
+	/*****aakriti-personal blog pro *****/
+	$wp_customize->add_section(
+		'amyra_pro_section', array(
+			'title'    => __( 'View PRO Version', 'aakriti-personal-blog' ),
+			'priority' => 1,
+		)
+	);
+
+	$wp_customize->add_setting(
+		'amyra_pro_control', array(
+			'sanitize_callback' => 'esc_html',
+		)
+	);
+
+	/*
+     * View Pro Version Section Control
+     */
+
+	$wp_customize->add_control(
+		new Aakriti_Personal_Blog_Control_Upg(
+			$wp_customize, 'amyra_pro_control', array(
+				'section'     => 'amyra_pro_section',
+				'priority'    => 100,
+				'options'     => array(
+					esc_html__( '- 4 layouts', 'aakriti-personal-blog' ),					
+					esc_html__( '- Offering different background color and font color in post categories. ', 'aakriti-personal-blog' ),
+					esc_html__( '- 5 Post Format', 'aakriti-personal-blog' ),
+					esc_html__( '- 2 Widgets', 'aakriti-personal-blog' ),					
+					esc_html__( '- 100+ Google Fonts', 'aakriti-personal-blog' ),					
+				),
+				'button_url'  => esc_url( 'https://www.wponlinesupport.com/wordpress-themes/aakriti-wordpress-blog-theme/' ),
+				'button_text' => esc_html__( 'View PRO Version', 'aakriti-personal-blog' ),
+			)
+		)
+	);									
 										
 	
 	
