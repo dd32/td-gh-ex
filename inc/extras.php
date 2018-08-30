@@ -89,9 +89,10 @@ if ( ! function_exists( 'astra_body_classes' ) ) {
 		// Current Astra verion.
 		$classes[] = esc_attr( 'astra-' . ASTRA_THEME_VERSION );
 
+		$menu_item    = astra_get_option( 'header-main-rt-section' );
 		$outside_menu = astra_get_option( 'header-display-outside-menu' );
 
-		if ( $outside_menu ) {
+		if ( 'none' !== $menu_item && $outside_menu ) {
 			$classes[] = 'ast-header-custom-item-outside';
 		} else {
 			$classes[] = 'ast-header-custom-item-inside';
@@ -185,17 +186,70 @@ if ( ! function_exists( 'astra_logo' ) ) {
 			}
 
 			/**
-			 * Filters the tags for site title.
+			 * Filters the site title output.
 			 *
-			 * @since 1.3.1
+			 * @since 1.4.9
 			 *
-			 * @param string $tags string containing the HTML tags for Site Title.
+			 * @param string the HTML output for Site Title.
 			 */
-			$tag               = apply_filters( 'astra_site_title_tag', $tag );
-			$site_title_markup = '<' . $tag . ' itemprop="name" class="site-title"> <a href="' . esc_url( home_url( '/' ) ) . '" itemprop="url" rel="home">' . get_bloginfo( 'name' ) . '</a> </' . $tag . '>';
+			// Site Title.
+			$site_title_markup = apply_filters(
+				'astra_site_title_output', sprintf(
+					'<%1$s class="site-title" itemprop="name">
+					<a href="%2$s" rel="home" itemprop="url" >
+						%3$s
+					</a>
+				</%1$s>',
+					/**
+					* Filters the tags for site title.
+					*
+					* @since 1.3.1
+					*
+					* @param string $tags string containing the HTML tags for Site Title.
+					*/
+					apply_filters( 'astra_site_title_tag', $tag ),
+					/**
+					* Filters the href for the site title.
+					*
+					* @since 1.4.9
+					*
+					* @param string site title home url
+					*/
+					esc_url( apply_filters( 'astra_site_title_href', home_url( '/' ) ) ),
+					/**
+					* Filters the site title.
+					*
+					* @since 1.4.9
+					*
+					* @param string site title
+					*/
+					apply_filters( 'astra_site_title', get_bloginfo( 'name' ) )
+				)
+			);
 
 			// Site Description.
-			$site_tagline_markup = '<p class="site-description" itemprop="description">' . get_bloginfo( 'description' ) . '</p>';
+			/**
+			 * Filters the site description markup.
+			 *
+			 * @since 1.4.9
+			 *
+			 * @param string the HTML output for Site Title.
+			 */
+			$site_tagline_markup = apply_filters(
+				'astra_site_description_markup', sprintf(
+					'<p class="site-description" itemprop="description">
+					%1$s
+				</p>',
+					/**
+					* Filters the site description.
+					*
+					* @since 1.4.9
+					*
+					* @param string site description
+					*/
+					apply_filters( 'astra_site_description', get_bloginfo( 'description' ) )
+				)
+			);
 
 			if ( $display_site_title || $display_site_tagline ) {
 				/* translators: 1: Site Title Markup, 2: Site Tagline Markup */
@@ -276,11 +330,18 @@ if ( ! function_exists( 'astra_get_search' ) ) {
 	 * @return mixed Search HTML structure created.
 	 */
 	function astra_get_search( $option = '' ) {
-
-		$search_html  = '<div class="ast-search-icon"><a class="slide-search astra-search-icon" href="#"><span class="screen-reader-text">' . esc_html__( 'Search', 'astra' ) . '</span></a></div>
-						<div class="ast-search-menu-icon slide-search" id="ast-search-form" >';
-		$search_html .= get_search_form( false );
-		$search_html .= '</div>';
+		ob_start();
+		?>
+		<div class="ast-search-menu-icon slide-search" id="ast-search-form">
+			<div class="ast-search-icon">
+				<a class="slide-search astra-search-icon" href="#">
+					<span class="screen-reader-text"><?php esc_html_e( 'Search', 'astra' ); ?></span>
+				</a>
+			</div>
+			<?php astra_get_search_form(); ?>
+		</div>
+		<?php
+		$search_html = ob_get_clean();
 
 		return apply_filters( 'astra_get_search', $search_html, $option );
 	}
@@ -500,6 +561,7 @@ if ( ! function_exists( 'astra_site_branding_markup' ) ) {
 				<?php astra_logo(); ?>
 			</div>
 		</div>
+
 		<!-- .site-branding -->
 		<?php
 	}
@@ -625,14 +687,14 @@ if ( ! function_exists( 'astra_primary_navigation_markup' ) ) {
 				// Do not add any CSS from theme except header alignment.
 				echo '<div class="ast-main-header-bar-alignment">';
 					wp_nav_menu( $primary_menu_args );
-				echo  '</div>';
+				echo '</div>';
 			} else {
 
 				echo '<div class="main-header-bar-navigation">';
 					echo '<nav itemtype="https://schema.org/SiteNavigationElement" itemscope="itemscope" id="site-navigation" class="ast-flex-grow-1" role="navigation" aria-label="' . esc_attr( 'Site Navigation', 'astra' ) . '">';
 						wp_page_menu( $fallback_menu_args );
-					echo  '</nav>';
-				echo  '</div>';
+					echo '</nav>';
+				echo '</div>';
 			}
 		}
 
@@ -757,6 +819,7 @@ if ( ! function_exists( 'astra_header_classes' ) ) {
 		$mobile_header_order           = astra_get_option( 'mobile-header-order' );
 		$different_mobile_header_order = astra_get_option( 'different-mobile-logo' );
 		$hide_custom_menu_mobile       = astra_get_option( 'hide-custom-menu-mobile', false );
+		$menu_mobile_target            = astra_get_option( 'mobile-header-toggle-target', 'icon' );
 
 		if ( $menu_logo_location ) {
 			$classes[] = $menu_logo_location;
@@ -774,7 +837,7 @@ if ( ! function_exists( 'astra_header_classes' ) ) {
 		}
 
 		// Add class if Mobile Header Logo is set.
-		if ( '' !== $mobile_header_logo && '1' === $different_mobile_header_order ) {
+		if ( '' !== $mobile_header_logo && '1' == $different_mobile_header_order ) {
 			$classes[] = 'ast-has-mobile-header-logo';
 		}
 
@@ -786,6 +849,8 @@ if ( ! function_exists( 'astra_header_classes' ) ) {
 		if ( '1' == $hide_custom_menu_mobile ) {
 			$classes[] = 'ast-hide-custom-menu-mobile';
 		}
+
+		$classes[] = 'ast-menu-toggle-' . $menu_mobile_target;
 
 		$classes[] = 'ast-mobile-header-' . $mobile_header_alignment;
 
@@ -1200,11 +1265,13 @@ if ( ! function_exists( 'astra_get_post_thumbnail' ) ) {
 
 			if ( $featured_image && ( ! ( $check_is_singular ) || ( ! post_password_required() && ! is_attachment() && has_post_thumbnail() ) ) ) {
 
-				$post_thumb = get_the_post_thumbnail(
-					get_the_ID(),
-					apply_filters( 'astra_post_thumbnail_default_size', 'full' ),
-					array(
-						'itemprop' => 'image',
+				$post_thumb = apply_filters(
+					'astra_featured_image_markup', get_the_post_thumbnail(
+						get_the_ID(),
+						apply_filters( 'astra_post_thumbnail_default_size', 'large' ),
+						array(
+							'itemprop' => 'image',
+						)
 					)
 				);
 
@@ -1327,24 +1394,31 @@ if ( ! function_exists( 'astra_replace_header_attr' ) ) :
 			$file_extension = $file_type['ext'];
 
 			if ( 'svg' == $file_extension ) {
-				$attr['class'] = 'astra-logo-svg';
+				$attr['width']  = '100%';
+				$attr['height'] = '100%';
+				$attr['class']  = 'astra-logo-svg';
 			}
 
-			$retina_logo = astra_get_option( 'ast-header-retina-logo' );
+			$diff_retina_logo = astra_get_option( 'different-retina-logo' );
 
-			$attr['srcset'] = '';
+			if ( '1' == $diff_retina_logo ) {
 
-			if ( apply_filters( 'astra_main_header_retina', true ) && '' !== $retina_logo ) {
-				$cutom_logo     = wp_get_attachment_image_src( $custom_logo_id, 'full' );
-				$cutom_logo_url = $cutom_logo[0];
+				$retina_logo = astra_get_option( 'ast-header-retina-logo' );
 
-				if ( astra_check_is_ie() ) {
-					// Replace header logo url to retina logo url.
-					$attr['src'] = $retina_logo;
+				$attr['srcset'] = '';
+
+				if ( apply_filters( 'astra_main_header_retina', true ) && '' !== $retina_logo ) {
+					$cutom_logo     = wp_get_attachment_image_src( $custom_logo_id, 'full' );
+					$cutom_logo_url = $cutom_logo[0];
+
+					if ( astra_check_is_ie() ) {
+						// Replace header logo url to retina logo url.
+						$attr['src'] = $retina_logo;
+					}
+
+					$attr['srcset'] = $cutom_logo_url . ' 1x, ' . $retina_logo . ' 2x';
+
 				}
-
-				$attr['srcset'] = $cutom_logo_url . ' 1x, ' . $retina_logo . ' 2x';
-
 			}
 		}
 
