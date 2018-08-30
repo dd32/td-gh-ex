@@ -2,9 +2,9 @@
 
 Contributors: elevate360
 Requires at least: 4.7
-Tested up to: 4.9
-Stable tag: 1.0.6
-Version: 1.0.6
+Tested up to: 4.9.8
+Stable tag: 1.0.8
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Tags: one-column, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, sticky-post, theme-options, threaded-comments, translation-ready, blog
@@ -35,6 +35,15 @@ Create a fantastic, bold and sleek looking website design using Arctic.
 You can easily install and use Easy Google Fonts plugin.
 
 == Changelog ==
+
+= 1.0.8 - August 31, 2018 =
+* Updated Screenshot
+* Added support for alignwide
+* Added Gutenberg style
+* Added RTL support
+
+= 1.0.7 - June 7, 2018 =
+* Updated Cookies consent styling at comment form for WordPress version 4.9.6
 
 = 1.0.6 - Mei 5, 2018 =
 * Updated Escaping

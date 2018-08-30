@@ -36,7 +36,7 @@ endif;
  * Retun an array of featured post ID
  * @return string
  */
-function arctic_black_featured_post_id(){
+function arctic_black_featured_post_id() {
 
 	$featured_id = array();
 
@@ -60,7 +60,7 @@ function arctic_black_featured_post_id(){
  * [arctic_black_do_slider_content description]
  * @return [type] [description]
  */
-function arctic_black_do_slider_content(){
+function arctic_black_do_slider_content() {
 	get_template_part( 'template-parts/content', 'slider' );
 }
 
@@ -68,6 +68,6 @@ function arctic_black_do_slider_content(){
  * [arctic_black_is_sticky description]
  * @return bool
  */
-function arctic_black_is_sticky(){
+function arctic_black_is_sticky() {
 	return (bool) is_sticky() && !is_paged() && !is_singular() && !is_archive();
 }

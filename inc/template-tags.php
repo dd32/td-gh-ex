@@ -203,7 +203,10 @@ if ( !function_exists( 'arctic_black_posts_navigation' ) ) :
  * [arctic_black_posts_navigation description]
  * @return [type] [description]
  */
-function arctic_black_posts_navigation(){
+function arctic_black_posts_navigation() {
+
+	$prev_arrow = ( is_rtl() ) ? 'right' : 'left';
+	$next_arrow = ( is_rtl() ) ? 'left' : 'right';
 
 	if ( class_exists( 'Jetpack' ) && Jetpack::is_module_active( 'infinite-scroll' ) ) {
 		return;
@@ -217,9 +220,9 @@ function arctic_black_posts_navigation(){
 	} else {
 		the_posts_pagination( array(
 			// Translators: %1$s: Arrow left icon, %2$s: Previous page
-			'prev_text'          => sprintf( '%1$s <span class="screen-reader-text">%2$s</span>', arctic_black_get_svg( array( 'icon' => 'chevron-left' ) ), esc_html__( 'Previous Page', 'arctic-black' ) ), // WPCS: XSS OK.
+			'prev_text'          => sprintf( '%1$s <span class="screen-reader-text">%2$s</span>', arctic_black_get_svg( array( 'icon' => 'chevron-' . $prev_arrow ) ), esc_html__( 'Previous Page', 'arctic-black' ) ), // WPCS: XSS OK.
 			// Translators: %1$s: Arrow left icon, %2$s: Previous page
-			'next_text'          => sprintf( '%1$s <span class="screen-reader-text">%2$s</span>', arctic_black_get_svg( array( 'icon' => 'chevron-right' ) ), esc_html__( 'Next Page', 'arctic-black' ) ), // WPCS: XSS OK.
+			'next_text'          => sprintf( '%1$s <span class="screen-reader-text">%2$s</span>', arctic_black_get_svg( array( 'icon' => 'chevron-' . $next_arrow ) ), esc_html__( 'Next Page', 'arctic-black' ) ), // WPCS: XSS OK.
 			'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'arctic-black' ) . ' </span>',
 		) );
 	}

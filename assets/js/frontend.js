@@ -63,9 +63,10 @@
 
 	arcticBlack.init = function() {
 
-		arcticBlack.$body 	= $( document.body );
-		arcticBlack.$window = $( window );
-		arcticBlack.$html 	= $( 'html' );
+		this.$body 		= $( document.body );
+		this.$window 	= $( window );
+		this.$html 		= $( 'html' );
+		this.isRtl 		= ( $('html').context.dir === 'rtl' ) ? true : false ;
 
 		this.inlineSVG();
 		this.fitVids();
@@ -155,21 +156,21 @@
 			infinite: true,
 			adaptiveHeight: true,
 			slidesToScroll: 1,
-			fade: true,
+			//fade: true,
 			slidesToShow: 1,
 			autoplay: true,
 			autoplaySpeed: 5000,
-			arrows: true,
+			arrows: false,
             dots: true,
             pauseOnHover: false,
             dotsClass: 'arctic-slick-dots',
             prevArrow: prev__btn,
             nextArrow: next__btn,
+            rtl: arcticBlack.isRtl,
 			responsive: [
 				{
 					breakpoint: 788,
 					settings: {
-						fade: true,
 						slidesToShow: 1
 					}
 				}
@@ -189,6 +190,7 @@
 			autoplay: true,
 			autoplaySpeed: 5000,
 			arrows: false,
+			rtl: arcticBlack.isRtl,
 			responsive: [
 				{
 					breakpoint: 960,

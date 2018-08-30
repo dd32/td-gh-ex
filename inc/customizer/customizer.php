@@ -10,7 +10,9 @@
  */
 function arctic_black_customize_preview_js() {
 
-	wp_enqueue_script( 'arctic_black_customizer', get_template_directory_uri() . '/assets/js/customizer.min.js', array( 'customize-preview', 'customize-selective-refresh' ), '20151215', true );
+	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+
+	wp_enqueue_script( "arctic_black_customizer", get_template_directory_uri() . "/assets/js/customizer{$suffix}.js", array( 'customize-preview', 'customize-selective-refresh' ), '20151215', true );
 
 	$css_selector = arctic_black_css_color_selector();
 	$output = array(
@@ -30,11 +32,12 @@ add_action( 'customize_preview_init', 'arctic_black_customize_preview_js' );
  */
 function arctic_black_customizer_control() {
 
+	$rtl = ( is_rtl() ) ? '-rtl' : '';
 	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-	wp_enqueue_style( 'arctic-black-customizer-control', get_parent_theme_file_uri( "/assets/css/customizer-control$suffix.css" ), array(), time(), 'all' );
+	wp_enqueue_style( "arctic-black-customizer-control{$rtl}", get_parent_theme_file_uri( "/assets/css/customizer-control{$rtl}{$suffix}.css" ), array(), '1.0.8', 'all' );
 
-	wp_enqueue_script( 'arctic-black-customizer-control', get_parent_theme_file_uri( "/assets/js/customizer-control$suffix.js" ), array(), time(), true );
+	wp_enqueue_script( 'arctic-black-customizer-control', get_parent_theme_file_uri( "/assets/js/customizer-control$suffix.js" ), array(), '1.0.8', true );
 
 }
 add_action( 'customize_controls_enqueue_scripts', 'arctic_black_customizer_control', 15 );

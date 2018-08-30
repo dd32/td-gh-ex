@@ -30,9 +30,7 @@ function arctic_black_setup() {
 	 * If you're building a theme based on Arctic, use a find and replace
 	 * to change 'arctic-black' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'arctic-black', trailingslashit( WP_LANG_DIR ) . 'themes/' );
-	load_theme_textdomain( 'arctic-black', get_stylesheet_directory() . '/languages' );
-	load_theme_textdomain( 'arctic-black', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'arctic-black' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -90,6 +88,9 @@ function arctic_black_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// Gutenberg
+	add_theme_support( 'align-wide' );
 
 }
 endif;
@@ -165,12 +166,14 @@ add_action( 'widgets_init', 'arctic_black_widgets_init' );
  */
 function arctic_black_scripts() {
 
+	$rtl = ( is_rtl() ) ? '-rtl' : '';
+
 	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 	wp_dequeue_style( 'contact-form-7' );
 
 	/** Styles */
-	wp_enqueue_style( 'arctic-style', get_theme_file_uri( "/style$suffix.css" ) );
+	wp_enqueue_style( "arctic-style{$rtl}", get_theme_file_uri( "/style{$rtl}{$suffix}.css" ) );
 
 	/** lt IE 9 script */
 	wp_enqueue_script( 'html5shiv', get_theme_file_uri( "/assets/js/ie/html5shiv$suffix.js" ), array(), '3.7.3' );
@@ -184,7 +187,7 @@ function arctic_black_scripts() {
 
 	/** jQuery plugins */
 	wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/assets/js/fitvids/jquery.fitvids.min.js', array( 'jquery' ), '1.2.0', true );
-	wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/assets/js/slick/slick.min.js', array( 'jquery' ), '1.6.0', true );
+	wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/assets/js/slick/slick.min.js', array( 'jquery' ), '1.8.1', true );
 
 	/** Theme script */
 	wp_enqueue_script( 'arctic-script', get_theme_file_uri( "/assets/js/frontend$suffix.js" ), array( 'jquery' ), '20151215', true );
