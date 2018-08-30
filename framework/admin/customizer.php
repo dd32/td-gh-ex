@@ -18,8 +18,8 @@ get_template_part( 'framework/admin/modules/icon-picker/icon-picker-control' );
 // Include partial refresh class
 get_template_part( 'framework/admin/partial-refresh' );
 
-// Upgrade to Agama Pro
-get_template_part( 'framework/admin/modules/agama-pro/class-customize' );
+// Include Agama Upsell Customize Module
+get_template_part( 'framework/admin/modules/agama-upsell/class-customize' );
 
 /**
  * Update Kirki Path's
