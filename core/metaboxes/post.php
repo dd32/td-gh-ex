@@ -18,7 +18,7 @@ new suevafree_metaboxes (
 			'type' => 'navigation',  
 			'item' => array( 
 			
-				'setting' => esc_html__( 'Setting','suevafree') , 
+				'general' => esc_html__( 'General settings', 'suevafree'), 
 				'quote_post' => esc_html__( 'Quote Post','suevafree'),
 				'link_post' => esc_html__( 'Link Post','suevafree')
 	
@@ -28,10 +28,10 @@ new suevafree_metaboxes (
 			'end' => '</ul>'),  
 	
 	array(  'type' => 'begintab',
-			'tab' => 'setting',
+			'tab' => 'general',
 			'element' =>
 	
-			array(  'name' => esc_html__( 'Setting','suevafree'),
+			array(  'name' => esc_html__( 'General settings','suevafree'),
 					'type' => 'title',
 			),
 	

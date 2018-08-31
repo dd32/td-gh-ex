@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-04-19 19:46+0200\n"
+"POT-Creation-Date: 2018-08-31 18:47+0200\n"
 "PO-Revision-Date: 2015-09-11 19:05+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
@@ -1200,85 +1200,85 @@ msgstr ""
 msgid "View your shopping cart"
 msgstr ""
 
-#: core/includes/class-customize.php:394
+#: core/includes/class-customize.php:398
 msgid "Upgrade to Sueva Premium."
 msgstr ""
 
-#: core/includes/class-customize.php:396 core/includes/class-notice.php:71
+#: core/includes/class-customize.php:400 core/includes/class-notice.php:71
 msgid ""
 "Upgrade to the premium version of Sueva, to enable 600+ Google Fonts, "
 "Unlimited sidebars, Portfolio section and much more."
 msgstr ""
 
-#: core/includes/class-customize.php:400
+#: core/includes/class-customize.php:404
 msgid "Upgrade to Sueva premium"
 msgstr ""
 
-#: core/includes/class-customize.php:408
+#: core/includes/class-customize.php:412
 msgid "SuevaFree child themes."
 msgstr ""
 
-#: core/includes/class-customize.php:410
+#: core/includes/class-customize.php:414
 msgid "You can also choose one of available premium child themes for SuevaFree"
 msgstr ""
 
-#: core/includes/class-customize.php:414
+#: core/includes/class-customize.php:418
 msgid "SuevaFree child themes"
 msgstr ""
 
-#: core/includes/class-customize.php:422
+#: core/includes/class-customize.php:426
 msgid "WordPress Support Service."
 msgstr ""
 
-#: core/includes/class-customize.php:424
+#: core/includes/class-customize.php:428
 msgid ""
 "We are excited to announce the opening of our new Premium WordPress Support "
 "Service, to solve all technical issues like code issues, white screen "
 "issues, theme and plugin issues and much more."
 msgstr ""
 
-#: core/includes/class-customize.php:428
+#: core/includes/class-customize.php:432
 msgid "WordPress Support"
 msgstr ""
 
-#: core/includes/class-customize.php:436
+#: core/includes/class-customize.php:440
 msgid "SuevaFree Support"
 msgstr ""
 
-#: core/includes/class-customize.php:438
+#: core/includes/class-customize.php:442
 msgid ""
 "If you've opened a new support ticket from <strong>WordPress.org</strong>, "
 "please send a reminder to <strong>support@wpinprogress.com</strong>, to get "
 "a faster reply."
 msgstr ""
 
-#: core/includes/class-customize.php:442
+#: core/includes/class-customize.php:446
 msgid "Open a new ticket"
 msgstr ""
 
-#: core/includes/class-customize.php:443
+#: core/includes/class-customize.php:447
 msgid "Send a reminder"
 msgstr ""
 
-#: core/includes/class-customize.php:448
+#: core/includes/class-customize.php:452
 msgid ""
 "If you like this theme and support, <strong>I'd appreciate</strong> any of "
 "the following:"
 msgstr ""
 
-#: core/includes/class-customize.php:452
+#: core/includes/class-customize.php:456
 msgid "Rate this Theme"
 msgstr ""
 
-#: core/includes/class-customize.php:453
+#: core/includes/class-customize.php:457
 msgid "Like on Facebook"
 msgstr ""
 
-#: core/includes/class-customize.php:454
+#: core/includes/class-customize.php:458
 msgid "Subscribe our newsletter"
 msgstr ""
 
-#: core/includes/class-customize.php:455
+#: core/includes/class-customize.php:459
 msgid "Download our free WordPress themes"
 msgstr ""
 
@@ -1713,23 +1713,23 @@ msgstr ""
 msgid "%1$s: %2$s"
 msgstr ""
 
-#: core/main.php:626 core/main.php:632 core/main.php:653
+#: core/main.php:643 core/main.php:649 core/main.php:670
 msgid "Read More"
 msgstr ""
 
-#: core/main.php:737
+#: core/main.php:754
 msgid "Article"
 msgstr ""
 
-#: core/main.php:890
+#: core/main.php:907
 msgid "Default image"
 msgstr ""
 
-#: core/main.php:925
+#: core/main.php:942
 msgid "Main menu"
 msgstr ""
 
-#: core/main.php:926
+#: core/main.php:943
 msgid "One Page menu"
 msgstr ""
 
@@ -1738,7 +1738,7 @@ msgstr ""
 #: core/metaboxes/service.php:21 core/metaboxes/service.php:31
 #: core/metaboxes/team.php:22 core/metaboxes/team.php:33
 #: core/metaboxes/testimonial.php:22 core/metaboxes/testimonial.php:33
-msgid "Setting"
+msgid "General settings"
 msgstr ""
 
 #: core/metaboxes/post.php:22
@@ -1904,8 +1904,8 @@ msgstr ""
 msgid "Shipping"
 msgstr ""
 
-#: woocommerce/cart/cart-totals.php:78 woocommerce/cart/cart.php:49
-#: woocommerce/cart/cart.php:135
+#: woocommerce/cart/cart-totals.php:78 woocommerce/cart/cart.php:48
+#: woocommerce/cart/cart.php:129
 msgid "Total"
 msgstr ""
 
@@ -1929,39 +1929,39 @@ msgstr ""
 msgid "Proceed to Checkout"
 msgstr ""
 
-#: woocommerce/cart/cart.php:37
+#: woocommerce/cart/cart.php:36
 msgid "Cart"
 msgstr ""
 
-#: woocommerce/cart/cart.php:46 woocommerce/cart/cart.php:92
+#: woocommerce/cart/cart.php:45 woocommerce/cart/cart.php:87
 msgid "Product"
 msgstr ""
 
-#: woocommerce/cart/cart.php:47 woocommerce/cart/cart.php:113
+#: woocommerce/cart/cart.php:46 woocommerce/cart/cart.php:105
 msgid "Price"
 msgstr ""
 
-#: woocommerce/cart/cart.php:48 woocommerce/cart/cart.php:119
+#: woocommerce/cart/cart.php:47 woocommerce/cart/cart.php:111
 msgid "Quantity"
 msgstr ""
 
-#: woocommerce/cart/cart.php:75
+#: woocommerce/cart/cart.php:70
 msgid "Remove this item"
 msgstr ""
 
-#: woocommerce/cart/cart.php:109
+#: woocommerce/cart/cart.php:101
 msgid "Available on backorder"
 msgstr ""
 
-#: woocommerce/cart/cart.php:153
+#: woocommerce/cart/cart.php:147
 msgid "Coupon:"
 msgstr ""
 
-#: woocommerce/cart/cart.php:153 woocommerce/checkout/form-coupon.php:46
+#: woocommerce/cart/cart.php:147 woocommerce/checkout/form-coupon.php:39
 msgid "Coupon code"
 msgstr ""
 
-#: woocommerce/cart/cart.php:153 woocommerce/checkout/form-coupon.php:50
+#: woocommerce/cart/cart.php:147 woocommerce/checkout/form-coupon.php:43
 msgid "Apply coupon"
 msgstr ""
 
@@ -1973,12 +1973,16 @@ msgstr ""
 msgid "Your order"
 msgstr ""
 
-#: woocommerce/checkout/form-coupon.php:36
-msgid "Have a coupon? "
+#: woocommerce/checkout/form-coupon.php:30
+msgid "Have a coupon?"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:30
+msgid "Click here to enter your code"
 msgstr ""
 
 #: woocommerce/checkout/form-coupon.php:36
-msgid "Click here to enter your code"
+msgid "If you have a coupon code, please apply it below."
 msgstr ""
 
 #: woocommerce/single-product-reviews.php:36

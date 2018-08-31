@@ -1,5 +1,11 @@
 SuevaFree Changelog
 
+- Version 3.5.8 - Released: 31.08.2018
+
+-- Added  : Gutenberg support 
+-- Edit   : Option panel layout
+-- Edit   : Code optimized
+
 - Version 3.5.7 - Released: 06.08.2018
 
 -- Updated : WooCommerce templates.

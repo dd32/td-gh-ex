@@ -18,17 +18,17 @@ new suevafree_metaboxes (
 			'type' => 'navigation',  
 		  
 			'item' => array( 
-				'setting' => esc_html__( 'Setting','suevafree') , 
+				'general' => esc_html__( 'General settings', 'suevafree'), 
 			),   
 	
 			'start' => '<ul>', 
 			'end' => '</ul>'),  
 	
 	array(  'type' => 'begintab',
-			'tab' => 'setting',
+			'tab' => 'general',
 			'element' =>
 	
-			array(  'name' => esc_html__( 'Setting','suevafree'),
+			array(  'name' => esc_html__( 'General settings','suevafree'),
 					'type' => 'title',
 			),
 	

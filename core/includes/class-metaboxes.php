@@ -134,9 +134,14 @@ if( !class_exists( 'suevafree_metaboxes' ) ) {
 					<?php break;
 		
 					case 'title':  ?>
-					
-					<h2 class="title"><?php echo esc_attr($field['name']); ?></h2>
-					
+
+					<div class="suevafree_inputbox">
+
+						<h3 class="title"><?php echo esc_attr($field['name']); ?></h3>
+						<div class="clear"></div>
+
+					</div>
+
 					<?php break;
 		
 					case 'text':  ?>
