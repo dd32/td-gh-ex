@@ -60,6 +60,9 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+= 1.0.25 - 31st August, 2018 =
+* Fixed Demo Import Issue.
+
 = 1.0.24 - 26th January, 2018 =
 * Added WPML,Polylang translation xml support
 

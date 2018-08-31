@@ -19,7 +19,7 @@ class Aglee_Lite_About_Theme {
 				'class' => 'Instant_Demo_Importer',
 				'github_repo' => true,
 				'bundled' => true,
-				'location' => 'https://github.com/WPaccesskeys/instant-demo-importer/archive/master.zip',
+				'location' => 'https://github.com/8degreethemes/instant-demo-importer/archive/master.zip',
 				'info' => __('Instant Demo Importer Plugin adds the feature to Import the Demo Conent with a single click.', 'aglee-lite'),
 				),
 			);
@@ -90,8 +90,8 @@ class Aglee_Lite_About_Theme {
 						class="aglee-lite-tab <?php echo $active_tab == 'changelog' ? 'aglee-lite-tab-active' : ''; ?> "><?php echo esc_html__( 'Changelog', 'aglee-lite' ); ?>
 
 					</a></li>
-					<li><a target="_blank" href="<?php echo esc_url('https://wpall.club/'); ?>"
-						class="aglee-lite-tab more-wp"><?php echo esc_html__( 'WordPress Resources', 'aglee-lite' ); ?>
+					<li><a href="<?php echo esc_url( admin_url( 'themes.php?page=aglee-lite-about&tab=more_wp' ) ); ?>"
+						class="aglee-lite-tab <?php echo $active_tab == 'more_wp' ? 'aglee-lite-tab-active' : ''; ?> "><?php echo esc_html__( 'More WordPress Stuff', 'aglee-lite' ); ?>
 
 					</a></li>
 				</ul>
@@ -109,6 +109,9 @@ class Aglee_Lite_About_Theme {
 						break;
 						case 'changelog':
 						require_once get_template_directory() . '/inc/admin-panel/about/step-fourth.php';
+						break;
+						case 'more_wp':
+						require_once get_template_directory() . '/inc/admin-panel/about/step-fifth.php';
 						break;
 						case 'demo_import':
 						require_once get_template_directory() . '/inc/admin-panel/about/step-demo.php';
@@ -275,7 +278,7 @@ class Aglee_Lite_About_Theme {
 				global $wp_filesystem;
 				$file = $wp_filesystem->get_contents( $plugin['location'] );
 
-				$file_location = get_template_directory().'/inc/demo/'.$plugin['slug'].'.zip';
+				$file_location = get_template_directory().'/inc/admin-panel/demo/'.$plugin['slug'].'.zip';
 
 				$wp_filesystem->put_contents( $file_location, $file, FS_CHMOD_FILE );
 
@@ -425,7 +428,7 @@ class Aglee_Lite_About_Theme {
 
 		$demoimporter->demos = array(
 			'aglee-lite' => array(
-				'title' => __('aglee Lite Demo', 'aglee-lite'),
+				'title' => __('Aglee Lite Demo', 'aglee-lite'),
 				'name' => 'aglee-lite',
 				'screenshot' => get_template_directory_uri().'/screenshot.png',
 				'home_page' => 'home',
