@@ -4,7 +4,7 @@ Theme URI: http://pankogut.com/wordpress-themes/gump
 Author: PanKogut
 Author URI: http://pankogut.com
 Description: WordPress Theme for Lifestyle, Food and Fashion blogger. It has a responsive design with a lot of options like: custom colors, social icons, google analytics and more. People like Gump for his minimal style and because it's easy to use. The theme is also translation ready and it supports RTL language.
-Version: 2.0.3
+Version: 2.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-header, custom-background, custom-colors, custom-menu, editor-style, featured-image-header, full-width-template, footer-widgets, rtl-language-support, post-formats, theme-options, featured-images, translation-ready, blog
@@ -20,7 +20,7 @@ Text Domain: gump
 # Typography
 # Elements
 # Forms
-	## Contact Form 7
+	## Contact Form 7 and WPForms
 # Header
 	## Links
 	## Logo and Title
@@ -454,7 +454,7 @@ textarea {
 }
 
 /*--------------------------------------------------------------
-## Contact Form 7
+## Contact Form 7 and WPForms
 --------------------------------------------------------------*/
 .wpcf7-form-control-wrap {
 	display: inline;
@@ -464,50 +464,53 @@ textarea {
 .wpcf7 input[type="email"], 
 .wpcf7 input[type="url"], 
 .wpcf7 input[type="password"],
-.wpcf7 textarea {
-	background-color: #e6e6e6;
-	border: 1px solid #e6e6e6;
-	border-radius: 0;
-	outline-color: transparent;
-	outline-style: none;
-	padding: 10px;
-	width: 100%;
+.wpcf7 textarea,
+.wpforms-form input,
+.wpforms-form textarea {
+	background-color: #fff !important;
+	border: 1px solid #eaeaea !important;
+	border-radius: 0 !important;
+	outline-color: transparent !important;
+	outline-style: none !important;
+	padding: 10px !important;
+	width: 100% !important;
 }
 
 .wpcf7 input[type="text"]:focus,
 .wpcf7 input[type="email"]:focus,
 .wpcf7 input[type="url"]:focus,
 .wpcf7 input[type="password"]:focus,
-.wpcf7 textarea:focus {
-	background-color: #fff;
-	color: #111;
+.wpcf7 textarea:focus,
+.wpforms-form input:focus,
+.wpforms-form textarea:focus {
+	background-color: #eaeaea !important;
 }
 
-.wpcf7 input[type="submit"] {
-	border: 1px solid #4d4d4d; 
-	border-color: #4d4d4d;
+.wpcf7 input[type="submit"],
+.wpforms-form button[type="submit"] {
+	border: 1px solid #000000 !important;
+	border-color: #000000 !important;
 	border-radius: 0;
-	background: #4d4d4d;
+	background: #000000 !important;
 	box-shadow: none;
-	color: #fff;
+	color: #ffffff !important;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
-	font-size: 14px;
-	font-size: 1.4rem;
+	-webkit-appearance: button !important; /* Corrects inability to style clickable 'input' types in iOS */
+	font-size: 16px !important;
 	line-height: 1;
 	outline-color: transparent;
-	outline-style: none;
-	padding: 1em 1em 0.9em;
-	text-shadow: 0;
-	width: 100%;
+	outline-style: none;;
+	text-shadow: 0 !important;
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	-o-transition: all 0.2s ease-in-out;
 	transition: all 0.2s ease-in-out;
 }
 
-.wpcf7 input[type="submit"]:hover {
-	opacity: 0.6;
+.wpcf7 input[type="submit"]:hover,
+.wpforms-form button[type="submit"]:hover  {
+	background: #fff !important;
+	color: #000 !important;
 	-webkit-transition: all 0.2s ease-in-out;
 	-moz-transition: all 0.2s ease-in-out;
 	-o-transition: all 0.2s ease-in-out;

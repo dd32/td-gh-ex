@@ -5,6 +5,10 @@ For a detailed theme documentation: https://pankogut.com/wordpress-themes/gump
 
 ===============================
 
+Version 2.0.4
+===============================
+- Added WPForms
+
 Version 2.0.0
 ===============================
 - Fixed Social Widget Issue

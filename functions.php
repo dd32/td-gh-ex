@@ -202,6 +202,43 @@ require get_template_directory() . '/inc/widgets.php';
 require get_template_directory() . '/inc/customize-pro/class-customize.php';
 
 /**
+ * Include the TGM_Plugin_Activation class.
+ */
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
+
+function gump_register_required_plugins() {
+
+	$plugins = array(
+		
+		array(
+			'name'      => 'Contact Form by WPForms',
+			'slug'      => 'wpforms-lite',
+			'required'  => false,
+		),
+		
+		array(
+			'name'      => 'Jetpack',
+			'slug'      => 'jetpack',
+			'required'  => false,
+		),
+	);
+
+	$config = array(
+		'id'           => 'gump',
+		'default_path' => '',
+		'menu'         => 'tgmpa-install-plugins',
+		'has_notices'  => true,
+		'dismissable'  => true,
+		'dismiss_msg'  => '',
+		'is_automatic' => false,
+		'message'      => '',
+	);
+
+	tgmpa( $plugins, $config );
+}
+add_action( 'tgmpa_register', 'gump_register_required_plugins' );
+
+/**
  * Print the attached image with a link to the next attached image.
  *
  * @since gump 1.0
@@ -393,3 +430,31 @@ function gump_comment($comment, $args, $depth) {
         </div><?php 
     endif;
 }
+
+/**
+ * Set the WPForms ShareASale ID.
+ *
+ * @param string $shareasale_id The the default ShareASale ID.
+ *
+ * @return string $shareasale_id
+ */
+function gump_wpforms_shareasale_id( $shareasale_id ) {
+	
+	// If this WordPress installation already has an WPForms ShareASale ID
+	// specified, use that.
+	if ( ! empty( $shareasale_id ) ) {
+		return $shareasale_id;
+	}
+	
+	// Define the ShareASale ID to use.
+	// This should be your ShareASale affiate ID, see https://cl.ly/3H1v093A252f.
+	$shareasale_id = '1845472';
+	
+	// This WordPress installation doesn't have an ShareASale ID specified, so 
+	// set the default ID in the WordPress options and use that.
+	update_option( 'wpforms_shareasale_id', $shareasale_id );
+	
+	// Return the ShareASale ID.
+	return $shareasale_id;
+}
+add_filter( 'wpforms_shareasale_id', 'gump_wpforms_shareasale_id' );
