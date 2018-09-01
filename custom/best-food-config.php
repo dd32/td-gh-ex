@@ -24,7 +24,7 @@
 //  add panel 
   Kirki::add_panel( 'homepage', array(
   	'priority'	 => 10,
-  	'title'		 => __( 'Forntpage Settings', 'best-food' ),
+  	'title'		 => __( 'FrontPage Settings', 'best-food' ),
     'description'	 => __( 'Homepage options for Best Food theme', 'best-food' ),
   ) );
   

@@ -3,7 +3,7 @@ Contributors: CooThemes
 Tags: Blog, Custom-Background, Custom-Logo, Custom-Menu, Custom-Colors, Custom-Header, Flexible-Header, Featured-Images, Footer-Widgets, Two-Columns, Right-Sidebar, Left-Sidebar, Theme-Options, E-Commerce, Food-and-Drink, Full-Width-Template, Portfolio, Translation-Ready
 
 Requires at least: 4.0
-Tested up to: 4.9.4
+Tested up to: 4.9.8
 Stable tag: 1.0.0
 
 Author URI:  https://www.coothemes.com/
@@ -75,6 +75,9 @@ Theta provides support at https://www.coothemes.com/forum/best-food-theme/.
 
 
 === Changelog ===
+version 1.0.5 20180901
+*fix spell error
+
 version 1.0.4 20180803
 *update demo link
 
