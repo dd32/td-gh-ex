@@ -4,7 +4,7 @@
 
 Theme Name      :   Advance Blogging
 Theme URI       :   https://www.themescaliber.com/themes/free-blog-wordpress-theme/
-Version         :   0.2
+Version         :   0.3
 Tested up to    :   WP 4.9.8
 Author          :   ThemesCaliber
 Author URI      :   https://www.themescaliber.com
@@ -146,3 +146,7 @@ Version 0.2
 	-- Resolved theme audit issues.
 	-- Done the customization in css file.
 	-- Added pixabay image urls.
+
+Version 0.3
+	-- Added tgm plugin activation in theme.
+	-- Updated Woocommerce.

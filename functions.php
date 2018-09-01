@@ -205,3 +205,5 @@ require get_template_directory() . '/inc/custom-header.php';
 
 /* Customizer additions. */
 require get_template_directory() . '/inc/customizer.php';
+/* TGM. */
+require get_parent_theme_file_path( '/inc/tgm.php' );
