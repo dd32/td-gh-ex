@@ -3,7 +3,7 @@
 Created by: Vedathemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 4.9.8
-Version: 1.0.8
+Version: 1.0.9
 PHP required : PHP 5.4+
 IE Browser Support: IE11+
 License: GNU General Public License v2 or later
@@ -73,12 +73,16 @@ Aamla WordPress Theme bundles the following third-party resources:
 
 3.	Images used for theme screenshot
 
-	https://pixabay.com/en/background-geometry-polygon-design-618226/
-	by Aeyos (https://pixabay.com/en/users/Aeyos-738868/)
+	https://pixabay.com/en/guitar-country-girl-acoustic-guitar-944261/
+	by langll (https://pixabay.com/en/users/langll-822640/)
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
-	https://pixabay.com/en/musicians-guitars-music-instruments-690591/
-	by Free-Photos (https://pixabay.com/en/users/Free-Photos-242387/)
+	https://pixabay.com/en/santorini-oia-greece-people-person-1663658/
+	by Mariamichelle (https://pixabay.com/en/users/Mariamichelle-165491/)
+	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+
+	https://pixabay.com/en/raspberry-berry-summer-closeup-2023404/
+	by Daria-Yakovleva (https://pixabay.com/en/users/Daria-Yakovleva-3938704/)
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 	https://pixabay.com/en/evening-sky-colorful-sunset-1777352/
@@ -99,6 +103,10 @@ Aamla WordPress Theme bundles the following third-party resources:
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
+
+= 1.0.9 - Sep 02 2018 =
+* Modify - Make theme screenshot comply with updated requirements.
+* Error Fix - Minor css and code improvements.
 
 = 1.0.8 - Aug 14 2018 =
 * Modify - Make theme screenshot comply with updated requirements.
