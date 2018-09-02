@@ -53,6 +53,10 @@ a {
 	border-bottom: 1px solid #ddd;
 }
 
+.discount  {
+	font-weight: bold;
+	color: red;
+}
 .form-table th {
 	padding-left: 10px;
 }
