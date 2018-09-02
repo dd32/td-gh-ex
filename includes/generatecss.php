@@ -133,7 +133,7 @@ function weaverx_output_style( $sout ) {
 			case 'fullwidth':
 				foreach ( array('m_primary_extend_width', 'm_secondary_extend_width') as $opt )		// should try to change these to CSS insterad of JS
 					weaverx_setopt($opt, true );
-				foreach ( array('m_primary_align', 'm_secondary_align') as $opt ) {			// disable wide/full aligned menus
+				foreach ( array('m_primary_align', 'm_secondary_align') as $opt ) {					// disable wide/full aligned menus
 					$align = weaverx_getopt_default( $opt, 'left' );
 					weaverx_setopt( $opt, str_replace('alignwide', 'alignfull', $align ));
 				}
@@ -144,7 +144,7 @@ function weaverx_output_style( $sout ) {
 				weaverx_setopt('expand_header', true);
 				weaverx_setopt('expand_footer', true);
 				weaverx_setopt('m_primary_align','center');				// center the menus
-				weaverx_setopt('m_secondary_align','center');				// center the menus
+				weaverx_setopt('m_secondary_align','center');			// center the menus
 				break;
 
 			case 'boxed':
@@ -322,32 +322,24 @@ function weaverx_output_style( $sout ) {
 
 	$align = weaverx_getopt_default( 'header_image_align', 'float-left');   // alignment
 
-	if ( weaverx_getopt('link_site_image') && $align != 'align-center') {
-		// normally, we use display:block on the image to make it align, etc, but that makes the link
-		// extend over the whole column... So, we will use alternate layout for linked left/right align, and let center just be wrong.
-		if ( $align == 'float-left')
-			weaverx_f_write( $sout, '#branding #header-image img{display:block;margin-left:0;margin-right:auto;}');
-		else
-			weaverx_f_write( $sout, '#branding #header-image img{display:block;margin-left:auto;margin-right:0;}');
-
-	} else {
-
-		if ( $align != 'float-left' ) {
-			 if ( $align == 'align-center' )
-				weaverx_f_write( $sout, '#branding #header-image img{margin-left:auto;margin-right:auto;}');
-			else
-				weaverx_f_write( $sout, '#branding #header-image img{margin-left:auto;margin-right:0;} /* ' . $align . '*/');
-		}
-	}
-
-	// image as bg
 	switch ( $align ) {
-		case 'center':
+		case 'align-center':
+			weaverx_f_write( $sout, '#branding #header-image img{margin-left:auto;margin-right:auto;} /* ' . $align . '*/');
 			weaverx_f_write( $sout, '#header.header-as-bg-parallax,#header.header-as-bg-responsive,#header.header-as-bg{background-position-x:center;}');
 			break;
+		case 'float-left':
+			weaverx_f_write( $sout, '#branding #header-image img{float: left;} /* ' . $align . '*/');
+			break;
 		case 'float-right':
+			weaverx_f_write( $sout, '#branding #header-image img{margin-left:auto;margin-right:0;} /* ' . $align . '*/');
 			weaverx_f_write( $sout, '#header.header-as-bg-parallax,#header.header-as-bg-responsive,#header.header-as-bg{background-position-x:right;}');
 			break;
+		case 'alignnone':
+		case 'alignwide':
+		case 'alignfull':
+			weaverx_f_write( $sout, '#branding #header-image img{float:none;} /* ' . $align . '*/');
+			break;
+
 		default:			// default is left and already is in style sheet.
 			break;
 	}

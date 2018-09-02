@@ -135,7 +135,7 @@ The normal site view will respect the Restrict Borders setting.','weaver-xtreme'
 
 		'header_image_align' => weaverx_cz_select(
 				__( 'Align Header Image', 'weaver-xtreme' ),
-				__( 'How to align header image - for left, center, or right, this option useful only when Max Width or Actual Size set.', 'weaver-xtreme' ),
+				__( 'How to align header image. Wide and Full do not apply to BG header image.', 'weaver-xtreme' ),
 				'weaverx_cz_choices_align',	'float-left', 'refresh'
 			),
 

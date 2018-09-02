@@ -797,15 +797,11 @@ var {
 	font-style:			italic;
 }
 
-/* tables */
-table,
-th,
-td {
-	border: 1px solid #d1d1d1;
-}
+/* tables - HTML Normalized */
 
 table {
 	border-collapse: 	separate;
+	border-color: 		gray;
 	border-spacing: 	0;
 	border-width: 		1px 0 0 1px;
 	margin: 			0 0 1.25em;
@@ -814,26 +810,57 @@ table {
 	width: 100%;
 }
 
-
-th,
-td {
-	font-weight: 		normal;
-	padding: 			0.4375em;
-	text-align: 		left;
-}
-
-th {
-	border-width: 		0 1px 1px 0;
-	font-weight: 		bold;
-	padding:			4px 4px;
-	text-align:			left;
+tbody {
+	display: 			table-row-group;
+	vertical-align: 	middle;
+	border-color: 		inherit;
 }
 
 td {
 	border-width: 		0 1px 1px 0;
 	margin:				0;
-	padding:			4px 4px;
+	display: 			table-cell;
+	font-weight: 		normal;
+	padding: 			0.4375em;
+	text-align: 		left;
+	vertical-align: 	inherit;
 }
+
+tfoot {
+	display: 			table-footer-group;
+	vertical-align: 	middle;
+	border-color: 		inherit;
+}
+
+th {
+	border-width: 		0 1px 1px 0;
+	display: 			table-cell;
+	vertical-align: 	inherit;
+	font-weight: 		bold;
+	padding: 			0.4375em;
+	text-align: 		left;
+}
+
+thead {
+	display: table-header-group;
+	vertical-align: middle;
+	border-color: inherit;
+}
+
+tr {
+	display: table-row;
+	vertical-align: inherit;
+	border-color: inherit;
+}
+
+/* Weaver tables, default for all areas */
+
+table,
+th,
+td {
+	border: 1px solid #d1d1d1;
+}
+
 
 /* -- /HTML Elements*/
 

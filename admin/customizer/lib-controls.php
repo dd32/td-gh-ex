@@ -129,6 +129,20 @@ function weaverx_cz_choices_align_sanitize($val) {
 	return (isset($choices[$val])) ? $val : '';
 }
 
+function weaverx_cz_choices_align_standard() {
+	return array(
+		'float-left' 	=> __('Align Left', 'weaver-xtreme') ,
+		'align-center' 	=> __('Center', 'weaver-xtreme'),
+		'float-right' 	=> __('Align Right', 'weaver-xtreme'),
+		'alignnone' 	=> __('No Alignment', 'weaver-xtreme'),
+	);
+}
+
+function weaverx_cz_choices_align_standard_sanitize($val) {
+	$choices = weaverx_cz_choices_align_standard();
+	return (isset($choices[$val])) ? $val : '';
+}
+
 
 function weaverx_cz_choices_align_menu() {
 	return array(

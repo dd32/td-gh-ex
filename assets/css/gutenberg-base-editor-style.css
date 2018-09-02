@@ -52,6 +52,7 @@
 	border:					1px solid #909090;
     background:				#444444;
 }
+
 } /* end of example alt editor control styling */
 
 /* Post Title */
@@ -595,14 +596,6 @@
 .editor-block-list__layout .editor-block-list__block[data-align="wide"] > .editor-block-list__block-edit figure {
 	width: 100%;
 }
-
-.mce-content-body .alignwide img {
-		margin-left: 	calc(50% - 45vw) !important;
-		margin-right: 	calc(50% - 45vw) !important;
-		max-width: 		1000% !important;
-		width: 			90vw !important;
-
-	}
 
 /* =HTML Elements */
 

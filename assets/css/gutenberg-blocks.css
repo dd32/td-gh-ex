@@ -280,6 +280,32 @@ blockquote.wp-block-quote {
 .has-drop-cap {}
 
 /* Galleries */
+
+.wp-block-gallery .blocks-gallery-image figcaption, .wp-block-gallery .blocks-gallery-item figcaption {
+	font-size:		inherit;		/* bigger than Gutenberg default */
+	padding:		30px 0 5px 0;
+	width:			100%;
+}
+
+.wp-block-gallery img,
+.wp-block-gallery figure {
+	margin:		0 !important;
+	width:		auto;
+}
+
+
+x.wp-block-gallery img,
+x.wp-block-gallery figure {
+	margin:		0 !important;
+	width:		100%;
+}
+
+
+
+ul.wp-block-gallery {
+	clear:		both;
+}
+
 ul.wp-block-gallery,
 ul.wp-block-gallery li {
 	padding:			0;
@@ -304,11 +330,11 @@ ul.wp-block-gallery li {
 }
 
 figure.wp-block-image.alignleft {
-	margin: 			.5em 1.0em 1.0em 0;		/* this leaves margins when float-left or float-right */
+	margin: 			.1em 1.0em 1.0em 0;		/* this leaves margins when float-left or float-right */
 }
 
 figure.wp-block-image.alignright {
-	margin: 			.5em 0em 1.0em 1.0em;	/* this leaves margins when float-left or float-right */
+	margin: 			.1em 0em 1.0em 1.0em;	/* this leaves margins when float-left or float-right */
 }
 
 figure.wp-block-image.aligncenter {
@@ -319,9 +345,10 @@ figure.wp-block-image {
 	margin:				0;						/* make the default Gutenberg style: no margins */
 }
 
-#content .wp-block-image figcaption {			/* custom styling for .wp-block-image figcaption - make a bit closer to the image in #content, not editor */
+.wp-block-image figcaption {			/* custom styling for .wp-block-image figcaption - make a bit closer to the image in #content, not editor */
 	margin: 			-.25em 0 .25em 0;
 }
+
 
 
 /* =================== Embed =================== */
@@ -390,13 +417,19 @@ figure.wp-block-image {
 
 /* =================== Separator =================== */
 
-.wp-block-separator {
+hr.wp-block-separator {
+	clear:				both;
+	color:				#ccc;
 	background-color:	#ccc;
-	border:				none;
+	border:				0;
 	box-sizing:			content-box;
 	height:				4px;
-	margin:				1.0em auto;
-	width: 				90%;
+	margin:				1.0em auto 1.0em auto;
+	width:				40%;
+}
+
+hr.wp-block-separator.is-style-wide {
+	width:				80%;
 }
 
 
@@ -518,6 +551,9 @@ figure.wp-block-image {
  * only on full width pages (.weaverx-sb-one-column and .weaverx-has-sb).
  *
  * Note that editor internally styles wide and full.
+ * The vw technique use here to work with virtually any theme, but does not work with the
+ * editor's internal wide/full - it leads to a horizontal scroll bar on the bottom of the
+ * editor. Prefixing with a front-end only prefix (#wrapper) makes thes apply only then.
  */
 @media (min-width: 768px) {
 
@@ -532,9 +568,9 @@ figure.wp-block-image {
 
 	/* alignfull images look best all the way to the edge */
 
-	.wp-block-cover-image.alignfull,
-	.wp-block-gallery.alignfull,
-	.wp-block-image.alignfull img {
+	#wrapper .wp-block-cover-image.alignfull,
+	#wrapper .wp-block-gallery.alignfull,
+	#wrapper .wp-block-image.alignfull img {
 		margin-left: 	calc(50% - 50vw);
 		margin-right: 	calc(50% - 50vw);
 		max-width: 		1000%;
@@ -544,17 +580,17 @@ figure.wp-block-image {
 
 	/* these are non-image based blocks, and look better with a bit of a left/right margin */
 
-	.wp-block-columns.alignfull,
-	.wp-block-text-columns.alignfull,
-	.wp-block-table.alignfull,
-	.wp-block-preformatted.alignfull,
-	.wp-block-button.alignfull,
-	.wp-block-verse.alignfull,
-	.wp-block-latest-posts.alignfull,
-	.wp-block-categories.alignfull,
-	.wp-block-pullquote.alignfull,
-	[class^="wp-block-embed"].alignfull,
-	p.alignfull	{
+	#wrapper .wp-block-columns.alignfull,
+	#wrapper .wp-block-text-columns.alignfull,
+	#wrapper .wp-block-table.alignfull,
+	#wrapper .wp-block-preformatted.alignfull,
+	#wrapper .wp-block-button.alignfull,
+	#wrapper .wp-block-verse.alignfull,
+	#wrapper .wp-block-latest-posts.alignfull,
+	#wrapper .wp-block-categories.alignfull,
+	#wrapper .wp-block-pullquote.alignfull,
+	#wrapper [class^="wp-block-embed"].alignfull,
+	#wrapper p.alignfull	{
 		margin-left: 	calc(50% - 47vw) !important;	/* Weaver Xtreme needs this to override the theme's native .alignfull */
 		margin-right: 	calc(50% - 47vw) !important;
 		max-width: 		1000%;
@@ -563,14 +599,14 @@ figure.wp-block-image {
 
 	/* alignwide is much simpler, and looks good on all browsers with 25% */
 
-	.alignwide {
-		margin-left: 	calc(50% - 40vw) !important;
-		margin-right: 	calc(50% - 40vw) !important;
-		width: 			80vw !important;
-		max-width: 		1000% !important;
+	#wrapper .alignwide {
+		margin-left: 	calc(50% - 40vw);
+		margin-right: 	calc(50% - 40vw);
+		width: 			80vw;
+		max-width: 		1000%;
 	}
 
-	.wp-block-image.alignwide img {				/* this rule needed to get standard GB image to be wide */
+	#wrapper .wp-block-image.alignwide img {				/* this rule needed to get standard GB image to be wide */
 		margin-left: 	calc(50% - 40vw) !important;
 		margin-right: 	calc(50% - 40vw) !important;
 		width: 			80vw !important;

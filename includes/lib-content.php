@@ -1134,8 +1134,8 @@ function weaverx_trim_excerpt($text = '') {
 		$text = wp_trim_words( $text, $excerpt_length, $excerpt_more );
 		$stripped_text_len = strlen($text);
 	}
-	if ('' == $raw_excerpt && $orig_text_len > $stripped_text_len && get_post_format() == '') {	// have stripped shortcodes
-		if ( strpos($text,$excerpt_more) === false)
+	if ('' == $raw_excerpt && $orig_text_len > $stripped_text_len && get_post_format() == '' && $text) {	// have stripped shortcodes
+		if ( strpos($text, $excerpt_more) === false)
 			$text .= $excerpt_more;
 	}
 	return apply_filters('wp_trim_excerpt', $text, $raw_excerpt);

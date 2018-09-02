@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.8
 Tested up to: 4.9
-Stable tag: 4.0
+Stable tag: 4.0.6
 
 == Description ==
 
@@ -535,3 +535,9 @@ with testing and feature suggestions.
 = Version 4.0.5 =
 * Fix: fitvids fixed
 * Fix: Theme will now auto-upgrade generated CSS when updating from 3.2.x to 4.0.x
+
+= Version 4.0.6 =
+* Fix: Check for get_the_privacy_policy_link for backward compatbility.
+* Fix: Issue with empty excerpt
+* Tweak: Gutenberg Gallery Block captions
+* Tweak: screenshot.jpg updated to comply with new WordPress standards

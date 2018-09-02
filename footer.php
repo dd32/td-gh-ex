@@ -79,7 +79,9 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 	<?php
 			/* <a href="<?php echo esc_url( __( '//wordpress.org/','weaver-xtreme') ); ?>" title="wordpress.org" target="_blank" rel="nofollow"><?php printf( __( 'Proudly powered by %s','weaver-xtreme'), 'WordPress' ); ?></a> */
 
-			$privacy_link = get_the_privacy_policy_link('', '' );
+			$privacy_link = '';
+			if ( function_exists('get_the_privacy_policy_link') )
+				$privacy_link = get_the_privacy_policy_link('', '' );
 
 			if (! weaverx_getopt('_hide_poweredby')) {
 				$powered_by = '<span id="site-generator">'
