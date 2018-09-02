@@ -171,39 +171,39 @@ function atlas_concern_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'topline_section_phone', array(
         'type' => 'theme_mod',
 		'capability'     => 'edit_theme_options',
-        'default' => '<i class="fa fa-phone"></i>011 334886',
-        'sanitize_callback' => 'wp_kses_post'
+        'default' => '+12 345 56 78',
+       'sanitize_callback' => 'sanitize_text_field'
     ));
 
     $wp_customize->add_control( 'topline_section_phone', array(
         'label' => __( 'Phone', 'atlas-concern' ),
-        'type' => 'textarea',
+        'type' => 'text',
         'section' => 'topline_section'
     ));
 
     $wp_customize->add_setting( 'topline_section_mail', array(
         'type' => 'theme_mod',
 		'capability'     => 'edit_theme_options',
-        'default' => '<i class="fa fa-envelope-o"></i>info@yoursite.com',
-        'sanitize_callback' => 'wp_kses_post'
+        'default' => 'info@yoursite.com',
+        'sanitize_callback' => 'sanitize_text_field'
     ));
 
     $wp_customize->add_control( 'topline_section_mail', array(
         'label' => __( 'Mail', 'atlas-concern' ),
-        'type' => 'textarea',
+        'type' => 'text',
         'section' => 'topline_section'
     ));
 
     $wp_customize->add_setting( 'topline_section_location', array(
         'type' => 'theme_mod',
 		'capability'     => 'edit_theme_options',
-        'default' => '<i class="fa fa-map-marker"></i>Street , Country , Zip Code',
-        'sanitize_callback' => 'wp_kses_post'
+        'default' => 'Street , Country , Zip Code',
+        'sanitize_callback' => 'sanitize_text_field'
     ));
 
     $wp_customize->add_control( 'topline_section_location', array(
         'label' => __( 'Location', 'atlas-concern' ),
-        'type' => 'textarea',
+        'type' => 'text',
         'section' => 'topline_section'
     ));
 
@@ -267,7 +267,7 @@ function atlas_concern_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_control( 'topline_section_yout_url', array(
-        'label' => __( 'Youutbe Url', 'atlas-concern' ),
+        'label' => __( 'Youtube Url', 'atlas-concern' ),
         'type' => 'url',
         'section' => 'topline_section'
     ));
