@@ -4,7 +4,7 @@ Theme URI: https://www.tenman.info/wp3/raindrops/
 Description: This theme can change freely fonts,layout,color scheme and header image for each post,page. The google fonts, you can use freely in the post more than 90percent of the fonts.Color scheme and layout, you can freely change from theme customizer.For more updates, please make sure to open the link of the changelog from the help tab of this theme page.Add new post, so also to help tab of edit post page has been described how to use tips, please visit. Supported languages Japanese - JAPAN (ja) French - FRANCE (fr_FR) Polish - POLAND (PL) (pl_PL) Portuguese - BRAZIL (pt_BR)
 Author: Tenman
 Author URI: https://www.tenman.info/wp3/
-Version: 1.523
+Version: 1.524
 Tags: one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, post-formats, featured-images, full-width-template, rtl-language-support, microformats, grid-layout, flexible-header, custom-logo, featured-image-header, footer-widgets
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -271,6 +271,11 @@ body:not(.rd-col-3).error404 .entry-title,
 .rd-col-1 .page-title{
     margin-top:1.5em;
     margin-bottom:.75em;
+    display:block;
+}
+.rd-grid .title-wrapper .title{
+    margin-top:0;
+    margin-bottom:0;
     display:block;
 }
 .paged #list-of-post .entry-title:first-of-type,
@@ -973,6 +978,9 @@ p{
     line-height:1.65;
     margin-bottom:1em;
 }
+li img{
+    vertical-align:middle;
+}
 
 .paragraph_wrap_enable .gallery,
 .paragraph_wrap_enable .fit-p,
@@ -980,6 +988,12 @@ p{
     /* @1.511 */
     margin-left:auto;
     margin-right:auto;
+}
+.search-relate-terms{
+    margin-left:auto;
+    margin-right:auto;
+    width:640px;
+    max-width:100%;
 }
 picture{
     padding:0;
@@ -1307,11 +1321,17 @@ article ul{
     margin:0 auto;
     box-sizing:border-box;
 }
-.widgettext > p > img,
-.entry-content > p > img,
+
 .widgettext > img,
 .entry-content > img{
    padding:1.5em 0 .75em 0;
+}
+.widgettext  p > img,
+.entry-content  p > img{
+    /* @1.524 */
+    margin-left:.5em;
+    margin-right:.5em;
+    vertical-align:middle;
 }
 .ie8 .widgettext img,
 .ie8 .entry-content img {
@@ -8617,6 +8637,7 @@ ul.archives .rd-tag-description{
 .widget_recent_entries a{
     padding:1em .5em .5em;
     display:block;
+    box-sizing:border-box;
 }
 .rd-type-w3standard .widget_recent_entries a{
     display:inline;
@@ -10157,4 +10178,9 @@ span[data-rd-style*="width"] {
 }
 .horizontal-list-group li mark{
     border:1px solid rgba(127,127,127,.4);
+}
+/* for child theme issue todo raindrops_column_controller() works improperly on gutenberg */
+.rd-col-1 .lsidebar,
+.rd-col-1 .rsidebar{
+    display:none!important;
 }
