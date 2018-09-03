@@ -39,6 +39,13 @@ Activiation and Use
 2. See Appearance -> Customize to change theme specific options
 
 == Changelog ==
+= 1.0.2 =
+* updating screenshot.png according to the new WordPress.org requirements
+
+
+= 1.0.1 =
+* display homepage widgets only on static homepage
+* remove default demo content
 
 = 1.0.0 =
 * Initial Release
@@ -46,7 +53,7 @@ Activiation and Use
 == Copyright ==
 
 AyaHandmade WordPress Theme, Copyright 2018 ayatemplates
-Theme name is distributed under the terms of the GNU GPL
+AyaHandmade is distributed under the terms of the GNU GPL
 
 AyaHandmade WordPress Theme bundles the following third-party resources:
 
@@ -57,13 +64,13 @@ AyaHandmade WordPress Theme bundles the following third-party resources:
 * assets/js/customize-controls.js, Justin Tadlock, GPL-2.0
 * assets/css/customize-controls.css, Justin Tadlock, GPL-2.0
 * assets/css/animate.css - daneden.me, MIT
-* assets/css/font-awesome.css - FontAwesom, MIT
-* assets/fonts/FontAwesome.otf - FontAwesom, MIT
-* assets/fonts/fontawesome-webfont.eot, FontAwesom, MIT
-* assets/fonts/fontawesome-webfont.svg, FontAwesom, MIT
-* assets/fonts/fontawesome-webfont.ttf, FontAwesom, MIT
-* assets/fonts/fontawesome-webfont.wof, FontAwesom, MIT
-* assets/fonts/fontawesome-webfont.woff2, FontAwesom, MIT
+* assets/css/font-awesome.css - FontAwesome, MIT
+* assets/fonts/FontAwesome.otf - FontAwesome, MIT
+* assets/fonts/fontawesome-webfont.eot, FontAwesome, MIT
+* assets/fonts/fontawesome-webfont.svg, FontAwesome, MIT
+* assets/fonts/fontawesome-webfont.ttf, FontAwesome, MIT
+* assets/fonts/fontawesome-webfont.wof, FontAwesome, MIT
+* assets/fonts/fontawesome-webfont.woff2, FontAwesome, MIT
 * assets/js/viewportchecker.js, MIT
 *
 * screenshot.png (HomePage Above Columns Image), CC0, Image Reference: https://pixabay.com/en/handmade-craft-sewing-hobby-1153614/
