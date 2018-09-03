@@ -1,3 +1,12 @@
+AyaClub 1.0.6, 2018-08-29
+------------------------
+- updating screenshot.png according to the new WordPress.org requirements
+
+AyaClub 1.0.5, 2018-08-04
+------------------------
+- display slider and homepage widgets only on static homepage
+- remove default demo content
+
 AyaClub 1.0.4, 2018-05-12
 ------------------------
 - changing slider images

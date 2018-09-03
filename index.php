@@ -13,14 +13,6 @@
 
  get_header(); ?>
 
- <?php if ( is_front_page() ) : ?>
-
-	<?php ayaclub_display_slider(); ?>
-
-	<?php get_sidebar('home'); ?>
-
-<?php endif; ?>
-
  <div class="clear">
 </div><!-- .clear -->
 

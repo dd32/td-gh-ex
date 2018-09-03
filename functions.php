@@ -285,20 +285,22 @@ if ( ! function_exists( 'ayaclub_display_slider' ) ) :
 			<?php
 				// display slides
 				for ( $i = 1; $i <= 3; ++$i ) {
-
-						$defaultSlideContent = __( '<h3>This is Default Slide Title</h3><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'ayaclub' );
 						
 						$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
 
-						$slideContent = get_theme_mod( 'ayaclub_slide'.$i.'_content', html_entity_decode( $defaultSlideContent ) );
+						$slideContent = get_theme_mod( 'ayaclub_slide'.$i.'_content' );
 						$slideImage = get_theme_mod( 'ayaclub_slide'.$i.'_image', $defaultSlideImage );
 
 					?>
 
 						<div data-thumb="<?php echo esc_attr( $slideImage ); ?>" data-src="<?php echo esc_attr( $slideImage ); ?>">
-							<div class="camera_caption fadeFromBottom">
-								<?php echo $slideContent; ?>
-							</div>
+
+							<?php if ( $slideContent ) : ?>
+									<div class="camera_caption fadeFromBottom">
+										<?php echo $slideContent; ?>
+									</div>
+							<?php endif; ?>
+
 						</div>
 	<?php		} ?>
 		</div><!-- #camera_wrap -->
@@ -489,6 +491,25 @@ if ( ! function_exists( 'ayaclub_customize_register' ) ) :
 				'capability'  => 'edit_theme_options',
 			)
 		);
+
+		// Add display slider option
+		$wp_customize->add_setting(
+				'ayaclub_slider_display',
+				array(
+						'default'           => 0,
+						'sanitize_callback' => 'ayaclub_sanitize_checkbox',
+				)
+		);
+
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayaclub_slider_display',
+								array(
+									'label'          => __( 'Display Slider', 'ayaclub' ),
+									'section'        => 'ayaclub_slider_section',
+									'settings'       => 'ayaclub_slider_display',
+									'type'           => 'checkbox',
+								)
+							)
+		);
 		
 		for ($i = 1; $i <= 3; ++$i) {
 		
@@ -500,7 +521,6 @@ if ( ! function_exists( 'ayaclub_customize_register' ) ) :
 			$wp_customize->add_setting(
 				$slideContentId,
 				array(
-					'default'           => __( '<h2>This is Default Slide Title</h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'ayaclub' ),
 					'sanitize_callback' => 'force_balance_tags',
 				)
 			);
