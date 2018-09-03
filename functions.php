@@ -238,13 +238,10 @@ if ( ! function_exists( 'ayawild_display_slider' ) ) :
 					// display slides
 					for ( $i = 1; $i <= 3; ++$i ) {
 
-							$defaultSlideContent = __( '<h3>This is Default Slide Title</h3><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'ayawild' );
-							
 							$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
 
-							$slideContent = get_theme_mod( 'ayawild_slide'.$i.'_content', html_entity_decode( $defaultSlideContent ) );
+							$slideContent = get_theme_mod( 'ayawild_slide'.$i.'_content' );
 							$slideImage = get_theme_mod( 'ayawild_slide'.$i.'_image', $defaultSlideImage );
-
 						?>
 							
 						<?php if ( $slideImage ) : ?>
@@ -388,7 +385,7 @@ if ( ! function_exists( 'ayawild_customize_register' ) ) :
 		$wp_customize->add_setting(
 				'ayawild_slider_display',
 				array(
-						'default'           => 1,
+						'default'           => 0,
 						'sanitize_callback' => 'ayawild_sanitize_checkbox',
 				)
 		);
@@ -413,7 +410,6 @@ if ( ! function_exists( 'ayawild_customize_register' ) ) :
 			$wp_customize->add_setting(
 				$slideContentId,
 				array(
-					'default'           => __( '<h2>This is Default Slide Title</h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'ayawild' ),
 					'sanitize_callback' => 'force_balance_tags',
 				)
 			);

@@ -69,13 +69,17 @@
 			</header><!-- #header-main-fixed -->
 			
 
-			<?php if ( (is_home() || is_front_page()) && get_theme_mod('ayawild_slider_display', 1) == 1 ) : ?>
+			<?php if ( is_front_page() && get_option( 'show_on_front' ) == 'page' ) : ?>
+
+					<?php if ( get_theme_mod('ayawild_slider_display', 0) == 1 ) : ?>
 			
-						<div id="slider-content-wrapper">
-						
-							<?php ayawild_display_slider(); ?>
-						
-						</div>
+							<div id="slider-content-wrapper">
+							
+								<?php ayawild_display_slider(); ?>
+							
+							</div>
+
+					<?php endif; ?>
 			
 			<?php endif; ?>
 
