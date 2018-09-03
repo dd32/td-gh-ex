@@ -364,7 +364,7 @@ if ( ! function_exists( 'ayafreelance_header_style' ) ) :
           <?php if ( get_theme_support( 'custom-header', 'default-text-color' ) !== $header_text_color
                       && 'blank' !== $header_text_color ) : ?>
 
-                  #header-main-fixed, #header-main-fixed h1.entry-title {color: #<?php echo esc_attr( $header_text_color ); ?>;}
+                  #header-main-fixed, #header-main-fixed h1.entry-title {color: #<?php echo sanitize_hex_color_no_hash( $header_text_color ); ?>;}
 
           <?php endif; ?>
       </style>
@@ -499,8 +499,8 @@ if ( ! function_exists( 'ayafreelance_customize_register' ) ) :
 		$wp_customize->add_setting(
 				'ayafreelance_slider_display',
 				array(
-						'default'           => 1,
-						'sanitize_callback' => 'esc_attr',
+						'default'           => 0,
+						'sanitize_callback' => 'ayafreelance_sanitize_checkbox',
 				)
 		);
 
@@ -611,7 +611,7 @@ if ( ! function_exists( 'ayafreelance_customize_register' ) ) :
 				'ayafreelance_animations_display',
 				array(
 						'default'           => 1,
-						'sanitize_callback' => 'esc_attr',
+						'sanitize_callback' => 'ayafreelance_sanitize_checkbox',
 				)
 		);
 

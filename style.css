@@ -4,7 +4,7 @@ Description: AyaFreelance is fully Responsive Blogging WordPress Theme. Features
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayafreelance
-Version: 1.0.9
+Version: 1.1.1
 Text Domain: ayafreelance
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -27,7 +27,7 @@ body {
 	overflow:hidden;
 }
 
-input, select, textarea, button, #container .button {
+input, select, textarea, button, #main .button {
 	font-family:inherit;
 }
 
@@ -236,6 +236,7 @@ dd {
 
 /* header */
 #header-main-fixed {
+	min-height:40px;
 	clear:both; 
 	margin:0;
 	width:100%;
@@ -406,6 +407,7 @@ article,
 }
 
 #footer-menu {
+	clear:both;
 	text-align:center;
 	margin:15px 0;
 }
@@ -536,7 +538,7 @@ button {
 input[type="submit"],
 button,
 .btn,
-#container .button {
+#main .button {
 	padding:8px 12px;
 	text-decoration:none;
 	font-weight:normal;
@@ -560,7 +562,7 @@ button,
 .button:hover,
 input[type="submit"]:hover,
 button:hover,
-#container .button:hover,
+#main .button:hover,
 .btn:hover {
 	color:#ffffff;
 	background-image: -ms-linear-gradient(top, #333333 0%, #ffc801 100%);
@@ -1383,7 +1385,7 @@ dt.gallery-icon > a:before,
 	}
 	
 	#main-content,
-	#container {
+	#main {
 		float:left;
 		margin:0 0 20px 2%;
 		width:63%;
@@ -1679,6 +1681,10 @@ dt.gallery-icon > a:before,
 		float:left;
 	}
 
+	.comment-form-cookies-consent {
+		clear:both;
+	}
+
 	.form-submit {
 		clear:both;
 	}
@@ -1920,7 +1926,7 @@ dt.gallery-icon > a:before,
 	input[type="submit"],
 	button,
 	.btn,
-	#container .button {
+	#main .button {
 		padding:6px 8px;
 	}
 
@@ -2040,7 +2046,7 @@ dt.gallery-icon > a:before,
 
 	
 	#main-content,
-	#container,
+	#main,
 	#hdrtop-searchform-subcontent {
 		margin-left:0;
 	}

@@ -20,12 +20,6 @@
 
 	<div id="main-content">
 
-		<?php if ( (is_front_page() || is_home()) && get_theme_mod('ayafreelance_slider_display', 1) == 1 ) : ?>
-					
-					<?php ayafreelance_display_slider(); ?>
-
-		<?php endif; ?>
-
 	<?php if ( have_posts() ) : 
 
 				// starts the loop
