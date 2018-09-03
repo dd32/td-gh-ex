@@ -476,7 +476,8 @@ if ( ! function_exists( 'ayacoffeeshop_should_display_slider' ) ) :
 
 	function ayacoffeeshop_should_display_slider() {
 
-		return (is_home() || is_front_page()) && (ayacoffeeshop_get_slides_count() > 0);
+		return (is_front_page() && get_option( 'show_on_front' ) == 'page')
+					&& (ayacoffeeshop_get_slides_count() > 0);
 	}
 
 endif; // ayacoffeeshop_should_display_slider
