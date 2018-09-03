@@ -502,6 +502,7 @@ final class ayablogging_Customize {
 // Doing this customizer thang!
 ayablogging_Customize::get_instance();
 
+
 if ( ! function_exists( 'ayablogging_customize_register' ) ) :
 	/**
 	 * Add postMessage support for site title and description for the Theme Customizer.
@@ -525,8 +526,8 @@ if ( ! function_exists( 'ayablogging_customize_register' ) ) :
 		$wp_customize->add_setting(
 				'ayablogging_slider_display',
 				array(
-						'default'           => 1,
-						'sanitize_callback' => 'esc_attr',
+						'default'           => 0,
+						'sanitize_callback' => 'ayablogging_sanitize_checkbox',
 				)
 		);
 
