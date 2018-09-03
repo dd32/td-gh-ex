@@ -59,7 +59,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content.php:47, inc/settings.php:379, inc/template-tags.php:549, loops/loop-circleicon.php:22, loops/loop-grid.php:24
+#: content.php:47, inc/settings.php:379, inc/template-tags.php:544, loops/loop-circleicon.php:22, loops/loop-grid.php:24
 msgid "Continue reading"
 msgstr ""
 
@@ -111,15 +111,15 @@ msgstr ""
 msgid "Back To Top"
 msgstr ""
 
-#: functions.php:606
+#: functions.php:611
 msgid "SiteOrigin Page Builder"
 msgstr ""
 
-#: functions.php:611
+#: functions.php:616
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:616
+#: functions.php:621
 msgid "SiteOrigin CSS"
 msgstr ""
 
@@ -1795,53 +1795,53 @@ msgstr ""
 msgid "%s Logo"
 msgstr ""
 
-#: inc/template-tags.php:368
+#: inc/template-tags.php:367
 msgid "Category Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:372
+#: inc/template-tags.php:371
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:377
+#: inc/template-tags.php:376
 msgid "Author Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:382
+#: inc/template-tags.php:381
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:386
+#: inc/template-tags.php:385
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:390
+#: inc/template-tags.php:389
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:397
+#: inc/template-tags.php:396
 msgid "%s: %s"
 msgstr ""
 
-#: inc/template-tags.php:400
+#: inc/template-tags.php:399
 msgid "Archives"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:416, inc/template-tags.php:419
+#: inc/template-tags.php:414, inc/template-tags.php:417
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:424
+#: inc/template-tags.php:422
 msgid "<strong>Tagged</strong> %2$s."
 msgstr ""
 
-#: inc/template-tags.php:434
+#: inc/template-tags.php:430
 msgid "Posted in %1$s and tagged %2$s."
 msgstr ""
 
-#: inc/template-tags.php:437
+#: inc/template-tags.php:433
 msgid "Posted in %1$s."
 msgstr ""
 
