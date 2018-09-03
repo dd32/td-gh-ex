@@ -288,21 +288,21 @@ if ( ! function_exists( 'ayageek_display_slider' ) ) :
 		<?php
 			// display slides
 			for ( $i = 1; $i <= 3; ++$i ) {
-
-					$defaultSlideContent = __( '<h2>This is Default Slide Title</h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a class="btn" title="Read more" href="#">Read more</a>', 'ayageek' );
 					
 					$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
 
-					$slideContent = get_theme_mod( 'ayageek_slide'.$i.'_content', html_entity_decode( $defaultSlideContent ) );
+					$slideContent = get_theme_mod( 'ayageek_slide'.$i.'_content' );
 					$slideImage = get_theme_mod( 'ayageek_slide'.$i.'_image', $defaultSlideImage );
 
 				?>
 					<li>
 			  			<img src="<?php echo esc_url( $slideImage ); ?>" class="slider-img" alt="<?php echo esc_attr( sprintf( esc_html__( 'image %s', 'ayageek' ), $i )  ); ?>" />
-			  			<div class="caption">						
-							<?php echo $slideContent; ?>
-							<br /><br />
-						</div>
+			  			<?php if ( $slideContent ) : ?>
+					  			<div class="caption">						
+									<?php echo $slideContent; ?>
+									<br /><br />
+								</div>
+						<?php endif; ?>
 			  		</li>
 
 <?php		} ?>
@@ -495,12 +495,30 @@ if ( ! function_exists( 'ayageek_customize_register' ) ) :
 				'capability'  => 'edit_theme_options',
 			)
 		);
+
+		// Add display slider option
+		$wp_customize->add_setting(
+				'ayageek_slider_display',
+				array(
+						'default'           => 0,
+						'sanitize_callback' => 'ayageek_sanitize_checkbox',
+				)
+		);
+
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayageek_slider_display',
+								array(
+									'label'          => __( 'Display Slider', 'ayageek' ),
+									'section'        => 'ayageek_slider_section',
+									'settings'       => 'ayageek_slider_display',
+									'type'           => 'checkbox',
+								)
+							)
+		);
 		
 		// Add slide 1 content
 		$wp_customize->add_setting(
 			'ayageek_slide1_content',
 			array(
-			    'default'           => __( '<h2>This is Default Slide Title</h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a class="btn" title="Read more" href="#">Read more</a>', 'ayageek' ),
 			    'sanitize_callback' => 'wp_kses_post',
 			)
 		);
@@ -536,7 +554,6 @@ if ( ! function_exists( 'ayageek_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'ayageek_slide2_content',
 			array(
-			    'default'           => __( '<h2>This is Default Slide Title</h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a class="btn" title="Read more" href="#">Read more</a>', 'ayageek' ),
 			    'sanitize_callback' => 'wp_kses_post',
 			)
 		);
@@ -572,7 +589,6 @@ if ( ! function_exists( 'ayageek_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'ayageek_slide3_content',
 			array(
-			    'default'           => __( '<h2>This is Default Slide Title</h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a class="btn" title="Read more" href="#">Read more</a>', 'ayageek' ),
 			    'sanitize_callback' => 'wp_kses_post',
 			)
 		);

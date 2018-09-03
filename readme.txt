@@ -41,6 +41,14 @@ Activiation and Use
 
 == Changelog ==
 
+= 1.0.3 =
+* updating screenshot.png according to the new WordPress.org requirements
+
+
+= 1.0.2 =
+* display slider and homepage widgets only on static homepage
+* remove default demo content
+
 = 1.0.1 =
 * Changing Slider Images 
 
