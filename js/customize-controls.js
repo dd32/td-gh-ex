@@ -1,3 +1,9 @@
+/**
+ * "Pro" theme section examples for the customizer by Justin Tadlock Copyright 2016
+ * Licensed under the GNU GPL, version 2 or later.
+ * Source: https://github.com/justintadlock/trt-customizer-pro
+ */
+
 ( function( api ) {
 
 	'use strict';

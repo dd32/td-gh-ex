@@ -4,7 +4,7 @@ Description: AyaEstate is Fully Responsive WordPress Theme. Features include Ani
 Theme URI: https://ayatemplates.com/product/ayaestate
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.0.7
+Version: 1.0.9
 Text Domain: ayaestate
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2.0
@@ -27,7 +27,7 @@ body {
 	overflow:hidden;
 }
 
-input, select, textarea, button, #container .button {
+input, select, textarea, button, #main .button {
 	font-family:inherit;
 }
 
@@ -309,7 +309,7 @@ pre {
 /* main content */
 #main-content,
 #main-content-full,
-#container {
+#main {
 	overflow:hidden;
 	padding:10px 0 0 0;
 }
@@ -490,7 +490,7 @@ button {
 input[type="submit"],
 button,
 .btn,
-#container .button {
+#main .button {
 	padding:8px 12px;
 	text-decoration:none;
 	font-weight:normal;
@@ -514,7 +514,7 @@ button,
 .button:hover,
 input[type="submit"]:hover,
 button:hover,
-#container .button:hover,
+#main .button:hover,
 .btn:hover {
 	color:#ffffff;
 	background-image: -ms-linear-gradient(top, #a81010 0%, #aa0100 100%);
@@ -1249,7 +1249,7 @@ dt.gallery-icon > a:before,
 @media screen and (min-width: 800px) {
 	
 	#main-content,
-	#container {
+	#main {
 		float:left;
 		margin:0 0 20px 2%;
 		width:63%;
@@ -1778,7 +1778,7 @@ dt.gallery-icon > a:before,
 	input[type="submit"],
 	button,
 	.btn,
-	#container .button {
+	#main .button {
 		padding:6px 8px;
 	}
 }
@@ -1872,7 +1872,7 @@ dt.gallery-icon > a:before,
 
 	
 	#main-content,
-	#container,
+	#main,
 	#hdrtop-searchform-subcontent {
 		margin-left:0;
 	}

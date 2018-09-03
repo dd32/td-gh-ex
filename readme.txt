@@ -42,6 +42,18 @@ Activiation and Use
 
 == Changelog ==
 
+AyaEstate 1.0.9, 2018-08-28
+------------------------
+- updating screenshot.png according to the new WordPress.org requirements
+
+AyaEstate 1.0.8, 2018-08-04
+------------------------
+- remove default demo content
+
+AyaEstate 1.0.7, 2018-05-31
+------------------------
+- updating screenshot.png
+
 = 1.0.6 =
 * fix css issue with display of GDPR checkbox in the comment form
 
@@ -80,7 +92,7 @@ Activiation and Use
 == Copyright ==
 
 AyaEstate WordPress Theme, Copyright 2018 AyaTemplates
-Theme name is distributed under the terms of the GNU GPL
+AyaEstate is distributed under the terms of the GNU GPL
 
 AyaEstate WordPress Theme bundles the following third-party resources:
 
@@ -93,15 +105,14 @@ AyaEstate WordPress Theme bundles the following third-party resources:
 * inc/tgmpa/class-tgm-plugin-activation.php, Thomas Griffin, GPL-2.0
 * inc/tgmpa/recommended-plugins.php, Thomas Griffin, GPL-2.0
 * css/animate.css - daneden.me, MIT
-* css/font-awesome.css - FontAwesom, MIT
-* fonts/FontAwesome.otf - FontAwesom, MIT
-* fonts/fontawesome-webfont.eot, FontAwesom, MIT
-* fonts/fontawesome-webfont.svg, FontAwesom, MIT
-* fonts/fontawesome-webfont.ttf, FontAwesom, MIT
-* fonts/fontawesome-webfont.wof, FontAwesom, MIT
-* fonts/fontawesome-webfont.woff2, FontAwesom, MIT
+FontAwesome icon font, Copyright Font Awesome
+FontAwesome are licensed under the terms of the SIL OFL 1.1 license.
+Source: https://fontawesome.com/v4.7.0/
+
+
 * js/viewportchecker.js, MIT
 *
 * screenshot.png (Thumbnail Image), https://pixabay.com/en/render-graphic-architecture-3d-1477041/, CC0
 *
-* screenshot.png (Facebook Page Logo Image), GPL-2.0, AyaTemplates, https://ayatemplates.com/
+* screenshot.png (Sidebar Image), https://pixabay.com/en/apartment-view-interior-room-3564955/, CCO
+* screenshot.png (Sidebar Image), https://pixabay.com/en/architecture-building-driveway-1867187/, CCO
