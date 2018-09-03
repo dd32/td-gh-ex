@@ -54,6 +54,10 @@ Images
 
 == Changelog ==
 
+Version 3.1.5
+===============
+* Added Template Color
+
 Version 3.1.4
 ===============
 * Minor Bug Fixes

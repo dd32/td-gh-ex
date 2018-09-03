@@ -14,12 +14,12 @@
         
         //Design Options
         'site_layout' => 'full_width',
+        'template_color' => '#dc3522',
         'background_image' => 'pattern0',
         'default_layout' => 'no_sidebar_wide',
         'default_page_layout' => 'no_sidebar_wide',
         'default_post_layout' => 'no_sidebar_wide',
         'blog_post_display_type' => 'blog_image_large',
-        'template_color' => '#437C17',
         'show_footer_featured_section' => '',
         'enable_comments_page' => '',
         'enable_comments_post' => '',
@@ -301,6 +301,15 @@
                                         <?php endforeach; ?>
                                     </td>
                                 </tr>
+
+                                <tr>
+                                    <th><label><?php esc_html_e('Template Color','accesspress-basic'); ?></label></th>
+                                    <td>
+                                        <input type="text" name="apbasic_options[template_color]" class="apbasic-color" id="ap_template_color" value="<?php echo esc_attr($settings['template_color']); ?>" />
+                                        <i><?php esc_html_e( 'Set the template color for the site', 'accesspress-basic' ); ?></i>
+                                    </td>
+                                </tr>
+
                                 <tr id="bk_pattern_tr">
                                     <?php
                                         $background_image = array('pattern0','pattern1','pattern3','pattern4','pattern5');
@@ -837,6 +846,8 @@
         }
         
         $apbasic_inputs['site_layout'] = sanitize_text_field($input['site_layout']);
+        
+        $apbasic_inputs['template_color'] = sanitize_hex_color($input['template_color']);
         
         $apbasic_inputs['footer_text'] = sanitize_text_field($input['footer_text']);
         
