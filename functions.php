@@ -51,3 +51,7 @@ function benzer_remove_parent_setting( $wp_customize ) {
 add_action( 'customize_register', 'benzer_remove_parent_setting',99 );
 
 require( get_stylesheet_directory() . '/inc/customize/specia-features.php');
+/**
+ * Called premium page details
+ */
+require_once( get_stylesheet_directory() . '/inc/customize/benzer-premium.php');
