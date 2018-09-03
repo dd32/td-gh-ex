@@ -404,7 +404,9 @@ function catchevolution_featured_header() {
 	$header_image_path = get_header_image();
 
 	// Check if this is a post or page, if it has a thumbnail, and if it's a big one
-	if ( is_singular() && has_post_thumbnail( $post->ID ) ) :
+	if ( is_singular() && has_post_thumbnail( $post->ID ) &&
+			( /* $src, $width, $height */ $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'post-thumbnail' ) ) &&
+			$image[1] >= 1920 ) :
 		// Houston, we have a new header image!
 		echo '<div id="header-image">';
 			echo get_the_post_thumbnail( $post->ID, 'full' );

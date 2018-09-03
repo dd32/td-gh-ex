@@ -63,6 +63,9 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 
 == Change Log ==
 
+= 3.0.4 (Released: September 03, 2018) =
+* Bug Fixed: Code reverted for header image on singular pages.
+
 = 3.0.3 (Released: August 13, 2018) =
 * Added: Core Privacy Policy link support in footer
 * Bug Fixed: Design issue with Catch Infinite Scroll plugin
