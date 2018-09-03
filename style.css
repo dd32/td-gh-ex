@@ -4,7 +4,7 @@ Description: AyaPortfolio is fully Responsive Portfolio WordPress Theme. Feature
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayaportfolio
-Version: 1.0.6
+Version: 1.0.8
 Text Domain: ayaportfolio
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -27,7 +27,7 @@ body {
 	overflow:hidden;
 }
 
-input, select, textarea, button, #container .button {
+input, select, textarea, button, #main .button {
 	font-family:inherit;
 }
 
@@ -223,6 +223,7 @@ dd {
 
 /* header */
 #header-main-fixed {
+	min-height:40px;
 	clear:both;
 	margin:0;
 	width:100%;
@@ -432,6 +433,7 @@ article,
 }
 
 #footer-menu {
+	clear:both;
 	text-align:center;
 	margin:15px 0;
 }
@@ -523,7 +525,7 @@ input[type="submit"],
 button,
 .btn,
 [data-carousel-3d] a,
-#container .button {
+#main .button {
 	padding:8px 12px;
 	text-decoration:none;
 	font-weight:normal;
@@ -547,7 +549,7 @@ button,
 .button:hover,
 input[type="submit"]:hover,
 button:hover,
-#container .button:hover,
+#main .button:hover,
 [data-carousel-3d] a:hover,
 .btn:hover {
 	color:#ffffff;
@@ -1360,7 +1362,7 @@ dt.gallery-icon > a:before,
 @media screen and (min-width: 800px) {
 	
 	#main-content,
-	#container {
+	#main {
 		float:left;
 		margin:0 0 20px 2%;
 		width:63%;
@@ -1638,6 +1640,10 @@ dt.gallery-icon > a:before,
 		float:left;
 	}
 
+	.comment-form-cookies-consent {
+		clear:both;
+	}
+
 	.form-submit {
 		clear:both;
 	}
@@ -1901,7 +1907,7 @@ dt.gallery-icon > a:before,
 	button,
 	[data-carousel-3d] a,
 	.btn,
-	#container .button {
+	#main .button {
 		padding:6px 8px;
 	}
 
@@ -2046,7 +2052,7 @@ dt.gallery-icon > a:before,
 
 	
 	#main-content,
-	#container,
+	#main,
 	#hdrtop-searchform-subcontent {
 		margin-left:0;
 	}

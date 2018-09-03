@@ -64,12 +64,9 @@ AyaPortfolio WordPress Theme bundles the following third-party resources:
 * images/slider/5.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: http://pixabay.com/en/meeting-room-table-screen-730679/
 *
 * screenshot.png (Slider Image) http://pixabay.com/en/portfolio-briefcase-brown-blue-385530/
-*
-* screenshot.png (Pinterest Profile) https://www.pinterest.com/ayadesigntemplates/
-*
-* screenshot.png (Facebook Page) https://web.facebook.com/ayatemplates
-*
-* screenshot.png (Instagram Profile) https://www.instagram.com/aya.templates/
+* screenshot.png https://pixabay.com/en/woman-face-photomontage-faces-789146/
+* screenshot.png https://pixabay.com/en/records-album-vinyl-retro-soul-1148927/
+* screenshot.png https://pixabay.com/en/vinyl-records-store-shopping-retro-945396/
 
 == Installation ==
 

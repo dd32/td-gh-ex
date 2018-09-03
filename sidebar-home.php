@@ -15,23 +15,7 @@
 			 */
 		?>
 		<div class="col3a">
-
-			<?php if ( !dynamic_sidebar( 'homepage-column-1-widget-area' ) ) : ?>
-
-						<h2 class="sidebar-title">
-							<?php esc_html_e('Home Col Widget 1', 'ayaportfolio'); ?>
-						</h2><!-- .sidebar-title -->
-						
-						<div class="sidebar-after-title">
-						</div><!-- .sidebar-after-title -->
-						
-						<div class="textwidget">
-							<?php esc_html_e('This is first homepage widget area. To customize it, please navigate to Admin Panel -> Appearance -> Widgets and add widgets to Homepage Column #1.', 'ayaportfolio'); ?>
-						</div><!-- .textwidget -->
-			
-			<?php endif; // end of ! dynamic_sidebar( 'homepage-column-1-widget-area' )
-				  ?>
-
+			<?php dynamic_sidebar( 'homepage-column-1-widget-area' ); ?>
 		</div><!-- .col3a -->
 		
 		<?php 
@@ -40,22 +24,7 @@
 			 */
 		?>
 		<div class="col3b">
-			<?php if ( !dynamic_sidebar( 'homepage-column-2-widget-area' ) ) : ?>
-			
-					<h2 class="sidebar-title">
-						<?php esc_html_e('Home Col Widget 2', 'ayaportfolio'); ?>
-					</h2><!-- .sidebar-title -->
-					
-					<div class="sidebar-after-title">
-					</div><!-- .sidebar-after-title -->
-					
-					<div class="textwidget">
-						<?php esc_html_e('This is second homepage widget area. To customize it, please navigate to Admin Panel -> Appearance -> Widgets and add widgets to Homepage Column #2.', 'ayaportfolio'); ?>
-					</div><!-- .textwidget -->
-						
-			<?php endif; // end of ! dynamic_sidebar( 'homepage-column-2-widget-area' )
-				  ?>
-			
+			<?php dynamic_sidebar( 'homepage-column-2-widget-area' ); ?>
 		</div><!-- .col3b -->
 
 		<?php 
@@ -64,22 +33,7 @@
 			 */
 		?>
 		<div class="col3c">
-			<?php if ( !dynamic_sidebar( 'homepage-column-3-widget-area' ) ) : ?>
-			
-					<h2 class="sidebar-title">
-						<?php esc_html_e('Home Col Widget 3', 'ayaportfolio'); ?>
-					</h2><!-- .sidebar-title -->
-					
-					<div class="sidebar-after-title">
-					</div><!-- .sidebar-after-title -->
-					
-					<div class="textwidget">
-						<?php esc_html_e('This is third homepage widget area. To customize it, please navigate to Admin Panel -> Appearance -> Widgets and add widgets to Homepage Column #3.', 'ayaportfolio'); ?>
-					</div><!-- .textwidget -->
-						
-			<?php endif; // end of ! dynamic_sidebar( 'homepage-column-3-widget-area' )
-				  ?>
-			
+			<?php dynamic_sidebar( 'homepage-column-3-widget-area' ); ?>
 		</div><!-- .col3c -->
 		
 		<div class="clear">

@@ -1,3 +1,12 @@
+AyaPortfolio 1.0.8, 2018-08-29
+------------------------
+- updating screenshot.png according to the new WordPress.org requirements
+
+AyaPortfolio 1.0.7, 2018-08-04
+------------------------
+- display slider and homepage widgets only on static homepage
+- remove default demo content
+
 AyaPortfolio 1.0.6, 2018-04-25
 ------------------------
 - fix issue with instagram plugin slug path

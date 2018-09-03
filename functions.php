@@ -343,7 +343,7 @@ if ( ! function_exists( 'ayaportfolio_header_style' ) ) :
           <?php if ( get_theme_support( 'custom-header', 'default-text-color' ) !== $header_text_color
                       && 'blank' !== $header_text_color ) : ?>
 
-                  #header-main-fixed, #header-main-fixed h1.entry-title {color: #<?php echo esc_attr( $header_text_color ); ?>;}
+                  #header-main-fixed, #header-main-fixed h1.entry-title {color: #<?php echo sanitize_hex_color_no_hash( $header_text_color ); ?>;}
 
           <?php endif; ?>
       </style>
@@ -520,7 +520,7 @@ if ( ! function_exists( 'ayaportfolio_customize_register' ) ) :
 		$wp_customize->add_setting(
 				'ayaportfolio_slider_display',
 				array(
-						'default'           => 1,
+						'default'           => 0,
 						'sanitize_callback' => 'ayaportfolio_sanitize_checkbox',
 				)
 		);
@@ -545,7 +545,6 @@ if ( ! function_exists( 'ayaportfolio_customize_register' ) ) :
 			$wp_customize->add_setting(
 				$slideContentId,
 				array(
-					'default'           => __( '<h2><span>This is Default Slide Title</span></h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'ayaportfolio' ),
 					'sanitize_callback' => 'force_balance_tags',
 				)
 			);
@@ -641,17 +640,18 @@ function ayaportfolio_display_slider() {
 		<?php
 			// display slides
 			for ( $i = 1; $i <= 5; ++$i ) {
-
-					$defaultSlideContent = __( '<h2><span>This is Default Slide Title</span></h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'ayaportfolio' );
 					
 					$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
-
-					$slideContent = get_theme_mod( 'ayaportfolio_slide'.$i.'_content', html_entity_decode( $defaultSlideContent ) );
+					$slideContent = get_theme_mod( 'ayaportfolio_slide'.$i.'_content' );
 					$slideImage = get_theme_mod( 'ayaportfolio_slide'.$i.'_image', $defaultSlideImage );
 				?>		
 					<?php if ($slideImage != '') : ?>
 							<div class="slide" style="background-image: url('<?php echo esc_url( $slideImage ); ?>');">
-								<?php echo $slideContent; ?>
+								<?php if ( $slideContent ) : ?>
+										<p>
+											<?php echo $slideContent; ?>
+										</p>
+								<?php endif; ?>
 							</div>
 					<?php endif; ?>
 <?php		} ?>

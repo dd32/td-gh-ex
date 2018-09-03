@@ -9,7 +9,11 @@
 <html <?php language_attributes(); ?>>
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>" />
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+		<?php
+            if ( is_singular() && pings_open() ) :
+                printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+            endif;
+        ?>
 		<meta name="viewport" content="width=device-width" />
 		<?php wp_head(); ?>
 	</head>
@@ -64,20 +68,17 @@
 
 			</header><!-- #header-main-fixed -->
 
-			<?php if ( (is_home() || is_front_page()) && get_theme_mod('ayaportfolio_slider_display', 1) == 1 ) : ?>
-			
-						<?php ayaportfolio_display_slider(); ?>
+			<?php if ( is_front_page() && get_option( 'show_on_front' ) == 'page' ) : ?>
 
-						<div class="clear">
-						</div>
+					<?php if ( get_theme_mod('ayaportfolio_slider_display', 0) == 1 ) : ?>
 			
-			<?php endif; ?>
+							<?php ayaportfolio_display_slider(); ?>
 
-			<?php if ( is_home() || is_front_page() ) : ?>
-			
+							<div class="clear">
+							</div>
+
+					<?php endif; ?>
+
 					<?php get_sidebar('home'); ?>
 			
 			<?php endif; ?>
-
-
-			
