@@ -4,7 +4,7 @@ Description: AyaPhotography is fully Responsive WordPress Theme with Built-in Ho
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayaphotography
-Version: 1.0.1
+Version: 1.0.3
 Text Domain: ayaphotography
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -26,7 +26,7 @@ body {
 	overflow:hidden;
 }
 
-input, select, textarea, button, #container .button {
+input, select, textarea, button, #main .button {
 	font-family:inherit;
 }
 
@@ -391,7 +391,7 @@ aside {
 /* main content */
 #main-content,
 #main-content-full,
-#container {
+#main {
 	overflow:hidden;
 	padding:10px 0 0 0;
 }
@@ -583,6 +583,10 @@ article,
 	list-style:none;
 	padding:0;
 	margin:0;
+}
+
+.social-widget iframe {
+    margin-bottom:0;
 }
 
 .social-widget li {
@@ -784,7 +788,7 @@ button {
 input[type="submit"],
 button,
 .btn,
-#container .button {
+#main .button {
 	padding:8px 12px;
 	text-decoration:none;
 	font-weight:normal;
@@ -807,7 +811,7 @@ button,
 
 input[type="submit"]:hover,
 button:hover,
-#container .button:hover,
+#main .button:hover,
 .btn:hover {
 	color:#ffffff;
 	background-image: -ms-linear-gradient(top, #020315 0%, #5F9E0F 100%);
@@ -1854,7 +1858,7 @@ blockquote {
 @media screen and (min-width: 800px) {
 	
 	#main-content,
-	#container {
+	#main {
 		float:left;
 		margin:0 0 20px 2%;
 		width:63%;
@@ -2225,7 +2229,7 @@ blockquote {
 	}
 
 	#main-content,
-	#container {
+	#main {
 		float:none;
 		clear:both;
 		margin:0 2% 10px 2%;
@@ -2442,7 +2446,7 @@ blockquote {
 	input[type="submit"],
 	button,
 	.btn,
-	#container .button {
+	#main .button {
 		padding:6px 8px;
 	}
 }
@@ -2562,7 +2566,7 @@ blockquote {
 	}
 	
 	#main-content,
-	#container,
+	#main,
 	#hdrtop-searchform-subcontent {
 		margin-left:0;
 	}

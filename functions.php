@@ -294,27 +294,23 @@ if ( ! function_exists( 'ayaphotography_display_slider' ) ) :
 					<?php
 						// display slides
 						for ( $i = 1; $i <= 5; ++$i ) {
-							$defaultSlideContent = __( '<p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><p>Navigate to Admin Panel -> Left Menu -> Appearance -> Customize -> Slider Section, update slider fields and save changes.</p>', 'ayaphotography' );
 						
 							$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
 							$slideImage = get_theme_mod( 'ayaphotography_slide'.$i.'_image', $defaultSlideImage );
 
 							if ( !empty($slideImage) ) :
 
-								$slideContent = get_theme_mod( 'ayaphotography_slide'.$i.'_content', html_entity_decode( $defaultSlideContent ) );	
+								$slideContent = get_theme_mod( 'ayaphotography_slide'.$i.'_content' );	
 								$imageAlt = sprintf( esc_html__( 'Image %s', 'ayaphotography' ), $i );
 					?>
-
 								<figure>
 									<img src="<?php echo esc_url( $slideImage ); ?>" alt="<?php echo esc_attr( $imageAlt ); ?>" />
 									<figcaption>
 										<div class="photostack-back">
-											<?php echo $slideContent; ?>									
+											<?php echo $slideContent; ?>
 										</div>
 									</figcaption>
 								</figure>
-
-
 					<?php 	endif;
 
 						} ?>
@@ -514,7 +510,7 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 		$wp_customize->add_setting(
 				'ayaphotography_slider_display',
 				array(
-						'default'           => 1,
+						'default'           => 0,
 						'sanitize_callback' => 'ayaphotography_sanitize_checkbox',
 				)
 		);
@@ -533,7 +529,6 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'ayaphotography_slide1_content',
 			array(
-			    'default'           => __( '<p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><p>Navigate to Admin Panel -> Left Menu -> Appearance -> Customize -> Slider Section, update slider fields and save changes.</p>', 'ayaphotography' ),
 			    'sanitize_callback' => 'wp_kses_post',
 			)
 		);
@@ -569,7 +564,6 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'ayaphotography_slide2_content',
 			array(
-			    'default'           => __( '<p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><p>Navigate to Admin Panel -> Left Menu -> Appearance -> Customize -> Slider Section, update slider fields and save changes.</p>', 'ayaphotography' ),
 			    'sanitize_callback' => 'wp_kses_post',
 			)
 		);
@@ -605,7 +599,6 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'ayaphotography_slide3_content',
 			array(
-			    'default'           => __( '<p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><p>Navigate to Admin Panel -> Left Menu -> Appearance -> Customize -> Slider Section, update slider fields and save changes.</p>', 'ayaphotography' ),
 			    'sanitize_callback' => 'wp_kses_post',
 			)
 		);
@@ -641,7 +634,6 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'ayaphotography_slide4_content',
 			array(
-			    'default'           => __( '<p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><p>Navigate to Admin Panel -> Left Menu -> Appearance -> Customize -> Slider Section, update slider fields and save changes.</p>', 'ayaphotography' ),
 			    'sanitize_callback' => 'wp_kses_post',
 			)
 		);
@@ -677,7 +669,6 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'ayaphotography_slide5_content',
 			array(
-			    'default'           => __( '<p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><p>Navigate to Admin Panel -> Left Menu -> Appearance -> Customize -> Slider Section, update slider fields and save changes.</p>', 'ayaphotography' ),
 			    'sanitize_callback' => 'wp_kses_post',
 			)
 		);
