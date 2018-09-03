@@ -73,19 +73,17 @@
 			<div class="clear">
 			</div><!-- .clear -->
 
-
-			<?php if ( (is_home() || is_front_page()) && get_theme_mod('ayapsychology_slider_display', 1) == 1 ) : ?>
+			<?php if ( is_front_page() && get_option( 'show_on_front' ) == 'page' ) : ?>
 			
+					<?php if ( get_theme_mod('ayapsychology_slider_display', 0) == 1 ) : ?>
+
 						<div id="slider-content-wrapper">
 						
 							<?php ayapsychology_display_slider(); ?>
 						
 						</div>
-			
-			<?php endif; ?>
 
-
-			<?php if ( is_home() || is_front_page() ) : ?>
+					<?php endif; ?>
 
 					<?php get_sidebar('home'); ?>
 			

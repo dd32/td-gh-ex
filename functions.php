@@ -285,20 +285,19 @@ if ( ! function_exists( 'ayapsychology_display_slider' ) ) :
 			<?php
 				// display slides
 				for ( $i = 1; $i <= 3; ++$i ) {
-
-						$defaultSlideContent = __( '<h3>This is Default Slide Title</h3><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'ayapsychology' );
 						
 						$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
 
 						$slideContent = get_theme_mod( 'ayapsychology_slide'.$i.'_content', html_entity_decode( $defaultSlideContent ) );
 						$slideImage = get_theme_mod( 'ayapsychology_slide'.$i.'_image', $defaultSlideImage );
-
 					?>
 
 						<div data-thumb="<?php echo esc_attr( $slideImage ); ?>" data-src="<?php echo esc_attr( $slideImage ); ?>">
-							<div class="camera_caption fadeFromBottom">
-								<?php echo $slideContent; ?>
-							</div>
+							<?php if ($slideContent) : ?>
+									<div class="camera_caption fadeFromBottom">
+										<?php echo $slideContent; ?>
+									</div>
+							<?php endif; ?>
 						</div>
 	<?php		} ?>
 		</div><!-- #camera_wrap -->
@@ -494,7 +493,7 @@ if ( ! function_exists( 'ayapsychology_customize_register' ) ) :
 		$wp_customize->add_setting(
 				'ayapsychology_slider_display',
 				array(
-						'default'           => 1,
+						'default'           => 0,
 						'sanitize_callback' => 'ayapsychology_sanitize_checkbox',
 				)
 		);
@@ -519,7 +518,6 @@ if ( ! function_exists( 'ayapsychology_customize_register' ) ) :
 			$wp_customize->add_setting(
 				$slideContentId,
 				array(
-					'default'           => __( '<h2>This is Default Slide Title</h2><p>You can completely customize Slide Background Image, Title, Text, Link URL and Text.</p><a title="Read more" href="#">Read more</a>', 'ayapsychology' ),
 					'sanitize_callback' => 'force_balance_tags',
 				)
 			);
