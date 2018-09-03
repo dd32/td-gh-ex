@@ -15,23 +15,7 @@
 			 */
 		?>
 		<div class="col3a">
-
-			<?php if ( !dynamic_sidebar( 'footer-column-1-widget-area' ) && current_user_can('edit_theme_options') ) : ?>
-
-						<h2 class="footer-title">
-							<?php esc_html_e('Footer Col Widget 1', 'ayamedicine'); ?>
-						</h2><!-- .footer-title -->
-						
-						<div class="footer-after-title">
-						</div><!-- .footer-after-title -->
-						
-						<div class="textwidget">
-							<?php esc_html_e('This is first footer widget area. To customize it, please navigate to Admin Panel -> Appearance -> Widgets and add widgets to Footer Column #1.', 'ayamedicine'); ?>
-						</div><!-- .textwidget -->
-			
-			<?php endif; // end of ! dynamic_sidebar( 'footer-column-1-widget-area' )
-				  ?>
-
+			<?php dynamic_sidebar( 'footer-column-1-widget-area' ); ?>
 		</div><!-- .col3a -->
 		
 		<?php 
@@ -40,22 +24,7 @@
 			 */
 		?>
 		<div class="col3b">
-			<?php if ( !dynamic_sidebar( 'footer-column-2-widget-area' ) && current_user_can('edit_theme_options') ) : ?>
-			
-					<h2 class="footer-title">
-						<?php esc_html_e('Footer Col Widget 2', 'ayamedicine'); ?>
-					</h2><!-- .footer-title -->
-					
-					<div class="footer-after-title">
-					</div><!-- .footer-after-title -->
-					
-					<div class="textwidget">
-						<?php esc_html_e('This is second footer widget area. To customize it, please navigate to Admin Panel -> Appearance -> Widgets and add widgets to Footer Column #2.', 'ayamedicine'); ?>
-					</div><!-- .textwidget -->
-						
-			<?php endif; // end of ! dynamic_sidebar( 'footer-column-2-widget-area' )
-				  ?>
-			
+			<?php dynamic_sidebar( 'footer-column-2-widget-area' ); ?>	
 		</div><!-- .col3b -->
 		
 		<?php 
@@ -64,22 +33,7 @@
 			 */
 		?>
 		<div class="col3c">
-			<?php if ( !dynamic_sidebar( 'footer-column-3-widget-area' ) && current_user_can('edit_theme_options') ) : ?>
-			
-					<h2 class="footer-title">
-						<?php esc_html_e('Footer Col Widget 3', 'ayamedicine'); ?>
-					</h2><!-- .footer-title -->
-					
-					<div class="footer-after-title">
-					</div><!-- .footer-after-title -->
-					
-					<div class="textwidget">
-						<?php esc_html_e('This is third footer widget area. To customize it, please navigate to Admin Panel -> Appearance -> Widgets and add widgets to Footer Column #3.', 'ayamedicine'); ?>
-					</div><!-- .textwidget -->
-						
-			<?php endif; // end of ! dynamic_sidebar( 'footer-column-2-widget-area' )
-				  ?>
-			
+			<?php dynamic_sidebar( 'footer-column-3-widget-area' ); ?>		
 		</div><!-- .col3c -->
 		
 		<div class="clear">

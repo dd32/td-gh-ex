@@ -486,6 +486,25 @@ if ( ! function_exists( 'ayamedicine_customize_register' ) ) :
 				'capability'  => 'edit_theme_options',
 			)
 		);
+
+		// Add display slider option
+		$wp_customize->add_setting(
+				'ayamedicine_slider_display',
+				array(
+						'default'           => 0,
+						'sanitize_callback' => 'ayamedicine_sanitize_checkbox',
+				)
+		);
+
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayamedicine_slider_display',
+								array(
+									'label'          => __( 'Display Slider', 'ayamedicine' ),
+									'section'        => 'ayamedicine_slider_section',
+									'settings'       => 'ayamedicine_slider_display',
+									'type'           => 'checkbox',
+								)
+							)
+		);
 		
 		for ($i = 1; $i <= 5; ++$i) {
 		

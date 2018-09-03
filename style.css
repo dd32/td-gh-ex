@@ -4,7 +4,7 @@ Description: AyaMedicine is fully Responsive WordPress Theme with Built-in Homep
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayamedicine
-Version: 1.0.1
+Version: 1.0.3
 Text Domain: ayamedicine
 Tags: blog, news, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -27,7 +27,7 @@ body {
 	overflow:hidden;
 }
 
-input, select, textarea, button, #container .button {
+input, select, textarea, button, #main .button {
 	font-family:inherit;
 }
 
@@ -320,7 +320,7 @@ aside {
 /* main content */
 #main-content,
 #main-content-full,
-#container {
+#main {
 	overflow:hidden;
 	padding:10px 0 0 0;
 }
@@ -539,6 +539,10 @@ article,
 	margin:0;
 }
 
+.social-widget iframe {
+    margin-bottom:0;
+}
+
 .social-widget li {
 	margin-left:5px;
     margin-right:5px;
@@ -738,7 +742,7 @@ button {
 input[type="submit"],
 button,
 .btn,
-#container .button {
+#main .button {
 	padding:8px 12px;
 	text-decoration:none;
 	font-weight:normal;
@@ -761,7 +765,7 @@ button,
 
 input[type="submit"]:hover,
 button:hover,
-#container .button:hover,
+#main .button:hover,
 .btn:hover {
 	color:#ffffff;
 	background-image: -ms-linear-gradient(top, #808080 0%, #43A28A 100%);
@@ -1739,7 +1743,9 @@ blockquote {
 		margin: 0 auto;
 		z-index: 5001;
 		left: 0;
+		padding-top:20px;
 		padding-bottom:30px;
+		border-top:1px solid #CCC;
 		border-bottom:1px solid #CCC;
 	}
 
@@ -1794,7 +1800,7 @@ blockquote {
 	}
 	
 	#main-content,
-	#container {
+	#main {
 		float:left;
 		margin:0 0 20px 2%;
 		width:63%;
@@ -2163,7 +2169,7 @@ blockquote {
 	}
 
 	#main-content,
-	#container {
+	#main {
 		float:none;
 		clear:both;
 		margin:0 2% 10px 2%;
@@ -2381,7 +2387,7 @@ blockquote {
 	input[type="submit"],
 	button,
 	.btn,
-	#container .button {
+	#main .button {
 		padding:6px 8px;
 	}
 }
@@ -2532,7 +2538,7 @@ blockquote {
 	}
 	
 	#main-content,
-	#container,
+	#main,
 	#hdrtop-searchform-subcontent {
 		margin-left:0;
 	}
