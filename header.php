@@ -70,7 +70,7 @@
 			<div class="clear">
 			</div><!-- .clear -->
 
-			<?php if ( is_home() || is_front_page() ) :
+			<?php if ( is_front_page() && get_option( 'show_on_front' ) == 'page' ) :
 
 						get_sidebar( 'home' );
 			

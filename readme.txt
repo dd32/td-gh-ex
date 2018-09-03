@@ -52,6 +52,12 @@ Installation using 'Add New Theme'
 7. Insert shortcode (from step 4.) into the Text widget content and Save changes
 
 == Changelog ==
+= 1.0.2 =
+* updating screenshot.png according to the new WordPress.org requirements
+
+= 1.0.1 =
+* display homepage widgets only on static homepage
+* remove default demo content
 
 = 1.0.0 =
 * Initial Release
@@ -59,7 +65,7 @@ Installation using 'Add New Theme'
 == Copyright ==
 
 AyaAirPort WordPress Theme, Copyright 2018 ayatemplates
-Theme name is distributed under the terms of the GNU GPL
+AyaAirPort is distributed under the terms of the GNU GPL
 
 AyaAirPort WordPress Theme bundles the following third-party resources:
 
@@ -72,13 +78,11 @@ AyaAirPort WordPress Theme bundles the following third-party resources:
 * inc/tgmpa/class-tgm-plugin-activation.php, Thomas Griffin, GPL-2.0
 * inc/tgmpa/recommended-plugins.php, Thomas Griffin, GPL-2.0
 * css/animate.css - daneden.me, MIT
-* css/font-awesome.css - FontAwesom, MIT
-* fonts/FontAwesome.otf - FontAwesom, MIT
-* fonts/fontawesome-webfont.eot, FontAwesom, MIT
-* fonts/fontawesome-webfont.svg, FontAwesom, MIT
-* fonts/fontawesome-webfont.ttf, FontAwesom, MIT
-* fonts/fontawesome-webfont.wof, FontAwesom, MIT
-* fonts/fontawesome-webfont.woff2, FontAwesom, MIT
+FontAwesome icon font, Copyright Font Awesome
+FontAwesome are licensed under the terms of the SIL OFL 1.1 license.
+Source: https://fontawesome.com/v4.7.0/
+
+
 * js/viewportchecker.js, MIT
 * js/camera.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
 * js/camera.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
