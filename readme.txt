@@ -59,6 +59,12 @@ https://wordpress.org/plugins/basic-jquery-slider/
 8. Save changes
 
 == Changelog ==
+= 1.0.3 =
+* updating screenshot.png according to the new WordPress.org requirements
+
+= 1.0.2 =
+* homepage widgets only on static homepage
+* remove default demo content
 
 = 1.0.1 =
 * updating slider images in screenshot 
@@ -69,7 +75,7 @@ https://wordpress.org/plugins/basic-jquery-slider/
 == Copyright ==
 
 AyaBooks WordPress Theme, Copyright 2018 ayatemplates
-Theme name is distributed under the terms of the GNU GPL
+AyaBooks is distributed under the terms of the GNU GPL
 
 AyaBooks WordPress Theme bundles the following third-party resources:
 
@@ -82,13 +88,11 @@ AyaBooks WordPress Theme bundles the following third-party resources:
 * inc/tgmpa/class-tgm-plugin-activation.php, Thomas Griffin, GPL-2.0
 * inc/tgmpa/recommended-plugins.php, Thomas Griffin, GPL-2.0
 * css/animate.css - daneden.me, MIT
-* css/font-awesome.css - FontAwesom, MIT
-* fonts/FontAwesome.otf - FontAwesom, MIT
-* fonts/fontawesome-webfont.eot, FontAwesom, MIT
-* fonts/fontawesome-webfont.svg, FontAwesom, MIT
-* fonts/fontawesome-webfont.ttf, FontAwesom, MIT
-* fonts/fontawesome-webfont.wof, FontAwesom, MIT
-* fonts/fontawesome-webfont.woff2, FontAwesom, MIT
+FontAwesome icon font, Copyright Font Awesome
+FontAwesome are licensed under the terms of the SIL OFL 1.1 license.
+Source: https://fontawesome.com/v4.7.0/
+
+
 * js/viewportchecker.js, MIT
 *
 * screenshot.png (Slider Image), https://pixabay.com/en/daisy-bellis-philosophy-2320519/, CC0
