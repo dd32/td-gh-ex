@@ -251,8 +251,6 @@ function ayaspirit_load_scripts() {
 	// Load Utilities JS Script
 	wp_enqueue_script( 'viewportchecker', get_template_directory_uri() . '/js/viewportchecker.js', array( 'jquery' ) );
 
-	wp_enqueue_script( 'ayaspirit-utilities', get_template_directory_uri() . '/js/utilities.js', array( 'jquery', 'viewportchecker' ) );
-
 	// Load Slider JS Script
 	wp_enqueue_script( 'modernizr-custom-79639', get_template_directory_uri() . '/js/modernizr.custom.79639.min.js',
 		array( 'jquery' ) );
@@ -262,6 +260,8 @@ function ayaspirit_load_scripts() {
 
 	wp_enqueue_script( 'jquery-slitslider', get_template_directory_uri() . '/js/jquery.slitslider.js',
 		array( 'jquery-ba-cond' ) );
+
+	wp_enqueue_script( 'ayaspirit-utilities', get_template_directory_uri() . '/js/utilities.js', array( 'jquery', 'viewportchecker', 'jquery-slitslider' ) );
 
 	$data = array(
 		'loading_effect' => ( get_theme_mod('ayaspirit_animations_display', 1) == 1 ),

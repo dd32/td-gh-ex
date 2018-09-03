@@ -4,7 +4,7 @@ Description: AyaSpirit is a Fully Responsive WordPress Theme, a perfect choice f
 Theme URI: https://ayatemplates.com/product/ayaspirit
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.1.3
+Version: 1.1.5
 Text Domain: ayaspirit
 Tags: blog, education, entertainment, two-columns, right-sidebar, custom-background, custom-logo, custom-colors, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, full-width-template, front-page-post-form, footer-widgets
 License: GNU General Public License v2.0
@@ -27,7 +27,7 @@ body {
 	overflow:hidden;
 }
 
-input, select, textarea, button, #container .button {
+input, select, textarea, button, #main .button {
 	font-family:inherit;
 }
 
@@ -343,7 +343,7 @@ aside {
 /* main content */
 #main-content,
 #main-content-full,
-#container {
+#main {
 	overflow:hidden;
 	padding:10px 0 0 0;
 }
@@ -406,6 +406,7 @@ article,
 }
 
 #footer-menu {
+	clear:both;
 	text-align:center;
 	margin:15px 0;
 }
@@ -488,7 +489,7 @@ button {
 input[type="submit"],
 button,
 .btn,
-#container .button {
+#main .button {
 	padding:8px 12px;
 	text-decoration:none;
 	font-weight:normal;
@@ -511,7 +512,7 @@ button,
 
 input[type="submit"]:hover,
 button:hover,
-#container .button:hover,
+#main .button:hover,
 .btn:hover {
 	color:#ffffff;
 	background-image: -ms-linear-gradient(top, #4a8d9b 0%, #33d4f4 100%);
@@ -1354,7 +1355,7 @@ blockquote {
 @media screen and (min-width: 800px) {
 	
 	#main-content,
-	#container {
+	#main {
 		float:left;
 		margin:0 0 20px 2%;
 		width:63%;
@@ -1543,6 +1544,10 @@ blockquote {
 		width:150px;
 		float:left;
 	}
+
+	.comment-form-cookies-consent {
+		clear:both;
+	}
 	
 	.comment-form-author,
 	.comment-form-email	{
@@ -1594,7 +1599,7 @@ blockquote {
 	}
 
 	#main-content,
-	#container {
+	#main {
 		float:none;
 		clear:both;
 		margin:0 2% 10px 2%;
@@ -1772,7 +1777,7 @@ blockquote {
 	input[type="submit"],
 	button,
 	.btn,
-	#container .button {
+	#main .button {
 		padding:6px 8px;
 	}
 
@@ -1886,7 +1891,7 @@ blockquote {
 	
 	
 	#main-content,
-	#container,
+	#main,
 	#hdrtop-searchform-subcontent {
 		margin-left:0;
 	}

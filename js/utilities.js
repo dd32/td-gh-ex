@@ -28,19 +28,21 @@ jQuery( document ).ready(function() {
 			}
 		}
 	});
+});
 
-	if (typeof jQuery( '#slider' ).slitslider == 'function') {
+jQuery(function() {
 
-		var Page = (function() {
+	var Page = (function() {
 
 		var $nav = jQuery( '#nav-dots > span' ),
-		slitslider = jQuery( '#slider' ).slitslider( {
+			slitslider = jQuery( '#slider' ).slitslider( {
 				onBeforeChange : function( slide, pos ) {
 
 					$nav.removeClass( 'nav-dot-current' );
 					$nav.eq( pos ).addClass( 'nav-dot-current' );
 				}
 			} ),
+
 			init = function() {
 
 				initEvents();
@@ -71,10 +73,10 @@ jQuery( document ).ready(function() {
 
 			return { init : init };
 
-		})();
+	})();
 
-		Page.init();
-	}
+	Page.init();
+
 });
 
 function ayaspirit_IsSmallResolution() {
