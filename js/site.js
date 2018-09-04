@@ -17,18 +17,13 @@ jQuery(function ($) {
         $('<p class="fake-placeholder" style="min-height: ' + (height) + 'px;top: 0;right: 0;display: none;margin: 0;"></p>').insertAfter('.header-div');
     }
 
-    $(window).scroll(function () {
-        if ($('.stickable').length) { // Sticky operations are applied only when 'stickable' class exists
-            if ($(this).scrollTop() > top - abheight) {
-                $('.fake-placeholder').css('display', 'block');
-                $('.default-menu').css('top', abheight).addClass('sticky-menu');
-            }
-            else {
-                $('.fake-placeholder').css('display', 'none');
-                $('.default-menu').css('top', '').removeClass('sticky-menu');
-            }
-        }
-    });
+    if ($('.stickable').length) {
+        var topspace = 0;
+        if($('.admin-bar').length)
+            topspace = 30;
+        $(".stickable").sticky({topSpacing: topspace });
+    }
+
 
     // END: Sticky menu
 

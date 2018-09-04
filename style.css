@@ -3,7 +3,7 @@ Theme Name: Attire
 Theme URI: http://wpattire.com/
 Description: Attire is a fast, mobile responsive, highly customizable, SEO friendly multipurpose theme built with Bootstrap 4. Attire offers hundreds of customisation options which allows to make a website look exactly the way user intended. This theme allows to customise pages with google-fonts, page background, page header and sidebars.
 Author: Shafayat
-Version: 1.1.5
+Version: 1.1.7
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, threaded-comments, sticky-post, microformats,  editor-style, custom-menu, full-width-template, theme-options, custom-background, custom-colors, post-formats, translation-ready, custom-header
@@ -54,7 +54,7 @@ blockquote {
     margin-top: 0;
 }
 
-table, td, tr, th {
+table:not(.table), table:not(.table) td, table:not(.table) tr, table:not(.table) th {
     border: 1px solid rgba(0, 0, 0, 0.4);
     padding: 5px;
 }
@@ -184,6 +184,7 @@ blockquote {
 
 .post-author-info .media img {
     /*border-radius: 50%;*/
+    max-height: 96px;
 }
 
 .clear {
@@ -443,6 +444,15 @@ a.dropdown-item {
 /*--------------------------------------------------------------
 ## Menus
 --------------------------------------------------------------*/
+#sticky-wrapper{
+    z-index: 999999;
+    -webkit-transition: ease-in-out 300ms;
+    -moz-transition: ease-in-out 300ms;
+    -ms-transition: ease-in-out 300ms;
+    -o-transition: ease-in-out 300ms;
+    transition: ease-in-out 300ms;
+    height: 50px !important;
+}
 .dropdown-submenu {
     /*position: relative;*/
 }
@@ -457,7 +467,7 @@ footer ul {
 
 header .dropdown-menu {
     left: 0;
-    margin-top: 1px;
+    margin-top: 0px;
 
 }
 
@@ -671,8 +681,9 @@ header .widget-search-form {
 
 li.nav-item:not(.desktop-search) a {
     letter-spacing: 1px;
-    height: 40px;
+    height: 50px;
     padding: 0 20px;
+    line-height: 50px;
     display: inline-block;
 }
 
@@ -1352,10 +1363,6 @@ article.post.product:before {
 #search-button {
     vertical-align: middle;
 
-}
-
-#search-button i {
-    color: white !important;
 }
 
 .navbar-bg #search-button i {

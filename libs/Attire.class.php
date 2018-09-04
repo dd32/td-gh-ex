@@ -28,14 +28,14 @@ class Attire {
 	}
 
 	function Actions() {
-		add_action( 'wp_enqueue_scripts', array( $this, 'EnqueueScripts' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'enqueueScripts' ) );
 	}
 
 
 	/**
 	 * @usage Load all necessary scripts & styles
 	 */
-	function EnqueueScripts() {
+	function enqueueScripts() {
 		$theme_mod = get_option( 'attire_options' );
 
 		// Font Options ( From Customizer Typography Options )
@@ -66,6 +66,10 @@ class Attire {
 
 		wp_register_script( 'attire-gn-gnm', ATTIRE_TEMPLATE_URL . '/mobile-menu-rss/js/gnmenu.js', array(), null, true );
 		wp_enqueue_script( 'attire-gn-gnm' );
+
+
+		wp_register_script( 'attire-sticky', ATTIRE_TEMPLATE_URL . '/js/jquery.sticky.js', array('jquery'), null, true );
+		wp_enqueue_script( 'attire-sticky' );
 
 
 		wp_register_style( 'attire-responsive', ATTIRE_TEMPLATE_URL . '/css/responsive.css' );
@@ -280,27 +284,27 @@ class Attire {
 			'footer_widget_content_layout_type' => 'container',
 			'footer_content_layout_type'        => 'container',
 
-			'heading_font'        => 'Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic',
+			'heading_font'        => 'Catamaran:400,900',
 			'heading_font_size'   => '25',
 			'heading_font_weight' => '700',
 
-			'body_font'        => 'Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic',
+			'body_font'        => 'Catamaran:400,900',
 			'body_font_size'   => '14',
 			'body_font_weight' => '400',
 
-			'widget_title_font'        => 'Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic',
+			'widget_title_font'        => 'Catamaran:400,900',
 			'widget_title_font_size'   => '20',
 			'widget_title_font_weight' => '300',
 
-			'widget_content_font'        => 'Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic',
+			'widget_content_font'        => 'Catamaran:400,900',
 			'widget_content_font_size'   => '14',
 			'widget_content_font_weight' => '300',
 
-			'menu_top_font'        => 'Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic',
+			'menu_top_font'        => 'Catamaran:400,900',
 			'menu_top_font_size'   => '16',
 			'menu_top_font_weight' => '400',
 
-			'menu_dropdown_font'        => 'Montserrat:100,100italic,200,200italic,300,300italic,regular,italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic',
+			'menu_dropdown_font'        => 'Catamaran:400,900',
 			'menu_dropdown_font_size'   => '16',
 			'menu_dropdown_font_weight' => '400',
 

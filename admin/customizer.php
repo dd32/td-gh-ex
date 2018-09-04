@@ -504,11 +504,11 @@ function attire_customize_register($wp_customize)
 
             case 'typography':
                 $fontsdata = AttireOptionFields::GetFonts();
-
+                //wpdmdd($fontsdata);
                 $fonts = array();
                 $fonts[''] = 'Default';
-                foreach ($fontsdata as $key => $font) {
-                    $fonts[$key] = $font['name'];
+                foreach ($fontsdata as $font) {
+                    $fonts[$font->family.":".implode(",", $font->variants)] = $font->family;
                 }
                 asort($fonts);
                 $wp_customize->add_setting($theme_option . '[' . $id . ']', array(

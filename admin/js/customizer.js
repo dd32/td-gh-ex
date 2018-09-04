@@ -20,6 +20,7 @@
         wp.customize('attire_options[' + themeModName + ']', function (value) {
             value.bind(function (newVal) {
                 if ($('style#' + themeModName).length) {
+                    console.log(themeModName);
                     try {
                         $('style#' + themeModName).html(selector + '{' + propertyName + ':' + newVal + unit + ';}');
                     } catch (err) {
@@ -293,7 +294,10 @@
     setVisibility('ph_show_on_fp', 'home .page_header_wrap');
     setCss('ph_bg_color', '.page_header_wrap', 'background-color');
     setCss('ph_text_color', '.page_header_wrap *', 'color');
+    //setCss('ph_text_align', '.page_header_wrap *', 'text-align');
+    setCss('ph_text_align', '#cph_title', 'text-align');
     setCss('ph_bg_height', '.page_header_wrap', 'min-height');
+    //setCss('ph_bg_height', '.page_header_wrap', 'line-height');
 
 
     /**

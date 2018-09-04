@@ -1174,13 +1174,26 @@ $attire_options = array(
 		'default'   => '',
 		'section'   => 'header_image'
 	),
-	'ph_bg_height'  => array(
+    'ph_text_align' => array(
+        'label'     => __( 'Page Header Text Alignment', 'attire' ),
+        'transport' => 'postMessage',
+        'type'      => 'select',
+        'default'   => 'center',
+        'choices'   => array(
+            'center' => __( 'Center', 'attire' ),
+            'left'   => __( 'Left', 'attire' ),
+            'right'   => __( 'Right', 'attire' )
+        ),
+        'section'   => 'header_image'
+    ),
+
+    'ph_bg_height'  => array(
 		'label'       => __( 'Page Header Height', 'attire' ),
 		'transport'   => 'postMessage',
 		'type'        => 'range',
 		'default'     => 200,
 		'input_attrs' => array(
-			'min'  => 100,
+			'min'  => 60,
 			'max'  => 2000,
 			'step' => 5,
 		),

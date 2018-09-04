@@ -61,6 +61,7 @@ class AttireThemeEngine {
 		$ph_bg_img     = $ph_bg_img ? $ph_bg_img : get_header_image();
 		$ph_bg_color   = AttireThemeEngine::NextGetOption( 'ph_bg_color', '' );
 		$ph_text_color = AttireThemeEngine::NextGetOption( 'ph_text_color', '' );
+		$ph_text_align = AttireThemeEngine::NextGetOption( 'ph_text_align', 'center' );
 		$pb_height     = AttireThemeEngine::NextGetOption( 'ph_bg_height', 200 );
 
 
@@ -102,6 +103,9 @@ class AttireThemeEngine {
                 line-height: <?php echo $pb_height?>px
             ;
             <?php echo wp_filter_nohtml_kses($text_color); ?>
+            }
+            #cph_title{
+                text-align: <?php echo $ph_text_align; ?>
             }
         </style>
         <!-- / Custom page header -->
@@ -204,7 +208,13 @@ class AttireThemeEngine {
 
 		$theme_mod = get_option( 'attire_options' );
 
-		$fonts = AttireOptionFields::GetFonts();
+        $fontsdata = AttireOptionFields::GetFonts();
+
+        $fonts = array();
+        $fonts[''] = 'Default';
+        foreach ($fontsdata as $font) {
+            $fonts[$font->family.":".implode(",", $font->variants)] = (array)$font;
+        }
 
 		$css = '';
 
@@ -257,7 +267,7 @@ class AttireThemeEngine {
 		$text_color      = $body_font_color ? "color:{$body_font_color};" : "";
 
 		if ( $body_font != '' ) {
-			$font_family = $fonts[ $body_font ]['family'] != '' ? "font-family:{$fonts[$body_font]['family']};" : "";
+			$font_family = isset($fonts[ $body_font ]) && $fonts[ $body_font ]['family'] != '' ? "font-family:{$fonts[$body_font]['family']};" : "";
 		} else {
 			$font_family = '';
 		}
@@ -287,7 +297,7 @@ class AttireThemeEngine {
 		$text_color = $header_color ? "color:{$header_color};" : "";
 
 		if ( $heading_font != '' ) {
-			$font_family = $fonts[ $heading_font ]['family'] != '' ? "font-family:{$fonts[$heading_font]['family']};" : "";
+			$font_family = isset($fonts[ $heading_font ]) && $fonts[ $heading_font ]['family'] != '' ? "font-family:{$fonts[$heading_font]['family']};" : "";
 		} else {
 			$font_family = '';
 		}
@@ -367,7 +377,7 @@ class AttireThemeEngine {
 		$font_size                  = $font_size != '' ? "font-size:{$font_size}px;" : "";
 
 		if ( $font != '' ) {
-			$font_family = $fonts[ $font ]['family'] != '' ? "font-family:{$fonts[$font]['family']};" : "";
+			$font_family = isset($fonts[ $font ]) && $fonts[ $font ]['family'] != '' ? "font-family:{$fonts[$font]['family']};" : "";
 		} else {
 			$font_family = '';
 		}
@@ -389,7 +399,7 @@ class AttireThemeEngine {
 		$color                    = "color:" . esc_attr( $theme_mod['widget_title_font_color'] );
 
 		if ( $font != '' ) {
-			$font_family = $fonts[ $font ]['family'] != '' ? "font-family:{$fonts[$font]['family']};" : "";
+			$font_family = isset($fonts[ $font ]) && $fonts[ $font ]['family'] != '' ? "font-family:{$fonts[$font]['family']};" : "";
 		} else {
 			$font_family = '';
 		}
@@ -412,7 +422,7 @@ class AttireThemeEngine {
 		$font_size            = $font_size != '' ? "font-size:{$font_size}px;" : "";
 
 		if ( $font != '' ) {
-			$font_family = $fonts[ $font ]['family'] != '' ? "font-family:{$fonts[$font]['family']};" : "";
+			$font_family = isset($fonts[ $font ]) && $fonts[ $font ]['family'] != '' ? "font-family:{$fonts[$font]['family']};" : "";
 		} else {
 			$font_family = '';
 		}
@@ -431,7 +441,7 @@ class AttireThemeEngine {
 		$font_size                 = $font_size != '' ? "font-size:{$font_size}px;" : "";
 
 		if ( $font != '' ) {
-			$font_family = $fonts[ $font ]['family'] != '' ? "font-family:{$fonts[$font]['family']};" : "";
+			$font_family = isset($fonts[ $font ]) && $fonts[ $font ]['family'] != '' ? "font-family:{$fonts[$font]['family']};" : "";
 		} else {
 			$font_family = '';
 		}
@@ -658,7 +668,7 @@ class AttireThemeEngine {
 
 		?>
 
-        <div class="page_header_inner">
+        <div class="page_header_inner container">
             <h1 id="cph_title"><?php echo esc_html( $title ); ?></h1>
         </div>
 
