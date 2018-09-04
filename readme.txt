@@ -13,7 +13,7 @@ Multi-purpose WordPress theme
 Bazzinga is a Free WordPress Theme created using latest trends such as SASS which is powerful and performed CSS extension, with HTML5 / CSS3 and Responsive design. This theme also includes latest trend thirdparty animations which adds site look morden and fancy.
 
 == Menu Support in theme ==
-It support menu depth upto 4 only. 
+It support menu depth upto 4 only.
 
 == Installation ==
 
@@ -49,16 +49,19 @@ All options are in the Customizer.
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License  v2 or later
 License: GNU General Public License v2 or later
-License URI: http://www.opensource.org/licenses/gpl-license.php GPL v2 (or later) 
+License URI: http://www.opensource.org/licenses/gpl-license.php GPL v2 (or later)
 Bazzinga WordPress Theme, Copyright 2018 BlazeThemes
 Bazzinga is distributed under the terms of the GNU GPL.
 
 Screenshot Image
-
 	* License: CC0 Public Domain
 	* License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 	* Image url: https://pixabay.com/en/business-man-adult-american-boss-3380350/
 
+Header images
+* License: CC0 Public Domain
+* License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
+* Image url: https://pixabay.com/en/women-teamwork-team-business-1209678/
 
 Font awesome
 	*Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome
@@ -102,10 +105,10 @@ Sticky-kit
 
 Tgm plugin activation
 	License: GNU General Public License v2.0
-	License url: https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md 
+	License url: https://github.com/TGMPA/TGM-Plugin-Activation/blob/develop/LICENSE.md
 	Url: https://github.com/TGMPA/TGM-Plugin-Activation
 
-Waypoint: 
+Waypoint:
 	License: MIT license
 	License url: https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
 	Url: https://github.com/imakewebthings/waypoints

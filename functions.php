@@ -234,11 +234,11 @@ function bazzinga_scripts() {
 
 	// main theme css
 	wp_enqueue_style( 'bazzinga-style', get_stylesheet_uri() );
-	
+
 	// lightslider js
 	wp_enqueue_script('lightslider-js', get_template_directory_uri() . '/inc/library/lightslider/lightslider.min.js', array(), '1.1.6' );
 
-	wp_enqueue_script( 'imagesloaded-js', get_template_directory_uri() . '/js/imageloaded.min.js', array( 'jquery' ), '1', true );
+	wp_enqueue_script('imagesloaded');
 
 	// bootstrap js
 	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/inc/library/bootstrap/js/bootstrap.min.js', array('jquery'), '4.0.0', true );
@@ -258,7 +258,7 @@ function bazzinga_scripts() {
 	// waypoint js
 	wp_enqueue_script( 'waypoint-js', get_template_directory_uri() . '/inc/library/waypoint/jquery.waypoint.min.js', array('jquery'), '4.0.1', true );
 
-	// counter js	
+	// counter js
 	wp_enqueue_script( 'countup-js', get_template_directory_uri() . '/inc/library/counter-up/jquery.counterup.min.js', array('jquery'), '1.0', true );
 
 	// aos js
@@ -267,7 +267,7 @@ function bazzinga_scripts() {
 	// main theme js
 	wp_enqueue_script( 'bazzinga-main-js', get_template_directory_uri() . '/js/main.js', array('jquery'), '', true );
 
-	
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -293,10 +293,6 @@ require get_template_directory() . '/inc/template-functions.php';
 /*------------------------------
  Customizer
  ------------------------------*/
- 
-if ( ! class_exists( 'Kirki' ) ) {
-	require get_template_directory() . '/inc/bazz_kirki/bazz-kirki-installer.php'; // installer
-}
 
 // kirki configuration
 if ( class_exists( 'Kirki' ) ) {
@@ -336,7 +332,7 @@ function bazzinga_fonts_url(){
 		if ( 'off' !== $bazzinga_playfair_display ) {
 				$font_families[] = 'Playfair Display:400,400i,700,700i,900';
 		}
-		
+
 		$query_args = array(
 			'family' => rawurlencode( implode( '|', $font_families ) ),
 			'subset' => rawurlencode( 'latin,latin-ext' ),
@@ -350,11 +346,11 @@ function bazzinga_fonts_url(){
 }
 
 /**
-* Load custom widgets 
+* Load custom widgets
 **/
 require get_template_directory(). '/inc/widgets/widgets.php';
 
 /**
- * Load TGM Plgin to recommended plugins 
+ * Load TGM Plgin to recommended plugins
  */
 require get_template_directory() . '/inc/library/tgm-plugin-activation/bazzinga-plugin-activation.php';
