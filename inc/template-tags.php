@@ -14,7 +14,7 @@ if ( ! function_exists( 'archie_posted_on' ) ) :
 	 * Prints HTML with meta information for the current post-date/time and author.
 	 */
 	function archie_posted_on( $id = '' ) {
-		if ( false === archie_archieve_meta_option( 'hide_date' ) ) {
+		if ( false === archie_archive_meta_option( 'hide_date' ) ) {
 			return;
 		}
 
@@ -95,19 +95,19 @@ function archie_article_header_meta( $id = '' ) {
 	}
 	$output = '';
 	
-	if ( true === archie_archieve_meta_option( 'hide_category' ) ) {
+	if ( true === archie_archive_meta_option( 'hide_category' ) ) {
 	    $categories_list = get_the_category_list( '', '', $id );
 		if ( $categories_list && archie_categorized_blog() ) {
 			$output .= '<span class="cat-links">' . $categories_list . '</span>'; // WPCS: XSS OK.
 		}
 	}
 
-	if ( true === archie_archieve_meta_option( 'hide_author' ) ) {
+	if ( true === archie_archive_meta_option( 'hide_author' ) ) {
 		$author = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 	    $output .= '<span class="byline">' . $author . '</span><!-- .byline -->'; 
 	}
 
-	if ( true === archie_archieve_meta_option( 'hide_comment' ) ) {
+	if ( true === archie_archive_meta_option( 'hide_comment' ) ) {
 	    if ( ! post_password_required( $id ) ) :
 			if ( get_comments_number( $id ) <= 1 )
 				$comment = sprintf( esc_html__( '%d comment', 'archie' ), get_comments_number( $id ) ); 
@@ -125,11 +125,11 @@ function archie_article_header_meta( $id = '' ) {
 
 
 /**
- * Checks to see if meta option is hide enabled in archieve/blog
+ * Checks to see if meta option is hide enabled in archive/blog
  */
-function archie_archieve_meta_option( $option = '' ) {
+function archie_archive_meta_option( $option = '' ) {
 	$options = archie_get_theme_options();
-	if ( is_archieve() || is_search() || is_home() ) :
+	if ( is_archive() || is_search() || is_home() ) :
 		if ( true === $options[$option] )
 			return false;
 		else

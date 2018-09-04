@@ -102,11 +102,11 @@ function archie_customize_register( $wp_customize ) {
 	// load static homepage option
 	require get_template_directory() . '/inc/customizer/theme-options/homepage-static.php';
 
-	// load archieve option
+	// load archive option
 	require get_template_directory() . '/inc/customizer/theme-options/excerpt.php';
 
-	// load archieve option
-	require get_template_directory() . '/inc/customizer/theme-options/archieve.php';
+	// load archive option
+	require get_template_directory() . '/inc/customizer/theme-options/archive.php';
 	
 	// load single post option
 	require get_template_directory() . '/inc/customizer/theme-options/single-posts.php';

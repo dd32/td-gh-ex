@@ -24,7 +24,7 @@ $wp_customize->add_setting( 'archie_theme_options[long_excerpt_length]', array(
 
 $wp_customize->add_control( 'archie_theme_options[long_excerpt_length]', array(
 	'label'       		=> esc_html__( 'Blog Page Excerpt Length', 'archie' ),
-	'description' 		=> esc_html__( 'Total words to be displayed in archieve page/search page.', 'archie' ),
+	'description' 		=> esc_html__( 'Total words to be displayed in archive page/search page.', 'archie' ),
 	'section'     		=> 'archie_excerpt_section',
 	'type'        		=> 'number',
 	'input_attrs' 		=> array(

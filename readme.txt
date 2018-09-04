@@ -4,8 +4,8 @@ Contributors: themepalace
 Tags: translation-ready, custom-background, theme-options, custom-menu, threaded-comments, featured-images, footer-widgets, left-sidebar, editor-style, right-sidebar, full-width-template, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-header, custom-logo, featured-image-header, blog, portfolio, entertainment
 
 Requires at least: 4.7
-Tested up to: 4.9.7
-Stable tag: 1.0.0
+Tested up to: 4.9.8
+Stable tag: 1.0.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -93,6 +93,9 @@ Unless otherwise specified, all the theme images are created by us and licensed 
 	One Click Demo Import is recommended to extract demo data for initial setup.
 
 == Changelog ==
+
+= 1.0.1 - Sept 4 2018 =
+* Added demo importer
 
 = 1.0.0 - Feb 28 2018 =
 * Initial release

@@ -1288,7 +1288,7 @@
 .fa-moon-o:before {
   content: "\f186";
 }
-.fa-archieve:before {
+.fa-archive:before {
   content: "\f187";
 }
 .fa-bug:before {
@@ -1475,7 +1475,7 @@
   content: "\f1c5";
 }
 .fa-file-zip-o:before,
-.fa-file-archieve-o:before {
+.fa-file-archive-o:before {
   content: "\f1c6";
 }
 .fa-file-sound-o:before,

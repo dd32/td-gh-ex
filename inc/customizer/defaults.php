@@ -45,7 +45,7 @@ function archie_get_default_theme_options() {
 		// homepage options
 		'enable_frontpage_content' 		=> false,
 
-		// blog/archieve options
+		// blog/archive options
 		'your_latest_posts_title' 		=> esc_html__( 'Blogs', 'archie' ),
 		'hide_date' 					=> false,
 		'hide_category'					=> false,

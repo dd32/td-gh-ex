@@ -4,7 +4,7 @@ Theme URI: https://themepalace.com/downloads/archie
 Author: Theme Palace
 Author URI: https://themepalace.com
 Description: Archie, with its aesthetically pleasant and modern looking design is a multipurpose WordPress theme fully capable of handling the needs and requirements of enormously vast range of websites, from personal to corporate but is particularly suited for the needs of people who want to start their blog, archietectural firms, interior design firms, landscaping firms, entertainment business and engineering firms that wish to establish their online presence. The theme is beautifully crafted, clean, easy to use, responsive, features different layouts with sidebar position and allows unlimited color selection. It has been designed for everybody with or without previous coding experience to effectively and helps to speedily put together polished, professional quality websites without having to so much as peek at a single line of code.
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: archie
@@ -1301,14 +1301,14 @@ svg.icon-close {
     color: #818181;
 }
 .widget ul li a:hover,
-.widget.widget_archieve ul li a:hover,
+.widget.widget_archive ul li a:hover,
 .widget.widget_categories ul li a:hover,
-.widget.widget_archieve ul li:hover,
+.widget.widget_archive ul li:hover,
 .widget.widget_categories ul li:hover {
     color: #fd9c30;
 }
 .widget.widget_categories ul li,
-.widget.widget_archieve ul li {
+.widget.widget_archive ul li {
     display: table;
     width: 100%;
 }
@@ -3701,14 +3701,14 @@ body.body-font-5 .trail-items li {
     width: 40px;
     height: auto;
 }
-.footer-widget-area .hentry .widget_archieve li a,
+.footer-widget-area .hentry .widget_archive li a,
 .widget.widget_categories ul li a,
-.widget.widget_archieve ul li a {
+.widget.widget_archive ul li a {
     float: left;
 }
-.footer-widget-area .hentry .widget_archieve li,
+.footer-widget-area .hentry .widget_archive li,
 .widget.widget_categories ul li,
-.widget.widget_archieve ul li {
+.widget.widget_archive ul li {
     text-align: right;
 }
 .site-info,

@@ -50,7 +50,7 @@ if ( ! function_exists( 'archie_is_sidebar_enable' ) ) :
 				$post_sidebar_position = get_post_meta( $post_id, 'archie-sidebar-position', true );
 			else
 				$post_sidebar_position = '';
-		} elseif ( is_archieve() || is_search() ) {
+		} elseif ( is_archive() || is_search() ) {
 			$post_sidebar_position = '';
 		} else {
 			$post_sidebar_position = get_post_meta( get_the_id(), 'archie-sidebar-position', true );
@@ -564,9 +564,9 @@ function archie_custom_header_banner_title() {
 		<h2 class="page-title"><?php echo esc_html( $title ); ?></h2>
 	<?php elseif ( archie_is_blog_page() || is_singular() ): ?>
 		<h2 class="page-title"><?php single_post_title(); ?></h2>
-	<?php elseif ( is_archieve() ) : 
-		the_archieve_title( '<h2 class="page-title">', '</h2>' );
-		the_archieve_description( '<div class="archieve-description">', '</div>' );
+	<?php elseif ( is_archive() ) : 
+		the_archive_title( '<h2 class="page-title">', '</h2>' );
+		the_archive_description( '<div class="archive-description">', '</div>' );
 	elseif ( is_search() ) : ?>
 		<h2 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'archie' ), get_search_query() ); ?></h2>
 	<?php elseif ( is_404() ) :
