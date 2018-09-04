@@ -83,8 +83,7 @@
             <div class="top-cart-content">
                <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
             </div>
-          <?php }else {
-          echo '<h6>'.esc_html('Please Install Woocommerce Plugin','advance-blogging').'<h6>'; }?>      
+          <?php } ?>      
         </div> 
       </div> 
     </div>
