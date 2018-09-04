@@ -97,6 +97,9 @@ Pattern Images
 ---------------------------------------------
 == Changelog ==
 
+Version 1.31
+ * Added Template Color Option
+
 Version 1.30
  * Made Translation Ready
  * Minor Bug Fixes

@@ -177,6 +177,13 @@ function optionsframework_options() {
 	);
 
 	$options[] = array(
+		'name' => __( 'Template Color', 'accesspress-root' ),
+		'id' => 'template_color',
+		'std' => '#1eb0bc',
+		'type' => 'color',
+	);
+
+	$options[] = array(
 		'name' => __('Responsive', 'accesspress-root'),
 		'id' => 'responsive',
 		'on' => __('Enable', 'accesspress-root'),

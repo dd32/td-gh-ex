@@ -218,4 +218,10 @@ require get_template_directory() .'/woocommerce/woocommerce-function.php';
  */
 require get_template_directory() .'/welcome/welcome.php';
 
+/**
+ *
+ * Add Dynamic Styles
+ */
+require get_template_directory() .'/css/style.php';
+
 define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/panel/' );
