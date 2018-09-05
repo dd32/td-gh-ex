@@ -128,7 +128,7 @@ function benzer_features_setting( $wp_customize ) {
 	$wp_customize->add_setting( 
 		'features_background_position' , 
 			array(
-			'default' => __( 'fixed', 'benzer' ),
+			'default' => 'fixed',
 			'capability'     => 'edit_theme_options',
 			'sanitize_callback' => 'specia_sanitize_select',
 		) 
