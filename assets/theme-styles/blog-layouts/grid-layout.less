@@ -9,6 +9,7 @@
   padding-left: 0;
   padding-bottom: 17px;
   border-bottom: solid 1px #eee;
+  overflow: auto;
   @media screen and (max-width: 768px) {
     border-bottom: none;
   }
@@ -68,11 +69,13 @@
     }
 }
 
+
 .grid_2_column {
-  padding: 0;
+  padding: 0 2%;
   width: 50%;
   margin-bottom: 4em;
   border-bottom: none;
+  float: left;
   .featured-thumb {
     overflow: hidden;
     position: relative;
@@ -89,7 +92,6 @@
   	header {
 	    padding-left: 0;
 	    a {
-		    font-size: 20px;
 		    overflow: hidden;
 		    text-overflow: ellipsis;
 		    white-space: nowrap;
@@ -118,21 +120,8 @@
 	    }
     }
   }
-  @media screen and (max-width: 768px) {
-    padding-right: 0px;
-  }
-
-  @media screen and (min-width: 768px) {
-    &:nth-of-type(even) {
-      padding-left: 10px;
-    }
-    &:nth-of-type(odd) {
-      padding-right: 10px;
-      clear: left;
-    }
-  }
-
 }
+
 
 .grid_3_column {
   &:nth-child(3n){

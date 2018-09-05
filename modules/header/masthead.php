@@ -1,5 +1,8 @@
 <header id="masthead" class="site-header">
 	<div class="mobile-menu">
+		<button id="search-icon">
+        	<i class="fa fa-search"></i>
+        </button>
         <?php get_template_part('modules/navigation/menu','mobile'); ?>
     </div>
     <div id="top-bar">
@@ -47,6 +50,21 @@
             </div>
         <?php endif; ?>
     </div>
+   
+	    <div class="header-text title-font container">
+		     <?php if ( ( get_theme_mod( 'adviso_header_text' ) != '' ) && is_front_page() ) { ?>
+		    <?php
+			    echo esc_html( get_theme_mod('adviso_header_text') );
+		    ?>
+			<?php } ?>
+	    </div>
+    
+    <?php if ( get_theme_mod('adviso_header_cta_enable') && is_front_page() ) { ?>
+	    <div class="header-cta">
+		    <a href="<?php echo esc_url(get_theme_mod('adviso_header_cta_url', '')); ?>"><?php echo esc_html( get_theme_mod( 'adviso_header_cta', '' ) ); ?></a>
+	    </div>
+    <?php } ?>
+    
     <div id="social-wrapper" class="container">
 	    
 	    <div id="social-icons">

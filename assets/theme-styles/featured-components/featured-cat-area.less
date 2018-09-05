@@ -22,6 +22,9 @@
 					display: inline-block;
 					float: right;
 					margin: 10% 5%;
+					@media screen and (max-width: 768px) {
+						font-size: 22px;
+					}
 				}
 			}
 			.category-thumbs {
@@ -52,6 +55,13 @@
 				.category-thumb-2, .category-thumb-3 {
 					img {
 						align-self: center;
+					}
+					@media screen and (max-width: 600px) {
+						display: block;
+						img {
+							height: 100%;
+							width: auto;
+						}
 					}
 				}
 			}

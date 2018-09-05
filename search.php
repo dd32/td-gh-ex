@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area col-lg-8 col-md-8 col-sm-8 col-xs-12">
+	<section id="primary" class="content-area <?php do_action('adviso_primary-width'); ?>">
 		<main id="main" class="site-main">
 
 		<?php
@@ -31,7 +31,7 @@ get_header(); ?>
 				 * If you want to overload this in a child theme then include a file
 				 * called content-search.php and that will be used instead.
 				 */
-				get_template_part( 'framework/layouts/content', 'grid' );
+				get_template_part( 'framework/layouts/content', 'blog' );
 
 			endwhile;
 

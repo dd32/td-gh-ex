@@ -2,13 +2,28 @@
 function adviso_customize_register_layouts( $wp_customize ) {
     $wp_customize->get_section('background_image')->panel = 'adviso_design_panel';
     // Layout and Design
+/*
     $wp_customize->add_panel( 'adviso_design_panel', array(
         'priority'       => 20,
         'capability'     => 'edit_theme_options',
         'theme_supports' => '',
         'title'          => __('Design & Layout','adviso'),
     ) );
-
+*/
+    
+    $wp_customize->add_panel(
+		new Adviso_WP_Customize_Panel(
+		  $wp_customize,
+		  'adviso_design_panel',
+		  array(
+			  'title'	=> __( 'Design & Layout', 'adviso' ),
+			  'priority'	=> 20,
+			  'capability'     => 'edit_theme_options',
+			  'theme_supports' => '',
+		  )
+		)
+	);
+    
     $wp_customize->add_section(
         'adviso_design_options',
         array(
@@ -22,13 +37,13 @@ function adviso_customize_register_layouts( $wp_customize ) {
     $wp_customize->add_setting(
         'adviso_blog_layout',
         array(
-            'default' => 'grid',
+            'default' => 'adviso',
             'sanitize_callback' => 'adviso_sanitize_blog_layout',
         )
     );
 
     function adviso_sanitize_blog_layout( $input ) {
-        if ( in_array($input, array('grid','grid_2_column','adviso') ) )
+        if ( in_array($input, array('blog','grid_2_column','adviso') ) )
             return $input;
         else
             return '';
@@ -41,13 +56,70 @@ function adviso_customize_register_layouts( $wp_customize ) {
             'settings' => 'adviso_blog_layout',
             'section'  => 'adviso_design_options',
             'type' => 'select',
+            'priority'	=> 5,
             'choices' => array(
-                'grid' => __('Standard Blog Layout','adviso'),
+                'blog' => __('Standard Blog Layout','adviso'),
                 'adviso' => __('Adviso Theme Layout','adviso'),
                 'grid_2_column' => __('Grid - 2 Column','adviso'),
             )
         )
     );
+    
+    $wp_customize->add_setting( 'adviso_blog_sidebar_layout',
+		array(
+			'default' => 'sidebarright',
+			'transport'	=> 'postMessage',
+			'sanitize_callback' => 'adviso_sidebar_sanitize'
+		)
+	);
+	
+	$wp_customize->add_control( 
+		new Adviso_Image_Radio_Custom_Control( 
+			$wp_customize,
+			'adviso_blog_sidebar_layout',
+			array(
+				'label' => __( 'Sidebar Layout', 'adviso' ),
+				'description'	=> __('Sidebar can be toggled from Sidebar Layout Section', 'adviso'),
+				'section' => 'adviso_design_options',
+				'settings' => 'adviso_blog_sidebar_layout',
+				'priority'	=> 10,
+				'choices' => array(
+					'sidebarleft' => array(
+						'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/layouts/left-sidebar.png',
+						'name' => __( 'Left Sidebar', 'adviso' )
+					),
+					'sidebarright' => array(
+						'image' => trailingslashit( get_template_directory_uri() ) . 'assets/images/layouts/right-sidebar.png',
+						'name' => __( 'Right Sidebar', 'adviso' )
+					)
+				)
+			)
+		)
+	);
+		
+	function adviso_sidebar_sanitize( $input, $setting ) {
+			//get the list of possible radio box or select options
+         $choices = $setting->manager->get_control( $setting->id )->choices;
+
+			if ( array_key_exists( $input, $choices ) ) {
+				return $input;
+			} else {
+				return $setting->default;
+			}
+		}
+    
+    $wp_customize->add_control(
+		new Adviso_Plus_Upsell_Control(
+		$wp_customize,
+		'adviso_plus_blog_layout',
+			array(
+				'settings'	=> array(),
+				'section'	=> 'adviso_design_options',
+				'priority'	=> 25,
+				'description'		=> __('More Options in Adviso Plus', 'adviso')
+			)
+		)
+	);
 
     //Sidebar Layout
     $wp_customize->add_section(
@@ -137,7 +209,9 @@ function adviso_customize_register_layouts( $wp_customize ) {
         'adviso_sidebar_width',
         array(
             'default' => 4,
-            'sanitize_callback' => 'adviso_sanitize_positive_number' )
+            'sanitize_callback' => 'adviso_sanitize_positive_number',
+            'transport'	=> 'postMessage'
+        )
     );
 
     $wp_customize->add_control(
@@ -157,6 +231,19 @@ function adviso_customize_register_layouts( $wp_customize ) {
             ),
         )
     );
+    
+    $wp_customize->add_control(
+		new Adviso_Plus_Upsell_Control(
+		$wp_customize,
+		'adviso_plus_sidebar_layout',
+			array(
+				'settings'	=> array(),
+				'section'	=> 'adviso_sidebar_options',
+				'priority'	=> 25,
+				'description'		=> __('More Options in Adviso Plus', 'adviso')
+			)
+		)
+	);
 
     /* Active Callback Function */
     function adviso_show_sidebar_options($control) {

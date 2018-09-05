@@ -40,7 +40,7 @@
 	                    </div>
 	                   <div class="thumb-info">
 		                   <div class="product-title">
-		                        <h6><?php the_title(); ?></h6>
+		                        <div><?php the_title(); ?></div>
 		                    </div>
 		                    <?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
 	                    </div>

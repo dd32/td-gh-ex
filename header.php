@@ -12,10 +12,9 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site">
-
+	
     <!-- Masthead -->
     <?php get_template_part('modules/header/masthead'); ?>
-    
     
     <?php if ( is_front_page() ) :
 	    adviso_sorter();

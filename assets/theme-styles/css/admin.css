@@ -35,7 +35,9 @@
     background: blue;
   }
 }
-/* Customizer Icon Styles */
+/*-----------------------
+ Customizer Icon Styles 
+------------------------*/
 .customize-pane-parent > li#accordion-section-adviso_sec_premsupport h3 {
   display: flex;
   align-items: center;
@@ -46,9 +48,9 @@
   font-size: 22px;
   margin-right: 5px;
 }
-/*-------------------
+/*----------------------------
 Enable Disable Switch Control
--------------------*/
+-----------------------------*/
 .enable-disable-switch {
   position: relative;
   width: 100px;
@@ -260,6 +262,13 @@ Skins
   -ms-transform: translateX(-100%);
   transform: translateX(-100%);
 }
+#accordion-section-adviso_placeholder {
+  pointer-events: none;
+}
+#accordion-section-adviso_placeholder h3 {
+  background-color: #eee !important;
+  color: #ccc !important;
+}
 /*------------------------------------
   Styling for the Customizer Controls
 -------------------------------------*/
@@ -286,6 +295,61 @@ Skins
 .sortable .disabled div {
   cursor: not-allowed;
 }
+/*------------------
+  Font Size Control
+------------------*/
+.adviso_font_size_control .font-size-buttons {
+  display: flex;
+  display: -inline-flex;
+}
+.adviso_font_size_control .font-size-buttons span.size {
+  float: left;
+  border-radius: 0px;
+}
+.adviso_font_size_control .font-size-buttons span.size[data-value='S'],
+.adviso_font_size_control .font-size-buttons span.size[data-value="12"] {
+  border-radius: 3px 0 0 3px;
+}
+.adviso_font_size_control .font-size-buttons span.size[data-value="XXL"],
+.adviso_font_size_control .font-size-buttons span.size[data-value="20"] {
+  border-radius: 0 3px 3px 0;
+}
+.adviso_font_size_control .font-size-buttons span.size:not([data-value="XXL"], [data-value="20"]) {
+  border-right: 0px;
+}
+.adviso_font_size_control .font-size-buttons .reset_button {
+  margin-left: auto;
+}
+.adviso_font_size_control input[type="radio"] {
+  display: none;
+}
+/*-------------------
+ Font Weight Control
+--------------------*/
+.font-weight-buttons label {
+  margin-right: 10px;
+}
+.font-weight-buttons label input[type=radio] {
+  display: none;
+}
+.font-weight-buttons label input[type=radio]:checked + span {
+  border: 3px solid #555;
+  box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
+}
+.font-weight-buttons label span {
+  display: inline-block;
+  border: 3px solid #777;
+  padding: 8px 12px;
+}
+.font-weight-buttons label span.weight-300 {
+  font-weight: 300;
+}
+.font-weight-buttons label span.weight-400 {
+  font-weight: 400;
+}
+.font-weight-buttons label span.weight-700 {
+  font-weight: 700;
+}
 /*--------
   Sorter
 --------*/
@@ -294,4 +358,79 @@ Skins
 }
 #accordion-section-adviso_sorter h3 {
   background-color: #abcdef;
+}
+/*---------------------------
+ Adviso Plus Upsell Control
+---------------------------*/
+.adviso_button {
+  display: inline-block;
+  width: 100%;
+  border-radius: 0px;
+  background: #ff5722;
+  padding: 10px 14px;
+  color: white;
+  margin-top: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  border-left: solid 4px #555;
+}
+.adviso_button:hover {
+  color: white;
+}
+/*---------------------
+ Adviso Upsell Section
+---------------------*/
+#accordion-section-adviso_plus_header,
+#accordion-section-adviso_plus_posts,
+#accordion-section-adviso_plus_products {
+  pointer-events: none;
+}
+#accordion-section-adviso_plus_header h3,
+#accordion-section-adviso_plus_posts h3,
+#accordion-section-adviso_plus_products h3 {
+  background-color: #ff5722 !important;
+  border-left: solid 4px #555 !important;
+  color: white !important;
+}
+#accordion-section-adviso_plus_header h3:after,
+#accordion-section-adviso_plus_posts h3:after,
+#accordion-section-adviso_plus_products h3:after {
+  display: none;
+}
+.cta-pro {
+  display: block;
+  text-align: center;
+  margin-bottom: 20px;
+  letter-spacing: .04em;
+}
+.cta-pro span {
+  color: #ff5722;
+}
+.cta-pro a {
+  display: flex !important;
+  display: inline-flex;
+  width: 64%;
+  margin: auto !important;
+  justify-content: center;
+  align-items: center;
+  padding-top: 2px !important;
+}
+.cta-pro a span {
+  padding-top: 2px;
+  padding-right: 2px;
+}
+/*-------------------
+ Image Radio Buttons
+--------------------*/
+.image_radio_button_control .radio-button-label > input {
+  display: none;
+}
+.image_radio_button_control .radio-button-label > input:checked + img {
+  border: 3px solid #2885bb;
+}
+.image_radio_button_control .radio-button-label > img {
+  width: 45%;
+  vertical-align: middle;
+  margin-right: 3px;
 }

@@ -28,6 +28,15 @@ a {
     color: #888;
   }
 }
+
+pre {
+	white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-wrap: break-word;
+}
+
 .section-title {
   color: @content;
   text-transform: uppercase;
@@ -54,9 +63,6 @@ a {
 
 #content {
   padding-top: 30px;
-  h1,h2,h3,h4,h5,h6 {
-	  .title-font;
-  }
   p, ul, ol, table, dl {
 	  font-size: 16px;
 	  letter-spacing: .04em;

@@ -37,6 +37,7 @@ require_once get_template_directory(). '/framework/customizer/_woocommerce.php';
 require_once get_template_directory(). '/framework/customizer/featured-areas.php';
 require_once get_template_directory(). '/framework/customizer/extend-customizer.php';
 require_once get_template_directory(). '/framework/customizer/sorter.php';
+require_once get_template_directory(). '/framework/customizer/header-text.php';
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.

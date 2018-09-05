@@ -10,7 +10,7 @@
     <div id="featured-offers" class="featured-section-area">
         <div class="delta-container container">
 
-            <div class="owl-carousel owl-theme">
+            <div id="owl-posts" class="owl-carousel owl-theme">
                 <?php
                 $count = 1;
                 $args = array(

@@ -43,16 +43,19 @@ function adviso_customize_register_skins( $wp_customize ) {
 			'priority'	=> 20,
 		) ) 
 	);
-
-    //Select the Default Theme Skin
-    $wp_customize->add_section(
-        'adviso_skin_options',
-        array(
-            'title'     => __('Theme Skin & Colors','adviso'),
-            'priority'  => 39,
-            'panel'     => 'adviso_design_panel'
-        )
-    );
+    
+    $wp_customize->add_control(
+		new Adviso_Plus_Upsell_Control(
+		$wp_customize,
+		'adviso_plus_skin',
+			array(
+				'settings'	=> array(),
+				'section'	=> 'colors',
+				'priority'	=> 25,
+				'description'		=> __('More Options in Adviso Plus', 'adviso')
+			)
+		)
+	);
 
     function adviso_sanitize_skin( $input ) {
         if ( in_array($input, array('default','blue-pink','yellow-black','off-blue-gray','brownish') ) )

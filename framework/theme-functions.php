@@ -26,7 +26,7 @@ function adviso_load_sidebar() {
         $load_sidebar = false;
     elseif( get_theme_mod('adviso_disable_sidebar_home') == 'disable' && is_home() )	:
         $load_sidebar = false;
-    elseif( get_theme_mod('adviso_disable_sidebar_front') == 'disable' && e() ) :
+    elseif( get_theme_mod('adviso_disable_sidebar_front') == 'disable' && ( is_front_page() && !is_home() )  ) :
         $load_sidebar = false;
     endif;
 
@@ -77,7 +77,7 @@ function adviso_get_blog_layout(){
     if (get_theme_mod('adviso_blog_layout') ) :
         get_template_part( $ldir , get_theme_mod('adviso_blog_layout') );
     else :
-        get_template_part( $ldir ,'grid');
+        get_template_part( $ldir ,'adviso');
     endif;
 }
 add_action('adviso_blog_layout', 'adviso_get_blog_layout');
@@ -108,7 +108,8 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 
 		// start_lvl – wrapper for child comments list
 		function start_lvl( &$output, $depth = 0, $args = array() ) {
-			$GLOBALS['comment_depth'] = $depth + 2; ?>
+			
+			parent::start_lvl( $output, $depth, $args ); ?>
 			
 			<ol class="child-comments comments-list">
 
@@ -116,17 +117,18 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 	
 		// end_lvl – closing wrapper for child comments list
 		function end_lvl( &$output, $depth = 0, $args = array() ) {
-			$GLOBALS['comment_depth'] = $depth + 2; ?>
+			parent::end_lvl( $output, $depth, $args ); ?>
 
 			</ol>
 
 		<?php }
 
 		// start_el – HTML for comment template
-		function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
-			$depth++;
-			$GLOBALS['comment_depth'] = $depth;
-			$GLOBALS['comment'] = $item;
+		function start_el( &$output = '', $item, $depth = 0, $args = array(), $id = 0 ) {
+			
+			parent::start_el( $output, $item, $depth, $args, $id );
+			$output	=	'';
+			
 			$parent_class = ( empty( $args['has_children'] ) ? '' : 'parent' ); 
 	
 			if ( 'article' == $args['style'] ) {
@@ -136,7 +138,7 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 				$tag = 'article';
 				$add_below = 'comment';
 			} ?>
-
+			
 			<li <?php comment_class(empty( $args['has_children'] ) ? '' :'parent') ?> id="comment-<?php comment_ID() ?>" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
 				<div class="comment-container">
 					<figure class="gravatar"><?php echo get_avatar( $item, 65, '', 'Author’s gravatar' ); ?></figure>
@@ -161,7 +163,9 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 		<?php }
 
 		// end_el – closing HTML for comment template
-		function end_el(&$output, $item, $depth = 0, $args = array() ) { ?>
+		function end_el(&$output, $item, $depth = 0, $args = array() ) { 
+		
+			//parent::end_el( $output, $item, $depth, $args ); ?>
 
 			</li>
 
@@ -171,9 +175,9 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 		function __destruct() { ?>
 
 			</li>
+
 		
 		<?php }
-
 	}
 
 
@@ -224,11 +228,29 @@ function adviso_sorter() {
 		}		
 	}
 	
-	$order	=	explode( ',', get_theme_mod('adviso_sorter_control') );
+	$order	=	explode( ',', get_theme_mod('adviso_sorter_control', 'feat_posts,feat_posts_car,feat_cat,feat_prod,feat_prod_car') );
 	foreach( $order as $i ) {
 		show( $i );
 	}
 }
+
+function adviso_load_fonts() {
+	
+	$fonts	=	[];
+	
+	array_push( $fonts, get_theme_mod( 'adviso_title_font1', 'Arvo' ) );
+	array_push( $fonts, get_theme_mod( 'adviso_body_font1', 'Ubuntu' ) );
+	array_push( $fonts, get_theme_mod( 'adviso_site_title_font', 'Arvo' ) );
+	array_push( $fonts, get_theme_mod( 'adviso_blog_title_font1', 'Arvo' ) );
+	
+	$fonts	=	array_unique( $fonts );
+	
+	foreach ($fonts as $font) {
+		wp_enqueue_style( 'adviso-' . str_replace(" ", "-", strtolower( $font ) ) . '-font', '//fonts.googleapis.com/css?family='.str_replace(" ", "+", $font ) . ':100,300,400,700' );
+	}
+}
+
+add_action( 'wp_enqueue_scripts', 'adviso_load_fonts', 10 );
 
 
 /**

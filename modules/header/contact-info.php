@@ -1,11 +1,5 @@
 <?php if(get_theme_mod('adviso_contact_info_enable') =='enable' ): ?>
 <div id="contact-info" class="container">
-    <?php if (get_theme_mod('adviso_message')): ?>
-        <div class="message">
-            <span class="fa fa-comments"></span>
-            <span class="value"><?php echo esc_html( get_theme_mod('adviso_message') ); ?></span>
-        </div>
-    <?php endif; ?>
     <?php if (get_theme_mod('adviso_mail_id')) : ?>
         <div class="mail">
             <span class="fa fa-envelope"></span>
