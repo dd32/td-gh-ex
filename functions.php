@@ -7,11 +7,34 @@ function content_theme_css() {
     wp_enqueue_script('content-mp-masonry-js', get_stylesheet_directory_uri() . '/js/masonry/mp.mansory.js');
 }
 
+if ( ! function_exists( 'content_theme_setup' ) ) :
+
+function content_theme_setup() {
+
 //Load text domain for translation-ready
 load_theme_textdomain('content', get_stylesheet_directory() . '/languages');
 
+require( get_stylesheet_directory() . '/functions/content-info/welcome-screen.php' );
+
+}
+endif; 
+add_action( 'after_setup_theme', 'content_theme_setup' );
+
+add_action( 'admin_init', 'content_detect_button' );
+	function content_detect_button() {
+	wp_enqueue_style('content-info-button', get_stylesheet_directory_uri().'/css/import-button.css');
+}
+
 // footer custom script
 function content_footer_custom_script() {
+	
+if ( is_active_sidebar('sidebar_primary') ) {
+$col =6;
+}
+else
+{
+$col =4;
+}
 ?>
     <script>
         jQuery(document).ready(function (jQuery) {
@@ -20,7 +43,7 @@ function content_footer_custom_script() {
                         childrenClass: 'item', // default is a div
                         columnClasses: 'padding', //add classes to items
                         breakpoints: {
-                            lg: 4, //Change masonry column here like 2, 3, 4 column
+                            lg: <?php echo $col;?>, //Change masonry column here like 2, 3, 4 column
                             md: 6,
                             sm: 6,
                             xs: 12

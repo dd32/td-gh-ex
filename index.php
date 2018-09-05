@@ -40,11 +40,13 @@ get_header();
 		<!-- /Page Title Section -->
  
  
-		<!-- Blog & Sidebar Section -->
-		<section class="blog-section">
-			<div class="container">
-				<div class="row" id="blog-masonry">
-					<?php 
+<!-- Blog & Sidebar Section -->		
+<section class="blog-section">
+	<div class="container">
+		<div class="row">
+		<div class="col-md-<?php echo ( !is_active_sidebar( 'sidebar_primary' ) ? '12' :'8' ); ?> col-xs-12">
+			<div class="row site-content" id="blog-masonry">
+				<?php 
 					if ( have_posts() ) :
 					// Start the Loop.
 					while ( have_posts() ) : the_post();
@@ -54,9 +56,6 @@ get_header();
 						echo '</div>';
 					endwhile;
 				endif;
-				?>
-				</div>
-				<?php
 				// Previous/next page navigation.
 					the_posts_pagination( array(
 						'prev_text'          => '<i class="fa fa-angle-double-left"></i>',
@@ -64,6 +63,12 @@ get_header();
 					) );
 				?>	
 			</div>
-		</section>
+		</div>
+		
+		<?php get_sidebar();?>
+		
+		</div>
+	</div>
+</section>
 <!-- /Blog & Sidebar Section -->
 <?php get_footer(); ?>
