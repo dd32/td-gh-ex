@@ -15,5 +15,22 @@ require( get_stylesheet_directory() .'/functions/widgets/wdl_social_icon.php');
 require( get_stylesheet_directory() .'/functions/widgets/wdl_header_topbar_info_ct_widget.php');
 require( get_stylesheet_directory() . '/functions/widgets/sidebars.php');
 
+
+
+if ( ! function_exists( 'rockers_theme_setup' ) ) :
+
+function rockers_theme_setup() {
+
 //Load text domain for translation-ready
 load_theme_textdomain( 'rockers', get_stylesheet_directory() . '/languages' );
+
+require( get_stylesheet_directory() . '/functions/rockers-info/welcome-screen.php' );
+
+}
+endif; 
+add_action( 'after_setup_theme', 'rockers_theme_setup' );
+
+add_action( 'admin_init', 'rockers_detect_button' );
+	function rockers_detect_button() {
+	wp_enqueue_style('rockers-info-button', get_stylesheet_directory_uri().'/css/import-button.css');
+}
