@@ -290,9 +290,13 @@ require get_template_directory() . '/inc/template-tags.php';
  */
 require get_template_directory() . '/inc/template-functions.php';
 
-/*------------------------------
- Customizer
- ------------------------------*/
+ /*------------------------------
+ 	 Customizer
+------------------------------*/
+	 
+if ( ! class_exists( 'Kirki' ) ) {
+	        require get_template_directory() . '/inc/bazz_kirki/bazz-kirki-installer.php'; // installer
+}
 
 // kirki configuration
 if ( class_exists( 'Kirki' ) ) {

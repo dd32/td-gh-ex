@@ -46,6 +46,9 @@ All options are in the Customizer.
 = 1.0.2 - August 21 2018 =
 * Licensing issues fixes
 
+= 1.0.4 - Sept 5 2018 =
+* Customizer bug fix
+
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License  v2 or later
 License: GNU General Public License v2 or later
