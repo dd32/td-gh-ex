@@ -28,6 +28,9 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.3.4 | 5th September 2018 =
+* Update: Product Gallery css.
+
 = Version 1.3.3 | 30th August 2018 =
 * Fix: Issue with product header search.
 * Update: CSS for image gutenberg.

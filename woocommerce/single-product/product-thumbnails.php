@@ -15,7 +15,7 @@ global $post, $product;
 $ascend = ascend_get_options();
 if ( version_compare( WC_VERSION, '3.0', '>' ) ) {
 	$attachment_ids = $product->get_gallery_image_ids();
-	if(isset($ascend['product_gallery_slider']) && 1 == $ascend['product_gallery_slider']) {
+	if ( isset( $ascend['product_gallery_slider'] ) && 1 == $ascend['product_gallery_slider'] ) {
 		$galslider = true;
 		$output_size = 'shop_single';
 	} else {
@@ -31,7 +31,7 @@ if ( version_compare( WC_VERSION, '3.0', '>' ) ) {
 
 if ( $attachment_ids ) {
 
-	if(isset($ascend['product_simg_resize']) && 0 == $ascend['product_simg_resize'] || false == $galslider) {
+	if ( isset( $ascend['product_simg_resize'] ) && 0 == $ascend['product_simg_resize'] || false == $galslider ) {
 		$presizeimage = 0;
 	} else {
 		$presizeimage = 1;
@@ -82,14 +82,12 @@ if ( $attachment_ids ) {
 				'data-large_image_width'  => $full_size_image[1],
 				'data-large_image_height' => $full_size_image[2],
 			);
-			if($presizeimage == 1){
+			if ( $presizeimage == 1 ) {
 				$html  = '<div data-thumb="' .  esc_url( $thumbnail[0] ) . '" class="woocommerce-product-gallery__image"><a href="' . esc_url( $full_size_image[0] ) . '">';
 				$html .= ascend_get_full_image_output($productimgwidth, $productimgheight, $image_crop, 'attachment-shop_single shop_single wp-post-image', $light_title, $attachment_id, false, false, false, $attributes);
 				$html .= '</a></div>';
 			} else {
-				$html  = '<div data-thumb="' . esc_url( $thumbnail[0] ) . '" class="woocommerce-product-gallery__image"><a href="' . esc_url( $full_size_image[0] ) . '">';
-				$html .= wp_get_attachment_image( $attachment_id, $output_size, false, $attributes );
-	 			$html .= '</a></div>';
+				$html  = wc_get_gallery_image_html( $attachment_id  );
 	 		}
 			
 			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $attachment_id );

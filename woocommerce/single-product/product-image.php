@@ -110,11 +110,7 @@ if(isset($ascend['product_simg_resize']) && 0 == $ascend['product_simg_resize'])
 					$html .= '</a>';
 					$html .= '</div>';
 				} else {
-					$html  = '<div data-thumb="' . get_the_post_thumbnail_url( $post->ID, 'shop_thumbnail' ) . '" class="woocommerce-product-gallery__image">';
-					$html .= '<a href="' . esc_url( $full_size_image[0] ) . '">';
-					$html .= get_the_post_thumbnail( $post->ID, 'shop_single', $attributes );
-					$html .= '</a>';
-					$html .= '</div>';
+					$html  = wc_get_gallery_image_html( $post_thumbnail_id, true );
 				}
 			} else {
 				$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
@@ -122,9 +118,9 @@ if(isset($ascend['product_simg_resize']) && 0 == $ascend['product_simg_resize'])
 				$html .= '</div>';
 			}
 
-			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, get_post_thumbnail_id( $post->ID ) );
+			echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );
 			
-			if(! $galslider) {
+			if ( ! $galslider ) {
 				echo '</div>';
 			}	
 		if(! $galslider) {
