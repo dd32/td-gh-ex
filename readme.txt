@@ -44,7 +44,7 @@ Images
 	Header Image and Screenshot main image
 		* https://pixabay.com/en/an-pierle-white-velvet-band-876094/
 
-	Alternate Header Image 
+	Alternate Header Image
 		* https://www.pexels.com/photo/guitarist-of-greyscale-photo-210922/
 
 	All other images are self-shot by Catch Themes and released under same license as theme.
@@ -56,5 +56,9 @@ Icons
 
 == Changelog ==
 
-= 1.0 (Released: July 20, 2018) =
+= 1.0.1 (Released: September 20, 2018) =
+* Bug Fixed: Header Media text color issue
+* Removed: wpml-config.xml
+
+= 1.0 (Released: September 20, 2018) =
 * Initial Release
