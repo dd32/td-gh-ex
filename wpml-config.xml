@@ -1,0 +1,47 @@
+<wpml-config>
+    <admin-texts>
+        <key name="theme_mods_audioman">
+    		<key name="audioman_header_media_title"/>
+    		<key name="audioman_header_media_text"/>
+    		<key name="audioman_header_media_url"/>
+    		<key name="audioman_header_media_url_text"/>
+    		<key name="audioman_breadcrumb_seperator"/>
+    		<key name="audioman_events_headline"/>
+    		<key name="audioman_events_subheadline"/>
+    		<key name="audioman_events_individual_text_*"/>
+    		<key name="audioman_events_text"/>
+    		<key name="audioman_events_link"/>
+    		<key name="audioman_events_link_*"/>
+    		<key name="audioman_events_title_*"/>
+    		<key name="audioman_events_content_*"/>
+    		<key name="audioman_excerpt_more_text"/>
+    		<key name="audioman_featured_content_archive_title"/>
+    		<key name="audioman_featured_content_sub_title"/>
+    		<key name="audioman_featured_content_text"/>
+    		<key name="audioman_featured_content_link"/>
+    		<key name="audioman_featured_content_link_*"/>
+    		<key name="audioman_featured_content_title_*"/>
+    		<key name="audioman_featured_content_content_*"/>
+    		<key name="audioman_featured_link_*"/>
+    		<key name="audioman_featured_title_*"/>
+    		<key name="audioman_featured_content_*"/>
+    		<key name="audioman_featured_content_*"/>
+    		<key name="audioman_footer_content"/>
+    		<key name="audioman_hero_content_title"/>
+    		<key name="audioman_hero_content_content"/>
+    		<key name="audioman_hero_content_link"/>
+    		<key name="audioman_hero_content_more_text"/>
+    		<key name="audioman_hero_content_more_link"/>
+    		<key name="audioman_recent_posts_heading"/>
+    		<key name="audioman_recent_posts_subheading"/>
+    		<key name="audioman_portfolio_title_*"/>
+    		<key name="audioman_portfolio_text_*"/>
+    		<key name="audioman_portfolio_link_*"/>
+    		<key name="audioman_search_text"/>
+    		<key name="audioman_testimonial_headline"/>
+    		<key name="audioman_testimonial_subheadline"/>
+    		<key name="audioman_testimonial_link_*"/>
+    		<key name="_customize-input-audioman_testimonial_content_*"/>
+        </key>
+    </admin-texts>
+</wpml-config>
