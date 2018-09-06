@@ -81,7 +81,7 @@ final class Agama_Customizer_Upsell {
                 'agama-theme-info', 
                 array(
                     'theme_info_title' => esc_html__( 'Agama Pro', 'agama' ),
-                    'label_url'        => esc_url( 'http://theme-vision.com/agama-pro/' ),
+                    'label_url'        => esc_url( 'https://theme-vision.com/agama-pro/' ),
                     'label_text'       => esc_html__( 'Upgrade to Pro', 'agama' ),
                     'priority'         => 1
                 )
@@ -106,7 +106,7 @@ final class Agama_Customizer_Upsell {
                         esc_html__( 'Slide #9', 'agama' ),
                         esc_html__( 'Slide #10', 'agama' ),
                     ),
-                    'button_url'  => esc_url( 'http://theme-vision.com/agama-pro/' ),
+                    'button_url'  => esc_url( 'https://theme-vision.com/agama-pro/' ),
                     'button_text' => esc_html__( 'Upgrade to PRO', 'agama' ),
                 )
             )
@@ -126,7 +126,7 @@ final class Agama_Customizer_Upsell {
                         esc_html__( 'Front Page Box #7', 'agama' ),
                         esc_html__( 'Front Page Box #8', 'agama' ),
                     ),
-                    'button_url'  => esc_url( 'http://theme-vision.com/agama-pro/' ),
+                    'button_url'  => esc_url( 'https://theme-vision.com/agama-pro/' ),
                     'button_text' => esc_html__( 'Upgrade to PRO', 'agama' ),
                 )
             )
