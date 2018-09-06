@@ -64,6 +64,10 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == CHANGE LOG ==
+= Version 1.2.9 -2018-09-05 =
+* Update - Screenshot updated as per new wordpress.org guideline
+* Update - Upsell link
+
 = Version 1.2.8 -2018-05-31 =
 * Feature - Added Author Bio display option
 * Feature - Added Related posts display option
