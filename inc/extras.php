@@ -596,6 +596,7 @@ function accesspress_default_setting_value(){
 
 		'accesspresslite_home_page_layout' => 'Default',
 	    'accesspresslite_webpage_layout' => 'Fullwidth',
+	    'template_color' => '#04A3ED',
 	    'gallery_code' => '',
 
 	    'slider_options' => 'single_post_slider',

@@ -125,6 +125,11 @@ require get_template_directory() . '/inc/ap-lite-woocommerce-function.php';
 add_filter('widget_text', 'do_shortcode');
 
 /**
+ * Add Dynamic Styles
+ */
+require get_template_directory() . '/css/style.php';
+
+/**
  * Add Welcome Page to the theme
  */
 require get_template_directory() . '/welcome/welcome.php';

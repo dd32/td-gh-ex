@@ -8,8 +8,10 @@
 if ( is_admin() ) : // Load only if we are viewing an admin page
 
 function accesspress_lite_admin_scripts() {
+	wp_enqueue_style( 'wp-color-picker' );
+
 	wp_enqueue_media();
-	wp_enqueue_script( 'accesspresslite_custom_js', get_template_directory_uri().'/inc/admin-panel/js/custom.js', array( 'jquery' ) );
+	wp_enqueue_script( 'accesspresslite_custom_js', get_template_directory_uri().'/inc/admin-panel/js/custom.js', array( 'jquery', 'wp-color-picker' ) );
 	wp_enqueue_script( 'of-media-uploader', get_template_directory_uri().'/inc/admin-panel/js/media-uploader.js', array( 'jquery' ) );
 	
 	wp_enqueue_style( 'accesspresslite_admin_style',get_template_directory_uri().'/inc/admin-panel/css/admin.css', '1.0', 'screen' );
@@ -199,7 +201,10 @@ function accesspresslite_theme_options_page() {
 		<div id="optionsframework" class="postbox">
 			<form id="form_options" method="POST" action="options.php" enctype="multipart/form-data">
 
-			<?php $settings = get_option( 'accesspresslite_options', $accesspresslite_options ); ?>
+			<?php
+				$old_settings = get_option( 'accesspresslite_options', $accesspresslite_options );
+				$settings = wp_parse_args($old_settings, $accesspresslite_options);
+			?>
 			
 			<?php settings_fields( 'accesspresslite_theme_options' );
 			/* This function outputs some hidden fields required by the form,
@@ -219,6 +224,12 @@ function accesspresslite_theme_options_page() {
     						<label for="<?php echo esc_attr($accesspresslite_home_template) ?>"><?php echo esc_attr($accesspresslite_home_template); ?></label><br />
     					<?php endforeach;
     					?>
+    					</td>
+					</tr>
+					<tr>
+    					<th scope="row"><label for="template_color"><?php esc_html_e('Template Color','accesspress-lite'); ?></label></th>
+    					<td>
+    					   <input id="template_color" class="apcolor" name="accesspresslite_options[template_color]" type="text" value="<?php echo esc_attr($settings['template_color']); ?>" />
     					</td>
 					</tr>
 					<tr>
@@ -1226,6 +1237,10 @@ function accesspresslite_validate_options( $input ) {
     if( isset( $input[ 'header_text' ] ) ) {
 	   $input[ 'header_text' ] = wp_kses_post( $input[ 'header_text' ] );
     }
+    
+    /*if( isset( $input[ 'template_color' ] ) ) {
+        $input[ 'template_color' ] = sanitize_hex_color( $input[ 'template_color' ] );
+    }*/
     
     if( isset( $input[ 'gallery_code' ] ) ) {
 	   $input[ 'gallery_code' ] = wp_kses_post( $input[ 'gallery_code' ] );

@@ -810,7 +810,7 @@ input[type="submit"]:hover{
 
 .body_template_two .site-footer #top-footer .footer2.footer .aptf-tweet-content a.aptf-tweet-name,
 .body_template_two #event_section #latest-events_template_two h1 a  {
-	color:#f98253 !important;
+	color:#f98253;
 }
 
 .body_template_two .site-footer #top-footer .footer4.footer ul li i {

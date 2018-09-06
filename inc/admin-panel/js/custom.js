@@ -77,6 +77,8 @@ jQuery(document).ready(function($) {
 	$('#upload-btn').click(function(){
 		$('#form_options').attr('action','');
 	});
+
+	$('.apcolor').wpColorPicker();
 });
 
 

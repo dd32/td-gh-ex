@@ -66,7 +66,10 @@ Images
 
 == Changelog ==
 
-Version 2.79
+Version 2.81
+* Added Dynamic Color Option
+
+Version 2.80
 * Made Translation Ready
 
 Version 2.79
