@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: enrichmg\n"
-"POT-Creation-Date: 2015-08-22 22:36-0700\n"
-"PO-Revision-Date: 2015-08-22 22:34-0700\n"
+"POT-Creation-Date: 2018-09-07 18:15-0700\n"
+"PO-Revision-Date: 2018-09-07 18:13-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -192,16 +192,6 @@ msgstr ""
 
 #: functions.php:142
 msgid "Attach"
-msgstr ""
-
-#: functions.php:177
-#, php-format
-msgid "Proudly powered by %s"
-msgstr ""
-
-#: functions.php:179
-#, php-format
-msgid "Theme: %1$s by %2$s"
 msgstr ""
 
 #: header.php:40
@@ -415,18 +405,28 @@ msgstr ""
 msgid "Meta"
 msgstr ""
 
-#. Theme Name of the plugin/theme
-msgid "enrichmg"
+#: site-info.php:12
+msgid "enrichmg theme created by "
 msgstr ""
 
-#. Theme URI of the plugin/theme
-msgid "http://www.designs2site.com/enrichmg"
+#: site-info.php:13
+msgid "https://daviseastconsulting.com"
+msgstr ""
+
+#: site-info.php:14
+#, php-format
+msgid " %s"
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "enrichmg"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
 "Minimal magazine format. Custom static frontpage and landing page sandbox "
-"layouts. HTML5/CSS3 Responsive Design. Now with theme option customizers"
+"layouts. HTML5/CSS3 Responsive Design. Theme option customizers allow easy "
+"CSS changes to backgrounds and text."
 msgstr ""
 
 #. Author of the plugin/theme
@@ -434,5 +434,5 @@ msgid "Terry East"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://www.designs2site.com"
+msgid "https://daviseastconsulting/aboutus"
 msgstr ""

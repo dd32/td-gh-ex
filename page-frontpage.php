@@ -2,10 +2,8 @@
 /**
  * Template Name: Front Page Layout
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * This is the template that can be used to create full width static frontpages.
+ * displays sidebar widget areas below main content.
  *
  * @package enrichmg
  */

@@ -2,10 +2,8 @@
 /**
  * Template Name: Page with no sidebar
  *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site will use a
- * different template.
+ * This is the template that is used to create landing pages
+ * it does not display the sidebar widgets
  *
  * @package enrichmg
  */

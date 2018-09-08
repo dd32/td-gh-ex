@@ -13,9 +13,9 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info">
    
-            
-            
-			<?php do_action( 'enrichmg_credits' ); ?>
+            <?php
+            get_template_part( 'site', 'info' );
+			?>
 			
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

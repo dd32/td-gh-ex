@@ -1,15 +1,15 @@
 /*
 Theme Name: enrichmg
+Theme URI: https://daviseastconsulting.com/enrichmg/
 Author: Terry East
-Author URI: http://www.designs2site.com
-Theme URI: http://www.designs2site.com/enrichmg
-Description: Minimal magazine format. Custom static frontpage and landing page sandbox layouts. HTML5/CSS3 Responsive Design. Now with theme option customizers
-Version: 2.2
-License: GPU General Public License v2
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Author URI: https://daviseastconsulting/aboutus
+Description: Minimal magazine format. Custom static frontpage and landing page sandbox layouts. HTML5/CSS3 Responsive Design. Theme option customizers allow easy CSS changes to backgrounds and text.
+Version: 2.3
+License: GPU General Public License v3
+License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: enrichmg
 
-Tags: black, white, red, one-column, two-columns, right-sidebar, editor-style, responsive-layout, custom-header, custom-background, featured-images, custom-menu, post-formats, sticky-post, threaded-comments, translation-ready, theme-options
+Tags: one-column, two-columns, right-sidebar, editor-style, custom-header, custom-background, featured-images, custom-menu, post-formats, sticky-post, threaded-comments, translation-ready, theme-options
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -21,7 +21,7 @@ Eric Meyer http://meyerweb.com/eric/tools/css/reset/index.html
 along with Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 and Blueprint http://www.blueprintcss.org/
 
-All images supplied with erichmg theme are the work products of the author and licensed by GPL v2. Additional copyright and licensing information contained within the readme.txt file.
+All images supplied with enrichmg theme are the work products of the author and licensed by GPL v2. Additional copyright and licensing information contained within the readme.txt file.
 
 Version 1.2.1 changes: 
 				fixed custom background color bug
@@ -51,6 +51,12 @@ Version 2.0.2 bug fixes -- stopped display of featured image
 Version 2.1.0 bug fixes -- implemented title tag feature, eliminated double titles
 
 Version 2.2 bug fixes -- ensured the title tag worked properly and update screenshot
+
+Version 2.3 brought current and bug fixes -- 
+			search index now handles vertical images larger the amount of text
+            updated screenshot size
+            updated GPL license to v3
+			
 
 */
 
@@ -669,6 +675,7 @@ div.menu {
 article.post, article.page, article.attachment {
     background-color:rgba(0,0,0,0.3);
     padding:0 .5em;
+    overflow:hidden;
 } 
 
 #primary #main div.entry-content a,
