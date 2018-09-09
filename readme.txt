@@ -89,6 +89,9 @@ Images
 ---------------------------------------------
 == Changelog ==
 
+Version 1.66
+ * Added Dynamic Color Option
+
 Version 1.65
  * Made Translation Ready
  * Minor Bug Fixes
