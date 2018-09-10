@@ -3,7 +3,7 @@
 Contributors: shivashankerbhatta
 Requires at least: 4.0
 Tested up to: 4.9
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: news, blog, entertainment, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, custom-header, translation-ready, theme-options, threaded-comments
@@ -31,6 +31,9 @@ A Magazine is a child theme of Elegant Magazine. The theme has modified full-wid
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+= 1.0.3 - Spet 10 2018 =
+* Screenshots changed.
+
 = 1.0.2 - June 29 2018 =
 * Post link has been facilitated to post thumbnails.
 
@@ -46,7 +49,9 @@ A Magazine includes support for Infinite Scroll in Jetpack.
 
 Image License
 ------------------------------------------------------------------------------
-https://www.pexels.com/photo/adults-audience-band-concert-167517/
-https://www.pexels.com/photo/audience-back-view-band-blur-442540/
-https://www.pexels.com/photo/photo-of-women-wearing-masks-787961/
-https://www.pexels.com/photo/concert-effect-entertainment-event-1150837/
+https://www.pexels.com/photo/architecture-asphalt-blur-cables-417023/
+https://pixabay.com/en/airline-architecture-buildings-city-1807486/
+https://pixabay.com/en/bar-ipad-mockup-business-computer-621033/
+https://pixabay.com/en/trump-tower-building-city-urban-3325245/
+https://pixabay.com/en/cargo-jet-c-17-airdrop-humvee-sky-108882/
+https://pixabay.com/en/classroom-school-education-learning-2093744/
