@@ -45,8 +45,10 @@
 						print esc_html(get_theme_mod( 'anorya_footer_copyright_text_setting'));
 					else:
 						//link to reborn themes if text on footer is not set
-						esc_html_e('&copy; 2017 - Anorya Personal Responsive Blog WordPress Theme','anorya');	 ?>
-				<?php endif; ?>				
+						print esc_html(get_bloginfo( 'name', 'display' ));
+						
+					endif; ?>
+					
 					- <a href="https://www.wordpress.org">Powered by WordPress</a>
 					- <a href="https://www.rebornthemes.com"> Created by RebornThemes.com</a>			
 				

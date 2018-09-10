@@ -13,7 +13,7 @@
 								<?php the_custom_logo(); ?>
 							</div>
 						<?php else: ?>
-							<h1><a href="<?php print esc_url_raw(home_url( '/' )); ?>">
+							<h1><a href="<?php print esc_url(home_url( '/' )); ?>">
 								<?php print esc_attr(get_bloginfo( 'name', 'display' ) ); ?>
 							</a></h1>
 						<?php endif; ?>

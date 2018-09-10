@@ -88,7 +88,7 @@
 							<div class="col-xs-10">
 								<?php //get site logo
 									if(get_theme_mod( 'anorya_logo_image_setting')): ?>
-										<a href="<?php print esc_url_raw(home_url( '/' )); ?>">
+										<a href="<?php print esc_url(home_url( '/' )); ?>">
 										<img class="img-responsive align-center" 
 											  src="<?php print esc_url_raw(get_theme_mod( 'anorya_logo_image_setting')); ?>" 
 											  alt="<?php print esc_attr(get_bloginfo( 'name', 'display' ) ); ?>" /></a>

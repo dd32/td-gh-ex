@@ -107,7 +107,12 @@
 							<h1><a href="<?php the_permalink(); ?>"><?php print the_title(); ?></a></h1>
 						</div>	
 						<p class="slider-post-date-desc"><?php esc_html_e('Posted On ','anorya'); ?>
-						<span class="slider-post-date"><?php print get_the_date('F j, Y',$query->post->ID);?></span>
+						<span class="slider-post-date">
+							<?php 
+								
+								print esc_html(get_the_date(get_option( 'date_format' ),$query->post->ID));
+							?>
+						</span>
 						<?php esc_html_e('In ','anorya'); ?>
 						<span class="slider-post-date"><?php echo esc_html( anorya_get_post_display_category($query->post->ID) );?></span>
 						</p>   
@@ -362,7 +367,7 @@
 	function anorya_get_post_slider_categories()
 	{
 		//get posts categories
-		$anorya_categories_choices = array( 'ALL' => 'All Categories');
+		$anorya_categories_choices = array( 'ALL' => __('All Categories','anorya'));
 		$categories = get_categories( array ('orderby' => 'name','order' => 'ASC','taxonomy' => 'category'));
 		foreach( $categories as $key => $value ){
 			$value = $value->to_array(); //turn Wp_Term object to array
@@ -382,49 +387,22 @@
 			
 			if(get_theme_mod('anorya_promobox'.$box_identifier.'_image_setting')):
 				$output .= '<img class="img-responsive" src="'.esc_url_raw(get_theme_mod('anorya_promobox'.$box_identifier.'_image_setting','Image')).'" ';
-				$output .= ' alt="'.esc_html(get_theme_mod('anorya_promobox'.$box_identifier.'_title_setting','Read More')).'"/></a>';
+				$output .= ' alt="'.esc_html(get_theme_mod('anorya_promobox'.$box_identifier.'_title_setting',__('Read More','anorya'))).'"/></a>';
 			else: 
 				$output .= '<img class="img-responsive"  src="'.get_template_directory_uri().'/assets/images/promobox'.$box_identifier.'.jpg"'; 
 				$output .= ' alt="'.esc_attr(get_bloginfo( 'name', 'display' ) ).'" /></a>';			
 			endif;
 			$output .= '<div class="promo-box-text">';
 			$output .=  '<a href="'.esc_url_raw(get_theme_mod('anorya_promobox'.$box_identifier.'_url_setting','#')).'">';
-			$output .= esc_html(get_theme_mod('anorya_promobox'.$box_identifier.'_subtitle_setting','Read More')).'</a>';
+			$output .= esc_html(get_theme_mod('anorya_promobox'.$box_identifier.'_subtitle_setting',__('Read More','anorya'))).'</a>';
 			$output .=  '<h4><a href="'.esc_url_raw(get_theme_mod('anorya_promobox'.$box_identifier.'_url_setting','#')).'">';
-			$output .= esc_html(get_theme_mod('anorya_promobox'.$box_identifier.'_title_setting','Read More')).'</a></h4>';
+			$output .= esc_html(get_theme_mod('anorya_promobox'.$box_identifier.'_title_setting',__('Read More','anorya'))).'</a></h4>';
 			$output .= '</div></div>';
 			
 			print $output;
 		}	
 	}
 	
-	//display social media share buttons
-	// DEPRECATE SINCE 1.0.4
-	function anorya_social_share($post_id)
-	{
-		 ?>
-			<a href="https://www.facebook.com/sharer/sharer.php?u=<?php the_permalink(); ?>">
-				<?php esc_html_e('SHARE: ','anorya'); ?>
-				<i class="fa fa-facebook" aria-hidden="true"></i>
-			</a>
-			
-			<a href="https://twitter.com/home?status=<?php 
-				print esc_html(str_replace(' ','+',get_the_title($post_id))); 
-				echo '-'; the_permalink(); ?>">
-				<?php print esc_html_e('TWEET: ','anorya'); ?>
-				<i class="fa fa-twitter" aria-hidden="true"></i>
-			</a>
-			
-			<a href="https://plus.google.com/share?url=<?php the_permalink(); ?>">
-				<?php print esc_html_e('+1: ','anorya'); ?>
-				<i class="fa fa-google-plus" aria-hidden="true"></i>
-			</a>
-			
-			<a href="https://pinterest.com/pin/create/button/?url=<?php the_permalink();?>&media=<?php get_the_post_thumbnail_url($post_id,'anorya_large');?>&description=<?php print esc_html(str_replace(' ','-',get_the_title($post_id))); ?>">
-				<?php print esc_html_e('PIN: ','anorya'); ?>
-				<i class="fa fa-pinterest-p" aria-hidden="true"></i>
-			</a> <?php
-	}
 	
 	//display comments number_format
 	function anorya_display_comments_number(){ ?>
@@ -446,12 +424,12 @@
 	function anorya_display_logo(){
 		
 		if(get_theme_mod( 'anorya_logo_image_setting')): ?>
-			<a href="<?php print esc_url_raw(home_url( '/' )); ?>">
+			<a href="<?php print esc_url(home_url( '/' )); ?>">
 				<img class="img-responsive align-center" 
 					src="<?php print esc_url_raw(get_theme_mod( 'anorya_logo_image_setting')); ?>" 
 					alt="<?php print esc_attr(get_bloginfo( 'name', 'display' ) ); ?>" /></a>
 		<?php else: ?>
-			<a href="<?php print esc_url_raw(home_url( '/' )); ?>">
+			<a href="<?php print esc_url(home_url( '/' )); ?>">
 					<h1><?php print esc_attr(get_bloginfo( 'name', 'display' ) ); ?></h1>
 				</a>
 		<?php endif;
@@ -473,7 +451,7 @@
 				<?php if(get_theme_mod( 'anorya_header_banner_link_setting')): ?>
 					<a href="<?php print esc_url_raw(get_theme_mod( 'anorya_header_banner_link_setting')); ?>">
 				<?php else: ?>	
-					<a href="<?php print esc_url_raw(home_url( '/' )); ?>">
+					<a href="<?php print esc_url(home_url( '/' )); ?>">
 				<?php endif; ?>	
 				<img class="img-responsive align-center"
 						src="<?php print esc_url_raw(get_theme_mod( 'anorya_header_banner_image_setting')); ?>" 

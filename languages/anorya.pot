@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR RebornThemes.com
+# Copyright (C) YEAR RebornThemes
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Anorya 1.0.4\n"
+"Project-Id-Version: Anorya 1.0.5\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-07-23 10:20+0300\n"
+"POT-Creation-Date: 2018-09-07 13:17+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,6 +26,23 @@ msgstr ""
 msgid ""
 "It looks like something went wrong! Nothing was found at this location. "
 "Maybe try a search?"
+msgstr ""
+
+#: archive.php:82 search.php:56
+msgid "Previous"
+msgstr ""
+
+#: archive.php:83
+msgid "Next "
+msgstr ""
+
+#: comments.php:20
+msgid "1 Comment"
+msgstr ""
+
+#: comments.php:23
+#, php-format
+msgid "%s Comments"
 msgstr ""
 
 #: comments.php:29 comments.php:46
@@ -66,10 +83,6 @@ msgstr ""
 
 #: comments.php:86
 msgid "Your e-mail will not be published. All required Fields are marked"
-msgstr ""
-
-#: footer.php:48
-msgid "&copy; 2017 - Anorya Personal Responsive Blog WordPress Theme"
 msgstr ""
 
 #: functions.php:50
@@ -139,15 +152,11 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: search.php:56
-msgid "Previous"
-msgstr ""
-
 #: searchform.php:9
 msgid "Search and hit enter..."
 msgstr ""
 
-#: single.php:29 inc/template-tags.php:111 templates/single-leftsidebar.php:28
+#: single.php:29 inc/template-tags.php:116 templates/single-leftsidebar.php:28
 #: templates/single-nosidebar.php:26 templates/single-rightsidebar.php:26
 msgid "In "
 msgstr ""
@@ -412,7 +421,8 @@ msgid "Promo Box  Image"
 msgstr ""
 
 #: inc/customizer.php:469 inc/customizer.php:520 inc/customizer.php:575
-#: inc/template-tags.php:114
+#: inc/template-tags.php:119 inc/template-tags.php:390
+#: inc/template-tags.php:397 inc/template-tags.php:399
 msgid "Read More"
 msgstr ""
 
@@ -540,31 +550,19 @@ msgstr ""
 msgid "Posted On "
 msgstr ""
 
-#: inc/template-tags.php:184
+#: inc/template-tags.php:189
 msgid "You may also like"
 msgstr ""
 
-#: inc/template-tags.php:407
-msgid "SHARE: "
+#: inc/template-tags.php:370
+msgid "All Categories"
 msgstr ""
 
-#: inc/template-tags.php:414
-msgid "TWEET: "
-msgstr ""
-
-#: inc/template-tags.php:419
-msgid "+1: "
-msgstr ""
-
-#: inc/template-tags.php:424
-msgid "PIN: "
-msgstr ""
-
-#: inc/template-tags.php:435
+#: inc/template-tags.php:413
 msgid "1 COMMENT"
 msgstr ""
 
-#: inc/template-tags.php:438
+#: inc/template-tags.php:416
 #, php-format
 msgid "%s COMMENTS"
 msgstr ""

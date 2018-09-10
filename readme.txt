@@ -1,11 +1,11 @@
 === anorya ===
 
 Contributors: automattic
-Tags: translation-ready, theme-options, custom-menu, post-formats, threaded-comments
+Tags: blog, right-sidebar, translation-ready, one-column, two-columns, grid-layout, theme-options, custom-logo, featured-images, footer-widgets, post-formats, threaded-comments, editor-style, custom-menu
 
 Requires at least: 4.7
-Tested up to: 4.9.7
-Stable tag: 1.0.4
+Tested up to: 4.9.8
+Stable tag: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,14 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+
+=1.0.5 10/9/2018=
+
+* UPDATED Theme resources and images used license information
+* CHANGED Theme Screenshot
+* FIXED Several untranslated strings
+* FIXED Several escaping issues
+
 
 =1.0.4 23/7/2018=
 
@@ -85,17 +93,72 @@ GNU General Public License for more details.
 
 =Anorya bundles the following third-party resources:=
 
-* Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
-* animate.css,  Copyright (c) 2016 Daniel Eden, [MIT](http://opensource.org/licenses/MIT)
-* OwlCarousel 2.3.4, Copyright (c) Modified work Copyright 2016-2017 David Deutsch, [MIT](http://opensource.org/licenses/MIT)
-* Google Fonts ( https://fonts.google.com/attribution )
-* Font Awesome icons, Copyright Dave Gandy License: SIL Open Font License, version 1.1. Source: http://fontawesome.io/
+= Underscores=
+* Automattic, Inc.
+* Copyright 2012-2016, Automattic, Inc.
+* http://underscores.me/
+* License: GPLv2 or later
+* https://www.gnu.org/licenses/gpl-2.0.html
 
-=All images used in theme screenshot are licensed under the Creative Commons Zero (CC0) license.=
-* https://www.pexels.com/photo/black-and-white-close-up-eyes-face-407035/ - (C) pixabay.com - Creative Commons Zero (CC0) license
-* https://www.pexels.com/photo/baby-s-feet-on-brown-wicker-basket-161534/ - (C) pixabay.com - Creative Commons Zero (CC0) license
-* https://www.pexels.com/photo/woman-lying-on-white-textile-touching-white-pillow-33690/ - (C) pixabay.com - Creative Commons Zero (CC0) license
-* https://www.pexels.com/photo/woman-in-white-dress-wearing-gold-chunky-necklace-during-daytime-66354/ - (C) Scott Webb  - Creative Commons Zero (CC0) license
-* https://www.pexels.com/photo/architecture-buildings-business-city-325185/ - (C) Aleksandar Pasaric - Creative Commons Zero (CC0) license
-* https://www.pexels.com/photo/botanical-bright-cacti-cactus-323391/ - (C) Scott Webb  - Creative Commons Zero (CC0) license
+=normalize.css=
+* Nicolas Gallagher and Jonathan Neal
+* Copyright 2012-2016 , Nicolas Gallagher and Jonathan Neal
+* http://necolas.github.io/normalize.css/
+* License: MIT
+* http://opensource.org/licenses/MIT
+
+=animate.css=
+* Daniel Eden
+* Copyright 2016 , Daniel Eden
+* https://daneden.github.io/animate.css/
+* License: MIT
+* http://opensource.org/licenses/MIT
+
+=OwlCarousel 2.3.4=
+* David Deutsch
+* Copyright 2016-2017, David Deutsch
+* https://owlcarousel2.github.io/OwlCarousel2/
+* License: MIT
+* http://opensource.org/licenses/MIT
+
+=Bootstrap 3.3.7=
+* Twitter
+* Copyright 2016, Twitter
+* https://getbootstrap.com/docs/3.3/ 
+* License: MIT
+* http://opensource.org/licenses/MIT
+
+
+=Font Awesome icons=
+* Dave Gandy
+* Copyright Dave Gandy
+* http://fontawesome.io/
+* License: SIL Open Font License, version 1.1
+* https://opensource.org/licenses/OFL-1.1
+
+
+* Anorya theme also uses Google Fonts ( https://fonts.google.com/attribution )
+
+
+=Images Bundled with the theme=
+
+* screenshot.png  
+black-and-white-close-up-eyes-face-407035 - pixabay.com - Creative Commons Zero (CC0) license - https://www.pexels.com/photo/black-and-white-close-up-eyes-face-407035/ 
+baby-s-feet-on-brown-wicker-basket-161534 - pixabay.com - Creative Commons Zero (CC0) license - https://www.pexels.com/photo/baby-s-feet-on-brown-wicker-basket-161534/ 
+woman-lying-on-white-textile-touching-white-pillow-33690 - pixabay.com - Creative Commons Zero (CC0) license - https://www.pexels.com/photo/woman-lying-on-white-textile-touching-white-pillow-33690/
+bridal-1942169 - pixabay.com - Creative Commons Zero (CC0) license - https://pixabay.com/en/bridal-wedding-dress-window-woman-1942169/
+woman-2896389 - pixabay.com - Creative Commons Zero (CC0) license - https://pixabay.com/en/woman-hike-lake-female-hiker-2896389/
+daisy-801813 - pixabay.com - Creative Commons Zero (CC0) license - https://pixabay.com/en/daisy-flower-plant-perspective-801813/
+
+* assets/images/promobox2.jpg
+bridal-1942169 - pixabay.com - Creative Commons Zero (CC0) license 
+https://pixabay.com/en/bridal-wedding-dress-window-woman-1942169/
+
+* assets/images/promobox1.jpg
+woman-2896389 - pixabay.com - Creative Commons Zero (CC0) license  
+https://pixabay.com/en/woman-hike-lake-female-hiker-2896389/
+
+* assets/images/promobox1.jpg
+daisy-801813 - pixabay.com - Creative Commons Zero (CC0) license 
+https://pixabay.com/en/daisy-flower-plant-perspective-801813/
+
