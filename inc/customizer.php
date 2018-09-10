@@ -472,15 +472,25 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 		'panel' => 'bb_mobile_application_panel_id'
 	) );
 
+	$wp_customize->add_setting('bb_mobile_application_slider_hide_show',array(
+      'default' => 'true',
+      'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('bb_mobile_application_slider_hide_show',array(
+	  'type' => 'checkbox',
+	  'label' => __('Show / Hide slider','bb-mobile-application'),
+	  'section' => 'bb_mobile_application_slidersettings',
+	));
+
 	for ( $count = 1; $count <= 4; $count++ ) {
 
 		// Add color scheme setting and control.
-		$wp_customize->add_setting( 'bb_mobile_application_slidersettings-page-' . $count, array(
+		$wp_customize->add_setting( 'bb_mobile_application_slider' . $count, array(
 			'default'           => '',
 			'sanitize_callback' => 'bb_mobile_application_sanitize_dropdown_pages'
 		) );
 
-		$wp_customize->add_control( 'bb_mobile_application_slidersettings-page-' . $count, array(
+		$wp_customize->add_control( 'bb_mobile_application_slider' . $count, array(
 			'label'    => __( 'Select Slide Image Page', 'bb-mobile-application' ),
 			'section'  => 'bb_mobile_application_slidersettings',
 			'type'     => 'dropdown-pages'
@@ -510,12 +520,13 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	$categories = get_categories();
 	$cats = array();
 	$i = 0;
+	$cat_post[]= 'select';
 	foreach($categories as $category){
 	if($i==0){
 	$default = $category->slug;
 	$i++;
 	}
-	$cats[$category->slug] = $category->name;
+	$cat_post[$category->slug] = $category->name;
 	}
 
 	$wp_customize->add_setting('bb_mobile_application_blogcategory_left_setting',array(
@@ -524,7 +535,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	));
 	$wp_customize->add_control('bb_mobile_application_blogcategory_left_setting',array(
 		'type'    => 'select',
-		'choices' => $cats,
+		'choices' => $cat_post,
 		'label' => __('Select Category to display Latest Post','bb-mobile-application'),
 		'section' => 'bb_mobile_application_creative_section',
 	));
@@ -532,16 +543,18 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	//middle image
 	$post_list = get_posts();
 	$i = 0;
+	$pst[]='Select';  
 	foreach($post_list as $post){
-		$posts[$post->post_title] = $post->post_title;
+	$pst[$post->post_title] = $post->post_title;
 	}
 
-	$wp_customize->add_setting('the_wp_business_middle_image_setting',array(
+
+	$wp_customize->add_setting('bb_mobile_application_middle_image_setting',array(
 		'sanitize_callback' => 'sanitize_text_field',
 	));
-	$wp_customize->add_control('the_wp_business_middle_image_setting',array(
+	$wp_customize->add_control('bb_mobile_application_middle_image_setting',array(
 		'type'    => 'select',
-		'choices' => $posts,
+		 'choices' => $pst,
 		'label' => __('Select post to display featured image','bb-mobile-application'),
 		'section' => 'bb_mobile_application_creative_section',
 	));
@@ -550,12 +563,13 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	$categories = get_categories();
 	$cats = array();
 	$i = 0;
+	$cat_post1[]= 'select';
 	foreach($categories as $category){
 	if($i==0){
 	$default = $category->slug;
 	$i++;
 	}
-	$cats[$category->slug] = $category->name;
+	$cat_post1[$category->slug] = $category->name;
 	}
 
 	$wp_customize->add_setting('bb_mobile_application_blogcategory_right_setting',array(
@@ -564,7 +578,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	));
 	$wp_customize->add_control('bb_mobile_application_blogcategory_right_setting',array(
 		'type'    => 'select',
-		'choices' => $cats,
+		'choices' => $cat_post1,
 		'label' => __('Select Category to display Latest Post','bb-mobile-application'),
 		'section' => 'bb_mobile_application_creative_section',
 	));

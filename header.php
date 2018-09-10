@@ -18,9 +18,10 @@
 </head>
 
 <body <?php body_class(); ?>>
-  <div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','bb-mobile-application'); ?></a></div>
+  
   <div id="header">
     <div class="container">
+      <div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','bb-mobile-application'); ?></a></div>
       <div class="row">
         <div class="logo col-md-4 col-sm-4">
           <?php bb_mobile_application_the_custom_logo(); ?>

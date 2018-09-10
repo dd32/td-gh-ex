@@ -243,7 +243,7 @@ function bb_mobile_application_font_url(){
 	$font_family[] = 'Unica One';
 
 	$query_args = array(
-		'family'	=> urlencode(implode('|',$font_family)),
+		'family'	=> rawurlencode(implode('|',$font_family)),
 	);
 	$font_url = add_query_arg($query_args,'//fonts.googleapis.com/css');
 	return $font_url;
@@ -257,8 +257,6 @@ function bb_mobile_application_scripts() {
 	wp_style_add_data( 'bb-mobile-application-style', 'rtl', 'replace' );
 	wp_enqueue_style( 'effect', get_template_directory_uri().'/css/effect.css' );
 	wp_enqueue_style( 'fontawesome-all', get_template_directory_uri().'/css/fontawesome-all.css' );
-
-	wp_enqueue_style( 'jquery-nivo-slider', get_template_directory_uri().'/css/nivo-slider.css' );
 
 	// Paragraph
 	    $bb_mobile_application_paragraph_color = get_theme_mod('bb_mobile_application_paragraph_color', '');
@@ -343,8 +341,6 @@ function bb_mobile_application_scripts() {
 
 			';
 		wp_add_inline_style( 'bb-mobile-application-basic-style',$custom_css );
-
-	wp_enqueue_script( 'jquery-nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
 	wp_enqueue_script( 'bb-mobile-application-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -364,13 +360,13 @@ define('BB_MOBILE_APPLICATION_CREDIT','https://www.themeshopy.com','bb-mobile-ap
 
 if ( ! function_exists( 'bb_mobile_application_credit' ) ) {
 	function bb_mobile_application_credit(){
-		echo "<a href=".esc_url(BB_MOBILE_APPLICATION_CREDIT)." target='_blank'>". esc_html__('ThemeShopy','bb-mobile-application')."</a>";
+		echo "<a href=".esc_url(BB_MOBILE_APPLICATION_CREDIT)." target='_blank'>". esc_html__('BB Mobile Application','bb-mobile-application')."</a>";
 	}
 }
 
 /*radio button sanitization*/
 
- function bb_mobile_application_sanitize_choices( $input, $setting ) {
+function bb_mobile_application_sanitize_choices( $input, $setting ) {
     global $wp_customize; 
     $control = $wp_customize->get_control( $setting->id ); 
     if ( array_key_exists( $input, $control->choices ) ) {
@@ -380,11 +376,28 @@ if ( ! function_exists( 'bb_mobile_application_credit' ) ) {
     }
 }
 
+/* Excerpt Limit Begin */
+function bb_mobile_application_string_limit_words($string, $word_limit) {
+	$words = explode(' ', $string, ($word_limit+1));
+	if (count($words) > $word_limit) {
+		array_pop($words);
+	}
+	return implode(' ', $words);
+}
+
 function bb_mobile_application_sanitize_dropdown_pages( $page_id, $setting ) {
   // Ensure $input is an absolute integer.
   $page_id = absint( $page_id );
   // If $page_id is an ID of a published page, return it; otherwise, return the default.
   return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
+}
+
+// Change number or products per row to 3
+add_filter('loop_shop_columns', 'bb_mobile_application_loop_columns');
+if (!function_exists('bb_mobile_application_loop_columns')) {
+	function bb_mobile_application_loop_columns() {
+		return 3; // 3 products per row
+	}
 }
 
 /* Custom template tags for this theme. */

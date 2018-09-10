@@ -13,14 +13,16 @@ get_header(); ?>
             $left_right = get_theme_mod( 'bb_mobile_application_theme_options','One Column');
             if($left_right == 'Left Sidebar'){ ?>
             <div class="row">
-		    	<div id="sidebar" class="col-md-4 col-sm-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
-				<div class="col-md-8 col-sm-8" id="content-ts">
+		    	<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
+				<div class="col-lg-8 col-md-8" id="content-ts">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h1><?php the_title();?></h1>
 						<div class="metabox">
-							<span class="entry-date"><?php echo esc_html( get_the_date() ); ?></span>
-							<span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
-							<span class="entry-comments"> <?php comments_number( __('0 Comment', 'bb-mobile-application'), __('0 Comments', 'bb-mobile-application'), __('% Comments', 'bb-mobile-application') ); ?> </span>
+							
+							<span class="entry-date"><i class="fas fa-calendar-alt"></i><?php the_time( get_option( 'date_format' ) ); ?></span>
+       					
+							<span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
+							<span class="entry-comments"> <i class="fas fa-comments"></i><?php comments_number( __('0 Comment', 'bb-mobile-application'), __('0 Comments', 'bb-mobile-application'), __('% Comments', 'bb-mobile-application') ); ?> </span>
 						</div>
 						<?php if(has_post_thumbnail()) { ?>
 							<hr>
@@ -70,13 +72,13 @@ get_header(); ?>
 	        </div>
 	    <?php }else if($left_right == 'Right Sidebar'){ ?>
 	    	<div class="row">
-		       	<div class="col-md-8 col-sm-8" id="content-ts">
+		       	<div class="col-lg-8 col-md-8" id="content-ts">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h1><?php the_title();?></h1>
 						<div class="metabox">
-							<span class="entry-date"><?php echo esc_html( get_the_date() ); ?></span>
-							<span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
-							<span class="entry-comments"> <?php comments_number( __('0 Comment', 'bb-mobile-application'), __('0 Comments', 'bb-mobile-application'), __('% Comments', 'bb-mobile-application') ); ?> </span>
+							<span class="entry-date"><i class="fas fa-calendar-alt"></i><?php the_time( get_option( 'date_format' ) ); ?></span>
+							<span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
+							<span class="entry-comments"> <i class="fas fa-comments"></i><?php comments_number( __('0 Comment', 'bb-mobile-application'), __('0 Comments', 'bb-mobile-application'), __('% Comments', 'bb-mobile-application') ); ?> </span>
 						</div>
 						<?php if(has_post_thumbnail()) { ?>
 							<hr>
@@ -123,16 +125,16 @@ get_header(); ?>
 						}
 		            endwhile; // end of the loop. ?>
 		       	</div>
-				<div id="sidebar" class="col-md-4 col-sm-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
+				<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
 			</div>
 		<?php }else if($left_right == 'One Column'){ ?>
 			<div id="content-ts">
 				<?php while ( have_posts() ) : the_post(); ?>
 					<h1><?php the_title();?></h1>
 					<div class="metabox">
-						<span class="entry-date"><?php echo esc_html( get_the_date() ); ?></span>
-						<span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
-						<span class="entry-comments"> <?php comments_number( __('0 Comment', 'bb-mobile-application'), __('0 Comments', 'bb-mobile-application'), __('% Comments', 'bb-mobile-application') ); ?> </span>
+						<span class="entry-date"><i class="fas fa-calendar-alt"></i><?php the_time( get_option( 'date_format' ) ); ?></span>
+						<span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
+						<span class="entry-comments"> <i class="fas fa-comments"></i><?php comments_number( __('0 Comment', 'bb-mobile-application'), __('0 Comments', 'bb-mobile-application'), __('% Comments', 'bb-mobile-application') ); ?> </span>
 					</div>
 					<?php if(has_post_thumbnail()) { ?>
 						<hr>
@@ -181,14 +183,14 @@ get_header(); ?>
 	       	</div>
 	    <?php }else if($left_right == 'Three Columns'){ ?>
 	    	<div class="row">
-		       	<div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
-		       	<div class="col-md-6 col-sm-6" id="content-ts">
+		       	<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
+		       	<div class="col-lg-6 col-md-6" id="content-ts">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h1><?php the_title();?></h1>
 						<div class="metabox">
-							<span class="entry-date"><?php echo esc_html( get_the_date() ); ?></span>
-							<span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
-							<span class="entry-comments"> <?php comments_number( __('0 Comment', 'bb-mobile-application'), __('0 Comments', 'bb-mobile-application'), __('% Comments', 'bb-mobile-application') ); ?> </span>
+							<span class="entry-date"><i class="fas fa-calendar-alt"></i><?php the_time( get_option( 'date_format' ) ); ?></span>
+							<span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
+							<span class="entry-comments"> <i class="fas fa-comments"></i><?php comments_number( __('0 Comment', 'bb-mobile-application'), __('0 Comments', 'bb-mobile-application'), __('% Comments', 'bb-mobile-application') ); ?> </span>
 						</div>
 						<?php if(has_post_thumbnail()) { ?>
 							<hr>
@@ -235,18 +237,18 @@ get_header(); ?>
 						}
 		            endwhile; // end of the loop. ?>
 		       	</div>
-				<div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
+				<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
 			</div>
 		<?php }else if($left_right == 'Four Columns'){ ?>
 			<div class="row">
-		       	<div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
-		       	<div class="col-md-3 col-sm-3" id="content-ts">
+		       	<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
+		       	<div class="col-lg-3 col-md-3" id="content-ts">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h1><?php the_title();?></h1>
 						<div class="metabox">
-							<span class="entry-date"><?php echo esc_html( get_the_date() ); ?></span>
-							<span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
-							<span class="entry-comments"> <?php comments_number( __('0 Comment', 'bb-mobile-application'), __('0 Comments', 'bb-mobile-application'), __('% Comments', 'bb-mobile-application') ); ?> </span>
+							<span class="entry-date"><i class="fas fa-calendar-alt"></i><?php the_time( get_option( 'date_format' ) ); ?></span>
+							<span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
+							<span class="entry-comments"> <i class="fas fa-comments"></i><?php comments_number( __('0 Comment', 'bb-mobile-application'), __('0 Comments', 'bb-mobile-application'), __('% Comments', 'bb-mobile-application') ); ?> </span>
 						</div>
 						<?php if(has_post_thumbnail()) { ?>
 							<hr>
@@ -293,18 +295,18 @@ get_header(); ?>
 						}
 		            endwhile; // end of the loop. ?>
 		       	</div>
-				<div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
-				<div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar('sidebar-3'); ?></div>
+				<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
+				<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-3'); ?></div>
 			</div>
 		<?php }else if($left_right == 'Grid Layout'){ ?>
 			<div class="row">
-				<div class="col-md-8 col-sm-8" id="content-ts">
+				<div class="col-lg-8 col-md-8" id="content-ts">
 					<?php while ( have_posts() ) : the_post(); ?>
 						<h1><?php the_title();?></h1>
 						<div class="metabox">
-							<span class="entry-date"><?php echo esc_html( get_the_date() ); ?></span>
-							<span class="entry-author"><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
-							<span class="entry-comments"> <?php comments_number( __('0 Comment', 'bb-mobile-application'), __('0 Comments', 'bb-mobile-application'), __('% Comments', 'bb-mobile-application') ); ?> </span>
+							<span class="entry-date"><i class="fas fa-calendar-alt"></i><?php the_time( get_option( 'date_format' ) ); ?></span>
+							<span class="entry-author"><i class="fas fa-user"></i><a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' )) ); ?>"><?php the_author(); ?></a></span>
+							<span class="entry-comments"> <i class="fas fa-comments"></i><?php comments_number( __('0 Comment', 'bb-mobile-application'), __('0 Comments', 'bb-mobile-application'), __('% Comments', 'bb-mobile-application') ); ?> </span>
 						</div>
 						<?php if(has_post_thumbnail()) { ?>
 							<hr>
@@ -351,7 +353,7 @@ get_header(); ?>
 						}
 		            endwhile; // end of the loop. ?>
 		       	</div>
-				<div id="sidebar" class="col-md-4 col-sm-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
+				<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
 			</div>
 		<?php }?>
         <div class="clearfix"></div>

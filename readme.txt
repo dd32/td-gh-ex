@@ -4,8 +4,8 @@
 
 Theme Name      :   BB Mobile Application
 Theme URI       :   https://www.themeshopy.com/free/wp-bb-mobile-application-theme/
-Version         :   1.2.3.4
-Tested up to    :   WP 4.9.7
+Version         :   1.2.3.5
+Tested up to    :   WP 4.9.8
 Author          :   ThemeShopy
 Author URI      :   https://www.themeshopy.com/
 license         :   GNU General Public License v3.0
@@ -53,13 +53,6 @@ Theme is Built using the following resource bundles.
     -- Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
     -- https://github.com/twbs/bootstrap/blob/master/LICENSE
 
-    CSS nivo-slider.css
-    -- Copyright 2012, Dev7studios
-    -- Free to use and abuse under the MIT license.
-    -- http://www.opensource.org/licenses/mit-license.php
-
-    JS nivo-slider.js
-    -- jquery.nivo.slider.js, License: MIT, License Url: https://opensource.org/licenses/MIT
 
     Bundled header image, Copyright JESHOOTScom
     License: CC0 1.0 Universal (CC0 1.0)
@@ -68,7 +61,10 @@ Theme is Built using the following resource bundles.
 3 - All the icons taken from fontawesome licensed under GPL License.
     https://github.com/FortAwesome/Font-Awesome [MIT](http://opensource.org/licenses/MIT)
 
-4 - Images used from pixabay.
+4 - Customizer Pro
+    Source: https://github.com/justintadlock/trt-customizer-pro
+
+5 - Images used from pixabay.
     pixabay provides images under CC0 license (https://pixabay.com/en/service/terms/)
 
     Banner image, JESHOOTScom
@@ -79,9 +75,32 @@ All the icons taken from genericons licensed under GPL License.
 http://genericons.com/
 
 /*-----------------------------------------------------------------------------------*/
+/* Steps to setup theme  */
+/*-----------------------------------------------------------------------------------*/
+Below are the following step to setup theme static page.
+=========================================================
+Step 1. Add new page named as "home page" and select the template "Custom Home Page".
+Step 2. Go to customizer >> Homepage Settings >> check Static page, then select the page which you have added example "home page".
+
+For Layout Settings
+======================
+Step 1. Go to customizer >> BB Settings >> General Settings >> here you can change the layout of the post.
+
+For Slider
+==============
+Step 1. Add new page, add title, content and featured image and then publish it.
+Step 2. Go to customizer >> BB Settings >> Slider Settings >> here you can select the page which you have add for banner.
+
+For Creative Amazing Features 
+===================================
+Step 1. Add new category, then add the post and assign that category to the post, add title, content and featured image and publish it.
+Step 2. Repeat the same steps and add another category.
+Step 3. Add new post, add title,and featured image and then publish it.(for middle image) 
+Step 4. Go to customizer >> BB Settings >> Creative Features Section >> here you can select categories and post which you have add for the section.
+
+/*-----------------------------------------------------------------------------------*/
 /* Changelog */
 /*-----------------------------------------------------------------------------------*/
-
 Version 1.1
 i) Intial version Release
 
@@ -157,6 +176,12 @@ v)   Resolved the minor theme error.
 Version 1.2.3.4
 i)  Added typography section.
 ii) Updated pot file.
+
+Version 1.2.3.5
+i)   Changed slider.
+ii)  Resolved minor errors.
+iii) Updated woocommerce css.
+iv)  Updated pot file.
 
 BB Mobile Application Free version
 ==========================================================

@@ -22,28 +22,21 @@ function bb_mobile_application_custom_header_setup() {
 add_action( 'after_setup_theme', 'bb_mobile_application_custom_header_setup' );
 
 if ( ! function_exists( 'bb_mobile_application_header_style' ) ) :
-
 /**
  * Styles the header image and text displayed on the blog
  *
  * @see bb_mobile_application_custom_header_setup().
  */
-
+add_action( 'wp_enqueue_scripts', 'bb_mobile_application_header_style' );
 function bb_mobile_application_header_style() {
-	$header_text_color = get_header_textcolor();
-	?>
-	<style type="text/css">
-	<?php
-		//Check if user has defined any header image.
-		if ( get_header_image() ) :
-	?>
-		#header{
-			background: url(<?php echo esc_url(get_header_image()); ?>) no-repeat;
+	//Check if user has defined any header image.
+	if ( get_header_image() ) :
+	$custom_css = "
+        .header-box{
+			background-image:url('".esc_url(get_header_image())."');
 			background-position: center top;
-		}
-	<?php endif; ?>	
-	</style>
-	<?php
+		}";
+	   	wp_add_inline_style( 'bb-mobile-application-basic-style', $custom_css );
+	endif;
 }
-
 endif; // bb_mobile_application_header_style

@@ -111,13 +111,11 @@ if ( ! function_exists( 'bb_mobile_application_the_custom_logo' ) ) :
 	 *
 	 * Does nothing if the custom logo is not available.
 	 *
-	 * @since Twenty Sixteen 1.2
+	 * @since BB Mobile Application
 	 */
 	function bb_mobile_application_the_custom_logo() {
-		if ( function_exists( 'the_custom_logo' ) ) {
-			if( has_custom_logo() ){
-				the_custom_logo();
-			}
+		if( has_custom_logo() ){
+			the_custom_logo();
 		}
 	}
 endif;
