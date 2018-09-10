@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Audioman\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-09-06 12:13+0545\n"
+"POT-Creation-Date: 2018-09-11 00:21+0545\n"
 "PO-Revision-Date: 2016-12-07 01:05-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -23,7 +23,7 @@ msgstr ""
 "X-Generator: \n"
 "X-Poedit-SearchPath-0: ..\n"
 
-#: ../404.php:22 ../inc/custom-header.php:331 ../template-parts/content/content-none.php:14
+#: ../404.php:22 ../inc/custom-header.php:330 ../template-parts/content/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
 
@@ -568,20 +568,20 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: ../inc/custom-header.php:276 ../inc/custom-header.php:304 ../inc/customizer/header-media.php:105
+#: ../inc/custom-header.php:275 ../inc/custom-header.php:303 ../inc/customizer/header-media.php:105
 msgid "More"
 msgstr ""
 
-#: ../inc/custom-header.php:302 ../inc/custom-header.php:347 ../inc/customizer/header-media.php:87
+#: ../inc/custom-header.php:301 ../inc/custom-header.php:346 ../inc/customizer/header-media.php:87
 msgid "Go to Theme Customizer"
 msgstr ""
 
-#: ../inc/custom-header.php:334 ../search.php:21
+#: ../inc/custom-header.php:333 ../search.php:21
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
 
-#: ../inc/custom-header.php:353
+#: ../inc/custom-header.php:352
 msgid "Oops! That page can&rsquo;t be found"
 msgstr ""
 

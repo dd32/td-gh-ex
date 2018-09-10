@@ -56,9 +56,13 @@ Icons
 
 == Changelog ==
 
-= 1.0.1 (Released: September 20, 2018) =
+= 1.0.2 (Released: September 10, 2018) =
+* Bug Fixed: Header Media overlay
+* Bug Fixed: Header already sent issue in custom-header.php
+
+= 1.0.1 (Released: September 06, 2018) =
 * Bug Fixed: Header Media text color issue
 * Removed: wpml-config.xml
 
-= 1.0 (Released: September 20, 2018) =
+= 1.0 (Released: September 06, 2018) =
 * Initial Release

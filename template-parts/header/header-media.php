@@ -22,7 +22,7 @@
 			if ( is_header_video_active() && has_header_video() ) {
 				the_custom_header_markup();
 			} elseif ( $header_image ) {
-				echo '<div id="wp-custom-header" class="wp-custom-header" title="Shift-click to edit this element."><img src="' . esc_url( $header_image ) . '"/></div>	';
+				echo '<div id="wp-custom-header" class="wp-custom-header"><img src="' . esc_url( $header_image ) . '"/></div>	';
 			}
 			?>
 
@@ -30,4 +30,5 @@
 		</div>
 		<?php endif; ?>
 	</div><!-- .wrapper -->
+	<div class="custom-header-overlay"></div><!-- .custom-header-overlay -->
 </div><!-- .custom-header -->
