@@ -37,7 +37,7 @@ if ( ! function_exists( 'aemi_header_branding' ) )
 				<div id="logo">
 
 					<a href="<?php echo esc_html( home_url() ); ?>" class="custom-logo-link" rel="home" itemprop="url">
-						<img width="46" height="46" src="<?php echo wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'aemi-logo' )[0]; ?>" class="custom-logo" alt="" itemprop="logo" >
+						<img width="46" height="46" src="<?php echo esc_url( wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'aemi-logo' )[0] ); ?>" class="custom-logo" alt="" itemprop="logo" >
 					</a>
 
 				</div>

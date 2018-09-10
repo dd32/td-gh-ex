@@ -2,17 +2,11 @@
 
 /**
  * General
- * @see aemi_remove_emojis()
- * @see aemi_remove_oembed()
- * @see aemi_remove_wp_head_tasks()
  * @see aemi_content_width()
  * @see aemi_setup()
  * @see aemi_widgets_init()
  * @see aemi_scripts()
  */
-add_action( 'init', 'aemi_remove_emojis', 10 );
-add_action( 'init', 'aemi_remove_oembed', 20 );
-add_action( 'init', 'aemi_remove_wp_head_tasks', 30 );
 add_action( 'after_setup_theme', 'aemi_content_width', 0 );
 add_action( 'after_setup_theme', 'aemi_setup' );
 add_action( 'widgets_init', 'aemi_widgets_init' );
