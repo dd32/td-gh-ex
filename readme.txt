@@ -3,17 +3,16 @@ Author: Rara Theme (http://raratheme.com)
 
 Tags: Blog, two-columns, right-sidebar, footer-widgets, education, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options
 
-Requires at least: 4.6
-Tested up to: 4.9.6
-Stable tag: 1.1.4
+Requires at least: 4.7
+Tested up to: 4.9.8
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Description ==
 
-Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. Check the demo at http://raratheme.com/preview/benevolent/, documentation at http://raratheme.com/documentation/benevolent and get support at http://raratheme.com/support-forum/.  
-
+Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. Check the demo at https://demo.raratheme.com/benevolent/, documentation at https://raratheme.com/documentation/benevolent/ and get support at https://raratheme.com/support-forum/.
 
 
 == Installation ==
@@ -123,9 +122,9 @@ https://www.google.com/fonts/specimen/Raleway
 https://fortawesome.github.io/Font-Awesome/
 
 # Images
-All images are under Creative Commons Public Domain deed CC0.
+All images are under Creative Commons Public Domain deed CC0.    
 
-https://pixabay.com/en/boys-poor-person-children-happy-60680/
+https://pixabay.com/en/person-woman-india-fields-plantage-690245/
 
 Other images are self taken or self created and are GPL compatible.
 
@@ -157,6 +156,9 @@ Benevolent WordPress Theme is distributed under the terms of the GPLv2 or later
    
    
 == Changelog ==
+    1.1.5
+    * Fixed fontawesome issue.
+    * Updated screenshot.
     
     1.1.4
     * Privacy Policy link and WP Comment Cookies Consent features were added for WordPress 4.9.6 installation
