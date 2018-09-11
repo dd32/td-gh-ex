@@ -5,7 +5,7 @@ Contributors: themeansar
 Tags: three-columns, right-sidebar, custom-colors, custom-logo, featured-images, full-width-template, threaded-comments, blog, e-commerce, news
 Requires at least: 4.0.5
 Tested up to: 4.8.1
-Stable tag: 1.2
+Stable tag: 1.3
 
 == Theme License & Copyright ==
 Awesome Business is distributed under the terms of the GNU GPL
@@ -32,9 +32,9 @@ devices, starting with smart phones.it is compatible with various devices. Aweso
 Cross-Browser Compatible theme that works on All leading web browsers. Awesome Business is easy to use and 
 user friendly theme. Awesome Business has boxed and full-width layout feature.
 Powerful but simple Awesome Business theme content customized through customizer. to make your site attractive it has two 
-widget sections first for “sidebar widget section” and second for “Footer widget section” . 
+widget sections first for ï¿½sidebar widget sectionï¿½ and second for ï¿½Footer widget sectionï¿½ . 
 
-To make your website in two column use sidebar widget section. to set custom menu in header set primary location. we added social media links to added your social links.It boasts of beautifully designed page sections , Home, Blog and Default Page Template(page with right sidebar), Page Full-Width, Page Left Sidebar. Awesome Business theme has more advanced feature to make your site awesome like: it has header top bar dark & lite color feature. you can also changed header color dark and lite styling. Theme compatible with woocommerce. Awesome Business is a fully woocommerce tested theme. Awesome Business is translation ready theme with WPML compatible & Many More….
+To make your website in two column use sidebar widget section. to set custom menu in header set primary location. we added social media links to added your social links.It boasts of beautifully designed page sections , Home, Blog and Default Page Template(page with right sidebar), Page Full-Width, Page Left Sidebar. Awesome Business theme has more advanced feature to make your site awesome like: it has header top bar dark & lite color feature. you can also changed header color dark and lite styling. Theme compatible with woocommerce. Awesome Business is a fully woocommerce tested theme. Awesome Business is translation ready theme with WPML compatible & Many Moreï¿½.
 
 Businessup WordPress Theme, Copyright 2017 Themeansar
 Businessup is distributed under the terms of the GNU General Public License v2 
@@ -72,3 +72,6 @@ All images use Pixabay
 
 --- Version 1.2 ----
 1. Fix navbar color
+
+--- Version 1.3 ----
+1. Fix Navigation Stling issue

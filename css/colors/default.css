@@ -92,6 +92,8 @@
 	background: rgba(0,0,0,0);
 	color: #fff;
 }
+
+.navigation.pagination .nav-links .page-numbers.current, .navigation.pagination .nav-links a:hover, a.error-btn { background-color: #ce1b28; }
 /*==================== Body & Global ====================*/
 .wrapper {
 	background: #fff;
