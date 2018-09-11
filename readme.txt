@@ -82,6 +82,8 @@ All are Licensed under CC0
 
 == Changelog ==
 
+= 1.1 =
+* Author URI update
 
 = 1.0 =
 * Initial release
