@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1440px" height="308px" viewBox="0 0 1440 308" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group 4</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50%" y1="100%" x2="50%" y2="0%" id="linearGradient-1">
+            <stop stop-color="#000000" stop-opacity="0" offset="0%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Desktop-HD-Copy-12" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, -1987.000000)">
+        <g id="Group" transform="translate(0.000000, 1745.000000)" fill="url(#linearGradient-1)">
+            <g id="Rectangle-23-+-Rectangle-23-Copy-Mask">
+                <g id="Group-4" transform="translate(-24.000000, 242.000000)">
+                    <path d="M0,74 C65.8332267,51.1030545 130.457549,63.0448337 193.872967,109.825338 C288.996094,179.996094 632.990537,135.163613 757.996094,74 C870.004745,19.1956063 1130.99609,69.9960937 1232.33467,28.1428185 C1310.76929,-4.25102019 1396.65773,11.034707 1490,74 L1490,413 L0,413 L0,74 Z" id="Rectangle-23" opacity="0.0746268657"></path>
+                    <path d="M0,124 C57.9973958,13.3307292 128.996094,3.99609375 212.996094,95.9960937 C338.996094,233.996094 632.990537,185.163613 757.996094,124 C870.004745,69.1956063 1046.26811,-6.3695944 1211.99609,0.99609375 C1301.99609,4.99609375 1394.66406,45.9973958 1490,124 L1490,463 L0,463 L0,124 Z" id="Rectangle-23-Copy" opacity="0.0399999991"></path>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

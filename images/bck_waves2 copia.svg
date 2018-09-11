@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="1440px" height="887px" viewBox="0 0 1440 887" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>Group</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Services-Test" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(0.000000, -1331.000000)">
+        <g id="Group-2" transform="translate(0.000000, 1331.000000)" fill="#000000">
+            <g id="Group">
+                <path d="M4.79616347e-13,797.058594 C410.863256,848.609723 672.535131,775.27639 785.015625,577.058594 C964.348958,261.029948 1182.67708,77.6770833 1440,27 L1440,887 L0,887 L4.79616347e-13,797.058594 Z" id="Rectangle-3" fill-opacity="0.0399999991"></path>
+                <path d="M0,780.015625 C458.184002,845.967161 731.169679,777.633828 818.957031,575.015625 C959.623698,250.348958 1166.63802,67.6770833 1440,27 L1440,887 L0,887 L0,780.015625 Z" id="Rectangle-3-Copy" fill-opacity="0.0199999996"></path>
+                <path d="M0,780.015625 C386.181206,827.983267 645.500217,754.989778 777.957031,561.035156 C983.290365,260.36849 1203.97135,73.3684896 1440,0.03515625 L1440,887 L0,887 L0,780.015625 Z" id="Rectangle-3-Copy-2" fill-opacity="0.0399999991"></path>
+            </g>
+        </g>
+    </g>
+</svg>

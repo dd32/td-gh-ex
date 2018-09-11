@@ -1,0 +1,372 @@
+.main-navigation {
+	clear: both;
+	display: block;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing:  antialiased;
+
+		ul {
+			background: #fff;
+			list-style: none;
+			margin: 0;
+			padding: 0 1.5em;
+
+				ul {
+					padding: 0 0 0.71428571428571em 1.5em;
+					text-align: left;
+
+						&.toggled-on {
+							display: block;
+						}
+
+						a{
+							letter-spacing: 0;
+							padding: 0.4em 0;
+							position: relative;
+							text-transform: none;
+						}
+				}
+		}
+
+		li {
+			border-bottom: 1px solid #eee;
+			position: relative;
+
+				li,
+				&:last-child{
+					border: 0;
+				}
+
+				&.menu-item-has-children{
+					padding-right: 30px;
+				}
+
+				&.toggled-on > a{
+					color: $primary;
+				}
+		}
+
+		a{
+			display: block;
+			padding: 0.71428571428571em 0;
+			text-decoration: none;
+			color: inherit;
+
+				&:hover{
+					color: #767676;
+				}
+		}
+
+		& > div > ul {
+			border-top: 1px solid #eee;
+			padding: 0.75em 0;
+		}
+
+		&.toggled-on ul.nav-menu {
+			display: block;
+		}
+		.animated{
+			animation-duration: 300ms;
+		}
+}
+
+
+/* Hide the menu on small screens when JavaScript is available.
+ * It only works with JavaScript.
+ */
+.js .main-navigation ul,
+.main-navigation .menu-item-has-children > a > .icon,
+.main-navigation .page_item_has_children > a > .icon,
+.main-navigation ul a > .icon {
+	display: none;
+}
+.js .main-navigation.toggled-on > div > ul {
+	display: block;
+}
+
+
+
+/* Menu toggle */
+.menu-toggle {
+	background-color: transparent;
+	border: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: #222;
+	display: none;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: 800;
+	line-height: 1.5;
+	margin: 1px auto 2px;
+	padding: 1em;
+	text-shadow: none;
+
+	/* Display the menu toggle when JavaScript is available. */
+	.js &{
+		display: block;
+	}
+
+	&:hover,
+	&:focus {
+		background-color: transparent;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+
+	&:focus {
+		outline: thin solid;
+	}
+
+	.icon {
+		margin-right: 0.5em;
+		top: -2px;
+	}
+
+	.icon-close{
+		display: none;
+	}
+
+	.toggled-on &{
+
+			.icon-bars{
+				display: none;
+			}
+			.icon-close {
+				display: inline-block;
+			}
+	}
+
+	
+
+}
+
+
+/* Dropdown Toggle */
+.dropdown-toggle {
+	background-color: transparent;
+	border: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	color: rgba(0, 0, 0, 0.3);
+	display: block;
+	font-size: 16px;
+	right: 0;
+	line-height: 1.5;
+	margin: 0 auto;
+	padding: 0.5em 0.75em;
+	position: absolute;
+	text-shadow: none;
+	top: 0;
+
+		&:hover,
+		&:focus {
+			background: transparent;
+		}
+
+		&:focus {
+			outline: thin dotted;
+		}
+
+		&.toggled-on .icon{
+			-ms-transform: rotate(-180deg); /* IE 9 */
+			-webkit-transform: rotate(-180deg); /* Chrome, Safari, Opera */
+			transform: rotate(-180deg);
+		}
+
+		&::after{
+			display: none;
+		}
+}
+
+
+
+// Small and up
+@include media-breakpoint-up(sm) {
+
+	.js .menu-toggle,
+	.js .dropdown-toggle {
+		display: none;
+	}
+
+	.main-navigation{
+		width: auto;
+
+			.js &{
+					ul,
+					ul ul,
+					& > div > ul{
+						display: block;
+					}
+			}
+
+			ul {
+				background: transparent;
+				padding: 0;
+
+
+					ul{
+						box-shadow: 0 5px 15px rgba(0,0,0,0.07), 0 15px 35px rgba(0,0,0,0.10);
+						border-radius: 0 0 4px 4px;
+						background: #fff;
+						left: -999em;
+						padding: 1.07142857142857em 0;
+						position: absolute;
+						top: 100%;
+						z-index: 99999;
+						font-size: 0.875rem;
+						border-top: 3px solid $primary;
+
+							li:hover > ul,
+							li.focus > ul {
+								left: 100%;
+								right: auto;
+							}
+
+							a{
+								padding: 0.57142857142857em 2em;
+								width: 16em;
+								color: inherit;
+								position: relative;
+								overflow: hidden;
+
+									&::before{
+										position: absolute;
+										top: 50%;
+										left: 9px;
+										width: 6px;
+										height: 6px;
+										border-radius: 6px;
+										display: block;
+										content: "";
+										background-color: $primary;
+										transform: translate(-15px, -50%);
+										transition: transform 150ms ease-in-out;
+									}
+
+										&:hover{
+											&::before{
+												transform: translate(0, -50%);
+											}
+
+										}
+							}
+
+							.menu-item-has-children > a > .icon,
+							.page_item_has_children > a > .icon {
+								margin-top: -9px;
+								left: auto;
+								position: absolute;
+								right: 1em;
+								top: 50%;
+								-webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */
+								-ms-transform: rotate(-90deg); /* IE 9 */
+								transform: rotate(-90deg);
+							}
+
+							ul{
+								left: -999em;
+								margin-top: -1px;
+								top: 0;
+								border-radius: 0 4px 4px 0;
+							}
+					}
+
+					li:hover > ul,
+					li.focus > ul {
+						left: 0;
+						right: auto;
+					}
+
+					
+			}
+
+			& > div > ul {
+				border: 0;
+				margin-bottom: 0;
+				padding: 0;
+
+					& > li > a{
+						color: inherit;
+					}
+
+					.no-touch .absolutte-header-absolute & > li:hover a,
+					.no-touch .absolutte-header-absolute & > li:focus a{
+						background-color: rgba($color: #fff, $alpha: 0.06);
+					}
+
+					& > li.edge:hover > ul,
+					& > li.edge.focus > ul {
+						left: auto;
+						right: 0;
+
+							& > li.edge:hover > ul,
+							& > li.edge.focus > ul {
+								left: -100%;
+								right: auto;
+							}
+					}
+			}
+
+			li{
+				border: 0;
+				display: inline-block;
+
+					&.menu-item-has-children{
+						padding-right: 0;
+					}
+
+					li {
+						display: block;
+						-webkit-transition: background-color 0.2s ease-in-out;
+						transition: background-color 0.2s ease-in-out;
+
+							&:hover,
+							&.focus {
+								
+							}
+
+							&.focus > a,
+							&:focus > a,
+							&:hover > a,
+							& a:hover,
+							& a:focus,
+							&.current_page_item a:hover,
+							&.current-menu-item a:hover,
+							&.current_page_item a:focus,
+							&.current-menu-item a:focus {
+								color: $primary;
+							}
+					}
+
+					&:hover{
+
+							& > a{
+								color: $primary;
+							}
+					}
+			}
+
+			a{
+				padding: 1.25em 1.25em;
+				transition: background 200ms;
+			}
+
+			.menu-item-has-children > a > .icon,
+			.page_item_has_children > a > .icon {
+				display: inline;
+				left: 5px;
+				position: relative;
+				font-size: 0.75rem;
+				opacity: 0.6;
+				top: 50%;
+				transform: translateY(-50%);
+			}
+
+			// Color when floating header
+			#header.absolutte-header-absolute & > div > ul > li > a{
+				color: #fff;
+			}
+
+	}
+
+}

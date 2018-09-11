@@ -1,0 +1,130 @@
+/*
+Theme Name: Absolutte
+Theme URI: https://www.quemalabs.com/theme/absolutte/
+Description: Absolutte is a beautiful One page free WordPress theme, perfect for small business.
+It has fully support for Gutenberg blocks and easy customizations.
+Version: 1.0.0
+Author: Quema Labs
+Author URI: https://www.quemalabs.com/
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Tags: two-columns, custom-background, threaded-comments, custom-menu, custom-logo, custom-colors, footer-widgets, theme-options, featured-images, sticky-post, translation-ready, full-width-template
+Text Domain: absolutte
+*/
+/*
+----------------------------------------------------------------
+TABLE OF CONTENTS
+----------------------------------------------------------------
+0. Imports
+1. Global Styles
+2. Header
+3. Pages
+4. Comments
+5. Sidebar
+6. WP Default
+7. Flickity
+8. Photoswipe
+9. Footer
+10. Animate
+11. Menu
+----------------------------------------------------------------
+*/
+
+/*
+==========================================
+0. Imports
+==========================================
+*/
+$primary:       #4662EF;
+$secondary:     #2fc77c;
+
+@import "bootstrap/functions";
+@import "bootstrap/variables";
+@import "bootstrap/mixins";
+@import "bootstrap/tables";
+
+$fa-font-path: "theme-scss/fontawesome/webfonts";
+@import "theme-scss/fontawesome/scss/fontawesome.scss";
+@import "theme-scss/fontawesome/scss/fa-solid.scss";
+@import "theme-scss/fontawesome/scss/fa-regular.scss";
+@import "theme-scss/fontawesome/scss/fa-brands.scss";
+
+@import "theme-scss/absolutte-font/absolutte-font";
+
+
+/*
+==========================================
+1. Global Styles
+==========================================
+*/
+@import "theme-scss/global";
+
+/*
+==========================================
+2. Header
+==========================================
+*/
+@import "theme-scss/header";
+
+/*
+==========================================
+3. Pages
+==========================================
+*/
+@import "theme-scss/pages";
+
+/*
+==========================================
+4. Comments
+==========================================
+*/
+@import "theme-scss/comments";
+
+/*
+==========================================
+5. Sidebar
+==========================================
+*/
+@import "theme-scss/sidebar";
+
+/*
+==========================================
+6. WP Default
+==========================================
+*/
+@import "theme-scss/wp-default";
+
+/*
+==========================================
+7. Flickity
+==========================================
+*/
+@import "theme-scss/flickity";
+
+/*
+==========================================
+8. Photoswipe
+==========================================
+*/
+@import "theme-scss/photoswipe";
+
+/*
+==========================================
+9. Footer
+==========================================
+*/
+@import "theme-scss/footer";
+
+/*
+==========================================
+10. Animate
+==========================================
+*/
+@import "theme-scss/animate";
+
+/*
+==========================================
+11. Menu
+==========================================
+*/
+@import "theme-scss/menu";

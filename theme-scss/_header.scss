@@ -1,0 +1,434 @@
+/*
+==========================================
+Header
+==========================================
+*/
+#header{
+	position: relative;
+	z-index: 10;
+	transition: padding 200ms;
+	padding: 0 5%;
+	background-position: center;
+	background-size: cover;
+	//margin-bottom: 1.875em;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-between;
+	width: 100%;
+    align-items: center; // vertically
+    -moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing:  antialiased;
+	margin-bottom: 3.125rem;
+		
+		// Header Absolutte
+		.absolutte-header-absolute &{
+			position: absolute;
+			margin-bottom: 0;
+		}
+                
+		// Logo Wrap
+		.absolutte-logo-wrap{
+			margin: 7px 0;
+			line-height: 0;
+            flex-grow: 1;
+			flex-basis: 100%;
+		
+				.site-title{
+					margin: 0;
+					display: inline-block;
+					font-size: 22px;
+					line-height: 0;
+
+						.ql_logo{
+							font-size: 22px;
+							line-height: 22px;
+							font-weight: bold;
+							transition: all 400ms ease-in-out;
+							display: inline-block;
+							padding: 7px 0;
+							position: relative;
+							z-index: 4;
+
+								&:hover{
+									text-decoration: none;
+								}
+						}
+
+						.absolutte-logo-small{
+							display: none;
+						}
+					
+				}
+
+				#absolutte-nav-btn{
+					position: absolute;
+					top: 0;
+					right: 5%;
+				}
+		}
+		
+		// Side Button
+		.absolutte-header-side-btn-wrap{
+			display: none;
+		}
+		
+		// Main Navigation Wrap
+		.absolutte-main-nav-wrap{
+			flex-grow: 2;
+
+				.navbar-collapse{
+					padding: 0;
+				}
+		}
+
+		.absolutte-second-nav-wrap{
+			display: none;
+
+				.navbar-collapse{
+					padding: 0;
+				}
+		}
+
+		.absolutte-icons-nav-wrap{
+			//flex-grow: 1;
+			flex-basis: fit-content;
+			position: relative;
+			margin-left: 10px;
+			padding-left: 10px;
+
+				&::before{
+					position: absolute;
+					content: "";
+					top: 50%;
+					left: 0;
+					translate: 0, -50%;
+					background-color: rgba(0, 0, 0, 0.1);
+					width: 1px;
+					height: 25px;
+				}
+
+				ul{
+					list-style: none;
+					margin: 0;
+					padding: 0;
+
+						li{
+							display: inline-block;
+
+								a{
+									padding: 14px 18px;
+									display: block;
+
+										.no-touch &:hover{
+											text-decoration: none;
+										}
+
+										i{
+											font-size: 20px;
+										}
+
+								}
+						}
+				}
+		}
+
+		.absolutte-social-icons-nav-wrap{
+			display: none;
+		}
+
+		.absolutte-nav-btn-wrap{
+			display: none;
+
+				.absolutte-nav-btn{
+					background-color: transparent;
+					border: none;
+					padding: 15px 19px;
+					display: block;
+
+						.no-touch &:hover{
+						}
+
+						i{
+							font-size: 20px;
+						}
+				}
+		}
+
+
+		&.absolutte-fixed-header{
+			position: fixed;
+			top:0; 
+			left:0;
+			width: 100%;
+
+				.absolutte-with-top-bar &{
+					top: 34px;
+				}
+		}
+
+
+		// Header 2
+		&.absolutte-header-style-2{
+
+				.absolutte-logo-wrap{
+					order: 2;
+					text-align: center;
+					flex-grow: 2;
+					flex-basis: 20%;
+				}
+
+				.absolutte-main-nav-wrap{
+					flex-grow: 1;
+					text-align: left;
+					flex-basis: 40%;
+				}
+
+				.absolutte-second-nav-wrap{
+					flex-grow: 2;
+					display: block;
+					order: 3;
+					flex-basis: 40%;
+					text-align: right;
+				}
+
+				.absolutte-icons-nav-wrap{
+					display: none;
+				}
+		}
+
+		// Header 3
+		&.absolutte-header-style-3{
+
+				.absolutte-logo-wrap{
+					flex-grow: 1;
+					//flex-basis: 20%;
+				}
+
+				.absolutte-main-nav-wrap{
+					display: none;
+				}
+
+				.absolutte-second-nav-wrap{
+					display: none;
+				}
+
+				.absolutte-icons-nav-wrap{
+					flex-grow: 1;
+					//flex-basis: 80%;
+					text-align: right;
+
+						&::before{
+							display: none;
+						}
+				}
+
+		}
+
+		// Header 4
+		&.absolutte-header-style-4{
+
+				.absolutte-logo-wrap{
+					flex-grow: 1;
+					//flex-basis: 20%;
+				}
+
+				.absolutte-main-nav-wrap{
+					flex-grow: 5;
+					text-align: left;
+				}
+
+				.absolutte-second-nav-wrap{
+					display: none;
+				}
+
+				.absolutte-icons-nav-wrap{
+					flex-grow: 1;
+					//flex-basis: 80%;
+					text-align: right;
+
+						&::before{
+							display: none;
+						}
+				}
+
+		}
+
+		// Header 5
+		&.absolutte-header-style-5{
+
+				.absolutte-logo-wrap{
+					flex-grow: 1;
+					//flex-basis: 20%;
+				}
+
+				.absolutte-main-nav-wrap{
+					flex-grow: 5;
+					text-align: left;
+				}
+
+				.absolutte-second-nav-wrap{
+					display: none;
+				}
+
+				.absolutte-icons-nav-wrap{
+					display: none;
+				}
+
+				.absolutte-social-icons-nav-wrap{
+					flex-grow: 1;
+					display: block;
+				}
+		}
+
+		// Header 6
+		&.absolutte-header-style-6{
+
+				.absolutte-nav-btn-wrap{
+					display: block;
+					flex-grow: 1;
+				}
+
+				.absolutte-logo-wrap{
+					flex-grow: 12;
+				}
+
+				.absolutte-main-nav-wrap{
+					display: none;
+				}
+
+				.absolutte-second-nav-wrap{
+					display: none;
+				}
+
+				.absolutte-icons-nav-wrap{
+					display: block;
+					flex-grow: 2;
+					text-align: right;
+
+						&::before{
+							display: none;
+						}
+				}
+
+				.absolutte-social-icons-nav-wrap{
+					display: none;
+				}
+		}
+
+
+		// Header 7
+		&.absolutte-header-style-7{
+
+				.absolutte-nav-btn-wrap{
+					display: block;
+					flex-grow: 2;
+					flex-basis: 10%;
+				}
+
+				.absolutte-logo-wrap{
+					flex-grow: 4;
+					text-align: center;
+				}
+
+				.absolutte-main-nav-wrap{
+					display: none;
+				}
+
+				.absolutte-second-nav-wrap{
+					display: none;
+				}
+
+				.absolutte-icons-nav-wrap{
+					display: block;
+					flex-grow: 2;
+					flex-basis: 10%;
+					text-align: right;
+
+						&::before{
+							display: none;
+						}
+				}
+
+				.absolutte-social-icons-nav-wrap{
+					display: none;
+				}
+		}
+
+		// Header 8
+		&.absolutte-header-style-8{
+
+				.absolutte-nav-btn-wrap{
+					display: none;
+				}
+
+				.absolutte-logo-wrap{
+					flex-basis: 40%;
+				}
+
+				.absolutte-main-nav-wrap{
+					display: block;
+					order: 4;
+					text-align: left;
+					border-top: 1px solid rgba(0, 0, 0, 0.1);
+				}
+
+				.absolutte-second-nav-wrap{
+					display: none;
+				}
+
+				.absolutte-icons-nav-wrap{
+					display: block;
+					flex-basis: 60%;
+					margin-left: 0;
+					text-align: right;
+
+						&::before{
+							display: none;
+						}
+				}
+
+				.absolutte-social-icons-nav-wrap{
+					display: none;
+				}
+		}
+
+		// Header 9
+		&.absolutte-header-style-9{
+				
+				.absolutte-icons-nav-wrap{
+					display: none;
+				}
+		}
+
+}
+
+
+// Small and up
+@include media-breakpoint-up(sm) {
+    #header{
+
+            // Logo Wrap
+            .absolutte-logo-wrap{
+                flex-basis: auto;
+            }
+
+            .absolutte-main-nav-wrap{
+                flex-basis: auto;
+                text-align: right;
+            }
+
+            &.absolutte-header-absolute{
+                position: absolute;
+                top: 0;
+                width: 100%;
+                left: 0;
+                z-index: 5;
+
+                    .absolutte-logo-wrap .site-title .ql_logo{
+                        color: #fff;
+                    }
+
+            }
+    }
+}

@@ -1,0 +1,3113 @@
+/*
+Theme Name: Absolutte
+Theme URI: https://www.quemalabs.com/theme/absolute/
+Description: Premium WooCommerce theme
+Version: 1.0.1
+Author: Quema Labs
+Author URI: https://www.quemalabs.com/
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Tags: e-commerce, two-columns, custom-background, threaded-comments, custom-menu, featured-images, sticky-post, translation-ready
+Text Domain: absolute
+*/
+/*
+----------------------------------------------------------------
+TABLE OF CONTENTS
+----------------------------------------------------------------
+1. Header
+2. Menu
+3. Blog & Pages
+4. Sidebar
+5. Footer
+6. Comments
+7. Woocommerce
+8. Pace
+9. Animations
+10. Shortcodes
+11. Contact Page
+12. WordPress Default
+13. External Plugins
+14. Global Styles
+15. Responsive Styles
+LESS Variables and Mixins
+----------------------------------------------------------------
+*/
+/*
+==========================================
+1. Header
+==========================================
+*/
+/*
+==========================================
+Header
+==========================================
+*/
+
+.absolutte-sidenav .logo_container .site-title,
+.absolutte-sidenav-out .logo_container .site-title {
+	padding-left: 45px;
+	padding-right: 0;
+}
+
+.logo_container .logo_desc_wrap {
+	margin-right: 15px;
+	margin-left: auto;
+}
+
+#header .nav-wrapper {
+	text-align: left;
+}
+
+/*-----------------------------*/
+/*
+==========================================
+Header 1
+==========================================
+*/
+
+/*
+==========================================
+Header 2
+==========================================
+*/
+
+.absolutte-header-2 #header .logo_container::before {
+	right: 0;
+	left: 0;
+}
+
+.absolutte-header-2 #header .ql_cart-btn,
+.absolutte-header-2 #header .absolutte-login-btn {
+	border-left: 1px solid rgba(0, 0, 0, 0.08);
+	border-right: 1px solid rgba(0, 0, 0, 0.08);
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.absolutte-header-2 #header .ql_cart-btn .count,
+.absolutte-header-2 #header .absolutte-login-btn .count {
+	right: 35px;
+	left: auto;
+}
+
+/*
+==========================================
+Sidenav Header
+==========================================
+*/
+.absolutte-sidenav #header {
+	right: 0;
+	border-left: 1px solid #eeeeee;
+	left: auto;
+	border-right: none;
+}
+
+.absolutte-sidenav #header #absolutte-sidenav-button {
+	left: -60px;
+	right: auto;
+}
+
+.absolutte-sidenav #header #absolutte-sidenav-button i.absolutte-icon-arrow-right {
+	right: 50%;
+	left: auto;
+}
+
+.absolutte-sidenav #header .logo_container .site-title {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.absolutte-sidenav #header .main-navigation ul ul ul {
+	right: -999em;
+	left: auto;
+}
+
+.absolutte-sidenav #header .main-navigation ul ul li:hover > ul,
+.absolutte-sidenav #header .main-navigation ul ul li.focus > ul {
+	right: 100%;
+	left: auto;
+}
+
+.absolutte-sidenav #header .main-navigation ul li {
+	border-right: none;
+	border-left: none;
+}
+
+.absolutte-sidenav #header .main-navigation ul li:hover > ul,
+.absolutte-sidenav #header .main-navigation ul li.focus > ul {
+	right: 100%;
+	left: auto;
+}
+
+.absolutte-sidenav #header .ql_cart-btn,
+.absolutte-sidenav #header .absolutte-login-btn {
+	border-left: none;
+	border-right: none;
+	text-align: right;
+}
+
+/*
+==========================================
+Header Widget Area
+==========================================
+*/
+
+.header-widget-area .widget ul,
+.header-widget-area .widget ol {
+	margin-right: 0;
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: auto;
+}
+
+.header-widget-area .widget ul ul,
+.header-widget-area .widget ol ul,
+.header-widget-area .widget ul ol,
+.header-widget-area .widget ol ol {
+	margin-right: 15px;
+	margin-left: auto;
+}
+
+.header-widget-area .widget_recent_comments ul li {
+	padding-right: 30px;
+	padding-left: 0;
+}
+
+.header-widget-area .widget_recent_comments ul li::before {
+	right: 0;
+	left: auto;
+}
+
+/*
+==========================================
+Top Bar
+========================================== 
+*/
+
+.absolutte-sidenav .top-bar {
+	margin-right: 250px;
+	margin-left: auto;
+}
+
+.absolutte-sidenav.single-product .top-bar {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.top-bar .align-left {
+	text-align: left;
+}
+
+#top-bar-menu .menu-items .menu-item {
+	margin-right: 5px;
+	margin-left: auto;
+}
+
+/*
+Search Button
+---------------------------------------*/
+
+.menu_wrap .search-form .search-field {
+	float: left;
+}
+
+.menu_wrap .search-form .search-field:focus {
+	padding: 6px 12px 6px 40px;
+}
+
+.menu_wrap .search-form .search-submit {
+	left: 0;
+	right: auto;
+}
+
+.menu_wrap .search-form:hover .search-field {
+	padding: 6px 12px 6px 40px;
+}
+
+/*
+==========================================
+2. Menu
+==========================================
+*/
+
+.main-navigation ul {
+	text-align: right;
+}
+
+.main-navigation ul ul {
+	padding: 0 1.5em 0 0;
+	right: -999em;
+	left: auto;
+}
+
+.main-navigation ul ul ul {
+	right: -999em;
+	left: auto;
+}
+
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+	right: 100%;
+	left: auto;
+}
+
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+	right: -1px;
+	left: auto;
+}
+
+.main-navigation > div > ul > li {
+	border-right: 1px solid rgba(0, 0, 0, 0.08);
+	border-left: none;
+}
+
+/* Main Navigation */
+
+
+.main-navigation ul ul .menu-item-has-children > a > .icon,
+.main-navigation ul ul .page_item_has_children > a > .icon {
+	right: auto;
+	left: 1em;
+	-ms-transform: rotate(90deg); /* IE 9 */
+    -webkit-transform: rotate(90deg); /* Chrome, Safari, Opera */
+    transform: rotate(90deg);
+}
+
+/* Menu toggle */
+
+/* Display the menu toggle when JavaScript is available. */
+
+@media (max-width: 767px) {
+
+.main-navigation > div > ul > li {
+	border-right: 1px solid rgba(0, 0, 0, 0.08);
+	border-left: none;
+}
+
+/* Main Navigation */
+
+.main-navigation .menu-item-has-children > a > .icon,
+.main-navigation .page_item_has_children > a > .icon {
+	right: 5px;
+	left: auto;
+}
+
+.main-navigation ul ul .menu-item-has-children > a > .icon,
+.main-navigation ul ul .page_item_has_children > a > .icon {
+	right: auto;
+	left: 1em;
+}
+
+/* Menu toggle */
+
+/* Display the menu toggle when JavaScript is available. */
+
+}
+
+@media (min-width: 768px) and (max-width: 1269px) {
+
+}
+
+/*
+==========================================
+3. Blog & Pages
+==========================================
+*/
+
+.absolutte-main-wrap {
+	margin-right: 250px;
+	margin-left: auto;
+}
+
+/*Page Content								*/
+/*------------------------------------------*/
+
+/*Post Content								*/
+/*------------------------------------------*/
+
+/*Post Title 								*/
+/*------------------------------------------*/
+
+.post-header .post-title {
+	padding-left: 20px;
+	padding-right: 0;
+}
+
+.post-title a {
+	text-align: right;
+}
+
+/*Page Title 								*/
+/*------------------------------------------*/
+.page-title {
+	padding-left: 20px;
+	padding-right: 0;
+}
+
+.page-header::before,
+.post-header::before,
+.woocommerce-products-header::before {
+	left: 0;
+	right: 0;
+}
+
+/*Post										*/
+/*------------------------------------------*/
+.blog #content.col-md-12 .post {
+	margin: 0 0 4% 4%;
+}
+
+.absolutte-blog-layout-2.blog #content.col-md-8 .post .post-image,
+.absolutte-blog-layout-2.archive #content.col-md-8 .post .post-image,
+.absolutte-blog-layout-2.search #content.col-md-8 .post .post-image {
+	margin-left: 5%;
+	margin-right: auto;
+}
+
+/*Image Post								*/
+/*------------------------------------------*/
+
+.post-image a::before {
+	right: 0;
+	left: 0;
+}
+
+.post-image a::after {
+	right: 50%;
+	left: auto;
+}
+
+/*Metadata 									*/
+/*------------------------------------------*/
+
+.metadata ul li {
+	margin: 0.35714285714286em 0 0.35714285714286em 1.78571428571429em;
+}
+
+.metadata ul li i {
+	margin-left: 0.35714285714286em;
+	margin-right: auto;
+}
+
+.metadata ul li.meta_comments {
+	float: left;
+	margin-left: 0;
+	text-align: left;
+	margin-right: auto;
+}
+
+/*Pagination															*/
+/*----------------------------------------------------------------------*/
+
+.pagination a,
+.pagination span {
+	float: right;
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+/*Single															*/
+/*----------------------------------------------------------------------*/
+
+/*
+==========================================
+4. Sidebar
+==========================================
+*/
+
+/*
+Widgets
+--------------------------------
+*/
+
+#sidebar.col-md-pull-9 .widget {
+	margin-left: 10px;
+	margin-right: 0;
+}
+
+#sidebar .widget ul,
+#sidebar .widget ol {
+	margin-right: 0px;
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: auto;
+}
+
+#sidebar .widget ul li ul {
+	margin-right: 15px;
+	margin-left: auto;
+}
+
+#sidebar .hasChildren i {
+	left: 5px;
+	right: auto;
+}
+
+#sidebar select {
+	margin-right: 5px;
+	margin-left: auto;
+}
+
+/*
+Recent Comments Widget
+--------------------------------
+*/
+
+#sidebar .widget_recent_comments ul li {
+	padding-right: 35px;
+	padding-left: 0;
+}
+
+#sidebar .widget_recent_comments ul li::before {
+	right: 0;
+	left: auto;
+}
+
+#sidebar .widget_recent_comments ul li i {
+	right: 0;
+	left: auto;
+}
+
+/*
+Recent Posts Widget
+--------------------------------
+*/
+
+/*
+Tag Widget
+--------------------------------
+*/
+
+#sidebar .widget_tag ul li {
+	margin: 0 0 0.90909090909091em 0.90909090909091em;
+	float: right;
+}
+
+/*
+Search Widget
+--------------------------------
+*/
+
+.widget_search #s {
+	padding-left: 30px;
+	padding-right: 0;
+}
+
+.widget_search #searchsubmit {
+	left: 15px;
+	right: auto;
+}
+
+.widget_search i {
+	left: 12px;
+	right: auto;
+}
+
+/*
+==========================================
+5. Footer
+==========================================
+*/
+/*
+Footer
+------------------------
+*/
+
+.absolutte-sidenav .footer-wrap {
+	margin-right: 250px;
+	margin-left: auto;
+}
+
+#footer .footer-column:first-child {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+#footer .footer-column:last-child {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+#footer select {
+	margin-right: 5px;
+	margin-left: auto;
+}
+
+#footer ul,
+footer ol {
+	margin-right: 0;
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: auto;
+}
+
+#footer ul li,
+footer ol li {
+	margin-left: 2%;
+	margin-right: auto;
+}
+
+#footer ul li > a:after,
+footer ol li > a:after {
+	right: 0;
+	left: auto;
+}
+
+#footer .widget ul li ul {
+	margin-right: 30px;
+	margin-left: auto;
+}
+
+#footer .hasChildren i {
+	left: 5px;
+	right: auto;
+}
+
+/*-----------Decoration SVG on Footer-----------------*/
+.glaciar-footer-svg {
+	left: 40px;
+	right: auto;
+}
+
+/*-----------Contact Info Widget-----------------*/
+
+#footer .widget_contact_info li i {
+	margin-left: 10px;
+	margin-right: auto;
+}
+
+/*----------- Portfolio Widget -----------------*/
+.widget_glaciar_portfolio .widget-portfolio-wrap .widget-portfolio-item {
+	margin-left: 2%;
+	margin-right: auto;
+}
+
+.widget_glaciar_portfolio .widget-portfolio-wrap .widget-portfolio-item a:after {
+	right: 0;
+	left: 0;
+}
+
+.widget_glaciar_portfolio .widget-portfolio-wrap .widget-portfolio-item a:before {
+	right: 50%;
+	left: auto;
+}
+
+/*-----------Recent Posts-----------------*/
+
+/*-----------Social Widget-----------------*/
+footer .social a {
+	margin: 7px 0 7px 7px;
+}
+
+/*----------- Work Button Widget -----------------*/
+
+.widget_glaciar_work_button .widget_glaciar_work_title {
+	margin-left: 5%;
+	margin-right: auto;
+}
+
+/*
+==========================================
+Footer Top
+==========================================
+*/
+
+.footer-top ul {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+/*
+==========================================
+Subfooter
+==========================================
+*/
+
+.sub-footer p {
+	float: right;
+}
+
+/*
+==========================================
+Social Nav
+==========================================
+*/
+.nav_social {
+	float: left;
+}
+
+.widget #menu-social {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.nav_social li,
+.widget #menu-social li {
+	float: right;
+	margin-right: 10px;
+	margin-left: auto;
+}
+
+/*
+==========================================
+Footer Menu
+==========================================
+*/
+#menu-footer {
+	border-right: 1px solid rgba(0, 0, 0, 0.1);
+	margin-right: 20px;
+	padding-right: 8px;
+	padding-left: 0;
+	margin-left: auto;
+	border-left: none;
+}
+
+/*
+==========================================
+Payments Options
+==========================================
+*/
+.ql_payments_options ul {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.ql_payments_options ul li {
+	margin-right: 0.71428571428571em;
+	margin-left: auto;
+}
+
+/*
+==========================================
+6. Comments
+==========================================
+*/
+/*===========================================================================*/
+/*Comments																	 */
+/*===========================================================================*/
+#content.col-md-12 #comments {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.comment-list {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+#comments .comment-meta {
+	margin-left: 5%;
+	margin-right: auto;
+}
+
+#comments .comment-meta .comment-author .avatar {
+	margin-left: 15px;
+	margin-right: auto;
+}
+
+#comments .comment-list .comment .comment-body .reply {
+	text-align: left;
+}
+
+/*===========================================================================*/
+/*Comments	Form															 */
+/*===========================================================================*/
+
+#respond .input-wrap {
+	margin: 0px 0 10px 15px;
+}
+
+#respond input {
+	padding-right: 3.4375em;
+	padding-left: 0;
+}
+
+#respond .controls-wrap i {
+	right: 1.42857142857143em;
+	left: auto;
+}
+
+/*
+==========================================
+7. WooCommerce
+==========================================
+*/
+/* Header Button
+=====================================================*/
+.ql_cart-btn {
+	margin-right: 0;
+	border-left: 1px solid #eeeeee;
+	border-right: 1px solid #eeeeee;
+	margin-left: auto;
+}
+
+.ql_cart-btn .count {
+	right: 38px;
+	left: auto;
+}
+
+.absolutte-sidenav .ql_cart-btn,
+.absolutte-sidenav-out .ql_cart-btn {
+	margin-right: 0;
+	left: 0;
+	right: auto;
+	margin-left: auto;
+}
+
+.absolutte-login-btn {
+	margin-right: 0;
+	margin-left: -3px;
+	border-right: 1px solid #eeeeee;
+	border-left: none;
+}
+
+.absolutte-sidenav .absolutte-login-btn,
+.absolutte-sidenav-out .absolutte-login-btn {
+	margin-right: 0;
+	left: 0;
+	right: auto;
+	margin-left: auto;
+}
+
+/*Shop
+=====================================================*/
+
+.ql_woocommerce_info .col-md-4 {
+	text-align: left;
+}
+
+/* WooCommerce Categories Shop
+----------------*/
+
+.ql_woocommerce_categories ul {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.ql_woocommerce_categories ul li {
+	margin-left: 0.625em;
+	margin-right: auto;
+}
+
+.ql_woocommerce_categories ul li a:hover::before {
+	left: 100%;
+	right: auto;
+}
+
+.ql_woocommerce_categories ul li a:hover::after {
+	right: 100%;
+	left: auto;
+}
+
+.ql_woocommerce_categories .ql_product_search .woocommerce-product-search {
+	right: 0;
+	left: auto;
+}
+
+.ql_woocommerce_categories .ql_product_search .woocommerce-product-search #woocommerce-product-search-field,
+.ql_woocommerce_categories .ql_product_search .woocommerce-product-search #woocommerce-product-search-field-0 {
+	margin-right: 50px;
+	margin-left: auto;
+}
+
+.ql_woocommerce_categories .ql_product_search .woocommerce-product-search input[type="submit"] {
+	right: 0;
+	left: auto;
+}
+
+/* Sidebar Button
+----------------*/
+
+.sidebar_btn i {
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+#main .woocommerce-result-count {
+	float: left;
+	margin-left: 2px;
+	margin-right: auto;
+}
+
+.woocommerce .woocommerce-ordering,
+.woocommerce-page .woocommerce-ordering {
+	margin-right: 0!important;
+	margin-left: auto;
+}
+
+.woocommerce .woocommerce-ordering ul li a {
+	padding-right: 20px!important;
+	padding-left: 0;
+}
+
+.woocommerce .woocommerce-ordering ul li a::before {
+	right: 0;
+	left: auto;
+}
+
+/* Term Description
+----------------*/
+
+/*Product
+----------------*/
+.woocommerce .products {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.woocommerce #main .products li.product::before,
+.woocommerce-page .products li.product::before,
+.woocommerce ul.products li.product::before,
+ul.products li.product::before {
+	right: 0;
+	left: 0;
+}
+
+.woocommerce #main .products li.product i.fa-spin,
+.woocommerce-page .products li.product i.fa-spin,
+.woocommerce ul.products li.product i.fa-spin,
+ul.products li.product i.fa-spin {
+	left: 10px;
+	right: auto;
+}
+
+.woocommerce #main .products li.product.product_added::before,
+.woocommerce-page .products li.product.product_added::before,
+.woocommerce ul.products li.product.product_added::before,
+ul.products li.product.product_added::before {
+	right: 0;
+	left: 0;
+}
+
+.woocommerce #main .products li.product.product_added::after,
+.woocommerce-page .products li.product.product_added::after,
+.woocommerce ul.products li.product.product_added::after,
+ul.products li.product.product_added::after {
+	right: 50%;
+	left: auto;
+}
+
+.woocommerce #main .products li.product .product_text,
+.woocommerce-page .products li.product .product_text,
+.woocommerce ul.products li.product .product_text,
+ul.products li.product .product_text {
+	right: 10px;
+	left: 10px;
+	text-align: right;
+}
+
+.woocommerce #main .products li.product .product_text .button,
+.woocommerce-page .products li.product .product_text .button,
+.woocommerce ul.products li.product .product_text .button,
+ul.products li.product .product_text .button,
+.woocommerce #main .products li.product .product_text .add_to_cart_button,
+.woocommerce-page .products li.product .product_text .add_to_cart_button,
+.woocommerce ul.products li.product .product_text .add_to_cart_button,
+ul.products li.product .product_text .add_to_cart_button,
+.woocommerce #main .products li.product .product_text .product_type_external,
+.woocommerce-page .products li.product .product_text .product_type_external,
+.woocommerce ul.products li.product .product_text .product_type_external,
+ul.products li.product .product_text .product_type_external {
+	right: 0;
+	left: 0;
+}
+
+.woocommerce #main .products li.product .product_text .button.loading:before,
+.woocommerce-page .products li.product .product_text .button.loading:before,
+.woocommerce ul.products li.product .product_text .button.loading:before,
+ul.products li.product .product_text .button.loading:before,
+.woocommerce #main .products li.product .product_text .add_to_cart_button.loading:before,
+.woocommerce-page .products li.product .product_text .add_to_cart_button.loading:before,
+.woocommerce ul.products li.product .product_text .add_to_cart_button.loading:before,
+ul.products li.product .product_text .add_to_cart_button.loading:before,
+.woocommerce #main .products li.product .product_text .product_type_external.loading:before,
+.woocommerce-page .products li.product .product_text .product_type_external.loading:before,
+.woocommerce ul.products li.product .product_text .product_type_external.loading:before,
+ul.products li.product .product_text .product_type_external.loading:before {
+	right: 10px;
+	left: auto;
+}
+
+.woocommerce #main .products li.product .absolutte-product-link,
+.woocommerce-page .products li.product .absolutte-product-link,
+.woocommerce ul.products li.product .absolutte-product-link,
+ul.products li.product .absolutte-product-link {
+	right: 0;
+	left: 0;
+}
+
+.woocommerce #main .products li.product .onsale,
+.woocommerce-page .products li.product .onsale,
+.woocommerce ul.products li.product .onsale,
+ul.products li.product .onsale {
+	left: 0.71428571428571em;
+	left: 10px;
+	right: auto;
+}
+
+.woocommerce #main .products.absolutte-shop-layout-2 .product .product_text,
+.woocommerce-page .products.absolutte-shop-layout-2 .product .product_text,
+.woocommerce ul.products.absolutte-shop-layout-2 .product .product_text,
+ul.products.absolutte-shop-layout-2 .product .product_text {
+	right: 0;
+	left: 0;
+	text-align: right;
+}
+
+@media (min-width: 768px) and (max-width: 1269px) {
+
+}
+
+@media (max-width: 767px) {
+
+}
+
+/*Image
+----------------*/
+
+.woocommerce .products .product .product_second_img {
+	right: 0;
+	left: 0;
+}
+
+/*Rating
+----------------*/
+.woocommerce .products .product .product_thumbnail_wrap .rating_wrap {
+	right: -100%;
+	padding: 7px 10px 7px 7px;
+	left: auto;
+}
+
+.woocommerce .products .product .product_thumbnail_wrap:hover .rating_wrap {
+	right: 0;
+	left: auto;
+}
+
+/*Price
+----------------*/
+.woocommerce #main .products .product .price,
+.woocommerce-page .products .product .price {
+	text-align: left;
+}
+
+.woocommerce ul.products li.product .price del,
+.woocommerce-page ul.products li.product .price del {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+/*Add to cart
+----------------*/
+
+/*Added to cart
+----------------*/
+.woocommerce a.added_to_cart {
+	right: 0;
+	left: 0;
+}
+
+/*Pagination
+----------------*/
+
+.woocommerce nav.woocommerce-pagination ul,
+.woocommerce-page nav.woocommerce-pagination ul,
+.woocommerce #content nav.woocommerce-pagination ul,
+.woocommerce-page #content nav.woocommerce-pagination ul {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a,
+.woocommerce nav.woocommerce-pagination ul li span {
+	float: right;
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+/*Load More
+----------------*/
+
+#ql_load_more .absolutte-spinner {
+	right: 50%;
+	left: auto;
+}
+
+/*Sidebar
+=====================================================*/
+
+#content #sidebar.woocommerce-sidebar .widget {
+	padding-right: 20px;
+	padding-left: 20px;
+}
+
+/*Single Product
+=====================================================*/
+
+/*Images
+----------------*/
+
+.woocommerce #main .ql_main_image_column_wrap {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.woocommerce #main #content div.product div.thumbnails a {
+	margin-left: 10px;
+	margin-right: auto;
+}
+
+.woocommerce #main #content div.product div.thumbnails a:nth-child(4) {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.ql_main_images_btn.ql_prev {
+	right: 0;
+	-webkit-transform-origin: right center;
+	-moz-transform-origin: right center;
+	-ms-transform-origin: right center;
+	transform-origin: right center;
+	left: auto;
+}
+
+.ql_main_images_btn.ql_next {
+	left: 0;
+	-webkit-transform-origin: left center;
+	-moz-transform-origin: left center;
+	-ms-transform-origin: left center;
+	transform-origin: left center;
+	right: auto;
+}
+
+.woocommerce.single-product span.onsale {
+	left: 10px;
+	right: auto;
+}
+
+.woocommerce .woocommerce-breadcrumb {
+	margin-left: 15px;
+	margin-right: auto;
+}
+
+.single-product.woocommerce .woocommerce-breadcrumb {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.woocommerce .woocommerce-product-rating,
+.woocommerce div.product .woocommerce-product-rating {
+	text-align: left;
+}
+
+.woocommerce .woocommerce-product-rating .star-rating,
+.woocommerce div.product .woocommerce-product-rating .star-rating {
+	float: left;
+}
+
+.woocommerce #content .quantity,
+.woocommerce .quantity,
+.woocommerce-page #content .quantity,
+.woocommerce-page .quantity {
+	float: right;
+}
+
+.woocommerce #main .single_add_to_cart_button,
+.woocommerce .absolutte-product-view button.single_add_to_cart_button,
+.woocommerce .absolutte-product-view a.single_add_to_cart_button {
+	margin-right: 10
+	px;
+	margin-left: auto;
+}
+
+/*Product counter */
+.woocommerce #content .quantity input.qty,
+.woocommerce .quantity input.qty,
+.woocommerce-page #content .quantity input.qty,
+.woocommerce-page .quantity input.qty {
+	margin-left: 10px;
+	margin-right: auto;
+}
+
+/*Variations
+----------------*/
+
+.woocommerce .variations .reset_variations {
+	margin-right: 10px;
+	margin-left: auto;
+}
+
+.ql_custom_variations .ql_custom_variation ul {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.ql_custom_variations .ql_custom_variation ul li {
+	margin-left: 7px;
+	margin-right: auto;
+}
+
+.ql_custom_variations .ql_custom_variation .ql_color_variation li {
+	margin-left: 20px;
+	margin-right: auto;
+}
+
+.ql_custom_variations .ql_custom_variation .ql_color_variation li a i {
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+.group_table .label {
+	text-align: right;
+}
+
+/*Tabs
+----------------*/
+
+.woocommerce div.product .woocommerce-tabs ul.tabs,
+.woocommerce-page div.product .woocommerce-tabs ul.tabs,
+.woocommerce #content div.product .woocommerce-tabs ul.tabs,
+.woocommerce-page #content div.product .woocommerce-tabs ul.tabs {
+	text-align: right;
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li::before {
+	right: 20px;
+	left: auto;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li a {
+	padding: 15px 55px 15px 25px;
+}
+
+/* Reviews
+---------------------*/
+
+#review_form input[type='text'] {
+	padding-right: 12px;
+	padding-left: 0;
+}
+
+/* Product Meta
+---------------------*/
+
+.absolutte-product-metadata .absolutte-product-metadata-item {
+	margin-left: 20px;
+	margin-right: auto;
+}
+
+/*Related Products
+---------------------*/
+
+/* Up-Sell products (You may also like...)
+---------------------*/
+
+/*Cart Page
+=====================================================*/
+
+.woocommerce-cart .cart .cart_item a.remove {
+	margin-left: 0;
+	right: 10px;
+	left: auto;
+	margin-right: auto;
+}
+
+.woocommerce-cart .cart .cart_item .product_text .product_text_left {
+	text-align: left;
+}
+
+.woocommerce-cart .cart .cart_item .product_text .price {
+	text-align: left;
+}
+
+.woocommerce-cart #content .cart .cart_item .product_text .quantity {
+	text-align: left;
+}
+
+.woocommerce-cart #content .cart .cart_item .product_text .quantity input.qty {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.woocommerce-cart .cart .cart_item .product_text .variation dt,
+.woocommerce-cart .cart .cart_item .product_text .variation dd {
+	margin-right: 5px;
+	margin-left: auto;
+}
+
+.woocommerce-cart .actions .coupon {
+	margin-left: 20px;
+	margin-right: auto;
+}
+
+.woocommerce-cart .actions > .button {
+	float: left;
+}
+
+.woocommerce-cart #content .cart-collaterals {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+.woocommerce-cart a.remove {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+/*Cupon Row
+---------------------*/
+
+/*Cupon Input
+---------------------*/
+
+/*Cupon Button
+---------------------*/
+.woocommerce-cart table.cart td.actions .coupon .button {
+	margin-right: 5px;
+	margin-left: auto;
+}
+
+/*Checkout Button
+---------------------*/
+
+/* Cart Empty
+---------------------*/
+
+.woocommerce > .cart-empty::before {
+	right: 50%;
+	left: auto;
+}
+
+/*Checkout Page
+=====================================================*/
+#customer_details {
+	margin-left: 3%;
+	margin-right: auto;
+}
+
+.woocommerce .checkout #shiptobilling label,
+.woocommerce-page .checkout #shiptobilling label {
+	padding-right: 0!important;
+	padding-left: 0;
+}
+
+.woocommerce .checkout .col-2 h3#ship-to-different-address label,
+.woocommerce-page .checkout .col-2 h3#ship-to-different-address label {
+	float: right;
+}
+
+.woocommerce .checkout .col-2 #ship-to-different-address-checkbox {
+	float: right;
+	margin-right: 10px;
+	margin-left: auto;
+}
+
+/*Payments
+---------------------*/
+
+.woocommerce #payment ul.payment_methods li input,
+.woocommerce-page #payment ul.payment_methods li input {
+	float: right;
+}
+
+.woocommerce-checkout #payment .payment_method_paypal .about_paypal {
+	margin-right: 10px;
+	margin-left: auto;
+}
+
+/*Place Order Button
+---------------------*/
+.woocommerce-checkout #payment div.form-row {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+/* =Tables
+	-------------------------------------------------------------- */
+
+/*Cart Widget
+=====================================================*/
+
+#ql_woo_cart {
+	left: 0;
+	text-align: right;
+	right: auto;
+}
+
+.ql_woo_cart_button {
+	left: 20px;
+	right: auto;
+}
+
+.ql_header2 .ql_woo_cart_button {
+	left: -20px;
+	right: auto;
+}
+
+.ql_woo_cart_qty {
+	left: -7px;
+	right: auto;
+}
+
+/* Close button */
+.ql_woo_cart_close {
+	right: -2.22222222em;
+	left: auto;
+}
+
+#ql_woo_cart .buttons {
+	text-align: left;
+}
+
+#ql_woo_cart .buttons a {
+	margin-right: 10px;
+	margin-left: auto;
+}
+
+#ql_woo_cart ul.cart_list li a.remove {
+	margin-left: 0;
+	right: 5px;
+	left: auto;
+	margin-right: auto;
+}
+
+#ql_woo_cart ul.cart_list li .product_text .price {
+	text-align: left;
+}
+
+#ql_woo_cart .widget_shopping_cart_content .total {
+	text-align: left;
+}
+
+#ql_woo_cart .widget_shopping_cart_content .buttons {
+	text-align: left;
+}
+
+#ql_woo_cart .widget_shopping_cart_content a.button {
+	margin-right: 10px;
+	margin-left: auto;
+}
+
+#ql_woo_cart ul.cart_list li .quantity {
+	float: left;
+}
+
+#ql_woo_cart .woocommerce ul.cart_list li dl,
+#ql_woo_cart .woocommerce ul.product_list_widget li dl {
+	border-right: 0;
+	padding-right: 0;
+	float: left;
+	padding-left: 0;
+	border-left: none;
+}
+
+@media (max-width: 767px) {
+
+}
+
+/*List Widget
+=====================================================*/
+
+/*Categories Widget
+=====================================================*/
+.widget_layered_nav ul li {
+	margin-left: 5%;
+	margin-right: auto;
+}
+
+.widget_product_categories > ul > .cat-item {
+	margin-left: 5%;
+	margin-right: auto;
+}
+
+.widget_product_categories ul .cat-item a,
+.widget_layered_nav ul li a {
+	padding-right: 20px!important;
+	padding-left: 0;
+}
+
+.widget_product_categories ul .cat-item a::before,
+.widget_layered_nav ul li a::before {
+	right: 0;
+	left: auto;
+}
+
+/*Filter Widget
+=====================================================*/
+
+.woocommerce .widget_price_filter .price_label {
+	text-align: right;
+}
+
+/*Search Widget
+=====================================================*/
+
+#sidebar .woocommerce-product-search::before {
+	left: 10px;
+	right: auto;
+}
+
+.widget_product_search .search-field {
+	padding-left: 30px;
+	padding-right: 0;
+}
+
+/*My Account
+=====================================================*/
+
+/* My Account Navigation
+**********************************/
+
+.woocommerce .woocommerce-MyAccount-navigation ul {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+/*Login / Register
+=====================================================*/
+
+.woocommerce-account .woocommerce .login {
+	margin-left: 4%;
+	margin-right: auto;
+}
+
+.woocommerce-account .login label.inline {
+	margin-right: 10px;
+	margin-left: auto;
+}
+
+/*Edit Account
+=====================================================*/
+
+/*View Order
+=====================================================*/
+
+.woocommerce ul.order_details {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+/*Order Details
+=====================================================*/
+
+/*Global
+=====================================================*/
+
+/*WooCommerce Widgets
+=====================================================*/
+
+/* Layered Nav
+---------------------*/
+
+/* Products
+---------------------*/
+
+/* Recent Reviews
+---------------------*/
+
+/* Top Rated Products
+---------------------*/
+
+/* Product Tags Clouds
+---------------------*/
+.widget_product_tag_cloud a {
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+/* Search
+---------------------*/
+
+/* Search form in header
+---------------------*/
+
+/* Sharing from Jetpack
+---------------------*/
+
+/* Product View
+=====================================================*/
+.absolutte-product-view,
+.woocommerce .absolutte-product-view {
+	right: 0;
+	left: auto;
+}
+
+.absolutte-product-view .woocommerce-product-gallery__wrapper .flickity-page-dots,
+.woocommerce .absolutte-product-view .woocommerce-product-gallery__wrapper .flickity-page-dots {
+	text-align: right;
+	right: 2%;
+	left: 2%;
+}
+
+.absolutte-product-view .absolutte-product-thumbnails,
+.woocommerce .absolutte-product-view .absolutte-product-thumbnails {
+	right: 10px;
+	left: auto;
+}
+
+.absolutte-product-view .absolutte-product-desc .summary .absolutte-product-link,
+.woocommerce .absolutte-product-view .absolutte-product-desc .summary .absolutte-product-link {
+	left: 10px;
+	right: auto;
+}
+
+.absolutte-product-view .absolutte-product-desc .summary .entry a.button.loading,
+.woocommerce .absolutte-product-view .absolutte-product-desc .summary .entry a.button.loading {
+	padding-left: 2.618em;
+	padding-right: 0;
+}
+
+.absolutte-product-view .absolutte-product-desc .summary .entry .quantity,
+.woocommerce .absolutte-product-view .absolutte-product-desc .summary .entry .quantity {
+	float: right;
+}
+
+.absolutte-product-view .absolutte-product-desc .summary .entry .quantity .qty,
+.woocommerce .absolutte-product-view .absolutte-product-desc .summary .entry .quantity .qty {
+	margin-left: 10px;
+	margin-right: auto;
+}
+
+.absolutte-product-view .absolutte-product-view-exit,
+.woocommerce .absolutte-product-view .absolutte-product-view-exit {
+	right: 20px;
+	left: auto;
+}
+
+body.absolutte-current-product-view {
+	padding-left: 15px;
+	padding-right: 0;
+}
+
+/* Single Product Product View
+=====================================================*/
+
+/* WooCommerce Product Header
+=====================================================*/
+
+/* WooCommerce Mini Cart
+=====================================================*/
+.absolutte-mini-cart {
+	right: 0;
+	left: 0;
+}
+
+.absolutte-mini-cart .woocommerce-mini-cart li.woocommerce-mini-cart-item {
+	padding-right: 0;
+	margin-left: 20px;
+	padding-left: 0;
+	margin-right: auto;
+}
+
+.absolutte-mini-cart .woocommerce-mini-cart li.woocommerce-mini-cart-item a img {
+	float: right;
+	margin-left: 10px;
+	margin-right: 0;
+}
+
+.absolutte-mini-cart .woocommerce-mini-cart__total {
+	text-align: left;
+}
+
+.absolutte-mini-cart .woocommerce-mini-cart__buttons {
+	text-align: left;
+}
+
+.absolutte-mini-cart .absolutte-mini-cart-button {
+	left: 0;
+	right: auto;
+}
+
+.absolutte-mini-cart .absolutte-mini-cart-icon {
+	left: 0;
+	-webkit-transition: left 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+	-o-transition: left 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+	transition: left 500ms cubic-bezier(0.075, 0.82, 0.165, 1);
+	right: auto;
+}
+
+.no-touch .absolutte-mini-cart:hover .absolutte-mini-cart-icon {
+	left: 40px;
+	right: auto;
+}
+
+/*
+==========================================
+8. Pace (Loading animation)
+==========================================
+*/
+
+.pace .pace-progress {
+	left: 100%;
+	right: auto;
+}
+
+.pace .pace-progress-inner {
+	left: 0px;
+	right: auto;
+}
+
+.pace .pace-activity {
+	left: 20px;
+	border-right-color: #fd6848;
+	right: auto;
+}
+
+/*
+==========================================
+9. Animations
+==========================================
+*/
+/*
+Home Page
+============================= */
+
+/*
+Page Title
+============================= */
+
+/*
+Entry Content
+============================= */
+
+/*
+Pagination
+============================= */
+
+/*
+Single Metadata
+============================= */
+
+/*
+Sidebar
+============================= */
+
+/*
+Portfolio
+============================= */
+
+/*
+Portfolio Multiple Slider
+============================= */
+
+/*
+Shop
+============================= */
+
+/*
+Product Single
+============================= */
+
+/*
+Cart
+============================= */
+
+/*
+Contact Page
+============================= */
+
+/*
+==========================================
+10. Shortcodes
+==========================================
+*/
+/* Visual Composer - General				*/
+/*------------------------------------------*/
+
+/* Visual Composer - Team Member			*/
+/*------------------------------------------*/
+
+.glaciar_team_member .glaciar_team_hover {
+	right: 0;
+	left: 0;
+}
+
+.glaciar_team_member .glaciar_team_hover .glaciar_team_member_text {
+	right: 19%;
+	left: 10%;
+}
+
+.glaciar_team_member .glaciar_team_hover .horizontal-lines {
+	left: 106%;
+	right: auto;
+}
+
+.glaciar_team_member .glaciar_team_hover .glaciar_team_member_social_icons {
+	left: 0;
+	right: auto;
+}
+
+.glaciar_team_member .glaciar_team_hover .glaciar_team_member_social_icons ul {
+	text-align: left;
+}
+
+.glaciar_team_member .glaciar_team_hover .glaciar_team_member_social_icons ul li {
+	margin-right: 3%;
+	margin-left: auto;
+}
+
+/* Visual Composer - FAQs					*/
+/*------------------------------------------*/
+
+/* FAQs										*/
+/*------------------------------------------*/
+.question {
+	padding-right: 2em;
+	padding-left: 0;
+}
+
+.question::before {
+	right: 0;
+	left: auto;
+}
+
+.answer {
+	margin-right: 2.5em;
+	margin-left: auto;
+}
+
+/* Products Carousel						*/
+/*------------------------------------------*/
+.absolutte-products-carousel-hr {
+	text-align: right;
+	margin-right: 0;
+	padding-right: 0;
+	padding-left: 0;
+	margin-left: auto;
+}
+
+.absolutte-products-carousel ul.products {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.absolutte-products-carousel ul.products .product .onsale {
+	left: 20px;
+	right: auto;
+}
+
+.absolutte-products-carousel ul.products .absolutte-products-carousel-intro {
+	text-align: left;
+}
+
+.absolutte-products-carousel ul.products .absolutte-products-carousel-intro .absolutte-products-carousel-intro-inner {
+	text-align: right;
+}
+
+/* Large */
+@media (min-width: 1510px) {
+
+}
+
+/* Small */
+@media (min-width: 768px) and (max-width: 1269px) {
+
+/* Large */
+@media (min-width: 1510px) 
+}
+
+/* Extra-Small */
+@media (max-width: 767px) {
+
+/* Small */
+@media (min-width: 768px) and (max-width: 1269px) {
+
+/* Large */
+@media (min-width: 1510px) 
+}
+
+}
+
+/* Offer Banner								*/
+/*------------------------------------------*/
+
+.absolutte-offer-banner .absolutte-offer-banner-image {
+	right: 0;
+	left: auto;
+}
+
+.absolutte-offer-banner .absolutte-offer-banner-info {
+	margin-right: 50%;
+	margin-left: auto;
+}
+
+.absolutte-offer-banner .absolutte-offer-banner-countdown {
+	left: 0;
+	right: auto;
+}
+
+/* Extra-Small */
+@media (max-width: 767px) {
+
+.absolutte-offer-banner .absolutte-offer-banner-info {
+	margin-right: 50%;
+	margin-left: auto;
+}
+
+.absolutte-offer-banner .absolutte-offer-banner-countdown {
+	left: 0;
+	right: auto;
+}
+
+}
+
+/* Image Banner								*/
+/*------------------------------------------*/
+
+.absolutte-image-banner .absolutte-image-banner-content {
+	right: 0;
+	left: 0;
+}
+
+.absolutte-image-banner .absolutte-image-banner-content .absolutte-image-banner-content-link {
+	right: 0;
+	left: 0;
+}
+
+/* Products Slider							*/
+/*------------------------------------------*/
+
+.absolutte-products-slider ul.products {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+.absolutte-products-slider ul.products .product .onsale {
+	left: 20px;
+	right: auto;
+}
+
+/* Large */
+/* Small */
+@media (min-width: 768px) and (max-width: 1269px) {
+
+}
+
+/* Extra-Small */
+@media (max-width: 767px) {
+
+}
+
+/* Instagram Box							*/
+/*------------------------------------------*/
+
+.absolutte-instagram-box .absolutte-instagram-box-images {
+	right: 0;
+	left: 0;
+}
+
+.absolutte-instagram-box .absolutte-instagram-box-content .absolutte-instagram-box-btn {
+	right: 50%;
+	left: auto;
+}
+
+/* Small */
+@media (min-width: 768px) and (max-width: 1269px) {
+
+}
+
+/* Extra-Small */
+@media (max-width: 767px) {
+
+}
+
+/* Stairs Products							*/
+/*------------------------------------------*/
+
+.absolutte-stairs-products .woocommerce:nth-child(even) {
+	margin-right: 6%;
+	margin-left: auto;
+}
+
+.absolutte-stairs-products .woocommerce:nth-child(odd) {
+	margin-left: 6%;
+	margin-right: auto;
+}
+
+/* Gallery 																*/
+/*----------------------------------------------------------------------*/
+
+.absolutte-gallery .absolutte-gallery-item a {
+	right: 0;
+	left: 0;
+}
+
+/*
+==========================================
+11. Contact Page
+==========================================
+*/
+
+.absolutte-contact-form input[type='text'],
+.absolutte-contact-form input[type='email'],
+.absolutte-contact-form textarea {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+/*
+==========================================
+12. WordPress Default
+==========================================
+*/
+/* =WordPress Core
+-------------------------------------------------------------- */
+.alignnone {
+	margin: 5px 0 20px 20px;
+}
+
+.alignleft {
+	float: left;
+	margin: 5px 20px 20px 0;
+}
+
+.alignright {
+	float: right;
+	margin: 5px 0 20px 20px;
+}
+
+a img.alignleft {
+	float: left;
+	margin: 5px 20px 20px 0;
+}
+
+a img.alignnone {
+	margin: 5px 0 20px 20px;
+}
+
+a img.alignright {
+	float: right;
+	margin: 5px 0 20px 20px;
+}
+
+a img.aligncenter {
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.wp-caption.alignnone {
+	margin: 5px 0 20px 20px;
+}
+
+.wp-caption.alignright {
+	margin: 5px 0 20px 20px;
+}
+
+.wp-caption.alignleft {
+	margin: 5px 20px 20px 0;
+}
+
+.sticky .post-title::before {
+	right: -25px;
+	left: auto;
+}
+
+/*------------------------------------------------------------
+ Defaul Widgets
+-------------------------------------------------------------- */
+/* Archive List Widget
+-------------------------------------- */
+
+/* Calendar Widget
+-------------------------------------- */
+
+#wp-calendar caption {
+	text-align: left;
+}
+
+#wp-calendar tfoot #next {
+	text-align: left;
+}
+
+/* Categories Widget
+-------------------------------------- */
+
+/* Recent Comments Widget
+-------------------------------------- */
+
+#footer .widget_recent_comments ul li {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+/* Recent Entries Widget
+-------------------------------------- */
+
+/* RSS Widget
+-------------------------------------- */
+
+/* Search Widget
+-------------------------------------- */
+
+.widget_search #s {
+	padding-left: 32px;
+	padding-right: 0;
+}
+
+.widget_search #searchsubmit {
+	left: 15px;
+	right: auto;
+}
+
+.widget_search i {
+	left: 15px;
+	right: auto;
+}
+
+/* Tag Cloud Widget
+-------------------------------------- */
+
+/* Nav Menu Widget
+-------------------------------------- */
+
+.widget_nav_menu .menu-navigation-container .sub-menu {
+	padding-right: 20px;
+	padding-left: 0;
+}
+
+/* Search Form
+-------------------------------------- */
+
+.search-form .search-field {
+	padding-left: 50px;
+	padding-right: 0;
+}
+
+.widget_search .search-form .search-submit {
+	left: 0;
+	right: auto;
+}
+
+.search-form label::before {
+	left: 20px;
+	right: auto;
+}
+
+.widget_search i {
+	left: 12px;
+	right: auto;
+}
+
+/* Post Navigation
+-------------------------------------- */
+
+.post-navigation .nav-next::before,
+.post-navigation .nav-previous::before {
+	right: 0;
+	left: 0;
+}
+
+.post-navigation .nav-next {
+	margin-right: 2%;
+	margin-left: auto;
+}
+
+.post-navigation .nav-previous {
+	margin-left: 2%;
+	margin-right: auto;
+}
+
+.post-navigation .nav-previous a {
+	padding-right: 100px;
+	padding-left: 0;
+}
+
+.post-navigation .nav-next a {
+	padding-left: 100px;
+	text-align: left;
+	padding-right: 0;
+}
+
+.post-navigation .nav-previous a::before {
+	right: 0;
+	left: auto;
+}
+
+.post-navigation .nav-next a::before {
+	left: 0;
+	right: auto;
+}
+
+/* Nav Menu
+-------------------------------------- */
+
+/* Post Password Form
+-------------------------------------- */
+
+/*------------------------------------------------------------
+404
+-------------------------------------------------------------- */
+
+.widgets-404 .widget {
+	text-align: right;
+}
+
+.widgets-404 .widget ul {
+	padding-right: 0;
+	padding-left: 0;
+}
+
+/*
+==========================================
+13. External Plugins
+==========================================
+*/
+/*
+// Contact Form 7
+// ------------------
+*/
+
+.wpcf7 input[type="checkbox"],
+.wpcf7 input[type="radio"] {
+	margin-left: 5px;
+	margin-right: auto;
+}
+
+/*
+// Visual Composer
+// ------------------
+*/
+
+.aio-icon-box.top-icon .align-icon,
+.aio-icon-box.top-icon .aio-icon-header,
+.aio-icon-box.top-icon .aio-icon-description {
+	text-align: right!important;
+}
+
+@media (min-width: 768px) and (max-width: 1269px) {
+
+}
+
+/*
+// Revolution Slider
+// ------------------
+*/
+
+@media (max-width: 767px) {
+
+}
+
+/*
+// Easy MailChimp Forms
+// ------------------
+*/
+
+/*
+// WP Instagram Widget
+// ------------------
+*/
+
+@media (min-width: 768px) and (max-width: 1269px) {
+
+}
+
+@media (min-width: 1510px) {
+
+}
+
+/*
+// Jetpack Contact Form
+// ------------------
+*/
+
+@media (max-width: 767px) {
+
+}
+
+/* Subscription to posts */
+
+.comment-subscription-form input {
+	margin-left: 10px;
+	margin-right: auto;
+}
+
+/*
+==========================================
+14. Global Styles
+==========================================
+*/
+
+.icons-bck {
+	right: 50%;
+	left: auto;
+}
+
+/* Force Full Width
+-------------------------------------------------- */
+
+/* Section Title
+-------------------------------------------------- */
+
+.section-title::after {
+	right: 50%;
+	left: auto;
+}
+
+.section-title::before {
+	right: 50%;
+	left: auto;
+}
+
+.section-title.alt {
+	text-align: right;
+}
+
+.section-title.alt::after {
+	right: 0;
+	left: auto;
+}
+
+.section-title.alt::before {
+	right: 53px;
+	left: auto;
+}
+
+.absolutte-preloader {
+	right: 0;
+	left: 0;
+}
+
+.absolutte-preloader .absolutte-folding-cube {
+	right: 50%;
+	left: auto;
+}
+
+.absolutte-preloader .absolutte-folding-cube .absolutte-cube {
+	float: right;
+}
+
+.absolutte-preloader .absolutte-folding-cube .absolutte-cube:before {
+	right: 0;
+	left: auto;
+}
+
+.absolutte-preloader .absolutte-spinner {
+	right: 50%;
+	left: auto;
+}
+
+.absolutte-preloader .absolutte-double-bounce1,
+.absolutte-preloader .absolutte-double-bounce2 {
+	right: 0;
+	left: auto;
+}
+
+/* Read More Button
+-------------------------------------------------- */
+.read-more {
+	margin-left: 20px;
+	margin-right: auto;
+}
+
+.read-more i {
+	left: 0;
+	right: auto;
+}
+
+/* Shadows
+-------------------------------------------------- */
+
+/* Custom button
+-------------------------------------------------- */
+
+/*
+Light Button
+---------------------------------------*/
+
+/* Make Space between sections											*/
+/*----------------------------------------------------------------------*/
+
+/* Decoration Lines                      */
+/*----------------------------------------------------------------------*/
+
+.glaciar_nav_active {
+	right: 0;
+	left: 0;
+}
+
+/* Hover effect for thumbnails											*/
+/*----------------------------------------------------------------------*/
+
+.ql_thumbnail_hover:before {
+	right: 5px;
+	left: 5px;
+}
+
+.ql_thumbnail_hover:after {
+	right: 50%;
+	left: auto;
+}
+
+/* Bounce Animation														*/
+/*----------------------------------------------------------------------*/
+.absolutte-double-bounce1,
+.absolutte-double-bounce2 {
+	right: 0;
+	left: auto;
+}
+
+/* Font size using REMs													*/
+/*----------------------------------------------------------------------*/
+
+/* Inputs																*/
+/*----------------------------------------------------------------------*/
+
+/*
+	Header
+	==========================================
+	*/
+
+.logo_container {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+#absolutte-nav-btn {
+	left: 20px;
+	right: auto;
+}
+
+.ql_cart-btn,
+  .absolutte-login-btn {
+	text-align: right;
+	padding-right: 16px;
+	padding-left: 16px;
+}
+
+/*
+	==========================================
+	Header 2
+	==========================================
+	*/
+
+.absolutte-header-2 #header #ql_nav_collapse #jqueryslidemenu ul.nav > li {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.absolutte-header-2 #header .ql_cart-btn {
+	border-left: 1px solid rgba(0, 0, 0, 0.08);
+	border-right: none;
+}
+
+/*
+	==========================================
+	Sidenav Header
+	==========================================
+	*/
+  .absolutte-sidenav #header {
+	border-left: none;
+	border-right: none;
+}
+
+.absolutte-sidenav #header .logo_container {
+	margin-left: 0;
+	text-align: right;
+	padding-right: 20px;
+	padding-left: 0;
+	margin-right: auto;
+}
+
+.absolutte-sidenav #header .logo_container .site-title {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.absolutte-sidenav #header #absolutte-nav-btn {
+	left: 20px;
+	right: auto;
+}
+
+.absolutte-sidenav #header .ql_cart-btn {
+	border-left: none;
+	text-align: right;
+	border-right: none;
+}
+
+.absolutte-sidenav #header .main-navigation ul ul ul {
+	right: -999em;
+	left: auto;
+}
+
+.absolutte-sidenav #header .main-navigation ul ul li:hover > ul,
+  .absolutte-sidenav #header .main-navigation ul ul li.focus > ul {
+	right: 0;
+	left: auto;
+}
+
+.absolutte-sidenav #header .main-navigation ul li {
+	border-right: none;
+	border-left: none;
+}
+
+.absolutte-sidenav #header .main-navigation ul li:hover > ul,
+  .absolutte-sidenav #header .main-navigation ul li.focus > ul {
+	right: 0;
+	left: auto;
+}
+
+/*
+	Main
+	==========================================
+	*/
+  .absolutte-main-wrap {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+/*
+==========================================
+15. Responsive Styles
+==========================================
+*/
+/*
+	// Extra Small Breakpoint
+	// ------------------
+	*/
+@media (max-width: 767px) {
+
+/* Read More Button
+-------------------------------------------------- */
+.read-more {
+	margin-left: 20px;
+	margin-right: auto;
+}
+
+.read-more i {
+	left: 0;
+	right: auto;
+}
+
+/* Shadows
+-------------------------------------------------- */
+
+/* Custom button
+-------------------------------------------------- */
+
+/*
+Light Button
+---------------------------------------*/
+
+/* Make Space between sections											*/
+/*----------------------------------------------------------------------*/
+
+/* Decoration Lines                      */
+/*----------------------------------------------------------------------*/
+
+.glaciar_nav_active {
+	right: 0;
+	left: 0;
+}
+
+/* Hover effect for thumbnails											*/
+/*----------------------------------------------------------------------*/
+
+.ql_thumbnail_hover:before {
+	right: 5px;
+	left: 5px;
+}
+
+.ql_thumbnail_hover:after {
+	right: 50%;
+	left: auto;
+}
+
+/* Bounce Animation														*/
+/*----------------------------------------------------------------------*/
+.absolutte-double-bounce1,
+.absolutte-double-bounce2 {
+	right: 0;
+	left: auto;
+}
+
+/* Font size using REMs													*/
+/*----------------------------------------------------------------------*/
+
+/* Inputs																*/
+/*----------------------------------------------------------------------*/
+
+/*
+	Header
+	==========================================
+	*/
+
+.logo_container {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+#absolutte-nav-btn {
+	left: 20px;
+	right: auto;
+}
+
+.ql_cart-btn,
+  .absolutte-login-btn {
+	text-align: right;
+	padding-right: 16px;
+	padding-left: 16px;
+}
+
+/*
+	==========================================
+	Header 2
+	==========================================
+	*/
+
+.absolutte-header-2 #header #ql_nav_collapse #jqueryslidemenu ul.nav > li {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.absolutte-header-2 #header .ql_cart-btn {
+	border-left: 1px solid rgba(0, 0, 0, 0.08);
+	border-right: none;
+}
+
+/*
+	==========================================
+	Sidenav Header
+	==========================================
+	*/
+  .absolutte-sidenav #header {
+	border-left: none;
+	border-right: none;
+}
+
+.absolutte-sidenav #header .logo_container {
+	margin-left: 0;
+	text-align: right;
+	padding-right: 20px;
+	padding-left: 0;
+	margin-right: auto;
+}
+
+.absolutte-sidenav #header .logo_container .site-title {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.absolutte-sidenav #header #absolutte-nav-btn {
+	left: 20px;
+	right: auto;
+}
+
+.absolutte-sidenav #header .ql_cart-btn {
+	border-left: none;
+	text-align: right;
+	border-right: none;
+}
+
+.absolutte-sidenav #header .main-navigation ul ul ul {
+	right: -999em;
+	left: auto;
+}
+
+.absolutte-sidenav #header .main-navigation ul ul li:hover > ul,
+  .absolutte-sidenav #header .main-navigation ul ul li.focus > ul {
+	right: 0;
+	left: auto;
+}
+
+.absolutte-sidenav #header .main-navigation ul li {
+	border-right: none;
+	border-left: none;
+}
+
+.absolutte-sidenav #header .main-navigation ul li:hover > ul,
+  .absolutte-sidenav #header .main-navigation ul li.focus > ul {
+	right: 0;
+	left: auto;
+}
+
+/*
+	Main
+	==========================================
+	*/
+  .absolutte-main-wrap {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+}
+
+/*
+	Header
+	==========================================
+	*/
+
+.logo_container::before {
+	right: 0;
+	left: 0;
+}
+
+/*
+	==========================================
+	Sidenav Header
+	==========================================
+	*/
+  .absolutte-sidenav #header {
+	border-left: none;
+	border-right: none;
+}
+
+.absolutte-sidenav #header .logo_container .site-title {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.absolutte-sidenav #header #ql_nav_collapse #jqueryslidemenu ul.nav li ul {
+	right: 0;
+	left: auto;
+}
+
+.absolutte-sidenav #header .ql_cart-btn,
+  .absolutte-sidenav #header .absolutte-login-btn {
+	border-left: none;
+	border-left: 1px solid #eeeeee;
+	text-align: right;
+	border-right: none;
+}
+
+/*
+	==========================================
+	Top Bar
+	========================================== 
+	*/
+  .absolutte-sidenav .top-bar {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+/*
+	Main
+	==========================================
+	*/
+  .absolutte-main-wrap {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+/*
+	Portfolio
+	==========================================
+	*/
+
+/*
+	Portfolio Thirds
+	============================= */
+
+/*
+	// Small Breakpoint
+	// ------------------
+	*/
+@media (min-width: 768px) and (max-width: 1269px) {
+
+.absolutte-sidenav #header .logo_container {
+	margin-left: 0;
+	text-align: right;
+	padding-right: 20px;
+	padding-left: 0;
+	margin-right: auto;
+}
+
+.absolutte-sidenav #header .logo_container .site-title {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.absolutte-sidenav #header #absolutte-nav-btn {
+	left: 20px;
+	right: auto;
+}
+
+.absolutte-sidenav #header .ql_cart-btn {
+	border-left: none;
+	text-align: right;
+	border-right: none;
+}
+
+.absolutte-sidenav #header .main-navigation ul ul ul {
+	right: -999em;
+	left: auto;
+}
+
+.absolutte-sidenav #header .main-navigation ul ul li:hover > ul,
+  .absolutte-sidenav #header .main-navigation ul ul li.focus > ul {
+	right: 0;
+	left: auto;
+}
+
+.absolutte-sidenav #header .main-navigation ul li {
+	border-right: none;
+	border-left: none;
+}
+
+.absolutte-sidenav #header .main-navigation ul li:hover > ul,
+  .absolutte-sidenav #header .main-navigation ul li.focus > ul {
+	right: 0;
+	left: auto;
+}
+
+/*
+	Main
+	==========================================
+	*/
+  .absolutte-main-wrap {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+/*
+==========================================
+15. Responsive Styles
+==========================================
+*/
+/*
+	// Extra Small Breakpoint
+	// ------------------
+	*/
+@media (max-width: 767px) {
+
+/* Read More Button
+-------------------------------------------------- */
+.read-more {
+	margin-left: 20px;
+	margin-right: auto;
+}
+
+.read-more i {
+	left: 0;
+	right: auto;
+}
+
+/* Shadows
+-------------------------------------------------- */
+
+/* Custom button
+-------------------------------------------------- */
+
+/*
+Light Button
+---------------------------------------*/
+
+/* Make Space between sections											*/
+/*----------------------------------------------------------------------*/
+
+/* Decoration Lines                      */
+/*----------------------------------------------------------------------*/
+
+.glaciar_nav_active {
+	right: 0;
+	left: 0;
+}
+
+/* Hover effect for thumbnails											*/
+/*----------------------------------------------------------------------*/
+
+.ql_thumbnail_hover:before {
+	right: 5px;
+	left: 5px;
+}
+
+.ql_thumbnail_hover:after {
+	right: 50%;
+	left: auto;
+}
+
+/* Bounce Animation														*/
+/*----------------------------------------------------------------------*/
+.absolutte-double-bounce1,
+.absolutte-double-bounce2 {
+	right: 0;
+	left: auto;
+}
+
+/* Font size using REMs													*/
+/*----------------------------------------------------------------------*/
+
+/* Inputs																*/
+/*----------------------------------------------------------------------*/
+
+/*
+	Header
+	==========================================
+	*/
+
+.logo_container {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+#absolutte-nav-btn {
+	left: 20px;
+	right: auto;
+}
+
+.ql_cart-btn,
+  .absolutte-login-btn {
+	text-align: right;
+	padding-right: 16px;
+	padding-left: 16px;
+}
+
+/*
+	==========================================
+	Header 2
+	==========================================
+	*/
+
+.absolutte-header-2 #header #ql_nav_collapse #jqueryslidemenu ul.nav > li {
+	margin-left: 0;
+	margin-right: auto;
+}
+
+.absolutte-header-2 #header .ql_cart-btn {
+	border-left: 1px solid rgba(0, 0, 0, 0.08);
+	border-right: none;
+}
+
+/*
+	==========================================
+	Sidenav Header
+	==========================================
+	*/
+  .absolutte-sidenav #header {
+	border-left: none;
+	border-right: none;
+}
+
+.absolutte-sidenav #header .logo_container {
+	margin-left: 0;
+	text-align: right;
+	padding-right: 20px;
+	padding-left: 0;
+	margin-right: auto;
+}
+
+.absolutte-sidenav #header .logo_container .site-title {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.absolutte-sidenav #header #absolutte-nav-btn {
+	left: 20px;
+	right: auto;
+}
+
+.absolutte-sidenav #header .ql_cart-btn {
+	border-left: none;
+	text-align: right;
+	border-right: none;
+}
+
+.absolutte-sidenav #header .main-navigation ul ul ul {
+	right: -999em;
+	left: auto;
+}
+
+.absolutte-sidenav #header .main-navigation ul ul li:hover > ul,
+  .absolutte-sidenav #header .main-navigation ul ul li.focus > ul {
+	right: 0;
+	left: auto;
+}
+
+.absolutte-sidenav #header .main-navigation ul li {
+	border-right: none;
+	border-left: none;
+}
+
+.absolutte-sidenav #header .main-navigation ul li:hover > ul,
+  .absolutte-sidenav #header .main-navigation ul li.focus > ul {
+	right: 0;
+	left: auto;
+}
+
+/*
+	Main
+	==========================================
+	*/
+  .absolutte-main-wrap {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+}
+
+/*
+	Header
+	==========================================
+	*/
+
+.logo_container::before {
+	right: 0;
+	left: 0;
+}
+
+/*
+	==========================================
+	Sidenav Header
+	==========================================
+	*/
+  .absolutte-sidenav #header {
+	border-left: none;
+	border-right: none;
+}
+
+.absolutte-sidenav #header .logo_container .site-title {
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.absolutte-sidenav #header #ql_nav_collapse #jqueryslidemenu ul.nav li ul {
+	right: 0;
+	left: auto;
+}
+
+.absolutte-sidenav #header .ql_cart-btn,
+  .absolutte-sidenav #header .absolutte-login-btn {
+	border-left: none;
+	border-left: 1px solid #eeeeee;
+	text-align: right;
+	border-right: none;
+}
+
+/*
+	==========================================
+	Top Bar
+	========================================== 
+	*/
+  .absolutte-sidenav .top-bar {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+/*
+	Main
+	==========================================
+	*/
+  .absolutte-main-wrap {
+	margin-right: 0;
+	margin-left: auto;
+}
+
+/*
+	Portfolio
+	==========================================
+	*/
+
+/*
+	Portfolio Thirds
+	============================= */
+
+}
+
+/*
+	Header
+	--------------------------------
+	*/
+
+/*
+	==========================================
+	Sidenav Header
+	==========================================
+	*/
+  .absolutte-sidenav #header #jqueryslidemenu ul.nav li {
+	border-left: none;
+	border-right: none;
+}
+
+.absolutte-sidenav #header .ql_cart-btn {
+	border-left: none;
+	border-right: none;
+}
+
+/*
+	Content
+	========================================== 
+	*/
+
+/*
+	// Medium Breakpoint
+	// ------------------
+	*/
+@media (min-width: 1270px) and (max-width: 1509px) {
+
+.absolutte-sidenav #header .ql_cart-btn {
+	border-left: none;
+	border-right: none;
+}
+
+/*
+	Content
+	========================================== 
+	*/
+
+}
+
+/*
+	// Extra Larga Breakpoint
+	// ------------------
+	*/
+@media (min-width: 1510px) {
+
+.absolutte-sidenav #header .ql_cart-btn {
+	border-left: none;
+	border-right: none;
+}
+
+/*
+	Content
+	========================================== 
+	*/
+
+/*
+	// Medium Breakpoint
+	// ------------------
+	*/
+@media (min-width: 1270px) and (max-width: 1509px) {
+
+.absolutte-sidenav #header .ql_cart-btn {
+	border-left: none;
+	border-right: none;
+}
+
+/*
+	Content
+	========================================== 
+	*/
+
+}
+
+}
+
+/*
+==========================================
+LESS Variables and Mixins
+==========================================
+*/
+
+caption {
+	text-align: right;
+}
+
+th {
+	text-align: right;
+}
+
+@media screen and (max-width: 767px) {
+
+caption {
+	text-align: right;
+}
+
+th {
+	text-align: right;
+}
+
+}
+
+
+/* Generated by the RTLer - http://wordpress.org/extend/plugins/rtler/ */
