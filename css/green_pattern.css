@@ -995,12 +995,12 @@ a {
 .alignleft {
   display: inline;
   float: left;
-  margin-right: 1.5em; }
+  margin-right: 1.5em !important; }
 
 .alignright {
   display: inline;
   float: right;
-  margin-left: 1.5em; }
+  margin-left: 1.5em !important; }
 
 .aligncenter {
   display: block;
@@ -1322,6 +1322,76 @@ input.search-submit {
 .top-contact {
   margin-bottom: 10px; }
 
+/* Gutenberg CSS style */
+#primary ul {
+  list-style-type: disc; }
+
+.wp-block-latest-posts.aligncenter {
+  margin-left: 3em; }
+
+.wp-block-verse {
+  color: #404040; }
+
+.wp-block-quote {
+  border-left: 4px solid black;
+  padding-left: 5px;
+  margin-top: 0px;
+  padding-top: 0px; }
+  .wp-block-quote p {
+    padding: 20px;
+    margin: 0px; }
+  .wp-block-quote:before {
+    content: "";
+    border: 0px; }
+  .wp-block-quote cite {
+    margin: 0px;
+    padding-left: 20px; }
+
+.wp-block-quote.is-large {
+  border: 0px;
+  color: #404040; }
+  .wp-block-quote.is-large cite {
+    text-align: right;
+    display: block;
+    color: #404040;
+    font-style: italic;
+    padding-right: 20px; }
+
+.wp-block-pullquote {
+  border-top: 4px solid black;
+  border-bottom: 4px solid black;
+  padding: 0px;
+  padding-bottom: 10px;
+  margin: 0 auto;
+  border-left: none !important;
+  margin-bottom: 20px; }
+  .wp-block-pullquote p {
+    padding: 20px;
+    margin: 0px; }
+  .wp-block-pullquote:before {
+    content: "";
+    border: 0px; }
+
+.wp-block-pullquote.alignleft {
+  margin-right: 25px; }
+
+.wp-block-pullquote.alignright {
+  margin-left: 25px; }
+
+.wp-block-button a:hover {
+  padding: 11px 24px;
+  box-shadow: 3px 3px black;
+  -webkit-box-shadow: 3px 3px black; }
+
+.wp-block-cover-image {
+  display: flex; }
+
+.wp-block-audio {
+  text-align: center; }
+
+.wp-block-button.aligncenter {
+  margin-bottom: 1.5em; }
+
 /*--------------------------------------------------------------
 10.2 Asides
 --------------------------------------------------------------*/
@@ -1385,7 +1455,6 @@ ol.comment-list .parent article {
   padding: 20px;
   padding-bottom: 0; }
 
-ol.comment-list .parent article .comment-author img,
 ol.comment-list .parent article .reply {
   left: 20px; }
 
@@ -1402,7 +1471,7 @@ ol.comment-list .odd.parent .even.parent .odd.parent .even.parent article {
   background-color: white; }
 
 ol.comment-list .parent article .reply {
-  top: 60px; }
+  top: 65px; }
 
 ol.comment-list li.byuser {
   border: 2px solid #56cc00;
