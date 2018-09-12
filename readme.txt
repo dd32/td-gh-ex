@@ -20,6 +20,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+=1.0.6 12/9/2018=
+
+* FIXED Theme Screenshot Size
+
 =1.0.5 10/9/2018=
 
 * UPDATED Theme resources and images used license information
@@ -158,7 +162,7 @@ https://pixabay.com/en/bridal-wedding-dress-window-woman-1942169/
 woman-2896389 - pixabay.com - Creative Commons Zero (CC0) license  
 https://pixabay.com/en/woman-hike-lake-female-hiker-2896389/
 
-* assets/images/promobox1.jpg
+* assets/images/promobox3.jpg
 daisy-801813 - pixabay.com - Creative Commons Zero (CC0) license 
 https://pixabay.com/en/daisy-flower-plant-perspective-801813/
 
