@@ -73,8 +73,8 @@ final class Gump_Pro_Customize {
 				$manager,
 				'gump_pro',
 				array(
-					'title'    => esc_html__( 'Code ORG50 for 50% OFF', 'gump' ),
-					'pro_text' => esc_html__( 'GumpPro', 'gump' ),
+					'title'    => esc_html__( 'Get Gump Pro Now!', 'gump' ),
+					'pro_text' => esc_html__( 'Gump Pro', 'gump' ),
 					'pro_url'  => 'https://www.pankogut.com/wordpress-themes/gump-pro/?utm_source=customizer_button&utm_medium=wordpress_dashboard&utm_campaign=gump_pro',
 					'priority' => 1
 				)

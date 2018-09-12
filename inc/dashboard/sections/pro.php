@@ -11,12 +11,6 @@
 	<table class="form-table">
 		<thead>
 			<tr>
-				<td><h3 class="discount"><?php esc_html_e( 'Use the discount code ORG50 to get 50% OFF at the checkout', 'gump' ); ?></h3></td>
-				<td colspan="2">
-					<a href="<?php echo esc_url( "https://www.pankogut.com/wordpress-themes/gump-pro/?utm_source=theme_dashboard&utm_medium=buy_link&utm_campaign={$this->theme->template}_dashboard" ); ?>" target="_blank" class="button button-primary button-hero"><?php esc_html_e( 'Get Gump PRO now', 'gump' ); ?></a>
-				</td>
-			</tr>
-			<tr>
 				<th></th>
 				<th><?php esc_html_e( 'FREE', 'gump' ); ?></th>
 				<th><?php esc_html_e( 'PRO', 'gump' ); ?></th>
@@ -176,7 +170,7 @@
 				<td><span class="dashicons dashicons-yes"></span></td>
 			</tr>
 			<tr>
-				<td><h3 class="discount"><?php esc_html_e( 'Use the discount code ORG50 to get 50% OFF at the checkout', 'gump' ); ?></h3></td>
+				<td></td>
 				<td colspan="2">
 					<a href="<?php echo esc_url( "https://www.pankogut.com/wordpress-themes/gump-pro/?utm_source=theme_dashboard&utm_medium=buy_link&utm_campaign={$this->theme->template}_dashboard" ); ?>" target="_blank" class="button button-primary button-hero"><?php esc_html_e( 'Get Gump PRO now', 'gump' ); ?></a>
 				</td>
