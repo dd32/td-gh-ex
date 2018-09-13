@@ -5,6 +5,14 @@
  * @package adbooster
  */
 
+/**
+ * Gets theme's cutomize options
+ * 
+ * @param  string $setting
+ * @param  mixed $default 
+ * @since 1.0.0
+ * @return string
+ */
 function adbooster_get_option( $setting, $default = '' ) {
 
 	$options = get_option( Ad_Booster::get_theme_slug() . '_basic_opts_name', array() );
@@ -21,6 +29,7 @@ function adbooster_get_option( $setting, $default = '' ) {
  * Adds custom classes to the array of body classes.
  *
  * @param array $classes Classes for the body element.
+ * @since 1.0.0
  * @return array
  */
 function adbooster_body_classes( $classes ) {
@@ -35,6 +44,9 @@ add_filter( 'body_class', 'adbooster_body_classes' );
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
+ *
+ * @since 1.0.0
+ * @return void
  */
 function adbooster_pingback_header() {
 	if ( is_singular() && pings_open() ) {
@@ -46,7 +58,7 @@ add_action( 'wp_head', 'adbooster_pingback_header' );
 /**
  * Retrieve list of category array.
  *
- * @since 1.2.0
+ * @since 1.0.0
  * @return array
  */
 function adbooster_category_list( $args = array(), $is_all = true ) {
@@ -66,6 +78,12 @@ function adbooster_category_list( $args = array(), $is_all = true ) {
  	return $output_categories;
 }
 
+/**
+ * Adds theme's credit link
+ *
+ * @since 1.0.0
+ * @return string
+ */
 function adbooster_credit_link() {
 
 	$attrs = array( "href" => "https://boosterwp.com", "title" => "BoosterWP Theme - The Best Free Amazon Affiliate WordPress Themes", "rel" => "author", 'label' => "BoosterWP" );

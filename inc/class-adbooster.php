@@ -18,7 +18,6 @@ if ( ! class_exists( 'Ad_Booster' ) ) :
 	 */
 	class Ad_Booster {
 
-		private static $structured_data;
 
 		/**
 		 * Setup class.
@@ -38,7 +37,6 @@ if ( ! class_exists( 'Ad_Booster' ) ) :
 
 			add_filter( 'navigation_markup_template', array( $this, 'navigation_markup_template' ) );
 			add_action( 'enqueue_embed_scripts',      array( $this, 'print_embed_styles' ) );
-			add_action( 'wp_footer',                  array( $this, 'get_structured_data' ) );
 
 			add_filter( 'get_the_archive_title', array( $this, 'the_archive_title' ) );
 		}
@@ -52,12 +50,6 @@ if ( ! class_exists( 'Ad_Booster' ) ) :
 		}
 
 		public function setup() {
-
-			// Loads wp-content/languages/themes/adbooster-it_IT.mo.
-			load_theme_textdomain( 'adbooster', trailingslashit( WP_LANG_DIR ) . 'themes/' );
-
-			// Loads wp-content/themes/child-theme-name/languages/it_IT.mo.
-			load_theme_textdomain( 'adbooster', get_stylesheet_directory() . '/languages' );
 
 			// Loads wp-content/themes/azonbooster/languages/it_IT.mo.
 			load_theme_textdomain( 'adbooster', get_template_directory() . '/languages' );
@@ -73,11 +65,6 @@ if ( ! class_exists( 'Ad_Booster' ) ) :
 			 * @link http://codex.wordpress.org/Function_Reference/add_theme_support#Post_Thumbnails
 			 */
 			add_theme_support( 'post-thumbnails' );
-
-			/**
-			 * Set Post Thumbnail
-			 */
-			$this->set_custom_thumbnail();
 
 			/**
 			 * Enable support for site logo
@@ -133,12 +120,35 @@ if ( ! class_exists( 'Ad_Booster' ) ) :
 			);
 
 			$sidebar_args['header'] = array(
-				'name'        => __( 'Below Header', 'adbooster' ),
+				'name'        => __( 'Banner Header', 'adbooster' ),
 				'id'          => 'header-1',
-				'description' => __( 'Widgets added to this region will appear beneath the header and above the main content.', 'adbooster' ),
+				'description' => __( 'Widgets added to this region will appear on the banner header location. Recommend max-width: 728px and max-height: 90px', 'adbooster' ),
+			);
+			$sidebar_args['before-loop'] = array(
+				'name'        => __( 'Before loop', 'adbooster' ),
+				'id'          => 'before-loop',
+				'description' => __( 'Widgets added to this region will appear before post loop', 'adbooster' ),
 			);
 
-			$rows    = intval( apply_filters( 'adbooster_footer_widget_rows', 2 ) );
+			$sidebar_args['after-loop'] = array(
+				'name'        => __( 'After loop', 'adbooster' ),
+				'id'          => 'after-loop',
+				'description' => __( 'Widgets added to this region will appear after post loop', 'adbooster' ),
+			);
+
+			$sidebar_args['before-single'] = array(
+				'name'        => __( 'Before Single Post', 'adbooster' ),
+				'id'          => 'before-single-post',
+				'description' => __( 'Widgets added to this region will appear before single post.', 'adbooster' ),
+			);
+
+			$sidebar_args['after-single'] = array(
+				'name'        => __( 'After Single Post', 'adbooster' ),
+				'id'          => 'after-single-post',
+				'description' => __( 'Widgets added to this region will appear after single post', 'adbooster' ),
+			);
+
+			$rows    = intval( apply_filters( 'adbooster_footer_widget_rows', 1 ) );
 			$regions = intval( apply_filters( 'adbooster_footer_widget_columns', 4 ) );
 
 			for ( $row = 1; $row <= $rows; $row++ ) {
@@ -147,10 +157,14 @@ if ( ! class_exists( 'Ad_Booster' ) ) :
 					$footer   = sprintf( 'footer_%d', $footer_n );
 
 					if ( 1 == $rows ) {
+						// translators: %1$d: Number area
 						$footer_region_name = sprintf( __( 'Footer Column %1$d', 'adbooster' ), $region );
+						// translators: %1$d: Row number, %2$d: Column number
 						$footer_region_description = sprintf( __( 'Widgets added here will appear in column %1$d of the footer.', 'adbooster' ), $region );
 					} else {
+						// translators: %1$d: Row number
 						$footer_region_name = sprintf( __( 'Footer Row %1$d - Column %2$d', 'adbooster' ), $row, $region );
+						// translators: %1$d: Row number, %2$d: Column number
 						$footer_region_description = sprintf( __( 'Widgets added here will appear in column %1$d of footer row %2$d.', 'adbooster' ), $region, $row );
 					}
 
@@ -200,8 +214,6 @@ if ( ! class_exists( 'Ad_Booster' ) ) :
 			 */
 			wp_enqueue_style( 'adbooster-style', get_template_directory_uri() . '/style.css', '', $adbooster_version );
 
-			wp_enqueue_style( 'adbooster-icons', get_template_directory_uri() . '/assets/sass/base/icons.css', '', $adbooster_version );
-
 			/**
 			 * Fonts
 			 */
@@ -222,7 +234,7 @@ if ( ! class_exists( 'Ad_Booster' ) ) :
 			 * Scripts
 			 */
 			wp_enqueue_script( 'adbooster-script', get_template_directory_uri() . '/assets/js/script.min.js', array( 'jquery' ), '20120206', true );
-			wp_enqueue_script( 'adbooster-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.min.js', array(), '20130115', true );
+			
 
 			/**
 			 * Scripts
@@ -293,6 +305,15 @@ if ( ! class_exists( 'Ad_Booster' ) ) :
 				$classes[] = 'has-post-thumbnail';
 			}
 
+			// Wide header for the billboard size
+			$wide_header = apply_filters( 'adbooster_wide_header', false );
+
+			if ( $wide_header ) {
+
+				$classes[] = 'wide-header';
+
+			}
+
 			return $classes;
 		}
 
@@ -335,88 +356,8 @@ if ( ! class_exists( 'Ad_Booster' ) ) :
 					min-width: 100%;
 					margin-bottom: .618em;
 				}
-
-				a.wc-embed-button {
-					padding: .857em 1.387em !important;
-					font-weight: 600;
-					background-color: <?php echo esc_attr( $accent_color ); ?>;
-					color: #fff !important;
-					border: 0 !important;
-					line-height: 1;
-					border-radius: 0 !important;
-					box-shadow:
-						inset 0 -1px 0 rgba(#000,.3);
-				}
-
-				a.wc-embed-button + a.wc-embed-button {
-					background-color: #60646c;
-				}
 			</style>
 			<?php
-		}
-
-		/**
-		 * Sets `self::structured_data`.
-		 *
-		 * @param array $json
-		 */
-		public static function set_structured_data( $json ) {
-			if ( ! is_array( $json ) ) {
-				return;
-			}
-
-			self::$structured_data[] = $json;
-		}
-
-		/**
-		 * Outputs structured data.
-		 *
-		 * Hooked into `wp_footer` action hook.
-		 */
-		public function get_structured_data() {
-			if ( ! self::$structured_data ) {
-				return;
-			}
-
-			$structured_data['@context'] = 'http://schema.org/';
-
-			if ( count( self::$structured_data ) > 1 ) {
-				$structured_data['@graph'] = self::$structured_data;
-			} else {
-				$structured_data = $structured_data + self::$structured_data[0];
-			}
-
-			echo '<script type="application/ld+json">' . wp_json_encode( $this->sanitize_structured_data( $structured_data ) ) . '</script>';
-		}
-
-		/**
-		 * Sanitizes structured data.
-		 *
-		 * @param  array $data
-		 * @return array
-		 */
-		public function sanitize_structured_data( $data ) {
-			$sanitized = array();
-
-			foreach ( $data as $key => $value ) {
-				if ( is_array( $value ) ) {
-					$sanitized_value = $this->sanitize_structured_data( $value );
-				} else {
-					$sanitized_value = sanitize_text_field( $value );
-				}
-
-				$sanitized[ sanitize_text_field( $key ) ] = $sanitized_value;
-			}
-
-			return $sanitized;
-		}
-
-		public function set_custom_thumbnail() {
-
-			//add_image_size( 'adbooster-magazine-small', 366, 226, true );
-			//add_image_size( 'adbooster-magazine-medium', 360, 508, true );
-			add_image_size( 'adbooster-post-feature-large', 694, 390, true);
-
 		}
 
 		public function the_archive_title() {
@@ -497,8 +438,12 @@ if ( ! class_exists( 'Ad_Booster' ) ) :
 				'is_automatic' => false,                   // Automatically activate plugins after installation or not.
 				
 			);
-			// require plugins 
-			tgmpa( $plugins, $config );
+
+			if ( function_exists( 'tgmpa' ) ) {
+				// require plugins 
+				tgmpa( $plugins, $config );
+			}
+			
 
 		}
 

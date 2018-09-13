@@ -1,333 +1,341 @@
 <?php
 /**
- * Class adbooster_Homepage_Output for customize render
+ * Class Ad_Booster_Homepage_Output for customize render
  *
  * @since 1.2.0
+ * @version  1.0.0
  * @package adbooster
  */
-class adbooster_Homepage_Output
-{
-	public function __construct() {
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+}
 
-		add_filter( 'adbooster_homepage_content_show', array( $this, 'show_homepage_content' ) );
+if ( ! class_exists( 'Ad_Booster_Homepage_Output' ) ) {
 
-		add_action( 'adbooster_homepage', array( $this, 'featured_posts'), 20 );
-		add_action( 'adbooster_homepage', array( $this, 'custom_content'), 50 );
-	}
+	class Ad_Booster_Homepage_Output
+	{
+		public function __construct() {
 
-	/**
-	 * Featured posts onf Homepage
-	 *
-	 * @since 1.2.2
-	 * @return void
-	 */
-	public function featured_posts() {
+			add_filter( 'adbooster_homepage_content_show', array( $this, 'show_homepage_content' ) );
 
-		$show_featured_posts = apply_filters( 'adbooster_homepage_featured_posts_show', true );
-
-		// return back
-		if ( ! $show_featured_posts ) return;
-
-		$param['cat'] = adbooster_get_option('homepage_featured_posts_cat_setting', 0);
-		$param['post_per_page'] = adbooster_get_option( 'homepage_featured_posts_num_setting', 5 );
-		$param['ignore_sticky_posts'] = adbooster_get_option( 'homepage_fp_ignore_sticky_posts_setting', true);
-		$param['order'] = adbooster_get_option ( 'homepage_featured_posts_order_setting', 'DESC' );
-		$param['orderby'] = adbooster_get_option ( 'homepage_featured_posts_orderby_setting', 'date' );
-
-
-		$posts = $this->get_posts( $param );
-
-		if ( ! empty( $posts ) ) { 
-			echo $this->render_featured_posts( $posts );
+			add_action( 'adbooster_homepage', array( $this, 'featured_posts'), 20 );
+			add_action( 'adbooster_homepage', array( $this, 'custom_content'), 50 );
 		}
-	}
 
-	/**
-	 * Render featured posts on Homepage
-	 * 
-	 * @param  array $posts
-	 * @since 1.2.2
-	 * @return mixed
-	 */
-	public function render_featured_posts( $posts ) {
-		global $post;
+		/**
+		 * Featured posts onf Homepage
+		 *
+		 * @since 1.2.2
+		 * @return void
+		 */
+		public function featured_posts() {
 
-		$i = 1;
-		
-		ob_start();
-		?>
-		<div class="azb-featured-posts">
-		<?php
-		foreach ( $posts as $post ) :
+			$show_featured_posts = apply_filters( 'adbooster_homepage_featured_posts_show', true );
 
-			setup_postdata( $post );
+			// return back
+			if ( ! $show_featured_posts ) return;
 
-			if ( $i == 1 ) :
-				?>
-				<div class="featured-posts-first">
-					<?php if ( has_post_thumbnail() ) : ?>
-						<div class="featured-posts-thumb">
-							<?php the_post_thumbnail('large'); ?>
-							<h3 class="featured-posts-title">
-							<a href="<?php the_permalink() ?>"><?php the_title() ?></a>
-							</h3>
-						</div>
-					<?php endif ?>
-				</div>
-				<div class="featured-posts-second">
-					<ul class="featured-posts-list">
-				<?php
-			else:
-				?>
-				<li><a href="<?php the_permalink() ?>"><?php the_title() ?></a></li>
-				<?php
-			endif;
+			$param['cat'] = adbooster_get_option('homepage_featured_posts_cat_setting', 0);
+			$param['post_per_page'] = adbooster_get_option( 'homepage_featured_posts_num_setting', 5 );
+			$param['ignore_sticky_posts'] = adbooster_get_option( 'homepage_fp_ignore_sticky_posts_setting', true);
+			$param['order'] = adbooster_get_option ( 'homepage_featured_posts_order_setting', 'DESC' );
+			$param['orderby'] = adbooster_get_option ( 'homepage_featured_posts_orderby_setting', 'date' );
+
+
+			$posts = $this->get_posts( $param );
+
+			if ( ! empty( $posts ) ) { 
+				echo $this->render_featured_posts( $posts );
+			}
+		}
+
+		/**
+		 * Render featured posts on Homepage
+		 * 
+		 * @param  array $posts
+		 * @since 1.2.2
+		 * @return mixed
+		 */
+		public function render_featured_posts( $posts ) {
+			global $post;
+
+			$i = 1;
 			
-			$i++;
-		endforeach;
+			ob_start();
+			?>
+			<div class="azb-featured-posts">
+			<?php
+			foreach ( $posts as $post ) :
 
-		?>
-				</ul> <!-- /.featured-posts-list -->
-			</div> <!-- /.featured-posts-second -->
-		</div> <!-- /.azb-featured-posts -->
-		<?php
-		wp_reset_postdata();
+				setup_postdata( $post );
 
-		$content = ob_get_clean();
+				if ( $i == 1 ) :
+					?>
+					<div class="featured-posts-first">
+						<?php if ( has_post_thumbnail() ) : ?>
+							<div class="featured-posts-thumb">
+								<?php the_post_thumbnail('large'); ?>
+								<h3 class="featured-posts-title">
+								<a href="<?php the_permalink() ?>"><?php the_title() ?></a>
+								</h3>
+							</div>
+						<?php endif ?>
+					</div>
+					<div class="featured-posts-second">
+						<ul class="featured-posts-list">
+					<?php
+				else:
+					?>
+					<li><a href="<?php the_permalink() ?>"><?php the_title() ?></a></li>
+					<?php
+				endif;
+				
+				$i++;
+			endforeach;
 
-		return $content;
-	}
+			?>
+					</ul> <!-- /.featured-posts-list -->
+				</div> <!-- /.featured-posts-second -->
+			</div> <!-- /.azb-featured-posts -->
+			<?php
+			wp_reset_postdata();
 
-	/**
-	 * Show or hide default page content
-	 * 
-	 * @since 1.2.0
-	 * @param  boolean $is_show
-	 * @return boolean
-	 */
-	public function show_homepage_content( $is_show ) {
+			$content = ob_get_clean();
 
-		$is_show = adbooster_get_option( 'homepage_show_page_content_setting', true );
+			return $content;
+		}
 
-		return $is_show;
-	}
+		/**
+		 * Show or hide default page content
+		 * 
+		 * @since 1.2.0
+		 * @param  boolean $is_show
+		 * @return boolean
+		 */
+		public function show_homepage_content( $is_show ) {
 
-	/**
-	 * Show homepage custom content
-	 *
-	 * @since 1.2.0
-	 * @return void
-	 */
-	public function custom_content() {
+			$is_show = adbooster_get_option( 'homepage_show_page_content_setting', true );
 
-		$contents = adbooster_get_option( 'homepage_content_setting', array() );
-		$columns = adbooster_get_option( 'homepage_content_col_setting', 2);
+			return $is_show;
+		}
 
-		if ( ! empty( $contents ) ) {
-			// Div Container
-			printf('<div class="azb-hmp-container azb-hmp-box-%s">', $columns);
-			if ( $columns > 1 ) {
+		/**
+		 * Show homepage custom content
+		 *
+		 * @since 1.2.0
+		 * @return void
+		 */
+		public function custom_content() {
 
-				$contents = array_chunk( $contents, $columns );
+			$contents = adbooster_get_option( 'homepage_content_setting', array() );
+			$columns = adbooster_get_option( 'homepage_content_col_setting', 2);
 
-				foreach ( $contents as $key => $vals ) {
+			if ( ! empty( $contents ) ) {
+				// Div Container
+				printf('<div class="azb-hmp-container azb-hmp-box-%s">', intval( $columns ) );
+				if ( $columns > 1 ) {
 
-					printf('<div class="azb-hmp-row azb-hmp-row-%s">', $key+1 );
-						$index = 1;
-						foreach ( $vals as $v ) {
+					$contents = array_chunk( $contents, $columns );
 
-							echo $this->render_main($v, $index);
-							$index++;
+					foreach ( $contents as $key => $vals ) {
+
+						printf('<div class="azb-hmp-row azb-hmp-row-%s">', intval( $key ) +1 );
+							$index = 1;
+							foreach ( $vals as $v ) {
+
+								echo $this->render_main($v, $index);
+								$index++;
+							}
+
+						echo '</div>';
+					}
+
+				} else {
+
+					echo '<div class="azb-hmp-row azb-hmp-row-1">';
+
+						foreach ( $contents as $content ) {
+
+							echo $this->render_main( $content );						
+						
 						}
 
 					echo '</div>';
 				}
 
+				echo '</div>'; // Div container
+			}
+			
+		}
+
+		private function render_main( $param, $index = 1 ) {
+
+			$posts = $this->get_posts( $param );
+
+			$content = '';
+
+			if ( ! empty( $posts ) ) {
+				
+				printf( '<div class="azb-box azb-box-%s">', intval( $index ) );
+				$this->render_category( $param );
+				echo $this->render_posts( $posts, $param );
+				echo '</div>';
+
+			}
+
+		}
+
+		/**
+		 * Render posts from each repeater control
+		 * 
+		 * @param  array $posts
+		 * @param  array $param
+		 * @return string
+		 */
+		private function render_posts( $posts, $param ) {
+			global $post;
+
+			ob_start();
+
+			$ul_class = 'azb-hmp-style-'. $param['render_style'];
+
+			 $ul_class .= $param['render_style'] == 'grid' ?  ' grid-'. $param['num_cols'] : '';
+
+			printf('<ul class="%s">', esc_attr( $ul_class ) );
+			foreach ( $posts as $post ) :
+
+				setup_postdata($post);
+				?>
+				<li>
+					<?php $this->render_post_title( $param ) ?>
+					<?php $this->render_post_content( $param ) ?>
+
+				</li>
+				<?php
+
+			endforeach;
+			echo '</ul>';
+			wp_reset_postdata();
+
+			$content = ob_get_clean();
+
+			return $content;
+		}
+
+		/**
+		 * Get posts by custom condition on homepage
+		 *
+		 * @since 1.2.0
+		 * @param  array $params
+		 * @return array of posts
+		 */
+		private function get_posts( $params ) {
+
+			$args = array(
+				'ignore_sticky_posts'	=> isset( $params['ignore_sticky_posts'] ) ? $params['ignore_sticky_posts'] : true,
+				'posts_per_page'	=> $params['post_per_page'],
+			);
+
+			if ( intval( $params['cat'] ) > 0 ) {
+				$args['cat'] = $params['cat'];
+			}
+
+			if ( isset( $params['order'] ) ) {
+
+				$args['order'] = $params['order'];
+			}
+
+			if ( isset( $params['orderby'] ) ) {
+				
+				$args['orderby'] = $params['orderby'];
+			}
+
+			$posts = get_posts( $args );
+
+			return $posts;
+		}
+
+		private function render_post_title( $param ) {
+
+			?>
+				<div class="azb-hmp-title">
+					<?php 
+						if ( $param['image_pos'] == 'befor_title') : 
+							$this->render_post_thumbnail( $param );
+						endif;
+
+					?>
+					<a href="<?php the_permalink() ?>"><?php echo $this->render_simple_html_el( get_the_title(), $param['post_content_title_el'] ) ?></a>
+					<?php 
+						if ( $param['image_pos'] == 'after_title') : 
+							$this->render_post_thumbnail( $param );
+						endif;
+
+					?>
+				</div>
+			<?php
+		}
+
+		private function render_post_content( $param ) {
+
+			// If don't show content
+			if ( $param['post_content_type'] == 'none' ) return;
+
+			?>
+			<div class="azb-hmp-content"><?php the_excerpt() ?></div>
+			<?php
+		}
+
+		private function render_post_thumbnail( $param ) {
+
+			// Return if post doesn't have or show thumbnail
+			if ( ! $param['image_show'] || ! has_post_thumbnail() ) return;
+
+			$class = 'img-align-'. $param['image_alignment'];
+
+			
+			printf('<div class="%s">', esc_attr( $class ) );
+			the_post_thumbnail();
+			echo '</div>';
+		}
+
+		private function render_category( $param ) {
+
+			if ( $param['cat'] == 0 ) {
+
+				printf('<h2 class="azb-hmp-cat"><a href="%s">%s</a></h2>', get_permalink( get_option( 'page_for_posts' ) ), esc_html__('Recent Posts', 'adbooster') . ' <span class="arrow">&raquo;</span>' );
+
 			} else {
 
-				echo '<div class="azb-hmp-row azb-hmp-row-1">';
+				$cat = get_category( $param['cat'] );			
+				$content = sprintf('<h2 class="azb-hmp-cat"><a href="%s">%s</a></h2>', get_category_link($cat), $cat->name . ' <span class="arrow">&raquo;</span>');
 
-					foreach ( $contents as $content ) {
 
-						echo $this->render_main( $content );						
-					
-					}
+				if ( intval($param['cat_img'] ) > 0 ) {
 
-				echo '</div>';
+					$content .= sprintf( '<div class="cat-img">%s</div>', wp_get_attachment_image( $param['cat_img'], array('450', '320')) );
+				}
+
+				if ( $cat->description != '' ) {
+					$content .= sprintf('<div class="cat-desc">%s</div>', $cat->description );
+				}
+
+				printf('<div class="cat-summary">%s</div>', $content );
+				
 			}
-
-			echo '</div>'; // Div container
 		}
-		
-	}
 
-	private function render_main( $param, $index = 1 ) {
-
-		$posts = $this->get_posts( $param );
-
-		$content = '';
-
-		if ( ! empty( $posts ) ) {
+		public function render_simple_html_el( $content, $tag, $class = '', $id = '' ) {
 			
-			printf( '<div class="azb-box azb-box-%s">', $index );
-			$this->render_category( $param );
-			echo $this->render_posts( $posts, $param );
-			echo '</div>';
+			$class = $class != '' ? ' class="' . $class .'"' : '';
+			$id = $id != '' ? ' id="' . $id .'"' : '';
 
+			$attr = $class . $id;
+
+			return sprintf('<%s %s >%s</%s>', $tag, $attr, $content, $tag );
 		}
 
 	}
+} // end if condition
 
-	/**
-	 * Render posts from each repeater control
-	 * 
-	 * @param  array $posts
-	 * @param  array $param
-	 * @return string
-	 */
-	private function render_posts( $posts, $param ) {
-		global $post;
-
-		ob_start();
-
-		$ul_class = 'azb-hmp-style-'. $param['render_style'];
-
-		 $ul_class .= $param['render_style'] == 'grid' ?  ' grid-'. $param['num_cols'] : '';
-
-		printf('<ul class="%s">', $ul_class);
-		foreach ( $posts as $post ) :
-
-			setup_postdata($post);
-			?>
-			<li>
-				<?php $this->render_post_title( $param ) ?>
-				<?php $this->render_post_content( $param ) ?>
-
-			</li>
-			<?php
-
-		endforeach;
-		echo '</ul>';
-		wp_reset_postdata();
-
-		$content = ob_get_clean();
-
-		return $content;
-	}
-
-	/**
-	 * Get posts by custom condition on homepage
-	 *
-	 * @since 1.2.0
-	 * @param  array $params
-	 * @return array of posts
-	 */
-	private function get_posts( $params ) {
-
-		$args = array(
-			'ignore_sticky_posts'	=> isset( $params['ignore_sticky_posts'] ) ? $params['ignore_sticky_posts'] : true,
-			'posts_per_page'	=> $params['post_per_page'],
-		);
-
-		if ( intval( $params['cat'] ) > 0 ) {
-			$args['cat'] = $params['cat'];
-		}
-
-		if ( isset( $params['order'] ) ) {
-
-			$args['order'] = $params['order'];
-		}
-
-		if ( isset( $params['orderby'] ) ) {
-			
-			$args['orderby'] = $params['orderby'];
-		}
-
-		$posts = get_posts( $args );
-
-		return $posts;
-	}
-
-	private function render_post_title( $param ) {
-
-		?>
-			<div class="azb-hmp-title">
-				<?php 
-					if ( $param['image_pos'] == 'befor_title') : 
-						$this->render_post_thumbnail( $param );
-					endif;
-
-				?>
-				<a href="<?php the_permalink() ?>"><?php echo $this->render_simple_html_el( get_the_title(), $param['post_content_title_el'] ) ?></a>
-				<?php 
-					if ( $param['image_pos'] == 'after_title') : 
-						$this->render_post_thumbnail( $param );
-					endif;
-
-				?>
-			</div>
-		<?php
-	}
-
-	private function render_post_content( $param ) {
-
-		// If don't show content
-		if ( $param['post_content_type'] == 'none' ) return;
-
-		?>
-		<div class="azb-hmp-content"><?php the_excerpt() ?></div>
-		<?php
-	}
-
-	private function render_post_thumbnail( $param ) {
-
-		// Return if post doesn't have or show thumbnail
-		if ( ! $param['image_show'] || ! has_post_thumbnail() ) return;
-
-		$class = 'img-align-'. $param['image_alignment'];
-
-		
-		printf('<div class="%s">', $class);
-		the_post_thumbnail();
-		echo '</div>';
-	}
-
-	private function render_category( $param ) {
-
-		if ( $param['cat'] == 0 ) {
-
-			printf('<h2 class="azb-hmp-cat"><a href="%s">%s</a></h2>', get_permalink( get_option( 'page_for_posts' ) ), __('Recent Posts', 'adbooster') . ' <span class="arrow">&raquo;</span>' );
-
-		} else {
-
-			$cat = get_category( $param['cat'] );			
-			$content = sprintf('<h2 class="azb-hmp-cat"><a href="%s">%s</a></h2>', get_category_link($cat), $cat->name . ' <span class="arrow">&raquo;</span>');
-
-
-			if ( intval($param['cat_img'] ) > 0 ) {
-
-				$content .= sprintf( '<div class="cat-img">%s</div>', wp_get_attachment_image( $param['cat_img'], array('450', '320')) );
-			}
-
-			if ( $cat->description != '' ) {
-				$content .= sprintf('<div class="cat-desc">%s</div>', $cat->description );
-			}
-
-			printf('<div class="cat-summary">%s</div>', $content );
-			
-		}
-	}
-
-	public function render_simple_html_el( $content, $tag, $class = '', $id = '' ) {
-		
-		$class = $class != '' ? ' class="' . $class .'"' : '';
-		$id = $id != '' ? ' id="' . $id .'"' : '';
-
-		$attr = $class . $id;
-
-		return sprintf('<%s %s >%s</%s>', $tag, $attr, $content, $tag );
-	}
-
-}
-
-new adbooster_Homepage_Output();
+new Ad_Booster_Homepage_Output();

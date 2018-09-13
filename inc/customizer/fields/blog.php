@@ -25,20 +25,7 @@ function adbooster_blog_fields( $fields ) {
 				),
 				
 			),
-			array(
-				'settings'          => 'blog_layout_thumbnail_pos',
-				'label'             => __('Thumbnail Position', 'adbooster'),
-				'section'           => 'adbooster_blog_layout_section',
-				'type'              => 'radio-buttonset',
-				'default'           => 'left',
-				'priority'          => 2,
-				'choices'     => array(
-					'left'				=> __('Left', 'adbooster'),
-					'top'				=> __('Top', 'adbooster'),
-					'right'				=> __('Right', 'adbooster')
-				),
-				
-			),
+			
 
 			// adbooster_blog_post_section
 			array(
@@ -113,7 +100,7 @@ function adbooster_blog_fields( $fields ) {
 					array(
 						'setting'  => 'blog_post_show_excerpt',
 						'operator' => '==',
-						'value'    => 'on',
+						'value'    => true,
 					)
 				)
 				
@@ -125,14 +112,19 @@ function adbooster_blog_fields( $fields ) {
 				'label'             => __('Read More Label', 'adbooster'),
 				'section'           => 'adbooster_blog_post_section',
 				'type'              => 'text',
-				'default'           => __('View Detail', 'adbooster'),
+				'default'           => __('Continue reading &rarr;', 'adbooster'),
 				'priority'          => 9,
 				
 				'active_callback' => array(
 					array(
 						'setting'  => 'blog_post_show_readmore',
 						'operator' => '==',
-						'value'    => 'on',
+						'value'    => true,
+					),
+					array(
+						'setting'  => 'blog_post_show_excerpt',
+						'operator' => '==',
+						'value'    => true,
 					)
 				)
 				
@@ -150,6 +142,28 @@ function adbooster_blog_fields( $fields ) {
 					'on'				=> esc_attr__( 'On', 'adbooster' ),
 					'off'				=> esc_attr__( 'Off', 'adbooster' ),
 				),
+				
+			),
+
+			array(
+				'settings'          => 'blog_layout_thumbnail_pos',
+				'label'             => __('Thumbnail Position', 'adbooster'),
+				'section'           => 'adbooster_blog_post_section',
+				'type'              => 'radio-buttonset',
+				'default'           => 'left',
+				'priority'          => 10,
+				'choices'     => array(
+					'left'				=> __('Left', 'adbooster'),
+					'top'				=> __('Top', 'adbooster'),
+					'right'				=> __('Right', 'adbooster')
+				),
+				'active_callback' => array(
+					array(
+						'setting'  => 'blog_post_show_thumbnail',
+						'operator' => '==',
+						'value'    => true,
+					)
+				)
 				
 			),
 
@@ -271,11 +285,11 @@ function adbooster_blog_fields( $fields ) {
 				'default'           => '4',
 				'priority'          => 10,
 				'choices'     => array(
-					'0'				=> __('0', 'adbooster'),
-					'1'				=> __('1', 'adbooster'),
-					'2'				=> __('2', 'adbooster'),
-					'3'				=> __('3', 'adbooster'),
-					'4'				=> __('4', 'adbooster')
+					'0'				=> 0,
+					'1'				=> 1,
+					'2'				=> 2,
+					'3'				=> 3,
+					'4'				=> 4
 				),
 				
 			),
@@ -287,10 +301,10 @@ function adbooster_blog_fields( $fields ) {
 				'default'           => '2',
 				'priority'          => 11,
 				'choices'     => array(
-					'1'				=> __('1', 'adbooster'),
-					'2'				=> __('2', 'adbooster'),
-					'3'				=> __('3', 'adbooster'),
-					'4'				=> __('4', 'adbooster')
+					'1'				=> 1,
+					'2'				=> 2,
+					'3'				=> 3,
+					'4'				=> 4
 				),
 				
 			),

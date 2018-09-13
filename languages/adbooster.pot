@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: AdBooster 1.0.0\n"
 "Report-Msgid-Bugs-To: https://gitlab.com/boosterwp/adbooster.git\n"
-"POT-Creation-Date: 2018-08-01 10:42:51+00:00\n"
+"POT-Creation-Date: 2018-09-13 10:43:33+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12,26 +12,6 @@ msgstr ""
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "X-Generator: grunt-wp-i18n1.0.2\n"
-
-#: inc/customizer/fields/blog.php:274
-msgid "0"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:275 inc/customizer/fields/blog.php:290
-msgid "1"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:276 inc/customizer/fields/blog.php:291
-msgid "2"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:277 inc/customizer/fields/blog.php:292
-msgid "3"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:278 inc/customizer/fields/blog.php:293
-msgid "4"
-msgstr ""
 
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
@@ -61,53 +41,89 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: inc/class-adbooster.php:93
+#: inc/class-adbooster.php:80
 msgid "Primary Menu"
 msgstr ""
 
-#: inc/class-adbooster.php:94
+#: inc/class-adbooster.php:81
 msgid "Secondary Menu"
 msgstr ""
 
-#: inc/class-adbooster.php:95
+#: inc/class-adbooster.php:82
 msgid "Footer Menu"
 msgstr ""
 
-#: inc/class-adbooster.php:130
+#: inc/class-adbooster.php:117
 msgid "Sidebar"
 msgstr ""
 
-#: inc/class-adbooster.php:136
-msgid "Below Header"
+#: inc/class-adbooster.php:123
+msgid "Banner Header"
 msgstr ""
 
-#: inc/class-adbooster.php:138
+#: inc/class-adbooster.php:125
 msgid ""
-"Widgets added to this region will appear beneath the header and above the "
-"main content."
+"Widgets added to this region will appear on the banner header location. "
+"Recommend max-width: 728px and max-height: 90px"
 msgstr ""
 
-#: inc/class-adbooster.php:150
+#: inc/class-adbooster.php:128
+msgid "Before loop"
+msgstr ""
+
+#: inc/class-adbooster.php:130
+msgid "Widgets added to this region will appear before post loop"
+msgstr ""
+
+#: inc/class-adbooster.php:134
+msgid "After loop"
+msgstr ""
+
+#: inc/class-adbooster.php:136
+msgid "Widgets added to this region will appear after post loop"
+msgstr ""
+
+#: inc/class-adbooster.php:140
+msgid "Before Single Post"
+msgstr ""
+
+#: inc/class-adbooster.php:142
+msgid "Widgets added to this region will appear before single post."
+msgstr ""
+
+#: inc/class-adbooster.php:146
+msgid "After Single Post"
+msgstr ""
+
+#: inc/class-adbooster.php:148
+msgid "Widgets added to this region will appear after single post"
+msgstr ""
+
+#: inc/class-adbooster.php:161
+#. translators: %1$d: Number area
 msgid "Footer Column %1$d"
 msgstr ""
 
-#: inc/class-adbooster.php:151
+#: inc/class-adbooster.php:163
+#. translators: %1$d: Row number, %2$d: Column number
 msgid "Widgets added here will appear in column %1$d of the footer."
 msgstr ""
 
-#: inc/class-adbooster.php:153
+#: inc/class-adbooster.php:166
+#. translators: %1$d: Row number
 msgid "Footer Row %1$d - Column %2$d"
 msgstr ""
 
-#: inc/class-adbooster.php:154
+#: inc/class-adbooster.php:168
+#. translators: %1$d: Row number, %2$d: Column number
 msgid "Widgets added here will appear in column %1$d of footer row %2$d."
 msgstr ""
 
-#: inc/class-adbooster.php:303
+#: inc/class-adbooster.php:324
 msgid "Post Navigation"
 msgstr ""
 
-#: inc/class-adbooster.php:469
+#: inc/class-adbooster.php:410
 #. translators: Taxonomy term archive title. 1: Taxonomy singular name, 2:
 #. Current taxonomy term
 msgid "%1$s: %2$s"
@@ -463,334 +479,331 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/customizer/class-customizer-output.php:159
-msgid "Read More..."
+#: inc/customizer/class-customizer-output.php:201
+#: inc/customizer/fields/blog.php:115 inc/template-functions.php:418
+msgid "Continue reading &rarr;"
 msgstr ""
 
-#: inc/customizer/class-customizer.php:44
+#: inc/customizer/class-customizer.php:58
 msgid "Blog"
 msgstr ""
 
-#: inc/customizer/class-customizer.php:45
+#: inc/customizer/class-customizer.php:59
 msgid "The basic theme options for free version."
 msgstr ""
 
-#: inc/customizer/class-customizer.php:50
-msgid "AzonBooster Homepage"
+#: inc/customizer/class-customizer.php:64
+msgid "AdBooster Homepage"
 msgstr ""
 
-#: inc/customizer/class-customizer.php:51
+#: inc/customizer/class-customizer.php:65
 msgid "Homepage control panel."
 msgstr ""
 
-#: inc/customizer/class-customizer.php:83 inc/customizer/fields/blog.php:16
+#: inc/customizer/class-customizer.php:97 inc/customizer/fields/blog.php:16
 msgid "Blog Layout"
 msgstr ""
 
-#: inc/customizer/class-customizer.php:88
+#: inc/customizer/class-customizer.php:102
 msgid "Blog Posts"
 msgstr ""
 
-#: inc/customizer/class-customizer.php:93
+#: inc/customizer/class-customizer.php:107
 msgid "Single Post"
 msgstr ""
 
-#: inc/customizer/class-customizer.php:98
+#: inc/customizer/class-customizer.php:112
 msgid "Footer Widgets"
 msgstr ""
 
-#: inc/customizer/class-customizer.php:104
+#: inc/customizer/class-customizer.php:118
 msgid "General"
 msgstr ""
 
-#: inc/customizer/class-customizer.php:110 inc/customizer/fields/blog.php:334
+#: inc/customizer/class-customizer.php:124 inc/customizer/fields/blog.php:348
 msgid "Featured Posts"
 msgstr ""
 
-#: inc/customizer/class-customizer.php:116 inc/customizer/fields/blog.php:407
+#: inc/customizer/class-customizer.php:130 inc/customizer/fields/blog.php:421
 msgid "Custom Content"
 msgstr ""
 
-#: inc/customizer/class-homepage-ouput.php:299
+#: inc/customizer/class-homepage-ouput.php:306
 msgid "Recent Posts"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:30
-msgid "Thumbnail Position"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:36 inc/customizer/fields/blog.php:466
-msgid "Left"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:37
-msgid "Top"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:38 inc/customizer/fields/blog.php:468
-msgid "Right"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:46
+#: inc/customizer/fields/blog.php:33
 msgid "Show Excerpt"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:52 inc/customizer/fields/blog.php:108
-#: inc/customizer/fields/blog.php:150 inc/customizer/fields/blog.php:184
-#: inc/customizer/fields/blog.php:212 inc/customizer/fields/blog.php:226
-#: inc/customizer/fields/blog.php:259
+#: inc/customizer/fields/blog.php:39 inc/customizer/fields/blog.php:95
+#: inc/customizer/fields/blog.php:142 inc/customizer/fields/blog.php:198
+#: inc/customizer/fields/blog.php:226 inc/customizer/fields/blog.php:240
+#: inc/customizer/fields/blog.php:273
 msgid "On"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:53 inc/customizer/fields/blog.php:109
-#: inc/customizer/fields/blog.php:151 inc/customizer/fields/blog.php:185
-#: inc/customizer/fields/blog.php:213 inc/customizer/fields/blog.php:227
-#: inc/customizer/fields/blog.php:260
+#: inc/customizer/fields/blog.php:40 inc/customizer/fields/blog.php:96
+#: inc/customizer/fields/blog.php:143 inc/customizer/fields/blog.php:199
+#: inc/customizer/fields/blog.php:227 inc/customizer/fields/blog.php:241
+#: inc/customizer/fields/blog.php:274
 msgid "Off"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:60
+#: inc/customizer/fields/blog.php:47
 msgid "Excerpt Length"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:82
+#: inc/customizer/fields/blog.php:69
 msgid "Excerpt More String"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:102
+#: inc/customizer/fields/blog.php:89
 msgid "Show Read More"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:125
+#: inc/customizer/fields/blog.php:112
 msgid "Read More Label"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:128 inc/template-functions.php:351
-msgid "View Detail"
-msgstr ""
-
-#: inc/customizer/fields/blog.php:144 inc/customizer/fields/blog.php:206
+#: inc/customizer/fields/blog.php:136 inc/customizer/fields/blog.php:220
 msgid "Show Post Thumbnail"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:160 inc/customizer/fields/blog.php:236
+#: inc/customizer/fields/blog.php:150
+msgid "Thumbnail Position"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:156 inc/customizer/fields/blog.php:480
+msgid "Left"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:157
+msgid "Top"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:158 inc/customizer/fields/blog.php:482
+msgid "Right"
+msgstr ""
+
+#: inc/customizer/fields/blog.php:174 inc/customizer/fields/blog.php:250
 msgid "Shop/Hide Post Meta Data"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:161 inc/customizer/fields/blog.php:237
+#: inc/customizer/fields/blog.php:175 inc/customizer/fields/blog.php:251
 msgid "Check them to show post meta data."
 msgstr ""
 
-#: inc/customizer/fields/blog.php:167 inc/customizer/fields/blog.php:243
-#: inc/customizer/fields/blog.php:379
+#: inc/customizer/fields/blog.php:181 inc/customizer/fields/blog.php:257
+#: inc/customizer/fields/blog.php:393
 msgid "Date"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:168 inc/customizer/fields/blog.php:244
-#: inc/customizer/fields/blog.php:424
+#: inc/customizer/fields/blog.php:182 inc/customizer/fields/blog.php:258
+#: inc/customizer/fields/blog.php:438
 msgid "Category"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:169 inc/customizer/fields/blog.php:245
+#: inc/customizer/fields/blog.php:183 inc/customizer/fields/blog.php:259
 msgid "Tag"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:170 inc/customizer/fields/blog.php:246
-#: inc/customizer/fields/blog.php:378
+#: inc/customizer/fields/blog.php:184 inc/customizer/fields/blog.php:260
+#: inc/customizer/fields/blog.php:392
 msgid "Author"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:171
+#: inc/customizer/fields/blog.php:185
 msgid "Comment"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:178 inc/customizer/fields/blog.php:253
+#: inc/customizer/fields/blog.php:192 inc/customizer/fields/blog.php:267
 msgid "Show Modified Date"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:193
+#: inc/customizer/fields/blog.php:207
 msgid "Date Prefix"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:195
+#: inc/customizer/fields/blog.php:209
 msgid "Prefix before date archive. It will show for all archive and single post."
 msgstr ""
 
-#: inc/customizer/fields/blog.php:220
+#: inc/customizer/fields/blog.php:234
 msgid "Show Post Navigation"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:268
+#: inc/customizer/fields/blog.php:282
 msgid "Footer Widget Columns"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:284
+#: inc/customizer/fields/blog.php:298
 msgid "Footer Widget Rows"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:317
+#: inc/customizer/fields/blog.php:331
 msgid "Show Page Content"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:320
+#: inc/customizer/fields/blog.php:334
 msgid "Switch ON/OFF to show default page content on homepage."
 msgstr ""
 
-#: inc/customizer/fields/blog.php:324
+#: inc/customizer/fields/blog.php:338
 msgid "ON"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:325
+#: inc/customizer/fields/blog.php:339
 msgid "OFF"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:337
+#: inc/customizer/fields/blog.php:351
 msgid ""
 "Choose category to show it's post. Keep [All categories] to show from all "
 "categoies."
 msgstr ""
 
-#: inc/customizer/fields/blog.php:347 inc/customizer/fields/blog.php:436
+#: inc/customizer/fields/blog.php:361 inc/customizer/fields/blog.php:450
 msgid "Number of Posts"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:355
+#: inc/customizer/fields/blog.php:369
 msgid "Ignore Sticky Posts"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:360
+#: inc/customizer/fields/blog.php:374
 msgid "Order"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:364
+#: inc/customizer/fields/blog.php:378
 msgid "Descending"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:364
+#: inc/customizer/fields/blog.php:378
 msgid "Ascending"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:369
+#: inc/customizer/fields/blog.php:383
 msgid "Order By"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:376
+#: inc/customizer/fields/blog.php:390
 msgid "No order"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:377
+#: inc/customizer/fields/blog.php:391
 msgid "ID"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:380
+#: inc/customizer/fields/blog.php:394
 msgid "Modified"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:381
+#: inc/customizer/fields/blog.php:395
 msgid "Parent"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:382
+#: inc/customizer/fields/blog.php:396
 msgid "Random"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:383
+#: inc/customizer/fields/blog.php:397
 msgid "Comment Count"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:396 inc/customizer/fields/blog.php:449
+#: inc/customizer/fields/blog.php:410 inc/customizer/fields/blog.php:463
 msgid "Number of Columns"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:402
+#: inc/customizer/fields/blog.php:416
 msgid "Homepage Content"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:410
+#: inc/customizer/fields/blog.php:424
 msgid "Add New"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:425
+#: inc/customizer/fields/blog.php:439
 msgid "Choose any category"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:430
+#: inc/customizer/fields/blog.php:444
 msgid "Image Category"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:431
+#: inc/customizer/fields/blog.php:445
 msgid "Category Image Thumbnail"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:441
+#: inc/customizer/fields/blog.php:455
 msgid "Render Style"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:443
+#: inc/customizer/fields/blog.php:457
 msgid "List"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:443
+#: inc/customizer/fields/blog.php:457
 msgid "Grid"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:447
+#: inc/customizer/fields/blog.php:461
 msgid "Choose column for Grid style."
 msgstr ""
 
-#: inc/customizer/fields/blog.php:454
+#: inc/customizer/fields/blog.php:468
 msgid "Post Thumbnail"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:458
+#: inc/customizer/fields/blog.php:472
 msgid "Show Thumbnail"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:463
+#: inc/customizer/fields/blog.php:477
 msgid "Image Alignment"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:467
+#: inc/customizer/fields/blog.php:481
 msgid "Center"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:473
+#: inc/customizer/fields/blog.php:487
 msgid "Image Postion"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:476
+#: inc/customizer/fields/blog.php:490
 msgid "Before Title"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:477
+#: inc/customizer/fields/blog.php:491
 msgid "After Title"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:483
+#: inc/customizer/fields/blog.php:497
 msgid "Post Content"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:487
+#: inc/customizer/fields/blog.php:501
 msgid "Content Type"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:491
+#: inc/customizer/fields/blog.php:505
 msgid "Excerpt"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:492
+#: inc/customizer/fields/blog.php:506
 msgid "None"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:498
+#: inc/customizer/fields/blog.php:512
 msgid "Excerpt Length (words)"
 msgstr ""
 
-#: inc/customizer/fields/blog.php:503
+#: inc/customizer/fields/blog.php:517
 msgid "Title Element"
 msgstr ""
 
-#: inc/functions.php:58
+#: inc/functions.php:70
 msgid "All Categories"
 msgstr ""
 
@@ -835,52 +848,56 @@ msgstr ""
 msgid "Scroll down to content"
 msgstr ""
 
-#: inc/template-functions.php:199 inc/template-functions.php:337
-#: inc/template-functions.php:823
+#: inc/template-functions.php:259 inc/template-functions.php:404
+#: inc/template-functions.php:918
 msgid "Pages:"
 msgstr ""
 
-#: inc/template-functions.php:327
+#: inc/template-functions.php:394
+#. translators: %s: the post title.
 msgid "Continue reading %s"
 msgstr ""
 
-#: inc/template-functions.php:513
-msgid "&bull; <a href=\"%1$s\">AdBooster</a> Designed by  %2$s."
+#: inc/template-functions.php:583
+#. translators: %1$s: String with developer website.
+msgid "&bull; AdBooster Designed by  %1$s."
 msgstr ""
 
-#: inc/template-functions.php:548
+#: inc/template-functions.php:625
 msgid "Last updated"
 msgstr ""
 
-#: inc/template-functions.php:549
+#: inc/template-functions.php:626
 msgid "By "
 msgstr ""
 
-#: inc/template-functions.php:613
+#: inc/template-functions.php:690
 msgid "Edit"
 msgstr ""
 
-#: inc/template-functions.php:671
+#: inc/template-functions.php:755
+#. translators: %1$s: author link, %2$s: link title, %3$s: Author name, %s:
+#. author name.
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/template-functions.php:706
+#: inc/template-functions.php:795
 msgid ", "
 msgstr ""
 
-#: inc/template-functions.php:729
+#: inc/template-functions.php:821
 msgid "Leave a Comment"
 msgstr ""
 
-#: inc/template-functions.php:729
+#: inc/template-functions.php:821
 msgid "One Comment"
 msgstr ""
 
-#: inc/template-functions.php:729
+#: inc/template-functions.php:821
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-functions.php:807
+#: inc/template-functions.php:902
 msgid "Edit this section"
 msgstr ""
 
@@ -949,65 +966,65 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/class-adbooster.php:434
+#: inc/class-adbooster.php:375
 #. translators: Yearly archive title. 1: Year
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: inc/class-adbooster.php:438
+#: inc/class-adbooster.php:379
 #. translators: Monthly archive title. 1: Month name and year
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: inc/class-adbooster.php:441
+#: inc/class-adbooster.php:382
 #. translators: Daily archive title. 1: Date
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: inc/class-adbooster.php:445
+#: inc/class-adbooster.php:386
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr ""
 
-#: inc/class-adbooster.php:447
+#: inc/class-adbooster.php:388
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr ""
 
-#: inc/class-adbooster.php:449
+#: inc/class-adbooster.php:390
 msgctxt "post format archive title"
 msgid "Images"
 msgstr ""
 
-#: inc/class-adbooster.php:451
+#: inc/class-adbooster.php:392
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr ""
 
-#: inc/class-adbooster.php:453
+#: inc/class-adbooster.php:394
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr ""
 
-#: inc/class-adbooster.php:455
+#: inc/class-adbooster.php:396
 msgctxt "post format archive title"
 msgid "Links"
 msgstr ""
 
-#: inc/class-adbooster.php:457
+#: inc/class-adbooster.php:398
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr ""
 
-#: inc/class-adbooster.php:459
+#: inc/class-adbooster.php:400
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr ""
 
-#: inc/class-adbooster.php:461
+#: inc/class-adbooster.php:402
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr ""
@@ -1037,12 +1054,13 @@ msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr ""
 
-#: inc/template-functions.php:388
+#: inc/template-functions.php:456
+#. translators: %1$s: Element position, %2$s: Post link, %3$s: read more label.
 msgctxt "Next post"
 msgid "Next"
 msgstr ""
 
-#: inc/template-functions.php:389
+#: inc/template-functions.php:457
 msgctxt "Previous post"
 msgid "Previous"
 msgstr ""

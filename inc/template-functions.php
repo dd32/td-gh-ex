@@ -48,25 +48,85 @@ if ( ! function_exists( 'adbooster_handburger_btn' ) ) {
 			</div>
 			<nav id="site-navigation" class="main-navigation" role="navigation">
 				<div class="menu-close-btn">
-					<i class="fa fa-close"></i>
+					<i class="btn-ico-close">&times;</i>
 				</div>
 				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
 			</nav><!-- #site-navigation -->
 			<?php if ( ( ( is_home() && is_front_page() ) ) && has_custom_header() ) : ?>
-				<a href="#content" class="menu-scroll-down"><span class="screen-reader-text"><?php _e( 'Scroll down to content', 'adbooster' ); ?></span></a>
+				<a href="#content" class="menu-scroll-down"><span class="screen-reader-text"><?php esc_html_e( 'Scroll down to content', 'adbooster' ); ?></span></a>
 			<?php endif; ?>
 		
 		<?php
 	}
 }
 
-if ( ! function_exists( 'adbooster_header_search' ) ) {
-	function adbooster_header_search() {
+if ( ! function_exists( 'adbooster_loop_before_widget' ) ) {
 
+	function adbooster_loop_before_widget() {
+		?>
+		<?php if ( is_active_sidebar( 'before-loop' ) ) : ?>
+			<div class="loop-banner before-loop-banner">
+				<?php dynamic_sidebar( 'before-loop' ); ?>
+			</div>
+		<?php endif; ?>
+		<?php
+	}
+}
+
+if ( ! function_exists( 'adbooster_loop_after_widget' ) ) {
+
+	function adbooster_loop_after_widget() {
+		?>
+		<?php if ( is_active_sidebar( 'after-loop' ) ) : ?>
+			<div class="loop-banner after-loop-banner">
+				<?php dynamic_sidebar( 'after-loop' ); ?>
+			</div>
+		<?php endif; ?>
+		<?php
+	}
+}
+
+if ( ! function_exists( 'adbooster_single_post_top_widget' ) ) {
+
+	function adbooster_single_post_top_widget() {
+		?>
+		<?php if ( is_active_sidebar( 'before-single-post' ) ) : ?>
+			<div class="single-post-banner before-single-post-banner">
+				<?php dynamic_sidebar( 'before-single-post' ); ?>
+			</div>
+		<?php endif; ?>
+		<?php
+	}
+}
+
+if ( ! function_exists( 'adbooster_single_post_bottom_widget' ) ) {
+
+	function adbooster_single_post_bottom_widget() {
+		?>
+		<?php if ( is_active_sidebar( 'after-single-post' ) ) : ?>
+			<div class="single-post-banner after-single-post-banner">
+				<?php dynamic_sidebar( 'after-single-post' ); ?>
+			</div>
+		<?php endif; ?>
+		<?php
+	}
+}
+
+if ( ! function_exists( 'adbooster_header_banner' ) ) {
+	function adbooster_header_banner() {
+		
 		?>
 			<div class="header-right">
-				<div class="search-toggle"><i class="fa fa-search"></i></div>
+				<?php if ( is_active_sidebar( 'header-1' ) ) : ?>
+					<div class="banner-header">
+						
+						<?php dynamic_sidebar( 'header-1' ); ?>
+	    	
+	    			</div>
+				<?php endif; ?>
+				<!-- <div class="search-toggle"><i class="fa fa-search"></i></div> -->
 			</div>
+			
 		<?php
 	}
 }
@@ -251,8 +311,13 @@ if ( ! function_exists( 'adbooster_post_thumbnail' ) ) {
 	 */
 
 	function adbooster_post_thumbnail( ) {
+		// @hook - Ad_Booster_Customizer_Output::thumbnail_size() - 10
+		$thumbnail = apply_filters('adbooster_thumbnail_size', 'large');
 
-		$thumbnail = apply_filters('adbooster_thumbnail_size', 'adbooster-post-feature-large');
+		/**
+		* @hook Ad_Booster_Customizer_Output::show_post_thumbnail() - 10
+		* @hook Ad_Booster_Customizer_Output::show_single_post_thumbnail() - 999
+		*/
 		$show_thumbnail = apply_filters('adbooster_show_post_thumbnail', true);
 
 		if ( has_post_thumbnail() && $show_thumbnail ) {
@@ -267,7 +332,7 @@ if ( ! function_exists( 'adbooster_post_thumbnail' ) ) {
 			if ( $enable_link && (! is_single() || ! is_page() ) ) {
 
 				?>
-				<a href="<?php echo $link ?>"> 
+				<a href="<?php echo esc_url( $link ) ?>"> 
 				<?php
 					the_post_thumbnail( $thumbnail );
 				?></a>
@@ -297,7 +362,7 @@ if ( ! function_exists( 'adbooster_post_content' ) ) {
 	 */
 	function adbooster_post_content() {
 		?>
-		<div class="entry-content">
+		<div class="entry-content dddd">
 		<?php
 
 		/**
@@ -323,7 +388,9 @@ if ( ! function_exists( 'adbooster_post_content' ) ) {
 		} else {
 
 			the_content(
+				
 				sprintf(
+					// translators: %s: the post title.
 					__( 'Continue reading %s', 'adbooster' ),
 					'<span class="screen-reader-text">' . get_the_title() . '</span>'
 				)
@@ -347,11 +414,12 @@ if ( ! function_exists( 'adbooster_readmore_link' ) ) {
 
 	function adbooster_readmore_link() {
 
-		$link = esc_url( apply_filters('adbooster_readmore_link', get_permalink( get_the_ID() )) );
-		$label = apply_filters('adbooster_readmore_link_label', __( 'View Detail', 'adbooster' ) );
-		$position = esc_attr( apply_filters('adbooster_readmore_link_pos', '') );
+		$link = apply_filters( 'adbooster_readmore_link', get_permalink() );
+		$label = apply_filters( 'adbooster_readmore_link_label', esc_html__( 'Continue reading &rarr;', 'adbooster' ) );
+		$position =  apply_filters( 'adbooster_readmore_link_pos', 'readmore-right' );
 
-		printf( '<a class="read-more %1$s" href="%2$s">%3$s</a>', $position, $link , $label);
+		// translators: %1$s: Element position, %2$s: Post link, %3$s: read more label.
+		printf( '<div class="%1$s"><a class="readmore" href="%2$s">%3$s</a></div>', esc_attr( $position ), esc_url( $link ) , esc_html( $label) );
 	}
 }
 
@@ -415,21 +483,21 @@ if ( ! function_exists( 'adbooster_footer_widgets' ) ) {
 			}
 
 			if ( isset( $columns ) ) : ?>
-				<div class=<?php echo '"footer-widgets row-' . strval( $row ) . ' col-' . strval( $columns ) . ' fix"'; ?>><?php
+				<div class=<?php echo esc_attr( '"footer-widgets row-' . strval( $row ) . ' col-' . strval( $columns ) . ' fix"' ); ?>><?php
 
 					for ( $column = 1; $column <= $columns; $column++ ) :
 						$footer_n = $column + $regions * ( $row - 1 );
 
-						if ( is_active_sidebar( 'footer-' . strval( $footer_n ) ) ) : ?>
+						if ( is_active_sidebar( 'footer-' . esc_html( $footer_n ) ) ) : ?>
 
-							<div class="block footer-widget-<?php echo strval( $column ); ?>">
-								<?php dynamic_sidebar( 'footer-' . strval( $footer_n ) ); ?>
+							<div class="block footer-widget-<?php echo esc_attr( $column ); ?>">
+								<?php dynamic_sidebar( 'footer-' . esc_html( $footer_n ) ); ?>
 							</div><?php
 
 						endif;
 					endfor; ?>
 
-				</div><!-- .footer-widgets.row-<?php echo strval( $row ); ?> --><?php
+				</div><?php
 
 				unset( $columns );
 			endif;
@@ -510,7 +578,9 @@ if ( ! function_exists( 'adbooster_credit' ) ) {
 
 			<?php if ( apply_filters( 'adbooster_enable_credit_link', true ) ) : ?>
 
-			<?php printf( __( '&bull; <a href="%1$s">AdBooster</a> Designed by  %2$s.', 'adbooster' ), 'https://boosterwp.com/themes/adbooster', $credit_url ); ?>
+			<?php 
+			// translators: %1$s: String with developer website.
+			printf( esc_html__( '&bull; AdBooster Designed by  %1$s.', 'adbooster' ),  $credit_url ); ?>
 
 			<?php endif; ?>
 
@@ -535,6 +605,13 @@ if ( ! function_exists( 'adbooster_display_comments' ) ) {
 
 if ( ! function_exists( 'adbooster_post_meta' ) ) {
 
+
+	/**
+	 * Renders post's meta
+	 *
+	 * @since 1.0.0
+	 * @return void
+	 */
 	function adbooster_post_meta() {
 
 		/**
@@ -625,6 +702,9 @@ if ( ! function_exists( 'adbooster_post_meta' ) ) {
 if ( ! function_exists( 'adbooster_meta_date' ) ) :
 	/**
 	 * Displays the post date
+	 *
+	 * @since 1.0.0
+	 * @return 1.0.0
 	 */
 	function adbooster_meta_date( $prefix = array() ) {
 
@@ -661,11 +741,15 @@ endif;
 if ( ! function_exists( 'adbooster_meta_author' ) ) :
 	/**
 	 * Displays the post author
+	 *
+	 * @since 1.0.0
+	 * @return void
 	 */
 	function adbooster_meta_author( $prefix = '' ) {
 
 		$prefix = $prefix != '' ? '<span class="meta-prefix prefix-author">'. $prefix . '</span>' : '';
 
+		// translators: %1$s: author link, %2$s: link title, %3$s: Author name, %s: author name.
 		$author_string = sprintf( '<span class="author vcard"><a class="url fn n" href="%1$s" title="%2$s" rel="author">%3$s</a></span>',
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 			esc_attr( sprintf( esc_html__( 'View all posts by %s', 'adbooster' ), get_the_author() ) ),
@@ -679,6 +763,8 @@ endif;
 if ( ! function_exists( 'adbooster_meta_category' ) ) :
 	/**
 	 * Displays the category of posts
+	 * @since 1.0.0
+	 * @return void
 	 */
 	function adbooster_meta_category( $prefix = '' ) {
 
@@ -697,6 +783,9 @@ endif;
 if ( ! function_exists( 'adbooster_meta_tag' ) ) :
 	/**
 	 * Displays the category of posts
+	 *
+	 * @since 1.0.0
+	 * @return void
 	 */
 	function adbooster_meta_tag( $prefix = '' ) {
 
@@ -717,6 +806,9 @@ endif;
 if ( ! function_exists( 'adbooster_meta_comments' ) ) :
 	/**
 	 * Displays the comment of posts
+	 *
+	 * @since 1.0.0
+	 * @return void
 	 */
 	function adbooster_meta_comments( $prefix = '' ) {
 
@@ -738,6 +830,9 @@ endif;
 if ( ! function_exists( 'adbooster_meta_edit_link' ) ) :
 	/**
 	 * Displays the category of posts
+	 *
+	 * @since 1.0.0
+	 * @return void
 	 */
 	function adbooster_meta_edit_link() {
 
@@ -826,81 +921,5 @@ if ( ! function_exists ( 'azauthority_homepage_page_content' ) ) {
 			?>
 		</div><!-- .entry-content -->
 		<?php
-	}
-}
-
-if ( ! function_exists( 'adbooster_init_structured_data' ) ) {
-	/**
-	 * Generates structured data.
-	 *
-	 * Hooked into the following action hooks:
-	 *
-	 * - `adbooster_loop_post`
-	 * - `adbooster_single_post`
-	 * - `adbooster_page`
-	 *
-	 * Applies `adbooster_structured_data` filter hook for structured data customization :)
-	 */
-	function adbooster_init_structured_data() {
-
-		// Post's structured data.
-		if ( is_home() || is_category() || is_date() || is_search() || is_single() ) {
-			$image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_ID() ), 'normal' );
-			$logo  = wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'full' );
-
-			$json = array();
-			
-			$json['@type'] = 'BlogPosting';
-
-			$json['mainEntityOfPage'] = array(
-				'@type' => 'webpage',
-				'@id'   => get_the_permalink(),
-			);
-
-			$json['publisher'] = array(
-				'@type' => 'organization',
-				'name'  => get_bloginfo( 'name' ),
-			);
-
-			if ( $logo ) {
-				$json['publisher']['logo'] = array(
-					'@type'  => 'ImageObject',
-					'url'    => $logo[0],
-					'width'  => $logo[1],
-					'height' => $logo[2],
-				);
-			}
-
-			$json['author'] = array(
-				'@type' => 'person',
-				'name'  => get_the_author(),
-			);
-
-			if ( $image ) {
-				$json['image'] = array(
-					'@type'  => 'ImageObject',
-					'url'    => $image[0],
-					'width'  => $image[1],
-					'height' => $image[2],
-				);
-			}
-			
-			$json['datePublished'] = get_post_time( 'c' );
-			$json['dateModified']  = get_the_modified_date( 'c' );
-			$json['name']          = get_the_title();
-			$json['headline']      = $json['name'];
-			$json['description']   = get_the_excerpt();
-
-		// Page's structured data.
-		} elseif ( is_page() ) {
-			$json['@type']       = 'WebPage';
-			$json['url']         = get_the_permalink();
-			$json['name']        = get_the_title();
-			$json['description'] = get_the_excerpt();
-		}
-
-		if ( isset( $json ) ) {
-			Ad_Booster::set_structured_data( apply_filters( 'adbooster_structured_data', $json ) );
-		}
 	}
 }
