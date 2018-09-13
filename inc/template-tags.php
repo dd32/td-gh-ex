@@ -267,8 +267,8 @@ function arctic_black_do_footer_copyright(){
 	echo '<div class="site-info">'. wp_kses_post( arctic_black_get_footer_copyright() ) . '</div>';
 	if ( get_theme_mod( 'theme_designer', true ) ) {
 		echo '<div class="site-designer">';
-		// Translators: %1$s: Theme designer logo, %2$s: Theme designer site link
-		echo sprintf( esc_html__( 'Theme design by %1$s %2$s.', 'arctic-black' ), arctic_black_get_svg( array( 'icon' => 'campaignkit' ) ), '<a href="'. esc_url( 'https://campaignkit.co/' ) .'">Campaign Kit</a>' ); // WPCS: XSS OK.
+		// Translators: %1$s: Theme designer site link
+		echo sprintf( esc_html__( 'Theme design by %1$s.', 'arctic-black' ), '<a href="'. esc_url( 'https://elevate360.com.au/' ) .'">Elevate360</a>' ); // WPCS: XSS OK.
 		echo '</div>';
 	}
 

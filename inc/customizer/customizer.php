@@ -131,12 +131,6 @@ function arctic_black_css_color_selector(){
 		'secondary_color_text'	=> '
 			a:hover,
 			a:focus,
-			.featured-content .entry-title a:hover,
-			.featured-content .entry-title a:focus,
-			.home .site-main .entry-title a:hover,
-			.home .site-main .entry-title a:focus,
-			.archive .site-main .entry-title a:hover,
-			.archive .site-main .entry-title a:focus,
 			.entry-meta a:hover,
 			.entry-meta a:focus,
 			.cat-links a:hover,

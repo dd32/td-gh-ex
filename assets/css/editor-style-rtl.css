@@ -216,8 +216,12 @@ big {
 a {
 	color: #ec407a;
 	text-decoration: none;
-	-webkit-transition: color 0.25s ease-in-out, background 0.25s ease-in-out, opacity 0.25s ease-in-out;
-	transition: color 0.25s ease-in-out, background 0.25s ease-in-out, opacity 0.25s ease-in-out;
+	-webkit-transition-timing-function: ease-in-out;
+	transition-timing-function: ease-in-out;
+	-webkit-transition-duration: 0.25s;
+	transition-duration: 0.25s;
+	-webkit-transition-property: background, color, opacity, box-shadow, text-shadow;
+	transition-property: background, color, opacity, box-shadow, text-shadow;
 }
 
 a:hover,
