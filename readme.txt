@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.8
 Tested up to: 4.9
-Stable tag: 4.0.6
+Stable tag: 4.0.7
 
 == Description ==
 
@@ -541,3 +541,7 @@ with testing and feature suggestions.
 * Fix: Issue with empty excerpt
 * Tweak: Gutenberg Gallery Block captions
 * Tweak: screenshot.jpg updated to comply with new WordPress standards
+
+= Version 4.0.7 =
+* Tweak: made weaverx_archive_loop pluggable
+* Fix: better fix for empty excerpt

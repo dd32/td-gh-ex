@@ -652,7 +652,7 @@ function weaverx_post_count() {
 	return $weaverx_cur_post_count;
 }
 
-
+if (!function_exists('weaverx_archive_loop')) :
 function weaverx_archive_loop( $type ) {
 	// output loop for archive-like pages.
 
@@ -706,8 +706,8 @@ function weaverx_archive_loop( $type ) {
 	if ($archive_cols)
 		weaverx_masonry('end-posts');
 	echo ("</div> <!-- .wvrx-posts -->\n");
-
 }
+endif;
 
 function weaverx_post_class($hidecount = false) {
 	global $weaverx_cur_post_count;
