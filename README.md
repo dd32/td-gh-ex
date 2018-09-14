@@ -1,7 +1,7 @@
 == Ascent ==
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, post-formats, theme-options, translation-ready
-Tested up to: 4.9.6
+Tested up to: 4.9.8
 Stable tag: 3.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -90,7 +90,10 @@ Yes! You can choose your color scheme under Appearance -> Theme Options -> Styli
 
 = Changelog =
 
-### Version 3.0.
+### Version 3.1
+- Update: Theme main Screenshot
+
+### Version 3.0
 - Update: Theme version
 
 ### Version 2.0.9
