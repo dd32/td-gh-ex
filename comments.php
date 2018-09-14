@@ -21,9 +21,23 @@
 	<?php if ( have_comments() ) : ?>
 		<div id="comments-title">
 			<?php
-				printf( _n( 'One Comment', '%s Comments', get_comments_number(), 'attorney' ),
-					number_format_i18n( get_comments_number() ) );
-			?>
+				$comments_number = get_comments_number();
+				if ( '1' === $comments_number ) {
+					printf( _x( 'One comment to &ldquo;%s&rdquo;', 'comments title', 'attorney' ), get_the_title() );
+				} else {
+					printf(
+						_nx(
+							'%1$s comment to &ldquo;%2$s&rdquo;',
+							'%1$s comments to &ldquo;%2$s&rdquo;',
+							$comments_number,
+							'comments title',
+							'attorney'
+						),
+						number_format_i18n( $comments_number ),
+						get_the_title()
+					);
+				}
+				?>
 		</div>
 
 

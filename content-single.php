@@ -6,7 +6,7 @@
 		<div class="entry-meta">
 			<?php attorney_posted_on(); ?>
             <?php if ( comments_open() || ( '0' != get_comments_number() && ! comments_open() ) ) : ?>
-            <div class="att-meta-com"><?php _e('Comments', 'attorney'); ?><span class="comments-link att-meta-link"><?php comments_popup_link( __( '0', 'attorney' ), __( '1', 'attorney' ), __( '%', 'attorney' ) ); ?></span></div>
+            <div class="att-meta-com"><?php _e('Comments', 'attorney'); ?><span class="comments-link att-meta-link"><?php comments_popup_link( '0', '1', '%' ); ?></span></div>
             <?php endif; ?>
 		</div><!-- .entry-meta -->
 	</header><!-- .entry-header -->

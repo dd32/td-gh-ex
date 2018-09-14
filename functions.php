@@ -64,6 +64,16 @@ function attorney_setup() {
 			'chat' /* A chat transcript */
 		)
 	);
+
+	add_theme_support( "title-tag" );
+
+	// adding site logo
+	add_theme_support( 'custom-logo', array(
+		'height'      => 100,
+		'width'       => 300,
+		'flex-height' => true,
+		'flex-width'  => true,
+	) );
 }
 endif;
 add_action( 'after_setup_theme', 'attorney_setup' );
@@ -81,59 +91,12 @@ endif;
 add_action( 'after_setup_theme', 'attorney_content_width' );
 
 
-/**
- * Title filter 
- */
-if ( ! function_exists( 'attorney_filter_wp_title' ) ) :
-	function attorney_filter_wp_title( $old_title, $sep, $sep_location ) {
-		
-		if ( is_feed() ) return $old_title;
-	
-		$site_name = get_bloginfo( 'name' );
-		$site_description = get_bloginfo( 'description' );
-		// add padding to the sep
-		$ssep = ' ' . $sep . ' ';
-		
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			return $site_name . ' | ' . $site_description;
-		} else {
-			// find the type of index page this is
-			if( is_category() ) $insert = $ssep . __( 'Category', 'attorney' );
-			elseif( is_tag() ) $insert = $ssep . __( 'Tag', 'attorney' );
-			elseif( is_author() ) $insert = $ssep . __( 'Author', 'attorney' );
-			elseif( is_year() || is_month() || is_day() ) $insert = $ssep . __( 'Archives', 'attorney' );
-			else $insert = NULL;
-			 
-			// get the page number we're on (index)
-			if( get_query_var( 'paged' ) )
-			$num = $ssep . __( 'Page ', 'attorney' ) . get_query_var( 'paged' );
-			 
-			// get the page number we're on (multipage post)
-			elseif( get_query_var( 'page' ) )
-			$num = $ssep . __( 'Page ', 'attorney' ) . get_query_var( 'page' );
-			 
-			// else
-			else $num = NULL;
-			 
-			// concoct and return new title
-			return $site_name . $insert . $old_title . $num;
-			
-		}
-	
-	}
-endif;
-// call our custom wp_title filter, with normal (10) priority, and 3 args
-add_filter( 'wp_title', 'attorney_filter_wp_title', 10, 3 );
-
 /*******************************************************************
 * These are settings for the Theme Customizer in the admin panel. 
 *******************************************************************/
 if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 	function attorney_theme_customizer( $wp_customize ) {
 		
-		$wp_customize->remove_section( 'title_tagline');
-		$wp_customize->remove_section( 'static_front_page' );
-	
 	
 		/* color scheme option */
 		$wp_customize->add_setting( 'attorney_color_settings', array (
@@ -145,24 +108,6 @@ if ( ! function_exists( 'attorney_theme_customizer' ) ) :
 			'label'    => __( 'Theme Color Scheme', 'attorney' ),
 			'section'  => 'colors',
 			'settings' => 'attorney_color_settings',
-		) ) );
-		
-		
-		/* logo option */
-		$wp_customize->add_section( 'attorney_logo_section' , array(
-			'title'       => __( 'Site Logo', 'attorney' ),
-			'priority'    => 31,
-			'description' => __( 'Upload a logo to replace the default site name in the header', 'attorney' ),
-		) );
-		
-		$wp_customize->add_setting( 'attorney_logo', array (
-			'sanitize_callback' => 'esc_url_raw',
-		) );
-		
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'attorney_logo', array(
-			'label'    => __( 'Choose your logo (ideal width is 100-300px and ideal height is 40-100px)', 'attorney' ),
-			'section'  => 'attorney_logo_section',
-			'settings' => 'attorney_logo',
 		) ) );
 	
 		
@@ -567,7 +512,7 @@ if ( ! function_exists( 'attorney_comment' ) ) :
  * Template for comments and pingbacks.
  */
 function attorney_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
+
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
@@ -583,7 +528,7 @@ function attorney_comment( $comment, $args, $depth ) {
 			<footer class="clearfix comment-head">
 				<div class="comment-author vcard">
 					<?php echo get_avatar( $comment, 60 ); ?>
-					<?php printf( __( '%s', 'attorney' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( '%s', sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author .vcard -->
 				<?php if ( $comment->comment_approved == '0' ) : ?>
 					<em><?php _e( 'Your comment is awaiting moderation.', 'attorney' ); ?></em>
@@ -708,45 +653,6 @@ if ( ! function_exists( 'attorney_enhanced_image_navigation' ) ) :
 endif;
 add_filter( 'attachment_link', 'attorney_enhanced_image_navigation' );
 
-
-if ( ! function_exists( 'attorney_pagination' ) ) :
-function attorney_pagination($pages = '', $range = 4)
-{
-     $showitems = ($range * 2)+1; 
- 
-     global $paged;
-     if(empty($paged)) $paged = 1;
- 
-     if($pages == '')
-     {
-         global $wp_query;
-         $pages = $wp_query->max_num_pages;
-         if(!$pages)
-         {
-             $pages = 1;
-         }
-     }  
- 
-     if(1 != $pages)
-     {
-         printf( __( '<div class="pagination"><span>Page %1$s of %2$s</span>', 'attorney'), $paged, $pages );
-         if($paged > 2 && $paged > $range+1 && $showitems < $pages) printf( __( '<a href="%1$s">&laquo; First</a>', 'attorney' ), get_pagenum_link(1) );
-         if($paged > 1 && $showitems < $pages) printf( __( '<a href="%1$s">&lsaquo; Previous</a>', 'attorney' ), get_pagenum_link($paged - 1) );
- 
-         for ($i=1; $i <= $pages; $i++)
-         {
-             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
-             {
-                 echo ($paged == $i)? "<span class=\"current\">".$i."</span>":"<a href='".get_pagenum_link($i)."' class=\"inactive\">".$i."</a>";
-             }
-         }
- 
-         if ($paged < $pages && $showitems < $pages) printf( __( '<a href="%1$s">Next &rsaquo;</a>', 'attorney' ), get_pagenum_link($paged + 1) );
-         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) printf( __( '<a href="%1$s">Last &raquo;</a>', 'attorney' ), get_pagenum_link($pages) );
-         echo "</div>\n";
-     }
-}
-endif;
 
 if ( ! function_exists( 'attorney_excerpt' ) ) :
 	function attorney_excerpt($limit) {

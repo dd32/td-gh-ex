@@ -31,11 +31,7 @@
 
 				<?php endwhile; ?>
 
-				<?php if (function_exists("attorney_pagination")) {
-							attorney_pagination(); 
-				} elseif (function_exists("attorney_content_nav")) { 
-							attorney_content_nav( 'nav-below' );
-				}?>
+				<div class="pagination"><?php echo paginate_links(); ?></div>
 
 			<?php else : ?>
 

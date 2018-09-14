@@ -4,7 +4,8 @@ Theme URI: http://wpattorney.org/
 Author: WPThemes NZ
 Author URI: http://wpthemes.co.nz/
 Description: Attorney is an elegant and responsive theme designed with Attorneys and law firms in mind, though anyone who wants a theme with a corporate look and feel might like it too. It comes with a couple of alternative home page templates, one for static content and one with a latest posts slider. You can also add your own logo, adjust the slider behaviour, base theme colors and control the social media links from the theme customization screen.
-Version: 1.0.7
+Text Domain: attorney
+Version: 2.0
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats
@@ -53,9 +54,7 @@ section {
 }
 
 /* ul & li resets */
-ol, ul { 
-	list-style: none; 
-}
+
 
 /* blockquote reset */
 blockquote, q { 
@@ -1300,16 +1299,16 @@ POSTS & CONTENT STYLES
 			}
 			
 			
-			.post_content ol {
-				list-style: none; /* Remove default numbering */
-				*list-style: decimal; /* Keep using default numbering for IE6/7 */
+			/* .post_content ol {
+				list-style: none; Remove default numbering
+				*list-style: decimal; Keep using default numbering for IE6/7
 				counter-reset: my-counter;
-			}
+			} */
 				.commentlist li.comment article[id*=comment-] ol {
 					list-style: decimal;
 				}
 				
-				.post_content ol li {
+				/* .post_content ol li {
 					list-style-type: none;
 					position: relative;
 					padding-left: 16px;
@@ -1327,26 +1326,17 @@ POSTS & CONTENT STYLES
 					font-size: 12px;
 					text-align: center;
 				}
-
-			.post_content ul li {
+				
+							.post_content ul li {
 				list-style: none;
 				position: relative;
 				padding-left: 12px;
-			}
+							} */
 				.commentlist li.comment article[id*=comment-] ul li {
 					list-style: disc;
 				}
 				
-				.post_content ul li:before {
-					content: "\2022";
-					position: absolute;
-					left: 0;
-					top: 0;
-					color: #c7930d;
-					font-family: Arial, Helvetica, sans-serif;
-					font-weight: 700;
-					font-size: 16px;
-				}
+				
 			
 			.commentlist li.comment article[id*=comment-] blockquote, 
 			.post_content blockquote { 
@@ -1617,6 +1607,10 @@ PAGE NAVI STYLES
 	background-color: #363636;
 	border-radius: 50%;
 }
+.pagination .next,
+.pagination .prev{
+	border-radius: 0;
+}
 	.pagination a:visited {
 		color: #fff;
 	}
@@ -1817,6 +1811,7 @@ SIDEBARS & ASIDES
 		#meta.widget aside a {
 			line-height: 1.2rem; 
 			margin-bottom: 0.65rem;
+			list-style: none;
 		}
 			#sidebar .widget li:last-child,
 			#sidebar-home .widget li:last-child,

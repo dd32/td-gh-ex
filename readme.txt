@@ -55,6 +55,10 @@ This theme is bundled with Cycle2
 =================================
 CHANGELOG
 =================================
+Version 2.0
+ * removed deprecated functions
+ * updated footer credits
+ 
 Version 1.0.7
  * added sanitize callbacks to Customizer options
  * modified the email social icon to use the correct mailto protocol instead of http
