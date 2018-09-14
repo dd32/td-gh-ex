@@ -24,6 +24,17 @@ function atlantic_switch_theme() {
 add_action( 'after_switch_theme', 'atlantic_switch_theme' );
 
 /**
+ * Static message for update notice.
+ *
+ * @return string
+ */
+function atlatic_require_message() {
+	// translators: %s: Current WordPress version
+	$message = sprintf( __( 'Atlantic requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'atlantic' ), $GLOBALS['wp_version'] );
+	return $message;
+}
+
+/**
  * Adds a message for unsuccessful theme switch.
  *
  * Prints an update nag after an unsuccessful attempt to switch to
@@ -34,8 +45,8 @@ add_action( 'after_switch_theme', 'atlantic_switch_theme' );
  * @global string $wp_version WordPress version.
  */
 function atlantic_upgrade_notice() {
-	$message = sprintf( __( 'Atlantic requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'atlantic' ), $GLOBALS['wp_version'] );
-	printf( '<div class="error"><p>%s</p></div>', $message );
+	$message = atlatic_require_message();
+	printf( '<div class="error"><p>%s</p></div>', wp_kses_post( wpautop( $message ) ) );
 }
 
 /**
@@ -46,7 +57,8 @@ function atlantic_upgrade_notice() {
  * @global string $wp_version WordPress version.
  */
 function atlantic_customize() {
-	wp_die( sprintf( __( 'Atlantic requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'atlantic' ), $GLOBALS['wp_version'] ), '', array(
+	$message = atlatic_require_message();
+	wp_die( wp_kses_post( $message ), '', array(
 		'back_link' => true,
 	) );
 }
@@ -60,8 +72,9 @@ add_action( 'load-customize.php', 'atlantic_customize' );
  * @global string $wp_version WordPress version.
  */
 function atlantic_preview() {
+	$message = atlatic_require_message();
 	if ( isset( $_GET['preview'] ) ) {
-		wp_die( sprintf( __( 'Atlantic requires at least WordPress version 4.7. You are running version %s. Please upgrade and try again.', 'atlantic' ), $GLOBALS['wp_version'] ) );
+		wp_die( wp_kses_post( $message ) );
 	}
 }
 add_action( 'template_redirect', 'atlantic_preview' );

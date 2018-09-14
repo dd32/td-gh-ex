@@ -8,7 +8,7 @@
 
 <div class="author-info">
 
-	<h2 class="about-author"><?php _e( 'About The Author', 'atlantic' );?></h2>
+	<h2 class="about-author"><?php esc_html_e( 'About The Author', 'atlantic' );?></h2>
 
 	<figure class="author-avatar">
 		<?php

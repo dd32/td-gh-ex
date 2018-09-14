@@ -18,9 +18,9 @@ function atlantic_breadcrumb(){
 	$breadcrumb_markup_close = '</div></div>';
 
 	if ( function_exists( 'bcn_display' ) ) {
-		echo $breadcrumb_markup_open;
+		echo $breadcrumb_markup_open; // WPCS: XSS OK.
 		bcn_display();
-		echo $breadcrumb_markup_close;
+		echo $breadcrumb_markup_close; // WPCS: XSS OK.
 	}
 	elseif ( function_exists( 'breadcrumbs' ) ) {
 		breadcrumbs();
@@ -96,24 +96,20 @@ function atlantic_entry_footer() {
 		$categories_list = get_the_category_list( esc_html__( ', ', 'atlantic' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
-			printf( '<span class="cat-links">%s <span class="screen-reader-text">' . esc_html__( 'Posted in', 'atlantic' ) . '</span> %s</span>',
-			atlantic_get_svg( array( 'icon' => 'category' ) ),
-			$categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links">%s <span class="screen-reader-text">' . esc_html__( 'Posted in', 'atlantic' ) . '</span> %s</span>', atlantic_get_svg( array( 'icon' => 'category' ) ), $categories_list ); // WPCS: XSS OK.
 		}
 
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'atlantic' ) );
 		if ( $tags_list ) {
 			/* translators: 1: list of tags. */
-			printf( '<span class="tags-links">%s <span class="screen-reader-text">' . esc_html__( 'Tagged', 'atlantic' ) . '</span> %s</span>',
-			atlantic_get_svg( array( 'icon' => 'tag' ) ),
-			$tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">%s <span class="screen-reader-text">' . esc_html__( 'Tagged', 'atlantic' ) . '</span> %s</span>', atlantic_get_svg( array( 'icon' => 'tag' ) ), $tags_list ); // WPCS: XSS OK.
 		}
 	}
 
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
 		echo '<span class="comments-link">';
-		echo atlantic_get_svg( array( 'icon' => 'comment' ) );
+		echo atlantic_get_svg( array( 'icon' => 'comment' ) ); // WPCS: XSS OK.
 		comments_popup_link(
 			sprintf(
 				wp_kses(
@@ -149,7 +145,7 @@ function atlantic_post_thumbnail( $size = 'post-thumbnail') {
 
 	if ( ! is_singular() ) {
 		echo '<div class="post-thumbnail">';
-			echo '<a href="'. get_permalink( get_the_id() ) .'">';
+			echo '<a href="'. esc_url( get_permalink( get_the_id() ) ) .'">';
 				the_post_thumbnail( $size );
 			echo '</a>';
 		echo '</div>';
@@ -175,14 +171,14 @@ function atlantic_posts_navigation(){
 
 	if ( get_theme_mod( 'posts_navigation', 'posts_navigation' ) == 'posts_navigation' ) {
 		the_posts_navigation( array(
-            'prev_text'          => __( '&larr; Older posts', 'atlantic' ),
-            'next_text'          => __( 'Newer posts &rarr;', 'atlantic' ),
+            'prev_text'          => esc_html__( '&larr; Older posts', 'atlantic' ),
+            'next_text'          => esc_html__( 'Newer posts &rarr;', 'atlantic' ),
 		) );
 	} else {
 		the_posts_pagination( array(
-			'prev_text'          => sprintf( '%s <span class="screen-reader-text">%s</span>', atlantic_get_svg( array( 'icon' => 'previous' ) ), __( 'Previous Page', 'atlantic' ) ),
-			'next_text'          => sprintf( '%s <span class="screen-reader-text">%s</span>', atlantic_get_svg( array( 'icon' => 'next' ) ), __( 'Next Page', 'atlantic' ) ),
-			'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'atlantic' ) . ' </span>',
+			'prev_text'          => sprintf( '%s <span class="screen-reader-text">%s</span>', atlantic_get_svg( array( 'icon' => 'previous' ) ), esc_html__( 'Previous Page', 'atlantic' ) ),
+			'next_text'          => sprintf( '%s <span class="screen-reader-text">%s</span>', atlantic_get_svg( array( 'icon' => 'next' ) ), esc_html__( 'Next Page', 'atlantic' ) ),
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'atlantic' ) . ' </span>',
 		) );
 	}
 
@@ -194,22 +190,24 @@ if( ! function_exists( 'atlantic_get_footer_copyright' ) ) :
  * [atlantic_get_footer_copyright description]
  * @return [type] [description]
  */
-function atlantic_get_footer_copyright(){
-	$default_footer_copyright =	sprintf( __( 'Copyright &copy; %1$s %2$s. Proudly powered by %3$s.', 'atlantic' ),
-		date_i18n( __('Y', 'atlantic' ) ),
-		'<a href="'. esc_url( home_url() ) .'">'. esc_attr( get_bloginfo( 'name' ) ) .'</a>',
-		'<a href="'. esc_url( 'https://wordpress.org/' ) .'">WordPress</a>' );
+function atlantic_get_footer_copyright() {
 
-	apply_filters( 'atlantic_get_footer_copyright', $default_footer_copyright );
+	// Translators: %1$s: Dynamic year, %2$s: Site link, %3$s: WordPress link
+	$default_footer_copyright =	sprintf( esc_html__( 'Copyright &copy; %1$s %2$s. Proudly powered by %3$s.', 'atlantic' ),
+		date_i18n( esc_html__( 'Y', 'atlantic' ) ),
+		'<a href="'. esc_url( home_url('/') ) .'">'. esc_html( get_bloginfo( 'name' ) ) .'</a>',
+		'<a href="'. esc_url( esc_html__( 'https://wordpress.org/', 'atlantic' ) ) .'">'. esc_html__( 'WordPress', 'atlantic' ) .'</a>' );
+
+	apply_filters( 'atlantic_footer_copyright', $default_footer_copyright );
 
 	$footer_copyright = get_theme_mod( 'footer_copyright', $default_footer_copyright );
 
-	if ( !empty( $footer_copyright ) ) {
-		$footer_copyright = str_replace( '[YEAR]', date_i18n( __('Y', 'atlantic' ) ), $footer_copyright );
-		$footer_copyright = str_replace( '[SITE]', '<a href="'. esc_url( home_url() ) .'">'. esc_attr( get_bloginfo( 'name' ) ) .'</a>', $footer_copyright );
-		return htmlspecialchars_decode( esc_attr( $footer_copyright ) );
+	if ( ! empty( $footer_copyright ) ) {
+		$footer_copyright = str_replace( '[YEAR]', date_i18n( esc_html__( 'Y', 'atlantic' ) ), $footer_copyright );
+		$footer_copyright = str_replace( '[SITE]', '<a href="'. esc_url( home_url('/') ) .'">'. esc_html( get_bloginfo( 'name' ) ) .'</a>', $footer_copyright );
+		return wp_kses_post( $footer_copyright );
 	} else {
-		return $default_footer_copyright;
+		return wp_kses_post( $default_footer_copyright );
 	}
 
 }
@@ -222,9 +220,12 @@ if( ! function_exists( 'atlantic_do_footer_copyright' ) ) :
  */
 function atlantic_do_footer_copyright(){
 
-	echo '<div class="site-info">'. atlantic_get_footer_copyright() . '</div>';
+	echo '<div class="site-info">'. wp_kses_post( atlantic_get_footer_copyright() ) . '</div>';
 	if ( get_theme_mod( 'theme_designer', true ) ) {
-		echo '<div class="site-designer">'. sprintf( __( 'Theme design by %s %s.', 'atlantic' ), atlantic_get_svg( array( 'icon' => 'campaignkit' ) ), '<a href="'. esc_url( 'https://campaignkit.co/' ) .'">Campaign Kit</a>' ) .'</div>';
+		echo '<div class="site-designer">';
+		// Translators: %1$s: Theme designer site link
+		echo sprintf( esc_html__( 'Theme design by %1$s.', 'atlantic' ), '<a href="'. esc_url( 'https://elevate360.com.au/' ) .'">Elevate360</a>' ); // WPCS: XSS OK.
+		echo '</div>';
 	}
 
 }
@@ -237,7 +238,7 @@ if ( ! function_exists( 'atlantic_return_to_top' ) ) :
  */
 function atlantic_return_to_top(){
 	if( get_theme_mod( 'return_top', true ) ) {
-		echo '<a href="#page" class="return-to-top">'. atlantic_get_svg( array( 'icon' => 'top' ) ) .'</a>';
+		echo '<a href="#page" class="return-to-top">'. atlantic_get_svg( array( 'icon' => 'top' ) ) .'</a>'; // WPCS: XSS OK.
 	}
 }
 endif;

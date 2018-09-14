@@ -56,13 +56,15 @@ $link_bg = ( !is_singular() && has_post_thumbnail() ) ? 'style="background-image
 
 <?php else : ?>
 
-<header class="entry-header <?php echo $entry_link;?>" <?php echo $link_bg;?>>
+<header class="entry-header <?php echo esc_attr( $entry_link );?>" <?php echo $link_bg; // WPCS: XSS OK.?>>
 	<?php the_title( '<h2 class="entry-title"><a href="' . esc_url( atlantic_get_link_url() ) . '" rel="bookmark">', '</a></h2>' );?>
 	<div class="entry-meta">
 		<?php atlantic_posted_on(); ?>
 	</div><!-- .entry-meta -->
 	<div class="external-link">
-		<?php echo sprintf( '<a href="%1$s">%1$s %2$s</a>', esc_url( atlantic_get_link_url() ), atlantic_get_svg( array( 'icon' => 'external' ) ) );?>
+		<?php
+			echo sprintf( '<a href="%1$s">%1$s %2$s</a>', esc_url( atlantic_get_link_url() ), atlantic_get_svg( array( 'icon' => 'external' ) ) ); // WPCS: XSS OK.
+			?>
 	</div>
 </header>
 <?php endif;?>

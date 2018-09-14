@@ -1,6 +1,6 @@
 ( function( api ) {
 
-	api.sectionConstructor['atlantic_pro'] = api.Section.extend( {
+	api.sectionConstructor['atlantic-pro'] = api.Section.extend( {
 
 		// No events for this type of section.
 		attachEvents: function () {},

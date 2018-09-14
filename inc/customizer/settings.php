@@ -16,7 +16,7 @@ function atlantic_customize_register( $wp_customize ) {
 
 	// Arctic Theme Setting Panel
 	$wp_customize->add_panel( 'theme_settings', array(
-		'title' 		=> __( 'Theme Settings', 'atlantic' ),
+		'title' 		=> esc_html__( 'Theme Settings', 'atlantic' ),
 		'priority' 		=> 199,
 	) );
 
@@ -32,20 +32,6 @@ function atlantic_customize_register( $wp_customize ) {
 	/** WC */
 	$wp_customize->remove_control( 'woocommerce_catalog_columns' );
 
-	// Load custom sections.
-	require_once( get_parent_theme_file_path( "/inc/customizer/controls/class-section-pro.php" ) );
-
-	// Register custom section types.
-	$wp_customize->register_section_type( 'Atlantic_Customize_Section_Pro' );
-
-	// Register sections.
-	$wp_customize->add_section( new Atlantic_Customize_Section_Pro( $wp_customize, 'atlantic_pro', array(
-		'title'    			=> esc_html__( 'Campaign Kit', 'atlantic' ),
-		'pro_text' 			=> esc_html__( 'Learn More', 'atlantic' ),
-		'pro_url'  			=> esc_url( 'https://campaignkit.co/' ),
-		'priority'			=> 999
-	) ) );
-
 	/** Theme Colors */
 	$wp_customize->add_setting(
 		'primary_text_color',
@@ -58,7 +44,7 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,
 		'primary_text_color',
 		array(
-			'label'       	=> __( 'Primary Text Color', 'atlantic' ),
+			'label'       	=> esc_html__( 'Primary Text Color', 'atlantic' ),
 			'section'     	=> 'colors',
 			'setting'		=> 'primary_text_color',
 			'priority'		=> 99
@@ -75,7 +61,7 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,
 		'secondary_text_color',
 		array(
-			'label'       	=> __( 'Secondary Text Color', 'atlantic' ),
+			'label'       	=> esc_html__( 'Secondary Text Color', 'atlantic' ),
 			'section'     	=> 'colors',
 			'setting'		=> 'secondary_text_color',
 			'priority'		=> 99
@@ -92,8 +78,8 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,
 		'primary_color',
 		array(
-			'label'       	=> __( 'Link Color', 'atlantic' ),
-			'description'	=> __( 'Used for link, button, selection.', 'atlantic' ),
+			'label'       	=> esc_html__( 'Link Color', 'atlantic' ),
+			'description'	=> esc_html__( 'Used for link, button, selection.', 'atlantic' ),
 			'section'     	=> 'colors',
 			'setting'		=> 'primary_color',
 			'priority'		=> 99
@@ -110,8 +96,8 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,
 		'secondary_color',
 		array(
-			'label'       	=> __( 'Hover Color', 'atlantic' ),
-			'description'	=> __( 'Used for link:hover, button:hover.', 'atlantic' ),
+			'label'       	=> esc_html__( 'Hover Color', 'atlantic' ),
+			'description'	=> esc_html__( 'Used for link:hover, button:hover.', 'atlantic' ),
 			'section'     	=> 'colors',
 			'setting'		=> 'secondary_color',
 			'priority'		=> 99
@@ -121,7 +107,7 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'blog_section' ,
 		array(
-			'title' 			=> __( 'Blog Setting', 'atlantic' ),
+			'title' 			=> esc_html__( 'Blog Setting', 'atlantic' ),
 			'priority' 			=> 200,
 			'panel'				=> 'theme_settings'
 	) );
@@ -136,7 +122,7 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'blog_layout',
 		array(
-			'label'    => __( 'Blog Layout', 'atlantic' ),
+			'label'    => esc_html__( 'Blog Layout', 'atlantic' ),
 			'section'  => 'blog_section',
 			'setting'  => 'posts_navigation',
 			'type'     => 'select',
@@ -156,8 +142,8 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'max_gallery',
 		array(
-			'label'    		=> __( 'Max gallery item slideshow', 'atlantic' ),
-			'description'   => __( 'Post format gallery slideshow at archive page.', 'atlantic' ),
+			'label'    		=> esc_html__( 'Max gallery item slideshow', 'atlantic' ),
+			'description'   => esc_html__( 'Post format gallery slideshow at archive page.', 'atlantic' ),
 			'section'  		=> 'blog_section',
 			'settings' 		=> 'max_gallery',
 			'type'     		=> 'number',
@@ -178,7 +164,7 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'excerpt_length',
 		array(
-			'label'    => __( 'Excerpt length', 'atlantic' ),
+			'label'    => esc_html__( 'Excerpt length', 'atlantic' ),
 			'section'  => 'blog_section',
 			'settings' => 'excerpt_length',
 			'type'     => 'number',
@@ -199,7 +185,7 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'posts_navigation',
 		array(
-			'label'    => __( 'Posts Navigation', 'atlantic' ),
+			'label'    => esc_html__( 'Posts Navigation', 'atlantic' ),
 			'section'  => 'blog_section',
 			'setting'  => 'posts_navigation',
 			'type'     => 'select',
@@ -220,7 +206,7 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'post_date',
 		array(
-			'label'    => __( 'Display Post Date', 'atlantic' ),
+			'label'    => esc_html__( 'Display Post Date', 'atlantic' ),
 			'section'  => 'blog_section',
 			'settings' => 'post_date',
 			'type'     => 'checkbox'
@@ -238,7 +224,7 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'post_author',
 		array(
-			'label'    => __( 'Display Post Author', 'atlantic' ),
+			'label'    => esc_html__( 'Display Post Author', 'atlantic' ),
 			'section'  => 'blog_section',
 			'settings' => 'post_author',
 			'type'     => 'checkbox'
@@ -256,7 +242,7 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'post_cat',
 		array(
-			'label'    => __( 'Display Post Category', 'atlantic' ),
+			'label'    => esc_html__( 'Display Post Category', 'atlantic' ),
 			'section'  => 'blog_section',
 			'settings' => 'post_cat',
 			'type'     => 'checkbox'
@@ -274,7 +260,7 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'post_tag',
 		array(
-			'label'    => __( 'Display Post Tag', 'atlantic' ),
+			'label'    => esc_html__( 'Display Post Tag', 'atlantic' ),
 			'section'  => 'blog_section',
 			'settings' => 'post_tag',
 			'type'     => 'checkbox'
@@ -292,7 +278,7 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'post_comments',
 		array(
-			'label'    => __( 'Display comments count', 'atlantic' ),
+			'label'    => esc_html__( 'Display comments count', 'atlantic' ),
 			'section'  => 'blog_section',
 			'settings' => 'post_comments',
 			'type'     => 'checkbox'
@@ -310,7 +296,7 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'author_display',
 		array(
-			'label'    => __( 'Display Author biography at single post', 'atlantic' ),
+			'label'    => esc_html__( 'Display Author biography at single post', 'atlantic' ),
 			'section'  => 'blog_section',
 			'settings' => 'author_display',
 			'type'     => 'checkbox'
@@ -321,7 +307,7 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'footer_area' ,
 		array(
-			'title' 			=> __( 'Footer', 'atlantic' ),
+			'title' 			=> esc_html__( 'Footer', 'atlantic' ),
 			'priority' 			=> 200,
 			'panel'				=> 'theme_settings'
 	) );
@@ -337,8 +323,8 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'footer_copyright',
 		array(
-			'label'    		=> __( 'Footer copyright', 'atlantic' ),
-			'description'	=> __( 'Use [YEAR] for dynamic current year. Use [SITE] to render site link.', 'atlantic' ),
+			'label'    		=> esc_html__( 'Footer copyright', 'atlantic' ),
+			'description'	=> esc_html__( 'Use [YEAR] for dynamic current year. Use [SITE] to render site link.', 'atlantic' ),
 			'section'  		=> 'footer_area',
 			'settings' 		=> 'footer_copyright',
 			'type'     		=> 'textarea'
@@ -356,7 +342,7 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'theme_designer',
 		array(
-			'label'    => __( 'Display theme designer at footer?', 'atlantic' ),
+			'label'    => esc_html__( 'Display theme designer at footer?', 'atlantic' ),
 			'section'  => 'footer_area',
 			'settings' => 'theme_designer',
 			'type'     => 'checkbox'
@@ -374,7 +360,7 @@ function atlantic_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'return_top',
 		array(
-			'label'    => __( 'Enable return to top link', 'atlantic' ),
+			'label'    => esc_html__( 'Enable return to top link', 'atlantic' ),
 			'section'  => 'footer_area',
 			'settings' => 'return_top',
 			'type'     => 'checkbox'
@@ -393,7 +379,7 @@ function atlantic_customize_register( $wp_customize ) {
 		$wp_customize->add_control(
 			'wc_columns',
 			array(
-				'label'    => __( 'Products columns', 'atlantic' ),
+				'label'    => esc_html__( 'Products columns', 'atlantic' ),
 				'section'  => 'woocommerce_product_catalog',
 				'setting'  => 'wc_columns',
 				'type'     => 'select',
@@ -414,7 +400,7 @@ function atlantic_customize_register( $wp_customize ) {
 		$wp_customize->add_control(
 			'wc_products_per_page',
 			array(
-				'label'    => __( 'Number of products per page', 'atlantic' ),
+				'label'    => esc_html__( 'Number of products per page', 'atlantic' ),
 				'section'  => 'woocommerce_product_catalog',
 				'settings' => 'wc_products_per_page',
 				'type'     => 'number',
@@ -428,7 +414,7 @@ function atlantic_customize_register( $wp_customize ) {
 		$wp_customize->add_section(
 			'atlantic_wc_colors' ,
 			array(
-				'title' 			=> __( 'Colors', 'atlantic' ),
+				'title' 			=> esc_html__( 'Colors', 'atlantic' ),
 				'priority' 			=> 200,
 				'panel'				=> 'woocommerce'
 		) );
@@ -444,7 +430,7 @@ function atlantic_customize_register( $wp_customize ) {
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,
 			'price_color',
 			array(
-				'label'       	=> __( 'WooCommerce Price Color', 'atlantic' ),
+				'label'       	=> esc_html__( 'WooCommerce Price Color', 'atlantic' ),
 				'section'     	=> 'atlantic_wc_colors',
 				'setting'		=> 'price_color',
 				'priority'		=> 99
@@ -461,7 +447,7 @@ function atlantic_customize_register( $wp_customize ) {
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,
 			'sale_color',
 			array(
-				'label'       	=> __( 'WooCommerce Sale Color', 'atlantic' ),
+				'label'       	=> esc_html__( 'WooCommerce Sale Color', 'atlantic' ),
 				'section'     	=> 'atlantic_wc_colors',
 				'setting'		=> 'sale_color',
 				'priority'		=> 99
@@ -478,7 +464,7 @@ function atlantic_customize_register( $wp_customize ) {
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,
 			'stars_color',
 			array(
-				'label'       	=> __( 'WooCommerce Stars/Rating Color', 'atlantic' ),
+				'label'       	=> esc_html__( 'WooCommerce Stars/Rating Color', 'atlantic' ),
 				'section'     	=> 'atlantic_wc_colors',
 				'setting'		=> 'stars_color',
 				'priority'		=> 99

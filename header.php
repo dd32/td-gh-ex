@@ -48,8 +48,8 @@
 				<nav id="site-navigation" class="main-navigation" role="navigation">
 					<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 						<?php
-						echo atlantic_get_svg( array( 'icon' => 'menu' ) );
-						echo atlantic_get_svg( array( 'icon' => 'close' ) );
+						echo atlantic_get_svg( array( 'icon' => 'menu' ) ); /* WPCS: xss ok. */
+						echo atlantic_get_svg( array( 'icon' => 'close' ) ); /* WPCS: xss ok. */
 						esc_html_e( 'Navigation', 'atlantic' );
 						?>
 					</button>

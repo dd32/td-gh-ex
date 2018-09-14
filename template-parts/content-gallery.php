@@ -19,7 +19,7 @@
 			$ids = explode( ",", $gallery['ids'] );
 			if ( ! is_singular() && ! post_password_required() ) {
 				echo '<div class="entry-media">';
-					echo '<div id="gallery-'. get_the_id() .'" class="entry-gallery">';
+					echo '<div id="gallery-'. absint( get_the_id() ) .'" class="entry-gallery">';
 
 					$counter = 0;
 					foreach( $ids as $id ) {
@@ -27,7 +27,7 @@
 						$image_src  = wp_get_attachment_image_src( $id, 'full' );
 						$image_link = get_permalink( $id );
 
-						echo $image;
+						echo $image; // WPCS: XSS OK.
 
 						if ( $counter >= $max_gallery ) {
 							break;

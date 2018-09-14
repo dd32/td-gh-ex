@@ -17,7 +17,19 @@ function atlantic_include_svg_icons() {
 		require_once( $svg_icons );
 	}
 }
-add_action( 'wp_footer', 'atlantic_include_svg_icons', 9999 );
+
+/**
+ * Render svg icons.
+ *
+ * @return [type] [description]
+ */
+function atlantic_render_icons() {
+	ob_start();
+	atlantic_include_svg_icons();
+	$icons = str_replace( array( "\n", "\t", "\r" ), '', ob_get_clean() );
+	echo $icons; // WPCS: XSS OK.
+}
+add_action( 'wp_footer', 'atlantic_render_icons', 9999 );
 
 /**
  * Return SVG markup.

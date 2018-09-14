@@ -54,7 +54,7 @@ $quote_bg = ( !is_singular() && has_post_thumbnail() ) ? 'style="background-imag
 	<header class="entry-header">
 		<?php the_title( '<h2 class="entry-title screen-reader-text"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );?>
 	</header>
-	<div class="entry-content entry-quote" <?php echo $quote_bg;?>>
+	<div class="entry-content entry-quote" <?php echo $quote_bg; // WPCS: XSS OK.?>>
 		<?php
 
 			edit_post_link(

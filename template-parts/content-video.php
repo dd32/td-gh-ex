@@ -14,7 +14,7 @@
 
 		<?php if ( ! is_singular() && ! post_password_required() ) : ?>
 			<div class="entry-media">
-				<?php echo atlantic_media_grabber( array( 'type' => 'video', 'split_media' => true ) );?>
+				<?php echo atlantic_media_grabber( array( 'type' => 'video', 'split_media' => true ) ); // WPCS: XSS OK.?>
 			</div>
 		<?php elseif( has_post_thumbnail() ) :?>
 			<?php atlantic_post_thumbnail();?>

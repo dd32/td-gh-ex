@@ -30,9 +30,7 @@ function atlantic_setup() {
 	 * If you're building a theme based on Atlantic, use a find and replace
 	 * to change 'atlantic' to the name of your theme in all the template files.
 	 */
-	load_theme_textdomain( 'atlantic', trailingslashit( WP_LANG_DIR ) . 'themes/' );
-	load_theme_textdomain( 'atlantic', get_stylesheet_directory() . '/languages' );
-	load_theme_textdomain( 'atlantic', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'atlantic' );
 
 	// Add default posts and comments RSS feed links to head.
 	add_theme_support( 'automatic-feed-links' );
@@ -226,6 +224,9 @@ add_filter( 'wp_resource_hints', 'atlantic_resource_hints', 10, 2 );
  */
 function atlantic_scripts() {
 
+	$suffix = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
+	$rtl = is_rtl() ? '-rtl' : '';
+
 	wp_dequeue_style( 'contact-form-7' );
 
 	// Add custom fonts, used in the main stylesheet.
@@ -233,32 +234,32 @@ function atlantic_scripts() {
 		wp_enqueue_style( 'atlantic-fonts', atlantic_fonts_url(), array(), null );
 	}
 
-	wp_enqueue_style( 'atlantic-style', get_stylesheet_uri() );
+	wp_enqueue_style( "atlantic-style{$rtl}", get_theme_file_uri( "/style{$rtl}{$suffix}.css" ) );
 
 	if ( class_exists( 'WooCommerce' ) ) {
-		wp_enqueue_style( 'atlantic-woocommerce-style', get_theme_file_uri( '/assets/css/woocommerce.min.css' ) );
+		wp_enqueue_style( "atlantic-woocommerce-style{$rtl}", get_theme_file_uri( "/assets/css/woocommerce{$rtl}{$suffix}.css" ) );
 	}
 
-	wp_enqueue_script( 'html5', get_theme_file_uri( '/assets/vendor/js/html5.js' ), array(), '3.7.3' );
+	wp_enqueue_script( 'html5', get_theme_file_uri( "/assets/vendor/js/html5{$suffix}.js" ), array(), '3.7.3' );
 	wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
 
-	wp_enqueue_script( 'respond', get_theme_file_uri( '/assets/vendor/js/respond.js' ), array(), '1.4.2' );
+	wp_enqueue_script( 'respond', get_theme_file_uri( "/assets/vendor/js/respond{$suffix}.js" ), array(), '1.4.2' );
 	wp_script_add_data( 'respond', 'conditional', 'lt IE 9' );
 
-	wp_enqueue_script( 'nwmatcher', get_theme_file_uri( '/assets/vendor/js/nwmatcher.js' ), array(), '1.4.1' );
+	wp_enqueue_script( 'nwmatcher', get_theme_file_uri( "/assets/vendor/js/nwmatcher{$suffix}.js" ), array(), '1.4.1' );
 	wp_script_add_data( 'nwmatcher', 'conditional', 'lt IE 9' );
 
-	wp_enqueue_script( 'selectivizr', get_theme_file_uri( '/assets/vendor/js/selectivizr.js' ), array(), '1.0.2' );
+	wp_enqueue_script( 'selectivizr', get_theme_file_uri( "/assets/vendor/js/selectivizr{$suffix}.js" ), array(), '1.0.2' );
 	wp_script_add_data( 'selectivizr', 'conditional', 'lt IE 9' );
 
-	wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/assets/js/fitvids/jquery.fitvids.min.js', array( 'jquery' ), '1.2.0', true );
-	wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/assets/js/slick/slick.min.js', array( 'jquery' ), '1.7.1', true );
-	wp_enqueue_script( 'atlantic-script', get_template_directory_uri() . '/assets/js/atlantic.min.js', array( 'jquery', 'jquery-masonry' ), '20151215', true );
+	wp_enqueue_script( 'jquery-fitvids', get_theme_file_uri( "/assets/js/fitvids/jquery.fitvids{$suffix}.js" ), array( 'jquery' ), '1.2.0', true );
+	wp_enqueue_script( 'jquery-slick', get_theme_file_uri( "/assets/js/slick/slick{$suffix}.js" ), array( 'jquery' ), '1.7.1', true );
+	wp_enqueue_script( 'atlantic-script', get_theme_file_uri( "/assets/js/frontend{$suffix}.js" ), array( 'jquery', 'jquery-masonry' ), '20151215', true );
 
 	$output = array(
 		'expandMenu' 	=> atlantic_get_svg( array( 'icon' => 'expand' ) ),
 		'collapseMenu' 	=> atlantic_get_svg( array( 'icon' => 'collapse' ) ),
-		'subNav' 		=> '<span class="screen-reader-text">' . __( 'Sub Navigation', 'atlantic' ) . '</span>'
+		'subNav' 		=> '<span class="screen-reader-text">' . esc_html__( 'Sub Navigation', 'atlantic' ) . '</span>'
 	);
 	wp_localize_script( 'atlantic-script', 'Atlanticl10n', $output );
 
