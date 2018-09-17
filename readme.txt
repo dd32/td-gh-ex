@@ -3,7 +3,7 @@
 Contributors: spicethemes
 Requires at least: 4.7
 Tested up to: 4.9.5
-Stable tag: 1.4
+Stable tag: 1.5
 
 Multi-purpose WordPress theme
 
@@ -18,6 +18,9 @@ Content is a responsive, multi-purpose WordPress theme. It’s flexible and suit
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 1.5 ==
+1. Update theme about page descriptino.
 
 = 1.4 ==
 1. Added About Theme Detail Page.
