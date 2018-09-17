@@ -16,7 +16,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 		<div class="row">
 			<div class="col-md-6">
 				<div class="rockers-tab-pane-half rockers-tab-pane-first-half">
-				<p><?php esc_html_e( 'This theme is ideal for creating corporate and business websites. There is no separate premium version of the Rockers theme, Rockers is a child theme of SpicePress WordPress theme and premium version of  SpicePress have tons of features: a homepage with many sections where you can feature unlimited slides, portfolios, user reviews, latest news, services, calls to action and much more. Each section in the Homepage template is carefully designed to fit to all business requirements.','rockers');?></p>
+				<p><?php esc_html_e( 'This theme is ideal for creating corporate and business websites. There is no separate premium version of it, as Rockers is a child theme of the SpicePress WordPress theme. The premium version, SpicePress PRO has tons of features: a homepage with many sections where you can feature unlimited slides, portfolios, user reviews, latest news, services, calls to action and much more. Each section in the Homepage template is carefully designed to fit to all business requirements.','rockers');?></p>
 				<p>
 				<?php esc_html_e( 'You can use this theme for any type of activity. Rockers is compatible with popular plugins like WPML and Polylang. To help you create an effective and impactful web presence, Rockers has predefined versions of many pages: Contact, Services, Portfolios, About Us and Blog.', 'rockers' ); ?>
 				</p>
@@ -35,7 +35,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 			</div>
 			<div class="col-md-6">
 				<div class="rockers-tab-pane-half rockers-tab-pane-first-half">
-				<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/functions/rockers-info/img/rockers.png'; ?>" alt="<?php esc_html_e( 'rockers theme', 'rockers' ); ?>" />
+				<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/functions/rockers-info/img/rockers.png'; ?>" alt="<?php esc_html_e( 'Rockers theme', 'rockers' ); ?>" />
 				</div>
 			</div>	
 		</div>
