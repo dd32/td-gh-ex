@@ -31,6 +31,15 @@ function avira_premium_setting( $wp_customize ) {
 					<li><a href="http://specia.ticksy.com/" class="btn-green" target="_blank"><i class="dashicons dashicons-sos"></i><?php _e( 'Support Center','avira' ); ?> </a></li>
 				</ul>
 			</div>
+			<div>
+				<ul>
+					<li><a href="http://docs.speciatheme.com/themes/avira-free/" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/documentation.png"></a></li>
+					
+					<li><a href="https://specia.ticksy.com/submit/#100011007" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/support.png"></a></li>
+					
+					<li><a href="https://wordpress.org/support/theme/avira/reviews/#new-post" target="_blank"><img src="<?php echo get_stylesheet_directory_uri(); ?>/images/rating.png"></a></li>
+				</ul>
+			</div>
 		<?php
 	   }
 	}
