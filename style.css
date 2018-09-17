@@ -1,10 +1,10 @@
 /*
 Theme Name: enrichmg
-Theme URI: https://daviseastconsulting.com/enrichmg/
+Theme URI: https://terryeast.com/wordpress-repository-theme-enrichmg
 Author: Terry East
-Author URI: https://daviseastconsulting/aboutus
+Author URI: https://terryeast.com
 Description: Minimal magazine format. Custom static frontpage and landing page sandbox layouts. HTML5/CSS3 Responsive Design. Theme option customizers allow easy CSS changes to backgrounds and text.
-Version: 2.3
+Version: 2.3.1
 License: GPU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: enrichmg
@@ -56,6 +56,8 @@ Version 2.3 brought current and bug fixes --
 			search index now handles vertical images larger the amount of text
             updated screenshot size
             updated GPL license to v3
+Version 2.3.1 bug fixes restored display of featured image on single post
+              updated author and theme URI
 			
 
 */
@@ -712,7 +714,7 @@ div.attachment-description {
 }
 
 div.thumbnailSingle {
-	float:left;   
+	/*float:left;   */
 }          
 
 .sticky .entry-header .thumbnailList, .format-gallery .entry-header .thumbnailList  {
