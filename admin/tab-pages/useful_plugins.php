@@ -1,10 +1,10 @@
 <?php
 /**
- * Github
+ * useful_plugins
  */
 ?>
 
-<div id="github" class="quality-tab-pane">
+<div id="useful_plugins" class="quality-tab-pane panel-close">
 <div class="container-fluid">
 	<div class="row">
 	<div class="quality-pane-center">
@@ -117,12 +117,8 @@
 		<p><?php esc_html_e( 'The theme supports yet another famous plugin: WPML. With the help of this support you can create a website available in multiple languages.', 'quality' ); ?></p>
 		<hr>
 	</div>
-	</div>
-
-	
-	<div class="clearfix"></div>
-	
+</div>
+<div class="clearfix"></div>
 </div>	
 </div>
-</div>		
-
+</div>

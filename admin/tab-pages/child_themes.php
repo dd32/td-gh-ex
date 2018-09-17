@@ -3,7 +3,7 @@
  * Child themes template
  */
 ?>
-<div id="child_themes" class="quality-tab-pane">
+<div id="child_themes" class="quality-tab-pane panel-close">
 
 	<?php
 		$current_theme = wp_get_theme();
@@ -24,7 +24,7 @@
 		<!-- Quality Blue -->
 		<div class="quality-child-theme-container">
 			<div class="quality-child-theme-image-container">
-				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/quality-info/img/quality-blue.png'; ?>" alt="<?php esc_html_e( 'Quality Blue Child Theme', 'quality' ); ?>" />
+				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/admin/img/quality-blue.png'; ?>" alt="<?php esc_html_e( 'Quality Blue Child Theme', 'quality' ); ?>" />
 				<div class="quality-child-theme-description">
 					<h2><?php esc_html_e( 'Quality Blue', 'quality' ); ?></h2>
 				</div>
@@ -53,7 +53,7 @@
 		<!-- Quality Green -->
 		<div class="quality-child-theme-container">
 			<div class="quality-child-theme-image-container">
-				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/quality-info/img/quality-green.png'; ?>" alt="<?php esc_html_e( 'Quality Green Child Theme', 'quality' ); ?>" />
+				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/admin/img/quality-green.png'; ?>" alt="<?php esc_html_e( 'Quality Green Child Theme', 'quality' ); ?>" />
 				<div class="quality-child-theme-description">
 					<h2><?php esc_html_e('Quality Green', 'quality' ); ?></h2>
 				</div>
@@ -83,7 +83,7 @@
 		<!-- Zifer Child -->
 		<div class="quality-child-theme-container">
 			<div class="quality-child-theme-image-container">
-				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/quality-info/img/quality-orange.png'; ?>" alt="<?php esc_html_e( 'Quality Orange Child Theme', 'quality' ); ?>" />
+				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/admin/img/quality-orange.png'; ?>" alt="<?php esc_html_e( 'Quality Orange Child Theme', 'quality' ); ?>" />
 				<div class="quality-child-theme-description">
 					<h2><?php esc_html_e( 'Quality Orange', 'quality' ); ?></h2>
 				</div>
@@ -107,6 +107,67 @@
 		</div>
 	 </div>
 	 </div>
+	 
+	<div class="col-md-4">	
+	<div class="quality-tab-pane-half quality-tab-pane-first-half">	
+		<!-- Zifer Child -->
+		<div class="quality-child-theme-container">
+			<div class="quality-child-theme-image-container">
+				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/admin/img/heroic.png'; ?>" alt="<?php esc_html_e( 'Heroic Child Theme', 'quality' ); ?>" />
+				<div class="quality-child-theme-description">
+					<h2><?php esc_html_e( 'Heroic', 'quality' ); ?></h2>
+				</div>
+			</div>
+			<div class="quality-child-theme-details">
+				<?php if ( 'heroic' != $current_theme['Name'] ) { ?>
+					<div class="theme-details">
+						<span class="theme-name"><?php esc_html_e( 'Heroic', 'quality' ); ?></span>
+						<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=heroic' ), 'install-theme_heroic' ) ); ?>" class="button button-primary install right"><?php printf( __( 'Install %s now', 'quality' ), '<span class="screen-reader-text">Heroic</span>' ); ?></a>
+						<a class="button button-secondary preview right" target="_blank" href="https://wp-themes.com/heroic"><?php esc_html_e( 'Live Preview','quality'); ?></a>
+						<div class="quality-clear"></div>
+					</div>
+				<?php } else { ?>
+					<div class="theme-details active">
+						<span class="theme-name"><?php echo esc_html_e( 'Heroic - Current theme', 'quality' ); ?></span>
+						<a class="button button-secondary customize right" target="_blank" href="<?php echo get_site_url(). '/wp-admin/customize.php' ?>"><?php esc_html_e( 'Customize','quality'); ?></a>
+						<div class="quality-clear"></div>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+	 </div>
+	 </div>
+	 
+	 <div class="col-md-4">	
+	<div class="quality-tab-pane-half quality-tab-pane-first-half">	
+		<!-- Zifer Child -->
+		<div class="quality-child-theme-container">
+			<div class="quality-child-theme-image-container">
+				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/admin/img/mazino.png'; ?>" alt="<?php esc_html_e( 'Mazino Child Theme', 'quality' ); ?>" />
+				<div class="quality-child-theme-description">
+					<h2><?php esc_html_e( 'Mazino', 'quality' ); ?></h2>
+				</div>
+			</div>
+			<div class="quality-child-theme-details">
+				<?php if ( 'mazino' != $current_theme['Name'] ) { ?>
+					<div class="theme-details">
+						<span class="theme-name"><?php esc_html_e( 'Mazino', 'quality' ); ?></span>
+						<a href="<?php echo esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-theme&theme=mazino' ), 'install-theme_mazino' ) ); ?>" class="button button-primary install right"><?php printf( __( 'Install %s now', 'quality' ), '<span class="screen-reader-text">Mazino</span>' ); ?></a>
+						<a class="button button-secondary preview right" target="_blank" href="https://wp-themes.com/mazino"><?php esc_html_e( 'Live Preview','quality'); ?></a>
+						<div class="quality-clear"></div>
+					</div>
+				<?php } else { ?>
+					<div class="theme-details active">
+						<span class="theme-name"><?php echo esc_html_e( 'Mazino - Current theme', 'quality' ); ?></span>
+						<a class="button button-secondary customize right" target="_blank" href="<?php echo get_site_url(). '/wp-admin/customize.php' ?>"><?php esc_html_e( 'Customize','quality'); ?></a>
+						<div class="quality-clear"></div>
+					</div>
+				<?php } ?>
+			</div>
+		</div>
+	 </div>
+	 </div>
+	 
 	</div>
 </div>	
 	</div>

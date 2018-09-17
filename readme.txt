@@ -153,6 +153,10 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+@Version 2.2.1
+1. Update Slider Read more link.
+2. Added Recommended action tab in about theme page.
+3. Update doc link.
 @Version 2.2
 1. Update Links.
 @Version 2.1

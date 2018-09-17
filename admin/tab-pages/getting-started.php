@@ -2,7 +2,6 @@
 /**
  * Getting started template
  */
-
 $customizer_url = admin_url() . 'customize.php' ;
 ?>
 
@@ -34,7 +33,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 			</div>
 			<div class="col-md-6">
 				<div class="quality-tab-pane-half quality-tab-pane-first-half">
-				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/functions/quality-info/img/quality.png'; ?>" alt="<?php esc_html_e( 'Quality Blue Child Theme', 'quality' ); ?>" />
+				<img src="<?php echo esc_url( get_template_directory_uri() ) . '/admin/img/quality.png'; ?>" alt="<?php esc_html_e( 'Quality Theme', 'quality' ); ?>" />
 				</div>
 			</div>	
 		</div>

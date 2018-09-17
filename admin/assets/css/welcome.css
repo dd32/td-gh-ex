@@ -44,12 +44,10 @@
     display: block;
 }
 
-.quality-tab-pane {
-	padding: 30px;
-}
-.quality-tab-pane {
-    display: none;
-}
+/* .quality-tab-pane { */
+	/* padding: 30px; */
+/* } */
+
 .quality-tab-pane.active {
     display: block;
 }
@@ -95,9 +93,9 @@
 }
 
 .quality-info-title {
-    font-size: 32px;
+    font-size: 32px !important;
 	border-bottom: 1px solid #eaeaea;
-	line-height:50px;
+	line-height:50px !important;
 }
 .quality-clear {
     clear: both;

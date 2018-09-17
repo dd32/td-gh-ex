@@ -101,7 +101,7 @@ function quality_slider_customizer( $wp_customize ) {
 	// Slider banner button link
 	$wp_customize->add_setting(
 	'quality_pro_options[home_image_button_link]', array(
-	'default'	=> 'http://webriti.com/demo/wp/quality/',
+	'default'	=> 'https://webriti.com/quality-lite-version-details-page/',
 	'capability' => 'edit_theme_options',
 	'sanitize_callback' => 'sanitize_text_field',
 	'type'	=> 'option',

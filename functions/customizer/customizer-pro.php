@@ -104,7 +104,7 @@ class WP_document_Customize_Control extends WP_Customize_Control {
     public function render_content() {
     ?>
       <div class="pro-box">
-	 <a href="<?php echo esc_url('http://webriti.com/help/');?>" target="_blank" class="document" id="review_pro"><?php _e('DOCUMENTATION','quality' ); ?></a>
+	 <a href="<?php echo esc_url('https://help.webriti.com/');?>" target="_blank" class="document" id="review_pro"><?php _e('DOCUMENTATION','quality' ); ?></a>
 	 
 	 <div>
 	 <div class="pro-vesrion">

@@ -16,7 +16,7 @@ function theme_data_setup()
 			'home_image_sub_title' => __('Welcome to Quality theme','quality'),
 			'home_image_description' => __('Create beautiful websites, 100% responsive and easy to customize.','quality'),
 			'home_image_button_text' => __('Get this theme','quality'),
-			'home_image_button_link' => '#',
+			'home_image_button_link' => 'https://webriti.com/quality-lite-version-details-page/',
 
 			'service_title'=> __('Our awesome services','quality'),
 			'service_description' => 'Lorem Ipsum which looks reason able. The generated Lorem Ipsum is therefore always free.',

@@ -83,10 +83,14 @@
   		// setup admin pannel defual data for index page		
   		$quality_pro_options=theme_data_setup();
 
-	if ( is_admin() ) {
-
-        require( QUALITY_THEME_FUNCTIONS_PATH . '/quality-info/welcome-screen.php');
-	}
+		//About Theme
+		$theme = wp_get_theme(); // gets the current theme
+		if ( 'Quality' == $theme->name || 'Quality blue' == $theme->name || 'Quality green' == $theme->name || 'Quality orange' == $theme->name)
+		{
+		 if ( is_admin() ) {
+				require get_template_directory() . '/admin/admin-init.php';
+			}
+		}
 
 		
   	}

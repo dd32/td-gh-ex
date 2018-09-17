@@ -3,7 +3,7 @@
  * Free VS Pro
  */
 ?>
-<div id="free_pro" class="quality-tab-pane quality-fre-pro">
+<div id="free_vs_pro" class="quality-tab-pane panel-close">
 
     <div class="row pricing1">
 						<div class="col-md-12">
