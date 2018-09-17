@@ -559,29 +559,37 @@ Kirki::add_field( 'best_blog', array(
   ),
 ) );
 
+Kirki::add_field( 'best_blog', array(
+  'type'        => 'dimension',
+  'settings'    => 'slider_titlefontsize_setting',
+  'label'       => esc_attr__( 'H1 font size desktop', 'best-blog' ),
+  'section'     => 'bestblog_slider_settings',
+  'default'     => '2rem',
+  'transport' => 'auto',
+  'output' => array(
+      array(
+          'element' => '#slider .post-header-outer .post-header .post-title a',
+          'property' => 'font-size',
+      )
+  ),
+) );
 
 Kirki::add_field( 'best_blog', array(
-	'type'        => 'slider',
-	'settings'    => 'slider_titlefontsize_setting',
-	'label'       => esc_attr__( 'Slider Title text size', 'best-blog' ),
-	'section'     => 'bestblog_slider_settings',
-	'default'     =>  2.866,
-  'transport'   => 'auto',
-	'choices'     => array(
-		'min'  => '0',
-		'max'  => '12',
-		'step' => '.02',
-	),
-	'output'      => array(
-		array(
-			'element' => '#slider .post-header-outer .post-header .post-title a',
-			'property' => 'font-size',
-			'prefix'=>'calc( ',
-			'units'   => 'vw',
-			'suffix'=>' + 3.8661417323px)',
-		),
-	),
+  'type'        => 'dimension',
+  'settings'    => 'slider_titlefontsize_setting_mobile',
+  'label'       => esc_attr__( 'H1 font size mobile', 'best-blog' ),
+  'section'     => 'bestblog_slider_settings',
+  'default'     => '1.5rem',
+  'transport' => 'auto',
+  'output' => array(
+      array(
+          'element' => '@media screen and (max-width: 39.9375em) {#slider .post-header-outer .post-header .post-title a',
+          'property' => 'font-size',
+          'suffix' => '}'
+      )
+  ),
 ) );
+
 
 
 Kirki::add_field( 'best_blog', array(
