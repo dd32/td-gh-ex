@@ -14,6 +14,10 @@
 <!-- footer bottom section -->
 <?php do_action('bazzinga_footer_bottom_sec'); ?>
 
+<div class="bazzinga_move_to_top"> 
+	<i class="fa fa-arrow-up"></i>
+</div>
+
 
 <!-- footer-copyright-section -->
 <section class="footer_copyright_wrap">

@@ -49,6 +49,10 @@ All options are in the Customizer.
 = 1.0.4 - Sept 5 2018 =
 * Customizer bug fix
 
+= 1.0.5 - Sept 17 2018 =
+* Added move to top feature 
+* Solve plugin activation bug in tgm plugin
+
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License  v2 or later
 License: GNU General Public License v2 or later

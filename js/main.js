@@ -177,6 +177,27 @@ window.addEventListener('load', AOS.refresh);
  $('.main-menu-btn').click(function(){
     $('body').toggleClass('fixed-body');
   });
+
+
+ //Scroll To Top
+    var window_height = $(window).height();
+    var window_height = (window_height) + (50);
+
+    $(window).scroll(function() {
+        var scroll_top = $(window).scrollTop();
+        if (scroll_top > window_height) {
+            $('.bazzinga_move_to_top').show();
+        }
+        else {
+            $('.bazzinga_move_to_top').hide();   
+        }
+    });
+
+    $('.bazzinga_move_to_top').click(function(){
+        $('html, body').animate({scrollTop:0}, 'slow');
+        return false;
+        
+    });
  
 });
 

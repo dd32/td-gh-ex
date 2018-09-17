@@ -4,7 +4,7 @@
  Author: Blaze Themes
  Author URI: http://blazethemes.com/
  Description: Bazzinga is a well-designed Multi Purpose WordPress Theme with HTML5 / CSS3 and Responsive design. Bazzinga Theme is suitable for any kind of corporations & businesses and its features serve as a good looking and informative business / corporate website. It has multiple homepage layouts with latest trendy animations.
- Version: 1.0.4
+ Version: 1.0.5
  License: GNU General Public License v2 or later
  License URI: https://www.gnu.org/licenses/gpl-2.0.html
  Text Domain: bazzinga
@@ -3265,6 +3265,27 @@ div.wpcf7 .ajax-loader {
 .footer_copyright_wrap {
   background-color: #343a40;
   padding: 1rem 0;
+}
+.bazzinga_move_to_top {
+  float: right;
+  bottom: 1em;
+  border: 1px solid #000;
+  padding: 0.5em 0.75em;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
+  cursor: pointer;
+  z-index: 99999;
+  position: fixed;
+  right: 2%;
+  display: none;
+}
+.bazzinga_move_to_top:hover, .bazzinga_move_to_top:focus, .bazzinga_move_to_top:visited {
+  background-color: #000;
+  color: #fff;
+  list-style: none;
+  text-decoration: none;
+  outline: none;
 }
 /*--------------------------------------------------------------
  # Widgets
