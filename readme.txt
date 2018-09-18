@@ -2,8 +2,8 @@
 
 Author: Royal-Flush wp-royal.com
 Requires at least: WordPress 4.7+
-Tested up to: WordPress 4.9.7
-Version: 1.6.8
+Tested up to: WordPress 4.9.8
+Version: 1.6.9
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: blog, e-commerce, food-and-drink, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -79,3 +79,24 @@ https://pixabay.com/en/freedom-holding-relax-2218621/
 https://pixabay.com/en/computer-browser-research-study-2562651/
 https://pixabay.com/en/people-woman-girl-clothing-eye-2563491/
 https://pixabay.com/en/berries-cream-food-fruits-plate-1845626/
+https://pixabay.com/en/cake-cappuccino-ceramic-coffee-cup-1839134/
+https://pixabay.com/en/sugar-succulent-pastry-home-made-3119424/
+https://pixabay.com/en/pancake-schaumomelette-omelette-1984716/
+https://pixabay.com/en/wave-surfer-sport-sea-surf-water-1246560/
+https://pixabay.com/en/summer-holiday-beach-love-2434933/
+https://pixabay.com/en/adult-body-close-up-exercise-fit-1867743/
+https://pixabay.com/en/sunset-dusk-sky-clouds-lightning-2459855/
+https://pixabay.com/en/tree-lake-reflection-water-calm-736881/
+https://www.youtube.com/watch?v=huqJUghX26Y
+https://pixabay.com/en/people-woman-wall-fashion-beauty-2576968/
+https://pixabay.com/en/girl-woman-joy-of-life-dance-2940655/
+https://pixabay.com/en/feet-shoes-footwear-relax-1209636/
+https://pixabay.com/en/flora-flower-arrangement-flower-pot-1866615/
+https://pixabay.com/en/hallstatt-austria-village-town-2519649/
+https://pixabay.com/en/adult-breakfast-bedroom-blanket-1867769/
+https://pixabay.com/en/road-street-highway-travel-way-498288/
+https://pixabay.com/en/young-woman-model-female-attractive-1208269/
+https://pixabay.com/en/adult-breakfast-bedroom-blanket-1867769/
+https://pixabay.com/en/boy-beach-sand-shore-water-waves-925319/
+https://pixabay.com/en/ocean-beach-girl-waves-horizon-1149981/
+https://pixabay.com/en/photographer-tourist-snapshot-407068/
