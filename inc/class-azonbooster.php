@@ -91,7 +91,7 @@ if ( ! class_exists( 'AzonBooster' ) ) :
 			// This theme uses wp_nav_menu() in two locations.
 			register_nav_menus( array(
 				'primary'   => __( 'Primary Menu', 'azonbooster' ),
-				'secondary' => __( 'Secondary Menu', 'azonbooster' ),
+				'secondary' => __( 'Top Menu', 'azonbooster' ),
 				'footer'  => __( 'Footer Menu', 'azonbooster' ),
 			) );
 

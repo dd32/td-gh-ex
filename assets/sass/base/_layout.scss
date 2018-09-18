@@ -107,21 +107,21 @@
 
 	.right-sidebar {
 		.content-area {
-			@include span(9 of 12);
+			@include span(8 of 12);
 		}
 
 		.widget-area {
-			@include span(last 3 of 12);
+			@include span(last 4 of 12);
 		}
 	}
 
 	.left-sidebar {
 		.content-area {
-			@include span(last 9 of 12);
+			@include span(last 8 of 12);
 		}
 
 		.widget-area {
-			@include span(3 of 12);
+			@include span(4 of 12);
 		}
 	}
 	.none-sidebar {
@@ -135,7 +135,8 @@
 		}
 	}
 
-	.azonbooster-full-width-content {
+	.azonbooster-full-width-content,
+	.page-template-template-fullpage {
 		.content-area {
 			@include span(full);
 		}
@@ -304,6 +305,7 @@
 			@include span( last 6 of 12);
 		}
 	}
+
 	/**
 	 * Comments
 	 */
@@ -473,5 +475,26 @@
 
 		}
 	}
+	
+		/**
+	 * Site info
+	 */
+	.site-info {
 
+		.theme-credit {
+
+			width: 100%;
+			text-align: center;
+			float: none;
+		}
+		.footer-menu-container {
+			width: 100%;
+			text-align: center;
+			float: none;
+
+			.footer-menu {
+				float: none;
+			}
+		}
+	}
 }

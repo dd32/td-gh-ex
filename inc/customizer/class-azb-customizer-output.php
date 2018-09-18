@@ -109,7 +109,7 @@ class AzonBooster_Customizer_Output {
 
 	public function thumbnail_position( $classes ) {
 
-		if ( ! is_single() ) {
+		if ( is_archive() || is_home() ) {
 
 			$classes[] = 'thumbnail-on-' . azonbooster_get_option('blog_layout_thumbnail_pos', 'left');
 

@@ -298,6 +298,7 @@ body {
 	.widget {
 		margin-bottom: 0;
 	}
+
 	.header-menu {
 		list-style: none;
 		margin: 0;
@@ -308,6 +309,10 @@ body {
 			display: inline-block;
 			margin-left: 5px;
 			padding-left: 5px;
+		}
+
+		ul {
+			display: none;
 		}
 	}
 }
@@ -491,6 +496,10 @@ body {
 			display: inline-block;
 			margin-left: 5px;
 			padding-left: 5px;
+		}
+
+		ul {
+			display: none;
 		}
 	}
 }
