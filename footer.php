@@ -52,8 +52,20 @@
 							<?php esc_html_e( 'Royal-Flush', 'bard' ); ?>
 							</a>
 						</span>
+
+						<?php 
+							wp_nav_menu( array(
+								'theme_location' 	=> 'footer',
+								'menu_id' 		 	=> 'footer-menu',
+								'menu_class' 		=> '',
+								'container' 	 	=> 'nav',
+								'container_class'	=> 'footer-menu-container',
+								'depth'				=> 1,
+								'fallback_cb' 		=> false
+							) );
+						?>
 					</div>
-		
+			
 					<?php if ( bard_options('page_footer_show_scrolltop') === true ) : ?>
 					<span class="scrolltop">
 						<span class="icon-angle-up"></span>

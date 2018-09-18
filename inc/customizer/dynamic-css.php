@@ -248,6 +248,8 @@ $css = '';
 		.rpwwt-post-comments-number,
 		.copyright-info,
 		#page-footer .copyright-info a,
+		.footer-menu-container,
+		#page-footer .footer-menu-container a,
 		.single-navigation span,
 		.comment-notes {
 			color: #a1a1a1;
