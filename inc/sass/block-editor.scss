@@ -22,9 +22,9 @@ Styles for the block editor
 	line-height: 1.6;
 }
 
-body.gutenberg-editor-page .edit-post-visual-editor .editor-post-title__block,
-body.gutenberg-editor-page .editor-default-block-appender,
-body.gutenberg-editor-page .editor-block-list__block {
+body.gutenberg-editor-page #editor .edit-post-visual-editor .editor-post-title__block,
+body.gutenberg-editor-page #editor .editor-default-block-appender,
+body.gutenberg-editor-page #editor .editor-block-list__block {
     max-width: 830px
 }
 
