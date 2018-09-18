@@ -73,12 +73,10 @@ add_action( 'adbooster_single_post_bottom', 'adbooster_single_post_bottom_widget
  * 
  * @see  adbooster_page_header()
  * @see  adbooster_page_content()
- * @see  adbooster_init_structured_data()
  * @see  adbooster_display_comments()
  */
 add_action( 'adbooster_page',       'adbooster_page_header',          10 );
 add_action( 'adbooster_page',       'adbooster_page_content',         20 );
-add_action( 'adbooster_page',       'adbooster_init_structured_data', 30 );
 add_action( 'adbooster_page_after', 'adbooster_display_comments', 10);
 
 /**

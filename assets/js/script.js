@@ -4,8 +4,16 @@
 
 		initAll: function() {
 
-			this.navigation();
+			//this.navigation();
 			this.navSearch();
+			this.offCanvas();
+		},
+		offCanvas: function() {
+			
+			$('.menu-toggle').on('click', function() {
+			  	$('body').toggleClass('main-nav-expanded');
+			});
+			
 		},
 		navigation: function() {
 

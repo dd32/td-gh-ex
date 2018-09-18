@@ -3,12 +3,12 @@
 AdBooster Theme by BoosterWP, https://boosterwp.com/themes/adbooster
 
 == Tags ==
-two-columns, custom-background, custom-header, custom-menu, blog, news, featured-image-header, featured-images, flexible-header, custom-colors, full-width-template, sticky-post, threaded-comments, translation-ready, theme-options, one-column, left-sidebar, right-sidebar
+blog, two-columns, left-sidebar, right-sidebar, custom-colors, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments
 
 
 == About AdBooster ==
 
-The best free Amazon Affiliate theme double up your sales and conversion rate. adbooster is a fast, lightweight, mobile responsive theme built with speed, SEO friendly, and usability in mind. adbooster can serve as a solid base for any website and works great with any of your favorite page builders. With an emphasis on WordPress coding standards, we ensure adbooster is compatible with all well-coded plugins, including major ones like Amazon Associates Link Builder, EazyAzon, WPML, BuddyPress and bbPress.
+AdBooster is a lightning fast and very lightweight WordPress CTR theme that let’s the website content get the user’s full attention. It is designed to help increase Click-through Rate (CTR). It places ads on key positions which helps you get more clicks to your ads thus increasing your earning. Not only its eazy to use and setup, but also its highly responsive and mobile friendly. More over, it is also designed for Search Engine Optimized(SEO) that focus on search engines in mind.
 
 == Installation ==
 

@@ -39,23 +39,11 @@ if ( ! function_exists( 'adbooster_handburger_btn' ) ) {
 
 	function adbooster_handburger_btn() {
 		?>
-		
-			<div class="menu-toggle">
-				<span></span>
-				<span></span>
-				<span></span>
-				<span></span>
-			</div>
-			<nav id="site-navigation" class="main-navigation" role="navigation">
-				<div class="menu-close-btn">
-					<i class="btn-ico-close">&times;</i>
-				</div>
-				<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
-			</nav><!-- #site-navigation -->
-			<?php if ( ( ( is_home() && is_front_page() ) ) && has_custom_header() ) : ?>
-				<a href="#content" class="menu-scroll-down"><span class="screen-reader-text"><?php esc_html_e( 'Scroll down to content', 'adbooster' ); ?></span></a>
-			<?php endif; ?>
-		
+		<div class="menu-toggle"> <span></span> <span></span> <span></span> <span></span></div>
+		<nav id="main_nav" class="main-nav" role="navigation">
+			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu', 'container_class' => 'main-menu' ) ); ?>
+		</nav><!-- #site-navigation -->
+			
 		<?php
 	}
 }
@@ -246,7 +234,7 @@ if ( ! function_exists( 'adbooster_page_header' ) ) {
 
 if ( ! function_exists( 'adbooster_page_content' ) ) {
 	/**
-	 * Display the post content
+	 * Display the post content ☰
 	 *
 	 * @since 1.0.0
 	 */

@@ -78,7 +78,7 @@ if ( ! class_exists( 'Ad_Booster' ) ) :
 			// This theme uses wp_nav_menu() in two locations.
 			register_nav_menus( array(
 				'primary'   => __( 'Primary Menu', 'adbooster' ),
-				'secondary' => __( 'Secondary Menu', 'adbooster' ),
+				'secondary' => __( 'Top Menu', 'adbooster' ),
 				'footer'  => __( 'Footer Menu', 'adbooster' ),
 			) );
 
