@@ -10,7 +10,7 @@ Description:    Silver Quantum has been converted into a responsive theme that l
 License:        GNU General Public License v2.0 or later
 License URI:    https://www.gnu.org/licenses/gpl-2.0.html
 Tags:           left-sidebar, one-column, right-sidebar, two-columns, custom-background, custom-colors, custom-menu, featured-images, post-formats, theme-options, threaded-comments, translation-ready, blog
-Version:        1.0.1
+Version:        1.0.2
 Text Domain:    silver-quantum
 ============================================================================================================================
 */
@@ -1234,6 +1234,45 @@ p.comment-awaiting-moderation {
 25.0 - Media Queries (Mobile Medium 37.5em (600px))
 ============================================================================================================================
 */
+@media screen and (min-height: 30.063em) and (max-width: 37.50em) {
+    .menu-toggle,
+    .primary-navigation.toggled ul {
+        display: block;
+    }
+    
+	.primary-navigation ul {
+		display: none;
+	}
+    
+    .primary-navigation.toggled {
+        padding: 0.1em;
+    }
+    
+    .nav-menu {
+        margin-bottom: 3.6em;
+    }
+    
+    .primary-navigation .nav-menu {
+        display: none;
+    }
+    
+    .primary-navigation.toggled .nav-menu {
+        display: block;
+        margin: 1em 1em 3.6em 1em;
+    }
+    
+    .left-sidebar .content-area,
+    .right-sidebar .content-area {
+        float: none;
+        width: 100%;
+    }
+
+    .left-sidebar .widget-area,
+    .right-sidebar .widget-area {
+        float: none;
+        width: 100%;
+    }
+}
 
 /*
 ============================================================================================================================
@@ -1252,12 +1291,162 @@ p.comment-awaiting-moderation {
 28.0 - Media Queries (Tablet Small 48em (768px))
 ============================================================================================================================
 */
+@media screen and (min-width: 601px) and (max-width: 48em) {
+    .menu-toggle,
+    .primary-navigation.toggled ul {
+        display: block;
+    }
+    
+	.primary-navigation ul {
+		display: none;
+	}
+    
+    .primary-navigation.toggled {
+        padding: 0.1em;
+    }
+    
+    .nav-menu {
+        margin-bottom: 3.6em;
+    }
+    
+    .primary-navigation .nav-menu {
+        display: none;
+    }
+    
+    .primary-navigation.toggled .nav-menu {
+        display: block;
+        margin: 1em 1em 3.6em 1em;
+    }
+    
+    .left-sidebar .content-area,
+    .right-sidebar .content-area {
+        float: none;
+        width: 100%;
+    }
+    
+    .left-sidebar .widget-area,
+    .right-sidebar .widget-area {
+        float: none;
+        width: 100%;
+    }
+
+    .widget-area {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1.125em;
+        margin: 2.250em 0;
+    }
+}
 
 /*
 ============================================================================================================================
 29.0 - Media Queries (Tablet Medium 64em (1024px))
 ============================================================================================================================
 */
+@media screen and (min-width: 769px) and (max-width: 64em) {
+    .site-container {
+        margin: 0 1.125em;
+    }
+    .primary-navigation {
+        clear: none;
+        float: left;
+        width: 100%;
+    }
+    
+	/* Position the menu in the header */
+	.primary-navigation,
+	.primary-navigation.toggled {
+		position: relative;
+		max-width: 100%;
+		margin: 0 auto;
+		padding: 0;
+	}
+	
+	.primary-navigation ul,
+	.primary-navigation.toggled ul {
+		max-height: none;
+		padding-left: 0;
+		text-align: center;
+        
+	}
+	
+	.primary-navigation.toggled ul {
+		overflow-y: visible;
+	}
+	
+	/* Display the menu items in a horizontal order */
+	.primary-navigation li {
+		display: inline-block;
+		border: none;
+	}
+	
+	/* Add an outline to the drop-down menus */
+	.primary-navigation ul ul {
+		outline: 1px solid #333;
+	}
+	
+	/* Left-align drop-down menu items */
+	.primary-navigation li li {
+		display: block;
+		text-align: left;
+	}
+    
+    .primary-navigation a {
+        padding: 0.5em 1em;
+    }
+	
+	.primary-navigation a,
+	.primary-navigation ul ul li:last-child a {
+		border-bottom: none;
+	}
+    
+    .primary-navigation ul ul li a {
+        color: #ffffff;
+    }
+	
+	/* Add an outline on hovered and focused menu items */
+	.primary-navigation a:hover,
+	.primary-navigation a:focus {
+		background: transparent;
+		color: #ffffff;
+		text-decoration: underline;
+		outline: solid 1px #b3b3b3;
+	}
+	
+	/* Create hover and focus contrast on drop-down items */
+	.primary-navigation li li a:hover,
+	.primary-navigation li li a:focus {
+		background: #eee;
+		color: #000;
+		text-decoration: none;
+	}
+	
+	/* Position drop-down menus absolutely */
+	.primary-navigation ul ul.toggled-on {
+        background: #000000;
+		display: block;
+		margin-left: 0;
+		position: absolute;
+        right: 0;
+		width: 17em;
+		z-index: 10;
+	}
+	
+	.primary-navigation ul ul ul.toggled-on {
+		right: 0;
+        padding-left: 1em;
+        position: relative;
+	}
+	
+	/* Indent 3rd level drop-down menus */
+	.primary-navigation ul ul ul a {
+		padding-left: 2em;
+	}
+    
+    .nav-menu {
+        padding: 0.4em;
+    }
+}
 
 /*
 ============================================================================================================================
