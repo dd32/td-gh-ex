@@ -124,6 +124,8 @@ Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank y
 
 
 ============================Change Log================================
+@Version 1.9.7
+1. Added WooCommerce Gallery Support
 @Version 1.9.6
 1. Remove Preview demo image.
 2. Added trustworthy website tab.	

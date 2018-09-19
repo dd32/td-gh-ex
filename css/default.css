@@ -122,7 +122,9 @@ blockquote { border-left: 5px solid #f22853; }
 .woocommerce .woocommerce-info:before, 
 .woocommerce-page .woocommerce-info:before, 
 .woocommerce .woocommerce-info:before, 
-.woocommerce-page .woocommerce-info:before { 
+.woocommerce-page .woocommerce-info:before, 
+.woocommerce button.button.alt.disabled, 
+.woocommerce button.button.alt.disabled:hover { 
 	background-color: #f7f6f7; 
 	color: #F22853;
 }
