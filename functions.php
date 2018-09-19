@@ -1,4 +1,5 @@
-<?php
+<?php if( !defined( 'ABSPATH' ) ) { exit; }
+
 require_once( get_template_directory() . '/includes/adelle_getting_started.php' );
 
 // ==================================================================
@@ -290,6 +291,16 @@ function adelle_footer_widgets_instagram_init() {
 }
 add_action( 'widgets_init', 'adelle_footer_widgets_instagram_init' );
 
+// ==================================================================
+// Privacy policy
+// ==================================================================
+function ace_footer_privacy() {
+	if( function_exists( 'the_privacy_policy_link' ) ) {
+		if( !get_option( 'ace_privacy' ) ) {
+			the_privacy_policy_link( '', '&nbsp;' );
+		}
+	}
+}
 // ==================================================================
 // Gettting started
 // ==================================================================

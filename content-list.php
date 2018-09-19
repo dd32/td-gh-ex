@@ -16,7 +16,7 @@
 
         <footer class="post-footer">
           <ul class="post-info-meta">
-            <li class="post-info-comment"><div class="post-comment"><i class="fa fa-comment-o" aria-hidden="true"></i> <?php comments_popup_link( __( '0 comment', 'adelle' ), __( '1 Comment', 'adelle' ), __( '% Comments', 'adelle' ) ); ?></div></li>
+            <li class="post-info-comment"><div class="post-comment"><i class="fa fa-comment-o" aria-hidden="true"></i> <?php comments_popup_link( __( '0 comments', 'adelle' ), __( '1 Comment', 'adelle' ), __( '% Comments', 'adelle' ) ); ?></div></li>
           </ul>
         </footer><!-- .post-footer -->
 

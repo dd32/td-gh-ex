@@ -1,8 +1,9 @@
 <footer class="footer" id="footer" itemscope itemtype="http://schema.org/WPFooter">
 
-  <p class="footer-copy" role="contentinfo">
-    &copy; <?php _e( 'Copyright', 'adelle' ); ?> <a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a> <?php echo date( 'Y' ); ?>. <?php _e( 'Powered by', 'adelle' ); ?> <a href="<?php echo esc_url( 'http://www.wordpress.org' ); ?>">WordPress</a>. <a href="<?php echo esc_url( 'http://www.bluchic.com' ); ?>" title="<?php _e( 'Theme designed by BluChic', 'adelle' ); ?>" class="footer-credit"><?php _e( 'Designed by', 'adelle' ); ?> BluChic</a>
-  </p>
+  <section class="footer-copy" role="contentinfo">
+    &copy; <?php _e( 'Copyright', 'adelle' ); ?> <a href="<?php echo esc_url( home_url() ); ?>"><?php bloginfo( 'name' ); ?></a> <?php echo date( 'Y' ); ?>. <?php _e( 'Powered by', 'adelle' ); ?> <a href="<?php echo esc_url( 'http://www.wordpress.org' ); ?>">WordPress</a>. <?php ace_footer_privacy(); ?>
+	<a href="<?php echo esc_url( 'http://www.bluchic.com' ); ?>" title="<?php _e( 'Theme designed by BluChic', 'adelle' ); ?>" class="footer-credit"><?php _e( 'Designed by', 'adelle' ); ?> Bluchic</a>
+  </section>
 
 </footer><!-- .footer -->
 

@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php if( !defined( 'ABSPATH' ) ) { exit; } get_header(); ?>
 
   <main class="section-wide">
 
@@ -13,8 +13,6 @@
       <article class="post-content entry-content" itemprop="text">
 
         <img src="<?php echo wp_get_attachment_url( $post->ID ); ?>" alt="<?php the_title(); ?>" class="aligncenter" />
-
-        <article class="attachment-caption"><?php the_excerpt(); ?></article>
 
         <article class="attachment-desc"><?php the_content(); ?></article>
 

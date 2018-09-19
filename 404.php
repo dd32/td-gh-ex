@@ -1,4 +1,4 @@
-<?php get_header(); ?>
+<?php if( !defined( 'ABSPATH' ) ) { exit; } get_header(); ?>
 
   <main class="section">
 
@@ -6,7 +6,7 @@
 
       <article class="post-content entry-content" itemprop="text">
 
-		<h1 class="not-found-title shake"><?php _e( 'Oopss! 404 Not Found', 'adelle' ); ?></h1>
+		<h1 class="not-found-title shake"><?php _e( 'Oops! 404 Not Found', 'adelle' ); ?></h1>
 
         <p class="not-found-text"><?php _e( 'The page you are looking for has not been found. How about search it out?', 'adelle' ); ?></p>
 
