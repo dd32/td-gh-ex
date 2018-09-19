@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Content\n"
-"POT-Creation-Date: 2018-09-14 18:55+0530\n"
-"PO-Revision-Date: 2018-09-14 18:54+0530\n"
+"POT-Creation-Date: 2018-09-19 19:26+0530\n"
+"PO-Revision-Date: 2018-09-19 19:26+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -20,6 +20,13 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: footer.php:5 functions/customizer/customizer_general_settings.php:10
+msgid ""
+"<a href=\"https://wordpress.org\">Proudly powered by WordPress</a> | Theme: "
+"<a href=\"https://spicethemes.com\" rel=\"designer\">Content</a> by "
+"SpiceThemes"
+msgstr ""
 
 #: functions/content-info/sections/free_pro.php:14
 msgid "Features"
@@ -422,6 +429,10 @@ msgstr ""
 
 #: functions/content-info/welcome-screen.php:213
 msgid "Free VS PRO"
+msgstr ""
+
+#: functions/customizer/customizer_general_settings.php:17
+msgid "Copyright text"
 msgstr ""
 
 #: search.php:27

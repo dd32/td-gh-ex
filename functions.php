@@ -16,9 +16,25 @@ load_theme_textdomain('content', get_stylesheet_directory() . '/languages');
 
 require( get_stylesheet_directory() . '/functions/content-info/welcome-screen.php' );
 
+require( get_stylesheet_directory() . '/functions/customizer/customizer_general_settings.php' );
+
 }
 endif; 
 add_action( 'after_setup_theme', 'content_theme_setup' );
+
+/**
+ * Import options from SpicePress
+ *
+ */
+function content_get_lite_options() {
+	$spicepress_mods = get_option( 'theme_mods_spicepress' );
+	if ( ! empty( $spicepress_mods ) ) {
+		foreach ( $spicepress_mods as $spicepress_mod_k => $spicepress_mod_v ) {
+			set_theme_mod( $spicepress_mod_k, $spicepress_mod_v );
+		}
+	}
+}
+add_action( 'after_switch_theme', 'content_get_lite_options' );
 
 add_action( 'admin_init', 'content_detect_button' );
 	function content_detect_button() {
