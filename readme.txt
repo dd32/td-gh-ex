@@ -60,6 +60,10 @@ Not Available at this time
 ===========================================================================================================
 Changelog
 ===========================================================================================================
+Version: 1.0
+- Major Update
+- Organize Files 
+
 Version: 0.4.9
 - Add Gallery to support 2 Columns, 3 Columns and 4 Columns
 
