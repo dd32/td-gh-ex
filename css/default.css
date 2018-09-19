@@ -319,3 +319,126 @@ div.wpcf7-validation-errors {
 	font-weight:400;
 	font-size:14px;
 }
+
+.woocommerce div.product .product_title {
+    color: #fff;
+}
+
+.total strong, .woocommerce-Price-amount {
+    color: #fff;
+}
+
+.woocommerce div.product form.cart .variations select {
+    color: #fff;
+    background: transparent;
+    border: 1px solid #3d3f47;
+}
+
+.woocommerce .quantity .qty {
+    border: 1px solid #7b7f8c;
+}
+
+.page-title, .woocommerce-result-count {
+    color: #ffffff;
+}
+
+.woocommerce-review-link, .woocommerce p, .woocommerce div.product p.price, .woocommerce div.product span.price {
+    color: #e5e5e5;
+}
+
+products h2 {
+    color: #fff;
+}
+
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+    border: 1px solid #3c3f49;
+    background: #2a2c33;
+}
+
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input#submit.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+    background-color: #3c3f49;
+    color: #fff;
+}
+
+.woocommerce ul.products li.product .onsale {
+    border: 2px solid #e95144;
+    color: #e95144;
+}
+
+.woocommerce-ordering select {
+    color: #e5e5e5;
+    border: 1px solid #7b7f8c;
+}
+
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce button.button.alt {
+    background-color: #00c2a9;
+}
+
+.products h2 {
+    color: #fff;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {
+    background: #00c2a9;
+}
+.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current {
+    background: #00c2a9;
+    color: #ffffff;
+}
+
+.woocommerce nav.woocommerce-pagination ul li a, .woocommerce nav.woocommerce-pagination ul li span {
+    background-color: #3c3f49;
+    color: #FFFFFF;
+}
+
+.woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce input.button:disabled:hover, .woocommerce input.button:disabled[disabled]:hover {
+    background-color: #00c2a9;
+}
+.woocommerce button.button.alt.disabled, .woocommerce button.button.alt.disabled:hover, .woocommerce input.button:disabled:hover, .woocommerce input.button:disabled[disabled]:hover {
+    background-color: #00c2a9;
+    color: #fff;
+}
+
+.sku_wrapper {
+    color: #fff;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a, .woocommerce div.product .woocommerce-tabs ul.tabs li a {
+    color: #fff;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    background: #00c2a9;
+    border-bottom-color: #00c2a9;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active {
+    background: #00c2a9;
+    border-bottom-color: #00c2a9;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active a, .woocommerce div.product .woocommerce-tabs ul.tabs li a {
+    color: #fff;
+}
+.woocommerce-Tabs-panel h2, .woocommerce-Tabs-panel {
+    color: #fff;
+}
+
+.woocommerce div.product .woocommerce-tabs ul.tabs li {
+    border: 1px solid #3c3f49;
+    background-color: #3c3f49;
+}
+.posted_in {
+    color: #fff;
+}
+.posted_in a {
+    color: #e5e5e5;
+}
+
+.woocommerce span.onsale {
+    border: 2px solid #e95144;
+    color: #e95144;
+}
+
+.widget-title {
+    color: #ffffff;
+}

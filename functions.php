@@ -76,6 +76,16 @@
 		add_theme_support( 'custom-background', $args  ); 
 		add_theme_support( 'automatic-feed-links');
 		
+		
+		// woocommerce support
+	
+		add_theme_support( 'woocommerce' );
+		
+		//Added Woocommerce Galllery Support
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
+		
 		//Add theme Support Title Tag
 		add_theme_support( 'title-tag');
 		
@@ -113,6 +123,17 @@ register_sidebar( array(
 		'before_title' => '<h2 class="footer_widget_title">',
 		'after_title' => '</h2>',
 	) );
+	
+ register_sidebar( array(
+	'name' => __( 'WooCommerce sidebar widget area', 'wallstreet' ),
+	'id' => 'woocommerce',
+	'description' => __( 'WooCommerce sidebar widget area', 'wallstreet' ),
+	'before_widget' => '<div class="sidebar-widget" >',
+	'after_widget' => '</div>',
+	'before_title' => '<h3 class="widget-title">',
+	'after_title' => '</h3>'
+	) );	
+	
 }
 
 	
