@@ -84,6 +84,8 @@ array_map(function($inline_styles) {
 array_map(function($general) {
     require_once(get_parent_theme_file_path("/framework/general/{$general}.php"));
 }, [
+    'footer',
+    'header',
     'sidebars',
     'template'
 ]);
@@ -108,7 +110,8 @@ array_map(function($loop) {
 array_map(function($menu) {
     require_once(get_parent_theme_file_path("/framework/menu/{$menu}.php"));
 }, [
-    'primary'
+    'primary',
+    'social'
 ]);
 
 /*

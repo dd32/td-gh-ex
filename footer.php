@@ -13,12 +13,8 @@ The footer.php template file only displays the footer section such as copyright,
 */
 ?>
         </div>
-        <div id="social" class="site-social">
-
-        </div>
-        <footer id="footer" class="site-footer">
-
-        </footer>
+        <?php silver_quantum_display_social_navigation(); ?>
+        <?php silver_quantum_display_site_footer(); ?>
     </section>
 <?php wp_footer(); ?>
 </body>

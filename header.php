@@ -23,10 +23,5 @@ description.
         <?php silver_quantum_display_primary_navigation(); ?>
     </div>
     <section id="container" class="site-container">
-        <header id="header" class="site-header header-image">
-            <div class="site-branding">
-                <?php silver_quantum_display_site_title(); ?>
-                <?php silver_quantum_display_site_description(); ?>
-            </div>
-        </header>
+        <?php silver_quantum_display_site_header(); ?>
         <div id="content" class="site-content">

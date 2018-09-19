@@ -4,8 +4,8 @@ Silver Quantum - readme.txt
 Contributor: benlumia007
 Tags: left-sidebar, right-sidebar
 Requires at lease: 4.9
-Tested up to: 4.9.7
-Stable tag: 0.4.9
+Tested up to: 4.9.8
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -60,6 +60,11 @@ Not Available at this time
 ===========================================================================================================
 Changelog
 ===========================================================================================================
+Version: 1.0.1
+- Add Footer Information
+- Add Social Navigation
+- Small other stuff that I have missed
+
 Version: 1.0
 - Major Update
 - Organize Files 

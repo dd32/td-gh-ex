@@ -58,3 +58,43 @@ function silver_quantum_output_site_description() {
     }
     return apply_filters('silver_quantum_display_site_description', $site_description);
 }
+
+/*
+============================================================================================================================
+ 3.0 - Display (Site Link)
+============================================================================================================================
+*/
+function silver_quantum_display_site_link() {
+    echo silver_quantum_output_site_link();
+}
+
+function silver_quantum_output_site_link() {
+    return sprintf('<a href="%s">%s</a>', esc_url(home_url('/')), get_bloginfo('name'));
+}
+
+/*
+============================================================================================================================
+ 4.0 - Display (WordPress Link)
+============================================================================================================================
+*/
+function silver_quantum_display_wp_link() {
+    echo silver_quantum_output_wp_link();
+}
+function silver_quantum_output_wp_link() {
+    return sprintf('<a href="%s">%s</a>', esc_url(__('https://wordpress.org', 'silver-quantum')), esc_html__('WordPress', 'silver-quantum'));
+}
+
+/*
+============================================================================================================================
+ 5.0 - Display (Theme Link)
+============================================================================================================================
+*/
+function silver_quantum_display_theme_link() {
+    echo silver_quantum_output_theme_link();
+}
+function silver_quantum_output_theme_link() {
+    $theme_name = wp_get_theme(get_template());
+    $allowed = array('abbr' => array('title' => true), 'acronym' => array('title' => true), 'code' => true, 'em' => true, 'strong' => true);
+ 
+    return sprintf( '<a href="%s">%s</a>', $theme_name->display('ThemeURI'), wp_kses($theme_name->display('Name'), $allowed));
+}
