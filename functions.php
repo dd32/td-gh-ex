@@ -25,6 +25,7 @@ function rockers_theme_setup() {
 load_theme_textdomain( 'rockers', get_stylesheet_directory() . '/languages' );
 
 require( get_stylesheet_directory() . '/functions/rockers-info/welcome-screen.php' );
+require( get_stylesheet_directory() . '/functions/customizer/customizer_general_settings.php' );
 
 }
 endif; 
@@ -34,3 +35,17 @@ add_action( 'admin_init', 'rockers_detect_button' );
 	function rockers_detect_button() {
 	wp_enqueue_style('rockers-info-button', get_stylesheet_directory_uri().'/css/import-button.css');
 }
+
+/**
+ * Import options from SpicePress
+ *
+ */
+function rockers_get_lite_options() {
+	$spicepress_mods = get_option( 'theme_mods_spicepress' );
+	if ( ! empty( $spicepress_mods ) ) {
+		foreach ( $spicepress_mods as $spicepress_mod_k => $spicepress_mod_v ) {
+			set_theme_mod( $spicepress_mod_k, $spicepress_mod_v );
+		}
+	}
+}
+add_action( 'after_switch_theme', 'rockers_get_lite_options' );
