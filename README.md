@@ -3,7 +3,7 @@
 **Contributors:** SKT Themes
 **Requires at least:** WordPress 4.4  
 **Tested up to:** WordPress 4.9.8
-**Version:** 1.0
+**Version:** 1.1
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 **Tags:** two-columns,right-sidebar,custom-background,custom-colors,custom-menu,sticky-post,theme-options,threaded-comments
@@ -121,6 +121,8 @@ License URL: http://www.gnu.org/licenses/gpl-2.0.html
 For any help you can mail us at support[at]sktthemes.com
 
 ## Changelog
+Version 1.1
+i)   Changed Theme Screen Shot.
 
 Version 1.0
-i)   Initial version release
+i)   Initial version release.
