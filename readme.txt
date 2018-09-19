@@ -156,6 +156,10 @@ Benevolent WordPress Theme is distributed under the terms of the GPLv2 or later
    
    
 == Changelog ==
+    
+    1.1.6
+    * Translate text on tmgp file.
+
     1.1.5
     * Fixed fontawesome issue.
     * Updated screenshot.

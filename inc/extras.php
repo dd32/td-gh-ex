@@ -581,6 +581,7 @@ function benevolent_excerpt_length( $length ) {
 add_filter( 'excerpt_length', 'benevolent_excerpt_length', 999 );
 endif;
 
+if( ! function_exists( 'benevolent_footer_credit' ) ) :
 /**
  * Footer Credits 
 */
@@ -591,7 +592,7 @@ function benevolent_footer_credit(){
       if( $copyright_text ){
         $text .=  wp_kses_post( $copyright_text );
       }else{
-        $text .=  esc_html__( '&copy; ', 'benevolent' ) . esc_html( date_i18n('Y') ); 
+        $text .=  esc_html__( '&copy; ', 'benevolent' ) . date_i18n( esc_html__( 'Y', 'benevolent' ) ); 
         $text .= ' <a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>';
       }
     $text .= '.</span>';
@@ -604,6 +605,7 @@ function benevolent_footer_credit(){
     $text .= '</span></div></div>';
     echo apply_filters( 'benevolent_footer_text', $text );    
 }
+endif;
 add_action( 'benevolent_footer', 'benevolent_footer_credit' );
 
 /**

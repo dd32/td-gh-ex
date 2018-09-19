@@ -49,13 +49,9 @@ function benevolent_register_required_plugins() {
     $plugins = array(
 
         // This is an example of how to include a plugin from the WordPress Plugin Repository.
-        // array(
-        //     'name'      => __( 'Contact Form 7', 'benevolent' ),
-        //     'slug'      => 'contact-form-7',
-        //     'required'  => false,
-        // ),	
+
         array(
-            'name'     => 'Rara One Click Demo Import', 
+            'name'     => __('Rara One Click Demo Import','benevolent'), 
             'slug'     => 'rara-one-click-demo-import',
             'required' => false,
         ),   	
