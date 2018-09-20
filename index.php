@@ -66,8 +66,7 @@ if ( is_home() ) {
 		<div class="no-result-found">
 			<h1><?php esc_html_e( 'Nothing Found!', 'bard' ); ?></h1>
 			<p>
-				<?php esc_html_e( 'It seems we can\'t find what you\'re looking for. Perhaps searching can help or go back to ', 'bard' ); ?>
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Homepage', 'bard' ); ?></a>
+				<?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'bard' ); ?>
 			</p>
 			<div class="bard-widget widget_search">
 				<?php get_search_form(); ?>

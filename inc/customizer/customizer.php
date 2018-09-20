@@ -337,18 +337,28 @@ function bard_customize_register( $wp_customize ) {
 				</li>
 				<li class="customize-control">
 					<h3><?php esc_html_e( 'Documentation', 'bard' ); ?></h3>
-					<p><?php esc_html_e( 'Read how to customize the theme, set up widgets, and learn all the possible options available to you.', 'bard' ); ?></p>
+					<p>
+					<?php 
+					$theme_data	 = wp_get_theme();
+						/* translators: %s theme name */
+						printf( esc_html__( 'Need more details? Please check our full documentation for detailed information on how to use %s.', 'bard' ), esc_html( $theme_data->Name ) );
+					?>
+					</p>
 					<a href="<?php echo esc_url('http://wp-royal.com/themes/bard/docs/?ref=bard-free-customizer-about-section-docs-btn/'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Documentation', 'bard' ); ?></a>
 				</li>
 				<li class="customize-control">
 					<h3><?php esc_html_e( 'Predefined Styles', 'bard' ); ?></h3>
-					<p><?php esc_html_e( 'Bard Pro\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the Pro Version.', 'bard' ); ?></p>
+					<p>
+					<?php /* translators: %s link */
+						printf( __( 'Bard Pro\'s powerful setup allows you to easily create unique looking sites. Here are a few included examples that can be installed with one click in the Pro Version. More details in the <a href="%s" target="_blank" >Theme Documentation</a>', 'bard' ), esc_url('http://wp-royal.com/themes/bard/docs/?ref=bard-free-backend-about-predefined-styles#predefined') );
+					?>
+					</p>
 					<a href="<?php echo admin_url('themes.php?page=about-bard#bard-predefined-styles'); ?>" class="button button-primary widefat"><?php esc_html_e( 'Predefined Styles', 'bard' ); ?></a>
 				</li>
 				<li class="customize-control">
 					<h3><?php esc_html_e( 'Changelog', 'bard' ); ?></h3>
-					<p><?php esc_html_e( 'Stay always up to date, check for fixes, updates and some new feauters you should not miss.', 'bard' ); ?></p>
-					<a href="<?php echo esc_url('https://wp-royal.com/bard-free-changelog/?ref=bard-free-customizer-about-section-changelog'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'View Changelog', 'bard' ); ?></a>
+					<p><?php esc_html_e( 'Want to get the gist on the latest theme changes? Just consult our changelog below to get a taste of the recent fixes and features implemented.', 'bard' ); ?></p>
+					<a href="<?php echo esc_url('https://wp-royal.com/bard-free-changelog/?ref=bard-free-customizer-about-section-changelog'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Changelog', 'bard' ); ?></a>
 				</li>
 			</ul>
 			<?php
@@ -405,7 +415,7 @@ function bard_customize_register( $wp_customize ) {
 	bard_color_control( 'colors', 'header_text_hover', esc_html__( 'Header Text Hover Color', 'bard' ), 'postMessage', 7 );
 
 	// Header Background
-	bard_color_control( 'colors', 'header_bg', esc_html__( 'Header Background Color', 'bard' ), 'postMessage', 9 );
+	bard_color_control( 'colors', 'header_bg', esc_html__( 'Header Background', 'bard' ), 'postMessage', 9 );
 	
 	// Body Background
 	$wp_customize->get_control( 'background_color' )->section = 'bard_colors';
@@ -624,7 +634,7 @@ function bard_customize_register( $wp_customize ) {
 	bard_checkbox_control( 'main_nav', 'show_search', esc_html__( 'Show Search Icon', 'bard' ), 'refresh', 15 );
 
 	// Merge to Responsive Menu
-	bard_checkbox_control( 'main_nav', 'merge_menu', esc_html__( 'Merge Top Menu - Responsive', 'bard' ), 'refresh', 17 );
+	bard_checkbox_control( 'main_nav', 'merge_menu', esc_html__( 'Merge Top and Main Menus', 'bard' ), 'refresh', 17 );
 
 
 /*
@@ -785,7 +795,7 @@ function bard_customize_register( $wp_customize ) {
 	);
 
 	// Related Posts Orderby
-	bard_select_control( 'blog_page', 'related_orderby', esc_html__( 'Related Posts Display', 'bard' ), $related_posts, 'refresh', 33 );
+	bard_select_control( 'blog_page', 'related_orderby', esc_html__( 'Related Posts - Display', 'bard' ), $related_posts, 'refresh', 33 );
 
 	// Pro Version
 	$wp_customize->add_setting( 'pro_version_blog_page', array(
@@ -849,7 +859,7 @@ function bard_customize_register( $wp_customize ) {
 	) );
 	
 	// Social Window
-	bard_checkbox_control( 'social_media', 'window', esc_html__( 'Show Social Icons in New Window', 'bard' ), 'refresh', 1 );
+	bard_checkbox_control( 'social_media', 'window', esc_html__( 'Open Social Links in New Window ', 'bard' ), 'refresh', 1 );
 
 	// Social Icons Array
 	$social_icons = array(
@@ -1022,7 +1032,7 @@ function bard_customize_register( $wp_customize ) {
 	$copyright_description = 'Enter <strong>$year</strong> to update the year automatically and <strong>$copy</strong> for the copyright symbol.<br><br>Example: $year Bard Theme $copy.';
 
 	// Copyright
-	bard_textarea_control( 'page_footer', 'copyright', esc_html__( 'Copyright', 'bard' ), $copyright_description, 'refresh', 5 );
+	bard_textarea_control( 'page_footer', 'copyright', esc_html__( 'Your Copyright Text', 'bard' ), $copyright_description, 'refresh', 5 );
 
 	// Pro Version
 	$wp_customize->add_setting( 'pro_version_page_footer', array(

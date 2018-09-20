@@ -32,7 +32,7 @@
 
 				<?php if (  bard_options( 'blog_page_show_comments' ) === true && comments_open() ) : ?>
 				<span class="meta-sep">/</span>
-					<?php comments_popup_link( esc_html__( 'No Comments', 'bard' ), esc_html__( '1 Comment', 'bard' ), '% '. esc_html__( 'Comments', 'bard' ), 'post-comments'); ?>
+					<?php comments_popup_link( esc_html__( '0 Comments', 'bard' ), esc_html__( '1 Comment', 'bard' ), '% '. esc_html__( 'Comments', 'bard' ), 'post-comments'); ?>
 				<?php endif; ?>
 				
 			</div>
@@ -56,7 +56,7 @@
 		<?php endif; ?>
 
 		<div class="read-more">
-			<a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'Read More','bard' ); ?></a>
+			<a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'read more','bard' ); ?></a>
 		</div>
 		
 	</div>

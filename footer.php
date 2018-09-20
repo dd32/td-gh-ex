@@ -35,7 +35,7 @@
 						<?php
 
 						$copyright = bard_options( 'page_footer_copyright' );
-						$copyright = str_replace( '$year', date_i18n( __('Y','bard') ), $copyright );
+						$copyright = str_replace( '$year', date_i18n( 'Y' ), $copyright );
 						$copyright = str_replace( '$copy', '&copy;', $copyright );
 
 						echo wp_kses_post( $copyright );
@@ -47,10 +47,11 @@
 						?>
 
 						<span class="credit">
-							<?php esc_html_e( 'Bard Theme by ', 'bard' ); ?>
-							<a href="<?php echo esc_url( 'http://wp-royal.com/' ); ?>">
-							<?php esc_html_e( 'Royal-Flush', 'bard' ); ?>
-							</a>
+							<?php
+							$theme_data	= wp_get_theme();
+							/* translators: %1$s: theme name, %2$s link, %3$s theme author */
+							printf( __( '%1$s Theme by <a href="%2$s">%3$s.</a>', 'bard' ), esc_html( $theme_data->Name ), esc_url( 'http://wp-royal.com/' ), $theme_data->Author );
+							?>
 						</span>
 
 						<?php 

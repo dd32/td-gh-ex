@@ -81,10 +81,26 @@ add_action( 'after_setup_theme', 'bard_setup' );
 ** Notice after Theme Activation.
 */
 function bard_activation_notice() {
+
+	$theme_data	 = wp_get_theme();
+
 	echo '<div class="notice notice-success is-dismissible bard-activation-notice">';
-		echo '<h1>'. esc_html__( 'Welcome to Bard', 'bard' ) .'</h1>';
-		echo '<p>'. esc_html__( 'Thank you for choosing Bard! Now, we higly recommend you to visit our ', 'bard' ) .'<a href="'. esc_url( admin_url( 'themes.php?page=about-bard' ) ) .'">'. esc_html__( 'welcome page.', 'bard' ) .'</a></p>';
-		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=about-bard' ) ) .'" class="button button-primary button-hero">'. esc_html__( 'Get Started with Bard', 'bard' ) .'</a></p>';
+
+		echo '<h1>';
+			/* translators: %s theme name */
+			printf( esc_html__( 'Welcome to %s', 'bard' ), esc_html( $theme_data->Name ) );
+		echo '</h1>';
+
+		echo '<p>';
+			/* translators: %1$s: theme name, %2$s link */
+			printf( __( 'Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our <a href="%2$s">Welcome page</a>', 'bard' ), esc_html( $theme_data->Name ), esc_url( admin_url( 'themes.php?page=about-bard' ) ) );
+		echo '</p>';
+
+		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=about-bard' ) ) .'" class="button button-primary button-hero">';
+			/* translators: %s theme name */
+			printf( esc_html__( 'Get started with %s', 'bard' ), esc_html( $theme_data->Name ) );
+		echo '</a></p>';
+
 	echo '</div>';
 }
 
@@ -219,7 +235,7 @@ add_action( 'wp_enqueue_scripts', 'bard_gfonts_scripts' );
 function bard_widgets_init() {
 	
 	register_sidebar( array(
-		'name'          => __( 'Sidebar Right', 'bard' ),
+		'name'          => __( 'Right Sidebar', 'bard' ),
 		'id'            => 'sidebar-right',
 		'description'   => __( 'Add widgets here to appear in your sidebar.', 'bard' ),
 		'before_widget' => '<div id="%1$s" class="bard-widget %2$s">',
@@ -229,7 +245,7 @@ function bard_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Sidebar Left', 'bard' ),
+		'name'          => __( 'Left Sidebar', 'bard' ),
 		'id'            => 'sidebar-left',
 		'description'   => __( 'Add widgets here to appear in your sidebar.', 'bard' ),
 		'before_widget' => '<div id="%1$s" class="bard-widget %2$s">',
@@ -289,7 +305,7 @@ function bard_top_menu_fallback() {
 	if ( current_user_can( 'edit_theme_options' ) ) {
 		echo '<ul id="top-menu">';
 			echo '<li>';
-				echo '<a href="'. esc_url( admin_url('nav-menus.php') ) .'">'. esc_html__( 'Set up Menu', 'bard' ) .'</a>';
+				echo '<a href="'. esc_url( admin_url('nav-menus.php') ) .'">'. esc_html__( 'Setup Menu', 'bard' ) .'</a>';
 			echo '</li>';
 		echo '</ul>';
 	}
@@ -309,7 +325,7 @@ function bard_main_menu_fallback() {
 		if ( current_user_can( 'edit_theme_options' ) ) {
 			echo '<ul id="main-menu">';
 				echo '<li>';
-					echo '<a href="'. esc_url( home_url('/') .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Set up Menu', 'bard' ) .'</a>';
+					echo '<a href="'. esc_url( home_url('/') .'wp-admin/nav-menus.php' ) .'">'. esc_html__( 'Setup Menu', 'bard' ) .'</a>';
 				echo '</li>';
 			echo '</ul>';
 		}
@@ -650,7 +666,7 @@ if ( ! function_exists( 'bard_related_posts' ) ) {
 function bard_custom_search_form( $html ) {
 
 	$html  = '<form role="search" method="get" id="searchform" class="clear-fix" action="'. esc_url( home_url( '/' ) ) .'">';
-	$html .= '<input type="search" name="s" id="s" placeholder="'. esc_attr__( 'Search...', 'bard' ) .'" data-placeholder="'. esc_attr__( 'Type & hit Enter...', 'bard' ) .'" value="'. get_search_query() .'" />';
+	$html .= '<input type="search" name="s" id="s" placeholder="'. esc_attr__( 'Search...', 'bard' ) .'" data-placeholder="'. esc_attr__( 'Type then hit Enter...', 'bard' ) .'" value="'. get_search_query() .'" />';
 	$html .= '<span class="svg-fa-wrap"><i class="fa fa-search"></i></span>';
 	$html .= '<input type="submit" id="searchsubmit" value="st" />';
 	$html .= '</form>';

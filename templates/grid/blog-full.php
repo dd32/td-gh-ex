@@ -33,16 +33,7 @@
 			if ( bard_options( 'blog_page_post_description' ) === 'content' ) {
 				the_content('');
 			} elseif ( bard_options( 'blog_page_post_description' ) === 'excerpt' ) {
-
-				// if is preview (boat post)
-				if ( bard_is_preview() && get_the_ID() == 19 ) {
-					echo '<p>';
-						echo esc_html__( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur laoreet cursus volutpat. Aliquam sit amet ligula et justo tincidunt laoreet non vitae lorem. Aliquam porttitor tellus enim, eget commodo augue porta ut. Maecenas lobortis ligula vel tellus sagittis ullamcorper. Vestibulum pellentesque cursus risus, in ultrices odio. Morbi dui metus, fringilla quis urna vitae, fringilla tristique nibh. Donec ultrices est ut dapibus dapibus. Nunc fermentum viverra risus, et mollis ante commodo sit amet. Vestibulum eu enim nec lectus volutpat dignissim vel sit amet dui. Maecenas sodales mi non nibh egestas gravida. In in dolor orci. Mauris viverra eu enim eu luctus. Praesent vel orci pulvinar, semper augue et, interdum sapien. Pellentesque...', 'bard' );
-					echo '</p>';
-				} else {
-					bard_excerpt( 100 );
-				}
-
+				bard_excerpt( 100 );
 			}
 		?>
 	</div>
@@ -67,7 +58,7 @@
 
 		<?php
 		if ( bard_options( 'single_page_show_comments' ) === true ) {
-			comments_popup_link( esc_html__( 'No Comments', 'bard' ), esc_html__( '1 Comment', 'bard' ), '% '. esc_html__( 'Comments', 'bard' ), 'post-comments');
+			comments_popup_link( esc_html__( '0 Comments', 'bard' ), esc_html__( '1 Comment', 'bard' ), '% '. esc_html__( 'Comments', 'bard' ), 'post-comments');
 		}
 		?>
 

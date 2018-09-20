@@ -5,8 +5,7 @@
 		<h2><?php esc_html_e( 'Page not found!', 'bard' ); ?></h2>
 
 		<p>
-			<?php esc_html_e( 'It seems we can\'t find what you\'re looking for. Perhaps searching can help or go back to ', 'bard' ); ?>
-			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Homepage', 'bard' ); ?></a>
+			<?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'bard' ); ?>
 		</p>
 
 	</div>

@@ -2,7 +2,6 @@
 
 // if password is required
 if ( post_password_required() ) {
-	echo '<p>'. esc_html__( 'This post is password protected. Enter the password to view the comments.' ,'bard') .'</p>';
 	return;
 }
 
@@ -10,7 +9,7 @@ if ( post_password_required() ) {
 if ( have_comments() ) : ?>
 
 	<h3 class="comment-title">
-		<?php comments_number( esc_html__( 'No Comments', 'bard' ), esc_html__( 'One Comment', 'bard' ), esc_html__( '% Comments', 'bard' ) ); ?>
+		<?php comments_number( esc_html__( '0 Comments', 'bard' ), esc_html__( 'One Comment', 'bard' ), esc_html__( '% Comments', 'bard' ) ); ?>
 	</h3>
 	
 	<ul class="commentslist" >
