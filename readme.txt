@@ -6,6 +6,10 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 4.7 [20-09-2018]
+1. Screen-shot updated
+2. Pro banner added
+
 @Version: 4.6 [17-08-2018]
 1. Minor issue fixed.
 
@@ -408,6 +412,8 @@ Licensed under GPL
 
 Images Taken from :
 pixabay.com
+
+Screenshot image URL - https://cdn.pixabay.com/photo/2016/10/21/14/50/plouzane-1758197_960_720.jpg
 
 Image Header : https://pixabay.com/en/snow-nature-panoramic-winter-3193865/
 

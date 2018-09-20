@@ -19,26 +19,6 @@ function weblizar_gl_customizer( $wp_customize ) {
 		'selector' => '.logo p',
 	) );
 	
-	$wp_customize->add_panel( 'pro_option', array(
-    'title' => __( 'Get Enigma Premium','enigma' ),
-    'priority' => 1, // Mixed with top-level-section hierarchy.
-	) );
-	$wp_customize->add_section( 'enigma-pro',
-        array(
-		'title' =>  __( 'Get Enigma Premium','enigma' ),
-        'priority'   => 0,
-        'capability' => "edit_theme_options",
-    ));
-	$wp_customize->add_setting( 'pro', array(
-		'default'    		=> null,
-		'sanitize_callback' => 'sanitize_text_field',
-	));
-	$wp_customize->add_control( new Info_PRO_Section( $wp_customize, 'pro', array(
-			'section'  => 'enigma-pro',
-			'settings' => 'pro',
-			'priority' => 1,
-	)));
-	
 	/* Genral section */
 	$wp_customize->add_panel( 'enigma_theme_option', array(
     'title' => __( 'Theme Options','enigma' ),
@@ -1923,19 +1903,4 @@ class enigma_category_Control extends WP_Customize_Control
 	}  /* public function ends */
 }/*   class ends */
 endif; 
-
-if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Info_PRO_Section' ) ) :
-class Info_PRO_Section extends WP_Customize_Control 
-{
-    protected function render()
-    {
-        ?>
-        	<h2 class="pro_title"> Visit Enigma Premium Detail & Demo </h2>
-				<div class="enigma_pro"> 
-                    <a href="https://weblizar.com/themes/enigma-premium/" target="_blank" class="button enigma_pro1"><?php esc_html_e("Upgrade to PRO", 'enigma')?></a>
-				</div>
-			<?php
-    }
-}
-endif;
 ?>
