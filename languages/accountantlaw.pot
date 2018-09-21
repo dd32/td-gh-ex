@@ -1,0 +1,258 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: AccountantLaw\n"
+"POT-Creation-Date: 2015-07-20 10:08+0300\n"
+"PO-Revision-Date: 2015-07-20 10:08+0300\n"
+"Last-Translator: \n"
+"Language-Team: 9Pixels <contact@9pixels.co>\n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.2\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: footer.php:15
+msgid " powered by"
+msgstr ""
+
+#: front-page.php:23 home.php:11
+msgid "Latest posts"
+msgstr ""
+
+#: front-page.php:43 home.php:30
+msgid "Posted by:"
+msgstr ""
+
+#: front-page.php:43 home.php:30
+msgid "In category:"
+msgstr ""
+
+#: front-page.php:43 home.php:30
+msgid "No responses"
+msgstr ""
+
+#: front-page.php:43 home.php:30
+msgid "One comment"
+msgstr ""
+
+#: front-page.php:43 home.php:30
+#, php-format
+msgid "% comments"
+msgstr ""
+
+#: front-page.php:55 front-page.php:56 home.php:42 home.php:43
+msgid "Read More"
+msgstr ""
+
+#: front-page.php:60 home.php:47
+msgid "Sorry, no posts matched your criteria."
+msgstr ""
+
+#: header.php:27 header.php:28
+msgid "Contact us now"
+msgstr ""
+
+#: header.php:34 header.php:35
+msgid "+1-888-846-1732"
+msgstr ""
+
+#: header.php:45
+msgid "Open Menu"
+msgstr ""
+
+#: includes/customizer.php:38 page-home.php:34 page-home.php:35
+msgid "1.700+"
+msgstr ""
+
+#: includes/customizer.php:40
+msgid "Subheader Feat. - Box 1 - Field 1:"
+msgstr ""
+
+#: includes/customizer.php:47 page-home.php:38 page-home.php:39
+msgid "Trusted clients"
+msgstr ""
+
+#: includes/customizer.php:49
+msgid "Subheader Feat. - Box 1 - Field 2:"
+msgstr ""
+
+#: includes/customizer.php:56 page-home.php:44 page-home.php:45
+msgid "$180.000.000"
+msgstr ""
+
+#: includes/customizer.php:58
+msgid "Subheader Feat. - Box 2 - Field 1:"
+msgstr ""
+
+#: includes/customizer.php:65 page-home.php:48 page-home.php:49
+msgid "Recovered for your clients"
+msgstr ""
+
+#: includes/customizer.php:67
+msgid "Subheader Feat. - Box 2 - Field 2:"
+msgstr ""
+
+#: includes/customizer.php:74 page-home.php:54 page-home.php:55
+msgid "98%"
+msgstr ""
+
+#: includes/customizer.php:76
+msgid "Subheader Feat. - Box 3 - Field 1:"
+msgstr ""
+
+#: includes/customizer.php:83 page-home.php:58 page-home.php:59
+msgid "Succesful cases"
+msgstr ""
+
+#: includes/customizer.php:85
+msgid "Subheader Feat. - Box 3 - Field 2:"
+msgstr ""
+
+#: includes/customizer.php:92 page-home.php:64 page-home.php:65
+msgid "10.600"
+msgstr ""
+
+#: includes/customizer.php:94
+msgid "Subheader Feat. - Box 4 - Field 1:"
+msgstr ""
+
+#: includes/customizer.php:101 page-home.php:68 page-home.php:69
+msgid "Personal injury cases"
+msgstr ""
+
+#: includes/customizer.php:103
+msgid "Subheader Feat. - Box 4 - Field 2:"
+msgstr ""
+
+#: includes/customizer.php:110 page-home.php:90 page-home.php:91
+msgid "Happy clients"
+msgstr ""
+
+#: includes/customizer.php:112
+msgid "Testimonials - Title:"
+msgstr ""
+
+#: includes/customizer.php:119 page-home.php:93 page-home.php:94
+msgid ""
+"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
+msgstr ""
+
+#: includes/customizer.php:121
+msgid "Testimonials - Subtitle:"
+msgstr ""
+
+#: includes/customizer.php:130
+msgid "Testimonials - Box 1 - Image:"
+msgstr ""
+
+#: includes/customizer.php:137 includes/customizer.php:166
+#: includes/customizer.php:195 page-home.php:102 page-home.php:104
+#: page-home.php:118 page-home.php:120 page-home.php:134 page-home.php:136
+msgid "John Doe"
+msgstr ""
+
+#: includes/customizer.php:139
+msgid "Testimonials - Box 1 - Name:"
+msgstr ""
+
+#: includes/customizer.php:146 includes/customizer.php:175
+#: includes/customizer.php:204 page-home.php:107 page-home.php:109
+#: page-home.php:123 page-home.php:125 page-home.php:139 page-home.php:141
+msgid ""
+"Lorem Ipsum is simply dummy text of the printing and typesetting industry. "
+"Lorem Ipsum has been the industry's standard dummy text ever since the "
+"1500s, when an unknown printer took a galley of type and scrambled it to "
+"make a type specimen book."
+msgstr ""
+
+#: includes/customizer.php:148
+msgid "Testimonials - Box 1 - Entry:"
+msgstr ""
+
+#: includes/customizer.php:159
+msgid "Testimonials - Box 2 - Image:"
+msgstr ""
+
+#: includes/customizer.php:168
+msgid "Testimonials - Box 2 - Name:"
+msgstr ""
+
+#: includes/customizer.php:177
+msgid "Testimonials - Box 2 - Entry:"
+msgstr ""
+
+#: includes/customizer.php:188
+msgid "Testimonials - Box 3 - Image:"
+msgstr ""
+
+#: includes/customizer.php:197
+msgid "Testimonials - Box 3 - Name:"
+msgstr ""
+
+#: includes/customizer.php:206
+msgid "Testimonials - Box 3 - Entry:"
+msgstr ""
+
+#: includes/customizer.php:215 page-home.php:151 page-home.php:152
+msgid "Who we are?"
+msgstr ""
+
+#: includes/customizer.php:217
+msgid "About Us - Title:"
+msgstr ""
+
+#: includes/customizer.php:224 page-home.php:154 page-home.php:155
+msgid ""
+"That clients' success determines our own. So we ensure both by clients' "
+"success determines our collaborating with our clients to achieve their goals."
+msgstr ""
+
+#: includes/customizer.php:226
+msgid "About Us - Description:"
+msgstr ""
+
+#: includes/customizer.php:235 includes/customizer.php:246 page-home.php:157
+#: page-home.php:159 page-home.php:162 page-home.php:164
+msgid ""
+"Apart and limply monstrous far much added you oyster bawled lost in hey due "
+"so armadillo tpangolin sexual aboard much alas dragonfly be more some "
+"fallacious and barbarous a less much more sat before fishily thus somberly "
+"or restful flexed best wherever squinted drew much oh sloth as some when "
+"scornfully cut involuntarily at audible goodness Apart and limply omberly or "
+"best estful flexed wherever squinted drew much oh sloth as some when "
+"scornfully."
+msgstr ""
+
+#: includes/customizer.php:237
+msgid "About Us - Left Entry:"
+msgstr ""
+
+#: includes/customizer.php:248
+msgid "About Us - Right Entry:"
+msgstr ""
+
+#: includes/customizer.php:259
+msgid "About Us - Image:"
+msgstr ""
+
+#: page-home.php:16 page-home.php:18
+msgid "Lorem ipsum dolor sit amet, consectetur adipscing elit."
+msgstr ""
+
+#: page-home.php:24 page-home.php:26
+msgid ""
+"Ut fermentum aliquam neque, sit amet molestie orci porttitor sit amet. "
+"Mauris venenatis et tortor ut ultrices. Nam a neque venenatis, tristique "
+"lacus id, congue augue. In id tellus lacus. In porttitor sagittis tellus nec "
+"iaculis. Nunc sem odio, placerat a diam vel, varius."
+msgstr ""
+
+#: page-home.php:80 page-home.php:81
+msgid ""
+"Lorem Ipsum is simply dummy text of the printing and type setting industry."
+msgstr ""
