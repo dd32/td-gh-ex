@@ -2,7 +2,7 @@
 Contributors: Jonny Jordan
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.0-trunk
-Version: 1.1.6
+Version: 1.1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -56,18 +56,14 @@ Genericons
 Copyright Genericons.
 Licensed under GNU (https://github.com/Automattic/Genericons/blob/master/LICENSE.txt)
 
-Image Licenses:
-https://www.pexels.com/photo-license/
 
 Used images 
-https://www.pexels.com/photo/building-metal-house-architecture-101808/
-https://www.pexels.com/photo/home-real-estate-106399/
-https://www.pexels.com/photo/appliances-architecture-ceiling-chairs-534151/
-https://www.pexels.com/photo/architectural-design-architecture-blue-sky-bungalow-462358/
-https://www.pexels.com/photo/architecture-balcony-building-clouds-534182/
-https://www.pexels.com/photo/white-painted-house-beside-green-grass-lawn-1030555/
-https://www.pexels.com/photo/architecture-clouds-estate-exterior-280222/
-https://www.pexels.com/photo/gray-2-storey-house-at-daytime-164516/
+https://pixabay.com/en/orchard-apple-apples-fruit-green-1872997/
+https://pixabay.com/en/sunflowers-field-woman-yellow-3640935/
+https://pixabay.com/en/pumpkin-halloween-autumn-october-3636243/
+https://pixabay.com/en/orange-juice-cup-tree-1921548/
+https://pixabay.com/en/trees-landscape-tree-nature-water-3619180/
+https://pixabay.com/en/grape-grapes-vines-mature-green-3586314/
 
 
 
