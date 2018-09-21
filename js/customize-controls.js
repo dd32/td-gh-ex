@@ -131,10 +131,6 @@ jQuery(document).ready( function() {
 	    jQuery(this).parents('.font-size-buttons').find('span').removeClass('button-primary');
 	    jQuery(this).addClass('button-primary');
     });
-    
-    jQuery(document).ready(function() {
-		jQuery('body').find('#accordion-section-themes').after('<div class="cta-pro"><h4>Enjoying Adviso?</h4><a href="https://www.inkhive.com/product/adviso-plus" class="cta-pro-button button"><span class="dashicons dashicons-plus"></span>Check out Adviso Plus</a></div>');
-	});
 	
 	// Contact Info Section
 	
@@ -143,22 +139,6 @@ jQuery(document).ready( function() {
 (function( $ ) {
 	wp.customize.bind('ready', function() {
 		var api	=	this;
-		api( 'adviso_contact_info_enable', function( setting ) {
-			var toggleContacts	=	function() {
-				if ( 'disable'	=== setting.get() ) {
-					api.control( 'adviso_message' ).container.fadeOut( 100 );
-					api.control( 'adviso_mail_id' ).container.fadeOut( 100 );
-					api.control( 'adviso_phone' ).container.fadeOut( 100 );
-				} else {
-					api.control( 'adviso_message' ).container.fadeIn( 100 );
-					api.control( 'adviso_mail_id' ).container.fadeIn( 100 );
-					api.control( 'adviso_phone' ).container.fadeIn( 100 );
-				}
-			} 
-			toggleContacts();
-			
-			setting.bind( toggleContacts );
-		});
 		
 		api( 'adviso_header_cta_enable', function( setting ) {
 			var toggleCTA	=	function() {
@@ -173,6 +153,23 @@ jQuery(document).ready( function() {
 			toggleCTA();
 			
 			setting.bind( toggleCTA );
+		});
+
+		
+		api( 'adviso_top_banner_radio', function( setting ) {
+			var toggleAds	=	 function() {
+				if ( 'code' === setting.get() ) {
+					api.control( 'adviso_top_banner_code' ).container.show();
+					api.control( 'adviso_top_banner_img' ).container.hide();
+				} else {
+					api.control( 'adviso_top_banner_code' ).container.hide();
+					api.control( 'adviso_top_banner_img' ).container.show();
+				}
+			}
+			
+			toggleAds();
+			
+			setting.bind( toggleAds );
 		});
 	});
 })( jQuery );

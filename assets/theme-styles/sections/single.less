@@ -19,7 +19,7 @@
     }
   }
 }
-#primary-mono {
+#primary {
   padding: 0 10px;
   padding-left: 20px;
   @media screen and (max-width:767px) {
@@ -27,12 +27,12 @@
   }
   h2.entry-title {
     font-weight: bold;
-    color: @content;
     font-size: 36px;
     margin-top: 0px;
     padding: 2px 0px;
     margin-bottom: 0px;
   }
+/*
   .entry-meta, .entry-footer {
     font-size: 12px;
     border-bottom: solid 1px darken(@background, 6%);
@@ -46,39 +46,54 @@
       }
     }
   }
+*/
   .entry-meta {
-    color: lighten(@content, 10%);
     text-transform: uppercase;
     letter-spacing: 1px;
     display: inline-block;
     padding: 2px 0px;
+    margin-top: 15px;
     padding-bottom: 8px;
     font-size: 12px;
     border-bottom: none;
     a {
-      color: @accent;
+	    color: #999;
       &:hover {
         text-decoration: none;
       }
+    }
+    .author {
+	    margin-left: 15px;
     }
   }
   .entry-footer {
     border-top: solid 1px #eee;
     padding-top: 7px;
     margin-top: 25px;
+    text-transform: uppercase;
+    font-size: 10px;
+    & > * {
+	    display: inline-block;
+	    margin: 10px auto;
+	    width: 100%;
+	    float: left;
+	    clear: both;
+    }
+    a {
+	    padding: 8px 12px;
+	    background: #eee;
+	    border-radius: 17px;
+    }
     .post-edit-link {
       float: right;
+      clear: none;
 
-    }
-    .cat-links {
-      margin-right: 6px;
     }
   }
   #featured-image {
     border-top: solid 5px darken(@background, 5%);
   }
   .entry-content {
-    color: @content;
     line-height: 1.7em;
     font-size: 14px;
   }

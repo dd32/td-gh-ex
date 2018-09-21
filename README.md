@@ -3,7 +3,7 @@
 **Contributors:** (inkhive)  
 **Requires at least:** WordPress 4.4  
 **Tested up to:** WordPress 4.9.7
-**Version:** 0.9
+**Version:** 0.92
 **License:** GPL v3  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
 **Tags:** custom-background, two-columns, one-column, custom-colors, flexible-header, right-sidebar, grid-layout, custom-menu, sticky-post, theme-options, threaded-comments, translation-ready, featured-images, full-width-template, custom-header, footer-widgets
@@ -70,6 +70,6 @@ Source: https://pixabay.com/en/service/terms/
 
 ## Changelog
 
-### Version 0.9
+### Version 0.92
 
 * Initial Release

@@ -31,10 +31,10 @@ function adviso_customize_register_misc( $wp_customize ) {
                 'settings'		=> 'adviso_important_links',
                 'section'		=> 'adviso_sec_premsupport',
                 'description'	=> '<a class="adviso-important-links" href="https://inkhive.com/contact-us/" target="_blank"><span>' . __('InkHive Support Forum', 'adviso').'</span><span class="dashicons dashicons-businessman"></span></a>
-                                    <a class="adviso-important-links" href="https://demo.inkhive.com/adviso-plus/" target="_blank"><span>'.__('Adviso Live Demo', 'adviso').'</span><span class="dashicons dashicons-welcome-view-site"></span></a>
+                                    <a class="adviso-important-links" href="https://demo.inkhive.com/adviso/" target="_blank"><span>'.__('Adviso Live Demo', 'adviso').'</span><span class="dashicons dashicons-welcome-view-site"></span></a>
                                     <a class="adviso-important-links" href="https://www.facebook.com/inkhivethemes/" target="_blank"><span>'.__('We Love Our Facebook Fans', 'adviso').'</span><span class="dashicons dashicons-facebook-alt"></span></a>
                                     <a class="adviso-important-links" href="https://www.twitter.com/inkhive/" target="_blank"><span>'.__('Follow us on Twitter', 'adviso').'</span><span class="dashicons dashicons-twitter"></span></a>
-                                    <a class="adviso-important-links" href="https://wordpress.org/support/theme/wpre/reviews" target="_blank"><span>'.__('Review Us', 'adviso').'</span><span class="dashicons dashicons-star-filled"></span></a>'
+                                    <a class="adviso-important-links" href="https://wordpress.org/support/theme/adviso/reviews" target="_blank"><span>'.__('Review Us', 'adviso').'</span><span class="dashicons dashicons-star-filled"></span></a>'
             )
         )
     );

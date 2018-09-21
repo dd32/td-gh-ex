@@ -32,6 +32,14 @@ adviso includes support for Infinite Scroll in Jetpack.
 - Version 0.9
 
   * Initial release
+  
+- Version 0.91
+
+  * Completed the Theme
+  
+- Version 0.92
+
+  * Fixed Bugs
 
 == Credits ==
 

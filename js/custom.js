@@ -31,8 +31,8 @@ jQuery(document).ready( function() {
 	        }
 	    });
 	});
-	  
-	jQuery('#search-icon').click(function(){
+
+	jQuery('#adviso-search #search-icon').click( function() {
 		jQuery('#jumbosearch').fadeIn();
 	});
 	
