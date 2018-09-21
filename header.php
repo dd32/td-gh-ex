@@ -26,7 +26,8 @@
     <form role="search" method="get" class="header-form" action="<?php echo esc_url( home_url() ); ?>">
       <fieldset>
         <input type="search" name="s" class="header-text uniform" size="15" placeholder="<?php esc_attr_e( 'Search', 'adelle' ); ?>" />
-        <input type="submit" class="uniform" value="<?php esc_attr_e( 'Search', 'adelle' ); ?>" />
+		<button type="submit" class=""><i class="fa fa-search"></i></button>
+		<!--<input type="submit" class="uniform" value="<?php esc_attr_e( 'Search', 'adelle' ); ?>" />-->
       </fieldset>
     </form>
 

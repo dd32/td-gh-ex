@@ -2,7 +2,7 @@
 Theme Name:		Adelle
 Description:	Your brand is eager and ready to go. The Adelle Theme is ready for you! With a soft pink confetti header and minimalist two-columns, you can get started blogging in no time. Adelle is poised to host any female-oriented brand.
 Description:	WordPress theme by Bluchic
-Version:		18.09
+Version:		18.09.22
 Author:			Bluchic
 Author URI:		http://www.bluchic.com
 Theme URI:		http://www.bluchic.com/freebies/adelle-theme
@@ -58,7 +58,7 @@ html {-webkit-font-smoothing: antialiased;}
 body {overflow-x: hidden; -webkit-animation-delay: 0.1s; -webkit-animation-name: fontfix; -webkit-animation-duration: 0.1s; -webkit-animation-iteration-count: 1; -webkit-animation-timing-function: linear;}
 
 /* OVERALL */
-body {font: normal .9em 'Muli', Lucida Sans Unicode, Lucida Grande, Verdana, Tahoma, Arial, Sans-serif; color: #444; background: #fff url('images/background.gif') repeat-x top center;}
+body {font: normal .95em 'Muli', Lucida Sans Unicode, Lucida Grande, Verdana, Tahoma, Arial, Sans-serif; color: #444; background: #fff url('images/background.gif') repeat-x top center;}
 body p {margin-bottom: 20px; line-height: 1.8em; word-wrap: break-word; -ms-word-wrap: break-word;}
 .container:before, .container:after,
 .section:before, .section:after,
@@ -119,7 +119,7 @@ a:hover {color: #000;}
 
 /* .article */
 .sticky {}
-.article {margin-bottom: 50px; padding-bottom: 20px; background: url('images/break.gif') repeat-x bottom center; overflow: hidden; clear: both;}
+.article {margin-bottom: 50px; padding-bottom: 20px; background: url('images/break.gif') repeat-x bottom center; clear: both;}
 .article .post-thumb {padding: 2px; border: 1px solid #ddd;}
 .article .post-header {margin-bottom: 30px; overflow: hidden;}
 .article .post-date {float: left; margin-right: 10px; background: #000; color: #ddd; width: 45px; padding: 18px; line-height: 1em; font-size: 1.05em; text-align: center; text-transform: uppercase;}
@@ -318,7 +318,7 @@ div.aligncenter {display: block; margin-left: auto; margin-right: auto;}
 select:focus,
 textarea:focus,
 input:focus {border: 1px solid #888; -webkit-box-shadow: 0 0 2px 1px rgba(0, 0, 0, .2); box-shadow: 0 0 2px 1px rgba(0, 0, 0, .2);}
-select {min-height: 28px;}
+select {min-height: 28px; background: #fff;}
 input {-webkit-appearance: none;}
 input[type=radio] {-webkit-appearance: radio;}
 input[type=checkbox] {-webkit-appearance: checkbox;}
@@ -454,18 +454,18 @@ ins.adsbygoogle {background: transparent !important;}
 	.footer {clear: both; margin: 0 auto; width: 1020px; color: #777;}
 
 	/* .header form */
-	.header-form {clear: both; overflow: hidden; position: absolute; top: 6px; right: 40px;}
+	.header-form {clear: both; overflow: hidden; position: absolute; top: 5px; right: 40px;}
 	.header-text {width: 100px; border: 1px solid #bbb;}
 
 	/* .nav */
 	.menu-click {display: none;}
-	.nav {position: relative; width: 950px; display: inline-block; background: #000; padding: 0 35px; margin-top: 40px; clear: both; line-height: 1em; text-transform: uppercase;}
+	.nav {position: relative; width: 100%; display: inline-block; background: #000; padding: 0 35px; margin-top: 40px; clear: both; line-height: 1em; text-transform: uppercase;}
 	.nav:before,
 	.nav:after {border: 1.5em solid #000; content: ""; display: block; position: absolute; bottom: 0; top: 0; z-index: 1;}
 	.nav:before {border-left-color: #fff; border-right-width: 1em; left: 0;}
 	.nav:after {border-left-width: 1em; border-right-color:#fff; right: 0;}
 	.nav ul {list-style: none; max-width: 780px; display: inline-block;}
-	.nav a {display: block; padding: 14px; color: #fff;}
+	.nav a {display: block; padding: 16px 10px; color: #fff;}
 	.nav a:hover {text-decoration: underline; color: #fff;}
 	.nav ul ul a {display: block; padding: 14px; position: relative;}
 
@@ -478,7 +478,7 @@ ins.adsbygoogle {background: transparent !important;}
 	.footer-copy {position: relative; background: #000; color: #aaa; padding: 12px 40px; clear: both; font-size: 0.9em; overflow: hidden; margin: 0 auto;}
 	.footer-copy .footer-credit {display: block; float: right; width: 55px; height: 11px; background: url('images/footer_credit.png') no-repeat 0 0; text-indent: -9999px; margin-top: 5px;}
 	.footer-copy:before,
-	.footer-copy:after {border: 1.8em solid #000; content: ""; display: block; position: absolute; bottom: 0; top: 0; z-index: 1;}
+	.footer-copy:after {border: 1.5em solid #000; content: ""; display: block; position: absolute; bottom: 0; top: 0; z-index: 1;}
 	.footer-copy:before {border-left-color: #fff; border-right-width: 1em; left: 0;}
 	.footer-copy:after {border-left-width: 1em; border-right-color:#fff; right: 0;}
 
