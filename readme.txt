@@ -65,3 +65,7 @@ Please visit http://wordpress.org/support/ if you have any questions about the t
 #### 1.4.0
 
 - changes to heading elements for better SEO structure
+
+#### 1.5.0
+
+- added custom-logo support

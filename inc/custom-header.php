@@ -67,13 +67,14 @@ function suits_header_style() {
 	?>
 	<style type="text/css" id="suits-header-css">
 	<?php
-		if ( ! empty( $header_image ) && display_header_text() ) :
+		if ( ! empty( $header_image ) && ( display_header_text() || has_custom_logo() ) ) :
 	?>
 		.site-header {
 			background-image: url(<?php header_image(); ?>);
 			background-repeat: no-repeat;
 			background-attachment: scroll;
 			background-position: top;
+			background-size: cover;
 		}
 	<?php
 		endif;
@@ -97,6 +98,11 @@ function suits_header_style() {
 	?>
 		.site-title,
 		.site-description {
+			color: #<?php echo esc_attr( $text_color ); ?>;
+		}
+
+		.site-title a,
+		.site-title a:hover {
 			color: #<?php echo esc_attr( $text_color ); ?>;
 		}
 	<?php endif; ?>
