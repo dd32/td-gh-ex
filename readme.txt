@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, threaded-comments, translatio
 
 Requires at least: 4.5
 Tested up to: 4.9.7
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -41,7 +41,7 @@ Best Minimalist WordPress Theme comes with inbuilt support for Jetpack, Breadcru
 
 == Credits ==
 * Women foot on leaves, Copyright Daria Shevtsova License: CC0 1.0 Universal (CC0 1.0) Source: https://www.pexels.com/photo/two-fern-leaves-stepped-by-a-person-1030883/
-* High angle ocean photo, Copyright thiago japyassu 
+* High angle ocean photo, Copyright thiago japyassu
 License: CC0 1.0 Universal (CC0 1.0) Source: https://www.pexels.com/photo/high-angle-photography-of-ocean-991012/
 * Snowy Mountain, Copyright Stephan Seeber License: CC0 1.0 Universal (CC0 1.0) Source: https://www.pexels.com/photo/brown-snowy-mountain-1054201/
 * Adult reading book back view, Copyright freestocks.org License: CC0 1.0 Universal (CC0 1.0) Source: https://www.pexels.com/photo/adult-back-view-blur-book-287335/
