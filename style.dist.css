@@ -5,7 +5,7 @@ Theme URI: https://boosterwp.com/themes/adbooster
 Author: BoosterWP Team
 Author URI: https://boosterwp.com
 Description: AdBooster is a lightning fast and very lightweight WordPress CTR theme that let’s the website content get the user’s full attention. It is designed to help increase Click-through Rate (CTR). It places ads on key positions which helps you get more clicks to your ads thus increasing your earning. Not only its eazy to use and setup, but also its highly responsive and mobile friendly. More over, it is also designed for Search Engine Optimized(SEO) that focus on search engines in mind.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: adbooster
@@ -2385,15 +2385,16 @@ body.search-open .site-search {
           padding: 10px 0;
           border-bottom: 1px solid #ccc; }
           .azb-featured-posts .featured-posts-second .featured-posts-list li a {
-            font-size: 1.3em; }
+            font-size: 1.3em;
+            border-bottom: 0; }
             .azb-featured-posts .featured-posts-second .featured-posts-list li a::before {
-              font-family: "FontAwesome";
               margin-right: 0;
               display: block;
               float: left;
-              opacity: 0.35;
-              width: 20px;
-              content: "\f105"; }
+              opacity: .35;
+              margin-left: -1em;
+              width: 1em;
+              content: "›"; }
   .azb-hmp-container .azb-hmp-row {
     margin-bottom: 2.617924em; }
     .azb-hmp-container .azb-hmp-row:before, .azb-hmp-container .azb-hmp-row:after {
@@ -2410,14 +2411,13 @@ body.search-open .site-search {
         .azb-box ul li a:hover {
           color: #f90; }
       .azb-box ul li::before {
-        font-family: "FontAwesome";
         margin-right: 0;
         display: block;
         float: left;
-        opacity: 0.35;
+        opacity: .35;
         margin-left: -1em;
         width: 1em;
-        content: "\f105"; }
+        content: "›"; }
   .cat-summary .cat-desc {
     font-style: italic; }
   .azb-hmp-box-2 .azb-box {

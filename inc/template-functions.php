@@ -14,8 +14,8 @@ if ( ! function_exists( 'adbooster_skip_links' ) ) {
 	 */
 	function adbooster_skip_links() {
 		?>
-		<a class="skip-link screen-reader-text" href="#site-navigation"><?php esc_attr_e( 'Skip to navigation', 'adbooster' ); ?></a>
-		<a class="skip-link screen-reader-text" href="#content"><?php esc_attr_e( 'Skip to content', 'adbooster' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#site-navigation"><?php esc_html_e( 'Skip to navigation', 'adbooster' ); ?></a>
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'adbooster' ); ?></a>
 		<?php
 	}
 }

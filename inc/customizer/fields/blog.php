@@ -36,8 +36,8 @@ function adbooster_blog_fields( $fields ) {
 				'default'           => 1,
 				'priority'          => 3,
 				'choices'     		=> array(
-					'on'				=> esc_attr__( 'On', 'adbooster' ),
-					'off'				=> esc_attr__( 'Off', 'adbooster' ),
+					'on'				=> esc_html__( 'On', 'adbooster' ),
+					'off'				=> esc_html__( 'Off', 'adbooster' ),
 				),
 				
 			),
@@ -92,8 +92,8 @@ function adbooster_blog_fields( $fields ) {
 				'default'           => 1,
 				'priority'          => 8,
 				'choices'     		=> array(
-					'on'				=> esc_attr__( 'On', 'adbooster' ),
-					'off'				=> esc_attr__( 'Off', 'adbooster' ),
+					'on'				=> esc_html__( 'On', 'adbooster' ),
+					'off'				=> esc_html__( 'Off', 'adbooster' ),
 				),
 
 				'active_callback' => array(
@@ -139,8 +139,8 @@ function adbooster_blog_fields( $fields ) {
 				'default'           => 1,
 				'priority'          => 10,
 				'choices'     		=> array(
-					'on'				=> esc_attr__( 'On', 'adbooster' ),
-					'off'				=> esc_attr__( 'Off', 'adbooster' ),
+					'on'				=> esc_html__( 'On', 'adbooster' ),
+					'off'				=> esc_html__( 'Off', 'adbooster' ),
 				),
 				
 			),
@@ -178,11 +178,11 @@ function adbooster_blog_fields( $fields ) {
 				'default'           => array('date', 'category', 'tag', 'author'),
 				'priority'          => 11,
 				'choices'     		=> array(
-					'date'					=> esc_attr__( 'Date', 'adbooster' ),
-					'category'				=> esc_attr__( 'Category', 'adbooster' ),
-					'tag'					=> esc_attr__( 'Tag', 'adbooster' ),
-					'author'				=> esc_attr__( 'Author', 'adbooster' ),
-					'comment'				=> esc_attr__( 'Comment', 'adbooster' ),
+					'date'					=> esc_html__( 'Date', 'adbooster' ),
+					'category'				=> esc_html__( 'Category', 'adbooster' ),
+					'tag'					=> esc_html__( 'Tag', 'adbooster' ),
+					'author'				=> esc_html__( 'Author', 'adbooster' ),
+					'comment'				=> esc_html__( 'Comment', 'adbooster' ),
 				),
 				
 			),
@@ -195,8 +195,8 @@ function adbooster_blog_fields( $fields ) {
 				'default'           => 'off',
 				'priority'          => 12,
 				'choices'     		=> array(
-					'on'				=> esc_attr__( 'On', 'adbooster' ),
-					'off'				=> esc_attr__( 'Off', 'adbooster' ),
+					'on'				=> esc_html__( 'On', 'adbooster' ),
+					'off'				=> esc_html__( 'Off', 'adbooster' ),
 				),
 				
 			),
@@ -206,7 +206,7 @@ function adbooster_blog_fields( $fields ) {
 				'settings' => 'blog_posts_date_prefix',
 				'label'    => __( 'Date Prefix', 'adbooster' ),
 				'section'  => 'adbooster_blog_post_section',
-				'description'  => esc_attr__( 'Prefix before date archive. It will show for all archive and single post.', 'adbooster' ),
+				'description'  => esc_html__( 'Prefix before date archive. It will show for all archive and single post.', 'adbooster' ),
 				'priority' => 13,
 			),
 
@@ -223,8 +223,8 @@ function adbooster_blog_fields( $fields ) {
 				'default'           => 1,
 				'priority'          => 1,
 				'choices'     		=> array(
-					'on'				=> esc_attr__( 'On', 'adbooster' ),
-					'off'				=> esc_attr__( 'Off', 'adbooster' ),
+					'on'				=> esc_html__( 'On', 'adbooster' ),
+					'off'				=> esc_html__( 'Off', 'adbooster' ),
 				),
 				
 			),
@@ -237,8 +237,8 @@ function adbooster_blog_fields( $fields ) {
 				'default'           => 1,
 				'priority'          => 2,
 				'choices'     		=> array(
-					'on'				=> esc_attr__( 'On', 'adbooster' ),
-					'off'				=> esc_attr__( 'Off', 'adbooster' ),
+					'on'				=> esc_html__( 'On', 'adbooster' ),
+					'off'				=> esc_html__( 'Off', 'adbooster' ),
 				),
 				
 			),
@@ -254,10 +254,10 @@ function adbooster_blog_fields( $fields ) {
 				'default'           => array('date', 'category', 'tag', 'author'),
 				'priority'          => 3,
 				'choices'     		=> array(
-					'date'					=> esc_attr__( 'Date', 'adbooster' ),
-					'category'				=> esc_attr__( 'Category', 'adbooster' ),
-					'tag'					=> esc_attr__( 'Tag', 'adbooster' ),
-					'author'				=> esc_attr__( 'Author', 'adbooster' ),
+					'date'					=> esc_html__( 'Date', 'adbooster' ),
+					'category'				=> esc_html__( 'Category', 'adbooster' ),
+					'tag'					=> esc_html__( 'Tag', 'adbooster' ),
+					'author'				=> esc_html__( 'Author', 'adbooster' ),
 				),
 				
 			),
@@ -270,8 +270,8 @@ function adbooster_blog_fields( $fields ) {
 				'default'           => 'off',
 				'priority'          => 4,
 				'choices'     		=> array(
-					'on'				=> esc_attr__( 'On', 'adbooster' ),
-					'off'				=> esc_attr__( 'Off', 'adbooster' ),
+					'on'				=> esc_html__( 'On', 'adbooster' ),
+					'off'				=> esc_html__( 'Off', 'adbooster' ),
 				),
 				
 			),
@@ -335,8 +335,8 @@ function adbooster_homepage_fields( $fields ) {
 				'default'           => '1',
 				'priority'          => 5,
 				'choices'     => array(
-					'on'				=> esc_attr__('ON', 'adbooster'),
-					'off'				=> esc_attr__('OFF', 'adbooster'),
+					'on'				=> esc_html__('ON', 'adbooster'),
+					'off'				=> esc_html__('OFF', 'adbooster'),
 				),
 				
 			),
@@ -358,7 +358,7 @@ function adbooster_homepage_fields( $fields ) {
 				'settings'     => 'homepage_featured_posts_num_setting',
 				'default'		=> 5,
 				'priority'    => 20,
-				'label'			=> esc_attr__( 'Number of Posts', 'adbooster' ),
+				'label'			=> esc_html__( 'Number of Posts', 'adbooster' ),
 				'section'     => 'adbooster_homepage_featured_posts_section',
 			),
 			array(
@@ -366,7 +366,7 @@ function adbooster_homepage_fields( $fields ) {
 				'settings'     => 'homepage_fp_ignore_sticky_posts_setting',
 				'default'		=> true,
 				'priority'    => 30,
-				'label'			=> esc_attr__( 'Ignore Sticky Posts', 'adbooster' ),
+				'label'			=> esc_html__( 'Ignore Sticky Posts', 'adbooster' ),
 				'section'     => 'adbooster_homepage_featured_posts_section',
 			),
 			array(
@@ -407,21 +407,21 @@ function adbooster_homepage_fields( $fields ) {
 			'settings'     => 'homepage_content_col_setting',
 			'default'		=> 2,
 			'priority'    => 5,
-			'label'			=> esc_attr__( 'Number of Columns', 'adbooster' ),
+			'label'			=> esc_html__( 'Number of Columns', 'adbooster' ),
 			'choices'		=> array( 1 => 1, 2 => 2, 3 => 3, 4 => 4),
 			'section'     => 'adbooster_homepage_content_section',
 			),
 		array(
 			'type'        => 'repeater',
-			'label'       => esc_attr__( 'Homepage Content', 'adbooster' ),
+			'label'       => esc_html__( 'Homepage Content', 'adbooster' ),
 			'section'     => 'adbooster_homepage_content_section',
 			'priority'    => 10,
 			'row_label' => array(
 				'type'  => 'field',
-				'value' => esc_attr__('Custom Content', 'adbooster' ),
+				'value' => esc_html__('Custom Content', 'adbooster' ),
 				'field' => 'cat',
 			),
-			'button_label' => esc_attr__('Add New', 'adbooster' ),
+			'button_label' => esc_html__('Add New', 'adbooster' ),
 			'settings'     => 'homepage_content_setting',
 			'fields' => adbooster_homepage_content_fields()
 		)
@@ -435,86 +435,86 @@ function adbooster_homepage_content_fields() {
 	return array(
 			'cat' 	=> array(
 					'type'        	=> 'select',
-					'label'       	=> esc_attr__( 'Category', 'adbooster' ),
-					'description' 	=> esc_attr__( 'Choose any category', 'adbooster' ),
+					'label'       	=> esc_html__( 'Category', 'adbooster' ),
+					'description' 	=> esc_html__( 'Choose any category', 'adbooster' ),
 					'choices'		=> adbooster_category_list()
 			),
 			'cat_img' => array(
 					'type'        => 'image',
-					'label'       => esc_attr__( 'Image Category', 'adbooster' ),
-					'description' => esc_attr__( 'Category Image Thumbnail', 'adbooster' ),
+					'label'       => esc_html__( 'Image Category', 'adbooster' ),
+					'description' => esc_html__( 'Category Image Thumbnail', 'adbooster' ),
 					'default'     => '',
 			),
 			'post_per_page'	=> array(
 				'type'			=> 'number',
-				'label'			=> esc_attr__( 'Number of Posts', 'adbooster' ),
+				'label'			=> esc_html__( 'Number of Posts', 'adbooster' ),
 				'default'		=> 5
 			),
 			'render_style'	=> array(
 				'type'			=> 'select',
-				'label'			=> esc_attr__( 'Render Style', 'adbooster' ),
+				'label'			=> esc_html__( 'Render Style', 'adbooster' ),
 				'default'		=> 'grid',
-				'choices'		=> array( 'list' => esc_attr__( 'List', 'adbooster' ), 'grid' => esc_attr__( 'Grid', 'adbooster' ))
+				'choices'		=> array( 'list' => esc_html__( 'List', 'adbooster' ), 'grid' => esc_html__( 'Grid', 'adbooster' ))
 			),
 			'num_cols'	=> array(
 				'type'			=> 'select',
-				'description'	=> esc_attr__( 'Choose column for Grid style.', 'adbooster' ),
+				'description'	=> esc_html__( 'Choose column for Grid style.', 'adbooster' ),
 				'default'		=> 'col-2',
-				'label'			=> esc_attr__( 'Number of Columns', 'adbooster' ),
+				'label'			=> esc_html__( 'Number of Columns', 'adbooster' ),
 				'choices'		=> array( 'col-1' => 1, 'col-2' => 2, 'col-3' => 3, 'col-4' => 4)
 			),
 			'image_section' => array(
 				'type'			=> 'custom',
-				'label'			=> '<h2>' . esc_attr__( 'Post Thumbnail', 'adbooster') . '</h2>',
+				'label'			=> '<h2>' . esc_html__( 'Post Thumbnail', 'adbooster') . '</h2>',
 			),
 			'image_show' => array(
 				'type'			=> 'checkbox',
-				'label'			=> esc_attr__( 'Show Thumbnail', 'adbooster' ),
+				'label'			=> esc_html__( 'Show Thumbnail', 'adbooster' ),
 				'default'		=> true
 			),
 			'image_alignment'	=> array(
 				'type'			=> 'select',
-				'label'			=> esc_attr__( 'Image Alignment', 'adbooster' ),
+				'label'			=> esc_html__( 'Image Alignment', 'adbooster' ),
 				'default'		=> 'center',
 				'choices'		=> array(
-						'left'		=> esc_attr__('Left', 'adbooster'),
-						'center'	=> esc_attr__('Center', 'adbooster'),
-						'right'		=> esc_attr__('Right', 'adbooster'),
+						'left'		=> esc_html__('Left', 'adbooster'),
+						'center'	=> esc_html__('Center', 'adbooster'),
+						'right'		=> esc_html__('Right', 'adbooster'),
 				)
 			),
 			'image_pos'	=> array(
 				'type'			=> 'select',
-				'label'			=> esc_attr__( 'Image Postion', 'adbooster' ),
+				'label'			=> esc_html__( 'Image Postion', 'adbooster' ),
 				'default'		=> 'after_title',
 				'choices'		=> array(
-						'befor_title'		=> esc_attr__('Before Title', 'adbooster'),
-						'after_title'	=> esc_attr__('After Title', 'adbooster'),
+						'befor_title'		=> esc_html__('Before Title', 'adbooster'),
+						'after_title'	=> esc_html__('After Title', 'adbooster'),
 
 				)
 			),
 			'post_content_section' => array(
 				'type'			=> 'custom',
-				'label'			=> '<h2>' . esc_attr__( 'Post Content', 'adbooster') . '</h2>',
+				'label'			=> '<h2>' . esc_html__( 'Post Content', 'adbooster') . '</h2>',
 			),
 			'post_content_type'	=> array(
 				'type'			=> 'select',
-				'label'			=> esc_attr__( 'Content Type', 'adbooster' ),
+				'label'			=> esc_html__( 'Content Type', 'adbooster' ),
 				'default'		=> 'excerpt',
 				'priority'		=> 20,
 				'choices'		=> array(
-						'excerpt'		=> esc_attr__('Excerpt', 'adbooster'),
-						'none'		=> esc_attr__('None', 'adbooster'),
+						'excerpt'		=> esc_html__('Excerpt', 'adbooster'),
+						'none'		=> esc_html__('None', 'adbooster'),
 				)
 			),
 			'post_excerpt_length'	=> array(
 				'type'			=> 'number',
 				'priority'		=> 2,
-				'label'			=> esc_attr__( 'Excerpt Length (words)', 'adbooster' ),
+				'label'			=> esc_html__( 'Excerpt Length (words)', 'adbooster' ),
 				'default'		=> 30
 			),
 			'post_content_title_el'	=> array(
 				'type'			=> 'select',
-				'label'			=> esc_attr__( 'Title Element', 'adbooster' ),
+				'label'			=> esc_html__( 'Title Element', 'adbooster' ),
 				'default'		=> 'h2',
 				'choices'		=> array(
 						'p'		=> 'p',
