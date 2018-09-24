@@ -13,83 +13,6 @@
   padding: 10px 0;
 }
 
-.content {
-  float: left;
-  width: calc(100% - 280px);
-}
-
-.sidebar {
-  width: 255px;
-  float: right;
-}
-
-/* Sidebar Widgets */
-.sidebar-widget {
-	display: inline-block;
-	position: relative;
-	float: right;
-	width: 100%;
-	background-color: #fff;
-	margin: 16px auto 15px;
-	border: 1px solid #e5e5e5;
-	-webkit-box-shadow: 0 1px 1px rgba(0,0,0,.04);
-	box-shadow: 0 1px 1px rgba(0,0,0,.04);
-	overflow: hidden;
-	text-align: center;
-}
-
-.sidebar-widget h3 {
-	display: block;
-	font-size: 13px;
-	font-weight: 600;
-	padding: 12px 10px;
-	background-color: #32373C;
-	color: #fff;
-	letter-spacing: .6px;
-	margin: 0;
-	text-align: center;
-}
-
-.sidebar-widget > div {
-	padding: 15px 20px;
-}
-
-.sidebar-widget p {
-	font-size: 12px;
-	line-height: 1.65;
-	color: #5a5a5a;
-	margin-top: 0;
-}
-
-.sidebar-widget a {
-	display: inline-block;
-	background-color: #0085ba;
-	color: #fff;
-	height: auto;
-	font-size: 12px;
-	line-height: 1;
-	font-weight: 600;
-	padding: 9px 15px 11px;
-	border: 0;
-	cursor: pointer;
-	text-align: center;
-	letter-spacing: .1em;
-	border-radius: 3px;
-	text-decoration: none;
-	transition: all .3s ease;
-}
-
-.sidebar-widget a:hover {
-	opacity: 0.85;
-}
-
-.sidebar-widget a .dashicons {
-	width: auto;
-	height: auto;
-	font-size: 12px;
-	margin-top: 1px;
-}
-
 
 /* Tabs */
 .nav-tab-wrapper {
@@ -102,6 +25,14 @@
   padding-right: 3px;
   font-size: 19px;
 }
+
+.nav-tab-wrapper a:nth-child(5) span {
+  color: orange;
+  padding-top: 2px;
+  padding-right: 3px;
+  font-size: 19px;
+}
+
 
 .nav-tab-wrapper a {
 	box-shadow: none !important;
@@ -239,7 +170,7 @@
 /* Recommended Plugins */
 .three-columns-wrap .plugin-card {
 	position: relative;
-	width: 49% !important;
+	width: 30% !important;
 	min-height: 170px;
 	padding: 20px;
 	margin-right: 1% !important;
@@ -264,7 +195,7 @@
 
 /* Free vs Pro */
 .free-vs-pro {
-  width: 90%;
+  width: 50%;
 }
 
 .free-vs-pro th {
@@ -329,12 +260,9 @@
 	}
 }
 
-@media screen and ( max-width: 1460px ) {
-	.column-width-4 {
-		width: 30%;
-		margin-right: 3%;
-		margin-right: 2%;
-		margin-bottom: 20px;
+@media screen and ( max-width: 1360px ) {
+	.free-vs-pro {
+		width: 80% !important;
 	}
 }
 
@@ -356,7 +284,7 @@
 		margin-right: 0 !important;
 	}
 	.column-width-4 {
-		width: 47%;
+		width: 30%;
 		margin-right: 3%;
 		margin-right: 2%;
 		margin-bottom: 20px;

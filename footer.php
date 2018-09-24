@@ -44,7 +44,7 @@
 					<?php
 					$theme_data	= wp_get_theme();
 					/* translators: %1$s: theme name, %2$s link, %3$s theme author */
-					printf( __( '%1$s Theme by <a href="%2$s">%3$s.</a>', 'ashe' ), esc_html( $theme_data->Name ), esc_url( 'http://wp-royal.com/' ), $theme_data->Author );
+					printf( __( '%1$s Theme by <a href="%2$s">%3$s.</a>', 'ashe' ), esc_html( $theme_data->Name ), esc_url( 'https://wp-royal.com/' ), $theme_data->Author );
 					?>
 				</div>
 
