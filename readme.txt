@@ -153,6 +153,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+@version 2.2.2
+1. Added WooCommerce Gallery Support.
 @Version 2.2.1
 1. Update Slider Read more link.
 2. Added Recommended action tab in about theme page.

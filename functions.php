@@ -78,6 +78,11 @@
 		
 		// woocommerce support
 		add_theme_support( 'woocommerce' );
+		
+		// Woocommerce Gallery Support
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
   		
   		require_once('theme_setup_data.php');
   		// setup admin pannel defual data for index page		
