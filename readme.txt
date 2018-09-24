@@ -3,8 +3,8 @@ White Spektrum WordPress Theme
 Contributor: benlumia007
 Tags: custom-background, custom-header, right-sidebar
 Requres at least: 4.5
-Tested up to: 4.9.4
-Stable tag: 0.2.9
+Tested up to: 4.9.8
+Stable tag: 1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,6 +67,10 @@ I have improved my understanding so that I can make this theme better.
 
 Changelog
 ================================================================================================
+Version: 1.0
+- Major Haul
+- Use Backdrop Framework (Created By: Benjamin Lu)
+
 Version: 0.3.0
 - Small Changes to some CSS Classes.
 
@@ -164,7 +168,7 @@ Not Available At the Moment
 Resources
 ================================================================================================
 Font Awesome by Dave Gandy - http://fontawesome.io
-Font Awesome licensed under SIL OFL 1.1 · Code licensed under MIT License
+Font Awesome licensed under SIL OFL 1.1 Â· Code licensed under MIT License
 Source: http://fortawesome.github.io/Font-Awesome/
 
 Merriweather Sans (Google Font)

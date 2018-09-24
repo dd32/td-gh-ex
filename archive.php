@@ -18,7 +18,7 @@ functions to peform their jobs.
 <?php get_header(); ?>
     <div id="gobal-layout" class="<?php echo esc_attr(get_theme_mod('global_layout', 'left-sidebar')); ?>">
         <div class="content-area">
-            <?php Backdrop\MainQuery\display_content_post_format(); ?>
+            <?php Backdrop\MainQuery\display_content_archive(); ?>
         </div>
         <?php Backdrop\Sidebar\display_primary(); ?>
     </div>

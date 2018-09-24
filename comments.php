@@ -1,16 +1,15 @@
 <?php
 /*
-================================================================================================
-White Spektrum - comments.php
-================================================================================================
+============================================================================================================================
+Silver Quantum - comments.php
+============================================================================================================================
 This is the most generic template file in a WordPress theme and is one of the required files to
 display the comments for the theme.
-
-@package        White Spektrum WordPress Theme
-@copyright      Copyright (C) 2014-2017. Benjamin Lu
+@package        Silver Quantum WordPress Theme
+@copyright      Copyright (C) 2014-2018. Benjamin Lu
 @license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (https://www.benjlu.com/)
-================================================================================================
+@author         Benjamin Lu (https://benjlu.com/)
+============================================================================================================================
 */
 ?>
 <?php
@@ -22,9 +21,9 @@ if ( post_password_required() ) { return; } ?>
             <h2 class="comments-title">
                 <?php $count = get_comments_number(); ?>
                 <?php if ('1' === $count) {
-                    printf(_x('One Comment on %s', 'comments title', 'white-spektrum'), get_the_title());
+                    printf(_x('One Comment', 'comments title', 'white-spektrum'));
                 } else {
-                    printf(_nx('%1$s Comment on %2$s', '%1$s Comments on %2$s', $count, 'comments title', 'white-spektrum'), number_format_i18n($count), get_the_title());
+                    printf(_nx('%1$s Comment', '%1$s Comments', $count, 'comments title', 'white-spektrum'), number_format_i18n($count));
                 } ?>
             </h2>
         <?php } ?>
@@ -33,14 +32,14 @@ if ( post_password_required() ) { return; } ?>
                 wp_list_comments(array(
                     'style'      => 'ol',
                     'short_ping' => true,
-                    'avatar_size' => 65,
+                    'avatar_size' => 70,
                 ));
             ?>
         </ol>
         <?php if (get_comment_pages_count() > 1 && get_option('page_comments')) { ?>
             <nav id="comment-nav-below" class="comment-navigation cf" role="navigation">
-                <div class="comment-previous"><?php previous_comments_link('<i class="fa fa-arrow-circle-o-left"></i> ' . __( 'Older Comments', 'white-spektrum')); ?></div>
-                <div class="comment-next"><?php next_comments_link('<i class="fa fa-arrow-circle-o-right"></i> ' . __('Newer Comments', 'white-spektrum')); ?></div>
+                <div class="comment-previous"><?php previous_comments_link( '<i class="fa fa-arrow-circle-o-left"></i> ' . esc_html__( 'Older Comments', 'white-spektrum' ) ); ?></div>
+                <div class="comment-next"><?php next_comments_link( '<i class="fa fa-arrow-circle-o-right"></i> ' . esc_html__( 'Newer Comments', 'white-spektrum' ) ); ?></div>
             </nav>
         <?php } ?>
         <?php comment_form(); ?>
