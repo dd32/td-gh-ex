@@ -1,10 +1,6 @@
 <!-- start content container -->
 <div class="row">
-	<?php if ( balanced_blog_is_preview() ) { ?>
-		<article class="col-md-9">
-		<?php } else { ?>
-			<article class="col-md-<?php balanced_blog_main_content_width_columns(); ?>">
-			<?php } ?>
+		<article class="col-md-<?php balanced_blog_main_content_width_columns(); ?>">
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>                          
 					<div <?php post_class(); ?>>
 						<div class="single-wrap col-md-12">
@@ -15,7 +11,9 @@
 									<time class="posted-on published" datetime="<?php the_time( 'Y-m-d' ); ?>"></time>                                                        
 								</header>                            
 								<div class="entry-content">                              
-									<?php the_content(); ?>                            
+									<?php do_action( 'head_theme_before_content' ); ?>
+    							<?php the_content(); ?>
+    							<?php do_action( 'head_theme_after_content' ); ?>
 								</div>
 								<?php wp_link_pages(); ?>
 							</div>

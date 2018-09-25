@@ -4,7 +4,7 @@ Theme URI: https://headthemes.com/theme/balanced-blog/
 Author: HeadThemes
 Author URI: https://headthemes.com/
 Description: Balanced Blog is fast, clean and responsive WordPress Blog theme. Theme supports custom header, logo or background and it is easy to use. Balanced Blog is SEO friendly, WPML, translation and RTL ready. DEMO: https://headthemes.com/balanced-blog-demo/
-Version: 1.0.4
+Version: 1.0.5
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl.html
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-menu, featured-images, translation-ready, custom-logo, threaded-comments, blog
@@ -301,7 +301,7 @@ a:active {
         white-space: normal !important;
     }
     .navbar-nav li, .navbar-nav ul {
-        padding: 0px !important;
+        padding: 0 0 0 10px !important;
         margin: 0px !important;
     }
     .open-panel {

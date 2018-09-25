@@ -9,7 +9,7 @@
 		<?php
 		// if this was a search we display a page header with the results count. If there were no results we display the search form.
 		if ( is_search() ) :
-
+      /* translators: %s: search result */
 			echo "<h1 class='search-head text-center'>" . sprintf( esc_html__( 'Search Results for: %s', 'balanced-blog' ), get_search_query() ) . "</h1>";
 			
 		endif;

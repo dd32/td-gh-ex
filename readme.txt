@@ -58,6 +58,11 @@ Balanced Blog is distributed under the terms of the GNU GPL (http://www.gnu.org/
 
 == Changelog ==
 
+= Version 1.0.5 =
+* Better mobile menu styling
+* Theme code update
+* CSS fixes
+
 = Version 1.0.4 =
 * Single post author is now visible only when you define author description
 * Improved footer widgets display

@@ -5,11 +5,7 @@
 <!-- start content container -->
 <div class="row">
 
-    <?php if ( balanced_blog_is_preview() ) { ?>
-		<div class="col-md-8">
-	<?php } else { ?>
 		<div class="col-md-<?php balanced_blog_main_content_width_columns(); ?>">
-	<?php }?>
 
 		<?php
 		if ( have_posts() ) :

@@ -12,7 +12,10 @@ if ( post_password_required() ) {
 	<div id="comments" class="comments-template">
 		<?php if ( have_comments() ) : ?>
 			<h3 id="comments text-center">
-				<?php printf( _nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', 'balanced-blog' ), number_format_i18n( get_comments_number() ) ); ?>
+				<?php 
+        /* translators: %1$s: number of comments */
+        printf( _nx( '%1$s Comment', '%1$s Comments', get_comments_number(), 'comments title', 'balanced-blog' ), number_format_i18n( get_comments_number() ) );
+        ?>
 			</h3>
 			<ul class="commentlist list-unstyled">
 				<?php

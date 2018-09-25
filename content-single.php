@@ -1,10 +1,6 @@
 <!-- start content container -->
 <div class="row">      
-	<?php if ( balanced_blog_is_preview() ) { ?>
-		<article class="col-md-9">
-		<?php } else { ?>
 			<article class="col-md-<?php balanced_blog_main_content_width_columns(); ?>">
-			<?php } ?>
 			<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>                         
 					<div <?php post_class(); ?>>
 						<div class="single-wrap col-md-12">
@@ -21,7 +17,9 @@
 							</div>	
 							<div class="single-content"> 
 								<div class="single-entry-summary">
-									<?php the_content(); ?> 
+									<?php do_action( 'head_theme_before_content' ); ?>
+    							<?php the_content(); ?>
+    							<?php do_action( 'head_theme_after_content' ); ?>
 								</div><!-- .single-entry-summary -->
 								<?php wp_link_pages(); ?>
 								<?php balanced_blog_entry_footer(); ?>

@@ -7,13 +7,13 @@
 		</div>	
 	</div>		
 <?php } ?>
-<?php do_action( 'balanced_blog_before_footer' ); ?> 
+<?php do_action( 'head_theme_before_footer' ); ?> 
 <footer id="colophon" class="footer-credits container-fluid">
 	<div class="container">
-		<?php do_action( 'balanced_blog_generate_footer' ); ?> 
+		<?php do_action( 'head_theme_generate_footer' ); ?> 
 	</div>	
 </footer>
-<?php do_action( 'balanced_blog_after_footer' ); ?> 
+<?php do_action( 'head_theme_after_footer' ); ?> 
 <?php wp_footer(); ?>
 
 </body>

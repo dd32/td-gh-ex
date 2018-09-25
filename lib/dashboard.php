@@ -94,7 +94,7 @@ function balanced_blog_theme_info_page() {
 	// Check for current viewing tab
 	$tab = null;
 	if ( isset( $_GET[ 'tab' ] ) ) {
-		$tab = $_GET[ 'tab' ];
+			$tab = sanitize_text_field( wp_unslash( $_GET[ 'tab' ] ) );
 	} else {
 		$tab = null;
 	}

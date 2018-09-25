@@ -1,3 +1,4 @@
+<?php do_action( 'head_theme_before_head' ); ?>
 <div class="site-header container-fluid" style="background-image: url(<?php header_image(); ?>)">
 	<div class="custom-header container" >
 			<div class="site-heading text-center">
@@ -24,6 +25,7 @@
 
 	</div>
 </div>
+<?php do_action( 'head_theme_before_menu' ); ?> 
 <div class="main-menu">
 	<nav id="site-navigation" class="navbar navbar-default navbar-center">     
 		<div class="container">   
@@ -37,11 +39,6 @@
 				<?php endif; ?>
 			</div>
 			<?php
-			if ( balanced_blog_is_preview() ) {
-				echo '<div class="menu-container"><ul id="main-menu" class="nav navbar-nav">';
-				balanced_blog_preview_navigation();
-				echo '</ul></div>';
-			} else {
 				wp_nav_menu( array(
 					'theme_location'	 => 'main_menu',
 					'depth'				 => 5,
@@ -51,9 +48,9 @@
 					'fallback_cb'		 => 'wp_bootstrap_navwalker::fallback',
 					'walker'			 => new wp_bootstrap_navwalker(),
 				) );
-			}
 			?>
 		</div>
-		<?php do_action( 'balanced_blog_menu' ); ?>
+		<?php do_action( 'head_theme_menu' ); ?>
 	</nav> 
 </div>
+<?php do_action( 'head_theme_after_menu' ); ?>
