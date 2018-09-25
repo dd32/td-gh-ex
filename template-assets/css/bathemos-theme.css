@@ -1,0 +1,14 @@
+/**
+ * Main CSS file.
+ *
+ * @package BA ThemOS
+*/
+
+!* {
+	border: 1px solid #ccc;
+}
+
+
+.sidebar {
+	text-align: center;
+}

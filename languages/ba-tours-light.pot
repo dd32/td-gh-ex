@@ -1,0 +1,1104 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: BA Tours light\n"
+"POT-Creation-Date: 2018-09-24 17:43+0300\n"
+"PO-Revision-Date: 2018-04-10 13:59+0300\n"
+"Last-Translator: \n"
+"Language-Team: https://ba-booking.com\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-KeywordsList: __;_e;esc_attr_e;_x;_n;_nx;esc_html__;esc_html_e;"
+"esc_html_x\n"
+"X-Poedit-SearchPath-0: .\n"
+
+#: 404.php:27
+msgid "That page can&rsquo;t be found."
+msgstr ""
+
+#: 404.php:31
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+
+#: 404.php:40
+msgid "Most used categories"
+msgstr ""
+
+#: 404.php:55
+msgid "Try looking in the monthly archives."
+msgstr ""
+
+#: comments-to_book.php:32
+msgid "One review"
+msgstr ""
+
+#: comments-to_book.php:38
+#, php-format
+msgid "%1$s review"
+msgstr ""
+
+#: comments-to_book.php:47 comments-to_book.php:65
+msgid "Older reviews"
+msgstr ""
+
+#: comments-to_book.php:48 comments-to_book.php:66
+msgid "Newer reviews"
+msgstr ""
+
+#: comments-to_book.php:49 comments-to_book.php:67 comments.php:48
+#: comments.php:66 single.php:35 template-parts/contents/content.php:49
+msgid "Continue reading"
+msgstr ""
+
+#: comments-to_book.php:72
+msgid "Reviews are closed."
+msgstr ""
+
+#: comments-to_book.php:79 comments-to_book.php:80
+msgid "Leave a Review"
+msgstr ""
+
+#: comments-to_book.php:81
+msgid "Cancel Review"
+msgstr ""
+
+#: comments-to_book.php:82
+msgid "Post Review"
+msgstr ""
+
+#: comments-to_book.php:83
+msgid "Review text"
+msgstr ""
+
+#: comments.php:31
+msgid "One comment"
+msgstr ""
+
+#: comments.php:37
+#, php-format
+msgid "%1$s comment"
+msgstr ""
+
+#: comments.php:46 comments.php:64
+msgid "Older comments"
+msgstr ""
+
+#: comments.php:47 comments.php:65
+msgid "Newer comments"
+msgstr ""
+
+#: comments.php:71
+msgid "Comments are closed."
+msgstr ""
+
+#: defines/defines.php:274
+msgid "Primary Menu"
+msgstr ""
+
+#: defines/defines.php:434
+msgid "Layout"
+msgstr ""
+
+#: defines/defines.php:439
+msgid "Color scheme"
+msgstr ""
+
+#: defines/defines.php:442 includes/class-bathemos-admin.php:613
+msgid "Font set"
+msgstr ""
+
+#: defines/defines.php:446
+msgid "Navigation bar"
+msgstr ""
+
+#: defines/defines.php:449 includes/class-bathemos-admin.php:437
+msgid "Header"
+msgstr ""
+
+#: defines/defines.php:452 includes/class-bathemos-admin.php:536
+msgid "Footer"
+msgstr ""
+
+#: defines/defines.php:455
+msgid "Content area container"
+msgstr ""
+
+#: defines/defines.php:523
+msgid "Left Sidebar"
+msgstr ""
+
+#: defines/defines.php:527
+msgid "Right Sidebar"
+msgstr ""
+
+#: defines/defines.php:531
+msgid "Before-Header panel"
+msgstr ""
+
+#: defines/defines.php:534
+msgid "Header panel"
+msgstr ""
+
+#: defines/defines.php:537
+msgid "Before-Content panel"
+msgstr ""
+
+#: defines/defines.php:540
+msgid "Before-Footer panel"
+msgstr ""
+
+#: defines/defines.php:543
+msgid "Footer panel"
+msgstr ""
+
+#: defines/defines.php:547
+msgid "Footer left panel"
+msgstr ""
+
+#: defines/defines.php:550
+msgid "Footer middle panel"
+msgstr ""
+
+#: defines/defines.php:553
+msgid "Footer right panel"
+msgstr ""
+
+#: functions.php:197 includes/class-bathemos-admin.php:553
+msgid "Copyright &copy; {year}, {sitename}"
+msgstr ""
+
+#: functions.php:235
+msgid "Pingback:"
+msgstr ""
+
+#: functions.php:235
+msgid "Edit"
+msgstr ""
+
+#: functions.php:261
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: functions.php:271
+msgid ""
+"<span style=\"margin-left: 5px;\" class=\"glyphicon glyphicon-edit\"></span> "
+"Edit"
+msgstr ""
+
+#: functions.php:414
+msgid "Close"
+msgstr ""
+
+#: functions.php:422
+msgid "Tour Code:"
+msgstr ""
+
+#: functions.php:438
+msgid "Schedule"
+msgstr ""
+
+#: functions.php:464 functions.php:1260 functions.php:1492
+msgid "from"
+msgstr ""
+
+#: functions.php:472
+msgid "Book now"
+msgstr ""
+
+#: functions.php:495
+msgid "Start time"
+msgstr ""
+
+#: functions.php:505
+msgid "Duration"
+msgstr ""
+
+#: functions.php:514
+msgid "Age"
+msgstr ""
+
+#: functions.php:555
+msgid "Age restriction"
+msgstr ""
+
+#: functions.php:558
+msgid "Any, 18+, 7+ years, etc."
+msgstr ""
+
+#: functions.php:559
+msgid "7+ years"
+msgstr ""
+
+#: functions.php:750
+msgid "Details"
+msgstr ""
+
+#: functions.php:762
+msgid "Questions & Answers"
+msgstr ""
+
+#: functions.php:783
+msgid "Book this tour"
+msgstr ""
+
+#: functions.php:860
+msgid "Date and time"
+msgstr ""
+
+#: functions.php:873
+msgid "Tickets"
+msgstr ""
+
+#: functions.php:873
+msgid "Guests"
+msgstr ""
+
+#: functions.php:876
+msgid "please, select date first"
+msgstr ""
+
+#: functions.php:904
+msgid "Select meeting point"
+msgstr ""
+
+#: functions.php:930
+msgid "Total:"
+msgstr ""
+
+#: functions.php:936
+msgid "Please fill in all the data."
+msgstr ""
+
+#: functions.php:945
+msgid "Book Now"
+msgstr ""
+
+#: functions.php:1265
+msgid "to"
+msgstr ""
+
+#: functions.php:1695
+msgid "Previous"
+msgstr ""
+
+#: functions.php:1695
+msgid "Previous page"
+msgstr ""
+
+#: functions.php:1696
+msgid "Next page"
+msgstr ""
+
+#: functions.php:1696
+msgid "Next"
+msgstr ""
+
+#: functions.php:1697
+msgid "Page"
+msgstr ""
+
+#: header.php:39
+msgid "Skip to content"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:165
+#, php-format
+msgid "BA Tours Light options %1$sTheme Documentation%2$s"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:173
+msgid "Theme Options"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:174
+msgid "BA Tours Light options"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:278
+msgid "Documentation"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:369
+msgid "Logo"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:385
+msgid "Site Title"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:403
+msgid "Tagline"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:421
+msgid "Site Identity"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:439
+msgid "Add your contacts to the site header."
+msgstr ""
+
+#: includes/class-bathemos-admin.php:446
+msgid "Contact phone"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:457
+msgid "Address line"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:468
+msgid "Working hours"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:485
+msgid "Front Page"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:494
+msgid "Use slideshow"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:495
+msgid ""
+"If it's enabled, Slides posts will be used to get images and titles for "
+"slideshow. Otherwise, the page featured image will be displayed."
+msgstr ""
+
+#: includes/class-bathemos-admin.php:509
+msgid "Search Form"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:523
+msgid "Search Results"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:545
+msgid "Copyrights"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:552
+msgid "Copyrights text"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:575
+msgid "Layouts"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:585
+#, php-format
+msgid ""
+"Default page/post layout. This options are available in %1$sBA Tours theme"
+"%2$s only."
+msgstr ""
+
+#: includes/class-bathemos-admin.php:614
+msgid "You can modify this fonts as you wish."
+msgstr ""
+
+#: includes/class-bathemos-admin.php:675
+msgid "Fonts"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:690
+msgid "Colors"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:700 includes/class-bathemos-admin.php:723
+#, php-format
+msgid "This options are available in %1$sBA Tours theme%2$s only."
+msgstr ""
+
+#: includes/class-bathemos-admin.php:714
+msgid "Custom CSS"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:799
+msgid "Additional select field"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:800 includes/class-bathemos-admin.php:932
+msgid "Add terms from selected taxonomy to the search form filters."
+msgstr ""
+
+#: includes/class-bathemos-admin.php:821 includes/class-bathemos-admin.php:843
+msgid "Icons line"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:822
+msgid "Show term icons in the tour preview from selected taxonomies."
+msgstr ""
+
+#: includes/class-bathemos-admin.php:844
+msgid "Show term icons in the tour page header from selected taxonomies."
+msgstr ""
+
+#: includes/class-bathemos-admin.php:865
+msgid "Taxonomies support"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:866
+msgid "Assign selected taxonomies to pages"
+msgstr ""
+
+#: includes/class-bathemos-admin.php:905
+msgid "None"
+msgstr ""
+
+#: includes/class-bathemos-cmb2-admin.php:140
+msgid "Fontawesome Metabox"
+msgstr ""
+
+#: includes/class-bathemos-cmb2-admin.php:147
+msgid "Fontawesome 5 icon class"
+msgstr ""
+
+#: includes/class-bathemos-page-options.php:91
+msgid "Page template options"
+msgstr ""
+
+#: includes/class-bathemos-page-options.php:98
+msgid "Page layout"
+msgstr ""
+
+#: includes/class-bathemos-page-options.php:99
+msgid "Specific layout for this page."
+msgstr ""
+
+#: includes/class-bathemos-page-options.php:103
+msgid "Page title"
+msgstr ""
+
+#: includes/class-bathemos-page-options.php:104
+#: includes/class-bathemos-page-options.php:110
+msgid "Enable"
+msgstr ""
+
+#: includes/class-bathemos-page-options.php:105
+msgid "Display page title."
+msgstr ""
+
+#: includes/class-bathemos-page-options.php:109
+msgid "Header bottom margin"
+msgstr ""
+
+#: includes/class-bathemos-page-options.php:111
+msgid "Display the margin below the header."
+msgstr ""
+
+#: includes/class-bathemos-page-options.php:216
+msgid "Theme default"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:330
+#, php-format
+msgid "Installing Plugin: %1$s"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:332
+#, php-format
+msgid "Updating Plugin: %1$s"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:386
+#: includes/class-tgm-plugin-activation.php:827
+#: includes/class-tgm-plugin-activation.php:2533
+#: includes/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:387
+#: includes/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:388
+#: includes/class-tgm-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:390
+#, php-format
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:392
+#, php-format
+msgid ""
+"Plugin not activated. A higher version of %1$s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:394
+#, php-format
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:934
+#: includes/class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:1121
+#: includes/class-tgm-plugin-activation.php:2948
+msgid "and"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:1982
+#, php-format
+msgid "TGMPA v%s"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2342
+#, php-format
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2388
+#, php-format
+msgid "All <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2392
+#, php-format
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2396
+#, php-format
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2400
+#, php-format
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2482
+msgid "unknown"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2603
+#, php-format
+msgid "Install %2$s"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2608
+#, php-format
+msgid "Update %2$s"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2614
+#, php-format
+msgid "Activate %2$s"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3498
+#, php-format
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3501
+#, php-format
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3503
+#, php-format
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take a "
+"while on some hosts, so please be patient."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3509
+#, php-format
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3509
+#: includes/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3509
+#: includes/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3512
+#, php-format
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3517
+#, php-format
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#: includes/class-tgm-plugin-activation.php:3520
+#, php-format
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: search.php:31
+#, php-format
+msgid "Search results for: %s"
+msgstr ""
+
+#: searchform.php:12 searchform.php:16
+msgid "Search for:"
+msgstr ""
+
+#: searchform.php:14
+msgid "Search ..."
+msgstr ""
+
+#: searchform.php:19 searchform.php:20
+msgid "Search"
+msgstr ""
+
+#: single.php:32
+msgid "Previous post: %title"
+msgstr ""
+
+#: single.php:33
+msgid "Next post: %title"
+msgstr ""
+
+#: template-parts/content-tags/content-tag-entry-footer.php:12
+#: template-parts/content-tags/content-tag-entry-footer.php:19
+msgid ", "
+msgstr ""
+
+#: template-parts/content-tags/content-tag-entry-footer.php:16
+#, php-format
+msgid "Posted in %1$s"
+msgstr ""
+
+#: template-parts/content-tags/content-tag-entry-footer.php:23
+#, php-format
+msgid "Tagged %1$s"
+msgstr ""
+
+#: template-parts/content-tags/content-tag-entry-footer.php:35
+#, php-format
+msgid "Leave a comment<span class=\"screen-reader-text\"> on %1$s</span>"
+msgstr ""
+
+#: template-parts/content-tags/content-tag-entry-footer.php:52
+#: template-parts/contents/content-page.php:42
+#: template-parts/contents/content-to_book.php:33
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%1$s</span>"
+msgstr ""
+
+#: template-parts/content-tags/content-tag-posted-by.php:10
+#, php-format
+msgid "by %1$s"
+msgstr ""
+
+#: template-parts/content-tags/content-tag-posted-on.php:27
+#, php-format
+msgid "Posted on %s"
+msgstr ""
+
+#: template-parts/contents/content-audio.php:71
+#: template-parts/contents/content-gallery.php:60
+#: template-parts/contents/content-image.php:48
+#: template-parts/contents/content-video.php:72
+#: template-parts/contents/content.php:58
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%1$s\"</span>"
+msgstr ""
+
+#: template-parts/contents/content-audio.php:82
+#: template-parts/contents/content-gallery.php:71
+#: template-parts/contents/content-image.php:59
+#: template-parts/contents/content-page.php:30
+#: template-parts/contents/content-video.php:83
+#: template-parts/contents/content.php:69
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/contents/content-none.php:16
+msgid "Nothing found"
+msgstr ""
+
+#: template-parts/contents/content-none.php:25
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/contents/content-none.php:37
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/contents/content-none.php:42
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:11
+msgid "Default color scheme"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:12
+msgid "Default color scheme."
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:15
+msgid "Main text color"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:36
+msgid "Light text color"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:49
+msgid "Yellow text color"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:68
+msgid "Titles color"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:87
+msgid "Light Titles color"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:97
+msgid "Links color"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:120
+msgid "Icons color"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:132
+msgid "Buttons color"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:162
+msgid "Alternative buttons color"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:180
+msgid "Buttons text color"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:213
+msgid "Important text"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:227
+msgid "Header background color"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:240
+msgid "Header text color"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:263
+msgid "Main background color"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:285
+msgid "Text color with Main background"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:310
+msgid "Gray background color"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:330
+msgid "Footer background color"
+msgstr ""
+
+#: template-sets/color-sets/color-set-default.php:340
+msgid "Footer text color"
+msgstr ""
+
+#: template-sets/font-sets/font-set-default.php:12
+msgid "Default font set"
+msgstr ""
+
+#: template-sets/font-sets/font-set-default.php:13
+msgid "Default font set."
+msgstr ""
+
+#: template-sets/font-sets/font-set-default.php:16
+msgid "Titles H1"
+msgstr ""
+
+#: template-sets/font-sets/font-set-default.php:28
+msgid "Titles H2"
+msgstr ""
+
+#: template-sets/font-sets/font-set-default.php:40
+msgid "Titles H3"
+msgstr ""
+
+#: template-sets/font-sets/font-set-default.php:52
+msgid "Titles H4"
+msgstr ""
+
+#: template-sets/font-sets/font-set-default.php:64
+msgid "Titles H5"
+msgstr ""
+
+#: template-sets/font-sets/font-set-default.php:76
+msgid "Titles H6"
+msgstr ""
+
+#: template-sets/font-sets/font-set-default.php:88
+msgid "Buttons and menus"
+msgstr ""
+
+#: template-sets/font-sets/font-set-default.php:107
+msgid "Text"
+msgstr ""
+
+#: template-sets/layouts/layout-frontpage.php:19
+msgid "Front page"
+msgstr ""
+
+#: template-sets/layouts/layout-frontpage.php:20
+#: template-sets/layouts/layout-no-sidebars-wide.php:20
+msgid "Layout without sidebars and borders."
+msgstr ""
+
+#: template-sets/layouts/layout-left-sidebar.php:19
+msgid "Left sidebar"
+msgstr ""
+
+#: template-sets/layouts/layout-left-sidebar.php:20
+msgid "Left sidebar only."
+msgstr ""
+
+#: template-sets/layouts/layout-no-sidebars-wide.php:19
+msgid "No sidebars (wide)"
+msgstr ""
+
+#: template-sets/layouts/layout-no-sidebars.php:19
+msgid "No sidebars"
+msgstr ""
+
+#: template-sets/layouts/layout-no-sidebars.php:20
+msgid "Layout without sidebars."
+msgstr ""
+
+#: template-sets/layouts/layout-right-sidebar.php:19
+msgid "Right sidebar"
+msgstr ""
+
+#: template-sets/layouts/layout-right-sidebar.php:20
+msgid "Right sidebar only."
+msgstr ""
+
+#: template-sets/layouts/layout-two-sidebars.php:19
+msgid "Two sidebars"
+msgstr ""
+
+#: template-sets/layouts/layout-two-sidebars.php:20
+msgid "Left and right sidebars."
+msgstr ""
