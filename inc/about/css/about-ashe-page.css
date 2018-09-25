@@ -252,6 +252,10 @@
   color: red;
 }
 
+.free-vs-pro .dashicons-external {
+	padding: 2px;
+	text-decoration: none;
+}
 
 /* Responsive */
 @media screen and ( max-width: 1600px ) {

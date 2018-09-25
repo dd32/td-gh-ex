@@ -84,18 +84,6 @@
 	cursor: not-allowed;
 }
 
-
-/* Social Media Select */
-li[id*="customize-control-ashe_options-social_media_icon"] select {
-	font-family: "FontAwesome";
-	float: right;
-	width: 80px;
-}
-
-li[id*="customize-control-ashe_options-social_media_icon"] label {
-	float: left;
-}
-
 /* Copyright */
 #customize-control-ashe_options-page_footer_copyright strong {
   background-color: #eee;
