@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Virtue Theme\n"
-"POT-Creation-Date: 2017-12-27 15:41-0700\n"
+"POT-Creation-Date: 2018-09-24 16:47-0600\n"
 "PO-Revision-Date: 2015-05-26 17:23-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,9 +10,9 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr__;esc_attr_e;esc_html__;"
-"esc_html_e\n"
+"esc_html_e;_x:1,2c;_ex:1,2c;esc_attr_x:1,2c;esc_html_x:1,2c\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SearchPath-0: .\n"
@@ -37,7 +37,7 @@ msgstr ""
 msgid "an out-of-date link"
 msgstr ""
 
-#: archive.php:23 home.php:24 index.php:16 taxonomy-portfolio-type.php:36
+#: archive.php:23 home.php:24 index.php:19 taxonomy-portfolio-type.php:36
 msgid "Sorry, no results were found."
 msgstr ""
 
@@ -45,7 +45,7 @@ msgstr ""
 msgid "About Author"
 msgstr ""
 
-#: lib/authorbox.php:16 lib/utils.php:60
+#: lib/authorbox.php:16 lib/utils.php:74
 msgid "Latest Posts"
 msgstr ""
 
@@ -100,17 +100,17 @@ msgstr ""
 msgid "Latest posts from"
 msgstr ""
 
-#: lib/class-tgm-plugin-activation.php:327 lib/virtuetoolkit-activate.php:33
+#: lib/class-tgm-plugin-activation.php:327 lib/kadence-toolkit-plugin.php:99
 msgid "Install Required Plugins"
 msgstr ""
 
-#: lib/class-tgm-plugin-activation.php:328 lib/virtuetoolkit-activate.php:34
+#: lib/class-tgm-plugin-activation.php:328 lib/kadence-toolkit-plugin.php:100
 msgid "Install Plugins"
 msgstr ""
 
 #. translators: %s: plugin name.
 #. translators: %s: plugin name
-#: lib/class-tgm-plugin-activation.php:330 lib/virtuetoolkit-activate.php:36
+#: lib/class-tgm-plugin-activation.php:330 lib/kadence-toolkit-plugin.php:102
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
@@ -121,11 +121,11 @@ msgstr ""
 msgid "Updating Plugin: %s"
 msgstr ""
 
-#: lib/class-tgm-plugin-activation.php:333 lib/virtuetoolkit-activate.php:37
+#: lib/class-tgm-plugin-activation.php:333 lib/kadence-toolkit-plugin.php:103
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: lib/class-tgm-plugin-activation.php:373 lib/virtuetoolkit-activate.php:56
+#: lib/class-tgm-plugin-activation.php:373 lib/kadence-toolkit-plugin.php:122
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
@@ -137,7 +137,7 @@ msgid "Return to the Dashboard"
 msgstr ""
 
 #: lib/class-tgm-plugin-activation.php:375
-#: lib/class-tgm-plugin-activation.php:3147 lib/virtuetoolkit-activate.php:57
+#: lib/class-tgm-plugin-activation.php:3147 lib/kadence-toolkit-plugin.php:123
 msgid "Plugin activated successfully."
 msgstr ""
 
@@ -209,6 +209,12 @@ msgid ""
 "not packaged in a folder."
 msgstr ""
 
+#: lib/class-tgm-plugin-activation.php:1109
+#: lib/class-tgm-plugin-activation.php:2936
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
 #. translators: %s: version number
 #: lib/class-tgm-plugin-activation.php:1970
 #, php-format
@@ -259,6 +265,13 @@ msgstr ""
 msgid "Update recommended"
 msgstr ""
 
+#. translators: 1: install status, 2: update status
+#: lib/class-tgm-plugin-activation.php:2330
+#, php-format
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
 #. translators: 1: number of plugins.
 #: lib/class-tgm-plugin-activation.php:2380
 #, php-format
@@ -282,6 +295,11 @@ msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
+
+#: lib/class-tgm-plugin-activation.php:2470
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
+msgstr ""
 
 #: lib/class-tgm-plugin-activation.php:2478
 msgid "Installed version:"
@@ -453,7 +471,7 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: lib/cleanup.php:78 templates/content-fullpost.php:40
+#: lib/cleanup.php:86 templates/content-fullpost.php:40
 msgid "Continued"
 msgstr ""
 
@@ -465,304 +483,399 @@ msgstr ""
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: lib/custom-woocommerce.php:132 templates/header-topbar.php:48
-msgid "View your shopping cart"
-msgstr ""
-
-#: lib/custom-woocommerce.php:134 templates/header-topbar.php:50
-msgid "Your Cart"
-msgstr ""
-
-#: lib/custom.php:461 templates/entry-post-links.php:3
+#: lib/custom.php:488 templates/entry-post-links.php:3
 msgid "Previous Post"
 msgstr ""
 
-#: lib/custom.php:461 templates/entry-post-links.php:6
+#: lib/custom.php:488 templates/entry-post-links.php:6
 msgid "Next Post"
 msgstr ""
 
-#: lib/init.php:9
+#: lib/init.php:14
 msgid "Primary Navigation"
 msgstr ""
 
-#: lib/init.php:10
+#: lib/init.php:15
 msgid "Secondary Navigation"
 msgstr ""
 
-#: lib/init.php:11
+#: lib/init.php:16
 msgid "Mobile Navigation"
 msgstr ""
 
-#: lib/init.php:12
+#: lib/init.php:17
 msgid "Topbar Navigation"
 msgstr ""
 
-#: lib/init.php:13
+#: lib/init.php:18
 msgid "Footer Navigation"
 msgstr ""
 
-#: lib/metaboxes.php:30
+#: lib/init.php:33 themeoptions/options.php:1023
+msgid "Primary Color"
+msgstr ""
+
+#: lib/init.php:38
+msgid "Lighter Primary Color"
+msgstr ""
+
+#: lib/init.php:43
+msgid "Very light gray"
+msgstr ""
+
+#: lib/init.php:48
+msgid "White"
+msgstr ""
+
+#: lib/init.php:53
+msgid "Very dark gray"
+msgstr ""
+
+#: lib/init.php:58
+msgid "Black"
+msgstr ""
+
+#: lib/kadence-toolkit-plugin.php:22
+msgid "Install Kadence Toolkit"
+msgstr ""
+
+#: lib/kadence-toolkit-plugin.php:25
+msgid "Activate Kadence Toolkit"
+msgstr ""
+
+#: lib/kadence-toolkit-plugin.php:44
+msgid "Thanks for choosing the Virtue Theme"
+msgstr ""
+
+#. translators: %s: <strong>
+#: lib/kadence-toolkit-plugin.php:45
+#, php-format
+msgid ""
+"To take full advantage of the Virtue Theme please install the %1$sKadence "
+"Toolkit%2$s, this adds extra settings and features."
+msgstr ""
+
+#: lib/kadence-toolkit-plugin.php:47
+msgid "Activating..."
+msgstr ""
+
+#: lib/kadence-toolkit-plugin.php:47
+msgid "Activated"
+msgstr ""
+
+#: lib/kadence-toolkit-plugin.php:47
+msgid "Installing..."
+msgstr ""
+
+#: lib/kadence-toolkit-plugin.php:47
+msgid "Installed"
+msgstr ""
+
+#: lib/kadence-toolkit-plugin.php:48
+msgid "Skip"
+msgstr ""
+
+#: lib/kadence-toolkit-plugin.php:62
+msgid "Authorization failed. Please refresh the page and try again."
+msgstr ""
+
+#. translators: %1$s: dashboard link
+#: lib/kadence-toolkit-plugin.php:125
+#, php-format
+msgid "All plugins installed and activated successfully. %s"
+msgstr ""
+
+#: lib/metaboxes.php:40
 msgid "All Blog Posts"
 msgstr ""
 
-#: lib/metaboxes.php:55
+#: lib/metaboxes.php:84
 msgid "Post Options"
 msgstr ""
 
-#: lib/metaboxes.php:60
+#: lib/metaboxes.php:89
 msgid "Head Content"
 msgstr ""
 
-#: lib/metaboxes.php:65 lib/metaboxes.php:90 lib/metaboxes.php:122
-#: lib/metaboxes.php:133 themeoptions/framework.php:1824
+#: lib/metaboxes.php:94 lib/metaboxes.php:119 lib/metaboxes.php:151
+#: lib/metaboxes.php:162 lib/metaboxes.php:281 lib/metaboxes.php:299
+#: lib/metaboxes.php:332 themeoptions/framework.php:1824
 msgid "Default"
 msgstr ""
 
-#: lib/metaboxes.php:66 themeoptions/options.php:1788
+#: lib/metaboxes.php:95 themeoptions/options.php:1827
 msgid "None"
 msgstr ""
 
-#: lib/metaboxes.php:67 themeoptions/options.php:1788
+#: lib/metaboxes.php:96 themeoptions/options.php:1827
 msgid "Image Slider"
 msgstr ""
 
-#: lib/metaboxes.php:68 lib/metaboxes.php:96 themeoptions/options.php:1788
+#: lib/metaboxes.php:97 lib/metaboxes.php:125 themeoptions/options.php:1827
 msgid "Video"
 msgstr ""
 
-#: lib/metaboxes.php:69 themeoptions/options.php:1788
+#: lib/metaboxes.php:98 themeoptions/options.php:1827
 msgid "Image"
 msgstr ""
 
-#: lib/metaboxes.php:73
+#: lib/metaboxes.php:102
 msgid "Max Image/Slider Height"
 msgstr ""
 
-#: lib/metaboxes.php:74
+#: lib/metaboxes.php:103
 msgid "Default is: 400 <b>(Note: just input number, example: 350)</b>"
 msgstr ""
 
-#: lib/metaboxes.php:79
+#: lib/metaboxes.php:108
 msgid "Max Image/Slider Width"
 msgstr ""
 
-#: lib/metaboxes.php:80
+#: lib/metaboxes.php:109
 msgid ""
 "Default is: 770 or 1140 on fullwidth posts <b>(Note: just input number, "
 "example: 650, does not apply to carousel slider)</b>"
 msgstr ""
 
-#: lib/metaboxes.php:85
+#: lib/metaboxes.php:114
 msgid "Post Summary"
 msgstr ""
 
-#: lib/metaboxes.php:91
+#: lib/metaboxes.php:120
 msgid "Text"
 msgstr ""
 
-#: lib/metaboxes.php:92
+#: lib/metaboxes.php:121
 msgid "Portrait Image"
 msgstr ""
 
-#: lib/metaboxes.php:93
+#: lib/metaboxes.php:122
 msgid "Landscape Image"
 msgstr ""
 
-#: lib/metaboxes.php:94
+#: lib/metaboxes.php:123
 msgid "Portrait Image Slider"
 msgstr ""
 
-#: lib/metaboxes.php:95
+#: lib/metaboxes.php:124
 msgid "Landscape Image Slider"
 msgstr ""
 
-#: lib/metaboxes.php:100 lib/metaboxes.php:196
+#: lib/metaboxes.php:129 lib/metaboxes.php:227 lib/metaboxes.php:276
 msgid "Display Sidebar?"
 msgstr ""
 
-#: lib/metaboxes.php:101
+#: lib/metaboxes.php:130
 msgid "Choose if layout is fullwidth or sidebar"
 msgstr ""
 
-#: lib/metaboxes.php:105 lib/metaboxes.php:124 lib/metaboxes.php:201
+#: lib/metaboxes.php:134 lib/metaboxes.php:153 lib/metaboxes.php:232
+#: lib/metaboxes.php:282
 msgid "Yes"
 msgstr ""
 
-#: lib/metaboxes.php:106 lib/metaboxes.php:123 lib/metaboxes.php:134
-#: lib/metaboxes.php:202
+#: lib/metaboxes.php:135 lib/metaboxes.php:152 lib/metaboxes.php:163
+#: lib/metaboxes.php:233 lib/metaboxes.php:283
 msgid "No"
 msgstr ""
 
-#: lib/metaboxes.php:110 lib/metaboxes.php:206 lib/metaboxes.php:222
+#: lib/metaboxes.php:139 lib/metaboxes.php:237 lib/metaboxes.php:257
+#: lib/metaboxes.php:287
 msgid "Choose Sidebar"
 msgstr ""
 
-#: lib/metaboxes.php:117
+#: lib/metaboxes.php:146
 msgid "Author Info"
 msgstr ""
 
-#: lib/metaboxes.php:118
+#: lib/metaboxes.php:147
 msgid "Display an author info box?"
 msgstr ""
 
-#: lib/metaboxes.php:128
+#: lib/metaboxes.php:157
 msgid "Posts Carousel"
 msgstr ""
 
-#: lib/metaboxes.php:129
+#: lib/metaboxes.php:158
 msgid "Display a carousel with similar or recent posts?"
 msgstr ""
 
-#: lib/metaboxes.php:135 themeoptions/options.php:1822
+#: lib/metaboxes.php:164 themeoptions/options.php:1861
 msgid "Yes - Display Recent Posts"
 msgstr ""
 
-#: lib/metaboxes.php:136 themeoptions/options.php:1822
+#: lib/metaboxes.php:165 themeoptions/options.php:1861
 msgid "Yes - Display Similar Posts"
 msgstr ""
 
-#: lib/metaboxes.php:140
+#: lib/metaboxes.php:169
 msgid "Carousel Title"
 msgstr ""
 
-#: lib/metaboxes.php:141
+#: lib/metaboxes.php:170
 msgid "ex. Similar Posts"
 msgstr ""
 
-#: lib/metaboxes.php:150
+#: lib/metaboxes.php:178
 msgid "Blog List Options"
 msgstr ""
 
-#: lib/metaboxes.php:156
+#: lib/metaboxes.php:187
 msgid "Blog Category"
 msgstr ""
 
-#: lib/metaboxes.php:157
+#: lib/metaboxes.php:188
 msgid "Select all blog posts or a specific category to show"
 msgstr ""
 
-#: lib/metaboxes.php:162
+#: lib/metaboxes.php:193
 msgid "How Many Posts Per Page"
 msgstr ""
 
-#: lib/metaboxes.php:167
+#: lib/metaboxes.php:198
 msgid "All"
 msgstr ""
 
-#: lib/metaboxes.php:168
+#: lib/metaboxes.php:199
 msgid "2"
 msgstr ""
 
-#: lib/metaboxes.php:169
+#: lib/metaboxes.php:200
 msgid "3"
 msgstr ""
 
-#: lib/metaboxes.php:170
+#: lib/metaboxes.php:201
 msgid "4"
 msgstr ""
 
-#: lib/metaboxes.php:171
+#: lib/metaboxes.php:202
 msgid "5"
 msgstr ""
 
-#: lib/metaboxes.php:172
+#: lib/metaboxes.php:203
 msgid "6"
 msgstr ""
 
-#: lib/metaboxes.php:173
+#: lib/metaboxes.php:204
 msgid "7"
 msgstr ""
 
-#: lib/metaboxes.php:174
+#: lib/metaboxes.php:205
 msgid "8"
 msgstr ""
 
-#: lib/metaboxes.php:175
+#: lib/metaboxes.php:206
 msgid "9"
 msgstr ""
 
-#: lib/metaboxes.php:176
+#: lib/metaboxes.php:207
 msgid "10"
 msgstr ""
 
-#: lib/metaboxes.php:177
+#: lib/metaboxes.php:208
 msgid "11"
 msgstr ""
 
-#: lib/metaboxes.php:178
+#: lib/metaboxes.php:209
 msgid "12"
 msgstr ""
 
-#: lib/metaboxes.php:179
+#: lib/metaboxes.php:210
 msgid "13"
 msgstr ""
 
-#: lib/metaboxes.php:180
+#: lib/metaboxes.php:211
 msgid "14"
 msgstr ""
 
-#: lib/metaboxes.php:181
+#: lib/metaboxes.php:212
 msgid "15"
 msgstr ""
 
-#: lib/metaboxes.php:182
+#: lib/metaboxes.php:213
 msgid "16"
 msgstr ""
 
-#: lib/metaboxes.php:186
+#: lib/metaboxes.php:217
 msgid "Display Post Content as:"
 msgstr ""
 
-#: lib/metaboxes.php:191
+#: lib/metaboxes.php:222
 msgid "Summary"
 msgstr ""
 
-#: lib/metaboxes.php:192
+#: lib/metaboxes.php:223
 msgid "Full"
 msgstr ""
 
-#: lib/metaboxes.php:216
+#: lib/metaboxes.php:247
 msgid "Sidebar Options"
 msgstr ""
 
+#: lib/metaboxes.php:266 lib/metaboxes.php:317
+msgid "Page Options"
+msgstr ""
+
+#: lib/metaboxes.php:294 lib/metaboxes.php:327
+msgid "Page Content Width"
+msgstr ""
+
+#: lib/metaboxes.php:300 lib/metaboxes.php:333 themeoptions/options.php:1719
+msgid "Contained"
+msgstr ""
+
+#: lib/metaboxes.php:301 lib/metaboxes.php:334 themeoptions/options.php:1720
+msgid "Fullwidth"
+msgstr ""
+
+#: lib/metaboxes.php:305 lib/metaboxes.php:338
+msgid "Show Page Title"
+msgstr ""
+
+#: lib/metaboxes.php:309 lib/metaboxes.php:342
+msgid "Site Default"
+msgstr ""
+
+#: lib/metaboxes.php:310 lib/metaboxes.php:343
+msgid "Show"
+msgstr ""
+
+#: lib/metaboxes.php:311 lib/metaboxes.php:344
+msgid "Hide"
+msgstr ""
+
 #. translators: %s: search term
-#: lib/utils.php:66
+#: lib/utils.php:80
 #, php-format
 msgid "Search Results for %s"
 msgstr ""
 
-#: lib/utils.php:68
+#: lib/utils.php:82
 msgid "Not Found"
 msgstr ""
 
 #. translators: %s: Author Name
-#: lib/utils.php:83
+#: lib/utils.php:97
 #, php-format
 msgid "Author Archives: %s"
 msgstr ""
 
 #. translators: %s: Date
-#: lib/utils.php:88
+#: lib/utils.php:102
 #, php-format
 msgid "Daily Archives: %s"
 msgstr ""
 
 #. translators: %s: Date showing year and month
-#: lib/utils.php:91
+#: lib/utils.php:105
 #, php-format
 msgid "Monthly Archives: %s"
 msgstr ""
 
 #. translators: %s: Date showing year only
-#: lib/utils.php:94
+#: lib/utils.php:108
 #, php-format
 msgid "Yearly Archives: %s"
-msgstr ""
-
-#. translators: %1$s: dashboard link
-#: lib/virtuetoolkit-activate.php:59
-#, php-format
-msgid "All plugins installed and activated successfully. %s"
 msgstr ""
 
 #: lib/widgets.php:6 lib/widgets.php:60
@@ -801,8 +914,8 @@ msgstr ""
 msgid "vCard"
 msgstr ""
 
-#: lib/widgets.php:276 lib/widgets.php:417 lib/widgets.php:558
-#: lib/widgets.php:672
+#: lib/widgets.php:276 lib/widgets.php:417 lib/widgets.php:566
+#: lib/widgets.php:698
 msgid "Title:"
 msgstr ""
 
@@ -910,84 +1023,84 @@ msgstr ""
 msgid "Virtue: Recent Posts"
 msgstr ""
 
-#: lib/widgets.php:496 templates/recentblog-carousel.php:7
+#: lib/widgets.php:496 templates/recentblog-carousel.php:26
 msgid "Recent Posts"
 msgstr ""
 
-#: lib/widgets.php:561
+#: lib/widgets.php:569
 msgid "Number of posts to show:"
 msgstr ""
 
-#: lib/widgets.php:564
+#: lib/widgets.php:572
 msgid "Limit to Catagory (Optional):"
 msgstr ""
 
-#: lib/widgets.php:577
+#: lib/widgets.php:585
 msgid ""
 "This shows a grid of featured images from recent posts or portfolio items"
 msgstr ""
 
-#: lib/widgets.php:578
+#: lib/widgets.php:586
 msgid "Virtue: Image Grid"
 msgstr ""
 
-#: lib/widgets.php:587
+#: lib/widgets.php:595
 msgid "Post Gallery"
 msgstr ""
 
-#: lib/widgets.php:675
+#: lib/widgets.php:701
 msgid "Grid Choice:"
 msgstr ""
 
-#: lib/widgets.php:677
+#: lib/widgets.php:703
 msgid "Blog Posts"
 msgstr ""
 
-#: lib/widgets.php:678
+#: lib/widgets.php:704
 msgid "Portfolio"
 msgstr ""
 
-#: lib/widgets.php:681
+#: lib/widgets.php:707
 msgid "If Post - Choose Category (Optional):"
 msgstr ""
 
-#: lib/widgets.php:684
+#: lib/widgets.php:710
 msgid "If Portfolio - Choose Type (Optional):"
 msgstr ""
 
-#: lib/widgets.php:687
+#: lib/widgets.php:713
 msgid "Number of images to show:"
 msgstr ""
 
-#: lib/widgets.php:717
+#: lib/widgets.php:734
 msgid "This allows for an image and a simple about text."
 msgstr ""
 
-#: lib/widgets.php:718
+#: lib/widgets.php:735
 msgid "Virtue: Image"
 msgstr ""
 
-#: lib/widgets.php:767
+#: lib/widgets.php:784
 msgid "Lightbox"
 msgstr ""
 
-#: lib/widgets.php:768
+#: lib/widgets.php:785
 msgid "New Window"
 msgstr ""
 
-#: lib/widgets.php:769
+#: lib/widgets.php:786
 msgid "Same Window"
 msgstr ""
 
-#: lib/widgets.php:770
+#: lib/widgets.php:787
 msgid "No Link"
 msgstr ""
 
-#: lib/widgets.php:782
+#: lib/widgets.php:799
 msgid "Image URL"
 msgstr ""
 
-#: lib/widgets.php:784
+#: lib/widgets.php:801
 #: themeoptions/inc/fields/background/field_background.php:314
 #: themeoptions/inc/fields/media/field_media.php:198
 #: themeoptions/options/extensions/kad_slides/kad_slides/field_kad_slides.php:108
@@ -995,26 +1108,34 @@ msgstr ""
 msgid "Upload"
 msgstr ""
 
-#: lib/widgets.php:787
+#: lib/widgets.php:804
 msgid "Image opens in"
 msgstr ""
 
-#: lib/widgets.php:791
+#: lib/widgets.php:808
 msgid "Image Link (optional)"
 msgstr ""
 
-#: lib/widgets.php:795
+#: lib/widgets.php:812
 msgid "Text/Caption (optional)"
 msgstr ""
 
+#: lib/woocommerce/woo-core-hooks.php:71 templates/header-topbar.php:52
+msgid "View your shopping cart"
+msgstr ""
+
+#: lib/woocommerce/woo-core-hooks.php:73 templates/header-topbar.php:54
+msgid "Your Cart"
+msgstr ""
+
 #: page-blog.php:63 templates/home/blog-home.php:118
-#: templates/home/latest-slider.php:58 templates/recentblog-carousel.php:62
-#: templates/similarblog-carousel.php:68
+#: templates/home/latest-slider.php:32 templates/recentblog-carousel.php:62
+#: templates/similarblog-carousel.php:66
 msgid "Sorry, no blog entries found."
 msgstr ""
 
-#: page-portfolio.php:137 templates/home/portfolio-carousel.php:80
-#: templates/recentportfolio-carousel.php:62
+#: page-portfolio.php:139 templates/home/portfolio-carousel.php:94
+#: templates/recentportfolio-carousel.php:88
 msgid "Sorry, no portfolio entries found."
 msgstr ""
 
@@ -1034,58 +1155,32 @@ msgstr ""
 msgid "Logout"
 msgstr ""
 
-#: templates/comments.php:12
+#: templates/comments.php:11
 msgid "One Response"
 msgstr ""
 
 #. translators: %d: Response Number
-#: templates/comments.php:15
+#: templates/comments.php:14
 #, php-format
 msgid "%d Response"
 msgid_plural "%d Responses"
 msgstr[0] ""
 msgstr[1] ""
 
-#: templates/comments.php:46
+#: templates/comments.php:45
 msgid "&larr; Older comments"
 msgstr ""
 
-#: templates/comments.php:49
+#: templates/comments.php:48
 msgid "Newer comments &rarr;"
 msgstr ""
 
-#: templates/comments.php:63 templates/comments.php:81
+#: templates/comments.php:62 templates/comments.php:80
 msgid "Comments are closed."
 msgstr ""
 
-#: templates/comments.php:90
-msgid "Name"
-msgstr ""
-
-#: templates/comments.php:92
-msgid "Email (will not be published)"
-msgstr ""
-
-#: templates/comments.php:94
-msgid "Website"
-msgstr ""
-
-#: templates/comments.php:98
-msgid "Comment"
-msgstr ""
-
-#: templates/comments.php:105 templates/content-fullpost.php:53
+#: templates/content-fullpost.php:53
 msgid "Leave a Reply"
-msgstr ""
-
-#. translators: %s: post title
-#: templates/comments.php:107
-#, php-format
-msgid "Leave a Reply to %s"
-msgstr ""
-
-#: templates/comments.php:108
-msgid "Submit Comment"
 msgstr ""
 
 #: templates/content-fullpost.php:54
@@ -1112,7 +1207,7 @@ msgstr ""
 msgid "By"
 msgstr ""
 
-#: templates/header.php:55
+#: templates/header.php:65
 msgid "Menu"
 msgstr ""
 
@@ -1124,11 +1219,11 @@ msgstr ""
 msgid "READ MORE"
 msgstr ""
 
-#: templates/home/portfolio-carousel.php:6
+#: templates/home/portfolio-carousel.php:11
 msgid "Featured Projects"
 msgstr ""
 
-#: templates/recentportfolio-carousel.php:7
+#: templates/recentportfolio-carousel.php:16
 msgid "Recent Projects"
 msgstr ""
 
@@ -1387,7 +1482,7 @@ msgid "Press return or enter to expand"
 msgstr ""
 
 #: themeoptions/inc/extensions/import_export/extension_import_export.php:120
-#: themeoptions/options.php:1955
+#: themeoptions/options.php:1994
 msgid "Import / Export"
 msgstr ""
 
@@ -2369,10 +2464,6 @@ msgid ""
 "Colors set in typography."
 msgstr ""
 
-#: themeoptions/options.php:1023
-msgid "Primary Color"
-msgstr ""
-
 #: themeoptions/options.php:1024
 msgid "Choose the default Highlight color for your site."
 msgstr ""
@@ -2609,235 +2700,263 @@ msgstr ""
 msgid "Page and Post Comment Settings"
 msgstr ""
 
-#: themeoptions/options.php:1701
-msgid "Show Comments Closed Text?"
-msgstr ""
-
-#: themeoptions/options.php:1702
-msgid "Choose to show or hide comments closed alert below posts."
-msgstr ""
-
-#: themeoptions/options.php:1709
-msgid "Allow Comments on Pages"
+#: themeoptions/options.php:1700
+msgid "Paragraph bottom spacing"
 msgstr ""
 
 #: themeoptions/options.php:1710
-msgid "Turn on to allow comments on pages"
+msgid "Show page title by default"
+msgstr ""
+
+#: themeoptions/options.php:1711
+msgid "Turn off to hide page titles by default"
 msgstr ""
 
 #: themeoptions/options.php:1717
+msgid "Single Page Content Width Default"
+msgstr ""
+
+#: themeoptions/options.php:1728
+msgid "Default Page Template - Sidebar Default"
+msgstr ""
+
+#: themeoptions/options.php:1730
+msgid "Yes sidebar"
+msgstr ""
+
+#: themeoptions/options.php:1731
+msgid "No sidebar"
+msgstr ""
+
+#: themeoptions/options.php:1740
+msgid "Show Comments Closed Text?"
+msgstr ""
+
+#: themeoptions/options.php:1741
+msgid "Choose to show or hide comments closed alert below posts."
+msgstr ""
+
+#: themeoptions/options.php:1748
+msgid "Allow Comments on Pages"
+msgstr ""
+
+#: themeoptions/options.php:1749
+msgid "Turn on to allow comments on pages"
+msgstr ""
+
+#: themeoptions/options.php:1756
 msgid "Allow Comments on Portfolio Posts"
 msgstr ""
 
-#: themeoptions/options.php:1718
+#: themeoptions/options.php:1757
 msgid "Turn on to allow comments on Portfolio posts"
 msgstr ""
 
-#: themeoptions/options.php:1725
+#: themeoptions/options.php:1764
 msgid "Portfolio Post"
 msgstr ""
 
-#: themeoptions/options.php:1733
+#: themeoptions/options.php:1772
 msgid "All Projects Portfolio Page"
 msgstr ""
 
-#: themeoptions/options.php:1734
+#: themeoptions/options.php:1773
 msgid ""
 "This sets the link in every single portfolio page. *note: You still have to "
 "set the page template to portfolio."
 msgstr ""
 
-#: themeoptions/options.php:1740
+#: themeoptions/options.php:1779
 msgid "Portfolio Type Page Defaults"
 msgstr ""
 
-#: themeoptions/options.php:1746
+#: themeoptions/options.php:1785
 msgid "Portfolio Type - Post Columns"
 msgstr ""
 
-#: themeoptions/options.php:1747
+#: themeoptions/options.php:1786
 msgid "Choose how many columns for portfolio type pages"
 msgstr ""
 
-#: themeoptions/options.php:1756
+#: themeoptions/options.php:1795
 msgid "Show Types under Title"
 msgstr ""
 
-#: themeoptions/options.php:1757
+#: themeoptions/options.php:1796
 msgid "Choose to show or hide portfolio type under title."
 msgstr ""
 
-#: themeoptions/options.php:1764
+#: themeoptions/options.php:1803
 msgid "Blog Post Defaults"
 msgstr ""
 
-#: themeoptions/options.php:1770
+#: themeoptions/options.php:1809
 msgid "Blog Post Summary Default"
 msgstr ""
 
-#: themeoptions/options.php:1780
+#: themeoptions/options.php:1819
 msgid "Default post summary feature Image"
 msgstr ""
 
-#: themeoptions/options.php:1781
+#: themeoptions/options.php:1820
 msgid "Replace theme default feature image for posts without a featured image"
 msgstr ""
 
-#: themeoptions/options.php:1787
+#: themeoptions/options.php:1826
 msgid "Blog Post Head Content Default"
 msgstr ""
 
-#: themeoptions/options.php:1796
+#: themeoptions/options.php:1835
 msgid "Show Previous and Next posts links?"
 msgstr ""
 
-#: themeoptions/options.php:1797
+#: themeoptions/options.php:1836
 msgid ""
 "Choose to show or hide previous and next post links in the footer of a "
 "single post."
 msgstr ""
 
-#: themeoptions/options.php:1804
+#: themeoptions/options.php:1843
 msgid "Show Author Icon with posts?"
 msgstr ""
 
-#: themeoptions/options.php:1805
+#: themeoptions/options.php:1844
 msgid "Choose to show or hide author icon under post title."
 msgstr ""
 
-#: themeoptions/options.php:1812
+#: themeoptions/options.php:1851
 msgid "Blog Post Author Box Default"
 msgstr ""
 
-#: themeoptions/options.php:1813 themeoptions/options.php:1822
+#: themeoptions/options.php:1852 themeoptions/options.php:1861
 msgid "No, Do not Show"
 msgstr ""
 
-#: themeoptions/options.php:1813
+#: themeoptions/options.php:1852
 msgid "Yes, Show"
 msgstr ""
 
-#: themeoptions/options.php:1821
+#: themeoptions/options.php:1860
 msgid "Blog Post Bottom Carousel Default"
 msgstr ""
 
-#: themeoptions/options.php:1830
+#: themeoptions/options.php:1869
 msgid "Blog Category/Archive Defaults"
 msgstr ""
 
-#: themeoptions/options.php:1836
+#: themeoptions/options.php:1875
 msgid "Blog Archive"
 msgstr ""
 
-#: themeoptions/options.php:1837
+#: themeoptions/options.php:1876
 msgid "Choose to show full post or post excerpt."
 msgstr ""
 
-#: themeoptions/options.php:1849 themeoptions/options.php:1850
+#: themeoptions/options.php:1888 themeoptions/options.php:1889
 msgid "Misc Settings"
 msgstr ""
 
-#: themeoptions/options.php:1856
+#: themeoptions/options.php:1895
 msgid "Hide Image Border"
 msgstr ""
 
-#: themeoptions/options.php:1857
+#: themeoptions/options.php:1896
 msgid "Choose to show or hide image border for images added in pages or posts"
 msgstr ""
 
-#: themeoptions/options.php:1864
+#: themeoptions/options.php:1903
 msgid "Contact Form Email"
 msgstr ""
 
-#: themeoptions/options.php:1865
+#: themeoptions/options.php:1904
 msgid "Sets the email for the contact page email form."
 msgstr ""
 
-#: themeoptions/options.php:1872
+#: themeoptions/options.php:1911
 msgid "Footer Copyright Text"
 msgstr ""
 
-#: themeoptions/options.php:1873
+#: themeoptions/options.php:1912
 msgid ""
 "Write your own copyright text here. You can use the following shortcodes in "
 "your footer text: [copyright] [site-name] [the-year]"
 msgstr ""
 
-#: themeoptions/options.php:1880
+#: themeoptions/options.php:1919
 msgid "Create Sidebars"
 msgstr ""
 
-#: themeoptions/options.php:1886
+#: themeoptions/options.php:1925
 msgid "Create Custom Sidebars"
 msgstr ""
 
-#: themeoptions/options.php:1887
+#: themeoptions/options.php:1926
 msgid "Type new sidebar name into textbox"
 msgstr ""
 
-#: themeoptions/options.php:1888
+#: themeoptions/options.php:1927
 msgid "Extra Sidebar"
 msgstr ""
 
-#: themeoptions/options.php:1894
+#: themeoptions/options.php:1933
 msgid "Wordpress Galleries"
 msgstr ""
 
-#: themeoptions/options.php:1900
+#: themeoptions/options.php:1939
 msgid "Enable Virtue Galleries to override Wordpress"
 msgstr ""
 
-#: themeoptions/options.php:1901
+#: themeoptions/options.php:1940
 msgid ""
 "Disable this if using a plugin to customize galleries, for example jetpack "
 "tiled gallery."
 msgstr ""
 
-#: themeoptions/options.php:1908
+#: themeoptions/options.php:1947
 msgid "Theme Lightbox"
 msgstr ""
 
-#: themeoptions/options.php:1913
+#: themeoptions/options.php:1952
 msgid "Lightbox Off"
 msgstr ""
 
-#: themeoptions/options.php:1914
+#: themeoptions/options.php:1953
 msgid "Lightbox On"
 msgstr ""
 
-#: themeoptions/options.php:1916
+#: themeoptions/options.php:1955
 msgid "Turn Off Theme Lightbox?"
 msgstr ""
 
-#: themeoptions/options.php:1922
+#: themeoptions/options.php:1961
 msgid "Theme Google Maps"
 msgstr ""
 
-#: themeoptions/options.php:1927
+#: themeoptions/options.php:1966
 msgid "Google Map API"
 msgstr ""
 
-#: themeoptions/options.php:1928
+#: themeoptions/options.php:1967
 msgid "For best performance add your own API for google maps."
 msgstr ""
 
-#: themeoptions/options.php:1939
+#: themeoptions/options.php:1978
 msgid "Advanced Settings"
 msgstr ""
 
-#: themeoptions/options.php:1940
+#: themeoptions/options.php:1979
 msgid "Custom CSS Box"
 msgstr ""
 
-#: themeoptions/options.php:1946
+#: themeoptions/options.php:1985
 msgid "Custom CSS"
 msgstr ""
 
-#: themeoptions/options.php:1947
+#: themeoptions/options.php:1986
 msgid "Quickly add some CSS to your theme by adding it to this block."
 msgstr ""
 
-#: themeoptions/options.php:1956
+#: themeoptions/options.php:1995
 msgid "Import and Export your Theme Options from text or URL."
 msgstr ""
 

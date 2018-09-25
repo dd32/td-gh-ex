@@ -1,25 +1,5 @@
 /* Initialize
 */
-var kt_isMobile = {
-    Android: function() {
-        return navigator.userAgent.match(/Android/i);
-    },
-    BlackBerry: function() {
-        return navigator.userAgent.match(/BlackBerry/i);
-    },
-    iOS: function() {
-        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
-    },
-    Opera: function() {
-        return navigator.userAgent.match(/Opera Mini/i);
-    },
-    Windows: function() {
-        return navigator.userAgent.match(/IEMobile/i);
-    },
-    any: function() {
-        return (kt_isMobile.Android() || kt_isMobile.BlackBerry() || kt_isMobile.iOS() || kt_isMobile.Opera() || kt_isMobile.Windows());
-    }
-};
 (function($){
 	'use strict';
 	$.fn.kt_imagesLoaded = (function(){
@@ -98,8 +78,6 @@ jQuery(document).ready(function ($) {
 		$('.sc_tabs a').click(function (e) {e.preventDefault(); $(this).tab('show'); });
 		
 		$(".videofit").fitVids();
-		$('.woocommerce-ordering .orderby').customSelect();
-		$('.kad-select').customSelect();
 		// Lightbox
 			$.extend(true, $.magnificPopup.defaults, {
 			tClose: '',
@@ -455,14 +433,3 @@ jQuery(document).ready(function ($) {
 	    $('html').removeClass('no-js');
     	$('html').addClass('js-running');
 });
-if( kt_isMobile.any() ) {
-	jQuery(document).ready(function ($) {
-		matchMedia('only screen and (max-width: 480px)').addListener(function(list){
-			$('select.hasCustomSelect').removeAttr("style");
-			$('select.hasCustomSelect').css({'width':'250px'});
-	    	$('.kad-select.customSelect').remove();
-	    	$('select.kad-select').customSelect();
-	    	$('.customSelectInner').css('width','100%');
-		});
-	});
-}

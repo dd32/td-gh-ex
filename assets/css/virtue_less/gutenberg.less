@@ -94,6 +94,12 @@ body {
 		width: 100vw;
 	}
 }
+.main:not(.col-lg-9) .entry-content .alignwide {
+	max-width: none;
+}
+.main:not(.col-lg-9) .entry-content .alignfull {
+	max-width: none;
+}
 .alignfull img, .alignwide img {
 	width:100%;
 }
@@ -239,6 +245,10 @@ figure.wp-block-audio.aligncenter {
     border: 0;
     margin: 0;
 }
+.wp-block-image .aligncenter img {
+    margin: 0 auto;
+}
+
 // Image Cover
 .entry-content .wp-block-cover-image {
 	display: flex;

@@ -30,6 +30,13 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.2.9 | 25th September 2018 = 
+* Update: Gutenberg Update Support.
+* Update: Notice about Kadence Blocks
+* Update: Pot file.
+* Add: Banner Alt Text
+* Remove Custom Select js.
+
 = Version 3.2.8 | 8th August 2018 = 
 * Update: Gutenberg Support.
 * Update: Menu walker.
@@ -943,7 +950,6 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 == Resources ==
 
-* Photos on example_slider by Benjamin Ritner (licensed under GNU General Public License v2.0 or later)
 * Photos on in the screenshot (licensed under Public Domain) http://publicdomainarchive.com/category/modern/
 * FontAwesome by Dave Gandy (http://fontawesome.io) licensed under the SIL OFL 1.1 (http://scripts.sil.org/OFL)
 * FlexSlider by WooThemes under the GPLv2 license (http://www.gnu.org/licenses/gpl-2.0.html)
@@ -955,13 +961,10 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 * Twitter Bootstrap (https://github.com/twbs/bootstrap), licensed under Apache License Version 2
 * Custom Metaboxes and Fields for Wordpress (https://github.com/jaredatch/Custom-Metaboxes-and-Fields-for-WordPress), licensed under GNU General Public License v2.0 or later
 * Magnific Popup (http://dimsemenov.com/plugins/magnific-popup/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
-* carouFredSel (https://github.com/gilbitron/carouFredSel), licensed under GNU General Public License v2.0 or later 
 * Select2 (http://ivaynberg.github.io/select2/), licensed under GNU General Public License v2.0 or later
 * hoverIntent (https://github.com/briancherne/jquery-hoverIntent), licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
 * Superfish (https://github.com/joeldbirch/superfish) Dual licensed under the MIT and GPL licenses: http://www.opensource.org/licenses/mit-license.php, http://www.gnu.org/licenses/gpl.html
 * Fitvids (https://github.com/davatron5000/FitVids.js/blob/master/jquery.fitvids.js), Released under the WTFPL license - http://sam.zoy.org/wtfpl/
-* touchSwipe, (https://github.com/mattbryson/TouchSwipe-Jquery-Plugin), Dual licensed under the MIT or GPL Version 2 licenses
-* jquery.customSelect (http://adam.co/lab/jquery/customselect/), Dual licensed under the MIT or GPL Version 2 licenses
 * GMAP3 Plugin for JQuery (http://gmap3.net/), licensed under GNU General Public License v3.0
 * jQuery Scroll to Top Control script (http://www.dynamicdrive.com/) Custom license: http://www.dynamicdrive.com/notice.htm
 * Masonry (http://masonry.desandro.com/) licensed under MIT license, http://www.opensource.org/licenses/mit-license.php
