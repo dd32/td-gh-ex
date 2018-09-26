@@ -4,7 +4,7 @@ Contributor: benlumia007
 Tags: custom-background, custom-header, right-sidebar
 Requres at least: 4.5
 Tested up to: 4.9.8
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -67,6 +67,9 @@ I have improved my understanding so that I can make this theme better.
 
 Changelog
 ================================================================================================
+Version: 1.0.2 
+- testing environment with .gitignore and .gitattributes included
+
 Version: 1.0.1
 - changed backdrop to vendor/benlumia007/backdrop-core
 
