@@ -14,12 +14,12 @@ content-single.php is the main content that will be displayed.
 */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <?php Backdrop\Entry\display_entry_post_thumbnail(); ?>
+    <?php Benlumia007\Backdrop\Entry\display_entry_post_thumbnail(); ?>
     <header class="entry-header">
-        <?php Backdrop\Entry\display_entry_title(); ?>
+        <?php Benlumia007\Backdrop\Entry\display_entry_title(); ?>
     </header>
     <div class="entry-metadata">
-        <?php Backdrop\Entry\display_posted_on(); ?>
+        <?php Benlumia007\Backdrop\Entry\display_posted_on(); ?>
     </div>
     <div class="entry-content">
         <?php the_content(); ?>
@@ -34,6 +34,6 @@ content-single.php is the main content that will be displayed.
         ?>
     </div>
     <div class="entry-taxonomies">
-        <?php Backdrop\Entry\display_entry_taxonomies(); ?>
+        <?php Benlumia007\Backdrop\Entry\display_entry_taxonomies(); ?>
     </div>
 </article>

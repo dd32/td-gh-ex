@@ -14,7 +14,7 @@ content-single.php is the main content that will be displayed.
 */
 ?>
 <article id="post-0" <?php post_class('post'); ?>>
-    <?php Backdrop\Entry\display_entry_post_thumbnail(); ?>
+    <?php Benlumi007\Backdrop\Entry\display_entry_post_thumbnail(); ?>
     <header class="entry-header">
         <h1 class="entry-title">
             <?php esc_html_e('Nothing Found', 'backdrop'); ?>

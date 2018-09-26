@@ -1,13 +1,13 @@
 <?php
 /*
 ============================================================================================================================
-White Spektrum - functions.php
+Backdrop - backdrop/menu/social.php
 ============================================================================================================================
-This functions.php template should only do one job is to require the backdrop framework's main file (framework.php). This 
-allows to register all the necessary functions and features for this theme.
+This backdrop/menu/social.php when used, it is displayed at the footer underneath the secondary navigation. THis should help
+display social navigatin icons and when clicked, it brings you to the pages that are intended.
 
-@package        White Spektrum WordPress Theme
-@copyright      Copyright (C) 2014-2018. Benjamin Lu
+@package        Backdrop
+@copyright      Copyright (C) 2018. Benjamin Lu
 @license        GNU General Public License v2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
 @author         Benjamin Lu (https://benjlu.com)
 ============================================================================================================================
@@ -15,30 +15,45 @@ allows to register all the necessary functions and features for this theme.
 
 /*
 ============================================================================================================================
-Table of Content
-============================================================================================================================
- 1.0 - Require PHP 5.6 or higher
- 2.0 - Require Framework's Main File
+namespace define
 ============================================================================================================================
 */
+namespace Benlumia007\Backdrop\Menu;
 
 /*
 ============================================================================================================================
 Table of Content
 ============================================================================================================================
- 1.0 - Require PHP 5.6 or higher
+ 1.0 - Menu (Primary)
 ============================================================================================================================
 */
-if (version_compare($GLOBALS['wp_version'], '4.9.6', '<') || version_compare(PHP_VERSION, '5.6', '<')) {
-    require_once(get_parent_theme_file_path('backdrop/comatibility.php'));
-    return;
+
+/*
+============================================================================================================================
+ 1.0 - Menu (Primary)
+============================================================================================================================
+*/
+function display_social() {
+    echo output_social();
 }
 
-/*
-============================================================================================================================
- 2.0 - Require Framework's Main File
-============================================================================================================================
-*/
-if (file_exists(get_parent_theme_file_path('vendor/autoload.php'))) {
-    require_once(get_parent_theme_file_path('vendor/autoload.php'));
+function output_social() {
+    if (has_nav_menu('social')) { ?>
+        <nav id="social" class="site-social">
+            <?php
+                wp_nav_menu(array(
+                    'theme_location'    => 'social',
+                    'container'         => 'nav',
+                    'container_id'      => 'menu-social',
+                    'container_class'   => 'menu-social',
+                    'menu_id'           => 'menu-social-items',
+                    'menu_class'        => 'menu-items',
+                    'depth'             => 1,
+                    'link_before'       => '<span class="screen-reader-text">',
+                    'link_after'        => '</span>',
+                    'fallback_cb'       => '',
+                ));                                  
+            ?>
+        </nav>
+    <?php }
 }

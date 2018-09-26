@@ -18,8 +18,8 @@ functions to peform their jobs.
 <?php get_header(); ?>
     <div id="gobal-layout" class="<?php echo esc_attr(get_theme_mod('global_layout', 'left-sidebar')); ?>">
         <div class="content-area">
-            <?php Backdrop\MainQuery\display_content_post_format(); ?>
+            <?php Benlumia007\Backdrop\MainQuery\display_content_post_format(); ?>
         </div>
-        <?php Backdrop\Sidebar\display_primary(); ?>
+        <?php Benlumia007\Backdrop\Sidebar\display_primary(); ?>
     </div>
 <?php get_footer(); ?>

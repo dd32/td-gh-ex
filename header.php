@@ -25,12 +25,12 @@ description.
                 <?php if (has_custom_logo()) { 
                     the_custom_logo();
                 } else {
-                    \Backdrop\Site\display_site_title();
-                    \Backdrop\Site\display_site_description();
+                    Benlumia007\Backdrop\Site\display_site_title();
+                    Benlumia007\Backdrop\Site\display_site_description();
                 }
                 ?>
             </div>
-            <?php \Backdrop\Menu\display_primary(); ?>
+            <?php Benlumia007\Backdrop\Menu\display_primary(); ?>
             <?php the_custom_header_markup() ?>
         </header>
         <div id="content" class="site-content">
