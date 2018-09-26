@@ -188,11 +188,6 @@ add_action( 'woocommerce_after_main_content', 'augusta_woocommerce_wrapper_after
  *
  * You can add the WooCommerce Mini Cart to header.php like so ...
  *
-	<?php
-		if ( function_exists( 'augusta_woocommerce_header_cart' ) ) {
-			augusta_woocommerce_header_cart();
-		}
-	?>
  */
 
 if ( ! function_exists( 'augusta_woocommerce_cart_link_fragment' ) ) {

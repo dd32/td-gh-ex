@@ -11,7 +11,7 @@
  /**
  * Define Constants
  */
-define( 'TEMPLATIC_THEME_VERSION', '1.0.0' );
+define( 'TEMPLATIC_THEME_VERSION', '1.0.6' );
 define( 'TEMPLATIC_THEME_DIR', get_template_directory() );
 define( 'TEMPLATIC_THEME_URI', get_template_directory_uri() );
 

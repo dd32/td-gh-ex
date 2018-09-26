@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 
 Requires at least: 4.5
 Tested up to: 4.9.8
-Stable tag: 1.0.4
+Stable tag: 1.0.6
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl.html
 
@@ -31,10 +31,14 @@ Augusta includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0.4 - August 7 2018 =
+= 1.0.6 - Sept 26 2018 =
 * Initial release
 
 == Credits ==
 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+* Bootstrap http://getbootstrap.com/ [MIT]
+* Font Awesome https://fontawesome.com/ [MIT] https://fontawesome.com/license
+* SlickNav http://slicknav.io/, [MIT](https://opensource.org/licenses/MIT)
+* Pexels CC0 License https://www.pexels.com/photo/blank-business-composition-computer-373076/
