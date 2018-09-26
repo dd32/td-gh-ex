@@ -2,7 +2,7 @@
 Contributors: wponlinesupport, anoopranawat
 Requires at least: WordPress 4.5
 Tested up to: WordPress 4.9.8
-Version:  1.0.4
+Version:  1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, blog,  left-sidebar,  right-sidebar,  custom-background,  custom-colors,  custom-menu,  featured-images,  full-width-template,  threaded-comments, footer-widgets,  sticky-post,  theme-options
@@ -55,6 +55,10 @@ License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/term
 - https://pixabay.com/en/person-woman-man-couple-people-3519503/
 
 == Changelog ==
+
+= 1.0.5 =
+* Recommended a new WordPress plugin -  Blog and News Designer Pack to design News/Magazine/Blog page.
+* Fixed some design related issues
 
 = 1.0.4 =
 * Added Pro Version link.
