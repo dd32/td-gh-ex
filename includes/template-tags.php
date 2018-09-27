@@ -802,21 +802,19 @@ if ( ! function_exists( 'bento_copyright' ) ) {
 			$copyright .= '&#169; '.date_i18n( __( 'Y', 'bento') ).' '.$sitename.'. '.$author;
 		}
 		$copyright .= '</div>';
-		if ( get_option( 'bento_ep_license_status' ) != 'valid' || get_theme_mod( 'bento_footer_copyright' ) != '' ) {
-			echo wp_kses( $copyright, 
-				array( 
-					'a' => array( 
-						'target' => array(), 
-						'href' => array(),
-						'title' => array(),
-					),
-					'div' => array(
-						'class' => array(),
-					),
-					'span' => array(),
-				)
-			);
-		}
+		echo wp_kses( $copyright, 
+			array( 
+				'a' => array( 
+					'target' => array(), 
+					'href' => array(),
+					'title' => array(),
+				),
+				'div' => array(
+					'class' => array(),
+				),
+				'span' => array(),
+			)
+		);
 	}
 	
 }

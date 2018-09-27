@@ -4,8 +4,8 @@ Contributors: satoristudio
 Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 
 Requires at least: 4.0
-Tested up to: 4.9.6
-Stable tag: 2.0.2
+Tested up to: 4.9.7
+Stable tag: 2.0.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,11 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 2.0.3 / 27 September 2018
+Standardized button appearance across all browsers.
+Fixed copyright displaying in the theme footer.
+Updated theme translations.
 
 * 2.0.2 / 20 July 2018
 Added more blog page controls to the "Homepage Settings" tab of the Customizer.
