@@ -297,7 +297,7 @@ if (!function_exists('avior_excerpt')) :
     }
 endif;
 
-if (!function_exists('avior_excerpt_more') && !is_admin()) :
+if (!function_exists('avior_excerpt_more')) :
     /**
      * Replaces "[...]" (appended to automatically generated excerpts) with ... and
      * a 'Continue reading' link.

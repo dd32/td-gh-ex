@@ -31,6 +31,9 @@ To add social icons, navigate to WordPress Customizer > Menus > Add Menu > Add C
 
 == Changelog ==
 
+= 0.2.2 =
+* Minor bugfixes and improvements.
+
 = 0.2.0 =
 * Added WooCommerce support.
 

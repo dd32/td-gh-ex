@@ -38,7 +38,7 @@
 					'clip': 'auto',
 					'position': 'relative'
 				} );
-				$( '.menu-toggle,.main-navigation,.site-header .site-title, .top-navigation-right .theme-social-menu > li > a, .top-navigation-right .nav-menu > li > a, .main-navigation .theme-social-menu > li > a, .main-navigation .nav-menu > li > a' ).css( {
+				$( '.menu-toggle,.main-navigation,.site-header .site-title, .site-header .site-description, .top-navigation-right .theme-social-menu > li > a, .top-navigation-right .nav-menu > li > a, .main-navigation .theme-social-menu > li > a, .main-navigation .nav-menu > li > a' ).css( {
 					'color': to
 				} );
 

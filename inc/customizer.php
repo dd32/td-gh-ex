@@ -130,7 +130,7 @@ if (!function_exists('avior_header_style')) :
         ?>
         <style type="text/css" id="avior-header-css">
 
-            .menu-toggle, .main-navigation, .site-header .site-title, .top-navigation-right .theme-social-menu > li > a, .top-navigation-right .nav-menu > li > a, .main-navigation .theme-social-menu > li > a, .main-navigation .nav-menu > li > a {
+            .menu-toggle, .main-navigation, .site-header .site-title, .site-header .site-description, .top-navigation-right .theme-social-menu > li > a, .top-navigation-right .nav-menu > li > a, .main-navigation .theme-social-menu > li > a, .main-navigation .nav-menu > li > a {
                 color: #<?php echo esc_attr( $header_text_color ); ?>;
             }
 
