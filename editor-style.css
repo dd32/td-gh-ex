@@ -3,7 +3,7 @@
  * @package aaron
  */
  
- html {
+html {
 	font-size: 62.5%;
 }
 
@@ -46,10 +46,14 @@ i {
 }
 
 blockquote {
-	margin: 0 1.5em;
-	font-style: italic;
-	font-size: 18px;
-	font-size: 1.8rem;
+	margin-bottom: 2em;
+	border-left: 4px solid #000;
+	padding-left: 1em;
+}
+
+.wp-block-quote cite {
+	display: block;
+	font-size: 13px;
 }
 
 address {

@@ -38,7 +38,7 @@
 	<?php
 	}
 
-	if ( is_home() || is_front_page() || is_singular() && aaron_get_meta( 'aaron_show_header' ) ) {
+	if ( is_home() || is_front_page() || is_page_template( array('templates/header-and-footer.php', 'templates/landingpage.php', 'templates/landingpage.php', 'templates/sections.php', 'templates/static-and-featured.php') ) || is_singular() && aaron_get_meta( 'aaron_show_header' ) ) {
 		?>
 		<header id="masthead" class="site-header" role="banner" itemscope="itemscope" itemtype="http://schema.org/WPHeader">
 			<div class="site-branding">	

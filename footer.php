@@ -43,12 +43,16 @@
 	<?php
 	}
 
+	if ( function_exists( 'the_privacy_policy_link' ) ) {
+		the_privacy_policy_link( '', '<span class="sep"> | </span>' );
+	}
+
 	if ( ! get_theme_mod( 'aaron_hide_credits' ) ) {
 		?>
 		<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'aaron' ) ); ?>" class="credit">
 		<?php printf( esc_html__( 'Proudly powered by %s', 'aaron' ), 'WordPress' ); ?></a>
 		<span class="sep"> | </span>
-		<a href="<?php echo esc_url( 'http://wptema.se/aaron' ); ?>" rel="nofollow">
+		<a href="<?php echo esc_url( 'https://aaron.theme.tips' ); ?>" rel="nofollow">
 		<?php printf( esc_html__( 'Theme: %1$s by Carolina', 'aaron' ), 'Aaron' ); ?></a>
 	<?php
 	}

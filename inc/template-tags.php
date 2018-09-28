@@ -41,8 +41,6 @@ if ( ! function_exists( 'aaron_posted_on' ) ) {
 	}
 }
 
-
-
 if ( ! function_exists( 'aaron_entry_footer' ) ) {
 
 	/**
@@ -129,6 +127,10 @@ if ( ! function_exists( 'aaron_portfolio_footer' ) ) {
 
 add_filter( 'excerpt_more', 'aaron_excerpt_more',100 );
 function aaron_excerpt_more( $more ) {
+	if ( is_admin() ) {
+		return $more;
+	}
+
 	global $id;
 	return '&hellip; ' . aaron_continue_reading( $id );
 }

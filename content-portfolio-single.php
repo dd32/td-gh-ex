@@ -14,8 +14,10 @@
 
 	<div class="entry-content">
 		<?php
-		if ( has_post_thumbnail() ) {
-			the_post_thumbnail();
+		if ( ! aaron_get_meta( 'aaron_featured_image_header' ) ) {
+			if ( has_post_thumbnail() && ! aaron_get_meta( 'aaron_hide_image' ) ) {
+				the_post_thumbnail();
+			}
 		}
 
 		the_content();

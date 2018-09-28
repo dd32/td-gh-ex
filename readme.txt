@@ -14,8 +14,7 @@ The theme has two optional menus (including a social menu), logo upload, six pag
 Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. 
 I recommend that you install the Jetpack plugin to make full use of supported features like Testimonials and social sharing. 
 To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme.
-Aaron also works well with Woocommerce and bbPress. 
-If you have any questions, accessibility issues or feature requests for this theme, please visit http://wptema.se/Aaron.
+Aaron also works well with WooCommerce and bbPress. 
 
 
 == Installation ==
@@ -25,6 +24,19 @@ If you have any questions, accessibility issues or feature requests for this the
 Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
+
+Version 3.2, 2018-09-28
+Made sure that the custom templates works for all pages, not only for the front page.
+Made sure that the meta box options works with the Jetpack portfolio and testimonial post formats.
+Added a testimonial widget. This widget requires the Jetpack testimonial functionality to be activated.
+Made sure that the excerpt_more filter returns the default value in the admin.
+Included a footer link to the privacy policy page, if one is set up.
+Minor updates to the documentation.
+Minor code styling updates.
+Minor style changes: a left side border was added to the blockquote, a border was removed below the footer widgets. Matched font and styles used in the gutenberg editor.
+Updated theme and author URI.
+Updated screenshot.
+
 
 Version 3.1, 2018-01-28
 Fixed an issue with the featured content option.

@@ -254,6 +254,13 @@ function aaron_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'aaron_scripts' );
 
+// Add styles and fonts for the Gutenberg editor.
+add_action( 'enqueue_block_editor_assets', 'aaron_gutenberg_assets' );
+function aaron_gutenberg_assets() {
+	wp_enqueue_style( 'aaron-fonts-gutenberg', aaron_fonts_url(), array(), null );
+	wp_enqueue_style( 'aaron-gutenberg', get_theme_file_uri( '/inc/gutenberg-editor.css' ), false );
+}
+
 /**
  * Enqueue styles for the setup help page.
  */
@@ -337,6 +344,12 @@ function aaron_classes( $classes ) {
 
 	return $classes;
 }
+
+/* We have added support for testimonials, but don't enable the widget unless Jetpack is installed. */
+if ( class_exists( 'Jetpack' ) ) {
+	require get_template_directory() . '/inc/testimonial-widget.php';
+}
+
 
 function aaron_customize_css() {
 	echo '<style type="text/css">';
@@ -532,7 +545,6 @@ if ( ! function_exists( 'aaron_bottom_sections' ) ) {
 		}
 	}
 }
-
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.

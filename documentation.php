@@ -24,8 +24,6 @@ function aaron_docs() {
 <b><?php esc_html_e( 'Thank you for downloading and trying out Aaron!', 'aaron' ); ?></b><br><br>
 <?php printf( __( 'If you like the theme, please review it on <a href="%s">WordPress.org</a>', 'aaron' ), esc_url( 'https://wordpress.org/support/view/theme-reviews/aaron' ) ); ?>
 <br>
-<b><?php printf( __( 'If you have any questions, accessibility issues or feature requests for this theme, please visit <a href="%s">http://wptema.se/Aaron</a>.', 'aaron' ), esc_url( 'http://wptema.se/Aaron' ) ); ?>
-</b><br>
 <?php esc_html_e( 'Thank you everyone who has contributed with ideas and bug reports so far! Your feedback is essential for the future development of the theme.', 'aaron' ); ?>
 </div>
 
@@ -81,7 +79,8 @@ function aaron_docs() {
 		<?php esc_html_e( 'To show either sidebar, all you need to do is place your widgets inside them.','aaron' ); ?><br>
 		<?php esc_html_e( 'To hide either sidebar, remove the widgets. The content of the page will expand when the sidebar is hidden.','aaron' ); ?><br><br>
 		<?php esc_html_e( 'Both sidebars and the header and footer widget areas can hold any number of widgets. The footer widget area is shown on all pages.','aaron' ); ?><br>
-		<?php esc_html_e( 'There is also one additional widget area in the footer below the social menu, where you can place a text widget and add your copyright text.','aaron' ); ?> <br>
+		<?php esc_html_e( 'There is also one additional widget area in the footer below the social menu, where you can place a text widget and add your copyright text.','aaron' ); ?> <br><br>
+		<?php esc_html_e( 'A custom testimonial widget is available if you choose to activate Jetpack testimonials.','aaron' ); ?><br>
 	</div>
 
 	<div class="doc-box" id="aaron-front">
@@ -156,6 +155,7 @@ function aaron_docs() {
 			<li><?php esc_html_e( 'Unstick the fixed header menu.','aaron' ); ?></li>
 			<li><?php esc_html_e( 'Move the meta below the post content. By default, this is shown to the right of the post content.','aaron' ); ?></li>
 			<li><?php esc_html_e( 'Hide the theme author credit text in the footer.','aaron' ); ?></li>
+			<li><?php esc_html_e( 'Change the width of the main content.','aaron' ); ?></li>
 		</ul>
 		<br>
 			<b><?php esc_html_e( 'Header settings for individual posts and pages','aaron' ); ?></b><br>
@@ -203,7 +203,7 @@ function aaron_docs() {
 		<h3><?php esc_html_e( 'Plugins','aaron' ); ?></h3>
 		<?php esc_html_e( 'Aaron has been tested with and style has been added for the following plugins:', 'aaron' ); ?>
 		<ul>
-			<li><b><?php esc_html_e( 'Woocommerce','aaron' ); ?></b></li>
+			<li><b><?php esc_html_e( 'WooCommerce','aaron' ); ?></b></li>
 			<li><b><?php esc_html_e( 'bbPress','aaron' ); ?></b></li>
 			<li><b><?php esc_html_e( 'Jetpack','aaron' ); ?></b><br><?php esc_html_e( 'Note: Not all of Jetpacks modules are accessibe, and some uses iframes. I have increased the contrast of some of the modules.','aaron' ); ?></li>
 				<?php esc_html_e( 'Recommended modules:','aaron' ); ?><br>
@@ -228,6 +228,8 @@ function aaron_docs() {
 						<?php esc_html_e( 'Aaron also supports Jetpack','aaron' ); ?> <b><?php esc_html_e( 'Testimonials','aaron' ); ?></b>. <br>
 						<b><?php esc_html_e( 'Tip:','aaron' ); ?></b> <?php esc_html_e( 'I recommend creating a page and adding this shortcode, and then including the page as a front page section.','aaron' ); ?> <br> &nbsp; [testimonials columns=3 showposts=3]<br>
 						<?php printf( __( '<a href="%s">Read more about how to setup your Testimonials on Jetpacks support site.</a>', 'aaron' ), esc_url( 'https://en.support.wordpress.com/testimonials-shortcode/' ) ); ?>
+						<br>
+						<?php esc_html_e( 'You can also try the custom testimonial widget.','aaron' ); ?>
 						<br><br>		
 					</li>
 					<li><b><?php esc_html_e( 'Sharing','aaron' ); ?></b><br>

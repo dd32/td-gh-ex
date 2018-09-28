@@ -25,7 +25,7 @@ function aaron_get_meta( $value ) {
 }
 
 function aaron_add_meta_boxes() {
-	$screens = array( 'post', 'page' );
+	$screens = array( 'post', 'page', 'jetpack-portfolio', 'jetpack-testimonial' );
 
 	foreach ( $screens as $screen ) {
 		add_meta_box(
