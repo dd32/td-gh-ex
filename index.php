@@ -18,7 +18,7 @@ get_header();
  <div class="container">
    <div class="row">
       <div class="col-md-8">
-       <h3><?php esc_html_e('Latest Blog','atlas-concern'); ?></h3>
+       <h1><?php esc_html_e('Latest Blog','atlas-concern'); ?></h1>
       </div>
    </div>
   </div>

@@ -4,11 +4,11 @@ Theme URI: http://www.atlasresponsivetasarim.com/products/concern/
 Author: atlas
 Author URI: http://www.atlasresponsivetasarim.com/
 Description:The Atlas business base is WordPress-based, tailored to business requirements. It is a useful theme in a multi-purpose place in the business world and is WordPress-based, which you can manage with all the chazas in accordance with all the technologies. A very useful theme with 100% compatible browser support with all plugins.
-Version: 1.2
+Version: 1.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: atlas-concern
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: blog, right-sidebar, custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 
 This theme, like WordPress, is licensed under the GPL.
@@ -626,6 +626,7 @@ input[type="datetime-local"],
 input[type="color"],
 textarea {
 	color: #ccc;
+	border:1px solid #ccc;
 	border-radius: 3px;
 	padding: 3px;
 
@@ -652,6 +653,7 @@ input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
 	color: #111;
+	border: 1px solid #ccc;
 }
 
 textarea {
@@ -680,66 +682,10 @@ textarea {
 .entry-summary h1,
 .page-content h1,
 .comment-content h1 {
-	font-size: 26px;
-	font-size: 2.6rem;
 	line-height: 1.1538;
 	margin-top: 1.8462em;
 	margin-bottom: 0.9231em;
 }
-
-.entry-content h2,
-.entry-summary h2,
-.page-content h2,
-.comment-content h2 {
-	font-size: 22px;
-	font-size: 2.2rem;
-	line-height: 1.3636;
-	margin-top: 2.1818em;
-	margin-bottom: 1.0909em;
-}
-
-.entry-content h3,
-.entry-summary h3,
-.page-content h3,
-.comment-content h3 {
-	font-size: 18px;
-	font-size: 1.8rem;
-	line-height: 1.3333;
-	margin-top: 2.6667em;
-	margin-bottom: 1.3333em;
-}
-
-.entry-content h4,
-.entry-content h5,
-.entry-content h6,
-.entry-summary h4,
-.entry-summary h5,
-.entry-summary h6,
-.page-content h4,
-.page-content h5,
-.page-content h6,
-.comment-content h4,
-.comment-content h5,
-.comment-content h6 {
-	font-size: 15px;
-	font-size: 1.5rem;
-	line-height: 1.2;
-	margin-top: 3.2em;
-	margin-bottom: 1.6em;
-}
-
-.entry-content h5,
-.entry-content h6,
-.entry-summary h5,
-.entry-summary h6,
-.page-content h5,
-.page-content h6,
-.comment-content h5,
-.comment-content h6 {
-	letter-spacing: 0.1em;
-	text-transform: uppercase;
-}
-
 .entry-content > h1:first-child,
 .entry-content > h2:first-child,
 .entry-content > h3:first-child,
@@ -2014,7 +1960,7 @@ object {
 	padding-bottom:80px;
 	background:#d32c2c;
 }
-.top-header h3{
+.top-header h1{
     color:#fff;
 	font-size:38px;
 }
@@ -2058,12 +2004,6 @@ object {
 .vc_gitem-zone-mini{
 	background:#fff;
 }
-.wpcf7-form-control{
-	border-right:1px solid #fff;
-	border-left:1px solid #fff;
-	border-top:1px solid #fff;
-	width:100%;
-}
 .home-btn{
 	background:#000;
 	color:#fff;
@@ -2083,157 +2023,6 @@ object {
 .pricin-head{
 	padding-bottom:30px;
 	
-}
-/* Woocommerce Css */
-.woocommerce-widget{
-	list-style-type:none;
-	padding-right:10px;
-	padding-left:10px;
-	margin-bottom:20px;
-	background:#fff;
-	padding-top:50px;	
-}
-.product-categories li a{
-	text-align:center;
-	font-size:16px;
-}
-.woo-widgettitle{
-	color: #fff;
-	text-align:center;
-	font-size: 20px;
-	letter-spacing: 0.10em;
-	padding-bottom:10px;
-	padding-top:10px;
-	margin-bottom:20px;
-	font-weight:600;
-	background:#fdd922;
-}
-.woocommerce-products-header{
-	padding-top:40px;
-	padding-bottom:55px;
-}
-.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button{
-	background:transparent;
-	border:1px solid #000;
-	border-radius:40px;
-	padding-left:20px;
-	padding-right:20px;
-}
-.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover{
-	background:#000;
-	color:#fff;
-	transition:1s;
-}
-#add_payment_method .wc-proceed-to-checkout a.checkout-button, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button, .woocommerce-checkout .wc-proceed-to-checkout a.checkout-button{
-	margin-top:20px;
-}
-.woocommerce ul.products li.product .woocommerce-loop-category__title, .woocommerce ul.products li.product .woocommerce-loop-product__title, .woocommerce ul.products li.product h3{
-	font-size:18px;
-	color:#000;
-}
-.woocommerce ul.products li.product .price{
-	color:rgba(51, 122, 183, 1);
-}
-.woocommerce-Price-currencySymbol{
-	font-size:25px;
-}
-.woocommerce ul.products li.product .price{
-	font-size:20px;
-}
-.attachment-woocommerce_thumbnail{
-	border:1px solid #ccc;
-}
-.type-product{
-	padding-top:25px;
-	padding-bottom:25px;
-	padding-left:25px;
-	padding-right:25px;
-	border-radius:20px;
-}
-.input-text {
-	border:1px solid #ccc;
-	
-}
-.woocommerce #respond input.alt#submit, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
-	background:transparent;
-	color:#000;
-}
-.woocommerce #respond input.alt#submit:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
-	background-color:#000;
-}
-#add_payment_method .cart-collaterals .cart_totals table, .woocommerce-cart .cart-collaterals .cart_totals table, .woocommerce-checkout .cart-collaterals .cart_totals table{
-	margin-top:20px;
-}
-#add_payment_method .wc-proceed-to-checkout, .woocommerce-cart .wc-proceed-to-checkout, .woocommerce-checkout .wc-proceed-to-checkout{
-  padding-top:2em;	
-}
-.woocommerce div.product .woocommerce-tabs ul.tabs li{
-	background-color:transparent;
-	padding:10px 18px 10px 18px;	
-}
-.woocommerce div.product .woocommerce-tabs ul.tabs li a{
-	color:#000;
-}
-.woocommerce div.product div.images .woocommerce-product-gallery__trigger{
-	border-radius:0;
-}
-.woo-cont{
-	padding-top:80px;
-}
-.woocommerce .star-rating{
-	color:rgba(238, 162, 54, 1);
-}
-.woocommerce-Tabs-panel--description p{
-	font-size:16px;
-}
-.woocommerce-product-details__short-description p{
-	font-size:16px;
-}
-.woocommerce ul.cart_list, .woocommerce ul.product_list_widget{
-	padding-right:10px;
-}
-.cat-item{
-	padding-left:10px;
-	padding-right:10px;
-}
-.wo-widget{
-	background:#fff;
-	padding-bottom:20px;
-}
-.woocommerce-product-search input[type=search]{
-	width:80%;
-	color:#fff;
-}
-.price_slider_wrapper{
-	padding-left:15px;
-	padding-right:15px;
-}
-.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content{
-	background:rgba(228, 225, 227, 1);
-}
-.woocommerce .widget_price_filter .ui-slider .ui-slider-range{
-	background-color:#fdd922;
-}
-.woocommerce .widget_price_filter .ui-slider .ui-slider-handle{
-	background:rgba(238, 162, 54, 1);
-}
-.widget_shopping_cart_content{
-	padding-left:10px;
-	padding-right:10px;
-}
-#add_payment_method .wc-proceed-to-checkout a.checkout-button, .woocommerce-cart .wc-proceed-to-checkout a.checkout-button, .woocommerce-checkout .wc-proceed-to-checkout a.checkout-button{
-	display:inline;
-	font-size:16px;
-	color:#000;
-}
-.woocommerce #respond input.alt#submit, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
-	color:#000;
-}
-#add_payment_method #payment .payment_method_paypal img, .woocommerce-cart #payment .payment_method_paypal img, .woocommerce-checkout #payment .payment_method_paypal img{
-	width:200px;
-}
-.woocommerce .woocommerce-breadcrumb{
-	font-size:16px;
 }
 
 
