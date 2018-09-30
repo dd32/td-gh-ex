@@ -254,7 +254,7 @@ function atlas_concern_customize_register( $wp_customize ) {
     ));
 
     $wp_customize->add_control( 'topline_section_linke_url', array(
-        'label' => __( 'Lİnkedin url', 'atlas-concern' ),
+        'label' => __( 'Linkedin url', 'atlas-concern' ),
         'type' => 'url',
         'section' => 'topline_section'
     ));
@@ -307,7 +307,7 @@ if ( ! function_exists( 'atlas_concern_enqueue_scripts' ) ) :
      /* Style */
 
 	wp_enqueue_style( 'atlas-concern-style', get_stylesheet_uri() );
-    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css');
+    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
     wp_enqueue_style( 'responsive', get_template_directory_uri() . '/css/responsive.css');
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome/css/font-awesome.css');
 
