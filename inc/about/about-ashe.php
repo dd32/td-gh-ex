@@ -388,8 +388,10 @@ function ashe_about_page_output() {
 					<tr>
 						<td>
 							<h3>
-								<?php esc_html_e( 'Predefined Styles', 'ashe' ); ?>
-								<a href="<?php echo admin_url('themes.php?page=about-ashe#ashe-predefined-styles'); ?>" target="_blank"><span class="dashicons dashicons-external"></span></a>
+								<a href="<?php echo admin_url('themes.php?page=about-ashe#ashe-predefined-styles'); ?>" target="_blank">
+									<?php esc_html_e( 'Predefined Styles', 'ashe' ); ?>
+									<span class="dashicons dashicons-external"></span>
+								</a>
 							</h3>							
 						</td>
 						<td class="compare-icon"><span class="dashicons-before dashicons-no"></span></td>
@@ -656,12 +658,12 @@ function ashe_enqueue_about_page_scripts($hook) {
 	}
 
 	// enqueue CSS
-	wp_enqueue_style( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/css/about-ashe-page.css' ), array(), '1.7.2' );
+	wp_enqueue_style( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/css/about-ashe-page.css' ), array(), '1.7.3' );
 
 	// Demo Import
 	wp_enqueue_script( 'plugin-install' );
 	wp_enqueue_script( 'updates' );
-	wp_enqueue_script( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/js/about-ashe-page.js' ), array(), '1.7.2' );
+	wp_enqueue_script( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/js/about-ashe-page.js' ), array(), '1.7.3' );
 
 }
 add_action( 'admin_enqueue_scripts', 'ashe_enqueue_about_page_scripts' );
