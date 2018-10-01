@@ -52,7 +52,7 @@ function silver_quantum_switch_theme() {
     return false;
 
 }
-add_action( 'after_switch_theme', 'silver-quantum_switch_theme' );
+add_action( 'after_switch_theme', 'silver_quantum_switch_theme' );
 
 function silver_quantum_upgrade_notice() {
     printf( '<div class="error"><p>%s</p></div>', esc_html( silver_quantum_compatibility_check() ) );
