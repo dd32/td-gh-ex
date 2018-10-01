@@ -26,8 +26,8 @@ AdBooster is a lightning fast and very lightweight WordPress CTR theme that letâ
 
 == Copyright ==
 
-AdBooster WordPress Theme, Copyright 2016 WordPress.org
-AdBooster is distributed under the terms of the GNU GPL
+AdBooster WordPress Theme, Copyright 2018 BoosterWP Team
+AdBooster is distributed under the terms of the GNU GPL.
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -59,13 +59,24 @@ License URI: https://github.com/oddbird/susy/blob/master/LICENSE.txt
 
 * Image of Screenshot
 
-1. Tahiti - https://pixabay.com/en/polynesia-french-polynesia-tahiti-3021072/
-2. Nokia Phone - https://pixabay.com/en/nokia-lumina-phone-windows-mobile-926756/
-3. Animal Turtle - https://pixabay.com/en/animal-turtle-coral-reef-ocean-sea-1868046/
-4. Desert Sun - https://pixabay.com/en/desert-sun-landscape-sunset-dune-2774945/
+Tahiti - Sidebar Banner, Copyright Julius_Silver
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pixabay.com/en/polynesia-french-polynesia-tahiti-3021072/
 
-License: CC0 Creative Commons
-License URI: https://pixabay.com/en/service/terms/#usage
+Nokia Phone - Thumbnail Post 1, Copyright StockSnap
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pixabay.com/en/nokia-lumina-phone-windows-mobile-926756/
+
+3. Animal Turtle- Thumbnail Post 2
+License: CC0 1.0 Universal (CC0 1.0), Copyright Pexels
+Source: https://pixabay.com/en/animal-turtle-coral-reef-ocean-sea-1868046/
+
+4. Desert Sun - Thumbnail Post 3, Copyright photo-graphe
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://pixabay.com/en/desert-sun-landscape-sunset-dune-2774945/
+
+5. Header Banner Ads, Copyright BoosterWP
+License: CC0 1.0 Universal (CC0 1.0)
 
 
 * Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)

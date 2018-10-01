@@ -303,12 +303,12 @@ if ( ! class_exists( 'Ad_Booster_Homepage_Output' ) ) {
 
 			if ( $param['cat'] == 0 ) {
 
-				printf('<h2 class="azb-hmp-cat"><a href="%s">%s</a></h2>', get_permalink( get_option( 'page_for_posts' ) ), esc_html__('Recent Posts', 'adbooster') . ' <span class="arrow">&raquo;</span>' );
+				printf('<h2 class="azb-hmp-cat"><a href="%s">%s</a></h2>', esc_url( get_permalink( get_option( 'page_for_posts' ) ) ) , esc_html__('Recent Posts', 'adbooster') . ' <span class="arrow">&raquo;</span>' );
 
 			} else {
 
 				$cat = get_category( $param['cat'] );			
-				$content = sprintf('<h2 class="azb-hmp-cat"><a href="%s">%s</a></h2>', get_category_link($cat), $cat->name . ' <span class="arrow">&raquo;</span>');
+				$content = sprintf('<h2 class="azb-hmp-cat"><a href="%s">%s</a></h2>', esc_url( get_category_link($cat) ), $cat->name . ' <span class="arrow">&raquo;</span>');
 
 
 				if ( intval($param['cat_img'] ) > 0 ) {
