@@ -1,4 +1,6 @@
 <footer id="colophon" class="site-footer site-footer-standard">
+
+	<?php do_action ( 'avant_hook_before_footer' ); ?>
 	
 	<div class="site-footer-widgets">
         <div class="site-container">
@@ -13,7 +15,9 @@
 	    	<?php endif; ?>
             <div class="clearboth"></div>
         </div>
-    </div>
+	</div>
+	
+	<?php do_action ( 'avant_hook_after_footer' ); ?>
 	
 </footer>
 <div class="site-footer-bottom-bar <?php echo ( get_theme_mod( 'avant-bottombar-switch' ) ) ? sanitize_html_class( 'site-bottombar-switch' ) : ''; ?>">

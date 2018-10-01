@@ -1,4 +1,6 @@
 <footer id="colophon" class="site-footer site-footer-social">
+
+	<?php do_action ( 'avant_hook_before_footer' ); ?>
 	
 	<div class="site-footer-icons">
         <div class="site-container">
@@ -45,7 +47,7 @@
 			endif; ?>
 			
 		<?php printf( __( '<div class="site-footer-social-copy">Theme: %1$s by %2$s', 'avant' ), 'Avant', '<a href="https://kairaweb.com/">Kaira</a></div><div class="clearboth"></div></div>' ); ?>
-</div></footer><div class="site-social-bottom-bar site-footer-bottom-bar">
+</div><?php do_action ( 'avant_hook_after_footer' ); ?></footer><div class="site-social-bottom-bar site-footer-bottom-bar">
 	<div class="site-container">
 		<?php if ( get_theme_mod( 'avant-footer-privacy-link' ) ) : ?>
     		<?php if ( function_exists( 'the_privacy_policy_link' ) ) { the_privacy_policy_link(); } ?>

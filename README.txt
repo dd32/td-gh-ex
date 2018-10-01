@@ -68,6 +68,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.10
+* Style fixes
+* Removed css bug adding box-shadow to content images
+* Added hooks to theme footer - 'avant_hook_before_footer' & 'avant_hook_after_footer'
+* Updated the language .pot file
+
 #### 1.1.09
 * Style tweaks/fixes
 * Fixed Default Header Layout search bug on mobile
