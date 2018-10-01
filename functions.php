@@ -1,12 +1,19 @@
 <?php
 
+//----------------------------------------------------------------------------------
+//	Include all required files
+//----------------------------------------------------------------------------------
 require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' );
-foreach ( glob( trailingslashit( get_template_directory() ) . 'inc/*.php' ) as $filename ) {
-	include $filename;
-}
-foreach ( glob( trailingslashit( get_template_directory() ) . 'inc/widgets/*.php' ) as $filename ) {
-	include $filename;
-}
+require_once( trailingslashit( get_template_directory() ) . 'inc/breadcrumbs.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/customizer.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/deprecated.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/review.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/scripts.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/widgets/image_widget.php' );
+
+//----------------------------------------------------------------------------------
+//	Include review request
+//----------------------------------------------------------------------------------
 require_once( trailingslashit( get_template_directory() ) . 'dnh/handler.php' );
 new WP_Review_Me( array(
 		'days_after' => 14,
@@ -42,7 +49,12 @@ if ( ! function_exists( 'ct_ignite_theme_setup' ) ) {
 			'container' => 'loop-container',
 			'footer'    => 'overflow-container'
 		) );
+		// Add WooCommerce support
 		add_theme_support( 'woocommerce' );
+		// Support WooCommerce image gallery features 
+		add_theme_support( 'wc-product-gallery-zoom' ); 
+		add_theme_support( 'wc-product-gallery-lightbox' ); 
+		add_theme_support( 'wc-product-gallery-slider' );
 		
 		load_theme_textdomain( 'ignite', get_template_directory() . '/languages' );
 	}
@@ -83,20 +95,20 @@ if ( ! function_exists( 'ct_ignite_customize_comments' ) ) {
 				echo get_avatar( get_comment_author_email(), 48 );
 				?>
 				<span class="author-name"><?php comment_author_link(); ?></span>
-				<span> <?php _ex( 'said:', 'COMMENTER said:', 'ignite' ); ?></span>
+				<span> <?php echo esc_html_x( 'said:', 'COMMENTER said:', 'ignite' ); ?></span>
 			</div>
 			<div class="comment-content">
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em><?php _e( 'Your comment is awaiting moderation.', 'ignite' ) ?></em>
+					<em><?php esc_html_e( 'Your comment is awaiting moderation.', 'ignite' ) ?></em>
 					<br/>
 				<?php endif; ?>
 				<?php comment_text(); ?>
 			</div>
 			<div class="comment-meta">
 				<div class="comment-date"><?php comment_date(); ?></div>
-				<?php edit_comment_link( _x( 'Edit', 'Edit this comment', 'ignite' ) ); ?>
+				<?php edit_comment_link( esc_html_x( 'Edit', 'Edit this comment', 'ignite' ) ); ?>
 				<?php comment_reply_link( array_merge( $args, array(
-					'reply_text' => _x( 'Reply', 'Reply to this comment', 'ignite' ),
+					'reply_text' => esc_html_x( 'Reply', 'Reply to this comment', 'ignite' ),
 					'depth'      => $depth,
 					'max_depth'  => $args['max_depth']
 				) ) ); ?>
@@ -111,24 +123,24 @@ if ( ! function_exists( 'ct_ignite_update_fields' ) ) {
 
 		$commenter = wp_get_current_commenter();
 		$req       = get_option( 'require_name_email' );
-		$label     = $req ? '*' : ' ' . __( '(optional)', 'ignite' );
+		$label     = $req ? '*' : ' ' . esc_html__( '(optional)', 'ignite' );
 		$aria_req  = $req ? "aria-required='true'" : '';
 
 		$fields['author'] =
 			'<p class="comment-form-author">
-                <label for="author" class="screen-reader-text">' . __( 'Your Name', 'ignite' ) . '</label>
+                <label for="author" class="screen-reader-text">' . esc_html__( 'Your Name', 'ignite' ) . '</label>
                 <input placeholder="' . esc_attr__( 'Your Name', 'ignite' ) . esc_attr( $label ) . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 			'" size="30" ' . $aria_req . ' />
             </p>';
 		$fields['email'] =
 			'<p class="comment-form-email">
-                <label for="email" class="screen-reader-text">' . __( 'Your Email', 'ignite' ) . '</label>
+                <label for="email" class="screen-reader-text">' . esc_html__( 'Your Email', 'ignite' ) . '</label>
                 <input placeholder="' . esc_attr__( 'Your Email', 'ignite' ) . esc_attr( $label ) . '" id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) .
 			'" size="30" ' . $aria_req . ' />
             </p>';
 		$fields['url'] =
 			'<p class="comment-form-url">
-                <label for="url" class="screen-reader-text">' . __( 'Your Website URL', 'ignite' ) . '</label>
+                <label for="url" class="screen-reader-text">' . esc_html__( 'Your Website URL', 'ignite' ) . '</label>
                 <input placeholder="' . esc_attr__( 'Your URL', 'ignite' ) . ' ' . esc_attr__( '(optional)', 'ignite' ) . '" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) .
 			'" size="30" />
                 </p>';
@@ -150,7 +162,7 @@ if ( ! function_exists( 'ct_ignite_update_comment_field' ) ) {
 		
 		$comment_field =
 			'<p class="comment-form-comment">
-                <label for="comment" class="screen-reader-text">' . __( 'Your Comment', 'ignite' ) . '</label>
+                <label for="comment" class="screen-reader-text">' . esc_html__( 'Your Comment', 'ignite' ) . '</label>
                 <textarea required placeholder="' . esc_attr__( 'Enter Your Comment', 'ignite' ) . '&#8230;" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
             </p>';
 
@@ -182,7 +194,7 @@ if ( ! function_exists( 'ct_ignite_filter_read_more_link' ) ) {
 		}
 		// Because i18n text cannot be stored in a variable
 		if ( empty( $read_more_text ) ) {
-			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . __( 'Read More', 'ignite' ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
+			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read More', 'ignite' ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
 		} else {
 			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . esc_html( $read_more_text ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
 		}
@@ -246,7 +258,7 @@ add_filter( 'the_content_more_link', 'ct_ignite_remove_more_link_scroll' );
 function ct_ignite_update_yoast_og_description( $ogdesc ) {
 	$read_more_text = get_theme_mod( 'read_more_text' );
 	if ( empty( $read_more_text ) ) {
-		$read_more_text = __( 'Continue Reading', 'ignite' );
+		$read_more_text = esc_html__( 'Continue Reading', 'ignite' );
 	}
 	$ogdesc = substr( $ogdesc, 0, strpos( $ogdesc, $read_more_text ) );
 
@@ -531,58 +543,63 @@ if ( ! function_exists( 'ct_ignite_customizer_social_media_array' ) ) {
 		$social_sites = array(
 			'twitter',
 			'facebook',
-			'google-plus',
-			'flickr',
+			'instagram',
+			'linkedin',
 			'pinterest',
 			'youtube',
-			'vimeo',
-			'tumblr',
-			'dribbble',
 			'rss',
-			'linkedin',
-			'instagram',
-			'reddit',
-			'soundcloud',
-			'spotify',
-			'vine',
-			'yahoo',
+			'email',
+			'phone',
+			'email-form',
+			'academia',
+			'amazon',
+			'bandcamp',
 			'behance',
+			'bitbucket',
 			'codepen',
 			'delicious',
-			'stumbleupon',
 			'deviantart',
-			'500px',
-			'foursquare',
-			'slack',
-			'slideshare',
-			'qq',
-			'whatsapp',
-			'skype',
-			'wechat',
-			'xing',
 			'digg',
-			'github',
-			'hacker-news',
-			'twitch',
-			'amazon',
-			'google-wallet',
-			'yelp',
-			'steam',
-			'vk',
-			'academia',
-			'snapchat',
-			'bandcamp',
+			'dribbble',
 			'etsy',
+			'flickr',
+			'foursquare',
+			'github',
+			'google-plus',
+			'google-wallet',
+			'hacker-news',
+			'meetup',
+			'mixcloud',
+			'ok-ru',
+			'paypal',
+			'podcast',
+			'qq',
 			'quora',
 			'ravelry',
-			'meetup',
+			'reddit',
+			'skype',
+			'slack',
+			'slideshare',
+			'snapchat',
+			'soundcloud',
+			'spotify',
+			'stack-overflow',
+			'steam',
+			'stumbleupon',
 			'telegram',
-			'podcast',
-			'weibo',
 			'tencent-weibo',
-			'paypal',
-			'email',
-			'email-form'
+			'tumblr',
+			'twitch',
+			'vimeo',
+			'vine',
+			'vk',
+			'wechat',
+			'weibo',
+			'whatsapp',
+			'xing',
+			'yahoo',
+			'yelp',
+			'500px'
 		);
 
 		return apply_filters( 'ct_ignite_customizer_social_media_array_filter', $social_sites );
@@ -615,23 +632,14 @@ if ( ! function_exists( 'ct_ignite_get_content_template' ) ) {
 
 		// Blog
 		if ( is_home() ) {
-			get_template_part( 'content' );
-		} // Post
-		elseif ( is_singular( 'post' ) ) {
-			get_template_part( 'content' );
+			get_template_part( 'content', get_post_type() );
+		} // Post/Page
+		elseif ( is_singular() ) {
+			get_template_part( 'content', get_post_type() );
 			comments_template();
-		} // Page
-		elseif ( is_page() ) {
-			get_template_part( 'content', 'page' );
-			comments_template();
-		} // Attachment
-		elseif ( is_attachment() ) {
-			get_template_part( 'content', 'attachment' );
-			comments_template();
-		} // Archive
+		}  // Archive
 		elseif ( is_archive() ) {
 
-			// check if bbPress is active
 			if ( function_exists( 'is_bbpress' ) ) {
 
 				// bbPress forum list
@@ -650,7 +658,7 @@ if ( ! function_exists( 'ct_ignite_get_content_template' ) ) {
 			get_template_part( 'content/bbpress' );
 		} // Custom Post Type
 		else {
-			get_template_part( 'content' );
+			get_template_part( 'content', get_post_type() );
 		}
 	}
 }
@@ -687,7 +695,7 @@ if ( ! function_exists( ( 'ct_ignite_settings_notice' ) ) ) {
 			if ( $_GET['ignite_status'] == 'activated' ) {
 				?>
 				<div class="updated">
-					<p><?php printf( __( '%s successfully activated!', 'ignite' ), wp_get_theme( get_template() ) ); ?></p>
+					<p><?php printf( esc_html__( '%s successfully activated!', 'ignite' ), wp_get_theme( get_template() ) ); ?></p>
 				</div>
 				<?php
 			}
@@ -695,3 +703,15 @@ if ( ! function_exists( ( 'ct_ignite_settings_notice' ) ) ) {
 	}
 }
 add_action( 'admin_notices', 'ct_ignite_settings_notice' );
+
+//----------------------------------------------------------------------------------
+// Output the markup for the optional scroll-to-top arrow 
+//----------------------------------------------------------------------------------
+function ct_ignite_scroll_to_top_arrow() {
+	$setting = get_theme_mod('scroll_to_top');
+	
+	if ( $setting == 'yes' ) {
+		echo '<button id="scroll-to-top" class="scroll-to-top"><span class="screen-reader-text">'. __('Scroll to the top', 'ignite') .'</span><i class="fa fa-arrow-up"></i></button>';
+	}
+}
+add_action( 'ct_ignite_body_bottom', 'ct_ignite_scroll_to_top_arrow');
