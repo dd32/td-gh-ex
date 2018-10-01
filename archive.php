@@ -1,7 +1,7 @@
-<?php 
+<?php
 /**
  ************************************************************************************************************************
- * Silver Quantum - single.php
+ * Silver Quantum - Comments.php
  ************************************************************************************************************************
  * @package     Silver Quantum
  * @copyright   Copyright (C) 2014-2018. Benjamin Lu
@@ -11,9 +11,9 @@
  */
 ?>
 <?php get_header(); ?>
-    <div id="gobal-layout" class="<?php echo esc_attr(get_theme_mod('global_layout', 'left-sidebar')); ?>">
+    <div id="gobal-layout" class="<?php echo esc_attr( get_theme_mod( 'global_layout', 'left-sidebar' ) ); ?>">
         <div class="content-area">
-            <?php Benlumia007\Backdrop\MainQuery\display_content_single(); ?>
+            <?php Benlumia007\Backdrop\MainQuery\display_content_archive(); ?>
         </div>
         <?php Benlumia007\Backdrop\Sidebar\display_primary(); ?>
     </div>
