@@ -40,7 +40,11 @@ Not Available at this time
 I would recommended to upgrade at this time. White Spektrum has been modified where is now using a framework to display its content. Starting at 1.0.0 is the major update. 
 
 == Changelog ==
-Version: 1.0.2
+Version: 1.0.4 
+- Wrong Description
+- Bump to 1.0.4
+
+Version: 1.0.3
 - New Framework installed
 - Everything should be the same
 
