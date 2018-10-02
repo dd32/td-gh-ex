@@ -12,9 +12,9 @@
 		<?php endif; ?>
 
 		<?php if ( get_the_title() ) : ?>
-		<h1 class="post-title">
+		<h2 class="post-title">
 			<a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a>
-		</h1>
+		</h2>
 		<?php endif; ?>
 
 		<span class="border-divider"></span>

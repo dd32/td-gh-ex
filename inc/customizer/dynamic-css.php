@@ -204,6 +204,7 @@ $css = '';
 		.page-content h1 a,
 		.page-content h1,
 		.page-content h2,
+		.page-content h2 a,
 		.page-content h3,
 		.page-content h4,
 		.page-content h5,
@@ -224,7 +225,8 @@ $css = '';
 		}
 
 		.page-content .read-more a:hover,
-		.page-content h1 a:hover {
+		.page-content h1 a:hover,
+		.page-content h2 a:hover {
 			color: '. esc_html( bard_hex2rgba( '#030303', 0.75 ) ) .';
 		}
 	
