@@ -36,9 +36,9 @@ get_header(); ?>
 							printf( '<span class="attachment-meta full-size-link"><a href="%1$s" title="%2$s">%3$s (%4$s &times; %5$s)</a></span>',
 								esc_url( wp_get_attachment_url() ),
 								esc_attr__( 'Link to full-size image', 'belfast' ),
-								__( 'Full resolution', 'belfast' ),
-								$metadata['width'],
-								$metadata['height']
+								esc_html__( 'Full resolution', 'belfast' ),
+								esc_attr( $metadata['width'] ),
+								esc_attr( $metadata['height'] )
 							);
 
 							edit_post_link( __( 'Edit', 'belfast' ), '<span class="edit-link">', '</span>' );
