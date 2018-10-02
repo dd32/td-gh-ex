@@ -1,9 +1,17 @@
 <?php
-
+//----------------------------------------------------------------------------------
+//	Include all required files
+//----------------------------------------------------------------------------------
 require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' );
-foreach ( glob( trailingslashit( get_template_directory() ) . 'inc/*' ) as $filename ) {
-	include $filename;
-}
+require_once( trailingslashit( get_template_directory() ) . 'inc/customizer.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/deprecated.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/review.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/scripts.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/user-profile.php' );
+
+//----------------------------------------------------------------------------------
+//	Include review request
+//----------------------------------------------------------------------------------
 require_once( trailingslashit( get_template_directory() ) . 'dnh/handler.php' );
 new WP_Review_Me( array(
 		'days_after' => 14,
@@ -42,6 +50,13 @@ if ( ! function_exists( 'unlimited_theme_setup' ) ) {
 			'render'    => 'unlimited_infinite_scroll_render'
 		) );
 
+		// Add WooCommerce support
+		add_theme_support( 'woocommerce' );
+		// Add support for WooCommerce image gallery features
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
+
 		load_theme_textdomain( 'unlimited', get_template_directory() . '/languages' );
 
 		register_nav_menus( array(
@@ -78,23 +93,23 @@ if ( ! function_exists( 'unlimited_customize_comments' ) ) {
 				echo get_avatar( get_comment_author_email(), 48, '', get_comment_author() );
 				?>
 				<div class="author-name">
-					<span><?php comment_author_link(); ?></span> <?php _x( 'said:', 'the commenter said the following:', 'unlimited' ); ?>
+					<span><?php comment_author_link(); ?></span> <?php esc_html_x( 'said:', 'the commenter said the following:', 'unlimited' ); ?>
 				</div>
 			</div>
 			<div class="comment-content">
 				<?php
 				if ( $comment->comment_approved == '0' ) :
-					echo "<em>" . __( 'Your comment is awaiting moderation.', 'unlimited' ) . "</em><br />";
+					echo "<em>" . esc_html__( 'Your comment is awaiting moderation.', 'unlimited' ) . "</em><br />";
 				endif;
 				comment_text(); ?>
 				<div class="comment-date"><?php comment_date(); ?></div>
 				<?php comment_reply_link( array_merge( $args, array(
-					'reply_text' => _x( 'Reply', 'verb', 'unlimited' ),
+					'reply_text' => esc_html_x( 'Reply', 'verb', 'unlimited' ),
 					'depth'      => $depth,
 					'max_depth'  => $args['max_depth'],
 					'before'     => '|'
 				) ) ); ?>
-				<?php edit_comment_link( _x( 'Edit', 'verb', 'unlimited' ), '|' ); ?>
+				<?php edit_comment_link( esc_html_x( 'Edit', 'verb', 'unlimited' ), '|' ); ?>
 			</div>
 		</article>
 		<?php
@@ -106,24 +121,24 @@ if ( ! function_exists( 'unlimited_update_fields' ) ) {
 
 		$commenter = wp_get_current_commenter();
 		$req       = get_option( 'require_name_email' );
-		$label     = $req ? '*' : ' ' . __( '(optional)', 'unlimited' );
+		$label     = $req ? '*' : ' ' . esc_html__( '(optional)', 'unlimited' );
 		$aria_req  = $req ? "aria-required='true'" : '';
 
 		$fields['author'] =
 			'<p class="comment-form-author">
-	            <label for="author">' . _x( "Name", "noun", "unlimited" ) . $label . '</label>
+	            <label for="author">' . esc_html_x( "Name", "noun", "unlimited" ) . $label . '</label>
 	            <input placeholder="' . esc_attr__( "John Doe", "unlimited" ) . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
 		$fields['email'] =
 			'<p class="comment-form-email">
-	            <label for="email">' . _x( "Email", "noun", "unlimited" ) . $label . '</label>
+	            <label for="email">' . esc_html_x( "Email", "noun", "unlimited" ) . $label . '</label>
 	            <input placeholder="' . esc_attr__( "name@email.com", "unlimited" ) . '" id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) .
 			'" size="30" ' . $aria_req . ' />
 	        </p>';
 		$fields['url'] =
 			'<p class="comment-form-url">
-	            <label for="url">' . __( "Website", "unlimited" )  . '</label>
+	            <label for="url">' . esc_html__( "Website", "unlimited" )  . '</label>
 	            <input placeholder="' . esc_attr__( "http://example.com", "unlimited" ) . '" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) .
 			'" size="30" />
 	            </p>';
@@ -136,9 +151,16 @@ add_filter( 'comment_form_default_fields', 'unlimited_update_fields' );
 if ( ! function_exists( 'unlimited_update_comment_field' ) ) {
 	function unlimited_update_comment_field( $comment_field ) {
 
+		// don't filter the WooCommerce review form
+		if ( function_exists( 'is_woocommerce' ) ) {
+			if ( is_woocommerce() ) {
+				return $comment_field;
+			}
+		}
+		
 		$comment_field =
 			'<p class="comment-form-comment">
-	            <label for="comment">' . _x( "Comment", "noun", "unlimited" ) . '</label>
+	            <label for="comment">' . esc_html_x( "Comment", "noun", "unlimited" ) . '</label>
 	            <textarea required placeholder="' . esc_attr__( "Enter Your Comment", "unlimited" ) . '&#8230;" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
 	        </p>';
 
@@ -170,7 +192,7 @@ if ( ! function_exists( 'ct_unlimited_filter_read_more_link' ) ) {
 		}
 		// Because i18n text cannot be stored in a variable
 		if ( empty( $read_more_text ) ) {
-			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . __( 'Read more', 'unlimited' ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
+			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read more', 'unlimited' ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
 		} else {
 			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . esc_html( $read_more_text ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
 		}
@@ -234,7 +256,7 @@ add_filter( 'the_content_more_link', 'unlimited_remove_more_link_scroll' );
 function ct_unlimited_update_yoast_og_description( $ogdesc ) {
 	$read_more_text = get_theme_mod( 'read_more_text' );
 	if ( empty( $read_more_text ) ) {
-		$read_more_text = __( 'Read more', 'unlimited' );
+		$read_more_text = esc_html__( 'Read more', 'unlimited' );
 	}
 	$ogdesc = substr( $ogdesc, 0, strpos( $ogdesc, $read_more_text ) );
 
@@ -271,57 +293,63 @@ if ( ! function_exists( 'unlimited_social_array' ) ) {
 		$social_sites = array(
 			'twitter'       => 'unlimited_twitter_profile',
 			'facebook'      => 'unlimited_facebook_profile',
-			'google-plus'   => 'unlimited_google_plus_profile',
-			'pinterest'     => 'unlimited_pinterest_profile',
-			'linkedin'      => 'unlimited_linkedin_profile',
-			'youtube'       => 'unlimited_youtube_profile',
-			'vimeo'         => 'unlimited_vimeo_profile',
-			'tumblr'        => 'unlimited_tumblr_profile',
 			'instagram'     => 'unlimited_instagram_profile',
-			'flickr'        => 'unlimited_flickr_profile',
-			'dribbble'      => 'unlimited_dribbble_profile',
+			'linkedin'      => 'unlimited_linkedin_profile',
+			'pinterest'     => 'unlimited_pinterest_profile',
+			'youtube'       => 'unlimited_youtube_profile',
 			'rss'           => 'unlimited_rss_profile',
-			'reddit'        => 'unlimited_reddit_profile',
-			'soundcloud'    => 'unlimited_soundcloud_profile',
-			'spotify'       => 'unlimited_spotify_profile',
-			'vine'          => 'unlimited_vine_profile',
-			'yahoo'         => 'unlimited_yahoo_profile',
+			'email'         => 'unlimited_email_profile',
+			'phone'         => 'unlimited_phone_profile',
+			'email_form'    => 'unlimited_email_form',
+			'amazon'        => 'unlimited_amazon_profile',
+			'bandcamp'      => 'unlimited_bandcamp_profile',
 			'behance'       => 'unlimited_behance_profile',
+			'bitbucket'     => 'unlimited_bitbucket_profile',
 			'codepen'       => 'unlimited_codepen_profile',
 			'delicious'     => 'unlimited_delicious_profile',
-			'stumbleupon'   => 'unlimited_stumbleupon_profile',
 			'deviantart'    => 'unlimited_deviantart_profile',
 			'digg'          => 'unlimited_digg_profile',
-			'github'        => 'unlimited_github_profile',
-			'hacker-news'   => 'unlimited_hacker-news_profile',
-			'snapchat'      => 'unlimited_snapchat_profile',
-			'bandcamp'      => 'unlimited_bandcamp_profile',
+			'discord'       => 'unlimited_discord_profile',
+			'dribbble'      => 'unlimited_dribbble_profile',
 			'etsy'          => 'unlimited_etsy_profile',
+			'flickr'        => 'unlimited_flickr_profile',
+			'foursquare'    => 'unlimited_foursquare_profile',
+			'github'        => 'unlimited_github_profile',
+			'google-plus'   => 'unlimited_google_plus_profile',
+			'google-wallet' => 'unlimited_google-wallet_profile',
+			'hacker-news'   => 'unlimited_hacker-news_profile',
+			'meetup'        => 'unlimited_meetup_profile',
+			'mixcloud'      => 'unlimited_mixcloud_profile',
+			'ok-ru'         => 'unlimited_ok_ru_profile',
+			'paypal'        => 'unlimited_paypal_profile',
+			'podcast'       => 'unlimited_podcast_profile',
+			'qq'            => 'unlimited_qq_profile',
 			'quora'         => 'unlimited_quora_profile',
 			'ravelry'       => 'unlimited_ravelry_profile',
-			'yelp'          => 'unlimited_yelp_profile',
-			'amazon'        => 'unlimited_amazon_profile',
-			'google-wallet' => 'unlimited_google-wallet_profile',
-			'twitch'        => 'unlimited_twitch_profile',
-			'meetup'        => 'unlimited_meetup_profile',
-			'telegram'      => 'unlimited_telegram_profile',
-			'podcast'       => 'unlimited_podcast_profile',
-			'foursquare'    => 'unlimited_foursquare_profile',
+			'reddit'        => 'unlimited_reddit_profile',
+			'skype'         => 'unlimited_skype_profile',
 			'slack'         => 'unlimited_slack_profile',
 			'slideshare'    => 'unlimited_slideshare_profile',
-			'skype'         => 'unlimited_skype_profile',
-			'whatsapp'      => 'unlimited_whatsapp_profile',
-			'qq'            => 'unlimited_qq_profile',
-			'wechat'        => 'unlimited_wechat_profile',
-			'xing'          => 'unlimited_xing_profile',
-			'500px'         => 'unlimited_500px_profile',
+			'snapchat'      => 'unlimited_snapchat_profile',
+			'soundcloud'    => 'unlimited_soundcloud_profile',
+			'spotify'       => 'unlimited_spotify_profile',
+			'stack-overflow' => 'unlimited_stack_overflow_profile',
 			'steam'         => 'unlimited_steam_profile',
-			'vk'            => 'unlimited_vk_profile',
-			'paypal'        => 'unlimited_paypal_profile',
-			'weibo'         => 'unlimited_weibo_profile',
+			'stumbleupon'   => 'unlimited_stumbleupon_profile',
+			'telegram'      => 'unlimited_telegram_profile',
 			'tencent-weibo' => 'unlimited_tencent_weibo_profile',
-			'email'         => 'unlimited_email_profile',
-			'email_form'    => 'unlimited_email_form'
+			'tumblr'        => 'unlimited_tumblr_profile',
+			'twitch'        => 'unlimited_twitch_profile',
+			'vimeo'         => 'unlimited_vimeo_profile',
+			'vine'          => 'unlimited_vine_profile',
+			'vk'            => 'unlimited_vk_profile',
+			'wechat'        => 'unlimited_wechat_profile',
+			'weibo'         => 'unlimited_weibo_profile',
+			'whatsapp'      => 'unlimited_whatsapp_profile',
+			'xing'          => 'unlimited_xing_profile',
+			'yahoo'         => 'unlimited_yahoo_profile',
+			'yelp'          => 'unlimited_yelp_profile',
+			'500px'         => 'unlimited_500px_profile'
 		);
 
 		return apply_filters( 'unlimited_social_array_filter', $social_sites );
@@ -333,12 +361,10 @@ if ( ! function_exists( 'unlimited_social_icons_output' ) ) {
 
 		$social_sites = unlimited_social_array();
 		$square_icons = array(
-			'linkedin',
 			'twitter',
 			'vimeo',
 			'youtube',
 			'pinterest',
-			'rss',
 			'reddit',
 			'tumblr',
 			'steam',
@@ -378,9 +404,21 @@ if ( ! function_exists( 'unlimited_social_icons_output' ) ) {
 
 				// get the class (square OR plain)
 				if ( in_array( $active_site, $square_icons ) ) {
-					$class = 'fa fa-' . $active_site . '-square';
+					$class = 'fab fa-' . $active_site . '-square';
+				} elseif ( $active_site == 'rss' ) {
+					$class = 'fas fa-rss';
+				} elseif ( $active_site == 'email_form' ) {
+					$class = 'far fa-envelope';
+				} elseif ( $active_site == 'podcast' ) {
+					$class = 'fas fa-podcast';
+				} elseif ( $active_site == 'ok-ru' ) {
+					$class = 'fab fa-odnoklassniki';
+				} elseif ( $active_site == 'wechat' ) {
+					$class = 'fab fa-weixin';
+				} elseif ( $active_site == 'phone' ) {
+					$class = 'fas fa-phone';
 				} else {
-					$class = 'fa fa-' . $active_site;
+					$class = 'fab fa-' . $active_site;
 				}
 
 				if ( $active_site == 'email' ) {
@@ -388,17 +426,8 @@ if ( ! function_exists( 'unlimited_social_icons_output' ) ) {
 					<li>
 						<a class="email" target="_blank"
 						   href="mailto:<?php echo antispambot( is_email( $url ) ); ?>">
-							<i class="fa fa-envelope" title="<?php echo esc_attr_x( 'email', 'noun', 'unlimited' ); ?>"></i>
+							<i class="fas fa-envelope" title="<?php echo esc_attr_x( 'email', 'noun', 'unlimited' ); ?>"></i>
 							<span class="screen-reader-text"><?php echo esc_html_x('email', 'noun', 'unlimited'); ?></span>
-						</a>
-					</li>
-				<?php
-				} elseif ( $active_site == 'email_form' ) { ?>
-					<li>
-						<a class="contact-form" target="_blank"
-						   href="<?php echo esc_url( $url ); ?>">
-							<i class="fa fa-envelope-o" title="<?php esc_attr_e( 'contact form', 'unlimited' ); ?>"></i>
-							<span class="screen-reader-text"><?php echo esc_html( $active_site ); ?></span>
 						</a>
 					</li>
 				<?php
@@ -408,6 +437,14 @@ if ( ! function_exists( 'unlimited_social_icons_output' ) ) {
 						   href="<?php echo esc_url( $url, array( 'http', 'https', 'skype') ); ?>">
 							<i class="<?php echo esc_attr( $class ); ?>" title="<?php echo esc_attr( $active_site ); ?>"></i>
 							<span class="screen-reader-text"><?php echo esc_html( $active_site ); ?></span>
+						</a>
+					</li>
+				<?php } elseif ( $active_site == 'phone' ) { ?>
+					<li>
+						<a class="<?php echo esc_attr( $active_site ); ?>" target="_blank"
+								href="<?php echo esc_url( get_theme_mod( $active_site ), array( 'tel' ) ); ?>">
+							<i class="<?php echo esc_attr( $class ); ?>"></i>
+							<span class="screen-reader-text"><?php echo esc_html( $active_site );  ?></span>
 						</a>
 					</li>
 				<?php } else { ?>
@@ -504,7 +541,7 @@ if ( ! function_exists( 'unlimited_sticky_post_marker' ) ) {
 	function unlimited_sticky_post_marker() {
 
 		if ( is_sticky() && !is_archive() && !is_search() ) {
-			echo '<span class="sticky-status">' . __( "Featured Post", "unlimited" ) . '</span>';
+			echo '<span class="sticky-status">' . esc_html__( "Featured Post", "unlimited" ) . '</span>';
 		}
 	}
 }
@@ -567,13 +604,13 @@ if ( ! function_exists( 'unlimited_delete_settings_notice' ) ) {
 			if ( $_GET['unlimited_status'] == 'deleted' ) {
 				?>
 				<div class="updated">
-					<p><?php _e( 'Customizer settings deleted.', 'unlimited' ); ?></p>
+					<p><?php esc_html_e( 'Customizer settings deleted.', 'unlimited' ); ?></p>
 				</div>
 				<?php
 			} else if ( $_GET['unlimited_status'] == 'activated' ) {
 				?>
 				<div class="updated">
-					<p><?php printf( __( '%s successfully activated!', 'unlimited' ), wp_get_theme( get_template() ) ); ?></p>
+					<p><?php printf( esc_html__( '%s successfully activated!', 'unlimited' ), wp_get_theme( get_template() ) ); ?></p>
 				</div>
 				<?php
 			}
@@ -640,7 +677,7 @@ if ( ! function_exists( 'ct_unlimited_nav_dropdown_buttons' ) ) {
 		if ( $args->theme_location == 'primary' ) {
 
 			if ( in_array( 'menu-item-has-children', $item->classes ) || in_array( 'page_item_has_children', $item->classes ) ) {
-				$item_output = str_replace( $args->link_after . '</a>', $args->link_after . '</a><button class="toggle-dropdown" aria-expanded="false" name="toggle-dropdown"><span class="screen-reader-text">' . __( "open dropdown menu", "unlimited" ) . '</span></button>', $item_output );
+				$item_output = str_replace( $args->link_after . '</a>', $args->link_after . '</a><button class="toggle-dropdown" aria-expanded="false" name="toggle-dropdown"><span class="screen-reader-text">' . esc_html__( "open dropdown menu", "unlimited" ) . '</span></button>', $item_output );
 			}
 		}
 
@@ -677,3 +714,15 @@ if ( ! function_exists( 'ct_unlimited_modify_archive_descriptions' ) ) {
 	}
 }
 add_filter( 'get_the_archive_description', 'ct_unlimited_modify_archive_descriptions' );
+
+//----------------------------------------------------------------------------------
+// Output the markup for the optional scroll-to-top arrow 
+//----------------------------------------------------------------------------------
+function ct_unlimited_scroll_to_top_arrow() {
+	$setting = get_theme_mod('scroll_to_top');
+	
+	if ( $setting == 'yes' ) {
+		echo '<button id="scroll-to-top" class="scroll-to-top"><span class="screen-reader-text">'. __('Scroll to the top', 'unlimited') .'</span><i class="fa fa-arrow-up"></i></button>';
+	}
+}
+add_action( 'body_after', 'ct_unlimited_scroll_to_top_arrow');

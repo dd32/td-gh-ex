@@ -98,7 +98,7 @@ jQuery(document).ready(function($){
     objectFitAdjustment();
     toggleDropdownAccessibility();
         
-    $(window).resize(function(){
+    $(window).on('resize', function(){
         objectFitAdjustment();
         toggleDropdownAccessibility();
     });
@@ -123,10 +123,10 @@ jQuery(document).ready(function($){
     toggleDropdown.on('click', openDropdownMenu);
 
     /* allow keyboard access/visibility for dropdown menu items */
-    dropdownMenuItems.focus(function(){
+    dropdownMenuItems.on('focus', function(){
         $(this).parents('ul, li').addClass('focused');
     });
-    dropdownMenuItems.focusout(function(){
+    dropdownMenuItems.on('focusout', function(){
         $(this).parents('ul, li').removeClass('focused');
     });
 
@@ -353,6 +353,23 @@ jQuery(document).ready(function($){
         } else {
             toggleDropdown.attr('tabindex', 0);
         }
+    }
+
+    // ===== Scroll to Top ==== //
+
+    if ( $('#scroll-to-top').length !== 0 ) {
+        $(window).on( 'scroll', function() {
+            if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                $('#scroll-to-top').addClass('visible');    // Fade in the arrow
+            } else {
+                $('#scroll-to-top').removeClass('visible');   // Else fade out the arrow
+            }
+        });
+        $('#scroll-to-top').click(function(e) {      // When arrow is clicked
+            $('body,html').animate({
+                scrollTop : 0                       // Scroll to top of body
+            }, 600);
+        });
     }
 });
 
