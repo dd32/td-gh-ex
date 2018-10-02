@@ -1,41 +1,44 @@
 <?php
-/*
-============================================================================================================================
-Backdrop - backdrop/config/functions-setup.php
-============================================================================================================================
-This functions-setup.php template file allows you to add the basic features and functionality which as been preset to be used
-in this theme. Our goal is to set all the necessary add_theme_support(); for this theme to be used.
+/**
+ ************************************************************************************************************************
+ * Backdrop Core - functions-sidebars.php
+ ************************************************************************************************************************
+ * @package        Backdrop
+ * @copyright      Copyright (C) 2018. Benjamin Lu
+ * @license        GNU General Public License v2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
+ * @author         Benjamin Lu (https://benjlu.com)
+ ************************************************************************************************************************
+ */
 
-@package        White Spektrum WordPress Theme
-@copyright      Copyright (C) 2014-2018. Benjamin Lu
-@license        GNU General Public License v2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (https://benjlu.com)
-============================================================================================================================
-*/
+/**
+ ************************************************************************************************************************
+ * namespace define
+ ************************************************************************************************************************
+ */
 namespace Benlumia007\Backdrop\Config;
 
-/*
-============================================================================================================================
-Table of Content
-============================================================================================================================
- 1.0 - Theme Setup
-============================================================================================================================
-*/
+/**
+ ************************************************************************************************************************
+ * Table of Content
+ ************************************************************************************************************************
+ *  1.0 - Config (Sidebars)
+ ************************************************************************************************************************
+ */
 
-/*
-============================================================================================================================
- 1.0 - Theme Setup
-============================================================================================================================
-*/
+/**
+ ************************************************************************************************************************
+ *  1.0 - Config (Sidebars)
+ ************************************************************************************************************************
+ */
 function register_sidebars() {
-    /*
-    ========================================================================================================================
-    Enable and activate primary sidebar which should only display in the posts/archives/search.
-    ========================================================================================================================
+    /**
+     ********************************************************************************************************************
+     * Primary Sidebar
+     ********************************************************************************************************************
      */
     register_sidebar(array(
-        'name'          => esc_html__('Primary Sidebar', 'backdrop'),
-        'description'   => esc_html__('Add widgets here to appear in your sidebar on Blog Posts and Archives only', 'backdrop'),
+        'name'          => esc_html__( 'Primary Sidebar', 'backdrop' ),
+        'description'   => esc_html__( 'Add widgets here to appear in your sidebar on Blog Posts and Archives only', 'backdrop' ),
         'id'            => 'primary-sidebar',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
@@ -43,14 +46,14 @@ function register_sidebars() {
         'after_title'   => '</h2>',
     ));
 
-    /*
-    ========================================================================================================================
-    Enable and activate secondary sidebar which should only display in pages
-    ========================================================================================================================
+    /**
+     ********************************************************************************************************************
+     * Secondary Sidebar
+     ********************************************************************************************************************
      */
     register_sidebar(array(
-        'name'          => esc_html__('Secondary Sidebar', 'backdrop'),
-        'description'   => esc_html__('Add widgets here to appear in your sidebar on Blog Posts and Archives only', 'backdrop'),
+        'name'          => esc_html__( 'Secondary Sidebar', 'backdrop' ),
+        'description'   => esc_html__( 'Add widgets here to appear in your sidebar on Pages only', 'backdrop' ),
         'id'            => 'secondary-sidebar',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',
@@ -58,14 +61,14 @@ function register_sidebars() {
         'after_title'   => '</h2>',
     ));
 
-    /*
-    ========================================================================================================================
-    Enable and activate custom sidebar which should only display in custom templates
-    ========================================================================================================================
+    /**
+     ********************************************************************************************************************
+     * Custom Sidebar
+     ********************************************************************************************************************
      */
     register_sidebar(array(
-        'name'          => esc_html__('Custom Sidebar', 'backdrop'),
-        'description'   => esc_html__('Add widgets here to appear in your sidebar on Blog Posts and Archives only', 'backdrop'),
+        'name'          => esc_html__( 'Custom Sidebar', 'backdrop' ),
+        'description'   => esc_html__( 'Add widgets here to appear in your sidebar on custom pages only', 'backdrop' ),
         'id'            => 'custom-sidebar',
         'before_widget' => '<aside id="%1$s" class="widget %2$s">',
         'after_widget'  => '</aside>',

@@ -1,188 +1,69 @@
-White Spektrum WordPress Theme
-================================================================================================
-Contributor: benlumia007
-Tags: custom-background, custom-header, right-sidebar
-Requres at least: 4.5
-Tested up to: 4.9.8
-Stable tag: 1.0.2
+=== White Spektrum ===
+Contributors: benlumia007
+Requires at least: 4.9.6
+Tested up to WordPress.4.9.8
+Version: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: grid-layout, left-sidebar, one-column, right-sidebar, two-columns, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
-White Spektrum WordPress Theme, Copyright (C) 2016, Benjamin Lu
-White Spektrum is distributed under the terms of the GNU GPL
+== Description ==
+White Spektrum is a starter theme.
 
-White Spektrum is a standard design with responsive capability.
+== Installation ==
+1.0 - In your admin panel when logged in, go to Appearance -> Themes and click the Add New button.
+2.0 - Click on Upload and Choose File, then select the theme's zip file and click Install Now.
+3.0 - Once theme is installed, click on Activate to begin using this theme.
 
+== Customizer ==
+1.0 - In your admin panel, go to Appearance -> Customize
+2.0 - List of different types of features that you can modify such awesome
+      - Site Title Tagline
+        - The ability to hide Display Header Text if needed
+      - Header Image
+        - Remove Header Image will show the default header image
+      - Mobile Menu
+        - The Mobile Menu is slightly different from other themes. I have created a mobile menu that is at 
+          the bottom left corner that helps users to navigation easier. The reason why is that 90% of users 
+          when using their device, their hands are always at the bottom of the screen which kind of makes 
+          the mobile menu more sense to have it at the bottom left corner. The Menu itself when is not set, 
+          the Site Title and Tagline will move to the center, if set, the Site Title and Tagline will move
+          to the left while the menu is at the right side.
+      - Static Front Page
+        - Front Page
+        - Blog Page
 
-Installation
-================================================================================================
-1. In your admin panel, go to Appearance -> Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's ZIP file. Click Install Now.
-3. Click Activate to use your new theme right away.
+== Frequent Asked Questions ==
+Not Available at this time
 
-Customizer
-================================================================================================
-1. In your admin panel, go to Appearance -> Customize
-2. List of different types that you can modify such as
-   - Site Title Tagline
-      - Hide Display Header Text (this will hide the entire header with header text)
-3. Mobile Menu
-   - The Mobile Menu is slightly different from other themes. I have created a mobile menu that is
-     at the bottom left corner that helps users to navigation easier. The reason why is that 90% of
-     users when using their device, their hands are always at the bottom of the screen which kind of
-     makes the mobile menu more sense to have it at the bottom left corner. The Menu itself when is not
-     set, the Site Title and Tagline will move to the center, if set, the Site Title and Tagline will move
-     to the left while the menu is at the right side.
-4. Header Image
-   - Add Header Image
-   - Remove Header Image (When removing a header image, the default image will display).
-5. Layouts Supports
-   - Post Layouts
-   - Page layouts
-   - Custom Layouts
-   - Archive Layouts
-   The Layout Supports gives the user the ability to change their layouts if they choose to do so.
-6. Static Front Page
-   - Front Page
-   - Blog
+== Upgrade Notice ==
+I would recommended to upgrade at this time. White Spektrum has been modified where is now using a framework to display its content. Starting at 1.0.0 is the major update. 
 
+== Changelog ==
+Version: 1.0.2
+- New Framework installed
+- Everything should be the same
 
-Description
-================================================================================================
-White Spektrum is a fully responsive WordPress theme that looks great on smartphones and tablets. 
-Custom Background, Custom Header is now available so that you can choose more features for this theme. 
-This theme also supports new features that allows you to choose different layouts from blog layout, page 
-layout and custom layout if you choose to use sidebars or no sidebars.
+Version 1.0.1 and lower
+- Not to worried about it.
 
+== Resources ==
+Font Awesome (Version: 4.7)
+Created By: Fonticons, Inc
+License: SIL OFL 1.1 and MIT License
+Source: (https://fontawesome.com/)
 
-Frequently Asked Questions
-================================================================================================
-Why does the theme look slightly different form the original?
-As a developer, will need to keep up with the standard practice throughout the years active on 
-WordPress.org. I didn't know much about coding or standard when I started, but throughout the years,
-I have improved my understanding so that I can make this theme better. 
-
-
-
-
-Changelog
-================================================================================================
-Version: 1.0.2 
-- testing environment with .gitignore and .gitattributes included
-
-Version: 1.0.1
-- changed backdrop to vendor/benlumia007/backdrop-core
-
-Version: 1.0
-- Major Haul
-- Use Backdrop Framework (Created By: Benjamin Lu)
-
-Version: 0.3.0
-- Small Changes to some CSS Classes.
-
-Version: 0.2.9
-- Minor Changes
-
-Version: 0.2.8
-- Minor Changes
-
-Version: 0.2.7
-- Minor Changes
-
-Version: 0.2.6
-- Minor Changes
-
-Version: 0.2.5
-- Major Changes to the layout
-- Adjusted a few styles and files.
-- Added and Fixed Customizer for layouts
-
-Version: 0.2.4
-- Major Changes to the layout
-
-Version: 0.2.3
-- Major Changes to the layout
-
-Version: 0.2.2
-- Changed Theme URI
-- Changed Author URI
-
-Verson: 0.2.1
-- Minor Changes
-
-Version: 0.2.0
-- Render and Fix Navigtion CSS for Smartphone and Tablet and Desktop Mode.
-
-Version: 0.1.9
-- Fixe Bugs
-
-Version: 0.1.6 
-- Minor Change
-
-Version: 0.1.5
-- Minor Fixed Bugs
-
-Version: 0.1.4
-- Minor Change
-
-Version: 0.1.3
-- Fixed Bugs
-
-Version: 0.1.2
-- Fixed Bugs
-
-Version: 0.1.1
-- Minor Fixed
-
-Version: 0.1.0 
-- Render New CSS
-Version: 0.0.9
-- Fixed Bugs
-
-Version: 0.0.8
-- Minor CSS Changed
-
-Version: 0.0.7
--Fixed Bugs
-
-Version: 0.0.6
-- Fixed Bugs
-
-Version: 0.0.5
-- Rendered New CSS
-
-Version: 0.0.4
-- Initial Release
-
-Version: 0.0.3
-- Fixed Bugs
-- Minor Changes
-- Add New Tags
-
-Version: 0.0.2
-- Rendered New CSS
-
-Version: 0.0.1
-- Initial Release
-
-
-Upgrade Notice
-================================================================================================
-Not Available At the Moment
-
-
-Resources
-================================================================================================
-Font Awesome by Dave Gandy - http://fontawesome.io
-Font Awesome licensed under SIL OFL 1.1 Â· Code licensed under MIT License
-Source: http://fortawesome.github.io/Font-Awesome/
-
-Merriweather Sans (Google Font)
+Merriweather (Google Font)
 Designer: Sorkin Type
 License: Sil Open Font License
-Source: https://fonts.google.com/specimen/Merriweather+Sans
+Source: https://fonts.google.com/specimen/Merriweather
 
-Sanchez (Google Font)
-Designer: Daniel Hernandez
+Fira Sans (Google Font)
+Designer: Carrois Apostrophe
 License: Sil Open Font License
-Source: https://fonts.google.com/specimen/Sanchez
+Source: https://fonts.google.com/specimen/Fira+Sans
+
+Dimhou (https://pixabay.com/en/users/Dimhou-5987327/)
+Source: https://pixabay.com/en/sea-water-quiet-horizon-landscape-3652697/
+License: https://pixabay.com/en/service/terms/#usage
+===========================================================================================================

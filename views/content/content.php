@@ -1,16 +1,14 @@
-<?php
-/*
-============================================================================================================================
-Silver Quantum - content.php
-============================================================================================================================
-This content.php is the main content that will be displayed when is on front page, home or index.
-
-@package        Silver Quantum WordPress Theme
-@copyright      Copyright (C) 2014-2018. Benjamin Lu
-@license        GNU General Public License v2 or later (http://www.gnu.org/licenses/gpl-2.0.html)
-@author         Benjamin Lu (https://benjlu.com/)
-============================================================================================================================
-*/
+<?php 
+/**
+ ************************************************************************************************************************
+ * White Spektrum - content.php
+ ************************************************************************************************************************
+ * @package     White Spektrum
+ * @copyright   Copyright (C) 2014-2018. Benjamin Lu
+ * @license     GNU General Public License v2 or later (https://www.gnu.org/licenses/gpl-2.0.html)
+ * @author      Benjamin Lu (https://benjlu.com)
+ ************************************************************************************************************************
+ */
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <?php Benlumia007\Backdrop\Entry\display_entry_post_thumbnail(); ?>

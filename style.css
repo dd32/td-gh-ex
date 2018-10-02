@@ -1,331 +1,92 @@
-/*
-============================================================================================================================
-White Spektrum - style.css
-============================================================================================================================
-Theme Name:     White Spektrum
-Theme URI:      https://benjlu.com/portfolio/white-spektrum
-Author:         Benjamin Lu
-Author URI:     https://benjlu.com
-Description:    White Spektrum has been converted into a responsive theme that looks great on smartphones and tablets. This theme offers several features such as custom header, left and right sidebars, featured images and more. The Mobile Menu is slightly different from other themes. The mobile menu has been created at the bottom left corner that helps users to navigation easier.
-License:        GNU General Public License v2.0 or later
-License URI:    https://www.gnu.org/licenses/gpl-2.0.html
-Tags:           grid-layout, left-sidebar, one-column, two-columns, custom-background, custom-header, custom-logo, threaded-comments, blog
-Version:        1.0.2
-Text Domain:    white-spektrum
-============================================================================================================================
-*/
+/**
+ ************************************************************************************************************************
+ * White Spektrum - style.css
+ ************************************************************************************************************************
+ * Theme Name:      White Spektrum
+ * Theme URI:       https://benjlu.com/portfolio/white-spektrum
+ * Author:          Benjamin Lu
+ * Author URI:      https://benjlu.com
+ * Description:     Initiator is a starter theme that uses backdrop-core that automatically loads your theme with all the features needed.
+ * License:         GNU General Public License v2.0 or later
+ * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
+ * Tags:            grid-layout, left-sidebar, one-column, right-sidebar, two-columns, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
+ * Version:         1.0.3
+ * Text Domain:     white-spektrum
+ ************************************************************************************************************************
+ */
 
-/*
-============================================================================================================================
-Danger Zone
-============================================================================================================================
-Please do not make any modifications directly to this file nor any files within the theme, you will lose all modifictions
-when the theme is next updated if you do so. Please consider using a child theme based on this theme so that all of your 
-modifications will be save when the theme is updated. This theme's styles will automatically loaded for you when you activate
-this theme.
-============================================================================================================================
-*/
+/**
+ ************************************************************************************************************************
+ * Danger Zone
+ ************************************************************************************************************************
+ * Please do not make any modifications directly to this file nor any files within the theme, you will lose all modifications
+ * when the theme is next updated. Please consider using a child theme based on this theme so that all of your modifications
+ * wil be saved when the theme is updated. This theme's styles will automatically loaded for you when you activate this theme.
+ ************************************************************************************************************************
+ */
 
-/*
-============================================================================================================================
-Table of Content
-============================================================================================================================
- 1.0 - Typography
- 2.0 - Elements
- 3.0 - Forms
- 4.0 - Alignments
- 5.0 - Accessibility
- 6.0 - Clearings
- 7.0 - Basic Structure (Header)
- 8.0 - Basic Structure (Content)
- 9.0 - Basic Structure (Aside)
-10.0 - Basic Structure (Footer)
-11.0 - Navigation (Links)
-12.0 - Navigation (Primary Navigation)
-13.0 - Navigation (Secondary Navigation)
-14.0 - Navigation (Pagination Navigation)
-15.0 - Navigation (Social Navigation)
-16.0 - Content (Posts and Pages)
-17.0 - Content (Comments)
-18.0 - Content (Archives)
-19.0 - Content (Search and 404)
-20.0 - Content (Post Formats)
-21.0 - Widgets
-22.0 - Captions
-23.0 - Galleries
-24.0 - Media Queries (Mobile Small 30em (480px))
-25.0 - Media Queries (Mobile Medium 37.5em (600px))
-26.0 - Media Queries (Mobile Large 41.688em (667px))
-27.0 - Media Queries (Mobile Extra Large 46em (736px))
-28.0 - Media Queries (Tablet Small 48em (768px))
-29.0 - Media Queries (Tablet Medium 64em (1024px))
-30.0 - Media Queries (Tablet Large 73.125em (1170px))
-============================================================================================================================
-*/
+/**
+ ************************************************************************************************************************
+ *  Table of Content
+ ************************************************************************************************************************
+ *  1.0 - Typography
+ *  2.0 - Elements
+ *  3.0 - Forms
+ *  4.0 - Clearings
+ *  5.0 - Navigation (Primary)
+ *  6.0 - Navigation (Secondary)
+ *  7.0 - Navigation (Pagination)
+ *  8.0 - Navigation (Social)
+ *  9.0 - Basic Strucutre (Header)
+ * 10.0 - Basic Structure (Content)
+ * 11.0 - Basic Structure (Aside)
+ * 12.0 - Basic Structure (Footer)
+ * 13.0 - Content (Posts and Pages)
+ * 14.0 - Content (Comments)
+ * 15.0 - Content (Archives)
+ * 16.0 - Content (Search and 404)
+ * 17.0 - Content (Post Formats)
+ * 18.0 - Widgets
+ * 19.0 - Media Queries (Mobile Small 30em (480px))
+ * 20.0 - Media Queries (Mobile Small 37.5em (600px))
+ * 21.0 - Media Queries (Mobile Medium 48.688em (667px))
+ * 22.0 - Media Queries (Mobile Large 46em (736px))
+ * 23.0 - Media Queries (Tablet Small 48em (768px))
+ * 24.0 - Media Queries (Tablet Large 64em (1024px))
+ * 25.0 - Media Queries (Desktop 73.125em 1170px))
+ ************************************************************************************************************************
+ */
 
-/*
-============================================================================================================================
- 1.0 - Typography
-============================================================================================================================
-*/
-h1 { 
-    display: block;
-    font-family: 'Fira Sans', serif;
-    font-size: 2em;
-    font-weight: 700;
-    margin: 0.67em 0;
-}
+ /**
+ ************************************************************************************************************************
+ *  1.0 - Typography
+ ************************************************************************************************************************
+ */
 
-h2 {
-    display: block;
-    font-family: 'Fira Sans', serif;
-    font-size: 1.5em;
-    font-weight: 700;
-    margin: 0.83em 0;
-}
+ /**
+ ************************************************************************************************************************
+ *  2.0 - Elements
+ ************************************************************************************************************************
+ */
 
-h3 { 
-    display: block;
-    font-family: 'Fira Sans', serif;
-    font-size: 1.17em;
-    font-weight: 700;
-    margin: 1em 0;
-}
+ /**
+ ************************************************************************************************************************
+ *  3.0 - Forms
+ ************************************************************************************************************************
+ */
 
-h4 { 
-    display: block;
-    font-family: 'Fira Sans', serif;
-    font-size: 1em;
-    font-weight: 700;
-    margin: 1.33em 0;
-}
+ /**
+ ************************************************************************************************************************
+ *  4.0 - Clearings
+ ************************************************************************************************************************
+ */
 
-h5 { 
-    display: block;
-    font-family: 'Fira Sans', serif;
-    font-size: .83em;
-    font-weight: 700;
-    margin: 1.67em 0;
-}
-
-h6 { 
-    display: block;
-    font-family: 'Fira Sans', serif;
-    font-size: .67em;
-    font-weight: 700;
-    margin: 2.33em 0;
-}
-
-/*
-============================================================================================================================
- 2.0 - Elements
-============================================================================================================================
-*/
-html {
-    box-sizing: border-box;
-}
-
-*,
-*:before,
-*:after { 
-	box-sizing: inherit;
-}
-
-body {
-    font-family: 'Merriweather', serif;
-}
-
-img {
-    height: auto;
-    max-width: 100%;
-}
-
-figure {
-    margin: 0;
-}
-
-/*
-============================================================================================================================
- 3.0 - Forms
-============================================================================================================================
-*/
-
-/*
-============================================================================================================================
- 4.0 - Alignments
-============================================================================================================================
-*/
-.alignleft {
-	float: left;
-	margin-right: 1.5em;
-}
-
-.alignright {
-	float: right;
-	margin-left: 1.5em;
-}
-
-.aligncenter {
-	clear: both;
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-}
-
-/*
-============================================================================================================================
- 5.0 - Accessibility
-============================================================================================================================
-*/
-.screen-reader-text {
-    clip: rect(0.063em, 0.063em, 0.063em, 0.063em);
-    height: 0.063em;
-    overflow: hidden;
-    position: absolute !important;
-    width: 0.063em;
-}
-
-.screen-reader-text:focus {
-    background: #f1f1f1;
-    border-radius: 0.188em;
-    box-shadow: 0 0 0.125em 0.125em;
-    clip: auto !important;
-    color: #21759b;
-    display: block;
-    font-size: 0.875em;
-    font-weight: bold;
-    height: auto;
-    left: 5px;
-    line-height: normal;
-    padding: 0.938em 1.5em 0.938em;
-    text-decoration: none;
-    top: 5px;
-    width: auto;
-    z-index: 100000;
-}
-
-/*
-============================================================================================================================
- 6.0 - Clearings
-============================================================================================================================
-*/
-.site-container:before,
-.site-container:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.main-navigation:before,
-.main-navigation:after,
-.post-navigation:before,
-.post-navigation::after,
-.posts-navigation:before,
-.posts-navigation:after,
-.comments-area:before,
-.comments-area:after,
-.comment-form:before,
-.comment-form:after {
-    clear: both;
-    content: "";
-    display: table;
-}
-
-/*
-============================================================================================================================
- 7.0 - Basic Structure (Header)
-============================================================================================================================
-*/
-.site-container {
-    background: #ffffff;
-    margin: 0 auto;
-    max-width: 1170px;
-}
-
-.site-branding {
-    padding: 1.125em;
-    text-align: center;
-}
-
-.site-branding .site-title,
-.site-branding .site-description {
-    margin: 0;
-    padding: 0;
-}
-
-.site-branding .site-title a {
-    font-size: 1.250em;
-    text-decoration: none;
-}
-
-.wp-custom-header {
-    margin: 1.125em 0;
-}
-/*
-============================================================================================================================
- 8.0 - Basic Structure (Content)
-============================================================================================================================
-*/
-.left-sidebar .content-area {
-    float: right;
-    width: 71.604938272%;
-}
-
-.right-sidebar .content-area {
-    float: left;
-    width: 71.604938272%;
-}
-
-/*
-============================================================================================================================
- 9.0 - Basic Structure (Aside)
-============================================================================================================================
-*/
-.left-sidebar .widget-area {
-    float: left;
-    width: 25.485008818%;
-}
-
-.right-sidebar .widget-area {
-    float: right;
-    width: 25.485008818%;
-}
-
-/*
-============================================================================================================================
-10.0 - Basic Structure (Footer)
-============================================================================================================================
-*/
-.site-footer {
-    padding: 0.5em;
-    text-align: center;
-}
-
-.site-info {
-    font-size: 0.875em;
-    line-height: 1.5em;
-}
-
-/*
-============================================================================================================================
-11.0 - Navigation (Links)
-============================================================================================================================
-*/
-a {
-    color: #111111;
-    text-decoration: none;
-}
-
-a:hover,
-a:focus {
-    color: #999999;
-}
-
-/*
-============================================================================================================================
-12.0 - Navigation (Primary Navigation)
-============================================================================================================================
-*/
-.primary-navigation {
+ /**
+ ************************************************************************************************************************
+ *  5.0 - Navigation (Primary)
+ ************************************************************************************************************************
+ */
+ .primary-navigation {
     display: block;
     width: 100%;
 }
@@ -486,172 +247,109 @@ a:focus {
 	text-decoration: underline;
 }
 
-/*
-============================================================================================================================
-13.0 - Navigation (Secondary Navigation)
-============================================================================================================================
-*/
 
-/*
-============================================================================================================================
-14.0 - Navigation (Pagination Navigation)
-============================================================================================================================
-*/
-.pagination {
-    margin: 1.125em 0;
-    text-align: center;
-}
+ /**
+ ************************************************************************************************************************
+ *  6.0 - Navigation (Secondary)
+ ************************************************************************************************************************
+ */
 
-.page-numbers {
-    background: #ffffff;
-    border: 0.063em solid #c3c3c3;
-    color: #333333;
-	display: inline-block;
-	padding: 0.5em 1em;
-	text-decoration: none;
-}
+ /**
+ ************************************************************************************************************************
+ *  7.0 - Navigation (Pagination)
+ ************************************************************************************************************************
+ */
 
-.page-numbers:hover {
-	background: #000;
-	color: #fff;
-	border-color: #000;
-}
+ /**
+ ************************************************************************************************************************
+ *  8.0 - Navigation (Social)
+ ************************************************************************************************************************
+ */
 
-.page-number:hover a {
-    color: #ffffff;
-}
+ /**
+ ************************************************************************************************************************
+ *  9.0 - Basic Strucutre (Header)
+ ************************************************************************************************************************
+ */
+ .site-container {
+     margin: 0 auto;
+     max-width: 73.125em;
+ }
 
-.page-numbers.current {
-    background: #000000;
-    color: #ffffff;
-}
+ .site-branding {
+     padding: 1.125em;
+     text-align: center;
+ }
 
-.page-links > a {
-    border: 0.063em solid #999999;
-    padding: 0.5em 1em;
-    text-decoration: none;
-}
+ .site-branding .site-title,
+ .site-branding .site-description {
+     margin: 0;
+     padding: 0;
+ }
 
-.page-links > a:hover {
-    background: #000000;
-    color: #ffffff;
-}
+ .site-branding .site-title a {
+    font-size: 1.313em;
+ }
 
-.page-links > span {
-    background: #000000;
-    border: 0.063em solid #666666;
-    color: #ffffff;
-    padding: 0.5em 1em;
-}
+ .wp-custom-header {
+     margin-top: 1.125em;
+ }
 
-.posts-navigation,
-.post-navigation {
-    clear: both;
-}
+ .site-content {
+     margin: 1.125em;
+ }
 
-.posts-navigation .nav-links .nav-previous,
-.post-navigation .nav-links .nav-previous {
-    float: left;
-    margin: 0.5em 0;
-}
-
-.posts-navigation .nav-links .nav-next,
-.post-navigation .nav-links .nav-next {
+ /**
+ ************************************************************************************************************************
+ * 10.0 - Basic Structure (Content)
+ ************************************************************************************************************************
+ */
+ .left-sidebar .content-area {
     float: right;
-    margin: 0.5em 0;
+    width: 71.604938272%;
 }
 
-.posts-navigation .nav-links .nav-previous .post-previous,
-.post-navigation .nav-links .nav-previous .post-previous {
-    display: block;
-    font-size: 0.9375em;
-    font-weight: 700;
-    text-align: left;
+.right-sidebar .content-area {
+    float: left;
+    width: 71.604938272%;
 }
 
-.posts-navigation .nav-links .nav-next .post-next,
-.post-navigation .nav-links .nav-next .post-next {
-    display: block;
-    font-size: 0.9375em;
-    font-weight: 700;
-    text-align: right
+ /**
+ ************************************************************************************************************************
+ * 11.0 - Basic Structure (Aside)
+ ************************************************************************************************************************
+ */
+ .left-sidebar .widget-area {
+    float: left;
+    width: 25.485008818%;
 }
 
-.posts-navigation .nav-links .nav-previous .post-title,
-.post-navigation .nav-links .nav-previous .post-title {
-    font-size: 0.813em;
+.right-sidebar .widget-area {
+    float: right;
+    width: 25.485008818%;
 }
 
-.posts-navigation .nav-links .nav-next .post-title,
-.post-navigation .nav-links .nav-next .post-title {
-    font-size: 0.813em;
-}
-
-.link-pages {
-    text-align: center; 
-}
-
-/*
-============================================================================================================================
-15.0 - Navigation (Social Navigation)
-============================================================================================================================
-*/
-.site-social {
-    margin: 0;
-}
-
-.menu-social ul {
+ /**
+ ************************************************************************************************************************
+ * 12.0 - Basic Structure (Footer)
+ ************************************************************************************************************************
+ */
+ .site-footer {
+    padding: 0.5em;
     text-align: center;
-    list-style: none;
 }
 
-.menu-social ul li {
-    position: relative;
-    display:  inline-block;
+.site-info {
+    font-size: 0.875em;
+    line-height: 1.5em;
 }
 
-.menu-social li a:before {
-    color: #000000;
-    content: '\f08e';
-    display: inline-block;
-    font-family: 'fontawesome';
-    font-size: 1.625em;
-    padding: 0 0.375em;
-    vertical-align: top;
-    -webkit-font-smoothing: antialiased;
-}
-
-.menu-social li a[href*="dribbble.com"]::before { content: '\f17d'; }
-.menu-social li a[href*="facebook.com"]::before { content: '\f230'; }
-.menu-social li a[href*="flickr.com"]::before { content: '\f16e'; }
-.menu-social li a[href*="foursquare.com"]::before { content: '\f180'; }
-.menu-social li a[href*="github.com"]::before { content: '\f09b'; }
-.menu-social li a[href*="plus.google.com"]::before { content: '\f0d5'; }
-.menu-social li a[href*="instagram.com"]::before { content: '\f16d'; }
-.menu-social li a[href*="jsfiddle.com"]::before { content: '\f1cc'; }
-.menu-social li a[href*="linkedin.com"]::before { content: '\f0e1'; }
-.menu-social li a[href*="pinterest.com"]::before { content: '\f0d2'; }
-.menu-social li a[href*="reddit.com"]::before { content: '\f1a1'; }
-.menu-social li a[href*="soundcloud.com"]::before { content: '\f1be'; }
-.menu-social li a[href*="stackoverflow.com"]::before { content: '\f16c'; }
-.menu-social li a[href*="tumblr.com"]::before { content: '\f173'; }
-.menu-social li a[href*="twitter.com"]::before { content: '\f099'; }
-.menu-social li a[href*="vimeo.com"]::before { content: '\f194'; }
-.menu-social li a[href*="vine.co"]::before { content: '\f1ca'; }
-.menu-social li a[href*="yelp.com"]::before { content: '\f1e9'; }
-.menu-social li a[href*="youtube.com"]::before { content: '\f167'; }
-.menu-social li a[href*="wordpress.org"]::before { content: '\f19a'; }
-
-.menu-items {
-    margin: 0;
-}
-
-/*
-============================================================================================================================
-16.0 - Content (Posts and Pages)
-============================================================================================================================
-*/
-.content-area .post:after {
+ /**
+ ************************************************************************************************************************
+ * 13.0 - Content (Posts and Pages)
+ ************************************************************************************************************************
+ */
+ .content-area .post:after {
     border: 0.063em solid #eeeeee;
     content: "";
     display: block;
@@ -735,12 +433,12 @@ a:focus {
     
 }
 
-/*
-============================================================================================================================
-17.0 - Content (Comments)
-============================================================================================================================
-*/
-.comments-area {
+ /**
+ ************************************************************************************************************************
+ * 14.0 - Content (Comments)
+ ************************************************************************************************************************
+ */
+ .comments-area {
     margin: 1.125em 0;    
 }
 
@@ -984,260 +682,221 @@ p.comment-awaiting-moderation {
     margin-right: 0.250em;
 }
 
-/*
-============================================================================================================================
-18.0 - Content (Archives)
-============================================================================================================================
-*/
-.archive-header {
-    margin-bottom: 2em;
+ /**
+ ************************************************************************************************************************
+ * 15.0 - Content (Archives)
+ ************************************************************************************************************************
+ */
+ .archive-header {
     text-align: center;
-}
+ }
 
-.archive-title {
-    font-size: 2.250em;
-    margin: 0 0 0.063em 0;
-    padding: 0;
-}
-
-/*
-============================================================================================================================
-19.0 - Content (Search and 404)
-============================================================================================================================
-*/
-
-/*
-============================================================================================================================
-20.0 - Content (Post Formats)
-============================================================================================================================
-*/
-
-/*
-============================================================================================================================
-21.0 - Widgets
-============================================================================================================================
-*/
-.widget-area .search-form:before,
-.widget-area .search-form:after {
-    clear: both;
+ .archive-header:after {
+    border: 0.063em solid #eeeeee;
     content: "";
-    display: table;
-}
+    display: block;
+    margin: 2em auto 2.250em  auto;
+    width: 300px;
+ }
 
-.widget-area .search-form {
-    padding: 0.938em;
-    background: #555;
-    max-width: 100%;
-}
-
-.widget-area .search-field {
-    border: none;
-    float: left;
-    font-family: 'Merriweather', serif;
-    font-size: 1em;
-    padding: 0.563em;
-    width: 100%;
-}
-
-.widget-area .search-submit {
-    border: none;
-    background: #d88f3c;
-    color: #ffffff;
-    float: right;
-    font-family: 'Merriweather', serif;
-    font-size: 1em;
-    display: none;
-    padding: 0.5em;
-    position: relative;
-    width: 30%;
-}
-
-.widget-area .widget {
-    margin-bottom: 2.250em;
-    font-size: 0.875em;
-}
-
-.widget ul,
-.widget ol {
-    list-style-type: none;
-    margin: 0;
+ .archive-header .archive-title {
+    margin : 0;
     padding: 0;
 }
 
-.widget li {
-    margin: 0.4em 0 0 0;
-}
+ /**
+ ************************************************************************************************************************
+ * 16.0 - Content (Search and 404)
+ ************************************************************************************************************************
+ */
 
-.widget li li {
-    margin-left: 1.125em;
-}
+ /**
+ ************************************************************************************************************************
+ * 17.0 - Content (Post Formats)
+ ************************************************************************************************************************
+ */
 
-.widget select {
-    font-family: 'Merriweather', serif;
-    margin: 0.625em 0;
-    padding: 0.5em;
-    width: 100%;
-}
+ /**
+ ************************************************************************************************************************
+ * 18.0 - Widgets
+ ************************************************************************************************************************
+ */
+ .widget-area .search-form:before,
+ .widget-area .search-form:after {
+     clear: both;
+     content: "";
+     display: table;
+ }
+ 
+ .widget-area .search-form {
+     padding: 0.938em;
+     background: #555;
+     max-width: 100%;
+ }
+ 
+ .widget-area .search-field {
+     border: none;
+     float: left;
+     font-family: 'Merriweather', serif;
+     font-size: 1em;
+     padding: 0.563em;
+     width: 100%;
+ }
+ 
+ .widget-area .search-submit {
+     border: none;
+     background: #d88f3c;
+     color: #ffffff;
+     float: right;
+     font-family: 'Merriweather', serif;
+     font-size: 1em;
+     display: none;
+     padding: 0.5em;
+     position: relative;
+     width: 30%;
+ }
+ 
+ .widget-area .widget {
+     margin-bottom: 2.250em;
+     font-size: 0.875em;
+ }
+ 
+ .widget ul,
+ .widget ol {
+     list-style-type: none;
+     margin: 0;
+     padding: 0;
+ }
+ 
+ .widget li {
+     margin: 0.4em 0 0 0;
+ }
+ 
+ .widget li li {
+     margin-left: 1.125em;
+ }
+ 
+ .widget select {
+     font-family: 'Merriweather', serif;
+     margin: 0.625em 0;
+     padding: 0.5em;
+     width: 100%;
+ }
+ 
+ .widget.widget_post_thumbnail {
+     padding-bottom: 0;
+ }
+ 
+ .widget-title {
+     margin: 0 0 0.5em 0;
+ }
+ 
+ .rss-widget-icon {
+     display: none;
+ }
+ 
+ .rsswidget {
+     display: block;
+ }
+ 
+ .widget_rss cite {
+     display: block;
+     font-size: 0.875em;
+     font-weight: 700;
+     margin-bottom: 1.125em;
+ }
+ 
+ .widget-area table {
+     border-collapse: collapse;
+     width: 100%;
+ }
+ 
+ .widget-area tr:nth-of-type(odd) {
+     background: #eeeeee;
+ }
+ 
+ .widget-area th {
+     background: #333333;
+     color: #ffffff;
+     font-weight: 700;
+ }
+ 
+ .widget-area th, td {
+     border: 0.063em solid #cccccc;
+     text-align: left;
+     padding: 0.438em;
+ }
+ 
+ .rss-date {
+     font-size: 0.875em;
+ }
+ 
+ .rssSummary {
+     margin-top: 10px;
+ }
+ 
+ #wp-calendar table {
+     border-collapse: collapse;
+     width: 100%;
+ }
+ 
+ #wp-calendar tr:nth-of-type(odd) {
+     background: #eeeeee;
+ }
+ 
+ #wp-calendar th {
+     background: #999999;
+     color: #ffffff;
+     font-weight: 700;
+     text-align: center;
+ }
+ 
+ #wp-calendar th,
+ #wp-calendar td {
+     border: 0.063em solid #cccccc;
+     padding: 0.438em;
+     text-align: center;
+ }
+ 
+ #wp-calendar {
+     border: 0.063em solid #cccccc;
+     margin-bottom: 0;
+     text-align: center;
+     width: 100%;
+ }
+ 
+ #wp-calendar a {
+     color: #1d1d1d;
+     font-weight: 700;
+ }
+ 
+ #wp-calendar caption {
+     font-weight: 700;
+     margin: 5px 0;
+     text-align: center;
+ }
+ 
+ #wp-calendar #today {
+     background: #cccccc;
+     font-weight: 700;
+ }
+ 
+ .textwidget {
+     line-height: 1.6em;
+ }
 
-.widget.widget_post_thumbnail {
-    padding-bottom: 0;
-}
+ /**
+ ************************************************************************************************************************
+ * 19.0 - Media Queries (Mobile Small 30em (480px))
+ ************************************************************************************************************************
+ */
 
-.widget-title {
-    margin: 0 0 0.5em 0;
-}
-
-.rss-widget-icon {
-    display: none;
-}
-
-.rsswidget {
-    display: block;
-}
-
-.widget_rss cite {
-    display: block;
-    font-size: 0.875em;
-    font-weight: 700;
-    margin-bottom: 1.125em;
-}
-
-.widget-area table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-.widget-area tr:nth-of-type(odd) {
-    background: #eeeeee;
-}
-
-.widget-area th {
-    background: #333333;
-    color: #ffffff;
-    font-weight: 700;
-}
-
-.widget-area th, td {
-    border: 0.063em solid #cccccc;
-    text-align: left;
-    padding: 0.438em;
-}
-
-.rss-date {
-    font-size: 0.875em;
-}
-
-.rssSummary {
-    margin-top: 10px;
-}
-
-#wp-calendar table {
-    border-collapse: collapse;
-    width: 100%;
-}
-
-#wp-calendar tr:nth-of-type(odd) {
-    background: #eeeeee;
-}
-
-#wp-calendar th {
-    background: #999999;
-    color: #ffffff;
-    font-weight: 700;
-    text-align: center;
-}
-
-#wp-calendar th,
-#wp-calendar td {
-    border: 0.063em solid #cccccc;
-    padding: 0.438em;
-    text-align: center;
-}
-
-#wp-calendar {
-    border: 0.063em solid #cccccc;
-    margin-bottom: 0;
-    text-align: center;
-    width: 100%;
-}
-
-#wp-calendar a {
-    color: #1d1d1d;
-    font-weight: 700;
-}
-
-#wp-calendar caption {
-    font-weight: 700;
-    margin: 5px 0;
-    text-align: center;
-}
-
-#wp-calendar #today {
-    background: #cccccc;
-    font-weight: 700;
-}
-
-.textwidget {
-    line-height: 1.6em;
-}
-
-/*
-============================================================================================================================
-22.0 - Captions
-============================================================================================================================
-*/
-.wp-caption {
-    max-width: 100%;
-    margin-bottom: 1.5em;
-}
-
-.wp-caption img[class*="wp-image-"] {
-    display: block;
-    margin: 0 auto;
-    width: 100%;
-}
-
-.wp-caption-text { 
-    text-align: center; 
-}
-
-.wp-caption .wp-caption-text,
-.gallery-caption {
-    background: #eeeeee;
-    font-size: 14px;
-    padding: 0.313em;
-    text-align: center;
-}
-
-.wp-caption .wp-caption-text .jetpack-portfolio-title,
-.wp-caption .wp-caption-text .jetpack-testimonial-title {
-    margin: 0;
-    padding: 0;
-}
-
-.wp-caption p {
-    margin: 0;
-    padding: 0;
-}
-
-/*
-============================================================================================================================
-23.0 - Galleries
-============================================================================================================================
-*/
-
-/*
-============================================================================================================================
-24.0 - Media Queries (Mobile Small 30em (480px))
-============================================================================================================================
-*/
-
-/*
-============================================================================================================================
-25.0 - Media Queries (Mobile Medium 37.5em (600px))
-============================================================================================================================
-*/
-@media screen and (min-height: 30.063em) and (max-width: 37.50em) {
+ /**
+ ************************************************************************************************************************
+ * 20.0 - Media Queries (Mobile Small 37.5em (600px))
+ ************************************************************************************************************************
+ */
+ @media screen and (min-height: 30.063em) and (max-width: 37.50em) {
     .menu-toggle,
     .primary-navigation.toggled ul {
         display: block;
@@ -1263,10 +922,6 @@ p.comment-awaiting-moderation {
         display: block;
         margin: 1em 1em 3.6em 1em;
     }
-
-    .site-content {
-        margin: 0 1.25em;
-    }
     
     .left-sidebar .content-area,
     .right-sidebar .content-area {
@@ -1281,36 +936,183 @@ p.comment-awaiting-moderation {
     }
 }
 
-/*
-============================================================================================================================
-26.0 - Media Queries (Mobile Large 41.688em (667px))
-============================================================================================================================
-*/
+ /**
+ ************************************************************************************************************************
+ * 21.0 - Media Queries (Mobile Medium 48.688em (667px))
+ ************************************************************************************************************************
+ */
 
-/*
-============================================================================================================================
-27.0 - Media Queries (Mobile Extra Large 46em (736px))
-============================================================================================================================
-*/
+ /**
+ ************************************************************************************************************************
+ * 22.0 - Media Queries (Mobile Large 46em (736px))
+ ************************************************************************************************************************
+ */
 
-/*
-============================================================================================================================
-28.0 - Media Queries (Tablet Small 48em (768px))
-============================================================================================================================
-*/
+ /**
+ ************************************************************************************************************************
+ * 23.0 - Media Queries (Tablet Small 48em (768px))
+ ************************************************************************************************************************
+ */
+ @media screen and (min-width: 601px) and (max-width: 48em) {
+    .menu-toggle,
+    .primary-navigation.toggled ul {
+        display: block;
+    }
+    
+	.primary-navigation ul {
+		display: none;
+	}
+    
+    .primary-navigation.toggled {
+        padding: 0.1em;
+    }
+    
+    .nav-menu {
+        margin-bottom: 3.6em;
+    }
+    
+    .primary-navigation .nav-menu {
+        display: none;
+    }
+    
+    .primary-navigation.toggled .nav-menu {
+        display: block;
+        margin: 1em 1em 3.6em 1em;
+    }
+    
+    .left-sidebar .content-area,
+    .right-sidebar .content-area {
+        float: none;
+        width: 100%;
+    }
+    
+    .left-sidebar .widget-area,
+    .right-sidebar .widget-area {
+        float: none;
+        width: 100%;
+    }
 
-/*
-============================================================================================================================
-29.0 - Media Queries (Tablet Medium 64em (1024px))
-============================================================================================================================
-*/
+    .widget-area {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-gap: 1.125em;
+        margin: 2.250em 0;
+    }
+}
 
-/*
-============================================================================================================================
-30.0 - Media Queries (Tablet Large 73.125em (1170px))
-============================================================================================================================
-*/
-@media screen and (min-width: 73.125em) {
+ /**
+ ************************************************************************************************************************
+ * 24.0 - Media Queries (Tablet Large 64em (1024px))
+ ************************************************************************************************************************
+ */
+ @media screen and (min-width: 769px) and (max-width: 64em) {
+    .primary-navigation {
+        clear: none;
+        float: left;
+        width: 100%;
+    }
+    
+	/* Position the menu in the header */
+	.primary-navigation,
+	.primary-navigation.toggled {
+		position: relative;
+		max-width: 100%;
+		margin: 0 auto;
+		padding: 0;
+	}
+	
+	.primary-navigation ul,
+	.primary-navigation.toggled ul {
+		max-height: none;
+		padding-left: 0;
+		text-align: center;
+        
+	}
+	
+	.primary-navigation.toggled ul {
+		overflow-y: visible;
+	}
+	
+	/* Display the menu items in a horizontal order */
+	.primary-navigation li {
+		display: inline-block;
+		border: none;
+	}
+	
+	/* Add an outline to the drop-down menus */
+	.primary-navigation ul ul {
+		outline: 1px solid #333;
+	}
+	
+	/* Left-align drop-down menu items */
+	.primary-navigation li li {
+		display: block;
+		text-align: left;
+	}
+    
+    .primary-navigation a {
+        padding: 0.5em 1em;
+    }
+	
+	.primary-navigation a,
+	.primary-navigation ul ul li:last-child a {
+		border-bottom: none;
+	}
+    
+    .primary-navigation ul ul li a {
+        color: #ffffff;
+    }
+	
+	/* Add an outline on hovered and focused menu items */
+	.primary-navigation a:hover,
+	.primary-navigation a:focus {
+		background: transparent;
+		color: #ffffff;
+		text-decoration: underline;
+		outline: solid 1px #b3b3b3;
+	}
+	
+	/* Create hover and focus contrast on drop-down items */
+	.primary-navigation li li a:hover,
+	.primary-navigation li li a:focus {
+		background: #eee;
+		color: #000;
+		text-decoration: none;
+	}
+	
+	/* Position drop-down menus absolutely */
+	.primary-navigation ul ul.toggled-on {
+        background: #000000;
+		display: block;
+		margin-left: 0;
+		position: absolute;
+        right: 0;
+		width: 17em;
+		z-index: 10;
+	}
+	
+	.primary-navigation ul ul ul.toggled-on {
+		right: 0;
+        padding-left: 1em;
+        position: relative;
+	}
+	
+	/* Indent 3rd level drop-down menus */
+	.primary-navigation ul ul ul a {
+		padding-left: 2em;
+	}
+    
+    .nav-menu {
+        padding: 0.4em;
+    }
+}
+
+ /**
+ ************************************************************************************************************************
+ * 25.0 - Media Queries (Desktop 73.125em 1170px))
+ ************************************************************************************************************************
+ */
+ @media screen and (min-width: 73.125em) {
     .primary-navigation {
         clear: none;
         float: left;

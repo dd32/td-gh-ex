@@ -1,7 +1,7 @@
 <?php
 /**
  ************************************************************************************************************************
- * Backdrop Core - main-query.php
+ * Backdrop Core - functions-site.php
  ************************************************************************************************************************
  * @package        Backdrop
  * @copyright      Copyright (C) 2018. Benjamin Lu
@@ -15,92 +15,94 @@
  *  namespace define
  ************************************************************************************************************************
  */
-namespace Benlumia007\Backdrop\MainQuery;
+namespace Benlumia007\Backdrop\Site;
 
 /**
  ************************************************************************************************************************
  *  Table of Content
  ************************************************************************************************************************
- *  1.0 - Loop (Content Post Format)
- *  2.0 - Loop (Content Single)
- *  3.0 - Loop (Content Page)
- *  4.0 - Loop (Content Archive)
+ *  1.0 - General (Site Title)
+ *  2.0 - General (Site Description)
+ *  3.0 - General (Site Link)
+ *  4.0 - General (WP Link)
+ *  5.0 - General (Theme Link)
  ************************************************************************************************************************
  */
 
 /**
  ************************************************************************************************************************
- *  1.0 - Loop (Content Post Format)
+ *  1.0 - General (Site Title)
  ************************************************************************************************************************
  */
-function display_content_post_format() {
-    echo output_content_post_format();
+function display_site_title() {
+    echo output_site_title();
 }
 
-function output_content_post_format() {
-    if ( have_posts() ) :
-        while ( have_posts() ) : the_post();
-            get_template_part( 'views/content/content', get_post_format() );
-    endwhile;
-            the_posts_pagination();
-    else :
-            get_template_part( 'views/content/content', 'none' );
-    endif;
+function output_site_title() {
+    $site_title = get_bloginfo('name');
+
+    if ( $site_title ) {
+        $site_title = sprintf( '<h1 class="site-title"><a href="%s">%s</a></h1>', esc_url( home_url( '/' ) ), $site_title );
+    }
+    return apply_filters( 'display_site_title', $site_title );
 }
 
 /**
  ************************************************************************************************************************
- *  2.0 - Loop (Content Single)
+ *  2.0 - General (Site Description)
  ************************************************************************************************************************
  */
-function display_content_single() {
-    echo output_content_single();
+function display_site_description() {
+    echo output_site_description();
 }
 
-function output_content_single() {
-    while ( have_posts() ) : the_post();
-        get_template_part( 'views/content/content', 'single' );
-    endwhile;
-    the_post_navigation( array(
-        'next_text' => '<span class="post-next" aria-hiddent="true">' . esc_html__( 'Next', 'backdrop' ) . '</span>' . '<span class="post-title">%title</span>',
-        'prev_text' => '<span class="post-previous" aria-hidden="true">' . esc_html__( 'Previous', 'backdrop' ) . '</span> ' . '<span class="post-title">%title</span>',
-    ));
-    comments_template();
+function output_site_description() {
+    $site_description = get_bloginfo('description');
+
+    if ( $site_description ) {
+        $site_description = sprintf( '<h3 class="site-description">%s</h3>', $site_description );
+    }
+    return apply_filters( 'display_site_description', $site_description );
 }
 
 /**
  ************************************************************************************************************************
- *  3.0 - Loop (Content Page)
+ *  3.0 - General (Site Link)
  ************************************************************************************************************************
  */
-function display_content_page() {
-    echo output_content_page();
+function display_site_link() {
+    echo output_site_link();
 }
 
-function output_content_page() {
-    while ( have_posts() ) : the_post();
-        get_template_part( 'views/content/content', 'page' );
-    endwhile;
-    comments_template();
+function output_site_link() {
+    return sprintf( '<a href="%s">%s</a>', esc_url( home_url( '/' ) ), get_bloginfo( 'name' ) );
 }
 
 /**
  ************************************************************************************************************************
- *  4.0 - Loop (Content Archive)
+ *  4.0 - General (WP Link)
  ************************************************************************************************************************
  */
-function display_content_archive() {
-    echo output_content_archive();
+function display_wp_link() {
+    echo output_wp_link();
 }
 
-function output_content_archive() {
-    if ( have_posts() ) :
-            the_archive_title( '<header class="archive-header">', '</header>' );
-        while ( have_posts() ) : the_post();
-            get_template_part( 'views/content/content', get_post_format() );
-    endwhile;
-            the_posts_pagination();
-    else :
-            get_template_part( 'views/content/content', 'none' );
-    endif;
+function output_wp_link() {
+    return sprintf( '<a href="%s">%s</a>', esc_url( __( 'https://wordpress.org', 'backdrop' ) ), esc_html__( 'WordPress', 'backdrop' ) );
+}
+
+/**
+ ************************************************************************************************************************
+ *  5.0 - General (Theme Link)
+ ************************************************************************************************************************
+ */
+function display_theme_link() {
+    echo output_theme_link();
+}
+
+function output_theme_link() {
+    $theme_name = wp_get_theme( get_template() );
+    $allowed = array( 'abbr' => array( 'title' => true ), 'acronym' => array( 'title' => true ), 'code' => true, 'em' => true, 'strong' => true );
+ 
+    return sprintf( '<a href="%s">%s</a>', $theme_name->display( 'ThemeURI' ), wp_kses( $theme_name->display( 'Name' ), $allowed) );
 }
