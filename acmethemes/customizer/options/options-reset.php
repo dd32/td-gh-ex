@@ -16,7 +16,7 @@ endif;
 
 /*sanitize callback for reset setting*/
 if ( ! function_exists( 'acmephoto_reset_db_setting' ) ) :
-    function acmephoto_reset_db_setting( $input, $setting ){
+    function acmephoto_reset_db_setting(){
 	    $acmephoto_customizer_all_values = acmephoto_get_theme_options();
 	    $input = $acmephoto_customizer_all_values['acmephoto-reset-options'];
 	    if( '0' == $input ){

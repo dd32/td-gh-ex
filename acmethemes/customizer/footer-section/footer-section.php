@@ -34,3 +34,17 @@ $wp_customize->add_control( 'acmephoto_theme_options[acmephoto-footer-copyright]
     'type'	  	=> 'text',
     'priority'  => 20
 ) );
+
+/*footer power text enable-disable */
+$wp_customize->add_setting( 'acmephoto_theme_options[acmephoto-footer-power-text]', array(
+	'capability'		=> 'edit_theme_options',
+	'default'			=> $defaults['acmephoto-footer-power-text'],
+	'sanitize_callback' => 'acmephoto_sanitize_checkbox'
+) );
+$wp_customize->add_control( 'acmephoto_theme_options[acmephoto-footer-power-text]', array(
+	'label'		=> __( ' Enable Theme Name And Powered By Text ', 'acmephoto' ),
+	'section'   => 'acmephoto-footer-option',
+	'settings'  => 'acmephoto_theme_options[acmephoto-footer-power-text]',
+	'type'	  	=> 'checkbox',
+	'priority'  => 60
+) );

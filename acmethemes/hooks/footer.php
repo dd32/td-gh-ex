@@ -83,12 +83,17 @@ if ( ! function_exists( 'acmephoto_footer' ) ) :
                         <?php
                         if( isset( $acmephoto_customizer_all_values['acmephoto-footer-copyright'] ) ): ?>
                             <p><?php echo wp_kses_post( $acmephoto_customizer_all_values['acmephoto-footer-copyright'] ); ?></p>
-                        <?php endif; ?>
-                        <div class="site-info">
+                        <?php endif;
+                        if( 1 == $acmephoto_customizer_all_values['acmephoto-footer-power-text'] ){
+	                        echo '<div class="site-info">';
+	                       ?>
                             <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'acmephoto' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'acmephoto' ), 'WordPress' ); ?></a>
                             <span class="sep"> | </span>
-                            <?php printf( esc_html__( 'Theme: %1$s by %2$s', 'acmephoto' ), 'AcmePhoto', '<a href="https://www.acmethemes.com/" rel="designer">Acme Themes</a>' ); ?>
-                        </div><!-- .site-info -->
+	                        <?php printf( esc_html__( 'Theme: %1$s by %2$s', 'acmephoto' ), 'AcmePhoto', '<a href="https://acmethemes.com/">Acme Themes</a>' ); ?>
+	                        <?php
+	                        echo '</div><!-- .site-info -->';
+                        }
+                        ?>
                     </div>
                 </div>
                 <div class="clearfix"></div>

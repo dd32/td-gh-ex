@@ -211,8 +211,9 @@ if ( !function_exists('acmephoto_get_default_theme_options') ) :
             /*footer options*/
             'acmephoto-enable-footer-social'     => '',
             'acmephoto-footer-copyright'     => __( '&copy; All Right Reserved 2018', 'acmephoto' ),
+            'acmephoto-footer-power-text'  => 1,
 
-            /*layout/design options*/
+	        /*layout/design options*/
             'acmephoto-default-layout'       => 'fullwidth',
 
             'acmephoto-sidebar-layout'       => 'right-sidebar',
