@@ -4,6 +4,7 @@
  *
  * @package Bexley
  */
+
 ?>
 	<div class="postmetadata">
 <?php
@@ -13,13 +14,14 @@
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() ),
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'bexley' ), get_the_author() ) ),
+		// Translators: %s = author name.
+		esc_attr( sprintf( esc_html__( 'View all posts by %s', 'bexley' ), get_the_author() ) ),
 		get_the_author()
 	);
 
-	if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {
+	if ( ! post_password_required() && ( comments_open() || 0 !== get_comments_number() ) ) {
 ?>
-	&bull; <span class="commentcount">( <?php comments_popup_link( __( 'Leave a comment', 'bexley'), __( '1 Comment', 'bexley' ), __( '% Comments', 'bexley' ) ); ?> )</span>
+	&bull; <span class="commentcount">( <?php comments_popup_link( esc_html__( 'Leave a comment', 'bexley' ), esc_html__( '1 Comment', 'bexley' ), esc_html__( '% Comments', 'bexley' ) ); ?> )</span>
 <?php
 	}
 ?>

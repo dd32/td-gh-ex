@@ -31,8 +31,13 @@
 	<footer role="contentinfo" id="footer">
 
 		<section class="row">
+<?php
+	if ( function_exists( 'the_privacy_policy_link' ) ) {
+		the_privacy_policy_link( '', '<span class="sep" role="separator" aria-hidden="true"> | </span>' );
+	}
+?>
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'bexley' ) ); ?>" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'bexley' ); ?>" rel="generator"><?php printf( esc_html__( 'Proudly powered by %s', 'bexley' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
+			<span class="sep" role="separator" aria-hidden="true"> | </span>
 			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'bexley' ), 'Bexley', '<a href="https://prothemedesign.com/" rel="designer">Pro Theme Design</a>' ); ?>
 		</section>
 	</footer>

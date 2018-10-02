@@ -9,7 +9,7 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<section class="post-entry">
 <?php
-	the_title( '<h1 class="title">', '</h1>' );
+	the_title( '<h1 class="posttitle">', '</h1>' );
 
 	the_content();
 

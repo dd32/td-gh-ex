@@ -9,7 +9,7 @@
 	$user_id = get_query_var( 'author' );
 ?>
 	<h1 class="title">
-		<?php _e( 'Author Archives','bexley' ); ?>
+		<?php esc_html_e( 'Author Archives','bexley' ); ?>
 	</h1>
 	<div class="writer">
 		<?php echo get_avatar( get_the_author_meta( 'user_email', $user_id ), '80' ); ?>

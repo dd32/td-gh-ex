@@ -2,16 +2,28 @@
 # This file is distributed under the same license as the WordPress.com - Themes - Bexley package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-07-28 01:42:36+0000\n"
+"PO-Revision-Date: 2017-08-11 03:07:19+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
-"X-Generator: GlotPress/2.1.0-beta.2\n"
+"X-Generator: GlotPress/2.4.0-alpha\n"
 "Language: fa\n"
 "Project-Id-Version: WordPress.com - Themes - Bexley\n"
 
-#: functions.php:47
+#: inc/wpcom-colors.php:24
+msgid "Accent and Link Color"
+msgstr "رنگ تأکیدها و پیوندها"
+
+#: inc/wpcom-colors.php:9
+msgid "Background"
+msgstr "پس‌زمینه"
+
+#: footer.php:34
+msgid "https://wordpress.org/"
+msgstr "https://wordpress.org/"
+
+#: functions.php:43
 msgid "Menu"
 msgstr "فهرست"
 
@@ -24,6 +36,11 @@ msgstr "https://prothemedesign.com/"
 #: wp-content/themes/premium/bexley/custom-templates/custom-page-fullwidth.php
 msgid "Full Width"
 msgstr "پهنای کامل"
+
+#. Description of the plugin/theme
+#: wp-content/themes/premium/bexley/style.css
+msgid "Bexley is a photo blog - placing the photos at the forefront and giving you plenty of space to add your own writing around them."
+msgstr "Bexley یک وب‌نوشت عکسی است - عکس‌ها را در جلو می‌گذارد و فضای زیادی برای افزودن نوشته‌ها در اطرافشان فراهم می‌کند."
 
 #: searchform.php:10
 msgctxt "search input placeholder text"
@@ -62,57 +79,81 @@ msgstr "<div class=\"postmetadata\">منتشرشده در<span class=\"entry-dat
 msgid "Home"
 msgstr "خانه"
 
-#: functions.php:349
+#: functions.php:356
+msgid "Display featured image on blog posts"
+msgstr "تصویر ویژه روی نوشته‌های وب‌نوشت نمایش داده شود"
+
+#: functions.php:341
 msgid "Right"
 msgstr "راست"
 
-#: functions.php:348
+#: functions.php:340
 msgid "Center"
 msgstr "میان‌چین"
 
-#: functions.php:347
+#: functions.php:339
 msgid "Left (default)"
 msgstr "چپ (پیش‌فرض)"
 
-#: functions.php:311
+#: functions.php:336
+msgid "Homepage Title Alignment"
+msgstr "هم‌ترازیِ عنوان آغازه"
+
+#: functions.php:317
+msgid "Use image ratio on homepage"
+msgstr "از نسبت تصویر در آغازه استفاده شود"
+
+#: functions.php:304
+msgid "Options for the bexley theme."
+msgstr "گزینه‌های پوستهٔ Bexley."
+
+#: functions.php:303
 msgid "Theme"
 msgstr "پوشته"
 
-#: functions.php:255
+#: functions.php:247
 msgid "Read More &rarr;"
 msgstr "بیشتر بخوانید &rarr;"
 
-#: functions.php:195
+#: archive.php:58 author.php:32 index.php:23 search.php:29
 msgid "&lsaquo; Newer"
 msgstr "&lsaquo; پسین"
 
-#: functions.php:194
+#: archive.php:57 author.php:31 index.php:22 search.php:28
 msgid "Older &rsaquo;"
 msgstr "پیشین &rsaquo;"
 
-#: functions.php:133
+#: functions.php:163
 msgid "Read More"
 msgstr "بیشتر بخوانید"
 
-#: functions.php:112
+#: functions.php:142
 msgid "Widgets that display at the bottom of the website."
 msgstr " ابزارک‌هایی که در پایین وب‌گاه نمایش می‌یابند."
 
-#: functions.php:110
+#: functions.php:140
 msgid "Footer Widgets"
 msgstr "ابزارک‌های پسایند"
 
-#: functions.php:99
+#: functions.php:129
 msgid "Widgets that display on the side of your website. Keep this empty to remove the sidebar."
 msgstr "ابزارهایی که در نوار کناری وب‌گاه شما نمایش داده می‌شوند. برای حذف نوار کناری، این بخش را خالی کنید."
 
-#: functions.php:97
+#: functions.php:127
 msgid "Sidebar Widgets"
 msgstr "ابزارک‌های نوار کناری"
 
-#: functions.php:84
+#: functions.php:114
 msgid "Top Menu"
 msgstr "گزینگان بالا"
+
+#. translators: If there are characters in your language that are not supported
+#. by Roboto Slab, translate this to 'off'. Do not translate into your own
+#. language.
+#: functions.php:68
+msgctxt "Google font: on or off"
+msgid "on"
+msgstr "off"
 
 #: footer.php:36
 msgid "Theme: %1$s by %2$s."
@@ -139,6 +180,10 @@ msgctxt "Tag list seperator"
 msgid ", "
 msgstr "،"
 
+#: content-single.php:51
+msgid "Tagged as: "
+msgstr "برچسب‌خورده با: "
+
 #: content-single.php:44
 msgid "Categories: "
 msgstr "دسته‌ها:"
@@ -146,6 +191,10 @@ msgstr "دسته‌ها:"
 #: content-page.php:18 content-single.php:34
 msgid "Pages: "
 msgstr "صفحه‌ها:"
+
+#: content-empty.php:25
+msgid "It seems we can't find what you're looking for. Perhaps searching can help."
+msgstr "به نظر می‌رسد نمی‌توانیم آنچه به دنبالش هستید را بیابیم. شاید جستجو کمک کند."
 
 #: content-empty.php:20
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."

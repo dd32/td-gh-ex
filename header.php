@@ -12,7 +12,7 @@
 	<meta http-equiv="Content-Type" content="<?php bloginfo( 'html_type' ); ?>; charset=<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="profile" href="http://gmpg.org/xfn/11" />
+	<link rel="profile" href="https://gmpg.org/xfn/11" />
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
 	<?php wp_head(); ?>
@@ -22,6 +22,7 @@
 
 	<div class="masthead-wrapper">
 		<header class="masthead" role="banner">
+			<?php do_action( 'before' ); ?>
 			<div class="branding">
 				<h1 class="logo">
 					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr_e( 'Home', 'bexley' ); ?>">
@@ -43,7 +44,6 @@
 			'menu_class' => 'menu-wrap clearfix',
 		)
 	);
-
 	get_search_form();
 ?>
 			</nav>

@@ -29,12 +29,32 @@ Bexley includes support for most features in [Jetpack](https://wordpress.org/plu
 
 == Changelog ==
 
+= 2.3.1 - 28th July 2018 =
+* Ensure the 'next' and 'previous' post links do not obstruct the page content.
+
+= 2.3 - 25th May 2018 =
+* Add support for privacy policy link in the site footer.
+* Fix display of the cookie consent checkbox in the comments form.
+
+= 2.2.1 - 28th January 2018 =
+* Improve css browser prefixes.
+
+= 2.2 - 18th October 2017 =
+* Add support for more input types.
+* Add styles for WooCommerce support.
+* Improve styles for readability and consistency.
+
+= 2.1 - 17th June 2017 =
+* Minor tweaks to improve design consistency across the site
+* Improve coding standards and security.
+
 = 2.0 - 15th November 2016 =
 * Updates based upon wordpress.org theme review
 * Tidy the codes
 * Remove header code that's not used
 * Switch to standard the_posts_pagination rather than custom function
 * Escape more things for extra security
+* Make wordpress.org url translatable for local versions
 
 = 1.2.1 - 24 September 2016 =
 * Fix incorrect text domain

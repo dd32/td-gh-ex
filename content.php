@@ -1,6 +1,6 @@
 <?php
 /**
- * Generic content
+ * Generic content for archives
  *
  * @package Bexley
  */
@@ -19,7 +19,7 @@
 				$width = 600;
 			}
 			$height = floor( $width * ( $image[2] / $image[1] ) );
-			$styles[] = 'min-height:' . $height . 'px';
+			$styles[] = 'min-height:' . intval( $height ) . 'px';
 		}
 
 		$class[] = 'has-featured-image';

@@ -10,10 +10,10 @@
  */
 function bexley_custom_header_support() {
 
-	// custom header image
+	// Custom header image.
 	$args = array(
 		'default-image' => '',
-		'default-text-color' => apply_filters( 'bexley_header_textcolor', '333333'),
+		'default-text-color' => apply_filters( 'bexley_header_textcolor', '333333' ),
 		'random-default' => false,
 		'width' => 1100,
 		'height' => 150,
@@ -24,6 +24,7 @@ function bexley_custom_header_support() {
 		'admin-head-callback' => '',
 		'admin-preview-callback' => '',
 	);
+
 	add_theme_support( 'custom-header', $args );
 
 }
@@ -41,7 +42,7 @@ function bexley_colour_styles() {
 ?>
 <style>
 <?php
-	if ( 'blank' == get_header_textcolor() ) {
+	if ( 'blank' === get_header_textcolor() ) {
 ?>
 	.masthead .branding {
 		display:none;
