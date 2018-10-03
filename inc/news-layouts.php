@@ -4,7 +4,7 @@
  * @param  array  $atts [description]
  * @return [type]       [description]
  */
-function beenews_layout_1($atts=array()){
+function bee_news_layout_11($atts=array()){
      extract( shortcode_atts( array(
         'cat_id' => 30,
         'category_title' => null,
@@ -26,7 +26,7 @@ function beenews_layout_1($atts=array()){
                     ?>  
                     <div class="news-block-list"> 
                         <div class="col-md-4">
-                          <?php bee_news_post_thumbnail('category-thumb');?>
+                          <?php bee_news_post_thumbnail('bee-news-category-thumb');?>
                         </div>                                 
                         <div class="col-md-8"> 
                             <h3><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title();  ?></a></h3> 
@@ -50,7 +50,7 @@ function beenews_layout_1($atts=array()){
 }
 ?>
 <?php
-function beenews_layout_3($atts=array()){
+function bee_news_layout_13($atts=array()){
      extract( shortcode_atts( array(
         'cat_id' => 30,
         'limit' => 7 ,
@@ -83,7 +83,7 @@ function beenews_layout_3($atts=array()){
 
                 <?php if ($archive_count == 1): // Show the first NEWS BLOCK ?>
                     <div class="news-block"> 
-                        <?php bee_news_post_thumbnail('category-thumb');?>
+                        <?php bee_news_post_thumbnail('bee-news-category-thumb');?>
                         <h3 class="ellipsis-text margin-top"><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title();  ?></a></h3> 
                         <?php bee_news_meta_simplified(); ?> 
                         <p>
@@ -113,7 +113,7 @@ function beenews_layout_3($atts=array()){
                     <div class="col-md-5"> 
                     <?php endif; ?>
                         <div class="news-block"> 
-                        <?php bee_news_post_thumbnail('category-thumb');?>
+                        <?php bee_news_post_thumbnail('bee-news-category-thumb');?>
                         <h5 class="ellipsis-text margin-top"><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title();  ?></a></h5> 
 
                         </div> <!-- end of News block -->
@@ -128,12 +128,7 @@ function beenews_layout_3($atts=array()){
                 <?php wp_reset_postdata(); ?> 
             </div>
          </div>
-
-         <?php /* ?>
-         <div class="panel-footer text-center">
-            <a href="<?php echo  get_category_link($cat_id) ?>" class="btn btn-default btn-sm"><?php _e( 'Show More', 'bee-news' ); ?> <i class="glyphicon glyphicon-triangle-right"></i> </a>
-         </div>  
-         <?php */ ?>                                                         
+                                                      
     </div>                         
 </div> 
 
@@ -141,7 +136,7 @@ function beenews_layout_3($atts=array()){
 ?>
 <?php
 
-function beenews_layout_5($atts=array()){
+function bee_news_layout_15($atts=array()){
      extract( shortcode_atts( array(
         'cat_id' => 30,
         'limit' => 3,
@@ -169,7 +164,7 @@ function beenews_layout_5($atts=array()){
             ?>  
             <div class=" news-block-list border-bottom"> 
                 <div class="col-md-4">
-                    <?php bee_news_post_thumbnail('category-thumb');?>
+                    <?php bee_news_post_thumbnail('bee-news-category-thumb');?>
                 </div>                                 
                 <div class="col-md-8 no-md-padding-left"> 
                     <h4><a href="<?php the_permalink(); ?>" target="_blank"><?php the_title();  ?></a></h4> 
@@ -277,7 +272,7 @@ function beenews_corousel($atts=array()){
                         <?php endif; ?>
                                 <div class="col-md-3"> 
                                 
-                                   <?php bee_news_post_thumbnail('category-thumb');?>
+                                   <?php bee_news_post_thumbnail('bee-news-category-thumb');?>
                                     
                                     <h6 class="ellipsis-text"><a href="<?php the_permalink(  ); ?>" target="_blank"><?php the_title(); ?></a></h6>
                                 </div>
@@ -463,11 +458,6 @@ function beenews_newslider($atts=array()){
         <div class="row">
             <div class="col-md-12">
                 <div id="carousel-article<?php echo $cat_id;  ?>" class="carousel slide" data-ride="carousel">
-                    <!-- Indicators -->
-                    <!-- <ol class="carousel-indicators">
-                        <li data-target="#carousel-article" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel-article" data-slide-to="1"></li>
-                    </ol> -->
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner" role="listbox">
                     <?php 

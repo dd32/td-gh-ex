@@ -28,18 +28,19 @@ function bee_news_setup() {
     add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 825, 510, true );
 
-    add_image_size( 'category-thumb', 350, 260, true ); // (cropped)
-    add_image_size( 'category-thumb-small', 220, 180, true ); // (cropped)
+    add_image_size( 'bee-news-category-thumb', 350, 260, true ); // (cropped)
+    add_image_size( 'bee-news-category-thumb-small', 220, 180, true ); // (cropped)
 
     add_theme_support( 'custom-header', array (
       'width'             => 960,
       'height'            => 100,
       'flex-height'        => true,
-      'uploads'           => true
+      'uploads'           => true,
+      'header-text'            => false
     ));
 
     add_theme_support( 'custom-background', array (
-     'default-color'          => '',
+     'default-color'          => '#000',
     'default-image'          => ''
     ));
 
@@ -102,9 +103,9 @@ function bee_news_widgets_init() {
     register_sidebar( array(
         'name' => __( 'Right Sidebar', 'bee-news' ),
         'id' => 'right-sidebar',
-        'before_widget' => '<div id="%1$s" class="widget %2$s">',
+        'before_widget' => '<div id="%1$s" class="single-widget %2$s">',
         'after_widget' => '</div>',
-        'before_title' => '<h3 class="widgettitle">',
+        'before_title' => '<h3 class="widget-title title">',
         'after_title' => '</h3>'
     ) );
 
@@ -166,9 +167,9 @@ if ( ! function_exists( 'bee_news_enqueue_scripts' ) ) :
 
         /* Beenews Enqueue Scripts Begin */
 
-    wp_enqueue_script( 'jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js', false, null, true);
+    wp_enqueue_script( 'jquery', get_template_directory_uri() . '/js/jquery.js', false, null, true);
 
-    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', false, null, true);
+    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', false, null, true);
   
 
 
@@ -190,12 +191,88 @@ if ( ! function_exists( 'bee_news_enqueue_scripts' ) ) :
     wp_deregister_style( 'bootstrap' );
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', false, null, 'all');
     wp_deregister_style( 'font-awesome' );
-    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', false, null, 'all');
+    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css', false, null, 'all');
         // Load our main stylesheet.
-    wp_enqueue_style( 'bee-news-style', get_stylesheet_uri() );
 
     wp_deregister_style( 'style' );
-    wp_enqueue_style( 'style', get_template_directory_uri() . '/css/style.css', false, null, 'all');
+    wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css', false, null, 'all');
+
+    wp_deregister_style( 'inline-css' );
+    wp_enqueue_style( 'inline-css', get_template_directory_uri() . '/css/style.css', false, null, 'all');
+
+
+         global $bee_news_redux_builder;
+          $custom_css = "
+            .header-wrap{
+                background:" .  $bee_news_redux_builder['primary-color']['color'] . ";" .
+            "
+            }
+
+            .panel-heading span{
+                background: " .  $bee_news_redux_builder['primary-color']['color']  . ";" .
+            "   color: " . $bee_news_redux_builder['heading-text-color']['color'] . ";".
+            "
+            }
+
+            .carousel-news .carousel-caption label{
+                background: ".  $bee_news_redux_builder['primary-color']['color']  . ";".
+
+            "
+            }
+            .carousel-news .carousel-indicators:after{
+                background: " . $bee_news_redux_builder['primary-color']['color']  . ";".
+
+            "
+            }
+           .carousel-news .carousel-indicators li{
+            display:block;
+            margin-bottom:5px;
+            border:0;
+            border-left:3px solid " . $bee_news_redux_builder['primary-color']['color'] . ";".
+            "width:100%;
+            height:auto;border-radius:0;
+            text-align:left;
+            text-indent:inherit;
+            padding:2px 0 2px 8px;
+            opacity:0.7;
+            background:transparent;
+            }
+            .panel-slider .carousel-indicators li.active, .photo-gallery-carousel .carousel-indicators li.active{
+                background: " . $bee_news_redux_builder['primary-color']['color'] . ";".
+            "}
+            .tab-container .nav-tabs li.active a,
+            .tab-container .nav-tabs li.active a:focus,
+            .tab-container .nav-tabs li.active:hover a,
+            .tab-container .nav-tabs li.active:hover a:focus,
+            .tab-container .nav-tabs li.active:focus a,
+            .tab-container .nav-tabs li.active:focus a:focus {
+                color: ". $bee_news_redux_builder['primary-color']['color']  . ";".
+            "    background: #fff
+            }
+            a:hover, a:focus {
+                text-decoration: none;
+                color: " . $bee_news_redux_builder['primary-color']['color']  . ";".
+            "}
+            .video-carousel{
+                background: " . $bee_news_redux_builder['secondary-color']['color']  . ";".
+            "}
+            .footer{
+                background: " .  $bee_news_redux_builder['secondary-color']['color'] . ";".
+            "
+            }
+            .navbar-maitri{
+                background: " .  $bee_news_redux_builder['menu-color']['color'] . ";".
+            
+            "}
+            .navbar-maitri li.active, .navbar-maitri li a:hover, .navbar-maitri li a:focus{
+                background: " . $bee_news_redux_builder['menu-active-color']['color'] . ";".
+            "
+            }
+            .navbar-maitri li.menu-item-home.active a {
+                color: rgba(255,255,255,0);
+            }
+            ";
+        wp_add_inline_style( 'inline-css', $custom_css );
 
 
     /* Beenews Enqueue Styles End */
@@ -210,20 +287,21 @@ require_once "inc/bootstrap/wp_bootstrap_navwalker.php";
 require_once "inc/bootstrap/wp_bootstrap_navwalker.php";
 
 require_once "inc/template-tags.php";
-require_once "inc/widget/Bee-Breaking-New-Headline-layout.php";
-require_once "inc/widget/Bee-Slider.php";
-require_once "inc/widget/Bee-Layout-1.php";
-require_once "inc/widget/Bee-Layout-2.php";
-require_once "inc/widget/Bee-Layout-3.php";
+require_once "inc/widget/Bee-News-Breaking-New-Headline-layout.php";
+require_once "inc/widget/Bee-News-Right-Sidebar.php";
+require_once "inc/widget/Bee-News-Slider.php";
+require_once "inc/widget/Bee-News-Layout-1.php";
+require_once "inc/widget/Bee-News-Layout-2.php";
+require_once "inc/widget/Bee-News-Layout-3.php";
 require_once "inc/widget/Bee-News-Category-Sidebar.php";
 require_once "inc/news-layouts.php";
-require_once "inc/class-beenews-autoloader.php";
-require_once "inc/class-beenews-lite.php";
- require_once "inc/library/customizer/class-beenews-main-notify-system.php";
+require_once "inc/class-bee-news-autoloader.php";
+require_once "inc/class-bee-news-lite.php";
+ require_once "inc/library/customizer/class-bee-news-main-notify-system.php";
 
 //include Redux Framework
 include_once get_template_directory().'/admin-folder/admin/admin-init.php';
-$beenews = new beenews_Lite();
+$beenews = new bee_news_Lite();
 
 /* Beenews Include Resources End */
 
@@ -231,11 +309,11 @@ $beenews = new beenews_Lite();
 /*
  * Removed Continue reading on manually inputted excerpt;
  */
-function bee_excerpt_more( $output ) {
+function bee_news_excerpt_more( $output ) {
     return '...';
 }
 
-add_filter('excerpt_more', 'bee_excerpt_more');
+add_filter('excerpt_more', 'bee_news_excerpt_more');
 
 
 // Changing excerpt length - only works with MANUAL excerpt
@@ -257,4 +335,3 @@ function bee_news_content_width() {
     $GLOBALS['content_width'] = apply_filters( 'bee_news_content_width', 840 );
 }
 add_action( 'after_setup_theme', 'bee_news_content_width', 0 );
-

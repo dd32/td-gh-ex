@@ -9,7 +9,7 @@ global $wp_customize;
 $wp_customize->add_setting( 'beenews_banner_type',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_radio_buttons'
 	                            ),
 	                            'default'           => 'image'
@@ -22,7 +22,7 @@ $wp_customize->add_setting( 'beenews_banner_type',
 $wp_customize->add_setting( 'beenews_show_banner_on_homepage',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_checkbox'
 	                            ),
 	                            'default'           => true
@@ -36,7 +36,7 @@ $wp_customize->add_setting( 'beenews_show_banner_on_homepage',
 $wp_customize->add_setting( 'beenews_banner_image',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_file_url'
 	                            ),
 	                            'default'           => get_template_directory_uri() . '/assets/images/banner.jpg',

@@ -6,7 +6,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Class Epsilon_Notify_System
  */
-class Beenews_main_Notify_System {
+class Bee_news_main_Notify_System {
 
 
 	public static $plugins;

@@ -1,13 +1,13 @@
 <?php
 require_once (dirname(__FILE__) . "/../template-tags.php");
 
-class BeeNewsCategorySidebar extends WP_Widget {
+class Bee_News_CategorySidebar extends WP_Widget {
 
 
   // Set up the widget name and description.
   public function __construct() {
     $widget_options = array( 'classname' => 'news', 'description' => 'Custom Bee News Category Display' );
-    parent::__construct( 'bee_sidebar_widget', 'Bee News Category Sidebar', $widget_options );
+    parent::__construct( 'bee_news_sidebar_widget', 'Bee News Category Sidebar', $widget_options );
   }
 
 
@@ -83,7 +83,7 @@ class BeeNewsCategorySidebar extends WP_Widget {
 
 // Register the widget.
 function news_register__widget() { 
-  register_widget( 'BeeNewsCategorySidebar' );
+  register_widget( 'Bee_News_CategorySidebar' );
 }
 add_action( 'widgets_init', 'news_register__widget' );
 

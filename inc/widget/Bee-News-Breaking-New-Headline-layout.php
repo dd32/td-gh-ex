@@ -2,13 +2,13 @@
 require_once (dirname(__FILE__) . "/../template-tags.php");
 require_once (dirname(__FILE__) . "/../news-layouts.php");
 
-class BeeSlider extends WP_Widget {
+class Bee_News_BreakingNewsHeadline_Layout extends WP_Widget {
 
 
   // Set up the widget name and description.
   public function __construct() {
-    $widget_options = array( 'classname' => 'news', 'description' => 'Custom Bee News Slider Display' );
-    parent::__construct( 'bee_slider_widget', 'Bee News Main Slider', $widget_options );
+    $widget_options = array( 'classname' => 'news', 'description' => 'Custom Bee News Breaking News Headline Layout' );
+    parent::__construct( 'bee_news_breaking_news_headline_layout_widget', 'Bee Breaking News Headline Layout', $widget_options );
   }
 
 
@@ -19,10 +19,12 @@ class BeeSlider extends WP_Widget {
     global $post;
    
     ?>
-    <?php beenews_breaking_news_slider(array('cat_id' => $cat_id,'thumbnail' =>
-    'full'));?>
-
+    
+    <div class="container">
+    <?php beenews_breaking_news(array('cat_id' =>$cat_id));?>
+   </div>
     <?php echo $args['after_widget'];
+
   }
 
 
@@ -42,7 +44,7 @@ class BeeSlider extends WP_Widget {
 
     
     <p>
-      <label for="<?php echo $this->get_field_id( 'cat_id' ); ?>">Slider News Category:</label>
+      <label for="<?php echo $this->get_field_id( 'cat_id' ); ?>">News Category:</label>
       <select id="<?php echo $this->get_field_id( 'cat_id' ); ?>" name="<?php echo $this->get_field_name( 'cat_id' ); ?>">
         <?php foreach ($categories as $category) :?>
         <option <?php echo ($cat_id == $category->term_id)?'selected':'' ?> value="<?php echo $category->term_id ?>"><?php echo $category->name ?></option>  
@@ -66,9 +68,9 @@ class BeeSlider extends WP_Widget {
 }
 
 // Register the widget.
-function bee_news_slider_register__widget() { 
-  register_widget( 'BeeSlider' );
+function bee_news_breaking_news_headline_layout_register__widget() { 
+  register_widget( 'Bee_News_BreakingNewsHeadline_Layout' );
 }
-add_action( 'widgets_init', 'bee_news_slider_register__widget' );
+add_action( 'widgets_init', 'bee_news_breaking_news_headline_layout_register__widget' );
 
 ?>

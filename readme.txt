@@ -37,3 +37,11 @@ Unless otherwise specified, all the theme files, scripts and images are licensed
     -- URL: http://scripts.sil.org/OFL
 
 -- Any other image included & distributed with the theme has been licensed under the GPL and is the creative work of Beepressthemes.com.
+
+
+==== Image used in screenshot ====
+
+  -- Slider Image:  https://www.pexels.com/photo/computer-drink-iphone-laptop-586339/
+  -- First Post Thumbnail: https://www.pexels.com/photo/photo-of-a-gray-dell-laptop-displaying-pexels-webpage-811587/
+  -- Second Post Thumbnail: https://www.pexels.com/photo/business-computer-desk-finance-206607/
+

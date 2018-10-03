@@ -6,7 +6,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Class Epsilon_Notify_System
  */
-class Beenews_Notify_System extends Beenews_main_Notify_System {
+class Bee_news_Notify_System extends Bee_news_main_Notify_System {
 	/**
 	 * @return bool
 	 */

@@ -5,7 +5,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Welcome Screen Class
  */
-class Beenews_Welcome_Screen {
+class Bee_news_Welcome_Screen {
 
 	/**
 	 * Constructor for the welcome screen
@@ -71,7 +71,7 @@ class Beenews_Welcome_Screen {
 
 		add_theme_page( __( 'About beenews', 'bee-news' ), $title, 'edit_theme_options', 'beenews-welcome', array(
 			$this,
-			'beenews_welcome_screen'
+			'Bee_news_Welcome_Screen'
 		) );
 	}
 
@@ -151,39 +151,39 @@ class Beenews_Welcome_Screen {
 		if ( ! empty( $action_id ) ):
 
 			/* if the option exists, update the record for the specified id */
-			if ( get_option( 'beenews_show_required_actions' ) ):
+			if ( get_option( 'bee_news_show_required_actions' ) ):
 
-				$beenews_show_required_actions = get_option( 'beenews_show_required_actions' );
+				$bee_news_show_required_actions = get_option( 'bee_news_show_required_actions' );
 
 				switch ( $_GET['todo'] ) {
 					case 'add';
-						$beenews_show_required_actions[ $action_id ] = true;
+						$bee_news_show_required_actions[ $action_id ] = true;
 						break;
 					case 'dismiss';
-						$beenews_show_required_actions[ $action_id ] = false;
+						$bee_news_show_required_actions[ $action_id ] = false;
 						break;
 				}
 
-				update_option( 'beenews_show_required_actions', $beenews_show_required_actions );
+				update_option( 'bee_news_show_required_actions', $bee_news_show_required_actions );
 
 			/* create the new option,with false for the specified id */
 			else:
 
-				$beenews_show_required_actions_new = array();
+				$bee_news_show_required_actions_new = array();
 
-				if ( ! empty( $beenews_required_actions ) ):
+				if ( ! empty( $bee_news_required_actions ) ):
 
-					foreach ( $beenews_required_actions as $beenews_required_action ):
+					foreach ( $bee_news_required_actions as $bee_news_required_action ):
 
-						if ( $beenews_required_action['id'] == $action_id ):
-							$beenews_show_required_actions_new[ $beenews_required_action['id'] ] = false;
+						if ( $bee_news_required_action['id'] == $action_id ):
+							$bee_news_show_required_actions_new[ $bee_news_required_action['id'] ] = false;
 						else:
-							$beenews_show_required_actions_new[ $beenews_required_action['id'] ] = true;
+							$bee_news_show_required_actions_new[ $bee_news_required_action['id'] ] = true;
 						endif;
 
 					endforeach;
 
-					update_option( 'beenews_show_required_actions', $beenews_show_required_actions_new );
+					update_option( 'bee_news_show_required_actions', $bee_news_show_required_actions_new );
 
 				endif;
 
@@ -199,15 +199,15 @@ class Beenews_Welcome_Screen {
 	 *
 	 */
 	public function count_actions() {
-		global $beenews_required_actions;
+		global $bee_news_required_actions;
 
-		$beenews_show_required_actions = get_option( 'beenews_show_required_actions' );
-		if ( ! $beenews_show_required_actions ) {
-			$beenews_show_required_actions = array();
+		$bee_news_show_required_actions = get_option( 'bee_news_show_required_actions' );
+		if ( ! $bee_news_show_required_actions ) {
+			$bee_news_show_required_actions = array();
 		}
 
 		$i = 0;
-		foreach ( $beenews_required_actions as $action ) {
+		foreach ( $bee_news_required_actions as $action ) {
 			$true      = false;
 			$dismissed = false;
 
@@ -215,7 +215,7 @@ class Beenews_Welcome_Screen {
 				$true = true;
 			}
 
-			if ( ! empty( $beenews_show_required_actions ) && isset( $beenews_show_required_actions[ $action['id'] ] ) && ! $beenews_show_required_actions[ $action['id'] ] ) {
+			if ( ! empty( $bee_news_show_required_actions ) && isset( $bee_news_show_required_actions[ $action['id'] ] ) && ! $bee_news_show_required_actions[ $action['id'] ] ) {
 				$true = false;
 			}
 
@@ -349,7 +349,7 @@ class Beenews_Welcome_Screen {
 	 *
 	 * @since 1.8.2.4
 	 */
-	public function beenews_welcome_screen() {
+	public function Bee_news_Welcome_Screen() {
 		require_once( ABSPATH . 'wp-load.php' );
 		require_once( ABSPATH . 'wp-admin/admin.php' );
 		require_once( ABSPATH . 'wp-admin/admin-header.php' );

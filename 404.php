@@ -37,7 +37,11 @@ get_header(); ?>
         <!-- //
         // -->
         <!-- LEFT SLIDER OF CONTAINER -->
-       <?php get_sidebar(); ?>
+        <div class="col-lg-4 col-12">
+		    <div class="beenews-sidebar">
+             <?php get_sidebar();?>
+            </div>
+        </div>
         <!-- END LEFT SLIDER OF CONTAINER -->
     </div>
 </div>

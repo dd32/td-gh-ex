@@ -11,7 +11,7 @@
  *
  *@package WordPress
  *@subpackage Beenews
- *@since bee-news 1.3
+ *@since bee-news 1.4
  */
 ?>
 
@@ -57,7 +57,11 @@ if ( $show_on_front == 'posts' ):
           </div>
             </div><!-- #primary -->
             <?php if ( $layout === 'right-sidebar' ): ?>
-                <?php get_sidebar( 'sidebar' ); ?>
+            <div class="col-xs-12 col-12 col-sm-12 col-md-4 col-lg-4">
+                <div class="beenews-sidebar">
+                    <?php get_sidebar( 'sidebar' ); ?>
+                </div>
+            </div>
             <?php endif; ?>
         </div>
     </div>

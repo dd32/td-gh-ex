@@ -4,7 +4,7 @@
  *
  * @package WordPress
  * @subpackage bee-news
- * @since bee-news 1.3
+ * @since bee-news 1.4
  */
 ?>
 
@@ -28,7 +28,7 @@
 <?php endif; ?>
 
 
-			<div class="<?php echo ($archive_counter >2) ?'col-md-12':'col-md-6' ?>"> 
+			<div class="<?php echo ($archive_counter >2); ?>"> 
 	            <article class="news-block-list" id="post-<?php the_ID(); ?>"> 
 					<header class="entry-header">
 					<a href="<?php the_permalink(); ?>">

@@ -71,7 +71,7 @@ $wp_customize->add_section(
 	)
 );
 
-global $beenews_required_actions, $beenews_recommended_plugins;
+global $bee_news_required_actions, $bee_news_recommended_plugins;
 
 $wp_customize->add_section(
 	new Epsilon_Section_Recommended_Actions(
@@ -81,9 +81,9 @@ $wp_customize->add_section(
 			'title'                        => esc_html__( 'Recomended Actions', 'bee-news' ),
 			'social_text'                  => esc_html__( 'We are social :', 'bee-news' ),
 			'plugin_text'                  => esc_html__( 'Recomended Plugins :', 'bee-news' ),
-			'actions'                      => $beenews_required_actions,
-			'plugins'                      => $beenews_recommended_plugins,
-			'theme_specific_option'        => 'beenews_show_required_actions',
+			'actions'                      => $bee_news_required_actions,
+			'plugins'                      => $bee_news_recommended_plugins,
+			'theme_specific_option'        => 'bee_news_show_required_actions',
 			'theme_specific_plugin_option' => 'beenews_show_required_plugins',
 			'facebook'                     => 'https://www.facebook.com/machothemes',
 			'twitter'                      => 'https://twitter.com/MachoThemez',

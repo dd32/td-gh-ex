@@ -3,13 +3,13 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-class beenews_Customizer_Helper {
+class bee_news_Customizer_Helper {
 
 	/**
 	 * The basic constructor of the helper
 	 * It changes the default panels of the customizer
 	 *
-	 * beenews_Customizer_Helper constructor.
+	 * bee_news_Customizer_Helper constructor.
 	 */
 	public function __construct() {
 		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customizer_enqueue_scripts' ) );
@@ -73,7 +73,7 @@ class beenews_Customizer_Helper {
 		$wp_customize->get_section( 'header_image' )->title        = __( 'Blog Archive Header Image', 'bee-news' );
 		$wp_customize->get_section( 'background_image' )->panel    = 'beenews_panel_general';
 
-		if ( ! beenews_Helper::on_iis() ) {
+		if ( ! bee_news_Helper::on_iis() ) {
 
 			// Change panel for Site Title & Tagline Section
 			$wp_customize->get_section( 'title_tagline' )->panel = 'beenews_panel_general';
@@ -246,7 +246,7 @@ class beenews_Customizer_Helper {
 	 *
 	 * @return array
 	 */
-	public static function beenews_sanitize_multiple_checkbox( $values ) {
+	public static function bee_news_sanitize_multiple_checkbox( $values ) {
 
 		$multi_values = ! is_array( $values ) ? explode( ',', $values ) : $values;
 

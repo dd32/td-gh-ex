@@ -7,7 +7,7 @@ global $wp_customize;
 $wp_customize->add_setting( 'beenews_enable_news_ticker',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_checkbox'
 	                            ),
 	                            'default'           => true
@@ -17,7 +17,7 @@ $wp_customize->add_setting( 'beenews_enable_news_ticker',
 $wp_customize->add_setting( 'beenews_featured_image_in_content',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_checkbox'
 	                            ),
 	                            'default'           => true
@@ -30,7 +30,7 @@ $wp_customize->add_setting( 'beenews_featured_image_in_content',
 $wp_customize->add_setting( 'beenews_enable_menu_search',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_checkbox'
 	                            ),
 	                            'default'           => true
@@ -43,7 +43,7 @@ $wp_customize->add_setting( 'beenews_enable_menu_search',
 $wp_customize->add_setting( 'beenews_enable_sticky_menu',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_checkbox'
 	                            ),
 	                            'default'           => false
@@ -55,7 +55,7 @@ $wp_customize->add_setting( 'beenews_enable_sticky_menu',
 $wp_customize->add_setting( 'beenews_enable_blazy',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_checkbox'
 	                            ),
 	                            'default'           => false
@@ -67,7 +67,7 @@ $wp_customize->add_setting( 'beenews_enable_blazy',
 $wp_customize->add_setting( 'beenews_enable_post_breadcrumbs',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_checkbox'
 	                            ),
 	                            'default'           => true
@@ -80,7 +80,7 @@ $wp_customize->add_setting( 'beenews_enable_post_breadcrumbs',
 $wp_customize->add_setting( 'beenews_blog_breadcrumb_menu_post_category',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_checkbox'
 	                            ),
 	                            'default'           => true
@@ -93,7 +93,7 @@ $wp_customize->add_setting( 'beenews_blog_breadcrumb_menu_post_category',
 $wp_customize->add_setting( 'beenews_footer_columns',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_radio_buttons'
 	                            ),
 	                            'default'           => 4
@@ -102,7 +102,7 @@ $wp_customize->add_setting( 'beenews_footer_columns',
 $wp_customize->add_setting( 'beenews_preloader_effect',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_checkbox'
 	                            ),
 	                            'default'           => false
@@ -135,7 +135,7 @@ $wp_customize->add_setting( 'beenews_preloader_effect_type',
 $wp_customize->add_setting( 'beenews_enable_copyright',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_checkbox'
 	                            ),
 	                            'default'           => true
@@ -144,7 +144,7 @@ $wp_customize->add_setting( 'beenews_enable_copyright',
 $wp_customize->add_setting( 'beenews_enable_attribution',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_checkbox'
 	                            ),
 	                            'default'           => true
@@ -165,7 +165,7 @@ $wp_customize->add_setting( 'beenews_copyright_contents',
 $wp_customize->add_setting( 'beenews_enable_go_top',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_checkbox'
 	                            ),
 	                            'default'           => true
@@ -174,7 +174,7 @@ $wp_customize->add_setting( 'beenews_enable_go_top',
 $wp_customize->add_setting( 'beenews_after_footer_enable',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_checkbox'
 	                            ),
 	                            'default'           => false
@@ -190,7 +190,7 @@ $wp_customize->add_setting( 'beenews_after_footer_enable',
 $wp_customize->add_setting( 'beenews_enable_author_box',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_checkbox'
 	                            ),
 	                            'default'           => true
@@ -200,7 +200,7 @@ $wp_customize->add_setting( 'beenews_enable_author_box',
 $wp_customize->add_setting( 'beenews_show_single_post_tags',
                             array(
 	                            'sanitize_callback' => array(
-		                            'beenews_Customizer_Helper',
+		                            'bee_news_Customizer_Helper',
 		                            'beenews_sanitize_checkbox'
 	                            ),
 	                            'default'           => true

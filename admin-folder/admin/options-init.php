@@ -122,6 +122,13 @@
         'id'         => 'opt-footer-subsection',
         'subsection' => true,
         'fields'     => array(
+            $fields = array(
+                'id'       => 'footer-switch',
+                'type'     => 'switch', 
+                'title'    => __('Footer Social Icon', 'bee-news'),
+                'subtitle' => __('Look, it\'s off!', 'bee-news'),
+                'default'  => false,
+            ),
             array(
                 'id'       => 'footer-logo',
                 'type'     => 'media',

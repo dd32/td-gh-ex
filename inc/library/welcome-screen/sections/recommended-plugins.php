@@ -5,7 +5,7 @@ if ( ! defined( 'WPINC' ) ) {
 /**
  * Recommended Plugins
  */
-global $beenews_required_actions, $beenews_recommended_plugins;
+global $bee_news_required_actions, $bee_news_recommended_plugins;
 
 
 
@@ -17,7 +17,7 @@ add_thickbox();
 ?>
 
 <div class="feature-section recommended-plugins three-col demo-import-boxed" id="plugin-filter">
-	<?php foreach ( $beenews_recommended_plugins as $plugin => $prop ) { ?>
+	<?php foreach ( $bee_news_recommended_plugins as $plugin => $prop ) { ?>
 		<?php
 
 		

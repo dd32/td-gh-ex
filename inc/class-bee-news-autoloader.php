@@ -4,9 +4,9 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Class beenews_Autoloader
+ * Class bee_news_Autoloader
  */
-class beenews_Autoloader {
+class bee_news_Autoloader {
 	public function __construct() {
 		spl_autoload_register( array( $this, 'load' ) );
 	}
@@ -43,4 +43,4 @@ class beenews_Autoloader {
 	}
 }
 
-$autoloader = new beenews_Autoloader();
+$autoloader = new bee_news_Autoloader();

@@ -4,11 +4,11 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Class beenews_Lite
+ * Class bee_news_Lite
  */
-class beenews_Lite {
+class bee_news_Lite {
 	/**
-	 * beenews_Lite constructor.
+	 * bee_news_Lite constructor.
 	 */
 	public function __construct() {
 		add_action( 'after_setup_theme', array( $this, 'theme_setup' ) );
@@ -24,7 +24,7 @@ class beenews_Lite {
 		/**
 		 * Grab all class methods and initiate automatically
 		 */
-		$methods = get_class_methods( 'beenews_Lite' );
+		$methods = get_class_methods( 'bee_news_Lite' );
 
 		foreach ( $methods as $method ) {
 			if ( strpos( $method, 'init_' ) !== false ) {
@@ -39,7 +39,7 @@ class beenews_Lite {
 	 * Initiate the setting helper
 	 */
 	public function customize_register_init() {
-		// new beenews_Customizer_Helper();
+		// new bee_news_Customizer_Helper();
 	}
 
 
@@ -49,9 +49,9 @@ class beenews_Lite {
 	public function init_welcome_screen() {
 		// Welcome screen
 		if ( is_admin() ) {
-			global $beenews_required_actions, $beenews_recommended_plugins;
+			global $bee_news_required_actions, $bee_news_recommended_plugins;
 
-			$beenews_recommended_plugins = array(
+			$bee_news_recommended_plugins = array(
 				'redux-framework'        => array( 'recommended' => true, 'plugin-file' => 'redux-framework.php' ),
 				'shareaholic' => array( 'recommended' => true, 'plugin-file' => 'shareaholic.php'  ),
 			);
@@ -64,19 +64,19 @@ class beenews_Lite {
 			 * plugin_slug - the plugin's slug (used for installing the plugin)
 			 *
 			 */
-			$beenews_required_actions = array(
+			$bee_news_required_actions = array(
 				array(
 					"id"          => 'beenews-req-ac-install-wp-import-plugin',
-					"title"       => Beenews_Notify_System::wordpress_importer_title(),
-					"description" => Beenews_Notify_System::wordpress_importer_description(),
-					"check"       => Beenews_Notify_System::has_import_plugin( 'wordpress-importer' ),
+					"title"       => Bee_news_Notify_System::wordpress_importer_title(),
+					"description" => Bee_news_Notify_System::wordpress_importer_description(),
+					"check"       => Bee_news_Notify_System::has_import_plugin( 'wordpress-importer' ),
 					"plugin_slug" => 'wordpress-importer'
 				),
 				array(
 					"id"          => 'beenews-req-ac-install-wp-import-widget-plugin',
-					"title"       => Beenews_Notify_System::widget_importer_exporter_title(),
-					'description' => Beenews_Notify_System::widget_importer_exporter_description(),
-					"check"       => Beenews_Notify_System::has_import_plugin( 'widget-importer-exporter' ),
+					"title"       => Bee_news_Notify_System::widget_importer_exporter_title(),
+					'description' => Bee_news_Notify_System::widget_importer_exporter_description(),
+					"check"       => Bee_news_Notify_System::has_import_plugin( 'widget-importer-exporter' ),
 					"plugin_slug" => 'widget-importer-exporter'
 				),
 				array(
@@ -85,26 +85,26 @@ class beenews_Lite {
 					"description" => esc_html__( 'Head over to our website and download the sample content data.', 'bee-news' ),
 					"help"        => '<a target="_blank"  href="http://www.beetechsolution.com/export-beenews/beenews.wordpress.zip">' . __( 'Posts', 'bee-news' ) . '</a>, 
 									   <a target="_blank"  href="http://www.beetechsolution.com/export-beenews/beenews-widgets.zip">' . __( 'Widgets', 'bee-news' ) .'</a>',
-					"check"       => Beenews_Notify_System::has_content(),
+					"check"       => Bee_news_Notify_System::has_content(),
 				),
 				array(
 					"id"    => 'beenews-req-ac-install-data',
 					"title" => esc_html__( 'Import Sample Data', 'bee-news' ),
 					"help"  => '<a class="button button-primary" target="_blank"  href="' . self_admin_url( 'admin.php?import=wordpress' ) . '">' . __( 'Import Posts', 'bee-news' ) . '</a> 
 									   <a class="button button-primary" target="_blank"  href="' . self_admin_url( 'tools.php?page=widget-importer-exporter' ) . '">' . __( 'Import Widgets', 'bee-news' ) . '</a>',
-					"check" => Beenews_Notify_System::has_import_plugins(),
+					"check" => Bee_news_Notify_System::has_import_plugins(),
 				),
 				array(
 					"id"          => 'beenews-req-ac-static-latest-news',
 					"title"       => esc_html__( 'Set front page to static', 'bee-news' ),
 					"description" => esc_html__( 'If you just installed beenews, and are not able to see the front-page demo, you need to go to Settings -> Reading , Front page displays and select "Static Page".', 'bee-news' ),
 					"help"        => 'If you need more help understanding how this works, check out the following <a target="_blank"  href="https://codex.wordpress.org/Creating_a_Static_Front_Page#WordPress_Static_Front_Page_Process">link</a>. <br/><br/> <a class="button button-secondary" target="_blank"  href="' . self_admin_url( 'options-reading.php' ) . '">' . __( 'Set Front Page', 'bee-news' ) .'</a>',
-					"check"       => Beenews_Notify_System::is_not_template_front_page()
+					"check"       => Bee_news_Notify_System::is_not_template_front_page()
 				)
 				
 			);
 
-			new beenews_Welcome_Screen();
+			new Bee_news_Welcome_Screen();
 		}
 	}
 

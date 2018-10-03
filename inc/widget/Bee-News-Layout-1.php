@@ -2,13 +2,13 @@
 require_once (dirname(__FILE__) . "/../template-tags.php");
 require_once (dirname(__FILE__) . "/../news-layouts.php");
 
-class BeeLayout1 extends WP_Widget {
+class Bee_News_Layout1 extends WP_Widget {
 
 
   // Set up the widget name and description.
   public function __construct() {
     $widget_options = array( 'classname' => 'news', 'description' => 'Custom Bee News Layout 1' );
-    parent::__construct( 'bee_layout_1_widget', 'Bee News Layout One', $widget_options );
+    parent::__construct( 'bee_news_layout_1_widget', 'Bee News Layout One', $widget_options );
   }
 
 
@@ -27,7 +27,7 @@ class BeeLayout1 extends WP_Widget {
     
      <div class="row">
       <div class="col-md-8">
-        <?php beenews_layout_1(array('cat_id' => $cat_id ));  ?>
+        <?php bee_news_layout_11(array('cat_id' => $cat_id ));  ?>
       </div>
       <div class="col-md-4">
         
@@ -146,7 +146,7 @@ class BeeLayout1 extends WP_Widget {
 
 // Register the widget.
 function bee_news_layout_1_register__widget() { 
-  register_widget( 'BeeLayout1' );
+  register_widget( 'Bee_News_Layout1' );
 }
 add_action( 'widgets_init', 'bee_news_layout_1_register__widget' );
 

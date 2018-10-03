@@ -2,7 +2,7 @@
 if ( ! defined( 'WPINC' ) ) {
 	die;
 }
-class beenews_Helper {
+class bee_news_Helper {
 	/**
 	 * Get an attachment ID given a URL.
 	 *
