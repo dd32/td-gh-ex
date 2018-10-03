@@ -472,7 +472,7 @@ function ashe_true_false( $option ) {
 */
 	// Logo & Tagline
 	$css .= "
-		.header-logo {
+		.header-logo a {
 			font-family: '". str_replace( '+', ' ', ashe_options( 'typography_logo_family' ) ) ."';
 		}
 	";
