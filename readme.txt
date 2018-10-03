@@ -56,9 +56,15 @@ Icons
 
 == Changelog ==
 
+= 1.0.3 (Released: October 03, 2018) =
+* Bug Fixed: Spacing issue in comment section in mobile
+* Bug Fixed: Updated Content delivered through the_content filter
+* Updated: Team Section styles
+
 = 1.0.2 (Released: September 10, 2018) =
 * Bug Fixed: Header Media overlay
-* Bug Fixed: Header already sent issue in custom-header.php
+* Bug Fixed: Header Already Sent issue in custom-header.php
+* Bug Fixed: Playlist section spacing issue
 
 = 1.0.1 (Released: September 06, 2018) =
 * Bug Fixed: Header Media text color issue

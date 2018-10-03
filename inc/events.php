@@ -318,7 +318,7 @@ if ( ! function_exists( 'audioman_post_page_category_events' ) ) :
 				$content = apply_filters( 'the_content', get_the_content() );
 				$content = str_replace( ']]>', ']]&gt;', $content );
 
-				$output .= '<div class="entry-summary">' . $content . '</div><!-- .entry-summary -->';
+				$output .= '<div class="entry-summary">' . wp_kses_post( $content ) . '</div><!-- .entry-summary -->';
 
 				$output .= '</div><!-- .event-list-description -->';
 

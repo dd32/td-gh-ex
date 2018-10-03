@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/audioman/
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Audioman is a well-designed, modern and trendy music WordPress theme built for musicians and bands that focuses on promoting their music and events. Simple modules and features are available in Audioman so you can build a complete and custom website right away. The theme comes with an array of features — such as header media, featured slider, featured content, hero content, playlist, portfolio, testimonials, and more — to keep your music website on the forefront. Audioman is completely responsive, which means your website will look incredibly sleek and visually appealing on all the devices with different screen resolution. The theme is deeply engaging, and the features provided in it will assist you in gaining genuine followers in a short period of time. To top it all, the theme is translation ready. For more details, check out Theme Instructions at https://catchthemes.com/themes/audioman/#theme-instructions, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/audioman/
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, entertainment, photography, portfolio
@@ -442,7 +442,7 @@ ul.products li.product .woocommerce-loop-product__title,
 .header-media .entry-meta,
 .entry-footer .entry-meta,
 #testimonial-content-section .entry-title,
-#team-content-section .entry-meta {
+.team-content-wrapper .entry-meta {
 	font-size: 16px;
 	font-size: 1rem;
 }
@@ -1110,6 +1110,7 @@ td {
 
 .comments-area {
 	margin-top: 35px;
+	padding-top: 35px;
 }
 
 .hero-content-wrapper .entry-summary,
@@ -2533,6 +2534,11 @@ blockquote:after,
 	position: relative;
 }
 
+.page.no-sidebar .content-area,
+.single.no-sidebar .content-area {
+	max-width: 720px;
+}
+
 /* Do not show the outline on the skip link target. */
 #content[tabindex="-1"]:focus {
 	outline: 0;
@@ -2716,8 +2722,8 @@ blockquote:after,
     z-index: 1;
 }
 
-.color-scheme-light .header-media .wrapper:after,
-.color-scheme-green .header-media .wrapper:after {
+.color-scheme-light .custom-header-overlay,
+.color-scheme-green .custom-header-overlay {
     background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -3849,7 +3855,7 @@ body .flashy-container .flashy-content {
 	width: 100%;
 }
 
-#team-content-section .entry-container {
+.team-content-wrapper .entry-container {
 	padding: 21px 28px;
 	text-align: center;
 }
@@ -3859,31 +3865,31 @@ body .flashy-container .flashy-content {
  * 14.4 - Team Content Section
  */
 
-#team-content-section .post-thumbnail,
-#team-content-section .entry-title,
-#team-content-section .entry-meta {
+.team-content-wrapper .post-thumbnail,
+.team-content-wrapper .entry-title,
+.team-content-wrapper .entry-meta {
 	margin: 0;
 }
 
-#team-content-section .hentry {
+.team-content-wrapper .hentry {
 	height: auto;
 }
 
-#team-content-section .hentry-inner {
+.team-content-wrapper .hentry-inner {
 	position: relative;
 }
 
-#team-content-section .post-thumbnail img {
+.team-content-wrapper .post-thumbnail img {
 	-webkit-filter: grayscale(100%);
     filter: grayscale(100%);
 }
 
-#team-content-section .hentry:hover .post-thumbnail img {
+.team-content-wrapper .hentry:hover .post-thumbnail img {
 	-webkit-filter: none;
 	filter:none;
 }
 
-#team-content-section .entry-meta {
+.team-content-wrapper .entry-meta {
 	letter-spacing: 0;
 	text-transform: capitalize;
 }
@@ -3892,11 +3898,11 @@ body .flashy-container .flashy-content {
 	overflow: hidden;
 }
 
-#team-content-section .artist-image-container {
+.team-content-wrapper .artist-image-container {
 	position: relative;
 }
 
-#team-content-section .artist-social-profile {
+.team-content-wrapper .artist-social-profile {
 	background: rgba(0,0,0,0.5);
 	position: absolute;
 	height: 100%;
@@ -3907,7 +3913,7 @@ body .flashy-container .flashy-content {
 	text-align: center;
 }
 
-#team-content-section .artist-social-profile >.social-navigation {
+.team-content-wrapper .artist-social-profile >.social-navigation {
 	display: block;
 	padding: 0;
 	position: relative;
@@ -4293,11 +4299,6 @@ body .flashy-container .flashy-content {
 
 #playlist-section .wp-playlist-item {
 	border: none;
-}
-
-#playlist-section .wp-playlist {
-	margin-left: -21px;
-	margin-right: -21px;
 }
 
 
@@ -5481,7 +5482,7 @@ body .wp-playlist {
 }
 
 body #playlist-section .wp-playlist {
-	margin: 0.875em 0 1.3125em;
+	margin: 0.875em -1.3125em 1.3125em;
 }
 
 body .wp-playlist .wp-playlist-current-item img {
@@ -7640,9 +7641,8 @@ dl.variation p {
 		width: 90%;
 	}
 
-	#playlist-section .wp-playlist {
-		margin-left: -40px;
-		margin-right: -40px;
+	body #playlist-section .wp-playlist {
+	    margin: 0.875em -2.5em 1.3125em;
 	}
 
 	.audioman-mejs-container.mejs-container .mejs-controls .mejs-button.mejs-previous,
@@ -8014,16 +8014,16 @@ dl.variation p {
 		margin: 21px auto 21px;
 	}
 
-	#team-content-section .artist-social-profile >.social-navigation {
+	.team-content-wrapper .artist-social-profile >.social-navigation {
 		top: 50%;
 		transform: translate(-50%, -50%);
 	}
 
-	#team-content-section .artist-social-profile {
+	.team-content-wrapper .artist-social-profile {
 	    opacity: 0;
 	}
 
-	#team-content-section .hentry:hover .artist-social-profile {
+	.team-content-wrapper .hentry:hover .artist-social-profile {
 	    box-shadow: inset 0 0 50px 0 rgba(0,0,0,.15);
 	    opacity: 1;
 	}
@@ -8192,11 +8192,6 @@ dl.variation p {
 		margin-right: -100%;
 		width: 70%;
 		max-width: 960px;
-	}
-
-	.page.no-sidebar .content-area,
-	.single.no-sidebar .content-area {
-		max-width: 720px;
 	}
 
 	.sidebar {
@@ -8932,9 +8927,9 @@ body .wp-playlist-item-artist {
 }
 
 #top-playlist-section,
-#team-content-section .post-thumbnail img,
-#team-content-section .artist-social-profile,
-#team-content-section .artist-social-profile >.social-navigation,
+.team-content-wrapper .post-thumbnail img,
+.team-content-wrapper .artist-social-profile,
+.team-content-wrapper .artist-social-profile >.social-navigation,
 #gallery-section .gallery-item .gallery-icon a:before,
 #gallery-section .tiled-gallery .tiled-gallery-item a:before {
 	-webkit-transition: all 0.2s ease-in-out;
@@ -9280,6 +9275,8 @@ a:hover,
 #events-section.has-foreground-image .entry-title a:focus,
 #portfolio-content-section .entry-title a:hover,
 #portfolio-content-section .entry-title a:focus,
+.team-content-wrapper .hentry-inner:hover .entry-title a,
+.team-content-wrapper .hentry-inner:focus .entry-title a,
 .audioman-mejs-container.mejs-container button:hover,
 .audioman-mejs-container.mejs-container button:focus,
 #top-playlist-section .audioman-mejs-container.mejs-container .mejs-controls .mejs-playpause-button.mejs-button button:hover,
