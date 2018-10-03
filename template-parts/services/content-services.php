@@ -37,7 +37,7 @@
 		} elseif ( 'full-content' === $show_content ) {
 			$content = apply_filters( 'the_content', get_the_content() );
 			$content = str_replace( ']]>', ']]&gt;', $content );
-			echo '<div class="entry-content">' . $content . '</div><!-- .entry-content -->';
+			echo '<div class="entry-content">' . wp_kses_post( $content ) . '</div><!-- .entry-content -->';
 		} ?>
 	</div><!-- .entry-container -->
 </article>

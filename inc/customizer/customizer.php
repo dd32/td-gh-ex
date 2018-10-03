@@ -220,6 +220,7 @@ require get_parent_theme_file_path( 'inc/customizer/helpers.php' );
  * Include Sanitization functions
  */
 require get_parent_theme_file_path( 'inc/customizer/sanitize-functions.php' );
+
 /**
  * Include Upgrade Button
  */

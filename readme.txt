@@ -60,6 +60,13 @@ Icons
 
 == Changelog ==
 
+= 1.2 (Released: October 03, 2018) =
+* Bug Fixed: Feature Slider section border issue
+* Bug Fixed: Updated Content delivered through the_content filter
+* Updated: Page max-width changed 2560px
+* Updated: Recent Posts widget styles
+* Updated: Woocommerce widget css
+
 = 1.1.1 (Released: August 10, 2018) =
 * Bug Fixed: Header Image for front blog page issue
 * Bug Fixed: Improper escaping for aria-label on menus

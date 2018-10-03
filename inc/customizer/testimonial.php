@@ -32,7 +32,7 @@ function adonis_testimonial_options( $wp_customize ) {
         )
     );
 
-     adonis_register_option( $wp_customize, array(
+    adonis_register_option( $wp_customize, array(
             'name'              => 'adonis_testimonial_note_1',
             'sanitize_callback' => 'sanitize_text_field',
             'custom_control'    => 'Adonis_Note_Control',

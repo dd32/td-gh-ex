@@ -155,7 +155,7 @@ if ( ! function_exists( 'adonis_post_page_category_slider' ) ) :
 			} elseif ( 'full-content' === $show_content ) {
 				$content = apply_filters( 'the_content', get_the_content() );
 				$content = str_replace( ']]>', ']]&gt;', $content );
-				$output .= '<div class="entry-content">' . $content . '</div><!-- .entry-content -->';
+				$output .= '<div class="entry-content">' . wp_kses_post( $content ) . '</div><!-- .entry-content -->';
 			}
 
 						$output .= '

@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/adonis
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Adonis - A free Personal WordPress theme for professionals is simple, clean and user-friendly that will always put everything you have to offer in the forefront. Adonis theme has been specially crafted for the professionals to let the world know about them at large. It mainly focuses on creating an elegant personal website for the professionals in only a matter of times. Adonis is a minimalist yet powerful WordPress theme for professionals. It is based on responsive design, allowing your website to look beautiful on any device, regardless of the screen size. Adonis comes with a plethora of awesome features - such as, site identity, header media, header image, background image, custom menu, breadcrumb, excerpt, featured content, featured slider, logo slider, hero content, layout options, pagination options, portfolio, testimonials, services, testimonials, stats, and many more—that are extremely crucial for any professional to showcase their work. This theme is translation ready. For more details, check out Theme Instructions at https://catchthemes.com/theme-instructions/adonis/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/adonis/
-Version: 1.1.1
+Version: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.txt
 Text Domain: adonis
@@ -54,7 +54,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 	## Skill Section
 	## Archive Post Wrap
 	## Singular Content Wrap
-# Footer
+# Woocommerce
 # Media Queries
 	## >= 640px
 	## >= 768px
@@ -1146,8 +1146,7 @@ body.menu-open {
 	display: inline-block;
 }
 
-.navigation-modern #social-search-wrapper .menu-inside-wrapper .social-navigation,
-.navigation-classic .mobile-social-search {
+.navigation-modern #social-search-wrapper .menu-inside-wrapper .social-navigation {
 	display: none;
 }
 
@@ -1481,7 +1480,6 @@ body.menu-open {
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
-
 .widget .widget-title {
 	letter-spacing: 0.15em;
 	text-transform: uppercase;
@@ -1495,6 +1493,23 @@ body.menu-open {
 .widget ol {
 	list-style: none;
 	margin-left: 0;
+}
+
+/* Recent Posts widget */
+.widget-area .gallery {
+	margin: 0;
+}
+
+.widget_recent_entries .post-date {
+	display: block;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	line-height: 1.615384615;
+	margin-bottom: 0.538461538em;
+}
+
+.widget_recent_entries li:last-child .post-date {
+	margin-bottom: 0;
 }
 
 /* Categories widget */
@@ -1867,7 +1882,7 @@ textarea {
 
 #page {
     margin: 0 auto;
-	max-width: 1920px;
+	max-width: 2560px;
 	position: relative;
     overflow-x: hidden;
 }
@@ -1887,7 +1902,7 @@ textarea {
 #portfolio-section .wrapper,
 #testimonial-section .wrapper,
 #footer-instagram .wrapper {
-	max-width: 1920px;
+	max-width: 2560px;
 }
 
 #hero-section .wrapper,
@@ -2711,7 +2726,12 @@ p > video {
 ## Slider
 --------------------------------------------------------------*/
 
-#feature-slider-section,
+#feature-slider-section {
+	padding: 0;
+	margin: 0;
+	border: 0;
+}
+
 #feature-slider-section .slider-content-wrapper {
 	padding: 0;
 }
@@ -3330,6 +3350,29 @@ p > video {
 
 
 /*--------------------------------------------------------------
+# Woocommerce
+--------------------------------------------------------------*/
+
+.woocommerce .product-container .button {
+	font-size: 13px;
+	font-size: 0.8125rem;
+	line-height: 1.615384615384615;
+	letter-spacing: 0.075em;
+	padding: 8px 21px;
+}
+
+.woocommerce ul.cart_list li img,
+.woocommerce ul.product_list_widget li img {
+    max-width: 3.333333333333333em;
+    width: 100%;
+}
+
+.related h2:first-of-type {
+    margin-bottom: 1.037037037037037em;
+}
+
+
+/*--------------------------------------------------------------
 # Media Queries
 --------------------------------------------------------------*/
 
@@ -3606,8 +3649,13 @@ p > video {
 		clear: both;
 	}
 
-	.navigation-modern #social-search-wrapper > .social-navigation {
+	.header-right-social-top-menu #social-search-wrapper > .social-navigation {
 		display: block;
+	}
+
+	.header-right-social-top-menu #primary-menu-wrapper .menu-inside-wrapper .mobile-social-search,
+	.header-right-social-top-menu #social-search-wrapper .menu-inside-wrapper .social-navigation {
+		display: none;
 	}
 
 	#social-search-wrapper > .social-navigation .menu-social-container {
@@ -4444,7 +4492,8 @@ hr,
 .site-footer,
 .skillbar-content,
 #feature-slider-section .cycle-pager span,
-#testimonial-section .cycle-pager span {
+#testimonial-section .cycle-pager span,
+.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content {
 	background-color: #f7f7f7;
 }
 
@@ -4609,7 +4658,9 @@ input[type="submit"][disabled]:focus,
 .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button,
-.woocommerce span.onsale {
+.woocommerce span.onsale,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
+.woocommerce .widget_price_filter .ui-slider .ui-slider-handle {
 	background-color: #1982c4;
 }
 
