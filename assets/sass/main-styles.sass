@@ -150,6 +150,10 @@ p .size-full
 .bypostauthor
   font-size: 16px
 
+article
+  & img
+    max-width: 100% !important
+    height: auto
 /*=====================*/
 /** WordPress Classes */
 /*======================*/
@@ -592,6 +596,8 @@ header.header-style-1, header.header-style-2
     content: ''
     top: 53%
     left: -32px
+    @include for-phone-only
+      display: none
   &:after
     position: absolute
     height: 3px
@@ -600,6 +606,8 @@ header.header-style-1, header.header-style-2
     content: ''
     top: 53%
     right: -32px
+    @include for-phone-only
+      display: none
 
 .section-subtitle
   margin: 0

@@ -30,6 +30,11 @@ jQuery(document).ready(function ($) {
         displace: false
 
     });
+    $('body').click(function (event) {
+        if(!$(event.target).closest('#sidr-mobile').length){
+            $.sidr('close', 'sidr-mobile');
+        }
+    });
 
     /*
     * Impose some same height
