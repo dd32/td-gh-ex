@@ -28,9 +28,11 @@
 	text-decoration:none; 
 	line-height:inherit;
 	color:#fff;
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
-	-o-transition: all .3s ease;
+	-webkit-transition: color .3s ease;
+	-moz-transition: color .3s ease;
+	-ms-transition: color .3s ease;
+	-o-transition: color .3s ease;
+	transition: color .3s ease;
 } 
 
 #logo a span { 
@@ -54,9 +56,11 @@
 }
 
 .navigation i {
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
-	-o-transition: all .3s ease;
+	-webkit-transition: color .3s ease;
+	-moz-transition: color .3s ease;
+	-ms-transition: color .3s ease;
+	-o-transition: color .3s ease;
+	transition: color .3s ease;
 }
 
 .navigation i.open,
@@ -287,13 +291,15 @@ body.logged-in.customizer_active.overlay-active #sidebar-wrapper #scroll-sidebar
 	display:block; 
 	z-index:1; 
 	padding:6px 12px;
-	-webkit-transition: all .1s linear; 
-	-moz-transition: all .1s linear; 
-	-o-transition: all .1s linear; 
 	position:relative;
 	cursor:pointer;
 	line-height:1.8em;
 	border:none;
+	-webkit-transition: color .1s linear;
+	-moz-transition: color .1s linear;
+	-ms-transition: color .1s linear;
+	-o-transition: color .1s linear;
+	transition: color .1s linear;
 }
 
 .suevafree-mobile-menu ul li a:hover,
@@ -340,11 +346,12 @@ body.logged-in.customizer_active.overlay-active #sidebar-wrapper #scroll-sidebar
 
 #wrapper {
 	position: relative;
-	-webkit-transition: 0.6s;
-	-moz-transition: 0.6s;
-	-o-transition: 0.6s;
-	transition: 0.6s;
 	min-height:100%;
+	-webkit-transition: transform .6s ease;
+	-moz-transition: transform .6s ease;
+	-ms-transition: transform .6s ease;
+	-o-transition: transform .6s ease;
+	transition: transform .6s ease;
 }
 
 #wrapper.open-sidebar {

@@ -95,9 +95,11 @@ p.demo_store {
 	color:#333; 
 	text-decoration:none; 
 	text-align:center;
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
-	-o-transition: all .3s ease;
+	-webkit-transition: color .3s ease;
+	-moz-transition: color .3s ease;
+	-ms-transition: color .3s ease;
+	-o-transition: color .3s ease;
+	transition: color .3s ease;
 } 
 
 #logo a.logo:hover { 
@@ -149,9 +151,11 @@ p.demo_store {
 		padding:35px 10px;
 		z-index:1; 
 		color:#919191; 
-		-webkit-transition: all .3s linear; 
-		-moz-transition: all .3s linear; 
-		-o-transition: all .3s linear;
+		-webkit-transition: color .3s linear;
+		-moz-transition: color .3s linear;
+		-ms-transition: color .3s linear;
+		-o-transition: color .3s linear;
+		transition: color .3s linear;
 	}
 	
 	.suevafree-menu ul li a:hover,
@@ -279,13 +283,15 @@ p.demo_store {
 		z-index:1; 
 		padding:6px 0;
 		font-size:16px; 
-		-webkit-transition: all .1s linear; 
-		-moz-transition: all .1s linear; 
-		-o-transition: all .1s linear; 
 		position:relative;
 		cursor:pointer;
 		line-height:1.8em;
 		color:#fff;
+		-webkit-transition: color .3s linear;
+		-moz-transition: color .3s linear;
+		-ms-transition: color .3s linear;
+		-o-transition: color .3s linear;
+		transition: color .3s linear;
 	}
 	
 	.suevafree-mobile-menu ul li a:hover,
@@ -372,11 +378,12 @@ body.logged-in.customizer_active #mobile-wrapper #mobile-scroll {
 	display:block; 
 	height:100%;  
 	padding:25px 0; 
-	-webkit-transition: 0.6s;
-	-moz-transition: 0.6s;
-	-o-transition: 0.6s;
-	transition: 0.6s;
 	top:0;
+	-webkit-transition: left .6s ease;
+	-moz-transition: left .6s ease;
+	-ms-transition: left .6s ease;
+	-o-transition: left .6s ease;
+	transition: left .6s ease;
 }
 
 body.overlay-active #wrapper {

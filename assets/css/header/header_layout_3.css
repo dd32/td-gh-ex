@@ -21,10 +21,12 @@
 	color:#616161; 
 	text-decoration:none; 
 	text-align:left;
-	-webkit-transition: all .3s ease;
-	-moz-transition: all .3s ease;
-	-o-transition: all .3s ease;
-	line-height:inherit
+	line-height:inherit;
+	-webkit-transition: color .3s ease;
+	-moz-transition: color .3s ease;
+	-ms-transition: color .3s ease;
+	-o-transition: color .3s ease;
+	transition: color .3s ease;
 }
 
 #logo a.logo:hover { 
@@ -101,12 +103,14 @@ body.menubar .suevafree-menu:after {
 	margin:0 5px;
 	padding:12px 16px;
 	color:#616161; 
-	-webkit-transition: all .3s linear; 
-	-moz-transition: all .3s linear; 
-	-o-transition: all .3s linear; 
 	background:#fff;
 	line-height:1.4em;
 	height:inherit !important;
+	-webkit-transition: background-color .3s linear, color .3s linear;
+	-moz-transition: background-color .3s linear, color .3s linear;
+	-ms-transition: background-color .3s linear, color .3s linear;
+	-o-transition: background-color .3s linear, color .3s linear;
+	transition: background-color .3s linear, color .3s linear;
 }
 
 .suevafree-menu ul li a:hover,
@@ -213,9 +217,6 @@ body.menubar .suevafree-menu:after {
     padding: 0;
     z-index: 1000;
     color: #444;
-    -webkit-transition: all .3s linear;
-    -moz-transition: all .3s linear;
-    -o-transition: all .3s linear;
     font-weight: 400;
     line-height: 1.8em;
 }
