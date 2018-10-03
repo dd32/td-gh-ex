@@ -41,6 +41,13 @@ Not Available at this time
 I would recommended to upgrade at this time. Silver Quantum has been modified where is now using a framework to display its content. Starting at 1.0.0 is the major update. Please note that  I have removed the previous Changlog and starting from 1.0.3 because of the new Framework.
 
 == Changelog ==
+Version: 1.0.5
+- Fixed 404.php for primary sidebar
+- update blog custom query display
+
+Version: 1.0.4 
+- Small update
+
 Version : 1.0.3
 - Used Backdrop Core Framework to Build theme
 - Exactly the same theme just new framework build on top of

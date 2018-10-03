@@ -29,6 +29,6 @@
                 <?php Benlumia007\Backdrop\CustomQuery\display_custom_blog(); ?>
             </div>
         </div>
-        <?php get_sidebar(); ?>
+        <?php Benlumia007\Backdrop\Sidebar\display_primary(); ?>
     </div>
 <?php get_footer(); ?>

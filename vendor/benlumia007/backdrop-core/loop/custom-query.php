@@ -52,8 +52,8 @@ function output_custom_blog() {
             $query->the_post(); ?>
             <div class="blog-items">
                 <?php the_post_thumbnail( 'backdrop-small-thumbnails' ); ?>
-                <header class="recent-header">
-                    <h2 class="recent-title"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h2>
+                <header class="blog-header">
+                    <h2 class="blog-title"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h2>
                     <span class="entry-timestamp"><?php echo \Benlumia007\Backdrop\Entry\display_entry_timestamp(); ?></span>
                 </header>
                 <div class="entry-excerpt">

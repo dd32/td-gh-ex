@@ -32,7 +32,7 @@ function silver_quantum_load_custom_header() {
      ********************************************************************************************************************
      */
     $args = array(
-        'default-text-color'    => '000000',
+        'default-text-color'    => 'ffffff',
         'default-image'         => get_theme_file_uri( '/vendor/benlumia007/backdrop-core/assets/images/header-image.jpg' ),
         'height'                => 300,
         'max-width'             => 2000,

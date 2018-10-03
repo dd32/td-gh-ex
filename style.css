@@ -10,7 +10,7 @@ corner that helps users to navigation easier.
  * License:         GNU General Public License v2.0 or later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  * Tags:            grid-layout, left-sidebar, one-column, right-sidebar, two-columns, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
- * Version:         1.0.4
+ * Version:         1.0.5
  * Text Domain:     silver-quantum
  ************************************************************************************************************************
  */
@@ -47,13 +47,14 @@ corner that helps users to navigation easier.
  * 16.0 - Content (Search and 404)
  * 17.0 - Content (Post Formats)
  * 18.0 - Widgets
- * 19.0 - Media Queries (Mobile Small 30em (480px))
- * 20.0 - Media Queries (Mobile Small 37.5em (600px))
- * 21.0 - Media Queries (Mobile Medium 48.688em (667px))
- * 22.0 - Media Queries (Mobile Large 46em (736px))
- * 23.0 - Media Queries (Tablet Small 48em (768px))
- * 24.0 - Media Queries (Tablet Large 64em (1024px))
- * 25.0 - Media Queries (Desktop 73.125em 1170px))
+ * 19.0 - Grid Systems
+ * 20.0 - Media Queries (Mobile Small 30em (480px))
+ * 21.0 - Media Queries (Mobile Small 37.5em (600px))
+ * 22.0 - Media Queries (Mobile Medium 48.688em (667px))
+ * 23.0 - Media Queries (Mobile Large 46em (736px))
+ * 24.0 - Media Queries (Tablet Small 48em (768px))
+ * 25.0 - Media Queries (Tablet Large 64em (1024px))
+ * 26.0 - Media Queries (Desktop 73.125em 1170px))
  ************************************************************************************************************************
  */
 
@@ -293,7 +294,12 @@ corner that helps users to navigation easier.
  }
 
  .site-branding .site-title a {
+    color: #ffffff;
     font-size: 1.313em;
+ }
+
+ .site-branding .site-description {
+     color: #ffffff;
  }
 
  .site-content {
@@ -885,15 +891,82 @@ p.comment-awaiting-moderation {
     line-height: 1.6em;
 }
 
- /**
+/**
  ************************************************************************************************************************
- * 19.0 - Media Queries (Mobile Small 30em (480px))
+ * 19.0 - Grid Systems
  ************************************************************************************************************************
  */
+ .custom-blog {
+     display: grid;
+     grid-template-columns: 1fr 1fr;
+     grid-gap: 1.125em;
+ }
+
+ .blog-header {
+     text-align: center;
+ }
+
+ .blog-header .blog-title {
+     margin: 0;
+     padding: 0;
+ }
+
+ .blog-items .entry-excerpt {
+     line-height: 1.7em;
+ }
 
  /**
  ************************************************************************************************************************
- * 20.0 - Media Queries (Mobile Small 37.5em (600px))
+ * 20.0 - Media Queries (Mobile Small 30em (480px))
+ ************************************************************************************************************************
+ */
+ @media screen and (max-width: 30em) {
+    .site-branding .site-title a {
+        font-size: 1em;
+    }
+
+    .menu-toggle,
+    .primary-navigation.toggled ul {
+        display: block;
+    }
+    
+	.primary-navigation ul {
+		display: none;
+	}
+    
+    .primary-navigation.toggled {
+        padding: 0.1em;
+    }
+    
+    .nav-menu {
+        margin-bottom: 3.6em;
+    }
+    
+    .primary-navigation .nav-menu {
+        display: none;
+    }
+    
+    .primary-navigation.toggled .nav-menu {
+        display: block;
+        margin: 1em 1em 3.6em 1em;
+    }
+    
+    .left-sidebar .content-area,
+    .right-sidebar .content-area {
+        float: none;
+        width: 100%;
+    }
+
+    .left-sidebar .widget-area,
+    .right-sidebar .widget-area {
+        float: none;
+        width: 100%;
+    }
+}
+
+ /**
+ ************************************************************************************************************************
+ * 21.0 - Media Queries (Mobile Small 37.5em (600px))
  ************************************************************************************************************************
  */
  @media screen and (min-height: 30.063em) and (max-width: 37.50em) {
@@ -938,19 +1011,19 @@ p.comment-awaiting-moderation {
 
 /**
  ************************************************************************************************************************
- * 21.0 - Media Queries (Mobile Medium 48.688em (667px))
+ * 22.0 - Media Queries (Mobile Medium 48.688em (667px))
  ************************************************************************************************************************
  */
 
  /**
  ************************************************************************************************************************
- * 22.0 - Media Queries (Mobile Large 46em (736px))
+ * 23.0 - Media Queries (Mobile Large 46em (736px))
  ************************************************************************************************************************
  */
 
  /**
  ************************************************************************************************************************
- * 23.0 - Media Queries (Tablet Small 48em (768px))
+ * 24.0 - Media Queries (Tablet Small 48em (768px))
  ************************************************************************************************************************
  */
  @media screen and (min-width: 601px) and (max-width: 48em) {
@@ -1002,7 +1075,7 @@ p.comment-awaiting-moderation {
 
  /**
  ************************************************************************************************************************
- * 24.0 - Media Queries (Tablet Large 64em (1024px))
+ * 25.0 - Media Queries (Tablet Large 64em (1024px))
  ************************************************************************************************************************
  */
  @media screen and (min-width: 769px) and (max-width: 64em) {
@@ -1109,7 +1182,7 @@ p.comment-awaiting-moderation {
 
  /**
  ************************************************************************************************************************
- * 25.0 - Media Queries (Desktop 73.125em 1170px))
+ * 26.0 - Media Queries (Desktop 73.125em 1170px))
  ************************************************************************************************************************
  */
  @media screen and (min-width: 73.125em) {
