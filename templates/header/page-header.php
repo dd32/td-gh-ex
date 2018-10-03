@@ -15,17 +15,22 @@
 					
 				?>
 	
-				<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr( bloginfo('name') ); ?>" class="logo-img">
-					<img src="<?php echo esc_url(  $custom_logo[0] ); ?>" alt="<?php esc_attr( bloginfo('name') ); ?>">
-				</a>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr( bloginfo('name') ); ?>" class="logo-img">
+						<img src="<?php echo esc_url(  $custom_logo[0] ); ?>" alt="<?php esc_attr( bloginfo('name') ); ?>">
+					</a>
 				
 				<?php else : ?>
+					
+					<?php if ( is_home() || is_front_page() ) : ?>
+					<h1>
+						<a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo bloginfo( 'title' ); ?></a>
+					</h1>
+					<?php else : ?>
+					<a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo bloginfo( 'title' ); ?></a>
+					<?php endif; ?>
 
-				<a href="<?php echo esc_url( home_url('/') ); ?>"><?php echo bloginfo( 'title' ); ?></a>
-				
 				<?php endif; ?>
-
-				<br>
+				
 				<p class="site-description"><?php echo bloginfo( 'description' ); ?></p>
 				
 			</div>
