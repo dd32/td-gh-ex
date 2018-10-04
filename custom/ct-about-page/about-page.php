@@ -49,7 +49,7 @@ $config = array(
 			'title'               => esc_html__( 'Recommended actions', 'best-construction' ),
 			'text'                => esc_html__( 'We have compiled a list of steps for you to take so we can ensure that the experience you have using one of our products is very easy to follow.', 'best-construction' ),
 			'button_label'        => esc_html__( 'Recommended actions', 'best-construction' ),
-			'button_link'         => esc_url( admin_url( 'themes.php?page=best-construction-welcome&tab=recommended_plugins' ) ),
+			'button_link'         => esc_url( admin_url( 'themes.php?page=theta-welcome&tab=recommended_plugins' ) ),
 			'is_button'           => false,
 			'recommended_actions' => true,
 			'is_new_tab'          => false,
