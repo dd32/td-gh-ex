@@ -236,7 +236,7 @@ function adviso_sorter() {
 
 function adviso_load_fonts() {
 	
-	$fonts	=	[];
+	$fonts	=	array();
 	
 	array_push( $fonts, get_theme_mod( 'adviso_title_font1', 'Arvo' ) );
 	array_push( $fonts, get_theme_mod( 'adviso_body_font1', 'Ubuntu' ) );
@@ -253,15 +253,6 @@ function adviso_load_fonts() {
 add_action( 'wp_enqueue_scripts', 'adviso_load_fonts', 10 );
 
 
-/**
- * Change number or products per row to 3
- */
-add_filter('loop_shop_columns', 'loop_columns');
-if (!function_exists('loop_columns')) {
-	function loop_columns() {
-		return get_theme_mod('adviso_shop_column', 3); // Number of Products in a row
-	}
-}
 
 /*
 ** Load WooCommerce Compatibility FIle
@@ -274,6 +265,13 @@ endif;
  *	Increase Quality of uploaded images
 **/
 
-add_filter('jpeg_quality', function($arg){return 100;});
+function adviso_jpeg_quality( $arg ) {
+	return 100;
+}
+add_filter('jpeg_quality', 'adviso_jpeg_quality');
 
-add_filter( 'wp_editor_set_quality', function($arg){return 100;} );
+
+function adviso_wp_editor_set_quality( $arg ) {
+	return 100;
+}
+add_filter( 'wp_editor_set_quality', 'adviso_wp_editor_set_quality' );

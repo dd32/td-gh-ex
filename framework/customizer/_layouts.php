@@ -1,15 +1,8 @@
 <?php
 function adviso_customize_register_layouts( $wp_customize ) {
     $wp_customize->get_section('background_image')->panel = 'adviso_design_panel';
+    
     // Layout and Design
-/*
-    $wp_customize->add_panel( 'adviso_design_panel', array(
-        'priority'       => 20,
-        'capability'     => 'edit_theme_options',
-        'theme_supports' => '',
-        'title'          => __('Design & Layout','adviso'),
-    ) );
-*/
     
     $wp_customize->add_panel(
 		new Adviso_WP_Customize_Panel(

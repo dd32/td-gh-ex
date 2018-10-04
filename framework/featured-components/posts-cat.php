@@ -10,7 +10,7 @@
 		    
 		    <div id="categories-container">
 			    <?php
-					$cats = [];
+					$cats = array();
 					for ($i = 1; $i <= 3; $i++) {
 						$cats[$i]	=	get_theme_mod('adviso_featposts_category_' . $i);
 					}

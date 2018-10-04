@@ -9,8 +9,6 @@
 add_filter( 'woocommerce_enqueue_styles', 'adviso_dequeue_woocommerce_styles' );
 function adviso_dequeue_woocommerce_styles( $enqueue_styles ) {
 	unset( $enqueue_styles['woocommerce-general'] );	// Remove the gloss
-	//unset( $enqueue_styles['woocommerce-layout'] );		// Remove the layout
-	//unset( $enqueue_styles['woocommerce-smallscreen'] );	// Remove the smallscreen optimisation
 	return $enqueue_styles;
 }
 
@@ -88,14 +86,6 @@ function adviso_single_custom_header() {
     <?php endif;
 	    
 }
-
-/*
-add_action( 'woocommerce_after_main_content', 'adviso_single_custom_footer', 50 );
-
-function adviso_single_custom_footer() {
-    echo "</main></div>";
-}
-*/
 
 
 /**

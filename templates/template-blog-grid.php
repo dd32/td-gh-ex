@@ -15,10 +15,7 @@ get_header(); ?>
 			<header class="entry-header">
 	            <?php the_title( '<h1 class="template-entry-title section-title">', '</h1>' ); ?>
 	        </header><!-- .entry-header -->
-	        <?php wp_reset_query();
-	        wp_reset_postdata();
-	        //$paged = ( get_query_var( 'paged' ) ) ? absint( get_query_var( 'paged' ) ) : 1;
-	        //$cat = get_post_meta( get_the_ID(), 'choose-category', true );
+	        <?php
 	        $qa = array (
 	            'post_type'              => 'post',
 	            'ignore_sticky_posts'    => false,
@@ -42,6 +39,7 @@ get_header(); ?>
 	                ?>
 	
 	            <?php endwhile; ?>
+	            <?php wp_reset_postdata(); ?>
 	
 	        <?php else : ?>
 	

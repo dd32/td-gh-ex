@@ -6,14 +6,14 @@
 **Version:** 0.92
 **License:** GPL v3  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
-**Tags:** custom-background, two-columns, one-column, custom-colors, flexible-header, right-sidebar, grid-layout, custom-menu, sticky-post, theme-options, threaded-comments, translation-ready, featured-images, full-width-template, custom-header, footer-widgets
+**Tags:** custom-background, two-columns, one-column, custom-colors, flexible-header, right-sidebar, grid-layout, custom-menu, sticky-post, theme-options, threaded-comments, translation-ready, featured-images, full-width-template, custom-header, footer-widgets, e-commerce
 
 Creative and Beautiful WordPress Theme with a Large Header
 
 ## Description
 
-Adviso is a beautiful Material WordPress Theme designed keeping in mind the Material Design concepts. Apart from the aesthetics, Adviso is the perfect choice for an amazing website. With WooCommerce support, an E-Store was never this beautiful. Featured Posts, Featured Categories, Featured Products provide an awesome way to showcase your content. 
-Demo Here: http://demo.inkhive.com/Adviso/
+Adviso is a beautiful Material WordPress Theme designed keeping in mind the Material Design concepts. Apart from the aesthetics, Adviso is the perfect choice for an amazing website. With WooCommerce support, an E-Store was never this beautiful. Featured Posts, Carousels, Featured Categories, Featured Products provide an awesome way to showcase your content. Full Window Header allows you to engage users from the start. The theme has been designed laying emphasis on readability, customisations and a clean layout.
+Demo Here: http://demo.inkhive.com/adviso/
 
 
 ## Copyright
@@ -23,7 +23,7 @@ This theme is 100% GPL. And any external resources used and bundled with the the
 
 1. Font Awesome
 	- Code under MIT License
-	- Font under SIL OFL 1.1 
+	- Font under SIL OFL 1.1
 	- http://fortawesome.github.io/Font-Awesome/
 	
 2. Bootstrap
@@ -63,13 +63,26 @@ All Other Resources, apart from the ones mentioned above have been created by me
 
 ## Screenshot & Image Credits
 
-* 
+* Header Image - Cactus Pots
+https://www.pexels.com/photo/art-artistic-beautiful-bloom-311458/
 
 License: CC0
 Source: https://pixabay.com/en/service/terms/	
 
 ## Changelog
 
-### Version 0.92
+- Version 0.9
 
-* Initial Release
+  * Initial release
+  
+- Version 0.91
+
+  * Completed the Theme
+  
+- Version 0.92
+
+  * Fixed Bugs
+  
+- Version 0.93
+
+  * First Review Changes

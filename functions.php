@@ -50,6 +50,11 @@ require get_template_directory() . '/inc/template-functions.php';
 require get_template_directory() . '/framework/customizer/init.php';
 
 /**
+ *	TGM Plugin Activation
+ */
+require get_template_directory() . '/framework/tgmpa.php';
+
+/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
