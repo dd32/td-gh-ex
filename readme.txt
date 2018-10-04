@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.8
 Tested up to: 4.9
-Stable tag: 4.0.8
+Stable tag: 4.0.9
 
 == Description ==
 
@@ -548,3 +548,6 @@ with testing and feature suggestions.
 
 = Version 4.0.8 =
 * Fix: removed "g" output from search that was accidentally introduced in 4.0.7 somehow.
+
+= Version 4.0.9 =
+* Fix: issues with settings for initial install or 3.2 to 4.0 upgrade

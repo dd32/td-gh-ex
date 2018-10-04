@@ -174,6 +174,8 @@ function weaverx_save_opts($who='', $bump = true) {
 		$old = weaverx_getopt('style_date'); // and reload the cache
 	}
 
+	weaverx_setopt('last_option','Weaver Xtreme');		// just be sure - needed for first time install
+
 	if ($bump) {
 		//$vers = $vers ? $vers + 1 : 1;	// bump or init
 
@@ -1459,7 +1461,7 @@ function weaverx_check_editor_style() {		// see if we need an update...
 	$dir = trailingslashit($updir['basedir']) . 'weaverx-subthemes/editor-style-wvrx.css';
 
 	if (!@file_exists( $dir ))  {
-		weaverx_alert( __('IMPORTANT!\r\n*** Your Weaver Xtreme Theme settings are not up to date, probably because you are updating from Weaver Xtreme Version 3 to Version 4. These settings will now be automatically updated.','weaver-xtreme' /*adm*/) );
+		// weaverx_alert( __('Notice!\r\n*** Your Weaver Xtreme Theme settings are not up to date, probably because you are installing Weaver Xtreme for the first time, or are updating from Weaver Xtreme Version 3 to Version 4. These settings will be automatically updated.','weaver-xtreme' /*adm*/) );
 		weaverx_save_opts('customizer', true); // using customizer helps force for all situations
 		global $wp_settings_errors;
 		$wp_settings_errors = array();		// clear messages for this update setting
