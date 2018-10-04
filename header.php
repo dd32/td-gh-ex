@@ -40,7 +40,11 @@
                     <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
                 <?php endif; ?>
             <?php endif; ?>
-    	</div>
+        </div>
+        
+        <?php if ( get_theme_mod( 'kra-header-social-above-nav', customizer_library_get_default( 'kra-header-social-above-nav' ) ) ) : ?>
+            <?php get_template_part( '/inc/social-links' ); ?>
+        <?php endif; ?>
         
         <?php do_action ( 'electa_hook_before_navigation' ); ?>
         
@@ -54,7 +58,9 @@
         
         <?php do_action ( 'electa_hook_after_navigation' ); ?>
         
-        <?php get_template_part( '/inc/social-links' ); ?>
+        <?php if ( !get_theme_mod( 'kra-header-social-above-nav', customizer_library_get_default( 'kra-header-social-above-nav' ) ) ) : ?>
+            <?php get_template_part( '/inc/social-links' ); ?>
+        <?php endif; ?>
         
         <?php printf( __( '</div><div class="site-info">Theme: %1$s by %2$s', 'electa' ), 'Electa', '<a href="https://kairaweb.com/">Kaira</a>' ); ?>
     </div>

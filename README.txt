@@ -1,7 +1,7 @@
 === Electa ===
 Contributors: Kaira
 Donate link: 
-Tags: one-column, two-columns, three-columns, four-columns, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, entertainment, photography, portfolio
+Tags: one-column, two-columns, three-columns, four-columns, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, e-commerce, photography, portfolio
 Requires at least: 4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -59,6 +59,13 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1000 wide and 600 high.
 
 == Changelog ==
+
+#### 1.3.07
+* Styling fixes/tweaks
+* Added setting to move Social Icons above Navigation
+* Updated theme tags
+* Updated the language .pot file
+Premium: Added a setting to remove the site navigation
 
 #### 1.3.06
 * Styling fixes/tweaks

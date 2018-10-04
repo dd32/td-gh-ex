@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Electa\n"
-"POT-Creation-Date: 2017-10-18 15:36+0200\n"
+"POT-Creation-Date: 2018-10-04 17:26+0200\n"
 "PO-Revision-Date: 2016-08-28 17:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_n:1,2;__ngettext:1,2;"
@@ -19,11 +19,11 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: js\n"
 
-#: 404.php:15 customizer/customizer-options.php:266
+#: 404.php:15 customizer/customizer-options.php:273
 msgid "Oops! That page can't be found."
 msgstr ""
 
-#: 404.php:27 customizer/customizer-options.php:274
+#: 404.php:27 customizer/customizer-options.php:281
 msgid ""
 "The page you are looking for can't be found. Please select one of the "
 "options below."
@@ -134,7 +134,7 @@ msgid ""
 msgstr ""
 
 #: content-none.php:21 content-none.php:34
-#: customizer/customizer-options.php:282
+#: customizer/customizer-options.php:289
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords or return to home."
@@ -227,7 +227,11 @@ msgstr ""
 msgid "Show Search"
 msgstr ""
 
-#: customizer/customizer-options.php:68
+#: customizer/customizer-options.php:66
+msgid "Social Icons Above Navigation"
+msgstr ""
+
+#: customizer/customizer-options.php:75
 msgid ""
 "<b>Premium Extra Features:</b><br />- Settings to adjust Site Title font and "
 "sizing<br />- Setting to adjust Site Tagline sizing and spacing<br />- "
@@ -235,77 +239,77 @@ msgid ""
 "- Left\\Center\\Right<br />- Remove Navigation lines"
 msgstr ""
 
-#: customizer/customizer-options.php:77
+#: customizer/customizer-options.php:84
 msgid "Home Layout Options"
 msgstr ""
 
-#: customizer/customizer-options.php:83
+#: customizer/customizer-options.php:90
 msgid "Enable home blocks layout"
 msgstr ""
 
-#: customizer/customizer-options.php:86
+#: customizer/customizer-options.php:93
 msgid ""
 "Enable this to change the layout of the home page to list posts as blocks. "
 "This shows ALL posts"
 msgstr ""
 
-#: customizer/customizer-options.php:91
+#: customizer/customizer-options.php:98
 msgid "Home Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:94
+#: customizer/customizer-options.php:101
 msgid ""
 "Enter the ID's of the post categories you want to display in the home blocks."
 "<br />Eg: \"13,17,19\"<br /><br />Get the ID's at <b>Posts -> Categories</"
 "b><br /><br />Leaving it blank displays all posts."
 msgstr ""
 
-#: customizer/customizer-options.php:100
+#: customizer/customizer-options.php:107
 msgid ""
 "<b>Premium Extra Features:</b><br />- Setting to change home blocks columns "
 "layout"
 msgstr ""
 
-#: customizer/customizer-options.php:110
+#: customizer/customizer-options.php:117
 msgid "Styling Options"
 msgstr ""
 
-#: customizer/customizer-options.php:116
+#: customizer/customizer-options.php:123
 msgid "Main Color"
 msgstr ""
 
-#: customizer/customizer-options.php:123
+#: customizer/customizer-options.php:130
 msgid "Secondary Color"
 msgstr ""
 
-#: customizer/customizer-options.php:132
+#: customizer/customizer-options.php:139
 msgid "Body Font"
 msgstr ""
 
-#: customizer/customizer-options.php:140
+#: customizer/customizer-options.php:147
 msgid "Body Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:147
+#: customizer/customizer-options.php:154
 msgid "Headings Font"
 msgstr ""
 
-#: customizer/customizer-options.php:155
+#: customizer/customizer-options.php:162
 msgid "Heading Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:163
+#: customizer/customizer-options.php:170
 msgid "Custom CSS"
 msgstr ""
 
-#: customizer/customizer-options.php:166
+#: customizer/customizer-options.php:173
 msgid ""
 "Add custom CSS to your theme. For advanced custom styling we recommend using "
 "a <a href=\"https://wordpress.org/plugins/so-css/\" target=\"_blank\">Custom "
 "CSS plugin</a>"
 msgstr ""
 
-#: customizer/customizer-options.php:173
+#: customizer/customizer-options.php:180
 msgid ""
 "<b>Premium Extra Features:</b><br />- Change header background and font "
 "colors<br />- Select between mobile navigation skins - Dark / Light<br />- "
@@ -313,36 +317,36 @@ msgid ""
 "title sizes"
 msgstr ""
 
-#: customizer/customizer-options.php:182
+#: customizer/customizer-options.php:189
 msgid "Blog Layout Options"
 msgstr ""
 
-#: customizer/customizer-options.php:188
+#: customizer/customizer-options.php:195
 msgid "Enable blog blocks layout"
 msgstr ""
 
-#: customizer/customizer-options.php:191
+#: customizer/customizer-options.php:198
 msgid ""
 "Enable this to change the layout of the blog page to list posts as blocks. "
 "This shows ALL posts"
 msgstr ""
 
-#: customizer/customizer-options.php:196
+#: customizer/customizer-options.php:203
 msgid "Blog Page Title"
 msgstr ""
 
-#: customizer/customizer-options.php:203
+#: customizer/customizer-options.php:210
 msgid "Blog Categories"
 msgstr ""
 
-#: customizer/customizer-options.php:206
+#: customizer/customizer-options.php:213
 msgid ""
 "Enter the ID's of the post categories you want to EXCLUDE from the blog, "
 "with a minus(-) before.<br />Eg: \"-13,-17,-19\"<br /><br /> Get the ID's at "
 "<b>Posts -> Categories</b>"
 msgstr ""
 
-#: customizer/customizer-options.php:212
+#: customizer/customizer-options.php:219
 msgid ""
 "<b>Premium Extra Features:</b><br />- Setting to change blog blocks columns "
 "layout<br />- Enable blocks layout on Archive pages<br /><br />- Custom "
@@ -350,57 +354,57 @@ msgid ""
 "Set WC products per row<br />- Set WC products per page"
 msgstr ""
 
-#: customizer/customizer-options.php:221
+#: customizer/customizer-options.php:228
 msgid "Social Links"
 msgstr ""
 
-#: customizer/customizer-options.php:227
+#: customizer/customizer-options.php:234
 msgid "Email Address"
 msgstr ""
 
-#: customizer/customizer-options.php:233
+#: customizer/customizer-options.php:240
 msgid "Facebook"
 msgstr ""
 
-#: customizer/customizer-options.php:239
+#: customizer/customizer-options.php:246
 msgid "Twitter"
 msgstr ""
 
-#: customizer/customizer-options.php:248
+#: customizer/customizer-options.php:255
 msgid ""
 "<b>Premium Extra Features:</b><br />- Over 18 different social profile links "
 "available<br />- Setting to add any social link required"
 msgstr ""
 
-#: customizer/customizer-options.php:257
+#: customizer/customizer-options.php:264
 msgid "Website Text"
 msgstr ""
 
-#: customizer/customizer-options.php:263
+#: customizer/customizer-options.php:270
 msgid "404 Error Page Heading"
 msgstr ""
 
-#: customizer/customizer-options.php:267
+#: customizer/customizer-options.php:274
 msgid "Enter the heading for the 404 Error page"
 msgstr ""
 
-#: customizer/customizer-options.php:271
+#: customizer/customizer-options.php:278
 msgid "Error 404 Message"
 msgstr ""
 
-#: customizer/customizer-options.php:275
+#: customizer/customizer-options.php:282
 msgid "Enter the default text on the 404 error page (Page not found)"
 msgstr ""
 
-#: customizer/customizer-options.php:279
+#: customizer/customizer-options.php:286
 msgid "No Search Results"
 msgstr ""
 
-#: customizer/customizer-options.php:283
+#: customizer/customizer-options.php:290
 msgid "Enter the default text for when no search results are found"
 msgstr ""
 
-#: customizer/customizer-options.php:290
+#: customizer/customizer-options.php:297
 msgid ""
 "<b>Premium Extra Features:</b><br />- Change site attribution text to your "
 "own copy"
@@ -430,11 +434,11 @@ msgstr ""
 msgid "Meta Slider"
 msgstr ""
 
-#: header.php:48
+#: header.php:52
 msgid "Menu"
 msgstr ""
 
-#: header.php:59
+#: header.php:65
 #, php-format
 msgid "</div><div class=\"site-info\">Theme: %1$s by %2$s"
 msgstr ""

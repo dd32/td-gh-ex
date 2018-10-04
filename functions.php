@@ -5,7 +5,7 @@
  * @package Electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.3.06' );
+define( 'KAIRA_THEME_VERSION' , '1.3.07' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';

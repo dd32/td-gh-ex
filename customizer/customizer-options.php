@@ -61,6 +61,13 @@ function customizer_library_kaira_options() {
         'type'    => 'checkbox',
         'default' => 0,
     );
+    $options['kra-header-social-above-nav'] = array(
+        'id' => 'kra-header-social-above-nav',
+        'label'   => __( 'Social Icons Above Navigation', 'electa' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
     $options['kra-upsell-header'] = array(
         'id' => 'kra-upsell-header',
         'section' => $section,
