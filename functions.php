@@ -560,6 +560,7 @@ if ( ! function_exists( 'ct_ignite_customizer_social_media_array' ) ) {
 			'delicious',
 			'deviantart',
 			'digg',
+			'discord',
 			'dribbble',
 			'etsy',
 			'flickr',
@@ -711,7 +712,7 @@ function ct_ignite_scroll_to_top_arrow() {
 	$setting = get_theme_mod('scroll_to_top');
 	
 	if ( $setting == 'yes' ) {
-		echo '<button id="scroll-to-top" class="scroll-to-top"><span class="screen-reader-text">'. __('Scroll to the top', 'ignite') .'</span><i class="fa fa-arrow-up"></i></button>';
+		echo '<button id="scroll-to-top" class="scroll-to-top"><span class="screen-reader-text">'. __('Scroll to the top', 'ignite') .'</span><i class="fas fa-arrow-up"></i></button>';
 	}
 }
 add_action( 'ct_ignite_body_bottom', 'ct_ignite_scroll_to_top_arrow');
