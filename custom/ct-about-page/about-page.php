@@ -17,14 +17,14 @@ require_once get_stylesheet_directory() . '/custom/ct-about-page/class-ct-about-
 */
 $config = array(
 	// Menu name under Appearance.
-	'menu_name'           => __( 'About Best Restaurant', 'best-restaurant' ),
+	'menu_name'           => __( 'About Theta-All (Best Restaurant PRO)', 'best-restaurant' ),
 	// Page title.
-	'page_name'           => __( 'About Best Restaurant', 'best-restaurant' ),
+	'page_name'           => __( 'About Theta-All (Best Restaurant PRO)', 'best-restaurant' ),
 	// Main welcome title
 	/* translators: s - theme name */
 	'welcome_title'       => sprintf( __( 'Welcome to %s! - Version ', 'best-restaurant' ), 'best-restaurant' ),
 	// Main welcome content
-	'welcome_content'     => esc_html__( 'Best Restaurant is a modern, clean and professional WordPress theme that is perfect for restaurant, cafe, bakery, cuisine, fast food, pizzerias, drinks and food related business. The theme is specially designed based on the requirements of the food business and contains all needed functionalities, including food menu, reservation, gallery, opening hours, and map. Moreover, the theme has other awesome functionalities to help you build an awesome website, such as HTML5 video background, parallax scrolling effect, portfolio, newsletter subscribe and many more. Using latest Bootstrap Framework, HTML5 and CSS3 techniques, the theme is fully responsive on various devices. And Best Restaurant supports both one-page and multi-page layout. Moreover, the theme is compatible with WooCommerce, Contact Form 7, and MailChimp plugins. Demo: http://demo.coothemes.com/best-restaurant-pro/', 'best-restaurant' ),
+	'welcome_content'     => esc_html__( 'Best Restaurant (Free version of Theta-All) is a modern, clean and professional WordPress theme that is perfect for restaurant, cafe, bakery, cuisine, fast food, pizzerias, drinks and food related business. The theme is specially designed based on the requirements of the food business and contains all needed functionalities, including food menu, reservation, gallery, opening hours, and map. Moreover, the theme has other awesome functionalities to help you build an awesome website, such as HTML5 video background, parallax scrolling effect, portfolio, newsletter subscribe and many more. Using latest Bootstrap Framework, HTML5 and CSS3 techniques, the theme is fully responsive on various devices. And Best Restaurant supports both one-page and multi-page layout. Moreover, the theme is compatible with WooCommerce, Contact Form 7, and MailChimp plugins. Demo: http://demo.coothemes.com/best-restaurant-pro/', 'best-restaurant' ),
 	/**
 	 * Tabs array.
 	 *
@@ -49,7 +49,7 @@ $config = array(
 			'title'               => esc_html__( 'Recommended actions', 'best-restaurant' ),
 			'text'                => esc_html__( 'We have compiled a list of steps for you to take so we can ensure that the experience you have using one of our products is very easy to follow.', 'best-restaurant' ),
 			'button_label'        => esc_html__( 'Recommended actions', 'best-restaurant' ),
-			'button_link'         => esc_url( admin_url( 'themes.php?page=best-restaurant-welcome&tab=recommended_plugins' ) ),
+			'button_link'         => esc_url( admin_url( 'themes.php?page=theta-welcome&tab=recommended_plugins' ) ),
 			'is_button'           => false,
 			'recommended_actions' => true,
 			'is_new_tab'          => false,
@@ -58,7 +58,7 @@ $config = array(
 			'title'               => esc_html__( 'Read full documentation', 'best-restaurant' ),
 			'text'                => esc_html__( 'Need more details? Please check our full documentation for detailed information on how to use best-restaurant.', 'best-restaurant' ),
 			'button_label'        => esc_html__( 'Documentation', 'best-restaurant' ),
-			'button_link'         => 'https://www.coothemes.com/best-restaurant-pro-manual/',
+			'button_link'         => 'https://www.coothemes.com/theta-all-manual/',
 			'is_button'           => false,
 			'recommended_actions' => false,
 			'is_new_tab'          => true,
@@ -77,7 +77,7 @@ $config = array(
 			'title'        => esc_html__( 'Contact Support', 'best-restaurant' ),
 			'text'                => esc_html__( 'We want to make sure you have the best experience using  Best Restaurant, and that is why we have gathered all the necessary information here for you. We hope you will enjoy using  Best Restaurant as much as we enjoy creating great products.', 'best-restaurant' ),
 			'button_label'        => esc_html__( 'Contact Support', 'best-restaurant' ),
-			'button_link'  => esc_url( 'https://www.coothemes.com/forum/best-restaurant-theme' ),
+			'button_link'  => esc_url( 'https://www.coothemes.com/forum/theta-all-theme' ),
 			'is_button'           => true,
 			'recommended_actions' => false,
 			'is_new_tab'          => true,
