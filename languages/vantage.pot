@@ -1720,19 +1720,19 @@ msgstr ""
 msgid "Vantage is a flexible multipurpose theme. Its strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, Meta Slider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store."
 msgstr ""
 
-#: inc/sliders.php:13
+#: inc/sliders.php:42
 msgid "Vantage (Flex)"
 msgstr ""
 
-#: inc/sliders.php:89
+#: inc/sliders.php:118
 msgid "Page Slider"
 msgstr ""
 
-#: inc/sliders.php:123
+#: inc/sliders.php:152
 msgid "Display Page Slider"
 msgstr ""
 
-#: inc/sliders.php:133
+#: inc/sliders.php:162
 msgid "Stretch Page Meta Slider"
 msgstr ""
 
