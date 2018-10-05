@@ -41,6 +41,9 @@ https://pixabay.com/en/man-handsome-male-model-guy-885223/
 
 == Change Log ==
 
+= 1.4.0 = 
+* WPForms Lite plugin action removed.
+
 = 1.3.9 = 
 * Added option for separate slider selecting option in Blog Page. 
 * Updating .po file.
