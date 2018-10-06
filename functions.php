@@ -67,11 +67,7 @@ function ashe_setup() {
 	add_theme_support( 'wc-product-gallery-slider' );
 
 	// Theme Activation Notice
-	global $pagenow;
-	
-	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
-		add_action( 'admin_notices', 'ashe_activation_notice' );
-	}
+	add_action( 'admin_notices', 'ashe_activation_notice' );
 	
 }
 add_action( 'after_setup_theme', 'ashe_setup' );
@@ -81,28 +77,61 @@ add_action( 'after_setup_theme', 'ashe_setup' );
 ** Notice after Theme Activation and Update.
 */
 function ashe_activation_notice() {
+	global $pagenow;
+	global $current_user;
 
+	$user_id	 = $current_user->ID;
 	$theme_data	 = wp_get_theme();
+	$theme_vers	 = str_replace( '.', '_', $theme_data->get( 'Version' ) );
 
-	echo '<div class="notice notice-success ashe-activation-notice">';
-	
-		echo '<h1>';
-			/* translators: %s theme name */
-			printf( esc_html__( 'Welcome to %s', 'ashe' ), esc_html( $theme_data->Name ) );
-		echo '</h1>';
+	if ( ! get_user_meta( $user_id, esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore' ) ) {
 
-		echo '<p>';
-			/* translators: %1$s: theme name, %2$s link */
-			printf( __( 'Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our <a href="%2$s">Welcome page</a>', 'ashe' ), esc_html( $theme_data->Name ), esc_url( admin_url( 'themes.php?page=about-ashe' ) ) );
-		echo '</p>';
+		echo '<div class="notice notice-success ashe-activation-notice">';
+		
+			echo '<h1>';
+				/* translators: %s theme name */
+				printf( esc_html__( 'Welcome to %s', 'ashe' ), esc_html( $theme_data->Name ) );
+			echo '</h1>';
 
-		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=about-ashe' ) ) .'" class="button button-primary button-hero">';
-			/* translators: %s theme name */
-			printf( esc_html__( 'Get started with %s', 'ashe' ), esc_html( $theme_data->Name ) );
-		echo '</a></p>';
+			printf( '<a href="%1$s" class="notice-dismiss dashicons dashicons-dismiss dashicons-dismiss-icon"></a>', '?' . esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore=0' );
+		
+			echo '<p>';
+				/* translators: %1$s: theme name, %2$s link */
+				printf( __( 'Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our <a href="%2$s">Welcome page</a>', 'ashe' ), esc_html( $theme_data->Name ), esc_url( admin_url( 'themes.php?page=about-ashe' ) ) );
+			echo '</p>';
 
-	echo '</div>';
+			echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=about-ashe' ) ) .'" class="button button-primary button-hero">';
+				/* translators: %s theme name */
+				printf( esc_html__( 'Get started with %s', 'ashe' ), esc_html( $theme_data->Name ) );
+			echo '</a></p>';
+
+		echo '</div>';
+
+	}
 }
+
+function ashe_notice_ignore() {
+	global $current_user;
+	$theme_data	 = wp_get_theme();
+	$user_id	 = $current_user->ID;
+	$theme_vers	 = str_replace( '.', '_', $theme_data->get( 'Version' ) );
+
+	/* If user clicks to ignore the notice, add that to their user meta */
+	if ( isset( $_GET[ esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore' ] ) && '0' == $_GET[ esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore' ] ) {
+		add_user_meta( $user_id, esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore', 'true', true );
+	}
+}
+add_action( 'admin_init', 'ashe_notice_ignore' );
+
+function ashe_erase_ignored_notice() {
+	global $current_user;
+	$theme_data	 = wp_get_theme();
+	$user_id	 = $current_user->ID;
+	$theme_vers	 = str_replace( '.', '_', $theme_data->get( 'Version' ) );
+	
+	delete_user_meta( $user_id, esc_html( $theme_data->get( 'TextDomain' ) ) . $theme_vers .'_notice_ignore' );
+}
+add_action('after_switch_theme', 'ashe_erase_ignored_notice');
 
 function ashe_admin_scripts() {
 	
@@ -130,7 +159,7 @@ add_action( 'wp_head', 'ashe_pingback_header' );
 function ashe_scripts() {
 
 	// Theme Stylesheet
-	wp_enqueue_style( 'ashe-style', get_stylesheet_uri(), array(), '1.7.5' );
+	wp_enqueue_style( 'ashe-style', get_stylesheet_uri(), array(), '1.7.6' );
 
 	// FontAwesome Icons
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.css' ) );
@@ -150,11 +179,11 @@ function ashe_scripts() {
 	}
 	
 	// Theme Responsive CSS
-	wp_enqueue_style( 'ashe-responsive', get_theme_file_uri( '/assets/css/responsive.css' ), array(), '1.7.5'  );
+	wp_enqueue_style( 'ashe-responsive', get_theme_file_uri( '/assets/css/responsive.css' ), array(), '1.7.6'  );
 
 	// Enqueue Custom Scripts
-	wp_enqueue_script( 'ashe-plugins', get_theme_file_uri( '/assets/js/custom-plugins.js' ), array( 'jquery' ), '1.7.5', true );
-	wp_enqueue_script( 'ashe-custom-scripts', get_theme_file_uri( '/assets/js/custom-scripts.js' ), array( 'jquery' ), '1.7.5', true );
+	wp_enqueue_script( 'ashe-plugins', get_theme_file_uri( '/assets/js/custom-plugins.js' ), array( 'jquery' ), '1.7.6', true );
+	wp_enqueue_script( 'ashe-custom-scripts', get_theme_file_uri( '/assets/js/custom-scripts.js' ), array( 'jquery' ), '1.7.6', true );
 
 	// Comment reply link
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -652,6 +681,7 @@ function ashe_woocommerce_pagination() {
 }
 add_action( 'woocommerce_pagination', 'ashe_woocommerce_pagination', 10 );
 
+
 /*
 ** Incs: Theme Customizer
 */
@@ -664,3 +694,33 @@ require get_parent_theme_file_path( '/inc/preview/demo-preview.php' );
 
 // About Ashe
 require get_parent_theme_file_path( '/inc/about/about-ashe.php' );
+
+
+/*
+** TGM Plugin Activation Class
+*/
+
+require_once get_parent_theme_file_path( '/inc/tgm/class-tgm-plugin-activation.php' );
+
+function ashe_register_recommended_plugins() {
+	$plugins = array(
+        array(
+			'name'      => 'Elementor',
+			'slug'      => 'elementor',
+			'required'  => false,
+		),
+	);
+	$config = array(
+		'id'           => 'ashe',
+		'default_path' => '',
+		'menu'         => 'tgmpa-install-plugins',
+		'has_notices'  => true,
+		'dismissable'  => true,
+		'dismiss_msg'  => '',
+		'is_automatic' => false,
+		'message'      => '',
+	);
+	tgmpa( $plugins, $config );
+}
+
+add_action( 'tgmpa_register', 'ashe_register_recommended_plugins' );
