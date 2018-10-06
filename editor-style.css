@@ -335,6 +335,29 @@ textarea {
 }
 
 
+.wp-block-cover-image {
+    position: relative;
+    background-size: cover;
+    background-position: 50%;
+    min-height: 430px;
+    width: 100%;
+    margin: 0 0 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.wp-block-cover-image.aligncenter{
+	margin: 0 0 1.5em;
+	display: flex;
+}
+
+.wp-block-cover-image.alignright,
+.wp-block-cover-image.alignleft{
+	display: flex;
+}
+
+
 a:focus {
 	outline: thin dotted;
 }

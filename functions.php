@@ -57,6 +57,8 @@ if ( ! function_exists( 'aaron_setup' ) ) {
 
 		add_theme_support( 'customize-selective-refresh-widgets' );
 
+		add_theme_support( 'wp-block-styles' );
+
 		add_theme_support( 'starter-content', array(
 			'posts' => array(
 				'about',
@@ -468,14 +470,16 @@ function aaron_customize_css() {
 	}
 
 	if ( get_theme_mod( 'aaron_width' ) ) {
-		echo '.site-content {width: ' . esc_attr( get_theme_mod( 'aaron_width' ) ) . "%; margin-left: auto; margin-right: auto;}\n";
+		echo '@media screen and (min-width: 641px) {';
+			echo '.site-content {width: ' . esc_attr( get_theme_mod( 'aaron_width' ) ) . "%; margin-left: auto; margin-right: auto;}\n";
+		echo '}';
 	}
 
 	if ( get_theme_mod( 'aaron_unstick' ) ) {
 		echo ".main-navigation {position: initial; }\n";
 	}
 
-	if ( get_theme_mod( 'aaron_meta_below' ) ) {
+		if ( get_theme_mod( 'aaron_meta_below' ) ) {
 		echo ".entry-footer {width: 100%; clear: both;}\n";
 		echo ".entry-content {width: 100%;}\n";
 	}

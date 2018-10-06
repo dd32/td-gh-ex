@@ -25,6 +25,14 @@ Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
 
+Version 3.3, 2018-10-06
+Corrected the position of the category and portfolio icons.
+Fixed a styling problem with displaying the Jetpack testimonials in the search results.
+Made sure that the content width option only affects screens wider than 640 pixels.
+Added support for wp-block-styles to better match the Gutenberg editor, and improved the styling of some elements including the button block.
+Added a blank template that you can use if you only want to display Gutenberg blocks.
+
+
 Version 3.2, 2018-09-28
 Made sure that the custom templates works for all pages, not only for the front page.
 Made sure that the meta box options works with the Jetpack portfolio and testimonial post formats.

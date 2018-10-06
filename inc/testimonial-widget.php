@@ -89,8 +89,8 @@ class Aaron_Testimonial_Widget extends WP_Widget {
 					the_content();
 					?>
 					</div><!-- .testimonial-content -->
-                    <?php
-                    the_title( '<h2 class="entry-title">-', '</h2>' );
+					<?php
+					the_title( '<h2 class="entry-title">-', '</h2>' );
 
 					if ( has_post_thumbnail() ) {
 						the_post_thumbnail( 'thumbnail' );

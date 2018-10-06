@@ -44,3 +44,8 @@ a:focus,
 a:active {
 	color: #000;
 }
+
+/*increase contrast*/
+.edit-post-visual-editor p.wp-block-subhead{
+    color: #000;
+}

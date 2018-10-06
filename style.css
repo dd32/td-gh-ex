@@ -4,7 +4,7 @@ Theme URI: https://aaron.theme.tips
 Author: Carolina Nymark
 Author URI: https://theme.tips
 Description: Aaron is a responsive, accessibility-ready multi-purpose theme. Features includes Call to action and front page Highlights that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu), logo upload, six page templates and three widget areas that will hold any number of widgets. Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. I recommend that you install the Jetpack plugin to make full use of supported features like Testimonials and social sharing. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Aaron also works well with WooCommerce and bbPress.
-Version: 3.2
+Version: 3.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Copyright: Carolina Nymark 2015-2018
@@ -33,6 +33,7 @@ and Blueprint http://www.blueprintcss.org/
 	10.1 Call to action, highlights, featured posts
 	10.2 Posts and pages
 	10.3 Comments
+	10.4 Blocks
 11.0 Jetpack
 12.0 Media
 	12.1 Captions
@@ -157,7 +158,31 @@ h4,
 h5,
 h6 {
 	clear: both;
-	font-weight: inherit;
+	font-weight: 600;
+}
+
+h1 {
+    font-size: 2.44em;
+}
+
+h2 {
+    font-size: 1.95em;
+}
+
+h3 {
+    font-size: 1.56em;
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: .8em;
 }
 
 p {
@@ -181,17 +206,12 @@ blockquote {
 	padding-left: 1em;
 }
 
-.wp-block-quote cite {
-	display: block;
-	font-size: 13px;
-}
-
 address {
 	margin: 0 0 1.5em;
 }
 
 pre {
-	background: #eee;
+	background: #fff;
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 1.5rem;
 	line-height: 1.6;
@@ -887,13 +907,13 @@ Social menu
 .alignleft {
 	display: inline;
 	float: left;
-	margin-right: 1.5em;
+	margin-right: 2em;
 }
 
 .alignright {
 	display: inline;
 	float: right;
-	margin-left: 1.5em;
+	margin-left: 2em;
 }
 
 .aligncenter {
@@ -903,9 +923,39 @@ Social menu
 }
 
 .wp-block-cover-image.aligncenter{
-	margin: 0 0 1.5em;
+	margin: 0 0 2em;
     display: flex;
 }
+
+.wp-block-cover-image.alignright,
+.wp-block-cover-image.alignleft{
+    display: flex;
+}
+
+.wp-block-image .alignleft{
+	margin:0 2em 2em 0;
+}
+
+.wp-block-cover-image.alignleft{
+	margin-right: 2em;
+}
+
+.wp-block-image .alignright{
+	margin: 0 0 2em 2em;
+}
+
+.wp-block-cover-image.alignright{
+	margin-left: 2em;
+}
+
+.wp-block-audio.aligncenter{
+	margin:0;
+}
+
+.wp-block-categories.aligncenter {
+    padding-left: 2.5em;
+}
+
 
 /*--------------------------------------------------------------
 8.0 Clearings
@@ -1266,6 +1316,15 @@ table#wp-calendar,
 
 .page-template-grid .grid-item--width3 {
 	width: 90%;
+}
+
+.page-template-blank .site-content{
+	max-width:640px;
+	background:none;
+}
+
+.page-template-blank .page.type-page .entry-content{
+	background:none;
 }
 
 /*--------------------------------------------------------------
@@ -1648,7 +1707,7 @@ table#wp-calendar,
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	vertical-align: top;
+	vertical-align: middle;
 	font-size: 1em;
 	line-height: 1; 
 	color: #717171;
@@ -1844,6 +1903,73 @@ table#wp-calendar,
 	font-size: 1.4rem; 
 }
 
+
+/*--------------------------------------------------------------
+10.4 Blocks   -Also see alignements
+--------------------------------------------------------------*/
+
+.wp-block-button {
+    margin-bottom: 1.5em;
+}
+
+.entry-content .wp-block-button a {
+	background-image:none;
+}
+
+.wp-block-column {
+	padding:0.5em;
+}
+
+.wp-block-audio figcaption {
+    margin-bottom: 1.5em;
+}
+
+.wp-block-quote cite {
+	display: block;
+	font-size: 13px;
+}
+
+ blockquote .wp-block-quote.is-large p{
+	font-size: 24px;
+    font-style: italic;
+    line-height: 1.6;
+ }
+
+blockquote.wp-block-quote.is-large{
+	border:none;
+}
+
+blockquote.wp-block-quote.is-large cite{
+    font-size: 13px;
+    text-align: left;
+}
+
+.wp-block-pullquote blockquote{
+	border-left:none;
+}
+
+.wp-block-pullquote{
+	margin:1em 40px;
+}
+
+.wp-block-image{
+	margin-bottom:1em;
+}
+
+/*The styles below are added in case someone edits a post created in gutenberg in the classic editor. */
+.wp-block-cover-image {
+    position: relative;
+    background-size: cover;
+    background-position: 50%;
+    min-height: 430px;
+    width: 100%;
+    margin: 0 0 1.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
 /*--------------------------------------------------------------
 11.0 Jetpack
 --------------------------------------------------------------*/
@@ -1965,7 +2091,7 @@ table#wp-calendar,
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	vertical-align: top;
+	vertical-align: middle;
 	font-size: 1.6rem; 
 	line-height: 1; 
 	color: #717171;
@@ -1975,9 +2101,21 @@ table#wp-calendar,
 }
 
 .post-type-archive-jetpack-testimonial .content-area,
-.single-jetpack-testimonial .content-area {
+.single-jetpack-testimonial .content-area{
 	margin: 0 auto;
 	width: 100%;
+}
+
+.search-results .type-jetpack-testimonial {
+	border-radius: 4px;
+    padding: 10px 26px 26px 26px;
+    display: block;
+    position: relative;
+    overflow: auto;
+    box-shadow: 0px 1px 6px rgba(0,0,0,0.2);
+    margin: 0 0 65px 0;
+    background: #fcfcfc;
+    line-height: 1.8;
 }
 
 .post-type-archive-jetpack-testimonial .page-header {
