@@ -126,13 +126,29 @@ global $thinkup_general_breadcrumbdelimeter;
 			$category = get_the_category();
 			$num_cat = count($category);
 			if ($num_cat <=1) {
-				echo ' ' . get_the_title();
+				echo ' ' . esc_html( get_the_title() );
 			} else {
-				echo the_category( $delimiter_inner, multiple);
+
+				// Count Total categories
+				foreach( get_the_category() as $category) {
+					$count_categories++;
+				}
+				
+				// Output Categories
+				foreach( get_the_category() as $category) {
+					$count_loop++;
+
+					if ( $count_loop < $count_categories ) {
+						echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->cat_name ) . '</a>' . $delimiter_inner; 
+					} else {
+						echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->cat_name ) . '</a>'; 
+					}
+				}
+				
 				if (strlen(get_the_title()) >= $maxLength) {
-					echo ' ' . $delimiter . trim(substr(get_the_title(), 0, $maxLength)) . ' ...';
+					echo ' ' . $delimiter . esc_html( trim( substr( get_the_title(), 0, $maxLength ) ) ) . ' &hellip;';
 				} else {
-					echo ' ' . $delimiter . get_the_title();
+					echo ' ' . $delimiter . esc_html( get_the_title() );
 				}
 			}
 		} elseif (is_category()) {
