@@ -191,6 +191,24 @@ if ( ! function_exists( 'asagi_settings_page' ) ) {
 								 do_action( 'asagi_admin_right_panel' );
 
 								  ?>
+                                
+                                <div class="wpkoi-doc">
+                                	<h3><?php esc_html_e( 'Asagi documentation', 'asagi' ); ?></h3>
+                                	<p><?php esc_html_e( 'If You`ve stuck, the documentation may help on WPKoi.com', 'asagi' ); ?></p>
+                                    <a href="<?php echo esc_url(ASAGI_DOCUMENTATION); ?>" class="wpkoi-admin-button" target="_blank"><?php esc_html_e( 'Asagi documentation', 'asagi' ); ?></a>
+                                </div>
+                                
+                                <div class="wpkoi-social">
+                                	<h3><?php esc_html_e( 'WPKoi on Facebook', 'asagi' ); ?></h3>
+                                	<p><?php esc_html_e( 'If You want to get useful info about WordPress and the theme, follow WPKoi on Facebook.', 'asagi' ); ?></p>
+                                    <a href="<?php echo esc_url(ASAGI_WPKOI_SOCIAL_URL); ?>" class="wpkoi-admin-button" target="_blank"><?php esc_html_e( 'Go to Facebook', 'asagi' ); ?></a>
+                                </div>
+                                
+                                <div class="wpkoi-review">
+                                	<h3><?php esc_html_e( 'Help with You review', 'asagi' ); ?></h3>
+                                	<p><?php esc_html_e( 'If You like Asagi theme, show it to the world with Your review. Your feedback helps a lot.', 'asagi' ); ?></p>
+                                    <a href="<?php echo esc_url(ASAGI_WORDPRESS_REVIEW); ?>" class="wpkoi-admin-button" target="_blank"><?php esc_html_e( 'Add my review', 'asagi' ); ?></a>
+                                </div>
 							</div>
 						</div>
 					</div>

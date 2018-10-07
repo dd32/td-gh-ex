@@ -1,7 +1,7 @@
 === Asagi ===
 Requires at least: WordPress 4.9
 Tested up to: WordPress 4.9.6
-Version: 1.0.6
+Version: 1.0.8
 License: GNU General Public License v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, three-columns, one-column, right-sidebar, left-sidebar, footer-widgets, blog, e-commerce, flexible-header, full-width-template, custom-header, custom-background, custom-menu, custom-colors, sticky-post, threaded-comments, translation-ready, rtl-language-support, featured-images, theme-options
@@ -124,6 +124,11 @@ License: https://creativecommons.org/publicdomain/zero/1.0/
 
 
 == Change Log ==
+
+= 1.0.8 =
+Fixed: menu js file
+Fixed: documentation link
+Modified: theme page
 
 = 1.0.7 =
 Fixed: Font Awesome css
