@@ -23,6 +23,9 @@ See headers of each files for further details.
 
 
 ####################### Changelog ######################
+= 4.1.16 October 6th 2018 =
+* fixed : 
+
 = 4.1.15 October 6th 2018 =
 * fixed : missing space between fancybox link attributes. fixes #1593
 * fixed : WooCommerce variation form inputs appearance on Mozilla browsers. fixes #1598
