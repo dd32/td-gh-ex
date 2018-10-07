@@ -48,8 +48,8 @@ var WidgetAreaConstructor = WidgetAreaConstructor || {};
 
                                 $( 'select[data-czrtype="contexts"]', input.container ).append( $('<option>', _attributes) );
                           });
-                          //fire czrSelect2
-                          $( 'select[data-czrtype="contexts"]', input.container ).czrSelect2();
+                          //fire select2
+                          $( 'select[data-czrtype="contexts"]', input.container ).select2();
                   },
 
 
@@ -89,11 +89,11 @@ var WidgetAreaConstructor = WidgetAreaConstructor || {};
                           }
 
                           if ( refresh ) {
-                                $( 'select[data-czrtype="locations"]', input.container ).czrSelect2( 'destroy' );
+                                $( 'select[data-czrtype="locations"]', input.container ).select2( 'destroy' );
                           }
 
-                          //fire czrSelect2
-                          $( 'select[data-czrtype="locations"]', input.container ).czrSelect2( {
+                          //fire select2
+                          $( 'select[data-czrtype="locations"]', input.container ).select2( {
                             templateResult: setAvailability,
                             templateSelection: setAvailability
                           });

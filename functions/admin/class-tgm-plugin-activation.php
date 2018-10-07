@@ -31,8 +31,8 @@
   along with this program; if not, write to the Free Software
   Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
 */
-//prefixed HU_Plugin_Activation because of the possible issue : https://github.com/presscustomizr/customizr/issues/1603
-if ( ! class_exists( 'HU_Plugin_Activation' ) ) {
+
+if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
   /**
    * Automatic plugin installation and activation library.
@@ -47,7 +47,7 @@ if ( ! class_exists( 'HU_Plugin_Activation' ) ) {
    * @author  Thomas Griffin
    * @author  Gary Jones
    */
-  class HU_Plugin_Activation {
+  class TGM_Plugin_Activation {
     /**
      * TGMPA version number.
      *
@@ -80,7 +80,7 @@ if ( ! class_exists( 'HU_Plugin_Activation' ) ) {
      *
      * @since 1.0.0
      *
-     * @var HU_Plugin_Activation
+     * @var TGM_Plugin_Activation
      */
     public static $instance;
 
@@ -240,9 +240,6 @@ if ( ! class_exists( 'HU_Plugin_Activation' ) ) {
      */
     public $page_hook;
 
-    // @nikeo addon, HU MODS
-    public $dismiss_meta_name = "hu_last_tgmpa_notice";
-
     /**
      * Adds a reference of this object to $instance, populates default strings,
      * does the tgmpa_init action hook, and hooks in the interactions to init.
@@ -253,7 +250,7 @@ if ( ! class_exists( 'HU_Plugin_Activation' ) ) {
      *
      * @since 1.0.0
      *
-     * @see HU_Plugin_Activation::init()
+     * @see TGM_Plugin_Activation::init()
      */
     public function __construct() {
       // Set the current WordPress version.
@@ -319,7 +316,7 @@ if ( ! class_exists( 'HU_Plugin_Activation' ) ) {
     //update it when needed
     //@return array( "version" => HUEMAN_VER, "dismiss_count" => INT );
     function hu_get_meta_tgmpa_notice_values() {
-        $meta_name = $this->dismiss_meta_name;
+        $meta_name = 'hu_last_tgmpa_notice';
         $user_id = get_current_user_id();
         $last_tgmpa_notice_values  = get_user_meta( $user_id, $meta_name, true );
 
@@ -379,7 +376,7 @@ if ( ! class_exists( 'HU_Plugin_Activation' ) ) {
       $_dismissed_count  = $last_tgmpa_notice_values["dismiss_count"];
       $_day_duration     = 0 == $_dismissed_count ? 1 : ( 3 * $_dismissed_count );//maximum 9 days
       $user_id           = get_current_user_id();
-      $meta_name         = $this->dismiss_meta_name;
+      $meta_name         = 'hu_last_tgmpa_notice';
 
       //increments the counter
       (int) $_dismissed_count++;
@@ -488,9 +485,9 @@ if ( ! class_exists( 'HU_Plugin_Activation' ) ) {
      *
      * @since 2.0.0
      *
-     * @see HU_Plugin_Activation::admin_menu()
-     * @see HU_Plugin_Activation::notices()
-     * @see HU_Plugin_Activation::styles()
+     * @see TGM_Plugin_Activation::admin_menu()
+     * @see TGM_Plugin_Activation::notices()
+     * @see TGM_Plugin_Activation::styles()
      */
     public function init() {
       /**
@@ -789,8 +786,8 @@ if ( ! class_exists( 'HU_Plugin_Activation' ) ) {
      *
      * @since 1.0.0
      *
-     * @see HU_Plugin_Activation::init()
-     * @see HU_Plugin_Activation::install_plugins_page()
+     * @see TGM_Plugin_Activation::init()
+     * @see TGM_Plugin_Activation::install_plugins_page()
      *
      * @return null Return early if user lacks capability to install a plugin.
      */
@@ -1328,7 +1325,7 @@ if ( ! class_exists( 'HU_Plugin_Activation' ) ) {
             $rendered,
             __( 'Nimble is a section builder companion plugin for the Hueman theme.',  'hueman'),
             sprintf(
-                __( 'It allows you to drag and drop pre-built sections, or create your own sections in live preview from the WordPress customizer. You can easily create column layouts and add content like buttons, icons, Google map and even contact forms in any page.  You\'ll find a quick introduction of the plugin %1$s.', 'hueman' ),
+                __( 'It allows you to drag and drop beautiful pre-designed sections, or create your own sections with modules like Google map or a contact form, in live preview from the WordPress customizer. You\'ll find a quick introduction of the plugin %1$s.', 'hueman' ),
                 sprintf('<a href="%1$s" target="_blank" title="%2$s">%2$s</a>', esc_url('docs.presscustomizr.com/article/337-getting-started-with-the-nimble-builder-plugin'), __('here', 'hueman') )
             ),
             __( "The plugin has been designed to integrate perfectly with the Hueman theme. Lightweight and safe.", 'hueman')
@@ -1340,7 +1337,7 @@ if ( ! class_exists( 'HU_Plugin_Activation' ) ) {
 
         //HU MODS
         $rendered = sprintf('<div class="czr-tgmpa-img-block"><img src="%1$s" alt="%2$s" title="%2$s" class="czr-nimble-img"/></div>%3$s',
-            sprintf('%1$sassets/admin/img/nimble_and_hueman_145.gif', HU_BASE_URL ),
+            sprintf('%1$sassets/admin/img/Nimble_interface-blanc-01.png', HU_BASE_URL ),
             __('Nimble Builder', 'hueman'),
             $rendered
         );
@@ -2212,7 +2209,7 @@ if ( ! class_exists( 'HU_Plugin_Activation' ) ) {
      *
      * @since 2.4.0
      *
-     * @return \HU_Plugin_Activation The HU_Plugin_Activation object.
+     * @return \TGM_Plugin_Activation The TGM_Plugin_Activation object.
      */
     public static function get_instance() {
       if ( ! isset( self::$instance ) && ! ( self::$instance instanceof self ) ) {
@@ -2230,7 +2227,7 @@ if ( ! class_exists( 'HU_Plugin_Activation' ) ) {
      * @since 2.5.0
      */
     function load_tgm_plugin_activation() {
-      $GLOBALS['tgmpa'] = HU_Plugin_Activation::get_instance();
+      $GLOBALS['tgmpa'] = TGM_Plugin_Activation::get_instance();
     }
   }
 
@@ -3219,15 +3216,15 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
      * Retrieve plugin data, given the plugin name.
      *
      * @since      2.2.0
-     * @deprecated 2.5.0 use {@see HU_Plugin_Activation::_get_plugin_data_from_name()} instead.
-     * @see        HU_Plugin_Activation::_get_plugin_data_from_name()
+     * @deprecated 2.5.0 use {@see TGM_Plugin_Activation::_get_plugin_data_from_name()} instead.
+     * @see        TGM_Plugin_Activation::_get_plugin_data_from_name()
      *
      * @param string $name Name of the plugin, as it was registered.
      * @param string $data Optional. Array key of plugin data to return. Default is slug.
      * @return string|boolean Plugin slug if found, false otherwise.
      */
     protected function _get_plugin_data_from_name( $name, $data = 'slug' ) {
-      _deprecated_function( __FUNCTION__, 'TGMPA 2.5.0', 'HU_Plugin_Activation::_get_plugin_data_from_name()' );
+      _deprecated_function( __FUNCTION__, 'TGMPA 2.5.0', 'TGM_Plugin_Activation::_get_plugin_data_from_name()' );
 
       return $this->tgmpa->_get_plugin_data_from_name( $name, $data );
     }
