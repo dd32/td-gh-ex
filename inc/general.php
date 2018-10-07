@@ -37,7 +37,7 @@ if ( ! function_exists( 'bekko_scripts' ) ) {
 			wp_script_add_data( 'bekko-classlist', 'conditional', 'lte IE 11' );
 		}
 
-		wp_enqueue_script( 'bekko-menu', $dir_uri . "/js/menu{$suffix}.js", array(), BEKKO_VERSION, true );
+		wp_enqueue_script( 'bekko-menu', $dir_uri . "/js/menu{$suffix}.js", array( 'jquery' ), BEKKO_VERSION, true );
 		wp_enqueue_script( 'bekko-a11y', $dir_uri . "/js/a11y{$suffix}.js", array(), BEKKO_VERSION, true );
 
 		if ( 'click' == $bekko_settings[ 'nav_dropdown_type' ] || 'click-arrow' == $bekko_settings[ 'nav_dropdown_type' ] ) {

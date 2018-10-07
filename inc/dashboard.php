@@ -191,6 +191,24 @@ if ( ! function_exists( 'bekko_settings_page' ) ) {
 								 do_action( 'bekko_admin_right_panel' );
 
 								  ?>
+                                
+                                <div class="wpkoi-doc">
+                                	<h3><?php esc_html_e( 'Bekko documentation', 'bekko' ); ?></h3>
+                                	<p><?php esc_html_e( 'If You`ve stuck, the documentation may help on WPKoi.com', 'bekko' ); ?></p>
+                                    <a href="<?php echo esc_url(BEKKO_DOCUMENTATION); ?>" class="wpkoi-admin-button" target="_blank"><?php esc_html_e( 'Bekko documentation', 'bekko' ); ?></a>
+                                </div>
+                                
+                                <div class="wpkoi-social">
+                                	<h3><?php esc_html_e( 'WPKoi on Facebook', 'bekko' ); ?></h3>
+                                	<p><?php esc_html_e( 'If You want to get useful info about WordPress and the theme, follow WPKoi on Facebook.', 'bekko' ); ?></p>
+                                    <a href="<?php echo esc_url(BEKKO_WPKOI_SOCIAL_URL); ?>" class="wpkoi-admin-button" target="_blank"><?php esc_html_e( 'Go to Facebook', 'bekko' ); ?></a>
+                                </div>
+                                
+                                <div class="wpkoi-review">
+                                	<h3><?php esc_html_e( 'Help with You review', 'bekko' ); ?></h3>
+                                	<p><?php esc_html_e( 'If You like Bekko theme, show it to the world with Your review. Your feedback helps a lot.', 'bekko' ); ?></p>
+                                    <a href="<?php echo esc_url(BEKKO_WORDPRESS_REVIEW); ?>" class="wpkoi-admin-button" target="_blank"><?php esc_html_e( 'Add my review', 'bekko' ); ?></a>
+                                </div>
 							</div>
 						</div>
 					</div>
