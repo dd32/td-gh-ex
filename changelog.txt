@@ -4,7 +4,7 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
-Version 2.5
+Version 2.5.1
 	* Added: Compatibility with Gutenberg
 	* Added: Open Graph microdata format, with detection of SEO plugins
 	* Added: Auto-purge Autoptimize cache whenever the customizer is published

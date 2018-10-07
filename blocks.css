@@ -187,6 +187,9 @@ table tr,
 .wp-block-cover-image h2 {
 	margin: auto !important;
 }
+.wp-block-cover-image {
+	display: flex !important;
+}
 
 @media only screen and (min-width: 768px) {
 	.alignfull {
