@@ -231,52 +231,27 @@ if ( ! function_exists( 'thinkup_input_addimagesizes' ) ) {
 	function thinkup_input_addimagesizes() {
 
 		/* 1 Column Layout */
-		add_image_size( 'column1-1/1', 960, 960, true );
-		add_image_size( 'column1-1/2', 960, 480, true );
-		add_image_size( 'column1-1/3', 960, 320, true );
-		add_image_size( 'column1-2/3', 960, 640, true );
-		add_image_size( 'column1-1/4', 960, 240, true );
-		add_image_size( 'column1-3/4', 960, 720, true );
-		add_image_size( 'column1-1/5', 960, 192, true );
-		add_image_size( 'column1-2/5', 960, 384, true );
-		add_image_size( 'column1-3/5', 960, 576, true );
-		add_image_size( 'column1-4/5', 960, 768, true );
+		add_image_size( 'column1-1/3', 1140, 380, true );
+		add_image_size( 'column1-2/3', 1140, 760, true );
+		add_image_size( 'column1-1/4', 1140, 285, true );
+		add_image_size( 'column1-2/5', 1140, 456, true );
 
 		/* 2 Column Layout */
-		add_image_size( 'column2-1/1', 480, 480, true );
-		add_image_size( 'column2-1/2', 480, 240, true );
-		add_image_size( 'column2-1/3', 480, 160, true );
-		add_image_size( 'column2-2/3', 480, 320, true );
-		add_image_size( 'column2-1/4', 480, 120, true );
-		add_image_size( 'column2-3/4', 480, 360, true );
-		add_image_size( 'column2-1/5', 480, 96, true );
-		add_image_size( 'column2-2/5', 480, 192, true );
-		add_image_size( 'column2-3/5', 480, 288, true );
-		add_image_size( 'column2-4/5', 480, 384, true );
+		add_image_size( 'column2-1/1', 570, 570, true );
+		add_image_size( 'column2-1/2', 570, 285, true );
+		add_image_size( 'column2-2/3', 570, 380, true );
+		add_image_size( 'column2-3/5', 570, 342, true );
 
 		/* 3 Column Layout */
-		add_image_size( 'column3-1/1', 320, 320, true );
-		add_image_size( 'column3-1/2', 320, 160, true );
-		add_image_size( 'column3-1/3', 320, 107, true );
-		add_image_size( 'column3-2/3', 320, 213, true );
-		add_image_size( 'column3-1/4', 320, 80, true );
-		add_image_size( 'column3-3/4', 320, 240, true );
-		add_image_size( 'column3-1/5', 320, 64, true );
-		add_image_size( 'column3-2/5', 320, 128, true );
-		add_image_size( 'column3-3/5', 320, 192, true );
-		add_image_size( 'column3-4/5', 320, 256, true );
+		add_image_size( 'column3-1/1', 380, 380, true );
+		add_image_size( 'column3-1/2', 380, 190, true );
+		add_image_size( 'column3-1/3', 380, 127, true );
+		add_image_size( 'column3-2/3', 380, 254, true );
 
 		/* 4 Column Layout */
-		add_image_size( 'column4-1/1', 240, 240, true );
-		add_image_size( 'column4-1/2', 240, 120, true );
-		add_image_size( 'column4-1/3', 240, 80, true );
-		add_image_size( 'column4-2/3', 240, 160, true );
-		add_image_size( 'column4-1/4', 240, 60, true );
-		add_image_size( 'column4-3/4', 240, 180, true );
-		add_image_size( 'column4-1/5', 240, 48, true );
-		add_image_size( 'column4-2/5', 240, 96, true );
-		add_image_size( 'column4-3/5', 240, 144, true );
-		add_image_size( 'column4-4/5', 240, 192, true );
+		add_image_size( 'column4-1/1', 285, 285, true );
+		add_image_size( 'column4-1/2', 285, 143, true );
+		add_image_size( 'column4-2/3', 285, 190, true );
 	}
 	add_action( 'after_setup_theme', 'thinkup_input_addimagesizes' );
 }
@@ -285,52 +260,27 @@ if ( ! function_exists( 'thinkup_input_showimagesizes' ) ) {
 	function thinkup_input_showimagesizes($sizes) {
 
 		/* 1 Column Layout */
-		$sizes['column1-1/1'] = __( 'Full - 1:1', 'lan-thinkupthemes' );
-		$sizes['column1-1/2'] = __( 'Full - 1:2', 'lan-thinkupthemes' );
 		$sizes['column1-1/3'] = __( 'Full - 1:3', 'lan-thinkupthemes' );
 		$sizes['column1-2/3'] = __( 'Full - 2:3', 'lan-thinkupthemes' );
 		$sizes['column1-1/4'] = __( 'Full - 1:4', 'lan-thinkupthemes' );
-		$sizes['column1-3/4'] = __( 'Full - 3:4', 'lan-thinkupthemes' );
-		$sizes['column1-1/5'] = __( 'Full - 1:5', 'lan-thinkupthemes' );
 		$sizes['column1-2/5'] = __( 'Full - 2:5', 'lan-thinkupthemes' );
-		$sizes['column1-3/5'] = __( 'Full - 3:5', 'lan-thinkupthemes' );
-		$sizes['column1-4/5'] = __( 'Full - 4:5', 'lan-thinkupthemes' );
 
 		/* 2 Column Layout */
 		$sizes['column2-1/1'] = __( 'Half - 1:1', 'lan-thinkupthemes' );
 		$sizes['column2-1/2'] = __( 'Half - 1:2', 'lan-thinkupthemes' );
-		$sizes['column2-1/3'] = __( 'Half - 1:3', 'lan-thinkupthemes' );
 		$sizes['column2-2/3'] = __( 'Half - 2:3', 'lan-thinkupthemes' );
-		$sizes['column2-1/4'] = __( 'Half - 1:4', 'lan-thinkupthemes' );
-		$sizes['column2-3/4'] = __( 'Half - 3:4', 'lan-thinkupthemes' );
-		$sizes['column2-1/5'] = __( 'Half - 1:5', 'lan-thinkupthemes' );
-		$sizes['column2-2/5'] = __( 'Half - 2:5', 'lan-thinkupthemes' );
 		$sizes['column2-3/5'] = __( 'Half - 3:5', 'lan-thinkupthemes' );
-		$sizes['column2-4/5'] = __( 'Half - 4:5', 'lan-thinkupthemes' );
 
 		/* 3 Column Layout */
 		$sizes['column3-1/1'] = __( 'Third - 1:1', 'lan-thinkupthemes' );
 		$sizes['column3-1/2'] = __( 'Third - 1:2', 'lan-thinkupthemes' );
 		$sizes['column3-1/3'] = __( 'Third - 1:3', 'lan-thinkupthemes' );
 		$sizes['column3-2/3'] = __( 'Third - 2:3', 'lan-thinkupthemes' );
-		$sizes['column3-1/4'] = __( 'Third - 1:4', 'lan-thinkupthemes' );
-		$sizes['column3-3/4'] = __( 'Third - 3:4', 'lan-thinkupthemes' );
-		$sizes['column3-1/5'] = __( 'Third - 1:5', 'lan-thinkupthemes' );
-		$sizes['column3-2/5'] = __( 'Third - 2:5', 'lan-thinkupthemes' );
-		$sizes['column3-3/5'] = __( 'Third - 3:5', 'lan-thinkupthemes' );
-		$sizes['column3-4/5'] = __( 'Third - 4:5', 'lan-thinkupthemes' );
 
 		/* 4 Column Layout */
 		$sizes['column4-1/1'] = __( 'Quarter - 1:1', 'lan-thinkupthemes' );
 		$sizes['column4-1/2'] = __( 'Quarter - 1:2', 'lan-thinkupthemes' );
-		$sizes['column4-1/3'] = __( 'Quarter - 1:3', 'lan-thinkupthemes' );
 		$sizes['column4-2/3'] = __( 'Quarter - 2:3', 'lan-thinkupthemes' );
-		$sizes['column4-1/4'] = __( 'Quarter - 1:4', 'lan-thinkupthemes' );
-		$sizes['column4-3/4'] = __( 'Quarter - 3:4', 'lan-thinkupthemes' );
-		$sizes['column4-1/5'] = __( 'Quarter - 1:5', 'lan-thinkupthemes' );
-		$sizes['column4-2/5'] = __( 'Quarter - 2:5', 'lan-thinkupthemes' );
-		$sizes['column4-3/5'] = __( 'Quarter - 3:5', 'lan-thinkupthemes' );
-		$sizes['column4-4/5'] = __( 'Quarter - 4:5', 'lan-thinkupthemes' );
 
 		return $sizes;
 	}

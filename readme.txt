@@ -2,7 +2,7 @@
 Contributors: thinkupthemes
 Requires at least: 4.6
 Tested up to: 4.9.4
-Version: 1.5.5
+Version: 1.6.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, dark, red, one-column, two-columns, three-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background, grid-layout, footer-widgets, blog, e-commerce, education, entertainment, news, photography, portfolio
@@ -102,18 +102,17 @@ The following opensource projects, graphics, fonts, API's or other files as list
            Licence:     Apache 2.0
            Licence URL: http://www.apache.org/licenses/LICENSE-2.0
 
-    [1.13] Item:        Elegant Icons
-           Item URL:    http://www.elegantthemes.com/blog/resources/elegant-themes-icon-pack-for-free
-           Licence:     Dual GPL and MIT
-           Licence URL: /licenses/license_(elegant_icons).txt
-
-    [1.14] Item:        Elegant Media Icons
-           Item URL:    https://www.iconfinder.com/search/?q=iconset:elegantmediaicons
-           Licence:     GPL
-           Licence URL: http://www.gnu.org/licenses/gpl.html
-
 
 == Changelog ==
+
+= 1.6.0
+- Updated: Theme width increased from 960px to 1140px.
+- Updated: Slider updated to ensure full compatibility with child themes.
+- Updated: Major update to style.css to bring inline with latest Pro version.
+- Updated: Custom image sizes increased to be compatible with 1140px width theme.
+- Updated: Major update to style-responsive.css to bring inline with latest Pro version.
+- Removed: Unused image sizes removed.
+- Removed: License folder removed and license in style.css linked directly to GPL page.
 
 = 1.5.5
 - Updated: Screenshot updated to comply with latst wordpress.org guidelines to not show descriptive text.

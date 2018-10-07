@@ -340,6 +340,63 @@
 	height: 16px
 }
 
+/* Homepage - Image Slider */
+#customize-controls li[id*="thinkup_homepage_sliderimage"] input,
+#customize-controls li[id*="thinkup_homepage_sliderimage"] select {
+	width: 100% !important;
+	max-width: 100%;
+}
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage1_info"],
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage2_info"],
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage3_info"] {
+	cursor: pointer;
+	background: #f4f4f4;
+	border: 1px solid #ddd;
+    padding: 7px 0 0;
+	margin-top: 20px;
+	text-align: center;
+	font-weight: 600;
+	text-transform: uppercase;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage1_image"],
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage1_title"],
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage1_desc"],
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage1_link"],
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage2_image"],
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage2_title"],
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage2_desc"],
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage2_link"],
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage3_image"],
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage3_title"],
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage3_desc"],
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage3_link"] {
+	display: none;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-bottom: 1px dotted #ddd;
+	border-top: none;
+	padding: 0 20px 15px;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	-ms-box-sizing: border-box;
+	-o-box-sizing: border-box;
+	box-sizing: border-box;
+}
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage1_link"],
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage2_link"],
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderimage3_link"] {
+	border-bottom: 1px solid #ddd;
+}
+#customize-controls [id*="redux_variables-thinkup_homepage_sliderpresetheight"] {
+	border-top: 1px solid #ddd;
+	margin-top: 20px;
+}
+
 /* Homepage Pre-Designed Content */
 .redux-container #section-thinkup_redux_variables-thinkup_homepage_section1_icon,
 .redux-container #section-thinkup_redux_variables-thinkup_homepage_section1_image,

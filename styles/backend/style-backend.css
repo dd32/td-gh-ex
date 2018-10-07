@@ -99,3 +99,17 @@ section-thinkup_portfolio_textcheck {
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
 }
+
+
+/*---------------------------------------------------- 
+	FIX REDUX COLOR PICKER ISSUE - ALIGN CHECKBOX
+---------------------------------------------------- */
+
+.redux-field.redux-container-color .wp-picker-container {
+	display: inline-block !important;
+}
+.redux-field.redux-container-color .color-transparency-check {
+	top: 6px !important;
+	left: 10px !important;
+	position: relative !important;
+}
