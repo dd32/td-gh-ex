@@ -1,7 +1,8 @@
 <?php do_action( 'head_theme_before_head' ); ?>
-<div class="site-header container-fluid" style="background-image: url(<?php header_image(); ?>)">
+<div class="site-header container-fluid" style="background-image: url(<?php esc_url( header_image() ); ?>)">
 	<div class="custom-header container" >
 			<div class="site-heading text-center">
+        <?php do_action( 'head_theme_before_title' ); ?>
 				<div class="site-branding-logo">
 					<?php the_custom_logo(); ?>
 				</div>
@@ -21,8 +22,8 @@
 						</p>
 					<?php endif; ?>
 				</div><!-- .site-branding-text -->
-			</div>	
-
+        <?php do_action( 'head_theme_after_title' ); ?>
+			</div>
 	</div>
 </div>
 <?php do_action( 'head_theme_before_menu' ); ?> 
