@@ -27,8 +27,6 @@ if ( ! class_exists( 'CZR_Fmk_Base_Construct' ) ) :
 
         public $czr_css_attr = array();
 
-        public $current_module_params_when_ajaxing;// store the params when ajaxing and allows us to access the currently requested module params at any point of the ajax action
-
         public static function czr_fmk_get_instance( $params ) {
             if ( ! isset( self::$instance ) && ! ( self::$instance instanceof CZR_Fmk_Base ) ) {
               self::$instance = new CZR_Fmk_Base( $params );
@@ -186,8 +184,6 @@ if ( ! class_exists( 'CZR_Fmk_Base_Load_Resources' ) ) :
 
             // adds specific js templates for the czr_module control
             add_action( 'customize_controls_print_footer_scripts', array( $this, 'ac_print_module_control_templates' ) , 1 );
-
-            add_action( 'customize_controls_print_footer_scripts', array( $this, 'ac_print_img_uploader_template' ) , 1 );
         }
 
 
@@ -281,8 +277,8 @@ if ( ! class_exists( 'CZR_Fmk_Base_Load_Resources' ) ) :
             //select2 stylesheet
             //overriden by some specific style in czr-control-base.css
             wp_enqueue_style(
-                'czr-select2-css',
-                 sprintf('%1$s/assets/css/lib/czrSelect2.min.css', NIMBLE_FMK_BASE_URL, ( defined('WP_DEBUG') && true === WP_DEBUG ) ? '' : '.min'),
+                'select2-css',
+                 sprintf('%1$s/assets/css/lib/select2.min.css', NIMBLE_FMK_BASE_URL, ( defined('WP_DEBUG') && true === WP_DEBUG ) ? '' : '.min'),
                 array( 'customize-controls' ),
                 ( defined('WP_DEBUG') && true === WP_DEBUG ) ? time() : NIMBLE_FMK_BASE_VERSION,
                 $media = 'all'
@@ -355,62 +351,6 @@ if ( ! class_exists( 'CZR_Fmk_Base_Load_Resources' ) ) :
               </script>
             <?php
         }
-
-
-        // this template is used in setupImageUploaderSaveAsId and setupImageUploaderSaveAsUrl
-        // @see js CZRInputMths
-        function ac_print_img_uploader_template() {
-          ?>
-            <script type="text/html" id="tmpl-czr-img-uploader">
-              <?php // case when a regular attachement object is provided, fetched from an id with wp.media.attachment( id ) ?>
-                <# if ( ( data.attachment && data.attachment.id ) ) { #>
-                  <div class="attachment-media-view attachment-media-view-{{ data.attachment.type }} {{ data.attachment.orientation }}">
-                    <div class="thumbnail thumbnail-{{ data.attachment.type }}">
-                      <# if ( 'image' === data.attachment.type && data.attachment.sizes && data.attachment.sizes.medium ) { #>
-                        <img class="attachment-thumb" src="{{ data.attachment.sizes.medium.url }}" draggable="false" alt="" />
-                      <# } else if ( 'image' === data.attachment.type && data.attachment.sizes && data.attachment.sizes.full ) { #>
-                        <img class="attachment-thumb" src="{{ data.attachment.sizes.full.url }}" draggable="false" alt="" />
-                      <# } #>
-                    </div>
-                    <div class="actions">
-                      <# if ( data.canUpload ) { #>
-                      <button type="button" class="button remove-button">{{ data.button_labels.remove }}</button>
-                      <button type="button" class="button upload-button control-focus" id="{{ data.settings['default'] }}-button">{{ data.button_labels.change }}</button>
-                      <div style="clear:both"></div>
-                      <# } #>
-                    </div>
-                  </div>
-                <?php // case when an url is provided ?>
-                <# } else if ( ! _.isEmpty( data.fromUrl ) ) { #>
-                  <div class="attachment-media-view">
-                    <div class="thumbnail thumbnail-thumb">
-                        <img class="attachment-thumb" src="{{ data.fromUrl }}" draggable="false" alt="" />
-                    </div>
-                    <div class="actions">
-                      <# if ( data.canUpload ) { #>
-                      <button type="button" class="button remove-button">{{ data.button_labels.remove }}</button>
-                      <button type="button" class="button upload-button control-focus" id="{{ data.settings['default'] }}-button">{{ data.button_labels.change }}</button>
-                      <div style="clear:both"></div>
-                      <# } #>
-                    </div>
-                  </div>
-                <?php // case when neither attachement or url are provided => placeholder ?>
-                <# } else { #>
-                  <div class="attachment-media-view">
-                    <div class="placeholder">
-                      {{ data.button_labels.placeholder }}
-                    </div>
-                    <div class="actions">
-                      <# if ( data.canUpload ) { #>
-                      <button type="button" class="button upload-button" id="{{ data.settings['default'] }}-button">{{ data.button_labels.select }}</button>
-                      <# } #>
-                      <div style="clear:both"></div>
-                    </div>
-                  </div>
-                <# } #>
-            </script>
-          <?php
-        }
     }//class
 endif;
 
@@ -462,38 +402,7 @@ if ( ! class_exists( 'CZR_Fmk_Base_Ajax_Filter' ) ) :
             }
             $tmpl = $_POST['tmpl'];
             $module_type = $_POST['module_type'];
-
-            ///////////////////////////////////////////////////////////////////////
-            // @param $tmpl = 'item-inputs'
-            //
-            // @param $_POST = {
-            // [tmpl] => item-inputs
-            // [module_type] => czr_heading_child
-            // [module_id] => __nimble__51b2f35191b3__main_settings_czr_module
-            // [cache] => true
-            // [nonce] => b4b0aea848
-            // [control_id] => __nimble__51b2f35191b3__main_settings
-            // [item_model] => Array
-            //     (
-            //         [id] => czr_heading_child_0
-            //         [title] =>
-            //         [heading_text] => This is a heading.
-            //         [heading_tag] => h1
-            //         [h_alignment_css] => Array
-            //             (
-            //                 [desktop] => center
-            //             )
-
-            //         [heading_title] =>
-            //         [link-to] =>
-            //         [link-custom-url] =>
-            //         [link-target] =>
-            //     )
-
-            // [action] => ac_get_template
-            // }
             $html = apply_filters( "ac_set_ajax_czr_tmpl___{$module_type}", '', $tmpl, $_POST );
-            ///////////////////////////////////////////////////////////////////////////
 
             if ( empty( $html ) ) {
                 wp_send_json_error( 'ac_set_ajax_czr_tmpl => module ' . $module_type . ' => template empty for requested tmpl : ' . $tmpl );
@@ -634,12 +543,9 @@ if ( ! class_exists( 'CZR_Fmk_Base_Tmpl_Builder' ) ) :
                 'title'        => '',
                 'default'  => '',
 
-                'html_before' => '',
-                'notice_before_title' => '',
                 'notice_before' => '',
                 'notice_after' => '',
                 'placeholder' => '',
-                'html_after' => '',
 
                 // typically used for the number and range inputs
                 'step' => '',
@@ -675,12 +581,7 @@ if ( ! class_exists( 'CZR_Fmk_Base_Tmpl_Builder' ) ) :
 
                 'has_device_switcher' => false, // <= indicates if the input value shall be saved by device or not
 
-                'scope' => 'local',// <= used when resetting the sections
-                // introduced for https://github.com/presscustomizr/nimble-builder/issues/403
-                'editor_params' => array(),
-
-                // introduced for https://github.com/presscustomizr/nimble-builder/issues/431
-                'section_collection' => array()
+                'scope' => 'local'// <= used when resetting the sections
             );
             foreach( $tmpl_map as $input_id => $input_data ) {
                 if ( ! is_string( $input_id ) || empty( $input_id ) ) {
@@ -742,24 +643,14 @@ if ( ! class_exists( 'CZR_Fmk_Base_Tmpl_Builder' ) ) :
                 $input_type,
                 ! empty( $input_data['transport'] ) ? 'data-transport="'. $input_data['transport'] .'"' : ''
             );
-            ?>
-            <?php if ( ! empty( $input_data['html_before'] ) ) : ?>
-                <div class="czr-html-before"><?php echo $input_data['html_before']; ?></div>
-            <?php endif; ?>
-
-            <?php if ( ! empty( $input_data['notice_before_title'] ) ) : ?>
-                <span class="czr-notice"><?php echo $input_data['notice_before_title']; ?></span><br/>
-            <?php endif; ?>
-
-            <?php
             // no need to print a title for an hidden input
             if ( $input_type !== 'hidden' ) {
                 printf( '<div class="customize-control-title %1$s">%2$s</div>', ! empty( $input_data['title_width'] ) ? $input_data['title_width'] : '', $input_data['title'] );
             }
             ?>
-            <?php if ( ! empty( $input_data['notice_before'] ) ) : ?>
-                <span class="czr-notice"><?php echo $input_data['notice_before']; ?></span>
-            <?php endif; ?>
+              <?php if ( ! empty( $input_data['notice_before'] ) ) : ?>
+                  <span class="czr-notice"><?php echo $input_data['notice_before']; ?></span>
+              <?php endif; ?>
 
             <?php printf( '<div class="czr-input %1$s">', ! empty( $input_data['input_width'] ) ? $input_data['input_width'] : '' ); ?>
 
@@ -775,11 +666,6 @@ if ( ! class_exists( 'CZR_Fmk_Base_Tmpl_Builder' ) ) :
               <?php if ( ! empty( $input_data['notice_after'] ) ) : ?>
                   <span class="czr-notice"><?php echo $input_data['notice_after']; ?></span>
               <?php endif; ?>
-
-              <?php if ( ! empty( $input_data['html_after'] ) ) : ?>
-                <div class="czr-html-after"><?php echo $input_data['html_after']; ?></div>
-              <?php endif; ?>
-
             </div> <?php //class="$css_attr['sub_set_wrapper']" ?>
             <?php
             // </INPUT WRAPPER>
@@ -827,17 +713,9 @@ if ( ! class_exists( 'CZR_Fmk_Base_Tmpl_Builder' ) ) :
                      *  SELECT
                     /* ------------------------------------------------------------------------- */
                     case 'czr_layouts'://<= specific to the hueman theme
-                    case 'select'://<= used in the customizr and hueman theme
-                    case 'simpleselect'://<=used in Nimble Builder
+                    case 'select':
                       ?>
                         <select data-czrtype="<?php echo $input_id; ?>"></select>
-                      <?php
-                    break;
-                    // multiselect with select2() js library
-                    case 'multiselect':
-                    case 'category_picker':
-                      ?>
-                        <select multiple="multiple" data-czrtype="<?php echo $input_id; ?>"></select>
                       <?php
                     break;
 
@@ -893,7 +771,6 @@ if ( ! class_exists( 'CZR_Fmk_Base_Tmpl_Builder' ) ) :
                       <?php
                     break;
 
-                    // DEPRECATED since april 2nd 2019
                     case 'gutencheck' :
                         ?>
                           <#
@@ -903,34 +780,12 @@ if ( ! class_exists( 'CZR_Fmk_Base_Tmpl_Builder' ) ) :
                         <?php
                     break;
 
-                    case 'nimblecheck' :
-                        ?>
-                          <#
-                            var _checked = ( false != data['<?php echo $input_id; ?>'] ) ? "checked=checked" : '';
-                          #>
-                          <?php
-                          // when input and label are tied by an id - for relationship
-                          // clicking on any of them changes the input
-                          // => We need a unique ID here so that input and label are tied by a unique link
-                          // @see https://www.w3.org/TR/html401/interact/forms.html#h-17.9.1
-                          // @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input/checkbox
-                          $unique_id = sprintf('%04X%04X', mt_rand(0, 65535), mt_rand(0, 65535));
-                          ?>
-                          <div class="nimblecheck-wrap">
-                            <input id="nimblecheck-<?php echo $unique_id; ?>" data-czrtype="<?php echo $input_id; ?>" type="checkbox" {{ _checked }} class="nimblecheck-input">
-                            <label for="nimblecheck-<?php echo $unique_id; ?>" class="nimblecheck-label">Switch</label>
-                          </div>
-                        <?php
-                    break;
-
                     /* ------------------------------------------------------------------------- *
                      *  TEXTAREA
                     /* ------------------------------------------------------------------------- */
                     case 'textarea' :
-                      // Added an id attribute for https://github.com/presscustomizr/nimble-builder/issues/403
-                      // needed to instantiate wp.editor.initialize(...)
                       ?>
-                        <textarea id="textarea-{{ data.id }}" data-czrtype="<?php echo $input_id; ?>" class="width-100" name="textarea" rows="10" cols="">{{ data.value }}</textarea>
+                        <textarea data-czrtype="<?php echo $input_id; ?>" class="width-100" name="textarea" rows="10" cols="">{{ data.value }}</textarea>
                       <?php
                     break;
 
@@ -946,12 +801,24 @@ if ( ! class_exists( 'CZR_Fmk_Base_Tmpl_Builder' ) ) :
                     break;
 
                     /* ------------------------------------------------------------------------- *
+                     *  TINY MCE EDITOR
+                    /* ------------------------------------------------------------------------- */
+                    case 'tiny_mce_editor' :
+                        ?>
+                          <# //console.log( 'IN php::ac_get_default_input_tmpl() => data sent to the tmpl => ', data ); #>
+                          <button type="button" class="button text_editor-button" data-czr-control-id="{{ data.control_id }}" data-czr-input-id="<?php echo $input_id; ?>" data-czr-action="open-tinymce-editor"><?php _e('Edit', 'hueman' ); ?></button>&nbsp;
+                          <button type="button" class="button text_editor-button" data-czr-control-id="{{ data.control_id }}" data-czr-input-id="<?php echo $input_id; ?>" data-czr-action="close-tinymce-editor"><?php _e('Hide editor', 'hueman' ); ?></button>
+                          <input data-czrtype="<?php echo $input_id; ?>" type="hidden" value="{{ data.value }}"/>
+                        <?php
+                    break;
+
+                    /* ------------------------------------------------------------------------- *
                      *  RANGE
                     /* ------------------------------------------------------------------------- */
                     case 'range_slider' :
                     case 'range' :
                       ?>
-                        <?php //<# //console.log( 'IN php::ac_get_default_input_tmpl() => data range_slide => ', data ); #> ?>
+                        <# //console.log( 'IN php::ac_get_default_input_tmpl() => data range_slide => ', data ); #>
                         <?php
                         printf( '<input data-czrtype="%5$s" type="range" %1$s %2$s %3$s %4$s value="{{ data[\'%5$s\'] }}" />',
                           ! empty( $input_data['orientation'] ) ? 'data-orientation="'. $input_data['orientation'] .'"' : '',
@@ -1404,13 +1271,6 @@ if ( ! class_exists( 'CZR_Fmk_Dyn_Module_Registration' ) ) :
             return array_key_exists( $module_type , $registered ) ? $registered[ $module_type ] : false;
         }
 
-        // @return bool
-        function czr_is_module_registered( $module_type = '' ) {
-            $registered = $this->registered_modules;
-            if ( empty( $module_type ) || ! is_array( $registered ) || empty( $registered ) )
-              return;
-            return array_key_exists( $module_type , $registered );
-        }
 
 
         ////////////////////////////////////////////////////////////////
@@ -1556,9 +1416,6 @@ if ( ! class_exists( 'CZR_Fmk_Dyn_Module_Registration' ) ) :
             }
 
             $module_params = $registered_modules[ $module_type ];
-            // Store the params now, so we can access them when rendering the input templates
-            $this->current_module_params_when_ajaxing = $module_params;
-
             $tmpl_params = $module_params[ 'tmpl' ];
             // Enqueue the list of registered scripts
             if ( empty( $tmpl_params ) ) {
@@ -1573,15 +1430,15 @@ if ( ! class_exists( 'CZR_Fmk_Dyn_Module_Registration' ) ) :
             // With tabs
             // 'tabs' => array(
               // array(
-              //     'title' => __('Spacing', 'text_doma'),
+              //     'title' => __('Spacing', 'text_domain_to_be_replaced'),
               //     'inputs' => array(
               //         'padding' => array(
               //             'input_type'  => 'number',
-              //             'title'       => __('Padding', 'text_doma')
+              //             'title'       => __('Padding', 'text_domain_to_be_replaced')
               //         ),
               //         'margin' => array(
               //             'input_type'  => 'number',
-              //             'title'       => __('Margin', 'text_doma')
+              //             'title'       => __('Margin', 'text_domain_to_be_replaced')
               //         )
               //     )
               // ),
@@ -1591,11 +1448,11 @@ if ( ! class_exists( 'CZR_Fmk_Dyn_Module_Registration' ) ) :
               // Without tabs :
               //  'padding' => array(
               //       'input_type'  => 'number',
-              //       'title'       => __('Padding', 'text_doma')
+              //       'title'       => __('Padding', 'text_domain_to_be_replaced')
               //  ),
               //   'margin' => array(
               //      'input_type'  => 'number',
-              //      'title'       => __('Margin', 'text_doma')
+              //      'title'       => __('Margin', 'text_domain_to_be_replaced')
               //  )
             if ( array_key_exists( 'tabs', $tmpl_map ) ) {
                 ob_start();
@@ -1804,7 +1661,7 @@ if ( ! class_exists( 'CZR_Fmk_Base' ) ) :
                       $post_types = $object_types;
                   }
                   if ( ! $post_types || ! is_array( $post_types ) || empty( $post_types ) ) {
-                      return new \WP_Error( 'czr_contents_invalid_post_type' );
+                      return new WP_Error( 'czr_contents_invalid_post_type' );
                   }
 
                   $posts = get_posts( array(
@@ -1839,7 +1696,7 @@ if ( ! class_exists( 'CZR_Fmk_Base' ) ) :
                       $taxonomies = $object_types;
                   }
                   if ( ! $taxonomies || ! is_array( $taxonomies ) || empty( $taxonomies ) ) {
-                      return new \WP_Error( 'czr_contents_invalid_post_type' );
+                      return new WP_Error( 'czr_contents_invalid_post_type' );
                   }
                   $terms = get_terms( $taxonomies, array(
                       'child_of'     => 0,
@@ -1962,7 +1819,7 @@ if ( ! class_exists( 'CZR_Fmk_Base' ) ) :
             remove_filter( 'pre_post_link', array( $this, 'dont_use_fancy_permalinks' ), 999 );
 
             if ( empty( $items ) ) {
-                wp_send_json_success( array( 'message' => __( 'No results found.', 'hueman') ) );
+                wp_send_json_error( array( 'message' => __( 'No results found.', 'hueman') ) );
             } else {
                 wp_send_json_success( array(
                     'items' => apply_filters( 'content_picker_ajax_items', $items, $p, 'ajax_search_available_items' )
@@ -2002,7 +1859,7 @@ if ( ! class_exists( 'CZR_Fmk_Base' ) ) :
                       $post_types = $object_types;
                   }
                   if ( ! $post_types || empty( $post_types ) ) {
-                      return new \WP_Error( 'czr_contents_invalid_post_type' );
+                      return new WP_Error( 'czr_contents_invalid_post_type' );
                   }
 
                   $query = array(
@@ -2021,7 +1878,7 @@ if ( ! class_exists( 'CZR_Fmk_Base' ) ) :
                   }
 
                   // Query posts.
-                  $get_posts = new \WP_Query( $query );
+                  $get_posts = new WP_Query( $query );
                   // Check if any posts were found.
                   if ( $get_posts->post_count ) {
                       foreach ( $get_posts->posts as $post ) {
@@ -2048,7 +1905,7 @@ if ( ! class_exists( 'CZR_Fmk_Base' ) ) :
                       $taxonomies = $object_types;
                   }
                   if ( ! $taxonomies || ! is_array( $taxonomies ) || empty( $taxonomies ) ) {
-                      return new \WP_Error( 'czr_contents_invalid_post_type' );
+                      return new WP_Error( 'czr_contents_invalid_post_type' );
                   }
                   $terms = get_terms( $taxonomies, array(
                       'name__like' => $args['s'],

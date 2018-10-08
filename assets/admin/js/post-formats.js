@@ -16,16 +16,16 @@ jQuery(document).ready(function($) {
 		}
 
 		var _wpPostFormatsInputSelectorClassical    = '#post-formats-select input[name="post_format"]',
-			_wpPostFormatsInputSelectorGutenberg    = '.editor-post-format select',
-			_gutenbergEditorSelector                = '#editor.block-editor__container',
+		    _wpPostFormatsInputSelectorGutenberg    = '.editor-post-format select',
 		    _isClassical                            = $(_wpPostFormatsInputSelectorClassical).length > 0,
-			_isGutenberg                            = $(_gutenbergEditorSelector).length > 0;
+		    _isGutenberg                            = $(_wpPostFormatsInputSelectorGutenberg).length > 0;
 
 		if ( !( _isClassical || _isGutenberg ) ) {
 			return;
 		}
 
-		var _onChangePostFormatSelector = _isClassical ? _wpPostFormatsInputSelectorClassical + ':radio' : _wpPostFormatsInputSelectorGutenberg;
+		var _currentPostFormatSelector              = _isClassical ? _wpPostFormatsInputSelectorClassical + ':checked' : _wpPostFormatsInputSelectorGutenberg,
+		    _onChangePostFromatSelector             = _isClassical ? _wpPostFormatsInputSelectorClassical + ':radio'   : _wpPostFormatsInputSelectorGutenberg;
 
 		// Post Formats
 
@@ -36,18 +36,18 @@ jQuery(document).ready(function($) {
 		var post_formats = ['audio','aside','chat','gallery','image','link','quote','status','video'];
 
 		// Get selected post format
-		var selected_post_format = HUPostFormatsParams.currentPostFormat;
+		var selected_post_format = $(_currentPostFormatSelector).val();
 
 		// Show post format meta box
-		if($.inArray(selected_post_format,post_formats) != '-1') {
+		if(jQuery.inArray(selected_post_format,post_formats) != '-1') {
 			$('#format-'+selected_post_format).show();
 		}
 
 		// Hide/show post format meta box when option changed
-		$('body').on( 'change', _onChangePostFormatSelector, function() {
+		$(_onChangePostFromatSelector).change(function() {
 			// Hide post format sections
 			hide_statuses();
-			// Show selected section
+			// Shoe selected section
 			if(jQuery.inArray($(this).val(),post_formats) != '-1') {
 				$('#format-'+$(this).val()).show();
 			}

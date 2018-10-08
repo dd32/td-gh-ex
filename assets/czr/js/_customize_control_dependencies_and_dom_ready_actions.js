@@ -153,17 +153,7 @@
                                   }, 200 );
 
                         }
-                  },
-                  {
-                        dominus : 'mobile-sidebar-hide',
-                        servi : [ 'mobile-sidebar-primary-first' ],
-                        visibility : function( to ) {
-                              if ( _.contains( [ 's1', 's1-s2' ], to ) ) {
-                                    return false;
-                              }
-                              return true;
-                        }
-                  },
+                  }
             ]//dominiDeps {}
       );//_.extend()
 

@@ -138,8 +138,6 @@ if ( ! class_exists( 'HU_customize' ) ) :
 
               'controls/class-code-editor-control.php',
 
-              'controls/class-color-alpha-control.php',
-
               'panels/class-panels.php',
 
               'sections/class-sections.php',
@@ -177,8 +175,6 @@ if ( ! class_exists( 'HU_customize' ) ) :
             }
             if ( class_exists('HU_Customize_Code_Editor_Control') )
               $manager -> register_control_type( 'HU_Customize_Code_Editor_Control' );
-            if ( class_exists('HU_Customize_Color_Alpha_Control') )
-              $manager -> register_control_type( 'HU_Customize_Color_Alpha_Control' );
         }
 
 

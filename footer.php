@@ -109,7 +109,11 @@
             <?php endif; ?>
 
             <div id="copyright">
-                <p><?php echo apply_filters('hu_parse_template_tags', wp_kses_post( hu_get_option( 'copyright' ) ) ); ?></p>
+              <?php if ( hu_get_option( 'copyright' ) ) : ?>
+                <p><?php echo wp_kses_post( hu_get_option( 'copyright' ) ); ?></p>
+              <?php else: ?>
+                <p><?php bloginfo(); ?> &copy; <?php echo date( 'Y' ); ?>. <?php _e( 'All Rights Reserved.', 'hueman' ); ?></p>
+              <?php endif; ?>
             </div><!--/#copyright-->
 
             <?php if ( hu_is_checked( 'credit' ) || hu_is_customizing() ) : ?>
