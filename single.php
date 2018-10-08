@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 <!--section part start-->
-<section class="section-main" style="<?php if (!empty($a1_options['fixed-top-menu'])){ ?>margin-top:93px; <?php } ?>">
+<section class="section-main" style="<?php if (get_theme_mod('a1-fixed-top-menu', false)){ ?>margin-top:93px; <?php } ?>">
   <div class="col-md-12 a1-breadcrumb" >
     <div class="container a1-container">
       <div class="col-md-6 col-sm-6 no-padding-lr left-part">
@@ -18,11 +18,11 @@ get_header(); ?>
   <div class="clearfix"></div>
   <div class="container a1-container">
     <div class="row">
-      <div class="col-md-8 col-sm-8 blog-article">
+      <div class="col-md-9 col-sm-8 col-xs-12">
        <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
         <div  id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-         <div class="blog-post single-blog"> <h3 class="blog-title"><?php echo get_the_title();  ?></h3>
-           <?php if(!isset($a1_options['hide-meta-info-single']) || empty($a1_options['hide-meta-info-single'])){ ?>
+         <div class="blog-post single-blog"> <h3 class="blog-title"><?php echo the_title();  ?></h3>
+           <?php if(!get_theme_mod ( 'a1_blog_page_single_post',false)){ ?>
            <div class="blog-info"> 
           	<ul>
             	<?php a1_entry_meta(); ?>
@@ -30,10 +30,7 @@ get_header(); ?>
           </div>
           <?php } ?>
           <div class="blog-inner"> 
-             <?php $a1_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID())); 
-              if(!empty($a1_image)) : ?>
-            <img src="<?php echo esc_url( $a1_image ); ?>" class="img-responsive" alt="<?php echo get_the_title(); ?>">
-             <?php endif; ?>
+             <?php if(has_post_thumbnail()) :  the_post_thumbnail('full');   endif; ?>
             <div class="blog-content">
              <?php the_content(); 
                     wp_link_pages( array(

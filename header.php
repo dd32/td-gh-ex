@@ -16,78 +16,79 @@ global $a1_options;
     <head>
         <meta charset="<?php bloginfo('charset'); ?>">
         <meta name="viewport" content="width=device-width">
-        <title><?php wp_title('|', true, 'right'); ?></title>
-        <?php if (!empty($a1_options['favicon'])) { ?>
-            <link rel="shortcut icon" href="<?php echo esc_url($a1_options['favicon']); ?>">
-        <?php } ?>
         <link rel="profile" href="http://gmpg.org/xfn/11">
-        <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-        <!--[if lt IE 9]>
-        <script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-        <![endif]-->
+        <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">       
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-        <header style="<?php if (!empty($a1_options['fixed-top-menu'])){ ?>position:fixed; <?php } ?>">
-            <?php if (empty($a1_options['remove-top-header'])): ?>
-                <div class="col-md-12 top-header no-padding-lr">
-                    <div class="container a1-container">
-                        <div class="col-md-6 col-sm-6 location-part  no-padding-lr">
-                            <?php if (!empty($a1_options['phone'])): ?>
-                                <p><i class="fa fa-phone"></i><?php echo esc_attr($a1_options['phone']); ?></p>
-                            <?php endif;
-                                if (!empty($a1_options['email'])): ?>
-                                <p class="top-header-email"><i class="fa fa-envelope-o"></i><a href="mailto:<?php echo esc_attr($a1_options['email']); ?>"><?php echo esc_attr($a1_options['email']); ?></a></p>
-                            <?php endif; ?>
-                        </div>
-                        <div class="col-md-6 col-sm-6 social-part no-padding-lr">
-                            <ul>
-                                <?php if (!empty($a1_options['fburl'])): ?><li><a href="<?php echo esc_url($a1_options['fburl']) ?>"><i class="fa fa-facebook"></i></a></li><?php endif; ?>
-                                <?php if (!empty($a1_options['twitter'])): ?><li><a href="<?php echo esc_url($a1_options['twitter']) ?>"><i class="fa fa-twitter"></i></a></li><?php endif; ?>
-                                <?php if (!empty($a1_options['pinterest'])): ?><li><a href="<?php echo esc_url($a1_options['pinterest']) ?>"><i class="fa fa-pinterest-square"></i></a></li><?php endif; ?>
-                                <?php if (!empty($a1_options['googleplus'])): ?><li><a href="<?php echo esc_url($a1_options['googleplus']) ?>"><i class="fa fa-google-plus"></i></a></li><?php endif; ?>
-                            </ul>                            
-                        </div>
-                        
-                    </div>
-                </div>
-            <?php endif;?>
-            <div class="col-md-12 bottom-header no-padding-lr">
-                <div class="container a1-container">
-                    <div class="col-md-2 no-padding-lr header-logo"> <a href="<?php echo esc_url(home_url()); ?>">
-                            <?php if (!empty($a1_options['logo'])): ?>
-                                <img src="<?php echo esc_url($a1_options['logo']); ?>" alt="<?php echo get_bloginfo('name'); ?>">
-                            <?php else: ?>
-                                <?php echo get_bloginfo('name'); ?>        
-                            <?php endif; ?>        
-                        </a></div>
-                    <div class="col-md-10 no-padding-lr">
-                        <nav class="a1-nav">
-                            <div class="navbar-header">
-                                <button type="button" class="navbar-toggle navbar-toggle-top sort-menu-icon collapsed" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"><?php _e('Toggle navigation', 'a1'); ?></span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+        <header class="<?php if (get_theme_mod('a1-fixed-top-menu', false)){ ?>header-fixed-color<?php } ?>">
+            <?php if (!get_theme_mod('a1-remove-top-header', false)): ?>
+            <div class="top-header">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="row">
+                                <div class="col-md-8 col-sm-8 col-xs-12 location-part">
+                                    
+                                    <?php if(get_theme_mod('theme_phone_number',$a1_options['phone'])!='') : ?>
+                                        <p><i class="fa fa-phone"></i><?php echo esc_attr(get_theme_mod('theme_phone_number',$a1_options['phone'])); ?></p>
+                                    <?php endif;
+                                        if (get_theme_mod('theme_email_id',$a1_options['email'])!=''): ?>
+                                        <p class="top-header-email"><i class="fa fa-envelope-o"></i><a href="mailto:<?php echo esc_attr($a1_options['email']); ?>"><?php echo esc_attr(get_theme_mod('theme_email_id',$a1_options['email'])); ?></a></p>
+                                    <?php endif; ?>
+                                </div>
+                                <div class="col-md-4 col-sm-4 col-xs-12 social-part">
+                                    <ul>
+                                        <?php $TopHeaderSocialIconDefault = array(
+                                              array('url'=>isset($a1_options['fburl'])?$a1_options['fburl']:'#','icon'=>'fa-facebook'),
+                                              array('url'=>isset($a1_options['twitter'])?$a1_options['twitter']:'#','icon'=>'fa-twitter'),
+                                              array('url'=>isset($a1_options['googleplus'])?$a1_options['googleplus']:'#','icon'=>'fa-google-plus'),  
+                                              array('url'=>isset($a1_options['pinterest'])?$a1_options['pinterest']:'#','icon'=>'fa-pinterest'),
+                                            );
+                                        for($i=1; $i<=4; $i++) :
+                                        if(get_theme_mod('TopHeaderSocialIconLink'.$i,$TopHeaderSocialIconDefault[$i-1]['url'])!='' && get_theme_mod('TopHeaderSocialIcon'.$i,$TopHeaderSocialIconDefault[$i-1]['icon'])!=''): ?>
+                                           <li><a href="<?php echo esc_url(get_theme_mod('TopHeaderSocialIconLink'.$i,$TopHeaderSocialIconDefault[$i-1]['url'])); ?>" class="icon" title="" target="_blank">
+                                                <i class="fa <?php echo esc_attr(get_theme_mod('TopHeaderSocialIcon'.$i,$TopHeaderSocialIconDefault[$i-1]['icon'])); ?>"></i>
+                                            </a></li>
+                                        <?php endif; endfor; ?>    
+                                    </ul>                            
+                                </div>
                             </div>
-                            <div class="navbar-collapse collapse no-padding-lr">           
-                                <?php $a1_defaults = array(
-                                    'theme_location' => 'primary',
-                                    'container' => 'div',
-                                    'container_class' => '',
-                                    'container_id' => '',
-                                    'menu_class' => '',
-                                    'menu_id' => '',
-                                    'echo' => true,
-                                    'fallback_cb' => 'wp_page_menu',
-                                    'before' => '',
-                                    'after' => '',
-                                    'link_before' => '',
-                                    'link_after' => '',
-                                    'items_wrap' => '<ul class="a1-menu">%3$s</ul>',
-                                    'depth' => 0,
-                                    'walker' => '' );
-                                    wp_nav_menu($a1_defaults); ?>
-                            </div>
-                        </nav>
+                        </div>
                     </div>
                 </div>
             </div>
+            <?php endif;?>
+
+            <!-- Fixed navbar -->
+            <nav id="header" class="navbar main-nav bottom-header">
+                <div id="header-container" class="container">
+                    <div class="row">
+                        <div class="col-md-12 col-sm-12 col-xs-12">
+                            <div class="navbar-header-logo main-logo"> 
+                                <?php 
+                                if(has_custom_logo()){
+                                    the_custom_logo();
+                                } ?>
+                                <?php if(display_header_text()):?>
+                                <a href="<?php echo esc_url(home_url('/')); ?>" rel="home" id='brand' class="home-link"><h2><?php echo esc_html( get_bloginfo( 'name' ) ); ?></h2><p class="site-description"><?php echo esc_html( get_bloginfo( 'description' ) ); ?></p></a>   
+                                <?php endif; ?>
+                            </div>
+                            <div id="mainmenu" classold=="collapse navbar-collapse">
+                                <?php
+                                    $a1_defaults = array(
+                                        'theme_location'  => 'primary',                            
+                                        'container'       => 'ul',                            
+                                        'echo'            => true,
+                                        'menu_class'      => 'navbar-nav',
+                                        'depth'           => 0,
+                                    );                               
+                                    wp_nav_menu($a1_defaults);
+                                 ?>
+                            </div><!-- /.nav-collapse -->
+                        </div>
+                    </div>
+                </div><!-- /.container -->
+            </nav><!-- /.navbar -->
         </header>
         <!--header part end-->

@@ -4,11 +4,11 @@
  */
 get_header(); ?>
 <!--section part start-->
-<section class="section-main" style="<?php if (!empty($a1_options['fixed-top-menu'])){ ?>margin-top:93px; <?php } ?>">
+<section class="section-main" style="<?php if (get_theme_mod('a1-fixed-top-menu', false)){ ?>margin-top:93px; <?php } ?>">
  <div class="col-md-12 a1-breadcrumb" >
    <div class="container a1-container">
      <div class="col-md-6 col-sm-6 no-padding-lr left-part">
-       <h3><?php  _e('Search results for','a1'); echo get_search_query(); ?></h3>
+       <h3><?php  esc_html_e('Search results for','a1'); echo get_search_query(); ?></h3>
      </div>
      <div class="col-md-6 col-sm-6 no-padding-lr right-part">
        <?php if(function_exists('a1_custom_breadcrumbs')) a1_custom_breadcrumbs(); ?>
@@ -21,8 +21,8 @@ get_header(); ?>
      <div class="col-md-8 col-sm-8 blog-article">
        <?php if ( have_posts() ) : ?>
        <?php while ( have_posts() ) : the_post(); ?>
-       <div class="blog-post"> <a href="<?php echo esc_url( get_permalink() ); ?>" class="blog-title"><?php echo get_the_title();  ?></a>
-         <?php if(!isset($a1_options['hide-meta-info-archieve-pages']) || empty($a1_options['hide-meta-info-archieve-pages'])){ ?>
+       <div class="blog-post"> <a href="<?php the_permalink(); ?>" class="blog-title"><?php the_title();  ?></a>
+         <?php if(!get_theme_mod ( 'a1_blog_page_blog_post',false)){ ?>
            <div class="blog-info"> 
             <ul>
               <?php a1_entry_meta(); ?>
@@ -30,10 +30,7 @@ get_header(); ?>
           </div>
           <?php } ?>
          <div class="blog-inner"> 
-         <?php $a1_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID())); 
-            if(!empty($a1_image)) :?>
-           <a href="<?php the_permalink(); ?>"><img src="<?php echo esc_url( $a1_image ); ?>" class="img-responsive" alt="<?php echo get_the_title(); ?>"></a>
-            <?php endif; ?>
+          <?php if(has_post_thumbnail()) :  the_post_thumbnail('full');   endif; ?>
            <div class="blog-content">
              <?php the_excerpt(); ?>
               </div>
@@ -41,7 +38,7 @@ get_header(); ?>
        </div>
         <?php endwhile;
           else : ?>
-       <p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'a1' ); ?></p>
+       <p><?php esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'a1' ); ?></p>
 	<?php get_search_form(); ?>
 	<?php endif; ?>
        <!--Pagination Start-->

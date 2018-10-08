@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 <!--section part start-->
-<section class="section-main" style="<?php if (!empty($a1_options['fixed-top-menu'])){ ?>margin-top:93px; <?php } ?>">
+<section class="section-main" style="<?php if (get_theme_mod('a1-fixed-top-menu', false)){ ?>margin-top:93px; <?php } ?>">
   <div class="col-md-12 a1-breadcrumb">
     <div class="container a1-container">
       <div class="col-md-6 col-sm-6 no-padding-lr left-part">

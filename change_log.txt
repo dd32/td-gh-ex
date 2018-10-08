@@ -43,3 +43,8 @@ i) Minor fixes.
 
 Version 1.6 (22nd March 2017)
 i) Changed feature image.
+
+Version 2.0.0 (5th Oct 2018)
+i)   Theme options removed.
+ii)  Theme customizer added.
+iii) Misc Changes.

@@ -4,7 +4,7 @@
  */
 get_header(); ?>
 <!--section part start-->
-<section class="section-main" style="<?php if (!empty($a1_options['fixed-top-menu'])){ ?>margin-top:93px; <?php } ?>">
+<section class="section-main" style="<?php if (get_theme_mod('a1-fixed-top-menu', false)){ ?>margin-top:93px; <?php } ?>" >
   <div class="col-md-12 a1-breadcrumb" >
     <div class="container a1-container">
       <div class="col-md-6 col-sm-6 no-padding-lr left-part">     
@@ -18,7 +18,7 @@ get_header(); ?>
   <div class="clearfix"></div>
   <div class="container a1-container">
     <div class="row">
-      <div class="col-md-8 col-sm-8 blog-article">
+      <div class="col-md-9 col-sm-8 col-xs-12">
         <?php while ( have_posts() ) : the_post(); ?>
         <div class="blog-post"> 
           <div class="blog-inner"> 

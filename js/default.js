@@ -1,19 +1,17 @@
 jQuery(window).scroll(function ()
 {
-    if (jQuery(document).width() >= 768) {
+    //if (jQuery(document).width() >= 768) {
         if (jQuery(window).scrollTop() > 0) {
-            if (scroll_top_header == '') {
+            if (scroll_top_header == 'no') {
                 jQuery(".top-header").slideUp()
-            }
-            //jQuery(".section-main").css({'margin-top': jQuery("header").height()});
+            }           
         }
         if (jQuery(window).scrollTop() <= 0) {
-            if (scroll_top_header == '') {   
+            if (scroll_top_header == 'no') {   
                 jQuery(".top-header").slideDown()
-            }
-            //jQuery(".section-main").css({'margin-top': '0px'});
+            }           
         }
-    }
+   // }
 });
 jQuery(document).ready(function () {
     jQuery("#a1_submit").click(function () {

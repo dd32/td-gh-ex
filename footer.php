@@ -2,11 +2,11 @@
 /**
  * Footer For a1 Theme.
  */
-global $a1_options; ?>
+global $a1_options; $widget_flag=false;?>
 <div class="clearfix"></div>
 <!--footer start-->
 <footer>
-    <?php if (is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') || is_active_sidebar('footer-4')) { ?>
+    <?php if (is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active_sidebar('footer-3') || is_active_sidebar('footer-4')) { $widget_flag=true;?>
         <div class="col-md-12 footer-top no-padding-lr">
             <div class="container a1-container a1-main-sidebar">
                 <div class="row">
@@ -29,30 +29,30 @@ global $a1_options; ?>
                         } ?>
                     </div>
                     <div class="col-md-3 col-sm-6  footer-column">
-    <?php
-    if (is_active_sidebar('footer-4')) {
-        dynamic_sidebar('footer-4');
-    } ?>
+                        <?php
+                        if (is_active_sidebar('footer-4')) {
+                            dynamic_sidebar('footer-4');
+                        } ?>
                     </div>
                 </div>
             </div>
         </div>
 <?php } ?>
-    <div class="footer-botom">
+    <div class="footer-botom <?php echo ($widget_flag)?'':'footer-botom-top'; ?>">
         <div class="container a1-container">
             <div class="row">
-                        <?php
-                        if (!empty($a1_options['footer-content'])) {
-                            echo "<p class='container a1-container footer-content'>" . esc_attr($a1_options['footer-content']) . "</p>";
-                        } ?>
+                <?php
+                if(get_theme_mod('footer-content',$a1_options['footer-content'])) {                            
+                    echo "<p class='container a1-container footer-content'>" . esc_attr(get_theme_mod('footer-content',$a1_options['footer-content'])) . "</p>";
+                } ?>
                 <div class="col-md-6 col-sm-6 copyright-text">
-                    <p><?php
-                        if (!empty($a1_options['footertext'])) {
-                            echo esc_attr($a1_options['footertext'] . '. ');
+                    <p><?php                        
+                        if(get_theme_mod('footertext',$a1_options['footertext'])) {
+                            echo wp_kses_post(get_theme_mod('footertext',$a1_options['footertext']));
                         }
-                        _e('Powered by', 'a1');
-                        echo ' <a target="_blank" href="http://fasterthemes.com/wordpress-themes/a1">';
-                        _e('A1 WordPress Theme', 'a1');
+                        esc_html_e('Powered by', 'a1');
+                        echo ' <a target="_blank" href="'.esc_url('https://fasterthemes.com/wordpress-themes/a1').'">';
+                        esc_html_e('A1 WordPress Theme', 'a1');
                         echo '</a>  '; ?>
                     </p>
                 </div>
