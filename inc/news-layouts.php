@@ -193,7 +193,7 @@ function bee_news_layout_15($atts=array()){
 ?>
 <?php
 
-function beenews_breaking_news($atts=array()){
+function bee_news_breaking_news($atts=array()){
      extract( shortcode_atts( array(
         'cat_id' => 30,
         'limit' => 3,
@@ -229,7 +229,7 @@ function beenews_breaking_news($atts=array()){
 ?>
 <?php
 
-function beenews_corousel($atts=array()){
+function bee_news_corousel($atts=array()){
      extract( shortcode_atts( array(
         'cat_id' => 30,
         'limit' => 8,
@@ -301,7 +301,7 @@ function beenews_corousel($atts=array()){
 ?>
 <?php
 
-function beenews_tabs($atts=array()){
+function bee_news_tabs($atts=array()){
      extract( shortcode_atts( array(
         'cat_id' => array(30, 18, 3 ),
         'limit' => 10,
@@ -355,7 +355,7 @@ function beenews_tabs($atts=array()){
 ?>
 <?php
 
-function beenews_breaking_news_slider($atts=array()){
+function bee_news_breaking_news_slider($atts=array()){
      extract( shortcode_atts( array(
         'cat_id' => 91,
         'limit' => 3,
@@ -435,7 +435,7 @@ function beenews_breaking_news_slider($atts=array()){
 
 <?php
 
-function beenews_newslider($atts=array()){
+function bee_news_newslider($atts=array()){
      extract( shortcode_atts( array(
         'cat_id' => 18,
         'limit' => 5,

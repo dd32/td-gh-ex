@@ -76,8 +76,8 @@ global $bee_news_redux_builder;
                             'theme_location'=>'primary',
                             'menu_class' => 'nav navbar-nav',
                             'container' => '',
-                            'fallback_cb' => 'wp_bootstrap_navwalker::fallback',
-                            'walker' => new wp_bootstrap_navwalker()
+                            'fallback_cb' => 'bee_news_bootstrap_navwalker::fallback',
+                            'walker' => new bee_news_bootstrap_navwalker()
                     ) ); 
 
                     ?>

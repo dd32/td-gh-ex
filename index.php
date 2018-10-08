@@ -11,7 +11,7 @@
      *
      *@package WordPress
      *@subpackage Beenews
-     *@since bee-news 1.4
+     *@since bee-news 1.5
      */
 get_header();?>
 <div id="primary" class="content-area">
@@ -42,12 +42,17 @@ get_header();?>
 <?php endif;?>
           </div>
           <div class="row">
-            <?php
-                if (function_exists('wp_bootstrap_pagination')) {
-                    wp_bootstrap_pagination();
-                }
-
-            ?>
+            <div class="navigation">
+                        <?php
+                            // Previous/next page navigation.
+                            the_posts_pagination( array(
+                                'prev_text'          => __( 'Previous page', 'bee-news' ),
+                                'next_text'          => __( 'Next page', 'bee-news' ),
+                                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bee-news' ) . ' </span>',
+                            ) );
+                        ?>
+                        <div class="clearfix"></div>
+                    </div>
           </div>
 
         </div>

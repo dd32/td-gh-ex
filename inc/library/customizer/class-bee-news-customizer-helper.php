@@ -12,20 +12,20 @@ class bee_news_Customizer_Helper {
 	 * bee_news_Customizer_Helper constructor.
 	 */
 	public function __construct() {
-		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customizer_enqueue_scripts' ) );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'bee_news_customizer_enqueue_scripts' ) );
 		add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
 
-		$this->change_default_panels();
-		$this->add_theme_options();
+		$this->bee_news_change_default_panels();
+		$this->bee_news_add_theme_options();
 	}
 
 	/**
 	 * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
 	 */
 	public function customize_preview_js() {
-		wp_enqueue_script( 'beenews_customizer', get_template_directory_uri() . '/include/libraries/customizer/assets/js/previewer.js', array( 'customize-preview' ), '21151215', true );
+		wp_enqueue_script( 'bee_news_customizer', get_template_directory_uri() . '/include/libraries/customizer/assets/js/previewer.js', array( 'customize-preview' ), '21151215', true );
 
-		wp_localize_script( 'beenews_customizer', 'WPUrls', array(
+		wp_localize_script( 'bee_news_customizer', 'WPUrls', array(
 			'siteurl' => get_option( 'siteurl' ),
 			'theme'   => get_template_directory_uri(),
 			'ajaxurl' => admin_url( 'admin-ajax.php' )
@@ -37,14 +37,14 @@ class bee_news_Customizer_Helper {
 	 *
 	 * Dependencies: Customizer Controls script (core)
 	 */
-	public function customizer_enqueue_scripts() {
+	public function bee_news_customizer_enqueue_scripts() {
 		wp_enqueue_script( 'customizer-scripts', get_template_directory_uri() . '/include/libraries/customizer/assets/js/customizer.js', array( 'customize-controls' ) );
 	}
 
 	/**
 	 * Loads the settings for the panels
 	 */
-	public function add_theme_options() {
+	public function bee_news_add_theme_options() {
 		$path  = get_template_directory() . '/include/libraries/customizer/settings';
 		$dirs  = glob( $path . '/*', GLOB_ONLYDIR );
 		$files = array( 'panels', 'sections', 'settings', 'controls' );
@@ -62,24 +62,24 @@ class bee_news_Customizer_Helper {
 	/**
 	 * Runs on initialization, changes the default panels to the Theme options
 	 */
-	public function change_default_panels() {
+	public function bee_news_change_default_panels() {
 		global $wp_customize;
 
 		$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 		$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 		$wp_customize->get_setting( 'custom_logo' )->transport     = 'refresh';
-		$wp_customize->get_section( 'header_image' )->panel        = 'beenews_panel_blog';
+		$wp_customize->get_section( 'header_image' )->panel        = 'bee_news_panel_blog';
 		$wp_customize->get_section( 'header_image' )->priority     = 4;
 		$wp_customize->get_section( 'header_image' )->title        = __( 'Blog Archive Header Image', 'bee-news' );
-		$wp_customize->get_section( 'background_image' )->panel    = 'beenews_panel_general';
+		$wp_customize->get_section( 'background_image' )->panel    = 'bee_news_panel_general';
 
-		if ( ! bee_news_Helper::on_iis() ) {
+		if ( ! bee_news_Helper::bee_news_on_iis() ) {
 
 			// Change panel for Site Title & Tagline Section
-			$wp_customize->get_section( 'title_tagline' )->panel = 'beenews_panel_general';
+			$wp_customize->get_section( 'title_tagline' )->panel = 'bee_news_panel_general';
 
 			// Change panel for Static Front Page
-			$wp_customize->get_section( 'static_front_page' )->panel = 'beenews_panel_general';
+			$wp_customize->get_section( 'static_front_page' )->panel = 'bee_news_panel_general';
 
 			// Change priority for Site Title
 			$wp_customize->get_control( 'custom_logo' )->priority    = 0;
@@ -114,7 +114,7 @@ class bee_news_Customizer_Helper {
 	 *
 	 * @return string
 	 */
-	public static function beenews_sanitize_textarea_nl2br( $input ) {
+	public static function bee_news_sanitize_textarea_nl2br( $input ) {
 		return nl2br( $input );
 	}
 
@@ -125,7 +125,7 @@ class bee_news_Customizer_Helper {
 	 *
 	 * @return string
 	 */
-	public static function beenews_sanitize_radio_buttons( $input, $setting ) {
+	public static function bee_news_sanitize_radio_buttons( $input, $setting ) {
 
 		global $wp_customize;
 
@@ -143,7 +143,7 @@ class bee_news_Customizer_Helper {
 	 *
 	 * @return string
 	 */
-	public static function beenews_sanitize_number( $input ) {
+	public static function bee_news_sanitize_number( $input ) {
 		return force_balance_tags( $input );
 	}
 
@@ -152,7 +152,7 @@ class bee_news_Customizer_Helper {
 	 *
 	 * @return string
 	 */
-	public static function beenews_sanitize_file_url( $url ) {
+	public static function bee_news_sanitize_file_url( $url ) {
 
 		$output = '';
 
@@ -169,7 +169,7 @@ class bee_news_Customizer_Helper {
 	 *
 	 * @return null|string
 	 */
-	public static function beenews_sanitize_hex_color( $color ) {
+	public static function bee_news_sanitize_hex_color( $color ) {
 		if ( '' === $color ) {
 			return '';
 		}
@@ -187,7 +187,7 @@ class bee_news_Customizer_Helper {
 	 *
 	 * @return int
 	 */
-	public static function beenews_sanitize_checkbox( $value ) {
+	public static function bee_news_sanitize_checkbox( $value ) {
 		return (bool) $value;
 	}
 
@@ -196,7 +196,7 @@ class bee_news_Customizer_Helper {
 	 *
 	 * @return string
 	 */
-	public static function beenews_sanitize_allowed_html( $value ) {
+	public static function bee_news_sanitize_allowed_html( $value ) {
 
 		return wp_kses(
 			$value,
@@ -224,7 +224,7 @@ class bee_news_Customizer_Helper {
 	 *
 	 * @return string|void
 	 */
-	public static function beenews_color_escaping_option_sanitize( $input ) {
+	public static function bee_news_color_escaping_option_sanitize( $input ) {
 		$input = esc_attr( $input );
 		return $input;
 	}
@@ -234,7 +234,7 @@ class bee_news_Customizer_Helper {
 	 *
 	 * @return string
 	 */
-	public static function beenews_color_option_hex_sanitize( $color ) {
+	public static function bee_news_color_option_hex_sanitize( $color ) {
 		if ( $unhashed = sanitize_hex_color_no_hash( $color ) ) {
 			return '#' . $unhashed;
 		}

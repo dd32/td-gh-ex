@@ -21,7 +21,7 @@ class Bee_News_Layout3 extends WP_Widget {
     ?>
     <div class="video-carousel">
     <div class="container">
-    <?php beenews_corousel(array('cat_id' =>$cat_id));?>
+    <?php bee_news_corousel(array('cat_id' =>$cat_id));?>
 
    </div>
 

@@ -210,8 +210,7 @@ if ( ! function_exists( 'bee_news_enqueue_scripts' ) ) :
 
             .panel-heading span{
                 background: " .  $bee_news_redux_builder['primary-color']['color']  . ";" .
-            "   color: " . $bee_news_redux_builder['heading-text-color']['color'] . ";".
-            "
+            " 
             }
 
             .carousel-news .carousel-caption label{
@@ -283,8 +282,8 @@ endif;
 
 
 /* Beenews Include Resources Begin */
-require_once "inc/bootstrap/wp_bootstrap_navwalker.php";
-require_once "inc/bootstrap/wp_bootstrap_navwalker.php";
+require_once "inc/bootstrap/bee_news_bootstrap_navwalker.php";
+require_once "inc/bootstrap/bee_news_bootstrap_navwalker.php";
 
 require_once "inc/template-tags.php";
 require_once "inc/widget/Bee-News-Breaking-New-Headline-layout.php";

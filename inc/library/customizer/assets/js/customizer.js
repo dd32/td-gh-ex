@@ -35,7 +35,7 @@
         case 'customize-control-sidebars_widgets-homepage-slider':
 					$.each(widgetList, function ($k, $v) {
 						var individualId = $(this).attr('data-widget-id');
-						if ( individualId.search('beenews_slider_widget') == -1 ) {
+						if ( individualId.search('bee_news_slider_widget') == -1 ) {
 							$(this).hide();
 							search.attr('disabled', true);
 						}
@@ -47,7 +47,7 @@
 				case 'customize-control-sidebars_widgets-content-area':
 					$.each(widgetList, function ($k, $v) {
 						var individualId = $(this).attr('data-widget-id');
-						if ( individualId.search('beenews_widget') == -1 ) {
+						if ( individualId.search('bee_news_widget') == -1 ) {
 							$(this).hide();
 							search.attr('disabled', true);
 						}
@@ -60,7 +60,7 @@
 					$.each(widgetList, function ($k, $v) {
 						search.removeAttr('disabled');
 						var individualId = $(this).attr('data-widget-id');
-						if ( individualId.search('beenews_widget') != -1 || individualId.search('beenews_slider_widget') != -1) {
+						if ( individualId.search('bee_news_widget') != -1 || individualId.search('bee_news_slider_widget') != -1) {
 							$(this).hide();
 						} else {
 							$(this).show();

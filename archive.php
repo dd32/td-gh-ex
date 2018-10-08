@@ -6,7 +6,7 @@ get_header(); ?>
         <div class="row">
             <?php
 
-            $layout = get_theme_mod( 'beenews_blog_layout', 'right-sidebar' ); ?>
+            $layout = get_theme_mod( 'bee_news_blog_layout', 'right-sidebar' ); ?>
             
 
             <div id="primary"
@@ -30,10 +30,17 @@ get_header(); ?>
                     ?>
                 </main><!-- #main -->
                  <div class="row">
-            <?php
-            if ( function_exists('wp_bootstrap_pagination') )
-              wp_bootstrap_pagination();
-            ?>
+            <div class="navigation">
+                        <?php
+                            // Previous/next page navigation.
+                            the_posts_pagination( array(
+                                'prev_text'          => __( 'Previous page', 'bee-news' ),
+                                'next_text'          => __( 'Next page', 'bee-news' ),
+                                'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bee-news' ) . ' </span>',
+                            ) );
+                        ?>
+                        <div class="clearfix"></div>
+                    </div>
           </div>
             </div><!-- #primary -->
             <?php if ( $layout === 'right-sidebar' ): ?>

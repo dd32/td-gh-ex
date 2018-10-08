@@ -19,7 +19,7 @@ class Bee_News_Slider extends WP_Widget {
     global $post;
    
     ?>
-    <?php beenews_breaking_news_slider(array('cat_id' => $cat_id,'thumbnail' =>
+    <?php bee_news_breaking_news_slider(array('cat_id' => $cat_id,'thumbnail' =>
     'full'));?>
 
     <?php echo $args['after_widget'];

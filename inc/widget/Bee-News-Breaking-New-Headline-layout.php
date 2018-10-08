@@ -21,7 +21,7 @@ class Bee_News_BreakingNewsHeadline_Layout extends WP_Widget {
     ?>
     
     <div class="container">
-    <?php beenews_breaking_news(array('cat_id' =>$cat_id));?>
+    <?php bee_news_breaking_news(array('cat_id' =>$cat_id));?>
    </div>
     <?php echo $args['after_widget'];
 

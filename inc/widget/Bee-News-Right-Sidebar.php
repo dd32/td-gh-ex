@@ -21,7 +21,7 @@
 
         ?>
 
-    <?php beenews_newslider(array('cat_id' => $cat_id));?>
+    <?php bee_news_newslider(array('cat_id' => $cat_id));?>
 
     <?php
 

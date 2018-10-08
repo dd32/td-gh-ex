@@ -1,13 +1,13 @@
 jQuery( document ).ready( function() {
 
   /* If there are required actions, add an icon with the number of required actions in the About beenews page -> Actions required tab */
-  var beenews_nr_actions_required = beenewsWelcomeScreenObject.nr_actions_required,
+  var bee_news_nr_actions_required = beenewsWelcomeScreenObject.nr_actions_required,
       context = jQuery( '.widget-content' ),
       sliders = context.find( '.slider-container' ),
       slider, input, inputId, id, min, max, step;
 
-  if ( (typeof beenews_nr_actions_required !== 'undefined') && (beenews_nr_actions_required != '0') ) {
-    jQuery( 'li.beenews-w-red-tab a' ).append( '<span class="beenews-actions-count">' + beenews_nr_actions_required + '</span>' );
+  if ( (typeof bee_news_nr_actions_required !== 'undefined') && (bee_news_nr_actions_required != '0') ) {
+    jQuery( 'li.beenews-w-red-tab a' ).append( '<span class="beenews-actions-count">' + bee_news_nr_actions_required + '</span>' );
   }
 
   /* Dismiss required actions */
@@ -17,7 +17,7 @@ jQuery( document ).ready( function() {
         action = jQuery( this ).attr( 'data-action' );
     jQuery.ajax( {
       type: 'GET',
-      data: { action: 'beenews_dismiss_required_action', id: id, todo: action },
+      data: { action: 'bee_news_dismiss_required_action', id: id, todo: action },
       dataType: 'html',
       url: beenewsWelcomeScreenObject.ajaxurl,
       beforeSend: function( data, settings ) {
@@ -36,7 +36,7 @@ jQuery( document ).ready( function() {
     } );
   } );
 
-  function beenews_rangesliders_init() {
+  function bee_news_rangesliders_init() {
     jQuery.each( sliders, function() {
       var slider = jQuery( this ).find( '.ss-slider' ),
           input = jQuery( this ).find( '.rl-slider' ),
@@ -84,8 +84,8 @@ jQuery( document ).ready( function() {
       } );
     } );
   };
-  beenews_rangesliders_init();
+  bee_news_rangesliders_init();
   jQuery( document ).ajaxStop( function() {
-    beenews_rangesliders_init();
+    bee_news_rangesliders_init();
   } );
 } );

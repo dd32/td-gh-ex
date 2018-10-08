@@ -10,7 +10,7 @@ class bee_news_Helper {
 	 *
 	 * @return int Attachment ID on success, 0 on failure
 	 */
-	public static function get_attachment_id( $url ) {
+	public static function bee_news_get_attachment_id( $url ) {
 		$attachment_id = 0;
 		$dir           = wp_upload_dir();
 		if ( false !== strpos( $url, $dir['baseurl'] . '/' ) ) { // Is URL in uploads directory?
@@ -44,7 +44,7 @@ class bee_news_Helper {
 		return (int) $attachment_id;
 	}
 
-	public static function check_archive() {
+	public static function bee_news_check_archive() {
 
 		$return = array(
 			'type' => NULL,
@@ -89,7 +89,7 @@ class bee_news_Helper {
 	 *
 	 * @return bool|mixed
 	 */
-	public static function format_icon( $format = 'standard' ) {
+	public static function bee_news_format_icon( $format = 'standard' ) {
 		if ( $format === 'standard' ) {
 			return false;
 		}
@@ -115,7 +115,7 @@ class bee_news_Helper {
 	 * @return void
 	 */
 	// public static function add_breadcrumbs() {
-	// 	$breadcrumbs = new beenews_Breadcrumbs();
+	// 	$breadcrumbs = new bee_news_Breadcrumbs();
 	// 	$breadcrumbs->get_breadcrumbs();
 	// }
 
@@ -124,13 +124,13 @@ class bee_news_Helper {
 	 *
 	 * @return array
 	 */
-	public static function get_lazy_image( $image_object ) {
+	public static function bee_news_get_lazy_image( $image_object ) {
 
-		$lazy = get_theme_mod( 'beenews_enable_blazy', '' );
+		$lazy = get_theme_mod( 'bee_news_enable_blazy', '' );
 		$img  = $image_object['image'];
 
 		if ( $lazy ) {
-			$img = apply_filters( 'beenews_widget_image', $image_object );
+			$img = apply_filters( 'bee_news_widget_image', $image_object );
 		}
 
 		$allowed_tags = array(
@@ -154,7 +154,7 @@ class bee_news_Helper {
 		);
 	}
 
-	public static function get_first_media( $post_id ) {
+	public static function bee_news_get_first_media( $post_id ) {
 		$post    = get_post( $post_id );
 		$content = do_shortcode( apply_filters( 'the_content', $post->post_content, 1 ) );
 		$embeds  = get_media_embedded_in_content( $content );
@@ -211,7 +211,7 @@ class bee_news_Helper {
 	/**
 	 * @return bool
 	 */
-	public static function on_iis() {
+	public static function bee_news_on_iis() {
 		$sSoftware = strtolower( $_SERVER["SERVER_SOFTWARE"] );
 		if ( strpos( $sSoftware, "microsoft-iis" ) !== false ) {
 			return true;
@@ -225,8 +225,8 @@ class bee_news_Helper {
 	 *
 	 * @return bool
 	 */
-	public static function categorized_blog() {
-		if ( false === ( $all_the_cool_cats = get_transient( 'beenews_categories' ) ) ) {
+	public static function Bee_news_categorized_blog() {
+		if ( false === ( $all_the_cool_cats = get_transient( 'bee_news_categories' ) ) ) {
 			// Create an array of all the categories that are attached to posts.
 			$all_the_cool_cats = get_categories( array(
 				                                     'fields'     => 'ids',
@@ -238,14 +238,14 @@ class bee_news_Helper {
 			// Count the number of categories that are attached to the posts.
 			$all_the_cool_cats = count( $all_the_cool_cats );
 
-			set_transient( 'beenews_categories', $all_the_cool_cats );
+			set_transient( 'bee_news_categories', $all_the_cool_cats );
 		}
 
 		if ( $all_the_cool_cats > 1 ) {
-			// This blog has more than 1 category so beenews_categorized_blog should return true.
+			// This blog has more than 1 category so bee_news_categorized_blog should return true.
 			return true;
 		} else {
-			// This blog has only 1 category so beenews_categorized_blog should return false.
+			// This blog has only 1 category so bee_news_categorized_blog should return false.
 			return false;
 		}
 	}
@@ -253,8 +253,8 @@ class bee_news_Helper {
 	/**
 	 * @param array $args
 	 */
-	public static function the_posts_navigation( $args = array() ) {
-		echo get_the_posts_navigation( $args );
+	public static function bee_news_the_posts_navigation( $args = array() ) {
+		echo get_bee_news_the_posts_navigation( $args );
 	}
 
 	/**
@@ -263,7 +263,7 @@ class bee_news_Helper {
 	 *
 	 * @return string
 	 */
-	public static function adjust_brightness( $hex, $steps ) {
+	public static function bee_news_adjust_brightness( $hex, $steps ) {
 		$steps = max( - 255, min( 255, $steps ) );
 		$hex   = str_replace( '#', '', $hex );
 		if ( strlen( $hex ) == 3 ) {
@@ -284,7 +284,7 @@ class bee_news_Helper {
 	/**
 	 * @param string $element
 	 */
-	public static function posted_on( $element = 'default' ) {
+	public static function bee_news_posted_on( $element = 'default' ) {
 		$cat       = get_the_category();
 		$comments  = wp_count_comments( get_the_ID() );
 		$date      = get_the_date();
@@ -306,7 +306,7 @@ class bee_news_Helper {
 				echo '<a href="' . esc_url( get_category_link( $cat[0]->term_id ) ) . '">' . get_the_category_by_ID( $cat[0]->term_id ) . '</a>';
 				break;
 			case 'comments':
-				echo '<a class="beenews-comments-link" href="' . get_the_permalink( get_the_ID() ) . '#comments"><span class=" nmicon-comment-o"></span> ' . esc_html( $comments->approved ) . '</a>';
+				echo '<a class="beenews-comments-link" href="' . esc_url( get_the_permalink( get_the_ID() ) . '#comments"><span class=" nmicon-comment-o"></span> ' . esc_html( $comments->approved ) . '</a>';
 				break;
 			case 'date':
 				echo '<div class="beenews-date">' . esc_html( $date ) . '</div>';

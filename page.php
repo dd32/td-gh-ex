@@ -2,15 +2,6 @@
 get_header();?>
 
 <div class="container container-category">
-        <div class="row row-advertisement">
-            <div class="col-md-12">
-                <div class="advertisement">
-
-                </div>
-            </div>
-        </div>
-
-
         <div class="row">
             <!-- RIGHT SLIDER OF CONTAINER -->
             <div class="col-md-8">
@@ -22,10 +13,10 @@ get_header();?>
                             // Parent post navigation.
                             the_post_navigation(array(
                                 'prev_text' => _x('<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'bee-news'),
-                            )]);
+                            ));
                         } elseif (is_singular('post')) {
                         // Previous/next post navigation.
-                        the_post_navigation(array([
+                        the_post_navigation(array(
                             'next_text' => '<span class="meta-nav" aria-hidden="true">' . __('Next', 'bee-news') . '</span> ' .
                             '<span class="screen-reader-text">' . __('Next post:', 'bee-news') . '</span> ' .
                             '<span class="post-title">%title</span>',

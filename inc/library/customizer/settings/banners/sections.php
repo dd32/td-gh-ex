@@ -5,7 +5,7 @@ if ( ! defined( 'WPINC' ) ) {
 global $wp_customize;
 
 $wp_customize->add_section(
-	'beenews_general_banners_controls',
+	'bee_news_general_banners_controls',
 	array(
 		'title' => esc_html__( 'Banner', 'bee-news' )
 	)

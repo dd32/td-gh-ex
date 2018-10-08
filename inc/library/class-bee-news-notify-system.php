@@ -21,7 +21,7 @@ class Bee_news_Notify_System extends Bee_news_main_Notify_System {
 	/**
 	 * @return bool
 	 */
-	public static function beenews_has_posts() {
+	public static function bee_news_has_posts() {
 		$args  = array( "s" => 'Gary Johns: \'What is Aleppo\'' );
 		$query = get_posts( $args );
 
@@ -35,10 +35,10 @@ class Bee_news_Notify_System extends Bee_news_main_Notify_System {
 	/**
 	 * @return bool
 	 */
-	public static function has_content() {
+	public static function bee_news_has_content() {
 		$check = array(
 			'widgets' => self::has_widgets(),
-			'posts'   => self::beenews_has_posts(),
+			'posts'   => self::bee_news_has_posts(),
 		);
 
 		if ( $check['widgets'] && $check['posts'] ) {
@@ -51,7 +51,7 @@ class Bee_news_Notify_System extends Bee_news_main_Notify_System {
 	/**
 	 * @return bool
 	 */
-	public static function check_wordpress_importer() {
+	public static function bee_news_check_WordPress_importer() {
 		if ( file_exists( ABSPATH . 'wp-content/plugins/wordpress-importer/wordpress-importer.php' ) ) {
 			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
@@ -64,7 +64,7 @@ class Bee_news_Notify_System extends Bee_news_main_Notify_System {
 	/**
 	 * @return bool
 	 */
-	public static function check_plugin_is_installed( $slug ) {
+	public static function bee_news_check_plugin_is_installed( $slug ) {
 		if ( file_exists( ABSPATH . 'wp-content/plugins/' . $slug . '/' . $slug . '.php' ) ) {
 			return true;
 		}
@@ -75,7 +75,7 @@ class Bee_news_Notify_System extends Bee_news_main_Notify_System {
 	/**
 	 * @return bool
 	 */
-	public static function check_plugin_is_active( $slug ) {
+	public static function bee_news_check_plugin_is_active( $slug ) {
 		if ( file_exists( ABSPATH . 'wp-content/plugins/' . $slug . '/' . $slug . '.php' ) ) {
 			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
@@ -83,15 +83,15 @@ class Bee_news_Notify_System extends Bee_news_main_Notify_System {
 		}
 	}
 
-	public static function has_import_plugin( $slug = NULL ) {
-		$return = self::has_content();
+	public static function bee_news_has_import_plugin( $slug = NULL ) {
+		$return = self::bee_news_has_content();
 
 		if ( $return ) {
 			return true;
 		}
 		$check = array(
-			'installed' => self::check_plugin_is_installed( $slug ),
-			'active'    => self::check_plugin_is_active( $slug )
+			'installed' => self::bee_news_check_plugin_is_installed( $slug ),
+			'active'    => self::bee_news_check_plugin_is_active( $slug )
 		);
 
 		if ( ! $check['installed'] || ! $check['active'] ) {
@@ -101,13 +101,13 @@ class Bee_news_Notify_System extends Bee_news_main_Notify_System {
 		return true;
 	}
 
-	public static function has_import_plugins() {
+	public static function bee_news_has_import_plugins() {
 		$check = array(
 			'wordpress-importer'       => array( 'installed' => false, 'active' => false ),
 			'widget-importer-exporter' => array( 'installed' => false, 'active' => false )
 		);
 
-		$content = self::has_content();
+		$content = self::bee_news_has_content();
 		$return  = false;
 		if ( $content ) {
 			return true;
@@ -119,8 +119,8 @@ class Bee_news_Notify_System extends Bee_news_main_Notify_System {
 				continue;
 			}
 
-			$check[ $plugin ]['installed'] = self::check_plugin_is_installed( $plugin );
-			$check[ $plugin ]['active']    = self::check_plugin_is_active( $plugin );
+			$check[ $plugin ]['installed'] = self::bee_news_check_plugin_is_installed( $plugin );
+			$check[ $plugin ]['active']    = self::bee_news_check_plugin_is_active( $plugin );
 
 			if ( ! $check[ $plugin ]['installed'] || ! $check[ $plugin ]['active'] ) {
 				$return = true;
@@ -132,13 +132,13 @@ class Bee_news_Notify_System extends Bee_news_main_Notify_System {
 		return $return;
 	}
 
-	public static function widget_importer_exporter_title() {
-		$installed = self::check_plugin_is_installed( 'widget-importer-exporter' );
+	public static function bee_news_widget_importer_exporter_title() {
+		$installed = self::bee_news_check_plugin_is_installed( 'widget-importer-exporter' );
 		if ( ! $installed ) {
 			return __( 'Install: Widget Importer Exporter Plugin', 'bee-news' );
 		}
 
-		$active = self::check_plugin_is_active( 'widget-importer-exporter' );
+		$active = self::bee_news_check_plugin_is_active( 'widget-importer-exporter' );
 		if ( $installed && ! $active ) {
 			return __( 'Activate: Widget Importer Exporter Plugin', 'bee-news' );
 		}
@@ -146,13 +146,13 @@ class Bee_news_Notify_System extends Bee_news_main_Notify_System {
 		return __( 'Install: Widget Importer Exporter Plugin', 'bee-news' );
 	}
 
-	public static function wordpress_importer_title() {
-		$installed = self::check_plugin_is_installed( 'wordpress-importer' );
+	public static function bee_news_WordPress_importer_title() {
+		$installed = self::bee_news_check_plugin_is_installed( 'wordpress-importer' );
 		if ( ! $installed ) {
 			return __( 'Install: WordPress Importer', 'bee-news' );
 		}
 
-		$active = self::check_plugin_is_active( 'wordpress-importer' );
+		$active = self::bee_news_check_plugin_is_active( 'wordpress-importer' );
 		if ( $installed && ! $active ) {
 			return __( 'Activate: WordPress Importer', 'bee-news' );
 		}
@@ -163,13 +163,13 @@ class Bee_news_Notify_System extends Bee_news_main_Notify_System {
 	/**
 	 * @return string
 	 */
-	public static function wordpress_importer_description() {
-		$installed = self::check_plugin_is_installed( 'wordpress-importer' );
+	public static function bee_news_WordPress_importer_description() {
+		$installed = self::bee_news_check_plugin_is_installed( 'wordpress-importer' );
 		if ( ! $installed ) {
 			return __( 'Please install the WordPress Importer to create the demo content.', 'bee-news' );
 		}
 
-		$active = self::check_plugin_is_active( 'wordpress-importer' );
+		$active = self::bee_news_check_plugin_is_active( 'wordpress-importer' );
 		if ( $installed && ! $active ) {
 			return __( 'Please activate the WordPress Importer to create the demo content.', 'bee-news' );
 		}
@@ -177,13 +177,13 @@ class Bee_news_Notify_System extends Bee_news_main_Notify_System {
 		return __( 'Please install the WordPress Importer to create the demo content.', 'bee-news' );
 	}
 
-	public static function widget_importer_exporter_description() {
-		$installed = self::check_plugin_is_installed( 'widget-importer-exporter' );
+	public static function bee_news_widget_importer_exporter_description() {
+		$installed = self::bee_news_check_plugin_is_installed( 'widget-importer-exporter' );
 		if ( ! $installed ) {
 			return __( 'Please install the WordPress widget importer to create the demo content', 'bee-news' );
 		}
 
-		$active = self::check_plugin_is_active( 'widget-importer-exporter' );
+		$active = self::bee_news_check_plugin_is_active( 'widget-importer-exporter' );
 		if ( $installed && ! $active ) {
 			return __( 'Please activate the WordPress Widget Importer to create the demo content.', 'bee-news' );
 		}
@@ -195,7 +195,7 @@ class Bee_news_Notify_System extends Bee_news_main_Notify_System {
 	/**
 	 * @return bool
 	 */
-	public static function is_not_template_front_page() {
+	public static function bee_news_is_not_template_front_page() {
 		$page_id = get_option( 'page_on_front' );
 		
 

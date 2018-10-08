@@ -9,11 +9,11 @@ global $wp_customize;
  */
 $wp_customize->add_control( new Epsilon_Control_Toggle(
 	                            $wp_customize,
-	                            'beenews_show_banner_on_homepage',
+	                            'bee_news_show_banner_on_homepage',
 	                            array(
 		                            'type'    => 'epsilon-toggle',
 		                            'label'   => esc_html__( 'Enable banner', 'bee-news' ),
-		                            'section' => 'beenews_general_banners_controls',
+		                            'section' => 'bee_news_general_banners_controls',
 	                            )
                             )
 );
@@ -22,7 +22,7 @@ $wp_customize->add_control( new Epsilon_Control_Toggle(
  * Type of banners
  */
 $wp_customize->add_control(
-	'beenews_banner_type',
+	'bee_news_banner_type',
 	array(
 		'type'        => 'radio',
 		'choices'     => array(
@@ -32,7 +32,7 @@ $wp_customize->add_control(
 		'label'       => esc_html__( 'The type of the banner', 'bee-news' ),
 		'description' => esc_html__( 'Select what type of banner you want to use: normal image or adsense script',
 		                             'bee-news' ),
-		'section'     => 'beenews_general_banners_controls',
+		'section'     => 'bee_news_general_banners_controls',
 	)
 );
 
@@ -42,11 +42,11 @@ $wp_customize->add_control(
 $wp_customize->add_control(
 	new WP_Customize_Image_Control(
 		$wp_customize,
-		'beenews_banner_image',
+		'bee_news_banner_image',
 		array(
 			'label'           => esc_html__( 'Banner Image:', 'bee-news' ),
 			'description'     => esc_html__( 'Recommended size: 728 x 90', 'bee-news' ),
-			'section'         => 'beenews_general_banners_controls',
+			'section'         => 'bee_news_general_banners_controls',
 			'active_callback' => 'banners_type_callback',
 		)
 	)
@@ -56,12 +56,12 @@ $wp_customize->add_control(
  * Banner url
  */
 $wp_customize->add_control(
-	'beenews_banner_link',
+	'bee_news_banner_link',
 	array(
 		'label'           => esc_html__( 'Banner Link:', 'bee-news' ),
 		'description'     => esc_html__( 'Add the link for banner image.', 'bee-news' ),
-		'section'         => 'beenews_general_banners_controls',
-		'settings'        => 'beenews_banner_link',
+		'section'         => 'bee_news_general_banners_controls',
+		'settings'        => 'bee_news_banner_link',
 		'active_callback' => 'banners_type_callback',
 	)
 );
@@ -70,19 +70,19 @@ $wp_customize->add_control(
  * AdSense code
  */
 $wp_customize->add_control(
-	'beenews_banner_adsense_code',
+	'bee_news_banner_adsense_code',
 	array(
 		'label'           => esc_html__( 'AdSense Code:', 'bee-news' ),
 		'description'     => esc_html__( 'Add the code you retrieved from your AdSense account. You only need to insert the <ins> tag.', 'bee-news' ),
-		'section'         => 'beenews_general_banners_controls',
-		'settings'        => 'beenews_banner_adsense_code',
+		'section'         => 'bee_news_general_banners_controls',
+		'settings'        => 'bee_news_banner_adsense_code',
 		'type'            => 'textarea',
 		'active_callback' => 'banners_type_false_callback',
 	)
 );
 
 function banners_type_callback( $control ) {
-	if ( $control->manager->get_setting( 'beenews_banner_type' )->value() == 'image' ) {
+	if ( $control->manager->get_setting( 'bee_news_banner_type' )->value() == 'image' ) {
 		return true;
 	}
 
@@ -90,7 +90,7 @@ function banners_type_callback( $control ) {
 }
 
 function banners_type_false_callback( $control ) {
-	if ( $control->manager->get_setting( 'beenews_banner_type' )->value() == 'image' ) {
+	if ( $control->manager->get_setting( 'bee_news_banner_type' )->value() == 'image' ) {
 		return false;
 	}
 

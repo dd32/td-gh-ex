@@ -3,7 +3,7 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 global $wp_customize;
-$wp_customize->add_panel( 'beenews_panel_general',
+$wp_customize->add_panel( 'bee_news_panel_general',
                           array(
 	                          'priority'       => 24,
 	                          'capability'     => 'edit_theme_options',
@@ -12,7 +12,7 @@ $wp_customize->add_panel( 'beenews_panel_general',
                           )
 );
 
-$wp_customize->add_panel( 'beenews_panel_typography',
+$wp_customize->add_panel( 'bee_news_panel_typography',
                           array(
 	                          'priority'       => 26,
 	                          'capability'     => 'edit_theme_options',
@@ -21,7 +21,7 @@ $wp_customize->add_panel( 'beenews_panel_typography',
                           )
 );
 
-$wp_customize->add_panel( 'beenews_panel_blog',
+$wp_customize->add_panel( 'bee_news_panel_blog',
                           array(
 	                          'priority'       => 25,
 	                          'capability'     => 'edit_theme_options',
@@ -30,7 +30,7 @@ $wp_customize->add_panel( 'beenews_panel_blog',
                           )
 );
 
-$wp_customize->add_panel( 'beenews_panel_typography',
+$wp_customize->add_panel( 'bee_news_panel_typography',
                           array(
 	                          'priority'       => 26,
 	                          'capability'     => 'edit_theme_options',

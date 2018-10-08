@@ -1,28 +1,8 @@
 <?php
-/**
- * The template for displaying Front page.
- *
- * This is the template that displays all pages by default.
- * Please note that this is the WordPress construct of pages
- * and that other 'pages' on your WordPress site may use a
- * different template.
- *
- * @link    https://codex.wordpress.org/Template_Hierarchy
- *
- *@package WordPress
- *@subpackage Beenews
- *@since bee-news 1.5
- */
-?>
-
-<?php
 get_header(); ?>
-<?php
 
-$show_on_front = get_option('show_on_front');
-if ( $show_on_front == 'posts' ):
-   ?>
-    <div class="container">
+
+  <div class="container">
         <div class="row">
             <?php
 
@@ -50,7 +30,7 @@ if ( $show_on_front == 'posts' ):
                     ?>
                 </main><!-- #main -->
                  <div class="row">
-            <div class="navigation">
+          <div class="navigation">
                         <?php
                             // Previous/next page navigation.
                             the_posts_pagination( array(
@@ -73,20 +53,4 @@ if ( $show_on_front == 'posts' ):
         </div>
     </div>
 
-<?php
-else:
-    if ( is_active_sidebar( 'homepage-slider' ) ) { ?>
-        <div class="container">
-            <?php dynamic_sidebar( 'homepage-slider' ); ?>
-        </div>
-         <?php } ?>
-        <div class="container">
-            <?php if ( is_active_sidebar( 'content-area' ) ) { ?>
-                <?php dynamic_sidebar( 'content-area' ); ?>   
-            <?php } ?>
-        </div>
-       
-        
-     <?php endif; ?>
-
-<?php get_footer(); ?>
+    <?php get_footer(); ?>

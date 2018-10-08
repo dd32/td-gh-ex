@@ -12,34 +12,34 @@ class Bee_news_Welcome_Screen {
 	 */
 	public function __construct() {
 		/* create dashbord page */
-		add_action( 'admin_menu', array( $this, 'beenews_welcome_register_menu' ) );
+		add_action( 'admin_menu', array( $this, 'bee_news_welcome_register_menu' ) );
 
 		/* activation notice */
-		add_action( 'load-themes.php', array( $this, 'beenews_activation_admin_notice' ) );
+		add_action( 'load-themes.php', array( $this, 'bee_news_activation_admin_notice' ) );
 
 		/* enqueue script and style for welcome screen */
-		add_action( 'admin_enqueue_scripts', array( $this, 'beenews_welcome_style_and_scripts' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'bee_news_welcome_style_and_scripts' ) );
 
 		/* ajax callback for dismissable required actions */
-		add_action( 'wp_ajax_beenews_dismiss_required_action', array(
+		add_action( 'wp_ajax_bee_news_dismiss_required_action', array(
 			$this,
-			'beenews_dismiss_required_action_callback'
+			'bee_news_dismiss_required_action_callback'
 		) );
-		add_action( 'wp_ajax_nopriv_beenews_dismiss_required_action', array(
+		add_action( 'wp_ajax_nopriv_bee_news_dismiss_required_action', array(
 			$this,
-			'beenews_dismiss_required_action_callback'
+			'bee_news_dismiss_required_action_callback'
 		) );
 
 		/**
 		 * Set the blog / static page automatically
 		 */
-		add_action( 'admin_init', array( $this, 'beenews_set_pages' ) );
+		add_action( 'admin_init', array( $this, 'bee_news_set_pages' ) );
 	}
 
 	/**
 	 * Set the latest blog / static page automatically
 	 */
-	public function beenews_set_pages() {
+	public function bee_news_set_pages() {
 		if ( ! empty( $_GET ) ) {
 			/**
 			 * Check action
@@ -65,7 +65,7 @@ class Bee_news_Welcome_Screen {
 	 * @see   add_theme_page()
 	 * @since 1.8.2.4
 	 */
-	public function beenews_welcome_register_menu() {
+	public function bee_news_welcome_register_menu() {
 		$action_count = $this->count_actions();
 		$title        = $action_count > 0 ? __( 'About beenews', 'bee-news' ) . '<span class="badge-action-count">' . esc_html( $action_count ) . '</span>' : __( 'About beenews', 'bee-news' );
 
@@ -79,11 +79,11 @@ class Bee_news_Welcome_Screen {
 	 * Adds an admin notice upon successful activation.
 	 *
 	 */
-	public function beenews_activation_admin_notice() {
+	public function bee_news_activation_admin_notice() {
 		global $pagenow;
 
 		if ( is_admin() && ( 'themes.php' == $pagenow ) && isset( $_GET['activated'] ) ) {
-			add_action( 'admin_notices', array( $this, 'beenews_welcome_admin_notice' ), 99 );
+			add_action( 'admin_notices', array( $this, 'bee_news_welcome_admin_notice' ), 99 );
 		}
 	}
 
@@ -91,7 +91,7 @@ class Bee_news_Welcome_Screen {
 	 * Display an admin notice linking to the welcome screen
 	 *
 	 */
-	public function beenews_welcome_admin_notice() {
+	public function bee_news_welcome_admin_notice() {
 		?>
 		<div class="updated notice is-dismissible">
 			<p><?php echo sprintf( esc_html__( 'Welcome! Thank you for choosing beenews! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'bee-news' ), '<a href="' . esc_url( admin_url( 'themes.php?page=beenews-welcome' ) ) . '">', '</a>' ); ?></p>
@@ -105,7 +105,7 @@ class Bee_news_Welcome_Screen {
 	 * Load welcome screen css and javascript
 	 *
 	 */
-	public function beenews_welcome_style_and_scripts( $hook_suffix ) {
+	public function bee_news_welcome_style_and_scripts( $hook_suffix ) {
 
 		wp_enqueue_style( 'beenews-welcome-screen', get_template_directory_uri() . '/inc/library/welcome-screen/assets/css/welcome.css' );
 		wp_enqueue_script( 'beenews-welcome-screen', get_template_directory_uri() . '/inc/library/welcome-screen/assets/js/welcome.js', array( 'jquery' ), '12123' );
@@ -123,7 +123,7 @@ class Bee_news_Welcome_Screen {
 	 * Load scripts for customizer page
 	 *
 	 */
-	public function beenews_welcome_scripts_for_customizer() {
+	public function bee_news_welcome_scripts_for_customizer() {
 
 		wp_enqueue_style( 'beenews-welcome-screen-customizer', get_template_directory_uri() . '/inc/library/welcome-screen/assets/css/welcome_customizer.css' );
 		wp_enqueue_script( 'beenews-welcome-screen-customizer', get_template_directory_uri() . '/inc/library/welcome-screen/assets/js/welcome_customizer.js', array( 'jquery' ), '20120206', true );
@@ -141,7 +141,7 @@ class Bee_news_Welcome_Screen {
 	 *
 	 * @since 1.8.2.4
 	 */
-	public function beenews_dismiss_required_action_callback() {
+	public function bee_news_dismiss_required_action_callback() {
 
 		global $beenews;
 		$action_id = ( isset( $_GET['id'] ) ) ? $_GET['id'] : 0;
@@ -237,7 +237,7 @@ class Bee_news_Welcome_Screen {
 	public function call_plugin_api( $slug ) {
 		include_once( ABSPATH . 'wp-admin/includes/plugin-install.php' );
 
-		if ( false === ( $call_api = get_transient( 'beenews_plugin_information_transient_' . $slug ) ) ) {
+		if ( false === ( $call_api = get_transient( 'bee_news_plugin_information_transient_' . $slug ) ) ) {
 			$call_api = plugins_api( 'plugin_information', array(
 				'slug'   => $slug,
 				'fields' => array(
@@ -258,7 +258,7 @@ class Bee_news_Welcome_Screen {
 					'icons'             => true
 				)
 			) );
-			set_transient( 'beenews_plugin_information_transient_' . $slug, $call_api, 30 * MINUTE_IN_SECONDS );
+			set_transient( 'bee_news_plugin_information_transient_' . $slug, $call_api, 30 * MINUTE_IN_SECONDS );
 		}
 
 		return $call_api;
@@ -350,9 +350,6 @@ class Bee_news_Welcome_Screen {
 	 * @since 1.8.2.4
 	 */
 	public function Bee_news_Welcome_Screen() {
-		require_once( ABSPATH . 'wp-load.php' );
-		require_once( ABSPATH . 'wp-admin/admin.php' );
-		require_once( ABSPATH . 'wp-admin/admin-header.php' );
 
 		$beenews      = wp_get_theme();
 		$active_tab   = isset( $_GET['tab'] ) ? $_GET['tab'] : 'getting_started';
