@@ -1,5 +1,5 @@
 ﻿Theme Name : Awaken
-Version    : 2.1.8
+Version    : 2.1.9
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -231,3 +231,7 @@ Changed sidebar widget title <h2> tags to <h3>
 - Version 2.1.8
 Renamed widget control "Hide sticky posts" to "Ignore sticky posts".
 Changed HEADER_TEXTCOLOR to use add_theme_support('custom-header).
+
+- Version 2.1.9
+* Updated Popular Posts, Comments, Tags widget to display only approved comments.
+* Used (document).ready() method instead of (window).load() method for slider.

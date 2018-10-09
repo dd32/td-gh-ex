@@ -123,7 +123,8 @@ class Awaken_Tabbed_Widget extends WP_Widget {
 		$avatar_size = 80;
 		$comment_length = 90;
 		$args = array(
-			'number'       => $noc,
+			'number'	=> $noc,
+			'status'	=> 'approve'
 		);
 		$comments_query = new WP_Comment_Query;
 		$comments = $comments_query->query( $args );	

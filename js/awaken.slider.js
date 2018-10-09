@@ -1,4 +1,4 @@
-jQuery(window).load(function() {
+jQuery(document).ready(function() {
   jQuery('.flexslider').flexslider({
     animation: "fade",
     direction: "horizontal",
