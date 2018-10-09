@@ -292,19 +292,19 @@ function benevolent_social_links_cb(){
     ?>
   <ul class="social-networks">
     <?php if( $facebook ){ ?>
-        <li><a href="<?php echo esc_url( $facebook ); ?>" class="fa fa-facebook" target="_blank" title="<?php esc_attr_e( 'Facebook', 'benevolent' );?>"></a></li>
+        <li><a href="<?php echo esc_url( $facebook ); ?>" target="_blank" title="<?php esc_attr_e( 'Facebook', 'benevolent' );?>"><i class="fa fa-facebook" ></i></a></li>
     <?php } if( $twitter ){ ?>
-        <li><a href="<?php echo esc_url( $twitter ); ?>" class="fa fa-twitter" target="_blank" title="<?php esc_attr_e( 'Twitter', 'benevolent' );?>"></a></li>
+        <li><a href="<?php echo esc_url( $twitter ); ?>" target="_blank" title="<?php esc_attr_e( 'Twitter', 'benevolent' );?>"><i class="fa fa-twitter" ></i></a></li>
         <?php } if( $pinterest ){ ?>
-        <li><a href="<?php echo esc_url( $pinterest ); ?>" class="fa fa-pinterest" target="_blank" title="<?php esc_attr_e( 'Pinterest', 'benevolent' );?>"></a></li>
+        <li><a href="<?php echo esc_url( $pinterest ); ?>" target="_blank" title="<?php esc_attr_e( 'Pinterest', 'benevolent' );?>"><i class="fa fa-pinterest" ></i></a></li>
     <?php } if( $linkedin ){ ?>
-        <li><a href="<?php echo esc_url( $linkedin ); ?>" class="fa fa-linkedin" target="_blank" title="<?php esc_attr_e( 'LinkedIn', 'benevolent' );?>"></a></li>
+        <li><a href="<?php echo esc_url( $linkedin ); ?>" target="_blank" title="<?php esc_attr_e( 'LinkedIn', 'benevolent' );?>"><i class="fa fa-linkedin" ></i></a></li>
         <?php } if( $gplus ){ ?>
-        <li><a href="<?php echo esc_url( $gplus ); ?>" class="fa fa-google-plus" target="_blank" title="<?php esc_attr_e( 'Google Plus', 'benevolent' );?>"></a></li>
+        <li><a href="<?php echo esc_url( $gplus ); ?>" target="_blank" title="<?php esc_attr_e( 'Google Plus', 'benevolent' );?>"><i class="fa fa-google-plus" ></i></a></li>
         <?php } if( $instagram ){ ?>
-        <li><a href="<?php echo esc_url( $instagram ); ?>" class="fa fa-instagram" target="_blank" title="<?php esc_attr_e( 'Instagram', 'benevolent' );?>"></a></li>
+        <li><a href="<?php echo esc_url( $instagram ); ?>" target="_blank" title="<?php esc_attr_e( 'Instagram', 'benevolent' );?>"><i class="fa fa-instagram" ></i></a></li>
     <?php } if( $youtube ){ ?>
-        <li><a href="<?php echo esc_url( $youtube ); ?>" class="fa fa-youtube-play" target="_blank" title="<?php esc_attr_e( 'YouTube', 'benevolent' );?>"></a></li>
+        <li><a href="<?php echo esc_url( $youtube ); ?>" target="_blank" title="<?php esc_attr_e( 'YouTube', 'benevolent' );?>"><i class="fa fa-youtube-play" ></i></a></li>
         <?php } ?>
   </ul>
     <?php

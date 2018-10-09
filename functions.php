@@ -203,11 +203,12 @@ function benevolent_scripts() {
 		'family' => 'Raleway:400,600,700,500',
 	);
     wp_enqueue_style( 'benevolent-google-fonts', add_query_arg( $benevolent_query_args, "//fonts.googleapis.com/css" ) );
-    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css' . $build . '/font-awesome' . $suffix . '.css', array(), '4.5.0' );
     wp_enqueue_style( 'sidr', get_template_directory_uri() . '/css' . $build . '/jquery.sidr.light' . $suffix . '.css' );
     wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/css' . $build . '/owl.carousel' . $suffix . '.css', '', '2.2.1' );
     wp_enqueue_style( 'benevolent-style', get_stylesheet_uri() );
     
+    wp_enqueue_script( 'all', get_template_directory_uri() . '/js' . $build . '/all' . $suffix . '.js', array( 'jquery' ), '5.0.13', true );
+    wp_enqueue_script( 'v4-shims', get_template_directory_uri() . '/js' . $build . '/v4-shims' . $suffix . '.js', array( 'jquery' ), '5.0.13', false );
     wp_enqueue_script( 'sidr', get_template_directory_uri() . '/js' . $build . '/jquery.sidr' . $suffix . '.js', array('jquery'), '20160125', true );
 	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/js' . $build . '/owl.carousel' . $suffix . '.js', array('jquery'), '2.2.1', true );	
 	wp_enqueue_script( 'tab', get_template_directory_uri() . '/js' . $build . '/tab' . $suffix . '.js', array('jquery'), '1.11.4', true );

@@ -58,7 +58,7 @@ if( $blog_section_title || $blog_section_content ){
                                     if( has_excerpt() ){
                                         the_excerpt();
                                     }else{ 
-                                        echo wpautop( benevolent_excerpt( get_the_content(), 100, '...', false, false ) ); 
+                                        echo wpautop( wp_kses_post( wp_trim_words( get_the_content(),10,'...' ) ) );
                                     }      
                                 ?>                                
     						</div>

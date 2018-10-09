@@ -53,19 +53,19 @@ if ( ! class_exists('Benevolent_Social_Links') ) {
 			?>
 				<ul class="social-networks">
 					<?php if( $facebook ){ ?>
-					<li><a href="<?php echo esc_url( $facebook ); ?>" target="_blank" title="<?php esc_html_e( 'Facebook', 'benevolent' ); ?>" class="fa fa-facebook"></a></li>
+					<li><a href="<?php echo esc_url( $facebook ); ?>" target="_blank" title="<?php esc_html_e( 'Facebook', 'benevolent' ); ?>" ><i class="fa fa-facebook"></i></a></li>
 					<?php } if( $twitter ){ ?>
-					<li><a href="<?php echo esc_url( $twitter ); ?>" target="_blank" title="<?php esc_html_e( 'Twitter', 'benevolent' ); ?>" class="fa fa-twitter"></a></li>
+					<li><a href="<?php echo esc_url( $twitter ); ?>" target="_blank" title="<?php esc_html_e( 'Twitter', 'benevolent' ); ?>" ><i class="fa fa-twitter"></i></a></li>
 					<?php } if( $pinterest ){ ?>
-					<li><a href="<?php echo esc_url( $pinterest ); ?>" target="_blank" title="<?php esc_html_e( 'Pinterest', 'benevolent' ); ?>" class="fa fa-pinterest-p"></a></li>
+					<li><a href="<?php echo esc_url( $pinterest ); ?>" target="_blank" title="<?php esc_html_e( 'Pinterest', 'benevolent' ); ?>" ><i class="fa fa-pinterest-p"></i></a></li>
 					<?php } if( $linkedin ){ ?>
-					<li><a href="<?php echo esc_url( $linkedin ); ?>" target="_blank" title="<?php esc_html_e( 'Linkedin', 'benevolent' ); ?>" class="fa fa-linkedin"></a></li>
+					<li><a href="<?php echo esc_url( $linkedin ); ?>" target="_blank" title="<?php esc_html_e( 'Linkedin', 'benevolent' ); ?>" ><i class="fa fa-linkedin"></i></a></li>
 					<?php } if( $googleplus ){ ?>
-					<li><a href="<?php echo esc_url( $googleplus ); ?>" target="_blank" title="<?php esc_html_e( 'Google Plus', 'benevolent' ); ?>" class="fa fa-google-plus"></a></li>
+					<li><a href="<?php echo esc_url( $googleplus ); ?>" target="_blank" title="<?php esc_html_e( 'Google Plus', 'benevolent' ); ?>" ><i class="fa fa-google-plus"></i></a></li>
 					<?php } if( $instagram ){ ?>
-					<li><a href="<?php echo esc_url( $instagram ); ?>" target="_blank" title="<?php esc_html_e( 'Instagram', 'benevolent' ); ?>" class="fa fa-instagram"></a></li>
+					<li><a href="<?php echo esc_url( $instagram ); ?>" target="_blank" title="<?php esc_html_e( 'Instagram', 'benevolent' ); ?>" class="fa fa-instagram"></a></a></li>
 					<?php } if( $youtube ){ ?>
-					<li><a href="<?php echo esc_url( $youtube ); ?>" target="_blank" title="<?php esc_html_e( 'YouTube', 'benevolent' ); ?>" class="fa fa-youtube"></a></li>
+					<li><a href="<?php echo esc_url( $youtube ); ?>" target="_blank" title="<?php esc_html_e( 'YouTube', 'benevolent' ); ?>" ><i class="fa fa-youtube"></i></a></li>
 					<?php } ?>
 				</ul>
 			<?php
