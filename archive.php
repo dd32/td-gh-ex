@@ -1,9 +1,15 @@
 <?php get_header(); ?>
 <section class="post-wrapper-top section-shadow clearfix">
 	<div class="container">
-		<div class="col-lg-12">
-			<h2><?php the_archive_title(); ?></h2>
-			<?php awada_breadcrumbs(); ?>
+		<div class="row">
+			<div class="col-lg-12">
+				<div class="col-lg-7 awada_pag_title">
+					<h2><?php the_archive_title(); ?></h2>
+				</div>
+				<div class="col-lg-5 awada_pag_breadcrumb">
+					<?php awada_breadcrumbs(); ?>
+				</div>
+			</div>
 		</div>
 	</div>
 </section><!-- end post-wrapper-top -->

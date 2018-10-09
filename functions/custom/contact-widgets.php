@@ -36,21 +36,21 @@ class awada_footer_contact_widget extends WP_Widget
 				<i class="fa fa-map-marker"></i> 
                 <?php echo esc_attr($Contact_address);
                 } else { ?> <i class="fa fa-map-marker"></i>
-                <?php echo _('25, Lorem Lis Street', 'awada');
+                <?php echo __('25, Lorem Lis Street', 'awada');
                 } ?></p>
             <p><?php if ($Contact_phone_number) { ?><i class="fa fa-phone"></i> <a href="tel:<?php echo esc_attr($Contact_phone_number); ?>">
                 <?php echo esc_attr($Contact_phone_number);
                 } else { ?><i class="fa fa-phone"></i>
-				<?php echo _('987-654-321', 'awada');
+				<?php echo __('987-654-321', 'awada');
 				} ?></a></p>
             <p><?php if ($Contact_email_address) { ?><i class="fa fa-envelope"></i> <a href="mailto:<?php if ($Contact_email_address) {
                     echo sanitize_email($Contact_email_address);
                 } else {
-                    echo _('mail@me.com', 'awada');
+                    echo __('mail@me.com', 'awada');
                 } ?>">
                 <?php echo sanitize_email($Contact_email_address);
                     } else { ?><i class="fa fa-envelope"></i>
-                <?php echo _('myemail@gmail.com', 'awada');
+                <?php echo __('myemail@gmail.com', 'awada');
 				} ?></a></p>
             <p><?php if ($website_add) { ?> <i class="fa fa-globe"></i>
                 <?php echo esc_attr($website_add);

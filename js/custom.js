@@ -37,10 +37,11 @@ $('a[data-gal]').each(function() {
 	$(this).attr('rel', $(this).data('gal'));
 });  	
 $("a[data-gal^='prettyPhoto']").prettyPhoto({animationSpeed:'slow',slideshow:false,overlay_gallery: false,theme:'light_square',social_tools:false,deeplinking:false});
-	$("#awada-header").affix({
+
+$(".awada-header-fixed").affix({
 	offset: {
-	  top: 50
-	, bottom: function () {
+	  top: 50,
+	  bottom: function () {
 		return (this.bottom = $('#copyrights').outerHeight(true))
 	  }
 	}

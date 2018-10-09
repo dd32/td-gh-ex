@@ -174,6 +174,12 @@ Kirki::add_field( 'awada_theme', array(
                 'awada_theme_options[header_topbar_bg_color]' => '#5C4B51',
             ),
         ),
+        'orange.css' => array(
+            'label'    => __('Orange','awada'),
+            'settings' => array(
+                'awada_theme_options[header_topbar_bg_color]' => '#f8504b',
+            ),
+        ),
         
     ),
 ) );
@@ -1480,7 +1486,7 @@ class Awada_Pro_Control extends WP_Customize_Control {
 			
 			<p>
 				<?php
-					printf( __( 'If you Like our Products , Please Rate us 5 star on %sWordPress.org%s.  We\'d really appreciate it! </br></br>  Thank You', 'awada' ), '<a target="" href="https://wordpress.org/support/view/theme-reviews/awada?filter=5">', '</a>' );
+					printf( __( 'If you Like our Products , Please Rate us 5 star on %1$sWordPress.org%2$s.  We\'d really appreciate it! </br></br>  Thank You', 'awada' ), '<a target="" href="https://wordpress.org/support/view/theme-reviews/awada?filter=5">', '</a>' );
 				?>
 			</p>
 		</label>

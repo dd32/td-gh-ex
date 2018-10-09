@@ -296,7 +296,7 @@ function awada_theme_info_page() {
     }
     ?>
     <div class="wrap about-wrap theme_info_wrapper">
-        <h1><?php printf(esc_html__('Welcome to %1s - Version %2s', 'awada'), $theme_data->Name, $theme_data->Version ); ?></h1>
+        <h1><?php printf(esc_html__('Welcome to %1$s - Version %2$s', 'awada'), $theme_data->Name, $theme_data->Version ); ?></h1>
         <div class="about-text"><?php esc_html_e( 'Awada theme is now installed and ready to use! We want to make sure you have the best experience using Awada theme and that is why we gathered here all the necessary information for you. We hope you will enjoy using Awada theme.', 'awada' ); ?></div>
         <a target="_blank" href="<?php echo esc_url('https://www.webhuntinfotech.com/'); ?>" class="webhuntthemes-badge wp-badge"><span>WebHunt Themes</span></a>
         <h2 class="nav-tab-wrapper">

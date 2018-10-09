@@ -2,8 +2,6 @@
 /* Theme Name    : Awada
  * Theme Core Functions and Codes
  */
-define('HEADER_IMAGE_WIDTH', apply_filters('awada_header_image_width', 1168));
-define('HEADER_IMAGE_HEIGHT', apply_filters('awada_header_image_height', 75));
 require get_template_directory() . '/functions/menu/default_menu_walker.php';
 require get_template_directory() . '/functions/menu/awada_nav_walker.php';
 require get_template_directory() . '/functions/custom/contact-widgets.php';
@@ -57,13 +55,11 @@ function awada_theme_setup()
     add_theme_support('customize-selective-refresh-widgets');
     $args  = array('default-color' => '#ffffff', 'default-image' => '');
     $args1 = array(
-        'flex-width'        => true,
         'width'             => 1350,
         'flex-height'       => true,
-        'height'            => 60,
+        'height'            => 250,
         'default-image'     => '',
-        'header-text-color' => 'blue',
-        'header-text'       => true,
+        'header-text-color' => '222222',
         'wp-head-callback'  => 'awada_header_style',
     );
     add_editor_style('css/editor-style.css');
@@ -78,6 +74,8 @@ function awada_theme_setup()
         'flex-height' => true,
         'flex-width'  => true,
     ));
+
+    }
     /*
      * Switch default core markup for search form, comment form, and comments
      * to output valid HTML5.
@@ -199,7 +197,7 @@ function awada_theme_setup()
     add_image_size('awada_blog_two_sidebar_thumb', 520, 260, true);
     add_image_size('awada_blog_home_thumb', 330, 206, true);
     add_image_size('awada_recent_widget_thumb', 120, 77, true);
-}
+
 if (!function_exists('awada_header_style')):
 /**
  * Styles the header image and text displayed on the blog.
@@ -212,7 +210,7 @@ if (!function_exists('awada_header_style')):
 
         // If no custom options for text are set, let's bail.
         // get_header_textcolor() options: add_theme_support( 'custom-header' ) is default, hide text (returns 'blank') or any hex value.
-        if (get_theme_support('custom-header', 'default-text-color') === $header_text_color) {
+        if (get_theme_support('custom-header', '222222') === $header_text_color) {
             return;
         }
 
@@ -491,7 +489,6 @@ function awada_enqueue_in_footer()
 // Comment Function
 function awada_comments($comments, $args, $depth)
 {
-    $GLOBALS['comment'] = $comments;
     extract($args, EXTR_SKIP);
     if ('div' == $args['style']) {
         $add_below = 'comment';

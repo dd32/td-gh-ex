@@ -1,0 +1,193 @@
+.arrow-left {
+	border-right-color:#f8504b;
+}
+.tp-bullets.simplebullets .bullet:hover,
+.tp-bullets.simplebullets .bullet.selected{
+	border-color:#f8504b !important;	
+}
+.post-wrapper-top h2,
+.pagination > .active > a, 
+.pagination > .active > span, 
+.pagination > .active > a:hover, 
+.pagination > .active > span:hover, 
+.pagination > .active > a:focus, 
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus,
+.pagination > .active > span:focus,
+.form-control:focus,
+.magnifier .btn-default:hover,
+blockquote,
+.magnifier .btn-default:focus,
+.magnifier .btn-default:active,
+.service-icon-square,
+.main_title hr {
+	border-color:#f8504b;
+}
+.main_title h2 span,
+.blog-meta span i,
+.service-icon-square i,
+.servicelayout:hover .service-icon i,
+.shop_item .price,
+.widget h3 span,
+a,
+a.readmore,
+#awada-header .dropmenu h3 i,
+#sitetopbar .sitetopbar-login i {
+	color:#f8504b;
+}
+
+.recent_posts_widget > li img:hover,
+#awada_footer_area .topbar-social-links span a:hover,
+.awadatop,
+.magnifier .btn-default:hover,
+.magnifier .btn-default:focus,
+.magnifier .btn-default:active,
+.service-icon-square.active,
+.servicelayout:hover .service-icon-square,
+.btn-primary,
+.pager li > a, .pager li > span,
+.full_colored,
+.pagination > .active > a, 
+.pagination > .active > span, 
+.pagination > .active > a:hover, 
+.pagination > .active > span:hover, 
+.pagination > .active > a:focus, 
+.pagination > li > a:hover,
+.pagination > li > span:hover,
+.pagination > li > a:focus,
+.pagination > li > span:focus,
+.pagination > .active > span:focus,
+.tagcloud a:hover,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus,
+.nav-tabs > li.active > a,
+#awada-header .navbar-nav > li > a:hover,
+#awada-header .navbar-nav > li > a:focus,
+#awada-header .navbar-nav > li > a:active,
+#awada-header .navbar-default .navbar-nav > .open > a,
+#awada-header .navbar-default .navbar-nav > .open > a:hover,
+#awada-header .navbar-default .navbar-nav > .open > a:focus,
+#sitetopbar .topbar-social-links span a:hover {
+	background-color:#f8504b;
+}
+
+/* Sidebar Widget */
+#sidebar .widget > ul > li.cat-item > a:hover, #sidebar .widget > ul.cat_list_widget > li > a:hover, #sidebar .widget > ul > li.page_item > a:hover, #sidebar .widget > div.menu-header-menu-container > ul.menu > li.menu-item > a:hover{
+	background-color: #f8504b !important;
+}
+
+#sidebar .widget:not(.widget_product_categories) > ul > li.cat-item > a:hover, #sidebar .widget > ul.cat_list_widget > li > a:hover, #sidebar .widget > ul > li.page_item > a:hover, #sidebar .widget > div.menu-header-menu-container > ul.menu > li.menu-item > a:hover {
+    background-color: #f8504b !important;
+}
+
+/* Search Box */
+#two-sidebar .form-control:hover,
+#sidebar .form-control:hover {
+	border: 1px solid #f8504b;
+}
+/* Calender Styling */
+#wp-calendar {
+    border: 2px solid #f8504b;
+}
+#wp-calendar th {
+    border: 2px solid #f8504b;
+}
+#wp-calendar caption {
+    background-color: #f8504b;
+}
+/* Current Menu Color */
+#awada-header .navbar-nav > li.current_page_item > a:hover {
+    background-color: #f8504b;
+}
+/* Pagination */
+ul.pagination li span.page-numbers.current {
+    background-color: #f8504b;
+	color: #fff;
+}
+#home_portfolio .UGPMenuBackground {
+	display: none;
+}
+
+/* Extra CSS by Hunny */
+.blog-masonry .blog-carousel {
+    border-top: 5px solid #f8504b;
+}
+.nav-arrows span:hover {
+	border-color: #f8504b;
+}
+h1 a:hover,
+h2 a:hover,
+h3 a:hover,
+h4 a:hover,
+h5 a:hover,
+h6 a:hover{
+	color:#f8504b !important;
+}
+/* Portfolio */
+.servicelayout a.readmore {
+    box-shadow: 0 0 6px #f8504b;
+}
+.servicelayout a.readmore:hover {
+    background-color: #f8504b;
+}
+.portfolio_list {
+	border-top: 5px solid #f8504b;
+}
+#sidebar .title h2 {
+    background: #f8504b none repeat scroll 0 0;
+}
+#sidebar .widget li.menu-item a:hover {
+	background-color: #f8504b;
+}
+#sidebar .widget ul.children li.menu-item a:hover {
+	background-color: #f8504b;
+}
+#sidebar .widget ul.children li.page_item a:hover {
+	background-color: #f8504b;
+}
+.dark_header {
+	background:#f8504b !important;
+	border-bottom-color:#f8504b !important
+}
+/* Service */
+.servicelayout a.readmore {
+    box-shadow: 0 0 6px #f8504b;
+}
+.service-with-image a.readmore:hover, .servicelayout a.readmore:hover {
+    background-color: #f8504b;
+}
+.service-with-image a.readmore {
+    box-shadow: 0 0 6px #f8504b;
+}
+/* Feature Style */
+.feature_block_boxed a.readmore {
+    background-color: #f8504b;
+}
+/* Portfolio Home & Classic */
+#boxed-portfolio .portfolio_list {
+    border-top: 5px solid #f8504b;
+}
+/* Team Section */
+.team_block {
+    border-top: 5px solid #f8504b;
+}
+/* Blog */
+.blog-masonry .blog-carousel {
+    border-top: 5px solid #f8504b;
+}
+/* Sidebar */
+#sidebar .title h2 {
+    background: #f8504b none repeat scroll 0 0;
+}
+/* Contact */
+#contact_address{
+	border: 3px solid #f8504b;
+}
+#copyrights {
+    background-color: #f8504b;
+}
+.blog-masonry .blog-carousel {
+	border-bottom: 5px solid #f8504b;
+}

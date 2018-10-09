@@ -1,3 +1,5 @@
+###Version 1.6.6 [09-OCT-2018]
+* Minor improvments.
 ###Version 1.6.5 [28-DEC-2017]
 * Breadcrumb update.
 * Minor bug fixed.
@@ -8,7 +10,7 @@
 * Home post loading via ajax.
 * New options added in Slider. Also You can use any slider plugin to display slider.
 * Portfolio Title and Description Field added.
-* Now You can use html attr like <span>, <strong>,<br> in title and description of Home sections.
+* Now You can use html attr like &lt;span&gt;, &lt;strong&gt;,&lt;br&gt; in title and description of Home sections.
 * Performance Improvments.
 ###Version 1.6.2 [29-May-2017]
 * Backgroung image and video background support added.

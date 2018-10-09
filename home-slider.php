@@ -5,7 +5,7 @@ if($awada_theme_options['home_slider_enabled']==1){
 	}else{?>
 		<div id="slider" class="sl-slider-wrapper demo-2">
 			<div class="sl-slider" >
-				<?php for ($i = 1; $i <= 3; $i++) { 
+				<?php for ($i = 1; $i <= 3; $i++) {
                 if($awada_theme_options['slider_img_'.$i]!=""){
 					$image_id = Kirki_Helper::get_image_id( $awada_theme_options['slider_img_'.$i] );
                     if ($image_id!=false) {
@@ -25,7 +25,8 @@ if($awada_theme_options['home_slider_enabled']==1){
 								<?php } ?>
 								<?php $link='';
 	                            if (isset($awada_theme_options['slider_post_page_' . $i]) && $awada_theme_options['slider_post_page_' . $i] == 'post') {
-	                                    if (isset($awada_theme_options['post_slider_' . $i]) && $awada_theme_options['post_slider_' . $i] != 0) {$link = get_permalink($awada_theme_options['post_slider_' . $i]);}
+	                                    if (isset($awada_theme_options['post_slider_' . $i]) && $awada_theme_options['post_slider_' . $i] != 0) {$link = get_permalink($awada_theme_options['post_slider_' . $i]);
+										var_dump($link); }
 	                                } else {
 	                                    if (isset($awada_theme_options['page_slider_' . $i]) && $awada_theme_options['page_slider_' . $i] != 0) {$link = get_permalink($awada_theme_options['page_slider_' . $i]);}
 	                                } ?>
