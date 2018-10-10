@@ -87,6 +87,9 @@ This theme is bundled with TGM-Plugin-Activation
 =================================
 CHANGELOG
 =================================
+Version 2.1
+ * updated footer.php
+ 
 Version 2.0
  * removed deprecated functions
  * fixed theme checker errors 
