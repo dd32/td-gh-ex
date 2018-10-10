@@ -31,11 +31,6 @@ class aakriti_personal_blog_Recommendation {
 	            'name'               => __('Instagram Slider and Carousel Plus Widget', 'aakriti-personal-blog'),
 	            'slug'               => 'slider-and-carousel-plus-widget-for-instagram',
 	            'required'           => false,
-	        ),
-			array(
-	            'name'               => __('Blog and News Designer Pack', 'aakriti-personal-blog'),
-	            'slug'               => 'blog-designer-pack',
-	            'required'           => false,
 	        )
 	    );
 	    tgmpa( $plugins);
