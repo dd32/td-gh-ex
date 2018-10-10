@@ -6,6 +6,9 @@ Enigma
 
 CHANGE-LOG:
 
+@Version: 4.8 [10-10-2018]
+1. Banner removed , Welcome page added
+
 @Version: 4.7 [20-09-2018]
 1. Screen-shot updated
 2. Pro banner added

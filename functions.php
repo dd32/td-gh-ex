@@ -390,44 +390,6 @@ endif;
     echo '</ul>';
 	}
 	
-	
-	//PAGINATION
-		/*function weblizar_pagination($pages = '', $range = 2)
-{  
-     $showitems = ($range * 2)+1;  
-
-     global $paged;
-     if(empty($paged)) $paged = 1;
-
-     if($pages == '')
-     {
-         global $wp_query;
-         $pages = $wp_query->max_num_pages;
-         if(!$pages)
-         {
-             $pages = 1;
-         }
-     }   
-
-     if(1 != $pages)
-     {
-         echo "<div class='enigma_blog_pagination'><div class='enigma_blog_pagi'>";
-         if($paged > 2 && $paged > $range+1 && $showitems < $pages) echo "<a href='".esc_url(get_pagenum_link(1))."'>&laquo;</a>";
-         if($paged > 1 && $showitems < $pages) echo "<a href='".esc_url(get_pagenum_link($paged - 1))."'>&lsaquo;</a>";
-
-         for ($i=1; $i <= $pages; $i++)
-         {
-             if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
-             {
-                echo ($paged == $i)? "<a class='active'>".esc_attr($i)."</a>":"<a href='".esc_url(get_pagenum_link($i))."'>".esc_attr($i)."</a>";
-             }
-         }
-
-         if ($paged < $pages && $showitems < $pages) echo "<a href='".esc_url(get_pagenum_link($paged + 1))."'>&rsaquo;</a>";  
-         if ($paged < $pages-1 &&  $paged+$range-1 < $pages && $showitems < $pages) echo "<a href='".esc_url(get_pagenum_link($pages))."'>&raquo;</a>";
-         echo "</div></div>";
-     }
-} */
 	/*===================================================================================
 	* Add Author Links
 	* =================================================================================*/
@@ -499,90 +461,6 @@ function enigma_plugin_recommend(){
 	);
     tgmpa( $plugins );
 }
-function enigma_custom_admin_notice() {
-	wp_register_style( 'custom_admin_css', get_template_directory_uri() . '/core/admin/admin-rating.css');
-    wp_enqueue_style( 'custom_admin_css' );
-	wp_enqueue_style('custom-bootstrap',  get_template_directory_uri() .'/core/admin/bootstrap/css/bootstrap.css');
-	wp_enqueue_script('custom-bootstrap-js',get_template_directory_uri() .'/core/admin/bootstrap/js/bootstrap.js');
-	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css/font-awesome-4.7.0/css/font-awesome.css');
-	$wl_th_info = wp_get_theme(); 
-	$currentversion = str_replace('.','',(esc_html( $wl_th_info->get('Version') )));
-	$isitdismissed = 'enigma_notice_dismissed'.$currentversion;
-	if ( !get_user_meta( get_current_user_id() , $isitdismissed ) ) { ?>
-
-				  <!-- rating -->
-	<div class="col-md-12 main-div">
-		<div class="notice-box notice-success is-dismissible flat_responsive_notice" data-dismissible="disable-done-notice-forever">		
-			<p>	
-				<?php  esc_html_e('Thank you for using the free version of ','enigma'); ?>
-				<?php echo esc_html( $wl_th_info->get('Name') );?> - 
-				<?php echo esc_html( $wl_th_info->get('Version') ); ?>
-				<?php esc_html_e('Please give your reviews and ratings on ','enigma'); echo esc_attr($wl_th_info->get('Name')); esc_html_e(' theme. Your ratings will help us to improve our themes.', 'enigma'); ?>
-				<script type="text/javascript">alert(<?php echo esc_attr($isitdismissed)?>);</script>
-				<?php if($wl_th_info->get('Name')=="Enigma") { ?>
-				<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/enigma/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel"> <?php } elseif($wl_th_info->get('Name')=="Greenigma") { ?>
-				<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/greenigma/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel"> <?php } elseif($wl_th_info->get('Name')=="Inferno") { ?>
-				<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/inferno/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel">		
-				<?php } else { ?>
-				<a class="rateme" href="<?php echo esc_url('https://wordpress.org/support/theme/cista/reviews/?filter=5');  ?>" target="_blank" aria-label="Dismiss the welcome panel">	
-				<?php } ?>
-				<span class="dashicons dashicons-star-filled"></span>
-				<span class="dashicons dashicons-star-filled"></span>
-				<span class="dashicons dashicons-star-filled"></span>
-				<span class="dashicons dashicons-star-filled"></span>
-				<span class="dashicons dashicons-star-filled"></span>
-				</a>
-			</p>
-						
-		</div>
-		
-		<div class="wb_plugin_feature">
-			<div class="wb_plugin_feature_banner default_pattern pattern_ ">
-			<div class="wb-col-md-6 wb-col-sm-12 wb-text-center institute_banner_img">
-			<h1>  Enigma Premium </h1>
-				<img class="wp-img-responsive" src="<?php echo get_template_directory_uri(); ?>/images/EP.png" alt="img">
-			</div>
-				<div class="wb-col-md-6 wb-col-sm-12 wb_banner_featurs-list">
-					<span><h1> Features</h1></span>
-					<ul>    <li> Selling WordPress Theme </li> 
-						<li> Parallax Design Included</li>
-						<li> Theme Option Panel </li>
-						<li> Unlimited Color Skins </li>
-						<li> Mega Menu Support </li>					
-						<li> 6 Portfolio Layout </li>
-						<li> 6 Blog Layout </li>
-						<li> Multilingual </li>
-						<li> Woocommerce Support </li>
-						<li> All Leading Page Builder Support</li>
-						<li> Inbuilt Shortcodes </li>
-						<li> SEO Friendly </li>
-						<li> Well Documented Code</li>
-						<li> 24*7 Live Support </li>
-					</ul>
-				<div class="wp_btn-grup">
-					<a class="wb_button-primary "  href="https://weblizar.com/themes/enigma-premium/" target="_blank">View Demo</a>
-					<a class="wb_button-primary" href="https://weblizar.com/themes/enigma-premium/" target="_blank">Buy Now $39</a>
-				</div>
-				<div class="plugin_vrsion"> <a class="dismiss" href="?-notice-dismissed<?php echo esc_attr($currentversion);?>"><span> <?php esc_html_e("Dismiss","enigma");?> </a> </span> </div>
-				</div>
-		</div>	
-	</div>		
-</div>
-<?php
-	}
- }
-add_action('admin_notices', 'enigma_custom_admin_notice');
-
-function enigma_notice_dismissed() {
-	$wl_th_info = wp_get_theme(); 
-	$currentversion = str_replace('.','',(esc_html( $wl_th_info->get('Version') )));
-	$dismissurl = '-notice-dismissed'.$currentversion;
-	$isitdismissed = 'enigma_notice_dismissed'.$currentversion;
-    $user_id = get_current_user_id();
-    if ( isset( $_GET[$dismissurl] ) )
-        add_user_meta( $user_id, $isitdismissed, 'true', true );
-}
-add_action( 'admin_init', 'enigma_notice_dismissed' );
 
 $theme_options = weblizar_get_options();
 if($theme_options['snoweffect'] =='1'){
@@ -590,5 +468,27 @@ if($theme_options['snoweffect'] =='1'){
 	wp_dequeue_script('snow', get_template_directory_uri() .'/js/snowstorm.js');
 	}
 	add_action( 'wp_enqueue_scripts', 'snow_script' );
+}
+
+
+if (is_admin()) {
+	require_once('core/admin/admin-themes.php');
+}
+
+if ( is_admin() && isset($_GET['activated'])  && $pagenow == "themes.php" ) {
+	add_action( 'admin_notices', 'enigma_activation_notice' );
+}
+
+function enigma_activation_notice(){
+	wp_register_style( 'custom_admin_css', get_template_directory_uri() . '/core/admin/admin-banner.css');
+    wp_enqueue_style( 'custom_admin_css' );
+	wp_enqueue_style('admin',  get_template_directory_uri() .'/core/admin/admin-themes.css');
+    ?>
+    <div class="notice notice-success is-dismissible"> 
+		<p><?php echo esc_html__( 'Thanks for installing Enigma! 
+ Please visit our best theme, plugin & offers, make sure you visit our welcome page.', 'enigma' ); ?></p>
+		<p><a class="pro" target="_blank" href="<?php echo admin_url('/themes.php?page=enigma') ?>"><?php echo esc_html__( 'Visit Welcome Page', 'enigma' ); ?></a></p>
+	</div>
+    <?php
 }
 ?>
