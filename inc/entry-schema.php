@@ -7,10 +7,9 @@
  * @since arba 1.0.0
  */
 ?>
-<meta itemscope itemprop="mainEntityOfPage"  content="<?php esc_url( the_permalink() ); ?>"/>
+<meta itemscope itemprop="mainEntityOfPage"  content="<?php the_permalink(); ?>"/>
 <meta itemprop="datePublished" content="<?php echo esc_attr( get_the_date( 'c' ) ); ?>"/>
 <meta itemprop="dateModified" content="<?php the_modified_time('c'); ?>"/>
-
 <div class="hide" itemprop=author itemscope itemtype="https://schema.org/Person">
 	<meta itemprop=name content="<?php the_author(); ?>">
 </div>

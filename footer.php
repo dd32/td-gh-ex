@@ -51,13 +51,6 @@
 		</div><!--.copyright -->
 	</div><!-- #container -->
 <?php wp_footer(); ?>
-<?php
-// Google Analytics
-if ( get_option( 'arba_google_analytics' ) != '' ):
-	echo get_option( 'arba_google_analytics' );
-endif;
-?>
-
 </body>
 
 </html>

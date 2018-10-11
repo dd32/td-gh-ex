@@ -64,6 +64,6 @@ get_header(); ?>
 			</div><!-- .site-main -->
 		</div><!-- .site-row -->
 	</div><!-- .site-wrap -->
-</div><!-- #main## -->
+</main><!-- #main## -->
 
 <?php get_footer(); ?>

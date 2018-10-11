@@ -4,7 +4,7 @@ Theme URI: https://demo.xstreamthemes.com/arba/
 Author: xstreamthemes
 Author URI: https://www.xstreamthemes.com
 Description: Arba is a free blog wordpress theme, minimal designed and simple layout. Ideal for design, architecture, lifestyle, tech, marketing, fashion, entertainment, music, health, sport, food, science sites. Fully responsive, gorgeous typography for a much better user experience.
-Version: 1.0.1
+Version: 1.0.2
 Tags: two-columns, blog, photography, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, threaded-comments, translation-ready
 License: GNU General Public License version 2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -225,6 +225,13 @@ blockquote>p:last-child {
     margin-bottom: 0;
 }
 
+q{
+    font-family: 'Merriweather', serif;
+}
+q:before,q:after{
+    content:'"'
+}
+
 blockquote cite, blockquote small {
     font-size: 80%;
     color: #999999;
@@ -252,7 +259,7 @@ pre {
     background: #fdf9eb;
     font-size: 88.88888888%;
     line-height: 1.33333333;
-    color: #988b70;
+    color: #564e3c;
     max-width: 100%;
     padding: 24px 36px;
     padding: 1.200rem 1.800rem;
@@ -339,17 +346,19 @@ li>ul, li>ol {
 }
 
 dl {
-    margin-bottom: 24px;
-    margin-bottom: 1.200rem;
+margin: 0;
+padding: 0;
 }
-
 dt {
-    font-weight: bold;
+font-size: 1.5em;
+font-weight: bold;
+margin: .5em 0 0 0;
+padding: 0;
 }
-
 dd {
-    margin-bottom: 24px;
-    margin-bottom: 1.200rem;
+display: list-item;
+margin: 0 0 0 2em;
+padding: .5em;
 }
 
 table {
@@ -437,11 +446,11 @@ input[type=checkbox], input[type=radio] {
     background: none;
     line-height: 0;
     color: #999999;
-    width: 16px !important;
-    min-width: 16px !important;
-    height: 16px !important;
-    padding: 0 !important;
-    margin: -4px 4px 0 0 !important;
+    width: 16px;
+    min-width: 16px;
+    height: 16px;
+    padding: 0;
+    margin: -4px 4px 0 0;
     text-align: center;
     border: 1px solid #d9d9d9;
     vertical-align: middle;
@@ -704,8 +713,8 @@ p>embed, p>iframe, p>object, p>video {
 }
 
 .gallery-icon img {
-    padding: 1px !important;
-    margin: 0 !important;
+    padding: 1px ;
+    margin: 0;
 }
 
 .gallery-caption {
@@ -821,7 +830,9 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
     padding: 0;
     margin: 0 auto;
 }
-
+#container{
+    overflow: hidden;
+}
 
 /*-------------------------------------------*/
 
@@ -902,9 +913,8 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
 /*-------------------------------------------*/
 
 .logo-wrapper {
-    padding: 20px 0;
     margin: 0;
-    line-height: 40px;
+    line-height: 80px;
 }
 
 
@@ -922,14 +932,15 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
 
 .logo h1, .logo p {
     margin: 0px;
+    line-height: 1;
 }
 
 .logo a {
-    display: inline-block;
+    display: block;
     font-family: 'Poppins',serif;
     font-size: 32px;
     font-weight: 700;
-    line-height: 40px;
+    line-height: 80px;
     text-decoration: none;
 }
 
@@ -1041,7 +1052,7 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
 .primary-nav {
     float: right;
     font-size: 14px;
-    line-height: 42px;
+    line-height: 80px;
     margin: 0;
     text-align: right;
     display: block;
@@ -1090,7 +1101,6 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
 .primary-nav ul li.menu-item-has-children ul, .primary-nav ul li.page_item_has_children ul {
     display: none;
     background: #fff;
-    font-size: 93.75%;
     min-width: 200px;
     padding: 0;
     margin: -1px 0 0 0;
@@ -1107,7 +1117,7 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
     width: 100%;
     padding: 0;
     margin: 0;
-    border-bottom: 1px solid #e5e5e5;
+    line-height: 40px;
     position: relative;
 }
 
@@ -1116,16 +1126,17 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
 }
 
 .primary-nav ul li.menu-item-has-children ul li a, .primary-nav ul li.page_item_has_children ul li a {
-    display: inline-block;
-    color: #222222;
-    padding: 10px;
-    text-decoration: none;
-    line-height: 1.2;
+    display: block;
+    color: #7a7780;
+    padding: 10px 20px;
+    font-weight: 400;
+    text-transform: none;
+    line-height: 28px;
 }
-
-.primary-nav ul li.menu-item-has-children ul li a:hover, .primary-nav ul li.page_item_has_children ul li a:hover {
-    text-decoration: none;
-    border: none;
+.primary-nav ul li.menu-item-has-children ul li a:hover, .primary-nav ul li.page_item_has_children ul li aa:hover {
+        background-color: rgba(0,0,0,0.04);
+        text-decoration: none;
+        border: none;
 }
 
 
@@ -1136,6 +1147,12 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
     margin: 0;
     top: 0;
     left: 100%;
+}
+.sub-menu  .sub-toggle {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 5px;
 }
 
 
@@ -1148,7 +1165,7 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
 }
 
 .main-ad .widget, .main-ad p {
-    margin: 0px!important;
+    margin: 0px;
 }
 
 
@@ -1312,28 +1329,11 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
     margin: 0px;
     display: inline-block;
     width: 100%;
-    position: static;
-    background: #fff;
     padding: 20px 30px;
-    -webkit-transition: all 300ms ease;
-    -moz-transition: all 300ms ease;
-    -ms-transition: all 300ms ease;
-    -o-transition: all 300ms ease;
-    transition: all 300ms ease;
-    margin-left: 0px;
 }
-.front-posts .hentry:hover .entry-content {
-    margin-left: -30px;
-}
-
 .front-posts .hentry.has-post-thumbnail .entry-content {
     max-width: 479px;
     max-width: calc(100% - 340px);
-    position: absolute;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
 }
 
 .hentry .entry-content h2.entry-title {
@@ -1349,7 +1349,7 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
 .entry-excerpt p {
     color: #999;
     margin-bottom: 0px;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .hentry .read-more {
@@ -1369,9 +1369,9 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
 }
 
 .single .has-meta .entry-meta {
-    width: 18%;
-    float: left;
-    text-align: center;
+    width: 100%;
+    text-align: left;
+    margin-bottom: 30px;
 }
 
 .single .entry-meta span {
@@ -1379,14 +1379,8 @@ blockquote.aligncenter, .wp-caption.aligncenter, img.aligncenter {
     line-height: 1;
 }
 
-.single .has-meta .entry-content {
-    float: right;
-    width: 80%;
-}
-
 .author-image, .entry-author, .entry-time {
-    display: block;
-    text-align: center;
+    display: inline-block;
 }
 
 .single .entry-meta span.entry-author a {
@@ -1964,6 +1958,9 @@ h3.comment-reply-title {
     list-style: none;
     margin-left: 0;
 }
+.widget ul ul{
+    margin-left: 15px;
+}
 
 .widget ul:last-child {
     margin-bottom: 0;
@@ -2340,12 +2337,6 @@ html.search-overlay__active .search-overlay {
 
 
 /*-----------------------------------------------------------------------------------*/
-    @media only screen and (max-width: 1100px) {
-        .primary-nav div>ul>li {
-            padding-right: 15px;
-        }
-    }
-
 /* 16.0. Responsive
 /*-----------------------------------------------------------------------------------*/
 
@@ -2359,12 +2350,26 @@ html.search-overlay__active .search-overlay {
     .primary-nav ul li.menu-item-has-children ul li:hover.menu-item-has-children ul, .primary-nav ul li.page_item_has_children ul li:hover.page_item_has_children ul {
         display: block;
     }
+    .primary-nav {
+        display: block!important;
+    }
+    .sub-menu  .sub-toggle .fa-angle-down:before {
+        content: "\f105";
+    }
 }
 
+@media only screen and (max-width: 1240px) {
+    .front-posts .hentry .entry-content {
+    padding: 0px 30px;
+        }
+    }
+@media only screen and (max-width: 1100px) {
+    .primary-nav div>ul>li {
+        padding-right: 15px;
+    }
+}
 
 /*-------------------------------------------*/
-
-
 /* Tablet < 1024
 /*-------------------------------------------*/
 
@@ -2392,9 +2397,11 @@ html.search-overlay__active .search-overlay {
         margin: 0;
         text-align: left;
         position: absolute;
-        top: 149%;
+        top: 102%;
         width: 100%;
         z-index: 99;
+        padding: 20px;
+        background: #fff;
     }
     .primary-nav div>ul>li {
         float: none;
@@ -2404,14 +2411,18 @@ html.search-overlay__active .search-overlay {
         display: block;
         background: #fff;
         border-bottom: 1px solid #e9e9e9;
+        line-height: 40px;
+    }
+    .primary-nav div>ul>li:last-of-type{
+        border-bottom: none;
     }
     .primary-nav ul li a {
         display: block;
         position: relative;
     }
-    .primary-nav ul li.menu-item-has-children .sub-toggle {
+    .primary-nav ul .sub-toggle {
         position: absolute;
-        top: 11px;
+        top: 12px;
         right: 15px;
         background-color: #ccc;
         height: 20px;
@@ -2421,6 +2432,10 @@ html.search-overlay__active .search-overlay {
         color: #fff;
         cursor: pointer;
         display: block;
+    }
+    .primary-nav ul ul .sub-toggle {
+        top: 50%;
+        transform: translateY(-50%);
     }
     .primary-nav ul li.menu-item-has-children ul, .primary-nav ul li.page_item_has_children ul {
         position: static;
@@ -2453,9 +2468,7 @@ html.search-overlay__active .search-overlay {
     }
 }
 
-
 /*-------------------------------------------*/
-
 
 /* Tablet < 800
 /*-------------------------------------------*/
@@ -2513,21 +2526,10 @@ html.search-overlay__active .search-overlay {
     /*-----------------------------------------------------------------------------------*/
     /* Header
 	/*-----------------------------------------------------------------------------------*/
-    .site-header {
-    }
-
-    .logo-wrapper {
-        padding: 10px 0 !important;
-        line-height: 40px !important;
-    }
 
     .logo a {
         font-size: 26px;
-        line-height: 40px !important;
-    }
-
-    .logo a img {
-        max-height: 40px !important;
+        line-height: 40px;
     }
 
     /*-----------------------------------------------------------------------------------*/
@@ -2582,8 +2584,8 @@ html.search-overlay__active .search-overlay {
         transform: none;
     }
 
-    .front-posts .hentry:hover .entry-content {
-        margin-left: 0px;
+    .front-posts .hentry .entry-content {
+    padding: 20px 30px;
     }
 
     .home-sticky-post .featured-image {

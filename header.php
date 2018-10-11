@@ -16,7 +16,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
 	<?php wp_head(); ?>
-</head>
+</head> 
 <body <?php body_class(); ?>>
 	<div id="container" class="container">
 		<header id="header" class="header">
@@ -29,13 +29,13 @@
 									<?php if ( is_front_page() && is_home() ) { ?>
 										<h1>
 											<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-												<?php if ( get_option( 'arba_image_logo_upload' ) != '' ) : ?><img class="desktop" src="<?php echo esc_url( get_option( 'arba_image_logo_upload' ) ); ?>" alt="<?php esc_attr( bloginfo('name') ); ?>"><?php endif; ?>
+												<?php if ( get_option( 'arba_image_logo_upload' ) != '' ) : ?><img class="desktop" src="<?php echo esc_url( get_option( 'arba_image_logo_upload' ) ); ?>" alt="<?php esc_url(esc_attr( bloginfo('name') )); ?>"><?php endif; ?>
 											</a>
 										</h1>
 									<?php } else {?>
 										<p>
 											<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-												<?php if ( get_option( 'arba_image_logo_upload' ) != '' ) : ?><img class="desktop" src="<?php echo esc_url( get_option( 'arba_image_logo_upload' ) ); ?>" alt="<?php esc_attr( bloginfo('name') ); ?>"><?php endif; ?>
+												<?php if ( get_option( 'arba_image_logo_upload' ) != '' ) : ?><img class="desktop" src="<?php echo esc_url( get_option( 'arba_image_logo_upload' ) ); ?>" alt="<?php esc_url(esc_attr( bloginfo('name') )); ?>"><?php endif; ?>
 											</a>
 										</p>
 								<?php }} else { ?>

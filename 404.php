@@ -8,7 +8,6 @@
  */
 
 get_header(); ?>
-
 <main id="main" class="main">
 	<div class="site-wrap">
 		<div class="site-row">
@@ -32,30 +31,10 @@ get_header(); ?>
 										<?php $recent_posts = new WP_Query(array('showposts' => 10)); ?>
 											<?php if ($recent_posts->have_posts()) : ?>
 												<?php while($recent_posts->have_posts()): $recent_posts->the_post(); ?>
-													<li><a href="<?php esc_url( the_permalink() ); ?>"><?php the_title();?></a></li>
+													<li><a href="<?php the_permalink(); ?>"><?php the_title();?></a></li>
 												<?php endwhile; ?>
 											<?php endif; ?>
 										<?php wp_reset_query(); ?>
-									</ul>
-
-									<h4><?php esc_html_e('Pages', 'arba') ?></h4>
-									<ul>
-										<?php wp_list_pages('sort_column=menu_order&title_li='); ?>
-									</ul>
-
-									<h4><?php esc_html_e('Monthly', 'arba') ?></h4>
-									<ul>
-										<?php wp_get_archives('type=monthly'); ?>
-									</ul>
-
-									<h4><?php esc_html_e('Categories', 'arba') ?></h4>
-									<ul>
-										<?php wp_list_categories( 'title_li=' ); ?>
-									</ul>
-
-									<h4><?php esc_html_e('Authors', 'arba') ?></h4>
-									<ul>
-										<?php wp_list_authors(); ?>
 									</ul>
 								</div><!-- .page-content__archives -->
 							</div><!-- .page-content -->

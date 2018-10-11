@@ -48,14 +48,19 @@ function arba_custom_style() { ?>
 
 
 		<?php if ( get_option( 'arba_image_logo_height' ) != '' ): ?>
-		.logo-wrapper {
+		.logo-wrapper{
 			line-height: <?php echo esc_attr( get_option( 'arba_image_logo_height' ) ); ?>;
+		}
+		@media only screen and (min-width: 1024px) {
+			.primary-nav div > ul > li {
+				line-height: <?php echo esc_attr( get_option( 'arba_image_logo_height' ) ); ?>;
+			}
 		}
 		.logo a {
 			line-height: <?php echo esc_attr( get_option( 'arba_image_logo_height' ) ); ?>;
 		}
 		.logo img {
-			height: <?php echo esc_attr( get_option( 'arba_image_logo_height' ) ); ?>;
+			max-height: <?php echo esc_attr( get_option( 'arba_image_logo_height' ) ); ?>;
 		}
 		<?php endif; ?>
 

@@ -40,15 +40,11 @@ function arba_setup() {
 	 *
 	 */
 	add_theme_support( 'post-thumbnails' );
-	add_image_size( 'arba-archive-post', 340, 280, true );
-	add_image_size( 'arba-single-post', 680, 560, true );
+	add_image_size( 'arba-archive-post', 340, 240, true );
+	add_image_size( 'arba-single-post', 820, 680, true );
 	add_image_size( 'home-sticky-post', 1100, 680, true );
 
-	/*
-	 * Add menu supports.
-	 * @see http://codex.wordpress.org/Function_Reference/register_nav_menus
-	 */
-	add_theme_support( 'menus' );
+	
 	register_nav_menus( array(
 		'arba_primary_nav' => esc_html__( 'Primary Navigation', 'arba' ),
 	) );
@@ -201,28 +197,6 @@ function arba_widgets_init() {
 		register_sidebar(array(
 			'name' 			=> 'Sidebar Widgets',
 			'id'            => 'main-sidebar',
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' 	=> '</div>',
-			'before_title' 	=> '<h4 class="widget-title">',
-			'after_title' 	=> '</h4>',
-		));
-	}
-
-	if(function_exists('register_sidebar')) {
-		register_sidebar(array(
-			'name' 			=> 'Post Sidebar Widgets',
-			'id'            => 'post-sidebar',
-			'before_widget' => '<div id="%1$s" class="widget %2$s">',
-			'after_widget' 	=> '</div>',
-			'before_title' 	=> '<h4 class="widget-title">',
-			'after_title' 	=> '</h4>',
-		));
-	}
-
-	if(function_exists('register_sidebar')) {
-		register_sidebar(array(
-			'name' 			=> 'Page Sidebar Widgets',
-			'id'            => 'page-sidebar',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' 	=> '</div>',
 			'before_title' 	=> '<h4 class="widget-title">',

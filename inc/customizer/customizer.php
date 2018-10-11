@@ -36,7 +36,7 @@ $wp_customize->add_section( 'title_tagline',
 
 			$wp_customize->add_control( 'arba_image_logo_enable',
 	    		array(
-	        		'label' => esc_html__('Turn ON/OFF Image Logo', 'arba' ),
+	        		'label' => esc_html__('Enable Image Logo', 'arba' ),
 	        		'section' => 'title_tagline',
 	        		'settings' => 'arba_image_logo_enable',
 	        		'type' => 'checkbox'
@@ -418,45 +418,6 @@ $wp_customize->add_panel( 'arba_single_post',
 	        		'section' => 'arba_single_post',
 	        		'settings' => 'arba_recent_posts_remove',
 	        		'type' => 'checkbox'
-	    		)
-			);
-/*-----------------------------------------------------------------------------------*/
-/*	Google Analytics
-/*-----------------------------------------------------------------------------------*/
-
-$wp_customize->add_panel( 'arba_google_analytics', array(
-	'title' => esc_html__('Google Analytics', 'arba' ),
-	'description' => '',
-	'priority' => 7,
-	'capability' => 'edit_theme_options',
-	'theme_supports' => ''
-) );
-
-	/* Google Analytics
-	--------------------------------------------- */
-	$wp_customize->add_section('arba_google_analytics',
-		array(
-			'title' => esc_html__('Google Analytics', 'arba' ),
-			'priority' => 1
-		)
-	);
-
-		/* Google Analytics. */
-		$wp_customize->add_setting( 'arba_google_analytics',
-			array(
-				'default' => '',
-				'type' => 'option',
-				'capability' => 'edit_theme_options',
-				'sanitize_callback' => 'arba_sanitize_textarea',
-			)
-		);
-
-			$wp_customize->add_control( 'arba_google_analytics',
-	    		array(
-	        		'title' => esc_html__('Google Analytics', 'arba' ),
-	        		'section' => 'arba_google_analytics',
-	        		'settings' => 'arba_google_analytics',
-	        		'type' => 'textarea'
 	    		)
 			);
 
