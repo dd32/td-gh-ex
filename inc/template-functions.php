@@ -471,7 +471,7 @@ if ( ! function_exists( 'adbooster_footer_widgets' ) ) {
 			}
 
 			if ( isset( $columns ) ) : ?>
-				<div class=<?php echo esc_attr( '"footer-widgets row-' . strval( $row ) . ' col-' . strval( $columns ) . ' fix"' ); ?>><?php
+				<div class="<?php echo esc_attr( 'footer-widgets row-' . strval( $row ) . ' col-' . strval( $columns ) . ' fix' ); ?>" ><?php
 
 					for ( $column = 1; $column <= $columns; $column++ ) :
 						$footer_n = $column + $regions * ( $row - 1 );
