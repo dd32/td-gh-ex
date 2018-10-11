@@ -44,7 +44,10 @@
 .theme_info .theme_link {
 	margin-bottom: 30px;
 }
-
+a.nav-tab.ht-pro-tab {
+    color: #fff;
+    background-color: #f00;
+}
 .clearfix:after {
     content: ".";
     display: block;

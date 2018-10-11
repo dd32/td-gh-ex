@@ -110,6 +110,7 @@ function balanced_blog_theme_info_page() {
 		<div class="about-text"><?php echo esc_html( $theme_data->Description ); ?></div>
 		<h2 class="nav-tab-wrapper">
 			<a href="?page=balanced_blog" class="nav-tab<?php echo is_null( $tab ) ? ' nav-tab-active' : null; ?>"><?php echo esc_html( $theme_data->Name ); ?></a>
+      <a href="?page=balanced_blog&tab=pro_version" class="nav-tab<?php echo $tab == 'pro_version' ? ' nav-tab-active' : ' ht-pro-tab'; ?>"><?php echo esc_html( 'Head Plus' ); // Name, not translatable ?></a>
 			<?php do_action( 'balanced_blog_admin_more_tabs' ); ?>
 		</h2>
 
@@ -160,7 +161,17 @@ function balanced_blog_theme_info_page() {
 				</div>
 			</div>
 		<?php } ?>
-
+    
+    <?php if ( $tab == 'pro_version' ) { ?>
+			<div class="pro-version-tab info-tab-content">
+				<p>
+					<a href="<?php echo esc_url( 'https://headthemes.com/head-plus/' ); ?>" target="_blank" class="pro-img">
+					   <img src="<?php echo esc_url(  get_template_directory_uri() . '/lib/img/head-pro-ad.jpg' ); ?>">	
+					</a>
+				</p>
+			</div>
+		<?php } ?>
+    
 	</div> <!-- END .theme_info -->
 	<?php
 }
