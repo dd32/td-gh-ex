@@ -1,0 +1,18 @@
+/**
+ * Gutenberg Blocks Backend Styles
+ *
+ * This file imports the less needed to style our own blocks in the backend
+ */
+/* Micro ClearFix Mixin */
+.wp-block-agncy-image-background {
+  border: 1px dashed #f1f1f1;
+}
+.wp-block-agncy-image-background.has-background-image {
+  border: none;
+}
+@media (min-width: 768px) {
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}

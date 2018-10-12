@@ -1,0 +1,176 @@
+/**
+ * Gutenberg Blocks Frontend Styles
+ *
+ * This file imports the less needed to style our own blocks in the frontend
+ */
+/* Micro ClearFix Mixin */
+.wp-block-agncy-split {
+  clear: both;
+  color: #555;
+  margin: 0 0 24px;
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: auto;
+  background: #f2f2f2;
+  grid-template-areas: "image image" "body body";
+}
+.wp-block-agncy-split .split-content-image {
+  grid-area: image;
+  position: relative;
+}
+.wp-block-agncy-split .split-content-image .split-image {
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+}
+.wp-block-agncy-split .split-content-image .components-placeholder {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  height: 100%;
+}
+.wp-block-agncy-split .split-content-body {
+  grid-area: body;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-line-pack: center;
+      align-content: center;
+  padding: 24px 16px;
+}
+.wp-block-agncy-split .split-content-heading {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+.wp-block-agncy-split .split-content-heading h2,
+.wp-block-agncy-split .split-content-heading h3,
+.wp-block-agncy-split .split-content-heading h4 {
+  font-size: 40px;
+  line-height: 1.2em;
+  color: inherit;
+}
+.wp-block-agncy-split .split-content-text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 100%;
+          flex: 1 1 100%;
+  word-break: break-word;
+  position: relative;
+  z-index: 1;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .wp-block-agncy-split {
+    margin-bottom: 27px;
+  }
+  .wp-block-agncy-split .split-content-body {
+    padding: 6.75px 8px;
+  }
+  .wp-block-agncy-split .split-content-heading h2,
+  .wp-block-agncy-split .split-content-heading h3,
+  .wp-block-agncy-split .split-content-heading h4 {
+    font-size: 44px;
+    line-height: 1.22727273em;
+  }
+  .wp-block-agncy-split.alignwide .split-content-body,
+  .wp-block-agncy-split.alignfull .split-content-body {
+    padding: 27px 32px;
+  }
+}
+@media (min-width: 992px) {
+  .wp-block-agncy-split {
+    grid-template-areas: "image body";
+  }
+  .wp-block-agncy-split.is-split-right {
+    grid-template-areas: "body image";
+  }
+  .wp-block-agncy-split .split-content-body {
+    padding: 6.75px 8px;
+  }
+  .wp-block-agncy-split .split-content-body:before,
+  .wp-block-agncy-split .split-content-body:after {
+    background-size: 33% auto;
+  }
+  .wp-block-agncy-split.alignwide .split-content-body,
+  .wp-block-agncy-split.alignfull .split-content-body {
+    padding: 27px 32px;
+  }
+  .wp-block-agncy-split.alignwide .split-content-heading h2,
+  .wp-block-agncy-split.alignfull .split-content-heading h2,
+  .wp-block-agncy-split.alignwide .split-content-heading h3,
+  .wp-block-agncy-split.alignfull .split-content-heading h3,
+  .wp-block-agncy-split.alignwide .split-content-heading h4,
+  .wp-block-agncy-split.alignfull .split-content-heading h4 {
+    font-size: 55px;
+    line-height: 1.47272727em;
+  }
+}
+@media (min-width: 1200px) {
+  .wp-block-agncy-split .split-content-body {
+    padding: 6.75px 8px;
+  }
+  .wp-block-agncy-split.alignwide .split-content-body,
+  .wp-block-agncy-split.alignfull .split-content-body {
+    padding: 54px 120px;
+  }
+}
+.wp-block-agncy-image-background {
+  background-position: center center;
+  background-size: cover;
+  position: relative;
+  clear: both;
+  margin-bottom: 24px;
+  padding: 48px 16px;
+  z-index: 0;
+}
+.wp-block-agncy-image-background .background-dim {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+@media (min-width: 768px) {
+  .wp-block-agncy-image-background {
+    padding: 54px 16px;
+    margin-bottom: 27px;
+  }
+}
+@media (min-width: 992px) {
+}
+@media (min-width: 1200px) {
+}
+/*.backgroundDim(@step) when (@step > 0) {
+	.backgroundDim((@step - 1));
+	@dim: @step * 10;
+
+	&.has-background-dim-@{dim} {
+		&:before {
+			content: "";
+			display: block;
+			position: absolute;
+			z-index: -1;
+			top: 0;
+			left: 0;
+			right: 0;
+			bottom: 0;
+			background-color: fadeOut( @gray3, ( 100 - @step * 10 ) );
+		}
+	}
+}*/
