@@ -164,7 +164,7 @@ function init() {
  */
 function cleanup() {
     observer && observer.disconnect();
-    removeEvent(wheelEvent, wheel, wheelOpt);
+    removeEvent(wheelEvent, wheel);
     removeEvent('mousedown', mousedown);
     removeEvent('keydown', keydown);
 }
@@ -524,12 +524,12 @@ function overflowAutoOrScroll(el) {
  * HELPERS
  ***********************************************/
 
-function addEvent(type, fn, arg ) {
-    window.addEventListener(type, fn, arg || false);
+function addEvent(type, fn) {
+    window.addEventListener(type, fn, false);
 }
 
-function removeEvent(type, fn, arg) {
-    window.removeEventListener(type, fn, arg || false);
+function removeEvent(type, fn) {
+    window.removeEventListener(type, fn, false);
 }
 
 function isNodeName(el, tag) {
@@ -665,17 +665,11 @@ function pulse(x) {
     return pulse_(x);
 }
 
-var supportsPassive = false;
-try {
-  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-    get: function () {
-            supportsPassive = true;
-        }
-    }));
-} catch(e) {}
-
-var wheelOpt = supportsPassive ? { passive: false } : false;
-var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+var wheelEvent;
+if ('onwheel' in document.createElement('div'))
+    wheelEvent = 'wheel';
+else if ('onmousewheel' in document.createElement('div'))
+    wheelEvent = 'mousewheel';
 
 
 // Press Customizr mod
@@ -683,7 +677,7 @@ var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewh
 //returns whether or not the smootScroll has been initialized
 function _maybeInit( fire ){
   if (wheelEvent) {
-    addEvent(wheelEvent, wheel, wheelOpt);
+    addEvent(wheelEvent, wheel);
     addEvent('mousedown', mousedown);
     if ( ! fire ) addEvent('load', init);
     else init();

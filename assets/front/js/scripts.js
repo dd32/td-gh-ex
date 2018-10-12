@@ -938,7 +938,7 @@ function init() {
 }
 function cleanup() {
     observer && observer.disconnect();
-    removeEvent(wheelEvent, wheel, wheelOpt);
+    removeEvent(wheelEvent, wheel);
     removeEvent('mousedown', mousedown);
     removeEvent('keydown', keydown);
 }
@@ -1200,12 +1200,12 @@ function overflowAutoOrScroll(el) {
     return (overflow === 'scroll' || overflow === 'auto');
 }
 
-function addEvent(type, fn, arg ) {
-    window.addEventListener(type, fn, arg || false);
+function addEvent(type, fn) {
+    window.addEventListener(type, fn, false);
 }
 
-function removeEvent(type, fn, arg) {
-    window.removeEventListener(type, fn, arg || false);
+function removeEvent(type, fn) {
+    window.removeEventListener(type, fn, false);
 }
 
 function isNodeName(el, tag) {
@@ -1326,20 +1326,14 @@ function pulse(x) {
     return pulse_(x);
 }
 
-var supportsPassive = false;
-try {
-  window.addEventListener("test", null, Object.defineProperty({}, 'passive', {
-    get: function () {
-            supportsPassive = true;
-        }
-    }));
-} catch(e) {}
-
-var wheelOpt = supportsPassive ? { passive: false } : false;
-var wheelEvent = 'onwheel' in document.createElement('div') ? 'wheel' : 'mousewheel';
+var wheelEvent;
+if ('onwheel' in document.createElement('div'))
+    wheelEvent = 'wheel';
+else if ('onmousewheel' in document.createElement('div'))
+    wheelEvent = 'mousewheel';
 function _maybeInit( fire ){
   if (wheelEvent) {
-    addEvent(wheelEvent, wheel, wheelOpt);
+    addEvent(wheelEvent, wheel);
     addEvent('mousedown', mousedown);
     if ( ! fire ) addEvent('load', init);
     else init();
@@ -2816,7 +2810,7 @@ var czrapp = czrapp || {};
                     czrapp.setupDOMListeners(
                           [
                                 {
-                                      trigger   : 'mousedown focusin keydown',
+                                      trigger   : 'click keydown',
                                       selector  : mobMenu.button_selectors,
                                       actions   : function() {
                                             var mobMenu = this;
@@ -2848,7 +2842,7 @@ var czrapp = czrapp || {};
                           czrapp.setupDOMListeners(
                                 [
                                       {
-                                            trigger   : 'mousedown focusin keydown',
+                                            trigger   : 'click keydown',
                                             selector  : mobMenu.button_selectors,
                                             actions   : function() {
                                                   var mobMenu = this;
@@ -2866,15 +2860,6 @@ var czrapp = czrapp || {};
                             return;
                           mobMenu( 'collapsed' );
                     });
-                    $(  mobMenu.container )
-                          .on( 'mouseup', '.menu-item a', function(evt) {
-                                if ( ! czrapp.userXP._isMobileScreenSize() )
-                                      return;
-                                evt.preventDefault();
-                                evt.stopPropagation();
-                                mobMenu( 'collapsed');
-                          });
-
               },
               _toggleMobileMenu : function()  {
                     var mobMenu = this,
@@ -2913,9 +2898,7 @@ var czrapp = czrapp || {};
                         Event       = {
                           SHOW     : 'show' + EVENT_KEY,
                           HIDE     : 'hide' + EVENT_KEY,
-                          CLICK    : 'mousedown' + EVENT_KEY,
-                          FOCUSIN  : 'focusin' + EVENT_KEY,
-                          FOCUSOUT : 'focusout' + EVENT_KEY
+                          CLICK    : 'click' + EVENT_KEY,
                         },
                         Classname   = {
                           DD_TOGGLE_ON_CLICK    : 'submenu-click-expand',
@@ -2956,12 +2939,12 @@ var czrapp = czrapp || {};
                         .on( Event.CLICK, '.'+Classname.DD_TOGGLE, function( e ) {
                               e.preventDefault();
 
-                              var $_this = $( this );
+                              var $_this             = $( this );
                               $_this.trigger( $_this.closest( Selector.DD_TOGGLE_PARENT ).hasClass( Classname.SHOWN ) ? Event.HIDE: Event.SHOW  );
                               _clearMenus( mobMenu, $_this );
                         })
                         .on( Event.SHOW+' '+Event.HIDE, '.'+Classname.DD_TOGGLE, function( e ) {
-                              var $_this = $( this );
+                              var $_this             = $( this );
 
                               $_this.closest( Selector.DD_TOGGLE_PARENT ).toggleClass( Classname.SHOWN );
 
@@ -2980,49 +2963,6 @@ var czrapp = czrapp || {};
                                       czrapp.userXP.onSlidingCompleteResetCSS($submenu);
                                     }
                                 });
-                        })
-                        .on( Event.FOCUSIN, 'a[href="#"]', function(evt) {
-                              if ( ! czrapp.userXP._isMobileScreenSize() )
-                                    return;
-
-                              evt.preventDefault();
-                              evt.stopPropagation();
-                              $(this).next('.'+Classname.DD_TOGGLE_WRAPPER).find('.'+Classname.DD_TOGGLE).trigger( Event.FOCUSIN );
-                        })
-                        .on( Event.FOCUSOUT, 'a[href="#"]', function(evt) {
-                              if ( ! czrapp.userXP._isMobileScreenSize() )
-                                    return;
-                              evt.preventDefault();
-                              evt.stopPropagation();
-                              _.delay( function() {
-                                    $(this).next('.'+Classname.DD_TOGGLE_WRAPPER).find('.'+Classname.DD_TOGGLE).trigger( Event.FOCUSOUT );
-                              }, 250 );
-                        })
-                        .on( Event.FOCUSIN, '.'+Classname.DD_TOGGLE, function( e ) {
-                              e.preventDefault();
-
-                              var $_this = $( this );
-                              $_this.trigger( Event.SHOW );
-                        })
-                        .on( Event.FOCUSIN, function( evt ) {
-                              evt.preventDefault();
-                              if ( $(evt.target).length > 0 ) {
-                                    $(evt.target).addClass( 'hu-mm-focused');
-                              }
-                        })
-                        .on( Event.FOCUSOUT,function( evt ) {
-                              evt.preventDefault();
-
-                              var $_this = $( this );
-                              _.delay( function() {
-                                    if ( $(evt.target).length > 0 ) {
-                                          $(evt.target).removeClass( 'hu-mm-focused');
-                                    }
-                                    if ( mobMenu.container.find('.hu-mm-focused').length < 1 ) {
-                                          mobMenu( 'collapsed');
-                                    }
-                              }, 200 );
-
                         });
                     var _clearMenus = function( mobMenu, $_toggle ) {
                       var _parentsToNotClear = $.makeArray( $_toggle.parents( Selector.DD_TOGGLE_PARENT ) ),
@@ -3400,7 +3340,7 @@ var czrapp = czrapp || {};
                           container : $container,
                           position : _position,//can take left, middle-left, middle-right, right
                           layout : _userLayout,//can take : col-2cr, co-2cl, col-3cr, col-3cm, col-3cl
-                          extended_width : 's1' == _id ? HUParams.sidebarOneWidth : HUParams.sidebarTwoWidth//<= hard coded in the base CSS, could be made dynamic in the future
+                          extended_width : 's1' == _id ? 340 : 260//<= hard coded in the base CSS, could be made dynamic in the future
                     }));
               });//$( '.s1, .s2', '#wrapper' ).each()
 
@@ -3460,7 +3400,7 @@ var czrapp = czrapp || {};
                     czrapp.setupDOMListeners(
                           [
                                 {
-                                      trigger   : 'focusin mousedown keydown',
+                                      trigger   : 'click keydown',
                                       selector  : sb.button_selectors,
                                       actions   : function() {
                                             var sb = this;
@@ -3669,7 +3609,7 @@ var czrapp = czrapp || {};
                                             transform: _translate,
                                       });
                                       sb.container.find('.sidebar-content').css('opacity', expanded ? 0 : 1 );
-                                      sb.container.find('.sidebar-toggle-arrows').css('opacity', 0);
+                                      sb.container.find('.icon-sidebar-toggle').css('opacity', 0);
                                       _.delay( function() {
                                             _dfd.resolve();
                                       }, 350 );//transition: width .35s ease-in-out;
@@ -3687,7 +3627,7 @@ var czrapp = czrapp || {};
                                             'margin-left' : '',
                                             height : expanded ? sb._getExpandedHeight() + 'px' : '',
                                       });
-                                sb.container.find('.sidebar-toggle-arrows').css('opacity', 1);
+                                sb.container.find('.icon-sidebar-toggle').css('opacity', 1);
                                 sb.container.find('.sidebar-content')
                                     .css({
                                           opacity : '',
@@ -3969,7 +3909,6 @@ var czrapp = czrapp || {};
                                             height : czrapp.userXP.topNavExpanded() ? ( 1 == $topbar.find('.nav-wrap').length ? $topbar.find('.nav-wrap').height() : 'auto' ) : ''
                                       });
                                 }
-
                                 $('.search-expand', '#header').stop()[ ! exp ? 'slideUp' : 'slideDown' ]( {
                                       duration : 250,
                                       complete : function() {
@@ -3990,7 +3929,7 @@ var czrapp = czrapp || {};
               czrapp.setupDOMListeners(
                     [
                           {
-                                trigger   : 'mousedown keydown',
+                                trigger   : 'click keydown',
                                 selector  : _sel,
                                 actions   : function() {
                                       czrapp.userXP.headerSearchExpanded( ! czrapp.userXP.headerSearchExpanded() );
@@ -4008,9 +3947,6 @@ var czrapp = czrapp || {};
                           self.headerSearchExpanded( false );
                     });
               }
-              $( _sel, '#header' ).on('focusin', function( evt ) {
-                    self.headerSearchExpanded( true );
-              });
         },//toggleHeaderSearch
         scrollToTop : function() {
               $('a#back-to-top').click(function() {
@@ -4108,127 +4044,6 @@ var czrapp = czrapp || {};
                           });
                     }
               );
-              $('.nav li').on('focusin', 'a', function() {
-
-                    if ( czrapp.userXP._isMobileScreenSize() )
-                      return;
-
-                    $(this).addClass('hu-focused');
-                    $(this).closest('.nav li').children('ul.sub-menu').hide().stop().slideDown({
-                            duration : 'fast'
-                    })
-                    .css( 'opacity', 1 );
-
-              });
-              $('.nav li').on('focusout', 'a', function() {
-                    var $el = $(this);
-                    _.delay( function() {
-                        $el.removeClass('hu-focused');
-                        if ( czrapp.userXP._isMobileScreenSize() )
-                          return;
-                        if ( $('.nav li').find('.hu-focused').length < 1 ) {
-                              $('.nav li').each( function() {
-                                    $(this).children('ul.sub-menu').stop().css( 'opacity', '' ).slideUp( {
-                                            duration : 'fast'
-                                    });
-                              });
-                        }
-                        if( $el.closest('.nav li').children('ul.sub-menu').find('.hu-focused').length < 1 ) {
-                              $el.closest('.nav li').children('ul.sub-menu').stop().css( 'opacity', '' ).slideUp( {
-                                      duration : 'fast'
-                              });
-                        }
-                    }, 250 );
-              });
-        },
-        gutenbergAlignfull : function() {
-              var _isPage                        = czrapp.$_body.hasClass( 'page' ),
-                  _isSingle                      = czrapp.$_body.hasClass( 'single' ),
-                  _coverImageSelector            = '.full-width.col-1c .alignfull[class*=wp-block-cover]',
-                  _alignFullSelector             = '.full-width.col-1c .alignfull[class*=wp-block-]',
-                  _alignTableSelector            = [
-                                        '.boxed .themeform .wp-block-table.alignfull',
-                                        '.boxed .themeform .wp-block-table.alignwide',
-                                        '.full-width.col-1c .themeform .wp-block-table.alignwide'
-                                      ],
-                  _coverWParallaxImageSelector   = _coverImageSelector + '.has-parallax',
-                  _classParallaxTreatmentApplied = 'hu-alignfull-p',
-                  _styleId                       = 'hu-gutenberg-alignfull',
-                  $_refWidthElement              = czrapp.$_body,
-                  $_refContainedWidthElement     = $( 'section.content', $_refWidthElement );
-              if ( ! ( _isPage || _isSingle ) ) {
-                    return;
-              }
-
-              if ( _isSingle ) {
-                    _coverImageSelector = '.single' + _coverImageSelector;
-                    _alignFullSelector  = '.single' + _alignFullSelector;
-                    _alignTableSelector = '.single' + _alignTableSelector.join(',.single');
-              } else {
-                    _coverImageSelector = '.page' + _coverImageSelector;
-                    _alignFullSelector  = '.page' + _alignFullSelector;
-                    _alignTableSelector = '.page' + _alignTableSelector.join(',.page');
-              }
-
-              if ( $( _alignFullSelector ).length > 0 ) {
-                    _add_alignelement_style( $_refWidthElement, _alignFullSelector, 'hu-gb-alignfull' );
-                    if ( $(_coverWParallaxImageSelector).length > 0 ) {
-                          _add_parallax_treatment_style();
-                    }
-                    czrapp.userXP.windowWidth.bind( function() {
-                          _add_alignelement_style( $_refWidthElement, _alignFullSelector, 'hu-gb-alignfull' );
-                          _add_parallax_treatment_style();
-                    });
-              }
-              if ( $( _alignTableSelector ).length > 0 ) {
-                    _add_alignelement_style( $_refContainedWidthElement, _alignTableSelector, 'hu-gb-aligntable' );
-                    czrapp.userXP.windowWidth.bind( function() {
-                          _add_alignelement_style( $_refContainedWidthElement, _alignTableSelector, 'hu-gb-aligntable' );
-                    });
-              }
-              function _add_parallax_treatment_style() {
-                    $( _coverWParallaxImageSelector ).each(function() {
-                          $(this)
-                                .css( 'left', '' )
-                                .css( 'left', -1 * $(this).offset().left )
-                                .addClass(_classParallaxTreatmentApplied);
-                    });
-              }
-              function _add_alignelement_style( $_refElement, _selector, _styleId ) {
-                    var newElementWidth = $_refElement[0].getBoundingClientRect().width,
-                        $_style         = $( 'head #' + _styleId );
-
-                    if ( 1 > $_style.length ) {
-                          $_style = $('<style />', { 'id' : _styleId });
-                          $( 'head' ).append( $_style );
-                          $_style = $( 'head #' + _styleId );
-                    }
-                    $_style.html( _selector + '{width:'+ newElementWidth +'px}' );
-              }
-        },
-        triggerResizeEventsToAjustHeaderHeightOnInit : function() {
-              var $logoImg = $('.site-title').find('img');
-              if ( $logoImg.length > 0 ) {
-                    if ( $logoImg[0].complete ) {
-                          czrapp.$_window.trigger('resize');
-                    } else {
-                      $logoImg.load( function( img ) {
-                            czrapp.$_window.trigger('resize');
-                      });
-                    }
-              }
-              var _triggerResize = function( n ) {
-                    n = n || 1;
-                    if ( n > 3 )
-                      return;
-
-                    _.delay( function() {
-                          n++;
-                          czrapp.$_window.trigger('resize');
-                          _triggerResize(n);
-                    }, 3000 );
-              };
-              _triggerResize();
         }
 
   };//_methods{}
@@ -4455,9 +4270,7 @@ var czrapp = czrapp || {};
                             'dropdownMenu',
                             'mobileMenu',
                             'topNavToLife',
-                            'gutenbergAlignfull',
-                            'mayBePrintWelcomeNote',
-                            'triggerResizeEventsToAjustHeaderHeightOnInit' // for https://github.com/presscustomizr/hueman/issues/839
+                            'mayBePrintWelcomeNote'
                       ]
                 }
       };//map

@@ -3,23 +3,14 @@
 
 	<div class="sidebar s1 collapsed" data-position="<?php echo hu_get_sidebar_position( 's1' ); ?>" data-layout="<?php echo $layout ?>" data-sb-id="s1">
 
-		<button class="sidebar-toggle" title="<?php _e('Expand Sidebar','hueman'); ?>"><i class="fas sidebar-toggle-arrows"></i></button>
+		<a class="sidebar-toggle" title="<?php _e('Expand Sidebar','hueman'); ?>"><i class="fas icon-sidebar-toggle"></i></a>
 
 		<div class="sidebar-content">
 
 			<?php if ( hu_is_checked('sidebar-top') ): ?>
-         <?php
-            // wp_kses_post() Sanitizes content for allowed HTML tags for post content.
-            // see https://developer.wordpress.org/reference/functions/wp_kses_post/
-            $sb_text = wp_kses_post( hu_get_option( 'primary-sb-text' ) );
-          ?>
   			<div class="sidebar-top group">
-          <?php if ( hu_has_social_links() || !empty( $sb_text ) ) : ?>
-              <?php
-                if ( !empty( $sb_text ) ) {
-                    echo apply_filters( 'primary_sb_text', sprintf( '<p>%1$s</p>', hu_get_option( 'primary-sb-text' ) ) );
-                }
-              ?>
+          <?php if ( hu_has_social_links() ) : ?>
+              <p><?php _e('Follow:','hueman'); ?></p>
           <?php else : //if not customizing, display an empty p for design purposes ?>
               <?php if ( hu_user_can_see_customize_notices_on_front() ) : ?>
                   <?php

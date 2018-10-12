@@ -60,20 +60,19 @@ class AlxPosts extends WP_Widget {
 ?>
 
 	<?php
-    $posts_query_params = apply_filters( 'hu_posts_widget_query_args', array(
-        'post_type'       => array( 'post' ),
-        'showposts'       => $instance['posts_num'],
-        'cat'         => $instance['posts_cat_id'],
-        'ignore_sticky_posts' => true,
-        'orderby'       => $instance['posts_orderby'],
-        'order'         => 'dsc',
-        'date_query' => array(
-            array(
-              'after' => $instance['posts_time'],
-            )
-        )
-    ) );
-		$posts = new WP_Query( is_array( $posts_query_params ) ? $posts_query_params : array() );
+		$posts = new WP_Query( apply_filters( 'hu_posts_widget_query_args', array(
+  			'post_type'				=> array( 'post' ),
+  			'showposts'				=> $instance['posts_num'],
+  			'cat'					=> $instance['posts_cat_id'],
+  			'ignore_sticky_posts'	=> true,
+  			'orderby'				=> $instance['posts_orderby'],
+  			'order'					=> 'dsc',
+  			'date_query' => array(
+    				array(
+    					'after' => $instance['posts_time'],
+    				)
+  			)
+		) ) );
 
     $date_format = apply_filters( 'hu_posts_widget_date_format', 'j M, Y' );
 	?>
@@ -84,7 +83,7 @@ class AlxPosts extends WP_Widget {
 
 			<?php if($instance['posts_thumb']) { // Thumbnails enabled? ?>
 			<div class="post-item-thumbnail">
-				<a href="<?php the_permalink(); ?>">
+				<a href="<?php the_permalink(); ?>" title="<?php the_title(); ?>">
 					<?php hu_the_post_thumbnail('thumb-medium'); ?>
 					<?php if ( has_post_format('video') && !is_sticky() ) echo'<span class="thumb-icon small"><i class="fas fa-play"></i></span>'; ?>
 					<?php if ( has_post_format('audio') && !is_sticky() ) echo'<span class="thumb-icon small"><i class="fas fa-volume-up"></i></span>'; ?>
@@ -95,7 +94,7 @@ class AlxPosts extends WP_Widget {
 
 			<div class="post-item-inner group">
 				<?php if($instance['posts_category']) { ?><p class="post-item-category"><?php the_category(' / '); ?></p><?php } ?>
-				<p class="post-item-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title_attribute( array( 'before' => __( 'Permalink to ', 'hueman' ) ) ); ?>"><?php the_title(); ?></a></p>
+				<p class="post-item-title"><a href="<?php the_permalink(); ?>" rel="bookmark" title="<?php the_title(); ?>"><?php the_title(); ?></a></p>
 				<?php if($instance['posts_date']) { ?><p class="post-item-date"><?php the_time( $date_format ); ?></p><?php } ?>
 			</div>
 

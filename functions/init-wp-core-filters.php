@@ -43,9 +43,7 @@ add_filter( 'embed_oembed_html', 'hu_embed_wmode_transparent', 10, 3 );
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_embed_html' ) ) {
   function hu_embed_html( $html, $url ) {
-    if ( !file_exists( ABSPATH . WPINC . '/class-wp-oembed.php' ))
-      return $html;
-    require_once( ABSPATH . WPINC . '/class-wp-oembed.php' );
+    require_once( ABSPATH . WPINC . '/class-oembed.php' );
     $wp_oembed = _wp_oembed_get_object();
     $provider = $wp_oembed -> get_provider( $url, $args = '' );
     if ( ! $provider || false === $data = $wp_oembed->fetch( $provider, $url, $args ) ) {
@@ -77,20 +75,4 @@ add_filter( 'video_embed_html', 'hu_embed_html_jp' );
 
 /*  Add shortcode support to text widget
 /* ------------------------------------ */
-add_action( 'after_setup_theme', 'hu_widget_text_do_shortcode' );
-function hu_widget_text_do_shortcode() {
-    if ( ! has_filter( 'widget_text', 'do_shortcode' ) ) {
-        add_filter( 'widget_text', 'do_shortcode' );
-    }
-}
-
-// WP 5.0.0 compat. until the bug is fixed
-// this hook fires before the customize changeset is inserter / updated in database
-// Removing the wp_targeted_link_rel callback from the 'content_save_pre' filter prevents corrupting the changeset JSON
-// more details in this ticket : https://core.trac.wordpress.org/ticket/45292
-add_action( 'customize_save_validation_before'       , 'hu_remove_callback_wp_targeted_link_rel' );
-function hu_remove_callback_wp_targeted_link_rel() {
-    if ( false !== has_filter( 'content_save_pre', 'wp_targeted_link_rel' ) ) {
-        remove_filter( 'content_save_pre', 'wp_targeted_link_rel' );
-    }
-}
+add_filter( 'widget_text', 'do_shortcode' );

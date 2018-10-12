@@ -241,8 +241,7 @@
             post_id: post_id,
             get_option: get_option,
             settings: settings,
-            type: type,
-            nonce: option_tree.nonce
+            type: type
           },
           complete: function( data ) {
             if ( type == 'choice' || type == 'list_item_setting' ) {
@@ -619,8 +618,7 @@
           data: {
             action: 'ot_google_font',
             family: input.val(),
-            field_id: input.attr( 'id' ),
-            nonce: option_tree.nonce
+            field_id: input.attr('id')
           }
         }).done(function(response) {
           if ( response.hasOwnProperty('variants') ) {
@@ -667,11 +665,10 @@
         }
       });
     },
-    /**
-     *  Hueman doesn't need date and time picker jquery plugins
-     * we remove them for compatibility reasons.
-     * See : https://github.com/presscustomizr/hueman/issues/454
-     */
+    /* Hueman doesn't need date and time picker jquery plugins 
+    * we remove them for compatibility reasons. 
+    * See : https://github.com/presscustomizr/hueman/issues/454
+    */
     /*
     bind_date_picker: function(field_id, date_format) {
       $('#'+field_id).datepicker({
@@ -826,9 +823,8 @@
           url: ajaxurl,
           dataType: 'html',
           data: {
-            action: 'gallery_update',
-            ids: ids,
-            nonce: option_tree.nonce
+            action: 'gallery_update'
+          , ids: ids
           },
           success: function(res) {
             parent.children('.ot-gallery-list').html(res);
@@ -934,7 +930,7 @@
  */
 !function ($) {
 
-  $( document ).ready( function() {
+  $(document).on('ready', function () {
 
     // Loop over the metaboxes
     $('.ot-metabox-wrapper').each( function() {
@@ -1006,7 +1002,7 @@
  */
 !function ($) {
 
-  $( document ).ready( function() {
+  $(document).on('ready', function () {
 
     // Loop over the theme options
     $('#option-tree-settings-api .inside').each( function() {
@@ -1068,7 +1064,7 @@
  */
 !function ($) {
 
-  $( document ).ready( function() {
+  $(document).on('ready', function () {
 
     // detect mousedown and store all checked radio buttons
     $('.hndle').on('mousedown', function () {

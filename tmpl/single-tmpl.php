@@ -5,19 +5,6 @@
       <?php hu_get_template_part('parts/single-heading'); ?>
 
       <?php if( get_post_format() ) { get_template_part('parts/post-formats'); } ?>
-      <?php // audio and image post formats historically display the post featured image ?>
-      <?php if ( !has_post_format( 'audio' ) && !has_post_format( 'image' ) ) : ?>
-        <?php if ( hu_is_checked( 'singular-post-featured-image' ) ) : ?>
-            <div class="image-container">
-              <?php if ( has_post_thumbnail() ) {
-                $image_size = hu_is_checked( 'singular-post-cropped-feat-img' ) ? 'thumb-large' : 'full';
-                hu_the_post_thumbnail( $image_size, '', false);//no attr, no placeholder
-                $caption = get_post(get_post_thumbnail_id())->post_excerpt;
-                if ( isset($caption) && $caption ) echo '<div class="image-caption">'.$caption.'</div>';
-              } ?>
-            </div>
-        <?php endif; ?>
-      <?php endif; ?>
 
       <div class="clear"></div>
 
@@ -46,11 +33,7 @@
 
 <div class="clear"></div>
 
-<?php
-  if ( hu_is_checked( 'post-tags' ) ) {
-    the_tags('<p class="post-tags"><span>'.__('Tags:','hueman').'</span> ','','</p>');
-  }
-?>
+<?php the_tags('<p class="post-tags"><span>'.__('Tags:','hueman').'</span> ','','</p>'); ?>
 
 <?php if ( ( hu_is_checked( 'author-bio' ) ) && get_the_author_meta( 'description' ) ): ?>
   <div class="author-bio">
