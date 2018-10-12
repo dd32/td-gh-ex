@@ -4,74 +4,27 @@
 	* @package anorya
 	*/
 
-	get_header(); 
+	get_header(); ?>
 	
-	// load collapsable sidebar
-	anorya_display_hidden_sidebar();
 	
-	//get slider type
-	if(is_home() || is_frontpage()):
-	
-		if(get_theme_mod( 'anorya_slider_type_setting','standard') == 'standard'):
-		//3 items slider ?>
-			
-			<div class="container-fluid slider-container">
-				<div id="slider2" class="slider2 owl-carousel owl-theme">
-					<?php anorya_main_slider_items(); ?>
-				</div>
-			</div>
-			
-		<?php else:
-			$anorya_slider_item_class = 'slider1'; 
-			// 1 item - full width slider ?>
-			
-			<div class="container slider-container">
-				<div id="slider1" class="slider1 owl-carousel owl-theme">
-					<?php anorya_main_slider_items(); ?>
-				</div>
-			</div>
-		<?php endif; ?>
-			
-		
-		 
-		<?php if(get_theme_mod('anorya_display_promo_boxes_setting')): ?>
-			<div class="container">
-				<div class="row">
-					<div class="col-md-4 col-sm-4 col-xs-12 home-promo-box">
-						<?php anorya_home_promo_box(1); ?>	
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-12 home-promo-box">
-						<?php anorya_home_promo_box(2); ?>	
-					</div>
-					<div class="col-md-4 col-sm-4 col-xs-12 home-promo-box">
-						<?php anorya_home_promo_box(3); ?>
-					</div>
-				</div>
-			</div>
-		<?php endif; ?>	
-	
-	<?php endif; ?>
-	
-	<div class="container main-content-container">
+	<main class="container main-content-container">
 		<div class="row">
 			
 			<?php if(get_theme_mod( 'anorya_home_sidebar_setting', 'hidden' ) == 'left'){ 
 					get_sidebar(); 
 				} ?>
 			
-			<div class="<?php echo esc_attr(anorya_main_content_class('HOME')); ?>">
+			<div class="<?php echo esc_attr(anorya_main_content_class('HOME')); ?>" itemscope itemtype="http://schema.org/ItemList">
 
 			<?php
 			if ( have_posts() ) :
 
 				if ( is_home() && ! is_front_page() ) : ?>
 					<header>
-						<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
+						<h1 itemprop="name" class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
 					</header>
-
 				<?php
 				endif;
-
 					
 				if(get_theme_mod( 'anorya_home_layout_setting', 'anorya_full_width' )){
 					$anorya_home_layout = get_theme_mod( 'anorya_home_layout_setting', 'anorya_full_width' );
@@ -138,6 +91,6 @@
 				}
 			?>	
 		</div>
-	</div>	
+	</main>	
 	
 	<?php get_footer(); ?>

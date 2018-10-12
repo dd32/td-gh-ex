@@ -10,7 +10,7 @@
 ?>
 
 	<article id="post-<?php the_ID(); ?>" <?php post_class('page-container'); ?>>
-		<h1 class="anorya-page-title"><?php the_title(); ?></h1>
+		<h1 itemprop="name headline" class="anorya-page-title"><?php the_title(); ?></h1>
 		<div class="entry-content">
 			<?php
 				the_content();

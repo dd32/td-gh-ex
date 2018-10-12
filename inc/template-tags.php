@@ -1,5 +1,4 @@
 <?php
-
 	/*
 	* Custom template tags for this theme
 	*/
@@ -82,7 +81,7 @@
 		}	
 		
 		//get slider type
-		if(get_theme_mod( 'anorya_slider_type_setting','standard') == 'standard'){
+		if(get_theme_mod( 'anorya_slider_type_setting') == 'standard' || get_theme_mod( 'anorya_slider_type_setting') == '2post'){
 			$anorya_slider_item_class = 'slider2-item'; // 3 items standard slider
 		}
 		else{
@@ -94,29 +93,23 @@
 			while ( $query->have_posts() ) :
 				$query->the_post(); ?>
 				<?php if ( has_post_thumbnail() ) : ?>
-					<div class="<?php print esc_html($anorya_slider_item_class); ?>">
-						<?php if($anorya_slider_item_class == 'slider2-item'){
-							  the_post_thumbnail('anorya_large', array('class'=>'img-responsive'));	
-						}
-						else{	
-							  the_post_thumbnail('anorya_large', array('class'=>'img-responsive'));
-						}	?>
+					<div class="<?php print esc_html($anorya_slider_item_class); ?>" itemprop="itemListElement" itemscope itemtype="https://schema.org/BlogPosting">
+						<?php the_post_thumbnail('anorya_large', array('class'=>'img-responsive', 'itemprop'=>'image'));	?>
+						
+						
 					  
 					<div class="slider-item-overlay">
 						<div class="slider-post-title">
-							<h1><a href="<?php the_permalink(); ?>"><?php print the_title(); ?></a></h1>
+							<h1 itemprop="name headline"><a itemprop="url" href="<?php the_permalink(); ?>"><?php print the_title(); ?></a></h1>
 						</div>	
 						<p class="slider-post-date-desc"><?php esc_html_e('Posted On ','anorya'); ?>
-						<span class="slider-post-date">
-							<?php 
-								
-								print esc_html(get_the_date(get_option( 'date_format' ),$query->post->ID));
-							?>
-						</span>
+						<time class="slider-post-date" datetime="<?php print esc_html(get_the_date("Y-m-d",$query->post->ID)); ?>" itemprop="datePublished">
+							<?php print esc_html(get_the_date(get_option( 'date_format' ),$query->post->ID)); ?>
+						</time>
 						<?php esc_html_e('In ','anorya'); ?>
-						<span class="slider-post-date"><?php echo esc_html( anorya_get_post_display_category($query->post->ID) );?></span>
+						<span itemprop="category" class="slider-post-date"><?php echo esc_html( anorya_get_post_display_category($query->post->ID) );?></span>
 						</p>   
-						<a href="<?php print esc_url(the_permalink());?>" class="slider-post-button-container btn btn-primary"><?php esc_html_e('Read More','anorya'); ?></a>
+						<a itemprop="url" href="<?php print esc_url(the_permalink());?>" class="slider-post-button-container btn btn-primary"><?php esc_html_e('Read More','anorya'); ?></a>
 					</div>
 				</div>
 				<?php endif;			
@@ -185,20 +178,20 @@
 			if ( $query->have_posts() ) : ?>
 			
 			
-				<div class="row similar-posts">
+				<div class="row similar-posts" itemscope itemtype="http://schema.org/ItemList">
 					<h2><?php esc_html_e('You may also like','anorya'); ?> </h2>
 				
 				<?php	while ( $query->have_posts() ) :
  
 							$query->the_post(); ?>
-							<div class="col-md-4 col-sm-4 col-xs-12 similar-post">
+							<div class="col-md-4 col-sm-4 col-xs-12 similar-post" itemprop="itemListElement" itemscope itemtype="https://schema.org/BlogPosting">
 								<div class="grid-post-img-container">
 									<?php 
 										if( has_post_thumbnail()){
-											 the_post_thumbnail('anorya_medium', array('class' => 'img-responsive')); 
+											 the_post_thumbnail('anorya_medium', array('class' => 'img-responsive', 'itemprop'=>'image')); 
 										}	?>
 								</div>
-								<?php the_title( '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark"><h4>', '</h4></a>' ); ?>
+								<?php the_title( '<a itemprop="url" href="' . esc_url( get_permalink() ) . '" rel="bookmark"><h4 itemprop="name headline">', '</h4></a>' ); ?>
 
 							</div>
 				<?php	endwhile; ?>
@@ -419,22 +412,6 @@
 		</div> <?php
 	}
 
-	//display logo
-	// No longer used since 1.0.2
-	function anorya_display_logo(){
-		
-		if(get_theme_mod( 'anorya_logo_image_setting')): ?>
-			<a href="<?php print esc_url(home_url( '/' )); ?>">
-				<img class="img-responsive align-center" 
-					src="<?php print esc_url_raw(get_theme_mod( 'anorya_logo_image_setting')); ?>" 
-					alt="<?php print esc_attr(get_bloginfo( 'name', 'display' ) ); ?>" /></a>
-		<?php else: ?>
-			<a href="<?php print esc_url(home_url( '/' )); ?>">
-					<h1><?php print esc_attr(get_bloginfo( 'name', 'display' ) ); ?></h1>
-				</a>
-		<?php endif;
-	}
-	
 	//change custom logo class
 	function anorya_custom_logo_class($html){
    
@@ -444,6 +421,7 @@
 	}	
 	add_filter( 'get_custom_logo', 'anorya_custom_logo_class' );
 
+	
 	//display header banner
 	function anorya_display_header_banner(){
 		if(get_theme_mod( 'anorya_header_banner_image_setting')): ?>
@@ -460,5 +438,108 @@
 		<?php endif;	
 	}	
 	
+	//display hidden sidebar if enabled
+	function anorya_display_hidden_sidebar()
+	{
+		if ( is_active_sidebar( 'anorya_widget_hidden_sidebar' ) ):
+		?>	
+				<aside class="hidden-sidebar">
+					<div class="hidden-sidebar-close">
+						<a id="sidebar-close"><i class="fa fa-close"></i></a>
+					</div>
+					<div class="widget-area row">
+						<?php dynamic_sidebar( 'anorya_widget_hidden_sidebar' );	?>	
+					</div>
+				</aside>	
+		<?php
+		
+			endif;
+	}
 	
-?>
+	//comments callback 
+	function anorya_comments_callback($comment, $args, $depth){
+		
+		//checks if were using a div or ol|ul for our output
+		$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';?>
+
+		<<?php echo esc_attr($tag); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $args['has_children'] ? 'parent' : '', $comment ); ?>>
+			<div id="div-comment-<?php comment_ID(); ?>" class="comment-body col-md-12 col-sm-12 post-comment 
+			<?php if($depth > 1): echo 'comment-reply '; endif;?>" itemscope itemtype="https://schema.org/Comment">
+				
+					
+				<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'],'','',array('class' => 'img-responsive img-circle') ); ?>
+				<h6 itemprop="author"><?php print get_comment_author_link( $comment ); ?>
+					<span class="comment-date" itemprop="dateCreated"><?php printf( esc_html__( '%1$s at %2$s','anorya' ), get_comment_date( '', $comment ), get_comment_time() ); ?></span>
+					<?php edit_comment_link( esc_html__( 'Edit','anorya' ), '<span class="edit-link">', '</span>' ); ?>
+				</h6>
+
+				<?php if ( $comment->comment_approved == '0') : ?>
+				<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.','anorya' ); ?></p>
+				<?php endif; ?>
+
+				<div itemprop="text">
+				<?php comment_text(); ?> 
+				</div>
+
+				<?php
+				comment_reply_link( array_merge( $args, array(
+					'add_below' => 'div-comment',
+					'depth'     => $depth,
+					'max_depth' => $args['max_depth'],
+					'reply_text' => '<i class="fa  fa-mail-reply" aria-hidden="true"></i> '.__('Reply','anorya'), 
+					'add_below'     => 'comment',
+					'respond_id'    => 'respond',
+					
+					) ) );  ?>
+			
+			</div>
+        <?php
+	}
+	
+	//move textarea comment field to the bottom of the form 
+	function anorya_comment_field_to_bottom( $fields ) {
+
+		$comment_field = $fields['comment'];
+		unset( $fields['comment'] );
+		$fields['comment'] = $comment_field;
+		return $fields;
+	}
+	add_filter( 'comment_form_fields', 'anorya_comment_field_to_bottom' );
+	
+	
+	/* Change Excerpt length */
+	function anorya_excerpt_length( ) {
+			return 40;
+	}
+	add_filter( 'excerpt_length', 'anorya_excerpt_length');	
+	
+	// Remove [...] from excerpt
+	function anorya_excerpt_more( $more ) {
+		return '...';
+	}
+	add_filter('excerpt_more', 'anorya_excerpt_more');
+	
+	//customize tag cloud widget - all same size
+	function anorya_widget_tag_cloud_args($args) {
+		
+		$args['largest'] = 0.650; 
+		$args['smallest'] = 0.650; 
+		$args['unit'] = 'em'; 
+		
+		return $args;
+		
+	}
+	add_filter( 'widget_tag_cloud_args', 'anorya_widget_tag_cloud_args' );
+	
+	//customize nav menu widget
+	function anorya_nav_menu_widget_args($args){
+		
+		$args['walker'] = new Anorya_Widget_Nav_Walker();
+		$args['container'] = 'nav';
+		$args['container_class'] = 'navbar';
+		//$args['container_id'] = 'primaryNav';
+		$args['menu_class'] = 'nav navbar-nav';
+		
+		return $args;
+	}
+	add_filter( 'widget_nav_menu_args', 'anorya_nav_menu_widget_args' );

@@ -44,7 +44,7 @@
 			extract($args);
 
 			
-			$widget_output = '<div class="widget">';
+			$widget_output = '<div class="widget" itemscope itemtype="http://schema.org/ItemList">';
 			//title output
 			if(isset( $instance['anorya_title_widget'] ) || $instance['anorya_title_widget']){
 				$widget_output .= '<h4>'.esc_attr($instance['anorya_title_widget']).'</h4>';
@@ -63,23 +63,23 @@
 			if ( $query->have_posts() ) : 
 				while ( $query->have_posts() ) :
 					$query->the_post(); 
-					$widget_output .= '<div class="latest-post-container col-md-12">';
+					$widget_output .= '<div class="latest-post-container col-md-12" itemprop="itemListElement" itemscope itemtype="https://schema.org/BlogPosting">';
 						
 					if ( has_post_thumbnail() ) :
 						$widget_output .= '<div class="latest-post-img-container">';
-						$widget_output .= '<a href="'.esc_url(get_permalink($query->post->ID)).'">';
-						$widget_output .=  get_the_post_thumbnail($query->post->ID,'anorya_small', array('class'=>'img-responsive'));
+						$widget_output .= '<a itemprop="url" href="'.esc_url(get_permalink($query->post->ID)).'">';
+						$widget_output .=  get_the_post_thumbnail($query->post->ID,'anorya_small', array('class'=>'img-responsive','itemprop'=>'image'));
 						$widget_output .= '</a>';
 						$widget_output .= '</div>';
 					endif; 	
 					
-					$widget_output .= '<p><a href="';
+					$widget_output .= '<p itemprop="name headline"><a itemprop="url" href="';
 					$widget_output .= esc_url(get_permalink($query->post->ID));
-					$widget_output .= '">'.esc_attr(get_the_title($query->post->ID));
+					$widget_output .= '">'.esc_html(get_the_title($query->post->ID));
 					$widget_output .= '</a></p>';
-					$widget_output .= '<span class="latest-post-date">';
+					$widget_output .= '<time class="latest-post-date" datetime="'.esc_html(get_the_date("Y-m-d",$query->post->ID)).'" itemprop="datePublished">';
 					$widget_output .= esc_html(get_the_date(get_option( 'date_format' ),$query->post->ID));
-					$widget_output .= '</span>';
+					$widget_output .= '</time>';
 						
 					$widget_output .='</div>';
 							

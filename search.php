@@ -5,18 +5,14 @@
  * @package anorya
  */
 
-	get_header();
+	get_header(); ?>
 
-	// load collapsable sidebar
-	anorya_display_hidden_sidebar();	
-?>
-
-	<div class="container">
+	<main class="container main-content-container">
 		<div class="row">
 			<?php if(get_theme_mod( 'anorya_search_sidebar_setting', 'hidden' ) == 'left'){ 
 					get_sidebar(); 
 				} ?>
-			<div class="<?php echo esc_attr(anorya_main_content_class('SEARCH')); ?>">
+			<div class="<?php echo esc_attr(anorya_main_content_class('SEARCH')); ?>" itemscope itemtype="http://schema.org/ItemList">
 			<?php
 			if ( have_posts() ) : ?>
 
@@ -25,7 +21,7 @@
 				}  ?>
 				
 				<header class="page-header">
-					<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'anorya' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+					<h1 itemprop="name" class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'anorya' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
 				</header><!-- .page-header -->
 
 				<?php
@@ -71,6 +67,6 @@
 					get_sidebar(); 
 				  endif; ?>
 		</div>
-	</div>	
+	</main>	
 	
 	<?php get_footer(); ?>

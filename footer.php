@@ -21,15 +21,15 @@
 			<div class="footer-container container-fluid">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-4 col-sm-4 col-xs-12">
+						<div class="col-md-4 col-sm-12 col-xs-12">
 						<?php dynamic_sidebar('anorya_widget_footer_section_1');?>
 						</div>
 			
-						<div class="col-md-4 col-sm-4 col-xs-12">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 						<?php dynamic_sidebar('anorya_widget_footer_section_2');?>
 						</div>
 						
-						<div class="col-md-4 col-sm-4 col-xs-12">
+						<div class="col-md-4 col-sm-6 col-xs-12">
 						<?php dynamic_sidebar('anorya_widget_footer_section_3');?>
 						</div>
 					</div>

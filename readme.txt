@@ -20,6 +20,16 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Changelog ==
 
+=1.1.0 12/10/2018=
+
+* ADDED 2 Posts Slider
+* ADDED schemma.org markup
+* UPDATED JetPack compatibility settings
+* UPDATED Footer Widgets Responsive Layout
+* FIXED Slider bug not displaying when a static page set as front page 
+* FIXED Promo Boxes bug not displaying when page set as front page 
+* FIXED some minor css issues
+
 =1.0.6 12/9/2018=
 
 * FIXED Theme Screenshot Size

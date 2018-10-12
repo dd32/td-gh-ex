@@ -5,13 +5,9 @@
 	* @package anorya
 	*/
 
-	get_header();
+	get_header(); ?>
 
-	// load collapsable sidebar
-	anorya_display_hidden_sidebar();	
-?>
-
-	<div class="container main-content-container">
+	<main class="container main-content-container">
 		
 		<div class="row">
 		
@@ -35,6 +31,6 @@
 			
 			
 		</div>
-	</div>	
+	</main>	
 	
 	<?php get_footer(); ?>

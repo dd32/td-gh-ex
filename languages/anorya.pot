@@ -1,14 +1,14 @@
 # SOME DESCRIPTIVE TITLE.
-# Copyright (C) YEAR RebornThemes
+# Copyright (C) YEAR RebornThemes.com
 # This file is distributed under the same license as the PACKAGE package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Anorya 1.0.5\n"
+"Project-Id-Version: Anorya 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-09-07 13:17+0300\n"
+"POT-Creation-Date: 2018-10-12 09:32+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,21 +18,21 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 
-#: 404.php:23
+#: 404.php:18
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: 404.php:27
+#: 404.php:22
 msgid ""
 "It looks like something went wrong! Nothing was found at this location. "
 "Maybe try a search?"
 msgstr ""
 
-#: archive.php:82 search.php:56
+#: archive.php:77 search.php:52
 msgid "Previous"
 msgstr ""
 
-#: archive.php:83
+#: archive.php:78
 msgid "Next "
 msgstr ""
 
@@ -122,32 +122,15 @@ msgstr ""
 msgid "Footer Section 3"
 msgstr ""
 
-#: functions.php:335
-#, php-format
-msgid "%1$s at %2$s"
-msgstr ""
-
-#: functions.php:336
-msgid "Edit"
-msgstr ""
-
-#: functions.php:340
-msgid "Your comment is awaiting moderation."
-msgstr ""
-
-#: functions.php:350
-msgid "Reply"
-msgstr ""
-
-#: index.php:122
+#: index.php:75
 msgid " Previous"
 msgstr ""
 
-#: index.php:123 search.php:57
+#: index.php:76 search.php:53
 msgid "Next"
 msgstr ""
 
-#: search.php:28
+#: search.php:24
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
@@ -156,23 +139,23 @@ msgstr ""
 msgid "Search and hit enter..."
 msgstr ""
 
-#: single.php:29 inc/template-tags.php:116 templates/single-leftsidebar.php:28
-#: templates/single-nosidebar.php:26 templates/single-rightsidebar.php:26
+#: single.php:23 inc/template-tags.php:109 templates/single-leftsidebar.php:22
+#: templates/single-nosidebar.php:20 templates/single-rightsidebar.php:20
 msgid "In "
 msgstr ""
 
-#: single.php:46 templates/single-leftsidebar.php:45
-#: templates/single-nosidebar.php:43 templates/single-rightsidebar.php:43
+#: single.php:40 templates/single-leftsidebar.php:39
+#: templates/single-nosidebar.php:37 templates/single-rightsidebar.php:37
 msgid "TAGS: "
 msgstr ""
 
-#: single.php:61 templates/single-leftsidebar.php:59
-#: templates/single-nosidebar.php:57 templates/single-rightsidebar.php:57
+#: single.php:55 templates/single-leftsidebar.php:54
+#: templates/single-nosidebar.php:52 templates/single-rightsidebar.php:52
 msgid "Previous Post"
 msgstr ""
 
-#: single.php:64 templates/single-leftsidebar.php:62
-#: templates/single-nosidebar.php:60 templates/single-rightsidebar.php:60
+#: single.php:58 templates/single-leftsidebar.php:57
+#: templates/single-nosidebar.php:55 templates/single-rightsidebar.php:55
 msgid "Next Post"
 msgstr ""
 
@@ -378,147 +361,151 @@ msgstr ""
 msgid "Standard Slider"
 msgstr ""
 
-#: inc/customizer.php:352
+#: inc/customizer.php:345
+msgid "2 Post Slider"
+msgstr ""
+
+#: inc/customizer.php:353
 msgid "How many posts to show? "
 msgstr ""
 
-#: inc/customizer.php:368 inc/customizer.php:411
+#: inc/customizer.php:369 inc/customizer.php:412
 msgid "Select the slider posts category"
 msgstr ""
 
-#: inc/customizer.php:381
+#: inc/customizer.php:382
 msgid "Footer Settings"
 msgstr ""
 
-#: inc/customizer.php:388
+#: inc/customizer.php:389
 msgid "Display Footer Slider"
 msgstr ""
 
-#: inc/customizer.php:398
+#: inc/customizer.php:399
 msgid ""
 "Enter the number of posts that are going to be displayed on the footer "
 "slider gallery. "
 msgstr ""
 
-#: inc/customizer.php:423
+#: inc/customizer.php:424
 msgid "Display Footer Widgets Areas"
 msgstr ""
 
-#: inc/customizer.php:433
+#: inc/customizer.php:434
 msgid "Enter Footer Copyright Text"
 msgstr ""
 
-#: inc/customizer.php:446
+#: inc/customizer.php:447
 msgid "Home Promo Boxes"
 msgstr ""
 
-#: inc/customizer.php:455 inc/customizer.php:480
+#: inc/customizer.php:456 inc/customizer.php:481
 msgid "Promo Box 1"
 msgstr ""
 
-#: inc/customizer.php:463 inc/customizer.php:514
+#: inc/customizer.php:464 inc/customizer.php:515
 msgid "Promo Box  Image"
 msgstr ""
 
-#: inc/customizer.php:469 inc/customizer.php:520 inc/customizer.php:575
-#: inc/template-tags.php:119 inc/template-tags.php:390
-#: inc/template-tags.php:397 inc/template-tags.php:399
+#: inc/customizer.php:470 inc/customizer.php:521 inc/customizer.php:576
+#: inc/template-tags.php:112 inc/template-tags.php:383
+#: inc/template-tags.php:390 inc/template-tags.php:392
 msgid "Read More"
 msgstr ""
 
-#: inc/customizer.php:473
+#: inc/customizer.php:474
 msgid "Promo Box SubTitle"
 msgstr ""
 
-#: inc/customizer.php:484 inc/customizer.php:535 inc/customizer.php:590
+#: inc/customizer.php:485 inc/customizer.php:536 inc/customizer.php:591
 msgid "Promo Box Title"
 msgstr ""
 
-#: inc/customizer.php:495
+#: inc/customizer.php:496
 msgid "Promo Box  Link"
 msgstr ""
 
-#: inc/customizer.php:506 inc/customizer.php:531
+#: inc/customizer.php:507 inc/customizer.php:532
 msgid "Promo Box 2"
 msgstr ""
 
-#: inc/customizer.php:524 inc/customizer.php:579
+#: inc/customizer.php:525 inc/customizer.php:580
 msgid "Promo Box Subtitle"
 msgstr ""
 
-#: inc/customizer.php:546 inc/customizer.php:602
+#: inc/customizer.php:547 inc/customizer.php:603
 msgid "Promo Box Link"
 msgstr ""
 
-#: inc/customizer.php:560 inc/customizer.php:586
+#: inc/customizer.php:561 inc/customizer.php:587
 msgid "Promo Box 3"
 msgstr ""
 
-#: inc/customizer.php:568
+#: inc/customizer.php:569
 msgid "Promo Box Image"
 msgstr ""
 
-#: inc/customizer.php:618
+#: inc/customizer.php:619
 msgid "Typography Settings"
 msgstr ""
 
-#: inc/customizer.php:626
+#: inc/customizer.php:627
 msgid "Select the headings font family"
 msgstr ""
 
-#: inc/customizer.php:639
+#: inc/customizer.php:640
 msgid "Select the Body font family"
 msgstr ""
 
-#: inc/customizer.php:651
+#: inc/customizer.php:652
 msgid "Font Size: "
 msgstr ""
 
-#: inc/customizer.php:665
+#: inc/customizer.php:666
 msgid "Select Language Character Set for the selected fonts."
 msgstr ""
 
-#: inc/customizer.php:666
+#: inc/customizer.php:667
 msgid "Note: Not all fonts support all the languages character sets listed"
 msgstr ""
 
-#: inc/customizer.php:695
+#: inc/customizer.php:696
 msgid "RTL Support"
 msgstr ""
 
-#: inc/customizer.php:699
+#: inc/customizer.php:700
 msgid "Enable RTL language Support"
 msgstr ""
 
-#: inc/customizer.php:711
+#: inc/customizer.php:712
 msgid "Color Settings"
 msgstr ""
 
-#: inc/customizer.php:720
+#: inc/customizer.php:721
 msgid "Main Color"
 msgstr ""
 
-#: inc/customizer.php:731
+#: inc/customizer.php:732
 msgid "Main Text Color"
 msgstr ""
 
-#: inc/customizer.php:732
+#: inc/customizer.php:733
 msgid "Used only if main color is the background color of the element"
 msgstr ""
 
-#: inc/customizer.php:743
+#: inc/customizer.php:744
 msgid "Main Hover Color"
 msgstr ""
 
-#: inc/customizer.php:744
+#: inc/customizer.php:745
 msgid "For elements using the main color"
 msgstr ""
 
-#: inc/customizer.php:755
+#: inc/customizer.php:756
 msgid "Hover Text color when main hover color is used in background"
 msgstr ""
 
-#: inc/customizer.php:756
+#: inc/customizer.php:757
 msgid "Used only if main hover color is the background color of the element"
 msgstr ""
 
@@ -546,25 +533,42 @@ msgstr ""
 msgid "Your Audio Embed Code:"
 msgstr ""
 
-#: inc/template-tags.php:109
+#: inc/template-tags.php:105
 msgid "Posted On "
 msgstr ""
 
-#: inc/template-tags.php:189
+#: inc/template-tags.php:182
 msgid "You may also like"
 msgstr ""
 
-#: inc/template-tags.php:370
+#: inc/template-tags.php:363
 msgid "All Categories"
 msgstr ""
 
-#: inc/template-tags.php:413
+#: inc/template-tags.php:406
 msgid "1 COMMENT"
 msgstr ""
 
-#: inc/template-tags.php:416
+#: inc/template-tags.php:409
 #, php-format
 msgid "%s COMMENTS"
+msgstr ""
+
+#: inc/template-tags.php:472
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: inc/template-tags.php:473
+msgid "Edit"
+msgstr ""
+
+#: inc/template-tags.php:477
+msgid "Your comment is awaiting moderation."
+msgstr ""
+
+#: inc/template-tags.php:489
+msgid "Reply"
 msgstr ""
 
 #: inc/widgets/anorya_latest_posts.php:12

@@ -5,14 +5,9 @@
 	*/
 
 	
-	get_header(); 
-	
-	// load collapsable sidebar
-	anorya_display_hidden_sidebar();	
-	
-	?>
+	get_header();  ?>
 
-	<div class="container main-content-container">
+	<main class="container main-content-container">
 		<div class="row">
 			<?php if(get_theme_mod( 'anorya_search_sidebar_setting', 'hidden' ) == 'left'){ 
 					get_sidebar(); 
@@ -39,7 +34,7 @@
 				} ?>	
 			
 		</div>
-	</div>	
+	</main>	
 
 
 <?php

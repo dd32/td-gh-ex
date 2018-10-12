@@ -14,11 +14,11 @@
 	
 	?>
 	
-		<div id="gallery_post<?php echo esc_html($post->ID); ?>" class="full-width-post-gallery-container owl-carousel owl-theme">
+		<div id="gallery_post<?php echo esc_html($post->ID); ?>" class="full-width-post-gallery-container owl-carousel owl-theme" itemscope itemtype="http://schema.org/ImageGallery">
 			<?php
 				foreach ($anorya_post_gallery_array as $anorya_attachment_id): ?>
 					<div class="full-width-post-gallery-item">
-						<?php echo '<img class="img-responsive" src="'.esc_url_raw($anorya_attachment_id['url']).'" alt="'.esc_html($anorya_attachment_id['alt']).'" />'   ?>
+						<?php echo '<img class="img-responsive" itemprop="image" src="'.esc_url_raw($anorya_attachment_id['url']).'" alt="'.esc_html($anorya_attachment_id['alt']).'" />'   ?>
 					</div>
 				<?php endforeach; ?>
 		</div>

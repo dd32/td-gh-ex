@@ -341,7 +341,8 @@
 									'settings' => 'anorya_slider_type_setting',
 									'type'     => 'radio',
 									'choices'  => array('full'  => esc_html__('Full Width Slider','anorya'),
-														'standard'  => esc_html__('Standard Slider','anorya'),),));
+														'standard'  => esc_html__('Standard Slider','anorya'),
+														'2post'  => esc_html__('2 Post Slider','anorya'),),));
 		
 		// slider posts number
 		$wp_customize->add_setting( 'anorya_slider_posts_number_setting' , array(

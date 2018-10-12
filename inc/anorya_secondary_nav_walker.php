@@ -37,21 +37,21 @@
 						array_push($item->classes,'dropdown');
 						
 						$output .= "\n" . $indent . "<li class='" .  implode(" ", $item->classes) . "'>";
-						$output .= '<a href="' . $item->url . '">';
+						$output .= '<a itemprop="url" href="' . $item->url . '">';
 						$output .= $item->title;
 						$output .= '</a>';
 						$output .= '<span class="submenu" data-toggle="collapse" data-target="#collapse-menu-item-'.$item->ID.'" ><i class="fa fa-angle-down" aria-hidden="true"></i></span>';
 					}
 					else{
 						$output .= "\n" . $indent . "<li class='" .  implode(" ", $item->classes) . "'>";
-						$output .= '<a href="' . $item->url . '">';
+						$output .= '<a itemprop="url" href="' . $item->url . '">';
 						$output .= $item->title;
 						$output .= '</a>';
 					}
 				}
 				else{
 					$output .= "\n" . $indent . "<li class='" .  implode(" ", $item->classes) . "'>";
-					$output .= '<a href="' . $item->url . '">';
+					$output .= '<a itemprop="url" href="' . $item->url . '">';
 					$output .= $item->title;
 					$output .= '</a>';
 					if(in_array('menu-item-has-children',$item->classes)){

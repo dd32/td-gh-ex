@@ -8,11 +8,11 @@
  */
  
 	if($anorya_video_url = get_post_meta($post->ID,'anorya_v_url',true)):?>
-	<div class="full-width-post-video-container">
+	<div class="full-width-post-video-container" itemprop="video" itemscope itemtype="http://schema.org/VideoObject">
 		<?php 
 			$embedCode = wp_oembed_get(esc_url_raw($anorya_video_url)); 
 			
-			//clean embed frame code from obsolete attributes
+			//clean embed frame code from not needed attributes for HTML5 validation
 			$embedCode = preg_replace('/scrolling="(.*?)"/', '', $embedCode);
 			$embedCode = preg_replace('/frameborder="(.*?)"/', '', $embedCode);
 			$embedCode = preg_replace('/gesture="(.*?)"/', '', $embedCode);

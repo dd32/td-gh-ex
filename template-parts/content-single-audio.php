@@ -9,7 +9,7 @@
  
  
 	if($anorya_audio_url = get_post_meta($post->ID,'anorya_a_url',true)):?>
-	<div class="full-width-post-audio-container">
+	<div class="full-width-post-audio-container" itemprop="audio" itemscope itemtype="http://schema.org/AudioObject">
 		<?php 
 			$embedCode = wp_oembed_get(esc_url_raw($anorya_audio_url));
 			

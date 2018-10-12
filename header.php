@@ -12,7 +12,7 @@
 		<?php wp_head(); ?>
 	</head>
 
-	<body <?php body_class(); ?>>
+	<body <?php body_class(); ?> itemscope itemtype="https://schema.org/WebPage">
 
 	<?php	if(get_theme_mod( 'anorya_loader_setting', false )): ?>
 		<div id="preloader-wrapper">
@@ -28,7 +28,7 @@
 	<?php endif; ?>
 	
 	<header>
-		<div  class="primary-navigation"> 
+		<div class="primary-navigation"> 
 			<?php	if(get_theme_mod( 'anorya_top_bar_display_setting', true )): ?>
 			<div class="top-bar"> 
 				<div class="container">
@@ -97,7 +97,7 @@
 						</div>	
 					</div>
 			
-					<div id="collapse-navigation" class="col-md-10 col-sm-12 col-xs-12 collapse navbar-collapse">
+					<div id="collapse-navigation" class="col-md-10 col-sm-12 col-xs-12 collapse navbar-collapse" itemscope itemtype="https://schema.org/SiteNavigationElement">
 						
 						<?php wp_nav_menu( array('theme_location' => 'primary_navigation', 
 												 'walker'=>new Anorya_Secondary_Nav_Walker(),
@@ -136,3 +136,56 @@
 		</div>
 		
 	</header>
+	
+	<?php
+	
+	// load collapsable sidebar
+	anorya_display_hidden_sidebar();
+	
+	//get slider type
+	if(is_home() || is_front_page()):
+	
+		if(get_theme_mod( 'anorya_slider_type_setting') == 'standard'):
+		//3 items slider ?>
+			
+			<div class="container-fluid slider-container">
+				<div id="slider2" class="slider2 owl-carousel owl-theme" itemscope itemtype="http://schema.org/ItemList">
+					<?php anorya_main_slider_items(); ?>
+				</div>
+			</div>
+		<?php elseif(get_theme_mod( 'anorya_slider_type_setting') == '2post'):	?>
+			<div class="container-fluid slider-container">
+				<div id="slider3" class="slider3 owl-carousel owl-theme" itemscope itemtype="http://schema.org/ItemList">
+					<?php anorya_main_slider_items(); ?>
+				</div>
+			</div>
+		<?php else:
+			$anorya_slider_item_class = 'slider1'; 
+			// 1 item - full width slider ?>
+			
+			<div class="container slider-container">
+				<div id="slider1" class="slider1 owl-carousel owl-theme" itemscope itemtype="http://schema.org/ItemList">
+					<?php anorya_main_slider_items(); ?>
+				</div>
+			</div>
+		<?php endif; ?>
+			
+		
+		 
+		<?php if(get_theme_mod('anorya_display_promo_boxes_setting')): ?>
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-4 col-xs-12 home-promo-box">
+						<?php anorya_home_promo_box(1); ?>	
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-12 home-promo-box">
+						<?php anorya_home_promo_box(2); ?>	
+					</div>
+					<div class="col-md-4 col-sm-4 col-xs-12 home-promo-box">
+						<?php anorya_home_promo_box(3); ?>
+					</div>
+				</div>
+			</div>
+		<?php endif; ?>	
+	
+	<?php endif; ?>

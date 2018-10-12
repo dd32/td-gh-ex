@@ -6,15 +6,9 @@
 	* @package anorya
 	*/
 
-	get_header();
+	get_header(); ?>
 
-	
-	// load collapsable sidebar
-	anorya_display_hidden_sidebar();
-	
-?>
-
-	<div class="container main-content-container">
+	<main class="container main-content-container">
 		<div class="row">
 			
 			<div class="col-md-8 col-sm-7">
@@ -22,16 +16,16 @@
 			while ( have_posts() ) : the_post();
 
 				?>
-				<article <?php post_class('full-width-post full-width-post-single'); ?>>
-					<p class="post-category-desc"><?php esc_html_e('In ','anorya'); ?><span class="post-category-content"> <?php print esc_html( anorya_get_post_display_category($post->ID) ); ?></span></p>
-					<h1 class="full-width-post-single-title"><?php the_title(); ?></h1>
+				<article <?php post_class('full-width-post full-width-post-single'); ?> itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+					<p itemprop="category" class="post-category-desc"><?php esc_html_e('In ','anorya'); ?><span class="post-category-content"> <?php print esc_html( anorya_get_post_display_category($post->ID) ); ?></span></p>
+					<h1 itemprop="name headline" class="full-width-post-single-title"><?php the_title(); ?></h1>
 				
 					<?php 
 				
 					//post format content
 					get_template_part( 'template-parts/content-single', get_post_format() ); ?>
 
-					<div class="full-width-post-content-wrap">
+					<div class="full-width-post-content-wrap" itemprop="articleBody">
 						<?php	the_content();  ?>
 					</div>
 				
@@ -39,11 +33,12 @@
 				
 				
 					<div class="row single-post-meta">
-						<div class="col-md-12 col-sm-12 col-xs-12 post-tags">
+						<div class="col-md-12 col-sm-12 col-xs-12 post-tags" itemprop="keywords">
 						<?php	esc_html_e('TAGS: ','anorya'); 
 								echo get_the_tag_list(); ?>
 						</div>
 					</div>
+					
 					<hr/>
 				
 				
@@ -76,6 +71,6 @@
 			<?php get_sidebar(); ?>
 			
 		</div>
-	</div>	
+	</main>	
 	
 	<?php get_footer(); ?>

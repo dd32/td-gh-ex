@@ -27,7 +27,7 @@
 					}	
 					
 					$output .= "\n" . $indent . "<li class='" .  implode(" ", $currentItem->classes) . "'>";
-					$output .= '<a href="' . $currentItem->url . '">';
+					$output .= '<a itemprop="url" href="' . $currentItem->url . '">';
 					$output .= $currentItem->title;
 					$output .= '</a>';
 					
@@ -35,7 +35,7 @@
 				else{
 					
 					$output .= "\n" . $indent . "<li class='" .  implode(" ", $currentItem->classes) . "'>";
-					$output .= '<a href="' . $currentItem->url . '">';
+					$output .= '<a itemprop="url" href="' . $currentItem->url . '">';
 					$output .= $currentItem->title;
 					if(in_array('menu-item-has-children',$currentItem->classes)){
 						$output .= ' <i class="fa fa-angle-down" ></i>';

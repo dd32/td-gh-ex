@@ -300,82 +300,15 @@
 	add_editor_style( 'assets/css/anorya-editor-style.css' );
 	
 	
-	//display hidden sidebar if enabled
-	function anorya_display_hidden_sidebar()
-	{
-		if ( is_active_sidebar( 'anorya_widget_hidden_sidebar' ) ):
-		?>	
-				<aside class="hidden-sidebar">
-					<div class="hidden-sidebar-close">
-						<a id="sidebar-close"><i class="fa fa-close"></i></a>
-					</div>
-					<div class="widget-area row">
-						<?php dynamic_sidebar( 'anorya_widget_hidden_sidebar' );	?>	
-					</div>
-				</aside>	
-		<?php
-		
-			endif;
-	}
-	
-	
-	//comment callback 
-	function anorya_comments_callback($comment, $args, $depth){
-		
-		//checks if were using a div or ol|ul for our output
-		$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';?>
-
-		<<?php echo esc_attr($tag); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( $args['has_children'] ? 'parent' : '', $comment ); ?>>
-			<div id="div-comment-<?php comment_ID(); ?>" class="comment-body col-md-12 col-sm-12 post-comment 
-			<?php if($depth > 1): echo 'comment-reply '; endif;?>">
-				
-					
-				<?php if ( 0 != $args['avatar_size'] ) echo get_avatar( $comment, $args['avatar_size'],'','',array('class' => 'img-responsive img-circle') ); ?>
-				<h6><?php print get_comment_author_link( $comment ); ?>
-					<span class="comment-date"><?php printf( esc_html__( '%1$s at %2$s','anorya' ), get_comment_date( '', $comment ), get_comment_time() ); ?></span>
-					<?php edit_comment_link( esc_html__( 'Edit','anorya' ), '<span class="edit-link">', '</span>' ); ?>
-				</h6>
-
-				<?php if ( $comment->comment_approved == '0') : ?>
-				<p class="comment-awaiting-moderation"><?php esc_html_e( 'Your comment is awaiting moderation.','anorya' ); ?></p>
-				<?php endif;
-
-				comment_text(); ?> 
-
-				<?php
-				comment_reply_link( array_merge( $args, array(
-					'add_below' => 'div-comment',
-					'depth'     => $depth,
-					'max_depth' => $args['max_depth'],
-					'reply_text' => '<i class="fa  fa-mail-reply" aria-hidden="true"></i> '.__('Reply','anorya'), 
-					'add_below'     => 'comment',
-					'respond_id'    => 'respond',
-					
-					) ) );  ?>
-			
-			</div>
-        <?php
-	}
-	
-	//move textarea comment field to the bottom of the form 
-	function anorya_comment_field_to_bottom( $fields ) {
-
-		$comment_field = $fields['comment'];
-		unset( $fields['comment'] );
-		$fields['comment'] = $comment_field;
-		return $fields;
-	}
-	add_filter( 'comment_form_fields', 'anorya_comment_field_to_bottom' );
-	
-	
-	
-	
-	//Add-Inline js script for main featured slider
+	//Add-In line js script for main featured slider
 	function anorya_slider_script(){
 		
 		//get slider type
-		if(get_theme_mod( 'anorya_slider_type_setting','standard') == 'standard'){
+		if(get_theme_mod( 'anorya_slider_type_setting') == 'standard'){
 			$anorya_slider_item_class = 'slider2'; // 3 items standard slider
+		}
+		else if(get_theme_mod( 'anorya_slider_type_setting') == '2post'){
+			$anorya_slider_item_class = 'slider3'; // 3 items standard slider
 		}
 		else{
 			$anorya_slider_item_class = 'slider1'; // 1 item - full width slider
@@ -390,7 +323,7 @@
 		
 		$anorya_script .= "\n".'$(document).ready(function(){';
 		
-		if(is_home())
+		if(is_home() || is_front_page())
 		{
 			if($anorya_slider_item_class == 'slider2'){
 				$anorya_script .= "\n\n".'$(".slider2").owlCarousel({
@@ -414,6 +347,42 @@
 												},
 												767 : {
 													items:2 
+												},
+												991 : {	
+													items:2
+												},
+												1300 :{ 
+													items:2 
+												}
+											}
+										});';	
+			}
+			else if($anorya_slider_item_class == 'slider3'){
+				$anorya_script .= "\n\n".'$(".slider3").owlCarousel({
+											items:2,
+											loop:true,
+											lazyLoad: true,
+											nav : true, 
+											pagination: false,
+											dots:false, 
+											smartSpeed:700,
+											margin:0,
+											center:false,
+											autoWidth:false,
+											stagePadding:0,
+											padding:0,	
+											navText:  ["<i class=\'fa fa-angle-left\'></i>","<i class=\'fa fa-angle-right\'></i>"],
+											responsive : {	
+												0 : { 
+													items:1,
+													autoHeight:false,
+													autoWidth:false,
+													center:true,
+													stagePadding:0,
+												},
+												767 : {
+													items:1,
+													stagePadding:0,	
 												},
 												991 : {	
 													items:2
@@ -506,45 +475,3 @@
 			
 	}
 	add_action( 'wp_enqueue_scripts', 'anorya_slider_script' );
-	
-	
-	
-	/* Change Excerpt length */
-	function anorya_excerpt_length( ) {
-			return 40;
-	}
-	add_filter( 'excerpt_length', 'anorya_excerpt_length');	
-	
-	// Remove [...] from excerpt
-	function anorya_excerpt_more( $more ) {
-		return '...';
-	}
-	add_filter('excerpt_more', 'anorya_excerpt_more');
-	
-	//customize tag cloud widget - all same size
-	function anorya_widget_tag_cloud_args($args) {
-		
-		$args['largest'] = 0.650; 
-		$args['smallest'] = 0.650; 
-		$args['unit'] = 'em'; 
-		
-		return $args;
-		
-	}
-	add_filter( 'widget_tag_cloud_args', 'anorya_widget_tag_cloud_args' );
-	
-	//customize nav menu widget
-	function anorya_nav_menu_widget_args($args){
-		
-		$args['walker'] = new Anorya_Widget_Nav_Walker();
-		$args['container'] = 'nav';
-		$args['container_class'] = 'navbar';
-		//$args['container_id'] = 'primaryNav';
-		$args['menu_class'] = 'nav navbar-nav';
-		
-		return $args;
-	}
-	add_filter( 'widget_nav_menu_args', 'anorya_nav_menu_widget_args' );
-	
-
-?>

@@ -7,21 +7,16 @@
 	* @package anorya
 	*/
 
-	get_header();
+	get_header(); ?>
 
-	// load collapsable sidebar
-	anorya_display_hidden_sidebar();
-		
- ?>
-
-	<div class="container main-content-container">
+	<main class="container main-content-container">
 		<div class="row">
 			
 			<?php if(get_theme_mod( 'anorya_archives_sidebar_setting', 'hidden' ) == 'left'){ 
 					get_sidebar(); 
 				} ?>
 
-			<div class="<?php echo esc_attr(anorya_main_content_class('ARCHIVES')); ?>">
+			<div class="<?php echo esc_attr(anorya_main_content_class('ARCHIVES')); ?>" itemscope itemtype="http://schema.org/ItemList">
 
 		<?php
 		
@@ -98,6 +93,6 @@
 				}
 			?>
 		</div>
-	</div>	
+	</main>	
 	
 <?php get_footer(); ?>

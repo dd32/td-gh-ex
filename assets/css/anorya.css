@@ -833,6 +833,7 @@ Description: Main Theme Stylesheet.
 		height:470px;
 	}
 	
+	
 	.slider2-item { width:700px; }
 
 	.slider1-item img, .slider2-item img{
@@ -840,6 +841,23 @@ Description: Main Theme Stylesheet.
 		overflow:hidden;
 		margin: 0;
 	}
+	
+	.slider3 .slider2-item{
+		width:50%;
+	}	
+
+	.slider3 .slider2-item img{
+		min-width: 50vw; 
+		overflow:hidden;
+		margin: 0;
+	}	
+	
+	.slider3 .slider2-item .slider-item-overlay,
+	.slider3 .slider2-item  .slider-post-title,
+	.slider3 .slider2-item  .slider-post-date-desc
+	{
+		display:block;
+	}	
 	
 	.slider-item-overlay{
 		position:absolute;
@@ -854,9 +872,16 @@ Description: Main Theme Stylesheet.
 		padding-right:20px;
 		display:none;
 		background:rgba(255,255,255,0.5);
+		transition:all 700ms ease;
 	}
 	
+	.slider3 .slider2-item .slider-item-overlay:hover{
+		background:rgba(255,255,255,0.2);
+	}	
+	
 	.slider2-item .slider-item-overlay { max-width:700px;}
+	
+	.slider3 .slider2-item .slider-item-overlay { max-width:100%;}
 	
 	.slider-item-overlay a:hover { text-decoration:none;}
 	
@@ -864,8 +889,6 @@ Description: Main Theme Stylesheet.
 		animation: fadeInDown 1s;
 		display:none;
 	}	
-	
-	
 	
 	.slider-post-title h1 { 
 		font-size:3.200em;
@@ -929,6 +952,9 @@ Description: Main Theme Stylesheet.
 	.owl-item.active.center>.slider2-item>.slider-item-overlay>.slider-post-title{ display:block; }
 	
 	
+	.slider3 .owl-nav{
+		display:block;
+	}	
 	
 	.owl-nav {
 		position:absolute;
@@ -1945,6 +1971,7 @@ Description: Main Theme Stylesheet.
 		padding-top:10px;
 		transition: all 0.3s ease;
 		z-index:100;
+		cursor:pointer;
 	}
 	
 	.scroll-to-top:hover { padding-top:5px;}
@@ -2376,12 +2403,18 @@ Description: Main Theme Stylesheet.
 			margin-bottom:50px;
 		}	
 		
-		.slider1-item img   { 
+		.slider1-item img  { 
 			width:100%;
 			position:absolute;
 			top:-50%;
 			margin-top:30%;
 			transform:translateY(-30%);
+			overflow:hidden; 
+		}
+		
+		.slider3 .slider2-item img   { 
+			width:100%;
+			position:absolute;
 			overflow:hidden; 
 		}
 		
@@ -2398,7 +2431,7 @@ Description: Main Theme Stylesheet.
 		
 		#preloader {left:60%;}
 		
-		.slider1 .owl-nav, .slider2 .owl-nav{ display:block;}
+		.slider1 .owl-nav, .slider2 .owl-nav, .slider3 .owl-nav{ display:block;}
 		
 		.similar-post {
 			min-height: 200px;
@@ -2586,16 +2619,17 @@ Description: Main Theme Stylesheet.
 			height:250px;
 		}
 		
-		.slider1-item, .slider2-item { 
+		.slider1-item, .slider2-item, .slider3 .slider2-item { 
 			width:100%;
 			height:250px;
 			overflow:hidden;
 		}
 		
-		.slider1-item img, .slider2-item img {
+		.slider1-item img, .slider2-item img,.slider3 .slider2-item img {
 			width:auto;
 			height:250px;
-		}	
+		}
+
 		
 		.slider1-item .slider-item-overlay,
 		.slider2-item .slider-item-overlay {
