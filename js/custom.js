@@ -32,8 +32,11 @@ jQuery(document).ready( function() {
 	    });
 	});
 
-	jQuery('#adviso-search #search-icon').click( function() {
-		jQuery('#jumbosearch').fadeIn();
+	jQuery('#masthead #search-icon').each( function() {
+		jQuery(this).on( 'click', function() {
+			alert('123');
+			jQuery('#jumbosearch').fadeIn();
+		});
 	});
 	
 	jQuery('#jumbosearch .closeicon').click(function() {

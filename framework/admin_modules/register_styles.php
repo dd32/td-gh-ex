@@ -11,12 +11,6 @@ function adviso_scripts() {
     //Bootstrap
     wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/assets/bootstrap/css/bootstrap.min.css' );
 
-    //Nivo Slider
-    wp_enqueue_style( 'nivo-slider', get_template_directory_uri() . '/assets/css/nivo-slider.css' );
-
-    //Nivo Skins
-    wp_enqueue_style( 'nivo-skin', get_template_directory_uri() . '/assets/css/nivo-default/default.css' );
-
     //Hover Styles
     wp_enqueue_style( 'hover-style', get_template_directory_uri() . '/assets/css/hover.min.css' );
 

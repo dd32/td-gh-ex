@@ -30,10 +30,11 @@
             <button id="search-icon">
             	<i class="fa fa-search"></i>
             </button>
-            
-            <?php get_template_part('modules/header/jumbosearch'); ?>
-            
         </div>
+        
+        <?php get_template_part('modules/header/jumbosearch'); ?>
+        
+        
         <?php if (class_exists('woocommerce') && get_theme_mod('adviso_top_cart_toggle')) : ?>
             <div id="top-cart">
                 <div class="top-cart-icon">

@@ -1096,70 +1096,124 @@ body.home #site-navigation ul.menu > li:hover a {
   color: #5deb68;
   text-decoration: underline;
 }
-.page404 {
+.error404 {
   text-align: center;
 }
-.page404 .page-header h1.page-title {
+.error404 img {
+  width: 50%;
+}
+.error404 .page-header h1.page-title {
   font-weight: bold;
   border-bottom: none;
   font-size: 24px;
 }
-.page404 .page-content {
+.error404 .page-content {
   margin-top: 0px;
 }
-.page404 .page-content input[type=search] {
+.error404 .page-content label {
+  width: 50%;
+}
+.error404 .page-content label input[type=search] {
+  width: 100%;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 0px;
+  border: solid 2px #eee;
 }
-.page404 .page-content input[type=search]::-webkit-input-placeholder {
+.error404 .page-content label input[type=search]::-webkit-input-placeholder {
   color: rgba(255, 87, 34, 0.6);
 }
-.page404 .page-content input[type=search]:-moz-placeholder {
+.error404 .page-content label input[type=search]:-moz-placeholder {
   color: rgba(255, 87, 34, 0.6);
 }
-.page404 .page-content input[type=search]::-moz-placeholder {
+.error404 .page-content label input[type=search]::-moz-placeholder {
   color: rgba(255, 87, 34, 0.6);
 }
-.page404 .page-content input[type=search]:-ms-input-placeholder {
+.error404 .page-content label input[type=search]:-ms-input-placeholder {
   color: rgba(255, 87, 34, 0.6);
 }
-.page404 .page-content input[type=submit] {
-  padding: 12px;
-  font-size: 14px;
-  line-height: 1em;
-  text-transform: uppercase;
+.error404 .page-content input[type=submit] {
+  background: none;
+  border: 0px;
   box-shadow: none;
   text-shadow: none;
-  color: #eeeeee;
-  border: none;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 16px;
+  color: #ff5722;
 }
-.page404 .page-content .widget_recent_entries {
+.error404 .page-content .widgettitle {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: left;
+}
+.error404 .page-content .widget_recent_entries,
+.error404 .page-content .widget_categories,
+.error404 .page-content .widget_archive {
   text-align: left;
   margin-bottom: 100px;
 }
-.page404 .page-content .widget_recent_entries .widgettitle {
-  font-size: 24px;
-  font-weight: bold;
-}
-.page404 .page-content .widget_recent_entries ul {
+.error404 .page-content .widget_recent_entries ul,
+.error404 .page-content .widget_categories ul,
+.error404 .page-content .widget_archive ul {
   list-style: none;
   margin-left: 0;
 }
-.page404 .page-content .widget_recent_entries ul li {
+.error404 .page-content .widget_recent_entries ul li,
+.error404 .page-content .widget_categories ul li,
+.error404 .page-content .widget_archive ul li {
   float: none;
   margin-bottom: 15px;
   display: inline-block;
   margin-right: 15px;
 }
-.page404 .page-content .widget_recent_entries ul li a {
+.error404 .page-content .widget_recent_entries ul li a,
+.error404 .page-content .widget_categories ul li a,
+.error404 .page-content .widget_archive ul li a {
   display: inline-block;
   background: #f2f2f2;
   border: solid 1px #e6e6e6;
   padding: 10px;
   margin-bottom: 5px;
 }
-.page404 p {
+.error404 .page-content .widget_tag_cloud .tagcloud {
+  text-align: left;
+}
+.error404 .page-content .widget_tag_cloud .tagcloud a {
+  background: #eee;
+  border-radius: 20px;
+  font-size: 14px !important;
+  font-weight: normal;
+  color: #343d46;
+  padding: 7px 14px;
+  margin-bottom: 10px;
+  display: inline-block;
+}
+.error404 .page-content .widget_tag_cloud .tagcloud a:hover {
+  background: #ddd;
+}
+.error404 p {
   font-size: 16px;
+}
+body.search-no-results #content .page-content form label {
+  text-align: center;
+  width: 75%;
+}
+body.search-no-results #content .page-content form label input[type="search"] {
+  width: 100%;
+  border-radius: 0px;
+  line-height: 2em;
+  padding: 10px 5px;
+  border: solid 2px #eee;
+}
+body.search-no-results #content .page-content form input[type="submit"] {
+  background: none;
+  border: 0px;
+  box-shadow: none;
+  text-shadow: none;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  font-size: 16px;
+  color: #ff5722;
 }
 .grid-row {
   margin: 0;
