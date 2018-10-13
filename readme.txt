@@ -1,12 +1,12 @@
 ﻿=== Agency-X ===
 
-Contributors: samuraithemes
+Contributors: scorpionthemes
 Tags: one-column, two-columns,right-sidebar,grid-layout,custom-background,custom-colors,custom-menu,custom-logo,featured-images,footer-widgets,full-width-template,sticky-post,theme-options,threaded-comments,blog,portfolio
 
 
 Requires at least: 4.7
-Tested up to: 4.9.5
-Stable tag: 1.1.1
+Tested up to: 4.9.8
+Stable tag: 1.1.2
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -15,7 +15,7 @@ License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Agency X is responsive WordPress theme which can be used for web design firms or any other corporate, business, agencies, consulting, legal, attorney, law firms, online shops, digital, medical, clinic, dental, spa, beauty, massage, gym, fitness, trainer, coach, restaurant, cafe, food, recipes, technology and any other kind of website purpose. It can also be used for portfolio, photography, personal and blogging as well. This theme is simple, white, minimal, clean
 
 == License ==
-Agency X is based on Underscores https://underscores.me/, (C) Samuraithemes
+Agency X is based on Underscores https://underscores.me/, (C) scorpionthemes
 Agency X is distributed under the terms of the GNU GPL v2 or later.
 
 == Credits ==
@@ -48,6 +48,9 @@ Agency-X includes support for contact form 7
 
 
 == Changelog ==
+
+= 1.1.2 - 13 Oct 2018 =
+* blog layout fixed 
 
 = 1.1.1 - 16 April 2018 =
 * Contact Form 7 Support Added 

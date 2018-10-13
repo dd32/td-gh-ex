@@ -15,12 +15,18 @@ get_header();?>
 
 <section id="blog" class="section page">
     <div class="container">
-        <?php if ( have_posts() ) : ?>
+        <?php if ( have_posts() ) : 
+            $i=0;
+            ?>
             <div class="row">
                 <div class="col-md-8">
-                <?php while ( have_posts() ) : the_post(); ?>
+                <?php while ( have_posts() ) : the_post();
+                 $i=$i+1; ?>
                     <?php                       
                         get_template_part( 'template-parts/content' );
+                        if($i % 2 == 0){
+                           echo '<div class="clearfix"></div>';
+                        }
                     ?>
                 <?php endwhile; ?>
                             <div class="row">
