@@ -63,6 +63,17 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.18 (2018-10-13)
+-------------------------
+- Updated with Gutenberg support
+	- Gutenberg editor styles
+	- Styling of Gutenberg blocks
+	- Custom Rams Gutenberg palette
+	- Custom Rams Gutenberg typography styles
+- Added option to disable Google Fonts with a translateable string
+- Updated theme description
+- Improved compatibility with < PHP 5.5
+
 Version 1.17 (2018-05-24)
 -------------------------
 - Fixed output of cookie checkbox in comments
