@@ -52,7 +52,7 @@ class hoffman_recent_posts extends WP_Widget {
 							<div class="post-icon">
 							
 								<?php 
-								$post_format = get_post_format( $recent_post->ID ) ?: 'standard';
+								$post_format = get_post_format( $recent_post->ID ) ? get_post_format( $recent_post->ID ) : 'standard';
 								
 								if ( has_post_thumbnail( $recent_post->ID ) ) {
 									echo get_the_post_thumbnail( $recent_post->ID, 'thumbnail' );
