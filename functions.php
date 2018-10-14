@@ -493,7 +493,7 @@ if ( ! function_exists( 'rams_add_gutenberg_features' ) ) :
 
 		/* Gutenberg Palette --------------------------------------- */
 
-		$accent_color = get_theme_mod( 'accent_color' ) ? get_theme_mod( 'accent_color' ) : '#FF706C';
+		$accent_color = get_theme_mod( 'accent_color' ) ? get_theme_mod( 'accent_color' ) : '#6AA897';
 
 		add_theme_support( 'editor-color-palette', array(
 			array(

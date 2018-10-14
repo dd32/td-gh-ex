@@ -63,6 +63,10 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.19 (2018-10-14)
+-------------------------
+- Fixed the default accent color in style.css and in the Gutenberg custom palette function
+
 Version 1.18 (2018-10-13)
 -------------------------
 - Updated with Gutenberg support
