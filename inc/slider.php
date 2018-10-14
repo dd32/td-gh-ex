@@ -71,10 +71,11 @@ function graphene_slider( $args = array() ){
 
 					/* Background image*/
 					if ( $display == 'bgimage-excerpt' || $display == 'banner' ) {
-						$image = apply_filters( 'jetpack_photon_url', graphene_get_slider_image( get_the_ID(), 'graphene_slider', true ) );
+						$image = graphene_get_slider_image( get_the_ID(), 'graphene_slider', true );
 						if ( $image ){
+							if ( is_array( $image ) ) $image = $image[0];
 							$style .= 'style="background-image:url(';
-							$style .= ( is_array( $image ) ) ? $image[0] : $image;
+							$style .= apply_filters( 'jetpack_photon_url', $image );
 							$style .= ');"';
 						}
 					}

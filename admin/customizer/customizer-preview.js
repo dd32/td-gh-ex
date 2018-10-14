@@ -206,7 +206,7 @@ jQuery(document).ready(function($) {
 		$('#graphene-preview-css').append('#content, #header {background-color: ' + to + '}');
 	});	});
 	wp.customize('graphene_settings[content_bg]', function(value){ value.bind(function(to){
-		$('#graphene-preview-css').append('.post, .singular .hentry {background-color: ' + to + ';}');
+		$('#graphene-preview-css').append('.post, .singular .post {background-color: ' + to + ';}');
 	});	});
 	wp.customize('graphene_settings[meta_border]', function(value){ value.bind(function(to){
 		$('#graphene-preview-css').append('.entry-footer {border-color: ' + to + ';}');

@@ -53,7 +53,7 @@ function graphene_rich_snippet(){
 
 	$images = array();
 	foreach ( $post_images as $aspect_ratio => $image )	if ( $image ) $images[] = $image['url'];
-	$images = array_unique( $images );
+	$images = array_values( array_unique( $images ) );
 
 	if ( $images ) $metadata['image'] = $images;
 

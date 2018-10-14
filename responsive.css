@@ -109,14 +109,14 @@
 	.post .entry {
 		padding: 0 15px;
 	}
-	.singular .hentry,
-	.hentry.author {
+	.singular .post,
+	.post.author {
 		-webkit-box-shadow: none;
 		box-shadow: none;
 		border: none;
 	}
-	.singular .hentry .entry,
-	.hentry.author .entry {
+	.singular .post .entry,
+	.post.author .entry {
 		padding: 0;
 	}
 	.post-nav {
@@ -135,8 +135,8 @@
 		font-size: 1.2em;
 		line-height: normal;
 	}
-	.page .hentry .post-title, 
-	.page .hentry .post-title a {
+	.page .post .post-title, 
+	.page .post .post-title a {
 		font-size: 1.5em;
 		line-height: normal;
 	}

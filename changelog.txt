@@ -4,6 +4,11 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.5.2
+	* Updated: Removed all instances of hentry since we are no longer using hatom markup, to avoid Google Rich Snippet error
+	* Fixed: Error in Rich Snippet markup if the same images are used
+	* Fixed: Slider image would sometimes not appear when using Jetpack
+
 Version 2.5.1
 	* Added: Compatibility with Gutenberg
 	* Added: Open Graph microdata format, with detection of SEO plugins
