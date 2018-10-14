@@ -104,6 +104,10 @@ released
 1. Update menu default active.
 2. Update styling issue.
 
+@Version 3.5
+1. Add customize-selective-refresh-widgets support.
+2. Fixed styling issues.
+
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL

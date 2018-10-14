@@ -28,6 +28,7 @@ add_action( 'after_setup_theme', 'becorp_setup' );
 			add_theme_support( 'title-tag' );
 			// This theme uses wp_nav_menu() in one location.
 			add_theme_support('post-thumbnails');
+			add_theme_support( 'customize-selective-refresh-widgets' );
 			// This theme uses wp_nav_menu() in one location.
 			register_nav_menu( 'primary', __( 'Primary Menu', 'becorp' ) );
 			// theme Background support

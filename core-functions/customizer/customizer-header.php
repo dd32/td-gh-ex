@@ -2,6 +2,22 @@
 add_action( 'customize_register', 'becorp_header_customizer' );
 function becorp_header_customizer( $wp_customize ) {
 wp_enqueue_style('becorp-customizr', BECORP_TEMPLATE_DIR_URI .'/css/customizr.css');
+
+$wp_customize->get_setting( 'blogname' )->transport = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
+	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
+
+
+	$wp_customize->selective_refresh->add_partial( 'blogname', array(
+		'selector' => '.site-title a',
+		'render_callback' => 'becorp_customize_partial_blogname',
+	) );
+	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
+		'selector' => '.site-description',
+		'render_callback' => 'becorp_customize_partial_blogdescription',
+	) );
+
+
 $wp_customize->remove_control('header_textcolor');
 
 /* Header Section */
