@@ -1,6 +1,6 @@
 <?php 
 /* 	SPARK Theme's About Page
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since SPARK 3.0
 */
@@ -14,18 +14,18 @@
     
     <h2>IMPORTANT NOTE !</h2>As per the Requirements of New Theme Review Guidelines, Theme Options will not be available at this location anymore for the Free Version of SPARK Theme. You can get all those options under <b>Appearance > Customize</b><br /><br />
     
-    If you love the Excellent Previous Style Options You may consider using our <a href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>" target="_blank">Extend Version Themes</a>. <span class="impspe">All Options will be under <b>Appearance > SPARK Options</b> with large screen and user friendtly Interface in Extended Version</span>
+    If you love the Excellent Previous Style Options You may consider using our <a href="<?php echo esc_url('https://d5creation.com/themegallery/'); ?>" target="_blank">Extend Version Themes</a>. <span class="impspe">All Options will be under <b>Appearance > SPARK Options</b> with large screen and user friendtly Interface in Extended Version</span>
     </div>
     
-    <div class="infohead"><span class="donation">A Theme is an effort of many sleepless nights of the Developers.  If you like this FREEE Theme You can consider for a 5 star rating and honest review. Your review will inspire us. You can <a href="https://wordpress.org/support/view/theme-reviews/spark" target="_blank"><strong>Review Here</strong></a>.</span><br /><br /><br /><span class="donation"> Need More Features and Options including 3D Slides, Unlimited Slide Images, Links from Featured Boxes and 100+ Advanced Features and Controls? Try <a href="<?php echo esc_url('http://d5creation.com/theme/spark/'); ?>" target="_blank"><strong>SPARK Extend</strong></a></span><br /> <br /><br /><span class="donation"> You can Visit the SPARK Extend <a href="<?php echo esc_url('http://demo.d5creation.com/themes/?theme=SPARK'); ?>" target="_blank"><strong>DEMO 1</strong></a> and <a href="<?php echo esc_url('http://demo.d5creation.com/themes/?theme=SPARK-2'); ?>"><strong>DEMO 2</strong></a></span><a href="<?php echo esc_url('http://d5creation.com/theme/spark/'); ?>" target="_blank" class="extendlink"> </a></div>
+    <div class="infohead"><span class="donation">A Theme is an effort of many sleepless nights of the Developers.  If you like this FREEE Theme You can consider for a 5 star rating and honest review. Your review will inspire us. You can <a href="https://wordpress.org/support/view/theme-reviews/spark" target="_blank"><strong>Review Here</strong></a>.</span><br /><br /><br /><span class="donation"> Need More Features and Options including 3D Slides, Unlimited Slide Images, Links from Featured Boxes and 100+ Advanced Features and Controls? Try <a href="<?php echo esc_url('https://d5creation.com/theme/spark/'); ?>" target="_blank"><strong>SPARK Extend</strong></a></span><br /> <br /><br /><span class="donation"> You can Visit the SPARK Extend <a href="<?php echo esc_url('http://demo.d5creation.com/themes/?theme=SPARK'); ?>" target="_blank"><strong>DEMO 1</strong></a> and <a href="<?php echo esc_url('http://demo.d5creation.com/themes/?theme=SPARK-2'); ?>"><strong>DEMO 2</strong></a></span><a href="<?php echo esc_url('https://d5creation.com/theme/spark/'); ?>" target="_blank" class="extendlink"> </a></div>
         
         <p>SPARK is a CSS3 Powered and WordPress Latest Version Ready Theme for Small Business Companies to Corporate Business. Modern Design and other options will give the WordPress Driven Site an attractive look.  SPARK is Responsive, Super Elegant and Professional Theme which will be adjusted automatically with all smart devices.  Right and Footer Sidebar will be usable for showing the widgets. Full Wide Template can be used for showing showcase or other pages</p>
         
         <div class="floatcntr">
-    		<a class="specialbutton inblk" href="<?php echo esc_url('http://d5creation.com/theme/spark/'); ?>">SPARK Theme Page</a>
+    		<a class="specialbutton inblk" href="<?php echo esc_url('https://d5creation.com/theme/spark/'); ?>">SPARK Theme Page</a>
             <a class="specialbutton inblk" href="<?php echo esc_url('http://demo.d5creation.com/themes/?theme=SPARK'); ?>">Demo 01</a>
             <a class="specialbutton inblk" href="<?php echo esc_url('http://demo.d5creation.com/themes/?theme=SPARK-2'); ?>">Demo 02</a>
-            <a class="specialbutton inblk" href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>">D5 Theme Gallery</a>
+            <a class="specialbutton inblk" href="<?php echo esc_url('https://d5creation.com/themegallery/'); ?>">D5 Theme Gallery</a>
     	</div>
         
         <h2 class="spetitle">Features of SPARK vs SPARK Extend</h2>
@@ -70,22 +70,26 @@
             <tr><td>Unlimited Client's Testimonial Adding Facility</td><td>NO</td><td>YES</td></tr>
             <tr><td>Awesome Support with Foruma and Dedicated E-Mail</td><td>Only Forum</td><td>Forum and E-Mail</td></tr>
             
-            <tr><th><a href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th><th><a href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th><th><a href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th></tr>
+            <tr><th><a href="<?php echo esc_url('https://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th><th><a href="<?php echo esc_url('https://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th><th><a href="<?php echo esc_url('https://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th></tr>
 		</table>
         <span class="alncenter">* Each Extend Theme is only $7.5 with DEVELOPER Membership</span>
         
         <div class="specialmsg">
     		<div class="specialtext floatlt ">Learn More about our Flexible Membership Options</div>
-        	<a class="specialbutton floatrt" href="<?php echo esc_url('http://d5creation.com/mp/'); ?>">View Pricing and Features</a>
+        	<a class="specialbutton floatrt" href="<?php echo esc_url('https://d5creation.com/mp/'); ?>">View Pricing and Features</a>
     	</div>
         
-        <div class="bottom"><img src="<?php echo get_template_directory_uri().'/inc/images/bottom.png'; ?>" alt="D5 Creation Themes"/></div>
+        <div class="bottom"><img src="<?php echo get_template_directory_uri().'/inc/images/bottom.png'; ?>" alt="D5 Creation Themes"/></div>  
+
+	<div class="floatcntr">
+		<h2 class="spetitle"><?php _e('World Class, Responsive and Premium WordPress Themes', 'spark'); ?></h2>
+		<p class="heading-des" ><?php _e('Ready to take your WordPress site to the next level? Give your CMS a beautiful design to draw in more visitors. Peoples love us because of the Simplicity of our Themes. We deliver User Friendly Responsive and Premium WordPress Themes with Unique and Modern Design. You can Trust our Themes', 'spark'); ?></p>
+		
+		<a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'https://d5creation.com/themegallery' ) ?>"><?php _e('Visit Our Theme Gallery', 'spark'); ?></a>
+        <a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'http://demo.d5creation.com' ) ?>"><?php _e('Visit Theme Demos', 'spark'); ?></a>
+		<a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'https://d5creation.com/wp-login.php?action=register' ) ?>"><?php _e('Become a Happy Member', 'spark'); ?></a> <br /><br /><br />
         
-        	
-   
+        <img width="100%" src="<?php echo get_template_directory_uri() . '/inc/images/themefeatures.png' ?>" alt="<?php _e('D5 Creation Themes', 'spark'); ?>" />
+	</div>   
 
 </div>
-
-
-
-

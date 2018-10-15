@@ -5,10 +5,7 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since SPARK 1.0
 */
-
-?>
-
-<!DOCTYPE html>
+?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
@@ -26,12 +23,12 @@
       <div id ="header">
       <div id ="header-content">
 		<!-- Site Titele and Description Goes Here -->
-       <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if ( get_header_image() !='' ): ?><img class="site-logo" src="<?php header_image(); ?>"/><?php else: ?><h1 class="site-title"><?php echo bloginfo( 'name' ); ?></h1><?php endif; ?></a>
+       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" charset="logotitle"><?php if ( get_header_image() !='' ): ?><img class="site-logo" src="<?php header_image(); ?>"/><?php else: ?><h1 class="site-title"><?php echo bloginfo( 'name' ); ?></h1><?php endif; ?></a>
 		<h2 class="site-title-hidden"><?php bloginfo( 'description' ); ?></h2>
                 
         
         <!-- Site Main Menu Goes Here -->
-        <nav id="spark-main-menu">
+        <nav id="main-menu-con">
 		<?php if ( has_nav_menu( 'main-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'main-menu' )); else: wp_page_menu(); endif; ?>
         </nav>
       

@@ -2,7 +2,7 @@
 
 	Name: Smart Image Effect
 	Author: D5 Creation, ( based on the tutirial http://goo.gl/GjlPJP )
-	Website: http://d5creation.com
+	Website: https://d5creation.com
 	Copyright: 2014-2016, D5 Creation
 	License: GNU GPL V2+
 */

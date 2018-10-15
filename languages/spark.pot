@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Innovation Lite\n"
-"POT-Creation-Date: 2016-03-08 03:26+0600\n"
+"POT-Creation-Date: 2018-10-16 05:19+0600\n"
 "PO-Revision-Date: 2015-10-29 02:02+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.7\n"
+"X-Generator: Poedit 1.8.13\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -134,43 +134,43 @@ msgstr ""
 msgid "Next Entries &raquo;"
 msgstr ""
 
-#: fullwidth.php:22 page.php:25
+#: fullwidth.php:20 page.php:25
 msgid "Edit This Entry"
 msgstr ""
 
-#: functions.php:27
+#: functions.php:25
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:116 functions.php:121
+#: functions.php:117 functions.php:122
 msgid "Read More..."
 msgstr ""
 
-#: functions.php:135
+#: functions.php:136
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:144
+#: functions.php:145
 msgid "Secondary Sidebar"
 msgstr ""
 
-#: functions.php:153
+#: functions.php:154
 msgid "Footer Area One"
 msgstr ""
 
-#: functions.php:162
+#: functions.php:163
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions.php:171
+#: functions.php:172
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions.php:181
+#: functions.php:182
 msgid "Footer Area Four"
 msgstr ""
 
-#: functions.php:197
+#: functions.php:198
 msgid "(Untitled)"
 msgstr ""
 
@@ -178,207 +178,238 @@ msgstr ""
 msgid "SPARK OPTIONS"
 msgstr ""
 
-#: inc/customize.php:16
+#: inc/customize.php:25
+msgid "Banner Image"
+msgstr ""
+
+#: inc/customize.php:28
+msgid "Upload a Banner Image. 1050px X 400px image is recommended"
+msgstr ""
+
+#: inc/customize.php:37
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Front Page Heading"
+msgstr ""
+
+#: inc/customize.php:44
 msgid "Welcome to the SPARK WordPress Theme!"
 msgstr ""
 
-#: inc/customize.php:24
+#: inc/customize.php:52
 msgid "Front Page Heading"
 msgstr ""
 
-#: inc/customize.php:31
+#: inc/customize.php:59
 msgid ""
 "You can use SPARK Extend Theme for more options, more functions and more "
 "visual elements. Extend Version has come with simple color customization "
 "option"
 msgstr ""
 
-#: inc/customize.php:39
+#: inc/customize.php:67
 msgid "Front Page Heading Description"
 msgstr ""
 
-#: inc/customize.php:58
-msgid "Banner Image"
+#: inc/customize.php:79
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Featured Boxes"
 msgstr ""
 
-#: inc/customize.php:61
-msgid "Upload a Banner Image. 1050px X 400px image is recommended"
-msgstr ""
-
-#: inc/customize.php:67
+#: inc/customize.php:85
 msgid "Recent Works"
 msgstr ""
 
-#: inc/customize.php:75
+#: inc/customize.php:93
 msgid "Input your Row Title Heret"
 msgstr ""
 
-#: inc/customize.php:78 inc/customize.php:185
+#: inc/customize.php:96 inc/customize.php:213
 msgid "Input your Row Title Here"
 msgstr ""
 
-#: inc/customize.php:83
+#: inc/customize.php:101
 msgid ""
 "The Color changing options of SPARK will give the WordPress Driven Site an "
 "attractive look"
 msgstr ""
 
-#: inc/customize.php:91
+#: inc/customize.php:109
 msgid "Row Description"
 msgstr ""
 
-#: inc/customize.php:94
-msgid ""
-"Input the description of Featured Areas. Please limit the words within 30 so "
-"that the layout should be clean and attractive. You can also input any HTML, "
-"Videos or iframe here. But please keep in mind about the limitation of width "
-"of the box"
+#: inc/customize.php:112
+msgid "Input the description of Featured Areas"
 msgstr ""
 
-#: inc/customize.php:113
+#: inc/customize.php:131
 msgid "First Row Featured Image"
 msgstr ""
 
-#: inc/customize.php:116
+#: inc/customize.php:134
 msgid ""
 "Upload an image for the Featured Box. 230px X 115px image is recommended"
 msgstr ""
 
-#: inc/customize.php:121
+#: inc/customize.php:139
 msgid "SPARK Theme for Small Business"
 msgstr ""
 
-#: inc/customize.php:129 inc/customize.php:217
+#: inc/customize.php:147 inc/customize.php:245
 msgid "Title"
 msgstr ""
 
-#: inc/customize.php:137
-msgid ""
-"The Color changing options of SPARK will give the WordPress Driven Site an "
-"attractive look. SPARK is super elegant and Professional Responsive Theme "
-"which will create the business widely expressed"
-msgstr ""
-
-#: inc/customize.php:145 inc/customize.php:233
-msgid "Description"
-msgstr ""
-
-#: inc/customize.php:164
-msgid "Show Second Row Featured Boxs"
-msgstr ""
-
-#: inc/customize.php:167
-msgid "Uncheck this if you do not want to show the Second Row Featured Boxs"
-msgstr ""
-
-#: inc/customize.php:174
-msgid "Our Services"
-msgstr ""
-
-#: inc/customize.php:182
-msgid "Row Subject"
-msgstr ""
-
-#: inc/customize.php:190
+#: inc/customize.php:155 inc/customize.php:218
 msgid ""
 "SPARK is super elegant and Professional Responsive Theme which will create "
 "the business widely expressed"
 msgstr ""
 
-#: inc/customize.php:198
+#: inc/customize.php:163 inc/customize.php:261
+msgid "Description"
+msgstr ""
+
+#: inc/customize.php:177
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Featured Contents"
+msgstr ""
+
+#: inc/customize.php:192
+msgid "Show Second Row Featured Boxs"
+msgstr ""
+
+#: inc/customize.php:195
+msgid "Uncheck this if you do not want to show the Second Row Featured Boxs"
+msgstr ""
+
+#: inc/customize.php:202
+msgid "Our Services"
+msgstr ""
+
+#: inc/customize.php:210
+msgid "Row Subject"
+msgstr ""
+
+#: inc/customize.php:226
 msgid "Second Row Description"
 msgstr ""
 
-#: inc/customize.php:201
+#: inc/customize.php:229
 msgid ""
 "Input the description of Featured Areas. Please limit the words within 30 so "
 "that the layout should be clean and attractive"
 msgstr ""
 
-#: inc/customize.php:209
+#: inc/customize.php:237
 msgid "SPARK Theme for Business"
 msgstr ""
 
-#: inc/customize.php:225
+#: inc/customize.php:253
 msgid ""
 "SPARK is super elegant and Professional Responsive Theme which will create "
 "the business widely expressed. The Color changing options of SPARK will give "
 "the WordPress Driven Site an attractive look"
 msgstr ""
 
-#: inc/customize.php:244
+#: inc/customize.php:274
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Staff Box"
+msgstr ""
+
+#: inc/customize.php:281
 msgid "WE ARE INSIDE"
 msgstr ""
 
-#: inc/customize.php:252
+#: inc/customize.php:289
 msgid "Staff Boxes Heading"
 msgstr ""
 
-#: inc/customize.php:259
+#: inc/customize.php:296
 msgid ""
 "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod "
 "tempor incididunt ut labore et dolore magna aliqua"
 msgstr ""
 
-#: inc/customize.php:267
+#: inc/customize.php:304
 msgid "Staff Boxes Heading Description"
 msgstr ""
 
-#: inc/customize.php:290
+#: inc/customize.php:327
 msgid "Staff Image"
 msgstr ""
 
-#: inc/customize.php:293
+#: inc/customize.php:330
 msgid "Uoload the Staff Image. The Sample Image is 300px X 200px"
 msgstr ""
 
-#: inc/customize.php:299
-msgid "OUR PROJECT "
+#: inc/customize.php:336
+msgid "OUR PROUD STAFF "
 msgstr ""
 
-#: inc/customize.php:307
+#: inc/customize.php:344
 msgid "Staff Name"
 msgstr ""
 
-#: inc/customize.php:315
-msgid "Innovation Lite is a Professional Responsive Theme"
+#: inc/customize.php:352
+msgid "SPARK  is a Professional Responsive Theme"
 msgstr ""
 
-#: inc/customize.php:323
+#: inc/customize.php:360
 msgid "Staff Designation"
 msgstr ""
 
-#: inc/customize.php:338
+#: inc/customize.php:375
 msgid "Staff Social Links - "
 msgstr ""
 
-#: inc/customize.php:341
+#: inc/customize.php:378
 msgid ""
 "Input Your Social Page Link. Example: <b>https://wordpress.org/themes/author/"
-"d5creation</b>.  If you do not want to show anything here leave the box "
-"blank. Supported Links are: wordpress.org, wordpress.com, dribbble.com, "
-"github.com, tumblr.com, youtube.com, flickr.com, vimeo.com, codepen.io, "
-"linkedin.com"
+"d5creation</b>"
 msgstr ""
 
-#: inc/customize.php:381
+#: inc/customize.php:418
 msgid "Profile Link - "
 msgstr ""
 
-#: inc/customize.php:384
+#: inc/customize.php:421
 msgid "Input Your Profile Page Link here"
 msgstr ""
 
-#: inc/customize.php:400
+#: inc/customize.php:432
+msgid "&nbsp;&nbsp;&nbsp;&nbsp; - Social Links"
+msgstr ""
+
+#: inc/customize.php:433
+msgid ""
+"Input Your Social Page Link. Example: <b>http://wordpress.org/d5creation</b>"
+msgstr ""
+
+#: inc/customize.php:447
 msgid "Social Link - "
 msgstr ""
 
-#: inc/customize.php:403
+#: inc/theme-about.php:85
+msgid "World Class, Responsive and Premium WordPress Themes"
+msgstr ""
+
+#: inc/theme-about.php:86
 msgid ""
-"Input Your Social Page Link. Example: <b>http://wordpress.org/d5creation</"
-"b>.  If you do not want to show anything here leave the box blank. Supported "
-"Links are: wordpress.org, wordpress.com, dribbble.com, github.com, tumblr."
-"com, youtube.com, flickr.com, vimeo.com, codepen.io, linkedin.com"
+"Ready to take your WordPress site to the next level? Give your CMS a "
+"beautiful design to draw in more visitors. Peoples love us because of the "
+"Simplicity of our Themes. We deliver User Friendly Responsive and Premium "
+"WordPress Themes with Unique and Modern Design. You can Trust our Themes"
+msgstr ""
+
+#: inc/theme-about.php:88
+msgid "Visit Our Theme Gallery"
+msgstr ""
+
+#: inc/theme-about.php:89
+msgid "Visit Theme Demos"
+msgstr ""
+
+#: inc/theme-about.php:90
+msgid "Become a Happy Member"
+msgstr ""
+
+#: inc/theme-about.php:92
+msgid "D5 Creation Themes"
 msgstr ""
 
 #: page.php:20 single.php:25
@@ -418,7 +449,7 @@ msgid "SPARK"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://d5creation.com/themes/spark/"
+msgid "https://d5creation.com/theme/spark"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -430,7 +461,7 @@ msgid ""
 "automatically with all smart devices.  Right and Footer Sidebar will be "
 "usable for showing the widgets. Full Wide Template can be used for showing "
 "showcase or other pages. You can Visit the SPARK Demo Here: http://demo."
-"d5creation.com/themes/?theme=SPARK  and Theme Page Here: http://d5creation."
+"d5creation.com/themes/?theme=SPARK  and Theme Page Here: https://d5creation."
 "com/theme/spark"
 msgstr ""
 
@@ -439,5 +470,5 @@ msgid "D5 Creation"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://d5creation.com/"
+msgid "https://d5creation.com"
 msgstr ""

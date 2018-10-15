@@ -8,11 +8,9 @@
  	require_once ( trailingslashit(get_template_directory()) . 'inc/customize.php' );
 	
 	function spark_about_page() { 
-	add_theme_page( 'D5 Creation Themes', 'D5 Creation Themes', 'edit_theme_options', 'd5-themes', 'spark_d5_themes' );
 	add_theme_page( 'SPARK Options', 'SPARK Options', 'edit_theme_options', 'theme-about', 'spark_theme_about' ); 
 	}
 	add_action('admin_menu', 'spark_about_page');
-	function spark_d5_themes() {  require_once ( trailingslashit(get_template_directory()) . 'inc/d5-themes.php' ); }
 	function spark_theme_about() {  require_once ( trailingslashit(get_template_directory()) . 'inc/theme-about.php' ); }
  
  	function spark_setup() {
@@ -202,4 +200,3 @@
             return $title;
         }
     }
-

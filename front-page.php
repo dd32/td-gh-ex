@@ -6,9 +6,7 @@
 	Based on the Simplest D5 Framework for WordPress
 	Since SPARK 1.0
 */
-?>
-
-<?php get_header(); ?>
+get_header(); ?>
 <div class="clear"></div>
 <div class="header-back-abs">
 <div class="header-bottom"></div>

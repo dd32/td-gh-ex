@@ -1,15 +1,15 @@
 /*
 Theme Name: SPARK
-Theme URI: http://d5creation.com/theme/spark
+Theme URI: https://d5creation.com/theme/spark
 
 Author: D5 Creation
-Author URI: http://d5creation.com
+Author URI: https://d5creation.com
 
-Description: SPARK is a CSS3 Powered and WordPress Latest Version Ready Theme for Small Business Companies to Corporate Business. Modern Design and other options will give the WordPress Driven Site an attractive look.  SPARK is Responsive, Super Elegant and Professional Theme which will be adjusted automatically with all smart devices.  Right and Footer Sidebar will be usable for showing the widgets. Full Wide Template can be used for showing showcase or other pages. You can Visit the SPARK Demo Here: http://demo.d5creation.com/themes/?theme=SPARK  and Theme Page Here: http://d5creation.com/theme/spark 
+Description: SPARK is a CSS3 Powered and WordPress Latest Version Ready Theme for Small Business Companies to Corporate Business. Modern Design and other options will give the WordPress Driven Site an attractive look.  SPARK is Responsive, Super Elegant and Professional Theme which will be adjusted automatically with all smart devices.  Right and Footer Sidebar will be usable for showing the widgets. Full Wide Template can be used for showing showcase or other pages. You can Visit the SPARK Demo Here: http://demo.d5creation.com/themes/?theme=SPARK  and Theme Page Here: https://d5creation.com/theme/spark 
 
-Version: 1.7
+Version: 2.1
 
-Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, entertainment, full-width-template, theme-options, translation-ready, blog, portfolio, education, food-and-drink
+Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, theme-options, translation-ready, blog, portfolio, education
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -73,10 +73,10 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
 .wp-caption img{border:0 none;height:auto;margin:0;max-width:98.5%;padding:0;width:auto;}
 .wp-caption p.wp-caption-text{font-size:11px;line-height:17px;margin:0;padding:0 4px 5px;}
 body{color:#6a6969;font-family:'Anaheim', FontAwesome, sans-serif;font-size:14px;line-height:1.15;min-width:1070px;word-wrap:break-word;}
-ul, li, img, a, p, ol, textarea, input, button {transition:all 2s;-moz-transition:all 2s;-o-transition:all 2s;-webkit-transition:all 2s;}
+ul, li, img, a, p, ol, textarea, input, button {transition:all .5s; }
 img{max-width:100%;border:0 none;}
-.tcontainer1 { height: 300px; display: block; float:left; width: 0; height: 0; border-style:solid; border-top: 300px solid #008ffe; border-right-color: transparent; vertical-align: top;  }
-.tcontainer2 { height: 300px; display: block; float: right; width: 0; height: 0; border-style:solid; border-top: 300px solid #008ffe; border-left-color: transparent; vertical-align: top; }
+.tcontainer1 { display: block; float:left; width: 0; height: 0; border-style:solid; border-top: 300px solid #008ffe; border-right-color: transparent; vertical-align: top;  }
+.tcontainer2 { display: block; float: right; width: 0; height: 0; border-style:solid; border-top: 300px solid #008ffe; border-left-color: transparent; vertical-align: top; }
 #container{width:1050px;margin:40px auto; position: relative;}
 #header{height:90px;background:#3c4143;}
 .header-bottom{background:url("images/header-bottom.png") no-repeat scroll center top #008ffe;height:200px;}
@@ -91,30 +91,40 @@ img.site-logo, .site-title {max-width:30%;max-height:70px;padding:5px 0;float:le
 #right-sidebar{float:right;width:25%;}
 #footer{background:#008ffe;border-bottom:50px solid #111111;clear:both;padding:0 0 20px;min-width:1050px;}
 #footer-content{width:1050px;margin:0 auto; padding: 30px 0 0;}
-#footer-sidebar{overflow:hidden;}
+#footer-sidebar{overflow:hidden; margin: 0 -15px; }
 #creditline{color:#AAAAAA;font-size:13px;margin-bottom:-55px;text-align:center;}
 #creditline a{font-weight:bold;}
-#spark-main-menu{color:#EEEEEE;float:right;line-height:1;max-width:67%;}
-#spark-main-menu ul{list-style:none outside none;}
-#spark-main-menu li{float:left;position:relative;margin:0 5px;}
-#spark-main-menu a{color:#2cb8f3;display:block;font-size:15px;min-width:40px;padding:25px 10px 29px;position:relative;text-align:center;border-bottom:5px solid transparent; font-family: "Advent Pro",cursive,sans-serif; letter-spacing: 1px;}
-#spark-main-menu a:hover,
-#spark-main-menu .current-menu-item > a,
-#spark-main-menu .current-menu-ancestor > a,
-#spark-main-menu .current_page_item > a,
-#spark-main-menu .current_page_ancestor > a{color:#CCCCCC;border-bottom:5px solid #2cb8f3;}
-#spark-main-menu li ul{float:left;position:relative;margin:0;}
-#spark-main-menu ul ul,
+
+#main-menu-con{color:#EEEEEE;float:right;line-height:1;max-width:67%;}
+ ul{list-style:none outside none;}
+#main-menu-con li{float:left;position:relative;margin:0 5px; list-style: none; }
+#main-menu-con a{color:#2cb8f3;display:block;font-size:15px;min-width:40px;padding:25px 10px 29px;position:relative;text-align:center;border-bottom:5px solid transparent; font-family: "Advent Pro",cursive,sans-serif; letter-spacing: 1px;}
+#main-menu-con a:hover,
+#main-menu-con .current-menu-item > a,
+#main-menu-con .current-menu-ancestor > a,
+#main-menu-con .current_page_item > a,
+#main-menu-con .current_page_ancestor > a{color:#CCCCCC;border-bottom:5px solid #2cb8f3;}
+#main-menu-con li ul{float:left;position:relative;margin:0;}
+#main-menu-con ul ul,
 .sub-menu, .sub-menu ul ul{display:none;float:left;left:0;position:absolute;border-bottom:7px solid #2cb8f3;border-radius:0 0 5px 5px;background:#F2F2F2;background:rgba(242, 242, 242, 0.95);padding:5px;box-shadow:0px 0px 5px 0px #000000;z-index:10000;}
-#spark-main-menu ul li ul li{margin:0;}
-#spark-main-menu ul ul ul{left:100%;top:0;z-index:999;}
-#spark-main-menu ul ul a{border-bottom:1px solid #BFBFBF;border-top:1px solid #FFFFFF;color:#242424;padding:9px 15px;width:150px;text-align:left;text-transform:none; font-size:13px;}
-#spark-main-menu ul ul a:hover,
-#spark-main-menu ul ul .current-menu-item > a,
-#spark-main-menu ul ul .current-menu-ancestor > a,
-#spark-main-menu ul ul .current_page_item > a,
-#spark-main-menu ul ul .current_page_ancestor > a{background:#555555;color:#EEEEEE;border-bottom:1px solid #BFBFBF;}
-#spark-main-menu ul li:hover > ul{display:block;}
+#main-menu-con ul li ul li{margin:0;}
+#main-menu-con ul ul ul{left:100%;top:0;z-index:999;}
+#main-menu-con ul ul a{border-bottom:1px solid #BFBFBF;border-top:1px solid #FFFFFF;color:#242424;padding:9px 20px;width:170px;text-align:left;text-transform:none; font-size:13px;}
+#main-menu-con ul ul a:hover,
+#main-menu-con ul ul .current-menu-item > a,
+#main-menu-con ul ul .current-menu-ancestor > a,
+#main-menu-con ul ul .current_page_item > a,
+#main-menu-con ul ul .current_page_ancestor > a{background:#2cb8f3;color:#FFFFFF;border-bottom:1px solid #BFBFBF;}
+#main-menu-con ul li:hover > ul{display:block;}
+
+#main-menu-con li.menu-item-has-children > a, #main-menu-con li.page_item_has_children > a { padding-right: 20px; }
+#main-menu-con li.menu-item-has-children > a:after, #main-menu-con li.page_item_has_children > a:after { content: "\f107"; font-size: 15px; right:3px; position: absolute; top: 50%; transform:translate(0px, -50%); font-family: 'Anaheim', FontAwesome, sans-serif; }
+#main-menu-con .menu-item-has-children ul li.menu-item-has-children > a:after, #main-menu-con .page_item_has_children ul li.menu-item-has-children > a:after { content: "\f105"; font-size: 15px; color:#ffffff; }
+
+.mobile-menu { color: #FFFFFF; background: #26BDEF; padding: 10px 0; font-size: 20px; display: none; cursor:pointer; width: 100%; text-align: center; position: relative; z-index: 9; }
+.mobile-menu::before { content:'\f0c9'; font-size: 20px; padding-right: 10px; }
+
+
 .widget{display:block;word-wrap:break-word;}
 #right-sidebar .widget{background:#F6F6F6;margin-bottom:20px;padding:15px; border-radius: 3px; overflow: hidden;}
 #right-sidebar .widget-title {color:#2cb8f3;padding: 10px 15px; margin: -15px -15px 5px; text-align:center; background: #555555;}
@@ -125,8 +135,7 @@ img.site-logo, .site-title {max-width:30%;max-height:70px;padding:5px 0;float:le
 #right-sidebar .widget ul{margin:0;}
 #right-sidebar .widget li { list-style: square outside none; margin-left: 15px; padding: 5px 0; }
 #footer-sidebar .widget{margin-bottom:30px;}
-#footer-widget{float:left;}
-#footer-sidebar .widgets{margin-left:6%;float:left;}
+#footer-sidebar .widgets{ margin: 0 15px 10px; float: left; width: calc( 25% - 30px); }
 #footer-sidebar .widget-title{color:#FFFFFF; font-size: 25px;}
 #footer-sidebar .widget,
 #footer-sidebar .widget li,
@@ -187,12 +196,22 @@ a{color:#2cb8f3;text-decoration:none;}
 b, strong{font-weight:bold;}
 displaynone{display:none;}
 .clear{clear:both;}
-table{background-color:#EEEEEE;border:1px solid #FFFFFF;border-radius:3px 3px 3px 3px;padding:5px;-moz-border-radius:3px;-webkit-border-radius:3px;min-width:200px;color:#333333;}
+table{background-color:#EEEEEE;border:1px solid #FFFFFF;border-radius:3px;padding:5px;min-width:200px;color:#333333;}
 td{padding:5px 7px;vertical-align:top;}
-#wp-calendar td{padding:0px 7px;}
+
 th{font-weight:bold;line-height:1;padding:5px 7px;text-shadow:0 1px 0 rgba(255, 255, 255, 0.7);background:#CCC;}
 caption{color:#555555;}
-table#wp-calendar{width:100%;}
+
+.calendar_wrap {background:#ffffff;box-shadow:none;}
+#wp-calendar{width:100%;border:none; box-shadow: none; background:#ffffff; padding:  0; margin: 0; }
+#wp-calendar th { text-align: center; font-weight: 600; color: #ffffff; background: #777777; }
+#wp-calendar td{color:#555555; border: 1px solid #f6f6f6; text-align: center; position: relative; transition:all .3s; }
+#wp-calendar td:hover{background: #e6e6e6; }
+#wp-calendar td#prev, #wp-calendar td#next, #wp-calendar td.pad {border:none; }
+#wp-calendar caption{font-size:17px; font-weight: 700; text-align:center;}
+#wp-calendar a { font-size: 15px; font-weight: 700; background: #ccc; display: block; line-height: 2.3; color: #555!important; margin: -5px -7px; }
+#wp-calendar a:hover { background: #555555; color: #ffffff !important; }
+
 textarea, input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], .titlewrap input, select{background:none repeat scroll 0 0 #EDEDED;border-radius:5px;font-size:14px;padding:10px 7px;width:98%;border-top:1px solid #999999;border-left:1px solid #999999;border-right:1px solid #FFFFFF;border-bottom:1px solid #FFFFFF;}
 input[type="password"]{width:200px;}
 textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="url"]:focus, .titlewrap:focus input:focus, select:focus{background:none repeat scroll 0 0 #F7F7F7;}
@@ -216,7 +235,7 @@ input#s{width:70%;min-width:235px;}
 #heading{color:#FFFFFF;font-size:35px;margin:50px auto;text-align:center;width:80%; font-family: 'Merienda One', cursive, sans-serif;}
 .heading-desc{color:#FFFFFF;font-size:17px;margin:-40px auto 10px;text-align:center;width:80%;}
 .noslide { background:url("images/sliderbottom.png") no-repeat scroll center bottom transparent;padding: 20px 0 35px; background-size: 100% auto; }
-#featured-boxs{padding:20px 0;display:inline-block;text-align:left; margin: 20px -22px 0;  text-align: center;}
+#featured-boxs{padding:20px 0;display:inline-block; margin: 20px -22px 0;  text-align: center;}
 .featured-box h3{font-family:Verdana, Geneva, sans-serif;font-weight:100;font-size:15px;color:#555555;}
 #featured-boxs h2{font-family:Verdana, Geneva, sans-serif;font-weight:100;font-size:19px;color:#555555;}
 .featured-box-first{padding:30px 0;}
@@ -226,7 +245,7 @@ input#s{width:70%;min-width:235px;}
 h3.featured-box2{width:160px;float:right;}
 .featured-box, .featured-box-first{display: inline-block; margin: 0 20px 20px; width:229.5px; vertical-align: top; text-align:left;}
 
-blockquote, q {background:#DDDDDD;background:none repeat scroll 0 0 rgba(255, 255, 255, 0.35);border-left:10px solid #ccc;margin:20px 10px;padding:10px;quotes:quotes:'<<' '>>';border-right:10px solid #ccc;}
+blockquote, q {background:#DDDDDD;background:none repeat scroll 0 0 rgba(255, 255, 255, 0.35);border-left:10px solid #ccc;margin:20px 10px;padding:10px;quotes:'<<' '>>';border-right:10px solid #ccc;}
 blockquote:before, q:before {color:#ccc;content:'\201C';font-size:4em;line-height:.1em;margin-right:.20em;vertical-align:-.4em;}
 blockquote:after, q:after {color:#ccc;content:'\201D';font-size:4em;line-height:.1em;margin-left:.20em;vertical-align:-.4em;}
 blockquote p, q p {display:inline;}
@@ -294,19 +313,17 @@ h2#client-text.post-title{color:#2cb8f3;opacity:0.7;padding:10px 0;text-align:ce
  .boxtopdes { color: #2cb8f3; }
 .socialcontainer { background: #333333; padding: 10px 0; }
 .social { display: table; margin: 0 auto; }
-.social a { background: rgba(0, 0, 0, 0.15); border-radius: 150px; float: left; height: 60px; line-height: 2; margin: 0 5px; text-align: center; width: 60px; transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s; -webkit-transition:all 1s; }
+.social a { background: rgba(0, 0, 0, 0.15); border-radius: 150px; float: left; height: 60px; line-height: 2; margin: 0 5px; text-align: center; width: 60px; transition:all .5s; }
 .social a { background: rgba(0, 0, 0, 0.15);
-background: -webkit-linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%);
-background: -moz-inear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%);
-background: -o-linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%);
-background: -ms-linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%);
 background: linear-gradient(-45deg, #111111 50%, rgba(0, 0, 0, 0.15) 50%);
 background-size: 100% 100%;
 }
 
-.social a:hover { -webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); -o-transform: rotate(360deg); -ms-transform: rotate(360deg); transform: rotate(360deg); }
+.social a:hover { transform: rotate(360deg); }
 .social a::before { content: '\f005'; display: inline-block; font-size: 30px; vertical-align: top; -webkit-font-smoothing: antialiased; }
 
+.social-link a[href*="facebook.com"]::before { content: '\f09a'; color:   #455afa; }
+.social-link a[href*="twitter.com"]::before { content: '\f099'; color:   #33ccff; }
 .social-link a[href*="wordpress.org"]::before, .social-link a[href*="wordpress.com"]::before {  content: '\f19a'; color:   #09b6db; }
 .social-link a[href*="dribbble.com"]::before { content: '\f17d'; color:   #ea4c89; }
 .social-link a[href*="github.com"]::before { content: '\f113'; color:   #555555; }

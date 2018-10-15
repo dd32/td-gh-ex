@@ -26,7 +26,7 @@
 <?php get_sidebar( 'footer' ); ?>
 
 <div id="creditline"><?php echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ) ; ?> | SPARK Theme by: <a href="<?php echo esc_url(
-'http://d5creation.com'); ?>" target="_blank"><img  src="<?php echo get_template_directory_uri(); ?>/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></div>
+'https://d5creation.com'); ?>" target="_blank">D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></div>
 
 </div> <!-- footer-content -->
 </div> <!-- footer -->

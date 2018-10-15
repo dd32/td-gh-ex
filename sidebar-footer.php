@@ -18,25 +18,25 @@
 ?>
 <div id="footer-sidebar">
 	<?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
-	<div id="footer-widget" class="first-widget">
+	<div class="footer-widget first-widget widgets">
 		<?php dynamic_sidebar( 'sidebar-3' ); ?>
 	</div><!-- #first .widget-area -->
 	<?php endif; ?>
 
 	<?php if ( is_active_sidebar( 'sidebar-4' ) ) : ?>
-	<div id="footer-widget" class="widgets">
+	<div class="footer-widget widgets">
 		<?php dynamic_sidebar( 'sidebar-4' ); ?>
 	</div><!-- #second .widget-area -->
 	<?php endif; ?>
 
 	<?php if ( is_active_sidebar( 'sidebar-5' ) ) : ?>
-	<div id="footer-widget" class="widgets">
+	<div class="footer-widget widgets">
 		<?php dynamic_sidebar( 'sidebar-5' ); ?>
 	</div><!-- #third .widget-area -->
 	<?php endif; ?>
     
     <?php if ( is_active_sidebar( 'sidebar-6' ) ) : ?>
-	<div id="footer-widget" class="widgets">
+	<div class="footer-widget widgets">
 		<?php dynamic_sidebar( 'sidebar-6' ); ?>
 	</div><!-- #fourth .widget-area -->
 	<?php endif; ?>
