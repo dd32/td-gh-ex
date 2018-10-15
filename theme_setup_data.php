@@ -85,7 +85,7 @@ function theme_data_setup()
 			'social_media_instagram_link' => '#',
 			
 			/** footer customization **/
-			'footer_copyright' =>sprintf (__('Copyright @ 2018 - WALL STREET Designed by <a href="%1$s" target="_blank">Webriti</a>.','wallstreet'),'https://www.webriti.com'),
+			'footer_copyright' => '<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="designer"> Wallstreet</a> by Webriti', 'wallstreet' ).'</p>',
 		
 		);
 }

@@ -51,6 +51,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.7.8.5
+1. Update String.
 @Version 1.7.8.4
 1. Added WooCommerce Gallery Support.
 @Version 1.7.8.3

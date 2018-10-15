@@ -12,7 +12,7 @@
 	$wp_customize->add_setting(
     'wallstreet_pro_options[footer_copyright]',
     array(
-        'default' => sprintf (__('Copyright @ 2018 - WALL STREET Designed by <a href="%1$s" target="_blank">Webriti</a>.','wallstreet'),'https://www.webriti.com'),
+        'default' => '<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="designer"> Wallstreet</a> by Webriti', 'wallstreet' ).'</p>',
 		'type' =>'option',
 		'sanitize_callback' => 'wallstreet_copyright_sanitize_text'
 		
