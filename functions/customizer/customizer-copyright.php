@@ -14,7 +14,7 @@
     'quality_pro_options[footer_copyright_text]',
     array(
          
-		 'default' => sprintf (__('<p>©2018 All Rights Reserved - Webriti. Designed and Developed by<a href="https://www.webriti.com/" target="_blank"> Webriti</a></p>','quality'),'http://www.webriti.com'),
+		 'default' => '<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="designer">Quality</a> by Webriti', 'quality' ).'</p>',
 		 'type' =>'option',
 		'sanitize_callback' => 'quality_copyright_sanitize_text',
     )

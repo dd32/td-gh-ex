@@ -62,7 +62,7 @@ function theme_data_setup()
 			//Custom css
 			'webrit_custom_css'=>'',						
 			//Footer Customization
-			'footer_copyright_text' => '<p>©2018 All Rights Reserved - Webriti. Designed and Developed by<a href="https://www.webriti.com/" target="_blank"> Webriti</a></p>',
+			'footer_copyright_text' => '<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="designer">Quality</a> by Webriti', 'quality' ).'</p>',
 		);
 }
 ?>

@@ -2,16 +2,13 @@
 <?php $quality_pro_options=theme_data_setup(); 
 $current_options = wp_parse_args(  get_option( 'quality_pro_options', array() ), $quality_pro_options ); ?>
 
-
 <!-- /Quality Main Slider --->
-
 <section id="slider-carousel">
 	<div id="post-<?php the_ID(); ?>" class="item" 
 				<?php if($current_options['home_feature']!=''){ ?>
-				style="background-image:url(<?php echo $current_options['home_feature'];?>">
+				style="background-image:url(<?php echo $current_options['home_feature'];?>)">
 				<?php
 			}	?>
-	
 	
 		<div class="container">
 			<div class="slider-caption">

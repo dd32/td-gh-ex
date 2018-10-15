@@ -153,6 +153,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+@version 2.2.3
+1. Update string.
 @version 2.2.2
 1. Added WooCommerce Gallery Support.
 @Version 2.2.1
