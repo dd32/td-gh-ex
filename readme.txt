@@ -69,6 +69,9 @@ Theta provides support at https://www.coothemes.com/forum/theta-all-theme/
 
 
 === Changelog ===
+=version 1.0.6 20181015=
+*mod  copyright
+
 =version 1.0.4 20181004=
 **fix about page link
 
