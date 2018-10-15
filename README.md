@@ -46,6 +46,9 @@ https://unsplash.imgix.net/46/3YNGIU4yRTO4DDifrEfA__MG_2885.jpg?q=75&fm=jpg&s=b7
 
 == Change Log ==
 
+Version 1.3.5 
+* WPForms Lite plugin action removed.
+
 Version 1.3.4 
 * Gutenberg unit test style added.
 
