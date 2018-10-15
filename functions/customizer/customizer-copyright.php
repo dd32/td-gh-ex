@@ -20,7 +20,7 @@
 	$wp_customize->add_setting(
     'appointment_options[footer_copyright_text]',
     array(
-        'default' => __('No copyright information has been saved yet.','appointment'),
+        'default' => '<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="designer">Appointment</a> by Webriti', 'appointment' ).'</p>',
 		'sanitize_callback' => 'appointment_footer_copyright_sanitize_html',
 		'type' =>'option'
     )

@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Appointment\n"
-"POT-Creation-Date: 2018-03-23 17:19+0530\n"
-"PO-Revision-Date: 2018-03-23 17:19+0530\n"
+"POT-Creation-Date: 2018-09-27 12:19+0530\n"
+"PO-Revision-Date: 2018-09-27 12:19+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -457,11 +457,11 @@ msgid ""
 "Page Full Width, Contact Page and much more."
 msgstr ""
 
-#: functions/appointment-info/sections/free_pro.php:136
+#: functions/appointment-info/sections/free_pro.php:137
 msgid "Webriti Support Forum"
 msgstr ""
 
-#: functions/appointment-info/sections/free_pro.php:147
+#: functions/appointment-info/sections/free_pro.php:148
 msgid "Get Appointment PRO Now!"
 msgstr ""
 
@@ -615,7 +615,7 @@ msgstr ""
 #: functions/appointment-info/sections/github.php:98
 msgid ""
 "We provide good knowledgebase articles which will help you to create "
-"effective websites. You can visit these articles via our <a href='http://"
+"effective websites. You can visit these articles via our <a href='https://"
 "webriti.com/help/category/themes/appointment/' target='_blank'>Help Section</"
 "a>."
 msgstr ""
@@ -843,7 +843,9 @@ msgid "Footer copyright settings"
 msgstr ""
 
 #: functions/customizer/customizer-copyright.php:23 theme_setup_data.php:75
-msgid "No copyright information has been saved yet."
+msgid ""
+"<a href=\"https://wordpress.org\">Proudly powered by WordPress</a> | Theme: "
+"<a href=\"https://webriti.com\" rel=\"designer\">Appointment</a> by Webriti"
 msgstr ""
 
 #: functions/customizer/customizer-copyright.php:32

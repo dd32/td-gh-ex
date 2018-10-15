@@ -72,7 +72,7 @@ function theme_setup_data()
 	'post_display_count' => '4',
 	
 	//Footer Copyright & footer social links
-	'footer_copyright_text' => __('No copyright information has been saved yet.','appointment'),
+	'footer_copyright_text' => '<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="designer">Appointment</a> by Webriti', 'appointment' ).'</p>',
 	'footer_menu_bar_enabled' => '',
 	'footer_social_media_enabled' => '',
 	'footer_social_media_facebook_link' => '#',
