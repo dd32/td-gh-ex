@@ -767,7 +767,7 @@ function best_food_sanitize_text( $str ) {
   cts_add_field( array(
 		'type'        => 'editor',
 		'settings'    => 'footer_copy_code',
-		'label'       => esc_attr__( 'Footer Copyriht 2', 'best-food' ),
+		'label'       => esc_attr__( 'Footer Copyright 2', 'best-food' ),
 		'section'     => 'footer_option',
 		'default'     => __('Powered by <a href="http://wordpress.org/">WordPress</a>. Best Food theme by <a href="https://www.coothemes.com/">CooThemes.com</a>.','best-food')
 
