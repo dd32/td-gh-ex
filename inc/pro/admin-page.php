@@ -286,163 +286,142 @@ class be_page_Admin {
 
 			<p class="about-description"><?php esc_html_e( 'Upgrade to PRO version for more exciting features.', 'be-page' ); ?></p>
 
-			<table>
-				<thead>
-					<tr>
-						<th class="table-feature-title"><h4><?php esc_html_e('Features', 'be-page'); ?></h4></th>
-						<th width="25%"><h4><?php esc_html_e('My vCard Resume', 'be-page'); ?></h4></th>
-						<th width="25%"><h4><?php esc_html_e('My vCard Resume PRO', 'be-page'); ?></h4></th>
-					</tr>
-				</thead>
-				<tbody>
-                	<tr>
-						<td><h4><?php esc_html_e('24/7 Priority Support', 'be-page'); ?></h4></td>
-						<td><?php esc_html_e('WP forum ( 48 / 5 )', 'be-page'); ?></td>
-						<td><?php esc_html_e('Own Ticket, email , Skype & Teamviewer ( 24 / 7 )', 'be-page'); ?></td>
-					</tr>
-                    <tr>
-						<td><h4><?php esc_html_e('Multi-Purpose Design', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    
-                     <tr>
-						<td><h4><?php esc_html_e(' Theme Customizer ', 'be-page'); ?></h4></td>
-						<td><?php esc_html_e('lite features Customizer', 'be-page'); ?></td>
-						<td><?php esc_html_e('Full features Customizer', 'be-page'); ?></td>
-					</tr>
-                     <tr>
-						<td><h4><?php esc_html_e('king composer toolkit Addons', 'be-page'); ?></h4></td>
-						<td><?php esc_html_e('Only KC plugins', 'be-page'); ?></td>
-						<td><?php esc_html_e('Theme Own Addons', 'be-page'); ?></td>
-					</tr>
-                      <tr>
-						<td><h4><?php esc_html_e('One Click Demo Import', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    
-                  	 <tr>
-						<td><h4><?php esc_html_e('Third Party Addons', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                     <tr>
-						<td><h4><?php esc_html_e('Unlimited colors', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    
-                     <tr>
-						<td><h4><?php esc_html_e('Unlimited Fonts', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    <tr>
-						<td><h4><?php esc_html_e('Service KC Addons', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    
-                    <tr>
-						<td><h4><?php esc_html_e('Service Section KC Addons', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                     <tr>
-						<td><h4><?php esc_html_e('List styled KC Addons ', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    
-                    <tr>
-						<td><h4><?php esc_html_e('Interests Section KC Addons', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    
-                    <tr>
-						<td><h4><?php esc_html_e('Clients Section KC Addons / Shortcode', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    
-                    <tr>
-						<td><h4><?php esc_html_e('Skills Section KC Addons / Shortcode', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    
-                    <tr>
-						<td><h4><?php esc_html_e('Work Experience Section KC Addons / Shortcode', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    
-                     <tr>
-						<td><h4><?php esc_html_e('Education Section KC Addons / Shortcode', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    
-                    <tr>
-						<td><h4><?php esc_html_e('Works Profolio Section KC Addons / Shortcode', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    
-                    <tr>
-						<td><h4><?php esc_html_e('Testimonials Section KC Addons / Shortcode', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    <tr>
-						<td><h4><?php esc_html_e('Sidebar Disable / Enable', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    <tr>
-						<td><h4><?php esc_html_e('Footer Carditis', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    <tr>
-						<td><h4><?php esc_html_e('Social Sharing Features', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                     <tr>
-						<td><h4><?php esc_html_e('Sticky Menu', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    <tr>
-						<td><h4><?php esc_html_e('Guide Video , Step by Step', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                      <tr>
-						<td><h4><?php esc_html_e('Documentation + FAQ Page', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    
-                     <tr>
-						<td><h4><?php esc_html_e('You can control overall everything without code', 'be-page'); ?></h4></td>
-						<td><span class="dashicons dashicons-no"></span></td>
-						<td><span class="dashicons dashicons-yes"></span></td>
-					</tr>
-                    
-					<tr>
-						<td></td>
-						<td></td>
-						<td class="btn-wrapper">
-							
-							<a href="<?php echo esc_url( $this->prourl ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'More Information', 'be-page' ); ?></a>
-						</td>
-					</tr>
-				</tbody>
-			</table>
+            <table>
+                <thead>
+                <tr>
+                    <th class="table-feature-title"><h4><?php esc_html_e('Features', 'be-page'); ?></h4></th>
+                    <th width="25%"><h4><?php esc_html_e('Be PAGE', 'be-page'); ?></h4></th>
+                    <th width="25%"><h4><?php esc_html_e('Be PAGE PRO', 'be-page'); ?></h4></th>
+                </tr>
+                </thead>
+              <tbody>
+                <tr>
+                  <td><?php esc_html_e('24/7 Priority Support', 'be-page'); ?></td>
+                  <td><?php esc_html_e('WP forum ( 48 / 5 )', 'be-page'); ?></td>
+                  <td><?php esc_html_e('Own Ticket, email , Skype &amp; Teamviewer ( 24 / 7 )', 'be-page'); ?></td>
+                </tr>
+                <tr>
+                  <td> <?php esc_html_e('Theme Customizer', 'be-page'); ?> </td>
+                  <td><?php esc_html_e('lite features Customizer', 'be-page'); ?></td>
+                  <td><?php esc_html_e('Full features Customizer', 'be-page'); ?></td>
+                </tr>
+                <tr>
+                  <td><?php esc_html_e('Elementor toolkit & Addons', 'be-page'); ?></td>
+                  <td><?php esc_html_e('Only Elementor plugins', 'be-page'); ?></td>
+                  <td><?php esc_html_e('Theme Own Addons', 'be-page'); ?></td>
+                </tr>
+                <tr>
+                  <td><?php esc_html_e('Slider Plugins', 'be-page'); ?> </td>
+                  <td><?php esc_html_e('3rd party plugins', 'be-page'); ?></td>
+                  <td><?php esc_html_e('Theme Own Slider or 3rd party plugins', 'be-page'); ?></td>
+                </tr>
+                <tr>
+                  <td><?php esc_html_e('Services Sections', 'be-page'); ?></td>
+                  <td><span class="dashicons dashicons-no"></span></td>
+                  <td><span class="dashicons dashicons-yes"></span></td>
+                </tr>
+                 <tr>
+                  <td><?php esc_html_e('Features Sections', 'be-page'); ?></td>
+                  <td><span class="dashicons dashicons-no"></span></td>
+                  <td><span class="dashicons dashicons-yes"></span></td>
+                </tr>
+                <tr>
+                  <td><?php esc_html_e('Team Sections', 'be-page'); ?></td>
+                  <td><span class="dashicons dashicons-no"></span></td>
+                  <td><span class="dashicons dashicons-yes"></span></td>
+                </tr>
+                <tr>
+                  <td><?php esc_html_e('Portfolio & Project Sections', 'be-page'); ?></td>
+                  <td><span class="dashicons dashicons-no"></span></td>
+                  <td><span class="dashicons dashicons-yes"></span></td>
+                </tr>
+                
+                 <tr>
+                  <td><?php esc_html_e('Testimonials Sections', 'be-page'); ?></td>
+                  <td><span class="dashicons dashicons-no"></span></td>
+                  <td><span class="dashicons dashicons-yes"></span></td>
+                </tr>
+                
+               <tr>
+                  <td><?php esc_html_e('Pricing Sections', 'be-page'); ?></td>
+                  <td><span class="dashicons dashicons-no"></span></td>
+                  <td><span class="dashicons dashicons-yes"></span></td>
+                </tr>
+                <tr>
+                  <td><?php esc_html_e('Latest Posts Wigets', 'be-page'); ?></td>
+                  <td><span class="dashicons dashicons-no"></span></td>
+                  <td><span class="dashicons dashicons-yes"></span></td>
+                </tr>
+                
+                <tr>
+                  <td><?php esc_html_e('Unlimited colors', 'be-page'); ?></td>
+                  <td><span class="dashicons dashicons-no"></span></td>
+                  <td><span class="dashicons dashicons-yes"></span></td>
+                </tr>
+                <tr>
+                  <td><?php esc_html_e('Unlimited Fonts', 'be-page'); ?></td>
+                  <td><span class="dashicons dashicons-no"></span></td>
+                  <td><span class="dashicons dashicons-yes"></span></td>
+                </tr>
+                
+                <tr>
+                  <td><?php esc_html_e('Custom Page Template', 'be-page'); ?></td>
+                  <td><span class="dashicons dashicons-no"></span></td>
+                  <td><span class="dashicons dashicons-yes"></span></td>
+                </tr>
+                
+                <tr>
+                  <td><?php esc_html_e('Custom Blog Template', 'be-page'); ?></td>
+                  <td><span class="dashicons dashicons-no"></span></td>
+                  <td><span class="dashicons dashicons-yes"></span></td>
+                </tr>
+                
+                <tr>
+                  <td><?php esc_html_e('Blog Posts Layout', 'be-page'); ?></td>
+                  <td><?php esc_html_e('Standard layout', 'be-page'); ?></td>
+                  <td><?php esc_html_e('Standard,Grids, Standard left, Standard right layout', 'be-page'); ?></td>
+                </tr>
+                <tr>
+                  <td><?php esc_html_e('Related Posts ', 'be-page'); ?></td>
+                  <td><span class="dashicons dashicons-no"></span></td>
+                  <td><span class="dashicons dashicons-yes"></span></td>
+                </tr>
+                <tr>
+                  <td><?php esc_html_e('Related Share ', 'be-page'); ?></td>
+                  <td><span class="dashicons dashicons-no"></span></td>
+                  <td><span class="dashicons dashicons-yes"></span></td>
+                </tr>
+                
+                 <tr>
+                  <td><?php esc_html_e('Comment Layout', 'be-page'); ?></td>
+                  <td><?php esc_html_e('1', 'be-page'); ?></td>
+                  <td><?php esc_html_e('2', 'be-page'); ?></td>
+                </tr>
+              
+                <tr>
+                  <td><?php esc_html_e('Sidebar Style', 'be-page'); ?></td>
+                  <td><?php esc_html_e('One Style', 'be-page'); ?></td>
+                  <td><?php esc_html_e('Three Style', 'be-page'); ?></td>
+                </tr>
+                
+                <tr>
+                  <td><?php esc_html_e('Sidebar Disable / Enable', 'be-page'); ?></td>
+                  <td><span class="dashicons dashicons-no"></span></td>
+                  <td><span class="dashicons dashicons-yes"></span></td>
+                </tr>
+                <tr>
+                  <td><?php esc_html_e('Footer Carditis', 'be-page'); ?></td>
+                  <td><span class="dashicons dashicons-no"></span></td>
+                  <td><span class="dashicons dashicons-yes"></span></td>
+                </tr>
+                <tr>
+                  <td><?php esc_html_e('You can control overall everything without code', 'be-page'); ?></td>
+                  <td><span class="dashicons dashicons-no"></span></td>
+                  <td><span class="dashicons dashicons-yes"></span></td>
+                </tr>
+              </tbody>
+            </table>
+
 
 		</div>
 		<?php
