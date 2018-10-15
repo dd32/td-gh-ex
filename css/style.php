@@ -4,10 +4,12 @@
 
 		$tpl_color = of_get_option( 'template_color', '#dc3522' );
 
+          $tpl_color_dark = accesspress_mag_colour_brightness( $tpl_color, -0.6 );
+
 		if( $tpl_color ) {
 
 			/** Background Color **/
-				$custom_css .= "
+			$custom_css .= "
                     .ticker-title,
                     .big-image-overlay i,
                     #back-top:hover,
@@ -19,9 +21,18 @@
                     button,
                     input[type=\"button\"]:hover,
                     input[type=\"reset\"]:hover,
-                    input[type=\"submit\"]:hover{
+                    input[type=\"submit\"]:hover,
+                    .ak-search .search-form {
 					   background: {$tpl_color};
 					}";
+
+               /** Background Color (Darker) **/
+               $custom_css .= "
+                    .ak-search .search-form .search-submit,
+                    .ak-search .search-form .search-submit:hover{
+                         background: {$tpl_color_dark};
+                    }";
+
 			/** Color **/
                 $custom_css .= "
                     #site-navigation ul li:hover > a,
@@ -48,7 +59,11 @@
                     .oops,
                     .error404 .not_found,
                     #cancel-comment-reply-link:before,
-                    #cancel-comment-reply-link{
+                    #cancel-comment-reply-link,
+                    .random-post a:hover,
+                    .byline a, .byline a:hover, .byline a:focus, .byline a:active,
+                    .widget ul li:hover a, .widget ul li:hover:before,
+                    .site-info a, .site-info a:hover, .site-info a:focus, .site-info a:active{
                         color: {$tpl_color};
                     }";
                     
@@ -80,3 +95,45 @@
 	}
 
 	add_action( 'wp_enqueue_scripts', 'accesspress_mag_dynamic_color' );
+
+     if( !function_exists( 'accesspress_mag_colour_brightness' ) ) {
+          function accesspress_mag_colour_brightness($hex, $percent) {
+                 // Work out if hash given
+                 $hash = '';
+                 if (stristr($hex, '#')) {
+                     $hex = str_replace('#', '', $hex);
+                     $hash = '#';
+                 }
+                 /// HEX TO RGB
+                 $rgb = array(hexdec(substr($hex, 0, 2)), hexdec(substr($hex, 2, 2)), hexdec(substr($hex, 4, 2)));
+                 //// CALCULATE 
+                 for ($i = 0; $i < 3; $i++) {
+                     // See if brighter or darker
+                     if ($percent > 0) {
+                         // Lighter
+                         $rgb[$i] = round($rgb[$i] * $percent) + round(255 * (1 - $percent));
+                     } else {
+                         // Darker
+                         $positivePercent = $percent - ($percent * 2);
+                         $rgb[$i] = round($rgb[$i] * $positivePercent) + round(0 * (1 - $positivePercent));
+                     }
+                     // In case rounding up causes us to go to 256
+                     if ($rgb[$i] > 255) {
+                         $rgb[$i] = 255;
+                     }
+                 }
+                 //// RBG to Hex
+                 $hex = '';
+                 for ($i = 0; $i < 3; $i++) {
+                     // Convert the decimal digit to hex
+                     $hexDigit = dechex($rgb[$i]);
+                     // Add a leading zero if necessary
+                     if (strlen($hexDigit) == 1) {
+                         $hexDigit = "0" . $hexDigit;
+                     }
+                     // Append to the hex string
+                     $hex .= $hexDigit;
+                 }
+                 return $hash . $hex;
+             }
+     }

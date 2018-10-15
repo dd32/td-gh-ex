@@ -72,6 +72,10 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.5.1
+ * Fixed Search Widget design issue
+ * Fixed Template color issues
+
 Version 2.5.0
  * Added Template Color Option
 
