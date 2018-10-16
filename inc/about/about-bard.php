@@ -104,6 +104,8 @@ function bard_about_page_output() {
 			<!-- Predefined Styles -->
 			<div class="four-columns-wrap">
 			
+			<hr>
+			
 				<h2><?php esc_html_e( 'Bard Pro - Predefined Styles', 'bard' ); ?></h2>
 				<p>
 					<?php /* translators: %s link */
