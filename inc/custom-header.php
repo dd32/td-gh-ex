@@ -32,7 +32,7 @@ function bb_mobile_application_header_style() {
 	//Check if user has defined any header image.
 	if ( get_header_image() ) :
 	$custom_css = "
-        .header-box{
+        .page-template-custom-front-page #header, #header {
 			background-image:url('".esc_url(get_header_image())."');
 			background-position: center top;
 		}";

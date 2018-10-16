@@ -33,19 +33,22 @@ msgstr ""
 #: archive.php:93 
 #: archive.php:120 
 #: archive.php:150 
-#: archive.php:179 
+#: archive.php:179
+#: archive.php:206 
 #: index.php:37 
 #: index.php:61 
 #: index.php:85 
 #: index.php:108 
 #: index.php:134
 #: index.php:159 
+#: index.php:182
 #: search.php:33 
 #: search.php:58 
 #: search.php:82 
 #: search.php:106 
 #: search.php:133  
 #: search.php:159
+#: search.php:183
 msgid 'Previous page'
 msgstr ""
 
@@ -55,18 +58,21 @@ msgstr ""
 #: archive.php:121 
 #: archive.php:151 
 #: archive.php:180 
+#: archive.php:207
 #: index.php:38 
 #: index.php:62 
 #: index.php:86 
 #: index.php:109 
 #: index.php:135 
-#: index.php:160 
+#: index.php:160
+#: index.php:183 
 #: search.php:34 
 #: search.php:59 
 #: search.php:83 
 #: search.php:107 
 #: search.php:134 
 #: search.php:160
+#: search.php:184
 msgid 'Next page'
 msgstr ""
 
@@ -75,26 +81,24 @@ msgstr ""
 #: archive.php:95 
 #: archive.php:122 
 #: archive.php:152 
-#: archive.php:181  
+#: archive.php:181
+#: archive.php:208  
 #: index.php:39 
 #: index.php:63 
 #: index.php:87 
 #: index.php:110 
 #: index.php:136 
-#: index.php:161 
+#: index.php:161
+#: index.php:184 
 #: page.php:34 
 #: search.php:35 
 #: search.php:60 
 #: search.php:84 
 #: search.php:108 
 #: search.php:135 
-#: search.php:161 
-#: single.php:39 
-#: single.php:95 
-#: single.php:151 
-#: single.php:207 
-#: single.php:265 
-#: single.php:323 
+#: search.php:161
+#: search.php:185 
+#: single-post.php:32 
 msgid 'page'
 msgstr ""
 
@@ -180,8 +184,8 @@ msgstr ""
 msgid 'footer-4'
 msgstr ""
 
-#: functions.php:164
-msgid 'ThemeShopy'
+#: functions.php:364
+msgid 'BB Mobile Application'
 msgstr ""
 
 #: header.php:24
@@ -200,6 +204,8 @@ msgstr ""
 #: image.php:303 
 #: image.php:336 
 #: image.php:364
+#: image.php:396
+#: image.php:424
 msgid 'Edit'
 msgstr ""
 
@@ -209,12 +215,8 @@ msgstr ""
 #: image.php:218 
 #: image.php:279 
 #: image.php:340 
-#: single.php:54 
-#: single.php:110 
-#: single.php:166 
-#: single.php:222 
-#: single.php:280 
-#: single.php:338
+#: image.php:400
+#: single-post.php:47
 msgid 'Previous'
 msgstr ""
 
@@ -223,13 +225,9 @@ msgstr ""
 #: image.php:160 
 #: image.php:219 
 #: image.php:280 
-#: image.php:341 
-#: single.php:51 
-#: single.php:107 
-#: single.php:163 
-#: single.php:219 
-#: single.php:277 
-#: single.php:335
+#: image.php:341
+#: image.php:401 
+#: single-post.php:44
 msgid 'Next'
 msgstr ""
 
@@ -238,13 +236,9 @@ msgstr ""
 #: image.php:178 
 #: image.php:237 
 #: image.php:298 
-#: image.php:359 
-#: single.php:35 
-#: single.php:91 
-#: single.php:147 
-#: single.php:203 
-#: single.php:261 
-#: single.php:319
+#: image.php:359
+#: image.php:419 
+#: single-post.php:28
 msgid 'Pages'
 msgstr ""
 
@@ -270,6 +264,7 @@ msgstr ""
 #: search.php:92 
 #: search.php:119 
 #: search.php:145
+#: search.php:169
 msgid 'Search Results for'
 msgstr ""
 
@@ -294,57 +289,23 @@ msgstr ""
 msgid 'Meta'
 msgstr ""
 
-#: single.php:23 
-#: single.php:79 
-#: single.php:135 
-#: single.php:191 
-#: single.php:149 
-#: single.php:307
+#: single-post.php:16
 msgid '0 Comment'
 msgstr ""
 
-#: single.php:23 
-#: single.php:79 
-#: single.php:135 
-#: single.php:191 
-#: single.php:249 
-#: single.php:307
-msgid '% Comments'
-msgstr ""
-
-#: single.php:47 
-#: single.php:102 
-#: single.php:158 
-#: single.php:214 
-#: single.php:272 
-#: single.php:330
+#: single-post.php:39
 msgid 'Parent post link'
 msgstr ""
 
-#: single.php:47 
-#: single.php:102 
-#: single.php:158 
-#: single.php:214 
-#: single.php:272 
-#: single.php:330
+#: single-post.php:39
 msgid 'Published in'
 msgstr ""
 
-#: single.php:52 
-#: single.php:108 
-#: single.php:164 
-#: single.php:220 
-#: single.php:278 
-#: single.php:336
+#: single-post.php:45
 msgid 'Next post'
 msgstr ""
 
-#: single.php:55 
-#: single.php:111 
-#: single.php:167 
-#: single.php:223 
-#: single.php:281 
-#: single.php:339
+#: single-post.php:48
 msgid 'Previous post'
 msgstr ""
 

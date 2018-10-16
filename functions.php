@@ -356,11 +356,11 @@ define('BB_MOBILE_APPLICATION_LIVE_DEMO','https://www.themeshopy.com/bb-mobile-a
 define('BB_MOBILE_APPLICATION_PRO_DOC','https://themeshopy.com/docs/bb-app/','bb-mobile-application');
 define('BB_MOBILE_APPLICATION_FREE_DOC','https://themeshopy.com/docs/free-bb-app/','bb-mobile-application');
 define('BB_MOBILE_APPLICATION_CONTACT','https://wordpress.org/support/theme/bb-mobile-application/','bb-mobile-application');
-define('BB_MOBILE_APPLICATION_CREDIT','https://www.themeshopy.com','bb-mobile-application');
+define('BB_MOBILE_APPLICATION_CREDIT','https://www.themeshopy.com/free/wp-bb-mobile-application-theme/','bb-mobile-application');
 
 if ( ! function_exists( 'bb_mobile_application_credit' ) ) {
 	function bb_mobile_application_credit(){
-		echo "<a href=".esc_url(BB_MOBILE_APPLICATION_CREDIT)." target='_blank'>". esc_html__('BB Mobile Application','bb-mobile-application')."</a>";
+		echo "<a href=".esc_url(BB_MOBILE_APPLICATION_CREDIT)." target='_blank'>". esc_html__('Mobile App WordPress Theme','bb-mobile-application')."</a>";
 	}
 }
 
@@ -382,20 +382,21 @@ function bb_mobile_application_string_limit_words($string, $word_limit) {
 	if (count($words) > $word_limit) {
 		array_pop($words);
 	}
+
 	return implode(' ', $words);
 }
 
 function bb_mobile_application_sanitize_dropdown_pages( $page_id, $setting ) {
-  // Ensure $input is an absolute integer.
-  $page_id = absint( $page_id );
-  // If $page_id is an ID of a published page, return it; otherwise, return the default.
-  return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
+ 	// Ensure $input is an absolute integer.
+	$page_id = absint( $page_id );
+  	// If $page_id is an ID of a published page, return it; otherwise, return the default.
+  	return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
 }
 
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'bb_mobile_application_loop_columns');
-if (!function_exists('bb_mobile_application_loop_columns')) {
-	function bb_mobile_application_loop_columns() {
+	if (!function_exists('bb_mobile_application_loop_columns')) {
+		function bb_mobile_application_loop_columns() {
 		return 3; // 3 products per row
 	}
 }

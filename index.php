@@ -16,7 +16,7 @@ get_header(); ?>
   <div class="innerlightbox">
 	  <div class="container">
       <?php
-        $left_right = get_theme_mod( 'bb_mobile_application_theme_options','One Column');
+        $left_right = get_theme_mod( 'bb_mobile_application_theme_options','Right Sidebar');
         if($left_right == 'Left Sidebar'){ ?>
         <div class="row">
           <div id="sidebar" class="col-lg-4"><?php get_sidebar();?></div>
@@ -163,7 +163,34 @@ get_header(); ?>
               ?>
             </div>           
         </div>
+      <?php }else {?>
+        <div class="row">
+          <div class="col-lg-8 col-md-8">
+            <?php if ( have_posts() ) :
+              /* Start the Loop */
+              while ( have_posts() ) : the_post();
+                get_template_part( 'template-parts/content', get_post_format() ); 
+              endwhile;
+              else :
+                get_template_part( 'no-results' ); 
+              endif; 
+            ?>
+            <div class="navigation">
+              <?php
+                // Previous/next page navigation.
+                the_posts_pagination( array(
+                    'prev_text'          => __( 'Previous page', 'bb-mobile-application' ),
+                    'next_text'          => __( 'Next page', 'bb-mobile-application' ),
+                    'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'bb-mobile-application' ) . ' </span>',
+                ) );
+              ?>
+             </div> 
+          </div>        
+          <div id="sidebar" class="col-lg-4"><?php get_sidebar();?></div>
+          </div>
+        </div>
       <?php }?>
+
 		  <div class="clearfix"></div>
     </div>
   </div>

@@ -33,7 +33,7 @@ do_action( 'woocommerce_before_main_content' );
 
 ?>
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-lg-8">
 			<header class="woocommerce-products-header">
 				<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 					<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
@@ -96,7 +96,7 @@ do_action( 'woocommerce_before_main_content' );
 				do_action( 'woocommerce_no_products_found' );
 			} ?>
 			</div>
-			<div class="col-md-4">
+			<div class="col-lg-4">
 				<?php
 				/**
 				 * Hook: woocommerce_sidebar.

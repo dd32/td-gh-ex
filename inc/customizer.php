@@ -522,11 +522,11 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	$i = 0;
 	$cat_post[]= 'select';
 	foreach($categories as $category){
-	if($i==0){
-	$default = $category->slug;
-	$i++;
-	}
-	$cat_post[$category->slug] = $category->name;
+		if($i==0){
+			$default = $category->slug;
+			$i++;
+		}
+		$cat_post[$category->slug] = $category->name;
 	}
 
 	$wp_customize->add_setting('bb_mobile_application_blogcategory_left_setting',array(
@@ -545,16 +545,15 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	$i = 0;
 	$pst[]='Select';  
 	foreach($post_list as $post){
-	$pst[$post->post_title] = $post->post_title;
+		$pst[$post->post_title] = $post->post_title;
 	}
-
 
 	$wp_customize->add_setting('bb_mobile_application_middle_image_setting',array(
 		'sanitize_callback' => 'sanitize_text_field',
 	));
 	$wp_customize->add_control('bb_mobile_application_middle_image_setting',array(
 		'type'    => 'select',
-		 'choices' => $pst,
+		'choices' => $pst,
 		'label' => __('Select post to display featured image','bb-mobile-application'),
 		'section' => 'bb_mobile_application_creative_section',
 	));
@@ -565,11 +564,11 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	$i = 0;
 	$cat_post1[]= 'select';
 	foreach($categories as $category){
-	if($i==0){
-	$default = $category->slug;
-	$i++;
-	}
-	$cat_post1[$category->slug] = $category->name;
+		if($i==0){
+			$default = $category->slug;
+			$i++;
+		}
+		$cat_post1[$category->slug] = $category->name;
 	}
 
 	$wp_customize->add_setting('bb_mobile_application_blogcategory_right_setting',array(
@@ -598,7 +597,7 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	$wp_customize->add_control('bb_mobile_application_footer_copy',array(
 		'label'	=> __('Copyright Text','bb-mobile-application'),
 		'section'	=> 'bb_mobile_application_footer_section',
-		'type'		=> 'textarea'
+		'type'		=> 'text'
 	));	
 }
 add_action( 'customize_register', 'bb_mobile_application_customize_register' );	

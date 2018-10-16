@@ -22,8 +22,7 @@ get_header(); ?>
     </div>
 
     <div id="content-ts" class="container">
-        <div class="middle-align row">
-    		<div class="col-md-12">
+        <div class="middle-align">
                 <img src="<?php the_post_thumbnail_url(); ?>" width="100%">
                 <?php the_content();
                 wp_link_pages( array(
@@ -34,7 +33,6 @@ get_header(); ?>
                     'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'bb-mobile-application' ) . ' </span>%',
                     'separator'   => '<span class="screen-reader-text">, </span>',
                 ) ); ?>
-            </div>
             <div class="clear"></div>    
         </div>
         <?php

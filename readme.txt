@@ -4,7 +4,7 @@
 
 Theme Name      :   BB Mobile Application
 Theme URI       :   https://www.themeshopy.com/free/wp-bb-mobile-application-theme/
-Version         :   1.2.3.5
+Version         :   1.2.3.6
 Tested up to    :   WP 4.9.8
 Author          :   ThemeShopy
 Author URI      :   https://www.themeshopy.com/
@@ -178,6 +178,9 @@ i)  Added typography section.
 ii) Updated pot file.
 
 Version 1.2.3.5
+i)  Resolved minor errors.
+
+Version 1.2.3.6
 i)   Changed slider.
 ii)  Resolved minor errors.
 iii) Updated woocommerce css.

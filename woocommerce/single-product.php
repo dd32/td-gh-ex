@@ -32,14 +32,14 @@ get_header( 'shop' ); ?>
 		do_action( 'woocommerce_before_main_content' );
 	?>
 	<div class="row">
-		<div class="col-md-8">
+		<div class="col-lg-8">
 			<?php while ( have_posts() ) : the_post(); ?>
 
 				<?php wc_get_template_part( 'content', 'single-product' ); ?>
 
 			<?php endwhile; // end of the loop. ?>
 		</div>
-		<div class="col-md-4">
+		<div class="col-lg-4">
 			<?php
 				/**
 				 * woocommerce_sidebar hook.

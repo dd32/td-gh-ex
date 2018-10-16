@@ -23,7 +23,7 @@
     <div class="container">
       <div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','bb-mobile-application'); ?></a></div>
       <div class="row">
-        <div class="logo col-md-4 col-sm-4">
+        <div class="logo col-lg-4 col-md-4">
           <?php bb_mobile_application_the_custom_logo(); ?>
           <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
           <?php
@@ -32,7 +32,7 @@
               <p class="site-description"><?php echo esc_html( $description ); ?></p>
           <?php endif; ?>
         </div>
-        <div class="menubox col-md-8 col-sm-8">
+        <div class="menubox col-lg-8 col-md-8">
           <div class="nav">
   		      <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
           </div>

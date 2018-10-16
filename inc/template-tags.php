@@ -114,8 +114,10 @@ if ( ! function_exists( 'bb_mobile_application_the_custom_logo' ) ) :
 	 * @since BB Mobile Application
 	 */
 	function bb_mobile_application_the_custom_logo() {
-		if( has_custom_logo() ){
-			the_custom_logo();
+		if ( function_exists( 'the_custom_logo' ) ) {
+			if( has_custom_logo() ){
+				the_custom_logo();
+			}
 		}
 	}
 endif;

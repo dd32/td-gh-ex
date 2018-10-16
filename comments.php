@@ -30,15 +30,15 @@ if ( post_password_required() )
 					} else {
 					printf(
 					  	esc_html(
-				     		/* translators: 1: number of comments, 2: post title */
-					    	_nx( 
+						    /* translators: 1: number of comments, 2: post title */
+						    _nx( 
 					         	'%1$s thought on &ldquo;%2$s&rdquo;',
 					         	'%1$s thoughts on &ldquo;%2$s&rdquo;',
 					         	$comments_number,
 					         	'comments title',
 					         	'bb-mobile-application'
-					    	)
-						),
+					      	)
+					  	),
 					  esc_html (number_format_i18n( $comments_number ) ),
 					  get_the_title()
 					);

@@ -19,7 +19,7 @@ function bb_mobile_application_mostrar_guide() {
  <div class="wrapper-info">
 	 <div class="header">
 	 	<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/logo.png" alt="" />
-	 	<h2><?php esc_html_e('Welcome to Mobile App Lite Theme', 'bb-mobile-application'); ?></h2>
+	 	<h2><?php esc_html_e('Welcome to Mobile App Theme', 'bb-mobile-application'); ?></h2>
  		<p><?php esc_html_e('Most of our outstanding theme is elegant, responsive, multifunctional, SEO friendly has amazing features and functionalities that make them highly demanding for designers and bloggers, who ought to excel in web development domain. Our Themeshopy has got everything that an individual and group need to be successful in their venture.', 'bb-mobile-application'); ?></p>
 		<div class="main-button">
 			<a href="<?php echo esc_url( BB_MOBILE_APPLICATION_BUY_NOW ); ?>" target="_blank"><?php esc_html_e('Buy Now', 'bb-mobile-application'); ?></a>
@@ -123,7 +123,5 @@ function bb_mobile_application_mostrar_guide() {
 	    elmnt.style.backgroundColor = color;
 
 	}
-	// Get the element with id="defaultOpen" and click on it
-	document.getElementById("defaultOpen").click();
 </script>
 <?php } ?>
