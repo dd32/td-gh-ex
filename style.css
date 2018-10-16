@@ -4,11 +4,11 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-ecommerce-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress theme for all types of shops be it an offline store striving to establish itself in the online world or an eCommerce shop extending its scope of products day-by-day. This theme is for book store, mobile and gadgets store, fashion and apparel store, cosmetics shop, jewellery shop or any website dealing with the business of selling products over the internet. This multipurpose eCommerce theme can be used for sports, technology, fashion, furniture, pharmacy etc. It has various options which make designing website an easy breezy task with no coding knowledge required. Sliders can be used to showcase your best deals, offers and best-selling products. The Advance Ecommerce Store theme is readily responsive, cross-browser compatible and translation ready. For an ecommerce shop SEO is very important, which is well looked-after in this theme to rank high in search engine results. Through social media icons, you can allow sharing products on various networking site. Its smart placement of call to action button is important to lead your customers. The theme allows deep customization of wide range of elements. Showcase your best products in the ornate gallery to attract visitor’s attention. Demo: https://themeshopy.com/advance-ecommerce-store-pro/
-Version: 0.1
+Version: 0.2
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-ecommerce-store
-Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
+Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, post-formats, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 
 Advance Ecommerce Store WordPress Theme has been created by Themeshopy, 2018.
 Advance Ecommerce Store WordPress Theme is released under the terms of GNU GPL
@@ -236,11 +236,14 @@ a.button{
 .social_widget i {  
   color: #fff;
   margin-right: 5px;
-  padding: 12px 0;
+  padding: 12px 6px;
 }
 .social_widget a{
   border-right: solid 1px #fff;
   margin-right: 5px;
+}
+.social_widget a:last-child{
+  border: none;
 }
 /* ---------Middle Header--------- */
 .logo{
@@ -262,6 +265,7 @@ a.button{
 .middle-header input[type="search"] {
   font-size: 15px;
   width: 88%;
+  background: transparent;
 }
 .middle-header input[type="search"]::placeholder{
   color: #000;
@@ -299,26 +303,41 @@ span.cart_no a {
   margin: 13px 0px;
 }
 li.cart_box {
-  text-align: center;
+  text-align: right;
   list-style: none;
 }
 span.cart-value {
   background: #ff6600;
   border-radius: 50%;
-  padding: 1px 5px;
+  padding: 4px 7px;
   font-size: 12px;
   font-weight: bold;
+  position: relative;
   color: #fff;
 }
 
 /* --------- Main Menu--------- */
-
-.main-menu .nav ul li a{
+.main-menu .nav ul li a {
   padding: 15px !important;
+}
+.main-menu .nav ul li {
   border-right: solid 1px #fff;
 }
 .main-menu .nav ul li a:hover{
   background: #000;
+}
+.main-menu .nav ul li:last-child{
+  border: none;
+}
+.menu-woocommerce-menu-container ul li a{
+  border-right:1px solid #fff; 
+  padding: 2px 5px !important;
+}
+.menu-woocommerce-menu-container ul li{
+  padding: 6px 0;
+}
+.menu-woocommerce-menu-container ul li:last-child a{
+  border: none;
 }
 
 /* ---------HEADER--------- */
@@ -454,6 +473,7 @@ span.cart-value {
   font-weight: 700;
   color: #fff;
   text-align: left;
+  padding: 0 0 10px 0;
 }
 hr.slidehr {
   border-top: solid 3px #ff6600;
@@ -478,10 +498,9 @@ hr.slidehr {
   padding: 12px;
   font-weight: bold;
   font-size: 12px;
-  letter-spacing: 2px;
 }
 .more-btn{
-  margin: 25px 0;
+  margin-top: 15px;
 }
 
 /*---------- Product Services -----------*/
@@ -724,7 +743,7 @@ table#wp-calendar {
   margin-top: -38px;
 }
 .copyright p {
-  font-size: 16px !important;
+  font-size: 15px !important;
   color: #fff;
   margin-bottom: 0;
 }
@@ -733,7 +752,7 @@ table#wp-calendar {
 }
 .copyright {
   background: #ff6600;
-  padding: 20px 0px;
+  padding: 15px 0px;
   text-align:center;
 }
 #footer .tagcloud a {
@@ -1110,6 +1129,10 @@ h1.page-title {
 	font-weight:bold;
 }
 
+iframe{
+  width: 100%;
+}
+
 /* Media */
 @media screen and (max-width: 768px) and (min-width: 720px){	
  	.box-content {
@@ -1121,6 +1144,21 @@ h1.page-title {
 	}	
   .woocommerce .products li {
     width: 45% !important;
+  }
+  span.cart_no{
+    padding: 12px 6px;
+  }
+  .cart_icon{
+    padding: 0;
+  }
+  .middle-header input[type="search"]{
+    width: 80%;
+  }
+  #slider .inner_carousel p{
+    display: none;
+  }
+  .categry-title{
+    padding: 13px;
   }
 }
 @media screen and (max-width:720px) {	
@@ -1154,6 +1192,7 @@ h1.page-title {
 		background:url('images/mobile_nav_right.png') no-repeat right center #000;
 		padding:10px 10px;
 		font-size:16px;
+    border-bottom: 1px solid;
 	}
 	.nav{
 	 	display:none;
@@ -1170,7 +1209,7 @@ h1.page-title {
 		overflow-x:hidden;
 		width: 100%;
 		left: 0;
-		top: 44px;
+		top: 90px;
 	}
 	#header .nav ul{
 		width:100%;
@@ -1205,9 +1244,38 @@ h1.page-title {
 	.nav ul li ul li ul li a{
 		padding-left:30px !important;
 	}
-	.box-content {
-	display: none;
-    }
+	.box-content,
+  #slider .inner_carousel h2,
+  hr.slidehr,
+  #slider .inner_carousel p {
+	  display: none;
+  }
+  .menu-woocommerce-menu-container ul li a,
+  .main-menu .nav ul li,
+  .service-border{
+    border: none;
+  }
+  .middle-header form{
+    text-align: left;
+    margin: 0;
+  }
+  .middle-header input[type="search"]{
+    width: 82%;
+  }
+  .account{
+    margin:10px;
+  }
+  li.cart_box {
+    padding: 0 30%;
+    text-align: right;
+  }
+  .more-btn{
+    margin:0;
+    text-align: center;
+  }
+  .middle-header button[type="submit"]{
+    padding: 10px 20px;
+  }
 }
 @media screen and (min-width:720px){
 	#header .nav ul li ul{
@@ -1221,7 +1289,7 @@ h1.page-title {
 		background:#000;
 		width:200px;
 		position:absolute;
-		top:25px;
+		top:40px;
 		left:0;
 		text-align:left;
 		z-index:99;
@@ -1232,7 +1300,7 @@ h1.page-title {
 	#header .nav ul li:hover > ul li a{
 		padding:7px 0px 7px 10px;
 		color:#ffffff;
-		border-bottom: solid 1px #333;
+		border-bottom: solid 1px #fff;
 	}
 	#header .nav ul li:hover ul li ul{
 	 	display:none;
@@ -1268,7 +1336,7 @@ h1.page-title {
 		padding: 0px;
 	}	
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1000px) and (max-width: 1024px) {
 	#header #header-inner .nav ul li ul li{
 	 	display:block;
 		position:relative;
@@ -1289,6 +1357,12 @@ h1.page-title {
 	{
 		padding: 4px;
 	}
+  .middle-header input[type="search"]{
+    width: 85%;
+  }
+  span.cart_no {
+    padding: 12px 10px;
+  }
 }
 @media screen and (max-width: 425px){
 	#footer input[type="search"]{

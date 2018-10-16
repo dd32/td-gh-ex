@@ -20,7 +20,7 @@ defined( 'ABSPATH' ) || exit;
 get_header( 'shop' );
 
 ?>
-<div class="container">
+<div  class="container">
 	<?php 
 		/**
 		* Hook: woocommerce_before_main_content.
@@ -31,7 +31,7 @@ get_header( 'shop' );
 		*/
 		do_action( 'woocommerce_before_main_content' ); ?>
 	<div class="row">
-		<div class="col-md-9 col-sm-9">
+		<div class="col-lg-8 col-md-8">
 			<header class="woocommerce-products-header">
 				<?php if ( apply_filters( 'woocommerce_show_page_title', true ) ) : ?>
 					<h1 class="woocommerce-products-header__title page-title"><?php woocommerce_page_title(); ?></h1>
@@ -95,7 +95,7 @@ get_header( 'shop' );
 
 			?>			
 		</div>
-		<div class="col-md-3 col-sm-3" >
+		<div class="col-lg-4 col-md-4" >
 			<?php
 			/**
 			 * Hook: woocommerce_sidebar.

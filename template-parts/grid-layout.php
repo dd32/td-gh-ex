@@ -21,7 +21,7 @@
         <div class="new-text">
             <p><?php the_excerpt();?></p>
             <div class="second-border">
-                <a href="<?php echo esc_url( get_permalink() );?>" title="<?php esc_attr_e( 'Read More', 'advance-ecommerce-store' ); ?>"><?php esc_html_e('read complete post','advance-ecommerce-store'); ?></a>
+                <a href="<?php echo esc_url( get_permalink() );?>" title="<?php esc_attr_e( 'Read More', 'advance-ecommerce-store' ); ?>"><?php esc_html_e('Read More','advance-ecommerce-store'); ?></a>
             </div>
         </div>
         <div class="clearfix"></div>

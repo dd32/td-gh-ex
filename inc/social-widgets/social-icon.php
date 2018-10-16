@@ -111,7 +111,7 @@ class Advance_Ecommerce_Store_Social_Widget extends WP_Widget {
          $instance['youtube'] = (!empty($new_instance['youtube']) ) ? strip_tags($new_instance['youtube']) : '';
 		 return $instance;
 	}
-} // Class wpb_social_widget ends here
+} // Class Advance_Ecommerce_Store_Social_Widget ends here
 // Register and load the widget
 function advance_ecommerce_store_custom_load_widget() {
 	register_widget( 'Advance_Ecommerce_Store_Social_Widget' );

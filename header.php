@@ -25,10 +25,10 @@
     <div class="top-menu">
       <div class="container">
         <div class="row">
-          <div class="col-md-6 col-sm-6">
+          <div class="col-lg-6 col-md-6">
             <?php dynamic_sidebar('social'); ?>
           </div>
-          <div class="col-md-6 col-sm-6">
+          <div class="col-lg-6 col-md-6">
             <div class="nav">
               <?php wp_nav_menu( array('theme_location'  => 'woocommerce-menu') ); ?>
             </div>
@@ -39,7 +39,7 @@
     <div class="middle-header">
       <div class="container">
         <div class="row">
-          <div class="logo col-md-3 col-sm-3">
+          <div class="logo col-lg-3 col-md-3">
             <?php if( has_custom_logo() ){ advance_ecommerce_store_the_custom_logo();
              }else{ ?>
             <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -48,28 +48,28 @@
               <p class="site-description"><?php echo esc_html($description); ?></p>       
             <?php endif; }?>
           </div>
-          <div class="col-md-6 col-sm-6">
+          <div class="col-lg-6 col-md-6">
             <?php if(class_exists('woocommerce')){ ?>
               <?php get_product_search_form()?>
-            <?php }else { echo '<h6>'.esc_html('Please Install Woocommerce Plugin','advance-ecommerce-store').'<h6>'; }?>
+            <?php }?>
           </div>
-          <div class="account col-md-1 col-sm-1">
+          <div class="account col-lg-1 col-md-1">
             <?php if ( is_user_logged_in() ) { ?>
-              <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>" title="<?php esc_html_e('My Account','advance-ecommerce-store'); ?>"><i class="fas fa-sign-in-alt"></i></a>
+              <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><i class="fas fa-sign-in-alt"></i></a>
             <?php } 
             else { ?>
-              <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>" title="<?php esc_html_e('Login / Register','advance-ecommerce-store'); ?>"><i class="fas fa-user"></i></a>
+              <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><i class="fas fa-user"></i></a>
             <?php } ?>
           </div>
-          <div class="col-md-2 col-sm-2  cart_icon">
+          <div class="col-lg-2 col-md-2  cart_icon">
             <?php if(class_exists('woocommerce')){ ?>
               <li class="cart_box">
                 <span class="cart-value"> <?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?></span>
               </li>
               <span class="cart_no">
-                <a class="cart-contents" href="<?php if(function_exists('wc_get_cart_url')){ echo esc_url(wc_get_cart_url()); } ?>" title="<?php esc_html_e( 'shopping cart','advance-ecommerce-store' ); ?>"><?php esc_html_e( 'SHOPPING CART','advance-ecommerce-store' ); ?></a>
+                <a class="cart-contents" href="<?php if(function_exists('wc_get_cart_url')){ echo esc_url(wc_get_cart_url()); } ?>" title="<?php esc_html_e( 'SHOPPING CART','advance-ecommerce-store' ); ?>"><?php esc_html_e( 'SHOPPING CART','advance-ecommerce-store' ); ?></a>
               </span>
-              <?php }else { echo '<h6>'.esc_html('Please Install Woocommerce Plugin','advance-ecommerce-store').'<h6>'; }?>
+              <?php }?>
           </div>         
         </div>
       </div>
