@@ -658,12 +658,12 @@ function ashe_enqueue_about_page_scripts($hook) {
 	}
 
 	// enqueue CSS
-	wp_enqueue_style( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/css/about-ashe-page.css' ), array(), '1.7.6' );
+	wp_enqueue_style( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/css/about-ashe-page.css' ), array(), '1.7.7' );
 
 	// Demo Import
 	wp_enqueue_script( 'plugin-install' );
 	wp_enqueue_script( 'updates' );
-	wp_enqueue_script( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/js/about-ashe-page.js' ), array(), '1.7.6' );
+	wp_enqueue_script( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/js/about-ashe-page.js' ), array(), '1.7.7' );
 
 }
 add_action( 'admin_enqueue_scripts', 'ashe_enqueue_about_page_scripts' );
