@@ -12,16 +12,18 @@
  */
 function beautiplus_customize_register( $wp_customize ) {
 	
-	//Add a class for titles
-    class beautiplus_Info extends WP_Customize_Control {
-        public $type = 'info';
-        public $label = '';
-        public function render_content() {
-        ?>
-			<h3><?php echo esc_html( $this->label ); ?></h3>
-        <?php
-        }
-    }
+	function beautiplus_sanitize_dropdown_pages( $page_id, $setting ) {
+	  // Ensure $input is an absolute integer.
+	  $page_id = absint( $page_id );
+	
+	  // If $page_id is an ID of a published page, return it; otherwise, return the default.
+	  return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
+	}
+
+	function beautiplus_sanitize_checkbox( $checked ) {
+		// Boolean check.
+		return ( ( isset( $checked ) && true == $checked ) ? true : false );
+	}  
 	
 	
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
@@ -49,11 +51,10 @@ function beautiplus_customize_register( $wp_customize ) {
         )
     );
 	
-	
 	$wp_customize->add_setting('page-setting7',array(
 			'default'	=> '0',			
 			'capability' => 'edit_theme_options',
-			'sanitize_callback'	=> 'absint'
+			'sanitize_callback'	=> 'beautiplus_sanitize_dropdown_pages'
 	));
 	
 	$wp_customize->add_control('page-setting7',array(
@@ -65,7 +66,7 @@ function beautiplus_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('page-setting8',array(
 			'default'	=> '0',			
 			'capability' => 'edit_theme_options',
-			'sanitize_callback'	=> 'absint'
+			'sanitize_callback'	=> 'beautiplus_sanitize_dropdown_pages'
 	));
 	
 	$wp_customize->add_control('page-setting8',array(
@@ -77,7 +78,7 @@ function beautiplus_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('page-setting9',array(
 			'default'	=> '0',			
 			'capability' => 'edit_theme_options',
-			'sanitize_callback'	=> 'absint'
+			'sanitize_callback'	=> 'beautiplus_sanitize_dropdown_pages'
 	));
 	
 	$wp_customize->add_control('page-setting9',array(
@@ -99,16 +100,16 @@ function beautiplus_customize_register( $wp_customize ) {
 	 ));// Slider Read more	
 	
 	$wp_customize->add_setting('disabled_slides',array(
-				'default' => true,
-				'sanitize_callback' => 'sanitize_text_field',
-				'capability' => 'edit_theme_options',
+			'default' => true,
+			'sanitize_callback' => 'beautiplus_sanitize_checkbox',
+			'capability' => 'edit_theme_options',
 	));	 
 	
 	$wp_customize->add_control( 'disabled_slides', array(
-			   'settings' => 'disabled_slides',
-			   'section'   => 'slider_section',
-			   'label'     => __('Uncheck To Enable This Section','beautiplus'),
-			   'type'      => 'checkbox'
+		   'settings' => 'disabled_slides',
+		   'section'   => 'slider_section',
+		   'label'     => __('Uncheck To Enable This Section','beautiplus'),
+		   'type'      => 'checkbox'
 	 ));//Disable Slider Section
 	
 	// Home Three Boxes Section 	
@@ -122,10 +123,11 @@ function beautiplus_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('page-column1',	array(
 			'default'	=> '0',			
 			'capability' => 'edit_theme_options',
-			'sanitize_callback'	=> 'absint'
+			'sanitize_callback'	=> 'beautiplus_sanitize_dropdown_pages'
 		));
  
-	$wp_customize->add_control(	'page-column1',array('type' => 'dropdown-pages',			
+	$wp_customize->add_control(	'page-column1',array(
+			'type' => 'dropdown-pages',			
 			'section' => 'section_second',
 	));	
 	
@@ -133,26 +135,29 @@ function beautiplus_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('page-column2',	array(
 			'default'	=> '0',			
 			'capability' => 'edit_theme_options',
-			'sanitize_callback'	=> 'absint'
+			'sanitize_callback'	=> 'beautiplus_sanitize_dropdown_pages'
 		));
  
-	$wp_customize->add_control(	'page-column2',array('type' => 'dropdown-pages',			
+	$wp_customize->add_control(	'page-column2',array(
+			'type' => 'dropdown-pages',			
 			'section' => 'section_second',
 	));
 	
 	$wp_customize->add_setting('page-column3',	array(
 			'default'	=> '0',			
 			'capability' => 'edit_theme_options',
-			'sanitize_callback'	=> 'absint'
+			'sanitize_callback'	=> 'beautiplus_sanitize_dropdown_pages'
 		));
  
-	$wp_customize->add_control(	'page-column3',array('type' => 'dropdown-pages',			
+	$wp_customize->add_control(	'page-column3',array(
+			'type' => 'dropdown-pages',			
 			'section' => 'section_second',
 	));//end four column page boxes
 	
+	
 	$wp_customize->add_setting('disabled_pgboxes',array(
 			'default' => true,
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'beautiplus_sanitize_checkbox',
 			'capability' => 'edit_theme_options',
 	));	 
 	
@@ -174,16 +179,17 @@ function beautiplus_customize_register( $wp_customize ) {
 	$wp_customize->add_setting('page-setting1',	array(
 			'default'	=> '0',			
 			'capability' => 'edit_theme_options',
-			'sanitize_callback'	=> 'absint'
+			'sanitize_callback'	=> 'beautiplus_sanitize_dropdown_pages'
 		));
  
-	$wp_customize->add_control(	'page-setting1',array('type' => 'dropdown-pages',			
+	$wp_customize->add_control(	'page-setting1',array(
+			'type' => 'dropdown-pages',			
 			'section' => 'welcome_sec',
 	));
 	
 	$wp_customize->add_setting('disabled_welcomepage',array(
 			'default' => true,
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'beautiplus_sanitize_checkbox',
 			'capability' => 'edit_theme_options',
 	));	 
 	

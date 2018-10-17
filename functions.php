@@ -31,8 +31,8 @@ function beautiplus_setup() {
 	) );
 	add_theme_support( 'title-tag' );	
 	add_theme_support( 'custom-logo', array(
-		'height'      => 100,
-		'width'       => 100,
+		'height'      => 80,
+		'width'       => 200,
 		'flex-height' => true,
 	) );
 	register_nav_menus( array(
@@ -133,7 +133,6 @@ function beautiplus_scripts() {
 	wp_enqueue_script( 'jquery-nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
 	wp_enqueue_script( 'beautiplus-custom', get_template_directory_uri() . '/js/custom.js' );
 	wp_enqueue_style( 'animation', get_template_directory_uri()."/css/animation.css" );	
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri()."/css/font-awesome.css" );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
@@ -156,9 +155,9 @@ function beautiplus_ie_stylesheet(){
 	}
 add_action('wp_enqueue_scripts','beautiplus_ie_stylesheet');
 
-define('beautiplus_theme_doc','https://gracethemes.com/documentation/beautiplus-doc/','beautiplus');
-define('beautiplus_protheme_url','https://gracethemes.com/themes/modern-wordpress-theme/','beautiplus');
-define('beautiplus_live_demo','https://gracethemes.com/demo/beautiplus/','beautiplus');
+define('BEAUTIPLUS_THEME_DOC','https://gracethemes.com/documentation/beautiplus-doc/#homepage-lite','beautiplus');
+define('BEAUTIPLUS_PROTHEME_URL','https://gracethemes.com/themes/modern-wordpress-theme/','beautiplus');
+define('BEAUTIPLUS_LIVE_DEMO','https://gracethemes.com/demo/beautiplus/','beautiplus');
 
 
 /**

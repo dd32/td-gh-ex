@@ -30,8 +30,8 @@
 				  <?php bloginfo('name'); ?> <?php _e('All Rights Reserved', 'beautiplus');?>              
                 </div>
                 <div class="design-by">
-                    <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'beautiplus' ) ); ?>">
-                      <?php printf( __( 'Proudly powered by %s', 'beautiplus' ), 'WordPress' ); ?>
+                    <a href="<?php echo esc_url( __( 'https://gracethemes.com/themes/free-modern-wordpress-theme/', 'beautiplus' ) ); ?>" target="_blank">
+                      <?php printf( __( 'Designed by %s', 'beautiplus' ), 'Grace Themes' ); ?>
                     </a>
                 </div>
                 <div class="clear"></div>

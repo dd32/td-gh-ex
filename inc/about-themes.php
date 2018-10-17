@@ -20,9 +20,17 @@ function beautiplus_mostrar_guide() {
    		   <div class="heading-gt">
 			  <h3><?php _e('About Theme Info', 'beautiplus'); ?></h3>
 		   </div>
-          <p><?php _e('beautiplus is a free Modern WordPress theme. it is easy to customize and loaded with the most Powerfull features. It is perfect for photography, wedding, fitness, health , gym, yoga, personal, bloging any small business. also Compatible with WooCommerce, Nextgen gallery ,Contact Form 7 and many WordPress popular plugins. ','beautiplus'); ?></p>
-<div class="heading-gt"> <?php _e('Theme Features', 'beautiplus'); ?></div>
+          <p><?php _e('BeautiPlus is a beautiful, responsive, colorful, stylish and free modern WordPress theme. BeautiPlus is an easy to use and highly intuitive multipurpose WordPress website theme. BeautiPlus has been designed with the main objective to provide website building platform for fashion and blogging website webmasters that are looking for professional quality and creativity.','beautiplus'); ?></p>
  
+<div class="gt-right">		
+<hr /> 	
+<a href="<?php echo BEAUTIPLUS_LIVE_DEMO; ?>" target="_blank"><?php _e('Live Demo', 'beautiplus'); ?></a> | 
+<a href="<?php echo BEAUTIPLUS_PROTHEME_URL; ?>" target="_blank"><?php _e('Purchase Pro', 'beautiplus'); ?></a> | 
+<a href="<?php echo BEAUTIPLUS_THEME_DOC; ?>" target="_blank"><?php _e('Documentation', 'beautiplus'); ?></a>               
+<hr />  
+</div><!-- .gt-right--> 
+
+<div class="heading-gt"><h3><?php _e('Theme Features', 'beautiplus'); ?><h3></div>
 
 <div class="col-2">
   <h4><?php _e('Theme Customizer', 'beautiplus'); ?></h4>
@@ -46,22 +54,7 @@ function beautiplus_mostrar_guide() {
 
 </div><!-- .gt-left -->
 	
-	<div class="gt-right">			
-				<a href="<?php echo beautiplus_live_demo; ?>" target="_blank"><?php _e('Live Demo', 'beautiplus'); ?></a> | 
-				<a href="<?php echo beautiplus_protheme_url; ?>"><?php _e('Purchase Pro', 'beautiplus'); ?></a> | 
-				<a href="<?php echo beautiplus_theme_doc; ?>" target="_blank"><?php _e('Documentation', 'beautiplus'); ?></a>               
-				<hr />  
-                <ul>
-                 <li><?php _e('Theme Customizer', 'beautiplus'); ?></li>
-                 <li><?php _e('Responsive Ready', 'beautiplus'); ?></li>
-                 <li><?php _e('Cross Browser Compatible', 'beautiplus'); ?></li>
-                 <li><?php _e('E-commerce', 'beautiplus'); ?></li>
-                 <li><?php _e('Contact Form 7 Plugin Compatible', 'beautiplus'); ?></li>  
-                 <li><?php _e('User Friendly', 'beautiplus'); ?></li> 
-                 <li><?php _e('Translation Ready', 'beautiplus'); ?></li>
-                 <li><?php _e('Many Other Plugins  Compatible', 'beautiplus'); ?></li>   
-                </ul>         
-	</div><!-- .gt-right-->
+	
     <div class="clear"></div>
 </div><!-- .wrap-GT -->
 <?php } ?>

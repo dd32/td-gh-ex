@@ -1,16 +1,15 @@
 /*-----------------------------------------------------------------------------------*/
-/* Free Modern  WordPress Theme */
+/* Free Modern WordPress Theme */
 /*-----------------------------------------------------------------------------------*/
 
 Theme Name      :   Beautiplus
-Theme URI         :   https://gracethemes.com/themes/free-modern-wordpress-theme/
-Version                :   1.2.0
-Tested up to        :   WP 4.6.1
-Author                  :   Grace Themes
-Author URI           :   http://www.gracethemes.com/
-
-license                  :   GNU General Public License v3.0
-License URI         :   http://www.gnu.org/licenses/gpl.html
+Theme URI       :   https://gracethemes.com/themes/free-modern-wordpress-theme/
+Version         :   1.3.0
+Tested up to    :   WP 4.9.8
+Author          :   Grace Themes
+Author URI      :   http://www.gracethemes.com/
+license         :   GNU General Public License v3.0
+License URI     :   http://www.gnu.org/licenses/gpl.html
 
 /*-----------------------------------------------------------------------------------*/
 /* About Author - Contact Details */
@@ -58,7 +57,7 @@ For any help you can mail us at support[at]gracethemes.com
 /* Copyright */
 /*-----------------------------------------------------------------------------------*/
 
-Beautiplus WordPress Theme, Copyright 2016
+Beautiplus WordPress Theme, Copyright 2018
 Beautiplus is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
