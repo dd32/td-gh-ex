@@ -34,6 +34,16 @@
 			var headerHeight = $('.site-header').outerHeight();
 			$('#masthead-sticky-wrapper').css('min-height', headerHeight);
 
+			//Help Edge with handling the menu background color
+			$window = $(window);
+			$window.scroll(function() {
+				if ( $window.scrollTop() <= 0 ) {
+					$('.menuStyle1 .sticky-wrapper').removeClass('is-sticky');
+				} else {
+					$('.menuStyle1 .sticky-wrapper').addClass('is-sticky');
+				}
+			});
+
 		} else {
 			$('.sticky-header .site-header, .sticky-header .main-navigation, .sticky-header .bottom-bar').unstick();
 		}
@@ -54,6 +64,13 @@
 	$( '.site-header' ).on( 'click', '.mobile-menu-toggle', function( e ) {
 		e.preventDefault();
 		$( 'body' ).toggleClass( 'mobile-menu-active' );
+	} );
+
+
+	$( '.main-navigation' ).on( 'click', 'li a', function( e ) {
+		if ( $( 'body' ).hasClass( 'mobile-menu-active' ) ) {
+			$( 'body' ).removeClass( 'mobile-menu-active' );
+		}
 	} );
 
 	// Add dropdown arrow to <li> elements that contain sub-menus
