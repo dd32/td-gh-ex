@@ -156,6 +156,12 @@ if ( ! function_exists( 'adri_post_category' ) ) :
 		$categories = get_the_category();
 		if ( ! empty( $categories ) ) {
 		    echo '<a class="post-cat" href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '">' . esc_html( $categories[0]->name ) . '</a>';
+		} else {
+			$terms = get_the_terms( $post->ID, 'project-type' ); 
+		
+
+			echo '<a class="post-cat" href="' . esc_url(get_the_permalink()) . '">' . esc_html( $terms[0]->name ) . '</a>';
+
 		}
 	}
 endif;

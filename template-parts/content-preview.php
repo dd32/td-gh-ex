@@ -16,6 +16,8 @@
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 		</a>			
 
-		<?php echo esc_html(adri_post_category()); ?>			
+		<?php echo esc_html(adri_post_category()); 
+		
+		?>			
 	</header><!-- .entry-header -->
 </article>
