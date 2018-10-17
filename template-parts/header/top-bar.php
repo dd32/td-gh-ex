@@ -7,21 +7,21 @@
 <div class="top-header">
   <div class="container">
     <div class="row">
-      <div class="col-md-4 col-sm-4">
+      <div class="col-lg-4 col-md-4">
         <div class="timebox">
-          <?php if( get_theme_mod( 'adventure_travelling_timming') != '') { ?>
-            <i class="fas fa-map-marker-alt"></i><span class="phone"><?php echo esc_html( get_theme_mod('adventure_travelling_location',__('777 Dummy Street, USA','adventure-travelling') )); ?></span>
+          <?php if( get_theme_mod( 'adventure_travelling_location') != '') { ?>
+            <i class="fas fa-map-marker-alt"></i><span class="phone"><?php echo esc_html( get_theme_mod('adventure_travelling_location','')); ?></span>
           <?php } ?>
         </div>
       </div>
-      <div class="col-md-4 col-sm-4">
+      <div class="col-lg-4 col-md-4">
         <div class="timebox">
           <?php if( get_theme_mod( 'adventure_travelling_timming') != '') { ?>
-            <i class="far fa-clock"></i><span class="phone"><?php echo esc_html( get_theme_mod('adventure_travelling_timming',__('10:00AM - 2:00PM  MONDAY TO FRIDAY','adventure-travelling') )); ?></span>
+            <i class="far fa-clock"></i><span class="phone"><?php echo esc_html( get_theme_mod('adventure_travelling_timming','')); ?></span>
            <?php } ?>
         </div>
       </div>
-      <div class="col-md-4 col-sm-4">
+      <div class="col-lg-4 col-md-4">
         <div class="social-media">
           <?php if( get_theme_mod( 'adventure_travelling_facebook_url' ) != '') { ?>
             <span><?php esc_html_e('FOLLOW US:','adventure-travelling'); ?></span>          

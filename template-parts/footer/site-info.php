@@ -11,6 +11,6 @@
 ?>
 <div class="site-info">
 	<div class="container">
-		<p><?php echo esc_html(get_theme_mod('adventure_travelling_footer_text',__('Copyright 2018 Travel WordPress Theme ','adventure-travelling'))); ?></p>
+		<p><?php echo esc_html(get_theme_mod('adventure_travelling_footer_text',__('Copyright 2018 -','adventure-travelling'))); ?> <?php adventure_travelling_credit(); ?></p>
 	</div>
 </div>

@@ -11,6 +11,7 @@ function adventure_travelling_setup() {
 
 	load_theme_textdomain( 'adventure-travelling' );
 	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'woocommerce' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'adventure-travelling-featured-image', 2000, 1200, true );
@@ -52,8 +53,7 @@ add_action( 'after_setup_theme', 'adventure_travelling_setup' );
 function adventure_travelling_fonts_url(){
 	$font_url = '';
 	$font_family = array();
-	$font_family[] = 'Playfair+Display:400,400i,700,700i,900,900i';
-	$font_family[] = 'Open+Sans:300,300i,400,400i,600,600i,700';
+	$font_family[] = 'Playfair Display:400,400i,700,700i,900,900i';
 	$font_family[] = 'Poppins:200,200i,300,300i,400,400i,500';	
 
 	$query_args = array(
@@ -192,6 +192,14 @@ function adventure_travelling_sanitize_dropdown_pages( $page_id, $setting ) {
   return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
 }
 
+// Change number or products per row to 3
+add_filter('loop_shop_columns', 'adventure_travelling_loop_columns');
+	if (!function_exists('adventure_travelling_loop_columns')) {
+		function adventure_travelling_loop_columns() {
+		return 3; // 3 products per row
+	}
+}
+
 /**
  * Use front-page.php when Front page displays is set to a static page.
  */
@@ -199,6 +207,13 @@ function adventure_travelling_front_page_template( $template ) {
 	return is_home() ? '' : $template;
 }
 add_filter( 'frontpage_template',  'adventure_travelling_front_page_template' );
+
+define('ADVENTURE_TRAVELLING_CREDIT','https://www.themespride.com/themes/free-travel-agency-wordpress-theme/','adventure-travelling');
+if ( ! function_exists( 'adventure_travelling_credit' ) ) {
+	function adventure_travelling_credit(){
+		echo "<a href=".esc_url(ADVENTURE_TRAVELLING_CREDIT)." target='_blank'>".esc_html__('Travelling WordPress Theme ','adventure-travelling')."</a>";
+	}
+}
 
 /**
  * Implement the Custom Header feature.

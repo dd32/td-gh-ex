@@ -7,7 +7,7 @@
 <div class="menubar">
   	<div class="container right_menu">
   		<div class="row">
-	    	<div class="menubox col-md-11 col-sm-10">
+	    	<div class="menubox col-lg-11 col-md-10">
 	      		<div class="innermenubox ">
 		          	<div class="toggle-nav mobile-menu">
 		            	<span onclick="openNav()"><i class="fas fa-bars"></i></span>
@@ -29,7 +29,7 @@
           			<div class="clearfix"></div>
         		</div>
 	    	</div>	    	
-	    	<div class="search-box col-md-1 col-sm-1">
+	    	<div class="search-box col-lg-1 col-md-1">
 		        <span><i class="fas fa-search"></i></span>
 	      	</div>
 	    </div>

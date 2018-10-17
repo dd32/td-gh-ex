@@ -1,10 +1,10 @@
 /*
 Theme Name: Adventure Travelling
-Theme URI: 
+Theme URI: https://www.themespride.com/themes/free-travel-agency-wordpress-theme/
 Author: ThemesPride
-Author URI: 
-Description: Adventure travelling is a bold, powerful, attractive and multipurpose travel WordPress theme for travel agency, tour planners, tour and tourist guides, travel and adventure blogs, travel magazines, tourist destination, tourist hotels and airline agencies and all the people related to tourism industry in one way or the other. The theme has an inviting and appealing design with banners and sliders adding to its beauty. Built on Bootstrap framework, it has a strong foundation with easy usage solution. Its user-friendly interface and well-structured layout lead to smooth navigation. It has a fluid layout which is responsive to varying screen sizes. To help serve in local languages, it is made translation ready. It is cross-browser compatible, SEO-friendly and lightweight for speedy loading. Made from scratch, it is bug-free to conform to the WordPress standards. Customization is a powerful tool provided by this theme to ensure good control over the site. Social media icons are linked with the theme to easily reach people.
-Version: 0.1
+Author URI: https://www.themespride.com/
+Description: Adventure travelling is a bold, powerful, attractive and multipurpose travel WordPress theme for travel agency, tour planners, tour and tourist guides, travel and adventure blogs, travel magazines, tourist destination, tourist hotels and airline agencies and all the people related to tourism industry in one way or the other. The theme has an inviting and appealing design with banners and sliders adding to its beauty. Built on Bootstrap framework, it has a strong foundation with easy usage solution. Its user-friendly interface and well-structured layout lead to smooth navigation. It has a fluid layout which is responsive to varying screen sizes. To help serve in local languages, it is made translation ready. It is cross-browser compatible, SEO-friendly and lightweight for speedy loading. Made from scratch, it is bug-free to conform to the WordPress standards. Customization is a powerful tool provided by this theme to ensure good control over the site. Social media icons are linked with the theme to easily reach people. Demo: https://themespride.com/tp-adventure-traveling-pro/
+Version: 0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: adventure-travelling
@@ -28,7 +28,7 @@ body{
   word-wrap:break-word;
   background-color:#fff;
   font-size:15px;
-  color:#000;
+  color:#999;
   font-family: 'Poppins', sans-serif;
 }
 h1,
@@ -36,10 +36,16 @@ h2,
 h3,
 h4,
 h5,
-h6{ 
+h6{
+  color: #222;
   font-family: 'Playfair Display', serif;
   margin:0;
   padding:0 0 15px;
+}
+p{ 
+  margin:0 0 15px; 
+  padding:0;
+  font-size: 14px;
 }
 a{ 
   text-decoration:none;
@@ -482,6 +488,7 @@ From Our Blog
 }
 .blog-info {
   background: #ffcc05;
+  color: #000;
   position: relative;
   padding: 10px;
   margin-top: -72px;
@@ -500,6 +507,99 @@ From Our Blog
 .read-more-btn {
   margin: 25px 0;
 }
+
+/*--------------------------------------------------------------
+WOOCOMMERCE CSS
+--------------------------------------------------------------*/
+
+.woocommerce form .form-row input.input-text, 
+.woocommerce form .form-row textarea{
+  padding: 10px;
+}
+.woocommerce ul.products li.product .button,
+a.checkout-button.button.alt.wc-forward {
+  margin-top: 1em;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-transform: none;
+}
+.woocommerce  .star-rating {
+  margin: 0 auto 10px !important;
+}
+.woocommerce span.onsale{
+  background: #222;
+  padding: 0;
+}
+.products li {
+  border: solid 1px #ddd;
+  padding: 10px !important;
+  text-align: center;
+}
+h2.woocommerce-loop-product__title,
+.woocommerce div.product .product_title {
+  color: #222;
+  letter-spacing: 1px;
+  font-weight: 800;
+  font-size: 18px !important;
+  margin-bottom: 10px !important;
+}
+.woocommerce ul.products li.product .price,
+.woocommerce div.product p.price, .woocommerce div.product span.price {
+  color: #222;
+  font-size: 15px
+}
+.woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price{
+  margin-bottom: 5px;
+}
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
+  background: #ffcc05;
+  color: #222;
+  border-radius: 0;
+}
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
+  background: #222;
+  color: #fff;
+}
+.woocommerce .quantity .qty {
+  width: 5em;
+  padding: 4px;
+  border-radius: 0;
+  border: solid 2px #222;
+  color: #222;
+}
+.col-1,.col-2 {
+  max-width: 100%;
+}
+nav.woocommerce-MyAccount-navigation ul {
+  list-style: none;
+}
+nav.woocommerce-MyAccount-navigation ul li {
+  border: solid 2px #222;
+  padding: 10px;
+  margin-bottom: 10px;
+  box-shadow: 2px 2px 0 0 #222;
+  font-weight: bold;
+}
+nav.woocommerce-MyAccount-navigation ul li a{
+  color: #222;
+}
+span.woocommerce-input-wrapper,
+.woocommerce label {
+ width: 100%;
+}
+.woocommerce .woocommerce-ordering select {
+  padding: 5px;
+  font-size: 12px;
+}
+span.posted_in {
+  display: block;
+}
+.woocommerce div.product div.images .woocommerce-product-gallery__image:nth-child(n+2) {
+  width: 22%;
+  display: inline-block;
+  margin: 5px;
+}
+
 
 /*--------------------------------------------------------------
 Posts Numbers
@@ -603,7 +703,6 @@ Sidebar
 #theme-sidebar h3 {
   border-bottom: 1px solid #ebebeb;
   font-size: 16px;
-  text-transform: uppercase;
   color: #ffcc05;
   padding-bottom: 10px;
   letter-spacing: 1px;
@@ -675,7 +774,7 @@ Sidebar
 }
 #theme-sidebar th,#theme-sidebar td {
   border-right: solid 1px #ebebeb;
-  padding: 10px;
+  padding: 10px 0;
 }
 #theme-sidebar tr {
   border-bottom: solid 1px #ebebeb;

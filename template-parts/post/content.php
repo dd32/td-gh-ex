@@ -13,12 +13,12 @@
 	<div class="page-box row">
 	    <?php 
 	        if(has_post_thumbnail()) { ?>
-	        <div class="box-image col-md-6 p-0">
+	        <div class="box-image col-lg-6 p-0">
 	            <?php the_post_thumbnail();  ?>	   
 	        </div>
 	    <?php } ?>
 	    <div class="box-content <?php 
-	        if(has_post_thumbnail()) { ?>col-md-6"<?php } else { ?>col-md-12"<?php } ?>>
+	        if(has_post_thumbnail()) { ?>col-lg-6"<?php } else { ?>col-lg-12"<?php } ?>>
 	        <h4><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h4>
 	        <div class="box-info">
               <i class="far fa-calendar-alt"></i><span class="entry-date"><?php the_date(); ?></span>

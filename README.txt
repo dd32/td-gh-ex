@@ -1,11 +1,11 @@
 === Adventure Travelling ===
 Contributors: ThemesPride
-Theme URI: 
-Author URI:
-Version: 0.1
+Theme URI: https://www.themespride.com/themes/free-travel-agency-wordpress-theme/
+Author URI: https://www.themespride.com/
+Version: 0.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, right-sidebar, left-sidebar, three-columns, four-columns, grid-layout, custom-colors, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, holiday, portfolio
+Tags: one-column, two-columns, right-sidebar, left-sidebar, three-columns, four-columns, grid-layout, custom-colors, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, portfolio
 
 == Description ==
 
@@ -97,4 +97,8 @@ Source: https://pixabay.com/en/adventure-landscape-mountain-1851076/
 == Changelog ==
 
 = 0.1 =
-	Initial version released.
+	. Initial version released.
+
+= 0.2 =
+	. Resolved Theme Errors.
+	. Added Theme url.
