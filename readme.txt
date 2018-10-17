@@ -1,10 +1,11 @@
-=== Adri === 
+=== adri ===
 
-Contributors: Afrothemes
+Contributors: automattic
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+
 Requires at least: 4.5
-Tested up to: 5.3
-Stable tag: 1.0.5
+Tested up to: 4.8
+Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -12,7 +13,7 @@ Adri is a simple WordPress blogging theme focusing on images, use it for a trave
 
 == Description ==
 
-Adri is a simple WordPress theme for photographers & bloggers, use it for a travel, food or photography bloging & portfolio. Adri can also be use be used for creative agency or photo studio. Try it out for free today.
+Adri is a simple WordPress blogging theme focusing on images, use it for a travel, food or photography bloging.
 
 == Installation ==
 
@@ -26,6 +27,10 @@ Adri is a simple WordPress theme for photographers & bloggers, use it for a trav
 
 adri includes support for Infinite Scroll in Jetpack.
 
+== Changelog ==
+
+= 1.0 - May 12 2015 =
+* Initial release
 
 == Credits ==
 Images used in screenshot:
@@ -34,15 +39,7 @@ https://pixabay.com/en/dog-animal-canine-pet-portrait-3277414/
 https://pixabay.com/en/guy-motorbike-biker-parked-sitting-3639100/
 https://pixabay.com/en/teddy-bear-stuffed-animal-teddy-3599680/
 
+* Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
 
-== Changelog ==
-= 19 March 2018 =
-* Menu border issue fixed
-
-= 1.0.4 - 31 Oct 2018 =
-* Same size image heights
-* added new image size (adri-large 1000xauto) instead of loading full images.
-* Fixed masonry grid breaking on some browsers
-
-= 1.0 - May 12 2015 =
-* Initial release
+Normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
