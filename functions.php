@@ -200,4 +200,3 @@ require get_template_directory() . '/inc/customizer-style.php';
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
-
