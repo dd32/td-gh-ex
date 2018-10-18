@@ -3,7 +3,7 @@ Contributors: CooThemes
 Tags: Blog, Custom Background, Custom Colors, Custom Header, Custom Logo, Custom Menu, E-Commerce, Featured Images, Flexible Header, Footer Widgets, Full Width Template, Left Sidebar, Portfolio, Right Sidebar, Theme Options, Translation Ready, Two Columns
 
 Requires at least: 4.0
-Tested up to: 4.9.7
+Tested up to: 4.9.8
 Stable tag: 1.0.0
 
 Author URI:  https://www.coothemes.com/
@@ -69,6 +69,9 @@ Theta provides support at https://www.coothemes.com/forum/theta-all-theme/best-c
 
 
 === Changelog ===
+=version 1.0.7 20181018=
+*adjust slider button & title height
+
 =version 1.0.6 20181015=
 *mod  copyright
 

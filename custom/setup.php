@@ -111,7 +111,7 @@ function best_construction_section_live_css($key){
 	
 
 	
-	  $custom_css .=".ct_slider .ct_slider_warp .carousel-caption h1.slider_title{ $slider_title_typography font-weight: lighter;}.ct_slider .ct_slider_warp .carousel-caption p.ct_slider_text{  $slider_description_typography font-weight: lighter;}.ct_slider .ct_slider_warp  a.btn{ $slider_button_typography background-color: $slider_button_background; border-color:$slider_button_background_hover;border-radius: 4px;font-weight: lighter; }.ct_slider .ct_slider_warp a:hover.btn{ background-color:$slider_button_background_hover;}";
+	  $custom_css .=".ct_slider .ct_slider_warp .carousel-caption h1.slider_title{ $slider_title_typography font-weight: lighter;}.ct_slider .ct_slider_warp .carousel-caption p.ct_slider_text{  $slider_description_typography font-weight: lighter;    line-height: 1.2em;}.ct_slider .ct_slider_warp  a.btn{ $slider_button_typography background-color: $slider_button_background; border-color:$slider_button_background_hover;border-radius: 4px;font-weight: lighter;margin: 15px 15px 0 15px; }.ct_slider .ct_slider_warp a:hover.btn{ background-color:$slider_button_background_hover;}";
 
 	 for($j=1;$j<4;$j++){
 	
