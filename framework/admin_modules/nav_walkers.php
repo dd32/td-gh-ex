@@ -47,7 +47,13 @@ class Adviso_Mobile_Menu extends Walker_Nav_Menu {
         $class_names = ' class="' . esc_attr( $class_names ) . '"';
 
         $output .= $indent . '<li id="menu-item-'. $item->ID . '"' . $value . $class_names .'>';
-
+		
+		if ( $args->walker->has_children ) {
+			$dropDown = '<span class="dropdown-arrow"><i class="fa fa-angle-down"></i></span>';
+		} else {
+			$dropDown = '';
+		}
+		
         $fontIcon = ! empty( $item->attr_title ) ? ' <i class="fa ' . esc_attr( $item->attr_title ) .'">' : '';
         $attributes = ! empty( $item->target ) ? ' target="' . esc_attr( $item->target ) .'"' : '';
         $attributes .= ! empty( $item->xfn ) ? ' rel="' . esc_attr( $item->xfn ) .'"' : '';
@@ -57,6 +63,7 @@ class Adviso_Mobile_Menu extends Walker_Nav_Menu {
         $item_output .= '<a'. $attributes .'>'.$fontIcon.'</i>';
         $item_output .= $args->link_before . apply_filters( 'the_title', $item->title, $item->ID ) . $args->link_after;
         $item_output .= '</a>';
+        $item_output .= $dropDown;
         $item_output .= $args->after;
 
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args, $id );

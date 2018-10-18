@@ -98,11 +98,13 @@
   .menu-link {
 	  margin: 15px;
 	  background: white;
+	  font-size: 14px;
 	  &:hover {
 		  color: black;;
 	  }
 	  i {
 		position: absolute;
+		font-size: 24px;
 		top: 50%;
 		left: 50%;
 		transform: translateX(-11px) translateY(-11px);
@@ -111,20 +113,34 @@
 		-o-transform: translateX(-11px) translateY(-11px);
   	}
   }
+  a.panel_hide_button {
+	  font-size: 14px;
+	  position: absolute;
+	  top: 0;
+	  right: 0px;
+	  margin: 30px 15px;
+	  color: white;
+	  i {
+		  font-size: 24px;
+	  }
+  }
   #menu {
     z-index: 999;
     background: lighten(@top-bar, 10%);
     border-left: 2px solid @accent;
     text-align: left;
     overflow-y: auto;
+    padding-top: 46px;
     @media screen and (min-width: 768px) {
       display: none;
     }
     ul {
 	    margin-left: 0px;
+	    padding: 0px;
       li {
         list-style: none;
         padding: 0px;
+        position: relative;
         .body-font;
         a {
           display: block;
@@ -136,25 +152,44 @@
           text-overflow: ellipsis;
         }
         li {
-	        text-indent: 25px;
 	        a {
-		    &:before {
+/*
+			    &:before {
 					content: "\f068";
 					font-family: "FontAwesome";
 					margin-right: 20px;
 					font-size: 15px;
 				}
-	        }
-	        li {
-		        text-indent: 50px;
+*/
 	        }
         }
       }
       li.menu-item-has-children {
 	      display: block;
+	      span.dropdown-arrow {
+		      position: absolute;
+		      height: 56px;
+		      width: 56px;
+		      top: 0;
+		      right: 0;
+		      display: flex;
+		      justify-content: center;
+		      align-content: center;
+		      background: lighten(@top-bar, 15%);
+		      cursor: pointer;
+		      i {
+			      margin: auto;
+			      color: lighten(@top-bar, 35%);
+			      font-weight: 700;
+			      font-size: 20px;
+		      }
+	      }
+	      ul {
+		      background: rgba(0,0,0,.1);
+	      }
       }
       .current-menu-item > a {
-	      background: rgba(0,0,0,.1);
+	      background: rgba(0,0,0,.05);
       }
     }
   }
