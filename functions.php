@@ -1,15 +1,28 @@
 <?php
-
+//----------------------------------------------------------------------------------
+//	Include all required files
+//----------------------------------------------------------------------------------
 require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' );
-foreach ( glob( trailingslashit( get_template_directory() ) . 'inc/*.php' ) as $filename ) {
-	include $filename;
-}
-foreach ( glob( trailingslashit( get_template_directory() ) . 'licenses/*.php' ) as $filename ) {
-	include $filename;
-}
-foreach ( glob( trailingslashit( get_template_directory() ) . 'licenses/functions/*.php' ) as $filename ) {
-	include $filename;
-}
+// inc
+require_once( trailingslashit( get_template_directory() ) . 'inc/customizer.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/deprecated.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/review.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/scripts.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/user-profile.php' );
+// licenses
+require_once( trailingslashit( get_template_directory() ) . 'licenses/background-images.php' );
+require_once( trailingslashit( get_template_directory() ) . 'licenses/background-textures.php' );
+require_once( trailingslashit( get_template_directory() ) . 'licenses/featured-videos.php' );
+require_once( trailingslashit( get_template_directory() ) . 'licenses/full-width-images.php' );
+require_once( trailingslashit( get_template_directory() ) . 'licenses/full-width.php' );
+require_once( trailingslashit( get_template_directory() ) . 'licenses/two-column-images.php' );
+require_once( trailingslashit( get_template_directory() ) . 'licenses/two-column.php' );
+// licenses/functions
+require_once( trailingslashit( get_template_directory() ) . 'licenses/functions/video.php' );
+
+//----------------------------------------------------------------------------------
+//	Include review request
+//----------------------------------------------------------------------------------
 require_once( trailingslashit( get_template_directory() ) . 'dnh/handler.php' );
 new WP_Review_Me( array(
 		'days_after' => 14,
@@ -48,10 +61,17 @@ if ( ! function_exists( 'ct_tracks_theme_setup' ) ) {
 		) );
 
 		register_nav_menus( array(
-			'primary'   => __( 'Primary', 'tracks' ),
-			'secondary' => __( 'Secondary', 'tracks' ),
-			'footer'    => __( 'Footer', 'tracks' )
+			'primary'   => esc_html__( 'Primary', 'tracks' ),
+			'secondary' => esc_html__( 'Secondary', 'tracks' ),
+			'footer'    => esc_html__( 'Footer', 'tracks' )
 		) );
+
+		// Add WooCommerce support
+		add_theme_support( 'woocommerce' );
+		// Add support for WooCommerce image gallery features
+		add_theme_support( 'wc-product-gallery-zoom' );
+		add_theme_support( 'wc-product-gallery-lightbox' );
+		add_theme_support( 'wc-product-gallery-slider' );
 
 		load_theme_textdomain( 'tracks', get_template_directory() . '/languages' );
 	}
@@ -63,9 +83,9 @@ if ( ! function_exists( 'ct_tracks_register_widget_areas' ) ) {
 
 		// after post content
 		register_sidebar( array(
-			'name'          => __( 'After Post Content', 'tracks' ),
+			'name'          => esc_html__( 'After Post Content', 'tracks' ),
 			'id'            => 'after-post-content',
-			'description'   => __( 'Widgets in this area will be shown after post content before the prev/next post links', 'tracks' ),
+			'description'   => esc_html__( 'Widgets in this area will be shown after post content before the prev/next post links', 'tracks' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -74,9 +94,9 @@ if ( ! function_exists( 'ct_tracks_register_widget_areas' ) ) {
 
 		// after page content
 		register_sidebar( array(
-			'name'          => __( 'After Page Content', 'tracks' ),
+			'name'          => esc_html__( 'After Page Content', 'tracks' ),
 			'id'            => 'after-page-content',
-			'description'   => __( 'Widgets in this area will be shown after page content', 'tracks' ),
+			'description'   => esc_html__( 'Widgets in this area will be shown after page content', 'tracks' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h2 class="widget-title">',
@@ -85,9 +105,9 @@ if ( ! function_exists( 'ct_tracks_register_widget_areas' ) ) {
 
 		// footer
 		register_sidebar( array(
-			'name'          => __( 'Footer', 'tracks' ),
+			'name'          => esc_html__( 'Footer', 'tracks' ),
 			'id'            => 'footer',
-			'description'   => __( 'Widgets in this area will be shown in the footer', 'tracks' ),
+			'description'   => esc_html__( 'Widgets in this area will be shown in the footer', 'tracks' ),
 			'before_widget' => '<section id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</section>',
 			'before_title'  => '<h4 class="widget-title">',
@@ -112,16 +132,16 @@ if ( ! function_exists( 'ct_tracks_customize_comments' ) ) {
 					<div class="author-name"><?php comment_author_link(); ?></div>
 					<div class="comment-date"><?php comment_date(); ?></div>
 					<?php comment_reply_link( array_merge( $args, array(
-						'reply_text' => _x( 'Reply', 'verb: reply to this comment', 'tracks' ),
+						'reply_text' => esc_html_x( 'Reply', 'verb: reply to this comment', 'tracks' ),
 						'depth'      => $depth,
 						'max_depth'  => $args['max_depth']
 					) ) ); ?>
-					<?php edit_comment_link( _x( 'Edit', 'verb: edit this comment', 'tracks' ) ); ?>
+					<?php edit_comment_link( esc_html_x( 'Edit', 'verb: edit this comment', 'tracks' ) ); ?>
 				</div>
 			</div>
 			<div class="comment-content">
 				<?php if ( $comment->comment_approved == '0' ) : ?>
-					<em><?php _e( 'Your comment is awaiting moderation.', 'tracks' ) ?></em>
+					<em><?php esc_html_e( 'Your comment is awaiting moderation.', 'tracks' ) ?></em>
 					<br/>
 				<?php endif; ?>
 				<?php comment_text(); ?>
@@ -136,24 +156,24 @@ if ( ! function_exists( 'ct_tracks_update_fields' ) ) {
 
 		$commenter = wp_get_current_commenter();
 		$req       = get_option( 'require_name_email' );
-		$label     = $req ? '*' : ' ' . __( '(optional)', 'tracks' );
+		$label     = $req ? '*' : ' ' . esc_html__( '(optional)', 'tracks' );
 		$aria_req  = $req ? "aria-required='true'" : '';
 
 		$fields['author'] =
 			'<p class="comment-form-author">
-            <label for="author" class="screen-reader-text">' . __( "Your Name", "tracks" ) . '</label>
+            <label for="author" class="screen-reader-text">' . esc_html__( "Your Name", "tracks" ) . '</label>
             <input placeholder="' . esc_attr__( "Your Name", "tracks" ) . $label . '" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) .
 			'" size="30" ' . $aria_req . ' />
     	</p>';
 		$fields['email'] =
 			'<p class="comment-form-email">
-            <label for="email" class="screen-reader-text">' . __( "Your Email", "tracks" ) . '</label>
+            <label for="email" class="screen-reader-text">' . esc_html__( "Your Email", "tracks" ) . '</label>
             <input placeholder="' . esc_attr__( "Your Email", "tracks" ) . $label . '" id="email" name="email" type="email" value="' . esc_attr( $commenter['comment_author_email'] ) .
 			'" size="30" ' . $aria_req . ' />
     	</p>';
 		$fields['url'] =
 			'<p class="comment-form-url">
-            <label for="url" class="screen-reader-text">' . __( "Your Website URL", "tracks" ) . '</label>
+            <label for="url" class="screen-reader-text">' . esc_html__( "Your Website URL", "tracks" ) . '</label>
             <input placeholder="' . esc_attr__( "Your URL", "tracks" ) . '" id="url" name="url" type="url" value="' . esc_attr( $commenter['comment_author_url'] ) .
 			'" size="30" />
             </p>';
@@ -166,9 +186,16 @@ add_filter( 'comment_form_default_fields', 'ct_tracks_update_fields' );
 if ( ! function_exists( 'ct_tracks_update_comment_field' ) ) {
 	function ct_tracks_update_comment_field( $comment_field ) {
 
+		// don't filter the WooCommerce review form
+		if ( function_exists( 'is_woocommerce' ) ) {
+			if ( is_woocommerce() ) {
+				return $comment_field;
+			}
+		}
+		
 		$comment_field =
 			'<p class="comment-form-comment">
-            <label for="comment" class="screen-reader-text">' . __( "Your Comment", "tracks" ) . '</label>
+            <label for="comment" class="screen-reader-text">' . esc_html__( "Your Comment", "tracks" ) . '</label>
             <textarea required placeholder="' . esc_attr__( "Enter Your Comment", "tracks" ) . '&#8230;" id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea>
         </p>';
 
@@ -200,7 +227,7 @@ if ( ! function_exists( 'ct_tracks_filter_read_more_link' ) ) {
 		}
 		// Because i18n text cannot be stored in a variable
 		if ( empty( $read_more_text ) ) {
-			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . __( 'Read the post', 'tracks' ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
+			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . esc_html__( 'Read the post', 'tracks' ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
 		} else {
 			$output .= '<div class="more-link-wrapper"><a class="more-link" href="' . esc_url( get_permalink() ) . '">' . esc_html( $read_more_text ) . '<span class="screen-reader-text">' . esc_html( get_the_title() ) . '</span></a></div>';
 		}
@@ -264,7 +291,7 @@ add_filter( 'the_content_more_link', 'ct_tracks_remove_more_link_scroll' );
 function ct_tracks_update_yoast_og_description( $ogdesc ) {
 	$read_more_text = get_theme_mod( 'read_more_text' );
 	if ( empty( $read_more_text ) ) {
-		$read_more_text = __( 'Read the post', 'tracks' );
+		$read_more_text = esc_html__( 'Read the post', 'tracks' );
 	}
 	$ogdesc = substr( $ogdesc, 0, strpos( $ogdesc, $read_more_text ) );
 
@@ -488,59 +515,59 @@ if ( ! function_exists( 'ct_tracks_social_site_list' ) ) {
 		$social_sites = array(
 			'twitter',
 			'facebook',
-			'google-plus',
-			'flickr',
+			'instagram',
+			'linkedin',
 			'pinterest',
 			'youtube',
-			'vimeo',
-			'tumblr',
-			'dribbble',
 			'rss',
-			'linkedin',
-			'instagram',
-			'reddit',
-			'soundcloud',
-			'spotify',
-			'vine',
-			'yahoo',
-			'behance',
-			'codepen',
-			'delicious',
-			'stumbleupon',
-			'deviantart',
-			'foursquare',
-			'slack',
-			'slideshare',
-			'skype',
-			'whatsapp',
-			'snapchat',
+			'email',
+			'email-form',
+			'amazon',
 			'bandcamp',
+			'behance',
+			'bitbucket',
+			'codepen',
 			'etsy',
+			'delicious',
+			'deviantart',
+			'digg',
+			'dribbble',
+			'flickr',
+			'foursquare',
+			'github',
+			'google-plus',
+			'google-wallet',
+			'hacker-news',
+			'meetup',
+			'ok-ru',
+			'paypal',
+			'podcast',
+			'qq',
 			'quora',
 			'ravelry',
-			'meetup',
-			'telegram',
-			'twitch',
-			'podcast',
-			'yelp',
-			'amazon',
-			'google-wallet',
-			'qq',
-			'wechat',
-			'xing',
-			'500px',
-			'digg',
-			'github',
-			'bitbucket',
-			'hacker-news',
+			'reddit',
+			'skype',
+			'slack',
+			'slideshare',
+			'snapchat',
+			'soundcloud',
+			'spotify',
 			'steam',
-			'ok-ru',
-			'vk',
-			'weibo',
+			'stumbleupon',
+			'telegram',
 			'tencent-weibo',
-			'paypal',
-			'email',
-			'email-form'
+			'tumblr',
+			'twitch',
+			'vimeo',
+			'vine',
+			'vk',
+			'wechat',
+			'weibo',
+			'whatsapp',
+			'xing',
+			'yahoo',
+			'yelp',
+			'500px'
 		);
 
 		return apply_filters( 'ct_tracks_social_site_list_filter', $social_sites );
@@ -744,56 +771,35 @@ if ( ! function_exists( 'ct_tracks_get_content_template' ) ) {
 	function ct_tracks_get_content_template() {
 
 		/* Blog */
-		if ( is_home() ) {
-
-			/* Two-column Images Layout */
-			if ( get_theme_mod( 'premium_layouts_setting' ) == 'two-column-images' ) {
-				get_template_part( 'licenses/content/content-two-column-images' );
-			} /* Full-width Images Layout */
-			elseif ( get_theme_mod( 'premium_layouts_setting' ) == 'full-width-images' ) {
-				get_template_part( 'licenses/content/content-full-width-images' );
-			} /* Blog - No Premium Layout */
-			else {
-				get_template_part( 'content', 'archive' );
-			}
-		} /* Post */
-		elseif ( is_singular( 'post' ) ) {
-			get_template_part( 'content' );
-			comments_template();
-		} /* Page */
-		elseif ( is_page() ) {
-			get_template_part( 'content', 'page' );
-			comments_template();
-		} /* Attachment */
-		elseif ( is_attachment() ) {
-			get_template_part( 'content', 'attachment' );
-			comments_template();
-		} /* Archive */
-		elseif ( is_archive() ) {
+		if ( is_home() || is_archive() ) {
 
 			/* check if bbPress is active */
-			if ( function_exists( 'is_bbpress' ) ) {
+			if ( function_exists( 'is_bbpress' ) && is_archive() ) {
 
 				/* if is bbPress forum list */
 				if ( is_bbpress() ) {
 					get_template_part( 'content/bbpress' );
 				} /* normal archive */
 				else {
-					get_template_part( 'content', 'archive' );
+					get_template_part( 'content-archive', get_post_type() );
 				}
 			} elseif ( get_theme_mod( 'premium_layouts_setting' ) == 'two-column-images' ) {
 				get_template_part( 'licenses/content/content-two-column-images' );
 			} elseif ( get_theme_mod( 'premium_layouts_setting' ) == 'full-width-images' ) {
 				get_template_part( 'licenses/content/content-full-width-images' );
 			} else {
-				get_template_part( 'content', 'archive' );
+				get_template_part( 'content-archive', get_post_type() );
 			}
+		} /* Post */
+		elseif ( is_singular() ) {
+			get_template_part( 'content', get_post_type() );
+			comments_template();
 		} /* bbPress */
 		elseif ( function_exists( 'is_bbpress' ) && is_bbpress() ) {
 			get_template_part( 'content/bbpress' );
 		} /* Custom Post Types */
 		else {
-			get_template_part( 'content' );
+			get_template_part( 'content', get_post_type() );
 		}
 	}
 }
@@ -835,7 +841,7 @@ if ( ! function_exists( ( 'ct_tracks_settings_notice' ) ) ) {
 			if ( $_GET['tracks_status'] == 'activated' ) {
 				?>
 				<div class="updated">
-					<p><?php printf( __( 'Thanks for activating %s!', 'tracks' ), wp_get_theme( get_template() ) ); ?></p>
+					<p><?php printf( esc_html__( 'Thanks for activating %s!', 'tracks' ), wp_get_theme( get_template() ) ); ?></p>
 				</div>
 				<?php
 			}

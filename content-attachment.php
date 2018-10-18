@@ -1,6 +1,6 @@
 <div class='entry'>
 	<div class="entry-meta">
-		<span class="date"><?php echo get_the_date( 'F j' ); ?> / </span>
+		<span class="date"><?php echo date_i18n( get_option( 'date_format' ), strtotime( get_the_date( 'r' ) ) ); ?> / </span>
 		<span class="author"><?php the_author_posts_link(); ?></span>
 	</div>
 	<div class='entry-header'>
@@ -23,11 +23,10 @@
 			</article>
 			<nav class='further-reading'>
 				<p class='prev'>
-					<span><?php previous_image_link( false, __( 'Previous Image', 'tracks' ) ); ?></span>
+					<span><?php previous_image_link( false, esc_html__( 'Previous Image', 'tracks' ) ); ?></span>
 				</p>
-
 				<p class='next'>
-					<span><?php next_image_link( false, __( 'Next Image', 'tracks' ) ); ?></span>
+					<span><?php next_image_link( false, esc_html__( 'Next Image', 'tracks' ) ); ?></span>
 				</p>
 			</nav>
 		</div>
