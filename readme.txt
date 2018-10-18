@@ -2,7 +2,7 @@
 Contributors: thinkupthemes
 Requires at least: 4.6
 Tested up to: 4.9.4
-Version: 1.4.6
+Version: 1.4.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, dark, red, one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background, grid-layout, footer-widgets, blog, e-commerce, education, entertainment, news, photography, portfolio
@@ -84,6 +84,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 
 
 == Changelog ==
+
+= 1.4.7
+- Updated: Improved escaping of breadcrumbs output in 00.theme-setup.php.
+- Removed: License folder removed and license in style.css linked directly to GPL page.
 
 = 1.4.6
 - Updated: Screenshot updated to comply with latst wordpress.org guidelines to not show descriptive text.
