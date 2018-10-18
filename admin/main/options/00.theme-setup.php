@@ -172,7 +172,7 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 		} elseif ( is_search() ) {
 			_e( 'Search Results for: ', 'lan-thinkupthemes' ) . esc_html( get_search_query() ) . '"';
 		} elseif ( is_page() && !$post->post_parent ) {
-			echo get_the_title();
+			echo esc_html( get_the_title() );
 		} elseif ( is_page() && $post->post_parent ) {
 			$post_array = get_post_ancestors( $post );
 			krsort( $post_array ); 
@@ -190,8 +190,17 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 			_e( 'Error 404 - Not Found.', 'lan-thinkupthemes' );
 		} elseif ( is_post_type_archive( $portfolio )	) {
 			_e( 'Portfolio', 'lan-thinkupthemes' );
+		} elseif ( is_archive() ) {
+			echo get_the_archive_title();
+		} elseif( is_tax() ) {
+			echo esc_html( get_queried_object()->name );
+		} elseif ( thinkup_check_isblog() ) {
+			_e( 'Blog', 'lan-thinkupthemes' );
+		} else {
+			echo html_entity_decode( esc_html( get_the_title() ) );
 		}
-       echo '</div></div>';
+
+		echo '</div></div>';
     }
 }
 
