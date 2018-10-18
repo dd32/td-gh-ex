@@ -16,34 +16,43 @@ jQuery(document).ready(function($){
   });
 });
 
-// jQuery(window).load(function() {
-//   var container = document.querySelector('#masonry');
-//   var msnry = new Masonry( container, {
-//     itemSelector: '.post-item',
-//     columnWidth: '.post-item',   
-//     gutter: 10             
-//   });  
-  
-// });
 
-(function( $ ) {
-"use strict";
-$(function() {
-    // set the container that Masonry will be inside of in a var
-    // adjust to match your own wrapper/container class/id name
-    var container = document.querySelector('#masonry');
-    //create empty var msnry
-    var msnry;
-    // initialize Masonry after all images have loaded
-    imagesLoaded( container, function() {
-        msnry = new Masonry( container, {
-            // adjust to match your own block wrapper/container class/id name
-            itemSelector: '.post-item',
-            // option that allows for your website to center in the page
-            isFitWidth: true,
-            gutter: 10  
-        });
+
+jQuery(document).ready(function($){
+
+
+var $container = $('#masonry').imagesLoaded( function() {
+//var $container = $('.masonry');
+  $container.imagesLoaded(function(){
+    $container.masonry({
+    // options
+    //columnWidth: '.grid-sizer',
+    itemSelector: '.post-item',
+    // option that allows for your website to center in the page
+    isFitWidth: true,
+    gutter: 10  
     });
+  });
 });
-}(jQuery));
+});
 
+// (function( $ ) {
+// "use strict";
+// $(function() {
+//     // set the container that Masonry will be inside of in a var
+//     // adjust to match your own wrapper/container class/id name
+//     var container = document.querySelector('#masonry');
+//     //create empty var msnry
+//     var msnry;
+//     // initialize Masonry after all images have loaded
+//     imagesLoaded( container, function() {
+//         msnry = new Masonry( container, {
+//             // adjust to match your own block wrapper/container class/id name
+//             itemSelector: '.post-item',
+//             // option that allows for your website to center in the page
+//             isFitWidth: true,
+//             gutter: 10  
+//         });
+//     });
+// });
+// }(jQuery));

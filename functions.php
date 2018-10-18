@@ -152,11 +152,10 @@ function adri_scripts() {
 
 	wp_enqueue_style( 'adri-style', get_stylesheet_uri() );
 
-	wp_enqueue_script('jquery','masonry');
+	wp_enqueue_script('jquery','masonry','imagesloaded');
 
-	wp_enqueue_script( 'imagesloaded', get_template_directory_uri() . '/js/imagesloaded.js', array('jquery'), '20151215', true );
 
-	wp_enqueue_script( 'adri-navigation', get_template_directory_uri() . '/js/adri.js', array('jquery','masonry'), '20151215', true );
+	wp_enqueue_script( 'adri-js', get_template_directory_uri() . '/js/adri.js', array('jquery','masonry'), '20151215', true );
 
 	wp_enqueue_script( 'adri-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -193,7 +192,6 @@ require get_template_directory() . '/inc/template-functions.php';
  */
 require get_template_directory() . '/inc/customizer.php';
 
-require get_template_directory() . '/inc/customizer-style.php';
 /**
  * Load Jetpack compatibility file.
  */

@@ -17,6 +17,7 @@
 		</a>			
 
 		<?php echo esc_html(adri_post_category()); 
+		echo esc_html(do_action('pro-portfolio-type'));
 		
 		?>			
 	</header><!-- .entry-header -->
