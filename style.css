@@ -1,10 +1,10 @@
 /*!
 Theme Name: AyaAirPort
-Description: AyaAirPort is Fully Responsive WordPress Theme, a perfect choice for a website about air-ports, air-planes, air-lines, site for terminals, air-ports, blog. Features include Camera Slider Plugin Support, Animation Appearing Effects, Custom Logo, Multi-level Drop-down Menu, Custom Background, Full-Width Page Template, Widget Areas: Homepage Widget Area, Right Sidebar and 3 Footer Columns, Footer Menu, Footer Copyright Text, Search Engine Optimized, Multiple Browsers Support, Translation-Ready, etc.
+Description: AyaAirPort is Fully Responsive WordPress Theme, a perfect choice for a website about air-ports, air-planes, air-lines, site for terminals, air-ports, blog. Features include Animation Appearing Effects, Custom Logo, Multi-level Drop-down Menu, Custom Background, Full-Width Page Template, Widget Areas: Homepage Widget Area, Right Sidebar and 3 Footer Columns, Footer Menu, Footer Copyright Text, Search Engine Optimized, Multiple Browsers Support, Translation-Ready, etc.
 Theme URI: https://ayatemplates.com/product/ayaairport
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.0.2
+Version: 1.0.3
 Text Domain: ayaairport
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2.0
@@ -79,7 +79,6 @@ img {
 	-webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	-moz-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
 	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.7);
-	opacity:0.4;
 }
 
 #main-content-full {
@@ -345,7 +344,7 @@ pre {
 	padding:10px 0 0 0;
 }
 
-#sidebar ul:not(.social-widget) > li:before,
+#sidebar ul:not(.social-widget):not(.ui-tabs-nav) > li:before,
 article ul > li:before {
 	content:"\f06e";
 	font-family:'FontAwesome';
@@ -459,7 +458,7 @@ article,
 	background-color:#fff;
 }
 
-#footer-main ul:not(.social-widget):not(.footer-social-widget):not(.instagram-pics) li {
+#footer-main ul:not(.social-widget):not(.ui-tabs-nav):not(.footer-social-widget):not(.instagram-pics) li {
     border-bottom:1px solid #333;
     margin-bottom:10px;
     padding-bottom:10px;
@@ -1217,7 +1216,7 @@ blockquote {
 	padding:0 5px 1px 1px;
 	margin-bottom:-2px;
 	font-weight:normal;
-	font-size:14px;
+	font-size:22px;
 	border-bottom:4px solid #ffffff;;
 	color:#eeeeee;
 	letter-spacing:1px;

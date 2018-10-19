@@ -52,6 +52,9 @@ Installation using 'Add New Theme'
 7. Insert shortcode (from step 4.) into the Text widget content and Save changes
 
 == Changelog ==
+= 1.0.3 =
+* remove recommended plugin functionality
+
 = 1.0.2 =
 * updating screenshot.png according to the new WordPress.org requirements
 
@@ -75,21 +78,13 @@ AyaAirPort WordPress Theme bundles the following third-party resources:
 * functions.php -> class ayaairport_Customize_Section_Pro, Justin Tadlock, GPL-2.0
 * js/customize-controls.js, Justin Tadlock, GPL-2.0
 * css/customize-controls.css, Justin Tadlock, GPL-2.0
-* inc/tgmpa/class-tgm-plugin-activation.php, Thomas Griffin, GPL-2.0
-* inc/tgmpa/recommended-plugins.php, Thomas Griffin, GPL-2.0
+*
 * css/animate.css - daneden.me, MIT
-FontAwesome icon font, Copyright Font Awesome
-FontAwesome are licensed under the terms of the SIL OFL 1.1 license.
-Source: https://fontawesome.com/v4.7.0/
-
-
+*
+* FontAwesome icon font, Copyright Font Awesome
+* FontAwesome are licensed under the terms of the SIL OFL 1.1 license.
+* Source: https://fontawesome.com/v4.7.0/
+*
 * js/viewportchecker.js, MIT
-* js/camera.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
-* js/camera.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
-* js/jquery.easing.1.3.js BSD License Reference: http://www.linfo.org/bsdlicense.html
-* js/jquery.mobile.customized.js MIT license Reference: http://jquery.org/license
-* js/jquery.mobile.customized.min.js MIT license Reference: http://jquery.org/license
 *
-* screenshot.png (Slider Image) CC0, https://pixabay.com/en/child-waving-goodbye-departure-plane-595429/ 
-* screenshot.png (logo image) CC0, https://pixabay.com/en/plane-jet-airplane-aircraft-160861/
-*
+* screenshot.png (Homepage Image) CC0, https://pixabay.com/en/child-waving-goodbye-departure-plane-595429/

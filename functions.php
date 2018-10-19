@@ -3,8 +3,6 @@
  * ayaairport functions and definitions
  */
 
-require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
-
 if ( ! function_exists( 'ayaairport_widgets_init' ) ) :
 	function ayaairport_widgets_init() {
 		
@@ -160,18 +158,6 @@ if ( ! function_exists( 'ayaairport_load_scripts' ) ) :
     		'ayaairport_loading_effect' => ( get_theme_mod('ayaairport_animations_display', 1) == 1 ),
     	);
     	wp_localize_script('ayaairport-utilities', 'ayaairport_options', $data);
-
-    	wp_enqueue_script( 'jquery.mobile.customized',
-    		get_template_directory_uri() . '/js/jquery.mobile.customized.min.js',
-    		array( 'jquery' ) );
-
-		wp_enqueue_script( 'jquery.easing.1.3',
-			get_template_directory_uri() . '/js/jquery.easing.1.3.js',
-			array( 'jquery' ) );
-
-		wp_enqueue_script( 'camera',
-			get_template_directory_uri() . '/js/camera.min.js',
-			array( 'jquery' ) );
 	}
 endif; // ayaairport_load_scripts
 add_action( 'wp_enqueue_scripts', 'ayaairport_load_scripts' );
