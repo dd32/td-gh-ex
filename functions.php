@@ -659,9 +659,4 @@ function ayaportfolio_display_slider() {
 <?php 
 }
 
-/**
- * Plugin Recommendation
-*/
-require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
-
 ?>

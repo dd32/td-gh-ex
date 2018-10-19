@@ -27,10 +27,6 @@ AyaPortfolio WordPress Theme bundles the following third-party resources:
 * js/customize-controls.js
 * css/customize-controls.css
 *
-* TGM Plugin Activation
-* Author: created by Thomas Griffin and is currently maintained by @thomasgriffin, @GaryJones and @jrfnl.
-* License: GPL-2.0 or later license. Reference: https://opensource.org/licenses/GPL-2.0
-*
 * css/animate.css - the MIT license, Reference: http://opensource.org/licenses/MIT
 * author URL: http://daneden.me/animate
 *
@@ -67,6 +63,50 @@ AyaPortfolio WordPress Theme bundles the following third-party resources:
 * screenshot.png https://pixabay.com/en/woman-face-photomontage-faces-789146/
 * screenshot.png https://pixabay.com/en/records-album-vinyl-retro-soul-1148927/
 * screenshot.png https://pixabay.com/en/vinyl-records-store-shopping-retro-945396/
+
+
+== Changelog ==
+
+= AyaPortfolio 1.0.9 (2018-10-19) =
+remove recommended plugins functionality
+move changelog into readme.txt file
+
+= AyaPortfolio 1.0.8 (2018-08-29) =
+updating screenshot.png according to the new WordPress.org requirements
+
+= AyaPortfolio 1.0.7 (2018-08-04) =
+display slider and homepage widgets only on static homepage
+remove default demo content
+
+= AyaPortfolio 1.0.6 (2018-04-25) =
+fix issue with instagram plugin slug path
+
+= AyaPortfolio 1.0.5 (2018-03-10) =
+improve homepage Slider
+add Pinterest widget support
+add Facebook widget support
+add Instagram widget support
+
+= AyaPortfolio 1.0.4 (2017-12-20) =
+improve animation effects
+add footer menu
+
+= AyaPortfolio 1.0.3 (2017-10-27) =
+bug fix
+
+= AyaPortfolio 1.0.2 (2017-10-27) =
+add homepage slider
+add animations effect
+
+= AyaPortfolio 1.0.1 (2017-09-05) =
+fix issue with alignment issues of header on Mobile
+fix issue with Posts displayed under - Search results all have h1 tag
+fix issue with Menu on desktop is pushed down if is a little longer
+
+= AyaPortfolio 1.0.0 (2017-07-11) =
+Initial release
+
+
 
 == Installation ==
 
