@@ -1,10 +1,11 @@
 .edit-post-visual-editor,
-.edit-post-visual-editor .editor-block-list__block-edit{
+.edit-post-visual-editor .editor-block-list__block-edit,
+.edit-post-visual-editor .editor-block-list__block {
    font-family: 'Open Sans', sans-serif;
 }
 
 /* Matches entry-title in style.css. */
-.editor-post-title__block .editor-post-title__input{
+.editor-post-title__block .editor-post-title__input {
     font-family: 'Montserrat', sans-serif;
     font-size: 2rem;
     text-decoration: none;
@@ -28,8 +29,13 @@ a img {
 	border: 0;
 }
 
-a{text-decoration: underline;}
-a:hover{text-decoration: none;}
+a {
+    text-decoration: underline;
+}
+
+a:hover {
+    text-decoration: none;
+}
 
 a {
 	color: #666;
@@ -46,6 +52,11 @@ a:active {
 }
 
 /*increase contrast*/
-.edit-post-visual-editor p.wp-block-subhead{
+.edit-post-visual-editor p.wp-block-subhead {
     color: #000;
+}
+
+.wp-block-quote cite,
+.wp-block-audio figcaption {
+	color: #333;
 }

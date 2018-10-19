@@ -7,7 +7,10 @@
 
 /**
  * Allows the user to display the header on individual posts or pages.
- * Thanks to http://jeremyhixon.com/tool/wordpress-meta-box-generator/
+ *
+ * @param int $value post id.
+ *
+ * @link Thanks to https://jeremyhixon.com/tool/wordpress-meta-box-generator/
  */
 function aaron_get_meta( $value ) {
 	if ( is_home() ) {
@@ -24,6 +27,9 @@ function aaron_get_meta( $value ) {
 	}
 }
 
+/**
+ * Add meta box to the editor.
+ */
 function aaron_add_meta_boxes() {
 	$screens = array( 'post', 'page', 'jetpack-portfolio', 'jetpack-testimonial' );
 
@@ -39,7 +45,9 @@ function aaron_add_meta_boxes() {
 add_action( 'add_meta_boxes', 'aaron_add_meta_boxes' );
 
 /**
- * The form in the post meta section.
+ * Add The form in the post meta section.
+ *
+ * @param int $post post id.
  */
 function aaron_meta_form( $post ) {
 	wp_nonce_field( '_header_settings_nonce', 'aaaron_meta_nonce' ); ?>
@@ -83,13 +91,21 @@ function aaron_meta_form( $post ) {
 	<?php
 }
 
-
+/**
+ * Save the post meta.
+ *
+ * @param int $post_id post id.
+ */
 function aaron_header_settings_save( $post_id ) {
 	// If this is an autosave, our form has not been submitted, so we don't want to do anything.
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) return;
+	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
+		return;
+	}
 
 	// Check if our nonce is set and verify that the nonce is valid.
-	if ( ! isset( $_POST['aaaron_meta_nonce'] ) || ! wp_verify_nonce( $_POST['aaaron_meta_nonce'], '_header_settings_nonce' ) ) return;
+	if ( ! isset( $_POST['aaaron_meta_nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['aaaron_meta_nonce'] ), '_header_settings_nonce' ) ) {
+		return;
+	}
 
 	// Check the user's permissions.
 	if ( isset( $_POST['post_type'] ) && 'page' === $_POST['post_type'] ) {

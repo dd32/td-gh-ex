@@ -2,7 +2,7 @@
 Contributors: Poena
 Tags: threaded-comments, custom-menu, sticky-post, editor-style, translation-ready, rtl-language-support, two-columns, one-column, right-sidebar, featured-images, featured-image-header, accessibility-ready, custom-header, custom-logo
 License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 Copyright 2015-2018 Carolina Nymark
 
@@ -24,6 +24,14 @@ Aaron also works well with WooCommerce and bbPress.
 Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
+
+Version 3.4, 2018-10-19
+Housekeeping: Updated links. Updated credits in the readme file. 
+CSS and PHP code style changes according to WordPress coding standards.
+Removed the JavaScript in navigation.js that added the screen reader text to the tag cloud 
+and the alt text to the featured images, since this has been fixed in WordPress core.
+Fixed a problemw with a font not loading in the new editor.
+
 
 Version 3.3, 2018-10-06
 Corrected the position of the category and portfolio icons.
@@ -214,17 +222,28 @@ templates/ -contains page templates
 
 == Resources Used In This Theme ==
 Aaron is a derivative work of:
-Underscores http://underscores.me/, (C) 2012-2018 Automattic, Inc. License: GNU General Public License v2 or later
-Universal http://themes.joedolson.com/universal/ (C) Joseph C Dolson. License: GNU General Public License v2 or later
-Sela https://wordpress.com/themes/sela/, based on Underscores http://underscores.me/, (C) 2012-2018 Automattic, Inc. License: GNU General Public License v2 or later
+Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc. License: GNU General Public License v2 or later
+Universal https://themes.joedolson.com/universal/ (C) Joseph C Dolson. License: GNU General Public License v2 or later
+Sela https://wordpress.com/themes/sela/, based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc. License: GNU General Public License v2 or later
 Twenty Seventeen https://wordpress.org/themes/twentyseventeen/ Copyright 2016-2018 WordPress.org, GNU General Public License v2 or later
 
 Header image by Ian Prince. Source: https://tookapic.com/ianprince/5613-les-dents-du-midi, License: CC0.
 Image used in the documentation: Karolina Grabowska. Source: https://tookapic.com/kaboompics/3311-dead-flower, License: CC0.
 
 Fonts
-Font Awesome by @davegandy - http://fontawesome.io - @fontawesome
-License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
+Font Awesome by @davegandy - https://fontawesome.com - @fontawesome
+License - https://fontawesome.com/license/free 
+# Icons: CC BY 4.0 License (https://creativecommons.org/licenses/by/4.0/)
+In the Font Awesome Free download, the CC BY 4.0 license applies to all icons
+packaged as SVG and JS file types.
+
+# Fonts: SIL OFL 1.1 License (https://scripts.sil.org/OFL)
+In the Font Awesome Free download, the SIL OLF license applies to all icons
+packaged as web and desktop font files.
+
+# Code: MIT License (https://opensource.org/licenses/MIT)
+In the Font Awesome Free download, the MIT license applies to all non-font and
+non-icon files.
 
 Montserrat
 Julieta Ulanovsky, SIL Open Font License, 1.1
@@ -236,5 +255,13 @@ License: MIT
 
 Checkbox sanitization
 Copyright (c) 2015-2018, WordPress Theme Review Team
-http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
+https://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
 https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php
+
+
+CSS
+Blueprint, MIT License, https://github.com/joshuaclayton/blueprint-css/blob/master/LICENSE
+https://github.com/joshuaclayton/blueprint-css
+
+Normalize, MIT License, https://github.com/necolas/normalize.css/blob/master/LICENSE.md
+https://necolas.github.io/normalize.css/

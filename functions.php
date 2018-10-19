@@ -140,7 +140,7 @@ if ( ! get_theme_mod( 'aaron_hide_title' ) ) {
 /**
  * Register widget areas.
  *
- * @link http://codex.wordpress.org/Function_Reference/register_sidebar
+ * @link https://codex.wordpress.org/Function_Reference/register_sidebar
  */
 function aaron_widgets_init() {
 	register_sidebar( array(
@@ -234,7 +234,7 @@ if ( ! function_exists( 'aaron_fonts_url' ) ) {
 function aaron_scripts() {
 	/* If using a child theme, auto-load the parent theme style. */
 	if ( is_child_theme() ) {
-		wp_enqueue_style( 'parent-style', trailingslashit( get_template_directory_uri() ) . 'style.css' );
+		wp_enqueue_style( 'aaron-parent-style', trailingslashit( get_template_directory_uri() ) . 'style.css' );
 	}
 
 	wp_enqueue_style( 'aaron-style', get_stylesheet_uri(), array( 'dashicons' ) );
@@ -259,6 +259,7 @@ add_action( 'wp_enqueue_scripts', 'aaron_scripts' );
 // Add styles and fonts for the Gutenberg editor.
 add_action( 'enqueue_block_editor_assets', 'aaron_gutenberg_assets' );
 function aaron_gutenberg_assets() {
+	wp_enqueue_style( 'open-sans' );
 	wp_enqueue_style( 'aaron-fonts-gutenberg', aaron_fonts_url(), array(), null );
 	wp_enqueue_style( 'aaron-gutenberg', get_theme_file_uri( '/inc/gutenberg-editor.css' ), false );
 }
@@ -357,25 +358,25 @@ function aaron_customize_css() {
 	echo '<style type="text/css">';
 	if ( is_admin_bar_showing() ) {
 		?>
-		.main-navigation{top:32px;}
+		.main-navigation {top: 32px;}
 
 		@media screen and ( max-width: 782px ) {
-			.main-navigation{top:46px;}
+			.main-navigation {top: 46px;}
 		}
 
 		@media screen and ( max-width: 600px ) {
-			.main-navigation{top:0px;}
+			.main-navigation {top: 0px;}
 		}
 
 	<?php
 	}
 
 	echo '.site-title,
-		.site-title a {	color:#' . esc_attr( get_header_textcolor() ) . "; }\n";
+		.site-title a {	color: #' . esc_attr( get_header_textcolor() ) . "; }\n";
 
 	// If the site title text color is black, turn off the text shadow, or the text will be too blurry.
 	if ( get_header_textcolor() === '000000' ) {
-		echo ".site-title, .site.title a{text-shadow:none;} \n";
+		echo ".site-title, .site.title a {text-shadow: none;} \n";
 	}
 
 	// Call to Action text color.
@@ -385,7 +386,7 @@ function aaron_customize_css() {
 
 	// If the Call to action text color is black, turn off the text shadow, or the text will be too blurry.
 	if ( get_theme_mod( 'aaron_action_color' ) === '#000000' ) {
-		echo "#action, #action a{text-shadow:none;} \n";
+		echo "#action, #action a {text-shadow: none;} \n";
 	}
 
 	// Call to Action background color.
@@ -410,7 +411,7 @@ function aaron_customize_css() {
 			.comment-reply-title,
 			.featured-headline,
 			.testimonial-entry-title,
-			.featured-post h2 { text-transform:' . esc_attr( get_theme_mod( 'aaron_caps' ) ) . "; }\n";
+			.featured-post h2 { text-transform: ' . esc_attr( get_theme_mod( 'aaron_caps' ) ) . "; }\n";
 	}
 
 	// Font setting.
@@ -436,10 +437,10 @@ function aaron_customize_css() {
 
 	// If avatars are enabled, alter the css.
 	if ( get_option( 'show_avatars' ) ) {
-		echo ".comment-metadata{
-			margin-left:70px;
-			display:block;
-			margin-top:-25px;
+		echo ".comment-metadata {
+			margin-left: 70px;
+			display: block;
+			margin-top: -25px;
 		}\n";
 	}
 
@@ -447,7 +448,7 @@ function aaron_customize_css() {
 	if ( get_theme_mod( 'aaron_show_search' ) ) {
 	?>
 		@media screen and (max-width: 800px) {	
-			.topsearch { display:initial; } 
+			.topsearch { display: initial; } 
 		}
 	<?php
 	}

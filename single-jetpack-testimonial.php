@@ -2,6 +2,8 @@
 /**
  * The Template for displaying jetpack testimonials.
  *
+ * @link Learn more: https://jetpack.com/support/custom-content-types/
+ *
  * @package Aaron
  */
 

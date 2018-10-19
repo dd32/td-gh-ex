@@ -2,7 +2,7 @@
 /**
  * Template for displaying posts on archives and index.
  *
- * @package aaron
+ * @package Aaron
  */
 
 ?>
@@ -28,10 +28,12 @@
 			/* translators: %s: Name of current post */
 			the_content( sprintf( esc_html__( 'Continue reading %s', 'aaron' ), get_the_title() ) );
 
-			wp_link_pages( array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aaron' ),
-				'after'  => '</div>',
-			) );
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aaron' ),
+					'after'  => '</div>',
+				)
+			);
 		}
 		?>
 	</div><!-- .entry-content -->

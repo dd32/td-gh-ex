@@ -1,8 +1,10 @@
 <?php
 /**
- * The Template for displaying all single projects.
+ * The Template for displaying Jetpack portfolio projects.
  *
- * @package aaron
+ * @link Learn more: https://jetpack.com/support/custom-content-types/
+ *
+ * @package Aaron
  */
 
 get_header(); ?>

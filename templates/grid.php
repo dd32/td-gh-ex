@@ -7,14 +7,17 @@
  * @package Aaron
  */
 
-get_header();
-?>
+get_header(); ?>
+
 <div id="primary" class="content-area">
 	<main id="main" class="site-main" role="main">
 		<section class="featured-wrap">
 			<div class="grid-sizer"></div>
 			<?php
-			$args = array( 'post_type' => 'post', 'post_status' => 'publish' );
+			$args = array(
+				'post_type'   => 'post',
+				'post_status' => 'publish',
+			);
 
 			$grid_query = new WP_Query( $args );
 

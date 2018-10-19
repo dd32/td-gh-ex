@@ -2,9 +2,9 @@
 /**
  * The template for displaying the testimonial archive pages.
  *
- * Learn more: http://codex.wordpress.org/Template_Hierarchy
+ * @link Learn more: https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package aaron
+ * @package Aaron
  */
 
 get_header(); ?>
@@ -38,9 +38,12 @@ get_header(); ?>
 					?>
 				</header><!-- .page-header -->
 
-				<?php while ( have_posts() ) : the_post(); ?>
-
 				<?php
+				while ( have_posts() ) :
+					the_post();
+					?>
+
+					<?php
 
 					/*
 					 * Include the Post-Format-specific template for the content.
@@ -48,7 +51,7 @@ get_header(); ?>
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
 					get_template_part( 'content', 'testimonial-single' );
-				?>
+					?>
 
 			<?php endwhile; ?>
 		<?php endif; ?>

@@ -8,12 +8,13 @@
  */
 
 get_header();
-	aaron_jetpack_featured_posts();
-	?>
+aaron_jetpack_featured_posts();
+?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 			<?php
-			while ( have_posts() ) : the_post();
+			while ( have_posts() ) :
+				the_post();
 				get_template_part( 'content', 'page' );
 
 				// If comments are open , load up the comment template.

@@ -2,7 +2,9 @@
 /**
  * Widget API: WP_Widget_Recent_Posts class
  *
- * The testimonial widget requires the Jetpack plugin. https://wordpress.org/plugins/jetpack/
+ * The testimonial widget requires the Jetpack plugin.
+ *
+ * @link Learn more: https://wordpress.org/plugins/jetpack/
  *
  * @package Aaron
  */
@@ -26,11 +28,11 @@ class Aaron_Testimonial_Widget extends WP_Widget {
 	 */
 	public function __construct() {
 		$widget_ops = array(
-			'classname' => 'aarony-testimonials',
-			'description' => __( 'Your site&#8217;s most recent Testimonials.', 'aaron' ),
+			'classname'                   => 'aaron-testimonials',
+			'description'                 => __( 'Your site&#8217;s most recent Testimonials.', 'aaron' ),
 			'customize_selective_refresh' => true,
 		);
-		parent::__construct( 'aaron-testimonials', __( 'Aaron: Testimonials','aaron' ), $widget_ops );
+		parent::__construct( 'aaron-testimonials', __( 'Aaron: Testimonials', 'aaron' ), $widget_ops );
 		$this->alt_option_name = 'aaron_testimonials';
 	}
 
@@ -64,13 +66,18 @@ class Aaron_Testimonial_Widget extends WP_Widget {
 		 *
 		 * @param array $args An array of arguments used to retrieve the recent posts.
 		 */
-		$r = new WP_Query( apply_filters( 'widget_posts_args', array(
-			'post_type' => 'jetpack-testimonial',
-			'posts_per_page'      => $number,
-			'no_found_rows'       => true,
-			'post_status'         => 'publish',
-			'ignore_sticky_posts' => true,
-		) ) );
+		$r = new WP_Query(
+			apply_filters(
+				'widget_posts_args',
+				array(
+					'post_type'           => 'jetpack-testimonial',
+					'posts_per_page'      => $number,
+					'no_found_rows'       => true,
+					'post_status'         => 'publish',
+					'ignore_sticky_posts' => true,
+				)
+			)
+		);
 
 		if ( $r->have_posts() ) {
 			if ( $display_horizontally ) {
@@ -82,7 +89,10 @@ class Aaron_Testimonial_Widget extends WP_Widget {
 				echo $args['before_title'] . $title . $args['after_title'];
 			} ?>
 			<ul>
-			<?php while ( $r->have_posts() ) : $r->the_post(); ?>
+			<?php
+			while ( $r->have_posts() ) {
+				$r->the_post();
+				?>
 				<li class="jetpack-testimonial">
 					<div class="entry-content">
 					<?php
@@ -97,7 +107,7 @@ class Aaron_Testimonial_Widget extends WP_Widget {
 					}
 					?>
 				</li>
-			<?php endwhile; ?>
+				<?php } ?>
 			</ul>
 			<?php echo $args['after_widget']; ?>
 			<?php
@@ -115,9 +125,9 @@ class Aaron_Testimonial_Widget extends WP_Widget {
 	 * @return array Updated settings to save.
 	 */
 	public function update( $new_instance, $old_instance ) {
-		$instance = $old_instance;
-		$instance['title'] = sanitize_text_field( $new_instance['title'] );
-		$instance['number'] = (int) $new_instance['number'];
+		$instance                         = $old_instance;
+		$instance['title']                = sanitize_text_field( $new_instance['title'] );
+		$instance['number']               = (int) $new_instance['number'];
 		$instance['display_horizontally'] = isset( $new_instance['display_horizontally'] ) ? (bool) $new_instance['display_horizontally'] : false;
 		return $instance;
 	}
@@ -128,21 +138,29 @@ class Aaron_Testimonial_Widget extends WP_Widget {
 	 * @param array $instance Current settings.
 	 */
 	public function form( $instance ) {
-		$title     = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
-		$number    = isset( $instance['number'] ) ? absint( $instance['number'] ) : 1;
+		$title                = isset( $instance['title'] ) ? esc_attr( $instance['title'] ) : '';
+		$number               = isset( $instance['number'] ) ? absint( $instance['number'] ) : 1;
 		$display_horizontally = isset( $instance['display_horizontally'] ) ? (bool) $instance['display_horizontally'] : false;
 		?>
-		<p><label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php esc_html_e( 'Title:', 'aaron' ); ?></label>
-		<input class="widefat" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" type="text" 
-		value="<?php echo $title; ?>" /></p>
+		<p><label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_html_e( 'Title:', 'aaron' ); ?></label>
+		<input class="widefat" 
+		id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" 
+		name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" 
+		type="text" 
+		value="<?php echo esc_attr( $title ); ?>" /></p>
 
-		<p><label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php esc_html_e( 'Number of testimonials to show:','aaron' ); ?></label>
-		<input class="tiny-text" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" type="number" 
-		step="1" min="1" value="<?php echo $number; ?>" size="3" /></p>
+		<p><label for="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>"><?php esc_html_e( 'Number of testimonials to show:', 'aaron' ); ?></label>
+		<input class="tiny-text"
+		id="<?php echo esc_attr( $this->get_field_id( 'number' ) ); ?>" 
+		name="<?php echo esc_attr( $this->get_field_name( 'number' ) ); ?>" 
+		type="number" step="1" min="1" 
+		value="<?php echo esc_attr( $number ); ?>" size="3" /></p>
 
-		<p><input class="checkbox" type="checkbox"<?php checked( $display_horizontally ); ?> id="<?php echo $this->get_field_id( 'display_horizontally' ); ?>" 
-		name="<?php echo $this->get_field_name( 'display_horizontally' ); ?>" />
-		<label for="<?php echo $this->get_field_id( 'display_horizontally' ); ?>"><?php esc_html_e( 'Display testimonials as a full width horizontal list.','aaron' ); ?></label></p>
-<?php
+		<p><input class="checkbox" type="checkbox"<?php checked( $display_horizontally ); ?> 
+		id="<?php echo esc_attr( $this->get_field_id( 'display_horizontally' ) ); ?>" 
+		name="<?php echo esc_attr( $this->get_field_name( 'display_horizontally' ) ); ?>" />
+		<label for="<?php echo esc_attr( $this->get_field_id( 'display_horizontally' ) ); ?>">
+		<?php esc_html_e( 'Display testimonials as a full width horizontal list.', 'aaron' ); ?></label></p>
+	<?php
 	}
 }

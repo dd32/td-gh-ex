@@ -4,8 +4,9 @@
  * Template Post Type: post, page
  * Description: Use this template if you only want to show your Gutenberg blocks. This template does not show the header, footer or the footer widget area.
  *
- * @package aaron
+ * @package Aaron
  */
+
 ?>
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -16,11 +17,12 @@
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<body <?php body_class(); ?> itemscope="itemscope" itemtype="https://schema.org/WebPage">
 <div id="page" class="hfeed site">
 <div id="content" class="site-content">
 	<?php
-	while ( have_posts() ) : the_post();
+	while ( have_posts() ) :
+		the_post();
 		get_template_part( 'content-page' );
 
 		// If comments are open or we have at least one comment, load up the comment template.

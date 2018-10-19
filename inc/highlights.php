@@ -2,7 +2,7 @@
 /**
  *  The template used for displaying the Highlights.
  *
- * @package aaron
+ * @package Aaron
  */
 
 /**
@@ -32,7 +32,7 @@ function aaron_highlights() {
 
 						echo '<img src="' . esc_url( get_theme_mod( 'aaron_highlight' . $i . '_image' ) ) . '" class="highlight-img"';
 						// Display the image alt text.
-						$image_id = attachment_url_to_postid( esc_url( get_theme_mod( 'aaron_highlight' . $i . '_image' ) ) );
+						$image_id  = attachment_url_to_postid( esc_url( get_theme_mod( 'aaron_highlight' . $i . '_image' ) ) );
 						$image_alt = get_post_meta( $image_id, '_wp_attachment_image_alt', true );
 
 						if ( $image_alt ) {
