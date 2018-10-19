@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-04-03 23:40+0545\n"
-"PO-Revision-Date: 2018-04-03 23:40+0545\n"
+"POT-Creation-Date: 2018-10-19 09:31+0545\n"
+"PO-Revision-Date: 2018-10-19 09:31+0545\n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: fr_FR\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n > 1;\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
 "_nx:1,2,4c;esc_html__;esc_attr_x:1,2c;esc_html_e\n"
@@ -361,12 +361,16 @@ msgid "Slider Image"
 msgstr "Curseur de l'image"
 
 #: ../inc/catchbase-default-options.php:229
-msgid "Demo Featured Content"
-msgstr "Contenu vedette démo"
+#: ../inc/catchbase-default-options.php:273
+msgid "Demo"
+msgstr ""
 
 #: ../inc/catchbase-default-options.php:230
-msgid "Featured Page Content"
-msgstr "Contenu vedette de la page"
+#: ../inc/catchbase-default-options.php:274
+#, fuzzy
+#| msgid "Pages:"
+msgid "Page"
+msgstr "Pages&nbsp;:"
 
 #: ../inc/catchbase-default-options.php:244
 msgid "3 columns"
@@ -383,14 +387,6 @@ msgstr "Montrer tout le contenu"
 #: ../inc/catchbase-default-options.php:260
 msgid "Hide Content"
 msgstr "Cacher le contenu"
-
-#: ../inc/catchbase-default-options.php:273
-msgid "Demo Featured Slider"
-msgstr "Démo curseur vedette "
-
-#: ../inc/catchbase-default-options.php:274
-msgid "Featured Page Slider"
-msgstr "Curseur page vadette"
 
 #: ../inc/catchbase-default-options.php:288
 msgid "Fade"
@@ -465,12 +461,12 @@ msgid "Slider Image Size"
 msgstr "Slider Image Size"
 
 #: ../inc/catchbase-default-options.php:347
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:75
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:70
 msgid "Facebook"
 msgstr "Facebook"
 
 #: ../inc/catchbase-default-options.php:351
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:79
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:74
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -500,7 +496,7 @@ msgid "LinkedIn"
 msgstr "Linkedin"
 
 #: ../inc/catchbase-default-options.php:379
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:87
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:82
 msgid "Pinterest"
 msgstr "Pinterest"
 
@@ -623,9 +619,11 @@ msgid "Disable Image"
 msgstr "Désactiver image"
 
 #: ../inc/catchbase-default-options.php:591
-#, php-format
-msgctxt "1: Year, 2: Site Title with home URL"
-msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+#, fuzzy, php-format
+#| msgctxt "1: Year, 2: Site Title with home URL"
+#| msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+msgctxt "1: Year, 2: Site Title with home URL 3: Privacy Policy Link"
+msgid "Copyright &copy; %1$s %2$s. All Rights Reserved. %3$s"
 msgstr "Copyright &copy; %1$s %2$s. Tous Les Droits Sont Réservés."
 
 #: ../inc/catchbase-default-options.php:591
@@ -746,7 +744,7 @@ msgstr "Titre (optionnel):"
 msgid "All Categories"
 msgstr "Sélectionner Catégories "
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:42
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:37
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
 "options."
@@ -754,27 +752,27 @@ msgstr ""
 "Maintenez le bouton / Commande (Mac) Ctrl (windows) pour sélectionner "
 "plusieurs options. "
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:55
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:50
 msgid "Theme Instructions"
 msgstr " Instructions de thème"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:59
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:54
 msgid "Support"
 msgstr "Support"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:63
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:58
 msgid "Changelog"
 msgstr "Enregistrement des changements"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:67
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:62
 msgid "Donate Now"
 msgstr "Faire un don maintenant "
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:71
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:66
 msgid "Review"
 msgstr "Ce qu'on en dit"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:83
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:78
 msgid "Google+"
 msgstr "Google+"
 
@@ -1239,6 +1237,18 @@ msgid ""
 msgstr ""
 "C'est la première barre latérale de zone de widgets  si vous utilisez "
 "l'option deux ou trois colonnes: réaménagement du site."
+
+#~ msgid "Demo Featured Content"
+#~ msgstr "Contenu vedette démo"
+
+#~ msgid "Featured Page Content"
+#~ msgstr "Contenu vedette de la page"
+
+#~ msgid "Demo Featured Slider"
+#~ msgstr "Démo curseur vedette "
+
+#~ msgid "Featured Page Slider"
+#~ msgstr "Curseur page vadette"
 
 #~ msgid "%s"
 #~ msgstr "%s"

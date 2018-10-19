@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-04-03 23:40+0545\n"
-"PO-Revision-Date: 2018-04-03 23:40+0545\n"
+"POT-Creation-Date: 2018-10-19 09:31+0545\n"
+"PO-Revision-Date: 2018-10-19 09:31+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: hu_HU\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
 "_nx:1,2,4c;esc_html__;esc_attr_x:1,2c;esc_html_e\n"
@@ -358,12 +358,16 @@ msgid "Slider Image"
 msgstr "Slider Kép"
 
 #: ../inc/catchbase-default-options.php:229
-msgid "Demo Featured Content"
-msgstr "Demo kiemelt tartalom"
+#: ../inc/catchbase-default-options.php:273
+msgid "Demo"
+msgstr ""
 
 #: ../inc/catchbase-default-options.php:230
-msgid "Featured Page Content"
-msgstr "Kiemelt oldal tartalom"
+#: ../inc/catchbase-default-options.php:274
+#, fuzzy
+#| msgid "Pages:"
+msgid "Page"
+msgstr "Oldalak:"
 
 #: ../inc/catchbase-default-options.php:244
 msgid "3 columns"
@@ -380,14 +384,6 @@ msgstr "Teljes tartalom megjelenítése"
 #: ../inc/catchbase-default-options.php:260
 msgid "Hide Content"
 msgstr "Tartalom elrejtése"
-
-#: ../inc/catchbase-default-options.php:273
-msgid "Demo Featured Slider"
-msgstr "Demo kiemelt slider"
-
-#: ../inc/catchbase-default-options.php:274
-msgid "Featured Page Slider"
-msgstr "Kiemelt Slider"
 
 #: ../inc/catchbase-default-options.php:288
 msgid "Fade"
@@ -462,12 +458,12 @@ msgid "Slider Image Size"
 msgstr "Slider képméret"
 
 #: ../inc/catchbase-default-options.php:347
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:75
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:70
 msgid "Facebook"
 msgstr "Facebook"
 
 #: ../inc/catchbase-default-options.php:351
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:79
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:74
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -497,7 +493,7 @@ msgid "LinkedIn"
 msgstr "LinkedIn"
 
 #: ../inc/catchbase-default-options.php:379
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:87
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:82
 msgid "Pinterest"
 msgstr "Pinterest"
 
@@ -620,9 +616,11 @@ msgid "Disable Image"
 msgstr "Kép kikapcsolása"
 
 #: ../inc/catchbase-default-options.php:591
-#, php-format
-msgctxt "1: Year, 2: Site Title with home URL"
-msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+#, fuzzy, php-format
+#| msgctxt "1: Year, 2: Site Title with home URL"
+#| msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+msgctxt "1: Year, 2: Site Title with home URL 3: Privacy Policy Link"
+msgid "Copyright &copy; %1$s %2$s. All Rights Reserved. %3$s"
 msgstr "Copyright &copy; %1s. %2s Minden jog fenntartva."
 
 #: ../inc/catchbase-default-options.php:591
@@ -742,7 +740,7 @@ msgstr "Cím (opcionális):"
 msgid "All Categories"
 msgstr "Kategória választása"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:42
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:37
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
 "options."
@@ -750,27 +748,27 @@ msgstr ""
 "A Ctrl (Windows) / Command (Mac) gomb lenyomva tartásával több is "
 "kiválasztható."
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:55
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:50
 msgid "Theme Instructions"
 msgstr "Téma utasítások"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:59
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:54
 msgid "Support"
 msgstr "Támogatás"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:63
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:58
 msgid "Changelog"
 msgstr "Változások"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:67
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:62
 msgid "Donate Now"
 msgstr "Támogatás"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:71
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:66
 msgid "Review"
 msgstr "Értékelések"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:83
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:78
 msgid "Google+"
 msgstr "Google+"
 
@@ -1233,6 +1231,18 @@ msgid ""
 msgstr ""
 "Ez az elsődleges oldalsáv, ha a két vagy három oszlopos elrendezést "
 "használja."
+
+#~ msgid "Demo Featured Content"
+#~ msgstr "Demo kiemelt tartalom"
+
+#~ msgid "Featured Page Content"
+#~ msgstr "Kiemelt oldal tartalom"
+
+#~ msgid "Demo Featured Slider"
+#~ msgstr "Demo kiemelt slider"
+
+#~ msgid "Featured Page Slider"
+#~ msgstr "Kiemelt Slider"
 
 #~ msgid "%s"
 #~ msgstr "%s"

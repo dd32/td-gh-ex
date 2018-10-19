@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-04-03 23:41+0545\n"
-"PO-Revision-Date: 2018-04-03 23:41+0545\n"
+"POT-Creation-Date: 2018-10-19 09:31+0545\n"
+"PO-Revision-Date: 2018-10-19 09:31+0545\n"
 "Last-Translator: Anders <anders@paulcen.se>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
 "_nx:1,2,4c;esc_html__;esc_attr_x:1,2c;esc_html_e\n"
 "X-Poedit-Basepath: .\n"
@@ -358,12 +358,14 @@ msgid "Slider Image"
 msgstr "Bildspelsbild"
 
 #: ../inc/catchbase-default-options.php:229
-msgid "Demo Featured Content"
-msgstr "Visa utvalt Innehåll"
+#: ../inc/catchbase-default-options.php:273
+msgid "Demo"
+msgstr ""
 
 #: ../inc/catchbase-default-options.php:230
-msgid "Featured Page Content"
-msgstr "Visa utvalt sidoinnehåll"
+#: ../inc/catchbase-default-options.php:274
+msgid "Page"
+msgstr "Sida"
 
 #: ../inc/catchbase-default-options.php:244
 msgid "3 columns"
@@ -380,14 +382,6 @@ msgstr "Visa hela inl&auml;gg"
 #: ../inc/catchbase-default-options.php:260
 msgid "Hide Content"
 msgstr ""
-
-#: ../inc/catchbase-default-options.php:273
-msgid "Demo Featured Slider"
-msgstr "Visa utvalt Innehåll"
-
-#: ../inc/catchbase-default-options.php:274
-msgid "Featured Page Slider"
-msgstr "Visa utvalt sidoinnehåll"
 
 #: ../inc/catchbase-default-options.php:288
 msgid "Fade"
@@ -462,12 +456,12 @@ msgid "Slider Image Size"
 msgstr "Bildspel bildstorlek"
 
 #: ../inc/catchbase-default-options.php:347
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:75
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:70
 msgid "Facebook"
 msgstr "Facebook"
 
 #: ../inc/catchbase-default-options.php:351
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:79
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:74
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -497,7 +491,7 @@ msgid "LinkedIn"
 msgstr "LinkedIn"
 
 #: ../inc/catchbase-default-options.php:379
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:87
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:82
 msgid "Pinterest"
 msgstr "Pinterest"
 
@@ -620,9 +614,11 @@ msgid "Disable Image"
 msgstr "Inaktivera bild"
 
 #: ../inc/catchbase-default-options.php:591
-#, php-format
-msgctxt "1: Year, 2: Site Title with home URL"
-msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+#, fuzzy, php-format
+#| msgctxt "1: Year, 2: Site Title with home URL"
+#| msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+msgctxt "1: Year, 2: Site Title with home URL 3: Privacy Policy Link"
+msgid "Copyright &copy; %1$s %2$s. All Rights Reserved. %3$s"
 msgstr "Copyright © %1$s %2$s. Alla rättigheter reserverade."
 
 #: ../inc/catchbase-default-options.php:591
@@ -742,7 +738,7 @@ msgstr "Rubrik (valfri):"
 msgid "All Categories"
 msgstr "Välj kategorier"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:42
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:37
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
 "options."
@@ -750,27 +746,27 @@ msgstr ""
 "Håll ned Ctrl (windows) / kommando (Mac)-knappen för att välja flera "
 "alternativ."
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:55
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:50
 msgid "Theme Instructions"
 msgstr "Tema instruktioner"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:59
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:54
 msgid "Support"
 msgstr "Support"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:63
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:58
 msgid "Changelog"
 msgstr "Ändringslogg"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:67
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:62
 msgid "Donate Now"
 msgstr "Ge ett bidrag nu"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:71
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:66
 msgid "Review"
 msgstr "Review"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:83
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:78
 msgid "Google+"
 msgstr "Google+"
 
@@ -1227,6 +1223,18 @@ msgstr ""
 "Detta är den primära sidopanelen om du använder en två eller tre kolumn "
 "webbplats layoutalternativ."
 
+#~ msgid "Demo Featured Content"
+#~ msgstr "Visa utvalt Innehåll"
+
+#~ msgid "Featured Page Content"
+#~ msgstr "Visa utvalt sidoinnehåll"
+
+#~ msgid "Demo Featured Slider"
+#~ msgstr "Visa utvalt Innehåll"
+
+#~ msgid "Featured Page Slider"
+#~ msgstr "Visa utvalt sidoinnehåll"
+
 #~ msgid "%s"
 #~ msgstr "%s"
 
@@ -1666,9 +1674,6 @@ msgstr ""
 #~ msgid "Displays the title of the Page if title input is empty."
 #~ msgstr "Visar titeln på sidan om titeln innehåll är tomt."
 
-#~ msgid "Page"
-#~ msgstr "Sida"
-
 #~ msgid "Remove Featured image"
 #~ msgstr "Ta bort från Utvalda"
 
@@ -1878,8 +1883,8 @@ msgstr ""
 
 #~ msgid ""
 #~ "You can add custom shortcodes, which will be automatically inserted into "
-#~ "your theme. Some shorcodes: [the-year] and [site-link] for current year "
-#~ "and site link respectively."
+#~ "your theme. Some shorcodes: [the-year], [site-link] and [privacy-policy-"
+#~ "link] for current year and site link respectively."
 #~ msgstr ""
 #~ "Du kan lägga till anpassade shortcodes, som infogas automatiskt i ditt "
 #~ "tema. Några shorcodes: [årets] och [webbplats-länk] för innevarande år "

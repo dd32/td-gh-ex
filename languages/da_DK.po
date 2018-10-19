@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Base\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-04-03 23:40+0545\n"
-"PO-Revision-Date: 2018-04-03 23:40+0545\n"
+"POT-Creation-Date: 2018-10-19 09:31+0545\n"
+"PO-Revision-Date: 2018-10-19 09:31+0545\n"
 "Last-Translator: Kurt <catchme@vindu.dk>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: da_DK\n"
@@ -16,7 +16,7 @@ msgstr ""
 "_nx:1,2,4c;esc_html__;esc_html_e;esc_attr_x:1,2c\n"
 "X-Poedit-Basepath: .\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: ..\n"
 
@@ -354,12 +354,16 @@ msgid "Slider Image"
 msgstr "Slider billede"
 
 #: ../inc/catchbase-default-options.php:229
-msgid "Demo Featured Content"
-msgstr "Demo Vist Indhold"
+#: ../inc/catchbase-default-options.php:273
+msgid "Demo"
+msgstr ""
 
 #: ../inc/catchbase-default-options.php:230
-msgid "Featured Page Content"
-msgstr "Vist Side Indhold"
+#: ../inc/catchbase-default-options.php:274
+#, fuzzy
+#| msgid "Pages:"
+msgid "Page"
+msgstr "Sider:"
 
 #: ../inc/catchbase-default-options.php:244
 msgid "3 columns"
@@ -376,14 +380,6 @@ msgstr "Vis fuldt indhold"
 #: ../inc/catchbase-default-options.php:260
 msgid "Hide Content"
 msgstr "Skjul Indhold"
-
-#: ../inc/catchbase-default-options.php:273
-msgid "Demo Featured Slider"
-msgstr "Demo Fremhævet Slider"
-
-#: ../inc/catchbase-default-options.php:274
-msgid "Featured Page Slider"
-msgstr "Fremhævet fast-side slider"
 
 #: ../inc/catchbase-default-options.php:288
 msgid "Fade"
@@ -458,12 +454,12 @@ msgid "Slider Image Size"
 msgstr "slider billed størrelse"
 
 #: ../inc/catchbase-default-options.php:347
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:75
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:70
 msgid "Facebook"
 msgstr "Facebook"
 
 #: ../inc/catchbase-default-options.php:351
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:79
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:74
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -493,7 +489,7 @@ msgid "LinkedIn"
 msgstr "LinkedIn"
 
 #: ../inc/catchbase-default-options.php:379
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:87
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:82
 msgid "Pinterest"
 msgstr "Pinterest"
 
@@ -616,9 +612,11 @@ msgid "Disable Image"
 msgstr "Deaktiver billede"
 
 #: ../inc/catchbase-default-options.php:591
-#, php-format
-msgctxt "1: Year, 2: Site Title with home URL"
-msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+#, fuzzy, php-format
+#| msgctxt "1: Year, 2: Site Title with home URL"
+#| msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+msgctxt "1: Year, 2: Site Title with home URL 3: Privacy Policy Link"
+msgid "Copyright &copy; %1$s %2$s. All Rights Reserved. %3$s"
 msgstr "Copyright &copy; %1$s %2$s. All Rights Reserved."
 
 #: ../inc/catchbase-default-options.php:591
@@ -737,34 +735,34 @@ msgstr "Titel (valgfri):"
 msgid "All Categories"
 msgstr "Vælg Kategorier"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:42
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:37
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
 "options."
 msgstr ""
 "Hold Ctrl (Windows) / Kommando (Mac) knappen for at vælge flere muligheder."
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:55
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:50
 msgid "Theme Instructions"
 msgstr "Theme Instructions"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:59
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:54
 msgid "Support"
 msgstr "Support"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:63
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:58
 msgid "Changelog"
 msgstr "Ændringslog"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:67
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:62
 msgid "Donate Now"
 msgstr "Doner nu"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:71
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:66
 msgid "Review"
 msgstr "Gennemse"
 
-#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:83
+#: ../inc/customizer-includes/catchbase-customizer-custom-controls.php:78
 msgid "Google+"
 msgstr "Google+"
 
@@ -1218,6 +1216,18 @@ msgid ""
 msgstr ""
 "Dette er det Primære Sidebar Widget Område hvis du bruger en to eller tre "
 "spaltet side layout udgave."
+
+#~ msgid "Demo Featured Content"
+#~ msgstr "Demo Vist Indhold"
+
+#~ msgid "Featured Page Content"
+#~ msgstr "Vist Side Indhold"
+
+#~ msgid "Demo Featured Slider"
+#~ msgstr "Demo Fremhævet Slider"
+
+#~ msgid "Featured Page Slider"
+#~ msgstr "Fremhævet fast-side slider"
 
 #~ msgid "%s"
 #~ msgstr "%s"
