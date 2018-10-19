@@ -38,27 +38,10 @@ Activiation and Use
 1. Activate the Theme through the 'Themes' menu in WordPress
 2. See Appearance -> Customize to change theme specific options
 
-= How to Install the Homepage Slider =
-
-1. Install and Activate the following plugin:
-
-https://wordpress.org/plugins/basic-jquery-slider/
-
-2. Navigate to Admin Panel -> Left Menu -> BasicSlider -> Add New
-
-3. Enter Title and Upload Feature Image
-
-4. Repeat the previous step several times (every BasicSlider you add is another Slide)
-
-5. Navigate to Admin Panel -> Left Menu -> Appearance -> Widgets
-
-6. Insert Text Widget into 'Homepage Widget Area'
-
-7. Insert '[BasicSlider]' into the Text widget content
-
-8. Save changes
-
 == Changelog ==
+= 1.0.4 =
+* remove recommended plugins functionality
+
 = 1.0.3 =
 * updating screenshot.png according to the new WordPress.org requirements
 
@@ -85,8 +68,6 @@ AyaBooks WordPress Theme bundles the following third-party resources:
 * functions.php -> class ayabooks_Customize_Section_Pro, Justin Tadlock, GPL-2.0
 * js/customize-controls.js, Justin Tadlock, GPL-2.0
 * css/customize-controls.css, Justin Tadlock, GPL-2.0
-* inc/tgmpa/class-tgm-plugin-activation.php, Thomas Griffin, GPL-2.0
-* inc/tgmpa/recommended-plugins.php, Thomas Griffin, GPL-2.0
 * css/animate.css - daneden.me, MIT
 FontAwesome icon font, Copyright Font Awesome
 FontAwesome are licensed under the terms of the SIL OFL 1.1 license.
@@ -95,7 +76,7 @@ Source: https://fontawesome.com/v4.7.0/
 
 * js/viewportchecker.js, MIT
 *
-* screenshot.png (Slider Image), https://pixabay.com/en/daisy-bellis-philosophy-2320519/, CC0
+* screenshot.png (Homepage Image), https://pixabay.com/en/daisy-bellis-philosophy-2320519/, CC0
 * screenshot.png (Column #1 Image), https://pixabay.com/en/book-old-book-read-used-2363881/, CC0
 * screenshot.png (Column #2 Image), https://pixabay.com/en/book-flowers-read-white-dreams-2436058/, CC0
 * screenshot.png (Column #3 Image), https://pixabay.com/en/book-read-relax-meadow-book-pages-2304389/, CC0

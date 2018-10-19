@@ -465,8 +465,3 @@ if ( ! function_exists( 'ayabooks_sanitize_checkbox' ) ) :
 	}
 
 endif; // ayabooks_sanitize_checkbox
-
-/**
- * Plugin Recommendation
-*/
-require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
