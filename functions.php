@@ -642,8 +642,3 @@ if ( ! function_exists( 'ayafreelance_sanitize_checkbox' ) ) :
 		return ( ( isset( $checked ) && true == $checked ) ? true : false );
 	}
 endif; // ayafreelance_sanitize_checkbox
-
-/**
- * Plugin Recommendation
-*/
-require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';

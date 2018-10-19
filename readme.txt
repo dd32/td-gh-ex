@@ -27,11 +27,6 @@ AyaFreelance WordPress Theme bundles the following third-party resources:
 * js/customize-controls.js
 * css/customize-controls.css
 *
-* TGM Plugin Activation
-* Author: created by Thomas Griffin and is currently maintained by @thomasgriffin, @GaryJones and @jrfnl.
-* License: GPL-2.0 or later license. Reference: https://opensource.org/licenses/GPL-2.0
-* inc/tgmpa/class-tgm-plugin-activation.php
-* inc/tgmpa/recommended-plugins.php
 *
 * css/font-awesome.css - License: MIT License URL: http://opensource.org/licenses/mit-license.html
 *
@@ -68,6 +63,59 @@ AyaFreelance WordPress Theme bundles the following third-party resources:
 * Image Source: https://pixabay.com/en/laptop-computer-business-table-3317007/
 *
 
+== Changelog ==
+
+= AyaFreelance 1.1.2 (2018-10-19) =
+remove recommended plugin functionality
+move changelog into readme.txt file
+
+= AyaFreelance 1.1.1 (2018-08-29) =
+updating screenshot.png according to the new WordPress.org requirements
+
+= AyaFreelance 1.1.0 (2018-08-04) =
+display slider and homepage widgets only on static homepage
+remove default demo content
+
+= AyaFreelance 1.0.9 (2018-04-25) =
+fix issue with Instagram widget include
+
+= AyaFreelance 1.0.8 (2018-03-08) =
+improve homepage Slider
+add Instagram and Tabs widgets support
+
+= AyaFreelance 1.0.7 (2017-12-20) =
+improve animation effects
+add footer menu
+
+= AyaFreelance 1.0.6 (2017-10-27) =
+add animations
+
+= AyaFreelance 1.0.4 (2017-06-22) =
+update FontAwesome license info
+remove languages folder
+remove Theme URL
+
+= AyaFreelance 1.0.3 (2017-05-22) =
+add dd and dt style
+add paragraph margin
+update link colors
+fix issue with comments small font size
+hide edit links for print style
+fix issue with calendar next link font size
+
+= AyaFreelance 1.0.2 (2017-05-20) =
+remove FontAseme css added into style.css
+add style for print
+fix style font display issues with Calendar widget
+
+= AyaFreelance 1.0.1 (2017-04-23) =
+fix issues with data escaping
+update 3rd party licenses in readme.txt file
+remove unused @since and @author tags
+other small bug fixes
+
+= AyaFreelance 1.0.0 (2017-04-16) =
+Initial release
 
 
 == Installation ==
