@@ -487,8 +487,3 @@ if ( ! function_exists( 'ayaestate_sanitize_checkbox' ) ) :
 	}
 
 endif; // ayaestate_sanitize_checkbox
-
-/**
- * Plugin Recommendation
-*/
-require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';

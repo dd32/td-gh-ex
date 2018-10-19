@@ -15,9 +15,28 @@ AyaEstate is Fully Responsive WordPress Theme.
 
 AyaEstate is Fully Responsive WordPress Theme. Features include Animation Effects,
 Custom Logo, Multi-level Drop-down Menu, Custom Background, Full-Width Page Template,
-Widget Areas: Right Sidebar and 3 Footer Columns, WP Instagram Widget support, Facebook Widget support,
-WP Tab Widget support, Footer Menu, Search Engine Optimized, Built-in Slider, Multiple Browsers Support,
-Translation-Ready, etc.
+Widget Areas: Right Sidebar and 3 Footer Columns, Footer Menu, Search Engine Optimized,
+Multiple Browsers Support, Translation-Ready, etc.
+
+
+== Changelog ==
+
+= AyaEstate 1.1.0 (2018-10-19) =
+remove recommended plugins functionality
+move changelog into readme.txt file
+
+= AyaEstate 1.0.9 (2018-08-28) =
+updating screenshot.png according to the new WordPress.org requirements
+
+= AyaEstate 1.0.8 (2018-08-04) =
+remove default demo content
+
+= AyaEstate 1.0.7 (2018-05-31) =
+updating screenshot.png
+
+= AyaEstate 1.0.0 (2018-04-16) =
+Initial release
+
 
 
 == Frequently Asked Questions ==
@@ -102,17 +121,14 @@ AyaEstate WordPress Theme bundles the following third-party resources:
 * functions.php -> class ayaestate_Customize_Section_Pro, Justin Tadlock, GPL-2.0
 * js/customize-controls.js, Justin Tadlock, GPL-2.0
 * css/customize-controls.css, Justin Tadlock, GPL-2.0
-* inc/tgmpa/class-tgm-plugin-activation.php, Thomas Griffin, GPL-2.0
-* inc/tgmpa/recommended-plugins.php, Thomas Griffin, GPL-2.0
 * css/animate.css - daneden.me, MIT
-FontAwesome icon font, Copyright Font Awesome
-FontAwesome are licensed under the terms of the SIL OFL 1.1 license.
-Source: https://fontawesome.com/v4.7.0/
-
-
+*
+* FontAwesome icon font, Copyright Font Awesome
+* FontAwesome are licensed under the terms of the SIL OFL 1.1 license.
+* Source: https://fontawesome.com/v4.7.0/
+*
 * js/viewportchecker.js, MIT
 *
 * screenshot.png (Thumbnail Image), https://pixabay.com/en/render-graphic-architecture-3d-1477041/, CC0
-*
 * screenshot.png (Sidebar Image), https://pixabay.com/en/apartment-view-interior-room-3564955/, CCO
 * screenshot.png (Sidebar Image), https://pixabay.com/en/architecture-building-driveway-1867187/, CCO
