@@ -280,9 +280,3 @@ require get_template_directory() . '/inc/custom-header.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
-/**
- * Plugin Recommendation
-*/
-require get_template_directory() . '/inc/tgmpa/recommended-plugins.php';
-

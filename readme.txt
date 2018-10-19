@@ -16,6 +16,9 @@ ArtGallery is distributed under the terms of the GNU GPL v2 or later
 ArtGallery is fully Responsive Moto WordPress Theme. Features: Custom Logo, Custom Background, Footer copyright text customizations, Widget Areas: Sidebar, 3 Footer Columns, Translation-Ready and much more.
 
 == Changelog ==
+= 1.0.8 =
+- remove recommended plugin functionality
+
 = 1.0.7 =
 - updating screenshot.png according to the new WordPress.org requirements
 
