@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adventurous\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-04-02 00:07+0545\n"
-"PO-Revision-Date: 2018-04-02 00:07+0545\n"
+"POT-Creation-Date: 2018-10-19 09:18+0545\n"
+"PO-Revision-Date: 2018-10-19 09:18+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Dinnye <pdinnye@gmail.com>\n"
 "Language: hu_HU\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:17
@@ -269,7 +269,9 @@ msgid "Copyright"
 msgstr "Copyright"
 
 #: ../inc/adventurous-default-options.php:96
-msgid "All Rights Reserved"
+#, fuzzy
+#| msgid "All Rights Reserved"
+msgid "All Rights Reserved."
 msgstr "Minden szerzői jog fenntartva."
 
 #: ../inc/adventurous-default-options.php:96

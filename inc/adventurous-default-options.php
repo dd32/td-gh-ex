@@ -93,7 +93,7 @@ function adventurous_get_defaults( $parameter = null ) {
 		'social_contact'                => '',
 		'social_xing'                   => '',
 		'social_meetup'                 => '',
-		'footer_code'                   => '<div class="copyright">'. esc_attr__( 'Copyright', 'adventurous' ) . ' &copy; ' . adventurous_the_year() . '&nbsp;' . adventurous_site_link() . '&nbsp;' . esc_attr__( 'All Rights Reserved', 'adventurous' ) . '.</div><div class="powered">'. esc_attr__( 'Adventurous Theme by', 'adventurous' ) . '&nbsp;' . adventurous_shop_link() . '</div>',
+		'footer_code'                   => '<div class="copyright">'. esc_attr__( 'Copyright', 'adventurous' ) . ' &copy; ' . adventurous_the_year() . '&nbsp;' . adventurous_site_link() . '&nbsp;' . esc_attr__( 'All Rights Reserved.', 'adventurous' ) . ' ' . get_the_privacy_policy_link() . '</div><div class="powered">'. esc_attr__( 'Adventurous Theme by', 'adventurous' ) . '&nbsp;' . adventurous_shop_link() . '</div>',
 		'reset_footer'                  => 0
 	);
 
@@ -282,9 +282,9 @@ function adventurous_content_layout_options() {
  */
 function adventurous_slider_types() {
 	$options = array(
-		'demo-slider' 		=> esc_html__( 'Demo Slider', 'adventurous' ),
-		'post-slider' 		=> esc_html__( 'Post Slider', 'adventurous' ),
-		'category-slider' 	=> esc_html__( 'Category Slider', 'adventurous' ),
+		'demo-slider' 		=> esc_html__( 'Demo', 'adventurous' ),
+		'post-slider' 		=> esc_html__( 'Post', 'adventurous' ),
+		'category-slider' 	=> esc_html__( 'Category', 'adventurous' ),
 	);
 
 	return apply_filters( 'adventurous_slider_types', $options );

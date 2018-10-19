@@ -102,6 +102,12 @@ Access to free support forum at https://catchthemes.com/support-forum/forum/adve
 
 
 == Changelog ==
+
+= 3.1 (Released: October 19, 2018) =
+* Added: Core Privacy Policy link support in footer
+* Updated: Upgrade to pro button css update
+* Updated: Content type label updated
+
 = 3.0.2 (Released: April 01, 2018) =
 * Bug Fixed: Undefined variable issue on portfolio pages
 
