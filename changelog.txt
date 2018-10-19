@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 3.6.0 - Released: 18.10.2018
+
+-- Fixed  : Menu transition for sub items on header layout 1 and 2
+
 - Version 3.5.9 - Released: 03.10.2018
 
 -- Fixed  : Site description on header layout 2

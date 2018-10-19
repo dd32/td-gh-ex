@@ -101,11 +101,11 @@ body.menubar .suevafree-menu:after {
 	margin:15px; 
 	color:#616161; 
 	border-bottom: dotted 1px transparent;
-	-webkit-transition: color .3s linear;
-	-moz-transition: color .3s linear;
-	-ms-transition: color .3s linear;
-	-o-transition: color .3s linear;
-	transition: color .3s linear;
+	-webkit-transition: color .3s linear, background-color .3s linear, border-color .3s linear;
+	-moz-transition: color .3s linear, background-color .3s linear, border-color .3s linear;
+	-ms-transition: color .3s linear, background-color .3s linear, border-color .3s linear;
+	-o-transition: color .3s linear, background-color .3s linear, border-color .3s linear;
+	transition: color .3s linear, background-color .3s linear, border-color .3s linear;
 }
 
 .suevafree-menu ul li a:hover,
