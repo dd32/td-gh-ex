@@ -1,11 +1,14 @@
+/* 
+Styles for the icon selection in th customizer.
+*/
 
-.star-radio-buttons label{
-  margin:10px 0 10px 0;
-  display:inline-block;
-  width:47%;
+.star-radio-buttons label {
+	margin: 10px 0 10px 0;
+	display: inline-block;
+	width: 47%;
 }
 
-.star-radio-buttons .fa{
+.star-radio-buttons .fa {
 	display: inline-block;
 	font: normal normal normal 14px/1 FontAwesome;
 	text-rendering: auto;
@@ -16,6 +19,6 @@
 	line-height: 1; 
 	color: #717171;
 	text-decoration: none; 
-	margin-right:8px;
+	margin-right: 8px;
 	vertical-align: middle;
 }

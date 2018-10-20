@@ -2,7 +2,7 @@
 /**
  * The template for displaying all single posts.
  *
- * @package star
+ * @package Star
  */
 
 get_header(); ?>
@@ -11,7 +11,8 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		while ( have_posts() ) : the_post();
+		while ( have_posts() ) :
+			the_post();
 			get_template_part( 'content', 'single' );
 			the_post_navigation();
 			comments_template();

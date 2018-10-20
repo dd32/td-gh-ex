@@ -2,7 +2,7 @@
 /**
  * The Template for displaying all single projects.
  *
- * @package star
+ * @package Star
  */
 
 get_header(); ?>
@@ -11,7 +11,8 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 		<?php
-		while ( have_posts() ) : the_post();
+		while ( have_posts() ) :
+			the_post();
 			get_template_part( 'content', 'portfolio-single' );
 			the_post_navigation();
 			comments_template();
@@ -20,6 +21,5 @@ get_header(); ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
-	
 <?php
 get_footer();

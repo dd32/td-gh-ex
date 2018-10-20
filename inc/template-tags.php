@@ -2,7 +2,7 @@
 /**
  * Custom template tags for this theme.
  *
- * @package star
+ * @package Star
  */
 
 if ( ! function_exists( 'star_posted_on' ) ) :
@@ -11,7 +11,8 @@ if ( ! function_exists( 'star_posted_on' ) ) :
 	 */
 	function star_posted_on() {
 		$time_string = '<time datetime="%1$s">%2$s</time>';
-		$time_string = sprintf( $time_string,
+		$time_string = sprintf(
+			$time_string,
 			esc_attr( get_the_date( 'c' ) ),
 			esc_html( get_the_date() ),
 			esc_attr( get_the_modified_date( 'c' ) ),
@@ -34,6 +35,7 @@ if ( ! function_exists( 'star_entry_footer' ) ) {
 				/* Translators: used between list items, there is a space after the comma. */
 				$tags_list = get_the_tag_list( '', __( ', ', 'star' ) );
 				if ( $tags_list ) {
+					/* Translators: %1$s: list of tags. */
 					printf( '<span class="tags-links">' . __( 'Tags: %1$s', 'star' ) . '</span>', $tags_list );
 				}
 			}
@@ -58,8 +60,8 @@ if ( ! function_exists( 'star_entry_footer' ) ) {
 
 			/* Display jetpack's like  if it's active */
 			if ( class_exists( 'Jetpack_Likes' ) ) {
-			    $star_custom_likes = new Jetpack_Likes;
-			    echo $star_custom_likes->post_likes( '' );
+				$star_custom_likes = new Jetpack_Likes();
+				echo $star_custom_likes->post_likes( '' );
 			}
 
 			echo '</footer><!-- .entry-footer -->';
@@ -78,9 +80,9 @@ if ( ! function_exists( 'star_portfolio_footer' ) ) :
 			echo '<footer class="entry-footer">';
 			global $post;
 
-			echo the_terms( $post->ID, 'jetpack-portfolio-type', '<span class="jetpack-portfolio-type">' . __('Project Type: ','star') ,', ', '</span>' );
+			echo the_terms( $post->ID, 'jetpack-portfolio-type', '<span class="jetpack-portfolio-type">' . __( 'Project Type: ', 'star' ), ', ', '</span>' );
 
-			echo the_terms( $post->ID, 'jetpack-portfolio-tag', '<span class="tags-links">' . __( 'Project Tags: ', 'star' ),', ', '</span>' );
+			echo the_terms( $post->ID, 'jetpack-portfolio-tag', '<span class="tags-links">' . __( 'Project Tags: ', 'star' ), ', ', '</span>' );
 
 			/* translators: % is the post title */
 			edit_post_link( sprintf( __( 'Edit %s', 'star' ), get_the_title() ), '<span class="edit-link">', '</span>' );
@@ -92,26 +94,29 @@ if ( ! function_exists( 'star_portfolio_footer' ) ) :
 
 			/* Display jetpack's like  if it's active */
 			if ( class_exists( 'Jetpack_Likes' ) ) {
-			    $star_custom_likes = new Jetpack_Likes;
-			    echo $star_custom_likes->post_likes( '' );
+				$star_custom_likes = new Jetpack_Likes();
+				echo $star_custom_likes->post_likes( '' );
 			}
 			echo '</footer><!-- .entry-footer -->';
 		}
 	}
 endif;
 
-/*
-* Excerpts.
-* Example from Twenty Seventeen
-* Twenty Seventeen WordPress Theme, Copyright 2016 WordPress.org
-* Twenty Seventeen is distributed under the terms of the GNU GPL
-*/
+/**
+ * Excerpts.
+ * Example from Twenty Seventeen
+ * Twenty Seventeen WordPress Theme, Copyright 2016 WordPress.org
+ * Twenty Seventeen is distributed under the terms of the GNU GPL
+ *
+ * @param string $link Continue reading text combined with link and post title.
+ */
 function star_excerpt_more( $link ) {
 	if ( is_admin() ) {
 		return $link;
 	}
 
-	$link = sprintf( '<a href="%1$s" class="continue">%2$s</a>',
+	$link = sprintf(
+		'<a href="%1$s" class="continue">%2$s</a>',
 		esc_url( get_permalink( get_the_ID() ) ),
 		/* translators: %s: Name of current post */
 		sprintf( __( 'Continue reading %s', 'star' ), get_the_title( get_the_ID() ) )

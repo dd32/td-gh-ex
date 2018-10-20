@@ -2,7 +2,9 @@
 /**
  * The template for displaying 404 pages (not found).
  *
- * @package star
+ * Learn more: https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Star
  */
 
 get_header(); ?>

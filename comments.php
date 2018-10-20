@@ -5,7 +5,7 @@
  * The area of the page that contains both current comments
  * and the comment form.
  *
- * @package star
+ * @package Star
  */
 
 /*
@@ -24,29 +24,52 @@ if ( post_password_required() ) {
 	?>
 		<h2 class="comments-title">
 		<?php
-		printf( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'star' ),
-		number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+		printf(
+			_nx(
+				'%1$s thought on &ldquo;%2$s&rdquo;',
+				'%1$s thoughts on &ldquo;%2$s&rdquo;',
+				get_comments_number(),
+				'comments title',
+				'star'
+			),
+			number_format_i18n(	get_comments_number() ),
+			'<span>' . get_the_title() . '</span>'
+		);
 		?>
 		</h2>
-		<?php the_comments_navigation( array( 'prev_text' => __( 'Older Comments','star' ), 'next_text' => __( 'Newer Comments', 'star' ) ) ); ?>
+		<?php
+		the_comments_navigation(
+			array(
+				'prev_text' => __( 'Older Comments', 'star' ),
+				'next_text' => __( 'Newer Comments', 'star' )
+			)
+		);
+		?>
 		<ol class="comment-list">
 			<?php
-			wp_list_comments( array(
-				'style'      => 'ol',
-				'short_ping' => true,
-				'avatar_size' => 60,
-			) );
+			wp_list_comments(
+				array(
+					'style'       => 'ol',
+					'short_ping'  => true,
+					'avatar_size' => 60,
+				)
+			);
 			?>
 		</ol><!-- .comment-list -->
 		<?php
-		the_comments_navigation( array( 'prev_text' => __( 'Older Comments','star' ), 'next_text' => __( 'Newer Comments', 'star' ) ) );
+		the_comments_navigation(
+			array(
+				'prev_text' => __( 'Older Comments', 'star' ),
+				'next_text' => __( 'Newer Comments', 'star' )
+			)
+		);
 	}
 
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && '0' !== get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'star' ); ?></p>
-	<?php
+		<?php
 	endif;
 
 	comment_form();

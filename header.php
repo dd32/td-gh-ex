@@ -4,7 +4,7 @@
  *
  * Displays all of the <head> section and everything up till <div id="content">
  *
- * @package star
+ * @package Star
  */
 
 ?>
@@ -27,35 +27,45 @@ wp_head();
 <a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'star' ); ?></a>
 <?php
 if ( has_nav_menu( 'header' ) ) {
-?>
+	?>
 	<nav id="site-navigation" class="main-navigation" role="navigation">
 	<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">
 	<span class="screen-reader-text"><?php esc_html_e( 'Main Menu', 'star' ); ?></span>
 	</button>
-	<?php wp_nav_menu( array( 'theme_location' => 'header', 'fallback_cb' => false, 'depth' => 2, 'menu_id' => 'primary-menu' ) );  ?>
+	<?php
+	wp_nav_menu(
+		array(
+			'theme_location' => 'header',
+			'fallback_cb'    => false,
+			'depth'          => 2,
+			'menu_id'        => 'primary-menu',
+		)
+	);
+	?>
 	</nav><!-- #site-navigation -->
-<?php
+	<?php
 }
 
-if ( is_home() || is_front_page() ) { ?>
+if ( is_home() || is_front_page() ) {
+	?>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="header-icon"></div>
 		<?php
 		the_custom_logo();
 		if ( display_header_text() ) {
-		?>
+			?>
 			<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
 			<?php
 			if ( get_bloginfo( 'description' ) ) {
-			?>
+				?>
 				<div class="site-description"><?php bloginfo( 'description' ); ?></div>
-			<?php
+				<?php
 			}
 		} else {
 			/*If there is no visible site title, make sure there is still a h1 for screen reader*/
 			?>
 			<h1 class="screen-reader-text"><?php bloginfo( 'name' ); ?></h1>
-		<?php
+			<?php
 		}
 		if ( ! get_theme_mod( 'star_hide_action' ) ) {
 			if ( get_theme_mod( 'star_action_text' ) ) {
@@ -65,11 +75,11 @@ if ( is_home() || is_front_page() ) { ?>
 					echo '<div id="action">' . esc_html( get_theme_mod( 'star_action_text' ) ) . '</div>';
 				}
 			} elseif ( current_user_can( 'edit_theme_options' ) ) {
-				echo '<div id="action"><a href="' . wp_customize_url() . '">' . esc_html__( 'Click here to setup your Call to Action', 'star' ) . '</a></div>';
+				echo '<div id="action"><a href="' . esc_url( wp_customize_url() ) . '">' . esc_html__( 'Click here to setup your Call to Action', 'star' ) . '</a></div>';
 			}
 		}
 		?>
 		</header><!-- #masthead -->
 <?php } ?>
-	
+
 <div id="content" class="site-content">

@@ -2,8 +2,11 @@
 /**
  * The template used for displaying page content in page.php
  *
- * @package star
+ * Learn more: https://codex.wordpress.org/Template_Hierarchy
+ *
+ * @package Star
  */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -19,10 +22,12 @@
 
 		the_content();
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'star' ),
-			'after'  => '</div>',
-		) );
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . __( 'Pages:', 'star' ),
+				'after'  => '</div>',
+			)
+		);
 		?>
 	</div><!-- .entry-content -->
 </article><!-- #post-## -->

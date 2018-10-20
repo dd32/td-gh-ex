@@ -2,21 +2,34 @@
 /**
  * The template for displaying search results pages.
  *
- * @package star
+ * @package Star
  */
 
 get_header(); ?>
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
-		<?php if ( have_posts() && strlen( trim( get_search_query() ) ) != 0 ) :?>
+		<?php
+		if ( have_posts() && strlen( trim( get_search_query() ) ) != 0 ) :
+			?>
 
 			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'star' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+				<h1 class="page-title">
+					<?php
+					printf(
+						/* Translators: %s: search term.  */
+						__( 'Search Results for: %s', 'star' ),
+						'<span>' . get_search_query() . '</span>'
+					);
+					?>
+				</h1>
 			</header><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
-			<?php while ( have_posts() ) : the_post(); ?>
+			<?php
+			while ( have_posts() ) :
+				the_post();
+				?>
 
 				<?php
 				/**
@@ -33,11 +46,12 @@ get_header(); ?>
 
 			<?php
 			/* If the search is not visible in the menu, and there is only one page of search results, display a search form on the search page. */
-			if ( $GLOBALS['wp_query']->max_num_pages < 2  && ! get_theme_mod( 'star_hide_search' ) ) {
-				echo '<span class="screen-reader-text">' . __('Would you like to search again?', 'star'). '</span><br/>';
+			if ( $GLOBALS['wp_query']->max_num_pages < 2 && ! get_theme_mod( 'star_hide_search' ) ) {
+				echo '<span class="screen-reader-text">' . esc_html__( 'Would you like to search again?', 'star' ) . '</span><br/>';
 				get_search_form();
 			}
 			?>
+			<br>
 		<?php else : ?>
 
 			<?php get_template_part( 'content', 'none' ); ?>

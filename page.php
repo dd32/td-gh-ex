@@ -7,7 +7,7 @@
  * and that other 'pages' on your WordPress site will use a
  * different template.
  *
- * @package star
+ * @package Star
  */
 
 get_header(); ?>
@@ -16,7 +16,8 @@ get_header(); ?>
 		<main id="main" class="site-main" role="main">
 
 			<?php
-			while ( have_posts() ) : the_post();
+			while ( have_posts() ) :
+				the_post();
 				get_template_part( 'content', 'page' );
 				comments_template();
 			endwhile; // end of the loop.

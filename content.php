@@ -1,10 +1,13 @@
 <?php
 /**
- * @package star
+ * Template for displaying posts on archives and index.
+ *
+ * @package Star
  */
+
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class();  ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php if ( 'post' == get_post_type() ) : ?>
 				<span class="entry-meta">
@@ -15,7 +18,12 @@
 				<?php
 				if ( has_category() ) {
 					echo '<ul class="categories">';
-					wp_list_categories( array( 'title_li' => '', 'depth' => 1 ) );
+					wp_list_categories(
+						array(
+							'title_li' => '',
+							'depth'    => 1,
+						)
+					);
 					echo '</ul>';
 				}
 				?>
@@ -28,15 +36,17 @@
 	<div class="entry-content">
 		<?php
 		if ( has_post_thumbnail() ) {
-			echo  '<a href="' . esc_url( get_permalink() ) . '" >' . get_the_post_thumbnail() . '</a>';
+			echo '<a href="' . esc_url( get_permalink() ) . '" >' . get_the_post_thumbnail() . '</a>';
 		}
 		/* translators: %s: Name of current post */
 		the_content( sprintf( __( 'Continue reading %s', 'star' ), get_the_title() ) );
 
-		wp_link_pages( array(
-			'before' => '<div class="page-links">' . __( 'Pages:', 'star' ),
-			'after'  => '</div>',
-		) );
+		wp_link_pages(
+			array(
+				'before' => '<div class="page-links">' . __( 'Pages:', 'star' ),
+				'after'  => '</div>',
+			)
+		);
 		?>
 	</div><!-- .entry-content -->
 

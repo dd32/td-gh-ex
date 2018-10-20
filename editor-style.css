@@ -1,6 +1,6 @@
 /**
  * Editor style
- * @package star
+ * @package Star
  */
  
  html {
@@ -26,7 +26,31 @@ h4,
 h5,
 h6 {
 	clear: both;
-	font-weight: inherit;
+	font-weight: 600;
+}
+
+h1 {
+    font-size: 2.44em;
+}
+
+h2 {
+    font-size: 1.95em;
+}
+
+h3 {
+    font-size: 1.56em;
+}
+
+h4 {
+    font-size: 1.25em;
+}
+
+h5 {
+    font-size: 1em;
+}
+
+h6 {
+    font-size: .8em;
 }
 
 p {
@@ -116,24 +140,26 @@ big {
 	font-size: 125%;
 }
 
-table{
-	margin:15px 4px 20px 4px; 
-	border-collapse:collapse; 
-	border:1px solid #cccccc; 
-	font-size:0.9em; 
-	width:100%;
+table {
+	margin: 15px 4px 20px 4px; 
+	border-collapse: collapse; 
+	border: 1px solid #cccccc; 
+	font-size: 0.9em; 
+	width: 100%;
 }
-td{
-	border:1px solid #cccccc; 
-	font-size:0.8em; 
-	padding:8px;
+
+td {
+	border: 1px solid #cccccc; 
+	font-size: 0.8em; 
+	padding: 8px;
 }
-th{
-	background:#f5f5f5; 
-	padding:8px; 
-	font-size:0.8em; 
+
+th {
+	background :#f5f5f5; 
+	padding: 8px; 
+	font-size: 0.8em; 
 	font-weight: bold; 
-	border:1px solid #cccccc;
+	border: 1px solid #cccccc;
 }
 
 
@@ -180,17 +206,19 @@ figure {
 	margin: 0;
 }
 
-table{
-	margin:15px 4px 20px 4px; 
-	border-collapse:collapse; 
-	border:1px solid #cccccc; 
-	width:100%;
+table {
+	margin: 15px 4px 20px 4px; 
+	border-collapse: collapse; 
+	border: 1px solid #cccccc; 
+	width: 100%;
 }
-td{
-	border:1px solid #cccccc; 
-	padding:8px;
+
+td {
+	border: 1px solid #cccccc; 
+	padding: 8px;
 }
-th{
+
+th {
 	background:#f5f5f5; 
 	padding:8px; 
 	border:1px solid #cccccc;
@@ -344,8 +372,13 @@ a img {
 	border: 0;
 }
 
-a{text-decoration: underline;}
-a:hover{text-decoration: none;}
+a {
+	text-decoration: underline;
+}
+
+a:hover {
+	text-decoration: none;
+}
 
 a {
 	color: #666;
