@@ -16,6 +16,10 @@ At 1100px width, the sidebar widgets will display in 3 columns below your post c
 
 
 == Change log ==
+
+Version: 1.12 2018-10-20
+Updated credits.
+
 Version: 1.11 2018-10-20
 Housekeeping: Updated links. Updated credits in the readme file. 
 CSS and PHP code style changes according to WordPress coding standards.
@@ -51,14 +55,12 @@ Removed the documentation page, since this has proved too hard to maintain and t
 Removed unused files.
 New screnshot.
 
-
-
 == Installation ==
 1. Unzip `star.zip` to the `/wp-content/themes/` directory
 2. Activate the theme through the 'Appearance' menu in WordPress
 
 == Folders included in this theme ==
-images/ -contains header images, border and images for the setup help.
+images/ -contains the border image.
 languages/ -contains language files.
 inc/ -contains the template tag and customizer files.
 fonts/ -contains Font Awesome files.
@@ -66,6 +68,7 @@ js/ -contains javscript
 
 == Resources Used In This Theme ==
 Star is a derivative work of:
+Aaron https://wordpress.org/themes/aaron/, (C) 2018 Carolina Nymark. License: GNU General Public License v2 or later.
 Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc. License: GNU General Public License v2 or later.
 Universal https://themes.joedolson.com/universal/ (C) Joseph C Dolson. License: GNU General Public License v2 or later.
 Twenty Seventeen https://wordpress.org/themes/twentyseventeen/ Copyright 2016-2018 WordPress.org, GNU General Public License v2 or later
@@ -94,3 +97,7 @@ https://github.com/joshuaclayton/blueprint-css
 
 Normalize, MIT License, https://github.com/necolas/normalize.css/blob/master/LICENSE.md
 https://necolas.github.io/normalize.css/
+
+Images
+License: public domain, CC0, by the user Free-Photos:
+https://pixabay.com/en/sky-stars-constellations-astronomy-828648/
