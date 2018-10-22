@@ -4,13 +4,13 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.4
+ * @version   1.2.5
  */
 ?>
 <div class="container brands">
     <div class="title-brands text-center">
-      <h3><?php echo esc_html( get_theme_mod( 'avik_title_partner_whoweare','Our  Partners')); ?></h3>
-      <h4><?php echo esc_html( get_theme_mod( 'avik_subtitle_partner_whoweare','AWARDS & COMMENDATIONS & BRANDS')); ?></h4>
+      <h3><?php echo esc_html( get_theme_mod( 'avik_title_partner_whoweare')); ?></h3>
+      <h4><?php echo esc_html( get_theme_mod( 'avik_subtitle_partner_whoweare')); ?></h4>
     </div>
     <div class="avik-brands slider">
       <?php

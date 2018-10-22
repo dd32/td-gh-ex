@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.4
+ * @version   1.2.5
  */
 ?>
 
@@ -17,7 +17,7 @@
  <!-- Section Who we are -->
 
 <?php
-$whowearecontent = esc_attr( get_theme_mod( 'avik_page_id_whoweare', '' ));
+$whowearecontent = esc_attr( get_theme_mod( 'avik_page_id_whoweare' ));
 $whoweare_count = 1;
 $mod = new WP_Query( array( 'page_id' => $whowearecontent ,'showposts' => $whoweare_count ) );
 while ( $mod->have_posts() ) : $mod->the_post(); { ?>
@@ -62,8 +62,8 @@ wp_reset_postdata(); ?>
  <section class="tabs" id="services">
         <div class="tab cf is-visible">
           <div class="container">
-            <h1 class="tab__title animated wow fadeInUp tab-fade text-right"><?php echo esc_html( get_theme_mod( 'avik_title_services','Services')); ?></h1>
-            <div class="tab__subheading tab-fade animated text-right"><h2><?php echo esc_html( get_theme_mod( 'avik_subtitle_services','OUR SERVICES CAN HELP YOUR COMPANY GROW')); ?></h2></div>
+            <h1 class="tab__title animated wow fadeInUp tab-fade text-right"><?php echo esc_html( get_theme_mod( 'avik_title_services')); ?></h1>
+            <div class="tab__subheading tab-fade animated text-right"><h2><?php echo esc_html( get_theme_mod( 'avik_subtitle_services')); ?></h2></div>
             <ul class="tabs__list cf">
                <?php
 	                $services_cat = esc_attr( get_theme_mod('avik_services_category'));
@@ -96,10 +96,10 @@ wp_reset_postdata(); ?>
 <div id="control-portfolio">
    <h3><?php echo esc_html( get_theme_mod( 'avik_title_portfolio','Portfolio')); ?></h3>
    <ul class="list-portfolio">
-      <li class="portfolio-active all" onclick="avikfilterSelection('all')"><?php echo esc_html( get_theme_mod( 'avik_title_nav_all_portfolio','All')); ?></li>
-      <li class="portfolio-active one" onclick="avikfilterSelection('1')"> <?php echo esc_html( get_theme_mod( 'avik_title_nav_1_portfolio','App')); ?></li>
-      <li class="portfolio-active two " onclick="avikfilterSelection('2')"> <?php echo esc_html( get_theme_mod( 'avik_title_nav_2_portfolio','Themes')); ?></li>
-      <li class="portfolio-active three" onclick="avikfilterSelection('3')"><?php echo esc_html( get_theme_mod( 'avik_title_nav_3_portfolio','Plugins')); ?></li>
+      <li class="portfolio-active all" onclick="avikfilterSelection('all')"><?php echo esc_html( get_theme_mod( 'avik_title_nav_all_portfolio')); ?></li>
+      <li class="portfolio-active one" onclick="avikfilterSelection('1')"> <?php echo esc_html( get_theme_mod( 'avik_title_nav_1_portfolio')); ?></li>
+      <li class="portfolio-active two " onclick="avikfilterSelection('2')"> <?php echo esc_html( get_theme_mod( 'avik_title_nav_2_portfolio')); ?></li>
+      <li class="portfolio-active three" onclick="avikfilterSelection('3')"><?php echo esc_html( get_theme_mod( 'avik_title_nav_3_portfolio')); ?></li>
     </ul>
    </div>
    <div class="row">
@@ -165,7 +165,7 @@ wp_reset_postdata(); ?>
       <div class="container">
           <div class="row">
             <div class="col-sm-12">
-                <h2 class="text-right blog pb-5" data-aos="zoom-in"><?php echo esc_html( get_theme_mod( 'avik_title_blog','Latest News')); ?></h2>
+                <h2 class="text-right blog pb-5" data-aos="zoom-in"><?php echo esc_html( get_theme_mod( 'avik_title_blog')); ?></h2>
                   <div class="row">
                    <?php
 	                  $blog_cat = esc_attr( get_theme_mod('avik_blog_category'));
@@ -182,7 +182,7 @@ wp_reset_postdata(); ?>
                          <div class="blog-subtitle"><?php the_excerpt();?></div>
                          <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_time_comment_blog_home', false) )) :?>
                          <span class="blog-info"><i class="far fa-calendar"></i><?php echo get_the_date (); ?></span>
-                         <span class="blog-info"><i class="fas fa-comment"></i><?php comments_number( '0 comment', '1 comment', '% comments' ); ?></span>
+                         <span class="blog-info"><i class="fas fa-comment"></i><?php comments_number( '0 comment', '1 comment', '% comments','avik' ); ?></span>
                          <?php endif; ?>
                      </a>
                     <?php endwhile;

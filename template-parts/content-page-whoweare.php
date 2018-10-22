@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.4
+ * @version   1.2.5
  */
  ?>
 
@@ -61,10 +61,10 @@
              <div class="statistics-icon">
                <span><i class="<?php echo esc_attr( get_theme_mod( 'avik_icon_1_statistics','far fa-flag')); ?>"></i></span>
                <div class="counter-value statistics-number">
-               <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_1_statistics','2500')); ?>
+               <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_1_statistics')); ?>
                </div>
                 <div class="statistics-text one">
-                  <h4><?php echo esc_html( get_theme_mod( 'avik_title_1_statistics_whoweare','PROJECT DONE')); ?></h4>
+                  <h4><?php echo esc_html( get_theme_mod( 'avik_title_1_statistics_whoweare')); ?></h4>
                 </div>
              </div>
            </div>
@@ -72,10 +72,10 @@
           <div class="statistics-icon">
             <span><i class="<?php echo esc_attr( get_theme_mod( 'avik_icon_2_statistics','far fa-smile')); ?>"></i></span>
           <div class="counter-value statistics-number">
-          <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_2_statistics','700')); ?>
+          <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_2_statistics')); ?>
           </div>
                <div class="statistics-text two">
-                 <h4><?php echo esc_html( get_theme_mod( 'avik_title_2_statistics_whoweare','HAPPY CLIENTS')); ?></h4>
+                 <h4><?php echo esc_html( get_theme_mod( 'avik_title_2_statistics_whoweare')); ?></h4>
                </div>
           </div>
        </div>
@@ -83,10 +83,10 @@
           <div class="statistics-icon">
             <span><i class="<?php echo esc_attr( get_theme_mod( 'avik_icon_3_statistics','fas fa-thumbtack')); ?>"></i></span>
             <div class="counter-value statistics-number">
-            <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_3_statistics','1550')); ?>
+            <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_3_statistics')); ?>
               </div>
                  <div class="statistics-text three">
-                  <h4><?php echo esc_html( get_theme_mod( 'avik_title_3_statistics_whoweare','BRANDING')); ?></h4>
+                  <h4><?php echo esc_html( get_theme_mod( 'avik_title_3_statistics_whoweare')); ?></h4>
                  </div>
           </div>
        </div>
@@ -94,10 +94,10 @@
           <div class="statistics-icon">
              <span><i class="<?php echo esc_attr( get_theme_mod( 'avik_icon_4_statistics','fas fa-globe')); ?>"></i></span>
              <div class="counter-value statistics-number">
-              <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_4_statistics','480')); ?>
+              <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_4_statistics')); ?>
                 </div>
                  <div class="statistics-text four">
-                   <h4><?php echo esc_html( get_theme_mod( 'avik_title_3_statistics_whoweare','THEMES')); ?></h4>
+                   <h4><?php echo esc_html( get_theme_mod( 'avik_title_3_statistics_whoweare')); ?></h4>
                 </div>
           </div>
        </div>
@@ -107,7 +107,7 @@
     <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_team_whoweare', false) )) :?>
     <div class="team">
       <div class="title-team text-center">
-        <h3><?php echo esc_html( get_theme_mod( 'avik_title_general_team_whoweare','Management Team')); ?></h3>
+        <h3><?php echo esc_html( get_theme_mod( 'avik_title_general_team_whoweare')); ?></h3>
       </div>
       <div class="container py-0">
          <div class="row">
@@ -134,7 +134,7 @@
 		               <ul class="social-team">
                       <!-- Facebook -->
 		                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_facebook_icon_team_1', true) )) :?>
-		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_facebook_icon_team_1' ,'#'));?>">
+		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_facebook_icon_team_1'));?>">
 		                      <i class="fab fa-facebook"></i></a></li>
 			                <?php endif; ?>
 			                <!-- Twitter -->
@@ -184,7 +184,7 @@
                  <ul class="social-team">
                     <!-- Facebook -->
                     <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_facebook_icon_team_2', true) )) :?>
-		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_facebook_icon_team_2' ,'#'));?>">
+		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_facebook_icon_team_2'));?>">
 		                      <i class="fab fa-facebook"></i></a></li>
 			                <?php endif; ?>
 			                <!-- Twitter -->
@@ -234,7 +234,7 @@
                  <ul class="social-team">
                     <!-- Facebook -->
                     <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_facebook_icon_team_3', true) )) :?>
-		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_facebook_icon_team_3' ,'#'));?>">
+		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_facebook_icon_team_3'));?>">
 		                      <i class="fab fa-facebook"></i></a></li>
 			                <?php endif; ?>
 			                <!-- Twitter -->

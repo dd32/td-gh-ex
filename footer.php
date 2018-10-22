@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.4
+ * @version   1.2.5
  */
  ?>
  </div> <!--Content -->
@@ -22,7 +22,7 @@
          </p>
           <?php endif; ?>
           <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_power_footer', false) )) :?>
-          <p class="title-power"><?php echo esc_html( get_theme_mod( 'avik_title_power_footer','Created by DF Design')); ?></p>
+          <p class="title-power"><?php echo esc_html( get_theme_mod( 'avik_title_power_footer')); ?></p>
           <?php endif; ?>
      </div>
     </footer>

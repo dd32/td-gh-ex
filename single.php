@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.4
+ * @version   1.2.5
  */
 
  if(is_single()) { get_header('post'); } else { get_header(); }
@@ -31,7 +31,7 @@
 	                        <li><i class="far fa-calendar"></i><?php echo get_the_date (); ?></li>
 	                        <li><i class="far fa-folder-open"></i><?php the_category(', ');?></li>
 	                        <li><i class="fas fa-tag"></i><?php the_tags(); ?></li>
-	                        <li><i class="fas fa-comment"></i><?php comments_number( '0 comment', '1 comment', '% comments' ); ?></li>
+	                        <li><i class="fas fa-comment"></i><?php comments_number( '0 comment', '1 comment', '% comments','avik' ); ?></li>
                           </ul>
                       </div>
 	                    <?php the_content(); ?>

@@ -7,7 +7,7 @@ Template Post Type: post, page, product
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.4
+ * @version   1.2.5
  *
  */
 
@@ -64,8 +64,8 @@ if(is_single()) { get_header('post'); } else { get_header(); } ?>
       <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_partners_services', false) )) :?>
       <div class="partners">
           <div class="title-partenrs text-center">
-             <h2><?php echo esc_html( get_theme_mod( 'avik_title_partners_services','Technology Partners')); ?></h2>
-		         <h3><?php echo esc_html( get_theme_mod( 'avik_subtitle_partners_services','We Get Around')); ?></h3>
+             <h2><?php echo esc_html( get_theme_mod( 'avik_title_partners_services')); ?></h2>
+		         <h3><?php echo esc_html( get_theme_mod( 'avik_subtitle_partners_services')); ?></h3>
           </div>
           <div class="container">
             <div class="row gray-effect-partenrs">
@@ -96,13 +96,13 @@ if(is_single()) { get_header('post'); } else { get_header(); } ?>
             <div class="price-quotation">
               <div class="title-price text-center">
                 <div class="separator-price">
-                  <h2><?php echo esc_html( get_theme_mod( 'avik_title_1_quotation_services','Avik')); ?></h2>
-                    <h3><?php echo esc_html( get_theme_mod( 'avik_subtitle_1_quotation_services','is expert to webdesigner')); ?></h3>
+                  <h2><?php echo esc_html( get_theme_mod( 'avik_title_1_quotation_services')); ?></h2>
+                    <h3><?php echo esc_html( get_theme_mod( 'avik_subtitle_1_quotation_services')); ?></h3>
                 </div>
               </div>
               <div class="subtitle-price text-center">
-                 <h3><?php echo esc_html( get_theme_mod( 'avik_title_2_quotation_services','Ready to get started?')); ?></h3>
-                 <h4><?php echo esc_html( get_theme_mod( 'avik_subtitle_2_quotation_services','Request a quote')); ?></h4>
+                 <h3><?php echo esc_html( get_theme_mod( 'avik_title_2_quotation_services')); ?></h3>
+                 <h4><?php echo esc_html( get_theme_mod( 'avik_subtitle_2_quotation_services')); ?></h4>
                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_arrow_quotation_services', false) )) :?>
                  <i class="fas fa-arrow-right arrow-price-animation"></i>
                  <?php endif; ?>

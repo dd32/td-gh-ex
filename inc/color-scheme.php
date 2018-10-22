@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.4
+ * @version   1.2.5
  */
 
 class Avik_Color_Scheme {
@@ -21,7 +21,7 @@ class Avik_Color_Scheme {
 
 
     	$wp_customize->add_setting( 'avik_color_scheme', array(
-		    'default' => 'default',
+		    'default' => 'avik',
 			'transport' => 'refresh',
 			'sanitize_callback' => 'avik_sanitize_select',
 		) );
@@ -313,97 +313,69 @@ class Avik_Color_Scheme {
 
     }
 
-    public function output_css() {
+		public function output_css() {
 		$colors = $this->get_color_scheme();
-		    if ( $this->is_custom ) {
-		        wp_add_inline_style( 'avik-style', $this->get_css( $colors ) );
-	    }
-    }
+		if ( $this->is_custom ) {
+		    wp_add_inline_style( 'avik-style', $this->get_css( $colors ) );
+		}
+		}
 
-    public $is_custom = false;
-	public function get_color_scheme() {
-	    $color_schemes = $this->get_color_schemes();
-	    $color_scheme  = get_theme_mod( 'avik_color_scheme' );
-	    $color_scheme  = isset( $color_schemes[$color_scheme] ) ? $color_scheme : 'default';
+		public $is_custom = false;
+		public function get_color_scheme() {
+		  $color_schemes = $this->get_color_schemes();
+		  $color_scheme  = get_theme_mod( 'avik_color_scheme' );
+		  $color_scheme  = isset( $color_schemes[$color_scheme] ) ? $color_scheme : '';
 
-	    if ( 'default' != $color_scheme ) {
-	        $this->is_custom = true;
-	    }
+		  if ( '' != $color_scheme ) {
+		      $this->is_custom = true;
+		  }
 
-	    $colors = array_map( 'strtolower', $color_schemes[$color_scheme]['colors'] );
+		  $colors = array_map( 'strtolower', $color_schemes[$color_scheme]['colors'] );
 
-	    foreach ( $this->options as $k => $option ) {
-	        $color = get_theme_mod( $option );
-	        if ( $color && strtolower( $color ) != $colors[$k] ) {
-	            $colors[$k] = $color;
-	        }
-	    }
-	    return $colors;
-	}
+		  foreach ( $this->options as $k => $option ) {
+		      $color = get_theme_mod( $option );
+		      if ( $color && strtolower( $color ) != $colors[$k] ) {
+		          $colors[$k] = $color;
+		      }
+		  }
+		  return $colors;
+		}
+
+
 
 	public function get_color_schemes() {
-	    return array(
-	        'default' => array(
-	            'label'  => __( 'Default', 'avik' ),
-	            'colors' => array(
-	                '#d5f83e',  // 1 Link color
-	                '#ffffff',  // 2 Button background color
-	                '#000',     // 3 Hover Button background color
-					'#fff',     // 4 Text slider color
-	                '#000000',  // 5 Background slider color
-					'#f9f9f9',  // 6 Background Who we are color
-					'#fff',     // 7 Subtitle banner color
-					'#fff',     // 8 Cursor banner color
-					'#f9f9f9',  // 9 Background Services color
-					'#000',     // 10 Background quotation color
-					'#000',     // 11 Background footer color
-					'#ffffff',  // 12 Text footer color
-					'#000',     // 13 Background scroll to top color
-					'#ffffff',  // 14 Scroll to top color
-					'#777777',  // 15 Hover scroll to top color
-					'#829822',  // 16 Hover social slider and footer color
-					'#363636',  // 17 Social contact color
-					'#838383',  // 18 Hover social contact color
-					'#fff',     // 19 Social team color
-					'#6b6868',  // 20 Social share color
-					'#000',     // 21 Hover social share color
-			        '#f6f6f6',  // 22 Background breadcrumbs color
-					'#000',     // 23 Background preloader color
-					'#fff',     // 24 Preloader color
-					'#fff',     // 25 Background body color
-	            ),
-			),
+		return array(
 
-			'avik' => array(
-	            'label'  => __( 'Avik', 'avik' ),
-	            'colors' => array(
-	                '#d5f83e',  // 1 Link color
-	                '#ffffff',  // 2 Button background color
-	                '#000',     // 3 Hover Button background color
-					'#fff',     // 4 Text slider color
-	                '#000000',  // 5 Background slider color
-					'#f9f9f9',  // 6 Background Who we are color
-					'#fff',     // 7 Subtitle banner color
-					'#fff',     // 8 Cursor banner color
-					'#f9f9f9',  // 9 Background Services color
-					'#000',     // 10 Background quotation color
-					'#000',     // 11 Background footer color
-					'#ffffff',  // 12 Text footer color
-					'#000',     // 13 Background scroll to top color
-					'#ffffff',  // 14 Scroll to top color
-					'#777777',  // 15 Hover scroll to top color
-					'#829822',  // 16 Hover social slider and footer color
-					'#363636',  // 17 Social contact color
-					'#838383',  // 18 Hover social contact color
-					'#fff',     // 19 Social team color
-					'#6b6868',  // 20 Social share color
-					'#000',     // 21 Hover social share color
-			        '#f6f6f6',  // 22 Background breadcrumbs color
-					'#000',     // 23 Background preloader color
-					'#fff',     // 24 Preloader color
-					'#fff',     // 25 Background body color
-	            ),
-			),
+		'avik' => array(
+						'label'  => __( 'Avik', 'avik' ),
+						'colors' => array(
+								'#d5f83e',  // 1 Link color
+								'#ffffff',  // 2 Button background color
+								'#000',     // 3 Hover Button background color
+				'#fff',     // 4 Text slider color
+								'#000000',  // 5 Background slider color
+				'#f9f9f9',  // 6 Background Who we are color
+				'#fff',     // 7 Subtitle banner color
+				'#fff',     // 8 Cursor banner color
+				'#f9f9f9',  // 9 Background Services color
+				'#000',     // 10 Background quotation color
+				'#000',     // 11 Background footer color
+				'#ffffff',  // 12 Text footer color
+				'#000',     // 13 Background scroll to top color
+				'#ffffff',  // 14 Scroll to top color
+				'#777777',  // 15 Hover scroll to top color
+				'#829822',  // 16 Hover social slider and footer color
+				'#363636',  // 17 Social contact color
+				'#838383',  // 18 Hover social contact color
+				'#fff',     // 19 Social team color
+				'#6b6868',  // 20 Social share color
+				'#000',     // 21 Hover social share color
+						'#f6f6f6',  // 22 Background breadcrumbs color
+				'#000',     // 23 Background preloader color
+				'#fff',     // 24 Preloader color
+				'#fff',     // 25 Background body color
+						),
+		),
 
 	        'purple' => array(
 	            'label'  => __( 'Avik Purple', 'avik' ),
@@ -529,6 +501,6 @@ class Avik_Color_Scheme {
 
 	            ),
 	        ),
-	    );
+	    );//
 	}
 }
