@@ -70,15 +70,19 @@ function bentoOnePage() {
 // Set side menu width for boxed layout
 function bentoSideMenuWidth() {
 	if ( bentoThemeVars.menu_config == 3 ) {
-		var wrapwidth = $str('.site-wrapper').outerWidth();
-		var sidewidth = wrapwidth * 0.2;
 		var $header = $str('.header-side .site-header');
-		var widthstyle = 'width:'+sidewidth+'px !important;';
-		if ( $header.attr('style') ) {
+		if ( $str(window).width() < bentoEmValue(48) ) {
 			$header.css('width','');
-			$header.attr('style', widthstyle + $header.attr('style'));
 		} else {
-			$header.attr('style', widthstyle);
+			var wrapwidth = $str('.site-wrapper').outerWidth();
+			var sidewidth = wrapwidth * 0.2;
+			var widthstyle = 'width:'+sidewidth+'px !important;';
+			if ( $header.attr('style') ) {
+				$header.css('width','');
+				$header.attr('style', widthstyle + $header.attr('style'));
+			} else {
+				$header.attr('style', widthstyle);
+			}
 		}
 	}
 }
@@ -312,7 +316,6 @@ $str(window).load(function () {
 
 
 $str(window).resize(function () {
-	
 	
 	
 	// Set overlay menu margin
