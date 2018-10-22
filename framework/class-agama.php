@@ -50,6 +50,10 @@ if( ! class_exists( 'Agama' ) ) {
 			$sidebar_position	= esc_attr( get_theme_mod( 'agama_sidebar_position', 'right' ) );
 			$blog_layout 		= esc_attr( get_theme_mod('agama_blog_layout', 'list') );
             
+            if( is_customize_preview() ) {
+                $classes[] = 'customize-preview';
+            }
+            
             if( is_404() ) {
                 $classes[] = 'vision-404';
             }

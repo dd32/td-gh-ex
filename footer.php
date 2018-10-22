@@ -14,9 +14,11 @@ if( ! defined( 'ABSPATH' ) ) {
     exit;
 }  ?>
 
-			</div>
-		</div>
-	</div>
+                <?php do_action( 'agama_customize_page_builder_action_end' ); ?>
+
+			</div><!-- Vision Row End -->
+		  </div>
+	   </div>
 	
 	<?php 
 	if( 

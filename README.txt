@@ -3,6 +3,15 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.3.8 - 22 October 2018 =
+* Added Elementor plugin to TGM Plugin activation.
+* Added GoldAddons for Elementor to TGM Plugin activation.
+* Added new page template "For Page Builders".
+* Added customize selective refresh support for widgets.
+* Added Page Buider feature into Customizer (Customize->Page Builder).
+* Updated logo max height (transport=auto) & (added active callback).
+* Updated theme language files.
+
 = 1.3.7.3 - 06 September 2018 =
 * Minor changes.
 

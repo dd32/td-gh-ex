@@ -4,7 +4,7 @@
  Author: Theme Vision
  Author URI: http://theme-vision.com/
  Description: Agama is a free Multi-Purpose WordPress theme. It’s perfect for web agency business, corporate business, personal and parallax business portfolio, photography sites and freelancer. Is built on BootStrap with parallax support, is responsive, clean, modern, flat and minimal. Agama is e-commerce (WooCommerce) Compatible, WPML, RTL, Retina-Ready, SEO Friendly and with parallax. 3 Superb header variations. Check demo: http://demo.theme-vision.com
- Version: 1.3.7.3
+ Version: 1.3.8
  License: GNU General Public License v2 or later
  License URI: http://www.gnu.org/licenses/gpl-2.0.html
  Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, flexible-header, buddypress, custom-background, custom-header, custom-logo, custom-menu, custom-colors, editor-style, featured-image-header, featured-images, full-width-template, footer-widgets, microformats, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, education, entertainment, photography
@@ -69,6 +69,39 @@ h5,
 h6 {
 	font-weight: normal;
 	clear: both;
+    margin: 24px 0;
+	margin: 1.714285714rem 0;
+	line-height: 1.714285714;
+}
+h1 {
+    font-size: 21px;
+	font-size: 1.5rem;
+	line-height: 1.5;
+}
+h2 {
+    font-size: 18px;
+	font-size: 1.285714286rem;
+	line-height: 1.6;
+}
+h3 {
+    font-size: 16px;
+	font-size: 1.142857143rem;
+	line-height: 1.846153846;
+}
+h4 {
+    font-size: 14px;
+	font-size: 1rem;
+	line-height: 1.846153846;
+}
+h5 {
+    font-size: 13px;
+	font-size: 0.928571429rem;
+	line-height: 1.846153846;
+}
+h6 {
+    font-size: 12px;
+	font-size: 0.857142857rem;
+	line-height: 1.846153846;
 }
 html {
 	overflow-y: scroll;
@@ -266,6 +299,184 @@ input[type="color"] {
 	width: 100%;
 }
 
+/* Customize Preview
+-----------------------------------------------------------------*/
+.customize-preview .page-widget {
+    position: relative;
+}
+.customize-preview .page-widget {
+    border-width: 3px;
+    border-style: solid;
+    border-radius: 3px;
+    border-color: transparent;
+}
+.customize-preview .page-widget:hover {
+    border-color: #318df4;
+}
+.customize-preview .page-widget span.widget-name {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    padding: 15px 15px;
+    background: #318df4;
+    color: #fff;
+}
+.customize-preview .page-widget:hover span.widget-name {
+    font-size: 16px;
+    display: block;
+}
+.customize-preview .page-widget span.customize-partial-edit-shortcut {
+    position: absolute;
+    top: 0;
+    left: 4%;
+}
+.customize-preview .page-widget span.customize-partial-edit-shortcut button {
+    background: #318df4 !important;
+    border: 0 none;
+    box-shadow: none;
+}
+.agama-page-builder-add-widget {
+    position: relative;
+    display: block;
+    text-align: center;
+    margin: 0 auto;
+    padding: 30px 0;
+    width: 100%;
+}
+.agama-page-builder-add-widget .add-new-widget {
+    border: 2px solid rgba(0, 0, 0, 0.2);
+    color: #999;
+    display: inline-block;
+    text-align: center;
+    border-radius: 50%;
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    font-size: 13px;
+    line-height: 30px;
+}
+.agama-page-builder-add-widget .add-new-widget:hover {
+    background-color: #318df4;
+    border-color: #318df4;
+    color: #fff;
+}
+
+/* BUILD PAGE WRAPPER (customize_preview)
+-----------------------------------------------------------------*/
+.agama-build-page-wrapper {
+    border: 1px solid #f2f2f2;
+    border-radius: 4px;
+    padding: 50px 20px;
+    margin: 25px 0;
+    position: relative;
+    width: 100%;
+}
+.agama-build-page-wrapper:hover .agama-build-page-action {
+    background: #f5f5f5;
+}
+.agama-build-page-action .add-new-widget {
+    border: 1px solid #ccc;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #999;
+}
+.agama-build-page-wrapper:hover .add-new-widget {
+    border-color: #fe6663;
+    color: #fe6663;
+}
+.agama-build-page-wrapper .agama-build-page-action {
+    text-align: center;
+    font-size: 14px;
+    width: 530px;
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    top: -18px;
+    background-color: #fff;
+    padding: 10px 0;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    position: absolute;
+    z-index: 9;
+}
+
+/* AGAMA WIDGET ABOUT
+-----------------------------------------------------------------*/
+div[id*=agama_widget_about-] {
+    background-color: #fff;
+    text-align: center;
+    padding: 80px 0;
+    width: 100%;
+}
+div[id*=agama_widget_about-] .about-title {
+    font-size: 48px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    text-align: center;
+    color: #222;
+    display: block;
+}
+div[id*=agama_widget_about-] .about-subtitle {
+    font-style: italic;
+    font-size: 30px;
+    text-align: center;
+    color: #222;
+    display: block;
+    opacity: 0.6;
+}
+div[id*=agama_widget_about-] .agama-divider {
+    width: 128px;
+    height: 30px;
+    margin: 0 auto;
+    margin-top: 30px;
+}
+div[id*=agama_widget_about-] .agama-divider-left, 
+div[id*=agama_widget_about-] .agama-divider-right {
+    width: 45px;
+    height: 1px;
+    background: #999;
+    float: left;
+}
+div[id*=agama_widget_about-] .agama-divider-left,
+div[id*=agama_widget_about-] .agama-divider-right {
+    background-color: #222;
+}
+div[id*=agama_widget_about-] .agama-divider-middle {
+    float: left;
+    margin: 10px;
+    margin-top: -10px;
+    line-height: 18px;
+    color: #222;
+}
+div[id*=agama_widget_about-] .about-content {
+    font-size: 16px;
+    text-align: center;
+    line-height: 2em;
+    color: #a8b4bf;
+}
+
+/* Divider Title Underline */
+div[id*=agama_widget_about] .agama-divider.title-underline {
+    margin-top: 20px;
+}
+div[id*=agama_widget_about] .agama-divider.title-underline .agama-divider-left {
+    display: none;
+}
+div[id*=agama_widget_about] .agama-divider.title-underline .agama-divider-right {
+    width: 45px;
+    height: 3px;
+    margin: 0 auto;
+    float: none;
+    display: block;
+}
+
 /* Particles
 -----------------------------------------------------------------*/
 #particles-js {
@@ -428,6 +639,12 @@ body.stretched .container-fullwidth .breadcrumb { right: 60px !important; }
 	margin-top: 15px;
 	line-height: 1.8;
 	text-align: center;
+}
+
+/* Page Builder Template
+ *------------------------------------------------*/
+.page-template-for-page-builders .vision-row {
+    padding: 0 !important;
 }
 
 /* = Buttons 

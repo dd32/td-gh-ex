@@ -43,7 +43,7 @@ final class Agama_WP_Theme extends Agama_Core {
     function __construct() {
         
         // Theme Version
-        parent::$version = '1.3.7.3';
+        parent::$version = '1.3.8';
         
         // Development Mode
         parent::$development = false;
@@ -73,6 +73,7 @@ final class Agama_WP_Theme extends Agama_Core {
 		get_template_part( 'framework/class-agama-breadcrumb' );
 		get_template_part( 'framework/class-agama-frontpage-boxes' );
 		get_template_part( 'framework/widgets/widgets' );
+        get_template_part( 'framework/admin/customizer/builder/class-agama-page-builder' );
 		get_template_part( 'framework/admin/admin-init' );
     }
 }

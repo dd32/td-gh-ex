@@ -12,14 +12,12 @@ if( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-// Extend Kirki control with FontAwesome icon picker.
+// Include necessary files.
+get_template_part( 'framework/admin/customizer/controls/control-editor' );
 get_template_part( 'framework/admin/modules/icon-picker/icon-picker-control' );
-
-// Include partial refresh class
 get_template_part( 'framework/admin/partial-refresh' );
-
-// Include Agama Upsell Customize Module
 get_template_part( 'framework/admin/modules/agama-upsell/class-customize' );
+get_template_part( 'framework/admin/extra' );
 
 /**
  * Update Kirki Path's
@@ -41,29 +39,43 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
         'option_type' => 'theme_mod',
         'capability'  => 'edit_theme_options'
     ) );
+############################################################
+# PAGE BUILDER SECTION
+############################################################
+    Kirki::add_section( 'agama_page_builder_section', array(
+        'title'     => esc_attr__( 'Page Builder', 'agama' ),
+        'priority'  => 1
+    ) );
+    Kirki::add_field( 'agama_options', array(
+        'label'     => esc_attr__( 'Page to Build', 'agama' ),
+        'tooltip'   => esc_attr__( 'Select page to build.', 'agama' ),
+        'section'   => 'agama_page_builder_section',
+        'settings'  => 'agama_page_builder_page',
+        'type'      => 'dropdown-pages'
+    ) );
 #########################################################
 # SITE IDENTITY PANEL
 #########################################################
     Kirki::add_panel( 'agama_site_identity_panel', array(
-        'title'         => __( 'Site Identity', 'agama' )
+        'title' => esc_attr__( 'Site Identity', 'agama' )
     ) );
     ###########################################
     # TITLE & TAGLINE GENERAL SECTION
     ###########################################
     Kirki::add_section( 'title_tagline', array(
-        'title'         => __( 'General', 'agama' ),
-        'panel'         => 'agama_site_identity_panel'
+        'title' => esc_attr__( 'General', 'agama' ),
+        'panel' => 'agama_site_identity_panel'
     ) );
     #################################################################
     # TITLE & TAGLINE STYLING SECTION
     #################################################################
     Kirki::add_section( 'agama_title_tagline_styling_section', array( 
-        'title'         => __( 'Styling', 'agama' ),
+        'title'         => esc_attr__( 'Styling', 'agama' ),
         'panel'         => 'agama_site_identity_panel'
     ) );
     Kirki::add_field( 'agama_options', array( 
-		'label'			=> __( 'Logo Color', 'agama' ),
-		'tooltip'	    => __( 'Select logo color.', 'agama' ),
+		'label'			=> esc_attr__( 'Logo Color', 'agama' ),
+		'tooltip'	    => esc_attr__( 'Select logo color.', 'agama' ),
 		'section'		=> 'agama_title_tagline_styling_section',
 		'settings'		=> 'agama_header_logo_color',
 		'type'			=> 'color',
@@ -497,13 +509,13 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 	# HEADER LOGO SECTION
 	#######################################################
 	Kirki::add_section( 'agama_header_logo_section', array(
-		'title'			=> __( 'Logo', 'agama' ),
+		'title'			=> esc_attr__( 'Logo', 'agama' ),
 		'capability'	=> 'edit_theme_options',
 		'panel'			=> 'agama_header_panel'
 	) );
 	Kirki::add_field( 'agama_options', array(
-		'label'				=> __( 'Logo', 'agama' ),
-		'tooltip'		    => __( 'Upload custom logo.', 'agama' ),
+		'label'				=> esc_attr__( 'Logo', 'agama' ),
+		'tooltip'		    => esc_attr__( 'Upload custom logo.', 'agama' ),
 		'section'			=> 'agama_header_logo_section',
 		'settings'			=> 'agama_logo',
 		'type'				=> 'image',
@@ -515,17 +527,32 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
         )
 	) );
 	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Logo Max-Height', 'agama' ),
-		'tooltip'	    => __( 'Set logo max-height in PX.', 'agama' ),
-		'section'		=> 'agama_header_logo_section',
-		'settings'		=> 'agama_logo_max_height',
-		'type'			=> 'slider',
-		'choices'		=> array(
-			'step'		=> '1',
-			'min'		=> '0',
-			'max'		=> '250'
+		'label'			    => esc_attr__( 'Logo Max-Height', 'agama' ),
+		'tooltip'	        => esc_attr__( 'Set logo max-height in PX.', 'agama' ),
+		'section'		    => 'agama_header_logo_section',
+		'settings'		    => 'agama_logo_max_height',
+        'transport'         => 'auto',
+		'type'			    => 'slider',
+		'choices'		    => array(
+			'step'		    => '1',
+			'min'		    => '0',
+			'max'		    => '250'
 		),
-		'default'		=> '90'
+		'default'		    => '90',
+        'output'            => array(
+            array(
+                'element'   => '#masthead .logo',
+                'property'  => 'max-height',
+                'suffix'    => 'px'
+            )
+        ),
+        'active_callback'   => array(
+            array(
+                'setting'   => 'agama_logo',
+                'operator'  => '!==',
+                'value'     => ''
+            )
+        )
 	) );
 	##########################################
 	# HEADER IMAGE SECTION
@@ -2389,36 +2416,12 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
     Kirki::remove_section( 'colors' );
 
 /**
- * Enqueue Javascript postMessage handlers for the Customizer.
- *
- * Binds JS handlers to make the Customizer preview reload changes asynchronously.
- *
- * @since Agama 1.0
- */
-function agama_customize_preview_js() {
-	wp_register_script( 'agama-customizer', get_template_directory_uri() . '/assets/js/customize-preview.js', array( 'customize-preview' ), uniqid(), true );
-	$localize = array(
-		'skin_url' 			=> esc_url( get_stylesheet_directory_uri() . '/assets/css/skins/' ),
-		'top_nav_enable'	=> esc_attr( get_theme_mod( 'agama_top_navigation', true ) )
-	);
-	wp_localize_script( 'agama-customizer', 'agama', $localize );
-	wp_enqueue_script( 'agama-customizer' );
-    
-    wp_register_style( 'agama-partial-refresh', get_template_directory_uri() . '/assets/css/partial-refresh.css', array(), uniqid() );
-    wp_enqueue_style( 'agama-partial-refresh' );
-}
-add_action( 'customize_preview_init', 'agama_customize_preview_js' );
-
-/**
  * Generating Dynamic CSS
  *
  * @since Agama 1.0
  */
 function agama_customize_css() { ?>
 	<style type="text/css" id="agama-customize-css">
-	#masthead .logo {
-		max-height: <?php echo esc_attr( get_theme_mod( 'agama_logo_max_height', '90' ) ); ?>px;
-	}
 	#masthead .sticky-header-shrink .logo {
 		max-height: 65px;
 	}
@@ -2458,6 +2461,11 @@ function agama_customize_css() { ?>
 		background-color: <?php echo esc_attr( get_theme_mod( 'agama_slider_button_bg_color_2', '#FE6663' ) ); ?> !important;
 	}
 	<?php endif; ?>
+        
+    <?php if( is_page_template( 'page-templates/for-page-builders.php' ) ): ?>
+    div#page { padding: 0; }
+    .vision-row { max-width: 100%; }
+    <?php endif; ?>
 	
 	<?php 
 	if( 
@@ -2567,6 +2575,20 @@ function customize_styles_agama_support( $input ) { ?>
         .accordion-section.control-section.control-panel.control-panel-default h3:before,
         .accordion-section.control-section.control-section-kirki-default h3:before {
             font-family: FontAwesome;
+        }
+        #accordion-section-agama_page_builder_section {
+            position: relative;
+        }
+        #accordion-section-agama_page_builder_section h3:before {
+            content: '\f0f7';
+        }
+        #accordion-section-agama_page_builder_section:after {
+            content: '\new' !important;
+            position: absolute;
+            top: 12px;
+            right: 30px;
+            color: red;
+            z-index: 1;
         }
         #accordion-panel-agama_site_identity_panel h3:before {
             content: '\f2ba';

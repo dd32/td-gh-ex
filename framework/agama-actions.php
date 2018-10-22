@@ -6,6 +6,67 @@ if( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Build Page Action Start
+ *
+ * @since 1.3.8
+ */
+if( ! function_exists( 'agama_customize_build_page_action_start' ) ) {
+    function agama_customize_build_page_action_start() {
+        global $post;
+        
+        $widget = 'page-widget-'. esc_attr( $post->ID );
+        
+        if( is_customize_preview() && is_page() && ! is_active_sidebar( $widget ) ) {
+            
+            $html  = '<div class="agama-build-page-wrapper clearfix">';
+                $html .= '<div class="agama-build-page-action" data-id="sidebar-widgets-page-widget-'. esc_attr( $post->ID ) .'">';
+                    $html .= esc_html__( 'You can replace this page with Agama Widgets.', 'agama' );
+                    $html .= '<a class="add-new-widget">'. esc_html__( 'Add Widgets', 'agama' ) .'</a>';
+                $html .= '</div>';
+        
+            echo $html;
+            
+        }
+    }
+}
+add_action( 'agama_customize_build_page_action_start', 'agama_customize_build_page_action_start' );
+
+/**
+ * Build Page Action End
+ *
+ * @since 1.3.8
+ */
+if( ! function_exists( 'agama_customize_build_page_action_end' ) ) {
+    function agama_customize_build_page_action_end() {
+        global $post;
+        
+        $widget = 'page-widget-'. esc_attr( $post->ID );
+        
+        if( is_customize_preview() && is_page() && ! is_active_sidebar( $widget ) ) {
+            
+            echo '</div><!-- Agama Build Page Wrapper End -->';
+            
+        }
+    }
+}
+add_action( 'agama_customize_build_page_action_end', 'agama_customize_build_page_action_end' );
+
+/**
+ * Get Page Permalink via Ajax
+ *
+ * @since 1.3.8
+ */
+if( ! function_exists( 'agama_ajax_get_permalink' ) ) {
+    function agama_ajax_get_permalink() {
+        $permalink = get_permalink( intval( $_REQUEST['id'] ) );
+        echo esc_url( $permalink );
+        die();
+    }
+}
+add_action( 'wp_ajax_agama_ajax_get_permalink', 'agama_ajax_get_permalink' );
+add_action( 'wp_ajax_nopriv_agama_ajax_get_permalink', 'agama_ajax_get_permalink' );
+
+/**
  * Render Blog Post Date & Icon
  *
  * @since 1.0.1

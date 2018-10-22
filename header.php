@@ -53,8 +53,10 @@ if( ! defined( 'ABSPATH' ) ) {
 	<?php Agama_Helper::get_breadcrumb(); ?>
 
 	<div id="page" class="hfeed site">
-		<div id="main" class="wrapper">
+		<div id="main" class="wrapper"> 
 			<div class="vision-row clearfix">
-				
+
+                <?php do_action( 'agama_customize_build_page_action_start' ); ?>
+
 				<?php Agama_Helper::get_front_page_boxes(); ?>
 				

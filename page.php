@@ -13,17 +13,29 @@ if( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header(); ?>
-
+    
 	<div id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
 		<div id="content" role="main">
 
-			<?php while ( have_posts() ) : the_post(); ?>
-				<?php get_template_part( 'content', 'page' ); ?>
-				<?php comments_template( '', true ); ?>
+			<?php while ( have_posts() ) : the_post(); $widget = 'page-widget-' . esc_attr( get_the_ID() ); ?>
+            
+                <?php if( is_active_sidebar( $widget ) ): ?>
+            
+                    <?php dynamic_sidebar( $widget ); ?>
+            
+                    <?php do_action( 'agama_add_widget', get_the_ID() ); ?>
+            
+                <?php else: ?>
+
+                    <?php get_template_part( 'content', 'page' ); ?>
+                    <?php comments_template( '', true ); ?>
+            
+                <?php endif; ?>
+            
 			<?php endwhile; // end of the loop. ?>
 
-		</div><!-- #content -->
-	</div><!-- #primary -->
+		</div>
+	</div>
 
 <?php get_sidebar(); ?>
 

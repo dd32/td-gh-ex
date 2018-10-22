@@ -45,11 +45,11 @@ if( ! class_exists( 'Agama_Core' ) ) {
             $this->defines();
             $this->migrate_options();
             
-            add_action( 'wp_head', array( $this, 'IE_Scripts' ) );
-            add_action( 'wp_enqueue_scripts', array( $this, 'scripts_styles' ) );
-            add_action( 'after_setup_theme', array( $this, 'agama_setup' ) );
-            add_action( 'tgmpa_register', array( $this, 'tgmpa_register' ) );
-            add_action( 'wp_footer', array( $this, 'footer_scripts' ) );
+            add_action( 'wp_head', [ $this, 'IE_Scripts' ] );
+            add_action( 'wp_enqueue_scripts', [ $this, 'scripts_styles' ] );
+            add_action( 'after_setup_theme', [ $this, 'agama_setup' ] );
+            add_action( 'tgmpa_register', [ $this, 'tgmpa_register' ] );
+            add_action( 'wp_footer', [ $this, 'footer_scripts' ] );
         }
 
         /**
@@ -112,6 +112,10 @@ if( ! class_exists( 'Agama_Core' ) ) {
             // Define Agama Modules URI
             if( ! defined( 'AGAMA_MODULES_URI' ) ) {
                 define( 'AGAMA_MODULES_URI', AGAMA_URI . 'framework/admin/modules/' );
+            }
+            
+            if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
+                define( 'ELEMENTOR_PARTNER_ID', 2132 );
             }
         }
 
@@ -249,7 +253,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
             /*
              * Makes Agama available for translation.
              */
-            load_theme_textdomain( 'agama', AGAMA_DIR.'languages' );
+            load_theme_textdomain( 'agama', AGAMA_DIR . 'languages' );
 
             // This theme styles the visual editor with editor-style.css to match the theme style.
             add_editor_style();
@@ -259,6 +263,9 @@ if( ! class_exists( 'Agama_Core' ) ) {
 
             // Adds RSS feed links to <head> for posts and comments.
             add_theme_support( 'automatic-feed-links' );
+            
+            // Customize Selective Refresh Widgets
+            add_theme_support( 'customize-selective-refresh-widgets' );
 
             // This theme supports a variety of post formats.
             add_theme_support( 'post-formats', array( 'aside', 'image', 'link', 'quote', 'status' ) );
@@ -322,12 +329,35 @@ if( ! class_exists( 'Agama_Core' ) ) {
              */
             $plugins = array(
                 array(
+                    'name'              => 'Elementor',
+                    'slug'              => 'elementor',
+                    'required'          => false,
+                    'force_activation'  => false
+                ),
+                array(
                     'name'              => 'WPForms Lite',
                     'slug'              => 'wpforms-lite',
                     'required'          => false,
                     'force_activation'  => false
                 )
             );
+            
+            /**
+             * If Elementor plugin active let's suggest a Gold Addons
+             * for Elementor plugin.
+             */
+            if( is_plugin_active( 'elementor/elementor.php' ) ) {
+                $additional = array(
+                    array(
+                        'name'              => 'Gold Addons for Elementor',
+                        'slug'              => 'gold-addons-for-elementor',
+                        'required'          => false,
+                        'force_activation'  => false
+                    )
+                );
+                
+                $plugins = array_merge( $plugins, $additional );
+            }
 
             /*
              * Array of configuration settings. Amend each line as needed.

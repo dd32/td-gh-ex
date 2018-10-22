@@ -2,9 +2,9 @@
 /**
  * The template for displaying 404 pages (Not Found)
  *
- * @package Theme-Vision
+ * @package ThemeVision
  * @subpackage Agama
- * @since Agama 1.0
+ * @since 1.0
  */
 
 // Do not allow direct access to the file.
