@@ -4,21 +4,21 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
- */ 
+ * @version   1.2.4
+ */
  ?>
 
  <!-- Social Icons -->
  <div class="avik-social-icons-video">
 		<ul class="avik-social-icons" data-aos="zoom-in">
-        <?php get_template_part( 'inc/social' ); ?>  
-    </ul>    
+        <?php get_template_part( 'inc/social' ); ?>
+    </ul>
 </div>
 <div class="header-static" >
   <?php the_custom_header_markup() ?>
-  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?> 
-  <div class="filter-header"> 
-      <?php endif; ?> 
+  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?>
+  <div class="filter-header">
+      <?php endif; ?>
       <div class="text-image-static">
 		    <div id="avikservices-strings">
          <?php
@@ -29,9 +29,9 @@
               <p><?php the_title(); ?><i> <?php the_excerpt();?></i></p>
               <?php endwhile;
               wp_reset_query();
-              wp_reset_postdata(); ?>          
+              wp_reset_postdata(); ?>
 			  </div>
-		      <span id="avikservices" ></span>             
+		      <span id="avikservices" ></span>
       </div>
       <!-- Angle scroll -->
       <div class="down-video avik-animation-bounce">
@@ -39,10 +39,5 @@
       </div>
   <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?>
   </div>
-  <?php endif; ?>     
+  <?php endif; ?>
 </div>
-
-
-
-  
-

@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
+ * @version   1.2.4
  */
 
 function avik_body_classes( $classes ) {

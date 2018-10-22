@@ -4,17 +4,17 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
+ * @version   1.2.4
  */
 
-if(is_search()) { get_header('post'); } else { get_header(); } 
+if(is_search()) { get_header('post'); } else { get_header(); }
  avik_the_breadcrumb_search(); ?>
- <!-- Carousel featured image --> 
+ <!-- Carousel featured image -->
  <?php get_template_part( 'inc/carousel' ); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 		  <div class="container mt-5 mb-5">
-		   <div class="row">	
+		   <div class="row">
             <div class="col-sm-9">
 		      <?php if ( have_posts() ) : ?>
 			   <header class="page-header">

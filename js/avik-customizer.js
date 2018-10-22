@@ -3,7 +3,7 @@
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.2.3
+ * version   1.2.4
  */
 
 /* TABLE OF CONTENT
@@ -21,7 +21,7 @@
 
 /* ------------------------------------------------------------------------- *
 ## 1 Site identity */
-/* ------------------------------------------------------------------------- */  	
+/* ------------------------------------------------------------------------- */
 
 // Site title and description.
 wp.customize( 'blogname', function( value ) {
@@ -64,19 +64,19 @@ wp.customize('avik_font_size_logo', function(control) {
 
 /* ------------------------------------------------------------------------- *
 ## 2 Who we are */
-/* ------------------------------------------------------------------------- */  
+/* ------------------------------------------------------------------------- */
 
 // Color title banner image
 wp.customize( 'avik_color_title_image_banner_whoweare', function( value ) {
     value.bind( function( newval ) {
-    $( '#typed' ).css( 'color', newval );     
+    $( '#typed' ).css( 'color', newval );
     } );
 } );
 
 // Color cursor banner image
 wp.customize( 'avik_color_cursor_image_banner_whoweare', function( value ) {
     value.bind( function( newval ) {
-    $( '.typed-cursor' ).css( 'color', newval );     
+    $( '.typed-cursor' ).css( 'color', newval );
     } );
 } );
 
@@ -84,15 +84,15 @@ wp.customize( 'avik_color_cursor_image_banner_whoweare', function( value ) {
 wp.customize( 'avik_title_1_statistics_whoweare', function( value ) {
 	value.bind( function( newval ) {
 		$( '.statistics-text.one h4' ).html( newval );
-		
+
 	} );
-} ); 
+} );
 
 // Title Statistics 2
 wp.customize( 'avik_title_2_statistics_whoweare', function( value ) {
 	value.bind( function( newval ) {
 		$( '.statistics-text.two h4' ).html( newval );
-		
+
 	} );
 } );
 
@@ -100,7 +100,7 @@ wp.customize( 'avik_title_2_statistics_whoweare', function( value ) {
 wp.customize( 'avik_title_3_statistics_whoweare', function( value ) {
 	value.bind( function( newval ) {
 		$( '.statistics-text.three h4' ).html( newval );
-		
+
 	} );
 } );
 
@@ -108,7 +108,7 @@ wp.customize( 'avik_title_3_statistics_whoweare', function( value ) {
 wp.customize( 'avik_title_4_statistics_whoweare', function( value ) {
 	value.bind( function( newval ) {
 		$( '.statistics-text.four h4' ).html( newval );
-		
+
 	} );
 } );
 
@@ -116,7 +116,7 @@ wp.customize( 'avik_title_4_statistics_whoweare', function( value ) {
 wp.customize( 'avik_title_general_team_whoweare', function( value ) {
 	value.bind( function( newval ) {
 		$( '.title-team h3' ).html( newval );
-		
+
 	} );
 } );
 
@@ -124,7 +124,7 @@ wp.customize( 'avik_title_general_team_whoweare', function( value ) {
 wp.customize( 'avik_title_partner_whoweare', function( value ) {
 	value.bind( function( newval ) {
 		$( '.title-brands h3' ).html( newval );
-		
+
 	} );
 } );
 
@@ -132,19 +132,19 @@ wp.customize( 'avik_title_partner_whoweare', function( value ) {
 wp.customize( 'avik_subtitle_partner_whoweare', function( value ) {
 	value.bind( function( newval ) {
 		$( '.title-brands h4' ).html( newval );
-		
+
 	} );
 } );
 
 /* ------------------------------------------------------------------------- *
 ## 3 Services */
-/* ------------------------------------------------------------------------- */  
+/* ------------------------------------------------------------------------- */
 
-// Title  Services 
+// Title  Services
 wp.customize( 'avik_title_services', function( value ) {
 	value.bind( function( newval ) {
-		$( 'h1.tab__title ' ).html( newval ); 
-		
+		$( 'h1.tab__title ' ).html( newval );
+
 	} );
 } );
 
@@ -152,7 +152,7 @@ wp.customize( 'avik_title_services', function( value ) {
 wp.customize( 'avik_subtitle_services', function( value ) {
 	value.bind( function( newval ) {
 		$( '.tab__subheading h2' ).html( newval );
-		
+
 	} );
 } );
 
@@ -160,7 +160,7 @@ wp.customize( 'avik_subtitle_services', function( value ) {
 wp.customize( 'avik_title_partners_services', function( value ) {
 	value.bind( function( newval ) {
 		$( '.title-partenrs h2' ).html( newval );
-		
+
 	} );
 } );
 
@@ -168,7 +168,7 @@ wp.customize( 'avik_title_partners_services', function( value ) {
 wp.customize( 'avik_subtitle_partners_services', function( value ) {
 	value.bind( function( newval ) {
 		$( '.title-partenrs h3' ).html( newval );
-		
+
 	} );
 } );
 
@@ -176,7 +176,7 @@ wp.customize( 'avik_subtitle_partners_services', function( value ) {
 wp.customize( 'avik_title_1_quotation_services', function( value ) {
 	value.bind( function( newval ) {
 		$( '.separator-price h2' ).html( newval );
-		
+
 	} );
 } );
 
@@ -184,7 +184,7 @@ wp.customize( 'avik_title_1_quotation_services', function( value ) {
 wp.customize( 'avik_subtitle_1_quotation_services', function( value ) {
 	value.bind( function( newval ) {
 		$( '.separator-price h3' ).html( newval );
-		
+
 	} );
 } );
 
@@ -192,7 +192,7 @@ wp.customize( 'avik_subtitle_1_quotation_services', function( value ) {
 wp.customize( 'avik_title_2_quotation_services', function( value ) {
 	value.bind( function( newval ) {
 		$( '.subtitle-price h3' ).html( newval );
-		
+
 	} );
 } );
 
@@ -200,19 +200,19 @@ wp.customize( 'avik_title_2_quotation_services', function( value ) {
 wp.customize( 'avik_subtitle_2_quotation_services', function( value ) {
 	value.bind( function( newval ) {
 		$( '.subtitle-price h4' ).html( newval );
-		
+
 	} );
 } );
 
 /* ------------------------------------------------------------------------- *
 ## 4 Portfolio */
-/* ------------------------------------------------------------------------- */  
+/* ------------------------------------------------------------------------- */
 
 // Title Portfolio
 wp.customize( 'avik_title_portfolio', function( value ) {
 	value.bind( function( newval ) {
 		$( '#control-portfolio h3' ).html( newval );
-		
+
 	} );
 } );
 
@@ -220,7 +220,7 @@ wp.customize( 'avik_title_portfolio', function( value ) {
 wp.customize( 'avik_title_nav_all_portfolio', function( value ) {
 	value.bind( function( newval ) {
 		$( 'li.all' ).html( newval );
-		
+
 	} );
 } );
 
@@ -228,7 +228,7 @@ wp.customize( 'avik_title_nav_all_portfolio', function( value ) {
 wp.customize( 'avik_title_nav_1_portfolio', function( value ) {
 	value.bind( function( newval ) {
 		$( 'li.one' ).html( newval );
-		
+
 	} );
 } );
 
@@ -236,7 +236,7 @@ wp.customize( 'avik_title_nav_1_portfolio', function( value ) {
 wp.customize( 'avik_title_nav_2_portfolio', function( value ) {
 	value.bind( function( newval ) {
 		$( 'li.two' ).html( newval );
-		
+
 	} );
 } );
 
@@ -244,31 +244,31 @@ wp.customize( 'avik_title_nav_2_portfolio', function( value ) {
 wp.customize( 'avik_title_nav_3_portfolio', function( value ) {
 	value.bind( function( newval ) {
 		$( 'li.three' ).html( newval );
-		
+
 	} );
 } );
 
 /* ------------------------------------------------------------------------- *
 ## 5 Blog */
-/* ------------------------------------------------------------------------- */  
+/* ------------------------------------------------------------------------- */
 
 // Title Blog
 wp.customize( 'avik_title_blog', function( value ) {
 	value.bind( function( newval ) {
 		$( 'h2.blog' ).html( newval );
-		
+
 	} );
-} ); 
+} );
 
 /* ------------------------------------------------------------------------- *
 ## 6 Footer */
-/* ------------------------------------------------------------------------- */  
+/* ------------------------------------------------------------------------- */
 
 // Title "Power by" Footer
 wp.customize( 'avik_title_power_footer', function( value ) {
 	value.bind( function( newval ) {
 		$( 'p.title-power' ).html( newval );
-		
+
 	} );
 } );
 
@@ -280,7 +280,7 @@ wp.customize( 'avik_title_power_footer', function( value ) {
 wp.customize( 'avik_color_filter_header', function( value ) {
 	value.bind( function( newval ) {
 		$( '.filter-header' ).css('background-color', newval );
-		
+
 	} );
 } );
 

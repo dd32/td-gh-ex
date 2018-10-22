@@ -4,8 +4,8 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
- */ 
+ * @version   1.2.4
+ */
  ?>
 
 <!-- Section Slider -->
@@ -14,7 +14,7 @@
      <!-- Social Icons -->
      <div class="avik-social-icons-header">
 		    <ul class="avik-social-icons" data-aos="zoom-in">
-        <?php get_template_part( 'inc/social' ); ?>  
+        <?php get_template_part( 'inc/social' ); ?>
 		    </ul>
      </div>
     <!-- Slider 1 -->
@@ -33,9 +33,9 @@
                 <div class="slideshow__slide-image-wrap background-absolute">
                   <!-- Image slider 1 -->
                   <div class="slideshow__slide-image background-absolute" style="background-image:url(<?php echo esc_url($avik_image_attributes[0]); ?>); background-size: cover; background-position: center center;">
-                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?> 
+                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?>
                   <div class="filter-header"></div>
-                  <?php endif; ?> 
+                  <?php endif; ?>
                 </div>
                 </div>
               </div>
@@ -60,7 +60,7 @@
     <?php endwhile;
         wp_reset_query();
         wp_reset_postdata(); ?>
-    <!-- Slider 2 -->    
+    <!-- Slider 2 -->
     <div class="slideshow__slide js-slider-home-slide is-next" data-slide="2">
     <?php
       $slider_cat = esc_attr( get_theme_mod('avik_category_slider_2'));
@@ -76,7 +76,7 @@
                 <div class="slideshow__slide-image-wrap background-absolute">
                   <!-- Image slider 2 -->
                   <div class="slideshow__slide-image background-absolute" style="background-image: url(<?php echo esc_url($avik_image_attributes[0]); ?>); background-size: cover; background-position: center center;">
-                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?> 
+                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?>
                   <div class="filter-header"></div>
                   <?php endif; ?>
                 </div>
@@ -119,7 +119,7 @@
                 <div class="slideshow__slide-image-wrap background-absolute">
                   <!-- Image slider 3 -->
                   <div class="slideshow__slide-image background-absolute" style="background-image: url(<?php echo esc_url($avik_image_attributes[0]); ?>); background-size: cover; background-position: center center;">
-                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?> 
+                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?>
                   <div class="filter-header"></div>
                   <?php endif; ?>
                 </div>
@@ -153,4 +153,3 @@
          </div>
      </div>
   </section>
- 

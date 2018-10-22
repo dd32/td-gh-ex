@@ -3,7 +3,7 @@
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.2.3
+ * version   1.2.4
  */
 
 (function(api) {
@@ -17,7 +17,7 @@
             'background_whoweare_color',
             'subtitle_banner_color',
 		    'cursor_banner_color',
-            'background_services_color',  
+            'background_services_color',
             'background_price_color',
             'background_footer_color',
             'text_footer_color',
@@ -31,9 +31,9 @@
             'social_share_color',
             'hover_social_share_color',
             'background_breadcrumbs_color',
-            'background_preloader_color',      
+            'background_preloader_color',
             'preloader_color',
-		                              
+
         ];
 
     // Update list of colors when select a color scheme.

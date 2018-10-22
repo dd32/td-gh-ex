@@ -4,17 +4,17 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
- */ 
+ * @version   1.2.4
+ */
  ?>
- 
+
  <div class="enter-whoweare">
      <div class="header-image-whoweare" >
         <div class="text-image-whoweare">
 			     <div id="typed-strings">
 				       <p><?php the_title(); ?> <i> <?php the_excerpt();?></i></p>
 			     </div>
-			      <span id="typed"></span>             
+			      <span id="typed"></span>
         </div>
         <?php
              $whowearecontent = esc_attr( get_theme_mod( 'avik_page_id_whoweare', '' ));
@@ -22,8 +22,8 @@
              $mod = new WP_Query( array( 'page_id' => $whowearecontent ,'showposts' => $whoweare_count ) );
              while ( $mod->have_posts() ) : $mod->the_post(); { ?>
              <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
-        <img class="img-whoweare-header" src="<?php if ( $avik_image_attributes[0] ) : 
-           echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/img/whoweare.jpg'; endif; ?>"/>      
+        <img class="img-whoweare-header" src="<?php if ( $avik_image_attributes[0] ) :
+           echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/img/whoweare.jpg'; endif; ?>"/>
 	   </div>
       <div class="title-whoweare text-center">
         <h3><?php the_title();?></h3>
@@ -41,14 +41,14 @@
                      <div class="second-image-who-we-are image-enter-whoweare" data-aos="zoom-in">
                      <?php if ( class_exists( 'MultiPostThumbnails')) :
                          MultiPostThumbnails::the_post_thumbnail(
-                         get_post_type(), 
+                         get_post_type(),
                          'thumbnail-two-page');
                          endif;?>
-                     </div>   
+                     </div>
                    </div>
                 </div>
               </div>
-               <div class="clear"></div> 
+               <div class="clear"></div>
                  <?php } endwhile;
                   wp_reset_query();
                   wp_reset_postdata(); ?>
@@ -70,8 +70,8 @@
            </div>
        <div class="statistics-box col-sm-3">
           <div class="statistics-icon">
-            <span><i class="<?php echo esc_attr( get_theme_mod( 'avik_icon_2_statistics','far fa-smile')); ?>"></i></span>    
-          <div class="counter-value statistics-number"> 
+            <span><i class="<?php echo esc_attr( get_theme_mod( 'avik_icon_2_statistics','far fa-smile')); ?>"></i></span>
+          <div class="counter-value statistics-number">
           <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_2_statistics','700')); ?>
           </div>
                <div class="statistics-text two">
@@ -119,14 +119,14 @@
 	                  while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
                      <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
                     <a href="<?php the_permalink();?>" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 link-blog" data-aos="fade-up">
-                         <img src="<?php if ( $avik_image_attributes[0] ) : 
+                         <img src="<?php if ( $avik_image_attributes[0] ) :
                            echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">
                       <div class="name-title one">
                          <h4><?php the_title();?></h4>
                          <h5><?php the_excerpt();?></h5>
                          </div>
                      </a>
-                    <?php endwhile; 
+                    <?php endwhile;
                       wp_reset_query();
                       wp_reset_postdata(); ?>
 		           <div class="details">
@@ -159,7 +159,7 @@
 		                  <?php endif; ?>
 		               </ul>
                  </div>
-               </div>	
+               </div>
               </div>
                 <div class="frame col-md-4" id="wth-2">
                  <?php
@@ -169,14 +169,14 @@
                   while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
                    <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
                   <a href="<?php the_permalink();?>" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 link-blog" data-aos="fade-up">
-                       <img src="<?php if ( $avik_image_attributes[0] ) : 
+                       <img src="<?php if ( $avik_image_attributes[0] ) :
                          echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">
                     <div class="name-title one">
                        <h4><?php the_title();?></h4>
                        <h5><?php the_excerpt();?></h5>
                        </div>
                    </a>
-                  <?php endwhile; 
+                  <?php endwhile;
                     wp_reset_query();
                     wp_reset_postdata(); ?>
               <div class="details">
@@ -209,7 +209,7 @@
 		                  <?php endif; ?>
                  </ul>
                </div>
-            </div>	
+            </div>
          </div>
          <div class="frame col-md-4" id="wth-3">
                  <?php
@@ -219,14 +219,14 @@
                   while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
                    <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
                   <a href="<?php the_permalink();?>" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 link-blog" data-aos="fade-up">
-                       <img src="<?php if ( $avik_image_attributes[0] ) : 
+                       <img src="<?php if ( $avik_image_attributes[0] ) :
                          echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">
                     <div class="name-title one">
                        <h4><?php the_title();?></h4>
                        <h5><?php the_excerpt();?></h5>
                        </div>
                    </a>
-                  <?php endwhile; 
+                  <?php endwhile;
                     wp_reset_query();
                     wp_reset_postdata(); ?>
               <div class="details">
@@ -259,7 +259,7 @@
 		                  <?php endif; ?>
                  </ul>
                </div>
-            </div>	
+            </div>
          </div>
            <div class="clear"></div>
          </div>
@@ -267,8 +267,7 @@
   </div>
   <?php endif; ?>
   <!-- Carousel Brands -->
-  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_partner_whoweare', false) )) :?> 
+  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_partner_whoweare', false) )) :?>
   <?php get_template_part( 'inc/carousel-brands' ); ?>
   <?php endif; ?>
   </div>
-

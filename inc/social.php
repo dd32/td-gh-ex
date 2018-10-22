@@ -4,13 +4,13 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
+ * @version   1.2.4
  */
 ?>
 
     <!-- Facebook -->
 	<?php if ( false == esc_attr( get_theme_mod( 'avik_enable_facebook_social', true) )):?>
-    <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_facebook_social','#' ));?>">	
+    <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_facebook_social','#' ));?>">
 	<i class="fab fa-facebook"></i></a></li>
     <?php endif; ?>
     <!-- Twitter -->
@@ -62,4 +62,4 @@
 	<?php if ( false == esc_attr( get_theme_mod( 'avik_enable_github_social', true ) )) : ?>
 	<li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_github_social','#' )); ?>">
 	<i class="fab fa-github"></i></a></li>
-	<?php endif; ?>	
+	<?php endif; ?>

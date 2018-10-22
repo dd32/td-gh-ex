@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
+ * @version   1.2.4
 */
 
 /* TABLE OF CONTENT
@@ -15,9 +15,9 @@
 4 - Textarea/TinyMCE
 5 - Text Radio Buttons
 6 - Image Radio Buttons
-7 - Image Checkboxes 
+7 - Image Checkboxes
 8 - Slider
-9 - Toggle switch 
+9 - Toggle switch
 10 - Sortable Repeater
 11 - Single Accordion
 12 - Alpha Color Picker
@@ -29,11 +29,11 @@
 
 /* ------------------------------------------------------------------------- *
 ##  CSS for Customizer Custom Controls */
-/* ------------------------------------------------------------------------- */  
+/* ------------------------------------------------------------------------- */
 
 /* --------------------------------------------*
 ##  1 Standard Selection */
-/* --------------------------------------------*/  
+/* --------------------------------------------*/
 
 .customize-control select{
    border: none;
@@ -56,7 +56,7 @@
 
 /* --------------------------------------------*
 ##  2 Standard Input */
-/* --------------------------------------------*/ 
+/* --------------------------------------------*/
 
 input[type="text"],
 input[type="number"],
@@ -85,7 +85,7 @@ input[type="number"]:focus {
 
 /* --------------------------------------------*
 ##  3 Simple Notice */
-/* --------------------------------------------*/ 
+/* --------------------------------------------*/
 
 .simple-notice-custom-control .customize-control-description {
 	line-height: 1.6
@@ -98,7 +98,7 @@ input[type="number"]:focus {
 
 /* --------------------------------------------*
 ##  4 Textarea/TinyMCE */
-/* --------------------------------------------*/ 
+/* --------------------------------------------*/
 
 .tinymce-control textarea {
 	width: 100%;
@@ -107,7 +107,7 @@ input[type="number"]:focus {
 
 /* --------------------------------------------*
 ##  5 Text Radio Buttons */
-/* --------------------------------------------*/ 
+/* --------------------------------------------*/
 
 .text_radio_button_control:after {
 	content: " ";
@@ -147,7 +147,7 @@ input[type="number"]:focus {
 
 /* --------------------------------------------*
 ##  6 Image Radio Buttons */
-/* --------------------------------------------*/ 
+/* --------------------------------------------*/
 
 .image_radio_button_control .radio-button-label > input {
 	display: none;
@@ -162,7 +162,7 @@ input[type="number"]:focus {
 
 /* --------------------------------------------*
 ##  7 Image Checkboxes */
-/* --------------------------------------------*/ 
+/* --------------------------------------------*/
 
 .image_checkbox_control .checkbox-label > input {
 	display: none;
@@ -177,7 +177,7 @@ input[type="number"]:focus {
 
 /* --------------------------------------------*
 ##  8 Slider */
-/* --------------------------------------------*/ 
+/* --------------------------------------------*/
 
 .slider-custom-control {
 	margin-bottom: 30px;
@@ -289,7 +289,7 @@ input[type="number"]:focus {
 
 /* --------------------------------------------*
 ##  9 Toggle switch */
-/* --------------------------------------------*/ 
+/* --------------------------------------------*/
 
 .toggle-switch-control .customize-control-title {
 	display: inline-block;
@@ -321,7 +321,7 @@ input[type="number"]:focus {
 	display: block;
 	width: 200%;
 	margin-left: -100%;
-	
+
 }
 
 .toggle-switch-inner:before,
@@ -338,7 +338,7 @@ input[type="number"]:focus {
 	box-sizing: border-box;
 }
 
-.toggle-switch-inner:after 
+.toggle-switch-inner:after
  {
 	content: "On";
 	padding-left: 8px;
@@ -365,7 +365,7 @@ input[type="number"]:focus {
 	bottom: 0;
 	left: 38px;
 	border: 2px solid #ddd;
-	
+
 	transition: all 0.3s ease-in 0s;
 }
 
@@ -379,7 +379,7 @@ input[type="number"]:focus {
 
 /* Custom css for Logo  */
 
-.toggle-switch-inner-logo:after 
+.toggle-switch-inner-logo:after
  {
 	content: "Image";
 	padding-left: 8px;
@@ -399,7 +399,7 @@ input[type="number"]:focus {
 	display: block;
 	width: 200%;
 	margin-left: -100%;
-	
+
 }
 
 .toggle-switch-inner-logo:before,
@@ -427,7 +427,7 @@ input[type="number"]:focus {
 
 /*  Custom css for Focus */
 
-.toggle-switch-inner-focus:after 
+.toggle-switch-inner-focus:after
  {
 	content: "Article";
 	padding-left: 8px;
@@ -447,7 +447,7 @@ input[type="number"]:focus {
 	display: block;
 	width: 200%;
 	margin-left: -100%;
-	
+
 }
 
 .toggle-switch-inner-focus:before,
@@ -475,7 +475,7 @@ input[type="number"]:focus {
 
 /*  Custom css for Footer */
 
-.toggle-switch-inner-footer:after 
+.toggle-switch-inner-footer:after
  {
 	content: "Auto";
 	padding-left: 8px;
@@ -495,7 +495,7 @@ input[type="number"]:focus {
 	display: block;
 	width: 200%;
 	margin-left: -100%;
-	
+
 }
 
 .toggle-switch-inner-footer:before,
@@ -523,7 +523,7 @@ input[type="number"]:focus {
 
 /* --------------------------------------------*
 ##  10 Sortable Repeater */
-/* --------------------------------------------*/ 
+/* --------------------------------------------*/
 
 .sortable {
 	list-style-type: none;
@@ -782,7 +782,3 @@ input[type="number"]:focus {
 .google_fonts_select_control .weight-style {
 	margin-bottom: 10px;
 }
-
-
-
-

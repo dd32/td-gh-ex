@@ -4,10 +4,10 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
+ * @version   1.2.4
  */
 
-?> 
+?>
 <?php
 /**
  * header.php
@@ -27,12 +27,12 @@
   <meta name="description" content="<?php bloginfo('description');?>">
   <?php wp_head(); ?>
 </head>
-<body <?php body_class(); ?>> 
+<body <?php body_class(); ?>>
     <!-- Preloader -->
     <div class="avik-loader">
       <div class="loader"></div>
-    </div> 
-    <div id="page" class="site">			
+    </div>
+    <div id="page" class="site">
     <header>
 	  <!-- Logo-->
       <nav class="navbar navbar-expand-lg nav-post">
@@ -48,8 +48,8 @@
 			         $avik_description = get_bloginfo( 'description', 'display' );
 			       if ($avik_description || is_customize_preview() ) : ?>
 				     <p class="site-description"><?php echo esc_html($avik_description); ?></p>
-			       <?php endif; ?>		
-		       </div>		
+			       <?php endif; ?>
+		       </div>
 		       <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
            </button>
@@ -70,6 +70,3 @@
 </header>
 </div>
 <div id="content" class="site-content">
-
-
-

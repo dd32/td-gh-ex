@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
+ * @version   1.2.4
  */
  ?>
 
@@ -17,7 +17,7 @@
        <ul class="info-ul-blog">
          <li><i class="far fa-calendar"></i><?php echo get_the_date (); ?></li>
 			 </ul>
-     </div>	
+     </div>
 	   <div class="entry-content">
 		 <?php
 		  the_content();

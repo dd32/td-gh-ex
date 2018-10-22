@@ -4,7 +4,7 @@
  * @link https://www.denisfranchi.com
  *
  * @package Avik
- * @version   1.2.3
+ * @version   1.2.4
  */
 
  /* TABLE OF CONTENT
@@ -142,7 +142,7 @@ p.avik-welkome-support {
 
 .avik-guide-support-admin div{
    float: left;
-   width: 23%;  
+   width: 23%;
 }
 
 .avik-clear-guide-support-admin {
@@ -199,7 +199,7 @@ button.avik-button-guide-admin-support:hover{
 
 
 button.avik-button-admin-support{
-    background-color: #000; 
+    background-color: #000;
     border: none;
     color: white;
     padding: 15px 32px;
@@ -215,13 +215,11 @@ button.avik-button-admin-support:hover{
 }
 
 a.avik-button{
-   color: white; 
+   color: white;
    text-decoration: none;
 }
 
 a.avik-button:hover{
-   color: #d5f83e; 
-   text-decoration: none; 
+   color: #d5f83e;
+   text-decoration: none;
 }
-
-

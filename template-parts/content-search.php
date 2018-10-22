@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
+ * @version   1.2.4
  */
  ?>
 
@@ -24,14 +24,14 @@
 	         <li><i class="far fa-folder-open"></i><?php the_category(', ');?></li>
 	         <li><i class="fas fa-tag"></i><?php the_tags(); ?></li>
 	         <li><i class="fas fa-comment"></i><?php comments_number( '0 comment', '1 comment', '% comments' ); ?></li>
-            </ul> 
+            </ul>
        </div>
 	   <div class="entry-summary">
 		  <?php the_excerpt(); ?>
 		 </div><!-- .entry-summary -->
 		 <div class="button-archive text-right">
-		  <a href="<?php the_permalink();?>" class="btn btn-avik archive" role="button" aria-pressed="true"><?php esc_html_e('Read more...','avik'); ?></a>    
-	   </div>   
+		  <a href="<?php the_permalink();?>" class="btn btn-avik archive" role="button" aria-pressed="true"><?php esc_html_e('Read more...','avik'); ?></a>
+	   </div>
 	<footer class="entry-footer text-right">
 		<?php avik_entry_footer(); ?>
 	</footer><!-- .entry-footer -->

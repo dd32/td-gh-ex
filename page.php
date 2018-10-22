@@ -4,15 +4,15 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
+ * @version   1.2.4
  */
 
-if(is_page()) { get_header('post'); } else { get_header(); } 
+if(is_page()) { get_header('post'); } else { get_header(); }
    avik_the_breadcrumb(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 		  <div class="container mt-5">
-		    <div class="row">	
+		    <div class="row">
               <div class="col-sm-9 avik-img-article">
 		       <?php
 		         while ( have_posts() ) :

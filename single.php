@@ -2,22 +2,22 @@
 /**
  * single.php
  *
- * @author    Denis Franchi 
+ * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
+ * @version   1.2.4
  */
 
- if(is_single()) { get_header('post'); } else { get_header(); }  
+ if(is_single()) { get_header('post'); } else { get_header(); }
  avik_the_breadcrumb(); ?>
- <!-- Carousel featured image --> 
+ <!-- Carousel featured image -->
  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_carousel', false) ) ):?>
  <?php get_template_part( 'inc/carousel' ); ?>
- <?php endif; ?> 
+ <?php endif; ?>
  <!-- // -->
-<div id="primary" class="content-area"> 
+<div id="primary" class="content-area">
 	<main id="main" class="site-main">
 		<div class="container mt-5">
-		   <div class="row">	
+		   <div class="row">
              <div class="col-sm-9">
                <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
                  <article <?php post_class(); ?>>
@@ -44,10 +44,10 @@
                  </article>
                  <?php endwhile; else: ?>
                   <p><?php esc_html_e('Sorry, no post matched your criteria.', 'avik'); ?></p>
-                  <?php endif; ?>	
+                  <?php endif; ?>
              </div>
 		         <?php get_sidebar();?>
-        </div> 
+        </div>
       </div>
     </main><!-- #main -->
 

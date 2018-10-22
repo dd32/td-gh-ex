@@ -3,14 +3,14 @@
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.2.3
+ * version   1.2.4
  */
 
 /* TABLE OF CONTENT
 
 1 - Carousel brands
 2 - Writing text Who we are
-2/Bis - Writing text Services 
+2/Bis - Writing text Services
 3 - Menu
 4 - Switch custom logo
 5 - Ancor link scroll
@@ -28,7 +28,7 @@
 
 /* ------------------------------------------------------------------------- *
 ##  1 Carousel Brands */
-/* ------------------------------------------------------------------------- */  
+/* ------------------------------------------------------------------------- */
 
 $(document).ready(function(){
     $('.avik-brands').slick({
@@ -53,11 +53,11 @@ $(document).ready(function(){
      });
  });
 
-    
+
 /* ------------------------------------------------------------------------- *
 ##  2 Writing text Who we are */
 /* ------------------------------------------------------------------------- */
- 
+
 $(function(){
 
     $("#typed").typed({
@@ -65,21 +65,21 @@ $(function(){
         typeSpeed: 120,
         backDelay: 900,
         loop: true,
-        contentType: 'html', 
+        contentType: 'html',
         loopCount: false,
         callback: function(){ foo(); },
         resetCallback: function() { newTyped(); }
 });
-    
+
         $(".reset").click(function(){
         $("#typed").typed('reset');
 });
-      
+
 });
-    
+
     function newTyped(){ /* A new typed object */ }
-    
-    function foo(){ console.log("Callback"); }   
+
+    function foo(){ console.log("Callback"); }
 
 
 /* ------------------------------------------------------------------------- *
@@ -93,21 +93,21 @@ $(function(){
             typeSpeed: 120,
             backDelay: 900,
             loop: true,
-            contentType: 'html', 
+            contentType: 'html',
             loopCount: false,
             callback: function(){ foo(); },
             resetCallback: function() { newAvikservices(); }
     });
-        
+
             $(".reset").click(function(){
             $("#avikservices").avikservices('reset');
     });
-        
+
     });
-        
+
         function newAvikservices(){ /* A new typed object */ }
-        
-        function foo(){ console.log("Callback"); }   
+
+        function foo(){ console.log("Callback"); }
 
 
 /* ------------------------------------------------------------------------- *
@@ -130,14 +130,14 @@ $(function() {
     $('.navbar a').click(function() {
     $('.navbar a').removeClass('active');
     $(this).addClass('active');
-});  
+});
 });
 
-   
+
 /* ------------------------------------------------------------------------- *
 ##  4 Switch custom logo */
 /* ------------------------------------------------------------------------- */
-   
+
 
 jQuery(window).scroll(function() {
     if (jQuery(document).scrollTop() > 720) {
@@ -157,7 +157,7 @@ jQuery(window).scroll(function() {
 
 /* ------------------------------------------------------------------------- *
 ##  5 Ancor link scroll */
-/* ------------------------------------------------------------------------- */       
+/* ------------------------------------------------------------------------- */
 
 // Select all links with hashes
 $('a[href*="#"]')
@@ -167,8 +167,8 @@ $('a[href*="#"]')
 .click(function(event) {
     // On-page links
     if (
-    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') 
-    && 
+    location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
+    &&
     location.hostname == this.hostname
 ) {
  // Figure out element to scroll to
@@ -264,7 +264,7 @@ var Slideshow = function () {
             this.goToSlide(1);
             if (this.autoplay) {
                 this.startAutoplay();
-            }         
+            }
         }
     }, {
         key: 'preventClick',
@@ -397,7 +397,7 @@ jQuery(document).ready(function() {
   $('html, body').animate({scrollTop:0}, '300');
   });
   });
-  
+
 
 /* ------------------------------------------------------------------------- *
 ##  9 Preloader */
@@ -435,7 +435,7 @@ do {
 
 /* ------------------------------------------------------------------------- *
 ##  10 Carousel featured image */
-/* ------------------------------------------------------------------------- */    
+/* ------------------------------------------------------------------------- */
 
 jQuery(document).ready(function() {
 jQuery("#avik-slider").owlCarousel({
@@ -453,7 +453,7 @@ jQuery("#avik-slider").owlCarousel({
 ##  11 Portfolio */
 /* ------------------------------------------------------------------------- */
 
-avikfilterSelection("all") 
+avikfilterSelection("all")
 function avikfilterSelection(c) {
   var x, i;
   x = document.getElementsByClassName("column");
@@ -481,7 +481,7 @@ function avikRemoveClass(element, name) {
   arr2 = name.split(" ");
   for (i = 0; i < arr2.length; i++) {
   while (arr1.indexOf(arr2[i]) > -1) {
-  arr1.splice(arr1.indexOf(arr2[i]), 1); 
+  arr1.splice(arr1.indexOf(arr2[i]), 1);
     }
   }
   element.className = arr1.join(" ");
@@ -495,22 +495,13 @@ function avikRemoveClass(element, name) {
 jQuery(document).ready(function($) {
 
     jQuery('.popup').live('click', function(){
-    
+
     newwindow=window.open($(this).attr('href'),'','height=450,width=700');
-    
+
     if (window.focus) {newwindow.focus()}
-    
+
     return false;
-    
-});
-    
+
 });
 
-
-
-
-
-
-
-
-
+});

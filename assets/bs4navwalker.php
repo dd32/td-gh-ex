@@ -75,7 +75,7 @@ class bs4Navwalker extends Walker_Nav_Menu
 
         // New
         $class_names .= ' nav-item';
-        
+
         if (in_array('menu-item-has-children', $classes)) {
             $class_names .= ' dropdown';
         }
@@ -127,11 +127,9 @@ class bs4Navwalker extends Walker_Nav_Menu
             $atts['data-toggle']  = 'dropdown';
         }
 
-      
-        if (in_array('current-menu-item', $item->classes)) {
-            $atts['class'] .= ' active';
-        }
-        // print_r($item);
+
+        
+        //print_r($item);
         //
 
         /**

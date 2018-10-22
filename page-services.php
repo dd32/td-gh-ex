@@ -7,35 +7,35 @@ Template Post Type: post, page, product
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
- * 
+ * @version   1.2.4
+ *
  */
 
 if(is_single()) { get_header('post'); } else { get_header(); } ?>
 	<div id="primary" class="content-area">
-		<main id="main" class="site-main">      
-  <div class="enter-services"> 
+		<main id="main" class="site-main">
+  <div class="enter-services">
   <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <div class="text-image-services">
 			     <div id="typed-strings">
 				       <p><?php the_title(); ?> <i> <?php the_excerpt();?></i></p>
 			     </div>
-			      <span id="typed"></span>             
+			      <span id="typed"></span>
         </div>
-      <div class="header-image-services"> 
-	  <?php the_post_thumbnail('avik_single', array( 'class' => 'img-fluid mb-4', 'alt' => get_the_title() ))?>   
+      <div class="header-image-services">
+	  <?php the_post_thumbnail('avik_single', array( 'class' => 'img-fluid mb-4', 'alt' => get_the_title() ))?>
       </div>
       <div class="container">
                  <article <?php post_class(); ?>>
-	                <div class="content-post text-right pt-5">	                 
-										  <h1><?php the_title(); ?></h1>                     
+	                <div class="content-post text-right pt-5">
+										  <h1><?php the_title(); ?></h1>
 	                    <?php the_content(); ?>
-					            <?php wp_link_pages('pagelink=Page %'); ?>	                   
+					            <?php wp_link_pages('pagelink=Page %'); ?>
                    </div>
                  </article>
                  <?php endwhile; else: ?>
                   <p><?php esc_html_e('Sorry, no post matched your criteria.', 'avik'); ?></p>
-                  <?php endif; ?>	
+                  <?php endif; ?>
                 <div class="tab cf is-visible">
                 </div>
                 <div class="tabs__list cf">
@@ -45,21 +45,21 @@ if(is_single()) { get_header('post'); } else { get_header(); } ?>
 	                  $new_query = new WP_Query( array( 'cat' => $services_cat  , 'showposts' => $services_count ));
                     while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
                     <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_services');?>
-                <li class="tab__development tabs__list-item tabs__list-item--fourth animated wow fadeInUp tab-fadeup">                   
+                <li class="tab__development tabs__list-item tabs__list-item--fourth animated wow fadeInUp tab-fadeup">
                  <div class="tab__development-img" data-aos="fade-left" data-aos-duration="2000">
-                 <img class="img-avic-services-default" src="<?php if ( $avik_image_attributes[0] ) : 
+                 <img class="img-avic-services-default" src="<?php if ( $avik_image_attributes[0] ) :
                            echo  esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">
-                 </div>                         
-                  <h2 class="tab__development-title one"><?php the_title();?></h2>                       
+                 </div>
+                  <h2 class="tab__development-title one"><?php the_title();?></h2>
                   <a href="<?php the_permalink();?>" class="btn btn-avik" role="button" aria-pressed="true" data-aos="zoom-in" data-aos-duration="2000"><?php esc_html_e('Read more...','avik'); ?></a>
-                </li>       
-                  <?php endwhile; 
+                </li>
+                  <?php endwhile;
                   wp_reset_query();
-                  wp_reset_postdata(); ?>     
+                  wp_reset_postdata(); ?>
                 </div>
-         </div>       
+         </div>
       </div>
-      <div class="clear"></div>  
+      <div class="clear"></div>
       <!-- Partenrs -->
       <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_partners_services', false) )) :?>
       <div class="partners">
@@ -68,7 +68,7 @@ if(is_single()) { get_header('post'); } else { get_header(); } ?>
 		         <h3><?php echo esc_html( get_theme_mod( 'avik_subtitle_partners_services','We Get Around')); ?></h3>
           </div>
           <div class="container">
-            <div class="row gray-effect-partenrs"> 
+            <div class="row gray-effect-partenrs">
               <?php
 	              $partners_cat = esc_attr( get_theme_mod('avik_partners_category'));
 	              $partners_count =12;
@@ -76,14 +76,14 @@ if(is_single()) { get_header('post'); } else { get_header(); } ?>
 	              while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
                 <div class="col-md-3 partenrs-services">
                   <a href="<?php the_permalink();?>">
-                     <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>                    
-                         <img src="<?php if ( $avik_image_attributes[0] ) : 
+                     <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
+                         <img src="<?php if ( $avik_image_attributes[0] ) :
                            echo  esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">
-                  </a>              
+                  </a>
                 </div>
-				         <?php endwhile; 
+				         <?php endwhile;
                   wp_reset_query();
-                  wp_reset_postdata(); ?>  
+                  wp_reset_postdata(); ?>
             </div>
           </div>
       </div>
@@ -107,7 +107,7 @@ if(is_single()) { get_header('post'); } else { get_header(); } ?>
                  <i class="fas fa-arrow-right arrow-price-animation"></i>
                  <?php endif; ?>
               </div>
-            </div> 
+            </div>
           </div>
           <!-- Widget Contact Form -->
           <div class="col-md-6 widget-contact">

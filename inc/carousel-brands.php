@@ -4,8 +4,8 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
- */ 
+ * @version   1.2.4
+ */
 ?>
 <div class="container brands">
     <div class="title-brands text-center">
@@ -21,18 +21,12 @@
         <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_brand');?>
         <div class="slide">
             <a href="<?php the_permalink();?>">
-                <img src="<?php if ( $avik_image_attributes[0] ) : 
+                <img src="<?php if ( $avik_image_attributes[0] ) :
                     echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">
             </a>
-        </div>   
-          <?php endwhile; 
+        </div>
+          <?php endwhile;
           wp_reset_query();
           wp_reset_postdata(); ?>
     </div>
 </div>
-
-  
-
-
-
-

@@ -4,12 +4,12 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
+ * @version   1.2.4
  */
 
 get_header();
 ?>
- 
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 		<?php

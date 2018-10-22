@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
+ * @version   1.2.4
  */
  ?>
 <div class="avik-article">
@@ -36,9 +36,9 @@
 			  'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'avik' ),
 			  'after'  => '</div>', ) );
 		?>
-	    <div class="button-archive text-right"> 
-		<a href="<?php the_permalink();?>" class="btn btn-avik archive" role="button" aria-pressed="true"><?php esc_html_e('Read more...','avik'); ?></a>    
-	     </div>    
+	    <div class="button-archive text-right">
+		<a href="<?php the_permalink();?>" class="btn btn-avik archive" role="button" aria-pressed="true"><?php esc_html_e('Read more...','avik'); ?></a>
+	     </div>
 	 </div><!-- .entry-content -->
 	<footer class="entry-footer text-right">
 		<?php avik_entry_footer(); ?>

@@ -3,7 +3,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
+ * @version   1.2.4
  */
 
 /* TABLE OF CONTENT
@@ -38,13 +38,13 @@
     border-color: #c3e6cb;
     border-left:3px solid #00b92a!important;
   }
-  
+
   .alert-success hr{
     border-top-color: #b1dfbb;
   }
-  
+
   .alert-success a{
-    color:#00b92a; 
+    color:#00b92a;
     font-weight: bold;
     text-decoration: none;
   }
@@ -63,13 +63,13 @@
     border-color: #dddfe2;
     border-left:3px solid #0079b5!important;
   }
-  
+
   .alert-secondary hr{
     border-top-color: #cfd2d6;
   }
-  
+
   .alert-secondary a{
-    color:#0079b5; 
+    color:#0079b5;
     font-weight: bold;
     text-decoration: none;
   }
@@ -88,13 +88,13 @@
     border-color: #f5c6cb;
     border-left:3px solid #ff0018!important;
   }
-  
+
   .alert-danger hr {
     border-top-color: #f1b0b7;
   }
-  
+
   .alert-danger a{
-    color:#ff0018; 
+    color:#ff0018;
     font-weight: bold;
     text-decoration: none;
   }
@@ -113,13 +113,13 @@
     border-color: #ffeeba;
     border-left:3px solid #fdbe00!important;
   }
-  
+
   .alert-warning hr {
     border-top-color: #ffe8a1;
   }
-  
+
   .alert-danger a{
-    color:#fdbe00; 
+    color:#fdbe00;
     font-weight: bold;
     text-decoration: none;
   }
@@ -138,11 +138,11 @@
     border-color: #bee5eb;
     border-left:3px solid #00dbff!important;
   }
-  
+
   .alert-info hr {
     border-top-color: #abdde5;
   }
-  
+
   .alert-info a{
     color: #00dbff;
     font-weight: bold;
@@ -179,4 +179,3 @@
   background-color: #000;
   color: #d5f83e!important;
 }
-

@@ -4,14 +4,14 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
+ * @version   1.2.4
  */
  ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
      <?php the_post_thumbnail( 'avik_single', array( 'class' => 'img-fluid mb-4', 'alt' => get_the_title() ))?>
-     <div class="title-page mt-5">   
-     </div>  	
+     <div class="title-page mt-5">
+     </div>
 	    <div class="entry-content">
 		   <?php
 		    the_content();

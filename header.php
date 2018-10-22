@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
+ * @version   1.2.4
  */
 
 ?>
@@ -22,13 +22,13 @@
    <div class="avik-loader">
      <div class="loader"></div>
    </div>
-   <div id="page" class="site">	
+   <div id="page" class="site">
      <header>
      <!-- Logo -->
      <div class="avik-custom-logo-header avik-logo <?php if ( false == get_theme_mod( 'avik_enable_rotate_logo', true) ) : ?> rotate <?php endif; ?>">
      <?php the_custom_logo();?>
      </div>
-     <nav class="navbar navbar-expand-lg avik-nav-front-page hide-menu fixed-top"> 
+     <nav class="navbar navbar-expand-lg avik-nav-front-page hide-menu fixed-top">
         <div class="avik-logo <?php if ( false == get_theme_mod( 'avik_enable_rotate_logo', true ) ) : ?> rotate <?php endif; ?>">
 			       <div class="avik-custom-logo-body">
 		           <?php the_custom_logo();?>
@@ -41,8 +41,8 @@
 			           $avik_description = get_bloginfo( 'description', 'display' );
 			       if ($avik_description || is_customize_preview() ) : ?>
 				     <p class="site-description"><?php echo esc_html($avik_description); ?></p>
-			       <?php endif; ?>		
-           </div>	
+			       <?php endif; ?>
+           </div>
 		       <button class="navbar-toggler navbar-light" type="button" data-toggle="collapse" data-target="#bs4navbar" aria-controls="bs4navbar" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
            </button>
@@ -63,4 +63,3 @@ wp_nav_menu(array(
 	   </nav>
 </header>
 <div id="content" class="site-content">
-

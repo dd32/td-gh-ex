@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.3
+ * @version   1.2.4
  */
 ?>
 
@@ -20,10 +20,9 @@
 		<hr>
 		<h3> <?php the_title();?> </h3>
 	 </div>
-	 <?php 
+	 <?php
 	 endwhile;
-	 	wp_reset_postdata(); 
+	 	wp_reset_postdata();
 	 ?>
    </div>
 </div>
-
