@@ -111,15 +111,15 @@ msgstr ""
 msgid "Back To Top"
 msgstr ""
 
-#: functions.php:606
+#: functions.php:599
 msgid "SiteOrigin Page Builder"
 msgstr ""
 
-#: functions.php:611
+#: functions.php:604
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:616
+#: functions.php:609
 msgid "SiteOrigin CSS"
 msgstr ""
 
