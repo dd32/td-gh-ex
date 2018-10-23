@@ -3,8 +3,8 @@
 Contributors: specia
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.9.8
-Stable tag: 1.0.22
-Version: 1.0.22
+Stable tag: 1.0.23
+Version: 1.0.23
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, editor-style, blog, photography, portfolio
@@ -70,11 +70,14 @@ Source: https://github.com/matthieua/WOW
 
 
 Screenshot Image
-URL: https://pixabay.com/en/african-descent-american-asian-3513653/
+URL: https://pixabay.com/en/london-cityscape-england-1081820/
 Source: https://pixabay.com/
 License: CC0 License
 
 ##Changelog
+version 1.0.23
+* Feature image added
+
 version 1.0.22
 * Added Theme Tag (grid-layout)
 
