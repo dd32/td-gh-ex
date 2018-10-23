@@ -296,7 +296,10 @@ function weaverx_output_edit_style( $editor='mce' ) {
 	}
 
 	if ($bg != '') {
-		$put .= "{$selector_bg}{background:" . $bg . ";padding:10px;}\n";
+		if ( $editor == 'mce')
+			$put .= "{$selector_bg}{background:{$bg};padding:10px;}\n";		// 4.0.10 - no padding for gb!
+		else
+			$put .= "{$selector_bg}{background:{$bg}}\n";
 		// now decide if we need to add alternate styling for the editor icons
 		if ( $editor == 'gutenberg' ) {
 			$need_alt = $bg[0] != '#';				// always use alt styling for non-hex bg colors

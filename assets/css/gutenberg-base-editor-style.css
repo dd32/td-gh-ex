@@ -48,12 +48,18 @@
     background:				#C0C0C0;
 }
 
+
 .editor-block-list__insertion-point-inserter::before {		/* insertion line - GB default background is #8f98a1 */
 	border:					1px solid #909090;
     background:				#444444;
 }
 
 } /* end of example alt editor control styling */
+
+.edit-post-text-editor {									/* code editor width - make wider */
+	min-width:		600px;
+}
+
 
 /* Post Title */
 

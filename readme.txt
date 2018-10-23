@@ -8,7 +8,7 @@ fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red,
 translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.8
-Tested up to: 4.9
+Tested up to: 5.0
 Stable tag: 4.0.9
 
 == Description ==
@@ -322,7 +322,7 @@ with testing and feature suggestions.
 * New: Alternate cursor shape for placeholder menus
 * New: Faster CSS based Extend BG Attributes (vs. JavaScript handling)
 * New: Compatibility with WP 4.7 - specifically with Customizer and new WP Additional CSS option
-* Change: Reorderd Customizer Top Level menus
+* Change: Reordered Customizer Top Level menus
 * Change: Menu Bar Item top/bottom padding deprecated
 * Change: Removed 15 of previous subthemes - they are available for download on weavertheme.com
 * Change: force Weaver Stylesheets to load after most plugins, makes in-line and XPlus style file work same
@@ -432,7 +432,7 @@ with testing and feature suggestions.
 = Version 3.1.9 =
 * Tweak: added <!--googleoff/on: all--> around JAVASCRIPT DISABLED message - only matters if user doesn't have blank site title
 * Fix: FI as header image now does have priority over Header HTML Replacement option as stated in option's description.
-* Tweak: Fixed top header widget area will be after Secondary fixed-top menu, and befoe Primary fixed-top menu.
+* Tweak: Fixed top header widget area will be after Secondary fixed-top menu, and before Primary fixed-top menu.
 * Update: Updated to TGMPA v2.6.1 (used for suggested plugins)
 
 = Version 3.1.10 =
@@ -449,7 +449,7 @@ with testing and feature suggestions.
 * Tweak: scroll bar width for extended width to work better with latest browser versions
 * Tweak: changed how extended handled for Safari browser
 * Tweak: More code cleanup, including adding new file: pluggables.php for new pluggable functions for easier child themes
-* Tweak: changed some inline code to child theme overridable actions and filters. This is in prep for 3.2.
+* Tweak: changed some inline code to child theme overrideable actions and filters. This is in prep for 3.2.
 * Tweak: support for Dynamic Headers plugin removed since it hasn't been updated in seven years.
 
 = Version 3.1.12 =
@@ -537,7 +537,7 @@ with testing and feature suggestions.
 * Fix: Theme will now auto-upgrade generated CSS when updating from 3.2.x to 4.0.x
 
 = Version 4.0.6 =
-* Fix: Check for get_the_privacy_policy_link for backward compatbility.
+* Fix: Check for get_the_privacy_policy_link for backward compatibility.
 * Fix: Issue with empty excerpt
 * Tweak: Gutenberg Gallery Block captions
 * Tweak: screenshot.jpg updated to comply with new WordPress standards
@@ -551,3 +551,7 @@ with testing and feature suggestions.
 
 = Version 4.0.9 =
 * Fix: issues with settings for initial install or 3.2 to 4.0 upgrade
+
+= Version 4.1 =
+* Update: Bumped to 4.1 to coincide with WP 5.0 release
+* Fix: issue with displaying title permalink setting in Gutenberg editor

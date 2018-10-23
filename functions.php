@@ -101,6 +101,7 @@ function weaverx_setup() {
 	);
 
 	add_theme_support( 'align-wide' );		// gutenberg wide
+	add_theme_support( 'responsive-embeds' );		// gutenberg
 
 	$weaverx_header = array(
 		'default-image' => '%s/assets/images/headers/winter-fog.jpg',
