@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.5
+ * @version   1.2.6
  */
 ?>
 
@@ -182,7 +182,7 @@ wp_reset_postdata(); ?>
                          <div class="blog-subtitle"><?php the_excerpt();?></div>
                          <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_time_comment_blog_home', false) )) :?>
                          <span class="blog-info"><i class="far fa-calendar"></i><?php echo get_the_date (); ?></span>
-                         <span class="blog-info"><i class="fas fa-comment"></i><?php comments_number( '0 comment', '1 comment', '% comments','avik' ); ?></span>
+                         <span class="blog-info"><i class="fas fa-comment"></i><?php comments_number(); ?></span>
                          <?php endif; ?>
                      </a>
                     <?php endwhile;

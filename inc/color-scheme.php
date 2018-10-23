@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.5
+ * @version   1.2.6
  */
 
 class Avik_Color_Scheme {
@@ -33,7 +33,7 @@ class Avik_Color_Scheme {
 
 		$wp_customize->add_control( 'avik_color_scheme', array(
 		    'label'   => __( 'Skins', 'avik' ),
-				'description'=> __('In the default mode it is not possible to change the colors','avik'),
+				'description'=> __('Choose the most suitable skins for your site, or change the colors as you wish','avik'),
 		    'section' => 'colors',
 			'type'    => 'select',
 			'priority'=> 2,
@@ -330,7 +330,7 @@ class Avik_Color_Scheme {
 		      $this->is_custom = true;
 		  }
 
-		  $colors = array_map( 'strtolower', $color_schemes[$color_scheme]['colors'] );
+		  $colors = array_map( 'strtolower', $color_schemes['avik']['colors'] );
 
 		  foreach ( $this->options as $k => $option ) {
 		      $color = get_theme_mod( $option );

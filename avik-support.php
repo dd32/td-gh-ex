@@ -5,14 +5,14 @@
  *
  * @package Avik
  *
- *  @version   1.2.5
+ *  @version   1.2.6
  */
 ?>
 
 <div class="avik-image-background-support container" style="background: url('<?php echo esc_url(get_template_directory_uri()).'/img/services.jpg';  ?>'); background-repeat: no-repeat;
 	background-position: center center;background-size: cover;" >
       <div class="logo-support">
-            <h1><?php esc_html_e( 'AVIK', 'avik' ); ?></h1><h2><?php esc_html_e( 'V 1.2.5', 'avik' ); ?></h2>
+            <h1><?php esc_html_e( 'AVIK', 'avik' ); ?></h1><h2><?php esc_html_e( 'V 1.2.6', 'avik' ); ?></h2>
       </div>
       <div class="text-support">
       <h1><?php esc_html_e( 'Welcome to Avik', 'avik' ); ?></h1>
