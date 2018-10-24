@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.3.2
+ * @version     3.5.0
  */
 
 
@@ -114,7 +114,7 @@ if(isset($ascend['product_simg_resize']) && 0 == $ascend['product_simg_resize'])
 				}
 			} else {
 				$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
-				$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src() ), esc_html__( 'Awaiting product image', 'ascend' ) );
+				$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'ascend' ) );
 				$html .= '</div>';
 			}
 

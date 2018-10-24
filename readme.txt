@@ -28,6 +28,9 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.3.5 | 24th October 2018 =
+* Update: Woocommerce notice.
+
 = Version 1.3.4 | 5th September 2018 =
 * Update: Product Gallery css.
 

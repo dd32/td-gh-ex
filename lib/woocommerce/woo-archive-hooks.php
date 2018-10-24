@@ -163,7 +163,7 @@ function ascend_woo_archive_hooks_output() {
       		$productimgwidth = 300;
       	}
 
-        if(isset($ascend['product_img_resize']) && $ascend['product_img_resize'] == 0) {
+        if ( isset( $ascend['product_img_resize'] ) && $ascend['product_img_resize'] == 0 ) {
           	$resizeimage = 0;
         } else {
         	$image_crop = true;
@@ -189,9 +189,11 @@ function ascend_woo_archive_hooks_output() {
                 $productimgheight = $productimgwidth;
             }
         }
-        $productimgwidth = apply_filters('ascend_product_catelog_image_width', $productimgwidth);
-        $productimgheight = apply_filters('ascend_product_catelog_image_height', $productimgheight);
-        if($productimgheight == null){
+        $productimgwidth = apply_filters( 'ascend_product_catelog_image_width', $productimgwidth );
+        if ( ! empty( $productimgheight ) ) {
+        	$productimgheight = apply_filters( 'ascend_product_catelog_image_height', $productimgheight );
+        }
+        if ( empty( $productimgheight ) ) {
         	$ratio_height = $productimgwidth;
         	$ratio_class = 'kt-product-softcrop';
         } else {
