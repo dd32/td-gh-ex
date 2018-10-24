@@ -19,7 +19,7 @@ $pausetime = ( isset( $virtue['slider_pausetime'] ) ? $virtue['slider_pausetime'
 						if ( ! empty( $slide['link'] ) )	{
 							echo '<a href="'.esc_url($slide['link']).'" target="'.esc_attr($target).'">';
 						}
-							echo '<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">';
+							echo '<div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">';
 							echo '<img src="'.esc_url( $img['src'] ).'" width="'.esc_attr( $img['width'] ).'" height="'.esc_attr( $img['height'] ).'" alt="'.esc_attr( $img['alt'] ).'" itemprop="contentUrl" '.wp_kses_post( $img['srcset'] ).'/>';
 							echo '<meta itemprop="url" content="'.esc_url($img['src']).'">';
 							echo '<meta itemprop="width" content="'.esc_attr($img['width']).'px">';

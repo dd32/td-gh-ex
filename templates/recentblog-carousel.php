@@ -38,7 +38,7 @@ if ( virtue_display_sidebar() ) {
 				 if ( $loop ) : 
 					while ( $loop->have_posts() ) : $loop->the_post(); ?>
 				<div class="<?php echo esc_attr( $itemsize );?>">
-					<div <?php post_class('blog_item grid_item'); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
+					<div <?php post_class('blog_item grid_item'); ?> itemscope="" itemtype="https://schema.org/BlogPosting">
 						<div class="imghoverclass">
 							<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
 								<?php echo virtue_get_full_image_output($catimgwidth, $catimgheight, true, 'iconhover', null, get_post_thumbnail_id( $post->ID ), true, true );  ?>

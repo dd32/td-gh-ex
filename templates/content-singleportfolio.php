@@ -27,7 +27,7 @@
 <?php do_action( 'kadence_single_portfolio_before' ); ?>
 <div id="content" class="container">
     <div class="row">
-      <div class="main <?php echo esc_attr( virtue_main_class() ); ?> portfolio-single" role="main" itemscope itemtype="http://schema.org/CreativeWork">
+      <div class="main <?php echo esc_attr( virtue_main_class() ); ?> portfolio-single" role="main" itemscope itemtype="https://schema.org/CreativeWork">
       <?php while (have_posts()) : the_post(); ?>
       <?php 
       	$layout 	= get_post_meta( $post->ID, '_kad_ppost_layout', true ); 

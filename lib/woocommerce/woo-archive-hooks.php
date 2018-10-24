@@ -213,37 +213,38 @@ function virtue_woocommerce_archive_hooks() {
 			$catimgheight = $catimgwidth;
 		} else {
 			$tempcatimgheight = $catimgwidth / 2;
-			$catimgheight = floor($tempcatimgheight);
+			$catimgheight = floor( $tempcatimgheight );
 		}
-		if($img_ratio == 'off') {
-			woocommerce_subcategory_thumbnail($category);
+		if ( 'off' == $img_ratio ) {
+			woocommerce_subcategory_thumbnail( $category );
 		} else {
-			$thumbnail_id = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true  );
-			if( ! empty( $thumbnail_id ) ) {
+			$thumbnail_id = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
+			if ( ! empty( $thumbnail_id ) ) {
 				$img = virtue_get_image_array( $catimgwidth, $catimgheight, true, null, null, $thumbnail_id, false );
-				echo '<div class="kt-cat-intrinsic" style="padding-bottom:'.esc_attr( ( $img[ 'height' ]/$img[ 'width' ] ) * 100 ).'%;">';
-				echo '<img src="' . esc_url( $img[ 'src' ] ) . '" width="'.esc_attr( $img[ 'width' ] ).'" height="'.esc_attr( $img[ 'height' ] ).'" alt="' . esc_attr( $img[ 'alt' ] ) . '" '. wp_kses_post( $img[ 'srcset' ] ).' />';
+				echo '<div class="kt-cat-intrinsic" style="padding-bottom:' . esc_attr( ( $img['height'] / $img['width'] ) * 100 ) . '%;">';
+				echo '<img src="' . esc_url( $img['src'] ) . '" width="' . esc_attr( $img['width'] ) . '" height="' . esc_attr( $img['height'] ) . '" alt="' . esc_attr( $img['alt'] ) . '" ' . wp_kses_post( $img['srcset'] ) . ' />';
 				echo '</div>';
 			} else {
-				    $cat_image = array( virtue_img_placeholder() ,$catimgwidth,$catimgheight); 
-		            if ( $cat_image[0] ) {
-	                    echo '<div class="kt-cat-intrinsic" style="padding-bottom:'.esc_attr( ( $catimgheight/$catimgwidth ) * 100 ).'%;">';
-	                    echo '<img src="' . esc_url( $cat_image[0] ) . '" width="'.esc_attr( $cat_image[1] ).'" height="'.esc_attr( $cat_image[2] ).'" alt="' . esc_attr( $category->name ) . '" />';
-	                    echo '</div>';
-		            }
+				$cat_image = array( virtue_img_placeholder(), $catimgwidth, $catimgheight );
+				if ( $cat_image[0] ) {
+					echo '<div class="kt-cat-intrinsic" style="padding-bottom:' . esc_attr( ( $catimgheight / $catimgwidth ) * 100 ) . '%;">';
+					echo '<img src="' . esc_url( $cat_image[0] ) . '" width="' . esc_attr( $cat_image[1] ) . '" height="' . esc_attr( $cat_image[2] ) . '" alt="' . esc_attr( $category->name ) . '" />';
+					echo '</div>';
+				}
 			}
-        }
-
-    }
-    // Add support for pre woo 3.3
-    add_action( 'woocommerce_before_shop_loop', 'virtue_woo_cat_loop', 60 );
+		}
+	}
+	/**
+	 * Add support for pre woo 3.3
+	 */
 	function virtue_woo_cat_loop() {
 		if ( version_compare( WC_VERSION, '3.3', '<' ) ) {
 			if ( ! is_search() ) {
 				echo '<div class="clearfix rowtight product_category_padding">';
-					woocommerce_product_subcategories(); 
+					woocommerce_product_subcategories();
 				echo '</div>';
 			}
 		}
 	}
+	add_action( 'woocommerce_before_shop_loop', 'virtue_woo_cat_loop', 60 );
 }

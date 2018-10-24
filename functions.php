@@ -33,7 +33,7 @@ require_once trailingslashit( get_template_directory() ) . 'lib/elementor/elemen
 require_once trailingslashit( get_template_directory() ) . 'lib/nav.php';                                        // Custom nav modifications
 require_once trailingslashit( get_template_directory() ) . 'lib/metaboxes.php';                           // Custom metaboxes
 require_once trailingslashit( get_template_directory() ) . 'lib/comments.php';                            // Custom comments modifications
-require_once trailingslashit( get_template_directory() ) . 'lib/image_functions.php';                     // Image functions
+require_once trailingslashit( get_template_directory() ) . 'lib/image-functions.php';                     // Image functions
 require_once trailingslashit( get_template_directory() ) . 'lib/class-virtue-get-image.php';              // Image Class
 require_once trailingslashit( get_template_directory() ) . 'lib/custom.php';                              // Custom functions
 require_once trailingslashit( get_template_directory() ) . 'lib/kadence-toolkit-plugin.php';              // Plugin Activation.

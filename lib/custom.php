@@ -146,21 +146,21 @@ function kt_get_srcset_output($width,$height,$url,$id) {
  * Schema type
  */
 function kadence_html_tag_schema() {
-    $schema = 'http://schema.org/';
+	$schema = 'https://schema.org/';
 
-    if( is_singular( 'post' ) ) {
-        $type = "WebPage";
-    } else if( is_page_template('page-contact.php') ) {
-        $type = 'ContactPage';
-    } elseif( is_author() ) {
-        $type = 'ProfilePage';
-    } elseif( is_search() ) {
-        $type = 'SearchResultsPage';
-    } else {
-        $type = 'WebPage';
-    }
+	if ( is_singular( 'post' ) ) {
+		$type = 'WebPage';
+	} elseif ( is_page_template( 'page-contact.php' ) ) {
+		$type = 'ContactPage';
+	} elseif ( is_author() ) {
+		$type = 'ProfilePage';
+	} elseif ( is_search() ) {
+		$type = 'SearchResultsPage';
+	} else {
+		$type = 'WebPage';
+	}
 
-    echo apply_filters('kadence_html_schema', 'itemscope="itemscope" itemtype="' .  esc_attr( $schema ) . esc_attr( $type ) . '"' );
+	echo apply_filters( 'kadence_html_schema', 'itemscope="itemscope" itemtype="' . esc_attr( $schema ) . esc_attr( $type ) . '"' );
 }
 
 // Ecerpt Length

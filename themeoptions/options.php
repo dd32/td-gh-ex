@@ -498,7 +498,7 @@ Redux::setSection( $opt_name, array(
             'type' => 'textarea',
             'customizer' => false,
             'title' => __('Video Embed Code', 'virtue'), 
-            'subtitle' => __('If your using a video on the home page place video embed code here.', 'virtue'),
+            'subtitle' => __( 'If you are using a video on the home page place video embed code here.', 'virtue' ),
             'default' => ''
             ),
          ),

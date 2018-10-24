@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.3.2
+ * @version     3.5.0
  */
 
 
@@ -60,7 +60,7 @@ if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0)
 
 ?>
 <div class="<?php echo esc_attr( implode( ' ', array_map( 'sanitize_html_class', $wrapper_classes ) ) ); ?>" data-columns="<?php echo esc_attr( $columns ); ?>">
-	<figure class="woocommerce-product-gallery__wrapper <?php echo esc_attr($galleryslider.' '.$galleryzoom);?>">
+	<figure class="woocommerce-product-gallery__wrapper <?php echo esc_attr( $galleryslider.' '.$galleryzoom );?>">
 	<?php
 		if(! $galslider) {
 			echo '<div class="product_image">';
@@ -92,7 +92,7 @@ if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0)
 			}
 		} else {
 			$html  = '<div class="woocommerce-product-gallery__image--placeholder">';
-			$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src() ), esc_html__( 'Awaiting product image', 'virtue' ) );
+			$html .= sprintf( '<img src="%s" alt="%s" class="wp-post-image" />', esc_url( wc_placeholder_img_src( 'woocommerce_single' ) ), esc_html__( 'Awaiting product image', 'virtue' ) );
 			$html .= '</div>';
 		}
 

@@ -47,6 +47,14 @@ function virtue_sidebar_id() {
         else  {
           $sidebar = 'sidebar-primary';
         } 
+	} else if ( is_home() ) {
+		$homeid = get_option( 'page_for_posts' );
+		$sidebar_name = get_post_meta( $homeid, '_kad_sidebar_choice', true );
+		if ( ! empty( $sidebar_name ) ) {
+			$sidebar = $sidebar_name;
+		} else {
+			$sidebar = 'sidebar-primary';
+		}
     } else if( class_exists('woocommerce') and (is_shop() || is_product_category() || is_product_tag())) {
         global $virtue;
         if (!empty($virtue['shop_sidebar'])) {

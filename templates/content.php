@@ -1,4 +1,4 @@
-    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
+    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?> itemscope="" itemtype="https://schema.org/BlogPosting">
         <div class="row">
         <?php global $post, $virtue, $virtue_sidebar; 
             $postsummery  = get_post_meta( $post->ID, '_kad_post_summery', true );

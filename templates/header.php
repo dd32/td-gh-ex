@@ -12,7 +12,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $virtue;
 ?>
-<header class="banner headerclass" itemscope itemtype="http://schema.org/WPHeader">
+<header class="banner headerclass" itemscope itemtype="https://schema.org/WPHeader">
 	<?php
 	if ( kadence_display_topbar() ) :
 		get_template_part( 'templates/header', 'topbar' );
@@ -61,7 +61,7 @@ global $virtue;
 			</div><!-- close logo span -->
 			<?php if ( has_nav_menu( 'primary_navigation' ) ) : ?>
 				<div class="<?php echo esc_attr( $menulclass ); ?> kad-header-right">
-					<nav id="nav-main" class="clearfix" itemscope itemtype="http://schema.org/SiteNavigationElement">
+					<nav id="nav-main" class="clearfix" itemscope itemtype="https://schema.org/SiteNavigationElement">
 						<?php
 						wp_nav_menu( array(
 							'theme_location' => 'primary_navigation',
@@ -110,7 +110,7 @@ global $virtue;
 		?>
 		<section id="cat_nav" class="navclass">
 			<div class="container">
-				<nav id="nav-second" class="clearfix" itemscope itemtype="http://schema.org/SiteNavigationElement">
+				<nav id="nav-second" class="clearfix" itemscope itemtype="https://schema.org/SiteNavigationElement">
 					<?php
 					wp_nav_menu( array(
 						'theme_location' => 'secondary_navigation',

@@ -8,7 +8,7 @@ if( virtue_display_sidebar() ) {
 do_action( 'virtue_single_post_begin' ); 
 ?>
 <div id="content" class="container">
-	<div class="row single-article" itemscope itemtype="http://schema.org/BlogPosting">
+	<div class="row single-article" itemscope itemtype="https://schema.org/BlogPosting">
 		<div class="main <?php echo esc_attr( virtue_main_class() ); ?>" role="main">
 		<?php while ( have_posts() ) : the_post();
 

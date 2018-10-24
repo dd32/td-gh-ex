@@ -1,6 +1,6 @@
 === Virtue ===
 License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Features ==
 * Woocommerce
@@ -29,6 +29,12 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 == Changelog ==
 
 = Theme Name: Virtue =
+
+= Version 3.3.0 | 28th September 2018 = 
+* Update: All Schema links use https.
+* Update: Image placeholder.
+* Update: Sidebar for blog posts page.
+* Update: Woocommerce notice.
 
 = Version 3.2.9 | 25th September 2018 = 
 * Update: Gutenberg Update Support.

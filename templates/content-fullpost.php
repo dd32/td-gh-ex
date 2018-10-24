@@ -17,7 +17,7 @@ if ( !empty($swidth ) ) {
 		$slidewidth =  140;
 	}
 } ?>
-<article <?php post_class(); ?> itemscope="" itemtype="http://schema.org/BlogPosting">
+<article <?php post_class(); ?> itemscope="" itemtype="https://schema.org/BlogPosting">
 	<?php 
 	/**
 	* @hooked virtue_single_post_headcontent - 10
