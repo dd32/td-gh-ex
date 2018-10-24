@@ -63,11 +63,17 @@ if (!function_exists('atlast_business_set_header_image')):
         /* Has header text? */
 
         $header_text = get_theme_mod(atlast_business_get_prefix() . '_header_image_heading', '');
+        $header_subtext = get_theme_mod(atlast_business_get_prefix() . '_header_image_subheading', '');
 
         $html .= '<div class="header-texts text-center">';
         if (!empty($header_text)):
             $html .= '<h2>' . esc_html($header_text) . '</h2>';
         endif;
+        if (!empty($header_subtext)):
+            $html .= '<h3>' . esc_html($header_subtext) . '</h3>';
+        endif;
+
+
 
         $btn_text_1 = get_theme_mod(atlast_business_get_prefix() . '_header_btn_text_1', '');
         if (!empty($btn_text_1)):
@@ -1177,6 +1183,12 @@ if (!function_exists('atlast_customizer_settings')):
             'sanitize_callback' => 'sanitize_text_field',
         ));
 
+        $wp_customize->add_setting($prefix . '_header_image_subheading', array(
+            'default' => '',
+            'capability' => 'edit_theme_options',
+            'sanitize_callback' => 'sanitize_text_field',
+        ));
+
         $wp_customize->add_setting($prefix . '_header_btn_text_1', array(
             'default' => '',
             'capability' => 'edit_theme_options',
@@ -1255,6 +1267,13 @@ if (!function_exists('atlast_customizer_settings')):
             'priority' => 14,
             'section' => $prefix . '_header_section',
             'label' => esc_html__('Header heading text', 'atlast-business'),
+        ));
+
+        $wp_customize->add_control($prefix . '_header_image_subheading', array(
+            'type' => 'text',
+            'priority' => 14,
+            'section' => $prefix . '_header_section',
+            'label' => esc_html__('Header subheading text', 'atlast-business'),
         ));
 
         $wp_customize->add_control($prefix . '_header_btn_text_1', array(
