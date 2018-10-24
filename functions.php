@@ -208,10 +208,10 @@ function adventure_travelling_front_page_template( $template ) {
 }
 add_filter( 'frontpage_template',  'adventure_travelling_front_page_template' );
 
-define('ADVENTURE_TRAVELLING_CREDIT','https://www.themespride.com/themes/free-travel-agency-wordpress-theme/','adventure-travelling');
+define('ADVENTURE_TRAVELLING_CREDIT','https://www.themespride.com/','adventure-travelling');
 if ( ! function_exists( 'adventure_travelling_credit' ) ) {
 	function adventure_travelling_credit(){
-		echo "<a href=".esc_url(ADVENTURE_TRAVELLING_CREDIT)." target='_blank'>".esc_html__('Travelling WordPress Theme ','adventure-travelling')."</a>";
+		echo "<a href=".esc_url(ADVENTURE_TRAVELLING_CREDIT)." target='_blank'>".esc_html__('Themespride','adventure-travelling')."</a>";
 	}
 }
 
