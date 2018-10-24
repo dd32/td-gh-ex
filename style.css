@@ -5,7 +5,7 @@ Theme URI: https://tishonator.com/product/fgymm
 Author: tishonator
 Author URI: https://tishonator.com
 Text Domain: fgymm
-Version: 1.6.8
+Version: 1.6.9
 Tags: blog, entertainment, news, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -398,7 +398,7 @@ aside {
 	padding:5px 0 0 0;
 }
 
-#sidebar ul:not(.social-widget) > li:before,
+#sidebar ul:not(.social-widget):not(.ui-tabs-nav) > li:before,
 article ul > li:before {
 	content:"\f0da";
 	font-family:'FontAwesome';
@@ -550,9 +550,9 @@ article,
 	margin:0 0 0 14px;
 }
 
-.col3a ul:not(.social-widget) > li:before,
-.col3b ul:not(.social-widget) > li:before,
-.col3c ul:not(.social-widget) > li:before {
+.col3a ul:not(.social-widget):not(.ui-tabs-nav) > li:before,
+.col3b ul:not(.social-widget):not(.ui-tabs-nav) > li:before,
+.col3c ul:not(.social-widget):not(.ui-tabs-nav) > li:before {
 	font-family:'FontAwesome';
 	font-style:normal;
 	font-weight:normal;
@@ -1398,9 +1398,9 @@ img.wp-post-image {
 
 .home-title,
 .home-col-title {
-	padding:0 5px 1px 1px;
+	padding:10px 5px 1px 1px;
 	font-weight:normal;
-	font-size:14px;
+	font-size:22px;
 	letter-spacing:1px;
 	float:left;
 	clear:both;
@@ -1452,7 +1452,7 @@ img.wp-post-image {
 	padding:0 5px 1px 1px;
 	margin-bottom:-2px;
 	font-weight:normal;
-	font-size:14px;
+	font-size:22px;
 	border-bottom:4px solid #cccccc;
 	color:#eeeeee;
 	letter-spacing:1px;

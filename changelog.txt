@@ -1,3 +1,7 @@
+fGymm 1.6.9, 2018-10-24
+------------------------
+- add instructions in readme.txt file how to configure the Homepage slider
+
 fGymm 1.6.8, 2018-08-28
 ------------------------
 - update screenshot according to latest WordPress requirements for screenshot
