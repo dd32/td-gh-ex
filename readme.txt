@@ -77,6 +77,10 @@ dark, light, blue, white, black, gray, one-column, two-columns, left-sidebar, ri
 
 == Change Log ==
 
+= 4.7.8 (Released: October 24, 2018) =
+* Added: Instagram Widget and Sidebar Support
+* Updated: Upgrade to pro button css
+
 = 4.7.7 (Released: June 18, 2018) =
 * Added: Core Privacy Policy link support in footer
 

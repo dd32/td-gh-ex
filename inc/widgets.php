@@ -57,6 +57,19 @@ function catchbox_widgets_init() {
 		'before_title' => '<h3 class="widget-title">',
 		'after_title' => '</h3>',
 	) );
+
+	//Instagram Widget
+	if ( class_exists( 'Catch_Instagram_Feed_Gallery_Widget' ) ||  class_exists( 'Catch_Instagram_Feed_Gallery_Widget_Pro' ) ) {
+		register_sidebar( array(
+			'name'          => esc_html__( 'Instagram', 'catch-box' ),
+			'id'            => 'sidebar-instagram',
+			'description'   => esc_html__( 'Appears above footer. This sidebar is only for Widget from plugin Catch Instagram Feed Gallery Widget and Catch Instagram Feed Gallery Widget Pro', 'catch-box' ),
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => "</aside>",
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+	}
 }
 endif; // catchbox_widgets_init
 add_action( 'widgets_init', 'catchbox_widgets_init' );
