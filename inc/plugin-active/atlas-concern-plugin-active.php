@@ -61,20 +61,6 @@ function atlas_concern_register_required_plugins() {
 
 
 
-		// This is an example of how to include a plugin from the WordPress Plugin Repository.
-		array(
-			'name'      => 'Contact Form 7',
-			'slug'      => 'contact-form-7',
-			'required'  => false,
-		),
-		
-		// This is an example of how to include a plugin from the WordPress Plugin Repository.
-		array(
-			'name'      => 'Recent Posts Widget With Thumbnails',
-			'slug'      => 'recent-posts-widget-with-thumbnails',
-			'required'  => false,
-		),
-		
 		
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		array(

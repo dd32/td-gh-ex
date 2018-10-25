@@ -171,7 +171,6 @@ function atlas_concern_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'topline_section_phone', array(
         'type' => 'theme_mod',
 		'capability'     => 'edit_theme_options',
-        'default' => '+12 345 56 78',
        'sanitize_callback' => 'sanitize_text_field'
     ));
 
@@ -184,7 +183,6 @@ function atlas_concern_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'topline_section_mail', array(
         'type' => 'theme_mod',
 		'capability'     => 'edit_theme_options',
-        'default' => 'info@yoursite.com',
         'sanitize_callback' => 'sanitize_text_field'
     ));
 
@@ -197,7 +195,6 @@ function atlas_concern_customize_register( $wp_customize ) {
     $wp_customize->add_setting( 'topline_section_location', array(
         'type' => 'theme_mod',
 		'capability'     => 'edit_theme_options',
-        'default' => 'Street , Country , Zip Code',
         'sanitize_callback' => 'sanitize_text_field'
     ));
 
@@ -209,7 +206,6 @@ function atlas_concern_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'topline_section_face_url', array(
         'type' => 'theme_mod',
-		'default' => '#',
 		'capability'     => 'edit_theme_options',
         'sanitize_callback' => 'esc_url_raw'
     ));
@@ -222,7 +218,6 @@ function atlas_concern_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'topline_section_twit_url', array(
         'type' => 'theme_mod',
-		'default' => '#',
 		'capability'     => 'edit_theme_options',
         'sanitize_callback' => 'esc_url_raw'
     ));
@@ -235,7 +230,6 @@ function atlas_concern_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'topline_section_instag_url', array(
         'type' => 'theme_mod',
-		'default' => '#',
 		'capability'     => 'edit_theme_options',
         'sanitize_callback' => 'esc_url_raw'
     ));
@@ -248,7 +242,6 @@ function atlas_concern_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'topline_section_linke_url', array(
         'type' => 'theme_mod',
-		'default' => '#',
 		'capability'     => 'edit_theme_options',
         'sanitize_callback' => 'esc_url_raw'
     ));
@@ -261,7 +254,6 @@ function atlas_concern_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'topline_section_yout_url', array(
         'type' => 'theme_mod',
-		'default' => '#',
 		'capability'     => 'edit_theme_options',
         'sanitize_callback' => 'esc_url_raw'
     ));
@@ -274,7 +266,6 @@ function atlas_concern_customize_register( $wp_customize ) {
 
     $wp_customize->add_setting( 'topline_section_goo_url', array(
         'type' => 'theme_mod',
-		'default' => '#',
 		'capability'     => 'edit_theme_options',
         'sanitize_callback' => 'esc_url_raw'
     ));
