@@ -1124,8 +1124,8 @@ Object.defineProperty(exports, '__esModule', { value: true });
                   .attr( 'srcset' , _src_set )
                   .attr( 'src', _src )
                   .load( function () {
-                        if ( ! $_img.hasClass('tc-smart-loaded') ) {
-                              $_img.fadeIn(self.options.fadeIn_options).addClass('tc-smart-loaded');
+                        if ( ! $_img.hasClass('czr-smart-loaded') ) {
+                              $_img.fadeIn(self.options.fadeIn_options).addClass('czr-smart-loaded');
                         }
                         if ( ( 'undefined' !== typeof $_img.attr('data-tcjp-recalc-dims')  ) && ( false !== $_img.attr('data-tcjp-recalc-dims') ) ) {
                               var _width  = $_img.originalWidth(),
@@ -2892,44 +2892,65 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
               return '';
             return string.length > length ? string.substr( 0, length - 1 ) : string;
       };
-      czrapp._prettyfy = function( args ) {
+      var _prettyPrintLog = function( args ) {
             var _defaults = {
                   bgCol : '#5ed1f5',
                   textCol : '#000',
-                  consoleArguments : [],
-                  prettyfy : true
+                  consoleArguments : []
             };
             args = _.extend( _defaults, args );
 
-            var _toArr = Array.from( args.consoleArguments );
+            var _toArr = Array.from( args.consoleArguments ),
+                _truncate = function( string ){
+                      if ( ! _.isString( string ) )
+                        return '';
+                      return string.length > 300 ? string.substr( 0, 299 ) + '...' : string;
+                };
             if ( ! _.isEmpty( _.filter( _toArr, function( it ) { return ! _.isString( it ); } ) ) ) {
-                  _toArr =  JSON.stringify( _toArr );
+                  _toArr =  JSON.stringify( _toArr.join(' ') );
             } else {
                   _toArr = _toArr.join(' ');
             }
-            if ( args.prettyfy )
-              return [
-                    '%c ' + czrapp._truncate( _toArr ),
-                    [ 'background:' + args.bgCol, 'color:' + args.textCol, 'display: block;' ].join(';')
-              ];
-            else
-              return czrapp._truncate( _toArr );
+            return [
+                  '%c ' + _truncate( _toArr ),
+                  [ 'background:' + args.bgCol, 'color:' + args.textCol, 'display: block;' ].join(';')
+            ];
+      };
+
+      var _wrapLogInsideTags = function( title, msg, bgColor ) {
+            if ( ( _.isUndefined( console ) && typeof window.console.log != 'function' ) )
+              return;
+            if ( czrapp.localized.isDevMode ) {
+                  if ( _.isUndefined( msg ) ) {
+                        console.log.apply( console, _prettyPrintLog( { bgCol : bgColor, textCol : '#000', consoleArguments : [ '<' + title + '>' ] } ) );
+                  } else {
+                        console.log.apply( console, _prettyPrintLog( { bgCol : bgColor, textCol : '#000', consoleArguments : [ '<' + title + '>' ] } ) );
+                        console.log( msg );
+                        console.log.apply( console, _prettyPrintLog( { bgCol : bgColor, textCol : '#000', consoleArguments : [ '</' + title + '>' ] } ) );
+                  }
+            } else {
+                  console.log.apply( console, _prettyPrintLog( { bgCol : bgColor, textCol : '#000', consoleArguments : [ title ] } ) );
+            }
       };
       czrapp.consoleLog = function() {
             if ( ! czrapp.localized.isDevMode )
               return;
             if ( ( _.isUndefined( console ) && typeof window.console.log != 'function' ) )
               return;
-
-            console.log.apply( console, czrapp._prettyfy( { consoleArguments : arguments } ) );
+            console.log.apply( console, _prettyPrintLog( { consoleArguments : arguments } ) );
+            console.log( 'Unstyled console message : ', arguments );
       };
 
       czrapp.errorLog = function() {
             if ( ( _.isUndefined( console ) && typeof window.console.log != 'function' ) )
               return;
 
-            console.log.apply( console, czrapp._prettyfy( { bgCol : '#ffd5a0', textCol : '#000', consoleArguments : arguments } ) );
+            console.log.apply( console, _prettyPrintLog( { bgCol : '#ffd5a0', textCol : '#000', consoleArguments : arguments } ) );
       };
+
+
+      czrapp.errare = function( title, msg ) { _wrapLogInsideTags( title, msg, '#ffd5a0' ); };
+      czrapp.infoLog = function( title, msg ) { _wrapLogInsideTags( title, msg, '#5ed1f5' ); };
       czrapp.doAjax = function( queryParams ) {
             queryParams = queryParams || ( _.isObject( queryParams ) ? queryParams : {} );
 
@@ -2957,12 +2978,16 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
 
             $.post( ajaxUrl, _query_ )
                   .done( function( _r ) {
-                        if ( '0' === _r ||  '-1' === _r ) {
-                              czrapp.errorLog( 'czrapp.doAjax : done ajax error for : ', _query_.action, _r );
+                        if ( '0' === _r ||  '-1' === _r || false === _r.success ) {
+                              czrapp.errare( 'czrapp.doAjax : done ajax error for action : ' + _query_.action , _r );
+                              dfd.reject( _r );
                         }
+                        dfd.resolve( _r );
                   })
-                  .fail( function( _r ) { czrapp.errorLog( 'czrapp.doAjax : failed ajax error for : ', _query_.action, _r ); })
-                  .always( function( _r ) { dfd.resolve( _r ); });
+                  .fail( function( _r ) {
+                        czrapp.errare( 'czrapp.doAjax : failed ajax error for : ' + _query_.action, _r );
+                        dfd.reject( _r );
+                  });
             return dfd.promise();
       };
 })(jQuery, czrapp);
@@ -3003,7 +3028,8 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
                           czrapp.errorLog( 'setupDOMListeners : selector must be a string not empty. Aborting setup of action(s) : ' + _event.actions.join(',') );
                           return;
                     }
-                    args.dom_el.on( _event.trigger , _event.selector, function( e, event_params ) {
+                    var once = _event.once ? _event.once : false;
+                    args.dom_el[ once ? 'one' : 'on' ]( _event.trigger , _event.selector, function( e, event_params ) {
                           e.stopPropagation();
                           if ( czrapp.isKeydownButNotEnterEvent( e ) ) {
                             return;
@@ -3551,7 +3577,7 @@ var czrapp = czrapp || {};
 
                   };
                   czrapp.$_body.on( 'post-load', function( e, response ) {
-                        if ( 'success' == response.type && response.collection && response.container ) {
+                        if ( ( 'undefined' !== typeof response ) && 'success' == response.type && response.collection && response.container ) {
                               centerInfiniteImagesModernStyle(
                                   response.collection,
                                   '#'+response.container //_container
@@ -3845,7 +3871,7 @@ var czrapp = czrapp || {};
                   this.scheduleGalleryCarousels();
                   this.fireMainSlider();
                   czrapp.$_body.on( 'post-load', function( e, response ) {
-                        if ( 'success' == response.type && response.collection && response.container ) {
+                        if ( ( 'undefined' !== typeof response ) && 'success' == response.type && response.collection && response.container ) {
                               if ( ! response.html || -1 === response.html.indexOf( 'czr-gallery' ) || -1 === response.html.indexOf( 'czr-carousel' ) ) {
                                     return;
                               }
@@ -5018,20 +5044,28 @@ var czrapp = czrapp || {};
                }
             });
 
-            var _toggleThisFocusClass = function( evt ) {
-                var $_el       = $(this),
-                      $_parent = $_el.closest(_parent_selector);
 
-                if ( $_el.val() || ( evt && 'focusin' == evt.type ) ) {
-                   $_parent.addClass( _focus_class );
-                } else {
-                   $_parent.removeClass( _focus_class );
-                }
+            var _toggleThisFocusClass = function( evt ) {
+                  var $_el       = $(this),
+                        $_parent = $_el.closest(_parent_selector);
+                  setTimeout(
+                        function(){
+                            if ( $_el.val() || ( evt && ( 'focusin' == evt.type || 'focus' == evt.type ) ) ) {
+                                  $_parent.addClass( _focus_class );
+                            } else {
+                                  $_parent.removeClass( _focus_class );
+                            }
+                        },
+                        50
+                  );
             };
 
             czrapp.$_body.on( 'in-focus-load.czr-focus focusin focusout', _inputs, _toggleThisFocusClass );
             $(_inputs).trigger( 'in-focus-load.czr-focus' );
-            czrapp.$_body.on( 'click', '.icn-close', function() {
+            czrapp.$_body.on( 'click', '.' + _focusable_class + ' .icn-close', function(e) {
+                  e.preventDefault();
+                  e.stopPropagation();
+
                   var $_search_field = $(this).closest('form').find('.czr-search-field');
 
                   if ( $_search_field.length ) {
@@ -5391,6 +5425,49 @@ var czrapp = czrapp || {};
                   return false;
             });//click
           },
+          gutenbergAlignfull : function() {
+                var _isPage   = czrapp.$_body.hasClass( 'page' ),
+                    _isSingle = czrapp.$_body.hasClass( 'single' ),
+                    _coverImageSelector = [ '.czr-full-layout.czr-no-sidebar .entry-content .wp-block-cover-image.alignfull', '.czr-full-layout.czr-no-sidebar .entry-content .wp-block-cover.alignfull'].join(',');
+                if ( ! ( _isPage || _isSingle ) ) {
+                      return;
+                }
+
+                _coverImageSelector = _isSingle ? '.single' + _coverImageSelector : '.page' + _coverImageSelector;
+
+                var _coverWParallaxImageSelector   = _coverImageSelector + '.has-parallax',
+                    _classParallaxTreatmentApplied = 'czr-alignfull-p',
+                    _styleId                       = 'czr-gutenberg-alignfull',
+                    $_refWidthElement              = $('#tc-page-wrap');
+
+                if ( $( _coverImageSelector ).length > 0 ) {
+                      _add_alignfull_style();
+                      _add_parallax_treatment_style();
+                      czrapp.userXP.windowWidth.bind( function() {
+                            _add_alignfull_style();
+                            _add_parallax_treatment_style();
+                      });
+                }
+                function _add_parallax_treatment_style() {
+                      $( _coverWParallaxImageSelector ).each(function() {
+                            $(this)
+                                  .css( 'left', '' )
+                                  .css( 'left', -1 * $(this).offset().left )
+                                  .addClass(_classParallaxTreatmentApplied);
+                      });
+                }
+                function _add_alignfull_style() {
+                      var newWidth = $_refWidthElement[0].getBoundingClientRect().width,
+                          $_style   = $( 'head #' + _styleId );
+
+                      if ( 1 > $_style.length ) {
+                            $_style = $('<style />', { 'id' : _styleId });
+                            $( 'head' ).append( $_style );
+                            $_style = $( 'head #' + _styleId );
+                      }
+                      $_style.html( _coverImageSelector + '{width:'+ newWidth +'px}' );
+                }
+          }
 
    };//_methods{}
 
@@ -5733,6 +5810,8 @@ var czrapp = czrapp || {};
       this.Selector = {
         DATA_TOGGLE              : '[data-toggle="czr-dropdown"]',
         DATA_SHOWN_TOGGLE_LINK   : '.' +this.ClassName.SHOW+ '> a[data-toggle="czr-dropdown"]',
+        HOVER_MENU               : '.czr-open-on-hover',
+        CLICK_MENU               : '.czr-open-on-click',
         HOVER_PARENT             : '.czr-open-on-hover .menu-item-has-children, .nav__woocart',
         CLICK_PARENT             : '.czr-open-on-click .menu-item-has-children',
         PARENTS                  : '.tc-header .menu-item-has-children',
@@ -5775,10 +5854,12 @@ var czrapp = czrapp || {};
         var $_el = $(this);
         var _debounced_removeOpenClass = _.debounce( function() {
           if ( $_el.find("ul li:hover").length < 1 && ! $_el.closest('ul').find('li:hover').is( $_el ) ) {
-            czrapp.$_body.removeClass( self.ClassName.ALLOW_POINTER_ON_SCROLL );
             $_el.trigger( self.Event.HIDE )
                 .removeClass(self.ClassName.SHOW)
                 .trigger( self.Event.HIDDEN );
+            if ( $_el.closest( self.Selector.HOVER_MENU ).find( '.' + self.ClassName.SHOW ).length < 1 ) {
+              czrapp.$_body.removeClass( self.ClassName.ALLOW_POINTER_ON_SCROLL );
+            }
 
             var $_data_toggle = $_el.children( self.Selector.DATA_TOGGLE );
 
@@ -6347,6 +6428,7 @@ var czrapp = czrapp || {};
                             'setupUIListeners',//<= setup various observable values like this.isScrolling, this.scrollPosition, ...
 
                             'stickifyHeader',
+                            'gutenbergAlignfull',
 
                             'outline',
 

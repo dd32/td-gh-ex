@@ -1,28 +1,102 @@
-###################### Copyright ######################
-Customizr is a free WordPress theme designed by Nicolas Guillaume in Nice, France. (https://presscustomizr.com)
-Feel free to use, modify and redistribute this theme as you like.
-You may remove any copyright references (unless required by third party components) and crediting is not necessary, but much appreciated... ;-D.
-Customizr is distributed under the terms of the GNU GPL v2.0 or later
-Most important : enjoy it!
+=== Customizr ===
+Contributors: nikeo, d4z_c0nf
+Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, buddypress, custom-menu, custom-colors, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post, post-formats, rtl-language-support, editor-style
+Requires at least: 4.6
+Tested up to: 5.0
+Stable tag: 4.1.20
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
+Customizr is a simple and fast WordPress theme designed to help you attract and engage more visitors.
 
+== Description ==
+Customizr is a simple and fast WordPress theme designed to help you attract and engage more visitors. Provides a perfect user experience on smartphones. Powers more than 100K active sites around the world. Hundreds of 5-stars reviews received on WordPress.org.
 
-######## Demo, Documentation, FAQs and Support #########
-* DEMO : https://demo.presscustomizr.com/
-* DOCUMENTATION : http://docs.presscustomizr.com/collection/76-customizr-theme
-* FAQs : http://docs.presscustomizr.com/category/90-faq-and-common-issues
-* SUPPORT FORUM : https://wordpress.org/support/theme/customizr
+== Upgrade Notice ==
+= 4.1.20 October 25th 2018 =
+This new release improves the compatibility with the new WordPress editor that will be introduced in WP version 5.0.
 
+== Changelog ==
+= 4.1.20 October 25th 2018 =
+* fixed : remove breadcrumb itemprop that can produce html validation issues. fixes #1607
+* fixed : fix buddypress member activity filter issue. fixes #1606.
+* improved : support for new WordPress editor, block cover image alignwide/alignfull
+* improved : readme.txt file, according to the latest TRT requirements https://make.wordpress.org/themes/2015/04/29/a-revised-readme/
 
+= 4.1.19 October 13th 2018 =
+* fixed : prefixed TGMPA class with CZR to fix potential collision with other plugins using the same class. fixes #1603
 
-####################### Licenses #######################
-Customizr is distributed under the terms of the [GNU GPL v2.0 or later](http://www.gnu.org/licenses/gpl-3.0.en.html)
-All images included in the theme are either created for the theme and inheriting its license, or licensed under CC0.
-All other theme assets like scripts, stylesheets are licensed under GNU General Public License version 2, see file license.txt, or GPL compatible licenses like MIT, WTFPL.
-See headers of each files for further details.
+= 4.1.18 October 11th 2018 =
+* improved : display only one admin notification ( if any ) at a time
+* improved : Customizr various minor plugin compatibility improvements
 
+= 4.1.17 October 8th 2018 =
+* fixed : compatibility with the Nimble builder plugin, drop in __after_header location impossible when the header is transparent
 
-####################### Changelog ######################
+= 4.1.16 October 7th 2018 =
+* imp : added a Nimble dropzone location "__before_main_wrapper"
+* imp : added a priority param when registering a Nimble location
+
+= 4.1.15 October 6th 2018 =
+* fixed : missing space between fancybox link attributes. fixes #1593
+* fixed : WooCommerce variation form inputs appearance on Mozilla browsers. fixes #1598
+* improved : support custom post types in related posts
+* added : new option to make the header absolute positionned with a transparent background, on home.
+
+= 4.1.13 August 28th 2018 =
+* fixed : Comment RTL alignment. fixes #1582
+* fixed : Mobile menu doesn't open when using tab plugin (WPBakery Page Builder). fixes #1586
+* fixed : learnpress - avoid infinite loop when user tries to enroll a course.fixes #1589
+* fixed : improve learndash ordered list items style. fixes #1591
+* fixed : theme screenshot update following the new rule from the theme review team. https://make.wordpress.org/themes/2018/08/13/updated-screenshot-requirements/
+
+= 4.1.12 August 9th 2018 =
+* improved : theme screenshot compatibility with the latest requirements of the theme repository on WordPress.org, second pass following discussion : https://themes.trac.wordpress.org/ticket/58335
+
+= 4.1.11 August 9th 2018 =
+* improved : theme screenshot compatibility with the latest requirements of the theme repository on WordPress.org. (see https://make.wordpress.org/themes/2018/08/08/new-additions-to-the-screenshots-and-featured-images-requirements/)
+
+= 4.1.10 August 1st 2018 =
+* added : new option to display the site title next to the logo. Enabled by default. fixes #1573
+* imp : always make sure WC functions exist before calling them. fixes #1529
+* imp : replace slider iphone checks with checkboxes consistent with the Gutenberg editor style. also fixes #1540
+* imp : better compatibility with the Gutenberg editor for post-formats metaboxes. fixes #1576
+
+= 4.1.9 July 17th 2018 =
+* Imp: make sure the_author_description filter hook is fired. fixes #1561
+* Fix: make sure to respect the threaded comments wp setting. fixes #1563
+
+= 4.1.8 June 22nd 2018 =
+* Impr : compliancy with the latests WordPress.org rules for the themes : the demo content in previewer should be disabled. Featured pages and slider should be opted-in by users and not enabled by default.
+
+= 4.1.7 June 19th 2018 =
+* Fix: do not wrap ol item counters. fixes #1551
+* Fix: improve scoping of the link underline effect only to widgets we know. fixes #1544
+* Fix: do not print related posts by tags when the post has no tags. fixes #1549
+* Impr: improve some woocommerce checkout elements alignment. fixes #1536
+* Impr: when reacting to the post-load event make sure the response object is defined. fixes presscustomizr/customizr#1548
+* Impr: dropdown on hover: make sure pointer events on scroll are still allowed if there's at least one submenu opened
+
+= 4.1.6 June 6th 2018 =
+* Fix: radio and checkboxes style that should be applied only to relevant elments to avoid plugin conflits ( contact forms plugins for example ). fixes #1542
+
+= 4.1.5 May 31st 2018 =
+* Imp: make sure .navbar-brand height is set to auto to avoid issues with bootstrap3 based plugins. fixes #1533
+* Imp: build/delete retina version of pdf thumbnails. Also improve remove retina images logic. fixes #1387
+* Fix: fix comment-form-cookies-consent label and input appearance. fixes #1538
+
+= 4.1.4 May 1st 2018 =
+* Fix: search form close icon visual issue in IE10+. fixes #1512
+* Imp: do not load dev classes
+* Imp: decrease space above WooCommerce page title. fixes #1521
+* Added: options to fine tuning singular featured image height in smartphones
+both in modern and classical style fixes #1524
+
+= 4.1.3 April 15th 2018 =
+* Fix: no need to enqueue the front placeholders assets when user not logged in. fixes #1513
+* Fix: make sure the mfp gallery left arrow is correctly aligned. fixes #1515
+* Fix: set word-wrap break-word for whatever text in the page content. This will avoid text overflowing the parent element width, for example in list items
+
 = 4.1.2 March 29th 2018 =
 * Fix: author meta link pointing to wrong URL. fixes #1509
 
@@ -1882,3 +1956,7 @@ added grid design option as a specific set to be revealed on click
 
 = 1.0 April 16th, 2013 =
 * Initial Release
+
+== Resources ==
+* All images included in the theme are either created for the theme and inheriting its license, or licensed under CC0.
+* All other theme assets like scripts, stylesheets are licensed under GNU General Public License version 2, see file license.txt, or GPL compatible licenses like MIT, WTFPL. See headers of each files for further details.

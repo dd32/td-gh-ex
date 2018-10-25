@@ -1419,7 +1419,7 @@ var TCParams = TCParams || {};
       }
 
       this.$element[dimension](0)
-      this.transition('addClass', $.Event('show'), 'shown')
+      this.transition('addClass', $.Event('show.czrCollapse'), 'shown.czrCollapse')
       $.support.transition && this.$element[dimension](this.$element[0][scroll])
       this._collapsed = false;
       if ( ! this.$element.hasClass('nav-collapse') )
@@ -1451,7 +1451,7 @@ var TCParams = TCParams || {};
       if (this.transitioning || ( this._collapsed && !this.$element.hasClass('in') ) ) return
       dimension = this.dimension()
       this.reset(this.$element[dimension]())
-      this.transition('removeClass', $.Event('hide'), 'hidden')
+      this.transition('removeClass', $.Event('hide.czrCollapse'), 'hidden.czrCollapse')
       this.$element[dimension](0)
       this._collapsed = true;
       if ( ! this.$element.hasClass('nav-collapse') )
@@ -2296,8 +2296,8 @@ var TCParams = TCParams || {};
                   .attr( 'srcset' , _src_set )
                   .attr( 'src', _src )
                   .load( function () {
-                        if ( ! $_img.hasClass('tc-smart-loaded') ) {
-                              $_img.fadeIn(self.options.fadeIn_options).addClass('tc-smart-loaded');
+                        if ( ! $_img.hasClass('czr-smart-loaded') ) {
+                              $_img.fadeIn(self.options.fadeIn_options).addClass('czr-smart-loaded');
                         }
                         if ( ( 'undefined' !== typeof $_img.attr('data-tcjp-recalc-dims')  ) && ( false !== $_img.attr('data-tcjp-recalc-dims') ) ) {
                               var _width  = $_img.originalWidth(),
@@ -3963,44 +3963,65 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
               return '';
             return string.length > length ? string.substr( 0, length - 1 ) : string;
       };
-      czrapp._prettyfy = function( args ) {
+      var _prettyPrintLog = function( args ) {
             var _defaults = {
                   bgCol : '#5ed1f5',
                   textCol : '#000',
-                  consoleArguments : [],
-                  prettyfy : true
+                  consoleArguments : []
             };
             args = _.extend( _defaults, args );
 
-            var _toArr = Array.from( args.consoleArguments );
+            var _toArr = Array.from( args.consoleArguments ),
+                _truncate = function( string ){
+                      if ( ! _.isString( string ) )
+                        return '';
+                      return string.length > 300 ? string.substr( 0, 299 ) + '...' : string;
+                };
             if ( ! _.isEmpty( _.filter( _toArr, function( it ) { return ! _.isString( it ); } ) ) ) {
-                  _toArr =  JSON.stringify( _toArr );
+                  _toArr =  JSON.stringify( _toArr.join(' ') );
             } else {
                   _toArr = _toArr.join(' ');
             }
-            if ( args.prettyfy )
-              return [
-                    '%c ' + czrapp._truncate( _toArr ),
-                    [ 'background:' + args.bgCol, 'color:' + args.textCol, 'display: block;' ].join(';')
-              ];
-            else
-              return czrapp._truncate( _toArr );
+            return [
+                  '%c ' + _truncate( _toArr ),
+                  [ 'background:' + args.bgCol, 'color:' + args.textCol, 'display: block;' ].join(';')
+            ];
+      };
+
+      var _wrapLogInsideTags = function( title, msg, bgColor ) {
+            if ( ( _.isUndefined( console ) && typeof window.console.log != 'function' ) )
+              return;
+            if ( czrapp.localized.isDevMode ) {
+                  if ( _.isUndefined( msg ) ) {
+                        console.log.apply( console, _prettyPrintLog( { bgCol : bgColor, textCol : '#000', consoleArguments : [ '<' + title + '>' ] } ) );
+                  } else {
+                        console.log.apply( console, _prettyPrintLog( { bgCol : bgColor, textCol : '#000', consoleArguments : [ '<' + title + '>' ] } ) );
+                        console.log( msg );
+                        console.log.apply( console, _prettyPrintLog( { bgCol : bgColor, textCol : '#000', consoleArguments : [ '</' + title + '>' ] } ) );
+                  }
+            } else {
+                  console.log.apply( console, _prettyPrintLog( { bgCol : bgColor, textCol : '#000', consoleArguments : [ title ] } ) );
+            }
       };
       czrapp.consoleLog = function() {
             if ( ! czrapp.localized.isDevMode )
               return;
             if ( ( _.isUndefined( console ) && typeof window.console.log != 'function' ) )
               return;
-
-            console.log.apply( console, czrapp._prettyfy( { consoleArguments : arguments } ) );
+            console.log.apply( console, _prettyPrintLog( { consoleArguments : arguments } ) );
+            console.log( 'Unstyled console message : ', arguments );
       };
 
       czrapp.errorLog = function() {
             if ( ( _.isUndefined( console ) && typeof window.console.log != 'function' ) )
               return;
 
-            console.log.apply( console, czrapp._prettyfy( { bgCol : '#ffd5a0', textCol : '#000', consoleArguments : arguments } ) );
+            console.log.apply( console, _prettyPrintLog( { bgCol : '#ffd5a0', textCol : '#000', consoleArguments : arguments } ) );
       };
+
+
+      czrapp.errare = function( title, msg ) { _wrapLogInsideTags( title, msg, '#ffd5a0' ); };
+      czrapp.infoLog = function( title, msg ) { _wrapLogInsideTags( title, msg, '#5ed1f5' ); };
       czrapp.doAjax = function( queryParams ) {
             queryParams = queryParams || ( _.isObject( queryParams ) ? queryParams : {} );
 
@@ -4028,12 +4049,16 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
 
             $.post( ajaxUrl, _query_ )
                   .done( function( _r ) {
-                        if ( '0' === _r ||  '-1' === _r ) {
-                              czrapp.errorLog( 'czrapp.doAjax : done ajax error for : ', _query_.action, _r );
+                        if ( '0' === _r ||  '-1' === _r || false === _r.success ) {
+                              czrapp.errare( 'czrapp.doAjax : done ajax error for action : ' + _query_.action , _r );
+                              dfd.reject( _r );
                         }
+                        dfd.resolve( _r );
                   })
-                  .fail( function( _r ) { czrapp.errorLog( 'czrapp.doAjax : failed ajax error for : ', _query_.action, _r ); })
-                  .always( function( _r ) { dfd.resolve( _r ); });
+                  .fail( function( _r ) {
+                        czrapp.errare( 'czrapp.doAjax : failed ajax error for : ' + _query_.action, _r );
+                        dfd.reject( _r );
+                  });
             return dfd.promise();
       };
 })(jQuery, czrapp);
@@ -4074,7 +4099,8 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
                           czrapp.errorLog( 'setupDOMListeners : selector must be a string not empty. Aborting setup of action(s) : ' + _event.actions.join(',') );
                           return;
                     }
-                    args.dom_el.on( _event.trigger , _event.selector, function( e, event_params ) {
+                    var once = _event.once ? _event.once : false;
+                    args.dom_el[ once ? 'one' : 'on' ]( _event.trigger , _event.selector, function( e, event_params ) {
                           e.stopPropagation();
                           if ( czrapp.isKeydownButNotEnterEvent( e ) ) {
                             return;
@@ -4614,7 +4640,7 @@ var czrapp = czrapp || {};
                         });
                   };//end centerInfiniteImagesClassicStyle
                   czrapp.$_body.on( 'post-load', function( e, response ) {
-                        if ( 'success' == response.type && response.collection && response.container ) {
+                        if ( ( 'undefined' !== typeof response ) && 'success' == response.type && response.collection && response.container ) {
                               centerInfiniteImagesClassicStyle(
                                   response.collection,
                                   '#'+response.container //_container
