@@ -4,7 +4,7 @@ Description: AyaPsychology is fully Responsive WordPress Theme with Built-in Hom
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayapsychology
-Version: 1.0.2
+Version: 1.0.3
 Text Domain: ayapsychology
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -417,7 +417,7 @@ aside {
 	padding:10px 0 0 0;
 }
 
-#sidebar ul:not(.social-widget) > li:before,
+#sidebar ul:not(.social-widget):not(.ui-tabs-nav) > li:before,
 article ul > li:before {
 	content:"\f06e";
 	font-family:'FontAwesome';
@@ -539,7 +539,7 @@ article,
 	margin:0 0 0 14px;
 }
 
-.col ul:not(.social-widget) > li:before {
+.col ul:not(.social-widget):not(.ui-tabs-nav) > li:before {
 	font-family:'FontAwesome';
 	font-style:normal;
 	font-weight:normal;
@@ -1634,6 +1634,7 @@ blockquote {
 	letter-spacing:1px;
 	float:none;
 	clear:both;
+	text-align:center;
 }
 
 .home-col-title .advanced-text-icon {
@@ -1676,7 +1677,7 @@ blockquote {
 	padding:0 5px 1px 1px;
 	margin-bottom:-2px;
 	font-weight:normal;
-	font-size:14px;
+	font-size:22px;
 	border-bottom:4px solid #ffffff;;
 	color:#eeeeee;
 	letter-spacing:1px;
