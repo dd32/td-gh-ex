@@ -276,7 +276,7 @@ function catchflames_page_content( $options ) {
 						elseif ( 'full-content' == $show_content ) {
 							$content = apply_filters( 'the_content', get_the_content() );
 							$content = str_replace( ']]>', ']]&gt;', $content );
-							$catchflames_page_content .= '<div class="entry-content">' . $content . '</div><!-- .entry-content -->';
+							$catchflames_page_content .= '<div class="entry-content">' . wp_kses_post( $content ) . '</div><!-- .entry-content -->';
 						}
 					$catchflames_page_content .= '
 					</div><!-- .entry-container -->

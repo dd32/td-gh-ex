@@ -265,8 +265,8 @@ function catchflames_transition_effects() {
  */
 function catchflames_slider_types() {
 	$options = array(
-		'demo-slider' 		=> __( 'Demo Slider', 'catch-flames' ),
-		'page-slider' 		=> __( 'Featured Page Slider', 'catch-flames' ),
+		'demo-slider' 		=> __( 'Demo', 'catch-flames' ),
+		'page-slider' 		=> __( 'Page', 'catch-flames' ),
 	);
 
 	return apply_filters( 'catchflames_slider_types', $options );
@@ -279,8 +279,8 @@ function catchflames_slider_types() {
  */
 function catchflames_featured_content_types() {
 	$options = array(
-		'demo-featured-content'     => __( 'Demo Featured Content', 'catch-flames' ),
-		'featured-page-content'     => __( 'Featured Page Content', 'catch-flames' ),
+		'demo-featured-content'     => __( 'Demo', 'catch-flames' ),
+		'featured-page-content'     => __( 'Page', 'catch-flames' ),
 	);
 
 	return apply_filters( 'catchflames_featured_content_types', $options );

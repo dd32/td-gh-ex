@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Flames\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-03-06 12:35+0545\n"
-"PO-Revision-Date: 2018-03-06 12:35+0545\n"
+"POT-Creation-Date: 2018-10-25 11:50+0545\n"
+"PO-Revision-Date: 2018-10-25 11:50+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: sv_SE\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
@@ -776,23 +776,16 @@ msgid "shuffle"
 msgstr "blanda"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:268
-#: ../inc/panel/theme-options.php:783
-msgid "Demo Slider"
+#: ../inc/panel/catchflames-themeoptions-defaults.php:282
+msgid "Demo"
 msgstr ""
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:269
-#: ../inc/panel/theme-options.php:788
-msgid "Featured Page Slider"
-msgstr ""
-
-#: ../inc/panel/catchflames-themeoptions-defaults.php:282
-msgid "Demo Featured Content"
-msgstr ""
-
 #: ../inc/panel/catchflames-themeoptions-defaults.php:283
-#: ../inc/panel/theme-options.php:622
-msgid "Featured Page Content"
-msgstr ""
+#, fuzzy
+#| msgid "Pages:"
+msgid "Page"
+msgstr "Sidor:"
 
 #: ../inc/panel/catchflames-themeoptions-defaults.php:311
 #: ../inc/panel/theme-options.php:712
@@ -1428,6 +1421,10 @@ msgstr ""
 msgid "Demo Content"
 msgstr ""
 
+#: ../inc/panel/theme-options.php:622
+msgid "Featured Page Content"
+msgstr ""
+
 #: ../inc/panel/theme-options.php:635
 msgid "Enable Content"
 msgstr ""
@@ -1475,6 +1472,14 @@ msgstr ""
 #: ../inc/panel/theme-options.php:757 ../inc/panel/theme-options.php:910
 msgid "Click Here To Edit"
 msgstr "Klicka Här för att Redigera"
+
+#: ../inc/panel/theme-options.php:783
+msgid "Demo Slider"
+msgstr ""
+
+#: ../inc/panel/theme-options.php:788
+msgid "Featured Page Slider"
+msgstr ""
 
 #: ../inc/panel/theme-options.php:795
 msgid "Enable Sidebar"
@@ -1533,7 +1538,9 @@ msgid "Copyright"
 msgstr "Copyright"
 
 #: ../inc/panel/theme-options.php:1660
-msgid "All Rights Reserved"
+#, fuzzy
+#| msgid "All Rights Reserved"
+msgid "All Rights Reserved."
 msgstr "All Rights Reserved"
 
 #: ../search.php:15

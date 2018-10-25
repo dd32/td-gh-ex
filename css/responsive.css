@@ -1663,3 +1663,65 @@ and (orientation : landscape) {
  		font-size: 16px;
   	}
 }
+
+@media screen and (min-width: 1600px) {
+	.one-column.no-sidebar .site {
+		width: 780px;
+	}
+	#main,
+	#footer-sidebar,
+	#main-slider.normal-width,
+	.no-sidebar.one-column #main-slider {
+		padding-top: 35px;
+	}
+	.hentry,
+	.no-results,
+	#author-info,
+	#disqus_thread,
+	#content .error404,
+	.widget,
+	#supplementary .widget,
+	#comments {
+	    margin-bottom: 35px;
+	    padding: 35px;
+	}
+	.wrapper {
+		width: 1350px;
+	}
+	.two-columns .wrapper,
+	.two-columns #main-slider.normal-width {
+		width: 1215px;
+	}
+	.three-columns .content-sidebar-wrap {
+	    width: 1045px;
+	}
+	.three-columns.equal .content-sidebar-wrap {
+		width: 945px;
+	}
+	#primary {
+		width: 780px;
+	}
+	#secondary,
+	.three-columns.equal #third-sidebar {
+		width: 370px;
+	}
+	.three-columns #third-sidebar {
+		width: 270px;
+	}
+	#supplementary.three .widget-area {
+	    margin-right: 3%;
+	    width: 31.33%;
+	}
+	.one-column.no-sidebar #header-top .wrapper,
+	.one-column.no-sidebar #header-content .wrapper,
+	.one-column.no-sidebar #supplementary .wrapper,
+	.one-column.no-sidebar #site-generator .wrapper {
+		width: 94%;
+	}
+	#content .featured-image {
+		margin-bottom: 21px;
+	}
+	#content .image-full-width .featured-image {
+		margin: -35px -35px 21px;
+	}
+}

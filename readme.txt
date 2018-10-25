@@ -75,6 +75,15 @@ black, gray, tan, white, dark, light, one-column, two-columns, three-columns, le
 
 == Change log ==
 
+= 3.4 (Released: October 25, 2018) =
+* Added: Core Privacy Policy link support in footer
+* Bug Fixed: Design issue with Catch Infinite Scroll plugin
+* Replaced: class_exists( 'woocommerce' ) with class_exists( 'WooCommerce' ) as WooCommerce update caused issues
+* Bug Fixed: Updated content delivered through the_content filter
+* Updated: Layout for higher resolution
+* Updated: Upgrade to pro button css update
+* Updated: Content type label updated
+
 = 3.3.4 (Released: March 06, 2018) =
 * Code Optimization
 * Enhanced Security: Replaced wp_filter_post_kses with wp_kses_post

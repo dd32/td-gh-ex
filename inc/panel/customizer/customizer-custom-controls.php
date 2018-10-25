@@ -11,7 +11,7 @@ class Catchflames_Note_Control extends WP_Customize_Control {
 	public $type = 'description';
 
 	public function render_content() {
-		echo '<h2 class="description">' . $this->label . '</h2>';
+		echo '<h2 class="description">' . $this->label . '</h2>'; // WPCS: XSS OK.
 	}
 }
 
