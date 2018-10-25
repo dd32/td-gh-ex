@@ -4,7 +4,7 @@ Description: AyaWild is a fully responsive WordPress Theme. Features include a b
 Theme URI: https://ayatemplates.com/product/ayawild
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.0.2
+Version: 1.0.3
 Text Domain: ayawild
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2.0
@@ -422,8 +422,8 @@ ul {
 	padding:10px 0 0 0;
 }
 
-#sidebar ul:not(.social-widget) > li:before,
-article ul:not(.social-widget) > li:before {
+#sidebar ul:not(.social-widget):not(.ui-tabs-nav) > li:before,
+article ul:not(.social-widget):not(.ui-tabs-nav) > li:before {
 	content:"\f06c";
 	font-family:'FontAwesome';
 	display:inline-block;
@@ -455,7 +455,7 @@ article ul:not(.social-widget) > li:before {
 	padding:10px 0 10px 0;
 }
 
-article ul:not(.social-widget) > li:before {
+article ul:not(.social-widget):not(.ui-tabs-nav) > li:before {
 	font-family:'FontAwesome';
 	content:"\f105";
 	display:inline-block;
@@ -537,7 +537,7 @@ article,
 	margin:0 0 0 14px;
 }
 
-.col ul:not(.social-widget) > li:before {
+.col ul:not(.social-widget):not(.ui-tabs-nav) > li:before {
 	font-family:'FontAwesome';
 	font-style:normal;
 	font-weight:normal;
@@ -1644,6 +1644,7 @@ blockquote {
 	letter-spacing:1px;
 	float:none;
 	clear:both;
+	text-align:center;
 }
 
 .home-col-title .advanced-text-icon {
