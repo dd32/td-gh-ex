@@ -728,7 +728,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 
 				$fallback_output .= '>';
 
-				$fallback_output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="' . esc_attr__( 'Add a menu', 'wp-bootstrap-navwalker' ) . '">' . esc_html__( 'Add a menu', 'wp-bootstrap-navwalker' ) . '</a></li>';
+				$fallback_output .= '<li><a href="' . esc_url( admin_url( 'nav-menus.php' ) ) . '" title="' . esc_attr__( 'Add a menu', 'atlas-concern' ) . '">' . esc_html__( 'Add a menu', 'atlas-concern' ) . '</a></li>';
 
 				$fallback_output .= '</ul>';
 
