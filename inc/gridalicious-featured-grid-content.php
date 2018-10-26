@@ -76,7 +76,7 @@ if ( ! function_exists( 'gridalicious_demo_grid_content' ) ) :
 function gridalicious_demo_grid_content() {
 	$gridalicious_demo_grid_content ='
 								<a class="grid-box first" title="Grid Content Image 1" href="'. esc_url( home_url( '/' ) ) .'">
-									<img src="' . get_template_directory_uri() . '/images/gallery/grid-800x450.jpg" class="wp-post-image" alt="Grid Content Image 1" title="Grid Content Image 1">
+									<img src="' . trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/gallery/grid-800x450.jpg" class="wp-post-image" alt="Grid Content Image 1" title="Grid Content Image 1">
 									<div class="caption">
 										<span class="vcenter">
 											<span class="entry-title">
@@ -90,7 +90,7 @@ function gridalicious_demo_grid_content() {
 								</a><!-- .grid-box -->
 
 								<a class="grid-box" title="Grid Content Image 2" href="'. esc_url( home_url( '/' ) ) .'">
-									<img src="' . get_template_directory_uri() . '/images/gallery/grid-800x450-2.jpg" class="wp-post-image" alt="Grid Content Image 2" title="Grid Content Image 2">
+									<img src="' . trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/gallery/grid-800x450-2.jpg" class="wp-post-image" alt="Grid Content Image 2" title="Grid Content Image 2">
 									<div class="caption">
 										<span class="vcenter">
 											<span class="entry-title">
@@ -104,7 +104,7 @@ function gridalicious_demo_grid_content() {
 								</a><!-- .grid-box -->
 
 								<a class="grid-box" title="Grid Content Image 3" href="'. esc_url( home_url( '/' ) ) .'">
-									<img src="' . get_template_directory_uri() . '/images/gallery/grid-800x450-3.jpg" class="wp-post-image" alt="Grid Content Image 3" title="Grid Content Image 3">
+									<img src="' . trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/gallery/grid-800x450-3.jpg" class="wp-post-image" alt="Grid Content Image 3" title="Grid Content Image 3">
 									<div class="caption">
 										<span class="vcenter">
 											<span class="entry-title">
@@ -182,7 +182,7 @@ function gridalicious_page_grid_content( $options ) {
 			else {
 				//Default value if there is no first image
 				$gridalicious_image =
-					'<img class="no-image pngfix" src="'.get_template_directory_uri().'/images/gallery/no-featured-image-1200x514.jpg" />';
+					'<img class="no-image pngfix" src="'.esc_url( get_template_directory_uri() ).'/images/gallery/no-featured-image-1200x514.jpg" />';
 
 				//Get the first image in page, returns false if there is no image
 				$gridalicious_first_image = gridalicious_get_first_image( $post->ID, 'medium', array( 'title' => $title_attribute, 'alt' => $title_attribute, 'class' => 'pngfix' ) );

@@ -23,7 +23,7 @@ function gridalicious_get_default_theme_options() {
 
 	$default_theme_options = array(
 		//Site Title an Tagline
-		'logo'												=> get_template_directory_uri() . '/images/headers/logo.png',
+		'logo'												=> trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/headers/logo.png',
 		'logo_alt_text' 									=> '',
 		'logo_disable'										=> 1,
 		'move_title_tagline'								=> 0,
@@ -205,8 +205,8 @@ function gridalicious_featured_grid_content_options() {
  */
 function gridalicious_featured_content_types() {
 	$featured_content_types = array(
-		'demo-featured-content' => esc_html__( 'Demo Featured Content', 'gridalicious' ),
-		'featured-page-content' => esc_html__( 'Featured Page Content', 'gridalicious' ),
+		'demo-featured-content' => esc_html__( 'Demo', 'gridalicious' ),
+		'featured-page-content' => esc_html__( 'Page', 'gridalicious' ),
 	);
 
 	return apply_filters( 'gridalicious_featured_content_types', $featured_content_types );
@@ -250,8 +250,8 @@ function gridalicious_featured_content_show() {
  */
 function gridalicious_featured_grid_content_types() {
 	$featured_grid_content_types = array(
-		'demo-featured-grid-content' => esc_html__( 'Demo Featured Grid Content', 'gridalicious' ),
-		'featured-page-grid-content' => esc_html__( 'Featured Page Grid Content', 'gridalicious' ),
+		'demo-featured-grid-content' => esc_html__( 'Demo', 'gridalicious' ),
+		'featured-page-grid-content' => esc_html__( 'Page', 'gridalicious' ),
 	);
 
 	return apply_filters( 'gridalicious_featured_grid_content_types', $featured_grid_content_types );
@@ -533,7 +533,7 @@ function gridalicious_metabox_featured_image_options() {
 function gridalicious_get_content() {
 	$theme_data = wp_get_theme();
 
-	$gridalicious_content['left'] 	= sprintf( _x( 'Copyright &copy; %1$s %2$s. All Rights Reserved.', '1: Year, 2: Site Title with home URL', 'gridalicious' ), esc_attr( date_i18n( esc_html__( 'Y', 'gridalicious' ) ) ), '<a href="'. esc_url( home_url( '/' ) ) .'">'. esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>' );
+	$gridalicious_content['left'] 	= sprintf( _x( 'Copyright &copy; %1$s %2$s. All Rights Reserved. %3$s', '1: Year, 2: Site Title with home URL 3: Privacy Policy Link', 'gridalicious' ), esc_attr( date_i18n( esc_html__( 'Y', 'gridalicious' ) ) ), '<a href="'. esc_url( home_url( '/' ) ) .'">'. esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>', get_the_privacy_policy_link() );
 
 	$gridalicious_content['right']	= esc_attr( $theme_data->get( 'Name') ) . '&nbsp;' . esc_html__( 'by', 'gridalicious' ). '&nbsp;<a target="_blank" href="'. esc_url( $theme_data->get( 'AuthorURI' ) ) .'">'. esc_attr( $theme_data->get( 'Author' ) ) .'</a>';
 

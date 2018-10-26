@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Gridalicious\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-04-12 22:52+0545\n"
-"PO-Revision-Date: 2018-04-12 22:52+0545\n"
+"POT-Creation-Date: 2018-10-26 16:26+0545\n"
+"PO-Revision-Date: 2018-10-26 16:26+0545\n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: de_DE\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
 "_nx:1,2,4c;esc_html__;esc_html_e;esc_attr_x:1,2c\n"
@@ -125,7 +125,7 @@ msgstr "Farbschema"
 msgid "All Categories"
 msgstr "Kategorien ausw&auml;hlen"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:41
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:36
 msgid ""
 "Hold down the Ctrl (windows) / Command (Mac) button to select multiple "
 "options."
@@ -133,41 +133,41 @@ msgstr ""
 "Halten Sie die STRG- (Windows) / bzw. Command Taste (Mac) gedr&uuml;ckt, um "
 "mehrere Kategorien auszuw&auml;hlen."
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:54
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:49
 msgid "Theme Instructions"
 msgstr "Theme Anleitung"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:58
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:53
 msgid "Support"
 msgstr "Support"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:62
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:57
 msgid "Changelog"
 msgstr "Changelog"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:66
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:61
 msgid "Donate Now"
 msgstr "Jetzt spenden"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:70
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:65
 msgid "Review"
 msgstr "Rezension"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:74
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:69
 #: ../inc/gridalicious-default-options.php:302
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:78
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:73
 #: ../inc/gridalicious-default-options.php:306
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:82
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:77
 msgid "Google+"
 msgstr "Google+"
 
-#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:86
+#: ../inc/customizer-includes/gridalicious-customizer-custom-controls.php:81
 #: ../inc/gridalicious-default-options.php:334
 msgid "Pinterest"
 msgstr "Pinterest"
@@ -793,12 +793,16 @@ msgid "Full Size"
 msgstr "Vollständige Größe"
 
 #: ../inc/gridalicious-default-options.php:208
-msgid "Demo Featured Content"
-msgstr "Demo Auswahlinhalt"
+#: ../inc/gridalicious-default-options.php:253
+msgid "Demo"
+msgstr ""
 
 #: ../inc/gridalicious-default-options.php:209
-msgid "Featured Page Content"
-msgstr "Inhalt Auswahlseite"
+#: ../inc/gridalicious-default-options.php:254
+#, fuzzy
+#| msgid "Pages:"
+msgid "Page"
+msgstr "Seiten:"
 
 #: ../inc/gridalicious-default-options.php:223
 msgid "3 columns"
@@ -819,14 +823,6 @@ msgstr "Zeige gesamten Inhalt"
 #: ../inc/gridalicious-default-options.php:239
 msgid "Hide Content"
 msgstr "Inhalt verbergen"
-
-#: ../inc/gridalicious-default-options.php:253
-msgid "Demo Featured Grid Content"
-msgstr ""
-
-#: ../inc/gridalicious-default-options.php:254
-msgid "Featured Page Grid Content"
-msgstr ""
 
 #: ../inc/gridalicious-default-options.php:268
 msgid "Default(Older Posts/Newer Posts)"
@@ -992,9 +988,11 @@ msgid "Disable Image"
 msgstr "Foto deaktivieren"
 
 #: ../inc/gridalicious-default-options.php:536
-#, php-format
-msgctxt "1: Year, 2: Site Title with home URL"
-msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+#, fuzzy, php-format
+#| msgctxt "1: Year, 2: Site Title with home URL"
+#| msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+msgctxt "1: Year, 2: Site Title with home URL 3: Privacy Policy Link"
+msgid "Copyright &copy; %1$s %2$s. All Rights Reserved. %3$s"
 msgstr "Copyright &copy; %1$s %2$s. Alle Rechte vorbehalten."
 
 #: ../inc/gridalicious-default-options.php:536
@@ -1124,6 +1122,12 @@ msgstr ""
 #: ../sidebar.php:97
 msgid "Archives"
 msgstr "Archive"
+
+#~ msgid "Demo Featured Content"
+#~ msgstr "Demo Auswahlinhalt"
+
+#~ msgid "Featured Page Content"
+#~ msgstr "Inhalt Auswahlseite"
 
 #~ msgid "Remove Icon images to disable."
 #~ msgstr "Zum Deaktivieren Icon-Grafiken entfernen."

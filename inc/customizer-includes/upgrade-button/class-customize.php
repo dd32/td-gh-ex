@@ -91,9 +91,9 @@ final class gridalicious_upgrade_pro_customize {
 	 */
 	public function enqueue_control_scripts() {
 
-		wp_enqueue_script( 'gridalicious-upgrade-button-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/customizer-includes/upgrade-button/customize-controls.js', array( 'customize-controls' ) );
+		wp_enqueue_script( 'gridalicious-upgrade-button-customize-controls', trailingslashit( esc_url( get_template_directory_uri() ) ) . 'inc/customizer-includes/upgrade-button/customize-controls.js', array( 'customize-controls' ) );
 
-		wp_enqueue_style( 'gridalicious-upgrade-button-customize-controls', trailingslashit( get_template_directory_uri() ) . 'inc/customizer-includes/upgrade-button/customize-controls.css' );
+		wp_enqueue_style( 'gridalicious-upgrade-button-customize-controls', trailingslashit( esc_url( get_template_directory_uri() ) ) . 'inc/customizer-includes/upgrade-button/customize-controls.css' );
 	}
 }
 

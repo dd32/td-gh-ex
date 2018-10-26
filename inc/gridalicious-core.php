@@ -169,9 +169,9 @@ function gridalicious_scripts() {
 
 	wp_enqueue_style( 'gridalicious-style', get_stylesheet_uri() );
 
-	wp_enqueue_script( 'gridalicious-navigation', get_template_directory_uri() . '/js/navigation.min.js', array(), '20120206', true );
+	wp_enqueue_script( 'gridalicious-navigation', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/navigation.min.js', array(), '20120206', true );
 
-	wp_enqueue_script( 'gridalicious-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.min.js', array(), '20130115', true );
+	wp_enqueue_script( 'gridalicious-skip-link-focus-fix', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/skip-link-focus-fix.min.js', array(), '20130115', true );
 
 	/**
 	 * Adds JavaScript to pages with the comment form to support
@@ -182,48 +182,48 @@ function gridalicious_scripts() {
 	}
 
 	//For genericons
-	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/css/genericons/genericons.css', false, '3.4.1' );
+	wp_enqueue_style( 'genericons', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/genericons/genericons.css', false, '3.4.1' );
 
 	/**
 	 * Enqueue the styles for the current color scheme for gridalicious.
 	 */
 	if ( $options['color_scheme'] != 'light' )
-		wp_enqueue_style( 'gricalicious-dark', get_template_directory_uri() . '/css/colors/'. $options['color_scheme'] .'.css', array(), null );
+		wp_enqueue_style( 'gricalicious-dark', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/colors/'. $options['color_scheme'] .'.css', array(), null );
 
 	/**
 	 * Loads up Responsive stylesheet and Menu JS
 	 */
-	wp_enqueue_style( 'gridalicious-responsive', get_template_directory_uri() . '/css/responsive.css' );
+	wp_enqueue_style( 'gridalicious-responsive', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/responsive.css' );
 
 	//Responsive Menu
-	wp_enqueue_script( 'jquery-sidr', get_template_directory_uri() . '/js/jquery.sidr.min.js', array('jquery'), '2.2.1.1 - 2016-03-04', false );
+	wp_enqueue_script( 'jquery-sidr', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.sidr.min.js', array('jquery'), '2.2.1.1 - 2016-03-04', false );
 
-	wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/js/fitvids.min.js', array( 'jquery' ), '1.1', true );
+	wp_enqueue_script( 'jquery-fitvids', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/fitvids.min.js', array( 'jquery' ), '1.1', true );
 
 	/**
 	 * Loads default sidr color scheme styles(Does not require handle prefix)
 	 */
 	if ( isset( $options['color_scheme'] ) && ( 'dark' == $options['color_scheme'] ) ) {
-		wp_enqueue_style( 'jquery-sidr', get_template_directory_uri() . '/css/jquery.sidr.dark.min.css', false, '2.1.0' );
+		wp_enqueue_style( 'jquery-sidr', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/jquery.sidr.dark.min.css', false, '2.1.0' );
 	}
 	else if ( isset( $options['color_scheme'] ) && ( 'light' == $options['color_scheme'] ) ) {
-		wp_enqueue_style( 'jquery-sidr', get_template_directory_uri() . '/css/jquery.sidr.light.min.css', false, '2.1.0' );
+		wp_enqueue_style( 'jquery-sidr', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/jquery.sidr.light.min.css', false, '2.1.0' );
 	}
 
 	/**
 	 * Loads up Scroll Up script
 	 */
 	if ( ! $options['disable_scrollup'] ) {
-		wp_enqueue_script( 'gridalicious-scrollup', get_template_directory_uri() . '/js/gridalicious-scrollup.min.js', array( 'jquery' ), '20072014', true  );
+		wp_enqueue_script( 'gridalicious-scrollup', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/gridalicious-scrollup.min.js', array( 'jquery' ), '20072014', true  );
 	}
 
 	/**
 	 * Enqueue custom script for gridalicious.
 	 */
-	wp_enqueue_script( 'gridalicious-custom-scripts', get_template_directory_uri() . '/js/gridalicious-custom-scripts.min.js', array( 'jquery' ), null );
+	wp_enqueue_script( 'gridalicious-custom-scripts', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/gridalicious-custom-scripts.min.js', array( 'jquery' ), null );
 
 	// Load the html5 shiv.
-	wp_enqueue_script( 'gridalicious-html5', get_template_directory_uri() . '/js/html5.min.js', array(), '3.7.3' );
+	wp_enqueue_script( 'gridalicious-html5', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/html5.min.js', array(), '3.7.3' );
 	wp_script_add_data( 'gridalicious-html5', 'conditional', 'lt IE 9' );
 }
 add_action( 'wp_enqueue_scripts', 'gridalicious_scripts' );
@@ -239,10 +239,10 @@ add_action( 'wp_enqueue_scripts', 'gridalicious_scripts' );
  */
 function gridalicious_enqueue_metabox_scripts() {
     //Scripts
-	wp_enqueue_script( 'gridalicious-metabox', get_template_directory_uri() . '/js/gridalicious-metabox.min.js', array( 'jquery', 'jquery-ui-tabs' ), '2013-10-05' );
+	wp_enqueue_script( 'gridalicious-metabox', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/gridalicious-metabox.min.js', array( 'jquery', 'jquery-ui-tabs' ), '2013-10-05' );
 
 	//CSS Styles
-	wp_enqueue_style( 'gridalicious-metabox-tabs', get_template_directory_uri() . '/css/gridalicious-metabox-tabs.css' );
+	wp_enqueue_style( 'gridalicious-metabox-tabs', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/gridalicious-metabox-tabs.css' );
 }
 add_action( 'admin_print_scripts-post-new.php', 'gridalicious_enqueue_metabox_scripts', 11 );
 add_action( 'admin_print_scripts-post.php', 'gridalicious_enqueue_metabox_scripts', 11 );

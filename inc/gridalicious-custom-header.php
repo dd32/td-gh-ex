@@ -29,7 +29,7 @@ if ( ! function_exists( 'gridalicious_custom_header' ) ) :
 		'default-text-color'     => '404040',
 
 		// Header image default
-		'default-image'			=> get_template_directory_uri() . '/images/headers/buddha.jpg',
+		'default-image'			=> trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'images/headers/buddha.jpg',
 
 		// Set height and width, with a maximum value for the width.
 		'height'                 => 514,

@@ -185,7 +185,7 @@ add_action( 'customize_register', 'gridalicious_customize_register' );
  * @since Gridalicious 0.1
  */
 function gridalicious_customize_preview() {
-	wp_enqueue_script( 'gridalicious_customizer', get_template_directory_uri() . '/js/gridalicious-customizer.min.js', array( 'customize-preview' ), '20120827', true );
+	wp_enqueue_script( 'gridalicious_customizer', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/gridalicious-customizer.min.js', array( 'customize-preview' ), '20120827', true );
 
 	//Flush transients on preview
 	gridalicious_flush_transients();
@@ -199,7 +199,7 @@ add_action( 'customize_preview_init', 'gridalicious_customize_preview' );
  * @since Gridalicious 0.1
  */
 function gridalicious_customize_scripts() {
-	wp_enqueue_script( 'gridalicious_customizer_custom', get_template_directory_uri() . '/js/gridalicious-customizer-custom-scripts.min.js', array( 'jquery' ), '20131028', true );
+	wp_enqueue_script( 'gridalicious_customizer_custom', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/gridalicious-customizer-custom-scripts.min.js', array( 'jquery' ), '20131028', true );
 
 	$gridalicious_data = array(
 		'reset_message'	=> esc_html__( 'Refresh the customizer page after saving to view reset effects', 'gridalicious' )

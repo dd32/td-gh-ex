@@ -149,6 +149,12 @@ For detail instructions, check out theme instructions page at https://catchtheme
 
 == Change Log ==
 
+= 1.9 (Released: October 26, 2018) =
+* Added: Core Privacy Policy link support in footer
+* Update: Upgrade to pro button css
+* Updated Content delivered through the_content filter
+* Updated: Content type label
+
 = 1.8 (Released: April 12, 2018) =
 * Bug Fixed: Breadcrumb custom post archive link
 * Bug Fixed: Design issue with Catch Infinite Scroll plugin
