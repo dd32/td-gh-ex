@@ -34,9 +34,17 @@ function absolutte_register_required_plugins() {
             'force_deactivation' => false,
         ),
         array(
+            'name'               => 'Absolutte Blocks',
+            'slug'               => 'absolutte-blocks',
+            'version'            => '1.0.1',
+            'required'           => false,
+            'force_activation'   => false,
+            'force_deactivation' => false,
+        ),
+        array(
             'name'               => 'Kirki Toolkit',
             'slug'               => 'kirki',
-            'version'           => '2.0.7',
+            'version'            => '2.0.7',
             'required'           => false,
             'force_activation'   => false,
             'force_deactivation' => false,
@@ -44,7 +52,7 @@ function absolutte_register_required_plugins() {
         array(
             'name'               => 'Meta Box',
             'slug'               => 'meta-box',
-            'version'           => '4.15.4',
+            'version'            => '4.15.4',
             'required'           => false,
             'force_activation'   => false,
             'force_deactivation' => false,
@@ -52,24 +60,24 @@ function absolutte_register_required_plugins() {
         array(
             'name'               => 'Jetpack by WordPress.com',
             'slug'               => 'jetpack',
-            'version'           => '4.6.0',
+            'version'            => '4.6.0',
             'required'           => false,
             'force_activation'   => false,
             'force_deactivation' => false,
         ),
         array(
-            'name'          => 'One Click Demo Import',
-            'slug'          => 'one-click-demo-import',
-            'required'          => false,
-            'version'           => '2.2.1',
-            'force_activation'      => false,
-            'force_deactivation'    => false,
-            'external_url'      => '',
+            'name'               => 'One Click Demo Import',
+            'slug'               => 'one-click-demo-import',
+            'required'           => false,
+            'version'            => '2.2.1',
+            'force_activation'   => false,
+            'force_deactivation' => false,
+            'external_url'       => '',
         ),
         array(
             'name'               => 'Contact Form 7',
             'slug'               => 'contact-form-7',
-            'version'           => '5.0.4',
+            'version'            => '5.0.4',
             'required'           => false,
             'force_activation'   => false,
             'force_deactivation' => false,
@@ -85,13 +93,13 @@ function absolutte_register_required_plugins() {
      */
     $config = array(
         'id'           => 'absolutte',
-        'default_path' => '',                      // Default absolute path to pre-packaged plugins.
-        'menu'         => 'tgmpa-install-plugins', // Menu slug.
-        'has_notices'  => true,                    // Show admin notices or not.
-        'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
-        'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
-        'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-        'message'      => ''
+        'default_path' => '', // Default absolute path to pre-packaged plugins.
+         'menu'         => 'tgmpa-install-plugins', // Menu slug.
+         'has_notices'  => true, // Show admin notices or not.
+         'dismissable'  => true, // If false, a user cannot dismiss the nag message.
+         'dismiss_msg'  => '', // If 'dismissable' is false, this message will be output at top of nag.
+         'is_automatic' => false, // Automatically activate plugins after installation or not.
+         'message'      => '',
     );
 
     tgmpa( $plugins, $config );
