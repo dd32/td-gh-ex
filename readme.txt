@@ -1,435 +1,354 @@
-****NOTE****
-ALL PRE-FIX used in the Enigma is used the PRE-FIXED for all theme by the Weblizar.
-Consider weblizar PRE-Fix for function-name and as a slug of the Theme Enigma.
+=== Enigma ===
+Contributors: weblizar
+Tags: left-sidebar, two-columns, three-columns, four-columns, custom-menu, right-sidebar, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, translation-ready ,  custom-logo , news
+Requires at least: 4.0
+Tested up to: 4.9.8
+Stable tag: 4.8.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Enigma
+Free WordPress theme can be used for different kinds of websites and multipurpose uses.
 
-CHANGE-LOG:
+== Description ==
+Enigma is an outstanding superfine creation from weblizar, Enigma has become one of the most popular multipurpose responsive theme with WPML lovers by many professionals for its amazing capabilities and great designs. Enigma has Flickr as a custom widget to showing up your Flickr Photos .Enigma provide you a platform for business template, awesome BOOTSTRAP Carousel slider for full CMS control option to match your logo & website, wide layout and many more.
 
-@Version: 4.8 [10-10-2018]
-1. Banner removed , Welcome page added
 
-@Version: 4.7 [20-09-2018]
-1. Screen-shot updated
-2. Pro banner added
+== Frequently Asked Questions ==
 
-@Version: 4.6 [17-08-2018]
-1. Minor issue fixed.
+= Where can i raise the theme issue? =
 
-@Version: 4.5 [25-07-2018]
-1. Minor issue fixed.
+Please drop your issues here <a href="https://wordpress.org/support/theme/enigma"> we'll try to triage issues reported on the theme forum, you'll get a faster response.
 
-@Version: 4.4 [17-07-2018]
-1. Google fonts added in typography option.
+== Changelog ==
 
-@Version: 4.3 [26-06-2018]
-1. Go Enigma pro option added in customizer.
-2. Rating option added on admin panel.
+= 4.8.1 =
+* Readme file changed as per new rule.
+* Minor changes in theme info notice.
 
-@Version: 4.2 [19-06-2018]
-1. FontAwesome library updated version 4.7.0
-2. Go Enigma Premium option added on admin panel.
+= 4.8 =
+* Banner removed, Welcome page added.
 
-@Version: 4.1.9 [07-06-2018]
-1. Bug Fix
+= 4.7 =
+* Screen-shot updated.
+* Pro banner added.
 
-@Version: 4.1.8 [19-05-2018]
-1. screen-shot image change
-2. Image url change as per theme review guide line
+= 4.6 =
+* Minor issue fixed.
 
+= 4.5 =
+* Minor issue fixed.
 
-@Version: 4.1.7 [09-05-2018]
-1. Box Layout option added.
+= 4.4 =
+* Google fonts added in typography option.
 
-@Version: 4.1.6 [23-04-2018]
-1. Slider Animation option added.
-2. Breadcrumb option added.
+= 4.3 =
+* Go Enigma pro option added in customizer.
+* Rating option added on admin panel.
 
-@Version: 4.1.5 [02-04-2018]
-1. Snow effect issue fixed.
-2. Updated Pro Themes and Plugins Page.
+= 4.2 =
+* FontAwesome library updated version 4.7.0
+* Go Enigma Premium option added on admin panel.
 
-@Version: 4.1.4 [24-03-2018]
-1. Autoplay Option added in blog options. 
-2. Read More button option added in blog options. 
+= 4.1.9 =
+* Bug Fix
 
-@Version: 4.1.3 [12-03-2018]
-1. Author name added for single page.
-2. Minor changes in rate banner. 
+= 4.1.8 =
+* screen-shot image change
+* Image url change as per theme review guide line
 
-@Version: 4.1.2 [27-02-2018]
-1. Description Updates.
+= 4.1.7 =
+* Box Layout option added.
 
-@Version: 4.1.1 [08-02-2018]
-1.Minor Change.
+= 4.1.6 =
+* Slider Animation option added.
+* Breadcrumb option added.
 
-@Version: 4.1 [03-01-2018]
-1. Category option added for blog.
+= 4.1.5 =
+* Snow effect issue fixed.
+* Updated Pro Themes and Plugins Page.
 
-@Version: 4.0 [21-12-2017]
-1. Review Request banner dismiss option added.
+= 4.1.4 =
+* Autoplay Option added in blog options. 
+* Read More button option added in blog options. 
 
-@Version: 3.9 [08-12-2017]
-1. Snow effect option added.
+= 4.1.3 =
+* Author name added for single page.
+* Minor changes in rate banner. 
 
-@Version: 3.8 [05-12-2017]
-1. Animation feature added in Slider Option.
-2. Snow effect added.
+= 4.1.2 =
+* Description Updates.
 
-@Version: 3.7 [16-11-2017]
-1. Minor changes in functions.php
+= 4.1.1 =
+* Minor Change.
 
-@Version: 3.6 [31-10-2017]
-1. Quick edit option added.
-2. menu walker changed.
+= 4.1 =
+* Category option added for blog.
 
-@Version: 3.5 [23-09-2017]
-1. Editor in Service section added.
-2. HomePage Section manager  added.
-3. User Rating Banner.
+= 4.0 =
+* Review Request banner dismiss option added.
 
+= 3.9 =
+* Snow effect option added.
 
-@Version: 3.4 [16-08-2017]
-Icon picker feature added in Service Options.
+= 3.8 =
+* Animation feature added in Slider Option.
+* Snow effect added.
 
-@Version: 3.3 [12-07-2017]
-New feature add in Blog Option.
-Excerpt Option added.
+= 3.7 =
+* Minor changes in functions.php
 
-@Version: 3.2 [20-06-2017]
-Minor changes in header
+= 3.6 =
+* Quick edit option added.
+* menu walker changed.
 
-@Version: 3.1 [02-06-2017]
-Minor changes in header
+= 3.5 =
+* Editor in Service section added.
+* HomePage Section manager  added.
+* User Rating Banner.
 
-@Version: 3.0 [26-05-2017]
-Minor changes
 
+= 3.4 =
+* Icon picker feature added in Service Options.
 
-@Version: 2.9 [27-04-2017]
-1. Extra Section for Child-Theme.
-2. Coupon Code added.
+= 3.3 =
+* New feature add in Blog Option.
+* Excerpt Option added.
 
+= 3.2 =
+* Minor changes in header
 
+= 3.1 =
+* Minor changes in header
 
-@Version: 2.8.6 [06-04-2017]
-1. Appointment Schedular plugin added in plugin recommendation.
-2. Logo/Site Title Center feature added.
+= 3.0 =
+* Minor changes
 
-@Version: 2.8.5 [20/03/2017]
-1. Minor changes in custom header.
+= 2.9 =
+* Extra Section for Child-Theme.
+* Coupon Code added.
 
-CHANGE-LOG:
-@Version: 2.8.4 [16/02/2017]
-Gallery bug fixed.
+= 2.8.6 =
+* Appointment Schedular plugin added in plugin recommendation.
+* Logo/Site Title Center feature added.
 
-@Version: 2.8.3 [2/02/2017]
-1. Header text color support added.
+= 2.8.5 =
+* Minor changes in custom header.
 
-CHANGE-LOG:
-@Version: 2.8.2 [24/01/2017]
-1. Snow effect removed.
-2. Minor issue Fixed.
+= 2.8.4 =
+* Gallery bug fixed.
 
-@Version: 2.8.1 [29/12/2016]
-1. Slider interval added.
+= 2.8.3 =
+* Header text color support added.
 
-@Version: 2.8 [22/12/2016]
-1. Custom-header image added.
-2. FontAwesome library updated version 4.7.0
-3. Snow effect added
+= 2.8.2 =
+* Snow effect removed.
+* Minor issue Fixed.
 
-@Version: 2.7.2 [02/12/2016]
-Minor Update in Social Icons [whatsapp link]
+= 2.8.1 =
+* Slider interval added.
 
-@Version: 2.7.1 [29/11/2016]
-1.Minor Fixes.
-2.Updated Pro Themes and Plugins Page with features.
+= 2.8 =
+* Custom-header image added.
+* FontAwesome library updated version 4.7.0
+* Snow effect added.
 
+= 2.7.2 =
+* Minor Update in Social Icons [whatsapp link].
 
-@Version: 2.7 [26/11/2016]
-1. FA library.
-2. More social icon added in header and footer.
+= 2.7.1 =
+* Minor Fixes.
+* Updated Pro Themes and Plugins Page with features.
 
+= 2.7 =
+* FA library.
+* More social icon added in header and footer.
 
-@Version: 2.6 [14/09/2016]
-1.	Plugin Recommandation.
-2.  Minor Fix.
-3.  Tags updated.
+= 2.6 =
+* Plugin Recommandation.
+* Minor Fix.
+* Tags updated.
 
-@Version: 2.5 [05/08/2016]
-1. Updated Pro Themes and Plugins Page with Upcoming Premium Theme Features.
-2. Minor Issue Fixed.
+= 2.5 =
+* Updated Pro Themes and Plugins Page with Upcoming Premium Theme Features.
+* Minor Issue Fixed.
 
-CHANGE-LOG:
-@Version: 2.4.3 [06/07/2016]
-1. Minor issue fixed.
-2. Link updated in Pro themes .
-3. Twitter spelling corretions.
+= 2.4.3 =
+* Minor issue fixed.
+* Link updated in Pro themes.
+* Twitter spelling corretions.
 
-@Version: 2.4.2 [10/06/2016]
-1. woocomerce minor fix.
-2. Updated Pro Themes and Plugins Page with features.
+= 2.4.2 =
+* woocomerce minor fix.
+* Updated Pro Themes and Plugins Page with features.
 
-@Version: 2.4.1 [18/05/2016]
-1. Minor issue fixed.
+= 2.4.1 =
+* Minor issue fixed.
 
-CHANGE-LOG:
-@Version: 2.4 [07/05/2016]
-1. Update Pro Themes and Plugins Page with features.
-2. Minor Google Font issue fixed.
+= 2.4 =
+* Update Pro Themes and Plugins Page with features.
+* Minor Google Font issue fixed.
 
+= 2.3 =
+* Google font option added.
+* Some other minor issue fixed.
 
-@Version: 2.3 [04/03/2016]
-1. Google font option added.
-2. Some other minor issue fixed.
+= 2.3 =
+* Remove Theme Option Page.
+* Service Link Added in Customizer.
+* Service On/Off.
+* Footer-Call-Out icon setting added.
 
-@Version: 2.3 [04/03/2016]
-1. Remove Theme Option Page.
-2. Service Link Added in Customizer.
-3. Service On/Off.
-4. Footer-Call-Out icon setting added.
+= 2.2 =
+* Mobile Menus Fix.
 
-@Version: 2.2 [17/10/2015]
-1. Mobile Menus Fix.
+= 2.1 =
+* Parallax Layout in *Premium Theme added..
 
-@Version: 2.1 [08/10/2015]
-1. Parallax Layout in *Premium Theme added..
+= 2.0 =
+* Menus Fixes.
 
-@Version: 2.0 [24/09/2015]
-1. Menus Fixes.
+= 1.9.8 =
+* MENU HOVER ISSUE FIXED.
 
-@Version: 1.9.8[22/09/2015]
-1. MENU HOVER ISSUE FIXED.
-@Version: 1.9.7[03/09/2015]
-1. Minor bradcrumb Fix.
-2. Screen-reader Class Added. 
+= 1.9.7 =
+* Minor bradcrumb Fix.
+* Screen-reader Class Added. 
 
-@Version: 1.9.6[16/07/2015]
-1. Minor home page Issue Fixed.
+= 1.9.6 =
+* Minor home page Issue Fixed.
 
-@Version: 1.9.5[11/07/2015]
-1. Some Customizr Issue Fixed.
-2. Minor Plugin Conflict-ion Solved.
+= 1.9.5 =
+* Some Customizr Issue Fixed.
+* Minor Plugin Conflict-ion Solved.
 
-@Version: 1.9.4[06/07/2015]
-1. Minor Issue Fixed.
+= 1.9.4 =
+* Minor Issue Fixed.
 
-@Version: 1.9.3[30/06/2015]
-1.Theme option panel are customize ready.
+= 1.9.3 =
+* Theme option panel are customize ready.
 
-@Version: 1.9.2[08/06/2015]
-1. Footer Call-Out Issue Fixed.
-2. Search Box Issue Fixed.
+= 1.9.2 =
+* Footer Call-Out Issue Fixed.
+* Search Box Issue Fixed.
 
-@Version: 1.9.1[29/05/2015]
-1. WPML Competible
+= 1.9.1 =
+* WPML Competible
 
-@Version: 1.9[25/05/2015]
-1. Russian mo file.
-2. Slider - Text -Button viewable in Mob.
+= 1.9 =
+* Russian mo file.
+* Slider - Text -Button viewable in Mob.
 
-@Version: 1.8.9[23/04/2015]
-1. Mobile Slider Text Fixed.
+= 1.8.9 =
+* Mobile Slider Text Fixed.
 
-@Version: 1.8.8[/03/2015]
-1.Minor Translation added.
+= 1.8.8 =
+* Minor Translation added.
 
-@Version: 1.8.6[23/03/2015]
-1. Minor Fixes in Header and Footer
+= 1.8.6 =
+* Minor Fixes in Header and Footer
 
-@Version: 1.8.5[17/03/2015]
-1. Checked() implimented.
-2. Home-Blog Show / Hide settings added in Theme-Options.
+= 1.8.5 =
+* Checked() implimented.
+* Home-Blog Show / Hide settings added in Theme-Options.
 
-@Version: 1.8.4[25/02/2015]
-1. Menu Ipad/Mobile Issue Fixed.
+= 1.8.4 =
+* Menu Ipad/Mobile Issue Fixed.
 
+= 1.8.3 =
+* RTL Support.
+* Breadcrumb Fix.
+* HTML W3C Validated.
 
-@Version: 1.8.3[12/02/2015]
-1. RTL Support.
-2. Breadcrumb Fix.
-3. HTML W3C Validated.
+= 1.8.2 =
+* Custom Static Front-Page on Page.
 
+= 1.8 =
+* Custom Static Front-Page.
 
-@Version: 1.8.2[05/02/2015]
-1. Custom Static Front-Page on Page.
+= 1.7.2 =
+* Unminified JS.
 
+= 1.7.1 =
+* Title Repetition Removed.
+* Unused JS file removed.
+* Page with Left Sidebar added. 
 
-@Version: 1.8[24/01/2015]
-1. Custom Static Front-Page.
+= 1.7 =
+* Editor added in Theme-Options.
+* Discount Coupon Removed.
+* FA link updated.
+* Portfolio Link Title fixed.  
 
+= 1.6.1 =
+* Minor Translated String
 
-@Version: 1.7.2[21/01/2015]
-1. Unminified JS.
+= 1.6 =
+* Snow Effects in Theme-Options.
+* Two More SOcial Icons.
+* iPad Drop-Down Fixed.
 
+= 1.5.1 =
+* Minor FIX in blog file.
+* Log image to add css for mobile view.
 
-@Version: 1.7.1[16/01/2015]
-1. Title Repetition Removed.
-2. Unused JS file removed.
-3. Page with Left Sidebar added. 
+= 1.5 =
+* Minor FIX.
 
-@Version: 1.7 [05/01/15]
-1. Editor added in Theme-Options.
-2. Discount Coupon Removed.
-3. FA link updated.
-4. Portfolio Link Title fixed.  
+= 1.4.3 =
+* DATE Format Issue Fixed.
 
-@Version: 1.6.1 [09/12/14]
-1.Minor Translated String
+= 1.4.2 =
+* All Issue Raised By Reviewer Fixed.
+* iPAD menu Issue Fixed.
 
-@Version: 1.6 [04/12/14]
-1. Snow Effects in Theme-Options.
-2. Two More SOcial Icons.
-3. iPad Drop-Down Fixed
+= 1.4 =
+* Child theme ready.
+* Social media link modify with #. ( Advise by gpriday )
 
-@Version: 1.5.1 [19/11/14]
-1. Minor FIX in blog file
-2. Log image to add css for mobile view
+= 1.4 =
+* Menu Implementation for mobiles.
 
-@Version: 1.5 [05/11/14]
-1. Minor FIX
+= 1.3 =
+* Top Menu Implementation.
+* Woo-commerce Ready.
+* Full-Width Page.
+* Telephone Icon Issue Fixed.
+* Search URL issue Fixed.
+* Admin side Image Added.
 
-@Version: 1.4.3 [05/11/14]
-1. DATE Format Issue Fixed.
+= 1.2 =
+* Sane Default Concept added.
 
+= 1.1 =
+* comment_function Issue fixed.
+* White Space Issue Fixed.
+* Portfolio Check box Enable.
 
-@Version: 1.4.2 [13/10/14]
-1.)All Issue Raised By Reviewer Fixed.
-2.) iPAD menu Issue Fixed.
+= 1.0 =
+* Rest all issue fixed.
 
-@Version: 1.4 [13/10/14]
-1. Child theme ready.
-2. Social media link modify with #. ( Advise by gpriday )
+= 0.99 =
+* Issue raised after first review removed here.
 
-@Version: 1.4 [13/10/14]
-1. Menu Implementation for mobiles.
+= 0.9.5
+* released
 
-@Version: 1.3 [11/10/14]
-1.	Top Menu Implementation.
-2.	Woo-commerce Ready.
-3.	Full-Width Page.
-4.	Telephone Icon Issue Fixed.
-5. 	Search URL issue Fixed.
-6.  Admin side Image Added.
+== Resources ==
 
-@Version: 1.2 [05/10/14]
-1. Sane Default Concept added.
-@Version: 1.1 [27/09/14]
-1) comment_function Issue fixed.
-2) White Space Issue Fixed.
-3) Portfolio Check box Enable.
+= BUNDELED JS = 
 
-@Version: 1.0 [06/08/14]
-Rest all issue fixed.
-@Version 0.99 [03/08/14]
-->Issue raised after first review removed here.
-@Version 0.9.5
-released
-/////////////////////////*****************Copyrights Attribution********************////////////////////////////////////
-Enigma WordPress Theme, Copyright 2014 weblizar
-Enigma is distributed under the terms of the GNU GPL
+* Bootstrap jQuery library @ 2013  Twitter, Inc.
+* JQuery carouFredSel @ 2013 Ivan Fred Heusschen, MIT
+* Photobox jQuery @ 2013 Yair Even, MIT
+* jQuery Waypoints @ 2011-2013 Caleb Troughton, MIT & GPL
+* Scroll JS @ 2014 weblizar, MIT & GPL
+* Enigma_Theme_Script @ 2014 weblizar, MIT & GPL
+* Theme-Footer-Script @ 2014 weblizar, MIT & GPL
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+= BUNDELED CSS =
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see .
-
-Enigma WordPress Theme bundles the following third-party resources:
-Snow-fall JS : http://www.schillmania.com/projects/snowstorm/license.txt
-Licensed under: BSD
-
-
-Bootstrap jQuery library, Copyright 2013  Twitter, Inc.
-Licensed under http://www.apache.org/licenses/LICENSE-2.0
-Source: https://github.com/twbs/bootstrap/archive/v3.0.2.zip
-
-jQuery carouFredSel |  v6.2.1 | (c) 2013    | 
-jQuery carouFredSel , Copyright 2013 Ivan Fred Heusschen , http://www.frebsite.nl
-Licensed under MIT license :http://opensource.org/licenses/MIT
-Source:https://github.com/gilbitron/carouFredSel
-
-Photobox jQuery |   v1.9 | 
-(c) 2013  Yair Even.,(http://dropthebit.com)
-Licensed under MIT license :https://jquery.org/license/
-
-
-jQuery Waypoints | v2.0.3 |
-Copyright (c) 2011-2013 Caleb Troughton
-Dual licensed under the MIT license and GPL license.
-https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
-
-menu.js
-Just to make hover effects of the menu.
-
-Scroll JS | V 1.0 | weblizar 
-(c) 2014  | Licensed under the MIT license and GPL license.
-
-Enigma_Theme_Script | V 1.0 | weblizar 
-(c) 2014  | Licensed under the MIT license and GPL license.
-
-Theme-Footer-Script | V 1.0 | weblizar 
-(c) 2014  | Licensed under the MIT license and GPL license.
-/*****BUNDELED CSS***/
-Font Awesome CSS |  v4.7.0 | 
-Copyright 2015  Dave Gandy.,
-Licensed under MIT license :http://opensource.org/licenses/MIT
-Source:http://fortawesome.github.io/Font-Awesome/assets/font-awesome-4.3.0.zip
-
-Font Awesome CSS |  v 5.0.13 | 
-Copyright 2015  Dave Gandy.,
-Licensed under MIT license :http://opensource.org/licenses/MIT
-
-Bootstrap CSS |  v3.1.1 | 
-Copyright 2011-2014 Twitter, Inc
-Licensed under the Apache License v2.0 http://www.apache.org/licenses/LICENSE-2.0
-Source:http://getbootstrap.com/getting-started#download
-
-Animations CSS |  v1.0 | 
-Copyright 2014 weblizar
-Licensed under GPL
-
-Animations CSS |  v1.0 | 
-Copyright 2014 weblizar
-Licensed under GPL
-
-Enigma Theme CSS |  v1.0 | 
-Copyright 2014 weblizar
-Licensed under GPL
-
-Photo Box CSS  |  v1.0 | 
-Copyright 2014 weblizar
-Licensed under GPL
-
-Theme Animate CSS  |  v1.0 | 
-Copyright 2014 weblizar
-Licensed under GPL
-
-Images Taken from :
-pixabay.com
-
-Screenshot image URL - https://cdn.pixabay.com/photo/2016/10/21/14/50/plouzane-1758197_960_720.jpg
-
-Image Header : https://pixabay.com/en/snow-nature-panoramic-winter-3193865/
-
-Image Slide 1: http://pixabay.com/en/new-york-city-brooklyn-bridge-night-336475/
-Image Slide 2:https://pixabay.com/en/fantasy-landscape-mountains-human-2925250/
-Image Slide 3:http://pixabay.com/en/nice-c%C3%B4te-d---azur-france-398051/
-
-
-=================Portfolio Images URL ====================
-http://pixabay.com/en/girl-portrait-outdoors-pretty-344335/
-http://pixabay.com/en/keyboard-apple-input-keys-hardware-338507/
-http://pixabay.com/en/lamborghini-sports-car-racing-car-188960/
-http://pixabay.com/en/skydive-parachute-parachuting-79548/
-==============================================================
-All Images have been used in the Enigma, Created by weblizar .Also they are GPL Licensed and free to use and free to redistribute further. 
-# --- EOF --- #
+* Font Awesome @ 2015  Dave Gandy, MIT
+* Bootstrap @ 2011-2014 Twitter, MIT
+* Animations CSS @ 2014 weblizar, GPL
+* Enigma Theme CSS @ 2014 weblizar, GPL
+* Photo Box CSS @ 2014 weblizar, GPL
