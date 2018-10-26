@@ -4,7 +4,7 @@ Description: fMuzz is a Fully Responsive WordPress Theme. Features include built
 Author: tishonator
 Author URI: https://tishonator.com
 Theme URI: https://tishonator.com/product/fmuzz
-Version: 1.4.0
+Version: 1.4.1
 Text Domain: fmuzz
 Tags: blog, news, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -333,7 +333,7 @@ ul {
 	padding:10px 0 0 0;
 }
 
-#sidebar ul:not(.social-widget) > li:before,
+#sidebar ul:not(.social-widget):not(.ui-tabs-nav) > li:before,
 article ul > li:before {
 	content:"\f105";
 	font-family:'FontAwesome';
@@ -454,7 +454,7 @@ article,
 	margin:0 0 0 14px;
 }
 
-.col ul:not(.social-widget) > li:before {
+.col ul:not(.social-widget):not(.ui-tabs-nav) > li:before {
 	font-family:'FontAwesome';
 	font-style:normal;
 	font-weight:normal;
@@ -1530,9 +1530,9 @@ blockquote {
 
 .home-title,
 .home-col-title {
-	padding:0 5px 1px 1px;
+	padding:10px 5px 1px 1px;
 	font-weight:normal;
-	font-size:14px;
+	font-size:22px;
 	letter-spacing:1px;
 	float:left;
 	clear:both;
@@ -1581,7 +1581,7 @@ blockquote {
 	padding:0 5px 1px 1px;
 	margin-bottom:-2px;
 	font-weight:normal;
-	font-size:14px;
+	font-size:22px;
 	color:#eeeeee;
 	letter-spacing:1px;
 	float:left;
@@ -1682,131 +1682,6 @@ blockquote {
 	-ms-border-radius:2px;
 	-o-border-radius:2px;
 	border-radius:2px;
-}
-
-/* Testimonials */
-#testimonials .testimonial-quote {
-	padding:10px;
-	line-height:1.5em;
-	font-family:"proxima-nova-1", "proxima-nova-2", Helvetica, Arial, sans-serif !important;
-	font-size:16px;
-	font-weight:normal;
-	font-style:italic;
-	margin:0 30px 0 0;
-	width:80%;
-}
-
-#testimonials .testimonial-quote:before {
-	font:18px 'FontAwesome';
-	content:"\f10d";
-	margin-right:5px;
-	float:left;
-}
-
-#testimonials .client-contact-info:before {
-	font:24px 'FontAwesome';
-	display:block;
-	content:"\f007";
-	margin-left:10px;
-}
-
-#testimonials .client-contact-info {
-	padding-left:15px;
-}
-
-.testimonial-author {
-	width:70px;
-}
-
-.testimonial-author > img {
-	-webkit-border-radius:70px;
-	-moz-border-radius:70px;
-	border-radius:70px;
-}
-
-/* jCarousel */
-.jcarousel-container {
-	padding:10px 40px;
-}
-
-.jcarousel-skin .jcarousel-clip {
-    overflow: hidden;
-}
-
-.jcarousel-skin li:before {
-    content:'' !important;
-}
-
-.jcarousel-item {
-	margin-right:10px;
-}
-
-.jcarousel-clip-horizontal {
-	width:100%;
-}
-
-.jcarousel-prev:before,
-.jcarousel-next:before {
-	font:35px 'FontAwesome';
-	display:block;
-	text-align:center;
-}
-
-.jcarousel-prev:hover,
-.jcarousel-next:hover {
-	opacity:0.7;
-}
-
-.jcarousel-prev:before {
-	content:"\f104";
-}
-
-.jcarousel-next:before {
-	content:"\f105";
-}
-
-.jcarousel-prev,
-.jcarousel-next {
-	cursor:pointer;
-	position:absolute;
-	top:35%;
-	width:32px;
-    height:32px;
-	z-index:3000;
-}
-
-.jcarousel-prev {
-    left: 5px;
-}
-
-.jcarousel-next {
-    right:5px;
-}
-
-.jcarousel-prev-disabled,
-.jcarousel-next-disabled,
-.jcarousel-prev-disabled:hover,
-.jcarousel-next-disabled:hover {
-	opacity:0.4;
-}
-
-/* Portfolio */
-#portfolio {
-	margin-top:20px;
-}
-
-.portfolio-item {
-	float: left;
-	margin: 5px;
-	width: 310px;
-	background: #EFEFEF;
-	-moz-border-radius: 7px;
-	-webkit-border-radius: 7px;
-	border-radius: 7px;
-	text-align: center;
-	-moz-box-shadow: 0px 0px 6px #999;
-	-webkit-box-shadow: 0px 0px 6px #999;
-	box-shadow: 0px 0px 6px #999;
 }
 
 .feature-content li {

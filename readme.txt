@@ -18,6 +18,38 @@ Header social icons, Custom Logo, Multi-level Drop-down Menu, Custom Background,
 Footer Copyright Text, Sidebar Widget Area, 3 Homepage Columns Widget Areas,
 3 Footer Columns Widget Areas, Multiple Browsers Support, Translation-Ready and much more.
 
+== How to Display the Homepage Slider ==
+
+1. Create a Static Front Page
+
+The slider is visualized ONLY when there is a static front page set for your website. So, the first step is:
+
+1.1. Login to your Admin Panel
+
+1.2. Navigate to Left Menu -> Settings -> Reading
+
+1.3. Select 'A static page (select below)', then choose pages for 'Homepage' and 'Posts page'
+
+1.4. Save changes
+
+Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
+
+2. Update Slider Settings
+
+2.1. Login to your Admin Panel
+
+2.2. Navigate to Left Menu -> Appearance -> Customize
+
+2.3. Open 'Slider' Section
+
+2.4. Check the 'Display Slider' checkbox
+
+2.5. Set Slider Images ('Slide # Image' fields) and Text ('Slide # Content' fields) for the different Slides
+
+2.6. Save Changes
+
+
+
 == Frequently Asked Questions ==
 
 = How to Install the Theme? =
@@ -41,6 +73,9 @@ Activiation and Use
 = How to Install the Homepage Slider =
 
 == Changelog ==
+
+= 1.4.1 =
+* add instructions in readme.txt file how to configure the Homepage slider
 
 = 1.4.0 =
 * update screenshot according to latest WordPress requirements for screenshot
