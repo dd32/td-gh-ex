@@ -1,3 +1,8 @@
+fKidd 1.8.9, 2018-10-26
+------------------------
+- add instructions in readme.txt file how to configure the Homepage slider
+
+
 fKidd 1.8.8, 2018-08-28
 ------------------------
 - update screenshot according to latest WordPress requirements for screenshot
