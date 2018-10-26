@@ -47,6 +47,9 @@ Atlas Concern is distributed under the terms of the GNU GPL
 = 1.6 ( 25/October/2018 ) =
 * Files edited
 
+= 1.7 ( 26/October/2018 ) =
+* Files edited
+
 == Credits ==
 
 - Underscores
@@ -71,6 +74,9 @@ License: (CSS)[MIT](http://opensource.org/licenses/MIT), (Fonts)[SIL OFL 1.1](ht
 Source: https://github.com/wp-bootstrap/wp-bootstrap-navwalker/blob/master/LICENSE.txt
 License: GNU General Public License v3.0
 
+* '''TGM'''  Thomas Griffin, Gary Jones, Juliette Reinders Folmer [GPLv2 or later]
+        http://tgmpluginactivation.com/
+        Copyright:   2011, Thomas Griffin
 
 
 == Image used in screenshot ==

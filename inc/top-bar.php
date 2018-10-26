@@ -5,14 +5,20 @@
                         <div class="top-address col-md-8 col-sm-9"> 
                             <ul> 
                                 <li>
+								<?php if( get_theme_mod( 'topline_section_phone' ) ) : ?>
                                    <i class="fa fa-phone"></i> <?php echo wp_kses_post( get_theme_mod( 'topline_section_phone' )); ?>
-                                </li>                                 
+                                 <?php endif; ?>
+								</li>                                 
                                 <li>
+								<?php if( get_theme_mod( 'topline_section_mail' ) ) : ?>
                                    <i class="fa fa-envelope-o"></i> <?php echo wp_kses_post( get_theme_mod( 'topline_section_mail' )); ?>
-                                </li>                                 
+                                 <?php endif; ?>
+								</li>                                 
                                 <li>
+								<?php if( get_theme_mod( 'topline_section_location' ) ) : ?>
                                    <i class="fa fa-map-marker"></i> <?php echo wp_kses_post( get_theme_mod( 'topline_section_location' )); ?>
-                                </li>                                 
+                                 <?php endif; ?>
+								</li>                                 
                             </ul>                             
                         </div>                         
                         <div class="topbar-social col-md-4 col-sm-3"> 
