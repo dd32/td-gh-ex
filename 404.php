@@ -9,7 +9,7 @@
 
 get_header();
  ?>
-<div class="agency-lite-container">
+<div class="agency-lite-container clearfix">
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 

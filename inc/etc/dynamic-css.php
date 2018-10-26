@@ -95,7 +95,12 @@ function agency_lite_dynamic_style(){
 
          $custom_css .= "article a.read-more:hover,.error-404 input[type=submit], .search-no-results .no-results form input[type=submit],.serv-btn a:hover, .feat-btn a:hover,.agency-lite-container div.product form.cart .button,.woocommerce .wc-proceed-to-checkout a.button.alt,.woocommerce .cart .coupon input.button[type='submit'], .woocommerce .place-order .button.alt, .widget_shopping_cart_content a.button, .widget_price_filter .price_slider_amount button[type=submit], .woocommerce .cart button[type=submit].single_add_to_cart_button, .woocommerce #review_form #respond .form-submit input,.comment-respond .form-submit input{
                     background:{$agency_lite_skin_color};
-                }";    
+                }";
+
+        $custom_css .= "
+            @media only screen and (max-width: 768px){ .main-navigation button {
+                background: {$agency_lite_skin_color};
+            }";
     }
 
         

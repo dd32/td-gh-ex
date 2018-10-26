@@ -25,6 +25,10 @@ Agency Lite includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.0.8 - Oct 26 2018 =
+* Fixed Header empty background displaying issue
+* Fixed Dynamic Color issue in responsive menu
+
 = 1.0.7 - Aug 29 2018 =
 * Fixed Translation Issue
 * Minor Security Issues fixed
