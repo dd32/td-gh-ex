@@ -2,8 +2,8 @@
 Theme Name: Aamla
 Theme URI: http://www.vedathemes.com/
 Author: Vedathemes
-Description: Aamla is a feature rich, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla helps you to build your pages even without pagebuilders and make your audios and videos stand out. Aamla is written with clean code and the most current HTML5 conventions. Aamla can be used as a solid base to build beautiful and functional websites.
-Version: 1.0.9
+Description: Aamla is a feature rich, Gutenberg friendly, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla helps you to build your pages even without pagebuilders and make your audios and videos stand out. It is compatible with gutenberg, woocommerce and many other plugins. Aamla is written with clean code and the most current HTML5 conventions. Aamla can be used as a solid base to build beautiful and functional websites.
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aamla
@@ -324,7 +324,7 @@ p .alignnone {
 .gallery-item .gallery-icon:after {
 	display: block;
 	width: 100%;
-	padding-top: 56.25%;
+	padding-top: 66.66%;
 	content: "";
 }
 
@@ -926,7 +926,7 @@ select:focus {
 
 select {
 	background: #fff url("data:image/jpeg;base64,/9j/4QAYRXhpZgAASUkqAAgAAAAAAAAAAAAAAP/sABFEdWNreQABAAQAAAAyAAD/7gAOQWRvYmUAZMAAAAAB/9sAhAAIBgYGBgYIBgYIDAgHCAwOCggICg4QDQ0ODQ0QEQwODQ0ODBEPEhMUExIPGBgaGhgYIyIiIiMnJycnJycnJycnAQkICAkKCQsJCQsOCw0LDhEODg4OERMNDQ4NDRMYEQ8PDw8RGBYXFBQUFxYaGhgYGhohISAhIScnJycnJycnJyf/wAARCAASAB4DASIAAhEBAxEB/8QAbwAAAgIDAAAAAAAAAAAAAAAAAAYBBQMEBwEBAQEAAAAAAAAAAAAAAAAAAQACEAABAgQDBwMFAAAAAAAAAAABAgQAEQMFIUESMVGhMhMzBrFiNJEiIxQ1EQADAQEBAAAAAAAAAAAAAAAAATEhcUH/2gAMAwEAAhEDEQA/AH1y7vfiN7qOXlWo+t71ZUpajzDIJGxC0DCQkCOD2zeNn7am7aVBUo1RNKh6HcRmIh6xbXFqtm7pipRqCRB2g5EHIiOf67p4HcVIkXVscTKATpCyBgZyOmonPeOGr0zODnfb60sTTr1/vrLmG7cGSlqHokZmEtrX8n/VfeWrcqpghHToFM6dRIqoEhTPLTSmeIx247Y2LJZXnk7036+klsT+KliAsA4ISMqaeP1h/wCmjR0tI6ctOiQ06ZSlLdFM9ZXXETFH5f8Awq3xuZHzO3zDZ7t0EECqFxlw2+NR5ORPZ7ewdv27oywQQCf/2Q==") right no-repeat;
-	background-position: right 15px top 19px;
+	background-position: right 15px top 21px;
 	background-size: 12px;
 	-webkit-appearance: none;
 	   -moz-appearance: none;

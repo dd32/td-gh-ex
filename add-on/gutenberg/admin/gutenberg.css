@@ -1,6 +1,8 @@
 /* Gutenberg Editor Styles */
 .edit-post-visual-editor,
-.edit-post-visual-editor p {
+.edit-post-visual-editor p,
+.editor-block-list__block.editor-block-list__block,
+.editor-block-list__block.editor-block-list__block p {
 	font-size: 16px;
 	font-weight: 400;
 	line-height: 1.75;
@@ -8,32 +10,54 @@
 	color: #363636;
 }
 
-.edit-post-visual-editor .editor-post-title textarea.editor-post-title__input {
+body.gutenberg-editor-page #editor .editor-post-title textarea.editor-post-title__input {
 	font-size: 2em;
 	font-weight: 700;
 	margin-bottom: 0.4375rem;
 }
 
-.edit-post-visual-editor .editor-block-list__block {
+body.gutenberg-editor-page #editor .editor-block-list__block {
 	max-width: 750px;
 }
 
-.edit-post-visual-editor .editor-block-list__block[data-align="wide"] {
+body.gutenberg-editor-page #editor .editor-block-list__block[data-align="wide"] {
 	max-width: 900px;
 }
 
-.edit-post-visual-editor .editor-block-list__block[data-align="left"] .editor-block-list__block-edit {
+body.gutenberg-editor-page #editor .editor-block-list__block[data-align="full"] {
+	max-width: none;
+}
+
+body.gutenberg-editor-page #editor .editor-block-list__block[data-align="left"] .editor-block-list__block-edit {
 	float: left;
 	margin: 0.875rem 1.75rem 0.875rem 0;
 }
 
-.edit-post-visual-editor .editor-block-list__block[data-align="right"] .editor-block-list__block-edit {
+body.gutenberg-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/image"] .editor-block-list__block-edit,
+body.gutenberg-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/pullquote"] .editor-block-list__block-edit {
+	float: none;
+	margin: 0;
+}
+
+body.gutenberg-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/image"] .editor-block-list__block-edit img,
+body.gutenberg-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/pullquote"] .editor-block-list__block-edit img {
+	width: 100%;
+}
+
+body.gutenberg-editor-page #editor .editor-block-list__block[data-align="right"] .editor-block-list__block-edit {
 	float: right;
 	margin: 0.875rem 0 0.875rem 1.75rem;
 }
 
-.edit-post-visual-editor .editor-post-title__block {
-	max-width: 750px;
+body.gutenberg-editor-page #editor .editor-block-list__block[data-align="right"][data-type="core/image"] .editor-block-list__block-edit,
+body.gutenberg-editor-page #editor .editor-block-list__block[data-align="right"][data-type="core/pullquote"] .editor-block-list__block-edit {
+	float: none;
+	margin: 0;
+}
+
+body.gutenberg-editor-page #editor .editor-block-list__block[data-align="right"][data-type="core/image"] .editor-block-list__block-edit img,
+body.gutenberg-editor-page #editor .editor-block-list__block[data-align="right"][data-type="core/pullquote"] .editor-block-list__block-edit img {
+	width: 100%;
 }
 
 .edit-post-visual-editor blockquote.wp-block-quote p {
@@ -145,6 +169,8 @@ blockquote.wp-block-quote:before {
 }
 
 blockquote.wp-block-pullquote {
+	margin-right: 0;
+	margin-left: 0;
 	padding: 3em 0;
 	text-align: center;
 	color: #363636;
@@ -219,14 +245,28 @@ figure.wp-block-audio {
 	margin: 0;
 }
 
+body.gutenberg-editor-page #editor .edit-post-visual-editor .editor-post-title__block,
+body.gutenberg-editor-page #editor .editor-default-block-appender,
+body.gutenberg-editor-page #editor .editor-block-list__block {
+	max-width: 750px;
+}
+
+body.gutenberg-editor-page #editor .editor-block-list__block[data-align="wide"] {
+	max-width: 900px;
+}
+
+body.gutenberg-editor-page #editor .editor-block-list__block[data-align="full"] {
+	max-width: none;
+}
+
 @media only screen and (min-width: 600px) {
-	.edit-post-visual-editor .editor-post-title {
+	body.gutenberg-editor-page #editor .editor-post-title {
 		max-width: 822px;
 		margin-right: auto;
 		margin-left: auto;
 		padding: 0 36px;
 	}
-	.edit-post-visual-editor .editor-post-title > div {
+	body.gutenberg-editor-page #editor .editor-post-title > div {
 		margin-right: 0;
 		margin-left: 0;
 	}
@@ -234,16 +274,45 @@ figure.wp-block-audio {
 
 @media only screen and (min-width: 768px) {
 	.edit-post-visual-editor,
-	.edit-post-visual-editor p {
+	.edit-post-visual-editor p,
+	.editor-block-list__block.editor-block-list__block,
+	.editor-block-list__block.editor-block-list__block p {
 		font-size: 17px;
 	}
-	.edit-post-visual-editor .editor-post-title textarea.editor-post-title__input {
+	body.gutenberg-editor-page #editor .editor-post-title textarea.editor-post-title__input {
 		font-size: 2.5em;
+	}
+	body.gutenberg-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/image"] .editor-block-list__block-edit,
+	body.gutenberg-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/pullquote"] .editor-block-list__block-edit {
+		float: left;
+		margin: 0.4375rem 1.75rem 0.875rem 0;
+	}
+	body.gutenberg-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/pullquote"] .editor-block-list__block-edit {
+		max-width: 60%;
+	}
+	body.gutenberg-editor-page #editor .editor-block-list__block[data-align="right"][data-type="core/image"] .editor-block-list__block-edit,
+	body.gutenberg-editor-page #editor .editor-block-list__block[data-align="right"][data-type="core/pullquote"] .editor-block-list__block-edit {
+		float: right;
+		margin: 0.4375rem 0 0.875rem 1.75rem;
+	}
+	body.gutenberg-editor-page #editor .editor-block-list__block[data-align="right"][data-type="core/pullquote"] .editor-block-list__block-edit {
+		max-width: 60%;
+	}
+}
+
+@media only screen and (min-width: 1025px) {
+	body.gutenberg-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/image"] .editor-block-list__block-edit,
+	body.gutenberg-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/pullquote"] .editor-block-list__block-edit {
+		margin-left: -93px;
+	}
+	body.gutenberg-editor-page #editor .editor-block-list__block[data-align="right"][data-type="core/image"] .editor-block-list__block-edit,
+	body.gutenberg-editor-page #editor .editor-block-list__block[data-align="right"][data-type="core/pullquote"] .editor-block-list__block-edit {
+		margin-right: -93px;
 	}
 }
 
 @media only screen and (min-width: 1366px) {
-	.edit-post-visual-editor .editor-post-title textarea.editor-post-title__input {
+	body.gutenberg-editor-page #editor .editor-post-title textarea.editor-post-title__input {
 		font-size: 2.65em;
 	}
 }

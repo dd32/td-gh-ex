@@ -2507,6 +2507,11 @@ button.pswp__button--zoom:hover {
 	font-size: 14px;
 }
 
+.widget_shopping_cart .mini_cart_item .blockUI.blockOverlay {
+	width: 90% !important;
+	background-color: white !important;
+}
+
 .widget_shopping_cart .total {
 	margin: 0.875rem 0;
 }

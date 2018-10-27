@@ -187,6 +187,22 @@ class Media_Grabber {
 			$media       = get_media_embedded_in_content( $content, $this->media_type );
 			$this->media = $media ? $media[0] : '';
 
+			if ( $this->media && 'video' === $this->type ) {
+				$this->type = '';
+				if ( false === strpos( $this->media, 'iframe' ) ) {
+					$this->type = 'video';
+				} else {
+					$video_hosting = $this->supported_video_hosting_websites();
+					foreach ( $video_hosting as $video ) {
+						if ( false !== strpos( $this->media, $video ) ) {
+							$this->type = 'video';
+							break;
+						}
+					}
+					$this->type = $this->type ? $this->type : 'iaudio';
+				}
+			}
+
 			// If no audio found, check for audio embedded in iframe.
 			if ( ! $this->media && 'audio' === $this->type ) {
 				$iframes = get_media_embedded_in_content( $content, [ 'iframe' ] );
@@ -240,5 +256,24 @@ class Media_Grabber {
 		}
 
 		return $content;
+	}
+
+	/**
+	 * List of supported video hosting websites.
+	 *
+	 * @since  1.0.0
+	 *
+	 * @return array
+	 */
+	public function supported_video_hosting_websites() {
+		return apply_filters( 'supported_video_hosting_websites',
+			[
+				'youtube.com',
+				'vimeo.com',
+				'dailymotion.com',
+				'videopress.com',
+				'funnyordie.com',
+			]
+		);
 	}
 }

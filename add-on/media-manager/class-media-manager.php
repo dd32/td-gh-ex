@@ -53,7 +53,7 @@ class Media_Manager {
 	 * @since 1.0.1
 	 */
 	public static function init() {
-		add_filter( 'aamla_markup_entry_header', [ self::get_instance(), 'entry_header_media' ] );
+		//add_filter( 'aamla_markup_entry_header', [ self::get_instance(), 'entry_header_media' ] );
 		add_filter( 'aamla_markup_entry_featured_content', [ self::get_instance(), 'entry_featured_media' ] );
 		add_filter( 'aamla_markup_dp_featured_content', [ self::get_instance(), 'dp_featured_media' ] );
 		add_action( 'wp_enqueue_scripts', [ self::get_instance(), 'enqueue_front' ] );

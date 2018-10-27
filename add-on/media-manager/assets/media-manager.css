@@ -126,6 +126,11 @@
 	width: 100%;
 }
 
+.index-view .entry-audio .mm-audio-wrapper > audio {
+	display: block;
+	width: 100%;
+}
+
 .entry-audio > audio {
 	display: block;
 	width: 100%;

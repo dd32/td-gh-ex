@@ -3,7 +3,7 @@
 Created by: Vedathemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 4.9.8
-Version: 1.0.9
+Version: 1.1
 PHP required : PHP 5.4+
 IE Browser Support: IE11+
 License: GNU General Public License v2 or later
@@ -12,7 +12,7 @@ Tags: two-columns, left-sidebar, right-sidebar, grid-layout, custom-menu, custom
 
 == Description ==
 
-Aamla is a feature rich, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla is written with clean code and the most current HTML5 conventions. Aamla can be used as a solid base to build beautiful and functional websites.
+Aamla is a feature rich, Gutenberg friendly, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla helps you to build your pages even without pagebuilders and make your audios and videos stand out. It is compatible with gutenberg, woocommerce and many other plugins. Aamla is written with clean code and the most current HTML5 conventions. Aamla can be used as a solid base to build beautiful and functional websites.
 
 == Installation ==
 
@@ -103,6 +103,12 @@ Aamla WordPress Theme bundles the following third-party resources:
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
+
+= 1.1 - Oct 27 2018 =
+* Error fix - CSS issues in Gutenberg compatibility.
+* Error fix - Media manager code fixes.
+* Error Fix - Minor css issues in WooCommerce.
+* Error Fix - Minor css and code improvements.
 
 = 1.0.9 - Sep 02 2018 =
 * Modify - Make theme screenshot comply with updated requirements.
