@@ -4,7 +4,7 @@ Theme URI:
 Author: Masum Billah
 Author URI: https://themesvila.com/
 Description: Bhost is a nice , clean , beautifull, Responsive and modern design free WordPress Theme. This theme made with Latest Bootstrap v3.3.5. You can use it for your corporate , personal , blog sites etc.
-Version: 1.4.1
+Version: 1.4.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bhost
@@ -855,7 +855,9 @@ a:active {
 	margin: 0;
 	list-style-type: none;
 }
-
+.mainmenu #nav li.current_page_item a{
+	color: #fff;
+}
 .mainmenu #nav li {
   display: inline-block;
   position: relative;
@@ -899,8 +901,7 @@ a:active {
 	
 }
 .mainmenu #nav li:hover a,
-.mainmenu #nav li.active a,
-.mainmenu #nav li.current_page_item a{
+.mainmenu #nav li.active a{
 	color: #2bcdc1;
 }
 #stickymenu{
@@ -2007,7 +2008,7 @@ h1.entry-title{
 }
 
 h1.entry-title a{
-	color: #777;
+	color: #444;
 	font-size: 25px;
 	font-weight: 500;
 	text-decoration: none;
@@ -2055,7 +2056,7 @@ h1.entry-title a:hover{
 }
 .page-header, .page-header h1{
 	border: inherit;
-	font-size: 20px;
+	font-size: 24px;
 	margin-bottom: 30px;
 }
 .page-header h1{

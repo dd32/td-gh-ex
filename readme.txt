@@ -8,7 +8,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: light, gray, white, one-column, two-columns, right-sidebar, fluid-layout, responsive-layout, custom-menu, featured-images, flexible-header, sticky-post
 
 == Description ==
-Bhost is a nice , clean , beautifull, Responsive and modern design free WordPress Theme. This theme made with Latest Bootstrap v3.3.5. You can use it for your corporate , personal , blog sites etc.
+Bhost is a Nice , Clean , Beautifull, Responsive and modern design free WordPress Theme. This theme made with Latest Bootstrap v3.3.7. You can use it for your corporate , personal , blog sites etc.
 
 == Installation ==
 
@@ -35,6 +35,9 @@ BHost Theme is derived from Underscores Theme, Copyright 2012-2015 Automattic, I
 Underscores Theme is distributed under the terms of the GNU GPL.
 
 == Changelog ==
+
+= 1.4.2 - October 28 2018=
+* Updated some codes
 
 = 1.4.0 - November 18 2017 =
 * Updated search form style and blog
