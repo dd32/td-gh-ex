@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.6
+ * @version   1.2.7
  */
  ?>
 
@@ -20,7 +20,7 @@
     <!-- Slider 1 -->
     <div class="slideshow__slide js-slider-home-slide is-current" data-slide="1">
     <?php
-     $slider_cat = esc_attr( get_theme_mod('avik_category_slider_1'));
+     $slider_cat = esc_url( get_theme_mod('avik_category_slider_1'));
      $slider_count = 1;
 	   $new_query = new WP_Query( array( 'cat' => $slider_cat ,'showposts' => $slider_count ));
      while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
@@ -33,7 +33,7 @@
                 <div class="slideshow__slide-image-wrap background-absolute">
                   <!-- Image slider 1 -->
                   <div class="slideshow__slide-image background-absolute" style="background-image:url(<?php echo esc_url($avik_image_attributes[0]); ?>); background-size: cover; background-position: center center;">
-                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?>
+                  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_filter_home', false) )) :?>
                   <div class="filter-header"></div>
                   <?php endif; ?>
                 </div>
@@ -58,12 +58,11 @@
       </div>
     </div>
     <?php endwhile;
-        wp_reset_query();
-        wp_reset_postdata(); ?>
+        wp_reset_query(); ?>
     <!-- Slider 2 -->
     <div class="slideshow__slide js-slider-home-slide is-next" data-slide="2">
     <?php
-      $slider_cat = esc_attr( get_theme_mod('avik_category_slider_2'));
+      $slider_cat = esc_url( get_theme_mod('avik_category_slider_2'));
       $slider_count = 1;
 	    $new_query = new WP_Query( array( 'cat' => $slider_cat ,'showposts' => $slider_count ));
 	    while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
@@ -76,7 +75,7 @@
                 <div class="slideshow__slide-image-wrap background-absolute">
                   <!-- Image slider 2 -->
                   <div class="slideshow__slide-image background-absolute" style="background-image: url(<?php echo esc_url($avik_image_attributes[0]); ?>); background-size: cover; background-position: center center;">
-                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?>
+                  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_filter_home', false) )) :?>
                   <div class="filter-header"></div>
                   <?php endif; ?>
                 </div>
@@ -94,19 +93,18 @@
             <!-- Subtitle slider 2 -->
             <div class="slideshow__slide-caption-content"><?php the_excerpt(); ?></div>
               <a class="slideshow__slide-caption-subtitle -load o-hsub -link" href="<?php the_permalink();?>">
-                <span class="slideshow__slide-caption-subtitle-label"><?php esc_html_e('Read more...','avik'); ?></span>
+                <span class="slideshow__slide-caption-subtitle-label"><?php esc_html__('Read more...','avik'); ?></span>
               </a>
           </div>
           <?php endwhile;
-            wp_reset_query();
-            wp_reset_postdata(); ?>
+            wp_reset_query();?>
         </div>
       </div>
     </div>
     <!-- Slider 3 -->
     <div class="slideshow__slide js-slider-home-slide is-prev" data-slide="3">
     <?php
-      $slider_cat = esc_attr( get_theme_mod('avik_category_slider_3'));
+      $slider_cat = esc_html( get_theme_mod('avik_category_slider_3'));
       $slider_count = 1;
 	    $new_query = new WP_Query( array( 'cat' => $slider_cat ,'showposts' => $slider_count ));
 	    while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
@@ -119,7 +117,7 @@
                 <div class="slideshow__slide-image-wrap background-absolute">
                   <!-- Image slider 3 -->
                   <div class="slideshow__slide-image background-absolute" style="background-image: url(<?php echo esc_url($avik_image_attributes[0]); ?>); background-size: cover; background-position: center center;">
-                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?>
+                  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_filter_home', false) )) :?>
                   <div class="filter-header"></div>
                   <?php endif; ?>
                 </div>
@@ -143,8 +141,7 @@
         </div>
       </div>
       <?php endwhile;
-        wp_reset_query();
-        wp_reset_postdata(); ?>
+        wp_reset_query();?>
     </div>
       <!-- Angle scroll -->
       <div class="c-header-home_footer">

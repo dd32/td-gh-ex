@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.6
+ * @version   1.2.7
  */
  ?>
 
@@ -16,20 +16,19 @@
 </div>
 <div class="header-static" >
   <?php the_custom_header_markup() ?>
-  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?>
+  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_filter_home', false) )) :?>
   <div class="filter-header">
       <?php endif; ?>
       <div class="text-image-static">
 		    <div id="avikservices-strings">
          <?php
-           $avik_static_cat = esc_attr( get_theme_mod('avik_category_static'));
+           $avik_static_cat = esc_url( get_theme_mod('avik_category_static'));
            $avik_static_count = 3;
 	         $new_query = new WP_Query( array( 'cat' => $avik_static_cat ,'showposts' => $avik_static_count ));
            while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
               <p><?php the_title(); ?><i> <?php the_excerpt();?></i></p>
               <?php endwhile;
-              wp_reset_query();
-              wp_reset_postdata(); ?>
+              wp_reset_query(); ?>
 			  </div>
 		      <span id="avikservices" ></span>
       </div>
@@ -37,7 +36,7 @@
       <div class="down-video avik-animation-bounce">
           <a href="#who-we-are"><i class="fas fa-angle-down"></i></a>
       </div>
-  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_filter_home', false) )) :?>
+  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_filter_home', false) )) :?>
   </div>
   <?php endif; ?>
 </div>

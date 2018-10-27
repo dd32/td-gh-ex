@@ -1,13 +1,13 @@
 <?php
 /**
- * custom-header.php
- *
- * @author    Denis Franchi
- * @package   Avik
- * @version   1.2.6
- <?php the_header_image_tag(); ?>
- *
- */
+* custom-header.php
+*
+* @author    Denis Franchi
+* @package   Avik
+* @version   1.2.7
+<?php the_header_image_tag(); ?>
+*
+*/
 function avik_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'avik_custom_header_args', array(
 		'default-image'          => '',
@@ -22,17 +22,17 @@ add_action( 'after_setup_theme', 'avik_custom_header_setup' );
 
 if ( ! function_exists( 'avik_header_style' ) ) :
 	/**
-	 * Styles the header image and text displayed on the blog.
-	 *
-	 * @see avik_custom_header_setup().
-	 */
+	* Styles the header image and text displayed on the blog.
+	*
+	* @see avik_custom_header_setup().
+	*/
 	function avik_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*
-		 * If no custom options for text are set, let's bail.
-		 * get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
-		 */
+		* If no custom options for text are set, let's bail.
+		* get_header_textcolor() options: Any hex value, 'blank' to hide text. Default: add_theme_support( 'custom-header' ).
+		*/
 		if ( get_theme_support( 'custom-header', 'default-text-color' ) === $header_text_color ) {
 			return;
 		}
@@ -49,16 +49,16 @@ if ( ! function_exists( 'avik_header_style' ) ) :
 				position: absolute;
 				clip: rect(1px, 1px, 1px, 1px);
 			}
-		<?php
-		// If the user has set a custom color for the text use that.
-		else :
-			?>
-			.site-title a,
-			.site-description {
-				color: #<?php echo esc_attr( $header_text_color ); ?>;
+			<?php
+			// If the user has set a custom color for the text use that.
+			else :
+				?>
+				.site-title a,
+				.site-description {
+					color: #<?php echo esc_attr( $header_text_color ); ?>;
+				}
+				<?php endif; ?>
+				</style>
+				<?php
 			}
-		<?php endif; ?>
-		</style>
-		<?php
-	}
-endif;
+		endif;

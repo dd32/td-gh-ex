@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.6
+ * @version   1.2.7
  */
  ?>
 <div class="avik-article">

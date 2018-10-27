@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.6
+ * @version   1.2.7
  */
 
 /* TABLE OF CONTENT
@@ -14,20 +14,19 @@
  3 - Register Area Widget Contact Form
  4 - Register widget area
  5 - Custom label for Form Search
- 6 - Remove default Url Website Form Comments
- 7 - Breadcrumb
- 8 - Breadcrumb Archive
- 9 - Breadcrumb Search
-10 - Add Custom Styles Editor
-11 - Carousel featured image
-12 - Avik Support Page
-13 - Lightbox popup image
-15 - Include javascript files
-16 - Include css files
-17 - Include script and styles for class add Panel
-18 - Add additional templates
-20 - Include Plugin
-21 - Multipost Thumbnails Plugin
+ 6 - Breadcrumb
+ 7 - Breadcrumb Archive
+ 8 - Breadcrumb Search
+9 - Add Custom Styles Editor
+10 - Carousel featured image
+11 - Avik Support Page
+12 - Lightbox popup image
+13 - Include javascript files
+14 - Include css files
+15 - Include script and styles for class add Panel
+16 - Add additional templates
+17 - Include Plugin
+18 - Multipost Thumbnails Plugin
 */
 
 
@@ -72,7 +71,6 @@ if ( ! function_exists( 'avik_setup' ) ) :
 
 		// add support  HTML5
 		add_theme_support( 'html5', array(
-			'search-form',
 			'comment-form',
 			'comment-list',
 			'gallery',
@@ -182,10 +180,10 @@ add_action( 'widgets_init', 'avik_widgets_init' );
 if(! function_exists('avik_html5_search_form') ) {
 
 	function avik_html5_search_form( $form ) {
-		$form = '<section class="search"><form role="search" method="get" id="searchform" action="' . home_url( '/' ) . '" >
+		$form = '<section class="search"><form role="search" method="get" id="searchform" action="' . esc_url(home_url( '/' )) . '" >
 	   <label class="screen-reader-text" for="s">' . __('s',  'avik') . '</label>
-		<input type="search" value="' . get_search_query() . '" name="s" id="s" placeholder= "'. esc_attr__('Keyword ...', 'avik') .'" />
-		<input type="submit" class="search-submit" value="'. esc_attr__('Search', 'avik') .'" />
+		<input type="search" value="' . get_search_query() . '" name="s" id="s" placeholder= "'. esc_html__('Keyword ...', 'avik') .'" />
+		<input type="submit" class="search-submit" value="'. esc_html__('Search', 'avik') .'" />
 		</form></section>';
 		return $form;
 	}
@@ -193,20 +191,8 @@ if(! function_exists('avik_html5_search_form') ) {
 
 	add_filter( 'get_search_form', 'avik_html5_search_form' );
 
-/* 6 Remove default Url Website Form Comments
-------------------------------------------------------------*/
 
-if(! function_exists('avik_disable_comment_url') ) {
-
-function avik_disable_comment_url($fields) {
-    unset($fields['url']);
-	return $fields;
-}
-}
-add_filter('comment_form_default_fields','avik_disable_comment_url');
-
-
-/* 7 Breadcrumb
+/* 6 Breadcrumb
 ------------------------------------------------------------*/
 
 function avik_the_breadcrumb() {
@@ -225,7 +211,7 @@ function avik_the_breadcrumb() {
 		echo esc_url( home_url( '/' ) );
         echo '">';
         bloginfo('name');
-        echo '</a>' . esc_attr($sep);
+        echo '</a>' . esc_html($sep);
 
         if (is_category() || is_single() ){
             single_term_title();
@@ -242,7 +228,7 @@ function avik_the_breadcrumb() {
             }
         }
         if (is_single()) {
-            echo esc_attr($sep);
+            echo esc_html($sep);
             the_title();
         }
         if (is_page()) {
@@ -264,7 +250,7 @@ function avik_the_breadcrumb() {
 	}
 }
 
-/* 8 Breadcrumb Archive
+/* 7 Breadcrumb Archive
 ------------------------------------------------------------*/
 
 function avik_the_breadcrumb_archive() {
@@ -283,7 +269,7 @@ function avik_the_breadcrumb_archive() {
         echo esc_url( home_url( '/' ) );
         echo '">';
         bloginfo('name');
-        echo '</a>' . esc_attr($sep);
+        echo '</a>' . esc_html($sep);
         if (is_category() || is_single() ){
             single_term_title();
         } elseif (is_archive() || is_single()){
@@ -299,7 +285,7 @@ function avik_the_breadcrumb_archive() {
             }
         }
         if (is_single()) {
-            echo esc_attr($sep);
+            echo esc_html($sep);
             the_title();
         }
         if (is_page()) {
@@ -321,7 +307,7 @@ function avik_the_breadcrumb_archive() {
 	}
 }
 
-/* 9 Breadcrumb Search
+/* 8 Breadcrumb Search
 ------------------------------------------------------------*/
 
 function avik_the_breadcrumb_search() {
@@ -340,7 +326,7 @@ function avik_the_breadcrumb_search() {
         echo esc_url( home_url( '/' ) );
         echo '">';
         bloginfo('name');
-        echo '</a>' . esc_attr($sep);
+        echo '</a>' . esc_html($sep);
         if (is_category() || is_single() ){
             the_category('title_li=');
         } elseif (is_archive() || is_single()){
@@ -356,7 +342,7 @@ function avik_the_breadcrumb_search() {
             }
         }
         if (is_single()) {
-            echo esc_attr($sep);
+            echo esc_html($sep);
             the_title();
         }
         if (is_page()) {
@@ -378,7 +364,7 @@ function avik_the_breadcrumb_search() {
 	}
 }
 
-/* 10 Add Custom Styles Editor
+/* 9 Add Custom Styles Editor
 -------------------------------------------------------- */
 
 function avik_wpb_mce_buttons_2($buttons) {
@@ -454,7 +440,7 @@ function avik_my_theme_add_editor_styles() {
 add_action( 'init', 'avik_my_theme_add_editor_styles' );
 
 
-/* 11 Carousel featured image
+/* 10 Carousel featured image
 ------------------------------------------------------------*/
 
 function avik_carousel_scripts() {
@@ -467,7 +453,7 @@ add_action( 'wp_enqueue_scripts', 'avik_carousel_scripts' );
 
 add_image_size( 'carousel-pic', 480, 320, true );
 
-/* 12 Avik Support Page
+/* 11 Avik Support Page
 ------------------------------------------------------------*/
 
 add_action('admin_menu', 'avik_page_create');
@@ -490,7 +476,7 @@ function avik_load_admin_style() {
     wp_enqueue_style( 'wp-bootstrap-avik-font-awesome-admin', get_template_directory_uri() . '/css/fontawesome-all.css' );
 }
 
-/* 13 Lightbox popup image
+/* 12 Lightbox popup image
 -------------------------------------------------------- */
 
 function avik_register_lightbox() {
@@ -513,7 +499,7 @@ function avik_addtaglightbox ($content){
     return $content;
 }
 
-/* 15 Include javascript files
+/* 13 Include javascript files
 ------------------------------------------------------------*/
 
 function avik_scripts() {
@@ -541,7 +527,7 @@ function avik_scripts() {
 add_action( 'wp_enqueue_scripts', 'avik_scripts' );
 
 
-/* 16 Include css files
+/* 14 Include css files
 -------------------------------------------------------- */
 
 if(! function_exists('avik_styles') ) {
@@ -555,7 +541,7 @@ if(! function_exists('avik_styles') ) {
 	// Font Awesome
 	wp_enqueue_style('avik-font-awesome', get_template_directory_uri(). '/css/fontawesome-all.min.css');
 	// AOS Animate
-	wp_enqueue_style('avik-aos-css', get_template_directory_uri(). '/css/aos.css');
+	wp_enqueue_style('avik-aos-css', get_template_directory_uri(). '/css/aos.min.css');
 
   }
 
@@ -563,7 +549,7 @@ if(! function_exists('avik_styles') ) {
 
 add_action('wp_enqueue_scripts', 'avik_styles');
 
-/* 17 Include script and styles for class add Panel
+/* 15 Include script and styles for class add Panel
 ------------------------------------------------------------*/
 
 function avik_pe_customize_controls_scripts() {
@@ -589,7 +575,7 @@ $wp_customize->register_section_type( 'Avik_WP_Customize_Section' );
 
     add_action( 'customize_register', 'avik_pe_customize_register' );
 
-/* 18 Add additional templates
+/* 16 Add additional templates
 -------------------------------------------------------- */
 
 // Custom template tags for this theme
@@ -623,7 +609,7 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-/* 20 Include Plugin
+/* 17 Include Plugin
 -------------------------------------------------------- */
 
 
@@ -780,7 +766,7 @@ $header_images = array(
 register_default_headers( $header_images );
 
 
-/* 21 Multipost Thumbnails Plugin
+/* 18 Multipost Thumbnails Plugin
 -------------------------------------------------------- */
 
    if ( class_exists( 'MultiPostThumbnails' )) {

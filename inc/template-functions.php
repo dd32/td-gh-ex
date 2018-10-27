@@ -1,11 +1,11 @@
 <?php
 /**
- * templatew-functions.php
- *
- * @author    Denis Franchi
- * @package   Avik
- * @version   1.2.6
- */
+* templatew-functions.php
+*
+* @author    Denis Franchi
+* @package   Avik
+* @version   1.2.7
+*/
 
 function avik_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
@@ -23,8 +23,8 @@ function avik_body_classes( $classes ) {
 add_filter( 'body_class', 'avik_body_classes' );
 
 /**
- * Add a pingback url auto-discovery header for single posts, pages, or attachments.
- */
+* Add a pingback url auto-discovery header for single posts, pages, or attachments.
+*/
 function avik_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';

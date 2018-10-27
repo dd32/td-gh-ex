@@ -519,7 +519,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 			$actions['update'] = sprintf(
 				'<a href="%1$s" title="%2$s" class="edit">%3$s</a>',
 				esc_url( $this->get_tgmpa_status_url( 'update' ) ),
-				esc_attr__( 'This plugin needs to be updated to be compatible with your theme.', 'avik' ),
+				esc_html__( 'This plugin needs to be updated to be compatible with your theme.', 'avik' ),
 				esc_html__( 'Update Required', 'avik' )
 			);
 
@@ -675,8 +675,8 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 				<?php $plugin_table->views(); ?>
 
 				<form id="tgmpa-plugins" action="" method="post">
-					<input type="hidden" name="tgmpa-page" value="<?php echo esc_attr( $this->menu ); ?>" />
-					<input type="hidden" name="plugin_status" value="<?php echo esc_attr( $plugin_table->view_context ); ?>" />
+					<input type="hidden" name="tgmpa-page" value="<?php echo esc_html( $this->menu ); ?>" />
+					<input type="hidden" name="plugin_status" value="<?php echo esc_html( $plugin_table->view_context ); ?>" />
 					<?php $plugin_table->display(); ?>
 				</form>
 			</div>
@@ -2445,9 +2445,9 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 		public function column_cb( $item ) {
 			return sprintf(
 				'<input type="checkbox" name="%1$s[]" value="%2$s" id="%3$s" />',
-				esc_attr( $this->_args['singular'] ),
-				esc_attr( $item['slug'] ),
-				esc_attr( $item['sanitized_plugin'] )
+				esc_html( $this->_args['singular'] ),
+				esc_html( $item['slug'] ),
+				esc_html( $item['sanitized_plugin'] )
 			);
 		}
 

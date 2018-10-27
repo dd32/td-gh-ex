@@ -1,11 +1,11 @@
 <?php
 /**
- * sidebar.php
- *
- * @author    Denis Franchi
- * @package   Avik
- * @version   1.2.6
- */
+* sidebar.php
+*
+* @author    Denis Franchi
+* @package   Avik
+* @version   1.2.7
+*/
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;

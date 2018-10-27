@@ -1,50 +1,50 @@
 <?php
 /**
- * color-scheme.php
- *
- * @author    Denis Franchi
- * @package   Avik
- * @version   1.2.6
- */
+* color-scheme.php
+*
+* @author    Denis Franchi
+* @package   Avik
+* @version   1.2.7
+*/
 
 class Avik_Color_Scheme {
 
 	public function __construct() {
-        add_action( 'customize_register', array( $this, 'customizer_register' ) );
-        add_action( 'customize_controls_enqueue_scripts', array( $this, 'customize_js' ) );
-        add_action( 'customize_controls_print_footer_scripts', array( $this, 'color_scheme_template' ) );
-        add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
-        add_action( 'wp_enqueue_scripts', array( $this, 'output_css' ) );
-    }
+		add_action( 'customize_register', array( $this, 'customizer_register' ) );
+		add_action( 'customize_controls_enqueue_scripts', array( $this, 'customize_js' ) );
+		add_action( 'customize_controls_print_footer_scripts', array( $this, 'color_scheme_template' ) );
+		add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
+		add_action( 'wp_enqueue_scripts', array( $this, 'output_css' ) );
+	}
 
-    public function customizer_register( WP_Customize_Manager $wp_customize ) {
+	public function customizer_register( WP_Customize_Manager $wp_customize ) {
 
 
-    	$wp_customize->add_setting( 'avik_color_scheme', array(
-		    'default' => 'avik',
+		$wp_customize->add_setting( 'avik_color_scheme', array(
+			'default' => 'avik',
 			'transport' => 'refresh',
 			'sanitize_callback' => 'avik_sanitize_select',
 		) );
 		$color_schemes = $this->get_color_schemes();
 		$choices = array();
 		foreach ( $color_schemes as $avik_color_scheme => $value ) {
-		    $choices[$avik_color_scheme] = $value['label'];
+			$choices[$avik_color_scheme] = $value['label'];
 		}
 
 		$wp_customize->add_control( 'avik_color_scheme', array(
-		    'label'   => __( 'Skins', 'avik' ),
-				'description'=> __('Choose the most suitable skins for your site, or change the colors as you wish','avik'),
-		    'section' => 'colors',
+			'label'   => __( 'Skins', 'avik' ),
+			'description'=> __('Choose the most suitable skins for your site, or change the colors as you wish','avik'),
+			'section' => 'colors',
 			'type'    => 'select',
 			'priority'=> 2,
-		    'choices' => $choices,
+			'choices' => $choices,
 		) );
 
 		$options = array(
-	    	'link_color'                      => __( 'Link color', 'avik' ),
-		    'button_background_color'         => __( 'Button background color', 'avik' ),
-		    'button_hover_background_color'   => __( 'Button hover background color', 'avik' ),
-		    'text_slider_color'               => __( 'Text Slider/Video/Static color', 'avik' ),
+			'link_color'                      => __( 'Link color', 'avik' ),
+			'button_background_color'         => __( 'Button background color', 'avik' ),
+			'button_hover_background_color'   => __( 'Button hover background color', 'avik' ),
+			'text_slider_color'               => __( 'Text Slider/Video/Static color', 'avik' ),
 			'background_slider_color'         => __( 'Slider background color', 'avik' ),
 			'background_whoweare_color'       => __( 'Who we are background color', 'avik' ),
 			'subtitle_banner_color'           => __( 'Subtitle automatic writing color', 'avik' ),
@@ -70,26 +70,26 @@ class Avik_Color_Scheme {
 		);
 
 		foreach ( $options as $key => $label ) {
-		    $wp_customize->add_setting( $key, array(
+			$wp_customize->add_setting( $key, array(
 				'sanitize_callback' => 'sanitize_hex_color',
-		        'transport' => 'refresh',
+				'transport' => 'refresh',
 			) );
 
 
-		    $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $key, array(
-		        'label' => $label,
+			$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $key, array(
+				'label' => $label,
 				'section' => 'colors',
-		        'setting' => $key,
-		    ) ) );
+				'setting' => $key,
+			) ) );
 		}
 
-    }
+	}
 
-    public $options = array(
-	    'link_color',
-	    'button_background_color',
-	    'button_hover_background_color',
-	    'text_slider_color',
+	public $options = array(
+		'link_color',
+		'button_background_color',
+		'button_hover_background_color',
+		'text_slider_color',
 		'background_slider_color',
 		'background_whoweare_color',
 		'subtitle_banner_color',
@@ -116,9 +116,9 @@ class Avik_Color_Scheme {
 
 	public function get_css( $colors ) {
 
-	$css = '
+		$css = '
 
-	    h1.slideshow__slide-caption-title,
+		h1.slideshow__slide-caption-title,
 		.o-hsub.-link:hover,
 		.btn.btn-avik:hover,
 		.btn.btn-avik:hover a,
@@ -262,23 +262,23 @@ class Avik_Color_Scheme {
 		//rest of the css
 		';
 
-	    // More CSS
-	    return vsprintf( $css, $colors );
+		// More CSS
+		return vsprintf( $css, $colors );
 	}
 
 
 
 	public function customize_js() {
-	   wp_enqueue_script( 'avik-color-scheme', get_template_directory_uri() . '/inc/js/avik-color-scheme.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '', true );
-	   wp_localize_script( 'avik-color-scheme', 'AvikColorScheme', $this->get_color_schemes() );
+		wp_enqueue_script( 'avik-color-scheme', get_template_directory_uri() . '/inc/js/avik-color-scheme.js', array( 'customize-controls', 'iris', 'underscore', 'wp-util' ), '', true );
+		wp_localize_script( 'avik-color-scheme', 'AvikColorScheme', $this->get_color_schemes() );
 	}
 
-    public function color_scheme_template() {
-	    $colors = array(
-	        'link_color'                       => '{{ data.link_color }}',
-	        'button_background_color'          => '{{ data.button_background_color }}',
-	        'button_hover_background_color'    => '{{ data.button_hover_background_color }}',
-	        'text_slider_color'                => '{{ data.text_slider_color }}',
+	public function color_scheme_template() {
+		$colors = array(
+			'link_color'                       => '{{ data.link_color }}',
+			'button_background_color'          => '{{ data.button_background_color }}',
+			'button_hover_background_color'    => '{{ data.button_hover_background_color }}',
+			'text_slider_color'                => '{{ data.text_slider_color }}',
 			'background_slider_color'          => '{{ data.background_slider_color }}',
 			'background_whoweare_color'        => '{{ data.background_whoweare_color }}',
 			'subtitle_banner_color'            => '{{ data.subtitle_banner_color}}',
@@ -301,90 +301,90 @@ class Avik_Color_Scheme {
 			'preloader_color'                  => '{{ data.preloader_color}}',
 
 
-	    );
-	    ?>
-	    <script type="text/html" id="tmpl-avik-color-scheme">
-	        <?php echo esc_attr($this->get_css( $colors )); ?>
-	    </script>
-	<?php
-    }
-    public function customize_preview_js() {
-   		wp_enqueue_script( 'avik-color-scheme-preview', get_template_directory_uri() . '/inc/js/avik-color-scheme-preview.js', array( 'customize-preview' ), '', true );
+		);
+		?>
+		<script type="text/html" id="tmpl-avik-color-scheme">
+			<?php echo esc_attr($this->get_css( $colors )); ?>
+		</script>
+		<?php
+	}
+	public function customize_preview_js() {
+		wp_enqueue_script( 'avik-color-scheme-preview', get_template_directory_uri() . '/inc/js/avik-color-scheme-preview.js', array( 'customize-preview' ), '', true );
 
-    }
+	}
 
-		public function output_css() {
+	public function output_css() {
 		$colors = $this->get_color_scheme();
 		if ( $this->is_custom ) {
-		    wp_add_inline_style( 'avik-style', $this->get_css( $colors ) );
+			wp_add_inline_style( 'avik-style', $this->get_css( $colors ) );
 		}
+	}
+
+	public $is_custom = false;
+	public function get_color_scheme() {
+		$color_schemes = $this->get_color_schemes();
+		$color_scheme  = get_theme_mod( 'avik_color_scheme' );
+		$color_scheme  = isset( $color_schemes[$color_scheme] ) ? $color_scheme : '';
+
+		if ( '' != $color_scheme ) {
+			$this->is_custom = true;
 		}
 
-		public $is_custom = false;
-		public function get_color_scheme() {
-		  $color_schemes = $this->get_color_schemes();
-		  $color_scheme  = get_theme_mod( 'avik_color_scheme' );
-		  $color_scheme  = isset( $color_schemes[$color_scheme] ) ? $color_scheme : '';
+		$colors = array_map( 'strtolower', $color_schemes['avik']['colors'] );
 
-		  if ( '' != $color_scheme ) {
-		      $this->is_custom = true;
-		  }
-
-		  $colors = array_map( 'strtolower', $color_schemes['avik']['colors'] );
-
-		  foreach ( $this->options as $k => $option ) {
-		      $color = get_theme_mod( $option );
-		      if ( $color && strtolower( $color ) != $colors[$k] ) {
-		          $colors[$k] = $color;
-		      }
-		  }
-		  return $colors;
+		foreach ( $this->options as $k => $option ) {
+			$color = get_theme_mod( $option );
+			if ( $color && strtolower( $color ) != $colors[$k] ) {
+				$colors[$k] = $color;
+			}
 		}
+		return $colors;
+	}
 
 
 
 	public function get_color_schemes() {
 		return array(
 
-		'avik' => array(
-						'label'  => __( 'Avik', 'avik' ),
-						'colors' => array(
-								'#d5f83e',  // 1 Link color
-								'#ffffff',  // 2 Button background color
-								'#000',     // 3 Hover Button background color
-				'#fff',     // 4 Text slider color
-								'#000000',  // 5 Background slider color
-				'#f9f9f9',  // 6 Background Who we are color
-				'#fff',     // 7 Subtitle banner color
-				'#fff',     // 8 Cursor banner color
-				'#f9f9f9',  // 9 Background Services color
-				'#000',     // 10 Background quotation color
-				'#000',     // 11 Background footer color
-				'#ffffff',  // 12 Text footer color
-				'#000',     // 13 Background scroll to top color
-				'#ffffff',  // 14 Scroll to top color
-				'#777777',  // 15 Hover scroll to top color
-				'#829822',  // 16 Hover social slider and footer color
-				'#363636',  // 17 Social contact color
-				'#838383',  // 18 Hover social contact color
-				'#fff',     // 19 Social team color
-				'#6b6868',  // 20 Social share color
-				'#000',     // 21 Hover social share color
-						'#f6f6f6',  // 22 Background breadcrumbs color
-				'#000',     // 23 Background preloader color
-				'#fff',     // 24 Preloader color
-				'#fff',     // 25 Background body color
-						),
-		),
+			'avik' => array(
+				'label'  => __( 'Avik', 'avik' ),
+				'colors' => array(
+					'#d5f83e',  // 1 Link color
+					'#ffffff',  // 2 Button background color
+					'#000',     // 3 Hover Button background color
+					'#fff',     // 4 Text slider color
+					'#000000',  // 5 Background slider color
+					'#f9f9f9',  // 6 Background Who we are color
+					'#fff',     // 7 Subtitle banner color
+					'#fff',     // 8 Cursor banner color
+					'#f9f9f9',  // 9 Background Services color
+					'#000',     // 10 Background quotation color
+					'#000',     // 11 Background footer color
+					'#ffffff',  // 12 Text footer color
+					'#000',     // 13 Background scroll to top color
+					'#ffffff',  // 14 Scroll to top color
+					'#777777',  // 15 Hover scroll to top color
+					'#829822',  // 16 Hover social slider and footer color
+					'#363636',  // 17 Social contact color
+					'#838383',  // 18 Hover social contact color
+					'#fff',     // 19 Social team color
+					'#6b6868',  // 20 Social share color
+					'#000',     // 21 Hover social share color
+					'#f6f6f6',  // 22 Background breadcrumbs color
+					'#000',     // 23 Background preloader color
+					'#fff',     // 24 Preloader color
+					'#fff',     // 25 Background body color
+				),
+			),
 
-	        'purple' => array(
-	            'label'  => __( 'Avik Purple', 'avik' ),
-	            'colors' => array(
+			'purple' => array(
+				'label'  => __( 'Avik Purple', 'avik' ),
+				'colors' => array(
 					'#eaeaea',  // 1 Link color
-	                '#ffffff',  // 2 Button background color
-	                '#8500b2',  // 3 Hover Button background color
+					'#ffffff',  // 2 Button background color
+					'#8500b2',  // 3 Hover Button background color
 					'#000',     // 4 Text slider color
-	                '#8500b2',  // 5 Background slider color
+					'#8500b2',  // 5 Background slider color
 					'#f7f4ff',  // 6 Background Who we are color
 					'#8500b2',  // 7 Subtitle banner color
 					'#8500b2',  // 8 Cursor banner color
@@ -401,21 +401,21 @@ class Avik_Color_Scheme {
 					'#8500b2',  // 19 Social team color
 					'#8500b2',  // 20 Social share color
 					'#000',     // 21 Hover social share color
-			        '#f7f4ff',  // 22 Background breadcrumbs color
+					'#f7f4ff',  // 22 Background breadcrumbs color
 					'#fff',     // 23 Background preloader color
 					'#8500b2',  // 24 Preloader color
 					'#fff',     // 25 Background body color
-	            ),
+				),
 			),
 
-	        'green' => array(
-	            'label'  => __( 'Avik Green', 'avik' ),
-	            'colors' => array(
-	                '#00a31d',  // 1 Link color
-	                '#ffffff',  // 2 Button background color
-	                '#000',     // 3 Hover Button background color
+			'green' => array(
+				'label'  => __( 'Avik Green', 'avik' ),
+				'colors' => array(
+					'#00a31d',  // 1 Link color
+					'#ffffff',  // 2 Button background color
+					'#000',     // 3 Hover Button background color
 					'#fff',     // 4 Text slider color
-	                '#000',     // 5 Background slider color
+					'#000',     // 5 Background slider color
 					'#f3fff2',  // 6 Background Who we are color
 					'#000',     // 7 Subtitle banner color
 					'#000',     // 8 Cursor banner color
@@ -432,7 +432,7 @@ class Avik_Color_Scheme {
 					'#00a31d',  // 19 Social team color
 					'#00a31d',  // 20 Social share color
 					'#000',     // 21 Hover social share color
-			        '#f3fff2',  // 22 Background breadcrumbs color
+					'#f3fff2',  // 22 Background breadcrumbs color
 					'#000',     // 23 Background preloader color
 					'#00a31d',  // 24 Preloader color
 					'#fff',     // 25 Background body color
@@ -440,13 +440,13 @@ class Avik_Color_Scheme {
 			),
 
 			'red' => array(
-	            'label'  => __( 'Avik Red', 'avik' ),
-	            'colors' => array(
+				'label'  => __( 'Avik Red', 'avik' ),
+				'colors' => array(
 					'#dd0000',  // 1 Link color
-	                '#ffffff',  // 2 Button background color
-	                '#000',     // 3 Hover Button background color
+					'#ffffff',  // 2 Button background color
+					'#000',     // 3 Hover Button background color
 					'#fff',     // 4 Text slider color
-	                '#000',     // 5 Background slider color
+					'#000',     // 5 Background slider color
 					'#f7f7f7',  // 6 Background Who we are color
 					'#000',     // 7 Subtitle banner color
 					'#000',     // 8 Cursor banner color
@@ -463,21 +463,21 @@ class Avik_Color_Scheme {
 					'#dd0000',  // 19 Social team color
 					'#dd0000',  // 20 Social share color
 					'#000',     // 21 Hover social share color
-			        '#f7f7f7',  // 22 Background breadcrumbs color
+					'#f7f7f7',  // 22 Background breadcrumbs color
 					'#000',     // 23 Background preloader color
 					'#dd0000',  // 24 Preloader color
 					'#fff',     // 25 Background body color
-	            ),
-	        ),
+				),
+			),
 
 			'pastel' => array(
-	            'label'  => __( 'Avik Pastel', 'avik' ),
-	            'colors' => array(
+				'label'  => __( 'Avik Pastel', 'avik' ),
+				'colors' => array(
 					'#7a8b8e',  // 1 Link color
-	                '#8feae4',  // 2 Button background color
-	                '#000',     // 3 Hover Button background color
+					'#8feae4',  // 2 Button background color
+					'#000',     // 3 Hover Button background color
 					'#000',     // 4 Text slider color
-	                '#efdcf7',  // 5 Background slider color
+					'#efdcf7',  // 5 Background slider color
 					'#efdcf7',  // 6 Background Who we are color
 					'#f1cdf7',  // 7 Subtitle banner color
 					'#f1cdf7',  // 8 Cursor banner color
@@ -494,13 +494,13 @@ class Avik_Color_Scheme {
 					'#f1cdf7',  // 19 Social team color
 					'#f1cdf7',  // 20 Social share color
 					'#000',     // 21 Hover social share color
-			        '#efdcf7',  // 22 Background breadcrumbs color
+					'#efdcf7',  // 22 Background breadcrumbs color
 					'#b9eae8',  // 23 Background preloader color
 					'#efdcf7',  // 24 Preloader color
 					'#b9eae8',  // 25 Background body color
 
-	            ),
-	        ),
-	    );//
+				),
+			),
+		);//
 	}
 }

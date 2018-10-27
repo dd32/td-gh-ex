@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.6
+ * @version   1.2.7
  */
  ?>
 
@@ -17,7 +17,7 @@
 			      <span id="typed"></span>
         </div>
         <?php
-             $whowearecontent = esc_attr( get_theme_mod( 'avik_page_id_whoweare', '' ));
+             $whowearecontent = esc_url( get_theme_mod( 'avik_page_id_whoweare' ));
              $whoweare_count = 1;
              $mod = new WP_Query( array( 'page_id' => $whowearecontent ,'showposts' => $whoweare_count ) );
              while ( $mod->have_posts() ) : $mod->the_post(); { ?>
@@ -50,18 +50,17 @@
               </div>
                <div class="clear"></div>
                  <?php } endwhile;
-                  wp_reset_query();
-                  wp_reset_postdata(); ?>
+                  wp_reset_query(); ?>
           </div>
         </div>
          <!-- Statistics -->
-         <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_statistics_whoweare', false) )) :?>
+         <?php if ( false == esc_html( get_theme_mod( 'avik_enable_statistics_whoweare', false) )) :?>
          <div class="statistics row">
            <div class="statistics-box col-sm-3">
              <div class="statistics-icon">
-               <span><i class="<?php echo esc_attr( get_theme_mod( 'avik_icon_1_statistics','far fa-flag')); ?>"></i></span>
+               <span><i class="<?php echo esc_html( get_theme_mod( 'avik_icon_1_statistics','far fa-flag')); ?>"></i></span>
                <div class="counter-value statistics-number">
-               <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_1_statistics')); ?>
+               <?php echo esc_html( get_theme_mod( 'avik_max_numbers_1_statistics')); ?>
                </div>
                 <div class="statistics-text one">
                   <h4><?php echo esc_html( get_theme_mod( 'avik_title_1_statistics_whoweare')); ?></h4>
@@ -70,9 +69,9 @@
            </div>
        <div class="statistics-box col-sm-3">
           <div class="statistics-icon">
-            <span><i class="<?php echo esc_attr( get_theme_mod( 'avik_icon_2_statistics','far fa-smile')); ?>"></i></span>
+            <span><i class="<?php echo esc_html( get_theme_mod( 'avik_icon_2_statistics','far fa-smile')); ?>"></i></span>
           <div class="counter-value statistics-number">
-          <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_2_statistics')); ?>
+          <?php echo esc_html( get_theme_mod( 'avik_max_numbers_2_statistics')); ?>
           </div>
                <div class="statistics-text two">
                  <h4><?php echo esc_html( get_theme_mod( 'avik_title_2_statistics_whoweare')); ?></h4>
@@ -81,9 +80,9 @@
        </div>
        <div class="statistics-box col-sm-3">
           <div class="statistics-icon">
-            <span><i class="<?php echo esc_attr( get_theme_mod( 'avik_icon_3_statistics','fas fa-thumbtack')); ?>"></i></span>
+            <span><i class="<?php echo esc_html( get_theme_mod( 'avik_icon_3_statistics','fas fa-thumbtack')); ?>"></i></span>
             <div class="counter-value statistics-number">
-            <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_3_statistics')); ?>
+            <?php echo esc_html( get_theme_mod( 'avik_max_numbers_3_statistics')); ?>
               </div>
                  <div class="statistics-text three">
                   <h4><?php echo esc_html( get_theme_mod( 'avik_title_3_statistics_whoweare')); ?></h4>
@@ -92,9 +91,9 @@
        </div>
        <div class="statistics-box col-sm-3">
           <div class="statistics-icon">
-             <span><i class="<?php echo esc_attr( get_theme_mod( 'avik_icon_4_statistics','fas fa-globe')); ?>"></i></span>
+             <span><i class="<?php echo esc_html( get_theme_mod( 'avik_icon_4_statistics','fas fa-globe')); ?>"></i></span>
              <div class="counter-value statistics-number">
-              <?php echo esc_attr( get_theme_mod( 'avik_max_numbers_4_statistics')); ?>
+              <?php echo esc_html( get_theme_mod( 'avik_max_numbers_4_statistics')); ?>
                 </div>
                  <div class="statistics-text four">
                    <h4><?php echo esc_html( get_theme_mod( 'avik_title_3_statistics_whoweare')); ?></h4>
@@ -104,7 +103,7 @@
     </div>
     <?php endif; ?>
     <!-- Team -->
-    <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_team_whoweare', false) )) :?>
+    <?php if ( false == esc_html( get_theme_mod( 'avik_enable_team_whoweare', false) )) :?>
     <div class="team">
       <div class="title-team text-center">
         <h3><?php echo esc_html( get_theme_mod( 'avik_title_general_team_whoweare')); ?></h3>
@@ -113,7 +112,7 @@
          <div class="row">
           <div class="frame col-md-4" id="wth-1">
                    <?php
-	                  $team_cat = esc_attr( get_theme_mod('avik_team_1_category'));
+	                  $team_cat = esc_html( get_theme_mod('avik_team_1_category'));
 	                  $team_count =1;
 	                  $new_query = new WP_Query( array( 'cat' => $team_cat  , 'showposts' => $team_count ));
 	                  while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
@@ -133,27 +132,27 @@
                  <div class="avik-social-icons-team">
 		               <ul class="social-team">
                       <!-- Facebook -->
-		                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_facebook_icon_team_1', true) )) :?>
+		                  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_facebook_icon_team_1', true) )) :?>
 		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_facebook_icon_team_1'));?>">
 		                      <i class="fab fa-facebook"></i></a></li>
 			                <?php endif; ?>
 			                <!-- Twitter -->
-		                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_twitter_icon_team_1', true) )):?>
+		                  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_twitter_icon_team_1', true) )):?>
 		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_twitter_icon_team_1' ));?>">
 		                      <i class="fab fa-twitter"></i></a></li>
                       <?php endif; ?>
                       <!-- Instagram -->
-		                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_instagram_icon_team_1', true) )):?>
+		                  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_instagram_icon_team_1', true) )):?>
 		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_instagram_icon_team_1' )); ?>">
 		                      <i class="fab fa-instagram"></i></a></li>
 		                  <?php endif; ?>
 			                <!-- Linkedin -->
-		                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_linkedin_icon_team_1', true) )):?>
+		                  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_linkedin_icon_team_1', true) )):?>
 		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_linkedin_icon_team_1' )); ?>">
 		                       <i class="fab fa-linkedin"></i></a></li>
 		                  <?php endif; ?>
 			                <!-- Google Plus-->
-		                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_google_plus_icon_team_1', true) )):?>
+		                  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_google_plus_icon_team_1', true) )):?>
 		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_google_plus_icon_team_1' )); ?>">
 		                      <i class="fab fa-google-plus-g"></i></a></li>
 		                  <?php endif; ?>
@@ -163,7 +162,7 @@
               </div>
                 <div class="frame col-md-4" id="wth-2">
                  <?php
-                  $team_cat = esc_attr( get_theme_mod('avik_team_2_category'));
+                  $team_cat = esc_html( get_theme_mod('avik_team_2_category'));
                   $team_count =1;
                   $new_query = new WP_Query( array( 'cat' => $team_cat  , 'showposts' => $team_count ));
                   while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
@@ -183,27 +182,27 @@
                <div class="avik-social-icons-team">
                  <ul class="social-team">
                     <!-- Facebook -->
-                    <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_facebook_icon_team_2', true) )) :?>
+                    <?php if ( false == esc_html( get_theme_mod( 'avik_enable_facebook_icon_team_2', true) )) :?>
 		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_facebook_icon_team_2'));?>">
 		                      <i class="fab fa-facebook"></i></a></li>
 			                <?php endif; ?>
 			                <!-- Twitter -->
-		                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_twitter_icon_team_2', true) )):?>
+		                  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_twitter_icon_team_2', true) )):?>
 		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_twitter_icon_team_2' ));?>">
 		                      <i class="fab fa-twitter"></i></a></li>
                       <?php endif; ?>
                       <!-- Instagram -->
-		                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_instagram_icon_team_2', true) )):?>
+		                  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_instagram_icon_team_2', true) )):?>
 		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_instagram_icon_team_2' )); ?>">
 		                      <i class="fab fa-instagram"></i></a></li>
 		                  <?php endif; ?>
 			                <!-- Linkedin -->
-		                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_linkedin_icon_team_2', true) )):?>
+		                  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_linkedin_icon_team_2', true) )):?>
 		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_linkedin_icon_team_2' )); ?>">
 		                       <i class="fab fa-linkedin"></i></a></li>
 		                  <?php endif; ?>
 			                <!-- Google Plus-->
-		                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_google_plus_icon_team_2', true) )):?>
+		                  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_google_plus_icon_team_2', true) )):?>
 		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_google_plus_icon_team_2' )); ?>">
 		                      <i class="fab fa-google-plus-g"></i></a></li>
 		                  <?php endif; ?>
@@ -213,7 +212,7 @@
          </div>
          <div class="frame col-md-4" id="wth-3">
                  <?php
-                  $team_cat = esc_attr( get_theme_mod('avik_team_3_category'));
+                  $team_cat = esc_url( get_theme_mod('avik_team_3_category'));
                   $team_count =1;
                   $new_query = new WP_Query( array( 'cat' => $team_cat  , 'showposts' => $team_count ));
                   while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
@@ -233,27 +232,27 @@
                <div class="avik-social-icons-team">
                  <ul class="social-team">
                     <!-- Facebook -->
-                    <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_facebook_icon_team_3', true) )) :?>
+                    <?php if ( false == esc_html( get_theme_mod( 'avik_enable_facebook_icon_team_3', true) )) :?>
 		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_facebook_icon_team_3'));?>">
 		                      <i class="fab fa-facebook"></i></a></li>
 			                <?php endif; ?>
 			                <!-- Twitter -->
-		                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_twitter_icon_team_3', true) )):?>
+		                  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_twitter_icon_team_3', true) )):?>
 		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_twitter_icon_team_3' ));?>">
 		                      <i class="fab fa-twitter"></i></a></li>
                       <?php endif; ?>
                       <!-- Instagram -->
-		                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_instagram_icon_team_3', true) )):?>
+		                  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_instagram_icon_team_3', true) )):?>
 		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_instagram_icon_team_3' )); ?>">
 		                      <i class="fab fa-instagram"></i></a></li>
 		                  <?php endif; ?>
 			                <!-- Linkedin -->
-		                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_linkedin_icon_team_3', true) )):?>
+		                  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_linkedin_icon_team_3', true) )):?>
 		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_linkedin_icon_team_3' )); ?>">
 		                       <i class="fab fa-linkedin"></i></a></li>
 		                  <?php endif; ?>
 			                <!-- Google Plus-->
-		                  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_google_plus_icon_team_3', true) )):?>
+		                  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_google_plus_icon_team_3', true) )):?>
 		                  <li><a href="<?php echo esc_url( get_theme_mod( 'avik_link_google_plus_icon_team_3' )); ?>">
 		                      <i class="fab fa-google-plus-g"></i></a></li>
 		                  <?php endif; ?>
@@ -267,7 +266,7 @@
   </div>
   <?php endif; ?>
   <!-- Carousel Brands -->
-  <?php if ( false == esc_attr( get_theme_mod( 'avik_enable_partner_whoweare', false) )) :?>
+  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_partner_whoweare', false) )) :?>
   <?php get_template_part( 'inc/carousel-brands' ); ?>
   <?php endif; ?>
   </div>

@@ -1,11 +1,11 @@
 <?php
 /**
- * comments.php
- *
- * @author    Denis Franchi
- * @package   Avik
- * @version   1.2.6
- */
+* comments.php
+*
+* @author    Denis Franchi
+* @package   Avik
+* @version   1.2.7
+*/
 
 if ( post_password_required() ) {
 	return;

@@ -1,10 +1,10 @@
 /**
- * pe-customize-controls.js
- *
- * author    Denis Franchi
- * package   Avik
- * version   1.2.6
- */
+* pe-customize-controls.js
+*
+* author    Denis Franchi
+* package   Avik
+* version   1.2.7
+*/
 
 ( function( $ ) {
 
@@ -111,24 +111,24 @@
       });
 
       panel.container.find( '.customize-panel-back' )
-        .off( 'click keydown' )
-        .on( 'click keydown', function( event ) {
+      .off( 'click keydown' )
+      .on( 'click keydown', function( event ) {
 
-          if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
+        if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
 
-            return;
+          return;
 
-          }
+        }
 
-          event.preventDefault(); // Keep this AFTER the key filter above
+        event.preventDefault(); // Keep this AFTER the key filter above
 
-          if ( panel.expanded() ) {
+        if ( panel.expanded() ) {
 
-            api.panel( panel.params.panel ).expand();
+          api.panel( panel.params.panel ).expand();
 
-          }
+        }
 
-        });
+      });
 
     },
     embed: function() {
@@ -244,24 +244,24 @@
       });
 
       section.container.find( '.customize-section-back' )
-        .off( 'click keydown' )
-        .on( 'click keydown', function( event ) {
+      .off( 'click keydown' )
+      .on( 'click keydown', function( event ) {
 
-          if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
+        if ( api.utils.isKeydownButNotEnterEvent( event ) ) {
 
-            return;
+          return;
 
-          }
+        }
 
-          event.preventDefault(); // Keep this AFTER the key filter above
+        event.preventDefault(); // Keep this AFTER the key filter above
 
-          if ( section.expanded() ) {
+        if ( section.expanded() ) {
 
-            api.section( section.params.section ).expand();
+          api.section( section.params.section ).expand();
 
-          }
+        }
 
-        });
+      });
 
     },
     embed: function() {
