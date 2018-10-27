@@ -1,3 +1,7 @@
+fCorpo 1.1.6, 2018-10-27
+------------------------
+- add instructions in readme.txt file how to configure the Homepage slider
+
 fCorpo 1.1.5, 2018-08-28
 ------------------------
 - update screenshot according to latest WordPress requirements for screenshot

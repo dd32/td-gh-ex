@@ -4,7 +4,7 @@ Description: fCorpo a perfect choice for your Corporate, Business, Company, Port
 Theme URI: https://tishonator.com/product/fcorpo
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 1.1.5
+Version: 1.1.6
 Text Domain: fcorpo
 Tags: blog, news, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, post-formats, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
@@ -423,7 +423,7 @@ aside {
 	padding:10px 0 0 0;
 }
 
-#sidebar ul:not(.social-widget) > li:before,
+#sidebar ul:not(.social-widget):not(.ui-tabs-nav) > li:before,
 article ul > li:before {
 	content:"\f105";
 	font-family:'FontAwesome';
@@ -437,7 +437,7 @@ article ul > li:before {
 	margin-left:3px;
 }
 
-#sidebar > ul:not(.social-widget) li {
+#sidebar > ul:not(.social-widget):not(.ui-tabs-nav) li {
     border-bottom:1px solid #dddddd;
     margin-bottom:10px;
     width:85%;
@@ -532,7 +532,7 @@ article,
 	color:#919191;
 }
 
-#footer-main ul:not(.social-widget):not(.footer-social-widget) li {
+#footer-main ul:not(.social-widget):not(.ui-tabs-nav):not(.footer-social-widget) li {
     border-bottom:1px solid #333;
     margin-bottom:10px;
     padding-bottom:10px;
@@ -588,7 +588,7 @@ article,
 	margin:0 0 0 14px;
 }
 
-.col ul:not(.social-widget) > li:before {
+.col ul:not(.social-widget):not(.ui-tabs-nav) > li:before {
 	font-family:'FontAwesome';
 	font-style:normal;
 	font-weight:normal;
