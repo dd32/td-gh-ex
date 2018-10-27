@@ -21,20 +21,20 @@
 <body <?php body_class(); ?> >
   
       <div id ="header">
-      <div id ="header-content">
+      <div id ="header-content" class="box90">
 		<!-- Site Titele and Description Goes Here -->
-       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" charset="logotitle"><?php if ( get_header_image() !='' ): ?><img class="site-logo" src="<?php header_image(); ?>"/><?php else: ?><h1 class="site-title"><?php echo bloginfo( 'name' ); ?></h1><?php endif; ?></a>
+       <a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="logotitle"><?php if ( get_header_image() !='' ): ?><img class="site-logo" src="<?php header_image(); ?>"/><?php else: ?><h1 class="site-title"><?php echo bloginfo( 'name' ); ?></h1><?php endif; ?></a>
 		<h2 class="site-title-hidden"><?php bloginfo( 'description' ); ?></h2>
                 
-        
+        <div id="mmainmenu">
         <!-- Site Main Menu Goes Here -->
-        <nav id="main-menu-con">
-		<?php if ( has_nav_menu( 'main-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'main-menu' )); else: wp_page_menu(); endif; ?>
+        <div id="mobile-menu" class="mmenucon"><?php echo __('Main Menu', 'spark'); ?></div>
+        <nav id="main-menu-con" class="mmenucon">
+		<?php if ( has_nav_menu( 'main-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'main-menu-items' )); else: wp_page_menu(); endif; ?>
         </nav>
+        
+      </div>
       
       </div><!-- header-content -->
       </div><!-- header -->
       <div class="clear"></div>
-      
-      
-	  

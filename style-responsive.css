@@ -1,29 +1,65 @@
 /* =Responsive Travel
 -------------------------------------------------------------- */
 @media screen and (max-width: 1100px) {
-	body, #header, #footer { max-width: 100%; width: 100%; min-width: 100%; }	
-	#header-content, #container, #footer-content  {  width: 95%; }	
+	body { max-width: 100%; min-width: 100%; width: 100%; overflow-x: hidden; }
+	.box90, #container { width: 95% !important; }
+	#header-content { flex-direction: column; align-items: center; }
+	.logotitle { max-width: 35%; justify-content: center; }
+	#mmainmenu { max-width: 100%; }
+	#main-menu-con { align-self: auto; } 
+	#main-menu-con a { padding: 9px 10px; }	
 }
 
-@media screen and (max-width: 1000px) {
-	#header { height: auto; }
-	#header-content { display: flex; flex-direction: column; align-items: center; }
-	.logotitle { display: flex; justify-content: center; align-items: center; }
-	img.site-logo, .site-title { max-width: 100%; }
-	#main-menu-con { max-width: 100%; }
-	.vspace { height: 150px; }
-	#main-menu-con ul { display: flex; justify-content: center; flex-wrap: wrap; }
-	#footer-sidebar { display: flex; flex-wrap: wrap; justify-content: center; }
-	#footer-sidebar .widgets { width: calc(25% - 20px); margin: 0 10px 15px; min-width: 250px; }
+@media screen and (max-width: 1023px) { 
+	#grid-staff { margin: 20px -15px !important; } 
+	.view-staff { margin: 15px !important; } 
+}
+
+@media screen and (max-width: 1000px) {	
+	.featured-box-first.featured-box { display: block; width: 100%; text-align: center; padding: 0; margin-top: 0; }
+	.featured-box-first .content-ver-sep { display: none; } 
+	.featured-box { width: calc( 33.33% - 30px); }
+	.lsep, .up-bottom-border, .post-meta { background-size: 90% auto; }
+}
+
+@media screen and (max-width: 900px) {
+	.box90 { width: 97% !important; }
+	#content { width: calc( 100% - 350px ); }
+	.featured-boxs { justify-content: center; }	
+	.featured-box { min-width: 250px; margin: 10px 15px 15px; }
 }
 
 @media screen and (max-width: 800px) {
-	.featured-boxs, .featured-contents { flex-wrap: wrap; justify-content: center; }
-	.featured-box { background-image: none; width: 300px; }
-	.featured-content { width: 300px; }
-	.featured-contents .post, .featured-contents .hentry, .featured-contents .no-results { padding: 10px 20px !important; }
-	#content, #right-sidebar { width: 100%; margin: 0 !important; display: flex; justify-content: center; flex-wrap: wrap; align-items: flex-start; }
-	#right-sidebar .widget { margin: 0 15px 15px !important; width: 250px; }
-	#top-menu-container { display: flex; justify-content: center; flex-direction: row-reverse; flex-wrap: wrap; }
+	#resmeasure { width: 8px; }
+	#header-content { flex-direction: row-reverse; }
+	#content { width: 100%; }
+	#heading { font-size: 25px; }	
+	#right-sidebar { display: flex; flex-wrap: wrap; justify-content: center; align-items: flex-start; width: 100%; }
+	#right-sidebar .widget { width: 330px; margin: 20px; }	
+	#footer-sidebar .footer-widgets { margin: 20px; min-width: 250px; width: 250px; }
+	#footer-sidebar { display: flex; justify-content: center; flex-wrap: wrap; }
 	
+	#mmainmenu { width: 250px; position: relative; }
+	#mobile-menu { display: flex; }
+	#main-menu-con { display: none; position: absolute; top: 100%; left: 0 !important; z-index: 999999; }
+	#main-menu-con a {  font-size: 14px; border-bottom-width: 1px !important; }
+	
+	#main-menu-con ul { display: inline-block; background: rgba(0,0,0,.95); margin: 0 auto; }
+	#main-menu-con a, #main-menu-con a.wccart-icon { margin: 1px auto; border-bottom: 1px solid #fffafa33; padding: 10px; width: 100%; border-radius: 0 !important;  }
+	#main-menu-con li { float: none; margin: 0 auto; width: 250px; }
+	#main-menu-con ul ul a { margin: 0 auto; width: 100%; }	
+	#main-menu-con ul ul, .sub-menu, .sub-menu ul ul { left: 20px !important; top: 90% !important; }	
+	#main-menu-con li.menu-item-has-children > a::after, #main-menu-con li.page_item_has_children > a::after, #mobile-menu::after { right: 5px; }
+	.featured-box { width: calc( 50% - 50px); margin: 10px 25px 15px;  }
+	.noslide { padding-bottom: 20px; }
+}
+
+@media screen and (max-width: 650px) {
+	.featured-box { width: 300px; margin: 10px 15px 15px;  }
+}
+
+@media screen and (max-width: 500px) {
+	#header-content { flex-direction: column; align-items: flex-start; }
+	.logotitle { max-width: 75%; justify-content: flex-start; align-self: flex-start; }
+	.noslide { padding-bottom: 15px; }	
 }

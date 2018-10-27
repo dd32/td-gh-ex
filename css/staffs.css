@@ -1,23 +1,7 @@
 #staff-box-item { position: relative; text-align: center; margin-top: 20px;}
-#grid-staff { width: 100%; margin: 30px auto; padding: 10px 0; max-width: 1280px; display: inline-block; overflow: hidden; }
+#grid-staff { padding: 10px 0; display: flex; overflow: hidden; box-sizing: border-box; margin: 20px calc( (-100% + 948px)/6); flex-wrap: wrap; justify-content: center; align-items: center; min-width: 346px; width: auto; }
 
-.view-staff {
-	width: 300px;
-	height: 200px;
-	margin: 15px;
-	display: inline-block;
-	vertical-align: top;
-	text-align:left;
-	position: relative;
-	border: 8px solid #fff;
-	box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.07);
-	background: #333333;
-	-webkit-perspective: 500px;
-	-moz-perspective: 500px;
-	-o-perspective: 500px;
-	-ms-perspective: 500px;
-	perspective: 500px;
-}
+.view-staff { width: 316px; height: 216px; margin: 15px calc( (100% - 948px)/6) 15px; display: inline-block; vertical-align: top; text-align:left; position: relative; border: 8px solid #fff; box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.07); background: #333333; perspective: 500px; }
 
 .view-staff .slice{
 	width: 60px;
@@ -67,34 +51,18 @@
 	padding-top: 20px;
 }
 
-.view-staff-name { position: absolute; z-index: 999; color: #FFFFFF; text-shadow: 0 1px 0 #141414; }
-.view-staff h3 { padding: 5px 20px 0; margin: 0; }
-.view-staff p { font-style: italic; padding: 0 20px; margin: 0;   }
+.view-staff-name { position: absolute; z-index: 999; color: #ffffff; background: rgba(0,0,0,.35); }
+.view-staff h3 { padding: 5px 5px 0; margin: 0; }
+.view-staff p { font-style: italic; padding: 0 5px 5px; margin: 0;   }
 
 #staff-box-item .view-staff-back a:before { color: rgba(255,255,255,0.4); transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s; -webkit-transition:all 1s; }
-.view-staff-back a {
-	clear: both;
-	display: bock;
-	font-size: 17px;
-	color: rgba(255,255,255,0.4);
-	float: right;
-	margin: 7px 15px 1px;;
-	border: 2px solid rgba(255,255,255,0.3);
-	border-radius: 50%;
-	width: 30px;
-	height: 30px;
-	line-height: 2;
-	text-align: center;
-	font-weight: 100;
-	transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s; -webkit-transition:all 1s;
-}
+.view-staff-back a { clear: both; font-size: 13px; color: rgba(255,255,255,0.4); float: right; margin: 7px 15px 1px; 	border: 2px solid rgba(255,255,255,0.3); border-radius: 50%; width: 30px; height: 30px; text-align: center; font-weight: 100; transition:all 1s; display: inline-flex; align-items: center; justify-content: center; }
 
 .view-staff-back a.profile-link {
 	position: absolute;
 	margin: 0;
 	right: 15px;
 	bottom: 15px;
-	line-height: 1.8;
 }
 
 .view-staff-back a:hover, #staff-box-item .view-staff-back a:hover:before {

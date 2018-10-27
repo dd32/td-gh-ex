@@ -20,7 +20,7 @@
 #about-page .specialbutton:hover { background: #0098d0 ; box-shadow: none; }
 #about-page .specialbutton:active { position: relative; top: 1px; }
 .heading-des { font-size: 17px; }
-.infohead { background:#ffffff; border: 5px solid #14AAFD;  color: #555555; padding: 10px; transition:all .75s; -moz-transition:all .75s; -o-transition:all .75s; -webkit-transition:all .75s; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 15px;}
+.infohead { background:#ffffff; border: 5px solid #14AAFD;  color: #555555; padding: 10px; transition:all .75s; font-family:"Lucida Sans Unicode", "Lucida Grande", sans-serif; font-size: 15px;}
 .infohead:hover { transform: scale(1.01)}
 a.extendlink { float: right; height: 50px; width: 290px; margin-top: -15px; background: url("images/extendlogo.png") no-repeat scroll 0 0 / 100% auto transparent; }
 .spetitle { font-size: 35px; text-align: center; color: #06add7; text-shadow: 1px 1px 0 #eeeeee; }

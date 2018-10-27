@@ -8,19 +8,16 @@
 */
 get_header(); ?>
 <div class="clear"></div>
-<div class="header-back-abs">
-<div class="header-bottom"></div>
-<div class="header-tcontainer">
-<div class="tcontainer1"></div><div class="tcontainer2"></div>
+<div id="heading-con" class="box100">
+<h1 id="heading" class="box90"><?php echo esc_textarea(spark_get_option('heading_text', 'Welcome to the Premium WordPress Theme!')); ?></h1>
+<p class="heading-desc box90"><?php echo esc_textarea(spark_get_option('heading_des', 'You can use Premium Extend Theme for more options, more functions and more visual elements. Extend Version has come with simple color customization option.')); ?></p>
 </div>
+<div id="slide-con" class="box100">
+<div class="noslide box90"><img src="<?php echo esc_url(spark_get_option('slide-image1', get_template_directory_uri() . '/images/slide-image/slide-image1.jpg')); ?>" alt="Premium WordPress Theme by D5 Creation" /></div>
 </div>
+
 <div id="container">
-<h1 id="heading"><?php echo esc_textarea(spark_get_option('heading_text', 'Welcome to the SPARK WordPress Theme!')); ?></h1>
-<p class="heading-desc"><?php echo esc_textarea(spark_get_option('heading_des', 'You can use SPARK Extend Theme for more options, more functions and more visual elements. Extend Version has come with simple color customization option.')); ?></p>
-
-<div class="noslide"><img src="<?php echo esc_url(spark_get_option('slide-image1', get_template_directory_uri() . '/images/slide-image/slide-image1.jpg')); ?>" alt="SPARK WordPress Theme by D5 Creation" /></div>
-
-<?php get_template_part( 'featured-box' ); ?> 
+<?php get_template_part( 'featured-box' ); ?>
 
 
 <!--- ============  STAFFS  =========== ------------>
