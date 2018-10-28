@@ -1,5 +1,9 @@
 SuevaFree Changelog
 
+- Version 3.6.1 - Released: 28.10.2018
+
+-- Updated : WooCommerce templates.
+
 - Version 3.6.0 - Released: 18.10.2018
 
 -- Fixed  : Menu transition for sub items on header layout 1 and 2

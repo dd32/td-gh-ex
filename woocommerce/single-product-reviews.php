@@ -13,8 +13,9 @@
  * @see 	    https://docs.woocommerce.com/document/template-structure/
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.2.0
+ * @version     3.5.0
  */
+ 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly
 }
@@ -28,7 +29,7 @@ if ( ! comments_open() ) {
 ?>
 <div id="reviews" class="woocommerce-Reviews">
 	<div id="comments">
-		<h3 class="comments"><?php
+		<h3 class="woocommerce-Reviews-title comments"><?php
 			if ( get_option( 'woocommerce_enable_review_rating' ) === 'yes' && ( $count = $product->get_review_count() ) ) {
 				/* translators: 1: reviews count 2: product name */
 				printf( esc_html( _n( '%1$s review for %2$s', '%1$s reviews for %2$s', $count, 'suevafree' ) ), esc_html( $count ), '<span>' . get_the_title() . '</span>' );
@@ -98,7 +99,6 @@ if ( ! comments_open() ) {
 					}
 
 					$comment_form['comment_field'] .= '<p class="comment-form-comment"><label for="comment">' . esc_html__( 'Your review', 'suevafree' ) . ' <span class="required">*</span></label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" required></textarea></p>';
-
 					comment_form( apply_filters( 'woocommerce_product_review_comment_form_args', $comment_form ) );
 				?>
 			</div>
