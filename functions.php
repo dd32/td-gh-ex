@@ -166,6 +166,7 @@ if ( ! function_exists( 'ayaclub_load_scripts' ) ) :
 
 		$data = array(
     		'loading_effect' => ( get_theme_mod('ayaclub_animations_display', 1) == 1 ),
+    		'slider_height'  => get_theme_mod('ayaclub_slider_height', 600),
     	);
     	wp_localize_script('ayaclub-utilities', 'ayaclub_options', $data);
 
@@ -509,6 +510,25 @@ if ( ! function_exists( 'ayaclub_customize_register' ) ) :
 									'type'           => 'checkbox',
 								)
 							)
+		);
+
+		// Add Slider Height
+		$wp_customize->add_setting(
+			'ayaclub_slider_height',
+			array(
+			    'default'           => '600',
+			    'sanitize_callback' => 'sanitize_text_field',
+			)
+		);
+
+		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayaclub_slider_height',
+	        array(
+	            'label'          => __( 'Slider Height', 'ayaclub' ),
+	            'section'        => 'ayaclub_slider_section',
+	            'settings'       => 'ayaclub_slider_height',
+	            'type'           => 'text',
+	            )
+	        )
 		);
 		
 		for ($i = 1; $i <= 3; ++$i) {

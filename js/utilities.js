@@ -65,9 +65,12 @@
 	    	ayaclub_mainMenuInit();
 		});
 
+		var $sliderHeight = (ayaclub_options && ayaclub_options.slider_height) ? 
+									ayaclub_options.slider_height + 'px' : '600px';
+
 		$(function(){
 			$('#camera_wrap').camera({
-				height: '600px',
+				height: $sliderHeight,
 				loader: 'bar',
 				pagination: true,
 				thumbnails: false,
