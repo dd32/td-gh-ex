@@ -1,29 +1,17 @@
 === Atento ===
 
 Contributors: Precise Themes
-Version: 1.0.0
-Requires at least: 4.9
+Tags: two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog
+Requires at least: 4.8
+Tested up to: 4.8
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog
-
-
-== Copyright ==
-
-Atento, Copyright 2018 Precise Themes
-Atento is distributed under the terms of the GNU GPL
 
 
 == Description ==
 
 Description: Atento is a minimalist WordPress blog theme beautifully crafted to help you create a stunning blog, suitable for any kind of blog fashion, travel, music, car, real state, beauty, design, food, wedding, movie, photography, technology, personal blog sites. It is designed with a focus on minimal & clean design, unique styling, elegant typography selection to highlight and emphasis your blog content to your readers.
-
-
-== Installation ==
-
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
 
 
 == Frequently Asked Questions ==
@@ -47,7 +35,16 @@ Description: Atento is a minimalist WordPress blog theme beautifully crafted to 
     Atento makes us of Featured Images, which helps to visually tell your story. Featured Images are displayed below the title on the blog posts and archive pages. A smaller version of the image is used on the blog index page. For the optimal result, provide an image at least 1200px wide.
 
 
-=== Credits ===
+=== Changelog ===
+
+Version 1.0.1 - 2018-10-28
+* Updated CSS, PHP, Screenshot, readme.txt
+
+Version 1.0.0 - 2018-10-17
+* Initial release
+
+
+=== Resources  ===
 
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
@@ -78,26 +75,24 @@ Description: Atento is a minimalist WordPress blog theme beautifully crafted to 
    Licensed under the MIT license - http://opensource.org/licenses/MIT
    Font Awesome by Dave Gandy - http://fontawesome.io
 
-2. Google Fonts - http://google.com/fonts
-   IL Open Font License, v1.1, Apache 2 license, Ubuntu Font License v1.0.
+2. Google Fonts
+   Roboto by Christian Robertson - https://fonts.google.com/specimen/Roboto
+   License: Apache License, Version 2.0
 
+   Libre Baskerville by Impallari Type - https://fonts.google.com/specimen/Libre+Baskerville
+   License: Open Font License
 
 === Images ===
 
-1. Copyright: designedbyjess
-   License: CC0 Creative Commons
-   Source: https://pixabay.com/en/composition-writing-business-paper-3326183/
+1. By: Jean van der Meulen
+   License: Pexels license
+   Source: https://www.pexels.com/photo/photo-of-bedroom-1454806/
 
 
 === Plugins ===
+
 1. TGM-Plugin-Activation: - https://github.com/TGMPA/TGM-Plugin-Activation
     Licensed under the GNU General Public License v2.0
 
-1. Kirki: - http://aristath.github.io/kirki/
+2. Kirki: - http://aristath.github.io/kirki/
    Licensed under the MIT license - http://opensource.org/licenses/MIT
-
-
-=== Changelog ===
-
-Version 1.0.0 - 2018-10-17
-* Initial release

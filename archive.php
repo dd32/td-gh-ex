@@ -31,7 +31,7 @@ do_action( 'atento_action_before_main_content' ); ?>
     <div class="outer-container mt-32 mt-lg-48 mt-xl-80">
         <div class="container-fluid">
             <div class="<?php echo esc_attr( implode( ' ', $row_class ) ); ?>">
-                <div class="col-12 d-flex flex-wrap">
+                <div class="col-12<?php if ( atento_has_secondary_content_class() == 'full-width' ) { echo ' ' . 'offset-lg-1 col-lg-10'; } ?> d-flex flex-wrap">
                     <div id="primary" class="<?php echo esc_attr( implode( ' ', $primary_class ) ); ?>">
                         <main id="main" class="site-main">
 

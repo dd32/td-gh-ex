@@ -16,7 +16,7 @@ $content_class          = array( 'entry-content mt-40' ); ?>
 
         <?php if ( has_post_thumbnail() ) :
 
-            $image_size     = 'atento-1200-16x9';
+            $image_size     = 'atento-1800-16x9';
 
             if ( atento_has_secondary_content_class() == 'full-width' ) {
                 $image_size = 'atento-1800-16x9';
@@ -82,5 +82,5 @@ $content_class          = array( 'entry-content mt-40' ); ?>
         endif; ?>
 
     </div><!-- .after-footer-content -->
-    
+
 </article><!-- #post-<?php the_ID(); ?> -->

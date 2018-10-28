@@ -47,7 +47,7 @@ $header_class[] = 'header-layout-'. $header_layout; ?>
 /**
  * Hook - atento_action_after_header
  *
- * @hooked: atento_add_after_header_hero - 20
- * @hooked: atento_add_after_header_custom_header - 30
+ * @hooked: atento_add_after_header_hero - 10
+ * @hooked: atento_add_after_header_custom_header - 20
  */
 do_action( 'atento_action_after_header' );

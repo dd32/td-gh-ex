@@ -234,7 +234,7 @@ function atento_scripts() {
     wp_enqueue_style( 'atento-style', get_stylesheet_uri() );
 
     $fonts_url = atento_google_fonts_url();
-    if ( ! empty($fonts_url) ) {
+    if ( ! empty( $fonts_url ) ) {
         wp_enqueue_style('atento-google-fonts', $fonts_url, array(), null);
     }
 
@@ -265,9 +265,7 @@ if ( !function_exists( 'atento_admin_scripts' ) ) {
 
         // Widgets Specific enqueue.
         if ( in_array( $screen_id, array( 'widgets', 'customize' ) ) ) {
-
             wp_enqueue_style( 'atento-customizer-style', ATENTO_THEME_URI .'/assets/back-end/css/customizer-style' . $min . '.css', false, ATENTO_THEME_VERSION, 'all' );
-
         }
 
         // Enqueue Style
@@ -316,11 +314,3 @@ require ATENTO_THEME_DIR . '/inc/framework/customizer/customizer.php';
  * Load theme meta box
  */
 require ATENTO_THEME_DIR . '/inc/framework/meta-boxes/class-meta-box.php';
-
-/**
- * Include Welcome page and demo importer.
- */
-if ( is_admin() ) {
-    // Demo.
-    require ATENTO_THEME_DIR . '/inc/framework/demo-importer/class-demo.php';
-}

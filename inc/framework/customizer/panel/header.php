@@ -100,6 +100,21 @@ if ( ! function_exists( 'atento_customizer_header_controls_init' ) ) :
                 'default'           => 1,
             )
         );
+
+        /*--------------------------------------------------------------
+        # Header Image: Custom Note
+        --------------------------------------------------------------*/
+        atento_add_field(
+            array(
+                'type'              => 'custom',
+                'settings'          => 'atento_header_image_custom_note',
+                'section'           => 'header_image',
+                'label'             => esc_html__( 'Note:', 'atento' ),
+                'default'           => '<p class="description">' . esc_html__( 'Header Image will not display on Homepage or Static Homepage if Hero Section is enable.', 'atento' ) . '</p>',
+            )
+        );
+
+
     }
 endif;
 add_action( 'init', 'atento_customizer_header_controls_init', 999 );

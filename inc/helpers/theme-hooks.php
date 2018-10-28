@@ -82,8 +82,8 @@ if ( ! function_exists( 'atento_add_after_header_custom_header' ) ) :
     }
 
 endif;
-add_action( 'atento_action_after_header', 'atento_add_after_header_hero', 20 );
-add_action( 'atento_action_after_header', 'atento_add_after_header_custom_header', 30 );
+add_action( 'atento_action_after_header', 'atento_add_after_header_hero', 10 );
+add_action( 'atento_action_after_header', 'atento_add_after_header_custom_header', 20 );
 
 /*----------------------------------------------------------------------
 # Before Widgets/ Page header hook / Breadcrumbs hook

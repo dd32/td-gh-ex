@@ -6,18 +6,23 @@
  */
 
 $content_order_lists    = get_theme_mod( 'atento_footer_bar_content_order_list', array( 'footer-bar-text' ) );
-$footer_bar_class       = array( 'footer-bar' );
 
 if ( ! empty( $content_order_lists ) ) :
 
-    if ( in_array("footer-bar-menu", $content_order_lists ) ) {
-        $footer_bar_class[] = 'has-footer-menu';
+    $footer_row_class   = array( 'row flex-wrap align-items-center justify-content-center' );
+
+    if ( count( $content_order_lists ) == '1' ) {
+        $footer_row_class[] = 'justify-content-md-center';
     }
-    $footer_row_class   = array( 'row flex-wrap align-items-center justify-content-center justify-content-md-between' ); ?>
+    else {
+        $footer_row_class[] = 'justify-content-md-between';
+    }
+
+    ?>
 
     <div class="footer-bar-separator"></div>
 
-    <div id="colophon" class="<?php echo esc_attr( implode( ' ', $footer_bar_class ) ); ?>" role="contentinfo">
+    <div id="colophon" class="footer-bar" role="contentinfo">
         <div class="outer-container">
             <div class="container-fluid">
                 <div class="<?php echo esc_attr( implode( ' ', $footer_row_class ) ); ?>">

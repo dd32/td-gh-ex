@@ -1,6 +1,6 @@
 /*!
 Theme Name: Atento
-Version: 1.0.0
+Version: 1.0.1
 Author: Precise Themes
 Theme URI: https://precisethemes.com/go/atento/
 Author URI: https://precisethemes.com/
@@ -3137,6 +3137,7 @@ input[type="submit"]:hover,
 }
 
 .read-more.custom a {
+    display: inline-block;
     padding: 10px 24px;
     border-radius: 30px !important;
 }

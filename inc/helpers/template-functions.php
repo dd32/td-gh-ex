@@ -129,13 +129,11 @@ if ( ! function_exists( 'atento_tags_links' ) ) {
 # Prints HTML with meta information read more button
 -------------------------------------------------------------------------*/
 if ( !function_exists( 'atento_read_more' ) ) {
-    function atento_read_more( $before='', $after='', $btn_text = '' ) {
-
-        $btn_text    = get_theme_mod( 'atento_global_read_more_text', 'Read More' );
+    function atento_read_more( $before='', $after='' ) {
 
         $output     = '';
         $output     .= '<div class="read-more custom w-100">';
-        $output     .= '<a class="td-none transition-35s" href="'.esc_url( atento_get_permalink() ).'">' . esc_html( $btn_text ) . '</a>';
+        $output     .= '<a class="td-none transition-35s" href="'.esc_url( atento_get_permalink() ).'">' . esc_html__( 'Read More', 'atento' ) . '</a>';
         $output .= '</div>';
 
         // Filter

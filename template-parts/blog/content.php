@@ -26,7 +26,7 @@ $enable_thumbnail_placeholder   = get_theme_mod( 'atento_archive_page_thumbnail_
 
                     if ( has_post_thumbnail() ) {
                         
-                        $thumbnail_size = 'atento-1200-' . $thumbnail_ratio;
+                        $thumbnail_size = 'atento-1800-' . $thumbnail_ratio;
 
                         the_post_thumbnail( $thumbnail_size, array(
                             'alt' => the_title_attribute( array(
@@ -37,7 +37,7 @@ $enable_thumbnail_placeholder   = get_theme_mod( 'atento_archive_page_thumbnail_
                     }
                     elseif ( $enable_thumbnail_placeholder == true ) {
 
-                        $img_src = ATENTO_THEME_URI . '/assets/front-end/images/thumbnail-placeholder-3x4.svg';
+                        $img_src = ATENTO_THEME_URI . '/assets/front-end/images/thumbnail-placeholder-16x9.svg';
                         echo '<img src="'.esc_url( $img_src ).'" alt="'.esc_attr__( 'Thumbnail Placeholder','atento' ).'">';
                     }
                     ?>

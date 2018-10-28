@@ -17,7 +17,7 @@ $footer_class           = array( 'entry-footer d-flex flex-wrap align-items-cent
     <header class="<?php echo esc_attr( implode( ' ', $header_class ) ); ?>">
 
         <?php if ( has_post_thumbnail() ) :
-            $image_size     = 'atento-1200-16x9';
+            $image_size     = 'atento-1800-16x9';
 
             if ( atento_has_secondary_content_class() == 'full-width' ) {
                 $image_size = 'atento-1800-16x9';

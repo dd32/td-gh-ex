@@ -71,6 +71,7 @@ if ( ! function_exists( 'atento_customizer_hero_controls_init' ) ) :
                 array(
                     'hero_image'        => ATENTO_THEME_URI . '/assets/back-end/images/hero/hero-default.png',
                     'hero_title'        => esc_attr__( 'Hero Title', 'atento' ),
+                    'hero_subtitle'     => '',
                     'hero_desc'         => esc_attr__( 'Hero Short Description Here.', 'atento' ),
                     'hero_button_text'  => esc_attr__( 'Read More', 'atento' ),
                     'hero_button_link'  => '#',
@@ -87,6 +88,11 @@ if ( ! function_exists( 'atento_customizer_hero_controls_init' ) ) :
                 'hero_title' => array(
                     'type'        => 'text',
                     'label'       => esc_attr__( 'Title', 'atento' ),
+                    'default'     => '',
+                ),
+                'hero_subtitle' => array(
+                    'type'        => 'text',
+                    'label'       => esc_attr__( 'Subtitle', 'atento' ),
                     'default'     => '',
                 ),
                 'hero_desc' => array(

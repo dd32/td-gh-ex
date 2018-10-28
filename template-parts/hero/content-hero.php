@@ -8,6 +8,7 @@ $defaults = array(
     array(
         'hero_image'        => ATENTO_THEME_URI . '/assets/back-end/images/hero/hero-default.png',
         'hero_title'        => esc_attr__( 'Hero Title', 'atento' ),
+        'hero_subtitle'     => '',
         'hero_desc'         => esc_attr__( 'Hero Short Description Here.', 'atento' ),
         'hero_button_text'  => esc_attr__( 'Read More', 'atento' ),
         'hero_button_link'  => '#',
@@ -45,15 +46,17 @@ if ( !empty( $repeatable_hero_slides ) ) :
 
                         <?php echo $output; ?>
 
-                        <?php if ( $slide_value['hero_title'] !== '' || $slide_value['hero_desc'] !== '' ) : ?>
+                        <?php if ( $slide_value['hero_title'] !== '' || $slide_value['hero_subtitle'] !== '' || $slide_value['hero_desc'] !== '' ) : ?>
 
                             <div class="content-wrap position-absolute text-center center">
                                 <div class="container">
                                     <div class="row">
                                         <div class="col-12 offset-md-1 col-md-10">
 
-                                            <?php if ( $slide_value['hero_title'] !== '' ) : ?>
+                                            <?php if ( $slide_value['hero_title'] !== '' || $slide_value['hero_subtitle'] !== '' ) : ?>
                                                 <header class="entry-header w-100">
+                                                    <?php if ( $slide_value['hero_subtitle'] !== '' )  {?><h3 class="entry-sub-title"><?php echo esc_html( $slide_value['hero_subtitle'] ); ?></h3><?php } ?>
+
                                                     <?php if ( $slide_value['hero_title'] !== '' ) {?><h2 class="entry-title"><?php if ( $slide_value['hero_button_link'] !== '' && $slide_value['hero_button_link'] !== '#' ) { echo '<a href="' . esc_url( $slide_value['hero_button_link'] ) . '">'; } ?><?php echo esc_html( $slide_value['hero_title'] ); ?><?php if ( $slide_value['hero_button_link'] !== '' && $slide_value['hero_button_link'] !== '#' ) { echo '</a>'; } ?></h2><?php } ?>
                                                 </header><!-- .entry-title -->
                                             <?php endif; ?>
