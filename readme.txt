@@ -108,6 +108,9 @@ released
 1. Add customize-selective-refresh-widgets support.
 2. Fixed styling issues.
 
+@Version 3.6
+1. Fixed Home services description issue.
+
 *****************Licence Copyrights Attribution*******************
 Becorp WordPress Theme, Copyright 2015 asiathemes
 Becorp is distributed under the terms of the GNU GPL

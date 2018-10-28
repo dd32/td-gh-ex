@@ -525,7 +525,7 @@ $wp_customize->remove_control('header_textcolor');
     $wp_customize->add_control( 'becorp_option[service_desc_one]', array(
         'label'   => __('Enter Service Description One', 'becorp'),
         'section' => 'service_section',
-        'type'    => 'text',
+        'type'    => 'textarea',
     ));
 	
 	
@@ -560,7 +560,6 @@ $wp_customize->remove_control('header_textcolor');
         'section' => 'service_section',
         'type'    => 'text',
     ));
-	
 	$wp_customize->add_setting('becorp_option[service_desc_two]'
 		, array(
         'default'        => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed facilisis, erat vitae sodales cursus.','becorp'),
@@ -571,7 +570,7 @@ $wp_customize->remove_control('header_textcolor');
     $wp_customize->add_control( 'becorp_option[service_desc_two]', array(
         'label'   => __('Enter Service Description Two', 'becorp'),
         'section' => 'service_section',
-        'type'    => 'text',
+        'type'    => 'textarea',
     ));
 	
 	/** Service three **/
@@ -613,10 +612,10 @@ $wp_customize->remove_control('header_textcolor');
 		'sanitize_callback' => 'sanitize_text_field',
 		'type' => 'option',
     ));
-    $wp_customize->add_control( 'becorp_option[service_desc_two]', array(
+    $wp_customize->add_control( 'becorp_option[service_desc_three]', array(
         'label'   => __('Enter Service Description Three', 'becorp'),
         'section' => 'service_section',
-        'type'    => 'text',
+        'type'    => 'textarea',
     ));
 	
 	// Footer Copyright Option Settings
