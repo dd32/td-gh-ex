@@ -328,7 +328,7 @@ function bard_customize_register( $wp_customize ) {
 				<li class="customize-control">
 					<h3><?php esc_html_e( 'Upgrade', 'bard' ); ?> <span>*</span></h3>
 					<p><?php esc_html_e( 'There are lots of reasons to upgrade to Pro version. Unlimited custom Colors, rich Typography options, multiple variation of Blog Feed layout and way much more. Also Premium Support included.', 'bard' ); ?></p>
-					<a href="<?php echo esc_url('http://wp-royal.com/themes/bard/customizer/free/upgrade-bard-pro.html?ref=bard-free-customizer-about-section-buypro'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Get Bard Pro', 'bard' ); ?></a>
+					<a href="<?php echo esc_url('https://wp-royal.com/themes/item-bard-pro/?ref=bard-free-customizer-about-section-buypro'); ?>" target="_blank" class="button button-primary widefat"><?php esc_html_e( 'Get Bard Pro', 'bard' ); ?></a>
 				</li>
 				<li class="customize-control">
 					<h3><?php esc_html_e( 'Demo Import / Getting Started', 'bard' ); ?></h3>
@@ -444,7 +444,7 @@ function bard_customize_register( $wp_customize ) {
 				'section'	  => 'bard_colors',
 				'type'		  => 'pro_options',
 				'label' 	  => esc_html__( 'Colors', 'bard' ),
-				'description' => esc_html( 'wp-royal.com/themes/bard/customizer/free/colors.html?ref=bard-free-colors-customizer' ),
+				'description' => esc_html( 'https://wp-royal.com/themes/item-bard-pro/?ref=bard-free-colors-customizer#!/bard-pro-page-colors' ),
 				'priority'	  => 100
 			)
 		)
@@ -515,7 +515,7 @@ function bard_customize_register( $wp_customize ) {
 				'section'	  => 'bard_general',
 				'type'		  => 'pro_options',
 				'label' 	  => esc_html__( 'Layout Options', 'bard' ),
-				'description' => esc_html( 'wp-royal.com/themes/bard/customizer/free/general-layouts.html?ref=bard-free-general-layouts-customizer' ),
+				'description' => esc_html( 'https://wp-royal.com/themes/item-bard-pro/?ref=bard-free-general-layouts-customizer#!/bard-pro-page-layouts' ),
 				'priority'	  => 100
 			)
 		)
@@ -693,7 +693,7 @@ function bard_customize_register( $wp_customize ) {
 				'section'	  => 'bard_featured_slider',
 				'type'		  => 'pro_options',
 				'label' 	  => esc_html__( 'Slider Options ', 'bard' ),
-				'description' => esc_html( 'wp-royal.com/themes/bard/customizer/free/featured-slider.html?ref=bard-free-featured-slider-customizer' ),
+				'description' => esc_html( 'https://wp-royal.com/themes/item-bard-pro/?ref=bard-free-general-layouts-customizer#!/bard-pro-page-sliders' ),
 				'priority'	  => 100
 			)
 		)
@@ -806,7 +806,7 @@ function bard_customize_register( $wp_customize ) {
 				'section'	  => 'bard_blog_page',
 				'type'		  => 'pro_options',
 				'label' 	  => esc_html__( 'Blog Options ', 'bard' ),
-				'description' => esc_html( 'wp-royal.com/themes/bard/customizer/free/blog-page.html?ref=bard-free-blog-page-customizer' ),
+				'description' => esc_html( 'https://wp-royal.com/themes/item-bard-pro/?ref=bard-free-general-layouts-customizer#!/bard-pro-page-layouts' ),
 				'priority'	  => 100
 			)
 		)

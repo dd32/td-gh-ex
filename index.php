@@ -24,6 +24,15 @@ if ( is_home() ) {
 
 	<div class="main-container">
 
+		<?php 
+
+		// Category Description
+		if ( is_category() ) {
+			get_template_part( 'templates/grid/category', 'description' );
+		}
+
+		?>
+		
 		<ul class="blog-grid">
 
 		<?php
