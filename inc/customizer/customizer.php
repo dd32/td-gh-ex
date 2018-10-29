@@ -93,7 +93,7 @@ class SiteOrigin_Customizer_CSS_Builder {
 		}
 		$import = array_unique( $import );
 		if ( !empty( $import ) ) {
-			$return .= '@import url(http' . ( is_ssl() ? 's' : '' ) . '://fonts.googleapis.com/css?family=' . implode( '|', $import ) . '); ';
+			$return .= '@import url(//fonts.googleapis.com/css?family=' . implode( '|', $import ) . '); ';
 		}
 
 		foreach ( $this->css as $selector => $rules ) {
@@ -555,10 +555,14 @@ class SiteOrigin_Customizer_Helper {
 				}
 			}
 
-			if(isset($setting['callback'])) {
+			$val = get_theme_mod($id);
+			if ( isset( $setting['callback'] ) && isset( $setting['default'] ) && $val != $setting['default'] ) {
 				$val = get_theme_mod($id);
-				if(isset( $setting['default'] ) && $val != $setting['default']) {
-					call_user_func( $setting['callback'], $builder, $val, array_merge( $setting, array('id' => $id) ) );
+				if ( $val != $setting['default'] ) {
+					if ( empty( $val ) ) {
+						$val = $setting['default'];
+					}
+					call_user_func( $setting['callback'], $builder, $val, array_merge( $setting, array( 'id' => $id ) ) );
 				}
 			}
 		}
