@@ -95,11 +95,13 @@
       <div id="inner-header" class="clearfix<?php echo $search_class; ?>">
       
 		<div id="site-heading">
-			<?php if ( get_theme_mod( 'wp_barrister_logo' ) ) : ?>
-            <div id="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'wp_barrister_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a></div>
+			<?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ): 
+                    ?>
+            <div id="site-logo"><?php the_custom_logo(); ?></div>
             <?php else : ?>
             <div id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
             <?php endif; ?>
+
         </div>
 
 		<nav id="access" role="navigation">

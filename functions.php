@@ -65,6 +65,8 @@ function wp_barrister_setup() {
 			'chat' /* A chat transcript */
 		)
 	);
+
+	add_theme_support('custom-logo');
 }
 endif;
 add_action( 'after_setup_theme', 'wp_barrister_setup' );
@@ -133,24 +135,6 @@ add_filter( 'wp_title', 'wp_barrister_filter_wp_title', 10, 3 );
 if ( ! function_exists( 'wp_barrister_theme_customizer' ) ) :
 	function wp_barrister_theme_customizer( $wp_customize ) {
 		
-		$wp_customize->remove_section( 'title_tagline');
-		
-		/* logo option */
-		$wp_customize->add_section( 'wp_barrister_logo_section' , array(
-			'title'       => __( 'Site Logo', 'wp-barrister' ),
-			'priority'    => 31,
-			'description' => __( 'Upload a logo to replace the default site name in the header', 'wp-barrister' ),
-		) );
-		
-		$wp_customize->add_setting( 'wp_barrister_logo', array (
-			'sanitize_callback' => 'esc_url_raw',
-		) );
-		
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wp_barrister_logo', array(
-			'label'    => __( 'Choose your logo (ideal width is 100-300px and ideal height is 40-100px)', 'wp-barrister' ),
-			'section'  => 'wp_barrister_logo_section',
-			'settings' => 'wp_barrister_logo',
-		) ) );
 
 		/* link color */
 		$wp_customize->add_setting( 'wp_barrister_theme_color', array (
