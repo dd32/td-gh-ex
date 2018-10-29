@@ -5,7 +5,9 @@ Tags: one-column, two-columns, right-sidebar, grid-layout, custom-colors, custom
 Requires at least: 4.8
 Tested up to: 4.9
 Requires PHP: 5.6
-Stable tag: 1.0.1
+Stable tag: 1.1.1
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 Agncy is a beautiful news and blogging theme that has beautiful typography, powerful color customisation and an elegant, light layout.
 
@@ -20,7 +22,27 @@ Agncy is a beautiful news and blogging theme that has beautiful typography, powe
 3. Click on the 'Activate' button to use your new theme right away.
 4. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
-== License ==
+== Changelog ==
 
-The Agncy theme is licensed under the GNU General Public License v2 or later.
-More details here: https://www.gnu.org/licenses/old-licenses/gpl-2.0.en.html
+= 1.1.1 =
+* Added theme support for responsive embeds
+* Updated the theme readme
+
+= 1.1.0 =
+* Added a custom margin control for Gutenberg blocks and templates
+* Added an own Gutenberg sidebar for template options
+* Fixed an issue with the header logo crop
+
+= 1.0.0 =
+* Initial public release
+* Fix the mobile menu searchform
+
+== Resources ==
+
+* normalize.css, MIT, https://github.com/necolas/normalize.css
+* Magnific Popup, MIT, https://github.com/dimsemenov/Magnific-Popup
+* Sticky Kit, MIT, https://github.com/leafo/sticky-kit
+* Font Awesome, CC-BY-4 / SIL OFL / MIT, https://fontawesome.com/v4.7.0/license/
+* Fira Sans, SIL OFL, https://github.com/mozilla/Fira
+* Slick Slider, MIT, https://github.com/kenwheeler/slick/
+* lodash, MIT, https://github.com/lodash/lodash

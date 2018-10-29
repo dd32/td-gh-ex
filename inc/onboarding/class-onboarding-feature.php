@@ -177,7 +177,7 @@ class OnboardingFeature {
 		if ( 'free' === $this->tier ) {
 			return true;
 		} else {
-			return agncy_fs()->is_plan( $this->tier );
+			return agncy_fs()->is_premium() && agncy_fs()->is_plan( $this->tier );
 		}
 	}
 

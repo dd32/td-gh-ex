@@ -53,21 +53,25 @@ if ( post_password_required() ) {
 
 		<ol class="comment-list">
 			<?php
-				wp_list_comments( array(
-					'walker'      => new Walker_Comment_Agncy(),
-					'avatar_size' => 100,
-					'style'       => 'ol',
-					'short_ping'  => true,
-					'reply_text'  => __( 'Reply', 'agncy' ),
-				) );
+				wp_list_comments(
+					array(
+						'walker'      => new Walker_Comment_Agncy(),
+						'avatar_size' => 100,
+						'style'       => 'ol',
+						'short_ping'  => true,
+						'reply_text'  => __( 'Reply', 'agncy' ),
+					)
+				);
 			?>
 		</ol>
 
 		<?php
-		the_comments_pagination( array(
-			'prev_text' => '<span class="screen-reader-text">' . __( 'Previous', 'agncy' ) . '</span>',
-			'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'agncy' ) . '</span>',
-		) );
+		the_comments_pagination(
+			array(
+				'prev_text' => '<span class="screen-reader-text">' . __( 'Previous', 'agncy' ) . '</span>',
+				'next_text' => '<span class="screen-reader-text">' . __( 'Next', 'agncy' ) . '</span>',
+			)
+		);
 	endif; // Check for have_comments().
 	// If comments are closed and there are comments, let's leave a little note, shall we?
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :

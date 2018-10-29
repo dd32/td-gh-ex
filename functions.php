@@ -18,7 +18,7 @@ if ( !defined( 'AGNCY_JS_URL' ) ) {
     define( 'AGNCY_JS_URL', esc_url( get_template_directory_uri() ) );
 }
 if ( !defined( 'AGNCY_VERSION' ) ) {
-    define( 'AGNCY_VERSION', '1.0.1' );
+    define( 'AGNCY_VERSION', '1.1.1' );
 }
 if ( !defined( 'AGNCY_DEFAULT_PRIMARY' ) ) {
     define( 'AGNCY_DEFAULT_PRIMARY', '#225378' );
@@ -65,8 +65,8 @@ function agncy_require_files()
     /*
      * Include custom controls needed for the customizer
      */
-    require_once 'inc/custom-controls/class-agncy-layout-control.php';
-    require_once 'inc/custom-controls/class-agncy-color-theme-control.php';
+    require_once get_template_directory() . '/inc/custom-controls/class-agncy-layout-control.php';
+    require_once get_template_directory() . '/inc/custom-controls/class-agncy-color-theme-control.php';
 }
 
 add_action( 'init', 'agncy_require_files', 1 );
@@ -111,7 +111,7 @@ function agncy_enqueue_scripts()
         'style',
         AGNCY_THEME_URL . '/style.min.css',
         array( 'font-awesome' ),
-        '1.0.1',
+        '1.1.1',
         'all'
     );
     /*
@@ -124,7 +124,7 @@ function agncy_enqueue_scripts()
         'main',
         AGNCY_JS_URL . '/js/script.min.js',
         array( 'jquery' ),
-        '1.0.1',
+        '1.1.1',
         true
     );
     wp_enqueue_script( 'main' );
@@ -143,7 +143,7 @@ function agncy_enqueue_scripts()
     wp_register_script(
         'agncy_font',
         AGNCY_JS_URL . '/js/fonts.min.js',
-        '1.0.1',
+        '1.1.1',
         false
     );
     wp_enqueue_script( 'agncy_font' );
@@ -167,6 +167,29 @@ function agncy_admin_scripts()
         // Make sure our scripts are only loaded, when we actually need them.
         wp_enqueue_style( 'lh_admin_style', AGNCY_THEME_URL . '/admin/admin.min.css' );
         add_editor_style();
+        wp_register_script(
+            'admin',
+            AGNCY_THEME_URL . '/admin/admin.min.js',
+            array(
+            'jquery',
+            'wp-blocks',
+            'wp-i18n',
+            'wp-element',
+            'underscore',
+            'wp-date',
+            'wp-edit-post'
+        ),
+            '1.1.1',
+            true
+        );
+        wp_enqueue_script( 'admin' );
+        
+        if ( function_exists( 'gutenberg_get_jed_locale_data' ) ) {
+            // Prepare Jed locale data.
+            $locale_data = gutenberg_get_jed_locale_data( 'agncy-js' );
+            wp_add_inline_script( 'admin', 'wp.i18n.setLocaleData( ' . json_encode( $locale_data ) . ', \'agncy-js\' );', 'before' );
+        }
+    
     }
 
 }
@@ -266,6 +289,7 @@ function agncy_theme_supports()
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'yoast-seo-breadcrumbs' );
     add_theme_support( 'wp-block-styles' );
+    add_theme_support( 'responsive-embeds' );
     $args = array(
         'search-form',
         'comment-form',
@@ -277,7 +301,7 @@ function agncy_theme_supports()
     add_theme_support( 'custom-logo', array(
         'height'      => 432,
         'width'       => 400,
-        'flex-height' => false,
+        'flex-height' => true,
         'flex-width'  => true,
     ) );
     $current_color_theme = $GLOBALS['agncy_color_themes']->get_current_theme();
@@ -489,7 +513,7 @@ function agncy_fs()
             'has_addons'     => false,
             'has_paid_plans' => true,
             'trial'          => array(
-            'days'               => 30,
+            'days'               => 7,
             'is_require_payment' => false,
         ),
             'menu'           => array(
@@ -520,3 +544,40 @@ function agncy_define_theme_icon()
 }
 
 agncy_fs()->add_filter( 'plugin_icon', 'agncy_define_theme_icon' );
+/**
+ * Registers meta keys.
+ *
+ * @return void
+ */
+function agncy_register_meta()
+{
+    register_meta( 'post', 'remove_content_margin', array(
+        'description'  => __( 'Bool if the content margin shall be removed.', 'agncy' ),
+        'show_in_rest' => true,
+        'single'       => true,
+        'type'         => 'string',
+    ) );
+    register_meta( 'post', 'disable_the_title', array(
+        'description'  => __( 'Bool if the title shall be removed.', 'agncy' ),
+        'show_in_rest' => true,
+        'single'       => true,
+        'type'         => 'string',
+    ) );
+}
+
+add_action( 'init', 'agncy_register_meta' );
+/**
+ * Add post classes based on certain modifiers
+ *
+ * @param array $classes The unmodified post classes.
+ * @return array The modified post classes
+ */
+function agncy_add_post_classes( $classes )
+{
+    if ( is_singular() && get_post_meta( get_the_ID(), 'remove_content_margin', true ) ) {
+        $classes[] = 'has-no-content-margin';
+    }
+    return $classes;
+}
+
+add_filter( 'post_class', 'agncy_add_post_classes' );

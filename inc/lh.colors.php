@@ -409,7 +409,7 @@ class LHColors
             $current_color_theme = $this->get_current_theme();
             
             if ( $admin ) {
-                $prefix = '.edit-post-visual-editor';
+                $prefix = '.edit-post-visual-editor ';
             } else {
                 $prefix = null;
             }

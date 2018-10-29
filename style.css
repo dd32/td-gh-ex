@@ -1,17 +1,18 @@
 /*!
-Theme Name: Agncy
-Theme URI: http://www.wp-munich.com/themes/agncy
-Description: Agncy is a beautiful news and blogging theme that has beautiful typography, powerful color customisation and an elegant, light layout. Customise your theme to the colours you need and upload your own logo. Enjoy reading even long texts with the beautiful font "Fira" and experience how fast font loading can be with an innovative font loading technique.
-Author: WP Munich
-Author URI: http://www.wp-munich.com
-Version: 1.0.1
-Text Domain: agncy
-Domain Path: /languages
-License: GPL-2.0+
-License URI: http://www.gnu.org/licenses/gpl-2.0.txt
-Tags: one-column, two-columns, right-sidebar, grid-layout, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog
-
-*/
+ * Theme Name: Agncy
+ * Theme URI: http://www.wp-munich.com/themes/agncy
+ * Description: Agncy is a beautiful news and blogging theme that has beautiful typography, powerful color customisation and an elegant, light layout. Customise your theme to the colours you need and upload your own logo. Enjoy reading even long texts with the beautiful font "Fira" and experience how fast font loading can be with an innovative font loading technique.
+ * Author: WP Munich
+ * Author URI: http://www.wp-munich.com
+ * Version: 1.1.1
+ * Text Domain: agncy
+ * Domain Path: /languages
+ * License: GPL-2.0+
+ * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
+ * Tags: one-column, two-columns, right-sidebar, grid-layout, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog
+ *
+ * @fs_premium_only /blocks-premium/
+ */
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -2925,20 +2926,6 @@ body.admin-bar .page-wrapper {
   font-weight: 300;
   text-transform: uppercase;
 }
-.page_title_wrapper {
-  color: #fff;
-  margin-bottom: 24px;
-}
-.page_title_wrapper .the_page_title {
-  font-weight: 300;
-  text-align: center;
-  text-transform: uppercase;
-  margin-bottom: 0;
-}
-.page_title_wrapper a {
-  color: #fff;
-  text-decoration: none;
-}
 .the_permalink {
   display: block;
   position: absolute;
@@ -3057,6 +3044,9 @@ body.admin-bar .page-wrapper {
 }
 .hide {
   display: none;
+}
+.has-no-margin-bottom {
+  margin-bottom: 0 !important;
 }
 .sidebar {
   margin-top: 0;
@@ -3957,9 +3947,6 @@ body.page .post-meta-footer .post_meta_info,
 body.single .post-meta-footer .post_meta_info {
   margin-bottom: 0;
 }
-.content-wrapper .the_content {
-  margin-bottom: 48px;
-}
 .thumbnail-wrapper {
   margin-top: -24px;
   margin-bottom: 24px;
@@ -3967,6 +3954,9 @@ body.single .post-meta-footer .post_meta_info {
 .thumbnail-wrapper img {
   display: block;
   margin: 0 auto;
+}
+.has-no-content-margin .the_content {
+  margin-bottom: 0 !important;
 }
 body.search .research .the_research_title {
   font-weight: 300;
@@ -4190,6 +4180,37 @@ footer.main-footer .credit {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 auto;
           flex: 0 0 auto;
+}
+/**
+ * The styles for the title bar template
+ */
+.page_title_wrapper {
+  color: #fff;
+  margin-bottom: 24px;
+}
+.page_title_wrapper .the_page_title {
+  font-weight: 300;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 0;
+}
+.page_title_wrapper a {
+  color: #fff;
+  text-decoration: none;
+}
+.has-no-content-margin .page_title_wrapper {
+  margin-bottom: 0;
+}
+@media (min-width: 768px) {
+  .page_title_wrapper {
+    margin-bottom: 27px;
+  }
+}
+@media (min-width: 992px) {
+  .page_title_wrapper {
+    padding: 27px 0;
+    margin-bottom: 54px;
+  }
 }
 /**
  * The stylesheet for styling specific elements in the gutenberg context
@@ -4818,9 +4839,6 @@ ul.wp-block-gallery.alignright {
   body.admin-bar .page-wrapper {
     padding-top: 32px;
   }
-  .page_title_wrapper {
-    margin-bottom: 27px;
-  }
   .the_pagination {
     margin-bottom: 54px;
   }
@@ -5281,10 +5299,6 @@ ul.wp-block-gallery.alignright {
   }
   body.admin-bar .page-wrapper {
     padding-top: 0;
-  }
-  .page_title_wrapper {
-    padding: 27px 0;
-    margin-bottom: 54px;
   }
   /**
  * If a content element has a sidebar we use flexbox to

@@ -146,14 +146,16 @@ class LhThemeFunctions {
 	 */
 	public function comment_form_defaults( $defaults ) {
 
-		$defaults = array_merge( $defaults, array(
-			'title_reply_before' => '<h3 id="reply-title" class="comment-reply-title has-tertiary-background-color">',
-			'title_reply'        => '<span class="text">' . __( 'Leave a Reply', 'agncy' ) . '</span>',
-			// translators: the name of the author of the reply to comment.
-			'title_reply_to'     => '<span class="text">' . __( 'Leave a Reply to %s', 'agncy' ) . '</span>',
-			'class_submit'       => 'submit has-tertiary-background-color',
+		$defaults = array_merge(
+			$defaults, array(
+				'title_reply_before' => '<h3 id="reply-title" class="comment-reply-title has-tertiary-background-color">',
+				'title_reply'        => '<span class="text">' . __( 'Leave a Reply', 'agncy' ) . '</span>',
+				// translators: the name of the author of the reply to comment.
+				'title_reply_to'     => '<span class="text">' . __( 'Leave a Reply to %s', 'agncy' ) . '</span>',
+				'class_submit'       => 'submit has-tertiary-background-color',
 
-		) );
+			)
+		);
 
 		return $defaults;
 	}
