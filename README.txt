@@ -2,7 +2,7 @@
 Contributors: Jonny Jordan
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.0-trunk
-Version: 1.1.8
+Version: 1.1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: portfolio, blog, food-and-drink, right-sidebar, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options

@@ -17,15 +17,11 @@
         <div class="copyright col-md-12 col-sm-8">
 				
 			<p class="col-md-6 alignright2">
-
 				<?php 
 				$url   = 'https://jonnyjordan.com';
 				
-				$brand = '<a href="'.esc_url( $url ).'">Jonny Jordan</a>';
-				
-				printf( __( 'Belfast Theme Powered by %s', 'belfast' ), $brand );
+				printf( '%s <a href="%s">%s</a>', esc_html__( 'Belfast Theme Powered by', 'belfast' ), esc_url( $url ),esc_html__( 'Jonny Jordan', 'belfast' ) );
 				?>
-				
 			</p> 
 					
         </div>
