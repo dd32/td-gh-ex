@@ -28,6 +28,7 @@
 	$pinterestURL = get_theme_mod('annina_theme_options_pinteresturl', '#');
 	$vkURL = get_theme_mod('annina_theme_options_vkurl', '#');
 	$soundcloudURL = get_theme_mod('annina_theme_options_soundcloudurl', '');
+	$redditURL = get_theme_mod('annina_theme_options_redditurl', '');
 	$emailURL = get_theme_mod('annina_theme_options_emailurl', '#');
 ?>
 <?php if ( $hideSearch == 1 ) : ?>
@@ -71,47 +72,51 @@
 
 			<div class="socialLine annCenter">
 				<?php if (!empty($facebookURL)) : ?>
-					<a href="<?php echo esc_url($facebookURL); ?>" title="<?php esc_attr_e( 'Facebook', 'annina' ); ?>"><i class="fa fa-facebook spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Facebook', 'annina' ); ?></span></i></a>
+					<a href="<?php echo esc_url($facebookURL); ?>" title="<?php esc_attr_e( 'Facebook', 'annina' ); ?>"><i class="fa fa-facebook spaceRightDouble" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Facebook', 'annina' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($twitterURL)) : ?>
-					<a href="<?php echo esc_url($twitterURL); ?>" title="<?php esc_attr_e( 'Twitter', 'annina' ); ?>"><i class="fa fa-twitter spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Twitter', 'annina' ); ?></span></i></a>
+					<a href="<?php echo esc_url($twitterURL); ?>" title="<?php esc_attr_e( 'Twitter', 'annina' ); ?>"><i class="fa fa-twitter spaceRightDouble" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Twitter', 'annina' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($googleplusURL)) : ?>
-					<a href="<?php echo esc_url($googleplusURL); ?>" title="<?php esc_attr_e( 'Google Plus', 'annina' ); ?>"><i class="fa fa-google-plus spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Google Plus', 'annina' ); ?></span></i></a>
+					<a href="<?php echo esc_url($googleplusURL); ?>" title="<?php esc_attr_e( 'Google Plus', 'annina' ); ?>"><i class="fa fa-google-plus spaceRightDouble" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Google Plus', 'annina' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($linkedinURL)) : ?>
-					<a href="<?php echo esc_url($linkedinURL); ?>" title="<?php esc_attr_e( 'Linkedin', 'annina' ); ?>"><i class="fa fa-linkedin spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Linkedin', 'annina' ); ?></span></i></a>
+					<a href="<?php echo esc_url($linkedinURL); ?>" title="<?php esc_attr_e( 'Linkedin', 'annina' ); ?>"><i class="fa fa-linkedin spaceRightDouble" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Linkedin', 'annina' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($instagramURL)) : ?>
-					<a href="<?php echo esc_url($instagramURL); ?>" title="<?php esc_attr_e( 'Instagram', 'annina' ); ?>"><i class="fa fa-instagram spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Instagram', 'annina' ); ?></span></i></a>
+					<a href="<?php echo esc_url($instagramURL); ?>" title="<?php esc_attr_e( 'Instagram', 'annina' ); ?>"><i class="fa fa-instagram spaceRightDouble" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Instagram', 'annina' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($youtubeURL)) : ?>
-					<a href="<?php echo esc_url($youtubeURL); ?>" title="<?php esc_attr_e( 'YouTube', 'annina' ); ?>"><i class="fa fa-youtube spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'YouTube', 'annina' ); ?></span></i></a>
+					<a href="<?php echo esc_url($youtubeURL); ?>" title="<?php esc_attr_e( 'YouTube', 'annina' ); ?>"><i class="fa fa-youtube spaceRightDouble" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'YouTube', 'annina' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($pinterestURL)) : ?>
-					<a href="<?php echo esc_url($pinterestURL); ?>" title="<?php esc_attr_e( 'Pinterest', 'annina' ); ?>"><i class="fa fa-pinterest spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Pinterest', 'annina' ); ?></span></i></a>
+					<a href="<?php echo esc_url($pinterestURL); ?>" title="<?php esc_attr_e( 'Pinterest', 'annina' ); ?>"><i class="fa fa-pinterest spaceRightDouble" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Pinterest', 'annina' ); ?></span></i></a>
 				<?php endif; ?>
 						
 				<?php if (!empty($vkURL)) : ?>
-					<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'annina' ); ?>"><i class="fa fa-vk spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'VK', 'annina' ); ?></span></i></a>
+					<a href="<?php echo esc_url($vkURL); ?>" title="<?php esc_attr_e( 'VK', 'annina' ); ?>"><i class="fa fa-vk spaceRightDouble" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'VK', 'annina' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if (!empty($soundcloudURL)) : ?>
-					<a href="<?php echo esc_url($soundcloudURL); ?>" title="<?php esc_attr_e( 'SoundCloud', 'annina' ); ?>"><i class="fa fa-soundcloud spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'SoundCloud', 'annina' ); ?></span></i></a>
+					<a href="<?php echo esc_url($soundcloudURL); ?>" title="<?php esc_attr_e( 'SoundCloud', 'annina' ); ?>"><i class="fa fa-soundcloud spaceRightDouble" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'SoundCloud', 'annina' ); ?></span></i></a>
+				<?php endif; ?>
+				
+				<?php if (!empty($redditURL)) : ?>
+					<a href="<?php echo esc_url($redditURL); ?>" title="<?php esc_attr_e( 'Reddit', 'annina' ); ?>"><i class="fa fa-reddit spaceRightDouble" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Reddit', 'annina' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if (!empty($emailURL)) : ?>
-					<a href="mailto:<?php echo esc_attr(antispambot($emailURL)); ?>" title="<?php esc_attr_e( 'Email', 'annina' ); ?>"><i class="fa fa-envelope spaceRightDouble"><span class="screen-reader-text"><?php esc_html_e( 'Email', 'annina' ); ?></span></i></a>
+					<a href="mailto:<?php echo esc_attr(antispambot($emailURL)); ?>" title="<?php esc_attr_e( 'Email', 'annina' ); ?>"><i class="fa fa-envelope spaceRightDouble" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Email', 'annina' ); ?></span></i></a>
 				<?php endif; ?>
 				
 				<?php if ( $hideSearch == 1 ) : ?>
-					<div id="open-search" class="top-search"><i class="fa spaceRightDouble fa-search"></i></div>
+					<div id="open-search" class="top-search"><i class="fa spaceRightDouble fa-search" aria-hidden="true"></i></div>
 				<?php endif; ?>
 			</div>
 	</header><!-- #masthead -->

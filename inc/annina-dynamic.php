@@ -155,6 +155,11 @@ function annina_color_primary_register( $wp_customize ) {
 	'default' => '',
 	'label' => __('SoundCloud URL', 'annina')
 	);
+	$socialmedia[] = array(
+	'slug'=>'redditurl',
+	'default' => '',
+	'label' => __('Reddit URL', 'annina')
+	);
 	
 	foreach( $socialmedia as $annina_theme_options ) {
 		// SETTINGS
