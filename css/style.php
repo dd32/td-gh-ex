@@ -48,7 +48,8 @@
                     .navigation .nav-links a:hover, .bttn:hover, button,
                     input[type=\"button\"]:hover,
                     input[type=\"reset\"]:hover,
-                    input[type=\"submit\"]:hover{
+                    input[type=\"submit\"]:hover,
+                    .no-results .page-content input[type=\"submit\"]{
                         background: {$template_color};
                     }";
                     
@@ -57,7 +58,8 @@
                     #site-navigation ul li:hover > a,
                     #site-navigation ul li.current-menu-item > a,
                     #site-navigation ul li.current-menu-ancestor > a,
-                    .featured-footer .wpcf7 input[type=\"submit\"]:hover{
+                    .featured-footer .wpcf7 input[type=\"submit\"]:hover,
+                    .no-results .page-content input[type=\"submit\"]:hover{
                         background: {$light_tpl_color};
                     }";
                     
@@ -114,6 +116,22 @@
                 $custom_css .= "
                     .widget .icon-image:before{
                         box-shadow: 0 0 0 1px {$template_color}; 
+                    }";
+
+                /** Media Query **/
+                $custom_css .= "
+                    @media (max-width: 1024px){
+                        .main-navigation-responsive ul li a{
+                            background: {$template_color};
+                            border-color: {$light_tpl_color} !important;
+                        }
+                    }";
+
+                $custom_css .= "
+                    @media (max-width: 1024px){
+                        .main-navigation-responsive ul li a:hover, .main-navigation-responsive ul li.current_page_item a{
+                            background: {$light_tpl_color};
+                        }
                     }";
 	        		
 	        }
