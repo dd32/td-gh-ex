@@ -103,6 +103,9 @@ if ( ! function_exists( 'fmuzz_setup' ) ) :
 	        'header-text' => array( 'site-title', 'site-description' ),
 	    );
 	    add_theme_support( 'custom-logo', $defaults );
+
+	    // add WooCommerce support
+		add_theme_support( 'woocommerce' );
 	}
 endif; // fmuzz_setup
 add_action( 'after_setup_theme', 'fmuzz_setup' );
@@ -899,3 +902,31 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 	}
 endif; // fmuzz_customize_register
 add_action( 'customize_register', 'fmuzz_customize_register' );
+
+if ( ! function_exists( 'fmuzz_nav_wrap' ) ) :
+
+	function fmuzz_nav_wrap() {
+
+		// open the <ul>, set 'menu_class' and 'menu_id' values
+  		$wrap  = '<ul id="%1$s" class="%2$s">';
+  
+	  	// get nav items as configured in /wp-admin/
+	  	$wrap .= '%3$s';
+
+	  	if ( class_exists( 'WooCommerce' ) ) {
+
+	  		global $woocommerce;
+
+			$wrap .= '<li><a class="cart-contents-icon" href="'.wc_get_cart_url().'" title="'.__('View your shopping cart', 'fmuzz')
+					   .'"></a><div id="cart-popup-content"><div class="widget_shopping_cart_content"></div></div></li>';
+
+		}
+  
+  		// close the <ul>
+  		$wrap .= '</ul>';
+  
+  		// return the result
+  		return $wrap;
+	}
+
+endif; // fmuzz_nav_wrap
