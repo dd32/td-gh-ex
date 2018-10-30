@@ -1,9 +1,17 @@
 <?php
 
+//----------------------------------------------------------------------------------
+//	Include all required files
+//----------------------------------------------------------------------------------
 require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' );
-foreach ( glob( trailingslashit( get_template_directory() ) . 'inc/*' ) as $filename ) {
-	include $filename;
-}
+require_once( trailingslashit( get_template_directory() ) . 'inc/customizer.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/deprecated.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/review.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/scripts.php' );
+
+//----------------------------------------------------------------------------------
+//	Include review request
+//----------------------------------------------------------------------------------
 require_once( trailingslashit( get_template_directory() ) . 'dnh/handler.php' );
 new WP_Review_Me( array(
 		'days_after' => 14,
@@ -40,7 +48,12 @@ if ( ! function_exists( ( 'ct_apex_theme_setup' ) ) ) {
 			'footer'    => 'overflow-container',
 			'render'    => 'ct_apex_infinite_scroll_render'
 		) );
+		// Add WooCommerce support
 		add_theme_support( 'woocommerce' );
+		// Add support for WooCommerce image gallery features 
+		add_theme_support( 'wc-product-gallery-zoom' ); 
+		add_theme_support( 'wc-product-gallery-lightbox' ); 
+		add_theme_support( 'wc-product-gallery-slider' );
 
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary', 'apex' )
@@ -280,59 +293,65 @@ if ( ! function_exists( 'ct_apex_social_array' ) ) {
 		$social_sites = array(
 			'twitter'       => 'apex_twitter_profile',
 			'facebook'      => 'apex_facebook_profile',
-			'google-plus'   => 'apex_googleplus_profile',
-			'pinterest'     => 'apex_pinterest_profile',
-			'linkedin'      => 'apex_linkedin_profile',
-			'youtube'       => 'apex_youtube_profile',
-			'vimeo'         => 'apex_vimeo_profile',
-			'tumblr'        => 'apex_tumblr_profile',
 			'instagram'     => 'apex_instagram_profile',
-			'flickr'        => 'apex_flickr_profile',
-			'dribbble'      => 'apex_dribbble_profile',
+			'linkedin'      => 'apex_linkedin_profile',
+			'pinterest'     => 'apex_pinterest_profile',
+			'youtube'       => 'apex_youtube_profile',
 			'rss'           => 'apex_rss_profile',
-			'reddit'        => 'apex_reddit_profile',
-			'soundcloud'    => 'apex_soundcloud_profile',
-			'spotify'       => 'apex_spotify_profile',
-			'vine'          => 'apex_vine_profile',
-			'yahoo'         => 'apex_yahoo_profile',
-			'foursquare'    => 'apex_foursquare_profile',
-			'slack'         => 'apex_slack_profile',
-			'slideshare'    => 'apex_slideshare_profile',
-			'skype'         => 'apex_skype_profile',
+			'email'         => 'apex_email_profile',
+			'phone'         => 'apex_phone_profile',
+			'email-form'    => 'apex_email_form_profile',
+			'amazon'        => 'apex_amazon_profile',
+			'bandcamp'      => 'apex_bandcamp_profile',
 			'behance'       => 'apex_behance_profile',
+			'bitbucket'     => 'apex_bitbucket_profile',
 			'codepen'       => 'apex_codepen_profile',
 			'delicious'     => 'apex_delicious_profile',
-			'stumbleupon'   => 'apex_stumbleupon_profile',
 			'deviantart'    => 'apex_deviantart_profile',
 			'digg'          => 'apex_digg_profile',
-			'github'        => 'apex_github_profile',
-			'bitbucket'     => 'apex_bitbucket_profile',
-			'hacker-news'   => 'apex_hacker-news_profile',
-			'snapchat'      => 'apex_snapchat_profile',
-			'bandcamp'      => 'apex_bandcamp_profile',
+			'discord'     	=> 'apex_discord_profile',
+			'dribbble'      => 'apex_dribbble_profile',
 			'etsy'          => 'apex_etsy_profile',
+			'flickr'        => 'apex_flickr_profile',
+			'foursquare'    => 'apex_foursquare_profile',
+			'github'        => 'apex_github_profile',
+			'google-plus'   => 'apex_googleplus_profile',
+			'google-wallet' => 'apex_google_wallet_profile',
+			'hacker-news'   => 'apex_hacker-news_profile',
+			'medium'        => 'apex_medium_profile',
+			'meetup'        => 'apex_meetup_profile',
+			'mixcloud'      => 'apex_mixcloud_profile',
+			'ok-ru'         => 'apex_ok_ru_profile',
+			'patreon'       => 'apex_patreon_profile',
+			'paypal'        => 'apex_paypal_profile',
+			'podcast'       => 'apex_podcast_profile',
+			'qq'            => 'apex_qq_profile',
 			'quora'         => 'apex_quora_profile',
 			'ravelry'       => 'apex_ravelry_profile',
-			'meetup'        => 'apex_meetup_profile',
-			'telegram'      => 'apex_telegram_profile',
-			'podcast'       => 'apex_podcast_profile',
-			'amazon'        => 'apex_amazon_profile',
-			'google-wallet' => 'apex_google_wallet_profile',
-			'yelp'          => 'apex_yelp_profile',
-			'twitch'        => 'apex_twitch_profile',
-			'whatsapp'      => 'apex_whatsapp_profile',
+			'reddit'        => 'apex_reddit_profile',
+			'skype'         => 'apex_skype_profile',
+			'slack'         => 'apex_slack_profile',
+			'slideshare'    => 'apex_slideshare_profile',
+			'snapchat'      => 'apex_snapchat_profile',
+			'soundcloud'    => 'apex_soundcloud_profile',
+			'spotify'       => 'apex_spotify_profile',
+			'stack-overflow' => 'apex_stack_overflow_profile',
 			'steam'         => 'apex_steam_profile',
-			'qq'            => 'apex_qq_profile',
-			'vk'            => 'apex_vk_profile',
-			'ok-ru'         => 'apex_ok_ru_profile',
-			'weibo'         => 'apex_weibo_profile',
-			'wechat'        => 'apex_wechat_profile',
-			'xing'          => 'apex_xing_profile',
+			'stumbleupon'   => 'apex_stumbleupon_profile',
+			'telegram'      => 'apex_telegram_profile',
 			'tencent-weibo' => 'apex_tencent_weibo_profile',
-			'500px'         => 'apex_500px_profile',
-			'paypal'        => 'apex_paypal_profile',
-			'email'         => 'apex_email_profile',
-			'email-form'    => 'apex_email_form_profile'
+			'tumblr'        => 'apex_tumblr_profile',
+			'twitch'        => 'apex_twitch_profile',
+			'vimeo'         => 'apex_vimeo_profile',
+			'vine'          => 'apex_vine_profile',
+			'vk'            => 'apex_vk_profile',
+			'wechat'        => 'apex_wechat_profile',
+			'weibo'         => 'apex_weibo_profile',
+			'whatsapp'      => 'apex_whatsapp_profile',
+			'xing'          => 'apex_xing_profile',
+			'yahoo'         => 'apex_yahoo_profile',
+			'yelp'          => 'apex_yelp_profile',
+			'500px'         => 'apex_500px_profile'
 		);
 
 		return apply_filters( 'ct_apex_social_array_filter', $social_sites );
@@ -344,12 +363,10 @@ if ( ! function_exists( 'ct_apex_social_icons_output' ) ) {
 
 		$social_sites = ct_apex_social_array();
 		$square_icons = array(
-			'linkedin',
 			'twitter',
 			'vimeo',
 			'youtube',
 			'pinterest',
-			'rss',
 			'reddit',
 			'tumblr',
 			'steam',
@@ -375,21 +392,28 @@ if ( ! function_exists( 'ct_apex_social_icons_output' ) ) {
 
 					// get the square or plain class
 					if ( in_array( $active_site, $square_icons ) ) {
-						$class = 'fa fa-' . $active_site . '-square';
+						$class = 'fab fa-' . $active_site . '-square';
+					} elseif ( $active_site == 'rss' ) {
+						$class = 'fas fa-rss';
+					} elseif ( $active_site == 'email-form' ) {
+						$class = 'far fa-envelope';
+					} elseif ( $active_site == 'podcast' ) {
+						$class = 'fas fa-podcast';
 					} elseif ( $active_site == 'ok-ru' ) {
-						$class = 'fa fa-odnoklassniki';
+						$class = 'fab fa-odnoklassniki';
+					} elseif ( $active_site == 'wechat' ) {
+						$class = 'fab fa-weixin';
+					} elseif ( $active_site == 'phone' ) {
+						$class = 'fas fa-phone';
 					} else {
-						$class = 'fa fa-' . $active_site;
-					}
-					if ( $active_site == 'email-form' ) {
-						$class = 'fa fa-envelope-o';
+						$class = 'fab fa-' . $active_site;
 					}
 
 					if ( $active_site == 'email' ) { ?>
 						<li>
 							<a class="email" target="_blank"
 							   href="mailto:<?php echo antispambot( is_email( get_theme_mod( $key ) ) ); ?>">
-								<i class="fa fa-envelope" title="<?php echo esc_attr_x( 'email', 'noun', 'apex' ); ?>"></i>
+								<i class="fas fa-envelope" title="<?php echo esc_attr_x( 'email', 'noun', 'apex' ); ?>"></i>
 								<span class="screen-reader-text"><?php echo esc_html_x('email', 'noun', 'apex'); ?></span>
 							</a>
 						</li>
@@ -398,6 +422,14 @@ if ( ! function_exists( 'ct_apex_social_icons_output' ) ) {
 							<a class="<?php echo esc_attr( $active_site ); ?>" target="_blank"
 							   href="<?php echo esc_url( get_theme_mod( $key ), array( 'http', 'https', 'skype' ) ); ?>">
 								<i class="<?php echo esc_attr( $class ); ?>" title="<?php echo esc_attr( $active_site ); ?>"></i>
+								<span class="screen-reader-text"><?php echo esc_html( $active_site );  ?></span>
+							</a>
+						</li>
+						<?php } elseif ( $active_site == 'phone' ) { ?>
+						<li>
+							<a class="<?php echo esc_attr( $active_site ); ?>" target="_blank"
+									href="<?php echo esc_url( get_theme_mod( $active_site ), array( 'tel' ) ); ?>">
+								<i class="<?php echo esc_attr( $class ); ?>"></i>
 								<span class="screen-reader-text"><?php echo esc_html( $active_site );  ?></span>
 							</a>
 						</li>
@@ -695,3 +727,15 @@ if ( ! function_exists( 'ct_apex_modify_archive_descriptions' ) ) {
 	}
 }
 add_filter( 'get_the_archive_description', 'ct_apex_modify_archive_descriptions' );
+
+//----------------------------------------------------------------------------------
+// Output the markup for the optional scroll-to-top arrow 
+//----------------------------------------------------------------------------------
+function ct_apex_scroll_to_top_arrow() {
+	$setting = get_theme_mod('scroll_to_top');
+	
+	if ( $setting == 'yes' ) {
+		echo '<button id="scroll-to-top" class="scroll-to-top"><span class="screen-reader-text">'. esc_html__('Scroll to the top', 'apex') .'</span><i class="fas fa-arrow-up"></i></button>';
+	}
+}
+add_action( 'body_bottom', 'ct_apex_scroll_to_top_arrow');

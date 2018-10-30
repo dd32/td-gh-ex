@@ -111,44 +111,59 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 				'section'  => 'ct_apex_social_media_icons',
 				'priority' => $priority,
 			) );
+		} else if ( $social_site == 'phone' ) {
+			// setting
+			$wp_customize->add_setting( $social_site, array(
+				'sanitize_callback' => 'ct_apex_sanitize_phone',
+				'transport'         => 'postMessage'
+			) );
+			// control
+			$wp_customize->add_control( $social_site, array(
+				'label'    => __( 'Phone', 'apex' ),
+				'section'     => 'ct_apex_social_media_icons',
+				'priority'    => $priority,
+				'type'        => 'text'
+			) );
 		} else {
 
 			$label = ucfirst( $social_site );
 
 			if ( $social_site == 'google-plus' ) {
-				$label = 'Google Plus';
+				$label = __('Google Plus', 'apex');
 			} elseif ( $social_site == 'rss' ) {
-				$label = 'RSS';
+				$label = __('RSS', 'apex');
 			} elseif ( $social_site == 'soundcloud' ) {
-				$label = 'SoundCloud';
+				$label = __('SoundCloud', 'apex');
 			} elseif ( $social_site == 'slideshare' ) {
-				$label = 'SlideShare';
+				$label = __('SlideShare', 'apex');
 			} elseif ( $social_site == 'codepen' ) {
-				$label = 'CodePen';
+				$label = __('CodePen', 'apex');
 			} elseif ( $social_site == 'stumbleupon' ) {
-				$label = 'StumbleUpon';
+				$label = __('StumbleUpon', 'apex');
 			} elseif ( $social_site == 'deviantart' ) {
-				$label = 'DeviantArt';
+				$label = __('DeviantArt', 'apex');
 			} elseif ( $social_site == 'google-wallet' ) {
-				$label = 'Google Wallet';
+				$label = __('Google Wallet', 'apex');
 			} elseif ( $social_site == 'hacker-news' ) {
-				$label = 'Hacker News';
+				$label = __('Hacker News', 'apex');
 			} elseif ( $social_site == 'whatsapp' ) {
-				$label = 'WhatsApp';
+				$label = __('WhatsApp', 'apex');
 			} elseif ( $social_site == 'qq' ) {
-				$label = 'QQ';
+				$label = __('QQ', 'apex');
 			} elseif ( $social_site == 'vk' ) {
-				$label = 'VK';
+				$label =__('VK', 'apex');
 			} elseif ( $social_site == 'ok-ru' ) {
-				$label = 'OK.ru';
+				$label = __('OK.ru', 'apex');
 			} elseif ( $social_site == 'wechat' ) {
-				$label = 'WeChat';
+				$label = __('WeChat', 'apex');
 			} elseif ( $social_site == 'tencent-weibo' ) {
-				$label = 'Tencent Weibo';
+				$label = __('Tencent Weibo', 'apex');
 			} elseif ( $social_site == 'paypal' ) {
-				$label = 'PayPal';
+				$label = __('PayPal', 'apex');
+			} elseif ( $social_site == 'stack-overflow' ) {
+				$label = __('Stack Overflow', 'apex');
 			} elseif ( $social_site == 'email-form' ) {
-				$label = 'Contact Form';
+				$label = __('Contact Form', 'apex');
 			}
 
 			if ( $social_site == 'skype' ) {
@@ -296,6 +311,30 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 		)
 	) );
 
+	/***** Scroll-to-stop Arrow  *****/
+
+	// section
+	$wp_customize->add_section( 'ct_apex_scroll_to_stop', array(
+		'title'    => __( 'Scroll-to-Top Arrow', 'apex' ),
+		'priority' => 73
+	) );
+	// setting - scroll-to-top arrow
+	$wp_customize->add_setting( 'scroll_to_top', array(
+		'default'           => 'no',
+		'sanitize_callback' => 'ct_apex_sanitize_yes_no_settings'
+	) );
+	// control - scroll-to-top arrow
+	$wp_customize->add_control( 'scroll_to_top', array(
+		'label'    => __( 'Display Scroll-to-top arrow?', 'apex' ),
+		'section'  => 'ct_apex_scroll_to_stop',
+		'settings' => 'scroll_to_top',
+		'type'     => 'radio',
+		'choices'  => array(
+			'yes' => __( 'Yes', 'apex' ),
+			'no'  => __( 'No', 'apex' )
+		)
+	) );
+
 	/***** Custom CSS *****/
 
 	if ( function_exists( 'wp_update_custom_css_post' ) ) {
@@ -377,4 +416,12 @@ function ct_apex_sanitize_css( $css ) {
 	$css = str_replace( '&gt;', '>', $css );
 
 	return $css;
+}
+
+function ct_apex_sanitize_phone( $input ) {
+	if ( $input != '' ) {
+		return esc_url_raw( 'tel:' . $input, array( 'tel' ) );
+	} else {
+		return '';
+	}
 }
