@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 get_header( 'shop' ); ?>
 
-<div class="container middle-align">
+<div class="container">
 	<div class="row">
 		<div class="col-lg-8 col-md-8">
 			<?php
@@ -50,7 +50,7 @@ get_header( 'shop' ); ?>
 				do_action( 'woocommerce_after_main_content' );
 			?>
 		</div>
-		<div id="theme-sidebar" class="col-lg-4 col-md-4">
+		<div class="col-lg-4 col-md-4">
 			<?php
 				/**
 				 * woocommerce_sidebar hook.

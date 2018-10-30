@@ -44,10 +44,10 @@ switch ( $template ) {
 	case 'twentyfifteen' :
 		echo '</div></div>';
 		break;
-	case 'adventure-travelling' :
-		echo '</div></div>';
-		break;
 	case 'twentysixteen' :
+		echo '</main></div>';
+		break;
+	case 'adventure-travelling' :
 		echo '</main></div>';
 		break;
 	default :
