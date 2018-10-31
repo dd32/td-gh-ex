@@ -139,7 +139,7 @@
 					?>
 					<div class="notice notice-success is-dismissible">
 						<p><?php /* translators: %1$s : theme name, %2$s : welcome page link */ printf( __( 'Welcome! Thank you for choosing %1$s! Please make sure you visit our <a href="%2$s">Welcome page</a> to get started with %1$s.', 'accesspress-root' ), esc_html($this->theme_name), esc_url(admin_url( 'themes.php?page=accesspressroot-welcome' ))  ); ?></p>
-						<p><a class="button" href="<?php echo esc_url(admin_url( 'themes.php?page=accesspressroot-welcome' )); ?>"><?php esc_html__( 'Lets Get Started', 'accesspress-root' ); ?></a></p>
+						<p><a class="button" href="<?php echo esc_url(admin_url( 'themes.php?page=accesspressroot-welcome' )); ?>"><?php echo esc_html__( 'Lets Get Started', 'accesspress-root' ); ?></a></p>
 					</div>
 					<?php
 				}

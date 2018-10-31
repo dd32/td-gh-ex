@@ -101,6 +101,19 @@
                     box-shadow: 0 0 0 1px {$tpl_color}; 
                 }";
 
+            /** Media Queiries **/
+            $custom_css .= "
+                @media (max-width: 767px){
+                    #top .nav-btn, .js-ready #nav{
+                        background: {$tpl_color} !important;
+                    }
+                }";
+
+            $custom_css .= "
+                .js-ready #nav .close-btn{
+                    background: {$dark_tpl_color} !important;
+                }";
+
 	    }
 
 		wp_add_inline_style( 'accesspress-root-style', $custom_css );

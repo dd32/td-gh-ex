@@ -97,6 +97,9 @@ Pattern Images
 ---------------------------------------------
 == Changelog ==
 
+Version 1.32
+ * Fixed Dynamic Template Color options in mobile view
+
 Version 1.31
  * Added Template Color Option
 
