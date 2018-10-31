@@ -15,7 +15,7 @@
 	<div class="grid-container">
 		<div class="callout margin-vertical-0 border-none copy-text">
 			<?php echo $bestblog_footertext;?>
-			<a target="_blank" href="<?php echo esc_url( 'http://imonthemes.com/'); ?>"><?php printf( esc_attr__( 'Theme by %s', 'best-blog' ), 'Imon Themes' ); ?></a>
+			<a target="_blank" href="<?php echo esc_url( 'https://www.yangiz.fr'); ?>"><?php printf( esc_attr__( 'Theme by %s', 'best-blog' ), 'Yangiz' ); ?></a>
 		</div>
 	</div>
 </div>
