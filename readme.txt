@@ -5,7 +5,7 @@ Tags: blog, right-sidebar, translation-ready, one-column, two-columns, grid-layo
 
 Requires at least: 4.7
 Tested up to: 4.9.8
-Stable tag: 1.0.5
+Stable tag: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,11 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+
+=1.1.1 31/10/2018=
+
+* FIXED bug with custom logo not being displayed in sticky menu and responsive (mobile) navigation
+* UPDATED readme file according to: https://make.wordpress.org/themes/2015/04/29/a-revised-readme/
 
 =1.1.0 12/10/2018=
 
@@ -105,74 +110,23 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-=Anorya bundles the following third-party resources:=
+== Resources==
 
-= Underscores=
-* Automattic, Inc.
-* Copyright 2012-2016, Automattic, Inc.
-* http://underscores.me/
-* License: GPLv2 or later
-* https://www.gnu.org/licenses/gpl-2.0.html
-
-=normalize.css=
-* Nicolas Gallagher and Jonathan Neal
-* Copyright 2012-2016 , Nicolas Gallagher and Jonathan Neal
-* http://necolas.github.io/normalize.css/
-* License: MIT
-* http://opensource.org/licenses/MIT
-
-=animate.css=
-* Daniel Eden
-* Copyright 2016 , Daniel Eden
-* https://daneden.github.io/animate.css/
-* License: MIT
-* http://opensource.org/licenses/MIT
-
-=OwlCarousel 2.3.4=
-* David Deutsch
-* Copyright 2016-2017, David Deutsch
-* https://owlcarousel2.github.io/OwlCarousel2/
-* License: MIT
-* http://opensource.org/licenses/MIT
-
-=Bootstrap 3.3.7=
-* Twitter
-* Copyright 2016, Twitter
-* https://getbootstrap.com/docs/3.3/ 
-* License: MIT
-* http://opensource.org/licenses/MIT
-
-
-=Font Awesome icons=
-* Dave Gandy
-* Copyright Dave Gandy
-* http://fontawesome.io/
-* License: SIL Open Font License, version 1.1
-* https://opensource.org/licenses/OFL-1.1
-
-
-* Anorya theme also uses Google Fonts ( https://fonts.google.com/attribution )
-
-
-=Images Bundled with the theme=
-
+* Underscores, Automattic, Inc., Copyright 2012-2016, http://underscores.me/ , License: GPLv2 or later, https://www.gnu.org/licenses/gpl-2.0.html
+* normalize.css, Nicolas Gallagher and Jonathan Neal, Copyright 2012-2016, http://necolas.github.io/normalize.css/, License: MIT , http://opensource.org/licenses/MIT
+* animate.css, Daniel Eden, Copyright 2016, https://daneden.github.io/animate.css/, License: MIT, http://opensource.org/licenses/MIT
+* OwlCarousel 2.3.4, David Deutsch, Copyright 2016-2017, https://owlcarousel2.github.io/OwlCarousel2/, License: MIT, http://opensource.org/licenses/MIT
+* Bootstrap 3.3.7, Twitter, Copyright 2016, https://getbootstrap.com/docs/3.3/ , License: MIT, http://opensource.org/licenses/MIT
+* Font Awesome 4 icons, Dave Gandy, Copyright Dave Gandy, http://fontawesome.io/, License: SIL Open Font License, version 1.1, https://opensource.org/licenses/OFL-1.1
+* Google Fonts, https://fonts.google.com/attribution
 * screenshot.png  
-black-and-white-close-up-eyes-face-407035 - pixabay.com - Creative Commons Zero (CC0) license - https://www.pexels.com/photo/black-and-white-close-up-eyes-face-407035/ 
-baby-s-feet-on-brown-wicker-basket-161534 - pixabay.com - Creative Commons Zero (CC0) license - https://www.pexels.com/photo/baby-s-feet-on-brown-wicker-basket-161534/ 
-woman-lying-on-white-textile-touching-white-pillow-33690 - pixabay.com - Creative Commons Zero (CC0) license - https://www.pexels.com/photo/woman-lying-on-white-textile-touching-white-pillow-33690/
-bridal-1942169 - pixabay.com - Creative Commons Zero (CC0) license - https://pixabay.com/en/bridal-wedding-dress-window-woman-1942169/
-woman-2896389 - pixabay.com - Creative Commons Zero (CC0) license - https://pixabay.com/en/woman-hike-lake-female-hiker-2896389/
-daisy-801813 - pixabay.com - Creative Commons Zero (CC0) license - https://pixabay.com/en/daisy-flower-plant-perspective-801813/
-
-* assets/images/promobox2.jpg
-bridal-1942169 - pixabay.com - Creative Commons Zero (CC0) license 
-https://pixabay.com/en/bridal-wedding-dress-window-woman-1942169/
-
-* assets/images/promobox1.jpg
-woman-2896389 - pixabay.com - Creative Commons Zero (CC0) license  
-https://pixabay.com/en/woman-hike-lake-female-hiker-2896389/
-
-* assets/images/promobox3.jpg
-daisy-801813 - pixabay.com - Creative Commons Zero (CC0) license 
-https://pixabay.com/en/daisy-flower-plant-perspective-801813/
+ -black-and-white-close-up-eyes-face-407035 - pixabay.com - Creative Commons Zero (CC0) license - https://www.pexels.com/photo/black-and-white-close-up-eyes-face-407035/ 
+ -baby-s-feet-on-brown-wicker-basket-161534 - pixabay.com - Creative Commons Zero (CC0) license - https://www.pexels.com/photo/baby-s-feet-on-brown-wicker-basket-161534/ 
+ -woman-lying-on-white-textile-touching-white-pillow-33690 - pixabay.com - Creative Commons Zero (CC0) license - https://www.pexels.com/photo/woman-lying-on-white-textile-touching-white-pillow-33690/
+ -bridal-1942169 - pixabay.com - Creative Commons Zero (CC0) license - https://pixabay.com/en/bridal-wedding-dress-window-woman-1942169/
+ -woman-2896389 - pixabay.com - Creative Commons Zero (CC0) license - https://pixabay.com/en/woman-hike-lake-female-hiker-2896389/
+ -daisy-801813 - pixabay.com - Creative Commons Zero (CC0) license - https://pixabay.com/en/daisy-flower-plant-perspective-801813/
+* assets/images/promobox2.jpg, bridal-1942169, pixabay.com, Creative Commons Zero (CC0) license,https://pixabay.com/en/bridal-wedding-dress-window-woman-1942169/
+* assets/images/promobox1.jpg, woman-2896389,  pixabay.com, Creative Commons Zero (CC0) license,https://pixabay.com/en/woman-hike-lake-female-hiker-2896389/
+* assets/images/promobox3.jpg, daisy-801813, pixabay.com, Creative Commons Zero (CC0) license,https://pixabay.com/en/daisy-flower-plant-perspective-801813/
 
