@@ -14,8 +14,8 @@
      				<?php if ( is_active_sidebar('dynamic_sidebar') || !dynamic_sidebar('foot_sidebar') ) : ?><?php endif; ?>
             	</div>
    			</div>
-   		<?php } ?> 
- 
+   		<?php } ?>
+
 	<!--COPYRIGHT TEXT-->
     <div id="copyright">
     	<div class="row">
@@ -25,9 +25,9 @@
 					$advance_footertext = html_entity_decode(get_theme_mod ('advance_footertext'));
 					echo $advance_footertext;
 				?>
-           		<a target="_blank" href="<?php echo esc_url( 'http://www.imonthemes.com/'); ?>"><?php printf( __( 'Theme by %s', 'advance' ), 'Imon Themes' ); ?></a>
+           		<a target="_blank" href="<?php echo esc_url( 'https://www.coverjack.fr'); ?>"><?php printf( __( 'Theme by %s', 'advance' ), 'CoverJack' ); ?></a>
              </div>
-            
+
             	<?php $advance_social2_checkbox = get_theme_mod('advance_social2_checkbox',0);?>
 				<?php if( isset($advance_social2_checkbox) && $advance_social2_checkbox == 1 ):?>
 					<?php get_template_part('parts/social','loop'); ?>
@@ -37,8 +37,3 @@
     </div>
 
 </div>
-
-
-
-
-
