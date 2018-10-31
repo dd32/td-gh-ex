@@ -29,6 +29,7 @@
 					<nav id="navmain">
 						<?php wp_nav_menu( array('theme_location' => 'primary',
 												 'fallback_cb'    => 'wp_page_menu',
+												 'items_wrap'      => fkidd_nav_wrap(),
 												) ); ?>
 					</nav>
 					

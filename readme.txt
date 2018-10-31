@@ -1,33 +1,34 @@
 === fKidd ===
 Contributors: tishonator
-Tags: education, blog, two-columns, right-sidebar, custom-logo, custom-background,
+Tags: education, blog, e-commerce, two-columns, right-sidebar, custom-logo, custom-background,
 custom-header, custom-menu, featured-images, post-formats, threaded-comments,
 sticky-post, theme-options, footer-widgets, translation-ready, full-width-template, front-page-post-form
-Requires at least: 4.4.0
-Tested up to: 4.6.1
+Requires at least: 4.9.0
+Tested up to: 4.9.8
+Stable tag: 1.0.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
 fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Responsive, Customizable, Built-in
-Responsive Slider, Multi-Level Drop-Down Menu, Homepage and Footer Widgets, W3C Markup Validated,
-Customizer Options: Social Sites, Header Phone and Email, Slider, Header Logo, Footer, Search Engine
-Optimized, Social Sites: Facebook, Google+, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr, YouTube,
-Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9, IE 10, IE 11, Chrome, Firefox, Opera, and
-Safari), Full-Width Page Template, Header and Footer Menu, Translation ready and much more.
+Responsive Slider, WooCommerce plugin support, Multi-Level Drop-Down Menu, Homepage and Footer Widgets,
+W3C Markup Validated, Customizer Options: Social Sites, Header Phone and Email, Slider, Header Logo, Footer,
+Search Engine Optimized, Social Sites: Facebook, Google+, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr,
+YouTube, Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9, IE 10, IE 11, Chrome, Firefox, Opera,
+and Safari), Full-Width Page Template, Header and Footer Menu, Translation ready and much more.
 
+== Frequently Asked Questions ==
 
-== How to Display the Homepage Slider ==
+= How to Display the Homepage Slider =
 
 1. Create a Static Front Page
 
 The slider is visualized ONLY when there is a static front page set for your website. So, the first step is:
 
 1.1. Login to your Admin Panel
-
 1.2. Navigate to Left Menu -> Settings -> Reading
-
 1.3. Select 'A static page (select below)', then choose pages for 'Homepage' and 'Posts page'
-
 1.4. Save changes
 
 Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
@@ -35,75 +36,90 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2. Update Slider Settings
 
 2.1. Login to your Admin Panel
-
 2.2. Navigate to Left Menu -> Appearance -> Customize
-
 2.3. Open 'Slider' Section
-
 2.4. Check the 'Display Slider' checkbox
-
 2.5. Set Slider Images ('Slide # Image' fields) and Text ('Slide # Content' fields) for the different Slides
-
 2.6. Save Changes
 
 
+== Changelog ==
 
-== Installation ==
+= 1.9.0 =
+* add WooCommerce support
 
-Manual installation:
+= 1.8.9 =
+* add instructions in readme.txt file how to configure the Homepage slider
 
-1. Upload the fKidd folder to the /wp-content/themes/ directory
+= 1.8.8 =
+* update screenshot according to latest WordPress requirements for screenshot
 
-Installation using 'Add New Theme'
+= 1.8.7 =
+* fix issue with social sites RSS feeds
 
-1. From your Admin UI (Dashboard), use the menu to select Themes -> Add New
-2. Search for 'fKidd'
-3. Click the 'Install' button to open the theme's repository listing
-4. Click the 'Install' button
+= 1.8.6 =
+* display slider and homepage widgets only on static homepage
+* remove default widgets content
 
-Activiation and Use
+= 1.8.5 =
+* add homepage widget areas
 
-1. Activate the Theme through the 'Themes' menu in WordPress
-2. See Appearance -> Theme Options to change theme specific options
+= 1.8.4 =
+* add customize option to display/hide Slider
 
-== License ==
+= 1.8.3 =
+* improve animation effects
 
-fKidd WordPress Theme, Copyright 2016 Tihomir Ivanov / Tishonator.com
-fKidd is distributed under the terms of the GNU GPL
+= 1.8.2 =
+* add animations
 
-Unless otherwise specified, all the theme files, scripts and images
-are licensed under GNU General Public License version 2.
+= 1.8.1 =
+* add full-width page template
 
-The exceptions to this license are as follows:
+= 1.7.0 =
+* add custom logo
+* add 3 footer widget areas
+* bug fixes
 
-* Fontawesome is licensed under the terms of The MIT License
-* Source: https://opensource.org/licenses/mit-license.html
-*
-* css/font-awesome.css - The MIT License (MIT), Reference: http://opensource.org/licenses/MIT
-* css/font-awesome.min.css - The MIT License (MIT), Reference: http://opensource.org/licenses/MIT
-* fonts/FontAwesome.otf SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.eot SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.svg SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.ttf SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.woff SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.woff2 SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-*
-* css/animate.css - the MIT license, Reference: http://opensource.org/licenses/MIT
-* author URL: http://daneden.me/animate
-*
-* js/viewportchecker.js - the MIT license, Reference: http://opensource.org/licenses/MIT
-*
-* images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
-* images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms 
-* images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms
+= 1.6.0 =
+* fix issue with Footer Menu
+* make design full width
+* make header fix while scrolling
+* add header phone and email
+* add Footer Menu
 
-* js/camera.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
-* js/camera.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
-* js/jquery.easing.1.3.js BSD License Reference: http://www.linfo.org/bsdlicense.html
-* js/jquery.mobile.customized.js MIT license Reference: http://jquery.org/license
-* js/jquery.mobile.customized.min.js MIT license Reference: http://jquery.org/license
-*
-* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms 
+= 1.5.0 =
+* FontAwesome update
+* bug fixes
+* Customizer premium theme link update
+
+= 1.4.0 =
+* Full theme rewrite to use customizer
+
+= 1.3.0 =
+* small bug fixes
+
+= 1.1.0 =
+* Fix issue with text domain loading
+
+= 1.0.0 =
+* Initial release
+
+== Resources ==
+* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
+* js/camera.min.js, © 2012 Manuel Masia, MIT
+* js/camera.js, © 2012 Manuel Masia, MIT
+* js/jquery.easing.1.3.js, © 2008 George McGinley Smith, BSD
+* js/jquery.mobile.customized.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
+* js/jquery.mobile.customized.min.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
+* css/animate.css, © 2017 Daniel Eden, MIT
+* js/viewportchecker.js, © 2014 Dirk Groenen, MIT
+* images/slider/1.jpg, © Alexas_Fotos https://pixabay.com/en/teddy-bank-sit-teddy-bear-bear-2710522/, CC0
+* images/slider/2.jpg, © Antranias https://pixabay.com/en/school-window-facade-building-437676/, CC0
+* images/slider/3.jpg, © Studio32 https://pixabay.com/en/paper-book-laptop-education-3052246/, CC0
+* screenshot.png (products), WooCommerce, Copyright (C) Automattic, GPLv3
+* screenshot.png (slider image), © Alexas_Fotos https://pixabay.com/en/teddy-bank-sit-teddy-bear-bear-2710522/, CC0
 
 == Contacts ==
 
