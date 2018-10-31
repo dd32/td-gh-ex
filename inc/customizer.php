@@ -234,6 +234,8 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
 				$label = __('Tencent Weibo', 'tracks');
 			} elseif ( $social_site == 'paypal' ) {
 				$label = __('PayPal', 'tracks');
+			} elseif ( $social_site == 'stack-overflow' ) {
+				$label = __('Stack Overflow', 'tracks');
 			} elseif ( $social_site == 'email-form' ) {
 				$label = __('Contact Form', 'tracks');
 			}
@@ -248,6 +250,18 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
 					'type'        => 'url',
 					'label'       => $label, // brand name so i18n not required
 					'description' => sprintf( __( 'Accepts Skype link protocol (<a href="%s" target="_blank">learn more</a>)', 'tracks' ), 'https://www.competethemes.com/blog/skype-links-wordpress/' ),
+					'section'     => 'ct_tracks_social_icons',
+					'priority'    => $priority
+				) );
+			} else if ( $social_site == 'phone' ) {
+				// setting
+				$wp_customize->add_setting( $social_site, array(
+					'sanitize_callback' => 'ct_tracks_sanitize_phone'
+				) );
+				// control
+				$wp_customize->add_control( $social_site, array(
+					'type'        => 'text',
+					'label'       => $label,
 					'section'     => 'ct_tracks_social_icons',
 					'priority'    => $priority
 				) );
@@ -1004,5 +1018,13 @@ if ( ! function_exists( 'ct_tracks_sanitize_css' ) ) {
 		$css = str_replace( '&gt;', '>', $css );
 
 		return $css;
+	}
+}
+
+function ct_tracks_sanitize_phone( $input ) {
+	if ( $input != '' ) {
+		return esc_url_raw( 'tel:' . $input, array( 'tel' ) );
+	} else {
+		return '';
 	}
 }

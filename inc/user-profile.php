@@ -12,6 +12,7 @@ if ( ! function_exists( 'ct_tracks_social_array' ) ) {
 			'youtube'       => 'youtube_profile',
 			'rss'           => 'rss_profile',
 			'email'         => 'email_profile',
+			'phone'         => 'phone_profile',
 			'email-form'    => 'email_form_profile',
 			'amazon'        => 'amazon_profile',
 			'bandcamp'      => 'bandcamp_profile',
@@ -21,6 +22,7 @@ if ( ! function_exists( 'ct_tracks_social_array' ) ) {
 			'delicious'     => 'delicious_profile',
 			'deviantart'    => 'deviantart_profile',
 			'digg'          => 'digg_profile',
+			'discord'       => 'discord_profile',
 			'dribbble'      => 'dribbble_profile',
 			'etsy'          => 'etsy_profile',
 			'flickr'        => 'flickr_profile',
@@ -29,8 +31,11 @@ if ( ! function_exists( 'ct_tracks_social_array' ) ) {
 			'google-plus'   => 'googleplus_profile',
 			'google-wallet' => 'google_wallet_profile',
 			'hacker-news'   => 'hacker-news_profile',
+			'medium'        => 'medium_profile',
 			'meetup'        => 'meetup_profile',
+			'mixcloud'      => 'mixcloud_profile',
 			'ok-ru'         => 'ok_ru_profile',
+			'patreon'       => 'patreon_profile',
 			'paypal'        => 'paypal_profile',
 			'podcast'       => 'podcast_profile',
 			'qq'            => 'qq_profile',
@@ -43,6 +48,7 @@ if ( ! function_exists( 'ct_tracks_social_array' ) ) {
 			'soundcloud'    => 'soundcloud_profile',
 			'spotify'       => 'spotify_profile',
 			'snapchat'      => 'snapchat_profile',
+			'stack-overflow' => 'stack_overflow_profile',
 			'steam'         => 'steam_profile',
 			'stumbleupon'   => 'stumbleupon_profile',
 			'telegram'      => 'telegram_profile',
@@ -117,6 +123,8 @@ function ct_tracks_add_social_profile_settings( $user ) {
 				$label = __('Tencent Weibo', 'tracks');
 			} elseif ( $key == 'paypal' ) {
 				$label = __('PayPal', 'tracks');
+			} elseif ( $key == 'stack-overflow' ) {
+				$label = __('Stack Overflow', 'tracks');
 			} elseif ( $key == 'email-form' ) {
 				$label = __('Contact Form', 'tracks');
 			}
@@ -134,6 +142,10 @@ function ct_tracks_add_social_profile_settings( $user ) {
 						<input type='text' id='<?php echo esc_attr( $key ); ?>-profile' class='regular-text'
 						       name='<?php echo esc_attr( $key ); ?>-profile'
 						       value='<?php echo is_email( get_the_author_meta( $social_site, $user->ID ) ); ?>'/>
+					<?php elseif ( $key == 'phone' ) : ?>
+						<input type='url' id='<?php echo esc_attr( $key ); ?>-profile' class='regular-text'
+						       name='<?php echo esc_attr( $key ); ?>-profile'
+						       value='<?php echo esc_url( get_the_author_meta( $social_site, $user->ID ), array( 'tel' ) ); ?>'/>
 					<?php else : ?>
 						<input type='url' id='<?php echo esc_attr( $key ); ?>-profile' class='regular-text'
 						       name='<?php echo esc_attr( $key ); ?>-profile'
@@ -161,6 +173,15 @@ function ct_tracks_save_social_profiles( $user_id ) {
 			// if email, only accept 'mailto' protocol
 			if ( isset( $_POST["$key-profile"] ) ) {
 				update_user_meta( $user_id, $social_site, sanitize_email( $_POST["$key-profile"] ) );
+			}
+		} elseif ( $key == 'phone' ) {
+			// if phone, only accept 'tel' protocol
+			if ( isset( $_POST["$key-profile"] ) ) {
+				if ( $_POST["$key-profile"] == '' ) {
+					update_user_meta( $user_id, $social_site, '' );
+				} else {
+					update_user_meta( $user_id, $social_site, esc_url_raw( 'tel:' . $_POST["$key-profile"], array( 'tel' ) ) );
+				}
 			}
 		} else {
 			if ( isset( $_POST["$key-profile"] ) ) {
