@@ -48,6 +48,9 @@ Images
 
 == Changelog ==
 
+= 2.3.5 =
+** Fixed Dynamic Color Issues
+
 = 2.3.4 =
 ** Fixed Header Error Issue
 
