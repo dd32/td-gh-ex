@@ -56,6 +56,10 @@ Atlas Concern is distributed under the terms of the GNU GPL
 = 1.9 ( 26/October/2018 ) =
 * Files edited
 
+= 2.0 ( 1/November/2018 ) =
+* Files edited
+
+
 == Credits ==
 
 - Underscores
@@ -86,7 +90,7 @@ License: GNU General Public License v3.0
 
 
 == Image used in screenshot ==
-https://pixabay.com/tr/erkekler-çalışanlar-takım-elbise-iş-1979261/
+
 
 
 * Images on header advertisement block
