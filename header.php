@@ -40,8 +40,7 @@
 
 						<div id="site_logo" class="xs-col-12 s-col-2">
 							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>' rel="home">
-								<img src='<?php echo esc_url( get_theme_mod( 'altitude_logo_image', get_template_directory_uri() . '/images/default_logo.png' ) ); ?>'
-									 alt='<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>'>
+								<img src='<?php echo esc_url( get_theme_mod( 'altitude_logo_image' ) ); ?>'>
 							</a>
 						</div>
 						<!-- #site-logo -->
@@ -51,7 +50,7 @@
 								<a href="#" id="menu_button" class="genericon genericon-menu"></a>
 							</div>
 							<div class="screen-reader-text skip-link">
-								<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'altitude' ); ?>"><?php _e( 'Skip to content', 'altitude' ); ?></a>
+								<a href="#content" title="<?php esc_attr_e( 'Skip to content', 'altitude-lite' ); ?>"><?php _e( 'Skip to content', 'altitude-lite' ); ?></a>
 							</div>
 							<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 						</nav>
@@ -61,39 +60,39 @@
 							<ul class="social-icons">
 								<?php if ( '' != get_theme_mod( 'jetpack-twitter' ) ): ?>
 									<li class="altitude-twitter">
-										<a href="<?php echo esc_url( get_theme_mod( 'jetpack-twitter' ) ); ?>" title="<?php _e( 'Twitter', 'altitude' ); ?>">
+										<a href="<?php echo esc_url( get_theme_mod( 'jetpack-twitter' ) ); ?>" title="<?php _e( 'Twitter', 'altitude-lite' ); ?>">
 											<i class="genericon genericon-twitter"></i>
 										</a>
 									</li>
 								<?php elseif ( '' != get_theme_mod( 'altitude_twitter' ) ): ?>
 									<li class="altitude-twitter">
-										<a href="<?php echo esc_url( get_theme_mod( 'altitude_twitter' ) ); ?>" title="<?php _e( 'Twitter', 'altitude' ); ?>">
+										<a href="<?php echo esc_url( get_theme_mod( 'altitude_twitter' ) ); ?>" title="<?php _e( 'Twitter', 'altitude-lite' ); ?>">
 											<i class="genericon genericon-twitter"></i>
 										</a>
 									</li>
 								<?php endif; ?>
 								<?php if ( '' != get_theme_mod( 'jetpack-facebook' ) ): ?>
 									<li class="altitude-facebook">
-										<a href="<?php echo esc_url( get_theme_mod( 'jetpack-facebook' ) ); ?>" title="<?php _e( 'Facebook', 'altitude' ); ?>">
+										<a href="<?php echo esc_url( get_theme_mod( 'jetpack-facebook' ) ); ?>" title="<?php _e( 'Facebook', 'altitude-lite' ); ?>">
 											<i class="genericon genericon-facebook"></i>
 										</a>
 									</li>
 								<?php elseif ( '' != get_theme_mod( 'altitude_facebook' ) ): ?>
 									<li class="altitude-facebook">
-										<a href="<?php echo esc_url( get_theme_mod( 'altitude_facebook' ) ); ?>" title="<?php _e( 'Facebook', 'altitude' ); ?>">
+										<a href="<?php echo esc_url( get_theme_mod( 'altitude_facebook' ) ); ?>" title="<?php _e( 'Facebook', 'altitude-lite' ); ?>">
 											<i class="genericon genericon-facebook"></i>
 										</a>
 									</li>
 								<?php endif; ?>
 								<?php if ( '' != get_theme_mod( 'jetpack-google_plus' ) ): ?>
 									<li class="altitude-google-plus">
-										<a href="<?php echo esc_url( get_theme_mod( 'jetpack-google_plus' ) ); ?>" title="<?php _e( 'Google Plus', 'altitude' ); ?>">
+										<a href="<?php echo esc_url( get_theme_mod( 'jetpack-google_plus' ) ); ?>" title="<?php _e( 'Google Plus', 'altitude-lite' ); ?>">
 											<i class="genericon genericon-google-plus"></i>
 										</a>
 									</li>
 								<?php elseif ( '' != get_theme_mod( 'altitude_google_plus' ) ): ?>
 									<li class="altitude-google-plus">
-										<a href="<?php echo esc_url( get_theme_mod( 'altitude_google_plus' ) ); ?>" title="<?php _e( 'Google Plus', 'altitude' ); ?>">
+										<a href="<?php echo esc_url( get_theme_mod( 'altitude_google_plus' ) ); ?>" title="<?php _e( 'Google Plus', 'altitude-lite' ); ?>">
 											<i class="genericon genericon-google-plus"></i>
 										</a>
 									</li>

@@ -25,10 +25,10 @@ function altitude_customize_register( $wp_customize ) {
 
 	// Theme Options
 	$wp_customize->add_section( 'altitude_theme_options', array(
-		'title'    => __( 'Theme Options', 'altitude' ),
+		'title'    => __( 'Theme Options', 'altitude-lite' ),
 		'priority' => 30
 	) );
-	
+
 	// Sidebar Location
 	$wp_customize->add_setting( 'altitude_sidebar', array(
 		'default'   => 'right',
@@ -36,24 +36,23 @@ function altitude_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_control( 'altitude_sidebar', array(
-		'label'    => __( 'Sidebar Location', 'altitude' ),
+		'label'    => __( 'Sidebar Location', 'altitude-lite' ),
 		'section'  => 'altitude_theme_options',
 		'type'     => 'select',
 		'choices'  => array(
-			'left'  => __( 'Left', 'altitude' ),
-			'right' => __( 'Right', 'altitude' )
+			'left'  => __( 'Left', 'altitude-lite' ),
+			'right' => __( 'Right', 'altitude-lite' )
 		),
 		'settings' => 'altitude_sidebar'
 	) );
 
 	// Add Logo Image Support
 	$wp_customize->add_section( 'altitude_logo_image_options', array(
-		'title'    => __( 'Logo Image', 'altitude' ),
+		'title'    => __( 'Logo Image', 'altitude-lite' ),
 		'priority' => 45
 	) );
 
 	$wp_customize->add_setting( 'altitude_logo_image', array(
-		'default'  => get_template_directory_uri() . '/images/default_logo.png',
 		'sanitize_callback'	=> 'altitude_sanitize_logo'
 	) );
 
@@ -62,7 +61,7 @@ function altitude_customize_register( $wp_customize ) {
 			$wp_customize,
 			'altitude_logo_image',
 			array(
-				'label'      => __( 'Upload Logo Image (size 126x28 pixels)', 'altitude' ),
+				'label'      => __( 'Upload Logo Image (size 126x28 pixels)', 'altitude-lite' ),
 				'section'    => 'altitude_logo_image_options',
 				'settings'   => 'altitude_logo_image',
 			)
@@ -76,7 +75,7 @@ function altitude_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'altitude_footer_section',
 		array(
-			'title'       => __( 'Footer Section', 'altitude' ),
+			'title'       => __( 'Footer Section', 'altitude-lite' ),
 			'description' => 'This is a settings section for footer.',
 			'priority'    => 100,
 		)
@@ -93,7 +92,7 @@ function altitude_customize_register( $wp_customize ) {
 	$wp_customize->add_control(
 		'altitude_copyright_textbox',
 		array(
-			'label'   => __( 'Copyright text', 'altitude' ),
+			'label'   => __( 'Copyright text', 'altitude-lite' ),
 			'section' => 'altitude_footer_section',
 			'settings' => 'altitude_copyright_textbox',
 			'type'    => 'text'
