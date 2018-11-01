@@ -208,3 +208,8 @@ add_action( 'wp_enqueue_scripts', 'best_learner_scripts' );
  * Load init.
  */
 require_once get_template_directory() . '/inc/init.php';
+
+/**
+* TGM plugin additions.
+*/
+require get_template_directory() . '/inc/tgm-plugin/tgm-hook.php';
