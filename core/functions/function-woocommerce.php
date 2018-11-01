@@ -206,4 +206,25 @@ if (!function_exists('suevafree_woocommerce_after_main_content')) {
 
 }
 
+/*-----------------------------------------------------------------------------------*/
+/* Replace woocommerce_get_product_thumbnail function  */
+/*-----------------------------------------------------------------------------------*/ 
+	
+if ( ! function_exists( 'suevafree_get_wc_product_thumbnail' ) ) {
+	
+	function suevafree_get_wc_product_thumbnail( $size = 'woocommerce_thumbnail', $deprecated1 = 0, $deprecated2 = 0 ) {
+		
+		global $post, $product;
+		$imgSize = apply_filters( 'single_product_archive_thumbnail_size', $size);
+
+		if ( $product ) {
+			return (suevafree_setting('suevafree_linkable_product_thumbnails') == 'on') ? '<a href="' . get_permalink( $post->ID ) . '">' . $product->get_image( $imgSize ) . '</a>' : $product->get_image( $imgSize );
+		} else {
+			return '';
+		}
+		
+	}
+	
+}
+
 ?>

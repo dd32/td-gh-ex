@@ -5,7 +5,6 @@
  * This is your standard WordPress
  * functions.php file.
  *
- * @author  Alessandro Vellutini
  *
 */
 

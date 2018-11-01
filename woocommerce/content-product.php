@@ -30,7 +30,7 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 	<div class="product-thumbnail">
         
-        <?php echo woocommerce_get_product_thumbnail(); ?>
+        <?php echo suevafree_get_wc_product_thumbnail(); ?>
         
 	</div>
 

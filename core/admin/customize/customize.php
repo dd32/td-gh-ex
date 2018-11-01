@@ -322,6 +322,22 @@ if (!function_exists('suevafree_customize_panel_function')) {
 
 			array(
 				
+				'label' => esc_html__( 'WooCommerce linkable product thumbnails','suevafree'),
+				'description' => esc_html__( 'Do you want to make linkable the product thumbnails on WooCommerce category pages?','suevafree'),
+				'id' => 'suevafree_linkable_product_thumbnails',
+				'type' => 'select',
+				'section' => 'settings_section',
+				'options' => array (
+				   'off' => esc_html__( 'No','suevafree'),
+				   'on' => esc_html__( 'Yes','suevafree'),
+				),
+				
+				'std' => 'off',
+			
+			),
+
+			array(
+				
 				'label' => esc_html__( 'Box Shadow','suevafree'),
 				'description' => esc_html__( 'Do you want to disable the shadow of boxes?','suevafree'),
 				'id' => 'suevafree_disable_box_shadow',
