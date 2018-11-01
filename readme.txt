@@ -30,7 +30,11 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
-= Version 3.3.0 | 28th September 2018 = 
+= Version 3.3.1 | 30th October 2018 = 
+* Update: Woocommerce notice.
+* Update: Gutenberg Update Support.
+
+= Version 3.3.0 | 24th October 2018 = 
 * Update: All Schema links use https.
 * Update: Image placeholder.
 * Update: Sidebar for blog posts page.

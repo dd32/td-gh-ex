@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.5.0
+ * @version     3.5.1
  */
 
 
@@ -13,18 +13,17 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 global $post, $woocommerce, $product, $virtue;
 
 $columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 5 );
-$post_thumbnail_id = get_post_thumbnail_id( $post->ID );
+$post_thumbnail_id = $product->get_image_id();
 $full_size_image   = wp_get_attachment_image_src( $post_thumbnail_id, 'full' );
 $image_title       = get_post_field( 'post_excerpt', $post_thumbnail_id );
 if(!empty($image_title)) {
 	$light_title  = $image_title;
 } else {
-	$light_title  = get_the_title($post_thumbnail_id);
+	$light_title  = get_the_title( $post_thumbnail_id );
 }
-$placeholder       = has_post_thumbnail() ? 'with-images' : 'without-images';
 $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_classes', array(
 	'woocommerce-product-gallery',
-	'woocommerce-product-gallery--' . $placeholder,
+	'woocommerce-product-gallery--' . ( $product->get_image_id() ? 'with-images' : 'without-images' ),
 	'woocommerce-product-gallery--columns-' . absint( $columns ),
 	'images',
 	'kad-light-gallery',
@@ -76,14 +75,14 @@ if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0)
 		);
 		if ( has_post_thumbnail() ) {
 			if($presizeimage == 1){
-				$alt = esc_attr( get_post_meta(get_post_thumbnail_id(), '_wp_attachment_image_alt', true) );
+				$alt = esc_attr( get_post_meta($post_thumbnail_id, '_wp_attachment_image_alt', true) );
 				if( !empty($alt) ) {
 					$alttag	= $alt;
 				} else {
 					$alttag	= $light_title;
 				}
 		        $html  = '<div data-thumb="' . get_the_post_thumbnail_url( $post->ID, 'shop_thumbnail' ) . '" class="woocommerce-product-gallery__image"><a href="' . esc_url( $full_size_image[0] ) . '" title="'.esc_attr($light_title).'">';
-				$html .= virtue_get_full_image_output($productimgwidth, $productimgheight, true, 'attachment-shop_single shop_single wp-post-image', $alttag, $post_thumbnail_id, false, false, false, $attributes);
+				$html .= virtue_get_full_image_output( $productimgwidth, $productimgheight, true, 'attachment-shop_single shop_single wp-post-image', $alttag, $post_thumbnail_id, false, false, false, $attributes);
 				$html .= '</a></div>';
 			} else {
 				$html  = '<div data-thumb="' . get_the_post_thumbnail_url( $post->ID, 'shop_thumbnail' ) . '" class="woocommerce-product-gallery__image"><a href="' . esc_url( $full_size_image[0] ) . '">';
@@ -96,7 +95,7 @@ if(isset($virtue['product_simg_resize']) && $virtue['product_simg_resize'] == 0)
 			$html .= '</div>';
 		}
 
-		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, get_post_thumbnail_id( $post->ID ) );
+		echo apply_filters( 'woocommerce_single_product_image_thumbnail_html', $html, $post_thumbnail_id );
 		
 		if(! $galslider) {
 			echo '</div>';
