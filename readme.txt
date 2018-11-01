@@ -28,6 +28,10 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.3.6 | 1st November 2018 =
+* Update: Woocommerce notice.
+* Update: CSS for gutenberg.
+
 = Version 1.3.5 | 24th October 2018 =
 * Update: Woocommerce notice.
 

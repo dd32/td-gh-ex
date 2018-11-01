@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.5.0
+ * @version     3.5.1
  */
 
 
@@ -15,7 +15,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 global $post, $product;
 $ascend = ascend_get_options();
 $columns           = apply_filters( 'woocommerce_product_thumbnails_columns', 4 );
-$post_thumbnail_id = get_post_thumbnail_id( $post->ID );
+$post_thumbnail_id = $product->get_image_id();
 $full_size_image   = wp_get_attachment_image_src( $post_thumbnail_id, 'full' );
 $image_title      = get_post_field( 'post_excerpt', $post_thumbnail_id );
 if(!empty($image_title)) {
@@ -23,10 +23,9 @@ if(!empty($image_title)) {
 } else {
 	$light_title  = get_the_title($post_thumbnail_id);
 }
-$placeholder       = has_post_thumbnail() ? 'with-images' : 'without-images';
 $wrapper_classes   = apply_filters( 'woocommerce_single_product_image_gallery_classes', array(
 	'woocommerce-product-gallery',
-	'woocommerce-product-gallery--' . $placeholder,
+	'woocommerce-product-gallery--' . ( $product->get_image_id() ? 'with-images' : 'without-images' ),
 	'woocommerce-product-gallery--columns-' . absint( $columns ),
 	'images',
 	'kad-light-gallery',
