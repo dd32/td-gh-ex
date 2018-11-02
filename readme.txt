@@ -66,6 +66,9 @@ Images
 
 == Changelog ==
 
+Version 2.82
+* Fixed Dynamic Color issue in responsive menu
+
 Version 2.81
 * Added Dynamic Color Option
 

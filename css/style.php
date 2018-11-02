@@ -144,6 +144,18 @@
                 #slider-banner .bx-wrapper .bx-pager.bx-default-pager a{
                     box-shadow: 0 0 0 2px {$tpl_color} inset; 
                 }";
+
+            /** Media Query **/
+            $custom_css .= "
+                @media screen and (max-width: 940px) {
+                    .main-navigation .menu li{
+                        background: {$tpl_color};
+                    }
+
+                    .main-navigation .menu li{
+                        border-bottom-color: {$darker_tpl_color} !important;
+                    }
+                }";
             
         }
 
