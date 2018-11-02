@@ -22,7 +22,8 @@
                     input[type=\"button\"]:hover,
                     input[type=\"reset\"]:hover,
                     input[type=\"submit\"]:hover,
-                    .ak-search .search-form {
+                    .ak-search .search-form,
+                    .nav-toggle{
 					   background: {$tpl_color};
 					}";
 
@@ -89,6 +90,18 @@
                     .bread-you:after{
 					   border-left-color: {$tpl_color};
 					}";
+
+            /** Media Queries **/
+                $custom_css .= "
+                    @media (max-width: 767px){
+                        .sub-toggle{
+                            background: {$tpl_color} !important;
+                        }
+
+                        #site-navigation ul li:hover, #site-navigation ul.menu > li.current-menu-item, #site-navigation ul.menu > li.current-menu-ancestor{
+                            border-color: {$tpl_color} !important;
+                        }
+                    }";
 		}
 
 		wp_add_inline_style( 'accesspress-mag-style', $custom_css );
