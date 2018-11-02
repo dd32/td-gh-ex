@@ -24,8 +24,11 @@ function rockers_theme_setup() {
 //Load text domain for translation-ready
 load_theme_textdomain( 'rockers', get_stylesheet_directory() . '/languages' );
 
-require( get_stylesheet_directory() . '/functions/rockers-info/welcome-screen.php' );
 require( get_stylesheet_directory() . '/functions/customizer/customizer_general_settings.php' );
+
+if ( is_admin() ) {
+				require get_stylesheet_directory() . '/admin/admin-init.php';
+			}
 
 }
 endif; 

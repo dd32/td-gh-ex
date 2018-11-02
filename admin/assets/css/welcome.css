@@ -5,31 +5,27 @@
 .rockers-nav-tabs:after {
     clear: both;
     display: table;
-    rockers: " ";
+    content: " ";
 }
 .rockers-nav-tabs > li {
     float: left;
     margin-bottom: -1px;
     display: block;
 }
-.rockers-nav-tabs > li > a {
-    border: 1px solid transparent;
-    border-radius: 4px 4px 0 0;
-    display: block;
-    padding: 10px 15px;
-	text-decoration: none;
-}
 .rockers-nav-tabs > li.active > a, .rockers-nav-tabs > li.active > a:focus, .rockers-nav-tabs > li.active > a:hover {
-    color: #555;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background: #fff;
+    border-bottom-color: #fff;
+    color: #00a4e7;
     border-bottom-color: transparent;
+}
+.rockers-nav-tabs li:last-child .nav-tab {
+    border-right: 1px solid #ccc;
 }
 .rockers-nav-tabs > li.rockers-w-red-tab > a {
     color: red;
     font-weight: bold;
 }
-.rockers-tab-rockers {
+.rockers-tab-content {
 	background-color: #fff;
     /* border-bottom: 1px solid #ddd;
     border-right: 1px solid #ddd;
@@ -37,19 +33,17 @@
     width: 1400px;
     float: left; */
 }
-.rockers-tab-rockers > .tab-pane {
+.rockers-tab-content > .tab-pane {
     display: none;
 }
-.rockers-tab-rockers > .active {
+.rockers-tab-content > .active {
     display: block;
 }
 
-.rockers-tab-pane {
-	padding: 30px;
-}
-.rockers-tab-pane {
-    display: none;
-}
+/* .rockers-tab-pane { */
+	/* padding: 30px; */
+/* } */
+
 .rockers-tab-pane.active {
     display: block;
 }
@@ -74,7 +68,7 @@
     padding-right: 20px;
     margin-bottom: 15px;
 }
-.rockers-tab-rockers img {
+.rockers-tab-content img {
     max-width: 100%;
 }
 .rockers-pane-first-half {
@@ -95,9 +89,9 @@
 }
 
 .rockers-info-title {
-    font-size: 32px;
+    font-size: 32px !important;
 	border-bottom: 1px solid #eaeaea;
-	line-height:50px;
+	line-height:50px !important;
 }
 .rockers-clear {
     clear: both;
@@ -262,7 +256,7 @@
     float: none;
     border-left: none;
   }
-  .rockers-welcome-title, .rockers-tab-rockers h1 {
+  .rockers-welcome-title, .rockers-tab-content h1 {
     line-height: 30px;
   }
   .rockers-fre-pro table td {
@@ -346,12 +340,13 @@
 	border-left: 1px solid #dddddd;
 	border-top: 1px solid #dddddd;
 	border-bottom: 1px solid #dddddd;
+	border-right: 1px solid #dddddd;
 }
 .pricing1 .border-right { border-right: 1px solid #dddddd; }
 .pricing1 .col-md-4:last-child .plan { border-right: 1px solid #dddddd; }
 .pricing1 .plan .feature li:last-child { border-bottom: 0 none; } 
 .pricing1 .plan header { background: #fff; text-align: center; }
-.pricing1 .plan h2 { background: #f8f8f8; font-size: 24px; line-height: 30px; font-weight: 400; color: #333; padding: 10px 20px 15px; border-bottom: 1px solid #dddddd; margin: 0; }
+.pricing1 .plan h2 { background: #f8f8f8; font-size: 24px; line-height: 30px; font-weight: 400; color: #333; padding: 15px 20px 15px; border-bottom: 1px solid #dddddd; margin: 0 !important; }
 .pricing1 .plan h2 small { display: block; color: #808080; font-size: 14px; padding-top: 7px; }
 .pricing1 .plan .btn { margin-bottom: 0; font-size: 16px; }
 .pricing1 .plan .btn i { margin-right: 7px; }
@@ -362,7 +357,7 @@
     padding: 0;
     margin: 0;
 }
-.pricing1 .plan .feature li { padding: 12px 20px; color: #333; font-size: 18px; border-bottom: 1px solid #dddddd;     height: 110px;
+.pricing1 .plan .feature li { padding: 30px 20px; color: #333; font-size: 18px; border-bottom: 1px solid #dddddd;     height: 128px;
     margin-bottom: 0; }
 .pricing1.col-3 .plan header { padding: 40px; }
 .pricing1.col-3 .plan .feature { padding: 20px 30px; }
@@ -382,7 +377,7 @@
 .pricing1 .plan .price1 span sup { position: relative; top: -0.6em; display: inline-block; padding: 0; font-size: 24px; }
 .pricing1 .plan .duration { text-align: center; color: #636e79; display: block; font-size: 16px; line-height: 25px; margin-bottom: 5px; }
 .pricing1 .col-md-3  { padding: 0; }
-.pricing1 .offer-rockers { border-left: 1px solid #dddddd; border-top: 0 none; border-bottom: 1px solid #dddddd; border-right: 1px solid #dddddd; }
+.pricing1 .offer-content { border-left: 1px solid #dddddd; border-top: 0 none; border-bottom: 1px solid #dddddd; border-right: 1px solid #dddddd; }
 .pricing1 .most-popular {
     display: block;
     float: left;
@@ -410,7 +405,7 @@
 
 /*Pricing Table 1*/
 .pricing1 .plan { border-right: 1px solid #dddddd; margin-bottom: 30px; }
-.pricing-rockers { border-top: 1px solid #dddddd; }
+.pricing-content { border-top: 1px solid #dddddd; }
 .pricing1 .dashicons, .pricing1 .dashicons-before:before {
     font-size: 30px !important;
     line-height: 1 !important;
@@ -465,3 +460,12 @@
 }
 a.info-block{text-decoration:none;color:#333;}
 a.info-block:hover, a.info-block:active, a.info-block:focus{color:#333;}
+.wp-person a:focus .gravatar, a:focus, a:focus .media-icon img{ box-shadow:none !important; }
+
+/*css 4 oct 18*/
+.m-top-40 { margin-top: 40px; }
+.m-top-40 p {font-size: 15px; }
+.theme-info-wrap h3 { margin: 1.25em 0 .6em; }
+.theme-info-wrap h3 > i { line-height: 1.2; margin-right: 15px }
+
+.about-wrap{ margin: 25px 25px 0 20px; max-width: 100%;}

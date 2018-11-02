@@ -3,7 +3,7 @@
  * Free VS Pro
  */
 ?>
-<div id="free_pro" class="rockers-tab-pane rockers-fre-pro">
+<div id="free_vs_pro" class="rockers-tab-pane panel-close">
 
     <div class="row pricing1">
 						<div class="col-md-12">
