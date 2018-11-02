@@ -1,17 +1,20 @@
 <?php
 
-/* REDESIGN, WP FUNCTIONS FILE */
+/* Redesign, WP FUNCTIONS FILE */
 
 add_action('after_setup_theme', 'redesign_theme_setup');
 
 function redesign_theme_setup() {
-
+	
 load_theme_textdomain('redesign', get_template_directory() . '/languages');
-
+	
 //CONTENT WIDTH
-if ( ! isset( $content_width ) ) $content_width = 490;
-
+global $content_width;
+if ( ! isset( $content_width ) )
+$content_width = 700;
+	
 //THEME SUPPORT
+
 add_theme_support( 'post-formats', array(
 		'aside', 'audio', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'video'
 	) );
@@ -24,32 +27,21 @@ add_theme_support('automatic-feed-links');
 
 add_editor_style( 'editor-style.css' );
 
+add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption'
+	) );
+	
+add_theme_support( 'custom-logo' );
+	
+
 //CUSTOM BACKGROUND
 $defaults = array(
-	'default-color'          => '#000000',
-	'default-image' => get_template_directory_uri() . '/img/background-redesign.jpg',
+	'default-color'          => '#EEEEEE',
+	'default-image' => get_template_directory_uri() . '/img/background.png',
 	'wp-head-callback'       => '_custom_background_cb',
 	'admin-head-callback'    => '',
 	'admin-preview-callback' => ''
 );
 add_theme_support( 'custom-background', $defaults );
-
-//CUSTOM HEADER
-$defaults = array(
-	'random-default'         => false,
-	'width'                  => '',
-	'height'                 => '',
-	'flex-height'            => true,
-	'flex-width'             => true,
-	'default-text-color'     => '#444444',
-	'header-text'            => true,
-	'uploads'                => true,
-	'wp-head-callback'       => '',
-	'admin-head-callback'    => '',
-	'admin-preview-callback' => '',
-	'default-image'		 => '',
-);
-add_theme_support( 'custom-header', $defaults );
 
 //ADD NAVIGATION
 add_action( 'init', 'redesign_register_menus' );
@@ -68,8 +60,9 @@ add_action( 'wp_enqueue_scripts', 'redesign_load_scripts' );
 function redesign_register_menus() {
   register_nav_menus(
     array(
-      'top-menu' => __( 'Top Menu', 'redesign' ),
-      'primary-menu' => __( 'Primary Menu', 'redesign' )
+      	'top-menu' => __( 'Top Menu', 'redesign' ),
+      	'primary-menu' => __( 'Primary Menu', 'redesign' ),
+	'footer-menu' => __( 'Footer Menu', 'redesign' )
     )
   );
 }
@@ -77,9 +70,9 @@ function redesign_register_menus() {
 //WIDGET AREAS
 function redesign_register_sidebars() {
 	register_sidebar( array(
-		'name' => __( 'Top', 'redesign' ),
+		'name' => __( 'Big banner', 'redesign' ),
 		'id' => __( 'banner-1', 'redesign' ),
-		'description' => __( 'A top banner widget area', 'redesign' ),
+		'description' => __( 'One big widget area', 'redesign' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h2 class="widget-title">',
@@ -87,9 +80,20 @@ function redesign_register_sidebars() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Main sidebar', 'redesign' ),
+		'name' => __( 'Front cards', 'redesign' ),
+		'id' => __( 'banner-2', 'redesign' ),
+		'description' => __( '4 widget areas', 'redesign' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
+	) );
+
+
+	register_sidebar( array(
+		'name' => __( 'Front sidebar', 'redesign' ),
 		'id' => __( 'sidebar-1', 'redesign' ),
-		'description' => __( 'First sidebar widget area', 'redesign' ),
+		'description' => __( 'Sidebar widget area on front page', 'redesign' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h2 class="widget-title">',
@@ -97,18 +101,30 @@ function redesign_register_sidebars() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Extra sidebar', 'redesign' ),
+		'name' => __( 'Inner page', 'redesign' ),
 		'id' => __( 'sidebar-2', 'redesign' ),
-		'description' => __( 'Second sidebar widget area', 'redesign' ),
+		'description' => __( 'Sidebar widget area', 'redesign' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h2 class="widget-title">',
 		'after_title' => '</h2>',
 	) );
+
+	register_sidebar( array(
+		'name' => __( 'Inner post sidebar', 'redesign' ),
+		'id' => __( 'sidebar-3', 'redesign' ),
+		'description' => __( 'Sidebar widget area on single post', 'redesign' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget' => '</div>',
+		'before_title' => '<h2 class="widget-title">',
+		'after_title' => '</h2>',
+	) );
+
+
 	register_sidebar( array(
 		'name' => __( 'Bottom', 'redesign' ),
 		'id' => __( 'footer-1', 'redesign' ),
-		'description' => __( 'Footer widget area', 'redesign' ),
+		'description' => __( 'Footer, 4 widget areas', 'redesign' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h2 class="widget-title">',

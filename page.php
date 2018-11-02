@@ -21,12 +21,6 @@
             </div>
  
 
-		<?php comments_popup_link('No Comments &#187;', '1 Comment &#187;', '% Comments &#187;'); ?>
-
-   			<div class="comments-template"><?php comments_template(); ?>
-			<?php paginate_comments_links(); ?> 
-			</div>
-
 
         </div>
 
@@ -35,5 +29,5 @@
 <?php endif; ?>
 </div>
 
-<?php get_sidebar(); ?>
+<?php get_template_part( 'sidebar-inner'); ?>
 <?php get_footer(); ?>

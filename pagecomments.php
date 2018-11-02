@@ -1,12 +1,10 @@
 <?php
 /*
-Template Name: Front, 2 sidebars
+Template Name: With Comments
 */
 ?>
 
 <?php get_header(); ?>
-
-<?php get_template_part( 'stripe'); ?>
  
     <div id="content">
 
@@ -28,6 +26,10 @@ Template Name: Front, 2 sidebars
 
             </div>
  
+   			<div class="comments-template"><?php comments_template(); ?>
+			<?php paginate_comments_links(); ?> 
+			</div>
+
         </div>
 
 <?php endwhile; ?>
@@ -35,5 +37,5 @@ Template Name: Front, 2 sidebars
 <?php endif; ?>
 </div>
 
-<?php get_sidebar(); ?>
+<?php get_template_part( 'sidebar-inner'); ?>
 <?php get_footer(); ?>

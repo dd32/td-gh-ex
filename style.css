@@ -1,29 +1,32 @@
 /*
 Theme Name: Redesign
 
-Theme URI: http://tioreo.com
+Theme URI: https://toth-illustration.com/redesign-wordpress-theme/
 
-Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it equally easy to read in handheld units or modern desktop computers (max width 1366 px). It is an all round theme suitable for blogging/news, business, culture or organizations. Not based on any other WP theme, it is made from scratch.
+Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it easy to read in handheld units. Max width is 1366 px, adapted for modern desktop computers. The theme is suitable for blogging, news or business. Not based on any other WP theme. It's made from scratch.
 
 - Transparent graphics.
 - Choose from several transparent color post formats.
 - Two navigation menus.
-- Custom header. Suggested max-measures: 1366 x 300 px. But better to use smaller size, as a logo to the left (300x100px).
+- Custom logo.
 - Custom background, and custom background colors.
 - Widget areas in index header, sidebar and footer.
 - Responsive. Easy to read from desktops, tablets and smartphones.
-
-Redesign WordPress theme, Copyright (C) 2015 Robert Toth
+Redesign WordPress theme, Copyright (C) 2018 Robert Toth
 Redesign WordPress theme is licensed under the GPL.
-Resource All graphic objects, example: img/background.png, img/favicon.ico
+Resource All graphic objects, example: img/logo.png.
+Resource Images: brifhe.jpg - the front cover image from Good Free Photos, public domain photos (included in img folder). Link to their website: https://www.goodfreephotos.com/
+Resource Fonts: Raleway, by The League of Movable Type, under SIL Open Font License v1.10. Link to licence: https://www.fontsquirrel.com/license/raleway. Lusitana, "traditional"", under SIL Open Font License (OFL). Link to licence: https://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL
 
 Author: Robert Toth
-Author URI: http://toth-illustration.com
-Version: 1.3.4
+Author URI: https://toth-illustration.com
+Version: 1.3.5
 Copyright: Robert Toth, http://toth-illustration.com
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: gray, white, black, right-sidebar, two-columns, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, sticky-post, threaded-comments, post-formats, featured-images
+Tags: right-sidebar, two-columns, custom-background, custom-logo, custom-menu, sticky-post, threaded-comments, microformats
+Text Domain: redesign
+Domain Path: /languages
 */
 
 /*-----REDESIGN, WORD PRESS STYLESHEET------*/
@@ -36,7 +39,7 @@ ol,
 ul, 
 li{
 	margin:0;
-        padding:0;
+    padding:0;
 	border:0;
 	font-size: 100%;
 	font: inherit;
@@ -44,29 +47,81 @@ li{
 	list-style:none;
 }
 
+/*CLEAR*/
+
+.clear-all{
+	clear: both;
+}
+
+
+/*CUSTOM FONTS*/
+
+
+@font-face{
+	font-family: "Raleway";
+	src: local('Raleway-Regular'),
+		url("fonts/raleway/Raleway-Regular.ttf") format('truetype');
+		font-style: normal;
+}
+
+@font-face{
+	font-family: "Raleway";
+	src: local('Raleway-Italic'),
+		url("fonts/raleway/Raleway-Italic.ttf") format('truetype');
+	 font-style: italic;
+}
+
+
+@font-face{
+	font-family: "Raleway";
+	src: local('Raleway-Light'),
+		url("fonts/raleway/Raleway-Light.ttf") format('truetype');
+	font-weight: 300;
+}
+
+@font-face{
+	font-family: "Raleway";
+	src: local('Raleway-Bold'),
+		url("fonts/raleway/Raleway-Bold.ttf") format('truetype');
+	font-weight: bold;
+}
+
+@font-face{
+	font-family: "Lusitana";
+	src: local('Lusitana-Regular'),
+		url("fonts/lusitana/Lusitana-Regular.ttf") format('truetype');
+	font-weight: normal;
+}
+
+@font-face{
+	font-family: "Lusitana";
+	src: local('Lusitana-Bold'),
+		url("fonts/lusitana/Lusitana-Bold.ttf") format('truetype');
+	font-weight: bold;
+}
+
 
 /*RESPONSIVE ELEMENTS*/
 
-@media screen and (min-width: 1px) and (max-width: 479px){ 
+
+@media screen and (max-width: 760px){ 
 
 	#header,
+	#wrapper{
+		width: 96%;
+	}
+
+	#banner .widget{
+		width: 100%;
+	}
+
 	#content{
 		width: 100%;
 	}
 
-
-	#wrapper{
-		width: 100%;
-		margin: 0px auto 0px;
-	}
-
-
-	#banner .widget,
-	#footer .widget{
-		width: 96%;
-		padding: 2%;
-	}
-
+	#banner2 .widget,
+	#footer .widget,
+	#sidebarinner,
 	#sidebar,
 	#sidebar2{
 		width: 94%;
@@ -76,132 +131,138 @@ li{
 
 	#topmenu,
 	#primmenu{ 
-		margin:0px;
-		font-size:80%;
+		font-size:90%;
+	}
+	
+	.alignright,
+	.alignleft,
+	.aligncenter {
+		clear: both;
+		display: block;
+		margin: 0 auto;
 	}
 
 }
 
 
-@media screen and (min-width: 480px) and (max-width: 767px){
-
-	#header{
-		width: 96%;
-	}
-
+@media screen and (min-width: 761px){
+		
+	#header,
 	#wrapper{
-		width: 96%;
-		margin: 0px auto 0px;
+		max-width: 1366px;
 	}
-
-	#content{
+	
+	#banner .widget{
 		width: 100%;
 	}
 
-	#banner .widget,
-	#footer .widget{
-		width: 46%;
-		padding: 2%;
+	#content{
+		width: 62%;
+		margin: 2%;
 	}
 
+		#banner2 .widget{
+		width: 27%;
+		padding: 2%;
+		margin: 1%;
+		/*min-height:400px;*/
+	}
+	
+	#sidebarinner,
 	#sidebar,
 	#sidebar2{
-		width: 44%;
+		width: 27%;
 		padding: 2%;
 		margin: 1%;
 	}
 
-	#topmenu{ 
-		margin:0px;
-		font-size:80%;
-	}
-
-	#topmenu,
-	#primmenu{ 
-		margin:0px;
-		font-size:90%;
-	}
-
-}
-
-
-@media screen and (min-width: 768px) and (max-width: 1366px){
-	
-	#header{
-		width: 96%;
-	}
-
-	#wrapper{
-		margin: 0px auto 20px;
-		width: 96%;
-	}
-
-	#content{
-		width: 46%;
-		margin: 2%;
-	}
-
-	#sidebar,
-	#sidebar2{
+	#footer .widget{
 		width: 19%;
 		padding: 2%;
 		margin: 1%;
+		/*min-height:400px;*/
 	}
 
-	#banner .widget,
-	#footer .widget{
-		width: 21%;
-		padding: 2%;
+	.alignleft {
+	display: inline;
+	float: left;
+	margin-right: 10px;	
+}
+.alignright {
+	display: inline;
+	float: right;
+	margin-left: 10px;
+}
+.aligncenter {
+	clear: both;
+	display: block;
+	margin: 10px auto;
 	}
-
+	
 }
 
 
-@media screen and (min-width: 1366px){
-		
-	#header{
-		width: 1366px;
-	}
+/*SIDEBAR & BANNER ELEMENTS*/
 
-	#wrapper{
-	margin: 0px auto 20px;
-		width: 1366px;
-	}
+.widget{
+	font-family: Lusitana, Helvetica, sans-serif;
+	overflow:hidden;
+}
 
-	#content{
-		width: 56%;
-		margin: 2%;
-	}
+#banner2{
+	width: 100%;
+	background-image:url('img/btbg10.png');
+	display: block;
+	clear: both;
+}
 
+#banner2 .widget{
+	float:left;
+}
 
-	#banner .widget,
-	#footer .widget{
-		width: 20%;
-		padding: 2%;
-		margin: 1% 0 1% 1%;
-	}
+#banner{
+	width: 100%;
+    background-image:url('img/tbg30.png');
+	display:block;
+	clear:both;
+	font-size:120%;
+}
 
+#banner .widget{
+	margin: 0px auto 0px;
+}
 
-	#sidebar,
-	#sidebar2{
-		width: 14%;
-		padding: 2%;
-		margin: 1%;
-	}
+#banner .widget h2{
+	text-align:center;
+}
+
+#sidebarinner{
+	display:block;
+	float:left;
+}
+
+#sidebar,
+#sidebar2{
+	float:left;
+}
+
+#sidebar .widget,
+#sidebar2 .widget{
+	margin-bottom: 20px;
 }
 
 
 /* RESPONSIVE images & media */
 
+#blog img,
 #header img,
-#content img,
-#footer img,
-.post img,
+.entry img,
 .widget img,
 .comment img{
 	max-width: 100%; /* Fluid images for posts, comments, and widgets */
 	height: auto;
 }
+
 
 img[class*="align"],
 img[class*="wp-image-"],
@@ -230,6 +291,10 @@ video {
 
 /*IMAGES*/
 
+img{
+	display:block;
+}
+
 a img{
 	border: 0;
 }
@@ -241,64 +306,122 @@ img.alignright {
 	border: none;
 	margin-top: 10px;
 }
-.alignleft {
-	display: inline;
-	float: left;
-	margin-right: 10px;	
-}
-.alignright {
-	display: inline;
-	float: right;
-	margin-left: 10px;
-}
-.aligncenter {
-	clear: both;
-	display: block;
-	margin: 10px auto;
-}
+
+
+/*IMAGES CAPTION*/
 
 .wp-caption {
-	text-align: center;
-	background-image:url('img/tbg30.png');
-	padding:10px 5px;
-	max-width:95%;
+		/*background-image:url('img/btbg10.png');*/
+    	max-width: 100%;
+}
+
+.wp-caption.alignnone,
+.archive .wp-caption,
+.blog .wp-caption{
+    	max-width: 100%;
+}
+
+.wp-caption img {
+    max-width: 100%;
+    height: auto;
 }
 
 .wp-caption-text {
-	margin:0px;
-	padding:10px 5px;
+	font-weight: 300;
+	text-align: center;
+	min-width:150px;
 	font-size:90%;
+	position:relative;
+	padding:0.5em 0;
+	margin:0;
 }
+
+/*GALLERY*/
 
 .gallery-caption {
+	font-weight: 300;
 	font-size:90%;
 	margin:0px 0px 5px 0px;
-	text-align: center;
+	text-align: left;
 }
 
+.gallery {
+	margin-bottom: 2em;
+}
+
+.gallery-item {
+	display: inline-block;
+	vertical-align: top;
+	width: 100%;
+}
+
+.gallery-columns-2 .gallery-item {
+	max-width: 48%;
+	margin:1% 1% 0 1%;
+}
+
+.gallery-columns-3 .gallery-item {
+	max-width: 31%;
+	margin:1% 1% 0 1%;
+}
+
+.gallery-columns-4 .gallery-item {
+	max-width: 23%;
+	margin:1% 1% 0 1%;
+}
+
+.gallery-columns-5 .gallery-item {
+	max-width: 18%;
+	margin:1% 1% 0 1%;
+}
+
+.gallery-columns-6 .gallery-item {
+	max-width: 14%;
+	margin:1% 1% 0 1%;
+}
+
+.gallery-columns-7 .gallery-item {
+	max-width: 12%;
+	margin:1% 1% 0 1%;
+}
+
+.gallery-columns-8 .gallery-item {
+	max-width: 10%;
+	margin:1% 1% 0 1%;
+}
+
+.gallery-columns-9 .gallery-item {
+	max-width: 9%;
+	margin:1% 1% 0 1%;
+}
 
 /*BASIC*/
 
 body{
-	font-family: Helvetica, sans-serif;
+	font-family: Raleway, Helvetica, sans-serif;
 	font-size: 16px;
-        line-height: 150%;
+    line-height:180%; 
 	color: #444;
 }
 
 #header{
-	margin: 0px auto 0px;
-	padding:0px;
-	height:300px;
+	display:block;
+	margin: 0 auto;
+	overflow: hidden !important;
 }
 
 #wrapper{
-	padding:0px;
+	margin: 0px auto 0px;
 	text-align: left;
-	background-image:url('img/tbg70.png');
+	background-image:url('img/tbg80.png');
 }
 
 #content{
+	float:left;
+}
+
+#content2{
+	width:100%;
 	float:left;
 }
 
@@ -311,20 +434,31 @@ body{
 	padding:10px 10px 0px 20px;
 }
 
+#logo img{
+	margin: 20px auto 10px;
+	text-align:center;
+}
+
 #header-text{
-	padding:2%;
+	font-size:110%;
+	text-transform: uppercase;
+	display:block;
+	padding:20px 0;
+	text-align:center;
 }
 
 .site-title{
-	font-size:220%;
+
+	display:inline;
 	line-height:120%;
-	text-transform: uppercase;
+	padding-right:5px;
 	font-weight:bold;
 }
 
 .site-description{
-	font-size:120%;
-	line-height:120%;
+	display:inline;
+	font-weight: 300;
+	color:#777;
 }
  
 
@@ -337,67 +471,49 @@ a:visited{
 }
  
 a:hover{
-	text-decoration: underline; 
+	text-decoration: none; 
 
 }
 
 /*HEADINGS*/
- 
+
 h1,
-h1 a,
-h1 a:visited,
 h2,
-h2 a,
-h2 a:visited,
 h3,
-h3 a,
-h3 a:visited,
 h4,
-h4 a,
-h4 a:hover,
-h4 a:visited,
 h5,
-h5 a,
-h5 a:visited,
-h6,
-h6 a,
-h6 a:visited{
-	font-weight:bold;
-	line-height:120%;
-	margin: 0 0 15px 0;
-	color:#444 !important;
-	text-decoration:none;
-}
-
-h1{
-	font-size:160%;
-}
-
-h2{
-	font-size:140%;
-}
-
-h3{
-	font-size:130%;
-}
-
-h4{
-	font-size:120%;
-}
-
-h5{
-	font-size:110%;
-}
-
 h6{
-	font-size:100%;
+	font-family: Raleway, Helvetica, sans-serif;
+	text-transform: uppercase;
+	line-height:130%;
+	padding:0;
+	margin:0;
+	font-weight:bold;
+	color:#444;
+}
+
+h2,
+h4,
+h6{
+	font-weight: 300;
 }
 
 .post h1{
 	margin: 0%;
 }
 
+.widget h2{
+	margin: 0px 0px 10px 0px;
+}
+
+
 /*NAVIGATION MENUS*/
+
+
+
+.nav{
+	text-transform: uppercase;
+}
 
 #topmenu{
 	width:100%;
@@ -413,7 +529,9 @@ h6{
 	position:relative;
 }
 
-#primmenu{
+
+#primmenu,
+#footermenu{
 	width:100%;
 	display:block;
 	float:left;
@@ -423,16 +541,17 @@ h6{
 	background-image:url('img/btbg20.png');
 }
 
-#primmenu li{
+#primmenu li,
+#footermenu li{
 	float:left;
 	position:relative;
 }
 
 .nav a{
 	display:block;
-	padding:5px 20px;
+	padding:10px 20px;
 	text-decoration:none;
-	font-weight:bold;
+    font-weight:bold;
 }
 
 .nav ul{
@@ -441,10 +560,10 @@ h6{
 
 .nav ul ul{
 	display:none;
-    	position:absolute;
-    	top:100%;
-    	float:left;
-    	z-index:99999;
+    position:absolute;
+    top:100%;
+    float:left;
+    z-index:99999;
 	background-image:url('img/tbg90.png');
 }
  
@@ -460,7 +579,7 @@ h6{
 }
  
 .nav li:hover > a,.nav ul ul:hover > a{
-		background-image:url('img/tbg50.png');
+	background-image:url('img/tbg50.png');
 }
  
 .nav ul li:hover > ul{
@@ -471,14 +590,23 @@ h6{
 /*POST*/
 
 .post{
-	overflow: auto;
+	overflow: hidden;
 	padding:2%;
-	margin-bottom: 20px;
-	background-image:url('img/tbg30.png');
+}
+
+.entry{
+	font-family: Lusitana, Helvetica, sans-serif;
+	color:#777;
+	font-size:110%;
 }
 
 .entry ul li{
-	list-style: square;
+	list-style-type: square;
+	margin-left:20px;
+}
+
+.entry ul ul li{
+	list-style-type: disc;
 	margin-left:20px;
 }
 
@@ -488,25 +616,31 @@ h6{
 }
 
 .entry{
-	margin-top: 30px;
-	text-align: justify;
-	text-justify: distribute;
-	clear: both;
+	margin-top:30px;
+	/*text-align:justify;
+	text-justify:distribute;*/
+	clear:both;
 }
 
 .entry a{
 	color:#0077AA;
 }
 
+.entry a:hover{
+	color:#2299CC;
+}
+
 .postmetadata{
-	font-size:90%;
 	display:inline;
+	font-weight:normal;
+	font-weight: 300;
 }
 
 .postmetadata2{
-	font-size:90%;
 	display:inline;
 	float:right;
+	font-weight:normal;
+	font-weight: 300;
 }
 
 .sticky{
@@ -518,33 +652,35 @@ h6{
 }
 
 blockquote{
-	padding: 20px 10px;
-	margin:10px 0 10px 0;
-	font-size:110%;
-	line-height: 160%;
-        font-style:italic;
+	display:table;
+	margin:10px 0px;
+	padding:10px 10px;
+    font-style:italic;
 	background-image:url('img/btbg10.png');
 }
+
 
 blockquote:before{ 
 	display: block; 
 	float: left;
-	margin:5px;
-	font-size:400%;
+	position:relative;
+	margin:0.35em 0.2em 0.1em 0;
+	font-size:600%;
 	/*content: "\201D";*/
 	content: "\201C";
 } 
 
-blockquote:after{ 
+/*blockquote:after{ 
 	display: block; 
-	margin:5px;
+	position:relative;
+	margin:0.1em 0.1em 0.1em 0em;
 	float: right; 
 	content: "\201D";
-	font-size:400%;
-}
+	font-size:600%;
+}*/
 
 address{
-	display: block;
+	display: table;
 	font-style:normal;
 	margin:10px 0px 20px 0px;
 	padding:10px;
@@ -554,7 +690,7 @@ address{
 pre{
 	padding:10px; 
 	background-image:url('img/btbg30.png');
-        letter-spacing:normal;
+    letter-spacing:normal;
 	color:#FFF;
   	overflow: auto;
 }
@@ -588,6 +724,8 @@ pre{
 }
 
 .format-quote blockquote{
+    font-style:italic;
+	font-size:150%;
 	background-image: none;
 }
 
@@ -611,7 +749,7 @@ pre{
 	margin: 0px 5px;
 	background-image:url('img/btbg10.png');
 	text-decoration:none;
-	color:#444;
+	color:#555;
 	-webkit-border-radius: 50%; 
 	-moz-border-radius: 50%; 
   	border-radius: 50%;
@@ -622,46 +760,10 @@ pre{
 	text-decoration:none;
 }
 
-.navigation a{
-	margin-right:20px;;
-	padding:10px 20px;
+.navigation{
+	margin:20px 0px;
+	padding:5px 20px;
 	background-image:url('img/btbg10.png');
-	font-weight:bold;
-	text-decoration: none;
-	line-height:260%;
-}
-
-.navigation a:hover{
-	background-image:url('img/btbg20.png');
-}
-
-
-/*SIDEBAR & BANNER*/
-
-.widget{
-	overflow:hidden;
-}
-
-#banner{
-	width:100%;
-	float: left;
-    	background-image:url('img/btbg10.png');
-	padding:0px;
-	display:block;
-}
-
-#banner .widget{
-	float:left;
-}
-
-#sidebar,
-#sidebar2{
-	float:left;
-}
-
-#sidebar .widget,
-#sidebar2 .widget{
-	margin-bottom: 20px;
 }
 
 
@@ -669,72 +771,79 @@ pre{
 
 input,
 textarea,
-input[type="file"] {
+select{
 	display:block;
 	font-size: 100%;
 	font-family: inherit;
 	overflow: auto;
 	outline: none;
 	border: none;
-	padding:3px;
+	padding:0.5em;
 	background:#FFF;
 	border:1px solid #DDD;
 	color:#555;
-	-webkit-border-radius: 4px; 
-	-moz-border-radius: 4px; 
-  	border-radius: 4px;
 }
 
-
-select {
-	font-size:100%;
+button,
+.button,
+textarea,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="password"],
+input[type="name"],
+input[type="tel"],
+input[type="url"],
+input[type="text"],
+input[type="search"],
+input[type="email"],
+input[type="file"] {
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important;
+	 border-radius: 0 !important;
+	-webkit-border-radius: 0 !important; 
+  	-moz-border-radius: 0 !important;
+	box-shadow: none !important;
 }
-
 
 input[type="text"], 
 textarea{
 	width:90%;
+	max-width:500px;
 }
 
-#searchform input {
-	color: #999;
+#searchtextarea{
+    font-size: 100%;
 	max-width: 200px;
-	font-size: 90%;
-	padding: 3px 6px;
+	color: #999;
 }
 
 #searchsubmit {
     	display: none;
 }
 
-input[type="submit"],
-input[type="reset"]  {
-        font-size:100% !important;
-	background: #777 !important;
-	margin:5px 0px !important;
-	padding:7px 14px !important;
-	border:none !important;
-	color:#BBB !important;
-}
 
-input[type="file"] {
-	background: #CCC !important;
+input[type="submit"] {
+    font-size:100% !important;
+	background:#555;
+	margin:0.5em 0.5px 0.5em 0px !important;
+	padding:0.5em 2em !important;
 	border:none !important;
-	color:#555 !important;
-}
-
-input[type="submit"]:hover,
-input[type="reset"]:hover {
-        font-size:100% !important;
-	background: #555 !important;
 	color:#FFF !important;
 }
 
-input[type="submit"]:active,
-input[type="reset"]:active {
-        font-size:100% !important;
-	background: #666 !important;
+input[type="submit"]:hover {
+    background:#777;
+	color:#FFF !important;
 }
+
+input[type="submit"]:active {
+	background:#999;
+	color:#555 !important;
+}
+
+/*TABLES*/
 
 table{
 	background-image:url('img/btbg10.png');
@@ -760,7 +869,7 @@ table td{
 }
 
 hr{
-	height:5px;
+	height:0.5em;
 	background-image:url('img/btbg10.png');
 	border:0;
 }
@@ -773,7 +882,6 @@ fieldset {
 
 legend {
 	font-weight:bold;
-	margin-bottom:20px;
 }
 
 
@@ -787,6 +895,37 @@ legend {
 #wp-calendar tfoot td { 
 	background-image:none; 
 }
+
+/* SCREEN READERS*/
+
+.screen-reader-text {
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+}
+
+.screen-reader-text:focus {
+	background-color:#f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color:#21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000; /* Above WP toolbar. */
+}
+
 
 
 /*COMMENTS*/

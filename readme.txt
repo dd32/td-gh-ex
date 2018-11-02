@@ -1,6 +1,6 @@
 Redesign Wordpress Theme
 ___
-Redesign WordPress theme, Copyright (C) 2015 Robert Toth
+Redesign WordPress theme, Copyright (C) 2014 Robert Toth
 Redesign WordPress theme is licensed under the GPL.
 Resource All grapcic objects, example: img/background.png, img/favicon.ico
 License: none
@@ -8,16 +8,16 @@ Copyright: none
 ---
 Author: Robert Toth
 Author URL: http://toth-illustration.com
-Version: 1.3.4
-Theme URL: http://tioreo.com
-Requires: WordPress 4.1
+Version: 1.0
+Theme URL: http://redesign.toth-illustration.com
+Requires: WordPress 3.x
 License: GNU General Public License
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: gray, white, black, right-sidebar, three-columns, flexible-width, custom-background, custom-header, custom-menu, sticky-post, threaded-comments
 
 Overview:
 ---
-Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it easy to read in handheld units. Max width is 1366 px, adapted for modern desktop computers. The theme is suitable for blogging, news or businesses. Not based on any other WP theme. It is made from scratch.
+Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it easy to read in handheld units. Max width is 1366 px, adapted for modern desktop computers. The theme is suitable for blogging, news or businesses. Not based on any other WP theme. It's made from scratch.
 
 There are two navigation menus, custom header, custom background, header widget, two sidebar widgets, footer widget, and transparent graphic elements. The suggested measures for the custom header are 1366px x 200px.
 
@@ -50,5 +50,5 @@ Supported browsers and platforms:
 
 Typography:
 ---
-Helvetica is a well known font and works on most devices.
+Lucida which works on more than 96% of all computers.
 

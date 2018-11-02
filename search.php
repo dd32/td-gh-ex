@@ -4,7 +4,7 @@
 
 <div class="post">
 
-	<h2 class="entry"><?php _e('Search results:', 'redesign'); ?></h2>
+	<h2 class="entry"><?php _e('Search result','redesign'); ?></h2>
 
  <?php get_template_part( 'searchform'); ?>
 
@@ -30,7 +30,10 @@
 
 <?php the_excerpt(); ?>
 <?php endwhile; else: ?>
-<div class="entry"><?php _e('Try again, no articles matched your criteria.', 'redesign'); ?></div>
+	
+	<div class="entry">
+		<?php _e('Try again, no articles matched your criteria.','redesign'); ?>
+	</div>
 
 <?php endif; ?>
 
@@ -39,9 +42,9 @@
 
 </div>
 
-   		<div class="navigation">
-		<?php posts_nav_link( ' ', '&#9668', '&#9658' ); ?>
-		</div>
+    	<div class="navigation">
+        <?php posts_nav_link(); ?>
+    	</div>
 
 </div>
 

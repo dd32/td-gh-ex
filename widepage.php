@@ -1,14 +1,12 @@
 <?php
 /*
-Template Name: Front, 2 sidebars
+Template Name: Wide, no sidebars
 */
 ?>
 
 <?php get_header(); ?>
-
-<?php get_template_part( 'stripe'); ?>
  
-    <div id="content">
+    <div id="content2">
 
         <?php if(have_posts()) : ?><?php while(have_posts()) : the_post(); ?>
          
@@ -28,6 +26,7 @@ Template Name: Front, 2 sidebars
 
             </div>
  
+
         </div>
 
 <?php endwhile; ?>
@@ -35,5 +34,5 @@ Template Name: Front, 2 sidebars
 <?php endif; ?>
 </div>
 
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>
