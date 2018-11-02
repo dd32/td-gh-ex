@@ -3,7 +3,7 @@
  * Free VS Pro
  */
 ?>
-<div id="free_pro" class="content-tab-pane content-fre-pro">
+<div id="free_vs_pro" class="content-tab-pane panel-close">
 
     <div class="row pricing1">
 						<div class="col-md-12">
@@ -84,13 +84,13 @@
 									<ul class="feature">
 										<li style="font-size:16px; line-height:25px; padding:28px"> 
 										
-										<?php _e("Slider [Static Image], Services [3 Services], Portfolio [3 Portfolio], Testimonial, Latest News","spicepress"); ?>
+										<?php _e("Slider [Static Image], Services [3 Services], Portfolio [3 Portfolio], Testimonial, Latest News","content"); ?>
 										
 										
 										</li>
 										<li style="font-size:16px; line-height:25px; padding:28px"> 
-										<?php _e("Business Template and Full-Width Template","spicepress"); ?>
-										</li><li style="font-size:16px; line-height:25px; padding:43px"><?php _e("Wide Layout","spicepress"); ?> </li>
+										<?php _e("Business Template and Full-Width Template","content"); ?>
+										</li><li style="font-size:16px; line-height:25px; padding:43px"><?php _e("Wide Layout","content"); ?> </li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
@@ -102,7 +102,7 @@
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
 										<li><span class="dashicons-before dashicons-no-alt red"></span></li>
-										<li style="font-size:16px; line-height:80px; padding:15px;"><a href="https://wordpress.org/support/theme/spicepress" target="_blank" ><?php _e("On WordPress.org Support Forum","spicepress"); ?></a></li>
+										<li style="font-size:16px; line-height:80px; padding:15px;"><a href="https://wordpress.org/support/theme/spicepress" target="_blank" ><?php _e("On WordPress.org Support Forum","content"); ?></a></li>
 										
 									</ul><!-- /.features -->
 									
@@ -119,10 +119,10 @@
 									
 									<ul class="feature">
 										<li style="font-size:16px; line-height:25px; padding:19px">
-										<?php _e("Top Header, Slider [Unlimited], Services [Unlimited], Portfolio [Unlimited], Latest News, Clients, Testimonials, Custom Widgets","spicepress"); ?>
+										<?php _e("Top Header, Slider [Unlimited], Services [Unlimited], Portfolio [Unlimited], Latest News, Clients, Testimonials, Custom Widgets","content"); ?>
 										</li>
-										<li style="font-size:16px; line-height:25px; padding:18px"><?php _e("About, Services, Portfolio, Blog Left & Right Sidebars, Blog Full Width, Page Full Width, Contact Page and much more.","spicepress"); ?></li>
-										<li style="font-size:16px; line-height:25px; padding:43px"><?php _e("Wide layout & Boxed Layout","spicepress"); ?></li>
+										<li style="font-size:16px; line-height:25px; padding:18px"><?php _e("About, Services, Portfolio, Blog Left & Right Sidebars, Blog Full Width, Page Full Width, Contact Page and much more.","content"); ?></li>
+										<li style="font-size:16px; line-height:25px; padding:43px"><?php _e("Wide layout & Boxed Layout","content"); ?></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
@@ -134,7 +134,7 @@
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
 										<li><span class="dashicons-before dashicons-yes green"></span></li>
-										<li style="font-size:16px; line-height:80px; padding:15px;"><a href="<?php echo esc_url("https://support.spicethemes.com/");?>" target="_blank"><?php _e("Premium Support Forum","spicepress"); ?></a></li>
+										<li style="font-size:16px; line-height:80px; padding:15px;"><a href="<?php echo esc_url("https://support.spicethemes.com/");?>" target="_blank"><?php _e("Premium Support Forum","content"); ?></a></li>
 										
 									</ul><!-- /.features -->
 									

@@ -18,11 +18,11 @@ $customizer_url = admin_url() . 'customize.php' ;
 				<div class="content-tab-pane-half content-tab-pane-first-half">
 				<p><?php esc_html_e( 'This theme is ideal for creating corporate and business websites. There is no separate premium version of it, as Content is a child theme of the SpicePress WordPress theme. The premium version, SpicePress PRO has tons of features: a homepage with many sections where you can feature unlimited slides, portfolios, user reviews, latest news, services, calls to action and much more. Each section in the Homepage template is carefully designed to fit to all business requirements.','content');?></p>
 				<p>
-				<?php esc_html_e( 'You can use this theme for any type of activity. Content is compatible with popular plugins like WPML and Polylang. To help you create an effective and impactful web presence, Content has predefined versions of many pages: Contact, Services, Portfolios, About Us and Blog.', 'content' ); ?>
+				<?php esc_html_e( 'You can use this theme for any type of activity. Content is compatible with popular plugins like WPML and Polylang. To help you create an effective and impactful web presence, Content has predefined versions of many pages: Contact, Services, Portfolios, About Us and Blog.', 'content'); ?>
 				</p>
 				
 				<a style="color:#fff; text-decoration:none;" target="_blank" href="<?php echo esc_url( admin_url( 'customize.php' ) ); ?>">
-				<h1 style="margin-top: 73px; background: #0085ba;border-color: #0073aa #006799 #006799; color: #fff; padding: 5px 10px;"><?php esc_html_e( "Getting Started", 'content' ); ?></h1></a>
+				<h1 style="margin-top: 73px; background: #0085ba;border-color: #0073aa #006799 #006799; color: #fff; padding: 5px 10px; line-height: 40px;"><?php esc_html_e( "Getting Started", 'content' ); ?></h1></a>
 				<div>
 				<p style="margin-top: 16px;">
 				
@@ -35,7 +35,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 			</div>
 			<div class="col-md-6">
 				<div class="content-tab-pane-half content-tab-pane-first-half">
-				<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/functions/content-info/img/content.png'; ?>" alt="<?php esc_html_e( 'Content theme', 'content' ); ?>" />
+				<img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/admin/img/content.png'; ?>" alt="<?php esc_html_e( 'Content theme', 'content' ); ?>" />
 				</div>
 			</div>	
 		</div>
@@ -83,9 +83,6 @@ $customizer_url = admin_url() . 'customize.php' ;
 				</div>
 				
 			</div>
-			
-			
-			
 			
 		</div>
 		

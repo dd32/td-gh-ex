@@ -12,18 +12,14 @@
     margin-bottom: -1px;
     display: block;
 }
-.content-nav-tabs > li > a {
-    border: 1px solid transparent;
-    border-radius: 4px 4px 0 0;
-    display: block;
-    padding: 10px 15px;
-	text-decoration: none;
-}
 .content-nav-tabs > li.active > a, .content-nav-tabs > li.active > a:focus, .content-nav-tabs > li.active > a:hover {
-    color: #555;
-    background-color: #fff;
-    border: 1px solid #ddd;
+    background: #fff;
+    border-bottom-color: #fff;
+    color: #00a4e7;
     border-bottom-color: transparent;
+}
+.content-nav-tabs li:last-child .nav-tab {
+    border-right: 1px solid #ccc;
 }
 .content-nav-tabs > li.content-w-red-tab > a {
     color: red;
@@ -44,12 +40,10 @@
     display: block;
 }
 
-.content-tab-pane {
-	padding: 30px;
-}
-.content-tab-pane {
-    display: none;
-}
+/* .content-tab-pane { */
+	/* padding: 30px; */
+/* } */
+
 .content-tab-pane.active {
     display: block;
 }
@@ -95,9 +89,9 @@
 }
 
 .content-info-title {
-    font-size: 32px;
+    font-size: 32px !important;
 	border-bottom: 1px solid #eaeaea;
-	line-height:50px;
+	line-height:50px !important;
 }
 .content-clear {
     clear: both;
@@ -346,12 +340,13 @@
 	border-left: 1px solid #dddddd;
 	border-top: 1px solid #dddddd;
 	border-bottom: 1px solid #dddddd;
+	border-right: 1px solid #dddddd;
 }
 .pricing1 .border-right { border-right: 1px solid #dddddd; }
 .pricing1 .col-md-4:last-child .plan { border-right: 1px solid #dddddd; }
 .pricing1 .plan .feature li:last-child { border-bottom: 0 none; } 
 .pricing1 .plan header { background: #fff; text-align: center; }
-.pricing1 .plan h2 { background: #f8f8f8; font-size: 24px; line-height: 30px; font-weight: 400; color: #333; padding: 10px 20px 15px; border-bottom: 1px solid #dddddd; margin: 0; }
+.pricing1 .plan h2 { background: #f8f8f8; font-size: 24px; line-height: 30px; font-weight: 400; color: #333; padding: 15px 20px 15px; border-bottom: 1px solid #dddddd; margin: 0 !important; }
 .pricing1 .plan h2 small { display: block; color: #808080; font-size: 14px; padding-top: 7px; }
 .pricing1 .plan .btn { margin-bottom: 0; font-size: 16px; }
 .pricing1 .plan .btn i { margin-right: 7px; }
@@ -362,7 +357,7 @@
     padding: 0;
     margin: 0;
 }
-.pricing1 .plan .feature li { padding: 12px 20px; color: #333; font-size: 18px; border-bottom: 1px solid #dddddd;     height: 110px;
+.pricing1 .plan .feature li { padding: 30px 20px; color: #333; font-size: 18px; border-bottom: 1px solid #dddddd;     height: 110px;
     margin-bottom: 0; }
 .pricing1.col-3 .plan header { padding: 40px; }
 .pricing1.col-3 .plan .feature { padding: 20px 30px; }
@@ -465,3 +460,12 @@
 }
 a.info-block{text-decoration:none;color:#333;}
 a.info-block:hover, a.info-block:active, a.info-block:focus{color:#333;}
+.wp-person a:focus .gravatar, a:focus, a:focus .media-icon img{ box-shadow:none !important; }
+
+/*css 4 oct 18*/
+.m-top-40 { margin-top: 40px; }
+.m-top-40 p {font-size: 15px; }
+.theme-info-wrap h3 { margin: 1.25em 0 .6em; }
+.theme-info-wrap h3 > i { line-height: 1.2; margin-right: 15px }
+
+.about-wrap{ margin: 25px 25px 0 20px; max-width: 100%;}
