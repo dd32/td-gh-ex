@@ -7,7 +7,7 @@ get_header(); ?>
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-        <p class="foodrecipes-post-title"><?php _e('Search Results for','food-recipes'); echo " : " .  get_search_query(); ?></p>
+        <p class="foodrecipes-post-title"><?php esc_html_e('Search Results for','food-recipes'); echo " : " .  get_search_query(); ?></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="archive-breadcrumb  pull-right">

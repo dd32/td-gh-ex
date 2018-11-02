@@ -2,7 +2,15 @@
 /**
  * The Header template for our theme
  */
-$foodrecipes_options = get_option( 'foodrecipes_theme_options' ); ?>
+$foodrecipes_options = get_option( 'foodrecipes_theme_options' );
+$SocialIconDefault = array(
+  array('url'=>isset($foodrecipes_options['fburl'])?$foodrecipes_options['fburl']:'','icon'=>'fa-facebook'),
+  array('url'=>isset($foodrecipes_options['twitter'])?$foodrecipes_options['twitter']:'','icon'=>'fa-twitter'),
+  array('url'=>isset($foodrecipes_options['googleplus'])?$foodrecipes_options['googleplus']:'','icon'=>'fa-google-plus'),
+  array('url'=>isset($foodrecipes_options['pintrest'])?$foodrecipes_options['pintrest']:'','icon'=>'fa-pinterest'),
+  array('url'=>isset($foodrecipes_options['dribbble'])?$foodrecipes_options['dribbble']:'','icon'=>'fa-dribbble')
+  );
+ ?>
 <!DOCTYPE html>
 <!--[if IE 7]>
 <html class="ie ie7" <?php language_attributes(); ?>>
@@ -16,14 +24,9 @@ $foodrecipes_options = get_option( 'foodrecipes_theme_options' ); ?>
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width">
-<?php if(!empty($foodrecipes_options['favicon'])) { ?>
-<link rel="shortcut icon" href="<?php echo esc_url($foodrecipes_options['favicon']);?>">
-<?php } ?>
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
-	<![endif]-->
+
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
@@ -31,56 +34,43 @@ $foodrecipes_options = get_option( 'foodrecipes_theme_options' ); ?>
   <div class="foodrecipes-container-recipes container">
     <div class="col-md-12 foodrecipes-heading-title no-padding">
       <?php if(get_header_image()){ ?>
-      <img src="<?php header_image(); ?>" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" class="foodrecipes-custom-header" alt="" />
+      <img src="<?php header_image(); ?>" width="<?php echo esc_attr(get_custom_header()->width); ?>" height="<?php echo esc_attr(get_custom_header()->height); ?>" class="foodrecipes-custom-header" alt="" />
       <?php } ?>
-      <div class="col-md-3 foodrecipes-logo"> <a href="<?php echo home_url(); ?>">
-        <?php if(empty($foodrecipes_options['logo'])){ ?>
-        <h1 class="foodrecipes-site-title"><?php echo get_bloginfo('name'); ?></h1>
-        <?php }else{
-          echo  "<img src='".esc_url($foodrecipes_options['logo'])."' class='img-responsive'/>";
-        } ?>
-        </a> </div>
+      <div class="col-md-3 foodrecipes-logo"> <a href="<?php echo esc_url(home_url()); ?>">
+        <?php if(has_custom_logo() ): the_custom_logo(); endif; ?>
+        </a>
+        <?php if(display_header_text()) { ?>
+       <a href="<?php echo esc_url(home_url()); ?>"> <h1 class="foodrecipes-site-title"><?php 
+             echo esc_html(get_bloginfo('name')); ?></h1>
+            <?php echo esc_html(get_bloginfo( 'description'));?></a> <?php } ?>
+         </div>
       <div class="col-md-3 no-padding-right foodrecipes-social-icon-right ">
         <ul class="foodrecipes-social list-inline pull-right">
-          <?php if(!empty($foodrecipes_options['fburl'])) { ?>
-          <li><a href="<?php echo esc_url($foodrecipes_options['fburl']); ?>"><i class="fa fa-facebook"></i></a></li>
-          <?php } ?>
-          <?php if(!empty($foodrecipes_options['twitter'])) { ?>
-          <li><a href="<?php echo esc_url($foodrecipes_options['twitter']); ?>"><i class="fa fa-twitter"></i></a></li>
-          <?php } ?>
-          <?php if(!empty($foodrecipes_options['googleplus'])) { ?>
-          <li><a href="<?php echo esc_url($foodrecipes_options['googleplus']); ?>"><i class="fa fa-google-plus"></i></a></li>
-          <?php } ?>
-          <?php if(!empty($foodrecipes_options['dribbble'])) { ?>
-          <li><a href="<?php echo esc_url($foodrecipes_options['dribbble']); ?>"><i class="fa fa-dribbble"></i></a></li>
-          <?php } ?>
-          <?php if(!empty($foodrecipes_options['pintrest'])) { ?>
-          <li><a href="<?php echo esc_url($foodrecipes_options['pintrest']); ?>"><i class="fa fa-pinterest"></i></a></li>
-          <?php } ?>
+          <?php for($i=1; $i<=5; $i++) : 
+                if(get_theme_mod('SocialIconLink'.$i,$SocialIconDefault[$i-1]['url'])!='' && get_theme_mod('SocialIcon'.$i,$SocialIconDefault[$i-1]['icon'])!=''): ?>
+                <li><a href="<?php echo esc_url(get_theme_mod('SocialIconLink'.$i,$SocialIconDefault[$i-1]['url'])); ?>" class="icon" title="" target="_blank">
+                <i class="fa <?php echo esc_attr(get_theme_mod('SocialIcon'.$i,$SocialIconDefault[$i-1]['icon'])); ?>"></i>
+                </a></li>
+              <?php endif; endfor;?>        
         </ul>
       </div>
-      <div class="navbar-header">
-        <button type="button" class="navbar-toggle navbar-toggle-top" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"><?php _e('Toggle navigation','food-recipes'); ?></span> <span class="icon-bar foodrecipes-icon-color"></span> <span class="icon-bar foodrecipes-icon-color"></span> <span class="icon-bar foodrecipes-icon-color"></span> </button>
-      </div>
-      <?php 
-			$foodrecipes_defaults = array(
-					'theme_location'  => 'primary',
-					'container'       => 'div',
-					'container_class' => 'col-md-6 no-padding food-clear',
-					'container_id'    => '',
-					'menu_class'      => 'col-md-6 no-padding food-clear',
-					'menu_id'         => '',
-					'echo'            => true,
-					'fallback_cb'     => 'wp_page_menu',
-					'before'          => '',
-					'after'           => '',
-					'link_before'     => '',
-					'link_after'      => '',
-					'items_wrap'      => '<ul id="menu" class="menu-foodrecipes navbar-collapse collapse menu-foodrecipes-set">%3$s</ul>',
-					'depth'           => 0,
-					'walker'          => ''
-					);
-			wp_nav_menu($foodrecipes_defaults); ?>
+      
+
+      <div id="mainmenu" classold=="collapse">
+          <?php
+              $foodrecipes_defaults = array(
+                  'theme_location'  => 'primary',                              
+                  'echo' => true, 
+                  'container'       => 'ul', 
+                  'container_class' => 'col-md-6',
+                  'menu_class'      => 'navbar-nav',
+                  'depth'           => 0,
+              );                               
+              wp_nav_menu($foodrecipes_defaults);
+           ?>
+      </div><!-- /.nav-collapse -->
+
+
     </div>
     <div class="clearfix"></div>
   </div>

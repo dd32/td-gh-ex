@@ -4,9 +4,9 @@
 */
 get_header(); ?>
 <div class="page-title">
-  <div class="container">
+  <div class="foodrecipes-container-recipes container">
     <div class="row">
-      <div class="col-md-6  col-sm-6 "> <span class="foodrecipes-page-breadcrumbs">
+      <div class="col-md-12 col-sm-12 col-xs-12"> <span class="foodrecipes-page-breadcrumbs">
         <?php if (function_exists('foodrecipes_custom_breadcrumbs')) foodrecipes_custom_breadcrumbs(); ?>
         </span> </div>
     </div>
@@ -20,7 +20,7 @@ get_header(); ?>
         <div class="foodrecipes-inner-blog-bg">
           <article class="post ">
             <div class="foodrecipes-inner-blog-text" >
-              <h1><?php echo get_the_title(); ?></h1>
+              <h1 class="blog-title"><?php echo get_the_title(); ?></h1>
               <p class="blog-text">
                 <?php the_content(); ?>
               </p>
@@ -28,8 +28,9 @@ get_header(); ?>
             </div>
             <?php if ( get_comments_number() > 0 ) : ?>
             <div class="foodrecipes-inner-blog-text" >
-                  <h6>
-                   <?php comments_number( __('NO COMMENT','food-recipes'), __('1 COMMENT','food-recipes'),__('%s COMMENTS','food-recipes')  ); ?>
+                  <h6 class="comment-title">
+                   <?php /* translators: 1: comment count number */ 
+                   comments_number( esc_html__('NO COMMENT','food-recipes'), esc_html__('1 COMMENT','food-recipes'),esc_html__('%s COMMENTS','food-recipes')  ); ?>
                   </h6>
                 </div>
             <?php endif; ?>    

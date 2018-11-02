@@ -5,10 +5,11 @@
 <footer>
   <div class="col-md-12 footer">
     <h2>
-      <?php if(!empty($foodrecipes_options['footertext'])) {
-               	 echo wp_filter_nohtml_kses($foodrecipes_options['footertext']).' '; 
-			}
-		printf( __( 'Powered by %1$s', 'food-recipes' ), '<a href="https://fasterthemes.com/wordpress-themes/foodrecipes" target="_blank">Food Recipes WordPress Theme</a>'); ?>
+      <?php  if(get_theme_mod('footerCopyright',isset($foodrecipes_options['footertext'])?$foodrecipes_options['footertext']:'')!='') 
+          { 
+            echo wp_kses_post(get_theme_mod('footerCopyright',isset($foodrecipes_options['footertext'])?$foodrecipes_options['footertext']:'')); 
+          }
+          printf(/* translators: %1$s is theme url*/ esc_html__( 'Powered by %1$s', 'food-recipes' ), '<a href="'.esc_url("https://fasterthemes.com/wordpress-themes/foodrecipes").'" target="_blank">'.esc_html__('Food Recipes WordPress Theme','food-recipes').'</a>');    ?>
     </h2>
   </div>
 </footer>

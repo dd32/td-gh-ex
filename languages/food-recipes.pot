@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Food Recipes V1.4.7\n"
-"POT-Creation-Date: 2018-04-24 16:09+0530\n"
+"POT-Creation-Date: 2018-11-02 15:42+0530\n"
 "PO-Revision-Date: 2014-12-09 18:52+0530\n"
 "Last-Translator: FasterThemes <support@fasterthemes.com>\n"
 "Language-Team: FasterThemes <support@fasterthemes.com>\n"
@@ -42,27 +42,89 @@ msgid "Archives"
 msgstr ""
 
 #: author.php:12
-msgid "Author"
+msgid "Author "
 msgstr ""
 
-#: author.php:12
-msgid "All post by"
-msgstr ""
-
-#: category.php:15
-msgid "Category"
-msgstr ""
-
-#: comments.php:19
+#: comments.php:20
 #, php-format
-msgid "One thought on : %2$s"
-msgid_plural "%1$s thoughts on : %2$s"
+msgid "One thought on : %1$s"
+msgid_plural "%1$s thoughts"
 msgstr[0] ""
 msgstr[1] ""
 
-#: footer.php:11
+#: footer.php:12
 #, php-format
 msgid "Powered by %1$s"
+msgstr ""
+
+#: footer.php:12
+msgid "Food Recipes WordPress Theme"
+msgstr ""
+
+#: function/customizer.php:13
+msgid "General"
+msgstr ""
+
+#: function/customizer.php:14
+msgid "styling options"
+msgstr ""
+
+#: function/customizer.php:22
+msgid "Basic Settings"
+msgstr ""
+
+#: function/customizer.php:30
+msgid "Social Settings"
+msgstr ""
+
+#: function/customizer.php:32
+msgid ""
+"In first input box, you need to add FONT AWESOME shortcode which you can "
+"find "
+msgstr ""
+
+#: function/customizer.php:32
+msgid "here"
+msgstr ""
+
+#: function/customizer.php:32
+msgid ""
+" and in second input box, you need to add your social media profile URL."
+msgstr ""
+
+#: function/customizer.php:32
+msgid ""
+" Enter the URL of your social accounts. Leave it empty to hide the icon."
+msgstr ""
+
+#: function/customizer.php:49
+msgid "Social Account "
+msgstr ""
+
+#: function/customizer.php:67
+msgid "Enter Icon"
+msgstr ""
+
+#: function/customizer.php:77
+msgid "Social Link "
+msgstr ""
+
+#: function/customizer.php:96
+msgid "Enter URL"
+msgstr ""
+
+#: function/customizer.php:106
+msgid "Footer Settings"
+msgstr ""
+
+#: function/customizer.php:118
+msgid "Copyright Text"
+msgstr ""
+
+#: function/customizer.php:119
+msgid ""
+"Some text regarding copyright of your site, you would like to display in the "
+"footer."
 msgstr ""
 
 #: function/foodrecipes-post-widget.php:10
@@ -77,93 +139,82 @@ msgstr ""
 msgid "Top primary menu"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:112
 msgctxt "Lato font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:136
 #, php-format
 msgid "Page %s"
 msgstr ""
 
-#: functions.php:123
+#: functions.php:145
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:125
+#: functions.php:147
 msgid "Main sidebar that appears on the left."
 msgstr ""
 
-#: functions.php:154
+#: functions.php:185 functions.php:187
 msgid "Home"
 msgstr ""
 
-#: functions.php:173
+#: functions.php:192
 msgid "Archive by category"
 msgstr ""
 
-#: functions.php:176
+#: functions.php:195
 msgid "Search results for"
 msgstr ""
 
-#: functions.php:234
+#: functions.php:253
 msgid "Posts tagged"
 msgstr ""
 
-#: functions.php:239
+#: functions.php:258
 msgid "Articles posted by"
 msgstr ""
 
-#: functions.php:242
+#: functions.php:261
 msgid "Error 404"
 msgstr ""
 
-#: functions.php:247
+#: functions.php:266
 msgid "Page"
 msgstr ""
 
-#: functions.php:276
-#, php-format
-msgid "View all posts by %s"
-msgstr ""
-
-#: functions.php:282 functions.php:285 functions.php:296 functions.php:298
-#, php-format
-msgid "Posted in : %1$s  on %3$s by : %4$s"
-msgstr ""
-
-#: functions.php:283 functions.php:286 functions.php:289
+#: functions.php:308
 msgid "Comments"
 msgstr ""
 
-#: functions.php:288 functions.php:300
-#, php-format
-msgid "Posted on : %3$s by : %4$s"
-msgstr ""
-
-#: functions.php:334
+#: functions.php:353
 msgid "Pingback:"
 msgstr ""
 
-#: functions.php:336
+#: functions.php:355
 msgid "Edit"
 msgstr ""
 
-#: functions.php:354
+#: functions.php:373
 msgid "Post author "
 msgstr ""
 
-#: functions.php:364
+#: functions.php:383
 msgid "Reply"
 msgstr ""
 
-#: functions.php:384
+#: functions.php:403
 msgid "Read more "
 msgstr ""
 
-#: header.php:63
-msgid "Toggle navigation"
+#: functions.php:409
+msgid "Pro Feature"
+msgstr ""
+
+#: functions.php:409
+msgid "Food Recipes Pro"
 msgstr ""
 
 #: index.php:48
@@ -174,18 +225,18 @@ msgstr ""
 msgid "Comments:"
 msgstr ""
 
-#: page-templates/full-width.php:39 page-templates/left-sidebar.php:39
-#: page.php:32 single.php:46
+#: page-templates/full-width.php:41 page-templates/left-sidebar.php:40
+#: page.php:33 single.php:47
 msgid "NO COMMENT"
 msgstr ""
 
-#: page-templates/full-width.php:39 page-templates/left-sidebar.php:39
-#: page.php:32 single.php:46
+#: page-templates/full-width.php:41 page-templates/left-sidebar.php:40
+#: page.php:33 single.php:47
 msgid "1 COMMENT"
 msgstr ""
 
-#: page-templates/full-width.php:39 page-templates/left-sidebar.php:39
-#: page.php:32 single.php:46
+#: page-templates/full-width.php:41 page-templates/left-sidebar.php:40
+#: page.php:33 single.php:47
 #, php-format
 msgid "%s COMMENTS"
 msgstr ""
@@ -200,108 +251,4 @@ msgstr ""
 
 #: tag.php:10
 msgid "Tag"
-msgstr ""
-
-#: theme-options/fasterthemes.php:31
-msgid "FasterThemes Options"
-msgstr ""
-
-#: theme-options/fasterthemes.php:32 theme-options/fasterthemes.php:60
-msgid "Theme Options"
-msgstr ""
-
-#: theme-options/fasterthemes.php:62 theme-options/fasterthemes.php:185
-msgid "Save Options"
-msgstr ""
-
-#: theme-options/fasterthemes.php:70
-msgid "Basic Settings"
-msgstr ""
-
-#: theme-options/fasterthemes.php:71
-msgid "Social Settings"
-msgstr ""
-
-#: theme-options/fasterthemes.php:72
-msgid "PRO Theme Features"
-msgstr ""
-
-#: theme-options/fasterthemes.php:85
-msgid "Site Logo"
-msgstr ""
-
-#: theme-options/fasterthemes.php:87
-msgid ""
-"Size of logo should be exactly 117x43px for best results. Leave blank to use "
-"text heading."
-msgstr ""
-
-#: theme-options/fasterthemes.php:89 theme-options/fasterthemes.php:103
-msgid "No file chosen"
-msgstr ""
-
-#: theme-options/fasterthemes.php:90 theme-options/fasterthemes.php:104
-msgid "Upload"
-msgstr ""
-
-#: theme-options/fasterthemes.php:98
-msgid "Favicon"
-msgstr ""
-
-#: theme-options/fasterthemes.php:100
-msgid "Size of favicon should be exactly 32x32px for best results."
-msgstr ""
-
-#: theme-options/fasterthemes.php:113
-msgid "Copyright Text"
-msgstr ""
-
-#: theme-options/fasterthemes.php:116
-msgid ""
-"Some text regarding copyright of your site, you would like to display in the "
-"footer."
-msgstr ""
-
-#: theme-options/fasterthemes.php:125
-msgid "Facebook"
-msgstr ""
-
-#: theme-options/fasterthemes.php:128
-msgid "Facebook profile or page URL i.e."
-msgstr ""
-
-#: theme-options/fasterthemes.php:134
-msgid "Twitter"
-msgstr ""
-
-#: theme-options/fasterthemes.php:137
-msgid "Twitter profile or page URL i.e."
-msgstr ""
-
-#: theme-options/fasterthemes.php:143
-msgid "Google Plus"
-msgstr ""
-
-#: theme-options/fasterthemes.php:146 theme-options/fasterthemes.php:164
-msgid "Google Plus profile or page URL i.e."
-msgstr ""
-
-#: theme-options/fasterthemes.php:152
-msgid "Dribbble"
-msgstr ""
-
-#: theme-options/fasterthemes.php:155
-msgid "dribbble profile or page URL i.e."
-msgstr ""
-
-#: theme-options/fasterthemes.php:161
-msgid "Pinterest"
-msgstr ""
-
-#: theme-options/fasterthemes.php:184
-msgid "fasterthemes.com"
-msgstr ""
-
-#: theme-options/fasterthemes.php:190
-msgid "Options saved successfully."
 msgstr ""

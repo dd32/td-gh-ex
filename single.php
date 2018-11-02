@@ -4,9 +4,9 @@
 */
 get_header(); ?>
 <div class="page-title">
-  <div class="container">
+  <div class="foodrecipes-container-recipes container">
     <div class="row">
-      <div class="col-md-6  col-sm-6 "> <span class="foodrecipes-page-breadcrumbs">
+      <div class="col-md-12 col-sm-12 col-xs-12"> <span class="foodrecipes-page-breadcrumbs">
         <?php if (function_exists('foodrecipes_custom_breadcrumbs')) foodrecipes_custom_breadcrumbs(); ?>
         </span> </div>
     </div>
@@ -22,9 +22,9 @@ get_header(); ?>
             <article class="post">
               <div class="foodrecipes-inner-blog-text">
                 <?php $foodrecipes_feature_img_url = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
-                <div class="foodrecipes-inner-blog-text" >
-                  <h6> <?php echo get_the_date("j F, Y"); ?></h6>
-                  <h1><?php echo get_the_title(); ?></h1>
+                <!-- <div class="foodrecipes-inner-blog-text" > -->
+                  <h6 class="blog-post-date"> <?php echo get_the_date("j F, Y"); ?></h6>
+                  <h1 class="blog-title"><?php echo get_the_title(); ?></h1>
                   <?php if($foodrecipes_feature_img_url != "") { ?>
                   <div><img src="<?php echo esc_url($foodrecipes_feature_img_url); ?>"></div>
                   <?php } ?>
@@ -39,11 +39,12 @@ get_header(); ?>
                           'link_after'  => '</span>',
                         ) ); ?>
                   </p>
-                </div>
+               <!--  </div> -->
                 <?php if ( get_comments_number() > 0 ) : ?>
                 <div class="foodrecipes-inner-blog-text" >
-                  <h6>
-                    <?php comments_number( __('NO COMMENT','food-recipes'), __('1 COMMENT','food-recipes'),__('%s COMMENTS','food-recipes')  ); ?>
+                  <h6 class="comment-title">
+                    <?php /* translators: 1: comment count number */ 
+                    comments_number( esc_html__('NO COMMENT','food-recipes'), esc_html__('1 COMMENT','food-recipes'),esc_html__('%s COMMENTS','food-recipes')  ); ?>
                   </h6>
                 </div>
                 <?php endif; ?>

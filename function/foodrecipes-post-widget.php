@@ -28,11 +28,11 @@ class foodrecipes_randompostwidget extends WP_Widget
 	{
 		extract($foodrecipes_args, EXTR_SKIP);
 
-		echo $before_widget;
+		echo esc_html($before_widget);
 		$foodrecipes_title = empty($foodrecipes_instance['title']) ? ' ' : apply_filters('widget_title', $foodrecipes_instance['title']);
 
 		if (!empty($foodrecipes_title))
-		echo $before_title . $foodrecipes_title . $after_title;
+		echo esc_html($before_title . $foodrecipes_title . $after_title);
 		// WIDGET CODE GOES HERE	?>
 		<div class="col-md-12  foodrecipes-side-menu-post">
 		  <ul>
@@ -53,9 +53,9 @@ class foodrecipes_randompostwidget extends WP_Widget
 		      <?php 
 					$foodrecipes_feat_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) );
 					if($foodrecipes_feat_image!="")
-						echo'<a href="'.get_the_permalink().'" title="Post Page"> <img src="'.esc_url($foodrecipes_feat_image).'" /></a>';
+						echo'<a href="'.esc_url(get_the_permalink()).'" title="Post Page"> <img src="'.esc_url($foodrecipes_feat_image).'" /></a>';
 					else			
-						echo'<a href="'.get_the_permalink().'" title="Post Page"> <img src="'.get_template_directory_uri().'/images/no-image.jpg" /> </a>';
+						echo'<a href="'.esc_url(get_the_permalink()).'" title="Post Page"> <img src="'.esc_url(get_template_directory_uri()).'/images/no-image.jpg" /> </a>';
 					?>
 		      <h2><a href="<?php the_permalink();?>" title="Post Page">
 		        <?php the_title(); ?>
@@ -67,7 +67,7 @@ class foodrecipes_randompostwidget extends WP_Widget
 		  </ul>
 		</div>
 	<?php
-	echo $after_widget;
+	echo esc_html($after_widget);
   }
 }
 function foodrecipes_register_custom_randompost_widget() {

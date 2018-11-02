@@ -7,15 +7,15 @@ get_header(); ?>
 <div class="page-title">
   <div class="container">
     <div class="row">
-      <div class="col-md-6  col-sm-6 ">
+      <!-- <div class="col-md-12 col-sm-12 col-xs-12">
 		  
         <?php if ( have_posts() ) : 
-	 		?><p class="foodrecipes-post-title"><?php _e('Archives','food-recipes'); echo " : " .  get_the_date('M-Y'); ?></p><?php
+	 		?><p class="foodrecipes-post-title"><?php esc_html_e('Archives','food-recipes'); echo " : " .  get_the_date('M-Y'); ?></p><?php
 		endif; ?>
      
-      </div>
-      <div class="col-md-6  col-sm-6 ">
-        <ol class="archive-breadcrumb  pull-right">
+      </div> -->
+      <div class="col-md-12 col-sm-12 col-xs-12 ">
+        <ol class="archive-breadcrumb">
           <?php if (function_exists('foodrecipes_custom_breadcrumbs')) foodrecipes_custom_breadcrumbs(); ?>
         </ol>
       </div>
@@ -31,8 +31,8 @@ get_header(); ?>
           <?php while (have_posts()) : the_post(); ?>
           <article class="post ">
             <div class="foodrecipes-inner-blog-text" >
-              <h6><?php echo get_the_date("j F, Y"); ?></h6>
-              <h1><a href="<?php the_permalink(); ?>">
+              <h6 class="blog-post-date"><?php echo get_the_date("j F, Y"); ?></h6>
+              <h1 class="blog-title"><a href="<?php the_permalink(); ?>">
                 <?php the_title(); ?>
                 </a></h1>
               <figure class="feature-thumbnail-large">

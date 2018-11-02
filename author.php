@@ -9,7 +9,7 @@ get_header(); ?>
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
         
-     <p class="foodrecipes-post-title"><?php _e('Author','food-recipes'); echo __('All post by','food-recipes')." : " .  get_the_author(); ?></p>
+     <p class="foodrecipes-post-title"><?php esc_html_e('Author ','food-recipes'); echo esc_html('All post by','food-recipes')." : " .  get_the_author(); ?></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="archive-breadcrumb  pull-right">

@@ -7,7 +7,7 @@
   <div class="container">
     <div class="row">
       <div class="col-md-6  col-sm-6 ">
-      <p class="foodrecipes-post-title"><?php _e('Tag','food-recipes'); echo " : " .  single_tag_title( '', false ); ?></p>
+      <p class="foodrecipes-post-title"><?php esc_html_e('Tag','food-recipes'); echo " : " .  single_tag_title( '', false ); ?></p>
       </div>
       <div class="col-md-6  col-sm-6 ">
         <ol class="archive-breadcrumb  pull-right">

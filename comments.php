@@ -16,8 +16,9 @@ if ( post_password_required() )
   <?php if ( have_comments() ) : 	?>
   <h2 class="comments-title">
     <?php
-			printf( _n( 'One thought on : %2$s', '%1$s thoughts on : %2$s', get_comments_number(), 'food-recipes' ),
-				number_format_i18n( get_comments_number() ), get_the_title() ); ?>
+    /* translators: 1: comment count number, 2: post title */
+    printf(esc_html(_n('One thought on : %1$s', '%1$s thoughts', get_comments_number(), 'food-recipes')), esc_attr(number_format_i18n(get_comments_number())), get_the_title() ); 
+        ?>
   </h2>
   <ul class="">
     <?php	wp_list_comments( array( 'callback' => 'foodrecipes_comment', 'short_ping' => true, 'style' => 'ul' ) ); ?>
