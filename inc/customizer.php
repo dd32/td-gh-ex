@@ -516,40 +516,40 @@ if( ! function_exists('ansia_show_social_network')){
 			<?php if ($position == 'float') : ?>
 			<?php endif; ?>
 			<?php if ($facebookURL) : ?>
-				<a class="ansia-social" href="<?php echo esc_url($facebookURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Facebook', 'ansia' ); ?>"><i class="fa fa-facebook spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'Facebook', 'ansia' ); ?></span></i></a>
+				<a class="ansia-social" href="<?php echo esc_url($facebookURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Facebook', 'ansia' ); ?>"><i class="fa fa-facebook spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Facebook', 'ansia' ); ?></span></i></a>
 			<?php endif; ?>
 			<?php if ($twitterURL) : ?>
-				<a class="ansia-social" href="<?php echo esc_url($twitterURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Twitter', 'ansia' ); ?>"><i class="fa fa-twitter spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'Twitter', 'ansia' ); ?></span></i></a>
+				<a class="ansia-social" href="<?php echo esc_url($twitterURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Twitter', 'ansia' ); ?>"><i class="fa fa-twitter spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Twitter', 'ansia' ); ?></span></i></a>
 			<?php endif; ?>
 			<?php if ($googleplusURL) : ?>
-				<a class="ansia-social" href="<?php echo esc_url($googleplusURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Google Plus', 'ansia' ); ?>"><i class="fa fa-google-plus spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'Google Plus', 'ansia' ); ?></span></i></a>
+				<a class="ansia-social" href="<?php echo esc_url($googleplusURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Google Plus', 'ansia' ); ?>"><i class="fa fa-google-plus spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Google Plus', 'ansia' ); ?></span></i></a>
 			<?php endif; ?>
 			<?php if ($linkedinURL) : ?>
-				<a class="ansia-social" href="<?php echo esc_url($linkedinURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Linkedin', 'ansia' ); ?>"><i class="fa fa-linkedin spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'Linkedin', 'ansia' ); ?></span></i></a>
+				<a class="ansia-social" href="<?php echo esc_url($linkedinURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Linkedin', 'ansia' ); ?>"><i class="fa fa-linkedin spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Linkedin', 'ansia' ); ?></span></i></a>
 			<?php endif; ?>
 			<?php if ($instagramURL) : ?>
-				<a class="ansia-social" href="<?php echo esc_url($instagramURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Instagram', 'ansia' ); ?>"><i class="fa fa-instagram spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'Instagram', 'ansia' ); ?></span></i></a>
+				<a class="ansia-social" href="<?php echo esc_url($instagramURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Instagram', 'ansia' ); ?>"><i class="fa fa-instagram spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Instagram', 'ansia' ); ?></span></i></a>
 			<?php endif; ?>
 			<?php if ($youtubeURL) : ?>
-				<a class="ansia-social" href="<?php echo esc_url($youtubeURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'YouTube', 'ansia' ); ?>"><i class="fa fa-youtube spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'YouTube', 'ansia' ); ?></span></i></a>
+				<a class="ansia-social" href="<?php echo esc_url($youtubeURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'YouTube', 'ansia' ); ?>"><i class="fa fa-youtube spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'YouTube', 'ansia' ); ?></span></i></a>
 			<?php endif; ?>
 			<?php if ($pinterestURL) : ?>
-				<a class="ansia-social" href="<?php echo esc_url($pinterestURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Pinterest', 'ansia' ); ?>"><i class="fa fa-pinterest spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'Pinterest', 'ansia' ); ?></span></i></a>
+				<a class="ansia-social" href="<?php echo esc_url($pinterestURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Pinterest', 'ansia' ); ?>"><i class="fa fa-pinterest spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Pinterest', 'ansia' ); ?></span></i></a>
 			<?php endif; ?>
 			<?php if ($tumblrURL) : ?>
-				<a class="ansia-social" href="<?php echo esc_url($tumblrURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Tumblr', 'ansia' ); ?>"><i class="fa fa-tumblr spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'Tumblr', 'ansia' ); ?></span></i></a>
+				<a class="ansia-social" href="<?php echo esc_url($tumblrURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Tumblr', 'ansia' ); ?>"><i class="fa fa-tumblr spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Tumblr', 'ansia' ); ?></span></i></a>
 			<?php endif; ?>
 			<?php if ($flickrURL) : ?>
-				<a class="ansia-social" href="<?php echo esc_url($flickrURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Flickr', 'ansia' ); ?>"><i class="fa fa-flickr spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'Flickr', 'ansia' ); ?></span></i></a>
+				<a class="ansia-social" href="<?php echo esc_url($flickrURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Flickr', 'ansia' ); ?>"><i class="fa fa-flickr spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Flickr', 'ansia' ); ?></span></i></a>
 			<?php endif; ?>
 			<?php if ($vkURL) : ?>
-				<a class="ansia-social" href="<?php echo esc_url($vkURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'VK', 'ansia' ); ?>"><i class="fa fa-vk spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'VK', 'ansia' ); ?></span></i></a>
+				<a class="ansia-social" href="<?php echo esc_url($vkURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'VK', 'ansia' ); ?>"><i class="fa fa-vk spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'VK', 'ansia' ); ?></span></i></a>
 			<?php endif; ?>
 			<?php if ($xingURL) : ?>
-				<a class="ansia-social" href="<?php echo esc_url($xingURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Xing', 'ansia' ); ?>"><i class="fa fa-xing spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'Xing', 'ansia' ); ?></span></i></a>
+				<a class="ansia-social" href="<?php echo esc_url($xingURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Xing', 'ansia' ); ?>"><i class="fa fa-xing spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Xing', 'ansia' ); ?></span></i></a>
 			<?php endif; ?>
 			<?php if ($redditURL) : ?>
-				<a class="ansia-social" href="<?php echo esc_url($redditURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Reddit', 'ansia' ); ?>"><i class="fa fa-reddit-alien spaceLeftRight"><span class="screen-reader-text"><?php esc_html_e( 'Reddit', 'ansia' ); ?></span></i></a>
+				<a class="ansia-social" href="<?php echo esc_url($redditURL); ?>" target="<?php echo esc_attr($openLinks); ?>" title="<?php esc_attr_e( 'Reddit', 'ansia' ); ?>"><i class="fa fa-reddit-alien spaceLeftRight" aria-hidden="true"><span class="screen-reader-text"><?php esc_html_e( 'Reddit', 'ansia' ); ?></span></i></a>
 			<?php endif; ?>
 		</div>
 		<?php
