@@ -8,16 +8,13 @@
 
 <p><h2><?php _e('404 Error','redesign'); ?></h2></p>
 
-<?php _e('404 Error, please check your URL address','redesign'); ?>
+<?php _e('Use the menu to get back on track!','redesign'); ?>
 
-
-	<?php get_search_form(); ?>
 
 	 </div>
 
    </div>
 
-<!--<?php get_sidebar(); ?>-->
 <?php get_footer(); ?>
 
 

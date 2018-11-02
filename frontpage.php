@@ -1,6 +1,6 @@
 <?php
 /*
-Template Name: Front, 2 sidebars
+Template Name: Front page
 */
 ?>
 

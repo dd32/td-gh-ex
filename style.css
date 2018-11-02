@@ -7,10 +7,10 @@ Description: Redesign is a simple, clean and highly visible theme. It has transp
 
 - Transparent graphics.
 - Choose from several transparent color post formats.
-- Two navigation menus.
+- 3 navigation menus.
 - Custom logo.
 - Custom background, and custom background colors.
-- Widget areas in index header, sidebar and footer.
+- Widget areas in index header, cards, sidebars and footer.
 - Responsive. Easy to read from desktops, tablets and smartphones.
 Redesign WordPress theme, Copyright (C) 2018 Robert Toth
 Redesign WordPress theme is licensed under the GPL.
@@ -20,7 +20,7 @@ Resource Fonts: Raleway, by The League of Movable Type, under SIL Open Font Lice
 
 Author: Robert Toth
 Author URI: https://toth-illustration.com
-Version: 1.3.5
+Version: 1.3.6
 Copyright: Robert Toth, http://toth-illustration.com
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -115,10 +115,7 @@ li{
 		width: 100%;
 	}
 
-	#content{
-		width: 100%;
-	}
-
+	#content,
 	#banner2 .widget,
 	#footer .widget,
 	#sidebarinner,
@@ -205,7 +202,6 @@ li{
 /*SIDEBAR & BANNER ELEMENTS*/
 
 .widget{
-	font-family: Lusitana, Helvetica, sans-serif;
 	overflow:hidden;
 }
 
@@ -236,16 +232,14 @@ li{
 	text-align:center;
 }
 
-#sidebarinner{
+#sidebarinner,
+#sidebar,
+#sidebar2{
 	display:block;
 	float:left;
 }
 
-#sidebar,
-#sidebar2{
-	float:left;
-}
-
+#sidebarinner .widget,
 #sidebar .widget,
 #sidebar2 .widget{
 	margin-bottom: 20px;
@@ -401,7 +395,7 @@ body{
 	font-family: Raleway, Helvetica, sans-serif;
 	font-size: 16px;
     line-height:180%; 
-	color: #444;
+	color: #777;
 }
 
 #header{
@@ -425,13 +419,13 @@ body{
 	float:left;
 }
 
+#content2 .post{
+	padding:10px 20px;
+}
+
 .error404 #content{
 	padding:20px;
 	min-height:500px;
-}
-
-.archive .entry{
-	padding:10px 10px 0px 20px;
 }
 
 #logo img{
@@ -440,25 +434,23 @@ body{
 }
 
 #header-text{
-	font-size:110%;
 	text-transform: uppercase;
 	display:block;
-	padding:20px 0;
+	padding:10px 0;
 	text-align:center;
 }
 
 .site-title{
-
 	display:inline;
 	line-height:120%;
 	padding-right:5px;
-	font-weight:bold;
+	font-weight: 300;
 }
 
 .site-description{
 	display:inline;
 	font-weight: 300;
-	color:#777;
+	color:#999;
 }
  
 
@@ -471,6 +463,7 @@ a:visited{
 }
  
 a:hover{
+	color:#777;
 	text-decoration: none; 
 
 }
@@ -513,6 +506,7 @@ h6{
 
 .nav{
 	text-transform: uppercase;
+	color: #777;
 }
 
 #topmenu{
@@ -574,7 +568,7 @@ h6{
  
 .nav ul ul a{
 	height:auto;
-	padding:5px 10px;
+	padding:10px 20px;
 	width:240px;
 }
  
@@ -591,13 +585,11 @@ h6{
 
 .post{
 	overflow: hidden;
-	padding:2%;
+	/*padding:2%;*/
 }
 
 .entry{
-	font-family: Lusitana, Helvetica, sans-serif;
-	color:#777;
-	font-size:110%;
+	padding-top:1em;
 }
 
 .entry ul li{
@@ -633,14 +625,21 @@ h6{
 .postmetadata{
 	display:inline;
 	font-weight:normal;
+	color: #444;
 	font-weight: 300;
 }
 
 .postmetadata2{
 	display:inline;
-	float:right;
+	float:left;
+	color: #444;
 	font-weight:normal;
 	font-weight: 300;
+}
+
+.postmetadata a,
+.postmetadata2 a{
+	margin-right:0.5em;
 }
 
 .sticky{
@@ -653,6 +652,7 @@ h6{
 
 blockquote{
 	display:table;
+	color: #444;
 	margin:10px 0px;
 	padding:10px 10px;
     font-style:italic;
@@ -697,30 +697,37 @@ pre{
 
 .format-aside{
 	background-image:url('img/yell-bg20.png');
+	padding:10px 20px;
 }
 
 .format-chat{
 	background-image:url('img/rose-bg20.png');
+	padding:10px 20px;
 }
 
 .format-audio{
 	background-image:url('img/copper-bg20.png');
+	padding:10px 20px;
 }
 
 .format-video{
 	background-image:url('img/btbg10.png');
+	padding:10px 20px;
 }
 
 .format-link{
 	background-image:url('img/blue-bg20.png');
+	padding:10px 20px;
 }
 
 .format-image {
 	background-image:url('img/btbg10.png');
+	padding:10px 20px;
 }
 
 .format-quote{
 	background-image:url('img/orange-bg20.png');
+	padding:10px 20px;
 }
 
 .format-quote blockquote{
@@ -731,10 +738,12 @@ pre{
 
 .format-gallery{
 	background-image:url('img/btbg10.png');
+	padding:10px 20px;
 }
 
 .format-status{
 	background-image:url('img/red-bg20.png');
+	padding:10px 20px;
 }
 
 .pagenumber{
@@ -991,7 +1000,7 @@ ol.commentlist li.comment ol li{
 
 #footer{
 	width:100%;
-    	clear: both;
+    clear: both;
 	display:block;
 	overflow:hidden;
 	background-image:url('img/btbg10.png');

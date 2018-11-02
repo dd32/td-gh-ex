@@ -23,17 +23,16 @@
 		<?php the_custom_logo(); ?>
 	</div>
 
-<?php if(get_header_textcolor()!='blank') { ?>
-<div id="header-text" style="color:#<?php echo get_header_textcolor();?>!important;">
-<a href="<?php echo home_url( '/' );?>" style="color:#<?php echo get_header_textcolor();?>!important;">
-<div class="site-title"><?php bloginfo('name');?></div></a>
-<div class="site-description"><?php bloginfo('description'); ?></div>
-</div>
-<?php } ?>
-
-
+<div id="header-text">
+	
+	<div class="site-title">
+		     <a href="<?php echo esc_url(home_url( '/' )); ?>"><?php bloginfo('name'); ?></a>  
+	</div>
+                  <div class="site-description"><?php echo esc_html(get_bloginfo( 'description', 'display' )); ?></div>   
 
 </div>
+		
+		
 
 <div id="wrapper">
 
