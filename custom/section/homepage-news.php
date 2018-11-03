@@ -27,6 +27,7 @@
   $best_construction_categories = get_theme_mod( $key.'_categories',''); 
   
 
+
 ?>
 <section id="ct_<?php echo $key;?>" class="ct_section ct_<?php echo $key;?> ct_section_<?php echo $key;?> ">
 	<div  id="<?php echo $key;?>" class="section_content "   <?php echo $parallax_str;?> >
@@ -51,23 +52,12 @@
                     <div class="carousel-inner" role="listbox">
                     <?php  
 
-						$options_categories = array();
-						$options_categories_obj = get_categories();
-						foreach ($options_categories_obj as $category) {
-							$options_categories[$category->cat_name] = $category->cat_ID;
-						}
-	
 						$options_cat_id = array();
-	
-	
-						if($options_categories){
-							foreach ( $options_categories as $cat_name => $cat ) {
-								if(!empty($blog_categories)){	
-								if (!in_array($cat_name, $best_construction_categories)){$options_cat_id[]= $cat;}	
-								}
+						if(!empty($best_construction_categories)){
+							foreach ($best_construction_categories as   $category) {
+								$options_cat_id[] = get_cat_ID($category) ;
 							}
-						}		
-					
+						}
 						
 						if(empty($options_cat_id)){
 							
@@ -85,6 +75,12 @@
 							  'category__in' => $options_cat_id,
 							 );
 						}
+
+
+						
+						
+						
+						
 						$the_query = new WP_Query( $query_posts );
 						 $k=0;
 						if ($the_query->have_posts()) :  while ($the_query->have_posts()) : $the_query->the_post(); 

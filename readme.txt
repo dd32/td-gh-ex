@@ -69,6 +69,9 @@ Theta provides support at https://www.coothemes.com/forum/theta-all-theme/best-c
 
 
 === Changelog ===
+=version 1.0.8 20181103=
+*fix news problem
+
 =version 1.0.7 20181018=
 *adjust slider button & title height
 
