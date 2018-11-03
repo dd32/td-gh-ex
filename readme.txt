@@ -114,6 +114,10 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.29 (2018-11-03)
+-------------------------
+- Fixed the archive template date formatting
+
 Version 1.28 (2018-10-18)
 -------------------------
 - Added theme support for Gutenberg alignwide and alignfull
