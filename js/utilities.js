@@ -7,6 +7,14 @@ jQuery( document ).ready(function() {
 		jQuery('#navmain > div > ul li ul li:has("ul")').addClass('level-two-sub-menu');										
 	}
 
+  if ( ! fgymm_IsLargeResolution() ) {
+
+    jQuery('#header-main-fixed .cart-contents-icon').appendTo( jQuery('#header-main-fixed') );
+    jQuery('#header-main-fixed #cart-popup-content').appendTo( jQuery('#header-main-fixed') );
+  }
+
+  fgymm_initHeaderIconsEvents();
+
 	if (fgymm_options && fgymm_options.loading_effect) {
 	   fgymm_init_loading_effects();
   	}
@@ -36,6 +44,26 @@ jQuery( document ).ready(function() {
 		jQuery('#header-main-fixed').css('top', jQuery('#wpadminbar').height() + 'px');
 		jQuery('#wpadminbar').css('position', 'fixed');
 	}
+
+  function fgymm_initHeaderIconsEvents() {
+
+    jQuery('a.cart-contents-icon').mouseenter(function(){
+    
+      // display mini-cart if it's not visible
+      if ( !jQuery('#cart-popup-content').is(":visible") ) {
+
+        var rightPos = (jQuery(window).width() - (jQuery(this).offset().left + jQuery(this).outerWidth()));
+        var topPos = jQuery(this).offset().top - jQuery(window).scrollTop() + jQuery(this).outerHeight(); 
+
+        jQuery('#cart-popup-content').css('right', rightPos).css('top', topPos).fadeIn();
+      }
+    });
+    
+    jQuery('#cart-popup-content').mouseleave(function(){
+    
+      jQuery('#cart-popup-content').fadeOut();
+    });
+  }
 
 	jQuery(function(){
 		jQuery('#camera_wrap').camera({

@@ -19,10 +19,9 @@
 						<?php fgymm_show_website_logo_image_and_title(); ?>
 					</div>
 					<nav id="navmain">
-						<?php wp_nav_menu( array(
-												  
-												  
-												  'theme_location'  => 'primary',
+						<?php wp_nav_menu( array( 'theme_location'  => 'primary',
+												  'fallback_cb'    => 'wp_page_menu',
+												  'items_wrap'      => fgymm_nav_wrap(),
 											  ) ); ?>
 					</nav>
 					

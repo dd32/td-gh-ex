@@ -77,10 +77,11 @@ function fgymm_setup() {
 		'comment-form', 'comment-list',
 	) );
 
-	
-
 	// add the visual editor to resemble the theme style
 	add_editor_style( array( 'css/editor-style.css', get_template_directory_uri() . '/style.css' ) );
+
+	// add WooCommerce support
+	add_theme_support( 'woocommerce' );
 }
 endif; // fgymm_setup
 add_action( 'after_setup_theme', 'fgymm_setup' );
@@ -838,6 +839,30 @@ function fgymm_header_style() {
     </style>
 <?php
 
+}
+
+function fgymm_nav_wrap() {
+
+	// open the <ul>, set 'menu_class' and 'menu_id' values
+	$wrap  = '<ul id="%1$s" class="%2$s">';
+
+  	// get nav items as configured in /wp-admin/
+  	$wrap .= '%3$s';
+
+  	if ( class_exists( 'WooCommerce' ) ) {
+
+  		global $woocommerce;
+
+		$wrap .= '<li><a class="cart-contents-icon" href="'.wc_get_cart_url().'" title="'.__('View your shopping cart', 'fgymm')
+				   .'"></a><div id="cart-popup-content"><div class="widget_shopping_cart_content"></div></div></li>';
+
+	}
+
+	// close the <ul>
+	$wrap .= '</ul>';
+
+	// return the result
+	return $wrap;
 }
 
 ?>

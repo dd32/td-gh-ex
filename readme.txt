@@ -1,113 +1,132 @@
 === fGymm ===
 Contributors: tishonator
-Tags: entertainment, two-columns, right-sidebar, custom-logo, custom-background,
-custom-header, custom-menu, featured-images, threaded-comments, translation-ready,
-sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
-Requires at least: 4.5.0
-Tested up to: 4.6.1
+Tags: blog, entertainment, e-commerce, two-columns, right-sidebar, custom-logo, custom-background,
+custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
+theme-options, footer-widgets, full-width-template, front-page-post-form
+Requires at least: 4.8.0
+Tested up to: 4.9.6
+Stable tag: 1.0.6
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+fGymm is a Fully Responsive Gym and Fitness WordPress Theme.
 
 == Description ==
 
 fGymm is a Fully Responsive Gym and Fitness WordPress Theme designed for health and fitness clubs, 
 CrossFit programs, fitness professionals, personal trainers, etc. Features include built-in Homepage Slider, 
-Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized, Header and Footer Social
-Icons (Facebook, Google+, Twitter, LinkedIn, Instagram, Tumblr, YouTube, Pinterest, VK, Flickr, Vine),
-Sidebar and 3 Footer Widget Areas, 3 Homepage widget areas, Full-Width Template, Multiple Browsers Support, 
-Translation Ready and much more.
+WooCommerce plugin support, Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized, Header
+and Footer Social Icons (Facebook, Google+, Twitter, LinkedIn, Instagram, Tumblr, YouTube, Pinterest, VK,
+Flickr, Vine), Sidebar and 3 Footer Widget Areas, 3 Homepage widget areas, Full-Width Template, Multiple
+Browsers Support, Translation Ready and much more.
 
-== How to Display the Homepage Slider ==
+== Frequently Asked Questions ==
 
-1. Create a Static Front Page
+= How to Display the Homepage Slider =
 
-The slider is visualized ONLY when there is a static front page set for your website. So, the first step is:
+1. Create a Static Front Page - the slider is visualized ONLY when there is a static front page set for your website. So, the first step is:
 
 1.1. Login to your Admin Panel
-
 1.2. Navigate to Left Menu -> Settings -> Reading
-
 1.3. Select 'A static page (select below)', then choose pages for 'Homepage' and 'Posts page'
-
 1.4. Save changes
 
 Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 2. Update Slider Settings
-
 2.1. Login to your Admin Panel
-
 2.2. Navigate to Left Menu -> Appearance -> Customize
-
 2.3. Open 'Slider' Section
-
 2.4. Check the 'Display Slider' checkbox
-
 2.5. Set Slider Images ('Slide # Image' fields) and Text ('Slide # Content' fields) for the different Slides
-
 2.6. Save Changes
 
-== Installation ==
+== Changelog ==
 
-Manual installation:
+= 1.7.0 =
+* add WooCommerce plugin support
+* update readme.txt file
 
-1. Upload the fGymm folder to the /wp-content/themes/ directory
+= 1.6.9 =
+* add instructions in readme.txt file how to configure the Homepage slider
 
-Installation using 'Add New Theme'
+= 1.6.8 =
+* update screenshot according to latest WordPress requirements for screenshot
 
-1. From your Admin UI (Dashboard), use the menu to select Themes -> Add New
-2. Search for 'fGymm'
-3. Click the 'Install' button to open the theme's repository listing
-4. Click the 'Install' button
+= 1.6.7 =
+* display slider and homepage widgets only on static homepage
+* remove default widgets content
 
-Activiation and Use
+= 1.6.6 =
+* improve design
 
-1. Activate the Theme through the 'Themes' menu in WordPress
-2. See Appearance -> Theme Options to change theme specific options
+= 1.6.5 =
+* add option for show/hide Slider
+* bug fixes
 
-== License ==
+= 1.6.4 =
+* improve animations effect
+* add footer menu
 
-fGymm WordPress Theme, Copyright 2016 Tihomir Ivanov / Tishonator.com
+= 1.6.3 =
+* add Animations effects
+
+= 1.6.2 =
+* update slider height
+* change default slider images
+* update section pro: remove require_once include
+* bug fixes
+
+= 1.6.1 =
+* add full-width page template
+* add 3 homepage widget areas
+
+= 1.6.0 =
+* add custom logo
+* add new social icons
+* add 3 columns footer widget areas
+* bug fixes
+
+= 1.5.1 =
+* update tags in style.css
+
+= 1.5.0 =
+* FontAwesome update
+* Design improvement
+* bug fixes
+
+= 1.4.0 =
+* Full theme rewrite to use customizer instead of a parent theme tkidd
+
+= 1.3.0 =
+* bug fixes
+
+= 1.0.2 =
+* small bug fixes
+
+= 1.0.1 =
+* Fix issue with text domain loading
+
+= 1.0.0 =
+* Initial Release
+
+== Copyright ==
+
+fGymm WordPress Theme, Copyright 2016 tishonator
 fGymm is distributed under the terms of the GNU GPL
 
-Unless otherwise specified, all the theme files, scripts and images
-are licensed under GNU General Public License version 2.
-
-The exceptions to this license are as follows:
-
-* Fontawesome is licensed under the terms of The MIT License
-* Source: https://opensource.org/licenses/mit-license.html
-*
-* css/font-awesome.css - The MIT License (MIT), Reference: http://opensource.org/licenses/MIT
-* css/font-awesome.min.css - The MIT License (MIT), Reference: http://opensource.org/licenses/MIT
-* fonts/FontAwesome.otf SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.eot SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.svg SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.ttf SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.woff SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.woff2 SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-*
-* css/animate.css - the MIT license, Reference: http://opensource.org/licenses/MIT
-* author URL: http://daneden.me/animate
-*
-* js/viewportchecker.js - the MIT license, Reference: http://opensource.org/licenses/MIT
-*
-* images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/bodybuilder-muscles-fitness-925770/
-*
-* images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/man-person-power-strength-strong-1282232/
-*
-* images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/girl-in-the-gym-training-apparatus-1391368/
-*
-* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/bodybuilder-muscles-fitness-925770/
-*
-* js/camera.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
-* js/camera.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
-* js/jquery.easing.1.3.js BSD License Reference: http://www.linfo.org/bsdlicense.html
-* js/jquery.mobile.customized.js MIT license Reference: http://jquery.org/license
-* js/jquery.mobile.customized.min.js MIT license Reference: http://jquery.org/license
-*
-
-== Contacts ==
-
-Author Website: https://tishonator.com
-
-
-
+== Resources ==
+* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
+* js/camera.min.js, © 2012 Manuel Masia, MIT
+* js/camera.js, © 2012 Manuel Masia, MIT
+* js/jquery.easing.1.3.js, © 2008 George McGinley Smith, BSD
+* js/jquery.mobile.customized.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
+* js/jquery.mobile.customized.min.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
+* css/animate.css, © 2017 Daniel Eden, MIT
+* js/viewportchecker.js, © 2014 Dirk Groenen, MIT
+* images/slider/1.jpg, © StockSnap https://pixabay.com/en/bodybuilder-muscles-fitness-925770/, CC0
+* images/slider/2.jpg, © Pexels https://pixabay.com/en/man-person-power-strength-strong-1282232/, CC0
+* images/slider/3.jpg, © xusenru https://pixabay.com/en/girl-in-the-gym-training-apparatus-1391368/, CC0
+* screenshot.png (products), WooCommerce, Copyright (C) Automattic, GPLv3
+* screenshot.png (slider image), © StockSnap https://pixabay.com/en/bodybuilder-muscles-fitness-925770/, CC0
