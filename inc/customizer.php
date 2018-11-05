@@ -20,46 +20,6 @@ function ct_apex_add_customizer_content( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport        = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport = 'postMessage';
 
-	/***** Apex Pro Control *****/
-
-	class ct_apex_pro_ad extends WP_Customize_Control {
-		public function render_content() {
-			$link = 'https://www.competethemes.com/apex-pro/';
-			echo "<a href='" . $link . "' target='_blank'><img src='" . get_template_directory_uri() . "/assets/images/apex-pro.gif' /></a>";
-			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%1$s">%2$s Pro</a> is the plugin that makes advanced customization simple - and fun too!', 'apex'), $link, wp_get_theme( get_template() ) ) . "</p>";
-			echo "<p>" . sprintf( __('%1$s Pro adds the following features to %1$s:', 'apex'), wp_get_theme( get_template() ) ) . "</p>";
-			echo "<ul>
-					<li>" . __('Custom Colors', 'apex') . "</li>
-					<li>" . __('7 New layouts', 'apex') . "</li>
-					<li>" . __('Featured Videos', 'apex') . "</li>
-					<li>" . __('+ 7 more features', 'apex') . "</li>
-				  </ul>";
-			echo "<p class='button-wrapper'><a target=\"_blank\" class='apex-pro-button' href='" . $link . "'>" . sprintf( __('View %s Pro', 'apex'), wp_get_theme( get_template() ) ) . "</a></p>";
-		}
-	}
-
-	/***** Apex Pro Section *****/
-
-	// don't add if Apex Pro is active
-	if ( !function_exists( 'ct_apex_pro_init' ) ) {
-		// section
-		$wp_customize->add_section( 'ct_apex_pro', array(
-			'title'    => sprintf( __( '%s Pro', 'apex' ), wp_get_theme( get_template() ) ),
-			'priority' => 1
-		) );
-		// Upload - setting
-		$wp_customize->add_setting( 'apex_pro', array(
-			'sanitize_callback' => 'absint'
-		) );
-		// Upload - control
-		$wp_customize->add_control( new ct_apex_pro_ad(
-			$wp_customize, 'apex_pro', array(
-				'section'  => 'ct_apex_pro',
-				'settings' => 'apex_pro'
-			)
-		) );
-	}
-
 	/***** Logo Upload *****/
 
 	// section
@@ -425,3 +385,12 @@ function ct_apex_sanitize_phone( $input ) {
 		return '';
 	}
 }
+
+function ct_apex_customize_preview_js() {
+	if ( !function_exists( 'ct_apex_pro_init' ) ) {
+		$url = 'https://www.competethemes.com/apex-pro/?utm_source=wp-dashboard&utm_medium=Customizer&utm_campaign=Apex%20Pro%20-%20Customizer';
+		$content = "<script>jQuery('#customize-info').prepend('<div class=\"upgrades-ad\"><a href=\"". $url ."\" target=\"_blank\">Get New Layouts with Apex Pro <span>&rarr;</span></a></div>')</script>";
+		echo apply_filters('ct_apex_customizer_ad', $content);
+	}
+}
+add_action('customize_controls_print_footer_scripts', 'ct_apex_customize_preview_js');
