@@ -1,6 +1,6 @@
 <?php
 /**
- * The template part for displaying services
+ * The template part for displaying post 
  *
  * @package advance-pet-care
  * @subpackage advance-pet-care

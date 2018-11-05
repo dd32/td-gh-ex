@@ -41,11 +41,11 @@ switch ( $template ) {
 	case 'twentyfifteen' :
 		echo '<div id="primary" role="main" class="content-area twentyfifteen"><div id="main" class="site-main t15wc">';
 		break;
-	case 'advance-pet-care' :
-		echo '<div id="primary" role="main" class="content-area advance-pet-care"><div id="main" class="site-main t15wc">';
-		break;
 	case 'twentysixteen' :
 		echo '<div id="primary" class="content-area twentysixteen"><main id="main" class="site-main" role="main">';
+		break;
+	case 'advance-pet-care' :
+		echo '<div id="primary" class="content-area advance-pet-care"><main id="main" class="site-main" role="main">';
 		break;
 	default :
 		echo '<div id="primary" class="content-area"><main id="main" class="site-main" role="main">';

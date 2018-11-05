@@ -44,7 +44,7 @@ function advance_pet_care_setup() {
 endif;
 add_action('after_setup_theme', 'advance_pet_care_setup');
 
-/* Theme Widgets Setup */
+// Theme Widgets Setup
 function advance_pet_care_widgets_init() {
 	register_sidebar(array(
 		'name'          => __('Blog Sidebar', 'advance-pet-care'),
@@ -119,7 +119,7 @@ function advance_pet_care_widgets_init() {
 
 add_action('widgets_init', 'advance_pet_care_widgets_init');
 
-/* Theme Font URL */
+// Theme Font URL
 function advance_pet_care_font_url() {
 	$font_url      = '';
 	$font_family   = array();
@@ -133,25 +133,6 @@ function advance_pet_care_font_url() {
 	return $font_url;
 }
 
-/* Theme enqueue scripts */
-
-function advance_pet_care_scripts() {
-	wp_enqueue_style('advance-pet-care-font', advance_pet_care_font_url(), array());
-	wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/bootstrap.css');
-	wp_enqueue_style('advance-pet-care-basic-style', get_stylesheet_uri());
-	wp_enqueue_style('advance-pet-care-customcss', get_template_directory_uri().'/css/custom.css');
-	wp_enqueue_style('font-awesome', get_template_directory_uri().'/css/fontawesome-all.css');
-	wp_enqueue_script('SmoothScroll', get_template_directory_uri().'/js/SmoothScroll.js', array('jquery'));
-	wp_enqueue_script('advance-pet-care-customscripts-jquery', get_template_directory_uri().'/js/custom.js', array('jquery'));
-	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
-	wp_enqueue_style('advance-pet-care-ie', get_template_directory_uri().'/css/ie.css', array('advance-pet-care-basic-style'));
-	wp_style_add_data('advance-pet-care-ie', 'conditional', 'IE');
-	if (is_singular() && comments_open() && get_option('thread_comments')) {
-		wp_enqueue_script('comment-reply');
-	}
-}
-add_action('wp_enqueue_scripts', 'advance_pet_care_scripts');
-
 function advance_pet_care_sanitize_dropdown_pages($page_id, $setting) {
 	// Ensure $input is an absolute integer.
 	$page_id = absint($page_id);
@@ -159,7 +140,7 @@ function advance_pet_care_sanitize_dropdown_pages($page_id, $setting) {
 	return ('publish' == get_post_status($page_id)?$page_id:$setting->default);
 }
 
-/*radio button sanitization*/
+// radio button sanitization
 function advance_pet_care_sanitize_choices($input, $setting) {
 	global $wp_customize;
 	$control = $wp_customize->get_control($setting->id);
@@ -170,7 +151,7 @@ function advance_pet_care_sanitize_choices($input, $setting) {
 	}
 }
 
-/* Excerpt Limit Begin */
+// Excerpt Limit Begin
 function advance_pet_care_string_limit_words($string, $word_limit) {
 	$words = explode(' ', $string, ($word_limit + 1));
 	if(count($words) > $word_limit)
@@ -193,6 +174,24 @@ add_filter('loop_shop_columns', 'advance_pet_care_loop_columns');
 		return 3; // 3 products per row
 	}
 }
+
+// Theme enqueue scripts
+function advance_pet_care_scripts() {
+	wp_enqueue_style('advance-pet-care-font', advance_pet_care_font_url(), array());
+	wp_enqueue_style('bootstrap', get_template_directory_uri().'/css/bootstrap.css');
+	wp_enqueue_style('advance-pet-care-basic-style', get_stylesheet_uri());
+	wp_enqueue_style('advance-pet-care-customcss', get_template_directory_uri().'/css/custom.css');
+	wp_enqueue_style('font-awesome', get_template_directory_uri().'/css/fontawesome-all.css');
+	wp_enqueue_script('SmoothScroll', get_template_directory_uri().'/js/SmoothScroll.js', array('jquery'));
+	wp_enqueue_script('advance-pet-care-customscripts-jquery', get_template_directory_uri().'/js/custom.js', array('jquery'));
+	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
+	wp_enqueue_style('advance-pet-care-ie', get_template_directory_uri().'/css/ie.css', array('advance-pet-care-basic-style'));
+	wp_style_add_data('advance-pet-care-ie', 'conditional', 'IE');
+	if (is_singular() && comments_open() && get_option('thread_comments')) {
+		wp_enqueue_script('comment-reply');
+	}
+}
+add_action('wp_enqueue_scripts', 'advance_pet_care_scripts');
 
 /* Custom header additions. */
 require get_template_directory().'/inc/custom-header.php';
