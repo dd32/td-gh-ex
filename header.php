@@ -59,7 +59,7 @@
 					<nav id="navmain">
 						<?php wp_nav_menu( array( 'theme_location' => 'primary',
 												  'fallback_cb'    => 'wp_page_menu',
-												  
+												  'items_wrap'      => fcorpo_nav_wrap(),
 												  ) ); ?>
 					</nav><!-- #navmain -->
 					
