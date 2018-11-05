@@ -26,12 +26,6 @@ function airi_body_classes( $classes ) {
 	$sticky 	= get_theme_mod('sticky_menu', 'sticky-header');
 	$classes[] 	= esc_attr( $sticky );	
 
-	// primary type
-	if ( is_home() )
-	{
-		$layout = airi_blog_layout();
-		$classes[] = $layout[ 'type' ];
-	}	
 
 	if ( class_exists( 'WooCommerce' ) ) {
 		$check = airi_wc_archive_check();
@@ -128,13 +122,7 @@ if ( !function_exists( 'airi_blog_layout' ) ) {
 		if ( $layout == 'layout-grid' || $layout == 'layout-masonry' ) {
 			$cols 		= 'col-md-12';
 			$sidebar	= false;
-		}
-		elseif ( $layout == 'layout-list-2' || $layout == 'layout-two-columns' )
-		{
-			$cols 		= 'col-lg-9';
-			$sidebar 	= true;
-		}
-		else {
+		} else {
 			$cols 		= 'col-lg-8';
 			$sidebar 	= true;
 		}	
@@ -142,12 +130,7 @@ if ( !function_exists( 'airi_blog_layout' ) ) {
 		//Inner columns for list layout
 		if ( $layout == 'layout-list' ) {
 			$item_inner_cols = 'col-md-6 col-sm-12';
-		}
-		elseif ( $layout == 'layout-list-2' )
-		{
-			$item_inner_cols = '';
-		}
-		else {
+		} else {
 			$item_inner_cols = 'col-md-12';
 		}
 
@@ -291,7 +274,7 @@ function airi_footer_credits() {
 			<span class="sep"> | </span>
 			<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %2$s by %1$s.', 'airi' ), 'aThemes', '<a href="https://athemes.com/theme/airi" rel="nofollow">Airi</a>' );
+				printf( esc_html__( 'Theme: %2$s by %1$s.', 'airi' ), 'aThemes', '<a href="https://athemes.com/theme/airi">Airi</a>' );
 			?>
 		<?php else : ?>
 			<?php echo wp_kses_post( $credits ); ?>

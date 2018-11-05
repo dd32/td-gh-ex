@@ -5,6 +5,9 @@
 
 
 
+add_action( 'elementor/init', 'airi_register_google_maps_skin' );
+
+function airi_register_google_maps_skin() {
 	
 	class Airi_Google_Maps_Skin extends Elementor\Skin_Base {
 		
@@ -161,7 +164,7 @@
 			}
 
         </script>
-        <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo esc_attr( $settings['api_key'] ); ?>&callback=init"></script> <?php // phpcs:ignore WordPress.WP.EnqueuedResources.NonEnqueuedScript ?>
+                <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=<?php echo esc_attr( $settings['api_key'] ); ?>&callback=init"></script>
 
         <style type="text/css">
             #airi-map {
@@ -176,6 +179,7 @@
     }
 
   }
+}
 
 add_action( 'elementor/widget/google_maps/skins_init', function( $widget ) {
    $widget->add_skin( new Airi_Google_Maps_Skin( $widget ) );

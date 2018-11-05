@@ -111,49 +111,23 @@ function airi_post_thumbnail() {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
 	}
-	$layout = get_theme_mod( 'blog_layout', 'layout-default' );
 
 	if ( is_singular() ) :
 	?>
 
 	<div class="post-thumbnail">
-		<?php
-		$image_size = 'airi-720';
-
-		if ( 'layout-two-columns' == $layout )
-		{
-			$image_size = 'airi-969-485';
-		}
-		elseif ( 'layout-list-box' == $layout )
-		{
-			$image_size = 'airi-870-384';
-		}
-		?>
-		<?php the_post_thumbnail( $image_size ); ?>
+		<?php the_post_thumbnail( 'airi-720' ); ?>
 	</div><!-- .post-thumbnail -->
 
 	<?php else : ?>
 
 	<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
 		<?php
-		$image_size = 'airi-720';
-		if ( 'layout-list-2' == $layout )
-		{
-			$image_size = 'airi-850-485';
-		}
-		elseif ( 'layout-two-columns' == $layout )
-		{
-			$image_size = 'airi-390-280';
-		}
-		elseif ( 'layout-list-box' == $layout )
-		{
-			$image_size = 'airi-870-384';
-		}
-		the_post_thumbnail( $image_size, array(
-			'alt' => the_title_attribute( array(
-				'echo' => false,
-			) ),
-		) );
+			the_post_thumbnail( 'airi-720', array(
+				'alt' => the_title_attribute( array(
+					'echo' => false,
+				) ),
+			) );
 		?>
 	</a>
 
@@ -176,7 +150,7 @@ function airi_first_category() {
  */
 function airi_all_categories() {
 	/* translators: used between list items, there is a space after the comma */
-	$categories_list = get_the_category_list( ' ' );
+	$categories_list = get_the_category_list( esc_html__( ' ', 'airi' ) );
 	if ( $categories_list ) {
 		echo '<span class="cat-links">' . $categories_list . '</span>';
 	}
@@ -199,15 +173,4 @@ function airi_get_comments_number() {
 		);
 	}
 	echo '</span>';
-}
-
-if ( ! function_exists( 'wp_body_open' ) ) {
-	/**
-	 * Shim for wp_body_open() function
-	 */
-	// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedFunctionFound
-	function wp_body_open() {
-		// phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedHooknameFound
-		do_action( 'wp_body_open' );
-	}
 }

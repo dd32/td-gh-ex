@@ -1,5 +1,5 @@
 <?php
-namespace Elementor; // phpcs:ignore WPThemeReview.CoreFunctionality.PrefixAllGlobals.NonPrefixedNamespaceFound
+namespace Elementor;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -8,7 +8,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Blog block
  *
- * @since 1.0.0``
+ * @since 1.0.0
  */
 class Airi_Blog extends Widget_Base {
 
@@ -345,7 +345,7 @@ class Airi_Blog extends Widget_Base {
 		$query = new \WP_Query( array(
 			'posts_per_page'      => $settings['number'],
 			'no_found_rows'       => true,
-			'post_status'         => 'publish',
+			'post_stairis'         => 'publish',
 			'ignore_sticky_posts' => true,
 			'cat' 			      => $cats
 		) ); ?>

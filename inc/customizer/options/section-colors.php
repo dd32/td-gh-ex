@@ -929,10 +929,6 @@ Airi_Kirki::add_field( 'airi', array(
 			'element'  => '.single-post .entry-content, .blog-loop .entry-content',
 			'property' => 'color',
 		),
-		array(
-			'element'  => '.editor-block-list__layout, .editor-block-list__layout .editor-block-list__block',
-			'context'  => array( 'editor' ),
-		),		
 	),
 ) );
 
