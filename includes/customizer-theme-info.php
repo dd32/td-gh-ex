@@ -23,10 +23,7 @@ if ( ! function_exists( 'sampression_add_info_customizer' ) ) {
 			public function render_content() {
 
 				$important_links = array(
-					'theme-upgrade'    => array(
-						'link' => esc_url( 'https://www.sampression.com/cart/?add-to-cart=447' ),
-						'text' => esc_html__( 'Upgrade to pro', 'sampression-lite' ),
-					),
+					
 					'theme-info'    => array(
 						'link' => esc_url( 'https://www.sampression.com/themes/sampression-lite/' ),
 						'text' => esc_html__( 'Theme Info', 'sampression-lite' ),

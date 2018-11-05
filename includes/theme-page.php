@@ -52,69 +52,49 @@ function about_sampression_theme_page() {
 			</p>
 		</div>
 		<div>
-			<h2><?php esc_html_e( 'Sampression PRO', 'sampression-lite' ); ?></h2>
-			<p><?php esc_html_e( 'We also have a paid Pro version of the theme, which offers many more extra features and options for  customization. Sampression Pro offers additional following features:', 'sampression-lite' ); ?></p>
+
 			<ul class="pro-feature-list">
 				<li>
 					<h3>
-						<?php esc_html_e( 'Custom logo', 'sampression-lite' ); ?>
+						<?php esc_html_e( 'Theme Customizer', 'sampression-lite' ); ?>
 					</h3>
-					<?php esc_html_e( 'You can upload your own logo from the customizer.', 'sampression-lite' ); ?>
+					<?php esc_html_e( 'The Sampression Lite Theme Customizer is packed full of design controls and features for setting up the styles of your website, including header styles, typography styles, footer widgets , default colors and so much more..', 'sampression-lite' ); ?>
 				</li>
 				<li>
 					<h3>
-						<?php esc_html_e( 'Google Fonts', 'sampression-lite' ); ?>
+						<?php esc_html_e( 'Customizable Header', 'sampression-lite' ); ?>
 					</h3>
-					<?php esc_html_e( 'Supports fonts that have been provided by Google to enhance every sites design.', 'sampression-lite' ); ?>
+					<?php esc_html_e( 'Upload your custom logo & favicon with a few simple clicks. If you are just getting started, our theme also supports text-based logos.', 'sampression-lite' ); ?>
 				</li>
 				<li>
 					<h3>
-						<?php esc_html_e( 'Icons Mind icon set', 'sampression-lite' ); ?>
+						<?php esc_html_e( 'Search Engine Optimised', 'sampression-lite' ); ?>
 					</h3>
-					<?php esc_html_e( 'Sampression Pro comes bundled with IconsMind iconset worth US$ 79.00.', 'sampression-lite' ); ?>
+					<?php esc_html_e( 'Our designers and developers follow the best SEO practices while developing each theme – we make sure search engine spiders like what they see when they are crawling your site.', 'sampression-lite' ); ?>
 				</li>
 				<li class="clear left">
 					<h3>
-						<?php esc_html_e( 'Typography options', 'sampression-lite' ); ?>
+						<?php esc_html_e( 'Mobile Responsive', 'sampression-lite' ); ?>
 					</h3>
-					<?php esc_html_e( 'Sampression Pro goes even further in its support for various typography options. Now you can make changes to all and any typography element of your website e.g. You can choose the font family, size, style, color etc.', 'sampression-lite' ); ?>
+					<?php esc_html_e( 'We know that your website needs to be readable on all devices. Sampression Theme is fully responsive and looks great all the way down to even the smallest mobile devices and screen sizes.', 'sampression-lite' ); ?>
 				</li>
 				<li>
 					<h3>
-						<?php esc_html_e( 'Multiple layout options', 'sampression-lite' ); ?>
+						<?php esc_html_e( 'Right-To-Left (RTL) Support', 'sampression-lite' ); ?>
 					</h3>
-					<?php esc_html_e( 'The pro version of Sampression offers various different layout options including number of columns (one, two, three and four) to be displayed in home page, option to turn sidebar off/on etc', 'sampression-lite' ); ?>
+					<?php esc_html_e( 'Our theme supports Right-To-Left (RTL) Languages to give you a full experience on languages of the world like (Arabic, Hebrew etc.)', 'sampression-lite' ); ?>
 				</li>
 				<li>
 					<h3>
-						<?php esc_html_e( 'Set the number of post/category on home page', 'sampression-lite' ); ?>
+						<?php esc_html_e( 'Translation Ready', 'sampression-lite' ); ?>
 					</h3>
-					<?php esc_html_e( 'The Pro version of the theme provides you with control over the number of posts/categories that you want to display in the home page.', 'sampression-lite' ); ?>
+					<?php esc_html_e( 'Material packed with .po & .mo files, which will help you localise the theme for another language. We have expanded the theme localisation to cover all aspect, of our theme.', 'sampression-lite' ); ?>
 				</li>
-				<li class="clear left">
-					<h3>
-						<?php esc_html_e( 'Show hide your meta', 'sampression-lite' ); ?>
-					</h3>
-					<?php esc_html_e( 'You can choose to either show or hide the display of meta information from your posts.', 'sampression-lite' ); ?>
-				</li>
-				<li>
-					<h3>
-						<?php esc_html_e( 'Write your own css in customizer', 'sampression-lite' ); ?>
-					</h3>
-					<?php esc_html_e( 'You can further customize the look of your Sampression Pro theme using your own CSS code.', 'sampression-lite' ); ?>
-				</li>
-				<li>
-					<h3>
-						<?php esc_html_e( 'Custom code', 'sampression-lite' ); ?>
-					</h3>
-					<?php esc_html_e( 'Add custom codes to Header and Footer easily.', 'sampression-lite' ); ?>
-				</li>
+			
 			</ul>
 			<p style="clear: both; padding-top: 20px;">
-				<a target="_blank" class="button upgrade-pro" href="<?php echo esc_url( 'https://www.sampression.com/?add-to-cart=447' ); ?>">
-					<?php esc_html_e( 'Upgrade to PRO', 'sampression-lite' ); ?>
-				</a>
-				<a target="_blank" class="button button-primary" href="<?php echo esc_url( 'https://www.demo.sampression.com/sampression-pro/' ); ?>">
+				
+				<a target="_blank" class="button button-primary" href="<?php echo esc_url( 'https://www.demo.sampression.com/sampression-lite/' ); ?>">
 					<?php esc_html_e( 'Live Theme Demo', 'sampression-lite' ); ?>
 				</a>
 			</p>
