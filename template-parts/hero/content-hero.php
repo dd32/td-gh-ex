@@ -35,11 +35,11 @@ if ( !empty( $repeatable_hero_slides ) ) :
                     if ( is_numeric( $image_id ) ) {
                         $image_path     = wp_get_attachment_image_src( $image_id, 'atento-1800-16x9', true );
                         $image_src      = $image_path[0];
-                        $output         = '<div class="post-thumbnail ratio-16x9 background-cover m-0" style="background-image: url(' . esc_url( $image_src ) . ')"></div><!-- .post-thumbnail -->';
+                        $output         = '<div class="post-thumbnail ratio-16x9 background-cover background-fixed m-0" style="background-image: url(' . esc_url( $image_src ) . ')"></div><!-- .post-thumbnail -->';
                     }
                     else {
                         $image_src      = $image_id;
-                        $output         = '<div class="post-thumbnail ratio-16x9 background-cover m-0" style="background-image: url(' . esc_url( $image_src ) . ')"></div><!-- .post-thumbnail -->';
+                        $output         = '<div class="post-thumbnail ratio-16x9 background-cover background-fixed m-0" style="background-image: url(' . esc_url( $image_src ) . ')"></div><!-- .post-thumbnail -->';
                     } ?>
 
                     <div class="hero-content position-relative">

@@ -1,6 +1,6 @@
 /*!
 Theme Name: Atento
-Version: 1.0.1
+Version: 1.0.2
 Author: Precise Themes
 Theme URI: https://precisethemes.com/go/atento/
 Author URI: https://precisethemes.com/
@@ -821,6 +821,10 @@ video {
 .background-cover {
     background-size: cover !important;
     background-position: center !important;
+}
+
+.background-fixed {
+    background-attachment: fixed;
 }
 
 /*--------------------------------------------------------------

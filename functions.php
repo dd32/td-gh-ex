@@ -75,11 +75,6 @@ if ( ! function_exists( 'atento_setup' ) ) :
         add_image_size( 'atento-1200-16x9', 1200, 675, true );
         add_image_size( 'atento-1800-16x9', 1800, 1012, true );
 
-        /* Image Ratio - Auto Height */
-        add_image_size( 'atento-768-auto-height', 768, '9999', false );
-        add_image_size( 'atento-1200-auto-height', 1200, '9999', false );
-        add_image_size( 'atento-1800-auto-height', 1800, '9999', false );
-
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus( array(
             'primary-menu' => esc_html__( 'Primary', 'atento' ),
