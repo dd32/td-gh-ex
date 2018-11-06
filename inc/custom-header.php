@@ -6,7 +6,6 @@
  *
  * @package WordPress
  * @subpackage adventure_travelling
- * @since 1.0
  */
 
 /**

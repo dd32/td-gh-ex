@@ -4,7 +4,6 @@
  *
  * @package WordPress
  * @subpackage adventure_travelling
- * @since 1.0
  */
 
 /**
@@ -68,7 +67,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_section( 'adventure_travelling_topbar', array(
-    	'title'      => __( 'Conatct Details', 'adventure-travelling' ),
+    	'title'      => __( 'Contact Details', 'adventure-travelling' ),
     	'description' => __( 'Add your contact details', 'adventure-travelling' ),
 		'priority'   => 30,
 		'panel' => 'adventure_travelling_panel_id'
@@ -186,7 +185,7 @@ function adventure_travelling_customize_register( $wp_customize ) {
 		'sanitize_callback'	=> 'esc_url_raw'
 	));	
 	$wp_customize->add_control('adventure_travelling_pint_url',array(
-		'label'	=> __('Pintrest Link','adventure-travelling'),
+		'label'	=> __('Pinterest Link','adventure-travelling'),
 		'section'=> 'adventure_travelling_social_media',
 		'type'=> 'url'
 	));	
