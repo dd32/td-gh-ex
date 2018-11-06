@@ -3,18 +3,18 @@
 Contributors: specia
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.9.8
-Stable tag: 1.0.23
-Version: 1.0.23
+Stable tag: 1.0.24
+Version: 1.0.24
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, editor-style, blog, photography, portfolio
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, editor-style, blog, photography, portfolio, grid-layout
 
 Benzer WordPress Theme, Copyright 2018 Specia Theme
 Benzer is distributed under the terms of the GNU GPL
 
 ##Description
 
-Benzer is the right theme for you if you are looking for a multipurpose theme that can handle everything you throw at it. It is perfect for marketing, corporate startup, agency, blog, business, company, creative, portfolio, professional business, food & restaurant, gym & fitness, spa salon, medical practitioner & hospitals, landing pages, product pages, corporate business, digital agency, product showcase, financial advisor, accountant, law firm, wealth advisor, photography, personal, and any eCommerce stores. The design is easy to change and adapt to the client needs. The theme has all the modern functionality such as: slider, services, blogs and much more. It is 100% Responsive WooCommerce Theme with a luxurious and elegant design. It has a fully responsive width that adjusts automatically to any screen size or resolution. It can be customized easily, and also has multiple features and functionalities. Let's start downloading this amazing and beautiful Free Multipurpose WordPress Theme right away. View the demo of Benzer Free https://demo.speciatheme.com/lite/benzer/
+Benzer is a trending WordPress theme with lots of powerful features, instantly giving a professional look to your online presence. It fits for business, portfolio, food & restaurant, gym & fitness, spa salon, medical practitioner & hospitals, landing pages, product pages, corporate business, digital agency, product showcase, financial advisor, accountant, law firm, wealth advisor, photography, personal, and any eCommerce stores. Benzer premium version provides you more than 10 different designs and supports popular plugins WPML, Polylang, WooCommerce, Contact Form 7, Revolution Slider, Elementor, Visual Composer, WP-Forms, Ninja Forms, Jetpack, WP-Featherlight, Give (WordPress Donation Plugin), Gravity Forms, Yoast SEO and many more. View the demo of Benzer Premium https://demo.speciatheme.com/pro/?theme=benzer
 
 ##Frequently Asked Questions
 	
@@ -75,6 +75,9 @@ Source: https://pixabay.com/
 License: CC0 License
 
 ##Changelog
+version 1.0.24
+* Tags & Description Changed in Readme File.
+
 version 1.0.23
 * Feature image added
 
