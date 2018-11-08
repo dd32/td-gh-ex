@@ -38,8 +38,53 @@ function aperture_portfolio_customize_register( $wp_customize ) {
 		'label'      => esc_html__( 'Link Color', 'aperture-portfolio' ),
 		'section'    => 'colors',
 		'settings'   => 'link_color',
-	) ) 
-);
+	) ) );
+
+
+	// View PRO Version
+	$wp_customize->add_section( 'aperture_portfoliostyle_view_pro', array(
+		'title'       => '' . esc_html__( 'Upgrage to Pro', 'aperture-portfolio' ),
+		'priority'    => 2,
+		'description' => sprintf(
+			//unintrosive upsell message
+			__( '<div class="upsell-container">
+					<h2>Upgrade to PRO Today!</h2>
+					<p>Get the pro add-on plugin today:</p>
+					<ul class="upsell-features">
+                            <li>
+                            	<h4>Portfolio Plugin</h4>
+                            	<div class="description">Have a dedicated portfolio post types with an image library, category filtering and styled portfolio page.</div>
+                            </li>
+
+                            <li>
+                            	<h4>Galleries & Albums</h4>
+                            	<div class="description">Upload galleries/Albums in your portfolios with a single click</div>
+                            </li>
+                            
+                            <li>
+                            	<h4>Video Support</h4>
+                            	<div class="description">Upload videos from youtube or vimeo</div>
+                            </li>
+
+                            <li>
+                            	<h4>One On One Email Support</h4>
+                            	<div class="description">Get one on one email support from our experienced support stuff, we can also help you modify the theme to your liking</div>
+                            </li>
+                            
+                    </ul> %s </div>', 'aperture-portfolio' ),
+			sprintf( '<a href="%1$s" target="_blank" class="button button-primary">%2$s</a>', esc_url( aperture_portfolio_get_pro_link() ), esc_html__( 'Upgrade To PRO', 'aperture-portfolio' ) )
+		),
+	) );
+
+	$wp_customize->add_setting( 'aperture_portfoliopro_desc', array(
+		'default'           => '',
+		'sanitize_callback' => 'aperture_portfoliosanitize_checkbox',
+	) );
+	$wp_customize->add_control( 'aperture_portfoliopro_desc', array(
+		'section' => 'aperture_portfoliostyle_view_pro',
+		'type'    => 'hidden',
+	) );
+
 }
 add_action( 'customize_register', 'aperture_portfolio_customize_register' );
 
@@ -69,3 +114,17 @@ function aperture_portfolio_customize_preview_js() {
 }
 add_action( 'customize_preview_init', 'aperture_portfolio_customize_preview_js' );
 
+
+/**
+ * Admin CSS
+ */
+function aperture_portfolio_customizer_assets() {
+    wp_enqueue_style( 'aperture_portfolio_customizer_style', get_template_directory_uri() . '/css/upsell.css', null, '1.0.0', false );
+}
+add_action( 'customize_controls_enqueue_scripts', 'aperture_portfolio_customizer_assets' );
+/**
+ * Generate a link to the Noah Lite info page.
+ */
+function aperture_portfolio_get_pro_link() {
+    return 'https://aperturewp.com/downloads/aperture/';
+}
