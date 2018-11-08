@@ -3,7 +3,7 @@
 /*==================================== THEME SETUP ====================================*/
 
 // Load default style.css and Javascripts
-add_action('wp_enqueue_scripts', 'rubine_enqueue_scripts');
+add_action( 'wp_enqueue_scripts', 'rubine_enqueue_scripts' );
 
 function rubine_enqueue_scripts() {
 
@@ -37,12 +37,19 @@ function rubine_enqueue_scripts() {
  * Enqueue custom fonts.
  */
 function rubine_custom_fonts() {
-
-	// Register and Enqueue Theme Fonts.
 	wp_enqueue_style( 'rubine-custom-fonts', get_template_directory_uri() . '/css/custom-fonts.css', array(), '20180413' );
-
 }
 add_action( 'wp_enqueue_scripts', 'rubine_custom_fonts', 1 );
+add_action( 'enqueue_block_editor_assets', 'rubine_custom_fonts', 1 );
+
+
+/**
+ * Enqueue editor styles for the new Gutenberg Editor.
+ */
+function rubine_block_editor_assets() {
+	wp_enqueue_style( 'rubine-editor-styles', get_template_directory_uri() . '/css/gutenberg-styles.css', array(), '20181102', 'all' );
+}
+add_action( 'enqueue_block_editor_assets', 'rubine_block_editor_assets' );
 
 
 // Setup Function: Registers support for various WordPress features
@@ -52,20 +59,21 @@ function rubine_setup() {
 
 	// Set Content Width
 	global $content_width;
-	if ( ! isset( $content_width ) )
+	if ( ! isset( $content_width ) ) {
 		$content_width = 675;
+	}
 
 	// init Localization
-	load_theme_textdomain('rubine-lite', get_template_directory() . '/languages' );
+	load_theme_textdomain( 'rubine-lite', get_template_directory() . '/languages' );
 
 	// Add Theme Support
-	add_theme_support('post-thumbnails');
-	add_theme_support('automatic-feed-links');
-	add_theme_support('title-tag');
+	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'title-tag' );
 	add_editor_style();
 
 	// Add Custom Background
-	add_theme_support('custom-background', array('default-color' => 'f0f0f0'));
+	add_theme_support( 'custom-background', array( 'default-color' => 'f0f0f0' ) );
 
 	// Set up the WordPress core custom logo feature
 	add_theme_support( 'custom-logo', apply_filters( 'rubine_custom_logo_args', array(
@@ -76,11 +84,12 @@ function rubine_setup() {
 	) ) );
 
 	// Add Custom Header
-	add_theme_support('custom-header', array(
+	add_theme_support( 'custom-header', array(
 		'header-text' => false,
-		'width'	=> 1320,
-		'height' => 240,
-		'flex-height' => true));
+		'width'       => 1320,
+		'height'      => 240,
+		'flex-height' => true,
+	) );
 
 	// Add Theme Support for wooCommerce
 	add_theme_support( 'woocommerce' );
@@ -89,13 +98,40 @@ function rubine_setup() {
 	register_nav_menus( array(
 		'primary'   => esc_html__( 'Main Navigation', 'rubine-lite' ),
 		'secondary' => esc_html__( 'Top Navigation', 'rubine-lite' ),
-		'social' => esc_html__( 'Social Icons', 'rubine-lite' ),
-		)
-	);
+		'social'    => esc_html__( 'Social Icons', 'rubine-lite' ),
+	) );
 
 	// Add Theme Support for Selective Refresh in Customizer
 	add_theme_support( 'customize-selective-refresh-widgets' );
 
+	// Add custom color palette for Gutenberg.
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => esc_html_x( 'Primary', 'Gutenberg Color Palette', 'rubine-lite' ),
+			'slug'  => 'primary',
+			'color' => apply_filters( 'rubine_primary_color', '#cc1111' ),
+		),
+		array(
+			'name'  => esc_html_x( 'White', 'Gutenberg Color Palette', 'rubine-lite' ),
+			'slug'  => 'white',
+			'color' => '#ffffff',
+		),
+		array(
+			'name'  => esc_html_x( 'Light Gray', 'Gutenberg Color Palette', 'rubine-lite' ),
+			'slug'  => 'light-gray',
+			'color' => '#f0f0f0',
+		),
+		array(
+			'name'  => esc_html_x( 'Dark Gray', 'Gutenberg Color Palette', 'rubine-lite' ),
+			'slug'  => 'dark-gray',
+			'color' => '#777777',
+		),
+		array(
+			'name'  => esc_html_x( 'Black', 'Gutenberg Color Palette', 'rubine-lite' ),
+			'slug'  => 'black',
+			'color' => '#353535',
+		),
+	) );
 }
 
 
@@ -105,14 +141,13 @@ add_action( 'after_setup_theme', 'rubine_add_image_sizes' );
 function rubine_add_image_sizes() {
 
 	// Add Custom Header Image Size
-	add_image_size( 'featured-header-image', 1320, 240, true);
+	add_image_size( 'featured-header-image', 1320, 240, true );
 
 	// Add Featured Image Size
-	add_image_size( 'post-thumbnail', 375, 210, true);
+	add_image_size( 'post-thumbnail', 375, 210, true );
 
 	// Add Featured Image Size
-	add_image_size( 'featured-content', 460, 220, true);
-
+	add_image_size( 'featured-content', 460, 220, true );
 }
 
 
@@ -131,7 +166,6 @@ function rubine_register_sidebars() {
 		'before_title' => '<h3 class="widgettitle"><span>',
 		'after_title' => '</span></h3>',
 	));
-
 }
 
 
