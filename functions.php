@@ -7,11 +7,9 @@
 
 	require_once ( trailingslashit(get_template_directory()) . 'inc/customize.php' );
 	function writingboard_about_page() { 
-	add_theme_page( 'D5 Creation Themes', 'D5 Creation Themes', 'edit_theme_options', 'd5-themes', 'writingboard_d5_themes' );
 	add_theme_page( 'Writing Board Options', 'Writing Board Options', 'edit_theme_options', 'theme-about', 'writingboard_theme_about' ); 
 	}
 	add_action('admin_menu', 'writingboard_about_page');
-	function writingboard_d5_themes() {  require_once ( trailingslashit(get_template_directory()) . 'inc/d5-themes.php' ); }
 	function writingboard_theme_about() {  require_once ( trailingslashit(get_template_directory()) . 'inc/theme-about.php' ); }	
 
 	function writingboard_setup() {
@@ -95,7 +93,7 @@ function writingboard_page_menu() {
 	echo '<ul class="m-menu">'; wp_list_pages(array('sort_column'  => 'menu_order, post_title', 'title_li'  => '' )); echo '</ul>';
 }
 function writingboard_creditline() {
-echo writingboard_get_option('copyright', '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' )) .' <span class="credit">| Writing Board Theme by: <a href="'. esc_url('http://d5creation.com') .'" target="_blank"><img  src="' .  get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span>'; }
+echo writingboard_get_option('copyright', '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' )) .' <span class="credit">| Writing Board Theme by: <a href="'. esc_url('https://d5creation.com') .'" target="_blank"><img  src="' .  get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span>'; }
 function writingboard_ppp() { return array( 'post_type'=> 'post', 'ignore_sticky_posts' => 1, 'posts_per_page'  => 2 ); }
 
 // 	Functions for adding some custom code within the head tag of site

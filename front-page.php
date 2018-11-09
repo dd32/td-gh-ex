@@ -74,9 +74,6 @@ get_header(); ?>
 		</div>
 <?php endif; ?>
 
-
-
-
 </div>
 <?php if (writingboard_get_option('frs-check', 0 ) !='1' ): get_sidebar( 'frontpage' );  endif;?>
 <?php get_footer(); ?>

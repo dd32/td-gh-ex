@@ -9,14 +9,14 @@ Description: Writing Board is perfect for Personal or Corporate Blogs, Tutorial 
 
 You can also find the Theme Live at http://demo.d5creation.com/themes/?theme=Writing Board
 
-Version: 1.8
+Version: 1.9.1
 
-Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, entertainment, full-width-template, theme-options, translation-ready, blog, portfolio, education, food-and-drink 
+Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, theme-options, translation-ready, blog, portfolio, education
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Writing Board WordPress Theme, Copyright 2014: D5 Creation (www.d5creation.com)
+Writing Board WordPress Theme, Copyright 2012-2019: D5 Creation (www.d5creation.com)
 Writing Board is distributed under the terms of the GNU GPL
 
 
@@ -239,6 +239,9 @@ address {
 /* Design Elements 
 ------------------------------------------------------------- */
 
+/* Calendar
+------------------------------------------------------------- */
+
 textarea, input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], .titlewrap input, select {
 	border-right:1px solid #AAAAAA;
 	border-left:1px solid #FFFFFF;
@@ -367,3 +370,9 @@ h2.post-title-color {
 	float: right;
 }
 
+/* Text meant only for screen readers. */
+
+.screen-reader-text:focus {
+	right: 5px;
+	left: auto;
+}

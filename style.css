@@ -9,14 +9,14 @@ Description: Writing Board is perfect for Personal or Corporate Blogs, Tutorial 
 
 You can also find the Theme Live at http://demo.d5creation.com/themes/?theme=Writing Board
 
-Version: 1.8
+Version: 1.9.1
 
-Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, entertainment, full-width-template, theme-options, translation-ready, blog, portfolio, education, food-and-drink 
+Tags: two-columns, right-sidebar, left-sidebar, footer-widgets, rtl-language-support, featured-images, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, theme-options, translation-ready, blog, portfolio, education
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Writing Board WordPress Theme, Copyright 2014: D5 Creation (www.d5creation.com)
+Writing Board WordPress Theme, Copyright 2012-2019: D5 Creation (www.d5creation.com)
 Writing Board is distributed under the terms of the GNU GPL
 
 
@@ -177,7 +177,7 @@ a img.aligncenter {
 }
 
 .wp-caption img {
-    border: 0 none;
+    border: none;
     height: auto;
     margin:0;
     max-width: 98.5%;
@@ -208,7 +208,7 @@ body {
 
 img {
 	max-width: 100%;
-	border: 0 none;
+	border: none;
 }
 
 #container {
@@ -870,9 +870,6 @@ td {
 	vertical-align: top;
 }
 
-#wp-calendar td {
-	padding: 0px 7px;
-}
 
 th {
 	font-weight: bold;
@@ -882,12 +879,18 @@ th {
 	background:#CCCCCC;
 }
 
-table#wp-calendar {
-	background: none repeat scroll 0 0 transparent;
-    border: medium none;
-    box-shadow: none;
-    width: 100%;	
-}
+/* Calendar
+------------------------------------------------------------- */
+.calendar_wrap {background:#ffffff;box-shadow:none;}
+#wp-calendar{width:100%;border:none; box-shadow: none; background:#ffffff; padding:  0; margin: 0; }
+#wp-calendar th{text-align: center;}
+#wp-calendar td{color:#555555; border: 1px solid #f6f6f6; text-align: center; position: relative; transition:  all .3s; }
+#wp-calendar td:hover{background: #e6e6e6; }
+#wp-calendar td#prev, #wp-calendar td#next, #wp-calendar td.pad {border:none; }
+#wp-calendar caption{font-size:17px; font-weight: 700; text-align:center;}
+#wp-calendar a { font-size: 15px; font-weight: 700; background: #ccc; display: block; line-height: 2.3; color: #555!important; margin: -5px -7px; }
+#wp-calendar a:hover { background: #555555; color: #ffffff !important; }
+caption{color:#555555}
 
 textarea, input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], .titlewrap input, select{background:#DDDDDD;border-radius:3px;font-size:14px;padding:10px 7px;width:98%;border-top:1px solid #AAAAAA;border-left:1px solid #AAAAAA;border-right:1px solid #FFFFFF;border-bottom:1px solid #FFFFFF; transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s; -webkit-transition:all 1s;}
 input[type="password"]{width:200px;}
@@ -1161,7 +1164,7 @@ p.postmetadata {
 
 
 ol.commentlist, 
-ul.commentlist, {
+ul.commentlist {
 	list-style: none outside none;
 }
 
@@ -1322,56 +1325,24 @@ ul, li, a, div, input, button, img.fimage {
 .social a { background: #333333; background: rgba(0, 0, 0, 0.15); border-radius: 50%; border: 2px solid #EEEEEE; float: left; height: 45px; line-height: 1.5; margin: 0 5px 5px; text-align: center; width: 45px; transition:all 1s; -moz-transition:all 1s; -o-transition:all 1s; -webkit-transition:all 1s; }
 
 .fpage-quote, .social a, .fpec {
-background: -webkit-linear-gradient(-45deg, #F9F9F9 50%, #FFFFFF 50%);
-background: -moz-inear-gradient(-45deg, #F9F9F9 50%, #FFFFFF 50%);
-background: -o-linear-gradient(-45deg, #F9F9F9 50%, #FFFFFF 50%);
-background: -ms-linear-gradient(-45deg, #F9F9F9 50%, #FFFFFF 50%);
 background: linear-gradient(-45deg, #F9F9F9 50%, #FFFFFF 50%);
 background-size: 100% 100%;
 }
 
-.social a:hover { -webkit-transform: rotate(360deg); -moz-transform: rotate(360deg); -o-transform: rotate(360deg); -ms-transform: rotate(360deg); transform: rotate(360deg); }
+.social a:hover { transform: rotate(360deg); }
 .social a::before { content: '\f005'; display: inline-block; font-size: 30px; vertical-align: top; -webkit-font-smoothing: antialiased; }
 
-.social-link a[href*="wordpress.org"]::before,
-.social-link a[href*="wordpress.com"]::before { 
-	content: '\f19a';
-	color:   #09b6db;
-}
-.social-link a[href*="dribbble.com"]::before {
-	content: '\f17d';
-	color:   #ea4c89;
-}
-
-.social-link a[href*="pinterest.com"]::before {
-	content: '\f0d2';
-	color:   #c8232c;
-}
-.social-link a[href*="github.com"]::before {
-	content: '\f113';
-	color:   #555555;
-}
-.social-link a[href*="tumblr.com"]::before {
-	content: '\f173';
-	color:   #455afa;
-}
-
-.social-link a[href*="flickr.com"]::before {
-	content: '\f16e';
-	color:   #ff0084;
-}
-.social-link a[href*="vimeo.com"]::before {
-	content: '\f194';
-	color:   #1AB7EA;
-}
-.social-link a[href*="codepen.io"]::before {
-	content: '\f1cb';
-	color:   #555555;
-}
-.social-link a[href*="linkedin.com"]::before {
-	content: '\f0e1';
-	color:   #05ace3;
-}
+.social a[href*="facebook.com"]::before { content: '\f09a'; color:   #455afa; }
+.social a[href*="twitter.com"]::before { content: '\f099'; color:   #33ccff; }
+.social a[href*="wordpress.org"]::before, .social a[href*="wordpress.com"]::before {  content: '\f19a'; color:   #09b6db; }
+.social a[href*="dribbble.com"]::before { content: '\f17d'; color:   #ea4c89; }
+.social a[href*="github.com"]::before { content: '\f113'; color:   #555555; }
+.social a[href*="plus.google.com"]::before { content: '\f0d5'; color:   #f32e0d; }
+.social a[href*="tumblr.com"]::before { content: '\f173'; color:   #455afa; }
+.social a[href*="flickr.com"]::before { content: '\f16e'; color:   #ff0084; }
+.social a[href*="vimeo.com"]::before { content: '\f194'; color:   #1AB7EA; }
+.social a[href*="codepen.io"]::before { content: '\f1cb'; color:   #555555; }
+.social a[href*="linkedin.com"]::before { content: '\f0e1'; color:   #05ace3; }
 
 /* Text meant only for screen readers. */
 .screen-reader-text { clip: rect(1px, 1px, 1px, 1px); position: absolute !important; height: 1px; width: 1px; overflow: hidden; }

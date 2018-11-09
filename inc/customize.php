@@ -7,7 +7,7 @@ function writingboard_customize_register($wp_customize){
         'priority' 		=> 10,
 		'capability'     => 'edit_theme_options',
 		'title'    		=> __('Writing Board OPTIONS', 'writing-board'),
-        'description'   => '<div class="infohead"><span class="donation">A Theme is an effort of many sleepless nights of the Developers.  If you like this FREEE Theme You can consider for a 5 star rating and honest review. Your review will inspire us. You can <a href="https://wordpress.org/support/view/theme-reviews/writing-board" target="_blank"><strong>Review Here</strong></a></span><br /><br /><span class="donation"> Need More Features and Options including Unlimited Slides and 100+ Advanced Features and Controls? Try <a href="http://d5creation.com/theme/writing-board/" target="_blank"><strong>Writing Board Extend</strong></a></span><br /> <br /><span class="donation"> You can Visit the Writing Board Extend Demo <a href="http://demo.d5creation.com/themes/?theme=Writing%20Board" target="_blank"><strong>Here</strong></a></span></div>'
+        'description'   => '<div class="infohead"><span class="donation">A Theme is an effort of many sleepless nights of the Developers.  If you like this FREEE Theme You can consider for a 5 star rating and honest review. Your review will inspire us. You can <a href="https://wordpress.org/support/view/theme-reviews/writing-board" target="_blank"><strong>Review Here</strong></a></span><br /><br /><span class="donation"> Need More Features and Options including Unlimited Slides and 100+ Advanced Features and Controls? Try <a href="https://d5creation.com/theme/writing-board/" target="_blank"><strong>Writing Board Extend</strong></a></span><br /> <br /><span class="donation"> You can Visit the Writing Board Extend Demo <a href="http://demo.d5creation.com/themes/?theme=Writing%20Board" target="_blank"><strong>Here</strong></a></span></div>'
     ));
 	
 // Portfolio Heading
@@ -40,7 +40,7 @@ function writingboard_customize_register($wp_customize){
         'label'      => __('Social Link - ',  'writing-board'). $numslinksn,
         'section'    => 'writingboard_options',
         'settings'   => 'writingboard[sl' . $numslinksn .']',
-		'description' => __('Input Your Social Page Link. Example: <b>http://profiles.wordpress.org/d5creation</b>.  If you do not want to show anything here leave the box blank. This Version supports only WordPress, Dribbble, Github, Tumblr, Flickr, Vimeo, Codepen and LinkedIn', 'writing-board'),
+		'description' => __('Input Your Social Page Link. Example: <b>http://profiles.wordpress.org/d5creation</b>', 'writing-board'),
     ));	
 	}
 

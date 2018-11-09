@@ -1,10 +1,10 @@
 ----------------------------------
 Writing Board 
 ----------------------------------
-Version: 	1.7
+Version: 	1.9
 Developer: 	D5 Creation
-Author URI: 	http://d5creation.com
-Theme URI: 	http://d5creation.com/theme/writing-board
+Author URI: 	https://d5creation.com
+Theme URI: 	https://d5creation.com/theme/writing-board
 
 Copyright: 	D5 Creation
 License: 		GNU General Public License v2 or later
@@ -17,9 +17,6 @@ FontAwesome, GPL friendly Licenses, Source: http://fortwriting-board.github.io/F
 sample-featured.jpg, screenshot.png and all thumbnail images of screenshot.png, License: CC0 Public Domain, Author: robynm, Source: http://pixabay.com/en/iceberg-antarctica-polar-blue-ice-404966
 Part of logo.png, screenshot.png, License: CC0 Public Domain, Author: OpenClips, Source: http://pixabay.com/en/notepad-memo-pencil-writing-note-117597/
 
-innovation.png - https://pixabay.com/en/woman-model-ipad-happiness-joy-692799/
-premium.png, newspress.png, simplicity.png - https://pixabay.com/en/model-girl-beauty-bella-fashion-456964/
-
 All other images are Lincenced Under GNU GPL and Copyrighted to D5 Creation
 
 Limitations: Please keep your Main Menu Items shorter so that it can adjust within the place holder. 
@@ -27,6 +24,11 @@ Limitations: Please keep your Main Menu Items shorter so that it can adjust with
 ===============
 Changelog
 ===============
+Version 1.9
+=============================
+- Style Update
+- Removed Unnecessary Files
+- Code Cleanup
 
 Version 1.7
 =============================
