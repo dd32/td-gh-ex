@@ -3,7 +3,7 @@ Contributors: nikeo, d4z_c0nf
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, buddypress, custom-menu, custom-colors, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, sticky-post, post-formats, rtl-language-support, editor-style
 Requires at least: 4.6
 Tested up to: 5.0
-Stable tag: 4.1.20
+Stable tag: 4.1.21
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,10 +13,19 @@ Customizr is a simple and fast WordPress theme designed to help you attract and 
 Customizr is a simple and fast WordPress theme designed to help you attract and engage more visitors. Provides a perfect user experience on smartphones. Powers more than 100K active sites around the world. Hundreds of 5-stars reviews received on WordPress.org.
 
 == Upgrade Notice ==
-= 4.1.20 October 25th 2018 =
+= 4.1.21 November 9th 2018 =
 This new release improves the compatibility with the new WordPress editor that will be introduced in WP version 5.0.
 
 == Changelog ==
+= 4.1.21 November 9th 2018 =
+* fixed : updated url to https://gmpg.org/xfn/11 see https://github.com/presscustomizr/hueman/issues/714
+* fixed : potential compatibility issue with WordPress 5.0. for #1623
+* fixed : element id duplication when using horizontal primary menu
+* fixed : html validation for meta with http-equiv attribute with value X-UA-Compatible: must have the value IE=EDGE fixes #1583
+* improved: added new WP editor responsive embeds support
+* improved: new WP editor blockquote style. Part of #1601
+* added : 3 social icons to the social links module : Line, Map, Discord
+
 = 4.1.20 October 25th 2018 =
 * fixed : remove breadcrumb itemprop that can produce html validation issues. fixes #1607
 * fixed : fix buddypress member activity filter issue. fixes #1606.

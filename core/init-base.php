@@ -325,6 +325,9 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
              /* remove_theme_support( 'custom-background' );
               remove_theme_support( 'custom-header' );*/
 
+            // Add support for Gutenberg responsive embeds
+            add_theme_support( 'responsive-embeds' );
+
             //post thumbnails for featured pages and post lists (archive, search, ...)
             $tc_thumb_size    = apply_filters( 'tc_thumb_size' , CZR___::$instance -> tc_thumb_size );
             add_image_size( 'tc-thumb' , $tc_thumb_size['width'] , $tc_thumb_size['height'], $tc_thumb_size['crop'] );
@@ -366,10 +369,6 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
 
             //add support for svg and svgz format in media upload
             add_filter( 'upload_mimes'                        , array( $this , 'czr_fn_custom_mtypes' ) );
-
-            //add help button to admin bar
-            add_action ( 'wp_before_admin_bar_render'         , array( $this , 'czr_fn_add_help_button' ));
-
 
             // Add theme support for selective refresh for widgets.
             // Only add if the link manager is not enabled
@@ -424,32 +423,6 @@ if ( ! class_exists( 'CZR_BASE' ) ) :
         $mimes['svgz']  = 'image/svg+xml';
         return $mimes;
       }
-
-
-
-
-
-
-      /**
-      * hook : 'wp_before_admin_bar_render'
-      * Add help button
-      */
-      function czr_fn_add_help_button() {
-          if ( czr_fn_is_pro() ) {
-              global $wp_admin_bar;
-              $wp_admin_bar->add_menu( array(
-                  'parent' => 'top-secondary', // Off on the right side
-                  'id' => 'tc-customizr-help' ,
-                  'title' =>  '',
-                  'href' => admin_url( 'themes.php?page=welcome.php&help=true' ),
-                  'meta'   => array(
-                      'title'  => __( 'Need help with Customizr? Click here!', 'customizr' ),
-                  ),
-              ));
-          }
-      }
-
-
 
 
 

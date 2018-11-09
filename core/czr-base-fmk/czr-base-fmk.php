@@ -1170,7 +1170,7 @@ if ( ! class_exists( 'CZR_Fmk_Base' ) ) :
                       $post_types = $object_types;
                   }
                   if ( ! $post_types || ! is_array( $post_types ) || empty( $post_types ) ) {
-                      return new WP_Error( 'czr_contents_invalid_post_type' );
+                      return new \WP_Error( 'czr_contents_invalid_post_type' );
                   }
 
                   $posts = get_posts( array(
@@ -1203,7 +1203,7 @@ if ( ! class_exists( 'CZR_Fmk_Base' ) ) :
                       $taxonomies = $object_types;
                   }
                   if ( ! $taxonomies || ! is_array( $taxonomies ) || empty( $taxonomies ) ) {
-                      return new WP_Error( 'czr_contents_invalid_post_type' );
+                      return new \WP_Error( 'czr_contents_invalid_post_type' );
                   }
                   $terms = get_terms( $taxonomies, array(
                       'child_of'     => 0,
@@ -1312,7 +1312,7 @@ if ( ! class_exists( 'CZR_Fmk_Base' ) ) :
             remove_filter( 'pre_post_link', array( $this, 'dont_use_fancy_permalinks' ), 999 );
 
             if ( empty( $items ) ) {
-                wp_send_json_error( array( 'message' => __( 'No results found.', 'customizr') ) );
+                wp_send_json_success( array( 'message' => __( 'No results found.', 'customizr') ) );
             } else {
                 wp_send_json_success( array(
                     'items' => apply_filters( 'content_picker_ajax_items', $items, $p, 'ajax_search_available_items' )
@@ -1348,7 +1348,7 @@ if ( ! class_exists( 'CZR_Fmk_Base' ) ) :
                       $post_types = $object_types;
                   }
                   if ( ! $post_types || empty( $post_types ) ) {
-                      return new WP_Error( 'czr_contents_invalid_post_type' );
+                      return new \WP_Error( 'czr_contents_invalid_post_type' );
                   }
 
                   $query = array(
@@ -1365,7 +1365,7 @@ if ( ! class_exists( 'CZR_Fmk_Base' ) ) :
                   if ( isset( $args['s'] ) ) {
                       $query['s'] = $args['s'];
                   }
-                  $get_posts = new WP_Query( $query );
+                  $get_posts = new \WP_Query( $query );
                   if ( $get_posts->post_count ) {
                       foreach ( $get_posts->posts as $post ) {
                             $post_title = $post->post_title;
@@ -1390,7 +1390,7 @@ if ( ! class_exists( 'CZR_Fmk_Base' ) ) :
                       $taxonomies = $object_types;
                   }
                   if ( ! $taxonomies || ! is_array( $taxonomies ) || empty( $taxonomies ) ) {
-                      return new WP_Error( 'czr_contents_invalid_post_type' );
+                      return new \WP_Error( 'czr_contents_invalid_post_type' );
                   }
                   $terms = get_terms( $taxonomies, array(
                       'name__like' => $args['s'],
