@@ -4,7 +4,7 @@ Theme URI: https://aperturewp.com/downloads/aperture/'
 Author: Afrothemes
 Author URI:https://aperturewp.com
 Description: Aperture Portfolio is a simple WordPress theme for photographers & bloggers, use it for a travel, food or photography bloging & portfolio. Aperture can also be use be used for creative agency or photo studio. Try it out for free today.
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aperture-portfolio
@@ -654,14 +654,18 @@ h1.entry-title {
 .intro {
 	width: 75%;
     padding: 6em 0 5em;
+    margin: 0 auto;
 }
 .intro h1 {
 	font-weight: 300;
     color: #000;
-    font-size: 50px;
-    text-align: left;
-    line-height: 60px;
+    font-size: 32px;
+    text-align: center;
+    line-height: 40px;
     text-transform: capitalize;
+}
+.intro .adri-social {
+	text-align: center;
 }
 /*Menu */
 #masonry {

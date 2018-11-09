@@ -40,6 +40,9 @@ https://pixabay.com/en/fitness-couple-model-sport-strong-2498657/
 
 
 == Changelog ==
+= 1.0.0 - 09 Nov 2018 =
+* CSS fixes for headers
+
 = 1.0.0 - 08 Nov 2018 =
 * Same size image heights
 * Fixed masonry grid breaking on some browsers
