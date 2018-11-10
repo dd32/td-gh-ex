@@ -3,7 +3,7 @@ Contributors: ThemesPride
 Tags: one-column, two-columns, right-sidebar, left-sidebar, three-columns, four-columns, grid-layout, custom-colors, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, portfolio
 Requires at least: 4.7
 Tested up to: 4.9.8
-Stable tag: 0.5
+Stable tag: 0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -35,6 +35,9 @@ Adventure travelling is a bold, powerful, attractive and multipurpose travel Wor
 	. Added language folder.
 	. Changed the theme version in other files.
 	. Changed the background color of menu in mobile media.
+
+= 0.6 =
+	. Changed the WordPress globals in the slider.php file.
 
 == Resources ==
 

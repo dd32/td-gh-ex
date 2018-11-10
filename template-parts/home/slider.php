@@ -12,17 +12,17 @@
 
 <section id="slider">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
-    <?php $pages = array();
+    <?php $slide_pages = array();
       for ( $count = 1; $count <= 3; $count++ ) {
         $mod = intval( get_theme_mod( 'adventure_travelling_slider_page' . $count ));
         if ( 'page-none-selected' != $mod ) {
-          $pages[] = $mod;
+          $slide_pages[] = $mod;
         }
       }
-      if( !empty($pages) ) :
+      if( !empty($slide_pages) ) :
         $args = array(
           'post_type' => 'page',
-          'post__in' => $pages,
+          'post__in' => $slide_pages,
           'orderby' => 'post__in'
         );
         $query = new WP_Query( $args );
