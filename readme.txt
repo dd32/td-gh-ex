@@ -1,57 +1,27 @@
-== License ==
+=== AyaMagazine ===
+Contributors: ayatemplates
+Tags: blog, news, three-columns, right-sidebar, custom-logo, custom-background, custom-header,
+custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options,
+footer-widgets
+Requires at least: 4.8.0
+Tested up to: 4.9.6
+Stable tag: 1.0.7
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-AyaMagazine Theme, Copyright 2017 Aya Templates
-AyaMagazine is distributed under the terms of the GNU GPL
+AyaMagazine is Fully Responsive Magazine WordPress Theme.
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+== Description ==
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
+AyaMagazine is Fully Responsive Magazine WordPress Theme perfect for Online journals, News Blogs and
+other kinds of Magazine Sites. Features include Animation Appearing Effects, Multi-Level Drop-Down
+Header Menu, W3C Markup Validated, Right and Left Sidebar Widget Areas, 3 Footer Columns, Full-Width
+Page Template, Customize Options, Search Engine Optimized (SEO), Multiple Browser Compatible (IE9,
+IE10, IE11, Chrome, Firefox, Opera, and Safari), FontAwesome Integration, and Translation Ready.
 
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see license.txt.
+== Frequently Asked Questions ==
 
-AyaMagazine WordPress Theme bundles the following third-party resources:
-
-* "Pro" theme section examples for the customizer
-* Author: Justin Tadlock (justintadlock)
-* License: GNU General Public License, version 2, https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
-*
-* functions.php -> final class ayamagazine_Customize
-* functions.php -> class ayamagazine_Customize_Section_Pro
-* js/customize-controls.js
-* css/customize-controls.css
-*
-* css/animate.css - the MIT license, Reference: http://opensource.org/licenses/MIT
-* author URL: http://daneden.me/animate
-*
-* css/font-awesome.css - License: MIT License URL: http://opensource.org/licenses/mit-license.html
-*
-* fonts/FontAwesome.otf License: SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.eot License: SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.svg License: SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.ttf License: SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.woff License: SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.woff2 License: SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-*
-* PT Sans (default theme font), Released under Apache License, version 2.0 license - http://www.apache.org/licenses/LICENSE-2.0.html
-*
-* js/viewportchecker.js - the MIT license, Reference: http://opensource.org/licenses/MIT
-*
-* screenshot (first post thumbnail image) License: CC0 1.0, Reference: https://unsplash.com/license, Image Source: https://unsplash.com/photos/VFs2fZEVkXo
-*
-* screenshot (second post thumbnail image) License: CC0 1.0, Reference: https://unsplash.com/license, Image Source: https://unsplash.com/photos/5WbYFH0kf_8
-*
-* screenshot (first sidebar image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/pink-magazine-gloss-zephyr-sweet-2791366/
-*
-* screenshot (second sidebar image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/green-plant-white-table-work-desk-2599771/
-*
-== Installation ==
+= How to Install the Theme =
 
 Manual installation:
 
@@ -69,6 +39,40 @@ Activiation and Use
 1. Activate the Theme through the 'Themes' menu in WordPress
 2. See Appearance -> Customize to change theme specific options
 
-== Contacts ==
+== Changelog ==
 
-Author Website: https://ayatemplates.com
+= 1.0.7 =
+* update readme.txt file format
+
+= 1.0.6 =
+* updating screenshot.png according to the new WordPress.org requirements
+
+= 1.0.5 =
+* updating screenshot.png according to the new WordPress.org requirements
+
+= 1.0.4 =
+* remove default demo content
+
+= 1.0.3 =
+* update screenshot
+* changing slider images
+* fix issue with posts date format
+
+= 1.0.1 =
+* update screenshot
+
+= 1.0.1 =
+* remove unnecessary escape of get_search_query()
+
+= 1.0.0 =
+* Initial Release
+
+== Resources ==
+* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
+* css/animate.css, © 2017 Daniel Eden, MIT
+* js/viewportchecker.js, © 2014 Dirk Groenen, MIT
+* screenshot.png (thumbnail image), © freestocks.org https://unsplash.com/photos/VFs2fZEVkXo, CC0
+* screenshot.png (thumbnail image), © Toa Heftiba https://unsplash.com/photos/5WbYFH0kf_8, CC0
+* screenshot.png (sidebar image), © Hope_first https://pixabay.com/en/pink-magazine-gloss-zephyr-sweet-2791366/, CC0
+* screenshot.png (sidebar image), © StockSnap https://pixabay.com/en/green-plant-white-table-work-desk-2599771/, CC0
