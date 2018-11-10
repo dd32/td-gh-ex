@@ -3,45 +3,24 @@ Contributors: ayatemplates
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 Requires at least: 4.9.5
 Tested up to: 4.9.8
-Stable tag: 1.0.8
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 AyaClub is fully Responsive Music Club WordPress Theme.
 
 == Description ==
+
 AyaClub is fully Responsive Music Club WordPress Theme. Features: Animations Appearing Effect,
 Built-in Homepage Slider, Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized,
 Custom Logo, Custom Background, Footer Copyright Text Customizations, Widget Areas: 3 Homepage Columns,
 Sidebar, 3 Footer Columns, Multiple Browsers Support, Translation-Ready and much more.
 
-
 == Frequently Asked Questions ==
-
-= Installation =
-
-Manual installation:
-
-1. Upload the theme folder to the /wp-content/themes/ directory
-
-Installation using 'Add New Theme'
-
-1. From your Admin UI (Dashboard), use the menu to select Themes -> Add New
-2. Search for theme name
-3. Click the 'Install' button to open the theme's repository listing
-4. Click the 'Install' button
-
-Activiation and Use
-
-1. Activate the Theme through the 'Themes' menu in WordPress
-2. See Appearance -> Customize to change theme specific options
-
 
 = How to Display the Homepage Slider =
 
-1. Create a Static Front Page
-
-The slider is visualized ONLY when there is a static front page set for your website. So, the first step is:
+1. Create a Static Front Page - the slider is visualized ONLY when there is a static front page set for your website. So, the first step is:
 
 1.1. Login to your Admin Panel
 1.2. Navigate to Left Menu -> Settings -> Reading
@@ -59,6 +38,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.0.9 (2018-11-10) =
+* update readme.txt file format
 
 = 1.0.8 (2018-10-28) =
 * add Customizer option to adjust Slider Height
@@ -92,24 +74,6 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 = 1.0.0 (2017-10-30) =
 * Initial release
-
-== License ==
-
-AyaClub Theme, Copyright 2017 Aya Templates
-AyaClub is distributed under the terms of the GNU GPL
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see license.txt.
 
 == Resources ==
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
