@@ -1,13 +1,15 @@
-== AyaSpirit WordPress Theme ==
+=== AyaSpirit ===
+Contributors: ayatemplates
+Tags: blog, education, entertainment, two-columns, right-sidebar, custom-background, custom-logo,
+custom-colors, custom-header, custom-menu, featured-images, threaded-comments, translation-ready,
+sticky-post, theme-options, full-width-template, front-page-post-form, footer-widgets
+Requires at least: 4.8.0
+Tested up to: 4.9.6
+Stable tag: 1.0.6
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Contributors: Aya Templates
-Tags: blog, education, entertainment, two-columns, right-sidebar, custom-background,
-custom-logo, custom-colors, custom-header, custom-menu, featured-images, threaded-comments,
-translation-ready, sticky-post, theme-options, full-width-template, front-page-post-form,
-footer-widgets
-
-Requires at least: 4.3.0
-Tested up to: 4.7.3
+AyaSpirit is a Fully Responsive WordPress Theme.
 
 == Description ==
 
@@ -15,90 +17,97 @@ AyaSpirit is a Fully Responsive WordPress Theme, a perfect choice for a spiritua
 organization website, blog about spritiuality, etc. 100% Responsive Design, Customizable,
 and Easy to Use WordPress Theme.
 
-== Installation ==
 
-Manual installation:
+== Frequently Asked Questions ==
 
-1. Upload the theme folder to the /wp-content/themes/ directory
+= How to Display the Homepage Slider =
 
-Installation using 'Add New Theme'
+1. Create a Static Front Page - the slider is visualized ONLY when there is a static front page set for your website. So, the first step is:
 
-1. From your Admin UI (Dashboard), use the menu to select Themes -> Add New
-2. Search for theme name
-3. Click the 'Install' button to open the theme's repository listing
-4. Click the 'Install' button
+1.1. Login to your Admin Panel
+1.2. Navigate to Left Menu -> Settings -> Reading
+1.3. Select 'A static page (select below)', then choose pages for 'Homepage' and 'Posts page'
+1.4. Save changes
 
-Activiation and Use
+Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
-1. Activate the Theme through the 'Themes' menu in WordPress
-2. See Appearance -> Theme Options to change theme specific options
+2. Update Slider Settings
+2.1. Login to your Admin Panel
+2.2. Navigate to Left Menu -> Appearance -> Customize
+2.3. Open 'Slider' Section
+2.4. Check the 'Display Slider' checkbox
+2.5. Set Slider Images ('Slide # Image' fields) and Text ('Slide # Content' fields) for the different Slides
+2.6. Save Changes
 
-== License ==
+== Changelog ==
 
-AyaSpirit WordPress Theme, Copyright 2016 AyaTemplates.com
-AyaSpirit is distributed under the terms of the GNU GPL
+= 1.1.6 =
+* update readme.txt file format
 
-Unless otherwise specified, all the theme files, scripts and images
-are licensed under GNU General Public License version 2.
+= 1.1.5 =
+* updating screenshot.png according to the new WordPress.org requirements
 
-The exceptions to this license are as follows:
+= 1.1.4 =
+* remove default demo content
 
-* Fontawesome is licensed under the terms of The MIT License
-* Source: https://opensource.org/licenses/mit-license.html
-*
-* css/font-awesome.css - The MIT License (MIT), Reference: http://opensource.org/licenses/MIT
-* css/font-awesome.min.css - The MIT License (MIT), Reference: http://opensource.org/licenses/MIT
-* fonts/FontAwesome.otf SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.eot SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.svg SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.ttf SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.woff SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-* fonts/fontawesome-webfont.woff2 SIL OFL 1.1 Reference: http://scripts.sil.org/OFL
-*
-* css/animate.css - the MIT license, Reference: http://opensource.org/licenses/MIT
-* author URL: http://daneden.me/animate
-*
-* Titillium Web (default theme font), Released under Apache License, version 2.0 license - http://www.apache.org/licenses/LICENSE-2.0.html
-*
-* js/modernizr.custom.79639.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
-* js/modernizr.custom.79639.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
-*
-* js/jquery.ba-cond.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
-* js/jquery.ba-cond.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
-*
-* js/jquery.slitslider.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
-*
-* js/viewportchecker.js - the MIT license, Reference: http://opensource.org/licenses/MIT
-*
-* images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms,
-* Image Source: https://pixabay.com/en/travel-sunset-landscape-sky-sand-3098815/
-*
-* images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms,
-* Image Source: https://pixabay.com/en/banner-header-gull-bird-fly-1090835/
-*
-* images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms,
-* Image Source: https://pixabay.com/en/silhouette-blur-red-focus-sun-1304141/
-*
-* images/slider/4.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms,
-* Image Source: https://pixabay.com/en/sunset-water-grass-sky-1487258/
-*
-* images/slider/5.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms,
-* Image Source: https://pixabay.com/en/sun-fireball-sunset-sea-evening-sky-404062/
-*
-* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/travel-sunset-landscape-sky-sand-3098815/
+= 1.1.3 =
+* changing slider images 
 
-== Homepage Slider ==
+= 1.1.2 =
+* improve animation effects
+* add footer menu
 
-By Default the Homepage slider is disabled, but it can be easily enabled:
+= 1.1.1 =
+* add animations
 
-1. Login to your Admin Panel
+= 1.1.0 =
+* add full-width page template
+* add 3 footer widget areas
+* bug fixes
 
-2. Navigate to Left Menu -> Appearance -> Customize -> 'Slider' Section
+= 1.0.9 =
+* bug fixes
 
-3. Check the 'Display Slider' checkbox
+= 1.0.8 =
+* bug fixes
 
-4. Save the changes by clicking on the 'Save & Publish' button
+= 1.0.7 =
+* bug fixes
 
-== Contacts ==
+= 1.0.6 =
+* bug fixes
 
-Author Website: https://ayatemplates.com
+= 1.0.5 =
+* bug fixes
+
+= 1.0.4 =
+* bug fixes
+
+= 1.0.3 =
+* update the .pot file
+
+= 1.0.2 =
+* bug fixes
+
+= 1.0.1 =
+* bug fixes
+
+= 1.0.0 =
+* Initial Release
+
+== Resources ==
+* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
+* css/animate.css, © 2017 Daniel Eden, MIT
+* js/viewportchecker.js, © 2014 Dirk Groenen, MIT
+* js/modernizr.custom.79639.js, © Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon, Patrick Kettner, Stu Cox, Richard Herrera, MIT
+* js/modernizr.custom.79639.min.js, © Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon, Patrick Kettner, Stu Cox, Richard Herrera, MIT
+* js/jquery.ba-cond.js, © 2009 Ben Alman, MIT
+* js/jquery.ba-cond.min.js, © 2009 Ben Alman, MIT
+* js/jquery.slitslider.js, © 2012 Codrops, MIT
+* images/slider/1.jpg, © PixxlTeufel https://pixabay.com/en/travel-sunset-landscape-sky-sand-3098815/, CC0
+* images/slider/2.jpg, © geralt https://pixabay.com/en/banner-header-gull-bird-fly-1090835/, CC0
+* images/slider/3.jpg, © Devanath https://pixabay.com/en/silhouette-blur-red-focus-sun-1304141/, CC0
+* images/slider/4.jpg, © kalhh https://pixabay.com/en/sunset-water-grass-sky-1487258/, CC0
+* images/slider/5.jpg, © RalfBeck https://pixabay.com/en/sun-fireball-sunset-sea-evening-sky-404062/, CC0
+* screenshot.png (slide img), © PixxlTeufel https://pixabay.com/en/travel-sunset-landscape-sky-sand-3098815/, CC0
