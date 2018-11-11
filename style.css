@@ -4,7 +4,7 @@ Description: AyaCoffeeShopPro is a fully responsive WordPress Theme. Features in
 Theme URI: https://ayatemplates.com/product/ayacoffeeshop
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.0.3
+Version: 1.0.4
 Text Domain: ayacoffeeshop
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2.0
@@ -346,6 +346,7 @@ ul {
 }
 
 #cart-popup-content {
+	max-width:280px;
 	display:none;
 	position:fixed;
 	top:18px;
