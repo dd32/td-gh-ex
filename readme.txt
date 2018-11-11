@@ -1,33 +1,31 @@
-=== Theme Name ===
+=== ArtGallery ===
 Contributors: customizablethemes
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 Requires at least: 4.7.0
 Tested up to: 4.9.2
-Stable tag: 1.0.2
+Stable tag: 1.1.0
 License: License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-ArtGallery WordPress Theme, Copyright 2017 CustomizableThemes.com.
-
-ArtGallery is distributed under the terms of the GNU GPL v2 or later
+ArtGallery is fully Responsive Art WordPress Theme.
 
 == Description ==
 
-ArtGallery is fully Responsive Moto WordPress Theme. Features: Custom Logo, Custom Background, Footer copyright text customizations, Widget Areas: Sidebar, 3 Footer Columns, Translation-Ready and much more.
+ArtGallery is fully Responsive Art WordPress Theme. Features: Animation Appearing Effects, Custom Logo,
+Custom Background, Footer copyright text customizations, Widget Areas: Sidebar, 3 Footer Columns,
+Footer Menu, Translation-Ready and much more.
 
+== Frequently Asked Questions ==
 
-== How to Display the Homepage Slider ==
+= How to Display the Homepage Slider =
 
 1. Create a Static Front Page
 
 The slider is visualized ONLY when there is a static front page set for your website. So, the first step is:
 
 1.1. Login to your Admin Panel
-
 1.2. Navigate to Left Menu -> Settings -> Reading
-
 1.3. Select 'A static page (select below)', then choose pages for 'Homepage' and 'Posts page'
-
 1.4. Save changes
 
 Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
@@ -35,48 +33,44 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2. Update Slider Settings
 
 2.1. Login to your Admin Panel
-
 2.2. Navigate to Left Menu -> Appearance -> Customize
-
 2.3. Open 'Slider' Section
-
 2.4. Check the 'Display Slider' checkbox
-
 2.5. Set Slider Images ('Slide # Image' fields) and Text ('Slide # Content' fields) for the different Slides
-
 2.6. Save Changes
 
-
-
-
 == Changelog ==
+
+= 1.1.0 =
+* update readme.txt file format
+
 = 1.0.9 =
-- add instructions in readme.txt file how to configure the Homepage slider
+* add instructions in readme.txt file how to configure the Homepage slider
 
 = 1.0.8 =
-- remove recommended plugin functionality
+* remove recommended plugin functionality
 
 = 1.0.7 =
-- updating screenshot.png according to the new WordPress.org requirements
+* updating screenshot.png according to the new WordPress.org requirements
 
 = 1.0.6 =
-- hide slider by default
+* hide slider by default
 
 = 1.0.5 =
-- display slider in static homepage only
+* display slider in static homepage only
 
 = 1.0.4 =
-- change homepage slider images
+* change homepage slider images
 
 = 1.0.3 =
-- add homepage slider
-- add facebook widget support
+* add homepage slider
+* add facebook widget support
 
 = 1.0.2 =
-- update GPL license declarations in style.css and readme.txt
-- remove searchform.php
-- update load_theme_textdomain without language path.
-- remove double-escaping within artgallery_show_copyright_text function
+* update GPL license declarations in style.css and readme.txt
+* remove searchform.php
+* update load_theme_textdomain without language path.
+* remove double-escaping within artgallery_show_copyright_text function
 
 = 1.0.1 =
 * fix issues with glitches in style.css file
@@ -85,37 +79,16 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * initial release
 
 == Resources ==
-*
-* assets/css/font-awesome.css © FontAwesome, MIT
-* assets/fonts/FontAwesome.otf © FontAwesome, MIT
-* assets/fonts/fontawesome-webfont.eot © FontAwesome, MIT
-* assets/fonts/fontawesome-webfont.svg © FontAwesome, MIT
-* assets/fonts/fontawesome-webfont.ttf © FontAwesome, MIT
-* assets/fonts/fontawesome-webfont.woff © FontAwesome, MIT
-* assets/fonts/fontawesome-webfont.woff2 © FontAwesome, MIT
-*
-* Questrial (default theme font), © Google Fonts, GNU Version 2
-*
-* assets/css/animate.css - the MIT license, Reference: http://opensource.org/licenses/MIT
-* author URL: http://daneden.me/animate
-*
-* assets/js/viewportchecker.js - the MIT license, Reference: http://opensource.org/licenses/MIT
-*
-* assets/js/camera.min.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
-* assets/js/camera.js MIT license Reference: http://www.opensource.org/licenses/mit-license.php
-* assets/js/jquery.easing.1.3.js BSD License Reference: http://www.linfo.org/bsdlicense.html
-* assets/js/jquery.mobile.customized.js MIT license Reference: http://jquery.org/license
-* assets/js/jquery.mobile.customized.min.js MIT license Reference: http://jquery.org/license
-*
-*
-* images/slider/1.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/istanbul-turkey-art-gallery-168774/ 
-*
-* images/slider/2.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/gallery-women-images-despair-2932005/
-*
-* images/slider/3.jpg CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/copenhagen-denmark-art-gallery-169052/ 
-*
-* screenshot.png (slider image) CC0 Public Domain Reference: http://pixabay.com/go/?t=%2Fservice%2Fterms%2F%23download_terms, Image Source: https://pixabay.com/en/istanbul-turkey-art-gallery-168774/ 
-*
-* inc/customize-pro/class-customize.php, © Justin Tadlock (justintadlock), GNU Version 2
-* inc/customize-pro/customize-controls.css, © Justin Tadlock (justintadlock), GNU Version 2
-* inc/customize-pro/customize-controls.js, © Justin Tadlock (justintadlock), GNU Version 2
+* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
+* assets/js/camera.min.js, © 2012 Manuel Masia, MIT
+* assets/js/camera.js, © 2012 Manuel Masia, MIT
+* assets/js/jquery.easing.1.3.js, © 2008 George McGinley Smith, BSD
+* assets/js/jquery.mobile.customized.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
+* assets/js/jquery.mobile.customized.min.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
+* assets/css/animate.css, © 2017 Daniel Eden, MIT
+* assets/js/viewportchecker.js, © 2014 Dirk Groenen, MIT
+* images/slider/1.jpg, © 12019 https://pixabay.com/en/istanbul-turkey-art-gallery-168774/, CC0
+* images/slider/2.jpg, © Alexas_Fotos https://pixabay.com/en/gallery-women-images-despair-2932005/, CC0
+* images/slider/3.jpg, © 12019 https://pixabay.com/en/copenhagen-denmark-art-gallery-169052/, CC0
+* screenshot.png (slider image), © 12019 https://pixabay.com/en/istanbul-turkey-art-gallery-168774/, CC0
