@@ -20,7 +20,6 @@ Full-Width Page Template, Widget Areas: Homepage Widget Area, Right Sidebar and 
 Footer Menu, Footer Copyright Text, Search Engine Optimized, Multiple Browsers Support,
 Translation-Ready, etc.
 
-
 == Frequently Asked Questions ==
 
 = How to Install the Theme? =
@@ -41,17 +40,11 @@ Installation using 'Add New Theme'
 1. Activate the Theme through the 'Themes' menu in WordPress
 2. See Appearance -> Customize to change theme specific options
 
-= How to Install the Homepage Slider =
-
-1. Install and Activate the following plugin: https://wordpress.org/plugins/camera-slideshow/
-2. Navigate to Admin Panel -> Left Menu -> Camera Slide -> Add New
-3. Enter Tile, Upload Images (by clicking on 'Upload Images' button), enter Caption for images
-4. Copy Shortcode code i.e. [camera_slideshow id="3068"]
-5. Navigate to Admin Panel -> Left Menu -> Appearance -> Widgets
-6. Insert Text Widget into 'Homepage Widget Area'
-7. Insert shortcode (from step 4.) into the Text widget content and Save changes
-
 == Changelog ==
+
+= 1.0.4 =
+* update readme.txt file format
+
 = 1.0.3 =
 * remove recommended plugin functionality
 
@@ -65,26 +58,9 @@ Installation using 'Add New Theme'
 = 1.0.0 =
 * Initial Release
 
-== Copyright ==
-
-AyaAirPort WordPress Theme, Copyright 2018 ayatemplates
-AyaAirPort is distributed under the terms of the GNU GPL
-
-AyaAirPort WordPress Theme bundles the following third-party resources:
-
 == Resources ==
-
-* functions.php -> final class ayaairport_Customize, Justin Tadlock, GPL-2.0
-* functions.php -> class ayaairport_Customize_Section_Pro, Justin Tadlock, GPL-2.0
-* js/customize-controls.js, Justin Tadlock, GPL-2.0
-* css/customize-controls.css, Justin Tadlock, GPL-2.0
-*
-* css/animate.css - daneden.me, MIT
-*
-* FontAwesome icon font, Copyright Font Awesome
-* FontAwesome are licensed under the terms of the SIL OFL 1.1 license.
-* Source: https://fontawesome.com/v4.7.0/
-*
-* js/viewportchecker.js, MIT
-*
-* screenshot.png (Homepage Image) CC0, https://pixabay.com/en/child-waving-goodbye-departure-plane-595429/
+* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
+* css/animate.css, © 2017 Daniel Eden, MIT
+* js/viewportchecker.js, © 2014 Dirk Groenen, MIT
+* screenshot.png, © skeeze https://pixabay.com/en/child-waving-goodbye-departure-plane-595429/, CC0
