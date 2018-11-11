@@ -17,7 +17,6 @@ AyaHandmade is Fully Responsive WordPress Theme, suitable for handmade stuffs an
 Custom Logo, Multi-level Drop-down Menu, Custom Background, Full-Width Page Template, Widget Areas: Homepage Above Columns, and 3 Homepage Columns,
 Right Sidebar, Footer Menu, Footer Copyright Text, Search Engine Optimized, Multiple Browsers Support, Translation-Ready, etc.
 
-
 == Frequently Asked Questions ==
 
 = How to Install the Theme? =
@@ -39,9 +38,12 @@ Activiation and Use
 2. See Appearance -> Customize to change theme specific options
 
 == Changelog ==
+
+= 1.0.3 =
+* update readme.txt file format
+
 = 1.0.2 =
 * updating screenshot.png according to the new WordPress.org requirements
-
 
 = 1.0.1 =
 * display homepage widgets only on static homepage
@@ -50,32 +52,12 @@ Activiation and Use
 = 1.0.0 =
 * Initial Release
 
-== Copyright ==
-
-AyaHandmade WordPress Theme, Copyright 2018 ayatemplates
-AyaHandmade is distributed under the terms of the GNU GPL
-
-AyaHandmade WordPress Theme bundles the following third-party resources:
-
 == Resources ==
-
-* functions.php -> final class ayahandmade_Customize, Justin Tadlock, GPL-2.0
-* functions.php -> class ayahandmade_Customize_Section_Pro, Justin Tadlock, GPL-2.0
-* assets/js/customize-controls.js, Justin Tadlock, GPL-2.0
-* assets/css/customize-controls.css, Justin Tadlock, GPL-2.0
-* assets/css/animate.css - daneden.me, MIT
-* assets/css/font-awesome.css - FontAwesome, MIT
-* assets/fonts/FontAwesome.otf - FontAwesome, MIT
-* assets/fonts/fontawesome-webfont.eot, FontAwesome, MIT
-* assets/fonts/fontawesome-webfont.svg, FontAwesome, MIT
-* assets/fonts/fontawesome-webfont.ttf, FontAwesome, MIT
-* assets/fonts/fontawesome-webfont.wof, FontAwesome, MIT
-* assets/fonts/fontawesome-webfont.woff2, FontAwesome, MIT
-* assets/js/viewportchecker.js, MIT
-*
-* screenshot.png (HomePage Above Columns Image), CC0, Image Reference: https://pixabay.com/en/handmade-craft-sewing-hobby-1153614/
-* screenshot.png (Column #1 Image), CC0, Image Reference: https://pixabay.com/en/frame-weaving-lana-thread-handmade-3019254/
-* screenshot.png (Column #1 Image), CC0, Image Reference: https://pixabay.com/en/soap-horsetail-salt-blossom-bloom-2333412/
-* screenshot.png (Column #1 Image), CC0, Image Reference: https://pixabay.com/en/potter-ceramics-clay-circle-1139047/
-
-
+* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
+* css/animate.css, © 2017 Daniel Eden, MIT
+* js/viewportchecker.js, © 2014 Dirk Groenen, MIT
+* screenshot.png (above cols), © Oakapplehabdash https://pixabay.com/en/handmade-craft-sewing-hobby-1153614/, CC0
+* screenshot.png (col), © nicolettazanella https://pixabay.com/en/frame-weaving-lana-thread-handmade-3019254/, CC0
+* screenshot.png (col), © silviarita https://pixabay.com/en/soap-horsetail-salt-blossom-bloom-2333412/, CC0
+* screenshot.png (col), © LubosHouska https://pixabay.com/en/potter-ceramics-clay-circle-1139047/, CC0
