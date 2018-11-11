@@ -316,7 +316,6 @@ article
       margin-left: 0
     &:last-child
       margin-right: 0
-
     &.current-menu-item
       border-top: 3px solid $button-bg
     & .sub-menu
@@ -360,6 +359,11 @@ article
       padding: 4px 0 10px 0
       &:hover
         color: $link-hover
+#header ul
+  & li .sub-menu
+    & li .sub-menu
+      top: -3px
+      left: 100%
 
 .mobile-trigger
   font-size: 24px

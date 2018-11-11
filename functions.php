@@ -115,7 +115,7 @@ function atlast_business_load_scripts() {
 	wp_register_style( 'atlast-business-fonts', get_template_directory_uri() . '/assets/css/fonts/font-styles-dist.css', '', '1.0.0', 'all' );
 	wp_register_style( 'fontawesome', get_template_directory_uri() . '/assets/css/fonts/fontawesome-all.min.css', '', '1.5.8', 'all' );
 	wp_register_style( 'atlast-business-main-styles', get_template_directory_uri() . '/assets/css/main-styles.css', '', '1.5.8', 'all' );
-	wp_register_style( 'atlast-style', get_stylesheet_uri(), '', '1.5.8.3' );
+	wp_register_style( 'atlast-style', get_stylesheet_uri(), '', '1.5.8.4' );
 
 	wp_enqueue_style( 'spectre' );
 	wp_enqueue_style( 'sidr' );
