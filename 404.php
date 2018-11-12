@@ -9,7 +9,7 @@ get_header();?>
   <div class="customize-breadcrumb">
     <div class="container customize-container">
       <h1>
-        <?php _e( 'Not Found', 'customizable' ); ?>
+        <?php esc_html_e( 'Not Found', 'customizable' ); ?>
       </h1>
       <?php customizable_breadcrumbs();?>
     </div>
@@ -18,7 +18,7 @@ get_header();?>
 <section class="main_section customizable-not-found">
   <div class="container customize-container">
       <p>
-        <?php _e( 'It looks like nothing was found at this location. Maybe try a search?', 'customizable' ); ?>
+        <?php esc_html_e( 'Page not found: Sorry, the page you are looking for does not Exist', 'customizable' ); ?>
       </p>
       <?php get_search_form(); ?>
   </div>

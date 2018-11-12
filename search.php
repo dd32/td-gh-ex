@@ -8,7 +8,7 @@ get_header();?>
   <div class="customize-breadcrumb">
     <div class="container customize-container">
       <h1><?php 
-            _e('Search Results for','customizable'); echo ": ". get_search_query(); ?> 
+            esc_html_e('Search Results for','customizable'); echo ": ". get_search_query(); ?> 
       </h1>
       <?php customizable_breadcrumbs();?>
     </div>
@@ -16,6 +16,8 @@ get_header();?>
 </section>
 <section class="main_section">
   <div class="container customize-container">
+    <div class="row">
+      <div class="col-md-9 col-sm-8 col-xs-12">
     <div class="left_section">
       <?php if(have_posts()):?>
       <?php while(have_posts()): the_post();?>
@@ -25,9 +27,9 @@ get_header();?>
           <h3>
             <?php the_title(); ?>
           </h3>
-          <h4><?php echo customizable_entry_meta();?></h4>
+          <h4><?php echo esc_html(customizable_entry_meta());?></h4>
           <?php the_excerpt();?>
-          <a class="read-more" href="<?php echo get_permalink();?>"><?php _e('READ MORE','customizable') ?></a> </div>
+          <a class="read-more" href="<?php echo esc_url(get_permalink());?>"><?php esc_html_e('READ MORE','customizable') ?></a> </div>
       </article>
       <?php endwhile;?>
         <!--Pagination Start-->
@@ -45,12 +47,16 @@ get_header();?>
       <?php
 		   else : 
 		   ?>
-      <p>  <?php _e('no posts found','customizable') ?></p>
+      <p>  <?php esc_html_e('No Post Found. Please try with some other words.','customizable') ?></p>
       <?php  endif;?>
     </div>
+  </div>
+  <div class="col-md-3 col-sm-4 col-xs-12">
     <div class="side_bar">
       <?php get_sidebar();?>
     </div>
   </div>
+  </div>
+</div>
 </section>
 <?php get_footer();?>

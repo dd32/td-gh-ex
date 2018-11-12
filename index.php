@@ -7,13 +7,17 @@
 <section>
   <div class="customize-breadcrumb">
     <div class="container customize-container">
-      <h1><?php if(!empty($customizable_options['headingtext'])) echo $customizable_options['headingtext']; ?></h1>
-      <?php customizable_breadcrumbs();?>
+      <h1><?php if(!empty($customizable_options['headingtext'])) 
+      if(get_theme_mod('home_page_title',isset($customizable_options['headingtext'])?$customizable_options['headingtext']:'') != '')
+      echo esc_html(get_theme_mod('home_page_title',isset($customizable_options['headingtext'])?$customizable_options['headingtext']:'')); ?></h1>
+      <?php customizable_breadcrumbs(); ?>
     </div>
   </div>
 </section>
 <section class="main_section">
   <div class="container customize-container">
+    <div class="row">
+    <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
     <div class="left_section">
       <?php if(have_posts()):?>
       <?php while(have_posts()): the_post();?>
@@ -23,9 +27,9 @@
           <h3>
             <?php the_title(); ?>
           </h3>
-          <h4><?php echo customizable_entry_meta();?></h4>
+          <h4><?php echo esc_html(customizable_entry_meta());?></h4>
           <div class="content"> <?php the_excerpt();?></div>
-          <a class="read-more" href="<?php echo get_permalink();?>"><?php _e('READ MORE','customizable') ?></a> </div>
+          <a class="read-more" href="<?php echo esc_url(get_permalink());?>"><?php esc_html_e('READ MORE','customizable') ?></a> </div>
       </article>
       <?php endwhile;?>
 
@@ -45,12 +49,16 @@
       <?php
 		   else : 
 		   ?>
-      <p> <?php _e('no posts found','customizable') ?> </p>
+      <p> <?php esc_html_e('no posts found','customizable') ?> </p>
       <?php  endif;?>
     </div>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
     <div class="side_bar">
       <?php get_sidebar();?>
     </div>
   </div>
+  </div>
+</div>
 </section>
 <?php get_footer();?>

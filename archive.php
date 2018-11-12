@@ -9,13 +9,13 @@ get_header();?>
       <h1>
         <?php
 						if ( is_day() ) :
-            _e('Daily Archives','customizable'); echo ": ". get_the_date();
+            esc_html_e('Daily Archives','customizable'); echo ": ". get_the_date();
         elseif ( is_month() ) :
-            _e('Monthly Archives','customizable'); echo ": ". get_the_date('F Y');
+            esc_html_e('Monthly Archives','customizable'); echo ": ". get_the_date('F Y');
         elseif ( is_year() ) :
-            _e('Yearly Archives','customizable'); echo ": ". get_the_date('Y');
+            esc_html_e('Yearly Archives','customizable'); echo ": ". get_the_date('Y');
         else :
-            _e( 'Archives', 'customizable' );
+            esc_html_e( 'Archives', 'customizable' );
         endif;  
 					?>
       </h1>
@@ -25,6 +25,8 @@ get_header();?>
 </section>
 <section class="main_section">
   <div class="container customize-container">
+    <div class="row">
+    <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
     <div class="left_section">
       <?php if(have_posts()):?>
       <?php while(have_posts()): the_post();?>
@@ -34,9 +36,9 @@ get_header();?>
           <h3>
             <?php the_title(); ?>
           </h3>
-          <h4><?php echo customizable_entry_meta();?></h4>
+          <h4><?php customizable_entry_meta();?></h4>
           <div class="content"> <?php the_excerpt();?></div>
-          <a class="read-more" href="<?php echo get_permalink();?>"><?php _e('READ MORE','customizable') ?></a> </div>
+          <a class="read-more" href="<?php echo esc_url(get_permalink());?>"><?php esc_html_e('READ MORE','customizable') ?></a> </div>
       </article>
       <?php endwhile;?>
         <!--Pagination Start-->
@@ -55,12 +57,16 @@ get_header();?>
       <?php
 		   else : 
 		   ?>
-      <p><?php _e('no posts found','customizable') ?>  </p>
+      <p><?php esc_html_e('no posts found','customizable') ?>  </p>
       <?php  endif;?>
     </div>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
     <div class="side_bar">
       <?php get_sidebar();?>
     </div>
+  </div>
+</div>
   </div>
 </section>
 <?php get_footer();?>

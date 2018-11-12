@@ -16,7 +16,7 @@ get_header();?>
 </section>
 <section class="main_section">
   <div class="container customize-container">
-    <div class="col-md-12 no-padding">
+    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 no-padding">
       <?php if(have_posts()):?>
       <?php while(have_posts()): the_post();?>
       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -38,7 +38,7 @@ get_header();?>
       <?php 
 		   else : 
 		   ?>
-      <p> <?php _e('no posts found ','customizable') ?></p>
+      <p> <?php esc_html_e('no posts found ','customizable') ?></p>
       <?php  endif;?>
     </div>
   </div>

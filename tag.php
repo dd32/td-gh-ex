@@ -7,7 +7,7 @@ get_header();?>
 <section>
   <div class="customize-breadcrumb">
     <div class="container customize-container">
-      <h1> <?php _e('Tag Archives','customizable'); echo " : ".single_tag_title( '', false );?> </h1>
+      <h1> <?php esc_html_e('Tag Archives','customizable'); echo " : ".single_tag_title( '', false );?> </h1>
       <?php customizable_breadcrumbs();?>
     </div>
   </div>
@@ -23,9 +23,9 @@ get_header();?>
         <h3>
           <?php the_title(); ?>
         </h3>
-        <h4><?php echo customizable_entry_meta();?></h4>
+        <h4><?php echo esc_html(customizable_entry_meta());?></h4>
        <div class="content"><?php the_excerpt();?></div>
-        <a class="read-more" href="<?php echo get_permalink();?>"><?php _e('READ MORE','customizable'); ?></a>   
+        <a class="read-more" href="<?php echo esc_url(get_permalink());?>"><?php esc_html_e('READ MORE','customizable'); ?></a>   
       </div>
       </article>
       <?php endwhile;?>
@@ -46,7 +46,7 @@ get_header();?>
       <?php
 		   else : 
 		   ?>
-      <p><?php _e('no posts found','customizable'); ?></p>
+      <p><?php esc_html_e('no posts found','customizable'); ?></p>
       <?php  endif;?>
     </div>
     <div class="side_bar">

@@ -16,6 +16,8 @@ get_header();?>
 </section>
 <section class="main_section">
   <div class="container customize-container">
+    <div class="row">
+    <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
     <div class="left_section">
       <?php if(have_posts()):?>
       <?php while(have_posts()): the_post();?>
@@ -38,12 +40,16 @@ get_header();?>
       <?php 
 		   else : 
 		   ?>
-      <p> <?php _e('no posts found','customizable') ?> </p>
+      <p> <?php esc_html_e('no posts found','customizable') ?> </p>
       <?php  endif;?>
     </div>
+  </div>
+  <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
     <div class="side_bar">
       <?php get_sidebar();?>
     </div>
+  </div>
+</div>
   </div>
 </section>
 <?php get_footer();?>

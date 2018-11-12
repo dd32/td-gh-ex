@@ -10,10 +10,10 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) : 	?>
     <h2 class="comments-title">
 		<?php
-			
-			printf( _n( 'One thought on  "%2$s"', '%1$s thoughts on  %2$s', get_comments_number(), 'customizable' ),
-				number_format_i18n( get_comments_number() ), get_the_title() );
+			/* translators: 1: comment count number, 2: post title */
+	 printf( esc_html(_n( '%1$s thought on %2$s', '%1$s thoughts on %2$s', get_comments_number(), 'customizable' )),esc_attr(number_format_i18n(get_comments_number())), get_the_title() );
 		?>
+		
 	</h2>
     <ul class="">
     <?php	
@@ -21,7 +21,7 @@ if ( post_password_required() )
     </ul>
        <?php paginate_comments_links(); ?>  
 	<?php if ( ! comments_open() ) : ?>
-	<p class="no-comments"><?php _e( 'Comments are closed.', 'customizable' ); ?></p>
+	<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'customizable' ); ?></p>
 	<?php endif; ?>
           
 	<?php endif; // have_comments() ?>

@@ -1,6 +1,9 @@
 <?php 
 // register widget
-add_action('widgets_init', create_function('', 'return register_widget("customize_social_widget");'));
+function customize_social_widgets_func() {
+  return register_widget("customize_social_widget");
+}
+add_action( 'widgets_init', 'customize_social_widgets_func' );
 /**** 
 S O C I A L  W I D G E T 
 * * * * * * * * * * * */
@@ -29,38 +32,38 @@ if( $customizable_instance) {
 }
 ?>
 <p>
-  <label for="<?php echo $this->get_field_id('title'); ?>">
-    <?php _e('Widget Title', 'customizable'); ?>
+  <label for="<?php echo esc_html($this->get_field_id('title')); ?>">
+    <?php esc_html_e('Widget Title', 'customizable'); ?>
   </label>
-  <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo $customizable_title; ?>" />
+  <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($customizable_title); ?>" />
 </p>
 <!-- F A C E B O O K -->
 <p>
-  <label for="<?php echo $this->get_field_id('facebook'); ?>">
-    <?php _e('Facebook', 'customizable'); ?>
+  <label for="<?php echo esc_html($this->get_field_id('facebook')); ?>">
+    <?php esc_html_e('Facebook', 'customizable'); ?>
   </label>
-  <input class="widefat" id="<?php echo $this->get_field_id('facebook'); ?>" name="<?php echo $this->get_field_name('facebook'); ?>" type="text" value="<?php echo $customizable_facebook; ?>" />
+  <input class="widefat" id="<?php echo esc_attr($this->get_field_id('facebook')); ?>" name="<?php echo esc_attr($this->get_field_name('facebook')); ?>" type="text" value="<?php echo esc_attr($customizable_facebook); ?>" />
 </p>
 <!-- T W I T T E R -->
 <p>
-  <label for="<?php echo $this->get_field_id('twitter'); ?>">
-    <?php _e('Twitter', 'customizable'); ?>
+  <label for="<?php echo esc_html($this->get_field_id('twitter')); ?>">
+    <?php esc_html_e('Twitter', 'customizable'); ?>
   </label>
-  <input class="widefat" id="<?php echo $this->get_field_id('twitter'); ?>" name="<?php echo $this->get_field_name('twitter'); ?>" type="text" value="<?php echo $customizable_twitter; ?>" />
+  <input class="widefat" id="<?php echo esc_attr($this->get_field_id('twitter')); ?>" name="<?php echo esc_attr($this->get_field_name('twitter')); ?>" type="text" value="<?php echo esc_attr($customizable_twitter); ?>" />
 </p>
 <!-- P I N T R E S T -->
 <p>
-  <label for="<?php echo $this->get_field_id('pinterest'); ?>">
-    <?php _e('Pinterest', 'customizable'); ?>
+  <label for="<?php echo esc_html($this->get_field_id('pinterest')); ?>">
+    <?php esc_html_e('Pinterest', 'customizable'); ?>
   </label>
-  <input class="widefat" id="<?php echo $this->get_field_id('pinterest'); ?>" name="<?php echo $this->get_field_name('pinterest'); ?>" type="text" value="<?php echo $customizable_pinterest; ?>" />
+  <input class="widefat" id="<?php echo esc_attr($this->get_field_id('pinterest')); ?>" name="<?php echo esc_attr($this->get_field_name('pinterest')); ?>" type="text" value="<?php echo esc_attr($customizable_pinterest); ?>" />
 </p>
 <!-- G PLUS -->
 <p>
-  <label for="<?php echo $this->get_field_id('gplus'); ?>">
-    <?php _e('Google+', 'customizable'); ?>
+  <label for="<?php echo esc_html($this->get_field_id('gplus')); ?>">
+    <?php esc_html_e('Google+', 'customizable'); ?>
   </label>
-  <input class="widefat" id="<?php echo $this->get_field_id('gplus'); ?>" name="<?php echo $this->get_field_name('gplus'); ?>" type="text" value="<?php echo $customizable_gplus; ?>" />
+  <input class="widefat" id="<?php echo esc_attr($this->get_field_id('gplus')); ?>" name="<?php echo esc_attr($this->get_field_name('gplus')); ?>" type="text" value="<?php echo esc_attr($customizable_gplus); ?>" />
 </p>
 <?php
 }
@@ -94,10 +97,10 @@ function widget($args, $customizable_instance) {
       echo $before_title . $customizable_title . $after_title;
    }?>
 <ul class="social_icon">
-  <?php if(!empty($customizable_facebook));?><li><a href="<?php echo $customizable_facebook;?>" class="icon_f"><img src="<?php echo get_template_directory_uri();?>/images/s-icon2.png" /></a></li>
-    <?php if(!empty($customizable_gplus));?><li><a href="<?php echo $customizable_gplus;?>" class="icon_t"><img src="<?php echo get_template_directory_uri();?>/images/s-icon1.png" /></a></li>
-      <?php if(!empty($customizable_twitter));?><li><a href="<?php echo $customizable_twitter;?>" class="icon_g"><img src="<?php echo get_template_directory_uri();?>/images/s-icon3.png" /></a></li>
-  <?php if(!empty($customizable_pinterest));?><li><a href="<?php echo $customizable_pinterest;?>" class="icon_i"><img src="<?php echo get_template_directory_uri();?>/images/s-icon4.png" /></a></li> 
+  <?php if(!empty($customizable_facebook));?><li><a href="<?php echo esc_url($customizable_facebook);?>" class="icon_f"><img src="<?php echo esc_url(get_template_directory_uri());?>/images/s-icon2.png" /></a></li>
+    <?php if(!empty($customizable_gplus));?><li><a href="<?php echo esc_url($customizable_gplus);?>" class="icon_t"><img src="<?php echo esc_url(get_template_directory_uri());?>/images/s-icon1.png" /></a></li>
+      <?php if(!empty($customizable_twitter));?><li><a href="<?php echo esc_url($customizable_twitter);?>" class="icon_g"><img src="<?php echo esc_url(get_template_directory_uri());?>/images/s-icon3.png" /></a></li>
+  <?php if(!empty($customizable_pinterest));?><li><a href="<?php echo esc_url($customizable_pinterest);?>" class="icon_i"><img src="<?php echo esc_url(get_template_directory_uri());?>/images/s-icon4.png" /></a></li> 
 </ul>
 <?php
    echo $after_widget;

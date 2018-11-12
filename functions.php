@@ -27,7 +27,15 @@ function customizable_setup() {
 		'primary'   => __( 'Top primary menu', 'customizable' ),
 		'secondary' => __( 'Secondary menu in footer', 'customizable' ),
 	) );
-
+	/* Logo */
+	add_theme_support( 'custom-logo',array(
+        'height'      => 250,
+        'width'       => 250,
+        'flex-width'  => true,
+        'flex-height' => true,
+        'priority' => 11,     
+        'header-text' => array('img-responsive-logo', 'site-description-logo'),
+    ) );
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -35,6 +43,7 @@ function customizable_setup() {
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list',
 	) );
+
 
 	/*
 	 * Enable support for Post Formats.
@@ -61,25 +70,26 @@ function customizable_setup() {
 endif; // customizable_setup
 add_action( 'after_setup_theme', 'customizable_setup' );
 
-// Theme option
-require_once('theme-options/fasterthemes.php');
 // Custome social widget
 require_once('inc/social-custom-widget.php');
 // Implement Custom Header features.
 require get_template_directory() . '/inc/custom-header.php';
-
+// Theme Customizer Setting.
+require get_template_directory() . '/inc/customizer.php';
 
 add_action('wp_enqueue_scripts','customizable_load_scripts');
 function customizable_load_scripts(){
-	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '3.0.2' );
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css', array(), '3.0.2' );
 	wp_enqueue_style( 'fontawesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '3.0.2' );
 	wp_enqueue_style( 'customizable-style', get_stylesheet_uri(),array('bootstrap'));
+	wp_enqueue_style('googlefontapi','//fonts.googleapis.com/css?family=Cabin',array(),'','');
 	if(is_front_page()){
-	wp_enqueue_style('owl-carousel-css',get_template_directory_uri().'/css/owl.carousel.css',array(),'','');	
-	wp_enqueue_script( 'owl-carousel-script', get_template_directory_uri() . '/js/owl.carousel.js', array( 'jquery' ), '20131209', true );	
-	wp_enqueue_script('sliderjs',get_template_directory_uri().'/js/responsiveslides.min.js',array('jquery'));
+	wp_enqueue_style('owl-carousel',get_template_directory_uri().'/css/owl.carousel.css',array());	
+
+	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/js/owl.carousel.js', array( 'jquery' ));	
+	wp_enqueue_script('sliderjs',get_template_directory_uri().'/js/responsiveslides.js',array('jquery'));
 	}
-	wp_enqueue_script('customizable-default-js', get_template_directory_uri() . '/js/default.js', array('jquery'), '20131209', true);
+	wp_enqueue_script('customizable-default-js', get_template_directory_uri() . '/js/default.js', array('jquery'),Null,false);
 	if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 	}
 
@@ -102,7 +112,8 @@ function customizable_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 ) {
-		$title = "$title $sep " . sprintf( __( 'Page %s', 'customizable' ), max( $paged, $page ) );
+		/* translators: 1: page */
+		$title = "$title $sep " . sprintf( esc_html__( 'Page %s', 'customizable' ), max( $paged, $page ) );
 	}
 
 	return $title;
@@ -186,9 +197,9 @@ function customizable_breadcrumbs() {
     echo '<ol>';
     if (!is_home()) {
         echo '<li><a href="';
-        echo home_url();
+        echo esc_url(home_url());
         echo '">';
-        _e('Home','customizable');
+        esc_html_e('Home','customizable');
         echo '</a></li> / ';
         if (is_category() || is_single()) {
             echo '<li>';
@@ -206,20 +217,20 @@ function customizable_breadcrumbs() {
                 foreach ( $customizable_anc as $customizable_ancestor ) {
                     $customizable_output = '<li><a href="'.get_permalink($customizable_ancestor).'" title="'.get_the_title($customizable_ancestor).'">'.get_the_title($customizable_ancestor).'</a></li> / ';
                 }
-                echo $customizable_output;
-                echo '<strong title="'.$customizable_title.'"> '.$customizable_title.'</strong>';
+                echo esc_html($customizable_output);
+                echo '<strong title="'.esc_attr($customizable_title).'"> '.esc_html($customizable_title).'</strong>';
             } else {
-                echo '<li><strong> '.get_the_title().'</strong></li>';
+                echo '<li><strong> '.esc_html(get_the_title()).'</strong></li>';
             }
         }
 	if (is_tag()) {single_tag_title();}
-if (is_day()) {echo"<li>".__('Archive for ','customizable'); the_time('F jS, Y'); echo'</li>';}
-    if (is_month()) {echo"<li>".__('Archive for ','customizable'); the_time('F, Y'); echo'</li>';}
-    if (is_year()) {echo"<li>".__('Archive for','customizable'); the_time('Y'); echo'</li>';}
-    if (is_author()) {echo"<li>".__('Author Archive','customizable'); echo'</li>';}
-    if (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>".__('Blog Archives','customizable'); echo'</li>';}
-    if (is_search()) {echo"<li>".__('Search Results','customizable'); echo'</li>';}
-	if (is_404()) {echo"<li>".__('404','customizable'); echo'</li>';}
+if (is_day()) {echo"<li>".esc_html__('Archive for ','customizable'); get_the_date('F jS, Y'); echo'</li>';}
+    if (is_month()) {echo"<li>".esc_html__('Archive for ','customizable'); get_the_date('F, Y'); echo'</li>';}
+    if (is_year()) {echo"<li>".esc_html__('Archive for','customizable'); get_the_date('Y'); echo'</li>';}
+    if (is_author()) {echo"<li>".esc_html__('Author Archive','customizable'); echo'</li>';}
+    if (isset($_GET['paged']) && !empty($_GET['paged'])) {echo "<li>".esc_html__('Blog Archives','customizable'); echo'</li>';}
+    if (is_search()) {echo"<li>".esc_html__('Search Results','customizable'); echo'</li>';}
+	if (is_404()) {echo"<li>".esc_html__('404','customizable'); echo'</li>';}
     }
     
     echo '</ol>';
@@ -239,8 +250,7 @@ add_filter('wp_page_menu', 'customizable_add_menuid');
 
 if ( ! function_exists( 'customizable_comment' ) ) :
 
-function customizable_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
+function customizable_comment( $comment, $args, $depth ) {	
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
@@ -249,16 +259,16 @@ function customizable_comment( $comment, $args, $depth ) {
 
 <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
   <p>
-    <?php _e( 'Pingback:', 'customizable' ); ?>
+    <?php esc_html_e( 'Pingback:', 'customizable' ); ?>
     <?php comment_author_link(); ?>
-    <?php edit_comment_link( __( 'Edit', 'customizable' ), '<span class="edit-link">', '</span>' ); ?>
+    <?php edit_comment_link( esc_html__( 'Edit', 'customizable' ), '<span class="edit-link">', '</span>' ); ?>
   </p>
 </li>
 <?php
 			break;
 		default :
 		// Proceed with normal comments.
-		if($comment->comment_approved==1)
+		if($comment->comment_approved	==1)
 		{
 		global $post;
 	?>
@@ -269,7 +279,7 @@ function customizable_comment( $comment, $args, $depth ) {
       <?php
                             printf( '<b class="fn">%1$s',
                                 get_comment_author_link(),
-                                ( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author ', 'customizable' ) . '</span>' : ''
+                                ( $comment->user_id === $post->post_author ) ? '<span>' . esc_html__( 'Post author ', 'customizable' ) . '</span>' : ''
                             );
 						?>
       <?php
@@ -351,25 +361,30 @@ function customizable_entry_meta() {
 	$customizable_tag_list = get_the_tag_list(', ', 'customizable' );
 
 	$customizable_date = sprintf( '<a href="%1$s" title="%2$s" ><time datetime="%3$s">%4$s</time></a>',
-		esc_url( get_day_link(get_post_time('Y'), get_post_time('m'), get_post_time('j'))),
+		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() )
 	);
+	/* translators: 1: author post url, 2: Author name, 3:author name */
 	$customizable_author = sprintf( '<span><a href="%1$s" title="%2$s" >%3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-		esc_attr( sprintf( __( 'View all posts by %s', 'customizable' ), get_the_author() ) ),
+		/* translators: 1: author name,*/
+		esc_attr( sprintf( esc_html__( 'View all posts by %s', 'customizable' ), get_the_author() ) ),
 		get_the_author()
 	);
     
 
 	
 		if ( $customizable_tag_list ) {
-			$customizable_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s ', 'customizable' );
+			/* translators: 1: category name, 2: date time, 3: post author */
+			$customizable_utility_text = esc_html__( 'Posted in : %1$s  on %3$s by : %4$s ', 'customizable' );
 		} elseif ( $customizable_category_list ) {
-			$customizable_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s ', 'customizable' );
+			/* translators: 1: category name, 2: date time, 3: post author */
+			$customizable_utility_text = esc_html__( 'Posted in : %1$s  on %3$s by : %4$s ', 'customizable' );
 		} else {
-			$customizable_utility_text = __( 'Posted on : %3$s by : %4$s ', 'customizable' );
+			/* translators: 1: date time, 2: author name */
+			$customizable_utility_text = esc_html__( 'Posted on : %3$s by : %4$s ', 'customizable' );
 		}		
 	
 	printf(
@@ -395,3 +410,22 @@ function customizable_excerpt_length( $length ) {
     return (is_front_page()) ? 8 : 25;
 }
 add_filter( 'excerpt_length', 'customizable_excerpt_length', 999 );
+// retrieves the attachment ID from the file URL
+function customizable_get_image_id($image_url) {
+    global $wpdb;
+    $customizable_attachment = $wpdb->get_col($wpdb->prepare("SELECT ID FROM $wpdb->posts WHERE guid='%s';", $image_url )); 
+        return (empty($customizable_attachment))?0:$customizable_attachment[0]; 
+}
+
+add_action( 'admin_menu', 'customizable_admin_menu');
+function customizable_admin_menu( ) {
+    add_theme_page( __('Pro Feature','customizable'), __('Customizable Pro','customizable'), 'manage_options', 'customizable-pro-buynow', 'customizable_pro_buy_now', 300 ); 
+  
+}
+function customizable_pro_buy_now(){ ?>  
+  <div class="customizable_pro_version">
+  <a href="<?php echo esc_url('https://fasterthemes.com/wordpress-themes/customizablepro/'); ?>" target="_blank">
+    <img src ="<?php echo esc_url(get_template_directory_uri().'/images/customizable-pro-feature.png') ?>" width="70%" height="auto" />
+  </a>
+</div>
+<?php }
