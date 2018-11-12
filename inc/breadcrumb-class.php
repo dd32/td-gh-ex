@@ -244,7 +244,7 @@ class Breadcrumb_Trail {
 			'aria_label'          => esc_attr_x( 'Breadcrumbs', 'breadcrumbs aria label', 'archie' ),
 			'home'                => esc_html__( 'Home',                                  'archie' ),
 			'error_404'           => esc_html__( '404 Not Found',                         'archie' ),
-			'archives'            => esc_html__( 'Archieves',                              'archie' ),
+			'archives'            => esc_html__( 'Archives',                              'archie' ),
 			// Translators: %s is the search query. The HTML entities are opening and closing curly quotes.
 			'search'              => esc_html__( 'Search results for &#8220;%s&#8221;',   'archie' ),
 			// Translators: %s is the page number.
@@ -617,8 +617,8 @@ class Breadcrumb_Trail {
 			}
 		}
 
-		// If the taxonomy is hierarchiecal, list its parent terms.
-		if ( is_taxonomy_hierarchiecal( $term->taxonomy ) && $term->parent )
+		// If the taxonomy is hierarchical, list its parent terms.
+		if ( is_taxonomy_hierarchical( $term->taxonomy ) && $term->parent )
 			$this->add_term_parents( $term->parent, $term->taxonomy );
 
 		// Add the term name to the trail end.
@@ -1103,7 +1103,7 @@ class Breadcrumb_Trail {
 	}
 
 	/**
-	 * Searches for term parents of hierarchiecal taxonomies.  This function is similar to the WordPress
+	 * Searches for term parents of hierarchical taxonomies.  This function is similar to the WordPress
 	 * function get_category_parents() but handles any type of taxonomy.
 	 *
 	 * @since  1.0.0
