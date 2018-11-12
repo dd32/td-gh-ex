@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BA Tours light\n"
-"POT-Creation-Date: 2018-09-24 17:43+0300\n"
+"POT-Creation-Date: 2018-11-12 19:50+0200\n"
 "PO-Revision-Date: 2018-04-10 13:59+0300\n"
 "Last-Translator: \n"
 "Language-Team: https://ba-booking.com\n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;esc_attr_e;_x;_n;_nx;esc_html__;esc_html_e;"
@@ -98,79 +98,79 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: defines/defines.php:274
+#: defines/defines.php:264
 msgid "Primary Menu"
 msgstr ""
 
-#: defines/defines.php:434
+#: defines/defines.php:427
 msgid "Layout"
 msgstr ""
 
-#: defines/defines.php:439
+#: defines/defines.php:432
 msgid "Color scheme"
 msgstr ""
 
-#: defines/defines.php:442 includes/class-bathemos-admin.php:613
+#: defines/defines.php:435 includes/class-bathemos-admin.php:621
 msgid "Font set"
 msgstr ""
 
-#: defines/defines.php:446
+#: defines/defines.php:439
 msgid "Navigation bar"
 msgstr ""
 
-#: defines/defines.php:449 includes/class-bathemos-admin.php:437
+#: defines/defines.php:442 includes/class-bathemos-admin.php:437
 msgid "Header"
 msgstr ""
 
-#: defines/defines.php:452 includes/class-bathemos-admin.php:536
+#: defines/defines.php:445 includes/class-bathemos-admin.php:544
 msgid "Footer"
 msgstr ""
 
-#: defines/defines.php:455
+#: defines/defines.php:448
 msgid "Content area container"
 msgstr ""
 
-#: defines/defines.php:523
+#: defines/defines.php:516
 msgid "Left Sidebar"
 msgstr ""
 
-#: defines/defines.php:527
+#: defines/defines.php:520
 msgid "Right Sidebar"
 msgstr ""
 
-#: defines/defines.php:531
+#: defines/defines.php:524
 msgid "Before-Header panel"
 msgstr ""
 
-#: defines/defines.php:534
+#: defines/defines.php:527
 msgid "Header panel"
 msgstr ""
 
-#: defines/defines.php:537
+#: defines/defines.php:530
 msgid "Before-Content panel"
 msgstr ""
 
-#: defines/defines.php:540
+#: defines/defines.php:533
 msgid "Before-Footer panel"
 msgstr ""
 
-#: defines/defines.php:543
+#: defines/defines.php:536
 msgid "Footer panel"
 msgstr ""
 
-#: defines/defines.php:547
+#: defines/defines.php:540
 msgid "Footer left panel"
 msgstr ""
 
-#: defines/defines.php:550
+#: defines/defines.php:543
 msgid "Footer middle panel"
 msgstr ""
 
-#: defines/defines.php:553
+#: defines/defines.php:546
 msgid "Footer right panel"
 msgstr ""
 
-#: functions.php:197 includes/class-bathemos-admin.php:553
+#: functions.php:197 includes/class-bathemos-admin.php:561
 msgid "Copyright &copy; {year}, {sitename}"
 msgstr ""
 
@@ -200,107 +200,103 @@ msgstr ""
 msgid "Tour Code:"
 msgstr ""
 
-#: functions.php:438
-msgid "Schedule"
-msgstr ""
-
-#: functions.php:464 functions.php:1260 functions.php:1492
+#: functions.php:463 functions.php:1259 functions.php:1491
 msgid "from"
 msgstr ""
 
-#: functions.php:472
+#: functions.php:471
 msgid "Book now"
 msgstr ""
 
-#: functions.php:495
+#: functions.php:494
 msgid "Start time"
 msgstr ""
 
-#: functions.php:505
+#: functions.php:504
 msgid "Duration"
 msgstr ""
 
-#: functions.php:514
+#: functions.php:513
 msgid "Age"
 msgstr ""
 
-#: functions.php:555
+#: functions.php:554
 msgid "Age restriction"
 msgstr ""
 
-#: functions.php:558
+#: functions.php:557
 msgid "Any, 18+, 7+ years, etc."
 msgstr ""
 
-#: functions.php:559
+#: functions.php:558
 msgid "7+ years"
 msgstr ""
 
-#: functions.php:750
+#: functions.php:749
 msgid "Details"
 msgstr ""
 
-#: functions.php:762
+#: functions.php:761
 msgid "Questions & Answers"
 msgstr ""
 
-#: functions.php:783
+#: functions.php:782
 msgid "Book this tour"
 msgstr ""
 
-#: functions.php:860
+#: functions.php:859
 msgid "Date and time"
 msgstr ""
 
-#: functions.php:873
+#: functions.php:872
 msgid "Tickets"
 msgstr ""
 
-#: functions.php:873
+#: functions.php:872
 msgid "Guests"
 msgstr ""
 
-#: functions.php:876
+#: functions.php:875
 msgid "please, select date first"
 msgstr ""
 
-#: functions.php:904
+#: functions.php:903
 msgid "Select meeting point"
 msgstr ""
 
-#: functions.php:930
+#: functions.php:929
 msgid "Total:"
 msgstr ""
 
-#: functions.php:936
+#: functions.php:935
 msgid "Please fill in all the data."
 msgstr ""
 
-#: functions.php:945
+#: functions.php:944
 msgid "Book Now"
 msgstr ""
 
-#: functions.php:1265
+#: functions.php:1264
 msgid "to"
 msgstr ""
 
-#: functions.php:1695
+#: functions.php:1694
 msgid "Previous"
 msgstr ""
 
-#: functions.php:1695
+#: functions.php:1694
 msgid "Previous page"
 msgstr ""
 
-#: functions.php:1696
+#: functions.php:1695
 msgid "Next page"
 msgstr ""
 
-#: functions.php:1696
+#: functions.php:1695
 msgid "Next"
 msgstr ""
 
-#: functions.php:1697
+#: functions.php:1696
 msgid "Page"
 msgstr ""
 
@@ -361,93 +357,101 @@ msgstr ""
 msgid "Front Page"
 msgstr ""
 
-#: includes/class-bathemos-admin.php:494
+#: includes/class-bathemos-admin.php:495
+#, php-format
+msgid ""
+"To use slideshow and shortcodes like on %1$sDemo site%2$s, you need to "
+"download from theme's site and install our free plugin: %3$sBA Tours light "
+"posts%4$s."
+msgstr ""
+
+#: includes/class-bathemos-admin.php:502
 msgid "Use slideshow"
 msgstr ""
 
-#: includes/class-bathemos-admin.php:495
+#: includes/class-bathemos-admin.php:503
 msgid ""
 "If it's enabled, Slides posts will be used to get images and titles for "
 "slideshow. Otherwise, the page featured image will be displayed."
 msgstr ""
 
-#: includes/class-bathemos-admin.php:509
+#: includes/class-bathemos-admin.php:517
 msgid "Search Form"
 msgstr ""
 
-#: includes/class-bathemos-admin.php:523
+#: includes/class-bathemos-admin.php:531
 msgid "Search Results"
 msgstr ""
 
-#: includes/class-bathemos-admin.php:545
+#: includes/class-bathemos-admin.php:553
 msgid "Copyrights"
 msgstr ""
 
-#: includes/class-bathemos-admin.php:552
+#: includes/class-bathemos-admin.php:560
 msgid "Copyrights text"
 msgstr ""
 
-#: includes/class-bathemos-admin.php:575
+#: includes/class-bathemos-admin.php:583
 msgid "Layouts"
 msgstr ""
 
-#: includes/class-bathemos-admin.php:585
+#: includes/class-bathemos-admin.php:593
 #, php-format
 msgid ""
 "Default page/post layout. This options are available in %1$sBA Tours theme"
 "%2$s only."
 msgstr ""
 
-#: includes/class-bathemos-admin.php:614
+#: includes/class-bathemos-admin.php:622
 msgid "You can modify this fonts as you wish."
 msgstr ""
 
-#: includes/class-bathemos-admin.php:675
+#: includes/class-bathemos-admin.php:683
 msgid "Fonts"
 msgstr ""
 
-#: includes/class-bathemos-admin.php:690
+#: includes/class-bathemos-admin.php:698
 msgid "Colors"
 msgstr ""
 
-#: includes/class-bathemos-admin.php:700 includes/class-bathemos-admin.php:723
+#: includes/class-bathemos-admin.php:708 includes/class-bathemos-admin.php:731
 #, php-format
 msgid "This options are available in %1$sBA Tours theme%2$s only."
 msgstr ""
 
-#: includes/class-bathemos-admin.php:714
+#: includes/class-bathemos-admin.php:722
 msgid "Custom CSS"
 msgstr ""
 
-#: includes/class-bathemos-admin.php:799
+#: includes/class-bathemos-admin.php:807
 msgid "Additional select field"
 msgstr ""
 
-#: includes/class-bathemos-admin.php:800 includes/class-bathemos-admin.php:932
+#: includes/class-bathemos-admin.php:808 includes/class-bathemos-admin.php:940
 msgid "Add terms from selected taxonomy to the search form filters."
 msgstr ""
 
-#: includes/class-bathemos-admin.php:821 includes/class-bathemos-admin.php:843
+#: includes/class-bathemos-admin.php:829 includes/class-bathemos-admin.php:851
 msgid "Icons line"
 msgstr ""
 
-#: includes/class-bathemos-admin.php:822
+#: includes/class-bathemos-admin.php:830
 msgid "Show term icons in the tour preview from selected taxonomies."
 msgstr ""
 
-#: includes/class-bathemos-admin.php:844
+#: includes/class-bathemos-admin.php:852
 msgid "Show term icons in the tour page header from selected taxonomies."
 msgstr ""
 
-#: includes/class-bathemos-admin.php:865
+#: includes/class-bathemos-admin.php:873
 msgid "Taxonomies support"
 msgstr ""
 
-#: includes/class-bathemos-admin.php:866
+#: includes/class-bathemos-admin.php:874
 msgid "Assign selected taxonomies to pages"
 msgstr ""
 
-#: includes/class-bathemos-admin.php:905
+#: includes/class-bathemos-admin.php:913
 msgid "None"
 msgstr ""
 

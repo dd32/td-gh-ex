@@ -487,6 +487,14 @@ class Bathemos_Admin {
 			'desc'   => '',
 			'icon'   => 'el el-home',
 			'fields' => array(
+                array(
+					'id'          => 'front_info',
+					'type'        => 'info',
+                    'style' => 'warning',
+                    'icon'  => 'el-icon-info-sign',
+					'title'       => sprintf(__( 'To use slideshow and shortcodes like on %1$sDemo site%2$s, you need to download from theme\'s site and install our free plugin: %3$sBA Tours light posts%4$s.', 'ba-tours-light' ), '<a href="https://ba-booking.com/ba-tours-light-demo/">', '</a>', '<a href="https://ba-booking.com/ba-tours/wp-content/uploads/sites/5/2018/09/ba-tours-light-posts.zip">', '</a>'),
+					'description' => '',
+				),
 				array(
 					'id'         => 'front-header-slideshow',
 					'type'       => 'switch',

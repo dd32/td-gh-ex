@@ -56,7 +56,7 @@ class Bathemos_Page_Options {
 		
 		// Setup page options.
 		add_action( 'init', array( __CLASS__, 'set_data' ), 10, 1 );
-		add_action( 'init', array( __CLASS__, 'add_page_options_support' ), 10, 1 );
+		add_action( 'init', array( __CLASS__, 'add_page_options_support' ), 20, 1 );
 		
 		// Handle meta boxes.
 		add_action( 'add_meta_boxes', array( __CLASS__, 'add_meta_box' ), 10, 1 );
@@ -181,7 +181,7 @@ class Bathemos_Page_Options {
 			return $content;
 		}
 		
-		$options = apply_filters( 'bathemos_page_options_values', '', $post_id );
+		$options = apply_filters( 'bathemos_page_options_values', array(), $post_id );
         
 		$content = isset( $options[ $option_id ] ) ? $options[ $option_id ] : $content;
 		
@@ -215,14 +215,18 @@ class Bathemos_Page_Options {
 			'id' => '',
 			'name'=> __( 'Theme default', 'ba-tours-light' ),
 		);
+        
+        if (!empty($sets_list)){
 		
-		foreach ( $sets_list as $set_id => $set_data ) {
+		 foreach ( $sets_list as $set_id => $set_data ) {
 			
 			$options[ $set_id ] = array(
 				'id' => $set_id,
 				'name' => $set_data['meta']['name'],
 			);
-		}
+		 }
+        
+        }
 		
 		$content['layout']['options'] = $options;
 		
@@ -264,7 +268,7 @@ class Bathemos_Page_Options {
 	 */
 	static function get_page_options_values( $content = null, $post_id ) {
 		
-		$content = get_post_meta( $post_id, self::$data['settings_id'], true );		
+		$content = (array)get_post_meta( $post_id, self::$data['settings_id'], 1 );		
 		
 		return $content;
 	}
@@ -315,9 +319,9 @@ class Bathemos_Page_Options {
 	 */
 	static function show_meta_box( $post ) {
 		
-		$options_set = apply_filters( 'bathemos_page_options_set', null );
+		$options_set = apply_filters( 'bathemos_page_options_set', array() );
 		
-		$values = apply_filters( 'bathemos_page_options_values', null, $post->ID );
+		$values = apply_filters( 'bathemos_page_options_values', array(), $post->ID );
 		
 		$settings_id = self::$data['settings_id'];
 		
@@ -325,8 +329,8 @@ class Bathemos_Page_Options {
 
 		// Output settings form.
 		foreach( $options_set as $id => $field ) {
-			
-			if ( !isset( $values[ $id ] ) ) {
+		  
+      	if ( !isset( $values[ $id ] ) ) {
 				$values[ $id ] = self::$data['options_defaults'][ $id ];
 			}
 

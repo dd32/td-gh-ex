@@ -17,7 +17,7 @@
  * System defines.
  */
 define( 'BATHEMOS', __FILE__ );
-define( 'BATHEMOS_VERSION', '1.0.0' );
+define( 'BATHEMOS_VERSION', '1.0.1' );
 define( 'BATHEMOS_NAME', 'BA Tours' );
 define( 'BATHEMOS_SLUG', 'ba_tours' );
 define( 'BATHEMOS_URI', get_template_directory_uri() );
@@ -435,7 +435,6 @@ if ( ! function_exists( 'bathemos_custom_menu_item' ) ) {
                 
                 $tour_info .= '
                                 <div class="tour_info_schedule">
-								<!--	<label>' . __( 'Schedule', 'ba-tours-light' ) . '</label> -->
 									<div class="tour_info_schedule_days">
                                        ' . $week_days . '
                                     </div>

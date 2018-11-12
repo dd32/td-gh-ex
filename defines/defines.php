@@ -36,24 +36,14 @@ $data['plugins'] = array(
 		'slug'               => 'ba-book-everything',
 		'required'           => false,
 	),
-    array(
-		'name'                 => 'BA Tours light posts',
-		'slug'                 => 'ba-tours-light-posts',
-		'source'               => 'https://ba-booking.com/ba-tours/wp-content/uploads/sites/5/2018/09/ba-tours-light-posts.zip',
-		'required'             => false,
-		'version'              => '',
-		'force_activation'     => false,
-		'force_deactivation'   => false,
-		'external_url'         => '',
-	),
 	array(
 		'name'               => 'Sassy Social Share',
 		'slug'               => 'sassy-social-share',
 		'required'           => false,
 	),
     array(
-		'name'               => 'Easy Social Icons',
-		'slug'               => 'easy-social-icons',
+		'name'               => 'Social Icons',
+		'slug'               => 'social-icons',
 		'required'           => false,
 	),
     array(
@@ -114,9 +104,9 @@ $data['assets'] = array(
 	'fontawesome-admin' => array(
 		'admin' => true,
 		'type'  => 'style',
-		'loc'   => 'url',
-		'src'   => 'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
-		'ver'   => '5.2.0',
+		'loc'   => 'fontawesome',
+		'src'   => 'all.min.css',
+		'ver'   => '5.5.0',
 		'media' => 'all',
 	),
 	'font1-admin' => array(
@@ -209,9 +199,9 @@ $data['assets'] = array(
 	 */
 	'fontawesome' => array(
 		'type'  => 'style',
-		'loc'   => 'url',
-		'src'   => 'https://use.fontawesome.com/releases/v5.2.0/css/all.css',
-		'ver'   => '5.2.0',
+		'loc'   => 'fontawesome',
+		'src'   => 'all.min.css',
+		'ver'   => '5.5.0',
 		'media' => 'all',
 	),
 	'dashicons' => array(
@@ -371,6 +361,9 @@ $data['slugs'] = array(
 			),
             'slick' => array(
 				'slug' => '/slick',
+			),
+            'fontawesome' => array(
+				'slug' => '/fontawesome-free/css',
 			),
 		),
 	),
