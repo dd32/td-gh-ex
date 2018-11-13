@@ -7,7 +7,7 @@
 function pinnacle_scripts() {
 	global $pinnacle;
 
-  	wp_enqueue_style('pinnacle_theme', get_template_directory_uri() . '/assets/css/pinnacle.css', false, '167');
+  	wp_enqueue_style('pinnacle_theme', get_template_directory_uri() . '/assets/css/pinnacle.css', false, '168');
   	if(isset($pinnacle['skin_stylesheet']) && !empty($pinnacle['skin_stylesheet'])) {
   		$skin = $pinnacle['skin_stylesheet'];
   	} else {

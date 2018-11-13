@@ -32,6 +32,9 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.6.8 | 13th November 2018 = 
+* Fix: Woocommerce extra a tag.
+
 = 1.6.7 | 1st November 2018 = 
 * Update: more gutenberg stuff.
 * Update: Woocommerce update.
