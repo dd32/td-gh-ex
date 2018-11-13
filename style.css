@@ -4,7 +4,7 @@ Theme URI: http://creativthemes.com/downloads/best-learner-free/
 Author: Creativ Themes
 Author URI: http://creativthemes.com/
 Description: Best Learner is a responsive, clean and modern Education WordPress Theme for any School website, College website, Universities and other Educational Institutions. It is suitable for Education Course related projects and it is SEO friendly, speed optimized, and translation ready. This theme comes with lots of features such as column layout options for front page sections, excerpt length options, different header images options for archive pages and so on.
-Version: 1.1
+Version: 1.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: best-learner
@@ -4071,12 +4071,12 @@ body.search.left-sidebar .blog-posts-wrapper .col-3 article .post-item .entry-co
         height: auto !important;
     }
     .main-navigation ul li:hover > ul {
-        left: 0;
-        right: auto;
+        left: auto;
+        right: 0;
     }
     .main-navigation ul ul li:hover > ul {
-        left: 100%;
-        right: auto;
+        left: auto;
+        right: 100%;
     }
     .main-navigation ul ul li:hover > a {
         background-color: #3f45f4;

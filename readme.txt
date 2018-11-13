@@ -5,7 +5,7 @@ Tags: translation-ready, custom-background, theme-options, custom-menu, threaded
 
 Requires at least: 4.7
 Tested up to: 4.9.8
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -66,6 +66,9 @@ Unless otherwise specified, all the theme images are created by us and licensed 
 
 == Changelog ==
 
+= 1.2 - Nov 13, 2018 =
+* Updated submenu alignment
+
 = 1.1 - Nov 1, 2018 =
 * Added tgm-plugin and updated readme
 
@@ -73,6 +76,9 @@ Unless otherwise specified, all the theme images are created by us and licensed 
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.2 =
+* Description updated in readme.txt and style.css
 
 = 1.1 =
 * Description updated in readme.txt and style. Recommended contact form 7 plugin for contact forms.
