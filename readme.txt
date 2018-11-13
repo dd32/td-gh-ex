@@ -41,6 +41,12 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.68 (2018-11-13)
+-------------------------
+- Fixed aligncenter issue in Gutenberg
+- Fixed alignment of the last item in WP Block Gallery
+- Updated theme description
+
 Version 1.67 (2018-09-08)
 -------------------------
 - Fixed four _x() translateable string without instructions
