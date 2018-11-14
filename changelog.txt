@@ -1,6 +1,12 @@
 Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/iconic-one/ for latest version
 
 
+-------------- 14 November 2018 ----------------
+
+14/11/2018  - Version 1.9.6
+
+- New default Table style added
+
 -------------- 17 August 2018 ----------------
 
 17/08/2018  - Version 1.9.5
