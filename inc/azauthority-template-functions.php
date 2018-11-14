@@ -19,12 +19,15 @@ if ( ! function_exists( 'azauthority_menu_toggle' ) ) {
 	 * @return void
 	 */
 	function azauthority_menu_toggle() {
-		?>
-			<div class="header-left">
-				<div class="menu-toggle"><i class="fa fa-bars"></i></div>
-			</div>
-		<?php
+		if ( has_nav_menu( 'primary' ) ) {
+			?>
+				<div class="header-left">
+					<div class="menu-toggle"><i class="fa fa-bars"></i></div>
+				</div>
+			<?php
+		}
 	}
+	
 }
 
 if ( ! function_exists( 'azauthority_site_branding' ) ) {

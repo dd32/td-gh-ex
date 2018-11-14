@@ -1,11 +1,17 @@
 === AZ Authority ===
 
-AZ Authority Theme by The AZ Theme, https://theaztheme.com/
+Contributors: The AZ Theme
+Tags: news, theme-options, blog, two-columns, left-sidebar, right-sidebar, custom-colors, custom-menu, custom-logo, custom-background, featured-images, footer-widgets, theme-options, threaded-comments
 
-== Tags ==
-news, theme-options, blog, two-columns, left-sidebar, right-sidebar, custom-colors, custom-menu, custom-logo, custom-background, featured-images, footer-widgets, theme-options, threaded-comments
+Requires at least: 4.8
+Tested up to: 4.9.8
+Stable tag: 1.0.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-== AZ Authority ==
+AZ Authority is a fast, lightweight, mobile responsive WordPress theme built with speed, SEO Optimize.
+
+== Description ==
 
 AZ Authority is a fast, lightweight, mobile responsive WordPress theme built with speed, SEO Optimize. AZ Authority helps your authority site increase traffic, engage your visitors and Double Up earning.
 
@@ -18,7 +24,7 @@ AZ Authority is a fast, lightweight, mobile responsive WordPress theme built wit
 
 == Copyright ==
 
-AZ Authority WordPress Theme, Copyright 2016 WordPress.org
+AZ Authority WordPress Theme, Copyright 2018 The AZ Theme
 AZ Authority is distributed under the terms of the GNU GPL
 
 This program is free software: you can redistribute it and/or modify
@@ -39,12 +45,12 @@ Source Sans Pro by Paul D. Hunt, https://fonts.google.com/specimen/Source+Sans+P
 License: Open Font License
 License URI: http://scripts.sil.org/cms/scripts/page.php?site_id=nrsi&id=OFL_web
 
-* Font Awesome
-Font Awesome 4.7.0
-Copyright 2012 Dave Gandy
+* Line Awesome
+Line Awesome 1.1.0 by @icons_8
 Font License: SIL OFL 1.1
 Code License: MIT License
-http://fontawesome.io/license/
+https://icons8.com/good-boy-license/
+
 
 * Modular Scale
 Modular Scale by Scott Kellum (@scottkellum), Adam Stacoviak (@adamstac) and Mason Wendell (@codingdesigner) , https://github.com/modularscale/modularscale-sass
@@ -80,7 +86,13 @@ License: CC0 Creative Commons
 License URL: https://pixabay.com/en/service/terms/#usage
 
 == Changelog ==
-= 1.1.1 - 2018-08-29 =
+= 1.1.3 - 2018-11-14 =
+* Updated readme.txt file.
+* Added missing css file(line-awesome)
+* Removed unusing files.
+* Fixed Hamburger when missing menu items.
+
+= 1.1.2 - 2018-08-29 =
 * Added - Theme Tags
 * Fix - Remove Admin Style(empty file)
 * Fix - Change screenshot.
