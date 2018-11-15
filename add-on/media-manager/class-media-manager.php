@@ -208,6 +208,12 @@ class Media_Manager {
 	 */
 	public function deferred_media_markup( $media ) {
 		if ( $media ) {
+
+			// Return if media type is not an iframe.
+			if ( false === strpos( $media, 'iframe' ) ) {
+				return $media;
+			}
+
 			/*
 			 * In the rare case that DOMDocument is not available, we will return media as it is.
 			 */
@@ -224,13 +230,15 @@ class Media_Manager {
 				) );
 
 				$body  = $doc->getElementsByTagName( 'body' )->item( 0 );
-				$frame = $body->getElementsByTagName( 'iframe' )->item( 0 );
+				$frame = $body->getElementsByTagName( 'iframe' );
 
-				if ( ! $frame ) {
+				// Return original media, if there is no iframe in it.
+				if ( 0 === $frame->length ) {
 					return $media;
 				}
 
-				$url = $frame->getAttribute( 'src' );
+				$frame = $frame->item( 0 );
+				$url   = $frame->getAttribute( 'src' );
 				if ( $url ) {
 					$frame->removeAttribute( 'src' );
 					// Escape url and preserve special charaters (if any).

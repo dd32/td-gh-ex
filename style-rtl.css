@@ -3,7 +3,7 @@ Theme Name: Aamla
 Theme URI: http://www.vedathemes.com/
 Author: Vedathemes
 Description: Aamla is a feature rich, Gutenberg friendly, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla helps you to build your pages even without pagebuilders and make your audios and videos stand out. It is compatible with gutenberg, woocommerce and many other plugins. Aamla is written with clean code and the most current HTML5 conventions. Aamla can be used as a solid base to build beautiful and functional websites.
-Version: 1.1
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aamla
@@ -213,12 +213,12 @@ template {
 /* Alignment */
 .alignleft {
 	float: right;
-	margin: 0.875rem 0 0.875rem 1.75rem;
+	margin: 0.4375rem 0 0.875rem 1.75rem;
 }
 
 .alignright {
 	float: left;
-	margin: 0.875rem 1.75rem 0.875rem 0;
+	margin: 0.4375rem 1.75rem 0.875rem 0;
 }
 
 .aligncenter {
@@ -694,7 +694,7 @@ code {
 }
 
 /* Blockquote */
-blockquote:not(.wp-block-pullquote) {
+blockquote {
 	font-size: 1.125rem;
 	line-height: 1.55556;
 	position: relative;
@@ -705,15 +705,15 @@ blockquote:not(.wp-block-pullquote) {
 	color: #363636;
 }
 
-blockquote:not(.wp-block-pullquote) > p {
+blockquote > p {
 	margin-bottom: 0.875rem;
 }
 
-blockquote:not(.wp-block-pullquote) > p:last-child {
+blockquote > p:last-child {
 	margin-bottom: 0;
 }
 
-blockquote:not(.wp-block-pullquote) cite {
+blockquote cite {
 	font-size: 0.8rem;
 	font-style: normal;
 	line-height: 2.1875;
@@ -722,7 +722,7 @@ blockquote:not(.wp-block-pullquote) cite {
 	color: #757575;
 }
 
-blockquote:not(.wp-block-pullquote):before {
+blockquote:before {
 	font-family: "georgia";
 	font-size: 50px;
 	line-height: 1;
@@ -734,7 +734,16 @@ blockquote:not(.wp-block-pullquote):before {
 	color: #363636;
 }
 
+.wp-block-pullquote {
+	padding: 0;
+	border-top-width: 0;
+	border-bottom-width: 0;
+}
+
+.wp-block-pullquote blockquote,
 blockquote.wp-block-pullquote {
+	margin-left: 0;
+	margin-bottom: 0;
 	padding: 3em 0;
 	text-align: center;
 	color: #363636;
@@ -742,11 +751,13 @@ blockquote.wp-block-pullquote {
 	border-bottom: 4px solid currentColor;
 }
 
+.wp-block-pullquote blockquote > p,
 blockquote.wp-block-pullquote > p {
 	font-size: 1.125rem;
 	line-height: 1.55556;
 }
 
+.wp-block-pullquote blockquote cite,
 blockquote.wp-block-pullquote cite {
 	font-size: 0.8rem;
 	font-style: normal;
@@ -754,6 +765,11 @@ blockquote.wp-block-pullquote cite {
 	display: block;
 	margin-top: 0.4375rem;
 	color: #757575;
+}
+
+.wp-block-pullquote blockquote:before,
+blockquote.wp-block-pullquote:before {
+	content: none;
 }
 
 /* Table */

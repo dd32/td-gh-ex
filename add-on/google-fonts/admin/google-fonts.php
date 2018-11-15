@@ -167,6 +167,12 @@ function aamla_google_sans_fonts() {
 				'700italic',
 			],
 		],
+		'francois-one'               => [
+			'family'   => 'Francois One',
+			'variants' => [
+				'400',
+			],
+		],
 		'noto-sans'                  => [
 			'family'   => 'Noto Sans',
 			'variants' => [
