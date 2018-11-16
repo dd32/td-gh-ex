@@ -7,8 +7,6 @@
          
         <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-
-
 		<div class="postmetadata"> 
 
 			<?php the_category(' '); ?>
@@ -47,30 +45,23 @@
 		</div>
 
 
-
-		<div class="entry">   
+			<div class="entry">   
                 <?php the_post_thumbnail(); ?>
                 <?php the_content(); ?>
-
+			</div>
+			
 		<div class="pagenumber">  
 		<?php wp_link_pages(); ?> 
 		</div>
 
-               
-   
-
-	</div>
-
         </div>
 <?php endwhile; ?>
-         
-
          
         <?php endif; ?>
 
      <div class="navigation">
         <?php posts_nav_link(); ?> 
-        </div>
+	</div>
 
     </div>
 

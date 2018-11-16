@@ -2,70 +2,50 @@
 
 <div id="content">
 
-<div class="post">
 
-	<h2 class="entry"><?php _e('Search result','redesign'); ?></h2>
+	<div id="cat-description"><h1><?php _e('Search results','redesign'); ?></h1></div>
 
- <?php get_template_part( 'searchform'); ?>
+	<?php get_template_part( 'searchform'); ?>
 
 <?php if (have_posts()) : while (have_posts()) : the_post(); ?>
 
-		<div class="postmetadata"> 
+        <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-			<?php the_category(' '); ?>
+		<div class="entry">
 
-			<?php
-			$before = '';
-			$seperator = ''; // blank instead of comma
-			$after = '';
-
-			the_tags( $before, $seperator, $after );
-			?>
-
-		</div>
-			
 		<a href="<?php the_permalink(); ?>"><h1 class="entry-title"><?php the_title(); ?></h1></a>
 
 		<div class="postmetadata2"> 
+			<?php the_category( ' ' ); ?>
+			<?php the_tags( ' ' ); ?>
 
 			<span class="date updated">
-			<a href="<?php the_permalink(); ?>">
+			<a href="<?php the_permalink( ' ' ); ?>">
 			<?php the_time( get_option('date_format') ); ?>
 			</a>
 			</span>
-			
-			<span class="vcard author">	
- 			<span class="fn"><?php the_author_posts_link(); ?></span>
-			</span>
 
-
-			<?php
-			if ( comments_open() ) :
-  			comments_popup_link();
-			endif;
-			?>
-			
+			<?php comments_popup_link(); ?>
 		</div>
 
-<?php the_excerpt(); ?>
+		<?php the_excerpt(); ?>
+
+		</div><!--Ends entry-->
+
+		</div><!--Ends post-->
+
+
 <?php endwhile; else: ?>
-	
-	<div class="entry">
-		<?php _e('Try again, no articles matched your criteria.','redesign'); ?>
-	</div>
+
+<div class="mid-title"><?php _e('Try again, no articles matched your criteria.','redesign'); ?></div>
 
 <?php endif; ?>
-
-
-
-
-</div>
 
     	<div class="navigation">
         <?php posts_nav_link(); ?>
     	</div>
 
-</div>
+</div><!--Ends content-->
 
-<?php get_sidebar(); ?>
+<?php get_template_part( 'sidebar-post'); ?>
 <?php get_footer(); ?>

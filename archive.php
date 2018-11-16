@@ -1,6 +1,8 @@
 <?php get_header(); ?>
  
-    <div id="content">
+<div id="content">
+
+<div id="cat-description">
 
 <!--Archive label-->
 
@@ -32,11 +34,13 @@
 
       <?php } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
 
-	<h2><?php _e('Archives','redesign'); ?></h2>
-		
-
+	<h2><?php _e('News archives:','redesign'); ?></h2>
 
     <?php } ?>
+
+
+<?php echo category_description(); ?>
+</div>
 
 
 <!--post-->
@@ -47,7 +51,7 @@
 	<div class="post" id="post-<?php the_ID(); ?>">
 
 
-
+		
 		<div class="postmetadata"> 
 
 			<?php the_category(' '); ?>
@@ -61,9 +65,9 @@
 			?>
 
 		</div>
-			
-		<a href="<?php the_permalink(); ?>"><h1 class="entry-title"><?php the_title(); ?></h1></a>
 
+			<a href="<?php the_permalink(); ?>"><h1 class="entry-title"><?php the_title(); ?></h1></a>
+		
 		<div class="postmetadata2"> 
 
 			<span class="date updated">
@@ -84,20 +88,23 @@
 			?>
 			
 		</div>
-      
-		<div class="entry">
-        	<?php the_content(); ?>
-		</div>
 		
+			<div class="entry">
+				<?php the_post_thumbnail(); ?>
+                <?php the_content(); ?>
+			</div><!--Ends entry-->
+
 		<div class="pagenumber"><?php wp_link_pages(); ?></div>
 
-  		</div>
+</div><!--end post-->
 
 	<?php endwhile; endif; ?>
 
+<?php get_template_part( 'content', 'none' ); ?>
+
     	<div class="navigation"><?php posts_nav_link(); ?></div>
  
-	</div>
+	</div><!--end content-->
 
 <?php get_template_part( 'sidebar-post'); ?>
 <?php get_footer(); ?>

@@ -101,7 +101,7 @@ function redesign_register_sidebars() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Inner page', 'redesign' ),
+		'name' => __( 'Post sidebar', 'redesign' ),
 		'id' => __( 'sidebar-2', 'redesign' ),
 		'description' => __( 'Sidebar widget area', 'redesign' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
@@ -111,9 +111,9 @@ function redesign_register_sidebars() {
 	) );
 
 	register_sidebar( array(
-		'name' => __( 'Inner post sidebar', 'redesign' ),
+		'name' => __( 'Page sidebar', 'redesign' ),
 		'id' => __( 'sidebar-3', 'redesign' ),
-		'description' => __( 'Sidebar widget area on single post', 'redesign' ),
+		'description' => __( 'Sidebar widget area', 'redesign' ),
 		'before_widget' => '<div id="%1$s" class="widget %2$s">',
 		'after_widget' => '</div>',
 		'before_title' => '<h2 class="widget-title">',

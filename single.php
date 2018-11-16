@@ -49,21 +49,11 @@
 			
 		<div class="pagenumber"><?php wp_link_pages(); ?></div>
 
-	<!--<div class="rss"> 
-    	<a href="<?php bloginfo('rss2_url'); ?>">News RSS</a>, 
-	<a href="<?php bloginfo('comments_rss2_url'); ?>">Comments RSS</a>
-	</div>-->
-
-
-
-<?php endwhile; ?>
+	<?php endwhile; ?>
      
-<div class="comments-template"><?php comments_template(); ?>
-<?php paginate_comments_links(); ?> 
-</div>
-
-
-
+		<div class="comments-template"><?php comments_template(); ?>
+			<?php paginate_comments_links(); ?> 
+		</div>
 
 	</div><!--ends post-->
 
