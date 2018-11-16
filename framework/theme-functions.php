@@ -253,7 +253,6 @@ function adviso_load_fonts() {
 add_action( 'wp_enqueue_scripts', 'adviso_load_fonts', 10 );
 
 
-
 /*
 ** Load WooCommerce Compatibility FIle
 */

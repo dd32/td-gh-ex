@@ -2,8 +2,8 @@
 
 **Contributors:** (inkhive)  
 **Requires at least:** WordPress 4.4  
-**Tested up to:** WordPress 4.9.7
-**Version:** 0.95
+**Tested up to:** WordPress 4.9.8
+**Version:** 0.96
 **License:** GPL v3  
 **License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
 **Tags:** custom-background, two-columns, one-column, custom-colors, flexible-header, right-sidebar, grid-layout, custom-menu, sticky-post, theme-options, threaded-comments, translation-ready, featured-images, full-width-template, custom-header, footer-widgets, e-commerce
@@ -49,12 +49,8 @@ This theme is 100% GPL. And any external resources used and bundled with the the
 7. BigSlide Menu
     - MIT License
     - https://github.com/ascott1/bigSlide.js/blob/master/LICENSE-MIT	
-    
-8. Underscores Starter Theme
-	- GPL
-	- https://underscores.me/
 	
-9. Maddison Designs Custom Controls
+8. Maddison Designs Custom Controls
 	- GPL v2 or later
 	- https://github.com/maddisondesigns/customizer-custom-controls
      
@@ -94,3 +90,6 @@ Source: https://pixabay.com/en/service/terms/
 - Version 0.95
   
   * Third Review Changes
+  
+- Version 0.96
+  * Fourth Review Changes

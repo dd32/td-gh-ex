@@ -65,6 +65,9 @@ if ( ! function_exists( 'adviso_setup' ) ) :
             'default-color' => 'ffffff',
             'default-image' => '',
         ) ) );
+        
+        // Add Gutenberg Wide Image Support
+        add_theme_support('align-wide');
 
         // Add theme support for selective refresh for widgets.
         add_theme_support( 'customize-selective-refresh-widgets' );

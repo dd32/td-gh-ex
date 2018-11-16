@@ -3,6 +3,7 @@
 
 <nav id="menu" class="panel" role="navigation">
     <?php
-    // Get the Appropriate Walker First.
-    wp_nav_menu( array( 'theme_location' => 'mobile', 'menu_class'	=> 'mdl-list', 'walker'	=> new Adviso_Mobile_Menu ) ); ?>
+    // Get the Appropriate Walker First
+    $walker	=	has_nav_menu('mobile') ? new Adviso_Mobile_Menu : '';
+		wp_nav_menu( array( 'theme_location' => 'mobile', 'menu_class'	=> 'mdl-list', 'walker'	=> $walker ) ); ?>
 </nav><!-- #site-navigation -->
