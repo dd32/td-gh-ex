@@ -45,7 +45,7 @@ function adney_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => esc_html__( 'Primary', 'adney' ),
-		'footer' => esc_html__( 'Footer', 'adney' ),
+		'footer'  => esc_html__( 'Footer', 'adney' ),
 	) );
 
 	/*
@@ -53,9 +53,6 @@ function adney_setup() {
 	 * to output valid HTML5.
 	 */
 	add_theme_support( 'html5', array(
-		'search-form',
-		'comment-form',
-		'comment-list',
 		'gallery',
 		'caption',
 	) );
@@ -151,6 +148,10 @@ add_action( 'widgets_init', 'adney_widgets_init' );
  */
 function adney_scripts() {
 
+	wp_enqueue_style( 'adney-google-fonts-montserrat', '//fonts.googleapis.com/css?family=Montserrat:400,700', false );
+
+	wp_enqueue_style( 'adney-google-fonts-ubuntu', '//fonts.googleapis.com/css?family=Ubuntu:400,300,500,700', false );
+
 	wp_enqueue_style( 'animate', get_template_directory_uri() . '/assets/css/animate.css', array(),'','all');
 
 	wp_enqueue_style( 'animsition', get_template_directory_uri() . '/assets/css/animsition.min.css', array(),'','all');
@@ -165,15 +166,15 @@ function adney_scripts() {
 
 	wp_enqueue_style( 'adney-red', get_template_directory_uri() . '/assets/css/red.css', array(),'','all');
 
-	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '', true );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'), '', true );
 
-	wp_enqueue_script( 'isotope-js', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array('jquery'), '', true );
+	wp_enqueue_script( 'isotope', get_template_directory_uri() . '/assets/js/isotope.pkgd.min.js', array('jquery'), '', true );
 
-	wp_enqueue_script( 'flexslider-js', get_template_directory_uri() . '/assets/js/jquery.flexslider.js', array('jquery'), '', true );
+	wp_enqueue_script( 'flexslider', get_template_directory_uri() . '/assets/js/jquery.flexslider.js', array('jquery'), '', true );
 
-	wp_enqueue_script( 'animsition-js', get_template_directory_uri() . '/assets/js/jquery.animsition.min.js', array('jquery'), '', true );
+	wp_enqueue_script( 'animsition', get_template_directory_uri() . '/assets/js/jquery.animsition.min.js', array('jquery'), '', true );
 
-	wp_enqueue_script( 'wow-js', get_template_directory_uri() . '/assets/js/wow.min.js', array('jquery'), '', true );
+	wp_enqueue_script( 'wow', get_template_directory_uri() . '/assets/js/wow.min.js', array('jquery'), '', true );
 
 	wp_enqueue_script( 'adney-main-js', get_template_directory_uri() . '/assets/js/main.js', array('jquery'), '', true );
 

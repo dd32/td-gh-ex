@@ -66,7 +66,7 @@
 	</header><!-- #masthead -->
 
 	<?php
-
+		$url = '';
 		if(is_home() && is_front_page()) {
 			if( get_header_image() ){
 				$url = get_header_image();
@@ -117,7 +117,7 @@
 							if(has_post_thumbnail()){
 								the_post_thumbnail();
 							}else{
-								echo '<img class="slide" src="'.get_template_directory_uri().'/assets/img/no-image.png" alt="'.get_the_title().'">';
+								echo '<img class="slide" src="'.get_template_directory_uri().'/assets/img/no-image.png" alt="'. esc_attr( get_the_title() ).'">';
 							}
 							?>
 							<div class="fill_overlay">

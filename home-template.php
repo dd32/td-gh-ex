@@ -34,9 +34,8 @@ if(have_posts()){
 
 <!-- PORTFOLIO -->
 <?php  if(get_theme_mod('display_portfolio', true)){
-    $portfolio_title = (get_option('portfolio_title'))?sanitize_text_field(get_option('portfolio_title')):'';
-    $portfolio_desc = (get_option('portfolio_desc'))?esc_textarea(get_option('portfolio_desc')):'';
-
+    $portfolio_title = esc_attr( get_theme_mod( 'portfolio_title' , '' ) );
+    $portfolio_desc  = wp_kses_post( get_theme_mod( 'portfolio_desc' , '' ) );
     ?>
     <section class="portfolio">
         <div class="container">
@@ -63,9 +62,8 @@ if(have_posts()){
 
 <!-- TEAM -->
 <?php  if(get_theme_mod('display_team',true)){
-    $team_title = (get_option('team_title'))?sanitize_text_field(get_option('team_title')):'';
-    $team_desc = (get_option('team_desc'))?esc_textarea(get_option('team_desc')):'';
-
+    $team_title = esc_attr( get_theme_mod( 'team_title' , '' ) );
+    $team_desc  = wp_kses_post( get_theme_mod( 'team_desc' , '' ) );
     ?>
     <section>
         <div class="container">
