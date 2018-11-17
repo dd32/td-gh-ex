@@ -3,7 +3,7 @@ Contributors: ThemesPride
 Tags: one-column, two-columns, right-sidebar, left-sidebar, three-columns, four-columns, grid-layout, custom-colors, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, portfolio
 Requires at least: 4.7
 Tested up to: 4.9.8
-Stable tag: 0.6
+Stable tag: 0.6.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -12,6 +12,13 @@ Adventure travelling is a bold, powerful, attractive and multipurpose travel Wor
 == Description ==
 
 Adventure travelling is a bold, powerful, attractive and multipurpose travel WordPress theme for travel agency, tour planners, tour and tourist guides, travel and adventure blogs, travel magazines, tourist destination, tourist hotels and airline agencies and all the people related to tourism industry in one way or the other. The theme has an inviting and appealing design with banners and sliders adding to its beauty. Built on Bootstrap framework, it has a strong foundation with easy usage solution. Its user-friendly interface and well-structured layout lead to smooth navigation. It has a fluid layout which is responsive to varying screen sizes. To help serve in local languages, it is made translation ready. It is cross-browser compatible, SEO-friendly and lightweight for speedy loading. Made from scratch, it is bug-free to conform to the WordPress standards. Customization is a powerful tool provided by this theme to ensure good control over the site. Social media icons are linked with the theme to easily reach people.
+
+Installation
+
+1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+2. Type in Adventure Travelling in the search form and press the 'Enter' key on your keyboard.
+3. Click on the 'Activate' button to use your new theme right away.
+4. Go to http://themespride.com/docs/adventure-traveling-lite for a guide on how to customize this theme.
 
 == Changelog ==
 
@@ -38,6 +45,10 @@ Adventure travelling is a bold, powerful, attractive and multipurpose travel Wor
 
 = 0.6 =
 	. Changed the WordPress globals in the slider.php file.
+
+= 0.6.1 =
+	. Added the theme installation process in readme.txt file.
+	. Resolved load_theme_textdomain in function.php 
 
 == Resources ==
 

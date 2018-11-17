@@ -8,7 +8,7 @@
 
 function adventure_travelling_setup() {
 
-	load_theme_textdomain( 'adventure-travelling' );
+	load_theme_textdomain( 'adventure-travelling', get_template_directory() . '/languages' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'title-tag' );
