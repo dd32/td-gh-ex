@@ -87,7 +87,17 @@ function maxflat_setup(){
 
 
 
-/**
+    if( function_exists( 'has_blocks' ) ){
+
+        wp_register_style( 'smartlib_gutenberg',  get_template_directory_uri() . '/css/gutenberg.css', array( 'wp-block-library') );
+        wp_enqueue_style( 'smartlib_gutenberg' );
+
+    }
+
+
+
+
+    /**
  * Sets up the content width value based on the theme's design and stylesheet.
  */
 
