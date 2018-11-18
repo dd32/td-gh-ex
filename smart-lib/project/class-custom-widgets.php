@@ -711,7 +711,7 @@ class Smart_Widget_Recent_Galleries extends Smart_Core_Widget{
 
 
 	function __construct() {
-		$widget_ops = array( 'classname' => 'harmonux_gallery_recent_widget', 'description' => __( "Displays last posts from the gallery post format", 'smartlib' ) );
+		$widget_ops = array( 'classname' => 'harmonux_gallery_recent_widget', 'description' => __( "Displays last posts from the gallery post format", 'harmonux' ) );
 		parent::__construct( 'smartlib-recent-gallery-widget', __( ucfirst('harmonux') .'  Recent Galleries', 'harmonux'), $widget_ops );
 		$this->alt_option_name = 'smartlib-gallery_recent_widget';
 

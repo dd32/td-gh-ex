@@ -193,26 +193,26 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
             // Load class strings.
             $this->strings = array(
-                'page_title'                     => __( 'Install Required Plugins', 'tgmpa' ),
-                'menu_title'                     => __( 'Install Plugins', 'tgmpa' ),
-                'installing'                     => __( 'Installing Plugin: %s', 'tgmpa' ),
-                'oops'                           => __( 'Something went wrong.', 'tgmpa' ),
-                'notice_can_install_required'    => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'tgmpa' ),
-                'notice_can_install_recommended' => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'tgmpa' ),
-                'notice_cannot_install'          => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'tgmpa' ),
-                'notice_can_activate_required'   => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'tgmpa' ),
-                'notice_can_activate_recommended'=> _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'tgmpa' ),
-                'notice_cannot_activate'         => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'tgmpa' ),
-                'notice_ask_to_update'           => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'tgmpa' ),
-                'notice_cannot_update'           => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'tgmpa' ),
-                'install_link'                   => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'tgmpa' ),
-                'activate_link'                  => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'tgmpa' ),
-                'return'                         => __( 'Return to Required Plugins Installer', 'tgmpa' ),
-                'dashboard'                      => __( 'Return to the dashboard', 'tgmpa' ),
-                'plugin_activated'               => __( 'Plugin activated successfully.', 'tgmpa' ),
-                'activated_successfully'         => __( 'The following plugin was activated successfully:', 'tgmpa' ),
-                'complete'                       => __( 'All plugins installed and activated successfully. %1$s', 'tgmpa' ),
-                'dismiss'                        => __( 'Dismiss this notice', 'tgmpa' ),
+                'page_title'                     => __( 'Install Required Plugins', 'harmonux' ),
+                'menu_title'                     => __( 'Install Plugins', 'harmonux' ),
+                'installing'                     => __( 'Installing Plugin: %s', 'harmonux' ),
+                'oops'                           => __( 'Something went wrong.', 'harmonux' ),
+                'notice_can_install_required'    => _n_noop( 'This theme requires the following plugin: %1$s.', 'This theme requires the following plugins: %1$s.', 'harmonux' ),
+                'notice_can_install_recommended' => _n_noop( 'This theme recommends the following plugin: %1$s.', 'This theme recommends the following plugins: %1$s.', 'harmonux' ),
+                'notice_cannot_install'          => _n_noop( 'Sorry, but you do not have the correct permissions to install the %s plugin. Contact the administrator of this site for help on getting the plugin installed.', 'Sorry, but you do not have the correct permissions to install the %s plugins. Contact the administrator of this site for help on getting the plugins installed.', 'harmonux' ),
+                'notice_can_activate_required'   => _n_noop( 'The following required plugin is currently inactive: %1$s.', 'The following required plugins are currently inactive: %1$s.', 'harmonux' ),
+                'notice_can_activate_recommended'=> _n_noop( 'The following recommended plugin is currently inactive: %1$s.', 'The following recommended plugins are currently inactive: %1$s.', 'harmonux' ),
+                'notice_cannot_activate'         => _n_noop( 'Sorry, but you do not have the correct permissions to activate the %s plugin. Contact the administrator of this site for help on getting the plugin activated.', 'Sorry, but you do not have the correct permissions to activate the %s plugins. Contact the administrator of this site for help on getting the plugins activated.', 'harmonux' ),
+                'notice_ask_to_update'           => _n_noop( 'The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s.', 'The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s.', 'harmonux' ),
+                'notice_cannot_update'           => _n_noop( 'Sorry, but you do not have the correct permissions to update the %s plugin. Contact the administrator of this site for help on getting the plugin updated.', 'Sorry, but you do not have the correct permissions to update the %s plugins. Contact the administrator of this site for help on getting the plugins updated.', 'harmonux' ),
+                'install_link'                   => _n_noop( 'Begin installing plugin', 'Begin installing plugins', 'harmonux' ),
+                'activate_link'                  => _n_noop( 'Begin activating plugin', 'Begin activating plugins', 'harmonux' ),
+                'return'                         => __( 'Return to Required Plugins Installer', 'harmonux' ),
+                'dashboard'                      => __( 'Return to the dashboard', 'harmonux' ),
+                'plugin_activated'               => __( 'Plugin activated successfully.', 'harmonux' ),
+                'activated_successfully'         => __( 'The following plugin was activated successfully:', 'harmonux' ),
+                'complete'                       => __( 'All plugins installed and activated successfully. %1$s', 'harmonux' ),
+                'dismiss'                        => __( 'Dismiss this notice', 'harmonux' ),
             );
 
             do_action( 'tgmpa_register' );
@@ -539,7 +539,7 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
 
                 // All plugins are active, so we display the complete string and hide the plugin menu.
                 if ( empty( $complete ) ) {
-                    echo '<p>' .  sprintf( $this->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', 'tgmpa' ) . '">' . __( 'Return to the Dashboard', 'tgmpa' ) . '</a>' ) . '</p>';
+                    echo '<p>' .  sprintf( $this->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', 'harmonux' ) . '">' . __( 'Return to the Dashboard', 'harmonux' ) . '</a>' ) . '</p>';
                     echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
                 }
 
@@ -727,12 +727,12 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
                     $last_plugin = array_pop( $plugin_groups ); // Pop off last name to prep for readability.
                     $imploded    = empty( $plugin_groups ) ? '<em>' . $last_plugin . '</em>' : '<em>' . ( implode( ', ', $plugin_groups ) . '</em> and <em>' . $last_plugin . '</em>' );
 
-                    $rendered .= '<p>' . sprintf( translate_nooped_plural( $this->strings[$type], $count, 'tgmpa' ), $imploded, $count ) . '</p>';
+                    $rendered .= '<p>' . sprintf( translate_nooped_plural( $this->strings[$type], $count, 'harmonux' ), $imploded, $count ) . '</p>';
                 }
 
                 // Setup variables to determine if action links are needed.
-                $show_install_link  = $install_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( 'themes.php' ) ) . '">' . translate_nooped_plural( $this->strings['install_link'], $install_link_count, 'tgmpa' ) . '</a>' : '';
-                $show_activate_link = $activate_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( 'themes.php' ) ) . '">' . translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, 'tgmpa' ) . '</a>'  : '';
+                $show_install_link  = $install_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( 'themes.php' ) ) . '">' . translate_nooped_plural( $this->strings['install_link'], $install_link_count, 'harmonux' ) . '</a>' : '';
+                $show_activate_link = $activate_link ? '<a href="' . add_query_arg( 'page', $this->menu, admin_url( 'themes.php' ) ) . '">' . translate_nooped_plural( $this->strings['activate_link'], $activate_link_count, 'harmonux' ) . '</a>'  : '';
 
                 // Define all of the action links.
                 $action_links = apply_filters(
@@ -752,9 +752,9 @@ if ( ! class_exists( 'TGM_Plugin_Activation' ) ) {
                 // Register the nag messages and prepare them to be processed.
                 $nag_class = version_compare( $this->wp_version, '3.8', '<' ) ? 'updated' : 'update-nag';
                 if ( ! empty( $this->strings['nag_type'] ) ) {
-                    add_settings_error( 'tgmpa', 'tgmpa', $rendered, sanitize_html_class( strtolower( $this->strings['nag_type'] ) ) );
+                    add_settings_error( 'tgmpa', 'harmonux', $rendered, sanitize_html_class( strtolower( $this->strings['nag_type'] ) ) );
                 } else {
-                    add_settings_error( 'tgmpa', 'tgmpa', $rendered, $nag_class );
+                    add_settings_error( 'tgmpa', 'harmonux', $rendered, $nag_class );
                 }
             }
 
@@ -1169,23 +1169,23 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
                 if ( ! empty( $plugin['source'] ) ) {
                     // The plugin must be from a private repository.
                     if ( preg_match( '|^http(s)?://|', $plugin['source'] ) ) {
-                        $table_data[$i]['source'] = __( 'Private Repository', 'tgmpa' );
+                        $table_data[$i]['source'] = __( 'Private Repository', 'harmonux' );
                     // The plugin is pre-packaged with the theme.
                     } else {
-                        $table_data[$i]['source'] = __( 'Pre-Packaged', 'tgmpa' );
+                        $table_data[$i]['source'] = __( 'Pre-Packaged', 'harmonux' );
                     }
                 }
                 // The plugin is from the WordPress repository.
                 else {
-                    $table_data[$i]['source'] = __( 'WordPress Repository', 'tgmpa' );
+                    $table_data[$i]['source'] = __( 'WordPress Repository', 'harmonux' );
                 }
 
-                $table_data[$i]['type'] = isset( $plugin['required'] ) && $plugin['required'] ? __( 'Required', 'tgmpa' ) : __( 'Recommended', 'tgmpa' );
+                $table_data[$i]['type'] = isset( $plugin['required'] ) && $plugin['required'] ? __( 'Required', 'harmonux' ) : __( 'Recommended', 'harmonux' );
 
                 if ( ! isset( $installed_plugins[$plugin['file_path']] ) ) {
-                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Installed', 'tgmpa' ) );
+                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Not Installed', 'harmonux' ) );
                 } elseif ( is_plugin_inactive( $plugin['file_path'] ) ) {
-                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Installed But Not Activated', 'tgmpa' ) );
+                    $table_data[$i]['status'] = sprintf( '%1$s', __( 'Installed But Not Activated', 'harmonux' ) );
                 }
 
                 $table_data[$i]['file_path'] = $plugin['file_path'];
@@ -1285,7 +1285,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
             if ( ! isset( $installed_plugins[$item['file_path']] ) ) {
                 $actions = array(
                     'install' => sprintf(
-                        '<a href="%1$s" title="' . __( 'Install', 'tgmpa' ) . ' %2$s">' . __( 'Install', 'tgmpa' ) . '</a>',
+                        '<a href="%1$s" title="' . __( 'Install', 'harmonux' ) . ' %2$s">' . __( 'Install', 'harmonux' ) . '</a>',
                         wp_nonce_url(
                             add_query_arg(
                                 array(
@@ -1307,7 +1307,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
             elseif ( is_plugin_inactive( $item['file_path'] ) ) {
                 $actions = array(
                     'activate' => sprintf(
-                        '<a href="%1$s" title="' . __( 'Activate', 'tgmpa' ) . ' %2$s">' . __( 'Activate', 'tgmpa' ) . '</a>',
+                        '<a href="%1$s" title="' . __( 'Activate', 'harmonux' ) . ' %2$s">' . __( 'Activate', 'harmonux' ) . '</a>',
                         add_query_arg(
                             array(
                                 'page'                 => TGM_Plugin_Activation::$instance->menu,
@@ -1356,7 +1356,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
          */
         public function no_items() {
 
-            printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', 'tgmpa' ), admin_url() );
+            printf( __( 'No plugins to install or activate. <a href="%1$s" title="Return to the Dashboard">Return to the Dashboard</a>', 'harmonux' ), admin_url() );
             echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
 
         }
@@ -1372,10 +1372,10 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
             $columns = array(
                 'cb'     => '<input type="checkbox" />',
-                'plugin' => __( 'Plugin', 'tgmpa' ),
-                'source' => __( 'Source', 'tgmpa' ),
-                'type'   => __( 'Type', 'tgmpa' ),
-                'status' => __( 'Status', 'tgmpa' )
+                'plugin' => __( 'Plugin', 'harmonux' ),
+                'source' => __( 'Source', 'harmonux' ),
+                'type'   => __( 'Type', 'harmonux' ),
+                'status' => __( 'Status', 'harmonux' )
             );
 
             return $columns;
@@ -1393,8 +1393,8 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
         public function get_bulk_actions() {
 
             $actions = array(
-                'tgmpa-bulk-install'  => __( 'Install', 'tgmpa' ),
-                'tgmpa-bulk-activate' => __( 'Activate', 'tgmpa' ),
+                'tgmpa-bulk-install'  => __( 'Install', 'harmonux' ),
+                'tgmpa-bulk-activate' => __( 'Activate', 'harmonux' ),
             );
 
             return $actions;
@@ -1503,7 +1503,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
                 // No need to proceed further if we have no plugins to install.
                 if ( empty( $plugin_installs ) ) {
-                    echo '<div id="message" class="error"><p>' . __( 'No plugins are available to be installed at this time.', 'tgmpa' ) . '</p></div>';
+                    echo '<div id="message" class="error"><p>' . __( 'No plugins are available to be installed at this time.', 'harmonux' ) . '</p></div>';
                     return false;
                 }
 
@@ -1609,7 +1609,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
 
                 // Return early if there are no plugins to activate.
                 if ( empty( $plugins_to_activate ) ) {
-                    echo '<div id="message" class="error"><p>' . __( 'No plugins are available to be activated at this time.', 'tgmpa' ) . '</p></div>';
+                    echo '<div id="message" class="error"><p>' . __( 'No plugins are available to be activated at this time.', 'harmonux' ) . '</p></div>';
                     return false;
                 }
 
@@ -1631,7 +1631,7 @@ if ( ! class_exists( 'TGMPA_List_Table' ) ) {
                 if ( is_wp_error( $activate ) ) {
                     echo '<div id="message" class="error"><p>' . $activate->get_error_message() . '</p></div>';
                 } else {
-                    printf( '<div id="message" class="updated"><p>%1$s %2$s.</p></div>', _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'tgmpa' ), $imploded );
+                    printf( '<div id="message" class="updated"><p>%1$s %2$s.</p></div>', _n( 'The following plugin was activated successfully:', 'The following plugins were activated successfully:', $count, 'harmonux' ), $imploded );
                 }
 
                 // Update recently activated plugins option.
@@ -1927,12 +1927,12 @@ function tgmpa_load_bulk_installer() {
                  */
                 public function install_strings() {
 
-                    $this->strings['no_package']          = __( 'Install package not available.', 'tgmpa' );
-                    $this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', 'tgmpa' );
-                    $this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', 'tgmpa' );
-                    $this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'tgmpa' );
-                    $this->strings['process_failed']      = __( 'Plugin install failed.', 'tgmpa' );
-                    $this->strings['process_success']     = __( 'Plugin installed successfully.', 'tgmpa' );
+                    $this->strings['no_package']          = __( 'Install package not available.', 'harmonux' );
+                    $this->strings['downloading_package'] = __( 'Downloading install package from <span class="code">%s</span>&#8230;', 'harmonux' );
+                    $this->strings['unpack_package']      = __( 'Unpacking the package&#8230;', 'harmonux' );
+                    $this->strings['installing_package']  = __( 'Installing the plugin&#8230;', 'harmonux' );
+                    $this->strings['process_failed']      = __( 'Plugin install failed.', 'harmonux' );
+                    $this->strings['process_success']     = __( 'Plugin installed successfully.', 'harmonux' );
 
                 }
 
@@ -1943,8 +1943,8 @@ function tgmpa_load_bulk_installer() {
                  */
                 public function activate_strings() {
 
-                    $this->strings['activation_failed']  = __( 'Plugin activation failed.', 'tgmpa' );
-                    $this->strings['activation_success'] = __( 'Plugin activated successfully.', 'tgmpa' );
+                    $this->strings['activation_failed']  = __( 'Plugin activation failed.', 'harmonux' );
+                    $this->strings['activation_success'] = __( 'Plugin activated successfully.', 'harmonux' );
 
                 }
 
@@ -2057,19 +2057,19 @@ function tgmpa_load_bulk_installer() {
 
                     // Automatic activation strings.
                     if ( TGM_Plugin_Activation::$instance->is_automatic ) {
-                        $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'tgmpa' );
-                        $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', 'tgmpa' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'tgmpa' ) . '</span><span class="hidden">' . __( 'Hide Details', 'tgmpa' ) . '</span>.</a>';
-                        $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', 'tgmpa' );
-                        $this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'tgmpa' );
+                        $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation and activation process is starting. This process may take a while on some hosts, so please be patient.', 'harmonux' );
+                        $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed and activated successfully.', 'harmonux' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'harmonux' ) . '</span><span class="hidden">' . __( 'Hide Details', 'harmonux' ) . '</span>.</a>';
+                        $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations and activations have been completed.', 'harmonux' );
+                        $this->upgrader->strings['skin_before_update_header'] = __( 'Installing and Activating Plugin %1$s (%2$d/%3$d)', 'harmonux' );
                     }
                     // Default installation strings.
                     else {
-                        $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'tgmpa' );
-                        $this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'tgmpa' );
-                        $this->upgrader->strings['skin_update_failed']        = __( 'The installation of %1$s failed.', 'tgmpa' );
-                        $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed successfully.', 'tgmpa' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'tgmpa' ) . '</span><span class="hidden">' . __( 'Hide Details', 'tgmpa' ) . '</span>.</a>';
-                        $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'tgmpa' );
-                        $this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'tgmpa' );
+                        $this->upgrader->strings['skin_upgrade_start']        = __( 'The installation process is starting. This process may take a while on some hosts, so please be patient.', 'harmonux' );
+                        $this->upgrader->strings['skin_update_failed_error']  = __( 'An error occurred while installing %1$s: <strong>%2$s</strong>.', 'harmonux' );
+                        $this->upgrader->strings['skin_update_failed']        = __( 'The installation of %1$s failed.', 'harmonux' );
+                        $this->upgrader->strings['skin_update_successful']    = __( '%1$s installed successfully.', 'harmonux' ) . ' <a onclick="%2$s" href="#" class="hide-if-no-js"><span>' . __( 'Show Details', 'harmonux' ) . '</span><span class="hidden">' . __( 'Hide Details', 'harmonux' ) . '</span>.</a>';
+                        $this->upgrader->strings['skin_upgrade_end']          = __( 'All installations have been completed.', 'harmonux' );
+                        $this->upgrader->strings['skin_before_update_header'] = __( 'Installing Plugin %1$s (%2$d/%3$d)', 'harmonux' );
                     }
 
                 }
@@ -2161,7 +2161,7 @@ function tgmpa_load_bulk_installer() {
 
                     // All plugins are active, so we display the complete string and hide the menu to protect users.
                     if ( empty( $complete ) ) {
-                        echo '<p>' .  sprintf( TGM_Plugin_Activation::$instance->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', 'tgmpa' ) . '">' . __( 'Return to the Dashboard', 'tgmpa' ) . '</a>' ) . '</p>';
+                        echo '<p>' .  sprintf( TGM_Plugin_Activation::$instance->strings['complete'], '<a href="' . admin_url() . '" title="' . __( 'Return to the Dashboard', 'harmonux' ) . '">' . __( 'Return to the Dashboard', 'harmonux' ) . '</a>' ) . '</p>';
                         echo '<style type="text/css">#adminmenu .wp-submenu li.current { display: none !important; }</style>';
                     }
 
