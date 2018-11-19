@@ -1,4 +1,5 @@
 /* Micro ClearFix Mixin */
+/* Generate the opacity helper classes */
 .has-white-color {
   color: #fff;
 }

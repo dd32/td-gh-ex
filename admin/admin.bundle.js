@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 175);
+/******/ 	return __webpack_require__(__webpack_require__.s = 177);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -2407,32 +2407,34 @@ module.exports = shortOut;
 /* 172 */,
 /* 173 */,
 /* 174 */,
-/* 175 */
+/* 175 */,
+/* 176 */,
+/* 177 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 
 
-var _agncySidebar = __webpack_require__(176);
+var _agncySidebar = __webpack_require__(178);
 
 var _agncySidebar2 = _interopRequireDefault(_agncySidebar);
 
-__webpack_require__(184);
+__webpack_require__(186);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /***/ }),
-/* 176 */
+/* 178 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(wp) {
 
-var _removeContentMargin = __webpack_require__(177);
+var _removeContentMargin = __webpack_require__(179);
 
 var _removeContentMargin2 = _interopRequireDefault(_removeContentMargin);
 
-var _disableTitle = __webpack_require__(183);
+var _disableTitle = __webpack_require__(185);
 
 var _disableTitle2 = _interopRequireDefault(_disableTitle);
 
@@ -2508,7 +2510,7 @@ registerPlugin('agncy-sidebar', {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(11)))
 
 /***/ }),
-/* 177 */
+/* 179 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2518,7 +2520,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _assign2 = __webpack_require__(178);
+var _assign2 = __webpack_require__(180);
 
 var _assign3 = _interopRequireDefault(_assign2);
 
@@ -2583,12 +2585,12 @@ exports.default = compose([withSelect(function (select) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(11)))
 
 /***/ }),
-/* 178 */
+/* 180 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assignValue = __webpack_require__(157),
-    copyObject = __webpack_require__(179),
-    createAssigner = __webpack_require__(180),
+    copyObject = __webpack_require__(181),
+    createAssigner = __webpack_require__(182),
     isArrayLike = __webpack_require__(101),
     isPrototype = __webpack_require__(98),
     keys = __webpack_require__(82);
@@ -2647,7 +2649,7 @@ module.exports = assign;
 
 
 /***/ }),
-/* 179 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var assignValue = __webpack_require__(157),
@@ -2693,11 +2695,11 @@ module.exports = copyObject;
 
 
 /***/ }),
-/* 180 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseRest = __webpack_require__(181),
-    isIterateeCall = __webpack_require__(182);
+var baseRest = __webpack_require__(183),
+    isIterateeCall = __webpack_require__(184);
 
 /**
  * Creates a function like `_.assign`.
@@ -2736,7 +2738,7 @@ module.exports = createAssigner;
 
 
 /***/ }),
-/* 181 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var identity = __webpack_require__(125),
@@ -2759,7 +2761,7 @@ module.exports = baseRest;
 
 
 /***/ }),
-/* 182 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var eq = __webpack_require__(22),
@@ -2795,7 +2797,7 @@ module.exports = isIterateeCall;
 
 
 /***/ }),
-/* 183 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -2805,7 +2807,7 @@ Object.defineProperty(exports, "__esModule", {
 	value: true
 });
 
-var _assign2 = __webpack_require__(178);
+var _assign2 = __webpack_require__(180);
 
 var _assign3 = _interopRequireDefault(_assign2);
 
@@ -2873,13 +2875,13 @@ exports.default = compose([withSelect(function (select) {
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(11)))
 
 /***/ }),
-/* 184 */
+/* 186 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(wp) {
 
-var _uniq2 = __webpack_require__(185);
+var _uniq2 = __webpack_require__(187);
 
 var _uniq3 = _interopRequireDefault(_uniq2);
 
@@ -3008,10 +3010,10 @@ wp.hooks.addFilter('editor.BlockEdit', 'agncy/with-block-controls', withBlockCon
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(11)))
 
 /***/ }),
-/* 185 */
+/* 187 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseUniq = __webpack_require__(186);
+var baseUniq = __webpack_require__(188);
 
 /**
  * Creates a duplicate-free version of an array, using
@@ -3039,14 +3041,14 @@ module.exports = uniq;
 
 
 /***/ }),
-/* 186 */
+/* 188 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var SetCache = __webpack_require__(65),
-    arrayIncludes = __webpack_require__(187),
-    arrayIncludesWith = __webpack_require__(192),
+    arrayIncludes = __webpack_require__(189),
+    arrayIncludesWith = __webpack_require__(194),
     cacheHas = __webpack_require__(69),
-    createSet = __webpack_require__(193),
+    createSet = __webpack_require__(195),
     setToArray = __webpack_require__(73);
 
 /** Used as the size to enable large array optimizations. */
@@ -3117,10 +3119,10 @@ module.exports = baseUniq;
 
 
 /***/ }),
-/* 187 */
+/* 189 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIndexOf = __webpack_require__(188);
+var baseIndexOf = __webpack_require__(190);
 
 /**
  * A specialized version of `_.includes` for arrays without support for
@@ -3140,12 +3142,12 @@ module.exports = arrayIncludes;
 
 
 /***/ }),
-/* 188 */
+/* 190 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseFindIndex = __webpack_require__(189),
-    baseIsNaN = __webpack_require__(190),
-    strictIndexOf = __webpack_require__(191);
+var baseFindIndex = __webpack_require__(191),
+    baseIsNaN = __webpack_require__(192),
+    strictIndexOf = __webpack_require__(193);
 
 /**
  * The base implementation of `_.indexOf` without `fromIndex` bounds checks.
@@ -3166,7 +3168,7 @@ module.exports = baseIndexOf;
 
 
 /***/ }),
-/* 189 */
+/* 191 */
 /***/ (function(module, exports) {
 
 /**
@@ -3196,7 +3198,7 @@ module.exports = baseFindIndex;
 
 
 /***/ }),
-/* 190 */
+/* 192 */
 /***/ (function(module, exports) {
 
 /**
@@ -3214,7 +3216,7 @@ module.exports = baseIsNaN;
 
 
 /***/ }),
-/* 191 */
+/* 193 */
 /***/ (function(module, exports) {
 
 /**
@@ -3243,7 +3245,7 @@ module.exports = strictIndexOf;
 
 
 /***/ }),
-/* 192 */
+/* 194 */
 /***/ (function(module, exports) {
 
 /**
@@ -3271,11 +3273,11 @@ module.exports = arrayIncludesWith;
 
 
 /***/ }),
-/* 193 */
+/* 195 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var Set = __webpack_require__(105),
-    noop = __webpack_require__(194),
+    noop = __webpack_require__(196),
     setToArray = __webpack_require__(73);
 
 /** Used as references for various `Number` constants. */
@@ -3296,7 +3298,7 @@ module.exports = createSet;
 
 
 /***/ }),
-/* 194 */
+/* 196 */
 /***/ (function(module, exports) {
 
 /**

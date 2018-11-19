@@ -33,9 +33,9 @@ if ( post_password_required() ) {
 			$comments_number = get_comments_number();
 			if ( '1' === $comments_number ) {
 				/* translators: %s: post title */
-				printf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'agncy' ), get_the_title() );
+				echo wp_kses_data( sprintf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'agncy' ), get_the_title() ) );
 			} else {
-				printf(
+				echo wp_kses_data( sprintf(
 					/* translators: 1: number of comments, 2: post title */
 					_nx(
 						'%1$s Reply to <span class="title">&ldquo;%2$s&rdquo;</span>',
@@ -46,7 +46,7 @@ if ( post_password_required() ) {
 					),
 					number_format_i18n( $comments_number ),
 					get_the_title()
-				);
+				) );
 			}
 			?>
 		</h2>
@@ -77,7 +77,7 @@ if ( post_password_required() ) {
 	if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 		?>
 
-		<p class="no-comments"><?php _e( 'Comments are closed.', 'agncy' ); ?></p>
+		<p class="no-comments"><?php esc_html__( 'Comments are closed.', 'agncy' ); ?></p>
 		<?php
 	endif;
 	comment_form();
