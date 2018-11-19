@@ -13,7 +13,7 @@ AyaGeek is Fully Responsive WordPress Theme.
 
 == Description ==
 
-AyaGeek is fully Responsive WordPress Theme with Built-in Homepage Slider, Multi-level Drop-down Menu,
+AyaGeek is fully Responsive WordPress Theme with Built-in Homepage Slider (Displayed Only on a Static Front Page), Multi-level Drop-down Menu,
 W3C markup validated, Search Engine Optimized, Custom Logo, Custom Background, Footer Copyright Text
 Customizations, Widget Areas: 3 Homepage Columns, Sidebar, 3 Footer Columns, Multiple Browsers Support,
 Translation-Ready and much more.
@@ -44,6 +44,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.0.6 =
+* update Resources' images info 
+* remove add_image_size from functions.php
+
 = 1.0.5 =
 * update readme.txt file format
 
@@ -64,13 +68,13 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * Initial Release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * js/jquery.bxslider.js, © 2014, Steven Wanderski, MIT
 * js/jquery.bxslider.min.js, © 2014, Steven Wanderski, MIT
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
 * images/slider/1.jpg, © 2018 AyaTemplates, CC0
-* images/slider/2.jpg, © Lalmch https://pixabay.com/en/computer-macbook-tablet-editing-767781/, CC0
-* images/slider/3.jpg, © picjumbo_com https://pixabay.com/en/student-notebook-female-study-type-865073/, CC0
-* screenshot.png (slider image), © 2018 AyaTemplates, CC0
+* images/slider/2.jpg, © 2015 @Lalmch https://pixabay.com/en/computer-macbook-tablet-editing-767781/, CC0
+* images/slider/3.jpg, © 2015 @picjumbo_com https://pixabay.com/en/student-notebook-female-study-type-865073/, CC0
+* screenshot.png (slider image), © 2018 @AyaTemplates, CC0
