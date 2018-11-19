@@ -4,8 +4,8 @@ Theme Name: Tracks
 Theme URI: https://www.competethemes.com/tracks/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
-Description: A bold, beautiful, and responsive theme. Tracks is perfect for personal blogs, magazines, and photography websites. It includes a logo uploader, over 50+ social media icons, search bar, comment display controls, premium layouts, and more. Tracks has a dark, simple, and minimalist design that makes it great for publish both text and image based content. Use it for a travel blog, online newspaper, video site, or podcast. As a free theme, you can use Tracks for as many projects as you’d like. Preview Tracks now on desktop, tablets, and mobile devices with the interactive live demo: https://www.competethemes.com/demos/?theme=tracks
-Version: 1.64
+Description: A bold, beautiful, and responsive theme. Tracks is perfect for personal blogs, magazines, and photography websites. It includes a logo uploader, over 50+ social media icons, search bar, comment display controls, premium layouts, and more. Tracks has a dark, simple, and minimalist design that makes it great for publish both text and image based content. Use it for a travel blog, online newspaper, video site, podcast, or even an eCommerce store thanks to its WooCommerce compatibility. As a free theme, you can use Tracks for as many projects as you’d like. Now fully compatible with the new Gutenberg post editor. Preview Tracks now on desktop, tablets, and mobile devices with the interactive live demo: https://www.competethemes.com/demos/?theme=tracks
+Version: 1.65
 Tags: one-column, custom-logo, custom-menu, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
 Text Domain: tracks
 License: GNU General Public License v2 or later
@@ -1118,6 +1118,28 @@ a img {
   display: inline-block;
 }
 
+.wp-block-image.alignfull,
+.wp-block-cover {
+  position: relative;
+  left: -6.5%;
+  width: 113%;
+  max-width: none;
+}
+
+.wp-block-quote.is-large {
+  padding-left: 0;
+  border-left: none;
+  margin: 1.5em;
+}
+
+.wp-block-embed {
+  margin: 1.5em 0;
+}
+
+.wp-block-code code {
+  background: none;
+}
+
 /* 600px */
 @media all and (min-width: 37.5em) {
   .entry {
@@ -1191,6 +1213,19 @@ a img {
     width: 128.6%;
     left: -14.3%;
   }
+
+  .wp-block-image.alignfull,
+  .wp-block-cover {
+    left: -14.25%;
+    width: 128.5%;
+  }
+
+  .wp-block-image.alignwide {
+    position: relative;
+    left: -7%;
+    width: 114%;
+    max-width: none;
+  }
 }
 /* 900px */
 @media all and (min-width: 56.25em) {
@@ -1233,6 +1268,17 @@ a img {
     width: 150%;
     left: -25%;
   }
+
+  .wp-block-image.alignfull,
+  .wp-block-cover {
+    left: -25%;
+    width: 150%;
+  }
+
+  .wp-block-image.alignwide {
+    left: -15%;
+    width: 130%;
+  }
 }
 /* 1100px */
 @media all and (min-width: 68.75em) {
@@ -1269,6 +1315,17 @@ a img {
     display: block;
     margin-right: 0;
   }
+
+  .wp-block-image.alignfull,
+  .wp-block-cover {
+    left: -32%;
+    width: 164%;
+  }
+
+  .wp-block-image.alignwide {
+    left: -20%;
+    width: 140%;
+  }
 }
 /* 1200px */
 @media all and (min-width: 75em) {
@@ -1279,6 +1336,17 @@ a img {
   .entry-content img.full-width {
     width: 179.9%;
     left: -39.95%;
+  }
+
+  .wp-block-image.alignfull,
+  .wp-block-cover {
+    left: -40%;
+    width: 180%;
+  }
+
+  .wp-block-image.alignwide {
+    left: -25%;
+    width: 150%;
   }
 }
 .comments {
