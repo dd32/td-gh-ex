@@ -13,7 +13,7 @@ AyaPortfolio is fully Responsive Portfolio WordPress Theme.
 
 == Description ==
 
-AyaPortfolio is fully Responsive Portfolio WordPress Theme. Features: Built-in Homepage Slider,
+AyaPortfolio is fully Responsive Portfolio WordPress Theme. Features: Built-in Homepage Slider (Displayed Only on a Static Front Page),
 Custom Logo, Custom Background, Footer copyright text customizations, Widget Areas: Sidebar,
 3 Homepage Columns, 3 Footer Columns, Multi-Level Drop-Down Header Menu, Translation-Ready and much more.
 
@@ -39,6 +39,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.1.2 =
+* update Resources' images info 
 
 = 1.1.1 =
 * update readme.txt file format
@@ -86,7 +89,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * Initial Release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
@@ -95,12 +98,12 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * js/jquery.carousel-3d.min.js, © 2015 PAIO co., MIT
 * js/jquery.waitforimages.js, © 2014 Alex Dickson, MIT
 * js/modernizr.js, © Faruk Ates, Paul Irish, Alex Sexton, BSD and MIT
-* images/slider/1.jpg, © geralt http://pixabay.com/en/man-businessman-consider-face-head-404376/, CC0
-* images/slider/2.jpg, © PublicDomainPictures http://pixabay.com/en/beautiful-business-computer-female-15728/, CC0
-* images/slider/3.jpg, © geralt http://pixabay.com/en/man-face-head-circle-structure-335401/, CC0
-* images/slider/4.jpg, © fill http://pixabay.com/en/portfolio-briefcase-brown-blue-385530/, CC0
-* images/slider/5.jpg, © MagicDesk http://pixabay.com/en/meeting-room-table-screen-730679/, CC0
-* screenshot.png, © fill http://pixabay.com/en/portfolio-briefcase-brown-blue-385530/, CC0
-* screenshot.png, © geralt https://pixabay.com/en/woman-face-photomontage-faces-789146/, CC0
-* screenshot.png, © Free-Photos https://pixabay.com/en/records-album-vinyl-retro-soul-1148927/, CC0
-* screenshot.png, © Free-Photos https://pixabay.com/en/vinyl-records-store-shopping-retro-945396/, CC0
+* images/slider/1.jpg, © 2014 @geralt http://pixabay.com/en/man-businessman-consider-face-head-404376/, CC0
+* images/slider/2.jpg, © 2012 @PublicDomainPictures http://pixabay.com/en/beautiful-business-computer-female-15728/, CC0
+* images/slider/3.jpg, © 2014 @geralt http://pixabay.com/en/man-face-head-circle-structure-335401/, CC0
+* images/slider/4.jpg, © 2014 @fill http://pixabay.com/en/portfolio-briefcase-brown-blue-385530/, CC0
+* images/slider/5.jpg, © 2015 @MagicDesk http://pixabay.com/en/meeting-room-table-screen-730679/, CC0
+* screenshot.png, © 2014 @fill http://pixabay.com/en/portfolio-briefcase-brown-blue-385530/, CC0
+* screenshot.png, © 2015 @geralt https://pixabay.com/en/woman-face-photomontage-faces-789146/, CC0
+* screenshot.png, © 2016 @Free-Photos https://pixabay.com/en/records-album-vinyl-retro-soul-1148927/, CC0
+* screenshot.png, © 2015 @Free-Photos https://pixabay.com/en/vinyl-records-store-shopping-retro-945396/, CC0
