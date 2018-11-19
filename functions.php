@@ -62,7 +62,7 @@ if ( ! function_exists( 'ayamagazine_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		add_image_size( 'ayamagazine-thumbnail-avatar', 100, 100, true );
+	
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments

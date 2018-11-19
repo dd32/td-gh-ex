@@ -34,12 +34,15 @@ Installation using 'Add New Theme'
 3. Click the 'Install' button to open the theme's repository listing
 4. Click the 'Install' button
 
-Activiation and Use
+2. Activiation and Use
 
 1. Activate the Theme through the 'Themes' menu in WordPress
 2. See Appearance -> Customize to change theme specific options
 
 == Changelog ==
+= 1.0.8 =
+* update Resources' images info 
+* remove add_image_size from functions.php
 
 = 1.0.7 =
 * update readme.txt file format
@@ -68,11 +71,11 @@ Activiation and Use
 * Initial Release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
 * screenshot.png (thumbnail image), © freestocks.org https://unsplash.com/photos/VFs2fZEVkXo, CC0
 * screenshot.png (thumbnail image), © Toa Heftiba https://unsplash.com/photos/5WbYFH0kf_8, CC0
-* screenshot.png (sidebar image), © Hope_first https://pixabay.com/en/pink-magazine-gloss-zephyr-sweet-2791366/, CC0
-* screenshot.png (sidebar image), © StockSnap https://pixabay.com/en/green-plant-white-table-work-desk-2599771/, CC0
+* screenshot.png (sidebar image), © 2017 @Hope_first https://pixabay.com/en/pink-magazine-gloss-zephyr-sweet-2791366/, CC0
+* screenshot.png (sidebar image), © 2017 StockSnap https://pixabay.com/en/green-plant-white-table-work-desk-2599771/, CC0
