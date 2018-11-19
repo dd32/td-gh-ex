@@ -32,12 +32,16 @@ Installation using 'Add New Theme'
 3. Click the 'Install' button to open the theme's repository listing
 4. Click the 'Install' button
 
-Activiation and Use
+2. Activiation and Use
 
 1. Activate the Theme through the 'Themes' menu in WordPress
 2. See Appearance -> Customize to change theme specific options
 
 == Changelog ==
+
+= 1.0.4 =
+* update Resources' images info 
+* remove add_image_size from functions.php
 
 = 1.0.3 =
 * update readme.txt file format
@@ -53,11 +57,11 @@ Activiation and Use
 * Initial Release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* screenshot.png (above cols), © Oakapplehabdash https://pixabay.com/en/handmade-craft-sewing-hobby-1153614/, CC0
-* screenshot.png (col), © nicolettazanella https://pixabay.com/en/frame-weaving-lana-thread-handmade-3019254/, CC0
-* screenshot.png (col), © silviarita https://pixabay.com/en/soap-horsetail-salt-blossom-bloom-2333412/, CC0
-* screenshot.png (col), © LubosHouska https://pixabay.com/en/potter-ceramics-clay-circle-1139047/, CC0
+* screenshot.png (above cols), © 2016 @Oakapplehabdash https://pixabay.com/en/handmade-craft-sewing-hobby-1153614/, CC0
+* screenshot.png (col), © 2017 @nicolettazanella https://pixabay.com/en/frame-weaving-lana-thread-handmade-3019254/, CC0
+* screenshot.png (col), © 2017 @silviarita https://pixabay.com/en/soap-horsetail-salt-blossom-bloom-2333412/, CC0
+* screenshot.png (col), © 2016 @LubosHouska https://pixabay.com/en/potter-ceramics-clay-circle-1139047/, CC0

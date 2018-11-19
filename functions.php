@@ -48,7 +48,7 @@ if ( ! function_exists( 'ayahandmade_setup' ) ) :
 		// Enable support for Post Thumbnails on posts and pages.
 		add_theme_support( 'post-thumbnails' );
 
-		add_image_size( 'ayahandmade-thumbnail-avatar', 100, 100, true );
+		
 
 		// Let WordPress manage the document title.
 		add_theme_support( 'title-tag' );
