@@ -13,7 +13,7 @@ AyaPhotography is Fully Responsive WordPress Theme.
 
 == Description ==
 
-AyaPhotography is fully Responsive WordPress Theme with Built-in Homepage Slider, Multi-level Drop-down
+AyaPhotography is fully Responsive WordPress Theme with Built-in Homepage Slider (Displayed Only on a Static Front Page), Multi-level Drop-down
 Menu, W3C markup validated, Search Engine Optimized, Custom Logo, Custom Background, Footer Copyright
 Text Customizations, Widget Areas: 3 Homepage Columns, Sidebar, 3 Footer Columns, Multiple Browsers
 Support, Translation-Ready and much more.
@@ -44,6 +44,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.0.6 =
+* update Resources' images info 
+* remove add_image_size from functions.php
+
 = 1.0.5 =
 * update readme.txt file format
 
@@ -64,7 +68,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * Initial Release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * js/modernizr.js, © Faruk, Paul, Alex, Ryan, Patrick, Stu, and Richard, MIT
 * js/modernizr.min.js, © Faruk, Paul, Alex, Ryan, Patrick, Stu, and Richard, MIT
@@ -72,9 +76,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * js/photostack.js, © Codrops, MIT
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* images/slider/1.jpg, © famhud https://pixabay.com/en/puffin-iceland-bird-cliff-coast-1489022/, CC0
-* images/slider/2.jpg, © AyaTemplates ayatemplates.com, CC0
-* images/slider/3.jpg, © ReneBoinski https://pixabay.com/en/skogar-museum-iceland-grass-roofs-1989483/, CC0
-* images/slider/4.jpg, © AyaTemplates ayatemplates.com, CC0
-* images/slider/5.jpg, © darrenquigley32 https://pixabay.com/en/aurora-borealis-iceland-northern-2173562/, CC0
-* screenshot.png (slider image), © famhud https://pixabay.com/en/puffin-iceland-bird-cliff-coast-1489022/, CC0
+* images/slider/1.jpg, © 2016 @famhud https://pixabay.com/en/puffin-iceland-bird-cliff-coast-1489022/, CC0
+* images/slider/2.jpg, © 2018 @AyaTemplates ayatemplates.com, CC0
+* images/slider/3.jpg, © 2017 @ReneBoinski https://pixabay.com/en/skogar-museum-iceland-grass-roofs-1989483/, CC0
+* images/slider/4.jpg, © 2018 @AyaTemplates ayatemplates.com, CC0
+* images/slider/5.jpg, © 2017 @darrenquigley32 https://pixabay.com/en/aurora-borealis-iceland-northern-2173562/, CC0
+* screenshot.png (slider image), © 2016 @famhud https://pixabay.com/en/puffin-iceland-bird-cliff-coast-1489022/, CC0
