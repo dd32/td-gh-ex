@@ -54,8 +54,7 @@ if ( ! function_exists( 'artgallery_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		add_image_size( 'artgallery-thumbnail-avatar', 100, 100, true );
-
+	
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.

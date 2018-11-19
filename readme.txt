@@ -40,6 +40,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+= 1.1.1 =
+* update Resources' images info 
+* remove add_image_size from functions.php
 
 = 1.1.0 =
 * update readme.txt file format
@@ -79,7 +82,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * initial release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * assets/js/camera.min.js, © 2012 Manuel Masia, MIT
 * assets/js/camera.js, © 2012 Manuel Masia, MIT
@@ -88,7 +91,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * assets/js/jquery.mobile.customized.min.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
 * assets/css/animate.css, © 2017 Daniel Eden, MIT
 * assets/js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* images/slider/1.jpg, © 12019 https://pixabay.com/en/istanbul-turkey-art-gallery-168774/, CC0
-* images/slider/2.jpg, © Alexas_Fotos https://pixabay.com/en/gallery-women-images-despair-2932005/, CC0
-* images/slider/3.jpg, © 12019 https://pixabay.com/en/copenhagen-denmark-art-gallery-169052/, CC0
-* screenshot.png (slider image), © 12019 https://pixabay.com/en/istanbul-turkey-art-gallery-168774/, CC0
+* images/slider/1.jpg, © 2013 @12019 https://pixabay.com/en/istanbul-turkey-art-gallery-168774/, CC0
+* images/slider/2.jpg, © 2017 @Alexas_Fotos https://pixabay.com/en/gallery-women-images-despair-2932005/, CC0
+* images/slider/3.jpg, © 2013 @12019 https://pixabay.com/en/copenhagen-denmark-art-gallery-169052/, CC0
+* screenshot.png (slider image), © 2013 @12019 https://pixabay.com/en/istanbul-turkey-art-gallery-168774/, CC0
