@@ -33,13 +33,17 @@ Installation using 'Add New Theme'
 3. Click the 'Install' button to open the theme's repository listing
 4. Click the 'Install' button
 
-Activiation and Use
+2. Activiation and Use
 
 1. Activate the Theme through the 'Themes' menu in WordPress
 2. See Appearance -> Customize to change theme specific options
 
 
 == Changelog ==
+
+= 1.1.2 =
+* update Resources' images info
+* remove add_image_size from functions.php 
 
 = 1.1.1 =
 * update readme.txt file format
@@ -87,10 +91,10 @@ Activiation and Use
 * Initial release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* screenshot.png (thumbnail), © Giovanni_cg https://pixabay.com/en/render-graphic-architecture-3d-1477041/, CC0
-* screenshot.png (sidebar), © qimono https://pixabay.com/en/apartment-view-interior-room-3564955/, CCO
-* screenshot.png (sidebar), © Pexels https://pixabay.com/en/architecture-building-driveway-1867187/, CCO
+* screenshot.png (thumbnail), © 2016 @Giovanni_cg https://pixabay.com/en/render-graphic-architecture-3d-1477041/, CC0
+* screenshot.png (sidebar), © 2018 @qimono https://pixabay.com/en/apartment-view-interior-room-3564955/, CCO
+* screenshot.png (sidebar), © 2016 @Pexels https://pixabay.com/en/architecture-building-driveway-1867187/, CCO
