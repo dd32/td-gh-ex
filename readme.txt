@@ -40,6 +40,8 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+= 1.1.7 =
+* update Resources' images info 
 
 = 1.1.6 =
 * update readme.txt file format
@@ -96,7 +98,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * Initial Release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
@@ -105,9 +107,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * js/jquery.ba-cond.js, © 2009 Ben Alman, MIT
 * js/jquery.ba-cond.min.js, © 2009 Ben Alman, MIT
 * js/jquery.slitslider.js, © 2012 Codrops, MIT
-* images/slider/1.jpg, © PixxlTeufel https://pixabay.com/en/travel-sunset-landscape-sky-sand-3098815/, CC0
-* images/slider/2.jpg, © geralt https://pixabay.com/en/banner-header-gull-bird-fly-1090835/, CC0
-* images/slider/3.jpg, © Devanath https://pixabay.com/en/silhouette-blur-red-focus-sun-1304141/, CC0
-* images/slider/4.jpg, © kalhh https://pixabay.com/en/sunset-water-grass-sky-1487258/, CC0
-* images/slider/5.jpg, © RalfBeck https://pixabay.com/en/sun-fireball-sunset-sea-evening-sky-404062/, CC0
-* screenshot.png (slide img), © PixxlTeufel https://pixabay.com/en/travel-sunset-landscape-sky-sand-3098815/, CC0
+* images/slider/1.jpg, © 2018 @PixxlTeufel https://pixabay.com/en/travel-sunset-landscape-sky-sand-3098815/, CC0
+* images/slider/2.jpg, © 2015 @geralt https://pixabay.com/en/banner-header-gull-bird-fly-1090835/, CC0
+* images/slider/3.jpg, © 2016 @Devanath https://pixabay.com/en/silhouette-blur-red-focus-sun-1304141/, CC0
+* images/slider/4.jpg, © 2016 @kalhh https://pixabay.com/en/sunset-water-grass-sky-1487258/, CC0
+* images/slider/5.jpg, © 2014 @RalfBeck https://pixabay.com/en/sun-fireball-sunset-sea-evening-sky-404062/, CC0
+* screenshot.png (slide img), © 2018 @PixxlTeufel https://pixabay.com/en/travel-sunset-landscape-sky-sand-3098815/, CC0
