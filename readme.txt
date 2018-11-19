@@ -5,7 +5,7 @@ custom-header, custom-menu, featured-images, threaded-comments, translation-read
 sticky-post, theme-options, footer-widgets
 Requires at least: 4.8.0
 Tested up to: 4.9.6
-Stable tag: 1.0.6
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ AyaBlogging is Fully Responsive WordPress Theme.
 
 == Description ==
 
-AyaBlogging is fully Responsive WordPress Theme with Built-in Homepage Slider, Multi-level Drop-down
+AyaBlogging is fully Responsive WordPress Theme with Built-in Homepage Slider (Displayed Only on a Static Front Page), Multi-level Drop-down
 Menu, W3C markup validated, Search Engine Optimized, Custom Logo, Custom Background, Footer Copyright
 Text Customizations, Widget Areas: 3 Homepage Columns, Sidebar, 3 Footer Columns, Multiple Browsers
 Support, Translation-Ready and much more.
@@ -44,6 +44,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.0.5 =
+* update Resources' images info 
+* remove add_image_size from functions.php
+
 = 1.0.4 =
 * update readme.txt file format
 
@@ -61,14 +65,14 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * Initial Release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
 * js/jquery.slicebox.js, © 2012 Codrops, MIT
 * js/modernizr.custom.46884.js, © Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon, Patrick Kettner, Stu Cox, Richard Herrera, MIT
 * js/modernizr.custom.46884.min.js, © Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon, Patrick Kettner, Stu Cox, Richard Herrera, MIT
-* images/slider/1.jpg, © Free-Photos https://pixabay.com/en/home-office-workstation-office-336378/, CC0
-* images/slider/2.jpg, © StartupStockPhotos https://pixabay.com/en/startup-start-up-notebooks-creative-593335/, CC0
-* images/slider/3.jpg, © markusspiske https://pixabay.com/en/computer-mouse-office-co-working-582045/, CC0
-* screenshot.png (slider image), © Free-Photos https://pixabay.com/en/home-office-workstation-office-336378/, CC0
+* images/slider/1.jpg, © 2014 @Free-Photos https://pixabay.com/en/home-office-workstation-office-336378/, CC0
+* images/slider/2.jpg, © 2015 @StartupStockPhotos https://pixabay.com/en/startup-start-up-notebooks-creative-593335/, CC0
+* images/slider/3.jpg, © 2014 @markusspiske https://pixabay.com/en/computer-mouse-office-co-working-582045/, CC0
+* screenshot.png (slider image), © 2014 @Free-Photos https://pixabay.com/en/home-office-workstation-office-336378/, CC0
