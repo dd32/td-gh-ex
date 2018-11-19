@@ -13,7 +13,7 @@ AyaMedicine is Fully Responsive WordPress Theme.
 
 == Description ==
 
-AyaMedicine is fully Responsive WordPress Theme with Built-in Homepage Slider, Multi-level Drop-down
+AyaMedicine is fully Responsive WordPress Theme with Built-in Homepage Slider (Displayed Only on a Static Front Page), Multi-level Drop-down
 Menu, W3C markup validated, Search Engine Optimized, Custom Logo, Custom Background, Footer Copyright
 Text Customizations, Widget Areas: 3 Homepage Columns, Sidebar, 3 Footer Columns, Multiple Browsers
 Support, Translation-Ready and much more.
@@ -44,6 +44,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.0.6 =
+* update Resources' images info 
+* remove add_image_size from functions.php 
+
 = 1.0.5 =
 * update readme.txt file format
 
@@ -64,16 +68,16 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * Initial Release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
 * js/jquery.imgslider.js, © 2012 Codrops, MIT
 * js/modernizr.custom.26887.js, © Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon, Alexander Farkas, Patrick Kettner, Stu Cox, Richard Herrera, MIT
 * js/modernizr.custom.26887.min.js, © Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon, Alexander Farkas, Patrick Kettner, Stu Cox, Richard Herrera, MIT
-* images/slider/1.jpg, © DarkoStojanovic https://pixabay.com/en/doctor-medical-medicine-health-563428/, CC0
-* images/slider/2.jpg, © stevepb https://pixabay.com/en/schuessler-minerals-2867822/, CC0
-* images/slider/3.jpg, © typographyimages https://pixabay.com/en/cosmetic-oil-essential-oil-3493928/, CC0
-* images/slider/4.jpg, © mohamed_hassan https://pixabay.com/en/essential-oil-flower-plant-nature-3532970/, CC0
-* images/slider/5.jpg, © sasint https://pixabay.com/en/hospital-clinic-lamp-light-room-1822457/, CC0
-* screenshot.png (slider image), © stevepb https://pixabay.com/en/schuessler-minerals-2867822/, CC0
+* images/slider/1.jpg, © 2014 @DarkoStojanovic https://pixabay.com/en/doctor-medical-medicine-health-563428/, CC0
+* images/slider/2.jpg, © 2017 @stevepb https://pixabay.com/en/schuessler-minerals-2867822/, CC0
+* images/slider/3.jpg, © 2018 @typographyimages https://pixabay.com/en/cosmetic-oil-essential-oil-3493928/, CC0
+* images/slider/4.jpg, © 2018 @mohamed_hassan https://pixabay.com/en/essential-oil-flower-plant-nature-3532970/, CC0
+* images/slider/5.jpg, © 2016 @sasint https://pixabay.com/en/hospital-clinic-lamp-light-room-1822457/, CC0
+* screenshot.png (slider image), © 2017 @stevepb https://pixabay.com/en/schuessler-minerals-2867822/, CC0
