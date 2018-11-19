@@ -12,7 +12,7 @@ AyaClub is fully Responsive Music Club WordPress Theme.
 == Description ==
 
 AyaClub is fully Responsive Music Club WordPress Theme. Features: Animations Appearing Effect,
-Built-in Homepage Slider, Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized,
+Built-in Homepage Slider (Displayed Only on a Static Front Page), Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized,
 Custom Logo, Custom Background, Footer Copyright Text Customizations, Widget Areas: 3 Homepage Columns,
 Sidebar, 3 Footer Columns, Multiple Browsers Support, Translation-Ready and much more.
 
@@ -38,6 +38,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.1.0 (2018-11-19) =
+* update Resources' images info 
 
 = 1.0.9 (2018-11-10) =
 * update readme.txt file format
