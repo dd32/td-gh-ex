@@ -13,7 +13,7 @@ AyaFreelance is fully Responsive Blogging WordPress Theme.
 
 == Description ==
 
-AyaFreelance is fully Responsive Blogging WordPress Theme. Features: Built-in Homepage Slider,
+AyaFreelance is fully Responsive Blogging WordPress Theme. Features: Built-in Homepage Slider (Displayed Only on a Static Front Page),
 Custom Logo, Custom Background, Footer copyright text customizations, Widget Areas: Sidebar,
 3 Footer Columns, Multi-level Drop-down Menu, Footer Menu, Search Engine Optimized,
 Multiple Browsers Support, Translation-Ready and much more.
@@ -40,6 +40,8 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+= 1.1.5 =
+* * update Resources' images info 
 
 = 1.1.4 =
 * update readme.txt file format
@@ -100,15 +102,15 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * Initial Release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
 * js/modernizr.custom.46884.js, © Faruk Ates, Paul Irish, Alex Sexton, Ryan Seddon, Patrick Kettner, Stu Cox, Richard Herrera, MIT
 * js/jquery.slicebox.js, © 2012 Codrops, MIT
-* images/slider/1.jpg, © jeonghwaryu0 https://pixabay.com/en/hand-laptop-freelance-computer-1757224/, CC0
-* images/slider/2.jpg, © StartupStockPhotos https://pixabay.com/en/startup-start-up-notebooks-creative-593335/, CC0
-* images/slider/3.jpg, © markusspiske https://pixabay.com/en/computer-mouse-office-co-working-582045/, CC0
-* screenshot.png (slider img), © jeonghwaryu0 https://pixabay.com/en/hand-laptop-freelance-computer-1757224/, CC0
-* screenshot.png (sidebar img 1), © darkmoon1968 https://pixabay.com/en/notepad-mobile-phone-notebook-table-3316997/, CC0
-* screenshot.png (sidebar img 2), © darkmoon1968 https://pixabay.com/en/laptop-computer-business-table-3317007/, CC0
+* images/slider/1.jpg, © 2016 @jeonghwaryu0 https://pixabay.com/en/hand-laptop-freelance-computer-1757224/, CC0
+* images/slider/2.jpg, © 2015 @StartupStockPhotos https://pixabay.com/en/startup-start-up-notebooks-creative-593335/, CC0
+* images/slider/3.jpg, © 2014 @markusspiske https://pixabay.com/en/computer-mouse-office-co-working-582045/, CC0
+* screenshot.png (slider img), © 2016 @jeonghwaryu0 https://pixabay.com/en/hand-laptop-freelance-computer-1757224/, CC0
+* screenshot.png (sidebar img 1), © 2018 @darkmoon1968 https://pixabay.com/en/notepad-mobile-phone-notebook-table-3316997/, CC0
+* screenshot.png (sidebar img 2), © 2018 @darkmoon1968 https://pixabay.com/en/laptop-computer-business-table-3317007/, CC0
