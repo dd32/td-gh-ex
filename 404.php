@@ -13,7 +13,7 @@ get_header(); ?>
 		<main id="main" class="site-main">
 
 			<section class="error-404 not-found">
-				<img src="<?php echo get_template_directory_uri() . '/assets/images/404.png'; ?>">
+				<img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/404.png' ); ?>">
 
 				<div class="page-content">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'adviso' ); ?></p>

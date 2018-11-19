@@ -12,7 +12,7 @@
 		if ( ($social != 'none') && ($social != '') && ($social_url !='' ) ) : ?>
 		    
 	            <li>
-	                <a class="hvr-sweep-to-bottom" href="<?php echo esc_url($social_url); ?>">
+	                <a class="hvr-sweep-to-bottom" href="<?php echo esc_url($social_url); ?>" target="_blank">
 	                    <i class="fa fa-fw fa-<?php echo esc_attr($social); ?>"></i>
 	                </a>
 	            </li>

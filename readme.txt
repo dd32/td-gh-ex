@@ -4,8 +4,8 @@ Contributors: InkHive
 Tags: custom-background, two-columns, one-column, custom-colors, flexible-header, right-sidebar, grid-layout, custom-menu, sticky-post, theme-options, threaded-comments, translation-ready, featured-images, full-width-template, custom-header, footer-widgets, e-commerce
 
 Requires at least: 4.0
-Tested up to: 4.9.9
-Stable tag: 0.96
+Tested up to: 4.9.8
+Stable tag: 0.97
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,6 +19,10 @@ Demo Here: http://demo.inkhive.com/adviso/
 
 
 == Changelog ==
+
+
+= 0.97 =
+* Fifth Review Changes
 
 
 = 0.96 =

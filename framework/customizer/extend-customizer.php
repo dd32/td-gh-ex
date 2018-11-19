@@ -22,8 +22,8 @@ if (class_exists('WP_Customize_Control')) {
 
             printf(
                 '<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
-                $this->label,
-                $dropdown
+                esc_html( $this->label ),
+                esc_html( $dropdown )
             );
         }
     }
@@ -50,8 +50,8 @@ if ( class_exists('WP_Customize_Control') && class_exists('woocommerce') ) {
 
             printf(
                 '<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
-                $this->label,
-                $dropdown
+                esc_html( $this->label ),
+                esc_html( $dropdown )
             );
         }
     }
@@ -65,8 +65,8 @@ if (class_exists('WP_Customize_Control')) {
         public function render_content() {
             printf(
                 '<label class="customize-control-upgrade"><span class="customize-control-title">%s</span> %s</label>',
-                $this->label,
-                $this->description
+                esc_html( $this->label ),
+                esc_html( $this->description )
             );
         }
     }
@@ -101,7 +101,7 @@ if (class_exists('WP_Customize_Control')) {
             <?php $name = '_customize-skin-' . $this->id;
             foreach ($this->choices as $key=>$value) { ?>
                 <label>
-                    <input type="radio" class="custom_skin_control" style="background: <?php echo $key; ?>"  value="<?php echo esc_attr($value); ?>" <?php $this->link(); ?> name="<?php echo esc_attr( $name ); ?>" <?php checked( $this->value(), $value ); ?>/>
+                    <input type="radio" class="custom_skin_control" style="background: <?php echo esc_attr( $key ); ?>"  value="<?php echo esc_attr($value); ?>" <?php $this->link(); ?> name="<?php echo esc_attr( $name ); ?>" <?php checked( $this->value(), $value ); ?>/>
                 </label>
             <?php }
         }
@@ -141,7 +141,7 @@ class Adviso_Switch_Control extends WP_Customize_Control {
         $switch_class = ($this->value() == 'enable') ? 'switch-enable' : '';
         $enable_disable = $this->enable_disable;
         ?>
-        <div class="enable-disable-switch <?php echo $switch_class; ?>">
+        <div class="enable-disable-switch <?php echo esc_attr( $switch_class ); ?>">
             <div class="enable-disable-switch-inner">
                 <div class="enable-disable-switch-enabled">
                     <div class="enable-disable-switch-switch"><?php echo esc_html($enable_disable['enable']) ?></div>
@@ -260,7 +260,7 @@ if ( class_exists('WP_Customize_Control') ) {
 					<?php foreach ( $this->choices as $key => $value ) { ?>
 						<label>
 							<input type="radio" data-control="size" name="<?php echo esc_attr( $this->id ); ?>" value="<?php echo esc_attr( $key ); ?>" <?php $this->link(); ?> <?php checked( esc_attr( $key ), $this->value() ); ?>/>
-							<span class="size button" data-value="<?php echo $value; ?>"><?php echo $value; ?></span>
+							<span class="size button" data-value="<?php echo esc_attr( $value ); ?>"><?php echo esc_attr_e( $value ); ?></span>
 						</label>
 					<?php } ?>
 				</div>
@@ -291,7 +291,7 @@ if ( class_exists('WP_Customize_Control') ) {
 					<?php foreach ( $this->choices as $choice ) { ?>
 						<label>
 							<input type="radio" name="<?php echo esc_attr( $this->id ); ?>" value="<?php echo esc_attr( $choice ); ?>" <?php $this->link(); ?> <?php checked( esc_attr( $choice ), $this->value() ); ?>/>
-							<span class="weight weight-<?php echo $choice ?>"><?php echo $choice; ?></span>
+							<span class="weight weight-<?php echo esc_attr( $choice ); ?>"><?php echo esc_attr( $choice ); ?></span>
 						</label>
 					<?php } ?>
 				</div>

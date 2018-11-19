@@ -805,6 +805,19 @@ body.home #site-navigation ul.menu > li:hover a {
 #footer-sidebar .search-submit {
   display: none;
 }
+#secondary .widget_nav_menu li,
+#footer-sidebar .widget_nav_menu li {
+  white-space: normal;
+}
+#secondary .widget_archive select,
+#footer-sidebar .widget_archive select,
+#secondary .widget_categories select,
+#footer-sidebar .widget_categories select,
+#secondary .widget_text select,
+#footer-sidebar .widget_text select {
+  width: 100%;
+  height: 3em;
+}
 #secondary .widget_tag_cloud .tagcloud a,
 #footer-sidebar .widget_tag_cloud .tagcloud a {
   background: #eee;

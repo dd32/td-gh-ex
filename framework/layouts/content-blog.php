@@ -10,7 +10,7 @@
 			<?php if (has_post_thumbnail()) : ?>	
 				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>"><?php the_post_thumbnail('adviso-sq-thumb', array(  'alt' => trim(strip_tags( $post->post_title )))); ?></a>
 			<?php else: ?>
-				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>"><img src="<?php echo get_template_directory_uri()."/assets/images/placeholder.png"; ?>" alt="<?php the_title(); ?>"></a>
+				<a href="<?php the_permalink(); ?>" title="<?php the_title_attribute() ?>"><img src="<?php echo esc_url( get_template_directory_uri()."/assets/images/placeholder.png" ); ?>" alt="<?php the_title(); ?>"></a>
 			<?php endif; ?>
 			
 		</div><!--.featured-thumb-->
@@ -20,7 +20,7 @@
                 <h3 class="entry-title title-font mdl-card__title-text"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
             </header><!-- .entry-header -->
             <div class="postedon"><?php adviso_posted_on(); ?></div>
-            <p class="entry-excerpt"><?php echo substr(get_the_excerpt(),0,80).(get_the_excerpt() ? "..." : "" ); ?></p>
+            <p class="entry-excerpt"><?php echo esc_html( substr(get_the_excerpt(),0,80).(get_the_excerpt() ? "..." : "" ) ); ?></p>
             <div class="readmore"><a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More','adviso'); ?></a></div>
 		</div><!--.out-thumb-->
 			

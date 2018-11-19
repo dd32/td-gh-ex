@@ -432,14 +432,14 @@
 	
 	
 	$wp_customize->add_control(
-		new Adviso_Plus_Upsell_Control(
+		new Adviso_WP_Customize_Upgrade_Control(
 		$wp_customize,
 		'adviso_plus_notice',
 			array(
 				'settings'	=> array(),
 				'section'	=> 'adviso_typo_options',
 				'priority'	=> 25,
-				'description'		=> __('More Options in Adviso Plus', 'adviso')
+				'description'		=> '<a href="https://www.inkhive.com/product/adviso-plus" target="_blank" class="adviso_button">More Options in Adviso Plus</a>',
 			)
 		)
 	);

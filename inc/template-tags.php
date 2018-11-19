@@ -30,7 +30,7 @@ if ( ! function_exists( 'adviso_posted_on' ) ) :
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 		
-		echo '<span class="author">' . $byline . '</span>';
+		echo '<span class="author">' . esc_html( $byline ) . '</span>';
 
 	}
 
@@ -52,7 +52,7 @@ if ( ! function_exists( 'adviso_posted_on' ) ) :
             '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
         );
 
-        echo '<span class="posted-on">' . $posted_on . '</span>';
+        echo '<span class="posted-on">' . esc_html( $posted_on ) . '</span>';
 
     }
     

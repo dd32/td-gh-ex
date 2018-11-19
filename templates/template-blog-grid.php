@@ -9,7 +9,7 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area <?php echo adviso_primary_class(); ?>">
+	<div id="primary" class="content-area <?php echo esc_attr( adviso_primary_class() ); ?>">
 		<main id="main" class="site-main">
 
 			<header class="entry-header">

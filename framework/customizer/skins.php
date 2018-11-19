@@ -45,24 +45,17 @@ function adviso_customize_register_skins( $wp_customize ) {
 	);
     
     $wp_customize->add_control(
-		new Adviso_Plus_Upsell_Control(
+		new Adviso_WP_Customize_Upgrade_Control(
 		$wp_customize,
 		'adviso_plus_skin',
 			array(
 				'settings'	=> array(),
 				'section'	=> 'colors',
 				'priority'	=> 25,
-				'description'		=> __('More Options in Adviso Plus', 'adviso')
+				'description'		=> '<a href="https://www.inkhive.com/product/adviso-plus" target="_blank" class="adviso_button">More Options in Adviso Plus</a>',
 			)
 		)
 	);
-
-    function adviso_sanitize_skin( $input ) {
-        if ( in_array($input, array('default','blue-pink','yellow-black','off-blue-gray','brownish') ) )
-            return $input;
-        else
-            return '';
-    }
 }
 add_action('customize_register', 'adviso_customize_register_skins');
  

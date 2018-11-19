@@ -38,14 +38,14 @@
                                     <?php if(has_post_thumbnail()):
                                         the_post_thumbnail('adviso-sq-thumb');
                                     else: ?>
-                                        <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder2.jpg" />
+                                        <img src="<?php echo esc_url( get_template_directory_uri() . '/assets/images/placeholder2.jpg' ); ?> />
                                     <?php endif; ?>
                                 </div>
 								<div class="out-thumb mdl-card__supporting-text">
                                     <div class="product-title">
 	                                    <?php the_title(); ?>
 	                                </div>
-                                    <span class="price"><?php echo $product->get_price_html(); ?></span>
+                                    <span class="price"><?php echo esc_html( $product->get_price_html() ); ?></span>
                                 </div>
                             </a>
                         </div>

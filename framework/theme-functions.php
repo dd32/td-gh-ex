@@ -99,14 +99,14 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 		var $tree_type = 'comment';
 		var $db_fields = array( 'parent' => 'comment_parent', 'id' => 'comment_ID' );
  
-		// constructor – wrapper for the comments list
+		// constructor - wrapper for the comments list
 		function __construct() { ?>
 
 			<li class="comments-list">
 
 		<?php }
 
-		// start_lvl – wrapper for child comments list
+		// start_lvl - wrapper for child comments list
 		function start_lvl( &$output, $depth = 0, $args = array() ) {
 			
 			parent::start_lvl( $output, $depth, $args ); ?>
@@ -115,7 +115,7 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 
 		<?php }
 	
-		// end_lvl – closing wrapper for child comments list
+		// end_lvl - closing wrapper for child comments list
 		function end_lvl( &$output, $depth = 0, $args = array() ) {
 			parent::end_lvl( $output, $depth, $args ); ?>
 
@@ -123,7 +123,7 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 
 		<?php }
 
-		// start_el – HTML for comment template
+		// start_el - HTML for comment template
 		function start_el( &$output = '', $item, $depth = 0, $args = array(), $id = 0 ) {
 			
 			parent::start_el( $output, $item, $depth, $args, $id );
@@ -147,7 +147,7 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 							<h2 class="comment-author">
 								<a class="comment-author-link" href="<?php comment_author_url(); ?>" itemprop="author"><?php comment_author(); ?></a>
 							</h2>
-							<span><?php echo adviso_time_ago(); ?></span>
+							<span><?php echo esc_html( adviso_time_ago() ); ?></span>
 							<?php edit_comment_link('<p class="comment-meta-item">Edit this comment</p>','',''); ?>
 							<?php if ($item->comment_approved == '0') : ?>
 							<p class="comment-meta-item">Your comment is awaiting moderation.</p>
@@ -162,7 +162,7 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 
 		<?php }
 
-		// end_el – closing HTML for comment template
+		// end_el - closing HTML for comment template
 		function end_el(&$output, $item, $depth = 0, $args = array() ) { 
 		
 			//parent::end_el( $output, $item, $depth, $args ); ?>
@@ -171,7 +171,7 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 
 		<?php }
 
-		// destructor – closing wrapper for the comments list
+		// destructor - closing wrapper for the comments list
 		function __destruct() { ?>
 
 			</li>

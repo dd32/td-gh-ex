@@ -51,7 +51,7 @@ if ( ! function_exists( 'adviso_header_style' ) ) :
                 #masthead {
                     display: flex;
                     flex-direction: column;
-                    background-image: url(<?php echo $image_data[0] ?>);
+                    background-image: url(<?php echo esc_url( $image_data[0] ) ?>);
                     background-size: cover;
                     background-position: center center;
                     background-repeat: no-repeat;
