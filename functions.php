@@ -17,7 +17,7 @@ if ( ! function_exists( 'ayabooks_setup' ) ) :
 
 		add_theme_support( 'html5', array( 'comment-form', 'comment-list', 'gallery', 'caption',	) );
 
-		add_image_size( 'ayabooks-thumbnail-avatar', 100, 100, true );
+	
 
 		add_theme_support( 'custom-background', array ('default-color'  => '#ffffff') );
 

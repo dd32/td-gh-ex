@@ -32,12 +32,16 @@ Installation using 'Add New Theme'
 3. Click the 'Install' button to open the theme's repository listing
 4. Click the 'Install' button
 
-Activiation and Use
+2. Activiation and Use
 
 1. Activate the Theme through the 'Themes' menu in WordPress
 2. See Appearance -> Customize to change theme specific options
 
 == Changelog ==
+
+= 1.0.6 =
+* update Resources' images info
+* remove add_image_size from functions.php
 
 = 1.0.5 =
 * update readme.txt file format
@@ -59,11 +63,11 @@ Activiation and Use
 * Initial Release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* screenshot.png (above cols img), © Myriams-Fotos https://pixabay.com/en/daisy-bellis-philosophy-2320519/, CC0
-* screenshot.png (col img), © congerdesign https://pixabay.com/en/book-old-book-read-used-2363881/, CC0
-* screenshot.png (col img), © Sundine https://pixabay.com/en/book-flowers-read-white-dreams-2436058/, CC0
-* screenshot.png (col img), © congerdesign https://pixabay.com/en/book-read-relax-meadow-book-pages-2304389/, CC0
+* screenshot.png (above cols img), © 2017 @Myriams-Fotos https://pixabay.com/en/daisy-bellis-philosophy-2320519/, CC0
+* screenshot.png (col img), © 2017 @congerdesign https://pixabay.com/en/book-old-book-read-used-2363881/, CC0
+* screenshot.png (col img), © 2017 @Sundine https://pixabay.com/en/book-flowers-read-white-dreams-2436058/, CC0
+* screenshot.png (col img), © 2017 @congerdesign https://pixabay.com/en/book-read-relax-meadow-book-pages-2304389/, CC0
