@@ -14,7 +14,6 @@ if ( ! function_exists( 'ayacoffeeshop_setup' ) ) :
 	    );
 		add_theme_support( 'custom-logo', $defaults );
 
-		add_image_size( 'ayacoffeeshop-thumbnail-avatar', 100, 100, true );
 
 		add_theme_support( 'custom-background', array ('default-color'  => '#ffffff') );
 

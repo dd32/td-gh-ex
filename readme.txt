@@ -13,7 +13,7 @@ AyaCoffeeShop is Fully Responsive WordPress Theme.
 
 == Description ==
 
-AyaCoffeeShopPro is a fully responsive WordPress Theme. Features include a built-in Slider,
+AyaCoffeeShopPro is a fully responsive WordPress Theme. Features include a Built-in Homepage Slider (Displayed Only on a Static Front Page),
 Custom Logo, Multi-level Drop-down Menu, Custom Background, Full-Width Page Template,
 Footer Widgets Areas, Footer Menu, Footer Copyright Text, Search Engine Optimized, Multiple Browsers
 Support, Translation-Ready, etc. Fully Responsive, Customizable, and easy to use theme.
@@ -43,6 +43,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.0.5 =
+* update Resources' images info 
+* remove add_image_size from functions.php
+
 = 1.0.4 =
 * update readme.txt file format
 
@@ -60,9 +64,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * Initial Release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
-* images/slider/1.jpg, © Pexels https://pixabay.com/en/coffee-cup-drink-flora-flower-hot-1845623/, CC0
-* images/slider/2.jpg, © gollosojov23 https://pixabay.com/en/coffee-cup-drink-espresso-hot-3348813/, CC0
-* images/slider/3.jpg, © Free-Photos https://pixabay.com/en/coffee-cup-drink-espresso-caffeine-690054/, CC0
-* screenshot.png (slider img), © Pexels https://pixabay.com/en/coffee-cup-drink-flora-flower-hot-1845623/, CC0
+* images/slider/1.jpg, © 2016 @Pexels https://pixabay.com/en/coffee-cup-drink-flora-flower-hot-1845623/, CC0
+* images/slider/2.jpg, © 2014 @gollosojov23 https://pixabay.com/en/coffee-cup-drink-espresso-hot-3348813/, CC0
+* images/slider/3.jpg, © 2015 @Free-Photos https://pixabay.com/en/coffee-cup-drink-espresso-caffeine-690054/, CC0
+* screenshot.png (slider img), © 2016 @Pexels https://pixabay.com/en/coffee-cup-drink-flora-flower-hot-1845623/, CC0
