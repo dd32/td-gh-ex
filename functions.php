@@ -55,6 +55,37 @@ if ( ! function_exists( ( 'ct_apex_theme_setup' ) ) ) {
 		add_theme_support( 'wc-product-gallery-lightbox' ); 
 		add_theme_support( 'wc-product-gallery-slider' );
 
+		// Gutenberg - add support for editor styles
+		add_theme_support('editor-styles');
+
+		// Gutenberg - modify the font sizes
+		add_theme_support( 'editor-font-sizes', array(
+			array(
+					'name' => __( 'small', 'apex' ),
+					'shortName' => __( 'S', 'apex' ),
+					'size' => 12,
+					'slug' => 'small'
+			),
+			array(
+					'name' => __( 'regular', 'apex' ),
+					'shortName' => __( 'M', 'apex' ),
+					'size' => 16,
+					'slug' => 'regular'
+			),
+			array(
+					'name' => __( 'large', 'apex' ),
+					'shortName' => __( 'L', 'apex' ),
+					'size' => 21,
+					'slug' => 'large'
+			),
+			array(
+					'name' => __( 'larger', 'apex' ),
+					'shortName' => __( 'XL', 'apex' ),
+					'size' => 37,
+					'slug' => 'larger'
+			)
+	) );
+
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary', 'apex' )
 		) );
@@ -63,6 +94,16 @@ if ( ! function_exists( ( 'ct_apex_theme_setup' ) ) ) {
 	}
 }
 add_action( 'after_setup_theme', 'ct_apex_theme_setup', 10 );
+
+//-----------------------------------------------------------------------------
+// Load custom stylesheet for the post editor
+//-----------------------------------------------------------------------------
+if ( ! function_exists( 'ct_apex_add_editor_styles' ) ) {
+	function ct_apex_add_editor_styles() {
+		add_editor_style( 'styles/editor-style.css' );
+	}
+}
+add_action( 'admin_init', 'ct_apex_add_editor_styles' );
 
 if ( ! function_exists( ( 'ct_apex_register_widget_areas' ) ) ) {
 	function ct_apex_register_widget_areas() {
