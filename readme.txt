@@ -13,7 +13,7 @@ AyaPsychology is Fully Responsive WordPress Theme.
 
 == Description ==
 
-AyaPsychology is fully Responsive WordPress Theme with Built-in Homepage Slider, Multi-level Drop-down Menu,
+AyaPsychology is fully Responsive WordPress Theme with Built-in Homepage Slider (Displayed Only on a Static Front Page), Multi-level Drop-down Menu,
 W3C markup validated, Search Engine Optimized, Custom Logo, Custom Background, Footer Copyright Text
 Customizations, Widget Areas: 3 Homepage Columns, Sidebar, 3 Footer Columns, Multiple Browsers Support,
 Translation-Ready and much more.
@@ -45,6 +45,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.0.5 =
+* update Resources' images info 
+* remove add_image_size from functions.php
+
 = 1.0.4 =
 * update readme.txt file format
 
@@ -62,7 +66,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * Initial Release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * js/camera.min.js, © 2012 Manuel Masia, MIT
 * js/camera.js, © 2012 Manuel Masia, MIT
@@ -71,7 +75,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * js/jquery.mobile.customized.min.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* images/slider/1.jpg, © StockSnap https://pixabay.com/en/sunset-sun-rays-girl-woman-699136/, CC0
-* images/slider/2.jpg, © sasint https://pixabay.com/en/girl-sitting-jetty-docks-sad-1822702/, CC0
-* images/slider/3.jpg, © ZigmarsBerzinss https://pixabay.com/en/women-jetty-lake-pier-fashion-1784755/, CC0
-* screenshot.png (slider image), © StockSnap https://pixabay.com/en/sunset-sun-rays-girl-woman-699136/, CC0
+* images/slider/1.jpg, © 2015 @StockSnap https://pixabay.com/en/sunset-sun-rays-girl-woman-699136/, CC0
+* images/slider/2.jpg, © 2016 @sasint https://pixabay.com/en/girl-sitting-jetty-docks-sad-1822702/, CC0
+* images/slider/3.jpg, © 2016 @ZigmarsBerzinss https://pixabay.com/en/women-jetty-lake-pier-fashion-1784755/, CC0
+* screenshot.png (slider image), © 2015 @StockSnap https://pixabay.com/en/sunset-sun-rays-girl-woman-699136/, CC0

@@ -62,7 +62,7 @@ if ( ! function_exists( 'ayapsychology_setup' ) ) :
 		 */
 		add_theme_support( 'post-thumbnails' );
 
-		add_image_size( 'ayapsychology-thumbnail-avatar', 100, 100, true );
+
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
