@@ -92,7 +92,6 @@ if ( ! function_exists( 'ayaairport_setup' ) ) :
 
 		add_theme_support( 'post-thumbnails' );
 
-		add_image_size( 'ayaairport-thumbnail-avatar', 100, 100, true );
 
 		add_theme_support( 'html5', array(
 			'comment-form',

@@ -42,6 +42,10 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.0.5 =
+* update Resources' images info
+* remove add_image_size from functions.php
+
 = 1.0.4 =
 * update readme.txt file format
 
@@ -59,8 +63,8 @@ Installation using 'Add New Theme'
 * Initial Release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* screenshot.png, © skeeze https://pixabay.com/en/child-waving-goodbye-departure-plane-595429/, CC0
+* screenshot.png, © 2015 @skeeze https://pixabay.com/en/child-waving-goodbye-departure-plane-595429/, CC0
