@@ -38,6 +38,8 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+= 1.1.1 (2018-11-19) =
+* update Resources' images date uppload info 
 
 = 1.1.0 (2018-11-19) =
 * update Resources' images info 
@@ -84,10 +86,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * FontAwesome 4.7.0, © @davegandy, SIL OFL 1.1
 * Cabin (default theme font), © Google Fonts, Apache v2.0
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* images/slider/1.jpg, © niekverlaan https://pixabay.com/en/occur-music-live-going-out-disco-376810/, CC0
-* images/slider/2.jpg, © SocialButterflyMMG https://pixabay.com/en/cocktail-bar-nightlife-icee-drink-3327242/, CC0
-* images/slider/3.jpg, © StockSnap https://pixabay.com/en/concert-stage-light-spotlight-2565999/, CC0
-* screenshot.png (slider img) niekverlaan https://pixabay.com/en/occur-music-live-going-out-disco-376810/, CC0
+* images/slider/1.jpg, © 2014 @niekverlaan https://pixabay.com/en/occur-music-live-going-out-disco-376810/, CC0
+* images/slider/2.jpg, © 2018 @SocialButterflyMMG https://pixabay.com/en/cocktail-bar-nightlife-icee-drink-3327242/, CC0
+* images/slider/3.jpg, © 2017 @StockSnap https://pixabay.com/en/concert-stage-light-spotlight-2565999/, CC0
+* screenshot.png (slider img) © 2014 @niekverlaan https://pixabay.com/en/occur-music-live-going-out-disco-376810/, CC0
 * js/camera.min.js, © 2012 by Manuel Masia, MIT
 * js/camera.js, © 2012 by Manuel Masia, MIT
 * js/jquery.easing.1.3.js, © 2008 George McGinley Smith, BSD
