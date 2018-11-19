@@ -9,7 +9,7 @@ if ( ! function_exists( 'ayawild_setup' ) ) :
 
 		add_theme_support( 'custom-background', array ('default-color'  => '#ffffff') );
 
-		add_image_size( 'ayawild-thumbnail-avatar', 100, 100, true );
+	
 
 		add_theme_support( 'automatic-feed-links' );
 

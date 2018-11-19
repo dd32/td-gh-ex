@@ -13,7 +13,7 @@ AyaWild is Fully Responsive WordPress Theme.
 
 == Description ==
 
-AyaWild is a fully responsive WordPress Theme. Features include a built-in Slider, Custom Logo,
+AyaWild is a fully responsive WordPress Theme. Features include a Built-in Homepage Slider (Displayed Only on a Static Front Page), Custom Logo,
 Multi-level Drop-down Menu, Custom Background, Full-Width Page Template, Footer Widgets Areas,
 Footer Menu, Footer Copyright Text, Search Engine Optimized, Multiple Browsers Support,
 Translation-Ready, etc. Fully Responsive, Customizable, and easy to use theme.
@@ -44,6 +44,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.0.5 =
+* update Resources' images info 
+* remove add_image_size from functions.php
+
 = 1.0.4 =
 * update readme.txt file format
 
@@ -61,7 +65,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * Initial Release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * js/slippry.js, © 2015 Lukas Jakob Hafner - @saftsaak, Thomas Hurd - @SeenNotHurd, MIT
 * images/slider/1.jpg, © StockSnap https://pixabay.com/en/people-woman-travel-adventure-trek-2591874/, CC0
