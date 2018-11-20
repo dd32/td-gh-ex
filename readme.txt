@@ -45,6 +45,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.9.2 =
+* remove set_post_thumbnail_size from functions.php
+
 = 1.9.1 =
 * update Resources' images info 
 
