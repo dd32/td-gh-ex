@@ -45,6 +45,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.9.1 =
+* update Resources' images info 
+
 = 1.9.0 =
 * add WooCommerce support
 
@@ -106,7 +109,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * Initial release
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * js/camera.min.js, © 2012 Manuel Masia, MIT
 * js/camera.js, © 2012 Manuel Masia, MIT
@@ -115,15 +118,8 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * js/jquery.mobile.customized.min.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* images/slider/1.jpg, © Alexas_Fotos https://pixabay.com/en/teddy-bank-sit-teddy-bear-bear-2710522/, CC0
-* images/slider/2.jpg, © Antranias https://pixabay.com/en/school-window-facade-building-437676/, CC0
-* images/slider/3.jpg, © Studio32 https://pixabay.com/en/paper-book-laptop-education-3052246/, CC0
+* images/slider/1.jpg, © 2017 @Alexas_Fotos https://pixabay.com/en/teddy-bank-sit-teddy-bear-bear-2710522/, CC0
+* images/slider/2.jpg, © 2014 @Antranias https://pixabay.com/en/school-window-facade-building-437676/, CC0
+* images/slider/3.jpg, © 2017 @Studio32 https://pixabay.com/en/paper-book-laptop-education-3052246/, CC0
 * screenshot.png (products), WooCommerce, Copyright (C) Automattic, GPLv3
-* screenshot.png (slider image), © Alexas_Fotos https://pixabay.com/en/teddy-bank-sit-teddy-bear-bear-2710522/, CC0
-
-== Contacts ==
-
-Author Website: https://tishonator.com
-
-
-
+* screenshot.png (slider image), © 2017 @Alexas_Fotos https://pixabay.com/en/teddy-bank-sit-teddy-bear-bear-2710522/, CC0
