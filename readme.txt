@@ -44,6 +44,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.1.8 (2018-11-20) =
+* update Resources' images
+* remove set_post_thumbnail_size from functions.php
+
 = 1.1.7 (2018-11-05) =
 * update readme.txt file format
 * move changelog.txt into readme.txt file
@@ -112,7 +116,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * js/camera.min.js, © 2012 Manuel Masia, MIT
 * js/camera.js, © 2012 Manuel Masia, MIT
@@ -121,8 +125,8 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * js/jquery.mobile.customized.min.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* images/slider/1.jpg, © StartupStockPhotos https://pixabay.com/en/entrepreneur-startup-start-up-man-593352/, CC0
-* images/slider/2.jpg, © StartupStockPhotos https://pixabay.com/en/conference-table-meeting-startup-593355/, CC0
-* images/slider/3.jpg, © Usinglight https://pixabay.com/en/vienna-sunset-skyline-skyscraper-581427/, CC0
-* screenshot.png (slider image), © StartupStockPhotos https://pixabay.com/en/entrepreneur-startup-start-up-man-593352/, CC0
+* images/slider/1.jpg, © 2015 @StartupStockPhotos https://pixabay.com/en/entrepreneur-startup-start-up-man-593352/, CC0
+* images/slider/2.jpg, © 2015 @StartupStockPhotos https://pixabay.com/en/conference-table-meeting-startup-593355/, CC0
+* images/slider/3.jpg, © 2014 @Usinglight https://pixabay.com/en/vienna-sunset-skyline-skyscraper-581427/, CC0
+* screenshot.png (slider image), © 2015 @StartupStockPhotos https://pixabay.com/en/entrepreneur-startup-start-up-man-593352/, CC0
 * screenshot.png (products), WooCommerce, Copyright (C) Automattic, GPLv3
