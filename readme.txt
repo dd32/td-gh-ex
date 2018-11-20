@@ -13,7 +13,7 @@ fMuzz is Fully Responsive WordPress Theme.
 
 == Description ==
 
-fMuzz is a Fully Responsive WordPress Theme. Features include built-in Homepage Slider,
+fMuzz is a Fully Responsive WordPress Theme. Features include Built-in Homepage Slider (Displayed Only on a Static Front Page),
 WooCommerce Support, Header social icons, Custom Logo, Multi-level Drop-down Menu,
 Custom Background, Footer Copyright Text, Sidebar Widget Area, 3 Homepage Columns Widget Areas,
 3 Footer Columns Widget Areas, Multiple Browsers Support, Translation-Ready and much more.
@@ -46,6 +46,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.4.3 =
+* update Resources' images info 
+* remove add_image_size from functions.php
+
 = 1.4.2 =
 * add WooCommerce plugin support
 
@@ -73,15 +77,15 @@ fMuzz is distributed under the terms of the GNU GPL
 fMuzz WordPress Theme bundles the following third-party resources:
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * js/camera.min.js, © 2012 Manuel Masia, MIT
 * js/camera.js, © 2012 Manuel Masia, MIT
 * js/jquery.easing.1.3.js, © 2008 George McGinley Smith, BSD
 * js/jquery.mobile.customized.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
 * js/jquery.mobile.customized.min.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
-* images/slider/1.jpg, © SplitShire https://pixabay.com/en/headphones-earphones-audio-mp3-407190/, CC0
-* images/slider/2.jpg, © indegoblue https://pixabay.com/en/microphone-mike-yellow-karaoke-1503776/, CC0
-* images/slider/3.jpg, © terimakasih0 https://pixabay.com/en/violin-musical-instrument-music-1279043/, CC0
-* screenshot.png (slide img), © SplitShire https://pixabay.com/en/headphones-earphones-audio-mp3-407190/, CC0
+* images/slider/1.jpg, © 2014 @SplitShire https://pixabay.com/en/headphones-earphones-audio-mp3-407190/, CC0
+* images/slider/2.jpg, © 2016 @indegoblue https://pixabay.com/en/microphone-mike-yellow-karaoke-1503776/, CC0
+* images/slider/3.jpg, © 2016 @terimakasih0 https://pixabay.com/en/violin-musical-instrument-music-1279043/, CC0
+* screenshot.png (slide img), © 2014 @SplitShire https://pixabay.com/en/headphones-earphones-audio-mp3-407190/, CC0
 * screenshot.png (products), WooCommerce, Copyright (C) Automattic, GPLv3
