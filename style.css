@@ -3,8 +3,8 @@ Theme Name: Ignite
 Theme URI: https://www.competethemes.com/ignite/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
-Description: Ignite is a clean, free, and responsive blog theme. Its modern design is great for both business and personal websites. Ignite has a simple and minimalist design that looks equally great on laptops, tablets, and mobile devices. Features include: custom logo, social media icons, left- and right-sidebar layouts, five fonts, custom background colors, and many additional display options. Use it to blog about the news, food, music, fashion, or your travels. Ignite is now WooCommerce compatible, so you can even setup an eCommerce store. There is also a premium upgrade for Ignite called Ignite Plus. Preview Ignite now on desktop, tablets, and phones with the interactive live demo: https://www.competethemes.com/demos/?theme=ignite
-Version: 1.73
+Description: Ignite is a clean, free, and responsive blog theme. Its modern design is great for both business and personal websites. Ignite has a simple and minimalist design that looks equally great on laptops, tablets, and mobile devices. Features include: custom logo, social media icons, left- and right-sidebar layouts, five fonts, custom background colors, and many additional display options. Use it to blog about the news, food, music, fashion, or your travels. Ignite is now WooCommerce compatible, so you can even setup an eCommerce store. There is also a premium upgrade for Ignite called Ignite Plus. Ignite is also fully compatible with the new Gutenberg post editor. Preview Ignite now on desktop, tablets, and phones with the interactive live demo: https://www.competethemes.com/demos/?theme=ignite
+Version: 1.74
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, right-sidebar, left-sidebar, custom-background, custom-logo, custom-menu, featured-images, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, education, news
@@ -1347,6 +1347,35 @@ a img {
   margin-left: 6em;
 }
 
+.wp-block-image.alignfull,
+.wp-block-cover {
+  position: relative;
+  left: -9.5%;
+  width: 119%;
+  max-width: none;
+}
+
+.wp-block-image.alignwide {
+  position: relative;
+  left: -5%;
+  width: 110%;
+  max-width: none;
+}
+
+.wp-block-quote.is-large {
+  padding-left: 0;
+  border-left: none;
+  margin: 1.5em;
+}
+
+.wp-block-embed {
+  margin: 1.5em 0;
+}
+
+.wp-block-code code {
+  background: none;
+}
+
 /* 700px */
 @media all and (min-width: 43.75em) {
   .further-reading p {
@@ -1372,10 +1401,47 @@ a img {
     height: 0;
   }
 }
+/* 800px */
+@media all and (min-width: 50em) {
+  .wp-block-image.alignfull,
+  .wp-block-cover {
+    left: -20.25%;
+    width: 140.5%;
+  }
+
+  .wp-block-image.alignwide {
+    left: -12%;
+    width: 124%;
+  }
+}
+/* 900px */
+@media all and (min-width: 56.25em) {
+  .wp-block-image.alignfull,
+  .wp-block-cover {
+    left: -18%;
+    width: 136%;
+  }
+
+  .wp-block-image.alignwide {
+    left: -10%;
+    width: 120%;
+  }
+}
 /* 1100px */
 @media all and (min-width: 68.75em) {
   .entry {
     margin-bottom: 1.5em;
+  }
+
+  .wp-block-image.alignfull,
+  .wp-block-cover {
+    left: -16.75%;
+    width: 133.5%;
+  }
+
+  .wp-block-image.alignwide {
+    left: -9%;
+    width: 118%;
   }
 }
 .comments {

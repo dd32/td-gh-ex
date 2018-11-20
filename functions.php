@@ -55,11 +55,56 @@ if ( ! function_exists( 'ct_ignite_theme_setup' ) ) {
 		add_theme_support( 'wc-product-gallery-zoom' ); 
 		add_theme_support( 'wc-product-gallery-lightbox' ); 
 		add_theme_support( 'wc-product-gallery-slider' );
+
+		// Gutenberg - wide & full images
+		add_theme_support( 'align-wide' );
+		add_theme_support( 'align-full' );
+
+		// Gutenberg - add support for editor styles
+		add_theme_support('editor-styles');
+
+		// Gutenberg - modify the font sizes
+		add_theme_support( 'editor-font-sizes', array(
+			array(
+					'name' => __( 'small', 'ignite' ),
+					'shortName' => __( 'S', 'ignite' ),
+					'size' => 13,
+					'slug' => 'small'
+			),
+			array(
+					'name' => __( 'regular', 'ignite' ),
+					'shortName' => __( 'M', 'ignite' ),
+					'size' => 16,
+					'slug' => 'regular'
+			),
+			array(
+					'name' => __( 'large', 'ignite' ),
+					'shortName' => __( 'L', 'ignite' ),
+					'size' => 21,
+					'slug' => 'large'
+			),
+			array(
+					'name' => __( 'larger', 'ignite' ),
+					'shortName' => __( 'XL', 'ignite' ),
+					'size' => 36,
+					'slug' => 'larger'
+			)
+		) );
 		
 		load_theme_textdomain( 'ignite', get_template_directory() . '/languages' );
 	}
 }
 add_action( 'after_setup_theme', 'ct_ignite_theme_setup', 10 );
+
+//-----------------------------------------------------------------------------
+// Load custom stylesheet for the post editor
+//-----------------------------------------------------------------------------
+if ( ! function_exists( 'ct_ignite_add_editor_styles' ) ) {
+	function ct_ignite_add_editor_styles() {
+		add_editor_style( 'styles/editor-style.css' );
+	}
+}
+add_action( 'admin_init', 'ct_ignite_add_editor_styles' );
 
 if ( ! function_exists( 'ct_ignite_register_sidebar' ) ) {
 	function ct_ignite_register_sidebar() {
