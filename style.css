@@ -3,8 +3,8 @@ Theme Name: Unlimited
 Theme URI: https://www.competethemes.com/unlimited/
 Author: Compete Themes
 Author URI: https://www.competethemes.com
-Description: Fast, responsive, beautiful, and accessible. With Unlimited, your content will reach more people, on more devices, around the world. Unlimited's simple and dark design puts the focus on your content, and supports it with clean, reliable code. Use this minimalist blogging theme to setup a website for a magazine, school, or personal journal. As a free WP theme, you can use Unlimited for as many sites as you want. Preview Unlimited now on desktop, tablets, and mobile devices with the interactive live demo: https://www.competethemes.com/demos/?theme=unlimited
-Version: 1.32
+Description: Fast, responsive, beautiful, and accessible. With Unlimited, your content will reach more people, on more devices, around the world. Unlimited's simple and dark design puts the focus on your content, and supports it with clean, reliable code. Use this minimalist blogging theme to setup a website for a magazine, school, or personal journal. As a free WP theme, you can use Unlimited for as many sites as you want. Unlimited is also fully compatible with the new Gutenberg post editor. Preview Unlimited now on desktop, tablets, and mobile devices with the interactive live demo: https://www.competethemes.com/demos/?theme=unlimited
+Version: 1.33
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, left-sidebar, right-sidebar, accessibility-ready, custom-logo, custom-menu, editor-style, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, education, news
@@ -1015,6 +1015,28 @@ a img {
   text-decoration: none;
 }
 
+.wp-block-image.alignfull,
+.wp-block-cover {
+  position: relative;
+  left: -3.5%;
+  width: 107%;
+  max-width: none;
+}
+
+.wp-block-quote.is-large {
+  padding-left: 0;
+  border-left: none;
+  margin: 1.5em;
+}
+
+.wp-block-embed {
+  margin: 1.5em 0;
+}
+
+.wp-block-code code {
+  background: none;
+}
+
 /* 600px */
 @media all and (min-width: 37.5em) {
   .post-title {
@@ -1053,6 +1075,12 @@ a img {
   .post-padding-container {
     padding: 0 5.2625%;
   }
+
+  .wp-block-image.alignfull,
+  .wp-block-cover {
+    left: -6%;
+    width: 112%;
+  }
 }
 /* 1000px */
 @media all and (min-width: 62.5em) {
@@ -1083,6 +1111,19 @@ a img {
 @media all and (min-width: 75em) {
   .post-padding-container {
     padding: 0 10.525%;
+  }
+
+  .wp-block-image.alignfull,
+  .wp-block-cover {
+    left: -13.33%;
+    width: 126.67%;
+  }
+
+  .wp-block-image.alignwide {
+    position: relative;
+    left: -8%;
+    width: 116%;
+    max-width: none;
   }
 }
 /* Comments styles */
