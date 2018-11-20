@@ -14,7 +14,7 @@ fGymm is a Fully Responsive Gym and Fitness WordPress Theme.
 == Description ==
 
 fGymm is a Fully Responsive Gym and Fitness WordPress Theme designed for health and fitness clubs, 
-CrossFit programs, fitness professionals, personal trainers, etc. Features include built-in Homepage Slider, 
+CrossFit programs, fitness professionals, personal trainers, etc. Features include Built-in Homepage Slider (Displayed Only on a Static Front Page), 
 WooCommerce plugin support, Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized, Header
 and Footer Social Icons (Facebook, Google+, Twitter, LinkedIn, Instagram, Tumblr, YouTube, Pinterest, VK,
 Flickr, Vine), Sidebar and 3 Footer Widget Areas, 3 Homepage widget areas, Full-Width Template, Multiple
@@ -42,6 +42,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.7.1 =
+* update Resources' images info 
+* remove set_post_thumbnail_size from functions.php
 
 = 1.7.0 =
 * add WooCommerce plugin support
@@ -116,7 +120,7 @@ fGymm WordPress Theme, Copyright 2016 tishonator
 fGymm is distributed under the terms of the GNU GPL
 
 == Resources ==
-* FontAwesome icon font, Copyright Font Awesome, SIL OFL 1.1
+* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * js/camera.min.js, © 2012 Manuel Masia, MIT
 * js/camera.js, © 2012 Manuel Masia, MIT
@@ -125,8 +129,8 @@ fGymm is distributed under the terms of the GNU GPL
 * js/jquery.mobile.customized.min.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
-* images/slider/1.jpg, © StockSnap https://pixabay.com/en/bodybuilder-muscles-fitness-925770/, CC0
-* images/slider/2.jpg, © Pexels https://pixabay.com/en/man-person-power-strength-strong-1282232/, CC0
-* images/slider/3.jpg, © xusenru https://pixabay.com/en/girl-in-the-gym-training-apparatus-1391368/, CC0
+* images/slider/1.jpg, © 2015 @StockSnap https://pixabay.com/en/bodybuilder-muscles-fitness-925770/, CC0
+* images/slider/2.jpg, © 2016 @Pexels https://pixabay.com/en/man-person-power-strength-strong-1282232/, CC0
+* images/slider/3.jpg, © 2016 @xusenru https://pixabay.com/en/girl-in-the-gym-training-apparatus-1391368/, CC0
 * screenshot.png (products), WooCommerce, Copyright (C) Automattic, GPLv3
-* screenshot.png (slider image), © StockSnap https://pixabay.com/en/bodybuilder-muscles-fitness-925770/, CC0
+* screenshot.png (slider image), © 2015 @StockSnap https://pixabay.com/en/bodybuilder-muscles-fitness-925770/, CC0

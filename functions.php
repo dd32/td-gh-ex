@@ -32,7 +32,7 @@ function fgymm_setup() {
 	) );
 
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 1200, 0, true );
+	
 
 	global $content_width;
 	if ( ! isset( $content_width ) )
