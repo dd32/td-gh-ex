@@ -5,7 +5,8 @@ featured-images, threaded-comments, translation-ready, sticky-post, theme-option
 full-width-template, editor-style
 Requires at least: 4.9.0
 Tested up to: 4.9.8
-Stable tag: 1.0.0
+Requires PHP: 5.2.4
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -33,7 +34,7 @@ Installation using 'Add New Theme'
 3. Click the 'Install' button to open the theme's repository listing
 4. Click the 'Install' button
 
-Activiation and Use
+2. Activiation and Use
 
 1. Activate the Theme through the 'Themes' menu in WordPress
 2. See Appearance -> Customize to change theme specific options
@@ -61,6 +62,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.0.1 =
+* escape translated text inside link attributes of social links
+* add Requires PHP field in readme.txt
 
 = 1.0.0 =
 * Initial Release
