@@ -3,7 +3,7 @@
 Contributors: eDataStyle
 Requires at least: 4.0
 Tested up to: 4.9.5
-Stable tag: 1.3
+Stable tag: 1.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -52,6 +52,10 @@ License: [MIT License.]
 Tgmpluginactivation:
 Source: http://tgmpluginactivation.com/
 License: GPL-2.0 or later license.
+
+Magnific-Popup:
+Source: https://github.com/dimsemenov/Magnific-Popup
+License: [MIT License.].
 
 
 Kirki, Copyright © 2016 Aristeides Stathopoulos:

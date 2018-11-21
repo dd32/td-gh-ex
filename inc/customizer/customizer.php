@@ -1,9 +1,9 @@
 <?php 
 
 /**
- * my_vcard_resume Theme Customizer.
+ * be_page Theme Customizer.
  *
- * @package my_vcard_resume
+ * @package be_page
  */
 
 
@@ -31,7 +31,7 @@ function be_page_customize_register( $wp_customize ) {
 			array(
 				'title'    => esc_html__( 'Be Page ', 'be-page' ),
 				'pro_text' => esc_html__( 'Upgrade To Pro', 'be-page' ),
-				'pro_url'  => 'https://athemeart.com/downloads/my-v-card-resume/',
+				'pro_url'  => 'https://edatastyle.com/product/be-page',
 				'priority'  => 1,
 			)
 		)

@@ -2,7 +2,7 @@
 /**
  * be_page Admin Class.
  *
- * @author  aThemeArt
+ * @author  edatastyle
  * @package be_page
  * @since   1.0
  */
@@ -38,8 +38,8 @@ class be_page_Admin {
 	public function admin_menu() {
 		$theme = wp_get_theme( get_template() );
 
-		$page = add_theme_page( esc_attr__( 'Getting Started My vCard Resume', 'be-page' ) , 
-		apply_filters( 'be_page_getting_started', esc_attr__( 'Getting Started My vCard Resume', 'be-page' )), 
+		$page = add_theme_page( esc_attr__( 'Getting Started Be Page', 'be-page' ) , 
+		apply_filters( 'be_page_getting_started', esc_attr__( 'Getting Started Be Page', 'be-page' )), 
 		'activate_plugins', 
 		'welcome', array( $this, 'welcome_screen' ) );
 		

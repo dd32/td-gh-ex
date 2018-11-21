@@ -162,8 +162,7 @@ class be_page_Kirki_Options extends Kirki {
 				'choices'     => array(
 					'sidebar-left' 	=> esc_attr__( 'Primary Sidebar - Content', 'be-page' ),
 					'sidebar-right' 		=> esc_attr__( 'Content - Primary Sidebar', 'be-page' ),
-					'no-sidebar' 		=> esc_attr__( 'No Sidebar ( Pro only ) ', 'be-page' ),
-					'full-container' 	=> esc_attr__( 'Full Container ( Pro only ) ', 'be-page' ),
+					
 					
 				),
 			) );
@@ -213,8 +212,7 @@ class be_page_Kirki_Options extends Kirki {
 				'choices'     => array(
 					'sidebar-right' 	=> esc_attr__( 'Primary Sidebar - Content', 'be-page' ),
 					'sidebar-left' 		=> esc_attr__( 'Content - Primary Sidebar', 'be-page' ),
-					'no-sidebar' 		=> esc_attr__( 'No Sidebar ( Pro only ) ', 'be-page' ),
-					'full-container' 	=> esc_attr__( 'Full Container ( Pro only ) ', 'be-page' ),
+					
 					
 				),
 			) );

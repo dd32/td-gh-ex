@@ -2,7 +2,7 @@
 /**
  * Custom Customizer Controls.
  *
- * @package my_vcard_resume
+ * @package be_page
  */
 
 
