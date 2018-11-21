@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Absolutte\n"
-"POT-Creation-Date: 2018-10-26 13:18-0300\n"
-"PO-Revision-Date: 2018-10-26 13:17-0300\n"
+"POT-Creation-Date: 2018-11-21 13:07-0300\n"
+"PO-Revision-Date: 2018-11-21 13:07-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -89,23 +89,23 @@ msgstr ""
 msgid "&copy; Copyright"
 msgstr ""
 
-#: functions.php:61
+#: functions.php:60
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:62
+#: functions.php:61
 msgid "Social Menu"
 msgstr ""
 
-#: functions.php:63
+#: functions.php:62
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:100
+#: functions.php:97
 msgid "Black"
 msgstr ""
 
-#: functions.php:105
+#: functions.php:102
 msgid "Gray"
 msgstr ""
 
@@ -837,6 +837,14 @@ msgstr ""
 msgid "Show Title"
 msgstr ""
 
+#: inc/theme-functions/meta-boxes-registration.php:18
+msgid "Yes"
+msgstr ""
+
+#: inc/theme-functions/meta-boxes-registration.php:19
+msgid "No"
+msgstr ""
+
 #: inc/theme-functions/meta-boxes-registration.php:23
 msgid "Header Margin"
 msgstr ""
@@ -849,6 +857,10 @@ msgstr ""
 msgid ""
 "If \"absolute\" is selected the header stays above the content, like "
 "position: absolute;."
+msgstr ""
+
+#: inc/theme-functions/meta-boxes-registration.php:36
+msgid "Normal"
 msgstr ""
 
 #: inc/theme-functions/meta-boxes-registration.php:47
@@ -869,6 +881,14 @@ msgstr ""
 
 #: inc/theme-functions/meta-boxes-registration.php:73
 msgid "Select if you want the contrast logo on this page."
+msgstr ""
+
+#: inc/theme-functions/meta-boxes-registration.php:78
+msgid "Default"
+msgstr ""
+
+#: inc/theme-functions/meta-boxes-registration.php:79
+msgid "Contrast"
 msgstr ""
 
 #: inc/theme-functions/meta-boxes-registration.php:86
@@ -929,36 +949,6 @@ msgstr ""
 msgid "You can find this documentation and more at our %1$sHelp Center%2$s."
 msgstr ""
 
-#: inc/theme-functions/woocommerce_support.php:177
-msgid "Out of stock"
-msgstr ""
-
-#: inc/theme-functions/woocommerce_support.php:448
-#: inc/theme-functions/woocommerce_support.php:461
-#, php-format
-msgid "Cart (%s)"
-msgstr ""
-
-#: inc/theme-functions/woocommerce_support.php:605
-msgid "SKU:"
-msgstr ""
-
-#: inc/theme-functions/woocommerce_support.php:610
-#: template-parts/single-portfolio.php:30
-#, fuzzy
-msgid "Category:"
-msgid_plural "Categories:"
-msgstr[0] ""
-"#-#-#-#-#  1extracted.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-"#-#-#-#-#  3extracted.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-msgstr[1] "#-#-#-#-#  1extracted.pot (PACKAGE VERSION)  #-#-#-#-#\n"
-
-#: inc/theme-functions/woocommerce_support.php:615
-msgid "Tag:"
-msgid_plural "Tags:"
-msgstr[0] ""
-msgstr[1] ""
-
 #: inc/widget-areas/widget-areas.php:8
 msgid "Sidebar"
 msgstr ""
@@ -1012,15 +1002,6 @@ msgstr ""
 msgid "Search Results for: %s"
 msgstr ""
 
-#: template-parts/beforeloop-woocommerce.php:35
-#: template-parts/portfolio-filters.php:14
-msgid "All"
-msgstr ""
-
-#: template-parts/beforeloop-woocommerce.php:69
-msgid "Filter"
-msgstr ""
-
 #: template-parts/content-none.php:16
 msgid "Nothing Found"
 msgstr ""
@@ -1044,7 +1025,6 @@ msgstr ""
 
 #: template-parts/content-page.php:28 template-parts/content-search.php:43
 #: template-parts/content-single.php:41 template-parts/content.php:43
-#: template-parts/single-portfolio.php:16
 msgid "Pages:"
 msgstr ""
 
@@ -1058,16 +1038,6 @@ msgstr ""
 
 #: template-parts/pagination.php:13
 msgid "Next page"
-msgstr ""
-
-#: template-parts/portfolio-container-dribbble.php:57
-#: template-parts/portfolio-container-thirds.php:54
-#: template-parts/portfolio-container.php:53
-msgid "Load More"
-msgstr ""
-
-#: template-parts/single-portfolio.php:36
-msgid "Tags:"
 msgstr ""
 
 #. Theme Name of the plugin/theme

@@ -4,12 +4,12 @@ Theme Name: Absolutte
 Theme URI: https://www.quemalabs.com/theme/absolutte/
 Description: Absolutte is a beautiful One page free WordPress theme, perfect for small business.
 It has fully support for Gutenberg blocks and easy customizations.
-Version: 1.0.2
+Version: 1.0.3
 Author: Quema Labs
 Author URI: https://www.quemalabs.com/
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Tags: two-columns, custom-background, threaded-comments, custom-menu, custom-logo, custom-colors, footer-widgets, theme-options, featured-images, sticky-post, translation-ready, full-width-template
+Tags: light, white, gray, right-sidebar, two-columns, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
 Text Domain: absolutte
 */
 /*
@@ -2627,17 +2627,17 @@ img, iframe, video { max-width: 100%; }
 
 /* Section Title
 /*----------------------------------------------------------------------*/
-.absolutte-section-title { font-size: 1.875rem; color: #4662EF; font-weight: bold; position: relative; padding-bottom: 1.5625rem; margin-bottom: 1.875rem; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; }
+.absolutte-section-title { font-size: 1.875rem; color: #4662ef; font-weight: bold; position: relative; padding-bottom: 1.5625rem; margin-bottom: 1.875rem; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; }
 
-.absolutte-section-title::after { content: ""; position: absolute; left: 0; bottom: 0; width: 50px; height: 2px; background-color: #4662EF; }
+.absolutte-section-title::after { content: ""; position: absolute; left: 0; bottom: 0; width: 50px; height: 2px; background-color: #4662ef; }
 
 .no-touch .absolutte-section-title a:hover { text-decoration: none; }
 
 /* Section Title Small
 /*----------------------------------------------------------------------*/
-.absolutte-section-title-small { font-size: 1.875rem; color: #4662EF; font-weight: bold; position: relative; padding-bottom: 1.5625rem; margin-bottom: 1.875rem; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; }
+.absolutte-section-title-small { font-size: 1.875rem; color: #4662ef; font-weight: bold; position: relative; padding-bottom: 1.5625rem; margin-bottom: 1.875rem; -moz-osx-font-smoothing: grayscale; -webkit-font-smoothing: antialiased; }
 
-.absolutte-section-title-small::after { content: ""; position: absolute; left: 0; bottom: 0; width: 50px; height: 2px; background-color: #4662EF; }
+.absolutte-section-title-small::after { content: ""; position: absolute; left: 0; bottom: 0; width: 50px; height: 2px; background-color: #4662ef; }
 
 .no-touch .absolutte-section-title-small a:hover { text-decoration: none; }
 
@@ -2898,7 +2898,7 @@ Header
 
 .post-title a { color: inherit; text-align: left; text-decoration: none; }
 
-.no-touch .post-title a:hover { color: #4662EF; }
+.no-touch .post-title a:hover { color: #4662ef; }
 
 .post-header { padding-bottom: 10px; position: relative; margin: 0 0 1.11111111111111em 0; border-bottom: none; display: block; }
 
@@ -2938,9 +2938,9 @@ Header
 
 .blog #content .post .entry-footer .metadata ul li a, .archive #content .post .entry-footer .metadata ul li a, .search #content .post .entry-footer .metadata ul li a { border-top: 1px solid transparent; margin-top: -1px; transition: border 200ms; }
 
-.no-touch .blog #content .post .entry-footer .metadata ul li a:hover, .no-touch .archive #content .post .entry-footer .metadata ul li a:hover, .no-touch .search #content .post .entry-footer .metadata ul li a:hover { border-top-color: #4662EF; }
+.no-touch .blog #content .post .entry-footer .metadata ul li a:hover, .no-touch .archive #content .post .entry-footer .metadata ul li a:hover, .no-touch .search #content .post .entry-footer .metadata ul li a:hover { border-top-color: #4662ef; }
 
-.no-touch .blog #content .post .entry-footer .metadata ul li.meta_categories a:hover, .no-touch .blog #content .post .entry-footer .metadata ul li.meta_tags a:hover, .no-touch .archive #content .post .entry-footer .metadata ul li.meta_categories a:hover, .no-touch .archive #content .post .entry-footer .metadata ul li.meta_tags a:hover, .no-touch .search #content .post .entry-footer .metadata ul li.meta_categories a:hover, .no-touch .search #content .post .entry-footer .metadata ul li.meta_tags a:hover { border-top-color: transparent; color: #4662EF; }
+.no-touch .blog #content .post .entry-footer .metadata ul li.meta_categories a:hover, .no-touch .blog #content .post .entry-footer .metadata ul li.meta_tags a:hover, .no-touch .archive #content .post .entry-footer .metadata ul li.meta_categories a:hover, .no-touch .archive #content .post .entry-footer .metadata ul li.meta_tags a:hover, .no-touch .search #content .post .entry-footer .metadata ul li.meta_categories a:hover, .no-touch .search #content .post .entry-footer .metadata ul li.meta_tags a:hover { border-top-color: transparent; color: #4662ef; }
 
 .blog #content .post .entry-footer .meta_author, .archive #content .post .entry-footer .meta_author, .search #content .post .entry-footer .meta_author { display: none; }
 
@@ -3030,13 +3030,13 @@ Header
 
 .pagination_wrap .pagination a, .pagination_wrap .pagination span { background-color: transparent; color: #adb5bd; float: left; font-size: 14px; line-height: 1.42857; padding: 9px 15px; position: relative; z-index: 1; text-decoration: none; border-radius: 3px; margin-right: 5px; transition: background 200ms, color 200ms; }
 
-.pagination_wrap .pagination a.current, .pagination_wrap .pagination span.current { background-color: #4662EF; color: #fff; }
+.pagination_wrap .pagination a.current, .pagination_wrap .pagination span.current { background-color: #4662ef; color: #fff; }
 
 .pagination_wrap .pagination a:hover { background-color: #dee2e6; color: #495057; cursor: pointer; }
 
-.pagination_wrap .pagination.active a { background-color: #4662EF; color: #fff; border-color: #4662EF; }
+.pagination_wrap .pagination.active a { background-color: #4662ef; color: #fff; border-color: #4662ef; }
 
-.pagination_wrap .pagination.active a:hover { background-color: #fff; color: #4662EF; border-color: #4662EF; cursor: pointer; }
+.pagination_wrap .pagination.active a:hover { background-color: #fff; color: #4662ef; border-color: #4662ef; cursor: pointer; }
 
 /* Fullwidth Template													*/
 /*----------------------------------------------------------------------*/
@@ -3112,7 +3112,7 @@ Header
 
 .comment-list .comment .comment-body .reply .comment-reply-link::before { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; display: inline-block; font-style: normal; font-variant: normal; font-weight: normal; line-height: 1; vertical-align: -.125em; content: "\f086"; position: absolute; top: 50%; left: 0; -webkit-transform: translateY(-50%); transform: translateY(-50%); font-size: 14px; }
 
-.comment-list .comment.bypostauthor .comment-body { color: #495057; border-bottom-color: #4662EF; }
+.comment-list .comment.bypostauthor .comment-body { color: #495057; border-bottom-color: #4662ef; }
 
 #comments .comment-list .pingback .comment-body { margin-bottom: 15px; }
 
@@ -3451,11 +3451,11 @@ a img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 
 .post-navigation .nav-next::before, .post-navigation .nav-previous::before { content: ""; opacity: 0.9; background-color: #e9ecef; top: 0; left: 0; bottom: 0; right: 0; position: absolute; }
 
-.post-navigation .nav-next a, .post-navigation .nav-previous a { padding: 18px 23px; background-color: #f8f9fa; position: relative; display: block; color: #4662EF; text-decoration: none; font-size: 18px; overflow: hidden; transition: background 300ms; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-radius: 3px; }
+.post-navigation .nav-next a, .post-navigation .nav-previous a { padding: 18px 23px; background-color: #f8f9fa; position: relative; display: block; color: #4662ef; text-decoration: none; font-size: 18px; overflow: hidden; transition: background 300ms; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; border-radius: 3px; }
 
 .post-navigation .nav-next a:hover, .post-navigation .nav-previous a:hover { background-color: transparent; }
 
-.post-navigation .nav-next a:hover::before, .post-navigation .nav-previous a:hover::before { background-color: #4662EF; color: #fff; -webkit-transform: translate(0, 0); transform: translate(0, 0); text-indent: 0; }
+.post-navigation .nav-next a:hover::before, .post-navigation .nav-previous a:hover::before { background-color: #4662ef; color: #fff; -webkit-transform: translate(0, 0); transform: translate(0, 0); text-indent: 0; }
 
 .post-navigation .nav-next a:hover span, .post-navigation .nav-previous a:hover span { color: #6c757d; }
 
@@ -5537,7 +5537,7 @@ Go Up Button
 
 .main-navigation li.menu-item-has-children { padding-right: 30px; }
 
-.main-navigation li.toggled-on > a { color: #4662EF; }
+.main-navigation li.toggled-on > a { color: #4662ef; }
 
 .main-navigation a { display: block; padding: 0.71428571428571em 0; text-decoration: none; color: inherit; }
 
@@ -5586,10 +5586,10 @@ Go Up Button
   .main-navigation { width: auto; }
   .js .main-navigation ul, .js .main-navigation ul ul, .js .main-navigation > div > ul { display: block; }
   .main-navigation ul { background: transparent; padding: 0; }
-  .main-navigation ul ul { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07), 0 15px 35px rgba(0, 0, 0, 0.1); border-radius: 0 0 4px 4px; background: #fff; left: -999em; padding: 1.07142857142857em 0; position: absolute; top: 100%; z-index: 99999; font-size: 0.875rem; border-top: 3px solid #4662EF; }
+  .main-navigation ul ul { box-shadow: 0 5px 15px rgba(0, 0, 0, 0.07), 0 15px 35px rgba(0, 0, 0, 0.1); border-radius: 0 0 4px 4px; background: #fff; left: -999em; padding: 1.07142857142857em 0; position: absolute; top: 100%; z-index: 99999; font-size: 0.875rem; border-top: 3px solid #4662ef; }
   .main-navigation ul ul li:hover > ul, .main-navigation ul ul li.focus > ul { left: 100%; right: auto; }
   .main-navigation ul ul a { padding: 0.57142857142857em 2em; width: 16em; color: inherit; position: relative; overflow: hidden; }
-  .main-navigation ul ul a::before { position: absolute; top: 50%; left: 9px; width: 6px; height: 6px; border-radius: 6px; display: block; content: ""; background-color: #4662EF; -webkit-transform: translate(-15px, -50%); transform: translate(-15px, -50%); transition: -webkit-transform 150ms ease-in-out; transition: transform 150ms ease-in-out; transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out; }
+  .main-navigation ul ul a::before { position: absolute; top: 50%; left: 9px; width: 6px; height: 6px; border-radius: 6px; display: block; content: ""; background-color: #4662ef; -webkit-transform: translate(-15px, -50%); transform: translate(-15px, -50%); transition: -webkit-transform 150ms ease-in-out; transition: transform 150ms ease-in-out; transition: transform 150ms ease-in-out, -webkit-transform 150ms ease-in-out; }
   .main-navigation ul ul a:hover::before { -webkit-transform: translate(0, -50%); transform: translate(0, -50%); }
   .main-navigation ul ul .menu-item-has-children > a > .icon, .main-navigation ul ul .page_item_has_children > a > .icon { margin-top: -9px; left: auto; position: absolute; right: 1em; top: 50%; -webkit-transform: rotate(-90deg); /* Chrome, Safari, Opera */ /* IE 9 */ transform: rotate(-90deg); }
   .main-navigation ul ul ul { left: -999em; margin-top: -1px; top: 0; border-radius: 0 4px 4px 0; }
@@ -5602,8 +5602,8 @@ Go Up Button
   .main-navigation li { border: 0; display: inline-block; }
   .main-navigation li.menu-item-has-children { padding-right: 0; }
   .main-navigation li li { display: block; transition: background-color 0.2s ease-in-out; }
-  .main-navigation li li.focus > a, .main-navigation li li:focus > a, .main-navigation li li:hover > a, .main-navigation li li a:hover, .main-navigation li li a:focus, .main-navigation li li.current_page_item a:hover, .main-navigation li li.current-menu-item a:hover, .main-navigation li li.current_page_item a:focus, .main-navigation li li.current-menu-item a:focus { color: #4662EF; }
-  .main-navigation li:hover > a { color: #4662EF; }
+  .main-navigation li li.focus > a, .main-navigation li li:focus > a, .main-navigation li li:hover > a, .main-navigation li li a:hover, .main-navigation li li a:focus, .main-navigation li li.current_page_item a:hover, .main-navigation li li.current-menu-item a:hover, .main-navigation li li.current_page_item a:focus, .main-navigation li li.current-menu-item a:focus { color: #4662ef; }
+  .main-navigation li:hover > a { color: #4662ef; }
   .main-navigation a { padding: 1.25em 1.25em; transition: background 200ms; }
   .main-navigation .menu-item-has-children > a > .icon, .main-navigation .page_item_has_children > a > .icon { display: inline; left: 5px; position: relative; font-size: 0.75rem; opacity: 0.6; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
   #header.absolutte-header-absolute .main-navigation > div > ul > li > a { color: #fff; } }

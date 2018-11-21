@@ -17,6 +17,9 @@ It has fully support for Gutenberg blocks and easy customizations.
 
 == Changelog ==
 
+= 1.0.3 - 21/11/2018 =
+* Updated: Before review
+
 = 1.0.2 - 26/10/2018 =
 * Added: Support for Absolutte Blocks
 * Changed: Readme file according to new standards 
@@ -67,4 +70,5 @@ Source: http://github.hubspot.com/pace/docs/welcome/
 Macbook MockUp from designlazy Free
 Source: http://www.designlazy.com/macbook-pro-imac-mockup-template/
 
-Computer Screen on Screenshot created by me
+Computer Screen on Screenshot created by me | GPLv3
+License: https://www.gnu.org/licenses/gpl-3.0.html
