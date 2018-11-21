@@ -29,11 +29,18 @@ add_action( 'pre_get_posts', 'basic_pre_get_posts' );
 function basic_comment_form_defaults( $args ) {
 
 	$commenter = wp_get_current_commenter();
+	$consent   = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
 
 	$fields                = apply_filters( 'basic_comment_form_defaults', array(
-		'author' => '<div class="rinput rauthor"><input type="text" placeholder="' . __( 'Your Name', 'basic' ) . '" name="author" id="author" class="required" value="' . esc_attr( $commenter['comment_author'] ) . '" /></div>',
-		'email'  => '<div class="rinput remail"><input type="text" placeholder="' . __( 'Your E-mail', 'basic' ) . '" name="email" id="email" class="required" value="' . esc_attr( $commenter['comment_author_email'] ) . '" /></div>',
-		'url'    => '<div class="rinput rurl"><input type="text" placeholder="' . __( 'Your Website', 'basic' ) . '" name="url" id="url" class="last-child" value="' . esc_attr( $commenter['comment_author_url'] ) . '"  /></div>'
+		'author'  => '<div class="rinput rauthor"><input type="text" placeholder="' . __( 'Your Name', 'basic' ) . '" name="author" id="author" class="required" value="'
+		             . esc_attr( $commenter['comment_author'] ) . '" /></div>',
+		'email'   => '<div class="rinput remail"><input type="text" placeholder="' . __( 'Your E-mail', 'basic' ) . '" name="email" id="email" class="required" value="'
+		             . esc_attr( $commenter['comment_author_email'] ) . '" /></div>',
+		'url'     => '<div class="rinput rurl"><input type="text" placeholder="' . __( 'Your Website', 'basic' ) . '" name="url" id="url" class="last-child" value="'
+		             . esc_attr( $commenter['comment_author_url'] ) . '"  /></div>',
+		'cookies' => '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes" '
+		             . $consent . ' />' .
+		             '<label for="wp-comment-cookies-consent">' . __( 'Save my name, email, and website in this browser for the next time I comment.' ) . '</label></p>',
 	) );
 	$args['fields']        = apply_filters( 'comment_form_default_fields', $fields );
 	$args['comment_field'] = '<div class="rcomment"><textarea id="comment" name="comment" cols="45" rows="8" placeholder="' . __( 'Message', 'basic' ) . '" aria-required="true"></textarea></div>';
@@ -124,33 +131,34 @@ apply_filters( 'basic_singular_thumbnail_attr', 'basic_singular_thumbnail_attr' 
  * ========================================================================== */
 function basic_social_share_buttons( $content ) {
 
-	$share_buttons = basic_get_theme_option( 'social_share' );
+	$share_buttons = basic_get_theme_option( 'social_share', 'custom' );
 	$hide_on_pages = get_theme_mod( 'hide_socshare_on_pages', 0 );
-	$link_pages    = wp_link_pages();
+	$link_pages    = wp_link_pages( 'echo=0' );
 
-	if ( ! is_singular() || empty( $share_buttons ) || 'hide' == $share_buttons || ( is_page() && ! empty( $hide_on_pages ) ) ) {
+	if ( ! is_singular() || is_singular('product') || empty( $share_buttons ) || 'hide' == $share_buttons || ( is_page() && ! empty( $hide_on_pages ) ) ) {
+//		return $content;
 		return $content . $link_pages;
 	}
 
 	$soc_title = basic_get_theme_option( 'title_before_socshare' );
 	$soc_html  = "<div class='social_share clearfix'>";
-	$soc_html .= "<p class='socshare-title'>$soc_title</p>";
+	$soc_html  .= "<p class='socshare-title'>$soc_title</p>";
 
 	switch ( $share_buttons ) {
 		case 'yandex':
 			$yandex_social_list  = apply_filters( 'basic_yandex_social_list', 'vkontakte,facebook,odnoklassniki,gplus,twitter' );
 			$yandex_show_counter = apply_filters( 'basic_yandex_show_counter', true );
 			$yandex_counter      = ( ! empty( $yandex_show_counter ) ) ? ' data-counter="" ' : '';
-			$soc_html .= '<div class="ya-share2" data-services="' . $yandex_social_list . '"' . $yandex_counter . '></div>';
+			$soc_html            .= '<div class="ya-share2" data-services="' . $yandex_social_list . '"' . $yandex_counter . '></div>';
 			break;
 		case 'custom':
 		default:
-			$link  = get_permalink();
-			$title = get_the_title();
+			$link     = get_permalink();
+			$title    = get_the_title();
 			$soc_html .= '
 			<a rel="nofollow" class="psb fb" target="_blank" href="http://www.facebook.com/sharer.php?u=' . $link . '&amp;t=' . urlencode( $title ) . '&amp;src=sp" title="' . __( 'Share in', 'basic' ) . ' Facebook"></a>
 			<a rel="nofollow" class="psb vk" target="_blank" href="http://vkontakte.ru/share.php?url=' . $link . '" title="' . __( 'Share in VK', 'basic' ) . '"></a>
-			<a rel="nofollow" class="psb ok" target="_blank" href="http://www.odnoklassniki.ru/dk?st.cmd=addShare&amp;st.s=1&amp;st._surl=' . $link . '&amp;st.comments=' . urlencode( $title ) . '" title="' . __( 'Share in OK', 'basic' ) . '"></a>
+			<a rel="nofollow" class="psb ok" target="_blank" href="https://connect.ok.ru/offer?url=' . $link . '&amp;title=' . urlencode( $title ) . '" title="' . __( 'Share in OK', 'basic' ) . '"></a>
 			<a rel="nofollow" class="psb gp" target="_blank" href="https://plus.google.com/share?url=' . $link . '"  title="' . __( 'Share in', 'basic' ) . ' Google+"></a>
 			<a rel="nofollow" class="psb tw" target="_blank" href="http://twitter.com/share?url=' . $link . '&amp;text=' . urlencode( $title ) . '" title="' . __( 'Share in', 'basic' ) . ' Twitter"></a>
 			';
@@ -160,6 +168,7 @@ function basic_social_share_buttons( $content ) {
 
 	$fitered_soc_html = apply_filters( 'basic_social_share', $soc_html );
 
+//	return $content . $fitered_soc_html;
 	return $content . $link_pages . $fitered_soc_html;
 
 }
@@ -268,3 +277,46 @@ add_filter( 'the_content', 'basic_search_highlight' );
 add_filter( 'the_excerpt', 'basic_search_highlight' );
 add_filter( 'the_title', 'basic_search_highlight' );
 /* ========================================================================== */
+
+
+/* ==========================================================================
+ *
+/* ========================================================================== */
+function basic_wrap_embed_with_div( $html, $url, $attr ) {
+	return '<div class="video-responsive">' . $html . '</div>';
+}
+
+add_filter( 'embed_oembed_html', 'basic_wrap_embed_with_div', 10, 3 );
+/* ========================================================================== */
+
+
+/**
+ * @param $item_output
+ * @param $item
+ * @param $depth
+ * @param $args
+ *
+ * @return mixed
+ */
+function basic_nav_menu_item_add_submenu_arrow( $item_output, $item, $depth, $args ) {
+
+	if ( 'top' == $args->theme_location && in_array( 'menu-item-has-children', $item->classes ) ) {
+		$item_output .= '<span class="open-submenu"></span>';
+	}
+
+	return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', 'basic_nav_menu_item_add_submenu_arrow', 10, 4 );
+
+
+function basic_the_header_image(){
+
+	$header_image = get_header_image_tag();
+
+	if ( $header_image  ){ ?>
+		<div class="header-image">
+			<?php echo $header_image; ?>
+		</div>
+	<?php }
+
+}

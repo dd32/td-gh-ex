@@ -32,6 +32,11 @@ if ( ! function_exists( 'basic_get_layout' ) ) :
 
 		// get custom page layout
 		if ( is_singular() ) {
+
+			if ( is_singular('product') ){
+				$layout_post = get_theme_mod( 'layout_product', 'rightbar' );
+			}
+
 			$custom = get_post_meta( $post->ID, 'basic_page_layout', true );
 			if ( '' == $custom || 'default' == $custom ) {
 				unset( $custom );
@@ -59,9 +64,18 @@ if ( ! function_exists( 'basic_get_layout' ) ) :
 		}
 
 		// woocommerce shop
-		elseif ( function_exists( 'is_shop' ) && is_shop() ) {
-			$layout = get_theme_mod( 'layout_shop', 'center' );
+		elseif ( function_exists( 'is_shop' )  ) {
+
+			if ( is_shop() ){
+				$layout = get_theme_mod( 'layout_shop', 'full' );
+			}
+
+			if ( is_tax('product_cat') ) {
+				$layout = get_theme_mod( 'layout_product_cat', 'rightbar' );
+			}
+
 		}
+
 
 		// get default layout settings
 		elseif ( $layout_def ) {
@@ -91,6 +105,11 @@ if ( ! function_exists( 'basic_set_post_class' ) ) :
 
 		if ( is_search() ) {
 			$classes[] = 'serp';
+		}
+
+		$hentry_pos = array_search( 'hentry', $classes );
+		if ( $hentry_pos !== false ) {
+			unset( $classes[ $hentry_pos ] );
 		}
 
 //		if ( in_array( 'sticky', $default_classes ) ) {
