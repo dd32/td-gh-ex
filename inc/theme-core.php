@@ -36,7 +36,11 @@ if ( ! function_exists( 'be_page_setup' ) ) :
 		 * provide it for us.
 		 */
 		add_theme_support( 'title-tag' );
-
+		// Set up the WordPress core custom background feature.
+		add_theme_support( 'custom-background', apply_filters( 'be_page_custom_background_args', array(
+			'default-color' => 'ffffff',
+			'default-image' => '',
+		) ) );
 		/*
 		 * Enable support for Post Thumbnails on posts and pages.
 		 *
