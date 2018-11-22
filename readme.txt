@@ -1,70 +1,85 @@
-/*-----------------------------------------------------------------------------------*/
-/* Atmosphere Lite WordPress Theme */
-/*-----------------------------------------------------------------------------------*/
+﻿=== Atmosphere Lite ===
 
-Theme Name      :   Atmosphere Lite
-Theme URI       :   https://alexathemes.net/themes/atmosphere-restaurant-wordpress-theme/
-Version         :   1.1.3
-Tested up to    :   WP 4.9
-Author          :   AlexaThemes
-Author URI      :   https://www.alexathemes.net/
+Contributors: AlexaThemes
+Requires at least: WordPress 4.4  
+Tested up to: WordPress 4.9.8
+Version: 1.1.4
+License: GPLv2 or later  
+License URI: http://www.gnu.org/licenses/gpl-2.0.html  
+Tags: two-columns,right-sidebar,custom-background,custom-colors,custom-menu,sticky-post,theme-options,threaded-comments
 
-license         :   GNU General Public License v3.0
-License URI     :   http://www.gnu.org/licenses/gpl.html
+== Description ==
 
-/*-----------------------------------------------------------------------------------*/
-/* About Author - Contact Details */
-/*-----------------------------------------------------------------------------------*/
+Atmosphere Lite theme is a responsive restaurant WordPress theme. This theme is a completely gorgeous and visually pristine, professionally graphically designed and very carefully crafted, thoroughly thought out and entirely engaging and inviting, warm and welcoming, technologically resourceful and easy to use, flexible and modern responsive WordPress restaurant and café theme. This theme has few options in customizer and its fully responsive. This theme is compatible with the latest version of WordPress and plugins like contact form 7 and wocommerce.
+ 
+== Theme Resources == 
 
-email       :   support@alexathemes.net
+Theme is built using the following resource bundles:
 
-/*-----------------------------------------------------------------------------------*/
-/* Theme Resources */
-/*-----------------------------------------------------------------------------------*/
+* All js that have been used are within folder /js of theme.
 
-Theme is Built using the following resource bundles.
+*   jQuery Nivo Slider
+	Copyright 2012, Dev7studios, under MIT license
+	http://nivo.dev7studios.com
+	MIT License URL: https://opensource.org/licenses/MIT
 
-1 - All js that have been used are within folder /js of theme.
-- jquery.nivo.slider.js is licensed under MIT. 
+*   Montserrat - https://www.google.com/fonts/specimen/Montserrat
+	License: Distributed under the terms of the Apache License, version 2.0				
+	License URL: http://www.apache.org/licenses/LICENSE-2.0.html		
+		
+		
+*   atmosphere-lite/customize-pro	
 
+		Customize Pro code based on Justintadlock’s Customizer-Pro 
+		Source Code URL : https://github.com/justintadlock/trt-customizer-pro			
+		License : http://www.gnu.org/licenses/gpl-2.0.html
+		Copyright 2016, Justin Tadlock	justintadlock.com
+		
+*       Details of images used in Screenshot:
+        
+*       Slider Images Are Pixabay Images:  
+		
+		https://pixabay.com/en/cupcakes-dessert-frosting-food-690040/
+		
+		
+		Copyright 2017, Pixabay
+		https://pixabay.com/ 
+		Pixabay provides images under CC0 license
+ 		CC0 license: https://creativecommons.org/share-your-work/public-domain/cc0
+			
+*       atmosphere/css/font-awesome.css 
 
-2 - Montserrat - https://fonts.google.com/specimen/Montserrat?selection.family=Montserrat
-	License: Distributed under the terms of the Apache License, version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
+	Font Awesome - https://fontawesome.com
+         Font License:
+         ---------------
+	 Applies to all desktop and webfont files in the following directory: font-awesome/fonts/.
+	 License: SIL OFL 1.1
+	 URL: http://scripts.sil.org/OFL
 
-3 - 	Images used from Pixabay.
-	Pixabay provides images under CC0 license 
-	(https://creativecommons.org/about/cc0)	
+	 Code License:
+         ---------------
+	 Applies to all CSS and LESS files in the following directories: font-awesome/css/, font-awesome/less/, and font-awesome/scss/.
+	 License: MIT License
+	 URL: http://opensource.org/licenses/mit-license.html
+        
+For any help you can mail us at support[at]alexathemes.com
 
-	Slider:
-	------
-	https://pixabay.com/en/cupcakes-dessert-frosting-food-690040/
+== Changelog ==
 
+= 1.0 =
+*      Initial version release.
 
-4 - Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+= 1.1 =
+*     Removed multiple text domains.	
 
-/*-----------------------------------------------------------------------------------*/
-/* Copyright */
-/*-----------------------------------------------------------------------------------*/
+= 1.1.1 =
+*     Escape all the functions.
 
-Atmosphere Lite WordPress Theme, Copyright 2017
-Atmosphere Lite is distributed under the terms of the GNU GPL
+= 1.1.2 =
+*     Escape untrusted data and added wp_reset_query() to front-page.php file.
 
-This is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
+= 1.1.3 =
+*     Removed holiday tag from style.css file.
 
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program. If not, see < http://www.gnu.org/licenses/ >
-
-Atmosphere Pro version
-==========================================================
-Atmosphere pro version is compatible with GPL licensed.
-
-
-For any help you can mail us at support[at]alexathemes.net
+= 1.1.4 =
+*     Changed readme file and resolved few css issues.
