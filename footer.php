@@ -11,7 +11,7 @@
 <?php do_action( 'beam_before_footer' ); ?>
 <footer id="colophon" class="site-footer">
 
-	<?php if( Kirki::get_option( 'bo', 'opt_fwidget_visibility' ) ) { 
+	<?php if( Kirki::get_option( 'bo', 'opt_fwidget_visibility' ) ) {
 		$opt_fwidget_visibility = Kirki::get_option( 'bo', 'opt_fwidget_visibility' );
 	}
 		if ($opt_fwidget_visibility == 'option-1') {
@@ -20,7 +20,7 @@
 		<div class="widget-wrap clear">
 			<div class="centeralign-footer">
 				<div id="footer-widget" class="widget-area-footer" role="complementary">
-					
+
 					<?php if ( ! dynamic_sidebar( 'sidebar-4' ) ) : ?>
 
 					<aside id="search" class="widget widget_search">
@@ -46,10 +46,10 @@
 					<?php endif; // end sidebar widget area ?>
 				</div>
 			</div>
-		</div>	
-	<?php do_action( 'beam_after_footer_widget' ); 
+		</div>
+	<?php do_action( 'beam_after_footer_widget' );
 		}
-		if( Kirki::get_option( 'bo', 'opt_menu_visibility' ) ) { 
+		if( Kirki::get_option( 'bo', 'opt_menu_visibility' ) ) {
 			$opt_menu_visibility = Kirki::get_option( 'bo', 'opt_menu_visibility' );
 		}
 		if ($opt_menu_visibility == 'option-1') {
@@ -62,18 +62,18 @@
 			</div>
 		</div>
 	</div>
-	<?php do_action( 'beam_after_footer_nav' ); 
+	<?php do_action( 'beam_after_footer_nav' );
 		}
 	?>
-	
+
 	<div class="info-wrap clear">
 		<div class="centeralign-footer">
             <div class="site-info">
-                <?php 
-                    if( Kirki::get_option( 'bo', 'opt_copyright_new' ) ) { 
+                <?php
+                    if( Kirki::get_option( 'bo', 'opt_copyright_new' ) ) {
                         $opt_copyright = Kirki::get_option( 'bo', 'opt_copyright_new' );
                 ?>
-                    <p>	
+                    <p>
                      <?php
                         echo balanceTags(wp_kses_data( $opt_copyright ));
                      ?>
@@ -81,10 +81,10 @@
                 <?php
                     }
                 ?>
-	
+
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'beam' ) ); ?>"><?php printf( 		esc_html__( 'Powered by %s', 'beam' ), 'WordPress' ); ?></a>
 				<span class="sep"> | </span>
-				<?php printf( esc_html__( 'Runs on %1$s.', 'beam' ), '<a href="https://www.beamtheme.com/">Beam Theme</a>' ); ?>
+				<?php printf( esc_html__( 'Runs on %1$s.', 'beam' ), '<a href="https://www.beamtheme.com/" target="_blank" rel="external nofollow">Beam Theme</a>' ); ?>
 
 			</div><!-- .site-info -->
 		</div><!-- .site-info -->

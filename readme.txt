@@ -14,22 +14,26 @@ GNU General Public License for more details.
 You should have received a copy of the GNU General Public License
 along with this program.  If not, see https://www.gnu.org/licenses/gpl-3.0.txt.
 
-Beam WordPress Theme is derived from Underscores http://underscores.me/, 
+Beam WordPress Theme is derived from Underscores http://underscores.me/,
 (C) 2012-2016 Automattic, Inc., [GPLv2 or later]
 (https://www.gnu.org/licenses/gpl-2.0.html)
 
 Beam WordPress Theme bundles the following third-party resources:
 
-Font Awesome, Created by Dave Gandy, licensed under SIL OFL 1.1, Code 
+Font Awesome, Created by Dave Gandy, licensed under SIL OFL 1.1, Code
 licensed under MIT License
 
-Kirki Toolkit, Copyright (c) 2016 Aristeides Stathopoulos, licenced 
+Kirki Toolkit, Copyright (c) 2016 Aristeides Stathopoulos, licenced
 under the terms of the MIT licence.
 
-Normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 
+Normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016
 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 
 Images used in Beam Theme are free from all copyright restrictions (CC0).
 Sources may include stocksnap.io, pixabay.com, pexels.com, unsplash.com etc.
 Screenshot image Credits:
 https://pixabay.com/en/office-two-people-business-team-1209640/
+
+Beam uses parts of Bulma CSS framework
+Code copyright 2018 Jeremy Thomas. Code released under the MIT license.
+https://github.com/jgthms/bulma
