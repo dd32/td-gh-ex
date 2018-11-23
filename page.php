@@ -1,6 +1,6 @@
 <?php
 /* 	Easy Theme's General Page to display all Pages
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2018, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Easy 1.0
 */
@@ -14,18 +14,15 @@
         <h1 class="page-title"><?php the_title(); ?></h1>
 			<div class="content-ver-sep"> </div>
             <div class="entrytext">
- <?php the_post_thumbnail('category-thumb'); easy_content(); ?>
- 
-				<div class="up-bottom-border"> </div>
-				<?php wp_link_pages(array('before' => '<p><strong>Pages:</strong> ', 'after' => '</p>', 'next_or_number' => 'number')); ?>
-
+ 				<?php the_post_thumbnail('category-thumb'); easy_content(); ?> 
+				<?php  wp_link_pages( array( 'before' => '<div class="page-link"><span>' . __('Pages:', 'easy') . '</span>', 'after' => '</div><br/>' ) ); ?>
 			</div>
 		</div>
 		<?php endwhile; ?><div class="clear"> </div>
-	<?php edit_post_link('Edit This Entry', '<p>', '</p>'); ?>
+	<?php edit_post_link(__('Edit', 'easy'), '<p>', '</p>'); ?>
 	<?php comments_template(); ?>
 	<?php else: ?>
-		<p>Sorry, no pages matched your criteria.</p>
+		<p><?php echo __('Sorry, no pages matched your criteria', 'easy'); ?></p>
 	<?php endif; ?>
 	</div>
 

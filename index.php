@@ -1,6 +1,6 @@
 <?php 
 /* Easy Theme's Index Page to hsow Blog Posts
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2018, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Easy 1.0
 */
@@ -14,32 +14,27 @@ get_header(); ?><div id="container">
  <h2 class="post-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
  <div class="content-ver-sep"> </div>
  <div class="entrytext">
- <?php the_post_thumbnail('thumbnail');  easy_content(); ?>
- <div class="clear"> </div>
- <div class="up-bottom-border">
- <p class="postmetadata"><span class="postmetadataw">Posted by: <?php the_author_posts_link() ?> | on <?php the_time('F j, Y'); ?></span><br />Posted in <?php the_category(', ') ?> | <?php edit_post_link('Edit', '', ' | '); ?>  <?php comments_popup_link( 'No Comments' . ' &#187;', 'One Comment' . '  &#187;', '% ' . 'Comments' . ' &#187;'); ?> <?php the_tags('<br />' .  'Tags' . ': ', ', ', '<br />'); ?></p>
- </div>
+ 	<?php the_post_thumbnail('thumbnail');  easy_content(); ?>
+ 	<div class="clear"> </div>
+ 	<div class="up-bottom-border">
+ 		<p class="postmetadata"><?php echo __('Posted in', 'easy'); ?> <?php the_category(', ') ?> | <?php edit_post_link( __('Edit', 'easy'), '', ' | '); ?>  <?php comments_popup_link(__('No Comments &#187;', 'easy'), __('1 Comment &#187;', 'easy'), __('% Comments &#187;', 'easy')); ?> <?php the_tags('<br />'. __('Tags: ', 'easy'), ', ', '<br />'); ?></p>
+ 	</div>
  </div></div>
  
  <?php endwhile; ?>
 
 <div id="page-nav">
-<div class="alignleft"><?php previous_posts_link('Previous Entries' ) ?></div>
-<div class="alignright"><?php next_posts_link('Next Entries') ?></div>
+	<div class="floatleft pagenavlink postslink"><?php previous_posts_link(__('Previous Entries','easy')) ?></div>
+	<div class="floatright pagenavlink postslink"><?php next_posts_link(__('Next Entries','easy')) ?></div>
 </div>
   
  
  <?php else: ?>
- 
- <h1 class="page-title">Not Found</h1>
-<h3 class="arc-src"><span>Apologies, but the Page/Post/Content you requested could not be found. Perhaps searching will help</span></h3>
+ 		<h1 class="page-title"><?php _e('Not Found', 'easy'); ?></h1>
+		<h3 class="arc-src"><span><?php _e('Apologies, but the page you requested could not be found. Perhaps searching will help', 'easy'); ?></span></h3>
 
-<?php get_search_form(); ?>
-<span id="page-nav"><a class="alignleft" href="<?php echo home_url(); ?>" >Or Return to the Home Page</a></span></p>
-<div class="clear"> </div>
-<h2 class="post-title-color">You can also Visit the Following. These are the Featured Contents</h2>
-<div class="content-ver-sep"></div><br />
-<?php get_template_part( 'featured-box' ); ?>
+		<?php get_search_form(); ?>
+		<p><a href="<?php echo home_url(); ?>" title="<?php _e('Browse the Home Page', 'easy'); ?>">&laquo; <?php _e('Or Return to the Home Page', 'easy'); ?></a></p>
  
 <?php endif; ?>
  

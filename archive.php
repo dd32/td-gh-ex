@@ -1,43 +1,18 @@
 <?php 
 /* 	Easy Theme's Archive Page
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2018, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Easy 1.0
 */
 
 get_header(); ?>
-<div id="container">
+<div id="container" class="arc-page">
 <div id="content">
-	<?php if (have_posts()) : ?>
-		<?php $post = $posts[0]; // Hack. Set $post so that the_date() works. ?>
-		<?php /* If this is a category archive */ if (is_category()) { ?>
-		<h1 class="arc-post-title"><?php single_cat_title(); ?></h1><h3 class="arc-src"><?php echo __('now browsing by category', 'easy'); ?></h3>
-		<?php if(trim(category_description()) != "<br />" && trim(category_description()) != '') { ?>
-		<div id="description"><?php echo category_description(); ?></div>
-		<?php }?>
-		<div class="clear">&nbsp;</div>
-		<?php /* If this is a tag archive */ } elseif( is_tag() ) { ?>
-		<h1 class="arc-post-title"><?php single_tag_title(); ?></h1><h3 class="arc-src"><?php echo __('now browsing by tag', 'easy'); ?></h3>
-		<div class="clear">&nbsp;</div>
-		<div class="tagcloud"><?php wp_tag_cloud(''); ?></div>
-		<div class="clear">&nbsp;</div>
-		<?php /* If this is a daily archive */ } elseif (is_day()) { ?>
-		<h1 class="arc-post-title"><?php echo get_the_date('l, F jS, Y'); ?></h1><h3 class="arc-src"><?php echo __('now browsing by day', 'easy'); ?></h3>
-		<div class="clear">&nbsp;</div>
-		<?php /* If this is a monthly archive */ } elseif (is_month()) { ?>
-		<h1 class="arc-post-title"><?php echo get_the_date('F, Y'); ?></h1><h3 class="arc-src"><?php echo __('now browsing by month', 'easy'); ?></h3>
-		<div class="clear">&nbsp;</div>
-		<?php /* If this is a yearly archive */ } elseif (is_year()) { ?>
-		<h1 class="arc-post-title"><?php echo get_the_date('Y'); ?></h1><h3 class="arc-src"><?php echo __('now browsing by year', 'easy'); ?></h3>
-		<div class="clear">&nbsp;</div>
-		<?php /* If this is an author archive */ } elseif (is_author()) { ?>
-		<h1 class="arc-post-title">Archives</h1><h3 class="arc-src"><?php echo __('now browsing by author', 'easy'); ?></h3>
-		<div class="clear">&nbsp;</div>
-		<?php /* If this is a paged archive */ } elseif (isset($_GET['paged']) && !empty($_GET['paged'])) { ?>
-		<h1 class="arc-post-title">Archives</h1><h3 class="arc-src"><?php echo __('now browsing the general archives', 'easy'); ?></h3>
- 	 	<?php } ?>
-
-
+	<?php if (have_posts()) :
+		$post = $posts[0]; ?>
+		<h1 class="page-title"><?php the_archive_title(); ?></h1>
+		<div class="description"><?php echo the_archive_description(); ?></div>
+		<div class="clear"></div>
 		<?php while (have_posts()) : the_post(); ?>
 			<div class="post-container">
 			<div <?php post_class(); ?>>
@@ -69,11 +44,7 @@ get_header(); ?>
 		<h3 class="arc-src"><span><?php _e('Apologies, but the page you requested could not be found. Perhaps searching will help', 'easy'); ?></span></h3>
 
 		<?php get_search_form(); ?>
-		<p><a href="<?php echo home_url(); ?>" title="Browse the Home Page">&laquo; <?php _e('Or Return to the Home Page', 'easy'); ?></a></p><br /><br />
-
-		<h2 class="post-title-color"><?php _e('You can also Visit the Following. These are the Featured Contents', 'easy'); ?></h2>
-		<div class="content-ver-sep"></div><br />
-		<?php get_template_part( 'featured-box' ); ?>
+		<p><a href="<?php echo home_url(); ?>" title="<?php _e('Browse the Home Page', 'easy'); ?>">&laquo; <?php _e('Or Return to the Home Page', 'easy'); ?></a></p>
 
 	<?php endif; ?>
 

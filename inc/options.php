@@ -35,7 +35,7 @@ function optionsframework_options() {
 		'type' => 'heading');
 		
 	$options[] = array(
-		'desc' => '<div class="infohead"><span class="donation">If you like this FREEE Theme You can consider for a small Donation to us. Your Donation will be spent for the Disadvantaged Children and Students. You can visit our <a href="http://d5creation.com/donate/" target="_blank"><strong>DONATION PAGE</strong></a> and Take your decision.</span><br /><br /><span class="donation"> Need More Features and Options including Exciting Slide Effects with more Slides from Pages or Posts and 100+ Advanced Features? Try <a href="http://d5creation.com/theme/easy/" target="_blank"><strong>Easy Extend</strong></a>.</span><br /> <br /><span class="donation"> You can Visit the Easy Extend Demo <a href="http://demo.d5creation.com/themes/?theme=Easy" target="_blank"><strong>Here</strong></a>.</span><a href="http://d5creation.com/theme/easy/" target="_blank" class="extendlink"> </a></div>',
+		'desc' => '<div class="infohead"><span class="donation">If you like this FREEE Theme You can consider for a small Donation to us. Your Donation will be spent for the Disadvantaged Children and Students. You can visit our <a href="'.esc_url('https://d5creation.com/donate').'" target="_blank"><strong>DONATION PAGE</strong></a> and Take your decision.</span><br /><br /><span class="donation"> Need More Features and Options including Exciting Slide Effects with more Slides from Pages or Posts and 100+ Advanced Features? Try <a href="'.esc_url('https://d5creation.com/theme/easy').'" target="_blank"><strong>Easy Extend</strong></a>.</span><br /> <br /><span class="donation"> You can Visit the Easy Extend Demo <a href="'.esc_url('http://demo.d5creation.com/themes/?theme=Easy').'" target="_blank"><strong>Here</strong></a>.</span><a href="'.esc_url('https://d5creation.com/theme/easy').'" target="_blank" class="extendlink"> </a></div>',
 		'type' => 'info');	
 	
 	
@@ -64,7 +64,7 @@ function optionsframework_options() {
 		'name' => 'Feed or Blog Link',
 		'desc' => 'Input your Feed or Blog URL here.',
 		'id' => 'feed-link',
-		'std' => 'http://d5creation.com/news/',
+		'std' => 'https://d5creation.com/news/',
 		'type' => 'text');	
 
 

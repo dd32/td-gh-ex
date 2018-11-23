@@ -1,20 +1,16 @@
 <?php
 /* Easy Theme's Comments Area for Single Pages
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2018, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Easy 1.0
 */
+if ( post_password_required() ) { return; } ?>
 
-	if ( post_password_required() ) {
-		return;
-	}
-?>
-
-<div id="commentsbox">
+<div id="comments">
 <?php if ( have_comments() ) : ?>
-	<h2 class="comments"><?php comments_number('No Comments' . '', 'One Comment', '% ' . 'Comments' . '' );  echo ' ' . ' to'; ?> <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
+	<h2 class="commentsbox fa-comments"><?php comments_number(__('No Comments', 'easy') . '', __('One Comment', 'easy'), '% ' . __('Comments', 'easy') . '' );  echo ' ' . __(' to ', 'easy'); ?> <a href="<?php the_permalink(); ?>"><?php the_title();?></a></h2>
 	<ol class="commentlist">
-		<?php wp_list_comments(); ?>
+		<?php wp_list_comments(array( 'avatar_size' => '200' )); ?>
 	</ol>
 	<div class="comment-nav">
 		<div class="floatleft">
@@ -26,7 +22,7 @@
 	</div>
 <?php else : ?>
 	<?php if ( ! comments_open() && ! is_page() ) : ?>
-		<p class="watermark">Comments are Closed</p>
+		<p class="watermark"><?php echo __('Comments are Closed', 'easy'); ?></p>
 	<?php endif; ?>
 <?php endif; ?>
 <?php if ( comments_open() ) : ?>

@@ -1,11 +1,11 @@
 ----------------------------------
 Easy
 ----------------------------------
-Version: 	1.3
+Version: 	1.5
 Developer: 	D5 Creation
-Author URI: 	http://d5creation.com
+Author URI: 	https://d5creation.com
 
-Donation Link: 	http://d5creation.com/donate/
+Donation Link: 	https://d5creation.com/donate/
 
 Copyright: 	D5 Creation
 License: 	GNU General Public License v2 or later
@@ -16,28 +16,34 @@ This Product is provided "as is" with no warranty or liabilities of D5 Creation.
 License of the Images used in the screenshot.png
 ----------------------------------------------------
 
-1. 	Author:		Comfreak
-	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/apple-fruit-sweet-delicious-356037/
+1. 	Author:		werner22brigitte
+	License:		CC0 Creative Commons
+	Source:		https://pixabay.com/en/girl-flowers-yellow-beauty-nature-2864757
 
-2. 	Author:		PublicDomainPictures
-	License:	Public Domain CC0
-	Source:		http://pixabay.com/en/citrus-food-fresh-fruit-green-2272/
+2. 	Author:		thisismyurl 
+	License:		CC0 Creative Commons
+	Source:		https://pixabay.com/en/woman-model-female-young-portrait-2542253
 
 
-Options Framework, License: GPL-2.0+, Author: Devin Price, Source: http://wptheming.com
 All other images are Lincenced Under GNU GPL and Copyrighted to D5 Creation
-
 
 ================================================================
 
 You can set Site Logo from Appearance > Header
-For Front Page Heading, Social Links and Quotation you can go Appearance > Easy Options
+For Front Page Heading, Social Links and Quotation you can go Appearance > Customize
 
 ================================================================
 
 You can Visit the Easy Theme Page at http://d5creation/theme/easy 
 You can use the Easy Extend for more Features and Options. If you like this Theme you are requested for a positive review at WordPress Theme Page.
+
+Changelog: 1.5
+-------------------
+This is a Major Change
+- Coding Updates
+- Style Improvement
+- Customizer Updates
+- Image Updates
 
 Changelog: 1.3
 -------------------

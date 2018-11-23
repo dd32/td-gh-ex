@@ -1,22 +1,12 @@
 <?php
 /* Easy Theme's Right Sidebar Area
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2018, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Easy 1.0
 */
 ?>
 <div id="right-sidebar">
-
-<div id="social">
-
-<?php if (of_get_option('gplus-link', '#') !='') : ?>
-<a href="<?php echo of_get_option('gplus-link', '#'); ?>" class="gplus-link" target="_blank"></a>
-<?php  endif; if (of_get_option('li-link', '#') !='') : ?>
-<a href="<?php echo of_get_option('li-link', '#'); ?>" class="li-link" target="_blank"></a>
-<?php  endif; if (of_get_option('feed-link', '#') !='') : ?>
-<a href="<?php echo of_get_option('feed-link', '#'); ?>" class="feed-link" target="_blank"></a>
-<?php  endif; ?>
-</div>	
+<div class="social social-link"><?php $easy_slinks = 3; foreach (range(1, $easy_slinks ) as $easy_slinksn) { if ( easy_get_option('sl' . $easy_slinksn, '')): echo '<a href="'. esc_url(easy_get_option('sl' . $easy_slinksn, '')) .'" target="_blank"> </a>'; endif; } ?></div>		
 <?php get_search_form(); ?>	
 
 <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>

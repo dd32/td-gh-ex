@@ -1,15 +1,18 @@
 <?php
 /* 	Easy Theme's Functions
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2018, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Easy 1.0
 */
    
-  	// Load the D5 Framework Optios Page and Meta Page
-
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-	require_once get_template_directory() . '/inc/options-framework.php';
-	function easy_ppp() { return ( 'post_type=post&&posts_per_page=2&&ignore_sticky_posts=1' );} 	
+  	// Load the D5 Optios Page
+	require_once ( trailingslashit(get_template_directory()) . 'inc/customize.php' );	
+	function easy_about_page() { 
+	add_theme_page( 'Easy Options', 'Easy Options', 'edit_theme_options', 'theme-about', 'easy_theme_about' ); 
+	}
+	add_action('admin_menu', 'easy_about_page');
+	function easy_theme_about() {  require_once ( trailingslashit(get_template_directory()) . 'inc/theme-about.php' ); }
+	function easy_ppp() { return ( 'post_type=post&&posts_per_page=3&&ignore_sticky_posts=1' );} 	
 
 	function easy_setup() {
 	load_theme_textdomain( 'easy', get_template_directory() . '/languages' );
@@ -30,8 +33,8 @@
 	
 	// additional image sizes
 	// delete the next line if you do not need additional image sizes
-	add_image_size( 'category-thumb', 650, 300 ); //300 pixels wide (and unlimited height)
-	add_image_size( 'slide-thumb', 930, 350 ); //for featured sliders
+	add_image_size( 'category-thumb', 1100, 513 ); //300 pixels wide (and unlimited height)
+	add_image_size( 'slide-thumb', 1500, 700 ); //for featured sliders
 		
 // 	WordPress 3.4 Custom Background Support	
 //	add_theme_support( 'custom-background');
@@ -57,29 +60,26 @@
 // 	Functions for adding script
 	function easy_enqueue_scripts() {
 	wp_enqueue_style('easy-style', get_stylesheet_uri(), false); 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { 
-		wp_enqueue_script( 'comment-reply' ); 
-	}
+	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); }
 	
-	wp_enqueue_script( 'jquery');
+	wp_enqueue_script( 'easy-menu-style-js', get_template_directory_uri(). '/js/menu.js', array( 'jquery' ) );
 	wp_enqueue_style('easy-gfonts', '//fonts.googleapis.com/css?family=Economica', false );
 	
-	global $is_IE;
-	if ( $is_IE ) {
-    wp_enqueue_script('ie7style', get_template_directory_uri() . '/js/html5.js');
-	}
+	wp_enqueue_script( 'easy-html5', get_template_directory_uri().'/js/html5.js'); 
+    wp_script_add_data( 'easy-html5', 'conditional', 'lt IE 9' );
     
-	if (is_front_page()):
-	wp_enqueue_script( 'easy-slider', get_template_directory_uri() . '/js/slider.js' );
-	endif;
+	if (is_front_page()): wp_enqueue_script( 'easy-slider', get_template_directory_uri() . '/js/slider.js', array( 'jquery' ) ); endif;
+	if ( esc_html(easy_get_option('responsive', '1')) == '1' ) : wp_enqueue_style('easy-responsive', get_template_directory_uri(). '/style-responsive.css' ); endif;
 	
 	}
 	add_action( 'wp_enqueue_scripts', 'easy_enqueue_scripts' );
 
+// 	Functions for adding script to Admin Area
+	function easy_admin_style() { wp_enqueue_style( 'easy_admin_css', get_template_directory_uri() . '/inc/admin-style.css', false ); }
+	add_action( 'admin_enqueue_scripts', 'easy_admin_style' );
+
 //Multi-level pages menu  
-function easy_page_menu() {
-	echo '<ul class="m-menu">'; wp_list_pages(array('sort_column'  => 'menu_order, post_title', 'title_li'  => '' )); echo '</ul>';
-}
+function easy_page_menu() { echo '<ul class="m-menu">'; wp_list_pages(array('sort_column'  => 'menu_order, post_title', 'title_li'  => '' )); echo '</ul>'; }
 
 
 //	function tied to the excerpt_more filter hook.
@@ -88,18 +88,20 @@ function easy_page_menu() {
 	if ($EasyExcerptLength) {
     return $EasyExcerptLength;
 	} else {
-    return 50; //default value
+    return 75; //default value
     } }
 	add_filter( 'excerpt_length', 'easy_excerpt_length', 999 );
 	
 	function easy_excerpt_more($more) {
        global $post;
-	return '<a href="'. get_permalink($post->ID) . '" class="read-more">Read More</a>';
+	return '<a href="'. get_permalink($post->ID) . '" class="read-more">'.__('Learn More', 'easy').'</a>';
 	}
 	add_filter('excerpt_more', 'easy_excerpt_more');
 	
 // Content Type Showing
-	function easy_content() { the_content('<span class="read-more">Read More</span>'); }
+	function easy_content() { if (( esc_html(easy_get_option('contype', '2')) != '2' ) || is_page() || is_single() ) : the_content('<span class="read-more">'.__('Learn More', 'easy').'</span>');
+	else: the_excerpt();
+	endif; }
 
 //	Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link
 	function easy_page_menu_args( $args ) {
