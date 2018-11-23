@@ -3,7 +3,7 @@ Contributors: ThemesPride
 Tags: one-column, two-columns, right-sidebar, left-sidebar, three-columns, four-columns, grid-layout, custom-colors, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, portfolio
 Requires at least: 4.7
 Tested up to: 4.9.8
-Stable tag: 0.6.2
+Stable tag: 0.6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,35 +23,38 @@ Installation
 == Changelog ==
 
 = 0.1 =
-	. Initial version released.
+	* Initial version released.
 
 = 0.2 =
-	. Resolved Theme Errors.
-	. Added Theme url.
+	* Resolved Theme Errors.
+	* Added Theme url.
 
 = 0.3 =
-	. Done the changes in readme.txt file.
-	. Done some code corrections.
+	* Done the changes in readme.txt file.
+	* Done some code corrections.
 
 = 0.4 =
-	. Update the readme.txt file as per new updation.
-	. Update screenshot.
-	. Updated Woocommerce upto 3.5.0
+	* Update the readme.txt file as per new updation.
+	* Update screenshot.
+	* Updated Woocommerce upto 3.5.0
 
 = 0.5 =
-	. Added language folder.
-	. Changed the theme version in other files.
-	. Changed the background color of menu in mobile media.
+	* Added language folder.
+	* Changed the theme version in other files.
+	* Changed the background color of menu in mobile media.
 
 = 0.6 =
-	. Changed the WordPress globals in the slider.php file.
+	* Changed the WordPress globals in the slider.php file.
 
 = 0.6.1 =
-	. Added the theme installation process in readme.txt file.
-	. Resolved load_theme_textdomain in function.php 
+	* Added the theme installation process in readme.txt file.
+	* Resolved load_theme_textdomain in function.php 
 
 = 0.6.2 =
-	. Changed the language folder name to languages and also changed the name in function.php file.
+	* Changed the language folder name to languages and also changed the name in function.php file.
+
+= 0.6.3 =
+	* Done The Readme.txt file changes.
 
 == Resources ==
 
@@ -73,37 +76,20 @@ Twenty Seventeen is distributed under the terms of the GNU GPL
 
 Adventure Travelling bundles the following third-party resources:
 
-CSS bootstrap.css
-License: Copyright 2011-2018 The Bootstrap Authors
-Source: https://github.com/twbs/bootstrap/blob/master/LICENSE
+* CSS bootstrap.css, License: Copyright 2011-2018 The Bootstrap Authors, Source: https://github.com/twbs/bootstrap/blob/master/LICENSE
 
-JS bootstrap.js
-License: Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-Source: https://github.com/twbs/bootstrap/blob/master/LICENSE
+* JS bootstrap.js, License: Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors), Source: https://github.com/twbs/bootstrap/blob/master/LICENSE
 
-Font Awesome icons, Copyright Dave Gandy
-License: SIL Open Font License, version 1.1.
-Source: http://fontawesome.io/
+* Font Awesome icons, Copyright Dave Gandy, License: SIL Open Font License, version 1.1., Source: http://fontawesome.io/
 
-JS Superfish
-License: https://github.com/joeldbirch/superfish
+* JS Superfish, License: https://github.com/joeldbirch/superfish
 
-Pixabay Images
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://pixabay.com/en/service/terms/
+* Pixabay Images, License: CC0 1.0 Universal (CC0 1.0), Source: https://pixabay.com/en/service/terms/
 
-Banner image: Copyright dimitrisvetsikas1969
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://pixabay.com/en/parachuting-water-sport-activity-2199840/
+* Banner image: Copyright dimitrisvetsikas1969, License: CC0 1.0 Universal (CC0 1.0), Source: https://pixabay.com/en/parachuting-water-sport-activity-2199840/
 
-Post image: Copyright miaalthoff
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://pixabay.com/en/snow-winter-sport-skier-mountain-3090067/
+* Post image: Copyright miaalthoff, License: CC0 1.0 Universal (CC0 1.0), Source: https://pixabay.com/en/snow-winter-sport-skier-mountain-3090067/
 
-Post image: Copyright Pexels
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://pixabay.com/en/adventure-altitude-backpack-climb-1850912/
+* Post image: Copyright Pexels, License: CC0 1.0 Universal (CC0 1.0), Source: https://pixabay.com/en/adventure-altitude-backpack-climb-1850912/
 
-Post image: Copyright Pexels
-License: CC0 1.0 Universal (CC0 1.0)
-Source: https://pixabay.com/en/adventure-landscape-mountain-1851076/
+* Post image: Copyright Pexels, License: CC0 1.0 Universal (CC0 1.0), Source: https://pixabay.com/en/adventure-landscape-mountain-1851076/
