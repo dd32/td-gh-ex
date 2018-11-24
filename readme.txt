@@ -1,14 +1,18 @@
 === Aaron ===
 Contributors: Poena
 Tags: threaded-comments, custom-menu, sticky-post, editor-style, translation-ready, rtl-language-support, two-columns, one-column, right-sidebar, featured-images, featured-image-header, accessibility-ready, custom-header, custom-logo
+Requires at least: 4.6
+Tested up to: 5.0 Beta
+Requires PHP: 5.2
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
+Copyright: 2015-2018 Carolina Nymark
 
-Copyright 2015-2018 Carolina Nymark
+Aaron is a responsive, accessible theme with a call to action, front page highlights, page sections and two menus.
 
-= Description ==
+== Description ==
 
-Description: Aaron is a responsive, accessibility-ready multi-purpose theme.
+Description: Aaron is a responsive, accessible multi-purpose theme.
 Features include Call to action and front page Highlights that will grab your visitors attention and help you feature different parts of your website.
 The theme has two optional menus (including a social menu), logo upload, six page templates and three widget areas that will hold any number of widgets. 
 Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. 
@@ -16,21 +20,37 @@ I recommend that you install the Jetpack plugin to make full use of supported fe
 To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme.
 Aaron also works well with WooCommerce and bbPress. 
 
+Please note that changing the colors of the theme can affect accessibility.
 
 == Installation ==
 1. Unzip `aaron.zip` to the `/wp-content/themes/` directory
 2. Activate the theme through the 'Appearance' menu in WordPress
 
-Please note that changing the colors of the theme can affect accessibility.
-
 == Change log ==
+
+Version 3.5, 2018-11-23
+Updated the readme file and the documentation.
+Minor code style changes to better comply with WordPress coding standards.
+Updated the rtl stylesheet.
+Updated the sanitization for the customizer options.
+Added a screen reader link text to the highlights, if there is no headline or text.
+Menu: Increased the line height, set sub menu width to auto, and reduced the size of the arrow to remove the duplicate underline on hover.
+Also increased the line height for the site title.
+Added an option for body font family, and added support for more fonts.
+Added more color options and moved the header background color option to the colors section.
+Moved the custom css from functions.php to a separate file.
+Further testing and style improvements in preparation for the new block editor:
+	Updated .wp-block-cover-image to the new class: .wp-block-cover.
+	Updated .is-large to the new class: .is-style-large.
+Fixed a problem with the button block background and made sure that the link is underlined.
+
 
 Version 3.4, 2018-10-19
 Housekeeping: Updated links. Updated credits in the readme file. 
 CSS and PHP code style changes according to WordPress coding standards.
 Removed the JavaScript in navigation.js that added the screen reader text to the tag cloud 
 and the alt text to the featured images, since this has been fixed in WordPress core.
-Fixed a problemw with a font not loading in the new editor.
+Fixed a problem with a font not loading in the new editor.
 
 
 Version 3.3, 2018-10-06
@@ -245,15 +265,12 @@ packaged as web and desktop font files.
 In the Font Awesome Free download, the MIT license applies to all non-font and
 non-icon files.
 
-Montserrat
-Julieta Ulanovsky, SIL Open Font License, 1.1
-
 JavaScript
 Keyboard Accessible Dropdown Menus
 Copyright 2013 Amy Hendrix (email : amy@amyhendrix.net), Graham Armfield (email : graham.armfield@coolfields.co.uk)
 License: MIT
 
-Checkbox sanitization
+Sanitization
 Copyright (c) 2015-2018, WordPress Theme Review Team
 https://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
 https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php

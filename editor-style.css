@@ -338,7 +338,7 @@ textarea {
 	margin: 0.8075em 0;
 }
 
-.wp-block-cover-image {
+.wp-block-cover {
     position: relative;
     background-size: cover;
     background-position: 50%;
@@ -350,13 +350,13 @@ textarea {
     align-items: center;
 }
 
-.wp-block-cover-image.aligncenter{
+.wp-block-cover.aligncenter {
 	margin: 0 0 1.5em;
 	display: flex;
 }
 
-.wp-block-cover-image.alignright,
-.wp-block-cover-image.alignleft{
+.wp-block-cover.alignright,
+.wp-block-cover.alignleft {
 	display: flex;
 }
 

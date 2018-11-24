@@ -161,6 +161,6 @@ class Aaron_Testimonial_Widget extends WP_Widget {
 		name="<?php echo esc_attr( $this->get_field_name( 'display_horizontally' ) ); ?>" />
 		<label for="<?php echo esc_attr( $this->get_field_id( 'display_horizontally' ) ); ?>">
 		<?php esc_html_e( 'Display testimonials as a full width horizontal list.', 'aaron' ); ?></label></p>
-	<?php
+		<?php
 	}
 }

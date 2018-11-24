@@ -18,7 +18,6 @@ add_action( 'admin_menu', 'aaron_docs_menu' );
  */
 function aaron_docs() {
 	?>
-
 	<h1 class="doc-title"><?php esc_html_e( 'Aaron Setup Help', 'aaron' ); ?></h1>
 	<div class="doc-thanks">
 	<b><?php esc_html_e( 'Thank you for downloading and trying out Aaron!', 'aaron' ); ?></b><br><br>
@@ -36,10 +35,12 @@ function aaron_docs() {
 		<li><a href="#aaron-menus"><?php esc_html_e( 'Menus', 'aaron' ); ?></a></li>
 		<li><a href="#aaron-widgets"><?php esc_html_e( 'Widget areas', 'aaron' ); ?></a></li>
 		<li><a href="#aaron-front"><?php esc_html_e( 'Front page and page templates', 'aaron' ); ?></a></li>
-		<li><a href="#aaron-advanced"><?php esc_html_e( 'Advanced settings', 'aaron' ); ?></a></li>
-		<li><a href="#aaron-access"><?php esc_html_e( 'Accessibility', 'aaron' ); ?></a></li>
+		<li><a href="#aaron-colors"><?php esc_html_e( 'Colors', 'aaron' ); ?></a></li>
 		<li><a href="#aaron-fonts"><?php esc_html_e( 'Fonts', 'aaron' ); ?></a></li>
+		<li><a href="#aaron-access"><?php esc_html_e( 'Accessibility', 'aaron' ); ?></a></li>
+		<li><a href="#aaron-advanced"><?php esc_html_e( 'Advanced settings', 'aaron' ); ?></a></li>
 		<li><a href="#aaron-plugins"><?php esc_html_e( 'Plugins', 'aaron' ); ?></a></li>
+		<li><a href="#aaron-support"><?php esc_html_e( 'Support', 'aaron' ); ?></a></li>
 		<li><a href="#aaron-change"><?php esc_html_e( 'Changelog', 'aaron' ); ?></a></li>
 	</ul>
 
@@ -119,7 +120,6 @@ function aaron_docs() {
 				<li><?php esc_html_e( 'Hide the individual highlights or all of them', 'aaron' ); ?></li>
 			</ul>
 			<b><?php esc_html_e( 'Tagline:', 'aaron' ); ?></b> <?php esc_html_e( 'You will find an option to hide your tagline in the customizer.', 'aaron' ); ?><br>
-			<b><?php esc_html_e( 'Header Background:', 'aaron' ); ?></b> <?php esc_html_e( 'You can change the background image or background color in the customizer.', 'aaron' ); ?>
 			<br><br>
 
 			<h3><?php esc_html_e( 'Custom front page', 'aaron' ); ?></h3>
@@ -144,6 +144,53 @@ function aaron_docs() {
 			<?php esc_html_e( 'Page sections are a great way to display your shortcodes, testimonials, pricing tables, contact information and similar.', 'aaron' ); ?><br>
 			<?php esc_html_e( 'The two page sections can display up to 3 pages each. Pages in the top section are displayed above the blog content, and pages in the bottom section are displayed below.', 'aaron' ); ?><br>
 			<?php esc_html_e( 'You can also show your page sections without your blog content by setting a static front page, using the Sections page template.', 'aaron' ); ?><br>
+	</div>
+
+	<div class="doc-box" id="aaron-colors">
+		<h3><?php esc_html_e( 'Colors', 'aaron' ); ?></h3>
+		<?php esc_html_e( 'In the colors section in the customizer you can change these colors:', 'aaron' ); ?>
+			<ul>
+				<li><?php esc_html_e( 'Site title color.', 'aaron' ); ?></li>
+				<li><?php esc_html_e( 'Body text and background color.', 'aaron' ); ?></li>
+				<li><?php esc_html_e( 'Text and background color for the header menu and site footer.', 'aaron' ); ?></li>
+				<li><?php esc_html_e( 'Background color for posts, sidebar widgets and navigation.', 'aaron' ); ?></li>
+				<li><?php esc_html_e( 'Header background: This color is used if you choose to not have a header image.', 'aaron' ); ?></li>
+			</ul>
+	</div>
+
+	<div class="doc-box" id="aaron-fonts">
+		<h3><?php esc_html_e( 'Fonts', 'aaron' ); ?></h3>
+		<?php esc_html_e( 'Aaron uses Open Sans for body, and defaults to Montserrat for headings, menus and footer texts.', 'aaron' ); ?>
+		<?php esc_html_e( 'You will find an option to change Montserrat to a different font in the customizer.', 'aaron' ); ?><br>
+		<?php esc_html_e( 'The available fonts are: Montserrat, Open Sans, Oswald, Rambla, Ubuntu Condensed, Fjalla One, 
+		Roboto, Lato, Source Sans Pro, Raleway, Lora, Josefin Sans, Taviraj.', 'aaron' ); ?>
+		<?php esc_html_e( 'If you select system fonts, the fonts are: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif.', 'aaron' ); ?>
+		<br><br>
+	</div>
+
+	<div class="doc-box" id="aaron-access">
+		<h3><?php esc_html_e( 'Accessibility', 'aaron' ); ?></h3>
+		<?php esc_html_e( 'Note: In version 2.0, the accessibility settings were moved from the Advanced Settings to its own setting in the customizer.', 'aaron' ); ?>
+		<br><?php esc_html_e( 'Changing the colors of the theme can affect accessibility.', 'aaron' ); ?>
+		<br><br>
+		<?php
+		printf(
+			/* translators: %s: a link to the Classic Editor plugin in the WordPress.org plugin directory. */
+			__( 'If you are experiencing problems with the new WordPress editor I recommend that you install the <a href="%s">Classic Editor plugin.</a>', 'aaron' ),
+			esc_url( 'https://wordpress.org/plugins/classic-editor/' )
+		);
+		?>
+		<br>
+		<ul>
+			<li><?php esc_html_e( 'Skip link: the theme has one skip link at the very top that lets you skip to the content.', 'aaron' ); ?></li>
+			<li><?php esc_html_e( 'In the customizer you can add personalized screen reader texts for your sidebar and footer.', 'aaron' ); ?></li>
+			<li><?php esc_html_e( 'Known issues:', 'aaron' ); ?>
+				<ul>
+					<li><?php esc_html_e( 'Some widgets that uses forms (category dropdown) are missing form labels. This is a known issue with WordPress.', 'aaron' ); ?></li>
+					<li><?php esc_html_e( 'Menus have a visible focus and can be tabbed through, but you can not navigate them using the arrow keys.', 'aaron' ); ?></li>
+				</ul>
+			</li>
+		</ul>
 	</div>
 
 	<div class="doc-box" id="aaron-advanced">
@@ -182,40 +229,6 @@ function aaron_docs() {
 			<li><?php esc_html_e( 'Replace the site title in the header with your post or page title.', 'aaron' ); ?></li>
 			<li><?php esc_html_e( 'Do not show the featured image in single post view, only on the blog listings and archives.', 'aaron' ); ?></li>
 		</ul>
-	</div>
-
-	<div class="doc-box" id="aaron-access">
-		<h3><?php esc_html_e( 'Accessibility', 'aaron' ); ?></h3>
-		<?php esc_html_e( 'Note: In version 2.0, the accessibility settings were moved from the Advanced Settings to its own setting in the customizer.', 'aaron' ); ?>
-		<br><?php esc_html_e( 'Changing the colors of the theme can affect accessibility.', 'aaron' ); ?>
-		<br><br>
-		<?php
-		printf(
-			/* translators: %s: a link to the Classic Editor plugin in the WordPress.org plugin directory. */
-			__( 'If you are experiencing problems with the new WordPress editor I recommend that you install the <a href="%s">Classic Editor plugin.</a>', 'aaron' ),
-			esc_url( 'https://wordpress.org/plugins/classic-editor/' )
-		);
-		?>
-		<br>
-		<ul>
-			<li><?php esc_html_e( 'Skip link: the theme has one skip link at the very top that lets you skip to the content.', 'aaron' ); ?></li>
-			<li><?php esc_html_e( 'In the customizer you can add personalized screen reader texts for your sidebar and footer.', 'aaron' ); ?></li>
-			<li><?php esc_html_e( 'Known issues:', 'aaron' ); ?>
-				<ul>
-					<li><?php esc_html_e( 'Some widgets that uses forms (category dropdown) are missing form labels. This is a known issue with WordPress.', 'aaron' ); ?></li>
-					<li><?php esc_html_e( 'Menus have a visible focus and can be tabbed through, but you can not navigate them using the arrow keys.', 'aaron' ); ?></li>
-				</ul>
-			</li>
-		</ul>
-	</div>
-
-	<div class="doc-box" id="aaron-fonts">
-		<h3><?php esc_html_e( 'Fonts', 'aaron' ); ?></h3>
-		<?php esc_html_e( 'Aaron uses Open Sans for body, and defaults to Montserrat for headings, menus and footer texts.', 'aaron' ); ?>
-		<?php esc_html_e( 'You will find an option to change Montserrat to a different font in the customizer.', 'aaron' ); ?><br>
-		<?php esc_html_e( 'The available fonts are: Montserrat, Open Sans, Oswald, Rambla, Ubuntu Condensed and Fjalla One', 'aaron' ); ?>
-		<br><br>
-
 	</div>
 
 	<div class="doc-box" id="aaron-plugins">
@@ -267,6 +280,27 @@ function aaron_docs() {
 				</ul>
 		</ul>
 		</ul>
+	</div>
+
+	<div class="doc-box" id="aaron-support">
+		<h3><?php esc_html_e( 'Support', 'aaron' ); ?></h3>
+		<?php
+		printf(
+			/* translators: %s: A link to the themes support page on WordPress.org  */
+			__( 'I kindly ask that you first direct your support questions to the <a href="%s">official support forum</a>.', 'aaron' ),
+			esc_url( 'https://wordpress.org/support/theme/aaron' )
+		);
+		?>
+		<br>
+		<?php esc_html_e( 'That way, other users may benefit from it, in case they are experiencing the same issue.', 'aaron' ); ?><br><br>
+		<?php
+		printf(
+			/* translators: %s: A link to the themes author URI */
+			__( 'If you need more advanced customizations, <a href="%s">you can also email me to check my availability</a>.', 'aaron' ),
+			esc_url( 'https://aaron.theme.tips/support-requests/' )
+		);
+		?>
+		<br><br>
 	</div>
 
 	<div class="doc-box" id="aaron-change">

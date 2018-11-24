@@ -41,9 +41,6 @@ function aaron_highlights() {
 						echo '>';
 					}
 
-					if ( get_theme_mod( 'aaron_highlight' . $i . '_link' ) ) {
-						echo '<a href="' . esc_url( get_theme_mod( 'aaron_highlight' . $i . '_link' ) ) . '">';
-					}
 					if ( get_theme_mod( 'aaron_highlight' . $i . '_headline' ) ) {
 						echo '<h2 style="color:' . esc_attr( get_theme_mod( 'aaron_highlight' . $i . '_textcolor', '#333333' ) ) . ';">' .
 						wp_kses_post( get_theme_mod( 'aaron_highlight' . $i . '_headline' ) ) . '</h2>';
@@ -52,8 +49,13 @@ function aaron_highlights() {
 						echo '<p style="color:' . esc_attr( get_theme_mod( 'aaron_highlight' . $i . '_textcolor', '#333333' ) ) . ';">' .
 						wp_kses_post( get_theme_mod( 'aaron_highlight' . $i . '_text' ) ) . '</p>';
 					}
+
 					// Close the link.
 					if ( get_theme_mod( 'aaron_highlight' . $i . '_link' ) ) {
+						// Add a link text for screen readers if there is no link text.
+						if ( ! get_theme_mod( 'aaron_highlight' . $i . '_headline' ) && ! get_theme_mod( 'aaron_highlight' . $i . '_text' ) ) {
+							echo '<span class="screen-reader-text">' . esc_html__( 'Follow the link to learn more about this featured content.', 'aaron' ) . '</span>';
+						}
 						echo '</a>';
 					}
 

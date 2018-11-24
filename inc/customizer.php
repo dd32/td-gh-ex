@@ -154,7 +154,7 @@ function aaron_customize_register( $wp_customize ) {
 				<label>
 					<input type="radio" value="no-icon" name="<?php echo esc_attr( $this->id ); ?>" 
 					<?php $this->link(); checked( $this->value(), 'no-icon' ); ?> /> 
-					<b><?php esc_html_e( 'No icon','aaron' ); ?></b>
+					<b><?php esc_html_e( 'No icon', 'aaron' ); ?></b>
 				</label>
 				</fieldset>
 			</div>
@@ -207,6 +207,87 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->get_control( 'background_color' )->label       = __( 'Body Background Color', 'aaron' );
 	$wp_customize->get_control( 'background_color' )->description = __( 'Does not affect the background color of the menu, posts, widgets or footer.', 'aaron' );
 
+	/* Color settings */
+	$wp_customize->add_setting(
+		'aaron_post_bgcolor',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'aaron_post_bgcolor',
+			array(
+				'label'    => __( 'Background color for posts, sidebar widgets and navigation.', 'aaron' ),
+				'section'  => 'colors',
+				'settings' => 'aaron_post_bgcolor',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'aaron_main_text_color',
+		array(
+			'default'           => '#333',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'aaron_main_text_color',
+			array(
+				'label'    => __( 'Main body text and link color', 'aaron' ),
+				'section'  => 'colors',
+				'settings' => 'aaron_main_text_color',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'aaron_footer_bgcolor',
+		array(
+			'default'           => '',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'aaron_footer_bgcolor',
+			array(
+				'label'    => __( 'Background color for the header menu and site footer', 'aaron' ),
+				'section'  => 'colors',
+				'settings' => 'aaron_footer_bgcolor',
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
+		'aaron_footer_text_color',
+		array(
+			'default'           => '#333',
+			'sanitize_callback' => 'sanitize_hex_color',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize,
+			'aaron_footer_text_color',
+			array(
+				'label'    => __( 'Text and link color for the header menu and site footer', 'aaron' ),
+				'section'  => 'colors',
+				'settings' => 'aaron_footer_text_color',
+			)
+		)
+	);
+
 	$wp_customize->add_setting(
 		'aaron_header_bgcolor',
 		array(
@@ -220,8 +301,9 @@ function aaron_customize_register( $wp_customize ) {
 			$wp_customize,
 			'aaron_header_bgcolor',
 			array(
-				'label'    => __( 'Header background color:', 'aaron' ),
-				'section'  => 'header_image',
+				'label'    => __( 'Header background color', 'aaron' ),
+				'description'    => __( 'Used when no header image is selected.', 'aaron' ),
+				'section'  => 'colors',
 				'settings' => 'aaron_header_bgcolor',
 			)
 		)
@@ -230,7 +312,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'aaron_header_bgpos',
 		array(
-			'sanitize_callback' => 'aaron_sanitize_bgpos',
+			'sanitize_callback' => 'aaron_sanitize_select',
 			'default'           => 'center center',
 		)
 	);
@@ -258,7 +340,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'aaron_header_bgsize',
 		array(
-			'sanitize_callback' => 'aaron_sanitize_bgsize',
+			'sanitize_callback' => 'aaron_sanitize_select',
 			'default'           => 'cover',
 		)
 	);
@@ -280,7 +362,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'aaron_header_bgrepeat',
 		array(
-			'sanitize_callback' => 'aaron_sanitize_bgrepeat',
+			'sanitize_callback' => 'aaron_sanitize_select',
 			'default'           => 'no-repeat',
 		)
 	);
@@ -833,7 +915,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'aaron_width',
 		array(
-			'sanitize_callback' => 'aaron_sanitize_page',
+			'sanitize_callback' => 'aaron_sanitize_select',
 			'default'           => 100,
 		)
 	);
@@ -897,7 +979,7 @@ function aaron_customize_register( $wp_customize ) {
 			array(
 				'default'        => 0,
 				'type'           => 'dropdown-pages',
-				'label'          => __( 'Select a page:','aaron' ),
+				'label'          => __( 'Select a page:', 'aaron' ),
 				'section'        => 'aaron_top_section',
 				'allow_addition' => true,
 			)
@@ -927,7 +1009,7 @@ function aaron_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			'aaron_bottom_section' . $i,
 			array(
-				'sanitize_callback' => 'aaron_sanitize_page',
+				'sanitize_callback' => 'aaron_sanitize_select',
 			)
 		);
 
@@ -988,7 +1070,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'aaron_caps',
 		array(
-			'sanitize_callback' => 'aaron_sanitize_cap',
+			'sanitize_callback' => 'aaron_sanitize_select',
 			'default'           => 'uppercase',
 		)
 	);
@@ -1002,7 +1084,7 @@ function aaron_customize_register( $wp_customize ) {
 			'section'     => 'aaron_font',
 			'choices'     => array(
 				'uppercase'  => __( 'Uppercase (Default, transforms all characters to uppercase).', 'aaron' ),
-				'initial'    => __( 'Normal','aaron' ),
+				'initial'    => __( 'Normal', 'aaron' ),
 				'capitalize' => __( 'Capitalized (Transforms the first character of each word to uppercase).', 'aaron' ),
 			),
 		)
@@ -1018,10 +1100,47 @@ function aaron_customize_register( $wp_customize ) {
 	);
 
 	$wp_customize->add_setting(
+		'aaron_body_font',
+		array(
+			'default'           => 'Open Sans',
+			'sanitize_callback' => 'aaron_sanitize_select',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'aaron_body_font',
+			array(
+				'label'    => __( 'Choose a font for the body.', 'aaron' ),
+				'section'  => 'aaron_font',
+				'settings' => 'aaron_body_font',
+				'type'     => 'select',
+				'choices'  => array(
+					'Open Sans'        => 'Open Sans ' . __( '(Default)', 'aaron' ),
+					'Montserrat'       => 'Montserrat',
+					'Oswald'           => 'Oswald',
+					'Rambla'           => 'Rambla',
+					'Ubuntu Condensed' => 'Ubuntu Condensed',
+					'Fjalla One'       => 'Fjalla One',
+					'Roboto'           => 'Roboto',
+					'Lato'             => 'Lato',
+					'Source Sans Pro'  => 'Source Sans Pro',
+					'Raleway'          => 'Raleway',
+					'Lora'             => 'Lora',
+					'Josefin Sans'     => 'Josefin Sans',
+					'Taviraj'          => 'Taviraj',
+					"BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" => __( 'System fonts', 'aaron' ),
+				),
+			)
+		)
+	);
+
+	$wp_customize->add_setting(
 		'aaron_font',
 		array(
 			'default'           => 'Montserrat',
-			'sanitize_callback' => 'sanitize_text_field',
+			'sanitize_callback' => 'aaron_sanitize_select',
 		)
 	);
 
@@ -1036,11 +1155,19 @@ function aaron_customize_register( $wp_customize ) {
 				'type'     => 'select',
 				'choices'  => array(
 					'Montserrat'       => 'Montserrat ' . __( '(Default)', 'aaron' ),
-					'Open Sans'        => 'Open Sans ' . __( '(Same as body)', 'aaron' ),
+					'Open Sans'        => 'Open Sans',
 					'Oswald'           => 'Oswald',
 					'Rambla'           => 'Rambla',
 					'Ubuntu Condensed' => 'Ubuntu Condensed',
 					'Fjalla One'       => 'Fjalla One',
+					'Roboto'           => 'Roboto',
+					'Lato'             => 'Lato',
+					'Source Sans Pro'  => 'Source Sans Pro',
+					'Raleway'          => 'Raleway',
+					'Lora'             => 'Lora',
+					'Josefin Sans'     => 'Josefin Sans',
+					'Taviraj'          => 'Taviraj',
+					"BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" => __( 'System fonts', 'aaron' ),
 				),
 			)
 		)
@@ -1102,6 +1229,31 @@ function aaron_sanitize_text( $input ) {
 }
 
 /**
+ * Select sanitization callback, from https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php
+ *
+ * - Sanitization: select
+ * - Control: select, radio
+ *
+ * Sanitization callback for 'select' and 'radio' type controls. This callback sanitizes `$input`
+ * as a slug, and then validates `$input` against the choices defined for the control.
+ * 
+ * @see sanitize_key()               https://developer.wordpress.org/reference/functions/sanitize_key/
+ * @see $wp_customize->get_control() https://developer.wordpress.org/reference/classes/wp_customize_manager/get_control/
+ *
+ * @param string               $input   Slug to sanitize.
+ * @param WP_Customize_Setting $setting Setting instance.
+ * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
+ */
+function aaron_sanitize_select( $input, $setting ) {
+	// Ensure input is a slug.
+	$input = sanitize_key( $input );
+	// Get list of choices from the control associated with the setting.
+	$choices = $setting->manager->get_control( $setting->id )->choices;
+	// If the input is a valid key, return it; otherwise, return the default.
+	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+}
+
+/**
  * Checkbox sanitization callback, from https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php
  *
  * Sanitization callback for 'checkbox' type controls. This callback sanitizes `$checked`
@@ -1113,86 +1265,6 @@ function aaron_sanitize_text( $input ) {
 function aaron_sanitize_checkbox( $checked ) {
 	// Boolean check.
 	return ( ( isset( $checked ) && true == $checked ) ? true : false );
-}
-
-/**
- * Validate the background position.
- *
- *  @param string $input background position.
- */
-function aaron_sanitize_bgpos( $input ) {
-	$valid = array(
-		'left top'      => __( 'left top', 'aaron' ),
-		'left center'   => __( 'left center', 'aaron' ),
-		'left bottom'   => __( 'left bottom', 'aaron' ),
-		'right top'     => __( 'right top', 'aaron' ),
-		'right center'  => __( 'right center', 'aaron' ),
-		'right bottom'  => __( 'right bottom', 'aaron' ),
-		'center top'    => __( 'center top', 'aaron' ),
-		'center center' => __( 'center center', 'aaron' ),
-		'center bottom' => __( 'center bottom', 'aaron' ),
-	);
-	if ( array_key_exists( $input, $valid ) ) {
-		return $input;
-	} else {
-		return '';
-	}
-}
-
-/**
- * Validate the background size.
- *
- *  @param string $input background size.
- */
-function aaron_sanitize_bgsize( $input ) {
-	$valid = array(
-		'cover'   => __( 'cover', 'aaron' ),
-		'contain' => __( 'contain', 'aaron' ),
-		'auto'    => __( 'auto', 'aaron' ),
-	);
-	if ( array_key_exists( $input, $valid ) ) {
-		return $input;
-	} else {
-		return '';
-	}
-}
-
-/**
- * Validate the background repeat options.
- *
- *  @param string $input background repeat.
- */
-function aaron_sanitize_bgrepeat( $input ) {
-	$valid = array(
-		'repeat'   => __( 'repeat', 'aaron' ),
-		'repeat-x'  => __( 'repeated only horizontally', 'aaron' ),
-		'repeat-y'  => __( 'repeated only vertically', 'aaron' ),
-		'no-repeat' => __( 'no repeat', 'aaron' ),
-	);
-	if ( array_key_exists( $input, $valid ) ) {
-		return $input;
-	} else {
-		return '';
-	}
-}
-
-/**
- *
- * Validate the Capitalization of navigation and headings.
- *
- * @param string $input capitalization.
- */
-function aaron_sanitize_cap( $input ) {
-	$valid = array(
-		'uppercase'  => __( 'Uppercase (Default, transforms all characters to uppercase).', 'aaron' ),
-		'initial'    => __( 'Normal.', 'aaron' ),
-		'capitalize' => __( 'Capitalized (Transforms the first character of each word to uppercase).', 'aaron' ),
-	);
-	if ( array_key_exists( $input, $valid ) ) {
-		return $input;
-	} else {
-		return '';
-	}
 }
 
 /**

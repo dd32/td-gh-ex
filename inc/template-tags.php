@@ -149,7 +149,7 @@ add_filter( 'excerpt_more', 'aaron_excerpt_more', 100 );
  * @param string $output Continue reading.
  */
 function aaron_custom_excerpt_more( $output ) {
-	if ( has_excerpt() && ! is_attachment() ) {
+	if ( has_excerpt() && ! is_attachment() && ! is_admin() ) {
 		global $id;
 		$output .= ' ' . aaron_continue_reading( $id );
 	}
@@ -167,10 +167,7 @@ function aaron_continue_reading( $id ) {
 	return '<a class="more-link" href="' . esc_url( get_permalink( $id ) ) . '">' . sprintf( esc_html__( 'Continue Reading %s', 'aaron' ), get_the_title( $id ) ) . '</a>';
 }
 
-
-
 if ( ! function_exists( 'aaron_breadcrumbs' ) ) {
-
 	/**
 	 * Adds a simplified bredcrumb with links to the home page and category page.
 	 */

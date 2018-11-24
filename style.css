@@ -3,8 +3,8 @@ Theme Name: Aaron
 Theme URI: https://aaron.theme.tips
 Author: Carolina Nymark
 Author URI: https://theme.tips
-Description: Aaron is a responsive, accessibility-ready multi-purpose theme. Features includes Call to action and front page Highlights that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu), logo upload, six page templates and three widget areas that will hold any number of widgets. Want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. I recommend that you install the Jetpack plugin to make full use of supported features like Testimonials and social sharing. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Aaron also works well with WooCommerce and bbPress.
-Version: 3.4
+Description: Aaron is a responsive, accessible multi-purpose theme. Features includes Call to action and front page Highlights that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu), logo upload, six page templates and three widget areas that will hold any number of widgets. Do you want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. I recommend that you install the Jetpack plugin to make full use of supported features like Testimonials and social sharing. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Aaron also works well with WooCommerce and bbPress.
+Version: 3.5
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Copyright: Carolina Nymark 2015-2018
@@ -111,6 +111,7 @@ td {
 	font-weight: normal;
 	text-align: left;
 }
+
 blockquote:before,
 blockquote:after,
 q:before,
@@ -215,6 +216,7 @@ pre {
 	font-family: "Courier 10 Pitch", Courier, monospace;
 	font-size: 1.5rem;
 	line-height: 1.6;
+	margin-top: 1.6em;
 	margin-bottom: 1.6em;
 	max-width: 100%;
 	overflow: hidden;
@@ -450,7 +452,6 @@ textarea {
 	background:#fff;
 	border: 1px solid #f2f2f2;
 	border-radius: 4px;
-	font-family: 'Open Sans', sans-serif;
 	margin: 20px 0 20px 0;
 }
 
@@ -485,7 +486,7 @@ textarea {
 	font-size: 1.6rem; 
 	line-height: 1; 
 	color: #717171;
-	margin-right:1em;
+	margin-right: 1em;
 	text-decoration: none;
 	vertical-align: middle;
 }
@@ -500,7 +501,7 @@ textarea {
 	font-size: 1.6rem; 
 	line-height: 1; 
 	color: #717171;
-	margin-left:1em;
+	margin-left: 1em;
 	text-decoration: none;
 	vertical-align: middle;
 }
@@ -525,7 +526,6 @@ textarea {
 	background:#fff;
 	border: 1px solid #f2f2f2;
 	border-radius: 4px;
-	font-family: 'Open Sans', sans-serif;
 }
 
 .comment-navigation .nav-next,
@@ -541,10 +541,9 @@ textarea {
 	background:#fff;
 	border: 1px solid #f2f2f2;
 	border-radius: 4px;
-	font-family: 'Open Sans', sans-serif;
 }
 
-.crumbs{
+.crumbs {
 	color: #666;
 }
 
@@ -612,7 +611,7 @@ a:active {
 .main-navigation a {
 	display: block;
 	text-decoration: none;
-	line-height: 2.5em;
+	line-height: 2.5;
 	margin-right: 0.2em;
 	margin-left: 0.2em;
 	padding: 0 8px 0 8px;
@@ -630,7 +629,7 @@ a:active {
 	position: absolute;	
 	display: block;
 	clear: both;
-	width: 228px; /*8 wider than the link, to make room for the border image.*/
+	width: auto;
 	top: auto;
 	padding-right: 1em;
 	padding-top: 8px;
@@ -642,21 +641,21 @@ a:active {
 	box-shadow: 0 2px 6px 0 rgba(0, 0, 0, 0.09);
 }
 
- .main-navigation ul ul:before {
+.main-navigation ul ul:before {
  	content: '';
  	position: absolute;
 	left: -7px;
 	z-index: 100;
 	top: -1px;
-	width: 238px;
+	width: auto;
 	height: 10px;
 	background:#fff;
  }
 
 .main-navigation li ul a {
-	line-height: 1.4em;
+	line-height: 1.5em;
 	padding: .5em 0 .5em 1em;
-	width: 220px;
+	min-width: 220px;
 	font-size: 1.4rem;
 }
 
@@ -674,10 +673,10 @@ a:active {
 }
 
 .menu-item-has-children > a:after {
-	font: normal 1.6rem/1 'dashicons';
-	font-size: 1.6rem;
-	height: 1.6rem;
-	width: 1.6rem;
+	font: normal 1.59rem/1 'dashicons';
+	font-size: 1.59rem;
+	height: 1.59rem;
+	width: 1.59rem;
 	content: "\f140";
 	-webkit-font-smoothing: antialiased;
 }
@@ -704,7 +703,6 @@ a:active {
 	font-weight: 700;
 	height: auto;
 	left: 5px;
-	line-height: normal;
 	padding: 15px 23px 14px;
 	text-decoration: none;
 	top: 35px;
@@ -716,7 +714,6 @@ a:active {
 	float: right; 
 	margin-top: 3px;
 	margin-right: 11px;
-	line-height: 1; 
 }
 
 .topsearch form:before {		
@@ -726,7 +723,6 @@ a:active {
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	line-height: 1; 
 	text-decoration: none; 
 	margin: 0 5px 0 5px;
 	padding: 0;
@@ -795,7 +791,7 @@ a:active {
 	}
 
 	.menu-item-has-children > a:after {
-		content:'';
+		content: '';
 	}
 
 }
@@ -950,13 +946,13 @@ Social menu
 	margin: 0 auto;
 }
 
-.wp-block-cover-image.aligncenter {
+.wp-block-cover.aligncenter {
 	display: flex;
 	margin: 0 0 2em;
 }
 
-.wp-block-cover-image.alignright,
-.wp-block-cover-image.alignleft {
+.wp-block-cover.alignright,
+.wp-block-cover.alignleft {
     display: flex;
 }
 
@@ -964,7 +960,7 @@ Social menu
 	margin: 0 2em 2em 0;
 }
 
-.wp-block-cover-image.alignleft {
+.wp-block-cover.alignleft {
 	margin-right: 2em;
 }
 
@@ -972,7 +968,7 @@ Social menu
 	margin: 0 0 2em 2em;
 }
 
-.wp-block-cover-image.alignright {
+.wp-block-cover.alignright {
 	margin-left: 2em;
 }
 
@@ -983,7 +979,6 @@ Social menu
 .wp-block-categories.aligncenter {
     padding-left: 2.5em;
 }
-
 
 /*--------------------------------------------------------------
 8.0 Clearings
@@ -1039,7 +1034,6 @@ Social menu
 	margin: 0 0.5em 45px 0.5em; 
 	box-sizing: border-box;	
 	width: 100%;
-	font-family: 'Open Sans', sans-serif;
 	background:#fafafa url(images/border.png) repeat-x bottom;
 	border: 4px solid #fff;
 	border-radius: 4px;
@@ -1105,7 +1099,6 @@ table#wp-calendar,
 	background:#fff;
 	border: 1px solid #f2f2f2;
 	border-radius: 4px;
-	font-family: 'Open Sans', sans-serif;
 }
 
 #wp-calendar caption {
@@ -1181,6 +1174,7 @@ table#wp-calendar,
 .rssSummary {
 	width: 90%;
 }
+
 .rss-date {
 	width: 90%; 
 	float: left; 
@@ -1193,7 +1187,7 @@ table#wp-calendar,
 	vertical-align: top;
 	list-style: none;
 	padding: 0 18px 0 18px;
-	margin: 0 0.5em  45px 0.5em;
+	margin: 0 0.5em 45px 0.5em;
 	width: 22%;
 	box-shadow: none;
 	background: none;
@@ -1236,8 +1230,7 @@ table#wp-calendar,
 .site-title a {
 	position: relative;
 	margin: 0 auto 10px auto;
-	font-size: 7rem; 
-	line-height: 1; 
+	font-size: 7rem;
 	text-decoration: none;
 	text-transform: uppercase;
 	color: #fff;
@@ -1258,13 +1251,13 @@ table#wp-calendar,
 	width: 100%; 
 	margin: 45px 0 0 0;
 	padding: 1.2em 1.2em 90px 1.2em;
-	z-index:2;
-	background: url(images/border.png) repeat-x bottom;
+	z-index: 2;
 }
 
 .site-footer {
 	background:#fff;
 	padding: 12px 0 12px 0;
+	border-top: 1px solid #eee;
 }
 
 .site-info {
@@ -1438,7 +1431,7 @@ table#wp-calendar,
 	display: block;
 }
 
-.highlights a{
+.highlights a {
 	display: block;
 	text-decoration: none;
 	border-bottom: 1px dashed transparent;
@@ -1460,6 +1453,7 @@ table#wp-calendar,
 	height: 60px;
 	width: 60px;
 	padding-top: 16px;
+	line-height: 1;
 }
 
 .no-icon {
@@ -1489,7 +1483,7 @@ table#wp-calendar,
 --------------------------------------------------------------*/
 .aaron-border {	
 	background: url(images/border.png) repeat-x bottom;
-	border:4px solid #fff;
+	border: 4px solid #fff;
 	border-radius: 4px;
 	box-shadow: 0 1px 6px rgba(0,0,0,0.2);
 }
@@ -1544,7 +1538,7 @@ table#wp-calendar,
 	color: #e6e6e6;
 	text-decoration: none; 
 	vertical-align: middle;
-	float:right;
+	float: right;
 }
 
 .updated:not(.published) {
@@ -1584,7 +1578,6 @@ table#wp-calendar,
 .taxonomy-description {
 	margin-bottom: 45px;
 	font-size: 1.6rem; 
-	font-family: 'Open Sans', sans-serif;
 }
 
 .entry-title a:focus,
@@ -1607,7 +1600,7 @@ table#wp-calendar,
 	width: 100%;
 }
 
-.entry-content a {
+.entry-content a:not( .wp-block-button__link ) {
 	text-decoration: underline; 
 	background: url(images/border.png) repeat-x bottom;
 }
@@ -1616,7 +1609,7 @@ table#wp-calendar,
 	text-decoration: none;
 }
 
-.entry-meta{
+.entry-meta {
 	font-size: 1.6rem; 
 	margin: 15px 0 20px 0;
 }
@@ -1643,7 +1636,6 @@ table#wp-calendar,
 	font-size: 1.6rem;
 	border: 1px solid #f2f2f2;
 	border-radius: 4px;
-	font-family: 'Open Sans', sans-serif;
 	margin: 20px 0 25px 0;
 }
 
@@ -1726,13 +1718,12 @@ table#wp-calendar,
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	vertical-align: top;
+	vertical-align: middle;
 	font-size: 1em; 
 	line-height: 1; 
 	color: #717171;
 	text-decoration: none; 
-	margin-right:4px;
-	vertical-align: middle;
+	margin-right: 4px;
 }
 
 .cat-links i::before {
@@ -1943,39 +1934,53 @@ table#wp-calendar,
 10.4 Blocks
 --------------------------------------------------------------*/
 
+.wp-block-media-text,
 .wp-block-button {
     margin-bottom: 1.5em;
 }
 
-.entry-content .wp-block-button a {
-	background-image: none;
+.wp-block-button__link {
+    text-decoration: underline;
+}
+
+.wp-block-button__link:hover,
+.wp-block-button__link:focus {
+    text-decoration: none;
 }
 
 .wp-block-column {
 	padding: 0.5em;
 }
 
-.wp-block-audio figcaption {
-	margin-bottom: 1.5em;
-	color:#333;
+.wp-block-media-text .wp-block-media-text__content {
+    padding: 8%;
 }
 
+/* Increase text color contrast */
+.wp-block-latest-comments__comment-date {
+	color: #333; 
+}
+
+.wp-block-audio figcaption {
+	margin-bottom: 1.5em;
+	color: #333;
+}
 .wp-block-quote cite {
 	display: block;
 	font-size: 13px;
-	color:#333;
+	color: #333;
 }
 
- blockquote .wp-block-quote.is-large p {
+ blockquote .wp-block-quote.is-style-large p {
 	font-size: 24px;
     line-height: 1.6;
  }
 
-blockquote.wp-block-quote.is-large {
+blockquote.wp-block-quote.is-style-large {
 	border: none;
 }
 
-blockquote.wp-block-quote.is-large cite {
+blockquote.wp-block-quote.is-style-large cite {
     font-size: 13px;
 	text-align: left;
 }
@@ -1990,19 +1995,6 @@ blockquote.wp-block-quote.is-large cite {
 
 .wp-block-image {
 	margin-bottom: 1em;
-}
-
-/*The styles below are added in case someone edits a post created in gutenberg in the classic editor. */
-.wp-block-cover-image {
-	display: flex;
-    position: relative;
-    background-size: cover;
-    background-position: 50%;
-    min-height: 430px;
-    width: 100%;
-    margin: 0 0 1.5em;
-    justify-content: center;
-    align-items: center;
 }
 
 /*--------------------------------------------------------------
@@ -2301,6 +2293,7 @@ blockquote.wp-block-quote.is-large cite {
     content: "";
     border: none;
 }
+
 .post .jp-relatedposts-post-title {
 	margin-bottom: 6px;
 }
@@ -2434,7 +2427,7 @@ a:hover img {
 #bbpress-forums .bbp-forum-info .bbp-forum-content,
 #bbpress-forums p.bbp-topic-meta,
 #bbpress-forums .forum-titles,
-div.bbp-template-notice  p{
+div.bbp-template-notice p {
 	font-size: 1.4rem;
 }
 
@@ -2782,7 +2775,7 @@ span.bbp-admin-links a:hover {
 
 	/*Increase text-size on tiny screens */
 	.more-link,
-	.entry-meta
+	.entry-meta,
 	.entry-footer {
 		font-size: 1.6rem;
 	}
