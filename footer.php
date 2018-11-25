@@ -69,23 +69,9 @@
 	<div class="info-wrap clear">
 		<div class="centeralign-footer">
             <div class="site-info">
-                <?php
-                    if( Kirki::get_option( 'bo', 'opt_copyright_new' ) ) {
-                        $opt_copyright = Kirki::get_option( 'bo', 'opt_copyright_new' );
-                ?>
-                    <p>
-                     <?php
-                        echo balanceTags(wp_kses_data( $opt_copyright ));
-                     ?>
-                    </p>
-                <?php
-                    }
-                ?>
-
 				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'beam' ) ); ?>"><?php printf( 		esc_html__( 'Powered by %s', 'beam' ), 'WordPress' ); ?></a>
 				<span class="sep"> | </span>
 				<?php printf( esc_html__( 'Runs on %1$s.', 'beam' ), '<a href="https://www.beamtheme.com/" target="_blank" rel="external nofollow">Beam Theme</a>' ); ?>
-
 			</div><!-- .site-info -->
 		</div><!-- .site-info -->
 	</div><!-- #info-wrap-->

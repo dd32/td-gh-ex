@@ -20,11 +20,9 @@ Kirki::add_config( 'bo', array(
 	'disable_output' => true
 ) );
 
-
 /**
  * Create panels using the Kirki API
  */
-
 Kirki::add_panel( 'design', array(
     'priority'    => 11,
     'title'       => __( 'Design Options', 'beam' ),
@@ -38,11 +36,9 @@ Kirki::add_panel( 'general', array(
 ) );
 
 
-
 /**
  * Create sections using the Kirki API
  */
-
 Kirki::add_section( 'typho_options', array(
 	'priority'    => 11,
 	'title'       => __( 'Typography', 'beam' ),
@@ -186,7 +182,6 @@ function kirki_text_controls_fields( $fields ) {
 			),
 	);	
 
-
 	// Footer Background color
 	$fields[] = array(
 		'type'        => 'color',
@@ -255,7 +250,6 @@ function kirki_text_controls_fields( $fields ) {
 		'priority'  => 10,
 	);
 
-
 	// Body Typography
 	$fields[] = array(
 		'type'        => 'typography',
@@ -288,7 +282,6 @@ function kirki_text_controls_fields( $fields ) {
 		)
 	);	
 
-
 	$fields[] = array(
 		'type'        => 'radio-image',
 		'settings'    => 'opt_layout',
@@ -305,21 +298,6 @@ function kirki_text_controls_fields( $fields ) {
 		),
 	);
 
-
-	$fields[] = array(
-		'sanitize_callback' => array( 'Kirki_Sanitize', 'unfiltered' ),
-		'type'        => 'textarea',
-		'settings'    => 'opt_copyright_new',
-		'label'       => __( 'Copyright', 'beam' ),
-		'description' => __( 'Edit Copyright Text', 'beam' ),
-		'help'        => __( 'This text will be displayed after Footer Menu', 'beam' ),
-		'section'     => 'custom_fields',
-		'default'     => '',
-		'priority'    => 11,
-		
-	);
-
-	
 	$fields[] = array(
 		'type'        => 'text',
 		'settings'    => 'opt_header_height',
@@ -337,7 +315,6 @@ function kirki_text_controls_fields( $fields ) {
 		),
 	);
 
-
 	$fields[] = array(
 		'type'        => 'radio-buttonset',
 		'settings'    => 'opt_menu_visibility',
@@ -353,7 +330,7 @@ function kirki_text_controls_fields( $fields ) {
 		),
 	);
 
-		$fields[] = array(
+	$fields[] = array(
 		'type'        => 'radio-buttonset',
 		'settings'    => 'opt_fwidget_visibility',
 		'label'       => __( 'Show Footer Widget Area', 'beam' ),

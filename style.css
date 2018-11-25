@@ -4,7 +4,7 @@ Theme URI: http://www.beamtheme.com
 Author: Emir Muracevic
 Author URI: http://www.beamtheme.com/author/emirowski/
 Description: Beam is a Clean, Fast, Responsive and Customizable WordPress theme. Ready (and recommended) to use with Child themes. Translatation ready. Features four layout types and five page templates.
-Version: 1.2
+Version: 1.2.1
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: beam
@@ -819,7 +819,7 @@ html.has-navbar-fixed-bottom {
 }
 
 .navbar-burger {
-	color: #4a4a4a;
+	color: #fafafa;
 	cursor: pointer;
 	display: block;
 	height: 3.25rem;
@@ -1290,7 +1290,7 @@ a.menu-item:hover {
 
 .site-name {
 	font-size: 3em;
-	margin: 0.5em 0 0;
+	margin: 0.5em 0 0.5em;
 }
 
 .site-description {
@@ -1299,12 +1299,35 @@ a.menu-item:hover {
 
 .navbar-brand-wrap {
 	padding-left: 1em;
+	color: #fafafa;
 }
 
 @media screen and (min-width: 1088px) {
 	.navbar-brand-wrap {
 		padding-left: 0;
 	}
+
+	.navbar .menu ul {
+		flex-direction: row !important;
+	}
+}
+
+
+.navbar .menu {
+	display: flex;
+	align-items: center;
+}
+
+.navbar .menu ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	}
+
+.navbar .menu li {
+	padding: 1em;
 }
 
 /* =OLD CODE
