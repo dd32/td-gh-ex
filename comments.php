@@ -104,13 +104,13 @@ if ( post_password_required() ) {
     __( 'Logged in as <a href="%1$s">%2$s</a>. <a href="%3$s" title="Log out of this account">Log out?</a>','be-page' ),
       admin_url( 'profile.php' ),
       $user_identity,
-      wp_logout_url( apply_filters( 'the_permalink', get_permalink( ) ) )
+      wp_logout_url( apply_filters( 'the_permalink', esc_url( get_permalink( ) ) ) )
     ) . '</div>',
 	'must_log_in' => '<div class="must-log-in col-md-12 col-sm-12">' .
     sprintf(
 		/* translators:straing */
       __( 'You must be <a href="%s">logged in</a> to post a comment.','be-page' ),
-      wp_login_url( apply_filters( 'the_permalink', get_permalink() ) )
+      wp_login_url( apply_filters( 'the_permalink', esc_url( get_permalink( ) ) ) )
     ) . '</div>',
 	'comment_notes_before' => '<div class="comment-notes col-md-12 col-sm-12">' .
 	/* translators:straing */
