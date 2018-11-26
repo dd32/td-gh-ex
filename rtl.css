@@ -3,12 +3,12 @@ Theme Name: Absolutte
 Theme URI: https://www.quemalabs.com/theme/absolutte/
 Description: Absolutte is a beautiful One page free WordPress theme, perfect for small business.
 It has fully support for Gutenberg blocks and easy customizations.
-Version: 1.0.3
+Version: 1.0.5
 Author: Quema Labs
 Author URI: https://www.quemalabs.com/
 License: GNU General Public License v2 or later
 License URI: LICENSE
-Tags: light, white, gray, right-sidebar, two-columns, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+Tags: two-columns, custom-background, threaded-comments, custom-menu, custom-logo, custom-colors, footer-widgets, theme-options, featured-images, sticky-post, translation-ready, full-width-template
 Text Domain: absolutte
 */
 /*
@@ -36,56 +36,81 @@ TABLE OF CONTENTS
 */
 
 @media (max-width: 575.98px) {
-
 }
 
 @media (max-width: 767.98px) {
-
 }
 
 @media (max-width: 991.98px) {
-
 }
 
 @media (max-width: 1199.98px) {
-
 }
 
 /*! Font Awesome Free 5.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) */
 
 .fa-ul {
-	margin-right: 2.5em;
-	padding-right: 0;
-	padding-left: 0;
-	margin-left: auto;
+    margin-right: 2.5em;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: auto;
 }
 
 .fa-li {
-	right: -2em;
-	left: auto;
+    right: -2em;
+    left: auto;
 }
 
 .fa-pull-right {
-	float: right;
+    float: right;
 }
 
 .fa-pull-left {
-	float: left;
+    float: left;
 }
 
-.fa.fa-pull-right, .fas.fa-pull-right, .post-image a.fa-pull-right::after, .search-form label.fa-pull-right::before, .far.fa-pull-right, .comment-list .comment .comment-body .reply .fa-pull-right.comment-reply-link::before, .fal.fa-pull-right, .fab.fa-pull-right, .fa-pull-right.absolutte-app-store-button::before, .nav_social li a.fa-pull-right::before, .widget #menu-social li a.fa-pull-right::before {
-	margin-left: .3em;
-	margin-right: auto;
+.fa.fa-pull-right,
+.fas.fa-pull-right,
+.post-image a.fa-pull-right::after,
+.search-form label.fa-pull-right::before,
+.far.fa-pull-right,
+.comment-list
+    .comment
+    .comment-body
+    .reply
+    .fa-pull-right.comment-reply-link::before,
+.fal.fa-pull-right,
+.fab.fa-pull-right,
+.fa-pull-right.absolutte-app-store-button::before,
+.nav_social li a.fa-pull-right::before,
+.widget #menu-social li a.fa-pull-right::before {
+    margin-left: 0.3em;
+    margin-right: auto;
 }
 
-.fa.fa-pull-left, .fas.fa-pull-left, .post-image a.fa-pull-left::after, .search-form label.fa-pull-left::before, .far.fa-pull-left, .comment-list .comment .comment-body .reply .fa-pull-left.comment-reply-link::before, .fal.fa-pull-left, .fab.fa-pull-left, .fa-pull-left.absolutte-app-store-button::before, .nav_social li a.fa-pull-left::before, .widget #menu-social li a.fa-pull-left::before {
-	margin-right: .3em;
-	margin-left: auto;
+.fa.fa-pull-left,
+.fas.fa-pull-left,
+.post-image a.fa-pull-left::after,
+.search-form label.fa-pull-left::before,
+.far.fa-pull-left,
+.comment-list
+    .comment
+    .comment-body
+    .reply
+    .fa-pull-left.comment-reply-link::before,
+.fal.fa-pull-left,
+.fab.fa-pull-left,
+.fa-pull-left.absolutte-app-store-button::before,
+.nav_social li a.fa-pull-left::before,
+.widget #menu-social li a.fa-pull-left::before {
+    margin-right: 0.3em;
+    margin-left: auto;
 }
 
-.fa-stack-1x, .fa-stack-2x {
-	right: 0;
-	left: auto;
+.fa-stack-1x,
+.fa-stack-2x {
+    right: 0;
+    left: auto;
 }
 
 /* Font Awesome uses the Unicode Private Use Area (PUA) to ensure screen
@@ -98,40 +123,39 @@ readers do not read off random characters that represent icons */
 */
 
 @media screen and (prefers-reduced-motion: reduce) {
-
 }
 
 /* Button Arrow														
 /*----------------------------------------------------------------------*/
 .absolutte-button-arrow {
-	padding-left: 28px;
-	padding-right: 0;
+    padding-left: 28px;
+    padding-right: 0;
 }
 
 .absolutte-button-arrow::after {
-	left: 0;
-	right: auto;
+    left: 0;
+    right: auto;
 }
 
 @media screen and (prefers-reduced-motion: reduce) {
-
 }
 
 /* Modal Popup															
 /*----------------------------------------------------------------------*/
 .absolutte-modal-wrap {
-	right: 0;
-	left: 0;
+    right: 0;
+    left: 0;
 }
 
 .absolutte-modal-wrap .absolutte-modal {
-	right: 50%;
-	left: auto;
+    right: 50%;
+    left: auto;
 }
 
-.absolutte-diagonal-bottom, .absolutte-diagonal-top {
-	right: 0;
-	left: 0;
+.absolutte-diagonal-bottom,
+.absolutte-diagonal-top {
+    right: 0;
+    left: 0;
 }
 
 /* Shadow Big														
@@ -141,54 +165,54 @@ readers do not read off random characters that represent icons */
 */
 
 .absolutte-section-title::after {
-	right: 0;
-	left: auto;
+    right: 0;
+    left: auto;
 }
 
 /* Section Title Small
 */
 
 .absolutte-section-title-small::after {
-	right: 0;
-	left: auto;
+    right: 0;
+    left: auto;
 }
 
 /* Phone Mockup
 */
 
 .absolutte-phone-mockup::before {
-	right: 50%;
-	left: auto;
+    right: 50%;
+    left: auto;
 }
 
 .absolutte-phone-mockup::after {
-	right: 50%;
-	left: auto;
+    right: 50%;
+    left: auto;
 }
 
 /* App Store Buttons
 /*----------------------------------------------------------------------*/
 .absolutte-app-store-button {
-	text-align: right;
-	padding-right: 65px;
-	padding-left: 25px;
+    text-align: right;
+    padding-right: 65px;
+    padding-left: 25px;
 }
 
 .absolutte-app-store-button::before {
-	right: 25px;
-	left: auto;
+    right: 25px;
+    left: auto;
 }
 
 /* Read More Button
 -------------------------------------------------- */
 .read-more {
-	margin-left: 20px;
-	margin-right: auto;
+    margin-left: 20px;
+    margin-right: auto;
 }
 
 .read-more i {
-	left: 0;
-	right: auto;
+    left: 0;
+    right: auto;
 }
 
 /* Absolutte Track													
@@ -200,8 +224,8 @@ readers do not read off random characters that represent icons */
 /* Text meant only for screen readers. */
 
 .screen-reader-text:focus {
-	right: 5px;
-	left: auto;
+    right: 5px;
+    left: auto;
 }
 
 /* Inputs																*/
@@ -212,22 +236,20 @@ readers do not read off random characters that represent icons */
 /* Small and Up
 /*----------------------------------------------------------------------*/
 @media (min-width: 576px) {
-
-/*--------------------------------------------------------------
+    /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
-/* Text meant only for screen readers. */
+    /* Text meant only for screen readers. */
 
-.screen-reader-text:focus {
-	right: 5px;
-	left: auto;
-}
+    .screen-reader-text:focus {
+        right: 5px;
+        left: auto;
+    }
 
-/* Inputs																*/
-/*----------------------------------------------------------------------*/
+    /* Inputs																*/
+    /*----------------------------------------------------------------------*/
 
-/* Phone Mockup */
-
+    /* Phone Mockup */
 }
 
 /* Phone Mockup */
@@ -235,30 +257,26 @@ readers do not read off random characters that represent icons */
 /* Large and Up
 /*----------------------------------------------------------------------*/
 @media (min-width: 992px) {
-
-/* Small and Up
+    /* Small and Up
 /*----------------------------------------------------------------------*/
-@media (min-width: 576px) {
-
-/*--------------------------------------------------------------
+    @media (min-width: 576px) {
+        /*--------------------------------------------------------------
 # Accessibility
 --------------------------------------------------------------*/
-/* Text meant only for screen readers. */
+        /* Text meant only for screen readers. */
 
-.screen-reader-text:focus {
-	right: 5px;
-	left: auto;
-}
+        .screen-reader-text:focus {
+            right: 5px;
+            left: auto;
+        }
 
-/* Inputs																*/
-/*----------------------------------------------------------------------*/
+        /* Inputs																*/
+        /*----------------------------------------------------------------------*/
 
-/* Phone Mockup */
+        /* Phone Mockup */
+    }
 
-}
-
-/* Phone Mockup */
-
+    /* Phone Mockup */
 }
 
 /*
@@ -273,81 +291,79 @@ Header
 */
 
 #header .absolutte-logo-wrap #absolutte-nav-btn {
-	left: 5%;
-	right: auto;
+    left: 5%;
+    right: auto;
 }
 
 #header .absolutte-icons-nav-wrap {
-	margin-right: 10px;
-	padding-right: 10px;
-	padding-left: 0;
-	margin-left: auto;
+    margin-right: 10px;
+    padding-right: 10px;
+    padding-left: 0;
+    margin-left: auto;
 }
 
 #header .absolutte-icons-nav-wrap::before {
-	right: 0;
-	left: auto;
+    right: 0;
+    left: auto;
 }
 
 #header.absolutte-fixed-header {
-	right: 0;
-	left: auto;
+    right: 0;
+    left: auto;
 }
 
 #header.absolutte-header-style-2 .absolutte-main-nav-wrap {
-	text-align: right;
+    text-align: right;
 }
 
 #header.absolutte-header-style-2 .absolutte-second-nav-wrap {
-	text-align: left;
+    text-align: left;
 }
 
 #header.absolutte-header-style-3 .absolutte-icons-nav-wrap {
-	text-align: left;
+    text-align: left;
 }
 
 #header.absolutte-header-style-4 .absolutte-main-nav-wrap {
-	text-align: right;
+    text-align: right;
 }
 
 #header.absolutte-header-style-4 .absolutte-icons-nav-wrap {
-	text-align: left;
+    text-align: left;
 }
 
 #header.absolutte-header-style-5 .absolutte-main-nav-wrap {
-	text-align: right;
+    text-align: right;
 }
 
 #header.absolutte-header-style-6 .absolutte-icons-nav-wrap {
-	text-align: left;
+    text-align: left;
 }
 
 #header.absolutte-header-style-7 .absolutte-icons-nav-wrap {
-	text-align: left;
+    text-align: left;
 }
 
 #header.absolutte-header-style-8 .absolutte-main-nav-wrap {
-	text-align: right;
+    text-align: right;
 }
 
 #header.absolutte-header-style-8 .absolutte-icons-nav-wrap {
-	margin-right: 0;
-	text-align: left;
-	margin-left: auto;
+    margin-right: 0;
+    text-align: left;
+    margin-left: auto;
 }
 
 @media (min-width: 576px) {
+    #header.absolutte-header-style-8 .absolutte-main-nav-wrap {
+        text-align: right;
+    }
 
-#header.absolutte-header-style-8 .absolutte-main-nav-wrap {
-	text-align: right;
-}
-
-#header.absolutte-header-style-8 .absolutte-icons-nav-wrap {
-	margin-right: 0;
-	text-align: left;
-	margin-left: auto;
-}
-
+    #header.absolutte-header-style-8 .absolutte-icons-nav-wrap {
+        margin-right: 0;
+        text-align: left;
+        margin-left: auto;
+    }
 }
 
 /*
@@ -366,89 +382,96 @@ Header
 /*------------------------------------------*/
 
 .post-title a {
-	text-align: right;
+    text-align: right;
 }
 
 .post-header .post-title {
-	padding-left: 20px;
-	padding-right: 0;
+    padding-left: 20px;
+    padding-right: 0;
 }
 
 /*Page Title 								*/
 /*------------------------------------------*/
 .page-title {
-	padding-left: 20px;
-	padding-right: 0;
+    padding-left: 20px;
+    padding-right: 0;
 }
 
-.page-header::before, .post-header::before, .woocommerce-products-header::before {
-	left: 0;
-	right: 0;
+.page-header::before,
+.post-header::before,
+.woocommerce-products-header::before {
+    left: 0;
+    right: 0;
 }
 
 /*Post										*/
 /*------------------------------------------*/
 .blog #content.col-md-12 .post {
-	margin: 0 0 4% 4%;
+    margin: 0 0 4% 4%;
 }
 
-.absolutte-blog-layout-2.blog #content .post .post-image, .absolutte-blog-layout-2.archive #content .post .post-image, .absolutte-blog-layout-2.search #content .post .post-image {
-	margin-left: 5%;
-	margin-right: auto;
+.absolutte-blog-layout-2.blog #content .post .post-image,
+.absolutte-blog-layout-2.archive #content .post .post-image,
+.absolutte-blog-layout-2.search #content .post .post-image {
+    margin-left: 5%;
+    margin-right: auto;
 }
 
 /*Image Post								*/
 /*------------------------------------------*/
 
 .post-image a::before {
-	right: 0;
-	left: 0;
+    right: 0;
+    left: 0;
 }
 
 .post-image a::after {
-	right: 50%;
-	left: auto;
+    right: 50%;
+    left: auto;
 }
 
 /*Metadata 									*/
 /*------------------------------------------*/
 
 .metadata ul li {
-	margin-left: 1.78571428571429em;
-	margin-right: auto;
+    margin-left: 1.78571428571429em;
+    margin-right: auto;
 }
 
 .metadata ul li i {
-	margin-left: 0.35714285714286em;
-	margin-right: auto;
+    margin-left: 0.35714285714286em;
+    margin-right: auto;
 }
 
 .metadata ul li.meta_comments {
-	float: left;
-	margin-left: 0;
-	text-align: left;
-	margin-right: auto;
+    float: left;
+    margin-left: 0;
+    text-align: left;
+    margin-right: auto;
 }
 
 /*Pagination															*/
 /*----------------------------------------------------------------------*/
 
-.pagination_wrap .pagination a, .pagination_wrap .pagination span {
-	float: right;
-	margin-left: 5px;
-	margin-right: auto;
+.pagination_wrap .pagination a,
+.pagination_wrap .pagination span {
+    float: right;
+    margin-left: 5px;
+    margin-right: auto;
 }
 
 /* Fullwidth Template													*/
 /*----------------------------------------------------------------------*/
-.page-template-template-full-width .entry-content > *:not(img):not(video):not(.alignwide):not(.alignfull) {
-	margin-right: auto;
-	margin-left: auto;
+.page-template-template-full-width
+    .entry-content
+    > *:not(img):not(video):not(.alignwide):not(.alignfull) {
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .page-template-template-full-width .entry-content > *.alignwide {
-	margin-right: auto;
-	margin-left: auto;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 /*Single															*/
@@ -458,28 +481,24 @@ Header
 /*----------------------------------------------------------------------*/
 
 @media (min-width: 576px) {
-
 }
 
 /* Fullwidth Template													*/
 /*----------------------------------------------------------------------*/
 
 @media (min-width: 768px) {
-
 }
 
 /* Fullwidth Template													*/
 /*----------------------------------------------------------------------*/
 
 @media (min-width: 992px) {
-
 }
 
 /* Fullwidth Template													*/
 /*----------------------------------------------------------------------*/
 
 @media (min-width: 1200px) {
-
 }
 
 /*
@@ -491,36 +510,36 @@ Header
 /*Comments																	 */
 /*===========================================================================*/
 #content.col-md-12 #comments {
-	margin-right: auto;
-	margin-left: auto;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .comment-list {
-	margin-right: 0;
-	margin-left: auto;
+    margin-right: 0;
+    margin-left: auto;
 }
 
 .comment-list .comment .comment-body .comment-meta .comment-author img {
-	margin-left: 15px;
-	margin-right: auto;
+    margin-left: 15px;
+    margin-right: auto;
 }
 
 .comment-list .comment .comment-body .comment-meta .comment-metadata {
-	text-align: left;
+    text-align: left;
 }
 
 .comment-list .comment .comment-body .reply {
-	text-align: left;
+    text-align: left;
 }
 
 .comment-list .comment .comment-body .reply .comment-reply-link {
-	padding-right: 20px;
-	padding-left: 0;
+    padding-right: 20px;
+    padding-left: 0;
 }
 
 .comment-list .comment .comment-body .reply .comment-reply-link::before {
-	right: 0;
-	left: auto;
+    right: 0;
+    left: auto;
 }
 
 /*===========================================================================*/
@@ -528,36 +547,34 @@ Header
 /*===========================================================================*/
 
 .comment-form .input-wrap.textarea {
-	margin-right: 0;
-	margin-left: 0;
+    margin-right: 0;
+    margin-left: 0;
 }
 
 .comment-form .input-wrap .controls-wrap input {
-	padding-right: 42px;
-	padding-left: 0;
+    padding-right: 42px;
+    padding-left: 0;
 }
 
 .comment-form .input-wrap .controls-wrap i {
-	right: 15px;
-	left: auto;
+    right: 15px;
+    left: auto;
 }
 
 /* Comment List										 */
 
 .comment-list .comment .comment-body .comment-meta {
-	margin-left: 5%;
-	margin-right: auto;
+    margin-left: 5%;
+    margin-right: auto;
 }
 
 @media (min-width: 576px) {
+    /* Comment List										 */
 
-/* Comment List										 */
-
-.comment-list .comment .comment-body .comment-meta {
-	margin-left: 5%;
-	margin-right: auto;
-}
-
+    .comment-list .comment .comment-body .comment-meta {
+        margin-left: 5%;
+        margin-right: auto;
+    }
 }
 
 /*
@@ -571,21 +588,23 @@ Widgets
 --------------------------------
 */
 
-#sidebar .widget ul, #sidebar .widget ol {
-	margin-right: 0px;
-	padding-right: 0;
-	padding-left: 0;
-	margin-left: auto;
+#sidebar .widget ul,
+#sidebar .widget ol {
+    margin-right: 0px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: auto;
 }
 
-#sidebar .widget ul li ul, #sidebar .widget ol li ul {
-	margin-right: 15px;
-	margin-left: auto;
+#sidebar .widget ul li ul,
+#sidebar .widget ol li ul {
+    margin-right: 15px;
+    margin-left: auto;
 }
 
 #sidebar.col-md-pull-9 .widget {
-	margin-left: 10px;
-	margin-right: 0;
+    margin-left: 10px;
+    margin-right: 0;
 }
 
 /*
@@ -594,18 +613,18 @@ Recent Comments Widget
 */
 
 #sidebar .widget_recent_comments ul li {
-	padding-right: 35px;
-	padding-left: 0;
+    padding-right: 35px;
+    padding-left: 0;
 }
 
 #sidebar .widget_recent_comments ul li::before {
-	right: 0;
-	left: auto;
+    right: 0;
+    left: auto;
 }
 
 #sidebar .widget_recent_comments ul li i {
-	right: 0;
-	left: auto;
+    right: 0;
+    left: auto;
 }
 
 /*
@@ -619,15 +638,13 @@ Tag Widget
 */
 
 #sidebar .widget_tag ul li {
-	margin: 0 0 0.90909090909091em 0.90909090909091em;
+    margin: 0 0 0.90909090909091em 0.90909090909091em;
 }
 
 @media (min-width: 992px) {
-
-#sidebar .widget_tag ul li {
-	margin: 0 0 0.90909090909091em 0.90909090909091em;
-}
-
+    #sidebar .widget_tag ul li {
+        margin: 0 0 0.90909090909091em 0.90909090909091em;
+    }
 }
 
 /*
@@ -638,53 +655,53 @@ Tag Widget
 /* =WordPress Core
 -------------------------------------------------------------- */
 .alignnone {
-	margin: 5px 0 20px 20px;
+    margin: 5px 0 20px 20px;
 }
 
 .alignleft {
-	float: left;
-	margin: 5px 20px 20px 0;
+    float: left;
+    margin: 5px 20px 20px 0;
 }
 
 .alignright {
-	float: right;
-	margin: 5px 0 20px 20px;
+    float: right;
+    margin: 5px 0 20px 20px;
 }
 
 a img.alignleft {
-	float: left;
-	margin: 5px 20px 20px 0;
+    float: left;
+    margin: 5px 20px 20px 0;
 }
 
 a img.alignnone {
-	margin: 5px 0 20px 20px;
+    margin: 5px 0 20px 20px;
 }
 
 a img.alignright {
-	float: right;
-	margin: 5px 0 20px 20px;
+    float: right;
+    margin: 5px 0 20px 20px;
 }
 
 a img.aligncenter {
-	margin-right: auto;
-	margin-left: auto;
+    margin-right: auto;
+    margin-left: auto;
 }
 
 .wp-caption.alignnone {
-	margin: 5px 0 20px 20px;
+    margin: 5px 0 20px 20px;
 }
 
 .wp-caption.alignright {
-	margin: 5px 0 20px 20px;
+    margin: 5px 0 20px 20px;
 }
 
 .wp-caption.alignleft {
-	margin: 5px 20px 20px 0;
+    margin: 5px 20px 20px 0;
 }
 
 .sticky .post-title::before {
-	right: -25px;
-	left: auto;
+    right: -25px;
+    left: auto;
 }
 
 /*------------------------------------------------------------ Defaul Widgets -------------------------------------------------------------- */
@@ -695,11 +712,11 @@ a img.aligncenter {
 -------------------------------------- */
 
 #wp-calendar caption {
-	text-align: left;
+    text-align: left;
 }
 
 #wp-calendar tfoot #next {
-	text-align: left;
+    text-align: left;
 }
 
 /* Categories Widget
@@ -709,8 +726,8 @@ a img.aligncenter {
 -------------------------------------- */
 
 #footer .widget_recent_comments ul li {
-	margin-left: 0;
-	margin-right: auto;
+    margin-left: 0;
+    margin-right: auto;
 }
 
 /* Recent Entries Widget
@@ -723,18 +740,18 @@ a img.aligncenter {
 -------------------------------------- */
 
 .widget_search #s {
-	padding-left: 32px;
-	padding-right: 0;
+    padding-left: 32px;
+    padding-right: 0;
 }
 
 .widget_search #searchsubmit {
-	left: 15px;
-	right: auto;
+    left: 15px;
+    right: auto;
 }
 
 .widget_search i {
-	left: 15px;
-	right: auto;
+    left: 15px;
+    right: auto;
 }
 
 /* Tag Cloud Widget
@@ -744,66 +761,67 @@ a img.aligncenter {
 -------------------------------------- */
 
 .widget_nav_menu .menu-navigation-container .sub-menu {
-	padding-right: 20px;
-	padding-left: 0;
+    padding-right: 20px;
+    padding-left: 0;
 }
 
 /* Search Form
 -------------------------------------- */
 
 .search-form label::before {
-	left: 20px;
-	right: auto;
+    left: 20px;
+    right: auto;
 }
 
 .search-form .search-field {
-	padding-left: 50px;
-	padding: 10px 20px 10px 50px;
-	padding-right: 0;
+    padding-left: 50px;
+    padding: 10px 20px 10px 50px;
+    padding-right: 0;
 }
 
 .widget_search .search-form .search-submit {
-	left: 0;
-	right: auto;
+    left: 0;
+    right: auto;
 }
 
 /* Post Navigation
 -------------------------------------- */
 
-.post-navigation .nav-next::before, .post-navigation .nav-previous::before {
-	right: 0;
-	left: 0;
+.post-navigation .nav-next::before,
+.post-navigation .nav-previous::before {
+    right: 0;
+    left: 0;
 }
 
 .post-navigation .nav-next {
-	margin-right: 2%;
-	margin-left: auto;
+    margin-right: 2%;
+    margin-left: auto;
 }
 
 .post-navigation .nav-previous {
-	margin-left: 2%;
-	margin-right: auto;
+    margin-left: 2%;
+    margin-right: auto;
 }
 
 .post-navigation .nav-previous a {
-	padding-right: 100px;
-	padding-left: 0;
+    padding-right: 100px;
+    padding-left: 0;
 }
 
 .post-navigation .nav-next a {
-	padding-left: 100px;
-	text-align: left;
-	padding-right: 0;
+    padding-left: 100px;
+    text-align: left;
+    padding-right: 0;
 }
 
 .post-navigation .nav-previous a::before {
-	right: 0;
-	left: auto;
+    right: 0;
+    left: auto;
 }
 
 .post-navigation .nav-next a::before {
-	left: 0;
-	right: auto;
+    left: 0;
+    right: auto;
 }
 
 /* Nav Menu
@@ -817,17 +835,17 @@ a img.aligncenter {
 -------------------------------------------------------------- */
 
 .error-404 .page-header .page-title {
-	padding-right: 30px;
-	padding-left: 30px;
+    padding-right: 30px;
+    padding-left: 30px;
 }
 
 .widgets-404 .widget {
-	text-align: right;
+    text-align: right;
 }
 
 .widgets-404 .widget ul {
-	padding-right: 0;
-	padding-left: 0;
+    padding-right: 0;
+    padding-left: 0;
 }
 
 /*------------------------------------------------------------
@@ -850,29 +868,29 @@ https://flickity.metafizzy.co
 /* ---- previous/next buttons ---- */
 
 .flickity-prev-next-button.previous {
-	right: 10px;
-	left: auto;
+    right: 10px;
+    left: auto;
 }
 
 .flickity-prev-next-button.next {
-	left: 10px;
-	right: auto;
+    left: 10px;
+    right: auto;
 }
 
 /* left to right */
 .flickity-rtl .flickity-prev-next-button.previous {
-	right: auto;
-	left: 10px;
+    right: auto;
+    left: 10px;
 }
 
 .flickity-rtl .flickity-prev-next-button.next {
-	left: auto;
-	right: 10px;
+    left: auto;
+    right: 10px;
 }
 
 .flickity-prev-next-button .flickity-button-icon {
-	right: 20%;
-	left: auto;
+    right: 20%;
+    left: auto;
 }
 
 /* ---- page dots ---- */
@@ -886,43 +904,44 @@ https://flickity.metafizzy.co
 /* Styles for basic PhotoSwipe functionality (sliding area, open/close transitions) */
 /* pswp = photoswipe */
 .pswp {
-	right: 0;
-	left: auto;
+    right: 0;
+    left: auto;
 }
 
 /* style is added when JS option showHideOpacity is set to true */
 
 /* Background is added as a separate element. As animating opacity is much faster than animating rgba() background-color. */
 .pswp__bg {
-	right: 0;
-	left: auto;
+    right: 0;
+    left: auto;
 }
 
 .pswp__scroll-wrap {
-	right: 0;
-	left: auto;
+    right: 0;
+    left: auto;
 }
 
-.pswp__container, .pswp__zoom-wrap {
-	right: 0;
-	left: 0;
+.pswp__container,
+.pswp__zoom-wrap {
+    right: 0;
+    left: 0;
 }
 
 /* Prevent selection and tap highlights */
 
 .pswp__zoom-wrap {
-	-webkit-transform-origin: right top;
-	transform-origin: right top;
+    -webkit-transform-origin: right top;
+    transform-origin: right top;
 }
 
 .pswp__item {
-	right: 0;
-	left: 0;
+    right: 0;
+    left: 0;
 }
 
 .pswp__img {
-	right: 0;
-	left: auto;
+    right: 0;
+    left: auto;
 }
 
 /* stretched thumbnail or div placeholder element (see below) style is added to avoid flickering in webkit/blink when layers overlap */
@@ -930,14 +949,14 @@ https://flickity.metafizzy.co
 /* div element that matches size of large image large image loads on top of it */
 
 .pswp--ie .pswp__img {
-	right: 0;
-	left: auto;
+    right: 0;
+    left: auto;
 }
 
 /* Error message appears when image is not loaded (JS option errorMsg controls markup) */
 .pswp__error-msg {
-	right: 0;
-	left: auto;
+    right: 0;
+    left: auto;
 }
 
 /*
@@ -951,49 +970,52 @@ Footer
 */
 
 #footer select {
-	margin-right: 5px;
-	margin-left: auto;
+    margin-right: 5px;
+    margin-left: auto;
 }
 
-#footer ul, footer ol {
-	margin-right: 0;
-	padding-right: 0;
-	padding-left: 0;
-	margin-left: auto;
+#footer ul,
+footer ol {
+    margin-right: 0;
+    padding-right: 0;
+    padding-left: 0;
+    margin-left: auto;
 }
 
-#footer ul li, footer ol li {
-	margin-left: 2%;
-	margin-right: auto;
+#footer ul li,
+footer ol li {
+    margin-left: 2%;
+    margin-right: auto;
 }
 
-#footer ul li > a:after, footer ol li > a:after {
-	right: 0;
-	left: auto;
+#footer ul li > a:after,
+footer ol li > a:after {
+    right: 0;
+    left: auto;
 }
 
 #footer .widget ul li ul {
-	margin-right: 30px;
-	margin-left: auto;
+    margin-right: 30px;
+    margin-left: auto;
 }
 
 #footer .hasChildren i {
-	left: 5px;
-	right: auto;
+    left: 5px;
+    right: auto;
 }
 
 /*-----------Contact Info Widget-----------------*/
 
 #footer .widget_contact_info li i {
-	margin-left: 10px;
-	margin-right: auto;
+    margin-left: 10px;
+    margin-right: auto;
 }
 
 /*-----------Recent Posts-----------------*/
 
 /*-----------Social Widget-----------------*/
 footer .social a {
-	margin: 7px 0 7px 7px;
+    margin: 7px 0 7px 7px;
 }
 
 /*
@@ -1003,7 +1025,7 @@ Subfooter
 */
 
 .sub-footer p {
-	float: right;
+    float: right;
 }
 
 /*
@@ -1012,17 +1034,18 @@ Social Nav
 ==========================================
 */
 .nav_social {
-	float: left;
+    float: left;
 }
 
 .widget #menu-social {
-	padding-right: 0;
-	padding-left: 0;
+    padding-right: 0;
+    padding-left: 0;
 }
 
-.nav_social li, .widget #menu-social li {
-	margin-right: 10px;
-	margin-left: auto;
+.nav_social li,
+.widget #menu-social li {
+    margin-right: 10px;
+    margin-left: auto;
 }
 
 /*
@@ -1031,12 +1054,12 @@ Footer Menu
 ==========================================
 */
 #menu-footer {
-	border-right: 1px solid rgba(0, 0, 0, 0.1);
-	margin-right: 20px;
-	padding-right: 8px;
-	padding-left: 0;
-	margin-left: auto;
-	border-left: none;
+    border-right: 1px solid rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
+    padding-right: 8px;
+    padding-left: 0;
+    margin-left: auto;
+    border-left: none;
 }
 
 /*
@@ -1045,36 +1068,34 @@ Go Up Button
 ==========================================
 */
 .absolutte-up-button {
-	left: 10px;
-	right: auto;
+    left: 10px;
+    right: auto;
 }
 
 @media (min-width: 576px) {
-
-/*
+    /*
 ==========================================
 Footer Menu
 ==========================================
 */
-#menu-footer {
-	border-right: 1px solid rgba(0, 0, 0, 0.1);
-	margin-right: 20px;
-	padding-right: 8px;
-	padding-left: 0;
-	margin-left: auto;
-	border-left: none;
-}
+    #menu-footer {
+        border-right: 1px solid rgba(0, 0, 0, 0.1);
+        margin-right: 20px;
+        padding-right: 8px;
+        padding-left: 0;
+        margin-left: auto;
+        border-left: none;
+    }
 
-/*
+    /*
 ==========================================
 Go Up Button
 ==========================================
 */
-.absolutte-up-button {
-	left: 10px;
-	right: auto;
-}
-
+    .absolutte-up-button {
+        left: 10px;
+        right: auto;
+    }
 }
 
 /*
@@ -1089,103 +1110,107 @@ Go Up Button
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 
 to {
-	-webkit-transform-origin: right bottom;
-	transform-origin: right bottom;
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
 }
 
 to {
-	-webkit-transform-origin: right bottom;
-	transform-origin: right bottom;
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
 }
 
 to {
-	-webkit-transform-origin: left bottom;
-	transform-origin: left bottom;
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
 }
 
 to {
-	-webkit-transform-origin: left bottom;
-	transform-origin: left bottom;
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
 }
 
 to {
-	-webkit-transform-origin: right bottom;
-	transform-origin: right bottom;
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
 }
 
 to {
-	-webkit-transform-origin: right bottom;
-	transform-origin: right bottom;
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
 }
 
 to {
-	-webkit-transform-origin: left bottom;
-	transform-origin: left bottom;
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
 }
 
 to {
-	-webkit-transform-origin: left bottom;
-	transform-origin: left bottom;
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
 }
 
 to {
-	-webkit-transform-origin: right bottom;
-	transform-origin: right bottom;
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
 }
 
 to {
-	-webkit-transform-origin: right bottom;
-	transform-origin: right bottom;
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
 }
 
 to {
-	-webkit-transform-origin: left bottom;
-	transform-origin: left bottom;
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
 }
 
 to {
-	-webkit-transform-origin: left bottom;
-	transform-origin: left bottom;
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
 }
 
 to {
-	-webkit-transform-origin: right bottom;
-	transform-origin: right bottom;
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
 }
 
 to {
-	-webkit-transform-origin: right bottom;
-	transform-origin: right bottom;
+    -webkit-transform-origin: right bottom;
+    transform-origin: right bottom;
 }
 
 to {
-	-webkit-transform-origin: left bottom;
-	transform-origin: left bottom;
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
 }
 
 to {
-	-webkit-transform-origin: left bottom;
-	transform-origin: left bottom;
+    -webkit-transform-origin: left bottom;
+    transform-origin: left bottom;
 }
 
-20%, 60% {
-	-webkit-transform-origin: top right;
-	transform-origin: top right;
+20%,
+60% {
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
 }
 
-40%, 80% {
-	-webkit-transform-origin: top right;
-	transform-origin: top right;
+40%,
+80% {
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
 }
 
-20%, 60% {
-	-webkit-transform-origin: top right;
-	transform-origin: top right;
+20%,
+60% {
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
 }
 
-40%, 80% {
-	-webkit-transform-origin: top right;
-	transform-origin: top right;
+40%,
+80% {
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
 }
 
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
@@ -1193,23 +1218,23 @@ to {
 /* originally authored by Nick Pettit - https://github.com/nickpettit/glide */
 
 to {
-	-webkit-transform-origin: right center;
-	transform-origin: right center;
+    -webkit-transform-origin: right center;
+    transform-origin: right center;
 }
 
 to {
-	-webkit-transform-origin: right center;
-	transform-origin: right center;
+    -webkit-transform-origin: right center;
+    transform-origin: right center;
 }
 
 to {
-	-webkit-transform-origin: left center;
-	transform-origin: left center;
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
 }
 
 to {
-	-webkit-transform-origin: left center;
-	transform-origin: left center;
+    -webkit-transform-origin: left center;
+    transform-origin: left center;
 }
 
 /*
@@ -1219,13 +1244,13 @@ to {
 */
 
 .main-navigation ul ul {
-	padding: 0 1.5em 0.71428571428571em 0;
-	text-align: right;
+    padding: 0 1.5em 0.71428571428571em 0;
+    text-align: right;
 }
 
 .main-navigation li.menu-item-has-children {
-	padding-left: 30px;
-	padding-right: 0;
+    padding-left: 30px;
+    padding-right: 0;
 }
 
 /* Hide the menu on small screens when JavaScript is available. It only works with JavaScript. */
@@ -1233,65 +1258,62 @@ to {
 /* Menu toggle */
 
 .menu-toggle .icon {
-	margin-left: 0.5em;
-	margin-right: auto;
+    margin-left: 0.5em;
+    margin-right: auto;
 }
 
 /* Dropdown Toggle */
 .dropdown-toggle {
-	left: 0;
-	right: auto;
+    left: 0;
+    right: auto;
 }
 
 @media (min-width: 576px) {
+    to {
+        -webkit-transform-origin: right center;
+        transform-origin: right center;
+    }
 
-to {
-	-webkit-transform-origin: right center;
-	transform-origin: right center;
-}
+    to {
+        -webkit-transform-origin: left center;
+        transform-origin: left center;
+    }
 
-to {
-	-webkit-transform-origin: left center;
-	transform-origin: left center;
-}
+    to {
+        -webkit-transform-origin: left center;
+        transform-origin: left center;
+    }
 
-to {
-	-webkit-transform-origin: left center;
-	transform-origin: left center;
-}
-
-/*
+    /*
 ==========================================
 11. Menu
 ==========================================
 */
 
-.main-navigation ul ul {
-	padding: 0 1.5em 0.71428571428571em 0;
-	text-align: right;
+    .main-navigation ul ul {
+        padding: 0 1.5em 0.71428571428571em 0;
+        text-align: right;
+    }
+
+    .main-navigation li.menu-item-has-children {
+        padding-left: 30px;
+        padding-right: 0;
+    }
+
+    /* Hide the menu on small screens when JavaScript is available. It only works with JavaScript. */
+
+    /* Menu toggle */
+
+    .menu-toggle .icon {
+        margin-left: 0.5em;
+        margin-right: auto;
+    }
+
+    /* Dropdown Toggle */
+    .dropdown-toggle {
+        left: 0;
+        right: auto;
+    }
 }
-
-.main-navigation li.menu-item-has-children {
-	padding-left: 30px;
-	padding-right: 0;
-}
-
-/* Hide the menu on small screens when JavaScript is available. It only works with JavaScript. */
-
-/* Menu toggle */
-
-.menu-toggle .icon {
-	margin-left: 0.5em;
-	margin-right: auto;
-}
-
-/* Dropdown Toggle */
-.dropdown-toggle {
-	left: 0;
-	right: auto;
-}
-
-}
-
 
 /* Generated by the RTLer - http://wordpress.org/extend/plugins/rtler/ */

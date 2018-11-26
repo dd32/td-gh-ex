@@ -1,6 +1,6 @@
 === Absolutte ===
 Contributors: nicoandrade
-Tags: light, white, gray, right-sidebar, two-columns, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, flexible-header, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, photoblogging
+Tags: two-columns, custom-background, threaded-comments, custom-menu, custom-logo, custom-colors, footer-widgets, theme-options, featured-images, sticky-post, translation-ready, full-width-template
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
@@ -16,6 +16,12 @@ It has fully support for Gutenberg blocks and easy customizations.
 
 
 == Changelog ==
+
+= 1.0.5 - 26/11/2018 =
+* Updated: Before review
+
+= 1.0.4 - 21/11/2018 =
+* Updated: Before review
 
 = 1.0.3 - 21/11/2018 =
 * Updated: Before review
@@ -67,8 +73,9 @@ Source: http://github.hubspot.com/pace/docs/welcome/
 
 [Lato Font](https://fonts.google.com/specimen/Lato) by Łukasz Dziedzic - Licensed under the [SIL Open Font License, 1.1](http://scripts.sil.org/OFL).
 
-Macbook MockUp from designlazy Free
-Source: http://www.designlazy.com/macbook-pro-imac-mockup-template/
+Macbook Minimal Mockup (freebie)
+Source: https://dribbble.com/shots/4208160-Macbook-Minimal-Mockup-freebie
+License: Free to use
 
 Computer Screen on Screenshot created by me | GPLv3
 License: https://www.gnu.org/licenses/gpl-3.0.html
