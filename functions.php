@@ -126,7 +126,7 @@
 	}
 	add_filter( 'wp_page_menu_args', 'smallbusiness_page_menu_args' );
 	function smallbusiness_credit() {
-		echo '&nbsp;| Small Business Theme by: <a href="'.esc_url('http://d5creation.com').'" target="_blank"><img  width="30px" src="' . get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a>';
+		echo '&nbsp;| Small Business Theme by: <a href="'.esc_url('https://d5creation.com').'" target="_blank"><img  width="30px" src="' . get_template_directory_uri() . '/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a>';
 	}
 
 //	Registers the Widgets and Sidebars for the site

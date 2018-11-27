@@ -1,11 +1,11 @@
 ----------------------------------
 Small Business
 ----------------------------------
-Version: 	2.9
+Version: 	3.1
 Developer: 	D5 Creation
-Author URI: 	http://d5creation.com
+Author URI: 	https://d5creation.com
 
-Donation Link: 	http://d5creation.com/donate/
+Donation Link: 	https://d5creation.com/donate/
 
 Copyright: 	D5 Creation
 License: 	GNU General Public License v2 or later
@@ -25,6 +25,10 @@ Instructions:
 __________________
 
 - You Can Change/Set the Front Page Elements from Appearance > Customize
+
+Version 3.1
+====================================
+- Some Styling Change
 
 Version 2.7
 ====================================

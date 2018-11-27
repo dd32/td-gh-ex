@@ -14,20 +14,20 @@
     
     <h2>IMPORTANT NOTE !</h2>As per the Requirements of New Theme Review Guidelines, Theme Options will not be available at this location anymore for the Free Version of Small Business Theme. You can get all those options under <b>Appearance > Customize</b><br /><br />
     
-    If you love the Excellent Previous Style Options You may consider using our <a href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>" target="_blank">Extend Version Themes</a>. <span class="impspe">All Options will be under <b>Appearance > Small Business Options</b> with large screen and user friendtly Interface in Extended Version</span>
+    If you love the Excellent Previous Style Options You may consider using our <a href="<?php echo esc_url('https://d5creation.com/themegallery/'); ?>" target="_blank">Extend Version Themes</a>. <span class="impspe">All Options will be under <b>Appearance > Small Business Options</b> with large screen and user friendtly Interface in Extended Version</span>
     </div>
     
-<div class="infohead"><?php echo'<span class="donation">A Theme is an effort of many sleepless nights of the Developers.  If you like this FREEE Theme You can consider for a 5 star rating and honest review. Your review will inspire us. You can<a href="https://wordpress.org/support/view/theme-reviews/small-business?filter=5" target="_blank"> <strong>Review Here</strong></a></span><br /><br /><span class="donation">Need Logo Inserter, More Slides, More Control, More Features and Options? Try <a href="'.esc_url('http://d5creation.com/theme/smallbusiness/').'" target="_blank"><strong>Small Business Extend Edition</strong></a> for Many Exciting Features with Dedicated Support from D5 Creation team. There are Promotional Offers. You can avail those promotions from <a href="'.esc_url('http://d5creation.com/').'" target="_blank">D5 Creation Site</a></span><br /><br /><span class="donation"><a href="'.esc_url('http://demo.d5creation.com/themes/?theme=Small%20Business').'" target="_blank">Live Demo</a> of Small Business Extend</span><br /><br /><span class="donation"><a href="'.esc_url('http://d5creation.com/forums/topic/how-to-show-the-small-business-slide-show/').'" target="_blank">Tutorial</a> For Featured Image and Slide</span>'; ?>
-<a href="<?php echo esc_url('http://d5creation.com/theme/smallbusiness/'); ?>" target="_blank" class="extendlink"> </a>
+<div class="infohead"><?php echo'<span class="donation">A Theme is an effort of many sleepless nights of the Developers.  If you like this FREEE Theme You can consider for a 5 star rating and honest review. Your review will inspire us. You can<a href="https://wordpress.org/support/view/theme-reviews/small-business?filter=5" target="_blank"> <strong>Review Here</strong></a></span><br /><br /><span class="donation">Need Logo Inserter, More Slides, More Control, More Features and Options? Try <a href="'.esc_url('https://d5creation.com/theme/smallbusiness/').'" target="_blank"><strong>Small Business Extend Edition</strong></a> for Many Exciting Features with Dedicated Support from D5 Creation team. There are Promotional Offers. You can avail those promotions from <a href="'.esc_url('https://d5creation.com/').'" target="_blank">D5 Creation Site</a></span><br /><br /><span class="donation"><a href="'.esc_url('http://demo.d5creation.com/themes/?theme=Small%20Business').'" target="_blank">Live Demo</a> of Small Business Extend</span><br /><br /><span class="donation"><a href="'.esc_url('https://d5creation.com/forums/topic/how-to-show-the-small-business-slide-show/').'" target="_blank">Tutorial</a> For Featured Image and Slide</span>'; ?>
+<a href="<?php echo esc_url('https://d5creation.com/theme/smallbusiness/'); ?>" target="_blank" class="extendlink"> </a>
         </div>
         
         <p>Small Business is a CSS3 Powered and WordPress Latest Version Ready Theme for Small Business Companies. Customizable Background and other options will give the WordPress Driven Site an attractive look.  Small Business Extend is Responsive, Super Elegant and Professional Theme which will be adjusted automatically with all smart devices. There are two different Editions of Small Business. You can use the Free Version downloading from WordPress.org and the Extend version downloading from D5Creation.com
         </p>
         
         <div class="floatcntr">
-    		<a class="specialbutton inblk" href="<?php echo esc_url('http://d5creation.com/theme/smallbusiness/'); ?>">Small Business Theme Page</a>
+    		<a class="specialbutton inblk" href="<?php echo esc_url('https://d5creation.com/theme/smallbusiness/'); ?>">Small Business Theme Page</a>
             <a class="specialbutton inblk" href="<?php echo esc_url('http://demo.d5creation.com/themes/?theme=Small%20Business'); ?>">Small Business Demo</a>
-            <a class="specialbutton inblk" href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>">D5 Theme Gallery</a>
+            <a class="specialbutton inblk" href="<?php echo esc_url('https://d5creation.com/themegallery/'); ?>">D5 Theme Gallery</a>
     	</div>
         
         <h2 class="spetitle">Features of Small Business vs Small Business Extend</h2>
@@ -65,13 +65,13 @@
             <tr><td>Client or Partner List with or without Links Adding Function</td><td>NO</td><td>YES</td></tr>
             <tr><td>Awesome Support with Foruma and Dedicated E-Mail</td><td>Only Forum</td><td>Forum and E-Mail</td></tr>
             
-            <tr><th><a href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th><th><a href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th><th><a href="<?php echo esc_url('http://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th></tr>
+            <tr><th><a href="<?php echo esc_url('https://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th><th><a href="<?php echo esc_url('https://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th><th><a href="<?php echo esc_url('https://d5creation.com/themegallery/'); ?>" target="_blank">Learn More</a></th></tr>
 		</table>
         <span class="alncenter">* Each Extend Theme is only $7.5 with DEVELOPER Membership</span>
         
         <div class="specialmsg">
     		<div class="specialtext floatlt ">Learn More about our Flexible Membership Options</div>
-        	<a class="specialbutton floatrt" href="<?php echo esc_url('http://d5creation.com/mp/'); ?>">View Pricing and Features</a>
+        	<a class="specialbutton floatrt" href="<?php echo esc_url('https://d5creation.com/mp/'); ?>">View Pricing and Features</a>
     	</div>
         
         <div class="bottom"><img src="<?php echo get_template_directory_uri().'/inc/images/bottom.png'; ?>" alt="D5 Creation Themes"/></div>
@@ -82,9 +82,9 @@
 		<h2 class="spetitle">World Class, Responsive and Premium WordPress Themes</h2>
 		<p class="heading-des" >Ready to take your WordPress site to the next level? Give your CMS a beautiful design to draw in more visitors. Peoples love us because of the Simplicity of our Themes. We deliver User Friendly Responsive and Premium WordPress Themes with Unique and Modern Design. You can Trust our Themes</p>
 		
-		<a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'http://d5creation.com/themegallery' ) ?>">Visit Our Theme Gallery</a>
+		<a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'https://d5creation.com/themegallery' ) ?>">Visit Our Theme Gallery</a>
         <a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'http://demo.d5creation.com' ) ?>">Visit Theme Demos</a>
-		<a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'http://d5creation.com/wp-login.php?action=register' ) ?>">Become a Happy Member</a><br />
+		<a class="specialbutton inblk" target="_blank" href="<?php echo esc_url( 'https://d5creation.com/wp-login.php?action=register' ) ?>">Become a Happy Member</a><br />
 <br />
 <br />
  
@@ -94,7 +94,7 @@
     
     <div class="specialmsg">
     		<div class="specialtext floatlt ">Extend Theme is only $7.5 with DEVELOPER Membership</div>
-        	<a class="specialbutton floatrt" href="<?php echo esc_url('http://d5creation.com/mp/'); ?>">View Pricing and Features</a>
+        	<a class="specialbutton floatrt" href="<?php echo esc_url('https://d5creation.com/mp/'); ?>">View Pricing and Features</a>
     </div>
 
 
