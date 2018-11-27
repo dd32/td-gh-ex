@@ -51,6 +51,10 @@ and we will include it within the theme from next version update.
 /**********************************************************/
 
 == Changelog ==
+= Version 1.1.7 2018-11-26 =
+* Added - Gutenberg compatibility
+* Remove - Backward compatible for header logo
+
 = Version 1.1.6 2018-09-05 =
 * Tweak - Added width and height for slider
 * Update - Upsell link
