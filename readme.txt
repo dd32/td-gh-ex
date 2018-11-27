@@ -23,6 +23,9 @@ Beam WordPress Theme bundles the following third-party resources:
 Font Awesome, Created by Dave Gandy, licensed under SIL OFL 1.1, Code
 licensed under MIT License
 
+Custom Bulma Nav walker, Created by Carlo Operio, License: GPL-3.0+
+https://github.com/Poruno/Bulma-Navwalker
+
 Kirki Toolkit, Copyright (c) 2016 Aristeides Stathopoulos, licenced
 under the terms of the MIT licence.
 
@@ -37,3 +40,6 @@ https://pixabay.com/en/office-two-people-business-team-1209640/
 Beam uses parts of Bulma CSS framework
 Code copyright 2018 Jeremy Thomas. Code released under the MIT license.
 https://github.com/jgthms/bulma
+
+
+

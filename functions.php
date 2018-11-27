@@ -13,6 +13,7 @@ define('BEAM_THEME_DIR', trailingslashit(get_template_directory()));
 /**
  * Beam setup.
  */
+require_once BEAM_THEME_DIR . 'inc/class-beam-walker.php';
 require_once BEAM_THEME_DIR . 'inc/beam-setup.php';
 
 /**
@@ -31,7 +32,6 @@ function beam_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'beam_scripts' );
-
 
 /**
  * Enqueue Styles

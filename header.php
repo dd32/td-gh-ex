@@ -22,8 +22,8 @@
   <div id="page" class="hfeed site">
     <?php do_action('beam_before_header'); ?>
     <header id="masthead" class="site-header">
-      <nav class="navbar is-transparent">
-        <div class="container">
+		  <div class="container">
+      	<nav class="navbar is-transparent">
           <?php do_action('beam_before_branding'); ?>
           <div class="navbar-brand">
             <div class="navbar-brand-wrap">
@@ -51,19 +51,24 @@
             do_action('beam_after_branding');
             if (false == get_theme_mod('hide_menus', false)) :
           ?>
-          <div id="navbar" class="navbar-menu is-uppercase">
+          <div id="navbar" class="navbar-menu ">
             <div class="navbar-end">
-          <?php
-            $args = array(
-              'container' => '',
-              'items_wrap' => '%3$s',
-            );
-            wp_nav_menu($args);
-          ?>
+              <?php         
+                wp_nav_menu( array(
+                  'theme_location'    => 'primary',
+                  'depth'             => 2,
+                  'container'         => false,
+                  // 'items_wrap'     => 'div',
+                  //'menu_class'        => 'navbar-menu',
+                  //'menu_id'           => 'primary-menu',
+                  'after'             => "</div>987",
+                  'walker'            => new Navwalker())
+                );
+              ?>
             </div>
           </div>
-        </div>
-      </nav>
+        </nav>
+		  </div>
       <?php
         endif;
         do_action('beam_after_nav');

@@ -126,14 +126,14 @@ function kirki_text_controls_fields( $fields ) {
 		'settings'    => 'header-bcg-color',
 		'label'       => __( 'Header Background Color', 'beam' ),
 		'section'     => 'header_options',
-		'default'     => '#0088CC',
+		'default'     => '#ebf1e7',
 		'priority'    => 11,
 		'choices'     => array(
 			'alpha' => true,
 		),
 			'output' => array(
 				array(
-					'element'  => array ('.site-header','.sub-menu'),
+					'element'  => array ('.site-header'),
 					'property' => 'background-color',
 
 					),
@@ -146,37 +146,18 @@ function kirki_text_controls_fields( $fields ) {
 		'settings'    => 'header-link-color',
 		'label'       => __( 'Menu Link Color', 'beam' ),
 		'section'     => 'header_options',
-		'default'     => '#fafafa',
+		'default'     => '#4a4a4a',
 		'priority'    => 11,
 		'choices'     => array(
 			'alpha' => true,
 		),
 			'output' => array(
 				array(
-					'element'  => array ('.main-navigation a', '.site-header a'),
+					'element'  => array ('.navbar-item'),
 					'property' => 'color',
 					),
 				array(
-					'element'  => array ('.beam-bar'),
-					'property' => 'background-color',
-					),
-			),
-	);	
-
-	// Header Menu Hover Link color
-	$fields[] = array(
-		'type'        => 'color',
-		'settings'    => 'header-hover-color',
-		'label'       => __( 'Menu Hover Link Color', 'beam' ),
-		'section'     => 'header_options',
-		'default'     => '#fafafa',
-		'priority'    => 11,
-		'choices'     => array(
-			'alpha' => true,
-		),
-			'output' => array(
-				array(
-					'element'  => array ('.main-navigation li:hover > a', '.site-header a:hover'),
+					'element'  => array ('.navbar-burger'),
 					'property' => 'color',
 					),
 			),
@@ -188,7 +169,7 @@ function kirki_text_controls_fields( $fields ) {
 		'settings'    => 'footer-bcg',
 		'label'       => __( 'Footer Background', 'beam' ),
 		'section'     => 'footer_options',
-		'default'     => '#0088CC',
+		'default'     => '#ebf1e7',
 		'priority'    => 10,
 		'choices'     => array(
 			'alpha' => true,
@@ -208,7 +189,7 @@ function kirki_text_controls_fields( $fields ) {
 		'settings'    => 'footer-link-color',
 		'label'       => __( 'Menu Link Color', 'beam' ),
 		'section'     => 'footer_options',
-		'default'     => '#fafafa',
+		'default'     => '#4a4a4a',
 		'priority'    => 10,
 		'choices'     => array(
 			'alpha' => true,
@@ -227,7 +208,7 @@ function kirki_text_controls_fields( $fields ) {
 		'settings'    => 'footer-text-color',
 		'label'       => __( 'Footer text Color', 'beam' ),
 		'section'     => 'footer_options',
-		'default'     => '#fafafa',
+		'default'     => '#4a4a4a',
 		'priority'    => 10,
 		'choices'     => array(
 			'alpha' => true,
@@ -291,27 +272,10 @@ function kirki_text_controls_fields( $fields ) {
 		'default'     => '3',
 		'priority'    => 11,
 		'choices'     => array(
-			'1' => trailingslashit( get_template_directory_uri() ) .'/inc/adm/kirki/assets/images/1col.png',
-			'2' => trailingslashit( get_template_directory_uri() ) .'/inc/adm/kirki/assets/images/2cl.png',
-			'3' => trailingslashit( get_template_directory_uri() ) .'/inc/adm/kirki/assets/images/2cr.png',
-			'4' => trailingslashit( get_template_directory_uri() ) .'/inc/adm/kirki/assets/images/3cm.png',
-		),
-	);
-
-	$fields[] = array(
-		'type'        => 'text',
-		'settings'    => 'opt_header_height',
-		'label'       => __( 'Header height', 'beam' ),
-		'description' => __( 'Set Your Header Height here (number only! e.g. 170)', 'beam' ),
-		'section'     => 'header_options',
-		'default'     => '150',
-		'priority'    => 10,
-		'output' => array(
-			array(
-				'element'  => '.centeralign-header',
-				'property' => 'height',
-				'units'    => 'px',
-				),
+			'1' => trailingslashit( get_template_directory_uri() ) .'/inc/img/1col.png',
+			'2' => trailingslashit( get_template_directory_uri() ) .'/inc/img/2cl.png',
+			'3' => trailingslashit( get_template_directory_uri() ) .'/inc/img/2cr.png',
+			'4' => trailingslashit( get_template_directory_uri() ) .'/inc/img/3cm.png',
 		),
 	);
 
