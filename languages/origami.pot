@@ -1,20 +1,19 @@
-# Copyright (C) 2017 origami
+# Copyright (C) 2018 origami
 # This file is distributed under the same license as the origami package.
 msgid ""
 msgstr ""
 "Project-Id-Version: origami\n"
-"Report-Msgid-Bugs-To: http://www.siteorigin.com\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
-"Last-Translator: SiteOrigin <support@siteorigin.com>\n"
 "Language-Team: SiteOrigin <support@siteorigin.com>\n"
+"Last-Translator: SiteOrigin <support@siteorigin.com>\n"
+"Report-Msgid-Bugs-To: http://www.siteorigin.com\n"
 "X-Poedit-Basepath: ..\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"X-Poedit-KeywordsList: __;_e;_ex:1,2c;_n:1,2;_n_noop:1,2;_nx:1,2,4c;_nx_noop:1,2,3c;_x:1,2c;esc_attr__;esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
 #: 404.php:4
@@ -24,80 +23,6 @@ msgstr ""
 #: 404.php:7, inc/settings.php:90
 msgid "We couldn't find what you were looking for."
 msgstr ""
-
-#: admin/about/page-free.php:1
-msgid "Forever Free"
-msgstr ""
-
-#: admin/about/page-free.php:3
-msgid "Origami is a completely free WordPress theme."
-msgstr ""
-
-#: admin/about/page-free.php:4
-msgid "We'll continue developing and enhancing it for years to come."
-msgstr ""
-
-#: admin/about/page-github.php:1
-msgid "Developed on Github"
-msgstr ""
-
-#: admin/about/page-github.php:4
-msgid "Origami is actively %sdeveloped on Github%s."
-msgstr ""
-
-#: admin/about/page-github.php:5
-msgid "You can watch what's happening with its development and even make contributions yourself."
-msgstr ""
-
-#: admin/about/page-mature.php:1
-msgid "Stable and Mature"
-msgstr ""
-
-#: admin/about/page-mature.php:3
-msgid "We've been developing Origami since 2012."
-msgstr ""
-
-#: admin/about/page-mature.php:4
-msgid "In fact, Origami was our very first WordPress Theme."
-msgstr ""
-
-#: admin/about/page-mature.php:5
-msgid "We've continued maintaining and evolving it over all these years - turning it into one of our most stable WordPress themes."
-msgstr ""
-
-#: admin/about/page-page-builder.php:1
-msgid "Enhanced by Page Builder"
-msgstr ""
-
-#: admin/about/page-page-builder.php:3
-msgid "Origami integrates, beautifully, with our %sfree Page Builder%s plugin."
-msgstr ""
-
-#: admin/about/page-page-builder.php:4
-msgid "This powerful plugin gives you full drag and drop capabilities right inside Origami."
-msgstr ""
-
-#: admin/about/page-support.php:1
-msgid "Support and Documentation"
-msgstr ""
-
-#: admin/about/page-support.php:3
-msgid "Our dedicated support team is ready to help you over on our %sfree support forums%s."
-msgstr ""
-
-#: admin/about/page-support.php:4
-msgid "You can also read through the %sOrigami documentation%s to get to know it even faster."
-msgstr ""
-
-#: admin/metabox-columns.php:7, functions.php:208, functions.php:209
-msgid "Columns"
-msgstr ""
-
-#: admin/metabox-columns.php:10
-msgid "%1$s Column"
-msgid_plural "%1$s Columns"
-msgstr[0] ""
-msgstr[1] ""
 
 #: archive.php:5
 msgid "Daily Archives: %s"
@@ -168,11 +93,11 @@ msgid "Newer Comments <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
 #: comments.php:47
-msgid "Name"
+msgid "Name*"
 msgstr ""
 
 #: comments.php:48
-msgid "Email"
+msgid "Email*"
 msgstr ""
 
 #: comments.php:49
@@ -195,6 +120,68 @@ msgstr ""
 msgid "Page %s"
 msgstr ""
 
+#: functions.php:208, functions.php:209, admin/metabox-columns.php:7
+msgid "Columns"
+msgstr ""
+
+#: home-panels.php:3, template-notitle.php:3
+msgid "Without Page Title"
+msgstr ""
+
+#: loop.php:22
+msgid "On %s"
+msgstr ""
+
+#: loop.php:23
+msgid "by %s"
+msgstr ""
+
+#: loop.php:24
+msgid "With"
+msgstr ""
+
+#: loop.php:25
+msgid "<strong>%u</strong> Comments"
+msgstr ""
+
+#: loop.php:54
+msgid "Pages:"
+msgstr ""
+
+#: loop.php:73
+msgid "Continue Reading"
+msgstr ""
+
+#: page-archive.php:20, template-archive.php:17
+msgid "Recent Posts"
+msgstr ""
+
+#: page-archive.php:30, template-archive.php:27
+msgid "By Year"
+msgstr ""
+
+#: page-archive.php:33, template-archive.php:30
+msgid "By Month"
+msgstr ""
+
+#: page-archive.php:36, template-archive.php:33
+msgid "Categories"
+msgstr ""
+
+#: search.php:14, inc/settings.php:91
+msgid "No results for your query."
+msgstr ""
+
+#: template-archive.php:3
+msgid "Archives"
+msgstr ""
+
+#: admin/metabox-columns.php:10
+msgid "%1$s Column"
+msgid_plural "%1$s Columns"
+msgstr[0] ""
+msgstr[1] ""
+
 #: inc/class-tgm-plugin-activation.php:327
 msgid "Install Required Plugins"
 msgstr ""
@@ -203,10 +190,12 @@ msgstr ""
 msgid "Install Plugins"
 msgstr ""
 
+#. translators: %s: plugin name.
 #: inc/class-tgm-plugin-activation.php:330
 msgid "Installing Plugin: %s"
 msgstr ""
 
+#. translators: %s: plugin name.
 #: inc/class-tgm-plugin-activation.php:332
 msgid "Updating Plugin: %s"
 msgstr ""
@@ -216,37 +205,37 @@ msgid "Something went wrong with the plugin API."
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:334
-msgid "/*translators:1:pluginnames.*/This theme requires the following plugin: %1$s."
+msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #: inc/class-tgm-plugin-activation.php:340
-msgid "/*translators:1:pluginnames.*/This theme recommends the following plugin: %1$s."
+msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #: inc/class-tgm-plugin-activation.php:346
-msgid "/*translators:1:pluginnames.*/The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
+msgid "The following plugin needs to be updated to its latest version to ensure maximum compatibility with this theme: %1$s."
 msgid_plural "The following plugins need to be updated to their latest version to ensure maximum compatibility with this theme: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #: inc/class-tgm-plugin-activation.php:352
-msgid "/*translators:1:pluginnames.*/There is an update available for: %1$s."
+msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #: inc/class-tgm-plugin-activation.php:358
-msgid "/*translators:1:pluginnames.*/The following required plugin is currently inactive: %1$s."
+msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
 #: inc/class-tgm-plugin-activation.php:364
-msgid "/*translators:1:pluginnames.*/The following recommended plugin is currently inactive: %1$s."
+msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
@@ -287,14 +276,17 @@ msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: plugin name.
 #: inc/class-tgm-plugin-activation.php:390
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
+#. translators: 1: plugin name.
 #: inc/class-tgm-plugin-activation.php:392
 msgid "Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin."
 msgstr ""
 
+#. translators: 1: dashboard link.
 #: inc/class-tgm-plugin-activation.php:394
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
@@ -336,6 +328,7 @@ msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
+#. translators: %s: version number
 #: inc/class-tgm-plugin-activation.php:1982
 msgid "TGMPA v%s"
 msgstr ""
@@ -384,11 +377,13 @@ msgstr ""
 msgid "Update recommended"
 msgstr ""
 
+#. translators: 1: install status, 2: update status
 #: inc/class-tgm-plugin-activation.php:2342
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
+#. translators: 1: number of plugins.
 #: inc/class-tgm-plugin-activation.php:2388
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
@@ -396,18 +391,21 @@ msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: number of plugins.
 #: inc/class-tgm-plugin-activation.php:2392
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: number of plugins.
 #: inc/class-tgm-plugin-activation.php:2396
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: number of plugins.
 #: inc/class-tgm-plugin-activation.php:2400
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
@@ -455,14 +453,17 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
+#. translators: %2$s: plugin name in screen reader markup
 #: inc/class-tgm-plugin-activation.php:2603
 msgid "Install %2$s"
 msgstr ""
 
+#. translators: %2$s: plugin name in screen reader markup
 #: inc/class-tgm-plugin-activation.php:2608
 msgid "Update %2$s"
 msgstr ""
 
+#. translators: %2$s: plugin name in screen reader markup
 #: inc/class-tgm-plugin-activation.php:2614
 msgid "Activate %2$s"
 msgstr ""
@@ -511,14 +512,17 @@ msgstr ""
 msgid "Plugin activation failed."
 msgstr ""
 
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: inc/class-tgm-plugin-activation.php:3498
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
+#. translators: 1: plugin name, 2: error message.
 #: inc/class-tgm-plugin-activation.php:3501
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
+#. translators: 1: plugin name.
 #: inc/class-tgm-plugin-activation.php:3503
 msgid "The installation of %1$s failed."
 msgstr ""
@@ -527,6 +531,7 @@ msgstr ""
 msgid "The installation and activation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
+#. translators: 1: plugin name.
 #: inc/class-tgm-plugin-activation.php:3509
 msgid "%1$s installed and activated successfully."
 msgstr ""
@@ -543,6 +548,7 @@ msgstr ""
 msgid "All installations and activations have been completed."
 msgstr ""
 
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: inc/class-tgm-plugin-activation.php:3512
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
@@ -551,6 +557,7 @@ msgstr ""
 msgid "The installation process is starting. This process may take a while on some hosts, so please be patient."
 msgstr ""
 
+#. translators: 1: plugin name.
 #: inc/class-tgm-plugin-activation.php:3517
 msgid "%1$s installed successfully."
 msgstr ""
@@ -559,6 +566,7 @@ msgstr ""
 msgid "All installations have been completed."
 msgstr ""
 
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: inc/class-tgm-plugin-activation.php:3520
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
@@ -635,22 +643,6 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: inc/customizer/customizer.php:408
-msgid "Theme Design"
-msgstr ""
-
-#: inc/customizer/customizer.php:409
-msgid "Theme Specific Customizations For %s."
-msgstr ""
-
-#: inc/customizer/customizer.php:590
-msgid "Are you sure you want to reset your theme customizations?"
-msgstr ""
-
-#: inc/customizer/customizer.php:591
-msgid "Reset Customizations"
-msgstr ""
-
 #: inc/gallery.php:120
 msgid "This is a default gallery."
 msgstr ""
@@ -681,18 +673,6 @@ msgstr ""
 
 #: inc/legacy.php:20
 msgid "Navigate to <strong>Appearance > Customize > Theme Settings</strong> to access theme settings."
-msgstr ""
-
-#: inc/mobilenav/mobilenav.php:16, inc/mobilenav/mobilenav.php:64
-msgid "Back"
-msgstr ""
-
-#: inc/mobilenav/mobilenav.php:17, inc/mobilenav/mobilenav.php:65, inc/settings.php:16
-msgid "Close"
-msgstr ""
-
-#: inc/mobilenav/mobilenav.php:24
-msgid "Search"
 msgstr ""
 
 #: inc/panels.php:13
@@ -785,6 +765,10 @@ msgstr ""
 
 #: inc/settings.php:15
 msgid "Vantage Premium Upgrade"
+msgstr ""
+
+#: inc/settings.php:16, inc/mobilenav/mobilenav.php:17, inc/mobilenav/mobilenav.php:65
+msgid "Close"
 msgstr ""
 
 #: inc/settings.php:26, inc/widgets.php:113, inc/widgets.php:326
@@ -903,10 +887,6 @@ msgstr ""
 msgid "Copyright %s"
 msgstr ""
 
-#: inc/settings.php:91, search.php:14
-msgid "No results for your query."
-msgstr ""
-
 #: inc/settings.php:118
 msgid "Origami is one of our most elegant, mature WordPress themes. Find out more about what it has to offer by watching this short video."
 msgstr ""
@@ -1023,46 +1003,94 @@ msgstr ""
 msgid "Extra Large"
 msgstr ""
 
-#: loop.php:22
-msgid "On %s"
-msgstr ""
-
-#: loop.php:23
-msgid "by %s"
-msgstr ""
-
-#: loop.php:24
-msgid "With"
-msgstr ""
-
-#: loop.php:25
-msgid "<strong>%u</strong> Comments"
-msgstr ""
-
-#: loop.php:54
-msgid "Pages:"
-msgstr ""
-
-#: loop.php:73
-msgid "Continue Reading"
-msgstr ""
-
-#: page-archive.php:20, template-archive.php:17
-msgid "Recent Posts"
-msgstr ""
-
-#: page-archive.php:30, template-archive.php:27
-msgid "By Year"
-msgstr ""
-
-#: page-archive.php:33, template-archive.php:30
-msgid "By Month"
-msgstr ""
-
-#: page-archive.php:36, template-archive.php:33
-msgid "Categories"
-msgstr ""
-
 #: parts/footer-copyright.php:6
 msgid "Theme By %s"
+msgstr ""
+
+#: admin/about/page-free.php:1
+msgid "Forever Free"
+msgstr ""
+
+#: admin/about/page-free.php:3
+msgid "Origami is a completely free WordPress theme."
+msgstr ""
+
+#: admin/about/page-free.php:4
+msgid "We'll continue developing and enhancing it for years to come."
+msgstr ""
+
+#: admin/about/page-github.php:1
+msgid "Developed on Github"
+msgstr ""
+
+#: admin/about/page-github.php:4
+msgid "Origami is actively %sdeveloped on Github%s."
+msgstr ""
+
+#: admin/about/page-github.php:5
+msgid "You can watch what's happening with its development and even make contributions yourself."
+msgstr ""
+
+#: admin/about/page-mature.php:1
+msgid "Stable and Mature"
+msgstr ""
+
+#: admin/about/page-mature.php:3
+msgid "We've been developing Origami since 2012."
+msgstr ""
+
+#: admin/about/page-mature.php:4
+msgid "In fact, Origami was our very first WordPress Theme."
+msgstr ""
+
+#: admin/about/page-mature.php:5
+msgid "We've continued maintaining and evolving it over all these years - turning it into one of our most stable WordPress themes."
+msgstr ""
+
+#: admin/about/page-page-builder.php:1
+msgid "Enhanced by Page Builder"
+msgstr ""
+
+#: admin/about/page-page-builder.php:3
+msgid "Origami integrates, beautifully, with our %sfree Page Builder%s plugin."
+msgstr ""
+
+#: admin/about/page-page-builder.php:4
+msgid "This powerful plugin gives you full drag and drop capabilities right inside Origami."
+msgstr ""
+
+#: admin/about/page-support.php:1
+msgid "Support and Documentation"
+msgstr ""
+
+#: admin/about/page-support.php:3
+msgid "Our dedicated support team is ready to help you over on our %sfree support forums%s."
+msgstr ""
+
+#: admin/about/page-support.php:4
+msgid "You can also read through the %sOrigami documentation%s to get to know it even faster."
+msgstr ""
+
+#: inc/customizer/customizer.php:408
+msgid "Theme Design"
+msgstr ""
+
+#: inc/customizer/customizer.php:409
+msgid "Theme Specific Customizations For %s."
+msgstr ""
+
+#: inc/customizer/customizer.php:590
+msgid "Are you sure you want to reset your theme customizations?"
+msgstr ""
+
+#: inc/customizer/customizer.php:591
+msgid "Reset Customizations"
+msgstr ""
+
+#: inc/mobilenav/mobilenav.php:16, inc/mobilenav/mobilenav.php:64
+msgid "Back"
+msgstr ""
+
+#: inc/mobilenav/mobilenav.php:24
+msgid "Search"
 msgstr ""
