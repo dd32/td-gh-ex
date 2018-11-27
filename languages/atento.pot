@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Atento\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-14 07:23+0000\n"
+"POT-Creation-Date: 2018-11-25 05:32+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -12,15 +12,10 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco https://localise.biz/"
+"X-Generator: Loco https://localise.biz/\n"
+"X-Loco-Version: 2.2.0; wp-4.9.8"
 
-#. 1: Taxonomy singular name, 2: Current taxonomy term
-#: inc/helpers/template-functions.php:234
-#, php-format
-msgid "%1$s: %2$s"
-msgstr ""
-
-#: template-parts/footer/footer-bar.php:58
+#: template-parts/footer/footer-bar.php:67
 msgid ""
 "&nbsp;& choose menu to display in footer bar from ( Appearance - > Customize "
 "-> Footer - > Footer Menu )"
@@ -30,46 +25,11 @@ msgstr ""
 msgid "404 Error Page"
 msgstr ""
 
-#: inc/helpers/template-functions.php:230
-#, php-format
-msgid "<label>Archives %s"
-msgstr ""
-
-#: inc/helpers/template-functions.php:202
-#, php-format
-msgid "<label>Author %s"
-msgstr ""
-
-#: inc/helpers/template-functions.php:198
-#, php-format
-msgid "<label>Category %s"
-msgstr ""
-
-#: inc/helpers/template-functions.php:208
-#, php-format
-msgid "<label>Day %s"
-msgstr ""
-
-#: inc/helpers/template-functions.php:206
-#, php-format
-msgid "<label>Month %s"
-msgstr ""
-
-#: inc/helpers/template-functions.php:200
-#, php-format
-msgid "<label>Tag %s"
-msgstr ""
-
-#: inc/helpers/template-functions.php:204
-#, php-format
-msgid "<label>Year %s"
-msgstr ""
-
 #: inc/framework/customizer/panel/hero.php:65
 msgid "Add new content"
 msgstr ""
 
-#: functions.php:140 functions.php:158
+#: functions.php:135 functions.php:153
 msgid "Add widgets here."
 msgstr ""
 
@@ -83,7 +43,7 @@ msgid ""
 "and \"Reload Customizer\" to load files and take effects on Customizer."
 msgstr ""
 
-#: inc/helpers/template-functions.php:162
+#: inc/helpers/template-functions.php:164
 msgid "All rights reserved"
 msgstr ""
 
@@ -91,7 +51,9 @@ msgstr ""
 msgid "Archive/Blog Settings"
 msgstr ""
 
-#: inc/helpers/template-functions.php:236
+#. 1: Taxonomy singular name, 2: Current taxonomy term
+#: inc/helpers/template-functions.php:243
+#: inc/helpers/template-functions.php:252
 msgid "Archives"
 msgstr ""
 
@@ -99,14 +61,25 @@ msgstr ""
 msgid "Atento"
 msgstr ""
 
-#: inc/libraries/back-compat.php:28 inc/libraries/back-compat.php:38
-#: inc/libraries/back-compat.php:51
+#. Description of the theme
+msgid ""
+"Atento is a minimalist WordPress blog theme beautifully crafted to help you "
+"create a stunning blog, suitable for any kind of blog fashion, travel, music,"
+" car, real state, beauty, design, food, wedding, movie, photography, "
+"technology, personal blog sites. It is designed with a focus on minimal &amp;"
+" clean design, unique styling, elegant typography selection to highlight and "
+"emphasis your blog content to your readers."
+msgstr ""
+
+#: inc/libraries/back-compat.php:29 inc/libraries/back-compat.php:39
+#: inc/libraries/back-compat.php:52
 #, php-format
 msgid ""
 "Atento requires at least PHP version 5.4.0. You are running version %s. "
 "Please upgrade and try again."
 msgstr ""
 
+#: inc/helpers/template-functions.php:207
 #: inc/framework/customizer/panel/archive.php:55
 msgid "Author"
 msgstr ""
@@ -138,23 +111,31 @@ msgstr ""
 msgid "Button Setting"
 msgstr ""
 
-#: inc/framework/customizer/panel/hero.php:99
+#: inc/framework/customizer/panel/hero.php:105
 msgid "Button Text"
 msgstr ""
 
-#: inc/framework/customizer/panel/hero.php:104
+#: inc/framework/customizer/panel/hero.php:110
 msgid "Button URL"
+msgstr ""
+
+#: inc/framework/customizer/customizer.php:136
+msgid "Buy PRO Version"
 msgstr ""
 
 #: inc/framework/customizer/panel/archive.php:54
 msgid "Categories"
 msgstr ""
 
-#: inc/helpers/template-functions.php:546
+#: inc/helpers/template-functions.php:199
+msgid "Category"
+msgstr ""
+
+#: inc/helpers/template-functions.php:562
 msgid "Center"
 msgstr ""
 
-#: inc/helpers/template-functions.php:507
+#: inc/helpers/template-functions.php:523
 msgid "Choose a Menu"
 msgstr ""
 
@@ -203,9 +184,8 @@ msgstr ""
 msgid "Content Settings"
 msgstr ""
 
-#: inc/helpers/template-functions.php:162
-#, php-format
-msgid "Copyright &copy; %1$s %3$s. %2$s."
+#: inc/helpers/template-functions.php:159
+msgid "Copyright &copy;"
 msgstr ""
 
 #: inc/framework/customizer/panel/footer.php:72
@@ -213,7 +193,7 @@ msgid "Copyright Text"
 msgstr ""
 
 #. If there are characters in your language that are not supported by Barlow, translate this to 'off'. Do not translate into your own language.
-#: functions.php:208
+#: functions.php:203
 msgctxt "Cormorant Garamond font: on or off"
 msgid "on"
 msgstr ""
@@ -241,13 +221,17 @@ msgstr ""
 msgid "Customizer -> Single Post Settings"
 msgstr ""
 
-#: inc/helpers/template-functions.php:208
+#: inc/helpers/template-functions.php:220
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
 #: inc/framework/customizer/panel/archive.php:56
 msgid "Date"
+msgstr ""
+
+#: inc/helpers/template-functions.php:219
+msgid "Day"
 msgstr ""
 
 #: inc/framework/meta-boxes/class-meta-box.php:317
@@ -276,9 +260,8 @@ msgstr ""
 msgid "Default value is inherit from single post or page settings."
 msgstr ""
 
-#: inc/helpers/template-functions.php:164
-#, php-format
-msgid "Designed by %2$s"
+#: inc/helpers/template-functions.php:165
+msgid "Designed by"
 msgstr ""
 
 #: inc/framework/customizer/panel/footer.php:91
@@ -293,13 +276,17 @@ msgstr ""
 msgid "Display Tagline"
 msgstr ""
 
+#: inc/framework/customizer/panel/theme-info.php:52
+msgid "Documentation"
+msgstr ""
+
 #: inc/framework/customizer/panel/footer.php:66
 #: inc/framework/customizer/panel/post.php:55
 msgid "Drag & Drop items to re-arrange order of appearance."
 msgstr ""
 
 #. %s: Name of current post. Only visible to screen readers
-#: template-parts/page/content-page.php:63 template-parts/post/content.php:120
+#: template-parts/page/content-page.php:69 template-parts/post/content.php:120
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
@@ -344,13 +331,11 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:156
-#, php-format
-msgid "Footer Widgets Column %1$s"
+#: functions.php:151
+msgid "Footer Widgets Column "
 msgstr ""
 
-#. Name of the template
-#: inc/helpers/template-functions.php:529
+#: inc/helpers/template-functions.php:545
 msgid "Full Width"
 msgstr ""
 
@@ -392,6 +377,12 @@ msgstr ""
 msgid "Header Image"
 msgstr ""
 
+#: inc/framework/customizer/panel/header.php:113
+msgid ""
+"Header Image will not display on Homepage or Static Homepage if Hero Section "
+"is enable."
+msgstr ""
+
 #: inc/framework/customizer/panel/sections.php:80
 msgid "Header Menu Settings"
 msgstr ""
@@ -404,8 +395,8 @@ msgstr ""
 msgid "Hero Section"
 msgstr ""
 
-#: template-parts/hero/content-hero.php:11
-#: inc/framework/customizer/panel/hero.php:74
+#: template-parts/hero/content-hero.php:12
+#: inc/framework/customizer/panel/hero.php:75
 msgid "Hero Short Description Here."
 msgstr ""
 
@@ -418,19 +409,15 @@ msgstr ""
 msgid "Homepage"
 msgstr ""
 
-#: inc/helpers/template-functions.php:164
-msgid "http://precisethemes.com/"
-msgstr ""
-
 #. Author URI of the theme
 msgid "https://precisethemes.com/"
 msgstr ""
 
 #. URI of the theme
-msgid "https://precisethemes.com/wordpress-theme/atento/"
+msgid "https://precisethemes.com/go/atento/"
 msgstr ""
 
-#: inc/framework/customizer/panel/hero.php:83
+#: inc/framework/customizer/panel/hero.php:84
 msgid "Image"
 msgstr ""
 
@@ -450,11 +437,11 @@ msgstr ""
 msgid "Layout"
 msgstr ""
 
-#: inc/helpers/template-functions.php:545
+#: inc/helpers/template-functions.php:561
 msgid "Left"
 msgstr ""
 
-#: inc/helpers/template-functions.php:528
+#: inc/helpers/template-functions.php:544
 msgid "Left Sidebar"
 msgstr ""
 
@@ -475,19 +462,19 @@ msgstr ""
 msgid "Main Menu"
 msgstr ""
 
-#: template-parts/footer/footer-bar.php:57
+#: template-parts/footer/footer-bar.php:66
 msgid "Menu"
 msgstr ""
 
-#: template-parts/footer/footer-bar.php:55
+#: template-parts/footer/footer-bar.php:64
 msgid "Menu not found! Assign a&nbsp;"
 msgstr ""
 
-#. Description of the theme
-msgid "Minimalist WordPress Blog Theme"
+#: inc/helpers/template-functions.php:215
+msgid "Month"
 msgstr ""
 
-#: inc/helpers/template-functions.php:206
+#: inc/helpers/template-functions.php:216
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
@@ -496,7 +483,11 @@ msgstr ""
 msgid "Most Used Categories"
 msgstr ""
 
-#: inc/framework/customizer/panel/hero.php:113
+#: inc/framework/customizer/customizer.php:135
+msgid "Need More Options?"
+msgstr ""
+
+#: inc/framework/customizer/panel/hero.php:119
 msgid "New Window"
 msgstr ""
 
@@ -504,12 +495,16 @@ msgstr ""
 msgid "Next Post"
 msgstr ""
 
-#: inc/helpers/template-functions.php:512
+#: inc/helpers/template-functions.php:528
 msgid "No Menu set yet"
 msgstr ""
 
 #: inc/framework/meta-boxes/class-meta-box.php:115
 msgid "No meta settings available for this post type or user."
+msgstr ""
+
+#: inc/framework/customizer/panel/header.php:112
+msgid "Note:"
 msgstr ""
 
 #: inc/framework/demo-importer/class-demo.php:184
@@ -524,7 +519,7 @@ msgid "Nothing Found"
 msgstr ""
 
 #: inc/libraries/tgm/tgm.php:21
-msgid "One Click Demo Import"
+msgid "One Click Demo Importer"
 msgstr ""
 
 #. 1: title.
@@ -533,11 +528,11 @@ msgstr ""
 msgid "One thought on &ldquo;%1$s&rdquo;"
 msgstr ""
 
-#: inc/helpers/theme-hooks.php:240
+#: inc/helpers/theme-hooks.php:217
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: inc/framework/customizer/panel/hero.php:109
+#: inc/framework/customizer/panel/hero.php:115
 msgid "Open Button URL"
 msgstr ""
 
@@ -545,7 +540,7 @@ msgstr ""
 msgid "Other"
 msgstr ""
 
-#: inc/framework/customizer/panel/hero.php:133
+#: inc/framework/customizer/panel/hero.php:139
 msgid "Overlay Background Color"
 msgstr ""
 
@@ -553,7 +548,7 @@ msgstr ""
 msgid "Page Header"
 msgstr ""
 
-#: template-parts/page/content-page.php:47 template-parts/post/content.php:49
+#: template-parts/page/content-page.php:46 template-parts/post/content.php:49
 msgid "Pages:"
 msgstr ""
 
@@ -565,47 +560,47 @@ msgstr ""
 msgid "Pagination Settings"
 msgstr ""
 
-#: inc/helpers/template-functions.php:211
+#: inc/helpers/template-functions.php:223
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr ""
 
-#: inc/helpers/template-functions.php:225
+#: inc/helpers/template-functions.php:237
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr ""
 
-#: inc/helpers/template-functions.php:227
+#: inc/helpers/template-functions.php:239
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr ""
 
-#: inc/helpers/template-functions.php:213
+#: inc/helpers/template-functions.php:225
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr ""
 
-#: inc/helpers/template-functions.php:215
+#: inc/helpers/template-functions.php:227
 msgctxt "post format archive title"
 msgid "Images"
 msgstr ""
 
-#: inc/helpers/template-functions.php:221
+#: inc/helpers/template-functions.php:233
 msgctxt "post format archive title"
 msgid "Links"
 msgstr ""
 
-#: inc/helpers/template-functions.php:219
+#: inc/helpers/template-functions.php:231
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr ""
 
-#: inc/helpers/template-functions.php:223
+#: inc/helpers/template-functions.php:235
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr ""
 
-#: inc/helpers/template-functions.php:217
+#: inc/helpers/template-functions.php:229
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr ""
@@ -632,13 +627,14 @@ msgstr ""
 msgid "Previous Post"
 msgstr ""
 
-#: functions.php:85
+#: functions.php:80
 msgid "Primary"
 msgstr ""
 
-#: template-parts/hero/content-hero.php:12
+#: inc/helpers/template-functions.php:136
+#: template-parts/hero/content-hero.php:13
 #: template-parts/related-posts/content-single.php:13
-#: inc/framework/customizer/panel/hero.php:75
+#: inc/framework/customizer/panel/hero.php:76
 msgid "Read More"
 msgstr ""
 
@@ -649,7 +645,7 @@ msgid ""
 "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: inc/framework/customizer/panel/hero.php:84
+#: inc/framework/customizer/panel/hero.php:85
 msgid ""
 "Recommend image width is 1800px and height can be calculated upon \"Hero "
 "Size - in ratio ( at Settings -> Hero Size Ratio )."
@@ -666,35 +662,34 @@ msgstr ""
 msgid "Reload Customizer"
 msgstr ""
 
-#: inc/helpers/template-functions.php:547
+#: inc/helpers/template-functions.php:563
 msgid "Right"
 msgstr ""
 
-#: inc/helpers/template-functions.php:530
+#: inc/helpers/template-functions.php:546
 msgid "Right Sidebar"
 msgstr ""
 
 #. If there are characters in your language that are not supported by Barlow Semi Condensed, translate this to 'off'. Do not translate into your own language.
-#: functions.php:203
+#: functions.php:198
 msgctxt "Roboto font: on or off"
 msgid "on"
 msgstr ""
 
-#: inc/framework/customizer/panel/hero.php:112
+#: inc/framework/customizer/panel/hero.php:118
 msgid "Same Window"
 msgstr ""
 
 #. %s: search query.
-#: inc/helpers/theme-hooks.php:221
-#, php-format
-msgid "Search Results for: %s"
+#: inc/helpers/theme-hooks.php:196
+msgid "Search Results for:"
 msgstr ""
 
 #: inc/framework/meta-boxes/class-meta-box.php:56
 msgid "Settings"
 msgstr ""
 
-#: inc/framework/customizer/panel/hero.php:94
+#: inc/framework/customizer/panel/hero.php:100
 msgid "Short Description"
 msgstr ""
 
@@ -706,7 +701,7 @@ msgstr ""
 msgid "Show Placeholder"
 msgstr ""
 
-#: functions.php:138 inc/framework/customizer/panel/archive.php:24
+#: functions.php:133 inc/framework/customizer/panel/archive.php:24
 #: inc/framework/customizer/panel/global.php:16
 #: inc/framework/customizer/panel/page.php:21
 #: inc/framework/customizer/panel/post.php:31
@@ -758,6 +753,26 @@ msgid ""
 "different keywords."
 msgstr ""
 
+#: inc/framework/customizer/panel/hero.php:95
+msgid "Subtitle"
+msgstr ""
+
+#: inc/framework/customizer/panel/theme-info.php:41
+msgid "Support"
+msgstr ""
+
+#: inc/helpers/template-functions.php:203
+msgid "Tag"
+msgstr ""
+
+#: inc/framework/customizer/panel/theme-info.php:30
+msgid "Theme Info"
+msgstr ""
+
+#: inc/framework/customizer/panel/theme-info.php:15
+msgid "Themes Info"
+msgstr ""
+
 #: inc/framework/customizer/panel/global.php:26
 msgid ""
 "This sidebar will be reflected in whole site blog, archives, categories, "
@@ -770,7 +785,7 @@ msgid "Thumbnail Placeholder"
 msgstr ""
 
 #: inc/framework/customizer/panel/archive.php:53
-#: inc/framework/customizer/panel/hero.php:89
+#: inc/framework/customizer/panel/hero.php:90
 msgid "Title"
 msgstr ""
 
@@ -784,6 +799,10 @@ msgstr ""
 msgid "Typography"
 msgstr ""
 
+#: inc/framework/customizer/panel/theme-info.php:63
+msgid "View Demos"
+msgstr ""
+
 #: inc/framework/customizer/panel/typography.php:33
 #: inc/framework/customizer/panel/typography.php:297
 msgid "Widget Title"
@@ -793,7 +812,11 @@ msgstr ""
 msgid "Widgets"
 msgstr ""
 
-#: inc/helpers/template-functions.php:204
+#: inc/helpers/template-functions.php:211
+msgid "Year"
+msgstr ""
+
+#: inc/helpers/template-functions.php:212
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""

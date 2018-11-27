@@ -129,7 +129,7 @@ if ( ! function_exists( 'atento_action_page_header' ) ) :
                                     <h1 class="page-title w-100 d-flex flex-wrap align-items-center">
                                         <?php
 
-                                        if ( $avatar && get_theme_mod( 'atento_author_'.$post_author.'_page_header_avatar_enable', true ) == true ) : // Display author avatar
+                                        if ( $avatar ) : // Display author avatar
                                             echo wp_kses_post( $avatar );
                                         endif;
 
@@ -141,42 +141,16 @@ if ( ! function_exists( 'atento_action_page_header' ) ) :
                                     <div class="archive-description w-100">
                                         <?php
                                         // Outputs the author description if exists
-                                        if ( $description && get_theme_mod( 'atento_author_'.$post_author.'_page_header_info_enable', true ) == true ) :
-                                            echo wpautop( do_shortcode( wp_kses_post( $description ) ) );
+                                        if ( $description ) :
+                                            echo wp_kses_post( wpautop( $description ) );
                                         endif;
 
                                         // Outputs the author website if exists
-                                        if ( $website && get_theme_mod( 'atento_author_'.$post_author.'_page_header_website_enable', true ) == true ) : ?>
+                                        if ( $website ) : ?>
                                             <p class="author-website"><a href="<?php echo esc_url( $website ); ?>" title="<?php esc_attr_e( 'Author Website', 'atento' ); ?>" target="_blank"><?php echo esc_url( $website ); ?></a></p>
                                         <?php
                                         endif;
-
-                                        if ( !empty( $social_profiles = get_theme_mod( 'atento_author_'.$post_author.'_social_profile_lists' ) ) && ( get_theme_mod( 'atento_author_'.$post_author.'_page_header_social_profile_enable', true ) == true ) ) : ?>
-
-                                            <div class="social-profiles-widget author-socail-profiles">
-                                                <ul>
-                                                    <?php
-                                                    foreach ( $social_profiles as $social_profile ) {
-                                                        if ( '' != $social_profile['social_url'] ) {
-                                                            $font_icon = $social_profile['social_icon'];
-                                                            $social_icon = '<i class="fab '.esc_attr( $font_icon ). '"></i>';
-
-                                                            if ( '' != $social_profile['social_image'] ){
-                                                                $image_id = $social_profile['social_image'];
-                                                                $image_path = wp_get_attachment_image_src( $image_id, 'thumbnail', true );
-                                                                $social_icon = '<img width="'.esc_attr( $image_path[1] ).'" height="'.esc_attr( $image_path[2] ).'" src="'.esc_url( $image_path[0] ).'" />';
-                                                            } ?>
-
-                                                            <li><a href="<?php echo esc_url( $social_profile['social_url'] );?>" target="_blank"><?php echo $social_icon; ?></a></li>
-
-                                                            <?php
-                                                        }
-                                                    }
-                                                    ?>
-                                                </ul>
-                                            </div><!-- .social-profiles-widget -->
-
-                                        <?php endif; ?>
+                                        ?>
 
                                     </div><!-- author-bio-description -->
                                 </div><!-- .col -->
@@ -218,7 +192,10 @@ if ( ! function_exists( 'atento_action_page_header' ) ) :
                                 <h1 class="page-title w-100">
                                     <?php
                                     /* translators: %s: search query. */
-                                    printf( esc_html__( 'Search Results for: %s', 'atento' ), '<span>' . get_search_query() . '</span>' );
+                                    printf( '%1$s <span>%2$s</span>',
+                                        esc_html__( 'Search Results for:', 'atento' ),
+                                        get_search_query()
+                                        );
                                     ?>
                                 </h1>
                             </div><!-- .col -->

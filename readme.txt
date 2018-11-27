@@ -4,12 +4,12 @@ Contributors: Precise Themes
 Tags: two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog
 Requires at least: 4.8
 Tested up to: 4.8
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-Description: Atento is a minimalist WordPress blog theme beautifully crafted to help you create a stunning blog, suitable for any kind of blog fashion, travel, music, car, real state, beauty, design, food, wedding, movie, photography, technology, personal blog sites. It is designed with a focus on minimal & clean design, unique styling, elegant typography selection to highlight and emphasis your blog content to your readers.
+Description: Atento is a minimalist WordPress blog theme beautifully crafted to help you create a stunning blog, suitable for any kind of blog fashion, travel, music, car, real state, beauty, design, food, wedding, movie, photography, technology, personal blog sites. It is designed with a focus on minimal & clean design, unique styling, elegant typography selection to highlight and emphasis your blog content to your readers. Read more details at https://precisethemes.com/go/atento and View Demo at https://precisethemes.com/go/atento-demo
 
 == Frequently Asked Questions ==
 = Ho to setup homepage as in demo? =
@@ -28,6 +28,10 @@ Description: Atento is a minimalist WordPress blog theme beautifully crafted to 
     Atento makes us of Featured Images, which helps to visually tell your story. Featured Images are displayed below the title on the blog posts and archive pages. A smaller version of the image is used on the blog index page. For the optimal result, provide an image at least 1200px wide.
 
 == Changelog ==
+
+Version 1.0.3 - 2018-11-25
+* Added getting started page.
+
 Version 1.0.2 - 2018-11-06
 * Standarised readme.txt, Updated hero image UX.
 
@@ -79,7 +83,7 @@ Version 1.0.0 - 2018-10-17
 
 == Plugins ==
 1. TGM-Plugin-Activation: - https://github.com/TGMPA/TGM-Plugin-Activation
-    Licensed under the GNU General Public License v2.0
+    Licensed under the GNU General Public License 2.6.1
 
 2. Kirki: - http://aristath.github.io/kirki/
    Licensed under the MIT license - http://opensource.org/licenses/MIT

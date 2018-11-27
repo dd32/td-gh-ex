@@ -25,8 +25,9 @@ add_action( 'after_switch_theme', 'atento_bc_switch_theme' );
  * @since 1.0.0
  */
 function atento_bc_upgrade_notice() {
-    $message = sprintf( __( 'Atento requires at least PHP version 5.4.0. You are running version %s. Please upgrade and try again.', 'atento' ), PHP_VERSION );
-    printf( '<div class="error"><p>%s</p></div>', $message );
+    printf( '<div class="error"><p>%s</p></div>',
+        sprintf( __( 'Atento requires at least PHP version 5.4.0. You are running version %s. Please upgrade and try again.', 'atento' ), PHP_VERSION )
+    );
 }
 
 /**

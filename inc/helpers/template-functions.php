@@ -154,15 +154,17 @@ if ( ! function_exists( 'atento_footer_copyright_information' ) ) {
      * Function to show the copyright information
      */
     function atento_footer_copyright_information() {
-        ?>
-        <div class="site-info">
-            <?php
-            printf( __( 'Copyright &copy; %1$s %3$s. %2$s.', 'atento' ), date('Y'), esc_html__('All rights reserved','atento'), '<a href="'.esc_url( home_url( '/' ) ) .'">' . esc_html( get_bloginfo( 'name', 'display' ) ) . '</a>' );
-            echo '<span class="sep"> | </span>';
-            printf( __( 'Designed by %2$s', 'atento' ), '', '<a href="'.esc_url( __('http://precisethemes.com/','atento' ) ) .'" rel="designer" target="_blank">Precise Themes</a>' );
-            ?>
-        </div><!-- .site-info -->
-        <?php
+        printf( '<div class="site-info">%1$s <a href="%2$s">%3$s.</a> %4$s.<span class="sep"> | </span>%5$s <a href="%6$s" rel="designer" target="_blank">Precise Themes</a></div><!-- .site-info -->',
+            sprintf('%1$s %2$s',
+                esc_html__( 'Copyright &copy;', 'atento' ),
+                esc_html( date('Y') )
+            ),
+            esc_url( home_url( '/' ) ),
+            esc_html( get_bloginfo( 'name', 'display' ) ),
+            esc_html__( 'All rights reserved','atento' ),
+            esc_html__( 'Designed by','atento' ),
+            esc_url( 'http://precisethemes.com/' )
+        );
     }
 }
 add_action( 'atento_footer_copyright', 'atento_footer_copyright_information', 5 );
@@ -193,17 +195,29 @@ if ( ! function_exists( 'atento_get_the_ID' ) ) {
 if ( !function_exists( 'atento_archive_get_title' ) ) {
     function atento_archive_get_title( $before = '', $after = '' ) {
         if ( is_category() ) {
-            $title = sprintf( __( '<label>Category %s', 'atento' ), '</label>'.single_cat_title( '', false ) );
+            $title = sprintf( '<label>%1$s</label> %2$s',
+                esc_html__( 'Category','atento' ),
+                single_cat_title( '', false ) );
         } elseif ( is_tag() ) {
-            $title = sprintf( __( '<label>Tag %s', 'atento' ), '</label>'.single_tag_title( '', false ) );
+            $title = sprintf( '<label>%1$s</label> %2$s',
+                esc_html__( 'Tag','atento' ),
+                single_tag_title( '', false ) );
         } elseif ( is_author() ) {
-            $title = sprintf( __( '<label>Author %s', 'atento' ), '</label>'.get_the_author() );
+            $title = sprintf( '<label>%1$s</label> %2$s',
+                esc_html__( 'Author','atento' ),
+                get_the_author() );
         } elseif ( is_year() ) {
-            $title = sprintf( __( '<label>Year %s', 'atento' ), '</label>'.get_the_date( _x( 'Y', 'yearly archives date format', 'atento' ) ) );
+            $title = sprintf( '<label>%1$s</label> %2$s',
+                esc_html__( 'Year','atento' ),
+                get_the_date( _x( 'Y', 'yearly archives date format', 'atento' ) ) );
         } elseif ( is_month() ) {
-            $title = sprintf( __( '<label>Month %s', 'atento' ), '</label>'.get_the_date( _x( 'F Y', 'monthly archives date format', 'atento' ) ) );
+            $title = sprintf( '<label>%1$s</label> %2$s',
+                esc_html__( 'Month','atento' ),
+                get_the_date( _x( 'F Y', 'monthly archives date format', 'atento' ) ) );
         } elseif ( is_day() ) {
-            $title = sprintf( __( '<label>Day %s', 'atento' ), '</label>'.get_the_date( _x( 'F j, Y', 'daily archives date format', 'atento' ) ) );
+            $title = sprintf( '<label>%1$s</label> %2$s',
+                esc_html__( 'Day','atento' ),
+                get_the_date( _x( 'F j, Y', 'daily archives date format', 'atento' ) ) );
         } elseif ( is_tax( 'post_format' ) ) {
             if ( is_tax( 'post_format', 'post-format-aside' ) ) {
                 $title = _x( 'Asides', 'post format archive title', 'atento' );
@@ -225,13 +239,17 @@ if ( !function_exists( 'atento_archive_get_title' ) ) {
                 $title = _x( 'Chats', 'post format archive title', 'atento' );
             }
         } elseif ( is_post_type_archive() ) {
-            $title = sprintf( __( '<label>Archives %s', 'atento' ), '</label>'.post_type_archive_title( '', false ) );
+            $title = sprintf( '<label>%1$s</label> %2$s',
+                esc_html__( 'Archives','atento' ),
+                post_type_archive_title( '', false ) );
         } elseif ( is_tax() ) {
             $tax = get_taxonomy( get_queried_object()->taxonomy );
             /* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
-            $title = sprintf( __( '%1$s: %2$s', 'atento' ), $tax->labels->singular_name, '<span>' . single_term_title( '', false ) . '</span>' );
+            $title = sprintf( '<label>%1$s</label> %2$s',
+                $tax->labels->singular_name,
+                single_term_title( '', false ) );
         } else {
-            $title = __( 'Archives', 'atento' );
+            $title = esc_html__( 'Archives', 'atento' );
         }
 
         /**

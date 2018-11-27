@@ -148,7 +148,7 @@ function atento_widgets_init() {
         for ($i = 1; $i <=4; $i++) {
 
             register_sidebar( array(
-                'name'          => sprintf( esc_html__('Footer Widgets Column %1$s', 'atento'), $i ),
+                'name'          => esc_html__('Footer Widgets Column ', 'atento').$i,
                 'id'            => 'footer_sidebar_' . $i,
                 'description'   => esc_html__('Add widgets here.', 'atento'),
                 'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -246,28 +246,62 @@ add_action( 'wp_enqueue_scripts', 'atento_scripts' );
 /*--------------------------------------------------------------
 # Back-End Enqueue scripts and styles.
 --------------------------------------------------------------*/
+//if ( !function_exists( 'atento_admin_scripts' ) ) {
+//    function atento_admin_scripts() {
+//
+//        $min = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+//
+//        // Get Current Screen Name
+//        $current_screen = get_current_screen();
+//        $screen_id      = $current_screen->id;
+//
+//        // Enqueue Google Fonts
+//        wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Roboto:300,400,500,700', array(), ATENTO_THEME_VERSION, '' );
+//
+//        // Widgets Specific enqueue.
+//        if ( in_array( $screen_id, array( 'widgets', 'customize' ) ) ) {
+//            wp_enqueue_style( 'atento-customizer-style', ATENTO_THEME_URI .'/assets/back-end/css/customizer-style' . $min . '.css', false, ATENTO_THEME_VERSION, 'all' );
+//        }
+//
+//        // Enqueue Style
+//        wp_enqueue_style( 'atento-admin-style', ATENTO_THEME_URI .'/assets/back-end/css/admin-style' . $min . '.css', false, ATENTO_THEME_VERSION, 'all' );
+//
+//        // Enqueue Script
+//        wp_enqueue_script( 'atento-admin-script', ATENTO_THEME_URI . '/assets/back-end/js/admin-script' . $min . '.js', array( 'jquery' ), ATENTO_THEME_VERSION, true );
+//
+//    }
+//}
+//add_action( 'admin_enqueue_scripts', 'atento_admin_scripts' );
+
+/*--------------------------------------------------------------
+# Back-End Enqueue scripts and styles.
+--------------------------------------------------------------*/
 if ( !function_exists( 'atento_admin_scripts' ) ) {
     function atento_admin_scripts() {
 
-        $min = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
-
         // Get Current Screen Name
-        $current_screen = get_current_screen();
-        $screen_id      = $current_screen->id;
+        $screen         = get_current_screen();
+        $screen_id      = $screen ? $screen->id : '';
 
-        // Enqueue Google Fonts
-        wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Libre+Baskerville:400,700|Roboto:300,400,500,700', array(), ATENTO_THEME_VERSION, '' );
+        //$min = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-        // Widgets Specific enqueue.
-        if ( in_array( $screen_id, array( 'widgets', 'customize' ) ) ) {
-            wp_enqueue_style( 'atento-customizer-style', ATENTO_THEME_URI .'/assets/back-end/css/customizer-style' . $min . '.css', false, ATENTO_THEME_VERSION, 'all' );
-        }
+        $min = '';
 
         // Enqueue Style
         wp_enqueue_style( 'atento-admin-style', ATENTO_THEME_URI .'/assets/back-end/css/admin-style' . $min . '.css', false, ATENTO_THEME_VERSION, 'all' );
 
-        // Enqueue Script
-        wp_enqueue_script( 'atento-admin-script', ATENTO_THEME_URI . '/assets/back-end/js/admin-script' . $min . '.js', array( 'jquery' ), ATENTO_THEME_VERSION, true );
+
+        // Run some code, only on the customizer and widgets page
+        if ( in_array( $screen_id, array( 'widgets', 'customize' ) ) ) {
+
+            wp_enqueue_style( 'atento-customizer-style', ATENTO_THEME_URI .'/assets/back-end/css/customizer-style' . $min . '.css', false, ATENTO_THEME_VERSION, 'all' );
+
+        } else {
+
+            // Enqueue Script
+            wp_enqueue_script( 'atento-admin-script', ATENTO_THEME_URI . '/assets/back-end/js/admin-script' . $min . '.js', array( 'jquery' ), ATENTO_THEME_VERSION, true );
+
+        }
 
     }
 }
@@ -309,3 +343,15 @@ require ATENTO_THEME_DIR . '/inc/framework/customizer/customizer.php';
  * Load theme meta box
  */
 require ATENTO_THEME_DIR . '/inc/framework/meta-boxes/class-meta-box.php';
+
+/**
+ * Include Welcome page and demo importer.
+ */
+if ( is_admin() ) {
+    // Welcome Page.
+    require ATENTO_THEME_DIR . '/inc/framework/welcome-screen/class-welcome-screen.php';
+    require ATENTO_THEME_DIR . '/inc/framework/welcome-screen/persist-admin-notices-dismissal.php';
+
+    // Demo.
+    require ATENTO_THEME_DIR . '/inc/framework/demo-importer/class-demo.php';
+}

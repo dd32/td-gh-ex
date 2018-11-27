@@ -87,13 +87,13 @@ if ( ! class_exists( 'Atento_Post_Global_Meta_Box' ) ) {
             $min = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
             // Enqueue style
-            wp_enqueue_style( 'atento-admin-style', ATENTO_THEME_URI .'/assets/back-end/css/admin-style' . $min . '.css', false, ATENTO_THEME_VERSION, 'all' );
+            wp_enqueue_style( 'atento-metabox-style', ATENTO_THEME_URI .'/assets/back-end/css/metabox-style' . $min . '.css', false, ATENTO_THEME_VERSION, 'all' );
 
             // Image Uploader
             wp_enqueue_media();
 
             // Enqueue Script
-            wp_enqueue_script( 'atento-admin-script', ATENTO_THEME_URI . '/assets/back-end/js/admin-script' . $min . '.js', array( 'jquery' ), ATENTO_THEME_VERSION, true );
+            wp_enqueue_script( 'atento-metabox-script', ATENTO_THEME_URI . '/assets/back-end/js/metabox-script' . $min . '.js', array( 'jquery' ), ATENTO_THEME_VERSION, true );
         }
 
         /**
@@ -102,7 +102,7 @@ if ( ! class_exists( 'Atento_Post_Global_Meta_Box' ) ) {
         public function display_meta_box( $post ) {
 
             // Add nonce for security and authentication.
-            wp_nonce_field( basename( __FILE__ ), 'post_metabox_nonce' );
+            wp_nonce_field( basename( __FILE__ ), 'atento_meta_nonce' );
 
             // Get current post data
             $post_id   = $post->ID;
@@ -116,7 +116,7 @@ if ( ! class_exists( 'Atento_Post_Global_Meta_Box' ) ) {
 
             // Make sure tabs aren't empty
             if ( empty( $tabs ) ) {
-                echo $empty_notice; return;
+                echo wp_kses_post( $empty_notice ); return;
             }
 
             // Store tabs that should display on this specific page in an array for use later
@@ -137,7 +137,7 @@ if ( ! class_exists( 'Atento_Post_Global_Meta_Box' ) ) {
 
             // No active tabs
             if ( empty( $active_tabs ) ) {
-                echo $empty_notice; return;
+                echo wp_kses_post( $empty_notice ); return;
             }
             ?>
 
@@ -232,7 +232,7 @@ if ( ! class_exists( 'Atento_Post_Global_Meta_Box' ) ) {
         public function save_meta_data( $post_id ) {
 
             // Verify that the nonce is valid.
-            if ( ! isset( $_POST['post_metabox_nonce'] ) || ! wp_verify_nonce( $_POST['post_metabox_nonce'], basename( __FILE__ ) ) ) {
+            if ( ! isset( $_POST['atento_meta_nonce'] ) || ! wp_verify_nonce( sanitize_key( $_POST['atento_meta_nonce'] ), basename( __FILE__ ) ) ) {
                 return;
             }
 
@@ -279,12 +279,12 @@ if ( ! class_exists( 'Atento_Post_Global_Meta_Box' ) ) {
 
                     if ( 'radio' == $type ) {
                         if ( 'default-sidebar' !== $_POST[$id] ) {
-                            $value = sanitize_text_field( $_POST[$id] );
+                            $value = sanitize_text_field( wp_unslash( $_POST[$id] ) );
                         }
                     }
                     // All else
                     else {
-                        $value = sanitize_text_field( $_POST[$id] );
+                        $value = sanitize_text_field( wp_unslash( $_POST[$id] ) );
                     }
 
                     // Update meta if value exists

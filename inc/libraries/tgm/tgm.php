@@ -13,10 +13,15 @@ if ( ! function_exists( 'atento_register_recommended_plugins' ) ) :
 	/**
 	 * Register recommended plugins.
 	 *
-	 * @since 1.0.0
+	 * @since 1.0.3
 	 */
 	function atento_register_recommended_plugins() {
         $plugins = array(
+            array(
+                'name'     => esc_html__( 'One Click Demo Importer', 'atento' ),
+                'slug'     => 'one-click-demo-import',
+                'required' => false,
+            ),
             array(
                 'name'     => esc_html__( 'MailChimp Sign-Up Form', 'atento' ),
                 'slug'     => 'mailchimp-for-wp',
