@@ -2,21 +2,20 @@
 /**
 * Sidebar Left, Content Right
 *
-* @package beam
+* @package Beam
 */
 ?>
-
-<?php 
-	if( Kirki::get_option( 'bo', 'opt_layout' ) ) { 
+<?php
+	if( Kirki::get_option( 'bo', 'opt_layout' ) ) {
 		$opt_layout = Kirki::get_option( 'bo', 'opt_layout' );
 	}
-	
+
 	if ( $opt_layout == '4') {
 ?>
 
-<div id="tertiary" class="widget-area">
+<div id="tertiary" class="column widget-area">
 
-		<?php 
+		<?php
 		if ( ! dynamic_sidebar( 'sidebar-2' ) ) : ?>
 
 		<aside id="search" class="widget widget_search">
@@ -39,9 +38,9 @@
 			</ul>
 		</aside>
 
-		<?php 
+		<?php
 		endif; // end sidebar widget area ?>
-		
+
 </div>
 
 <?php }

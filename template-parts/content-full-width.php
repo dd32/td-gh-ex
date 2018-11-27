@@ -2,40 +2,40 @@
 /**
 * The template used for displaying page content in Full Width Template.
 *
-* @package beam
+* @package Beam
 */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<?php 
+	<?php
 	// If the post has a Post Thumbnail assigned to it.
 	if ( has_post_thumbnail() ) {
-		
+
 	?>
 	<div class="featured-image">
 		<?php
-		
+
 		the_post_thumbnail();
-		
+
 		?>
 	</div>
 	<?php
-	} 
+	}
 	?>
 
 	<div class="entry-content-page">
-		<?php 
-	
+		<?php
+
 		the_content();
-		
+
 		wp_link_pages( array(
 		'before' => '<div class="page-links round-corners">' . esc_html__( 'Pages:', 'beam' ),
 		'after'  => '</div>',
 		) );
 		?>
 	</div><!-- .entry-content-page -->
-	
+
 
 	<?php
 		edit_post_link(
@@ -48,5 +48,5 @@
 			'</span>'
 		);
 	?>
-	
+
 </article><!-- #post-## -->

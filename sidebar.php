@@ -2,10 +2,10 @@
 /**
 * The Sidebar containing the main widget areas.
 *
-* @package beam
+* @package Beam
 */
 ?>
-	<div id="secondary" class="widget-area">
+	<div id="secondary" class="column widget-area">
 		<?php do_action( 'before_sidebar' ); ?>
 		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 
@@ -33,13 +33,13 @@
 
 	</div><!-- #secondary -->
 
-	<?php 
-		if( Kirki::get_option( 'bo', 'opt_layout' ) ) { 
+	<?php
+		if( Kirki::get_option( 'bo', 'opt_layout' ) ) {
 			$opt_layout = Kirki::get_option( 'bo', 'opt_layout' );
 				if ( $opt_layout == '4') {
 	?>
 
-	<div id="tertiary" class="widget-area" role="complementary">
+	<div id="tertiary" class="column is-3-desktop widget-area" role="complementary">
 		<?php do_action( 'before_sidebar' ); ?>
 		<?php if ( ! dynamic_sidebar( 'sidebar-2' ) ) : ?>
 
@@ -63,6 +63,6 @@
 			</ul>
 		</aside>
 
-		<?php endif; // end sidebar widget area ?>
+		<?php endif; ?>
 	</div>
 <?php } }

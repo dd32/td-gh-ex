@@ -2,7 +2,7 @@
 /**
  * beam Theme Customizer
  *
- * @package beam
+ * @package Beam
  */
 
 /**

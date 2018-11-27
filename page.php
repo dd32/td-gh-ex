@@ -4,32 +4,28 @@
 *
 * This is the template that displays all pages by default.
 *
-* @package beam
+* @package Beam
 */
-
 get_header(); ?>
-
-<div id="content" class="site-content">
-	<div class="site-content-inner">
-
-		<div id="primary" class="content-area">
+<div id="content" class="container site-content">
+	<div class="columns site-content-inner">
+		<div id="primary" class="column is-9 content-area">
 			<main id="main" class="site-main">
+			<?php
+			while ( have_posts() ) : the_post();
 
-			<?php 
-			while ( have_posts() ) : the_post(); 
-				
-				get_template_part( 'content', 'page' ); 
+				get_template_part( 'content', 'page' );
 
 				// If comments are open or we have at least one comment, load up the comment template
 				if ( comments_open() || '0' != get_comments_number() ) :
 					comments_template();
 				endif;
-			
+
 			endwhile; // end of the loop. ?>
 
 			</main><!-- #main -->
 		</div><!-- #primary -->
 
-<?php 
+<?php
 get_sidebar();
 get_footer();

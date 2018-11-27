@@ -4,13 +4,12 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package _s
+ * @package Beam
  */
 get_header(); ?>
-	<div id="content" class="site-content">
-		<div class="site-content-inner">
-			
-			<div id="primary" class="content-area">
+	<div id="content" class="container site-content">
+		<div class="columns site-content-inner">
+			<div id="primary" class="column is-9 content-area">
 				<main id="main" class="site-main">
 
 				<?php

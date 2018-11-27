@@ -2,7 +2,7 @@
 /**
  * beam functions and definitions
  *
- * @package beam
+ * @package Beam
  */
 
 /**

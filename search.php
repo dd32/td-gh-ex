@@ -4,40 +4,38 @@
 *
 * The template for displaying Search Results pages.
 *
-* @package beam
+* @package Beam
 */
-
-get_header(); ?>
-
-	<div id="content" class="site-content">
-		<div class="site-content-inner">
-
-			<div id="primary" class="content-area">
+get_header();
+?>
+	<div id="content" class="container site-content">
+		<div class="columns site-content-inner">
+			<div id="primary" class="column is-9 content-area">
 				<main id="main" class="site-main">
 
 					<header class="page-header">
-						
+
 					<h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'beam' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-						
+
 					</header><!-- .page-header -->
 
-					<?php 
-					if ( have_posts() ) : 
+					<?php
+					if ( have_posts() ) :
 
 						 /* Start the Loop */
 						while ( have_posts() ) : the_post();
 
 							get_template_part( 'content', 'search' );
 
-						endwhile; 
+						endwhile;
 
-					else : 
+					else :
 
-						get_template_part( 'no-results', 'search' ); 	
+						get_template_part( 'no-results', 'search' );
 
-					endif; 	
+					endif;
 
-					the_widget( 'WP_Widget_Tag_Cloud' ); 
+					the_widget( 'WP_Widget_Tag_Cloud' );
 					?>
 
 				</main><!-- #main -->
@@ -45,4 +43,4 @@ get_header(); ?>
 
 <?php
 get_sidebar();
-get_footer(); 
+get_footer();

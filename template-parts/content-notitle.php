@@ -3,23 +3,21 @@
 Template Name: No Title
 Description: Use this template if you need titleless Page. What's more, it doesn't load Sidebar too. If you want Sidebar on this page, uncomment get_sidebar bellow.
 */
-
-get_header(); ?>
-
-<div id="content" class="site-content full-width-template">
-	<div class="site-content-inner">
-
-		<div id="primary" class="content-area full-width-template">
+get_header();
+?>
+<div id="content" class="container site-content full-width-template">
+	<div class="columns site-content-inner">
+		<div id="primary" class="column content-area full-width-template">
 			<main id="main" class="site-main">
 
 				<div class="entry-content-only-page">
 
-				<?php 
+				<?php
 					while ( have_posts() ) : the_post();
-					
+
 				 		the_content();
-					
-					endwhile; // end of the loop. 
+
+					endwhile; // end of the loop.
 				?>
 
 				</div><!-- .entry-content-only-page -->
@@ -29,6 +27,6 @@ get_header(); ?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
 
-<?php 
-//get_sidebar(); 
-get_footer(); 
+<?php
+//get_sidebar();
+get_footer();

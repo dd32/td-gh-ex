@@ -2,10 +2,9 @@
 /**
 * The template used for displaying page content in front-page.php
 *
-* @package beam
+* @package Beam
 */
 ?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
 <?php if (the_title() != '' ) {
@@ -16,7 +15,7 @@
 <?php }
 ?>
 
-	
+
 	<?php
 	// If the post has a Post Thumbnail assigned to it.
 	if ( has_post_thumbnail() ) {
@@ -27,7 +26,7 @@
 			?>
 		</div>
 	<?php
-	} 
+	}
 	?>
 
 	<div class="entry-content-page">
@@ -39,7 +38,7 @@
 		) );
 		?>
 	</div><!-- .entry-content-page -->
-	
+
 	<?php edit_post_link( __( 'Edit', 'beam' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
-	
+
 </article><!-- #post-## -->

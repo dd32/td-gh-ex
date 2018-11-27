@@ -8,25 +8,22 @@
  * E.g., it puts together the home page when no home.php file exists.
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package beam
+ * @package Beam
  */
-
 get_header(); ?>
-
-	<div id="content" class="site-content">
-		<div class="site-content-inner">
-
-			<div id="primary" class="content-area">
+	<div id="content" class="container site-content">
+		<div class="columns site-content-inner">
+			<div id="primary" class="column is-9 content-area">
 				<main id="main" class="site-main">
 
-				<?php 
+				<?php
 				if ( have_posts() ) :
 
 					/* Start the Loop */
 					 while ( have_posts() ) : the_post();
-					
+
 							get_template_part( 'content', get_post_format() );
-					
+
 					endwhile;
 
 					beam_content_nav( 'nav-below' );

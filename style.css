@@ -4,7 +4,7 @@ Theme URI: http://www.beamtheme.com
 Author: Emir Muracevic
 Author URI: http://www.beamtheme.com/author/emirowski/
 Description: Beam is a Clean, Fast, Responsive and Customizable WordPress theme. Ready (and recommended) to use with Child themes. Translatation ready. Features four layout types and five page templates.
-Version: 1.3
+Version: 1.4
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: beam
@@ -78,9 +78,9 @@ samp {
 
 a {
     background-color: transparent;
-    color: #3273dc;
     cursor: pointer;
-    text-decoration: none
+    text-decoration: none;
+    color: #4a4a4a
 }
 
 abbr[title] {
@@ -1154,7 +1154,6 @@ a.navbar-item:hover {
 }
 
 .navbar-link:not(.is-arrowless)::after {
-    border-color: #3273dc;
     margin-top: -.375em;
     right: 1.125em
 }
@@ -1486,6 +1485,10 @@ a.navbar-item:hover {
         -ms-flex-align: center;
         align-items: center
     }
+}
+
+.navbar-link:not(.is-arrowless)::after {
+    border-color: #4a4a4a
 }
 
 .container {
@@ -5171,6 +5174,15 @@ print {
     z-index: 4
 }
 
+.site-footer ul.menu {
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center
+}
+
 .round-corners {
     border-radius: 5px
 }
@@ -5290,14 +5302,12 @@ a:hover {
 }
 
 .site-content {
-    max-width: 1170px;
     position: relative
 }
 
 .centeralign-content,
 .centeralign-footer,
 .centeralign-header {
-    max-width: 1170px;
     position: relative;
     margin-left: auto;
     margin-right: auto
@@ -5329,15 +5339,7 @@ a:hover {
 
 #primary,
 #secondary {
-    float: left;
-    width: 68%;
     position: relative
-}
-
-#secondary {
-    float: right;
-    width: 28.5%;
-    padding: 30px 20px 0 0
 }
 
 .sticky {
@@ -5404,7 +5406,7 @@ a:hover {
 }
 
 .site-main {
-    padding: 3% 5%
+    padding: 1em
 }
 
 .double-sidebar .site-main {
@@ -5828,7 +5830,7 @@ footer aside.widget li {
 }
 
 #secondary .widget-title::after {
-    background-color: #3c763d;
+    background-color: #4a4a4a;
     content: '';
     width: 55px;
     display: block;

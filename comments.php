@@ -7,7 +7,7 @@
 * handled by a callback to beam_comment() which is
 * located in the inc/template-tags.php file.
 *
-* @package beam
+* @package Beam
 */
 
 /*
@@ -22,10 +22,10 @@ if ( post_password_required() ) {
 
 	<div id="comments" class="comments-area">
 
-		<?php 
+		<?php
 		if ( have_comments() ) : ?>
 			<h2 class="comments-title">
-				
+
 			<?php
 				printf( // WPCS: XSS OK.
 					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'beam' ) ),
@@ -36,14 +36,14 @@ if ( post_password_required() ) {
 			<a href="#respond"> <?php _e( 'Add Yours?', 'beam' ); ?></a>
 			</h2>
 
-			<?php 
+			<?php
 			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 			<nav id="comment-nav-above" class="comment-navigation">
 				<h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'beam' ); ?></h1>
 				<div class="nav-previous"><?php previous_comments_link( esc_html__( '&larr; Older Comments', 'beam' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &rarr;', 'beam' ) ); ?></div>
 			</nav><!-- #comment-nav-above -->
-			<?php 
+			<?php
 			endif; // check for comment navigation ?>
 
 			<ul class="comment-list">
@@ -58,14 +58,14 @@ if ( post_password_required() ) {
 				?>
 			</ul><!-- .comment-list -->
 
-			<?php 
+			<?php
 			if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 			<nav id="comment-nav-below" class="comment-navigation">
 				<h1 class="screen-reader-text"><?php esc_html_e( 'Comment navigation', 'beam' ); ?></h1>
 				<div class="nav-previous"><?php previous_comments_link( esc_html__( '&larr; Older Comments', 'beam' ) ); ?></div>
 				<div class="nav-next"><?php next_comments_link( esc_html__( 'Newer Comments &rarr;', 'beam' ) ); ?></div>
 			</nav><!-- #comment-nav-below -->
-			<?php 
+			<?php
 			endif; // check for comment navigation
 
 		endif; // have_comments()
@@ -75,8 +75,8 @@ if ( post_password_required() ) {
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 		?>
 		<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'beam' ); ?></p>
-		<?php 
-		endif; 
+		<?php
+		endif;
 
 		comment_form(); ?>
 

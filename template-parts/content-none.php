@@ -4,10 +4,9 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package _beam
+ * @package Beam
  */
 ?>
-
 <section class="no-results not-found">
 	<header class="page-header">
 		<h1 class="page-title"><?php _e( 'Nothing Found', 'beam' ); ?></h1>
@@ -26,7 +25,7 @@
 		<?php else : ?>
 
 			<p><?php esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'beam' ); ?></p>
-		
+
 			<?php get_search_form(); ?>
 
 		<?php endif; ?>
