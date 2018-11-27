@@ -354,25 +354,6 @@ if ( ! function_exists( 'accelerate_entry_meta' ) ) :
 endif;
 
 /****************************************************************************************/
-
-
-add_action( 'admin_head', 'accelerate_favicon' );
-add_action( 'wp_head', 'accelerate_favicon' );
-/**
- * Fav icon for the site
- */
-function accelerate_favicon() {
-	if ( accelerate_options( 'accelerate_activate_favicon', '0' ) == '1' ) {
-		$accelerate_favicon        = accelerate_options( 'accelerate_favicon', '' );
-		$accelerate_favicon_output = '';
-		if ( ! function_exists( 'has_site_icon' ) || ( ! empty( $accelerate_favicon ) && ! has_site_icon() ) ) {
-			$accelerate_favicon_output .= '<link rel="shortcut icon" href="' . esc_url( $accelerate_favicon ) . '" type="image/x-icon" />';
-		}
-		echo $accelerate_favicon_output;
-	}
-}
-
-/****************************************************************************************/
 if ( ! function_exists( 'accelerate_darkcolor' ) ) :
 	/**
 	 * Generate darker color
@@ -414,7 +395,7 @@ function accelerate_custom_css() {
 	$primary_color = accelerate_options( 'accelerate_primary_color', '#77CC6D' );
 	$primary_dark  = accelerate_darkcolor( $primary_color, - 50 );
 	if ( $primary_color != '#77CC6D' ) {
-		$accelerate_internal_css .= ' .accelerate-button,blockquote,button,input[type=button],input[type=reset],input[type=submit]{background-color:' . $primary_color . '}a{color:' . $primary_color . '}#page{border-top:3px solid ' . $primary_color . '}#site-title a:hover{color:' . $primary_color . '}#search-form span,.main-navigation a:hover,.main-navigation ul li ul li a:hover,.main-navigation ul li ul li:hover>a,.main-navigation ul li.current-menu-ancestor a,.main-navigation ul li.current-menu-item a,.main-navigation ul li.current-menu-item ul li a:hover,.main-navigation ul li.current_page_ancestor a,.main-navigation ul li.current_page_item a,.main-navigation ul li:hover>a,.main-small-navigation li:hover > a{background-color:' . $primary_color . '}.site-header .menu-toggle:before{color:' . $primary_color . '}.main-small-navigation li:hover{background-color:' . $primary_color . '}.main-small-navigation ul>.current-menu-item,.main-small-navigation ul>.current_page_item{background:' . $primary_color . '}.footer-menu a:hover,.footer-menu ul li.current-menu-ancestor a,.footer-menu ul li.current-menu-item a,.footer-menu ul li.current_page_ancestor a,.footer-menu ul li.current_page_item a,.footer-menu ul li:hover>a{color:' . $primary_color . '}#featured-slider .slider-read-more-button,.slider-title-head .entry-title a{background-color:' . $primary_color . '}a.slide-prev,a.slide-next,.slider-title-head .entry-title a{background-color:' . $primary_color . '}#controllers a.active,#controllers a:hover{background-color:' . $primary_color . ';color:' . $primary_color . '}.format-link .entry-content a{background-color:' . $primary_color . '}#secondary .widget_featured_single_post h3.widget-title a:hover,.widget_image_service_block .entry-title a:hover{color:' . $primary_color . '}.pagination span{background-color:' . $primary_color . '}.pagination a span:hover{color:' . $primary_color . ';border-color:' . $primary_color . '}#content .comments-area a.comment-edit-link:hover,#content .comments-area a.comment-permalink:hover,#content .comments-area article header cite a:hover,.comments-area .comment-author-link a:hover{color:' . $primary_color . '}.comments-area .comment-author-link span{background-color:' . $primary_color . '}#wp-calendar #today,.comment .comment-reply-link:hover,.nav-next a,.nav-previous a{color:' . $primary_color . '}.widget-title span{border-bottom:2px solid ' . $primary_color . '}#secondary h3 span:before,.footer-widgets-area h3 span:before{color:' . $primary_color . '}#secondary .accelerate_tagcloud_widget a:hover,.footer-widgets-area .accelerate_tagcloud_widget a:hover{background-color:' . $primary_color . '}.footer-widgets-area a:hover{color:' . $primary_color . '}.footer-socket-wrapper{border-top:3px solid ' . $primary_color . '}.footer-socket-wrapper .copyright a:hover{color:' . $primary_color . '}a#scroll-up{background-color:' . $primary_color . '}.entry-meta .byline i,.entry-meta .cat-links i,.entry-meta a,.post .entry-title a:hover{color:' . $primary_color . '}.entry-meta .post-format i{background-color:' . $primary_color . '}.entry-meta .comments-link a:hover,.entry-meta .edit-link a:hover,.entry-meta .posted-on a:hover,.main-navigation li.menu-item-has-children:hover,.entry-meta .tag-links a:hover{color:' . $primary_color . '}.more-link span,.read-more{background-color:' . $primary_color . '}@media (max-width: 768px){.better-responsive-menu .sub-toggle{background:' . $primary_dark . '}}.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.woocommerce span.onsale {background-color: ' . $primary_color . ';}.woocommerce ul.products li.product .price .amount,.entry-summary .price .amount,.woocommerce .woocommerce-message::before{color: ' . $primary_color . ';},.woocommerce .woocommerce-message { border-top-color: ' . $primary_color . ';}';
+		$accelerate_internal_css .= ' .accelerate-button,blockquote,button,input[type=button],input[type=reset],input[type=submit]{background-color:' . $primary_color . '}a{color:' . $primary_color . '}#page{border-top:3px solid ' . $primary_color . '}#site-title a:hover{color:' . $primary_color . '}#search-form span,.main-navigation a:hover,.main-navigation ul li ul li a:hover,.main-navigation ul li ul li:hover>a,.main-navigation ul li.current-menu-ancestor a,.main-navigation ul li.current-menu-item a,.main-navigation ul li.current-menu-item ul li a:hover,.main-navigation ul li.current_page_ancestor a,.main-navigation ul li.current_page_item a,.main-navigation ul li:hover>a,.main-small-navigation li:hover > a{background-color:' . $primary_color . '}.site-header .menu-toggle:before{color:' . $primary_color . '}.main-small-navigation li:hover{background-color:' . $primary_color . '}.main-small-navigation ul>.current-menu-item,.main-small-navigation ul>.current_page_item{background:' . $primary_color . '}.footer-menu a:hover,.footer-menu ul li.current-menu-ancestor a,.footer-menu ul li.current-menu-item a,.footer-menu ul li.current_page_ancestor a,.footer-menu ul li.current_page_item a,.footer-menu ul li:hover>a{color:' . $primary_color . '}#featured-slider .slider-read-more-button,.slider-title-head .entry-title a{background-color:' . $primary_color . '}a.slide-prev,a.slide-next,.slider-title-head .entry-title a{background-color:' . $primary_color . '}#controllers a.active,#controllers a:hover{background-color:' . $primary_color . ';color:' . $primary_color . '}.format-link .entry-content a{background-color:' . $primary_color . '}#secondary .widget_featured_single_post h3.widget-title a:hover,.widget_image_service_block .entry-title a:hover{color:' . $primary_color . '}.pagination span{background-color:' . $primary_color . '}.pagination a span:hover{color:' . $primary_color . ';border-color:' . $primary_color . '}#content .comments-area a.comment-edit-link:hover,#content .comments-area a.comment-permalink:hover,#content .comments-area article header cite a:hover,.comments-area .comment-author-link a:hover{color:' . $primary_color . '}.comments-area .comment-author-link span{background-color:' . $primary_color . '}#wp-calendar #today,.comment .comment-reply-link:hover,.nav-next a,.nav-previous a{color:' . $primary_color . '}.widget-title span{border-bottom:2px solid ' . $primary_color . '}#secondary h3 span:before,.footer-widgets-area h3 span:before{color:' . $primary_color . '}#secondary .accelerate_tagcloud_widget a:hover,.footer-widgets-area .accelerate_tagcloud_widget a:hover{background-color:' . $primary_color . '}.footer-widgets-area a:hover{color:' . $primary_color . '}.footer-socket-wrapper{border-top:3px solid ' . $primary_color . '}.footer-socket-wrapper .copyright a:hover{color:' . $primary_color . '}a#scroll-up{background-color:' . $primary_color . '}.entry-meta .byline i,.entry-meta .cat-links i,.entry-meta a,.post .entry-title a:hover{color:' . $primary_color . '}.entry-meta .post-format i{background-color:' . $primary_color . '}.entry-meta .comments-link a:hover,.entry-meta .edit-link a:hover,.entry-meta .posted-on a:hover,.main-navigation li.menu-item-has-children:hover,.entry-meta .tag-links a:hover{color:' . $primary_color . '}.more-link span,.read-more{background-color:' . $primary_color . '}.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.woocommerce span.onsale {background-color: ' . $primary_color . ';}.woocommerce ul.products li.product .price .amount,.entry-summary .price .amount,.woocommerce .woocommerce-message::before{color: ' . $primary_color . ';},.woocommerce .woocommerce-message { border-top-color: ' . $primary_color . ';}';
 	}
 
 	if ( ! empty( $accelerate_internal_css ) ) {
@@ -659,73 +640,6 @@ function accelerate_custom_css_migrate() {
 }
 
 add_action( 'after_setup_theme', 'accelerate_custom_css_migrate' );
-
-/**
- * Function to transfer the favicon added in Customizer Options of theme to Site Icon in Site Identity section
- */
-function accelerate_site_icon_migrate() {
-	if ( get_option( 'accelerate_site_icon_transfer' ) ) {
-		return;
-	}
-
-	$accelerate_favicon = accelerate_options( 'accelerate_favicon', 0 );
-
-	// Migrate accelerate site icon.
-	if ( function_exists( 'has_site_icon' ) && ( ! empty( $accelerate_favicon ) && ! has_site_icon() ) ) {
-		// assigning theme name
-		$themename     = get_option( 'stylesheet' );
-		$themename     = preg_replace( "/\W/", "_", strtolower( $themename ) );
-		$theme_options = get_option( $themename );
-		$attachment_id = attachment_url_to_postid( $accelerate_favicon );
-
-		// Update site icon transfer options.
-		if ( $theme_options && $attachment_id ) {
-			update_option( 'site_icon', $attachment_id );
-			update_option( 'accelerate_site_icon_transfer', 1 );
-
-			// Remove old favicon options.
-			foreach ( $theme_options as $option_key => $option_value ) {
-				if ( in_array( $option_key, array( 'accelerate_favicon', 'accelerate_activate_favicon' ) ) ) {
-					unset( $theme_options[ $option_key ] );
-				}
-			}
-		}
-
-		// Finally, update accelerate theme options.
-		update_option( $themename, $theme_options );
-	}
-}
-
-add_action( 'after_setup_theme', 'accelerate_site_icon_migrate' );
-
-/**
- * Function to transfer the Header Logo added in Customizer Options of theme to Site Logo in Site Identity section
- */
-function accelerate_site_logo_migrate() {
-	if ( function_exists( 'the_custom_logo' ) && ! has_custom_logo( $blog_id = 0 ) ) {
-		$logo_url = accelerate_options( 'accelerate_header_logo_image' );
-
-		if ( $logo_url ) {
-			// assigning theme name
-			$themename               = get_option( 'stylesheet' );
-			$themename               = preg_replace( "/\W/", "_", strtolower( $themename ) );
-			$customizer_site_logo_id = attachment_url_to_postid( $logo_url );
-			set_theme_mod( 'custom_logo', $customizer_site_logo_id );
-
-			// Delete the old Site Logo theme_mod option.
-			$theme_options = get_option( $themename );
-
-			if ( isset( $theme_options['accelerate_header_logo_image'] ) ) {
-				unset( $theme_options['accelerate_header_logo_image'] );
-			}
-
-			// Finally, update accelerate theme options.
-			update_option( $themename, $theme_options );
-		}
-	}
-}
-
-add_action( 'after_setup_theme', 'accelerate_site_logo_migrate' );
 
 if ( ! function_exists( 'accelerate_related_posts_function' ) ) {
 

@@ -49,6 +49,12 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == Changelog ==
+= Version 1.3.7 - 2018-11-22 =
+* Added - Gutenberg compatibility
+* Tweak - Add alt attributes to missed img tags
+* Remove - Backward compatible for favicon
+* Remove - Backward compatible for header logo
+
 = Version 1.3.6 - 2018-09-05 =
 * Tweak - Added width and height attribute for slider
 * Update - Screenshot updated as per new wordpress.org guideline
