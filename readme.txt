@@ -153,6 +153,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+@version 2.2.4
+1. Fixed Menu Issue.
 @version 2.2.3
 1. Update string.
 @version 2.2.2

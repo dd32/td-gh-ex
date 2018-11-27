@@ -92,6 +92,29 @@
 }
 
 /*Dropdown Menu*/
+
+@media (min-width: 991px){
+.navbar-custom .dropdown-menu a > i.fa {
+    display: none;
+}
+}
+
+@media (min-width: 992px){
+.navbar-custom .dropdown-menu a  span:after{
+	position: absolute;
+	display: block;
+	right: 0px;
+	top: 50%;
+	margin-top: -6px;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: 0.938rem;
+	content: "\f105";
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+}
+
 .navbar-custom .dropdown-menu > li { /*margin: 0 20px;*/ padding: 0 20px;
     margin: 0; }
 .navbar-custom .dropdown-menu > li > a:focus,
@@ -107,6 +130,10 @@
 .navbar-custom .dropdown-menu > .active > a:focus {
     color: #fff;
     background-color: transparent;
+}
+.navbar-custom .dropdown a > i.fa {
+	padding-left: 7px;
+	font-size: 0.938rem;
 }
 .navbar-custom .dropdown-toggle:after {
 	position: absolute;
@@ -125,12 +152,12 @@
 .navbar-toggle .icon-bar + .icon-bar { margin-top: 8px; }
 .dropdown-menu { min-width: 180px; /*font-size: 11px;*/ }
 
+
 /*--------------------------------------------------------------
 	Menubar - Media Queries
 --------------------------------------------------------------*/
 @media (min-width: 991px) {
 	.navbar-transparent { background: transparent; padding-bottom: 0px; padding-top: 0px; margin: 0; }
-	.navbar-custom .dropdown-menu { position: absolute; display: block; visibility: hidden; opacity: 0; }
 	.navbar-custom .open > .dropdown-menu { visibility: visible; opacity: 1; }
 	.navbar-custom .dropdown-menu .dropdown-toggle:after {
 		position: absolute;    
@@ -166,6 +193,35 @@
 		color: #bbb;
 		white-space: nowrap;
 	}
+	
+	.navbar-custom .navbar-nav .dropdown-menu > li > a {
+		padding: 12px 0;
+	}
+	.navbar-custom .dropdown-menu {
+		position: static;
+		float: none;
+		width: auto;
+		margin-top: 0;
+		border: 0;
+		-webkit-box-shadow: none;
+		box-shadow: none;
+	}
+	.navbar-custom .dropdown a > i.fa {
+		position: absolute;
+		display: block;
+		right: 0;
+		top: 6px;
+		margin-top: 0;
+		padding-left: 0px;
+		width: 30px;
+		height: 30px;
+		text-align: center;
+		line-height: 1.7;
+		font-size: 1.200rem;
+	}
+	.navbar-custom .dropdown-menu .dropdown-menu { border-left: none; }
+	.navbar-custom .dropdown-menu.left-side .dropdown-menu { border-right: none; }
+	
 	.navbar-custom .navbar-nav .dropdown-menu > li > a:hover, 
 	.navbar-custom .navbar-nav .dropdown-menu > li > a:focus	{
 		color: #fff;
