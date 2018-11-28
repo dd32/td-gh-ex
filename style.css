@@ -4,7 +4,7 @@ Theme URI: http://www.beamtheme.com
 Author: Emir Muracevic
 Author URI: http://www.beamtheme.com/author/emirowski/
 Description: Beam is a Clean, Fast, Responsive and Customizable WordPress theme. Ready (and recommended) to use with Child themes. Translatation ready. Features four layout types and five page templates.
-Version: 1.4
+Version: 1.4.1
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: beam
@@ -4584,9 +4584,7 @@ print {
     border-radius: 4px
 }
 
-.file.has-name.is-empty .file-name,
-.footer-navigation ul ul,
-.footer-navigation ul ul ul {
+.file.has-name.is-empty .file-name {
     display: none
 }
 
@@ -5183,6 +5181,24 @@ print {
     align-items: center
 }
 
+.sidebar-left .column.content-area {
+    -webkit-order: 1;
+    -ms-flex-order: 1;
+    order: 1
+}
+
+.archive .format-aside .entry-title,
+.blog .format-aside .entry-title,
+.footer-navigation ul ul,
+.footer-navigation ul ul ul,
+.no-sidebar .column.widget-area {
+    display: none
+}
+
+figure {
+    margin: 0
+}
+
 .round-corners {
     border-radius: 5px
 }
@@ -5484,13 +5500,6 @@ a:hover {
     background-color: #faebd7
 }
 
-.archive .format-aside .entry-title,
-.blog .format-aside .entry-title,
-.infinite-scroll .posts-navigation,
-.infinite-scroll.neverending .site-footer {
-    display: none
-}
-
 #secondary ol,
 #secondary ul,
 #tertiary ol,
@@ -5499,6 +5508,11 @@ a:hover {
 .entry-content-sidebar ul {
     margin: 1em 0;
     padding: 0 0 1em
+}
+
+.infinite-scroll .posts-navigation,
+.infinite-scroll.neverending .site-footer {
+    display: none
 }
 
 .infinity-end.neverending .site-footer {

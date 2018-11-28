@@ -119,3 +119,18 @@ function beam_content_width()
   $GLOBALS['content_width'] = apply_filters('beam_content_width', 1170);
 }
 add_action('after_setup_theme', 'beam_content_width', 0);
+
+/**
+ * Primary menu fallback.
+ *
+ * If no Primary menu is defined show this.
+ *
+ */
+function beam_primary_menu_fallback()
+{
+    $beam_get_dashboard_url = get_dashboard_url();
+
+    ?>
+  <ul id="menu-fallback-menu" class="menu"><a class="navbar-item" href="/">Home</a><a class="navbar-item" href="<?php echo $beam_get_dashboard_url . "nav-menus.php" ?>">Set primary menu</a></ul>
+  <?php
+}

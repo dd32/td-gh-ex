@@ -60,7 +60,8 @@
                         // 'items_wrap'     => 'div',
                         //'menu_class'        => 'navbar-menu',
                         //'menu_id'           => 'primary-menu',
-                        'after'             => "</div>987",
+                        //'after'             => "</div>",
+                        'fallback_cb' => "beam_primary_menu_fallback",
                         'walker'            => new Navwalker())
                         );
                     ?>
