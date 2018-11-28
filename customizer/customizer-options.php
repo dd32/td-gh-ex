@@ -49,7 +49,7 @@ function customizer_library_topshop_options() {
     
     $panels[] = array(
         'id' => $panel,
-        'title' => __( 'Layout Settings', 'topshop' ),
+        'title' => __( 'TopShop Theme Settings', 'topshop' ),
         'priority' => '30'
     );
     
@@ -398,16 +398,24 @@ function customizer_library_topshop_options() {
     
 
 	// Colors
-	$section = 'topshop-styling';
+    $section = 'topshop-styling';
+    $font_websafe_choices = array( 'Arial' => 'Arial', 'Arial Black' => 'Arial Black', 'Helvetica' => 'Helvetica', 'Verdana' => 'Verdana', 'Georgia' => 'Georgia', 'Palatino' => 'Palatino', 'Garamond' => 'Garamond', 'Bookman' => 'Bookman', 'Courier' => 'Courier', 'Courier New' => 'Courier New', 'Times New Roman' => 'Times New Roman', 'Times' => 'Times' );
     $font_choices = customizer_library_get_font_choices();
 
 	$sections[] = array(
 		'id' => $section,
-		'title' => __( 'Style Settings', 'topshop' ),
+		'title' => __( 'TopShop Font Settings', 'topshop' ),
 		'priority' => '40'
 	);
 
-    
+    $options['topshop-disable-google-fonts'] = array(
+        'id' => 'topshop-disable-google-fonts',
+        'label'   => __( 'Disable Google Fonts', 'topshop' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'description' => __( 'This will let you only select from web-safe fonts', 'topshop' ),
+        'default' => 0,
+    );
     $options['topshop-body-font'] = array(
         'id' => 'topshop-body-font',
         'label'   => __( 'Body Font', 'topshop' ),
@@ -415,6 +423,14 @@ function customizer_library_topshop_options() {
         'type'    => 'select',
         'choices' => $font_choices,
         'default' => 'Open Sans'
+    );
+    $options['topshop-body-font-websafe'] = array(
+        'id' => 'topshop-body-font-websafe',
+        'label'   => __( 'Body Font', 'topshop' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $font_websafe_choices,
+        'default' => 'Arial'
     );
     $options['topshop-body-font-color'] = array(
         'id' => 'topshop-body-font-color',
@@ -430,6 +446,14 @@ function customizer_library_topshop_options() {
         'type'    => 'select',
         'choices' => $font_choices,
         'default' => 'Raleway'
+    );
+    $options['topshop-heading-font-websafe'] = array(
+        'id' => 'topshop-heading-font-websafe',
+        'label'   => __( 'Headings Font', 'topshop' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $font_websafe_choices,
+        'default' => 'Garamond'
     );
     $options['topshop-heading-font-color'] = array(
         'id' => 'topshop-heading-font-color',
@@ -451,7 +475,7 @@ function customizer_library_topshop_options() {
     
     $panels[] = array(
         'id' => $panel,
-        'title' => __( 'Layout Colors', 'topshop' ),
+        'title' => __( 'TopShop Layout Colors', 'topshop' ),
         'priority' => '40'
     );
     
@@ -570,44 +594,13 @@ function customizer_library_topshop_options() {
         'default' => '#777777',
     );
     
-    // Colors
-    $section = 'colors';
-
-    $sections[] = array(
-        'id' => $section,
-        'title' => __( 'Colors', 'topshop' ),
-        'priority' => '50'
-    );
-    
-    $options['topshop-main-color'] = array(
-        'id' => 'topshop-main-color',
-        'label'   => __( 'Main Color', 'topshop' ),
-        'section' => $section,
-        'type'    => 'color',
-        'default' => $primary_color,
-    );
-    $options['topshop-main-color-hover'] = array(
-        'id' => 'topshop-main-color-hover',
-        'label'   => __( 'Secondary Color', 'topshop' ),
-        'section' => $section,
-        'type'    => 'color',
-        'default' => $secondary_color,
-    );
-    
-    $options['topshop-help-colors'] = array(
-        'id' => 'topshop-help-colors',
-        'section' => $section,
-        'type'    => 'help',
-        'description' => __( '<b>Premium Extra Features:</b><br />Premium offers a bunch of custom color settings to change colors for the Header, Top Bar, Navigation & Footer', 'topshop' )
-    );
-    
     
     // Social Settings
     $section = 'topshop-social';
 
     $sections[] = array(
         'id' => $section,
-        'title' => __( 'Social Links', 'topshop' ),
+        'title' => __( 'TopShop Social Links', 'topshop' ),
         'priority' => '50'
     );
     
@@ -696,7 +689,7 @@ function customizer_library_topshop_options() {
 
     $sections[] = array(
         'id' => $section,
-        'title' => __( 'Website Text', 'topshop' ),
+        'title' => __( 'TopShop Theme Text', 'topshop' ),
         'priority' => '50'
     );
     
@@ -738,6 +731,37 @@ function customizer_library_topshop_options() {
         'section' => $section,
         'type'    => 'help',
         'description' => __( '<b>Premium Extra Features:</b><br />- Change the site attribution text to your own', 'topshop' )
+    );
+
+    // Colors
+    $section = 'colors';
+
+    $sections[] = array(
+        'id' => $section,
+        'title' => __( 'Colors', 'topshop' ),
+        'priority' => '60'
+    );
+    
+    $options['topshop-main-color'] = array(
+        'id' => 'topshop-main-color',
+        'label'   => __( 'Main Color', 'topshop' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => $primary_color,
+    );
+    $options['topshop-main-color-hover'] = array(
+        'id' => 'topshop-main-color-hover',
+        'label'   => __( 'Secondary Color', 'topshop' ),
+        'section' => $section,
+        'type'    => 'color',
+        'default' => $secondary_color,
+    );
+    
+    $options['topshop-help-colors'] = array(
+        'id' => 'topshop-help-colors',
+        'section' => $section,
+        'type'    => 'help',
+        'description' => __( '<b>Premium Extra Features:</b><br />Premium offers a bunch of custom color settings to change colors for the Header, Top Bar, Navigation & Footer', 'topshop' )
     );
     
 

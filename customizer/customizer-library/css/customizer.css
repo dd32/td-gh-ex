@@ -1,5 +1,7 @@
+#customize-theme-controls #accordion-section-header_image h3:hover,
 #customize-theme-controls #accordion-panel-topshop-panel-layout h3:hover,
 #customize-theme-controls #accordion-section-topshop-styling h3:hover,
+#customize-theme-controls #accordion-panel-topshop-panel-layout-colors h3:hover,
 #customize-theme-controls #accordion-section-colors h3:hover,
 #customize-theme-controls #accordion-section-topshop-social h3:hover,
 #customize-theme-controls #accordion-section-topshop-website h3:hover {
@@ -49,6 +51,7 @@
 
 #customize-control-blogdescription,
 #customize-control-topshop-header-image-logo-max-width,
+#customize-control-topshop-disable-google-fonts,
 #customize-control-topshop-header-layout,
 #customize-control-topshop-show-header-top-bar,
 #customize-control-topshop-blog-cats,

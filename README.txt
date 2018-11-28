@@ -70,6 +70,18 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.18
+* Styling fixes/tweaks
+* Neatened up Customizer theme settings
+* Added new Gutenberg template & compatibility for new WordPress Gutenberg editor
+* Added styling for Gutenberg blocks
+* Added settings to disable Google Fonts
+* Added a selection of web-safe fonts
+* Remove old deprecated code
+* Updated language .pot file
+Premium: Added setting to increase Social Footer icon size
+Premium: Added setting to adjust Social Footer icon spacing
+
 #### 1.3.17
 * Updated Theme Tags
 * Added setting to remove blog single page Next & Previous post links

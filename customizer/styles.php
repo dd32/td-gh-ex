@@ -14,6 +14,8 @@ if ( ! function_exists( 'customizer_library_topshop_build_styles' ) && class_exi
  * @return void
  */
 function customizer_library_topshop_build_styles() {
+
+    $websafe = ( get_theme_mod( 'topshop-disable-google-fonts', customizer_library_get_default( 'topshop-disable-google-fonts' ) ) == 1 ) ? '-websafe' : '';
     
     // Site Logo Max Width
     $setting = 'topshop-header-image-logo-max-width';
@@ -216,14 +218,18 @@ function customizer_library_topshop_build_styles() {
 
 
     // Body Font
-    $font = 'topshop-body-font';
+    $font = 'topshop-body-font'.$websafe;
     $fontmod = get_theme_mod( $font, customizer_library_get_default( $font ) );
-    $fontstack = customizer_library_get_font_stack( $fontmod );
+    if ( $websafe ) {
+		$fontstack = '\''.$fontmod.'\', sans-serif';
+	} else {
+		$fontstack = customizer_library_get_font_stack( $fontmod );
+	}
     
     $fontcolor = 'topshop-body-font-color';
     $fontcolormod = get_theme_mod( $fontcolor, customizer_library_get_default( $fontcolor ) );
 
-    if ( $fontmod != customizer_library_get_default( $font ) ) {
+    if ( $fontmod != customizer_library_get_default( $font ) || get_theme_mod( 'topshop-disable-google-fonts' ) == 1 ) {
 
         Customizer_Library_Styles()->add( array(
             'selectors' => array(
@@ -254,14 +260,18 @@ function customizer_library_topshop_build_styles() {
     
     
     // Heading Font
-    $hfont = 'topshop-heading-font';
+    $hfont = 'topshop-heading-font'.$websafe;
     $hfontmod = get_theme_mod( $hfont, customizer_library_get_default( $hfont ) );
-    $hfontstack = customizer_library_get_font_stack( $hfontmod );
+    if ( $websafe ) {
+		$hfontstack = '\''.$hfontmod.'\', sans-serif';
+	} else {
+		$hfontstack = customizer_library_get_font_stack( $hfontmod );
+	}
     
     $hfontcolor = 'topshop-heading-font-color';
     $hfontcolormod = get_theme_mod( $hfontcolor, customizer_library_get_default( $hfontcolor ) );
 
-    if ( $hfontmod != customizer_library_get_default( $hfont ) ) {
+    if ( $hfontmod != customizer_library_get_default( $hfont ) || get_theme_mod( 'topshop-disable-google-fonts' ) == 1 ) {
 
         Customizer_Library_Styles()->add( array(
             'selectors' => array(

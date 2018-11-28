@@ -35,70 +35,100 @@ function topshop_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'topshop_body_classes' );
 
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-    /**
-     * Filters wp_title to print a neat <title> tag based on what is being viewed.
-     *
-     * @param string $title Default title text for current view.
-     * @param string $sep Optional separator.
-     * @return string The filtered title.
-     */
-    function topshop_wp_title( $title, $sep ) {
-        if ( is_feed() ) {
-            return $title;
-        }
-
-        global $page, $paged;
-
-        // Add the blog name
-        $title .= get_bloginfo( 'name', 'display' );
-
-        // Add the blog description for the home/front page.
-        $site_description = get_bloginfo( 'description', 'display' );
-        if ( $site_description && ( is_home() || is_front_page() ) ) {
-            $title .= " $sep $site_description";
-        }
-
-        // Add a page number if necessary:
-        if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-            $title .= " $sep " . sprintf( __( 'Page %s', 'topshop' ), max( $paged, $page ) );
-        }
-
-        return $title;
-    }
-    add_filter( 'wp_title', 'topshop_wp_title', 10, 2 );
-
-    /**
-     * Title shim for sites older than WordPress 4.1.
-     *
-     * @link https://make.wordpress.org/core/2014/10/29/title-tags-in-4-1/
-     * @todo Remove this function when WordPress 4.3 is released.
-     */
-    function topshop_render_title() {
-        ?>
-        <title><?php wp_title( '|', true, 'right' ); ?></title>
-        <?php
-    }
-    add_action( 'wp_head', 'topshop_render_title' );
-endif;
-
 /**
- * Sets the authordata global when viewing an author archive.
- *
- * This provides backwards compatibility with
- * http://core.trac.wordpress.org/changeset/25574
- *
- * It removes the need to call the_post() and rewind_posts() in an author
- * template to print information about the author.
- *
- * @global WP_Query $wp_query WordPress Query object.
- * @return void
+ * Enqueue Google Fonts for Blocks Editor
  */
-function topshop_setup_author() {
-	global $wp_query;
+function customizer_topshop_editor_fonts() {
 
-	if ( $wp_query->is_author() && isset( $wp_query->post ) ) {
-		$GLOBALS['authordata'] = get_userdata( $wp_query->post->post_author );
+	// Font options
+	$fonts = array(
+		get_theme_mod( 'topshop-body-font', customizer_library_get_default( 'topshop-body-font' ) ),
+		get_theme_mod( 'topshop-heading-font', customizer_library_get_default( 'topshop-heading-font' ) )
+	);
+
+	$font_uri = customizer_library_get_google_font_uri( $fonts );
+
+	// Load Google Fonts
+	if ( !get_theme_mod( 'topshop-disable-google-fonts', customizer_library_get_default( 'topshop-disable-google-fonts' ) ) ) {
+		wp_enqueue_style( 'customizer_topshop_editor_fonts', $font_uri, array(), null, 'screen' );
+	}
+
+}
+add_action( 'enqueue_block_editor_assets', 'customizer_topshop_editor_fonts' );
+
+if ( ! function_exists( 'customizer_library_topshop_editor_styles' ) ) :
+/**
+ * Generates the fonts selected in the Customizer and enqueues it to the Blocks Editor
+ */
+function customizer_library_topshop_editor_styles() {
+	$bodyfontfam = get_theme_mod( 'topshop-body-font', customizer_library_get_default( 'topshop-body-font' ) );
+	$headingfontfam = get_theme_mod( 'topshop-heading-font', customizer_library_get_default( 'topshop-heading-font' ) );
+	if ( get_theme_mod( 'topshop-disable-google-fonts' ) == 1 ) {
+		$bodyfontfam = get_theme_mod( 'topshop-body-font-websafe', customizer_library_get_default( 'topshop-body-font-websafe' ) );
+		$headingfontfam = get_theme_mod( 'topshop-heading-font-websafe', customizer_library_get_default( 'topshop-heading-font-websafe' ) );
+	}
+
+	$editor_css = '.editor-styles-wrapper div.wp-block,
+				.editor-styles-wrapper div.wp-block p {
+					font-family: "' . esc_attr( $bodyfontfam ) . '", sans-serif;
+					font-size: 13px;
+					color: ' . sanitize_hex_color( get_theme_mod( 'topshop-body-font-color', customizer_library_get_default( 'topshop-body-font-color' ) ) ) . ';
+				}
+				.editor-post-title .editor-post-title__block .editor-post-title__input,
+				.editor-styles-wrapper .wp-block h1,
+				.editor-styles-wrapper .wp-block h2,
+				.editor-styles-wrapper .wp-block h3,
+				.editor-styles-wrapper .wp-block h4,
+				.editor-styles-wrapper .wp-block h5,
+				.editor-styles-wrapper .wp-block h6 {
+					font-family: "' . esc_attr( $headingfontfam ) . '", sans-serif;
+					color: ' . sanitize_hex_color( get_theme_mod( 'topshop-heading-font-color', customizer_library_get_default( 'topshop-heading-font-color' ) ) ) . ';
+				}
+				.wp-block-quote:not(.is-large),
+				.wp-block-quote:not(.is-style-large) {
+					border-left-color: ' . sanitize_hex_color( get_theme_mod( 'topshop-primary-color', customizer_library_get_default( 'topshop-primary-color' ) ) ) . ' !important;
+				}
+				.editor-styles-wrapper .wp-block h1 {
+					font-size: 32px;
+					margin-bottom: .55em;
+					font-weight: 500;
+				}
+				
+				.editor-styles-wrapper .wp-block h2 {
+					font-size: 28px;
+					margin-bottom: .65em;
+					font-weight: 500;
+				}
+				
+				.editor-styles-wrapper .wp-block h3 {
+					font-size: 22px;
+					margin-bottom: .8em;
+					font-weight: 500;
+				}
+				
+				.editor-styles-wrapper .wp-block h4 {
+					font-size: 20px;
+					margin-bottom: 1.1em;
+					font-weight: 500;
+				}
+				
+				.editor-styles-wrapper .wp-block h5 {
+					font-size: 16px;
+					margin-bottom: 1.3em;
+					font-weight: 500;
+				}
+				
+				.editor-styles-wrapper .wp-block h6 {
+					font-size: 14px;
+					margin-bottom: 1.4em;
+					font-weight: 500;
+				}';
+
+	if ( ! empty( $editor_css ) ) {
+		echo "\n<!-- Begin Custom CSS -->\n<style type=\"text/css\" id=\"topshop-custom-editor-css\">\n";
+		echo $editor_css;
+		echo "\n</style>\n<!-- End Custom CSS -->\n";
 	}
 }
-add_action( 'wp', 'topshop_setup_author' );
+endif;
+add_action( 'enqueue_block_editor_assets', 'customizer_library_topshop_editor_styles', 11 );

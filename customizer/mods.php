@@ -19,7 +19,9 @@ function customizer_topshop_theme_fonts() {
 	$font_uri = customizer_library_get_google_font_uri( $fonts );
 
 	// Load Google Fonts
-	wp_enqueue_style( 'customizer_topshop_theme_fonts', $font_uri, array(), null, 'screen' );
+	if ( !get_theme_mod( 'topshop-disable-google-fonts', customizer_library_get_default( 'topshop-disable-google-fonts' ) ) ) {
+		wp_enqueue_style( 'customizer_topshop_theme_fonts', $font_uri, array(), null, 'screen' );
+	}
 
 }
 add_action( 'wp_enqueue_scripts', 'customizer_topshop_theme_fonts' );

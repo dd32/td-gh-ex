@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.17' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.18' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -77,6 +77,9 @@ function topshop_theme_setup() {
 	add_theme_support( 'html5', array(
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
+
+	// Gutenberg Support
+	add_theme_support( 'align-wide' );
 	
 	// The custom header is used for the logo
 	add_theme_support( 'custom-header', array(
@@ -141,9 +144,11 @@ add_filter( 'dynamic_sidebar_params', 'topshop_change_widget_titles', 20 );
  * Enqueue scripts and styles.
  */
 function topshop_theme_scripts() {
-    wp_enqueue_style( 'topshop-google-body-font-default', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), TOPSHOP_THEME_VERSION );
-    wp_enqueue_style( 'topshop-google-heading-font-default', '//fonts.googleapis.com/css?family=Raleway:500,600,700,100,800,400,300', array(), TOPSHOP_THEME_VERSION );
-    
+	if ( !get_theme_mod( 'topshop-disable-google-fonts', customizer_library_get_default( 'topshop-disable-google-fonts' ) ) ) {
+		wp_enqueue_style( 'topshop-google-body-font-default', '//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), TOPSHOP_THEME_VERSION );
+		wp_enqueue_style( 'topshop-google-heading-font-default', '//fonts.googleapis.com/css?family=Raleway:500,600,700,100,800,400,300', array(), TOPSHOP_THEME_VERSION );
+	}
+	
 	wp_enqueue_style( 'topshop-font-awesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.7.0' );
 	wp_enqueue_style( 'topshop-style', get_stylesheet_uri(), array(), TOPSHOP_THEME_VERSION );
     wp_enqueue_style( 'topshop-woocommerce-style', get_template_directory_uri().'/templates/css/topshop-woocommerce-style.css', array(), TOPSHOP_THEME_VERSION );
@@ -341,3 +346,42 @@ function topshop_cat_columns_array_push_after( $src, $topshop_cat_in, $pos ) {
     }
     return $R;
 }
+
+/**
+ * Insert dismissable admin notices
+ */
+function topshop_admin_notice() {
+	$user_id = get_current_user_id();
+	
+	$response = wp_remote_get( 'https://kairaweb.com/wp-json/wp/v2/themes/topshop/' );
+	
+	if ( is_wp_error( $response ) ) {
+		return;
+	}
+	
+	$posts = json_decode( wp_remote_retrieve_body( $response ) );
+	
+	if ( empty( $posts ) ) {
+		return;
+	} else {
+		$message_id = trim( $posts[0]->free_notification_id );
+		$message 	= trim( $posts[0]->free_notification );
+		
+		if ( !empty( $message ) && !get_user_meta( $user_id, 'topshop_admin_notice_' .$message_id. '_dismissed' ) ) {
+			$class = 'notice notice-success is-dismissible';
+			printf( '<div class="%1$s"><p>%2$s</p><p><a href="?topshop-admin-notice-dismissed&topshop-admin-notice-id=%3$s">Dismiss this notice</a></p></div>', esc_attr( $class ), $message, $message_id );
+		}
+	}
+}
+add_action( 'admin_notices', 'topshop_admin_notice' );
+/**
+ * Dismiss admin notices
+ */
+function topshop_admin_notice_dismissed() {
+    $user_id = get_current_user_id();
+    if ( isset( $_GET['topshop-admin-notice-dismissed'] ) ) {
+    	$topshop_admin_notice_id = $_GET['topshop-admin-notice-id'];
+		add_user_meta( $user_id, 'topshop_admin_notice_' .$topshop_admin_notice_id. '_dismissed', 'true', true );
+	}
+}
+add_action( 'admin_init', 'topshop_admin_notice_dismissed' );

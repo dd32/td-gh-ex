@@ -5,6 +5,26 @@
 ( function( $ ) {
     
     $( window ).load( function() {
+
+        // Show / Hide Fonts Google/Websafe settings
+        guten_websafe_check();
+        $( '#customize-control-topshop-disable-google-fonts input[type=checkbox]' ).on( 'change', function() {
+            guten_websafe_check();
+        });
+        
+        function guten_websafe_check() {
+            if ( $( '#customize-control-topshop-disable-google-fonts input[type=checkbox]' ).is( ':checked' ) ) {
+                $( '#sub-accordion-section-topshop-styling #customize-control-topshop-body-font' ).hide();
+                $( '#sub-accordion-section-topshop-styling #customize-control-topshop-heading-font' ).hide();
+                $( '#sub-accordion-section-topshop-styling #customize-control-topshop-body-font-websafe' ).show();
+                $( '#sub-accordion-section-topshop-styling #customize-control-topshop-heading-font-websafe' ).show();
+            } else {
+                $( '#sub-accordion-section-topshop-styling #customize-control-topshop-body-font' ).show();
+                $( '#sub-accordion-section-topshop-styling #customize-control-topshop-heading-font' ).show();
+                $( '#sub-accordion-section-topshop-styling #customize-control-topshop-body-font-websafe' ).hide();
+                $( '#sub-accordion-section-topshop-styling #customize-control-topshop-heading-font-websafe' ).hide();
+            }
+        }
         
         var the_select_value = $( '#customize-control-topshop-slider-type select' ).val();
         topshop_customizer_slider_check( the_select_value );
