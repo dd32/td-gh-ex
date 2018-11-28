@@ -26,6 +26,24 @@ aamla = {
 		animateScroll();
 	},
 
+	aniScrollTop: function( element, to, duration ) {
+		var start = element.scrollTop,
+			change = to - start,
+			currentTime = 0,
+			increment = 20,
+			val;
+
+		var animateScroll = function() {
+			currentTime += increment;
+			val = aamla.easeInOutQuad( currentTime, start, change, duration );
+			element.scrollTop = val;
+			if ( currentTime < duration ) {
+				setTimeout( animateScroll, increment );
+			}
+		};
+		animateScroll();
+	},
+
 	//T = current time
 	//b = start value
 	//c = change in value
@@ -270,5 +288,65 @@ function headerWidgetToggle() {
 	}
 }
 headerWidgetToggle();
+
+/**
+ * Toggle a class on scroll to display scroll button.
+ *
+ * @since 1.0.0
+ */
+
+function toggleScrollClass() {
+	var scrlTotop,
+		scroll = function( $scrollTop ) {
+			if ( 300 < $scrollTop ) {
+				scrlTotop.classList.add( 'makeitvisible' );
+			} else {
+				scrlTotop.classList.remove( 'makeitvisible' );
+			}
+		},
+		raf = window.requestAnimationFrame ||
+		window.webkitRequestAnimationFrame ||
+		window.mozRequestAnimationFrame ||
+		window.msRequestAnimationFrame ||
+		window.oRequestAnimationFrame,
+		lastScrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+
+	scrlTotop = document.getElementsByClassName( 'scrl-to-top' );
+	if ( ! scrlTotop.length ) {
+		return;
+	}
+	scrlTotop = scrlTotop[0];
+	if ( raf ) {
+		loop();
+	}
+
+	function loop() {
+		var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+		if ( lastScrollTop === scrollTop ) {
+			raf( loop );
+			return;
+		} else {
+			lastScrollTop = scrollTop;
+
+			// Fire scroll function if scrolls vertically
+			scroll( lastScrollTop );
+			raf( loop );
+		}
+	}
+}
+toggleScrollClass();
+
+function scrollToTop() {
+	var scrlTotop;
+	scrlTotop = document.getElementsByClassName( 'scrl-to-top' );
+	if ( ! scrlTotop.length ) {
+		return;
+	}
+	scrlTotop = scrlTotop[0];
+	scrlTotop.addEventListener( 'click', function() {
+		aamla.aniScrollTop( document.documentElement || document.body, 0, 300 );
+	} );
+}
+scrollToTop();
 
 } )();

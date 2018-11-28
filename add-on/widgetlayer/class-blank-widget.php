@@ -31,6 +31,7 @@ class Blank_Widget extends \WP_Widget {
 		parent::__construct( 'aamla_blank_widget', esc_html__( 'Blank Widget', 'aamla' ), $widget_ops );
 		add_filter( 'aamla_widget_custom_css', [ $this, 'add_widget_css' ], 10, 2 );
 		add_filter( 'aamla_widgetlayer_widget_options', [ $this, 'widget_options' ] );
+		add_filter( 'aamla_widget_custom_classes', [ $this, 'widget_classes' ], 10, 3 );
 	}
 
 	/**
@@ -93,6 +94,21 @@ class Blank_Widget extends \WP_Widget {
 					'size' => 3,
 				],
 			],
+			'aamla_show_divider_line'          => [
+				'setting' => 'aamla_show_divider_line',
+				'label'   => esc_html__( 'Create full width horizontal divider line.', 'aamla' ),
+				'type'    => 'checkbox',
+			],
+			'aamla_show_divider_line'          => [
+				'setting' => 'aamla_show_divider_line',
+				'label'   => esc_html__( 'Horizontal divider line', 'aamla' ),
+				'default' => esc_html__( 'None', 'aamla' ),
+				'type'    => 'select',
+				'choices' => [
+					'wide-width' => esc_html__( 'Wide Line', 'aamla' ),
+					'full-bleed' => esc_html__( 'Full bleed line', 'aamla' ),
+				],
+			],
 		];
 
 		return array_merge( $blank_widget_options, $options );
@@ -127,5 +143,38 @@ class Blank_Widget extends \WP_Widget {
 			$css['tablet_only'][] = 'height: ' . absint( $settings['aamla_blank_widget_height_tablet'] ) . 'px';
 		}
 		return $css;
+	}
+
+	/**
+	 * Adds widget specific css to front end.
+	 *
+	 * @since 1.0.1
+	 *
+	 * @param array $classes  Array of css rules.
+	 * @param array $widget_data {
+	 *     Current widget's data to generate customized output.
+	 *     @type str   $widget_id  Widget ID.
+	 *     @type int   $widget_pos Widget position in widgetlayer widget-area.
+	 *     @type array $instance   Current widget instance settings.
+	 *     @type str   $id_base    Widget ID base.
+	 * }
+	 * @return array
+	 */
+	public function widget_classes( $classes, $widget_data ) {
+
+		$instance = $widget_data[2];
+		$id_base  = $widget_data[3];
+
+		if ( 'aamla_blank_widget' === $id_base ) {
+			if ( isset( $instance['aamla_show_divider_line'] ) ) {
+				if ( 'wide-width' === $instance['aamla_show_divider_line'] ) {
+					$classes[] = 'has-ww-line';
+				} elseif ( 'full-bleed' === $instance['aamla_show_divider_line'] ) {
+					$classes[] = 'has-fb-line';
+				}
+			}
+		}
+
+		return $classes;
 	}
 }

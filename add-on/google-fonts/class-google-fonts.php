@@ -186,7 +186,7 @@ class Google_Fonts {
 				] );
 			} elseif ( 'secondary' === $id ) {
 				$defaults = array_merge( $defaults, [
-					"aamla_{$id}_font_family"    => 'roboto-condensed',
+					"aamla_{$id}_font_family"    => 'lora',
 					"aamla_{$id}_font_selectors" => '.site-title, .entry-header-title',
 				] );
 			} else {

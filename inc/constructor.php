@@ -46,6 +46,7 @@ aamla_add_markup_for( 'sidebar_widgets', 'inside_sidebar' );
 // Display site footer items.
 aamla_add_markup_for( 'footer_widgets', 'inside_footer' );
 aamla_add_markup_for( 'footer_items', 'inside_footer' );
+aamla_add_markup_for( 'scroll_to_top', 'inside_footer' );
 
 // Include svg file at the bottom of '<body>' tag.
 add_action( 'wp_footer', 'aamla_svg_icons', 9999 );
@@ -653,6 +654,19 @@ function aamla_footer_widgets() {
  */
 function aamla_footer_items() {
 	aamla_markup( 'footer-items', [ 'aamla_footer_text' ] );
+}
+
+/**
+ * Scroll to top button markup.
+ *
+ * @since 1.0.0
+ */
+function aamla_scroll_to_top() {
+	printf(
+		'<button class="scrl-to-top">%1$s<span class="screen-reader-text">%2$s</span></button>',
+		aamla_get_icon( [ 'icon' => 'circle-up' ] ),
+		esc_html__( 'Scroll to top of the page', 'aamla' )
+	); // WPCS xss ok.
 }
 
 /**

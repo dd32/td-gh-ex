@@ -100,7 +100,7 @@ add_filter( 'aamla_get_attr_site_footer', 'aamla_site_footer_classes' );
  * Change excerpt length.
  *
  * Change excerpt length to be displayed on main, archive and search
- * pages, default excerpt length is 55.
+ * pages, default excerpt length is 20.
  *
  * @since 1.0.0
  *
@@ -109,7 +109,7 @@ add_filter( 'aamla_get_attr_site_footer', 'aamla_site_footer_classes' );
  */
 function aamla_excerpt_length( $length ) {
 	// Number of words to be shown in post excerpt.
-	$length = 40;
+	$length = 20;
 	return $length;
 }
 add_filter( 'excerpt_length', 'aamla_excerpt_length' );

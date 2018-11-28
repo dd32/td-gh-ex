@@ -3,7 +3,7 @@
 Created by: Vedathemes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 4.9.8
-Version: 1.1.1
+Version: 1.1.2
 PHP required : PHP 5.4+
 IE Browser Support: IE11+
 License: GNU General Public License v2 or later
@@ -103,6 +103,12 @@ Aamla WordPress Theme bundles the following third-party resources:
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
+
+= 1.1.2 - Nov 28 2018 =
+* Modify - Typography improvements.
+* Modify - Thumbnail size and excerpt text modification on index pages.
+* Add - Scroll-to-top functionality included.
+* Add - Horizontal divider line option added in widgetlayer blank widget.
 
 = 1.1.1 - Nov 15 2018 =
 * Error Fix - Deferred media should not run if media type is not an iframe.

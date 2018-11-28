@@ -131,7 +131,8 @@
 }
 
 .dp-featured-content .quick-action {
-	font-size: 12px;
+	font-size: 0.851rem;
+	line-height: 2.0564;
 	position: absolute;
 	top: 50%;
 	left: 50%;
@@ -188,8 +189,8 @@
 }
 
 .dp-title {
-	font-size: 1.25em;
-	line-height: 1.2;
+	font-size: 1.205rem;
+	line-height: 1.45228;
 	margin-bottom: 0.6125rem;
 }
 
@@ -204,7 +205,8 @@
 }
 
 .dp-meta {
-	font-size: 14px;
+	font-size: 0.87rem;
+	line-height: 2.01149;
 	letter-spacing: 0.5px;
 }
 
@@ -295,6 +297,11 @@
 
 	.dp-grid-4 .dp-entry {
 		width: 25%;
+	}
+
+	.dp-featured-content .quick-action {
+		font-size: 0.76rem;
+		line-height: 2.30263;
 	}
 }
 

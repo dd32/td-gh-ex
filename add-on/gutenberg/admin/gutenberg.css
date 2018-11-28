@@ -19,8 +19,9 @@
 }
 
 body.gutenberg-editor-page #editor .editor-post-title textarea.editor-post-title__input {
-	font-size: 2em;
+	font-size: 2.013rem;
 	font-weight: 700;
+	line-height: 1.7387;
 	margin-bottom: 0.4375rem;
 }
 
@@ -79,29 +80,50 @@ body.gutenberg-editor-page #editor .editor-block-list__block[data-align="right"]
 }
 
 .edit-post-visual-editor blockquote.wp-block-quote p {
-	font-size: 1.125rem;
-	line-height: 1.55556;
+	font-size: 1.15rem;
+	line-height: 1.52174;
 	color: #363636;
 }
 
+.wp-block-heading h1,
+.wp-block-heading h2,
+.wp-block-heading h3,
+.wp-block-heading h4,
+.wp-block-heading h5,
+.wp-block-heading h6 {
+	font-weight: bolder;
+	line-height: 1.2;
+	margin: 0 0 1.75rem;
+}
+
+.wp-block-heading h1 {
+	font-size: 2.013rem;
+	line-height: 1.7387;
+}
+
 .wp-block-heading h2 {
-	font-size: 2em;
+	font-size: 1.75rem;
+	line-height: 1.15;
 }
 
 .wp-block-heading h3 {
-	font-size: 1.75em;
+	font-size: 1.205rem;
+	line-height: 1.45228;
 }
 
 .wp-block-heading h4 {
-	font-size: 1.125em;
+	font-size: 1.150em;
+	line-height: 1.52174;
 }
 
 .wp-block-heading h5 {
-	font-size: 1em;
+	font-size: 1rem;
+	line-height: 1.75;
 }
 
 .wp-block-heading h6 {
-	font-size: 0.9em;
+	font-size: 0.87rem;
+	line-height: 2.01149;
 }
 
 .editor-rich-text__tinymce a {
@@ -132,8 +154,6 @@ body.gutenberg-editor-page #editor .editor-block-list__block[data-align="right"]
 .core-blocks-list .editor-rich-text__tinymce ol ul,
 .core-blocks-list .editor-rich-text__tinymce ul ol,
 .core-blocks-list .editor-rich-text__tinymce ul ul {
-	font-size: 0.9rem;
-	line-height: 1.94444;
 	margin: 0.875rem 0;
 }
 
@@ -141,8 +161,8 @@ body.gutenberg-editor-page #editor .editor-block-list__block[data-align="right"]
 .wp-block-preformatted pre,
 .wp-block-code .editor-plain-text {
 	font-family: "Andale Mono", AndaleMono, "Lucida Console", monospace;
-	font-size: 0.9rem;
-	line-height: 1.94444;
+	font-size: 0.87rem;
+	line-height: 2.01149;
 	padding: 0.8em 0;
 	border-width: 0;
 	border-radius: 0;
@@ -165,9 +185,9 @@ blockquote.wp-block-quote {
 }
 
 blockquote.wp-block-quote cite {
-	font-size: 0.8rem;
+	font-size: 0.851rem;
 	font-style: normal;
-	line-height: 2.1875;
+	line-height: 2.0564;
 	display: block;
 	margin-top: 0.4375rem;
 	text-transform: capitalize;
@@ -197,14 +217,14 @@ blockquote.wp-block-pullquote {
 }
 
 blockquote.wp-block-pullquote > .editor-rich-text p {
-	font-size: 1.125rem;
-	line-height: 1.55556;
+	font-size: 1.15rem;
+	line-height: 1.52174;
 }
 
 blockquote.wp-block-pullquote > .editor-rich-text cite {
-	font-size: 0.8rem;
+	font-size: 0.851rem;
 	font-style: normal;
-	line-height: 2.1875;
+	line-height: 2.0564;
 	display: block;
 	margin-top: 0.4375rem;
 	color: #757575;
@@ -321,9 +341,6 @@ ul.wp-block-gallery > li.blocks-gallery-item:first-child.has-add-item-button {
 	.editor-block-list__block.editor-block-list__block p {
 		font-size: 17px;
 	}
-	body.gutenberg-editor-page #editor .editor-post-title textarea.editor-post-title__input {
-		font-size: 2.5em;
-	}
 	body.gutenberg-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/image"] .editor-block-list__block-edit,
 	body.gutenberg-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/pullquote"] .editor-block-list__block-edit {
 		float: left;
@@ -343,6 +360,10 @@ ul.wp-block-gallery > li.blocks-gallery-item:first-child.has-add-item-button {
 }
 
 @media only screen and (min-width: 1025px) {
+	body.gutenberg-editor-page #editor .editor-post-title textarea.editor-post-title__input {
+		font-size: 2.315rem;
+		line-height: 1.51188;
+	}
 	body.gutenberg-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/image"] .editor-block-list__block-edit,
 	body.gutenberg-editor-page #editor .editor-block-list__block[data-align="left"][data-type="core/pullquote"] .editor-block-list__block-edit {
 		margin-left: -103px;
@@ -351,16 +372,22 @@ ul.wp-block-gallery > li.blocks-gallery-item:first-child.has-add-item-button {
 	body.gutenberg-editor-page #editor .editor-block-list__block[data-align="right"][data-type="core/pullquote"] .editor-block-list__block-edit {
 		margin-right: -103px;
 	}
+	.wp-block-heading h1 {
+		font-size: 2.315rem;
+		line-height: 1.51188;
+	}
+	blockquote.wp-block-quote cite {
+		font-size: 0.76rem;
+		line-height: 2.30263;
+	}
+	blockquote.wp-block-pullquote > .editor-rich-text cite {
+		font-size: 0.76rem;
+		line-height: 2.30263;
+	}
 	ul.wp-block-gallery.alignwide,
 	ul.wp-block-gallery.alignfull {
 		width: calc( 100% + 4px);
 		max-width: none;
 		margin-left: -2px;
-	}
-}
-
-@media only screen and (min-width: 1366px) {
-	body.gutenberg-editor-page #editor .editor-post-title textarea.editor-post-title__input {
-		font-size: 2.65em;
 	}
 }

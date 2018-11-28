@@ -30,7 +30,8 @@
 }
 
 .widgetlayer .has-featured-image .widget-title {
-	font-size: 1.35em;
+	font-size: 1.205rem;
+	line-height: 1.45228;
 	margin-bottom: 0.4375rem;
 }
 
@@ -41,6 +42,25 @@
 .widgetlayer .widget-thumbnail {
 	position: relative;
 	margin: 0 auto 1.3125rem;
+}
+
+.has-ww-line,
+.has-fb-line {
+	position: relative;
+}
+
+.has-ww-line:after,
+.has-fb-line:after {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	display: block;
+	width: 100vw;
+	height: 1px;
+	content: "";
+	-webkit-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+	background-color: #e6e6e6;
 }
 
 @media only screen and (min-width: 768px) {
@@ -57,6 +77,10 @@
 		margin: 0;
 		padding: 20px 10px;
 	}
+
+	.has-ww-line:after {
+		width: calc( 100% - 20px);
+	}
 }
 
 @media only screen and (min-width: 1025px) {
@@ -67,6 +91,10 @@
 
 	.widgetlayer .brick {
 		padding: 20px;
+	}
+
+	.has-ww-line:after {
+		width: calc( 100% - 40px);
 	}
 }
 
@@ -86,5 +114,9 @@
 
 	.widgetlayer .brick {
 		padding: 30px;
+	}
+
+	.has-ww-line:after {
+		width: calc( 100% - 60px);
 	}
 }
