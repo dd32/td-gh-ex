@@ -4,7 +4,7 @@
  * Description: Agncy is a beautiful news and blogging theme that has beautiful typography, powerful color customisation and an elegant, light layout. Customise your theme to the colours you need and upload your own logo. Enjoy reading even long texts with the beautiful font "Fira" and experience how fast font loading can be with an innovative font loading technique.
  * Author: WP Munich
  * Author URI: http://www.wp-munich.com
- * Version: 1.1.4
+ * Version: 1.1.5
  * Text Domain: agncy
  * Domain Path: /languages
  * License: GPL-2.0+
@@ -1398,31 +1398,6 @@ select[multiple] {
   border-radius: 0 3px 3px 0;
 }
 /* Add own formstyles, contact form 7 and gravity forms styles back in */
-.wp-block-button.alignwide > *,
-.wp-block-button.alignfull > * {
-  width: 100%;
-}
-.wp-block-button .wp-block-button__link,
-.wp-block-button .wp-block-button__link.has-background {
-  padding: 12px 30px;
-  border-radius: 3px;
-  text-decoration: none;
-  -webkit-transition: all ease 0.2s;
-  transition: all ease 0.2s;
-  cursor: pointer;
-  font-weight: 300;
-  margin-bottom: 24px;
-}
-.wp-block-button .wp-block-button__link:hover,
-.wp-block-button .wp-block-button__link.has-background:hover {
-  background-color: #f2f2f2;
-  color: #111;
-}
-.wp-block-button .wp-block-button__link:hover.has-background,
-.wp-block-button .wp-block-button__link.has-background:hover.has-background {
-  background-color: #f2f2f2 !important;
-  color: #111 !important;
-}
 .comment-submit {
   color: #fff;
 }
@@ -4314,30 +4289,32 @@ img {
  *
  * The default styles are the mobile styles.
  */
-[class^='wp-block'] {
+[class^='wp-block']:not([class*='__']) {
   margin: 0 0 24px;
   min-width: 25%;
+  z-index: 0;
+  position: relative;
 }
-[class^='wp-block'].alignleft,
-[class^='wp-block'].alignright {
-  max-width: calc(50% -  32px);
+[class^='wp-block']:not([class*='__']).alignleft,
+[class^='wp-block']:not([class*='__']).alignright {
+  max-width: calc(50% -  16px);
 }
-[class^='wp-block'].alignleft {
-  margin-right: 32px;
+[class^='wp-block']:not([class*='__']).alignleft {
+  margin-right: 16px;
 }
-[class^='wp-block'].alignright {
-  margin-left: 32px;
+[class^='wp-block']:not([class*='__']).alignright {
+  margin-left: 16px;
 }
-[class^='wp-block'] figcaption {
+[class^='wp-block']:not([class*='__']) figcaption {
   font-size: 13px;
   line-height: 1.84615385em;
   margin-top: 12px;
 }
 @media (min-width: 768px) {
-  [class^='wp-block'] {
+  [class^='wp-block']:not([class*='__']) {
     margin: 0 0 27px;
   }
-  [class^='wp-block'] figcaption {
+  [class^='wp-block']:not([class*='__']) figcaption {
     font-size: 15px;
     line-height: 1.8em;
     margin-top: 13.5px;
@@ -4352,6 +4329,46 @@ img {
  */
 .wp-block-audio audio {
   width: 100%;
+}
+/**
+ * Audio Block
+ * Needed styles to modify the default look of the Gutenberg core block.
+ *
+ * @see: https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/button/
+ */
+.wp-block-button.alignwide > *,
+.wp-block-button.alignfull > * {
+  width: 100%;
+}
+.wp-block-button .wp-block-button__link,
+.wp-block-button .wp-block-button__link.has-background {
+  padding: 12px 32px;
+  border-radius: 8px;
+  text-decoration: none;
+  -webkit-transition: all ease 0.2s;
+  transition: all ease 0.2s;
+  cursor: pointer;
+  font-weight: 300;
+}
+.wp-block-button .wp-block-button__link:hover,
+.wp-block-button .wp-block-button__link.has-background:hover {
+  background-color: #f2f2f2;
+  color: #111;
+}
+.wp-block-button .wp-block-button__link:hover.has-background,
+.wp-block-button .wp-block-button__link.has-background:hover.has-background {
+  background-color: #f2f2f2 !important;
+  color: #111 !important;
+}
+.wp-block-button.is-style-squared .wp-block-button__link,
+.wp-block-button.is-style-squared .wp-block-button__link.has-background {
+  border-radius: 0;
+}
+@media (min-width: 768px) {
+  .wp-block-button .wp-block-button__link,
+  .wp-block-button .wp-block-button__link.has-background {
+    padding: 13.5px 30px;
+  }
 }
 /**
  * Paragraph Block
@@ -4439,6 +4456,18 @@ p.has-background {
  *
  * @see: https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/image
  */
+.wp-block-image .alignleft,
+.wp-block-image .alignright {
+  max-width: calc(25% -  16px);
+  margin-top: 0;
+  margin-bottom: 24px;
+}
+.wp-block-image .alignleft {
+  margin-right: 16px;
+}
+.wp-block-image .alignright {
+  margin-left: 16px;
+}
 .wp-block-image img {
   margin: 0 auto;
   max-width: 100%;
@@ -4450,10 +4479,20 @@ p.has-background {
   margin-top: 12px;
 }
 @media (min-width: 768px) {
+  .wp-block-image .alignleft,
+  .wp-block-image .alignright {
+    margin-bottom: 27px;
+  }
   .wp-block-image figcaption {
     font-size: 15px;
     line-height: 1.8em;
     margin-top: 13.5px;
+  }
+}
+@media (min-width: 992px) {
+  .wp-block-image .alignleft,
+  .wp-block-image .alignright {
+    max-width: calc(50% -  16px);
   }
 }
 /**
@@ -4566,7 +4605,7 @@ ul.wp-block-gallery.alignright {
  * @see: https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/pullquote/
  */
 .wp-block-pullquote {
-  padding: 48px 0;
+  padding: 48px 16px;
 }
 .wp-block-pullquote blockquote {
   margin: 0;
@@ -4763,26 +4802,26 @@ ul.wp-block-gallery.alignright {
 }
 @media (min-width: 992px) {
   .wide-content .alignwide {
-    margin-left: -197.33333333px;
-    margin-right: -197.33333333px;
-    width: 992px;
+    margin-left: -156.33333333px;
+    margin-right: -156.33333333px;
+    width: 906px;
     max-width: none;
   }
   .wide-content .alignwide-padding {
-    padding-left: 197.33333333px;
-    padding-right: 197.33333333px;
+    padding-left: 156.33333333px;
+    padding-right: 156.33333333px;
   }
 }
 @media (min-width: 1200px) {
   .wide-content .alignwide {
-    margin-left: -232px;
-    margin-right: -232px;
-    width: 1200px;
+    margin-left: -189.66666667px;
+    margin-right: -189.66666667px;
+    width: 1106px;
     max-width: none;
   }
   .wide-content .alignwide-padding {
-    padding-left: 232px;
-    padding-right: 232px;
+    padding-left: 189.66666667px;
+    padding-right: 189.66666667px;
   }
 }
 /**
@@ -5097,11 +5136,6 @@ ul.wp-block-gallery.alignright {
   }
   .the_loop article .read-more-link:before {
     height: 27px;
-  }
-  .wp-block-button .wp-block-button__link,
-  .wp-block-button .wp-block-button__link.has-background {
-    padding: 13.5px 30px;
-    margin-bottom: 27px;
   }
   .btn_agncy {
     padding: 6.75px 30px;
