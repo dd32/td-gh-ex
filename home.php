@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.2.7
+* @version   1.2.8
 */
 ?>
 
@@ -17,7 +17,7 @@ get_template_part( 'template-parts/content',esc_html( get_theme_mod('avik_order_
 <!-- Section Who we are -->
 
 <?php
-$whowearecontent = esc_url( get_theme_mod( 'avik_page_id_whoweare' ));
+$whowearecontent = esc_attr( get_theme_mod( 'avik_page_id_whoweare' ));
 $whoweare_count = 1;
 $mod = new WP_Query( array( 'page_id' => $whowearecontent ,'showposts' => $whoweare_count ) );
 while ( $mod->have_posts() ) : $mod->the_post(); { ?>
@@ -65,7 +65,7 @@ while ( $mod->have_posts() ) : $mod->the_post(); { ?>
         <div class="tab__subheading tab-fade animated text-right"><h2><?php echo esc_html( get_theme_mod( 'avik_subtitle_services')); ?></h2></div>
         <ul class="tabs__list cf">
           <?php
-          $services_cat = esc_url( get_theme_mod('avik_services_category'));
+          $services_cat = esc_attr( get_theme_mod('avik_services_category'));
           $services_count =4;
           $new_query = new WP_Query( array( 'cat' => $services_cat  , 'showposts' => $services_count ));
           while ( $new_query->have_posts() ) : $new_query->the_post(); ?>

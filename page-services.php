@@ -7,7 +7,7 @@ Template Post Type: post, page, product
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.2.7
+* @version   1.2.8
 *
 */
 
@@ -40,7 +40,7 @@ if(is_single()) { get_header('post'); } else { get_header(); } ?>
 				</div>
 				<div class="tabs__list cf">
 					<?php
-					$services_cat = esc_url( get_theme_mod('avik_services_category'));
+					$services_cat = esc_attr( get_theme_mod('avik_services_category'));
 					$services_count =4;
 					$new_query = new WP_Query( array( 'cat' => $services_cat  , 'showposts' => $services_count ));
 					while ( $new_query->have_posts() ) : $new_query->the_post(); ?>

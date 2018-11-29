@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.7
+ * @version   1.2.8
  */
  ?>
 
@@ -17,7 +17,7 @@
 			      <span id="typed"></span>
         </div>
         <?php
-             $whowearecontent = esc_url( get_theme_mod( 'avik_page_id_whoweare' ));
+             $whowearecontent = esc_attr( get_theme_mod( 'avik_page_id_whoweare' ));
              $whoweare_count = 1;
              $mod = new WP_Query( array( 'page_id' => $whowearecontent ,'showposts' => $whoweare_count ) );
              while ( $mod->have_posts() ) : $mod->the_post(); { ?>

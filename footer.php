@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.2.7
+* @version   1.2.8
 */
 ?>
 </div> <!--Content -->
@@ -21,9 +21,12 @@
         &copy; <?php echo esc_html(date("Y")); echo " "; echo bloginfo('name'); ?>
       </p>
     <?php endif; ?>
-    <?php if ( false == esc_html( get_theme_mod( 'avik_enable_power_footer', false) )) :?>
-      <p class="title-power"><?php echo esc_html( get_theme_mod( 'avik_title_power_footer')); ?></p>
-    <?php endif; ?>
+    <p class="title-power">
+      <?php
+      $avik_theme_author = esc_url( 'https://www.denisfranchi.com/' );
+      printf( esc_html__( 'Avik by %1$s', 'avik' ), '<a href="'.$avik_theme_author.'" rel="designer">Franchi Design</a>' );
+      ?>
+    </p>
   </div>
 </footer>
 </div><!-- #page -->

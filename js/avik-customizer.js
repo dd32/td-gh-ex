@@ -3,7 +3,7 @@
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.2.7
+ * version   1.2.8
  */
 
 /* TABLE OF CONTENT
@@ -264,13 +264,7 @@ wp.customize( 'avik_title_blog', function( value ) {
 ## 6 Footer */
 /* ------------------------------------------------------------------------- */
 
-// Title "Power by" Footer
-wp.customize( 'avik_title_power_footer', function( value ) {
-	value.bind( function( newval ) {
-		$( 'p.title-power' ).html( newval );
 
-	} );
-} );
 
 /* ------------------------------------------------------------------------- *
 ## 7 Color Filter Header Home */

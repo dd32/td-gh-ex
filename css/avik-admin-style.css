@@ -4,7 +4,7 @@
 * @link https://www.denisfranchi.com
 *
 * @package Avik
-* @version   1.2.7
+* @version   1.2.8
 */
 
 /* TABLE OF CONTENT
@@ -14,8 +14,9 @@
 3 - Tab
 4 - Welkome
 5 - Guides
-6 - Support
-7 - Button
+6 - Pro Version
+7 - Support
+8 - Button
 
 */
 
@@ -41,7 +42,7 @@
 
 .text-support h1{
   color:#fff;
-  font-size: 40px;
+  font-size: 32px;
 }
 
 .text-support h5{
@@ -61,7 +62,7 @@
 }
 
 h3.avik-welkome-support-title {
-  font-size: 45px;
+  font-size: 32px;
 }
 
 p.avik-welkome-support {
@@ -104,6 +105,7 @@ p.avik-welkome-support {
   padding: 6px 12px;
   border: 1px solid #ccc;
   border-top: none;
+  min-height: 450px;
 }
 
 .tabcontent {
@@ -129,6 +131,11 @@ p.avik-welkome-support {
   float: right;
   color:#000;
 }
+
+#WELCOME a{
+  text-decoration: none;
+}
+
 
 /* ------------------------------------------------------------------------- *
 ##  5 Guides */
@@ -184,7 +191,25 @@ button.avik-button-guide-admin-support:hover{
 }
 
 /* ------------------------------------------------------------------------- *
-##  6 Support */
+##  6 Pro Version */
+/* ------------------------------------------------------------------------- */
+
+img.avik-pro-support-img{
+  float: right;
+}
+
+ul.avik-ul-support{
+  list-style-type: square;
+  padding-left: 2em;
+}
+
+.avik-ul-support li{
+  font-size: 16px;
+}
+
+
+/* ------------------------------------------------------------------------- *
+##  7 Support */
 /* ------------------------------------------------------------------------- */
 
 #SUPPORT i{
@@ -193,8 +218,12 @@ button.avik-button-guide-admin-support:hover{
   color:#000;
 }
 
+#SUPPORT a{
+  text-decoration: none;
+}
+
 /* ------------------------------------------------------------------------- *
-##  7 Button */
+##  8 Button */
 /* ------------------------------------------------------------------------- */
 
 
@@ -206,7 +235,6 @@ button.avik-button-admin-support{
   text-align: center;
   text-decoration: none;
   font-size: 14px;
-  margin-left: 88%;
 }
 
 button.avik-button-admin-support:hover{

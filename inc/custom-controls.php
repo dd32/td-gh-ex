@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.2.7
+* @version   1.2.8
 */
 
 /* TABLE OF CONTENT
@@ -29,9 +29,8 @@
 3.1 - Section Team
 3.2 - Social Team Who we are
 3.3 - Blog
-3.4 - Footer
-3.5 - Social
-3.6 - Filter Header Home
+3.4 - Social
+3.5 - Filter Header Home
 
 
 4 - General Sanitization
@@ -547,21 +546,7 @@ function avik_enable_carousel($control) {
 }
 
 /* --------------------------------------*
-##  3.4 Footer */
-/* -------------------------------------- */
-
-// Power by
-
-function avik_enable_power_footer($control) {
-
-  $option = $control->manager->get_setting('avik_enable_power_footer');
-
-  return $option->value() == 'avik_title_power_footer';
-
-}
-
-/* --------------------------------------*
-##  3.5 Social */
+##  3.4 Social */
 /* -------------------------------------- */
 
 // Facebook
@@ -676,7 +661,7 @@ function avik_enable_github_social($control) {
 
 
 /* --------------------------------------*
-##  3.6 Filter Header Home */
+##  3.5 Filter Header Home */
 /* -------------------------------------- */
 
 // Color Filter Header Home

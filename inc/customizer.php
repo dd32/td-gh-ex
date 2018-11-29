@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.2.7
+* @version   1.2.8
 */
 
 /* TABLE OF CONTENT
@@ -2706,38 +2706,38 @@ function avik_customize_register( $wp_customize ) {
 																														'priority'=> 10,
 																													)) );
 
-																													// Enable/Disable "power by" Footer
+																													/* ------------------------------------------------------------------------------------------------------------*
+																													##  Pro Version
 
-																													$wp_customize->add_setting( 'avik_enable_power_footer',
-																													array(
-																														'default'   => 0,
-																														'transport' => 'refresh',
-																														'sanitize_callback' => 'avik_switch_sanitization'
-																													));
 
-																													$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_power_footer',
-																													array(
-																														'label'   => __( 'Enable/Disable (power by).','avik' ),
-																														'section' => 'avik_section_settings_footer',
-																														'priority'=> 20,
-																													)) );
 
-																													// Title "power by"
 
-																													$wp_customize->add_setting( 'avik_title_power_footer', array(
-																														'capability'        => 'edit_theme_options',
-																														'default'           => '',
-																														'transport'         => 'postMessage',
-																														'sanitize_callback' => 'wp_filter_nohtml_kses',
-																													) );
 
-																													$wp_customize->add_control( 'avik_title_power_footer', array(
-																														'type'            => 'text',
-																														'section'         => 'avik_section_settings_footer',
-																														'active_callback' => 'avik_enable_power_footer',
-																														'priority'        => 30,
-																														'label'           => __( 'Custom (Power by)','avik' ),
-																													) );
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+																													/* ------------------------------------------------------------------------------------------------------------*/
 
 																													/* ------------------------------------------------------------------------------------------------------------*
 																													##  2.11 Page 404

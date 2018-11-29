@@ -4,7 +4,7 @@ Theme Name: Avik
 Theme URI: http://denisfranchi.com/
 Author: http://denisfranchi.com/
 Author URI: http://denisfranchi.com/
-Version: 1.2.7
+Version: 1.2.8
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: avik
@@ -247,16 +247,40 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 All images included in Avik Theme are taken from:
 
-https://www.pexels.com
+https://pixabay.com/
 
-CC0 License
-✓ Free for personal and commercial use
-✓ No attribution required
+Using Images and Videos
+Images and Videos on Pixabay are released under Creative Commons CC0. To the extent possible under law, uploaders of Pixabay have waived their copyright and related or neighboring rights to these Images and Videos. You are free to adapt and use them for commercial purposes without attributing the original author or source. Although not required, a link back to Pixabay is appreciated.
 
-Pexels License
-✓ Free for personal and commercial use
-✓ No attribution required
+Please be aware:
 
+a) Imagery depicting identifiable persons, logos, brands, etc. may be subject to additional copyrights, property rights, privacy rights, trademarks etc. and may require the consent of a third party or the license of these rights - particularly for commercial applications.
+
+b) Images and Videos may not be used in a way that shows identifiable persons in a disgraceful light, or to imply endorsement of products and services by depicted persons, brands, and organisations - unless permission was granted.
+
+CC0 Creative Commons
+Libera per usi commerciali
+Attribuzione non richiesta
+
+Link Images included in Avik
+
+Screenshot: https://pixabay.com/it/new-york-city-skyline-waterfront-962794/
+
+Header Static: https://pixabay.com/it/new-york-city-skyline-waterfront-962794/
+
+Header Static 2: https://pixabay.com/it/esposizione-a-lungo-berlino-wansee-2135019/
+
+Services Page: https://pixabay.com/it/lampadina-idea-lavoratori-autonomi-3104355/
+
+Who We Are Page: https://pixabay.com/it/candela-luce-lume-di-candela-fiamma-2038736/
+
+Page 404: https://pixabay.com/it/educazione-saggezza-3115347/
+
+Default-Avik: https://pixabay.com/it/home-office-workstation-ufficio-336378/
+
+Avik-Pro-Version: https://pixabay.com/it/home-office-workstation-ufficio-336378/
+
+----------------------------------------------------------------------------------------------
 
 ==  Copyright  ==
 
