@@ -2253,11 +2253,11 @@ msgstr ""
 msgid "Theme Specific Customizations For %s."
 msgstr ""
 
-#: inc/customizer/customizer.php:589
+#: inc/customizer/customizer.php:585
 msgid "Are you sure you want to reset your theme customizations?"
 msgstr ""
 
-#: inc/customizer/customizer.php:590
+#: inc/customizer/customizer.php:586
 msgid "Reset Customizations"
 msgstr ""
 
