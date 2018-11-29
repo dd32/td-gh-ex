@@ -23,37 +23,100 @@ function conica_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'conica_body_classes' );
 
-if ( version_compare( $GLOBALS['wp_version'], '4.1', '<' ) ) :
-	/**
-	 * Filters wp_title to print a neat <title> tag based on what is being viewed.
-	 *
-	 * @param string $title Default title text for current view.
-	 * @param string $sep Optional separator.
-	 * @return string The filtered title.
-	 */
-	function conica_wp_title( $title, $sep ) {
-		if ( is_feed() ) {
-			return $title;
-		}
+/**
+ * Enqueue Google Fonts for Blocks Editor
+ */
+function customizer_conica_editor_fonts() {
 
-		global $page, $paged;
+	// Font options
+	$fonts = array(
+		get_theme_mod( 'conica-body-font', customizer_library_get_default( 'conica-body-font' ) ),
+		get_theme_mod( 'conica-heading-font', customizer_library_get_default( 'conica-heading-font' ) )
+	);
 
-		// Add the blog name
-		$title .= get_bloginfo( 'name', 'display' );
+	$font_uri = customizer_library_get_google_font_uri( $fonts );
 
-		// Add the blog description for the home/front page.
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			$title .= " $sep $site_description";
-		}
-
-		// Add a page number if necessary:
-		if ( ( $paged >= 2 || $page >= 2 ) && ! is_404() ) {
-			$title .= " $sep " . sprintf( esc_html__( 'Page %s', 'conica' ), max( $paged, $page ) );
-		}
-
-		return $title;
+	// Load Google Fonts
+	if ( !get_theme_mod( 'conica-disable-google-fonts', customizer_library_get_default( 'conica-disable-google-fonts' ) ) ) {
+		wp_enqueue_style( 'customizer_conica_editor_fonts', $font_uri, array(), null, 'screen' );
 	}
-	add_filter( 'wp_title', 'conica_wp_title', 10, 2 );
 
+}
+add_action( 'enqueue_block_editor_assets', 'customizer_conica_editor_fonts' );
+
+if ( ! function_exists( 'customizer_library_conica_editor_styles' ) ) :
+/**
+ * Generates the fonts selected in the Customizer and enqueues it to the Blocks Editor
+ */
+function customizer_library_conica_editor_styles() {
+	$bodyfontfam = get_theme_mod( 'conica-body-font', customizer_library_get_default( 'conica-body-font' ) );
+	$headingfontfam = get_theme_mod( 'conica-heading-font', customizer_library_get_default( 'conica-heading-font' ) );
+	if ( get_theme_mod( 'conica-disable-google-fonts' ) == 1 ) {
+		$bodyfontfam = get_theme_mod( 'conica-body-font-websafe', customizer_library_get_default( 'conica-body-font-websafe' ) );
+		$headingfontfam = get_theme_mod( 'conica-heading-font-websafe', customizer_library_get_default( 'conica-heading-font-websafe' ) );
+	}
+
+	$editor_css = '.editor-styles-wrapper div.wp-block,
+				.editor-styles-wrapper div.wp-block p {
+					font-family: "' . esc_attr( $bodyfontfam ) . '", sans-serif;
+					font-size: 14px;
+					color: ' . sanitize_hex_color( get_theme_mod( 'conica-body-font-color', customizer_library_get_default( 'conica-body-font-color' ) ) ) . ';
+				}
+				.editor-post-title .editor-post-title__block .editor-post-title__input,
+				.editor-styles-wrapper .wp-block h1,
+				.editor-styles-wrapper .wp-block h2,
+				.editor-styles-wrapper .wp-block h3,
+				.editor-styles-wrapper .wp-block h4,
+				.editor-styles-wrapper .wp-block h5,
+				.editor-styles-wrapper .wp-block h6 {
+					font-family: "' . esc_attr( $headingfontfam ) . '", sans-serif;
+					color: ' . sanitize_hex_color( get_theme_mod( 'conica-heading-font-color', customizer_library_get_default( 'conica-heading-font-color' ) ) ) . ';
+				}
+				.wp-block-quote:not(.is-large),
+				.wp-block-quote:not(.is-style-large) {
+					border-left-color: ' . sanitize_hex_color( get_theme_mod( 'conica-primary-color', customizer_library_get_default( 'conica-primary-color' ) ) ) . ' !important;
+				}
+				.editor-styles-wrapper .wp-block h1 {
+					font-size: 32px;
+					margin-bottom: .55em;
+					font-weight: 500;
+				}
+				
+				.editor-styles-wrapper .wp-block h2 {
+					font-size: 28px;
+					margin-bottom: .65em;
+					font-weight: 500;
+				}
+				
+				.editor-styles-wrapper .wp-block h3 {
+					font-size: 22px;
+					margin-bottom: .8em;
+					font-weight: 500;
+				}
+				
+				.editor-styles-wrapper .wp-block h4 {
+					font-size: 20px;
+					margin-bottom: 1.1em;
+					font-weight: 500;
+				}
+				
+				.editor-styles-wrapper .wp-block h5 {
+					font-size: 16px;
+					margin-bottom: 1.3em;
+					font-weight: 500;
+				}
+				
+				.editor-styles-wrapper .wp-block h6 {
+					font-size: 14px;
+					margin-bottom: 1.4em;
+					font-weight: 500;
+				}';
+
+	if ( ! empty( $editor_css ) ) {
+		echo "\n<!-- Begin Custom CSS -->\n<style type=\"text/css\" id=\"conica-custom-editor-css\">\n";
+		echo $editor_css;
+		echo "\n</style>\n<!-- End Custom CSS -->\n";
+	}
+}
 endif;
+add_action( 'enqueue_block_editor_assets', 'customizer_library_conica_editor_styles', 11 );

@@ -723,6 +723,7 @@ function customizer_library_conica_options() {
     );
 
     $section = 'conica-panel-font-section-site'; // ----------------------------------------- Default Fonts
+    $font_websafe_choices = array( 'Arial' => 'Arial', 'Arial Black' => 'Arial Black', 'Helvetica' => 'Helvetica', 'Verdana' => 'Verdana', 'Georgia' => 'Georgia', 'Palatino' => 'Palatino', 'Garamond' => 'Garamond', 'Bookman' => 'Bookman', 'Courier' => 'Courier', 'Courier New' => 'Courier New', 'Times New Roman' => 'Times New Roman', 'Times' => 'Times' );
     $font_choices = customizer_library_get_font_choices();
 
     $sections[] = array(
@@ -732,6 +733,14 @@ function customizer_library_conica_options() {
         'panel' => $panel
     );
 
+    $options['conica-disable-google-fonts'] = array(
+        'id' => 'conica-disable-google-fonts',
+        'label'   => __( 'Disable Google Fonts', 'conica' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'description' => __( 'This will let you only select from web-safe fonts', 'conica' ),
+        'default' => 0,
+    );
     $options['conica-body-font'] = array(
         'id' => 'conica-body-font',
         'label'   => __( 'Body Font', 'conica' ),
@@ -740,12 +749,20 @@ function customizer_library_conica_options() {
         'choices' => $font_choices,
         'default' => 'Open Sans'
     );
+    $options['conica-body-font-websafe'] = array(
+        'id' => 'conica-body-font-websafe',
+        'label'   => __( 'Body Font', 'conica' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $font_websafe_choices,
+        'default' => 'Arial'
+    );
     $options['conica-body-font-color'] = array(
         'id' => 'conica-body-font-color',
         'label'   => __( 'Body Font Color', 'conica' ),
         'section' => $section,
         'type'    => 'color',
-        'default' => $body_font_color,
+        'default' => '#808080'
     );
     $options['conica-heading-font'] = array(
         'id' => 'conica-heading-font',
@@ -755,17 +772,24 @@ function customizer_library_conica_options() {
         'choices' => $font_choices,
         'default' => 'Poppins'
     );
+    $options['conica-heading-font-websafe'] = array(
+        'id' => 'conica-heading-font-websafe',
+        'label'   => __( 'Heading Font', 'conica' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $font_websafe_choices,
+        'default' => 'Bookman'
+    );
     $options['conica-heading-font-color'] = array(
         'id' => 'conica-heading-font-color',
         'label'   => __( 'Heading Font Color', 'conica' ),
         'section' => $section,
         'type'    => 'color',
-        'default' => $heading_font_color,
+        'default' => '#1d1d1d'
     );
     // -------------------------------------------------------------------------------------- Default Fonts
 
     $section = 'conica-panel-font-section-titles'; // ----------------------------------------- Title Fonts
-    $font_choices = customizer_library_get_font_choices();
 
     $sections[] = array(
         'id' => $section,
@@ -781,6 +805,14 @@ function customizer_library_conica_options() {
         'type'    => 'select',
         'choices' => $font_choices,
         'default' => 'Poppins'
+    );
+    $options['conica-title-font-websafe'] = array(
+        'id' => 'conica-title-font-websafe',
+        'label'   => __( 'Site Title Font', 'conica' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $font_websafe_choices,
+        'default' => 'Bookman'
     );
 
     $options['conica-help-fonts'] = array(

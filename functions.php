@@ -5,7 +5,7 @@
  * @package Conica
  */
 
-define( 'CONICA_THEME_VERSION' , '1.3.13' );
+define( 'CONICA_THEME_VERSION' , '1.3.14' );
 
 // Get help / Premium Page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -84,6 +84,9 @@ function conica_setup_theme() {
 	) );
 	
 	add_editor_style();
+
+	// Gutenberg Support
+	add_theme_support( 'align-wide' );
 	
     add_theme_support( 'custom-background', array( 'default-color' => '#FFFFFF', ) );
     
@@ -131,8 +134,10 @@ add_filter( 'dynamic_sidebar_params', 'conica_change_widget_titles', 20 );
  * Enqueue scripts and styles
  */
 function conica_scripts() {
-    wp_enqueue_style( 'conica-body-font-default', '//fonts.googleapis.com/css?family=Poppins:400,300,500,600,700|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), CONICA_THEME_VERSION );
-    
+	if ( !get_theme_mod( 'conica-disable-google-fonts', customizer_library_get_default( 'conica-disable-google-fonts' ) ) ) {
+    	wp_enqueue_style( 'conica-body-font-default', '//fonts.googleapis.com/css?family=Poppins:400,300,500,600,700|Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic', array(), CONICA_THEME_VERSION );
+	}
+	
     wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/includes/font-awesome/css/font-awesome.css', array(), '4.6.3' );
 	wp_enqueue_style( 'conica-style', get_stylesheet_uri(), array(), CONICA_THEME_VERSION );
 	
@@ -380,3 +385,42 @@ function conica_cat_columns_array_push_after( $src, $conica_cat_in, $pos ) {
     }
     return $R;
 }
+
+/**
+ * Insert dismissable admin notices
+ */
+function conica_admin_notice() {
+	$user_id = get_current_user_id();
+	
+	$response = wp_remote_get( 'https://kairaweb.com/wp-json/wp/v2/themes/conica/' );
+	
+	if ( is_wp_error( $response ) ) {
+		return;
+	}
+	
+	$posts = json_decode( wp_remote_retrieve_body( $response ) );
+	
+	if ( empty( $posts ) ) {
+		return;
+	} else {
+		$message_id = trim( $posts[0]->free_notification_id );
+		$message 	= trim( $posts[0]->free_notification );
+		
+		if ( !empty( $message ) && !get_user_meta( $user_id, 'conica_admin_notice_' .$message_id. '_dismissed' ) ) {
+			$class = 'notice notice-success is-dismissible';
+			printf( '<div class="%1$s"><p>%2$s</p><p><a href="?conica-admin-notice-dismissed&conica-admin-notice-id=%3$s">Dismiss this notice</a></p></div>', esc_attr( $class ), $message, $message_id );
+		}
+	}
+}
+add_action( 'admin_notices', 'conica_admin_notice' );
+/**
+ * Dismiss admin notices
+ */
+function conica_admin_notice_dismissed() {
+    $user_id = get_current_user_id();
+    if ( isset( $_GET['conica-admin-notice-dismissed'] ) ) {
+    	$conica_admin_notice_id = $_GET['conica-admin-notice-id'];
+		add_user_meta( $user_id, 'conica_admin_notice_' .$conica_admin_notice_id. '_dismissed', 'true', true );
+	}
+}
+add_action( 'admin_init', 'conica_admin_notice_dismissed' );

@@ -14,6 +14,8 @@ if ( ! function_exists( 'customizer_library_conica_build_styles' ) && class_exis
  * @return void
  */
 function customizer_library_conica_build_styles() {
+
+	$websafe = ( get_theme_mod( 'conica-disable-google-fonts', customizer_library_get_default( 'conica-disable-google-fonts' ) ) == 1 ) ? '-websafe' : '';
 	
 	// Site Logo Max Width
 	$setting = 'conica-logo-max-width';
@@ -88,6 +90,15 @@ function customizer_library_conica_build_styles() {
 			'declarations' => array(
 				'background' => 'inherit',
                 'background-color' => $color
+			)
+		) );
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.wp-block-quote:not(.is-large),
+				.wp-block-quote:not(.is-style-large)'
+			),
+			'declarations' => array(
+                'border-left-color' => $color
 			)
 		) );
 	}
@@ -240,11 +251,15 @@ function customizer_library_conica_build_styles() {
 	}
 
 	// Body Font
-	$setting = 'conica-body-font';
+	$setting = 'conica-body-font'.$websafe;
 	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
-	$stack = customizer_library_get_font_stack( $mod );
+	if ( $websafe ) {
+		$stack = '\''.$mod.'\', sans-serif';
+	} else {
+		$stack = customizer_library_get_font_stack( $mod );
+	}
 
-	if ( $mod != customizer_library_get_default( $setting ) ) {
+	if ( $mod != customizer_library_get_default( $setting ) || get_theme_mod( 'conica-disable-google-fonts' ) == 1 ) {
 
 		Customizer_Library_Styles()->add( array(
 			'selectors' => array(
@@ -279,11 +294,15 @@ function customizer_library_conica_build_styles() {
 	}
 
 	// Heading Font
-	$setting = 'conica-heading-font';
+	$setting = 'conica-heading-font'.$websafe;
 	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
-	$stack = customizer_library_get_font_stack( $mod );
+	if ( $websafe ) {
+		$stack = '\''.$mod.'\', sans-serif';
+	} else {
+		$stack = customizer_library_get_font_stack( $mod );
+	}
 
-	if ( $mod != customizer_library_get_default( $setting ) ) {
+	if ( $mod != customizer_library_get_default( $setting ) || get_theme_mod( 'conica-disable-google-fonts' ) == 1 ) {
 
 		Customizer_Library_Styles()->add( array(
 			'selectors' => array(
@@ -330,11 +349,15 @@ function customizer_library_conica_build_styles() {
 	}
 	
 	// Site Title Font
-	$setting = 'conica-title-font';
+	$setting = 'conica-title-font'.$websafe;
 	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
-	$stack = customizer_library_get_font_stack( $mod );
+	if ( $websafe ) {
+		$stack = '\''.$mod.'\', sans-serif';
+	} else {
+		$stack = customizer_library_get_font_stack( $mod );
+	}
 
-	if ( $mod != customizer_library_get_default( $setting ) ) {
+	if ( $mod != customizer_library_get_default( $setting ) || get_theme_mod( 'conica-disable-google-fonts' ) == 1 ) {
 
 		Customizer_Library_Styles()->add( array(
 			'selectors' => array(

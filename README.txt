@@ -7,7 +7,7 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
-Conica is the ultimate, highly customizable, responsive multipurpose WordPress theme. Packed with a bunch of settings, you're able to use Conica for any type of website to eCommerce store. Build your WooCommerce store and start selling online in no time. Conica comes packed with 2 site layouts, 2 color schemes, 4 header layouts, 5 Blog layouts, 3 footer layouts, multipe page templates and a bunch of theme options to customize your own colors and layouts settings. Conica integrates seamlessly with the top free plugins such as WooCommerce for your online e-commerce shop, SiteOrigin's Page Builder to build any type of page layout you like, Breadcrumb NavXT, BuddyPress, Contact Form 7 and a bunch of others. To turn Conica into an online store simply install WooCommerce and the needed plugins and start selling your products in no time through your own shop. Conica features a clean, simple, minimal and elegant style design for WooCommerce and all around the site, which will work perfectly for almost any kind of website. Use Conica to build any type of website from a simple blog displaying your personal portfolio, e-commerce store or photography site, to a corporate business website for your agency, online community, restaurant or real estate purposes, to selling products for your fully functional online eCommerce store... Get in contact and let us know which features you'd like added! Give it a go :)
+Conica works for you, with all settings neatly built into the WordPress Customizer you're able to easily set up the site you want. Try Conica out... You won't be disappointed :)
 
 == License ==
 
@@ -78,6 +78,17 @@ View the theme settings under "Appearance" -> Customize.
 2. Featured Images work best at a minimum of 1000 wide and 600 high.
 
 == Changelog ==
+
+#### 1.3.14
+* Style tweaks/fixes
+* Added new Gutenberg template & compatibility for new WordPress Gutenberg editor
+* Added styling for Gutenberg blocks
+* Added settings to disable Google Fonts
+* Added a selection of web-safe fonts
+* Remove old deprecated code
+* Updated the language .pot file
+Premium: Added setting to increase Social Footer icon size
+Premium: Added setting to adjust Social Footer icon spacing
 
 #### 1.3.13
 * Style tweaks/fixes

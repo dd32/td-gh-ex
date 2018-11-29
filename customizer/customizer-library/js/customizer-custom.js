@@ -5,6 +5,30 @@
 ( function( $ ) {
     
     $( window ).load( function() {
+
+        // Show / Hide Fonts Google/Websafe settings
+        conica_websafe_check();
+        $( '#customize-control-conica-disable-google-fonts input[type=checkbox]' ).on( 'change', function() {
+            conica_websafe_check();
+        });
+        
+        function conica_websafe_check() {
+            if ( $( '#customize-control-conica-disable-google-fonts input[type=checkbox]' ).is( ':checked' ) ) {
+                $( '#sub-accordion-section-conica-panel-font-section-titles #customize-control-conica-title-font' ).hide();
+                $( '#sub-accordion-section-conica-panel-font-section-site #customize-control-conica-body-font' ).hide();
+                $( '#sub-accordion-section-conica-panel-font-section-site #customize-control-conica-heading-font' ).hide();
+                $( '#sub-accordion-section-conica-panel-font-section-titles #customize-control-conica-title-font-websafe' ).show();
+                $( '#sub-accordion-section-conica-panel-font-section-site #customize-control-conica-body-font-websafe' ).show();
+                $( '#sub-accordion-section-conica-panel-font-section-site #customize-control-conica-heading-font-websafe' ).show();
+            } else {
+                $( '#sub-accordion-section-conica-panel-font-section-titles #customize-control-conica-title-font' ).show();
+                $( '#sub-accordion-section-conica-panel-font-section-site #customize-control-conica-body-font' ).show();
+                $( '#sub-accordion-section-conica-panel-font-section-site #customize-control-conica-heading-font' ).show();
+                $( '#sub-accordion-section-conica-panel-font-section-titles #customize-control-conica-title-font-websafe' ).hide();
+                $( '#sub-accordion-section-conica-panel-font-section-site #customize-control-conica-body-font-websafe' ).hide();
+                $( '#sub-accordion-section-conica-panel-font-section-site #customize-control-conica-heading-font-websafe' ).hide();
+            }
+        }
         
         // Show / Hide Center Navigation
         var conica_center_nav_value = $( '#customize-control-conica-set-header-layout select' ).val();

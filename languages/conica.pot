@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Conica\n"
-"POT-Creation-Date: 2018-08-22 17:31+0200\n"
+"POT-Creation-Date: 2018-11-29 13:15+0200\n"
 "PO-Revision-Date: 2016-11-02 11:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: Kaira\n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_n:1,2;__ngettext:1,2;"
@@ -466,7 +466,7 @@ msgid ""
 "added to the footer"
 msgstr ""
 
-#: customizer/customizer-options.php:457 functions.php:307
+#: customizer/customizer-options.php:457 functions.php:312
 msgid "WooCommerce"
 msgstr ""
 
@@ -659,116 +659,124 @@ msgstr ""
 msgid "Conica Font Options"
 msgstr ""
 
-#: customizer/customizer-options.php:730
+#: customizer/customizer-options.php:731
 msgid "Theme Fonts"
 msgstr ""
 
-#: customizer/customizer-options.php:737
+#: customizer/customizer-options.php:738
+msgid "Disable Google Fonts"
+msgstr ""
+
+#: customizer/customizer-options.php:741
+msgid "This will let you only select from web-safe fonts"
+msgstr ""
+
+#: customizer/customizer-options.php:746 customizer/customizer-options.php:754
 msgid "Body Font"
 msgstr ""
 
-#: customizer/customizer-options.php:745
+#: customizer/customizer-options.php:762
 msgid "Body Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:752
+#: customizer/customizer-options.php:769 customizer/customizer-options.php:777
 msgid "Heading Font"
 msgstr ""
 
-#: customizer/customizer-options.php:760
+#: customizer/customizer-options.php:785
 msgid "Heading Font Color"
 msgstr ""
 
-#: customizer/customizer-options.php:772
+#: customizer/customizer-options.php:796
 msgid "Site Title & Description"
 msgstr ""
 
-#: customizer/customizer-options.php:779
+#: customizer/customizer-options.php:803 customizer/customizer-options.php:811
 msgid "Site Title Font"
 msgstr ""
 
-#: customizer/customizer-options.php:790
+#: customizer/customizer-options.php:822
 msgid ""
 "<b>Premium Extra Features:</b><br />- Change site title font size<br />- "
 "Select custom tagline font<br />- Change tagline font size<br />- Change "
 "title / tagline spacing"
 msgstr ""
 
-#: customizer/customizer-options.php:799
+#: customizer/customizer-options.php:831
 msgid "Conica Social Links"
 msgstr ""
 
-#: customizer/customizer-options.php:805
+#: customizer/customizer-options.php:837
 msgid "Email Address"
 msgstr ""
 
-#: customizer/customizer-options.php:811
+#: customizer/customizer-options.php:843
 msgid "Facebook"
 msgstr ""
 
-#: customizer/customizer-options.php:817
+#: customizer/customizer-options.php:849
 msgid "Twitter"
 msgstr ""
 
-#: customizer/customizer-options.php:823
+#: customizer/customizer-options.php:855
 msgid "Google Plus"
 msgstr ""
 
-#: customizer/customizer-options.php:829
+#: customizer/customizer-options.php:861
 msgid "LinkedIn"
 msgstr ""
 
-#: customizer/customizer-options.php:835
+#: customizer/customizer-options.php:867
 msgid "Behance"
 msgstr ""
 
-#: customizer/customizer-options.php:841
+#: customizer/customizer-options.php:873
 msgid "Tumblr"
 msgstr ""
 
-#: customizer/customizer-options.php:847
+#: customizer/customizer-options.php:879
 msgid "Flickr"
 msgstr ""
 
-#: customizer/customizer-options.php:853
+#: customizer/customizer-options.php:885
 msgid "VK"
 msgstr ""
 
-#: customizer/customizer-options.php:862
+#: customizer/customizer-options.php:894
 msgid ""
 "<b>Premium Extra Features:</b><br />- Over 18 different social profile links "
 "available<br />- Custom setting to add any needed link<br />- Let us know "
 "which links you need and we'll add it!"
 msgstr ""
 
-#: customizer/customizer-options.php:871
+#: customizer/customizer-options.php:903
 msgid "Colors"
 msgstr ""
 
-#: customizer/customizer-options.php:877
+#: customizer/customizer-options.php:909
 msgid "Primary Color"
 msgstr ""
 
-#: customizer/customizer-options.php:884
+#: customizer/customizer-options.php:916
 msgid "Secondary Color"
 msgstr ""
 
-#: customizer/customizer-options.php:893
+#: customizer/customizer-options.php:925
 msgid ""
 "<b>Premium Extra Features:</b><br />Conica Premium ($25) has advanced color "
 "settings to change Header, Top Bar and Navigation colors, Default Slider "
 "colors, Page Title & Widget heading colors, Footer & Bottom Bar colors + more"
 msgstr ""
 
-#: customizer/customizer-options.php:902
+#: customizer/customizer-options.php:934
 msgid "Plugin Support"
 msgstr ""
 
-#: customizer/customizer-options.php:904
+#: customizer/customizer-options.php:936
 msgid "Conica adds/removes custom styling to support external plugins"
 msgstr ""
 
-#: customizer/customizer-options.php:909
+#: customizer/customizer-options.php:941
 msgid "Mega Menu"
 msgstr ""
 
@@ -784,27 +792,27 @@ msgstr ""
 msgid "Footer Menu"
 msgstr ""
 
-#: functions.php:103
+#: functions.php:106
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:112
+#: functions.php:115
 msgid "Conica Standard Footer"
 msgstr ""
 
-#: functions.php:302
+#: functions.php:307
 msgid "Elementor Page Builder"
 msgstr ""
 
-#: functions.php:312
+#: functions.php:317
 msgid "Contact Form by WPForms"
 msgstr ""
 
-#: functions.php:317
+#: functions.php:322
 msgid "Breadcrumb NavXT"
 msgstr ""
 
-#: functions.php:322
+#: functions.php:327
 msgid "Meta Slider"
 msgstr ""
 
@@ -1168,11 +1176,6 @@ msgstr ""
 #: includes/inc/class-tgm-plugin-activation.php:3520
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: includes/inc/extras.php:52
-#, php-format
-msgid "Page %s"
 msgstr ""
 
 #: includes/inc/template-tags.php:28
