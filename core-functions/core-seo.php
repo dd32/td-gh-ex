@@ -2,7 +2,6 @@
 global $bellini;
 
 if ( ! function_exists( 'bellini_structured_data' ) ) :
-
     function bellini_structured_data(){
         global $post;
         global $bellini;

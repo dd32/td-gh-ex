@@ -3,6 +3,7 @@
 ## Bellini Hero Image
 --------------------------------------------------------------*/
 
+if ( ! function_exists( 'bellini_static_slider' ) ) {
 function bellini_static_slider() {
 global $bellini;
 if($bellini['bellini_show_frontpage_slider'] == true) :
@@ -78,6 +79,7 @@ if (absint($bellini['bellini_front_slider_type']) === 2): ?>
 <?php
 	endif;
 }
+}
 
 
 
@@ -85,6 +87,7 @@ if (absint($bellini['bellini_front_slider_type']) === 2): ?>
 ## WooCommerce Categories
 --------------------------------------------------------------*/
 
+if ( ! function_exists( 'bellini_woo_product_category' ) ) {
 function bellini_woo_product_category(){
 	global $bellini;
 
@@ -134,6 +137,7 @@ if($bellini['bellini_show_frontpage_woo_category'] == true) :
 endif;
 endif;
 } //Product Category ends
+}
 
 
 
@@ -142,6 +146,7 @@ endif;
 ## Homepage Featured Products Slider
 --------------------------------------------------------------*/
 
+if ( ! function_exists( 'bellini_woo_product_featured' ) ) {
 function bellini_woo_product_featured(){
 	global $bellini;
 if($bellini['bellini_show_frontpage_woo_products_featured'] == true) :
@@ -235,111 +240,114 @@ if($bellini['bellini_show_frontpage_woo_products_featured'] == true) :
 	endif; // Close the WooCommerce Plugin Check
 	endif;
 }
+}
 
 
 /*--------------------------------------------------------------
 ## WooCommerce Recent Products
 --------------------------------------------------------------*/
 
-function bellini_woo_product_newly_arrived(){
-	global $bellini;
-if($bellini['bellini_show_frontpage_woo_products'] == true) :
+if ( ! function_exists( 'bellini_woo_product_newly_arrived' ) ) {
+	function bellini_woo_product_newly_arrived(){
+		global $bellini;
+	if($bellini['bellini_show_frontpage_woo_products'] == true) :
 
-	if(is_woocommerce_activated()):?>
+		if(is_woocommerce_activated()):?>
 
-	<section class="front-new-arrival">
-	<?php do_action( 'bellini_homepage_before_recent_products' );?>
-	<div class="bellini__canvas">
-	<div class="row">
-
-	<?php
-		if($bellini['bellini_product_general_des_pos'] == true):
-			$column_position_product = absint($bellini['bellini_product_general_des_pos']);
-		endif;
-	?>
-
-	<div class="<?php echo bellini_section_header_class_switcher($column_position_product);?>">
-	<div class="row">
-		<div class="front-section__title">
-		<?php
-		    if(!empty($bellini['bellini_woo_product_title'])):?>
-			    <h2 class="element-title element-title--main">
-					<?php echo do_shortcode(wp_kses_post($bellini['bellini_woo_product_title']));?>
-				</h2>
-		<?php endif;?>
-
-		<?php
-		    if(!empty($bellini['bellini_woo_product_description'])):?>
-				<p class="element-title--sub">
-					<?php echo do_shortcode(wp_kses_post($bellini['bellini_woo_product_description']));?>
-				</p>
-		<?php endif;?>
-		</div>
-		<?php do_action( 'bellini_homepage_after_recent_products_title' );?>
-	</div>
-	</div>
-
-	<?php
-
-		$args = array(
-			'post_type' => 'product',
-			'no_found_rows' => true,
-			'posts_per_page' => absint($bellini['woo_product_per_page_select']),
-			'orderby' => esc_html( $bellini['woo_product_orderby_select']),
-			'order' => esc_html( $bellini['woo_product_order_select']),
-			'product_cat' => esc_html( $bellini['bellini_woo_category_selector']),
-		);
-
-		if(has_filter('bellini_front_woo_product_args')) {
-			$args = apply_filters('bellini_front_woo_product_args', $args);
-		}
-
-
-		$loop = new WP_Query( $args );
-		if ( $loop->have_posts() ) { ?>
-
-		<div class="<?php echo bellini_section_content_class_switcher($column_position_product);?>">
+		<section class="front-new-arrival">
+		<?php do_action( 'bellini_homepage_before_recent_products' );?>
+		<div class="bellini__canvas">
 		<div class="row">
+
+		<?php
+			if($bellini['bellini_product_general_des_pos'] == true):
+				$column_position_product = absint($bellini['bellini_product_general_des_pos']);
+			endif;
+		?>
+
+		<div class="<?php echo bellini_section_header_class_switcher($column_position_product);?>">
+		<div class="row">
+			<div class="front-section__title">
+			<?php
+			    if(!empty($bellini['bellini_woo_product_title'])):?>
+				    <h2 class="element-title element-title--main">
+						<?php echo do_shortcode(wp_kses_post($bellini['bellini_woo_product_title']));?>
+					</h2>
+			<?php endif;?>
+
+			<?php
+			    if(!empty($bellini['bellini_woo_product_description'])):?>
+					<p class="element-title--sub">
+						<?php echo do_shortcode(wp_kses_post($bellini['bellini_woo_product_description']));?>
+					</p>
+			<?php endif;?>
+			</div>
+			<?php do_action( 'bellini_homepage_after_recent_products_title' );?>
+		</div>
+		</div>
+
 		<?php
 
-			while ( $loop->have_posts() ) : $loop->the_post();
-					get_template_part( 'template-parts/woo', 'product-1' );
-			endwhile; ?>
-		</div>
-		</div>
-			 </div>
-			 <?php if(!empty($bellini['woo_product_button_text'])):?>
-			    <div class="front__product__cta">
-			    <a href="<?php if(!empty($bellini['woo_product_button_url'])): echo esc_url($bellini['woo_product_button_url']); endif;?>">
-			       	<button class="button button--cta--center">
-						<?php echo do_shortcode(wp_kses_post($bellini['woo_product_button_text']));?>
-					</button>
-				</a>
-			    </div>
-	    	<?php endif; ?>
-	    		</div>
-	    		<?php do_action( 'bellini_homepage_after_recent_products' );?>
-	</section>
-<?php
-		} else { ?>
-			<section class="container-fluid no-results">
+			$args = array(
+				'post_type' => 'product',
+				'no_found_rows' => true,
+				'posts_per_page' => absint($bellini['woo_product_per_page_select']),
+				'orderby' => esc_html( $bellini['woo_product_orderby_select']),
+				'order' => esc_html( $bellini['woo_product_order_select']),
+				'product_cat' => esc_html( $bellini['bellini_woo_category_selector']),
+			);
+
+			if(has_filter('bellini_front_woo_product_args')) {
+				$args = apply_filters('bellini_front_woo_product_args', $args);
+			}
+
+
+			$loop = new WP_Query( $args );
+			if ( $loop->have_posts() ) { ?>
+
+			<div class="<?php echo bellini_section_content_class_switcher($column_position_product);?>">
 			<div class="row">
-			<div class="col-md-4 no-results__icon"><i class="fa fa-info-circle"></i></div>
-			<div class="col-md-8 no-results__info">
-				<h2 class="no-results__title"><?php esc_html_e( 'No Products Found!', 'bellini' ); ?></h2>
-				<ul>
-					<li><?php printf( esc_html__( 'This section will display your WooCommerce Products.', 'bellini' ) ); ?></li>
-					<li><?php printf( wp_kses( __( 'Ready to set your first Product? Head over to <a href="%1$s">Products</a>.', 'bellini' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'edit.php?post_type=product' ) ) ); ?></li>
-				</ul>
+			<?php
+
+				while ( $loop->have_posts() ) : $loop->the_post();
+						get_template_part( 'template-parts/woo', 'product-1' );
+				endwhile; ?>
 			</div>
 			</div>
-			</section><!-- .no-results .not-found -->
-		<?php }
-		wp_reset_postdata();
-	?>
-<?php
-endif;
-endif;
+				 </div>
+				 <?php if(!empty($bellini['woo_product_button_text'])):?>
+				    <div class="front__product__cta">
+				    <a href="<?php if(!empty($bellini['woo_product_button_url'])): echo esc_url($bellini['woo_product_button_url']); endif;?>">
+				       	<button class="button button--cta--center">
+							<?php echo do_shortcode(wp_kses_post($bellini['woo_product_button_text']));?>
+						</button>
+					</a>
+				    </div>
+		    	<?php endif; ?>
+		    		</div>
+		    		<?php do_action( 'bellini_homepage_after_recent_products' );?>
+		</section>
+	<?php
+			} else { ?>
+				<section class="container-fluid no-results">
+				<div class="row">
+				<div class="col-md-4 no-results__icon"><i class="fa fa-info-circle"></i></div>
+				<div class="col-md-8 no-results__info">
+					<h2 class="no-results__title"><?php esc_html_e( 'No Products Found!', 'bellini' ); ?></h2>
+					<ul>
+						<li><?php printf( esc_html__( 'This section will display your WooCommerce Products.', 'bellini' ) ); ?></li>
+						<li><?php printf( wp_kses( __( 'Ready to set your first Product? Head over to <a href="%1$s">Products</a>.', 'bellini' ), array( 'a' => array( 'href' => array() ) ) ), esc_url( admin_url( 'edit.php?post_type=product' ) ) ); ?></li>
+					</ul>
+				</div>
+				</div>
+				</section><!-- .no-results .not-found -->
+			<?php }
+			wp_reset_postdata();
+		?>
+	<?php
+	endif;
+	endif;
+	}
 }
 
 
@@ -347,76 +355,78 @@ endif;
 ## Home Blog Posts
 --------------------------------------------------------------*/
 
-function bellini_front_blog_posts(){
-	global $bellini;
-if($bellini['bellini_show_frontpage_blog_posts'] == true) : ?>
+if ( ! function_exists( 'bellini_front_blog_posts' ) ) {
+	function bellini_front_blog_posts(){
+		global $bellini;
+		if($bellini['bellini_show_frontpage_blog_posts'] == true) : ?>
 
-<section class="front-blog">
-	<?php do_action( 'bellini_homepage_before_blog_posts' );?>
-	<div class="bellini__canvas">
-	<div class="post-grid row">
-		<div class="front-section__title">
-		    <?php
-		    	if(!empty($bellini['bellini_home_blogposts_title'])):?>
-			    	<h2 class="element-title element-title--main">
-						<?php echo do_shortcode(wp_kses_post($bellini['bellini_home_blogposts_title']));?>
-					</h2>
-			<?php endif;?>
+		<section class="front-blog">
+			<?php do_action( 'bellini_homepage_before_blog_posts' );?>
+			<div class="bellini__canvas">
+			<div class="post-grid row">
+				<div class="front-section__title">
+				    <?php
+				    	if(!empty($bellini['bellini_home_blogposts_title'])):?>
+					    	<h2 class="element-title element-title--main">
+								<?php echo do_shortcode(wp_kses_post($bellini['bellini_home_blogposts_title']));?>
+							</h2>
+					<?php endif;?>
 
-		    <?php
-		    	if(!empty($bellini['bellini_home_blogposts_description'])):?>
-		    		<p class="element-title--sub">
-						<?php echo do_shortcode(wp_kses_post($bellini['bellini_home_blogposts_description']));?>
-					</p>
-			<?php endif; ?>
-		</div>
-		<?php do_action( 'bellini_homepage_after_blog_posts_title' );?>
+				    <?php
+				    	if(!empty($bellini['bellini_home_blogposts_description'])):?>
+				    		<p class="element-title--sub">
+								<?php echo do_shortcode(wp_kses_post($bellini['bellini_home_blogposts_description']));?>
+							</p>
+					<?php endif; ?>
+				</div>
+				<?php do_action( 'bellini_homepage_after_blog_posts_title' );?>
 
-	<?php
+			<?php
 
-		$args = array(
-			'post_type' 		=> 'post',
-			'posts_per_page' 	=> absint($bellini['blog_front_post_per_page_select']),
-			'orderby' 			=> 'date',
-			'order' 			=> 'DESC',
-		);
+				$args = array(
+					'post_type' 		=> 'post',
+					'posts_per_page' 	=> absint($bellini['blog_front_post_per_page_select']),
+					'orderby' 			=> 'date',
+					'order' 			=> 'DESC',
+				);
 
-		if(has_filter('bellini_front_blog_post_args')) {
-			$args = apply_filters('bellini_front_blog_post_args', $args);
-		}
+				if(has_filter('bellini_front_blog_post_args')) {
+					$args = apply_filters('bellini_front_blog_post_args', $args);
+				}
 
-		$loop = new WP_Query( $args );
-		if ( $loop->have_posts() ) {
-			while ( $loop->have_posts() ) : $loop->the_post();
-				if ( absint($bellini['bellini_home_blogposts_layout']) === 1 ) :
-					get_template_part( 'template-parts/content' );
-				endif;
-				if ( absint($bellini['bellini_home_blogposts_layout']) === 5 ) :
-					get_template_part( 'template-parts/content-lb-5');
-				endif;
-			endwhile;
+				$loop = new WP_Query( $args );
+				if ( $loop->have_posts() ) {
+					while ( $loop->have_posts() ) : $loop->the_post();
+						if ( absint($bellini['bellini_home_blogposts_layout']) === 1 ) :
+							get_template_part( 'template-parts/content' );
+						endif;
+						if ( absint($bellini['bellini_home_blogposts_layout']) === 5 ) :
+							get_template_part( 'template-parts/content-lb-5');
+						endif;
+					endwhile;
 
-			if(!empty($bellini['bellini_home_blogposts_button_text'])):?>
-		    <div class="front__blog__cta col-sm-12">
-		    <a href="<?php if(!empty($bellini['bellini_home_blogposts_button_url'])): echo esc_url($bellini['bellini_home_blogposts_button_url']); endif;?>">
-		       	<button class="button button--cta--center">
-					<?php echo do_shortcode(wp_kses_post($bellini['bellini_home_blogposts_button_text']));?>
-				</button>
-			</a>
-		    </div>
-	    	<?php endif;
-		} else {
-			get_template_part( 'template-parts/content', 'none' );
-		}
-		wp_reset_postdata();
-	?>
-	</div>
-	</div>
-	<?php do_action( 'bellini_homepage_after_blog_posts' );?>
-</section><!-- Front Blog ends -->
+					if(!empty($bellini['bellini_home_blogposts_button_text'])):?>
+				    <div class="front__blog__cta col-sm-12">
+				    <a href="<?php if(!empty($bellini['bellini_home_blogposts_button_url'])): echo esc_url($bellini['bellini_home_blogposts_button_url']); endif;?>">
+				       	<button class="button button--cta--center">
+							<?php echo do_shortcode(wp_kses_post($bellini['bellini_home_blogposts_button_text']));?>
+						</button>
+					</a>
+				    </div>
+			    	<?php endif;
+				} else {
+					get_template_part( 'template-parts/content', 'none' );
+				}
+				wp_reset_postdata();
+			?>
+			</div>
+			</div>
+			<?php do_action( 'bellini_homepage_after_blog_posts' );?>
+		</section><!-- Front Blog ends -->
 
-<?php
-endif;
+		<?php
+		endif;
+	}
 }
 
 
@@ -424,36 +434,38 @@ endif;
 ## Homepage Feature Blocks
 --------------------------------------------------------------*/
 
-function bellini_feature_blocks(){
-global $bellini;
-if($bellini['bellini_show_frontpage_feature_block'] == true) : ?>
-<section class="front-feature-blocks">
-<?php do_action( 'bellini_homepage_before_blocks' );?>
-<div class="bellini__canvas">
-<div class="row">
-	<div class="front-section__title">
-    <?php
-    	if(!empty($bellini['bellini_feature_blocks_title'])):?>
-	    <h2 class="element-title element-title--main">
-			<?php echo do_shortcode(wp_kses_post($bellini['bellini_feature_blocks_title']));?>
-		</h2>
-	<?php endif;?>
-	</div>
-	<?php do_action( 'bellini_homepage_after_blocks_title' );?>
-	<?php
-		if ( absint($bellini['bellini_feature_block_layout']) === 1 ){
-			get_template_part( 'template-parts/bellini', 'block-1' );
-		}
-		if ( absint($bellini['bellini_feature_block_layout']) === 3 ) {
-			get_template_part( 'template-parts/bellini', 'block-3' );
-		}
-	?>
-</div>
-</div>
-<?php do_action( 'bellini_homepage_after_blocks' );?>
-</section>
-<?php
-endif;
+if ( ! function_exists( 'bellini_feature_blocks' ) ) {
+	function bellini_feature_blocks(){
+		global $bellini;
+		if( $bellini['bellini_show_frontpage_feature_block'] == true ) : ?>
+		<section class="front-feature-blocks">
+		<?php do_action( 'bellini_homepage_before_blocks' );?>
+		<div class="bellini__canvas">
+		<div class="row">
+			<div class="front-section__title">
+		    <?php
+		    	if( ! empty( $bellini['bellini_feature_blocks_title'] ) ) : ?>
+			    <h2 class="element-title element-title--main">
+					<?php echo do_shortcode(wp_kses_post($bellini['bellini_feature_blocks_title']));?>
+				</h2>
+			<?php endif;?>
+			</div>
+			<?php do_action( 'bellini_homepage_after_blocks_title' );?>
+			<?php
+				if ( absint($bellini['bellini_feature_block_layout']) === 1 ){
+					get_template_part( 'template-parts/bellini', 'block-1' );
+				}
+				if ( absint($bellini['bellini_feature_block_layout']) === 3 ) {
+					get_template_part( 'template-parts/bellini', 'block-3' );
+				}
+			?>
+		</div>
+		</div>
+		<?php do_action( 'bellini_homepage_after_blocks' );?>
+		</section>
+		<?php
+		endif;
+	}
 }
 
 
@@ -461,41 +473,44 @@ endif;
 ## Homepage Text Field
 --------------------------------------------------------------*/
 
-function bellini_frontpage_text_field_shortcode(){
-	global $bellini;
- if($bellini['bellini_show_frontpage_text_section'] == true && !empty($bellini['bellini_frontpage_textarea_section_field'])): ?>
-	<section class="front-text-field">
-	<?php do_action( 'bellini_homepage_before_text_field' );?>
-	<div class="bellini__canvas">
-	<div class="row">
-	<div class="col-md-12">
-	<?php
-		if (!empty($bellini['bellini_frontpage_textarea_section_field'])):
-			echo do_shortcode( wp_kses_post($bellini['bellini_frontpage_textarea_section_field']));
-		endif;
-	?>
-	</div>
-	</div>
-	</div>
-	<?php do_action( 'bellini_homepage_after_text_field' );?>
-	</section>
-<?php  endif;
+if ( ! function_exists( 'bellini_frontpage_text_field_shortcode' ) ) {
+	function bellini_frontpage_text_field_shortcode(){
+		global $bellini;
+	 if($bellini['bellini_show_frontpage_text_section'] == true && !empty($bellini['bellini_frontpage_textarea_section_field'])): ?>
+		<section class="front-text-field">
+		<?php do_action( 'bellini_homepage_before_text_field' );?>
+		<div class="bellini__canvas">
+		<div class="row">
+		<div class="col-md-12">
+		<?php
+			if (!empty($bellini['bellini_frontpage_textarea_section_field'])):
+				echo do_shortcode( wp_kses_post($bellini['bellini_frontpage_textarea_section_field']));
+			endif;
+		?>
+		</div>
+		</div>
+		</div>
+		<?php do_action( 'bellini_homepage_after_text_field' );?>
+		</section>
+	<?php  endif;
+	}
 }
-
 
 /*--------------------------------------------------------------
 ## Homepage Page Content
 --------------------------------------------------------------*/
 
-function bellini_front_default_page_content(){
-	if ( have_posts() and is_page() ) :
-	while ( have_posts() ) {
-		echo '<section class="front-bellini-default-content">';
-		do_action( 'bellini_homepage_before_page_content' );
-		the_post();
-		get_template_part( 'template-parts/content', 'page' );
-		do_action( 'bellini_homepage_after_page_content' );
-		echo '</section>';
+if ( ! function_exists( 'bellini_front_default_page_content' ) ) {
+	function bellini_front_default_page_content(){
+		if ( have_posts() and is_page() ) :
+		while ( have_posts() ) {
+			echo '<section class="front-bellini-default-content">';
+			do_action( 'bellini_homepage_before_page_content' );
+			the_post();
+			get_template_part( 'template-parts/content', 'page' );
+			do_action( 'bellini_homepage_after_page_content' );
+			echo '</section>';
+		}
+		endif;
 	}
-	endif;
 }

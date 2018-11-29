@@ -18,9 +18,9 @@
  * as indicating support for post thumbnails.
  */
 
-if ( ! function_exists( 'bellini_setup' ) ) :
-
 add_action( 'after_setup_theme', 'bellini_setup' );
+
+if ( ! function_exists( 'bellini_setup' ) ) :
 
 function bellini_setup() {
 
@@ -110,77 +110,77 @@ endif;
 require_once( get_template_directory() . '/core-functions/core-defaults.php');
 require_once( get_template_directory() . '/core-functions/core-seo.php');
 require_once( get_template_directory() . '/core-functions/core-sidebar.php');
-require_once get_template_directory() . '/core-functions/class-tgm-plugin-activation.php';
 
 /**
  * Enqueue scripts and styles.
  */
 add_action( 'wp_enqueue_scripts', 'bellini_scripts' );
 
-function bellini_scripts() {
+if ( ! function_exists( 'bellini_scripts' ) ) {
+	function bellini_scripts() {
 
-	// Bellini Stylesheets
-	wp_enqueue_style('bellini-libraries',get_template_directory_uri(). '/inc/css/libraries.min.css');
-	wp_enqueue_style( 'bellini-style', get_stylesheet_uri(), array(), '20160803', 'all' );
+		// Bellini Stylesheets
+		wp_enqueue_style('bellini-libraries',get_template_directory_uri(). '/inc/css/libraries.min.css');
+		wp_enqueue_style( 'bellini-style', get_stylesheet_uri(), array(), '20181031', 'all' );
 
-	// Load only if WooCommerce is active
-	if ( is_woocommerce_activated() ) {
-		wp_register_style( 'woostyles', get_template_directory_uri() . '/inc/css/bellini-woocommerce.css' );
-		wp_enqueue_style( 'woostyles', '0.11' );
+		// Load only if WooCommerce is active
+		if ( is_woocommerce_activated() ) {
+			wp_register_style( 'woostyles', get_template_directory_uri() . '/inc/css/bellini-woocommerce.css' );
+			wp_enqueue_style( 'woostyles', '20181031' );
+		}
+
+	  	wp_enqueue_script( 'bellini-js-libraries', get_template_directory_uri() . '/inc/js/library.min.js',  array('jquery'), '20181031', true );
+	  	wp_enqueue_script( 'bellini-pangolin', get_template_directory_uri() . '/inc/js/pangolin.js',  array('jquery'), '20181031', true );
+
+	  // Load the html5 shiv.
+		wp_enqueue_script( 'bellini-html5', get_template_directory_uri() . '/inc/js/html5.js', array(), '3.7.3' );
+		wp_script_add_data( 'bellini-html5', 'conditional', 'lt IE 9' );
+
+		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+			wp_enqueue_script( 'comment-reply' );
+		}
 	}
-
-  	wp_enqueue_script( 'bellini-js-libraries', get_template_directory_uri() . '/inc/js/library.min.js',  array('jquery'), '20160625', true );
-  	wp_enqueue_script( 'bellini-pangolin', get_template_directory_uri() . '/inc/js/pangolin.js',  array('jquery'), '20160625', true );
-
-  // Load the html5 shiv.
-	wp_enqueue_script( 'bellini-html5', get_template_directory_uri() . '/inc/js/html5.js', array(), '3.7.3' );
-	wp_script_add_data( 'bellini-html5', 'conditional', 'lt IE 9' );
-
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
 }
-
 
 /**
  * Gutenberg Editor Styles
  */
-function bellini_editor_styles() {
-	wp_enqueue_style( 'bellini-blog-editor-style', get_template_directory_uri() . '/inc/css/editor-style.css');
+if ( ! function_exists( 'bellini_editor_styles' ) ) {
+	function bellini_editor_styles() {
+		wp_enqueue_style( 'bellini-blog-editor-style', get_template_directory_uri() . '/inc/css/editor-style.css');
+	}
 }
+
 add_action( 'enqueue_block_editor_assets', 'bellini_editor_styles' );
 
 
-
-
-require_once( trailingslashit( get_template_directory() ) . '/inc/structure/extras.php');
+require_once( trailingslashit( get_template_directory() ) . '/inc/structure/extras.php' );
 /**
  * Implement the Custom Header feature.
  */
-require_once( trailingslashit( get_template_directory() ) . '/inc/custom-header.php');
+require_once( trailingslashit( get_template_directory() ) . '/inc/custom-header.php' );
 
 /**
  * Customizer additions.
  */
-require_once( trailingslashit( get_template_directory() ) . '/inc/customizer.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/customize/bellini-customizer-choices.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/customize/customizer-sanitization.php');
+require_once( trailingslashit( get_template_directory() ) . '/inc/customizer.php' );
+require_once( trailingslashit( get_template_directory() ) . '/inc/customize/bellini-customizer-choices.php' );
+require_once( trailingslashit( get_template_directory() ) . '/inc/customize/customizer-sanitization.php' );
 
-require_once( trailingslashit( get_template_directory() ) . '/inc/comments.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/dashboard/bellini-info-dashboard.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/structure/hooks.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-front.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-header.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-footer.php');
-require_once( trailingslashit( get_template_directory() ) . '/inc/widget-native-customize.php');
+require_once( trailingslashit( get_template_directory() ) . '/inc/comments.php' );
+require_once( trailingslashit( get_template_directory() ) . '/inc/dashboard/bellini-info-dashboard.php' );
+require_once( trailingslashit( get_template_directory() ) . '/inc/structure/hooks.php' );
+require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-front.php' );
+require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-header.php' );
+require_once( trailingslashit( get_template_directory() ) . '/inc/structure/bellini-footer.php' );
+require_once( trailingslashit( get_template_directory() ) . '/inc/widget-native-customize.php' );
 
 /**
  * Support for Jetpack
  * https://wordpress.org/plugins/jetpack/
  */
-if ( class_exists( 'Jetpack' )){
-	require_once( trailingslashit( get_template_directory() ) . '/inc/integration/jetpack.php');
+if ( class_exists( 'Jetpack' ) ) {
+	require_once( trailingslashit( get_template_directory() ) . '/inc/integration/jetpack.php' );
 }
 
 /**
@@ -188,45 +188,18 @@ if ( class_exists( 'Jetpack' )){
  * https://wordpress.org/plugins/woocommerce/
  */
 if ( is_woocommerce_activated() ) {
-	require_once(  get_template_directory()  . '/inc/integration/bellini-woocommerce-functions.php');
-	require_once(  get_template_directory()  . '/inc/integration/bellini-woocommerce-hooks.php');
+	require_once(  get_template_directory()  . '/inc/integration/bellini-woocommerce-functions.php' );
+	require_once(  get_template_directory()  . '/inc/integration/bellini-woocommerce-hooks.php' );
 }
 
 
 add_action( 'widgets_init', 'pangolin_register_bellini_widgets');
 
-function pangolin_register_bellini_widgets(){
-    unregister_widget( 'WP_Widget_Recent_Posts' );
-    register_widget( 'Bellini_Recent_Posts_Widget' );
-    unregister_widget( 'WP_Widget_Recent_Comments' );
-    register_widget( 'Bellini_Recent_Comments_Widget' );
-}
-
-
-add_action( 'tgmpa_register', 'bellini_register_required_plugins' );
-
-
-function bellini_register_required_plugins() {
-
-	$plugins = array(
-
-		array(
-			'name'      => 'Contact Form by WPForms – Drag & Drop Form Builder for WordPress',
-			'slug'      => 'wpforms-lite',
-			'required'  => false,
-		),
-	);
-
-	$config = array(
-		'id'           => 'bellini',                 // Unique ID for hashing notices for multiple instances of TGMPA.
-		'default_path' => '',                      // Default absolute path to bundled plugins.
-		'menu'         => 'tgmpa-install-plugins', // Menu slug.
-		'has_notices'  => true,                    // Show admin notices or not.
-		'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
-		'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
-		'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-		'message'      => '',                      // Message to output right before the plugins table.
-	);
-
-	tgmpa( $plugins, $config );
+if ( ! function_exists( 'pangolin_register_bellini_widgets' ) ) {
+	function pangolin_register_bellini_widgets(){
+	    unregister_widget( 'WP_Widget_Recent_Posts' );
+	    register_widget( 'Bellini_Recent_Posts_Widget' );
+	    unregister_widget( 'WP_Widget_Recent_Comments' );
+	    register_widget( 'Bellini_Recent_Comments_Widget' );
+	}
 }

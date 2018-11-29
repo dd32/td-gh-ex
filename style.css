@@ -4,7 +4,7 @@ Theme URI: https://atlantisthemes.com/bellini-woocommerce-theme/
 Author: Pangolin
 Author URI: https://twitter.com/ti_asif
 Description: Bellini brings your site to life with beautiful WooCommerce layouts and is the perfect ecommerce theme for your online storefront or shop. Responsive & flexible layout built with Bootstrap & underscores.me. It is built with SEO in mind and have Structured Data (Schema) implemented. If you are looking for beautiful theme with out of the box SEO compatibility, look no further! Check out the live demo at http://demo.atlantisthemes.com/front-page/
-Version: 1.44.9
+Version: 1.45.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bellini
@@ -636,13 +636,6 @@ textarea {
 
 select {
     min-height: 32px;
-}
-
-.simpleselect {
-    color: inherit;
-    font-size: inherit;
-    display: inline-block;
-    padding-right:.8em;
 }
 
 /*--------------------------------------------------------------

@@ -159,7 +159,7 @@ add_action( 'woocommerce_after_cart', 'woocommerce_cross_sell_display' );
 ## Extension: WooCommerce Dynamic Gallery
 --------------------------------------------------------------*/
 
-if ( class_exists( 'WC_Gallery_Display_Class' )):
+if ( class_exists( 'WC_Gallery_Display_Class' ) ) :
 
 	if ( absint($bellini['bellini_woo_single_product_layout']) === 1 ):
 		remove_action( 'woocommerce_before_single_product_summary', 'wc_dynamic_gallery_show', 30);

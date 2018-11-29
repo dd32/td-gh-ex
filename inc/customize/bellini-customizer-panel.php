@@ -53,7 +53,7 @@ $wp_customize->add_panel( 'bellini_misc_panel', array(
 ) );
 
 	// 3rd party Integrations
-	$wp_customize->add_panel( 'bellini_third_party_integration', array(
+	$wp_customize->add_panel( 'woocommerce', array(
 		'priority'       => 7,
 		'capability'     => 'edit_theme_options',
 		'title'          => esc_html__( 'WooCommerce','bellini' ),
@@ -373,7 +373,7 @@ $wp_customize->add_section('bellini_widget_color_section',array(
 		'priority'       => 1,
 		'capability'     => 'edit_theme_options',
 		'title'          => esc_html__( 'Shop page Layouts','bellini' ),
-		'panel'     	 => 'bellini_third_party_integration',
+		'panel'     	 => 'woocommerce',
 		'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 	) );
 
@@ -381,7 +381,7 @@ $wp_customize->add_section('bellini_widget_color_section',array(
 		'priority'       => 2,
 		'capability'     => 'edit_theme_options',
 		'title'          => esc_html__( 'Single Product Pages','bellini' ),
-		'panel'     	 => 'bellini_third_party_integration',
+		'panel'     	 => 'woocommerce',
 		'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 	) );
 
@@ -389,7 +389,7 @@ $wp_customize->add_section('bellini_widget_color_section',array(
 		'priority'       => 3,
 		'capability'     => 'edit_theme_options',
 		'title'          => esc_html__( 'Product Category Layout','bellini' ),
-		'panel'     	 => 'bellini_third_party_integration',
+		'panel'     	 => 'woocommerce',
 		'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 	) );
 
@@ -397,7 +397,7 @@ $wp_customize->add_section('bellini_widget_color_section',array(
 		'priority'       => 4,
 		'capability'     => 'edit_theme_options',
 		'title'          => esc_html__( 'Button, Sale Badge & Rating Color','bellini' ),
-		'panel'     	 => 'bellini_third_party_integration',
+		'panel'     	 => 'woocommerce',
 		'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 	) );
 
@@ -405,6 +405,6 @@ $wp_customize->add_section('bellini_widget_color_section',array(
 		'priority'       => 5,
 		'capability'     => 'edit_theme_options',
 		'title'          => esc_html__( 'WooCommerce Sidebars','bellini' ),
-		'panel'     	 => 'bellini_third_party_integration',
+		'panel'     	 => 'woocommerce',
 		'active_callback' 	=> 'is_plugin_active_woocommerce_bellini',
 	) );

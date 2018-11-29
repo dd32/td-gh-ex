@@ -25,7 +25,7 @@ add_action( 'homepage', 'bellini_frontpage_text_field_shortcode',	70 );
 add_action( 'homepage', 'bellini_front_default_page_content',		110 );
 
 
-if($bellini['bellini_show_frontpage_slider_pages'] == true) :
+if( $bellini['bellini_show_frontpage_slider_pages'] == true ) :
 	add_action( 'bellini_before_page_content', 'bellini_static_slider',		   			10 );
 endif;
 
