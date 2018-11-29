@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/wordpress-themes/topmag
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Top Mag is a premium style Magazine WordPress theme. It Includes ample of options to manage general settings, logo etc and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through theme options in admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders.
-Version: 1.5
+Version: 2.0.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Top Mag Theme, Copyright 2014 fasterthemes.com
@@ -14,16 +14,17 @@ Text Domain: top-mag
 This theme, like WordPress, is licensed under the FasterThemes.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-@charset "utf-8";
+
 /* CSS Document */
 body {
     font-family: 'Lato', sans-serif;
-    background-color: #ececec;
+
 }
-.container-magzemine {
-    width: 1200px;
-    background-color: #ffffff;
+a, a:hover{
+    color: rgb(78, 0, 0);
 }
+
+
 .no-padding {
     padding-left: 0px;
     padding-right: 0px;
@@ -34,59 +35,10 @@ body {
 .no-padding-right {
     padding-right: 0px;
 }
-/*** Top Header ***/
-.top-header {
-    background-color: #1f1f1f;
-}
-.top-header ul {
-    list-style: none;
-    padding-left: 10px;
-}
-.top-header ul li {
-    float: left;
-    padding: 10px;
-}
-.top-header ul li a {
-    color: #ffffff;
-    font-size: 13px;
-    font-family: Tahoma;
-}
-.top-header h6 {
-    color: #efcb01;
-    font-size: 12px;
-    font-family: Tahoma;
-    text-align: right;
-    margin: 0;
-    padding: 13px;
-}
-.top-header .search-box, .top-header .search-field {
-    background-color: rgba(0, 0, 0, 0);
-    background-image: url("./images/search.png");
-    background-position: right center;
-    background-repeat: no-repeat;
-    border: 1px solid rgb(132, 57, 57);
-    color: rgb(255, 255, 255);
-    margin: 5px 10px 0px 0px;
-    padding: 5px;
-}
-.top-header .screen-reader-text, .top-header .search-submit {
-    display: none;
-}
-.top-header .search-form label {
-    margin-bottom: 0;
-}
-.top-mag-site-name {
-    font-size: 37px;
-    margin: 23px 0 0;
-}
-.top-mag-tagline {
-    font-size: 14px;
-    margin-bottom: 23px;
-}
-/******/
+
 /** Header logo and text **/
 .header-logo img {
-    margin: 30px 0 0;
+    margin: 20px 0 0;
 }
 .header-text {
     margin: 17px 0 8px;
@@ -98,7 +50,7 @@ body {
 .header-text .header-col-1 h1 {
     color: #efcb01;
     font-size: 24px;
-    font-family: Tahoma;
+    font-family: Lato;
     margin: 32px 0px;
 }
 .header-text .header-col-2 {
@@ -127,9 +79,9 @@ body {
 
 /**** MENU ****/
 header .menu {
-    background-color: #4e0000;
-    border-radius: 10px 10px 0 0;
-    border-bottom: 2px solid #1f1f1f !important;
+    background-color: #fff;
+    border-radius: 0;
+    
 }
 .navbar-collapse.in{
     overflow: hidden;
@@ -138,42 +90,51 @@ header .menu {
     background-color: transparent;
 }
 .navbar{
-    border-radius: 10px;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-bottom: 1px solid #e7e7e7;
+    border-top: 1px solid #e7e7e7;
+    height: auto;
+    min-height: auto;
+    background: #fff;
 }
 .nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
     border-color: #6B0000;
     border-bottom: 2px solid #FF0;
 }
-header .menu li a {
-    color: #fffffe !important;
-    font-size: 12px;
-    font-family: Tahoma;
+header .navbar .menu .navbar-nav li a {
+    color: #4e0000;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 10px 0;
     text-transform: none;
+    text-transform: uppercase;
+}
+header .navbar .menu ul ul li a:hover{
+    color: #333;
 }
 .top-mag-menu li a {
-    color: #fffffe !important;
+    color: #4e0000 ;
     font-size: 12px;
-    font-family: Tahoma;
     border-bottom: 2px solid rgba(0, 0, 0, 0);
     margin-bottom: -2px;
-    text-transform: uppercase !important;
+    text-transform: uppercase;
 }
-header .top-header-menu-left .menu li a {
-    text-transform: none;
-}
-.top-header-menu-left .sub-menu {
-    display: none;
-}
+
 .home-icon {
-    padding: 11px 7px 22px;
-    background-color: #1f1f1f;
+    padding: 10px 10px;
+    background-color: transparent;
     border-radius: 10px 0 0;
+    float: left;
+    color: #4e0000;
 }
 .home-icon > img {
     margin: 8px 0 0;
 }
 .home-icon:hover {
-    background-color: #1F1F1F;
+   opacity: 0.9;
+   color: #4e0000;
 }
 .footer-tertiary-menu ul {
     background-color: transparent;
@@ -223,11 +184,12 @@ header .top-header-menu-left .menu li a {
     color: #4e0000;
     font-size: 15px;
     font-weight: bold;
+    text-align: center;
 }
 .breaking-news .news-text {
     color: #1f1f1f;
     font-size: 15px;
-    font-family: Tahoma;
+    font-family: Lato;
 }
 .breaking-news-hidden {
     display: none;
@@ -256,15 +218,18 @@ header .top-header-menu-left .menu li a {
     width: 292px;
 }
 .comment-reply-title, .recent-posts-title {
-    background-color: #EFCB01;
-    color: #4E0000;
+    background-color: transparent;
+    color: #0a0a0a;
     display: inline;
     float: left;
-    font-size: 16px;
+    font-size: 20px;
     margin: 9px 0 24px;
-    padding: 3px 50px 3px 15px;
+    padding: 0 0 5px 0;
     text-transform: capitalize;
-    border-left: 6px solid #4E0000;
+    border-bottom: 1px solid #eeeeee;
+    width: 100%;
+    position: relative;
+    text-transform: uppercase;
 }
 .prev, .next {
     float: right;
@@ -296,7 +261,6 @@ header .top-header-menu-left .menu li a {
     float: right;
 }
 .ImageWrapper {
-    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.25);
     display: block;
     overflow: hidden;
     position: relative;
@@ -386,14 +350,23 @@ header .top-header-menu-left .menu li a {
     margin-top: 30px;
 }
 .news-list h1 {
-    background-color: #EFCB01;
-    color: #4E0000;
+    background-color: transparent;
+    color: #000;
     float: left;
-    font-size: 16px;
+    font-size: 20px;
     margin: 10px 3px 20px 0;
-    padding: 6px 3px 6px 11px;
+    padding: 0 0 5px 0;
     width: 100%;
-    border-left: 6px solid #4E0000;
+    border-bottom: 1px solid #eeeeee;
+    position: relative;
+}
+span.recent-posts-title::after, .news-list h1::after, .comment-reply-title::after {
+    position: absolute;
+    content: "";
+    width: 100px;
+    bottom: 0px;
+    left: 0;
+    border-bottom: 2px solid #4e0000;
 }
 .news-list .news-list-col1 {
     max-width: 40%;
@@ -429,7 +402,7 @@ header .top-header-menu-left .menu li a {
 }
 /*********** F O O T E R ***********/
 .footer-post {
-    background-color: #1f1f1f;
+    background-color: rgb(78, 0, 0);
     padding-bottom: 20px;
 }
 .main-sidebar .footer-single-post, .footer-post .footer-single-post {
@@ -453,14 +426,14 @@ header .top-header-menu-left .menu li a {
     font-size: 18px;
     margin-bottom: 10px;
     margin-top: 25px;
-    background-color: #1F1F1F;
+    background-color: rgb(78, 0, 0);
 }
 .main-sidebar h1 {
     color: #FFFFFF;
     font-size: 18px;
     margin-bottom: 10px;
     margin-top: 10px;
-    background-color: #1F1F1F;
+    background-color: rgb(78, 0, 0);
     padding: 9px;
 }
 .footer-post p {
@@ -503,7 +476,7 @@ header .top-header-menu-left .menu li a {
     padding: 0px;
 }
 .copyright {
-    background-color: #282828;
+    background-color: rgb(111, 3, 3);
     float: left;
     width: 100%;
 }
@@ -511,6 +484,7 @@ header .top-header-menu-left .menu li a {
     color: #CCCCCC;
     margin: 0;
     padding: 20px 0;
+    text-align: center;
 }
 .copyright ul {
     margin: 0;
@@ -571,7 +545,7 @@ header .top-header-menu-left .menu li a {
 .blogpost-readmore p {
     color: #4e0000;
     font-size: 14px;
-    font-family: Tahoma;
+    font-family: Lato;
     float: left;
     margin-top: -8px;
     text-align: justify;
@@ -596,12 +570,12 @@ header .top-header-menu-left .menu li a {
     position: absolute;
     text-align: center;
     top: 17px;
-    width: 2%;
+    width: 5%;
 }
 .caption-date {
-    background-color: #000000;
+    background-color: #4e0000;
     color: #EFCB01;
-    margin: -14px 0 0;
+    margin: -13px 0 0;
     text-transform: uppercase;
 }
 .caption-time {
@@ -619,15 +593,15 @@ header .top-header-menu-left .menu li a {
 }
 .single-blog h1 {
     font-size: 18px;
-    color: 1f1f1f;
-    margin-bottom: 3px;
+    color: #1f1f1f;
+    margin-bottom: 5px;
 }
 .singleblog-contan p {
     line-height: 25px;
     margin-bottom: 15px;
     color: #181818;
     font-size: 14px;
-    font-family: Tahoma;
+    font-family: Lato;
     text-align: justify;
 }
 .singleblog-contan input[type="submit"] {
@@ -655,7 +629,7 @@ header .top-header-menu-left .menu li a {
 }
 .singlepost .singleblog-col2 h1 {
     color: #181818;
-    font-family: tahoma;
+    font-family: Lato;
     font-size: 14px;
     font-weight: bold;
     margin: 3px 0;
@@ -762,7 +736,7 @@ header .top-header-menu-left .menu li a {
     border-radius: 50%;
 }
 .comment-reply-title {
-    padding: 6px 50px 6px 15px;
+    padding: 0 0 5px;
 }
 .comment-reply-title a {
     color: rgb(78, 0, 0);
@@ -786,6 +760,7 @@ header .top-header-menu-left .menu li a {
     border-bottom: 2px solid rgb(47, 47, 47);
     margin: 0 !important;
 }
+.top-mag-previous-pagination { float: left; }
 .top-mag-previous-pagination a, .top-mag-next-pagination a {
     color: #4E0000
 }
@@ -808,7 +783,7 @@ header .top-header-menu-left .menu li a {
     width: 320px;
 }
 .post-page-title {
-    margin-top: 5px;
+    margin-top: 10px;
 }
 .single-tags span {
     background-color: rgb(78, 0, 0);
@@ -852,7 +827,8 @@ header .top-header-menu-left .menu li a {
     margin: 0 -2px 0 2px;
 }
 .singleblog-contan h1 {
-    font-size: 3em;
+    font-size: 28px;
+    line-height: 36px;
 }
 .singleblog-contan h2, .singleblog-contan h3, .singleblog-contan h4, .singleblog-contan h5, .singleblog-contan h6 {
     color: rgb(34, 34, 34);
@@ -1039,91 +1015,20 @@ embed, iframe, object, video {
     position: relative;
     top: 0px;
     left: 0px;
-    width: 1170px;
-    height: 300px;
     background-color: rgb(78, 0, 0);
     overflow: hidden;
     margin-bottom: 15px;
     margin-top: 5px;
 }
-.slider-loader {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
-.slider-loader-content {
-    filter: alpha(opacity=70);
-    opacity: 0.7;
-    position: absolute;
-    display: block;
-    background-color: #000000;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-}
-.slider-loader-wrapper {
-    position: absolute;
-    display: block;
-    background: url(./images/loading.gif) no-repeat center center;
-    top: 0px;
-    left: 0px;
-    width: 100%;
-    height: 100%;
-}
 .slider-image-content {
     cursor: move;
-    position: absolute;
     left: 0px;
     top: 0px;
-    width: 1170px;
-    height: 300px;
     overflow: hidden;
-}
-.slider-post-content {
-    width: 100%;
-    background-color: rgba(0, 0, 0,0.6);
-    position: absolute;
-    bottom: 0px;
-    color: #FFF;
-    padding: 0px 10px 10px 10px;
-    border-top: 2px solid rgb(239, 203, 1);
-    font-size: 10px;
 }
 .slider-post-title {
     font-size: 18px;
     margin: 5px 0px;
-}
-.slider-post-content a {
-    color: #FFF;
-}
-.slider-post-content > span {
-    padding-right: 10px;
-    font-size: 12px;
-}
-.slider-post-tag {
-    left: -10px;
-    position: relative;
-    top: 0;
-}
-.slider-post-tag span {
-    background-color: rgb(239, 203, 1);
-    display: inline-table;
-    margin: -1px 2px 2px 0;
-    padding: 2px 7px;
-    font-size: 15px;
-}
-.slider-post-tag a {
-    color: rgb(78, 0, 0);
-}
-.slider-entry-meta {
-    color: rgb(255, 255, 255);
-    display: table;
-    font-size: 12px;
-    width: 220px;
-}
-.slider-entry-meta span {
-    padding-left: 10px;
 }
 .slider-text-color {
     color: rgb(239, 203, 1);
@@ -1140,10 +1045,7 @@ embed, iframe, object, video {
 #slider1_container div {
     cursor: pointer;
 }
-.slider-entry-meta a:hover {
-    color: rgb(239, 203, 1);
-    text-decoration: underline;
-}
+#slider1_container .owl-item img{ width: 100%; height: auto; } 
 .pagination a {
     color: #666;
     border:1px solid #666;
@@ -1157,7 +1059,11 @@ embed, iframe, object, video {
     color:rgb(78, 0, 0);
 }
 /********** Menu ****************/
-
+span.screen-reader-text {
+    display: none;
+    width: 100%;
+    margin-bottom: 5px;
+}
 .top-mag-menu, .top-mag-menu ul {
     margin: 0;
     padding: 0;
@@ -1176,26 +1082,24 @@ embed, iframe, object, video {
 .top-mag-menu li {
     float: left !important;
     position: relative;
+    padding: 0 15px;
 }
 .top-mag-menu a {
     float: left;
     text-decoration: none;
 }
-.top-mag-menu a:hover, .top-mag-menu a:focus {
-    color: rgb(253, 67, 38);
-}
 .top-mag-menu li:hover > a {
     color: rgb(253, 67, 38);
     text-decoration: none;
 }
-*html .top-mag-menu li a:hover { /* IE6 only */
+.top-mag-menu li a:hover { /* IE6 only */
     color: #fafafa;
 }
 .top-mag-menu ul {
     opacity: 0;
     visibility: hidden;
     position: absolute;
-    top: 50px;
+    top: 44px;
     left: 0;
     z-index: 99;
     -webkit-transition: all .2s ease-in-out;
@@ -1203,7 +1107,7 @@ embed, iframe, object, video {
     -ms-transition: all .2s ease-in-out;
     -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
-    background-color: rgba(31, 31, 31,0.95);
+    background-color:rgb(239, 203, 1);
 }
 .top-mag-menu li:hover > ul {
     opacity: 1;
@@ -1221,7 +1125,7 @@ embed, iframe, object, video {
     width: 100%;
 }
 .top-mag-menu ul li a {
-    color: #000 !important;
+    color: #000;
     text-decoration: none;
 }
 .top-mag-menu ul li {
@@ -1262,7 +1166,7 @@ embed, iframe, object, video {
     border-radius: 0 0 3px 3px;
 }
 .top-mag-menu li ul li {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid #f5f5f5;
     width:100%;
 }
 #menu-trigger {
@@ -1270,7 +1174,7 @@ embed, iframe, object, video {
 }
 .nav > li > a:hover, .nav > li > a:focus {
     background-color: transparent !important;
-    border-bottom: 2px solid rgb(255, 255, 0);
+    border-bottom: 2px solid #4e0000;
 }
 .social-icon > li > a:hover, .social-icon > li > a:focus {
     border-bottom: none;
@@ -1279,7 +1183,7 @@ embed, iframe, object, video {
     margin: 0;
     padding-bottom: 8px !important;
     padding-top: 8px !important;
-    color: rgb(221, 221, 221) !important;
+    color: rgb(221, 221, 221);
     border-bottom: none;
 }
 .top-mag-menu ul li a:hover, .top-mag-menu ul li a:focus, .top-mag-menu ul li a:active {
@@ -1404,15 +1308,44 @@ strong {
 }
 .single-pagination {
     margin-bottom:20px;
+    margin-top: 5px;
 }
-.main-sidebar .search-submit {
+form.search-form label{
+    display: block;
+}
+form.search-form input[type="search"] {
+    border: 1px solid #afafaf;
+    font-size: 14px;
+    padding: 5px;
+    text-align: left;
+    color: #333;
+    font-weight: normal;
+    width: 75%;
+    display: inline-block;
+    float: left;
+    position: relative;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.main-sidebar .search-submit, form.search-form input[type="submit"] {
     background-color: rgb(78, 0, 0);
-    border: medium none;
-    display: inline-table;
-    margin: 2px;
+    border: 0;
+    display: inline-block;
+    margin-bottom: 10px;
+    font-size: 14px;
+    padding: 6px 10px;
+    color: #FFF;
+    width: 25%;
+    border-radius: 0px;
+}
+.footer-post form.search-form input[type="search"] {
+    border-color: #fff;
+}
+.footer-post form.search-form input[type="submit"] {
+    border: 1px solid #fff;
+    margin: 0;
     padding: 5px 10px;
-    color:#FFF;
-    border-radius:6px;
 }
 .footer-post .search-submit {
     background-color: #EEE;
@@ -1430,6 +1363,9 @@ strong {
 .owl-item .recent-posts .blog-post{
     margin-bottom: 20px;
 }
+#home-banner .owl-item {
+    margin-right: 10px;
+}
 .top_mag_next_pagination{
     float: right;
 }
@@ -1442,12 +1378,31 @@ strong {
 }
 
 /********* Media CSS Start *********/
-@media (max-width: 992px){
-    .top-mag-tagline{
+@media (max-width: 991px){
+    .header-logo h1 {
         text-align: center;
+    }
+    .header-logo .top-mag-tagline{
+        text-align: center;
+    }
+    .technology-sports-news .col-md-8.news-list, .technology-sports-news .col-md-4.main-sidebar {
+        padding: 0;
+    }
+    .header-logo a {
+        margin: 0 auto;
+        color: rgb(51, 51, 51);
+        text-align: center;
+        display: block;
     }
 }
 @media (max-width:767px) {
+    .navbar-default .navbar-toggle:hover, .navbar-default .navbar-toggle:focus, .navbar-default .navbar-toggle{
+        background-color: transparent;
+        border-color: transparent;
+    }
+    header .navbar .menu .navbar-nav li a:hover{
+        color: #333;
+    }
     .top-mag-tagline{
         text-align: center;
     }
@@ -1546,9 +1501,6 @@ strong {
         position: absolute;
         left: 25px;
     }
-    .top-mag-menu a:hover, .top-mag-menu a:focus {
-        color: rgb(253, 67, 38) !important;
-    }
     .top-mag-menu li:hover > a {
         color: rgb(253, 67, 38);
         text-decoration: none;
@@ -1612,13 +1564,13 @@ strong {
         text-align: left;
     }
     .navbar-collapse ul ul li a {
-        color: rgb(255, 255, 255) !important;
+        color: rgb(255, 255, 255);
     }
     .nav > li > a:hover, .nav > li > a:focus {
         border: none;
     }
     .top-mag-menu li > a:hover {
-        color: rgb(255, 255, 255) !important;
+        color: #333;
     }
     .top-mag-menu li a {
         border-right: none;
@@ -1635,7 +1587,7 @@ strong {
         border-bottom: none;
     }
     .top-mag-menu li> a:hover {
-        color: rgb(253, 67, 38);
+        color: #333;
         border-bottom: none;
     }
     .navbar-collapse ul ul li a {
@@ -1663,19 +1615,17 @@ strong {
         padding: 0 15px;
         margin-top: 25px;
     }
+    .technology-sports-news .col-md-8.news-list, .technology-sports-news .col-md-4.main-sidebar{
+
+    }
 }
 @media(min-width:320px) and (max-width:480px) {
     .recent-posts,
-    .technology-sports-news{padding:0;}
+    .technology-sports-news{}
     .main-sidebar .search-submit{
         padding: 5px 8px;
     }
-    .top-header ul li {
-        padding: 5px;
-    }
-    .top-header h6 {
-        text-align: center;
-    }
+    
     .pull-right {
         float: none !important;
         margin: 0 auto 8px;
@@ -1738,16 +1688,9 @@ strong {
     }
 }
 @media(min-width:481px) and (max-width:600px) {
-    .top-header-menu-left {
-        float: left;
-        width: 63%;
-    }
-    .top-header .search-box {
-        margin-bottom: 10px;
-    }
+    
     .technology-sports-news {
-        padding-left: 0px;
-        padding-right: 0px;
+       
     }
     .footer-post .footer-col1 {
         float: left;
@@ -1775,13 +1718,7 @@ strong {
     }
 }
 @media(min-width:601px) and (max-width:766px) {
-    .top-header-menu-left {
-        float: left;
-        width: 63%;
-    }
-    .top-header .search-box {
-        margin-bottom: 10px;
-    }
+    
     .footer-post .footer-col1 {
         float: left;
         margin-right: 9px;
@@ -1816,15 +1753,8 @@ strong {
     .container {
         width: 100%;
     }
-    .top-header-menu-left {
-        float: left;
-        width: 63%;
-    }
     .header-logo img {
         margin: 18px auto 0;
-    }
-    .top-header .search-box {
-        margin-bottom: 10px;
     }
     .recent-posts {
         float: left;
@@ -1866,7 +1796,7 @@ strong {
         width: 100%;
     }
     .copyright {
-        background-color: #282828;
+        background-color: rgb(111, 3, 3);
         display: inline-block;
         width: 100%;
     }
@@ -1878,9 +1808,6 @@ strong {
     }
     .copyright p {
         float: left;
-    }
-    .top-header .search-box {
-        width: 85%;
     }
     .main-sidebar {
         margin-top: 25px;

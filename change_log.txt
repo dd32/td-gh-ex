@@ -55,3 +55,8 @@ iii) Fix css issue
 
 Version 1.5 (29th Dec 2014)
 i) Misc Changes.
+
+Version 2.0.0 (29th Nov 2018)
+i) Js & css folder Updated.
+ii) Theme options shifted in customizer section.
+iii) Misc changes

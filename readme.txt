@@ -4,7 +4,7 @@ Theme URI: http://fasterthemes.com/wordpress-themes/topmag
 Author: FasterThemes
 Author URI: http://fasterthemes.com/
 Description: Top Mag is a premium style Magazine WordPress theme. It Includes ample of options to manage general settings, logo etc and is highly customizable. It's based on Twitter Bootstrap framework and hence it is fully responsive on desktop and mobile screens. Home page posts can be easily managed through theme options in admin panel. Owl and jssor Sliders are used on the home page for touch friendly sliders.
-Version: 1.5
+Version: 2.0.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Top Mag Theme, Copyright 2014 fasterthemes.com
@@ -96,18 +96,15 @@ Version - v1.3.0
 
 vii) slider js files
 ============
-jssor.core.js - http://www.jssor.com/ Copyright 2014 Jssor licensed under MIT
-jssor.slider.js - http://www.jssor.com/ Copyright 2014 Jssor licensed under MIT
-jssor.utils.js - http://www.jssor.com/ Copyright 2014 Jssor licensed under MIT
 owl.carousel.min.js - (https://github.com/OwlFonk/OwlCarousel/blob/master/LICENSE) The MIT License (MIT) Copyright (c) 2013
 
 viii) Images
 ============
 
-https://pixabay.com/en/dawn-dusk-landscape-mountain-1853513/  - Public Domain CC0 License
-https://pixabay.com/en/maldives-holiday-sea-water-island-1532172/  - Public Domain CC0 License
-https://pixabay.com/en/picnic-outdoors-family-friends-1208229/ - Public Domain CC0 License
-http://pixabay.com/en/new-york-city-brooklyn-bridge-19219/  - Public Domain CC0 License
+https://www.pexels.com/photo/red-supercar-8575/  - Tookapic CC0 License
+https://www.pexels.com/photo/beach-bungalow-caribbean-jetty-237272/  - Pixabay CC0 License
+https://www.pexels.com/photo/girl-holding-2-long-coat-small-dogs-smiling-161462/ - Pixabay CC0 License
+https://www.pexels.com/photo/adult-adventure-baby-child-532508/  - Pixabay CC0 License
  
 Icons - http://www.fasterthemes.com
 License: General Public License (GPL)

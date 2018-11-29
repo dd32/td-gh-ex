@@ -17,11 +17,8 @@ $top_mag_options = get_option( 'topmag_theme_options' );
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="profile" href="http://gmpg.org/xfn/11">
-<?php if(!empty($top_mag_options['favicon'])) { ?>
-<link rel="shortcut icon" href="<?php echo esc_url($top_mag_options['favicon']);?>">
-<?php }  
-wp_head(); ?>
+<link rel="profile" href="http://gmpg.org/xfn/11"> 
+<?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
@@ -29,27 +26,38 @@ wp_head(); ?>
 <header>
   <div class="container container-magzemine"> 
     <!-- LOGO AND TEXT -->
-    <div class="col-md-12 no-padding ">
+    <div class="row">
       <div class="col-md-4 header-logo">
-        <?php if(empty($top_mag_options['logo'])) { echo '<div class="top-mag-site-name"><a href="'.esc_url( home_url( '/' ) ).'">'.get_bloginfo('name').'</a></div>';  } else { ?>
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><img src="<?php echo esc_url($top_mag_options['logo']); ?>" alt="<?php _e('site logo','top-mag'); ?>" class="img-responsive" /></a>
-        <?php } ?>
-        <p class="top-mag-tagline">
-          <?php if(!empty($top_mag_options['logo-tagline'])) { echo get_bloginfo('description'); } ?>
-        </p>
+      <?php if(has_custom_logo() ): 
+        the_custom_logo();
+      endif; 
+       if(display_header_text()){ ?>
+      <h1><?php echo esc_html(get_bloginfo('name')); ?></h1>
+      <p class="top-mag-tagline"><?php echo esc_html(get_bloginfo('description')); ?></p>
+     <?php } ?>
       </div>
      <div class="col-md-8 header-text"> 
-		<?php if(!empty($top_mag_options['display-banner'])) { ?>
+      <?php  if(get_theme_mod('hide_banner_header_section', isset($top_mag_options['display-banner'])?$top_mag_options['display-banner']:'' )!=''){ ?>
           <div class="custom-header-img">
-            	<?php if(empty($top_mag_options['banner-html']) && !empty($top_mag_options['banner-ads'])) { 
-						if(!empty($top_mag_options['banneradslink'])) {	?>
-                		<a href="<?php echo esc_url($top_mag_options['banneradslink']); ?>" target="_blank"><img width="860" height="90" src="<?php echo $top_mag_options['banner-ads']; ?>" class="img-responsive" /></a>
+            	<?php 
+              $banner_html=get_theme_mod('banner_ad_html_code',$top_mag_options['banner-html']);              
+              if(get_theme_mod('banner_ad_image') != "")
+              {
+                $banner_ads = wp_get_attachment_url(get_theme_mod('banner_ad_image'));  
+              }
+              else
+              {
+                $banner_ads = $top_mag_options['banner-ads'];  
+              }
+            if(empty($banner_html) && !empty($banner_ads)) { 
+						if(get_theme_mod('banner_ad_link',isset($top_mag_options['banneradslink'])?$top_mag_options['banneradslink']:'') != "") { ?>
+                		<a href="<?php echo esc_url(get_theme_mod('banner_ad_link',$top_mag_options['banneradslink'])); ?>" target="_blank"><img width="860" height="90" src="<?php echo esc_url($banner_ads); ?>" class="img-responsive" /></a>
                 <?php } else { ?>
-                		<img width="860" height="90" src="<?php echo esc_url($top_mag_options['banner-ads']); ?>" class="img-responsive" />
-				<?php } 
-				} else { 
-					echo esc_html($top_mag_options['banner-html']); 
-		  } ?>
+                		<img width="860" height="90" src="<?php echo esc_url($banner_ads); ?>" class="img-responsive" />
+    				<?php } 
+    				} else { 
+					   echo wp_kses_post(get_theme_mod('banner_ad_html_code',$top_mag_options['banner-html'])); 
+		        } ?>
           </div>
         <?php } ?>
       </div>
@@ -61,9 +69,9 @@ wp_head(); ?>
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" data-target="#navbarCollapse" data-toggle="collapse" class="navbar-toggle"> <span class="sr-only">
-          <?php _e('Toggle navigation','top-mag'); ?>
+          <?php esc_html_e('Toggle navigation','top-mag'); ?>
           </span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
-          <a href="<?php echo site_url(); ?>" class="home-icon"><img src="<?php echo get_template_directory_uri(); ?>/images/home.png" alt="home icon" /></a> </div>
+          <a href="<?php echo esc_url(site_url()); ?>" class="home-icon"><i class="fa fa-home"></i></a> </div>
         <!-- Collection of nav links and other content for toggling -->
         <div id="navbarCollapse" class="collapse navbar-collapse menu">
           <?php

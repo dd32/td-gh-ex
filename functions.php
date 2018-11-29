@@ -2,6 +2,8 @@
 /*
  * Set up the content width value based on the theme's design.
  */
+$top_mag_options = get_option( 'topmag_theme_options' );
+
 if ( ! function_exists( 'top_mag_setup' ) ) :
 function top_mag_setup() {
 	
@@ -23,13 +25,29 @@ function top_mag_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 672, 372, true );
 	
-	add_image_size( 'topmag-full-width', 1038, 576, true );
+	add_image_size( 'topmag-slider-image', 1100, 300, true );
 	add_image_size('topmagthumbnailimage', 300, 200, true);
 
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary'   => __( 'Header menu', 'top-mag' )
 	) );
+	// Add theme support for Custom Logo.
+	add_theme_support( 'custom-logo', array(
+		'width'       => 250,
+		'height'      => 250,
+		'flex-width'  => true,
+		'flex-height' => true,
+		'header-text' => array( 'site-title', 'site-description' ),
+	) );
+	// Add theme support for Custom hEADER.
+	add_theme_support('custom-header', apply_filters('top_mag_custom_header_args', array(
+        'default-text-color' => 'fff',
+        'width' => 1299,
+        'height' => 345,
+        'flex-height' => true,
+        'header_text' =>true,       
+    )));
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -58,8 +76,5 @@ require_once('functions/enqueue-files.php');
 /*** Theme Default Setup ***/
 require_once('functions/theme-default-setup.php');
 
-/*** Theme Options ***/
-require_once('theme-options/topmagtheme.php');
-
-/***** TGM *****/
-require_once('functions/tgm-plugins.php');
+/***** Theme Customization Option *****/
+require_once('functions/customizer.php');

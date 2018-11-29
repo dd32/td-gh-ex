@@ -23,19 +23,42 @@ jQuery(function () {
 		}, 600, 'linear');
 	});	
 	
-	
-		jQuery("#home-banner").owlCarousel({
-			autoPlay: false, //Set AutoPlay to 3 seconds
-			items : 4,
-			itemsDesktop : [1199,3],
-			itemsDesktopSmall : [979,3]
-			});
-		 // Custom Navigation Events
-		 jQuery(".next1").click(function(){
-		 jQuery("#home-banner").trigger('owl.next');
-		 })
-		 jQuery(".prev1").click(function(){
-		 jQuery("#home-banner").trigger('owl.prev');
-		 })
+	jQuery(".slider-image-content").owlCarousel({
 		
+		/*items : 1,
+		itemsDesktop : [1199,1],
+		itemsDesktopSmall : [979,1]*/
+		loop : true,
+          items : 1,
+          autoplay:true,
+		});
+
+	jQuery("#home-banner").owlCarousel({
+		autoplay: false, //Set AutoPlay to 3 seconds
+		/*items : 1,
+		itemsDesktop : [1199,3],
+		itemsDesktopSmall : [979,1]*/
+		loop : true,
+		margin:10,
+        autoplay:true,
+        responsive:{
+        0:{
+            items:1
+        },
+        600:{
+            items:2
+        },
+        1000:{
+            items:3
+        }
+    }
+		});
+
+	 // Custom Navigation Events
+	 jQuery(".next1").click(function(){
+	 jQuery("#home-banner").trigger('owl.next');
+	 })
+	 jQuery(".prev1").click(function(){
+	 jQuery("#home-banner").trigger('owl.prev');
+	 })
 });

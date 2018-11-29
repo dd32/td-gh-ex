@@ -48,6 +48,7 @@ function top_mag_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 ) {
+		/* translators: 1: page number */
 		$title = "$title $sep " . sprintf( __( 'Page %s', 'top-mag' ), max( $paged, $page ) );
 	}
 
@@ -126,37 +127,35 @@ function top_mag_entry_meta() {
 
 	$top_mag_tag_list = get_the_tag_list( ', ', 'top-mag' );
 
-	$top_mag_date = sprintf( '<time datetime="%3$s">%4$s</time>',
+	$top_mag_date = sprintf( '<span><i class="fa fa-clock-o"></i></span> %2$s',
 		esc_url( get_permalink() ),
-		esc_attr( get_the_time() ),
-		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() )
 	);
-
 	$top_mag_author = sprintf( '<span><a href="%1$s" title="%2$s" >%3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		/* translators: 1: post author */
 		esc_attr( sprintf( __( 'View all posts by %s', 'top-mag' ), get_the_author() ) ),
 		get_the_author()
 	);
 
 	if ( $top_mag_tag_list ) {
-			$top_mag_utility_text = '<span><i class="fa fa-folder-open"></i></span>'.' '.$top_mag_category_list.'&nbsp '.'<span><i class="fa fa-user"></i></span>'.' '.$top_mag_author.' ';
-			echo '<span><i class="fa fa-comments-o"></i> '.get_comments_number().'&nbsp &nbsp';
-		} elseif ( $top_mag_category_list ) {
-			$top_mag_utility_text = '<span><i class="fa fa-folder-open"></i></span>'.' '.$top_mag_category_list.'&nbsp '.'<span><i class="fa fa-user"></i></span>'.' '.$top_mag_author.' ';
-			echo '<span><i class="fa fa-comments-o"></i> '.get_comments_number().'&nbsp &nbsp';
+			$top_mag_utility_text = '<span><i class="fa fa-user"></i></span>'.' '.$top_mag_author.'  <span><i class="fa fa-folder-open"></i></span> %4$s';
+			
+		} elseif ( $top_mag_category_list && !is_front_page()) {
+			$top_mag_utility_text = '<span><i class="fa fa-user"></i></span>'.' '.$top_mag_author.' <span><i class="fa fa-folder-open"></i></span> %4$s';
+			
 		} else {
-			$top_mag_utility_text = '<span><i class="fa fa-folder-open"></i></span>'.' '.$top_mag_category_list.'&nbsp '.'<span><i class="fa fa-user"></i></span>'.' '.$top_mag_author.' ';
-			echo '<span><i class="fa fa-comments-o"></i> '.get_comments_number().'&nbsp &nbsp';
+			$top_mag_utility_text = '<span><i class="fa fa-user"></i></span>'.' '.$top_mag_author.' %2$s';
+			
 		}
 	
 
 	printf(
-		$top_mag_utility_text,
-		$top_mag_category_list,
+		$top_mag_utility_text,		
 		$top_mag_tag_list,
 		$top_mag_date,
-		$top_mag_author
+		$top_mag_author,
+		$top_mag_category_list
 	);
 }
 
@@ -171,7 +170,7 @@ if ( ! function_exists( 'top_mag_comment' ) ) :
  *
  */
 function top_mag_comment( $comment, $top_mag_args, $depth ) {
-	$GLOBALS['comment'] = $comment;
+	
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
@@ -179,9 +178,9 @@ function top_mag_comment( $comment, $top_mag_args, $depth ) {
 	?>
 <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
   <p>
-    <?php _e( 'Pingback:', 'top-mag' ); ?>
+    <?php esc_html_e( 'Pingback:', 'top-mag' ); ?>
     <?php comment_author_link(); ?>
-    <?php edit_comment_link( __( 'Edit', 'top-mag' ), '<span class="edit-link">', '</span>' ); ?>
+    <?php edit_comment_link( esc_html__( 'Edit', 'top-mag' ), '<span class="edit-link">', '</span>' ); ?>
   </p>
 </li>
 <?php
@@ -196,8 +195,8 @@ function top_mag_comment( $comment, $top_mag_args, $depth ) {
 <div <?php comment_class('col-md-12 no-padding post-comments'); ?> id="li-comment-<?php comment_ID(); ?>">
   <?php echo get_avatar( get_the_author_meta('ID'),'52'); ?>
   <div class="comment-content">
-  <?php printf( '<h1>%1$s</h1>', get_comment_author_link(), ( $comment->user_id === $post->post_author ) ? __( 'Post author ', 'top-mag' ) : ''); ?>
-      <h6><?php echo get_comment_date().' at '.get_the_time(); ?></h6>
+  <?php printf( '<h1>%1$s</h1>', get_comment_author_link(), ( $comment->user_id === $post->post_author ) ? esc_html__( 'Post author ', 'top-mag' ) : ''); ?>
+      <h6><?php echo get_comment_date().' at '.esc_html(get_the_time()); ?></h6>
       <p><?php comment_text(); ?></p>
       <div class="reply-comment">
           <?php echo '<a href="#">'.comment_reply_link( array_merge( $top_mag_args, array( 'reply_text' => __( 'Reply', 'top-mag' ), 'after' => '', 'depth' => $depth, 'max_depth' => $top_mag_args['max_depth'] ) ) ).'</a>'; ?>
@@ -218,15 +217,15 @@ endif;
 function top_mag_breaking_news() {
 	
 	global $top_mag_options;
-	if(!empty($top_mag_options['breaking-news'])) { ?>
+	if(get_theme_mod('hide_breaking_news_section',isset($top_mag_options['breaking-news'])?$top_mag_options['breaking-news']:'') != ''){ ?>
         <div class="col-md-12 breaking-news">
-        	<div class="col-md-2 news-title" id="mf118"><?php _e('BREAKING NEWS','top-mag');?></div>
+        	<div class="col-md-2 news-title" id="mf118"><?php  echo esc_html(get_theme_mod('breaking_news_title','BREAKING NEWS'));?></div>
 				<?php $top_mag_news =0;
-                    if(!empty($top_mag_options['breaking-news-category'])) {
+                    if(get_theme_mod('breaking_news_category',isset($top_mag_options['breaking-news-category'])?$top_mag_options['breaking-news-category']:'') != "") {
                     $top_mag_args = array(
                         'post_type' => 'post',
                         'posts_per_page' => -1,
-                        'category_name' => esc_attr($top_mag_options['breaking-news-category']),
+                        'category_name' => esc_attr(get_theme_mod('breaking_news_category',isset($top_mag_options['breaking-news-category'])?$top_mag_options['breaking-news-category']:'')),
                         );
                     } else {
                     $top_mag_args = array(
@@ -241,7 +240,7 @@ function top_mag_breaking_news() {
                 ?>
             
                 <ul id="js-news" class="js-hidden">
-					<li class="news-item"><?php echo '<a href="'.get_permalink().'">'.get_the_title().'</a>'; ?></li>
+					<li class="news-item"><?php echo '<a href="'.esc_url(get_permalink()).'">'.esc_html(get_the_title()).'</a>'; ?></li>
 				</ul>
             <?php } wp_reset_query(); ?> 
         </div>
