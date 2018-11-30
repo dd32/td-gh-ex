@@ -28,7 +28,7 @@
 									'default' => true,
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_bool_sanitize',) );
-		$wp_customize->add_control(	'anorya_top_bar_display_control', 	array(
+		$wp_customize->add_control(	'anorya_top_bar_display_setting', 	array(
 									'label'    => esc_html__( 'Display Header Top Bar', 'anorya' ),
 									'section'  => 'anorya_header_settings',
 									'settings' => 'anorya_top_bar_display_setting',
@@ -40,7 +40,7 @@
 									'default' => '3',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_choices_sanitize',) );
-		$wp_customize->add_control(	'anorya_header_style_control', 	array(
+		$wp_customize->add_control(	'anorya_header_style_setting', 	array(
 									'label'    => esc_html__( 'Select Header Layout', 'anorya' ),
 									'section'  => 'anorya_header_settings',
 									'settings' => 'anorya_header_style_setting',
@@ -55,7 +55,7 @@
 		$wp_customize->add_setting( 'anorya_header_image_background_setting' , array(
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_image_sanitize',) );
-		$wp_customize->add_control(	 new WP_Customize_Image_Control($wp_customize, 'anorya_header_image_background_control', array(
+		$wp_customize->add_control(	 new WP_Customize_Image_Control($wp_customize, 'anorya_header_image_background_setting', array(
 																								'label'      => esc_html__( 'Upload Logo Container Background', 'anorya' ),
 																								'section'    => 'anorya_header_settings',
 																								'settings'   => 'anorya_header_image_background_setting',
@@ -74,7 +74,7 @@
 									'default' => '',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_url_sanitize') );
-		$wp_customize->add_control(	'facebook_link_control', 	array(
+		$wp_customize->add_control(	'anorya_facebook_link_setting', 	array(
 									'label'    => esc_html__( 'Enter your Facebook Page Url', 'anorya' ),
 									'section'  => 'anorya_social_links_section',
 									'settings' => 'anorya_facebook_link_setting',
@@ -85,7 +85,7 @@
 									'default' => '',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_url_sanitize') );
-		$wp_customize->add_control(	'anorya_twitter_link_control', 	array(
+		$wp_customize->add_control(	'anorya_twitter_link_setting', 	array(
 									'label'    => esc_html__( 'Enter your Twitter Page Url', 'anorya' ),
 									'section'  => 'anorya_social_links_section',
 									'settings' => 'anorya_twitter_link_setting',
@@ -96,7 +96,7 @@
 									'default' => '',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_url_sanitize') );
-		$wp_customize->add_control(	'anorya_google_plus_link_control', 	array(
+		$wp_customize->add_control(	'anorya_google_plus_link_setting', 	array(
 									'label'    => esc_html__( 'Enter your Google+ Page Url', 'anorya' ),
 									'section'  => 'anorya_social_links_section',
 									'settings' => 'anorya_google_plus_link_setting',
@@ -107,7 +107,7 @@
 									'default' => '',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_url_sanitize') );
-		$wp_customize->add_control(	'anorya_instagram_link_control', 	array(
+		$wp_customize->add_control(	'anorya_instagram_link_setting', 	array(
 									'label'    => esc_html__( 'Enter your Instagram Page Url', 'anorya' ),
 									'section'  => 'anorya_social_links_section',
 									'settings' => 'anorya_instagram_link_setting',
@@ -118,7 +118,7 @@
 									'default' => '',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_url_sanitize') );
-		$wp_customize->add_control(	'anorya_linkedin_link_control', 	array(
+		$wp_customize->add_control(	'anorya_linkedin_link_setting', 	array(
 									'label'    => esc_html__( 'Enter your linkedIn Page Url', 'anorya' ),
 									'section'  => 'anorya_social_links_section',
 									'settings' => 'anorya_linkedin_link_setting',
@@ -129,7 +129,7 @@
 									'default' => '',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_url_sanitize') );
-		$wp_customize->add_control(	'anorya_youtube_link_control', 	array(
+		$wp_customize->add_control(	'anorya_youtube_link_setting', 	array(
 									'label'    => esc_html__( 'Enter your youTube Channel Url', 'anorya' ),
 									'section'  => 'anorya_social_links_section',
 									'settings' => 'anorya_youtube_link_setting',
@@ -153,7 +153,7 @@
 									'default' => 'right',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_choices_sanitize') );
-		$wp_customize->add_control(	'anorya_home_sidebar_control', 	array(
+		$wp_customize->add_control(	'anorya_home_sidebar_setting', 	array(
 									'label'    => esc_html__( 'Sidebar options for Home', 'anorya' ),
 									'section'  => 'anorya_sidebar_settings',
 									'settings' => 'anorya_home_sidebar_setting',
@@ -167,7 +167,7 @@
 									'default' => 'right',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_choices_sanitize') );
-		$wp_customize->add_control(	'anorya_archives_sidebar_control', 	array(
+		$wp_customize->add_control(	'anorya_archives_sidebar_setting', 	array(
 									'label'    => esc_html__( 'Sidebar Options for Archives/Categories', 'anorya' ),
 									'section'  => 'anorya_sidebar_settings',
 									'settings' => 'anorya_archives_sidebar_setting',
@@ -181,7 +181,7 @@
 									'default' => 'right',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_choices_sanitize') );
-		$wp_customize->add_control(	'anorya_single_post_sidebar_control', 	array(
+		$wp_customize->add_control(	'anorya_single_post_sidebar_setting', 	array(
 									'label'    => esc_html__( 'SidebarOptions for Posts', 'anorya' ),
 									'section'  => 'anorya_sidebar_settings',
 									'settings' => 'anorya_single_post_sidebar_setting',
@@ -195,7 +195,7 @@
 									'default' => 'right',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_choices_sanitize') );
-		$wp_customize->add_control(	'anorya_single_page_sidebar_control', 	array(
+		$wp_customize->add_control(	'anorya_single_page_sidebar_setting', 	array(
 									'label'    => esc_html__( 'Sidebar Options for Pages', 'anorya' ),
 									'section'  => 'anorya_sidebar_settings',
 									'settings' => 'anorya_single_page_sidebar_setting',
@@ -209,7 +209,7 @@
 									'default' => 'right',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_choices_sanitize') );
-		$wp_customize->add_control(	'anorya_search_sidebar_control', 	array(
+		$wp_customize->add_control(	'anorya_search_sidebar_setting', 	array(
 									'label'    => esc_html__( 'Sidebar Options for Search', 'anorya' ),
 									'section'  => 'anorya_sidebar_settings',
 									'settings' => 'anorya_search_sidebar_setting',
@@ -232,7 +232,7 @@
 									'default' => true,
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_bool_sanitize') );
-		$wp_customize->add_control(	'anorya_back_to_top_control', 	array(
+		$wp_customize->add_control(	'anorya_back_to_top_setting', 	array(
 									'label'    => esc_html__( 'Display Back To Top Button', 'anorya' ),
 									'section'  => 'anorya_blog_settings',
 									'settings' => 'anorya_back_to_top_setting',
@@ -244,7 +244,7 @@
 									'default' => true,
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_bool_sanitize') );
-		$wp_customize->add_control(	'anorya_loader_control', 	array(
+		$wp_customize->add_control(	'anorya_loader_setting', 	array(
 									'label'    => esc_html__( 'Display Content Loader', 'anorya' ),
 									'section'  => 'anorya_blog_settings',
 									'settings' => 'anorya_loader_setting',
@@ -257,7 +257,7 @@
 									'default' => true,
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_bool_sanitize',) );
-		$wp_customize->add_control(	'anorya_display_promo_boxes_control', 	array(
+		$wp_customize->add_control(	'anorya_display_promo_boxes_setting', 	array(
 									'label'    => esc_html__( 'Display Home Promo Boxes', 'anorya' ),
 									'section'  => 'anorya_blog_settings',
 									'settings' => 'anorya_display_promo_boxes_setting',
@@ -269,7 +269,7 @@
 									'default' => 'anorya_full_width_grid_layout',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_choices_sanitize') );
-		$wp_customize->add_control(	'anorya_home_layout_control', 	array(
+		$wp_customize->add_control(	'anorya_home_layout_setting', 	array(
 									'label'    => esc_html__( 'Select Home layout', 'anorya' ),
 									'section'  => 'anorya_blog_settings',
 									'settings' => 'anorya_home_layout_setting',
@@ -285,7 +285,7 @@
 									'default' => 'anorya_list_layout',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_choices_sanitize') );
-		$wp_customize->add_control(	'anorya_archives_layout_control', 	array(
+		$wp_customize->add_control(	'anorya_archives_layout_setting', 	array(
 									'label'    => esc_html__( 'Archives/Categories/Search Results layout', 'anorya' ),
 									'section'  => 'anorya_blog_settings',
 									'settings' => 'anorya_archives_layout_setting',
@@ -300,7 +300,7 @@
 									'default' => 2,
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_choices_sanitize') );
-		$wp_customize->add_control(	'anorya_grid_columns_control', 	array(
+		$wp_customize->add_control(	'anorya_grid_columns_setting', 	array(
 									'label'    => esc_html__( 'Number of columns for grid layout', 'anorya' ),
 									'description' => esc_html__('3 Column Grid is intended for layouts without sidebars','anorya'),
 									'section'  => 'anorya_blog_settings',
@@ -314,7 +314,7 @@
 									'default' => false,
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_bool_sanitize') );
-		$wp_customize->add_control(	'anorya_full_text_posts_control', 	array(
+		$wp_customize->add_control(	'anorya_full_text_posts_setting', 	array(
 									'label'    => esc_html__( 'Display the full post  instead of excerpt.', 'anorya' ),
 									'section'  => 'anorya_blog_settings',
 									'settings' => 'anorya_full_text_posts_setting',
@@ -335,7 +335,7 @@
 									'default' => 'standard',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_choices_sanitize') );
-		$wp_customize->add_control(	'anorya_slider_type_control', 	array(
+		$wp_customize->add_control(	'anorya_slider_type_setting', 	array(
 									'label'    => esc_html__( 'Select the home slider style', 'anorya' ),
 									'section'  => 'anorya_home_slider_settings',
 									'settings' => 'anorya_slider_type_setting',
@@ -349,7 +349,7 @@
 									'default' => 4,
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_range_sanitize',) );
-		$wp_customize->add_control(	'anorya_slider_posts_number_control', 	array(
+		$wp_customize->add_control(	'anorya_slider_posts_number_setting', 	array(
 									'label'    => esc_html__( 'How many posts to show? ', 'anorya' ),
 									'section'  => 'anorya_home_slider_settings',
 									'settings' => 'anorya_slider_posts_number_setting',
@@ -365,7 +365,7 @@
 									'default' => 'ALL',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_choices_sanitize',) );
-		$wp_customize->add_control(	'anorya_slider_posts_category_control', 	array(
+		$wp_customize->add_control(	'anorya_slider_posts_category_setting', 	array(
 									'label'    => esc_html__( 'Select the slider posts category', 'anorya' ),
 									'section'  => 'anorya_home_slider_settings',
 									'settings' => 'anorya_slider_posts_category_setting',
@@ -385,7 +385,7 @@
 									'default' => true,
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_bool_sanitize',) );
-		$wp_customize->add_control(	'anorya_footer_slider_display_control', 	array(
+		$wp_customize->add_control(	'anorya_footer_slider_display_setting', 	array(
 									'label'    => esc_html__( 'Display Footer Slider', 'anorya' ),
 									'section'  => 'anorya_footer_settings',
 									'settings' => 'anorya_footer_slider_display_setting',
@@ -395,7 +395,7 @@
 									'default' => 4,
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_range_sanitize',) );
-		$wp_customize->add_control(	'anorya_footer_sliders_posts_no_control', 	array(
+		$wp_customize->add_control(	'anorya_footer_sliders_posts_no_setting', 	array(
 									'label'    => esc_html__( 'Enter the number of posts that are going to be displayed on the footer slider gallery. ', 'anorya' ),
 									'section'  => 'anorya_footer_settings',
 									'settings' => 'anorya_footer_sliders_posts_no_setting',
@@ -408,7 +408,7 @@
 									'default' => 'ALL',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_choices_sanitize',) );
-		$wp_customize->add_control(	'anorya_footer_slider_posts_category_control', 	array(
+		$wp_customize->add_control(	'anorya_footer_slider_posts_category_setting', 	array(
 									'label'    => esc_html__( 'Select the slider posts category', 'anorya' ),
 									'section'  => 'anorya_footer_settings',
 									'settings' => 'anorya_footer_slider_posts_category_setting',
@@ -420,7 +420,7 @@
 									'default' => true,
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_bool_sanitize',) );
-		$wp_customize->add_control(	'anorya_footer_widgets_display_control', 	array(
+		$wp_customize->add_control(	'anorya_footer_widgets_display_setting', 	array(
 									'label'    => esc_html__( 'Display Footer Widgets Areas', 'anorya' ),
 									'section'  => 'anorya_footer_settings',
 									'settings' => 'anorya_footer_widgets_display_setting',
@@ -430,7 +430,7 @@
 									'default' => ' ',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_nonhtml_sanitize',) );
-		$wp_customize->add_control(	'anorya_footer_copyright_text_control', 	array(
+		$wp_customize->add_control(	'anorya_footer_copyright_text_setting', 	array(
 									'label'    => esc_html__( 'Enter Footer Copyright Text', 'anorya' ),
 									'section'  => 'anorya_footer_settings',
 									'settings' => 'anorya_footer_copyright_text_setting',
@@ -460,7 +460,7 @@
 		$wp_customize->add_setting( 'anorya_promobox1_image_setting' , array(
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_image_sanitize',) );
-		$wp_customize->add_control(	 new WP_Customize_Image_Control($wp_customize, 'anorya_promobox1_image_control', array(
+		$wp_customize->add_control(	 new WP_Customize_Image_Control($wp_customize, 'anorya_promobox1_image_setting', array(
 																								'label'      => esc_html__( 'Promo Box  Image', 'anorya' ),
 																								'section'    => 'anorya_promo_box1_settings',
 																								'settings'   => 'anorya_promobox1_image_setting')));	
@@ -470,7 +470,7 @@
 									'default' => esc_html__('Read More','anorya'),
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_html_sanitize',) );
-		$wp_customize->add_control(	'anorya_promobox1_subtitle_control', 	array(
+		$wp_customize->add_control(	'anorya_promobox1_subtitle_setting', 	array(
 									'label'    => esc_html__( 'Promo Box SubTitle', 'anorya' ),
 									'section'  => 'anorya_promo_box1_settings',
 									'settings' => 'anorya_promobox1_subtitle_setting',
@@ -481,7 +481,7 @@
 									'default' => esc_html__('Promo Box 1','anorya'),
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_html_sanitize',) );
-		$wp_customize->add_control(	'anorya_promobox1_title_control', 	array(
+		$wp_customize->add_control(	'anorya_promobox1_title_setting', 	array(
 									'label'    => esc_html__( 'Promo Box Title', 'anorya' ),
 									'section'  => 'anorya_promo_box1_settings',
 									'settings' => 'anorya_promobox1_title_setting',
@@ -492,7 +492,7 @@
 									'default' => '#',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_url_sanitize',) );
-		$wp_customize->add_control(	'anorya_promobox1_url_control', 	array(
+		$wp_customize->add_control(	'anorya_promobox1_url_setting', 	array(
 									'label'    => esc_html__( 'Promo Box  Link', 'anorya' ),
 									'section'  => 'anorya_promo_box1_settings',
 									'settings' => 'anorya_promobox1_url_setting',
@@ -511,7 +511,7 @@
 		$wp_customize->add_setting( 'anorya_promobox2_image_setting' , array(
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_image_sanitize',) );
-		$wp_customize->add_control(	 new WP_Customize_Image_Control($wp_customize, 'anorya_promobox2_image_control', array(
+		$wp_customize->add_control(	 new WP_Customize_Image_Control($wp_customize, 'anorya_promobox2_image_setting', array(
 																								'label'      => esc_html__( 'Promo Box  Image', 'anorya' ),
 																								'section'    => 'anorya_promo_box2_settings',
 																								'settings'   => 'anorya_promobox2_image_setting')));	
@@ -521,7 +521,7 @@
 									'default' => esc_html__('Read More','anorya'),
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_html_sanitize',) );
-		$wp_customize->add_control(	'anorya_promobox2_subtitle_control', 	array(
+		$wp_customize->add_control(	'anorya_promobox2_subtitle_setting', 	array(
 									'label'    => esc_html__( 'Promo Box Subtitle', 'anorya' ),
 									'section'  => 'anorya_promo_box2_settings',
 									'settings' => 'anorya_promobox2_subtitle_setting',
@@ -532,7 +532,7 @@
 									'default' => esc_html__('Promo Box 2','anorya'),
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_html_sanitize',) );
-		$wp_customize->add_control(	'anorya_promobox2_title_control', 	array(
+		$wp_customize->add_control(	'anorya_promobox2_title_setting', 	array(
 									'label'    => esc_html__( 'Promo Box Title', 'anorya' ),
 									'section'  => 'anorya_promo_box2_settings',
 									'settings' => 'anorya_promobox2_title_setting',
@@ -543,7 +543,7 @@
 									'default' => '#',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_url_sanitize',) );
-		$wp_customize->add_control(	'anorya_promobox2_url_control', 	array(
+		$wp_customize->add_control(	'anorya_promobox2_url_setting', 	array(
 									'label'    => esc_html__( 'Promo Box Link', 'anorya' ),
 									'section'  => 'anorya_promo_box2_settings',
 									'settings' => 'anorya_promobox2_url_setting',
@@ -565,7 +565,7 @@
 		$wp_customize->add_setting( 'anorya_promobox3_image_setting' , array(
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_image_sanitize',) );
-		$wp_customize->add_control(	 new WP_Customize_Image_Control($wp_customize, 'anorya_promobox3_image_control', array(
+		$wp_customize->add_control(	 new WP_Customize_Image_Control($wp_customize, 'anorya_promobox3_image_setting', array(
 																								'label'      => esc_html__( 'Promo Box Image', 'anorya' ),
 																								'section'    => 'anorya_promo_box3_settings',
 																								'settings'   => 'anorya_promobox3_image_setting')));	
@@ -576,7 +576,7 @@
 									'default' => esc_html__('Read More','anorya'),
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_html_sanitize',) );
-		$wp_customize->add_control(	'anorya_promobox3_subtitle_control', 	array(
+		$wp_customize->add_control(	'anorya_promobox3_subtitle_setting', 	array(
 									'label'    => esc_html__( 'Promo Box Subtitle', 'anorya' ),
 									'section'  => 'anorya_promo_box3_settings',
 									'settings' => 'anorya_promobox3_subtitle_setting',
@@ -587,7 +587,7 @@
 									'default' => esc_html__('Promo Box 3','anorya'),
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_html_sanitize',) );
-		$wp_customize->add_control(	'anorya_promobox3_title_control', 	array(
+		$wp_customize->add_control(	'anorya_promobox3_title_setting', 	array(
 									'label'    => esc_html__( 'Promo Box Title', 'anorya' ),
 									'section'  => 'anorya_promo_box3_settings',
 									'settings' => 'anorya_promobox3_title_setting',
@@ -599,7 +599,7 @@
 									'default' => '#',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_url_sanitize',) );
-		$wp_customize->add_control(	'anorya_promobox3_url_control', 	array(
+		$wp_customize->add_control(	'anorya_promobox3_url_setting', 	array(
 									'label'    => esc_html__( 'Promo Box Link', 'anorya' ),
 									'section'  => 'anorya_promo_box3_settings',
 									'settings' => 'anorya_promobox3_url_setting',
@@ -623,7 +623,7 @@
 									'default' => 'Antic Didone,serif',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_choices_sanitize',) );
-		$wp_customize->add_control(	'anorya_headings_font_family_control', 	array(
+		$wp_customize->add_control(	'anorya_headings_font_family_setting', 	array(
 									'label'    => esc_html__( 'Select the headings font family', 'anorya' ),
 									'section'  => 'anorya_typography_settings',
 									'settings' => 'anorya_headings_font_family_setting',
@@ -636,7 +636,7 @@
 									'default' => 'Open Sans, sans-serif',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_choices_sanitize',) );
-		$wp_customize->add_control(	'anorya_body_font_family_control', 	array(
+		$wp_customize->add_control(	'anorya_body_font_family_setting', 	array(
 									'label'    => esc_html__( 'Select the Body font family', 'anorya' ),
 									'section'  => 'anorya_typography_settings',
 									'settings' => 'anorya_body_font_family_setting',
@@ -648,7 +648,7 @@
 									'default' => 14,
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_range_sanitize',) );
-		$wp_customize->add_control(	'anorya_body_font_size_control', 	array(
+		$wp_customize->add_control(	'anorya_body_font_size_setting', 	array(
 									'label'    => esc_html__( 'Font Size: ', 'anorya' ),
 									'section'  => 'anorya_typography_settings',
 									'settings' => 'anorya_body_font_size_setting',
@@ -662,7 +662,7 @@
 									'default' => 'latin',
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_choices_sanitize',) );
-		$wp_customize->add_control(	'anorya_font_language_control', 	array(
+		$wp_customize->add_control(	'anorya_font_language_setting', 	array(
 									'label'    => esc_html__( 'Select Language Character Set for the selected fonts.', 'anorya' ),
 									'description' => esc_html__('Note: Not all fonts support all the languages character sets listed','anorya'),
 									'section'  => 'anorya_typography_settings',
@@ -692,7 +692,7 @@
 									'default' => false,
 									'transport' => 'refresh',
 									'sanitize_callback' => 'anorya_bool_sanitize') );
-		$wp_customize->add_control(	'anorya_rtl_support_control', 	array(
+		$wp_customize->add_control(	'anorya_rtl_support_setting', 	array(
 									'label'    => __( 'RTL Support', 'anorya' ),
 									'section'  => 'anorya_typography_settings',
 									'settings' => 'anorya_rtl_support_setting',
@@ -792,7 +792,7 @@
 	//choices - select sanitize
 	function anorya_choices_sanitize( $input, $setting ) {
 		
-		$choices = $setting->manager->get_control(str_replace('_setting','_control',$setting->id))->choices;
+		$choices = $setting->manager->get_control($setting->id)->choices;
 		return ( array_key_exists(  $input , $choices ) ?  $input  : $setting->default );
 	}
 
@@ -805,7 +805,7 @@
 	function anorya_range_sanitize( $number, $setting ) {
 		$number = absint( $number );
 		
-		$input_attrs = $setting->manager->get_control(str_replace('_setting','_control',$setting->id) )->input_attrs;
+		$input_attrs = $setting->manager->get_control($setting->id)->input_attrs;
 	
 		$min = ( isset( $input_attrs['min'] ) ? $input_attrs['min'] : $number );
 		$max = ( isset( $input_attrs['max'] ) ? $input_attrs['max'] : $number );

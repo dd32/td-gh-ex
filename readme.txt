@@ -5,7 +5,7 @@ Tags: blog, right-sidebar, translation-ready, one-column, two-columns, grid-layo
 
 Requires at least: 4.7
 Tested up to: 4.9.8
-Stable tag: 1.1.1
+Stable tag: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,10 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==
+
+=1.1.2 30/11/2018=
+
+* FIXED Customizer bug which was preventing in some instances settings to be published
 
 =1.1.1 31/10/2018=
 
