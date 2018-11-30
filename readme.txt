@@ -75,6 +75,10 @@ Source: http://flexslider.woothemes.com
 
 == Changelog ==
 
+Version 1.24 (2018-11-30)
+-------------------------
+- Fixed Gutenberg editor styles font being overwritten
+
 Version 1.23 (2018-10-14)
 -------------------------
 - Updated with Gutenberg support

@@ -6,7 +6,8 @@
 /* Structure ---------------------------------------------- */
 
 
-.edit-post-visual-editor {
+.edit-post-visual-editor,
+.editor-styles-wrapper.edit-post-visual-editor {
 	color: #333;
 	font-family: 'Vollkorn', 'Times New Roman', 'Times', serif;
 	font-size: 21px;
@@ -193,6 +194,16 @@ figure {
 	font-weight: 400;
 }
 
+
+/* Block: More ---------------------------------------- */
+
+.gutenberg .wp-block-more input[type=text] {
+	color: #666;
+	font-family: 'Raleway', sans-serif !important;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	font-weight: 800;
+}
 
 /* Block: Table ---------------------------------------- */
 
