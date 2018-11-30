@@ -118,6 +118,10 @@ The rest of the content...
 == Changelog ==
 
 
+Version 1.16 (2018-11-30)
+-------------------------
+- Fixed Gutenberg editor styles font being overwritten
+
 Version 1.15 (2018-10-14)
 -------------------------
 - Fixed accent color for links in the Gutenberg editor styles
