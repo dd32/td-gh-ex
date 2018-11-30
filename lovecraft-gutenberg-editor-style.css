@@ -6,9 +6,10 @@
 /* Structure ---------------------------------------------- */
 
 
-.edit-post-visual-editor {
+.edit-post-visual-editor,
+.editor-styles-wrapper.edit-post-visual-editor {
 	color: #111;
-	font-family: 'Georgia', serif;
+	font-family: Georgia, serif;
 	font-size: 18px;
 }
 

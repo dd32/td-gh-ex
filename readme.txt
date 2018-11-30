@@ -45,6 +45,10 @@ Source: https://github.com/dachcom-digital/jquery-doubletaptogo
 
 == Changelog ==
 
+Version 1.26 (2018-11-30)
+-------------------------
+- Fixed Gutenberg editor styles font being overwritten
+
 Version 1.25 (2018-10-20)
 -------------------------
 - Updated with Gutenberg support
