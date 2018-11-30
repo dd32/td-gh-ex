@@ -257,6 +257,10 @@
 	text-decoration: none;
 }
 
+.free-vs-pro h3 a {
+	color: #069acc;
+}
+
 .free-vs-pro .dashicons-external {
 	padding: 2px;
 }
