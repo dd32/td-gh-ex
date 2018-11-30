@@ -41,6 +41,10 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.69 (2018-11-30)
+-------------------------
+- Fixed Gutenberg editor styles font being overwritten
+
 Version 1.68 (2018-11-13)
 -------------------------
 - Fixed aligncenter issue in Gutenberg
