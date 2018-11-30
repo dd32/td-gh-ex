@@ -114,6 +114,10 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.30 (2018-11-30)
+-------------------------
+- Fixed Gutenberg editor styles font being overwritten
+
 Version 1.29 (2018-11-03)
 -------------------------
 - Fixed the archive template date formatting
