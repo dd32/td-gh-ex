@@ -63,6 +63,10 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.22 (2018-11-30)
+-------------------------
+- Fixed Gutenberg editor styles font being overwritten
+
 Version 1.21 (2018-10-14)
 -------------------------
 - Added the .has-accent-color/-background-color Gutenberg elements to the custom accent color function
