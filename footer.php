@@ -26,25 +26,25 @@
         <?php } ?>
         <?php $contact_mail = get_theme_mod('contact_mail'); ?>
         <?php if(!empty($contact_mail)){ ?>
-        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/footer-icon-email.png" alt="" /><a href="mailto:<?php echo sanitize_email($contact_mail); ?>"><?php echo $contact_mail; ?></a>
+        <img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/footer-icon-email.png" alt="" /><a href="mailto:<?php echo esc_attr( antispambot(sanitize_email( $contact_mail ) )); ?>"><?php echo esc_html( antispambot( $contact_mail ) ); ?></a>
         <?php } ?>
       </div>
       <div class="social-icons">
         <?php $fb_link = get_theme_mod('fb_link'); ?>
         <?php if (!empty($fb_link)) { ?>
-        <a title="facebook" class="fb" target="_blank" href="<?php echo esc_url($fb_link); ?>"></a>
+        <a title="<?php esc_attr__('facebook', 'adventure-lite');?>" class="fb" target="_blank" href="<?php echo esc_url($fb_link); ?>"></a>
         <?php } ?>
         <?php $twitt_link = get_theme_mod('twitt_link');?>
         <?php if (!empty($twitt_link)) { ?>
-        <a title="twitter" class="tw" target="_blank" href="<?php echo esc_url($twitt_link); ?>"></a>
+        <a title="<?php esc_attr__('twitter', 'adventure-lite');?>" class="tw" target="_blank" href="<?php echo esc_url($twitt_link); ?>"></a>
         <?php } ?>
         <?php $gplus_link = get_theme_mod('gplus_link'); ?>
         <?php if (!empty($gplus_link)) { ?>
-        <a title="google-plus" class="gp" target="_blank" href="<?php echo esc_url($gplus_link); ?>"></a>
+        <a title="<?php esc_attr__('google-plus', 'adventure-lite');?>" class="gp" target="_blank" href="<?php echo esc_url($gplus_link); ?>"></a>
         <?php } ?>
         <?php $linked_link = get_theme_mod('linked_link'); ?>
         <?php if (!empty($linked_link)) { ?>
-        <a title="linkedin" class="in" target="_blank" href="<?php echo esc_url($linked_link); ?>"></a>
+        <a title="<?php esc_attr__('linkedin', 'adventure-lite');?>" class="in" target="_blank" href="<?php echo esc_url($linked_link); ?>"></a>
         <?php } ?>
       </div>
     </div>

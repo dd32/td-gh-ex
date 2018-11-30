@@ -5,7 +5,7 @@ Author: SKT Themes
 Author URI: https://www.sktthemes.net
 Description: Adventure Lite WordPress theme can be used for adventure, sports, hiking, trekking, railing, rafting, games, fun, elking, hunting, military, mountain climbing, skiing, surfing and other such adventure sports. Also can be used for tours and travels, camping, hotel, students, summer camps, skating, motels, service industry, and other corporate, business, photography and personal portfolio websites. Is simple, flexible and multipurpose with having multi industry use. It is compatible with WooCommerce, and other popular plugins. It is also page builder plugins compatible like Elementor, Live Composer, Beaver Builder and multilingual plugins like Polylang, qTranslate X and others too compatible as well. Demo : http://sktperfectdemo.com/demos/adventure/
 
-Version: 1.6
+Version: 1.7
 License: GNU General Public License
 License URI: license.txt
 Text Domain: adventure-lite
@@ -98,7 +98,7 @@ img.alignright, .alignright{ float:right; margin:0 0 0 15px; padding:5px; border
 .space50{ clear:both; height:50px;}
 .space100{ clear:both; height:100px;}
 
-.head-info-area{border-bottom: 1px solid #ebebeb; border-top: 5px solid #fec42b; padding: 0; width: 100%;}
+.head-info-area{border-bottom: 1px solid #ebebeb; border-top: 5px solid #e64d43; padding: 0; width: 100%;}
 .center{margin: 0 auto; width: 1170px;}
 .left{float: left;}
 .right{float: right;}
@@ -114,11 +114,11 @@ img.alignright, .alignright{ float:right; margin:0 0 0 15px; padding:5px; border
 .pagination{display:table; clear:both;}
 .pagination .nav-links{ margin:20px 0;}
 .pagination .nav-links a{ margin-right:0; background:#646262; color:#fff; padding:5px 10px;}
-.pagination .nav-links span.current, .pagination .nav-links a:hover { padding:5px 10px; background:#fec42b; color:#fff;}
+.pagination .nav-links span.current, .pagination .nav-links a:hover { padding:5px 10px; background:#e64d43; color:#fff;}
 
 .postmeta{padding:5px 0; color:#999; clear:both;}
 .postmeta a{color:#999;}
-.postmeta a:hover{color:#fec42b;}
+.postmeta a:hover{color:#e64d43;}
 
 #comment-nav-above .nav-previous, #comment-nav-below .nav-previous{ float:none !important; margin:10px 0;}
 ol.comment-list li{ list-style:none; margin-bottom:5px;}
@@ -131,7 +131,7 @@ body.wp-custom-logo .logo{padding:0px !important; background-color:transparent !
 .logo p{font-size:12px;}
 .logo img{ height:125px; width:auto;}
 .logo h2{font-weight:600; margin:0; line-height:30px; color:#333; font-size:30px; text-transform:uppercase;}
-.logo h2 span{ color:#fec42b;}
+.logo h2 span{ color:#e64d43;}
 .logo a{ color:#333;}
 
 .widget-right{ float:right; font:400 20px/22px 'Roboto Condensed'; text-align:right;}
@@ -148,8 +148,8 @@ body.wp-custom-logo .logo{padding:0px !important; background-color:transparent !
 .container{ width:1170px; margin:0 auto; position:relative;}
 
 /*header menu css*/
-#menubar{border-top:3px solid #fec42b;}
-.menuwrapper{ background-color:#fec42b; -webkit-border-bottom-right-radius: 3px;
+#menubar{border-top:3px solid #e64d43;}
+.menuwrapper{ background-color:#e64d43; -webkit-border-bottom-right-radius: 3px;
 -webkit-border-bottom-left-radius: 3px;
 -moz-border-radius-bottomright: 3px;
 -moz-border-radius-bottomleft: 3px;
@@ -212,16 +212,16 @@ h2.section-title::after{ width:10px; height:10px; background:#f9f8f8; border:sol
 .threebox p{ margin-bottom:20px; line-height:22px; text-align:center; font-family:'Lato', sans-serif;}
 .threebox h3:after{border-bottom: 2px solid #4b4c47; clear: both; content: " "; display: block; margin: 15px auto 0; text-align: center; width: 55px;}
 .threebox h3{font:700 20px 'Montserrat', sans-serif; color:#4b4c47; margin:0 0 20px; text-transform:uppercase;}
-a.ReadMore{font:400 14px/22px 'Lato', sans-serif; background-color:#669d89; padding:8px 20px; color: #000; display:inline-block; }
-a.ReadMore:hover{background-color:#fec42b; color:#000; }
-.threebox:hover h3{ color:#fec42b;}
+a.ReadMore{font:400 14px/22px 'Lato', sans-serif; background-color:#343434; padding:8px 20px; color: #fff; display:inline-block; }
+a.ReadMore:hover{background-color:#e64d43; color:#000; }
+.threebox:hover h3{ color:#e64d43;}
 .threebox .thumbbx {border-radius: 100%; height: 96px; margin: 0 auto 15px; overflow: hidden; width: 87px;}
 .threebox .thumbbx img{ width: 100%; height:auto; min-height:96px;}
 /* = social icons css
 -------------------------------------------------------------- */
 .social-icons a{ width:35px; height:35px; line-height:35px; text-align:center;  vertical-align:middle; display:inline-block; transition:0.6s; -moz-transition:0.6s; -webkit-transition:0.6s; -o-transition:0.6s;  margin:0; padding:0;}
 .social-icons br{ display:none;}
-.social-icons a:hover{background-color:#fec42b;}
+.social-icons a:hover{background-color:#e64d43;}
 .social-icons .fb{ background:url(images/icon-fb.png) no-repeat center center; }
 .social-icons .tw{ background:url(images/icon-tw.png) no-repeat center center; }
 .social-icons .gp{ background:url(images/icon-gp.png) no-repeat center center;}
@@ -240,7 +240,7 @@ body.home .page_content{padding:80px 0;}
 .blog_lists{ margin:0 0 25px 0; padding-bottom:25px; border-bottom:1px solid #f7f7f7; clear:both;}
 .blog_lists h4{ margin-bottom:6px;}
 .blog_lists h4 a{ color:#484f5e;}
-.blog_lists h4 a:hover{ color:#fec42b;}
+.blog_lists h4 a:hover{ color:#e64d43;}
 .blog_lists p{ margin-bottom:15px;}
 .blog-meta{ font-style:italic; margin-bottom:8px;}
 .post-date, .post-comment, .post-categories{ display:inline; color:#000000;} 
@@ -289,7 +289,7 @@ h3.widget-title a{color:#ffffff;}
 .widget-column-2 {padding:0 5%; width:40%;}
 .widget-column-3 { margin-right:0px !important;}
 .cols-3 h5{ font-weight:bold; font-size:20px; color:#fff; margin-bottom:20px; font-family: "Montserrat"; text-transform:uppercase;}
-.cols-3 h5 span{ font-weight:300; color:#fec42b; }
+.cols-3 h5 span{ font-weight:300; color:#e64d43; }
 .cols-3 ul{ margin:0; padding:0; list-style:inside disc;}
 .cols-3 ul li { display:block; padding:0;}
 .cols-3 ul li a { color:#b8b6b6; background:url(images/list-arrow.png) no-repeat 0 8px; padding:3px 0 3px 20px; display:block;}
@@ -299,22 +299,22 @@ h3.widget-title a{color:#ffffff;}
 .phone-no{ margin:10px 0 20px; line-height:22px;}
 .phone-no a{color:#d6d6d6;}
 .phone-no a:hover{color:#d6d6d6;}
-.phone-no strong { display:inline-block; color:#fec42b;}
+.phone-no strong { display:inline-block; color:#e64d43;}
 .phone-no img{ margin:5px 15px 0 0; float:left;}
 .cols-3 .phone-no p{ margin-bottom:10px;}
 
 .copyright-wrapper {background-color:##414b4f; color:#fff; position:relative; padding:15px 0; border-top:1px solid #5e676b;}
 .copyright-txt { float:left;}
-.copyright-txt span{color:#fec42b;}
+.copyright-txt span{color:#e64d43;}
 .design-by { float:right;}
 .recent-post{ min-height:70px; margin:0 0 13px 0; padding-bottom:13px; border-bottom:1px solid #5e676b; }
 .recent-post h6{ font-size:13px; margin-bottom:6px; display:block; text-transform:uppercase;}
 .recent-post h6 a{ color:#b8b6b6;}
-.recent-post h6 a:hover{ color:#fec42b;}
+.recent-post h6 a:hover{ color:#e64d43;}
 .recent-post img{ float:left; width:60px; margin:4px 15px 5px 0; border:3px solid #4c4b4b;}
 .recent-post p{ margin-bottom:10px;}
 .recent-post .morebtn{ color:#ffffff;}
-.recent-post .morebtn:hover{ color:#fec42b;}
+.recent-post .morebtn:hover{ color:#e64d43;}
 .recent-post:last-child{ border-bottom:none; margin-bottom:0; padding-bottom:0;}
 
 /* Buttons */
@@ -341,7 +341,7 @@ h1.product_title, p.price{ margin-bottom:10px;}
 #wp-calendar{ width:100%;}
 
 input.search-field, .post-password-form input[type=password]{border:1px #eee solid; padding:8px 23px 8px 23px; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; margin-bottom:10px; width:73%; margin-right:5px;}
-input.search-submit, .post-password-form input[type=submit], .wpcf7-form input[type=submit]{border:none; color:#ffffff; padding:8px 15px; cursor:pointer; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; background-color:#fec42b; float:right;}
+input.search-submit, .post-password-form input[type=submit], .wpcf7-form input[type=submit]{border:none; color:#ffffff; padding:8px 15px; cursor:pointer; border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px; background-color:#e64d43; float:right;}
 
 /* Text meant only for screen readers. */
 .screen-reader-text {clip: rect(1px, 1px, 1px, 1px);position: absolute !important;	height: 1px;width: 1px;	overflow: hidden;}
@@ -353,7 +353,7 @@ input.search-submit, .post-password-form input[type=submit], .wpcf7-form input[t
 .wpcf7{ margin:30px 0 0; padding:0;}
 .wpcf7 input[type="text"], .wpcf7 input[type="tel"], .wpcf7 input[type="email"]{ width:40%; border:1px solid #cccccc; box-shadow:inset 1px 1px 2px #ccc; height:35px; padding:0 15px; color:#797979; margin-bottom:0;}
 .wpcf7 textarea{width:60%; border:1px solid #cccccc; box-shadow:inset 1px 1px 2px #ccc; height:150px; color:#797979; margin-bottom:25px; font:12px arial; padding:10px; padding-right:0;}
-.wpcf7 input[type="submit"]{background-color:#fec42b; width:auto; border:none; cursor:pointer; font:18px 'Roboto Condensed',san-serif; color:#ffffff; padding:10px 40px; border-radius:3px;}	
+.wpcf7 input[type="submit"]{background-color:#e64d43; width:auto; border:none; cursor:pointer; font:18px 'Roboto Condensed',san-serif; color:#ffffff; padding:10px 40px; border-radius:3px;}	
 
 /* ============= Comment Form ============ */
 h1.screen-reader-text{font:22px 'Roboto Condensed',san-serif;}
