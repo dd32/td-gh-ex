@@ -915,7 +915,7 @@ function aaron_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'aaron_width',
 		array(
-			'sanitize_callback' => 'aaron_sanitize_select',
+			'sanitize_callback' => 'absint',
 			'default'           => 100,
 		)
 	);
@@ -1235,9 +1235,9 @@ function aaron_sanitize_text( $input ) {
  * - Control: select, radio
  *
  * Sanitization callback for 'select' and 'radio' type controls. This callback sanitizes `$input`
- * as a slug, and then validates `$input` against the choices defined for the control.
+ * and then validates `$input` against the choices defined for the control.
  * 
- * @see sanitize_key()               https://developer.wordpress.org/reference/functions/sanitize_key/
+ * @see sanitize_text_field()               https://developer.wordpress.org/reference/functions/sanitize_text_field/
  * @see $wp_customize->get_control() https://developer.wordpress.org/reference/classes/wp_customize_manager/get_control/
  *
  * @param string               $input   Slug to sanitize.
@@ -1246,7 +1246,7 @@ function aaron_sanitize_text( $input ) {
  */
 function aaron_sanitize_select( $input, $setting ) {
 	// Ensure input is a slug.
-	$input = sanitize_key( $input );
+	$input = sanitize_text_field( $input );
 	// Get list of choices from the control associated with the setting.
 	$choices = $setting->manager->get_control( $setting->id )->choices;
 	// If the input is a valid key, return it; otherwise, return the default.

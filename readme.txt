@@ -28,6 +28,10 @@ Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
 
+Version 3.6, 2018-12-01
+Fixed a critical problem with the sanitize callback that prevented some customizer options from saving.
+
+
 Version 3.5, 2018-11-23
 Updated the readme file and the documentation.
 Minor code style changes to better comply with WordPress coding standards.
