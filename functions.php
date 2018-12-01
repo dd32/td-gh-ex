@@ -19,7 +19,7 @@ if ( ! function_exists( 'alacrity_lite_setup' ) ) :
  * before the init hook. The init hook is too late for some features, such as indicating
  * support post thumbnails.
  */
- 
+
 function alacrity_lite_setup() {
 	load_theme_textdomain( 'alacrity-lite', get_template_directory() . '/languages' );
 	// This theme styles the visual editor with editor-style.css to match the theme style.
@@ -148,9 +148,9 @@ function alacrity_lite_enqueue_fonts() {
 
 	wp_enqueue_style( 'alacrity-lite-fonts', 'https://fonts.googleapis.com/css?family=Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800|Roboto:100,100i,300,300i,400,400i,500,500i,700,700i', false ); 
 	wp_enqueue_style( 'alacrity-lite-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'nivo-slider-style', get_template_directory_uri() . '/css/nivo-slider.css' );
+	wp_enqueue_style( 'alacrity-lite-nivo-slider-style', get_template_directory_uri() . '/css/nivo-slider.css' );
 	wp_enqueue_style( 'alacrity-lite-fontawesome', get_template_directory_uri() . '/fonts/font-awesome.min.css' );
-	wp_enqueue_script( 'nivo-slider-jquery', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery'),'', true );
+	wp_enqueue_script( 'alacrity-lite-jquery-nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery'),'', true );
 	wp_enqueue_script( 'alacrity-lite-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	
 	wp_enqueue_script( 'alacrity-lite-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'),'20170504', true );
@@ -199,19 +199,19 @@ function alacrity_lite_social_links() { ?>
     if($fb_link || $twit_link || $gplus_link || $linked_link || $pinterest_link) { ?>
     <div class="social-icons">
         <?php if (!empty($fb_link)) { ?>
-   			<a href="<?php echo esc_url($fb_link); ?>" target="_blank" class="fa fa-facebook fa-1x" title="facebook"></a>
+   			<a href="<?php echo esc_url($fb_link); ?>" target="_blank" class="fa fa-facebook fa-1x" title="<?php esc_attr_e('Facebook','alacrity-lite'); ?>"></a>
         <?php } ?>
         <?php if (!empty($twit_link)) { ?>
-            <a href="<?php echo esc_url($twit_link); ?>" target="_blank" class="fa fa-twitter fa-1x" title="twitter"></a>
+            <a href="<?php echo esc_url($twit_link); ?>" target="_blank" class="fa fa-twitter fa-1x" title="<?php esc_attr_e('Twitter','alacrity-lite'); ?>"></a>
         <?php } ?>
         <?php if (!empty($gplus_link)) { ?>
-            <a href="<?php echo esc_url($gplus_link); ?>" target="_blank" class="fa fa-google-plus fa-1x" title="google-plus"></a>
+            <a href="<?php echo esc_url($gplus_link); ?>" target="_blank" class="fa fa-google-plus fa-1x" title="<?php esc_attr_e('Google Plus','alacrity-lite'); ?>"></a>
         <?php } ?>
         <?php if (!empty($linked_link)) { ?>
-            <a href="<?php echo esc_url($linked_link); ?>" target="_blank" class="fa fa-linkedin fa-1x" title="linkedin"></a>
+            <a href="<?php echo esc_url($linked_link); ?>" target="_blank" class="fa fa-linkedin fa-1x" title="<?php esc_attr_e('Linkedin','alacrity-lite'); ?>"></a>
         <?php } ?>
         <?php if (!empty($pinterest_link)) { ?>
-            <a href="<?php echo esc_url($pinterest_link); ?>" target="_blank" class="fa fa-pinterest fa-1x" title="pinterest"></a>
+            <a href="<?php echo esc_url($pinterest_link); ?>" target="_blank" class="fa fa-pinterest fa-1x" title="<?php esc_attr_e('Pinterest','alacrity-lite'); ?>"></a>
         <?php } ?>            
     </div>
 <?php }
@@ -256,3 +256,13 @@ function alacrity_lite_custom_pagination( $nav_query = false ) {
     </div>
  <?php }
 endif;
+
+if( ! function_exists( 'alacrity_lite_excerpt' ) ):
+
+    function alacrity_lite_excerpt( $length = 55, $echo = true, $more = '' ) {
+        $length = apply_filters( 'alacrity_lite_excerpt_length', $length );
+        return alacrity_lite::get_instance()->excerpt( $length, $echo, $more );
+    }
+endif;
+
+// alacrity_lite_excerpt(40); 

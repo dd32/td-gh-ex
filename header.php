@@ -13,13 +13,15 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="profile" href="http://gmpg.org/xfn/11">
-<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<?php if ( is_singular() && pings_open( get_queried_object() ) ) : ?>
+	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<?php endif; ?>   
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <div id="page" class="site">
 <div class="skip-link">
-	<a href="#content" class="screen-reader-text"><?php esc_attr_e( 'Skip to content', 'alacrity-lite' ); ?></a>
+	<a href="#content" class="screen-reader-text"><?php esc_html_e( 'Skip to content', 'alacrity-lite' ); ?></a>
 </div><!-- .skip-link -->
 <!--HEADER-->
 <header>
@@ -124,7 +126,7 @@
             $link =  get_permalink( $id );
             $post_l = get_post($id); 
             setup_postdata( $post_l );
-            $content = esc_html(wp_trim_words( $post_l->post_content, 25, '' ) );
+			$content =  esc_html(alacrity_lite_excerpt(25),'alacrity-lite');
             ?>  
             <div id="slidecaption<?php echo (int)$cnt;?>" class="nivo-html-caption">
                 <div class="slide-inner">

@@ -15,8 +15,8 @@ get_header();
 		<div class="container">
 			<article id="post-0" class="post error404 no-results not-found row">
 				<header class="entry-header">
-					<div class="fourofour"><label><?php esc_attr_e( '404', 'alacrity-lite' ); ?></label></div>
-					<h1 class="entry-title"><?php esc_attr_e( 'Page Not Found', 'alacrity-lite' ); ?></h1>
+					<div class="fourofour"><label><?php esc_html_e ( '404', 'alacrity-lite' ); ?></label></div>
+					<h1 class="entry-title"><?php esc_html_e ( 'Page Not Found', 'alacrity-lite' ); ?></h1>
 				</header>
 
 				<div class="entry-content">

@@ -12,7 +12,7 @@ get_header(); ?>
     <?php if ( have_posts() ) : ?>
          <header class="page-header">
           <h1 class="entry-title"><?php printf( /* translators: %s: search-term */
-            esc_attr__( 'Search Results for: %s', 'alacrity-lite' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
+            esc_html_e( 'Search Results for: %s', 'alacrity-lite' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
         </header>
         <div class="blog-container">
             <?php /* Start the Loop */
