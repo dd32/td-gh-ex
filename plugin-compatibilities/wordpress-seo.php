@@ -44,7 +44,6 @@ class AgncyYoastCompatibility {
 	 */
 	private function filter_dispatcher() {
 		add_filter( 'agncy_breadcrumb', array( $this, 'yoast_breadcrumbs' ) );
-		add_filter( 'wpseo_sitemap_entry', array( $this, 'filter_content_templates' ), 10, 3 );
 	}
 
 	/**
@@ -60,28 +59,6 @@ class AgncyYoastCompatibility {
 		if ( function_exists( 'yoast_breadcrumb' ) ) {
 			return yoast_breadcrumb( null, null, false );
 		}
-	}
-
-	/**
-	 * We don't want active content templates to show up in one pages.
-	 *
-	 * This function checks if the (yoast) type in question is a 'post' type and then
-	 * checks if the $post object is a content template. If so it returns false.
-	 *
-	 * @access public
-	 * @param array  $url  Array of URL parts.
-	 * @param string $post_type URL type.
-	 * @param object $post Data object for the URL.
-	 * @return (string|bool) $url The filtered url or false
-	 */
-	public function filter_content_templates( $url, $post_type, $post ) {
-		global $_lh_onepage;
-
-		if ( 'post' === $post_type && $_lh_onepage->is_content_template( $post ) ) {
-			return false;
-		}
-
-		return $url;
 	}
 
 }
