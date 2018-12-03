@@ -25,12 +25,15 @@ function awada_theme_options()
 
         'slider_title_1'=>__('Welcome To Awada','awada'),
         'slider_subtitle_1'=>__('The ultimate aim of your business','awada'),
+        'slider_readmore_1'=>__('Read More','awada'),
 
         'slider_title_2'=>__('Popular Responsive Theme','awada'),
         'slider_subtitle_2'=>__('The Key Of Your Success','awada'),
+        'slider_readmore_2'=>__('Read More','awada'),
 
         'slider_title_3'=>__('Why Are You Waitting','awada'),
         'slider_subtitle_3'=>__('Download and Start Customizing Your Site','awada'),
+        'slider_readmore_3'=>__('Read More','awada'),
 
         'home_slider_shortcode'=>'',
 		// Service

@@ -1,3 +1,5 @@
+###Version 1.6.7 [03-DEC-2018]
+* Slide button not displaying issue fixed.
 ###Version 1.6.6 [09-OCT-2018]
 * Minor improvments.
 ###Version 1.6.5 [28-DEC-2017]

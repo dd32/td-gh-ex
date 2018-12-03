@@ -26,7 +26,7 @@ if($awada_theme_options['home_slider_enabled']==1){
 								<?php $link='';
 	                            if (isset($awada_theme_options['slider_post_page_' . $i]) && $awada_theme_options['slider_post_page_' . $i] == 'post') {
 	                                    if (isset($awada_theme_options['post_slider_' . $i]) && $awada_theme_options['post_slider_' . $i] != 0) {$link = get_permalink($awada_theme_options['post_slider_' . $i]);
-										var_dump($link); }
+										 }
 	                                } else {
 	                                    if (isset($awada_theme_options['page_slider_' . $i]) && $awada_theme_options['page_slider_' . $i] != 0) {$link = get_permalink($awada_theme_options['page_slider_' . $i]);}
 	                                } ?>
@@ -34,7 +34,7 @@ if($awada_theme_options['home_slider_enabled']==1){
 								<blockquote>
 									<?php if($awada_theme_options['slider_subtitle_'.$i]!=""){?>
 									<p><?php echo wp_kses_post($awada_theme_options['slider_subtitle_'.$i]); ?></p>
-									<?php } ?>
+									<?php }?>
 									<?php if($link!='' && isset($awada_theme_options['slider_readmore_' . $i]) && $awada_theme_options['slider_readmore_' . $i]!=''){?>
 	                           <a id="slide<?php echo $i; ?>-btn1" href="<?php echo esc_url($link); ?>" class="btn btn-primary btn-lg slider-btn2"><?php if(isset($awada_theme_options['slider_readmore_' . $i]) && $awada_theme_options['slider_readmore_' . $i]!=''){ echo esc_attr($awada_theme_options['slider_readmore_' . $i]); }?></a>
 	                            <?php } ?>
