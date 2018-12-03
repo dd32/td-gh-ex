@@ -9,7 +9,7 @@ function d5socialia_customize_register($wp_customize){
 		'title'    		=> __('SOCIALIA OPTIONS', 'd5-socialia'),
         'description'   => ' <div class="infohead">' . __('We appreciate an','d5-socialia') . ' <a href="http://wordpress.org/support/view/theme-reviews/d5-socialia" target="_blank">' . __('Honest Review','d5-socialia') . '</a> ' . __('of this Theme if you Love our Work','d5-socialia') . '<br /> <br />
 
-' . __('Need More Features and Options including Exciting Slide and 100+ Advanced Features? Try ','d5-socialia') . '<a href="' . esc_url('http://d5creation.com/theme/socialia/') .'
+' . __('Need More Features and Options including Exciting Slide and 100+ Advanced Features? Try ','d5-socialia') . '<a href="' . esc_url('https://d5creation.com/theme/socialia/') .'
 " target="_blank"><strong>' . __('Socialia Extend','d5-socialia') . '</strong></a><br /> <br /> 
         
         

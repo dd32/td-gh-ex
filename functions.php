@@ -1,11 +1,9 @@
 <?php
 /* 	Socialia Theme's Functions
-	Copyright: 2012-2016, D5 Creation, www.d5creation.com
+	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Socialia 2.0
-*/
-   
-  
+*/ 
   	
 
 function d5socialia_setup() {
@@ -19,12 +17,10 @@ function d5socialia_setup() {
 // Load the D5 Framework Optios Page
 	require_once ( trailingslashit(get_template_directory()) . 'inc/customize.php' );
 	
-	function d5socialia_about_page() { 
-	add_theme_page( 'D5 Creation Themes', 'D5 Creation Themes', 'edit_theme_options', 'd5-themes', 'd5socialia_d5_themes' );
+	function d5socialia_about_page() { 	
 	add_theme_page( 'Socialia Options', 'Socialia Options', 'edit_theme_options', 'theme-about', 'd5socialia_theme_about' ); 
 	}
 	add_action('admin_menu', 'd5socialia_about_page');
-	function d5socialia_d5_themes() {  require_once ( trailingslashit(get_template_directory()) . 'inc/d5-themes.php' ); }
 	function d5socialia_theme_about() {  require_once ( trailingslashit(get_template_directory()) . 'inc/theme-about.php' ); }
 
 
@@ -37,7 +33,9 @@ function d5socialia_setup() {
 // 	This theme uses Featured Images (also known as post thumbnails) for per-post/per-page Custom Header images
 	if ( function_exists( 'add_theme_support' ) ) { 
 	add_theme_support( 'post-thumbnails' );
-	set_post_thumbnail_size( 600, 200, true );
+	set_post_thumbnail_size( 150, 150, array( 'left', 'top' ) );
+	add_image_size( 'category-thumb', 1100, 513, array( 'left', 'top' ) ); 	
+	add_image_size( 'slide-thumb', 1500, 432, array( 'left', 'top' ) );
 	}
 	
 		
@@ -182,9 +180,3 @@ function d5socialia_setup() {
 	) );
 	}
 	add_action( 'widgets_init', 'd5socialia_widgets_init' );
-	
-
-	
-	
-	
-	

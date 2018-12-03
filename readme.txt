@@ -1,11 +1,11 @@
 ----------------------------------
 Socialia Theme
 ----------------------------------
-Version: 	3.3
+Version: 	3.4
 Developer: 	D5 Creation
-Author URI: 	http://d5creation.com
+Author URI: 	https://d5creation.com
 
-Donation Link: 	http://d5creation.com/donate/
+Donation Link: 	https://d5creation.com/donate/
 
 Copyright: 	D5 Creation
 License: 		GNU General Public License v2 or later
@@ -35,6 +35,10 @@ html5.js: MIT/GPL2 Licensed, https://github.com/aFarkas/html5shiv
 jquery.skitter.js: Dual licensed under the MIT or GPL Version 2 licenses, http://thiagosf.net
 
 jquery.easing.1.3.js:   Open source under the BSD License, http://gsgd.co.uk/sandbox/jquery/easing/
+
+Version 3.4
+====================================
+- Styling Change
 
 Version 3.3
 ====================================
