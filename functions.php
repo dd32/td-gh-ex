@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.10' );
+define( 'AVANT_THEME_VERSION' , '1.1.11' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -22,7 +22,7 @@ require get_template_directory() . '/customizer/mods.php';
 
 // Load TGM plugin class
 require_once get_template_directory() . '/includes/inc/class-tgm-plugin-activation.php';
- // Add customizer Upgrade class
+// Add customizer Upgrade class
 require_once( get_template_directory() . '/includes/avant-pro/class-customize.php' );
 
 if ( ! function_exists( 'avant_setup' ) ) :
@@ -152,7 +152,7 @@ function avant_scripts() {
 		wp_enqueue_style( 'avant-heading-font-default', 'https://fonts.googleapis.com/css?family=Poppins', array(), AVANT_THEME_VERSION );
 	}
 
-	wp_enqueue_style( 'avant-font-awesome', get_template_directory_uri().'/includes/font-awesome/css/fontawesome-all.css', array(), '5.0.13' );
+	wp_enqueue_style( 'avant-font-awesome', get_template_directory_uri().'/includes/font-awesome/css/all.min.css', array(), '5.5.0' );
 	wp_enqueue_style( 'avant-style', get_stylesheet_uri(), array(), AVANT_THEME_VERSION );
 
 	if ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-seven' ) :

@@ -71,8 +71,8 @@
                 <div class="home-slider-wrap home-slider-remove <?php echo ( get_theme_mod( 'avant-site-layout' ) == 'avant-site-boxed' ) ? sanitize_html_class( 'slider-site-boxed' ) : ''; ?> <?php echo ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-six' ) ? sanitize_html_class( 'home-slider-header-six' ) : ''; ?>" data-auto="<?php echo ( get_theme_mod( 'avant-slider-auto-scroll' ) ) ? esc_attr( 'false' ) : esc_attr( '6500' ); ?>" data-scroll="<?php echo ( get_theme_mod( 'avant-slider-scroll-effect' ) ) ? esc_attr( get_theme_mod( 'avant-slider-scroll-effect' ) ) : esc_attr( 'crossfade' ); ?>" data-poh="<?php echo ( get_theme_mod( 'avant-slider-pause-oh' ) ) ? esc_attr( 'true' ) : esc_attr( 'false' ); ?>">
                     
                     <?php echo ( !get_theme_mod( 'avant-slider-full-width', customizer_library_get_default( 'avant-slider-full-width' ) ) ) ? '<div class="site-container">' : ''; ?>
-                        <div class="home-slider-prev"><i class="fa fa-angle-left"></i></div>
-                        <div class="home-slider-next"><i class="fa fa-angle-right"></i></div>
+                        <div class="home-slider-prev"><i class="fas fa-angle-left"></i></div>
+                        <div class="home-slider-next"><i class="fas fa-angle-right"></i></div>
                         
                         <div class="home-slider">
                             
@@ -146,8 +146,8 @@
             </div>
             
             <?php echo ( !get_theme_mod( 'avant-slider-full-width', customizer_library_get_default( 'avant-slider-full-width' ) ) ) ? '<div class="site-container">' : ''; ?>
-                <div class="home-slider-prev"><i class="fa fa-angle-left"></i></div>
-                <div class="home-slider-next"><i class="fa fa-angle-right"></i></div>
+                <div class="home-slider-prev"><i class="fas fa-angle-left"></i></div>
+                <div class="home-slider-next"><i class="fas fa-angle-right"></i></div>
                 
                 <div class="home-slider">
                     

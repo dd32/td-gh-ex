@@ -68,6 +68,11 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.11
+* Style fixes/tweaks
+* Updated Font Awesome - v5.5.0
+* Updated the language .pot file
+
 #### 1.1.10
 * Style fixes
 * Removed css bug adding box-shadow to content images

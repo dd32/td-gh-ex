@@ -40,7 +40,7 @@
 
 </div><!-- #page -->
 <?php if ( get_theme_mod( 'avant-enable-bttb' ) ) : ?>
-	<div class="scroll-to-top"><i class="fa fa-angle-up"></i></div> <!-- Scroll To Top Button -->
+	<div class="scroll-to-top"><i class="fas fa-angle-up"></i></div> <!-- Scroll To Top Button -->
 <?php endif; ?>
 <?php wp_footer(); ?>
 </body>

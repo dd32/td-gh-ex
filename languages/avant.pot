@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2018-08-21 13:12+0200\n"
+"POT-Creation-Date: 2018-12-03 15:54+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 2.1.1\n"
 "X-Poedit-Basepath: ..\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_n:1,2;__ngettext:1,2;"
@@ -1665,59 +1665,59 @@ msgstr ""
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#: templates/footer/footer-none.php:3 templates/footer/footer-standard.php:20
+#: templates/footer/footer-none.php:4 templates/footer/footer-standard.php:24
 #, php-format
 msgid ""
 "<div class=\"site-container\"><div class=\"site-footer-bottom-bar-left"
 "\">Theme: %1$s by %2$s</div><div class=\"site-footer-bottom-bar-right\">"
 msgstr ""
 
-#: templates/footer/footer-social.php:8 templates/social-links.php:3
+#: templates/footer/footer-social.php:10 templates/social-links.php:3
 msgid "Send Us an Email"
 msgstr ""
 
-#: templates/footer/footer-social.php:12 templates/social-links.php:7
+#: templates/footer/footer-social.php:14 templates/social-links.php:7
 msgid "Contact Us on Skype"
 msgstr ""
 
-#: templates/footer/footer-social.php:16 templates/social-links.php:11
+#: templates/footer/footer-social.php:18 templates/social-links.php:11
 msgid "Find Us on Facebook"
 msgstr ""
 
-#: templates/footer/footer-social.php:20 templates/social-links.php:15
+#: templates/footer/footer-social.php:22 templates/social-links.php:15
 msgid "Follow Us on Twitter"
 msgstr ""
 
-#: templates/footer/footer-social.php:24 templates/social-links.php:19
+#: templates/footer/footer-social.php:26 templates/social-links.php:19
 msgid "Find Us on Pinterest"
 msgstr ""
 
-#: templates/footer/footer-social.php:28 templates/social-links.php:23
+#: templates/footer/footer-social.php:30 templates/social-links.php:23
 msgid "Find Us on LinkedIn"
 msgstr ""
 
-#: templates/footer/footer-social.php:32 templates/social-links.php:27
+#: templates/footer/footer-social.php:34 templates/social-links.php:27
 msgid "Find Us on Tumblr"
 msgstr ""
 
-#: templates/footer/footer-social.php:36 templates/social-links.php:31
+#: templates/footer/footer-social.php:38 templates/social-links.php:31
 msgid "Find Us on Flickr"
 msgstr ""
 
-#: templates/footer/footer-social.php:40 templates/social-links.php:35
+#: templates/footer/footer-social.php:42 templates/social-links.php:35
 msgid "Find Us on VK"
 msgstr ""
 
-#: templates/footer/footer-social.php:44 templates/social-links.php:39
+#: templates/footer/footer-social.php:46 templates/social-links.php:39
 msgid "Find Us on GitHub"
 msgstr ""
 
-#: templates/footer/footer-social.php:47
+#: templates/footer/footer-social.php:49
 #, php-format
 msgid "<div class=\"site-footer-social-copy\">Theme: %1$s by %2$s"
 msgstr ""
 
-#: templates/footer/footer-standard.php:11
+#: templates/footer/footer-standard.php:13
 msgid "Add your own widgets here"
 msgstr ""
 

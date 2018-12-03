@@ -11,7 +11,7 @@ get_header(); ?>
 
 			<section class="error-404 not-found">
 				<div>
-					<i class="fa fa-ban"></i>
+					<i class="fas fa-ban"></i>
 				</div>
 				<header class="page-header">
 					<h1 class="page-title"><?php echo wp_kses_post( get_theme_mod( 'avant-website-error-head', __( 'Oops! <span>404</span>', 'avant' ) ) ); ?></h1>
