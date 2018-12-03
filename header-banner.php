@@ -18,7 +18,7 @@
     	<?php foreach ($home_slider_array as $home_slider_item => $home_slider_fields): ?>
     	    <?php if (of_get_option($home_slider_fields['image']) || of_get_option($home_slider_fields['video'])): ?>
                 <?php $home_page_slider_type = of_get_option($home_slider_fields['slider_type']); ?>
-        	    <div class="item <?php echo $home_page_slider_type; ?>">
+        	    <div class="item <?php echo esc_attr($home_page_slider_type); ?>">
                     <?php if($home_page_slider_type == 'video_type'): ?>
                         <?php
                             $video_url = of_get_option($home_slider_fields['video']);
@@ -31,14 +31,14 @@
                             }
                         ?>
                         <?php if(!empty($embed_video_url)): ?>
-                            <iframe class="video-frame" src="<?php echo $embed_video_url; ?>" style="<?php echo $home_slider_video_height; ?>"></iframe>
+                            <iframe class="video-frame" src="<?php echo esc_url($embed_video_url); ?>" style="<?php echo esc_attr($home_slider_video_height); ?>"></iframe>
                         <?php else: ?>
                             <h2 class="text-center video-frame"><br><br><br> Please Provide Valid Video URL.</h2>
                         <?php endif; ?>
 
                     <?php else: ?>
-                        <div class="<?php echo $enable_slider_overaly; ?>"></div>
-                        <img src="<?php echo of_get_option($home_slider_fields['image']); ?>" class="gallery-post-single" alt="Slide"/>
+                        <div class="<?php echo esc_attr($enable_slider_overaly); ?>"></div>
+                        <img src="<?php echo esc_url(of_get_option($home_slider_fields['image'])); ?>" class="gallery-post-single" alt="Slide"/>
                     <?php endif; ?>
 
             		<div class="content-wrapper clearfix">
@@ -57,9 +57,9 @@
     <?php if (of_get_option('static_header_banner_image')): ?>
         <div id="banner">
             <?php if (of_get_option('default_banner_image')): ?>
-    	       <img src="<?php echo of_get_option('default_banner_image'); ?>" alt="<?php bloginfo('name'); ?>-Banner">
+    	       <img src="<?php echo esc_url(of_get_option('default_banner_image')); ?>" alt="<?php bloginfo('name'); ?>-Banner">
             <?php else: ?>
-    	       <img src="<?php echo get_template_directory_uri().'/includes/images/banner.jpg'?>" alt="<?php bloginfo('name'); ?>-Banner">
+    	       <img src="<?php echo esc_url(get_template_directory_uri().'/includes/images/banner.jpg'); ?>" alt="<?php bloginfo('name'); ?>-Banner">
             <?php endif; ?>
         </div>
     <?php endif; ?>

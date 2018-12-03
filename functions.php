@@ -115,6 +115,18 @@ function ascent_setup() {
         'default-image' => '',
     ) ) );
 
+
+    //Enable support for custom header.
+    $defaults = array(
+    'width'         => 1920,
+    'height'        => 300,
+    'flex-height'            => false,
+    'flex-width'             => false,
+    'default-image'          => get_template_directory_uri() .'/includes/images/banner.jpg',
+    );
+    add_theme_support( 'custom-header', $defaults );
+
+
  /* Add Menu Support */
     register_nav_menus(
         array(
@@ -197,6 +209,11 @@ function ascent_scripts() {
     wp_enqueue_script( 'ascent-bootstrapwp', get_template_directory_uri() . '/includes/js/bootstrap-wp.js', array('jquery') );
 
     wp_enqueue_script( 'ascent-skip-link-focus-fix', get_template_directory_uri() . '/includes/js/skip-link-focus-fix.js', array(), '20130115', true );
+
+    // Load the html5 shiv.
+    wp_enqueue_script( 'html5', get_template_directory_uri() . '/includes/js/html5.min.js', array(), '20130115', true );
+    wp_script_add_data( 'html5', 'conditional', 'lt IE 9' );
+
 
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
         wp_enqueue_script( 'comment-reply' );
@@ -413,32 +430,3 @@ if( !function_exists( 'ascent_options_stylesheets_alt_style' ) ) {
     }
 }
 add_action( 'wp_enqueue_scripts', 'ascent_options_stylesheets_alt_style' );
-
-if( !function_exists( 'ascent_string_encode' ) ) {
-  function ascent_string_encode($string) {
-    $chars_array = array(
-    'A' => 'Z',  'B' => 'Y',  'C' => 'X',  'D' => 'W',  'E' => 'V',  'F' => 'U',  'G' => 'T',  'H' => 'S',  'I' => 'R',  'J' => 'Q',  'K' => 'P',  'L' => 'O',  'M' => 'N',  'N' => 'M',  'O' => 'L',  'P' => 'K',  'Q' => 'J',  'R' => 'I',  'S' => 'H',  'T' => 'G',  'U' => 'F',  'V' => 'E',  'W' => 'D',  'X' => 'C',  'Y' => 'B',  'Z' => 'A',  '0' => 'a',  '1' => 'b',  '2' => 'c',  '3' => 'd',  '4' => 'e',  '5' => 'f',  '6' => 'g',  '7' => 'h',  '8' => 'i',  '9' => 'j',  '.' => 'k',  '@' => 'l',  '~' => 'm',  '+' => 'n',  '%' => 'o',  '^' => 'p',  '!' => 'q',  '*' => 'r',  '(' => 's',  ')' => 't',  '[' => 'u',  ']' => 'v',  '{' => 'w',  '}' => 'x',  '<' => 'y',  '/' => 'z');
-
-    $string = str_split(strtoupper($string));
-    $encode_array = array();
-    for($i = 0; $i < count($string); $i++) {
-      $encode_array[] = isset($chars_array[$string[$i]]) ? $chars_array[$string[$i]] : $string[$i];
-    }
-    return implode('', $encode_array);
-  }
-}
-
-if( !function_exists( 'ascent_admin_notice_theme_support' ) ) {
-  function ascent_admin_notice_theme_support() {
-    $admin_email = get_option('admin_email');
-    $admin_email = ascent_string_encode($admin_email);
-    $premium_support_url = 'https://ascenttheme.com/premium-support/BVRbpyPMy4Og4KwN/'.urlencode($admin_email);
-  ?>
-    <div class="notice notice-success is-dismissible">
-      <p style="font-size: 15px;"><?php _e( 'Are you having any trouble regarding this theme? Do you want to do more with this theme? Then subscribe to the Ascent Premium Support button.', 'ascent' ); ?></p>
-    	<p style="margin: 2px 0 10px 0;"><a href="<?php echo esc_url($premium_support_url); ?>" target="_blank" class="button button-primary"><?php _e( 'Ascent Premium Support', 'ascent' ); ?></a></p>
-    </div>
-    <?php
-  }
-}
-add_action( 'admin_notices', 'ascent_admin_notice_theme_support' );

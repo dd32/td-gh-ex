@@ -22,17 +22,17 @@
         <div class="post-meta-info col-sm-12 col-md-2">
     	    <div class="entry-meta">
     		      <time class="entry-time updated" itemprop="datePublished" datetime="<?php the_time('c'); ?>"><i class="fa fa-clock-o nt-mobile"></i> <?php the_time('M'); ?><strong><?php the_time('d'); ?></strong></time>
-    	        <span class="comments_count clearfix entry-comments-link"><i class="fa fa-comment nt-mobile"></i> <?php comments_popup_link(__('0', 'ascent'), __('1', 'ascent'), __('%', 'ascent')); ?></span>
+    	        <span class="comments_count clearfix entry-comments-link"><i class="fa fa-comment nt-mobile"></i>  <?php comments_popup_link('0', '1', '%'); ?></span>
     	    </div><!-- .entry-meta -->
       </div><!--.post-meta-info-->
 	    <?php endif; ?>
 
 
-	<div class="post-content-wrap <?php echo $column_class; ?>">
+	<div class="post-content-wrap <?php echo esc_attr($column_class); ?>">
 	    <header class="page-header">
 		<h1 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h1>
 		<span class="entry-author">
-		    <?php _e('Posted by', 'ascent') ?>
+		    <?php esc_html_e('Posted by', 'ascent') ?>
 		    <span class="author vcard entry-author-link">
 			<?php the_author_posts_link(); ?>
 		    </span>
@@ -42,7 +42,7 @@
 	<?php if ( is_search() || is_archive() ) : // Only display Excerpts for Search and Archive Pages ?>
 	    <div class="entry-summary">
 		<?php the_excerpt(); ?>
-		<a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read More &rarr;', 'ascent'); ?></a>
+		<a class="read-more" href="<?php the_permalink(); ?>"><?php esc_html_e('Read More &rarr;', 'ascent'); ?></a>
 	    </div><!-- .entry-summary -->
 
 	<?php else : ?>
@@ -56,7 +56,7 @@
 		    ?>
 		    <?php if ( '' != get_the_post_thumbnail() ): ?>
 			<figure>
-			    <a class="swipebox" href="<?php echo $full_image_url; ?>" title="<?php the_title(); ?>">
+			    <a class="swipebox" href="<?php echo esc_url($full_image_url); ?>" title="<?php the_title(); ?>">
 				<?php the_post_thumbnail('blog-page'); ?>
 			    </a>
 			</figure>
@@ -71,7 +71,7 @@
 			'after'  => '</div>',
 		    ) );
 		?>
-		<a class="read-more" href="<?php the_permalink(); ?>"><?php _e('Read More &rarr;', 'ascent'); ?></a>
+		<a class="read-more" href="<?php the_permalink(); ?>"><?php esc_html_e('Read More &rarr;', 'ascent'); ?></a>
 
 	    </div><!-- .entry-content -->
 	<?php endif; ?>

@@ -5,7 +5,7 @@
  * @package ascent
  */
 ?>
-	
+
 <div class="sidebar">
 
     <?php // add the class "panel" below here to wrap the sidebar in Bootstrap style ;) ?>
@@ -19,14 +19,14 @@
 	    </aside>
 
 	    <aside id="archives" class="widget widget_archive">
-		<h3 class="widget-title"><?php _e( 'Archives', 'ascent' ); ?></h3>
+		<h3 class="widget-title"><?php esc_html_e( 'Archives', 'ascent' ); ?></h3>
 		<ul>
 		    <?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
 		</ul>
 	    </aside>
 
-	    <aside id="meta" class="widget widget_meta"> 
-		<h3 class="widget-title"><?php _e( 'Meta', 'ascent' ); ?></h3>
+	    <aside id="meta" class="widget widget_meta">
+		<h3 class="widget-title"><?php esc_html_e( 'Meta', 'ascent' ); ?></h3>
 		<ul>
 		    <?php wp_register(); ?>
 		    <li><?php wp_loginout(); ?></li>
@@ -35,6 +35,6 @@
 	    </aside>
 
 	<?php endif; ?>
-	    
+
     </div><!-- close .sidebar-padder -->
 </div><!-- close .sidebar -->

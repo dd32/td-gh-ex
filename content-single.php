@@ -13,17 +13,17 @@
         <div class="post-meta-info col-sm-12 col-md-2">
       		<div class="entry-meta">
       		    <time class="entry-time updated" itemprop="datePublished" datetime="<?php the_time('c'); ?>"><i class="fa fa-clock-o nt-mobile"></i> <?php the_time('M'); ?><strong><?php the_time('d'); ?></strong></time>
-      		    <span class="comments_count clearfix entry-comments-link"><i class="fa fa-comment nt-mobile"></i> <?php comments_popup_link(__('0', 'ascent'), __('1', 'ascent'), __('%', 'ascent')); ?></span>
+      		    <span class="comments_count clearfix entry-comments-link"><i class="fa fa-comment nt-mobile"></i>  <?php comments_popup_link('0', '1', '%'); ?></span>
       		</div><!-- .entry-meta -->
         </div><!--.post-meta-info-->
       <?php endif; ?>
 
-	<div class="post-content-wrap <?php echo $column_class; ?>">
+	<div class="post-content-wrap <?php echo esc_attr($column_class); ?>">
 	    <header class="page-header">
 		<h1 class="entry-title"><?php the_title(); ?></h1>
 		 <?php if ( 'post' == get_post_type() ) : ?>
 		    <span class="entry-author">
-			<?php _e('Posted by', 'ascent') ?>
+			<?php esc_html_e('Posted by', 'ascent') ?>
 			<span class="author vcard entry-author-link">
 			    <?php the_author_posts_link(); ?>
 			</span>
@@ -39,7 +39,7 @@
 		    ?>
 		    <?php if ( '' != get_the_post_thumbnail() ): ?>
 			<figure>
-			    <a class="swipebox" href="<?php echo $full_image_url; ?>" title="<?php the_title(); ?>">
+			    <a class="swipebox" href="<?php echo esc_url($full_image_url); ?>" title="<?php the_title(); ?>">
 				<?php the_post_thumbnail('blog-page'); ?>
 			    </a>
 			</figure>
@@ -69,7 +69,7 @@
 		    <?php if ( ($categories_list && ascent_categorized_blog()) || ($tags_list) ): ?>
 
 		    <div class="cat-tag-meta-wrap">
-			<?php if ( $categories_list && ascent_categorized_blog() ) : ?>
+			<?php if ( $categories_list && ascent_categorized_blog() ) :?>
 			    <span class="cats-meta"><?php printf( __( '<i class="fa fa-folder"></i> %1$s', 'ascent' ), $categories_list ); ?></span>
 			<?php endif; ?>
 			<?php if ( $tags_list ) : ?>

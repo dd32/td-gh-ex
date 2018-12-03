@@ -9,13 +9,8 @@
 <head>
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width">
-    <!-- <title><?php wp_title( '|', true, 'right' ); ?></title> -->
     <link rel="profile" href="http://gmpg.org/xfn/11">
-    <link rel="shortcut icon" href="<?php echo of_get_option('favicon'); ?>"/>
     <link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
-    <!--[if lt IE 9]>
-    <script src="<?php echo get_template_directory_uri(); ?>/includes/js/html5.min.js"></script>
-    <![endif]-->
 
     <?php if (of_get_option('enable_home_slider_pagination')): ?>
       <script type="text/javascript">
@@ -58,7 +53,7 @@
                 <div class="col-sm-6">
                     <div class="mail-info">
             			<?php if (of_get_option('phone_number')): ?>
-            			    <span class="phone-info"><i class="fa fa-phone"></i> <?php echo of_get_option('phone_number'); ?></span>
+            			    <span class="phone-info"><i class="fa fa-phone"></i> <?php echo esc_html(of_get_option('phone_number')); ?></span>
             			<?php endif; ?>
             			<?php if (of_get_option('email_id')): ?>
             			    <span><i class="fa fa-envelope"></i> <a href="mailto:<?php echo of_get_option('email_id'); ?>"><?php echo of_get_option('email_id'); ?></a></span>
@@ -72,7 +67,7 @@
                             $socialmedia_navs = ascent_socialmedia_navs();
                             foreach ($socialmedia_navs as $socialmedia_url => $socialmedia_icon) {
                                 if (of_get_option($socialmedia_url)) {
-                                    echo '<li class="social-icon"><a target="_blank" href="'.of_get_option($socialmedia_url).'"><i class="'.$socialmedia_icon.'"></i></a></li>';
+                                    echo '<li class="social-icon"><a target="_blank" href="'.esc_url(of_get_option($socialmedia_url)).'"><i class="'.$socialmedia_icon.'"></i></a></li>';
                                 }
                             }
                             ?>
@@ -126,10 +121,10 @@
             </div><!-- .container -->
         </div><!--.header-bottom-inner-->
     </div><!--.header-bottom-->
-  <?php include_once 'header-searchform.php' ?>
+  <?php  get_template_part( 'header', 'searchform' ); ?>
 </header><!-- #masthead -->
 
-<?php include_once 'header-banner.php' ?>
+<?php get_template_part( 'header', 'banner' ); ?>
 
 <div class="main-content">
     <div class="container">
