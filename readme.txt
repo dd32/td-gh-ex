@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, grid-layout, custom-colors, custom
 Requires at least: 4.8
 Tested up to: 4.9
 Requires PHP: 5.6
-Stable tag: 1.1.6
+Stable tag: 1.1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,7 +24,11 @@ Agncy is a beautiful news and blogging theme that has beautiful typography, powe
 
 == Changelog ==
 
-= 1.1.5 =
+= 1.1.7 =
+* Fix for admin scripts not visible on new post
+* Add a recommendation for the 'WP Munich Blocks' plugin
+
+= 1.1.6 =
 * Hotfix for yoast compatibilty
 
 = 1.1.5 =
