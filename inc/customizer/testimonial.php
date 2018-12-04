@@ -111,7 +111,7 @@ function adonis_testimonial_options( $wp_customize ) {
                 'name'              => 'adonis_testimonial_cpt_' . $i,
                 'sanitize_callback' => 'adonis_sanitize_post',
                 'active_callback'   => 'adonis_is_testimonial_active',
-                'label'             => esc_html__( 'Testimoial', 'adonis' ) . ' ' . $i ,
+                'label'             => esc_html__( 'Testimonial', 'adonis' ) . ' ' . $i ,
                 'section'           => 'adonis_testimonials',
                 'type'              => 'select',
                 'choices'           => adonis_generate_post_array( 'jetpack-testimonial' ),

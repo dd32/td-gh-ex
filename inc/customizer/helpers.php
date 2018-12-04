@@ -125,7 +125,7 @@ function adonis_section_type_options() {
 		'post'     => esc_html__( 'Post', 'adonis' ),
 		'page'     => esc_html__( 'Page', 'adonis' ),
 		'category' => esc_html__( 'Category', 'adonis' ),
-		'image'    => esc_html__( 'Image', 'adonis' ),
+		'image'    => esc_html__( 'Custom', 'adonis' ),
 	);
 
 	return apply_filters( 'adonis_section_type_options', $options );

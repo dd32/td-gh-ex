@@ -214,7 +214,7 @@ function adonis_theme_options( $wp_customize ) {
 			'name'              => 'adonis_recent_posts_heading',
 			'sanitize_callback' => 'sanitize_text_field',
 			'active_callback'   => 'adonis_is_recent_posts_on_static_page_enabled',
-			'default'           => esc_html__( 'Blog', 'adonis' ),
+			'default'           => esc_html__( 'Recent Posts', 'adonis' ),
 			'label'             => esc_html__( 'Recent Posts Heading', 'adonis' ),
 			'section'           => 'adonis_homepage_options',
 		)
@@ -224,7 +224,6 @@ function adonis_theme_options( $wp_customize ) {
 			'name'              => 'adonis_recent_posts_subheading',
 			'sanitize_callback' => 'wp_kses_post',
 			'active_callback'   => 'adonis_is_recent_posts_on_static_page_enabled',
-			'default'           => esc_html__( 'I have tons to content. Follow my blogs about intresting stuff.', 'adonis' ),
 			'label'             => esc_html__( 'Recent Posts Sub Heading', 'adonis' ),
 			'section'           => 'adonis_homepage_options',
 			'type'              => 'textarea'

@@ -21,8 +21,8 @@ if ( $enable_homepage_posts ) : ?>
 		<main id="main" class="site-main">
 			<div class=" archive-post-wrapper">
 		        <?php
-				$title       = get_theme_mod( 'adonis_recent_posts_heading', esc_html__( 'Blog', 'adonis' ) );
-				$description = get_theme_mod( 'adonis_recent_posts_subheading', esc_html__( 'I have tons to content. Follow my blogs about intresting stuff.', 'adonis' ) );
+				$title       = get_theme_mod( 'adonis_recent_posts_heading', esc_html__( 'Recent Posts', 'adonis' ) );
+				$description = get_theme_mod( 'adonis_recent_posts_subheading' );
 
 				// Condition if is blog page but not front page, i.e. Blog page selected
 				if ( is_home() && ! is_front_page() ) {
