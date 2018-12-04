@@ -260,7 +260,7 @@ if ( class_exists('WP_Customize_Control') ) {
 					<?php foreach ( $this->choices as $key => $value ) { ?>
 						<label>
 							<input type="radio" data-control="size" name="<?php echo esc_attr( $this->id ); ?>" value="<?php echo esc_attr( $key ); ?>" <?php $this->link(); ?> <?php checked( esc_attr( $key ), $this->value() ); ?>/>
-							<span class="size button" data-value="<?php echo esc_attr( $value ); ?>"><?php echo esc_attr_e( $value ); ?></span>
+							<span class="size button" data-value="<?php echo esc_attr( $value ); ?>"><?php echo esc_attr( $value ); ?></span>
 						</label>
 					<?php } ?>
 				</div>

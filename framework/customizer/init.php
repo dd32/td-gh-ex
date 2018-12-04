@@ -20,24 +20,24 @@ add_action( 'customize_register', 'adviso_customize_register' );
 
 //Load All Individual Settings Based on Sections/Panels.
 
-require_once esc_url( get_template_directory(). '/framework/customizer/_sanitization.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/_misc-scripts.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/_googlefonts.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/header.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/social-icons.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/contact-info.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/skins.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/_featured-posts.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/_featured-posts-cat.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/_featured-carousel-post.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/_featured-carousel-product.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/_featured-products.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/_layouts.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/_woocommerce.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/featured-areas.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/extend-customizer.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/sorter.php' );
-require_once esc_url( get_template_directory(). '/framework/customizer/header-text.php' );
+require_once get_template_directory(). '/framework/customizer/_sanitization.php';
+require_once get_template_directory(). '/framework/customizer/_misc-scripts.php';
+require_once get_template_directory(). '/framework/customizer/_googlefonts.php';
+require_once get_template_directory(). '/framework/customizer/header.php';
+require_once get_template_directory(). '/framework/customizer/social-icons.php';
+require_once get_template_directory(). '/framework/customizer/contact-info.php';
+require_once get_template_directory(). '/framework/customizer/skins.php';
+require_once get_template_directory(). '/framework/customizer/_featured-posts.php';
+require_once get_template_directory(). '/framework/customizer/_featured-posts-cat.php';
+require_once get_template_directory(). '/framework/customizer/_featured-carousel-post.php';
+require_once get_template_directory(). '/framework/customizer/_featured-carousel-product.php';
+require_once get_template_directory(). '/framework/customizer/_featured-products.php';
+require_once get_template_directory(). '/framework/customizer/_layouts.php';
+require_once get_template_directory(). '/framework/customizer/_woocommerce.php';
+require_once get_template_directory(). '/framework/customizer/featured-areas.php';
+require_once get_template_directory(). '/framework/customizer/extend-customizer.php';
+require_once get_template_directory(). '/framework/customizer/sorter.php';
+require_once get_template_directory(). '/framework/customizer/header-text.php';
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
