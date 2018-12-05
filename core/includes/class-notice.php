@@ -45,8 +45,8 @@ if( !class_exists( 'anna_lite_admin_notice' ) ) {
 		 */
 		
 		public function dismiss() {
-		
-			if ( isset( $_GET['anna-lite-dismiss'] ) ) {
+
+			if ( isset( $_GET['anna-lite-dismiss'] ) && check_admin_referer( 'anna-lite-dismiss-' . get_current_user_id() ) ) {
 		
 				update_user_meta( get_current_user_id(), 'AnnaLite_AdminID_Notice_' . get_current_user_id() , intval($_GET['anna-lite-dismiss']) );
 				remove_action( 'admin_notices', array(&$this, 'admin_notice') );
@@ -67,7 +67,9 @@ if( !class_exists( 'anna_lite_admin_notice' ) ) {
             
             	<div class="anna_lite-noticedescription">
 					<strong><?php esc_html_e( 'Upgrade to the premium version of Anna, to enable 600+ Google Fonts, unlimited sidebars, portfolio section and much more.', 'anna-lite' ); ?></strong><br/>
-					<?php printf( '<a href="%1$s" class="dismiss-notice">'. esc_html__( 'Dismiss this notice', 'anna-lite' ) .'</a>', esc_url( '?anna-lite-dismiss=1' ) ); ?>
+
+					<?php printf('<a href="%1$s" class="dismiss-notice">'. esc_html__( 'Dismiss this notice', 'anna-lite' ) .'</a>', esc_url( wp_nonce_url( add_query_arg( 'anna-lite-dismiss', '1' ),'anna-lite-dismiss-' . get_current_user_id() ))); ?>
+                
                 </div>
                 
                 <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/anna-clean-wordpress-blog-and-shop-theme/?ref=2&campaign=anna-notice' ); ?>" class="button"><?php esc_html_e( 'Upgrade to Anna Premium', 'anna-lite' ); ?></a>

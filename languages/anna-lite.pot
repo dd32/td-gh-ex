@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-02 18:05+0100\n"
+"POT-Creation-Date: 2018-12-05 15:19+0100\n"
 "PO-Revision-Date: 2015-09-11 19:05+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
@@ -867,38 +867,38 @@ msgstr ""
 msgid "Footer Sidebar"
 msgstr ""
 
-#: core/includes/class-customize.php:425
+#: core/includes/class-customize.php:424
 msgid "Anna premium version"
 msgstr ""
 
-#: core/includes/class-customize.php:427 core/includes/class-notice.php:69
+#: core/includes/class-customize.php:426 core/includes/class-notice.php:69
 msgid ""
 "Upgrade to the premium version of Anna, to enable 600+ Google Fonts, "
 "unlimited sidebars, portfolio section and much more."
 msgstr ""
 
-#: core/includes/class-customize.php:431
+#: core/includes/class-customize.php:430
 msgid "Upgrade to Anna premium"
 msgstr ""
 
-#: core/includes/class-customize.php:439
+#: core/includes/class-customize.php:438
 msgid "Become a supporter"
 msgstr ""
 
-#: core/includes/class-customize.php:441
+#: core/includes/class-customize.php:440
 msgid ""
 "If you like this theme and support, I'd appreciate any of the following:"
 msgstr ""
 
-#: core/includes/class-customize.php:445
+#: core/includes/class-customize.php:444
 msgid "Rate this Theme"
 msgstr ""
 
-#: core/includes/class-customize.php:446
+#: core/includes/class-customize.php:445
 msgid "Subscribe our newsletter"
 msgstr ""
 
-#: core/includes/class-customize.php:447
+#: core/includes/class-customize.php:446
 msgid "Download our free WordPress themes"
 msgstr ""
 
@@ -1368,15 +1368,15 @@ msgstr ""
 msgid "results for"
 msgstr ""
 
-#: footer.php:14
+#: footer.php:21
 msgid "Copyright"
 msgstr ""
 
-#: footer.php:16
+#: footer.php:23
 msgid "Theme by"
 msgstr ""
 
-#: footer.php:17
+#: footer.php:24
 #, php-format
 msgid "Proudly powered by %s"
 msgstr ""

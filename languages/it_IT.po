@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-12-02 18:05+0100\n"
-"PO-Revision-Date: 2018-12-02 18:05+0100\n"
+"POT-Creation-Date: 2018-12-05 15:19+0100\n"
+"PO-Revision-Date: 2018-12-05 15:19+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -937,11 +937,11 @@ msgstr ""
 msgid "Footer Sidebar"
 msgstr "Sidebar per il piè di pagina"
 
-#: core/includes/class-customize.php:425
+#: core/includes/class-customize.php:424
 msgid "Anna premium version"
 msgstr "Aggiorna a Anna Premium"
 
-#: core/includes/class-customize.php:427 core/includes/class-notice.php:69
+#: core/includes/class-customize.php:426 core/includes/class-notice.php:69
 msgid ""
 "Upgrade to the premium version of Anna, to enable 600+ Google Fonts, "
 "unlimited sidebars, portfolio section and much more."
@@ -949,30 +949,30 @@ msgstr ""
 "Aggiorna alla versione premium di Anna, per attivare oltre 600 Google Fonts, "
 "barre laterali illimitate, sezione Portfolio e molto altro."
 
-#: core/includes/class-customize.php:431
+#: core/includes/class-customize.php:430
 msgid "Upgrade to Anna premium"
 msgstr "Aggiorna a Anna Premium"
 
-#: core/includes/class-customize.php:439
+#: core/includes/class-customize.php:438
 msgid "Become a supporter"
 msgstr "Diventa un supporter"
 
-#: core/includes/class-customize.php:441
+#: core/includes/class-customize.php:440
 msgid ""
 "If you like this theme and support, I'd appreciate any of the following:"
 msgstr ""
 "Se ti piace il tema oppure il servizio di supporto, è gradita una delle "
 "seguenti azioni:"
 
-#: core/includes/class-customize.php:445
+#: core/includes/class-customize.php:444
 msgid "Rate this Theme"
 msgstr "Valuta questo tema."
 
-#: core/includes/class-customize.php:446
+#: core/includes/class-customize.php:445
 msgid "Subscribe our newsletter"
 msgstr "Registrati alla nostra newsletter."
 
-#: core/includes/class-customize.php:447
+#: core/includes/class-customize.php:446
 msgid "Download our free WordPress themes"
 msgstr "Scarica i nostri temi gratuiti per WordPress"
 
@@ -1506,15 +1506,15 @@ msgstr "Cerca"
 msgid "results for"
 msgstr "risultati per"
 
-#: footer.php:14
+#: footer.php:21
 msgid "Copyright"
 msgstr "Copyright"
 
-#: footer.php:16
+#: footer.php:23
 msgid "Theme by"
 msgstr "Tema da"
 
-#: footer.php:17
+#: footer.php:24
 #, php-format
 msgid "Proudly powered by %s"
 msgstr "Offerto orgogliosamente da %s"

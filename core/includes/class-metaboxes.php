@@ -90,39 +90,6 @@ if( !class_exists( 'anna_lite_metaboxes' ) ) {
 					
 					<?php break;
 					
-					case "on-off": ?>
-				
-					<div class="anna_lite_inputbox">
-		
-						<div class="input-left">
-		
-							<label for="<?php echo esc_attr($field['id']); ?>"><?php echo esc_attr($field['name']); ?></label>
-							<p><?php echo esc_attr($field['desc']); ?></p>
-                            
-						</div>
-						
-                        <div class="input-right">
-		
-								<div class="bool-slider <?php if ( anna_lite_postmeta($field['id']) != "") { echo stripslashes( anna_lite_postmeta($field['id'])); } else { echo "on"; } ?>">
-									
-									<div class="inset">
-										<div class="control"></div>
-									</div>
-									
-									<input name="<?php echo esc_attr($field['id']); ?>" id="<?php echo esc_attr($field['id']); ?>" type="hidden" value="<?php if ( anna_lite_postmeta( $field['id']) != "") { echo esc_attr(anna_lite_postmeta( $field['id'])); } else { echo esc_attr($field['std']); } ?>" class="on-off" />
-	
-								</div>  
-								
-								<div class="clear"></div>      
-						
-						</div>	
-							
-						<div class="clear"></div>
-						
-					</div>
-				
-					<?php break;
-		
 					case 'title':  ?>
 					
 					<h3 class="title"><?php echo esc_attr($field['name']); ?></h3>
@@ -143,29 +110,6 @@ if( !class_exists( 'anna_lite_metaboxes' ) ) {
 						<div class="input-right">
 						
 							<input name="<?php echo esc_attr($field['id']); ?>" id="<?php echo esc_attr($field['id']); ?>" type="<?php echo esc_attr($field['type']); ?>" value="<?php if ( anna_lite_postmeta( $field['id']) != "") { echo esc_html(anna_lite_postmeta( $field['id'])); } ?>" />
-							
-						</div>
-						
-						<div class="clear"></div>
-					
-                    </div>
-				
-					<?php break;
-		
-					case 'link':  ?>
-					
-					<div class="anna_lite_inputbox">
-						
-						<div class="input-left">
-						
-							<label for="<?php echo esc_attr($field['id']); ?>"><?php echo esc_attr($field['name']); ?></label><br />
-							<em> <?php echo esc_attr($field['desc']); ?> </em>
-							
-						</div>
-						
-						<div class="input-right">
-						
-							<input name="<?php echo esc_attr($field['id']); ?>" id="<?php echo esc_attr($field['id']); ?>" type="text" value="<?php if ( anna_lite_postmeta( $field['id']) != "") { echo esc_url(anna_lite_postmeta( $field['id'])); } ?>" />
 							
 						</div>
 						
@@ -264,14 +208,6 @@ if( !class_exists( 'anna_lite_metaboxes' ) ) {
 								
 								$value = $_POST[$field['id']];
 								$newValue = sanitize_text_field($value);
-								update_post_meta($post_id, $field['id'], $newValue );
-								
-							break;
-							
-							case 'link':
-								
-								$value = $_POST[$field['id']];
-								$newValue = esc_url($value);
 								update_post_meta($post_id, $field['id'], $newValue );
 								
 							break;

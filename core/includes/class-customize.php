@@ -32,24 +32,19 @@ if( !class_exists( 'anna_lite_customize' ) ) {
 	
 			global $wp_version, $pagenow;
 
-			wp_enqueue_style( "thickbox" );
-			add_thickbox();
-		
-			$file_dir = get_template_directory_uri() . "/core/admin/assets/";
-
-			if ( $pagenow == 'post.php' || $pagenow == 'post-new.php' || $pagenow == 'edit.php' ) {
-
-				wp_enqueue_style( 'wp-color-picker' ); 
+			$file_dir = get_template_directory_uri() . '/core/admin/assets/';
 			
+			if ( $pagenow == 'post.php' || $pagenow == 'post-new.php' || $pagenow == 'edit.php' ) {
+				wp_enqueue_style ( 'anna-lite-panel',  $file_dir . 'css/panel.css', array(), '1.0.0' ); 
+				wp_enqueue_script( 'anna-lite-script', $file_dir . 'js/panel.js', array('jquery'),'1.0.0',TRUE ); 
+				wp_enqueue_script( 'jquery-ui-core', array('jquery'));
+				wp_enqueue_script( 'jquery-ui-tabs', array('jquery'));
+			}
+			
+			if ( !get_user_meta( get_current_user_id(), 'AnnaLite_AdminID_Notice_' . get_current_user_id(), TRUE ) ) {
+				wp_enqueue_style ( 'anna-lite-notice',  $file_dir . 'css/notice.css', array(), '1.0.0' ); 
 			}
 
-			wp_enqueue_style ( 'anna-lite-panel',  $file_dir . 'css/panel.css' ); 
-			wp_enqueue_script( 'anna-lite-script', $file_dir . 'js/panel.js', array('jquery', 'wp-color-picker'),'1.0.0',TRUE ); 
-			wp_enqueue_style ( 'anna-lite-on_off', $file_dir . 'css/on_off.css' ); 
-			wp_enqueue_script( 'anna-lite-on_off', $file_dir . 'js/on_off.js', array('jquery'),'1.0.0',TRUE ); 
-			wp_enqueue_script( "jquery-ui-core", array('jquery'));
-			wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
-		  
 		}
 		
 		public function customize_scripts() {

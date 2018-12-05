@@ -144,18 +144,22 @@ jQuery.noConflict()(function($){
    HEADER SEARCH 
    =============================================== */
 	
-	$('.header-search i, .header-search .search-form.visibile i.searchform-close-button').click(function(){
-		
+	$('.header-search i').click(function(){
+
+		$(this).prev('.search-form').find('input[type=text]').focus().val('');
+
 		if( !$('.header-search .search-form').hasClass('is-open')) {
+			
 			$('.header-search .search-form').addClass('is-open');
 			$('body').addClass('no-scrolling');
 			return false;
+		
 		} else {	
+			
 			$('.header-search .search-form').removeClass('is-open');
 			$('body').removeClass('no-scrolling');
-		}
 		
-		$('.header-search .search-form input[type=text]').val('').focus();
+		}
 
     });
 
