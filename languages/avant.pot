@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2018-12-03 15:54+0200\n"
+"POT-Creation-Date: 2018-12-05 10:33+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -720,9 +720,10 @@ msgstr ""
 #: customizer/customizer-options.php:787
 msgid ""
 "<b>Premium Extra Features:</b><br />- Change Site Attribution text<br />- "
-"Adjust Social Footer Icon size<br />- New Custom Footer layout<br />- Edit "
-"Custom Columns amount and Custom Widths<br />- Remove Social Icons<br />- "
-"Remove Footer bottom bar<br />- Adjust Footer top & bottom padding"
+"Adjust Social Footer Icon size<br />- Adjust Social Footer Icon spacing<br /"
+">- New Custom Footer layout<br />- Edit Custom Columns amount and Custom "
+"Widths<br />- Remove Social Icons<br />- Remove Footer bottom bar<br />- "
+"Adjust Footer top & bottom padding"
 msgstr ""
 
 #: customizer/customizer-options.php:798 functions.php:341
@@ -1167,8 +1168,9 @@ msgstr ""
 
 #: customizer/customizer-options.php:1575
 msgid ""
-"<b>Premium Extra Features:</b><br />- Premium offers a bunch of extra Social "
-"Links<br />- Plus 3 custom inputs for your own links"
+"<b>Premium Extra Features:</b><br />- Change Social Icons to their brand "
+"colors<br />- Premium offers a bunch of extra Social Links<br />- Plus 3 "
+"custom inputs for your own links"
 msgstr ""
 
 #: functions.php:74

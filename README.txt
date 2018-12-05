@@ -68,6 +68,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.12
+* Style fixes/tweaks
+* Fix menu not opening bug
+* Updated the language .pot file
+Premium: Add setting to adjust Social Footer icon spacing
+Premium: Added the options to change the social icons to color - Customize -> Avant Social Links
+
 #### 1.1.11
 * Style fixes/tweaks
 * Updated Font Awesome - v5.5.0

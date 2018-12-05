@@ -784,7 +784,7 @@ function customizer_library_avant_options() {
         'id' => 'avant-noteon-footer',
         'section' => $section,
         'type'    => 'note',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Change Site Attribution text<br />- Adjust Social Footer Icon size<br />- New Custom Footer layout<br />- Edit Custom Columns amount and Custom Widths<br />- Remove Social Icons<br />- Remove Footer bottom bar<br />- Adjust Footer top & bottom padding', 'avant' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Change Site Attribution text<br />- Adjust Social Footer Icon size<br />- Adjust Social Footer Icon spacing<br />- New Custom Footer layout<br />- Edit Custom Columns amount and Custom Widths<br />- Remove Social Icons<br />- Remove Footer bottom bar<br />- Adjust Footer top & bottom padding', 'avant' )
     );
 
 
@@ -1572,7 +1572,7 @@ function customizer_library_avant_options() {
         'id' => 'avant-noteon-social-links',
         'section' => $section,
         'type'    => 'note',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Premium offers a bunch of extra Social Links<br />- Plus 3 custom inputs for your own links', 'avant' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Change Social Icons to their brand colors<br />- Premium offers a bunch of extra Social Links<br />- Plus 3 custom inputs for your own links', 'avant' )
     );
 
 
