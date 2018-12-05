@@ -14,7 +14,7 @@
 get_header(); ?>
 
 <div id="main-content-wrapper">
-	<div id="main-content">
+	<div id="main-content-full">
 
 	<?php
 		the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -48,6 +48,6 @@ get_header(); ?>
 		  endif; ?>
 	</div><!-- #main-content -->
 
-	<?php get_sidebar(); ?>
+	
 </div><!-- #main-content-wrapper -->
 <?php get_footer(); ?>

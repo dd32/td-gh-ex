@@ -11,11 +11,6 @@
 	
 	<div class="page-content">
 		<?php
-			if ( has_post_thumbnail() ) :
-
-				the_post_thumbnail();
-
-			endif;
 			
 			the_content( __( 'Read More...', 'fmuzz') );
 

@@ -162,18 +162,6 @@ if ( ! function_exists( 'fmuzz_load_scripts' ) ) :
 		// Load Utilities JS Script
 		wp_enqueue_script( 'fmuzz-utilities',
 			get_template_directory_uri() . '/js/utilities.js', array( 'jquery', ) );
-
-		wp_enqueue_script( 'jquery.mobile.customized',
-			get_template_directory_uri() . '/js/jquery.mobile.customized.min.js',
-			array( 'jquery' ) );
-
-		wp_enqueue_script( 'jquery.easing.1.3',
-			get_template_directory_uri() . '/js/jquery.easing.1.3.js',
-			array( 'jquery' ) );
-
-		wp_enqueue_script( 'camera',
-			get_template_directory_uri() . '/js/camera.min.js',
-			array( 'jquery' ) );
 	}
 endif; // fmuzz_load_scripts
 add_action( 'wp_enqueue_scripts', 'fmuzz_load_scripts' );
@@ -183,50 +171,6 @@ if ( ! function_exists( 'fmuzz_widgets_init' ) ) :
 	 *	widgets-init action handler. Used to register widgets and register widget areas
 	 */
 	function fmuzz_widgets_init() {
-		
-		// Register Sidebar Widget.
-		register_sidebar( array (
-							'name'	 		 =>	 __( 'Sidebar Widget Area', 'fmuzz'),
-							'id'		 	 =>	 'sidebar-widget-area',
-							'description'	 =>  __( 'The sidebar widget area', 'fmuzz'),
-							'before_widget'	 =>  '',
-							'after_widget'	 =>  '',
-							'before_title'	 =>  '<div class="sidebar-before-title"></div><h3 class="sidebar-title">',
-							'after_title'	 =>  '</h3><div class="sidebar-after-title"></div>',
-						) );
-
-		/**
-		 * Add Homepage Columns Widget areas
-		 */
-		register_sidebar( array (
-								'name'			 =>  __( 'Homepage Column #1', 'fmuzz' ),
-								'id' 			 =>  'homepage-column-1-widget-area',
-								'description'	 =>  __( 'The Homepage Column #1 widget area', 'fmuzz' ),
-								'before_widget'  =>  '',
-								'after_widget'	 =>  '',
-								'before_title'	 =>  '<h2 class="sidebar-title">',
-								'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
-							) );
-							
-		register_sidebar( array (
-								'name'			 =>  __( 'Homepage Column #2', 'fmuzz' ),
-								'id' 			 =>  'homepage-column-2-widget-area',
-								'description'	 =>  __( 'The Homepage Column #2 widget area', 'fmuzz' ),
-								'before_widget'  =>  '',
-								'after_widget'	 =>  '',
-								'before_title'	 =>  '<h2 class="sidebar-title">',
-								'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
-							) );
-
-		register_sidebar( array (
-								'name'			 =>  __( 'Homepage Column #3', 'fmuzz' ),
-								'id' 			 =>  'homepage-column-3-widget-area',
-								'description'	 =>  __( 'The Homepage Column #3 widget area', 'fmuzz' ),
-								'before_widget'  =>  '',
-								'after_widget'	 =>  '',
-								'before_title'	 =>  '<h2 class="sidebar-title">',
-								'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
-							) );
 
 		// Register Footer Column #1
 		register_sidebar( array (
@@ -263,35 +207,6 @@ if ( ! function_exists( 'fmuzz_widgets_init' ) ) :
 	}
 endif; // fmuzz_widgets_init
 add_action( 'widgets_init', 'fmuzz_widgets_init' );
-
-if ( ! function_exists( 'fmuzz_display_slider' ) ) :
-	/**
-	 * Displays the slider
-	 */
-	function fmuzz_display_slider() {
-	?>
-		<div class="camera_wrap camera_emboss" id="camera_wrap">
-			<?php
-				// display slides
-				for ( $i = 1; $i <= 3; ++$i ) {
-						
-						$defaultSlideImage = get_template_directory_uri().'/images/slider/' . $i .'.jpg';
-
-						$slideContent = get_theme_mod( 'fmuzz_slide'.$i.'_content', html_entity_decode( $defaultSlideContent ) );
-						$slideImage = get_theme_mod( 'fmuzz_slide'.$i.'_image', $defaultSlideImage );
-					?>
-						<div data-thumb="<?php echo esc_attr( $slideImage ); ?>" data-src="<?php echo esc_attr( $slideImage ); ?>">
-							<?php if ($slideContent) : ?>
-									<div class="camera_caption fadeFromBottom">
-										<?php echo $slideContent; ?>
-									</div>
-							<?php endif; ?>
-						</div>
-	<?php		} ?>
-		</div><!-- #camera_wrap -->
-	<?php 
-	}
-endif; // fmuzz_display_slider
 
 if ( ! function_exists( 'fmuzz_show_copyright_text' ) ) :
 	/**
@@ -799,78 +714,6 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		);
 
 		/**
-		 * Add Slider Section
-		 */
-		$wp_customize->add_section(
-			'fmuzz_slider_section',
-			array(
-				'title'       => __( 'Slider', 'fmuzz' ),
-				'capability'  => 'edit_theme_options',
-			)
-		);
-
-		// Add display slider option
-		$wp_customize->add_setting(
-				'fmuzz_slider_display',
-				array(
-						'default'           => 0,
-						'sanitize_callback' => 'fmuzz_sanitize_checkbox',
-				)
-		);
-
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fmuzz_slider_display',
-								array(
-									'label'          => __( 'Display Slider', 'fmuzz' ),
-									'section'        => 'fmuzz_slider_section',
-									'settings'       => 'fmuzz_slider_display',
-									'type'           => 'checkbox',
-								)
-							)
-		);
-		
-		for ($i = 1; $i <= 3; ++$i) {
-		
-			$slideContentId = 'fmuzz_slide'.$i.'_content';
-			$slideImageId = 'fmuzz_slide'.$i.'_image';
-			$defaultSliderImagePath = get_template_directory_uri().'/images/slider/'.$i.'.jpg';
-		
-			// Add Slide Content
-			$wp_customize->add_setting(
-				$slideContentId,
-				array(
-					'sanitize_callback' => 'force_balance_tags',
-				)
-			);
-			
-			$wp_customize->add_control( new WP_Customize_Control( $wp_customize, $slideContentId,
-										array(
-											'label'          => sprintf( esc_html__( 'Slide #%s Content', 'fmuzz' ), $i ),
-											'section'        => 'fmuzz_slider_section',
-											'settings'       => $slideContentId,
-											'type'           => 'textarea',
-											)
-										)
-			);
-			
-			// Add Slide Background Image
-			$wp_customize->add_setting( $slideImageId,
-				array(
-					'default' => $defaultSliderImagePath,
-					'sanitize_callback' => 'esc_url_raw'
-				)
-			);
-
-			$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, $slideImageId,
-					array(
-						'label'   	 => sprintf( esc_html__( 'Slide #%s Image', 'fmuzz' ), $i ),
-						'section' 	 => 'fmuzz_slider_section',
-						'settings'   => $slideImageId,
-					) 
-				)
-			);
-		}
-
-		/**
 		 * Add Footer Section
 		 */
 		$wp_customize->add_section(
@@ -930,3 +773,12 @@ if ( ! function_exists( 'fmuzz_nav_wrap' ) ) :
 	}
 
 endif; // fmuzz_nav_wrap
+
+if ( ! function_exists( 'fmuzz_disable_woocommerce_sidebar' ) ) :
+
+	function fmuzz_disable_woocommerce_sidebar() {
+		remove_action( 'woocommerce_sidebar', 'woocommerce_get_sidebar', 10); 
+	}
+
+endif; // fmuzz_disable_woocommerce_sidebar
+add_action('init', 'fmuzz_disable_woocommerce_sidebar');

@@ -18,7 +18,7 @@
 
 <div id="main-content-wrapper">
 
-	<div id="main-content">
+	<div id="main-content-full">
 
 	<?php if ( have_posts() ) : 
 
@@ -47,7 +47,7 @@
 
 	</div><!-- #main-content -->
 
-	<?php get_sidebar(); ?>
+	
 
 </div><!-- #main-content-wrapper -->
 

@@ -68,16 +68,6 @@
 	    	fmuzz_mainMenuClear();
 	    	fmuzz_mainMenuInit();
 		});
-
-		$(function(){
-			$('#camera_wrap').camera({
-				height: '300px',
-				loader: 'bar',
-				pagination: true,
-				thumbnails: false,
-				time: 4500
-			});
-		});
 	});
 
 	function fmuzz_mainMenuClear() {

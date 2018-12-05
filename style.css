@@ -1,10 +1,10 @@
 /*!
 Theme Name: fMuzz
-Description: fMuzz is a Fully Responsive WordPress Theme. Features include Built-in Homepage Slider (Displayed Only on a Static Front Page), WooCommerce support, Header social icons, Custom Logo, Multi-level Drop-down Menu, Custom Background, Footer Copyright Text, Sidebar Widget Area, 3 Homepage Columns Widget Areas, 3 Footer Columns Widget Areas, Multiple Browsers Support, Translation-Ready and much more.
+Description: fMuzz is Responsive and Easy to use e-Commerce WordPress Theme suitable for a music producers, music store, music events, solo artists, music bands, DJs website or blog, WooCommerce plugin support, Header social icons, Custom Logo, Multi-level Drop-down Menu, Custom Background, Footer Copyright Text, 3 Footer Columns Widget Areas, Multiple Browsers Support, Translation-Ready and much more.
 Author: tishonator
 Author URI: https://tishonator.com
 Theme URI: https://tishonator.com/product/fmuzz
-Version: 1.4.3
+Version: 1.4.4
 Text Domain: fmuzz
 Tags: blog, news, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -279,6 +279,7 @@ ul {
 
 #header-top {
 	text-align:center;
+	margin-top:7px;
 }
 
 .search-form-icon:before {
@@ -1483,6 +1484,8 @@ img.wp-post-image {
 	-moz-box-shadow: inset 0 -1px 1px -1px rgba(0, 0, 0, 0.25);
 	box-shadow: 0 -1px 1px -1px rgba(0, 0, 0, 0.25) inset;
 	padding:20px 2% 20px 2%;
+	height:250px;
+	text-align:center;
 }
 
 #page-header,
@@ -1501,24 +1504,7 @@ img.wp-post-image {
 #page-header h1 {
 	margin:0;
 	padding:0;
-}
-
-#breadcrumbs {
-	list-style:none;
-	overflow:hidden;
-	font-size:12px;
-	float:right;
-	margin-top:10px;
-	margin-right:15px;
-}
-
-#breadcrumbs li{
-    float:left;
-    margin-left:7px;
-}
-
-#breadcrumbs li:first-of-type{
-	margin-left:0;
+	font-size:48px;
 }
  
 .home-title {
@@ -1781,6 +1767,16 @@ blockquote {
 	width:50%;
 	float:right;
 	clear:both;
+}
+
+#main-content-wrapper ul.products li.product .woocommerce-loop-category__title,
+#main-content-wrapper ul.products li.product .woocommerce-loop-product__title,
+#main-content-wrapper ul.products li.product h3 {
+	font-size:16px;
+}
+
+.wc-forward {
+    margin-right: 10px !important;
 }
 .woocommerce-mini-cart,
 .cart_list,
@@ -2157,20 +2153,6 @@ li.product:before {
 /* Large Resolution */
 @media screen and (min-width: 800px) {
 	
-	#main-content,
-	#main {
-		float:left;
-		margin:0 0 20px 2%;
-		width:63%;
-	}
-
-	#sidebar {
-		float:left;
-		margin:10px 2% 30px 2%;
-		width:30%;
-		padding:0;
-	}
-	
 	.header-social-widget li {
 		margin-left:10px;
 	}
@@ -2189,9 +2171,8 @@ li.product:before {
 	}
 
 	#navmain {
-	    bottom: 0;
-	    position: absolute;
-	    right: 0;
+	    padding:15px 0 0 0;
+	    float:right;
 	}
 
 	#navmain div {
@@ -2483,6 +2464,10 @@ li.product:before {
 
 /* Medium Resolution */
 @media screen and (max-width: 799px) {
+
+	#page-header {
+		height:100px;
+	}
 	
 	h1 {
 		font-size:24px;

@@ -78,17 +78,29 @@
 			</div><!-- #header-spacer -->
 			<div class="clear">
 			</div><!-- .clear -->
+		    <div id="page-header"
+		    	<?php if ( is_front_page() && get_option( 'show_on_front' ) == 'page' ) {
 
-			<?php if ( is_front_page() && get_option( 'show_on_front' ) == 'page' ) : ?>
-			
-					<?php if (get_theme_mod('fmuzz_slider_display', 0) == 1) : ?>
+						$frontpage_id = get_option( 'page_on_front' );
 
-							<div id="slider-content-wrapper">
-								<?php fmuzz_display_slider(); ?>
-							</div><!-- #slider-content-wrapper -->
+						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $frontpage_id ),
+									'single-post-thumbnail' );
 
-					<?php endif; ?>
+					} else if ( is_home() && get_option( 'show_on_front' ) == 'page' ) {
 
-					<?php get_sidebar('home'); ?>
+						$blog_id = get_option( 'page_for_posts' );
 
-			<?php endif; ?>
+						$image = wp_get_attachment_image_src( get_post_thumbnail_id( $blog_id ),
+									'single-post-thumbnail' );
+
+					} else {
+
+						$image = wp_get_attachment_image_src( get_post_thumbnail_id(),
+									'single-post-thumbnail' );
+					}
+				?>
+		    	<?php if ( $image ) : ?>
+		    				style="background-image: url('<?php echo esc_url( $image[0] ); ?>')"
+		    	<?php endif; ?>>
+		            <h1><?php the_title(); ?></h1>
+		    </div>

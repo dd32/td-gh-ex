@@ -59,11 +59,6 @@
 
 				<div class="content">
 					<?php
-						if ( has_post_thumbnail() ) :
-
-							the_post_thumbnail();
-
-						endif;
 						
 						the_content( __( 'Read More...', 'fmuzz') );
 
@@ -85,8 +80,8 @@
 									<?php the_post_thumbnail(); ?>
 								</a>
 								
-					<?php endif;
-
+					<?php endif; ?>
+					<?php
 						  the_content( __( 'Read More', 'fmuzz') );
 					?>
 				</div><!-- .content -->

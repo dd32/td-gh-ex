@@ -8,7 +8,7 @@
 
 <div id="main-content-wrapper">
 
-	<div id="main-content">
+	<div id="main-content-full">
 
 		<div id="infoTxt">
 			<?php 
@@ -46,7 +46,7 @@
 
 	</div><!-- #main-content -->
 
-	<?php get_sidebar(); ?>
+	
 
 </div><!-- #main-content-wrapper -->
 

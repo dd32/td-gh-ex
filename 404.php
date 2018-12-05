@@ -11,7 +11,7 @@
 
 <div id="main-content-wrapper">
 
-	<div id="main-content">
+	<div id="main-content-full">
 
 		<h1><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'fmuzz' ); ?></h1>
 
@@ -25,7 +25,7 @@
 
 	</div><!-- #main-content -->
 
-	<?php get_sidebar(); ?>
+	
 
 </div><!-- #main-content-wrapper -->
 

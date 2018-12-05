@@ -5,17 +5,18 @@ custom-header, custom-menu, featured-images, threaded-comments, translation-read
 sticky-post, theme-options, footer-widgets
 Requires at least: 4.8.0
 Tested up to: 4.9.6
+Requires PHP: 5.2.4
 Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-fMuzz is Fully Responsive WordPress Theme.
+fMuzz is Responsive and Easy to use e-Commerce WordPress Theme.
 
 == Description ==
 
-fMuzz is a Fully Responsive WordPress Theme. Features include Built-in Homepage Slider (Displayed Only on a Static Front Page),
-WooCommerce Support, Header social icons, Custom Logo, Multi-level Drop-down Menu,
-Custom Background, Footer Copyright Text, Sidebar Widget Area, 3 Homepage Columns Widget Areas,
+fMuzz is Responsive and Easy to use e-Commerce WordPress Theme suitable for a music producers,
+music store, music events, solo artists, music bands, DJs website or blog, WooCommerce plugin support,
+Header social icons, Custom Logo, Multi-level Drop-down Menu, Custom Background, Footer Copyright Text,
 3 Footer Columns Widget Areas, Multiple Browsers Support, Translation-Ready and much more.
 
 == Frequently Asked Questions ==
@@ -45,6 +46,11 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 
 == Changelog ==
+
+= 1.4.4 =
+* remove homepage slider
+* add page header section
+* disable WooCommerce sidebar
 
 = 1.4.3 =
 * update Resources' images info 
@@ -79,13 +85,5 @@ fMuzz WordPress Theme bundles the following third-party resources:
 == Resources ==
 * FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
-* js/camera.min.js, © 2012 Manuel Masia, MIT
-* js/camera.js, © 2012 Manuel Masia, MIT
-* js/jquery.easing.1.3.js, © 2008 George McGinley Smith, BSD
-* js/jquery.mobile.customized.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
-* js/jquery.mobile.customized.min.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
-* images/slider/1.jpg, © 2014 @SplitShire https://pixabay.com/en/headphones-earphones-audio-mp3-407190/, CC0
-* images/slider/2.jpg, © 2016 @indegoblue https://pixabay.com/en/microphone-mike-yellow-karaoke-1503776/, CC0
-* images/slider/3.jpg, © 2016 @terimakasih0 https://pixabay.com/en/violin-musical-instrument-music-1279043/, CC0
-* screenshot.png (slide img), © 2014 @SplitShire https://pixabay.com/en/headphones-earphones-audio-mp3-407190/, CC0
+* screenshot.png (header image), © 2015 @ArtsyBee https://pixabay.com/en/background-old-vintage-parchment-910412/, CC0
 * screenshot.png (products), WooCommerce, Copyright (C) Automattic, GPLv3
