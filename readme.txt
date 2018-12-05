@@ -88,6 +88,8 @@ Images
 
 ---------------------------------------------
 == Changelog ==
+Version 1.67
+ * Issue with WMPL translation fixed.
 
 Version 1.66
  * Added Dynamic Color Option

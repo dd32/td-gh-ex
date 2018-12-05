@@ -275,3 +275,31 @@ function accesspress_register_string(){
 }
 
 add_action('after_setup_theme','accesspress_register_string');
+
+function accesspress_translated_id($orginal_id){
+	if(function_exists('icl_object_id')){
+		$translation_title_id = icl_object_id( $orginal_id, 'page' );
+	}
+
+	if( ($translation_title_id == $orginal_id) && function_exists('pll_get_post') ){
+		$translation_title_id = pll_get_post($orginal_id);
+	}
+
+	return $translation_title_id;
+}
+
+add_filter( 'accesspress_translate_id', 'accesspress_translated_id' );
+
+function accesspress_translated_string($string, $domain){
+	$wpml_translation = apply_filters('wpml_translate_single_string', $string, $domain, $string);
+    
+    if ($wpml_translation === $string && function_exists('pll__')) {
+    	pll_register_string($domain, $string);
+        return pll__($string);
+    }
+
+    return $wpml_translation;
+
+}
+
+add_filter( 'accesspress_translate_string', 'accesspress_translated_string', 10, 2 );
