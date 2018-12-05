@@ -120,7 +120,7 @@ class Virtue_Mobile_Nav_Walker extends Walker_Nav_Menu {
 				$attributes .= ' ' . $attr . '="' . $value . '"';
 			}
 		}
-		if ( ! isset( $args->link_before ) || ( isset( $args->link_before ) && empty( $args->link_before ) ) ) {
+		if ( isset( $args->link_before ) && empty( $args->link_before ) ) {
 			$args->link_before = '<span>';
 			$args->link_after  = '</span>';
 		}

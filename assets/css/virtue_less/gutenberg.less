@@ -24,11 +24,10 @@ body {
 		right: 50%;
 		margin-left: -50vw;
 		margin-right: -50vw;
-		text-align: center;
 		padding: 0;
 	}
-	.alignfull img {
-		width: 100%;
+	.main:not(.col-lg-9) .entry-content .alignfull:not(.wp-block-kadence-rowlayout):not(.wp-block-media-text) {
+		text-align: center;
 	}
 	// Wide
 	.main:not(.col-lg-9) .entry-content .alignwide {
@@ -38,6 +37,8 @@ body {
 		right: 50%;
 		margin-left: -46vw;
 		margin-right: -46vw;
+	}
+	.main:not(.col-lg-9) .entry-content .alignwide:not(.wp-block-kadence-rowlayout):not(.wp-block-media-text) {
 		text-align: center;
 	}
 }
@@ -90,12 +91,6 @@ body {
 		padding: 0;
 		width: 100vw;
 	}
-}
-.main:not(.col-lg-9) .entry-content .alignwide {
-	max-width: none;
-}
-.main:not(.col-lg-9) .entry-content .alignfull {
-	max-width: none;
 }
 .alignfull.wp-block-image img, .alignwide.wp-block-image img {
 	width:100%;

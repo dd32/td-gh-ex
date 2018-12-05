@@ -36,7 +36,9 @@ add_action( 'enqueue_block_editor_assets', 'virtue_block_editor_styles' );
  * Add inline css for fonts
  */
 function virtue_editor_dynamic_css() {
-	if ( function_exists( 'is_gutenberg_page' ) && is_gutenberg_page() ) {
+	global $current_screen;
+	$the_current_screen = get_current_screen();
+	if ( ( method_exists( $the_current_screen, 'is_block_editor' ) && $the_current_screen->is_block_editor() ) || ( function_exists( 'is_gutenberg_page' ) && is_gutenberg_page() ) ) {
 		global $virtue;
 		$options_fonts = array( 'font_h1', 'font_h2', 'font_h3', 'font_h4', 'font_h5', 'font_p' );
 		$load_gfonts   = array();
@@ -121,7 +123,7 @@ function virtue_editor_dynamic_css() {
 		}
 		echo '<style type="text/css" id="virtue-editor-font-family">';
 		if ( isset( $virtue['font_h1'] ) ) {
-			echo 'body.gutenberg-editor-page .editor-post-title__block .editor-post-title__input, body.gutenberg-editor-page .wp-block-heading h1, body.gutenberg-editor-page .editor-block-list__block h1 {
+			echo 'body.block-editor-page .editor-post-title__block .editor-post-title__input, body.block-editor-page .wp-block-heading h1, body.block-editor-page .editor-block-list__block h1, body.block-editor-page .editor-post-title__block .editor-post-title__input {
 					font-size: ' . esc_attr( $virtue['font_h1']['font-size'] ) . ';
 					line-height: ' . esc_attr( $virtue['font_h1']['line-height'] ) . ';
 					font-weight: ' . esc_attr( $virtue['font_h1']['font-weight'] ) . ';
@@ -130,7 +132,7 @@ function virtue_editor_dynamic_css() {
 				}';
 		}
 		if ( isset( $virtue['font_h2'] ) ) {
-			echo 'body.gutenberg-editor-page .wp-block-heading h2, body.gutenberg-editor-page .editor-block-list__block h2 {
+			echo 'body.block-editor-page .wp-block-heading h2, body.block-editor-page .editor-block-list__block h2 {
 				font-size: ' . esc_attr( $virtue['font_h2']['font-size'] ) . ';
 				line-height: ' . esc_attr( $virtue['font_h2']['line-height'] ) . ';
 				font-weight: ' . esc_attr( $virtue['font_h2']['font-weight'] ) . ';
@@ -139,7 +141,7 @@ function virtue_editor_dynamic_css() {
 			}';
 		}
 		if ( isset( $virtue['font_h3'] ) ) {
-			echo 'body.gutenberg-editor-page .wp-block-heading h3, body.gutenberg-editor-page .editor-block-list__block h3 {
+			echo 'body.block-editor-page .wp-block-heading h3, body.block-editor-page .editor-block-list__block h3 {
 				font-size: ' . esc_attr( $virtue['font_h3']['font-size'] ) . ';
 				line-height: ' . esc_attr( $virtue['font_h3']['line-height'] ) . ';
 				font-weight: ' . esc_attr( $virtue['font_h3']['font-weight'] ) . ';
@@ -148,7 +150,7 @@ function virtue_editor_dynamic_css() {
 			}';
 		}
 		if ( isset( $virtue['font_h4'] ) ) {
-			echo 'body.gutenberg-editor-page .wp-block-heading h4, body.gutenberg-editor-page .editor-block-list__block h4 {
+			echo 'body.block-editor-page .wp-block-heading h4, body.block-editor-page .editor-block-list__block h4 {
 				font-size: ' . esc_attr( $virtue['font_h4']['font-size'] ) . ';
 				line-height: ' . esc_attr( $virtue['font_h4']['line-height'] ) . ';
 				font-weight: ' . esc_attr( $virtue['font_h4']['font-weight'] ) . ';
@@ -157,7 +159,7 @@ function virtue_editor_dynamic_css() {
 			} body.gutenberg-editor-page .editor-block-list__block .widgets-container .so-widget h4 {font-size:inherit; letter-spacing:normal; font-family:inherit;}';
 		}
 		if ( isset( $virtue['font_h5'] ) ) {
-			echo 'body.gutenberg-editor-page .wp-block-heading h5, body.gutenberg-editor-page .editor-block-list__block h5 {
+			echo 'body.block-editor-page .wp-block-heading h5, body.block-editor-page .editor-block-list__block h5 {
 				font-size: ' . esc_attr( $virtue['font_h5']['font-size'] ) . ';
 				line-height: ' . esc_attr( $virtue['font_h5']['line-height'] ) . ';
 				font-weight: ' . esc_attr( $virtue['font_h5']['font-weight'] ) . ';
@@ -166,11 +168,14 @@ function virtue_editor_dynamic_css() {
 			}';
 		}
 		if ( isset( $virtue['font_p'] ) ) {
-			echo '.edit-post-visual-editor, .edit-post-visual-editor p, body.gutenberg-editor-page .editor-block-list__block {
+			echo '.edit-post-visual-editor, .edit-post-visual-editor p, .edit-post-visual-editor.editor-styles-wrapper p, .edit-post-visual-editor .wp-block-button {
 				font-size: ' . esc_attr( $virtue['font_p']['font-size'] ) . ';
 				font-weight: ' . esc_attr( $virtue['font_p']['font-weight'] ) . ';
 				font-family: ' . esc_attr( $virtue['font_p']['font-family'] ) . ';
 				color: ' . esc_attr( $virtue['font_p']['color'] ) . ';
+			}';
+			echo '.block-editor-page .edit-post-visual-editor {
+				font-family: ' . esc_attr( $virtue['font_p']['font-family'] ) . ';
 			}';
 		}
 		echo '</style>';
