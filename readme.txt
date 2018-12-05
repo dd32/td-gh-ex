@@ -28,6 +28,9 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.3.7 | 4th December 2018 =
+* Update: WordPress 5 ready.
+
 = Version 1.3.6 | 1st November 2018 =
 * Update: Woocommerce notice.
 * Update: CSS for gutenberg.

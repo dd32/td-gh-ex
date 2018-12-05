@@ -116,7 +116,7 @@ function ascend_get_postlayout($type = 'normal') {
         $r['data_style'] 	= '';
         $r['highlight'] 	= 'false';
     } 
-    return $r;
+    return apply_filters( 'ascend_post_layout_args_array', $r );
 }
 function ascend_get_post_grid_item_size($columns = '3', $sidebar = false) {
 	if(!$sidebar) {
