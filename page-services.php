@@ -1,13 +1,13 @@
 <?php
 /*
 Template Name: Services
-Template Post Type: post, page, product
+Template Post Type: page
 */
 /**
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.2.8
+* @version   1.2.9
 *
 */
 

@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.2.8
+* @version   1.2.9
 */
 
 /* TABLE OF CONTENT
@@ -23,7 +23,7 @@
 2.11 - Page 404
 2.12 - Back to Top
 2.13 - Social
-
+2.14 - Go Pro
 
 */
 /**
@@ -3290,6 +3290,45 @@ function avik_customize_register( $wp_customize ) {
 																															'style' => 'border: 1px solid #2885bb',
 																															'placeholder' => __( 'Enter link...','avik' ),
 																														), ));
+
+																														/* ------------------------------------------------------------------------------------------------------------*
+																														##  2.14 Go Pro
+																														/* ------------------------------------------------------------------------------------------------------------*/
+
+																														$avikGopro = new Avik_WP_Customize_Panel( $wp_customize, 'avik_go_pro', array(
+																															'title'    => __('Go Pro','avik'),
+																															'priority' => 1,
+																														));
+
+																														$wp_customize->add_panel( $avikGopro );
+
+																														// Settings Go Pro
+
+																														$wp_customize->add_section(
+																															'avik_section_settings_go_pro',
+																															array(
+																																'title'      => __('Avik Pro Version','avik'),
+																																'priority'   => 10,
+																																'capability' => 'edit_theme_options',
+																																'panel'      => 'avik_go_pro',
+																															)
+																														);
+
+																														$wp_customize->add_setting( 'avik_go_pro_version',
+																														   array(
+																														      'default' => '',
+																														      'transport' => 'postMessage',
+																														      'sanitize_callback' => 'avik_text_sanitization'
+																														   )
+																														);
+
+																														$wp_customize->add_control( new Avik_Simple_Notice_Custom_control( $wp_customize, 'avik_go_pro_version',
+																														   array(
+																														      'label' => __( 'AVIK PRO','avik' ),
+																														      'description' => __( '<p>For a total control of your site <br>go to the <a href="https://www.denisfranchi.com/avik-pro-10-0-0/" target="_blank">Pro version</a></p>', 'avik' ),
+																														      'section' => 'avik_section_settings_go_pro'
+																														   )
+																														) );
 
 																													}
 																													add_action( 'customize_register', 'avik_customize_register' );

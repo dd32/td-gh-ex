@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.2.8
+* @version   1.2.9
 */
 
 class Avik_Color_Scheme {

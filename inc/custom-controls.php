@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.2.8
+* @version   1.2.9
 */
 
 /* TABLE OF CONTENT
@@ -17,7 +17,7 @@
 1.4 - Class TinyMCE
 1.6 - Class Alpha Color
 1.7 - Class Slider custom control
-
+1.8 - Class Simple Notice
 2 - CSS Customize
 
 2.2 - Color Filter Header Home
@@ -42,6 +42,7 @@
 4.5 - Select sanitization function
 4.6 - Alpha Color Sanitization
 4.7 - Slider custom control Sanitization
+4.8 - Text custom control Sanitization
 
 */
 
@@ -285,6 +286,53 @@ if (class_exists('WP_Customize_Control')) {
       <?php
     }
   }
+}
+
+/* -----------------------------------------*
+##  1.8 Class Simple Notice Custom Control  */
+/* ---------------------------------------- */
+
+if (class_exists('WP_Customize_Control')) {
+
+class Avik_Simple_Notice_Custom_Control extends WP_Customize_Control {
+  /**
+   * The type of control being rendered
+   */
+  public $type = 'simple_notice';
+  /**
+   * Render the control in the customizer
+   */
+  public function render_content() {
+    $allowed_html = array(
+      'a' => array(
+        'href' => array(),
+        'title' => array(),
+        'class' => array(),
+        'target' => array(),
+      ),
+      'br' => array(),
+      'em' => array(),
+      'strong' => array(),
+      'i' => array(
+        'class' => array()
+      ),
+      'span' => array(
+        'class' => array(),
+      ),
+      'code' => array(),
+    );
+  ?>
+    <div class="simple-notice-custom-control">
+      <?php if( !empty( $this->label ) ) { ?>
+        <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
+      <?php } ?>
+      <?php if( !empty( $this->description ) ) { ?>
+        <span class="customize-control-description"><?php echo wp_kses( $this->description, $allowed_html ); ?></span>
+      <?php } ?>
+    </div>
+  <?php
+  }
+}
 }
 
 
@@ -811,5 +859,27 @@ if ( ! function_exists( 'avik_in_range' ) ) {
 if ( ! function_exists( 'avik_sanitize_integer' ) ) {
   function avik_sanitize_integer( $input ) {
     return (int) $input;
+  }
+}
+
+/* ----------------------------------------------- *
+##  4.8 Text custom control Sanitization  */
+/* ------------------------------------------------*/
+
+if ( ! function_exists( 'avik_text_sanitization' ) ) {
+  function avik_text_sanitization( $input ) {
+    if ( strpos( $input, ',' ) !== false) {
+      $input = explode( ',', $input );
+    }
+    if( is_array( $input ) ) {
+      foreach ( $input as $key => $value ) {
+        $input[$key] = sanitize_text_field( $value );
+      }
+      $input = implode( ',', $input );
+    }
+    else {
+      $input = sanitize_text_field( $input );
+    }
+    return $input;
   }
 }

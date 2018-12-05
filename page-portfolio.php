@@ -1,13 +1,13 @@
 <?php
 /*
 Template Name: Portfolio
-Template Post Type: post, page, product
+Template Post Type: post
 */
 /**
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.2.8
+* @version   1.2.9
 */
 
 if(is_single()) { get_header('post'); } else { get_header(); }

@@ -1,13 +1,13 @@
 <?php
 /*
 Template Name: Wo we are
-Template Post Type: post, page, product
+Template Post Type: page
 */
 /**
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.2.8
+* @version   1.2.9
 */
 
 if(is_page()) { get_header('post'); } else { get_header(); } ?>
