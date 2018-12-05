@@ -121,7 +121,6 @@ module.exports = wp;
 		});
 	});
 
-	/*! <fs_premium_only> */
 	wp.customize('agncy_override_color_theme', function (value) {
 		value.bind(function (newval) {
 			refreshColors();
@@ -145,7 +144,6 @@ module.exports = wp;
 			refreshColors();
 		});
 	});
-	/*! </fs_premium_only> */
 
 	var refreshTimeout = null;
 	var refreshColors = function refreshColors() {
@@ -154,9 +152,9 @@ module.exports = wp;
 
 			var ajaxData = {
 				color_theme: wp.customize.get().agncy_color_theme_name
+			};
 
-				/*! <fs_premium_only> */
-			};if (wp.customize.get().agncy_override_color_theme) {
+			if (wp.customize.get().agncy_override_color_theme) {
 				ajaxData = {
 					color_theme_override: true,
 					primary_color: wp.customize.get().agncy_override_primary_color,
@@ -164,7 +162,6 @@ module.exports = wp;
 					tertiary_color: wp.customize.get().agncy_override_tertiary_color
 				};
 			}
-			/*! </fs_premium_only> */
 
 			// Send the colors to the backend less function, to generate the css rules
 			wp.ajax.send("refresh_customizer_colors", {

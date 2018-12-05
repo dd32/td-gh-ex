@@ -150,7 +150,7 @@ class AgncyAdminPages {
 		$description = __(
 			'Agncy is a beautiful, Gutenberg ready news and blogging theme that has beautiful typography, powerful color customisation and an elegant, light layout.
 
-		Customise your theme to the colours you need and upload your own logo. Enjoy reading even long texts with the beautiful font “Fira” and experience how fast font loading can be with an innovative font loading technique.', 'agncy'
+		Customise your theme to the colours you need and upload your own logo. Enjoy reading even long texts with the beautiful font "Fira" and experience how fast font loading can be with an innovative font loading technique.', 'agncy'
 		);
 
 		return apply_filters( 'the_content', $description );
@@ -282,50 +282,12 @@ class AgncyAdminPages {
 
 		$features[] = new OnboardingFeature(
 			array(
-				'title'       => __( 'Custom Blocks', 'agncy' ),
-				'description' => __( 'Enhance your content with our professional Gutenberg blocks.', 'agncy' ),
-				'tier'        => 'professional',
-				'image'       => AGNCY_THEME_URL . '/img/features/more-blocks.jpg',
-				'link_target' => admin_url( 'post-new.php' ),
-				'link_label'  => __( 'Explore Blocks', 'agncy' ),
-				'priority'    => 10,
-				'coming_soon' => true,
-			)
-		);
-
-		$features[] = new OnboardingFeature(
-			array(
-				'title'       => __( 'Enterprise Blocks', 'agncy' ),
-				'description' => __( 'Use these blocks to better present your company and what you do.', 'agncy' ),
-				'tier'        => 'enterprise',
-				'image'       => AGNCY_THEME_URL . '/img/features/professional-blocks.jpg',
-				'link_target' => admin_url( 'post-new.php' ),
-				'link_label'  => __( 'Explore Blocks', 'agncy' ),
-				'priority'    => 10,
-				'coming_soon' => true,
-			)
-		);
-
-		$features[] = new OnboardingFeature(
-			array(
 				'title'       => __( 'Custom Headers', 'agncy' ),
 				'description' => __( 'Choose between countless variations and use the header that best fits your needs.', 'agncy' ),
 				'tier'        => 'professional',
 				'image'       => AGNCY_THEME_URL . '/img/features/custom-header.jpg',
 				'link_target' => admin_url( 'customize.php?autofocus[control]=agncy_header_layout' ),
 				'link_label'  => __( 'Modify Header', 'agncy' ),
-				'priority'    => 10,
-			)
-		);
-
-		$features[] = new OnboardingFeature(
-			array(
-				'title'       => __( 'Beautiful Typography', 'agncy' ),
-				'description' => __( 'The font "Fira" was carefully selected and enhances the readability of your content.', 'agncy' ),
-				'tier'        => 'free',
-				'image'       => AGNCY_THEME_URL . '/img/features/fira.jpg',
-				'link_target' => home_url(),
-				'link_label'  => __( 'See Fira', 'agncy' ),
 				'priority'    => 10,
 			)
 		);

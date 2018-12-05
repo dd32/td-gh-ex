@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, grid-layout, custom-colors, custom
 Requires at least: 4.8
 Tested up to: 4.9
 Requires PHP: 5.6
-Stable tag: 1.1.7
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,11 @@ Agncy is a beautiful news and blogging theme that has beautiful typography, powe
 4. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Changelog ==
+
+= 1.2.0 =
+* Removed the breadcrumb widgets (will be moved into a block)
+* Updated the freemius sdk
+* Added license information about the bundled images
 
 = 1.1.7 =
 * Fix for admin scripts not visible on new post
@@ -65,3 +70,15 @@ Agncy is a beautiful news and blogging theme that has beautiful typography, powe
 * Fira Sans, SIL OFL, https://github.com/mozilla/Fira
 * Slick Slider, MIT, https://github.com/kenwheeler/slick/
 * lodash, MIT, https://github.com/lodash/lodash
+
+== Images ==
+
+* Theme Screenshot, https://pixabay.com/de/stühle-konferenzraum-zeitgenössische-2181980/, CC0
+* Theme Screenshot, https://pixabay.com/de/laptop-computer-technologie-monitor-3190194/, CC0
+* Theme Screenshot, https://pixabay.com/de/computer-laptop-technologie-büro-3368242/, CC0
+* Theme Screenshot, https://pixabay.com/de/büro-arbeit-schreibtisch-computer-932926/, CC0
+* color-schemes.jpg, https://pixabay.com/de/abstrakt-kunst-hintergrund-farbe-2468874/, CC0
+* more-color-schemes.jpg, https://pixabay.com/de/wasserperlen-farbstifte-unterwasser-2137080/, CC0
+* custom-colors.jpg, https://pixabay.com/de/kunst-farbe-wasser-farben-1209519/, CC0
+* footer-text.jpg, self made
+* gutenberg.jpg, https://commons.wikimedia.org/wiki/File:Gutenberg.jpg, Public Domain
