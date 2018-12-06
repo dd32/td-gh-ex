@@ -21,7 +21,7 @@ global $wp_customize;
     ) );
     $wp_customize->add_setting('hide_slider',array(
        	'default' => 0,
-        'sanitize_callback' => 'alacrity_lite_sanitize_checkbox',
+        'alacrity_lite_sanitize_callback' => 'alacrity_lite_sanitize_checkbox',
         'capability' => 'edit_theme_options',
     ));  
     $wp_customize->add_control( 'hide_slider', array(
@@ -31,7 +31,7 @@ global $wp_customize;
         'section'   => 'slider_sec'  
      ));    
      $wp_customize->add_setting('hide_slide_caption', array(
-        'sanitize_callback' => 'alacrity_lite_sanitize_checkbox'
+        'alacrity_lite_sanitize_callback' => 'alacrity_lite_sanitize_checkbox'
      ));
      $wp_customize->add_control('hide_slide_caption', array(
         'label' => __('Hide Slide Caption', 'alacrity-lite'),
@@ -41,7 +41,7 @@ global $wp_customize;
      ));
      $wp_customize->add_setting('slider_loop', array(
         'default' => '3',
-        'sanitize_callback' => 'alacrity_lite_sanitize_integer',
+        'alacrity_lite_sanitize_callback' => 'alacrity_lite_sanitize_integer',
      ));
      $wp_customize->add_control('slider_loop', array(
         'label' => __( 'No. of posts to display', 'alacrity-lite' ),
@@ -58,7 +58,7 @@ global $wp_customize;
 	));	
 	$wp_customize->add_setting('hide_services_sec',array(
 		'default' => 0,
-		'sanitize_callback' => 'alacrity_lite_sanitize_checkbox',
+		'alacrity_lite_sanitize_callback' => 'alacrity_lite_sanitize_checkbox',
 		'capability' => 'edit_theme_options',
 	));	 
 
@@ -73,7 +73,7 @@ global $wp_customize;
 	$wp_customize->add_setting('service_box1',	array(
 		'default' => '0',
 		'capability' => 'edit_theme_options',	
-		'sanitize_callback' => 'alacrity_lite_sanitize_integer',	
+		'alacrity_lite_sanitize_callback' => 'alacrity_lite_sanitize_integer',	
 	));
 
 	$wp_customize->add_control('service_box1', array(
@@ -86,7 +86,7 @@ global $wp_customize;
 	$wp_customize->add_setting('service_box2',	array(
 		'default' => '0',
 		'capability' => 'edit_theme_options',	
-		'sanitize_callback' => 'alacrity_lite_sanitize_integer',	
+		'alacrity_lite_sanitize_callback' => 'alacrity_lite_sanitize_integer',	
 	));
 
 	$wp_customize->add_control('service_box2', array(
@@ -99,7 +99,7 @@ global $wp_customize;
 	$wp_customize->add_setting('service_box3',	array(
 		'default' => '0',
 		'capability' => 'edit_theme_options',	
-		'sanitize_callback' => 'alacrity_lite_sanitize_integer',	
+		'alacrity_lite_sanitize_callback' => 'alacrity_lite_sanitize_integer',	
 	));
 
 	$wp_customize->add_control('service_box3', array(
@@ -112,7 +112,7 @@ global $wp_customize;
 	$wp_customize->add_setting('service_box4',	array(
 		'default' => '0',
 		'capability' => 'edit_theme_options',	
-		'sanitize_callback' => 'alacrity_lite_sanitize_integer',	
+		'alacrity_lite_sanitize_callback' => 'alacrity_lite_sanitize_integer',	
 	));
 
 	$wp_customize->add_control('service_box4', array(
@@ -131,7 +131,7 @@ global $wp_customize;
 	));	
 	$wp_customize->add_setting('hide_about_section',array(
 		'default' => 0,
-		'sanitize_callback' => 'alacrity_lite_sanitize_checkbox',
+		'alacrity_lite_sanitize_callback' => 'alacrity_lite_sanitize_checkbox',
 		'capability' => 'edit_theme_options',
 	));	 
 
@@ -144,7 +144,7 @@ global $wp_customize;
 
 	$wp_customize->add_setting('about_setting' , array(
 		'default' => 0,
-		'sanitize_callback' => 'alacrity_lite_sanitize_integer'
+		'alacrity_lite_sanitize_callback' => 'alacrity_lite_sanitize_integer'
 	));
 
 	$wp_customize->add_control("about_setting", array(
@@ -176,7 +176,7 @@ global $wp_customize;
 	$wp_customize->add_setting( 'ht_time',
 		array(
 		'default'    => null,
-		'sanitize_callback' => 'sanitize_text_field',
+		'alacrity_lite_sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control( 'ht_time',
@@ -189,7 +189,7 @@ global $wp_customize;
 	$wp_customize->add_setting( 'ht_email',
 		array(
 		'default'    => null,
-		'sanitize_callback' => 'sanitize_email',
+		'alacrity_lite_sanitize_callback' => 'sanitize_email',
 		)
 	);
 	
@@ -206,7 +206,7 @@ global $wp_customize;
 	$wp_customize->add_setting( 'ht_phone',
 		array(
 		'default'    => null,
-		'sanitize_callback' => 'sanitize_text_field',
+		'alacrity_lite_sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control( 'ht_phone',
@@ -228,7 +228,7 @@ global $wp_customize;
 
 	$wp_customize->add_setting('fb_link',array(
 		'default'	=> null,
-		'sanitize_callback'	=> 'esc_url_raw'	
+		'alacrity_lite_sanitize_callback'	=> 'esc_url_raw'	
 	));
 	
 	$wp_customize->add_control('fb_link',array(
@@ -238,7 +238,7 @@ global $wp_customize;
 	));	
 	$wp_customize->add_setting('twit_link',array(
 		'default'	=> null,
-		'sanitize_callback'	=> 'esc_url_raw'
+		'alacrity_lite_sanitize_callback'	=> 'esc_url_raw'
 	));
 	$wp_customize->add_control('twit_link',array(
 		'label'	=> esc_html__('Add twitter link here','alacrity-lite'),
@@ -247,7 +247,7 @@ global $wp_customize;
 	));
 	$wp_customize->add_setting('gplus_link',array(
 		'default'	=> null,
-		'sanitize_callback'	=> 'esc_url_raw'
+		'alacrity_lite_sanitize_callback'	=> 'esc_url_raw'
 	));
 	$wp_customize->add_control('gplus_link',array(
 		'label'	=> esc_html__('Add google plus link here','alacrity-lite'),
@@ -256,7 +256,7 @@ global $wp_customize;
 	));
 	$wp_customize->add_setting('linked_link',array(
 		'default'	=> null,
-		'sanitize_callback'	=> 'esc_url_raw'
+		'alacrity_lite_sanitize_callback'	=> 'esc_url_raw'
 	));
 	$wp_customize->add_control('linked_link',array(
 		'label'	=> esc_html__('Add linkedin link here','alacrity-lite'),
@@ -265,7 +265,7 @@ global $wp_customize;
 	));
 	$wp_customize->add_setting('pinterest_link',array(
 		'default'	=> null,
-		'sanitize_callback'	=> 'esc_url_raw'
+		'alacrity_lite_sanitize_callback'	=> 'esc_url_raw'
 	));
 	$wp_customize->add_control('pinterest_link',array(
 		'label'	=> esc_html__('Add linkedin link here','alacrity-lite'),
@@ -286,7 +286,7 @@ global $wp_customize;
 	// Contact Address
 	$wp_customize->add_setting ( 'cnt_info_title', array(
 		'default' => null,
-		'sanitize_callback' => 'sanitize_text_field'
+		'alacrity_lite_sanitize_callback' => 'sanitize_text_field'
 	));
 
 	$wp_customize->add_control( 'cnt_info_title', array(
@@ -297,7 +297,7 @@ global $wp_customize;
 	$wp_customize->add_setting( 'cnt_info_text',
 		array(
 		'default'    => null,
-		'sanitize_callback' => 'sanitize_textarea_field',
+		'alacrity_lite_sanitize_callback' => 'sanitize_textarea_field',
 		)
 	);
 	$wp_customize->add_control( 'cnt_info_text',
@@ -313,7 +313,7 @@ global $wp_customize;
 	$wp_customize->add_setting( 'cnt_address',
 		array(
 		'default'    => null,
-		'sanitize_callback' => 'sanitize_text_field',
+		'alacrity_lite_sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control( 'cnt_address',
@@ -328,7 +328,7 @@ global $wp_customize;
 	$wp_customize->add_setting( 'cnt_number',
 		array(
 		'default'    => null,
-		'sanitize_callback' => 'sanitize_text_field',
+		'alacrity_lite_sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control( 'cnt_number',
@@ -343,7 +343,7 @@ global $wp_customize;
 	$wp_customize->add_setting( 'cnt_number',
 		array(
 		'default'    => null,
-		'sanitize_callback' => 'sanitize_text_field',
+		'alacrity_lite_sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control( 'cnt_number',
@@ -358,7 +358,7 @@ global $wp_customize;
 	$wp_customize->add_setting( 'cnt_fax_number',
 		array(
 		'default'    => null,
-		'sanitize_callback' => 'sanitize_text_field',
+		'alacrity_lite_sanitize_callback' => 'sanitize_text_field',
 		)
 	);
 	$wp_customize->add_control( 'cnt_fax_number',
@@ -372,7 +372,7 @@ global $wp_customize;
 	$wp_customize->add_setting( 'cnt_email',
 		array(
 		'default'    => null,
-		'sanitize_callback' => 'sanitize_email',
+		'alacrity_lite_sanitize_callback' => 'sanitize_email',
 		)
 	);
 	$wp_customize->add_control( 'cnt_email',

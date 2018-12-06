@@ -2,7 +2,7 @@
 Contributors: the WordPress team
 Requires at least: WordPress 4.4
 Tested up to: WordPress 4.9.6
-Version: 1.1
+Version: 1.2
 License: GNU General Public License, v3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, right-sidebar,custom-background, custom-header, custom-menu, editor-style, featured-images, microformats, post-formats, sticky-post, e-commerce,theme-options, threaded-comments, blog , footer-widgets , grid-layout, full-width-template
@@ -57,6 +57,9 @@ https://pixabay.com/en/skyscraper-cloud-architecture-urban-1245909/ - CC0 Creati
 All images used in screenshot are from Pixabay with CC0 Creative Commons License - Free for commercial use | No attribution required
 
 == Changelog ==
+
+= 1.2 =
+*      Changed as per reviewer.
 
 = 1.1 =
 *      Changed as per reviewer.
