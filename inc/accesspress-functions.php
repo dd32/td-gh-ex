@@ -277,12 +277,16 @@ function accesspress_register_string(){
 add_action('after_setup_theme','accesspress_register_string');
 
 function accesspress_translated_id($orginal_id){
+	$translation_title_id = $orginal_id;
+	
 	if(function_exists('icl_object_id')){
 		$translation_title_id = icl_object_id( $orginal_id, 'page' );
 	}
 
 	if( ($translation_title_id == $orginal_id) && function_exists('pll_get_post') ){
 		$translation_title_id = pll_get_post($orginal_id);
+	}else{
+		return $orginal_id;
 	}
 
 	return $translation_title_id;
