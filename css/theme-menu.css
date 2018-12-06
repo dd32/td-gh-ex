@@ -151,6 +151,9 @@
 .navbar-custom .navbar-toggle .icon-bar { background: #121213; width: 40px; height: 2px; }
 .navbar-toggle .icon-bar + .icon-bar { margin-top: 8px; }
 .dropdown-menu { min-width: 180px; /*font-size: 11px;*/ }
+ul.dropdown-menu span {
+   padding-left: 20px;
+}
 
 
 /*--------------------------------------------------------------
@@ -191,11 +194,11 @@
 		clear: both;
 		font-weight: normal;
 		color: #bbb;
-		white-space: nowrap;
+		white-space: normal;
 	}
 	
 	.navbar-custom .navbar-nav .dropdown-menu > li > a {
-		padding: 12px 0;
+		padding: 12px 30px 12px 0px;
 	}
 	.navbar-custom .dropdown-menu {
 		position: static;

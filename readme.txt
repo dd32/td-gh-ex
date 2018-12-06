@@ -153,6 +153,13 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+@version 2.2.7
+1. Some small changes.
+@version 2.2.6.1
+1. Added Bitbucket theme URI.
+@version 2.2.6
+1. Added filter for demo switcher.
+2. Fixed some menu style issue.
 @version 2.2.5
 1. Fixed Menu Issue.
 @version 2.2.4

@@ -33,6 +33,9 @@
 <a href="#" class="scroll-up"><i class="fa fa-chevron-up"></i></a>
 <!-- Page scroll top -->
 
-<?php wp_footer(); ?>
+<?php 
+do_action ('quality_demo_lite_switcher');
+
+ wp_footer(); ?>
 </body>
 </html>
