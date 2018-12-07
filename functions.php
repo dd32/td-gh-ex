@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.9
+ * @version   1.3.0
  */
 
 /* TABLE OF CONTENT
@@ -202,7 +202,6 @@ function avik_the_breadcrumb() {
 		echo '<div class="container">';
 		echo '<div class="row breadcrumbs">';
 		echo '<div class="text-breadcrumbs avikArticle text-left col-sm-4">';
-		echo '<i class="fas fa-image"></i>';
 		the_title();
 		echo '</div>';
 		echo '<div class="menu-breadcrumbs col-sm-8">';
@@ -260,7 +259,6 @@ function avik_the_breadcrumb_archive() {
 		echo '<div class="container">';
 		echo '<div class="row breadcrumbs">';
 		echo '<div class="text-breadcrumbs text-left col-sm-4">';
-        echo '<i class="fas fa-archive"></i>';
 		single_term_title();
 		echo '</div>';
 		echo '<div class="menu-breadcrumbs avikArchive col-sm-8">';
@@ -317,7 +315,6 @@ function avik_the_breadcrumb_search() {
 		echo '<div class="container">';
 		echo '<div class="row breadcrumbs">';
 		echo '<div class="text-breadcrumbs avikSearch text-left col-sm-4">';
-		echo '<i class="far fa-lightbulb"></i>';
 		printf( esc_html__( 'Results for: "s"', 'avik' ), '<span>' . get_search_query() . '</span>' );
 		echo '</div>';
 		echo '<div class="menu-breadcrumbs col-sm-8">';

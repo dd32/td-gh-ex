@@ -1,17 +1,17 @@
 <?php
 /*
 Template Name: Services
-Template Post Type: page
+Template Post Type: post,page
 */
 /**
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.2.9
+* @version   1.3.0
 *
 */
 
-if(is_single()) { get_header('post'); } else { get_header(); } ?>
+if(is_single()) { get_header('post'); } else { get_header(); }?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
 		<div class="enter-services">
@@ -25,6 +25,7 @@ if(is_single()) { get_header('post'); } else { get_header(); } ?>
 				<div class="header-image-services">
 					<?php the_post_thumbnail('avik_single', array( 'class' => 'img-fluid mb-4', 'alt' => get_the_title() ))?>
 				</div>
+				<?php avik_the_breadcrumb(); ?>
 				<div class="container">
 					<article <?php post_class(); ?>>
 						<div class="content-post text-right pt-5">

@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.2.9
+* @version   1.3.0
 */
 
 /* TABLE OF CONTENT
@@ -316,6 +316,9 @@ class Avik_Simple_Notice_Custom_Control extends WP_Customize_Control {
       'i' => array(
         'class' => array()
       ),
+      'button' => array(
+        'class' => array()
+      ),
       'span' => array(
         'class' => array(),
       ),
@@ -330,11 +333,79 @@ class Avik_Simple_Notice_Custom_Control extends WP_Customize_Control {
         <span class="customize-control-description"><?php echo wp_kses( $this->description, $allowed_html ); ?></span>
       <?php } ?>
     </div>
+
+    <!-- Style for Custom Simple Notices -->
+    <style>
+
+    .simple-notice-custom-control{
+    	padding-top: 2em;
+    	border: 1px solid #ccc;
+      background-color: #fff;
+    }
+
+    .simple-notice-custom-control span{
+      padding: 1em;
+    }
+
+    .simple-notice-custom-control{
+      font-family: 'Montserrat', sans-serif;
+      transition-duration: 0.7s;
+      transition-timing-function: ease;
+    }
+
+    .simple-notice-custom-control:hover{
+      box-shadow:
+      1px 1px #000,
+      2px 2px #000,
+      3px 3px #0000;
+      -webkit-transform: translateX(-3px);
+      transform: translateX(-3px);
+      -webkit-transition:  0.7s ease-in;
+      -moz-transition:  0.7s ease-in;
+      transition:  0.7s ease-in ;
+    }
+
+    .customize-control-description{
+      font-style: normal!important;
+    }
+
+    .simple-notice-custom-control button {
+    	border-color: #000;
+    	background: transparent;
+    	color: #000;
+    	padding: 8px;
+    	font-size: 14px;
+    	position: relative;
+    	transition: all 500ms ease;
+      margin-top: 10px;
+      margin-bottom: 10px;
+    }
+
+    .simple-notice-custom-control a{
+      color: #000;
+      text-decoration: none;
+    }
+
+    .simple-notice-custom-control a:hover{
+      color: #d5f83e;
+    }
+
+    .simple-notice-custom-control button a:hover {
+      color: #d5f83e;
+    }
+
+
+    .simple-notice-custom-control button:hover {
+    	background: #000;
+    	color: #fff;
+      border-color: #fff;
+    }
+
+    </style>
   <?php
   }
 }
 }
-
 
 /* ------------------------------------------------------------------------- *
 ##  2 CSS Customize */
@@ -360,7 +431,6 @@ function avik_customizer_css() {
   .avik-logo img{width:<?php echo esc_attr( get_theme_mod('avik_font_size_logo', '80')); ?>px ;}
 
 </style>
-
 
 <!-- 2.4 Responsive Enable Style  -->
 

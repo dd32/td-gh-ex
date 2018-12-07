@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.2.9
+ * @version   1.3.0
  */
  ?>
 
@@ -25,7 +25,8 @@
         <img class="img-whoweare-header" src="<?php if ( $avik_image_attributes[0] ) :
            echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/img/whoweare.jpg'; endif; ?>"/>
 	   </div>
-      <div class="title-whoweare text-center">
+     <?php avik_the_breadcrumb(); ?>
+      <div class="title-whoweare text-center pt-4">
         <h3><?php the_title();?></h3>
       </div>
         <div class="container">
@@ -96,7 +97,7 @@
               <?php echo esc_html( get_theme_mod( 'avik_max_numbers_4_statistics')); ?>
                 </div>
                  <div class="statistics-text four">
-                   <h4><?php echo esc_html( get_theme_mod( 'avik_title_3_statistics_whoweare')); ?></h4>
+                   <h4><?php echo esc_html( get_theme_mod( 'avik_title_4_statistics_whoweare')); ?></h4>
                 </div>
           </div>
        </div>

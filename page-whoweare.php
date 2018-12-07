@@ -7,10 +7,10 @@ Template Post Type: page
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.2.9
+* @version   1.3.0
 */
 
-if(is_page()) { get_header('post'); } else { get_header(); } ?>
+if(is_page()) { get_header('post'); } else { get_header(); }?>
 <div id="primary" class="content-area">
 	<main id="main" class="site-main">
 		<?php

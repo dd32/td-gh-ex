@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.2.9
+* @version   1.3.0
 */
 
 /* TABLE OF CONTENT
@@ -2701,32 +2701,33 @@ function avik_customize_register( $wp_customize ) {
 
 																													$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_copyright_footer',
 																													array(
-																														'label'   => __( 'Enable/Disable copyright.','avik' ),
+																														'label'   => __( 'Enable/Disable copyright Site.','avik' ),
 																														'section' => 'avik_section_settings_footer',
 																														'priority'=> 10,
 																													)) );
 
+
+
+																													$wp_customize->add_setting( 'avik_copyright_pro_only',
+																														 array(
+																																'default' => '',
+																																'transport' => 'postMessage',
+																																'sanitize_callback' => 'avik_text_sanitization'
+																														 )
+																													);
+
+																													$wp_customize->add_control( new Avik_Simple_Notice_Custom_control( $wp_customize, 'avik_copyright_pro_only',
+																														 array(
+																																'label' => __( 'Franchi Design Copyright','avik' ),
+																																'description' => __( '<p>FRANCHI DESIGN COPYRIGHT CAN NOT BE REMOVED.<br>ONLY WITH THE <br>
+																																                      <button><a href="https://www.denisfranchi.com/avik-pro-10-0-0/" target="_blank">PRO VERSION</a></button><br>
+																																                       IT CAN BE REMOVED!</p>', 'avik' ),
+																																'section' => 'avik_section_settings_footer'
+																														 )
+																													) );
+
 																													/* ------------------------------------------------------------------------------------------------------------*
 																													##  Pro Version
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -3325,7 +3326,7 @@ function avik_customize_register( $wp_customize ) {
 																														$wp_customize->add_control( new Avik_Simple_Notice_Custom_control( $wp_customize, 'avik_go_pro_version',
 																														   array(
 																														      'label' => __( 'AVIK PRO','avik' ),
-																														      'description' => __( '<p>For a total control of your site <br>go to the <a href="https://www.denisfranchi.com/avik-pro-10-0-0/" target="_blank">Pro version</a></p>', 'avik' ),
+																														      'description' => __( '<p>FOR COMPLETE EXPERIENCE<br>GO TO THE <button><a href="https://www.denisfranchi.com/avik-pro-10-0-0/" target="_blank">PRO VERSION</a></p></button>', 'avik' ),
 																														      'section' => 'avik_section_settings_go_pro'
 																														   )
 																														) );
