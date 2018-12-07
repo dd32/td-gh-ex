@@ -114,6 +114,12 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.31 (2018-12-07)
+-------------------------
+- Set the third widget area in the footer to be visible on tablets
+- Removed old vendor prefixes
+- Updated 2X resolution media query with missing assets (should be updated to SVGs, but oh well)
+
 Version 1.30 (2018-11-30)
 -------------------------
 - Fixed Gutenberg editor styles font being overwritten
