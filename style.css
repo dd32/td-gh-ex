@@ -4,7 +4,7 @@
 
 	Theme Name: Hemingway
     Text Domain: hemingway
-	Version: 1.69
+	Version: 1.70
 	Description: Hemingway is a clean, beautiful and responsive two-column theme for bloggers. Features responsive design, retina-ready assets, Gutenberg support, full-width header image with parallax scrolling effect, custom accent color, custom logo upload, custom Flickr and Dribbble widgets, page templates and translation-ready code. Demo: http://www.andersnoren.se/themes/hemingway/
 	Tags: blog, two-columns, right-sidebar, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 	Author: Anders Norén
@@ -136,10 +136,6 @@ img {
 
 body a,
 .post-tags a::after {
-	-webkit-transition: all 0.1s ease-in-out;
-	 -moz-transition: all 0.1s ease-in-out;
-	 -ms-transition: all 0.1s ease-in-out;
-	 -o-transition: all 0.1s ease-in-out;
 	 transition: all 0.1s ease-in-out;
 }
 
@@ -165,18 +161,10 @@ input#s,
 a.more-link,
 .dribbble-shot img,
 .flickr_badge_image a img {
-	-webkit-transition: all 0.2s ease-in-out;
-	 -moz-transition: all 0.2s ease-in-out;
-	 -ms-transition: all 0.2s ease-in-out;
-	 -o-transition: all 0.2s ease-in-out;
 	 transition: all 0.2s ease-in-out;
 }
 
 .tothetop {
-	-webkit-transition: all 0.3s ease-in-out;
-	 -moz-transition: all 0.3s ease-in-out;
-	 -ms-transition: all 0.3s ease-in-out;
-	 -o-transition: all 0.3s ease-in-out;
 	 transition: all 0.3s ease-in-out;
 }
 
@@ -828,6 +816,8 @@ a.more-link,
 
 /* Gutenberg Accent Colors --------------------------------------- */
 
+.post-content .has-background { background-color: #444; }
+
 .post-content .has-accent-color { color: #1ABC9C; }
 .post-content .has-accent-background-color { background-color: #1ABC9C; }
 
@@ -1033,7 +1023,7 @@ hr.wp-block-separator {
 /* Post Quotes --------------------------------------- */
 
 
-.post-content blockquote:not(.wp-block-pullquote) {
+.post-content blockquote {
 	background: #EEE;
 	color: #666;
 	font-family: 'Raleway', 'Helvetica Neue', sans-serif;
@@ -1067,11 +1057,18 @@ em, q { font-style: italic; }
 }
 
 .post-content .wp-block-pullquote {
+	background: transparent;
 	border-bottom: 4px solid #444;
 	border-top: 4px solid #444;
 	margin: 2em 0;
 	padding: 3em 0;
 	text-align: center;
+}
+
+.post-content .wp-block-pullquote blockquote {
+	background: transparent;
+	margin: 0;
+	padding: 0;
 }
 
 .post-content .wp-block-pullquote p {
@@ -1092,6 +1089,19 @@ em, q { font-style: italic; }
 
 .post-content .wp-block-pullquote cite:before {
 	content: none;
+}
+
+.wp-block-quote.is-large p, 
+.wp-block-quote.is-style-large p {
+	font-size: 1.2em;
+	font-style: normal;
+}
+
+.wp-block-quote.is-large cite, 
+.wp-block-quote.is-large footer, 
+.wp-block-quote.is-style-large cite, 
+.wp-block-quote.is-style-large footer {
+	font-size: .9em;
 }
 
 
