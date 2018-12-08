@@ -513,22 +513,42 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'capability'	=> 'edit_theme_options',
 		'panel'			=> 'agama_header_panel'
 	) );
+    Kirki::add_field( 'agama_options', array(
+        'type'          => 'radio-image',
+        'settings'      => 'agama_media_logo',
+        'section'       => 'agama_header_logo_section',
+        'default'       => 'desktop',
+        'priority'      => 10,
+        'transport'     => 'auto',
+        'choices'       => array(
+            'desktop'   => get_template_directory_uri() . '/assets/img/desktop.png',
+            'tablet'    => get_template_directory_uri() . '/assets/img/tablet.png',
+            'mobile'    => get_template_directory_uri() . '/assets/img/mobile.png',
+        ),
+        'output'        => array(
+            array(
+                'element'   => '',
+                'property'  => ''
+            )
+        )
+    ) );
 	Kirki::add_field( 'agama_options', array(
-		'label'				=> esc_attr__( 'Logo', 'agama' ),
-		'tooltip'		    => esc_attr__( 'Upload custom logo.', 'agama' ),
+		'label'				=> esc_attr__( 'Desktop Logo', 'agama' ),
+		'tooltip'		    => esc_attr__( 'Upload custom logo for desktop devices.', 'agama' ),
 		'section'			=> 'agama_header_logo_section',
 		'settings'			=> 'agama_logo',
 		'type'				=> 'image',
-        'partial_refresh'   => array(
-            'agama_logo'    => array(
-                'selector'          => '#masthead .customize_preview_logo',
-                'render_callback'   => array( 'Agama_Partial_Refresh', 'preview_logo' )
+        'active_callback'   => array(
+            array(
+                'setting'   => 'agama_media_logo',
+                'operator'  => '==',
+                'value'     => 'desktop'
             )
         )
 	) );
 	Kirki::add_field( 'agama_options', array(
-		'label'			    => esc_attr__( 'Logo Max-Height', 'agama' ),
-		'tooltip'	        => esc_attr__( 'Set logo max-height in PX.', 'agama' ),
+		'label'			    => esc_attr__( 'Desktop Logo Max-height', 'agama' ),
+		'tooltip'	        => esc_attr__( 'Set desktop logo max-height in PX.', 'agama' ),
 		'section'		    => 'agama_header_logo_section',
 		'settings'		    => 'agama_logo_max_height',
         'transport'         => 'auto',
@@ -541,14 +561,113 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'default'		    => '90',
         'output'            => array(
             array(
-                'element'   => '#masthead .logo',
+                'element'   => '#agama-logo .logo-desktop',
                 'property'  => 'max-height',
                 'suffix'    => 'px'
             )
         ),
         'active_callback'   => array(
             array(
+                'setting'   => 'agama_media_logo',
+                'operator'  => '==',
+                'value'     => 'desktop'
+            ),
+            array(
                 'setting'   => 'agama_logo',
+                'operator'  => '!==',
+                'value'     => ''
+            )
+        )
+	) );
+    Kirki::add_field( 'agama_options', array(
+		'label'				=> esc_attr__( 'Tablet Logo', 'agama' ),
+		'tooltip'		    => esc_attr__( 'Upload custom logo for tablet devices.', 'agama' ),
+		'section'			=> 'agama_header_logo_section',
+		'settings'			=> 'agama_tablet_logo',
+		'type'				=> 'image',
+        'active_callback'   => array(
+            array(
+                'setting'   => 'agama_media_logo',
+                'operator'  => '==',
+                'value'     => 'tablet'
+            )
+        )
+	) );
+	Kirki::add_field( 'agama_options', array(
+		'label'			    => esc_attr__( 'Tablet Logo Max-height', 'agama' ),
+		'tooltip'	        => esc_attr__( 'Set tablet logo max-height in PX.', 'agama' ),
+		'section'		    => 'agama_header_logo_section',
+		'settings'		    => 'agama_tablet_logo_max_height',
+        'transport'         => 'auto',
+		'type'			    => 'slider',
+		'choices'		    => array(
+			'step'		    => '1',
+			'min'		    => '0',
+			'max'		    => '250'
+		),
+		'default'		    => '90',
+        'output'            => array(
+            array(
+                'element'   => '#agama-logo .logo-tablet',
+                'property'  => 'max-height',
+                'suffix'    => 'px'
+            )
+        ),
+        'active_callback'   => array(
+            array(
+                'setting'   => 'agama_media_logo',
+                'operator'  => '==',
+                'value'     => 'tablet'
+            ),
+            array(
+                'setting'   => 'agama_tablet_logo',
+                'operator'  => '!==',
+                'value'     => ''
+            )
+        )
+	) );
+    Kirki::add_field( 'agama_options', array(
+		'label'				=> esc_attr__( 'Mobile Logo', 'agama' ),
+		'tooltip'		    => esc_attr__( 'Upload custom logo for mobile devices.', 'agama' ),
+		'section'			=> 'agama_header_logo_section',
+		'settings'			=> 'agama_mobile_logo',
+		'type'				=> 'image',
+        'active_callback'   => array(
+            array(
+                'setting'   => 'agama_media_logo',
+                'operator'  => '==',
+                'value'     => 'mobile'
+            )
+        )
+	) );
+	Kirki::add_field( 'agama_options', array(
+		'label'			    => esc_attr__( 'Mobile Logo Max-height', 'agama' ),
+		'tooltip'	        => esc_attr__( 'Set mobile logo max-height in PX.', 'agama' ),
+		'section'		    => 'agama_header_logo_section',
+		'settings'		    => 'agama_mobile_logo_max_height',
+        'transport'         => 'auto',
+		'type'			    => 'slider',
+		'choices'		    => array(
+			'step'		    => '1',
+			'min'		    => '0',
+			'max'		    => '250'
+		),
+		'default'		    => '90',
+        'output'            => array(
+            array(
+                'element'   => '#agama-logo .logo-mobile',
+                'property'  => 'max-height',
+                'suffix'    => 'px'
+            )
+        ),
+        'active_callback'   => array(
+            array(
+                'setting'   => 'agama_media_logo',
+                'operator'  => '==',
+                'value'     => 'mobile'
+            ),
+            array(
+                'setting'   => 'agama_mobile_logo',
                 'operator'  => '!==',
                 'value'     => ''
             )
@@ -2716,6 +2835,19 @@ function customize_styles_agama_support( $input ) { ?>
 		}
         .dd-options li {
             margin-bottom: 0;
+        }
+        #input_agama_media_logo {
+            display: block;
+            text-align: center;
+        }
+        #input_agama_media_logo label {
+            padding-right: 20px;
+        }
+        #input_agama_media_logo label:last-child {
+            padding-right: 0;
+        }
+        #input_agama_media_logo label img {
+            padding: 5px;
         }
 	</style>
 <?php }

@@ -8,25 +8,9 @@ if( ! defined( 'ABSPATH' ) ) {
 <div class="sticky-header clear">
 	<div class="sticky-header-inner clear">
 		
-		<!-- Logo -->
-		<div class="pull-left">
-            
-            <?php if( is_customize_preview() ) { echo '<div class="customize_preview_logo" style="display:block;">'; } ?>
-            
-			<?php if( get_theme_mod( 'agama_logo', '' ) ): ?>
-				<a href="<?php echo esc_url( home_url('/') ); ?>" 
-                   title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-					<img src="<?php echo esc_url( get_theme_mod( 'agama_logo' ) ); ?>" class="logo" 
-                         alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
-				</a>
-			<?php else: ?>
-				<h1 class="site-title">
-                    <a href="<?php echo esc_url( home_url('/') ); ?>"><?php bloginfo( 'name' ); ?></a>
-                </h1>
-			<?php endif; ?>
-            
-            <?php if( is_customize_preview() ) { echo '</div>'; } ?>
-            
+        <!-- Logo -->
+		<div id="agama-logo" class="pull-left">
+			<?php agama_logo(); ?>
 		</div><!-- Logo End -->
 		
 		<!-- Primary Navigation -->

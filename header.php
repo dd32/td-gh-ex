@@ -40,7 +40,7 @@ if( ! defined( 'ABSPATH' ) ) {
 <div id="main-wrapper">
 	
 	<!-- Header Start -->
-	<header id="masthead" class="site-header clearfix <?php Agama::header_class(); ?>" role="banner">
+	<header id="masthead" class="site-header <?php Agama::header_class(); ?> clearfix" role="banner">
 		
 		<?php Agama_Helper::get_header(); ?>
 		

@@ -3,6 +3,12 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.3.9 - 08 December 2018 =
+* Added multiple logo upload features (mobile, tablet, notebook & desktop).
+* Added slider missing img files.
+* Updated theme translation files.
+* Removed pig icon on customizer (re)loading.
+
 = 1.3.8 - 22 October 2018 =
 * Added Elementor plugin to TGM Plugin activation.
 * Added GoldAddons for Elementor to TGM Plugin activation.

@@ -6,7 +6,7 @@ if( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Add Edito to the Customizer
+ * Add Editor to the Customizer
  *
  * @since 1.3.8
  */

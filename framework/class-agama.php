@@ -119,16 +119,33 @@ if( ! class_exists( 'Agama' ) ) {
 		 * @since 1.2.0
 		 */
 		static function header_class() {
-			$header = get_theme_mod( 'agama_header_style', 'transparent' );
+			$header     = esc_attr( get_theme_mod( 'agama_header_style', 'transparent' ) );
+            $desktop    = esc_url( get_theme_mod( 'agama_logo', '' ) );
+            $tablet     = esc_url( get_theme_mod( 'agama_tablet_logo', '' ) );
+            $mobile     = esc_url( get_theme_mod( 'agama_mobile_logo', '' ) );
+            $device     = array();
+            
+            if( ! empty( $desktop ) ) {
+                $device[] = 'has_desktop';
+            }
+            
+            if( ! empty( $tablet ) ) {
+                $device[] = 'has_tablet';
+            }
+            
+            if( ! empty( $mobile ) ) {
+                $device[] = 'has_mobile';
+            }
+            
 			switch( $header ):
 				case 'transparent':
-					 $class = 'header_v1';
+					 $class = 'header_v1 ' . implode( ' ', $device );
 				break;
 				case 'default':
-					 $class = 'header_v2';
+					 $class = 'header_v2 ' . implode( ' ', $device );
 				break;
 				case 'sticky':
-					 $class = 'header_v3';
+					 $class = 'header_v3 ' . implode( ' ', $device );
 				break;
 			endswitch;
 			echo $class;

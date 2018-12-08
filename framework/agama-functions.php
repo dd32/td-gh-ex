@@ -13,6 +13,79 @@ if ( ! isset( $content_width ) ) {
 }
 
 /**
+ * Agama Display Logo
+ *
+ * @since 1.3.9
+ * @return mixed
+ */
+if( ! function_exists( 'agama_logo' ) ) {
+    function agama_logo() {
+        if( function_exists( 'agama_get_logo' ) ) {
+            echo agama_get_logo();   
+        }
+    }
+}
+
+/**
+ * Agama Return Logo
+ *
+ * @since 1.3.9
+ * @return mixed
+ */
+if( ! function_exists( 'agama_get_logo' ) ) {
+    function agama_get_logo() {
+        $output = '';
+        
+        if( is_customize_preview() ) { 
+            $output .= '<div class="customize_preview_logo" style="display:block;">'; 
+        }
+        
+        $desktop    = esc_url( get_theme_mod( 'agama_logo', '' ) );
+        $tablet     = esc_url( get_theme_mod( 'agama_tablet_logo', '' ) );
+        $mobile     = esc_url( get_theme_mod( 'agama_mobile_logo', '' ) );
+        
+        if( ! empty( $desktop ) ) {
+            $logo['desktop'] = $desktop;
+        }
+        
+        if( ! empty( $tablet ) ) {
+            $logo['tablet'] = $tablet;
+        }
+        
+        if( ! empty( $mobile ) ) {
+            $logo['mobile'] = $mobile;
+        }
+        
+        if( ! empty( $logo ) ) {
+            $output .= '<a href="'. esc_url( home_url('/') ) .'" ';
+            $output .= 'title="'. esc_attr( get_bloginfo( 'name', 'display' ) ) .'">';
+                foreach( $logo as $device => $url ) {
+                    $output .= '<img src="'. $url .'" class="logo logo-'. esc_attr( $device ) .'" ';
+                    $output .= 'alt="'. esc_attr( get_bloginfo( 'name', 'display' ) ) .'">';
+                }
+            $output .= '</a>';
+        } else {
+            $output .= '<h1 class="site-title">';
+                $output .= '<a href="'. esc_url( home_url( '/' ) ) .'" ';
+                $output .= 'title="'. esc_attr( get_bloginfo( 'name', 'display' ) ) .'" rel="home">';    
+                    $output .= get_bloginfo( 'name' );
+                $output .= '</a>';
+            $output .= '</h1>';
+            // Tagline
+            if( get_theme_mod( 'agama_header_style', 'agama_header_style' ) == 'default' ) {
+                $output .= '<h2 class="site-description">'. get_bloginfo( 'description' ) .'</h2>';
+            }
+        }
+        
+        if( is_customize_preview() ) {
+            $output .= '</div>';
+        }
+        
+        return $output;
+    }
+}
+
+/**
  * Agama Thumb Title
  * Get post-page article title and separates it on two halfs
  *

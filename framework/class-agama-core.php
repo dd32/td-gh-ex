@@ -117,6 +117,10 @@ if( ! class_exists( 'Agama_Core' ) ) {
             if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
                 define( 'ELEMENTOR_PARTNER_ID', 2132 );
             }
+            
+            if( ! defined( 'MONSTERINSIGHTS_SHAREASALE_ID' ) ) {
+                define( 'MONSTERINSIGHTS_SHAREASALE_ID', 69975 );
+            }
         }
 
         /**
@@ -335,8 +339,8 @@ if( ! class_exists( 'Agama_Core' ) ) {
                     'force_activation'  => false
                 ),
                 array(
-                    'name'              => 'WPForms Lite',
-                    'slug'              => 'wpforms-lite',
+                    'name'              => 'Google Analytics for WordPress by MonsterInsights',
+                    'slug'              => 'google-analytics-for-wordpress',
                     'required'          => false,
                     'force_activation'  => false
                 )

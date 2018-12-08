@@ -30,19 +30,66 @@ class Agama_Partial_Refresh {
     }
     
     /**
-     * Logo
+     * Logo Desktop Preview
      *
      * @since 1.3.1
+     * @return mixed
      */
     function preview_logo() {
-        if( get_theme_mod( 'agama_logo' ) ) {
-            $output = '<a href="'. esc_url( home_url('/') ) .'" title="'. esc_attr( get_bloginfo( 'name', 'display' ) ) .'">';
-                $output .= '<img src="'. esc_url( get_theme_mod( 'agama_logo', '' ) ) .'" class="logo">';
-            $output .= '</a>';
+        $desktop = esc_url( get_theme_mod( 'agama_logo' ) );
+        
+        if( $desktop ) {
+            agama_logo();
         } else {
-            $output = '<h1 class="site-title"><a href="'. esc_url( home_url('/') ) .'">'. get_bloginfo( 'name' ) .'</a></h1>';
+            echo '<h1 class="site-title">';
+                echo '<a href="'. esc_url( home_url( '/' ) ) .'" ';
+                echo 'title="'. esc_attr( get_bloginfo( 'name', 'display' ) ) .'" rel="home">';    
+                    echo get_bloginfo( 'name' );
+                echo '</a>';
+            echo '</h1>';
         }
-        return $output;
+    }
+    
+    /**
+     * Logo Tablet Preview
+     *
+     * @since 1.3.9
+     * @return mixed
+     */
+    function preview_logo_tablet() {
+        $tablet = esc_url( get_theme_mod( 'agama_tablet_logo' ) );
+        
+        if( $tablet ) {
+            agama_logo();
+        } else {
+            echo '<h1 class="site-title">';
+                echo '<a href="'. esc_url( home_url( '/' ) ) .'" ';
+                echo 'title="'. esc_attr( get_bloginfo( 'name', 'display' ) ) .'" rel="home">';    
+                    echo get_bloginfo( 'name' );
+                echo '</a>';
+            echo '</h1>';
+        }
+    }
+    
+    /**
+     * Logo Mobile Preview
+     *
+     * @since 1.3.9
+     * @return mixed
+     */
+    function preview_logo_mobile() {
+        $mobile = esc_url( get_theme_mod( 'agama_mobilelogo' ) );
+        
+        if( $mobile ) {
+            agama_logo();
+        } else {
+            echo '<h1 class="site-title">';
+                echo '<a href="'. esc_url( home_url( '/' ) ) .'" ';
+                echo 'title="'. esc_attr( get_bloginfo( 'name', 'display' ) ) .'" rel="home">';    
+                    echo get_bloginfo( 'name' );
+                echo '</a>';
+            echo '</h1>';
+        }
     }
     
     /**
@@ -221,3 +268,5 @@ class Agama_Partial_Refresh {
         do_action('agama_credits');
     }
 }
+
+/* Omit closing PHP tag to avoid "Headers already sent" issues. */
