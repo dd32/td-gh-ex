@@ -40,6 +40,10 @@ https://pixabay.com/en/fitness-couple-model-sport-strong-2498657/
 
 
 == Changelog ==
+
+= 1.0.3 -14 Nov 2018 =
+* remove 'FitWidth' in masonry, fixes container width issue.
+
 = 1.0.0 - 09 Nov 2018 =
 * CSS fixes for headers
 

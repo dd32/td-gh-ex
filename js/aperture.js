@@ -29,7 +29,7 @@ var $container = $('#masonry').imagesLoaded( function() {
     //columnWidth: '.grid-sizer',
     itemSelector: '.post-item',
     // option that allows for your website to center in the page
-    isFitWidth: true,
+    //isFitWidth: true,
     gutter: 0  
     });
   });

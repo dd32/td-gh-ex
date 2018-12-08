@@ -3,12 +3,12 @@ Theme Name: Aperture Portfolio
 Theme URI: https://aperturewp.com/downloads/aperture/'
 Author: Afrothemes
 Author URI:https://aperturewp.com
-Description: Aperture Portfolio is a simple WordPress theme for photographers & bloggers, use it for a travel, food or photography bloging & portfolio. Aperture can also be use be used for creative agency or photo studio. Try it out for free today.
-Version: 1.0.2
+Description: Aperture portfolio is a free WordPress  portfolio theme built for digital agencies, creative portfolio, photography sites, design studio, illustrators & any content creator. Aperture portfolio is freely availble, use posts to create portfolio items and display them on a modern responsive grid. Want a more professional look? upgrade to the pro version for  detailed portfolio pages with video and image galleries, a modern looking homepage for a portfolio you'd be proud to share.
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aperture-portfolio
-Tags: one-column, grid-layout, custom-background, custom-logo, custom-menu, featured-images, footer-widgets, threaded-comments, translation-ready, blog
+Tags: one-column, grid-layout, custom-background, custom-logo, custom-menu, featured-images, footer-widgets, threaded-comments, translation-ready, blog, portfolio
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -645,17 +645,27 @@ h1.entry-title {
 	text-align: left;
 }
 
-@media all and (max-width: 420px) {
-	.site-branding {
-		text-align: center;
-	}
-}
+
 
 .intro {
 	width: 75%;
     padding: 6em 0 5em;
     margin: 0 auto;
 }
+@media all and (max-width: 420px) {
+	.site-branding {
+		text-align: center;
+	}
+	.intro {
+    width: 100%;
+    padding: 1em 0 5em;
+    margin: 0 auto;
+	}
+	.intro h1 {
+		font-size: 25px;
+	}
+}
+
 .intro h1 {
 	font-weight: 300;
     color: #000;
