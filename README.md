@@ -90,6 +90,9 @@ Yes! You can choose your color scheme under Appearance -> Theme Options -> Styli
 
 = Changelog =
 
+### Version 3.3
+- Fixed: Sidebar issue and theme option issue
+
 ### Version 3.2
 - Fixed: esc_url, esc_attr, esc_html issue and remove Admin notice
 
