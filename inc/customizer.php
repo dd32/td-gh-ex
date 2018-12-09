@@ -657,6 +657,23 @@ function aaron_customize_register( $wp_customize ) {
 			)
 		);
 
+		// Open the link in a new tab.
+		$wp_customize->add_setting(
+			'aaron_highlight' . $i . '_target',
+			array(
+				'sanitize_callback' => 'aaron_sanitize_checkbox'
+			)
+		);
+
+		$wp_customize->add_control(
+			'aaron_highlight' . $i . '_target',
+			array(
+				'type'    => 'checkbox',
+				'label'   => __( 'Check this box to open the link in a new tab.', 'aaron' ),
+				'section' => 'aaron_section_' . $i,
+			)
+		);
+
 		// Hide single, individual highlights.
 		$wp_customize->add_setting(
 			'aaron_highlight' . $i . '_hide',

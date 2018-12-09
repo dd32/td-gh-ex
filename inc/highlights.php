@@ -19,7 +19,14 @@ function aaron_highlights() {
 					echo '<div class="highlights hl' . $i . '" style="background:' . esc_attr( get_theme_mod( 'aaron_highlight' . $i . '_bgcolor', '#fafafa' ) ) . ';">';
 					// Lets make the whole area clickable if there is a link.
 					if ( get_theme_mod( 'aaron_highlight' . $i . '_link' ) ) {
-						echo '<a href="' . esc_url( get_theme_mod( 'aaron_highlight' . $i . '_link' ) ) . '">';
+						
+						echo '<a href="' . esc_url( get_theme_mod( 'aaron_highlight' . $i . '_link' ) ) . '"';
+
+						if ( get_theme_mod( 'aaron_highlight' . $i . '_target' ) ) {
+							echo 'target="_blank" ';
+						}
+						
+						echo '>';
 					}
 
 					// If there is an icon, show it unless there is also an image, then the image will replace the icon.
@@ -56,6 +63,11 @@ function aaron_highlights() {
 						if ( ! get_theme_mod( 'aaron_highlight' . $i . '_headline' ) && ! get_theme_mod( 'aaron_highlight' . $i . '_text' ) ) {
 							echo '<span class="screen-reader-text">' . esc_html__( 'Follow the link to learn more about this featured content.', 'aaron' ) . '</span>';
 						}
+
+						if ( get_theme_mod( 'aron_highlight' . $i . '_target' ) ) {
+							echo '<span class="screen-reader-text">' . esc_html__( 'This link will open in a new tab.', 'aaron' ) . '</span>';
+						}	
+						
 						echo '</a>';
 					}
 
