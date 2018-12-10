@@ -143,13 +143,7 @@ jQuery(function($) {
 		});
 	});     
 	
-	jQuery(".blog-design-latest-post .latest-carousel-post-slider").owlCarousel({
-		loop:true,
-		items:1,
-		margin:10,
-		nav:true,	
-		dots: false,
-	});
+	
 	/* Header Search JS Start */
 	jQuery(document).on('click', '[data-advik-blog-lite-1]', function() {
 	    var options = jQuery(this).data('advik-blog-lite-1');

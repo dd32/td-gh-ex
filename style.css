@@ -3,8 +3,8 @@ Theme Name: Advik Blog Lite
 Theme URI: 
 Author: WP Online Support
 Author URI: https://www.wponlinesupport.com/
-Description: Advik Blog Lite is a beautiful WordPress blog theme for Advik blog website. Theme is lightweight, fast and optimized for all mobile phones.
-Version: 1.0
+Description: Advik Blog Lite is a beautiful WordPress blog theme for Advik blog website. Also added Gutenberg support. Theme is lightweight, fast and optimized for all mobile phones.
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advik-blog-lite
@@ -1555,8 +1555,16 @@ footer .site-copyright .advik-blog-lite-col-6.copyright {text-align: left; line-
 .single .content-area .author-single ,
 .single .content-area .post-navigation,
 .single .content-area .comments-area,
-.single .content-area .advik-blog-lite-related-posts{ padding-left:30px; padding-right:30px;}
+.single .content-area .advik-blog-lite-related-posts{ padding-left:30px; padding-right:45px;}
 .single .content-area .advik-blog-lite-related-posts .entry-media{margin:0px 0 20px 0px;}
+
+.single .entry-content .alignfull,
+.single .entry-summary .alignfull {
+   margin-left: -6%;
+   margin-right: -6%;
+	max-width: 112%;
+  }
+
 }
 
 .blog .site-content-wrap, .archive .site-content-wrap, .search .site-content-wrap{ margin:30px 0px;}
