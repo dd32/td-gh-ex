@@ -1,15 +1,15 @@
 === Aakriti Personal Blog === 
 Contributors: wponlinesupport, anoopranawat
 Requires at least: WordPress 4.5
-Tested up to: WordPress 4.9.8
-Version:  1.0.6
+Tested up to: WordPress 5.0
+Version:  1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, blog,  left-sidebar,  right-sidebar,  custom-background,  custom-colors,  custom-menu,  featured-images,  full-width-template,  threaded-comments, footer-widgets,  sticky-post,  theme-options
 
 == Description ==
 
-Aakriti Personal Blog is a beautiful WordPress blog theme for blogs website. Theme is lightweight, fast and optimized for all mobile phones.
+Aakriti Personal Blog is a beautiful WordPress blog theme for blogs website. Added Gutenberg support. Theme is lightweight, fast and optimized for all mobile phones.
 
 == Installation ==
 
@@ -55,6 +55,11 @@ License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/term
 - https://pixabay.com/en/person-woman-man-couple-people-3519503/
 
 == Changelog ==
+
+= 1.1 =
+* Tested with WordPress 5.0 and Gutenberg
+* Added Gutenberg support
+* Added alignfull support.
 
 = 1.0.6 =
 * Removed recommended plugin - Blog and News Designer Pack from theme

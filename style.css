@@ -1,10 +1,10 @@
 /*
 Theme Name: Aakriti Personal Blog
 Theme URI: https://www.wponlinesupport.com/free-themes/aakriti-personal-blog/
-Author: WP Online Support
+Author: WP OnlineSupport
 Author URI: https://www.wponlinesupport.com/
-Description: Aakriti Personal Blog is a beautiful WordPress blog theme for blogs website. Theme is lightweight, fast and optimized for all mobile phones.
-Version: 1.0.6
+Description: Aakriti Personal Blog is a beautiful WordPress blog theme for blogs website. Added Gutenberg support. Theme is lightweight, fast and optimized for all mobile phones.
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aakriti-personal-blog
@@ -612,6 +612,8 @@ textarea {
 	.single .entry-header,
 	.single .entry-content{padding:0 80px;}
 }
+
+
 /*--------------------------------------------------------------
 # Navigation
 --------------------------------------------------------------*/
@@ -2153,6 +2155,55 @@ footer .site-copyright .aakriti-personal-blog-col-6.copyright {text-align: left;
 .error404 .site-content {
 	text-align: center;
 }
+
+
+/*--------------------------------------------------------------
+# WP 5.0 and Gutenberg support
+--------------------------------------------------------------*/
+.entry-content > *.alignwide,
+.entry-summary > *.alignwide {
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+}
+@media only screen and (min-width: 768px) {
+  .entry-content > *.alignwide,
+  .entry-summary > *.alignwide {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+.entry-content > *.alignfull,
+.entry-summary > *.alignfull {
+  position: relative;
+  left: -1rem;
+  width: calc( 100% + (2 * 1rem));
+  max-width: calc( 100% + (2 * 1rem));
+  clear: both;
+}
+
+@media only screen and (min-width: 768px) {
+  .entry-content > *.alignfull,
+  .entry-summary > *.alignfull {
+    margin-top: calc(2 * 1rem);
+    margin-bottom: calc(2 * 1rem);
+    left: calc( -12.5% - 75px);
+    width: calc( 125% + 150px);
+    max-width: calc( 125% + 150px);
+  }
+}
+
+.entry-content .wp-block-pullquote  blockquote {
+    font-size: 20px;
+    line-height: 1.5;
+    padding: auto;
+    background: none;
+    margin: 0px;
+    text-align: center;
+    border: 0px;
+}
+
 
 /*--------------------------------------------------------------
 ## Comments
