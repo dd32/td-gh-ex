@@ -8,7 +8,7 @@
 /**
  * The class that describes the onboarding feature
  */
-class OnboardingFeature {
+class AgncyOnboardingFeature {
 
 	/**
 	 * The title of this feature

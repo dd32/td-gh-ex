@@ -8,7 +8,7 @@
 /**
  * The class to control the color theme of the WordPress theme
  */
-class LHColors
+class AgncyColors
 {
     /**
      * The static varible to hold the only instance of this class
@@ -447,4 +447,4 @@ class LHColors
     }
 
 }
-$GLOBALS['agncy_color_themes'] = LHColors::get_instance();
+$GLOBALS['agncy_color_themes'] = AgncyColors::get_instance();

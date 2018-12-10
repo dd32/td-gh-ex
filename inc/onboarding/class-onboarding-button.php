@@ -8,7 +8,7 @@
 /**
  * The class that describes the onboarding button
  */
-class OnboardingButton {
+class AgncyOnboardingButton {
 
 	/**
 	 * The link target of the button

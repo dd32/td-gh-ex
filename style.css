@@ -4,7 +4,7 @@
  * Description: Agncy is a beautiful news and blogging theme that has beautiful typography, powerful color customisation and an elegant, light layout. Customise your theme to the colours you need and upload your own logo. Enjoy reading even long texts with the beautiful font "Fira" and experience how fast font loading can be with an innovative font loading technique.
  * Author: WP Munich
  * Author URI: http://www.wp-munich.com
- * Version: 1.2.0
+ * Version: 1.2.1
  * Text Domain: agncy
  * Domain Path: /languages
  * License: GPL-2.0+
@@ -4289,32 +4289,32 @@ img {
  *
  * The default styles are the mobile styles.
  */
-[class^='wp-block']:not([class*='__']) {
+[class*='wp-block-'] {
   margin: 0 0 24px;
   min-width: 25%;
   z-index: 0;
   position: relative;
 }
-[class^='wp-block']:not([class*='__']).alignleft,
-[class^='wp-block']:not([class*='__']).alignright {
+[class*='wp-block-'].alignleft,
+[class*='wp-block-'].alignright {
   max-width: calc(50% -  16px);
 }
-[class^='wp-block']:not([class*='__']).alignleft {
+[class*='wp-block-'].alignleft {
   margin-right: 16px;
 }
-[class^='wp-block']:not([class*='__']).alignright {
+[class*='wp-block-'].alignright {
   margin-left: 16px;
 }
-[class^='wp-block']:not([class*='__']) figcaption {
+[class*='wp-block-'] figcaption {
   font-size: 13px;
   line-height: 1.84615385em;
   margin-top: 12px;
 }
 @media (min-width: 768px) {
-  [class^='wp-block']:not([class*='__']) {
+  [class*='wp-block-'] {
     margin: 0 0 27px;
   }
-  [class^='wp-block']:not([class*='__']) figcaption {
+  [class*='wp-block-'] figcaption {
     font-size: 15px;
     line-height: 1.8em;
     margin-top: 13.5px;
@@ -4342,6 +4342,7 @@ img {
 }
 .wp-block-button .wp-block-button__link,
 .wp-block-button .wp-block-button__link.has-background {
+  margin: auto;
   padding: 12px 32px;
   border-radius: 8px;
   text-decoration: none;

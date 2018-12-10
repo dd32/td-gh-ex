@@ -165,7 +165,7 @@ class AgncyAdminPages {
 		require_once AGNCY_THEME_PATH . '/inc/onboarding/class-onboarding-button.php';
 		$buttons = array();
 
-		$buttons[] = new OnboardingButton(
+		$buttons[] = new AgncyOnboardingButton(
 			array(
 				'label'               => __( 'Upgrade now!', 'agncy' ),
 				'target'              => admin_url( 'themes.php?page=agncy-welcome_page-pricing' ),
@@ -174,7 +174,7 @@ class AgncyAdminPages {
 			)
 		);
 
-		$buttons[] = new OnboardingButton(
+		$buttons[] = new AgncyOnboardingButton(
 			array(
 				'label'   => __( 'Subscribe on YouTube', 'agncy' ),
 				'target'  => 'https://www.youtube.com/c/WPMunich',
@@ -182,7 +182,7 @@ class AgncyAdminPages {
 			)
 		);
 
-		$buttons[] = new OnboardingButton(
+		$buttons[] = new AgncyOnboardingButton(
 			array(
 				'label'   => __( 'Like us on Facebook', 'agncy' ),
 				'target'  => 'https://www.facebook.com/wpmunich/',
@@ -220,7 +220,7 @@ class AgncyAdminPages {
 		require_once AGNCY_THEME_PATH . '/inc/onboarding/class-onboarding-feature.php';
 		$features = array();
 
-		$features[] = new OnboardingFeature(
+		$features[] = new AgncyOnboardingFeature(
 			array(
 				'title'       => __( 'Color Schemes', 'agncy' ),
 				'description' => __( 'Customize your website with amazing color schemes crafted by our designers.', 'agncy' ),
@@ -232,7 +232,7 @@ class AgncyAdminPages {
 			)
 		);
 
-		$features[] = new OnboardingFeature(
+		$features[] = new AgncyOnboardingFeature(
 			array(
 				'title'       => __( 'Even More Colors', 'agncy' ),
 				'description' => __( 'Select your favorite colors from 26 available schemes for your site!', 'agncy' ),
@@ -244,7 +244,7 @@ class AgncyAdminPages {
 			)
 		);
 
-		$features[] = new OnboardingFeature(
+		$features[] = new AgncyOnboardingFeature(
 			array(
 				'title'       => __( 'Custom Color Schemes', 'agncy' ),
 				'description' => __( 'Create custom color schemes without any limits to fit to your design.', 'agncy' ),
@@ -256,7 +256,7 @@ class AgncyAdminPages {
 			)
 		);
 
-		$features[] = new OnboardingFeature(
+		$features[] = new AgncyOnboardingFeature(
 			array(
 				'title'       => __( 'Footer Message', 'agncy' ),
 				'description' => __( 'Make your site your own and customise the message in the footer.', 'agncy' ),
@@ -268,7 +268,7 @@ class AgncyAdminPages {
 			)
 		);
 
-		$features[] = new OnboardingFeature(
+		$features[] = new AgncyOnboardingFeature(
 			array(
 				'title'       => __( 'Gutenberg Ready', 'agncy' ),
 				'description' => __( 'This theme is ready for Gutenberg, the new block based WordPress editor.', 'agncy' ),
@@ -280,7 +280,7 @@ class AgncyAdminPages {
 			)
 		);
 
-		$features[] = new OnboardingFeature(
+		$features[] = new AgncyOnboardingFeature(
 			array(
 				'title'       => __( 'Custom Headers', 'agncy' ),
 				'description' => __( 'Choose between countless variations and use the header that best fits your needs.', 'agncy' ),

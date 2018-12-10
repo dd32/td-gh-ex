@@ -10,7 +10,7 @@
  *
  * TODO: Migrate to a singleton class
  */
-class LhThemeCustomizer
+class AgncyThemeCustomizer
 {
     /**
      * The class constructor, that triggers the action and filter dispatcher.
@@ -384,7 +384,7 @@ class LhThemeCustomizer
     }
 
 }
-new LhThemeCustomizer();
+new AgncyThemeCustomizer();
 /**
  * Helper function to sanitize a bool value
  *

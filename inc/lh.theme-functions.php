@@ -12,7 +12,7 @@
  *
  * TODO: Make this a singleton pattern
  */
-class LhThemeFunctions {
+class AgncyThemeFunctions {
 
 	/**
 	 * The class constructor, that triggers the action and filter dispatcher.
@@ -160,4 +160,4 @@ class LhThemeFunctions {
 		return $defaults;
 	}
 }
-$_lh_theme_functions = new LhThemeFunctions();
+$_lh_theme_functions = new AgncyThemeFunctions();
