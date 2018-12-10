@@ -9,7 +9,7 @@ Tags: two-columns, blog,  left-sidebar,  right-sidebar,  custom-background,  cus
 
 == Description ==
 
-Advik Blog Lite is a beautiful WordPress blog theme for blogs website. Theme is lightweight, fast and optimized for all mobile phones.
+Advik Blog Lite is a beautiful WordPress blog theme for blogs website. Also added Gutenberg support Theme is lightweight, fast and optimized for all mobile phones.
 
 == Installation ==
 
@@ -61,7 +61,7 @@ License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/term
 
 == Changelog ==
 
-= 1.1 =
+= 1.1.1 =
 * Fixed search issue
 * Tested with WordPress 5.0 and Gutenberg
 * Added Gutenberg support
