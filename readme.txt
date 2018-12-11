@@ -1,11 +1,11 @@
 === Adonis ===
 Contributors: catchthemes
-Tags:two-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
-Requires at least: 4.7
-Tested up to: 4.9
-Stable tag: 1.2.1
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tags: two-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
+Requires at least: 4.8
+Tested up to: 5.0
+Stable tag: 1.3
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Adonis is a free, simple and clean, personal WordPress theme for professionals to exhibit their creative side to the world through their personal website.
 
@@ -18,7 +18,7 @@ For more information about Adonis please go to https://catchthemes.com/themes/ad
 == Installation ==
 
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in Catch Store in the search form and press the 'Enter' key on your keyboard.
+2. Type in Adonis in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
 4. Go to https://catchthemes.com/theme-instructions/adonis/ for a guide on how to customize this theme.
 5. Navigate to Appearance -> Customize in your admin panel and customize to taste.
@@ -27,7 +27,7 @@ For more information about Adonis please go to https://catchthemes.com/themes/ad
 
 = Does this theme support any plugins? =
 
-Theme supports all plugins from catchplugins.com and WooCommerce Plugin.
+Theme supports all plugins from catchplugins.com
 
 = Where can I find theme documentation? =
 
@@ -42,6 +42,16 @@ You can check our Theme Demo at https://catchthemes.com/demo/adonis/
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 1.3 (Released: December 11, 2018) =
+* Added: Theme support for block styles
+* Added: Theme support for full and wide align images
+* Added: Theme support for responsive embeds
+* Added: Theme support for custom editor font sizes
+* Added: Theme support for custom color scheme
+* Bug Fixed: Header Video Image issue on mobile phones
+* Updated: Metabox UI
+* Updated: Readme file as per new requirement
 
 = 1.2.1 (Released: December 04, 2018) =
 * Bug Fixed: Testimonial Typo corrected

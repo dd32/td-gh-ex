@@ -31,10 +31,10 @@ class Adonis_Metabox {
 	public function __construct( $meta_box_id, $meta_box_title, $post_type ) {
 
 		$this->meta_box = array (
-							'id'        => $meta_box_id,
-							'title'     => $meta_box_title,
-							'post_type' => $post_type,
-							);
+			'id'        => $meta_box_id,
+			'title'     => $meta_box_title,
+			'post_type' => $post_type,
+		);
 
 		$this->fields = array(
 			'adonis-header-image',
@@ -47,8 +47,6 @@ class Adonis_Metabox {
 		add_action( 'add_meta_boxes', array( $this, 'add' ) );
 
 		add_action( 'save_post', array( $this, 'save' ) );
-
-		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_metabox_scripts' ) );
 	}
 
 	/**
@@ -60,7 +58,7 @@ class Adonis_Metabox {
 	*/
 	public function add($postType) {
 		if( in_array( $postType, $this->meta_box['post_type'] ) ) {
-			add_meta_box( $this->meta_box['id'], $this->meta_box['title'], array( $this, 'show' ), $postType );
+			add_meta_box( $this->meta_box['id'], $this->meta_box['title'], array( $this, 'show' ), $postType, 'side' );
 		}
 	}
 
@@ -91,63 +89,39 @@ class Adonis_Metabox {
 		wp_nonce_field( basename( __FILE__ ), 'adonis_custom_meta_box_nonce' );
 
 		// Begin the field table and loop  ?>
-		<div id="adonis-ui-tabs" class="ui-tabs">
-			<ul class="adonis-ui-tabs-nav" id="adonis-ui-tabs-nav">
-				<li><a href="#frag2"><?php esc_html_e( 'Header Featured Image Options', 'adonis' ); ?></a></li>
-				<li><a href="#frag3"><?php esc_html_e( 'Single Page/Post Image Layout ', 'adonis' ); ?></a></li>
-			</ul>
+		<p class="post-attributes-label-wrapper"><label class="post-attributes-label" for="adonis-header-image"><?php esc_html_e( 'Header Featured Image Options', 'adonis' ); ?></label></p>
+		<select class="widefat" name="adonis-header-image" id="adonis-header-image">
+			 <?php
+				$meta_value = get_post_meta( $post->ID, 'adonis-header-image', true );
+				
+				if ( empty( $meta_value ) ){
+					$meta_value='default';
+				}
+				
+				foreach ( $header_image_options as $field =>$label ) {	
+				?>
+					<option value="<?php echo esc_attr( $field ); ?>" <?php selected( $meta_value, $field ); ?>><?php echo esc_html( $label ); ?></option>
+				<?php
+				} // end foreach
+			?>
+		</select>
 
-			<div id="frag2" class="catch_ad_tabhead">
-				<table id="header-image-metabox" class="form-table" width="100%">
-					<tbody>
-						<tr>
-							<?php
-							$metaheader = get_post_meta( $post->ID, 'adonis-header-image', true );
-
-							if ( empty( $metaheader ) ){
-								$metaheader = 'default';
-							}
-
-							foreach ( $header_image_options as $field => $label ) {
-							?>
-								<td style="width: 100px;">
-									<label class="description">
-										<input type="radio" name="adonis-header-image" value="<?php echo esc_attr( $field ); ?>" <?php checked( $field, $metaheader ); ?>/>&nbsp;&nbsp;<?php echo esc_html( $label ); ?>
-									</label>
-								</td>
-
-							<?php
-							} // end foreach
-							?>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-
-			<div id="frag3" class="catch_ad_tabhead">
-				<table id="featured-image-metabox" class="form-table" width="100%">
-					<tbody>
-						<tr>
-								 <?php
-									foreach ( $featured_image_options as $field =>$label ) {
-										$metaimage = get_post_meta( $post->ID, 'adonis-featured-image', true );
-										if( empty( $metaimage ) ){
-											$metaimage='default';
-										}
-									?>
-									<td style="width: 100px;">
-										<label class="description">
-											<input type="radio" name="adonis-featured-image" value="<?php echo esc_attr( $field ); ?>" <?php checked( $field, $metaimage ); ?>/>&nbsp;&nbsp;<?php echo esc_html( $label ); ?>
-										</label>
-									</td>
-									<?php
-									} // end foreach
-								?>
-						</tr>
-					</tbody>
-				</table>
-			</div>
-		</div>
+		<p class="post-attributes-label-wrapper"><label class="post-attributes-label" for="adonis-featured-image"><?php esc_html_e( 'Single Page/Post Image Layout ', 'adonis' ); ?></label></p>
+		<select class="widefat" name="adonis-featured-image" id="adonis-featured-image">
+			 <?php
+				$meta_value = get_post_meta( $post->ID, 'adonis-featured-image', true );
+				
+				if ( empty( $meta_value ) ){
+					$meta_value='default';
+				}
+				
+				foreach ( $featured_image_options as $field =>$label ) {	
+				?>
+					<option value="<?php echo esc_attr( $field ); ?>" <?php selected( $meta_value, $field ); ?>><?php echo esc_html( $label ); ?></option>
+				<?php
+				} // end foreach
+			?>
+		</select>
 	<?php
 	}
 
@@ -187,21 +161,6 @@ class Adonis_Metabox {
 				}
 			}
 		} // end foreach
-	}
-
-	public function enqueue_metabox_scripts( $hook ) {
-		$allowed_pages = array( 'post-new.php', 'post.php' );
-
-		// Bail if not on required page
-		if ( ! in_array( $hook, $allowed_pages ) ) {
-			return;
-		}
-
-		//Scripts
-		wp_enqueue_script( 'adonis-metabox-script', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'inc/metabox/metabox.js', array( 'jquery', 'jquery-ui-tabs' ), '20180103' );
-
-		//CSS Styles
-		wp_enqueue_style( 'adonis-metabox-style', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'inc/metabox/metabox.css' );
 	}
 }
 

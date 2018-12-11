@@ -92,6 +92,80 @@ if ( ! function_exists( 'adonis_setup' ) ) :
 			'width'       => 225,
 		) );
 
+		// Add support for Block Styles.
+		add_theme_support( 'wp-block-styles' );
+
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		// Add custom editor font sizes.
+		add_theme_support(
+			'editor-font-sizes',
+			array(
+				array(
+					'name'      => __( 'Small', 'adonis' ),
+					'shortName' => __( 'S', 'adonis' ),
+					'size'      => 13,
+					'slug'      => 'small',
+				),
+				array(
+					'name'      => __( 'Normal', 'adonis' ),
+					'shortName' => __( 'M', 'adonis' ),
+					'size'      => 16,
+					'slug'      => 'normal',
+				),
+				array(
+					'name'      => __( 'Large', 'adonis' ),
+					'shortName' => __( 'L', 'adonis' ),
+					'size'      => 28,
+					'slug'      => 'large',
+				),
+				array(
+					'name'      => __( 'Huge', 'adonis' ),
+					'shortName' => __( 'XL', 'adonis' ),
+					'size'      => 38,
+					'slug'      => 'huge',
+				),
+			)
+		);
+
+		// Add support for custom color scheme.
+		add_theme_support( 'editor-color-palette', array(
+			array(
+				'name'  => __( 'White', 'adonis' ),
+				'slug'  => 'white',
+				'color' => '#ffffff',
+			),
+			array(
+				'name'  => __( 'Black', 'adonis' ),
+				'slug'  => 'black',
+				'color' => '#000000',
+			),
+			array(
+				'name'  => __( 'Dark Gray', 'adonis' ),
+				'slug'  => 'dark-gray',
+				'color' => '#333333',
+			),
+			array(
+				'name'  => __( 'Medium Gray', 'adonis' ),
+				'slug'  => 'medium-gray',
+				'color' => '#e5e5e5',
+			),
+			array(
+				'name'  => __( 'Light Gray', 'adonis' ),
+				'slug'  => 'light-gray',
+				'color' => '#f7f7f7',
+			),
+			array(
+				'name'  => __( 'Blue', 'adonis' ),
+				'slug'  => 'blue',
+				'color' => '#1982c4',
+			),
+		) );
+
 		add_editor_style( array( 'assets/css/editor-style.css', adonis_fonts_url() ) );
 	}
 endif;
@@ -308,6 +382,9 @@ function adonis_scripts() {
 
 	wp_enqueue_style( 'adonis-style', get_stylesheet_uri() );
 
+	// Theme block stylesheet.
+	wp_enqueue_style( 'adonis-block-style', get_theme_file_uri( '/assets/css/blocks.css' ), array( 'adonis-style' ), '1.0' );
+
 	wp_enqueue_script( 'adonis-skip-link-focus-fix', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'assets/js/skip-link-focus-fix.min.js', array(), '20180111', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -369,6 +446,17 @@ function adonis_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'adonis_scripts' );
+
+/**d
+ * Enqueue editor styles for Gutenberg
+ */
+function adonis_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'adonis-block-editor-style', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'assets/css/editor-blocks.css' );
+	// Add custom fonts.
+	wp_enqueue_style( 'adonis-fonts', adonis_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'adonis_block_editor_styles' );
 
 /**
  * SVG icons functions and filters.

@@ -52,7 +52,7 @@ if ( ! function_exists( 'adonis_featured_image' ) ) :
 				return get_header_image();
 			}
 		} elseif ( is_header_video_active() && has_header_video() ) {
-			return true;
+			return get_header_image();
 		} else {
 			return get_header_image();
 		}

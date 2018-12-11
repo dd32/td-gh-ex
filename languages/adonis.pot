@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Adonis\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-12-04 12:12+0545\n"
+"POT-Creation-Date: 2018-12-11 17:16+0545\n"
 "PO-Revision-Date: 2016-12-07 00:45-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -67,45 +67,101 @@ msgstr ""
 msgid "Social Menu"
 msgstr ""
 
-#: ../functions.php:180
+#: ../functions.php:109
+msgid "Small"
+msgstr ""
+
+#: ../functions.php:110
+msgid "S"
+msgstr ""
+
+#: ../functions.php:115
+msgid "Normal"
+msgstr ""
+
+#: ../functions.php:116
+msgid "M"
+msgstr ""
+
+#: ../functions.php:121
+msgid "Large"
+msgstr ""
+
+#: ../functions.php:122
+msgid "L"
+msgstr ""
+
+#: ../functions.php:127
+msgid "Huge"
+msgstr ""
+
+#: ../functions.php:128
+msgid "XL"
+msgstr ""
+
+#: ../functions.php:138
+msgid "White"
+msgstr ""
+
+#: ../functions.php:143
+msgid "Black"
+msgstr ""
+
+#: ../functions.php:148
+msgid "Dark Gray"
+msgstr ""
+
+#: ../functions.php:153
+msgid "Medium Gray"
+msgstr ""
+
+#: ../functions.php:158
+msgid "Light Gray"
+msgstr ""
+
+#: ../functions.php:163
+msgid "Blue"
+msgstr ""
+
+#: ../functions.php:254
 msgid "Sidebar"
 msgstr ""
 
-#: ../functions.php:182
+#: ../functions.php:256
 msgid "Add widgets here."
 msgstr ""
 
-#: ../functions.php:190
+#: ../functions.php:264
 msgid "Footer 1"
 msgstr ""
 
-#: ../functions.php:192 ../functions.php:202 ../functions.php:212
+#: ../functions.php:266 ../functions.php:276 ../functions.php:286
 msgid "Add widgets here to appear in your footer."
 msgstr ""
 
-#: ../functions.php:200
+#: ../functions.php:274
 msgid "Footer 2"
 msgstr ""
 
-#: ../functions.php:210
+#: ../functions.php:284
 msgid "Footer 3"
 msgstr ""
 
-#: ../functions.php:238
+#: ../functions.php:312
 msgctxt "Open Sans: on or off"
 msgid "on"
 msgstr ""
 
-#: ../functions.php:244
+#: ../functions.php:318
 msgctxt "Source Sans Pro font: on or off"
 msgid "on"
 msgstr ""
 
-#: ../functions.php:320
+#: ../functions.php:397
 msgid "expand child menu"
 msgstr ""
 
-#: ../functions.php:321
+#: ../functions.php:398
 msgid "collapse child menu"
 msgstr ""
 
@@ -1127,8 +1183,8 @@ msgstr ""
 msgid "Single Page/Post Image Layout"
 msgstr ""
 
-#: ../inc/customizer/theme-options.php:141 ../inc/metabox/metabox.php:79
-#: ../inc/metabox/metabox.php:86
+#: ../inc/customizer/theme-options.php:141 ../inc/metabox/metabox.php:77
+#: ../inc/metabox/metabox.php:84
 msgid "Enable"
 msgstr ""
 
@@ -1256,23 +1312,23 @@ msgstr ""
 msgid "Please define an SVG icon filename."
 msgstr ""
 
-#: ../inc/metabox/metabox.php:78 ../inc/metabox/metabox.php:84
+#: ../inc/metabox/metabox.php:76 ../inc/metabox/metabox.php:82
 msgid "Default"
 msgstr ""
 
-#: ../inc/metabox/metabox.php:80 ../inc/metabox/metabox.php:85
+#: ../inc/metabox/metabox.php:78 ../inc/metabox/metabox.php:83
 msgid "Disable"
 msgstr ""
 
-#: ../inc/metabox/metabox.php:96
+#: ../inc/metabox/metabox.php:92
 msgid "Header Featured Image Options"
 msgstr ""
 
-#: ../inc/metabox/metabox.php:97
+#: ../inc/metabox/metabox.php:109
 msgid "Single Page/Post Image Layout "
 msgstr ""
 
-#: ../inc/metabox/metabox.php:210
+#: ../inc/metabox/metabox.php:169
 msgid "Adonis Options"
 msgstr ""
 
