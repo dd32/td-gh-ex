@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.0
+* @version   1.3.1
 */
 
 class Avik_Color_Scheme {
@@ -33,7 +33,7 @@ class Avik_Color_Scheme {
 
 		$wp_customize->add_control( 'avik_color_scheme', array(
 			'label'   => __( 'Skins', 'avik' ),
-			'description'=> __('Choose the most suitable skins for your site, or change the colors as you wish','avik'),
+			'description'=> __('Choose the most suitable skins for your site, or change the colors as you wish. The Skin Avik can not be changed, you can change all the others!','avik'),
 			'section' => 'colors',
 			'type'    => 'select',
 			'priority'=> 2,

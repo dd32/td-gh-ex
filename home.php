@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.0
+* @version   1.3.1
 */
 ?>
 
@@ -33,9 +33,9 @@ while ( $mod->have_posts() ) : $mod->the_post(); { ?>
         </div>
       </div>
       <div class="col-xs-12 col-sm-8 who-we-are-image-frame">
-        <div class="col-xs-12 row">
+        <div class="row">
           <!-- Image 1 who we are -->
-          <div class="first-image-who-we-are" data-aos="fade-right" data-aos-duration="2000">
+          <div class="first-image-who-we-are col-md-8 col-xs-12" data-aos="fade-right" data-aos-duration="2000">
             <?php if ( class_exists( 'MultiPostThumbnails')) :
               MultiPostThumbnails::the_post_thumbnail(
                 get_post_type(),
@@ -43,7 +43,7 @@ while ( $mod->have_posts() ) : $mod->the_post(); { ?>
               endif;?>
             </div>
             <!-- Image 2 who we are -->
-            <div class="second-image-who-we-are" data-aos="zoom-in" data-aos-duration="2000">
+            <div class="second-image-who-we-are col-med-6 col-xs-12" data-aos="zoom-in" data-aos-duration="2000">
               <img class="img-who-we-are border-who-we-are" src="<?php if ( $avik_image_attributes[0] ) :
                 echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>"/>
               </div>

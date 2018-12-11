@@ -7,7 +7,7 @@ Template Post Type: post,page
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.0
+* @version   1.3.1
 *
 */
 
@@ -74,7 +74,7 @@ if(is_single()) { get_header('post'); } else { get_header(); }?>
 						$partners_count =12;
 						$new_query = new WP_Query( array( 'cat' => $partners_cat  , 'showposts' => $partners_count ));
 						while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
-						<div class="col-md-3 partenrs-services">
+						<div class="col-md-3 col-xs-12 partenrs-services">
 							<a href="<?php the_permalink();?>">
 								<?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
 								<img src="<?php if ( $avik_image_attributes[0] ) :
@@ -91,7 +91,7 @@ if(is_single()) { get_header('post'); } else { get_header(); }?>
 		<?php if ( false == esc_html( get_theme_mod( 'avik_enable_quotation_services', false) )) :?>
 			<div class="content-price">
 				<div class="row">
-					<div class="col-md-6">
+					<div class="col-lg-6 col-md-12 col-xs-12">
 						<div class="price-quotation">
 							<div class="title-price text-center">
 								<div class="separator-price">
@@ -109,7 +109,7 @@ if(is_single()) { get_header('post'); } else { get_header(); }?>
 						</div>
 					</div>
 					<!-- Widget Contact Form -->
-					<div class="col-md-6 widget-contact">
+					<div class="col-lg-6 col-md-12 col-xs-12 widget-contact">
 						<?php dynamic_sidebar('widget_contact_form_services'); ?>
 					</div>
 				</div>

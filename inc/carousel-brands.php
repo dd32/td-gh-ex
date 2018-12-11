@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.0
+* @version   1.3.1
 */
 ?>
 <div class="container brands">
