@@ -68,3 +68,6 @@ Version 2.2.2 (12 Dec 2014)
 
 Version 2.2.3 (02 Jan 2017)
     i) Minor fixes.
+
+Version 2.2.4 (7 Dec 2018)
+    i) Minor fixes.

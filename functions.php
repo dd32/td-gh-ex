@@ -26,6 +26,14 @@ function generator_setup() {
 	register_nav_menus( array(
 		'primary'   => __( 'Top primary menu', 'generator' ),
 	) );
+	// Add theme support for Custom Logo.
+	add_theme_support( 'custom-logo', array(
+		'width'       => 250,
+		'height'      => 250,
+		'flex-width'  => true,
+		'flex-height' => true,
+		'header-text' => array( 'site-title', 'site-description' ),
+	) );
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -63,13 +71,25 @@ function generator_font_url() {
 
 	return $generator_font_url;
 }
-
+// Generator Pro Version Menu
+add_action( 'admin_menu', 'generator_admin_menu');
+function generator_admin_menu( ) {
+    add_theme_page( __('Pro Feature','generator'), __('Generator Pro','generator'), 'manage_options', 'generator-pro-buynow', 'generator_buy_now', 300 );   
+}
+function generator_buy_now(){ ?>
+<div class="generator_pro_version">
+  <a href="<?php echo esc_url('https://fasterthemes.com/wordpress-themes/generator/'); ?>" target="_blank">    
+    <img src ="<?php echo esc_url(get_template_directory_uri()); ?>/images/generator_pro_features.png" width="70%" height="auto" />
+  </a>
+</div>
+<?php
+}
 function generator_change_excerpt_more( $more ) {
     return (is_front_page()) ? '' : '[...]';
 }
 add_filter('excerpt_more', 'generator_change_excerpt_more');
 function generator_excerpt_length( $length ) {
-    return (is_front_page()) ? 8 : 25;
+    return (is_front_page()) ? 8 : get_theme_mod('post_content_limit', 25);
 }
 add_filter( 'excerpt_length', 'generator_excerpt_length', 999 );
 /*** Enqueue css and js files ***/
@@ -81,11 +101,11 @@ require_once('functions/theme-default-setup.php');
 /*** Breadcrumbs ***/
 require_once('functions/breadcrumbs.php');
 
-/*** Theme Option ***/
-require_once('theme-options/fasterthemes.php');
-
 /*** Custom Header ***/
 require_once('functions/custom-header.php');
 
-/*** TGM ***/
-require_once('functions/tgm-plugins.php');
+/*** Theme Customizer Option ***/
+require_once('functions/theme-customization.php');
+
+/*** Theme Customizer Fonts ***/
+require_once('functions/fontawasome.php');

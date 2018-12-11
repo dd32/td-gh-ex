@@ -22,7 +22,7 @@ get_header(); ?>
               <h2 class="generator-page-title"><?php the_title(); ?></h2>
             </div>
           <div class="col-md-12 generator-post-content no-padding">
-            <?php if($generator_image != "") { ?><img src="<?php echo $generator_image; ?>" class="img-responsive generator-featured-image" /><?php } 
+            <?php if($generator_image != "") { ?><img src="<?php echo esc_url($generator_image); ?>" class="img-responsive generator-featured-image" /><?php } 
             the_content(); ?>
           </div>
           <?php endwhile; ?> 

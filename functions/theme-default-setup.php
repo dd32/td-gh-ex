@@ -28,6 +28,7 @@ function generator_wp_title( $title, $sep ) {
 
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 ) {
+		/* translators: 1: page */
 		$title = "$title $sep " . sprintf( __( 'Page %s', 'generator' ), max( $paged, $page ) );
 	}
 
@@ -112,11 +113,11 @@ add_action( 'widgets_init', 'generator_widgets_init' );
  */
 function generator_entry_meta() {
 
-	$generator_category_list = get_the_category_list( ', ', 'generator' );
+	$generator_category_list = '<i class="fa fa-list-alt" aria-hidden="true"></i> '.get_the_category_list( ', ', 'generator' );
 
 	$generator_tag_list = get_the_tag_list( ', ', 'generator');
 
-	$generator_date = sprintf( '<time datetime="%3$s">%4$s</time>',
+	$generator_date = sprintf( '<i class="fa fa-calendar"></i> <time datetime="%3$s">%4$s</time> <i class="fa fa-user" aria-hidden="true"></i> ',
 		esc_url( get_permalink() ),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
@@ -125,17 +126,21 @@ function generator_entry_meta() {
 
 	$generator_author = sprintf( '<span><a href="%1$s" title="%2$s" >%3$s</a></span>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		/* translators: 1: author name */
 		esc_attr( sprintf( __( 'View all posts by %s', 'generator' ), get_the_author() ) ),
 		get_the_author()
 	);
 
 
 	if ( $generator_tag_list ) {
-		$generator_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s ', 'generator' );
+			/* translators: 1: category, 2: date, 3: author name */
+		$generator_utility_text = __( ' %1$s  %3$s  %4$s ', 'generator' );
 	} elseif ( $generator_category_list ) {
-		$generator_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s ', 'generator' );
+		/* translators: 1: category, 2: date, 3: author name */
+		$generator_utility_text = __( '%1$s  %3$s  %4$s ', 'generator' );
 	} else {
-		$generator_utility_text = __( 'Posted on : %3$s by : %4$s', 'generator' );		
+		/* translators: 1: category, 2: date, 3: author name */
+		$generator_utility_text = __( ' %3$s  %4$s', 'generator' );		
 	}
 
 	printf(
@@ -158,7 +163,6 @@ if ( ! function_exists( 'generator_comment' ) ) :
  *
  */
 function generator_comment( $comment, $generator_args, $depth ) {
-	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
@@ -166,7 +170,7 @@ function generator_comment( $comment, $generator_args, $depth ) {
 	?>
 <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
   <p>
-    <?php _e( 'Pingback:', 'generator' ); ?>
+    <?php esc_html_e( 'Pingback:', 'generator' ); ?>
     <?php comment_author_link(); ?>
     <?php edit_comment_link( __( 'Edit', 'generator' ), '<span class="edit-link">', '</span>' ); ?>
   </p>
@@ -187,7 +191,7 @@ function generator_comment( $comment, $generator_args, $depth ) {
                             <?php
                                 printf( '<h2>%1$s</h2>',
                                     get_comment_author_link(),
-                                    ( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author ', 'generator' ) . '</span>' : ''
+                                    ( $comment->user_id === $post->post_author ) ? '<span>' . esc_html( 'Post author ', 'generator' ) . '</span>' : ''
                                 );
                             ?>
                             <?php
