@@ -23,6 +23,13 @@
 		</div>
 	</div>
 
+		<div class="site-info col-1-1">
+
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'draft-portfolio' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'architectwp' ), 'WordPress' ); ?></a>
+			<span class="sep"> | </span>
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'architectwp' ), 'ArchitectWP', '<a href="https://aperturewp.com/downloads/architectwp/" rel="designer">Aperture WP</a>' ); ?>
+			
+		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

@@ -263,6 +263,6 @@ add_action( 'customize_controls_enqueue_scripts', 'architectwp_customizer_assets
  * Generate a link to the Noah Lite info page.
  */
 function architectwp_get_pro_link() {
-    return 'http://aperturewp.com/downloads/real-estate/';
+    return 'https://aperturewp.com/downloads/architectwp/';
 }
 
