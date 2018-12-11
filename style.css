@@ -4,7 +4,7 @@ Theme URI:
 Author: Afrothemes
 Author URI:
 Description: ArchitectWP is a WordPress theme built for artchitecture, interior design and real estate management (property management) websites, with it's minimal designs that keep the focus on your work. You can also use this theme as a portfolio for any digital artwork like photography & design portfolios. 
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: architectwp
@@ -660,6 +660,13 @@ h1.entry-title {
 	text-decoration: none;
 	font-size: 22px;
 }
+@media all and (max-width: 420px) {
+.site-branding h1,
+.site-branding h1 a {
+	font-size: 16px;
+	text-align:left;
+}	
+}
 .site-description {
 	color: #888;
 	font-size: 13px;
@@ -738,7 +745,13 @@ h1.entry-title {
     flex-direction: column;
     color: #fff;
     background: rgba(0,0,0,0.5);
-    padding-left: 3em;
+    
+}
+@media all and (max-width: 420px) {
+.header-content {
+	padding-left: 0;
+	padding-top: 3em;
+}	
 }
 .header-content h1 {
 	font-size: 61px;
@@ -1160,6 +1173,7 @@ only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
   #cssmenu>ul.open {
     max-height: 1000px;
     border-top: 1px solid rgba(110, 110, 110, 0.25);
+    background: #000;
   }
   #cssmenu ul {
     width: 100%;
@@ -1216,7 +1230,7 @@ only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
-    width: 100%;
+    width: 17%;
     padding: 15px 20px;
     text-transform: uppercase;
     font-weight: 700;
@@ -1224,7 +1238,13 @@ only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
     letter-spacing: 1px;
     color: #000;
     cursor: pointer;
-    border: 1px solid #333;
+    background: #000;
+    position: absolute;
+    top: -40px;
+    right: -10px;
+    border: 1px solid #fff;
+    z-index: 9999;
+    text-indent: -99999px;
   }
   #cssmenu #menu-button:after {
     display: block;
@@ -1232,8 +1252,8 @@ only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
     position: absolute;
     height: 3px;
     width: 22px;
-    border-top: 2px solid #333;
-    border-bottom: 2px solid #333;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
     right: 20px;
     top: 16px;
   }
@@ -1243,8 +1263,8 @@ only screen and (min-resolution: 2dppx) and (max-width: 1024px) {
     position: absolute;
     height: 3px;
     width: 22px;
-    border-top: 2px solid #333;
-    border-bottom: 2px solid #333;
+    border-top: 2px solid #fff;
+    border-bottom: 2px solid #fff;
     right: 20px;
     top: 26px;
   }
@@ -1337,7 +1357,6 @@ a {
 }
 
 a:visited {
-	color: #777;
 }
 
 a:hover, a:focus, a:active {

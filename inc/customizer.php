@@ -183,49 +183,44 @@ function architectwp_customize_register( $wp_customize ) {
          
     }
 
-	// Add pro upsell in customizer (deactivate untill pro is ready)
-	// $wp_customize->add_section( 'architectwpstyle_view_pro', array(
-	// 	'title'       => esc_html__( 'Upgrage to Pro', 'architectwp' ),
-	// 	'priority'    => 1,
-	// 	'description' => sprintf(
-	// 		/* translators: upsell mesage */
-	// 		esc_html__( '<div class="upsell-container">
-	// 				<h2>Upgrade to PRO Today!</h2>
-	// 				<p>Get the pro add-on plugin today:</p>
-	// 				<ul class="upsell-features">
- //                            <li>
- //                            	<h4>List Real Estate Properties</h4>
- //                            	<div class="description">Create & manage real estate properties.</div>
- //                            </li>
+	//Add pro upsell in customizer
+	$wp_customize->add_section( 'architectwpstyle_view_pro', array(
+		'title'       => esc_html__( 'Upgrage to Pro', 'architectwp' ),
+		'priority'    => 1,
+		'description' => sprintf(
+			/* translators: upsell mesage */
+			__( '<div class="upsell-container">
+					<h2>Upgrade to PRO Today!</h2>
+					<p>Get the pro add-on plugin today:</p>
+					<ul class="upsell-features">
+                            <li>
+                            	<h4>List & Manage Projects</h4>
+                            	<div class="description">Create & manage projects with image galleries.</div>
+                            </li>
 
- //                            <li>
- //                            	<h4>Search/Filter Properties</h4>
- //                            	<div class="description">Search & Filter properties easily</div>
- //                            </li>
+                            <li>
+                            	<h4>Customizable Homepage</h4>
+                            	<div class="description">Choose what to display on homepage</div>
+                            </li>
+
+                            <li>
+                            	<h4>One On One Email Support</h4>
+                            	<div class="description">Get one on one email support personally from me, I can also install & setup the theme for you</div>
+                            </li>
                             
- //                            <li>
- //                            	<h4>Real Estate Features</h4>
- //                            	<div class="description">Create galleries, add maps, videos & all the details you need to sell/rent that property quick and easy</div>
- //                            </li>
+                    </ul> %s </div>', 'architectwp' ),
+			sprintf( '<a href="%1$s" target="_blank" class="button button-primary">%2$s</a>', esc_url( architectwp_get_pro_link() ), esc_html__( 'Upgrade To PRO', 'architectwp' ) )
+		),
+	) );
 
- //                            <li>
- //                            	<h4>One On One Email Support</h4>
- //                            	<div class="description">Get one on one email support personally from me, I can also install & setup the theme for you</div>
- //                            </li>
-                            
- //                    </ul> %s </div>', 'architectwp' ),
-	// 		sprintf( '<a href="%1$s" target="_blank" class="button button-primary">%2$s</a>', esc_url( architectwp_get_pro_link() ), esc_html__( 'Upgrade To PRO', 'architectwp' ) )
-	// 	),
-	// ) );
-
-	// $wp_customize->add_setting( 'architectwppro_desc', array(
-	// 	'default'           => '',
-	// 	'sanitize_callback' => 'wp_kses_post',
-	// ) );
-	// $wp_customize->add_control( 'architectwppro_desc', array(
-	// 	'section' => 'architectwpstyle_view_pro',
-	// 	'type'    => 'hidden',
-	// ) );
+	$wp_customize->add_setting( 'architectwppro_desc', array(
+		'default'           => '',
+		'sanitize_callback' => 'wp_kses_post',
+	) );
+	$wp_customize->add_control( 'architectwppro_desc', array(
+		'section' => 'architectwpstyle_view_pro',
+		'type'    => 'hidden',
+	) );
 
 }
 add_action( 'customize_register', 'architectwp_customize_register' );
@@ -257,17 +252,17 @@ function architectwp_customize_preview_js() {
 add_action( 'customize_preview_init', 'architectwp_customize_preview_js' );
 
 
-// /**
-//  * Admin CSS
-//  */
-// function architectwp_customizer_assets() {
-//     wp_enqueue_style( 'architectwp_customizer_style', get_template_directory_uri() . '/css/upsell.css', null, '1.0.0', false );
-// }
-// add_action( 'customize_controls_enqueue_scripts', 'architectwp_customizer_assets' );
-// /**
-//  * Generate a link to the Noah Lite info page.
-//  */
-// function architectwp_get_pro_link() {
-//     return 'http://aperturewp.com/downloads/real-estate/';
-// }
+/**
+ * Admin CSS
+ */
+function architectwp_customizer_assets() {
+    wp_enqueue_style( 'architectwp_customizer_style', get_template_directory_uri() . '/css/upsell.css', null, '1.0.0', false );
+}
+add_action( 'customize_controls_enqueue_scripts', 'architectwp_customizer_assets' );
+/**
+ * Generate a link to the Noah Lite info page.
+ */
+function architectwp_get_pro_link() {
+    return 'http://aperturewp.com/downloads/real-estate/';
+}
 
