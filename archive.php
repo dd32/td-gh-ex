@@ -20,16 +20,12 @@ get_header(); ?>
                 ?>
 			</header><!-- .page-header -->
 
-			<?php
-                if ( is_tax() ) {
-                } else { //is_tax() ?>
-
 			<div class="absolutte-post-wrapper">
 
 				<?php /* Start the Loop */ ?>
 <?php while ( have_posts() ): the_post(); ?>
 
-						<?php
+							<?php
 
                                     /*
                                      * Include the Post-Format-specific template for the content.
@@ -39,13 +35,11 @@ get_header(); ?>
                                     get_template_part( 'template-parts/content', get_post_format() );
                                 ?>
 
-					<?php endwhile; ?>
+						<?php endwhile; ?>
 
 			</div><!-- /absolutte-post-wrapper -->
 
 				<?php get_template_part( 'template-parts/pagination', 'archive' ); ?>
-
-			<?php } //is_tax() ?>
 
 		<?php else: ?>
 

@@ -17,6 +17,9 @@ It has fully support for Gutenberg blocks and easy customizations.
 
 == Changelog ==
 
+= 1.0.6 - 10/12/2018 =
+* Updated: review
+
 = 1.0.5 - 26/11/2018 =
 * Updated: Before review
 

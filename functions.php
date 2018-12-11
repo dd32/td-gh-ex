@@ -21,8 +21,8 @@ if ( ! function_exists( 'absolutte_setup' ) ):
          * Defines Constant
          */
         $absolutte_theme_data = wp_get_theme();
-        define( 'absolutte_THEME_NAME', $absolutte_theme_data['Name'] );
-        define( 'absolutte_THEME_VERSION', $absolutte_theme_data['Version'] );
+        define( 'ABSOLUTTE_THEME_NAME', $absolutte_theme_data['Name'] );
+        define( 'ABSOLUTTE_THEME_VERSION', $absolutte_theme_data['Version'] );
 
         /*
          * Make theme available for translation.
@@ -226,9 +226,6 @@ require get_template_directory() . '/inc/theme-functions/ql_tgm_plugin_activatio
 
 // Theme Info Page
 require get_template_directory() . '/inc/theme-functions/theme-info-page.php';
-
-// AJAX Functions
-require get_template_directory() . '/inc/theme-functions/ajax-functions.php';
 
 // Meta Boxes
 require get_template_directory() . '/inc/theme-functions/meta-boxes-registration.php';

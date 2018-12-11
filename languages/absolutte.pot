@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Absolutte\n"
-"POT-Creation-Date: 2018-11-21 13:07-0300\n"
-"PO-Revision-Date: 2018-11-21 13:07-0300\n"
+"POT-Creation-Date: 2018-12-11 11:04-0300\n"
+"PO-Revision-Date: 2018-12-11 11:04-0300\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -77,11 +77,11 @@ msgstr ""
 msgid "Name"
 msgstr ""
 
-#: comments.php:125 inc/widgets/contact-info.php:133
+#: comments.php:125 inc/widgets/contact-info.php:118
 msgid "Email"
 msgstr ""
 
-#: comments.php:134 inc/widgets/contact-info.php:145
+#: comments.php:134 inc/widgets/contact-info.php:130
 msgid "Website"
 msgstr ""
 
@@ -985,15 +985,15 @@ msgstr ""
 msgid "Display contact info."
 msgstr ""
 
-#: inc/widgets/contact-info.php:117
+#: inc/widgets/contact-info.php:102
 msgid "Title"
 msgstr ""
 
-#: inc/widgets/contact-info.php:127
+#: inc/widgets/contact-info.php:112
 msgid "Address"
 msgstr ""
 
-#: inc/widgets/contact-info.php:139
+#: inc/widgets/contact-info.php:124
 msgid "Phone"
 msgstr ""
 
