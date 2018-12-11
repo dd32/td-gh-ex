@@ -189,7 +189,7 @@ function aperture_real_estate_customize_register( $wp_customize ) {
 		'priority'    => 1,
 		'description' => sprintf(
 			//unintrosive upsell message
-			esc_html__( '<div class="upsell-container">
+			 __( '<div class="upsell-container">
 					<h2>Upgrade to PRO Today!</h2>
 					<p>Get the pro add-on plugin today:</p>
 					<ul class="upsell-features">
