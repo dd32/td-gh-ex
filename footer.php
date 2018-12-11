@@ -22,7 +22,13 @@
 			<?php dynamic_sidebar( 'footer-2' ); ?>
 		</div>
 	</div>
+		<div class="site-info col-1-1">
 
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'aperture-real-estate' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'aperture-real-estate' ), 'WordPress' ); ?></a>
+			<span class="sep"> | </span>
+			<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'aperture-real-estate' ), 'Aperture Real Estate', '<a href="https://aperturewp.com/downloads/wordpress-real-estate-theme/" rel="designer">Aperture WP</a>' ); ?>
+			
+		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
