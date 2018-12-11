@@ -6,7 +6,6 @@
 // -----------------------------------------------------------
 $color-nav-dropdown-links: #333;
 $color-nav-links: #333;
-$color-nav-dropdown-links: #333;
 $dropdown-width: 19rem;
 $icon-arrow-right: '../svg/chevron-right-dark.svg';
 $icon-arrow-down: '../svg/chevron-down-dark.svg';
@@ -62,14 +61,12 @@ $absolute-navigation: false;
 
     [data-whatinput="keyboard"] .sub-menu {
       transition: none;
-      transition-delay: none;
       transform: none;
     }
 
     [data-whatinput="mouse"] .nav-primary ul .menu-item-has-children,
     [data-whatintent="mouse"] .nav-primary ul .menu-item-has-children {
       &:focus > .sub-menu,
-      &:focus-within > .sub-menu,
       &:hover > .sub-menu {
         visibility: visible;
         opacity: 1;
@@ -91,11 +88,9 @@ $absolute-navigation: false;
         transform: translateY(-2em);
         z-index: -1;
         transition: none;
-        transition-delay: none;
       }
 
       .nav-primary ul .menu-item-has-children:focus > .sub-menu,
-      .nav-primary ul .menu-item-has-children:focus-within > .sub-menu,
       .nav-primary ul .menu-item-has-children:hover > .sub-menu {
         visibility: visible;
         opacity: 1;
@@ -115,7 +110,6 @@ $absolute-navigation: false;
         transform: translateY(1.5rem);
         z-index: -1;
         transition: none;
-        transition-delay: none;
         list-style-type: none;
         list-style: none;
 
@@ -134,7 +128,6 @@ $absolute-navigation: false;
 
       .nav-primary ul .menu-item-has-children {
         &:focus > .sub-menu,
-        &:focus-within > .sub-menu,
         &:hover > .sub-menu {
           visibility: visible;
           opacity: 1;
@@ -276,16 +269,18 @@ $absolute-navigation: false;
         margin-left: 0;
         padding-bottom: .5rem;
         padding-top: .5rem;
+        padding-left: 0;
         margin-top: 18px;
         z-index: 999;
 
         &.sub-menu {
+          padding-left: 0;
           padding-top: .5rem;
           padding-bottom: .5rem;
+        }
 
-          li {
-            margin: 0;
-          }
+        &.sub-menu li {
+          margin: 0;
         }
 
         .dropdown-toggle {
@@ -299,41 +294,40 @@ $absolute-navigation: false;
           float: none;
           width: $dropdown-width;
           padding: 0;
+        }
 
-          // Sub-level toggle arrow
-          .dropdown-toggle {
-            position: absolute;
-            right: 8px;
-            top: 50%;
-            margin-top: 0;
-            padding: 0;
-            text-indent: -9999px;
-            overflow: hidden;
-            background-color: transparent;
-            background-image: url($icon-arrow-right);
-            background-repeat: no-repeat;
-            background-position: center;
-            color: transparent;
-            width: 12px;
-            height: 12px;
-            border: 0;
+        // Sub-level toggle arrow
+        li .dropdown-toggle {
+          position: absolute;
+          right: 8px;
+          top: 50%;
+          margin-top: 0;
+          padding: 0;
+          text-indent: -9999px;
+          overflow: hidden;
+          background-color: transparent;
+          background-image: url($icon-arrow-right);
+          background-repeat: no-repeat;
+          background-position: center;
+          color: transparent;
+          width: 12px;
+          height: 12px;
+          border: 0;
+        }
 
-            // Toggled state
-            &.toggled-on {
-              background-image: url($icon-arrow-left);
-            }
-          }
+        // Toggled state
+        li .dropdown-toggle.toggled-on {
+          background-image: url($icon-arrow-left);
+        }
 
-          // Prevent nav from flickering
-          &.menu-item-has-children {
-            a {
-              // Let's make space for the arrow
-              padding-right: 3.5rem;
-              margin-right: 0;
-              margin-bottom: 0;
-              width: 100%;
-            }
-          }
+        // Prevent nav from flickering
+        .menu-item-has-children a {
+
+          // Let's make space for the arrow
+          padding-right: 3.5rem;
+          margin-right: 0;
+          margin-bottom: 0;
+          width: 100%;
         }
 
         ul {
@@ -348,18 +342,18 @@ $absolute-navigation: false;
           font-size: 1.4rem;
           color: $color-nav-dropdown-links;
           display: block;
+        }
 
-          &:hover,
-          &:focus,
-          &:active,
-          &.highlighted {
-            color: $color-links;
-          }
+        a:hover,
+        a:focus,
+        a:active,
+        a.highlighted {
+          color: $color-links;
+        }
 
-          &.disabled {
-            background: #fff;
-            color: #ccc;
-          }
+        .disabled {
+          background: #fff;
+          color: #ccc;
         }
       }
 

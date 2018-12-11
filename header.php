@@ -52,7 +52,7 @@
 
       <div class="main-navigation-wrapper" id="main-navigation-wrapper">
 
-        <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>" aria-controls="navigation">
+        <button id="nav-toggle" class="nav-toggle hamburger" type="button" aria-label="<?php esc_attr_e( 'Menu', 'air-light' ); ?>">
           <span class="hamburger-box">
             <span class="hamburger-inner"></span>
           </span>
@@ -69,7 +69,7 @@
             'menu_id'           => 'main-menu',
             'echo'              => true,
             'fallback_cb'       => 'Air_Light_Navwalker::fallback',
-            'items_wrap'        => '<ul class="%2$s" id="%1$s">%3$s</ul>',
+            'items_wrap'        => '<ul class="%2$s">%3$s</ul>',
             'walker'            => new Air_Light_Navwalker(),
           ) ); ?>
 

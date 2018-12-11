@@ -9,7 +9,6 @@
 // Default structural element
 .block {
   @include background-cover();
-  background-position: center;
   background-color: #fff;
   position: relative;
   min-height: 100px;
@@ -47,14 +46,14 @@
   padding-right: $container-default-pad-x;
 
   @if $grid-type == fluid {
-
     max-width: $grid-base-size;
     margin-left: auto;
     margin-right: auto;
     padding-left: $container-default-pad-x;
     padding-right: $container-default-pad-x;
+  }
 
-  } @else if $grid-type == snappy {
+  @else if $grid-type == snappy {
     width: 100%;
 
     @media (min-width: $container-ipad) {
@@ -68,7 +67,9 @@
     @media (min-width: $container-desktop) {
       width: $grid-base-size;
     }
-  } @else {
+  }
+
+  @else {
     @include center($max_width: $grid-base-size, $pad: 0);
   }
 
