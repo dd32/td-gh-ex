@@ -31,7 +31,7 @@
 
 		</div><!-- .site-branding -->
 
-		<nav id="site-navigation" class="main-navigation col-9-12">
+		<nav id="site-navigation" class="main-navigation col-9-12 mobile-col-1-1">
 
 			<?php
 				wp_nav_menu(array(
