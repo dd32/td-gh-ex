@@ -5,12 +5,30 @@ jQuery( document ).ready(function() {
 	
 		jQuery('#navmain > div > ul > li:has("ul")').addClass('level-one-sub-menu');
 		jQuery('#navmain > div > ul li ul li:has("ul")').addClass('level-two-sub-menu');										
-	}
-
-  if ( ! fgymm_IsLargeResolution() ) {
+	} else {
 
     jQuery('#header-main-fixed .cart-contents-icon').appendTo( jQuery('#header-main-fixed') );
     jQuery('#header-main-fixed #cart-popup-content').appendTo( jQuery('#header-main-fixed') );
+
+    jQuery('#navmain > div > ul > li').each(
+       function() {
+         if (jQuery(this).find('> ul.sub-menu').length > 0) {
+
+           jQuery(this).prepend('<span class="sub-menu-item-toggle"></span>');
+         }
+       }
+     );
+
+   jQuery('.sub-menu-item-toggle').on('click', function(e) {
+
+     var subMenu = jQuery(this).parent().find('> ul.sub-menu');
+
+     jQuery('#navmain ul ul.sub-menu').not(subMenu).hide();
+     jQuery(this).toggleClass('sub-menu-item-toggle-expanded');
+     subMenu.toggle();
+     subMenu.find('ul.sub-menu').toggle();
+   });
+
   }
 
   fgymm_initHeaderIconsEvents();
@@ -96,12 +114,7 @@ function fgymm_IsLargeResolution() {
 function fgymm_init_loading_effects() {
 
     jQuery('#header-logo').addClass("hidden").viewportChecker({
-            classToAdd: 'animated bounce',
-            offset: 1
-          });
-
-    jQuery('#navmain a').addClass("hidden").viewportChecker({
-            classToAdd: 'animated rubberBand',
+            classToAdd: 'animated fadeIn',
             offset: 1
           });
 
@@ -133,7 +146,7 @@ function fgymm_init_loading_effects() {
 
     jQuery('.header-social-widget')
         .addClass("hidden").viewportChecker({
-            classToAdd: 'animated bounceInLeft',
+            classToAdd: 'animated bounceInDown',
             offset: 1
           });
 
@@ -163,7 +176,7 @@ function fgymm_init_loading_effects() {
 
     jQuery('#footer-menu')
         .addClass("hidden").viewportChecker({
-            classToAdd: 'animated bounceInDown',
+            classToAdd: 'animated bounceInUp',
             offset: 1
           });
 }

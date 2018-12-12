@@ -1,11 +1,11 @@
 /*!
 Theme Name: fGymm
-Description: fGymm is a Fully Responsive Gym and Fitness WordPress Theme designed for health and fitness clubs, CrossFit programs, fitness professionals, personal trainers, etc. Features include Built-in Homepage Slider (Displayed Only on a Static Front Page), WooCommerce plugin support, Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized, Header and Footer Social Icons (Facebook, Google+, Twitter, LinkedIn, Instagram, Tumblr, YouTube, Pinterest, VK, Flickr, Vine), Sidebar and 3 Footer Widget Areas, 3 Homepage widget areas, Full-Width Template, Multiple Browsers Support, Translation Ready and much more.
+Description: fGymm is a Fully Responsive Gym and Fitness WordPress Theme designed for health and fitness clubs, CrossFit programs, fitness professionals, personal trainers, etc. Features include Built-in Homepage Slider (Displayed Only on a Static Front Page), WooCommerce plugin support, Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized, Header and Footer Social Icons (Facebook, Google+, Twitter, LinkedIn, Instagram, Tumblr, YouTube, Pinterest, VK, Flickr, Vine), Sidebar and 3 Footer Widget Areas, 3 Homepage widget areas, Full-Width Template, Multiple Browsers Support, Translation Ready and much more. DEMO: https://tishonator.com/demo/fgymm
 Theme URI: https://tishonator.com/product/fgymm
 Author: tishonator
 Author URI: https://tishonator.com
 Text Domain: fgymm
-Version: 1.7.1
+Version: 1.7.2
 Tags: blog, entertainment, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1588,6 +1588,16 @@ img.wp-post-image {
 	float:right;
 	clear:both;
 }
+
+#main-content-wrapper ul.products li.product .woocommerce-loop-category__title,
+#main-content-wrapper ul.products li.product .woocommerce-loop-product__title,
+#main-content-wrapper ul.products li.product h3 {
+	font-size:16px;
+}
+
+.wc-forward {
+    margin-right: 10px !important;
+}
 .woocommerce-mini-cart,
 .cart_list,
 .product_list_widget {
@@ -2293,6 +2303,37 @@ li.product:before {
 /* Medium Resolution */
 @media screen and (max-width: 799px) {
 
+	#navmain ul ul {
+        display:none;
+    }
+
+    #navmain .sub-menu-item-toggle {
+        display:inline-block;
+        margin:10px 10px 0 0;
+        float:right;
+    }
+
+    #navmain .sub-menu-item-toggle:before {
+        font:16px 'FontAwesome';
+        content:"\f067";
+        width:20px;
+        height:20px;
+        padding:2px;
+    }
+
+    #navmain .sub-menu-item-toggle-expanded:before {
+        content:"\f068";
+    }
+
+    #navmain ul.sub-menu > li > a {
+        padding-left:25px;
+    }
+
+    #navmain ul.sub-menu ul.sub-menu > li > a {
+        padding-left:50px;
+    }
+
+
 	#header-top {
 		text-align:center;
 	}
@@ -2350,7 +2391,7 @@ li.product:before {
 		content:"\f0c9";
 		margin:0 0 0 5%;
 		text-shadow:1px 1px 2px rgba(0,0,0,0.25);
-		color:#999999;
+		color:#555555;
 	}
 
 	#navmain div {
@@ -2403,6 +2444,20 @@ li.product:before {
 		border-left:none;
 		border-bottom:2px solid #08ab0f;
 		padding:10px 0 8px 10px;
+	}
+
+	.cart-contents-icon {
+		float: right;
+		font-size: 17px;
+		position: absolute;
+		right: 2%;
+		top: 5px;
+		visibility: visible !important;
+		width: auto !important;
+	}
+	
+	.cart-contents-icon:hover {
+		text-decoration:none !important;
 	}
 	
 	#page-header {
