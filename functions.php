@@ -18,7 +18,7 @@ if ( !defined( 'AGNCY_JS_URL' ) ) {
     define( 'AGNCY_JS_URL', esc_url( get_template_directory_uri() ) );
 }
 if ( !defined( 'AGNCY_VERSION' ) ) {
-    define( 'AGNCY_VERSION', '1.2.1' );
+    define( 'AGNCY_VERSION', '1.2.2' );
 }
 if ( !defined( 'AGNCY_DEFAULT_PRIMARY' ) ) {
     define( 'AGNCY_DEFAULT_PRIMARY', '#225378' );
@@ -102,7 +102,7 @@ function agncy_enqueue_scripts()
         'style',
         AGNCY_THEME_URL . '/style.min.css',
         array( 'font-awesome' ),
-        '1.2.1',
+        '1.2.2',
         'all'
     );
     /*
@@ -115,7 +115,7 @@ function agncy_enqueue_scripts()
         'main',
         AGNCY_JS_URL . '/js/script.min.js',
         array( 'jquery' ),
-        '1.2.1',
+        '1.2.2',
         true
     );
     wp_enqueue_script( 'main' );
@@ -134,7 +134,7 @@ function agncy_enqueue_scripts()
     wp_register_script(
         'agncy_font',
         AGNCY_JS_URL . '/js/fonts.min.js',
-        '1.2.1',
+        '1.2.2',
         false
     );
     wp_enqueue_script( 'agncy_font' );
@@ -175,7 +175,7 @@ function agncy_admin_scripts()
             'wp-date',
             'wp-edit-post'
         ),
-            '1.2.1',
+            '1.2.2',
             true
         );
         wp_enqueue_script( 'admin' );
@@ -230,7 +230,7 @@ add_action( 'after_setup_theme', 'agncy_load_theme_textdomain' );
  *
  * @return void
  */
-function lh_theme_image()
+function agncy_theme_image()
 {
     // Aspect ratio is alway 16:9.
     $base_x = 16;
@@ -272,7 +272,7 @@ function lh_theme_image()
     );
 }
 
-add_action( 'init', 'lh_theme_image' );
+add_action( 'init', 'agncy_theme_image' );
 /**
  * Add post thumbnail support and define custom image sizes
  *
