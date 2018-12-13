@@ -13,7 +13,7 @@ function beautyandspa_social_links( $beautyandspa_sval = '1' ) {
 
 // 	Post Meta design
 	function beautyandspa_post_meta() { ?>
-	<div class="post-meta"> <span class="post-edit"> <?php edit_post_link(__('Edit','beauty-and-spa'),'<span class="fa-edit">','</span>' ); ?></span> <span class="post-author fa-user-md"> <?php the_author_posts_link(); ?> </span> <span class="post-date fa-clock-o"><?php the_time('F j, Y'); ?></span>	<span class="post-tag fa-tags"> <?php the_tags('' , ', '); ?> </span> <span class="post-category fa-archive"> <?php the_category(', '); ?> </span> <span class="post-comments fa-comments"> <?php comments_popup_link(__('No Comments','beauty-and-spa') . ' &#187;', __('One Comment','beauty-and-spa') . ' &#187;', '% ' . __('Comments','beauty-and-spa') . ' &#187;'); ?> </span>
+	<div class="post-meta"> <span class="post-edit"> <?php edit_post_link(__('Edit','beauty-and-spa'),'<span class="fa-edit">','</span>' ); ?></span> <span class="post-author fa-user-md"> <?php the_author_posts_link(); ?> </span> <span class="post-date fa-clock"><?php the_time('F j, Y'); ?></span>	<span class="post-tag fa-tags"> <?php the_tags('' , ', '); ?> </span> <span class="post-category fa-archive"> <?php the_category(', '); ?> </span> <span class="post-comments fa-comments"> <?php comments_popup_link(__('No Comments','beauty-and-spa') . ' &#187;', __('One Comment','beauty-and-spa') . ' &#187;', '% ' . __('Comments','beauty-and-spa') . ' &#187;'); ?> </span>
 	</div> 
 	
 	<?php
@@ -32,7 +32,7 @@ function beautyandspa_social_links( $beautyandspa_sval = '1' ) {
 	}
 	
 	function beautyandspa_creditline () {
-	echo '&copy; ' . date_i18n(__('Y','beauty-and-spa')). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | Beauty and Spa ' . __('Theme by:', 'beauty-and-spa') . ' <a href="'. 		esc_url('http://d5creation.com') .'" target="_blank"> D5 Creation</a> | ' . __('Powered by:', 'beauty-and-spa') . ' <a href="http://wordpress.org" target="_blank">WordPress</a>';
+	echo '&copy; ' . date_i18n(__('Y','beauty-and-spa')). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | Beauty and Spa ' . __('Theme by:', 'beauty-and-spa') . ' <a href="'. 		esc_url('https://d5creation.com') .'" target="_blank"> D5 Creation</a> | ' . __('Powered by:', 'beauty-and-spa') . ' <a href="http://wordpress.org" target="_blank">WordPress</a>';
     }
 
 

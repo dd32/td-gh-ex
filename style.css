@@ -1,13 +1,13 @@
 /*
 Theme Name: Beauty and Spa
-Theme URI: http://d5creation.com/theme/beautyandspa
+Theme URI: https://d5creation.com/theme/beautyandspa
 
 Author: D5 Creation
-Author URI: http://d5creation.com
+Author URI: https://d5creation.com
 
 Description: Beauty and Spa is a CSS3 Powered and WordPress Latest Version Ready Theme for Beauty Salon and Massage Parlors. It can also be used in any Small Business to Corporate Business. Beauty and Spa Theme is E-Commerce Ready by WooCommerce
 
-Version: 1.5
+Version: 1.7
 
 Tags: two-columns, right-sidebar, custom-header, featured-images, entertainment, holiday, custom-background, custom-menu, threaded-comments, sticky-post, rtl-language-support, portfolio, full-width-template, theme-options 
 
@@ -225,17 +225,25 @@ b, strong{font-weight:bold;}
 displaynone{display:none;}
 .clear{clear:both;}
 
-
-table{background-color:#eeeeee;border:1px solid #ffffff;border-radius:3px 3px 3px 3px;padding:5px;-moz-border-radius:3px;-webkit-border-radius:3px;min-width:200px;color:#333333;}
+table{background-color:#eeeeee;border:1px solid #ffffff;border-radius:3px;padding:5px;min-width:200px;color:#333333;}
 td{padding:5px 7px;vertical-align:top;}
-#wp-calendar td{padding:0px 7px;}
 th{font-weight:bold;line-height:1;padding:5px 7px;text-shadow:0 1px 0 rgba(255, 255, 255, 0.7);background:#CCC;}
+
+.calendar_wrap {background:#ffffff;box-shadow:none; border:1px solid #eeeeee;}
+#wp-calendar{width:100%;border:none; box-shadow: none; background:#ffffff; padding:  0; margin: 0; }
+#wp-calendar th{text-align: center;}
+#wp-calendar td{color:#555555; border: 1px solid #f6f6f6; text-align: center; position: relative; transition:  all .3s; }
+#wp-calendar td:hover{background: #e6e6e6; }
+#wp-calendar td#prev, #wp-calendar td#next, #wp-calendar td.pad {border:none; }
+#wp-calendar caption{font-size:17px; font-weight: 700; text-align:center;}
+#wp-calendar a { font-size: 15px; font-weight: 700; background: #cccccc; display: block; position: absolute; left: 0; top: 0; width:  100%; height:  100%; line-height: 1.9; }
+#wp-calendar a:hover { background: #555555; color: #ffffff !important; }
+
 caption{color:#555555;}
-table#wp-calendar{width:100%;}
 textarea, input[type="text"], input[type="password"], input[type="email"], input[type="number"], input[type="search"], input[type="tel"], input[type="url"], .titlewrap input, select{ font-size:14px;padding:7px;width:98%;border:1px solid #cccccc; vertical-align: middle; }
 input[type="password"]{width:200px;}
 textarea:focus, input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="url"]:focus, .titlewrap:focus input:focus, select:focus{background:#ffffff; border:1px solid #e200ba;}
-button, input[type="reset"], input[type="button"], input[type="submit"], .serbooking .ea-bootstrap .btn-primary, .serbooking .ea-bootstrap .btn-default {background: #ed04d9; border: 0 none; box-shadow: 0 3px 0 0 #a0008c, 0 1px 0 0 rgba(225, 225, 225, 0.2) inset; color: #ffffff; vertical-align: middle; text-shadow: 0 1px rgba(0, 0, 0, 0.1);border-radius:3px;display:inline-block;color:#f7f7f7;font-family:arial;font-size:13px;font-weight:bold;padding:5px 15px 6px;text-decoration:none;text-shadow:1px 1px 1px #555555;min-height:35px;text-transform:uppercase;cursor:pointer;margin:5px 0;}
+button, input[type="reset"], input[type="button"], input[type="submit"], .serbooking .ea-bootstrap .btn-primary, .serbooking .ea-bootstrap .btn-default {background: #ed04d9; border: none; box-shadow: 0 3px 0 0 #a0008c, 0 1px 0 0 rgba(225, 225, 225, 0.2) inset; color: #ffffff; vertical-align: middle; text-shadow: 0 1px rgba(0, 0, 0, 0.1);border-radius:3px;display:inline-block;color:#f7f7f7;font-family:arial;font-size:13px;font-weight:bold;padding:5px 15px 6px;text-decoration:none;text-shadow:1px 1px 1px #555555;min-height:35px;text-transform:uppercase;cursor:pointer;margin:5px 0;}
 button:hover, input[type="reset"]:hover, input[type="button"]:hover, input[type="submit"]:hover, .serbooking .ea-bootstrap .btn-primary:hover, .serbooking .ea-bootstrap .btn-default:hover {background-color:#a0008c; box-shadow: none; color: #ffffff;}
 button:active, input[type="reset"]:active, input[type="button"]:active, input[type="submit"]:active, .serbooking .ea-bootstrap .btn-primary:active, .serbooking .ea-bootstrap .btn-default:active {position:relative;top:1px; color: #ffffff;}
 input#s{width:70%;min-width:235px;}

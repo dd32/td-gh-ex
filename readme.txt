@@ -1,11 +1,11 @@
 ----------------------------------
 Beauty and Spa
 ----------------------------------
-Version: 	1.5
+Version: 	1.7
 Developer: 	D5 Creation
-Author URI: 	http://d5creation.com
+Author URI: 	https://d5creation.com
 
-Donation Link: 	http://d5creation.com/donate
+Donation Link: 	https://d5creation.com/donate
 
 Copyright: 	D5 Creation
 License: 		GNU General Public License v2 or later
@@ -46,6 +46,9 @@ FontAwesome 	: GPL Friendly Licenses, Source -  http://fortawesome.github.io/Fon
 html5.js		: MIT/GPL2 Licensed, https://github.com/aFarkas/html5shiv
 jquery.skitter.js	: Dual licensed under the MIT or GPL Version 2 licenses, http://thiagosf.net
 
+Changelog 1.7
+-----------------------
+- Style Change
 
 Changelog 1.5
 -----------------------
