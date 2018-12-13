@@ -11,32 +11,33 @@ add_action( 'after_setup_theme', 'aemi_content_width', 0 );
 add_action( 'after_setup_theme', 'aemi_setup' );
 add_action( 'widgets_init', 'aemi_widgets_init' );
 add_action( 'wp_enqueue_scripts', 'aemi_scripts', 10 );
+if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && ( ( strpos( $_SERVER['HTTP_USER_AGENT'], 'MSIE' ) !== false ) || ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Trident/7.0' ) !== false ) ) )
+{
+	add_action( 'wp_enqueue_scripts', 'aemi_ie_scripts', 20 );
+}
 
 /**
  * Header
- * @see aemi_header_menu()
  * @see aemi_header_branding()
- * @see aemi_header_widget()
+ * @see aemi_header_menu()
  */
 add_action( 'aemi_header', 'aemi_header_menu', 10 );
 add_action( 'aemi_header', 'aemi_header_branding', 20 );
-add_action( 'aemi_header', 'aemi_header_widgets', 30 );
 
 /**
  * Footer
- * @see aemi_sidebar()
+ * @see aemi_sidebar_widgets()
  * @see aemi_footer_widgets()
  * @see aemi_footer_site_description()
  * @see aemi_footer_menu()
  * @see aemi_footer_credit()
  * @see aemi_footer_wp_footer()
  */
-add_action( 'aemi_footer_before', 'aemi_sidebar', 10 );
-add_action( 'aemi_footer', 'aemi_scrollup', 10 );
-add_action( 'aemi_footer', 'aemi_footer_widgets', 20 );
-add_action( 'aemi_footer', 'aemi_footer_site_description', 30 );
-add_action( 'aemi_footer', 'aemi_footer_menu', 40 );
-add_action( 'aemi_footer', 'aemi_footer_credit', 50 );
+add_action( 'aemi_footer_before', 'aemi_sidebar_widgets', 10 );
+add_action( 'aemi_footer', 'aemi_footer_widgets', 10 );
+add_action( 'aemi_footer', 'aemi_footer_site_description', 20 );
+add_action( 'aemi_footer', 'aemi_footer_menu', 30 );
+add_action( 'aemi_footer', 'aemi_footer_credit', 40 );
 add_action( 'aemi_footer_after', 'aemi_footer_wp_footer', 10 );
 
 /**

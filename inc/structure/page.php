@@ -48,8 +48,8 @@ if ( ! function_exists( 'aemi_page_content' ) )
 				'before'    => '<div id="post-pagination" class="pagination"><div class="button">',
 				'after'     => '</div></div>',
 				'next_or_number' => 'next',
-				'nextpagelink' => 'next page &rarr;',
-				'previouspagelink' => '&larr; previous page',
+				'nextpagelink' => esc_html_x( 'next page', 'next page post pagination', 'aemi' ) . ' &rarr;',
+				'previouspagelink' => '&larr; ' . esc_html_x( 'previous page', 'previous page post pagination', 'aemi' ),
 				'separator' => '</div><div class="button">'
 			) );
 

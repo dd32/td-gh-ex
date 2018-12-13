@@ -1,11 +1,10 @@
 <?php get_header(); ?>
 
-<article id="post-0" class="post">
+<article id="post-lead" class="post">
 
-	<div class="post-header no-split">
+	<div class="post-header">
 
 		<div class="post-info">
-
 
 			<?php
 

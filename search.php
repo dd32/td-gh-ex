@@ -2,15 +2,15 @@
 
 if ( have_posts() ) { ?>
 
-<article id="post-0" class="post">
+<article id="post-lead" class="post">
 
-	<div class="post-header no-split">
+	<div class="post-header">
 
 		<div class="post-info">
 
 			<h1 class="post-title">
 
-				<?php printf( __( 'Search Results for : %s', 'aemi' ), get_search_query() ); ?>
+				<?php printf( _x( 'Search Results for : %s', 'search results for', 'aemi' ), get_search_query() ); ?>
 
 			</h1>
 

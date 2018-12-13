@@ -1,61 +1,103 @@
 <?php
 
 
-if ( ! function_exists( 'aemi_header_menu' ) )
-{
-	function aemi_header_menu()
-	{
-		if ( has_nav_menu( 'header-menu' ) )
-		{ ?>
-			<nav id="header-menu" role="navigation">
+if ( ! function_exists( 'aemi_header_menu' ) ) {
 
-				<div id="toggle-header-menu" class="toggle">+</div>
+	function aemi_header_menu() { ?>
 
-				<?php wp_nav_menu( array( 'theme_location' => 'header-menu' ) ); ?>
+		<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'aemi' ); ?></a>
 
-			</nav>
+		<nav id="header-menu" role="navigation">
+
+			<div id="toggle-header-menu" class="toggle">
+				<div id="toggle-element">
+					<span></span>
+					<span></span>
+					<span></span>
+				</div>
+			</div>
+
+			<div id="header-menu-wrap" class="wrap">
+
+				<?php
+				if ( has_nav_menu( 'header-menu' ) ) {
+					wp_nav_menu( array(
+						'theme_location' => 'header-menu',
+						'container_class' => 'header-section'
+					) );
+				}
+				if ( has_nav_menu( 'social-menu' ) ) {
+						wp_nav_menu( array(
+							'theme_location' => 'social-menu',
+							'depth' => '1',
+							'container_id' => 'header-social',
+							'container_class' => 'header-section'
+						) );
+				}
+				?>
+				
+				<div id="header-settings" class="header-section">
+					<div>
+						<a id="darkmode" href="javascript:void(0);"><span class="off"><?php echo esc_html_x( 'Light','light mode text','aemi' ); ?></span><span class="on"><?php echo esc_html_x( 'Dark','dark mode text','aemi' ); ?></span></a>
+					</div>
+				</div>
+
+				<?php if ( is_active_sidebar( 'header-widget-area' ) ) { ?>
+
+					<div id="toggle-header-widget" class="toggle">
+						<div id="toggle-widget-element">
+							<span></span>
+							<span></span>
+						</div>
+					</div>
+
+					<div id="header-widgets"  class="header-section">
+
+						<?php dynamic_sidebar( 'header-widget-area' ); ?>
+
+					</div>
+
+					<?php
+				} ?>
+
+			</div>
+
+		</nav>
 
 		<?php
-		} else {
-			echo '<div class="spacer"></div>';
-		}
 	}
 }
 
 
 
-if ( ! function_exists( 'aemi_header_branding' ) )
-{
-	function aemi_header_branding()
-	{ ?>
+if ( ! function_exists( 'aemi_header_branding' ) ) {
+
+	function aemi_header_branding() { ?>
 
 		<div id="branding">
 
-			<?php if ( has_custom_logo() )
-			{ ?>
+			<?php if ( has_custom_logo() ) { ?>
 
 				<div id="logo">
 
-					<a href="<?php echo esc_html( home_url() ); ?>" class="custom-logo-link" rel="home" itemprop="url">
-						<img width="46" height="46" src="<?php echo esc_url( wp_get_attachment_image_src( get_theme_mod( 'custom_logo' ), 'aemi-logo' )[0] ); ?>" class="custom-logo" alt="" itemprop="logo" >
-					</a>
+					<?php if ( function_exists( 'the_custom_logo' ) ) { the_custom_logo(); } ?>
 
 				</div>
 
 				<?php
 
-			}
-			else if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() )
-			{
+			} else if ( function_exists( 'jetpack_has_site_logo' ) && jetpack_has_site_logo() ) {
 
 				jetpack_the_site_logo();
 
-			}
-			else
-			{ ?>
+			} else { ?>
 
 				<h1 id="site-title" class="site-title">
-					<a href="<?php echo esc_html( home_url() ); ?>" title="<?php echo esc_html( get_bloginfo( 'name' ) ); ?>" rel="home"><?php echo esc_html( get_bloginfo( 'name' ) ); ?></a>
+
+					<a href="<?php echo esc_url( home_url() ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" rel="home">
+						<?php echo esc_html( get_bloginfo( 'name' ) ); ?>
+					</a>
+
 				</h1>
 
 			<?php } ?>
@@ -63,33 +105,4 @@ if ( ! function_exists( 'aemi_header_branding' ) )
 		</div>
 
 	<?php }
-}
-
-
-
-if ( ! function_exists( 'aemi_header_widgets' ) )
-{
-	function aemi_header_widgets()
-	{
-		if ( is_active_sidebar( 'header-widget-area' ) )
-		{ ?>
-
-			<div id="header-widget">
-
-				<div id="toggle-header-widget" class="toggle">&#8285;</div>
-				<div id="header-widget-container"  class="widget-area">
-
-					<?php dynamic_sidebar( 'header-widget-area' ); ?>
-
-				</div>
-
-			</div>
-
-		<?php }
-
-		else
-		{
-			echo '<div class="spacer"></div>';
-		}
-	}
 }

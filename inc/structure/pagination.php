@@ -8,13 +8,13 @@ if ( ! function_exists( 'aemi_posts_pagination' ) )
 
 		if ( $wp_query->max_num_pages > 1 ) { ?>
 
-			<nav id="pagination" class="pagination" role="navigation">
+			<nav id="pagination" class="pagination global" role="navigation">
 
 				<?php if ( get_next_posts_link() ) { ?>
 
-					<div class="nav-previous button">
+					<div class="nav-previous">
 
-						<?php next_posts_link( sprintf( __( '%s previous posts', 'aemi' ), '&larr;' ) ); ?>
+							<?php next_posts_link( '<span class="nav-title">&larr; ' . _x( 'old', 'old posts link', 'aemi' ) . '</span>' ); ?>
 
 					</div>
 
@@ -22,9 +22,9 @@ if ( ! function_exists( 'aemi_posts_pagination' ) )
 
 				if ( get_previous_posts_link() ) { ?>
 
-					<div class="nav-next button">
+					<div class="nav-next">
 
-						<?php previous_posts_link( sprintf( __( 'next posts %s', 'aemi' ),  '&rarr;' ) ); ?>
+							<?php previous_posts_link( '<span class="nav-title">' . _x( 'new', 'new posts link', 'aemi' ) . ' &rarr;</span>' ); ?>
 
 					</div>
 
@@ -47,9 +47,9 @@ if ( ! function_exists( 'aemi_post_navigation' ) )
 
 			<?php
 
-			previous_post_link( '<div class="nav-previous button">%link</div>', '<span class="meta-nav">&larr;</span> previous post' );
+			previous_post_link('<div class="nav-previous">%link</div>', '<span class="nav-arrow">&larr; ' . _x( 'older', 'older post link', 'aemi' ) . '</span><span class="nav-title">%title</span>');
 
-			next_post_link( '<div class="nav-next button">%link</div>', 'next post <span class="meta-nav">&rarr;</span>' );
+			next_post_link('<div class="nav-next">%link</div>', '<span class="nav-arrow">' . _x( 'newer', 'newer posts link', 'aemi' ) . ' &rarr;</span><span class="nav-title">%title</span>');
 
 			?>
 

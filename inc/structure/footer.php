@@ -1,30 +1,21 @@
 <?php
 
 
-if ( ! function_exists( 'aemi_sidebar' ) )
+if ( ! function_exists( 'aemi_sidebar_widgets' ) )
 {
-	function aemi_sidebar()
+	function aemi_sidebar_widgets()
 	{
-		/*
-		Later Support
 		if ( is_active_sidebar( 'sidebar-widget-area' ) ) { ?>
-		<aside id="sidebar-area" class="widget-area">
-		<?php dynamic_sidebar( 'secondary-widget-area' ); ?>
-		</aside>
-		<?php }
-		*/
+
+			<div id="sidebar">
+
+				<?php dynamic_sidebar( 'sidebar-widget-area' ); ?>
+
+			</div>
+
+			<?php
+		}
 	}
-}
-
-
-if ( ! function_exists( 'aemi_scrollup' ) )
-{
-	function aemi_scrollup()
-	{ ?>
-		<div id="scroll-up">
-			&#8593
-		</div>
-	<?php }
 }
 
 
@@ -34,7 +25,7 @@ if ( ! function_exists( 'aemi_footer_widgets' ) )
 	{
 		if ( is_active_sidebar( 'footer-widget-area' ) ) { ?>
 
-			<div id="footer-widgets" class="widget-area">
+			<div id="footer-widgets">
 
 				<?php dynamic_sidebar( 'footer-widget-area' ); ?>
 
@@ -51,11 +42,11 @@ if ( ! function_exists( 'aemi_footer_site_description' ) )
 	{
 		if ( get_bloginfo( 'description' ) ) { ?>
 
-			<h4 id="site-description" class="site-description">
+			<h5 id="site-description" class="site-description">
 
-				&#60; <?php echo esc_html( get_bloginfo( 'description' ) ); ?> &#62;
+				&#x2039; <?php echo esc_html( get_bloginfo( 'description' ) ); ?> &#x203A;
 
-			</h4>
+			</h5>
 
 		<?php }
 	}
@@ -89,7 +80,7 @@ if ( ! function_exists( 'aemi_footer_credit' ) )
 
 		<div id="copyright">
 
-			<?php echo sprintf( __( '%1$s %2$s %3$s. All Rights Reserved.', 'aemi' ), '&copy;', date( 'Y' ), esc_html( get_bloginfo( 'name' ) ) ); ?>
+			<?php echo sprintf( _x( '%1$s %2$s %3$s. All Rights Reserved.', 'copyright', 'aemi' ), '&copy;', date( 'Y' ), esc_html( get_bloginfo( 'name' ) ) ); ?>
 
 		</div>
 
@@ -104,11 +95,7 @@ if ( ! function_exists( 'aemi_footer_wp_footer' ) )
 	{
 		if ( wp_footer() ) { ?>
 
-			<div id="wp-footer">
-
-				<?php wp_footer(); ?>
-
-			</div>
+			<?php wp_footer(); ?>
 
 		<?php }
 	}

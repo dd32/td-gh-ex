@@ -6,7 +6,6 @@
 		<meta charset="<?php bloginfo( 'charset' ); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link rel="profile" href="http://gmpg.org/xfn/11">
-		<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 		<?php wp_head(); ?>
 	</head>
 
@@ -14,7 +13,7 @@
 
 		<?php do_action( 'aemi_header_before' ); ?>
 
-		<header <?php if ( get_header_image() ) { ?> style="background-image:url( '<?php echo esc_html( get_header_image() ); ?>' );"<?php } ?> role="banner" >
+		<header <?php if ( get_header_image() ) { ?> style="background-image:url( '<?php echo esc_url( get_header_image() ); ?>' );"<?php } ?> role="banner" >
 
 			<?php do_action( 'aemi_header' ); ?>
 

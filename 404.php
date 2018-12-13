@@ -1,20 +1,20 @@
 <?php get_header(); ?>
 
-<article id="post-0" class="post not-found">
+<article id="post-lead" class="post not-found">
 
-	<div class="post-header no-split">
+	<div class="post-header">
 
 		<h1 class="post-title">
 
-			<?php esc_html_e( 'Error 404', 'aemi' ); ?>
+			<?php esc_html_e( _x( 'Error 404', '404 error', 'aemi' ) ); ?>
 
 		</h1>
 
 	</div>
 
-	<div class="post-content centered">
+	<div class="post-content">
 
-		<p><?php esc_html_e( 'Nothing found for the requested page. Try a search instead?', 'aemi' ); ?></p>
+		<p><?php esc_html_e( _x( 'Nothing found for the requested page. Try a search instead?', 'not found text', 'aemi' ) ) ; ?></p>
 
 		<?php get_search_form(); ?>
 

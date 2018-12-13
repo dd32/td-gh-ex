@@ -10,9 +10,13 @@ if ( post_password_required() )
 	<?php if ( have_comments() ) { ?>
 
 		<h3 class="comments-title">
+
 			<?php
+
 				printf( esc_html( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comment title', 'aemi' ) ), number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+
 			?>
+
 		</h3>
 
 		<div id="comments-list" class="comments">
