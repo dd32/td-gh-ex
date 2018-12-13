@@ -24,13 +24,13 @@ if ( ! function_exists( 'adviso_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
+		$posted_on = '<a href="' . get_permalink() . '" rel="bookmark">' . $time_string . '</a>';
 		
-		$byline = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
+		$byline = '<span class="author vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '">' . get_the_author() . '</a></span>';
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 		
-		echo '<span class="author">' . esc_html( $byline ) . '</span>';
+		echo '<span class="author">' . $byline . '</span>';
 
 	}
 
@@ -52,7 +52,7 @@ if ( ! function_exists( 'adviso_posted_on' ) ) :
             '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
         );
 
-        echo '<span class="posted-on">' . esc_html( $posted_on ) . '</span>';
+        echo '<span class="posted-on">' . $posted_on . '</span>';
 
     }
     

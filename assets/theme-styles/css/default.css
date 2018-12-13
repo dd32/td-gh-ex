@@ -756,14 +756,13 @@ body.home #site-navigation ul.menu > li:hover a {
 #secondary .widget ul,
 #footer-sidebar .widget ul {
   font-size: 13px;
-  margin-left: 0px;
-  padding: 8px 0;
+  margin-left: 20px;
 }
 #secondary .widget ul li,
 #footer-sidebar .widget ul li {
   font-size: 16px;
   list-style: none;
-  padding: 16px;
+  padding-top: 32px;
 }
 #secondary .widget ul li:last-child,
 #footer-sidebar .widget ul li:last-child {

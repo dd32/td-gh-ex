@@ -36,13 +36,13 @@
 		                    <?php else: ?>
 		                        <a href="<?php the_permalink(); ?>" class="mdl-card__media" title="<?php the_title_attribute() ?>"><img src="<?php echo esc_url( get_template_directory_uri() . "/assets/images/placeholder.png" ); ?>" alt="<?php the_title(); ?>"></a>
 		                    <?php endif; ?>
-		                    <span class="price"><?php echo esc_html( $product->get_price_html() ); ?></span>
+		                    <span class="price"><?php echo $product->get_price_html(); ?></span>
 	                    </div>
 	                   <div class="thumb-info">
 		                   <div class="product-title">
 		                        <div><?php the_title(); ?></div>
 		                    </div>
-		                    <?php echo esc_html( wc_get_rating_html( $product->get_average_rating() ) ); ?>
+		                    <?php echo wc_get_rating_html( $product->get_average_rating() ); ?>
 	                    </div>
 	                </div>
 	            </div><!--.featured-thumb-->

@@ -45,7 +45,7 @@
                                     <div class="product-title">
 	                                    <?php the_title(); ?>
 	                                </div>
-                                    <span class="price"><?php echo esc_html( $product->get_price_html() ); ?></span>
+                                    <span class="price"><?php echo $product->get_price_html(); ?></span>
                                 </div>
                             </a>
                         </div>

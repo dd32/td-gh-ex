@@ -5,7 +5,7 @@ Tags: custom-background, two-columns, one-column, custom-colors, flexible-header
 
 Requires at least: 4.0
 Tested up to: 4.9.8
-Stable tag: 0.97
+Stable tag: 0.99
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,6 +19,14 @@ Demo Here: http://demo.inkhive.com/adviso/
 
 
 == Changelog ==
+
+
+= 0.99 =
+* Seventh Review Changes
+
+
+= 0.98 =
+* Sixth Review Changes
 
 
 = 0.97 =
