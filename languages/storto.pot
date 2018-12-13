@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Storto\n"
-"POT-Creation-Date: 2018-04-24 16:57+0100\n"
-"PO-Revision-Date: 2018-04-24 16:57+0100\n"
+"POT-Creation-Date: 2018-12-13 14:42+0100\n"
+"PO-Revision-Date: 2018-12-13 14:42+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -193,7 +193,39 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:96
+#: functions.php:55
+msgid "Small"
+msgstr ""
+
+#: functions.php:56
+msgid "S"
+msgstr ""
+
+#: functions.php:61
+msgid "Regular"
+msgstr ""
+
+#: functions.php:62
+msgid "M"
+msgstr ""
+
+#: functions.php:67
+msgid "Large"
+msgstr ""
+
+#: functions.php:68
+msgid "L"
+msgstr ""
+
+#: functions.php:73
+msgid "Larger"
+msgstr ""
+
+#: functions.php:74
+msgid "XL"
+msgstr ""
+
+#: functions.php:124
 msgid "Sidebar"
 msgstr ""
 

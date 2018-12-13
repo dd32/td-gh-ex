@@ -2,7 +2,7 @@
 * by the CrestaProject team, https://crestaproject.com/
 
 == ABOUT Storto ==
-Storto is a simple and modern WordPress Theme  useful for blog or personal page.
+Storto is a simple and modern WordPress Theme useful for blog or personal page. Compatible with Gutenberg.
 
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 2.
@@ -19,8 +19,7 @@ Licensed under GPLv2 or later
 
 Scripts used in the site are as below:
 	1. Font Awesome (http://fontawesome.io/) licensed under SIL OFL 1.1
-	2. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2
-	3. Theia Sticky Sidebar script (https://github.com/WeCodePixels/theia-sticky-sidebar) licensed under MIT
+	2. Theia Sticky Sidebar script (https://github.com/WeCodePixels/theia-sticky-sidebar) licensed under MIT
 
 Image used in Theme Screenshot
 	1. Picjumbo (http://picjumbo.com/morning-musli/) Free photos for commercial and personal works
@@ -161,4 +160,8 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 
 = Version 1.5.3 =
 * Fixed version tag for styles and scripts
+* Minor bug fixes
+
+= Version 1.5.4 =
+* Improved compatibility with Gutenberg and WordPress 5.0
 * Minor bug fixes

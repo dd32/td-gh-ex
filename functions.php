@@ -49,6 +49,34 @@ function storto_setup() {
 		'primary' => esc_html__( 'Primary Menu', 'storto' ),
 	) );
 	
+	// Adds support for editor font sizes.
+	add_theme_support( 'editor-font-sizes', array(
+		array(
+			'name'      => __( 'Small', 'storto' ),
+			'shortName' => __( 'S', 'storto' ),
+			'size'      => 14,
+			'slug'      => 'small'
+		),
+		array(
+			'name'      => __( 'Regular', 'storto' ),
+			'shortName' => __( 'M', 'storto' ),
+			'size'      => 16,
+			'slug'      => 'regular'
+		),
+		array(
+			'name'      => __( 'Large', 'storto' ),
+			'shortName' => __( 'L', 'storto' ),
+			'size'      => 20,
+			'slug'      => 'large'
+		),
+		array(
+			'name'      => __( 'Larger', 'storto' ),
+			'shortName' => __( 'XL', 'storto' ),
+			'size'      => 24,
+			'slug'      => 'larger'
+		)
+	) );
+	
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -124,6 +152,11 @@ function storto_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'storto_scripts' );
+
+function storto_gutenberg_scripts() {
+	wp_enqueue_style( 'storto-gutenberg-css', get_theme_file_uri( '/css/gutenberg-editor-style.css' ), array(), wp_get_theme()->get('Version') );
+}
+add_action( 'enqueue_block_editor_assets', 'storto_gutenberg_scripts' );
 
 /**
  * Replace more Excerpt
