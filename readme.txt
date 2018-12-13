@@ -19,7 +19,7 @@ CrossFit programs, fitness professionals, personal trainers, etc. Features inclu
 WooCommerce plugin support, Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized, Header
 and Footer Social Icons (Facebook, Google+, Twitter, LinkedIn, Instagram, Tumblr, YouTube, Pinterest, VK,
 Flickr, Vine), Sidebar and 3 Footer Widget Areas, 3 Homepage widget areas, Full-Width Template, Multiple
-Browsers Support, Translation Ready and much more.
+Browsers Support, Translation Ready and much more. DEMO: https://tishonator.com/demo/fgymm
 
 == Frequently Asked Questions ==
 
@@ -43,6 +43,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.7.3 =
+* fix issue with WooCommerce shop page display
 
 = 1.7.2 =
 * add mobile sub-menu functionality
