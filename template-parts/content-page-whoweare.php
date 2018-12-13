@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.3.1
+ * @version   1.3.2
  */
  ?>
 
@@ -117,7 +117,7 @@
 	                  $team_count =1;
 	                  $new_query = new WP_Query( array( 'cat' => $team_cat  , 'showposts' => $team_count ));
 	                  while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
-                     <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
+                     <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_team');?>
                     <a href="<?php the_permalink();?>" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 link-blog" data-aos="fade-up">
                          <img src="<?php if ( $avik_image_attributes[0] ) :
                            echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">
@@ -167,7 +167,7 @@
                   $team_count =1;
                   $new_query = new WP_Query( array( 'cat' => $team_cat  , 'showposts' => $team_count ));
                   while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
-                   <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
+                   <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_team');?>
                   <a href="<?php the_permalink();?>" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 link-blog" data-aos="fade-up">
                        <img src="<?php if ( $avik_image_attributes[0] ) :
                          echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">
@@ -217,7 +217,7 @@
                   $team_count =1;
                   $new_query = new WP_Query( array( 'cat' => $team_cat  , 'showposts' => $team_count ));
                   while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
-                   <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
+                   <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_team');?>
                   <a href="<?php the_permalink();?>" class="col-lg-4 col-md-4 col-sm-6 col-xs-12 link-blog" data-aos="fade-up">
                        <img src="<?php if ( $avik_image_attributes[0] ) :
                          echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>">

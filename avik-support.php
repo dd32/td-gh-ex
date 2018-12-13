@@ -5,7 +5,7 @@
 *
 * @package Avik
 *
-*  @version   1.3.1
+*  @version   1.3.2
 */
 ?>
 
@@ -35,7 +35,7 @@ background-position: center center;background-size: cover;" >
 			<br>
 			<?php esc_html_e('For a complete experience, go to the','avik');?>
 		<button class="avik-button-admin-support"><a target="_blank" class="avik-button" href="<?php echo esc_url('https://www.denisfranchi.com/avik-pro-10-0-0/' ); ?>"><?php esc_html_e('Pro Version', 'avik'); ?></a></button></p>
-			<div class="avik-update"><p><b><?php esc_html_e('Avik Version: 1.3.1','avik');?></b> <button class="avik-button-admin-support"><a target="_blank" class="avik-button" href="<?php echo esc_url( 'https://www.denisfranchi.com/avik-1-2-7/' ); ?>"><?php esc_html_e('Update details', 'avik'); ?></a></button></div></p>
+			<div class="avik-update"><p><b><?php esc_html_e('Avik Version: 1.3.2','avik');?></b> <button class="avik-button-admin-support"><a target="_blank" class="avik-button" href="<?php echo esc_url( 'https://www.denisfranchi.com/avik-1-2-7/' ); ?>"><?php esc_html_e('Update details', 'avik'); ?></a></button></div></p>
 	</div>
 	<!-- Guides -->
 	<div id="GUIDES" class="tabcontent">
@@ -71,11 +71,9 @@ background-position: center center;background-size: cover;" >
 	</div>
 	<!-- PRO VERSION -->
 	<div id="PRO" class="tabcontent">
-
 		<h3 class="avik-welkome-support-title"><?php esc_html_e( 'PRO VERSION', 'avik' ); ?></h3>
 		<p class="avik-welkome-support">
 			<?php esc_html_e( 'Specifications Avik theme','avik');?>
-
 		</p>
 		<div class="avik-guide-support-admin-comparison">
 			<div class="comparison">
@@ -114,7 +112,7 @@ background-position: center center;background-size: cover;" >
 						</tr>
 						<!-- Font Awesome -->
 						<tr>
-							<td> </td>
+							<td></td>
 							<td colspan="3"><?php esc_html_e('Font Awesome Icons v5','avik');?></td>
 						</tr>
 						<tr>
@@ -126,7 +124,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Ready Retina -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Retina Ready','avik');?></td>
 					</tr>
 					<tr class="compare-row">
@@ -137,7 +135,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Responsive -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Responsive Design','avik');?></td>
 					</tr>
 					<tr>
@@ -148,7 +146,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Color Change -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Color Change','avik');?></td>
 					</tr>
 					<tr class="compare-row">
@@ -159,7 +157,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Color Title -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Color Titles and Paragraphs','avik');?></td>
 					</tr>
 					<tr>
@@ -170,7 +168,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Font Family -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Font Family','avik');?></td>
 					</tr>
 					<tr class="compare-row">
@@ -181,7 +179,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Layou setting -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Layout Settings','avik');?></td>
 					</tr>
 					<tr>
@@ -192,7 +190,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Header Spider -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Header Spider Effect','avik');?></td>
 					</tr>
 					<tr class="compare-row">
@@ -202,7 +200,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- More Slides -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="4"><?php esc_html_e('More Slider','avik');?></td>
 					</tr>
 					<tr>
@@ -212,7 +210,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- More Widgets -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="4"><?php esc_html_e('More Areas Widgets','avik');?></td>
 					</tr>
 					<tr class="compare-row">
@@ -222,7 +220,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Menu types -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="4"><?php esc_html_e('Menu Types','avik');?></td>
 					</tr>
 					<tr>
@@ -232,7 +230,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Page Template -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Page Templates','avik');?></td>
 					</tr>
 					<tr class="compare-row">
@@ -242,7 +240,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 						<!-- Post Template -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Post Templates','avik');?></td>
 					</tr>
 					<tr>
@@ -252,7 +250,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Blog Layout -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Blog Layouts','avik');?></td>
 					</tr>
 					<tr class="compare-row">
@@ -262,7 +260,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Meta Box -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Meta Box Customized','avik');?></td>
 					</tr>
 					<tr >
@@ -272,7 +270,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Pop-ip Light Box -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Pop-up Light Box','avik');?></td>
 					</tr>
 					<tr class="compare-row">
@@ -282,7 +280,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Gutenberg -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Gutenberg Compatible','avik');?></td>
 					</tr>
 					<tr>
@@ -292,7 +290,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Portfolio -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="4"><?php esc_html_e('Portfolio','avik');?></td>
 					</tr>
 					<tr class="compare-row">
@@ -302,7 +300,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Portfolio Extended -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Portfolio Layout','avik');?></td>
 					</tr>
 					<tr>
@@ -312,7 +310,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Effect Hover Portfolio -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Effect Hover Image Portfolio','avik');?></td>
 					</tr>
 					<tr>
@@ -322,7 +320,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- About US -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('About US','avik');?></td>
 					</tr>
 					<tr class="compare-row">
@@ -332,7 +330,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Woocommerce compatible -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Woocommerce Complatible','avik');?></td>
 					</tr>
 					<tr>
@@ -342,7 +340,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Woocommerce Template -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Woocommerce Templates','avik');?></td>
 					</tr>
 					<tr class="compare-row">
@@ -352,7 +350,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Woocommerce Slider -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Woocommerce Slider','avik');?></td>
 					</tr>
 					<tr>
@@ -362,7 +360,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Editor -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Editor Blocks','avik');?></td>
 					</tr>
 					<tr>
@@ -372,7 +370,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Dropdown Menu -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Dropdown Menu','avik');?></td>
 					</tr>
 					<tr>
@@ -382,7 +380,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Child-Theme Included -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Child-Theme Included','avik');?></td>
 					</tr>
 					<tr>
@@ -392,7 +390,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Transition Ready -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Transition Ready','avik');?></td>
 					</tr>
 					<tr>
@@ -402,7 +400,7 @@ background-position: center center;background-size: cover;" >
 					</tr>
 					<!-- Language -->
 					<tr>
-						<td> </td>
+						<td></td>
 						<td colspan="3"><?php esc_html_e('Language','avik');?></td>
 					</tr>
 					<tr>
