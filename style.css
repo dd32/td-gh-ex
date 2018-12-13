@@ -7,7 +7,7 @@ Author URI: https://d5creation.com/
 
 Description: NewsPress is a Multipurpose WordPress Theme. The best use can be operating News Media, News Paper, Online News Agency etc.  Multi Layer Slider will give extra impression to your readers. Easy and Flexible NewsPress Theme is fully RESPONSIVE which can be fit within any screen of devices. NewsPress Extend is one of the most popular News Themes. You can find the Demo Here: http://demo.d5creation.com/themes/?theme=NewsPress
 
-Version: 2.3
+Version: 2.5
 
 Tags: two-columns, right-sidebar, blog, news, entertainment, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, theme-options, translation-ready, featured-images, footer-widgets, rtl-language-support
 
@@ -67,9 +67,8 @@ a img.aligncenter{display:block;margin-left:auto;margin-right:auto}
 body{font-family:Arial,Helvetica,Genericons,sans-serif;font-size:14px;line-height:1.6;background:#FFF;color:#555;min-width:1250px}
 img{max-width:100%;border:0 none}
 #site-container{margin:0 auto;width:90%;background:#F6F6F6;box-shadow:0 0 3px 0 #555}
-#container,#header{margin:0 auto;padding:0 2%;width:96%}
-#top-menu-container{height:30px;padding:7px 2%;width:96%}
-
+#container,#header{ margin:0 auto;padding:0 2%;width:96% }
+#top-menu-container{ height:30px;padding:7px 2%;width:96% }
 
 #searchform { height: 35px; overflow: hidden; width: 100%; max-width: 550px; display: inline-flex;}
 #top-menu-container #searchform { width: auto; float:right; display: inline-block; margin-top: -3px; }
@@ -363,14 +362,7 @@ h1.notfound{background:#FFF;color:#F90909;font-size:70px;margin:100px auto;paddi
 #respond .form-submit input{font-size:14px;width:auto}
 ul,li,img,a,p,ol,textarea,input,button,h1,h2,h3,h4,h5,h6{transition:all 1.5s;-moz-transition:all 1.5s;-o-transition:all 1.5s;-webkit-transition:all 1.5s}
 .bx-wrapper li,.bx-wrapper a,.breakingnews li,.breakingnews p{transition:none;-moz-transition:none;-o-transition:none;-webkit-transition:none}
-ul.lboxd{float:right;position:relative;font-size:14px}
-ul.lboxd h4{font-weight:300}
-ul.lboxd li{list-style:none}
-a.loginicon::before,a.loginicon:hover::before{content:'\f304';display:block;float:right;margin:-15px 0 0;font-family:'Genericons';font-size:40px;color:#EEE;padding:0 10px}
-ul.lboxd ul{background:#DDD;display:none;padding:20px 40px 20px 20px;position:absolute;right:-20px;margin-top:30px;width:200px;z-index:99999}
-.login-username input,.login-password input,.login-submit input,ul.lboxd button{display:block;position:relative;width:100%}
-ul.lboxd li:hover > ul{display:block}
-ul.lboxd label,label{display:inline-block;margin-bottom:5px}
+
 .go-top{position:fixed;bottom:10px;right:10px;display:none}
 .go-top::before{content:'\f432';font-family:'Genericons';float:right;background:#111;border-radius:50px;font-size:25px;padding:1px 9px;opacity:.7}
 .go-top:hover::before{opacity:.9}
@@ -396,7 +388,7 @@ ul.lboxd label,label{display:inline-block;margin-bottom:5px}
 #right-sidebar li.cat-item,#right-sidebar .menu li{float:left;margin-right:3%;width:45%}
 .slider-sidebar{font-size:13px;line-height:1.3}
 img.size-full,img.size-large{clear:both}
-.bypostauthor {}
+.bypostauthor { }
 
 /* Text meant only for screen readers. */
 .screen-reader-text { clip: rect(1px, 1px, 1px, 1px); position: absolute !important; height: 1px; width: 1px; overflow: hidden; }
