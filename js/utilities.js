@@ -119,7 +119,7 @@ function fgymm_init_loading_effects() {
           });
 
     jQuery('#page-header').addClass("hidden").viewportChecker({
-            classToAdd: 'animated bounceInUp',
+            classToAdd: 'animated slideInDown',
             offset: 1
           });
 

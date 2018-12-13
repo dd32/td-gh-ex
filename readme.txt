@@ -44,6 +44,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.7.4 =
+* update page header styles
+
 = 1.7.3 =
 * fix issue with WooCommerce shop page display
 
