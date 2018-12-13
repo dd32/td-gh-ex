@@ -96,14 +96,10 @@ class Blank_Widget extends \WP_Widget {
 			],
 			'aamla_show_divider_line'          => [
 				'setting' => 'aamla_show_divider_line',
-				'label'   => esc_html__( 'Create full width horizontal divider line.', 'aamla' ),
-				'type'    => 'checkbox',
-			],
-			'aamla_show_divider_line'          => [
-				'setting' => 'aamla_show_divider_line',
 				'label'   => esc_html__( 'Horizontal divider line', 'aamla' ),
 				'default' => esc_html__( 'None', 'aamla' ),
 				'type'    => 'select',
+				'id_base' => 'aamla_blank_widget',
 				'choices' => [
 					'wide-width' => esc_html__( 'Wide Line', 'aamla' ),
 					'full-bleed' => esc_html__( 'Full bleed line', 'aamla' ),

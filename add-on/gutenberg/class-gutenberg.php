@@ -51,10 +51,6 @@ class GutenBerg {
 	 * @since 1.0.1
 	 */
 	public static function init() {
-		// Return if Gutenberg is not activated.
-		if ( ! defined( 'GUTENBERG_VERSION' ) ) {
-			return false;
-		}
 		add_action( 'after_setup_theme', [ self::get_instance(), 'add_gutenberg_support' ] );
 		add_action( 'wp_enqueue_scripts', [ self::get_instance(), 'enqueue_front' ] );
 		add_action( 'enqueue_block_editor_assets', [ self::get_instance(), 'enqueue_admin' ] );
