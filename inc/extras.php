@@ -561,12 +561,12 @@ if ( function_exists( 'wp_update_custom_css_post' ) ) {
 }
 
 
-if ( ! function_exists( 'benevolent_excerpt_more' ) && ! is_admin() ) :
+if ( ! function_exists( 'benevolent_excerpt_more' ) ) :
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... * 
  */
-function benevolent_excerpt_more() {
-  return ' &hellip; ';
+function benevolent_excerpt_more( $more ) {
+  return is_admin() ? $more : ' &hellip; ';
 }
 add_filter( 'excerpt_more', 'benevolent_excerpt_more' );
 endif;

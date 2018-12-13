@@ -203,35 +203,32 @@ function benevolent_scripts() {
 		'family' => 'Raleway:400,600,700,500',
 	);
     wp_enqueue_style( 'benevolent-google-fonts', add_query_arg( $benevolent_query_args, "//fonts.googleapis.com/css" ) );
-    wp_enqueue_style( 'sidr', get_template_directory_uri() . '/css' . $build . '/jquery.sidr.light' . $suffix . '.css' );
     wp_enqueue_style( 'owl-carousel', get_template_directory_uri() . '/css' . $build . '/owl.carousel' . $suffix . '.css', '', '2.2.1' );
     wp_enqueue_style( 'benevolent-style', get_stylesheet_uri() );
     
     wp_enqueue_script( 'all', get_template_directory_uri() . '/js' . $build . '/all' . $suffix . '.js', array( 'jquery' ), '5.0.13', true );
     wp_enqueue_script( 'v4-shims', get_template_directory_uri() . '/js' . $build . '/v4-shims' . $suffix . '.js', array( 'jquery' ), '5.0.13', false );
-    wp_enqueue_script( 'sidr', get_template_directory_uri() . '/js' . $build . '/jquery.sidr' . $suffix . '.js', array('jquery'), '20160125', true );
 	wp_enqueue_script( 'owl-carousel', get_template_directory_uri() . '/js' . $build . '/owl.carousel' . $suffix . '.js', array('jquery'), '2.2.1', true );	
 	wp_enqueue_script( 'tab', get_template_directory_uri() . '/js' . $build . '/tab' . $suffix . '.js', array('jquery'), '1.11.4', true );
     wp_enqueue_script( 'waypoint', get_template_directory_uri() . '/js' . $build . '/waypoint' . $suffix . '.js', array('jquery'), '1.6.2', true );
     wp_enqueue_script( 'counterup', get_template_directory_uri() . '/js' . $build . '/jquery.counterup' . $suffix . '.js', array('jquery', 'waypoint'), '1.0', true );
     wp_register_script( 'benevolent-custom', get_template_directory_uri() . '/js' . $build . '/custom' . $suffix . '.js', array('jquery'), '20160125', true );
     
-    $benevolent_slider_auto = get_theme_mod( 'benevolent_slider_auto', '1' );
-    $benevolent_slider_loop = get_theme_mod( 'benevolent_slider_loop', '1' );
-    $benevolent_slider_pager = get_theme_mod( 'benevolent_slider_pager', '1' );    
-    $benevolent_slider_animation = get_theme_mod( 'benevolent_slider_animation', 'slide' );
-    $benevolent_slider_speed = get_theme_mod( 'benevolent_slider_speed', '7000' );
-    $benevolent_animation_speed = get_theme_mod( 'benevolent_animation_speed', '600' );
+	$benevolent_slider_auto      = get_theme_mod( 'benevolent_slider_auto', '1' );
+	$benevolent_slider_loop      = get_theme_mod( 'benevolent_slider_loop', '1' );
+	$benevolent_slider_pager     = get_theme_mod( 'benevolent_slider_pager', '1' );    
+	$benevolent_slider_animation = get_theme_mod( 'benevolent_slider_animation', 'slide' );
+	$benevolent_slider_speed     = get_theme_mod( 'benevolent_slider_speed', '7000' );
+	$benevolent_animation_speed  = get_theme_mod( 'benevolent_animation_speed', '600' );
     
     $benevolent_array = array(
-        'auto'      => esc_attr( $benevolent_slider_auto ),
-        'loop'      => esc_attr( $benevolent_slider_loop ),
-        'pager'     => esc_attr( $benevolent_slider_pager ),
-        'animation' => esc_attr( $benevolent_slider_animation ),
-        'speed'     => absint( $benevolent_slider_speed ),
-        'a_speed'   => absint( $benevolent_animation_speed ),
-        'rtl'       => is_rtl(),
-
+		'auto'      => esc_attr( $benevolent_slider_auto ),
+		'loop'      => esc_attr( $benevolent_slider_loop ),
+		'pager'     => esc_attr( $benevolent_slider_pager ),
+		'animation' => esc_attr( $benevolent_slider_animation ),
+		'speed'     => absint( $benevolent_slider_speed ),
+		'a_speed'   => absint( $benevolent_animation_speed ),
+		'rtl'       => is_rtl(),
     );
     
     wp_localize_script( 'benevolent-custom', 'benevolent_data', $benevolent_array );

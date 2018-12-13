@@ -63,7 +63,7 @@ if ( ! class_exists('Benevolent_Social_Links') ) {
 					<?php } if( $googleplus ){ ?>
 					<li><a href="<?php echo esc_url( $googleplus ); ?>" target="_blank" title="<?php esc_html_e( 'Google Plus', 'benevolent' ); ?>" ><i class="fa fa-google-plus"></i></a></li>
 					<?php } if( $instagram ){ ?>
-					<li><a href="<?php echo esc_url( $instagram ); ?>" target="_blank" title="<?php esc_html_e( 'Instagram', 'benevolent' ); ?>" class="fa fa-instagram"></a></a></li>
+					<li><a href="<?php echo esc_url( $instagram ); ?>" target="_blank" title="<?php esc_html_e( 'Instagram', 'benevolent' ); ?>"><i class="fa fa-instagram"></i></a></li>
 					<?php } if( $youtube ){ ?>
 					<li><a href="<?php echo esc_url( $youtube ); ?>" target="_blank" title="<?php esc_html_e( 'YouTube', 'benevolent' ); ?>" ><i class="fa fa-youtube"></i></a></li>
 					<?php } ?>

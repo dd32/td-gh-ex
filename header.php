@@ -30,7 +30,7 @@
                 
                 <?php if( has_nav_menu( 'secondary' ) ) { ?>
                 <div id="secondary-mobile-header">
-    			    <a id="responsive-secondary-menu-button" href="#sidr-main2"><?php esc_html_e( 'Menu', 'benevolent' ); ?></a>
+    			    <a id="responsive-secondary-menu-button" href="javascript:void(0);"><?php esc_html_e( 'Menu', 'benevolent' ); ?></a>
     			</div>
                 
                 <nav id="top-navigation" class="secondary-navigation" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
@@ -86,7 +86,7 @@
         		</nav><!-- #site-navigation -->
                 
                 <div id="mobile-header">
-    			    <a id="responsive-menu-button" href="#sidr-main"><?php esc_html_e( 'Menu', 'benevolent' ); ?></a>
+    			    <a id="responsive-menu-button" href="javascript:void(0);"><?php esc_html_e( 'Menu', 'benevolent' ); ?></a>
     			</div>
                 
             </div>

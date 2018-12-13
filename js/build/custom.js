@@ -52,17 +52,28 @@ jQuery(document).ready(function($){
     });
    
    $( "#tabs" ).tabs();
-   
-   $('#responsive-menu-button').sidr({
-      name: 'sidr-main',
-      source: '#site-navigation',
-      side: 'right'
-    });
 
-   $('#responsive-secondary-menu-button').sidr({
-      name: 'sidr-main2',
-      source: '#top-navigation',
-      side: 'left'
-    });
+   //Responsive navigation
+   $('.main-navigation').prepend('<span class="close"></span>');
+   $('#mobile-header').click(function(){
+    $('body').addClass('menu-toggled');
+   });
+
+   $('.close').click(function(){
+    $('body').removeClass('menu-toggled');
+   });
+
+   //secondary responsive menu
+   $('.secondary-navigation').clone().insertBefore('.header-bottom');
+   $('#secondary-mobile-header').click(function(){
+    $(this).parents('.header-top').siblings('.secondary-navigation').slideToggle();
+   });
+
+   $('.main-navigation ul li.menu-item-has-children, .secondary-navigation ul li.menu-item-has-children').prepend('<span class="submenu-toggle"><i class="fas fa-chevron-down"></i></span>');
    
+   $('.submenu-toggle').click(function(){
+    $(this).toggleClass('active');
+    $(this).siblings('ul').slideToggle();
+   });
+
 });

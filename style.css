@@ -4,7 +4,7 @@ Theme URI: https://raratheme.com/wordpress-themes/benevolent/
 Author: Rara Theme
 Author URI: https://raratheme.com/
 Description: Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. Check the demo at https://demo.raratheme.com/benevolent/, documentation at https://raratheme.com/documentation/benevolent/ and get support at https://raratheme.com/support-forum/. 
-Version: 1.1.7
+Version: 1.1.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: benevolent
@@ -616,11 +616,15 @@ textarea {
     z-index: 1;
 }
 
-.site-header .header-top .secondary-navigation {
+.site-header .secondary-navigation {
     float: left;
 }
 
-.site-header .header-top .secondary-navigation ul {
+.site-header .header-top + .secondary-navigation {
+    display: none;
+}
+
+.site-header .secondary-navigation ul {
     margin: 0;
     padding: 0;
     list-style: none;
@@ -629,32 +633,32 @@ textarea {
     font-weight: 600;
 }
 
-.site-header .header-top .secondary-navigation ul:after {
+.site-header .secondary-navigation ul:after {
     content: '';
     display: block;
     clear: both;
 }
 
-.site-header .header-top .secondary-navigation ul li {
+.site-header .secondary-navigation ul li {
     float: left;
     margin-right: 25px;
     position: relative;
 }
 
-.site-header .header-top .secondary-navigation ul li a {
+.site-header .secondary-navigation ul li a {
     color: #acacac;
     display: block;
     padding: 0 0 20px;
 }
 
-.site-header .header-top .secondary-navigation ul li a:hover,
-.site-header .header-top .secondary-navigation ul li a:focus,
-.site-header .header-top .secondary-navigation ul li:hover>a {
+.site-header .secondary-navigation ul li a:hover,
+.site-header .secondary-navigation ul li a:focus,
+.site-header .secondary-navigation ul li:hover>a {
     color: #fff;
     text-decoration: none;
 }
 
-.site-header .header-top .secondary-navigation ul ul {
+.site-header .secondary-navigation ul ul {
     position: absolute;
     top: 100%;
     left: 0;
@@ -663,31 +667,31 @@ textarea {
     display: none;
 }
 
-.site-header .header-top .secondary-navigation ul li:hover ul,
-.site-header .header-top .secondary-navigation ul li:focus ul {
+.site-header .secondary-navigation ul li:hover ul,
+.site-header .secondary-navigation ul li:focus ul {
     display: block;
 }
 
-.site-header .header-top .secondary-navigation ul li:hover ul ul {
+.site-header .secondary-navigation ul li:hover ul ul {
     display: none;
 }
 
-.site-header .header-top .secondary-navigation ul ul li:hover ul {
+.site-header .secondary-navigation ul ul li:hover ul {
     display: block;
 }
 
-.site-header .header-top .secondary-navigation ul ul li {
+.site-header .secondary-navigation ul ul li {
     float: none;
     display: block;
     margin: 0;
 }
 
-.site-header .header-top .secondary-navigation ul ul li a {
+.site-header .secondary-navigation ul ul li a {
     padding: 10px;
     border-top: 1px solid #282828;
 }
 
-.site-header .header-top .secondary-navigation ul ul ul {
+.site-header .secondary-navigation ul ul ul {
     left: 100%;
     top: 0;
 }
@@ -747,7 +751,6 @@ a:active {
 }
 
 .main-navigation ul {
-    display: none;
     list-style: none;
     margin: 12px 33px 0 0;
     padding-left: 0;
@@ -770,6 +773,10 @@ a:active {
 
 .main-navigation li:first-child {
     margin-left: 0;
+}
+
+.submenu-toggle {
+    display: none;
 }
 
 .main-navigation a {
@@ -1231,14 +1238,14 @@ a:active {
     text-decoration: none;
 }
 
-.intro .columns-3 .text-holder .btn .fa {
+.intro .columns-3 .text-holder .btn svg {
     margin-left: 5px;
     -webkit-transition: all 0.2s;
     -moz-transition: all 0.2s;
     transition: all 0.2s;
 }
 
-.intro .columns-3 .text-holder .btn:hover .fa {
+.intro .columns-3 .text-holder .btn:hover svg {
     margin-left: 10px;
 }
 
@@ -1708,11 +1715,11 @@ a:active {
     color: #0f907f;
 }
 
-.blog-section .blog-holder .post .entry-meta .fa {
+.blog-section .blog-holder .post .entry-meta svg {
     color: #0f907f;
     font-size: 12px;
-    vertical-align: top;
-    margin: 5px 7px 0 0;
+    vertical-align: middle;
+    margin: -3px 7px 0 0;
 }
 
 .blog-section .blog-holder .post .entry-content {
@@ -3129,11 +3136,15 @@ object {
         width: 750px;
     }
 
+    .header-bottom .container {
+        position: relative;
+    }
+
     #mobile-header {
         display: block;
         position: absolute;
         right: 15px;
-
+        top: 10px;
         z-index: 3;
     }
 
@@ -3145,12 +3156,143 @@ object {
         display: block;
     }
 
-    #site-navigation {
+    .site-header .btn-donate {
+        margin-right: 110px;
+    }
+
+    /*responsive menu*/
+    body.menu-toggled {
+        overflow: hidden;
+    }
+    .main-navigation {
+        position: fixed;
+        top: 0;
+        right: 0;
+        height: 100%;
+        background: #333;
+        float: none;
+        z-index: 999;
+        width: 80%;
+        padding-top: 80px;
+        padding-bottom: 80px;
+        overflow: auto;
+        -webkit-transform: translateX(100%);
+        -moz-transform: translateX(100%);
+        transform: translateX(100%);
+        -webkit-transition: all ease 0.35s;
+        -moz-transition: all ease 0.35s;
+        transition: all ease 0.35s;
+    }
+
+    body.menu-toggled .main-navigation {
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    .main-navigation .close {
+        width: 30px;
+        height: 30px;
+        position: absolute;
+        top: 40px;
+        right: 20px;
+        cursor: pointer;
+    }
+
+    .main-navigation .close:before, 
+    .main-navigation .close:after {
+        content: "";
+        background: rgba(255,255,255,0.75);
+        width: 25px;
+        height: 2px;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        -webkit-transform: rotate(45deg);
+        -moz-transform: rotate(45deg);
+        transform: rotate(45deg);
+        -webkit-transition: all ease 0.35s;
+        -moz-transition: all ease 0.35s;
+        transition: all ease 0.35s;
+    }
+
+    .main-navigation .close:after {
+        -webkit-transform: rotate(-45deg);
+        -moz-transform: rotate(-45deg);
+        transform: rotate(-45deg);
+    }
+
+    .main-navigation .close:hover:before, 
+    .main-navigation .close:hover:after {
+        background: #f00;
+    }
+
+    .main-navigation ul {
+        margin: 0;
+        padding: 0;
+    }
+
+    .main-navigation li {
+        float: none;
+        display: block;
+        margin: 0;
+    }
+
+    .main-navigation a {
+        padding: 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .submenu-toggle {
+        display: block;
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30px;
+        text-align: center;
+        height: 63px;
+        line-height: 63px;
+        font-size: 0.7778em;
+        color: rgba(255,255,255,0.7);
+        -webkit-transition: all ease 0.35s;
+        -moz-transition: all ease 0.35s;
+        transition: all ease 0.35s;
+    }
+
+    .submenu-toggle:hover {
+        color: #fff;
+    }
+
+    .submenu-toggle.active {
+        color: #fff;
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    .main-navigation ul ul {
+        position: static;
+        display: none;
+        background: rgba(255,255,255,0.015);
+        width: 100%;
+    }
+
+    .main-navigation ul li:hover ul, 
+    .main-navigation ul li:hover ul ul {
         display: none;
     }
 
-    .site-header .btn-donate {
-        margin-right: 110px;
+    .main-navigation ul ul::before {
+        display: none;
+    }
+
+    .main-navigation ul ul a {
+        color: #fff;
+        padding: 20px;
+        border-bottom-color: rgba(255,255,255,0.1);
     }
 
     .banner .text {
@@ -3206,8 +3348,8 @@ object {
         width: 100%;
     }
 
-    .site-header .header-top .secondary-navigation {
-        display: none;
+    .site-header .header-top .container {
+        position: relative;
     }
 
     #secondary-mobile-header {
@@ -3215,6 +3357,10 @@ object {
         position: absolute;
         left: 15px;
         z-index: 3;
+    }
+
+    .site-header .secondary-navigation ul#secondary-menu {
+        max-width: 750px;
     }
 
     #secondary-mobile-header a {
@@ -3227,6 +3373,51 @@ object {
 
     .site-header .header-top {
         padding: 15px 0 20px;
+        z-index: 9;
+    }
+
+    .site-header .secondary-navigation {
+        float: none;
+        background: #333;
+        width: 100%;
+        display: none;
+    }
+
+    .site-header .secondary-navigation ul {
+        font-size: 14px;
+    }
+
+    .site-header .secondary-navigation ul li {
+        float: none;
+        display: block;
+        margin-right: 0;
+    }
+
+    .site-header .secondary-navigation ul li a {
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    .site-header .secondary-navigation ul ul {
+        position: static;
+        width: 100%;
+        background: none;
+    }
+
+    .site-header .secondary-navigation ul li:hover ul, 
+    .site-header .secondary-navigation ul li:focus ul, 
+    .site-header .secondary-navigation ul ul li:hover ul {
+        display: none;
+    }
+
+    .site-header .secondary-navigation ul ul li a {
+        padding: 15px 20px;
+        border-top: none;
+    }
+
+    .secondary-navigation .submenu-toggle {
+        height: 47px;
+        line-height: 50px;
     }
 
 }
@@ -3247,14 +3438,14 @@ object {
         /*text-align: center;*/
     }
 
+    .header-bottom .container {
+        padding-right: 60px;
+    }
+
     .banner .banner-text {
         position: relative;
         background: #202020;
         padding: 20px 0 65px;
-    }
-
-    #mobile-header {
-        top: 80px;
     }
 
     .site-header .btn-donate {
