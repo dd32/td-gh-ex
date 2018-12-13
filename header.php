@@ -18,41 +18,42 @@
 	<meta name="viewport" content="width=device-width">
 	<link rel="profile" href="http://gmpg.org/xfn/11">
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
-    <?php if(!empty($booster_options['fevicon'])) { ?>
-    <link rel="shortcut icon" href="<?php echo esc_url($booster_options['fevicon']);?>">
-    <?php } ?>
-	<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/html5.js"></script>
-	<![endif]-->
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
 <header>
 	<div class="separator"></div>
-  <div class="col-md-12">
+  <div class="">
     <div class="container no-padding">
     <?php if(get_header_image()){ ?>
     <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-			<img src="<?php header_image(); ?>" class="custom-header-img" width="<?php echo get_custom_header()->width; ?>" height="<?php echo get_custom_header()->height; ?>" alt="">
+			<img src="<?php header_image(); ?>" class="custom-header-img" width="<?php echo esc_attr(get_custom_header()->width); ?>" height="<?php echo esc_attr(get_custom_header()->height); ?>" alt="">
 	</a>
     <?php } ?>
-      <div class="col-md-3 no-padding text-left-menu">
-      		<?php if(empty($booster_options['logo'])) { ?>
-      			<a href="<?php echo site_url(); ?>" class="pull-left booster-site-name"><?php echo get_bloginfo('name'); ?></a> 
-            <?php } else { ?>
-            	<a href="<?php echo site_url(); ?>" class="pull-left booster-site-name"><img src="<?php echo esc_url($booster_options['logo']); ?>" alt="" class="img-responsive header-logo" /></a> 
-            <?php } ?>	
+      <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12 text-left-menu">
+          <div class="cust_logo">
+      		<?php
+            if(has_custom_logo() ): 
+              the_custom_logo();
+            endif; 
+            if(display_header_text()){ ?>
+              <a href="<?php echo esc_url(get_site_url()); ?>" class="pull-left booster-site-name"><?php echo esc_html(get_bloginfo('name')); ?></a>
+              <p class="top-mag-tagline"><?php echo esc_html(get_bloginfo('description')); ?></p>
+              
+            <?php } ?>
+            </div> 
                 <div class="navbar-header pull-right">
                 	<button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle toggle-top" type="button">
-                    	<span class="sr-only"><?php _e('Toggle navigation','booster') ?></span>
+                    	<span class="sr-only"><?php esc_html_e('Toggle navigation','booster') ?></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
 					</button>
 				</div>
         <div class="clearfix"></div>
-		</div>
-      <div class="col-md-7 no-padding text-left-menu">
+</div>
+ 
+      <div class="col-md-7  col-lg-7 col-sm-7 col-xs-12 no-padding text-left-menu">
         <div class="navbar-collapse collapse padding-menu">
         <?php $booster_args = array(
 					'theme_location'  => 'primary',
@@ -75,13 +76,28 @@
         </div>
         <div class="clearfix"></div>
       </div>
-      <div class="col-md-2 no-padding text-left-menu">
+      <div class="col-md-2  col-lg-2 col-sm-2 col-xs-12 no-padding text-left-menu">
         <div class="">
-          <ul class="social-icon">
-            <li><?php if(!empty($booster_options['fburl'])) { ?><a href="<?php echo esc_url($booster_options['fburl']); ?>"><img class="sp" src="<?php echo get_template_directory_uri();?>/images/fb.png" alt="" /></a><?php } ?></li>
-            <li><?php if(!empty($booster_options['twitter'])) { ?><a href="<?php echo esc_url($booster_options['twitter']); ?>"><img class="sp" src="<?php echo get_template_directory_uri();?>/images/tw.png" alt="" /></a><?php } ?></li>
-            <li><?php if(!empty($booster_options['linkedin'])) { ?><a href="<?php echo esc_url($booster_options['linkedin']); ?>"><img class="sp" src="<?php echo get_template_directory_uri();?>/images/in.png" alt="" /></a><?php } ?></li>         
-          </ul>
+           <?php $SocialIconDefault = array(
+                  array('url'=>isset($booster_options['fburl'])?$booster_options['fburl']:'#','icon'=>'fa-facebook'),
+                  array('url'=>isset($booster_options['twitter'])?$booster_options['twitter']:'#','icon'=>'fa-twitter'),
+                  array('url'=>isset($booster_options['linkedin'])?$booster_options['linkedin']:'#','icon'=>'fa-linkedin'),  
+                );
+            $social_links_flag=false; 
+            for($i=1; $i<=3; $i++) : 
+                if(get_theme_mod('SocialIconLink'.$i,$SocialIconDefault[$i-1]['url'])!='' && get_theme_mod('SocialIcon'.$i,$SocialIconDefault[$i-1]['icon'])!=''):
+                 $social_links_flag=true; 
+                endif;
+            endfor; ?>
+           <ul class="social-icon">
+             <?php if($social_links_flag):
+                    for($i=1; $i<=3; $i++) : 
+                        if(get_theme_mod('SocialIconLink'.$i,$SocialIconDefault[$i-1]['url'])!='' && get_theme_mod('SocialIcon'.$i,$SocialIconDefault[$i-1]['icon'])!=''): ?>
+                       <li><a href="<?php echo esc_url(get_theme_mod('SocialIconLink'.$i,$SocialIconDefault[$i-1]['url'])); ?>" class="icon" title="" target="_blank">
+                            <i class="fa <?php echo esc_attr(get_theme_mod('SocialIcon'.$i,$SocialIconDefault[$i-1]['icon'])); ?>"></i>
+                        </a></li>
+                <?php endif; endfor; endif;?> 
+                </ul>
         </div>
         <div class="clearfix"></div>
       </div>

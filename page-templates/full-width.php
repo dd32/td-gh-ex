@@ -11,13 +11,13 @@ get_header(); ?>
     </div>
   </div>
 </section>
-<div class="container blog-background booster-page no-padding">
+<div class="container blog-background booster-page">
 <?php while ( have_posts() ) : the_post(); ?>
 	<div class="col-md-12 no-padding">
  <?php $booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
     	<div class="blog">
         	<?php if(!empty($booster_feature_img)){ ?>
-            <img src="<?php echo $booster_feature_img; ?>" alt="" class="img-responsive blog-img" />
+            <img src="<?php echo esc_url($booster_feature_img); ?>" alt="" class="img-responsive blog-img" />
             <?php } ?>
             <h1 class="blog-title"><?php echo get_the_title(); ?></h1>
             <p class="blog-text">

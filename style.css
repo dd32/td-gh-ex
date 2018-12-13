@@ -1,10 +1,10 @@
 /*
 Theme Name: Booster
-Theme URI: http://fasterthemes.com/wordpress-themes/Booster
+Theme URI: https://fasterthemes.com/wordpress-themes/Booster
 Author: FasterThemes
-Author URI: http://fasterthemes.com/
+Author URI: https://fasterthemes.com/
 Description: Booster is a clean minimal and responsive WordPress theme well suited for small businesses like Plumbing, Carpentry, Hair Salons , Individual Consultants and any other creative websites and blogs. It's got developed using Bootstrap 3 that makes it mobile and tablets friendly. Booster incorporates latest web standards such as HTML5 and CSS3 and is SEO friendly.It has loads of Theme Options to manage home page content, Social media pages etc. Booster is a free WordPress theme with premium functionality and design.
-Version:2.0
+Version:2.0.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: Right-sidebar, one-column, two-columns, theme-options, full-width-template, sticky-post, post-formats, featured-images, custom-background, custom-header, custom-menu, editor-style, translation-ready
@@ -12,6 +12,11 @@ Text Domain: booster
 This theme, like WordPress, is licensed under the FasterThemes.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
+form.search-form {
+    float: left;
+    width: 100%;
+    margin-bottom: 20px;
+} 
 .custom-header-img {
 	max-width:100%;
 }
@@ -158,18 +163,32 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .header-logo {
 	max-width:225px;
 }
+p.top-mag-tagline, a.pull-left.booster-site-name {
+    float: left;
+    width: 100%;
+    text-align: left;
+} 
 .footer .sub-menu {
 	display:none;
 }
 .nav > li > a:hover, .nav > li > a:focus {
 	background-color: rgb(38, 133, 182) !important;
+    outline: none;
+    color: #fff!important;
 }
 .navbar-nav > li > a {
     padding-bottom: 10px;
     padding-top: 10px;	
 }
  @media screen and (max-width: 767px) {
+ 	.post-date-blog p a {
+    display: inline-block;
+}
 /* nav-wrap */
+figure.avtar a>img {
+    width: auto;
+    margin: 0 0 10px 0;
+} 
 .menu-wrap {
 	position: relative;
 }
@@ -186,8 +205,8 @@ Use it to make something cool, have fun, and share what you've learned with othe
 }
 /* main nav */
 .booster-menu {
-	margin: 0 0 0 -15px;
-	padding: 10px;
+    margin: 0 0 0 -15px;
+    padding: 10px 10px 10px 30px;
 	position: relative;
 	top: 15px;
 	width: 100%;

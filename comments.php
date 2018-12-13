@@ -12,7 +12,9 @@ if ( post_password_required() )
 <div id="comments" class="comments-area">
 	<?php if ( have_comments() ) : ?>
     <h2 class="comments-title">
-		<?php printf( _n( 'One thought on - %2$s', '%1$s thoughts on - %2$s', get_comments_number(), 'booster' ), number_format_i18n( get_comments_number() ), get_the_title() ); ?>
+		<?php
+	 /* translators: 1: comment count number */
+     printf(esc_html(_n('%1$s Comment', '%1$s Comments', get_comments_number(), 'booster')), esc_attr(number_format_i18n(get_comments_number())), get_the_title()); ?></span></h2>
 	</h2>
     <ul class="">
     <?php wp_list_comments( array( 'callback' => 'booster_comment', 'style' => 'ul' ) ); ?>

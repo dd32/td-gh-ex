@@ -9,85 +9,131 @@ get_header(); ?>
   <div class="col-md-12 no-padding"> 
 <!--========================= Carousel ========================= -->
 <?php 
-if(!empty($booster_options['first-slider-image']) || !empty($booster_options['second-slider-image']) || !empty($booster_options['third-slider-image']) || !empty($booster_options['forth-slider-image']) || !empty($booster_options['fifth-slider-image']) ) {
-$booster_slider = array(0 => esc_url($booster_options['first-slider-image']),1 => esc_url($booster_options['second-slider-image']),2 => esc_url($booster_options['third-slider-image']),3 => esc_url($booster_options['forth-slider-image']),4 => esc_url($booster_options['fifth-slider-image']));
-$booster_link = array(0 => esc_url($booster_options['first-slider-link']), 1 => esc_url($booster_options['second-slider-link']),2 => esc_url($booster_options['third-slider-link']),3 => esc_url($booster_options['forth-slider-link']),4 => esc_url($booster_options['fifth-slider-link']));										
-$booster_value = array_filter($booster_slider);
-if(!empty($booster_value)) { ?>
+$slider_val=array('first','second','third','forth','fifth'); 
+$img_cnt=0;
+for($i=0;$i<count($slider_val);$i++) { 
+  if(get_theme_mod($slider_val[$i].'_slider_image') != ''){
+  $image_url = wp_get_attachment_url(get_theme_mod($slider_val[$i].'_slider_image'));
+  }else{ $image_url=$booster_options[$slider_val[$i].'-slider-image']; }
+  if($image_url != ''){ $img_cnt=1; }
+}
+if($img_cnt > 0) {
+?>
 <div id="myCarousel" class="carousel slide col-md-12 no-padding-left subscribe-box" data-ride="carousel"> 
   <!-- Indicators -->
     <ol class="carousel-indicators">
-    <?php $booster_count = 0; 
-		  foreach ($booster_slider as $booster_slide) { 
-		  if (empty($booster_slide)) { continue; } ?>
+    <?php
+      $booster_count = 0; 
+      $slider_val=array('first','second','third','forth','fifth'); 
+      for($i=0;$i<count($slider_val);$i++) { 
+         if(get_theme_mod($slider_val[$i].'_slider_image') != ''){
+          $image_url = wp_get_attachment_url(get_theme_mod($slider_val[$i].'_slider_image'));
+        }else{
+          $image_url=$booster_options[$slider_val[$i].'-slider-image'];
+        }
+      if (!empty($image_url)) { ?>
         <li data-target="#myCarousel" data-slide-to="0" class="<?php if($booster_count==0){ echo'active'; } ?>"></li>
-    <?php $booster_count++; } ?>
+    <?php $booster_count++; } 
+     } ?>
     </ol>
-  	<div class="carousel-inner">
-    <?php $booster_count_img = 0; 
-		  foreach ($booster_slider as $booster_key => $booster_slide) { 
-		  if (empty($booster_slide)) { continue; } ?>
-    <div class="item <?php if($booster_count_img==0){ echo'active'; } ?>">
-     <a href="<?php echo $booster_link[$booster_key]; ?>" target="_blank"><img src="<?php echo $booster_slide; ?>" class="img-responsive booster-slider-image"></a> 
+    <div class="carousel-inner">
+    <?php $booster_count_img = 0;
+    $slider_val=array('first','second','third','forth','fifth'); 
+    for($i=0;$i<count($slider_val);$i++)
+    {
+        if(get_theme_mod($slider_val[$i].'_slider_image') != ''){
+          $image_url = wp_get_attachment_url(get_theme_mod($slider_val[$i].'_slider_image'));
+        }else{
+          $image_url=$booster_options[$slider_val[$i].'-slider-image'];
+        }
+        if($image_url != ''){
+     ?>
+       <div class="item <?php if($booster_count_img==0){ echo'active'; } ?>">
+       <?php if(get_theme_mod($slider_val[$i].'_slider_link',isset($booster_options[$slider_val[$i].'-slider-link'])?$booster_options[$slider_val[$i].'-slider-link']:'') != ''){ ?>
+     <a href="<?php echo esc_url(get_theme_mod($slider_val[$i].'_slider_link',isset($booster_options[$slider_val[$i].'-slider-link'])?$booster_options[$slider_val[$i].'-slider-link']:'')); ?>" target="_blank"><img src="<?php echo esc_url($image_url); ?>" class="img-responsive booster-slider-image"></a> <?php }
+     else{ ?>
+      <img src="<?php echo esc_url($image_url); ?>" class="img-responsive booster-slider-image">
+    <?php } ?>
     </div>
-	<?php $booster_count_img++; } ?>
+    <?php $booster_count_img++; }
+     } ?>
   </div>  
-    	<a class="left carousel-control banner-nav-bg" href="#myCarousel" data-slide="prev"><span class="banner-nav-left sprite"></span></a> 
-  		<a class="right carousel-control banner-nav-bg" href="#myCarousel" data-slide="next"><span class="banner-nav-right sprite"></span></a> 
+      <a class="left carousel-control banner-nav-bg" href="#myCarousel" data-slide="prev"><span class="banner-nav-left sprite"></span></a> 
+      <a class="right carousel-control banner-nav-bg" href="#myCarousel" data-slide="next"><span class="banner-nav-right sprite"></span></a> 
     </div>
-<?php }} ?>  
+<?php } ?>  
 <!-- /.carousel -->
 </div>
-</section>
+</section> 
 <section class="section-main back-img">
   <div class="container">
     <div class="col-md-12 no-padding">
-      <div class="col-md-4"> <?php if(!empty($booster_options['welcome-image'])) { ?><img class="img-banner welcome-image" src="<?php echo esc_url($booster_options['welcome-image']); ?>" alt=""  /><?php } ?></div>
-      <div class="col-md-8 font-type font-color font-type-roboto">
-        <h1><?php if(!empty($booster_options['welcome-title'])) { echo wp_filter_nohtml_kses($booster_options['welcome-title']); } ?></h1>
-        <p class="font-type"><?php if(!empty($booster_options['welcome-content'])) { echo wp_filter_nohtml_kses($booster_options['welcome-content']); } ?></p>
+      <div class="row">
+    <?php
+     if(get_theme_mod('about_us_image') != ''){
+          $image_url = wp_get_attachment_url(get_theme_mod('about_us_image'));
+      }else{
+        $image_url=$booster_options['welcome-image'];
+      }
+      if($image_url != ''){ $image_col_cls="9"; ?>
+      <div class="col-md-3"><img class="img-banner welcome-image" src="<?php echo esc_url($image_url); ?>" alt=""  /></div>
+      <?php }else{ $image_col_cls="12"; } ?>
+      <div class="col-md-<?php echo esc_attr($image_col_cls); ?> font-type font-color font-type-roboto">
+        <h1><?php if(get_theme_mod('about_us_title',isset($booster_options['welcome-title'])?$booster_options['welcome-title']:'') != 'Welcome') { echo esc_html(get_theme_mod('about_us_title',isset($booster_options['welcome-title'])?$booster_options['welcome-title']:'Welcome')); } ?></h1>
+        <p class="font-type"><?php if(get_theme_mod('about_us_description',isset($booster_options['welcome-content'])?$booster_options['welcome-content']:'') != '') { echo wp_kses_post(get_theme_mod('about_us_description',isset($booster_options['welcome-content'])?$booster_options['welcome-content']:'')); } ?></p>
       </div>
+    </div>
     </div>
   </div>
 </section>
-<section class="section-main container no-padding">
-  <h2 class="font-color-text"><?php _e("Latest Posts", "booster"); ?></h2>
-  <div class="col-md-12 no-padding-left padding-br">
-    <?php $booster_args1 = array(
+<section class="section-main container">
+    <div class="row"><div class="col-md-12"><h2 class="font-color-text latest-pos"><?php esc_html_e("Latest Posts", "booster"); ?></h2></div></div>
+  <div class="row"> 
+    <?php
+    $flag=1;
+     $booster_args1 = array(
             'order'            => 'DESC',
             'post_type'        => 'post',
             'post_status'      => 'publish',
-			'posts_per_page'   => 4
-			);
+      'posts_per_page'   => 4
+      );
     $booster_posts = new WP_Query( $booster_args1 );
-    while ( $booster_posts->have_posts() ) {
-    $booster_posts->the_post();
-	$booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
+    while ( $booster_posts->have_posts() ) { $booster_posts->the_post();
+    if($flag < 5){
+    
+  $booster_feature_img = wp_get_attachment_url(get_post_thumbnail_id(get_the_id())); ?>
     <div class="col-md-3 clear-data no-padding-left">
       <div class="img-laft"> 
       <?php if($booster_feature_img) { ?>
-      	<img src="<?php echo $booster_feature_img; ?>"  alt=""  class="img-responsive home-services-image"/>
+        <a href="<?php echo esc_url(get_permalink()); ?>"><img src="<?php echo esc_url($booster_feature_img); ?>"  alt=""  class="img-responsive home-services-image"/></a>
       <?php } else { ?>
-      	<img src="<?php echo get_template_directory_uri(); ?>/images/no-image.png"  alt=""  class="img-responsive home-services-image"/>
+        <a href="<?php echo esc_url(get_permalink()); ?>"><img src="<?php echo esc_url(get_template_directory_uri()); ?>/images/no-image.png"  alt=""  class="img-responsive home-services-image"/></a>
       <?php } ?>
       </div>
       <div class="img-test-padding"> <strong>
-        <p class="sp"><a href="<?php echo get_permalink(); ?>"><?php echo get_the_title(); ?></a></p>
+        <p class="sp"><a href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html(get_the_title()); ?></a></p>
         </strong>
         <p class="font-size-14">
-		<?php echo get_the_excerpt(); ?></p>
-		</div>
+    <?php echo get_the_excerpt(); ?></p>
     </div>
-	<?php }	?>
+    </div>
+  <?php $flag++; } } ?>
   </div>
 </section>
 <div class="separator"></div>
 <section class="section-main container no-padding">
   <div class="col-md-12 no-padding-left">
-    <div class="col-lg-5 img-banner1"><?php if(!empty($booster_options['why-chooseus-image'])) { ?><img src="<?php echo esc_url($booster_options['why-chooseus-image']); ?>" alt="" class="img-responsive why-chooseus-image"  /><?php } ?></div>
-    <div class="col-lg-7 font-type-roboto why-chooseus-content">
-      <h2 class="font-color-text"><?php if(!empty($booster_options['why-chooseus-title'])) { echo wp_filter_nohtml_kses($booster_options['why-chooseus-title']); } ?></h2>
-      <p class="sp"><?php if(!empty($booster_options['why-chooseus-content'])) { echo wp_filter_nohtml_kses($booster_options['why-chooseus-content']); } ?></p>
+  <?php if(get_theme_mod('why_choose_image') != ''){
+          $image_url = wp_get_attachment_url(get_theme_mod('why_choose_image'));
+        }else{
+          $image_url=$booster_options['why-chooseus-image'];
+        }
+      if($image_url != ''){ $image_col_cls="7"; ?>
+    <div class="col-lg-5 col-md-5 col-sm-12 col-xs-12 img-banner1"><img src="<?php echo esc_url($image_url); ?>" alt="" class="img-responsive why-chooseus-image"  /></div>
+    <?php }else{ $image_col_cls="12"; } ?>
+    <div class="col-lg-<?php echo esc_attr($image_col_cls); ?> col-md-7 col-sm-12 col-xs-12 font-type-roboto why-chooseus-content">
+      <h2 class="font-color-text"><?php if(get_theme_mod('why_choose_title',isset($booster_options['why-chooseus-title'])?$booster_options['why-chooseus-title']:'Why Choose Us?') != '') { echo esc_html(get_theme_mod('why_choose_title',isset($booster_options['why-chooseus-title'])?$booster_options['why-chooseus-title']:'Why Choose Us?')); } ?></h2>
+      <p class="sp"><?php if(get_theme_mod('why_choose_description',isset($booster_options['why-chooseus-content'])?$booster_options['why-chooseus-content']:'') != '') { echo wp_kses_post(get_theme_mod('why_choose_description',isset($booster_options['why-chooseus-content'])?$booster_options['why-chooseus-content']:'')); } ?></p>
     </div>
   </div>
 </section>

@@ -1,34 +1,28 @@
 <?php get_header(); ?>
-<div class="page-title">
+<section class="section-main back-img-aboutus">
   <div class="container">
-    <div class="row">
-      <div class="col-md-6  col-sm-6 ">
-        <h1><?php _e('404 Page','booster'); ?></h1>
-      </div>
-      <div class="col-md-6  col-sm-6 ">
-        <ol class="archive-breadcrumb  pull-right">
-          <?php if (function_exists('booster_custom_breadcrumbs')) booster_custom_breadcrumbs(); ?>
-        </ol>
-      </div>
+    <div class="col-md-12 img-banner-aboutus">
+      <p class="font-34 color-fff conter-text""><?php esc_html_e('404 Page','booster'); ?></p>
+         <?php if (function_exists('booster_custom_breadcrumbs')) booster_custom_breadcrumbs(); ?>
     </div>
   </div>
-</div>
+</section>
 <div class="main-container">
   <div class="container"> 
     <div class="row">
       <div class="col-md-12 main no-padding">
         <div class="jumbotron">			
-				<h1><?php _e('Epic 404 - Article Not Found','booster') ?></h1>
-				<p><?php _e('This is embarrassing. We could not find what you were looking for.','booster'); ?></p>
+				<h1><?php esc_html_e('Epic 404 - Article Not Found','booster') ?></h1>
+				<p><?php esc_html_e('This is embarrassing. We could not find what you were looking for.','booster'); ?></p>
                 <section class="post_content">
-                    <p><?php _e('Whatever you were looking for was not found, but maybe try looking again or search using the form below.','booster'); ?></p>
+                    <p><?php esc_html_e('Whatever you were looking for was not found, but maybe try looking again or search using the form below.','booster'); ?></p>
                   <div class="row">
                       <div class="col-sm-12">
-                          <form role="search" method="get" class="search-form" action="<?php echo site_url('/'); ?>">
+                          <form role="search" method="get" class="search-form" action="<?php echo esc_url(site_url('/')); ?>">
                           <label>
-                             <input type="search" class="search-field"   placeholder="<?php _e('Search','booster'); ?>" value="" name="s">
+                             <input type="search" class="search-field"   placeholder="<?php esc_html_e('Search','booster'); ?>" value="" name="s">
                           </label>
-                          <input type="submit" class="search-submit" value="<?php _e('Search','booster'); ?>">
+                          <input type="submit" class="search-submit" value="<?php esc_html_e('Search','booster'); ?>">
                           </form>								
                       </div>
               	</div>
