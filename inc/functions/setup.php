@@ -79,8 +79,7 @@ if ( ! function_exists( 'aemi_setup' ) )
 }
 add_action( 'after_setup_theme', 'aemi_setup' );
 
-/* Avoid WordPress to insert inline styling with galleries */
-add_filter( 'use_default_gallery_style', '__return_false' );
+
 
 function aemi_tagcount_filter ( $variable )
 {
@@ -113,10 +112,10 @@ if ( ! function_exists( 'aemi_widgets_init' ) )
 			'name' => __( 'Header Widget Area', 'aemi' ),
 			'id' => 'header-widget-area',
 			'description' => __( 'Add widgets in this area to display them on header area.', 'aemi' ),
-			'before_widget' => '<div id="w-%1$s" class="w-cont header-section %2$s">',
+			'before_widget' => '<div id="w-%1$s" class="w-cont %2$s">',
 			'after_widget' => '</div>',
-			'before_title' => '<h4 class="widget-title">',
-			'after_title' => '</h4>',
+			'before_title' => '<h6 class="widget-title">',
+			'after_title' => '</h6>',
 		) );
 		register_sidebar( array (
 			'name' => __( 'Sidebar Widget Area', 'aemi' ),
@@ -124,8 +123,8 @@ if ( ! function_exists( 'aemi_widgets_init' ) )
 			'description' => __( 'Add widgets in this area to display them on sidebar area.', 'aemi' ),
 			'before_widget' => '<div id="w-%1$s" class="w-cont %2$s">',
 			'after_widget' => '</div>',
-			'before_title' => '<h4 class="widget-title">',
-			'after_title' => '</h4>',
+			'before_title' => '<h6 class="widget-title">',
+			'after_title' => '</h6>',
 		) );
 		register_sidebar( array (
 			'name' => __( 'Footer Widget Area', 'aemi' ),
@@ -133,8 +132,8 @@ if ( ! function_exists( 'aemi_widgets_init' ) )
 			'description' => __( 'Add widgets in this area to display them on footer area.', 'aemi' ),
 			'before_widget' => '<div id="w-%1$s" class="w-cont %2$s">',
 			'after_widget' => '</div>',
-			'before_title' => '<h4 class="widget-title">',
-			'after_title' => '</h4>',
+			'before_title' => '<h6 class="widget-title">',
+			'after_title' => '</h6>',
 		) );
 	}
 }
@@ -146,10 +145,7 @@ if ( ! function_exists( 'aemi_scripts' ) )
 	{
 		wp_enqueue_style( 'aemi-style', get_stylesheet_uri() );
 		wp_enqueue_style( 'aemi-font', get_template_directory_uri() . '/assets/css/fonts.css' );
-		/* Enqueue AeMi JavaScript Script in footer */
-		wp_register_script( 'aemi-script', get_template_directory_uri() . '/assets/js/aemi.js', '', '', true );
-		wp_enqueue_script ( 'aemi-script' );
-
+		wp_enqueue_script ( 'aemi-script', get_template_directory_uri() . '/assets/js/aemi.js' );
 		if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 			wp_enqueue_script( 'comment-reply' );
 		}

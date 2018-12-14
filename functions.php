@@ -1,8 +1,6 @@
 <?php
 
 require get_template_directory() . '/inc/functions/setup.php';
-require get_template_directory() . '/inc/functions/customizer.php';
-require get_template_directory() . '/inc/functions/conf.php';
 require get_template_directory() . '/inc/structure/hooks.php';
 require get_template_directory() . '/inc/structure/header.php';
 require get_template_directory() . '/inc/structure/footer.php';

@@ -26,18 +26,6 @@ if ( ! function_exists( 'aemi_body_classes' ) )
 }
 
 
-/* Remove JQuery migrate
-function aemi_remove_jquery_migrate( $scripts ) {
-	if ( ! is_admin() && isset( $scripts->registered['jquery'] ) ) {
-		$script = $scripts->registered['jquery'];
-		if ( $script->deps ) {
-			$script->deps = array_diff( $script->deps, array( 'jquery-migrate' ) );
-		}
-	}
-}
-add_action( 'wp_default_scripts', 'aemi_remove_jquery_migrate' );
-*/
-
 
 function aemi_html_tag_schema()
 {
@@ -85,14 +73,14 @@ add_filter( 'style_loader_src', 'aemi_remove_script_version', 15, 1 );
 
 function aemi_optimize_scripts( $tag, $handle )
 {
-	$scripts = array(
-		'aemi-script'
+	$scripts_to_optimize = array(
+		'aemi'
 	);
-	foreach( $scripts as $script )
+	foreach( $scripts_to_optimize as $aemi_script )
 	{
-		if ( $script === $handle )
+		if ( $aemi_script === $handle )
 		{
-			return str_replace( ' src', ' defer src', $tag );
+			return str_replace( 'src', 'defer src', $tag );
 		}
 	}
 	return $tag;
