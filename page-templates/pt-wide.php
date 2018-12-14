@@ -16,10 +16,10 @@ if ( have_posts() ) :
 			<?php get_template_part( 'template-parts/title-bar' ); ?>
 			<?php get_template_part( 'template-parts/postthumbnail' ); ?>
 
-<article class="container singular_content wide-content">
+<article class="container singular_content wide-content entry">
 	<div class="row">
 		<div class="col-xs-12 col-md-8 col-md-offset-2">
-			<div class="the_content">
+			<div class="the_content entry-content">
 				<?php the_content(); ?>
 			</div>
 			<div class="entry-content">

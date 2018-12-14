@@ -15,10 +15,10 @@ if ( have_posts() ) :
 			<?php get_template_part( 'template-parts/title-bar' ); ?>
 			<?php get_template_part( 'template-parts/postthumbnail' ); ?>
 
-<article class="container singular_content" >
+<article class="container singular_content entry">
 	<div class="row has-sidebar">
 		<div class="col-xs-12 col-md-8 content-wrapper">
-			<div class="the_content clearfix">
+			<div class="the_content clearfix entry-content">
 				<?php the_content(); ?>
 			</div>
 			<?php

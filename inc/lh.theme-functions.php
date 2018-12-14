@@ -34,8 +34,6 @@ class AgncyThemeFunctions {
 	 */
 	function filter_dispatcher() {
 		add_filter( 'admin_footer_text', array( $this, 'lh_admin_footer' ) ); // change admin footer text.
-		add_filter( 'login_headerurl', array( $this, 'lh_login_logo_url' ) );
-		add_filter( 'login_headertitle', array( $this, 'lh_login_logo_url_title' ) );
 
 		add_filter( 'excerpt_more', array( $this, 'excerpt_more' ), 10 );
 		add_filter( 'the_content_more_link', array( $this, 'excerpt_more' ), 10 );
@@ -54,50 +52,7 @@ class AgncyThemeFunctions {
 	function lh_admin_footer() {
 		$url  = __( 'http://www.wp-munich.com', 'agncy' );
 		$name = __( 'WP Munich', 'agncy' );
-		echo 'Made with &#x2661; by <a href="' . esc_attr( $url ) . '" target="_blank">' . esc_attr( $name ) . '</a>. Powered by <a href="http://www.wordpress.org" target="_blank">WordPress</a>.';
-	}
-
-	/**
-	 * Add some css code to change the default logo
-	 * Called by action "login_enqueue_scripts".
-	 *
-	 * @author Hendrik Luehrsen
-	 * @since 3.1
-	 */
-	function lh_login_logo() {
-		?>
-		<style type="text/css">
-			body.login div#login h1 a {
-				display: block;
-				background-image: url(<?php echo esc_url( get_template_directory_uri() ); ?>/img/wpm-logo.png);
-				background-size: contain;
-				background-repeat: no-repeat;
-				background-position: center center;
-				padding-bottom: 0;
-				margin-bottom: 0;
-				width: 100%;
-				height: auto;
-			}
-
-			body.login div#login h1 a:after {
-				content: '';
-				display: block;
-				padding-bottom: 66%;
-			}
-		</style>
-		<?php
-	}
-
-	/**
-	 * Change the login logo url
-	 *
-	 * @author Hendrik Luehrsen
-	 * @since 3.1
-	 *
-	 * @return string The new url
-	 */
-	function lh_login_logo_url() {
-		return __( 'http://www.wp-munich.com', 'agncy' );
+		echo '<i>Made with &#x2661; by <a href="' . esc_url( $url ) . '" target="_blank">' . esc_attr( $name ) . '</a>. Powered by <a href="http://www.wordpress.org" target="_blank">WordPress</a>.</i>';
 	}
 
 	/**
