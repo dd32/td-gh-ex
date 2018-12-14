@@ -465,6 +465,10 @@
 			return this;
 		},
 
+		setDataAttribute: function() {
+			this.$el.attr( 'data-value', this.getValue() );
+		},
+
 		setValue: function( value ) {
 			// Noop
 		},
@@ -482,6 +486,7 @@
 		},
 
 		settingUpdated: function() {
+			this.setDataAttribute();
 			this.overlay.trigger( 'setting-updated', { name: this.setting.name, value: this.getValue() } );
 		}
 	} );
@@ -537,6 +542,15 @@
 
 	/**
 	 *
+	 * Description control
+	 *
+	 */
+	window.make.classes.configuration.description = window.make.classes.configuration.control.extend( {
+		template: wp.template( 'ttfmake-settings-description' ),
+	} );
+
+	/**
+	 *
 	 * Section title control
 	 *
 	 */
@@ -578,6 +592,7 @@
 
 		setValue: function( value ) {
 			$( 'select', this.$el ).val( value );
+			this.setDataAttribute();
 		},
 
 		getValue: function() {
