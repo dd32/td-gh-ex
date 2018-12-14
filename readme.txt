@@ -5,9 +5,12 @@ custom-header, custom-menu, featured-images, post-formats, threaded-comments,
 sticky-post, theme-options, footer-widgets, translation-ready, full-width-template, front-page-post-form
 Requires at least: 4.9.0
 Tested up to: 4.9.8
+Requires PHP: 5.2.4
 Stable tag: 1.0.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+fKidd is a Free Multi-Purpose WordPress Theme.
 
 == Description ==
 
@@ -17,6 +20,7 @@ W3C Markup Validated, Customizer Options: Social Sites, Header Phone and Email, 
 Search Engine Optimized, Social Sites: Facebook, Google+, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr,
 YouTube, Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9, IE 10, IE 11, Chrome, Firefox, Opera,
 and Safari), Full-Width Page Template, Header and Footer Menu, Translation ready and much more.
+DEMO: DEMO: https://tishonator.com/demo/fkidd
 
 == Frequently Asked Questions ==
 
@@ -44,6 +48,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 
 == Changelog ==
+
+= 1.9.3 =
+* design improvements
+* change slider images
 
 = 1.9.2 =
 * remove set_post_thumbnail_size from functions.php
@@ -122,7 +130,7 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
 * images/slider/1.jpg, © 2017 @Alexas_Fotos https://pixabay.com/en/teddy-bank-sit-teddy-bear-bear-2710522/, CC0
-* images/slider/2.jpg, © 2014 @Antranias https://pixabay.com/en/school-window-facade-building-437676/, CC0
-* images/slider/3.jpg, © 2017 @Studio32 https://pixabay.com/en/paper-book-laptop-education-3052246/, CC0
-* screenshot.png (products), WooCommerce, Copyright (C) Automattic, GPLv3
+* images/slider/2.jpg, © 2017 @HeyouRelax https://pixabay.com/en/lego-figure-person-boy-little-one-2158115/, CC0
+* images/slider/3.jpg, © 2017 @aitoff https://pixabay.com/en/pirate-lego-robber-criminal-theft-2129571/, CC0
+* screenshot.png (column images), © 2017 @HeyouRelax https://pixabay.com/en/lego-figure-person-boy-little-one-2158115/, CC0
 * screenshot.png (slider image), © 2017 @Alexas_Fotos https://pixabay.com/en/teddy-bank-sit-teddy-bear-bear-2710522/, CC0

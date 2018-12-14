@@ -37,9 +37,6 @@
 					</div>
 				</div>
 			</header>
-			<div id="header-spacer">
-				&nbsp;
-			</div>
 
 			<?php if ( is_front_page() && get_option( 'show_on_front' ) == 'page' ) : ?>
 

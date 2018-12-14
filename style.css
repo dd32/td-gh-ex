@@ -1,10 +1,10 @@
 /*!
 Theme Name: fKidd
-Description: fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Responsive, Customizable, Built-in Responsive Slider, WooCommerce plugin support, Multi-Level Drop-Down Menu, Homepage and Footer Widgets, W3C Markup Validated, Customizer Options: Social Sites, Header Phone and Email, Slider, Header Logo, Footer, Search Engine Optimized, Social Sites: Facebook, Google+, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr, YouTube, Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9, IE 10, IE 11, Chrome, Firefox, Opera, and Safari), Full-Width Page Template, Header and Footer Menu, Translation ready and much more.
+Description: fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Responsive, Customizable, Built-in Responsive Slider, WooCommerce plugin support, Multi-Level Drop-Down Menu, Homepage and Footer Widgets, W3C Markup Validated, Customizer Options: Social Sites, Header Phone and Email, Slider, Header Logo, Footer, Search Engine Optimized, Social Sites: Facebook, Google+, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr, YouTube, Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9, IE 10, IE 11, Chrome, Firefox, Opera, and Safari), Full-Width Page Template, Header and Footer Menu, Translation ready and much more. DEMO: https://tishonator.com/demo/fkidd
 Theme URI: https://tishonator.com/product/fkidd
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 1.9.2
+Version: 1.9.3
 Text Domain: fkidd
 Tags: education, blog, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, post-formats, threaded-comments, sticky-post, theme-options, footer-widgets, translation-ready, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
@@ -177,6 +177,7 @@ dt.gallery-icon:before {
 
 #header-logo h1 {
 	padding:0;
+	color:#398790;
 }
 
 .custom-logo-link img {
@@ -202,11 +203,9 @@ dt.gallery-icon:before {
 	clear:both;
 	background-color:#FDFFFF;
 	margin:0;
-	position:fixed;
 	width:100%;
 	z-index:5000;
-	color:#303132;
-	box-shadow:0 2px 2px -2px #777;
+	color:#ed265a;
 }
 
 #header-main a {
@@ -215,6 +214,10 @@ dt.gallery-icon:before {
 
 #header-main a:hover {
 	color:#ed265a;
+}
+
+#site-identity strong {
+	font-weight:normal;
 }
 
 #header-spacer {
@@ -1555,6 +1558,16 @@ img.wp-post-image {
 	float:right;
 	clear:both;
 }
+
+#main-content-wrapper ul.products li.product .woocommerce-loop-category__title,
+#main-content-wrapper ul.products li.product .woocommerce-loop-product__title,
+#main-content-wrapper ul.products li.product h3 {
+	font-size:16px;
+}
+
+.wc-forward {
+    margin-right: 10px !important;
+}
 .woocommerce-mini-cart,
 .cart_list,
 .product_list_widget {
@@ -1976,12 +1989,6 @@ li.product:before {
 		position:relative;
 	}
 
-	#navmain {
-	    bottom: 0;
-	    position: absolute;
-	    right: 0;
-	}
-
 	#navmain div {
 		padding:0 0 0 20px;
 	}
@@ -2012,55 +2019,13 @@ li.product:before {
 		text-transform:uppercase;
 	}
 
-	#navmain ul li:hover > a,
+	#navmain > div > ul > li:hover > a,
 	#navmain > div > ul > .current-menu-item > a,
 	#navmain > div > ul > .current-menu-ancestor > a {
 		background-color:#FDFFFF;
 		color:#ed265a;
-		border-bottom:2px solid #ed265a;
-		padding-bottom: 15px;
-	}
-	
-	#navmain > div > ul > li > a,
-	#navmain > div > ul > li > a:hover,
-	#navmain > div > ul > .current-menu-item > a,
-	#navmain > div > ul > .current-menu-ancestor > a {
-		-webkit-border-top-left-radius:3px;
-		-moz-border-top-left-radius:3px;
-		-ms-border-top-left-radius:3px;
-		-o-border-top-left-radius:3px;
-		border-top-left-radius:3px;
-		-webkit-border-top-right-radius:3px;
-		-moz-border-top-right-radius:3px;
-		-ms-border-top-right-radius:3px;
-		-o-border-top-right-radius:3px;
-		border-top-right-radius:3px;
-	}
-	
-	#navmain ul ul ul,
-	#navmain ul ul  ul li:first-of-type,
-	#navmain ul ul ul li:first-of-type > a {
-		-webkit-border-top-left-radius:3px;
-		-moz-border-top-left-radius:3px;
-		border-top-left-radius:3px;
-		-webkit-border-top-right-radius:3px;
-		-moz-border-top-right-radius:3px;
-		border-top-right-radius:3px;
-	}
-	
-	#navmain ul ul,
-	#navmain ul ul li:last-of-type,
-	#navmain ul ul li:last-of-type > a {
-		-webkit-border-bottom-left-radius:3px;
-		-moz-border-bottom-left-radius:3px;
-		border-bottom-left-radius:3px;
-		-webkit-border-bottom-right-radius:3px;
-		-moz-border-bottom-right-radius:3px;
-		border-bottom-right-radius:3px;
-	}
-	
-	#navmain ul ul li:hover > a {
-		padding-bottom:7px;
+		border-top:2px solid #ed265a;
+		padding-top: 15px;
 	}
 
 	#navmain ul ul {
@@ -2128,10 +2093,6 @@ li.product:before {
 		box-shadow: 0 -2px 2px -2px rgba(0, 0, 0, 0.15) inset;
 	}
 
-	#navmain ul ul a:hover {
-		padding:9px 35px 7px 10px;
-	}
-	
 	.level-one-sub-menu > a:after {
 		content: "\f107";
 		font-family:'FontAwesome';
@@ -2708,7 +2669,6 @@ li.product:before {
 	float: left;
 	position: relative;
 	z-index: 0;
-	border-top:2px solid #222222;
 }
 .camera_wrap img {
 	max-width: none!important;
@@ -3114,9 +3074,10 @@ li.product:before {
 .camera_caption h2,
 .camera_caption h3 {
 	color: #fff !important;
+	text-align:center;
 }
 .camera_caption a {
-	color: #999 !important;
+	color: #FFF !important;
 }
 .camera_caption a:after {
 	font-family:'FontAwesome';
@@ -3124,11 +3085,11 @@ li.product:before {
 	margin-left:5px;
 }
 .camera_caption a:hover {
-	color: #eee !important;
+	color: #FFF !important;
 }
 .camera_caption > div {
-	background: #000;
-	background: rgba(0, 0, 0, 0.8);
+	background: #398790;
+	background: rgba(57,135,144, 0.8);
 }
 .camera_wrap .camera_pag .camera_pag_ul li {
 	background: #b7b7b7;
@@ -3149,8 +3110,8 @@ li.product:before {
     border-top-color: #e6e6e6;
 }
 .camera_prevThumbs, .camera_nextThumbs, .camera_prev, .camera_next, .camera_commands, .camera_thumbs_cont {
-	background: #d8d8d8;
-	background: rgba(216, 216, 216, 0.85);
+	background: #FFFFFF;
+	background: rgba(254, 254, 254, 0.85);
 }
 .camera_wrap .camera_pag .camera_pag_ul li {
 	background: #b7b7b7;
