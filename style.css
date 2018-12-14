@@ -1,0 +1,44 @@
+/*
+Theme Name: Apelle uno 
+Theme URI: https://xxi.xxii.it/apello
+Author: DevFabio
+Author URI: https://inventyourtrade.it/
+Description: no comment.
+Version: 1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Text Domain: apelleuno
+Tags: custom-menu
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+*/
+.wp-caption{
+	max-width:100%;
+	}
+.wp-caption-text{}
+.sticky{}
+.screen-reader-text{}
+.gallery-caption{}
+.bypostauthor{}
+.alignright{ text-align:right;}
+.alignleft{ text-align:left;}
+.aligncenter{ text-align:center; }
+
+a:hover {
+    
+    text-decoration: none !important;
+}
+ul.children{ 
+display:none}
+.c-site-tools__item--burger {
+    display: none;
+}
+@media only screen and (max-width: 992px)
+{
+.c-site-tools__item--burger {
+    display: inline-block !important;
+}
+}
+img{ max-width:100%!important;}
+h1{
+	    overflow-wrap: break-word;}
