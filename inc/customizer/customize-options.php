@@ -108,16 +108,16 @@ function azauthority_get_default_fields( $plugin_token ) {
 				),
 				'category_post' => array(
 					'type'       		=> 'select',
-					'label'				=> __( 'Select Category', 'azauthority' ),
+					'label'				=> esc_html__( 'Select Category', 'azauthority' ),
 					'choices'			=> azauthority_get_category_list(),
 				),
 				'box_post' => array(
 					'type'       		=> 'select',
-					'label'				=> __( 'Select box', 'azauthority' ),
+					'label'				=> esc_html__( 'Select box', 'azauthority' ),
 					'choices'			=> array(
 
-						'three_box'     => 'Three Box',
-						'five_box'		=> 'Five Box'
+						'three_box'     => esc_html__( 'Three Box', 'azauthority'),
+						'five_box'		=> esc_html__( 'Five Box', 'azauthority')
 
 
 					),
@@ -130,7 +130,7 @@ function azauthority_get_default_fields( $plugin_token ) {
 		*/
 		array(
 			'settings'			=> 'azauthority_enable_featured',
-			'label'				=> __( 'Featured Homepage', 'azauthority' ),
+			'label'				=> esc_html__( 'Featured Homepage', 'azauthority' ),
 			'section'			=> $prefix_section . 'featured',
 			'type'				=> 'switch',
 			'default'			=> 1,
@@ -140,7 +140,7 @@ function azauthority_get_default_fields( $plugin_token ) {
 		array(
 			'settings'		=> 'azauthority_select_list',
 			'type'        	=> 'select',
-			'label'       	=> __( 'Select One Category', 'azauthority' ),
+			'label'       	=> esc_html__( 'Select One Category', 'azauthority' ),
 			'section'		=> $prefix_section . 'featured',
 			'default'    	=> '',
 			'choices'		=> azauthority_get_category_list(),
@@ -154,22 +154,13 @@ function azauthority_get_default_fields( $plugin_token ) {
 			)
 		),
 
-		array(
-			'settings'			=> 'ads_code_under_featured',
-			'label'				=> __( 'Add Code Under Featured', 'azauthority' ),
-			'section'			=> $prefix_section . 'featured',
-			'type'				=> 'cutom-code',
-			'sanitize_callback'	=> 'azauthority_sanitize_textarea',
-			'priority'			=> 70,
-		),
-
 
 		/**
 		* General Fields
 		*/
 		array(
 			'settings'			=> 'azauthority_sidebar_layout',
-			'label'				=> __( 'Sidebar', 'azauthority' ),
+			'label'				=> esc_html__( 'Sidebar', 'azauthority' ),
 			'section'			=> $prefix_section . 'general',
 			'type'				=> 'radio-image',
 			'default'			=> 'none',
@@ -184,7 +175,7 @@ function azauthority_get_default_fields( $plugin_token ) {
 		// Meta info Single Posts
 		array(
 			'settings'			=> 'azauthority_meta_info',
-			'label'				=> __( 'Single Meta Info', 'azauthority' ),
+			'label'				=> esc_html__( 'Single Meta Info', 'azauthority' ),
 			'section'			=> $prefix_section . 'general',
 			'type'				=> 'multicheck',
 			'default'			=> array('date', 'author', 'category', 'tag'),
@@ -203,7 +194,7 @@ function azauthority_get_default_fields( $plugin_token ) {
 		
 		array(
 			'settings'			=> 'azauthority_title_head_footer',
-			'label'				=> __( 'Footer Widget Titles', 'azauthority' ),
+			'label'				=> esc_html__( 'Footer Widget Titles', 'azauthority' ),
 			'section'			=> $prefix_section . 'footer',
 			'type'				=> 'color',
 			'default'			=> '#000',
@@ -221,7 +212,7 @@ function azauthority_get_default_fields( $plugin_token ) {
 
 		array(
 			'settings'			=> 'azauthority_link_color_footer',
-			'label'				=> __( 'Footer Widget Links Color', 'azauthority' ),
+			'label'				=> esc_html__( 'Footer Widget Links Color', 'azauthority' ),
 			'section'			=> $prefix_section . 'footer',
 			'type'				=> 'color',
 			'default'			=> '#000',

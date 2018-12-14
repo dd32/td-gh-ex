@@ -67,7 +67,7 @@ if ( post_password_required() ) {
 					'max_depth'  => '3',
 					'short_ping' => true,
 					'avatar_size'=> 100,
-					'reply_text' => '<i class="fa fa-mail-reply"></i> Reply',
+					'reply_text' => sprintf( '<i class="fa fa-mail-reply"></i> %s', esc_html__('Reply', 'azauthority' )),
 					'avatar_size'=> 100,
 				) );
 			?>

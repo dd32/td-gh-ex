@@ -131,12 +131,6 @@ function azauthority_sanitize_text( $input ) {
     return wp_kses_post( force_balance_tags( $input ) );
 }
 
-function azauthority_sanitize_textarea( $input ) {
-	return esc_textarea($input);
-}
-
-
-
 function azauthority_get_category_list() {
 	
 	$categories = get_categories();

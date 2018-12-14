@@ -1044,16 +1044,16 @@ if ( ! function_exists( 'azauthority_page_content' ) ) {
 
 function azauthority_ads_after_featured() { 
 
-	$banner = html_entity_decode ( azauthority_get_theme_option('ads_code_under_featured'), ENT_QUOTES);
-	if ($banner) {
+		if ( ! is_active_sidebar( 'featured_banner' ) ) {
+			return;
+		}
 		?>
 		<div class="ads-under-featured">
-			<div class="ads-970x90">
-				<?php echo $banner; ?>
-			</div>
+			
+				<?php dynamic_sidebar( 'featured_banner' ); ?>
+
 		</div>
 		<?php
-	}
 }
 
 /**

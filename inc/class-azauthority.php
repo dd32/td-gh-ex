@@ -107,11 +107,20 @@ if ( ! class_exists( 'Az_Authority' ) ) :
 		 * @link https://codex.wordpress.org/Function_Reference/register_sidebar
 		 */
 		public function widgets_init() {
+			
 			$sidebar_args['sidebar'] = array(
 				'name'          => __( 'Sidebar', 'azauthority' ),
 				'id'            => 'sidebar-1',
 				'description'   => ''
 			);
+
+			// ads_code_under_featured
+			$sidebar_args['featured_banner'] = array(
+				'name'          => __( 'Featured Banner', 'azauthority' ),
+				'id'            => 'featured_banner',
+				'description'   => esc_html__('Any banner widgets under featured Homepage.', 'azauthority')
+			);
+			
 
 			$rows    = intval( apply_filters( 'azauthority_footer_widget_rows', 1 ) );
 			$regions = intval( apply_filters( 'azauthority_footer_widget_columns', 4 ) );
