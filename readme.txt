@@ -41,6 +41,19 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.71 (2018-12-15)
+-------------------------
+- Unified index.php, archive.php and search.php into index.php
+- Unified page.php and single.php into singular.php
+- Unified all post formats into content.php
+- Removed searchform.php from the theme
+- Unified and improved search styles
+- General styling improvements, old vendor prefix cleanup
+- Changed the toggles to button elements
+- Removed styling that removed outlines from links on focus
+- Compressed the default header
+- Set the version variable on enqueues for cache busting
+
 Version 1.70 (2018-12-07)
 -------------------------
 - Fixed Gutenberg style changes required due to changes in the block editor CSS and classes
