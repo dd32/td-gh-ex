@@ -2,10 +2,10 @@
 
 **Contributors:** inkhive
 **Requires at least:** WordPress 4.4  
-**Tested up to:** WordPress 4.9.8
-**Version:** 0.98
-**License:** GPL v3  
-**License URI:** http://www.gnu.org/licenses/gpl-3.0.html  
+**Tested up to:** WordPress 5.0
+**Version:** 0.991
+**License:** GPL v3
+**License URI:** http://www.gnu.org/licenses/gpl-3.0.html
 **Tags:** custom-background, two-columns, one-column, custom-colors, flexible-header, right-sidebar, grid-layout, custom-menu, sticky-post, theme-options, threaded-comments, translation-ready, featured-images, full-width-template, custom-header, footer-widgets, e-commerce
 
 Creative and Beautiful WordPress Theme with a Large Header
@@ -60,7 +60,7 @@ All Other Resources, apart from the ones mentioned above have been created by me
 ## Screenshot & Image Credits
 
 * Header Image - Cactus Pots
-https://www.pexels.com/photo/art-artistic-beautiful-bloom-311458/
+https://pixabay.com/en/marigold-calendula-orange-blossom-1568646/
 
 License: CC0
 Source: https://pixabay.com/en/service/terms/	
@@ -99,3 +99,9 @@ Source: https://pixabay.com/en/service/terms/
   
 - Version 0.98
   * 500 Error Fixed
+  
+- Version 0.99
+  * Seventh Review Changes
+  
+- Version 0.991
+  * Eighth Review Changes

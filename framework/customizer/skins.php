@@ -52,7 +52,6 @@ function adviso_customize_register_skins( $wp_customize ) {
 				'settings'	=> array(),
 				'section'	=> 'colors',
 				'priority'	=> 25,
-				'description'		=> '<a href="https://www.inkhive.com/product/adviso-plus" target="_blank" class="adviso_button">More Options in Adviso Plus</a>',
 			)
 		)
 	);
