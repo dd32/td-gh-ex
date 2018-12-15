@@ -228,12 +228,14 @@ function hu_print_dynamic_sidebars( $_id, $location ) {
         __('You can change or disable this setting by editing the options of the current post / page.', 'hueman')
       );
     }
-
-    if ( empty( $sidebars_widgets[ $_id ] ) || ! is_array( $sidebars_widgets[ $_id ] ) ) {
-      printf('<div class="widget"><div class="hu-placeholder-widget"><h3>%1$s<br/><span class="zone-name">"%2$s"</span></h3></div></div>',
-        __('Add widgets to the zone :', 'hueman'),
-        $wp_registered_sidebars[$_id]['name']
-      );
+    if ( 'header-ads' !== $_id ) {// we don't want to print a placeholder for the header ads widget zone.
+        if ( empty( $sidebars_widgets[ $_id ] ) || ! is_array( $sidebars_widgets[ $_id ] ) ) {
+          printf('<div class="widget" id="hu-widget-zone-when-customizing-%3$s"><div class="hu-placeholder-widget"><h3>%1$s<br/><span class="zone-name">"%2$s"</span></h3></div></div>',
+            __('Add widgets to the zone :', 'hueman'),
+            $wp_registered_sidebars[$_id]['name'],
+            $_id
+          );
+        }
     }
   }//end if customizing
 
@@ -757,7 +759,7 @@ if ( ! function_exists( 'hu_print_placeholder_thumb' ) ) {
     printf( ' %1$s<img class="hu-img-placeholder" src="%2$s" alt="%3$s" data-hu-post-id="%4$s" />',
       false !== $filter ? $filter : '',
       $_img_src,
-      get_the_title(),
+      the_title_attribute( 'echo=0' ),
       $_unique_id
     );
   }
@@ -1023,6 +1025,8 @@ add_filter( 'hu_front_js_localized_params', 'hu_add_fittext_js_front_params' );
 //hook : wp_enqueue_scripts
 if ( ! function_exists( 'hu_scripts' ) ) {
   function hu_scripts() {
+    if ( hu_is_full_nimble_tmpl() )
+      return;
     if ( hu_is_checked( 'js-mobile-detect') ) {
       wp_enqueue_script(
         'mobile-detect',
@@ -1134,6 +1138,8 @@ if ( ! function_exists( 'hu_scripts' ) ) {
                     'desktop' => hu_normalize_stick_menu_opt( hu_get_option( 'header-desktop-sticky' ) ),
                     'mobile'  => hu_normalize_stick_menu_opt( hu_get_option( 'header-mobile-sticky' ) )
                 ),
+                'mobileSubmenuExpandOnClick' => esc_attr( hu_get_option( 'mobile-submenu-click' ) ),
+                'submenuTogglerIcon'   => '<i class="fas fa-angle-down"></i>',
                 'isDevMode' => ( defined('WP_DEBUG') && true === WP_DEBUG ) || ( defined('CZR_DEV') && true === CZR_DEV ),
                 //AJAX
                 'ajaxUrl'        => add_query_arg(
@@ -1148,7 +1154,11 @@ if ( ! function_exists( 'hu_scripts' ) ) {
                       'on' => is_object( $started_on ) ? (array)$started_on : $started_on
                 ),
                 'isWelcomeNoteOn' => $is_welcome_note_on,
-                'welcomeContent'  => $welcome_note_content
+                'welcomeContent'  => $welcome_note_content,
+                'i18n' => array(
+                  'collapsibleExpand'   => __( 'Expand', 'hueman' ),
+                  'collapsibleCollapse' => __( 'Collapse', 'hueman' )
+                ),
             )
         )//end of filter
        );//wp_localize_script()
@@ -1193,6 +1203,8 @@ function hu_normalize_stick_menu_opt( $opt_val = 'stick_up' ) {
 /* ------------------------------------ */
 if ( ! function_exists( 'hu_styles' ) ) {
   function hu_styles() {
+    if ( hu_is_full_nimble_tmpl() )
+      return;
     //Registered only if child theme => will be loaded as a dependency when enqueuing wp child style.css
     if ( is_child_theme() ) {
         wp_register_style(

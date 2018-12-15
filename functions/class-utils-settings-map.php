@@ -460,7 +460,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'section'   => 'mobiles_sec',
                 'type'      => 'checkbox',
                 'notice'    => __( "This option is good if you want to display a perfect font-size for your headings on any mobile devices. Note : it might override the css rules previously set in your custom stylesheet." , 'hueman' )
-          )
+          ),
       );
     }
 
@@ -800,6 +800,17 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'ubq_section'   => array(
                     'section' => 'menu_locations',
                     'priority' => '110'
+                )
+          ),
+          'mobile-submenu-click' => array(
+                'default'   => hu_user_started_before_version( '3.4.3', '1.1.4' ) ? false : true,
+                'control'   => 'HU_controls',
+                'label'     => sprintf( '%1$s : %2$s', __('Mobile devices', 'hueman' ) , __( 'Expand submenus on click', 'hueman') ),
+                'section'   => 'header_menus_sec',
+                'type'      => 'checkbox',
+                'ubq_section' => array(
+                      'section' => 'footer_design_sec',
+                      'priority' => '18'
                 )
           ),
           'mobile-search' => array(
@@ -1267,6 +1278,16 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'notice'    => __('Display boxes at the top of the sidebars' , 'hueman'),
                 'priority'  => 1
           ),
+          'sidebar-background' => array(
+                'default'   => '#f0f0f0',
+                'control'   => 'WP_Customize_Color_Control',
+                'label'     => __('Sidebars background color', 'hueman'),
+                'section'   => 'sidebars_design_sec',
+                'type'      =>  'color' ,
+                'sanitize_callback'    => 'maybe_hash_hex_color',
+                'sanitize_js_callback' => 'maybe_hash_hex_color',
+                'priority'  => 2
+          ),
           'desktop-sticky-sb' => array(
                 'default'   => hu_user_started_before_version( '3.3.9', '1.0.3' ) ? 1 : 0,
                 'control'   => 'HU_controls',
@@ -1342,6 +1363,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'label'     => __("Use a default page menu if no menu has been assigned.", 'hueman'),
                 'section'   => 'footer_design_sec',
                 'type'      => 'checkbox',
+                'priority'  => 15,
                 'notice'    => $nav_section_desc
           ),
           'footer-widgets' => array(
@@ -1351,6 +1373,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'section'   => 'footer_design_sec',
                 'type'      => 'czr_layouts',
                 'choices'   => $this -> hu_get_footer_layout_choices(),
+                'priority'  => 20,
                 'notice'    => __('Recommended number of columns : 3' , 'hueman')
           ),
           'footer-logo'  => array(
@@ -1366,6 +1389,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 //to keep the selected cropped size
                 'dst_width'  => false,
                 'dst_height'  => false,
+                'priority'  => 25,
                 'notice'    => __('Upload your custom logo image. Supported formats : .jpg, .png, .gif, svg, svgz' , 'hueman')
           ),
           'color-footer' => array(
@@ -1376,6 +1400,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'type'        =>  'color' ,
                 'sanitize_callback'    => 'maybe_hash_hex_color',
                 'sanitize_js_callback' => 'maybe_hash_hex_color',
+                'priority'  => 30,
                 'transport'   => 'postMessage'
           ),
           'copyright' => array(
@@ -1385,6 +1410,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'type'      => 'text',
                 'section'   => 'footer_design_sec',
                 'sanitize_callback' => array( $this, 'hu_sanitize_html_text_input' ),
+                'priority'  => 35,
                 'notice'    => __( 'Note : Html is allowed.', 'hueman')
           ),
           'credit' => array(
@@ -1393,6 +1419,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                 'label'     => __( 'Footer credit text', 'hueman'),
                 'type'      => 'checkbox',
                 'section'   => 'footer_design_sec',
+                'priority'  => 40,
                 'transport' => 'postMessage'
           ),
       );
@@ -1676,7 +1703,7 @@ if ( ! class_exists( 'HU_utils_settings_map' ) ) :
                   'go_pro_sec'   => array(
                       'title'         => esc_html__( 'Upgrade to Hueman Pro', 'hueman' ),
                       'pro_text'      => esc_html__( 'Go Pro', 'hueman' ),
-                      'pro_url'       => esc_url( 'presscustomizr.com/hueman-pro?ref=c' ),
+                      'pro_url'       => esc_url('presscustomizr.com/hueman-pro') . '?ref=c&utm_source=usersite&utm_medium=link&utm_campaign=hueman-customizer-btn',
                       'priority'      => 0,
                       'section_class' => 'HU_Customize_Section_Pro',
                       'active_callback' => array( $this, 'hu_pro_section_active_cb' )
