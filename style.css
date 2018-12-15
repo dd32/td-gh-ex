@@ -2,7 +2,7 @@
 Theme Name: 	Graphene
 Theme URI: 		https://www.graphene-theme.com/graphene-theme/
 Description: 	We believe that every theme should facilitate creative writing, not hinder it. We also believe that each site should have the opportunity to be unique. Since the beginning, we have listened to countless suggestions and requests for features that really matter. Here's a theme that's user-friendly, feature-packed, and endlessly customisable, for both beginners and advanced creators. Feel at home with more than 40 languages and backed with active community support, where questions, ideas and suggestions are always welcomed. Now Gutenberg compatible.
-Version: 		2.5.2
+Version: 		2.5.3
 Author: 		Graphene Themes Solutions
 Author URI: 	https://www.graphene-theme.com/
 Tags: 			one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-colors, custom-header, custom-background, custom-menu, editor-style, theme-options, threaded-comments, sticky-post, translation-ready, rtl-language-support, post-formats, featured-image-header, featured-images, full-width-template, microformats
@@ -385,6 +385,10 @@ button[type="submit"],
 }
 .navbar .navbar-collapse {
     padding: 0;
+}
+.boxed-wrapper .navbar-fixed-top {
+	left: auto;
+	right: auto;
 }
 .navbar .nav > li {
     margin: 0;
@@ -1736,7 +1740,7 @@ legend {
 .widget-area .sidebar-wrap {
     background: #f9f9f9;
     border-top: 6px solid #dbdbdb;
-    padding: 15px;
+    padding: 25px 15px 15px;
     margin-bottom: 15px;
 }
 .widget-area .widget_media_video {
@@ -1811,9 +1815,9 @@ legend {
     display: block;
     font-size: 12px;
     text-transform: uppercase;
-    color: #8e8991;
+    opacity: 0.7;
 }
-#sidebar_bottom .sidebar-wrap p {
+#sidebar_bottom p {
     color: #bcb4c1
 }
 #sidebar-link-block {
@@ -1891,7 +1895,7 @@ legend {
 }
 .widget-area ul li span.meta-rss {
 	display: inline-block;
-	width: 0px;
+	width: 0;
 	height: 16px;
 }
 
@@ -2550,12 +2554,14 @@ form.product_form fieldset,
     text-transform: lowercase;
     -webkit-border-radius: 5px;
     border-radius: 5px;
-    -webkit-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
-    -moz-box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
-    box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.2);
+    -webkit-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.2);
 }
 .comment-link a,
-.comment-link a:visited {
+.comment-link a:visited,
+.single-comment-link a,
+.single-comment-link a:visited {
     font-size: 14px;
 }
 .wp-caption {
@@ -2927,6 +2933,9 @@ button[type="submit"] {
 .posts-list .entry-footer li {
     padding: 0;
     margin: 0;
+}
+.posts-list .post-title {
+	margin-bottom: 10px;
 }
 .posts-list .post-meta > li {
     padding: 0 5px;

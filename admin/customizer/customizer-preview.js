@@ -245,10 +245,10 @@ jQuery(document).ready(function($) {
 
 	/* Buttons and Labels */
 	wp.customize('graphene_settings[button_bg]', function(value){ value.bind(function(to){
-		$('#graphene-preview-css').append('.btn, .Button, .colour-preview .button, input[type="submit"], button[type="submit"], #commentform #submit, .wpsc_buy_button, #back-to-top {background: ' + to + ';}');
+		$('#graphene-preview-css').append('.btn, .btn:focus, .btn:hover, .Button, .colour-preview .button, input[type="submit"], button[type="submit"], #commentform #submit, .wpsc_buy_button, #back-to-top {background: ' + to + ';}');
 	});	});
 	wp.customize('graphene_settings[button_label]', function(value){ value.bind(function(to){
-		$('#graphene-preview-css').append('.btn, .Button, .colour-preview .button, input[type="submit"], button[type="submit"], #commentform #submit, .wpsc_buy_button, #back-to-top {color: ' + to + ';}');
+		$('#graphene-preview-css').append('.btn, .btn:focus, .btn:hover, .Button, .colour-preview .button, input[type="submit"], button[type="submit"], #commentform #submit, .wpsc_buy_button, #back-to-top {color: ' + to + ';}');
 	});	});
 	wp.customize('graphene_settings[label_bg]', function(value){ value.bind(function(to){
 		$('#graphene-preview-css').append('.label-primary, .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover, .list-group-item.parent, .list-group-item.parent:focus, .list-group-item.parent:hover {background: ' + to + '; border-color: ' + to + ';}');

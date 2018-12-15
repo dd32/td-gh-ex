@@ -4,6 +4,12 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.5.3
+	* Added: Link to individual comments
+	* Fixed: Navbar sizing and margin when using fixed navbar with certain container styles
+	* Fixed: PHP notice related to social profiles feature
+	* Fixed: PHP warnings related to slider and AMP share
+
 Version 2.5.2
 	* Updated: Removed all instances of hentry since we are no longer using hatom markup, to avoid Google Rich Snippet error
 	* Fixed: Error in Rich Snippet markup if the same images are used

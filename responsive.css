@@ -404,6 +404,10 @@
 	.footer-widget-col-5 .sidebar-wrap {
 	    width: 20% !important;
 	}
+	.navbar-fixed-top {
+		left: 15px;
+		right: 15px;
+	}
 	.admin-bar .navbar-fixed-top {
 		top: 32px;
 	}

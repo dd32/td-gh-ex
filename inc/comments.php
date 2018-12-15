@@ -261,6 +261,12 @@ function graphene_comment_meta( $comment, $args = array(), $depth = 1 ){
         'class' => 'comment-attr',
         'meta'  => sprintf( __( '%1$s on %2$s <span class="time">at %3$s</span>', 'graphene' ), '<span class="comment-author">' . graphene_comment_author_link( $comment->user_id ) . '</span>', '<span class="comment-date">' . get_comment_date(), get_comment_time() . '</span>' )
     );
+
+    /* Link to comment */
+    $meta['comment-link'] = array(
+        'class' => 'single-comment-link',
+        'meta'  => '<a href="' . get_comment_link( $comment, $args ) . '">#</a>'
+    );
     
     /* Comment by post author */
     if ( $comment->user_id === $post->post_author ) {

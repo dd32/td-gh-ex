@@ -290,7 +290,7 @@ function graphene_get_custom_colours( $hook_suffix = '', $force_all = false ){
 		
 		// Buttons and Labels
 		$colours = array(
-			'button_bg|button_label'=> '.btn, .Button, .colour-preview .button, input[type="submit"], button[type="submit"], #commentform #submit, .wpsc_buy_button, #back-to-top, .wp-block-button .wp-block-button__link:not(.has-background) {background: %1$s; color: %2$s}',
+			'button_bg|button_label'=> '.btn, .btn:focus, .btn:hover, .Button, .colour-preview .button, input[type="submit"], button[type="submit"], #commentform #submit, .wpsc_buy_button, #back-to-top, .wp-block-button .wp-block-button__link:not(.has-background) {background: %1$s; color: %2$s}',
 			'label_bg|label_text'	=> '.label-primary, .pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover, .list-group-item.parent, .list-group-item.parent:focus, .list-group-item.parent:hover {background: %1$s; border-color: %1$s; color: %2$s}'
 		);
 		$style .= graphene_build_style( $colours );

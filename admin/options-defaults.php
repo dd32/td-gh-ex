@@ -30,7 +30,7 @@ $graphene_defaults = apply_filters( 'graphene_defaults', array(
 	/* Slider options */
 	'slider_type' 				=> 'latest_posts', 	// latest_posts | random | posts_pages | categories
 	'slider_specific_posts' 	=> '',
-    'slider_specific_categories'=> '',
+    'slider_specific_categories'=> array(),
 	'slider_exclude_categories'	=> false,
 	'slider_random_category_posts' => false,
 	'slider_exclude_posts'		=> '',
