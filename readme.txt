@@ -58,6 +58,17 @@ Source: http://flexslider.woothemes.com
 
 == Changelog ==
 
+Version 1.19 (2018-12-15)
+-------------------------
+- Implemented Images Loaded, to prevent the Masonry layout from getting messed up
+- Turned the navigation toggle into a button
+- Removed the removal of outline on link focus
+- Structure updates:
+	- Unified index.php, archive.php and search.php into index.php
+	- Unified all post formats into content.php
+	- Unified single.php and page.php into singular.php
+	- Removed custom searchform.php
+
 Version 1.18 (2018-12-07)
 -------------------------
 - Fixed Gutenberg style changes required due to changes in the block editor CSS and classes
