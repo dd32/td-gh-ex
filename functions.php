@@ -19,6 +19,13 @@ function arba_setup() {
 	 * @see https://codex.wordpress.org/Title_Tag
 	 *
 	 */
+	add_theme_support( 'custom-logo' );
+
+	/*
+	 * Add title tag.
+	 * @see https://codex.wordpress.org/Title_Tag
+	 *
+	 */
 	add_theme_support( 'title-tag' );
 
 	/*
@@ -42,9 +49,12 @@ function arba_setup() {
 	add_theme_support( 'post-thumbnails' );
 	add_image_size( 'arba-archive-post', 340, 240, true );
 	add_image_size( 'arba-single-post', 820, 680, true );
-	add_image_size( 'home-sticky-post', 1100, 680, true );
 
-	
+	/*
+	 * Add menu supports.
+	 * @see http://codex.wordpress.org/Function_Reference/register_nav_menus
+	 */
+
 	register_nav_menus( array(
 		'arba_primary_nav' => esc_html__( 'Primary Navigation', 'arba' ),
 	) );
@@ -195,7 +205,7 @@ add_action( 'after_setup_theme', 'arba_editor_styles' );
 function arba_widgets_init() {
 	if(function_exists('register_sidebar')) {
 		register_sidebar(array(
-			'name' 			=> 'Sidebar Widgets',
+			'name' 			=> __( 'Sidebar Widgets', 'arba' ),
 			'id'            => 'main-sidebar',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' 	=> '</div>',
@@ -205,7 +215,7 @@ function arba_widgets_init() {
 	}
 	if(function_exists('register_sidebar')) {
 		register_sidebar(array(
-			'name' 			=> 'Footer Widget 1',
+			'name' 			=> __( 'Footer Widget 1', 'arba' ),
 			'id'            => 'footer-1',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' 	=> '</div>',
@@ -215,7 +225,7 @@ function arba_widgets_init() {
 	}
 	if(function_exists('register_sidebar')) {
 		register_sidebar(array(
-			'name' 			=> 'Footer Widget 2',
+			'name' 			=> __( 'Footer Widget 2', 'arba' ),
 			'id'            => 'footer-2',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' 	=> '</div>',
@@ -225,7 +235,7 @@ function arba_widgets_init() {
 	}
 	if(function_exists('register_sidebar')) {
 		register_sidebar(array(
-			'name' 			=> 'Footer Widget 3',
+			'name' 			=> __( 'Footer Widget 3', 'arba' ),
 			'id'            => 'footer-3',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' 	=> '</div>',
@@ -235,7 +245,7 @@ function arba_widgets_init() {
 	}
 	if(function_exists('register_sidebar')) {
 		register_sidebar(array(
-			'name' 			=> 'Main Banner',
+			'name' 			=> __( 'Main Banner', 'arba' ),
 			'id'            => 'main-ad',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' 	=> '</div>',
@@ -254,7 +264,10 @@ add_action( 'widgets_init', 'arba_widgets_init' );
  * @return int (Maybe) modified excerpt length.
  */
 function arba_custom_excerpt_length( $length ) {
-    return 30;
+	if ( is_admin() ) {
+	        return $length;
+	    }
+	return 30;
 }
 add_filter( 'excerpt_length', 'arba_custom_excerpt_length', 999 );
 
@@ -265,7 +278,10 @@ add_filter( 'excerpt_length', 'arba_custom_excerpt_length', 999 );
  * @return string (Maybe) modified "read more" excerpt string.
  */
 function arba_excerpt_more( $more ) {
-    return '...';
+	if ( is_admin() ) {
+	        return $more;
+	    }
+	return '...';
 }
 add_filter( 'excerpt_more', 'arba_excerpt_more' );
 
@@ -274,8 +290,8 @@ add_filter( 'excerpt_more', 'arba_excerpt_more' );
  * Filter  a ‘sizes’ attribute value for an image.
  *
  */
-add_filter('wp_calculate_image_sizes', 'lc_content_archive_thumbnail_image_sizes', 10, 5);
-function lc_content_archive_thumbnail_image_sizes($sizes, $size, $image_src, $image_meta, $attachment_id)
+add_filter('wp_calculate_image_sizes', 'arba_content_archive_thumbnail_image_sizes', 10, 5);
+function arba_content_archive_thumbnail_image_sizes($sizes, $size, $image_src, $image_meta, $attachment_id)
 {
     if (!is_single()) {
         $sizes = '(max-width: 768px) 680px, 560px';

@@ -7,7 +7,7 @@
  * @since arba 1.0.0
  */
 ?>
-<div class="home-sticky-post"> 
+<div class="home-sticky-post">
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 		<?php if ( has_post_thumbnail() ): ?>
 			<div class="featured-image">
@@ -16,7 +16,7 @@
 				</a>
 			</div><!-- .featured-image -->
 		<?php endif; ?>
-		<div class="sticky-content">
+		<div class="sticky-content <?php if ( !has_post_thumbnail()) echo 'no-featured-image'; ?>">
 			<header class="entry-header">
 				<?php the_title( sprintf( '<h2 class="entry-title" itemprop="name"><a href="%s" rel="bookmark" itemprop="url">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>
 			</header><!-- .entry-header -->

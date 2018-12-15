@@ -1,10 +1,9 @@
-    /*
+/*
 Theme Name: Arba
-Theme URI: https://demo.xstreamthemes.com/arba/
 Author: xstreamthemes
 Author URI: https://www.xstreamthemes.com
 Description: Arba is a free blog wordpress theme, minimal designed and simple layout. Ideal for design, architecture, lifestyle, tech, marketing, fashion, entertainment, music, health, sport, food, science sites. Fully responsive, gorgeous typography for a much better user experience.
-Version: 1.0.2
+Version: 1.0.3
 Tags: two-columns, blog, photography, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, threaded-comments, translation-ready
 License: GNU General Public License version 2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -1658,6 +1657,21 @@ h3.block-title {
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
     transform: translateY(-50%);
+}
+
+.home-sticky-post .sticky-content.no-featured-image {
+    width: 100%;
+    max-width: 620px;
+    display: block;
+    background: #fff;
+    position: relative;
+    padding: 40px;
+    right: 0px;
+    top: 0%;
+    -webkit-transform:none;
+    -ms-transform:none;
+    transform:none;
+    margin:0 auto;
 }
 
 .home-sticky-post h2.entry-title {

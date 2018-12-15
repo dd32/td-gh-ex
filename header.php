@@ -16,7 +16,7 @@
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 	<?php endif; ?>
 	<?php wp_head(); ?>
-</head> 
+</head>
 <body <?php body_class(); ?>>
 	<div id="container" class="container">
 		<header id="header" class="header">
@@ -25,32 +25,35 @@
 					<div class="site-wrap">
 						<div class="site-row">
 							<div class="logo">
-								<?php if ( get_option( 'arba_image_logo_enable' ) != '' ) { ?>
-									<?php if ( is_front_page() && is_home() ) { ?>
-										<h1>
+								<?php if ( has_custom_logo() ) {
+									$custom_logo_id = get_theme_mod( 'custom_logo' );
+									$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+									?>
+								    <?php if ( is_front_page() && is_home() ) { ?>
+								        <h1>
+								            <a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+								                <img class="desktop" src="<?php echo esc_url( $logo[0] ); ?>" alt="<?php esc_url(esc_attr( bloginfo('name') )); ?>">
+								            </a>
+								        </h1>
+								    <?php } else {?>
+								        <p>
 											<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-												<?php if ( get_option( 'arba_image_logo_upload' ) != '' ) : ?><img class="desktop" src="<?php echo esc_url( get_option( 'arba_image_logo_upload' ) ); ?>" alt="<?php esc_url(esc_attr( bloginfo('name') )); ?>"><?php endif; ?>
-											</a>
-										</h1>
-									<?php } else {?>
-										<p>
-											<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-												<?php if ( get_option( 'arba_image_logo_upload' ) != '' ) : ?><img class="desktop" src="<?php echo esc_url( get_option( 'arba_image_logo_upload' ) ); ?>" alt="<?php esc_url(esc_attr( bloginfo('name') )); ?>"><?php endif; ?>
-											</a>
-										</p>
+								                <img class="desktop" src="<?php echo esc_url( $logo[0] ); ?>" alt="<?php esc_url(esc_attr( bloginfo('name') )); ?>">
+								            </a>
+								        </p>
 								<?php }} else { ?>
-									<?php if ( is_front_page() && is_home() ) { ?>
-										<h1>
-										<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-											<?php bloginfo( 'name' ); ?>
-										</a>
-										</h1>
-									<?php } else {?>
-											<p>
-											<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-												<?php bloginfo( 'name' ); ?>
-											</a>
-											</p>
+								    <?php if ( is_front_page() && is_home() ) { ?>
+								        <h1>
+								        <a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+								            <?php bloginfo( 'name' ); ?>
+								        </a>
+								        </h1>
+								    <?php } else {?>
+								            <p>
+								            <a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
+								                <?php bloginfo( 'name' ); ?>
+								            </a>
+								            </p>
 								<?php }} ?>
 							</div><!-- .logo -->
 							<div class="header-icons">

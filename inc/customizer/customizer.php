@@ -4,12 +4,6 @@
  */
 
 function arba_customizer( $wp_customize ) {
-
-
-// Remove sections.
-$wp_customize->remove_section( 'colors');
-$wp_customize->remove_section( 'background_image');
-
 /*-----------------------------------------------------------------------------------*/
 /*	Site Title & Tagline
 /*-----------------------------------------------------------------------------------*/
@@ -24,65 +18,6 @@ $wp_customize->add_section( 'title_tagline',
 	)
 );
 
-		/* Turn ON/OFF Logo Image */
-		$wp_customize->add_setting( 'arba_image_logo_enable',
-			array(
-				'default' => false,
-				'type' => 'option',
-				'capability' => 'edit_theme_options',
-				'sanitize_callback' => 'arba_sanitize_text'
-			)
-		);
-
-			$wp_customize->add_control( 'arba_image_logo_enable',
-	    		array(
-	        		'label' => esc_html__('Enable Image Logo', 'arba' ),
-	        		'section' => 'title_tagline',
-	        		'settings' => 'arba_image_logo_enable',
-	        		'type' => 'checkbox'
-	    		)
-			);
-
-		/* Logo Image Upload */
-		$wp_customize->add_setting( 'arba_image_logo_upload',
-			array(
-				'default' => '',
-				'type' => 'option',
-				'capability' => 'edit_theme_options',
-				'sanitize_callback' => 'esc_url_raw'
-			)
-		);
-
-			$wp_customize->add_control(
-				new WP_Customize_Image_Control( $wp_customize, 'arba_image_logo_upload',
-					array(
-	            		'label' => esc_html__('Upload Logo Image', 'arba' ),
-	            		'description' => '',
-	            		'section' => 'title_tagline',
-	            		'settings' => 'arba_image_logo_upload'
-	    			)
-				)
-			);
-
-		/* Logo Image Height */
-		$wp_customize->add_setting( 'arba_image_logo_height',
-			array(
-				'default' => '',
-				'type' => 'option',
-				'capability' => 'edit_theme_options',
-				'sanitize_callback' => 'sanitize_text_field'
-			)
-		);
-
-			$wp_customize->add_control( 'arba_image_logo_height',
-	    		array(
-	        		'label' => esc_html__('Logo Height Size', 'arba' ),
-	            	'description' => esc_html__('Enter your logo height. Min height: 40px. Max height: 80px', 'arba' ),
-	            	'section' => 'title_tagline',
-	            	'settings' => 'arba_image_logo_height',
-	        		'type' => 'text'
-	    		)
-			);
 
 		/* Logo for SEO */
 		$wp_customize->add_setting( 'arba_image_logo_seo_upload',
@@ -120,7 +55,7 @@ $wp_customize->add_section( 'title_tagline',
 	        		'label' => esc_html__('Facebook Link', 'arba' ),
 	        		'section' => 'title_tagline',
 	        		'settings' => 'arba_facebook_link',
-	        		'type' => 'text'
+	        		'type' => 'url'
 	    		)
 			);
 
@@ -139,7 +74,7 @@ $wp_customize->add_section( 'title_tagline',
 	        		'label' => esc_html__('Twitter Account', 'arba' ),
 	        		'section' => 'title_tagline',
 	        		'settings' => 'arba_twitter_account',
-	        		'type' => 'text'
+	        		'type' => 'url'
 	    		)
 			);
 
@@ -158,7 +93,7 @@ $wp_customize->add_section( 'title_tagline',
 	        		'label' => esc_html__('Google Plus Link', 'arba' ),
 	        		'section' => 'title_tagline',
 	        		'settings' => 'arba_google_plus_link',
-	        		'type' => 'text'
+	        		'type' => 'url'
 	    		)
 			);
 
@@ -177,7 +112,7 @@ $wp_customize->add_section( 'title_tagline',
 	        		'label' => esc_html__('Linkedin Link', 'arba' ),
 	        		'section' => 'title_tagline',
 	        		'settings' => 'arba_linkedin_link',
-	        		'type' => 'text'
+	        		'type' => 'url'
 	    		)
 			);
 
@@ -196,7 +131,7 @@ $wp_customize->add_section( 'title_tagline',
 	        		'label' => esc_html__('Instagram Link', 'arba' ),
 	        		'section' => 'title_tagline',
 	        		'settings' => 'arba_instagram_link',
-	        		'type' => 'text'
+	        		'type' => 'url'
 	    		)
 			);
 
@@ -215,7 +150,7 @@ $wp_customize->add_section( 'title_tagline',
 	        		'label' => esc_html__('Pinterest Link', 'arba' ),
 	        		'section' => 'title_tagline',
 	        		'settings' => 'arba_pinterest_link',
-	        		'type' => 'text'
+	        		'type' => 'url'
 	    		)
 			);
 
@@ -234,7 +169,7 @@ $wp_customize->add_section( 'title_tagline',
 	        		'label' => esc_html__('Youtube Link', 'arba' ),
 	        		'section' => 'title_tagline',
 	        		'settings' => 'arba_youtube_link',
-	        		'type' => 'text'
+	        		'type' => 'url'
 	    		)
 			);
 
@@ -253,7 +188,7 @@ $wp_customize->add_section( 'title_tagline',
 	        		'label' => esc_html__('RSS Feed Link', 'arba' ),
 	        		'section' => 'title_tagline',
 	        		'settings' => 'arba_rss_link',
-	        		'type' => 'text'
+	        		'type' => 'url'
 	    		)
 			);
 /*-----------------------------------------------------------------------------------*/
@@ -274,7 +209,7 @@ $wp_customize->add_panel( 'arba_colors',
 	--------------------------------------------- */
 	$wp_customize->add_section('arba_colors',
 		array(
-			'title' => 'Colors',
+			'title' => esc_html__('Colors', 'arba' ),
 			'priority' => 1
 		)
 	);
@@ -432,11 +367,6 @@ add_action('customize_register', 'arba_customizer');
 // Text, color, checkbox, select.
 function arba_sanitize_text( $str ) {
 	return sanitize_text_field( $str );
-}
-
-// Textarea.
-function arba_sanitize_textarea( $textarea ) {
-	return $textarea;
 }
 
 /**
