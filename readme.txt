@@ -6,6 +6,7 @@ translation-ready, sticky-post, theme-options, footer-widgets, full-width-templa
 front-page-post-form
 Requires at least: 4.8.0
 Tested up to: 4.9.6
+Requires PHP: 5.2.4
 Stable tag: 1.1.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -18,6 +19,7 @@ fCorpo a perfect choice for your Corporate, Business, Company, Portfolio website
 Fully Responsive, Responsive Slider, WooCommerce plugin support, Multi-Level Drop-Down Custom Menu,
 Admin Panel Options, W3C Markup Validated, Full-Width Page Template, Search Engine Optimized, Multiple
 Browsers, Page navigation, Threaded Comments, FontAwesome Icons, Custom Post Formats, and Translation Ready.
+DEMO: https://tishonator.com/demo/fcorpo
 
 == Frequently Asked Questions ==
 
@@ -43,6 +45,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.1.9 (2018-12-16) =
+* add mobile menu sub-menu items collapse/expand
+* update screenshot.png
 
 = 1.1.8 (2018-11-20) =
 * update Resources' images
@@ -129,4 +135,6 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * images/slider/2.jpg, © 2015 @StartupStockPhotos https://pixabay.com/en/conference-table-meeting-startup-593355/, CC0
 * images/slider/3.jpg, © 2014 @Usinglight https://pixabay.com/en/vienna-sunset-skyline-skyscraper-581427/, CC0
 * screenshot.png (slider image), © 2015 @StartupStockPhotos https://pixabay.com/en/entrepreneur-startup-start-up-man-593352/, CC0
-* screenshot.png (products), WooCommerce, Copyright (C) Automattic, GPLv3
+* screenshot.png (col #1), © 2018 @nastya_gepp https://pixabay.com/en/business-lady-woman-girl-computer-3560934/, CC0
+* screenshot.png (col #2), © 2016 @Free-Photos https://pixabay.com/en/man-male-adult-person-caucasian-1209494/, CC0
+* screenshot.png (col #3), © 2015 @Free-Photos https://pixabay.com/en/person-woman-femal-business-woman-801829/, CC0

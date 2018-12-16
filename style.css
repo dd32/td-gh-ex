@@ -1,10 +1,10 @@
 /*!
 Theme Name: fCorpo
-Description: fCorpo a perfect choice for your Corporate, Business, Company, Portfolio website or blog. The theme is Fully Responsive, Responsive Slider, WooCommerce plugin support, Multi-Level Drop-Down Custom Menu, Admin Panel Options, W3C Markup Validated, Full-Width Page Template, Search Engine Optimized, Multiple Browsers, Page navigation, Threaded Comments, FontAwesome Icons, Custom Post Formats, and Translation Ready.
+Description: fCorpo a perfect choice for your Corporate, Business, Company, Portfolio website or blog. The theme is Fully Responsive, Responsive Slider, WooCommerce plugin support, Multi-Level Drop-Down Custom Menu, Admin Panel Options, W3C Markup Validated, Full-Width Page Template, Search Engine Optimized, Multiple Browsers, Page navigation, Threaded Comments, FontAwesome Icons, Custom Post Formats, and Translation Ready. DEMO: https://tishonator.com/demo/fcorpo
 Theme URI: https://tishonator.com/product/fcorpo
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 1.1.8
+Version: 1.1.9
 Text Domain: fcorpo
 Tags: blog, news, e-commerce, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, post-formats, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
@@ -1565,6 +1565,16 @@ img.wp-post-image {
 	float:right;
 	clear:both;
 }
+
+#main-content-wrapper ul.products li.product .woocommerce-loop-category__title,
+#main-content-wrapper ul.products li.product .woocommerce-loop-product__title,
+#main-content-wrapper ul.products li.product h3 {
+	font-size:16px;
+}
+
+.wc-forward {
+    margin-right: 10px !important;
+}
 .woocommerce-mini-cart,
 .cart_list,
 .product_list_widget {
@@ -2246,6 +2256,36 @@ li.product:before {
 
 /* Medium Resolution */
 @media screen and (max-width: 799px) {
+
+	#navmain ul ul {
+		display:none;
+	}
+
+	#navmain .sub-menu-item-toggle {
+		display:inline-block;
+		margin:10px 10px 0 0;
+		float:right;
+	}
+
+	#navmain .sub-menu-item-toggle:before {
+		font:16px 'FontAwesome';
+		content:"\f067";
+		width:20px;
+		height:20px;
+		padding:2px;
+	}
+
+	#navmain .sub-menu-item-toggle-expanded:before {
+		content:"\f068";
+	}
+
+	#navmain ul.sub-menu > li > a {
+		padding-left:25px;
+	}
+
+	#navmain ul.sub-menu ul.sub-menu > li > a {
+		padding-left:50px;
+	}
 
 	.cart-contents-icon {
 		float: right;
