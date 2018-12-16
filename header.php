@@ -15,14 +15,13 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="profile" href="http://gmpg.org/xfn/11" />
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 	<?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?> itemscope="itemscope" itemtype="http://schema.org/WebPage">
+<body <?php body_class(); ?> itemscope="itemscope" itemtype="https://schema.org/WebPage">
 <div id="page" class="site">
 <a href="#wrapper" class="skip-link screen-reader-text"><?php esc_html_e( 'Skip to content', 'cherish' );?></a>
-<nav id="site-navigation" class="main-navigation" role="navigation" itemscope="itemscope" itemtype="http://schema.org/SiteNavigationElement">
+<nav id="site-navigation" class="main-navigation" role="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
 	<button id="mobile-menu-toggle" aria-controls="top-bar-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'cherish' ); ?></button>
 	<?php wp_nav_menu( array( 'theme_location' => 'header', 'menu_id' => 'top-bar-menu', 'depth' => 3, 'container' => false ) ); ?>
 </nav>

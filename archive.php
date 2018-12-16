@@ -6,6 +6,7 @@
  */
 
 get_header(); ?>
+<div class="container">
 	<header class="entry-header">
 		<h1 class="archive-title"><?php the_archive_title(); ?></h1>
 	</header><!-- .entry-header -->
@@ -22,5 +23,7 @@ get_header(); ?>
 	endwhile;
 
 	the_posts_navigation( array( 'prev_text' => __( '&larr; Previous page','cherish' ), 'next_text' => __( 'Next page &rarr;', 'cherish' ) ) );
+	
+	echo '</div>';
 
 get_footer();

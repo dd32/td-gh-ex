@@ -1,4 +1,5 @@
 <?php get_header(); ?>
+<div class="container">
 	<?php
 	if ( have_posts() && strlen( trim( get_search_query() ) ) != 0 ) {
 	?>
@@ -27,5 +28,6 @@
 	<?php
 	}
 	?>
+</div>
 <?php
 get_footer();

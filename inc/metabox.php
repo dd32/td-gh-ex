@@ -1,15 +1,16 @@
 <?php
 /**
- * Adds a box to the main column on the Post edit screens.
+ * Adds color options to the Post and Page edit screens.
  */
 function cherish_add_meta_box() {
-	$screens = array( 'post' );
+	$screens = array( 'post', 'page' );
 	foreach ( $screens as $screen ) {
 		add_meta_box(
 			'cherish_sectionid',
-			__( 'Choose your background color', 'cherish' ),
+			__( 'Custom colors', 'cherish' ),
 			'cherish_meta_box_callback',
-			$screen
+			$screen,
+			'side'
 		);
 	}
 }
@@ -30,10 +31,16 @@ function cherish_meta_box_callback( $post ) {
 	 * from the database and use the value for the form.
 	 */
 	$cherish_color_meta_value = get_post_meta( $post->ID, 'meta-color', true );
+	$cherish_text_color_meta_value = get_post_meta( $post->ID, 'cherish-text-color', true );
+
 	?>
 	<p>
 	<label for="meta-color"><?php _e( 'Background color:', 'cherish' )?></label>&nbsp; 
-	<input name="meta-color" type="text" value="<?php echo esc_attr( $cherish_color_meta_value); ?>" class="meta-color" />
+	<input name="meta-color" type="text" value="<?php echo esc_attr( $cherish_color_meta_value ); ?>" class="meta-color" />
+	</p>
+	<p>
+	<label for="cherish-text-color"><?php _e( 'Title and link color:', 'cherish' )?></label>&nbsp; 
+	<input name="cherish-text-color" type="text" value="<?php echo esc_attr( $cherish_text_color_meta_value ); ?>" class="cherish-text-color" />
 	</p>
 <?php
 }
@@ -71,12 +78,22 @@ function cherish_save_meta_box_data( $post_id ) {
 
 	/* OK, its safe for us to save the data now. */
 	// Make sure that it is set.
-	if ( ! isset( $_POST['meta-color'] ) ) {
-		return;
+	if ( isset( $_POST['meta-color'] ) ) {
+		// Sanitize user input.
+		$cherish_data = sanitize_text_field( $_POST['meta-color'] );
+	
+		// Update the meta field in the database.
+		update_post_meta( $post_id, 'meta-color', $cherish_data );
 	}
-	// Sanitize user input.
-	$cherish_data = sanitize_text_field( $_POST['meta-color'] );
-	// Update the meta field in the database.
-	update_post_meta( $post_id, 'meta-color', $cherish_data );
+
+	if ( isset( $_POST['cherish-text-color'] ) ) {
+		// Sanitize user input.
+		$cherish_data_text_color = sanitize_text_field( $_POST['cherish-text-color'] );
+		// Update the meta field in the database.
+		update_post_meta( $post_id, 'cherish-text-color', $cherish_data_text_color );
+	}
+	
 }
 add_action( 'save_post', 'cherish_save_meta_box_data' );
+
+

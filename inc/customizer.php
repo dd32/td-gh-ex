@@ -7,7 +7,7 @@
 
 function cherish_customizer( $wp_customize ) {
 	$wp_customize->add_section('cherish_section_six',      array(
-		'title' => __( 'Text shadow', 'cherish' ),
+		'title' => __( 'Fonts and text shadow', 'cherish' ),
 		'priority' => 90,
 		)
 	);
@@ -24,11 +24,29 @@ function cherish_customizer( $wp_customize ) {
 		)
 	);
 
+	/** Accent color */
+	$wp_customize->add_setting( 'cherish_accent_color', array(
+		'default' => '#3670A9',
+		'sanitize_callback' => 'sanitize_hex_color',
+	) );
+
+	$wp_customize->add_control(
+		new WP_Customize_Color_Control(
+			$wp_customize, 'cherish_accent_color',
+			array(
+				'label'	=> __( 'Accent color:', 'cherish' ),
+				'settings'  => 'cherish_accent_color',
+				'section' => 'colors',
+			)
+		)
+	);
+
 	/** Text shadow */
 	$wp_customize->add_setting( 'cherish_text_shadow_active',		array(
 			'sanitize_callback' => 'cherish_sanitize_checkbox',
 		)
 	);
+
 	$wp_customize->add_control('cherish_text_shadow_active',		array(
 		'type' => 'checkbox',
 		'label' => __( 'Check this box to add a text shadow to the site title. This can make your text easier to read when a background image is chosen.', 'cherish' ),
@@ -46,6 +64,34 @@ function cherish_customizer( $wp_customize ) {
 		'section' => 'cherish_section_six',
 		'settings'  => 'cherish_text_shadow',
 	) ) );
+
+	$wp_customize->add_setting(
+		'cherish_font',
+		array(
+			'default'           => 'Lily Script One',
+			'sanitize_callback' => 'cherish_sanitize_select',
+		)
+	);
+
+	$wp_customize->add_control(
+		new WP_Customize_Control(
+			$wp_customize,
+			'cherish_font',
+			array(
+				'label'    => __( 'Choose a font for the site title and post titles.', 'cherish' ),
+				'section'  => 'cherish_section_six',
+				'settings' => 'cherish_font',
+				'type'     => 'select',
+				'choices'  => array(
+					'Lily Script One'        => 'Lily Script One ' . __( '(Default)', 'cherish' ),
+					'Oleo Script Swash Caps' => 'Oleo Script Swash Caps',
+					'Pacifico'               => 'Pacifico',
+					'Lobster'                => 'Lobster',
+					'Norican'                => 'Norican',
+				),
+			)
+		)
+	);
 
 	$wp_customize->add_setting( 'cherish_hide_meta',		array(
 		'sanitize_callback' => 'cherish_sanitize_checkbox',
@@ -112,6 +158,7 @@ function cherish_customizer( $wp_customize ) {
 		'sanitize_callback' => 'esc_url_raw',
 		)
 	);
+
 	$wp_customize->add_control('cherish_action_link',		array(
 		'type' => 'text',
 		'label' => __( 'Add a link to the Call to action text:', 'cherish' ),
@@ -123,12 +170,14 @@ function cherish_customizer( $wp_customize ) {
 		'sanitize_callback' => 'cherish_sanitize_checkbox',
 		)
 	);
+
 	$wp_customize->add_control('cherish_hide_action',		array(
 		'type' => 'checkbox',
 		'label' => __( 'Check this box to hide the Call to Action area.', 'cherish' ),
 		'section' => 'cherish_section_three',
 		)
 	);
+
 	$wp_customize->selective_refresh->add_partial( 'cherish_hide_action', array(
 		'selector' => '#action',
 		'container_inclusive' => true,
@@ -140,6 +189,7 @@ function cherish_customizer( $wp_customize ) {
 		'sanitize_callback' => 'cherish_sanitize_checkbox',
 		)
 	);
+
 	$wp_customize->add_control('cherish_details',		array(
 		'type' => 'checkbox',
 		'label' => __( 'Check this box to hide the floral post divider image.', 'cherish' ),
@@ -148,7 +198,6 @@ function cherish_customizer( $wp_customize ) {
 	);
 }
 add_action( 'customize_register', 'cherish_customizer' );
-
 
 function cherish_sanitize_checkbox( $input ) {
 	if ( $input == 1 ) {
@@ -168,4 +217,29 @@ function cherish_sanitize_size( $input ) {
 	if ( is_numeric( $input ) ) {
 		return intval( $input );
 	}
+}
+
+/**
+ * Select sanitization callback, from https://github.com/WPTRT/code-examples/blob/master/customizer/sanitization-callbacks.php
+ *
+ * - Sanitization: select
+ * - Control: select, radio
+ *
+ * Sanitization callback for 'select' and 'radio' type controls. This callback sanitizes `$input`
+ * and then validates `$input` against the choices defined for the control.
+ * 
+ * @see sanitize_text_field() https://developer.wordpress.org/reference/functions/sanitize_text_field/
+ * @see $wp_customize->get_control() https://developer.wordpress.org/reference/classes/wp_customize_manager/get_control/
+ *
+ * @param string               $input   Slug to sanitize.
+ * @param WP_Customize_Setting $setting Setting instance.
+ * @return string Sanitized slug if it is a valid choice; otherwise, the setting default.
+ */
+function cherish_sanitize_select( $input, $setting ) {
+	// Ensure input is a slug.
+	$input = sanitize_text_field( $input );
+	// Get list of choices from the control associated with the setting.
+	$choices = $setting->manager->get_control( $setting->id )->choices;
+	// If the input is a valid key, return it; otherwise, return the default.
+	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
 }

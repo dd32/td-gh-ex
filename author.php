@@ -15,7 +15,7 @@ get_header();
 		<div class="author-description"><?php the_author_meta( 'description' ); ?></div>
 	</div>
 
-	<h2 class="view_pots_by"><?php printf( esc_html__( 'View all posts by %s:', 'cherish' ), get_the_author_meta( 'display_name' ) ); ?></h2>
+	<h2 class="view_posts_by"><?php printf( esc_html__( 'View all posts by %s:', 'cherish' ), get_the_author_meta( 'display_name' ) ); ?></h2>
 	<?php
 	while ( have_posts() ) : the_post();
 		$cherish_color_meta_value = get_post_meta( get_the_ID(), 'meta-color', true );
