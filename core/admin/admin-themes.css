@@ -465,7 +465,7 @@ background-color: #3fb6db!important;} */
 
 
 /* welcome page */
-body {
+ody {
   color: #919191;
   font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 16px;
@@ -742,7 +742,7 @@ img.web_logo {
     padding: 26px 50px 76px;
 }
 a.demo {
-    background: #31A3DD;
+    background: #5C4B51;
     padding: 12px;
     width: 100%;
     color: #fff;
@@ -769,7 +769,7 @@ span.elw_shortcode_heading {
     color: #32373c;
 }
 .row.p_plugin.blog_gallery.visit_pro {
-    background: #31a3dd;
+    background: #5c4b51;
 }
 .row.p_plugin.blog_gallery.visit_pro {
     text-align: center;
@@ -782,9 +782,9 @@ span.elw_shortcode_heading {
 }
 .visit_pro a {
 	padding: 10px;
-    border: 1px solid #31A3DD;
+    border: 1px solid #5C4B51;
     background: #ffffff;
-    color: #31A3DD !important;
+    color: #5C4B51 !important;
     font-weight: 700;
 }
 a.btn.btn-primary.btn-lg {
@@ -801,8 +801,8 @@ a.btn.btn-primary.btn-lg {
     color: #32373c;
 }
 a.btn.btn-primary.title_offers {
-    background-color: #31A3DD;
-    border: 1px solid #31A3DD;
+    background-color: #5C4B51;
+    border: 1px solid #5C4B51;
     font-size: 18px;
     border-radius: 0%;
 	color: #fff;
@@ -818,7 +818,7 @@ ul.nav.nav-tabs.product-tbs a {
 }
 a.pro {
     padding: 4px;
-    background: #31A3DD;
+    background: #5C4B51;
     font-size: 14px;
     color: #ffffff;
     text-decoration: none;
@@ -926,7 +926,7 @@ h4.pro_thm a {
     width: 100%;
 }
 .visit_pro a:hover {
-    background: #31A3DD;
+    background: #5C4B51;
     color: #fff !important;
     border: 1px solid #fff;
 }
@@ -935,10 +935,19 @@ h4.pro_thm a {
 }
 a.add_page {
     padding: 8px;
-    background-color: #31A3DD;
+    background-color: #5C4B51;
     color: #fff;
     margin-left: 29px;
 }
 .seting-page h2 {
     font-size: 36px;
+}
+p.notice-text {
+    font-size: 15px;
+    float: left;
+	    padding: 10px 20px;
+}
+.notice.notice-success.is-dismissible {
+    background-color: #232121eb;
+    color: #fff;
 }

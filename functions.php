@@ -480,14 +480,16 @@ if ( is_admin() && isset($_GET['activated'])  && $pagenow == "themes.php" ) {
 }
 add_action( 'admin_notices', 'enigma_activation_notice' );
 function enigma_activation_notice(){
-	wp_register_style( 'custom_admin_css', get_template_directory_uri() . '/core/admin/admin-banner.css');
+	//wp_register_style( 'custom_admin_css', get_template_directory_uri() . '/core/admin/admin-banner.css');
     wp_enqueue_style( 'custom_admin_css' );
 	wp_enqueue_style('admin',  get_template_directory_uri() .'/core/admin/admin-themes.css');
     ?>
     <div class="notice notice-success is-dismissible"> 
-		<p><?php echo esc_html__( 'Thanks for installing Enigma! 
- Please visit our best theme, plugin & offers, make sure you visit our welcome page.', 'enigma' ); ?>
-		<a class="pro" target="_self" href="<?php echo admin_url('/themes.php?page=enigma') ?>"><?php echo esc_html__( 'Visit Welcome Page', 'enigma' ); ?></a></p>
+		<p class="notice-text"><?php 
+		$theme_info = wp_get_theme();
+			printf( esc_html__('Thank you for installing %1$s ¬ Version %2$s ,', 'enigma'), esc_html( $theme_info->Name ), esc_html( $theme_info->Version ) );		
+		  echo esc_html__( 'For More info  about Premium Products & offers, Do visit our welcome page.', 'enigma' ); ?></p>
+		<p class="notic-gif"><a class="pro" target="_self" href="<?php echo admin_url('/themes.php?page=enigma') ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/wlcm.gif"></a></p>
 	</div>
     <?php
 }

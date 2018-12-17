@@ -24,21 +24,7 @@ function weblizar_gl_customizer( $wp_customize ) {
     'title' => __( 'Theme Options','enigma' ),
     'priority' => 1, // Mixed with top-level-section hierarchy.
 ) );
-//changelog//	
-	$wp_customize->add_section('changelog_sec',	array('title' =>  __( 'Changelog','enigma' ),
-			'panel'=>'enigma_theme_option',
-            'priority' => 1,
-    ));
-	$wp_customize->add_setting( 'changelog', array(
-			'default'    		=> null,
-			'sanitize_callback' => 'sanitize_text_field',
-	));
-	$wp_customize->add_control( new enigma_changelog_Control( $wp_customize, 'changelog', array(
-			'label'    => __( 'Enigma', 'enigma' ),
-			'section'  => 'changelog_sec',
-			'settings' => 'changelog',
-			'priority' => 1,
-	)));
+
 $wp_customize->add_section(
         'general_sec',
         array(
@@ -1835,37 +1821,6 @@ function show_on_front() {
 		return is_home();
 	}
 }
-
-if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'enigma_changelog_Control' ) ) :
-class enigma_changelog_Control extends WP_Customize_Control {
-
-	/**
-	* Render the content on the theme customizer page
-	*/
-	public function render_content() { ?>
-		<label style="overflow: hidden; zoom: 1;">
-						
-			<div class="col-md-3 col-sm-6">
-				<h2 style="margin-top:10px;color:#fff;background-color: #3ca3e0;padding: 10px;font-size: 19px;"><?php echo esc_html_e( 'Enigma Theme Changelog','enigma'); ?></h2>
-				<ul style="padding-top:20px">
-				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.6 - <span> Current Version </span></div>
-		<ol> <li> Minor issue fixed.</li></ol></li>
-				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.5 - </div>
-		<ol> <li>Minor issue fixed.</li></ol></li>
-				<li class="upsell-enigma"> <div class="versionhd"> Version: 4.4 - </div>
-		<ol> <li> Google fonts added in typography option. </li></ol></li>
-				
-		</ul>
-			</div>
-			<div class="col-md-2 col-sm-6 upsell-btn">					
-					<a style="margin-bottom:20px;margin-left:20px;" href="<?php echo esc_url(get_template_directory_uri()) ?>/readme.txt" target="blank" class="btn btn-success btn"><?php esc_html_e('Changelog','enigma'); ?> </a>
-			</div>
-		</label>
-		<?php
-	}
-}
-endif;
-
 
 if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'enigma_animation' ) ) :
 class enigma_animation extends WP_Customize_Control {
