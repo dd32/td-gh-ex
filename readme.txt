@@ -1,11 +1,11 @@
 === Athena ===
 
 Contributors: smartcat
-Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,grid-layout,custom-colors,custom-logo,featured-images,footer-widgets,full-width-template,theme-options,translation-ready,portfolio,e-commerce,entertainment
+Tags: one-column,two-columns,three-columns,left-sidebar,right-sidebar,grid-layout,custom-colors,custom-logo,featured-images,footer-widgets,full-width-template,theme-options,translation-ready,portfolio,e-commerce,photography
 
 Requires at least: 4.6
-Tested up to: 4.9.6
-Stable tag: 1.2.1
+Tested up to: 5.0.1
+Stable tag: 1.2.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -86,6 +86,9 @@ WooCommerce Templates update
 
 = 1.2.2 - June 1, 2018
 Remove deprecated custom header const
+
+= 1.2.3 - December 17, 2018
+WooCommerce template updates
 
 == Credits ==
 
