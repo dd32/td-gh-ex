@@ -32,6 +32,10 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
+= 1.7.1 | 18th December 2018 = 
+* Update: Block Editor Tweaks.
+* Update: Call out for Kadence Blocks.
+
 = 1.7.0 | 5th December 2018 = 
 * Update: WordPress 5.0 ready.
 
