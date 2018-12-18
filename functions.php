@@ -97,6 +97,55 @@ function academic_setup() {
 			add_theme_support( 'wc-product-gallery-slider' );
 		}
   	}
+
+  	// Gutenberg support
+		add_theme_support( 'editor-color-palette', array(
+	       	array(
+				'name' => esc_html__( 'Blue', 'academic' ),
+				'slug' => 'blue',
+				'color' => '#347FE1',
+	       	),
+	       	array(
+	           	'name' => esc_html__( 'Yellow', 'academic' ),
+	           	'slug' => 'yellow',
+	           	'color' => '#ffe800',
+	       	),
+	       	array(
+	           	'name' => esc_html__( 'Black', 'academic' ),
+	           	'slug' => 'black',
+	           	'color' => '#333',
+	       	),
+	   	));
+
+		add_theme_support( 'align-wide' );
+		add_theme_support( 'editor-font-sizes', array(
+		   	array(
+		       	'name' => esc_html__( 'small', 'academic' ),
+		       	'shortName' => esc_html__( 'S', 'academic' ),
+		       	'size' => 12,
+		       	'slug' => 'small'
+		   	),
+		   	array(
+		       	'name' => esc_html__( 'regular', 'academic' ),
+		       	'shortName' => esc_html__( 'M', 'academic' ),
+		       	'size' => 16,
+		       	'slug' => 'regular'
+		   	),
+		   	array(
+		       	'name' => esc_html__( 'larger', 'academic' ),
+		       	'shortName' => esc_html__( 'L', 'academic' ),
+		       	'size' => 36,
+		       	'slug' => 'larger'
+		   	),
+		   	array(
+		       	'name' => esc_html__( 'huge', 'academic' ),
+		       	'shortName' => esc_html__( 'XL', 'academic' ),
+		       	'size' => 48,
+		       	'slug' => 'huge'
+		   	)
+		));
+		add_theme_support('editor-styles');
+		add_theme_support( 'wp-block-styles' );
 }
 endif;
 add_action( 'after_setup_theme', 'academic_setup' );
@@ -186,6 +235,9 @@ function academic_scripts() {
 	// Add sidr light css
 	wp_enqueue_style( 'jquery-sidr-light', get_template_directory_uri() . '/assets/plugins/css/jquery-sidr-light' . $min . '.css', array(), '' );
 
+	// blocks
+	wp_enqueue_style( 'academic-blocks', get_template_directory_uri() . '/assets/css/blocks.min.css', array(), '' );
+
 	// Theme stylesheet.
 	wp_enqueue_style( 'academic-style', get_stylesheet_uri() );
 
@@ -220,6 +272,19 @@ function academic_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'academic_scripts' );
+
+/**
+ * Enqueue editor styles for Gutenberg
+ *
+ * @since Academic 1.0.0
+ */
+function academic_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'academic-block-editor-style', get_theme_file_uri( '/assets/css/editor-blocks.min.css', array(), '' ) );
+	// Add custom fonts.
+	wp_enqueue_style( 'academic-fonts', academic_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'academic_block_editor_styles' );
 
 /**
  * Implement the Custom Header feature.

@@ -6,8 +6,8 @@ Tags: education, translation-ready, custom-background, theme-options, custom-men
 
 Contributors: Theme Palace
 Requires at least: 4.5
-Tested up to: 4.9.6
-Stable tag: 1.6
+Tested up to: 5.0.1
+Stable tag: 1.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -128,6 +128,9 @@ You can choose what taxonomy to display in these sections. If you select a speci
 Whereas in Category blog second, you can choose what to display either the categories name or sub categories name.
 
 == Changelog ==
+
+= 1.7 - Dec 13, 2018
+* Made compatible with gutenberg blocks
 
 = 1.6 - June 01, 2018
 * Added Privacy Policy 
