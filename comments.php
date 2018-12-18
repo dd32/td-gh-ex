@@ -10,7 +10,7 @@ if ( post_password_required() ) {
 } ?>
 <div id="comments" class="besty-comments">
 	<?php if ( have_comments() ) : ?>
-    <h2 class="besty-comments-titel"><?php _e('Comments','besty'); ?></h2>
+    <h2 class="besty-comments-titel"><?php esc_html_e('Comments','besty'); ?></h2>
     <ul class="comment-list">
     	<?php wp_list_comments( array( 'callback' => 'besty_comment', 'style' => 'ul', 'short_ping' => true) ); ?>
     </ul>
