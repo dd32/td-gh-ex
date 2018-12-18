@@ -245,7 +245,54 @@ function atlas_concern_customize_register( $wp_customize ) {
         'section' => 'topline_section'
     ));
 
-   
+    $wp_customize->add_setting( 'topline_section_phone', array(
+        'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control( 'topline_section_phone', array(
+        'label' => __( 'Phone', 'atlas-concern' ),
+        'type' => 'text',
+        'section' => 'topline_section'
+    ));
+
+    $wp_customize->add_setting( 'topline_section_address', array(
+        'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'wp_kses_post'
+    ));
+
+    $wp_customize->add_control( 'topline_section_address', array(
+        'label' => __( 'Address', 'atlas-concern' ),
+        'type' => 'textarea',
+        'section' => 'topline_section'
+    ));
+
+    $wp_customize->add_setting( 'topline_section_bttn_url', array(
+        'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'esc_url_raw'
+    ));
+
+    $wp_customize->add_control( 'topline_section_bttn_url', array(
+        'label' => __( 'Button Url', 'atlas-concern' ),
+        'type' => 'url',
+        'section' => 'topline_section'
+    ));
+
+
+    $wp_customize->add_setting( 'topline_section_bttn', array(
+        'type' => 'theme_mod',
+		'capability' => 'edit_theme_options',
+        'sanitize_callback' => 'sanitize_text_field'
+    ));
+
+    $wp_customize->add_control( 'topline_section_bttn', array(
+        'label' => __( 'Button Text', 'atlas-concern' ),
+        'type' => 'text',
+        'section' => 'topline_section'
+    ));
 
 }
 add_action( 'customize_register', 'atlas_concern_customize_register' );

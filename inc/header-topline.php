@@ -60,7 +60,7 @@
                                             </div>
                                             <div class="media-body media-middle">
                                                 <h5 class="extrabold"><?php esc_html_e( 'Call Us', 'atlas-concern' ); ?></h5>
-                                                <p><?php echo esc_html( get_theme_mod( 'topline_section_phone', __( '+12 345 56 78', 'atlas-concern' ) )); ?></p>
+                                                <p><?php echo esc_html( get_theme_mod( 'topline_section_phone', __( '', 'atlas-concern' ) )); ?></p>
                                             </div>
                                         </div>
                                     </div>
@@ -73,7 +73,7 @@
                                             </div>
                                             <div class="media-body media-middle">
                                                 <h5 class="extrabold"><?php esc_html_e( 'Address', 'atlas-concern' ); ?></h5>
-                                                <p><?php echo wp_kses_post( get_theme_mod( 'topline_section_address', 'Weekdays: 9-17; Sat: 9-20; <br>Sun: Closed' )); ?></p>
+                                                <p><?php echo wp_kses_post( get_theme_mod( 'topline_section_address', '' )); ?></p>
                                             </div>
                                         </div>
                                     </div>
