@@ -435,7 +435,7 @@ function awada_enqueue_style()
     }
 
     // Google Fonts
-    wp_enqueue_style('PT-Sans', 'http://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic');
+    wp_enqueue_style('PT-Sans', '//fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic');
 }
 add_action('wp_footer', 'awada_enqueue_in_footer');
 function awada_enqueue_in_footer()
