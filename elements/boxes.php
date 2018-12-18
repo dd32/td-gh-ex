@@ -39,18 +39,19 @@ function cyberchimps_boxes_lite_content() {
 	$url2 = cyberchimps_get_option( 'cyberchimps_blog_boxes_link_url_two' );
 	$url3 = cyberchimps_get_option( 'cyberchimps_blog_boxes_link_url_three' );
 
-	$box_default_text = 'Showcase your informative posts with style. Display featured Images and author name using boxes element.';
 
 	// Getting text for each box
-	$text1 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_one_text', $box_default_text );
-	$text2 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_two_text', $box_default_text );
-	$text3 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_three_text', $box_default_text );
+	$text1 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_one_text' );
+	$text2 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_two_text' );
+	$text3 = cyberchimps_get_option( 'cyberchimps_blog_boxes_lite_image_three_text' );
+
 
 	?>
 
 	<!-- Start of markup for boxes lite element -->
 	<div id="widget_boxes_container" class="row-fluid">
 		<div class="boxes">
+			<?php if( $img1 != '' || $text1 != '' ): ?>
 			<div class="box span4">
 				<?php if( $url1 != '' && $img1 != '' ): ?>
 					<a href="<?php echo esc_url( $url1 ); ?>" class="box-link">
@@ -65,8 +66,10 @@ function cyberchimps_boxes_lite_content() {
 				<?php endif; ?>
 				<p><?php echo wp_kses( $text1, array( 'br' => array(), 'em' => array(), 'strong' => array() ) ); ?></p>
 			</div>
+		<?php endif; ?>
 			<!--end box1-->
 
+			<?php if( $img2 != ''  || $text2 != '' ): ?>
 			<div class="box span4">
 				<?php if( $url2 != '' && $img2 != '' ): ?>
 					<a href="<?php echo esc_url( $url2 ); ?>" class="box-link">
@@ -81,8 +84,10 @@ function cyberchimps_boxes_lite_content() {
 				<?php endif; ?>
 				<p><?php echo wp_kses( $text2, array( 'br' => array(), 'em' => array(), 'strong' => array() ) ); ?></p>
 			</div>
-			<!--end box2-->
+		<?php endif; ?>
 
+			<!--end box2-->
+			<?php if( $img3 != ''  || $text3 != ''  ): ?>
 			<div class="box span4">
 				<?php if( $url3 != '' && $img3 != '' ): ?>
 					<a href="<?php echo esc_url( $url3 ); ?>" class="box-link">
@@ -97,12 +102,12 @@ function cyberchimps_boxes_lite_content() {
 				<?php endif; ?>
 				<p><?php echo wp_kses( $text3, array( 'br' => array(), 'em' => array(), 'strong' => array() ) ); ?></p>
 			</div>
+		<?php endif; ?>
+
 			<!--end box3-->
 		</div>
 		<!-- end boxes -->
 	</div><!-- end row-fluid -->
 	<!-- End of markup for boxes lite element -->
-<?php
-}
-
+<?php }
 ?>

@@ -223,10 +223,10 @@ function cyberchimps_portfolio_lite_content() {
 		$img4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four' );
 
 		// Getting caption for each protfolio
-		$caption1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one_caption', 'CyberChimps' );
-		$caption2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two_caption', 'CyberChimps' );
-		$caption3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three_caption', 'CyberChimps' );
-		$caption4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four_caption', 'CyberChimps' );
+		$caption1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_one_caption' );
+		$caption2 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_two_caption' );
+		$caption3 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_three_caption' );
+		$caption4 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_lite_image_four_caption' );
 
 		// Getting Custom URL toggle
 		$url_toggle1 = cyberchimps_get_option( 'cyberchimps_blog_portfolio_link_toggle_one' );
@@ -242,7 +242,7 @@ function cyberchimps_portfolio_lite_content() {
 	}
 
 	// Set the title to default value if null is supplied
-	$title = ( $title != '' ) ? $title : 'Portfolio';
+	$title = ( $title != '' ) ? $title : '';
 
 	// Set the markup for title
 	$title_output = ( $title_enable == 'on' OR $title_enable == '1' ) ? $title : '';
@@ -291,6 +291,9 @@ function cyberchimps_portfolio_lite_content() {
 		$portfolio_link4 = $img4;
 		$portfolio_rel4  = 'rel=cyberchimps-lightbox';
 	}
+
+	if( $img1 != '' || $img2 != '' || $img3 != '' ){
+
 	?>
 
 	<!-- Start of markup for portfolio element -->
@@ -303,62 +306,61 @@ function cyberchimps_portfolio_lite_content() {
 			<ul class="row-fluid">
 
 				<!-- Portfolio 1 -->
+				<?php if ( $img1 ) : ?>
 				<li id="portfolio_wrap" class="span3">
 					<div class="portfolio-item">
-						<?php if ( $img1 ) : ?>
 							<a href='<?php echo esc_url( $portfolio_link1 ); ?>' <?php echo esc_attr( $portfolio_rel1 ); ?> title='<?php echo esc_attr( $caption1 ); ?>'><img
 								src='<?php echo esc_url( $img1 ); ?>' alt='Image 1'/>
 
 							<div class='portfolio_caption'><?php echo esc_html( $caption1 ); ?></div>
 						</a>
-					<?php endif; ?>
 					</div>
 				</li>
+			<?php endif; ?>
 
 				<!-- Portfolio 2 -->
+				<?php if ( $img2 ) : ?>
 				<li id="portfolio_wrap" class="span3">
 					<div class="portfolio-item">
-						<?php if ( $img2 ) : ?>
 						<a href='<?php echo esc_url( $portfolio_link2 ); ?>' <?php echo esc_attr( $portfolio_rel2 ); ?> title='<?php echo esc_attr( $caption2 ); ?>'><img
 								src='<?php echo esc_url( $img2 ); ?>' alt='Image 1'/>
 
 							<div class='portfolio_caption'><?php echo esc_html( $caption2 ); ?></div>
 						</a>
-					<?php endif; ?>
 					</div>
 				</li>
+			<?php endif; ?>
 
 				<!-- Portfolio 3 -->
+				<?php if ( $img3 ) : ?>
 				<li id="portfolio_wrap" class="span3">
 					<div class="portfolio-item">
-						<?php if ( $img3 ) : ?>
 						<a href='<?php echo esc_url( $portfolio_link3 ); ?>' <?php echo esc_attr( $portfolio_rel3 ); ?> title='<?php echo esc_attr( $caption3 ); ?>'><img
 								src='<?php echo esc_url( $img3 ); ?>' alt='Image 1'/>
 
 							<div class='portfolio_caption'><?php echo esc_html( $caption3 ); ?></div>
 						</a>
-					<?php endif; ?>
 					</div>
 				</li>
+			<?php endif; ?>
 
 				<!-- Portfolio 4 -->
+				<?php if ( $img4 ) : ?>
 				<li id="portfolio_wrap" class="span3">
 					<div class="portfolio-item">
-						<?php if ( $img4 ) : ?>
 						<a href='<?php echo esc_url( $portfolio_link4 ); ?>' <?php echo esc_attr( $portfolio_rel4 ); ?> title='<?php echo esc_attr( $caption4 ); ?>'><img
 								src='<?php echo esc_url( $img4 ); ?>' alt='Image 1'/>
 
 							<div class='portfolio_caption'><?php echo esc_html( $caption4 ); ?></div>
 						</a>
-					<?php endif; ?>
 					</div>
 				</li>
+			<?php endif; ?>
 			</ul>
 		</div>
 		<!-- End of #gallery -->
 	</div>  <!-- End of .row-fluid -->
 	<!-- End of markup for portfolio element -->
-<?php
+<?php }
 }
-
 ?>

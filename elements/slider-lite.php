@@ -126,6 +126,9 @@ function cyberchimps_slider_lite_content() {
 		$slides[2]['link'] = cyberchimps_get_option( 'image_three_slide_url', apply_filters( 'cyberchimps_slider_lite_url3', esc_url( home_url() ) ) );
 
 	}
+
+	if( $slides[0]['img'] != '' || $slides[1]['img'] != '' || $slides[2]['img'] != '' ){
+
 	$i = 0;
 	?>
 	<div class="row-fluid">
@@ -166,7 +169,6 @@ function cyberchimps_slider_lite_content() {
 		});
 	</script>
 
-<?php
+<?php }
 }
-
 ?>

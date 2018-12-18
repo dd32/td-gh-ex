@@ -60,13 +60,12 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
 
 			$page_fields = array(
 				array(
-                                        'name'    => __( 'Testimonial Section Title', 'cyberchimps_core' ),
-                                        'desc'    => '',
-                                        'id'      => 'ir_testimonial_title',
-                                        'type'    => 'text',
-                                        'std'     => 'Testimonial',
+                    'name'    => __( 'Testimonial Section Title', 'cyberchimps_core' ),
+                    'desc'    => '',
+                    'id'      => 'ir_testimonial_title',
+                    'type'    => 'text',
 					'class'   => ''
-                                    ),
+				),
 				array(
 					'type'    => 'single_image',
 					'id'      => 'testimonial_background',
@@ -74,25 +73,22 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
 					'name'    => __( 'Testimonial Background', 'cyberchimps_core' ),
 					'class'   => ''
 				),
-                            array(
-                                        'name'    => __( 'First Testimonial Image', 'cyberchimps_core' ),
-                                        'desc'    => __( 'Enter URL or upload file', 'cyberchimps_core' ),
-                                        'id'      => 'cyberchimps_blog_testimonial_image_one',
-                                        'type'    => 'single_image',
+                array(
+                    'name'    => __( 'First Testimonial Image', 'cyberchimps_core' ),
+                    'desc'    => __( 'Enter URL or upload file', 'cyberchimps_core' ),
+                    'id'      => 'cyberchimps_blog_testimonial_image_one',
+                    'type'    => 'single_image',
 					'class'   => '',
-                                        'std'     => $directory_uri . apply_filters( 'cyberchimps_testimonial_img1', '/elements/lib/images/testimonial/client01.jpg' )
-                                ),
+                    ),
                             array(
-                                        'name'    => __( 'First Testimonial Author Name', 'cyberchimps_core' ),
-                                        'id'      => 'cyberchimps_blog_client_one',
-                                        'std'     => 'Nancy Martin',
+                    'name'    => __( 'First Testimonial Author Name', 'cyberchimps_core' ),
+                    'id'      => 'cyberchimps_blog_client_one',
 					'class'   => '',
-                                        'type'    => 'text'
-                                ),
+                    'type'    => 'text'
+                    ),
                             array(
                                         'name'    => __( 'First Testimonial about the Author', 'cyberchimps_core' ),
                                         'id'      => 'cyberchimps_blog_client_abt_one',
-                                        'std'     => 'Developer',
                                         'type'    => 'text',
 					'class'   => ''
 
@@ -101,7 +97,6 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
                                         'name'    => __( 'First Testimonial Text', 'cyberchimps_core' ),
                                         'id'      => 'cyberchimps_testimonial_one_text',
                                         'type'    => 'textarea',
-                                        'std'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec nisl ut est ultricies pellentesque id eu massa. Pellentesque fermentum posuere odio non accumsan. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris scelerisque auctor ligula sed aliquet.',
 					'class'   => ''
 
                                 ),
@@ -110,14 +105,12 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
                                         'desc'    => __( 'Enter URL or upload file', 'cyberchimps_core' ),
                                         'id'      => 'cyberchimps_blog_testimonial_image_two',
                                         'type'    => 'single_image',
-                                        'std'     => $directory_uri . apply_filters( 'cyberchimps_testimonial_img2', '/elements/lib/images/testimonial/client02.jpg' ),
 					'class'   => ''
 
                                 ),
                             array(
                                         'name'    => __( 'Second Testimonial Author Name', 'cyberchimps_core' ),
                                         'id'      => 'cyberchimps_blog_client_two',
-                                        'std'     => 'Nancy Martin',
                                         'type'    => 'text',
 					'class'   => ''
 
@@ -125,7 +118,6 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
                             array(
                                         'name'    => __( 'Second Testimonial about the Author', 'cyberchimps_core' ),
                                         'id'      => 'cyberchimps_blog_client_abt_two',
-                                        'std'     => 'Designer',
                                         'type'    => 'text',
                                         'section' => 'cyberchimps_testimonial_section',
                                         'heading' => 'cyberchimps_blog_heading',
@@ -135,7 +127,6 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
                                         'name'    => __( 'Second Testimonial Text', 'cyberchimps_core' ),
                                         'id'      => 'cyberchimps_testimonial_two_text',
                                         'type'    => 'textarea',
-                                        'std'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec nisl ut est ultricies pellentesque id eu massa. Pellentesque fermentum posuere odio non accumsan. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris scelerisque auctor ligula sed aliquet.',
                                         'section' => 'cyberchimps_testimonial_section',
                                         'heading' => 'cyberchimps_blog_heading',
 					'class'   => ''
@@ -145,7 +136,6 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
                                         'desc'    => __( 'Enter URL or upload file', 'cyberchimps_core' ),
                                         'id'      => 'cyberchimps_blog_testimonial_image_three',
                                         'type'    => 'single_image',
-                                        'std'     => $directory_uri . apply_filters( 'cyberchimps_testimonial_img3', '/elements/lib/images/testimonial/client01.jpg' ),
                                         'section' => 'cyberchimps_testimonial_section',
                                         'heading' => 'cyberchimps_blog_heading',
 					'class'   => ''
@@ -153,7 +143,6 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
                             array(
                                         'name'    => __( 'Third Testimonial Author Name', 'cyberchimps_core' ),
                                         'id'      => 'cyberchimps_blog_client_three',
-                                        'std'     => 'Nancy Martin',
                                         'type'    => 'text',
                                         'section' => 'cyberchimps_testimonial_section',
                                         'heading' => 'cyberchimps_blog_heading',
@@ -162,7 +151,6 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
                             array(
                                         'name'    => __( 'Third Testimonial about the Author', 'cyberchimps_core' ),
                                         'id'      => 'cyberchimps_blog_client_abt_three',
-                                        'std'     => 'Developer',
                                         'type'    => 'text',
                                         'section' => 'cyberchimps_testimonial_section',
                                         'heading' => 'cyberchimps_blog_heading',
@@ -172,7 +160,6 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
                                         'name'    => __( 'Third Testimonial Text', 'cyberchimps_core' ),
                                         'id'      => 'cyberchimps_testimonial_three_text',
                                         'type'    => 'textarea',
-                                        'std'     => 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc nec nisl ut est ultricies pellentesque id eu massa. Pellentesque fermentum posuere odio non accumsan. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Mauris scelerisque auctor ligula sed aliquet.',
                                         'section' => 'cyberchimps_testimonial_section',
                                         'heading' => 'cyberchimps_blog_heading',
 					'class'   => ''
@@ -209,7 +196,6 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
 		public function render_display() {
 
 			// Get the default image of carousel
-			$default = get_template_directory_uri() . apply_filters( 'cyberchimps_testimonial_img', '/cyberchimps/lib/images/testimonial.jpg' );
 			$custombackground = cyberchimps_get_option('testimonial_background');
 
 			if( is_page() ) {
@@ -217,22 +203,13 @@ if( !class_exists( 'CyberChimpsTestimonial' ) ) {
 				$custombackground = get_post_meta( get_the_ID(), 'testimonial_background', true );
 
 				if($custombackground == ""){
-?>
-					<style type="text/css" media="all">
-						#testimonial_section{
-							background : url("<?php echo $default; ?>") no-repeat scroll 0 0 / cover;
-						}
-					</style>
-<?php
-				}
-				else{
-?>
+					?>
 					<style type="text/css" media="all">
 						#testimonial_section{
 							background : url("<?php echo $custombackground; ?>") no-repeat scroll 0 0 / cover;
 						}
 					</style>
-<?php
+					<?php
 				}
 			}
 

@@ -57,15 +57,15 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 
 			// Set slider options
 			$this->slider_parallax_toggle = ( isset( $this->options['cyberchimps_blog_slider_parallax'] ) ) ? $this->options['cyberchimps_blog_slider_parallax'] : 1;
-			$this->slider_parallax_image  = ( isset( $this->options['cyberchimps_blog_slider_parallax_image'] ) ) ? $this->options['cyberchimps_blog_slider_parallax_image'] : get_template_directory_uri() . '/images/parallax/sun.jpg';
+			$this->slider_parallax_image  = ( isset( $this->options['cyberchimps_blog_slider_parallax_image'] ) ) ? $this->options['cyberchimps_blog_slider_parallax_image'] : '';
 
 			// Set portfolio parallax options.
 			$this->portfolio_parallax_toggle = ( isset( $this->options['cyberchimps_blog_portfolio_parallax'] ) ) ? $this->options['cyberchimps_blog_portfolio_parallax'] : 1;
-			$this->portfolio_parallax_image  = ( isset( $this->options['cyberchimps_blog_portfolio_parallax_image'] ) ) ? $this->options['cyberchimps_blog_portfolio_parallax_image'] : get_template_directory_uri() . '/images/parallax/trees.jpg';
+			$this->portfolio_parallax_image  = ( isset( $this->options['cyberchimps_blog_portfolio_parallax_image'] ) ) ? $this->options['cyberchimps_blog_portfolio_parallax_image'] : '';
 
 			// Get boxes parallax options.
 			$this->boxes_parallax_toggle = ( isset( $this->options['cyberchimps_blog_boxes_parallax'] ) ) ? $this->options['cyberchimps_blog_boxes_parallax'] : 1;
-			$this->boxes_parallax_image  = ( isset( $this->options['cyberchimps_blog_boxes_parallax_image'] ) ) ? $this->options['cyberchimps_blog_boxes_parallax_image'] : get_template_directory_uri() . '/images/parallax/rocks.jpg';
+			$this->boxes_parallax_image  = ( isset( $this->options['cyberchimps_blog_boxes_parallax_image'] ) ) ? $this->options['cyberchimps_blog_boxes_parallax_image'] : '';
 
 			// Get boxes parallax options.
 			$this->body_parallax_toggle = ( isset( $this->options['cyberchimps_body_parallax'] ) ) ? $this->options['cyberchimps_body_parallax'] : 1;
@@ -106,7 +106,6 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 				'id'      => 'cyberchimps_blog_slider_parallax_image',
 				'class'   => 'cyberchimps_blog_slider_parallax_toggle',
 				'type'    => 'upload',
-				'std'     => get_template_directory_uri() . '/images/parallax/sun.jpg',
 				'section' => 'cyberchimps_blog_slider_lite_section',
 				'heading' => 'cyberchimps_blog_heading'
 			);
@@ -128,7 +127,6 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 				'id'      => 'cyberchimps_blog_portfolio_parallax_image',
 				'class'   => 'cyberchimps_blog_portfolio_parallax_toggle',
 				'type'    => 'upload',
-				'std'     => get_template_directory_uri() . '/images/parallax/trees.jpg',
 				'section' => 'cyberchimps_blog_portfolio_lite_section',
 				'heading' => 'cyberchimps_blog_heading'
 			);
@@ -150,7 +148,6 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 				'id'      => 'cyberchimps_blog_boxes_parallax_image',
 				'class'   => 'cyberchimps_blog_boxes_parallax_toggle',
 				'type'    => 'upload',
-				'std'     => get_template_directory_uri() . '/images/parallax/rocks.jpg',
 				'section' => 'cyberchimps_blog_boxes_lite_section',
 				'heading' => 'cyberchimps_blog_heading'
 			);
@@ -181,7 +178,10 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 					if( $this->slider_parallax_toggle && $this->slider_parallax_image ) { ?>
 					jQuery('#slider_lite_section').css({
 						'background-image': 'url("<?php echo $this->slider_parallax_image;?>")',
-						'background-size': '100%'
+						'background-size': '100%',
+						'padding': '100px 0',
+						'border-top': '5px solid rgba(0, 0, 0, 0.3)',
+						'border-bottom': '5px solid rgba(0, 0, 0, 0.3)'
 					});
 					jQuery('#slider_lite_section').parallax('50%', 0.5);
 					<?php }
@@ -189,7 +189,10 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 					if( $this->portfolio_parallax_toggle && $this->portfolio_parallax_image ) { ?>
 					jQuery('#portfolio_lite_section').css({
 						'background-image': 'url("<?php echo $this->portfolio_parallax_image;?>")',
-						'background-size': '100%'
+						'background-size': '100%',
+						'padding': '100px 0 80px 0',
+						'border-top': '5px solid rgba(0, 0, 0, 0.3)',
+						'border-bottom': '5px solid rgba(0, 0, 0, 0.3)'
 					});
 					jQuery('#portfolio_lite_section').parallax('50%', 0.5);
 					<?php }
@@ -197,7 +200,10 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 					if( $this->boxes_parallax_toggle && $this->boxes_parallax_image ) { ?>
 					jQuery('#boxes_lite_section').css({
 						'background-image': 'url("<?php echo $this->boxes_parallax_image;?>")',
-						'background-size': '100%'
+						'background-size': '100%',
+						'padding-top': '100px 0 90px 0',
+						'border-top': '5px solid rgba(0, 0, 0, 0.3)',
+						'border-bottom': '5px solid rgba(0, 0, 0, 0.3)'
 					});
 					jQuery('#boxes_lite_section').parallax('50%', 0.5);
 					<?php }
@@ -205,6 +211,16 @@ if ( !class_exists( 'CyberChimpsParallax' ) ) {
 					if( $this->body_parallax_toggle ) { ?>
 					jQuery('body').parallax('50%', -0.5);
 					<?php } ?>
+
+					jQuery('#testimonial_section').css({
+						'background-size': '100%'
+					});
+					jQuery('#testimonial_section').parallax('50%', 0.5);
+
+					jQuery('#map_contact_section').css({
+						'background-size': '100%'
+					});
+					jQuery('#map_contact_section').parallax('50%', 0.5);
 
 				});
 			</script>

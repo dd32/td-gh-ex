@@ -58,35 +58,37 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
 			$custom_contact_number =	get_post_meta( $post->ID, 'custom_contact_number', true );
 			$custom_contact_email =		get_post_meta( $post->ID, 'custom_contact_email', true );
 			$contactus_element_text = 	get_post_meta( $post->ID, 'contactus_element_text', true );
-			
+
                         }
                         else
                         {
-                        
+
                         $custom_contact_title =	        cyberchimps_get_option('custom_contact_title');
 			$custom_contact_address =	cyberchimps_get_option('custom_contact_address');
 			$custom_contact_number =	cyberchimps_get_option('custom_contact_number');
 			$custom_contact_email =		cyberchimps_get_option('custom_contact_email');
 			$contactus_element_text = 	cyberchimps_get_option('contactus_element_text');
-			
+
                         }
-                          
+                if (!empty($custom_contact_title) || !empty($custom_contact_number) || !empty($custom_contact_email) ) {
                         ?>
-                        
+
                             <style>
                                 #map_contact_section{
                                   background-image:url('<?php echo get_template_directory_uri().'/cyberchimps/lib/images/contact_bg.jpg' ?>');
                                   background-position: center;
                                   background-size: cover;
+								  margin: 60px 0;
+
                                 }
                             </style>
-                       
+
                     <div id="contact_us" class="row-fluid">
                         <div class="span12">
                             <h2 class="contact_title"><?php if(!empty($custom_contact_title)){echo $custom_contact_title; }?></h2>
                         </div>
                         <div class="contactus_wrapper span12">
-                            
+
                                 <div class="span6">
                                     <div class="span12 contact_left_sec">
                                         <?php if(!empty($custom_contact_address)){?>
@@ -98,7 +100,7 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
                                                 </div>
                                             </div>
                                         </div>
-                                        <?php } 
+                                        <?php }
                                        if(!empty($custom_contact_number)){
                                         ?>
                                         <div class="row-fluid contact_addr">
@@ -121,18 +123,19 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
                                             </div>
                                         </div>
                                         <?php } ?>
-                                    </div>        
+                                    </div>
                                 </div>
-                            
-                                
+
+
                             <div class="span6">
                                  <div class="span12 contact_right_sec">
-                                        <?php echo do_shortcode($contactus_element_text);?> 
+                                        <?php echo do_shortcode($contactus_element_text);?>
                                  </div>
                             </div>
-                        </div>   
+                        </div>
                     </div>
 			<?php
+			}
 		} //end of render_display
 
 		public function meta_box() {
@@ -162,7 +165,7 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
 					'class'   => '',
 					'name'    => __( 'Contact Email', 'cyberchimps_core' )
 				),
-				
+
 				array(
 					'type'    => 'text',
 					'id'      => 'contactus_element_text',
@@ -170,8 +173,8 @@ if ( ! class_exists( 'CyberChimpsContactUs' ) ) {
 					'name'    => __( 'Additional data', 'cyberchimps_core' ),
 					'desc' => __('Recommended: Contact Form', 'cyberchimps_core')
 				),
-                            
-                           
+
+
 
 			);
 			/*
