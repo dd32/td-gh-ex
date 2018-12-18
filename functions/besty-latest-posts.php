@@ -86,11 +86,11 @@ class besty_latest_post_widget extends WP_Widget {
 			$besty_number = 5;
 		} ?>
 <p>
-<label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php echo 'Title'; ?>
-  <input type="text" id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php echo esc_attr( $besty_title ); ?>" class="widefat"  /></label>
+<label for="<?php echo esc_attr($this->get_field_id( 'title' )); ?>"><?php echo 'Title'; ?>
+  <input type="text" id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" value="<?php echo esc_attr( $besty_title ); ?>" class="widefat"  /></label>
 </p>
 <p>
-<label for="<?php echo $this->get_field_id( 'number' ); ?>"><?php _e('Number of posts to show','besty'); echo " : "; ?>
-  <input type="text" id="<?php echo $this->get_field_id( 'number' ); ?>" name="<?php echo $this->get_field_name( 'number' ); ?>" value="<?php echo esc_attr( $besty_number ); ?>" size="1"  /></label>
+<label for="<?php echo esc_attr($this->get_field_id( 'number' )); ?>"><?php esc_html_e('Number of posts to show','besty'); echo " : "; ?>
+  <input type="text" id="<?php echo esc_attr($this->get_field_id( 'number' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'number' )); ?>" value="<?php echo esc_attr( $besty_number ); ?>" size="1"  /></label>
 </p>
 <?php } } ?>

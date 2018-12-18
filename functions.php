@@ -25,6 +25,14 @@ function besty_setup() {
 	register_nav_menus( array(
 		'primary'   => __( 'Top primary menu', 'besty' ),
 	) );
+	// Add theme support for Custom Logo.
+	add_theme_support( 'custom-logo', array(
+		'width'       => 250,
+		'height'      => 250,
+		'flex-width'  => true,
+		'flex-height' => true,
+		'header-text' => array( 'site-title', 'site-description' ),
+	) );
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -59,6 +67,19 @@ function besty_font_url() {
 	}
 	return $besty_font_url;
 }
+// Besty Pro Version Menu
+add_action( 'admin_menu', 'besty_admin_menu');
+function besty_admin_menu( ) {
+    add_theme_page( __('Pro Feature','besty'), __('Besty Pro','besty'), 'manage_options', 'besty-pro-buynow', 'besty_buy_now', 300 );   
+}
+function besty_buy_now(){ ?>
+<div class="besty_pro_version">
+  <a href="<?php echo esc_url('https://fasterthemes.com/wordpress-themes/besty/'); ?>" target="_blank">    
+    <img src ="<?php echo esc_url(get_template_directory_uri()); ?>/images/besty_pro_features.png" width="70%" height="auto" />
+  </a>
+</div>
+<?php
+}
 /**
  * Template for comments and pingbacks.
  *
@@ -70,14 +91,13 @@ function besty_font_url() {
  */
  if ( ! function_exists( 'besty_comment' ) ) :
 function besty_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
 		// Display trackbacks differently than normal comments. ?>
 			<li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
 				<p>
-				<?php _e('Pingback:', 'besty' ); ?>
+				<?php esc_html_e('Pingback:', 'besty' ); ?>
 				<?php comment_author_link(); ?>
 				<?php edit_comment_link( __( 'Edit', 'besty' ), '<span class="edit-link">', '</span>' ); ?>
 				</p>
@@ -94,7 +114,7 @@ function besty_comment( $comment, $args, $depth ) {
 			<figure class="comment-author"><?php echo get_avatar( get_the_author_meta('ID'), '41'); ?></figure>
 			<div class="comment-content">
            <div class="comment-metadata">
-					<span><?php _e('Post author','besty')?><span><?php echo ' : '.get_comment_author_link($comment->user_id === $post->post_author). ' '.get_comment_date('F j, Y')  ?>
+					<span><?php esc_html_e('Post author','besty')?><span><?php echo ' : '.get_comment_author_link($comment->user_id === $post->post_author). ' '.get_comment_date('F j, Y')  ?>
 				</div>	
                 <div class="comment-content-main">
                 <?php comment_text(); ?>
@@ -126,13 +146,6 @@ function besty_widgets_init() {
 	) );
 }
 add_action( 'widgets_init', 'besty_widgets_init' );
-
-function besty_add_ie_html5_shim () {
-	echo '<!--[if lt IE 9]>';
-	echo '<script src="' . get_template_directory_uri() . '/js/respond.min.js"></script>';
-	echo '<![endif]-->';
-}
-add_action('wp_head', 'besty_add_ie_html5_shim'); 
 
 add_filter( 'comment_form_default_fields', 'besty_comment_placeholders' );
 /**
@@ -208,11 +221,9 @@ require get_template_directory() . '/functions/theme-default-setup.php';
 /*** Latest Posts Widgets ***/
 require get_template_directory() . '/functions/besty-latest-posts.php';
 
-/*** Theme Option ***/
-require get_template_directory() . '/theme-options/besty.php';
-
 /*** Custom Header ***/
 require get_template_directory() . '/functions/custom-header.php';
 
-/*** TGM ***/
-require get_template_directory() . '/functions/tgm-plugins.php'; ?>
+/*** Theme Customizer Option ***/
+require get_template_directory() . '/functions/theme-customization.php';
+ ?>
