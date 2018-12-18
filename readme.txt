@@ -2,9 +2,9 @@
 
 An awesome magazine theme for your WordPress site. Responsive layout, post thumbnail support, featured posts and more.
 
-enrichmg has been created Terry East, (c) 2013-2014. You can Follow me at http://designs2site.com.
+enrichmg has been created Terry East. You can Follow me at https://terryeast.com.
 
-enrichmg is free software licensed under the GNU General Public License version 2. enrichmg is based on the _s (Underscores) starter theme by Automattic Inc., (C) 2012-2013, which is also licensed under GPLv2. For more information about licensing, please refer to http://www.gnu.org/licenses/gpl-2.0.html
+enrichmg is free software licensed under the GNU General Public License version 3. enrichmg is based on the _s (Underscores) starter theme by Automattic Inc., (C) 2012-2013, which is also licensed under GPLv2. For more information about licensing, please refer to License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 
 For more information about the Underscores (_s) starter theme visit: http://underscores.me/
  
@@ -14,6 +14,7 @@ For more information about the Underscores (_s) starter theme visit: http://unde
 
 
 	i) skip-link-focus-fix.js, navigation.js, customizer.js & keyboard-image-navigation.js are part of the Underscores Framework used by the theme, and hence under GPL v2.
+    ia) topPanel is the work product of the author.
 	ii) The Images screenshot.png and red-ham-icon.jpg have been created by me and are under GPL v2. 
 	iii) images within screenshot.png 
             golden gate bridge -- public domain

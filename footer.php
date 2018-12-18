@@ -11,7 +11,18 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
+		<div id="bottom-container" style="background-color:#000000;">
+        <?php if ( is_active_sidebar( 'custom-footer-widget' ) ) : ?>
+		<div class="widget-area">
+			<?php dynamic_sidebar( 'custom-footer-widget' ); ?>
+		</div><!-- .widget-area -->
+	<?php endif; ?>
+
+    
+    </div> 
+        
+        
+        <div class="site-info">
    
             <?php
             get_template_part( 'site', 'info' );

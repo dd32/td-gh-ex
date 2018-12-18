@@ -65,6 +65,8 @@ function enrichmg_setup() {
   if ( ! isset( $content_width ) )
 	$content_width = 640;
 }
+
+
 add_action( 'after_setup_theme', 'enrichmg_setup' );
 
 /**
@@ -85,6 +87,24 @@ function enrichmg_widgets_init() {
 		'before_title'  => '<h1 class="widget-title">',
 		'after_title'   => '</h1>',
 	) );
+    
+    register_sidebar( array(
+		'name'          => __( 'TopAd', 'enrichmg' ),
+		'id'            => 'custom-header-widget',
+		'before_widget' => '<aside style="width:700px; margin:0 auto;">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
+    
+    register_sidebar( array(
+		'name'          => __( 'BottomAd', 'enrichmg' ),
+		'id'            => 'custom-footer-widget',
+		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</aside>',
+		'before_title'  => '<h1 class="widget-title">',
+		'after_title'   => '</h1>',
+	) );
 }
 add_action( 'widgets_init', 'enrichmg_widgets_init' );
 
@@ -95,6 +115,8 @@ function enrichmg_scripts() {
 	wp_enqueue_style( 'enrichmg-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'enrichmg-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
+    
+    wp_enqueue_script( 'enrichmg-topPanel', get_template_directory_uri() . '/js/topPanel.js', array(),'20181019',true);
 
 	wp_enqueue_script( 'enrichmg-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 

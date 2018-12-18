@@ -3,8 +3,8 @@ Theme Name: enrichmg
 Theme URI: https://terryeast.com/wordpress-repository-theme-enrichmg
 Author: Terry East
 Author URI: https://terryeast.com
-Description: Minimal magazine format. Custom static frontpage and landing page sandbox layouts. HTML5/CSS3 Responsive Design. Theme option customizers allow easy CSS changes to backgrounds and text.
-Version: 2.3.1
+Description: Minimal magazine format, but everything you need to create a world class publication. Features include: • Custom static frontpage and landing page sandbox layouts • HTML5/CSS3 Responsive Design • Customizer allows easy changes to background and text colors • Top and bottom ad blocks, with scroll and sticky menu
+Version: 2.4
 License: GPU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: enrichmg
@@ -56,9 +56,13 @@ Version 2.3 brought current and bug fixes --
 			search index now handles vertical images larger the amount of text
             updated screenshot size
             updated GPL license to v3
-Version 2.3.1 bug fixes restored display of featured image on single post
-              updated author and theme URI
-			
+Version 2.3.1 bug fixe and theme info update
+            restored display of featured image on single post
+            updated author and theme URI
+
+Version 2.4 new features
+            added widgets areas top and bottow of page for ad space
+            top widget area collapses on scroll with fixed menu
 
 */
 
@@ -530,6 +534,33 @@ aside .menu a {
 	margin: 0 0 1.5em;
 }
 
+.parkIt {
+    position:fixed;
+    top: 0;
+    width:100%;
+}
+
+.hideit img {
+    display:none;
+}
+.parkit #headerLogo {
+    display:none;
+}
+.parkIt + .site-content {
+  padding-top: 102px;
+}
+
+#masthead {
+    background-color:inherit;
+    max-width: 1100px;
+}
+.site-branding {
+    padding-top:25px;
+    padding-left:10px;
+}
+#site-navigation h1 {
+    color:#ffffff;
+}
 
 /* =Asides
 ----------------------------------------------- */
@@ -645,6 +676,7 @@ body {
 
 #page {
     margin:0 auto; 
+    background-color:inherit;
     max-width:1100px;
 } 
 
