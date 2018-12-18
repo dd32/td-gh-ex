@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/catch-box/
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best Reasons to use Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light, dark, blue, green, red, brown and orange color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 5. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 6. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and Footer codes), 7. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, and 10. Support popular plugins. Multilingual Ready (WPML) and also currently translated in Brazilian Portuguese, Spanish, Danish, German, French, Polish, Czech, Croatian, Italian, Swedish, Russian, Arabic, Serbian, Dutch, Persian, Hungarian, Slovak, Japanese, Bosnian, Catalan, Romanian, Ukrainian and Lithuanian languages. Theme Support at https://catchthemes.com/support/
-Version: 4.7.8
+Version: 4.8
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: catch-box
@@ -69,7 +69,6 @@ footer, header, hgroup, menu, nav, section {
 figure {
 	margin: 0;
 }
-
 button,
 html input[type="button"],
 input[type="reset"],
@@ -83,9 +82,6 @@ input[type="submit"] {
 
 .site {
 	width: 1000px;
-}
-#content {
-	overflow: hidden;
 }
 #sidebar-header-top {
 	width: 100%;
@@ -183,6 +179,12 @@ input[type="submit"] {
 	margin-left: auto;
 	margin-right: auto;
 }
+.wp-block-archives.aligncenter,
+.wp-block-categories.aligncenter,
+.wp-block-latest-posts.aligncenter {
+    list-style-position: inside;
+    text-align: center;
+}
 #site-generator .copyright,
 #site-generator .powered {
     width: 470px;
@@ -248,7 +250,13 @@ ol,
 .commentlist > li.comment,
 .commentlist .pingback,
 #respond,
-#supplementary .widget {
+#supplementary .widget,
+.wp-block-quote,
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large,
+.wp-block-audio figcaption,
+.wp-block-button,
+.wp-block-pullquote {
 	margin-bottom: 30px;
 }
 .commentlist #respond,
@@ -271,6 +279,10 @@ ol,
 ul,
 ol {
 	margin-left: 25px;
+}
+.wp-block-gallery,
+.wp-block-latest-posts.is-grid {
+	margin-left: 0;
 }
 #site-generator {
 	padding: 25px 30px;
@@ -346,6 +358,10 @@ hr {
 	height: 1px;
 	margin-bottom: 2em;
 }
+.wp-block-separator {
+	border: none;
+	margin: 30px auto;
+}
 /* Text elements */
 ul {
 	list-style: disc;
@@ -386,15 +402,30 @@ blockquote {
 	font-weight: normal;
 	margin: 0 3em;
 }
-blockquote em, blockquote i, blockquote cite {
+.wp-block-quote.is-large,
+.wp-block-quote.is-style-large {
+	padding:  0 2em;
+}
+blockquote em, blockquote i,
+blockquote cite {
 	font-style: normal;
 }
 blockquote cite {
 	color: #666;
-	font: 12px "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font: 13px "Helvetica Neue", Helvetica, Arial, sans-serif;
 	font-weight: 300;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
+}
+.wp-block-quote cite,
+.wp-block-quote footer,
+.wp-block-quote__citation,
+.wp-block-audio figcaption {
+	color: #666;
+}
+.wp-block-audio figcaption {
+	margin-top: 0;
+	font-size: 14px;
 }
 pre {
 	background: #f4f4f4;
@@ -402,7 +433,7 @@ pre {
 	line-height: 1.5;
 	margin-bottom: 2em;
 	overflow: auto;
-	padding: 0.75em 2em;
+	padding: 2em;
 }
 code, kbd {
 	font: 13px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
@@ -1018,22 +1049,48 @@ a#scrollup,
 	font-weight: bold;
 	margin: 0 0 .8125em;
 }
+.wp-block-quote:not(.is-large):not(.is-style-large),
+.wp-block-pullquote {
+	border-color: #000;
+}
 .comment-content h3 {
 	font-size: 10px;
 	letter-spacing: 0.1em;
 	line-height: 2.6em;
 	text-transform: uppercase;
 }
+.entry-content .has-small-font-size {
+  font-size: 14px;
+}
+.entry-content .has-normal-font-size,
+.wp-block-quote.is-large cite,
+.wp-block-quote.is-large footer,
+.wp-block-quote.is-style-large cite,
+.wp-block-quote.is-style-large footer {
+  font-size: 16px;
+}
+.entry-content .has-large-font-size,
+.wp-block-quote.is-large p,
+.wp-block-quote.is-style-large p {
+  font-size: 24px;
+}
+.entry-content .has-huge-font-size {
+  font-size: 26px;
+}
 table,
 th,
 td,
 .mce-item-table,
 .mce-item-table th,
-.mce-item-table td {
+.mce-item-table td,
+.wp-block-table,
+.wp-block-table td,
+.wp-block-table th {
 	border: 1px solid #ccc;
 }
 table,
-.mce-item-table {
+.mce-item-table,
+.wp-block-table {
 	border-collapse: separate;
 	border-spacing: 0;
 	border-width: 1px 0 0 1px;
@@ -1042,7 +1099,9 @@ table,
 }
 table th,
 .mce-item-table th,
-table caption {
+table caption,
+.wp-block-table th,
+.wp-block-table caption {
 	border-width: 0 1px 1px 0;
 	font-weight: 700;
 	padding: 7px;
@@ -1050,7 +1109,8 @@ table caption {
 	vertical-align: baseline;
 }
 table td,
-.mce-item-table td {
+.mce-item-table td,
+.wp-block-table td {
 	border-width: 0 1px 1px 0;
 	padding: 7px;
 	vertical-align: baseline;
@@ -1234,6 +1294,12 @@ img#wpstats {
 }
 #content .gallery dd.gallery-caption {
 	margin-bottom: 1em;
+}
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption {
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 /* Image borders */
 img[class*="align"],
@@ -1444,6 +1510,14 @@ blockquote.pull {
 	margin: 0 0 2em;
 	text-align: center;
 }
+.wp-block-pullquote {
+	padding: 30px 0;
+}
+.wp-block-pullquote.alignwide,
+.wp-block-pullquote.alignfull {
+	padding-left: 30px;
+	padding-right: 30px;
+}
 .no-sidebar blockquote.pull {
 	margin: 0 -22.25% 2em;
 }
@@ -1468,6 +1542,10 @@ blockquote.pull {
 	width: 33%;
 }
 
+/* Video */
+.wp-embed-responsive .hentry .wp-block-embed .wp-block-embed__wrapper:before {
+    padding-top: 0;
+}
 
 /* =Aside
 ----------------------------------------------- */
@@ -2685,6 +2763,34 @@ p.comment-form-comment {
 	border-radius: 3px;
 	text-indent: -99999px;
 }
+
+.social-profile ul li.custom a {
+	background: none transparent;
+}
+
+.social-profile ul li.custom a img {
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+	border-radius: 3px;
+	width: 34px;
+	height: 34px;
+}
+
+.social-profile ul li.custom a .icon-static,
+.social-profile ul li.custom a:hover .icon-hover {
+	display: block;
+}
+
+.social-profile ul li.custom a .icon-hover,
+.social-profile ul li.custom a.has-hover:hover .icon-static {
+	display: none;
+	opacity: 1;
+}
+
+.social-profile ul li.custom a:hover .icon-static {
+	opacity: 0.7;
+}
+
 .social-profile ul li a:active,
 .social-profile ul li a:focus {
 	-moz-box-shadow: inset 0 0 6px #000;
@@ -2973,19 +3079,30 @@ img#wpstats {
 }
 
 #content #infinite-handle span button {
-	background-color: #444;
-	color: #fff;
 	display: inline;
 	font-size: 14px;
 	padding: 10px 30px;
 	width: 100%;
 }
 
-#content #infinite-handle span button:hover,
-#content #infinite-handle span button:focus {
-	background-color: #000;
+#content #infinite-handle span button,
+.wp-block-button__link {
+	background-color: #444;
+	border-radius: 0;
+	color: #fff;
 }
 
+#content #infinite-handle span button:hover,
+#content #infinite-handle span button:focus,
+.wp-block-button__link:hover,
+.wp-block-button__link:focus {
+	background-color: #000;
+	text-decoration: none;
+}
+
+.wp-block-button__link {
+	font-size: 16px;
+}
 
 /* =Scrollup
 ----------------------------------------------- */
@@ -3016,6 +3133,29 @@ a#scrollup:focus {
 	filter:alpha(opacity=100); /* For IE8 and earlier */
 }
 
+/* alignwide */
+.entry-content .alignwide,
+.entry-content .alignfull {
+    margin-left: -15px;
+	margin-right: -15px;
+	max-width: none;
+}
+.no-sidebar.full-width .entry-content .alignwide,
+.no-sidebar.one-column .entry-content .alignwide {
+    margin-left: -15px;
+	margin-right: -15px;
+}
+.entry-content .alignfull.wp-block-cover,
+.entry-content .alignwide.wp-block-cover {
+	width: auto;
+}
+
+/* alignfull only support in no-sidebar */
+.no-sidebar .entry-content .alignfull {
+    margin-left  : calc( -100vw / 2 + 100% / 2 );
+    margin-right : calc( -100vw / 2 + 100% / 2 );
+    max-width    : 100vw;
+}
 
 /* =Print
 ----------------------------------------------- */
@@ -3172,10 +3312,13 @@ a#scrollup:focus {
 		color: #666;
 	}
 }
+
 /*--------------------------------------------------------------
 Responsive Style
 --------------------------------------------------------------*/
 
+/* =Mobile Menus
+----------------------------------------------- */
 
 /* =Mobile Menus
 ----------------------------------------------- */
@@ -3786,9 +3929,6 @@ Responsive Style
 	#nav-single {
 		display: block;
 	}
-	.no-sidebar.page .hentry {
-		padding: 2em 5%;
-	}
 	.widget_search #s {
 		width: 89%;
 	}
@@ -3844,14 +3984,16 @@ Responsive Style
 		left: 90%;
 	}
 	#site-generator .social-profile {
+		display: block;
 		float: none;
 		margin-right: 0;
 		padding-bottom: 0;
 		text-align: center;
 	}
-	.social-profile ul li {
+	.social-profile ul {
 		display: inline-block;
-		float: none;
+	}
+	.social-profile ul li {
 		margin: 0 0 5px 10px;
 	}
 	#site-generator {
@@ -4186,5 +4328,38 @@ Responsive Style
 	#comments-title,
 	#nav-below {
 	    padding-bottom: 10px;
+	}
+}
+
+@media screen and (min-width: 480px) {
+	.entry-content .alignwide,
+	.no-sidebar.full-width .entry-content .alignwide,
+	.no-sidebar.one-column .entry-content .alignwide,
+	.entry-content .alignfull {
+	    margin-left: -20px;
+		margin-right: -20px;
+	}
+}
+@media screen and (min-width: 961px) {
+	.entry-content .alignwide,
+	.no-sidebar.full-width .entry-content .alignwide,
+	.no-sidebar.one-column .entry-content .alignwide,
+	.entry-content .alignfull {
+	    margin-left: -25px;
+		margin-right: -25px;
+	}
+}
+@media screen and (min-width: 1024px) {
+	.entry-content .alignwide,
+	.no-sidebar.full-width .entry-content .alignwide,
+	.no-sidebar.one-column .entry-content .alignwide,
+	.entry-content .alignfull {
+		margin-left: -30px;
+		margin-right: -30px;
+	}
+	.no-sidebar .entry-content .alignwide {
+	    margin-left: -140px;
+		margin-right: -140px;
+		max-width: 940px;
 	}
 }

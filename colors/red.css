@@ -51,17 +51,20 @@ body {
     color: #fff;
 }
 #colophon #access-footer ul.menu li {
-    border-left: 1px solid #89251e;	
+    border-left: 1px solid #89251e;
 }
 #branding #access, #colophon #access-footer {
 	border-bottom: 1px solid #89251e;
 	margin-bottom: 0;
 }
-#content #infinite-handle span button {
-	background-color: #ba3027;
+#content #infinite-handle span button,
+.wp-block-button__link {
+	background-color: #000;
 }
 #content #infinite-handle span button:hover,
-#content #infinite-handle span button:focus {
+#content #infinite-handle span button:focus,
+.wp-block-button__link:hover,
+.wp-block-button__link:focus {
 	background-color: #89251e;
 }
 #site-generator {
@@ -73,7 +76,7 @@ body {
     background-color: #ba3027;
 }
 .toggled-on #access,
-.toggled-on #access ul.menu a, 
+.toggled-on #access ul.menu a,
 .toggled-on #access-secondary,
 .toggled-on #access-secondary ul.menu a,
 #colophon .toggled-on #access-footer,

@@ -1,36 +1,46 @@
-= Catch Box =
-* Catch Box by the Catch Themes, https://catchthemes.com/
-
-== ABOUT Catch Box==
-Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best Reasons to use Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light, dark, blue, green, red, brown and orange color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 5. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 6. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and Footer codes), 7. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, and 10. Support popular plugins. Multilingual Ready (WPML) and also currently translated in Brazilian Portuguese, Spanish, Danish, German, French, Polish, Czech, Croatian, Italian, Swedish, Russian, Arabic, Serbian, Dutch, Persian, Hungarian, Slovak, Japanese, Bosnian, Catalan, Romanian, Ukrainian and Lithuanian languages. Theme Support at https://catchthemes.com/support/
-
-== License ==
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
-
+=== Catch Box ===
+Contributors: catchthemes
+Tags: dark, light, blue, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+Requires at least: 4.8
+Tested up to: 5.0.1
+Stable tag: 4.8
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Catch Box WordPress Theme, Copyright 2012-2016 Catchthemes.com
-Catch Box is distributed under the terms of the GNU General Public License v3
+Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for bloggers and professionals.
+
+== Description ==
+
+Catch Box is simple, lightweight, box shaped, and adaptable WordPress Theme for bloggers and professionals. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. 10 Best Reasons to use Catch Box Theme. 1. Responsive Web Design, 2. Custom Menus (Primary, Secondary and Footer menus), 3. Theme Options for light, dark, blue, green, red, brown and orange color scheme, custom link colors, three layout choices, two content choices between excerpt and content option in homepage, feed redirection, custom css styles, 4. Featured Sliders where you can define number of slides and post IDs, 5. Social Links (Facebook, Twitter, RSS, Linkedin, Pinterest, etc), 6. Webmaster Tools (Google, Yahoo and Bing site verification ID, Header and Footer codes), 7. Custom Backgrounds, 8. Custom Header, 9. Catchbox Adspace widget to add any type of Advertisements, and 10. Support popular plugins. Multilingual Ready (WPML) and also currently translated in Brazilian Portuguese, Spanish, Danish, German, French, Polish, Czech, Croatian, Italian, Swedish, Russian, Arabic, Serbian, Dutch, Persian, Hungarian, Slovak, Japanese, Bosnian, Catalan, Romanian, Ukrainian and Lithuanian languages. Theme Support at https://catchthemes.com/support/
+
+For more information about Catch Box please go to https://catchthemes.com/themes/catch-box/
+
+== Installation ==
+
+1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+2. Type in Catch Box in the search form and press the 'Enter' key on your keyboard.
+3. Click on the 'Activate' button to use your new theme right away.
+4. Go to https://catchthemes.com/theme-instructions/catch-box/ for a guide on how to customize this theme.
+5. Navigate to Appearance -> Customize in your admin panel and customize to taste.
+
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+Theme supports all plugins from catchplugins.com
+
+= Where can I find theme documentation? =
+
+You can check our Theme Instructions at https://catchthemes.com/themes/catch-box in the Theme Instructions Tab.
+
+= Where can I find theme demo? =
+
+You can check our Theme Demo at https://catchthemes.com/demo/catch-box/
 
 Catch Box is a derivative of the Twenty Eleven theme by the WordPress team:
 http://wordpress.org/themes/twentyeleven
 Copyright: Automattic, automattic.com
 Licensed under GPLv2 or later
-
-Scripts used in the site are as below:
-	1. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2 license
-	2. Slider script uses Cycle script http://jquery.malsup.com/cycle/ lincensed under MIT/GPL license
-	3. jQyery Cookie script (https://github.com/carhartl/jquery-cookie) licensed under MIT license
-	4. DD_belatedPNG script (http://www.dillerdesign.com/experiment/DD_belatedPNG/) licensed under MIT license
-	5. FitVids is Licensed under the  WTFPL license (http://fitvidsjs.com/)
-
-Font Icons
-	Genericons by Automattic, Inc.
-  	Genericons is Licensed under the GPL, version 2 or later
-	http://genericons.com/
-
-Images used in screenshot are selfshot my CatchThemes team, licensed uner GPL3 license
 
 == Translation ==
 Catch Box theme is translation ready.
@@ -65,17 +75,26 @@ There are 3 Menus registered in this theme. Primary, Secondary and Footer menu.
 Primary and Secondary menu is dull drop down menu while the Footer menu displays only parent menu and no drop down.
 Only Primary Menu is visible in responsive (mobile devices with max-width: 650px)
 
-== Tags ==
-dark, light, blue, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
+= Why are my videos not resizing after updating WordPress and theme to version 5.0 or above?  =
+Because Gutenberg ( Block editor from WordPress version 5.0 or onwards ) automatically resizes videos, we have removed fitvid support from WordPress version 5.0. If you still want to resize the videos, please install FitVid plugin from WordPress.org plugins repository.
 
-== Installation ==
+= More FAQ =
 
-1. Primary: Login to your wp-admin area and go to Appearance -> Themes. Select Install tab and click on Upload link. Select theme .zip and ckick on Install now button. If you have any errors, use alternate method.
-2. Alternate: Unzip the template file (catch-box.zip) that you have downloaded. Via FTP, upload the whole folder (catch-box) to your server and place it in the /wp-content/themes/ folder. Do not change directory name. The template files should thus be here now: /wp-content/themes/catch-box/index.php (for example).
-3. Log into your WP admin panel and click on the Design tab. Now click on the Catch Box theme to activate it.
-4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
+For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Change Log ==
+
+
+= 4.8 (Released: December 18, 2018) =
+* Added: Theme support for block styles
+* Added: Theme support for full and wide align images
+* Added: Theme support for for editor styles
+* Added: Theme support for responsive embeds
+* Added: Theme support for custom editor font sizes
+* Added: Theme support for custom color scheme
+* Updated: Metabox UI
+* Updated: Readme file as per the new requirement
+* Updated: FitVid only loaded for WP < 5.0 as it breaks embedded videos on Block Editor
 
 = 4.7.8 (Released: October 24, 2018) =
 * Added: Instagram Widget and Sidebar Support
@@ -753,3 +772,26 @@ dark, light, blue, white, black, gray, one-column, two-columns, left-sidebar, ri
 * Fixed undefined index for custom_css in theme-options.php
 * Added margin left for sub level list in widget lists.
 * Added function catchbox_filter_wp_title() to filter the wp_title()
+
+== Copyright ==
+
+Catch Box WordPress Theme, Copyright 2012-2018 Catchthemes.com
+Catch Box is distributed under the terms of the GNU GPL
+
+== Resources ==
+* Based on Underscores http://underscores.me/, (C) 2012-2018 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+
+* JS Files
+	1. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2 license
+	2. Slider script uses Cycle script http://jquery.malsup.com/cycle/ lincensed under MIT/GPL license
+	3. jQyery Cookie script (https://github.com/carhartl/jquery-cookie) licensed under MIT license
+	4. DD_belatedPNG script (http://www.dillerdesign.com/experiment/DD_belatedPNG/) licensed under MIT license
+	5. FitVids is Licensed under the  WTFPL license (http://fitvidsjs.com/)
+
+* Font Icons
+	Genericons by Automattic, Inc.
+  	Genericons is Licensed under the GPL, version 2 or later
+	http://genericons.com/
+
+* Images
+	Images used in screenshot are selfshot my CatchThemes team, licensed uner GPL3 license

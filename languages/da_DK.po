@@ -7,8 +7,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-06-19 00:05+0545\n"
-"PO-Revision-Date: 2018-06-19 00:05+0545\n"
+"POT-Creation-Date: 2018-12-18 15:54+0545\n"
+"PO-Revision-Date: 2018-12-18 15:54+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Kris Thomsen <mail@kristhomsen.dk>\n"
 "Language: da_DK\n"
@@ -20,7 +20,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 2.0.8\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
@@ -144,7 +144,7 @@ msgctxt "comments number"
 msgid "%"
 msgstr "%"
 
-#: ../content-aside.php:34 ../content.php:56 ../functions.php:287
+#: ../content-aside.php:34 ../content.php:56 ../functions.php:362
 #, php-format
 msgid "Continue reading %s"
 msgstr "Fortsæt læsning  %s"
@@ -177,7 +177,7 @@ msgstr "<b>%</b> svar"
 #: ../content-aside.php:56 ../content-featured.php:50 ../content-gallery.php:94
 #: ../content-image.php:71 ../content-link.php:48 ../content-page.php:27
 #: ../content-quote.php:76 ../content-single.php:64 ../content-status.php:49
-#: ../content.php:106 ../functions.php:457 ../functions.php:485 ../image.php:97
+#: ../content.php:106 ../functions.php:532 ../functions.php:560 ../image.php:97
 msgid "Edit"
 msgstr "Redigér"
 
@@ -252,7 +252,7 @@ msgstr ""
 "</span> <span class=\"author vcard\"><a class=\"url fn n\" href=\"%4$s\" "
 "title=\"%5$s\" rel=\"author\">%6$s</a></span></span>"
 
-#: ../content-image.php:42 ../functions.php:523
+#: ../content-image.php:42 ../functions.php:598
 #, php-format
 msgid "View all posts by %s"
 msgstr "Vis alle indlæg af %s"
@@ -331,41 +331,73 @@ msgstr "Sekundær menu"
 msgid "Footer Menu"
 msgstr "Sidefods-menu"
 
-#: ../functions.php:342 ../functions.php:371
+#: ../functions.php:209
+msgid "Small"
+msgstr ""
+
+#: ../functions.php:210
+msgid "S"
+msgstr ""
+
+#: ../functions.php:215
+msgid "Normal"
+msgstr ""
+
+#: ../functions.php:216
+msgid "M"
+msgstr ""
+
+#: ../functions.php:221
+msgid "Large"
+msgstr ""
+
+#: ../functions.php:222
+msgid "L"
+msgstr ""
+
+#: ../functions.php:227
+msgid "Huge"
+msgstr ""
+
+#: ../functions.php:228
+msgid "XL"
+msgstr ""
+
+#: ../functions.php:417 ../functions.php:446
 msgid "Post navigation"
 msgstr "Indlægsnavigation"
 
-#: ../functions.php:350 ../functions.php:379 ../page-blog.php:52
+#: ../functions.php:425 ../functions.php:454 ../page-blog.php:52
 msgid "<span class=\"meta-nav\">&larr;</span> Older posts"
 msgstr "<span class=\"meta-nav\">&larr;</span> Ældre indlæg"
 
-#: ../functions.php:351 ../functions.php:380 ../page-blog.php:53
+#: ../functions.php:426 ../functions.php:455 ../page-blog.php:53
 msgid "Newer posts <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Nyere indlæg <span class=\"meta-nav\">&rarr;</span>"
 
-#: ../functions.php:457
+#: ../functions.php:532
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../functions.php:474
+#: ../functions.php:549
 #, php-format
 msgid "%1$s on %2$s <span class=\"says\">said:</span>"
 msgstr "%1$s d. %2$s <span class=\"says\">sagde:</span>"
 
-#: ../functions.php:480
+#: ../functions.php:555
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s d. %2$s"
 
-#: ../functions.php:489
+#: ../functions.php:564
 msgid "Your comment is awaiting moderation."
 msgstr "Din kommentar afventer godkendelse."
 
-#: ../functions.php:498
+#: ../functions.php:573
 msgid "Reply <span>&darr;</span>"
 msgstr "Svar <span>&darr;</span>"
 
-#: ../functions.php:517
+#: ../functions.php:592
 #, php-format
 msgid ""
 "<span class=\"sep\">Posted on </span><a href=\"%1$s\" title=\"%2$s\" rel="
@@ -380,115 +412,115 @@ msgstr ""
 "class=\"author vcard\"><a class=\"url fn n\" href=\"%5$s\" title=\"%6$s\" "
 "rel=\"author\">%7$s</a></span></span>"
 
-#: ../functions.php:590
+#: ../functions.php:665
 msgid "ID"
 msgstr "ID"
 
-#: ../functions.php:714
+#: ../functions.php:803
 msgid "Name"
 msgstr "Navn"
 
-#: ../functions.php:716 ../functions.php:866
+#: ../functions.php:805 ../functions.php:955
 msgid "Email"
 msgstr "Email"
 
-#: ../functions.php:772
+#: ../functions.php:861
 msgid "Footer Social Links Menu"
 msgstr ""
 
-#: ../functions.php:776
+#: ../functions.php:865
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../functions.php:781
+#: ../functions.php:870
 msgid "Twitter"
 msgstr "Twitter"
 
-#: ../functions.php:786
+#: ../functions.php:875
 msgid "Google Plus"
 msgstr "Google Plus"
 
-#: ../functions.php:791
+#: ../functions.php:880
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../functions.php:796
+#: ../functions.php:885
 msgid "Pinterest"
 msgstr "Pinterest"
 
-#: ../functions.php:801
+#: ../functions.php:890
 msgid "YouTube"
 msgstr "YouTube"
 
-#: ../functions.php:806
+#: ../functions.php:895
 msgid "RSS Feed"
 msgstr "RSS Feed"
 
-#: ../functions.php:811
+#: ../functions.php:900
 msgid "Deviantart"
 msgstr "Deviantart"
 
-#: ../functions.php:816
+#: ../functions.php:905
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../functions.php:821
+#: ../functions.php:910
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../functions.php:826
+#: ../functions.php:915
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../functions.php:831
+#: ../functions.php:920
 msgid "MySpace"
 msgstr "MySpace"
 
-#: ../functions.php:836
+#: ../functions.php:925
 msgid "AIM"
 msgstr "AIM"
 
-#: ../functions.php:841
+#: ../functions.php:930
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../functions.php:846
+#: ../functions.php:935
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../functions.php:851
+#: ../functions.php:940
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../functions.php:856
+#: ../functions.php:945
 msgid "Skype"
 msgstr "Skype"
 
-#: ../functions.php:861
+#: ../functions.php:950
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../functions.php:871
+#: ../functions.php:960
 msgid "Xing"
 msgstr "Xing"
 
-#: ../functions.php:876
+#: ../functions.php:965
 msgid "Meetup"
 msgstr "Meetup"
 
-#: ../functions.php:882
+#: ../functions.php:971
 msgid "Goodreads"
 msgstr ""
 
-#: ../functions.php:888
+#: ../functions.php:977
 msgid "Github"
 msgstr ""
 
-#: ../functions.php:894
+#: ../functions.php:983
 msgid "VK"
 msgstr ""
 
-#: ../functions.php:899
+#: ../functions.php:988
 msgid "Spotify"
 msgstr ""
 
@@ -525,31 +557,6 @@ msgstr "Primær menu"
 #: ../inc/catchbox-menus.php:173
 msgid "Footer menu"
 msgstr "Sidefods-menu"
-
-#: ../inc/catchbox-metabox.php:31 ../inc/catchbox-metabox.php:37
-msgid "Catch Box Options"
-msgstr ""
-
-#: ../inc/catchbox-metabox.php:50
-#, php-format
-msgid "Default Layout Set in <a href=\"%s\">Theme Settings</a>"
-msgstr ""
-
-#: ../inc/catchbox-metabox.php:56
-msgid "Right sidebar"
-msgstr ""
-
-#: ../inc/catchbox-metabox.php:62
-msgid "Left sidebar"
-msgstr ""
-
-#: ../inc/catchbox-metabox.php:68
-msgid "No Sidebar, One Column"
-msgstr ""
-
-#: ../inc/catchbox-metabox.php:84
-msgid "Sidebar Layout Options"
-msgstr ""
 
 #: ../inc/custom-header.php:31
 msgid "Garden"
@@ -657,31 +664,31 @@ msgstr "Sidefodsområde 2"
 msgid "Footer Area Three"
 msgstr "Sidefodsområde 3"
 
-#: ../inc/widgets.php:73
+#: ../inc/widgets.php:86
 msgid "CT: Adspace Widget"
 msgstr "CT: Reklamer"
 
-#: ../inc/widgets.php:74
+#: ../inc/widgets.php:87
 msgid "Use this widget to add any type of Ad as a widget. "
 msgstr "Brug denne widget til at tilføje forskellige typer af annoncering"
 
-#: ../inc/widgets.php:92
+#: ../inc/widgets.php:105
 msgid "Title (optional):"
 msgstr "Titel (valgfri):"
 
-#: ../inc/widgets.php:97
+#: ../inc/widgets.php:110
 msgid "Ad Code:"
 msgstr "Reklamekode:"
 
-#: ../inc/widgets.php:103
+#: ../inc/widgets.php:116
 msgid "Image Url:"
 msgstr "Billede-url:"
 
-#: ../inc/widgets.php:107
+#: ../inc/widgets.php:120
 msgid "Link URL:"
 msgstr "Link-url:"
 
-#: ../inc/widgets.php:111
+#: ../inc/widgets.php:124
 msgid "Alt text:"
 msgstr "Alt-tekst:"
 

@@ -160,8 +160,7 @@ function catchbox_setup() {
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
-	add_editor_style();
-
+	add_editor_style( 'css/editor-style.css' );
 
 	/**
      * This feature enables Jetpack plugin Infinite Scroll
@@ -190,6 +189,82 @@ function catchbox_setup() {
 		);
 	}
 
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	// Add support for editor styles.
+	add_theme_support( 'editor-styles' );
+
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add custom editor font sizes.
+	add_theme_support(
+		'editor-font-sizes',
+		array(
+			array(
+				'name'      => __( 'Small', 'catch-box' ),
+				'shortName' => __( 'S', 'catch-box' ),
+				'size'      => 14,
+				'slug'      => 'small',
+			),
+			array(
+				'name'      => __( 'Normal', 'catch-box' ),
+				'shortName' => __( 'M', 'catch-box' ),
+				'size'      => 16,
+				'slug'      => 'normal',
+			),
+			array(
+				'name'      => __( 'Large', 'catch-box' ),
+				'shortName' => __( 'L', 'catch-box' ),
+				'size'      => 24,
+				'slug'      => 'large',
+			),
+			array(
+				'name'      => __( 'Huge', 'catch-box' ),
+				'shortName' => __( 'XL', 'catch-box' ),
+				'size'      => 26,
+				'slug'      => 'huge',
+			),
+		)
+	);
+
+	// Add support for custom color scheme.
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => esc_html__( 'White', 'catch-box' ),
+			'slug'  => 'white',
+			'color' => '#ffffff',
+		),
+		array(
+			'name'  => esc_html__( 'Black', 'catch-box' ),
+			'slug'  => 'black',
+			'color' => '#000000',
+		),
+		array(
+			'name'  => esc_html__( 'Dark Gray', 'catch-box' ),
+			'slug'  => 'dark-gray',
+			'color' => '#373737',
+		),
+		array(
+			'name'  => esc_html__( 'Medium Gray', 'catch-box' ),
+			'slug'  => 'medium-gray',
+			'color' => '#cccccc',
+		),
+		array(
+			'name'  => esc_html__( 'Light Gray', 'catch-box' ),
+			'slug'  => 'light-gray',
+			'color' => '#eeeeee',
+		),
+		array(
+			'name'  => esc_html__( 'Blue', 'catch-box' ),
+			'slug'  => 'blue',
+			'color' => '#1982d1',
+		),
+	) );
 }
 endif; // catchbox_setup
 
@@ -639,7 +714,9 @@ function catchbox_scripts_method() {
 		'collapse' => esc_html__( 'collapse child menu', 'catch-box' ),
 	) );
 
-	wp_enqueue_script( 'jquery-fitvids', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchbox-fitvids.min.js', array( 'jquery' ), '20140315', true );
+	if ( version_compare( $GLOBALS['wp_version'], '5.0', '<' ) ) {
+		wp_enqueue_script( 'jquery-fitvids', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/catchbox-fitvids.min.js', array( 'jquery' ), '20140315', true );
+	}
 
 	//Register JQuery circle all and JQuery set up as dependent on Jquery-cycle
 	wp_register_script( 'jquery-cycle', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/jquery.cycle.all.min.js', array( 'jquery' ), '2.9999.5', true );
@@ -662,6 +739,9 @@ function catchbox_scripts_method() {
 	// Loads our main stylesheet.
 	wp_enqueue_style( 'catchbox-style', get_stylesheet_uri() );
 
+	// Theme block stylesheet.
+	wp_enqueue_style( 'catchbox-block-style', get_theme_file_uri( '/css/blocks.css' ), array( 'catchbox-style' ), '1.0' );
+
 	// Adds JavaScript for handling the navigation menu hide-and-show behavior.
 	wp_enqueue_script( 'catchbox-navigation', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/navigation.js', array( 'jquery' ), '20152512', true );
 
@@ -677,8 +757,17 @@ function catchbox_scripts_method() {
 
 }
 endif; // catchbox_scripts_method
-
 add_action( 'wp_enqueue_scripts', 'catchbox_scripts_method' );
+
+
+/**
+ * Enqueue editor styles for Gutenberg
+ */
+function catchbox_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'catchbox-block-editor-style', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/editor-blocks.css' );
+}
+add_action( 'enqueue_block_editor_assets', 'catchbox_block_editor_styles' );
 
 
 if ( ! function_exists( 'catchbox_alter_home' ) ):
