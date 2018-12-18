@@ -4,7 +4,7 @@ Contributors: Atlas Concern
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments
 
 Requires at least: 4.0
-Tested up to: 4.9
+Tested up to: 5.1
 Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -59,6 +59,9 @@ Atlas Concern is distributed under the terms of the GNU GPL
 = 2.0 ( 1/November/2018 ) =
 * Files edited
 
+= 3.0 ( 1/December/2018 ) =
+* Design created again
+
 
 == Credits ==
 
@@ -84,9 +87,6 @@ License: (CSS)[MIT](http://opensource.org/licenses/MIT), (Fonts)[SIL OFL 1.1](ht
 Source: https://github.com/wp-bootstrap/wp-bootstrap-navwalker/blob/master/LICENSE.txt
 License: GNU General Public License v3.0
 
-* '''TGM'''  Thomas Griffin, Gary Jones, Juliette Reinders Folmer [GPLv2 or later]
-        http://tgmpluginactivation.com/
-        Copyright:   2011, Thomas Griffin
 
 
 == Image used in screenshot ==

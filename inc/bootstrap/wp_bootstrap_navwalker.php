@@ -1,39 +1,22 @@
 <?php
 
 /**
-
  * WP Bootstrap Navwalker
-
  *
-
  * @package WP-Bootstrap-Navwalker
-
  */
 
-
-
 /*
-
  * Class Name: WP_Bootstrap_Navwalker
-
  * Plugin Name: WP Bootstrap Navwalker
-
  * Plugin URI:  https://github.com/wp-bootstrap/wp-bootstrap-navwalker
-
  * Description: A custom WordPress nav walker class to implement the Bootstrap 4 navigation style in a custom theme using the WordPress built in menu manager.
-
  * Author: Edward McIntyre - @twittem, WP Bootstrap, William Patton - @pattonwebz
-
  * Version: 4.1.0
-
  * Author URI: https://github.com/wp-bootstrap
-
  * GitHub Plugin URI: https://github.com/wp-bootstrap/wp-bootstrap-navwalker
-
  * GitHub Branch: master
-
  * License: GPL-3.0+
-
  * License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 
 */
@@ -234,7 +217,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 
 			 */
 
-			$classes = self::seporate_linkmods_and_icons_from_classes( $classes, $linkmod_classes, $icon_classes, $depth );
+			$classes = self::separate_linkmods_and_icons_from_classes( $classes, $linkmod_classes, $icon_classes, $depth );
 
 
 
@@ -794,7 +777,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 
 		 */
 
-		private function seporate_linkmods_and_icons_from_classes( $classes, &$linkmod_classes, &$icon_classes, $depth ) {
+		private function separate_linkmods_and_icons_from_classes( $classes, &$linkmod_classes, &$icon_classes, $depth ) {
 
 			// Loop through $classes array to find linkmod or icon classes.
 

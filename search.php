@@ -10,26 +10,20 @@
 get_header();
 ?>
 
-<div class="top-header">
- <div class="container">
-   <div class="row">
-      <div class="col-md-8">
-	  					<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'atlas-concern' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-      </div>
-   </div>
-  </div>
-</div>
+
 
 <div class="container">
-<div class="row">
-<div class="col-md-8">
+  <div class="row">
+   <div class="col-md-8">
+		<main id="main" class="site-main">
 
-
+		 <h1 class="page-title">
+				 <?php
+					  /* translators: %s: search query. */
+					   printf( esc_html__( 'Search Results for: %s', 'atlas-concern' ), '<span>' . get_search_query() . '</span>' );
+				 ?>
+		 </h1>
+		
 		<?php if ( have_posts() ) : ?>
 
 			<?php
@@ -54,8 +48,10 @@ get_header();
 
 		endif;
 		?>
-   </div>
-   <?php get_sidebar(); ?>
+
+		</main><!-- #main -->
+	</div>
+	<?php get_sidebar(); ?>
   </div>
 </div>
 

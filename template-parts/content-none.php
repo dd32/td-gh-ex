@@ -9,8 +9,8 @@
 
 ?>
 
-<section class="no-results not-found">
-	<header class="page-header text-center">
+<section class="no-results not-found text-center">
+	<header class="page-header">
 		<h1><?php esc_html_e( 'Nothing Found', 'atlas-concern' ); ?></h1>
 	</header><!-- .page-header -->
 

@@ -3,6 +3,7 @@
  * Template Name: Fullwidth
 */
 get_header();
+
 ?>
 <div class="page-builder">
 	<div class="container">
