@@ -81,29 +81,29 @@ function azauthority_get_default_fields( $plugin_token ) {
 
 		array(
 			'type'        => 'repeater',
-			'label'       => esc_attr__( 'Post Sections', 'azauthority' ),
+			'label'       => esc_html__( 'Post Sections', 'azauthority' ),
 			'section'     => $prefix_section . 'homepage',
 			'priority'    => 10,
 			'row_label' => array(
 				'type' => 'text',
-				'value' => esc_attr__('Homepage Post Style', 'azauthority' ),
+				'value' => esc_html__('Homepage Post Style', 'azauthority' ),
 			),
 			'row_label' => array(
 				'type' => 'text',
-				'value' => esc_attr__('Homepage Post Style', 'azauthority' ),
+				'value' => esc_html__('Homepage Post Style', 'azauthority' ),
 			),
-			'button_label' => esc_attr__('Add Homepage Section', 'azauthority' ),
+			'button_label' => esc_html__('Add Homepage Section', 'azauthority' ),
 			'settings'     => 'custom_homepage_control',
 			'default'      => array(			
 				array(
-					'link_text' => esc_attr__( 'Title Section', 'azauthority' ),
+					'link_text' => esc_html__( 'Title Section', 'azauthority' ),
 					'link_url'  => '',
 				),
 			),
 			'fields' => array(
 				'link_text' => array(
 					'type'        => 'text',
-					'label'       => esc_attr__( 'Title Post', 'azauthority' ),
+					'label'       => esc_html__( 'Title Post', 'azauthority' ),
 					'default'     => '',
 				),
 				'category_post' => array(
@@ -181,10 +181,10 @@ function azauthority_get_default_fields( $plugin_token ) {
 			'default'			=> array('date', 'author', 'category', 'tag'),
 			'priority'			=> 10,
 			'choices'			=> array(				
-				'author'			=> esc_attr__( 'Author', 'azauthority' ),
-				'date'				=> esc_attr__( 'Date', 'azauthority' ),
-				'category'			=> esc_attr__( 'Categories', 'azauthority' ),
-				'tag'				=> esc_attr__( 'Tags', 'azauthority' ),
+				'author'			=> esc_html__( 'Author', 'azauthority' ),
+				'date'				=> esc_html__( 'Date', 'azauthority' ),
+				'category'			=> esc_html__( 'Categories', 'azauthority' ),
+				'tag'				=> esc_html__( 'Tags', 'azauthority' ),
 			)
 		),		
 

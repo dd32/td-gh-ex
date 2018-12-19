@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Azauthority 1.1.3\n"
+"Project-Id-Version: Azauthority 1.1.5\n"
 "Report-Msgid-Bugs-To: https://github.com/parandy/azauthority.git\n"
-"POT-Creation-Date: 2018-12-14 04:03:59+00:00\n"
+"POT-Creation-Date: 2018-12-19 08:09:26+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -220,343 +220,343 @@ msgstr ""
 msgid "Widgets added here will appear in column %1$d of footer row %2$d."
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:94
+#: inc/customizer/class-azauthority-customizer.php:84
 msgid "Theme Options"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:174
+#: inc/customizer/class-azauthority-customizer.php:164
 msgid "Background Color"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:175
+#: inc/customizer/class-azauthority-customizer.php:165
 msgid "Background Image"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:176
+#: inc/customizer/class-azauthority-customizer.php:166
 msgid "No Repeat"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:177
+#: inc/customizer/class-azauthority-customizer.php:167
 msgid "Repeat All"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:178
+#: inc/customizer/class-azauthority-customizer.php:168
 msgid "Repeat Horizontally"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:179
+#: inc/customizer/class-azauthority-customizer.php:169
 msgid "Repeat Vertically"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:180
+#: inc/customizer/class-azauthority-customizer.php:170
 msgid "Inherit"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:181
+#: inc/customizer/class-azauthority-customizer.php:171
 msgid "Background Repeat"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:182
+#: inc/customizer/class-azauthority-customizer.php:172
 msgid "Cover"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:183
+#: inc/customizer/class-azauthority-customizer.php:173
 msgid "Contain"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:184
+#: inc/customizer/class-azauthority-customizer.php:174
 msgid "Background Size"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:185
+#: inc/customizer/class-azauthority-customizer.php:175
 msgid "Fixed"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:186
+#: inc/customizer/class-azauthority-customizer.php:176
 msgid "Scroll"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:187
+#: inc/customizer/class-azauthority-customizer.php:177
 msgid "Background Attachment"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:188
+#: inc/customizer/class-azauthority-customizer.php:178
 msgid "Left Top"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:189
+#: inc/customizer/class-azauthority-customizer.php:179
 msgid "Left Center"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:190
+#: inc/customizer/class-azauthority-customizer.php:180
 msgid "Left Bottom"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:191
+#: inc/customizer/class-azauthority-customizer.php:181
 msgid "Right Top"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:192
+#: inc/customizer/class-azauthority-customizer.php:182
 msgid "Right Center"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:193
+#: inc/customizer/class-azauthority-customizer.php:183
 msgid "Right Bottom"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:194
+#: inc/customizer/class-azauthority-customizer.php:184
 msgid "Center Top"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:195
+#: inc/customizer/class-azauthority-customizer.php:185
 msgid "Center Center"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:196
+#: inc/customizer/class-azauthority-customizer.php:186
 msgid "Center Bottom"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:197
+#: inc/customizer/class-azauthority-customizer.php:187
 msgid "Background Position"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:198
+#: inc/customizer/class-azauthority-customizer.php:188
 msgid "Background Opacity"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:199
+#: inc/customizer/class-azauthority-customizer.php:189
 msgid "ON"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:200
+#: inc/customizer/class-azauthority-customizer.php:190
 msgid "OFF"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:201
+#: inc/customizer/class-azauthority-customizer.php:191
 msgid "All"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:202
+#: inc/customizer/class-azauthority-customizer.php:192
 msgid "Cyrillic"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:203
+#: inc/customizer/class-azauthority-customizer.php:193
 msgid "Cyrillic Extended"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:204
+#: inc/customizer/class-azauthority-customizer.php:194
 msgid "Devanagari"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:205
+#: inc/customizer/class-azauthority-customizer.php:195
 msgid "Greek"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:206
+#: inc/customizer/class-azauthority-customizer.php:196
 msgid "Greek Extended"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:207
+#: inc/customizer/class-azauthority-customizer.php:197
 msgid "Khmer"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:208
+#: inc/customizer/class-azauthority-customizer.php:198
 msgid "Latin"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:209
+#: inc/customizer/class-azauthority-customizer.php:199
 msgid "Latin Extended"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:210
+#: inc/customizer/class-azauthority-customizer.php:200
 msgid "Vietnamese"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:211
+#: inc/customizer/class-azauthority-customizer.php:201
 msgid "Hebrew"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:212
+#: inc/customizer/class-azauthority-customizer.php:202
 msgid "Arabic"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:213
+#: inc/customizer/class-azauthority-customizer.php:203
 msgid "Bengali"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:214
+#: inc/customizer/class-azauthority-customizer.php:204
 msgid "Gujarati"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:215
+#: inc/customizer/class-azauthority-customizer.php:205
 msgid "Tamil"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:216
+#: inc/customizer/class-azauthority-customizer.php:206
 msgid "Telugu"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:217
+#: inc/customizer/class-azauthority-customizer.php:207
 msgid "Thai"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:221
+#: inc/customizer/class-azauthority-customizer.php:211
 msgid "Font Family"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:222
+#: inc/customizer/class-azauthority-customizer.php:212
 msgid "Font Size"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:223
+#: inc/customizer/class-azauthority-customizer.php:213
 msgid "Font Weight"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:224
+#: inc/customizer/class-azauthority-customizer.php:214
 msgid "Line Height"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:225
+#: inc/customizer/class-azauthority-customizer.php:215
 msgid "Font Style"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:226
+#: inc/customizer/class-azauthority-customizer.php:216
 msgid "Letter Spacing"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:227
+#: inc/customizer/class-azauthority-customizer.php:217
 msgid "Top"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:228
+#: inc/customizer/class-azauthority-customizer.php:218
 msgid "Bottom"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:229
+#: inc/customizer/class-azauthority-customizer.php:219
 msgid "Left"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:230
+#: inc/customizer/class-azauthority-customizer.php:220
 msgid "Right"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:231
+#: inc/customizer/class-azauthority-customizer.php:221
 msgid "Color"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:232
+#: inc/customizer/class-azauthority-customizer.php:222
 msgid "Add Image"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:233
+#: inc/customizer/class-azauthority-customizer.php:223
 msgid "Change Image"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:234
+#: inc/customizer/class-azauthority-customizer.php:224
 msgid "Remove"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:235
+#: inc/customizer/class-azauthority-customizer.php:225
 msgid "No Image Selected"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:236
+#: inc/customizer/class-azauthority-customizer.php:226
 msgid "Select a font-family"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:237
+#: inc/customizer/class-azauthority-customizer.php:227
 msgid "Variant"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:238
+#: inc/customizer/class-azauthority-customizer.php:228
 msgid "Subset"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:239
+#: inc/customizer/class-azauthority-customizer.php:229
 msgid "Size"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:240
+#: inc/customizer/class-azauthority-customizer.php:230
 msgid "Height"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:241
+#: inc/customizer/class-azauthority-customizer.php:231
 msgid "Spacing"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:242
+#: inc/customizer/class-azauthority-customizer.php:232
 msgid "Ultra-Light 100"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:243
+#: inc/customizer/class-azauthority-customizer.php:233
 msgid "Ultra-Light 100 Italic"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:244
+#: inc/customizer/class-azauthority-customizer.php:234
 msgid "Light 200"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:245
+#: inc/customizer/class-azauthority-customizer.php:235
 msgid "Light 200 Italic"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:246
+#: inc/customizer/class-azauthority-customizer.php:236
 msgid "Book 300"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:247
+#: inc/customizer/class-azauthority-customizer.php:237
 msgid "Book 300 Italic"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:248
+#: inc/customizer/class-azauthority-customizer.php:238
 msgid "Normal 400"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:249
+#: inc/customizer/class-azauthority-customizer.php:239
 msgid "Normal 400 Italic"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:250
+#: inc/customizer/class-azauthority-customizer.php:240
 msgid "Medium 500"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:251
+#: inc/customizer/class-azauthority-customizer.php:241
 msgid "Medium 500 Italic"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:252
+#: inc/customizer/class-azauthority-customizer.php:242
 msgid "Semi-Bold 600"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:253
+#: inc/customizer/class-azauthority-customizer.php:243
 msgid "Semi-Bold 600 Italic"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:254
+#: inc/customizer/class-azauthority-customizer.php:244
 msgid "Bold 700"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:255
+#: inc/customizer/class-azauthority-customizer.php:245
 msgid "Bold 700 Italic"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:256
+#: inc/customizer/class-azauthority-customizer.php:246
 msgid "Extra-Bold 800"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:257
+#: inc/customizer/class-azauthority-customizer.php:247
 msgid "Extra-Bold 800 Italic"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:258
+#: inc/customizer/class-azauthority-customizer.php:248
 msgid "Ultra-Bold 900"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:259
+#: inc/customizer/class-azauthority-customizer.php:249
 msgid "Ultra-Bold 900 Italic"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:260
+#: inc/customizer/class-azauthority-customizer.php:250
 msgid "Invalid Value"
 msgstr ""
 
@@ -1092,17 +1092,17 @@ msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/customizer/class-azauthority-customizer.php:218
+#: inc/customizer/class-azauthority-customizer.php:208
 msgctxt "font style"
 msgid "Serif"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:219
+#: inc/customizer/class-azauthority-customizer.php:209
 msgctxt "font style"
 msgid "Sans Serif"
 msgstr ""
 
-#: inc/customizer/class-azauthority-customizer.php:220
+#: inc/customizer/class-azauthority-customizer.php:210
 msgctxt "font style"
 msgid "Monospace"
 msgstr ""

@@ -33,18 +33,8 @@ if ( ! class_exists( 'Azauthority_Customizer' ) ) :
 			$this->includes();
 
 			add_action( 'init', array( $this , 'customize_register' ) );
-			add_action( 'customize_register', array($this, 'register_custom_controls') );
 		
 		}
-
-		public function register_custom_controls( $wp_customize ) {		
-
-			require_once get_template_directory() . '/inc/customizer/class-custom-code-control.php';
-			add_filter( 'kirki/control_types', 'azauthority_custom_code_control');
-
-		}
-
-	
 
 		/**
 		 * Add postMessage support for site title and description for the Theme Customizer along with several other settings.
