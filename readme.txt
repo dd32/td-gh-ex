@@ -3,7 +3,7 @@ Contributors: catchthemes
 Tags: dark, light, blue, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
 Requires at least: 4.8
 Tested up to: 5.0.1
-Stable tag: 4.8
+Stable tag: 4.8.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -84,6 +84,8 @@ For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Change Log ==
 
+= 4.8.1 (Released: December 19, 2018) =
+* Bug Fixed: Fatal Error on post edit page
 
 = 4.8 (Released: December 18, 2018) =
 * Added: Theme support for block styles

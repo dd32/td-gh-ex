@@ -67,8 +67,6 @@ function catchbox_sidebar_layout() {
 		 <?php
 			$meta_value = get_post_meta( $post->ID, 'catchbox-sidebarlayout', true );
 
-			debug($meta_value);
-			
 			if ( empty( $meta_value ) ){
 				$meta_value = 'default';
 			}
