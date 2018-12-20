@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Zenzero\n"
-"POT-Creation-Date: 2018-07-27 19:14+0100\n"
-"PO-Revision-Date: 2018-07-27 19:15+0100\n"
+"POT-Creation-Date: 2018-12-20 19:21+0100\n"
+"PO-Revision-Date: 2018-12-20 19:21+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -177,7 +177,39 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:86
+#: functions.php:70
+msgid "Small"
+msgstr ""
+
+#: functions.php:71
+msgid "S"
+msgstr ""
+
+#: functions.php:76
+msgid "Regular"
+msgstr ""
+
+#: functions.php:77
+msgid "M"
+msgstr ""
+
+#: functions.php:82
+msgid "Large"
+msgstr ""
+
+#: functions.php:83
+msgid "L"
+msgstr ""
+
+#: functions.php:88
+msgid "Larger"
+msgstr ""
+
+#: functions.php:89
+msgid "XL"
+msgstr ""
+
+#: functions.php:117
 msgid "Sidebar"
 msgstr ""
 

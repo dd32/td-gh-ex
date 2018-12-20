@@ -2,8 +2,8 @@
 Contributors: CrestaProject
 Tags: one-column, left-sidebar, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, blog, news
 Requires at least: 4.5
-Tested up to: 4.9
-Stable tag: 1.5.8
+Tested up to: 5.0
+Stable tag: 1.5.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Zenzero WordPress Theme, Copyright 2018 Rizzo Andrea
@@ -11,7 +11,7 @@ Zenzero is distributed under the terms of the GNU GPL
 
 == Description ==
 
-Zenzero is a modern and Minimal WordPress Theme with generous white space and large legible fonts, one main column e one sidebar column, unlimited colors and theme options by CrestaProject.com.
+Zenzero is a modern and Minimal WordPress Theme with generous white space and large legible fonts, one main column e one sidebar column, unlimited colors and theme options by CrestaProject.com. Compatible with Gutengerg.
 
 == Installation ==
 
@@ -36,6 +36,10 @@ Zenzero includes support for Infinite Scroll in Jetpack.
 * Image used in Theme Screenshot (http://pixabay.com/it/home-office-workstation-ufficio-336378/) Pexels Free photos for commercial and personal works
 
 == Changelog ==
+= Version 1.5.9 =
+* Improved compatibility with Gutenberg and WordPress 5.0
+* Minor bug fixes
+
 = Version 1.5.8 =
 * Minor bug fixes
 

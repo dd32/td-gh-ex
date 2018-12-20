@@ -60,6 +60,37 @@ function zenzero_setup() {
 		'default-color' => 'f0f0f0',
 		'default-image' => '',
 	) ) );
+	
+	/* Support for wide images on Gutenberg */
+	add_theme_support( 'align-wide' );
+	
+	// Adds support for editor font sizes.
+	add_theme_support( 'editor-font-sizes', array(
+		array(
+			'name'      => __( 'Small', 'zenzero' ),
+			'shortName' => __( 'S', 'zenzero' ),
+			'size'      => 14,
+			'slug'      => 'small'
+		),
+		array(
+			'name'      => __( 'Regular', 'zenzero' ),
+			'shortName' => __( 'M', 'zenzero' ),
+			'size'      => 16,
+			'slug'      => 'regular'
+		),
+		array(
+			'name'      => __( 'Large', 'zenzero' ),
+			'shortName' => __( 'L', 'zenzero' ),
+			'size'      => 18,
+			'slug'      => 'large'
+		),
+		array(
+			'name'      => __( 'Larger', 'zenzero' ),
+			'shortName' => __( 'XL', 'zenzero' ),
+			'size'      => 22,
+			'slug'      => 'larger'
+		)
+	) );
 }
 endif; // zenzero_setup
 add_action( 'after_setup_theme', 'zenzero_setup' );
@@ -108,7 +139,7 @@ function zenzero_scripts() {
 	wp_enqueue_script( 'zenzero-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'zenzero-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script( 'zenzero-custom', get_template_directory_uri() . '/js/jquery.zenzero.js', array('jquery'), wp_get_theme()->get('Version'), true );
-	wp_enqueue_script( 'zenzero-smoothScroll', get_template_directory_uri() . '/js/SmoothScroll.min.js', array('jquery'), '1.4.6', true );
+	wp_enqueue_script( 'zenzero-smoothScroll', get_template_directory_uri() . '/js/SmoothScroll.min.js', array('jquery'), '1.4.8', true );
 	if ( is_active_sidebar( 'sidebar-1' ) ) {
 		wp_enqueue_script( 'zenzero-nanoScroll', get_template_directory_uri() . '/js/jquery.nanoscroller.min.js', array('jquery'), '0.8.7', true );
 	}
@@ -118,6 +149,11 @@ function zenzero_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'zenzero_scripts' );
+
+function zenzero_gutenberg_scripts() {
+	wp_enqueue_style( 'zenzero-gutenberg-css', get_theme_file_uri( '/css/gutenberg-editor-style.css' ), array(), wp_get_theme()->get('Version') );
+}
+add_action( 'enqueue_block_editor_assets', 'zenzero_gutenberg_scripts' );
 
 /**
  * Custom template tags for this theme.

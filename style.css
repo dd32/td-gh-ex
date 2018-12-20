@@ -3,8 +3,8 @@ Theme Name: Zenzero
 Theme URI: https://crestaproject.com/downloads/zenzero/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: https://crestaproject.com
-Description: Zenzero is a modern and Minimal WordPress Theme with generous white space and large legible fonts, one main column e one sidebar column, unlimited colors and theme options by CrestaProject.com. Live demo https://crestaproject.com/demo/zenzero/
-Version: 1.5.8
+Description: Zenzero is a modern and Minimal WordPress Theme with generous white space and large legible fonts, one main column e one sidebar column, unlimited colors and theme options by CrestaProject.com. Compatible with Gutenberg. Live demo https://crestaproject.com/demo/zenzero/
+Version: 1.5.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: zenzero
@@ -176,6 +176,21 @@ h3 {font-size: 20px;}
 h4 {font-size: 18px;}
 h5 {font-size: 13px;}
 h6 {font-size: 10px;}
+.hentry p.has-small-font-size {
+    font-size: 14px;
+    line-height: 1.9;
+}
+.hentry p.has-regular-font-size {
+    font-size: 16px;
+}
+.hentry p.has-large-font-size {
+    font-size: 20px;
+	line-height: 1.7;
+}
+.hentry p.has-larger-font-size {
+    font-size: 24px;
+	line-height: 1.6;
+}
 
 p {
 	margin-bottom: 1.5em;
@@ -214,6 +229,11 @@ blockquote::before {
 	position: absolute;
 	left: 10px;
 	top: 10px;
+}
+
+blockquote cite {
+	font-size: 13px;
+    font-style: normal;
 }
 
 address {
@@ -1719,6 +1739,27 @@ object {
 	#page {
 		margin: 0 auto;
 	}
+}
+@media all and (min-width: 768px) {
+  .alignfull {
+    margin-left: calc(50% - 50vw);
+    margin-right: calc(50% - 50vw);
+    width: auto;
+    max-width: 1000%;
+  }
+
+  .alignwide {
+    margin-left: -5em;
+    margin-right: -5em;
+    width: auto;
+    max-width: 1000%;
+  }
+
+  .alignwide img,
+  .alignfull img {
+    display: block;
+    margin: 0 auto;
+  }
 }
 @media all and (max-width: 767px) {
 	#search-full input[type="text"] {
