@@ -10,7 +10,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				<h1 class="rockers-info-title text-center"><?php echo __('About the Rockers theme','rockers'); ?><?php if( !empty($rockers['Version']) ): ?> <sup id="rockers-theme-version"><?php echo esc_attr( $rockers['Version'] ); ?> </sup><?php endif; ?></h1>
+				<h1 class="rockers-info-title text-center"><?php echo esc_html__('About the Rockers theme','rockers'); ?><?php if( !empty($rockers['Version']) ): ?> <sup id="rockers-theme-version"><?php echo esc_html( $rockers['Version'] ); ?> </sup><?php endif; ?></h1>
 			</div>
 		</div>
 		<div class="row">
@@ -35,7 +35,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 			</div>
 			<div class="col-md-6">
 				<div class="rockers-tab-pane-half rockers-tab-pane-first-half">
-				<img src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/admin/img/rockers.png'; ?>" alt="<?php esc_html_e( 'Rockers theme', 'rockers' ); ?>" />
+				<img src="<?php echo RC_TEMPLATE_DIR_URI . '/admin/img/rockers.png'; ?>" alt="<?php esc_html_e( 'Rockers theme', 'rockers' ); ?>" />
 				</div>
 			</div>	
 		</div>
@@ -49,12 +49,12 @@ $customizer_url = admin_url() . 'customize.php' ;
 			<div class="col-md-6"> 
 				<div class="rockers-tab-pane-half rockers-tab-pane-first-half">
 
-					<a href="<?php echo esc_url('https://rockers.spicethemes.com/'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-desktop info-icon"></div>
-					<p class="info-text"><?php echo __('Lite Demo','rockers'); ?></p></a>
+					<a href="<?php echo 'https://rockers.spicethemes.com/'; ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-desktop info-icon"></div>
+					<p class="info-text"><?php echo esc_html__('Lite Demo','rockers'); ?></p></a>
 					
 					
-					<a href="<?php echo esc_url('https://demo.spicethemes.com/?theme=spicepress'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-book-alt info-icon"></div>
-					<p class="info-text"><?php echo __('PRO Demo','rockers'); ?></p></a>
+					<a href="<?php echo 'https://demo.spicethemes.com/?theme=spicepress'; ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-book-alt info-icon"></div>
+					<p class="info-text"><?php echo esc_html__('PRO Demo','rockers'); ?></p></a>
 					
 					
 					
@@ -64,11 +64,11 @@ $customizer_url = admin_url() . 'customize.php' ;
 				
 				<div class="rockers-tab-pane-half rockers-tab-pane-first-half">
 					
-					<a href="<?php echo esc_url('https://wordpress.org/support/view/theme-reviews/rockers'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-smiley info-icon"></div>
-					<p class="info-text"><?php echo __('Your feedback is valuable to us','rockers'); ?></p></a>
+					<a href="<?php echo 'https://wordpress.org/support/view/theme-reviews/rockers'; ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-smiley info-icon"></div>
+					<p class="info-text"><?php echo esc_html__('Your feedback is valuable to us','rockers'); ?></p></a>
 					
 					<a href="<?php echo esc_url('https://support.spicethemes.com/'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
-					<p class="info-text"><?php echo __('Premium Theme Support','rockers'); ?></p></a>
+					<p class="info-text"><?php echo esc_html__('Premium Theme Support','rockers'); ?></p></a>
 				</div>
 			</div>
 			
@@ -77,8 +77,8 @@ $customizer_url = admin_url() . 'customize.php' ;
 				
 				<div class="rockers-tab-pane-half rockers-tab-pane-first-half">
 					
-					<a href="<?php echo esc_url('https://spicethemes.com/spicepress/'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-book-alt info-icon"></div>
-					<p class="info-text"><?php echo __('Premium Theme Details','rockers'); ?></p></a>
+					<a href="<?php echo 'https://spicethemes.com/spicepress/'; ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-book-alt info-icon"></div>
+					<p class="info-text"><?php echo esc_html__('Premium Theme Details','rockers'); ?></p></a>
 					
 				</div>
 				

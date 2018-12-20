@@ -5,7 +5,7 @@ if ( get_header_image() != '') {?>
 <header class="custom-header">	
 	
 	<div class="wp-custom-header">
-		<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+		<img src="<?php header_image(); ?>" height="<?php echo esc_attr(get_custom_header()->height); ?>" width="<?php echo esc_attr(get_custom_header()->width); ?>" alt="" />
 	</div>
 	
 	<div class="container header-content">
@@ -13,9 +13,9 @@ if ( get_header_image() != '') {?>
 			<div class="col-md-12 col-sm-12 col-xs-12">
 				<div class="">
 					<?php if($header_one_name != '') { ?>
-					<h1><?php echo $header_one_name;?></h1>
+					<h1><?php echo esc_html($header_one_name);?></h1>
 					<?php }  if($header_one_text != '') { ?>
-					<h3><?php echo $header_one_text ;?></h3>
+					<h3><?php echo esc_html($header_one_text);?></h3>
 					<?php } ?>
 				</div>
 			</div>
@@ -37,11 +37,11 @@ if ( get_header_image() != '') {?>
 					
 					<?php  if ( display_header_text() ) : ?>
 					<div class="site-branding-text">
-					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+					<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_html(bloginfo( 'name' )); ?></a></h1>
 					<?php
 					$description = get_bloginfo( 'description', 'display' );
 					if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; ?></p>
+					<p class="site-description"><?php echo esc_html($description); ?></p>
 					<?php endif; ?>
 					</div>
 					<?php endif; ?>
@@ -59,8 +59,8 @@ if ( get_header_image() != '') {?>
 									<div class="media">
 										<div class="contact-icon"><i class="fa fa-map-marker"></i></div>
 										<div class="media-body">
-											<h4><?php _e('Chestnut Road,','rockers'); ?></h4>									
-											<h5><?php _e('California - United States','rockers'); ?></h5>
+											<h4><?php esc_html_e('Chestnut Road,','rockers'); ?></h4>									
+											<h5><?php esc_html_e('California - United States','rockers'); ?></h5>
 										</div>
 									</div>
 								</div>
@@ -72,8 +72,8 @@ if ( get_header_image() != '') {?>
 									<div class="media">
 										<div class="contact-icon"><i class="fa fa-clock-o"></i></div>
 											<div class="media-body">
-											<h4><?php _e('08:00 - 16:30','rockers'); ?></h4>									
-											<h5><?php _e('Monday - Saturday','rockers'); ?></h5>
+											<h4><?php esc_html_e('08:00 - 16:30','rockers'); ?></h4>									
+											<h5><?php esc_html_e('Monday - Saturday','rockers'); ?></h5>
 										</div>
 									</div>
 								</div>
@@ -131,16 +131,16 @@ if ( get_header_image() != '') {?>
 
 			<?php  if ( display_header_text() ) : ?>
 			<div class="site-branding-text">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_html(bloginfo( 'name' )); ?></a></h1>
 				<?php
 				$description = get_bloginfo( 'description', 'display' );
 				if ( $description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $description; ?></p>
+					<p class="site-description"><?php echo esc_html($description); ?></p>
 				<?php endif; ?>
 			</div>
 			<?php endif; ?>
 			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse">
-				<span class="sr-only"><?php echo esc_attr_e('Toggle navigation','rockers'); ?></span>
+				<span class="sr-only"><?php echo esc_html__('Toggle navigation','rockers'); ?></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -191,8 +191,8 @@ if ( get_header_image() != '') {?>
 						<div class="media">
 							<div class="contact-icon"><i class="fa fa-map-marker"></i></div>
 							<div class="media-body">
-								<h4><?php _e('Chestnut Road,','rockers'); ?></h4>		
-								<h5><?php _e('California - United States','rockers'); ?></h5>
+								<h4><?php esc_html_e('Chestnut Road,','rockers'); ?></h4>		
+								<h5><?php esc_html_e('California - United States','rockers'); ?></h5>
 							</div>
 						</div>
 					</div>
@@ -204,7 +204,7 @@ if ( get_header_image() != '') {?>
 						<div class="media">
 							<div class="contact-icon"><i class="fa fa-clock-o"></i></div>
 								<div class="media-body">
-									<h4><?php _e('08:00 - 16:30','rockers'); ?></h4>		<h5><?php _e('Monday - Saturday','rockers'); ?></h5>
+									<h4><?php esc_html_e('08:00 - 16:30','rockers'); ?></h4>		<h5><?php esc_html_e('Monday - Saturday','rockers'); ?></h5>
 							</div>
 						</div>
 					</div>

@@ -14,7 +14,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 		)	
 	);
 	$wp_customize->add_control('footer_copyright_text', array(
-			'label' => __('Copyright text','chilly'),
+			'label' => esc_html__('Copyright text','chilly'),
 			'section' => 'spicepress_footer_copyright',
 			'type'    =>  'textarea'
 	));	 // footer copyright

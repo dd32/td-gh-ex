@@ -56,17 +56,17 @@ if (!class_exists('SpiceThemes_About_Page')) {
 		if ( 'appearance_page_rockers-welcome' == $hook_suffix ) {
 			
 			
-			wp_enqueue_style( 'rockers-info-screen-css', get_stylesheet_directory_uri() . '/admin/assets/css/welcome.css' );
+			wp_enqueue_style( 'rockers-info-screen-css', RC_TEMPLATE_DIR_URI . '/admin/assets/css/welcome.css' );
 			
-			wp_enqueue_style( 'rockers-info-css', get_stylesheet_directory_uri() . '/admin/assets/css/bootstrap.css' );
+			wp_enqueue_style( 'rockers-info-css', RC_TEMPLATE_DIR_URI . '/admin/assets/css/bootstrap.css' );
 			
-			wp_enqueue_style('rockers-theme-info-style', get_stylesheet_directory_uri() . '/admin/assets/css/welcome-page-styles.css');
+			wp_enqueue_style('rockers-theme-info-style', RC_TEMPLATE_DIR_URI . '/admin/assets/css/welcome-page-styles.css');
 			
-			wp_enqueue_style('welcome_customizer', get_stylesheet_directory_uri() . '/admin/assets/css/welcome_customizer.css');
+			wp_enqueue_style('welcome_customizer', RC_TEMPLATE_DIR_URI . '/admin/assets/css/welcome_customizer.css');
 			wp_enqueue_script('plugin-install');
 			wp_enqueue_script('updates');
-			wp_enqueue_script('rockers-companion-install', get_stylesheet_directory_uri() . '/admin/assets/js/plugin-install.js', array('jquery'));
-			wp_enqueue_script('rockers-ajax', get_stylesheet_directory_uri() . '/admin/assets/js/ajax.js', array('jquery'));
+			wp_enqueue_script('rockers-companion-install', RC_TEMPLATE_DIR_URI . '/admin/assets/js/plugin-install.js', array('jquery'));
+			wp_enqueue_script('rockers-ajax', RC_TEMPLATE_DIR_URI . '/admin/assets/js/ajax.js', array('jquery'));
 			wp_localize_script('rockers-companion-install', 'rockers_companion_install',
 				array(
 					'installing' => esc_html__('Installing', 'rockers'),
@@ -84,8 +84,8 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	 */
 	public function rockers_scripts_for_customizer() {
 
-		wp_enqueue_style( 'rockers-info-screen-customizer-css', get_stylesheet_directory_uri() . '/admin/assets/css/welcome_customizer.css' );
-		wp_enqueue_script( 'rockers-info-screen-customizer-js', get_stylesheet_directory_uri() . '/admin/assets/js/welcome_customizer.js', array('jquery'), '20120206', true );
+		wp_enqueue_style( 'rockers-info-screen-customizer-css', RC_TEMPLATE_DIR_URI . '/admin/assets/css/welcome_customizer.css' );
+		wp_enqueue_script( 'rockers-info-screen-customizer-js', RC_TEMPLATE_DIR_URI . '/admin/assets/js/welcome_customizer.js', array('jquery'), '20120206', true );
 
 		global $rockers_required_actions;
 
@@ -110,7 +110,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			'nr_actions_required' => $nr_actions_required,
 			'aboutpage' => esc_url( admin_url( 'themes.php?page=rockers-info' ) ),
 			'customizerpage' => esc_url( admin_url( 'customize.php' ) ),
-			'themeinfo' => __('View Theme Info','rockers'),
+			'themeinfo' => esc_html__('View Theme Info','rockers'),
 		) );
 	}
 		
@@ -139,7 +139,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 				printf( esc_html__('Welcome to %1$s - Version %2$s', 'rockers'), esc_html( $theme_info->Name ), esc_html( $theme_info->Version ) ); ?>
 				</h1>
 				<p><?php echo sprintf( esc_html__("Welcome! Thank you for choosing SpiceThemes Rockers WordPress theme. To take full advantage of the features this theme has to offer visit our %swelcome page%s.", "rockers"), '<a href="' . esc_url( admin_url( 'themes.php?page=rockers-welcome' ) ) . '">', '</a>' ); ?></p>
-				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=rockers-welcome' ) ); ?>" class="button button-blue-secondary button_rockers" style="text-decoration: none;"><?php _e('Get started with Rockers','rockers'); ?></a></p>
+				<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=rockers-welcome' ) ); ?>" class="button button-blue-secondary button_rockers" style="text-decoration: none;"><?php esc_html_e('Get started with Rockers','rockers'); ?></a></p>
 			</div>
 			<?php
 		}
@@ -210,7 +210,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 		}
 		
 		public function rockers_getting_started() {
-		require_once( get_stylesheet_directory() . '/admin/tab-pages/getting-started.php' );
+		require_once( RC_TEMPLATE_DIR . '/admin/tab-pages/getting-started.php' );
 	}
 
 	/**
@@ -218,7 +218,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	 *
 	 */
 	public function rockers_github() {
-		require_once( get_stylesheet_directory() . '/admin/tab-pages/useful_plugins.php' );
+		require_once( RC_TEMPLATE_DIR . '/admin/tab-pages/useful_plugins.php' );
 	}
 
 
@@ -227,7 +227,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	 * 
 	 */
 	public function rockers_welcome_free_pro() {
-		require_once( get_stylesheet_directory() . '/admin/tab-pages/free_vs_pro.php' );
+		require_once( RC_TEMPLATE_DIR . '/admin/tab-pages/free_vs_pro.php' );
 	}
 	
 	
@@ -236,7 +236,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	 * 
 	 */
 	public function rockers_recommended_actions() {
-		require_once( get_stylesheet_directory() . '/admin/tab-pages/recommended_actions.php' );
+		require_once( RC_TEMPLATE_DIR . '/admin/tab-pages/recommended_actions.php' );
 	}
 	
 	
@@ -256,7 +256,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 				<p class="about-description"><?php esc_html_e( 'See changelog below:', 'rockers' ); ?></p>
 
 				<?php
-				$changelog_file = apply_filters( 'rockers_changelog_file', get_stylesheet_directory() . '/changelog.txt' );
+				$changelog_file = apply_filters( 'rockers_changelog_file', RC_TEMPLATE_DIR . '/changelog.txt' );
 
 				// Check if the changelog file exists and is readable.
 				if ( $changelog_file && is_readable( $changelog_file ) ) {
@@ -308,12 +308,12 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			$tabs_array[]	= array(
 					'link'      => 'getting_started',
 					'name'      => esc_html__('Getting Started', 'rockers'),
-					'file_path' => get_stylesheet_directory() . '/admin/tab-pages/getting-started.php',
+					'file_path' => RC_TEMPLATE_DIR . '/admin/tab-pages/getting-started.php',
 				);
 			$tabs_array[]	= 	array(
 					'link'      => 'recommended_actions',
 					'name'      => esc_html__('Recommended Actions', 'rockers'),
-					'file_path' => get_stylesheet_directory() . '/admin/tab-pages/recommended-actions.php',
+					'file_path' => RC_TEMPLATE_DIR . '/admin/tab-pages/recommended-actions.php',
 				);
 
 
@@ -321,7 +321,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 				$tabs_array[]	= 	array(
 						'link'      => 'useful_plugins',
 						'name'      => esc_html__('Support', 'rockers'),
-						'file_path' => get_stylesheet_directory() . '/admin/tab-pages/useful_plugins.php',
+						'file_path' => RC_TEMPLATE_DIR . '/admin/tab-pages/useful_plugins.php',
 				);
 			}
 			
@@ -333,7 +333,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			$tabs_array[]	= 	array(
 					'link'      => 'free_vs_pro',
 					'name'      => esc_html__('Free vs. PRO', 'rockers'),
-					'file_path' => get_stylesheet_directory() . '/admin/tab-pages/free-vs-pro.php',
+					'file_path' => RC_TEMPLATE_DIR . '/admin/tab-pages/free-vs-pro.php',
 			);
 			
 			
@@ -539,7 +539,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			} elseif ( ! empty( $icons['1x'] ) ) {
 				$plugin_icon_url = $icons['1x'];
 			} else {
-				$plugin_icon_url = get_template_directory_uri() . '/admin/assets/images/placeholder_plugin.png';
+				$plugin_icon_url = ST_TEMPLATE_DIR_URI . '/admin/assets/images/placeholder_plugin.png';
 			}
 			return $plugin_icon_url;
 		}

@@ -1,5 +1,9 @@
 == Changelog ==
 
+= 2.8.9 ==
+1. Fixed escaping issues.
+
+
 = 2.8.8 ==
 1. Added recommended plugin tab.
 
