@@ -88,6 +88,9 @@ Images
 
 ---------------------------------------------
 == Changelog ==
+Version 1.69
+ * WMPL translation bug in menu fixed.
+
 Version 1.68
  * WMPL translation bug in menu fixed.
 
