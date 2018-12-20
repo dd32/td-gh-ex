@@ -24,8 +24,8 @@ spicepress_breadcrumbs(); ?>
 					) );
 					
 				else : ?>
-				<h2><?php esc_attr_e('Nothing found', 'content'); ?></h2>
-				<p><?php esc_attr_e('Sorry, but nothing matched your search criteria. Please try again with some different keywords.','content'); ?></p>
+				<h2><?php esc_html_e('Nothing found', 'content'); ?></h2>
+				<p><?php esc_html_e('Sorry, but nothing matched your search criteria. Please try again with some different keywords.','content'); ?></p>
 				<?php endif; ?>
 			</div>
 		

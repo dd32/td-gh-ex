@@ -1,10 +1,15 @@
 <?php
+// Global variables define
+define('CONTENT_PARENT_TEMPLATE_DIR_URI',get_template_directory_uri());	
+define('CONTENT_ST_TEMPLATE_DIR_URI',get_stylesheet_directory_uri());
+define('CONTENT_ST_TEMPLATE_DIR',get_stylesheet_directory());
+
 add_action('wp_enqueue_scripts', 'content_theme_css', 999);
 function content_theme_css() {
-    wp_enqueue_style('content-parent-style', get_template_directory_uri() . '/style.css');
-    wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
-	wp_enqueue_style('media-responsive-css', get_stylesheet_directory_uri()."/css/media-responsive.css" );
-    wp_enqueue_script('content-mp-masonry-js', get_stylesheet_directory_uri() . '/js/masonry/mp.mansory.js');
+    wp_enqueue_style('content-parent-style', CONTENT_PARENT_TEMPLATE_DIR_URI . '/style.css');
+    wp_enqueue_style('bootstrap', CONTENT_PARENT_TEMPLATE_DIR_URI . '/css/bootstrap.css');
+	wp_enqueue_style('content-media-responsive-css', CONTENT_ST_TEMPLATE_DIR_URI."/css/media-responsive.css" );
+    wp_enqueue_script('content-mp-masonry-js', CONTENT_ST_TEMPLATE_DIR_URI . '/js/masonry/mp.mansory.js');
 }
 
 if ( ! function_exists( 'content_theme_setup' ) ) :
@@ -12,12 +17,12 @@ if ( ! function_exists( 'content_theme_setup' ) ) :
 function content_theme_setup() {
 
 //Load text domain for translation-ready
-load_theme_textdomain('content', get_stylesheet_directory() . '/languages');
+load_theme_textdomain('content', CONTENT_ST_TEMPLATE_DIR . '/languages');
 
-require( get_stylesheet_directory() . '/functions/customizer/customizer_general_settings.php' );
+require( CONTENT_ST_TEMPLATE_DIR . '/functions/customizer/customizer_general_settings.php' );
 
 if ( is_admin() ) {
-	require get_stylesheet_directory() . '/admin/admin-init.php';
+	require CONTENT_ST_TEMPLATE_DIR . '/admin/admin-init.php';
 }
 
 }
@@ -40,7 +45,7 @@ add_action( 'after_switch_theme', 'content_get_lite_options' );
 
 add_action( 'admin_init', 'content_detect_button' );
 	function content_detect_button() {
-	wp_enqueue_style('content-info-button', get_stylesheet_directory_uri().'/css/import-button.css');
+	wp_enqueue_style('content-info-button', CONTENT_ST_TEMPLATE_DIR_URI .'/css/import-button.css');
 }
 
 // footer custom script

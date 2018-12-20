@@ -18,8 +18,19 @@ get_header();
 				<div class="container">
 					<div class="row">
 						<div class="col-md-6 col-sm-6">
-						   <?php 	$our_title = get_the_title( get_option('page_for_posts', true) );
-									echo '<div class="page-title wow bounceInLeft animated" ata-wow-delay="0.4s"><h1>'.$our_title.'</h1></div>';
+						   <?php
+							$allowed_html = array(
+									'br'     => array(),
+									'em'     => array(),
+									'strong' => array(),
+									'i'      => array(
+										'class' => array(),
+									),
+									'span'   => array(),
+								);
+						   
+						   $our_title = get_the_title( get_option('page_for_posts', true) );
+									echo '<div class="page-title wow bounceInLeft animated" ata-wow-delay="0.4s"><h1>'.wp_kses( force_balance_tags( $our_title), $allowed_html ).'</h1></div>';
 						   ?>
 						</div>
 						<div class="col-md-6 col-sm-6">
@@ -27,8 +38,8 @@ get_header();
 								echo '<ul class="page-breadcrumb wow bounceInRight animated" ata-wow-delay="0.4s">';
 									$homeLink = home_url();
 									$our_title = get_the_title( get_option('page_for_posts', true) );
-								    echo '<li><a href="'.$homeLink.'">'.$our_title .'</a></li>';
-									echo '<li class="active"><a href="'.$our_title .'">'.get_bloginfo( 'name' ).'</a></li>';
+								    echo '<li><a href="'.esc_url($homeLink).'">'.wp_kses( force_balance_tags( $our_title), $allowed_html ) .'</a></li>';
+									echo '<li class="active"><a href="'.wp_kses( force_balance_tags( $our_title), $allowed_html ) .'">'.get_bloginfo( 'name' ).'</a></li>';
 								 echo '</ul>'
 							?>
 						</div>

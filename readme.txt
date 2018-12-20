@@ -2,8 +2,8 @@
 
 Contributors: spicethemes
 Requires at least: 4.7
-Tested up to: 4.9.5
-Stable tag: 1.7
+Tested up to: 5.0.2
+Stable tag: 1.7.1
 
 Multi-purpose WordPress theme
 

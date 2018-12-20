@@ -77,7 +77,7 @@ if (class_exists('WP_Customize_Control') && !class_exists('Content_Plugin_Instal
 		            <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
 		        <?php endif; ?>
 		        <?php if ( ! empty( $this->description ) ) : ?>
-		            <span class="description customize-control-description"><?php echo $this->description ; ?></span>
+		            <span class="description customize-control-description"><?php echo esc_html($this->description) ; ?></span>
 		        <?php endif; ?>
 				<?php 
 					$button = $content_about_page->get_plugin_buttion($this->slug, $this->name);

@@ -10,7 +10,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 	<div class="container-fluid">
 		<div class="row">
 			<div class="col-md-12">
-				<h1 class="content-info-title text-center"><?php echo __('About the Content theme','content'); ?><?php if( !empty($content['Version']) ): ?> <sup id="content-theme-version"><?php echo esc_attr( $content['Version'] ); ?> </sup><?php endif; ?></h1>
+				<h1 class="content-info-title text-center"><?php echo esc_html__('About the Content theme','content'); ?><?php if( !empty($content['Version']) ): ?> <sup id="content-theme-version"><?php echo esc_html( $content['Version'] ); ?> </sup><?php endif; ?></h1>
 			</div>
 		</div>
 		<div class="row">
@@ -35,7 +35,7 @@ $customizer_url = admin_url() . 'customize.php' ;
 			</div>
 			<div class="col-md-6">
 				<div class="content-tab-pane-half content-tab-pane-first-half">
-				<img class="img-responsive" src="<?php echo esc_url( get_stylesheet_directory_uri() ) . '/admin/img/content.png'; ?>" alt="<?php esc_html_e( 'Content theme', 'content' ); ?>" />
+				<img class="img-responsive" src="<?php echo esc_url( CONTENT_ST_TEMPLATE_DIR_URI ) . '/admin/img/content.png'; ?>" alt="<?php esc_html_e( 'Content theme', 'content' ); ?>" />
 				</div>
 			</div>	
 		</div>
@@ -49,12 +49,12 @@ $customizer_url = admin_url() . 'customize.php' ;
 			<div class="col-md-6"> 
 				<div class="content-tab-pane-half content-tab-pane-first-half">
 
-					<a href="<?php echo esc_url('https://content.spicethemes.com/'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-desktop info-icon"></div>
-					<p class="info-text"><?php echo __('Lite Demo','content'); ?></p></a>
+					<a href="<?php echo ('https://content.spicethemes.com/'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-desktop info-icon"></div>
+					<p class="info-text"><?php echo esc_html__('Lite Demo','content'); ?></p></a>
 					
 					
-					<a href="<?php echo esc_url('https://demo.spicethemes.com/?theme=spicepress'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-book-alt info-icon"></div>
-					<p class="info-text"><?php echo __('PRO Demo','content'); ?></p></a>
+					<a href="<?php echo ('https://demo.spicethemes.com/?theme=spicepress'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-book-alt info-icon"></div>
+					<p class="info-text"><?php echo esc_html__('PRO Demo','content'); ?></p></a>
 					
 					
 					
@@ -64,11 +64,11 @@ $customizer_url = admin_url() . 'customize.php' ;
 				
 				<div class="content-tab-pane-half content-tab-pane-first-half">
 					
-					<a href="<?php echo esc_url('https://wordpress.org/support/view/theme-reviews/content'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-smiley info-icon"></div>
-					<p class="info-text"><?php echo __('Your feedback is valuable to us','content'); ?></p></a>
+					<a href="<?php echo ('https://wordpress.org/support/view/theme-reviews/content'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-smiley info-icon"></div>
+					<p class="info-text"><?php echo esc_html__('Your feedback is valuable to us','content'); ?></p></a>
 					
-					<a href="<?php echo esc_url('https://support.spicethemes.com/'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
-					<p class="info-text"><?php echo __('Premium Theme Support','content'); ?></p></a>
+					<a href="<?php echo ('https://support.spicethemes.com/'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-sos info-icon"></div>
+					<p class="info-text"><?php echo esc_html__('Premium Theme Support','content'); ?></p></a>
 				</div>
 			</div>
 			
@@ -77,8 +77,8 @@ $customizer_url = admin_url() . 'customize.php' ;
 				
 				<div class="content-tab-pane-half content-tab-pane-first-half">
 					
-					<a href="<?php echo esc_url('https://spicethemes.com/spicepress/'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-book-alt info-icon"></div>
-					<p class="info-text"><?php echo __('Premium Theme Details','content'); ?></p></a>
+					<a href="<?php echo ('https://spicethemes.com/spicepress/'); ?>" target="_blank"  class="info-block"><div class="dashicons dashicons-book-alt info-icon"></div>
+					<p class="info-text"><?php echo esc_html__('Premium Theme Details','content'); ?></p></a>
 					
 				</div>
 				

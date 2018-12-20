@@ -21,7 +21,7 @@
 		<div class="action-inner">
 			<h3 class="action-title"><?php echo esc_html($action['title']); ?></h3>
 			<div class="action-desc"><?php echo wp_kses_post($action['desc']); ?></div>
-			<?php echo $action['link']; ?>
+			<?php echo wp_kses_post($action['link']); ?>
 		</div>
 	</div>
 	</div>

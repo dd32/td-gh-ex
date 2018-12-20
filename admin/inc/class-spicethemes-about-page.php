@@ -56,17 +56,17 @@ if (!class_exists('SpiceThemes_About_Page')) {
 		if ( 'appearance_page_content-welcome' == $hook_suffix ) {
 			
 			
-			wp_enqueue_style( 'content-info-screen-css', get_stylesheet_directory_uri() . '/admin/assets/css/welcome.css' );
+			wp_enqueue_style( 'content-info-screen-css', CONTENT_ST_TEMPLATE_DIR_URI . '/admin/assets/css/welcome.css' );
 			
-			wp_enqueue_style( 'content-info-css', get_stylesheet_directory_uri() . '/admin/assets/css/bootstrap.css' );
+			wp_enqueue_style( 'content-info-css', CONTENT_ST_TEMPLATE_DIR_URI . '/admin/assets/css/bootstrap.css' );
 			
-			wp_enqueue_style('content-theme-info-style', get_stylesheet_directory_uri() . '/admin/assets/css/welcome-page-styles.css');
+			wp_enqueue_style('content-theme-info-style', CONTENT_ST_TEMPLATE_DIR_URI . '/admin/assets/css/welcome-page-styles.css');
 			
-			wp_enqueue_style('welcome_customizer', get_stylesheet_directory_uri() . '/admin/assets/css/welcome_customizer.css');
+			wp_enqueue_style('welcome_customizer', CONTENT_ST_TEMPLATE_DIR_URI . '/admin/assets/css/welcome_customizer.css');
 			wp_enqueue_script('plugin-install');
 			wp_enqueue_script('updates');
-			wp_enqueue_script('content-companion-install', get_stylesheet_directory_uri() . '/admin/assets/js/plugin-install.js', array('jquery'));
-			wp_enqueue_script('content-ajax', get_stylesheet_directory_uri() . '/admin/assets/js/ajax.js', array('jquery'));
+			wp_enqueue_script('content-companion-install', CONTENT_ST_TEMPLATE_DIR_URI . '/admin/assets/js/plugin-install.js', array('jquery'));
+			wp_enqueue_script('content-ajax', CONTENT_ST_TEMPLATE_DIR_URI . '/admin/assets/js/ajax.js', array('jquery'));
 			wp_localize_script('content-companion-install', 'content_companion_install',
 				array(
 					'installing' => esc_html__('Installing', 'content'),
@@ -84,8 +84,8 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	 */
 	public function content_scripts_for_customizer() {
 
-		wp_enqueue_style( 'content-info-screen-customizer-css', get_stylesheet_directory_uri() . '/admin/assets/css/welcome_customizer.css' );
-		wp_enqueue_script( 'content-info-screen-customizer-js', get_stylesheet_directory_uri() . '/admin/assets/js/welcome_customizer.js', array('jquery'), '20120206', true );
+		wp_enqueue_style( 'content-info-screen-customizer-css', CONTENT_ST_TEMPLATE_DIR_URI . '/admin/assets/css/welcome_customizer.css' );
+		wp_enqueue_script( 'content-info-screen-customizer-js', CONTENT_ST_TEMPLATE_DIR_URI . '/admin/assets/js/welcome_customizer.js', array('jquery'), '20120206', true );
 
 		global $content_required_actions;
 
@@ -150,7 +150,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	  <div class="container-fluid">
 		<div class="row">
 		<div class="col-md-12">
-			<div class="wrap theme-info-wrap content-wrap">
+			<div class=" theme-info-wrap content-wrap">
 				<div style="clear: both;"></div>
 				<div class="theme-welcome-container" style="min-height:300px;">
 					<div class="theme-welcome-inner">
@@ -210,7 +210,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 		}
 		
 		public function content_getting_started() {
-		require_once( get_stylesheet_directory() . '/admin/tab-pages/getting-started.php' );
+		require_once( CONTENT_ST_TEMPLATE_DIR . '/admin/tab-pages/getting-started.php' );
 	}
 
 	/**
@@ -218,7 +218,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	 *
 	 */
 	public function content_github() {
-		require_once( get_stylesheet_directory() . '/admin/tab-pages/useful_plugins.php' );
+		require_once( CONTENT_ST_TEMPLATE_DIR . '/admin/tab-pages/useful_plugins.php' );
 	}
 
 
@@ -227,7 +227,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	 * 
 	 */
 	public function content_welcome_free_pro() {
-		require_once( get_stylesheet_directory() . '/admin/tab-pages/free_vs_pro.php' );
+		require_once( CONTENT_ST_TEMPLATE_DIR . '/admin/tab-pages/free_vs_pro.php' );
 	}
 	
 	
@@ -236,7 +236,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 	 * 
 	 */
 	public function content_recommended_actions() {
-		require_once( get_stylesheet_directory() . '/admin/tab-pages/recommended_actions.php' );
+		require_once( CONTENT_ST_TEMPLATE_DIR . '/admin/tab-pages/recommended_actions.php' );
 	}
 	
 	
@@ -256,7 +256,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 				<p class="about-description"><?php esc_html_e( 'See changelog below:', 'content' ); ?></p>
 
 				<?php
-				$changelog_file = apply_filters( 'content_changelog_file', get_stylesheet_directory() . '/changelog.txt' );
+				$changelog_file = apply_filters( 'content_changelog_file', CONTENT_ST_TEMPLATE_DIR . '/changelog.txt' );
 
 				// Check if the changelog file exists and is readable.
 				if ( $changelog_file && is_readable( $changelog_file ) ) {
@@ -308,12 +308,12 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			$tabs_array[]	= array(
 					'link'      => 'getting_started',
 					'name'      => esc_html__('Getting Started', 'content'),
-					'file_path' => get_stylesheet_directory() . '/admin/tab-pages/getting-started.php',
+					'file_path' => CONTENT_ST_TEMPLATE_DIR . '/admin/tab-pages/getting-started.php',
 				);
 			$tabs_array[]	= 	array(
 					'link'      => 'recommended_actions',
 					'name'      => esc_html__('Recommended Actions', 'content'),
-					'file_path' => get_stylesheet_directory() . '/admin/tab-pages/recommended-actions.php',
+					'file_path' => CONTENT_ST_TEMPLATE_DIR . '/admin/tab-pages/recommended-actions.php',
 				);
 
 
@@ -321,7 +321,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 				$tabs_array[]	= 	array(
 						'link'      => 'useful_plugins',
 						'name'      => esc_html__('Support', 'content'),
-						'file_path' => get_stylesheet_directory() . '/admin/tab-pages/useful_plugins.php',
+						'file_path' => CONTENT_ST_TEMPLATE_DIR . '/admin/tab-pages/useful_plugins.php',
 				);
 			}
 			
@@ -333,7 +333,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			$tabs_array[]	= 	array(
 					'link'      => 'free_vs_pro',
 					'name'      => esc_html__('Free vs. PRO', 'content'),
-					'file_path' => get_stylesheet_directory() . '/admin/tab-pages/free-vs-pro.php',
+					'file_path' => CONTENT_ST_TEMPLATE_DIR . '/admin/tab-pages/free-vs-pro.php',
 			);
 			
 			
@@ -539,7 +539,7 @@ if (!class_exists('SpiceThemes_About_Page')) {
 			} elseif ( ! empty( $icons['1x'] ) ) {
 				$plugin_icon_url = $icons['1x'];
 			} else {
-				$plugin_icon_url = get_template_directory_uri() . '/admin/assets/images/placeholder_plugin.png';
+				$plugin_icon_url = CONTENT_PARENT_TEMPLATE_DIR_URI . '/admin/assets/images/placeholder_plugin.png';
 			}
 			return $plugin_icon_url;
 		}

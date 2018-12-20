@@ -14,7 +14,7 @@ $footer_copyright = get_theme_mod('footer_copyright_text','<p>'.__( '<a href="ht
 			<div class="row">
 			<div class="col-md-12">
 					<div class="site-info wow fadeIn animated" data-wow-delay="0.4s">
-						<?php echo $footer_copyright; ?>
+						<?php echo wp_kses_post($footer_copyright); ?>
 					</div>
 				</div>			
 			</div>	
