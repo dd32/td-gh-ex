@@ -45,6 +45,19 @@ Source: https://github.com/dachcom-digital/jquery-doubletaptogo
 
 == Changelog ==
 
+Version 1.28 (2018-12-20)
+-------------------------
+- Combined index.php, archive.php, and search.php into index.php
+- Combined content.php and content-aside.php into content.php
+- Combined single.php and page.php into singular.php
+- Updated the full width page template to use the same code as singular.php
+- Fixed incorrect call of Lovecraft_Recent_Posts in fallback sidebar widgets
+- Moved the post meta output into a function, to reduce duplicate code
+- Removed output of unneccessary title attributes
+- Added focus outline to link elements
+- Changed the toggles to button elements
+- Added screen reader text to the toggles
+
 Version 1.27 (2018-12-07)
 -------------------------
 - Fixed Gutenberg style changes required due to changes in the block editor CSS and classes
