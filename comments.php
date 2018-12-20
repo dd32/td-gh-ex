@@ -15,7 +15,8 @@ if ( post_password_required() )
   <?php if ( have_comments() ) : 	?>
   <h1 class="comments-title">
     <?php
-			printf( 'One thought on %2$s ', '%1$s COMMENTS ', comments_number( '0', '1', '%' ) , number_format_i18n( get_comments_number() ), get_the_title() ); ?>
+      /* translators: 1: comment count number */
+     printf(esc_html(_n('%1$s Comment', '%1$s Comments', get_comments_number(), 'medics')), esc_attr(number_format_i18n(get_comments_number())), get_the_title()); ?>
   </h1>
   <ul>
     <?php	wp_list_comments( array( 'callback' => 'medics_comment', 'short_ping' => true) ); ?>

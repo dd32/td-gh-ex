@@ -4,17 +4,16 @@
 */
 function medics_enqueue()
 {
-	wp_enqueue_style('medics-bootstrap',get_template_directory_uri().'/css/bootstrap.min.css',array(),'','');
-	wp_enqueue_style('medics-style',get_stylesheet_uri());
-	wp_enqueue_style('medics-font-awesome',get_template_directory_uri().'/css/font-awesome.min.css',array(),'','');
-	wp_enqueue_style('medics-scada-font','//fonts.googleapis.com/css?family=Scada');
-	wp_enqueue_script('medics-bootstrapjs',get_template_directory_uri().'/js/bootstrap.min.js',array('jquery'));
-	if(is_page_template('page-template/frontpage.php')){
-		wp_enqueue_script('medics-sliderjs',get_template_directory_uri().'/js/owl.carousel.min.js',array('jquery'));
-		wp_enqueue_script('medics-defaultjs',get_template_directory_uri().'/js/default.js',array('jquery') ,'1.0');
-		wp_enqueue_style('medics-owl-carousel-css',get_template_directory_uri().'/css/owl.carousel.css',array(),'','');
-	}
-	
+	/* CSS Files */	
+	wp_enqueue_style('google-font-api-scada','//fonts.googleapis.com/css?family=Scada');	
+	wp_enqueue_style('font-awesome',get_template_directory_uri().'/css/font-awesome.css',array(),'','');
+	wp_enqueue_style('bootstrap',get_template_directory_uri().'/css/bootstrap.css',array(),'','');
+	wp_enqueue_style('owl-carousel',get_template_directory_uri().'/css/owl.carousel.css',array(),'','');
+	/* JS Files */	
+	wp_enqueue_script('bootstrap',get_template_directory_uri().'/js/bootstrap.js',array('jquery'));
+	wp_enqueue_script('owl-carousel',get_template_directory_uri().'/js/owl.carousel.js',array('jquery'));
+	wp_enqueue_script('medics-default',get_template_directory_uri().'/js/default.js',array('jquery'));
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" ); 
+	wp_enqueue_style('medics-style',get_stylesheet_uri());
 }
-add_action('wp_enqueue_scripts', 'medics_enqueue'); ?>
+add_action('wp_enqueue_scripts', 'medics_enqueue');

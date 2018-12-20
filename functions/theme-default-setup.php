@@ -24,6 +24,7 @@ function medics_wp_title( $title, $sep ) {
 	}
 	// Add a page number if necessary.
 	if ( $paged >= 2 || $page >= 2 ) {
+		/* translators: 1: page number */
 		$title = "$title $sep " . sprintf( __( 'Page %s', 'medics' ), max( $paged, $page ) );
 	}
 	return $title;
@@ -100,33 +101,51 @@ add_action( 'widgets_init', 'medics_widgets_init' );
  * Meta information for current post: categories, tags, permalink, author, and date.
  */
 function medics_entry_meta() {
-	$medics_category_list = get_the_category_list( ', ', 'medics' );
-	$medics_tag_list = get_the_tag_list( ', ', 'medics' );
-	$medics_date = sprintf( '<time datetime="%3$s">%4$s</time>',
-		esc_url( get_permalink() ),
+	$medics_year = get_the_time( 'Y');
+	$medics_month = get_the_time( 'm');
+	$medics_day = get_the_time( 'd');
+	
+	$medics_category_list = get_the_category_list() ?  '<li><i class="fa fa-folder-open"></i>'.get_the_category_list(', ').'</li>' : '';
+	
+	$medics_tag_list = get_the_tag_list() ? '<li><i class="fa fa-tags"></i> '.get_the_tag_list('',', ').'</li>' : '';
+	
+	$medics_date = sprintf( '<li><i class="fa fa-calendar"></i><a href="%1$s" title="%2$s"><time datetime="%3$s">%4$s</time></a></li>',
+		esc_url( get_day_link( $medics_year, $medics_month, $medics_day)),
 		esc_attr( get_the_time() ),
 		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() )
+		esc_html( get_the_date('d M, Y') )
 	);
-	$medics_author = sprintf( '<i class="fa fa-user"></i><a href="%1$s" title="%2$s" >%3$s</a>',
+	$medics_author = sprintf( '<li><i class="fa fa-user"></i><a href="%1$s" title="%2$s" >%3$s</a></li>',
 		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		/* translators: 1: author name */
 		esc_attr( sprintf( __( 'View all posts by %s', 'medics' ), get_the_author() ) ),
 		get_the_author()
 	);
-	if ( $medics_tag_list ) {
-			$medics_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'medics' );
-		} elseif ( $medics_category_list ) {
-			$medics_utility_text = __( 'Posted in : %1$s  on %3$s by : %4$s', 'medics' );
-		} else {
-			$medics_utility_text = __( 'Posted on : %3$s by : %4$s', 'medics' );
-		}
-	printf(
-		$medics_utility_text,
+	if(comments_open()) { 
+		if(get_comments_number()>=1)
+			$medics_comments = '<li><i class="fa fa-comment"></i>'.get_comments_number().'</li>';
+		else
+			$medics_comments = '';
+	} else {
+		$medics_comments = '';
+	}
+	if(is_front_page()) {
+		printf('%1$s %3$s %5$s',
 		$medics_category_list,
-		$medics_tag_list,
 		$medics_date,
-		$medics_author
+		$medics_author,		
+		$medics_comments,
+		$medics_tag_list
 	);
+	} else{
+	printf('%1$s %2$s %3$s %4$s %5$s',
+		$medics_category_list,
+		$medics_date,
+		$medics_author,		
+		$medics_comments,
+		$medics_tag_list
+	); }
+
 }
 if ( ! function_exists( 'medics_comment' ) ) :
 /**
@@ -137,16 +156,15 @@ if ( ! function_exists( 'medics_comment' ) ) :
  *
  */
 function medics_comment( $comment, $medics_args, $depth ) {
-	$GLOBALS['comment'] = $comment;
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
 		// Display trackbacks differently than normal comments. ?>
 <li <?php comment_class(); ?> id="comment-<?php comment_ID(); ?>">
   <p>
-    <?php _e( 'Pingback:', 'medics' ); ?>
+    <?php esc_html_e( 'Pingback:', 'medics' ); ?>
     <?php comment_author_link(); ?>
-    <?php edit_comment_link( __( 'Edit', 'medics' ), '<span class="edit-link">', '</span>' ); ?>
+    <?php edit_comment_link( esc_html__( 'Edit', 'medics' ), '<span class="edit-link">', '</span>' ); ?>
   </p>
 </li>
 <?php break;
@@ -161,7 +179,7 @@ function medics_comment( $comment, $medics_args, $depth ) {
 <div class="comment-col-2">
   <?php printf( '<span>%1$s</span>',
        get_comment_author_link(),
-        ( $comment->user_id === $post->post_author ) ? '<span>' . __( 'Post author ', 'medics' ) . '</span>' : ''
+        ( $comment->user_id === $post->post_author ) ? '<span>' . esc_html__( 'Post author ', 'medics' ) . '</span>' : ''
     ); ?>
   <?php echo '<span>'.get_comment_date().'</span>';
        echo '<a href="#">'.comment_reply_link( array_merge( $medics_args, array( 'reply_text' => __( 'Reply', 'medics' ), 'after' => '', 'depth' => $depth, 'max_depth' => $medics_args['max_depth'] ) ) ).'</a>'; ?>
@@ -178,11 +196,14 @@ function medics_comment( $comment, $medics_args, $depth ) {
 }
 endif;
 function medics_read_more( ) {
-return ' ..<br /><div class="reading"><a href="'. get_permalink() . '">'.__('Continue Reading','medics').'</a></div>';
- }
+	if(get_theme_mod('hide_post_readmore_button') == '')
+	{
+		return ' ..<br /><div class="reading"><a href="'. get_permalink() . '">'.esc_html(get_theme_mod('post_button_text','Continue Reading')).'</a></div>';
+	}
+}
 add_filter( 'excerpt_more', 'medics_read_more' );
 /**length post text**/
 function medics_custer_excerpt_length( $length ) {
-	return 40;
+	return (is_front_page()) ? 40 : get_theme_mod('post_content_limit', 40);
 }
-add_filter( 'excerpt_length', 'medics_custer_excerpt_length', 999 ); ?>
+add_filter( 'excerpt_length', 'medics_custer_excerpt_length', 999 );

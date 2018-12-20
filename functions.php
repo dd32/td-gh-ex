@@ -19,12 +19,19 @@ function medics_setup() {
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 672, 372, true );
-	add_image_size( 'medics-full-width', 1038, 576, true );
 	add_theme_support( "title-tag" );
 	// This theme uses wp_nav_menu() in two locations.
 	register_nav_menus( array(
 		'primary'   => __( 'Top primary menu', 'medics' ),
 		'secondary' => __( 'Footer Secondary menu', 'medics' ),
+	) );
+	// Add theme support for Custom Logo.
+	add_theme_support( 'custom-logo', array(
+		'width'       => 250,
+		'height'      => 250,
+		'flex-width'  => true,
+		'flex-height' => true,
+		'header-text' => array( 'site-title', 'site-description' ),
 	) );
 	/*
 	 * Switch default core markup for search form, comment form, and comments
@@ -48,6 +55,20 @@ function medics_setup() {
 endif; // medics_setup
 add_action( 'after_setup_theme', 'medics_setup' );
 
+// Medics Pro Version Menu
+add_action( 'admin_menu', 'medics_admin_menu');
+function medics_admin_menu( ) {
+    add_theme_page( __('Pro Feature','medics'), __('Medics Pro','medics'), 'manage_options', 'medics-pro-buynow', 'medics_buy_now', 300 );   
+}
+function medics_buy_now(){ ?>
+<div class="medics_pro_version">
+  <a href="<?php echo esc_url('https://fasterthemes.com/wordpress-themes/medics/'); ?>" target="_blank">    
+    <img src ="<?php echo esc_url(get_template_directory_uri()); ?>/images/medics_pro_features.png" width="70%" height="auto" />
+  </a>
+</div>
+<?php
+}
+
 /**
  * Register Lato Google font for medics.
  */
@@ -63,15 +84,28 @@ function medics_font_url() {
 
 	return $medics_font_url;
 }
+// Comment Form Fields Placeholder
+function medics_comment_form_fields( $fields ) {
+    foreach( $fields as &$field ) {
+        $field = str_replace( 'id="author"', 'placeholder="First Name"', $field );
+        $field = str_replace( 'id="email"', 'placeholder="Email Id"', $field );
+        $field = str_replace( 'id="url"', 'placeholder="Website"', $field );
+    }
+    return $fields;
+}
+add_filter( 'comment_form_default_fields', 'medics_comment_form_fields' );
+// Change comment form textarea to use placeholder
+function medics_comment_textarea_placeholder( $args ) {
+    $args['comment_field']        = str_replace( 'textarea', 'textarea placeholder="Message"', $args['comment_field'] );
+    return $args;
+}
+add_filter( 'comment_form_defaults', 'medics_comment_textarea_placeholder' );
 
 /*** Enqueue css and js files ***/
 require get_template_directory() . '/functions/enqueue-files.php';
 
 /*** Theme Default Setup ***/
 require get_template_directory() . '/functions/theme-default-setup.php';
-
-/*** Theme Option ***/
-require get_template_directory() . '/theme-options/medicstheme.php';
 
 /*** Recent Post Widget ***/
 require get_template_directory() . '/functions/recent-post-widget.php';
@@ -82,5 +116,5 @@ require get_template_directory() . '/functions/breadcrumbs.php';
 /*** Custom Header ***/
 require get_template_directory() . '/functions/custom-header.php';
 
-/*** TGM ***/
-require get_template_directory() . '/functions/tgm-plugins.php'; ?>
+/*** Theme Customizer Option ***/
+require get_template_directory() . '/functions/theme-customization.php';

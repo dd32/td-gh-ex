@@ -162,4 +162,4 @@ function medics_admin_header_image() { ?>
 			<h2 id="desc" class="displaying-header-text"<?php echo $medics_style; ?>><?php bloginfo( 'description' ); ?></h2>
 		</div>
 	</div>
-<?php } ?>
+<?php } 

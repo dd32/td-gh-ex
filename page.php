@@ -18,14 +18,14 @@ get_header(); ?>
 <div class="container container-medics">
   <div class="col-md-12 medics-post no-padding">
     <?php while ( have_posts() ) : the_post(); ?>
-    <?php $medics_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
     <div class="col-md-9 clearfix no-padding">
       <div class="single-blog">
-        <div class="blog-contan-col-2">
-          <?php 
-			if($medics_image){
-				echo'<img src="'.esc_url($medics_image).'" class="img-responsive medics-featured-image" alt="'.get_the_title().'">';
-			} ?>
+        <div class="blog-contan-col-2 full-width">
+          <?php if ( has_post_thumbnail() ) { ?>
+          <a href="<?php echo esc_url( get_permalink() ); ?>">
+            <?php the_post_thumbnail('',array( 'class' => 'img-responsive medics-featured-image' )); ?>
+          </a>
+          <?php } ?>
           <h1>
             <?php the_title(); ?>
           </h1>
@@ -45,4 +45,4 @@ get_header(); ?>
       get_sidebar(); ?>
   </div>
 </div>
-<?php get_footer(); ?>
+<?php get_footer();

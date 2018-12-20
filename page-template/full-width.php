@@ -17,21 +17,19 @@ get_header(); ?>
 </div>
 <div class="container container-medics">
   <div class="col-md-12 clearfix no-padding medics-fullsidebar">
-    <?php while ( have_posts() ) : the_post();
-    $medics_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
+    <?php while ( have_posts() ) : the_post(); ?>
     <div class="single-blog">
       <div class="blog-contan-col-2">
-        <?php if($medics_image){ echo'<img src="'.esc_url($medics_image).'" class="img-responsive medics-featured-image" alt="'.get_the_title().'">'; } ?>
+         <?php if ( has_post_thumbnail() ) { ?>
+          <a href="<?php echo esc_url( get_permalink() ); ?>">
+            <?php the_post_thumbnail('',array( 'class' => 'img-responsive medics-featured-image' )); ?>
+          </a>
+          <?php } ?>
         <h1>
           <?php the_title(); ?>
         </h1>
         <div class="dr-name-icon">
-          <?php medics_entry_meta();
-          if(get_the_tags() != '') { ?>
-          <i class="fa fa-tags"></i> <span>
-          <?php the_tags('<li>', '</li>, <li>', '</li>'); ?>
-          </span>
-          <?php } ?>
+          <?php medics_entry_meta(); ?>
         </div>
         <p>
           <?php the_content();
@@ -46,4 +44,4 @@ get_header(); ?>
     comments_template( '', true ); ?>
   </div>
 </div>
-<?php get_footer(); ?>
+<?php get_footer();

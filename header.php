@@ -13,9 +13,6 @@
 <!--[if !(IE 7) | !(IE 8)  ]><!-->
 <html <?php language_attributes(); ?>>
 <!--<![endif]-->
-<!--[if lt IE 9]>
-	<script src="<?php echo get_template_directory_uri(); ?>/js/respond.min.js"></script>
-<![endif]-->
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width">
@@ -27,48 +24,65 @@
 <!-- header -->
 <header> 
   <!-- TOP HEADER -->
-  <?php if(!empty($medics_options['helpline']) || !empty($medics_options['phone']) || !empty($medics_options['email']) || !empty($medics_options['fburl']) || !empty($medics_options['twitter']) || !empty($medics_options['googleplus'])) {  ?>
+  <?php 
+  $SocialIconDefault = array(
+              array('url'=>isset($medics_options['fburl'])?$medics_options['fburl']:'','icon'=>'fa-facebook'),
+              array('url'=>isset($medics_options['twitter'])?$medics_options['twitter']:'','icon'=>'fa-twitter'),
+              array('url'=>isset($medics_options['googleplus'])?$medics_options['googleplus']:'','icon'=>'fa-google-plus'),  
+            );
+  $social_links_flag=""; 
+  for($i=1; $i<=3; $i++) : 
+      if(get_theme_mod('SocialIconLink'.$i,$SocialIconDefault[$i-1]['url'])!='' && get_theme_mod('SocialIcon'.$i,$SocialIconDefault[$i-1]['icon'])!=''):
+       $social_links_flag=true; 
+      endif;
+  endfor;
+  if((get_theme_mod('phone_title',isset($medics_options['helpline'])?$medics_options['helpline']:'') != '') || (get_theme_mod('email',isset($medics_options['email'])?$medics_options['email']:'') != '') || $social_links_flag !='' ) {  ?>
   <div class="col-md-12 top-header no-padding ">
     <div class="container container-medics">
-      <div class="col-md-6 help-line no-padding">
-        <?php if(!empty($medics_options['phone'])) { ?>
-        <span><?php echo esc_attr($medics_options['helpline']).' '.esc_attr($medics_options['phone']);?> </span>
+      <div class="col-md-6 help-line">
+        <?php if(get_theme_mod('phone_title',isset($medics_options['helpline'])?$medics_options['helpline']:'') != '') { ?>
+        <span><?php echo esc_attr(get_theme_mod('phone_title',isset($medics_options['helpline'])?$medics_options['helpline']:'')).' : '.esc_attr(get_theme_mod('phone',isset($medics_options['phone'])?$medics_options['phone']:''));?> </span>
         <?php } ?>
       </div>
-      <div class="col-md-6 top-email-id no-padding">
-        <div class="header-col-1 no-padding">
-          <?php if(!empty($medics_options['email'])) { ?>
-          <span> E-mail : <a href="mailto:<?php echo is_email($medics_options['email']);?>"><?php echo is_email($medics_options['email']);?></a></span>
+      <div class="col-md-6 top-email-id">
+      <?php if($social_links_flag ==''){ $col_cls="2 email-cls";}else{$col_cls="1";} {
+        # code...
+      } ?>
+        <div class="header-col-<?php echo esc_attr($col_cls); ?> no-padding">
+          <?php if(get_theme_mod('email',isset($medics_options['email'])?$medics_options['email']:'') != '') { ?>
+          <span> E-mail : <a href="mailto:<?php echo esc_attr(is_email(get_theme_mod('email',isset($medics_options['email'])?$medics_options['email']:'')));?>"><?php echo esc_attr(is_email(get_theme_mod('email',isset($medics_options['email'])?$medics_options['email']:'')));?></a></span>
           <?php } ?>
         </div>
+        <?php if($social_links_flag !=''){ ?>
         <div class="header-col-2 social-icons no-padding">
           <ul class="list-inline no-padding">
-            <?php if(!empty($medics_options['fburl'])){ ?>
-            <li><a href="<?php echo esc_url($medics_options['fburl']);?>"><i class="fa fa-facebook"></i></a></li>
-            <?php }
-            if(!empty($medics_options['twitter'])){ ?>
-            <li><a href="<?php echo esc_url($medics_options['twitter']);?>"><i class="fa fa-twitter"></i></a></li>
-            <?php }
-            if(!empty($medics_options['googleplus'])){ ?>
-            <li><a href="<?php echo esc_url($medics_options['googleplus']);?>"><i class="fa fa-google-plus"></i></a></li>
-            <?php } ?>
+            <?php for($i=1; $i<=3; $i++) : 
+                        if(get_theme_mod('SocialIconLink'.$i,$SocialIconDefault[$i-1]['url'])!='' && get_theme_mod('SocialIcon'.$i,$SocialIconDefault[$i-1]['icon'])!=''): ?>
+                       <li><a href="<?php echo esc_url(get_theme_mod('SocialIconLink'.$i,$SocialIconDefault[$i-1]['url'])); ?>" class="icon" title="" target="_blank">
+                            <i class="fa <?php echo esc_attr(get_theme_mod('SocialIcon'.$i,$SocialIconDefault[$i-1]['icon'])); ?>"></i>
+                        </a></li>
+            <?php endif; endfor;?> 
           </ul>
         </div>
+        <?php } ?>
       </div>
     </div>
   </div>
   <?php } ?>
   <!-- END TOP HEADER -->
   <div class="container container-medics">
-    <div class="col-md-12 logo-menu no-padding">
-      <div class="col-md-3 logo-icon no-padding">
-        <?php if(empty($medics_options['logo'])) { ?>
-        <h1 class="medics-site-name"><a href="<?php echo esc_url( get_site_url() ); ?>"><?php echo get_bloginfo('name'); ?></a></h1>
-        <?php } else { ?>
-        <a href="<?php echo esc_url( get_site_url() ); ?>"><img src="<?php echo esc_url($medics_options['logo']); ?>" alt="logo" class="logo-center" /></a>
-        <?php } ?>
-      </div>
-      <div class="col-md-9 no-padding clearfix">
+    <div class="col-md-12 logo-menu">
+      <div class="col-md-3 col-lg-3 col-sm-3 col-xs-12 logo-icon no-padding">
+      <?php
+          if(has_custom_logo() ): 
+            the_custom_logo();
+          endif; 
+          if(display_header_text()){ ?>
+            <h1 class="medics-site-name"><a href="<?php echo esc_url(get_site_url()); ?>"><?php echo esc_html(get_bloginfo('name')); ?></h1>
+            <p class="medics-tagline"><?php echo esc_html(get_bloginfo('description')); ?></p></a>
+          <?php } ?> 
+      </div> 
+      <div class="col-md-9 col-lg-9 col-sm-9 col-xs-12 no-padding clearfix">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle navbar-toggle-top sort-menu-icon" data-toggle="collapse" data-target=".navbar-collapse"> <span class="sr-only"></span> <span class="icon-bar icon-color"></span> <span class="icon-bar icon-color"></span> <span class="icon-bar icon-color"></span> </button>
         </div>

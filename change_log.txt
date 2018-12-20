@@ -36,3 +36,6 @@ ii) Removed Favicon from header.php and theme options
 
 Version: 1.7 (04 Jan 2017)
 i) Minor fixes.
+
+Version: 1.7.1 (18 Dec 2018)
+i) Minor fixes.

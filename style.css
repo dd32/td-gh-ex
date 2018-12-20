@@ -1,10 +1,10 @@
 /*
 Theme Name: Medics
-Theme URI: http://fasterthemes.com/wordpress-themes/Medics
+Theme URI: https://fasterthemes.com/wordpress-themes/Medics
 Author: FasterThemes
-Author URI: http://fasterthemes.com/
+Author URI: https://fasterthemes.com/
 Description: Medics is a lightweight, faster, clean, super flexible and bootstrap based responsive theme mainly designed for doctors and hospitals but can be used in any business or personal website as well. Medics Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling.It has got custom widgets, theme-options etc in order to get it customized as per your need. Home page layout contains in-built and recent posts are touch friendly slider based on owl carousel. Pro or Paid version includes custom post types for managing team (doctors), slider on the home page and many more features !
-Version: 1.7
+Version: 1.7.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Medics Theme, Copyright 2017 fasterthemes.com
@@ -14,29 +14,36 @@ Text Domain: medics
 This theme, like WordPress, is licensed under the FasterThemes.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
-@charset "utf-8";
 /* CSS Document */
 
 body{
 	font-family: 'Scada', sans-serif;
 }
-.container-medics{
-	width:1130px;
-}
 .logo-center{
 	width:130px;
+}
+.prev.page-numbers {
+    float: left;
 }
 .no-padding
 {
 	padding-left:0px !important;
 	padding-right:0px !important; 
 }
+.single-blog .blog-contan-col-2.full-width{
+    width: 100%;
+    float: left;
+    margin-left: 0;
+}    
 .no-padding-left{
 	padding-left:0px !important;
 }
 .no-padding-right{
 	padding-right:0px !important
 }
+nav.navigation.pagination .nav-links a {
+    margin: 0 10px;
+} 
 .top-header{
 	background-color:#f8f8f8;
 	border: 1px solid #F1F1F1;
@@ -57,6 +64,10 @@ body{
 }
 .header-col-2{
 	width:20%;
+	float:right;
+}
+.header-col-2.email-cls{
+	width:32%;
 	float:right;
 }
 .social-icons ul{
@@ -88,7 +99,7 @@ body{
 	color:#00c2e5;
 }
 .search-form .search-submit{
-    background-color: #428BCA;
+    background-color: #00C2E5;
     border-color: #357EBD;
     color: #FFFFFF;
 	padding: 5px 20px;
@@ -98,6 +109,44 @@ body{
     width: 100%;
 }
 
+.owl-nav {
+    position: absolute;
+    top: -60px;
+    right: 0;
+} 
+.left-side-cls .col-md-3.main-sidebar.no-padding.clearfix {
+    padding: 0 25px 0 0px!important;
+}
+.owl-prev {
+    float: left;
+    width: 100%;
+    top: 10px;
+    position: absolute;
+    right: 30px;
+    background-color: transparent;
+    border: 1px solid #f1f1f1;
+    font-size: 14px;
+    font-weight: bold;
+    height: 27px;
+    margin: 3px 1px 0;
+    padding: 3px 0 0 10px;
+    width: 24px !important;
+        color: #a0a0a0;
+} 
+.owl-next {
+    position: absolute;
+    right: 0;
+    top: 11px;
+    background-color: transparent;
+    border: 1px solid #f1f1f1;
+    font-size: 14px;
+    font-weight: bold;
+    height: 27px;
+    margin: 3px 1px 0;
+    padding: 3px 0 0 10px;
+    width: 24px !important;
+        color: #a0a0a0;
+}
 /*==================== M E N U -- C S S =============*/
 .navbar-default {
     background:none;
@@ -399,8 +448,7 @@ body{
 
 /***** copyright *******/
 .copyright{
-	background-color:#101010;
-        padding-top: 35px;
+	background-color:#101010;	
         color: #fff;
 }
 .copyright p{
@@ -604,16 +652,16 @@ body{
 .single-blog .blog-contan-col-2 {
     float: left;
     margin-bottom: 20px;
-    margin-left: 5px;
+    margin-left: 10px;
     margin-top: 15px;
     width: 89%;
-}
+} 
 .single-blog .blog-contan-col-2 > h1{
-	margin-top:0px;
+    margin-top: 0px;
 	font-size:18px;	
 	color:#181818;
 	clear:both;
-}
+} 
 .single-blog .blog-contan-col-2 h1 a{
 	font-size:18px;
 	color:#181818;
@@ -762,10 +810,10 @@ body{
 }
 .medics-default-pagination {
     background-color: #F8F8F8;
-    padding: 15px 5px;
-	margin-bottom:30px;
-	width:94%;
-	margin-top:20px;
+    padding: 15px 5px 15px 15px;
+    margin-bottom: 30px;
+    width: 100%;
+    margin-top: 20px;
 }
 .blog-contan-col-2  .medics-contant > a {
     border: 1px solid #00C2E5;
@@ -892,7 +940,8 @@ body{
 .comment-box .comment-col-2{
 	width:84%;
 	float:left;
-}
+    margin-bottom: 10px;
+} 
 .comment-box .comment-col-2 span,
 .comment-box .comment-col-2 a{
 	color:#017e94;
@@ -1072,8 +1121,9 @@ margin-bottom:20px;
     width: 83%;
 }
 .medics-leftbar .single-blog .blog-contan-col-2 {
-    float: right;
-    width: 85%;
+    float: left;
+    width: 100%;
+     margin-left: 15px;
 }
 .medics-leftbar .single-blog .blog-contan-col-2 p {
     margin-right: 0;
@@ -1431,10 +1481,70 @@ color:#00C2E5;
 	color:#FFF;
 }
 /********* Media CSS Start *********/
-@media (max-width:767px) {
-.container-medics {
-	width: 100%;
+@media (max-width:320px) {
+.single-blog .blog-date-col-1 {
+    width: 34%;
 }
+.header-col-2.email-cls {
+    width: 80%;
+    float: right;
+}
+}  
+@media (max-width:991px) {
+	.main-sidebar {
+    margin-bottom: 15px;
+    margin-top: 20px;
+}
+ .single-blog .blog-contan-col-2 {
+    width: 100%;
+    margin: 0; 
+}  
+}  
+@media (max-width:1000px) {
+.single-blog .blog-contan-col-2 > h1{
+    margin-top: 15px;
+}  
+.medics-menu a {
+    font-size: 13px;
+    padding: 18px 7px !important;
+} 
+.twiterpost {
+    padding: 6px 0px;
+} 
+.medics-menu > li {
+    float: left !important;
+    margin: 6px 3px 0;
+    position: relative;
+}
+.medics-home-banner {
+    margin: 10px 0 0 0;
+} 
+}  
+@media (max-width:767px) {
+.logo-icon.no-padding {
+    text-align: center; 
+}  
+.comment-form-author input, .comment-form-email input, .comment-form-url input {
+    margin-bottom: 10px;
+    margin-right: 20px;
+    margin-top: 0;
+    padding: 8px;
+    width: 100%;
+}  
+.medics-download-link.pull-right {
+    float: left;
+    width: 100%;
+} 
+.medics-next-link {
+    float: right;
+    width: 100%;
+    text-align: right;
+}  
+a.custom-logo-link {
+    float: left;
+    width: 100%;
+    text-align: center;
+}   
 .container {
 	width: 100%;
 }
@@ -1474,9 +1584,8 @@ color:#00C2E5;
 	margin-left:25px;
 }
 .navbar-collapse ul ul li a{
-	padding:0px !important; 
-}
-
+	padding: 2px 0px!important; 
+}  
 /***** dropdown menu ******/
 #menu-trigger {
 	cursor: pointer;
@@ -1536,7 +1645,7 @@ color:#00C2E5;
 .medics-menu a {
 	display: block;
 	float: none;
-	padding: 0px 15px !important;
+	padding: 4px 15px !important;
 	color: rgb(24, 24, 24);
 }
 .medics-menu a:hover, .medics-menu a:focus {
@@ -1598,6 +1707,13 @@ embed, iframe, object, video {
 }
 
 @media(min-width:320px) and (max-width:480px)	{
+.icon-msg {
+    float: left;
+    width: 100%;
+} 
+.single-blog .blog-contan-col-2 > h1 {
+    margin-top: 10px;
+}  
 .help-line {
     clear: both;
     text-align: center;
@@ -1607,20 +1723,22 @@ embed, iframe, object, video {
     text-align: center;
     width: 100%;
 }
+.logo-icon.no-padding {
+    text-align: center;
+    }
 .header-col-2 {
-    float: none;
-    margin: 0 auto;
-    width: 45%;
-}
-.logo-icon img {
-    float: left;
-}
+float: none!important;
+    margin: 0 auto!important;
+    width: 100%!important;
+    margin: 0 auto!important;
+    max-width: 160px!important;
+} 
 .blog-date {
     float: left;
     margin-right: 5px;
     padding: 0;
-    width: 15%;
-}
+    width: 22%;
+} 
 .blog-contan img {
     width: 80%;
 }
@@ -1638,14 +1756,17 @@ embed, iframe, object, video {
 }
 .main-sidebar{
 	padding:0px;
-}
-
+} 
 .single-blog .blog-date-col-1{
-	width:17%;
-}
+    width: 34%;
+}  
 .single-blog .blog-contan-col-2{
-	width:80%;
+	width:98%;
 }
+.single-blog .blog-contan-col-2 {
+      margin-left: 0;
+    margin-top: 0;
+} 
 .recent-single-blog-count div i{
 	padding:10px 3px;
 }
@@ -1660,16 +1781,18 @@ embed, iframe, object, video {
 }
 .header-blog h1{
 	font-size:15px;
-}
-
+} 
 .comment-box .comment-col-2 {
     width: 75%;
-}
+    margin-bottom: 10px;
+} 
+.comment-box .comment-col-1 img {
+  margin-top: 0px; 
+} 
 .comment-box .comment-col-1 {
     width: auto;
 	margin-right:10px;
-}
-
+} 
 .input-text-box,
 .message-box,
 .our-doctors-blogs{
@@ -1685,12 +1808,9 @@ embed, iframe, object, video {
 .blog-date h6{
 	line-height:15px;
 }
-.home-blog{
-	padding-left:15px;
-}
-.twiterpost p{
-	float:none;	
-}
+.twiterpost p {
+    text-align: left;
+} 
 .footer-blogs {
     padding: 0;
 }
@@ -1763,13 +1883,7 @@ embed, iframe, object, video {
 }
 .single-blogtitle h1:after{
 	width:76%;
-}
-.main-sidebar{
-	padding:0px;
-}
-.logo-icon img {
-    float: left;
-}
+}  
 .header-col-1 {
     width: 44%;
 }
@@ -1800,8 +1914,8 @@ embed, iframe, object, video {
 	width:13%;
 }
 .single-blog .blog-contan-col-2{
-	width:85%;
-}
+	width:100%;
+} 
 .copyright p,
 .copyright ul{
 	text-align:center;
@@ -1835,7 +1949,7 @@ embed, iframe, object, video {
 }
 .icon-msg {
     float: left;
-    width: 88%;
+    width: 100%;
 }
 .doctors-title{
 	width:100%;
@@ -1858,6 +1972,28 @@ embed, iframe, object, video {
 }
 
 }
+
+@media(min-width:768px) and (max-width:991px)	{
+.navbar-collapse.collapse.pull-right.no-padding {
+    text-align: center;
+    width: 100%;
+    margin: 0 auto;
+    max-width: 740px;
+    float: none!important;
+}
+}
+@media(min-width:990px) and (max-width:1015px)	{
+.main-sidebar.no-padding {padding-left: 15px;}
+.navbar-collapse.collapse.pull-right.no-padding {
+    width: 100%;
+}
+.main-sidebar {
+    margin-bottom: 15px;
+    padding-left: 15px!important;
+}
+
+}
+
 @media(min-width:768px) and (max-width:1023px)	{
 p > embed, p > iframe, p > object, span > embed, span > iframe, span > object {
     margin-bottom: 0;
@@ -1870,9 +2006,6 @@ embed, iframe, object, video {
 	width:100%;
 }
 .single-blog .blog-contan-col-2{
-}
-.container-medics {
-	width: 100%;
 }
 .container {
 	width: 100%;
@@ -1890,8 +2023,8 @@ embed, iframe, object, video {
 }
 .header-col-2 {
     float: left;
-    width: 15%;
-}
+    width: 18%;
+} 
 .help-line {
     float: left;
 }	
@@ -2073,9 +2206,6 @@ embed, iframe, object, video {
 @media(min-width:1024px) and (max-width:1200px)	{
 	.medics-leftbar .single-blog .blog-date-col-1 {
     margin-left: 50px;
-}
-.container-medics {
-	width: 100%;
 }
 .container {
 	width: 100%;

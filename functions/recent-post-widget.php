@@ -14,12 +14,12 @@ $medics_instance = wp_parse_args( (array) $medics_instance, array( 'title' => ''
 $medics_instance['title'];
 if(!empty($medics_instance['post_number'])) { $medics_instance['post_number']; } ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'medics'); ?></label>
-            <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php if(!empty($medics_instance['title'])) { echo $medics_instance['title']; } ?>" style="width:100%;" />
+            <label for="<?php echo esc_html($this->get_field_id( 'title' )); ?>"><?php esc_html_e('Title:', 'medics'); ?></label>
+            <input id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" value="<?php if(!empty($medics_instance['title'])) { echo esc_html($medics_instance['title']); } ?>" style="width:100%;" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id( 'post_number' ); ?>"><?php _e('Number of post to show:', 'medics'); ?></label>
-            <input id="<?php echo $this->get_field_id( 'post_number' ); ?>" name="<?php echo $this->get_field_name( 'post_number' ); ?>" value="<?php if(!empty($medics_instance['post_number'])) { echo $medics_instance['post_number']; } else { echo '5'; } ?>" style="width:100%;" />
+            <label for="<?php echo esc_html($this->get_field_id( 'post_number' )); ?>"><?php esc_html_e('Number of post to show:', 'medics'); ?></label>
+            <input id="<?php echo esc_attr($this->get_field_id( 'post_number' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'post_number' )); ?>" value="<?php if(!empty($medics_instance['post_number'])) { echo esc_html($medics_instance['post_number']); } else { echo '5'; } ?>" style="width:100%;" />
         </p>
 <?php
 }
@@ -59,18 +59,18 @@ while ( $medics_single_post->have_posts() ) { $medics_single_post->the_post(); ?
 	$medics_feat_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
       <div class="ImageWrapper chrome-fix">
       <?php if($medics_feat_image!="") { ?>
-      <img src="<?php echo $medics_feat_image; ?>" class="img-responsive medics-post-widget" alt="<?php echo get_the_title(); ?>" />
+      <img src="<?php echo esc_url($medics_feat_image); ?>" class="img-responsive medics-post-widget" alt="<?php echo esc_attr(get_the_title()); ?>" />
     <?php } ?>
     </div>
     </div>
     <div class="recent-col-2">
-    	<h6><a href="<?php echo get_permalink(); ?>" class="recent-post-title-link"><?php the_title(); ?></a></h6>
+    	<h6><a href="<?php echo esc_url(get_permalink()); ?>" class="recent-post-title-link"><?php the_title(); ?></a></h6>
     </div>
     <p><?php the_excerpt(); ?></p>
   	<div class="recent-blog-count">
-      	<div><i class="fa fa-user"></i><a href="<?php echo get_author_posts_url(get_the_author_meta( 'ID' )); ?>"><?php echo get_the_author(); ?></a> </div> 
+      	<div><i class="fa fa-user"></i><a href="<?php echo esc_url(get_author_posts_url(get_the_author_meta( 'ID' ))); ?>"><?php echo get_the_author(); ?></a> </div> 
         <div><i class="fa fa-calendar"></i><?php echo get_the_date("M j, Y "); ?> </div> 
-        <div><i class="fa fa-comments"></i><?php echo get_comments_number(); ?></div> 
+        <div><i class="fa fa-comments"></i><?php echo esc_html(get_comments_number()); ?></div> 
     </div>
   </div>
 <?php } wp_reset_query(); ?>
@@ -79,4 +79,7 @@ while ( $medics_single_post->have_posts() ) { $medics_single_post->the_post(); ?
 echo $after_widget;
 }
 }
-add_action( 'widgets_init', create_function('', 'return register_widget("medics_randompostwidget");') ); ?>
+add_action('widgets_init', 'medics_recentpost_widget');
+function medics_recentpost_widget() {
+    register_widget('medics_randompostwidget');
+}
