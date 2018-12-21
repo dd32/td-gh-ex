@@ -509,7 +509,7 @@ text_color = 0.213 * this.rgb[0] +
 
 
    /*  caption_color  */
-	weaverx_put_color($sout,'caption_color','.wp-caption p.wp-caption-text, #content .gallery .gallery-caption,.entry-attachment .entry-caption');
+	weaverx_put_color($sout,'caption_color','.wp-caption p.wp-caption-text, #content .gallery .gallery-caption,.entry-attachment .entry-caption, #content figure figcaption');
 
 
 

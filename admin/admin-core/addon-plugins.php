@@ -26,12 +26,6 @@ function weaverx_install_tgm_plugins() {
 		),
 
 		array(
-			'name'     => __('Gutenberg', 'weaver-xtreme' /*adm*/), // The plugin name
-			'slug'     => 'gutenberg', // The plugin slug (typically the folder name)
-			'required' => false
-		),
-
-		array(
 			'name'     => __('Widget Shortcode (display widgets anywhere)', 'weaver-xtreme' /*adm*/), // The plugin name
 			'slug'     => 'widget-shortcode', // The plugin slug (typically the folder name)
 			'required' => false

@@ -99,13 +99,13 @@ function weaverx_sapi_form_bottom($form_name='end of form') {
 		'm_primary_hamburger', 'm_secondary_hamburger',
 		'font_set_vietnamese', 'font_set_cryllic', 'font_set_greek', 'font_set_hebrew',
 		'font_word_spacing_global_dec', 'font_letter_spacing_global_dec',
-		'_options_level', '_PHP_warning_displayed', 'last_option'));
+		'_options_level', '_PHP_warning_displayed', 'last_option', 'settings_version'));
 
 	/*	The following code allows the SAPI to save the non-sapi values. If you don't do this here,
 		then the values will be set to false, and be lost! SAPI is not tolerant of submitting a form
 		that doesn't include EVERY setting for the form group. */
 
-	weaverx_setopt('last_option','Weaver Xtreme');	// Safety check for limited PHP $_POST variables
+	weaverx_setopt('last_option',WEAVERX_THEMENAME);	// Safety check for limited PHP $_POST variables
 	foreach ($non_sapi as $name) {
 ?>
 	<input name="<?php weaverx_sapi_main_name($name); ?>" id="<?php echo $name;?>" type="hidden" value="<?php echo weaverx_getopt($name); ?>" />
@@ -349,7 +349,7 @@ function weaverx_validate_all_options($in) {
 		}
 	}
 
-	if ( $wvr_last != 'Weaver Xtreme') {
+	if ( $wvr_last != 'Weaver Xtreme' && $wvr_last != WEAVERX_VERSION && $wvr_last != '4.2') {
 		//$err_msg .=
 		$vars = ini_get( 'max_input_vars' );
 		$newvars = $vars + 1000;
@@ -364,8 +364,8 @@ Your host seems to be configured to limit how many input form options you are al
 For help on how to increase the <em>max_input_vars</em> PHP setting, please click to see the
 <a href='//guide.weavertheme.com/host-configuration-php-max_input_vars/' target='_blank'>Host&nbsp;Configuration:&nbsp;PHP&nbsp; max_input_vars</a> article on the Weaver Xtreme guide site.</p>
 <p style='color:blue;font-weight:bold;text-align:center;'>
-PLEASE USE THE BROWSER BACK BUTTON TO RETURN TO WP ADMIN.</p><p><small>Code: V-%s/P-%s/G-%s/C-%s/K-%s </small</p>", 'weaver-xtreme'),
-		$vars, $newvars, $vars, $posts, $gets, $cookies,$key);
+PLEASE USE THE BROWSER BACK BUTTON TO RETURN TO WP ADMIN.</p><p><small>Code: V-%s/P-%s/G-%s/C-%s/K-%s/L-%s </small</p>", 'weaver-xtreme'),
+		$vars, $newvars, $vars, $posts, $gets, $cookies,$key, $wvr_last);
 		wp_die($msg);
 	}
 
@@ -392,24 +392,12 @@ function weaverx_end_of_section($who = '') {
 	printf(__("%s %s | Options Version: %s | Subtheme: %s | PHP Memory Limit: Local - %s / Server - %s\n", 'weaver-xtreme' /*adm*/),WEAVERX_THEMENAME, WEAVERX_VERSION, weaverx_getopt('style_version'), $name, $local_mem_lim, $server_mem_lim);
 
 	$last = weaverx_getopt('last_option');
-	if ($last != 'Weaver Xtreme') // check for case of limited PHP $_POST values
+	if ($last != WEAVERX_THEMENAME || $last != 'Weaver Xtreme') // check for case of limited PHP $_POST values
 	{
 ?>
-<?php e_("<p>
-Your host may be configured to limit how many input var options you are allowed to pass via PHP. This is usually controlled with the PHP <em>max_input_vars</em> configuration setting. The standard value of 1000 is too small, and should be increased to 2000. Until you increase the value, you cannot save your Weaver Xtreme settings using the Legacy Interface. The Customizer is will still work, as will the 'Save/Restore' tab options. Warning: If you are seeing this message, it is likely that at least some of your settings have become corrupted.
-</p><p>
-For details on how to increase the <em>max_input_vars</em> PHP setting, please see the
-<a href='https://guide.weavertheme.com/host-configuration-php-max_input_vars/' target='_blank'>Host Configuration: PHP max_input_vars</a> article on the Weaver Xtreme guide site.
-", 'weaver-xtreme' /*adm*/); echo $last;
+<?php e_("<p>Please open the Weaver Xtreme admin page again to synchronize theme settings. If you continue to see this message, please contact us on the support forum at https://forum.weavertheme.com for help.</p>", 'weaver-xtreme' /*adm*/);
 	}
 
-	if (false && !weaverx_getopt('_hide_subtheme_link')) {
-?>
-	<p style="max-width:90%;"><?php weaverx_site('/subthemes/'); ?><img style="max-width:95%;float:left;margin-right:10px;" src="<?php echo weaverx_relative_url('/assets/images/'); ?>theme-bar.jpg" alt="addons" />
-	<?php _e('<strong>Discover more premium <br />Weaver Xtreme Subthemes</strong>', 'weaver-xtreme' /*adm*/); ?></a>
-	</p>
-<?php
-	}
 }
 
 function weaverx_donate_button() {

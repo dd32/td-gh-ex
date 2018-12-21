@@ -201,16 +201,7 @@ function weaverx_edit_link($echo = 'echo') {
 		$flink = $link;					// some https vs http bug in WP
 	$edit = $before . $flink . $after;
 
-	if ( function_exists('the_gutenberg_project') && strpos( $post->post_content, '<!-- wp:' ) === false) {	// only if NOT already Gutenberg
-
-		$link_label = __('Classic Editor', 'weaver-xtreme');
-		$link = '<a class="post-edit-link post-edit-link-classic" href="' . $url . '&amp;classic-editor" title="' . esc_attr( $post_type_obj->labels->edit_item ) . '">' . $link_label . '</a>';
-		$flink = apply_filters( 'edit_post_link', $link, $post->ID );
-		if (!$flink)
-			$flink = $link;					// some https vs http bug in WP
-		$edit .= $before . $flink. $after;
-	}
-
+	
 	$is_elementor = ! ! get_post_meta( $post->ID, '_elementor_edit_mode', true );
 
 	if ( $is_elementor ) {

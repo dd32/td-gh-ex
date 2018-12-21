@@ -19,7 +19,7 @@
     $.fn.fitVids = function(options) {
         var settings = {
             customSelector: null,
-            ignore: null
+            ignore: '.wp-block-embed'
         };
 
         if (!document.getElementById('fit-vids-style')) {

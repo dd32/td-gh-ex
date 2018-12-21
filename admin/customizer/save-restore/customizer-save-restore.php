@@ -328,7 +328,7 @@ You may need to check your folder permissions or other server settings.', 'weave
 
 			weaverx_setopt('weaverx_version_id',$version); // keep version, force save of db
 			weaverx_setopt('wvrx_css_saved','');
-			weaverx_setopt('last_option','Weaver Xtreme');
+			weaverx_setopt('last_option',WEAVERX_THEMENAME);
 
 			weaverxplus_clear_opts();
 			$opts = $restore['weaverxplus'];		// fetch plus opts
@@ -388,7 +388,7 @@ You may need to check your folder permissions or other server settings.', 'weave
 			}
 			$new_cache['weaverx_version_id'] = $version;
 			$new_cache['wvrx_css_saved'] = '';
-			$new_cache['last_option'] = 'Weaver Xtreme';
+			$new_cache['last_option'] = WEAVERX_THEMENAME;
 
 			$new_cache['style_date'] = date('Y-m-d-H:i:s');
 
@@ -620,7 +620,9 @@ You can change colors, sidebar layouts, font family and sizes, borders, spacing 
 		}
 		$new_cache['weaverx_version_id'] = $version;
 		$new_cache['wvrx_css_saved'] = '';
-		$new_cache['last_option'] = 'Weaver Xtreme';
+		$new_cache['settings_version'] = WEAVERX_SETTINGS_VERSION;
+		$new_cache['last_option'] = WEAVERX_THEMENAME;
+
 
 		$new_cache['style_date'] = date('Y-m-d-H:i:s');
 

@@ -174,7 +174,7 @@ function weaverx_save_opts($who='', $bump = true) {
 		$old = weaverx_getopt('style_date'); // and reload the cache
 	}
 
-	weaverx_setopt('last_option','Weaver Xtreme');		// just be sure - needed for first time install
+	weaverx_setopt('last_option', WEAVERX_THEMENAME);		// just be sure - needed for first time install
 
 	if ($bump) {
 		//$vers = $vers ? $vers + 1 : 1;	// bump or init
@@ -1454,18 +1454,23 @@ jQuery(window).resize(function(){jQuery('#blog-posts').masonry({itemSelector:'.b
 }
 
 function weaverx_check_editor_style() {		// see if we need an update...
-	if ( !( current_user_can('edit_theme_options') && current_user_can('activate_plugins')) )
+	if ( !( current_user_can('edit_theme_options') && current_user_can('activate_plugins')) || is_customize_preview())
 		return;
 
 	$updir = wp_upload_dir();
 	$dir = trailingslashit($updir['basedir']) . 'weaverx-subthemes/editor-style-wvrx.css';
 
-	if (!@file_exists( $dir ))  {
-		// weaverx_alert( __('Notice!\r\n*** Your Weaver Xtreme Theme settings are not up to date, probably because you are installing Weaver Xtreme for the first time, or are updating from Weaver Xtreme Version 3 to Version 4. These settings will be automatically updated.','weaver-xtreme' /*adm*/) );
+	if (!@file_exists( $dir ) || weaverx_getopt('settings_version') != WEAVERX_SETTINGS_VERSION ){	// save latest version)  {
+		//weaverx_alert( __('Notice!\r\n Your Weaver Xtreme Theme settings have been automatically updated.','weaver-xtreme' /*adm*/) );
+		if ( weaverx_getopt('settings_version') != WEAVERX_SETTINGS_VERSION ) {
+			weaverx_setopt('settings_version', WEAVERX_SETTINGS_VERSION);		// save latest version
+		}
 		weaverx_save_opts('customizer', true); // using customizer helps force for all situations
 		global $wp_settings_errors;
 		$wp_settings_errors = array();		// clear messages for this update setting
 	}
+
+
 }
 
 require_once( get_template_directory() . '/includes/fileio.php' );

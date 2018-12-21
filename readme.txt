@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.8
 Tested up to: 5.0
-Stable tag: 4.0.9
+Stable tag: 4.2
 
 == Description ==
 
@@ -555,3 +555,14 @@ with testing and feature suggestions.
 = Version 4.1 =
 * Update: Bumped to 4.1 to coincide with WP 5.0 release
 * Fix: issue with displaying title permalink setting in Gutenberg editor
+
+= Version 4.2 =
+* Update: Updated to use some new Block Editor Features in WP 5.0.2. Simplified code and stylesheets.
+* New: Support for wide and full alignment for pages that have sidebars - wide/full don't overflow and get clipped
+* Fix: Block Editor embeds conflict with 'fitvids' - allow native blocks responsive formatting instead
+* Fix: Various ormatting issues, especially when in the Block Editor.
+* Update: Use built-in Block Editor dark theme support
+* Tweak: fix references to Gutenberg - use Block Editor instead
+* Tweak: remove Gutenberg plugin recommendation
+* Fix: italic and classic editor icon yellow bug in Block Editor
+* Tweak: automatic update for generated style files

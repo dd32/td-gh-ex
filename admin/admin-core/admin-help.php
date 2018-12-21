@@ -106,9 +106,6 @@ This formerly was integrated with Weaver, and was considered an important part o
 <li><a href="//wordpress.org/plugins/show-sliders/" target="_blank"><?php _e('Weaver Show Sliders', 'weaver-xtreme' /*adm*/); ?></a>
 <?php _e('- good for any kind of slideshows - images, posts, [gallery] replacement', 'weaver-xtreme' /*adm*/);?>
 </li>
-<li><a href="https://wordpress.org/plugins/gutenberg/" target="_blank">Gutenberg</a> -
-<?php _e('The new WordPress Gutenberg editor will soon become the default WordPress editor. The Gutenberg project has been underway for over a year, and the current version is getting very close. It has become a great tool for building good looking pages. This is especially true with Weaver Xtreme, which has added complete integrated support for Gutenberg. You will get a nearly total WYSIWYG experience when using the Gutenberg editor. Prepare for the future. Get Gutenberg now!', 'weaver-xtreme' /*adm*/); ?>
-</li>
 <li><a href="https://wordpress.org/plugins/widget-shortcode/" target="_blank">Widget Shortcode</a> -
 <?php _e('Adds [widget] shortcode which enables you to display any widget in any content area. This is a great enhancement to Weaver Xtreme, especially when using the Weaver Xtreme Plus Flexible Layout Widget.', 'weaver-xtreme' /*adm*/); ?>
 </li>

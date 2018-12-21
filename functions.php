@@ -25,7 +25,7 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 add_action( 'after_setup_theme', 'weaverx_setup' );     // run weaverx_setup() when the 'after_setup_theme' hook is run
 
-if ( ! function_exists( 'weaverx_setup' ) ) {
+if ( ! function_exists( 'weaverx_setup' ) ) :
 /**
  * Sets up theme defaults and registers support for various WordPress features.
  *
@@ -52,41 +52,83 @@ function weaverx_setup() {
 		$content_width = (int)(WEAVERX_THEME_WIDTH * .75);   // 1100 * .75 - default for content with a sidebar
 
 
-	/* Make Weaver Xtreme available for translation.
-	 *
-	 * We will first allow the possibility that the user has a private translation in
-	 * wp-content/languages/ (to avoid the update overwrite problem), then load the theme's files.
-	*/
-
+	/*
+	 * Make theme available for translation.
+	 * Translations can be filed in the /languages/ directory.
+	 */
 	load_theme_textdomain('weaver-xtreme' , get_template_directory() . '/languages' );		// now theme's translations as fallback
-
-	add_editor_style();	// editor-style
-	add_editor_style( WEAVERX_GOOGLE_FONTS_URL ); // from settings.php - in %7C format
-
 
 	// ******** add theme support possibilities ********
 
 
-	add_theme_support( 'automatic-feed-links' );					// Add default posts and comments RSS feed links to <head>.
+	// Add default posts and comments RSS feed links to head.
+	add_theme_support( 'automatic-feed-links' );
+
+	// Let WordPress manage the document title.
+	add_theme_support( 'title-tag' );
+
+	// Enable support for Post Thumbnails on posts and pages.
+	add_theme_support( 'post-thumbnails' );
+
+	// Add theme support for selective refresh for widgets.
+	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	// html5 for search
+	// 	future: comment-form, comment-list, gallery, caption
+	add_theme_support( 'html5',  array( 'search-form' ) );
+
+	// Add support for responsive embedded content.
+	add_theme_support( 'responsive-embeds' );		// gutenberg
 
 
-	add_theme_support( 'customize-selective-refresh-widgets' );	// Add theme support for selective refresh for widgets.
 
-
-	add_theme_support( 'html5',  array( 'search-form' ) );		// html5 for search
-
-
+	// Add support for a variety of post formats (not supported: chat)
 	add_theme_support( 'post-formats',  array( 'aside', 'audio', 'gallery',
-					   'image', 'link', 'quote', 'status','video') );	// Add support for a variety of post formats
-						// not supported: chat
+					   'image', 'link', 'quote', 'status','video') );
 
-	add_theme_support( 'post-thumbnails' );						// Featured Images
 
-	add_theme_support( 'title-tag' );							//
 
 	// now, need Weaver Xtreme settings available for everything else
 
 	weaverx_init_opts('functions');
+
+	// Now add all the support needed for the editor - both classic and block editor
+
+	// Weaver Xtreme provides its own block styles, so we don't want to include
+	//    add_theme_support( 'wp-block-styles' );
+	// because it pulls in  wp-incudes/css/dist/block-library/theme.min.css
+
+	// Add support for default block styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	// Add support for editor styles.
+	add_theme_support( 'editor-styles' );
+
+	if (weaverx_getopt('_hide_editor_style')) {
+		// Enqueue editor styles - without theme editor styles
+		add_editor_style( array (
+					'editor-style.css',		// classic editor
+					'assets/css/blocks-editor-base-style'.WEAVERX_MINIFY.'.css',	// gutenberg
+					WEAVERX_GOOGLE_FONTS_URL));	// from settings.php - in %7C format
+	} else {
+		weaverx_check_editor_style();		// see if we need an update...
+		$updir = wp_upload_dir();
+		$css_path = trailingslashit($updir['baseurl']) . 'weaverx-subthemes/editor-early-style-wvrx.css';
+		// Enqueue editor styles - without theme editor styles
+		add_editor_style( array (
+					'editor-style.css',		// classic editor
+					'assets/css/blocks-editor-base-style'.WEAVERX_MINIFY.'.css',	// gutenberg
+					$css_path,
+					WEAVERX_GOOGLE_FONTS_URL));	// from settings.php - in %7C format
+	}
+
+
+	//add_theme_support( 'responsive-embeds' );
+
+	weaverx_dark_theme_check();		// add Block Editor dark theme support if theme settings have dark bg
 
 	$width = weaverx_getopt_default('theme_width_int',WEAVERX_THEME_WIDTH);
 
@@ -95,13 +137,10 @@ function weaverx_setup() {
 		// Enable support for custom logo.
 
 	add_theme_support( 'custom-logo',
-		 array('height'      => $height,
-		'width'       => $width,
-		'flex-height' => true, )
+		 array(	'height'      => $height,
+				'width'       => $width,
+				'flex-height' => true, )
 	);
-
-	add_theme_support( 'align-wide' );		// gutenberg wide
-	add_theme_support( 'responsive-embeds' );		// gutenberg
 
 	$weaverx_header = array(
 		'default-image' => '%s/assets/images/headers/winter-fog.jpg',
@@ -149,14 +188,11 @@ function weaverx_setup() {
 		'primary' => __('Primary Navigation: if specified, used instead of Default menu', 'weaver-xtreme' /*adm*/),
 
 	) );
-
 }
-} // weaverx_setup
+endif; // weaverx_setup
 //--
 
-
-
-if ( ! function_exists('weaverx_init_opts')) {
+if ( ! function_exists('weaverx_init_opts')) :
 function weaverx_init_opts($who='') {
 	// this sets either the current settings, or the default values.
 
@@ -177,12 +213,54 @@ function weaverx_init_opts($who='') {
 	$GLOBALS['WVRX_GETS'] = count($_GET, COUNT_RECURSIVE);
 	$GLOBALS['WVRX_COOKIES'] = count($_COOKIE, COUNT_RECURSIVE);
 }
+endif;
+//--
+
+if ( ! function_exists('weaverx_dark_theme_check')) :
+function weaverx_dark_theme_check() {
+
+	$bg = '';
+	if ( ($val = weaverx_getopt_default('editor_bgcolor','inherit')) && $val != 'inherit') {	        /* alt bg color */
+		$bg = $val;
+	} else if ( ($val = weaverx_getopt_default('content_bgcolor','inherit')) && $val != 'inherit') {	/* #content */
+		$bg = $val;
+	} else if ( ($val = weaverx_getopt_default('container_bgcolor','inherit') ) && $val != 'inherit') { /* #container */
+		$bg = $val;
+	} else if (($val = weaverx_getopt_default('wrapper_bgcolor','inherit')) && $val != 'inherit') {    /* #wrapper */
+		$bg = $val;
+	} else if (($val = weaverx_getopt_default('body_bgcolor','inherit')) && $val != 'inherit') {    /* Outside BG */
+		$bg = $val;
+	} else if (($name = weaverx_getopt('themename')) && strpos($name,'Transparent Dark') !== false) {	// fix in V3.0.5
+		$bg = '#222';
+	}
+
+
+	// now decide if we need to add alternate styling for the editor icons
+
+	$need_alt = $bg && $bg[0] != '#';				// always use alt styling for non-hex bg colors
+
+	if ( !$need_alt ) {
+		// Normalize a proper hex string with length 6 = but assume started as a #hex
+		$hex = preg_replace("/[^0123456789abcdef]/", '',strtolower($bg));
+
+		if ( strlen( $hex ) == 3 )
+			$hex = preg_replace("/(.)(.)(.)/", '\1\1\2\2\3\3', $hex);
+		if ( preg_match('/^[0123456789abcdef]{6}$/', $hex) ) {			// have a valid hex string
+			if ( hexdec($hex) < hexdec( '888888' ) )	// hex values less than #888888 are "dark"
+				$need_alt = true;
+		}
+	}
+
+	if ($need_alt ) {
+		add_theme_support( 'dark-editor-style' );
+	}
 }
+endif; // dark theme check
 //--
 
 /**
  */
-if (! function_exists( 'weaverx_register_header_images')) {
+if (! function_exists( 'weaverx_register_header_images')) :
 function weaverx_register_header_images() {
 	// Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.
 	register_default_headers( array(
@@ -208,7 +286,7 @@ function weaverx_register_header_images() {
 
 	) );
 }
-}
+endif;
 //--
 
 
@@ -383,10 +461,8 @@ function weaverx_enqueue_styles() {
 }
 }
 
-
 //--
-
-
+add_action('wp_enqueue_scripts', 'weaverx_enqueue_styles', 11 );		// styles in normal order
 add_action('wp_enqueue_scripts', 'weaverx_enqueue_scripts', 8 );	// early priority so load before most other scripts (added: 3.1.7)
 /**
  * Enqueue theme scripts
@@ -396,7 +472,7 @@ add_action('wp_enqueue_scripts', 'weaverx_enqueue_scripts', 8 );	// early priori
  */
 function weaverx_enqueue_scripts() {	// action definition
 
-	weaverx_enqueue_styles();	// add the styles
+	//weaverx_enqueue_styles();	// add the styles
 
 	// need to know the page template for some conditional script inclusion
 	global $weaverx_cur_template;

@@ -573,17 +573,17 @@ function weaverx_enqueue_gutenberg_block_editor_assets() {
 
 	weaverx_check_editor_style();		// see if we need an update...
 
-	$editor_file = get_template_directory_uri() . '/assets/css/gutenberg-base-editor-style'.WEAVERX_MINIFY.'.css';
+	$editor_file = get_template_directory_uri() . '/assets/css/blocks-editor-base-style'.WEAVERX_MINIFY.'.css';
 
 	// enqueue style file
 	wp_enqueue_style( 'weaverx_gutenberg_fonts', WEAVERX_GOOGLE_FONTS_URL);	// load the Google Fonts the theme uses so they are avilable to the editor
-	wp_enqueue_style( 'weaverx_gutenberg_base_style', $editor_file, array(), WEAVERX_VERSION);
+	wp_enqueue_style( 'weaverx_blocks_base_style', $editor_file, array(), WEAVERX_VERSION);
 
 	$updir = wp_upload_dir();
 
-	$css_file = trailingslashit($updir['basedir']) . 'weaverx-subthemes/gutenberg-editor-style-wvrx.css';	// generated CSS files won't be minified
+	$css_file = trailingslashit($updir['basedir']) . 'weaverx-subthemes/block-editor-style-wvrx.css';	// generated CSS files won't be minified
 
-	$css_path = trailingslashit($updir['baseurl']) . 'weaverx-subthemes/gutenberg-editor-style-wvrx.css';
+	$css_path = trailingslashit($updir['baseurl']) . 'weaverx-subthemes/block-editor-style-wvrx.css';
 
 	if ( weaverx_f_exists( $css_file ) ) {	// add dynamically generated editor CSS if the file exists
 		$path = str_replace(array('http:','https:'),  '', $css_path);		// strip the http: if there, just use the //
@@ -601,11 +601,11 @@ add_action( 'enqueue_block_editor_assets', 'weaverx_enqueue_gutenberg_block_edit
  */
 function weaverx_enqueue_gutenberg_block_assets() {
 	// enqueue for BOTH editor and front-end
-	$style_file = get_template_directory_uri() . '/assets/css/gutenberg-blocks'.WEAVERX_MINIFY.'.css';
-	wp_enqueue_style( 'weaverx_gutenberg_block', $style_file, array(),WEAVERX_VERSION );
+	$style_file = get_template_directory_uri() . '/assets/css/blocks-theme-blocks'.WEAVERX_MINIFY.'.css';
+	wp_enqueue_style( 'weaverx_blocks_block', $style_file, array(),WEAVERX_VERSION );
 }
 
-add_action( 'enqueue_block_assets', 'weaverx_enqueue_gutenberg_block_assets' );				// Gutenberg invokes this action
+//#@@@ add_action( 'enqueue_block_assets', 'weaverx_enqueue_gutenberg_block_assets' );				// Gutenberg invokes this action
 
 
 // =============================== >>> FILTER: weaverx_replace_widget_area <<< ================================
