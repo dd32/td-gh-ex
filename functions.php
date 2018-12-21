@@ -18,7 +18,7 @@ if ( !defined( 'AGNCY_JS_URL' ) ) {
     define( 'AGNCY_JS_URL', esc_url( get_template_directory_uri() ) );
 }
 if ( !defined( 'AGNCY_VERSION' ) ) {
-    define( 'AGNCY_VERSION', '1.4.0' );
+    define( 'AGNCY_VERSION', '1.4.1' );
 }
 if ( !defined( 'AGNCY_DEFAULT_PRIMARY' ) ) {
     define( 'AGNCY_DEFAULT_PRIMARY', '#225378' );
@@ -102,7 +102,7 @@ function agncy_enqueue_scripts()
         'style',
         AGNCY_THEME_URL . '/style.min.css',
         array( 'font-awesome' ),
-        '1.4.0',
+        '1.4.1',
         'all'
     );
     /*
@@ -115,7 +115,7 @@ function agncy_enqueue_scripts()
         'main',
         AGNCY_JS_URL . '/js/script.min.js',
         array( 'jquery' ),
-        '1.4.0',
+        '1.4.1',
         true
     );
     wp_enqueue_script( 'main' );
@@ -134,7 +134,7 @@ function agncy_enqueue_scripts()
     wp_register_script(
         'agncy_font',
         AGNCY_JS_URL . '/js/fonts.min.js',
-        '1.4.0',
+        '1.4.1',
         false
     );
     wp_enqueue_script( 'agncy_font' );
@@ -175,7 +175,7 @@ function agncy_admin_scripts()
             'wp-date',
             'wp-edit-post'
         ),
-            '1.4.0',
+            '1.4.1',
             true
         );
         wp_enqueue_script( 'admin' );
@@ -624,7 +624,7 @@ function agncy_register_required_plugins()
      * If the source is NOT from the .org repo, then source is also required.
      */
     $plugins = array( array(
-        'name'        => 'WP Munich Blocks',
+        'name'        => esc_attr__( 'WP Munich Blocks', 'agncy' ),
         'slug'        => 'wp-munich-blocks',
         'is_callable' => 'activate_wpm_blocks',
     ) );
