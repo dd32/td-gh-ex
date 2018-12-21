@@ -52,6 +52,8 @@ if ( is_archive() || is_home() ) {
 		?>
 	</div>
 	<?php
+	if ( ! get_theme_mod( 'agncy_hide_archive_meta', false ) ) {
 		get_template_part( 'template-parts/post-meta-info' );
+	}
 	?>
 </article>

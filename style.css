@@ -4,7 +4,7 @@
  * Description: Agncy is a beautiful news and blogging theme that has beautiful typography, powerful color customisation and an elegant, light layout. Customise your theme to the colours you need and upload your own logo. Enjoy reading even long texts with the beautiful font "Fira" and experience how fast font loading can be with an innovative font loading technique.
  * Author: WP Munich
  * Author URI: http://www.wp-munich.com
- * Version: 1.3.0
+ * Version: 1.4.0
  * Text Domain: agncy
  * Domain Path: /languages
  * License: GPL-2.0+
@@ -4079,6 +4079,7 @@ footer.main-footer .credit {
 }
 .the_loop article .the_excerpt {
   position: relative;
+  margin-bottom: 24px;
 }
 .the_loop article .read-more-link {
   position: absolute;
@@ -4108,89 +4109,37 @@ footer.main-footer .credit {
   position: relative;
   z-index: 1;
 }
+@media (min-width: 768px) {
+  .the_loop {
+    margin-bottom: 54px;
+  }
+  .the_loop article {
+    margin-bottom: 54px;
+    padding-bottom: 26px;
+  }
+  .the_loop article .the_thumbnail {
+    margin-bottom: 27px;
+  }
+  .the_loop article .the_title {
+    margin: 13.5px 0;
+  }
+  .the_loop article .the_excerpt {
+    margin-bottom: 27px;
+  }
+  .the_loop article .read-more-link {
+    height: 54px;
+    padding: 27px 15px 0;
+  }
+  .the_loop article .read-more-link:before {
+    height: 27px;
+  }
+}
 .header-contact-wrapper {
   text-align: right;
   font-weight: 600;
 }
 .header-contact-wrapper .contact-item {
   margin-left: 10px;
-}
-.desktop-header .logo-wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  text-align: center;
-  overflow: hidden;
-  height: 100%;
-  max-height: 108px;
-  margin: 27px 0;
-}
-.desktop-header .logo-wrapper .custom-logo-link {
-  display: block;
-  min-width: 0;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 1 100%;
-          flex: 1 1 100%;
-}
-.desktop-header .logo-wrapper .custom-logo-link .custom-logo {
-  display: block;
-  margin: 0 auto;
-  max-width: 100%;
-  max-height: 100%;
-  height: auto;
-  width: auto;
-}
-.header-theme-light {
-  background-color: #fff;
-  color: #333;
-}
-.header-theme-light a {
-  color: #333;
-}
-.header-theme-light .header-contact-wrapper {
-  color: #f8f8f8;
-  background-color: #333;
-}
-.header-theme-light .header-contact-wrapper a {
-  color: #f8f8f8;
-}
-.header-theme-dark {
-  background-color: #333;
-  color: #f8f8f8;
-}
-.header-theme-dark a {
-  color: #f8f8f8;
-}
-.header-theme-dark .header-contact-wrapper {
-  background-color: #f8f8f8;
-  color: #333;
-}
-.header-theme-dark .header-contact-wrapper a {
-  color: #333;
-}
-.header-container .header-row {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-flow: row wrap;
-          flex-flow: row wrap;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-}
-.header-container .header-row:before,
-.header-container .header-row:after {
-  display: none;
-}
-.header-container .header-col {
-  -webkit-box-flex: 0;
-      -ms-flex: 0 0 auto;
-          flex: 0 0 auto;
 }
 /**
  * The styles for the title bar template
@@ -4248,6 +4197,7 @@ footer.main-footer .credit {
   font-size: 20px;
   line-height: 1.2em;
 }
+.has-huge-font-size,
 .has-larger-font-size {
   font-size: 32px;
   line-height: 1.5em;
@@ -5191,26 +5141,6 @@ ul.wp-block-gallery.alignright {
     padding: 13.5px 15px;
   }
   /**/
-  .the_loop {
-    margin-bottom: 54px;
-  }
-  .the_loop article {
-    margin-bottom: 54px;
-    padding-bottom: 26px;
-  }
-  .the_loop article .the_thumbnail {
-    margin-bottom: 27px;
-  }
-  .the_loop article .the_title {
-    margin: 13.5px 0;
-  }
-  .the_loop article .read-more-link {
-    height: 54px;
-    padding: 27px 15px 0;
-  }
-  .the_loop article .read-more-link:before {
-    height: 27px;
-  }
   .btn_agncy {
     padding: 6.75px 30px;
   }
@@ -5228,79 +5158,125 @@ ul.wp-block-gallery.alignright {
   .page-wrapper {
     padding-top: 0px;
   }
+  .desktop-header .header-container {
+    display: grid;
+    grid-column-gap: 16px;
+    grid-row-gap: 32px;
+    padding-top: 27px;
+    padding-bottom: 27px;
+  }
+  .desktop-header .header-container:before,
+  .desktop-header .header-container:after {
+    display: none;
+  }
+  .desktop-header .logo-wrapper {
+    height: 100%;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+    max-height: 81px;
+  }
+  .desktop-header .logo-wrapper .custom-logo-link {
+    display: block;
+    height: 100%;
+    min-width: 0;
+  }
   .desktop-header .logo-wrapper .custom-logo-link .custom-logo {
-    margin-left: 0;
-    margin-right: auto;
+    display: block;
+    margin: 0;
+    max-width: 100%;
+    max-height: 100%;
+    height: auto;
+    width: auto;
   }
-  .desktop-header.header-logo_center .logo-wrapper .logo-text,
-  .desktop-header.header-logo_center .logo-wrapper .custom-logo-link .custom-logo {
-    margin-left: auto;
-    margin-right: auto;
+  .desktop-header .desktop-nav {
+    -ms-flex-item-align: center;
+        align-self: center;
   }
-  .desktop-header.header-logo_right .logo-wrapper .logo-text,
-  .desktop-header.header-logo_right .logo-wrapper .custom-logo-link .custom-logo {
-    margin-left: auto;
-    margin-right: 0;
+  .desktop-header.header-background-default {
+    background-color: #fff;
   }
-  .desktop-header .divider {
-    border-width: 1px;
-    border-style: solid;
-    border-bottom: none;
-    border-left: none;
-    border-right: none;
-    margin: 13.5px 0 12.5px 0;
+  .desktop-header.header-theme-dark {
+    color: #333;
   }
-  .desktop-header .desktop-nav nav.header-menu-desktop > ul.desktop-menu {
+  .desktop-header.header-theme-dark a {
+    color: #333;
+  }
+  .desktop-header.header-theme-dark .header-contact-wrapper {
+    background-color: #333;
+    color: #f8f8f8;
+  }
+  .desktop-header.header-theme-dark .header-contact-wrapper a {
+    color: inherit;
+  }
+  .desktop-header.header-theme-light {
+    color: #f8f8f8;
+  }
+  .desktop-header.header-theme-light a {
+    color: #f8f8f8;
+  }
+  .desktop-header.header-theme-light .header-contact-wrapper {
+    color: #333;
+    background-color: #f8f8f8;
+  }
+  .desktop-header.header-theme-light .header-contact-wrapper a {
+    color: inherit;
+  }
+  .desktop-header.header-layout-side-by-side .header-container {
+    grid-template-columns: minmax(-webkit-min-content, 20%) auto;
+    grid-template-columns: minmax(min-content, 20%) auto;
+  }
+  .desktop-header.header-layout-side-by-side .logo-wrapper .custom-logo-link {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .desktop-header.header-layout-side-by-side.header-logo-pos-right .header-container {
+    grid-template-columns: auto minmax(-webkit-min-content, 20%);
+    grid-template-columns: auto minmax(min-content, 20%);
+  }
+  .desktop-header.header-layout-side-by-side.header-logo-pos-right .header-container .logo-wrapper {
+    grid-column-start: 2;
+    grid-row-start: 1;
+  }
+  .desktop-header.header-layout-side-by-side.header-logo-pos-right .header-container .desktop-nav {
+    grid-column-start: 1;
+    grid-row-start: 1;
+  }
+  .desktop-header.header-layout-menu-top .logo-wrapper {
+    grid-row-start: 2;
+  }
+  .desktop-header.header-logo-pos-left .logo-wrapper {
+    justify-self: start;
+  }
+  .desktop-header.header-logo-pos-center .logo-wrapper {
+    justify-self: center;
+  }
+  .desktop-header.header-logo-pos-right .logo-wrapper {
+    justify-self: end;
+  }
+  .desktop-header.header-menu-pos-left .desktop-menu {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
-    margin-left: -16px;
   }
-  .desktop-header .desktop-nav nav.header-menu-desktop > ul.desktop-menu li.menu-item a {
-    text-transform: uppercase;
+  .desktop-header.header-menu-pos-center .desktop-menu {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
-  .desktop-header .search-form {
-    margin: 0 0 0.75em;
+  .desktop-header.header-menu-pos-right .desktop-menu {
+    -webkit-box-pack: end;
+        -ms-flex-pack: end;
+            justify-content: flex-end;
   }
-  .desktop-header .search-form button[type="submit"].input-group-button {
-    padding: 6.75px 16px;
-  }
-  .desktop-header.header-layout-default-menu-top .desktop-menu {
-    margin-top: 13.5px;
-  }
-  .desktop-header.header-layout-default-menu-top .desktop-menu .menu-item {
-    margin-bottom: 0;
-  }
-  .desktop-header.header-layout-boxed-dark .boxed-dark-col {
-    background-color: #000;
-  }
-  .desktop-header.header-layout-boxed-dark a,
-  .desktop-header.header-layout-boxed-dark .header-theme-light a,
-  .desktop-header.header-layout-boxed-dark .header-theme-dark a {
-    color: #fff;
-  }
-  .desktop-header.header-layout-boxed-dark .desktop-menu .menu-item {
-    margin-bottom: 0;
-  }
-  .desktop-header.header-layout-boxed-dark .desktop-menu > li.menu-item-has-children:after {
-    color: #fff;
-  }
-  .desktop-header.header-layout-boxed-dark-menu-top .boxed-dark-col {
-    background-color: #000;
-  }
-  .desktop-header.header-layout-boxed-dark-menu-top .desktop-nav nav.header-menu-desktop > ul.desktop-menu {
-    -webkit-box-pack: start;
-        -ms-flex-pack: start;
-            justify-content: flex-start;
-  }
-  .desktop-header.header-layout-boxed-dark-menu-top .desktop-nav nav.header-menu-desktop > ul.desktop-menu > li.menu-item {
-    margin-bottom: 0;
-  }
-  .desktop-header.header-layout-boxed-dark-menu-top .desktop-nav nav.header-menu-desktop > ul.desktop-menu > li.menu-item:after {
-    color: #fff;
-  }
-  .desktop-header.header-layout-boxed-dark-menu-top .desktop-nav nav.header-menu-desktop > ul.desktop-menu > li.menu-item > a {
-    color: #fff;
+  .desktop-header.header-menu-pos-wide .desktop-menu {
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   body.nav-open {
     overflow: scroll;
@@ -5331,22 +5307,23 @@ ul.wp-block-gallery.alignright {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
   }
   .desktop-menu .menu-item {
     position: relative;
     -webkit-box-flex: 0;
         -ms-flex: 0 1 auto;
             flex: 0 1 auto;
-    margin: 0 0 0.75em;
+    margin: 0;
     padding: 0;
   }
   .desktop-menu .menu-item a {
     display: block;
     padding: 0.375em 16px;
     font-weight: 400 !important;
+    text-transform: uppercase;
   }
   .desktop-menu .menu-item:hover > .sub-menu {
     display: block;

@@ -18,7 +18,7 @@ if ( !defined( 'AGNCY_JS_URL' ) ) {
     define( 'AGNCY_JS_URL', esc_url( get_template_directory_uri() ) );
 }
 if ( !defined( 'AGNCY_VERSION' ) ) {
-    define( 'AGNCY_VERSION', '1.3.0' );
+    define( 'AGNCY_VERSION', '1.4.0' );
 }
 if ( !defined( 'AGNCY_DEFAULT_PRIMARY' ) ) {
     define( 'AGNCY_DEFAULT_PRIMARY', '#225378' );
@@ -102,7 +102,7 @@ function agncy_enqueue_scripts()
         'style',
         AGNCY_THEME_URL . '/style.min.css',
         array( 'font-awesome' ),
-        '1.3.0',
+        '1.4.0',
         'all'
     );
     /*
@@ -115,7 +115,7 @@ function agncy_enqueue_scripts()
         'main',
         AGNCY_JS_URL . '/js/script.min.js',
         array( 'jquery' ),
-        '1.3.0',
+        '1.4.0',
         true
     );
     wp_enqueue_script( 'main' );
@@ -134,7 +134,7 @@ function agncy_enqueue_scripts()
     wp_register_script(
         'agncy_font',
         AGNCY_JS_URL . '/js/fonts.min.js',
-        '1.3.0',
+        '1.4.0',
         false
     );
     wp_enqueue_script( 'agncy_font' );
@@ -175,7 +175,7 @@ function agncy_admin_scripts()
             'wp-date',
             'wp-edit-post'
         ),
-            '1.3.0',
+            '1.4.0',
             true
         );
         wp_enqueue_script( 'admin' );
@@ -286,6 +286,7 @@ function agncy_theme_supports()
     add_theme_support( 'yoast-seo-breadcrumbs' );
     add_theme_support( 'wp-block-styles' );
     add_theme_support( 'responsive-embeds' );
+    add_theme_support( 'disable-custom-font-sizes' );
     $args = array(
         'search-form',
         'comment-form',
@@ -294,18 +295,23 @@ function agncy_theme_supports()
         'caption'
     );
     add_theme_support( 'html5', $args );
+    // Add the custom logo option.
     add_theme_support( 'custom-logo', array(
         'height'      => 432,
         'width'       => 400,
         'flex-height' => true,
         'flex-width'  => true,
     ) );
+    /*
+    	Color Options
+    */
     $current_color_theme = $GLOBALS['agncy_color_themes']->get_current_theme();
     $colors = array(
         'brandColor'     => $current_color_theme->get_primary_color(),
         'secondaryColor' => $current_color_theme->get_secondary_color(),
         'tertiaryColor'  => $current_color_theme->get_tertiary_color(),
     );
+    // Add the support for color palletes.
     add_theme_support( 'editor-color-palette', apply_filters( 'agncy_color_palette', array(
         array(
         'name'  => __( 'Primary Color', 'agncy' ),
@@ -358,6 +364,37 @@ function agncy_theme_supports()
         'color' => '#000',
     )
     ) ) );
+    /*
+    	Font size options.
+    */
+    add_theme_support( 'editor-font-sizes', array(
+        array(
+        'name' => __( 'Small', 'agncy' ),
+        'size' => 12,
+        'slug' => 'small',
+    ),
+        array(
+        'name' => __( 'Normal', 'agncy' ),
+        'size' => 18,
+        'slug' => 'regular',
+    ),
+        array(
+        'name' => __( 'Medium', 'agncy' ),
+        'size' => 20,
+        'slug' => 'medium',
+    ),
+        array(
+        'name' => __( 'Large', 'agncy' ),
+        'size' => 29,
+        'slug' => 'large',
+    ),
+        array(
+        'name' => __( 'Huge', 'agncy' ),
+        'size' => 32,
+        'slug' => 'huge',
+    )
+    ) );
+    // Add the support for wide blocks.
     add_theme_support( 'align-wide' );
 }
 

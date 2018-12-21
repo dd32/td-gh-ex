@@ -1086,28 +1086,48 @@
 }
 .customize-control-agncy-layout .layout-list {
   margin: 0 -5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: row wrap;
+          flex-flow: row wrap;
 }
 .customize-control-agncy-layout .layout-item {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   max-width: 50%;
+  width: 50%;
   padding: 5px;
   text-align: center;
-  float: left;
 }
 .customize-control-agncy-layout .layout-item.third {
   max-width: 33%;
 }
 .customize-control-agncy-layout .layout-item img {
-  border: 2px solid #ccc;
+  display: block;
   width: 100%;
   height: auto;
+  opacity: 0.6;
+  -webkit-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+.customize-control-agncy-layout .layout-item img:hover {
+  opacity: 0.8;
 }
 .customize-control-agncy-layout .layout-item input[type="radio"]:checked + img {
-  border: 2px solid #1e8cbe;
+  opacity: 1;
 }
 .customize-control-agncy-layout .layout-radio {
   display: none;
+}
+.customize-control-agncy-layout label.disabled img {
+  opacity: 0.2;
+  cursor: default;
 }
 .customize-control-agncy-color-theme .color-theme-section {
   margin: 0;

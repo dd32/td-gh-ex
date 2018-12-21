@@ -35,18 +35,20 @@ if ( post_password_required() ) {
 				/* translators: %s: post title */
 				echo wp_kses_data( sprintf( _x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'agncy' ), get_the_title() ) );
 			} else {
-				echo wp_kses_data( sprintf(
-					/* translators: 1: number of comments, 2: post title */
-					_nx(
-						'%1$s Reply to <span class="title">&ldquo;%2$s&rdquo;</span>',
-						'%1$s Replies to <span class="title">&ldquo;%2$s&rdquo;</span>',
-						$comments_number,
-						'comments title',
-						'agncy'
-					),
-					number_format_i18n( $comments_number ),
-					get_the_title()
-				) );
+				echo wp_kses_data(
+					sprintf(
+						/* translators: 1: number of comments, 2: post title */
+						_nx(
+							'%1$s Reply to <span class="title">&ldquo;%2$s&rdquo;</span>',
+							'%1$s Replies to <span class="title">&ldquo;%2$s&rdquo;</span>',
+							$comments_number,
+							'comments title',
+							'agncy'
+						),
+						number_format_i18n( $comments_number ),
+						get_the_title()
+					)
+				);
 			}
 			?>
 		</h2>

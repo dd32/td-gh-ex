@@ -32,7 +32,7 @@ if ( have_posts() ) :
 				);
 			?>
 				<?php
-				if ( is_single() ) :
+				if ( is_single() && ! get_theme_mod( 'agncy_hide_single_meta', false ) ) :
 					?>
 			<div class="post-meta-footer">
 					<?php get_template_part( 'template-parts/post-meta-info', 'single-footer' ); ?>

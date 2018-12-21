@@ -27,7 +27,7 @@ class AgncyThemeCustomizer
     private function action_dispatcher()
     {
         add_action( 'customize_register', array( $this, 'customize_register' ) );
-        add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ) );
+        add_action( 'customize_preview_init', array( $this, 'customize_preview_js' ), 99 );
         add_action( 'customize_controls_enqueue_scripts', array( $this, 'control_scripts' ) );
     }
     
@@ -204,112 +204,6 @@ class AgncyThemeCustomizer
             'priority' => 10,
             'panel'    => 'agncy_settings',
         ) );
-        $wp_customize->add_setting( 'agncy_header_logo_position', array(
-            'capability'        => 'edit_theme_options',
-            'default'           => 'logo_left',
-            'sanitize_callback' => 'sanitize_text_field',
-        ) );
-        $wp_customize->add_control( new Agncy_Layout_control( $wp_customize, 'agncy_header_logo_position', array(
-            'label'       => __( 'Logo Position', 'agncy' ),
-            'description' => __( 'Position the logo left, center or right.', 'agncy' ),
-            'section'     => 'agncy_header',
-            'settings'    => 'agncy_header_logo_position',
-            'input_attrs' => array(
-            'logo_left'   => array(
-            'name'  => __( 'Left', 'agncy' ),
-            'icon'  => trailingslashit( AGNCY_THEME_URL ) . 'img/header-icons/pos-logo-left.png',
-            'class' => 'third',
-        ),
-            'logo_center' => array(
-            'name'  => __( 'Center', 'agncy' ),
-            'icon'  => trailingslashit( AGNCY_THEME_URL ) . 'img/header-icons/pos-logo-center.png',
-            'class' => 'third',
-        ),
-            'logo_right'  => array(
-            'name'  => __( 'Right', 'agncy' ),
-            'icon'  => trailingslashit( AGNCY_THEME_URL ) . 'img/header-icons/pos-logo-right.png',
-            'class' => 'third',
-        ),
-        ),
-            'priority'    => 19,
-        ) ) );
-        $wp_customize->add_setting( 'agncy_header_layout', array(
-            'capability'        => 'edit_theme_options',
-            'default'           => 'default',
-            'sanitize_callback' => 'sanitize_text_field',
-        ) );
-        $wp_customize->add_control( new Agncy_Layout_control( $wp_customize, 'agncy_header_layout', array(
-            'label'       => __( 'Layout', 'agncy' ),
-            'description' => __( 'The layout of the header.', 'agncy' ),
-            'section'     => 'agncy_header',
-            'settings'    => 'agncy_header_layout',
-            'input_attrs' => array(
-            'default'             => array(
-            'name' => __( 'Default', 'agncy' ),
-            'icon' => trailingslashit( AGNCY_THEME_URL ) . 'img/header-icons/default.png',
-        ),
-            'default-menu-top'    => array(
-            'name' => __( 'Menu Top', 'agncy' ),
-            'icon' => trailingslashit( AGNCY_THEME_URL ) . 'img/header-icons/default-menu-top.png',
-        ),
-            'boxed-dark'          => array(
-            'name' => __( 'Boxed Dark', 'agncy' ),
-            'icon' => trailingslashit( AGNCY_THEME_URL ) . 'img/header-icons/boxed-dark.png',
-        ),
-            'boxed-dark-menu-top' => array(
-            'name' => __( 'Boxed Dark Top', 'agncy' ),
-            'icon' => trailingslashit( AGNCY_THEME_URL ) . 'img/header-icons/boxed-dark-menu-top.png',
-        ),
-        ),
-            'priority'    => 20,
-        ) ) );
-        $wp_customize->add_setting( 'agncy_header_theme', array(
-            'capability'        => 'edit_theme_options',
-            'default'           => 'light',
-            'sanitize_callback' => 'sanitize_text_field',
-        ) );
-        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'agncy_header_theme', array(
-            'label'       => __( 'Theme', 'agncy' ),
-            'description' => __( 'The general color theme of the header.', 'agncy' ),
-            'section'     => 'agncy_header',
-            'settings'    => 'agncy_header_theme',
-            'type'        => 'radio',
-            'choices'     => array(
-            'light' => __( 'Light', 'agncy' ),
-            'dark'  => __( 'Dark', 'agncy' ),
-        ),
-            'priority'    => 20,
-        ) ) );
-        $wp_customize->add_setting( 'agncy_header_background', array(
-            'capability'        => 'edit_theme_options',
-            'default'           => 'color',
-            'sanitize_callback' => 'sanitize_text_field',
-        ) );
-        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'agncy_header_background', array(
-            'label'       => __( 'Background', 'agncy' ),
-            'description' => __( 'The style for the background of the header.', 'agncy' ),
-            'section'     => 'agncy_header',
-            'settings'    => 'agncy_header_background',
-            'type'        => 'radio',
-            'choices'     => array(
-            'default' => __( 'Default', 'agncy' ),
-            'color'   => __( 'Solid Color', 'agncy' ),
-        ),
-            'priority'    => 30,
-        ) ) );
-        // The Secondary Color Setting.
-        $wp_customize->add_setting( 'agncy_header_color', array(
-            'default'           => '#ffffff',
-            'sanitize_callback' => 'sanitize_hex_color',
-        ) );
-        $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'agncy_header_color', array(
-            'label'           => __( 'Background Color', 'agncy' ),
-            'description'     => __( 'The color for the header background.', 'agncy' ),
-            'section'         => 'agncy_header',
-            'settings'        => 'agncy_header_color',
-            'priority'        => 40,
-            'active_callback' => array( $this, 'show_header_bg_color' ),
-        ) ) );
         $wp_customize->add_setting( 'agncy_header_show_mobile_search', array(
             'default'           => '1',
             'capability'        => 'edit_theme_options',

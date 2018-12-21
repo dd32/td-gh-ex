@@ -26,7 +26,7 @@ class AgncyThemeFunctions {
 	 * The action dispatcher, that calls needed WordPress actions for this class.
 	 */
 	function action_dispatcher() {
-		add_action( 'login_enqueue_scripts', array( $this, 'lh_login_logo' ) );
+
 	}
 
 	/**
@@ -53,18 +53,6 @@ class AgncyThemeFunctions {
 		$url  = __( 'http://www.wp-munich.com', 'agncy' );
 		$name = __( 'WP Munich', 'agncy' );
 		echo '<i>Made with &#x2661; by <a href="' . esc_url( $url ) . '" target="_blank">' . esc_attr( $name ) . '</a>. Powered by <a href="http://www.wordpress.org" target="_blank">WordPress</a>.</i>';
-	}
-
-	/**
-	 * Change the login logo title
-	 *
-	 * @author Hendrik Luehrsen
-	 * @since 3.1
-	 *
-	 * @return string The new title
-	 */
-	function lh_login_logo_url_title() {
-		return __( 'WP Munich', 'agncy' );
 	}
 
 	/**
