@@ -3125,7 +3125,7 @@ form.woocommerce-checkout .wc_payment_method label {
 		float: right;
 	}
 	div.product.multiple-product-images > .onsale{
-		left: calc( 1rem + 70px);
+		left: calc(1rem + 70px);
 	}
 	.woocommerce-product-gallery{
 		display: -webkit-box;

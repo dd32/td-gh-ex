@@ -2,8 +2,8 @@
 
 Created by: Vedathemes
 Requires at least: WordPress 4.7
-Tested up to: WordPress 4.9.8
-Version: 1.1.3
+Tested up to: WordPress 5.0.2
+Version: 1.1.4
 PHP required : PHP 5.4+
 IE Browser Support: IE11+
 License: GNU General Public License v2 or later
@@ -103,6 +103,9 @@ Aamla WordPress Theme bundles the following third-party resources:
 	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 
 == Changelog ==
+
+= 1.1.4 - Dec 21 2018 =
+* Modify - Change in theme's Author URI and Theme URI
 
 = 1.1.3 - Dec 13 2018 =
 * Modify - Conpatibility with WP 5.0
