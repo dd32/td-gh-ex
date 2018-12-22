@@ -1,0 +1,46 @@
+.widget-options-section {
+	display: none;
+	padding: 15px;
+	margin-bottom: 15px;
+	border: 1px solid #e5e5e5;
+}
+
+h4.widget-options-title {
+	font-size: 1.125em;
+	margin: 0 0 20px;
+}
+
+[id^=home-widgetlayer-] .widget-options-section,
+[id^=sub-accordion-section-sidebar-widgets-home-widgetlayer-] .widget-options-section {
+	display: block;
+}
+
+.widget-setting label {
+	font-weight: 600;
+}
+
+.wp-customizer p.widget-small-text {
+	font-size: 12px;
+}
+
+p.bayleaf_text_align {
+	padding-bottom: 1.5em;
+	margin-bottom: 1.5em;
+	border-bottom: 1px solid #e5e5e5;
+}
+
+p.bayleaf_text_featured_image {
+	padding-top: 1.5em;
+	margin-top: 1.5em;
+	border-top: 1px solid #e5e5e5;
+}
+
+span.wid-setting-desc {
+	display: block;
+	margin: 4px 0;
+	font-style: italic;
+}
+
+.bayleaf-hidden {
+	display: none;
+}
