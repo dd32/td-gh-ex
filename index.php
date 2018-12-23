@@ -52,12 +52,32 @@
 					get_template_part( 'content', get_post_format() );
 					
 				endwhile;
+
+				?>
+
+			</div><!-- .posts -->
 				
-			endif;
+		<?php elseif ( is_search() ) : ?>
+
+			<div class="post">
 			
-			?>
+				<div class="content-inner">
 			
-		</div><!-- .posts -->
+					<div class="post-content">
+					
+						<p><?php _e( 'No results. Try again, would you kindly?', 'hemingway' ); ?></p>
+						
+						<?php get_search_form(); ?>
+					
+					</div><!-- .post-content -->
+				
+				</div><!-- .content-inner -->
+				
+				<div class="clear"></div>
+			
+			</div><!-- .post -->
+		
+		<?php endif; ?>
 		
 		<?php if ( $wp_query->max_num_pages > 1 ) : ?>
 		
