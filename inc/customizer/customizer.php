@@ -365,8 +365,8 @@ add_action('customize_register', 'arba_customizer');
  */
 
 // Text, color, checkbox, select.
-function arba_sanitize_text( $str ) {
-	return sanitize_text_field( $str );
+function arba_sanitize_checkbox( $checked ) {
+	return ( ( !empty( $checked ) ) ? true : false );
 }
 
 /**

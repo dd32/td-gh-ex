@@ -32,13 +32,13 @@
 								    <?php if ( is_front_page() && is_home() ) { ?>
 								        <h1>
 								            <a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-								                <img class="desktop" src="<?php echo esc_url( $logo[0] ); ?>" alt="<?php esc_url(esc_attr( bloginfo('name') )); ?>">
+								                <img class="desktop" src="<?php echo esc_url( $logo[0] ); ?>" alt="<?php esc_attr( bloginfo('name') ); ?>">
 								            </a>
 								        </h1>
 								    <?php } else {?>
 								        <p>
 											<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-								                <img class="desktop" src="<?php echo esc_url( $logo[0] ); ?>" alt="<?php esc_url(esc_attr( bloginfo('name') )); ?>">
+								                <img class="desktop" src="<?php echo esc_url( $logo[0] ); ?>" alt="<?php esc_attr( bloginfo('name') ); ?>">
 								            </a>
 								        </p>
 								<?php }} else { ?>

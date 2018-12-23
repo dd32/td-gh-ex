@@ -34,7 +34,7 @@ get_header(); ?>
 													<li><a href="<?php the_permalink(); ?>"><?php the_title();?></a></li>
 												<?php endwhile; ?>
 											<?php endif; ?>
-										<?php wp_reset_query(); ?>
+										<?php wp_reset_postdata(); ?>
 									</ul>
 								</div><!-- .page-content__archives -->
 							</div><!-- .page-content -->

@@ -21,7 +21,23 @@ if ( post_password_required() ) {
 <div id="comments" class="entry-comments comments-area">
 	<button id="comments__toggle" class="comments__toggle">
 		<?php if ( have_comments() ): ?>
-			<?php printf( _nx( 'One Comment', '%1$s Comments', get_comments_number(), 'comments title', 'arba' ), number_format_i18n( get_comments_number() ) ); ?>
+			<?php
+				$comments_number = get_comments_number();
+				if ( '1' === $comments_number ) {
+					printf( _x( 'One Comment', 'comments title', 'arba' ));
+				} else {
+					printf(
+						_nx(
+							'%1$s Comment',
+							'%1$s Comments',
+							$comments_number,
+							'comments title',
+							'arba'
+						),
+						number_format_i18n( $comments_number )
+					);
+				}
+			?>
 		<?php else : ?>
 			<?php esc_html_e( 'Leave a Comment', 'arba' ); ?>
 		<?php endif ;?>
