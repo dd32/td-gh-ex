@@ -1131,7 +1131,6 @@ p img,
 	color: 			#686868;
 	display: 		block;
 	font-size: 		80% !important;
-	font-style: 	italic;
 	line-height: 	1.33;
 	text-align:		center;
 }
@@ -4769,8 +4768,14 @@ a.more-link {
 	margin-right:		10px;
 }
 
-.wp-block-pullquote > p {
+.wp-block-pullquote > p, .wp-block-pullquote blockquote p {
 	font-family: 		inherit;
+	font-style:			normal;
+}
+
+blockquote.wp-block-quote p,
+blockquote.wp-block-quote.is-large p{
+	font-style:			normal;
 }
 
 /* =================== Code =================== */
@@ -4846,7 +4851,6 @@ hr {
 	font-size:		inherit;		/* bigger than Gutenberg default */
 	padding:		30px 0 5px 0;
 	width:			100%;
-	font-style: italic;
 }
 
 .wp-block-gallery img,
@@ -4872,7 +4876,6 @@ ul.wp-block-gallery li {
     color: inherit;
     text-align: center;
     font-size: inherit;
-	font-style: italic;
 }
 
 /* ================================================================================================================== */

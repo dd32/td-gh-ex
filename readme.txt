@@ -7,9 +7,9 @@ Tags: custom-header, custom-colors, custom-background, custom-menu, theme-option
 fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red, tan, dark, white, light,
 translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
-Requires at least: 4.8
+Requires at least: 4.9
 Tested up to: 5.0
-Stable tag: 4.2
+Stable tag: 4.2.1
 
 == Description ==
 
@@ -566,3 +566,6 @@ with testing and feature suggestions.
 * Tweak: remove Gutenberg plugin recommendation
 * Fix: italic and classic editor icon yellow bug in Block Editor
 * Tweak: automatic update for generated style files
+
+= Version 4.2.1 =
+* Fix: Bold and Italic compatibility for blocks that natively support those for text (e.g., gallery and image captions, quote blocsk)
