@@ -41,6 +41,10 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.73 (2018-12-23)
+-------------------------
+- Updated index.php so the page title is still displayed in no results have been found
+
 Version 1.72 (2018-12-23)
 -------------------------
 - Updated index.php with output if no search results have been found
