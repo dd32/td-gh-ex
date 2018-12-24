@@ -305,7 +305,7 @@ $wp_customize->add_panel( 'arba_single_post',
 				'default' => false,
 				'type' => 'option',
 				'capability' => 'edit_theme_options',
-				'sanitize_callback' => 'arba_sanitize_text',
+				'sanitize_callback' => 'arba_sanitize_checkbox',
 			)
 		);
 
@@ -324,7 +324,7 @@ $wp_customize->add_panel( 'arba_single_post',
 				'default' => false,
 				'type' => 'option',
 				'capability' => 'edit_theme_options',
-				'sanitize_callback' => 'arba_sanitize_text',
+				'sanitize_callback' => 'arba_sanitize_checkbox',
 			)
 		);
 
@@ -343,7 +343,7 @@ $wp_customize->add_panel( 'arba_single_post',
 				'default' => false,
 				'type' => 'option',
 				'capability' => 'edit_theme_options',
-				'sanitize_callback' => 'arba_sanitize_text',
+				'sanitize_callback' => 'arba_sanitize_checkbox',
 			)
 		);
 

@@ -28,17 +28,18 @@
 								<?php if ( has_custom_logo() ) {
 									$custom_logo_id = get_theme_mod( 'custom_logo' );
 									$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+									$alt = get_post_meta($custom_logo_id, '_wp_attachment_image_alt', true);
 									?>
 								    <?php if ( is_front_page() && is_home() ) { ?>
 								        <h1>
 								            <a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-								                <img class="desktop" src="<?php echo esc_url( $logo[0] ); ?>" alt="<?php esc_attr( bloginfo('name') ); ?>">
+								                <img class="desktop" src="<?php echo esc_url( $logo[0] ); ?>" alt="<?php echo esc_attr($alt); ?>">
 								            </a>
 								        </h1>
 								    <?php } else {?>
 								        <p>
 											<a rel="home" href="<?php echo esc_url( home_url( '/' ) ); ?>">
-								                <img class="desktop" src="<?php echo esc_url( $logo[0] ); ?>" alt="<?php esc_attr( bloginfo('name') ); ?>">
+								                <img class="desktop" src="<?php echo esc_url( $logo[0] ); ?>" alt="<?php echo esc_attr($alt); ?>">
 								            </a>
 								        </p>
 								<?php }} else { ?>
