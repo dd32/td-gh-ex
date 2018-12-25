@@ -8,7 +8,7 @@ get_header(); ?>
     <div class="col-md-12 bread-row">
 	<div class="container jobile-container">
 	    <div class="col-md-6 no-padding-lr bread-left">
-		<h2><?php _e('Search Results for', 'jobile');
+		<h2><?php esc_html_e('Search Results for', 'jobile');
 		    echo ' : ' . get_search_query(); ?>
 
 		</h2>
@@ -29,46 +29,46 @@ get_header(); ?>
 			<?php get_sidebar(); ?>
 		<div class="col-md-8">
 		    <article class="clearfix">
-                <?php while (have_posts()) : the_post(); ?>
+            <?php if (have_posts() ) :
+                 while (have_posts()) : the_post(); ?>
     			<div class="col-md-12 no-padding-lr sear-result-column">
     			    <div class="latest-job article-row1">
     				<div class="col-md-2 no-padding-lr resp-grid1 box-sadow">
-					<?php $jobile_blog_image = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_id()), 'jobile-blog-image');
-					if ($jobile_blog_image[0] != '') { ?>
-					    <img src="<?php echo esc_url($jobile_blog_image[0]); ?>" width="<?php echo $jobile_blog_image[1]; ?>" height="<?php echo $jobile_blog_image[2]; ?>" alt="<?php the_title(); ?>" />
-					    <?php } else { ?>
-					    <img src="<?php echo get_template_directory_uri() ?>/images/no-image.jpg" width="100" height="86" />
+					<?php                      
+                        if ( has_post_thumbnail() ) { ?>
+                        <a href="<?php echo esc_url( get_permalink() ); ?>">
+                          <?php the_post_thumbnail('jobile-blog-image'); ?>
+                        </a>
+                    <?php } else { ?>
+					    <img src="<?php echo esc_url(get_template_directory_uri()) ?>/images/no-image.jpg" width="100" height="86" />
                         <?php } ?>
-    				</div>
+                          </div>
     				<div class="col-md-10 no-padding-lr">
     				    <div class="col-md-8 col-sm-8 col-xs-8 no-padding-lr job-status resp-grid1 job-status-3">
     					<span class="per-name grey-color"><a href="<?php echo esc_url(get_permalink()); ?>"><?php the_title(); ?></a></span>
     				    </div>
-    				    <div class="col-md-4 col-sm-4 col-xs-4 job-status resp-grid1 job-status-3">
-    					<p class="grey-color"><?php echo get_the_time('j F, Y'); ?></p>
-    				    </div>
-    				    <div class="col-md-12 no-padding-lr">    
-    					<div class="job-btn-group late-job-btn clearfix">
-    <?php echo get_the_category_list( __( ', ', 'jobile' ), '', '' ); ?>
-    					    <span class="jobile-tag-list"><?php echo get_the_tag_list( '', __( ' ', 'jobile' ) );?></span>
-    					</div>
-    				    </div>
+    				    <?php jobile_entry_meta(); ?>
     				    <div class="col-md-12 no-padding-lr">
-    					<p class="result-btm-text"><?php the_excerpt(); ?> <a href="<?php echo esc_url(get_permalink()); ?>" class="color-068587"><?php _e('Read More', 'jobile') ?></a></p>
+    					<p class="result-btm-text"><?php the_excerpt(); ?> <a href="<?php echo esc_url(get_permalink()); ?>" class="color-068587"><?php esc_html_e('Read More', 'jobile') ?></a></p>
     				    </div>
     				</div>
+                    </div>
     			    </div>
-    			</div> 
-			    <?php endwhile; ?>
+			    <?php endwhile; 
+                else :
+                echo "<h3>".esc_html( "Result can't be found.", 'jobile' )."</h3>";
+                get_search_form();
+              endif; // end of the loop. ?>
 			<div class="col-md-12 no-padding-lr avilab-row2 padding-0">
-                <?php if (function_exists('faster_pagination')) { faster_pagination('', 1); } else { ?>
     			    <div class="col-md-12 no-padding-lr right-pagination">
-    				<ul>
-    				    <li><?php previous_posts_link(); ?></li>
-    				    <li><?php next_posts_link(); ?></li>
-    				</ul>
+    				 <?php
+                     the_posts_pagination( array(
+                    'type'  => 'div',
+                    'screen_reader_text' => ' ',
+                    'prev_text'          => esc_html__( '<< Previous', 'jobile' ),
+                    'next_text'          => esc_html__('Next >>','jobile'),
+                    ) ); ?>
     			    </div>
-<?php } ?>     
 			</div>
 		    </article>
 		</div>
@@ -76,4 +76,4 @@ get_header(); ?>
 	</div>
     </div>
 </section>
-<?php get_footer(); ?>
+<?php get_footer();

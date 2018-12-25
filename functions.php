@@ -29,6 +29,22 @@ if (!function_exists('jobile_setup')) :
 	register_nav_menus(array(
 	    'primary' => __('Header Menu', 'jobile'),
 	));
+	// Add theme support for Custom Logo.
+	add_theme_support( 'custom-logo', array(
+		'width'       => 250,
+		'height'      => 250,
+		'flex-width'  => true,
+		'flex-height' => true,
+		'header-text' => array( 'site-title', 'site-description' ),
+	) );
+	// Add theme support for Custom hEADER.
+	add_theme_support('custom-header', apply_filters('jobile_custom_header_args', array(
+        'default-text-color' => 'fff',
+        'width' => 1299,
+        'height' => 345,
+        'flex-height' => true,
+        'header_text' =>true,       
+    )));
 	/*
 	 * Switch default core markup for search form, comment form, and comments
 	 * to output valid HTML5.
@@ -50,6 +66,19 @@ if (!function_exists('jobile_setup')) :
 
 endif; // jobile_setup
 add_action('after_setup_theme', 'jobile_setup');
+// jobile Pro Version Menu
+add_action( 'admin_menu', 'jobile_admin_menu');
+function jobile_admin_menu( ) {
+    add_theme_page( __('Pro Feature','jobile'), __('jobile Pro','jobile'), 'manage_options', 'jobile-pro-buynow', 'jobile_buy_now', 300 );   
+}
+function jobile_buy_now(){ ?>
+<div class="jobile_pro_version">
+  <a href="<?php echo esc_url('https://fasterthemes.com/wordpress-themes/jobile/'); ?>" target="_blank">    
+    <img src ="<?php echo esc_url(get_template_directory_uri()); ?>/images/jobile_pro_features.png" width="70%" height="auto" />
+  </a>
+</div>
+<?php
+}
 /*
  * Register Lato Google font for jobile.
  */
@@ -122,19 +151,21 @@ add_action('widgets_init', 'jobile_widgets_init');
  */
 
 function jobile_scripts() {
-    wp_enqueue_style('jobile-lato', jobile_font_url(), array(), null);
-    wp_enqueue_style('jobile-bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.min.css', array(), '', '');
-    wp_enqueue_style('jobile-font-awesome', get_stylesheet_directory_uri() . '/css/font-awesome.css', array(), '', '');
-    wp_enqueue_style('style', get_stylesheet_uri(), array(), '', '');
-    wp_enqueue_style('jobile-media-css', get_stylesheet_directory_uri() . '/css/media.css', array(), '', '');
-    wp_enqueue_script('jobile-script-js', get_stylesheet_directory_uri() . '/js/script.js', array('jquery'));
-    wp_enqueue_script('jobile-bootstrapjs', get_stylesheet_directory_uri() . '/js/bootstrap.min.js', array('jquery'));
-    wp_enqueue_script('jobile-owl-carousel-script', get_stylesheet_directory_uri() . '/js/owl.carousel.js', array('jquery'), '1.3.3', true);
+    wp_enqueue_style('google-font-api-ubuntu','//fonts.googleapis.com/css?family=ubuntu|Istok Web');
+    wp_enqueue_style('font-awesome', get_stylesheet_directory_uri() . '/css/font-awesome.css', array(), '', '');
+    wp_enqueue_style('bootstrap', get_stylesheet_directory_uri() . '/css/bootstrap.css', array(), '', '');
+    wp_enqueue_style('jobile-media', get_stylesheet_directory_uri() . '/css/media.css', array(), '', '');
+    
+    wp_enqueue_script('bootstrap', get_stylesheet_directory_uri() . '/js/bootstrap.js', array('jquery'));
+    wp_enqueue_script('jobile-script', get_stylesheet_directory_uri() . '/js/script.js', array('jquery'));
+  
     if (is_singular())
 	wp_enqueue_script("comment-reply");
+	wp_enqueue_style('style', get_stylesheet_uri(), array(), '', '');
 }
 
 add_action('wp_enqueue_scripts', 'jobile_scripts');
+
 /*
  * TGM 
  */
@@ -147,10 +178,6 @@ require get_template_directory() . '/inc/jobile-image-description.php';
  * social icon widget 
  */
 require get_template_directory() . '/inc/social-widget.php';
-/*
- * theme options
- */
-require get_template_directory() . '/theme-options/jobile.php';
 /*
  * For class add in jobile Category list.
  */
@@ -171,103 +198,98 @@ function jobile_category_meta($list_category) {
  * jobile Breadcrumbs
  */
 function jobile_custom_breadcrumbs() {
-    $jobile_showonhome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
-    $jobile_delimiter = '/'; // jobile_delimiter between crumbs
-    $jobile_home = __('Home', 'jobile'); // text for the 'Home' link
+  $jobile_showonhome = 0; // 1 - show breadcrumbs on the homepage, 0 - don't show
     $jobile_showcurrent = 1; // 1 - show current post/page title in breadcrumbs, 0 - don't show
-    $jobile_before = ' '; // tag before the current crumb
-    $jobile_after = ' '; // tag after the current crumb
     global $post;
-    $jobile_homelink = esc_url(home_url());
-
     if (is_home() || is_front_page()) {
 
-	if ($jobile_showonhome == 1)
-	    echo '<div id="crumbs" class="font-14 color-fff conter-text jobile-breadcrumb"><a href="' . $jobile_homelink . '">' . $jobile_home . '</a></div>';
+        if ($jobile_showonhome == 1)
+            echo '<div id="crumbs" class="font-14 color-fff conter-text jobile-breadcrumb"><a href="' . esc_url(home_url('/')) . '">' . esc_html__('Home', 'jobile') . '</a></div>';
     } else {
-	echo '<div id="crumbs" class="font-14 color-fff conter-text jobile-breadcrumb"><a href="' . $jobile_homelink . '">' . $jobile_home . '</a> ' . $jobile_delimiter . ' ';
 
-	if (is_category()) {
-	    $jobile_thisCat = get_category(get_query_var('cat'), false);
-	    if ($jobile_thisCat->parent != 0)
-		echo get_category_parents($jobile_thisCat->parent, TRUE, ' ' . $jobile_delimiter . ' ');
-	    echo $jobile_before . __('Archive by category', 'jobile') . ' "' . single_cat_title('', false) . '"' . $jobile_after;
-	} elseif (is_search()) {
-	    echo $jobile_before . __('Search results for', 'jobile') . ' "' . get_search_query() . '"' . $jobile_after;
-	} elseif (is_day()) {
-	    echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $jobile_delimiter . ' ';
-	    echo '<a href="' . get_month_link(get_the_time('Y'), get_the_time('m')) . '">' . get_the_time('F') . '</a> ' . $jobile_delimiter . ' ';
-	    echo $jobile_before . get_the_time('d') . $jobile_after;
-	} elseif (is_month()) {
-	    echo '<a href="' . get_year_link(get_the_time('Y')) . '">' . get_the_time('Y') . '</a> ' . $jobile_delimiter . ' ';
-	    echo $jobile_before . get_the_time('F') . $jobile_after;
-	} elseif (is_year()) {
-	    echo $jobile_before . get_the_time('Y') . $jobile_after;
-	} elseif (is_single() && !is_attachment()) {
-	    if (get_post_type() != 'post') {
-		$jobile_post_type = get_post_type_object(get_post_type());
-		$jobile_slug = $jobile_post_type->rewrite;
-		echo '<a href="' . $jobile_homelink . '/' . $jobile_slug['slug'] . '/">' . $jobile_post_type->labels->singular_name . '</a>';
-		if ($jobile_showcurrent == 1)
-		    echo ' ' . $jobile_delimiter . ' ' . $jobile_before . get_the_title() . $jobile_after;
-	    } else {
-		$jobile_cat = get_the_category();
-		$jobile_cat = $jobile_cat[0];
-		$jobile_cats = get_category_parents($jobile_cat, TRUE, ' ' . $jobile_delimiter . ' ');
-		if ($jobile_showcurrent == 0)
-		    $jobile_cats = preg_replace("#^(.+)\s$jobile_delimiter\s$#", "$1", $jobile_cats);
-		echo $jobile_cats;
-		if ($jobile_showcurrent == 1)
-		    echo $jobile_before . get_the_title() . $jobile_after;
-	    }
-	} elseif (!is_single() && !is_page() && get_post_type() != 'post' && !is_404()) {
-	    $jobile_post_type = get_post_type_object(get_post_type());
-	    echo $jobile_before . $jobile_post_type->labels->singular_name . $jobile_after;
-	} elseif (is_attachment()) {
-	    $jobile_parent = get_post($post->post_parent);
-	    $jobile_cat = get_the_category($jobile_parent->ID);
-	    $jobile_cat = $jobile_cat[0];
-	    echo get_category_parents($jobile_cat, TRUE, ' ' . $jobile_delimiter . ' ');
-	    echo '<a href="' . get_permalink($jobile_parent) . '">' . $jobile_parent->post_title . '</a>';
-	    if ($jobile_showcurrent == 1)
-		echo ' ' . $jobile_delimiter . ' ' . $jobile_before . get_the_title() . $jobile_after;
-	} elseif (is_page() && !$post->post_parent) {
-	    if ($jobile_showcurrent == 1)
-		echo $jobile_before . get_the_title() . $jobile_after;
-	} elseif (is_page() && $post->post_parent) {
-	    $jobile_parent_id = $post->post_parent;
-	    $jobile_breadcrumbs = array();
-	    while ($jobile_parent_id) {
-		$jobile_page = get_page($jobile_parent_id);
-		$jobile_breadcrumbs[] = '<a href="' . get_permalink($jobile_page->ID) . '">' . get_the_title($jobile_page->ID) . '</a>';
-		$jobile_parent_id = $jobile_page->post_parent;
-	    }
-	    $jobile_breadcrumbs = array_reverse($jobile_breadcrumbs);
-	    for ($jobile_i = 0; $jobile_i < count($jobile_breadcrumbs); $jobile_i++) {
-		echo $jobile_breadcrumbs[$jobile_i];
-		if ($jobile_i != count($jobile_breadcrumbs) - 1)
-		    echo ' ' . $jobile_delimiter . ' ';
-	    }
-	    if ($jobile_showcurrent == 1)
-		echo ' ' . $jobile_delimiter . ' ' . $jobile_before . get_the_title() . $jobile_after;
-	} elseif (is_tag()) {
-	    echo $jobile_before . __('Posts tagged', 'jobile') . ' "' . single_tag_title('', false) . '"' . $jobile_after;
-	} elseif (is_author()) {
-	    global $author;
-	    $jobile_userdata = get_userdata($author);
-	    echo $jobile_before . __('Articles posted by', 'jobile') . $jobile_userdata->display_name . $jobile_after;
-	} elseif (is_404()) {
-	    echo $jobile_before . __('Error 404', 'jobile') . $jobile_after;
-	}
+        echo '<div id="crumbs" class="font-14 color-fff conter-text jobile-breadcrumb"><a href="' . esc_url(home_url('/')). '">' . esc_html__('Home', 'jobile') . '</a> ';
+        if (is_category()) {
+            $jobile_thisCat = get_category(get_query_var('cat'), false);
+            if ($jobile_thisCat->parent != 0)
+                echo esc_html(get_category_parents($jobile_thisCat->parent, TRUE, ' '));
+            echo  '/ '.esc_html__('Archive by category', 'jobile') . ' " ' . single_cat_title('', false) . ' "';
+        } elseif (is_search()) {
+            echo  '/ '.esc_html__('Search Results For ', 'jobile') . ' " ' . get_search_query() . ' "';
+        } elseif (is_day()) {
+            echo '/ '.'<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a> ';
+            echo '/ '.'<a href="' . esc_url(get_month_link(get_the_time('Y'), get_the_time('m'))) . '">' . esc_html(get_the_time('F') ). '</a> ';
+            echo  '/ '.esc_html(get_the_time('d'));
+        } elseif (is_month()) {
+            echo '/ '.'<a href="' . esc_url(get_year_link(get_the_time('Y'))) . '">' . esc_html(get_the_time('Y')) . '</a> ';
+            echo  '/ '.esc_html(get_the_time('F'));
+        } elseif (is_year()) {
+            echo '/ '.esc_html(get_the_time('Y'));
+        } elseif (is_single() && !is_attachment()) {            
+            if (get_post_type() != 'post') {
+                $jobile_post_type = get_post_type_object(get_post_type());
+                $jobile_slug = $jobile_post_type->rewrite;
+                echo '<a href="' . esc_url(home_url('/'. $jobile_slug['slug'] . '/')) .'">' . esc_html($jobile_post_type->labels->singular_name) . '</a>';
+                if ($jobile_showcurrent == 1)
+                    echo  esc_html(get_the_title()) ;
+            } else {
+                $jobile_cat = get_the_category();
+                $jobile_cat = $jobile_cat[0];
+                $jobile_cats = get_category_parents($jobile_cat, TRUE, ' ');
+                if ($jobile_showcurrent == 0)
+                    $jobile_cats =
+                            preg_replace("#^(.+)\s\s$#", "$1", $jobile_cats);
+                echo '/ '.$jobile_cats;
+                if ($jobile_showcurrent == 1)
+                    echo  '/ '.esc_html(get_the_title());
+            }
+        } elseif (!is_single() && !is_page() && get_post_type() != 'post' && !is_404()) {
+            $jobile_post_type = get_post_type_object(get_post_type());
+            echo esc_html($jobile_post_type->labels->singular_name );
+        } elseif (is_attachment()) {
+            $jobile_parent = get_post($post->post_parent);
+            $jobile_cat = get_the_category($jobile_parent->ID);
+            $jobile_cat = $jobile_cat[0];
+            echo esc_html(get_category_parents($jobile_cat, TRUE, '  '));
+            echo '<a href="' . esc_url(get_permalink($jobile_parent)) . '">' . esc_html($jobile_parent->post_title) . '</a>';
+            if ($jobile_showcurrent == 1)
+                echo   esc_html(get_the_title());
+        } elseif (is_page() && !$post->post_parent) {
+            if ($jobile_showcurrent == 1)
+                echo '/ '.esc_html(get_the_title());
+        } elseif (is_page() && $post->post_parent) {
+            $jobile_parent_id = $post->post_parent;
+            $jobile_breadcrumbs = array();
+            while ($jobile_parent_id) {
+                $jobile_page = get_page($jobile_parent_id);
+                $jobile_breadcrumbs[] = '<a href="' . get_permalink($jobile_page->ID) . '">' . get_the_title($jobile_page->ID) . '</a>';
+                $jobile_parent_id = $jobile_page->post_parent;
+            }
+            $jobile_breadcrumbs = array_reverse($jobile_breadcrumbs);
+            for ($jobile_i = 0; $jobile_i < count($jobile_breadcrumbs); $jobile_i++) {
+                echo '/ '.$jobile_breadcrumbs[$jobile_i];
+                if ($jobile_i != count($jobile_breadcrumbs) - 1)
+                    echo ' ';
+            }
+            if ($jobile_showcurrent == 1)
+                echo ' / '.get_the_title();
+        } elseif (is_tag()) {
+            echo  ' / '.esc_html__('Posts tagged', 'jobile') . ' " ' . esc_html(single_tag_title('', false)) . ' "';
+        } elseif (is_author()) {
+            global $author;
+            $jobile_userdata = get_userdata($author);
+            echo  ' / '.esc_html__('Articles Published by', 'jobile') . ' " ' . esc_html($jobile_userdata->display_name ). ' "';
+        } elseif (is_404()) {
+            echo ' / '.esc_html__('Error 404', 'jobile') ;
+        }
 
-	if (get_query_var('paged')) {
-	    if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
-		echo ' (';
-	    echo __('Page', 'jobile') . ' ' . get_query_var('paged');
-	    if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
-		echo ')';
-	}
-	echo '</div>';
+        if (get_query_var('paged')) {
+            if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
+                echo ' (';
+            echo esc_html__('Page', 'jobile') . ' ' . esc_html(get_query_var('paged'));
+            if (is_category() || is_day() || is_month() || is_year() || is_search() || is_tag() || is_author())
+                echo ')';
+        }
+        echo '</div>';
     }
 } // end jobile_custom_breadcrumbs()
 /*
@@ -304,4 +326,18 @@ function jobile_image_validation($jobile_imge_url) {
     } else {
 	return '';
     }
-} ?>
+}
+function jobile_entry_meta() { ?>
+<div class="col-md-4 col-sm-4 col-xs-4 job-status resp-grid1 job-status-3">
+<p class="grey-color"><?php echo esc_html(get_the_time('j F, Y')); ?></p>
+</div>
+<div class="col-md-12 no-padding-lr">    
+<div class="job-btn-group late-job-btn clearfix">
+    <?php echo get_the_category_list( __( ', ', 'jobile' ), '', '' ); ?>
+    <span class="jobile-tag-list"><?php echo get_the_tag_list(' ', ' '); ?></span>
+</div>
+</div>
+<?php }
+
+/*** Theme Customizer Option ***/
+require get_template_directory() . '/inc/theme-customization.php';

@@ -35,22 +35,21 @@ get_header(); ?>
 					'before' => '<div class="page-links">' . __('Pages:', 'jobile'),
 					'after' => '</div>',
 				    )); ?>
-				
-    <?php $jobile_blog_image = wp_get_attachment_image_src( get_post_thumbnail_id( get_the_id() ), 'large' );
-					    if ($jobile_blog_image[0] != '') { ?>
-				<img src="<?php echo esc_url($jobile_blog_image[0]); ?>" width="<?php echo $jobile_blog_image[1]; ?>" height="<?php echo $jobile_blog_image[2]; ?>" alt="<?php the_title(); ?>" />
-				    <?php } ?>
+	      		<?php					    
+                if ( has_post_thumbnail() ) { ?>
+                <a href="<?php echo esc_url( get_permalink() ); ?>">
+                  <?php the_post_thumbnail('large'); ?>
+                </a>
+               
+            <?php } ?>
+             </div>
     			    </div>
-    			</div>
     		    </article>
-    <?php if (comments_open($post->ID)) { ?>
-			    <div class="col-md-12 no-padding-lr article-content">
-	<?php comments_template(); ?>
-			    </div>
-    <?php } endwhile; ?>
+                            </div>
+    <?php endwhile; ?>
 		</div>
 	    </div>
 	</div>
     </div>
 </section>
-<?php get_footer(); ?>
+<?php get_footer();

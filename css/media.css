@@ -1,13 +1,10 @@
 /**==============jobile media screen start==================**/
-@media screen and (max-width:1200px){
-.jobile-container{
-	width:95%;	
-}
+@media screen and (max-width:1200px){ 
 .resp-grid2{margin-bottom:25px;}	
 .border-lr {
 	border:none;
-}
-.header-page2{
+} 
+.header-page2{ 
 	position:static;
 }
 .bread-row{margin-top:1px;}
@@ -31,7 +28,7 @@
 @media screen and (max-width: 767px) {
 /* nav-wrap */
 .navbar-collapse.in{
-	overflow: hidden;
+/*	overflow: hidden;*/
 }
 .navbar-header{
 	width: 100%;
@@ -163,7 +160,7 @@
 	color: #999;
 	width:100%;
 	font-weight:normal;
-	font-family: 'istok_webregular' !important;
+	font-family: 'istok wb' !important;
 }
 .jobile-menu a:hover{
 	color: #F00;
@@ -262,6 +259,17 @@
 /**post resume page**/
 .resp-mbtm{margin-bottom:5px;}
 }
+@media screen and (max-width:991px){
+.sear-result-column {
+    float: left;
+    width: 100%;
+}
+.nav-links {
+    float: left;
+    width: 100%;
+    margin: 15px 0;
+} 
+}  
 @media screen and (max-width:600px){
 /**section-top media**/
 .caption-over{
@@ -324,6 +332,7 @@
 }	
 }
 @media screen and (min-width:992px) and (max-width:1200px){
+.latest-job.article-row1 .small_pad{padding-left: 15px;}
 .footer-column4 .f-email{
 	min-width:170px;
 }
@@ -482,6 +491,18 @@ aside{text-align:center;}
 }
 .carousel-inner > .item{
 	height: 290px;	
+}
+}
+@media screen and (min-width:320px) and (max-width:767px){
+	div#crumbs {
+    float: left;
+    width: 100%;
+    text-align: left;
+    padding: 12px 0 0 0;
+} 
+.layout-set {
+    float: left;
+    width: 100%;
 }
 }
 @media screen and (min-width:320px) and (max-width:480px){

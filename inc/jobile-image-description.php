@@ -3,6 +3,12 @@ add_action( 'widgets_init', 'jobile_image_widget' );
 function jobile_image_widget() {
     register_widget( 'jobile_image_widget' );
 }
+// add admin scripts
+add_action('admin_enqueue_scripts', 'jobile_image_script');
+function jobile_image_script() {
+    wp_enqueue_media();
+    wp_enqueue_script('jobile_image_script', get_template_directory_uri() . '/js/widget.js', false, '1.0', true);
+}
 class jobile_image_widget extends WP_Widget {
 
     function __construct() {
@@ -18,8 +24,8 @@ class jobile_image_widget extends WP_Widget {
         echo $before_widget;
         //Display widget
 ?>   
-<img src="<?php if($jobile_image_instance['image']) { echo esc_url($jobile_image_instance['image']); } else { echo get_template_directory_uri().'/images/default-user.png'; } ?>"  class="img-responsive" width="87" height="23" alt="logo">
-<p><?php echo $jobile_image_instance['content']; ?></p>
+<img src="<?php if($jobile_image_instance['image']) { echo esc_url($jobile_image_instance['image']); } else { echo esc_url(get_template_directory_uri()).'/images/default-user.png'; } ?>"  class="img-responsive" width="87" height="23" alt="logo">
+<p><?php echo esc_html($jobile_image_instance['content']); ?></p>
  
 <?php echo $after_widget; }
     //Update the widget   
@@ -32,13 +38,13 @@ class jobile_image_widget extends WP_Widget {
     }
     function form( $jobile_image_instance ) { ?>
     <p class="section">
-        <label for="<?php echo $this->get_field_id( 'image' ); ?>"><?php _e('Image:','jobile') ?></label><br />
-        <input id="<?php echo $this->get_field_id( 'image' ); ?>"  type="text" class="widefat jobile_media_url upload" name="<?php echo $this->get_field_name( 'image' ); ?>" value="<?php if(!empty($jobile_image_instance['image'])) { echo $jobile_image_instance['image']; } ?>" placeholder="No file chosen" style="width:75%;" />
-        <input id="jobile_image_uploader"  class="upload-button button" type="button" value="<?php _e('Upload','jobile') ?>" /><br /><br />
-		<?php if(!empty($jobile_image_instance['image'])) { ?><img src="<?php echo esc_url($jobile_image_instance['image']); ?>" style='max-width:100%;' /><?php } ?>         
+        <label for="<?php echo esc_html($this->get_field_id( 'image' )); ?>"><?php esc_html_e('Image:','jobile') ?></label><br />
+        <input id="<?php echo esc_attr($this->get_field_id( 'image' )); ?>"  type="text" class="widefat jobile_media_url upload" name="<?php echo esc_attr($this->get_field_name( 'image' )); ?>" value="<?php if(!empty($jobile_image_instance['image'])) { echo $jobile_image_instance['image']; } ?>" placeholder="No file chosen" style="width:75%;" />
+        <input id="jobile_image_uploader"  class="upload-button button" type="button" value="<?php esc_html_e('Upload','jobile') ?>" /><br /><br />
+		<?php if(!empty($jobile_image_instance['image'])) { ?><img class="jobile_media_image" src="<?php echo esc_url($jobile_image_instance['image']); ?>" style='max-width:100%;' /><?php } ?>         
     </p>
     <p>
-        <label for="<?php echo $this->get_field_id( 'content' ); ?>"><?php _e('Content:','jobile') ?></label>
+        <label for="<?php echo $this->get_field_id( 'content' ); ?>"><?php esc_html_e('Content:','jobile') ?></label>
         <textarea id="<?php echo $this->get_field_id( 'content' ); ?>" name="<?php echo $this->get_field_name( 'content' ); ?>" style="width:100%;"><?php if(!empty($jobile_image_instance['content'])) { echo $jobile_image_instance['content']; } ?></textarea>
     </p>  
-<?php }} ?>
+<?php }}

@@ -6,11 +6,6 @@ function jobile_theme_register_plugins() {
  /*Array of plugin arrays. Required keys are name and slug. */
     $plugins = array(
         // This is an example of how to include a plugin from the WordPress Plugin Repository.
-         array(
-            'name'      => __('Faster Pagination','jobile'),
-            'slug'      => 'faster-pagination',
-            'required'  => false,
-        ),
         array(
             'name'      => 'WP Google Maps',
             'slug'      => 'wp-google-maps',
@@ -49,4 +44,4 @@ function jobile_theme_register_plugins() {
         )
     );
     jobile( $plugins, $config );
-} ?>
+}

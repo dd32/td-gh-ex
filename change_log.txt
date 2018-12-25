@@ -63,3 +63,6 @@ i) Minor fixes.
 
 Version: 1.4 (21 March 2017)
 i) Changed feature image.
+
+Version: 1.4.1 (25 Dec 2018)
+i) Misc changes.

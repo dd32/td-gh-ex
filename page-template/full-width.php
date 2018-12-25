@@ -33,19 +33,17 @@ get_header(); ?>
 				'before' => '<div class="page-links">' . __('Pages:', 'jobile'),
 				'after' => '</div>',
 			    )); ?>
-    <?php $jobile_feature_image = wp_get_attachment_url(get_post_thumbnail_id(get_the_id()));
-    if ($jobile_feature_image) { ?>
-		<img src="<?php echo esc_url($jobile_feature_image); ?>" class="img-responsive" />
-	<?php } ?>
+			<?php                      
+		        if ( has_post_thumbnail() ) { ?>
+		        <a href="<?php echo esc_url( get_permalink() ); ?>">
+		          <?php the_post_thumbnail('',array("class"=>"img-responsive")); ?>
+		        </a>
+		    <?php } ?>
     		</div>
-    		</div>
+    		 </div>
     	    </article>
-    <?php if (comments_open($post->ID)) { ?>
-		    <div class="col-md-12 no-padding-lr article-content">
-	<?php comments_template(); ?>
-		    </div>
-    <?php } endwhile; ?>
+    <?php  endwhile; ?>
 	</div>
     </div>
 </section>
-<?php get_footer(); ?>
+<?php get_footer();

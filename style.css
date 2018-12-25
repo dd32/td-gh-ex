@@ -1,71 +1,20 @@
 /*
 Theme Name: Jobile
-Theme URI: http://fasterthemes.com/wordpress-themes/Jobile
+Theme URI: https://fasterthemes.com/wordpress-themes/Jobile
 Author: FasterThemes
-Author URI: http://fasterthemes.com/
+Author URI: https://fasterthemes.com/
 Description: Jobile is a lightweight, fast, clean and super flexible bootstrap based responsive theme for your job portal website. With this theme you can create your own careers / openings website for your business. Jobile theme can also be used to create classified ads, blog , business or personal websites also. Jobile has got theme options to manage general settings and also custom widget to manage social icons and text areas in the footer.
-Version: 1.4
+Version: 1.4.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, custom-background, custom-colors, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, threaded-comments
 Text Domain: jobile 
 */
-@font-face {
-    font-family: 'ubunturegular';
-    src: url('./fonts/ubuntu-r-webfont.eot');
-    src: url('./fonts/ubuntu-r-webfont.eot?#iefix') format('embedded-opentype'),
-         url('./fonts/ubuntu-r-webfont.woff') format('woff'),
-         url('./fonts/ubuntu-r-webfont.ttf') format('truetype'),
-         url('./fonts/ubuntu-r-webfont.svg#ubunturegular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'ubuntubold';
-    src: url('./fonts/ubuntu-b-webfont.eot');
-    src: url('./fonts/ubuntu-b-webfont.eot?#iefix') format('embedded-opentype'),
-         url('./fonts/ubuntu-b-webfont.woff') format('woff'),
-         url('./fonts/ubuntu-b-webfont.ttf') format('truetype'),
-         url('./fonts/ubuntu-b-webfont.svg#ubuntubold') format('svg');
-    font-weight: normal;
-    font-style: normal;
 
-}
-@font-face {
-    font-family: 'istok_webregular';
-    src: url('./fonts/istokweb-regular-webfont.eot');
-    src: url('./fonts/istokweb-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('./fonts/istokweb-regular-webfont.woff') format('woff'),
-         url('./fonts/istokweb-regular-webfont.ttf') format('truetype'),
-         url('./fonts/istokweb-regular-webfont.svg#istok_webregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-
-}
-@font-face {
-    font-family: 'istokbold';
-    src: url('./fonts/istok-bold-webfont.eot');
-    src: url('./fonts/istok-bold-webfont.eot?#iefix') format('embedded-opentype'),
-         url('./fonts/istok-bold-webfont.woff') format('woff'),
-         url('./fonts/istok-bold-webfont.ttf') format('truetype'),
-         url('./fonts/istok-bold-webfont.svg#istokbold') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family: 'open_sansregular';
-    src: url('./fonts/opensans-regular-webfont.eot');
-    src: url('./fonts/opensans-regular-webfont.eot?#iefix') format('embedded-opentype'),
-         url('./fonts/opensans-regular-webfont.woff') format('woff'),
-         url('./fonts/opensans-regular-webfont.ttf') format('truetype'),
-         url('./fonts/opensans-regular-webfont.svg#open_sansregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
-}
 body{
 	width:100%;
 	background-color:#f3f3f3;
-	font-family: 'ubunturegular';
+	font-family: 'ubuntu';
 	color:#212121;		
 }
 h1,
@@ -101,15 +50,11 @@ h4 {
 h5 {
 	font-size: 18px;
 	line-height: 1.3333333333;
-}
-
+} 
 h6 {
 	font-size: 16px;
 	line-height: 1.5;
-}
-.jobile-container{
-	width:1200px;
-}
+} 
 .right-pagination li a:hover, 
 a.select, 
 .right-pagination .active a{
@@ -168,6 +113,32 @@ header{
 	height:auto;
 }
 /**header-menu start**/
+a.next.page-numbers:hover,a.prev.page-numbers:hover {
+    background-color: #1d9092;
+    color: #fff;
+}
+a.prev.page-numbers,a.next.page-numbers {
+    background-color: #fff;
+    border: 1px solid #cccccc;
+    padding: 5px 13px;
+    font-family: 'istok web';
+    font-size: 14px;
+    color: #555555;
+    transition: all 0.5s ease-in-out 0s;
+    -webkit-transition: all 0.5s ease-in-out 0s;
+    text-transform: capitalize;
+    margin: 0 0px 0 10px;
+}
+
+a.prev.page-numbers {
+    margin-right: 10px;
+}
+.nav-links a:hover {
+    color: #000;
+} 
+.header-sitename h1 {
+    margin: 0;
+}
 .jobile-menu, .jobile-menu ul 
 {
 	margin: 0;
@@ -176,7 +147,8 @@ header{
 }
 
 .jobile-nav{
-	font-family: 'ubuntubold';
+	font-family: 'ubuntu';
+	font-weight: bold;
 	position:relative;
 	padding:0px 0;
 	float: right;
@@ -192,9 +164,9 @@ header{
     float: left;
     font-size: 32px;
     line-height: 26px;
-    margin: 30px 0 0;
+    margin: 10px 0 0;
     padding:10px;
-}
+} 
 .jobile-menu {
 	width:auto;	
 	float:left;
@@ -220,7 +192,8 @@ header{
 	border-radius:4px;
 	transition:all 0.8s ease-in-out;
 	-webkit-transition:all 0.5s ease-in-out;
-	font-family: 'ubuntubold';
+	font-family: 'ubuntu';
+	font-weight: bold;
 	text-transform:capitalize;
 }
 
@@ -350,7 +323,8 @@ header{
 	border-bottom: 1px solid #2ec2c3;
     color: #fff;
     font-size: 28px;
-	font-family: 'ubuntubold';
+	font-family: 'ubuntu';
+	font-weight: bold;
     margin: 0 auto;
     padding-bottom: 10px;
     text-align: center;
@@ -374,7 +348,8 @@ header{
 	border-radius:3px;
 	text-align:center;
 	display:inline-block;
-	font-family: 'ubuntubold';
+	font-family: 'ubuntu';
+	font-weight: bold;
 	text-transform: uppercase;
 }
 .findjob-btn:hover,
@@ -583,7 +558,7 @@ header{
 	font-size:9px;
 	text-transform:uppercase;
 	color:#FFF;
-	font-family: 'open_sansregular';
+	font-family: 'istok web';
 	font-weight:bold;
 }
 .featured-details{
@@ -599,7 +574,8 @@ header{
 	font-size:14px !important;
 	text-transform:capitalize !important;
 	text-align:left;
-	font-family: 'istokbold' !important;
+	font-family: 'istok web' !important;
+	font-weight: bold;
 	margin-bottom:3px;
 }	
 .featured-details > .job-btn-group{
@@ -617,7 +593,7 @@ header{
 	color:#7b7b7b;
 	font-size:13px;
 	text-transform:capitalize;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 }	
 .featured-details span a:hover{color:#fc5b3f;}
 .job-btn-group .blue-btn,
@@ -628,7 +604,7 @@ header{
 	color:#FFF;
 	font-size:9px;
 	text-transform:uppercase;
-	font-family: 'open_sansregular';
+	font-family: 'istok web';
 	margin-bottom:0px;
 	min-width:60px;
 	width:60px;
@@ -687,7 +663,8 @@ header{
 .person-post{
 	color:#fc5b3f;	
 	font-size:14px;
-	font-family: 'istokbold';
+	font-family: 'istok web';
+	font-weight: bold;
 	margin-bottom:0px !important;
 	text-transform:capitalize !important;
 	text-align:left !important;
@@ -756,7 +733,7 @@ header{
 	color:#535353;
 	font-size:14px;
 	margin:0px;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	padding:0 31px;
 }
 .section-2-box{
@@ -818,7 +795,7 @@ header{
 	color:#fff;
 	font-size:22px;
 	margin:0px;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	padding:0 31px;
 	text-transform:capitalize;
 } 
@@ -844,7 +821,7 @@ header{
 .contact-box h4{
 	color:#ffffff;
 	font-size:18px;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	text-transform: uppercase;
 } 
 /**section part css end**/
@@ -863,14 +840,15 @@ header{
 	color:#cacaca;
 	font-size:14px;
 	margin:0px;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 }
 .jobile_image p {
 	margin-top:20px;
 }
 .li-title{
     color: #f3f3f3;
-    font-family: 'ubuntubold';
+    font-family: 'ubuntu';
+    font-weight: bold;
     font-size: 14px;
     list-style: none outside none;
     margin: 15px 0;
@@ -893,7 +871,7 @@ header{
 .left-column li a {
 	color:#cacaca;
 	font-size:14px;	
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	-webkit-transition:all 0.20s ease-in-out;
 	-moz-transition:all 0.20s ease-in-out;
 	-o-transition:all 0.20s ease-in-out;
@@ -920,7 +898,7 @@ header{
 .footer-column4 p{
 	color:#cacaca;
 	font-size:14px;	
-	font-family: 'istok_webregular';	
+	font-family: 'istok web';	
 	text-transform: capitalize;
 }
 .footer-column4 .f-email{
@@ -928,7 +906,7 @@ header{
 	border-radius:3px;
 	border:none;
 	color:#4f4f4f;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	font-size:14px;
 	padding:10px 0 10px 10px;
 	min-width:178px;
@@ -958,7 +936,8 @@ header{
 }
 .social-icon label{
 	color: #f3f3f3;
-    	font-family: 'ubuntubold';
+    	font-family: 'ubuntu';
+    	font-weight: bold;
     	font-size: 14px;
 	margin-right:2px;
 	margin-top:4px;
@@ -996,7 +975,7 @@ header{
 	float:left;
 	font-size:14px;
 	color:#c5c5c5;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 }
 .text-right{
 	float: right;
@@ -1024,7 +1003,8 @@ header{
 }
 .footer-main .widget h4 {
 	color: #f3f3f3;
-    font-family: 'ubuntubold';
+    font-family: 'ubuntu';
+    font-weight: bold;
     font-size: 14px;
     list-style: none outside none;
     margin: 15px 0;
@@ -1064,7 +1044,7 @@ header{
 	z-index: 99999;
 }
 .header-logo2{
-	padding:18px 0;	
+    padding: 18px 0 5px 0;
 }
 .header-sitename {
     padding: 7px 0;
@@ -1098,7 +1078,8 @@ header{
 .bread-left h2{
 	color:#fff;
 	font-size:20px;
-	font-family: 'ubuntubold';
+	font-family: 'ubuntu';
+	font-weight: bold;
 	float:left;
 	margin-right:20px;
 	text-transform: capitalize;
@@ -1172,7 +1153,8 @@ aside{
 	font-size:16px;
 	border-bottom:1px solid #c5c5c5;
 	padding-bottom:10px;
-	font-family: 'ubuntubold';
+	font-family: 'ubuntu';
+	font-weight: bold;
 	text-transform:uppercase;
 }
 .aside-column2 p{
@@ -1180,7 +1162,8 @@ aside{
 }
 .aside-column2 p label{
 	float:left;
-	font-family: 'istokbold';
+	font-family: 'istok web';
+	font-weight: bold;
 	font-size:13px;
 	color:#272727;
 	font-weight: normal;
@@ -1189,7 +1172,8 @@ aside{
 .aside-column2 p span{
 	float:right;
 	width:150px;
-	font-family: 'istok_webregular'; 
+	font-family: 'istok web'; 
+	font-weight: bold;
 	font-size:13px;
 	color:#555555;
 	word-wrap:break-word;
@@ -1232,7 +1216,8 @@ aside{
     text-transform: uppercase;
 	border-bottom: 1px solid #c5c5c5;
     color: #fc5b3f;
-    font-family: 'ubuntubold';
+    font-family: 'ubuntu';
+    font-weight: bold;
     font-size: 16px;
     text-transform: uppercase;
     width: 100%;
@@ -1290,7 +1275,7 @@ article{
 	border:1px solid #9c9b9b;
 	color:#545454;
 	font-size:13px;
-	font-family: 'istok_webregular'; 
+	font-family: 'istok web'; 
 	text-transform:capitalize;
 	border-radius:3px;
 	padding:7px 15px 5px 15px;	
@@ -1315,7 +1300,9 @@ article{
 	margin-top:30px;
 	padding:20px 21px 20px 25px;
 	display: inline-block;
-}
+    float: left;
+    width: 100%;
+} 
 .article-row1{
 	box-shadow:none;	
 }
@@ -1355,7 +1342,7 @@ article{
 .article-row2 p{
 	color:#505050;
 	font-size:14px;
-	font-family: 'istok_webregular'; 
+	font-family: 'istok web'; 
 	margin-bottom:10px;	
 	line-height:24px;
 }
@@ -1366,7 +1353,7 @@ article{
 	color:#212121;	
 	font-size:15px;
 	line-height:33px;
-	font-family: 'istok_webregular'; 
+	font-family: 'istok web'; 
 }
 .article-row3 ul li a:before{
 	content:url(./images/arrow-skill.png);
@@ -1398,7 +1385,8 @@ article{
 	color:#fff;
 	padding:10px 15px;
 	font-size:15px;
-	font-family: 'istokbold'; 
+	font-family: 'istok web'; 
+	font-weight: bold;
 	transition:all ease-in-out 0.5s;
 	-moz-transition:all ease-in-out 0.5s;
 	-webkit-transition:all ease-in-out 0.5s;	
@@ -1411,7 +1399,7 @@ article{
 .share-icon label{
 	color:#212121;
 	font-size:14px;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	text-transform:uppercase;
 	font-weight:normal;
 	margin-right:10px; 
@@ -1464,7 +1452,7 @@ article{
 .jobs-sidebar-column span{
 	color:#555555;
 	font-size:14px;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	line-height:16px;
 	width:100%; 	
 }
@@ -1475,7 +1463,7 @@ article{
 	border:1px solid #d7d7d7;
 	color:#555555;
 	margin-top:15px;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	width:100%;
 	padding:5px;	
 	 -webkit-appearance:none;	
@@ -1486,7 +1474,7 @@ article{
 	color: #555555;
 	margin: 18px 0 0 0;
 	padding: 5px 5px 5px 10px;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	width: 100%;	
 }
 .submit-job input[type=submit]{
@@ -1497,7 +1485,8 @@ article{
     cursor: pointer;
     display: inline-block;
     font-size: 15px;
-	font-family: 'istokbold';
+	font-family: 'istok web';
+	font-weight: bold;
 	margin-top:18px;
     padding: 6px 25px 4px 25px;
     text-align: center;
@@ -1512,7 +1501,8 @@ article{
     border-style: solid;
     border-width: 1px 1px 2px;
     color: #fff;
-    font-family: 'istokbold';
+    font-family: 'istok web';
+    font-weight: bold;
     font-size: 15px;
     padding: 6px 25px 4px 25px;
     text-transform: capitalize;
@@ -1534,7 +1524,8 @@ article{
 .category-title{
 	color:#212121;
 	font-size:14px;
-	font-family: 'ubuntubold';
+	font-family: 'ubuntu';
+	font-weight: bold;
 	text-transform:uppercase; 
 	margin-bottom:15px;	
 }
@@ -1723,7 +1714,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	text-align:left;
 	margin-left:5px;
 	margin-top:5px;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
   	font-size:14px;
   	color:#555555;
 }
@@ -1732,7 +1723,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	width:40%;
 	text-align:right;
 	margin-top:5px;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
     font-size:14px;
     color:#555555;	
 }
@@ -1744,7 +1735,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
     min-height: 24px;
     padding-left: 0px;
     vertical-align: middle;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	font-size:14px;
 	position: relative;
 	text-transform: capitalize;
@@ -1837,7 +1828,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	min-width:150px;
 	min-height:26px;
 	padding:4px;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	font-size:14px;
 }
 .right-pagination{
@@ -1859,7 +1850,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	background-color:#fff;	
 	border:1px solid #cccccc;
 	padding:5px 13px;	
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	font-size:14px;
 	color:#555555;
 	transition:all 0.5s ease-in-out 0s;
@@ -1880,13 +1871,14 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	-moz-box-shadow: 0 1px 2px #cccccc;	
 }
 .result-btm-text{
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	font-size:14px;
 	color:#212121;	
 	margin-top: 15px;
 }
 .result-btm-text a{
-	font-family: 'istokbold';
+	font-family: 'istok web';
+	font-weight: bold;
 	transition:all 0.5s ease-in-out 0s;	
 }
 .result-btm-text a:hover{
@@ -1912,7 +1904,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	-webkit-box-shadow: 0 1px 0 rgba(0,0,0,.15);
 	box-shadow: 0 1px 0 rgba(0,0,0,.15);
 	padding:11px;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	color:#555555;
 	font-size:13px;
 	outline:none;	
@@ -1930,7 +1922,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 .post-form span{
 	color:#555555;
 	font-size:16px;	
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	font-weight:normal;
 	text-transform: capitalize;
 } 
@@ -1940,7 +1932,8 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	font-size: 16px;
 	border-bottom: 1px solid #c5c5c5;
 	padding-bottom: 10px;
-	font-family: 'ubuntubold';
+	font-family: 'ubuntu';
+	font-weight: bold;
 	text-transform: uppercase;
 	margin:15px 0 35px 0;	
 }
@@ -1985,7 +1978,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 .fileUpload span{
 	color:#ffffff;
 	font-size:14px;	
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	margin: 1px 0 0 5px;
 }
 /**Candidates Page Css Start**/
@@ -2008,7 +2001,8 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 .about-article h4{
 	border-bottom: 1px solid #c5c5c5;
     color: #fc5b3f;
-    font-family: 'ubuntubold';
+    font-family: 'ubuntu';
+    font-weight: bold;
     font-size: 16px;
     margin: 0 auto 25px;
     padding: 0 0 10px;
@@ -2025,7 +2019,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 .about-article p{
 	color:#555555;
 	font-size:15px;	
-	font-family: 'istok_webregular';	
+	font-family: 'istok web';	
 	text-align:justify;
 	line-height:30px;
 	margin-bottom:60px;
@@ -2040,7 +2034,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	margin:0;
 }
 .team-caption a{
-	font-family: 'ubuntubold';
+	font-family: 'ubuntu';
     font-size: 16px;
 	color:#555555;	
 	margin-bottom:5px;
@@ -2057,7 +2051,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	line-height:16px;	
 }
 .team-caption span{
-	font-family: 'ubuntubold';
+	font-family: 'ubuntu';
     font-size: 14px;	
 	text-transform: uppercase;
 }
@@ -2088,7 +2082,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 .contact-aside-p{
 	color:#555555;
 	font-size:14px;	
-	font-family: 'istok_webregular';	
+	font-family: 'istok web';	
 }
 .contact-row2{
 	background-color:#fff;
@@ -2110,7 +2104,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	color:#555555;
 	padding-bottom:5px;
 	font-size:14px;	
-	font-family: 'istok_webregular';	
+	font-family: 'istok web';	
 }
 .con-address p{
 	text-transform: capitalize;	
@@ -2149,7 +2143,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 	height:auto;
 	padding:6px 0 7px 10px;
 	font-size:14px;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 }
 .form-input2 a{
 	height:35px;
@@ -2181,7 +2175,8 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 .column-btm span{
 	color:#555555;
 	display:inline-block;
-	font-family: 'ubuntubold';
+	font-family: 'ubuntu';
+	font-weight: bold;
     font-size: 16px;
 	float:left;
 	padding:10px 0;
@@ -2214,14 +2209,15 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 }
 .hover-title{
 	color:#fff;
-	font-family: 'ubuntubold';
+	font-family: 'ubuntu';
+	font-weight: bold;
     font-size: 20px;
 	padding:20px 0;	
 }
 .hover-text{
 	color:#fff;
 	font-size:13px;	
-	font-family: 'istok_webregular';	
+	font-family: 'istok web';	
 }
 * {
 	-webkit-box-sizing:border-box;
@@ -2336,7 +2332,7 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 .check-box p{
 	color:#555555;
 	font-size:13px;	
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
 	float:left;	
 	margin-top:3px;
 }
@@ -2348,14 +2344,15 @@ a:hover, a:focus{text-decoration:none; color:#FFF;}
 }
 .term-content h4{
 	color:#555555;
-	font-family: 'ubuntubold';
+	font-family: 'ubuntu';
+	font-weight: bold;
     font-size: 16px;
 	margin:20px 0 10px 0;
 	text-transform: capitalize;
 }
 .term-content p{
 	color:#555555;
-	font-family: 'istok_webregular';
+	font-family: 'istok web';
     font-size: 14px;
 	  padding-left: 10px;
     text-indent: 30px;
@@ -2720,3 +2717,35 @@ embed, iframe, object, video {
 .footer-main #today {
 	color: #fff;
 }
+ul#recentcomments li {
+    line-height: 30px;
+}  
+header.header-page2 {
+    padding: 3px 0px 10px 0px;
+} 
+h1.jobile-site-name:hover a {
+    color: #000;
+} 
+@media screen and (max-width:767px){ 
+.jobile-nav2 ul li a {
+    border: 0;
+} 
+}  
+@media screen and (max-width:991px){ 
+  .jobile-nav2 {
+    float: none;
+    width: 100%;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 370px;
+}
+.navbar-header {
+    float: left;
+    width: 100%;
+}
+.header-logo.header-logo2,.header-sitename {
+    float: left;
+    width: 100%;
+    text-align: center;
+}
+} 
