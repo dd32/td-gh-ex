@@ -17,12 +17,15 @@ get_header(); ?>
     <div class="container webpage-container">
     	<article class="blog-article">        
 	  <div id="post-<?php the_ID(); ?>" <?php post_class("col-md-12 col-sm-12 no-padding"); ?>> 
-      <?php while ( have_posts() ) : the_post();
-        $laurels_image = wp_get_attachment_url( get_post_thumbnail_id(get_the_ID()) ); ?>
+      <?php while ( have_posts() ) : the_post(); ?>
                 <div class="blog">                
                     <?php if(!empty($laurels_image)) { ?>
 						<div class="blog-rightsidebar-img">
-							<img src="<?php echo esc_url($laurels_image); ?>" alt="<?php the_title(); ?>" class="img-responsive"  />
+                             <?php if ( has_post_thumbnail() ) { ?>
+                            <a href="<?php echo esc_url( get_permalink() ); ?>">
+                              <?php the_post_thumbnail('',array('class'=>'img-responsive')); ?>
+                            </a>
+                            <?php } ?>
 						</div>
                     <?php } ?>
                     <div class="blog-data">
@@ -53,4 +56,4 @@ get_header(); ?>
     	</article>
     </div>
 </section>
-<?php get_footer(); ?>
+<?php get_footer();

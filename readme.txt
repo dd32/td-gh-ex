@@ -1,5 +1,5 @@
 === Laurels ===
-Laurels Theme by FasterThemes http://fasterthemes.com/
+Laurels Theme by FasterThemes https://fasterthemes.com/
 
 === About Laurels ===
 Laurels is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Laurels Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your needs.

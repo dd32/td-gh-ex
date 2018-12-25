@@ -15,12 +15,12 @@ $laurels_instance = wp_parse_args( (array) $laurels_instance, array( 'title' => 
 $laurels_instance['title'];
 if(!empty($laurels_instance['post_number'])) { $laurels_instance['post_number']; } ?>
         <p>
-            <label for="<?php echo $this->get_field_id( 'title' ); ?>"><?php _e('Title:', 'laurels'); ?></label>
-            <input id="<?php echo $this->get_field_id( 'title' ); ?>" name="<?php echo $this->get_field_name( 'title' ); ?>" value="<?php if(!empty($laurels_instance['title'])) { echo $laurels_instance['title']; } ?>" style="width:100%;" />
+            <label for="<?php echo esc_html($this->get_field_id( 'title' )); ?>"><?php esc_html_e('Title:', 'laurels'); ?></label>
+            <input id="<?php echo esc_attr($this->get_field_id( 'title' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'title' )); ?>" value="<?php if(!empty($laurels_instance['title'])) { echo esc_html($laurels_instance['title']); } ?>" style="width:100%;" />
         </p>
         <p>
-            <label for="<?php echo $this->get_field_id( 'post_number' ); ?>"><?php _e('Number of post to show:', 'laurels'); ?></label>
-            <input id="<?php echo $this->get_field_id( 'post_number' ); ?>" name="<?php echo $this->get_field_name( 'post_number' ); ?>" value="<?php if(!empty($laurels_instance['post_number'])) { echo $laurels_instance['post_number']; } else { echo '5'; } ?>" style="width:100%;" />
+            <label for="<?php echo esc_html($this->get_field_id( 'post_number' )); ?>"><?php esc_html_e('Number of post to show:', 'laurels'); ?></label>
+            <input id="<?php echo esc_attr($this->get_field_id( 'post_number' )); ?>" name="<?php echo esc_attr($this->get_field_name( 'post_number' )); ?>" value="<?php if(!empty($laurels_instance['post_number'])) { echo esc_html($laurels_instance['post_number']); } else { echo '5'; } ?>" style="width:100%;" />
         </p>
 <?php
 }
@@ -72,7 +72,7 @@ echo $before_title . $laurels_title . $after_title;;
 						</a>
 					</p>
   				   <p class="text-left clearfix">
-					   <span><?php comments_number( '0', '1', '%' ); ?>   <?php _e('Comments','laurels'); ?></span>
+					   <span><?php comments_number( '0', '1', '%' ); ?>   <?php esc_html_e('Comments','laurels'); ?></span>
 				   </p>
             </div>
             </div>
@@ -84,4 +84,7 @@ echo $before_title . $laurels_title . $after_title;;
 echo $after_widget;
 }
 }
-add_action( 'widgets_init', create_function('', 'return register_widget("laurels_randompostwidget");') ); ?>
+add_action('widgets_init', 'laurels_recentpost_widget');
+function laurels_recentpost_widget() {
+    register_widget('laurels_randompostwidget');
+}

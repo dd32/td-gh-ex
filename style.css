@@ -1,10 +1,10 @@
 /*
 Theme Name: Laurels
-Theme URI: http://fasterthemes.com/wordpress-themes/Laurels
+Theme URI: https://fasterthemes.com/wordpress-themes/Laurels
 Author: FasterThemes
-Author URI: http://fasterthemes.com/
+Author URI: https://fasterthemes.com/
 Description: Laurels is a lightweight, faster, clean, super flexible and bootstrap based responsive theme for business or personal websites. Laurels Theme is built on top of Twitter Bootstrap which means that your site can be displayed on every device (pc, laptop, mobile devices, tablets etc) without horizontal scrolling. It has got custom widgets, theme-options etc in order to get it customized as per your needs.
-Version: 1.1.10
+Version: 1.1.11
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Laurels Theme, Copyright 2017 fasterthemes.com
@@ -30,9 +30,27 @@ Use it to make something cool, have fun, and share what you've learned with othe
     text-decoration: none;
     transition: all 0.5s ease-in-out 0s;
 }
+nav.navigation.pagination h2.screen-reader-text {
+    margin: 0;
+} 
+.pagination {
+    margin: 0;
+} 
+.nav-links span, .nav-links a {
+    padding: 0 5px;
+} 
+.blog-content {
+    margin-top: 10px;
+}  
 .comment-form .comment-form-comment textarea {
     color: #747474;
-}
+    width: 100%;
+} 
+.page-links {
+    float: left;
+    width: 100%;
+    margin: 5px 0;
+} 
 .breadcrumb.blog-breadcumb > a {
     color: #535353;
     display: inline-block;
@@ -41,6 +59,18 @@ Use it to make something cool, have fun, and share what you've learned with othe
 .breadcrumb.blog-breadcumb > a:hover {
     color: #12bbd5;
 }
+#sidebar-carousel-1 i.fa.fa-angle-left, #sidebar-carousel-1 i.fa.fa-angle-right {
+    font-size: 28px;
+    width: 46px;
+    height: 53px;
+    background-color: #151518;
+    padding: 10px 0px;
+    border-radius: 4px; 
+    color: #fff;
+}  
+.search-box {
+    float: right;
+}  
 .blog-breadcumb a:after {
     color: #535353;
     content: none;
@@ -154,12 +184,12 @@ a {
 }
 .bypostauthor{}
 .carousel-inner .item > img {
-    height: 390px !important;
+    height: auto !important;
     width: 100%;
 }
 .item img{
-    margin: 0 auto;
-}
+     width: 100%;
+} 
 .center-block .row_img img{
     height: 189px;
     width: 190px;
@@ -516,14 +546,36 @@ dd {
 	left: 0;
 	width: 100%;
 }
-
+.no-padding-left{
+    padding-left: 0px; 
+    padding-right: 25px;
+}  
 .gallery-item:hover .gallery-caption {
 	opacity: 1;
-}
-
+} 
 .gallery-columns-7 .gallery-caption,
 .gallery-columns-8 .gallery-caption,
 .gallery-columns-9 .gallery-caption {
 	display: none;
 }
+@media (max-width: 500px){
+.section_row_4 .media_blog .media.media_left a>img {
+    width: 100%;
+}
+.section_row_4 .media_blog .media.media_left > a {
+    float: left;
+    margin-right: 0;
+    width: 100%;
+    text-align: center;
+    margin: 0 0 10px 0;
+}
+}
 
+@media (max-width: 767px){
+.search-box {
+    float: none; 
+}
+.bottum_hr {
+    width: 100%;
+} 
+} 
