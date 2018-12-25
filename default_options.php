@@ -15,24 +15,24 @@ function awada_theme_options()
         'show_topbar' => 1,
         'headersticky' => 0,
         'custom_css' => '',
-		'color_scheme' => 'green.css',
 		//Slider Settings:
         'home_slider_enabled' => 1,
+		'slider_style' => 2,
 
         'slider_img_1'=>get_template_directory_uri().'/images/slider/s1.jpg',
         'slider_img_2'=>get_template_directory_uri().'/images/slider/s2.jpg',
         'slider_img_3'=>get_template_directory_uri().'/images/slider/s3.jpg',
 
-        'slider_title_1'=>__('Welcome To Awada','awada'),
-        'slider_subtitle_1'=>__('The ultimate aim of your business','awada'),
+        'slider_title_1'=>__('Lorem ipsum dolor','awada'),
+        'slider_subtitle_1'=>__('Nulla quam sem vel id','awada'),
         'slider_readmore_1'=>__('Read More','awada'),
 
-        'slider_title_2'=>__('Popular Responsive Theme','awada'),
-        'slider_subtitle_2'=>__('The Key Of Your Success','awada'),
+        'slider_title_2'=>__('Lorem ipsum dolor','awada'),
+        'slider_subtitle_2'=>__('Nulla quam sem vel id','awada'),
         'slider_readmore_2'=>__('Read More','awada'),
 
-        'slider_title_3'=>__('Why Are You Waitting','awada'),
-        'slider_subtitle_3'=>__('Download and Start Customizing Your Site','awada'),
+        'slider_title_3'=>__('Lorem ipsum dolor','awada'),
+        'slider_subtitle_3'=>__('Nulla quam sem vel id','awada'),
         'slider_readmore_3'=>__('Read More','awada'),
 
         'home_slider_shortcode'=>'',

@@ -21,7 +21,7 @@ Embedded Plugin
 ============================================
 Images Copyright/License Info
 ============================================
- * Screenshot images taken from https://pixabay.com/en/woman-library-books-study-read-3435842/ with CC0 Public Domain License.
+ * Screenshot images taken from https://pixabay.com/ with CC0 Public Domain License.
  * All other images taken from http://pixabay.com/ with CC0 Public Domain License.
 
 /***** BUNDELED CSS ***/

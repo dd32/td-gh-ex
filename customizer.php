@@ -69,7 +69,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'colors',
     'type'              => 'color',
     'priority'          => 9,
-    'default'           => '#33a568',
+    'default'           => '',
     'transport'         =>'auto',
     'output'            => array(
         array(
@@ -153,7 +153,7 @@ Kirki::add_field( 'awada_theme', array(
     'settings'    => 'color_scheme',
     'label'       => __( 'Color Scheme', 'awada' ),
     'section'     => 'general_sec',
-    'default'     => 'green.css',
+    'default'     => 'default.css',
     'priority'    => 10,
     'choices'     => array(
         'default.css' => array(
@@ -568,7 +568,20 @@ Kirki::add_field('awada_theme', array(
 	'transport'         => 'postMessage',
     'sanitize_callback' => 'awada_sanitize_checkbox',
 ));
-
+Kirki::add_field('awada_theme', array(
+    'settings'          => 'slider_style',
+    'label'             => __('Home Slider Style', 'awada'),
+    'section'           => 'slider_sec',
+    'type'              => 'select',
+    'priority'          => 10,
+    'default'           => 2,
+    'choices'           => array(
+        1 => __('Slider Style One', 'awada'),
+        2 => __('Slider Style Two', 'awada'),
+        3 => __('Slider Using Plugin Shortcode', 'awada'),
+    ),
+    'sanitize_callback' => 'awada_sanitize_number',
+));
 $num = array(1 => 'One', 2 => 'Two', 3 => 'Three');
 for ($i = 1; $i <= 3; $i++) {
     Kirki::add_field('awada_theme', array(
@@ -578,6 +591,13 @@ for ($i = 1; $i <= 3; $i++) {
         'type'              => 'heading',
         'priority'          => 10,
         'sanitize_callback' => 'awada_sanitize_text',
+		'required'  => array(
+            array(
+                'setting'  => 'slider_style',
+                'operator' => '!=',
+                'value'    => 3,
+            ),
+        )
     ));
     Kirki::add_field('awada_theme', array(
         'settings'    => 'slider_img_' . $i,
@@ -587,6 +607,13 @@ for ($i = 1; $i <= 3; $i++) {
         'section'     => 'slider_sec',
         'priority'    => 10,
         'default'     => get_template_directory_uri() . '/images/slider/s'.$i.'.jpg',
+		'required'  => array(
+            array(
+                'setting'  => 'slider_style',
+                'operator' => '!=',
+                'value'    => 3,
+            ),
+        )
     ));
     Kirki::add_field('awada_theme', array(
         'settings'          => 'slider_title_' . $i,
@@ -596,6 +623,13 @@ for ($i = 1; $i <= 3; $i++) {
         'section'           => 'slider_sec',
         'priority'          => 10,
         'sanitize_callback' => 'awada_sanitize_text',
+		'required'  => array(
+            array(
+                'setting'  => 'slider_style',
+                'operator' => '!=',
+                'value'    => 3,
+            ),
+        )
     ));
     Kirki::add_field('awada_theme', array(
         'settings'          => 'slider_subtitle_' . $i,
@@ -605,6 +639,13 @@ for ($i = 1; $i <= 3; $i++) {
         'section'           => 'slider_sec',
         'priority'          => 10,
         'sanitize_callback' => 'awada_sanitize_text',
+		'required'  => array(
+            array(
+                'setting'  => 'slider_style',
+                'operator' => '!=',
+                'value'    => 3,
+            ),
+        )
     ));
     Kirki::add_field('awada_theme', array(
         'type'     => 'radio-buttonset',
@@ -617,6 +658,13 @@ for ($i = 1; $i <= 3; $i++) {
             'post' => esc_attr__('Post', 'awada'),
             'page' => esc_attr__('Page', 'awada'),
         ),
+		'required'  => array(
+            array(
+                'setting'  => 'slider_style',
+                'operator' => '!=',
+                'value'    => 3,
+            ),
+        )
     ));
 
     Kirki::add_field('awada_theme', array(
@@ -626,7 +674,14 @@ for ($i = 1; $i <= 3; $i++) {
         'section'         => 'slider_sec',
         'priority'        => 10,
         'choices'         => Kirki_Helper::get_posts(array('posts_per_page' => -1, 'orderby' => 'date', 'order' => 'DESC', 'post_type' => 'post', 'post_status' => 'publish')),
-        'active_callback' => array(
+        'required'  => array(
+            array(
+                'setting'  => 'slider_style',
+                'operator' => '!=',
+                'value'    => 3,
+            ),
+        ),
+		'active_callback' => array(
             array(
                 'setting'  => 'slider_post_page_' . $i,
                 'operator' => '==',
@@ -648,6 +703,13 @@ for ($i = 1; $i <= 3; $i++) {
                 'value'    => 'page',
             ),
         ),
+		'required'  => array(
+            array(
+                'setting'  => 'slider_style',
+                'operator' => '!=',
+                'value'    => 3,
+            ),
+        )
     ));
     Kirki::add_field('awada_theme', array(
         'settings'          => 'slider_readmore_' . $i,
@@ -666,6 +728,13 @@ for ($i = 1; $i <= 3; $i++) {
             }
             return false;
         },
+		'required'  => array(
+            array(
+                'setting'  => 'slider_style',
+                'operator' => '!=',
+                'value'    => 3,
+            ),
+        )
     ));
 }
 
@@ -676,6 +745,13 @@ Kirki::add_field('awada_theme', array(
     'type'              => 'heading',
     'priority'          => 10,
     'sanitize_callback' => 'awada_sanitize_text',
+	'required'  => array(
+		array(
+			'setting'  => 'slider_style',
+			'operator' => '==',
+			'value'    => 3,
+		),
+	)
 ));
 Kirki::add_field('awada_theme', array(
     'type'     => 'text',
@@ -684,6 +760,13 @@ Kirki::add_field('awada_theme', array(
     'section'  => 'slider_sec',
     'priority' => 10,
     'text'     => 'awada_sanitize_text',
+	'required'  => array(
+		array(
+			'setting'  => 'slider_style',
+			'operator' => '==',
+			'value'    => 3,
+		),
+	)
 ));
 /* Service Options */
 Kirki::add_section('service_sec', array(
@@ -1251,7 +1334,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'color',
     'priority'          => 10,
-    'default'           => '#33a568',
+    'default'           => '',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(
@@ -1268,7 +1351,7 @@ Kirki::add_field('awada_theme', array(
     'section'           => 'footer_sec',
     'type'              => 'color',
     'priority'          => 10,
-    'default'           => '#33a568',
+    'default'           => '',
     'sanitize_callback' => 'awada_sanitize_color',
     'output'            => array(
         array(

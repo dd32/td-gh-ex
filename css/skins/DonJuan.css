@@ -68,7 +68,7 @@ input[type="submit"],
 .timeline-badge.danger,
 .flex-control-paging li a.flex-active,
 .tparrows:hover {
-	background-color:#5C4B51 !important;
+	background-color:#5C4B51;
 }
 .demo_changer .demo-icon,
 .recent_posts_widget > li img:hover,
@@ -173,14 +173,7 @@ mark,
 	background-color: #5C4B51;
 }
 .woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content{
-	background-color: #5C4B51;
-}
-.woocommerce .widget_price_filter .ui-slider .ui-slider-range,
-.woocommerce .widget_price_filter .ui-slider .ui-slider-handle{
-	background-color: #5C4B51;
-}
-.woocommerce .widget_price_filter .price_slider_wrapper .ui-widget-content{
-	background-color: #3e3337;
+	background-color: #0f723d;
 }
 /* Search Box */
 #two-sidebar .form-control:hover,
@@ -250,4 +243,32 @@ h6 a:hover{
 }
 #copyrights {
     background-color: #5C4B51;
+}
+#sitetopbar {
+    background: #5C4B51;
+    border-bottom: #5C4B51;
+}
+/****
+
+Awada Classic SLIDER
+
+****/
+.awada-slider .owl-nav [class*="owl-"]:hover {
+  background-color: #fff;
+  color: #5C4B51;
+}
+.awada-slider .owl-nav .owl-prev,
+.awada-slider .owl-nav .owl-next {
+  background-color: #5C4B51;
+}
+
+.awada-slider .owl-dots .owl-dot.active span,
+.awada-slider .owl-dots .owl-dot:hover span {
+  background-color: #5C4B51;
+}
+.slide-inner-content h3 p, .slide-inner-content h3 {
+    color: #5C4B51;
+}
+.slide-inner-content .a-btn-classic:hover {
+    border-color: #5C4B51;
 }

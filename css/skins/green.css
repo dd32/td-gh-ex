@@ -244,3 +244,31 @@ h6 a:hover{
 #copyrights {
     background-color: #33a568;
 }
+#sitetopbar {
+    background: #33a568;
+    border-bottom: #33a568;
+}
+/****
+
+Awada Classic SLIDER
+
+****/
+.awada-slider .owl-nav [class*="owl-"]:hover {
+  background-color: #fff;
+  color: #33a568;
+}
+.awada-slider .owl-nav .owl-prev,
+.awada-slider .owl-nav .owl-next {
+  background-color: #33a568;
+}
+
+.awada-slider .owl-dots .owl-dot.active span,
+.awada-slider .owl-dots .owl-dot:hover span {
+  background-color: #33a568;
+}
+.slide-inner-content h3 p, .slide-inner-content h3 {
+    color: #33a568;
+}
+.slide-inner-content .a-btn-classic:hover {
+    border-color: #33a568;
+}

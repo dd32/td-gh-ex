@@ -1,3 +1,6 @@
+###Version 1.6.9 [25-DEC-2018]
+* New Slider Style Added.
+* Gutenburg Support Added.
 ###Version 1.6.8 [18-DEC-2018]
 * Google font issue fixed.
 ###Version 1.6.7 [03-DEC-2018]
