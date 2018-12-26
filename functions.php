@@ -15,7 +15,6 @@ function add_theme_scripts_footer() {
   wp_enqueue_style( 'style', get_stylesheet_uri() );
   wp_enqueue_script( 'popper-min', get_template_directory_uri() . '/popper.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'bootstrap-min', get_template_directory_uri() . '/bootstrap.min.js', array(), '1.0.0', true );
-	
 }
 add_action( 'wp_footer', 'add_theme_scripts_footer' );
 function register_menu_home() {
@@ -76,7 +75,7 @@ class Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
 	
 	function start_lvl(&$output, $depth) {
     $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent<ul class=\"dropdown-menu \" >\n";
+    $output .= "\n$indent<ul class=\"dropdown-menu multi-level \" >\n";
   }
    
     public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
@@ -93,8 +92,14 @@ class Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
 
         $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args, $depth );
         $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
-
-        $output .= $indent . '<li class="nav-item">';
+		
+		if($args->walker->has_children and $item->menu_item_parent != 0 )
+        {		
+        	$output .= $indent . '<li class="nav-item dropdown-submenu">';
+		}else
+		{
+				$output .= $indent . '<li class="nav-item">';
+			}
 
         $atts = array();
         $atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';
@@ -133,7 +138,7 @@ class Apelle_Walker_Nav_Menu extends Walker_Nav_Menu {
 	
 	function start_lvl(&$output, $depth) {
     $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent<ul class=\"dropdown-menu bg-dark\" >\n";
+    $output .= "\n$indent<ul class=\"dropdown-menu bg-dark \" >\n";
   }
    
     public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
@@ -151,7 +156,14 @@ class Apelle_Walker_Nav_Menu extends Walker_Nav_Menu {
         $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args, $depth );
         $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 
-        $output .= $indent . '<li class="nav-item">';
+       // $output .= $indent . '<li class="nav-item">';
+		if($args->walker->has_children and $item->menu_item_parent != 0 )
+        {		
+        	$output .= $indent . '<li class="nav-item dropdown-submenu">';
+		}else
+		{
+				$output .= $indent . '<li class="nav-item">';
+			}
 
         $atts = array();
         $atts['title']  = ! empty( $item->attr_title ) ? $item->attr_title : '';

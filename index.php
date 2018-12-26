@@ -35,6 +35,7 @@
                         'menu_class'=>'nav navbar-nav',
                         'link_before' => '',
                         'link_after' => '',
+						'depth'=>'11',
 						'walker'=> new Apelle_Walker_Nav_Menu()
                       )
                     );
@@ -68,6 +69,7 @@
 								'menu_class'=>'navbar-nav',
                                 'link_before' => '',
                                 'link_after' => '',
+								'depth'=>'11',
 								'walker'=> new Apelle_Walker_Nav_Menu_primary()
                               )
                             );
