@@ -122,7 +122,7 @@
 			?></div><?php
 			endwhile;
 			else :
-				_e( 'Sorry, no posts matched your criteria.', 'themeuno' );
+				esc_attr_e( 'Sorry, no posts matched your criteria.', 'apelleuno' );
 			endif;
           ?>
         </div>
@@ -227,7 +227,7 @@
         // remove "Text or HTML to be displayed after the set of comment fields"
         'comment_notes_after' => '',
         // redefine your own textarea (the comment body)
-        'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'themeuno' ) . '</label><br /><textarea id="comment" name="comment" aria-required="true"></textarea></p>',
+        'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ,'apelleuno' ) . '</label><br /><textarea id="comment" name="comment" aria-required="true"></textarea></p>',
 );
 
 comment_form($comments_args);
