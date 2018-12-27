@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Annina\n"
-"POT-Creation-Date: 2018-10-29 19:40+0100\n"
-"PO-Revision-Date: 2018-10-29 19:40+0100\n"
+"POT-Creation-Date: 2018-12-27 08:26+0100\n"
+"PO-Revision-Date: 2018-12-27 08:26+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -184,7 +184,39 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
+#: functions.php:78
+msgid "Small"
+msgstr ""
+
+#: functions.php:79
+msgid "S"
+msgstr ""
+
+#: functions.php:84
+msgid "Regular"
+msgstr ""
+
+#: functions.php:85
+msgid "M"
+msgstr ""
+
+#: functions.php:90
+msgid "Large"
+msgstr ""
+
+#: functions.php:91
+msgid "L"
+msgstr ""
+
+#: functions.php:96
+msgid "Larger"
+msgstr ""
+
 #: functions.php:97
+msgid "XL"
+msgstr ""
+
+#: functions.php:125
 msgid "Sidebar"
 msgstr ""
 
