@@ -259,6 +259,89 @@ Responsive Style
 	background: rgba(255, 255, 255, 0.9);
 }
 
+/* Start Mobile Menu level toggle support till level four */
+.sidr ul.sub-menu {
+    display: none;
+}
+
+.sidr .menu-item-has-children a,
+.sidr .page_item_has_children a {
+	position: relative;
+}
+
+.sidr .menu-item-has-children a:after,
+.sidr .page_item_has_children a:after {
+    position: absolute;
+    right: 10px;
+    top: 18px;
+}
+
+.sidr .menu-item-has-children a.is-open:after,
+.sidr .page_item_has_children a.is-open:after {
+    top: 10px;
+}
+
+.sidr .menu-item-has-children a:after,
+.sidr .page_item_has_children a:after,
+.sidr .menu-item-has-children li.menu-item-has-children a:after,
+.sidr .page_item_has_children li.menu-item-has-children a:after,
+.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children a:after,
+.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children a:after,
+.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children li.menu-item-has-children a:after,
+.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children li.menu-item-has-children a:after {
+	content: "\f502";
+}
+
+.sidr .menu-item-has-children a.is-open:after,
+.sidr .page_item_has_children a.is-open:after,
+.sidr .menu-item-has-children li.menu-item-has-children a.is-open:after,
+.sidr .page_item_has_children li.menu-item-has-children a.is-open:after,
+.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children a.is-open:after,
+.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children a.is-open:after,
+.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children li.menu-item-has-children a.is-open:after,
+.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children li.menu-item-has-children a.is-open:after {
+	content: "\f500";
+}
+
+.sidr .menu-item-has-children li a:after,
+.sidr .page_item_has_children li a:after,
+.sidr .menu-item-has-children li.menu-item-has-children li a:after,
+.sidr .page_item_has_children li.menu-item-has-children li a:after,
+.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children li a:after,
+.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children li a:after,
+.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children li.menu-item-has-children li a:after,
+.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children li.menu-item-has-children li a:after {
+	content: none;
+}
+
+.sidr .menu-item-has-children a,
+.sidr .page_item_has_children a,
+.sidr .menu-item-has-children li.menu-item-has-children a,
+.sidr .page_item_has_children li.menu-item-has-children a,
+.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children a,
+.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children a,
+.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children li.menu-item-has-children a,
+.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children li.menu-item-has-children a {
+	padding-right: 25px;
+}
+
+.sidr .menu-item-has-children li a,
+.sidr .page_item_has_children li a,
+.sidr .menu-item-has-children li.menu-item-has-children li a,
+.sidr .page_item_has_children li.menu-item-has-children li a,
+.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children li a,
+.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children li a,
+.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children li.menu-item-has-children li a,
+.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children li.menu-item-has-children li a {
+	padding-right: 15px;
+}
+
+.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children li.menu-item-has-children li .sub-menu,
+.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children li.menu-item-has-children li .sub-menu {
+	display: block;
+}
+/* End Mobile Menu level toggle support till level four */
+
 /*--------------------------------------------------------------
 3. x >= 1440px
 --------------------------------------------------------------*/
@@ -734,10 +817,10 @@ Responsive Style
 	    -webkit-transition: all 0.2s ease-in-out;
 	    transition:         all 0.2s ease-in-out;
 	}
-	
+
 	.admin-bar #fixed-header.is-sticky {
 		top: 0;
-	}	
+	}
 
 	#logo-icon {
 	    width: 392px;

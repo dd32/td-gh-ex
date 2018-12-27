@@ -1,13 +1,45 @@
 === Full Frame ===
+Contributors: catchthemes
+Tags: blog, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+Requires at least: 4.8
+Tested up to: 5.0.2
+Stable tag: 2.5.6
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+Full Frame is a Simple, Clean and Spacious Full Width Responsive WordPress Theme based on Catch Base Theme.
+
+== Description ==
 
 Full Frame is a Simple, Clean and Spacious Full Width Responsive WordPress Theme based on Catch Base Theme. Built on HTML5, CSS3 and Theme Customizer for real time customization, it comes with a whole set of interesting and rich features which makes this theme highly customizable and flexible. Make your beautiful yet professional website in no time. Full Frame WordPress Theme will be best suited for photography, portfolio and blogging sites. This theme is translation ready and also currently translated in Swedish, French, Brazilian Portuguese, German, Hungarian, Lithuanian and Danish languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/full-frame/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/full-frame/
 
+For more information about Full Frame please go to https://catchthemes.com/themes/full-frame/
 
-== Support ==
+== Installation ==
 
-Support: https://catchthemes.com/support/
-Support Forum: https://catchthemes.com/support-forum/forum/full-frame-free/
+1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+2. Type in Full Frame in the search form and press the 'Enter' key on your keyboard.
+3. Click on the 'Activate' button to use your new theme right away.
+4. Go to https://catchthemes.com/theme-instructions/full-frame/ for a guide on how to customize this theme.
+5. Navigate to Appearance -> Customize in your admin panel and customize to taste.
 
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+Theme supports all plugins from catchplugins.com
+
+= Where can I find theme documentation? =
+
+You can check our Theme Instructions at https://catchthemes.com/themes/full-frame in the Theme Instructions Tab.
+
+= Where can I find theme demo? =
+
+You can check our Theme Demo at https://catchthemes.com/demo/full-frame/
+
+= More FAQ =
+
+For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Translation ==
 
@@ -20,51 +52,7 @@ Added Translation for Lithuanian
 Added Translation for Hungarian by Kürti Gábor ( Email: gabor.kurti@gmail.com )
 Added Translation for Danish by Pernille Kvamsdal (pkvamsdal@outlook.com)
 
-
-== License ==
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
-License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Full Frame WordPress Theme, Copyright 2015 Catchthemes.com
-Full Frame is distributed under the terms of the GNU General Public License v3
-
-Full Frame is based on Catch Base theme https://catchthemes.com/themes/catch-base/
-
-Images used are released under the CC0 license
-Slider Image 1: http://pixabay.com/en/photography-photo-camera-olympus-407218/
-Slider Image 2: http://pixabay.com/en/photographer-photo-camera-camera-455747/
-Featured Content Background Image: http://www.pexels.com/photo/2286/
-1st Featured Content Image: http://pixabay.com/en/central-park-new-york-city-benches-535645/
-2nd Featured Content Image: http://pixabay.com/en/clock-city-antique-architecture-426079/
-3rd Featued Content Image: http://pixabay.com/en/vespa-street-night-city-517227/
-All other images are self shot image by (CatchThemes.com)
-
-Font Icons
-	Genericons by Automattic, Inc.
-  	Genericons is Licensed under the GPL, version 2 or later
-	http://genericons.com/
-
-JS Files
-    HTML5-Shiv is Licensed under the MIT and GPL licenses
-    https://code.google.com/p/html5shiv/
-
-    jQuery Cycle 2 is Licensed under the MIT and GPL licenses
-    http://jquery.malsup.com/cycle2/
-
-    fitvids is Licensed under the  WTFPL license
-    http://fitvidsjs.com/
-
-    Sidr is Licensed under the MIT License
-    https://github.com/artberri/sidr
-
-
 == Getting Started ==
-
-= Installation =
-
-1. In your admin panel, go to Appearance -> Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
 
 = Custom Menus =
 
@@ -148,17 +136,19 @@ Number:
     E.g: callto://+14044627491
     This will initiate Skype to call phone number 14044627491
 
-= Theme Instructions =
-
-For detail instructions, check out theme instructions page at https://catchthemes.com/theme-instructions/full-frame/
-
-
 == Change log ==
+
+= 2.5.6 (Released: December 27, 2018) =
+* Updated: Metabox UI
+* Updated: Readme file as per new requirement
+* Updated: Mobile menu, submenu collapse on default, open/close toggle on click
 
 = 2.5.5 (Released: August 02, 2018) =
 * Added: Core Privacy Policy link support in footer
 * Bug Fixed: Design issue with Catch Infinite Scroll plugin
-* Update: Upgrade to pro button css update
+* Updated: Upgrade to pro button css update
+* Updated Content delivered through the_content filter
+* Updated: Content type label updated
 
 = 2.5.4 (Released: December 14, 2017) =
 * Updated: JS compression
@@ -355,3 +345,38 @@ For detail instructions, check out theme instructions page at https://catchtheme
 
 = 0.1-0.3 =
 * Submitted to WordPress.org
+
+== Copyright ==
+
+Full Frame WordPress Theme, Copyright 2015 Catchthemes.com
+Full Frame is distributed under the terms of the GNU General Public License v3
+
+== Resources ==
+
+* Images used are released under the CC0 license
+Slider Image 1: http://pixabay.com/en/photography-photo-camera-olympus-407218/
+Slider Image 2: http://pixabay.com/en/photographer-photo-camera-camera-455747/
+Featured Content Background Image: http://www.pexels.com/photo/2286/
+1st Featured Content Image: http://pixabay.com/en/central-park-new-york-city-benches-535645/
+2nd Featured Content Image: http://pixabay.com/en/clock-city-antique-architecture-426079/
+3rd Featued Content Image: http://pixabay.com/en/vespa-street-night-city-517227/
+All other images are self shot image by (CatchThemes.com)
+
+* Font Icons
+    Genericons by Automattic, Inc.
+    Genericons is Licensed under the GPL, version 2 or later
+    http://genericons.com/
+
+* JS Files
+    HTML5-Shiv is Licensed under the MIT and GPL licenses
+    https://code.google.com/p/html5shiv/
+
+    jQuery Cycle 2 is Licensed under the MIT and GPL licenses
+    http://jquery.malsup.com/cycle2/
+
+    fitvids is Licensed under the  WTFPL license
+    http://fitvidsjs.com/
+
+    Sidr is Licensed under the MIT License
+    https://github.com/artberri/sidr
+

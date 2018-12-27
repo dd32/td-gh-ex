@@ -31,6 +31,14 @@ jQuery(document).ready(function() {
 		   name: 'mobile-secondary-nav',
 		   side: 'left' // By default
 		});
+
+		var sub_menu = jQuery('.sidr ul.sub-menu').prev();
+
+		sub_menu.click(function(e) {
+			e.preventDefault();
+	        jQuery(this).next().slideToggle();
+	        jQuery(this).toggleClass('is-open');
+	    });
 	}
 
 	//Sticky Header

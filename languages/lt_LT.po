@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-08-02 17:29+0545\n"
-"PO-Revision-Date: 2018-08-02 17:29+0545\n"
+"POT-Creation-Date: 2018-12-27 22:48+0545\n"
+"PO-Revision-Date: 2018-12-27 22:48+0545\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: lt\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && (n"
 "%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
 "_nx:1,2,4c;esc_html__;esc_attr_x:1,2c;esc_html_e\n"
@@ -94,8 +94,8 @@ msgstr ""
 msgid "Pages:"
 msgstr "Puslapiai:"
 
-#: ../content-page.php:35 ../inc/fullframe-core.php:554
-#: ../inc/fullframe-core.php:573 ../inc/fullframe-core.php:699
+#: ../content-page.php:35 ../inc/fullframe-core.php:541
+#: ../inc/fullframe-core.php:560 ../inc/fullframe-core.php:686
 msgid "Edit"
 msgstr "Redaguoti"
 
@@ -406,7 +406,7 @@ msgid "Select/Add Logo Icon"
 msgstr ""
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:199
-#: ../inc/fullframe-metabox.php:92
+#: ../inc/fullframe-metabox.php:88
 msgid "Layout Options"
 msgstr "Maketo parinktys"
 
@@ -419,7 +419,6 @@ msgid "Archive Content Layout"
 msgstr "Archyvo turinio išdėstymas"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:237
-#: ../inc/fullframe-metabox.php:94
 msgid "Single Page/Post Image Layout "
 msgstr "Atskiro puslapio/įrašo paveikslėlio padėtis"
 
@@ -608,90 +607,90 @@ msgstr "Puslapis %s"
 msgid "Primary Menu"
 msgstr "Pagrindinis meniu"
 
-#: ../inc/fullframe-core.php:522
+#: ../inc/fullframe-core.php:509
 msgid "Post navigation"
 msgstr "Įrašo meniu"
 
-#: ../inc/fullframe-core.php:554
+#: ../inc/fullframe-core.php:541
 msgid "Pingback:"
 msgstr "Žingsniu atgal:"
 
-#: ../inc/fullframe-core.php:564
+#: ../inc/fullframe-core.php:551
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">sako:</span>"
 
-#: ../inc/fullframe-core.php:570
+#: ../inc/fullframe-core.php:557
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s %2$s"
 
-#: ../inc/fullframe-core.php:577
+#: ../inc/fullframe-core.php:564
 msgid "Your comment is awaiting moderation."
 msgstr "Jūsų komentaras laukia patvirtinimo."
 
-#: ../inc/fullframe-core.php:680
+#: ../inc/fullframe-core.php:667
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Paskelbta</span>"
 
-#: ../inc/fullframe-core.php:687
+#: ../inc/fullframe-core.php:674
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Autorius</span>"
 
-#: ../inc/fullframe-core.php:695
+#: ../inc/fullframe-core.php:682
 msgid "Leave a comment"
 msgstr "Parašykite komentarą"
 
-#: ../inc/fullframe-core.php:695
+#: ../inc/fullframe-core.php:682
 msgid "1 Comment"
 msgstr "1 komentaras"
 
-#: ../inc/fullframe-core.php:695
+#: ../inc/fullframe-core.php:682
 msgid "% Comments"
 msgstr "% komentarai"
 
-#: ../inc/fullframe-core.php:716 ../inc/fullframe-core.php:724
+#: ../inc/fullframe-core.php:703 ../inc/fullframe-core.php:711
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: ../inc/fullframe-core.php:719
+#: ../inc/fullframe-core.php:706
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Kategorijos</span>"
 
-#: ../inc/fullframe-core.php:727
+#: ../inc/fullframe-core.php:714
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Žymės</span>"
 
-#: ../inc/fullframe-core.php:1333
+#: ../inc/fullframe-core.php:1320
 msgid "Scroll Up"
 msgstr "Slinkti aukštyn"
 
-#: ../inc/fullframe-core.php:1351
+#: ../inc/fullframe-core.php:1338
 msgid "Posted on"
 msgstr "Paskelbta"
 
-#: ../inc/fullframe-core.php:1352
+#: ../inc/fullframe-core.php:1339
 msgid "By"
 msgstr "pagal"
 
-#: ../inc/fullframe-core.php:1393
+#: ../inc/fullframe-core.php:1380
 msgid "Next &rarr;"
 msgstr "Kitas &rarr;"
 
-#: ../inc/fullframe-core.php:1394
+#: ../inc/fullframe-core.php:1381
 msgid "Next post:"
 msgstr "Paskesnis įrašas:"
 
-#: ../inc/fullframe-core.php:1396
+#: ../inc/fullframe-core.php:1383
 msgid "&larr; Previous"
 msgstr "&larr; Ankstesnis"
 
-#: ../inc/fullframe-core.php:1397
+#: ../inc/fullframe-core.php:1384
 msgid "Previous post:"
 msgstr "Ankstesnis įrašas:"
 
@@ -796,12 +795,16 @@ msgid "Slider Image"
 msgstr "Slankiklio paveiksliukas"
 
 #: ../inc/fullframe-default-options.php:213
-msgid "Demo Featured Content"
-msgstr "Demo reklaminis turinys"
+#: ../inc/fullframe-default-options.php:258
+msgid "Demo"
+msgstr ""
 
 #: ../inc/fullframe-default-options.php:214
-msgid "Featured Page Content"
-msgstr "reklaminis puslapio turinys"
+#: ../inc/fullframe-default-options.php:259
+#, fuzzy
+#| msgid "Pages:"
+msgid "Page"
+msgstr "Puslapiai:"
 
 #: ../inc/fullframe-default-options.php:228
 msgid "3 columns"
@@ -818,14 +821,6 @@ msgstr "Rodyti visą turinį"
 #: ../inc/fullframe-default-options.php:244
 msgid "Hide Content"
 msgstr ""
-
-#: ../inc/fullframe-default-options.php:258
-msgid "Demo Featured Slider"
-msgstr "Demo reklaminis slankiklis"
-
-#: ../inc/fullframe-default-options.php:259
-msgid "Featured Page Slider"
-msgstr "Reklaminis puslapio slankiklis"
 
 #: ../inc/fullframe-default-options.php:273
 msgid "Fade"
@@ -1108,11 +1103,17 @@ msgstr "Meniu"
 msgid "Header Toggle"
 msgstr ""
 
-#: ../inc/fullframe-metabox.php:93
+#: ../inc/fullframe-metabox.php:105
 msgid "Header Featured Image Options"
 msgstr "Antraštės reklaminio paveikslėlio parinktys"
 
-#: ../inc/fullframe-metabox.php:220
+#: ../inc/fullframe-metabox.php:122
+#, fuzzy
+#| msgid "Single Page/Post Image Layout "
+msgid "Single Page/Post Image Layout"
+msgstr "Atskiro puslapio/įrašo paveikslėlio padėtis"
+
+#: ../inc/fullframe-metabox.php:185
 msgid "Fullframe Options"
 msgstr "Fullframe nuostatos"
 
@@ -1188,6 +1189,18 @@ msgstr ""
 #: ../sidebar.php:53
 msgid "Archives"
 msgstr "Archyvai"
+
+#~ msgid "Demo Featured Content"
+#~ msgstr "Demo reklaminis turinys"
+
+#~ msgid "Featured Page Content"
+#~ msgstr "reklaminis puslapio turinys"
+
+#~ msgid "Demo Featured Slider"
+#~ msgstr "Demo reklaminis slankiklis"
+
+#~ msgid "Featured Page Slider"
+#~ msgstr "Reklaminis puslapio slankiklis"
 
 #~ msgctxt "comments title"
 #~ msgid "One thought on &ldquo;%2$s&rdquo;"

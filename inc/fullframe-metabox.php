@@ -62,10 +62,8 @@ class FullframeMetaBox {
 	*
 	* @access public
 	*/
-	public function add($postType) {
-		if( in_array( $postType, $this->meta_box['post_type'] ) ) {
-			add_meta_box( $this->meta_box['id'], $this->meta_box['title'], array( $this, 'show' ), $postType );
-		}
+	public function add( $post_type ) {
+		add_meta_box( $this->meta_box['id'], $this->meta_box['title'], array( $this, 'show' ), $post_type, 'side', 'high' );
 	}
 
 	/**
@@ -87,89 +85,56 @@ class FullframeMetaBox {
 	    wp_nonce_field( basename( __FILE__ ), 'fullframe_custom_meta_box_nonce' );
 
 	    // Begin the field table and loop  ?>
-	    <div id="fullframe-ui-tabs" class="ui-tabs">
-		    <ul class="fullframe-ui-tabs-nav" id="fullframe-ui-tabs-nav">
-		    	<li><a href="#frag1"><?php esc_html_e( 'Layout Options', 'full-frame' ); ?></a></li>
-		    	<li><a href="#frag3"><?php esc_html_e( 'Header Featured Image Options', 'full-frame' ); ?></a></li>
-		    	<li><a href="#frag4"><?php esc_html_e( 'Single Page/Post Image Layout ', 'full-frame' ); ?></a></li>
-		    </ul>
-		    <div id="frag1" class="catch_ad_tabhead">
-		    	<table id="layout-options" class="form-table" width="100%">
-		            <tbody>
-		                <tr>
-		                    <select name="fullframe-layout-option" id="custom_element_grid_class">
-		      					<?php
-			                    foreach ( $layout_options as $field ) {
-			                        $metalayout = get_post_meta( $post->ID, 'fullframe-layout-option', true );
-			                        if( empty( $metalayout ) ){
-			                            $metalayout='default';
-			                        }
-			                   	?>
-			                   		<option value="<?php echo $field['value']; ?>" <?php selected( $metalayout, $field['value'] ); ?>><?php echo $field['label']; ?></option>
-		    					<?php
-		    					} // end foreach
-			                    ?>
-		                    </select>
-		                </tr>
-		            </tbody>
-		        </table>
-		    </div>
+	   <p class="post-attributes-label-wrapper"><label class="post-attributes-label" for="fullframe-layout-option"><?php esc_html_e( 'Layout Options', 'full-frame' ); ?></label></p>
+		<select class="widefat" name="fullframe-layout-option" id="fullframe-layout-option">
+			 <?php
+				$meta_value = get_post_meta( $post->ID, 'fullframe-layout-option', true );
+				
+				if ( empty( $meta_value ) ){
+					$meta_value = 'default';
+				}
+				
+				foreach ( $layout_options as $field =>$label ) {  
+				?>
+					<option value="<?php echo esc_attr( $label['value'] ); ?>" <?php selected( $meta_value, $label['value'] ); ?>><?php echo esc_html( $label['label'] ); ?></option>
+				<?php
+				} // end foreach
+			?>
+		</select>
 
-		    <div id="frag3" class="catch_ad_tabhead">
-		    	<table id="header-image-metabox" class="form-table" width="100%">
-		            <tbody>
-		                <tr>
-		                    <?php
-		                    foreach ( $header_image_options as $field ) {
+		<p class="post-attributes-label-wrapper"><label class="post-attributes-label" for="fullframe-header-image"><?php esc_html_e( 'Header Featured Image Options', 'full-frame' ); ?></label></p>
+		<select class="widefat" name="fullframe-header-image" id="fullframe-header-image">
+			 <?php
+				$meta_value = get_post_meta( $post->ID, 'fullframe-header-image', true );
+				
+				if ( empty( $meta_value ) ){
+					$meta_value = 'default';
+				}
+				
+				foreach ( $header_image_options as $field =>$label ) {  
+				?>
+					<option value="<?php echo esc_attr( $label['value'] ); ?>" <?php selected( $meta_value, $label['value'] ); ?>><?php echo esc_html( $label['label'] ); ?></option>
+				<?php
+				} // end foreach
+			?>
+		</select>
 
-							 	$metaheader = get_post_meta( $post->ID, $field['id'], true );
-
-		                        if ( empty( $metaheader ) ){
-		                            $metaheader='default';
-		                        }
-		                    ?>
-
-		                        <td style="width: 100px;">
-		                            <label class="description">
-		                                <input type="radio" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $metaheader ); ?>/>&nbsp;&nbsp;<?php echo $field['label']; ?>
-		                            </label>
-		                        </td>
-
-		                    <?php
-		                    } // end foreach
-		                    ?>
-		                </tr>
-		            </tbody>
-		        </table>
-		    </div>
-
-		    <div id="frag4" class="catch_ad_tabhead">
-		    	<table id="featured-image-metabox" class="form-table" width="100%">
-		            <tbody>
-		                <tr>
-		                    <?php
-		                    foreach ($featured_image_options as $field) {
-
-							 	$metaimage = get_post_meta( $post->ID, $field['id'], true );
-
-		                        if (empty( $metaimage ) ){
-		                            $metaimage='default';
-		                        }
-		                    ?>
-		                        <td style="width: 100px;">
-		                            <label class="description">
-		                                <input type="radio" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $metaimage ); ?>/>&nbsp;&nbsp;<?php echo $field['label']; ?>
-		                            </label>
-		                        </td>
-
-		                    <?php
-		                    } // end foreach
-		                    ?>
-		                </tr>
-		            </tbody>
-		        </table>
-		    </div>
-		</div>
+		<p class="post-attributes-label-wrapper"><label class="post-attributes-label" for="fullframe-featured-image"><?php esc_html_e( 'Single Page/Post Image Layout', 'full-frame' ); ?></label></p>
+		<select class="widefat" name="fullframe-featured-image" id="fullframe-featured-image">
+			 <?php
+				$meta_value = get_post_meta( $post->ID, 'fullframe-featured-image', true );
+				
+				if ( empty( $meta_value ) ){
+					$meta_value = 'default';
+				}
+				
+				foreach ( $featured_image_options as $field =>$label ) {  
+				?>
+					<option value="<?php echo esc_attr( $label['value'] ); ?>" <?php selected( $meta_value, $label['value'] ); ?>><?php echo esc_html( $label['label'] ); ?></option>
+				<?php
+				} // end foreach
+			?>
+		</select>
 	<?php
 	}
 

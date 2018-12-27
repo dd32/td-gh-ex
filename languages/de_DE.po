@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Full Frame\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-08-02 17:29+0545\n"
-"PO-Revision-Date: 2018-08-02 17:29+0545\n"
+"POT-Creation-Date: 2018-12-27 22:48+0545\n"
+"PO-Revision-Date: 2018-12-27 22:48+0545\n"
 "Last-Translator: BadWolf <f.nelles@hotmail.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: de\n"
@@ -12,7 +12,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;esc_attr_e;esc_attr__;"
 "_nx:1,2,4c;esc_html__;esc_html_e;esc_attr_x:1,2c\n"
 "X-Poedit-Basepath: .\n"
@@ -95,8 +95,8 @@ msgstr ""
 msgid "Pages:"
 msgstr "Seiten:"
 
-#: ../content-page.php:35 ../inc/fullframe-core.php:554
-#: ../inc/fullframe-core.php:573 ../inc/fullframe-core.php:699
+#: ../content-page.php:35 ../inc/fullframe-core.php:541
+#: ../inc/fullframe-core.php:560 ../inc/fullframe-core.php:686
 msgid "Edit"
 msgstr "Bearbeiten"
 
@@ -413,7 +413,7 @@ msgid "Select/Add Logo Icon"
 msgstr "Logo Icon auswählen/hinzufügen"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:199
-#: ../inc/fullframe-metabox.php:92
+#: ../inc/fullframe-metabox.php:88
 msgid "Layout Options"
 msgstr "Layout Optionen"
 
@@ -426,7 +426,6 @@ msgid "Archive Content Layout"
 msgstr "Archiv-Layout"
 
 #: ../inc/customizer-includes/fullframe-customizer-theme-options.php:237
-#: ../inc/fullframe-metabox.php:94
 msgid "Single Page/Post Image Layout "
 msgstr "Einzel-Seiten/Beitrags-Bild-Layout"
 
@@ -614,90 +613,90 @@ msgstr "Seite %s"
 msgid "Primary Menu"
 msgstr "Erstes Menü"
 
-#: ../inc/fullframe-core.php:522
+#: ../inc/fullframe-core.php:509
 msgid "Post navigation"
 msgstr "Beitragsnavigation"
 
-#: ../inc/fullframe-core.php:554
+#: ../inc/fullframe-core.php:541
 msgid "Pingback:"
 msgstr "Pingback:"
 
-#: ../inc/fullframe-core.php:564
+#: ../inc/fullframe-core.php:551
 #, php-format
 msgid "%s <span class=\"says\">says:</span>"
 msgstr "%s <span class=\"says\">sagt:</span>"
 
-#: ../inc/fullframe-core.php:570
+#: ../inc/fullframe-core.php:557
 #, php-format
 msgctxt "1: date, 2: time"
 msgid "%1$s at %2$s"
 msgstr "%1$s um %2$s"
 
-#: ../inc/fullframe-core.php:577
+#: ../inc/fullframe-core.php:564
 msgid "Your comment is awaiting moderation."
 msgstr "Dein Kommentar wird geprüft und gegebenenfalls freigeschaltet."
 
-#: ../inc/fullframe-core.php:680
+#: ../inc/fullframe-core.php:667
 msgid "<span class=\"screen-reader-text\">Posted on</span>"
 msgstr "<span class=\"screen-reader-text\">Veröffentlicht am</span>"
 
-#: ../inc/fullframe-core.php:687
+#: ../inc/fullframe-core.php:674
 msgctxt "Used before post author name."
 msgid "<span class=\"screen-reader-text\">Author</span>"
 msgstr "<span class=\"screen-reader-text\">Autor</span>"
 
-#: ../inc/fullframe-core.php:695
+#: ../inc/fullframe-core.php:682
 msgid "Leave a comment"
 msgstr "Kommentar schreiben"
 
-#: ../inc/fullframe-core.php:695
+#: ../inc/fullframe-core.php:682
 msgid "1 Comment"
 msgstr "1 Kommentar"
 
-#: ../inc/fullframe-core.php:695
+#: ../inc/fullframe-core.php:682
 msgid "% Comments"
 msgstr "% Kommentare"
 
-#: ../inc/fullframe-core.php:716 ../inc/fullframe-core.php:724
+#: ../inc/fullframe-core.php:703 ../inc/fullframe-core.php:711
 msgctxt "Used between list items, there is a space after the comma."
 msgid ", "
 msgstr ", "
 
-#: ../inc/fullframe-core.php:719
+#: ../inc/fullframe-core.php:706
 msgctxt "Used before category names."
 msgid "<span class=\"screen-reader-text\">Categories</span>"
 msgstr "<span class=\"screen-reader-text\">Kategorien</span>"
 
-#: ../inc/fullframe-core.php:727
+#: ../inc/fullframe-core.php:714
 msgctxt "Used before tag names."
 msgid "<span class=\"screen-reader-text\">Tags</span>"
 msgstr "<span class=\"screen-reader-text\">Tags</span>"
 
-#: ../inc/fullframe-core.php:1333
+#: ../inc/fullframe-core.php:1320
 msgid "Scroll Up"
 msgstr "Nach oben"
 
-#: ../inc/fullframe-core.php:1351
+#: ../inc/fullframe-core.php:1338
 msgid "Posted on"
 msgstr "Gepostet am"
 
-#: ../inc/fullframe-core.php:1352
+#: ../inc/fullframe-core.php:1339
 msgid "By"
 msgstr "Von"
 
-#: ../inc/fullframe-core.php:1393
+#: ../inc/fullframe-core.php:1380
 msgid "Next &rarr;"
 msgstr "Weiter &rarr;"
 
-#: ../inc/fullframe-core.php:1394
+#: ../inc/fullframe-core.php:1381
 msgid "Next post:"
 msgstr "Nächster Beitrag:"
 
-#: ../inc/fullframe-core.php:1396
+#: ../inc/fullframe-core.php:1383
 msgid "&larr; Previous"
 msgstr "&larr; Zurück"
 
-#: ../inc/fullframe-core.php:1397
+#: ../inc/fullframe-core.php:1384
 msgid "Previous post:"
 msgstr "Vorhergehender Beitrag:"
 
@@ -807,12 +806,16 @@ msgid "Slider Image"
 msgstr "Slider-Bild"
 
 #: ../inc/fullframe-default-options.php:213
-msgid "Demo Featured Content"
-msgstr "Demo Vorgestellter Inhalt"
+#: ../inc/fullframe-default-options.php:258
+msgid "Demo"
+msgstr ""
 
 #: ../inc/fullframe-default-options.php:214
-msgid "Featured Page Content"
-msgstr "Vorgestellter Seiten-Inhalt"
+#: ../inc/fullframe-default-options.php:259
+#, fuzzy
+#| msgid "Pages:"
+msgid "Page"
+msgstr "Seiten:"
 
 #: ../inc/fullframe-default-options.php:228
 msgid "3 columns"
@@ -829,14 +832,6 @@ msgstr "Zeige gesamten Inhalt"
 #: ../inc/fullframe-default-options.php:244
 msgid "Hide Content"
 msgstr "Inhalt verbergen"
-
-#: ../inc/fullframe-default-options.php:258
-msgid "Demo Featured Slider"
-msgstr "Demo Vorgestellter Slider"
-
-#: ../inc/fullframe-default-options.php:259
-msgid "Featured Page Slider"
-msgstr "Vorgestellter Seiten-Slider"
 
 #: ../inc/fullframe-default-options.php:273
 msgid "Fade"
@@ -1116,11 +1111,17 @@ msgstr "Menü"
 msgid "Header Toggle"
 msgstr "Header Toggle"
 
-#: ../inc/fullframe-metabox.php:93
+#: ../inc/fullframe-metabox.php:105
 msgid "Header Featured Image Options"
 msgstr "Vorgestelltes Headerbild Optionen"
 
-#: ../inc/fullframe-metabox.php:220
+#: ../inc/fullframe-metabox.php:122
+#, fuzzy
+#| msgid "Single Page/Post Image Layout "
+msgid "Single Page/Post Image Layout"
+msgstr "Einzel-Seiten/Beitrags-Bild-Layout"
+
+#: ../inc/fullframe-metabox.php:185
 msgid "Fullframe Options"
 msgstr "Füllframe Optionen"
 
@@ -1198,6 +1199,18 @@ msgstr ""
 #: ../sidebar.php:53
 msgid "Archives"
 msgstr "Archive"
+
+#~ msgid "Demo Featured Content"
+#~ msgstr "Demo Vorgestellter Inhalt"
+
+#~ msgid "Featured Page Content"
+#~ msgstr "Vorgestellter Seiten-Inhalt"
+
+#~ msgid "Demo Featured Slider"
+#~ msgstr "Demo Vorgestellter Slider"
+
+#~ msgid "Featured Page Slider"
+#~ msgstr "Vorgestellter Seiten-Slider"
 
 #~ msgctxt "comments title"
 #~ msgid "One thought on &ldquo;%2$s&rdquo;"

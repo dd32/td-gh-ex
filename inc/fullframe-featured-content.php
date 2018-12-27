@@ -353,7 +353,7 @@ function fullframe_page_content( $options ) {
 						//Show Content
 						$content = apply_filters( 'the_content', get_the_content() );
 						$content = str_replace( ']]>', ']]&gt;', $content );
-						$fullframe_page_content .= '<div class="entry-content">' . $content . '</div><!-- .entry-content -->';
+						$fullframe_page_content .= '<div class="entry-content">' . wp_kses_post( $content ) . '</div><!-- .entry-content -->';
 					}
 				}
 				$fullframe_page_content .= '

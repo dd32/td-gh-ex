@@ -264,19 +264,6 @@ add_action( 'wp_enqueue_scripts', 'fullframe_scripts' );
  *
  * @since Fullframe 1.0
  */
-function fullframe_enqueue_metabox_scripts() {
-    //Scripts
-	wp_enqueue_script( 'fullframe-metabox', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'js/fullframe-metabox.min.js', array( 'jquery', 'jquery-ui-tabs' ), '2013-10-05' );
-
-	//CSS Styles
-	wp_enqueue_style( 'fullframe-metabox-tabs', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'css/fullframe-metabox-tabs.css' );
-}
-add_action( 'admin_print_scripts-post-new.php', 'fullframe_enqueue_metabox_scripts', 11 );
-add_action( 'admin_print_scripts-post.php', 'fullframe_enqueue_metabox_scripts', 11 );
-add_action( 'admin_print_scripts-page-new.php', 'fullframe_enqueue_metabox_scripts', 11 );
-add_action( 'admin_print_scripts-page.php', 'fullframe_enqueue_metabox_scripts', 11 );
-
-
 /**
  * Default Options.
  */

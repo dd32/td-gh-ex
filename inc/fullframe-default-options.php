@@ -210,8 +210,8 @@ function fullframe_featured_slider_content_options() {
  */
 function fullframe_featured_content_types() {
 	$featured_content_types = array(
-		'demo-featured-content' => esc_html__( 'Demo Featured Content', 'full-frame' ),
-		'featured-page-content' => esc_html__( 'Featured Page Content', 'full-frame' ),
+		'demo-featured-content' => esc_html__( 'Demo', 'full-frame' ),
+		'featured-page-content' => esc_html__( 'Page', 'full-frame' ),
 	);
 
 	return apply_filters( 'fullframe_featured_content_types', $featured_content_types );
@@ -255,8 +255,8 @@ function fullframe_featured_content_show() {
  */
 function fullframe_featured_slider_types() {
 	$featured_slider_types = array(
-		'demo-featured-slider' =>  esc_html__( 'Demo Featured Slider', 'full-frame' ),
-		'featured-page-slider' => esc_html__( 'Featured Page Slider', 'full-frame' ),
+		'demo-featured-slider' =>  esc_html__( 'Demo', 'full-frame' ),
+		'featured-page-slider' => esc_html__( 'Page', 'full-frame' ),
 	);
 
 	return apply_filters( 'fullframe_featured_slider_types', $featured_slider_types );
