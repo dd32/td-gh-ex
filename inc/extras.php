@@ -45,7 +45,7 @@ add_filter( 'body_class', 'blogghiamo_body_classes' );
 */
 function blogghiamo_pingback_header() {
 	if ( is_singular() && pings_open() ) {
-		echo '<link rel="pingback" href="', esc_url( bloginfo( 'pingback_url' ) ), '">';
+		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
 add_action( 'wp_head', 'blogghiamo_pingback_header' );

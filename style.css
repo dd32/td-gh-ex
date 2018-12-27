@@ -3,8 +3,8 @@ Theme Name: Blogghiamo
 Theme URI: https://crestaproject.com/downloads/blogghiamo/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: https://crestaproject.com
-Description: Simple and Minimal WordPress Theme ideal for a blog, with two columns, unlimited colors and theme options created by CrestaProject.com. Live demo https://crestaproject.com/demo/blogghiamo/
-Version: 1.6.9
+Description: Simple and Minimal WordPress Theme ideal for a blog, with two columns, unlimited colors and theme options created by CrestaProject.com. Compatible with Gutenberg. Live demo https://crestaproject.com/demo/blogghiamo/
+Version: 1.7.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: blogghiamo
@@ -169,6 +169,21 @@ h3 {font-size: 20px;}
 h4 {font-size: 18px;}
 h5 {font-size: 13px;}
 h6 {font-size: 10px;}
+.hentry p.has-small-font-size {
+    font-size: 13px;
+    line-height: 1.9;
+}
+.hentry p.has-regular-font-size {
+    font-size: 15px;
+}
+.hentry p.has-large-font-size {
+    font-size: 18px;
+	line-height: 1.7;
+}
+.hentry p.has-larger-font-size {
+    font-size: 20px;
+	line-height: 1.6;
+}
 
 p {
 	margin-bottom: 1.5em;
@@ -202,6 +217,10 @@ blockquote::before {
 	position: absolute;
 	left: 10px;
 	top: 10px;
+}
+blockquote cite {
+	font-size: 13px;
+    font-style: normal;
 }
 
 address {
@@ -1544,6 +1563,27 @@ object {
 	.site-title {
 		font-size: 50px;
 	}
+}
+@media all and (min-width: 768px) {
+  .alignfull {
+    margin-left: -5em;
+    margin-right: -5em;
+    width: auto;
+    max-width: 1000%;
+  }
+
+  .alignwide {
+    margin-left: -2em;
+    margin-right: -2em;
+    width: auto;
+    max-width: 1000%;
+  }
+
+  .alignwide img,
+  .alignfull img {
+    display: block;
+    margin: 0 auto;
+  }
 }
 @media all and (max-width: 767px) {
 	body {

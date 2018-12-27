@@ -68,6 +68,37 @@ function blogghiamo_setup() {
 		'default-color' => 'f0f0f0',
 		'default-image' => '',
 	) ) );
+	
+	/* Support for wide images on Gutenberg */
+	add_theme_support( 'align-wide' );
+	
+	// Adds support for editor font sizes.
+	add_theme_support( 'editor-font-sizes', array(
+		array(
+			'name'      => __( 'Small', 'blogghiamo' ),
+			'shortName' => __( 'S', 'blogghiamo' ),
+			'size'      => 13,
+			'slug'      => 'small'
+		),
+		array(
+			'name'      => __( 'Regular', 'blogghiamo' ),
+			'shortName' => __( 'M', 'blogghiamo' ),
+			'size'      => 15,
+			'slug'      => 'regular'
+		),
+		array(
+			'name'      => __( 'Large', 'blogghiamo' ),
+			'shortName' => __( 'L', 'blogghiamo' ),
+			'size'      => 18,
+			'slug'      => 'large'
+		),
+		array(
+			'name'      => __( 'Larger', 'blogghiamo' ),
+			'shortName' => __( 'XL', 'blogghiamo' ),
+			'size'      => 20,
+			'slug'      => 'larger'
+		)
+	) );
 }
 endif; // blogghiamo_setup
 add_action( 'after_setup_theme', 'blogghiamo_setup' );
@@ -116,13 +147,18 @@ function blogghiamo_scripts() {
 	wp_enqueue_script( 'blogghiamo-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array('jquery'), '1.0', true );
 	wp_enqueue_script( 'blogghiamo-custom', get_template_directory_uri() . '/js/jquery.blogghiamo.js', array('jquery'), wp_get_theme()->get('Version'), true );
 	wp_enqueue_script( 'blogghiamo-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '1.0', true );
-	wp_enqueue_script( 'blogghiamo-smoothScroll', get_template_directory_uri() . '/js/SmoothScroll.min.js', array(), '1.4.6', true );
+	wp_enqueue_script( 'blogghiamo-smoothScroll', get_template_directory_uri() . '/js/SmoothScroll.min.js', array(), '1.4.8', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'blogghiamo_scripts' );
+
+function blogghiamo_gutenberg_scripts() {
+	wp_enqueue_style( 'blogghiamo-gutenberg-css', get_theme_file_uri( '/css/gutenberg-editor-style.css' ), array(), wp_get_theme()->get('Version') );
+}
+add_action( 'enqueue_block_editor_assets', 'blogghiamo_gutenberg_scripts' );
 
 /**
  * Custom template tags for this theme.
