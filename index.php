@@ -16,6 +16,8 @@
 		<div class="l-header__top-strip">
 			<div class="l-top-strip js-topStrip ">
 				<div class="l-top-strip__cta-list">	
+                <?php if ( has_nav_menu( 'header-home-menu' ) ) {
+					?>
                 <!-------- MENU TOP HOME --------------->
          <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
       <a class="navbar-brand" href="#">Navbar</a>
@@ -45,7 +47,7 @@
            
 </nav>  
                 <!-------- FINE MENU TOP HOME ---------->
-
+<?php } ?>
 				</div>
             </div>
 		</div>
@@ -54,7 +56,8 @@
 			<div class="l-header__top-banner">
 				<div class="l-top-banner" >
 					<div class="l-top-banner__inner">
-						
+						 <?php if ( has_nav_menu( 'top-primary' ) ) {
+					?>
                         <!-------- PRIMARY TOP MENU --------------->
 						<div class="l-top-banner__primary-nav">
                         	<nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -79,6 +82,7 @@
                             </nav>
                         </div>
                         <!-------- PRIMARY TOP MENU ---------->
+                        <?php } ?>
                     </div>
                 </div>
             </div>

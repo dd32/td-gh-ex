@@ -29,16 +29,16 @@ function register_menu_home() {
  add_action( 'init', 'register_menu_home' );
  
  function add_link_atts($atts,$item, $args ) {
-	 if( $args->theme_location == 'header-home-menu' ) {
+	 if( isset($args->theme_location) and $args->theme_location == 'header-home-menu' ) {
 		 
 		  $atts['class'] = "nav-link";
 		 
 	 }
-	 if( $args->theme_location == 'central-home-menu' ) {
+	 if( isset($args->theme_location) and $args->theme_location == 'central-home-menu' ) {
 		  $atts['class'] = "c-content-nav__link js-contentNavListItem";
 		 
 	 }
-	 if( $args->theme_location == 'top-primary' ) {
+	 if( isset($args->theme_location) and $args->theme_location == 'top-primary' ) {
 		  $atts['class'] = "nav-link ";
 		 
 	 }
@@ -62,7 +62,9 @@ add_filter( 'nav_menu_link_attributes', 'add_class_to_items_link', 10, 3 );
 
 function add_class_to_items_link( $atts, $item, $args ) {
   // check if the item has children
-  $hasChildren = (in_array('menu-item-has-children', $item->classes));
+  $hasChildren=0;
+  if(isset($item->classes) and is_array($item->classes))
+  	$hasChildren = (in_array('menu-item-has-children', $item->classes));
   if ($hasChildren) {
     // add the desired attributes:
     $atts['class'] = 'nav-link dropdown-toggle';
@@ -73,7 +75,7 @@ function add_class_to_items_link( $atts, $item, $args ) {
 }
 class Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
 	
-	function start_lvl(&$output, $depth) {
+	function start_lvl(&$output, $depth=0, $args = array()) {
     $indent = str_repeat("\t", $depth);
     $output .= "\n$indent<ul class=\"dropdown-menu multi-level \" >\n";
   }
@@ -93,7 +95,7 @@ class Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
         $id = apply_filters( 'nav_menu_item_id', 'menu-item-'. $item->ID, $item, $args, $depth );
         $id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 		
-		if($args->walker->has_children and $item->menu_item_parent != 0 )
+		if(isset($args->walker) and $args->walker->has_children and isset($item->menu_item_parent) and $item->menu_item_parent != 0 )
         {		
         	$output .= $indent . '<li class="nav-item dropdown-submenu">';
 		}else
@@ -122,12 +124,17 @@ class Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
 
       
         $title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
-
-        $item_output = $args->before;
+	    $item_output = '';
+		if(isset($args->before))
+        	$item_output = $args->before;
         $item_output .= '<a'. $attributes .'>';
-        $item_output .= $args->link_before . $title . $args->link_after;
-        $item_output .= '</a>';
-        $item_output .= $args->after;
+		if(isset($args->link_before))
+        	$item_output .= $args->link_before ;
+		$item_output .= $title ;
+		if(isset($args->link_after)) $args->link_after;
+        	$item_output .= '</a>';
+		if(isset($args->after))
+       	 $item_output .= $args->after;
 
        
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
@@ -136,7 +143,7 @@ class Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
 
 class Apelle_Walker_Nav_Menu extends Walker_Nav_Menu {
 	
-	function start_lvl(&$output, $depth) {
+	function start_lvl(&$output, $depth=0,$args = array() ) {
     $indent = str_repeat("\t", $depth);
     $output .= "\n$indent<ul class=\"dropdown-menu bg-dark \" >\n";
   }
@@ -199,7 +206,7 @@ class Apelle_Walker_Nav_Menu extends Walker_Nav_Menu {
 }
 
 function add_description_to_menu($item_output, $item, $depth, $args) {
-	 if( $args->theme_location == 'central-home-menu' ) {
+	 if( isset($args->theme_location) and  $args->theme_location == 'central-home-menu' ) {
 		if (strlen($item->description) > 0 ) {
 				  
 			$item_output = substr($item_output, 0, -strlen("</a>{$args->after}")) . sprintf('<span class="c-content-nav__subtext">%s</span >', esc_html($item->description)) . "</a>{$args->after}";
