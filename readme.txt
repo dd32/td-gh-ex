@@ -4,7 +4,7 @@ Requires at least: WordPress 4.7
 Tested up to: WordPress 4.9.9
 Requires PHP: 5.6
 Stable tag: trunk
-Version: 1.0.5
+Version: 1.0.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: two-columns, blog, photography, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template, threaded-comments, translation-ready
@@ -55,6 +55,10 @@ GNU General Public License
 http://www.gnu.org/copyleft/gpl.html
 
 == Changelog ==
+
+= 1.0.6 =
+* Released: December 27, 2018
+- Online documentation added
 
 = 1.0.5 =
 * Released: December 24, 2018

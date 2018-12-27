@@ -75,6 +75,11 @@ function arba_setup() {
 	 *
 	 */
 	require get_template_directory() . '/inc/template-tags.php';
+	/*
+	 * Load Functions which enhance the theme by hooking into WordPress
+	 *
+	 */
+	require get_template_directory() . '/inc/theme-functions.php';
 
 }
 add_action('after_setup_theme', 'arba_setup');
