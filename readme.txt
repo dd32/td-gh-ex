@@ -2,8 +2,8 @@
 Contributors: CrestaProject
 Tags: two-columns, right-sidebar, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, rtl-language-support, blog, news
 Requires at least: 4.5
-Tested up to: 4.9
-Stable tag: 1.8.8
+Tested up to: 5.0
+Stable tag: 1.8.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Semplicemente WordPress Theme, Copyright 2018 Rizzo Andrea
@@ -11,7 +11,7 @@ Semplicemente is distributed under the terms of the GNU GPL
 
 == Description ==
 
-Simple and Clean WordPress Theme created by CrestaProject.com.
+Simple and Clean WordPress Theme created by CrestaProject.com. Compatible with Gutenberg.
 
 == Installation ==
 
@@ -201,4 +201,8 @@ Semplicemente includes support for Infinite Scroll in Jetpack.
 * Fixed a problem with the mobile menu on tablet
 
 = Version 1.8.8 =
+* Minor bug fixes
+
+= Version 1.8.9 =
+* Improved compatibility with Gutenberg and WordPress 5.0
 * Minor bug fixes

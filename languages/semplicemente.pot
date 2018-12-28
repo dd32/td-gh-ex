@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Semplicemente\n"
-"POT-Creation-Date: 2018-10-01 18:48+0100\n"
-"PO-Revision-Date: 2018-10-01 18:48+0100\n"
+"POT-Creation-Date: 2018-12-28 18:58+0100\n"
+"PO-Revision-Date: 2018-12-28 18:58+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -193,7 +193,39 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
+#: functions.php:69
+msgid "Small"
+msgstr ""
+
+#: functions.php:70
+msgid "S"
+msgstr ""
+
+#: functions.php:75
+msgid "Regular"
+msgstr ""
+
+#: functions.php:76
+msgid "M"
+msgstr ""
+
+#: functions.php:81
+msgid "Large"
+msgstr ""
+
+#: functions.php:82
+msgid "L"
+msgstr ""
+
+#: functions.php:87
+msgid "Larger"
+msgstr ""
+
 #: functions.php:88
+msgid "XL"
+msgstr ""
+
+#: functions.php:116
 msgid "Sidebar"
 msgstr ""
 

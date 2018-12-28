@@ -62,6 +62,34 @@ function semplicemente_setup() {
 		'default-color' => 'f2f2f2',
 		'default-image' => '',
 	) ) );
+	
+	// Adds support for editor font sizes.
+	add_theme_support( 'editor-font-sizes', array(
+		array(
+			'name'      => __( 'Small', 'semplicemente' ),
+			'shortName' => __( 'S', 'semplicemente' ),
+			'size'      => 12,
+			'slug'      => 'small'
+		),
+		array(
+			'name'      => __( 'Regular', 'semplicemente' ),
+			'shortName' => __( 'M', 'semplicemente' ),
+			'size'      => 14,
+			'slug'      => 'regular'
+		),
+		array(
+			'name'      => __( 'Large', 'semplicemente' ),
+			'shortName' => __( 'L', 'semplicemente' ),
+			'size'      => 18,
+			'slug'      => 'large'
+		),
+		array(
+			'name'      => __( 'Larger', 'semplicemente' ),
+			'shortName' => __( 'XL', 'semplicemente' ),
+			'size'      => 20,
+			'slug'      => 'larger'
+		)
+	) );
 }
 endif; // semplicemente_setup
 add_action( 'after_setup_theme', 'semplicemente_setup' );
@@ -115,6 +143,11 @@ function semplicemente_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'semplicemente_scripts' );
+
+function semplicemente_gutenberg_scripts() {
+	wp_enqueue_style( 'semplicemente-gutenberg-css', get_theme_file_uri( '/css/gutenberg-editor-style.css' ), array(), wp_get_theme()->get('Version') );
+}
+add_action( 'enqueue_block_editor_assets', 'semplicemente_gutenberg_scripts' );
 
 /**
  * Replace more Excerpt

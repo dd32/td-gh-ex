@@ -3,8 +3,8 @@ Theme Name: Semplicemente
 Theme URI: https://crestaproject.com/downloads/semplicemente/
 Author: Rizzo Andrea - CrestaProject.com
 Author URI: https://crestaproject.com
-Description: Simple and Clean WordPress Theme created by CrestaProject.com. Live demo https://crestaproject.com/demo/semplicemente/
-Version: 1.8.8
+Description: Simple and Clean WordPress Theme created by CrestaProject.com. Compatible with Gutenberg. Live demo https://crestaproject.com/demo/semplicemente/
+Version: 1.8.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: semplicemente
@@ -140,6 +140,21 @@ h3 {font-size: 20px;line-height:2.4rem;}
 h4 {font-size: 18px;}
 h5 {font-size: 15px;}
 h6 {font-size: 12px;}
+.hentry p.has-small-font-size {
+    font-size: 12px;
+    line-height: 1.9;
+}
+.hentry p.has-regular-font-size {
+    font-size: 14px;
+}
+.hentry p.has-large-font-size {
+    font-size: 18px;
+	line-height: 1.7;
+}
+.hentry p.has-larger-font-size {
+    font-size: 20px;
+	line-height: 1.6;
+}
 p {
 	margin-bottom: 1.5em;
 }
@@ -165,6 +180,10 @@ blockquote::before {
 	position: absolute;
 	left: 10px;
 	top: 5px;
+}
+blockquote cite {
+	font-size: 13px;
+    font-style: normal;
 }
 address {
 	margin: 0 0 1.5em;
