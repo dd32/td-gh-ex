@@ -75,6 +75,12 @@ Source: http://flexslider.woothemes.com
 
 == Changelog ==
 
+Version 1.26 (2018-12-28)
+-------------------------
+- Merged archive.php and search.php into index.php
+- Merged single.php and page.php into singular.php
+- Merged content-gallery.php into content.php
+
 Version 1.25 (2018-12-07)
 -------------------------
 - Fixed Gutenberg style changes required due to changes in the block editor CSS and classes
