@@ -34,7 +34,8 @@ if (!function_exists('enigma_display_theme_info_page')) {
         <div class=" col-md-3">
 			<div class="update_pro">
 				<h3> Upgrade Pro </h3>
-				<a class="demo" href="https://weblizar.com/themes/enigma-premium/">Get Pro In $39</a>
+				<a class="demo" href="https://weblizar.com/themes/enigma-premium/">Get Pro In $19</a>
+				<img src="<?php echo get_template_directory_uri(); ?>/images/50-Percent-Off-PNG-Pic.png">
 			</div>
 		</div>
 	</div>
@@ -45,6 +46,7 @@ if (!function_exists('enigma_display_theme_info_page')) {
 				    <li class="active"><a data-toggle="tab" href="#start"> Getting Started </a></li>
                     <li><a data-toggle="tab" href="#themesd"> Enigma premium </a></li>
 					<li><a data-toggle="tab" href="#freepro">Free Vs Pro</a></li>
+					<li><a data-toggle="tab" href="#coupon">Coupon Code</a></li>
                 </ul>
 
                 <div class="tab-content">
@@ -137,7 +139,9 @@ if (!function_exists('enigma_display_theme_info_page')) {
                                 <div class="col-xs-12 col-sm-3 col-md-2 p_plugin_pic">
                                     <div class="price1">
                                         <span class="currency">USD</span>
-                                        <span class="price-number">$<span>39</span></span>
+                                        <span class="price-number">$<span>19</span>
+										<img src="<?php echo get_template_directory_uri(); ?>/images/50-Percent-Off-PNG-Pic.png">
+										</span>
                                     </div>
                                     <div class="btn-group-vertical">
                                         <a class="btn btn-primary btn-lg" href="https://weblizar.com/themes/enigma-premium/">Detail</a>
@@ -244,6 +248,11 @@ if (!function_exists('enigma_display_theme_info_page')) {
 						</div>
 						</div>
 					</div>
+					<div id="coupon" class="tab-pane fade">
+							<div class="row p_plugin blog_gallery">
+							<img src="<?php echo get_template_directory_uri(); ?>/images/christmas-offer.jpg">
+							</div>
+					</div>		
                 </div>
             </div>            
 <?php
