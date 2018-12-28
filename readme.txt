@@ -63,6 +63,11 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.24 (2018-12-28)
+-------------------------
+- Merged archive.php and search.php into index.php
+- Merged single.php and page.php into singular.php
+
 Version 1.23 (2018-12-07)
 -------------------------
 - Fixed Gutenberg style changes required due to changes in the block editor CSS and classes
