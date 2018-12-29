@@ -160,29 +160,28 @@ function anima_setup() {
 		array(
 			'name' => __( 'small', 'cryout' ),
 			'shortName' => __( 'S', 'cryout' ),
-			'size' => intval( $options['anima_fgeneralsize'] / 1.6 ),
+			'size' => intval( intval($options['anima_fgeneralsize']) / 1.6 ),
 			'slug' => 'small'
 		),
 		array(
 			'name' => __( 'regular', 'cryout' ),
 			'shortName' => __( 'M', 'cryout' ),
-			'size' => intval( $options['anima_fgeneralsize'] ),
+			'size' => intval( intval($options['anima_fgeneralsize']) * 1.0 ),
 			'slug' => 'regular'
 		),
 		array(
 			'name' => __( 'large', 'cryout' ),
 			'shortName' => __( 'L', 'cryout' ),
-			'size' => intval( $options['anima_fgeneralsize'] * 1.6 ),
+			'size' => intval( intval($options['anima_fgeneralsize']) * 1.6 ),
 			'slug' => 'large'
 		),
 		array(
 			'name' => __( 'larger', 'cryout' ),
 			'shortName' => __( 'XL', 'cryout' ),
-			'size' => intval( $options['anima_fgeneralsize'] * 2.56 ),
+			'size' => intval( intval($options['anima_fgeneralsize']) * 2.56 ),
 			'slug' => 'larger'
 		)
 	) );
-
 
 	// WooCommerce compatibility
 	add_theme_support( 'woocommerce' );

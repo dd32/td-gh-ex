@@ -10,7 +10,7 @@
 
 // variables for theme identification - do NOT edit unless you know what you are doing
 define ( "_CRYOUT_THEME_NAME", "anima" );
-define ( "_CRYOUT_THEME_VERSION", "1.3.0.1" );
+define ( "_CRYOUT_THEME_VERSION", "1.3.0.2" );
 
 require_once( get_template_directory() . "/cryout/framework.php" );		// Framework
 require_once( get_template_directory() . "/admin/defaults.php" );		// Options Defaults

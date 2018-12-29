@@ -6,7 +6,7 @@ https://www.cryoutcreations.eu/
 Author: Cryout Creations
 Requires at least: 4.5
 Tested up to: 5.0.2
-Stable tag: 1.3.0.1
+Stable tag: 1.3.0.2
 Requires PHP: 5.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -86,6 +86,10 @@ The rest of the bundled images are created by Cryout Creations and released with
 
 
 == Changelog ==
+
+= 1.3.0.2 =
+* Fixed notice about malformed number format in setup.php since 1.3.0
+* Fixed Gutenberg editor background color missing
 
 = 1.3.0.1 =
 * Fixed notice about malformed number format in custom-styles.php since 1.3.0

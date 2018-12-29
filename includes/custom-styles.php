@@ -696,7 +696,7 @@ body.mce-content-body, .wp-block { max-width: <?php echo esc_html( $content_body
 /* Width of "full-wide" blocks */
 .wp-block[data-align="full"] { max-width: none; }
 	
-body.mce-content-body, .gutenberg__editor .edit-post-visual-editor {
+body.mce-content-body, .block-editor .edit-post-visual-editor {
 	background-color: <?php echo esc_html( $anima_contentbackground ) ?>	}
 body.mce-content-body, .wp-block {	
 	max-width: <?php echo esc_html( $content_body ); ?>px;
