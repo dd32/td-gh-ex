@@ -402,15 +402,23 @@ function moesia_register_required_plugins() {
 			'slug'      => 'siteorigin-panels',
 			'required'  => false,
 		),
-
-		if ( !function_exists('wpcf_init') ) {
-			$plugins[] = array(
-					'name'               => 'aThemes Toolbox - custom posts and fields for the Moesia theme',
-					'slug'               => 'athemes-toolbox',
-					'required'           => false,
-			);
-		}
 	);
+
+	if ( !function_exists('wpcf_init') ) {
+		$plugins = array(
+			array(
+				'name'      => 'Page Builder by SiteOrigin',
+				'slug'      => 'siteorigin-panels',
+				'required'  => false,
+			),
+
+			array(
+				'name'      => 'aThemes Toolbox - custom posts and fields for the Moesia theme',
+				'slug'      => 'athemes-toolbox',
+				'required'  => false,
+			),
+		);
+	}
 
 	$config = array(
 		'id'           => 'moesia',                // Unique ID for hashing notices for multiple instances of TGMPA.
