@@ -6,15 +6,15 @@ sticky-post, theme-options, footer-widgets
 Requires at least: 4.8.0
 Tested up to: 4.9.6
 Requires PHP: 5.2.4
-Stable tag: 1.0.6
+Stable tag: 1.4.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-fMuzz is Responsive and Easy to use e-Commerce WordPress Theme.
+fMuzz is Fully Responsive and Easy to use e-Commerce WordPress Theme.
 
 == Description ==
 
-fMuzz is Responsive and Easy to use e-Commerce WordPress Theme suitable for a music producers,
+fMuzz is Fully Responsive and Easy to use e-Commerce WordPress Theme suitable for a music producers,
 music store, music events, solo artists, music bands, DJs website or blog, WooCommerce plugin support,
 Header social icons, Custom Logo, Multi-level Drop-down Menu, Custom Background, Footer Copyright Text,
 3 Footer Columns Widget Areas, Multiple Browsers Support, Translation-Ready and much more.
@@ -46,6 +46,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 
 == Changelog ==
+
+= 1.4.5 =
+* update screenshot.png
 
 = 1.4.4 =
 * remove homepage slider
@@ -85,5 +88,5 @@ fMuzz WordPress Theme bundles the following third-party resources:
 == Resources ==
 * FontAwesome icon font, © Font Awesome, SIL OFL 1.1
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
-* screenshot.png (header image), © 2015 @ArtsyBee https://pixabay.com/en/background-old-vintage-parchment-910412/, CC0
+* screenshot.png (header image), © 2017 @StockSnap https://pixabay.com/en/people-woman-exercise-fitness-2592247/, CC0
 * screenshot.png (products), WooCommerce, Copyright (C) Automattic, GPLv3
