@@ -1,13 +1,18 @@
 <?php
 /**
- * Template for displaying a widget area and additional content
+ * Template for displaying the sidebar widget area
  *
  * @package Bidnis
- * @since Bidnis 1.0
+ * @since 1.0.0
  */
+?>
 
-if ( is_active_sidebar( 'sidebar-right-widget-area' )  ) : ?>
-	<aside class="sidebar-right-widget-area sidebar widget-area" role="complementary">
-		<?php dynamic_sidebar( 'sidebar-right-widget-area' ); ?>
-	</aside><!-- .sidebar-right-widget-area .sidebar .widget-area -->
+<?php if ( is_active_sidebar( 'sidebar-right-widget-area' ) ): ?>
+
+  <aside id="widget-area-right-sidebar" class="widget-area">
+
+    <?php dynamic_sidebar( 'sidebar-right-widget-area' ); ?>
+
+  </aside>
+
 <?php endif; ?>

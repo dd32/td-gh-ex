@@ -1,10 +1,10 @@
 # Theme
 Name: Bidnis
-Author: Kniffen (http://kniff.xyz)
+Author: Gratis Themes (https://github.com/GratisThemes)
 License: GNU General Public License v3
 
 # Copyright
-Bidnis WordPress Theme, Copyright (C) 2017, Kniffen
+Bidnis WordPress Theme, Copyright (C) 2017-2019, Gratis Themes
 Bidnis is distributed under the terms of the GNU GPL v3
 
 This program is free software: you can redistribute it and/or modify
@@ -22,9 +22,9 @@ GNU General Public License for more details.
 # Libraries
 # The theme bundles the following third-party resources:
 
-normalize.css v3.0.2
+normalize.css v8.0.0
 License: MIT
-Source: git.io/normalize
+Source: github.com/necolas/normalize.css
 
 Font Awesome 4.6.3 by @davegandy
   Font License
@@ -83,4 +83,15 @@ https://www.pexels.com/photo/mock-up-technology-laptop-apple-51171/
 1.1.4 - 2017.05.18
 - Updated theme information for author rebranding
 - Added table of contents to style.css
-Simplified js/functions.js
+- Simplified js/functions.js
+
+1.2.0 - 2018.12.30
+- Fixed and improved multiple layout and styling issues
+- Improved post formats support
+- Updated theme information for author rebranding
+- Removed breadcrumbs
+- Updated language file
+- Added support for the_privacy_policy_link
+- Improved editor styles
+- Removed jQuery from functions.js
+- Added filter for archive titles

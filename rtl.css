@@ -1,265 +1,271 @@
 /*
 Theme Name: Bidnis
-Description: Adds support for languages written in a Right To Left (RTL) direction.
 
-See http://codex.wordpress.org/Right_to_Left_Language_Support
+Support for languages written in Right To Left (RTL)
 */
 body {
   direction: rtl;
-  unicode-bidi: rembed;
+  unicode-bidi: embed;
 }
 
-blockquote,
-q {
-  border-left: 0;
-  border-right: 3px solid;
+/* Tags and Elements */
+blockquote {
+  border-left: none;
+  border-right: 0.125em solid var(--color-border);
   padding-left: 0;
-  padding-right: .5rem;
+  padding-right: 1em;
+  margin: 0 1em 1.5em 0;
+}
+
+td,
+th {
+  text-align: right;
+}
+
+dd {
+  margin: 0 1em 1em 0;
 }
 
 ul,
 ol {
-  padding-left: 0;
-  padding-right: 30px;
+  margin: 0 2em 0 0;
 }
 
-ul ul,
-ul ol,
-ol ul,
-ol ol {
-  padding-left: 0;
-  padding-right: 20px;
-}
-
-.has-sidebar .site-content {
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: reverse;
-  -webkit-flex-direction: row-reverse;
-      -ms-flex-direction: row-reverse;
-          flex-direction: row-reverse;
-}
-
-.nav-previous ~ .nav-next {
-  margin-left: 0;
-  margin-right: 1rem;
-}
-
-.search-form input[type="search"] {
-  border-right: 1px solid;
-  border-left: 0;
-}
-
-.bidnis-phone,
-.bidnis-email {
+/* Navigation */
+.nav-previous {
   margin-right: 0;
-  margin-left: 1rem;
+  margin-left: .5em;
 }
 
-.bidnis-phone:before,
-.bidnis-email:before {
-  margin-right: 0;
+.nav-previous::before,
+.nav-next::after {
+  padding: 0;
+  content: none;
 }
 
-.bidnis-phone:after,
-.bidnis-email:after {
+.nav-previous::after,
+.nav-next::before {
   font-family: FontAwesome;
-  margin-left: .5rem;
+  font-style: normal;
+  font-weight: normal;
 }
 
-.bidnis-phone:before {
-  content: '';
+.nav-previous::after {
+  padding-left: .5em;
+  content: '\f177';
 }
 
-.bidnis-phone:after {
-  content: '\f095';
+.nav-next::before {
+  padding-right: .5em;
+  content: '\f178';
 }
 
-.bidnis-email:before {
-  content: '';
+.page-links > *,
+.pagination .nav-links > * {
+  margin: 0 .5em .5em 0;
 }
 
-.bidnis-email:after {
-  content: '\f0e0';
-}
-
-.bidnis-social-media-links a:not(:first-child) {
-  margin-left: 0;
-  margin-right: .5rem;
-}
-
-@media (max-width: 640px) {
-  .bidnis-social-media-links a {
-    margin-left: 0 !important;
-    margin-right: 1rem !important;
-  }
-}
-
-.header-menu > .menu-item {
-  margin-right: 0;
-  margin-left: 10px;
-}
-
-.header-menu .sub-menu {
-  right: auto;
-  left: -1;
-}
-
-.header-menu .sub-menu .sub-menu {
+/* Navigation: Header */
+#header-nav {
   left: auto;
-  right: 100%;
+  right: 0;
 }
 
-@media (max-width: 640px) {
-  .js .header-menu-container {
+@media (min-width: 768px) {
+  #header-nav > li {
+    margin-right: 0;
+    margin-left: 1rem;
+  }
+  #header-nav > li > ul {
     left: auto;
     right: 0;
   }
-  .header-menu .sub-menu {
+  #header-nav ul ul {
     left: auto;
-    padding-left: 0;
-    padding-right: 1rem;
-  }
-  .header-menu .sub-menu .sub-menu {
-    right: auto;
+    right: 100%;
   }
 }
 
-.sticky .archive-entry-header h3:before {
-  content: "";
-  margin: 0;
+/* Navigation: Footer */
+#footer-nav > * {
+  margin: 0 0 .5em .5em;
 }
 
-.sticky .archive-entry-header h3:after {
-  font-family: FontAwesome;
-  content: '\f08d';
-  margin-left: .5rem;
-}
-
-.single .content-title:before,
-.archive .content-title:before,
-.error404 .content-title:before {
-  content: '';
-}
-
-.sticky .archive-entry-header h3:before,
-.single:not(.single-format-standard) .content-title:before,
-.archive .content-title:before {
+#footer-nav > *:not(:last-child) {
+  border-right: none;
+  border-left: 0.0625em solid var(--color-border);
+  padding-right: 0;
+  padding-left: 0.5em;
   margin-right: 0;
+  margin-left: 0.5em;
 }
 
-.sticky .archive-entry-header h3:after,
-.single:not(.single-format-standard) .content-title:after,
-.archive .content-title:after {
-  margin-left: .5rem;
+/* Content: Headers */
+.sticky .entry-header h3::before,
+.entry-meta > span::before,
+.entry-meta-tags::before,
+.post-edit-link::before {
+  padding: 0;
+  content: none !important;
 }
 
-.archive .content-title:after {
-  content: '\f114';
+.sticky .entry-header h3::after,
+.entry-meta > span::after,
+.entry-meta-tags::after,
+.post-edit-link::after {
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  padding-left: .25em;
 }
 
-.tag .content-title:after {
-  content: '\f02b';
+.sticky .entry-header h3::after {
+  content: '\f08d';
 }
 
-.author .content-title:after {
+.entry-meta-author::after {
   content: '\f007';
 }
 
-.date .content-title:after {
+.entry-meta-date::after {
   content: '\f073';
 }
 
-.search .content-title:after {
-  content: '\f002';
+.entry-meta-comments::after {
+  content: '\f0e5';
 }
 
-.error404 .content-title:after {
-  content: '\f15b';
+.entry-meta-categories::after {
+  content: '\f114';
 }
 
-/* post format prefix icons*/
-.attachment .content-title:after,
-.single-format-image .content-title:after,
-.single-format-gallery .content-title:after,
-.term-post-format-image .content-title:after,
-.term-post-format-gallery .content-title:after {
+.entry-meta-image-size::after {
+  content: '\f030';
+}
+
+.entry-meta-tags::after {
+  content: '\f02b';
+}
+
+.format-gallery .entry-meta-post-format::after,
+.format-image .entry-meta-post-format::after {
   content: '\f03e';
 }
 
-.single-format-audio .content-title:after,
-.term-post-format-audio .content-title:after {
+.format-audio .entry-meta-post-format::after {
   content: '\f001';
 }
 
-.single-format-video .content-title:after,
-.term-post-format-video .content-title:after {
-  content: '\f03d';
+.format-video .entry-meta-post-format::after {
+  content: '\f1c8';
 }
 
-.single-format-status .content-title:after,
-.term-post-format-status .content-title:after {
+.format-aside .entry-meta-post-format::after {
+  content: '\f249';
+}
+
+.format-status .entry-meta-post-format::after {
   content: '\f12a';
 }
 
-.single-format-link .content-title:after,
-.term-post-format-link .content-title:after {
+.format-link .entry-meta-post-format::after {
   content: '\f0c1';
 }
 
-.single-format-quote .content-title:after,
-.term-post-format-quote .content-title:after {
+.format-quote .entry-meta-post-format::after {
   content: '\f10e';
 }
 
-.single-format-chat .content-title:after,
-.term-post-format-chat .content-title:after {
+.format-chat .entry-meta-post-format::after {
   content: '\f086';
 }
 
-.entry-meta > span {
-  margin-right: 0;
-  margin-left: 1rem;
+.post-edit-link::after {
+  content: '\f040';
 }
 
-.author-bio .avatar {
-  margin: 0 0 0 .5rem;
+@media (min-width: 1024px) {
+  .entry-meta > *:not(:last-child) {
+    margin-right: 0;
+    margin-left: 1em;
+  }
 }
 
+/* Site header */
+#bidnis-phone::before,
+#bidnis-email::before {
+  padding-right: 0;
+  padding-left: .25em;
+}
+
+#social-links a:not(:last-child) {
+  margin: 0 0 .5em .5em;
+}
+
+@media (min-width: 768px) {
+  #site-branding {
+    text-align: right;
+  }
+}
+
+/* Post format: Quote */
+.format-quote blockquote::before {
+  left: auto;
+  right: 0;
+}
+
+.format-quote blockquote::after {
+  right: auto;
+  left: 0;
+}
+
+/* Comments */
 .comment-author .avatar {
   float: right;
   margin-right: 0;
-  margin-left: .5rem;
+  margin-left: .5em;
 }
 
-.widget-container ul > li {
-  margin-left: 0;
-  margin-right: -24px;
+.comment-navigation .nav-links > div {
+  margin: 0 0 0 1em;
 }
 
-.widget-container ul > li li {
-  margin-left: 0;
-  margin-right: .25rem;
+/* Widgets */
+.widget ul ul {
+  margin: 0 1em 0 0;
 }
 
-.footer-menu .menu-item:not(:last-child) {
-  padding-right: 0;
-  margin-right: 0;
+.widget_calendar #prev,
+.widget_calendar #prev + .pad {
+  border-right: 0.0625em solid var(--color-border);
+}
+
+.widget_calendar #next,
+.widget_calendar #next + .pad {
   border-right: 0;
-  padding-left: .5rem;
-  margin-left: .5rem;
-  border-left: 1px solid;
 }
 
-.footer-information span:not(:last-child) {
-  padding-right: 0;
-  margin-right: 0;
-  border-right: 0;
-  padding-left: .5rem;
-  margin-left: .5rem;
-  border-left: 1px solid;
+.widget_calendar #prev {
+  text-align: right;
 }
 
-.scroll-to-top {
+.widget_calendar #next {
+  text-align: left;
+}
+
+/* Site footer */
+#scroll-to-top {
   right: auto;
   left: 20px;
+}
+
+@media (min-width: 768px) {
+  #site-footer-information > *:not(:last-child) {
+    border-right: 0;
+    border-left: 0.0625em solid var(--color-border);
+    padding-right: 0;
+    padding-left: 0.5em;
+    margin-right: 0;
+    margin-left: 0.5em;
+  }
 }

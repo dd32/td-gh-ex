@@ -1,17 +1,17 @@
 <?php
 /**
- * Template for displaying post header, content and footer
+ * Template for displaying image content
  *
  * @package Bidnis
  * @since 1.0.0
- * @version 1.2.0
  */
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-  
+
   <?php get_template_part( 'template-parts/header', 'entry' ); ?>
 
   <?php if ( 
+    is_single() &&
     get_the_post_thumbnail() !== '' &&
     (
       (  is_singular() && get_theme_mod( 'thumbnail_content', true ) ) ||
@@ -39,9 +39,9 @@
       'link_after' => '</span>',
     ) );
     ?>
+  
+  </article><!-- .entry-content -->
 
-  </article><!-- .post-content -->
-
-  <?php if ( is_single() ) get_template_part( 'template-parts/footer', 'entry' ); ?>
+  <?php if ( is_single() ) get_template_part('template-parts/footer', 'entry'); ?>
 
 </section>

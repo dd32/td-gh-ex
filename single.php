@@ -1,24 +1,33 @@
 <?php
 /**
- * Template for displaying posts
+ * Template for displaying songle post content
  *
  * @package Bidnis
- * @since Bidnis 1.0
+ * @since 1.0.0
+ * @version 1.2.0
  */
-get_header(); ?>
+?>
 
-<?php get_sidebar('above'); ?>
+<?php get_header(); ?>
 
-<div class="site-content wrapper">
-	<?php get_sidebar('left'); ?>
+<div id="main-content-container" class="wrapper">
 
-	<main>
-		<?php get_template_part('template-parts/content'); ?>
+  <?php get_sidebar( 'left' ); ?>
 
-		<?php ( comments_open() || get_comments_number() ) ? comments_template() : false; ?>
-	</main>
+  <main id="site-main" role="main">
 
-	<?php get_sidebar(); ?>
-</div>
+    <?php while ( have_posts() ): the_post(); ?>
+
+      <?php get_template_part( 'template-parts/content', get_post_format() ); ?>
+
+      <?php if ( comments_open() || get_comments_number() ) comments_template(); ?>
+
+    <?php endwhile; ?>
+
+  </main><!-- #site-main -->
+
+  <?php get_sidebar(); ?>
+
+</div><!-- #main-content-continer -->
 
 <?php get_footer(); ?>

@@ -1,41 +1,68 @@
 <?php
 /**
- * Template for displaying images
+ * Template for displaying Attachments
  *
  * @package Bidnis
- * @since Bidnis 1.0
+ * @since 1.0.0
+ * @version 1.2.0
  */
-get_header(); ?>
+?>
 
-<?php get_sidebar('above'); ?>
+<?php get_header(); ?>
 
-<div class="site-content wrapper">
-	<?php get_sidebar('left'); ?>
+<main id="site-main" role="main">
 
-  <main>
-    <?php while ( have_posts() ) : the_post(); ?>
-      <?php get_template_part('template-parts/content_header'); ?>
+  <?php while ( have_posts() ): the_post(); ?>
 
-      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-        <div class="entry-attachment">
-            <?php echo wp_get_attachment_image( get_the_ID(), 'large' ); ?>
-            <?php the_excerpt(); ?>
-        </div>
-      </article>
+    <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-      <nav id="image-navigation" class="navigation image-navigation">
-        <div class="nav-links">
-          <div class="nav-previous"><?php previous_image_link( false, __( 'Previous Image', 'bidnis' ) ); ?></div>
-          <div class="nav-next"><?php next_image_link( false, __( 'Next Image', 'bidnis' ) ); ?></div>
-        </div><!-- .nav-links -->
-      </nav><!-- .image-navigation -->
+      <?php get_template_part( 'template-parts/header', 'entry' ); ?>
       
-      <?php if ( comments_open() || get_comments_number() ) comments_template(); ?>
-    
-    <?php endwhile; ?>
-  </main>
+      <article class="entry-content">
 
-	<?php get_sidebar(); ?>
-</div>
+        <figure class="entry-attachment wp-block-image">
+          
+          <?php echo wp_get_attachment_image( get_the_ID(), 'large' ); ?>
+
+          <figcaption class="wp-caption-text"><?php the_excerpt(); ?></figcaption>
+
+        </figure><!-- .entry-attackment -->
+
+        <?php the_content(); ?>
+
+        <?php
+        wp_link_pages( array(
+          'before' => '<div class="page-links">' . __( 'Pages:', 'bidnis' ),
+          'after' => '</div>',
+          'link_before' => '<span class="page-number">',
+          'link_after' => '</span>',
+        ) );
+        ?>
+      
+      </article><!-- .entry-content -->
+
+    </section>
+
+    <footer class="entry-footer">
+      
+      <div class="nav-links image-navigation">
+        
+        <div class="nav-previous">
+          <?php previous_image_link( false, __( 'Previous Image', 'bidnis' ) ); ?>
+        </div>
+        
+        <div class="nav-next">
+          <?php next_image_link( false, __( 'Next Image', 'bidnis' ) ); ?>
+        </div>
+      
+      </div><!-- .nav-links -->
+    
+    </footer><!-- .entry-footer -->
+
+    <?php if ( comments_open() || get_comments_number() ) comments_template(); ?>
+    
+  <?php endwhile; ?>
+
+</main><!-- #site-main -->
 
 <?php get_footer(); ?>

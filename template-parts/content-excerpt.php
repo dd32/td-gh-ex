@@ -1,15 +1,14 @@
 <?php
 /**
- * Template for displaying post header, content and footer
+ * Template for displaying content
  *
  * @package Bidnis
  * @since 1.0.0
- * @version 1.2.0
  */
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   
-  <?php get_template_part( 'template-parts/header', 'entry' ); ?>
+  <?php get_template_part('template-parts/header', 'entry'); ?>
 
   <?php if ( 
     get_the_post_thumbnail() !== '' &&
@@ -29,19 +28,8 @@
 
   <article class="entry-content">
     
-    <?php the_content(); ?>
-
-    <?php
-    wp_link_pages( array(
-      'before' => '<div class="page-links">' . __( 'Pages:', 'bidnis' ),
-      'after' => '</div>',
-      'link_before' => '<span class="page-number">',
-      'link_after' => '</span>',
-    ) );
-    ?>
-
-  </article><!-- .post-content -->
-
-  <?php if ( is_single() ) get_template_part( 'template-parts/footer', 'entry' ); ?>
+    <?php the_excerpt(); ?>
+  
+  </article><!-- .entry-content -->
 
 </section>

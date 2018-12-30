@@ -1,10 +1,9 @@
 <?php
 /**
- * Template for displaying post header, content and footer
+ * Template for displaying content
  *
  * @package Bidnis
  * @since 1.0.0
- * @version 1.2.0
  */
 ?>
 <section id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
@@ -24,24 +23,34 @@
       <?php the_post_thumbnail( 'bidnis-featured-image' ); ?>
     
     </a><!-- .post-thumbnail -->
-  
-  <?php endif; ?>
+ 
+ <?php endif; ?>
 
   <article class="entry-content">
     
-    <?php the_content(); ?>
-
     <?php
-    wp_link_pages( array(
-      'before' => '<div class="page-links">' . __( 'Pages:', 'bidnis' ),
-      'after' => '</div>',
-      'link_before' => '<span class="page-number">',
-      'link_after' => '</span>',
-    ) );
+    $bidnis_gallery = get_post_gallery();
+    
+    if ( !is_single() && $bidnis_gallery ) {   
+      
+      echo $bidnis_gallery;
+    
+    } else {
+
+      the_content();
+    
+      wp_link_pages( array(
+        'before' => '<div class="page-links">' . __( 'Pages:', 'bidnis' ),
+        'after' => '</div>',
+        'link_before' => '<span class="page-number">',
+        'link_after' => '</span>',
+      ) );
+      
+    }
     ?>
+  
+  </article><!-- .entry-content -->
 
-  </article><!-- .post-content -->
-
-  <?php if ( is_single() ) get_template_part( 'template-parts/footer', 'entry' ); ?>
+  <?php if ( is_single() ) get_template_part('template-parts/footer', 'entry'); ?>
 
 </section>

@@ -1,51 +1,66 @@
-<?php
+ <?php
 /**
- * Template for displaying the footer
+ * Template for displaying the site footer
  *
  * @package Bidnis
- * @since Bidnis 1.0
+ * @since 1.0.0
+ * @version 1.2.0
  */
 ?>
-<footer class="site-footer">
-	<?php get_sidebar('footer'); ?>
-	
-	<?php if ( has_nav_menu( 'footer' ) ):
-		wp_nav_menu( array(
-			'theme_location' => 'footer',
-			'menu_class'     => 'footer-menu',
-			'depth'					 =>	'1',
-			'container_id'	 => 'footer-menu-container'
-		) );
-	endif; ?>
-	
-	<div class="footer-information">
-		<span>
-			<?php echo get_theme_mod( 'footer_text', get_bloginfo('name') ); ?> 
-			<?php if( get_theme_mod( 'footer_copyright', true ) ): ?>&copy;<?php endif; ?> 
-			<?php if( get_theme_mod( 'footer_year', true) ): echo date("Y"); endif; ?> 
-		</span>
-		
-		<?php if( get_theme_mod( 'footer_advert', true) ): ?>
-			<span>
-				<?php
-					$bidnis_theme_data = wp_get_theme();
+    <?php get_sidebar( 'footer' ); ?>
 
-					printf( __( 'Theme: <a href="%2$s">%1$s</a>', 'bidnis' ),
-						$bidnis_theme_data['Name'],
-						esc_url( $bidnis_theme_data->get( 'ThemeURI' ) )
-					);
-				?>
-			</span>
-		<?php endif; ?>
-	</div>
+    <footer id="site-footer">
+      <div id="site-footer-inner" class="wrapper">
+        <?php
+        if ( has_nav_menu( 'footer' ) ) {
+          wp_nav_menu( array(
+            'theme_location' => 'footer',
+            'menu_id'        => 'footer-nav',
+            'container'      => false,
+            'depth'          => 1,
+          ) );
+        }
+        ?>
 
-	<?php if ( get_theme_mod( 'scrolltotop', true ) ): ?>
-		<a class="scroll-to-top" href="#"><i class="fa fa-angle-up"></i></a>
-	<?php endif; ?>
+        <div id="site-footer-information">
+          <span>
+          <?php
+            echo get_theme_mod( 'footer_text', get_bloginfo( 'name' ) );
+            if ( get_theme_mod( 'footer_copyright', true ) ) echo ' &copy;';
+            if ( get_theme_mod( 'footer_year', true ) ) echo ' ' . date( 'Y' );
+          ?>
+          </span>
 
-</footer>
+          <?php
+          if ( get_theme_mod( 'footer_advert', true ) ) {
+            $bidnis_theme_data = wp_get_theme();
 
-<?php wp_footer(); ?>
+            printf(
+              '<span>' . __( 'Theme: %s', 'bidnis' ) . '</span>',
+              '<a href="' . esc_url( $bidnis_theme_data->get( 'ThemeURI' ) ) . '">' . $bidnis_theme_data[ 'Name' ] . '</a>'
+            );
+          }
+          ?>
 
+          <?php
+          if ( function_exists( 'the_privacy_policy_link' ) ) {
+            the_privacy_policy_link();
+          }
+          ?>
+
+        </div><!-- #site-footer-information -->
+
+        <?php if ( get_theme_mod( 'scrolltotop', true ) ): ?>
+        <a href="#" id="scroll-to-top">
+          <span class="screen-reader-text"><?php _e( 'Scroll to the top', 'bidnis' ); ?></span>
+        </a>
+        <?php endif; ?>
+
+      </div><!-- #site-footer-inner -->
+    </footer><!-- #site-footer -->
+  </div><!-- #site-wrapper -->
+
+  <?php wp_footer(); ?>
+  
 </body>
 </html>
