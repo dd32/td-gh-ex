@@ -1,5 +1,17 @@
 jQuery(document).ready(function ($) {
 
+  /**
+  *
+  * Script for image selected from radio option
+  * 
+  **/
+  $('body').on('click', '.controls#agency-lite-sidebar-img-container li img', function () {
+        $(this).each(function(){
+            $(this).closest('ul').find('img').removeClass('agency-lite-sidebar-radio-img-selected');
+        });
+        $(this).addClass('agency-lite-sidebar-radio-img-selected');
+    });
+
   // On Off  Switch Control
   $('body').on('click', '.onoffswitch', function(){
       var $this = $(this);

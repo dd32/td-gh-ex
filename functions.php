@@ -74,12 +74,20 @@ if ( ! function_exists( 'agency_lite_setup' ) ) :
 			'gallery',
 			'caption',
 		) );
+		// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
 
-		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'agency_lite_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+	
+	// Add support for responsive embedded content.
+	add_theme_support( 'responsive-embeds' );
+
+	// Set up the WordPress core custom background feature.
+	add_theme_support( 'custom-background', apply_filters( 'agency_lite_custom_background_args', array(
+		'default-color' => 'ffffff',
+		'default-image' => '',
+	) ) );
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -118,11 +126,31 @@ add_action( 'after_setup_theme', 'agency_lite_content_width', 0 );
  */
 function agency_lite_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'agency-lite' ),
-		'id'            => 'agency-lite-sidebar',
+		'name'          => esc_html__( 'Right Sidebar', 'agency-lite' ),
+		'id'            => 'sidebar-1',
 		'description'   => esc_html__( 'Add widgets here.', 'agency-lite' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Left Sidebar', 'agency-lite' ),
+		'id'            => 'sidebar-2',
+		'description'   => esc_html__( 'Add widgets here.', 'agency-lite' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
+		'before_title'  => '<h2 class="widget-title">',
+		'after_title'   => '</h2>',
+	) );
+
+	register_sidebar( array(
+		'name'          => esc_html__( 'Shop Sidebar', 'agency-lite' ),
+		'id'            => 'sidebar-3',
+		'description'   => esc_html__( 'Add widgets here.', 'agency-lite' ),
+		'before_widget' => '<div id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</div>',
 		'before_title'  => '<h2 class="widget-title">',
 		'after_title'   => '</h2>',
 	) );
@@ -215,6 +243,19 @@ function agency_lite_admin_scripts() {
 add_action( 'admin_enqueue_scripts', 'agency_lite_admin_scripts' );
 
 /**
+ * Enqueue editor styles for Gutenberg
+ */
+function agency_lite_editor_styles() {
+	
+	$query_args = array('family' => 'Playfair+Display:400,300,700|Hind:400,500,600,700');
+
+  	wp_enqueue_style('agency-lite-google-fonts', add_query_arg($query_args, "//fonts.googleapis.com/css"));
+
+    wp_enqueue_style( 'agency-lite-editor-style', get_template_directory_uri() . '/assets/css/style-editor.css' );
+}
+add_action( 'enqueue_block_editor_assets', 'agency_lite_editor_styles' );
+
+/**
  * Calling the init file
  */
 require get_template_directory() . '/inc/init.php';
@@ -242,8 +283,9 @@ if ( ! function_exists( 'agency_lite_woocommerce_wrapper_before' ) ) {
 	function agency_lite_woocommerce_wrapper_before() {
 		?>
         <div class="agency-lite-container">
-		<div id="primary" class="content-area">
-			<main id="main" class="site-main" role="main">
+        	<div class="agency-lite-shop-wrap">
+				<div id="primary" class="content-area">
+					<main id="main" class="site-main" role="main">
 		<?php
 	}
 }
@@ -261,7 +303,8 @@ if ( ! function_exists( 'agency_lite_woocommerce_wrapper_after' ) ) {
 		?>
 			</main><!-- #main -->
 		</div><!-- #primary -->
-		<?php get_sidebar(); ?>
+		<?php get_sidebar('shop'); ?>
+	</div>
         </div><!-- #container -->    
 <?php
 	}

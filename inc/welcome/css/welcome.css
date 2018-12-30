@@ -246,3 +246,8 @@ a.buy-pro-btn:hover{
     background: none;
     color: #444;
 }
+
+.welcome-section.free_vs_pro .comparison-table img{
+    width: auto;
+    height: 100%;
+}

@@ -13,30 +13,40 @@
  */
 
 get_header(); 
+$page_sidebars = get_theme_mod('agency_lite_single_page_sidebar','right-sidebar-enabled');  
 ?>
 	<div class = "agency-lite-container clearfix">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+		<div class="agency-lite-page-wrap <?php echo esc_attr($page_sidebars); ?>">
 
-			<?php
-			while ( have_posts() ) : the_post();
+			<div id="primary" class="content-area">
+				<main id="main" class="site-main">
 
-				get_template_part( 'template-parts/content', 'page' );
+					<?php
+					while ( have_posts() ) : the_post();
 
-				// If comments are open or we have at least one comment, load up the comment template.
-				if ( comments_open() || get_comments_number() ) :
-					comments_template();
-				endif;
+						get_template_part( 'template-parts/content', 'page' );
 
-			endwhile; // End of the loop.
-			?>
+						// If comments are open or we have at least one comment, load up the comment template.
+						if ( comments_open() || get_comments_number() ) :
+							comments_template();
+						endif;
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+					endwhile; // End of the loop.
+					?>
 
-	<?php
-	get_sidebar();
-	?>
+				</main><!-- #main -->
+			</div><!-- #primary -->
+			<?php 
+		 	// sidebar options
+		    $page_sidebar_explode  =  (explode("-",$page_sidebars));
+		    $page_sidebar          = $page_sidebar_explode[0];
+		    if( $page_sidebar == 'both'){
+		        get_sidebar('left');
+		        get_sidebar('right');
+		    }elseif( $page_sidebar != 'no'){
+		        get_sidebar( $page_sidebar );
+		    } ?>
+		</div>
 	</div>
 	<?php 
 	get_footer();

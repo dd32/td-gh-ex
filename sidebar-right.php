@@ -8,9 +8,6 @@
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	return;
 }
-if(is_shop()){
-	return;
-}
 ?>
 <div class="sidebar-right">
     <aside id="right-sidebar" class="widget-area">

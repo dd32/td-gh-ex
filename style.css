@@ -1,10 +1,10 @@
-/*!
+/*
 Theme Name: Agency Lite
 Theme URI: https://accesspressthemes.com/wordpress-themes/agency-lite/
 Author: AccessPressThemes
 Author URI: http://accesspressthemes.com/
 Description: Agency Lite is a multipurpose WordPress theme perfect for any agency, blog, portfolio, business and corporate website. This theme comes up with the most modern and clean design, while being equipped with the latest technology. The highly configurable homepage of this theme has numerous well coded sections - Slider, About, FAQ, Feature, Service, Team, Counter, Blog and Logo Section. And the best part is that all these sections can be enabled or disabled by you as per your will. You can even translate this site in any language you prefer, create an ecommerce site with the theme and view each change that you have been making live - in real time. Check demo here https://demo.accesspressthemes.com/agency-lite
-Version: 1.0.8
+Version: 1.0.9
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Text Domain: agency-lite
@@ -323,8 +323,18 @@ i {
 	font-style: italic;
 }
 
-blockquote {
-	margin: 0 1.5em;
+.entry-content blockquote {
+	text-align: center;
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-style: italic;
+    line-height: 1.875rem;
+    max-width: 40rem;
+    margin: 1.5rem;
+}
+
+.entry-content h2 {
+	clear: both;
 }
 
 address {
@@ -398,7 +408,8 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 1.5em 3em;
+	margin: 0 0 1rem 1.625rem;
+	padding: 0;
 }
 
 ul {
@@ -2004,7 +2015,7 @@ archieve page
 	padding-bottom: 27px;
 }
 
-#primary {
+.bocontent-area {
 	width: 70%;
 	padding-right: 21px;
 }
@@ -3202,4 +3213,214 @@ Responsive css start
 }
 .agency-lite-container .comment-form .comment-form-url{
 	margin-right: auto;
+}
+
+/*......................................new css blog...............................................*/
+.agency-lite-archive-wrapper.right-sidebar-enabled,
+.agency-lite-archive-wrapper.left-sidebar-enabled,
+.agency-lite-archive-wrapper.both-sidebar-enabled{
+	display: flex;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+}
+.sidebar-right {
+    padding-top: 87px;
+    width: 30%;
+}
+.right-sidebar-enabled .content-area{
+	-webkit-order: 1;
+	    -ms-order: 1;
+	        order: 1;
+	        width: 70%;
+	        padding-right: 21px;
+}
+.right-sidebar-enabled .sidebar-right{
+	-webkit-order: 2;
+	    -ms-order: 2;
+	        order: 2;
+}
+.sidebar-left {
+    width: 30%;
+    padding-top: 87px;
+}
+.left-sidebar-enabled .content-area{
+	-webkit-order: 2;
+	    -ms-order: 2;
+	        order: 2;
+	        width: 70%;
+}
+.left-sidebar-enabled .sidebar-right{
+	-webkit-order: 1;
+	    -ms-order: 1;
+	        order: 1;
+}
+.left-sidebar-enabled #primary {
+    width: 70%;
+    padding-left: 21px;
+    padding-right:0 ;
+}
+.both-sidebar-enabled .sidebar-left{
+	-webkit-order: 1;
+	    -ms-order: 1;
+	        order: 1;
+	            width: 25%;
+}
+.both-sidebar-enabled .content-area{
+	-webkit-order: 2;
+	    -ms-order: 2;
+	        order: 2;
+	            padding-left:21px ;
+	            width: 50%;
+	            padding-right: 21px;
+}
+.both-sidebar-enabled .sidebar-right{
+	-webkit-order: 3;
+	    -ms-order: 3;
+	        order: 3;
+	            width: 25%;
+}
+.no-sidebar #primary{
+	width: 100%;
+}
+/*......................................new css blog post...............................................*/
+.agency-lite-single-post-wrapper{
+	display: flex;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+}
+.right-sidebar-enabled .content-area{
+	-webkit-order: 1;
+	    -ms-order: 1;
+	        order: 1;
+}
+.right-sidebar-enabled .sidebar-right{
+	-webkit-order: 2;
+	    -ms-order: 2;
+	        order: 2;
+}
+/*......................................new css single page optiont...............................................*/
+.agency-lite-page-wrap{
+	display: flex;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+}
+/*......................................new css shop...............................................*/
+.agency-lite-shop-wrap{
+	display: flex;
+	-webkit-justify-content: space-between;
+	        justify-content: space-between;
+}
+
+/* input[type="submit"], .wp-block-file a.wp-block-file__button, .wp-block-button a.wp-block-button__link{
+	background: #cba14c;
+    color: #fff;
+    font-size: 16px;
+    border-color: #cba14c;
+    transition: all 0.3s ease-in-out;
+}*/
+
+
+
+/*Gallery*/
+/*.wp-block-gallery li.blocks-gallery-item figure {
+    position: relative;
+}
+
+.entry-content blockquote cite {
+    text-align: right;
+    color: #6c7781;
+    font-size: 13px;
+}*/
+
+/*.entry-content ol, .entry-content ul {
+    padding-left: 1.25rem;
+    margin: 0;
+    margin-bottom: 0rem;
+}
+*/
+.entry-content ol li {
+    position: relative;
+    padding: 5px 0 5px 5px;
+     /*font-size: 1.25rem; */
+    font-weight: 400;
+    list-style: decimal;
+    line-height: 1.8;
+}
+ .entry-content ul li {
+    position: relative;
+    padding: 5px 0 5px 5px;
+     /*font-size: 1.25rem; */
+    font-weight: 400;
+    list-style: decimal;
+}
+ul.wp-block-categories.wp-block-categories-list.aligncenter {
+    text-align: center;
+}
+ul.wp-block-categories li{
+	list-style: none;
+}
+ul.wp-block-archives.wp-block-archives-list li {
+    list-style: none;
+}
+
+ul.wp-block-archives.wp-block-archives-list {
+	list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul.wp-block-gallery.alignnone{
+	margin-left: 0;
+	padding: 0;
+}
+.agency-lite-container #primary .entry-content blockquote p {
+    font-size: 1rem;
+}
+/*Both sidebar*/
+.both-sidebar-enabled .alignfull {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.both-sidebar-enabled .alignwide {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/*Left sidebar*/
+.left-sidebar-enabled .alignfull {
+     margin-left: 0;
+    margin-right: 0;
+}
+
+.left-sidebar-enabled .alignwide {
+     margin-left: 0;
+    margin-right: 0;
+}
+/*Right Sidebar*/
+.right-sidebar-enabled .alignfull {
+     margin-left: 0;
+    margin-right: 0;
+}
+
+.right-sidebar-enabled .alignwide {
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/*align image*/
+@media (min-width: 750px) {
+ 
+    .alignfull {
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        width: auto;
+        max-width: 1000%;
+    }
+ 
+    .alignwide {
+        margin-left: calc(25% - 25vw);
+        margin-right: calc(25% - 25vw);
+        width: auto;
+        max-width: 1000%;
+    }
 }

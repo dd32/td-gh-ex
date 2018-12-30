@@ -722,3 +722,62 @@
 	            ) ) );
 
 
+	//for sidebar settings
+	$wp_customize->add_section( 'agency_lite_sidebar_section',array(
+        'title' 		 =>		 esc_html__('Sidebar Setting','agency-lite'),
+      	'capability'     => 'edit_theme_options',
+      	'priority'       => 1
+
+    ));
+
+    $wp_customize->add_setting('agency_lite_archive_post_sidebar', array(
+        'default'  =>      'right-sidebar-enabled',
+        'sanitize_callback' => 'esc_attr'
+        ));
+
+	$imagepath =  get_template_directory_uri() . '/assets/images/';
+
+	$wp_customize->add_control( new Agency_Lite_Customize_Radioimage_Control( $wp_customize,'agency_lite_archive_post_sidebar', array(
+	        'section'       =>      'agency_lite_sidebar_section',
+	        'label'         =>      esc_html__('Archive Post Sidebar Option', 'agency-lite'),
+	        'type'          =>      'radioimage',
+	        'choices'       =>      array(
+	          'left-sidebar-enabled' => $imagepath.'left-sidebar.png',
+	          'right-sidebar-enabled' => $imagepath.'right-sidebar.png',
+	          'both-sidebar-enabled' => $imagepath.'both-sidebar.png',
+	          'no-sidebar' => $imagepath.'no-sidebar.png',
+	        ))));
+
+
+	$wp_customize->add_setting('agency_lite_single_post_sidebar', array(
+        'default'  =>      'right-sidebar-enabled',
+        'sanitize_callback' => 'esc_attr'
+        ));
+
+	$wp_customize->add_control( new Agency_Lite_Customize_Radioimage_Control( $wp_customize,'agency_lite_single_post_sidebar', array(
+	        'section'       =>      'agency_lite_sidebar_section',
+	        'label'         =>      esc_html__('Single Post Sidebar Option', 'agency-lite'),
+	        'type'          =>      'radioimage',
+	        'choices'       =>      array(
+	          'left-sidebar-enabled' => $imagepath.'left-sidebar.png',
+	          'right-sidebar-enabled' => $imagepath.'right-sidebar.png',
+	          'both-sidebar-enabled' => $imagepath.'both-sidebar.png',
+	          'no-sidebar' => $imagepath.'no-sidebar.png',
+	        ))));
+
+	$wp_customize->add_setting('agency_lite_single_page_sidebar', array(
+        'default'  =>      'right-sidebar-enabled',
+        'sanitize_callback' => 'esc_attr'
+        ));
+
+	$wp_customize->add_control( new Agency_Lite_Customize_Radioimage_Control( $wp_customize,'agency_lite_single_page_sidebar', array(
+	        'section'       =>      'agency_lite_sidebar_section',
+	        'label'         =>      esc_html__('Single Page Sidebar Option', 'agency-lite'),
+	        'type'          =>      'radioimage',
+	        'choices'       =>      array(
+	          'left-sidebar-enabled' => $imagepath.'left-sidebar.png',
+	          'right-sidebar-enabled' => $imagepath.'right-sidebar.png',
+	          'both-sidebar-enabled' => $imagepath.'both-sidebar.png',
+	          'no-sidebar' => $imagepath.'no-sidebar.png',
+	        ))));
+

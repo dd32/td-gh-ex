@@ -79,3 +79,24 @@ li#accordion-section-agency-pro h3 a {
     background: #28c503;
     box-shadow: none;
 }
+
+/*Design Setting Layouts*/
+#agency-lite-sidebar-img-container .agency-lite-sidebar-radio-img-selected, #tm-img-container-meta .agency-lite-sidebar-radio-img-selected {
+    border: 2px solid #555d66 !important;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+#agency-lite-sidebar-img-container .agency-lite-sidebar-radio-img-img {
+    border: 2px solid #DEDEDE;
+    margin: 0 5px 5px 0;
+    cursor: pointer;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    float: left;
+}
+img.agency-lite-sidebar-radio-img-img:hover {
+    border: 2px solid #555d66 !important;
+}
+
