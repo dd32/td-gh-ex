@@ -58,6 +58,10 @@ Source: http://flexslider.woothemes.com
 
 == Changelog ==
 
+Version 1.21 (2018-12-31)
+-------------------------
+- If the .grid-sizer element doesn't exist, add it to .posts before initializing Masonry
+
 Version 1.20 (2018-12-15)
 -------------------------
 - Fixed elements being incorrectly displayed on pages
