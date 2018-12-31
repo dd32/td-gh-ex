@@ -7,7 +7,7 @@ front-page-post-form
 Requires at least: 4.8.0
 Tested up to: 4.9.6
 Requires PHP: 5.2.4
-Stable tag: 1.1.7
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -45,6 +45,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.2.0 (2018-12-31) =
+* add starter content
 
 = 1.1.9 (2018-12-16) =
 * add mobile menu sub-menu items collapse/expand
