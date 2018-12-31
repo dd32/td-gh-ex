@@ -158,6 +158,18 @@ function fgymm_setup() {
 			'fgymm_slide2_content' => _x( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Theme starter content', 'fgymm' ),
 			'fgymm_slide3_image' => '{{image-slider-3}}',
 			'fgymm_slide3_content' => _x( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Theme starter content', 'fgymm' ),
+			'fgymm_social_facebook' => _x( '#', 'Theme starter content', 'fgymm' ),
+			'fgymm_social_google' => _x( '#', 'Theme starter content', 'fgymm' ),
+			'fgymm_social_twitter' => _x( '#', 'Theme starter content', 'fgymm' ),
+			'fgymm_social_linkedin' => _x( '#', 'Theme starter content', 'fgymm' ),
+			'fgymm_social_instagram' => _x( '#', 'Theme starter content', 'fgymm' ),
+			'fgymm_social_rss' => _x( '#', 'Theme starter content', 'fgymm' ),
+			'fgymm_social_tumblr' => _x( '#', 'Theme starter content', 'fgymm' ),
+			'fgymm_social_youtube' => _x( '#', 'Theme starter content', 'fgymm' ),
+			'fgymm_social_pinterest' => _x( '#', 'Theme starter content', 'fgymm' ),
+			'fgymm_social_vk' => _x( '#', 'Theme starter content', 'fgymm' ),
+			'fgymm_social_flickr' => _x( '#', 'Theme starter content', 'fgymm' ),
+			'fgymm_social_vine' => _x( '#', 'Theme starter content', 'fgymm' ),
 		),
 
 		'nav_menus' => array(

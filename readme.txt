@@ -44,6 +44,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.7.6 =
+* update start content with social links
+
 = 1.7.5 =
 * add starter content
 
