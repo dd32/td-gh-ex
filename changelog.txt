@@ -1,5 +1,9 @@
-Altitude Lite
+Altitude
 **************
+version 2.0 (12/21/2018)
+- Improved theme look and feel
+- Added Gutenberg support
+
 Version 1.4 (10/31/2018)
 - Fixed custom header issue
 
