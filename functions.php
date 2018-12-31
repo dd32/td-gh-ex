@@ -82,6 +82,129 @@ function fkidd_setup() {
 
 	// add the visual editor to resemble the theme style
 	add_editor_style( array( 'css/editor-style.css', get_template_directory_uri() . '/style.css' ) );
+
+	// Define and register starter content to showcase the theme on new sites.
+	$starter_content = array(
+
+		'widgets' => array(
+			'sidebar-widget-area' => array(
+				'search',
+				'recent-posts',
+				'categories',
+				'archives',
+			),
+
+			'homepage-column-1-widget-area' => array(
+				'text_business_info'
+			),
+
+			'homepage-column-2-widget-area' => array(
+				'text_about'
+			),
+
+			'homepage-column-3-widget-area' => array(
+				'meta'
+			),
+
+			'homepage-below-widget-area' => array(
+				'text_business_info'
+			),
+
+			'footer-column-1-widget-area' => array(
+				'recent-comments'
+			),
+
+			'footer-column-2-widget-area' => array(
+				'recent-posts'
+			),
+
+			'footer-column-3-widget-area' => array(
+				'calendar'
+			),
+		),
+
+		'posts' => array(
+			'home',
+			'blog',
+			'about',
+			'contact'
+		),
+
+		// Create the custom image attachments used as slides
+		'attachments' => array(
+			'image-slide-1' => array(
+				'post_title' => _x( 'Slider Image 1', 'Theme starter content', 'fkidd' ),
+				'file' => 'images/slider/1.jpg', // URL relative to the template directory.
+			),
+			'image-slide-2' => array(
+				'post_title' => _x( 'Slider Image 2', 'Theme starter content', 'fkidd' ),
+				'file' => 'images/slider/2.jpg', // URL relative to the template directory.
+			),
+			'image-slide-3' => array(
+				'post_title' => _x( 'Slider Image 3', 'Theme starter content', 'fkidd' ),
+				'file' => 'images/slider/3.jpg', // URL relative to the template directory.
+			),
+		),
+
+		// Default to a static front page and assign the front and posts pages.
+		'options' => array(
+			'show_on_front' => 'page',
+			'page_on_front' => '{{home}}',
+			'page_for_posts' => '{{blog}}',
+		),
+
+		// Set the front page section theme mods to the IDs of the core-registered pages.
+		'theme_mods' => array(
+			'fkidd_slider_display' => 1,
+			'fkidd_slide1_image' => '{{image-slider-1}}',
+			'fkidd_slide1_content' => _x( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Theme starter content', 'fkidd' ),
+			'fkidd_slide2_image' => '{{image-slider-2}}',
+			'fkidd_slide2_content' => _x( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Theme starter content', 'fkidd' ),
+			'fkidd_slide3_image' => '{{image-slider-3}}',
+			'fkidd_slide3_content' => _x( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Theme starter content', 'fkidd' ),
+			'fkidd_social_facebook' => _x( '#', 'Theme starter content', 'fkidd' ),
+			'fkidd_social_google' => _x( '#', 'Theme starter content', 'fkidd' ),
+			'fkidd_social_twitter' => _x( '#', 'Theme starter content', 'fkidd' ),
+			'fkidd_social_linkedin' => _x( '#', 'Theme starter content', 'fkidd' ),
+			'fkidd_social_instagram' => _x( '#', 'Theme starter content', 'fkidd' ),
+			'fkidd_social_rss' => _x( '#', 'Theme starter content', 'fkidd' ),
+			'fkidd_social_tumblr' => _x( '#', 'Theme starter content', 'fkidd' ),
+			'fkidd_social_youtube' => _x( '#', 'Theme starter content', 'fkidd' ),
+			'fkidd_social_pinterest' => _x( '#', 'Theme starter content', 'fkidd' ),
+			'fkidd_social_vk' => _x( '#', 'Theme starter content', 'fkidd' ),
+			'fkidd_social_flickr' => _x( '#', 'Theme starter content', 'fkidd' ),
+			'fkidd_social_vine' => _x( '#', 'Theme starter content', 'fkidd' ),
+			'fkidd_header_phone' => _x( 'info@example.com', 'Theme starter content', 'fkidd' ),
+			'fkidd_header_email' => _x( '1.555.555.555', 'Theme starter content', 'fkidd' ),
+		),
+
+		'nav_menus' => array(
+			// Assign a menu to the "primary" location.
+			'primary' => array(
+				'name' => __( 'Primary Menu', 'fkidd' ),
+				'items' => array(
+					'link_home',
+					'page_blog',
+					'page_contact',
+					'page_about',
+				),
+			),
+
+			// Assign a menu to the "footer" location.
+			'footer' => array(
+				'name' => __( 'Footer Menu', 'fkidd' ),
+				'items' => array(
+					'link_home',
+					'page_about',
+					'page_blog',
+					'page_contact',
+				),
+			),
+		),
+	);
+
+	$starter_content = apply_filters( 'fkidd_starter_content', $starter_content );
+	add_theme_support( 'starter-content', $starter_content );
 }
 endif; // fkidd_setup
 add_action( 'after_setup_theme', 'fkidd_setup' );
@@ -443,17 +566,6 @@ function fkidd_widgets_init() {
 						'after_title'	 =>  '</h3><div class="sidebar-after-title"></div>',
 					) );
 
-	// Register Footer Column #1
-	register_sidebar( array (
-							'name'			 =>  __( 'Footer Column #1', 'fkidd' ),
-							'id' 			 =>  'footer-column-1-widget-area',
-							'description'	 =>  __( 'The Footer Column #1 widget area', 'fkidd' ),
-							'before_widget'  =>  '',
-							'after_widget'	 =>  '',
-							'before_title'	 =>  '<h2 class="footer-title">',
-							'after_title'	 =>  '</h2><div class="footer-after-title"></div>',
-						) );
-
 	// Add Homepage Widget areas
 	register_sidebar( array (
 							'name'			 =>  __( 'Homepage Column #1', 'fkidd' ),
@@ -494,6 +606,17 @@ function fkidd_widgets_init() {
 						'before_title'	 =>  '<h2 class="sidebar-title">',
 						'after_title'	 =>  '</h2><div class="sidebar-after-title"></div>',
 					) );
+
+	// Register Footer Column #1
+	register_sidebar( array (
+							'name'			 =>  __( 'Footer Column #1', 'fkidd' ),
+							'id' 			 =>  'footer-column-1-widget-area',
+							'description'	 =>  __( 'The Footer Column #1 widget area', 'fkidd' ),
+							'before_widget'  =>  '',
+							'after_widget'	 =>  '',
+							'before_title'	 =>  '<h2 class="footer-title">',
+							'after_title'	 =>  '</h2><div class="footer-after-title"></div>',
+						) );
 	
 	// Register Footer Column #2
 	register_sidebar( array (
