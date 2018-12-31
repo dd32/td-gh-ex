@@ -11,7 +11,7 @@ get_header(); ?>
 	<div class="archive_wrapper">
 		<div class="row">
 			<div class="col-xs-12 research">
-				<h3 class="the_research_title"><?php esc_attr_e( 'Not what you\'re looking for? Try again:', 'agncy' ); ?></h3>
+				<h3 class="the_research_title"><?php esc_html_e( 'Not what you\'re looking for? Try again:', 'agncy' ); ?></h3>
 				<div class="the_searchform">
 					<?php get_search_form( true ); ?>
 				</div>

@@ -8,11 +8,12 @@
 // Assamble the array for the contact header.
 $contact_information = array();
 if ( get_theme_mod( 'contact_phone' ) ) {
-	$contact_information[] = '<a href="tel:' . esc_attr( get_theme_mod( 'contact_phone' ) ) . '"><i class="fa fa-phone"></i> ' . get_theme_mod( 'contact_phone' ) . '</a>';
+	$contact_information[] = '<a href="tel:' . esc_attr( get_theme_mod( 'contact_phone' ) ) . '"><i class="fa fa-phone"></i> ' . esc_html( get_theme_mod( 'contact_phone' ) ) . '</a>';
 }
 
 if ( get_theme_mod( 'contact_mail' ) ) {
-	$contact_information[] = '<a href="mailto:' . esc_attr( get_theme_mod( 'contact_mail' ) ) . '"><i class="fa fa-envelope"></i> ' . get_theme_mod( 'contact_mail' ) . '</a>';
+	$email                 = sanitize_email( get_theme_mod( 'contact_mail' ) );
+	$contact_information[] = '<a href="mailto:' . antispambot( $email, 1 ) . '"><i class="fa fa-envelope"></i> ' . antispambot( $email ) . '</a>';
 }
 
 if ( get_theme_mod( 'contact_fb' ) ) {

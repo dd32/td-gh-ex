@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, grid-layout, custom-colors, custom
 Requires at least: 4.8
 Tested up to: 4.9
 Requires PHP: 5.6
-Stable tag: 1.4.1
+Stable tag: 1.4.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +13,7 @@ Agncy is a beautiful news and blogging theme that has beautiful typography, powe
 
 == Description ==
 
-Agncy is a beautiful news and blogging theme that has beautiful typography, powerful color customisation and an elegant, light layout. Customise your theme to the colours you need and upload your own logo. Enjoy reading even long texts with the beautiful font "Fira" and experience how fast font loading can be with an innovative font loading technique.
+Agncy is a beautiful news and blogging theme that has beautiful typography, powerful color customisation and an elegant, light layout. Customise your theme to the colours you need and upload your own logo. Enjoy reading even long texts with the beautiful font 'Fira' and experience how fast font loading can be with an innovative font loading technique.
 
 == Installation ==
 
@@ -23,6 +23,10 @@ Agncy is a beautiful news and blogging theme that has beautiful typography, powe
 4. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Changelog ==
+
+= 1.4.2 =
+* Fixed license declaration
+* Fixed wrong or missing escaping
 
 = 1.4.1 =
 * Minor escaping issue
@@ -89,14 +93,19 @@ Agncy is a beautiful news and blogging theme that has beautiful typography, powe
 * Slick Slider, MIT, https://github.com/kenwheeler/slick/
 * lodash, MIT, https://github.com/lodash/lodash
 
-== Images ==
+== Copyright ==
 
-* Theme Screenshot, https://pixabay.com/de/stühle-konferenzraum-zeitgenössische-2181980/, CC0
-* Theme Screenshot, https://pixabay.com/de/laptop-computer-technologie-monitor-3190194/, CC0
-* Theme Screenshot, https://pixabay.com/de/computer-laptop-technologie-büro-3368242/, CC0
-* Theme Screenshot, https://pixabay.com/de/büro-arbeit-schreibtisch-computer-932926/, CC0
-* color-schemes.jpg, https://pixabay.com/de/abstrakt-kunst-hintergrund-farbe-2468874/, CC0
-* more-color-schemes.jpg, https://pixabay.com/de/wasserperlen-farbstifte-unterwasser-2137080/, CC0
-* custom-colors.jpg, https://pixabay.com/de/kunst-farbe-wasser-farben-1209519/, CC0
+Agncy WordPress Theme, Copyright 2018 wpmunich
+Agncy is distributed under the terms of the GNU GPL
+
+=== Images ===
+
+* Theme Screenshot, https://pixabay.com/de/stühle-konferenzraum-zeitgenössische-2181980/, License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
+* Theme Screenshot, https://pixabay.com/de/laptop-computer-technologie-monitor-3190194/, License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
+* Theme Screenshot, https://pixabay.com/de/computer-laptop-technologie-büro-3368242/, License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
+* Theme Screenshot, https://pixabay.com/de/büro-arbeit-schreibtisch-computer-932926/, License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
+* color-schemes.jpg, https://pixabay.com/de/abstrakt-kunst-hintergrund-farbe-2468874/, License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
+* more-color-schemes.jpg, https://pixabay.com/de/wasserperlen-farbstifte-unterwasser-2137080/, License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
+* custom-colors.jpg, https://pixabay.com/de/kunst-farbe-wasser-farben-1209519/, License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
 * footer-text.jpg, self made
 * gutenberg.jpg, https://commons.wikimedia.org/wiki/File:Gutenberg.jpg, Public Domain

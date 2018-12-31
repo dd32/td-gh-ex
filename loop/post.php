@@ -36,7 +36,7 @@ if ( is_archive() || is_home() ) {
 		?>
 		<div class="the_thumbnail clearfix">
 			<a href="<?php the_permalink(); ?>">
-				<?php the_post_thumbnail( 'sixteen_nine_medium', $tn_attr ); ?>
+				<?php the_post_thumbnail( 'agncy_sixteen_nine_medium', esc_attr( $tn_attr ) ); ?>
 			</a>
 		</div>
 		<?php

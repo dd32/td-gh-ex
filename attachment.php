@@ -18,7 +18,7 @@ get_header();
 				if ( empty( $att_img ) ) {
 					$icon     = wp_get_attachment_image_src( get_the_ID(), null, true );
 					$icon_url = $icon[0];
-					$att_img  = '<img src="' . $icon_url . '">';
+					$att_img  = '<img src="' . esc_url( $icon_url ) . '">';
 				}
 
 				echo '<p>' . wp_kses_post( $att_img ) . '</p>';

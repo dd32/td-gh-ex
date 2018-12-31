@@ -44,11 +44,11 @@ if ( is_active_sidebar( $sidebar ) ) :
 	<div class="col-xs-12 col-md-4 sidebar-wrapper">
 		<ul id="singular_sidebar" class="<?php echo esc_attr( $sbc ); ?>">
 			<li class="widget widget_search">
-				<h2 class="widgettitle"><?php esc_attr_e( 'Search', 'agncy' ); ?></h2>
+				<h2 class="widgettitle"><?php esc_html_e( 'Search', 'agncy' ); ?></h2>
 				<?php get_search_form(); ?>
 			</li>
 			<li class="widget widget_recent_entries">
-				<h2 class="widgettitle"><?php esc_attr_e( 'Recent Posts', 'agncy' ); ?></h2>
+				<h2 class="widgettitle"><?php esc_html_e( 'Recent Posts', 'agncy' ); ?></h2>
 				<?php
 				$args = array(
 					'post_type'           => 'post',
@@ -75,7 +75,7 @@ if ( is_active_sidebar( $sidebar ) ) :
 				?>
 			</li>
 			<li class="widget widget_archive">
-				<h2 class="widgettitle"><?php esc_attr_e( 'Archive', 'agncy' ); ?></h2>
+				<h2 class="widgettitle"><?php esc_html_e( 'Archive', 'agncy' ); ?></h2>
 				<ul>
 					<?php
 					wp_get_archives(
@@ -91,7 +91,7 @@ if ( is_active_sidebar( $sidebar ) ) :
 				</ul>
 			</li>
 			<li id="meta-4" class="widget widget_meta">
-				<h2 class="widgettitle"><?php esc_attr_e( 'Meta', 'agncy' ); ?></h2>
+				<h2 class="widgettitle"><?php esc_html_e( 'Meta', 'agncy' ); ?></h2>
 				<ul>
 					<?php wp_register(); ?>
 					<li>

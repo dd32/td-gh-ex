@@ -23,7 +23,7 @@ else :
 	<div class="no-posts the_content">
 		<h2>
 			<?php
-				esc_attr_e( 'Sorry, but there are no posts here.', 'agncy' );
+				esc_html_e( 'Sorry, but there are no posts here.', 'agncy' );
 			?>
 		</h2>
 	</div>

@@ -18,7 +18,7 @@ if ( !defined( 'AGNCY_JS_URL' ) ) {
     define( 'AGNCY_JS_URL', esc_url( get_template_directory_uri() ) );
 }
 if ( !defined( 'AGNCY_VERSION' ) ) {
-    define( 'AGNCY_VERSION', '1.4.1' );
+    define( 'AGNCY_VERSION', '1.4.2' );
 }
 if ( !defined( 'AGNCY_DEFAULT_PRIMARY' ) ) {
     define( 'AGNCY_DEFAULT_PRIMARY', '#225378' );
@@ -102,7 +102,7 @@ function agncy_enqueue_scripts()
         'style',
         AGNCY_THEME_URL . '/style.min.css',
         array( 'font-awesome' ),
-        '1.4.1',
+        '1.4.2',
         'all'
     );
     /*
@@ -115,7 +115,7 @@ function agncy_enqueue_scripts()
         'main',
         AGNCY_JS_URL . '/js/script.min.js',
         array( 'jquery' ),
-        '1.4.1',
+        '1.4.2',
         true
     );
     wp_enqueue_script( 'main' );
@@ -134,7 +134,7 @@ function agncy_enqueue_scripts()
     wp_register_script(
         'agncy_font',
         AGNCY_JS_URL . '/js/fonts.min.js',
-        '1.4.1',
+        '1.4.2',
         false
     );
     wp_enqueue_script( 'agncy_font' );
@@ -175,7 +175,7 @@ function agncy_admin_scripts()
             'wp-date',
             'wp-edit-post'
         ),
-            '1.4.1',
+            '1.4.2',
             true
         );
         wp_enqueue_script( 'admin' );
@@ -237,35 +237,35 @@ function agncy_theme_image()
     $base_y = 9;
     // 512 * 288
     add_image_size(
-        'sixteen_nine_extra_small',
+        'agncy_sixteen_nine_extra_small',
         $base_x * 24,
         $base_y * 24,
         true
     );
     // 768 * 432 // Corrected to 970 * 545
     add_image_size(
-        'sixteen_nine_small',
+        'agncy_sixteen_nine_small',
         970,
         546,
         true
     );
     // "HD-Ready" / "Half"-Full HD - 1280 * 720 // Corrected to 1170 * 658
     add_image_size(
-        'sixteen_nine_medium',
+        'agncy_sixteen_nine_medium',
         1170,
         658,
         true
     );
     // Full HD - 1920 * 1080.
     add_image_size(
-        'sixteen_nine_large',
+        'agncy_sixteen_nine_large',
         $base_x * 120,
         $base_y * 120,
         true
     );
     // 2560 * 1440
     add_image_size(
-        'sixteen_nine_extra_large',
+        'agncy_sixteen_nine_extra_large',
         $base_x * 160,
         $base_y * 160,
         true
@@ -624,7 +624,7 @@ function agncy_register_required_plugins()
      * If the source is NOT from the .org repo, then source is also required.
      */
     $plugins = array( array(
-        'name'        => esc_attr__( 'WP Munich Blocks', 'agncy' ),
+        'name'        => esc_html__( 'WP Munich Blocks', 'agncy' ),
         'slug'        => 'wp-munich-blocks',
         'is_callable' => 'activate_wpm_blocks',
     ) );

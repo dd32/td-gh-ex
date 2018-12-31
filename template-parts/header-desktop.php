@@ -5,13 +5,13 @@
  * @package agncy
  */
 
-	$header_alignment  = get_theme_mod( 'agncy_header_menu_alignment', 'container' );
-	$header_layout     = get_theme_mod( 'agncy_header_layout', 'side-by-side' );
-	$header_logo_pos   = get_theme_mod( 'agncy_header_logo_position', 'left' );
-	$header_menu_pos   = get_theme_mod( 'agncy_header_menu_position', 'left' );
-	$header_font_theme = get_theme_mod( 'agncy_header_theme', 'dark' );
-	$header_background = get_theme_mod( 'agncy_header_background', 'default' );
-	$header_color      = get_theme_mod( 'agncy_header_color', '#ffffff' );
+	$header_alignment  = esc_attr( get_theme_mod( 'agncy_header_menu_alignment', 'container' ) );
+	$header_layout     = esc_attr( get_theme_mod( 'agncy_header_layout', 'side-by-side' ) );
+	$header_logo_pos   = esc_attr( get_theme_mod( 'agncy_header_logo_position', 'left' ) );
+	$header_menu_pos   = esc_attr( get_theme_mod( 'agncy_header_menu_position', 'left' ) );
+	$header_font_theme = esc_attr( get_theme_mod( 'agncy_header_theme', 'dark' ) );
+	$header_background = esc_attr( get_theme_mod( 'agncy_header_background', 'default' ) );
+	$header_color      = esc_attr( get_theme_mod( 'agncy_header_color', '#ffffff' ) );
 
 	$header_classes = array(
 		'desktop-header',

@@ -15,7 +15,7 @@ $header_style_tag = null;
 $header_styles    = array();
 
 if ( $image_404 ) {
-	$header_styles[] = 'background-image:url(' . $image_404 . ');';
+	$header_styles[] = 'background-image:url(' . esc_url( $image_404 ) . ');';
 }
 
 if ( count( $header_styles ) > 0 ) {
@@ -43,11 +43,11 @@ if ( count( $header_styles ) > 0 ) {
 <div class="container content_404">
 	<div class="row">
 		<div class="col-xs-12 col-md-8 col-md-offset-2">
-			<h2 class="the_title color-primary"><?php echo esc_attr( $title_404 ); ?></h2>
+			<h2 class="the_title color-primary"><?php echo esc_html( $title_404 ); ?></h2>
 			<div class="the_content">
 				<?php
 				if ( $text_404 ) {
-					echo esc_attr( $text_404 );
+					echo esc_html( $text_404 );
 				}
 				?>
 			</div>
