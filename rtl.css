@@ -797,11 +797,11 @@ a:active {
 Social menu
 ---------------*/
 @font-face {
-  font-family: 'FontAwesome';
-  src: url('fonts/fontawesome-webfont.eot?v=4.5.0');
-  src: url('fonts/fontawesome-webfont.eot?#iefix&v=4.5.0') format('embedded-opentype'), url('fonts/fontawesome-webfont.woff2?v=4.5.0') format('woff2'), url('fonts/fontawesome-webfont.woff?v=4.5.0') format('woff'), url('fonts/fontawesome-webfont.ttf?v=4.5.0') format('truetype'), url('fonts/fontawesome-webfont.svg?v=4.5.0#fontawesomeregular') format('svg');
-  font-weight: normal;
+  font-family: 'Font Awesome 5 Free';
   font-style: normal;
+  font-weight: 400;
+  src: url("fonts/fa-regular-400.eot");
+  src: url("fonts/fa-regular-400.eot?#iefix") format("embedded-opentype"), url("fonts/fa-regular-400.woff2") format("woff2"), url("fonts/fa-regular-400.woff") format("woff"), url("fonts/fa-regular-400.ttf") format("truetype"), url("fonts/fa-regular-400.svg#fontawesome") format("svg");
 }
 
 .social-menu li a:before {
@@ -847,21 +847,27 @@ Social menu
 	border: 1px solid #999;
 }
 
+.social-menu li a[href]::before {content: "\f0c1"; }
 .social-menu li a[href*="dribbble.com"]::before { content: '\f17d'; }
+.social-menu li a[href*="dropbox.com"]::before { content: '\f16b'; }
 .social-menu li a[href*="facebook.com"]::before { content: '\f09a'; }
 .social-menu li a[href*="flickr.com"]::before { content: '\f16e'; }
 .social-menu li a[href*="foursquare.com"]::before { content: '\f180'; }
 .social-menu li a[href*="github.com"]::before { content: '\f09b'; }
 .social-menu li a[href*="plus.google.com"]::before { content: '\f0d5'; }
+.social-menu li a[href*="goodreads.com"]::before { content: '\f3a8'; }
 .social-menu li a[href*="instagram.com"]::before { content: '\f16d'; }
 .social-menu li a[href*="jsfiddle.com"]::before { content: '\f1cc'; }
 .social-menu li a[href*="linkedin.com"]::before { content: '\f0e1'; }
+.social-menu li a[href*="meetup.com"]::before { content: '\f2e0'; }
 .social-menu li a[href*="pinterest.com"]::before { content: '\f0d2'; }
 .social-menu li a[href*="reddit.com"]::before { content: '\f1a1'; }
 .social-menu li a[href*="soundcloud.com"]::before { content: '\f1be'; }
 .social-menu li a[href*="stackoverflow.com"]::before { content: '\f16c'; }
 .social-menu li a[href*="tumblr.com"]::before { content: '\f173'; }
 .social-menu li a[href*="twitter.com"]::before { content: '\f099'; }
+.social-menu li a[href*="twitch.com"]::before { content: '\f1e8'; }
+.social-menu li a[href*="twitch.com"]::before { content: '\f1e8'; }
 .social-menu li a[href*="vimeo.com"]::before { content: '\f194'; }
 .social-menu li a[href*="vine.co"]::before { content: '\f1ca'; }
 .social-menu li a[href*="yelp.com"]::before { content: '\f1e9'; }
@@ -874,16 +880,20 @@ Social menu
 .social-menu li a[href*="lastfm.com"]::before { content: "\f202"; }
 .social-menu li a[href*="behance.net"]::before { content: "\f1b4"; }
 .social-menu li a[href*="deviantart.com"]::before { content: "\f1bd"; }
+.social-menu li a[href*="slideshare.com"]::before { content: "\f1e7"; }
+.social-menu li a[href*="snapchat.com"]::before { content: "\f2ad"; }
 .social-menu li a[href*="spotify.com"]::before { content: "\f1bc"; }
 .social-menu li a[href*="skype.com"]::before { content: "\f17e"; }
 .social-menu li a[href*="slack.com"]::before { content: "\f198"; }
 .social-menu li a[href*="amazon.com"]::before { content: "\f270";}
 .social-menu li a[href*="steampowered.com"]::before { content: "\f1b6";}
 .social-menu li a[href*="steamcommunity.com"]::before { content: "\f1b6";}
+.social-menu li a[href*="vk.com"]::before { content: "\f189";}
 .social-menu li a[href*="xing.com"]::before { content: "\f168";}
 .social-menu li a[href*="medium.com"]::before { content: "\f23a";}
 .social-menu li a[href*="qq.com"]::before { content: "\f1d6";}
 .social-menu li a[href*="codepen.io"]::before { content: "\f1cb";}
+.social-menu li a[href*="500px.com"]::before { content: "\f26e";}
 
 .social-menu .customize-partial-edit-shortcut-button {
 	margin-top: -20px;

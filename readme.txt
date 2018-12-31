@@ -28,6 +28,13 @@ Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
 
+Version 3.8, 2018-12-31
+Updated documentation.
+Fixed a problem with the social menu. Now if there is no social media icon available for the link that
+has been added, a link symbol will be used instead.
+Updated Font Awesome to version 5.6.3. 
+Added more social media icons to the list.
+
 Version 3.7, 2018-12-09
 Added an option to open the highlight links in a new tab.
 

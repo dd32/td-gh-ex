@@ -29,7 +29,7 @@
 				'fallback_cb'    => false,
 				'depth'          => 1,
 				'link_before'    => '<span class="screen-reader-text">',
-				'link_after'     => '</span>',
+				'link_after'     => '</span><i class="fas fa-link"></i>',
 			)
 		);
 		?>
