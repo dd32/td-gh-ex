@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
-include_once BATOURSLIGHT_DIR . '/includes/class-tgm-plugin-activation.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+include_once BATOURSLIGHT_DIR . '/includes/class-tgm-plugin-activation.php';
 
 add_action( 'tgmpa_register', 'batourslight_register_required_plugins', 10, 1 );
 	/**

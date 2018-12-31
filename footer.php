@@ -68,7 +68,7 @@
 
 </div><!-- #page -->
 
-<!-- WordPress footer -->
+<!-- Wordpress footer -->
 <?php wp_footer(); ?>
 
 </body>

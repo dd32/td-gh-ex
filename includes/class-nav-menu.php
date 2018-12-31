@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Nav menu walker.
  *
  */
-class batourslight_Nav_Menu extends Walker_Nav_Menu {
+class BAT_Nav_Menu extends Walker_Nav_Menu {
 	
 	//////////////////////////////////////////////////
 	public static function init() {
@@ -368,5 +368,5 @@ class batourslight_Nav_Menu extends Walker_Nav_Menu {
 /**
  * Call to setup class.
  */
-batourslight_Nav_Menu::init();
+BAT_Nav_Menu::init();
 

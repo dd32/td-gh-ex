@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Individual page template options handeling.
  *
  */
-class batourslight_Page_Options {
+class BAT_Page_Options {
 
 	//////////////////////////////////////////////////
 	/**
@@ -59,7 +59,7 @@ class batourslight_Page_Options {
 	 */
 	static function init_options() {
 	   
-       $options = batourslight_Settings::$layouts;
+       $options = BAT_Settings::$layouts;
        $options[0] = __( 'Theme default', 'ba-tours-light' );
 		
 		// Options set.
@@ -281,16 +281,15 @@ class batourslight_Page_Options {
         
         if (
 			( ! current_user_can( 'edit_post', $post_id ) ) ||
-			( empty( $_POST[ $nonce_id ] ) ) || // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-			( ! wp_verify_nonce( wp_unslash($_POST[ $nonce_id ]), $nonce_action ) ) || // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+			( empty( $_POST[ $nonce_id ] ) ) ||
+			( ! wp_verify_nonce( wp_unslash($_POST[ $nonce_id ]), $nonce_action ) ) ||
 			( empty( $_POST[ $settings_id ] ) )
 		) {
 			
 			return;
 		}
 		
-        //// will be sanitized below
-		$settings = wp_unslash( $_POST[ $settings_id ] ); // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+		$settings = wp_unslash( $_POST[ $settings_id ] );
 		
 		$options_set = self::$data['options_set'];
 
@@ -332,5 +331,5 @@ class batourslight_Page_Options {
 /**
  * Calling to setup class.
  */
-batourslight_Page_Options::init();
+BAT_Page_Options::init();
 

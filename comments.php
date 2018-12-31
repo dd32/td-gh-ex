@@ -32,10 +32,9 @@ if ( post_password_required() ) {
 				
 			} else {
 				
-				printf(
-                    /* translators: 1: number of comments */
+				printf( // WPCS: XSS OK.
 					esc_html( _nx( '%1$s comment', '%1$s comments', $comment_count, 'multiple_comments_title', 'ba-tours-light' ) ),
-					esc_html( number_format_i18n( $comment_count ) )
+					number_format_i18n( $comment_count )
 				);
 			}
 			?>

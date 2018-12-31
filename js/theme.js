@@ -5,31 +5,37 @@ jQuery(document).ready(function($){
     
     $('p:empty').remove();
     
-    //////////////////////////
-    ////////Slick Carousel////////////
+    /////////Search form//////
     
-    var_autoplay = typeof slick_var_autoplay !== 'undefined' ? slick_var_autoplay : false;
-    var_autoplaySpeed = typeof slick_var_autoplaySpeed !== 'undefined' ? slick_var_autoplaySpeed : '3000';
+    $('.add_input_field .add_ids_title').on('click', function(event){
+        event.preventDefault();
+        search_add_input_toggle(this);
+    });
     
-							$('.slick_carousel').slick({
-								infinite: true,
-								arrows: true,
-                                autoplay: var_autoplay,
-                                autoplaySpeed: var_autoplaySpeed,
-								nextArrow: '<span class="slick-arrow slick-arrow-right"></span>',
-								prevArrow: '<span class="slick-arrow slick-arrow-left"></span>',
-								dots: false,
-								slidesToShow: 2,
-								slidesToScroll: 1,
-                                responsive: [
-								{
-									breakpoint: 1199,
-									settings: {
-										slidesToShow: 1
-									}
-								}
-							]
-							});
+    $('.add_input_field .add_ids_list .term_item').on('click', function(event){
+        event.preventDefault();
+        var parent = $(this).parent();
+        search_add_input_toggle(parent);
+        var selected = $(this).data('id');
+        $(parent).parent().find('input[name="add_ids_'+$(parent).parent().data('tax')+'"]').val(selected);
+        $(parent).find('.term_item').removeClass('term_item_selected');
+        $(this).addClass('term_item_selected');
+        $(parent).parent().find('.add_ids_title_value').html($(this).html());
+    });
+    
+    function search_add_input_toggle(item){
+        $(item).parent().find('.add_ids_list').toggleClass('active');
+        $(item).parent().find('.add_ids_title i').toggleClass('fa-chevron-down');
+        $(item).parent().find('.add_ids_title i').toggleClass('fa-chevron-up');
+    }
+    
+    //////////Map/////////
+    
+    $('#myModal').on('shown.bs.modal', function (e) {
+        
+        
+        
+    })
     
     ///////Smooth scrolling
     

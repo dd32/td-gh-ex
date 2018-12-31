@@ -34,12 +34,12 @@
 
 		elseif ( is_search() ) :
 			
-			echo '<p>' . esc_html__( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'ba-tours-light' ) . '</p>';
+			echo '<p>' . esc_html_e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'ba-tours-light' ) . '</p>';
 			get_search_form();
 			
 		else :
 
-			echo '<p>' . esc_html__( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ba-tours-light' ) . '</p>';
+			echo '<p>' . esc_html_e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'ba-tours-light' ) . '</p>';
 			get_search_form();
 			
 		endif;

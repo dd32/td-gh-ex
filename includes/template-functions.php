@@ -23,7 +23,45 @@ if ( ! function_exists( 'batourslight_update_layout' ) ) {
             $custom_layout = apply_filters( 'batourslight_page_option', '', 'layout' );
             
             if (!$custom_layout){
-                batourslight_Settings::$layout_current = 'no-sidebars-wide';
+                BAT_Settings::$layout_current = 'no-sidebars-wide';
+            }
+            
+        }
+        
+        return;
+    }
+
+} 
+
+////////load panels/////////
+
+add_action( 'batourslight_get_panel', 'batourslight_get_panel', 10, 1 );
+
+if ( ! function_exists( 'batourslight_get_panel' ) ) {
+    /**
+     * Get sidebar for selected widget area
+     * 
+     * @param string $sidebar_name
+     * 
+     * @return
+     */
+    function batourslight_get_panel( $sidebar_name ) {
+        
+        if (isset(BAT_Settings::$sidebars[$sidebar_name]) && is_active_sidebar($sidebar_name)){
+            
+            $sidebar_width = isset(BAT_Settings::$layout_vars['width'][$sidebar_name]) ? BAT_Settings::$layout_vars['width'][$sidebar_name] : 12;
+            
+            if ($sidebar_width){
+                
+                $sidebar_width_class = $sidebar_name == 'footer-left' || $sidebar_name == 'footer-middle' || $sidebar_name == 'footer-right' ? 'col-md-'.$sidebar_width : 'col-lg-'.$sidebar_width;
+                
+                if ($sidebar_name == 'before-header' || $sidebar_name == 'header' || $sidebar_name == 'before-footer' || $sidebar_name == 'footer'){
+                    $sidebar_width_class = '';
+                }
+                
+                //// we use 'include' to make variables $sidebar_width_class and $sidebar_name accessable inside template
+                include( locate_template( 'template-parts/sidebar.php', false, false ) );
+                
             }
             
         }
@@ -74,11 +112,11 @@ if ( ! function_exists( 'batourslight_style_content' ) ) {
         
         if ($region == 'content'){
             
-           if (batourslight_Settings::$layout_current == 'frontpage' || batourslight_Settings::$layout_current == 'no-sidebars-wide') {
+           if (BAT_Settings::$layout_current == 'frontpage' || BAT_Settings::$layout_current == 'no-sidebars-wide') {
             $class = 'container-fluid';
             }
             
-            $class .= ' '.batourslight_Settings::$layout_current;
+            $class .= ' '.BAT_Settings::$layout_current;
             
         }
         
@@ -102,7 +140,7 @@ if ( ! function_exists( 'batourslight_column_width_content' ) ) {
      */
     function batourslight_column_width_content( $class, $region ) {
         
-        if ($region == 'content' && (batourslight_Settings::$layout_current == 'frontpage' || batourslight_Settings::$layout_current == 'no-sidebars-wide')){
+        if ($region == 'content' && (BAT_Settings::$layout_current == 'frontpage' || BAT_Settings::$layout_current == 'no-sidebars-wide')){
             
             $class = '';
             
@@ -265,45 +303,6 @@ if ( ! function_exists( 'batourslight_comment_callback' ) ) {
     }
 
 }
-
-////////load panels/////////
-
-add_action( 'batourslight_get_panel', 'batourslight_get_panel', 10, 1 );
-
-if ( ! function_exists( 'batourslight_get_panel' ) ) {
-    /**
-     * Get sidebar for selected widget area
-     * 
-     * @param string $sidebar_name
-     * 
-     * @return
-     */
-    function batourslight_get_panel( $sidebar_name ) {
-        
-        if (isset(batourslight_Settings::$sidebars[$sidebar_name]) && is_active_sidebar($sidebar_name)){
-            
-            $sidebar_width = isset(batourslight_Settings::$layout_vars['width'][$sidebar_name]) ? batourslight_Settings::$layout_vars['width'][$sidebar_name] : 12;
-            
-            if ($sidebar_width){
-                
-                $sidebar_width_class = $sidebar_name == 'footer-left' || $sidebar_name == 'footer-middle' || $sidebar_name == 'footer-right' ? 'col-md-'.$sidebar_width : 'col-lg-'.$sidebar_width;
-                
-                if ($sidebar_name == 'before-header' || $sidebar_name == 'header' || $sidebar_name == 'before-footer' || $sidebar_name == 'footer'){
-                    $sidebar_width_class = '';
-                }
-                
-                //// we use 'include' to make variables $sidebar_width_class and $sidebar_name accessable inside template
-                include( locate_template( 'template-parts/sidebar.php', false, false ) ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
-                
-            }
-            
-        }
-        
-        return;
-    }
-
-}
-
 //////////////////////////////////////////////////
 /**
  * BA Book Everything plugin is required.
@@ -366,7 +365,7 @@ if ( ! function_exists( 'batourslight_custom_menu_item' ) ) {
 			
             $output = apply_filters( 'batourslight_tour_entry_header', $output, $post_type);
             
-			echo wp_kses($output, batourslight_Settings::$wp_allowedposttags);
+			echo wp_kses_post($output);
 			
 			return;
 		}
@@ -482,10 +481,6 @@ if ( ! function_exists( 'batourslight_custom_menu_item' ) ) {
                                    ' . $discount . ' 
 								</div>
                                 ';
-
-            if ( method_exists('BABE_html', 'get_post_schema') ){
-                $tour_info .= BABE_html::get_post_schema($babe_post);
-            }
                                 
             $tour_info .= '<div class="tour_info_book_now">
                 <a class="btn btn-red" href="#booking_form_block">' . __( 'Book now', 'ba-tours-light' ) . '</a>
@@ -747,18 +742,14 @@ if ( ! function_exists( 'batourslight_custom_menu_item' ) ) {
 			';
 			
 			$output .= apply_filters( 'batourslight_tour_content_after_slideshow', '', $content, $post_id, $post );
-
-            if(!BABE_Settings::$settings['av_calendar_remove'] && $rules_cat['rules']['basic_booking_period'] != 'single_custom'){
-                $output .= '
-                <div class="front_top_block tour_page_steps">
-					<div class="front_top_bg_inner">
-						<h2 class="babe_post_content_title container">' . __( 'Calendar & Prices', 'ba-tours-light' ) . '</h2>
-						<div class="front_top_inner container">
-							' . BABE_html::block_calendar( $post ) . '
-						</div>
-					</div>
-				</div>';
-            }
+			
+            /*
+			$output .= '<h2 class="babe_post_content_title">' . __( 'Calendar & Prices', 'ba-tours-light' ) . '</h2>' . BABE_html::block_calendar( $post );
+            */
+            
+			/*
+			$output .= batourslight_button_mobile( __( 'Book now', 'ba-tours-light' ), '#widget-babe-booking-form' );
+			*/
             
 			$output .= apply_filters( 'babe_post_content_after_calendar', '', $content, $post_id, $post );
 			
@@ -870,7 +861,7 @@ if ( ! function_exists( 'batourslight_booking_form' ) ) {
             
             /////////date fields
             
-            $date_from = isset($_GET['date_from']) && $_GET['date_from'] ? wp_unslash($_GET['date_from']) : ''; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.MissingUnslash,WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
+            $date_from = isset($_GET['date_from']) && $_GET['date_from'] ? wp_unslash($_GET['date_from']) : '';
             
             $date_from = $date_from && BABE_Calendar_functions::isValidDate($date_from, BABE_Settings::$settings['date_format']) ? $date_from : '';
             
@@ -1248,80 +1239,166 @@ if ( ! function_exists( 'batourslight_booking_form' ) ) {
      }
      
     //////////////////////////////////////////////////
-    
-    add_action( 'batourslight_get_panel', 'batourslight_search_form', 10, 1);
-    
-    if ( ! function_exists( 'batourslight_search_form' ) ) {
-    
-    /**
-	 * Output search form html.
-     * 
-     * @param string $region
-     * 
-     * @return
-	 */
-     function batourslight_search_form( $region ){
-   
-        $output = '';
-      
-        if ( $region == 'header' && class_exists( 'BABE_Search_From' )){
-      
-          $output .= BABE_Search_From::render_form('', array(
-            'wrapper_class' => 'main-background',
-          ));
-          
-          echo wp_kses($output, batourslight_Settings::$wp_allowedposttags);
-        
-        }
-        
-        return; 
-   
-      }    
-	
-    }
-    
-    //////////////////////////////////////////////////
-    
-    add_filter('babe_search_form_submit_title', 'batourslight_search_form_submit_title', 10, 1);
-    
-    if ( ! function_exists( 'batourslight_search_form_submit_title' ) ) {
+    add_filter( 'babe_search_form_html', 'batourslight_search_form', 10, 3 );
+
+	if ( ! function_exists( 'batourslight_search_form' ) ) {
     
     /**
-	 * Filters search form button title.
+	 * Customize search form html.
      * 
+     * @param string $content
+     * @param string $hidden_fields
      * @param string $title
      * 
-     * @return
-	 */
-     function batourslight_search_form_submit_title( $title ){
-   
-        return ''; 
-   
-      }    
-	
-    }
-    
-    //////////////////////////////////////////////////
-    
-    add_filter('batours_shortcode_top_tours_items_html', 'batourslight_shortcode_top_tours_items_html', 10, 2);
-    
-    if ( ! function_exists( 'batourslight_shortcode_top_tours_items_html' ) ) {
-    
-    /**
-	 * Output top tours
-     * 
-     * @param string $html
-     * @param array $post_args
-     *  
      * @return string
 	 */
-     function batourslight_shortcode_top_tours_items_html( $html, $post_args ){
+     function batourslight_search_form($content, $hidden_fields, $title){
    
-        return batourslight_top_tours( $post_args ); 
+      $output = '';
+      
+      $date_from = isset($_GET['date_from']) && $_GET['date_from'] ? wp_unslash($_GET['date_from']) : '';
+      $date_to = isset($_GET['date_to']) && $_GET['date_to'] ? wp_unslash($_GET['date_to']) : '';
+   
+      $action = isset($_GET['same_page']) ? '' : BABE_Settings::get_search_result_page_url();
+   
+      //// place search form code here
+      $output .= '
+      <div id="search-box" class="main-background">						
+        <div class="container">
+          <form name="search_form" action="'.$action.'" method="get" id="search_form">
+			<div class="input-group">
+					'.apply_filters('babe_search_form_before_date_fields', '').'
+                    
+					<div class="search-date">
+                        <i class="fas fa-calendar"></i>
+						<input type="text" class="search_date" id="date_from" name="date_from" value="'.$date_from.'" placeholder="'.apply_filters('babe_search_form_date_from_title', __( 'from', 'ba-tours-light' )).'">
+					</div>
+                    
+                    <div class="search-date">
+                        <i class="fas fa-calendar"></i>
+						<input type="text" class="search_date" id="date_to" name="date_to" value="'.$date_to.'" placeholder="'.apply_filters('babe_search_form_date_to_title', __( 'to', 'ba-tours-light' )).'">
+					</div>
+                    
+                    '.apply_filters('babe_search_form_after_date_fields', '').'
+                    
+                    <div class="submit">
+					  <button name="submit" class="btn btn-search main-background" value="1"><i class="fas fa-search"></i></button>
+				    </div>
+				</div>
+                
+                '.apply_filters('babe_search_form_before_hidden_fields', '').'
+                
+                '.$hidden_fields.'   
+		    </form>
+          </div>
+		</div>';
+                    
+          return $output; 
    
       }    
 	
     }
+	//////////////////////////////////////////////////
+	add_filter( 'babe_search_form_before_date_fields', 'batourslight_search_form_add_input' );
+
+	if ( ! function_exists( 'batourslight_search_form_add_input' ) ) {
+		
+		//////////////////////////////////////////////////
+		/**
+		 * Adds input field to the search form.
+		 * 
+		 * @param string $content
+		 * 
+		 * @return string
+		 */
+		function batourslight_search_form_add_input( $content ) {
+			
+			global $post;
+			
+			
+			$add_input_field = apply_filters( 'batourslight_option', '', 'search_form_add_input_field' );
+			
+			if ( $add_input_field ) {
+			
+				$selected = isset( $_GET['add_ids_'.$add_input_field]) ? intval( $_GET['add_ids_'.$add_input_field] ) : 0;
+				
+				$taxonomy = get_taxonomy( $add_input_field );
+				
+				if ( ! empty( $taxonomy ) ) {
+				    
+                  $selected_term_name = $taxonomy->labels->all_items;
+                  $selected_value = '';
+                  
+                  if ($selected){
+                    
+                     $selected_term = get_term_by('id', $selected, $add_input_field);
+                     if (!empty($selected_term) && !is_wp_error($selected_term)){
+                         $selected_term_name = $selected_term->name;
+                         $selected_value = $selected;
+                     }
+                    
+                  }
+                  
+                  $args = array(
+                     'taxonomy' => $add_input_field,
+                     'parent_term_id' => 0,
+                     'view' => 'list', // 'select', 'multicheck' or 'list'
+                     'add_count' => '',
+                     'option_all' => 1,
+                     'option_all_value' => 0,
+                     'option_all_title' => $taxonomy->labels->all_items,
+                     'id' => 'add_ids_list_'.$add_input_field,
+                     'class' => 'add_ids_list',
+                     'class_item' => 'term_item',
+                     'class_item_selected' => 'term_item_selected',
+                     'name' => '',
+                     'prefix_char' => ' ',
+                     'term_id_name' => 'term_id',
+                  );
+				
+					$content .= '
+						<div class="add_input_field" data-tax="'.$add_input_field.'">
+							<div class="add_ids_title"><div class="add_ids_title_value">' . $selected_term_name . '</div><i class="fas fa-chevron-down"></i></div>
+                            ' . BABE_Post_types::get_terms_children_hierarchy( $args, array($selected) ) . '
+                            <input type="hidden" name="add_ids_'.$add_input_field.'" value="'.$selected.'">	
+						</div>
+					';
+				}
+			}
+			
+			
+			return $content;
+		}
+	}	
+	
+	//////////////////////////////////////////////////
+	add_filter( 'babe_search_result_args', 'batourslight_search_result_args', 10 );
+
+	if ( ! function_exists( 'batourslight_search_result_args' ) ) {
+		
+		//////////////////////////////////////////////////
+		/**
+		 * Geta extra arg from the search form.
+		 * 
+		 * @param string $content
+		 * 
+		 * @return string
+		 */
+		function batourslight_search_result_args( $args ) {
+		  
+            $add_input_field = apply_filters( 'batourslight_option', '', 'search_form_add_input_field' );
+            
+            $selected = isset( $_GET['add_ids_'.$add_input_field] ) && intval($_GET['add_ids_'.$add_input_field]) ? intval($_GET['add_ids_'.$add_input_field]) : '';
+			
+			$selected_arr = $selected ? (array)$selected : array();
+			
+			$selected_arr = array_map( 'intval', $selected_arr );
+			
+			$args['terms'] = $args['terms'] + $selected_arr;
+			
+			return $args;
+		}
+	}
     
     //////////////////////////////////////////////////
 	if ( ! function_exists( 'batourslight_top_tours' ) ) {
@@ -1349,7 +1426,7 @@ if ( ! function_exists( 'batourslight_booking_form' ) ) {
             
             $posts = BABE_Post_types::get_posts( $args );
 			
-			$thumbnail = 'batours_thumbnail';
+			$thumbnail = 'batourslight_thumbnail';
 			
 			$excerpt_length = 19;
 			
@@ -1384,13 +1461,13 @@ if ( ! function_exists( 'batourslight_booking_form' ) ) {
 		     
              $output = '';
              
-             $image_html = wp_get_attachment_image( get_post_thumbnail_id( $post['ID'] ), $thumbnail );
+             $image_srcs = wp_get_attachment_image_src( get_post_thumbnail_id( $post['ID'] ), $thumbnail );
 				
 				$placeholder_url = apply_filters( 'batourslight_image_url', null, 'placeholder_img.png' );
                 
                 $item_url = BABE_Functions::get_page_url_with_args($post['ID'], $_GET);
 				
-				$image = $image_html ? '<a href="' . $item_url . '">' . $image_html . '</a>' : '<a href="' . $item_url . '"><img src="' . $placeholder_url . '"></a>';
+				$image = $image_srcs ? '<a href="' . $item_url . '"><img src="' . $image_srcs[0] . '"></a>' : '<a href="' . $item_url . '"><img src="' . $placeholder_url . '"></a>';
 				
 				
 				$price_old = $post['discount_price_from'] < $post['price_from'] ? '<span class="tour_info_price_old">' . BABE_Currency::get_currency_price( $post['price_from'] ) . '</span>' : '';
@@ -1468,7 +1545,7 @@ if ( ! function_exists( 'batourslight_booking_form' ) ) {
 		    
             $output = '';
             
-            $thumbnail = 'batours_thumbnail';
+            $thumbnail = 'batourslight_thumbnail';
 			
 			$taxonomies = apply_filters('batourslight_option', '', 'tour_preview_taxonomies');
             
@@ -1495,7 +1572,7 @@ if ( ! function_exists( 'batourslight_booking_form' ) ) {
 		    
             $output = '';
             
-            $thumbnail = 'batours_thumbnail';
+            $thumbnail = 'batourslight_thumbnail';
             
             $excerpt_length = 27;
 			
@@ -1574,7 +1651,7 @@ if ( ! function_exists( 'batourslight_booking_form' ) ) {
 		 */
 		function batourslight_body_custom_class( $classes ) {
 		  
-            if (batourslight_Settings::$layout_has_sidebars){
+            if (BAT_Settings::$layout_has_sidebars){
                 $classes[] = 'sidebars-content'; 
             } else {
                 $classes[] = 'no-sidebar-left';

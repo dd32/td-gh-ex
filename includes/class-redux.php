@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 if ( !class_exists( 'ReduxFramework' ) && file_exists( BATOURSLIGHT_DIR . '/admin/ReduxCore/framework.php' ) ) {
-    require_once BATOURSLIGHT_DIR . '/admin/ReduxCore/framework.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
+    require_once BATOURSLIGHT_DIR . '/admin/ReduxCore/framework.php';
 }
 
 // Redux Framefork is required.
@@ -22,7 +22,7 @@ if ( ! class_exists( 'Redux' ) ) {
  * Theme administration.
  *
  */
-class batourslight_Redux {
+class BAT_Redux {
 
 	//////////////////////////////////////////////////
 	/**
@@ -37,33 +37,18 @@ class batourslight_Redux {
 		add_action( 'after_setup_theme', array( __CLASS__, 'set_help' ), 33, 1 );
 		add_action( 'after_setup_theme', array( __CLASS__, 'set_settings' ), 36, 1 );
         
-        add_action( 'admin_enqueue_scripts', array( __CLASS__, 'load_assets' ), 10, 1 );
+        //add_action( 'admin_menu', array( __CLASS__, 'remove_redux_page'), 99 );
         
-        add_filter( 'redux/options/' . batourslight_Settings::$option_name . '/sections', array( __CLASS__, 'sections_altering' ) );
+        add_filter( 'redux/options/' . BAT_Settings::$option_name . '/sections', array( __CLASS__, 'sections_altering' ) );
         
 		// Save WP site options.
-		add_filter( 'redux/options/' . batourslight_Settings::$option_name . '/ajax_save/response', array( __CLASS__, 'after_ajax_save_redux' ), 10, 1 );
+		add_filter( 'redux/options/' . BAT_Settings::$option_name . '/ajax_save/response', array( __CLASS__, 'after_ajax_save_redux' ), 10, 1 );
         
 		// Look through Redux data.
-		// add_action( 'redux/options/' . batourslight_Settings::$option_name . '/validate', array( __CLASS__, 'validate_redux' ), 10, 1 );
+		// add_action( 'redux/options/' . BAT_Settings::$option_name . '/validate', array( __CLASS__, 'validate_redux' ), 10, 1 );
 		
 		// Cleaning.
 		add_action( 'redux/extensions/before', array( __CLASS__, 'remove_dev_mode' ), 100, 1 );
-	}
-    
-    //////////////////////////////////////////////////
-	/**
-	 * Loads required styles and scripts.
-	 */
-    public static function load_assets() {
-        
-        global $pagenow;
-        
-        if ( 'admin.php' == $pagenow && isset( $_GET['page'] ) && $_GET['page'] == 'bat_options' ) {
-			
-			wp_enqueue_style( 'batourslight-redux', BATOURSLIGHT_URI . '/admin/css/admin.css' , false, BATOURSLIGHT_VERSION );
-            
-		}
 	}
 	
 	//////////////////////////////////////////////////
@@ -139,9 +124,8 @@ class batourslight_Redux {
 
 		$args = array(
 			// TYPICAL -> Change these values as you need/desire
-			'opt_name'             => batourslight_Settings::$option_name,
+			'opt_name'             => BAT_Settings::$option_name,
 			// This is where your data is stored in the database and also becomes your global variable name.
-            /* translators: %1$s: opening tag <a>, %2$s: closing tag <a> */
 			'display_name'         => sprintf( __( 'BA Tours Light options %1$sTheme Documentation%2$s', 'ba-tours-light' ),'<a href="https://ba-booking.com/ba-tours/documentation/introduction/" target="_blank">','</a>'),
 			// Name that appears at the top of your panel
 			'display_version'      => $theme_version,
@@ -158,7 +142,7 @@ class batourslight_Redux {
 			// Set it you want google fonts to update weekly. A google_api_key value is required.
 			'google_update_weekly' => false,
 			// Must be defined to add google fonts to the typography module
-			'async_typography'     => false,
+			'async_typography'     => true,
 			// Use a asynchronous font on the front end or font string
 			//'disable_google_fonts_link' => true,                    // Disable this in case you want to create your own google fonts loader
 			'admin_bar'            => true,
@@ -191,7 +175,7 @@ class batourslight_Redux {
 			// Force your panel to always open to a specific tab (by id)
 			'page_icon'            => 'icon-themes',
 			// Icon displayed in the admin panel next to your menu_title
-			'page_slug'            => 'bat_options',
+			'page_slug'            => '_options',
 			// Page slug used to denote the panel
 			'save_defaults'        => true,
 			// On load save the defaults to DB before user clicks save or not
@@ -263,7 +247,7 @@ class batourslight_Redux {
 		// Add content after the form.
 		//$args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'ba-tours-light' );
 		
-		Redux::setArgs( batourslight_Settings::$option_name, $args );
+		Redux::setArgs( BAT_Settings::$option_name, $args );
 	}
 	
 	//////////////////////////////////////////////////
@@ -284,13 +268,13 @@ class batourslight_Redux {
 		);*/
 		$tabs = array();
 		
-		Redux::setHelpTab( batourslight_Settings::$option_name, $tabs );
+		Redux::setHelpTab( BAT_Settings::$option_name, $tabs );
 		
 		// Help sidebar.
 		//$content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'ba-tours-light' );
 		$content = '';
 		
-		Redux::setHelpSidebar( batourslight_Settings::$option_name, $content );
+		Redux::setHelpSidebar( BAT_Settings::$option_name, $content );
 	}
 	
 	//////////////////////////////////////////////////
@@ -309,7 +293,7 @@ class batourslight_Redux {
 		 */
 		$flag_update_options = false;
 		
-		$options = batourslight_Settings::$settings; 
+		$options = BAT_Settings::$settings; 
 		$custom_logo_id = get_theme_mod( 'custom_logo' );
 		$logo_wp = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 		$logo_wp_thumbnail = wp_get_attachment_image_src( $custom_logo_id , 'thumbnail' );   
@@ -377,7 +361,7 @@ class batourslight_Redux {
 		// Update option from WP data.
 		if ( $flag_update_options ) {
 			
-			$result = update_option( batourslight_Settings::$option_name, $options );
+			$result = update_option( BAT_Settings::$option_name, $options );
 		}
 		
 		$sections[] = array(
@@ -404,24 +388,36 @@ class batourslight_Redux {
 			'fields' => array(
 				array(
 					'id'         => 'header-phone',
-					'type'       => 'textarea',
-					'full_width' => false,
+					'type'       => 'editor',
+					'full_width' => true,
 					'title'      => __( 'Contact phone', 'ba-tours-light' ),
-                    'rows' => 3,
+					'args'       => array(
+						'wpautop'       => false,
+						'media_buttons' => false,
+						'textarea_rows' => 2,
+					),
 				),
 				array(
 					'id'         => 'header-address',
-					'type'       => 'textarea',
-					'full_width' => false,
+					'type'       => 'editor',
+					'full_width' => true,
 					'title'      => __( 'Address line', 'ba-tours-light' ),
-					'rows' => 3,
+					'args'       => array(
+						'wpautop'       => false,
+						'media_buttons' => false,
+						'textarea_rows' => 2,
+					),
 				),
                 array(
 					'id'         => 'header-times',
-					'type'       => 'textarea',
-					'full_width' => false,
+					'type'       => 'editor',
+					'full_width' => true,
 					'title'      => __( 'Working hours', 'ba-tours-light' ),
-					'rows' => 3,
+					'args'       => array(
+						'wpautop'       => false,
+						'media_buttons' => false,
+						'textarea_rows' => 2,
+					),
 				),
 			),
 		);
@@ -443,14 +439,13 @@ class batourslight_Redux {
 					'type'        => 'info',
                     'style' => 'warning',
                     'icon'  => 'el-icon-info-sign',
-                    /* translators: %1$s: opening tag <a>, %2$s: closing tag <a>, %3$s: opening tag <a>, %4$s: closing tag <a>. */
 					'title'       => sprintf(__( 'To use slideshow and shortcodes like on %1$sDemo site%2$s, you need to download from theme\'s site and install our free plugin: %3$sBA Tours light posts%4$s.', 'ba-tours-light' ), '<a href="https://ba-booking.com/ba-tours-light-demo/">', '</a>', '<a href="https://ba-booking.com/ba-tours/wp-content/uploads/sites/5/2018/09/ba-tours-light-posts.zip">', '</a>'),
 					'description' => '',
 				),
 				array(
 					'id'         => 'front-header-slideshow',
 					'type'       => 'switch',
-					'full_width' => false,
+					'full_width' => true,
 					'title'      => __( 'Use slideshow', 'ba-tours-light' ),
                     'description' => __( 'If it\'s enabled, Slides posts will be used to get images and titles for slideshow. Otherwise, the page featured image will be displayed.', 'ba-tours-light' ),
 					'default'    => true,
@@ -469,14 +464,7 @@ class batourslight_Redux {
 			'id'     => 'search-form',
 			'desc'   => '',
 			'icon'   => 'el el-search',
-			'fields' => array(
-                array(
-					'id'         => 'search_form_info',
-					'type'       => 'info',
-					'title'      => esc_html__( 'Setup fields in Search Form Builder', 'ba-tours-light' ),
-					'desc'    => '<a href="'.get_admin_url().'edit.php?post_type=to_book&page=search_form" target="_blank">'.__( 'Search Form Builder', 'ba-tours-light' ).'</a>',
-				),
-            ),
+			'fields' => $fields,
 		);
 		
 		//////////////////////////////////////////////////
@@ -513,7 +501,7 @@ class batourslight_Redux {
 				array(
 					'id'         => 'copyrights',
 					'type'       => 'editor',
-					'full_width' => false,
+					'full_width' => true,
 					'title'      => __( 'Copyrights text', 'ba-tours-light' ),
 					'default'    => __( 'Copyright &copy; {year}, {sitename}', 'ba-tours-light' ),
 					'args'       => array(
@@ -547,7 +535,6 @@ class batourslight_Redux {
 					'type'        => 'info',
                     'style' => 'warning',
                     'icon'  => 'el-icon-info-sign',
-                    /* translators: %1$s: opening tag <a>, %2$s: closing tag <a> */
 					'title'       => sprintf(__( 'Default page/post layout. These options are available in %1$sBA Tours theme%2$s only.', 'ba-tours-light' ), '<a href="https://ba-booking.com/ba-tours/">', '</a>'),
 					'description' => '',
 				),
@@ -558,23 +545,56 @@ class batourslight_Redux {
 		/**
 		 * Font set.
 		 */
+		$fields = array();
+		
+		// Default font arguments.
+		$default_args = array(
+			'font-family'    => true,
+			'font-style'     => true,
+			'font-weight'    => true,
+			'google'         => false,
+			'subsets'        => false,
+			'font-backup'    => false,
+			'font-size'      => false,
+			'line-height'    => false,
+			'word-spacing'   => false,
+			'letter-spacing' => false,
+			'text-align'     => false,
+			'text-transform' => false,
+			'color'          => false,
+			'preview'        => true,
+			'units'          => 'rem',
+		);
+		
+		// Fonts data.
+		foreach ( BAT_Settings::$custom_fonts as $item_id => $item_data ) {
+		  
+            $args = array();
+				
+				$args = array(
+					'id'         => $item_id,
+					'type'       => 'typography',
+					'full_width' => true,
+					'title'      => $item_data['name'],
+					'subtitle'   => (isset($item_data['desc']) ? $item_data['desc'] : ''),
+					'default'    => BAT_Settings::$settings[$item_id],
+				);
+				
+				foreach ( BAT_Settings::$settings[$item_id] as $id => $value ) {	
+					$args[ $id ] = true;
+				}
+				
+				$args = wp_parse_args( $args, $default_args );
+				
+				$fields[] = $args;
+		}
 		
 		$sections[] = array(
 			'title'  => __( 'Fonts', 'ba-tours-light' ),
 			'id'     => 'custom-fonts',
 			'desc'   => '',
 			'icon'   => 'el el-fontsize',
-			'fields' => array(
-				array(
-					'id'          => 'fonts_info',
-					'type'        => 'info',
-                    'style' => 'warning',
-                    'icon'  => 'el-icon-info-sign',
-                    /* translators: %1$s: opening tag <a>, %2$s: closing tag <a> */
-					'title'       => sprintf(__( 'These options are available in %1$sBA Tours theme%2$s only.', 'ba-tours-light' ), '<a href="https://ba-booking.com/ba-tours/">', '</a>'),
-					'description' => '',
-				),
-			),
+			'fields' => $fields,
 		);
 		
 		//////////////////////////////////////////////////
@@ -593,11 +613,31 @@ class batourslight_Redux {
 					'type'        => 'info',
                     'style' => 'warning',
                     'icon'  => 'el-icon-info-sign',
-                    /* translators: %1$s: opening tag <a>, %2$s: closing tag <a> */
 					'title'       => sprintf(__( 'These options are available in %1$sBA Tours theme%2$s only.', 'ba-tours-light' ), '<a href="https://ba-booking.com/ba-tours/">', '</a>'),
 					'description' => '',
 				),
 			),
+		);
+		
+		//////////////////////////////////////////////////
+		/**
+		 * Custom CSS.
+		 */
+		
+		$sections[] = array(
+			'title'  => __( 'Custom CSS', 'ba-tours-light' ),
+			'id'     => 'custom-css',
+			'icon'   => 'el el-css',
+			'fields' => array(
+				array(
+					'id'         => 'custom_css_info',
+					'type'        => 'info',
+                    'style' => 'warning',
+                    'icon'  => 'el-icon-info-sign',
+					'title'       => sprintf(__( 'These options are available in %1$sBA Tours theme%2$s only.', 'ba-tours-light' ), '<a href="https://ba-booking.com/ba-tours/">', '</a>'),
+					'description' => '',
+				)
+			)
 		);
 		
 		////////////////////////////
@@ -609,7 +649,7 @@ class batourslight_Redux {
         
 		foreach ( $sections as $section ) {
 			
-			Redux::setSection( batourslight_Settings::$option_name, $section );
+			Redux::setSection( BAT_Settings::$option_name, $section );
 		}
 	}
 	
@@ -642,6 +682,27 @@ class batourslight_Redux {
 		foreach( $sections as $section_key => $section_arr ) {
 			
 			switch ( $section_arr['id'] ) {
+				
+				//////////////////////////////////////////////////
+				/**
+				 * Search Form.
+				 */
+				case 'search-form':
+					
+					$fields = $sections[ $section_key ]['fields'];
+					
+					$fields[] = array(
+						'id'          => 'search_form_add_input_field',
+						'type'        => 'callback',
+						'full_width'  => true,
+						'title'       => __( 'Additional select field', 'ba-tours-light' ),
+						'description' => __( 'Add terms from selected taxonomy to the search form filters.', 'ba-tours-light' ),
+                        'callback'    => array( __CLASS__, 'callback_radio_taxonomies' ),
+					);
+					
+					$sections[ $section_key ]['fields'] = $fields;
+					
+					break;
 				
 				//////////////////////////////////////////////////
 				/**
@@ -738,21 +799,25 @@ class batourslight_Redux {
 		
         $current_checked = apply_filters( 'batourslight_option', null, $args['id'] );
 		
-        echo '
-			<fieldset id="batourslight_settings-' . esc_attr( $args['id'] ) . '" class="redux-field-container redux-field redux-field-init redux-container-radio redux_remove_th ' . esc_attr( $args['class'] ) . '" data-id="' . esc_attr( $args['id'] ) . '" data-type="radio">
+        $options_html = '
+			<fieldset id="batourslight_settings-' . $args['id'] . '" class="redux-field-container redux-field redux-field-init redux-container-radio redux_remove_th ' . $args['class'] . '" data-id="' . $args['id'] . '" data-type="radio">
 				<ul class="data-full">
 		';
 		
 		foreach ( $babe_taxonomies as $key => $title ) {
 			
-			echo '<li><label for="' . esc_attr( $args['id'] . '_' . $key ) . '"><input type="radio" class="radio" id="' . esc_attr( $args['id'] . '_' . $key ) . '" name="' . esc_attr( $args['name'] ) . '" value="' . esc_attr( $key ) . '" ' . checked( $key, $current_checked, false ) . '><span>' . esc_html( $title ) . '</span></label></li>';
+			$options_html .= '<li><label for="' . $args['id'] . '_' . $key . '"><input type="radio" class="radio" id="' . $args['id'] . '_' . $key . '" name="' . $args['name'] . '" value="' . $key . '" ' . checked( $key, $current_checked, false ) . '><span>' . $title . '</span></label></li>';
 		}
 		
-		echo '
+		$options_html .= '
 			</ul>
-            <div class="description field-desc">'.esc_html__( 'Add terms from selected taxonomy to the search form filters.', 'ba-tours-light' ).'</div>
+            <div class="description field-desc">'.__( 'Add terms from selected taxonomy to the search form filters.', 'ba-tours-light' ).'</div>
         </fieldset>
 		';
+        
+        $options_html = apply_filters( 'batourslight_option_callback_radio_taxonomies', $options_html, $args );
+		
+		echo $options_html;
 		
 		return;
 	}
@@ -794,5 +859,5 @@ class batourslight_Redux {
 /**
  * Calling to setup class.
  */
-batourslight_Redux::init();
+BAT_Redux::init();
 

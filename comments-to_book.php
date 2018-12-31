@@ -33,10 +33,9 @@ if ( post_password_required() ) {
 				
 			} else {
 				
-				printf(
-                    /* translators: 1: number of reviews */
+				printf( // WPCS: XSS OK.
 					esc_html( _nx( '%1$s review', '%1$s reviews', $comment_count, 'multiple_comments_title', 'ba-tours-light' ) ),
-					esc_html( number_format_i18n( $comment_count ) )
+					number_format_i18n( $comment_count )
 				);
 			}
 			?>
