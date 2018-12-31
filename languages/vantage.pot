@@ -1092,31 +1092,31 @@ msgstr ""
 msgid "Wide Grey"
 msgstr ""
 
-#: inc/panels.php:223
+#: inc/panels.php:227
 msgid "Top Border Color"
 msgstr ""
 
-#: inc/panels.php:230
+#: inc/panels.php:234
 msgid "Bottom Border Color"
 msgstr ""
 
-#: inc/panels.php:237
+#: inc/panels.php:241
 msgid "Background Color"
 msgstr ""
 
-#: inc/panels.php:244
+#: inc/panels.php:248
 msgid "Background Image URL"
 msgstr ""
 
-#: inc/panels.php:251
+#: inc/panels.php:255
 msgid "Repeat Background Image"
 msgstr ""
 
-#: inc/panels.php:258
+#: inc/panels.php:262
 msgid "No Bottom Margin"
 msgstr ""
 
-#: inc/panels.php:328
+#: inc/panels.php:332
 msgid "Vantage Widgets"
 msgstr ""
 
