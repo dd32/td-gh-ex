@@ -6,7 +6,7 @@ theme-options, footer-widgets, full-width-template, front-page-post-form
 Requires at least: 4.8.0
 Tested up to: 4.9.6
 Requires PHP: 5.2.4
-Stable tag: 1.0.6
+Stable tag: 1.7.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.7.5 =
+* add starter content
 
 = 1.7.4 =
 * update page header styles

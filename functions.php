@@ -82,6 +82,111 @@ function fgymm_setup() {
 
 	// add WooCommerce support
 	add_theme_support( 'woocommerce' );
+
+	// Define and register starter content to showcase the theme on new sites.
+	$starter_content = array(
+
+		'widgets' => array(
+			'sidebar-widget-area' => array(
+				'search',
+				'recent-posts',
+				'categories',
+				'archives',
+			),
+
+			'homepage-column-1-widget-area' => array(
+				'text_business_info'
+			),
+
+			'homepage-column-2-widget-area' => array(
+				'text_about'
+			),
+
+			'homepage-column-3-widget-area' => array(
+				'meta'
+			),
+
+			'footer-column-1-widget-area' => array(
+				'recent-comments'
+			),
+
+			'footer-column-2-widget-area' => array(
+				'recent-posts'
+			),
+
+			'footer-column-3-widget-area' => array(
+				'calendar'
+			),
+		),
+
+		'posts' => array(
+			'home',
+			'blog',
+			'about',
+			'contact'
+		),
+
+		// Create the custom image attachments used as slides
+		'attachments' => array(
+			'image-slide-1' => array(
+				'post_title' => _x( 'Slider Image 1', 'Theme starter content', 'fgymm' ),
+				'file' => 'images/slider/1.jpg', // URL relative to the template directory.
+			),
+			'image-slide-2' => array(
+				'post_title' => _x( 'Slider Image 2', 'Theme starter content', 'fgymm' ),
+				'file' => 'images/slider/2.jpg', // URL relative to the template directory.
+			),
+			'image-slide-3' => array(
+				'post_title' => _x( 'Slider Image 3', 'Theme starter content', 'fgymm' ),
+				'file' => 'images/slider/3.jpg', // URL relative to the template directory.
+			),
+		),
+
+		// Default to a static front page and assign the front and posts pages.
+		'options' => array(
+			'show_on_front' => 'page',
+			'page_on_front' => '{{home}}',
+			'page_for_posts' => '{{blog}}',
+		),
+
+		// Set the front page section theme mods to the IDs of the core-registered pages.
+		'theme_mods' => array(
+			'fgymm_slider_display' => 1,
+			'fgymm_slide1_image' => '{{image-slider-1}}',
+			'fgymm_slide1_content' => _x( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Theme starter content', 'fgymm' ),
+			'fgymm_slide2_image' => '{{image-slider-2}}',
+			'fgymm_slide2_content' => _x( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Theme starter content', 'fgymm' ),
+			'fgymm_slide3_image' => '{{image-slider-3}}',
+			'fgymm_slide3_content' => _x( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Theme starter content', 'fgymm' ),
+		),
+
+		'nav_menus' => array(
+			// Assign a menu to the "primary" location.
+			'primary' => array(
+				'name' => __( 'Primary Menu', 'fgymm' ),
+				'items' => array(
+					'link_home',
+					'page_blog',
+					'page_contact',
+					'page_about',
+				),
+			),
+
+			// Assign a menu to the "footer" location.
+			'footer' => array(
+				'name' => __( 'Footer Menu', 'fgymm' ),
+				'items' => array(
+					'link_home',
+					'page_about',
+					'page_blog',
+					'page_contact',
+				),
+			),
+		),
+	);
+
+	$starter_content = apply_filters( 'fgymm_starter_content', $starter_content );
+	add_theme_support( 'starter-content', $starter_content );
 }
 endif; // fgymm_setup
 add_action( 'after_setup_theme', 'fgymm_setup' );
