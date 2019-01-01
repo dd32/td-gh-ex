@@ -22,8 +22,8 @@ if (class_exists('WP_Customize_Control')) {
 
             printf(
                 '<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
-                esc_html( $this->label ),
-                esc_html( $dropdown )
+                $this->label,
+                $dropdown
             );
         }
     }
@@ -50,8 +50,8 @@ if ( class_exists('WP_Customize_Control') && class_exists('woocommerce') ) {
 
             printf(
                 '<label class="customize-control-select"><span class="customize-control-title">%s</span> %s</label>',
-                esc_html( $this->label ),
-                esc_html( $dropdown )
+                $this->label,
+                $dropdown
             );
         }
     }
@@ -65,8 +65,8 @@ if (class_exists('WP_Customize_Control')) {
         public function render_content() {
             printf(
                 '<label class="customize-control-upgrade"><span class="customize-control-title">%s</span> %s</label>',
-                esc_html( $this->label ),
-                esc_html( $this->description )
+                $this->label,
+                $this->description
             );
         }
     }

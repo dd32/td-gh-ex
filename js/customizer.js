@@ -125,7 +125,7 @@
 	
 	wp.customize( 'adviso_blog_sidebar_layout', function( value ) {
 		value.bind( function( to ) {
-			if ( to == 'sidebarleft') {
+			if ( to === 'sidebarleft') {
 				jQuery('body.blog #primary').css('float', 'right');
 			} else {
 				jQuery('body.blog #primary').css('float', 'left');
