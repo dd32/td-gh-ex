@@ -3,8 +3,8 @@ Theme Name: Ansia
 Theme URI: https://crestaproject.com/downloads/ansia/
 Author: Rizzo Andrea - CrestaProject
 Author URI: https://crestaproject.com
-Description: Ansia is a simple and minimal WordPress theme especially suited to blogging. Its structure allows you to have a classic sidebar and a push sidebar that can be activated through a special button. The full width header allows you to insert your own image and the site structure can be boxed or full width. Ansia theme is also compatible with WooCommerce to create your online store. Unlimited colors, 2 sidebars, footer widget, custom logo and many other options. Demo here https://crestaproject.com/demo/ansia/
-Version: 1.0.4
+Description: Ansia is a simple and minimal WordPress theme especially suited to blogging. Its structure allows you to have a classic sidebar and a push sidebar that can be activated through a special button. The full width header allows you to insert your own image and the site structure can be boxed or full width. Ansia theme is also compatible with WooCommerce to create your online store. Unlimited colors, 2 sidebars, footer widget, custom logo and many other options. Compatible with Gutenberg. Demo here https://crestaproject.com/demo/ansia/
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: ansia
@@ -287,7 +287,21 @@ footer.entry-footer .read-more,
 	font-family: 'Playfair Display', serif;
 	font-weight: bold;
 }
-
+.hentry p.has-small-font-size {
+    font-size: 12px;
+    line-height: 2.1;
+}
+.hentry p.has-regular-font-size {
+    font-size: 14px;
+}
+.hentry p.has-large-font-size {
+    font-size: 18px;
+	line-height: 1.7;
+}
+.hentry p.has-larger-font-size {
+    font-size: 20px;
+	line-height: 1.6;
+}
 p {
 	margin-bottom: 1.5em;
 }
@@ -319,6 +333,10 @@ blockquote::before {
     top: 10px;
     opacity: 0.1;
 	color: #b2dbbf;
+}
+blockquote cite {
+	font-size: 13px;
+    font-style: normal;
 }
 
 address {
@@ -3574,6 +3592,27 @@ table.cart td.actions label {
 	body.admin-bar .ansia-subbar .search-container {
 		top: calc(50px + 46px);
 	}
+}
+@media all and (min-width: 768px) {
+  body.no-sidebar .alignfull {
+    margin-left: calc(50% - 49.5vw);
+    margin-right: calc(50% - 49.5vw);
+    width: auto;
+    max-width: 1000%;
+  }
+
+  body.no-sidebar .alignwide {
+    margin-left: calc(25% - 25vw);
+    margin-right: calc(25% - 25vw);
+    width: auto;
+    max-width: 1000%;
+  }
+
+  .alignwide img,
+  .alignfull img {
+    display: block;
+    margin: 0 auto;
+  }
 }
 @media all and (max-width: 767px) {
 	h1.site-title, p.site-title {

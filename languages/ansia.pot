@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ansia\n"
-"POT-Creation-Date: 2018-11-02 18:07+0100\n"
-"PO-Revision-Date: 2018-11-02 18:07+0100\n"
+"POT-Creation-Date: 2019-01-02 18:09+0100\n"
+"PO-Revision-Date: 2019-01-02 18:09+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -141,28 +141,60 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
-#: functions.php:108
+#: functions.php:91
+msgid "Small"
+msgstr ""
+
+#: functions.php:92
+msgid "S"
+msgstr ""
+
+#: functions.php:97
+msgid "Regular"
+msgstr ""
+
+#: functions.php:98
+msgid "M"
+msgstr ""
+
+#: functions.php:103
+msgid "Large"
+msgstr ""
+
+#: functions.php:104
+msgid "L"
+msgstr ""
+
+#: functions.php:109
+msgid "Larger"
+msgstr ""
+
+#: functions.php:110
+msgid "XL"
+msgstr ""
+
+#: functions.php:139
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:110 functions.php:119 functions.php:128 functions.php:137
-#: functions.php:146
+#: functions.php:141 functions.php:150 functions.php:159 functions.php:168
+#: functions.php:177
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:117
+#: functions.php:148
 msgid "Push Sidebar"
 msgstr ""
 
-#: functions.php:126
+#: functions.php:157
 msgid "Footer Left"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:166
 msgid "Footer Center"
 msgstr ""
 
-#: functions.php:144
+#: functions.php:175
 msgid "Footer Right"
 msgstr ""
 

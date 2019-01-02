@@ -82,6 +82,37 @@ if ( ! function_exists( 'ansia_setup' ) ) :
 			'header-text' => array( 'site-title', 'site-description' ),
 		) );
 		
+		/* Support for wide images on Gutenberg */
+	add_theme_support( 'align-wide' );
+	
+	// Adds support for editor font sizes.
+	add_theme_support( 'editor-font-sizes', array(
+		array(
+			'name'      => __( 'Small', 'ansia' ),
+			'shortName' => __( 'S', 'ansia' ),
+			'size'      => 12,
+			'slug'      => 'small'
+		),
+		array(
+			'name'      => __( 'Regular', 'ansia' ),
+			'shortName' => __( 'M', 'ansia' ),
+			'size'      => 14,
+			'slug'      => 'regular'
+		),
+		array(
+			'name'      => __( 'Large', 'ansia' ),
+			'shortName' => __( 'L', 'ansia' ),
+			'size'      => 18,
+			'slug'      => 'large'
+		),
+		array(
+			'name'      => __( 'Larger', 'ansia' ),
+			'shortName' => __( 'XL', 'ansia' ),
+			'size'      => 20,
+			'slug'      => 'larger'
+		)
+	) );
+		
 	}
 endif;
 add_action( 'after_setup_theme', 'ansia_setup' );
@@ -169,7 +200,7 @@ function ansia_scripts() {
 		wp_enqueue_script( 'ansia-nanoScroll', get_template_directory_uri() . '/js/jquery.nanoscroller.min.js', array('jquery'), '0.8.7', true );
 	}
 	if ( ansia_options('_smooth_scroll', '1') == 1) {
-		wp_enqueue_script( 'ansia-smooth-scroll', get_template_directory_uri() . '/js/SmoothScroll.min.js', array('jquery'), '1.4.6', true );
+		wp_enqueue_script( 'ansia-smooth-scroll', get_template_directory_uri() . '/js/SmoothScroll.min.js', array('jquery'), '1.4.8', true );
 	}
 
 	wp_enqueue_script( 'ansia-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -184,6 +215,11 @@ function ansia_scripts() {
 	wp_dequeue_style ( 'woocommerce-general' );
 }
 add_action( 'wp_enqueue_scripts', 'ansia_scripts' );
+
+function ansia_gutenberg_scripts() {
+	wp_enqueue_style( 'ansia-gutenberg-css', get_theme_file_uri( '/css/gutenberg-editor-style.css' ), array(), wp_get_theme()->get('Version') );
+}
+add_action( 'enqueue_block_editor_assets', 'ansia_gutenberg_scripts' );
 
 /**
  * WooCommerce Support

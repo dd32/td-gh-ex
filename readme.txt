@@ -3,7 +3,7 @@ Contributors: CrestaProject
 Tags: two-columns, right-sidebar, custom-colors, custom-menu, featured-images, custom-header, flexible-header, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, e-commerce, footer-widgets, custom-logo, custom-background
 Requires at least: 4.5
 Tested up to: 5.0
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Ansia WordPress Theme, Copyright 2018 Rizzo Andrea
@@ -11,7 +11,7 @@ Ansia is distributed under the terms of the GNU GPL
 
 == Description ==
 
-Ansia is a simple and minimal WordPress theme especially suited to blogging. Its structure allows you to have a classic sidebar and a push sidebar that can be activated through a special button. The full width header allows you to insert your own image and the site structure can be boxed or full width. Ansia theme is also compatible with WooCommerce to create your online store. Unlimited colors, 2 sidebars, footer widget, custom logo and many other options.
+Ansia is a simple and minimal WordPress theme especially suited to blogging. Its structure allows you to have a classic sidebar and a push sidebar that can be activated through a special button. The full width header allows you to insert your own image and the site structure can be boxed or full width. Ansia theme is also compatible with WooCommerce to create your online store. Unlimited colors, 2 sidebars, footer widget, custom logo and many other options. Compatible with Gutenberg.
 
 == Installation ==
 
@@ -37,6 +37,11 @@ Ansia includes support for Infinite Scroll in Jetpack and WooCommerce.
 * Image used in Theme Screenshot (https://www.pexels.com/photo/adorable-beautiful-child-children-573285/) Pexels Free photos for commercial and personal works
 
 == Changelog ==
+
+= Version 1.0.5 =
+* Improved compatibility with Gutenberg and WordPress 5.0
+* Updated SmoothScroll
+* Minor bug fixes
 
 = Version 1.0.4 =
 * Minor bug fixes
