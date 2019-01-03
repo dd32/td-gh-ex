@@ -1,12 +1,18 @@
 === Absolutte ===
 Contributors: nicoandrade
 Tags: two-columns, custom-background, threaded-comments, custom-menu, custom-logo, custom-colors, footer-widgets, theme-options, featured-images, sticky-post, translation-ready, full-width-template
+Requires at least: 4.0
+Tested up to: 5.0.2
+Stable tag: 1.0.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 
 Absolutte is a beautiful One page free WordPress theme, perfect for small business.
 It has fully support for Gutenberg blocks and easy customizations.
 
+== Description ==
+Absolutte is a beautiful One page free WordPress theme, perfect for small business.
+It has fully support for Gutenberg blocks and easy customizations.
 
 == Installation ==
 	
@@ -16,6 +22,9 @@ It has fully support for Gutenberg blocks and easy customizations.
 
 
 == Changelog ==
+
+= 1.0.7 - 03/01/2019 =
+* Updated: review
 
 = 1.0.6 - 10/12/2018 =
 * Updated: review
@@ -40,7 +49,7 @@ It has fully support for Gutenberg blocks and easy customizations.
 * Released
 
 
-== Credits ==
+== Resources ==
 
 Underscores 
 (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)

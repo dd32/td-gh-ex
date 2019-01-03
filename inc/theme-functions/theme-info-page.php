@@ -37,10 +37,10 @@
                         ?>
 					<li><a href="?page=absolutte_theme-info&amp;tab=docs" class="<?php echo ( 'docs' == $tab ) ? ' active' : ''; ?>"><i class="fa fa-file-text-o"></i><?php esc_html_e( 'Documentation', 'absolutte' ); ?></a></li>
 					<?php if ( class_exists( 'OCDI_Plugin' ) ) { ?>
-						<li><a href="<?php echo get_admin_url( null, 'themes.php?page=pt-one-click-demo-import' ); ?>"><i class="fa fa-download"></i><?php esc_html_e( 'Import Demo', 'absolutte' ); ?></a></li>
+						<li><a href="<?php echo esc_url( get_admin_url( null, 'themes.php?page=pt-one-click-demo-import' ) ); ?>"><i class="fa fa-download"></i><?php esc_html_e( 'Import Demo', 'absolutte' ); ?></a></li>
 					<?php } ?>
 					<li class="featured"><a href="https://www.quemalabs.com/plugin/absolutte-blocks-pro/" target="_blank"><i class="fa fa-support"></i><?php esc_html_e( 'Get PRO', 'absolutte' ); ?></a></li>
-					<li><a href="https://quemalabs.ticksy.com/" target="_blank"><i class="fa fa-support"></i>					                                                                                         					                                                                                         					                                                                                         					                                                                                          <?php esc_html_e( 'Support', 'absolutte' ); ?></a></li>
+					<li><a href="https://quemalabs.ticksy.com/" target="_blank"><i class="fa fa-support"></i>					                                                                                         					                                                                                         					                                                                                         					                                                                                         					                                                                                          <?php esc_html_e( 'Support', 'absolutte' ); ?></a></li>
 				</ul>
 
 			</div><!-- .theme-content -->
