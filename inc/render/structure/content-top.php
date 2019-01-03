@@ -25,7 +25,7 @@ if ( ! function_exists( 'igthemes_header_widget' ) ) {
 if ( ! function_exists( 'igthemes_breadcrumb' ) ) {
     // start function
     function igthemes_breadcrumb() {
-        if (get_theme_mod('breadcrumb')) {
+        if (get_theme_mod('post_breadcrumb')==true) {
             if ( function_exists('bcn_display') && !is_home() ) { ?>
             <div class="breadcrumb" typeof="BreadcrumbList" vocab="http://schema.org/">
                 <div class="container">

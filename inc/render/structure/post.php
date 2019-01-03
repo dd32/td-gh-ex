@@ -49,6 +49,7 @@ if ( ! function_exists( 'igthemes_post_content' ) ) {
                     'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'base-wp' ),
                     'after'  => '</div>',
                 ) );
+        
         ?>
 		</div><!-- .entry-content -->
 
