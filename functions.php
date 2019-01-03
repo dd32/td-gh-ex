@@ -93,6 +93,55 @@ if ( ! function_exists( 'archie_setup' ) ) :
 		 * specifically font, colors, icons, and column width.
 		 */
 		add_editor_style( array( '/assets/css/editor-style' . archie_min() . '.css', archie_fonts_url() ) );
+
+		// Gutenberg support
+		add_theme_support( 'editor-color-palette', array(
+	       	array(
+				'name' => esc_html__( 'Orange', 'archie' ),
+				'slug' => 'orange',
+				'color' => '#fd9c30',
+	       	),
+	       	array(
+	           	'name' => esc_html__( 'Black', 'archie' ),
+	           	'slug' => 'black',
+	           	'color' => '#1d1d1d',
+	       	),
+	       	array(
+	           	'name' => esc_html__( 'Grey', 'archie' ),
+	           	'slug' => 'grey',
+	           	'color' => '#82868b',
+	       	),
+	   	));
+
+		add_theme_support( 'align-wide' );
+		add_theme_support( 'editor-font-sizes', array(
+		   	array(
+		       	'name' => esc_html__( 'small', 'archie' ),
+		       	'shortName' => esc_html__( 'S', 'archie' ),
+		       	'size' => 12,
+		       	'slug' => 'small'
+		   	),
+		   	array(
+		       	'name' => esc_html__( 'regular', 'archie' ),
+		       	'shortName' => esc_html__( 'M', 'archie' ),
+		       	'size' => 16,
+		       	'slug' => 'regular'
+		   	),
+		   	array(
+		       	'name' => esc_html__( 'larger', 'archie' ),
+		       	'shortName' => esc_html__( 'L', 'archie' ),
+		       	'size' => 36,
+		       	'slug' => 'larger'
+		   	),
+		   	array(
+		       	'name' => esc_html__( 'huge', 'archie' ),
+		       	'shortName' => esc_html__( 'XL', 'archie' ),
+		       	'size' => 48,
+		       	'slug' => 'huge'
+		   	)
+		));
+		add_theme_support('editor-styles');
+		add_theme_support( 'wp-block-styles' );
 	}
 endif;
 add_action( 'after_setup_theme', 'archie_setup' );
@@ -241,6 +290,9 @@ function archie_scripts() {
 	// slick theme
 	wp_enqueue_style( 'slick-theme', get_template_directory_uri() . '/assets/css/slick-theme' . archie_min() . '.css' );
 
+	// blocks
+	wp_enqueue_style( 'archie-blocks', get_template_directory_uri() . '/assets/css/blocks' . archie_min() . '.css' );
+
 	wp_enqueue_style( 'archie-style', get_stylesheet_uri() );
 
 	
@@ -269,6 +321,19 @@ function archie_scripts() {
 	wp_enqueue_script( 'archie-custom', get_template_directory_uri() . '/assets/js/custom' . archie_min() . '.js', array( 'jquery' ), '20151215', true );
 }
 add_action( 'wp_enqueue_scripts', 'archie_scripts' );
+
+/**
+ * Enqueue editor styles for Gutenberg
+ *
+ * @since Achie 1.0.0
+ */
+function archie_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'archie-block-editor-style', get_theme_file_uri( '/assets/css/editor-blocks' . archie_min() . '.css' ) );
+	// Add custom fonts.
+	wp_enqueue_style( 'archie-fonts', archie_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'archie_block_editor_styles' );
 
 /**
  * Implement the Custom Header feature.
