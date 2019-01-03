@@ -6,7 +6,7 @@ Tested up to: 5.0 Beta
 Requires PHP: 5.2
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Copyright: 2015-2018 Carolina Nymark
+Copyright: 2015-2019 Carolina Nymark
 
 Aaron is a responsive, accessible theme with a call to action, front page highlights, page sections and two menus.
 
@@ -27,6 +27,15 @@ Please note that changing the colors of the theme can affect accessibility.
 2. Activate the theme through the 'Appearance' menu in WordPress
 
 == Change log ==
+
+Version 3.9, 2019-01-03
+Fixed problems with icons that did not show up correctly after updating Font Awesome.
+Updated version numbers for styles and scripts to make sure that the correct files, and not the cached files, are loaded.
+Only include the styles for WooCommerce and BBPress if the plugins are active.
+Moved WooCommerce and BBPress styles to separate files.
+Minor style changes for WooCommerce. Increased color contrast. Added underlines to some links, and made input fields larger.
+Moved the script for the skip link, to reduce the number of render blocking scripts.
+
 
 Version 3.8, 2018-12-31
 Updated documentation.
@@ -259,7 +268,7 @@ Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc. License: GNU
 Universal https://themes.joedolson.com/universal/ (C) Joseph C Dolson. License: GNU General Public License v2 or later
 Sela https://wordpress.com/themes/sela/, based on Underscores https://underscores.me/, (C) 2012-2018 Automattic, Inc. License: GNU General Public License v2 or later
 Twenty Seventeen https://wordpress.org/themes/twentyseventeen/ Copyright 2016-2018 WordPress.org, GNU General Public License v2 or later
-
+Twenty Nineteen https://wordpress.org/themes/twentynineteen/ Copyright 2018 WordPress.org, GNU General Public License v2 or later
 Header image by Ian Prince. Source: https://tookapic.com/ianprince/5613-les-dents-du-midi, License: CC0.
 Image used in the documentation: Karolina Grabowska. Source: https://tookapic.com/kaboompics/3311-dead-flower, License: CC0.
 
