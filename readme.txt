@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.9
 Tested up to: 5.0
-Stable tag: 4.2.1
+Stable tag: 4.2.2
 
 == Description ==
 
@@ -569,3 +569,6 @@ with testing and feature suggestions.
 
 = Version 4.2.1 =
 * Fix: Bold and Italic compatibility for blocks that natively support those for text (e.g., gallery and image captions, quote blocsk)
+
+= Version 4.2.2 =
+* Fix: issue with alignfull and alignwide on pages with sidebars

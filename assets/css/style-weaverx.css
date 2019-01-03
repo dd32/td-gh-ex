@@ -168,11 +168,17 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	margin-bottom: 		1.75em;
 }
 
-	.weaverx-sb-one-column #container, .weaverx-sb-one-column #content, .weaverx-sb-one-column .content-page, .weaverx-sb-one-column .content-single {
+	.weaverx-sb-one-column #container,
+	.weaverx-sb-one-column #content,
+	.weaverx-sb-one-column .content-page,
+	.weaverx-sb-one-column .content-single {
 		overflow:		visible;
 	}	/* need to override Weaver Xtreme's default hidden for fullwidth to show */
 
-	.weaverx-has-sb #container, .weaverx-has-sb #content, .weaverx-has-sb .content-page, .weaverx-has-sb .content-single {
+	.weaverx-has-sb #container,
+	.weaverx-has-sb #content,
+	.weaverx-has-sb .content-page,
+	.weaverx-has-sb .content-single {
 		overflow:		hidden;
 	}	/* need to override Weaver Xtreme's default hidden for fullwidth to show */
 
@@ -192,7 +198,6 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 	.weaverx-sb-one-column .alignfull,		/* most elements only on one column pages */
 	#header .alignfull,						/* but some are okay on pages with sidebars */
 	#header.alignfull,
-	#container .alignfull,
 	#container.alignfull,
 	#colophon .alignfull,
 	#colophon.alignfull,
@@ -214,21 +219,18 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 
 	}
 
-	.weaverx-has-sb #wrapper .alignwide,
-	.weaverx-has-sb #wrapper .alignwide img {
+	.weaverx-has-sb #container .alignwide {
 		margin-left:	0 !important;
 		margin-right:	0 !important;
-		max-width:		100%	!important;
+		max-width:		100% !important;
 		width:			98%	!important;
 	}
 
-	.weaverx-has-sb #wrapper .alignfull,
-	.weaverx-has-sb #wrapper .alignfull img,
-	.weaverx-has-sb #wrapper .wp-block-image.alignwide img {
+	.weaverx-has-sb #container .alignfull {
 		margin-left:	0 !important;
 		margin-right:	0 !important;
-		max-width:		100%	!important;
-		width:			100%	!important;
+		max-width:		100% !important;
+		width:			100% !important;
 	}
 
 }
