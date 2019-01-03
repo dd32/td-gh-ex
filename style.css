@@ -4,7 +4,7 @@ Theme URI: https://themepalace.com/downloads/architectonic
 Author: Theme Palace
 Author URI: https://themepalace.com
 Description: Architectonic, with its aesthetically pleasant and modern looking design is a multipurpose WordPress theme fully capable of handling the needs and requirements of enormously vast range of websites, from personal to corporate but is particularly suited for the needs of people who want to start their blog, architectural firms, interior design firms, landscaping firms, entertainment business and engineering firms that wish to establish their online presence. The theme is beautifully crafted, clean, easy to use, responsive, features different layouts with sidebar position. It has been designed for everybody with or without previous coding experience to effectively and helps to speedily put together polished, professional quality websites without having to so much as peek at a single line of code.
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: architectonic
@@ -559,7 +559,7 @@ body {
 }
 
 blockquote {
-    padding: 0 60px;
+    padding: 15px 0;
     font-size: 18px;
     line-height: 35px;
     font-weight: 300;
@@ -569,17 +569,6 @@ blockquote {
 blockquote.alignright {
     padding-right: 0;
     margin-bottom: 14px;
-}
-blockquote:before {
-    content: "";
-    background-image: url('assets/uploads/blockquote.png');
-    background-repeat: no-repeat;
-    position: absolute;
-    left: 0;
-    top: 9px;
-    width: 37px;
-    height: 27px;
-    display: inline-block;
 }
 
 blockquote p {

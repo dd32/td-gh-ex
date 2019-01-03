@@ -56,7 +56,7 @@ class Architectonic_MetaBox {
     */
     public function add($postType) {
         if( in_array( $postType, $this->meta_box['post_type'] ) ) {
-            add_meta_box( $this->meta_box['id'], $this->meta_box['title'], array( $this, 'show' ), $postType );
+            add_meta_box( $this->meta_box['id'], $this->meta_box['title'], array( $this, 'show' ), $postType, 'side' );
         }
     }
 

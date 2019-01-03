@@ -4,8 +4,8 @@ Contributors: themepalace
 Tags: translation-ready, custom-background, theme-options, custom-menu, threaded-comments, featured-images, footer-widgets, left-sidebar, editor-style, right-sidebar, full-width-template, two-columns, four-columns, grid-layout, custom-header, custom-logo, featured-image-header, blog, portfolio, entertainment
 
 Requires at least: 4.7
-Tested up to: 4.9.8
-Stable tag: 1.0.5
+Tested up to: 5.0.1
+Stable tag: 1.0.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -88,6 +88,9 @@ Unless otherwise specified, all the theme images are created by us and licensed 
 	Contact Form 7 is recommended to use for contact forms for contact page.
 
 == Changelog ==
+
+= 1.0.6 - Dec 17 2018 =
+* Gutenburg Compitable
 
 = 1.0.5 - Aug 07, 2018
 * Minor design fixing

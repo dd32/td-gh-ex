@@ -93,6 +93,59 @@ if ( ! function_exists( 'architectonic_setup' ) ) :
 		 * specifically font, colors, icons, and column width.
 		 */
 		add_editor_style( array( '/assets/css/editor-style' . architectonic_min() . '.css', architectonic_fonts_url() ) );
+		// Gutenberg support
+		add_theme_support( 'editor-color-palette', array(
+	       	array(
+				'name' => esc_html__( 'Red', 'architectonic' ),
+				'slug' => 'red',
+				'color' => '#a90125',
+	       	),
+	       	array(
+	           	'name' => esc_html__( 'Yellow', 'architectonic' ),
+	           	'slug' => 'yellow',
+	           	'color' => '#ffbb44',
+	       	),
+	       	array(
+	           	'name' => esc_html__( 'Black', 'architectonic' ),
+	           	'slug' => 'black',
+	           	'color' => '#000',
+	       	),
+	       	array(
+	           	'name' => esc_html__( 'Grey', 'architectonic' ),
+	           	'slug' => 'grey',
+	           	'color' => '#82868b',
+	       	),
+	   	));
+
+		add_theme_support( 'align-wide' );
+		add_theme_support( 'editor-font-sizes', array(
+		   	array(
+		       	'name' => esc_html__( 'small', 'architectonic' ),
+		       	'shortName' => esc_html__( 'S', 'architectonic' ),
+		       	'size' => 12,
+		       	'slug' => 'small'
+		   	),
+		   	array(
+		       	'name' => esc_html__( 'regular', 'architectonic' ),
+		       	'shortName' => esc_html__( 'M', 'architectonic' ),
+		       	'size' => 16,
+		       	'slug' => 'regular'
+		   	),
+		   	array(
+		       	'name' => esc_html__( 'larger', 'architectonic' ),
+		       	'shortName' => esc_html__( 'L', 'architectonic' ),
+		       	'size' => 36,
+		       	'slug' => 'larger'
+		   	),
+		   	array(
+		       	'name' => esc_html__( 'huge', 'architectonic' ),
+		       	'shortName' => esc_html__( 'XL', 'architectonic' ),
+		       	'size' => 48,
+		       	'slug' => 'huge'
+		   	)
+		));
+		add_theme_support('editor-styles');
+		add_theme_support( 'wp-block-styles' );
 	}
 endif;
 add_action( 'after_setup_theme', 'architectonic_setup' );
@@ -240,6 +293,9 @@ function architectonic_scripts() {
 	// font-awesome
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/css/font-awesome' . architectonic_min() . '.css' );
 
+	// blocks
+	wp_enqueue_style( 'architectonic-blocks', get_template_directory_uri() . '/assets/css/blocks' . architectonic_min() . '.css' );
+
 	// slick
 	wp_enqueue_style( 'slick', get_template_directory_uri() . '/assets/css/slick' . architectonic_min() . '.css' );
 
@@ -276,6 +332,19 @@ function architectonic_scripts() {
 	wp_enqueue_script( 'architectonic-custom', get_template_directory_uri() . '/assets/js/custom' . architectonic_min() . '.js', array( 'jquery' ), '20151215', true );
 }
 add_action( 'wp_enqueue_scripts', 'architectonic_scripts' );
+
+/**
+ * Enqueue editor styles for Gutenberg
+ *
+ * @since Food Restro Pro 1.0.0
+ */
+function architectonic_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'architectonic-block-editor-style', get_theme_file_uri( '/assets/css/editor-blocks' . architectonic_min() . '.css' ) );
+	// Add custom fonts.
+	wp_enqueue_style( 'architectonic-fonts', architectonic_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'architectonic_block_editor_styles' );
 
 /**
  * Implement the Custom Header feature.
