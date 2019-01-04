@@ -222,11 +222,11 @@ if ( class_exists( 'WP_Customize_Section' ) ) {
 
       if ( $this->panel ) {
 
-        $array['customizeAction'] = sprintf( 'Customizing &#9656; %s', esc_html( $this->manager->get_panel( $this->panel )->title ) );
+        $array['customizeAction'] = sprintf( __('Customizing', 'adviso') . ' &#9656; %s', esc_html( $this->manager->get_panel( $this->panel )->title ) );
 
       } else {
 
-        $array['customizeAction'] = 'Customizing';
+        $array['customizeAction'] = __('Customizing', 'adviso');
 
       }
 

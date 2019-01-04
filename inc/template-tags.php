@@ -24,9 +24,9 @@ if ( ! function_exists( 'adviso_posted_on' ) ) :
 			esc_html( get_the_modified_date() )
 		);
 
-		$posted_on = '<a href="' . get_permalink() . '" rel="bookmark">' . $time_string . '</a>';
+		$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 		
-		$byline = '<span class="author vcard"><a class="url fn n" href="' . get_author_posts_url( get_the_author_meta( 'ID' ) ) . '">' . get_the_author() . '</a></span>';
+		$byline = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 
 		echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 		
@@ -59,7 +59,7 @@ if ( ! function_exists( 'adviso_posted_on' ) ) :
 endif;
 
 function adviso_time_ago() {
-	return human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ).' '.__( 'ago', 'adviso' );
+	return esc_html( human_time_diff( get_the_time( 'U' ), current_time( 'timestamp' ) ).' '.__( 'ago', 'adviso' ) );
 }
 
 if ( ! function_exists( 'adviso_posted_by' ) ) :

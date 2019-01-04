@@ -141,16 +141,16 @@ add_action('adviso_main-class', 'adviso_get_main_class');
 			
 			<li <?php comment_class(empty( $args['has_children'] ) ? '' :'parent') ?> id="comment-<?php comment_ID() ?>" itemprop="comment" itemscope itemtype="http://schema.org/Comment">
 				<div class="comment-container">
-					<figure class="gravatar"><?php echo get_avatar( $item, 65, '', 'Author’s gravatar' ); ?></figure>
+					<figure class="gravatar"><?php echo get_avatar( $item, 65, '', __('Author’s gravatar', 'adviso') ); ?></figure>
 					<div class="comment-data">
 						<div class="comment-meta post-meta" role="complementary">
 							<h2 class="comment-author">
 								<a class="comment-author-link" href="<?php comment_author_url(); ?>" itemprop="author"><?php comment_author(); ?></a>
 							</h2>
 							<span><?php echo esc_html( adviso_time_ago() ); ?></span>
-							<?php edit_comment_link('<p class="comment-meta-item">Edit this comment</p>','',''); ?>
+							<?php edit_comment_link('<p class="comment-meta-item">' . __('Edit this comment', 'adviso') . '</p>','',''); ?>
 							<?php if ($item->comment_approved == '0') : ?>
-							<p class="comment-meta-item">Your comment is awaiting moderation.</p>
+							<p class="comment-meta-item"><?php __('Your comment is awaiting moderation.', 'adviso'); ?></p>
 							<?php endif; ?>
 						</div>
 						<div class="comment-content post-content" itemprop="text">
@@ -260,17 +260,13 @@ if ( class_exists('woocommerce') ) :
     require get_template_directory() . '/framework/woocommerce.php';
 endif;
 
-/**
- *	Increase Quality of uploaded images
-**/
 
-function adviso_jpeg_quality( $arg ) {
-	return 100;
+function adviso_excerpt_length( $length ) {
+		return 155;
 }
-add_filter('jpeg_quality', 'adviso_jpeg_quality');
+add_filter('excerpt_length', 'adviso_excerpt_length');
 
-
-function adviso_wp_editor_set_quality( $arg ) {
-	return 100;
+function adviso_excerpt( $limit ) {
+	
+	return wp_trim_words( get_the_excerpt(), $limit );
 }
-add_filter( 'wp_editor_set_quality', 'adviso_wp_editor_set_quality' );

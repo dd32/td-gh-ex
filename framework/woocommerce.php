@@ -113,8 +113,8 @@ add_filter( 'woocommerce_product_thumbnails_columns', 'adviso_gallery_four_colum
 
 // Change number or products per row to 3
 add_filter('loop_shop_columns', 'loop_columns');
-if (!function_exists('loop_columns')) {
-	function loop_columns() {
+if (!function_exists('adviso_loop_columns')) {
+	function adviso_loop_columns() {
 		return 3; // 3 products per row
 	}
 }

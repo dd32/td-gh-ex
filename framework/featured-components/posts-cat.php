@@ -4,7 +4,7 @@
 				
 			<?php if (get_theme_mod('adviso_featcat_title') !='') : ?>
 			    <div class="section-title title-font">
-			        <span><?php echo esc_html( get_theme_mod('adviso_featcat_title',__('Featured Categories','adviso')) ); ?></span>
+			        <span><?php echo esc_html( get_theme_mod('adviso_featcat_title',__('Featured Categories','adviso') ) ); ?></span>
 			    </div>
 		    <?php endif; ?>
 		    
@@ -22,11 +22,11 @@
 							'cat'			 => $cat	
 						);
 						
-						$query	= new WP_Query( $args );
+						$cat_query	= new WP_Query( $args );
 						
 						$count	=	0;
-						while ( $query->have_posts() ) :
-							$query->the_post();
+						while ( $cat_query->have_posts() ) :
+							$cat_query->the_post();
 							global $post;
 							
 							$thumb[$count]	=	get_post_thumbnail_id( $post->ID );
@@ -34,7 +34,6 @@
 							$count++;
 							
 						endwhile; ?>
-						
 						
 						<div class="category-wrapper category-<?php echo esc_attr( str_replace( ' ', '-', strtolower( esc_html( get_cat_name($cat) ) ) ) ); ?>">
 							<div class="category-title">

@@ -40,7 +40,7 @@
                 <div class="top-cart-icon">
 
 
-                    <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php esc_html_e('View your shopping cart', 'adviso'); ?>">
+                    <a class="cart-contents" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php esc_attr_e('View your shopping cart', 'adviso'); ?>">
 	                        <div class="count"><?php echo sprintf(_n('%d item', '%d items', WC()->cart->cart_contents_count, 'adviso'), WC()->cart->cart_contents_count);?></div>
 	                        <div class="total"> <?php echo WC()->cart->get_cart_total(); ?>
 	                        </div>

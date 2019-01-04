@@ -29,8 +29,8 @@ if ( $total <= 1 ) {
 			'add_args'     => false,
 			'current'      => max( 1, $current ),
 			'total'        => $total,
-			'prev_text'    => 'Previous',
-			'next_text'    => 'Next',
+			'prev_text'    => __('Previous', 'adviso'),
+			'next_text'    => __('Next', 'adviso'),
 			'end_size'     => 3,
 			'mid_size'     => 3,
 		) ) );

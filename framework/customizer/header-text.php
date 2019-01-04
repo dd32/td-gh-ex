@@ -15,7 +15,7 @@ function adviso_header_text($wp_customize) {
 		'adviso_header_text',
 		array(
 			'default'	=> '',
-			'sanitize_callback'	=> 'esc_textarea',
+			'sanitize_callback'	=> 'esc_textarea_field',
 			'transport'		=> 'postMessage'
 		)
 	);

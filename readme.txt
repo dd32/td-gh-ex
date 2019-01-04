@@ -20,6 +20,9 @@ Demo Here: http://demo.inkhive.com/adviso/
 
 == Changelog ==
 
+= 0.993 =
+* Tenth Review Changes
+
 = 0.992 =
 * Ninth Review Changes
 
@@ -89,6 +92,7 @@ Demo Here: http://demo.inkhive.com/adviso/
 * Modernizr © 2009-2018 Modernizr, MIT
 * BigSlide © 2018  Adam D. Scott, MIT
 * Custom Controls © 2018 Anthony Hortin, GNU General Public License v2 or later
+* Owl Slider © 2014 Owl, MIT
 * Screenshot Stock Image, https://pixabay.com/en/marigold-calendula-orange-blossom-1568646/, CC0 License
 
 All Other Resources, apart from the ones mentioned above have been created by me fall under GPL v3 license of the theme.

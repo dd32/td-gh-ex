@@ -74,7 +74,7 @@ if ( ! function_exists( 'adviso_setup' ) ) :
 
         add_image_size('adviso-sq-thumb', 600,600, true );
         add_image_size('adviso-pop-thumb',330, 220, true );
-        add_image_size('offer-thumb', 540, 340, true );
+        add_image_size('adviso-offer-thumb', 542, 340, true );
         //add_image_size('product-thumb', 250, 400, true);
         /**
          * Add support for core custom logo.
