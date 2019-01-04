@@ -4,7 +4,7 @@
  * Author: Booking Algorithms
  * Author URI: https://ba-booking.com/
  * Description: BA Tours light is a booking theme developed for travel agencies and tour operators of any size. It's a first theme based on a true fast and flexible free booking engine – BA Book Everything plugin. You no longer need any shopping plugins, so this theme doesn't support Woocommerce. The booking engine allows you to create different booking rules and categories for different tours (with or without ages in prices), set seasonal prices and discounts, use promo codes (discount coupons), sell additional services with booking (extra tickets etc.), and add as many taxonomies (attributes) for filtering tours in search requests as you like. Clear landing design looks great on both desktop and mobile screens. Modern responsive design, based on Bootstrap 4 framework, touch-ready and responsive sliders, Fontawesome 5 beautiful icons, customizable theme typography, and more.
- * Version: 1.0.2
+ * Version: 1.0.3
  * License: GNU General Public License v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.html
  * Text Domain: ba-tours-light
@@ -218,6 +218,9 @@ input[type=submit]:hover{
     margin: 0;
 }
 
+#main{
+    width: 100%;
+}
 
 /*============Navigation================*/
 
@@ -234,7 +237,7 @@ input[type=submit]:hover{
 }
 
 .header-top-row{
-    margin-bottom: 10px;
+    margin-bottom: 6px;
 }
 
 .header-with-texts .header-top-row{
@@ -447,7 +450,7 @@ img.site-logo{
 
 @media (min-width: 992px){
   #site-navigation #nav_menu > .menu-item > .nav-link{
-    padding: 0.625em 1.2em;
+    padding: 1em 1.2em;
   }
   
   #site-navigation .dropdown-item {
@@ -466,7 +469,7 @@ img.site-logo{
    }
    
    #site-navigation #nav_menu > .menu-item > .nav-link{
-    padding: 0.625em 1.6em;
+    padding: 1em 1.6em;
    }
    
    #site-navigation .dropdown-item {
@@ -518,7 +521,125 @@ img.site-logo{
   } 
 }
 
-/*==========================================*/
+/*===============Aside==============*/
+
+aside input[type="text"]{
+    width: 100%;
+}
+
+.widget {
+	margin: 0 0 2.5em;
+}
+
+.widget_search label{
+    width: 100%;
+}
+
+.widget-area .widget .widget-title {
+    font-size: 1rem;
+    font-weight: 500;
+    margin: 0 0 0.5rem;
+    padding: 1rem;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.widget-area .widget .widget-title~* {
+    font-size: 0.9375rem;
+    padding: 1rem;
+}
+
+.site-footer .widget ul, .widget-area .widget ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.site-footer .widget ul li, .widget-area .widget ul li {
+    line-height: 1.4;
+    padding-bottom: 0.6em;
+}
+
+
+.widget #wp-calendar thead {
+    border-bottom: 2px solid #f6f6f6;
+}
+
+.widget #wp-calendar thead tr {
+    background: none;
+}
+
+.widget #wp-calendar thead th {
+    padding: 0.5rem 0;
+    text-align: center;
+    font-weight: 700;
+}
+
+.widget #wp-calendar tfoot {
+    font-size: 0.8125rem;
+}
+
+.widget #wp-calendar tfoot #next, .widget #wp-calendar tfoot #prev {
+    padding-top: 0.25rem;
+}
+
+.widget #wp-calendar tbody {
+    font-size: 0.8125rem;
+}
+
+.widget #wp-calendar tbody td {
+    padding-bottom: 0.5rem;
+    text-align: center;
+}
+
+.widget #wp-calendar tbody td#today{
+    background-color: #eee;
+}
+
+.widget #wp-calendar tbody .pad {
+    background: none;
+}
+
+.widget #wp-calendar tbody tr:first-of-type td {
+    padding-top: 0.5rem;
+}
+
+.gallery-item{
+    padding: 3px;
+    margin-top: 0;
+}
+
+.babe-search-filter-terms .batourslight_preview_term_icon, .babe-search-filter-terms  .batourslight_preview_term_img{
+    display: inline-block;
+    padding-left: 3px;
+}
+
+.babe_price_slider.ui-widget {
+    font-size: 0.3em;
+    border-radius: 0;
+}
+
+.babe_price_slider.ui-widget.ui-widget-content {
+    background-color: #ddd;
+    border: none;
+}
+
+.babe_price_slider.ui-slider .ui-slider-handle {
+    width: 1.2rem;
+    height: 1.2rem;
+    top: -0.5rem;
+    margin-left: -0.6rem;
+    border-radius: 50%;
+    background-color: #bababa;
+    outline: none;
+}
+
+.babe_price_slider_label #babe_range_price {
+    font-weight: 700;
+    font-size: 1rem;
+}
+
+/*==============Main========================*/
 
 .site-header{
 }
@@ -624,8 +745,13 @@ blockquote p{
     font-size: 1.375rem;
     font-weight: 700;
     text-transform: none;
-    padding-left: 0;
-    padding-right: 0;
+    margin: 0 0 0.5em 0;
+    padding: 0.58em 0;
+}
+
+.footer-widgets .widget .widget-title~* {
+    font-size: 1rem;
+    padding: 0;
 }
 
 .footer-widgets .widget p{
@@ -1155,124 +1281,6 @@ body.blog .hentry:last-child, body.archive .hentry:last-child{
 
 .entry-footer .cat-links, .entry-footer .comments-link, .entry-footer .tags-links{
     margin-right: 2rem;
-}
-
-/*===============Aside==============*/
-
-aside input[type="text"]{
-    width: 100%;
-}
-
-.widget {
-	margin: 0 0 2.5em;
-}
-
-.widget_search label{
-    width: 100%;
-}
-
-.widget-area .widget .widget-title {
-    font-size: 1rem;
-    font-weight: 500;
-    margin: 0 0 0.5rem;
-    padding: 1rem;
-    text-transform: uppercase;
-    width: 100%;
-}
-
-.widget-area .widget .widget-title~* {
-    font-size: 0.9375rem;
-    padding: 1rem;
-}
-
-.site-footer .widget ul, .widget-area .widget ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.site-footer .widget ul li, .widget-area .widget ul li {
-    line-height: 1.4;
-    padding-bottom: 0.6em;
-}
-
-
-.widget #wp-calendar thead {
-    border-bottom: 2px solid #f6f6f6;
-}
-
-.widget #wp-calendar thead tr {
-    background: none;
-}
-
-.widget #wp-calendar thead th {
-    padding: 0.5rem 0;
-    text-align: center;
-    font-weight: 700;
-}
-
-.widget #wp-calendar tfoot {
-    font-size: 0.8125rem;
-}
-
-.widget #wp-calendar tfoot #next, .widget #wp-calendar tfoot #prev {
-    padding-top: 0.25rem;
-}
-
-.widget #wp-calendar tbody {
-    font-size: 0.8125rem;
-}
-
-.widget #wp-calendar tbody td {
-    padding-bottom: 0.5rem;
-    text-align: center;
-}
-
-.widget #wp-calendar tbody td#today{
-    background-color: #eee;
-}
-
-.widget #wp-calendar tbody .pad {
-    background: none;
-}
-
-.widget #wp-calendar tbody tr:first-of-type td {
-    padding-top: 0.5rem;
-}
-
-.gallery-item{
-    padding: 3px;
-    margin-top: 0;
-}
-
-.babe-search-filter-terms .batourslight_preview_term_icon, .babe-search-filter-terms  .batourslight_preview_term_img{
-    display: inline-block;
-    padding-left: 3px;
-}
-
-.babe_price_slider.ui-widget {
-    font-size: 0.3em;
-    border-radius: 0;
-}
-
-.babe_price_slider.ui-widget.ui-widget-content {
-    background-color: #ddd;
-    border: none;
-}
-
-.babe_price_slider.ui-slider .ui-slider-handle {
-    width: 1.2rem;
-    height: 1.2rem;
-    top: -0.5rem;
-    margin-left: -0.6rem;
-    border-radius: 50%;
-    background-color: #bababa;
-    outline: none;
-}
-
-.babe_price_slider_label #babe_range_price {
-    font-weight: 700;
-    font-size: 1rem;
 }
 
 /*============Pagination=============*/

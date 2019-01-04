@@ -5,6 +5,32 @@ jQuery(document).ready(function($){
     
     $('p:empty').remove();
     
+    //////////////////////////
+    ////////Slick Carousel////////////
+    
+    var_autoplay = typeof slick_var_autoplay !== 'undefined' ? slick_var_autoplay : false;
+    var_autoplaySpeed = typeof slick_var_autoplaySpeed !== 'undefined' ? slick_var_autoplaySpeed : '3000';
+    
+							$('.slick_carousel').slick({
+								infinite: true,
+								arrows: true,
+                                autoplay: var_autoplay,
+                                autoplaySpeed: var_autoplaySpeed,
+								nextArrow: '<span class="slick-arrow slick-arrow-right"></span>',
+								prevArrow: '<span class="slick-arrow slick-arrow-left"></span>',
+								dots: false,
+								slidesToShow: 2,
+								slidesToScroll: 1,
+                                responsive: [
+								{
+									breakpoint: 1199,
+									settings: {
+										slidesToShow: 1
+									}
+								}
+							]
+							});
+    
     /////////Search form//////
     
     $('.add_input_field .add_ids_title').on('click', function(event){

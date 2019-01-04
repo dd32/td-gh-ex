@@ -47,8 +47,11 @@
     
     <?php get_template_part( 'template-parts/content-tags/content-tag-post-thumbnail' ); ?>
     
-	<div id="content" class="site-content <?php echo esc_attr(apply_filters( 'batourslight_style', 'container', 'content' )); 
-    echo apply_filters( 'batourslight_page_option', true, 'header_margin' ) ? ' content-margin' : ''; ?>">
+	<div id="content" class="site-content <?php echo esc_attr(apply_filters( 'batourslight_style', 'container', 'content' ));
+    if (BAT_Settings::$layout_current != 'frontpage'){ 
+       echo apply_filters( 'batourslight_page_option', true, 'header_margin' ) ? ' content-margin' : '';
+    } 
+    ?>">
     
        <div class="row">
 			

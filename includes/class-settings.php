@@ -41,11 +41,7 @@ class BAT_Settings {
         
         self::init_settings();
         
-        add_action( 'init', array( __CLASS__, 'init_image_sizes'), 10 );
-        
         add_action( 'init', array( __CLASS__, 'init_custom_colors'), 10 );
-        
-        //add_action( 'init', array( __CLASS__, 'init_custom_fonts'), 10 );
         
         add_action( 'template_redirect', array( __CLASS__, 'init_layout_current'), 10 );
         
@@ -272,6 +268,26 @@ class BAT_Settings {
                   ),
               ),
          );
+         
+         self::$image_sizes = array(
+           'batourslight_wide' => array(
+              'width' => 1920,
+              'height' => 870,
+              'crop' => true,
+           ),
+           'batourslight_thumbnail' => array(
+              'width' => 350,
+              'height' => 200,
+              'crop' => true,
+           ),
+           'batourslight_thumbnail_wide' => array(
+              'width' => 430,
+              'height' => 190,
+              'crop' => true,
+           ),
+        );
+        
+        self::$image_sizes = apply_filters('batourslight_init_image_sizes', self::$image_sizes);
 
         self::$custom_fonts = apply_filters('batourslight_init_custom_fonts', self::$custom_fonts);
         
@@ -455,38 +471,6 @@ class BAT_Settings {
          );
 
         self::$custom_fonts = apply_filters('batourslight_init_custom_fonts', $custom_fonts);
-        
-        return;
-    }
-	
-    //////////////////////////////
-	
-    /**
-	 * Init image sizes.
-     * 
-     * @return
-	 */
-    public static function init_image_sizes() {
-        
-        $image_sizes = array(
-           'batourslight_wide' => array(
-              'width' => 1920,
-              'height' => 870,
-              'crop' => true,
-           ),
-           'batourslight_thumbnail' => array(
-              'width' => 350,
-              'height' => 200,
-              'crop' => true,
-           ),
-           'batourslight_thumbnail_wide' => array(
-              'width' => 430,
-              'height' => 190,
-              'crop' => true,
-           ),
-        );
-        
-        self::$image_sizes = apply_filters('batourslight_init_image_sizes', $image_sizes);
         
         return;
     }
@@ -811,6 +795,7 @@ class BAT_Settings {
 		'selectors' => array(
 			'background-color' => array(
 				'.site-footer',
+                '.footer-widgets .widget .widget-title',
 			),
 		),
 	),

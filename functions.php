@@ -14,7 +14,7 @@
  * System defines.
  */
 define( 'BATOURSLIGHT', __FILE__ );
-define( 'BATOURSLIGHT_VERSION', '1.0.2' );
+define( 'BATOURSLIGHT_VERSION', '1.0.3' );
 define( 'BATOURSLIGHT_NAME', 'BA Tours light' );
 define( 'BATOURSLIGHT_URI', get_template_directory_uri() );
 define( 'BATOURSLIGHT_DIR', untrailingslashit( dirname( BATOURSLIGHT ) ) );
@@ -85,7 +85,7 @@ add_action( 'wp_enqueue_scripts', 'batourslight_enqueue_scripts', 10, 1 );
  */
 function batourslight_enqueue_scripts(){
     
-        wp_enqueue_style( 'batourslight-fontawesome' , BATOURSLIGHT_URI . '/fonts/fontawesome-free/css/all.css', false, '5.6.3' );
+        wp_enqueue_style( 'batourslight-fontawesome' , BATOURSLIGHT_URI . '/fonts/fontawesome-free/css/all.min.css', false, '5.6.3' );
     
         wp_enqueue_style('dashicons');
         
@@ -127,6 +127,7 @@ function batourslight_enqueue_scripts(){
 			'skip-link-focus-fix' => 'skip-link-focus-fix.js',
             'popper' => 'popper.min.js',
 			'bootstrap' => 'bootstrap.min.js',
+            'slick' => 'slick/slick.min.js',
 			'theme' => 'theme.js'
 		);
 

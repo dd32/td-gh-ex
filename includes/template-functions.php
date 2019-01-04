@@ -1461,13 +1461,13 @@ if ( ! function_exists( 'batourslight_booking_form' ) ) {
 		     
              $output = '';
              
-             $image_srcs = wp_get_attachment_image_src( get_post_thumbnail_id( $post['ID'] ), $thumbnail );
+             $image_html = wp_get_attachment_image( get_post_thumbnail_id( $post['ID'] ), $thumbnail );
 				
 				$placeholder_url = apply_filters( 'batourslight_image_url', null, 'placeholder_img.png' );
                 
                 $item_url = BABE_Functions::get_page_url_with_args($post['ID'], $_GET);
 				
-				$image = $image_srcs ? '<a href="' . $item_url . '"><img src="' . $image_srcs[0] . '"></a>' : '<a href="' . $item_url . '"><img src="' . $placeholder_url . '"></a>';
+				$image = $image_html ? '<a href="' . $item_url . '">' . $image_html . '</a>' : '<a href="' . $item_url . '"><img src="' . $placeholder_url . '"></a>';
 				
 				
 				$price_old = $post['discount_price_from'] < $post['price_from'] ? '<span class="tour_info_price_old">' . BABE_Currency::get_currency_price( $post['price_from'] ) . '</span>' : '';
