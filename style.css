@@ -1,10 +1,10 @@
 /*!
 Theme Name: ArtGallery
-Description: ArtGallery is fully Responsive Art WordPress Theme. Features: Animation Appearing Effects, Custom Logo, Custom Background, Footer copyright text customizations, Widget Areas: Sidebar, 3 Footer Columns, Footer Menu, Translation-Ready and much more.
+Description: ArtGallery is fully Responsive Art WordPress Theme. Features: Animation Appearing Effects, Custom Logo, Custom Background, Footer copyright text customizations, Widget Areas: Sidebar, 3 Footer Columns, Footer Menu, Gutenberg Compatible, Translation-Ready and much more.
 Author: customizablethemes
 Author URI: https://customizablethemes.com
 Theme URI: https://customizablethemes.com/product/artgallery/
-Version: 1.1.1
+Version: 1.1.2
 Text Domain: artgallery
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2 or later
@@ -1630,6 +1630,36 @@ dt.gallery-icon > a:before,
 
 /* Medium Resolution */
 @media screen and (max-width: 799px) {
+
+	#navmain ul ul {
+        display:none;
+    }
+
+    #navmain .sub-menu-item-toggle {
+        display:inline-block;
+        margin:10px 10px 0 0;
+        float:right;
+    }
+
+    #navmain .sub-menu-item-toggle:before {
+        font:16px 'FontAwesome';
+        content:"\f067";
+        width:20px;
+        height:20px;
+        padding:2px;
+    }
+
+    #navmain .sub-menu-item-toggle-expanded:before {
+        content:"\f068";
+    }
+
+    #navmain ul.sub-menu > li > a {
+        padding-left:25px;
+    }
+
+    #navmain ul.sub-menu ul.sub-menu > li > a {
+        padding-left:50px;
+    }
 
 	h1 {
 		font-size:24px;

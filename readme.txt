@@ -3,7 +3,8 @@ Contributors: customizablethemes
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 Requires at least: 4.7.0
 Tested up to: 4.9.2
-Stable tag: 1.1.0
+Requires PHP: 5.2.4
+Stable tag: 1.1.2
 License: License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,7 +14,7 @@ ArtGallery is fully Responsive Art WordPress Theme.
 
 ArtGallery is fully Responsive Art WordPress Theme. Features: Animation Appearing Effects, Custom Logo,
 Custom Background, Footer copyright text customizations, Widget Areas: Sidebar, 3 Footer Columns,
-Footer Menu, Translation-Ready and much more.
+Footer Menu, Gutenberg Compatible, Translation-Ready and much more.
 
 == Frequently Asked Questions ==
 
@@ -40,6 +41,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.1.2 =
+* improve primary menu under menu
+
 = 1.1.1 =
 * update Resources' images info 
 * remove add_image_size from functions.php
