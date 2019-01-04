@@ -3,8 +3,8 @@ Theme Name: Apelle uno
 Theme URI: https://xxi.xxii.it/apello
 Author: DevFabio
 Author URI: https://inventyourtrade.it/
-Description: no comment.
-Version: 1.0.5
+Description: Semplice ed essenziale, snello e pulito.
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: apelleuno
@@ -91,3 +91,38 @@ h1{
 }
 body.admin-bar nav.fixed-top {
 	top:28px;}
+li.widget {
+	list-style: none;
+	}
+#apelleuno-sidebar-laterale{
+	    padding: 2px;
+		padding-top: 12px;}
+#apelleuno-sidebar-laterale  ul{
+	    padding: 2px;}
+#apelleuno-sidebar-laterale  li{
+	    list-style: none;}
+		
+		
+#container-apelleuno-footer-1 ul li ul{
+	    padding: 2px;
+		}
+#container-apelleuno-footer-1 ul li ul li {
+		list-style: none;}
+#container-apelleuno-footer-1 ul li ul li a{
+		color: #6c757d!important;}
+		
+#container-apelleuno-footer-2 ul li ul{
+	    padding: 2px;
+		}
+#container-apelleuno-footer-2 ul li ul li {
+		list-style: none;}
+#container-apelleuno-footer-2 ul li ul li a{
+		color: #6c757d!important;}
+		
+#container-apelleuno-footer-3 ul li ul{
+	    padding: 2px;
+		}
+#container-apelleuno-footer-3 ul li ul li {
+		list-style: none;}
+#container-apelleuno-footer-3 ul li ul li a{
+		color: #6c757d!important;}

@@ -251,6 +251,39 @@ $args = array(
 	'before_title'  => '<h2 class="widgettitle">',
 	'after_title'   => '</h2>' ); 
 register_sidebar( $args );
+
+$args = array(
+	'name'          => __( 'Footer 1', 'apelleuno' ),
+	'id'            => 'apelleuno-footer-1',    
+	'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelleuno' ),
+        'class'         => 'list-unstyled text-small',
+	'before_widget' => '<li id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</li>',
+	'before_title'  => '<h5 class="widgettitle">',
+	'after_title'   => '</h5>' ); 
+register_sidebar( $args );
+
+$args = array(
+	'name'          => __( 'Footer 2', 'apelleuno' ),
+	'id'            => 'apelleuno-footer-2',    
+	'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelleuno' ),
+        'class'         => 'list-unstyled text-small',
+	'before_widget' => '<li id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</li>',
+	'before_title'  => '<h5 class="widgettitle">',
+	'after_title'   => '</h5>' ); 
+register_sidebar( $args );
+
+$args = array(
+	'name'          => __( 'Footer 3', 'apelleuno' ),
+	'id'            => 'apelleuno-footer-3',    
+	'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelleuno' ),
+        'class'         => 'list-unstyled text-small',
+	'before_widget' => '<li id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</li>',
+	'before_title'  => '<h5 class="widgettitle">',
+	'after_title'   => '</h5>' ); 
+register_sidebar( $args );
 }
 add_theme_support( 'post-thumbnails' ); 
 ?>
