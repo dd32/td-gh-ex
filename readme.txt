@@ -5,6 +5,7 @@ custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 footer-widgets
 Requires at least: 4.8.0
 Tested up to: 4.9.6
+Requires PHP: 5.2.4
 Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -40,6 +41,10 @@ Installation using 'Add New Theme'
 2. See Appearance -> Customize to change theme specific options
 
 == Changelog ==
+
+= 1.0.9 =
+* Update primary menu first level items with collapse/expand functionality under Mobile
+
 = 1.0.8 =
 * update Resources' images info 
 * remove add_image_size from functions.php
