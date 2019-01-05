@@ -18,7 +18,32 @@ jQuery( document ).ready(function() {
 	   fkidd_init_loading_effects();
   	}
 
-	jQuery('#navmain > div').on('click', function(e) {
+	if ( jQuery(window).width() < 800 ) {
+		
+			jQuery('#navmain > div > ul > li').each(
+		       function() {
+		         if (jQuery(this).find('> ul.sub-menu').length > 0) {
+
+		           jQuery(this).prepend('<span class="sub-menu-item-toggle"></span>');
+		         }
+		       }
+		     );
+
+		   jQuery('.sub-menu-item-toggle').on('click', function(e) {
+
+		     e.stopPropagation();
+
+		     var subMenu = jQuery(this).parent().find('> ul.sub-menu');
+
+		     jQuery('#navmain ul ul.sub-menu').not(subMenu).hide();
+		     jQuery(this).toggleClass('sub-menu-item-toggle-expanded');
+		     subMenu.toggle();
+		     subMenu.find('ul.sub-menu').toggle();
+		   });
+
+		}
+
+		jQuery('#navmain > div').on('click', function(e) {
 
 		e.stopPropagation();
 
@@ -76,10 +101,7 @@ function fkidd_init_loading_effects() {
             offset: 1
           });
 
-    jQuery('#navmain a').addClass("hidden").viewportChecker({
-            classToAdd: 'animated rubberBand',
-            offset: 1
-          });
+    
 
     jQuery('#page-header').addClass("hidden").viewportChecker({
             classToAdd: 'animated bounceInUp',

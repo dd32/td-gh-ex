@@ -49,6 +49,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.9.5 =
+* Mobile: add +/- functionality for root main menu items
+
 = 1.9.4 =
 * add starter content
 
