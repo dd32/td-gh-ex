@@ -5,6 +5,7 @@ custom-colors, custom-header, custom-menu, featured-images, threaded-comments, t
 sticky-post, theme-options, full-width-template, front-page-post-form, footer-widgets
 Requires at least: 4.8.0
 Tested up to: 4.9.6
+Requires PHP: 5.2.4
 Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -40,6 +41,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.1.8 =
+* Update primary menu first level items with collapse/expand functionality under Mobile
+
 = 1.1.7 =
 * update Resources' images info 
 
