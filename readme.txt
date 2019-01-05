@@ -5,6 +5,7 @@ custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, editor-style
 Requires at least: 4.8.0
 Tested up to: 4.9.6
+Requires PHP: 5.2.4
 Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,7 +17,7 @@ AyaCoffeeShop is Fully Responsive WordPress Theme.
 AyaCoffeeShopPro is a fully responsive WordPress Theme. Features include a Built-in Homepage Slider (Displayed Only on a Static Front Page),
 Custom Logo, Multi-level Drop-down Menu, Custom Background, Full-Width Page Template,
 Footer Widgets Areas, Footer Menu, Footer Copyright Text, Search Engine Optimized, Multiple Browsers
-Support, Translation-Ready, etc. Fully Responsive, Customizable, and easy to use theme.
+Support, Gutenberg Compatible, Translation-Ready, etc. Fully Responsive, Customizable, and easy to use theme.
 
 == Frequently Asked Questions ==
 
@@ -42,6 +43,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.5. Save Changes
 
 == Changelog ==
+
+= 1.0.6 =
+* Update primary menu first level items with collapse/expand functionality under Mobile
 
 = 1.0.5 =
 * update Resources' images info 
