@@ -1,10 +1,10 @@
 /*!
 Theme Name: AyaFreelance
-Description: AyaFreelance is fully Responsive Blogging WordPress Theme. Features: Built-in Homepage Slider (Displayed Only on a Static Front Page), Custom Logo, Custom Background, Footer copyright text customizations, Widget Areas: Sidebar, 3 Footer Columns, Multi-level Drop-down Menu, Footer Menu, Search Engine Optimized, Multiple Browsers Support, Translation-Ready and much more.
+Description: AyaFreelance is fully Responsive Blogging WordPress Theme. Features: Built-in Homepage Slider (Displayed Only on a Static Front Page), Custom Logo, Custom Background, Footer copyright text customizations, Widget Areas: Sidebar, 3 Footer Columns, Multi-level Drop-down Menu, Footer Menu, Search Engine Optimized, Multiple Browsers Support, Gutenberg Compatible, Translation-Ready and much more.
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayafreelance
-Version: 1.1.5
+Version: 1.1.6
 Text Domain: ayafreelance
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -1723,6 +1723,36 @@ dt.gallery-icon > a:before,
 
 /* Medium Resolution */
 @media screen and (max-width: 799px) {
+
+	#navmain ul ul {
+        display:none;
+    }
+
+    #navmain .sub-menu-item-toggle {
+        display:inline-block;
+        margin:10px 10px 0 0;
+        float:right;
+    }
+
+    #navmain .sub-menu-item-toggle:before {
+        font:16px 'FontAwesome';
+        content:"\f067";
+        width:20px;
+        height:20px;
+        padding:2px;
+    }
+
+    #navmain .sub-menu-item-toggle-expanded:before {
+        content:"\f068";
+    }
+
+    #navmain ul.sub-menu > li > a {
+        padding-left:25px;
+    }
+
+    #navmain ul.sub-menu ul.sub-menu > li > a {
+        padding-left:50px;
+    }
 
 	h1 {
 		font-size:1.5em;

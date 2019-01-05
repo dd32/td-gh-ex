@@ -5,6 +5,7 @@ custom-header, custom-menu, featured-images, threaded-comments, translation-read
 theme-options, footer-widgets
 Requires at least: 4.8.0
 Tested up to: 4.9.6
+Requires PHP: 5.2.4
 Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,7 +17,7 @@ AyaFreelance is fully Responsive Blogging WordPress Theme.
 AyaFreelance is fully Responsive Blogging WordPress Theme. Features: Built-in Homepage Slider (Displayed Only on a Static Front Page),
 Custom Logo, Custom Background, Footer copyright text customizations, Widget Areas: Sidebar,
 3 Footer Columns, Multi-level Drop-down Menu, Footer Menu, Search Engine Optimized,
-Multiple Browsers Support, Translation-Ready and much more.
+Multiple Browsers Support, Gutenberg Compatible, Translation-Ready and much more.
 
 == Frequently Asked Questions ==
 
@@ -40,8 +41,12 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.1.6 =
+* Update primary menu first level items with collapse/expand functionality under Mobile
+
 = 1.1.5 =
-* * update Resources' images info 
+* update Resources' images info 
 
 = 1.1.4 =
 * update readme.txt file format
