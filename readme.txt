@@ -5,6 +5,7 @@ custom-header, custom-menu, featured-images, threaded-comments, translation-read
 sticky-post, theme-options, footer-widgets
 Requires at least: 4.8.0
 Tested up to: 4.9.6
+Requires PHP: 5.2.4
 Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,7 +17,7 @@ AyaMedicine is Fully Responsive WordPress Theme.
 AyaMedicine is fully Responsive WordPress Theme with Built-in Homepage Slider (Displayed Only on a Static Front Page), Multi-level Drop-down
 Menu, W3C markup validated, Search Engine Optimized, Custom Logo, Custom Background, Footer Copyright
 Text Customizations, Widget Areas: 3 Homepage Columns, Sidebar, 3 Footer Columns, Multiple Browsers
-Support, Translation-Ready and much more.
+Support, Gutenberg Compatible, Translation-Ready and much more.
 
 == Frequently Asked Questions ==
 
@@ -43,6 +44,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.0.7 =
+* Update primary menu first level items with collapse/expand functionality under Mobile
 
 = 1.0.6 =
 * update Resources' images info 

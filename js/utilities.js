@@ -38,6 +38,31 @@
 			ayamedicine_init_loading_effects();
 		}
 
+		if ( $(window).width() < 800 ) {
+		
+			$('#navmain > div > ul > li').each(
+		       function() {
+		         if ($(this).find('> ul.sub-menu').length > 0) {
+
+		           $(this).prepend('<span class="sub-menu-item-toggle"></span>');
+		         }
+		       }
+		     );
+
+		   $('.sub-menu-item-toggle').on('click', function(e) {
+
+		     e.stopPropagation();
+
+		     var subMenu = $(this).parent().find('> ul.sub-menu');
+
+		     $('#navmain ul ul.sub-menu').not(subMenu).hide();
+		     $(this).toggleClass('sub-menu-item-toggle-expanded');
+		     subMenu.toggle();
+		     subMenu.find('ul.sub-menu').toggle();
+		   });
+
+		}
+
 		$('#navmain > div').on('click', function(e) {
 
 			e.stopPropagation();
@@ -96,10 +121,7 @@
             offset: 1
           });
 
-	    $('#navmain a').addClass("hidden").viewportChecker({
-            classToAdd: 'animated rubberBand',
-            offset: 1
-          });
+	    
 
 	    $('#page-header, article h1').addClass("hidden").viewportChecker({
 	            classToAdd: 'animated bounceInUp',

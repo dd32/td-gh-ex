@@ -1,10 +1,10 @@
 /*!
 Theme Name: AyaMedicine
-Description: AyaMedicine is fully Responsive WordPress Theme with Built-in Homepage Slider (Displayed Only on a Static Front Page), Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized, Custom Logo, Custom Background, Footer Copyright Text Customizations, Widget Areas: 3 Homepage Columns, Sidebar, 3 Footer Columns, Multiple Browsers Support, Translation-Ready and much more.
+Description: AyaMedicine is fully Responsive WordPress Theme with Built-in Homepage Slider (Displayed Only on a Static Front Page), Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized, Custom Logo, Custom Background, Footer Copyright Text Customizations, Widget Areas: 3 Homepage Columns, Sidebar, 3 Footer Columns, Multiple Browsers Support, Gutenberg Compatible, Translation-Ready and much more.
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayamedicine
-Version: 1.0.6
+Version: 1.0.7
 Text Domain: ayamedicine
 Tags: blog, news, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -1579,7 +1579,7 @@ blockquote {
 .home-col-title {
 	font-weight:normal;
 	font-size:20px;
-	padding-top:15px;
+	padding-top:25px;
 	letter-spacing:1px;
 	float:none;
 	clear:both;
@@ -2137,6 +2137,36 @@ blockquote {
 
 /* Medium Resolution */
 @media screen and (max-width: 799px) {
+
+	#navmain ul ul {
+        display:none;
+    }
+
+    #navmain .sub-menu-item-toggle {
+        display:inline-block;
+        margin:10px 10px 0 0;
+        float:right;
+    }
+
+    #navmain .sub-menu-item-toggle:before {
+        font:16px 'FontAwesome';
+        content:"\f067";
+        width:20px;
+        height:20px;
+        padding:2px;
+    }
+
+    #navmain .sub-menu-item-toggle-expanded:before {
+        content:"\f068";
+    }
+
+    #navmain ul.sub-menu > li > a {
+        padding-left:25px;
+    }
+
+    #navmain ul.sub-menu ul.sub-menu > li > a {
+        padding-left:50px;
+    }
 
 	#navmain ul.mega-menu-sub-menu {
 		display:none;
