@@ -5,6 +5,7 @@ custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, editor-style
 Requires at least: 4.8.0
 Tested up to: 4.9.6
+Requires PHP: 5.2.4
 Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -16,7 +17,7 @@ AyaEstate is Fully Responsive WordPress Theme.
 AyaEstate is Fully Responsive WordPress Theme. Features include Animation Effects,
 Custom Logo, Multi-level Drop-down Menu, Custom Background, Full-Width Page Template,
 Widget Areas: Right Sidebar and 3 Footer Columns, Footer Menu, Search Engine Optimized,
-Multiple Browsers Support, Translation-Ready, etc.
+Multiple Browsers Support, Gutenberg Compatible, Translation-Ready, etc.
 
 == Frequently Asked Questions ==
 
@@ -40,6 +41,9 @@ Installation using 'Add New Theme'
 
 
 == Changelog ==
+
+= 1.1.3 =
+* Update primary menu first level items with collapse/expand functionality under Mobile
 
 = 1.1.2 =
 * update Resources' images info
