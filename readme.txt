@@ -3,6 +3,7 @@ Contributors: ayatemplates
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 Requires at least: 4.9.5
 Tested up to: 4.9.8
+Requires PHP: 5.2.4
 Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -14,7 +15,7 @@ AyaClub is fully Responsive Music Club WordPress Theme.
 AyaClub is fully Responsive Music Club WordPress Theme. Features: Animations Appearing Effect,
 Built-in Homepage Slider (Displayed Only on a Static Front Page), Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized,
 Custom Logo, Custom Background, Footer Copyright Text Customizations, Widget Areas: 3 Homepage Columns,
-Sidebar, 3 Footer Columns, Multiple Browsers Support, Translation-Ready and much more.
+Sidebar, 3 Footer Columns, Multiple Browsers Support, Gutenberg Compatible, Translation-Ready and much more.
 
 == Frequently Asked Questions ==
 
@@ -38,6 +39,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.1.2 (2019-01-05) =
+* Update primary menu first level items with collapse/expand functionality under Mobile
+
 = 1.1.1 (2018-11-19) =
 * update Resources' images date uppload info 
 
