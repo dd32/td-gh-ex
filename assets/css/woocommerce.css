@@ -482,7 +482,7 @@ a.added_to_cart.wc-forward {
 .woocommerce ul.products li.product,
 .woocommerce-page ul.products li.product {
     margin: 0 2% 2.992em 0;
-    width: 32%;
+    width: 32% !important;
     text-align: center;
 }
 

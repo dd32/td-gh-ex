@@ -373,7 +373,7 @@
   .woocommerce-page .page-content ul.products li.product,
   .woocommerce-page[class*=columns-] .page-content ul.products li.product,
   .woocommerce[class*=columns-] .page-content ul.products li.product {
-    width: 48%;
+    width: 48% !important;
     float: left;
     clear: both;
   }
@@ -390,15 +390,14 @@
     width: 100%;
     margin-bottom: 40px;
   }
-
-  .woocommerce ul.products li:nth-child(odd),
-  .woocommerce-page ul.products li:nth-child(odd) {
+  
+  .woocommerce ul.products li.product:nth-child(odd),
+  .woocommerce-page ul.products li.product:nth-child(odd) {
     margin-right: 4% !important;
   }
 
-
-  .woocommerce ul.products li:nth-child(even),
-  .woocommerce-page ul.products li:nth-child(even) {
+  .woocommerce ul.products li.product:nth-child(even),
+  .woocommerce-page ul.products li.product:nth-child(even) {
     margin-right: 0 !important;
   }
 
