@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-10-01 15:20+0200\n"
+"POT-Creation-Date: 2019-01-06 16:54+0100\n"
 "PO-Revision-Date: 2015-09-11 19:05+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
@@ -18,27 +18,27 @@ msgstr ""
 "X-Generator: Poedit 1.8.6\n"
 "X-Poedit-SearchPath-0: .\n"
 
-#: functions.php:72 functions.php:73
+#: functions.php:82 functions.php:83
 msgid "Header Layout"
 msgstr ""
 
-#: functions.php:75
+#: functions.php:85
 msgid "SneakLite Header Layout"
 msgstr ""
 
-#: functions.php:76
+#: functions.php:86
 msgid "SuevaFree Header Layout 1"
 msgstr ""
 
-#: functions.php:77
+#: functions.php:87
 msgid "SuevaFree Header Layout 2"
 msgstr ""
 
-#: functions.php:78
+#: functions.php:88
 msgid "SuevaFree Header Layout 4"
 msgstr ""
 
-#: functions.php:79
+#: functions.php:89
 msgid "SuevaFree Header Layout 5"
 msgstr ""
 
