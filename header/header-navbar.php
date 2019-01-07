@@ -101,10 +101,10 @@ if ( get_header_image() != '') {?>
 	<!--/Header Contact Widget-->
 	
 	<!--Menu Section-->	
-	<nav class="navbar-classic navbar navbar-default" role="navigation">
-		<div class="container">		
+	<nav class="navbar-classic navbar navbar-custom" role="navigation">
+		<div class="container-fluid p-l-r-0">		
 
-			<div id="navbar" class="collapse navbar-collapse in">
+			<div class="collapse navbar-collapse">
 					<?php wp_nav_menu( array(
 								'theme_location' => 'primary',
 								'container'  => 'nav-collapse collapse navbar-inverse-collapse',
@@ -123,8 +123,8 @@ if ( get_header_image() != '') {?>
 <!--Mobile Header Section-->
 <header class="mobile-header">
 	<!--Logo & Menu Section-->	
-	<nav class="navbar-classic navbar navbar-default" role="navigation">
-		<div class="container">
+	<nav class="navbar-classic navbar navbar-custom" role="navigation">
+		<div class="container-fluid p-l-r-0">
 			<!-- Brand and toggle get grouped for better mobile display -->
 			<div class="navbar-header">
 			<?php the_custom_logo(); ?>
@@ -139,7 +139,7 @@ if ( get_header_image() != '') {?>
 				<?php endif; ?>
 			</div>
 			<?php endif; ?>
-			<button type="button" class="navbar-toggle collapsed" data-toggle="collapse">
+			<button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#custom-collapse">
 				<span class="sr-only"><?php echo esc_html__('Toggle navigation','rockers'); ?></span>
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
@@ -147,7 +147,7 @@ if ( get_header_image() != '') {?>
 			</button>
 			</div>		
 			<!-- Collect the nav links, forms, and other content for toggling -->
-			<div id="navbar" class="collapse navbar-collapse in">
+			<div class="collapse navbar-collapse" id="custom-collapse">
 				<?php wp_nav_menu( array(
 								'theme_location' => 'primary',
 								'container'  => 'nav-collapse collapse navbar-inverse-collapse',
