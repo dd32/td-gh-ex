@@ -1302,9 +1302,13 @@ body.search-no-results #content .page-content form input[type="submit"] {
 }
 .grid .out-thumb .postedon {
   padding: 14px 0px;
+  font-weight: 700;
 }
 .grid .out-thumb .postedon a {
-  color: #777;
+  color: #666;
+}
+.grid .out-thumb .postedon .author {
+  float: right;
 }
 .grid .out-thumb .entry-excerpt {
   color: #aaa;

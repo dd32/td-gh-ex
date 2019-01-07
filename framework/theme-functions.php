@@ -261,12 +261,15 @@ if ( class_exists('woocommerce') ) :
 endif;
 
 
-function adviso_excerpt_length( $length ) {
-		return 155;
+function adviso_excerpt( $limit ){
+$excerpt = get_the_content();
+$excerpt = preg_replace(" ([.*?])",'',$excerpt);
+$excerpt = strip_shortcodes($excerpt);
+$excerpt = strip_tags($excerpt);
+$excerpt = substr($excerpt, 0, $limit );
+$excerpt = substr($excerpt, 0, strripos($excerpt, " "));
+if ( strlen(get_the_content()) > $limit ) {
+	$excerpt	=	$excerpt . '...';
 }
-add_filter('excerpt_length', 'adviso_excerpt_length');
-
-function adviso_excerpt( $limit ) {
-	
-	return wp_trim_words( get_the_excerpt(), $limit );
+return $excerpt;
 }

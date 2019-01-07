@@ -5,7 +5,7 @@ Tags: custom-background, two-columns, one-column, custom-colors, flexible-header
 
 Requires at least: 4.0
 Tested up to: 5.0.1
-Stable tag: 0.992
+Stable tag: 0.994
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,6 +19,9 @@ Demo Here: http://demo.inkhive.com/adviso/
 
 
 == Changelog ==
+
+= 0.994 =
+* Eleventh Review Changes
 
 = 0.993 =
 * Tenth Review Changes
@@ -77,7 +80,7 @@ Demo Here: http://demo.inkhive.com/adviso/
 
 * Does this theme support any plugins? 
 
-- Adviso includes support for Infinite Scroll in Jetpack. Adviso also supports WooCommerce. 
+- Adviso includes support for Jetpack. Adviso also supports WooCommerce. 
 
 
 

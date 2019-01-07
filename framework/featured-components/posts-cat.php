@@ -34,6 +34,7 @@
 							$count++;
 							
 						endwhile; ?>
+						<?php wp_reset_postdata(); ?>
 						
 						<div class="category-wrapper category-<?php echo esc_attr( str_replace( ' ', '-', strtolower( esc_html( get_cat_name($cat) ) ) ) ); ?>">
 							<div class="category-title">

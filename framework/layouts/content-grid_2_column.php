@@ -19,7 +19,7 @@
 	     <header class="entry-header mdl-card__title	">
 	        <h3 class="entry-title mdl-card__title-text"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
 	    </header><!-- .entry-header -->
-        <p class="entry-excerpt"><?php echo adviso_excerpt( 8 ) ?></p>
+        <p class="entry-excerpt"><?php echo adviso_excerpt(60);?></p>
         <span class="readmore"><a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More','adviso'); ?></a></span>
     </div><!--.out-thumb-->
 
