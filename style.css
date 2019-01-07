@@ -4,7 +4,7 @@ Theme URI: http://themonic.com/iconic-one/
 Author: Themonic
 Author URI: http://themonic.com
 Description: Iconic One is a premium quality theme with pixel perfect typography and responsiveness and is built for speed with pagespeed score of 95+, Iconic One implements proper SEO so that your content will rank high and is compatible with AIOSEO and Yoast SEO, It makes proper use of Live customizer that allows you to setup the theme in minutes, you can easily upload the logo, modify the background color, footer text, social media urls without touching any line of code. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. Support is free, access the support here http://themonic.com/support/, Report issues and feedback at http://themonic.com/feedback/.
-Version: 1.9.6
+Version: 1.9.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, two-columns, right-sidebar, custom-background, custom-menu, custom-logo, full-width-template, rtl-language-support, theme-options, custom-colors, flexible-header, translation-ready, news, e-commerce, sticky-post, featured-images, threaded-comments
@@ -1345,7 +1345,8 @@ img#wpstats {
 .woocommerce .site-content {
     border-right: medium none;
     padding-top: 30px;
-    width: 94.4%;
+    width: 94%;
+	padding: 30px 2% 0 2%;
 }
 .woocommerce .page-title {
     border-bottom: 1px solid #e1e1e1;
@@ -1374,6 +1375,30 @@ img#wpstats {
     font-size: 1.5em;
     font-weight: normal;
 }
+.woocommerce div.product .product_title { 
+	line-height: 1.2;
+}
+.woocommerce ul.products li.product .woocommerce-loop-category__title, .woocommerce ul.products li.product .woocommerce-loop-product__title, .woocommerce ul.products li.product h3 {
+    padding: .5em 0;
+    margin: 0;
+    font-size: 1.2em;
+    font-weight: normal;
+    line-height: 1.2;
+}
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+	color: #ffffff;
+	background: #33aeff;
+}
+.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover {
+	color: #ffffff;
+	background: #0099ff;
+}
+.woocommerce ul.products li.product .button {
+	color: #ffffff;
+	background: #33aeff;
+}
+.wp-block-image figcaption { margin: 0 auto 20px auto; }
+
 .socialmedia img {
     height: 32px;
     width: 32px;

@@ -1,5 +1,11 @@
 Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/iconic-one/ for latest version
 
+-------------- 7 January 2019 ----------------
+
+07/01/2019  - Version 1.9.7
+
+- Improved Woocommerce support 
+- Gutenberg support styles
 
 -------------- 14 November 2018 ----------------
 
