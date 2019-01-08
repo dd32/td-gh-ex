@@ -73,7 +73,7 @@ if( ! class_exists( 'Agama_About' ) ) {
 							<input type="hidden" name="rm" value="0">
 							<input type="hidden" name="currency_code" value="USD">
 							<input type="image" src="https://www.paypal.com/en_US/i/btn/btn_donateCC_LG.gif" name="submit" alt="PayPal - The safer, easier way to pay online.">
-							<img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1">
+							<img alt="" src="https://www.paypal.com/en_US/i/scr/pixel.gif" width="1" height="1" style="height: 1px;">
 							</div>
 						</form>';
 					

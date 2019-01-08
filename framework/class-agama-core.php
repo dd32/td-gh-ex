@@ -337,12 +337,6 @@ if( ! class_exists( 'Agama_Core' ) ) {
                     'slug'              => 'elementor',
                     'required'          => false,
                     'force_activation'  => false
-                ),
-                array(
-                    'name'              => 'Google Analytics for WordPress by MonsterInsights',
-                    'slug'              => 'google-analytics-for-wordpress',
-                    'required'          => false,
-                    'force_activation'  => false
                 )
             );
             

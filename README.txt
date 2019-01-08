@@ -1,10 +1,15 @@
-Agama WordPress Theme, Copyright 2015 - 2018 theme-vision.com
+Agama WordPress Theme, Copyright 2015 - 2019 theme-vision.com
 Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.4.0 - 08 January 2019 =
+* Added (lost) body background feature in customizer.
+* Updated Kirki framework to the latest version.
+* Updated theme translation files.
+
 = 1.3.9 - 08 December 2018 =
-* Added multiple logo upload features (mobile, tablet, notebook & desktop).
+* Added multiple logo upload features (mobile, tablet & desktop).
 * Added slider missing img files.
 * Updated theme translation files.
 * Removed pig icon on customizer (re)loading.

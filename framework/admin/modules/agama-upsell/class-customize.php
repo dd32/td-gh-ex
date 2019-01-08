@@ -80,7 +80,7 @@ final class Agama_Customizer_Upsell {
                 $manager, 
                 'agama-theme-info', 
                 array(
-                    'theme_info_title' => esc_html__( 'Agama Pro', 'agama' ),
+                    'theme_info_title' => esc_html__( 'Extend Agama', 'agama' ),
                     'label_url'        => esc_url( 'https://theme-vision.com/agama-pro/' ),
                     'label_text'       => esc_html__( 'Upgrade to Pro', 'agama' ),
                     'priority'         => 1

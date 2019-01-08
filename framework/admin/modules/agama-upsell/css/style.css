@@ -68,8 +68,8 @@
 #customize-controls .control-section-agama-theme-info .accordion-section-title,
 #customize-controls .control-section-agama-theme-info .accordion-section-title:hover,
 #customize-controls .control-section-agama-theme-info .accordion-section-title:focus {
-	background-color: #0da9ef;
-    border-left-color: #0da9ef;
+	background-color: #FE6663;
+    border-left-color: #ff3b37;
     color: #fff !important;
     text-transform: uppercase;
 }

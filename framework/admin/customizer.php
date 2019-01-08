@@ -160,19 +160,19 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 # GENERAL PANEL
 #######################################################
 	Kirki::add_panel( 'agama_general_panel', array(
-		'title'			=> __( 'General', 'agama' ),
+		'title'			=> esc_attr__( 'General', 'agama' ),
 		'priority'		=> 10
 	) );
     ########################################################
     # GENERAL BODY SECTION
     ########################################################
     Kirki::add_section( 'background_image', array(
-		'title'			=> __( 'Body', 'agama' ),
+		'title'			=> esc_attr__( 'Body', 'agama' ),
 		'panel'			=> 'agama_general_panel'
 	) );
     Kirki::add_field( 'agama_options', array(
-        'label'     => __( 'Body Font', 'agama' ),
-        'tooltip'   => __( 'Customize body font.', 'agama' ),
+        'label'     => esc_attr__( 'Body Font', 'agama' ),
+        'tooltip'   => esc_attr__( 'Customize body font.', 'agama' ),
         'section'   => 'background_image',
         'settings'  => 'agama_body_font',
         'type'      => 'typography',
@@ -193,6 +193,21 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
             )
         ),
         'priority' => 1
+    ) );
+    Kirki::add_field( 'agama_options', array(
+        'label'     => esc_attr__( 'Background Color', 'agama' ),
+        'tooltip'   => esc_attr__( 'Select body background color.', 'agama' ),
+        'section'   => 'background_image',
+        'settings'  => 'agama_body_background_color',
+        'type'      => 'color',
+        'transport' => 'auto',
+        'default'   => '#e6e6e6',
+        'output'    => array(
+            array(
+                'element'   => 'body',
+                'property'  => 'background-color'
+            )
+        )
     ) );
     #########################################################
     # GENERAL SKINS SECTION
