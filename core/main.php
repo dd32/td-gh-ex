@@ -540,7 +540,12 @@ if (!function_exists('lookilite_scripts_styles')) {
 		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Fjalla+One|Roboto+Slab:400,300,100,700' );
 		
 		lookilite_enqueue_script('/assets/js');
-	
+
+		wp_enqueue_script('looki-lite-html5shiv', get_template_directory_uri().'/assets/scripts/html5shiv.js', FALSE, '3.7.0');
+		wp_script_add_data('looki-lite-html5shiv', 'conditional', 'IE 8' );
+		wp_enqueue_script('looki-lite-selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr.js', FALSE, '1.0.3b');
+		wp_script_add_data('looki-lite-selectivizr', 'conditional', 'IE 8' );
+
 	}
 	
 	add_action( 'wp_enqueue_scripts', 'lookilite_scripts_styles' );
@@ -573,14 +578,11 @@ if (!function_exists('lookilite_setup')) {
 	
 		load_theme_textdomain('lookilite', get_template_directory() . '/languages');
 	
-		$background = "/images/background/patterns/pattern12.jpg";
-	
 		if ( ! isset( $content_width ) )
 			$content_width = 1170;
 	
 		add_theme_support( 'custom-background', array(
 			'default-color' => 'f3f3f3',
-			'default-image' => get_template_directory_uri() . $background,
 		) );
 	
 		lookilite_require('/core/includes/');

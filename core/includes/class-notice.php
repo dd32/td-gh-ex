@@ -55,12 +55,12 @@ if( !class_exists( 'lookilite_admin_notice' ) ) {
             <div class="update-nag notice lookilite-notice">
             
             	<div class="lookilite-noticedescription">
-                    <strong><?php _e( 'Upgrade to the premium version of Looki to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'looki-lite' ); ?></strong><br/>
+                    <strong><?php _e( 'Upgrade to the premium version of Looki to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'lookilite' ); ?></strong><br/>
 
-					<?php printf( __('<a href="%1$s" class="dismiss-notice">Dismiss this notice</a>','looki-lite'), esc_url( '?lookilite-dismiss=1' ) ); ?>
+					<?php printf( __('<a href="%1$s" class="dismiss-notice">Dismiss this notice</a>','lookilite'), esc_url( '?lookilite-dismiss=1' ) ); ?>
                 </div>
                 
-                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/looki/?ref=2&campaign=looki-notice' ); ?>" class="button"><?php _e( 'Upgrade to Looki Premium', 'looki-lite' ); ?></a>
+                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/looki/?ref=2&campaign=looki-notice' ); ?>" class="button"><?php _e( 'Upgrade to Looki Premium', 'lookilite' ); ?></a>
                 <div class="clear"></div>
 
             </div>

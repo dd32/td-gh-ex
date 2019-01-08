@@ -1,102 +1,90 @@
-Looki lite WordPress Theme
----------------------
+=== Looki Lite ===
+Contributors: alexvtn
+Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, blog,  news, photography
+Requires at least: 4.0
+Tested up to: 5.0.2
+Stable tag: 1.1.8
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Looki lite is a great and clean free WordPress blog theme, with a awesome scrollable sidebar, optimized for the mobile devices and based on Bootstrap framework. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like Html5 and Css3.
+Looki Lite is a great and clean free WordPress blog theme, with a awesome scrollable sidebar.
 
+== Description ==
 
-Created by ThemeinProgress, http://www.themeinprogress.com 
-Demo: http://www.wpinprogress.com/demo/looki
+Looki Lite is a great and clean free WordPress blog theme, with a awesome scrollable sidebar, optimized for the mobile devices and based on Bootstrap framework. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10 and uses the most modern technologies like Html5 and Css3
 
-Instruction
--------
+Created by ThemeinProgress, http://www.themeinprogress.com
 
-The sidebar of Looki Lite is into the scrollable sidebar and any widget will be loaded into this area. For view the widgets is necessary open the scrollable sidebar, from the button in the upper right.
+Looki Lite WordPress Theme, Copyright 2019 ThemeinProgress.
+Looki Lite is distributed under the terms of the GPLv2 or later
 
+== Changelog ==
 
-License
--------
-Looki lite is licensed under GNU General Public License v3.
+= 1.1.8 =
+Release date - January, 08 - 2019
 
+* Tested with WordPress 5.0.2
+* Updated - Readme.txt file
+* Updated - Screenshot.png file
 
-Credits
--------
+== Resources ==
 
-/** IMAGES **/
+Screenshot images By Pixabay - https://www.pixabay.com
+* Featured image : https://pixabay.com/en/musician-country-song-banjo-ukulele-349790/ by RyanMcGuire ( https://pixabay.com/en/users/RyanMcGuire-123690/ ) - CC0
 
-- Photos in the demo
+Font Awesome By Dave Gandy - http://fortawesome.github.io/Font-Awesome/
+** Font License under SIL OFL 1.1 - http://scripts.sil.org/OFL ( Applies to all desktop and webfont files in the following directory: /looki-lite/assets/fonts/ )
+** Code License under MIT License - http://opensource.org/licenses/mit-license.html ( Applies to the font-awesome.css file in /looki-lite/assets/css/ )
+** Brand Icons - All brand icons are trademarks of their respective owners. The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome, nor vice versa.
 
--- Background image by Pixabay: http://pixabay.com/it/sfocatura-sfocato-luci-notte-bokeh-205379/
+Google Web Fonts (Fjalla One, Roboto Slab) By Google - http://google.com
+** Fjalla One, Font by Sorkin Type, Licensed under Open Font License, https://fonts.google.com/specimen/Fjalla+One
+** Roboto Slab, Font by Christian Robertson, Licensed under Open Font License, https://fonts.google.com/specimen/Roboto+Slab
 
--- Featured image in the post by Gratisography: http://www.gratisography.com/pictures/63.jpg
+Bootstrap By Twitter, Inc - http://getbootstrap.com
+* bootstrap.css v3.3.7 - Licensed under MIT license ( Applies to bootstrap.css file in /looki-lite/assets/css/ )
 
---- Both images licensed under CC0 License (Compatible with GNU General Public License v3)
+prettyPhoto By Stephane Caron - http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/ 
+* prettyPhoto.css v3.1.6 - Licensed under GPLv2 or Creative Commons 2.5 license ( Applies to prettyPhoto.css file in /looki-lite/assets/css/ )
 
-- Patters
+jQuery Easing By George McGinley Smith - http://gsgd.co.uk/sandbox/jquery/easing/
+* jquery.easing.js v1.3 - Licensed under BSD License ( Applies to jquery.easing.js file in /looki-lite/assets/js/ )
 
--- By Theme in Progress - http://www.themeinprogress.com
+jQuery.scrollTo By Ariel Flesler - https://github.com/flesler/
+* jquery.nicescroll.js v2.1.2 - Licensed under MIT license ( Applies to jquery.nicescroll.js file in /looki-lite/assets/js/ )
 
---- Licensed under GNU General Public License v3.
+prettyPhoto By Stephane Caron - http://www.no-margin-for-errors.com
+* jquery.prettyPhoto.js v3.1.4 - Licensed under MIT license ( Applies to prettyPhoto.js file in /looki-lite/assets/js/ )
 
-/** ICONS **/
+HTML5 Shiv By @afarkas @jdalton @jon_neal @rem - https://github.com/aFarkas/html5shiv
+* html5shiv.js v3.7.0 - Licensed under MIT and GPL2 license ( Applies to html5shiv.js file in /looki-lite/assets/scripts/ )
 
-- Font Awesome
+selectivizr By Keith Clark - https://github.com/keithclark/selectivizr
+* selectivizr.js v1.0.3b - Licensed under MIT license ( Applies to selectivizr-min.js file in /looki-lite/assets/scripts/ )
 
--- By Dave Gandy - http://fortawesome.github.io/Font-Awesome/
+The following scripts and styles are coded by me and they are released under MIT license
 
---- Font License under SIL OFL 1.1 - http://scripts.sil.org/OFL ( Applies to all desktop and webfont files in the following directory: /sueva/fonts/ )
---- Code License under MIT License - http://opensource.org/licenses/mit-license.html ( Applies to the font-awesome.min.css file in /sueva/css/ )
---- Brand Icons - All brand icons are trademarks of their respective owners. The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome, nor vice versa.
+* /looki-lite/assets/skins/blue.css
+* /looki-lite/assets/skins/light_blue.css
+* /looki-lite/assets/skins/green.css
+* /looki-lite/assets/skins/light_green.css
+* /looki-lite/assets/skins/orange.css
+* /looki-lite/assets/skins/light_orange.css
+* /looki-lite/assets/skins/purple.css
+* /looki-lite/assets/skins/light_purple.css
+* /looki-lite/assets/skins/red.css
+* /looki-lite/assets/skins/light_red.css
+* /looki-lite/assets/skins/turquoise.css
+* /looki-lite/assets/skins/light_turquoise.css
+* /looki-lite/assets/skins/yellow.css
+* /looki-lite/assets/skins/light_yellow.css
+* /looki-lite/assets/css/template.css
+* /looki-lite/assets/js/jquery.template.js
 
-/** FONTS **/
+The following images are created by me and they are released under CC0 license
 
-- Google Web Fonts (Fjalla One and Roboto Slab)
-
--- By Google - http://google.com
-
---- Fjalla One Font by Sorkin Type Co, Licensed under SIL Open Font License (OFL)
-http://www.google.com/fonts/specimen/Fjalla+One
-
---- Roboto Slab Font by Christian Robertson, Licensed under Apache License, Version 2.0 
-https://www.google.com/fonts/specimen/Roboto+Slab
-
-/** FRAMEWORK **/
-
-- Twitter Bootstrap
-
--- By Twitter Bootstrap - http://getbootstrap.com/2.3.2/
-
---- Licensed under Apache License v2.0
-
-/** JQUERY **/
-
-- Jquery
-
--- By Jquery - https://jquery.org
-
---- Licensed under MIT License
-
-- Jquery UI
-
--- By Jquery - http://jqueryui.com/
-
---- Licensed under MIT License 
-
-- Jquery Easing:
-
--- By George McGinley Smith - http://gsgd.co.uk/sandbox/jquery/easing/
-
---- Licensed under BSD License
-
-/* VARIOUS */
-
-- jQuery.ScrollTo
-
--- By Ariel Flesler - http://flesler.blogspot.com
-
---- Licensed under dual licensed, MIT and GPL
-
-- Pretty Photo:
-
--- By Pretty Photo - http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/
-
---- Licensed under GPLv2 or Creative Commons 2.5 license
+* /looki-lite/assets/images/icons/comment.png
+* /looki-lite/assets/images/icons/link.png
+* /looki-lite/assets/images/icons/open.png
+* /looki-lite/assets/images/icons/tags.png
+* /looki-lite/assets/images/icons/zoom.png

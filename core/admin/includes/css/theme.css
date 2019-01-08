@@ -73,10 +73,6 @@
 	border:none;
 }
 
-#tabs.metaboxes ul.orders .wip_container h5.element{ 
-	cursor:move;
-}
-
 #tabs.metaboxes li { 
 	float:inherit;
 	margin-bottom:0;
@@ -160,50 +156,6 @@
 	border-right: 1px solid #ddd;
 	border-left: 1px solid #ddd; 
 	position:relative; 
-}
-
-.wip_container  { 
-	background:url(../images/subparent.png) no-repeat 8% center ;
-}
-
-.wip_container h5.element { 
-	cursor:pointer; 
-	background:url(../images/subparent.png) no-repeat #5C97BF 98% center ; 
-	padding:15px; 
-	font-size:16px;
-	margin:15px 0 0 0; 
-	font-family:'Roboto',Helvetica, Geneva, sans-serif; 
-	font-weight:normal;
-	text-shadow:none; 
-	color:#fff; 
-	-webkit-transition: all .3s ease; 	
-	-moz-transition: all .3s ease; 
-	-o-transition: all .3s ease;
-}
-
-.wip_container h5.element-open { 
-	background:#4588b5; 
-	padding:15px; 
-	font-size:15px; 
-	margin:10px 0 0 0; 
-	font-weight:normal;
-	color: #fff;
-	font-family:'Roboto',Helvetica, Geneva, sans-serif; 
-}
-
-.wip_container h5.element:hover { 
-	color:#fff; 
-	background:url(../images/subparent.png) no-repeat #4588b5 98% center ;
-}
-
-.wip_container h5.inactive { 
-	background:url(../images/subparent-hover.png) no-repeat #4588b5 98% center; 
-	color:#fff;
-}
-
-.wip_container h5.inactive:hover { 
-	background:url(../images/subparent-hover.png) no-repeat #4588b5 98% center; 
-	color:#fff;
 }
 
 /* ===============================================
