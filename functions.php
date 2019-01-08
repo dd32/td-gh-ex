@@ -93,7 +93,7 @@
 
 
 	function awesome_creditline () {
-	echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | Awesome ' . __('Theme by:', 'awesome') . ' <a href="'. 		esc_url('http://d5creation.com') .'" target="_blank"> D5 Creation</a> | ' . __('Powered by:', 'awesome') . ' <a href="http://wordpress.org" target="_blank">WordPress</a>';
+	echo '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ). '<span class="credit"> | Awesome ' . __('Theme by:', 'awesome') . ' <a href="'. 		esc_url('https://d5creation.com') .'" target="_blank"> D5 Creation</a> | ' . __('Powered by:', 'awesome') . ' <a href="http://wordpress.org" target="_blank">WordPress</a>';
     }
 	
 
@@ -129,7 +129,7 @@
 	
 // 	Post Meta design
 	function awesome_post_meta() { ?>
-	<div class="post-meta"> <span class="post-edit"> <?php edit_post_link(__('Edit', 'awesome'),'<span class="fa-edit">','</span>' ); ?></span> <span class="post-author fa-user-md"> <?php the_author_posts_link(); ?> </span> <span class="post-date fa-clock-o"><?php the_time('F j, Y'); ?></span>	<span class="post-tag fa-tags"> <?php the_tags('' , ', '); ?> </span> <span class="post-category fa-archive"> <?php the_category(', '); ?> </span> <span class="post-comments fa-comments"><?php comments_popup_link(__('No Comments', 'awesome') . ' &#187;', __('One Comment', 'awesome') . ' &#187;', '% ' . __('Comments', 'awesome') . ' &#187;'); ?> </span>
+	<div class="post-meta"> <span class="post-edit"> <?php edit_post_link(__('Edit', 'awesome'),'<span class="fa-edit">','</span>' ); ?></span> <span class="post-author fa-user-md"> <?php the_author_posts_link(); ?> </span> <span class="post-date fa-clock"><?php the_time('F j, Y'); ?></span>	<span class="post-tag fa-tags"> <?php the_tags('' , ', '); ?> </span> <span class="post-category fa-archive"> <?php the_category(', '); ?> </span> <span class="post-comments fa-comments"><?php comments_popup_link(__('No Comments', 'awesome') . ' &#187;', __('One Comment', 'awesome') . ' &#187;', '% ' . __('Comments', 'awesome') . ' &#187;'); ?> </span>
 	</div> 
 	
 	<?php

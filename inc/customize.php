@@ -7,7 +7,7 @@ function awesome_customize_register($wp_customize){
         'priority' 		=> 10,
 		'capability'     => 'edit_theme_options',
 		'title'    		=> __('AWESOME OPTIONS', 'awesome'),
-        'description'   => '<div class="infohead"><span class="donation">'. __('Awesome is CSS3 Powered and WordPress Latest Version Ready Responsive Theme. You can Learn More about the Features from the', 'awesome').' <a href="'. esc_url('http://d5creation.com/theme/awesome/').'" target="_blank"><strong>'. __('Awesome Theme Page', 'awesome').'</strong></a></span></div>'
+        'description'   => '<div class="infohead"><span class="donation">'. __('Awesome is CSS3 Powered and WordPress Latest Version Ready Responsive Theme. You can Learn More about the Features from the', 'awesome').' <a href="'. esc_url('https://d5creation.com/theme/awesome/').'" target="_blank"><strong>'. __('Awesome Theme Page', 'awesome').'</strong></a></span></div>'
     ));
 	
 //  Social Links

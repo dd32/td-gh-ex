@@ -1,11 +1,11 @@
 ----------------------------------
 Awesome
 ----------------------------------
-Version: 	1.3
+Version: 	1.5
 Developer: 	D5 Creation
-Author URI: 	http://d5creation.com
+Author URI: 	https://d5creation.com
 
-Donation Link: 	http://d5creation.com/donate/
+Donation Link: 	https://d5creation.com/donate/
 
 Copyright: 	D5 Creation
 License: 		GNU General Public License v2 or later
@@ -13,11 +13,11 @@ License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
 
 This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same License (GPL) of the Theme or Compatible  Licenses.
 
-slideback1.jpg and screenshot.png:
+slideback1.jpg:
 CC0 Public Domain by StockSnap  - https://pixabay.com/en/ipad-table-technology-tumblr-2618187
 
 
-slideback2.jpg:
+slideback2.jpg and screenshot.png:
 CC0 Public Domain by FirmBee  -https://pixabay.com/en/imac-apple-mockup-app-ipad-mouse-606765
 
 slideback3.jpg:
@@ -46,6 +46,10 @@ Instructions:
 
 Changelog
 ============
+
+Version 1.5
+______________
+- Style Improvement
 
 Version 1.3
 ______________
