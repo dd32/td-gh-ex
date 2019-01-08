@@ -3,7 +3,7 @@ Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, blog, e-commerce, news
 Requires at least: 4.0
 Tested up to: 5.0.2
-Stable tag: 3.0.7
+Stable tag: 3.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -15,13 +15,18 @@ Sneak Lite is a clean, minimal and responsive SuevaFree child theme, based on Bo
 
 Created by ThemeinProgress, https://www.themeinprogress.com 
 
-Polar Lite WordPress Theme is a child theme of SuevaFree Theme, Copyright 2019 ThemeinProgress. 
-Polar Lite is distributed under the terms of the GNU GPLv3.
+Sneak Lite WordPress Theme is a child theme of SuevaFree Theme, Copyright 2019 ThemeinProgress. 
+Sneak Lite is distributed under the terms of the GNU GPLv3.
 
 SuevaFree WordPress Theme, Copyright 2019 ThemeinProgress.
 SuevaFree is distributed under the terms of the GNU GPLv3.
 
 == Changelog ==
+
+= 3.0.8 =
+Release date - January, 08 - 2019
+
+* Updated - Readme.txt file
 
 = 3.0.7 =
 Release date - January, 06 - 2019
