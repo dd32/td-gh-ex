@@ -603,7 +603,12 @@ if (!function_exists('diarjolite_scripts_styles')) {
 		diarjolite_enqueue_script('/assets/js');
 		
 		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Delius+Swash+Caps|Fjalla+One|Roboto+Slab:400,300,100,700' );
-		
+
+		wp_enqueue_script('diarjo-lite-html5shiv', get_template_directory_uri().'/assets/scripts/html5shiv.js', FALSE, '3.7.0');
+		wp_script_add_data('diarjo-lite-html5shiv', 'conditional', 'IE 8' );
+		wp_enqueue_script('diarjo-lite-selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr.js', FALSE, '1.0.3b');
+		wp_script_add_data('diarjo-lite-selectivizr', 'conditional', 'IE 8' );
+
 	}
 	
 	add_action( 'wp_enqueue_scripts', 'diarjolite_scripts_styles' );

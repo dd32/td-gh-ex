@@ -1,102 +1,161 @@
-Diarjo Lite WordPress Theme
----------------------
+=== Diarjo Lite ===
+Contributors: alexvtn
+Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, blog,  news, photography
+Requires at least: 4.0
+Tested up to: 5.0.2
+Stable tag: 1.2.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Diarjo Lite is a minimal and clean WordPress theme, for manage your personal blog, optimized for the mobile devices and based on Bootstrap framework.
+Djario Lite offers a minimalist layout that is optimized for mobile devices and based on the Bootstrap framework.
 
-Created by ThemeinProgress, http://www.themeinprogress.com 
-Demo: http://www.wpinprogress.com/demo/diarjo
+== Description ==
 
-License
--------
-Diarjo Lite is licensed under GNU General Public License v3.
+Perfect for blogs and portfolio, Djario Lite offers a minimalist layout that is optimized for mobile devices and based on the Bootstrap framework
 
+Created by ThemeinProgress, http://www.themeinprogress.com
 
-Credits
--------
+Diarjo Lite WordPress Theme, Copyright 2019 ThemeinProgress.
+Diarjo Lite is distributed under the terms of the GPLv2 or later
 
-/** IMAGES **/
+== Changelog ==
 
-- Screenshot's image
+= 1.2.0 =
+Release date - January, 08 - 2019
 
--- Featured image in the post by Pixabay: http://pixabay.com/get/51d5e3f3a58a2c59608b/1401209058/vw-camper-336606_1280.jpg
+* Tested with WordPress 5.0.2
+* Updated - Readme.txt file
+* Updated - Screenshot.png file
 
---- Image licensed under CC0 License (Compatible with GNU General Public License v3)
+= 1.1.9 =
+Release date - October, 01 - 2017
 
-- Patters
+* Fixed  : Clear the options for Skype, email and WhatsApp buttons
 
--- By Theme in Progress - http://www.themeinprogress.com
+= 1.1.7 =
+Release date - October, 01 - 2017
 
---- Licensed under GNU General Public License v3.
+* Edit  : Code optimized
 
-/** ICONS **/
+= 1.1.6 =
+Release date - October, 01 - 2017
 
-- Font Awesome
+* Fixed : Back to top button
+* Updated : jQuery.scrollTo plugin
 
--- By Dave Gandy - http://fortawesome.github.io/Font-Awesome/
+= 1.1.5 =
+Release date - May, 24 - 2017
 
---- Font License under SIL OFL 1.1 - http://scripts.sil.org/OFL ( Applies to all desktop and webfont files in the following directory: /sueva/fonts/ )
---- Code License under MIT License - http://opensource.org/licenses/mit-license.html ( Applies to the font-awesome.min.css file in /sueva/css/ )
---- Brand Icons - All brand icons are trademarks of their respective owners. The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome, nor vice versa.
+* Edit  : Code optimized
 
-/** FONTS **/
+= 1.1.4 =
+Release date - March, 06 - 2017
 
-- Google Web Fonts (Fjalla One and Roboto Slab)
+* Fixed : Embed videos size
 
--- By Google - http://google.com
+= 1.1.3 =
+Release date - February, 15 - 2017
 
---- Delius SwashCaps Font by Natalia Raices, Licensed under SIL Open Font License (OFL)
-http://www.google.com/fonts/specimen/Delius+Swash+Caps
+* Fixed : Issue between Diarjo Lite and the sharing function of Jetpack plugin
+* Edit  : Code optimized
 
---- Fjalla One Font by Sorkin Type Co, Licensed under SIL Open Font License (OFL)
-http://www.google.com/fonts/specimen/Fjalla+One
+= 1.1.0 =
+Release date - September, 20 - 2015
 
---- Roboto Slab Font by Christian Robertson, Licensed under Apache License, Version 2.0 
-https://www.google.com/fonts/specimen/Roboto+Slab
+* Moved : Option panel under WordPress Customizer
+* Edit  : Code optimized
+* Updated : Font Awesome 4.4.0
 
-/** FRAMEWORK **/
+= 1.0.9 =
+Release date - January, 01 - 2015
 
-- Twitter Bootstrap
+* Fixed : Category pagination with the last version of WordPress
 
--- By Twitter Bootstrap - http://getbootstrap.com/2.3.2/
+= 1.0.8 =
+Release date - September, 16 - 2014
 
---- Licensed under Apache License v2.0
+* Fixed : Removed the “Post format” tab, from the post settings (It was not necessary)
 
-/** JQUERY **/
+= 1.0.7 =
+Release date - September, 04 - 2014
 
-- Jquery
+* Added : Search sidebar
 
--- By Jquery - https://jquery.org
+= 1.0.6 =
+Release date - June, 09 - 2014
 
---- Licensed under MIT License
+* Fixed : Pagination for archive and tag pages
 
-- Jquery UI
+== Resources ==
 
--- By Jquery - http://jqueryui.com/
+Screenshot images By Pixabay - https://www.pixabay.com
+* Featured image : https://pixabay.com/en/vw-camper-volkswagen-vw-car-336606/ by crgutman ( https://pixabay.com/en/users/crgutman-11146621/ ) - CC0
 
---- Licensed under MIT License 
+Font Awesome By Dave Gandy - http://fortawesome.github.io/Font-Awesome/
+** Font License under SIL OFL 1.1 - http://scripts.sil.org/OFL ( Applies to all desktop and webfont files in the following directory: /diarjo-lite/assets/fonts/ )
+** Code License under MIT License - http://opensource.org/licenses/mit-license.html ( Applies to the font-awesome.css file in /diarjo-lite/assets/css/ )
+** Brand Icons - All brand icons are trademarks of their respective owners. The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome, nor vice versa.
 
-- Jquery Easing:
+Google Web Fonts (Delius Swash Caps, Fjalla One, Roboto Slab) By Google - http://google.com
+** Delius Swash Caps, Font by Natalia Raices, Licensed under Open Font License, https://fonts.google.com/specimen/Delius+Swash+Caps
+** Fjalla One, Font by Sorkin Type, Licensed under Open Font License, https://fonts.google.com/specimen/Fjalla+One
+** Roboto Slab, Font by Christian Robertson, Licensed under Open Font License, https://fonts.google.com/specimen/Roboto+Slab
 
--- By George McGinley Smith - http://gsgd.co.uk/sandbox/jquery/easing/
+Bootstrap By Twitter, Inc - http://getbootstrap.com
+* bootstrap.css v3.3.7 - Licensed under MIT license ( Applies to bootstrap.css file in /diarjo-lite/assets/css/ )
 
---- Licensed under BSD License
+prettyPhoto By Stephane Caron - http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/ 
+* prettyPhoto.css v3.1.6 - Licensed under GPLv2 or Creative Commons 2.5 license ( Applies to prettyPhoto.css file in /diarjo-lite/assets/css/ )
 
-/* VARIOUS */
+jQuery Easing By George McGinley Smith - http://gsgd.co.uk/sandbox/jquery/easing/
+* jquery.easing.js v1.3 - Licensed under BSD License ( Applies to jquery.easing.js file in /diarjo-lite/assets/js/ )
 
-- jQuery.ScrollTo
+jQuery.scrollTo By Ariel Flesler - https://github.com/flesler/
+* jquery.nicescroll.js v2.1.2 - Licensed under MIT license ( Applies to jquery.nicescroll.js file in /diarjo-lite/assets/js/ )
 
--- By Ariel Flesler - http://flesler.blogspot.com
+prettyPhoto By Stephane Caron - http://www.no-margin-for-errors.com
+* jquery.prettyPhoto.js v3.1.4 - Licensed under MIT license ( Applies to prettyPhoto.js file in /diarjo-lite/assets/js/ )
 
---- Licensed under dual licensed, MIT and GPL
+tinynav By @viljamis - http://tinynav.viljamis.com
+* jquery.tinynav.js v1.1 - Licensed under MIT license ( Applies to jquery.tinynav.js file in /diarjo-lite/assets/js/ )
 
-- Tinynav:
+HTML5 Shiv By @afarkas @jdalton @jon_neal @rem - https://github.com/aFarkas/html5shiv
+* html5shiv.js v3.7.0 - Licensed under MIT and GPL2 license ( Applies to html5shiv.js file in /diarjo-lite/assets/scripts/ )
 
--- By Viljamis - http://tinynav.viljamis.com
+selectivizr By Keith Clark - https://github.com/keithclark/selectivizr
+* selectivizr.js v1.0.3b - Licensed under MIT license ( Applies to selectivizr-min.js file in /diarjo-lite/assets/scripts/ )
 
---- Licensed under MIT License
+The following scripts and styles are coded by me and they are released under MIT license
 
-- Pretty Photo:
+* /diarjo-lite/assets/skins/blue.css
+* /diarjo-lite/assets/skins/green.css
+* /diarjo-lite/assets/skins/orange.css
+* /diarjo-lite/assets/skins/purple.css
+* /diarjo-lite/assets/skins/red.css
+* /diarjo-lite/assets/skins/turquoise.css
+* /diarjo-lite/assets/skins/yellow.css
+* /diarjo-lite/assets/skins/light_blue.css
+* /diarjo-lite/assets/skins/light_green.css
+* /diarjo-lite/assets/skins/light_orange.css
+* /diarjo-lite/assets/skins/light_purple.css
+* /diarjo-lite/assets/skins/light_red.css
+* /diarjo-lite/assets/skins/light_turquoise.css
+* /diarjo-lite/assets/skins/light_yellow.css
+* /diarjo-lite/assets/skins/white_blue.css
+* /diarjo-lite/assets/skins/white_green.css
+* /diarjo-lite/assets/skins/white_orange.css
+* /diarjo-lite/assets/skins/white_purple.css
+* /diarjo-lite/assets/skins/white_red.css
+* /diarjo-lite/assets/skins/white_turquoise.css
+* /diarjo-lite/assets/skins/white_yellow.css
+* /diarjo-lite/assets/css/template.css
+* /diarjo-lite/assets/js/template.js
 
--- By Pretty Photo - http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/
+The following images are created by me and they are released under CC0 license
 
---- Licensed under GPLv2 or Creative Commons 2.5 license
+* /diarjo-lite/assets/images/icons/cite.png
+* /diarjo-lite/assets/images/icons/comment.png
+* /diarjo-lite/assets/images/icons/link.png
+* /diarjo-lite/assets/images/icons/open.png
+* /diarjo-lite/assets/images/icons/tags.png
+* /diarjo-lite/assets/images/icons/zoom.png
