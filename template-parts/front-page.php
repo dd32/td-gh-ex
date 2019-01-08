@@ -317,7 +317,7 @@ if(is_home()){ ?>
                 <?php while ( $best_classifieds_latest_blog_post->have_posts() ) : $best_classifieds_latest_blog_post->the_post(); ?> 
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="main-blog-area">                            
-                             <a href="<?php the_permalink(); ?>" class="blog-post-img"><?php the_post_thumbnail('medium'); ?></a>
+                             <a href="<?php the_permalink(); ?>" class="blog-post-img"><?php the_post_thumbnail('full'); ?></a>
                             <div class="blog-post-content">
                                 <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
                                 <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i><?php echo esc_html(get_the_date()); ?></span>

@@ -39,7 +39,7 @@ $column_classes =($sidebar_style == 'no_sidebar')?'col-md-10 col-sm-12 col-xs-12
                             while ( have_posts() ) : the_post(); ?>
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="main-blog-area">
-                                    <?php if(has_post_thumbnail()):?>                                        
+                                    <?php if(has_post_thumbnail() && !get_theme_mod('single_post_image',false)):?>                                        
                                     <div class="blog-post-img">
                                         <?php the_post_thumbnail( 'best-classifieds-blog-image', array('class' => '') ); ?>
                                     </div>
@@ -54,6 +54,7 @@ $column_classes =($sidebar_style == 'no_sidebar')?'col-md-10 col-sm-12 col-xs-12
                                             'separator'   => '/',
                                         ) ); ?>
                                     </div>
+									 <?php if(!get_theme_mod('single_post_meta_tag',false)): ?>
                                     <div class="blog-post-bottom">
                                         <div class="blog-post-entry-meta blog-post-author">
                                            <ul> 
@@ -61,6 +62,7 @@ $column_classes =($sidebar_style == 'no_sidebar')?'col-md-10 col-sm-12 col-xs-12
                                             </ul> 
                                         </div>                                        
                                     </div>
+									<?php endif; ?>
                                 </div>
                             </div>
                             <?php endwhile;?>                            

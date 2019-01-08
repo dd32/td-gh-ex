@@ -51,6 +51,7 @@ $column_classes =($sidebar_style == 'no_sidebar')?'col-md-10 col-sm-12 col-xs-12
                                         <span class="post-date"><i class="fa fa-calendar" aria-hidden="true"></i><?php echo esc_html(get_the_date()); ?></span>
                                        <?php the_excerpt(); ?>
                                     </div>
+									<?php if(!get_theme_mod('blog_meta_tag',false) || !get_theme_mod('blog_post_readmore',false)):?>
                                     <div class="blog-post-bottom">
                                         <?php if(!get_theme_mod('blog_meta_tag',false)):?>
                                         <div class="blog-post-entry-meta">
@@ -64,6 +65,7 @@ $column_classes =($sidebar_style == 'no_sidebar')?'col-md-10 col-sm-12 col-xs-12
                                         </div>
                                     <?php endif; ?>
                                     </div>
+									 <?php endif; ?>
                                 </div>
                             </div>
                         <?php $iCounter++; echo ($iCounter % $divider)?'':'<div class="clearfix"></div>';

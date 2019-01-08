@@ -7,7 +7,7 @@ Description: Best Classifieds is a free WordPress theme for launching profession
 Requires PHP: 5.2.4
 Requires at least: 4.0
 Tested up to: 5.0.1
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: best-classifieds
@@ -36,10 +36,17 @@ Go to Appearance => Customize menu for logo and other customization needs.
 = 1.0.0 - 28 Dec 2018 =
 * Theme Submited on Wordpress.org
 
+= 1.0.1 - 8 Jan 2019 =
+* Misc changes
+
+
 == Upgrade Notice ==
 
 = 1.0.0 =
 * Theme Submit.
+
+= 1.0.1 - 8 Jan 2019 =
+* Misc changes.
 
 == Resources ==
 * Montserrat - //fonts.googleapis.com/css?family=Montserrat, MIT 
@@ -50,4 +57,8 @@ Go to Appearance => Customize menu for logo and other customization needs.
 * owl.carousel © 2016-2018 David Deutsch, MIT Version 2.2.1
 * TGM Plugin Activation ,GNU GPL Version 2.6.1
 
-* https://www.pexels.com/photo/low-angle-view-of-spiral-staircase-against-black-background-247676/ © Pixabay , CC0
+* https://www.pexels.com/photo/architecture-building-business-buy-259098/  © Pixabay , CC0
+* https://www.flaticon.com/free-icon/watching-tv_1187574 © flaticon
+* https://www.flaticon.com/free-icon/sofa_686645  © flaticon
+* https://www.flaticon.com/free-icon/house_618911  © flaticon
+* https://www.flaticon.com/free-icon/car_334998  © flaticon

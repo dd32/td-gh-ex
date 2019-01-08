@@ -89,7 +89,7 @@ function best_classifieds_excerpt_length( $length ) {
 
     if(is_front_page()){ return 40; }
 
-    return 30;
+     return get_theme_mod('blog_post_content_limit',30);
 }
 add_filter( 'excerpt_length', 'best_classifieds_excerpt_length', 999 );
 /**
@@ -99,12 +99,7 @@ add_filter( 'excerpt_length', 'best_classifieds_excerpt_length', 999 );
 function best_classifieds_excerpt_more( $link ) {
     if ( is_admin() ) {
         return $link;
-    }
-    /*$link = sprintf( '<a href="%1$s" class="more-link">%2$s</a>',
-        esc_url( get_permalink( get_the_ID() ) ),
-        
-        esc_html__( 'Read More', 'best-classifieds' )
-    );*/
+    }   
     return $link;
 }
 add_filter( 'excerpt_more', 'best_classifieds_excerpt_more' );
