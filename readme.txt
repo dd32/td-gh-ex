@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, grid-layout, custom-colors, custom
 Requires at least: 4.8
 Tested up to: 4.9
 Requires PHP: 5.6
-Stable tag: 1.4.3
+Stable tag: 1.4.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,12 @@ Agncy is a beautiful news and blogging theme that has beautiful typography, powe
 4. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Changelog ==
+
+= 1.4.4 =
+* Guess what, escaping!
+
+= 1.4.3 =
+* Fixed escaping
 
 = 1.4.2 =
 * Fixed license declaration
