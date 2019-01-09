@@ -87,11 +87,11 @@ function customizer_library_avant_options() {
     
     $options['avant-disable-google-fonts'] = array(
         'id' => 'avant-disable-google-fonts',
-        'label'   => __( 'GDPR: Disable Google Fonts', 'avant' ),
+        'label'   => __( 'Disable Google Fonts', 'avant' ),
         'section' => $section,
         'type'    => 'checkbox',
         'default' => 0,
-        'description' => __( 'Selecting this uses the websafe font\'s - Tahoma for Heading/Title text and Arial for Body & Inputs text.<br /><br />Turning this on will stop the font selection settings from working and also stop your website connecting to Google servers.', 'avant' ),
+        'description' => __( 'Disable Google Fonts and only select from web-safe fonts', 'avant' ),
     );
     $options['avant-remove-topborder'] = array(
         'id' => 'avant-remove-topborder',
@@ -969,6 +969,7 @@ function customizer_library_avant_options() {
 
     // Font Options
     $section = 'avant-typography-section';
+    $font_websafe_choices = array( 'Arial' => 'Arial', 'Arial Black' => 'Arial Black', 'Helvetica' => 'Helvetica', 'Verdana' => 'Verdana', 'Georgia' => 'Georgia', 'Palatino' => 'Palatino', 'Garamond' => 'Garamond', 'Bookman' => 'Bookman', 'Courier' => 'Courier', 'Courier New' => 'Courier New', 'Times New Roman' => 'Times New Roman', 'Times' => 'Times' );
     $font_choices = customizer_library_get_font_choices();
 
     $sections[] = array(
@@ -978,12 +979,6 @@ function customizer_library_avant_options() {
         'panel' => $panel
     );
 
-    $options['avant-note-fonts-one'] = array(
-        'id' => 'avant-note-fonts-one',
-        'section' => $section,
-        'type'    => 'note',
-        'description' => __( 'Google Fonts has been disabled. <a href="#avant-site-layout-section-site" rel="tc-section">Enable them here</a>', 'avant' ),
-    );
     $options['avant-site-title-uc'] = array(
         'id' => 'avant-site-title-uc',
         'label'   => __( 'Site Title - Uppercase', 'avant' ),
@@ -999,6 +994,14 @@ function customizer_library_avant_options() {
         'choices' => $font_choices,
         'default' => 'Parisienne'
     );
+    $options['avant-title-font-websafe'] = array(
+        'id' => 'avant-title-font-websafe',
+        'label'   => __( 'Site Title Font', 'avant' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $font_websafe_choices,
+        'default' => 'Verdana'
+    );
     $options['avant-title-font-size'] = array(
         'id' => 'avant-title-font-size',
         'label'   => __( 'Site Title Size', 'avant' ),
@@ -1013,6 +1016,14 @@ function customizer_library_avant_options() {
         'type'    => 'select',
         'choices' => $font_choices,
         'default' => 'Lato'
+    );
+    $options['avant-tagline-font-websafe'] = array(
+        'id' => 'avant-tagline-font-websafe',
+        'label'   => __( 'Site Tagline Font', 'avant' ),
+        'section' => $section,
+        'type'    => 'select',
+        'choices' => $font_websafe_choices,
+        'default' => 'Verdana'
     );
     $options['avant-tagline-font-size'] = array(
         'id' => 'avant-tagline-font-size',
@@ -1045,12 +1056,6 @@ function customizer_library_avant_options() {
         'panel' => $panel
     );
 
-    $options['avant-note-fonts-two'] = array(
-        'id' => 'avant-note-fonts-two',
-        'section' => $section,
-        'type'    => 'note',
-        'description' => __( 'Google Fonts has been disabled. <a href="#avant-site-layout-section-site" rel="tc-section">Enable them here</a>', 'avant' ),
-    );
     $options['avant-body-font'] = array(
         'id' => 'avant-body-font',
         'label'   => __( 'Body Font', 'avant' ),
@@ -1059,6 +1064,14 @@ function customizer_library_avant_options() {
         'choices' => $font_choices,
         'default' => 'Open Sans'
     );
+    $options['avant-body-font-websafe'] = array(
+		'id' => 'avant-body-font-websafe',
+		'label'   => __( 'Body Font', 'avant' ),
+		'section' => $section,
+		'type'    => 'select',
+		'choices' => $font_websafe_choices,
+		'default' => 'Arial'
+	);
     $options['avant-body-font-color'] = array(
         'id' => 'avant-body-font-color',
         'label'   => __( 'Body Font Color', 'avant' ),
@@ -1075,6 +1088,14 @@ function customizer_library_avant_options() {
         'choices' => $font_choices,
         'default' => 'Lato'
     );
+    $options['avant-heading-font-websafe'] = array(
+		'id' => 'avant-heading-font-websafe',
+		'label'   => __( 'Heading Font', 'avant' ),
+		'section' => $section,
+		'type'    => 'select',
+		'choices' => $font_websafe_choices,
+		'default' => 'Verdana'
+	);
     $options['avant-heading-font-color'] = array(
         'id' => 'avant-heading-font-color',
         'label'   => __( 'Heading Font Color', 'avant' ),

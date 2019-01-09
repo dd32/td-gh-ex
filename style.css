@@ -4,7 +4,7 @@ Theme URI: https://kairaweb.com/theme/avant/
 Author: Kaira
 Author URI: https://kairaweb.com/
 Description: 7 Header layouts, 5 Blog layouts, 3 Footer layouts, Full site color settings, SEO (Search Engine Optimization) settings and lots more settings all built neatly into the WordPress Customizer so you can edit & make changes in a live environment before making any of the changes live... Avant sure gives you what you're wanting. Avant is a highly customizable, multipurpose WordPress theme. Use Avant to build your WooCommerce eCommerce store, online fashion blog, corporate law or business website, or anything down to a simple personal blog. Avant integrates with top plugins such as Elementor or SiteOrigin's Page Builder to make it easy building your website with a drag and drop Page Builder. WooCommerce to create your e-commerce shop selling your products beautifully online. We're constantly building on to Avant, making it even more flexible to what you need. Give it a go!
-Version: 1.1.12
+Version: 1.1.13
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: avant
@@ -2244,6 +2244,67 @@ body.single-product.woocommerce .page-fimage-banner {
 .content-boxed .blog-break-blocks .blog-blocks-wrap article.blog-blocks-layout .blog-blocks-content {
     background: transparent;
     box-shadow: none;
+}
+
+/* ---- Gutenberg Template ---- */
+.page-template-template-gutenberg .site-container.content-container {
+    max-width: 100%;
+    width: 100%;
+    float: none;
+    padding-left: 0;
+    padding-right: 0;
+}
+body.page-template-template-gutenberg {
+    background-color: #FFF;
+}
+.page-template-template-gutenberg .entry-content > *,
+.page-template-template-gutenberg .page-titlebar,
+.page-template-template-gutenberg .entry-header,
+.page-template-template-gutenberg .page-header,
+.page-template-template-gutenberg .post-thumbnail,
+.page-template-template-gutenberg #comments {
+    max-width: 54%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.page-template-template-gutenberg header.entry-header {
+    margin: 0 auto 25px;
+}
+.page-template-template-gutenberg header.entry-header::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+.page-template-template-gutenberg .entry-header .entry-title {
+    font-size: 28px;
+    margin: 25px 0 10px;
+}
+.page-template-template-gutenberg .page-titlebar {
+    margin-bottom: 25px;
+}
+.page-template-template-gutenberg .content-boxed .page-titlebar {
+    margin-top: 25px;
+}
+.page-template-template-gutenberg .page-titlebar-h {
+    margin: 0 0 10px;
+}
+.page-template-template-gutenberg .breadcrumbs {
+    float: none;
+    padding: 0 0 15px;
+}
+.alignwide,
+.page-template-template-gutenberg .alignwide {
+    max-width: 75%;
+    margin-left: auto;
+    margin-right: auto;
+}
+.alignfull,
+.page-template-template-gutenberg .alignfull {
+    max-width: 100%;
+}
+.page-template-template-gutenberg img {
+    width: 100%;
+    height: auto;
 }
 
 @media screen and (max-width: 980px) {

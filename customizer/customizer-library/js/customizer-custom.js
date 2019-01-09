@@ -6,18 +6,31 @@
     
     $( window ).load( function() {
         
-        avant_fonts_check();
+        // Show / Hide Fonts Google/Websafe settings
+        avant_websafe_check();
         $( '#customize-control-avant-disable-google-fonts input[type=checkbox]' ).on( 'change', function() {
-            avant_fonts_check();
+            avant_websafe_check();
         });
         
-        function avant_fonts_check() {
+        function avant_websafe_check() {
             if ( $( '#customize-control-avant-disable-google-fonts input[type=checkbox]' ).is( ':checked' ) ) {
-                $( '#sub-accordion-section-avant-typography-section #customize-control-avant-note-fonts-one' ).show();
-                $( '#sub-accordion-section-avant-typography-section-default #customize-control-avant-note-fonts-two' ).show();
+                $( '#sub-accordion-section-avant-typography-section #customize-control-avant-title-font' ).hide();
+                $( '#sub-accordion-section-avant-typography-section #customize-control-avant-tagline-font' ).hide();
+                $( '#sub-accordion-section-avant-typography-section-default #customize-control-avant-body-font' ).hide();
+                $( '#sub-accordion-section-avant-typography-section-default #customize-control-avant-heading-font' ).hide();
+                $( '#sub-accordion-section-avant-typography-section #customize-control-avant-title-font-websafe' ).show();
+                $( '#sub-accordion-section-avant-typography-section #customize-control-avant-tagline-font-websafe' ).show();
+                $( '#sub-accordion-section-avant-typography-section-default #customize-control-avant-body-font-websafe' ).show();
+                $( '#sub-accordion-section-avant-typography-section-default #customize-control-avant-heading-font-websafe' ).show();
             } else {
-                $( '#sub-accordion-section-avant-typography-section #customize-control-avant-note-fonts-one' ).hide();
-                $( '#sub-accordion-section-avant-typography-section-default #customize-control-avant-note-fonts-two' ).hide();
+                $( '#sub-accordion-section-avant-typography-section #customize-control-avant-title-font-websafe' ).hide();
+                $( '#sub-accordion-section-avant-typography-section #customize-control-avant-tagline-font-websafe' ).hide();
+                $( '#sub-accordion-section-avant-typography-section-default #customize-control-avant-body-font-websafe' ).hide();
+                $( '#sub-accordion-section-avant-typography-section-default #customize-control-avant-heading-font-websafe' ).hide();
+                $( '#sub-accordion-section-avant-typography-section #customize-control-avant-title-font' ).show();
+                $( '#sub-accordion-section-avant-typography-section #customize-control-avant-tagline-font' ).show();
+                $( '#sub-accordion-section-avant-typography-section-default #customize-control-avant-body-font' ).show();
+                $( '#sub-accordion-section-avant-typography-section-default #customize-control-avant-heading-font' ).show();
             }
         }
 

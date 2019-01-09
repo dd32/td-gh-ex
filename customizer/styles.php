@@ -14,6 +14,8 @@ if ( ! function_exists( 'customizer_library_avant_build_styles' ) && class_exist
  * @return void
  */
 function customizer_library_avant_build_styles() {
+
+	$websafe = ( get_theme_mod( 'avant-disable-google-fonts', customizer_library_get_default( 'avant-disable-google-fonts' ) ) == 1 ) ? '-websafe' : '';
 	
 	// Primary Color
 	$setting = 'avant-primary-color';
@@ -212,11 +214,15 @@ function customizer_library_avant_build_styles() {
 	}
 	
 	// Body Font
-	$setting = 'avant-body-font';
+	$setting = 'avant-body-font'.$websafe;
 	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
-	$stack = customizer_library_get_font_stack( $mod );
+	if ( $websafe ) {
+		$stack = '\''.$mod.'\', sans-serif';
+	} else {
+		$stack = customizer_library_get_font_stack( $mod );
+	}
 
-	if ( $mod != customizer_library_get_default( $setting ) ) {
+	if ( $mod != customizer_library_get_default( $setting ) || get_theme_mod( 'avant-disable-google-fonts' ) == 1 ) {
 
 		Customizer_Library_Styles()->add( array(
 			'selectors' => array(
@@ -256,11 +262,15 @@ function customizer_library_avant_build_styles() {
 	}
 
 	// Heading Font
-	$setting = 'avant-heading-font';
+	$setting = 'avant-heading-font'.$websafe;
 	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
-	$stack = customizer_library_get_font_stack( $mod );
+	if ( $websafe ) {
+		$stack = '\''.$mod.'\', sans-serif';
+	} else {
+		$stack = customizer_library_get_font_stack( $mod );
+	}
 
-	if ( $mod != customizer_library_get_default( $setting ) ) {
+	if ( $mod != customizer_library_get_default( $setting ) || get_theme_mod( 'avant-disable-google-fonts' ) == 1 ) {
 
 		Customizer_Library_Styles()->add( array(
 			'selectors' => array(
@@ -308,11 +318,15 @@ function customizer_library_avant_build_styles() {
 	}
 	
 	// Site Title Font
-	$setting = 'avant-title-font';
+	$setting = 'avant-title-font'.$websafe;
 	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
-	$stack = customizer_library_get_font_stack( $mod );
+	if ( $websafe ) {
+		$stack = '\''.$mod.'\', sans-serif';
+	} else {
+		$stack = customizer_library_get_font_stack( $mod );
+	}
 
-	if ( $mod != customizer_library_get_default( $setting ) ) {
+	if ( $mod != customizer_library_get_default( $setting ) || get_theme_mod( 'avant-disable-google-fonts' ) == 1 ) {
 
 		Customizer_Library_Styles()->add( array(
 			'selectors' => array(
@@ -358,11 +372,15 @@ function customizer_library_avant_build_styles() {
 
 	}
 	// Site Tagline Font
-	$setting = 'avant-tagline-font';
+	$setting = 'avant-tagline-font'.$websafe;
 	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
-	$stack = customizer_library_get_font_stack( $mod );
+	if ( $websafe ) {
+		$stack = '\''.$mod.'\', sans-serif';
+	} else {
+		$stack = customizer_library_get_font_stack( $mod );
+	}
 
-	if ( $mod != customizer_library_get_default( $setting ) ) {
+	if ( $mod != customizer_library_get_default( $setting ) || get_theme_mod( 'avant-disable-google-fonts' ) == 1 ) {
 
 		Customizer_Library_Styles()->add( array(
 			'selectors' => array(
@@ -1221,45 +1239,6 @@ function customizer_library_avant_build_styles() {
 			),
 			'declarations' => array(
 				'top' => $side_social_top.'px'
-			)
-		) );
-	}
-	// Disable Google Fonts
-	$setting = 'avant-disable-google-fonts';
-	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
-
-	if ( $mod !== customizer_library_get_default( $setting ) ) {
-
-		$container_width = esc_attr( $mod );
-
-		Customizer_Library_Styles()->add( array(
-			'selectors' => array(
-				'body,
-				.widget-area .widget a'
-			),
-			'declarations' => array(
-				'font-family' => '\'Arial\', sans-serif'
-			)
-		) );
-		Customizer_Library_Styles()->add( array(
-			'selectors' => array(
-				'h1, h2, h3, h4, h5, h6,
-				h1 a, h2 a, h3 a, h4 a, h5 a, h6 a,
-				.woocommerce table.cart th,
-				.woocommerce-page #content table.cart th,
-				.woocommerce-page table.cart th,
-				.woocommerce input.button.alt,
-				.woocommerce-page #content input.button.alt,
-				.woocommerce table.cart input,
-				.woocommerce-page #content table.cart input,
-				.woocommerce-page table.cart input,
-				button, input[type="button"],
-				input[type="reset"],
-				input[type="submit"],
-				.site-title a'
-			),
-			'declarations' => array(
-				'font-family' => '\'Tahoma\', sans-serif'
 			)
 		) );
 	}

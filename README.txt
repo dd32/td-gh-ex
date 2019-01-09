@@ -68,6 +68,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.13
+* Style tweaks/fixes
+* Added new Gutenberg template & compatibility for new WordPress Gutenberg editor
+* Added styling for Gutenberg blocks
+* Added a selection of websafe fonts for Google fonts disabled
+* Updated the language .pot file
+
 #### 1.1.12
 * Style fixes/tweaks
 * Fix menu not opening bug

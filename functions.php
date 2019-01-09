@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.12' );
+define( 'AVANT_THEME_VERSION' , '1.1.13' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -84,6 +84,9 @@ function avant_setup() {
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
 
+	// Gutenberg Support
+	add_theme_support( 'align-wide' );
+	
 	// The custom logo
 	add_theme_support( 'custom-logo', array(
 		'width'       => 280,
@@ -453,3 +456,42 @@ function avant_cat_columns_array_push_after( $src, $avant_cat_in, $pos ) {
     }
     return $R;
 }
+
+/**
+ * Insert dismissable admin notices
+ */
+function avant_admin_notice() {
+	$user_id = get_current_user_id();
+	
+	$response = wp_remote_get( 'https://kairaweb.com/wp-json/wp/v2/themes/avant/' );
+	
+	if ( is_wp_error( $response ) ) {
+		return;
+	}
+	
+	$posts = json_decode( wp_remote_retrieve_body( $response ) );
+	
+	if ( empty( $posts ) ) {
+		return;
+	} else {
+		$message_id = trim( $posts[0]->free_notification_id );
+		$message 	= trim( $posts[0]->free_notification );
+		
+		if ( !empty( $message ) && !get_user_meta( $user_id, 'avant_admin_notice_' .$message_id. '_dismissed' ) ) {
+			$class = 'notice notice-success is-dismissible';
+			printf( '<div class="%1$s"><p>%2$s</p><p><a href="?avant-admin-notice-dismissed&avant-admin-notice-id=%3$s">Dismiss this notice</a></p></div>', esc_attr( $class ), $message, $message_id );
+		}
+	}
+}
+add_action( 'admin_notices', 'avant_admin_notice' );
+/**
+ * Dismiss admin notices
+ */
+function avant_admin_notice_dismissed() {
+    $user_id = get_current_user_id();
+    if ( isset( $_GET['avant-admin-notice-dismissed'] ) ) {
+    	$avant_admin_notice_id = $_GET['avant-admin-notice-id'];
+		add_user_meta( $user_id, 'avant_admin_notice_' .$avant_admin_notice_id. '_dismissed', 'true', true );
+	}
+}
+add_action( 'admin_init', 'avant_admin_notice_dismissed' );
