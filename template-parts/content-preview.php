@@ -5,11 +5,8 @@
 	$thumb = get_template_directory_uri() .'/img/default.png';
 
 } ?>
-<div class="post-thumb" style="background-image:url('<?php echo $thumb; ?>')">
-	<a href="<?php the_permalink();?>">
-
-</a>
-</div>
+<a href="<?php the_permalink();?>">
+<div class="post-thumb" style="background-image:url('<?php echo $thumb; ?>')"></div></a>
 	<header class="entry-header">
 		<a href="<?php the_permalink();?>">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>

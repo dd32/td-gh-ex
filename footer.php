@@ -15,13 +15,13 @@
 
 	<footer id="colophon" class="site-footer">
 	<div class="grid-wide">
-		<div class="col-3-12">
+		<div class="col-4-12">
 			<?php dynamic_sidebar( 'footer-1' ); ?>
 		</div>
-		<div class="col-3-12">
+		<div class="col-4-12">
 			<?php dynamic_sidebar( 'footer-2' ); ?>
 		</div>
-		<div class="col-6-12">
+		<div class="col-4-12 rightwidget">
 			<?php dynamic_sidebar( 'footer-3' ); ?>
 		</div>
 	</div>
