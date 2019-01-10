@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 2.3.5
+Version: 2.3.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -94,27 +94,27 @@ h1,h2,h3,h4,h5,h6 {
     clear: both;
     color: #141414;
     font-family: "Open Sans", sans-serif;
-    font-weight: 300;
     line-height: 1.3;
     margin-bottom: 15px;
+    font-weight:600;
 }
 h1 {
-    font-size: 36px;
+    font-size: 2.44em;
 }
 h2 {
-    font-size: 30px;
+    font-size: 1.95em;
 }
 h3 {
-    font-size: 26px;
+    font-size: 1.56em;
 }
 h4 {
-    font-size: 20px;
+    font-size: 1.25em;
 }
 h5 {
-    font-size: 18px;
+    font-size: 1em;
 }
 h6 {
-    font-size: 16px;
+    font-size: .8em;
 }
 p {
     margin-bottom: 10px;
@@ -7045,4 +7045,79 @@ nav.woocommerce-MyAccount-navigation ul li a {
 }
 .woocommerce-account .woocommerce-MyAccount-content {
     width: 73%;
+}
+
+/*Guttenberg Compatible CSS*/
+.entry-content ol {
+   /* padding-left: 1.25rem;
+    margin: 0;*/
+    margin-bottom: 6px;
+}
+.entry-content li {
+   /* padding-left: 1.25rem;
+    margin: 0;*/
+    margin-bottom: 6px;
+}
+
+.entry-content ol li {
+    margin-bottom: 6px;
+}
+.entry-content ul li {
+    margin-bottom: 6px;
+}
+.entry-content ul li ul, ol li ol {
+    margin-top: 6px;
+}
+.entry-content ul li ul, .entry-content ol li ol {
+    margin-bottom: 6px;
+}
+
+ul.wp-block-categories.wp-block-categories-list.aligncenter {
+    text-align: center;
+}
+ul.wp-block-categories li{
+    list-style: none;
+}
+
+ul.wp-block-archives.wp-block-archives-list li {
+    list-style: none;
+}
+
+ul.wp-block-archives.wp-block-archives-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul.wp-block-gallery.alignnone {
+    margin-left: 0;
+    padding: 0;
+}
+
+.wp-block-gallery .blocks-gallery-item figure {
+    position: relative;
+}
+
+/*align image*/
+@media (min-width: 750px) {
+ 
+    .alignfull {
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        width: auto;
+        max-width: 1000%;
+    }
+ 
+    .alignwide {
+        margin-left: calc(25% - 25vw);
+        margin-right: calc(25% - 25vw);
+        width: auto;
+        max-width: 1000%;
+    }
+    /* sidebar*/
+    .both-sidebar .alignfull, .both-sidebar .alignwide,
+    .left-sidebar .alignfull,  .left-sidebar .alignwide,
+    .right-sidebar .alignfull, .right-sidebar .alignwide{
+        margin-left: 0;
+        margin-right: 0;
+    }
 }

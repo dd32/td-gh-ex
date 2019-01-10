@@ -82,6 +82,15 @@ function accesspress_store_setup() {
 		'aside', 'image', 'video', 'quote', 'link',
 	) );
 
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	// Add support for responsive embedded content.
+	add_theme_support( 'responsive-embeds' );
+
 	// Set up the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'accesspress_store_custom_background_args', array(
 		'default-color' => 'ffffff',

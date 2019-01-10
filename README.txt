@@ -47,6 +47,9 @@ Images
 
 
 == Changelog ==
+= 2.3.6 =
+** Added Styles for Guttenberg Compatible
+** Updates Minor CSS
 
 = 2.3.5 =
 ** Fixed Dynamic Color Issues
