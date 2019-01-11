@@ -24,6 +24,7 @@ do_action( 'accesspress_mag_before_body_content' );
         if ( !empty( $accesspress_mag_show_breadcrumbs ) && $accesspress_mag_show_breadcrumbs == '1' ) {
     	    accesspress_mag_breadcrumbs();
         }
+
     ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">

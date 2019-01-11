@@ -72,6 +72,10 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.5.3
+ * Added Styles for Guttenberg Compatible
+ * Updates Minor CSS
+
 Version 2.5.2
  * Fixed Template color issue in mobile displays
 
