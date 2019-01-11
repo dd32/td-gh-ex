@@ -1,0 +1,145 @@
+/**
+* Theme Name: Aki Blog
+* Theme URI: https://www.templatesell.com/item/aki-blog/
+* Author: akithemes
+* Author URI: https://www.akithemes.com
+* Description: Aki Blog is simple, clean and elegant Free WordPress Theme for your blog site. This theme comes with slider, magonary layout, double column,copyright options and social options and many more features. In addition this theme has added custom widget for recent post, author and social menu. Use this awesome WordPress theme for your blog site, you will never look for alternative.
+* Version: 1.0.0
+* License: GNU General Public License v2 or later
+* License URI: http://www.gnu.org/licenses/gpl-2.0.htm
+* Template: free-blog
+* Text Domain: aki-blog
+* Tags: blog, news, custom-background, custom-header, one-column, two-columns, three-columns, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, post-formats
+*/
+
+/*Site title and tagline*/
+h1.site-title, p.site-title a {
+    font-family: Oswald;
+}
+.site-description {
+    font-family: 'Merriweather', sans-serif;
+    font-size: 2rem;
+}
+/*Menus*/
+.navbar-nav li a {
+    font-size: 12px !important;
+    font-weight: 500;
+}
+/*Headings*/
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+}
+.page .entry-title, .single .entry-title{
+	font-size: 36px;
+}
+
+/*Read More Button*/
+.read-more a {
+    color: #3ccb89;
+}
+/*Widget Title font Size*/
+.footer-top-box h2.widget-title, 
+#secondary h2.widget-title, 
+#left-sidebar h2.widget-title{
+	font-size: 22px;
+    font-weight: 500;
+}
+/*Footer Copyright Padding*/
+.footer-wrap .site-footer {
+    padding: 60px 0;
+}
+/*Menu Font Size*/
+.navbar-nav li a {
+    font-size: 16px;
+}
+pre {
+    background: #eee;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 15px;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    max-width: 100%;
+    overflow: auto;
+    padding: 1.6em;
+}
+code, kbd, tt, var {
+    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+    font-size: 15px;
+}
+.nav-links .nav-previous > a, 
+.nav-links .nav-next > a {
+    color: #3ccb89;
+}
+hr {
+    background-color: #ccc;
+    border: 0;
+    height: 1px;
+    margin-bottom: 1.5em;
+}
+
+.entry-content ul, ol {
+    margin: 0 0 1.5em 3em;
+}
+
+.entry-content ul {
+    list-style: disc;
+}
+
+ol {
+    list-style: decimal;
+}
+
+.entry-content li > ul,
+.entry-content li > ol {
+    margin-bottom: 0;
+    margin-left: 1.5em;
+}
+.entry-content ul li {
+    list-style: disc;
+}
+h2.entry-title {
+    font-weight: 500;
+}
+.featured-desc h2 {
+    font-weight: 500;
+}
+.related-pots-block .widget-title, 
+#comments #reply-title {
+    font-weight: 500;
+}
+
+dt {
+    font-weight: bold;
+}
+
+dd {
+    margin: 0 1.5em 1.5em;
+}
+
+img {
+    height: auto;
+    /* Make sure images are scaled correctly. */
+    max-width: 100%;
+    /* Adhere to container width. */
+}
+
+figure {
+    margin: 0;
+    /* Extra wide images within figure tags don't overflow the content area. */
+}
+
+table {
+    margin: 0 0 1.5em;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+td, th{
+    border: 1px solid #ddd;
+    padding: 5px;
+}
