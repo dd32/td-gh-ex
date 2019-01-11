@@ -54,6 +54,11 @@ Images
 
 == Changelog ==
 
+Version 3.1.7
+===============
+* Added Styles for Guttenberg Compatible
+* Updates Minor CSS
+
 Version 3.1.6
 ===============
 * Fixed minor dynamic color issues
