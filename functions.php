@@ -9,7 +9,7 @@
 
 // theme specifics
 define ('_CRYOUT_THEME_NAME','mantra');
-define ('_CRYOUT_THEME_VERSION','3.0.5');
+define ('_CRYOUT_THEME_VERSION','3.1.0');
 
 require_once(get_template_directory() . "/admin/main.php"); 	// Load necessary admin files
 

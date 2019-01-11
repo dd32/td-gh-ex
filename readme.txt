@@ -1,11 +1,11 @@
 =============
 Mantra WordPress Theme
-Copyright 2011-18 Cryout Creations
+Copyright 2011-19 Cryout Creations
 
 Author: Cryout Creations
 Requires at least: 4.2
-Tested up to: 4.9.6
-Stable tag: 3.0.5
+Tested up to: 5.0.3
+Stable tag: 3.1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: https://www.cryoutcreations.eu/donate/
@@ -71,7 +71,7 @@ https://www.pexels.com/photo/attractive-bar-barista-breakfast-296888/
 All other images bundled with the theme (used in the demo presentation page and admin section) are created by Cryout Creations and released with the theme under GPLv3 as well.
 
 
-== Original Translations ==
+== Original Translations Contributors ==
 
 Chinese (Simplified) - L�n Xuan Li
 Czech - Satapouch
@@ -95,11 +95,27 @@ Turkish - Emre Dalkili�
 
 == Changelog ==
 
+= 3.1.0 =
+* Added 'mantra_header_image_crop' filter for 'header' image size crop position attribute
+* Added HTML markup auto-correction on presentation page extra text areas
+* Adjusted general lists bullet styling to improve compatibility with plugins and Gutenberg
+* Fixed widgets containing custom HTML sometimes overlapping in the sidebars
+* Fixed posts on the presentation page having extra margin when magazine layout was used
+* Fixed use of undefined constant sometimes making featured images unusable in the header
+* Gutenberg editor tweaks and improvements:
+	* Added suport for wide image blocks in content
+	* Adjusted aligned elements styling to improve compatibility with Gutenberg
+	* Improved list appearance in blocks
+	* Improved horizontal ruler (hr) styling to work with Gutenberg
+	* Fixed captions alignment and sizing in Gutenberg blocks
+	* Fixed block galleries margins
+	* Fixed cover image blocks text appearance
+
 = 3.0.5 =
 * Added option to control editor styling activation after reintroducing basic editor styling
 * Improved slider captions by making slide links clickable through the captions
 * Improved slider administration interface by hiding unused fields when slider shortcode is used
-* Changed default excerpt ellipis value to avoid settings page issues on some servers
+* Changed default excerpt ellipsis value to avoid settings page issues on some servers
 * Fixed magazine layout two columns responsiveness
 * Fixed usage of obsolete constant in generated styling
 

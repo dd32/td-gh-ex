@@ -258,7 +258,7 @@ function doAjaxRequest(){
 			jQuery('#post-dropdown').html(data);
 		},
 		error: function(errorThrown){
-			alert('Error':errorThrown);
+			alert( {'Error':errorThrown} );
 			console.log(errorThrown);
 		}
 	});

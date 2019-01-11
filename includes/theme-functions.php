@@ -33,6 +33,7 @@ add_action( 'wp_head', 'mantra_header_scripts', 100 );
 */
 function mantra_title_and_description() {
 	global $mantra_options;
+	global $mantra_totalSize;
 	extract( $mantra_options );
 
 	// Header styling and image loading
@@ -41,7 +42,7 @@ function mantra_title_and_description() {
 	global $post;
 
 	if (get_header_image() != '') { $header_image = get_header_image(); }
-	if ( is_singular() && has_post_thumbnail( $post->ID ) && ($mantra_fheader == "Enable") && ($image = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'header' ) ) && (intval($image[1]) >= HEADER_IMAGE_WIDTH) ):
+	if ( is_singular() && has_post_thumbnail( $post->ID ) && ($mantra_fheader == "Enable") && ($image = wp_get_attachment_image_src(get_post_thumbnail_id( $post->ID ), 'header' ) ) && (intval($image[1]) >= $mantra_totalSize) ):
 		$header_image = $image[0];
 	endif;
 

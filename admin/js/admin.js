@@ -41,7 +41,7 @@ jQuery(document).ready(function() {
 	});
 
 	// Jquery confim window on reset to defaults
-	jQuery('#mantra_defaults').click (function() {
+	jQuery('#mantra_defaults').click( function() {
 		if (!confirm('Reset Mantra Settings to Defaults?')) { return false; }
 	});
 
@@ -130,12 +130,12 @@ jQuery(document).ready(function() {
 		$sliderNr=jQuery('#mantra_slideType').val();
 	//Show category if a category type is selected
 		if ($sliderNr=="Latest Posts from Category" || $sliderNr=="Random Posts from Category" )
-					jQuery('#slider-category').show();
-		else 		jQuery('#slider-category').hide();
+				jQuery('#slider-category').show();
+		else 	jQuery('#slider-category').hide();
 	//Show number of slides if that's the case
 		if ($sliderNr=="Latest Posts" || $sliderNr =="Random Posts" || $sliderNr =="Sticky Posts" || $sliderNr=="Latest Posts from Category" || $sliderNr=="Random Posts from Category" )
 				jQuery('#slider-post-number').show();
-	else 		jQuery('#slider-post-number').hide();
+		else 	jQuery('#slider-post-number').hide();
 		 });//onchange funciton
 
 

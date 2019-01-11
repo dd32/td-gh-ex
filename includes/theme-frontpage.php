@@ -167,8 +167,8 @@ function mantra_frontpage_generator() {
 		<?php } // columns
 
 		// Frontpage text areas
-		if (!empty($mantra_fronttext3)) {?><div id="front-text3" class="front-text"><?php echo do_shortcode( $mantra_fronttext3 ) ?></div><?php }
-		if (!empty($mantra_fronttext4)) {?><div id="front-text4" class="front-text"><?php echo do_shortcode( $mantra_fronttext4 ) ?></div><?php }
+		if (!empty($mantra_fronttext3)) {?><div id="front-text3" class="front-text"><?php echo do_shortcode( force_balance_tags( $mantra_fronttext3 ) ) ?></div><?php }
+		if (!empty($mantra_fronttext4)) {?><div id="front-text4" class="front-text"><?php echo do_shortcode( force_balance_tags( $mantra_fronttext4 ) ) ?></div><?php }
 
 		?>
 	</div> <!-- frontpage -->

@@ -86,8 +86,7 @@ function mantra_setup() {
 	add_theme_support( 'custom-background' );
 
 	// Register image size for the theme's header area
-	$mantra_hheight = intval( $mantra_hheight );
-	add_image_size( 'header', apply_filters( 'mantra_header_image_width', $mantra_totalSize ), apply_filters( 'mantra_header_image_height', $mantra_hheight), true );
+	add_image_size( 'header', apply_filters( 'mantra_header_image_width', $mantra_totalSize ), apply_filters( 'mantra_header_image_height', intval($mantra_hheight) ), apply_filters( 'mantra_header_image_crop', true ) );
 	
 	// Register image size for presentation page slider
 	add_image_size( 'slider', apply_filters( 'mantra_slider_image_width', $mantra_fpsliderwidth ), apply_filters( 'mantra_slider_image_height', $mantra_fpsliderheight ), true );

@@ -61,6 +61,7 @@ body {
 .entry-content ul > li {
 	padding-left: 0;
 	padding-right: 20px;
+	background-position-x: right;
 }
 
 .entry-content  li li {
