@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-root/
 Author: AccessPress Themes
 Author URI: https://accesspressthemes.com/
 Description: AccessPress Root is a simple, clean, beautifully designed responsive WordPress business theme with drag and drop homepage sections. Its minimal but mostly used features will help you setup your website easily and quickly. Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration, call to action and many other page layouts. Fully responsive, WooCommerce compatible, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. AccessPress Root is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins. Great customer support via online chat, email, support forum. Official support forum: https://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-root/
-Version: 1.32
+Version: 1.33
 License: GNU General Public License, version 3 (GPLv3) or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: accesspress-root
@@ -247,7 +247,7 @@ hr {
 
 ul,
 ol {
-	margin: 0 0 15px 3em;
+	margin: 0 0 15px 2em;
 }
 
 ul {
@@ -3002,4 +3002,80 @@ Responsive grid for pages
 .ap-span6 {
 	margin-left:0;
 	width:100%;
+}
+
+
+/*Guttenberg Compatible CSS*/
+.entry-content ol {
+    margin-bottom: 6px;
+}
+.entry-content li {
+    margin-bottom: 6px;
+}
+
+.entry-content ol li {
+    margin-bottom: 6px;
+}
+.entry-content ul li {
+    margin-bottom: 6px;
+}
+.entry-content ul li ul, ol li ol {
+    margin-top: 6px;
+}
+.entry-content ul li ul, .entry-content ol li ol {
+    margin-bottom: 6px;
+}
+
+ul.wp-block-categories.wp-block-categories-list.aligncenter {
+    text-align: center;
+}
+ul.wp-block-categories li{
+    list-style: none;
+}
+
+ul.wp-block-archives.wp-block-archives-list li {
+    list-style: none;
+}
+
+ul.wp-block-archives.wp-block-archives-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul.wp-block-gallery.alignnone {
+    margin-left: 0;
+    padding: 0;
+}
+
+.wp-block-gallery .blocks-gallery-item figure {
+    position: relative;
+}
+
+.wp-block-button.aligncenter {
+    margin-bottom: 15px;
+}
+
+/*align image*/
+@media (min-width: 750px) {
+ 
+    .alignfull {
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        width: auto;
+        max-width: 1000%;
+    }
+ 
+    .alignwide {
+        margin-left: calc(25% - 25vw);
+        margin-right: calc(25% - 25vw);
+        width: auto;
+        max-width: 1000%;
+    }
+    /* sidebar*/
+    .left-sidebar .alignfull,  .left-sidebar .alignwide,
+    .both-sidebar .alignfull,  .both-sidebar .alignwide,
+    .right-sidebar .alignfull, .right-sidebar .alignwide{
+        margin-left: 0;
+        margin-right: 0;
+    }
 }

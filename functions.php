@@ -79,6 +79,15 @@ function accesspress_root_setup() {
 		'search-form', 'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
 
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	// Add support for responsive embedded content.
+	add_theme_support( 'responsive-embeds' );
+
 }
 endif; // accesspress_root_setup
 add_action( 'after_setup_theme', 'accesspress_root_setup' );

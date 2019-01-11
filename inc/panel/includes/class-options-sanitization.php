@@ -90,6 +90,7 @@ function of_sanitize_multicheck( $input, $option ) {
 	$output = '';
 	if ( is_array( $input ) ) {
 		foreach( $option['options'] as $key => $value ) {
+			var_dump($key);
 			$output[$key] = false;
 		}
 		foreach( $input as $key => $value ) {

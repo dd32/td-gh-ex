@@ -97,6 +97,10 @@ Pattern Images
 ---------------------------------------------
 == Changelog ==
 
+Version 1.33
+ * Added Styles for Guttenberg Compatible
+ * Updates Minor CSS
+
 Version 1.32
  * Fixed Dynamic Template Color options in mobile view
 
