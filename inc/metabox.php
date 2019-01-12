@@ -30,16 +30,16 @@ function cherish_meta_box_callback( $post ) {
 	 * Use get_post_meta() to retrieve an existing value
 	 * from the database and use the value for the form.
 	 */
-	$cherish_color_meta_value = get_post_meta( $post->ID, 'meta-color', true );
+	$cherish_color_meta_value      = get_post_meta( $post->ID, 'meta-color', true );
 	$cherish_text_color_meta_value = get_post_meta( $post->ID, 'cherish-text-color', true );
 
 	?>
 	<p>
-	<label for="meta-color"><?php _e( 'Background color:', 'cherish' )?></label>&nbsp; 
+	<label for="meta-color"><?php esc_html_e( 'Background color:', 'cherish' ); ?></label>&nbsp; 
 	<input name="meta-color" type="text" value="<?php echo esc_attr( $cherish_color_meta_value ); ?>" class="meta-color" />
 	</p>
 	<p>
-	<label for="cherish-text-color"><?php _e( 'Title and link color:', 'cherish' )?></label>&nbsp; 
+	<label for="cherish-text-color"><?php esc_html_e( 'Title and link color:', 'cherish' ); ?></label>&nbsp; 
 	<input name="cherish-text-color" type="text" value="<?php echo esc_attr( $cherish_text_color_meta_value ); ?>" class="cherish-text-color" />
 	</p>
 <?php
@@ -62,7 +62,7 @@ function cherish_save_meta_box_data( $post_id ) {
 	}
 
 	// Verify that the nonce is valid.
-	if ( ! wp_verify_nonce( $_POST['cherish_meta_box_nonce'], 'cherish_meta_box' ) ) {
+	if ( ! wp_verify_nonce( sanitize_key( $_POST['cherish_meta_box_nonce'] ), 'cherish_meta_box' ) ) {
 		return;
 	}
 
@@ -76,24 +76,23 @@ function cherish_save_meta_box_data( $post_id ) {
 		return;
 	}
 
-	/* OK, its safe for us to save the data now. */
-	// Make sure that it is set.
+	/*
+	 * OK, its safe for us to save the data now.
+	 * Make sure that it is set.
+	 */
 	if ( isset( $_POST['meta-color'] ) ) {
 		// Sanitize user input.
-		$cherish_data = sanitize_text_field( $_POST['meta-color'] );
-	
+		$cherish_data = sanitize_text_field( wp_unslash( $_POST['meta-color'] ) );
 		// Update the meta field in the database.
 		update_post_meta( $post_id, 'meta-color', $cherish_data );
 	}
 
 	if ( isset( $_POST['cherish-text-color'] ) ) {
 		// Sanitize user input.
-		$cherish_data_text_color = sanitize_text_field( $_POST['cherish-text-color'] );
+		$cherish_data_text_color = sanitize_text_field( wp_unslash( $_POST['cherish-text-color'] ) );
 		// Update the meta field in the database.
 		update_post_meta( $post_id, 'cherish-text-color', $cherish_data_text_color );
 	}
-	
+
 }
 add_action( 'save_post', 'cherish_save_meta_box_data' );
-
-

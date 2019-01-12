@@ -20,29 +20,40 @@
 
 <body <?php body_class(); ?> itemscope="itemscope" itemtype="https://schema.org/WebPage">
 <div id="page" class="site">
-<a href="#wrapper" class="skip-link screen-reader-text"><?php esc_html_e( 'Skip to content', 'cherish' );?></a>
+<a href="#wrapper" class="skip-link screen-reader-text"><?php esc_html_e( 'Skip to content', 'cherish' ); ?></a>
 <nav id="site-navigation" class="main-navigation" role="navigation" itemscope="itemscope" itemtype="https://schema.org/SiteNavigationElement">
 	<button id="mobile-menu-toggle" aria-controls="top-bar-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'cherish' ); ?></button>
-	<?php wp_nav_menu( array( 'theme_location' => 'header', 'menu_id' => 'top-bar-menu', 'depth' => 3, 'container' => false ) ); ?>
+	<?php
+	wp_nav_menu(
+		array(
+			'theme_location' => 'header',
+			'menu_id'        => 'top-bar-menu',
+			'depth'          => 3,
+			'container'      => false,
+		)
+	);
+	?>
 </nav>
 <?php
-if ( is_home() || is_front_page() ) { ?>
+if ( is_home() || is_front_page() ) {
+	?>
 	<div id="header" role="banner">
 	<?php
 	the_custom_logo();
 	if ( display_header_text() ) {
-	?>
+		?>
 		<h1 class="site-title"><?php bloginfo( 'name' ); ?></h1>
 		<?php
-		if ( get_option( 'blogdescription' ) ) {?>
+		if ( get_option( 'blogdescription' ) ) {
+			?>
 			<div class="site-description"><?php bloginfo( 'description' ); ?></div>
-		<?php
+			<?php
 		}
-		cherish_action();
 	}
+	cherish_action();
 	?>
 	</div>
-<?php
+	<?php
 }
 ?>
 <div id="wrapper" role="main">

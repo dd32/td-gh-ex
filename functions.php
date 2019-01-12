@@ -8,41 +8,48 @@
  */
 
 if ( ! function_exists( 'cherish_setup' ) ) {
+	/**
+	 * Sets up theme defaults and registers support for various WordPress features.
+	 *
+	 * Note that this function is hooked into the after_setup_theme hook, which
+	 * runs before the init hook. The init hook is too late for some features.
+	 */
 	function cherish_setup() {
-
 		$cherish_ch = array(
-		'default-image'          => get_template_directory_uri() . '/images/cherry3.png',
-		'random-default'         => false,
-		'width'                  => 1900,
-		'height'                 => 660,
-		'flex-height'            => true,
-		'flex-width'             => true,
-		'uploads'                => true,
-		'header-text'            => true,
-		'default-text-color'     => '000000',
-		'wp-head-callback'       => 'cherish_customize_css',
+			'default-image'      => get_template_directory_uri() . '/images/cherry3.png',
+			'random-default'     => false,
+			'width'              => 1900,
+			'height'             => 660,
+			'flex-height'        => true,
+			'flex-width'         => true,
+			'uploads'            => true,
+			'header-text'        => true,
+			'default-text-color' => '000000',
+			'wp-head-callback'   => 'cherish_customize_css',
 		);
 
-		register_default_headers( array(
-			'cherry' => array(
-				'url' => '%s/images/cherry.png',
-				'thumbnail_url' => '%s/images/cherry-thumb.png',
-				/* translators: header image description */
-				'description' => __( 'Cherry', 'cherish' ),
-			),
-			'cherry2' => array(
-				'url' => '%s/images/cherry2.png',
-				'thumbnail_url' => '%s/images/cherry2-thumb.png',
-				/* translators: header image description */
-				'description' => __( 'Cherry 2', 'cherish' ),
-			),
-			'cherry3' => array(
-				'url' => '%s/images/cherry3.png',
-				'thumbnail_url' => '%s/images/cherry3-thumb.png',
-				/* translators: header image description */
-				'description' => __( 'Cherry 3', 'cherish' ),
-			),
-		) );
+		register_default_headers(
+			array(
+				'cherry'            => array(
+					'url'           => '%s/images/cherry.png',
+					'thumbnail_url' => '%s/images/cherry-thumb.png',
+					/* translators: header image description */
+					'description'   => __( 'Cherry', 'cherish' ),
+				),
+				'cherry2'           => array(
+					'url'           => '%s/images/cherry2.png',
+					'thumbnail_url' => '%s/images/cherry2-thumb.png',
+					/* translators: header image description */
+					'description'   => __( 'Cherry 2', 'cherish' ),
+				),
+				'cherry3'           => array(
+					'url'           => '%s/images/cherry3.png',
+					'thumbnail_url' => '%s/images/cherry3-thumb.png',
+					/* translators: header image description */
+					'description'   => __( 'Cherry 3', 'cherish' ),
+				),
+			)
+		);
 
 		add_theme_support( 'custom-header', $cherish_ch );
 		add_theme_support( 'post-thumbnails' );
@@ -51,13 +58,28 @@ if ( ! function_exists( 'cherish_setup' ) ) {
 		add_theme_support( 'title-tag' );
 		add_theme_support( 'woocommerce' );
 		add_theme_support( 'jetpack-responsive-videos' );
-		add_theme_support( 'custom-logo' );
+
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'     => 100,
+				'width'      => 100,
+				'flex-width' => true,
+			)
+		);
+
 		add_theme_support( 'customize-selective-refresh-widgets' );
 		add_theme_support( 'wp-block-styles' );
 		add_theme_support( 'align-wide' );
 		add_theme_support( 'responsive-embeds' );
 
-		register_nav_menus( array( 'header' => __( 'Header Navigation', 'cherish' ) ) );
+		register_nav_menus(
+			array(
+				'header' => esc_html__( 'Header Navigation', 'cherish' ),
+				'social' => esc_html__( 'Social Menu', 'cherish' ),
+			)
+		);
+
 		add_editor_style();
 
 		/* width */
@@ -68,115 +90,113 @@ if ( ! function_exists( 'cherish_setup' ) ) {
 
 		// Define and register starter content to showcase the theme on new sites.
 		$starter_content = array(
-		'widgets' => array(
-			// Place three core-defined widgets in the sidebar area.
-			'sidebar-1' => array(
-				'text_business_info',
-			),
+			'widgets'       => array(
+				// Place three core-defined widgets in the sidebar area.
+				'sidebar-1' => array(
+					'text_business_info',
+				),
 
-			// Add the core-defined business info widget to the footer 1 area.
-			'sidebar-2' => array(
-				'text_about',
-			),
+				// Add the core-defined business info widget to the footer 1 area.
+				'sidebar-2' => array(
+					'text_about',
+				),
 
-			// Put two core-defined widgets in the footer 2 area.
-			'sidebar-3' => array(
-				'search',
-			),
-		),
-
-		'posts' => array(
-			'front' => array(
-				'post_type' => 'page',
-				'post_title' => _x( 'Example front page with blocks', 'Theme starter content', 'cherish' ),
-				'post_content' => join(
-					'',
-					array(
-						'<!-- wp:paragraph -->
-						<p>' . _x( 'This is an example page used to show you what you can do with Cherish and the new block editor.', 'Theme starter content', 'cherish' ) . '&nbsp;&nbsp;</p>
-						<!-- /wp:paragraph -->
-						<!-- wp:paragraph {"align":"center","customBackgroundColor":"#fbd0db","fontSize":"medium"} -->
-						<p style="background-color:#fbd0db;text-align:center" class="has-background has-medium-font-size">
-						<em><strong>' . _x( 'Edit this page to make it your own.', 'Theme starter content', 'cherish' ) . '</strong></em></p>
-						<!-- /wp:paragraph -->
-
-						<!-- wp:gallery {"ids":[31,32,41],"columns":2,"align":"wide","className":"alignwide"} -->
-						<ul class="wp-block-gallery alignwide columns-2 is-cropped"><li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( get_theme_file_uri( '/images/cherry2.png' ) ) . '" 
-						alt="" data-id="31" data-link="' . esc_url( get_theme_file_uri( '/images/cherry2.png' ) ) . '" class="wp-image-31"/>
-						</figure></li><li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( get_theme_file_uri( '/images/cherry.png' ) ) . '" 
-						alt="" data-id="32" data-link="' . esc_url( get_theme_file_uri( '/images/cherry.png' ) ) . '" class="wp-image-32"/>
-						</figure></li><li class="blocks-gallery-item">
-						<figure><img src="' . esc_url( get_theme_file_uri( '/images/cherry3.png' ) ) . '" 
-						alt="" data-id="41" data-link="' . esc_url( get_theme_file_uri( '/images/cherry3.png' ) ) . '" class="wp-image-41"/>
-						</figure></li></ul>
-						<!-- /wp:gallery -->
-
-						<!-- wp:quote {"className":"is-style-large"} -->
-						<blockquote class="wp-block-quote is-style-large"><p><br><strong>' .
-						_x( 'Cherish each hour of this day for it can never return.', 'Theme starter content', 'cherish' ) . '
-						</strong><br></p>
-						<cite><br><em>' . _x( 'Og Mandino', 'Theme starter content', 'cherish' ) . '</em></cite>
-						</blockquote>
-						<!-- /wp:quote -->
-
-						<!-- wp:columns -->
-						<div class="wp-block-columns has-2-columns"><!-- wp:column -->
-						<div class="wp-block-column"><!-- wp:paragraph -->
-						<p>' . _x( 'You can display content in columns, like this.', 'Theme starter content', 'cherish' ) . '</p>
-						<!-- /wp:paragraph --></div>
-						<!-- /wp:column -->
-
-						<!-- wp:column -->
-						<div class="wp-block-column"><!-- wp:paragraph -->
-						<p>' . _x( 'And even add lists of comments and posts:', 'Theme starter content', 'cherish' ) . '</p>
-						<!-- /wp:paragraph --></div>
-						<!-- /wp:column --></div>
-						<!-- /wp:columns -->
-
-						<!-- wp:latest-posts /-->
-
-						<!-- wp:latest-comments /-->
-
-						<!-- wp:cover {"url":' . esc_url( get_theme_file_uri( '/images/cherry3.png' ) ) . ') ","align":"full","id":41,"hasParallax":true,"dimRatio":0,"overlayColor":"pale-cyan-blue"} -->
-						<div class="wp-block-cover has-pale-cyan-blue-background-color has-parallax alignfull" style="background-image:url(' . esc_url( get_theme_file_uri( '/images/cherry3.png' ) ) .')"><p class="wp-block-cover-text"><strong>This is a full width cover block with a fixed background image.</strong></p></div>
-						<!-- /wp:cover -->
-						
-						
-						',
-					)
+				// Put two core-defined widgets in the footer 2 area.
+				'sidebar-3' => array(
+					'search',
 				),
 			),
-			'about',
-			'blog',
-			'contact',
-		),
+			'posts' => array(
+				'front' => array(
+					'post_type' => 'page',
+					'post_title' => _x( 'Example front page with blocks', 'Theme starter content', 'cherish' ),
+					'post_content' => join(
+						'',
+						array(
+							'<!-- wp:paragraph -->
+							<p>' . _x( 'This is an example page used to show you what you can do with Cherish and the new block editor.', 'Theme starter content', 'cherish' ) . '&nbsp;&nbsp;</p>
+							<!-- /wp:paragraph -->
+							<!-- wp:paragraph {"align":"center","customBackgroundColor":"#fbd0db","fontSize":"medium"} -->
+							<p style="background-color:#fbd0db;text-align:center" class="has-background has-medium-font-size">
+							<em><strong>' . _x( 'Edit this page to make it your own.', 'Theme starter content', 'cherish' ) . '</strong></em></p>
+							<!-- /wp:paragraph -->
 
-		// Default to a static front page and assign the front and posts pages.
-		'options' => array(
-			'show_on_front' => 'page',
-			'page_on_front' => '{{front}}',
-			'page_for_posts' => '{{blog}}',
-		),
+							<!-- wp:gallery {"ids":[31,32,41],"columns":2,"align":"wide","className":"alignwide"} -->
+							<ul class="wp-block-gallery alignwide columns-2 is-cropped"><li class="blocks-gallery-item">
+							<figure><img src="' . esc_url( get_theme_file_uri( '/images/cherry2.png' ) ) . '" 
+							alt="" data-id="31" data-link="' . esc_url( get_theme_file_uri( '/images/cherry2.png' ) ) . '" class="wp-image-31"/>
+							</figure></li><li class="blocks-gallery-item">
+							<figure><img src="' . esc_url( get_theme_file_uri( '/images/cherry.png' ) ) . '" 
+							alt="" data-id="32" data-link="' . esc_url( get_theme_file_uri( '/images/cherry.png' ) ) . '" class="wp-image-32"/>
+							</figure></li><li class="blocks-gallery-item">
+							<figure><img src="' . esc_url( get_theme_file_uri( '/images/cherry3.png' ) ) . '" 
+							alt="" data-id="41" data-link="' . esc_url( get_theme_file_uri( '/images/cherry3.png' ) ) . '" class="wp-image-41"/>
+							</figure></li></ul>
+							<!-- /wp:gallery -->
 
-		// Set up nav menus for each of the two areas registered in the theme.
-		'nav_menus' => array(
-			// Assign a menu to the "theaderp" location.
-			'header' => array(
-				'name' => __( 'Menu', 'cherish' ),
-				'items' => array(
-					'page_about',
-					'page_blog',
-					'page_contact',
+							<!-- wp:quote {"className":"is-style-large"} -->
+							<blockquote class="wp-block-quote is-style-large"><p><br><strong>' .
+							_x( 'Cherish each hour of this day for it can never return.', 'Theme starter content', 'cherish' ) . '
+							</strong><br></p>
+							<cite><br><em>' . _x( 'Og Mandino', 'Theme starter content', 'cherish' ) . '</em></cite>
+							</blockquote>
+							<!-- /wp:quote -->
+
+							<!-- wp:columns -->
+							<div class="wp-block-columns has-2-columns"><!-- wp:column -->
+							<div class="wp-block-column"><!-- wp:paragraph -->
+							<p>' . _x( 'You can display content in columns, like this.', 'Theme starter content', 'cherish' ) . '</p>
+							<!-- /wp:paragraph --></div>
+							<!-- /wp:column -->
+
+							<!-- wp:column -->
+							<div class="wp-block-column"><!-- wp:paragraph -->
+							<p>' . _x( 'And even add lists of comments and posts:', 'Theme starter content', 'cherish' ) . '</p>
+							<!-- /wp:paragraph --></div>
+							<!-- /wp:column --></div>
+							<!-- /wp:columns -->
+
+							<!-- wp:latest-posts /-->
+
+							<!-- wp:latest-comments /-->
+
+							<!-- wp:cover {"url":' . esc_url( get_theme_file_uri( '/images/cherry3.png' ) ) . ') ","align":"full","id":41,"hasParallax":true,"dimRatio":0,"overlayColor":"pale-cyan-blue"} -->
+							<div class="wp-block-cover has-pale-cyan-blue-background-color has-parallax alignfull" style="background-image:url(' . esc_url( get_theme_file_uri( '/images/cherry3.png' ) ) . ')">
+							<p class="wp-block-cover-text"><strong>This is a full width cover block with a fixed background image.</strong></p></div>
+							<!-- /wp:cover -->
+					
+							',
+						)
+					),
+				),
+				'about',
+				'blog',
+				'contact',
+			),
+			// Default to a static front page and assign the front and posts pages.
+			'options' => array(
+				'show_on_front'  => 'page',
+				'page_on_front'  => '{{front}}',
+				'page_for_posts' => '{{blog}}',
+			),
+
+			// Set up nav menus for each of the two areas registered in the theme.
+			'nav_menus' => array(
+				// Assign a menu to the "header" location.
+				'header'    => array(
+					'name'  => __( 'Menu', 'cherish' ),
+					'items' => array(
+						'page_about',
+						'page_blog',
+						'page_contact',
+					),
 				),
 			),
-		),
-	);
+		);
 
-	$starter_content = apply_filters( 'cherish_starter_content', $starter_content );
+		$starter_content = apply_filters( 'cherish_starter_content', $starter_content );
 
-	add_theme_support( 'starter-content', $starter_content );
+		add_theme_support( 'starter-content', $starter_content );
 
 	}
 } // End if().
@@ -193,7 +213,7 @@ if ( ! function_exists( 'cherish_fonts_url' ) ) {
 
 		$fonts[] = get_theme_mod( 'cherish_font', 'Lily Script One' );
 		$fonts[] = 'Noto Serif';
-	
+
 		/* translators: To add an additional character subset specific to your language, translate this to 'greek', 'cyrillic', 'devanagari' or 'vietnamese'. Do not translate into your own language. */
 		$subset = _x( 'no-subset', 'Add new subset (greek, cyrillic, devanagari, vietnamese)', 'cherish' );
 
@@ -220,23 +240,25 @@ if ( ! function_exists( 'cherish_fonts_url' ) ) {
 	}
 }
 
-/* Enqueue fonts and scripts*/
+/**
+ * Enqueue fonts and scripts
+ */
 function cherish_styles_scripts() {
+	wp_enqueue_style( 'cherish_style', get_stylesheet_uri(), array(), wp_get_theme()->get( 'Version' ) );
+	wp_style_add_data( 'cherish_style', 'rtl', 'replace' );
+
 	wp_enqueue_style( 'cherish-fonts', cherish_fonts_url(), array(), null );
 	wp_enqueue_style( 'open-sans' );
 
-	wp_enqueue_script( 'cherish-navigation', get_template_directory_uri() . '/inc/navigation.js', array( 'jquery' ), '20120206', true );
-	wp_enqueue_script( 'cherish-skip-link-focus-fix', get_template_directory_uri() . '/inc/skip-link-focus-fix.js', array(), '20130115', true );
-
-	wp_enqueue_style( 'cherish_style', get_stylesheet_uri() );
-	wp_style_add_data( 'cherish_style', 'rtl', 'replace' );
+	wp_enqueue_script( 'cherish-navigation', get_template_directory_uri() . '/inc/navigation.js', array( 'jquery' ), wp_get_theme()->get( 'Version' ), true );
+	wp_enqueue_script( 'cherish-skip-link-focus-fix', get_template_directory_uri() . '/inc/skip-link-focus-fix.js', array(), wp_get_theme()->get( 'Version' ), true );
 
 	if ( class_exists( 'woocommerce' ) ) {
-		wp_enqueue_style( 'cherish_woo', get_template_directory_uri() . '/inc/woocommerce.css' );
+		wp_enqueue_style( 'cherish_woo', get_template_directory_uri() . '/inc/woocommerce.css', array(), wp_get_theme()->get( 'Version' ) );
 	}
 
 	if ( class_exists( 'bbpress' ) ) {
-		wp_enqueue_style( 'cherish_bbpress', get_template_directory_uri() . '/inc/bbpress.css' );
+		wp_enqueue_style( 'cherish_bbpress', get_template_directory_uri() . '/inc/bbpress.css', array(), wp_get_theme()->get( 'Version' ) );
 	}
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -250,61 +272,69 @@ if ( ! function_exists( 'cherish_editor_assets' ) ) {
 	 * Add styles and fonts for the block editor.
 	 */
 	function cherish_editor_assets() {
-		wp_enqueue_style( 'cherish-fonts-gutenberg', cherish_fonts_url(), array(), null );
-		wp_enqueue_style( 'cherish-editor', get_theme_file_uri( 'inc/gutenberg-editor.css' ), false );
+		wp_enqueue_style( 'cherish-fonts-gutenberg', cherish_fonts_url(), array(), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'cherish-editor', get_theme_file_uri( 'inc/gutenberg-editor.css' ), array(), wp_get_theme()->get( 'Version' ), false );
 	}
 
 	add_action( 'enqueue_block_editor_assets', 'cherish_editor_assets' );
 }
 
-/*Enqueue the color picker for the meta box that lets the user change the background color of the posts and pages*/
+/**
+ *
+ * Enqueue the color picker for the meta box that lets the user change the background color of the posts and pages.
+ */
 function cherish_color_enqueue() {
 	global $typenow;
 	if ( 'post' === $typenow || 'page' === $typenow ) {
 		wp_enqueue_style( 'wp-color-picker' );
 		wp_enqueue_script( 'wp-color-picker' );
-		wp_enqueue_script( 'cherish_meta-box-color-js', get_template_directory_uri() . '/inc/meta-box-color.js' );
+		wp_enqueue_script( 'cherish_meta-box-color-js', get_template_directory_uri() . '/inc/meta-box-color.js', array(), wp_get_theme()->get( 'Version' ) );
 
-			$cherish_color_meta_value = get_post_meta( get_the_ID(), 'meta-color', true );
-			$cherish_text_color_meta_value = get_post_meta( get_the_ID(), 'cherish-text-color', true );
+		$cherish_color_meta_value      = get_post_meta( get_the_ID(), 'meta-color', true );
+		$cherish_text_color_meta_value = get_post_meta( get_the_ID(), 'cherish-text-color', true );
 
-			$color = array(
+		$color = array(
 			'cherish_background' => $cherish_color_meta_value,
 			'cherish_text_color' => $cherish_text_color_meta_value,
 		);
-
 		wp_localize_script( 'cherish_meta-box-color-js', 'cherish_colors', $color );
-		
 	}
 }
 add_action( 'admin_enqueue_scripts', 'cherish_color_enqueue' );
 
-// Register widget areas.
-// Note that the footer widgets are only shown on the front page.
+/**
+ * Register widget areas.
+ */
 function cherish_widgets_init() {
-	register_sidebar( array(
-		'name'         => __( 'Frontpage Footer widget 1', 'cherish' ),
-		'description'  => __( 'Widgets in this area will be shown on the left-hand side.', 'cherish' ),
-		'before_title' => '<h2 class="widgettitle">',
-		'after_title'  => '</h2>',
-		'id'           => 'sidebar-1',
-	) );
+	register_sidebar(
+		array(
+			'name'         => __( 'Footer widget 1', 'cherish' ),
+			'description'  => __( 'Widgets in this area will be shown on the left-hand side.', 'cherish' ),
+			'before_title' => '<h2 class="widgettitle">',
+			'after_title'  => '</h2>',
+			'id'           => 'sidebar-1',
+		)
+	);
 
-	register_sidebar( array(
-		'name'         => __( 'Frontpage Footer widget 2', 'cherish' ),
-		'description'  => __( 'Widgets in this area will be shown in the middle', 'cherish' ),
-		'before_title' => '<h2 class="widgettitle">',
-		'after_title'  => '</h2>',
-		'id'           => 'sidebar-2',
-	));
+	register_sidebar(
+		array(
+			'name'         => __( 'Footer widget 2', 'cherish' ),
+			'description'  => __( 'Widgets in this area will be shown in the middle', 'cherish' ),
+			'before_title' => '<h2 class="widgettitle">',
+			'after_title'  => '</h2>',
+			'id'           => 'sidebar-2',
+		)
+	);
 
-	register_sidebar( array(
-		'name'         => __( 'Frontpage Footer widget 3', 'cherish' ),
-		'description'  => __( 'Widgets in this area will be shown on the right-hand side.', 'cherish' ),
-		'before_title' => '<h2 class="widgettitle">',
-		'after_title'  => '</h2>',
-		'id'            => 'sidebar-3',
-	) );
+	register_sidebar(
+		array(
+			'name'         => __( 'Footer widget 3', 'cherish' ),
+			'description'  => __( 'Widgets in this area will be shown on the right-hand side.', 'cherish' ),
+			'before_title' => '<h2 class="widgettitle">',
+			'after_title'  => '</h2>',
+			'id'           => 'sidebar-3',
+		)
+	);
 }
 add_action( 'widgets_init', 'cherish_widgets_init' );
 
@@ -312,6 +342,16 @@ add_action( 'widgets_init', 'cherish_widgets_init' );
 require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/metabox.php';
 
+// Theme documentation.
+require get_template_directory() . '/inc/theme-info.php';
+
+// Social media icons.
+require get_template_directory() . '/inc/icon-functions.php';
+
+
+/**
+ * Adds a conditional link for pingsbacks to the header.
+ */
 function cherish_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
@@ -319,10 +359,11 @@ function cherish_pingback_header() {
 }
 add_action( 'wp_head', 'cherish_pingback_header' );
 
-
-/* Add a title to posts that are missing title */
+/**
+ * Adds a title to posts that are missing titles.
+ */
 function cherish_post_title( $title ) {
-	if ( $title == '' ) {
+	if ( '' == $title ) {
 		return __( 'No title', 'cherish' );
 	} else {
 		return $title;
@@ -330,12 +371,13 @@ function cherish_post_title( $title ) {
 }
 add_filter( 'the_title', 'cherish_post_title' );
 
-
-/* Comments */
+/**
+ * Comments.
+ */
 function cherish_comment( $comment, $args, $depth ) {
-		?>
-		<li <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ) ?> id="comment-<?php comment_ID() ?>">
-			<div id="div-comment-<?php comment_ID() ?>" class="comment-body">
+	?>
+	<li <?php comment_class( empty( $args['has_children'] ) ? '' : 'parent' ); ?> id="comment-<?php comment_ID(); ?>">
+	<div id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 		<div class="comment-author vcard">
 		<?php
 		if ( get_avatar( $comment ) ) {
@@ -348,47 +390,54 @@ function cherish_comment( $comment, $args, $depth ) {
 		?>
 			<div class="comment-meta commentmetadata">
 				<a href="<?php echo htmlspecialchars( get_comment_link( $comment->comment_ID ) ); ?>">
-				<?php
-					/* translators: 1: date, 2: time */
-					printf( __('%1$s at %2$s','cherish' ), get_comment_date(), get_comment_time() ) ?></a>
-					<?php edit_comment_link( __( '(Edit)', 'cherish' ),'  ','' );
-				?>
+				<?php /* translators: 1: date, 2: time */ printf( __( '%1$s at %2$s', 'cherish' ), get_comment_date(), get_comment_time() ); ?>
+				</a>
+				<?php edit_comment_link( __( '(Edit)', 'cherish' ), '','' ); ?>
 			</div>
 		</div>
 		<?php
 		comment_text();
-		if ( $comment->comment_approved == '0' ) {
-		?>
-			<em class="comment-awaiting-moderation"><?php __( 'Your comment is awaiting moderation.', 'cherish' ) ?></em>
-		<?php
+		if ( '0' == $comment->comment_approved ) {
+			?>
+			<em class="comment-awaiting-moderation"><?php __( 'Your comment is awaiting moderation.', 'cherish' ); ?></em>
+			<?php
 		}
 		if ( comments_open() ) {
-		?>
+			?>
 			<div class="reply">
-			<?php comment_reply_link(
-				array_merge( $args, array(
-					'add_below' => 'div-comment',
-					'depth' => $depth,
-					'max_depth' => $args['max_depth'],
-					'reply_text' => '<i class="reply-link fa-big"></i><span class="screen-reader-text">' . __( 'Reply', 'cherish' ) . '</span>',
-				) )
-			)
+			<?php
+			comment_reply_link(
+				array_merge(
+					$args,
+					array(
+						'add_below'  => 'div-comment',
+						'depth'      => $depth,
+						'max_depth'  => $args['max_depth'],
+						'reply_text' => '<i class="reply-link fa-big"></i><span class="screen-reader-text">' . __( 'Reply', 'cherish' ) . '</span>',
+					)
+				)
+			);
 			?>
 			</div>
-		<?php
+			<?php
 		}
 		echo '</div>';
 }
 
+/**
+ * Meta information.
+ */
 function cherish_meta() {
 	global $id;
 	echo '<div class="meta"><p>';
 	if ( ! get_theme_mod( 'cherish_hide_meta' ) ) {
-		_e( 'By ', 'cherish' );
-		printf( ('<a href="%3$s" title="%4$s" rel="author">%5$s</a> %2$s.'),
+		esc_html_e( 'By ', 'cherish' );
+		printf(
+			( '<a href="%3$s" title="%4$s" rel="author">%5$s</a> %2$s.' ),
 			esc_url( get_permalink() ),
 			esc_html( get_the_date( get_option( 'date_format' ) ) ),
 			esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+			/* translators: %s author name */
 			esc_attr( sprintf( __( 'View all posts by %s', 'cherish' ), get_the_author() ) ),
 			get_the_author()
 		);
@@ -419,30 +468,65 @@ function cherish_meta() {
  *  Call to action.
  */
 function cherish_action() {
-	if ( ! get_theme_mod( 'cherish_hide_action' ) ) { ?>
-			<?php
-			if ( get_theme_mod( 'cherish_action_text' ) ) {
-				echo '<div id="action">';
-				if ( get_theme_mod( 'cherish_action_link' ) ) {
-					echo '<a href="' . esc_url( get_theme_mod( 'cherish_action_link' ) ) . '">';
-				}
-				echo wp_kses_post( get_theme_mod( 'cherish_action_text' ) );
-				if ( get_theme_mod( 'cherish_action_link' ) ) {
-					echo '</a>';
-				}
-				echo '</div>';
-			} elseif ( current_user_can( 'edit_theme_options' ) ) {
-				echo '<div id="action">';
-				printf( __( '<a href="%s">Click here to setup your Call to Action</a>', 'cherish' ),
-					esc_url( admin_url( '/customize.php?autofocus[section]=cherish_section_three' ) )
-				);
-				echo '</div>';
+	if ( ! get_theme_mod( 'cherish_hide_action' ) ) {
+		if ( get_theme_mod( 'cherish_action_text' ) ) {
+			echo '<div id="action">';
+			if ( get_theme_mod( 'cherish_action_link' ) ) {
+				echo '<a href="' . esc_url( get_theme_mod( 'cherish_action_link' ) ) . '">';
 			}
-			?>
-	<?php
+			echo wp_kses_post( get_theme_mod( 'cherish_action_text' ) );
+			if ( get_theme_mod( 'cherish_action_link' ) ) {
+				echo '</a>';
+			}
+			echo '</div>';
+		} elseif ( current_user_can( 'edit_theme_options' ) ) {
+			echo '<div id="action">';
+			printf(
+				/* translators: %s link to the customizer */
+				__( '<a href="%s">Click here to setup your Call to Action</a>', 'cherish' ),
+				esc_url( admin_url( '/customize.php?autofocus[section]=cherish_section_three' ) )
+			);
+			echo '</div>';
+		}
 	}
 }
 
+if ( class_exists( 'woocommerce' ) ) {
+	add_filter( 'loop_shop_columns', 'cherish_loop_columns' );
+	if ( ! function_exists( 'cherish_loop_columns' ) ) {
+		/**
+		 * Displays 3 products per row.
+		 */
+		function cherish_loop_columns() {
+			return 3;
+		}
+	}
+
+	/* Remove wrappers */
+	remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10 );
+	remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10 );
+	/* Add wrappers */
+	add_action( 'woocommerce_before_main_content', 'cherish_theme_wrapper_start', 10 );
+	add_action( 'woocommerce_after_main_content', 'cherish_theme_wrapper_end', 10 );
+
+	/**
+	 * Start Cherish WooCommerce wrapper.
+	 */
+	function cherish_theme_wrapper_start() {
+		echo '<div class="container"><div class="post">';
+	}
+
+	/**
+	 * End Cherish WooCommerce wrapper.
+	 */
+	function cherish_theme_wrapper_end() {
+		echo '</div></div>';
+	}
+}
+
+/**
+ * Print custom CSS depending on the theme options.
+ */
 function cherish_customize_css() {
 	echo '<style type="text/css">
 	.site-title { color: #' . esc_attr( get_header_textcolor() ) . '; ';
@@ -458,11 +542,13 @@ function cherish_customize_css() {
 		height:' . esc_attr( get_custom_header()->height ) . 'px;
 	}';
 
-	echo '.entry-header .post-title a:hover:after, .main-navigation a:hover:after { background: ' . esc_attr( get_theme_mod ( 'cherish_accent_color' ) ) . ';}';
+	echo '.entry-header .post-title a:hover:after, .main-navigation a:hover:after { background: ' . esc_attr( get_theme_mod( 'cherish_accent_color' ) ) . ';}';
 	echo 'a:active, a:hover, .main-navigation a:hover:after, .main-navigation a:hover,
-		.main-navigation a:focus { color: ' . esc_attr( get_theme_mod ( 'cherish_accent_color' ) ) . ';}';
+		.main-navigation a:focus { color: ' . esc_attr( get_theme_mod( 'cherish_accent_color' ) ) . ';}';
 
-	echo '#mobile-menu-toggle:hover, #mobile-menu-toggle:focus { border: 2px solid ' . esc_attr( get_theme_mod ( 'cherish_accent_color' ) ) . ';}';
+	echo '#mobile-menu-toggle:hover, #mobile-menu-toggle:focus { border: 2px solid ' . esc_attr( get_theme_mod( 'cherish_accent_color' ) ) . ';}';
+
+	echo '.social-menu li a:focus .icon, .social-menu li a:hover .icon{fill:' . esc_attr( get_theme_mod( 'cherish_accent_color' ) ) . ';}';
 
 	if ( ! get_theme_mod( 'cherish_hide_action' ) ) {
 		if ( get_theme_mod( 'cherish_action_color' ) ) {
@@ -475,9 +561,7 @@ function cherish_customize_css() {
 			echo '#action{font-size:' . esc_attr( get_theme_mod( 'cherish_action_size' ) ) . 'em;}';
 		}
 	}
-	
 	echo 'a:focus, #footer a:focus, #header-menu a:focus{text-decoration:underline;}';
-	
 	echo ".post-title,
 		.archive-title,
 		.view_posts_by,

@@ -1,6 +1,6 @@
 
 a {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce a,
@@ -31,7 +31,7 @@ a img {
 
 /* Matches entry-title in style.css. */
 .editor-post-title__block .editor-post-title__input {
-    font-family: 'Lily Script One', serif;
+	font-family: 'Lily Script One', 'Oleo Script Swash Caps', 'Pacifico', 'Lobster', 'Norican', serif;
 	font-size: 4em;
 	letter-spacing: 3px; 
 }
@@ -39,14 +39,14 @@ a img {
 .wp-block-file a.wp-block-file__button,
 .wp-block-file a.wp-block-file__button:visited,
 .wp-block-button__link {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 .wp-block-file a.wp-block-file__button:hover,
 .wp-block-file a.wp-block-file__button:focus,
 .wp-block-button__link:hover,
 .wp-block-button__link:focus {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 /*increase contrast*/

@@ -4,7 +4,7 @@ Theme URI:
 Author: Carolina Nymark
 Author URI: https://theme.tips
 Description: Cherish is an accessible, full width, responsive theme with a fixed top menu. It has 3 widget areas in the footer and you can change the background color, title and link color of your posts and pages. Edit or disable your Call to Action area in the customizer, where you can also change colors, fonts, hide your post meta and upload your own logo.
-Version: 1.4
+Version: 1.5
 Tags: custom-colors, threaded-comments, custom-menu, translation-ready, custom-header, flexible-header, one-column, editor-style, featured-images, accessibility-ready, blog
 Text Domain: cherish
 License: GNU General Public License v2 or later
@@ -173,7 +173,6 @@ td, th {
 .bypostauthor,
 .sticky{}
 
-
 .entry-header {
 	text-align: center;
 	margin-bottom: 1.5em;
@@ -188,13 +187,13 @@ td, th {
 	letter-spacing: 3px;
 }
 
-.post-title a:after {    
+.post-title a:after {
 	background: none repeat scroll 100% 0 transparent;
 	content: "";
 	display: block;
 	height: 2px;
 	background: #000;
-	margin: -20px auto 0;
+	margin: -19px auto 0;
 	transition: width 0.3s ease 0s, right 0.3s ease 0s;
 	width: 70%;
 }
@@ -228,6 +227,10 @@ td, th {
 	clear: both;
 	font-family: 'Lily Script One', serif;
 	text-align: center;
+}
+
+.error404 .post {
+	width: 80%;
 }
 
 /* Blocks */
@@ -271,15 +274,8 @@ td, th {
 .wp-block-quote.is-style-large cite,
 .wp-block-quote.is-style-large footer {
 	font-size: 13px;
-	text-align: left;
+	text-align: right;
 }
-
-.wp-block-quote.is-style-large cite,
-.wp-block-quote.is-style-large footer {
-	font-size: 13px;
-	text-align: left;
-}
-
 
 .wp-block-file a.wp-block-file__button,
 .wp-block-file a.wp-block-file__button:visited,
@@ -520,14 +516,13 @@ pre.wp-block-verse,
 }
 
 .author-info .author-avatar {
-	float: right;
-	height: 60px;
-	width: 60px;
-	margin: 10px;
+	display: block;
+	width: 150px;
+	clear: both;
+	margin: 10px auto 20px auto;
 }
 
 .author-info .author-description {
-	float: right;
 	margin: 10px;
 	font-size: 1em;
 }
@@ -1375,7 +1370,71 @@ option {
 	}
 
 }
+/*--------------------------------------------------------------
+## Social menu
+--------------------------------------------------------------*/
+.social-menu {
+	display: block;
+	width: auto;
+	margin: 1.5em auto;
+	text-align: center;
+	padding: 0;
+}
 
+.social-menu ul {
+	margin: 0;
+	padding: 0;
+}
+
+.social-menu ul li {
+	list-style-type: none;
+	display: inline;
+	padding: 0.2em;
+}
+
+.social-menu a {
+	text-decoration: none;
+	background: none;
+	color:#000;
+}
+
+.social-menu a .icon,
+.social-menu .icon {
+	height: 2.3em;
+	width: 2.3em;
+	fill: #000;
+	color:#000;
+	border: 1px solid transparent;
+	border-radius: 2px;
+	padding: 5px;
+}
+
+.social-menu li a:focus .icon,
+.social-menu li a:hover .icon {
+	fill: #000;
+	transition: all 1.1s ease;
+	border: 1px solid #666;
+}
+
+/* Social Menu fallbacks */
+/* Show screen reader text in some cases */
+.svg-fallback {
+	display: none;
+}
+
+.no-svg .svg-fallback {
+	display: inline-block;
+}
+
+.no-svg .site-footer nav.social-menu li a .screen-reader-text {
+	position: relative !important; /* overrides previous !important styles */
+	clip: auto;
+	width: auto;
+}
+
+/*--------------------------------------------------------------
+## Responsive styles
+--------------------------------------------------------------*/
 @media (max-width: 1064px) {
 	.meta hr {
 		width: 35%;

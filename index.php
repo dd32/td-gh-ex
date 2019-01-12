@@ -13,7 +13,8 @@
 
 get_header();
 
-while ( have_posts() ) : the_post();
+while ( have_posts() ) {
+	the_post();
 	$cherish_color_meta_value = get_post_meta( get_the_ID(), 'meta-color', true );
 	if ( ! $cherish_color_meta_value ) {
 		echo '<div class="container">';
@@ -22,8 +23,13 @@ while ( have_posts() ) : the_post();
 	}
 	get_template_part( 'content', get_post_format() );
 	echo '</div>';
-endwhile;
+}
 
-the_posts_navigation( array( 'prev_text' => __( '&larr; Previous page','cherish' ), 'next_text' => __( 'Next page &rarr;', 'cherish' ) ) );
+the_posts_navigation(
+	array(
+		'prev_text' => __( '&larr; Previous page', 'cherish' ),
+		'next_text' => __( 'Next page &rarr;', 'cherish' ),
+	)
+);
 
 get_footer();

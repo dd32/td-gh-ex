@@ -10,7 +10,6 @@
  */
 
 ?>
-
 <div id="footer" role="contentinfo">
 	<div class="widget_wrap">
 	<?php
@@ -35,16 +34,25 @@
 	if ( ! get_theme_mod( 'cherish_details' ) ) {
 		echo '<div class="divider"></div>';
 	}
+
+	cherish_social_menu();
 	?>
 	<div class="footer-credit">
+	<?php
+	if ( ! get_theme_mod( 'cherish_hide_gototop' ) ) {
+		?>
 		<span class="fa-angle-up fa" title="<?php esc_attr_e( 'Back to the top', 'cherish' ); ?>"></span>
-		
+		<?php
+	}
+	if ( ! get_theme_mod( 'cherish_hide_credits' ) ) {
+		?>
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a><span class="sep"> | </span>
-		<a href="https://wordpress.org/"><?php printf( esc_html__( 'Proudly powered by %s', 'cherish' ), 'WordPress' ); ?></a>
-		<span class="sep"> | </span>
-		<a href="<?php echo esc_url( 'https://theme.tips' ); ?>" rel="nofollow"><?php printf( esc_html__( 'Theme: %1$s by Carolina', 'cherish' ), 'Cherish' ); ?></a>
+		<a href="https://wordpress.org/"><?php esc_html_e( 'Proudly powered by WordPress', 'cherish' ); ?></a><span class="sep"> | </span>
+		<a href="<?php echo esc_url( 'https://theme.tips' ); ?>" rel="nofollow"><?php esc_html_e( 'Theme: Cherish by Carolina', 'cherish' ); ?></a>
+		<?php
+	}
+	?>
 	</div> <!--End Footer Credit -->
-	
 </div> <!--End Footer -->
 </div>
 </div>

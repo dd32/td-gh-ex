@@ -11,7 +11,8 @@ get_header(); ?>
 		<h1 class="archive-title"><?php the_archive_title(); ?></h1>
 	</header><!-- .entry-header -->
 	<?php
-	while ( have_posts() ) : the_post();
+	while ( have_posts() ) {
+		the_post();
 		$cherish_color_meta_value = get_post_meta( get_the_ID(), 'meta-color', true );
 		if ( ! $cherish_color_meta_value ) {
 			echo '<div class="container">';
@@ -20,10 +21,15 @@ get_header(); ?>
 		}
 		get_template_part( 'content', get_post_format() );
 		echo '</div>';
-	endwhile;
+	}
 
-	the_posts_navigation( array( 'prev_text' => __( '&larr; Previous page','cherish' ), 'next_text' => __( 'Next page &rarr;', 'cherish' ) ) );
-	
+	the_posts_navigation(
+		array(
+			'prev_text' => __( '&larr; Previous page', 'cherish' ), 
+			'next_text' => __( 'Next page &rarr;', 'cherish' ),
+		)
+	);
+
 	echo '</div>';
 
-get_footer();
+	get_footer();
