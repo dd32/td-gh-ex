@@ -1,0 +1,15 @@
+/*--------------------------------------------------------------
+# Sidebar
+--------------------------------------------------------------*/
+
+.primary-sidebar {
+	padding: 1.5rem;
+	font-family: 'Roboto Condensed', sans-serif;
+	background: #FFF;
+}
+
+@media screen and (min-width: 60em) {
+	.primary-sidebar {
+		/* padding: 0; */
+	}
+}
