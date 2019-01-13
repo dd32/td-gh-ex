@@ -88,6 +88,10 @@ Images
 
 ---------------------------------------------
 == Changelog ==
+Version 1.70
+ * Added Styles for Guttenberg Compatible
+ * Updates Minor CSS
+
 Version 1.69
  * WMPL translation bug in menu fixed.
 

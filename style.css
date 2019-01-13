@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-parallax/
 Author: AccessPress Themes
 Author URI: https://accesspressthemes.com/
 Description: AccessPress Parallax is a beautiful WordPress theme with Parallax design. Parallax design has become popular and is widely implemented these days. This is probably the most beautiful, feature rich and complete free WordPress parallax theme with features like: fully responsive, advance theme option panel, featured slider, advance post settings, services/team/blog/portfolio/testimonial layout, Google map integration, custom logo/fav icon, call to action, CSS animation, SEO friendly, translation ready, RTL support, custom CSS/JS and more! More over the theme is fully translation ready, WooCommerce Compatible, bbPress Compatible and fully support multilanguage via POLYLANG plugin. Demo: https://accesspressthemes.com/theme-demos/?theme=accesspress-parallax Support forum: https://accesspressthemes.com/support/ Pro version: https://accesspressthemes.com/wordpress-themes/accesspress-parallax-pro/ 
-Version: 1.69
+Version: 1.70
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: accesspress-parallax
@@ -2509,4 +2509,59 @@ Responsive grid for pages
 
 .rtl .bx-wrapper .bx-controls-direction a {
     text-indent: 999999999px;
+}
+
+/*Guttenberg Compatible CSS*/
+.entry-content ol {
+    margin-bottom: 6px;
+}
+.entry-content li {
+    margin-bottom: 6px;
+}
+
+.entry-content ol li {
+    margin-bottom: 6px;
+}
+.entry-content ul li {
+    margin-bottom: 6px;
+}
+.entry-content ul li ul, ol li ol {
+    margin-top: 6px;
+}
+.entry-content ul li ul, .entry-content ol li ol {
+    margin-bottom: 6px;
+}
+
+ul.wp-block-categories.wp-block-categories-list.aligncenter {
+    text-align: center;
+}
+ul.wp-block-categories li{
+    list-style: none;
+}
+
+ul.wp-block-archives.wp-block-archives-list li {
+    list-style: none;
+}
+
+ul.wp-block-archives.wp-block-archives-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+ul.wp-block-gallery.alignnone,ul.wp-block-gallery.alignwide,ul.wp-block-gallery.alignfull {
+    margin-left: 0;
+    padding: 0;
+}
+
+.wp-block-gallery .blocks-gallery-item figure {
+    position: relative;
+}
+
+.wp-block-button.aligncenter {
+    margin-bottom: 15px;
+}
+
+.wp-embed-responsive .wp-block-embed-vimeo.wp-block-embed.wp-embed-aspect-4-3 .wp-block-embed__wrapper:before,
+.wp-embed-responsive .wp-block-embed-vimeo.wp-block-embed.wp-embed-aspect-16-9 .wp-block-embed__wrapper:before {
+    padding-top: 0;
 }

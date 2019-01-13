@@ -47,6 +47,12 @@ function accesspress_parallax_setup() {
     add_theme_support( 'wc-product-gallery-lightbox' );
     add_theme_support( 'wc-product-gallery-slider' );
 
+    // Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for responsive embedded content.
+	add_theme_support( 'responsive-embeds' );
+
 	/**
 	 * Add callback for custom TinyMCE editor stylesheets. (editor-style.css)
 	 * @see http://codex.wordpress.org/Function_Reference/add_editor_style
