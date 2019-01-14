@@ -2,8 +2,8 @@
 
 Contributors: eDataStyle
 Requires at least: 4.0
-Tested up to: 4.9.5
-Stable tag: 1.6
+Tested up to: 5.0.3
+Stable tag: 1.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -57,7 +57,6 @@ Magnific-Popup:
 Source: https://github.com/dimsemenov/Magnific-Popup
 License: [MIT License.].
 
-
 Kirki, Copyright © 2016 Aristeides Stathopoulos:
 Source: https://github.com/aristath/kirki
 License: MIT License, http://www.opensource.org/licenses/MIT
@@ -77,12 +76,14 @@ Source: https://fonts.google.com/specimen/Poppins
 License: Open Font License 
 
 == Image Used ==
-https://pixabay.com/en/adult-break-business-caucasian-2449725/
-https://pixabay.com/en/workplace-team-business-meeting-1245776/
-All are Licensed under CC0
+https://pxhere.com/en/photo/922848
+CC0 Public Domain
 
 
 == Changelog ==
+= 1.7 =
+* pixabay image revmoed
+* re-check theme
 
 = 1.6 =
 * Theme Reivew Team fixed

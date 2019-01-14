@@ -70,7 +70,7 @@ if ( ! function_exists( 'be_page_posts_formats_video' ) ) :
 			endif;
 			if ( ! empty( $video ) ) :
 				foreach ( $video as $video_html ) {
-					echo '<figure style="background: url(\''.$post_thumbnail_url.'\') no-repeat center center; background-size:cover; -webkit-background-size:cover; -moz-background-size:cover;" class="entry-video embed-responsive embed-responsive-16by9">';
+					echo '<figure style="background: url(\''.esc_url( $post_thumbnail_url ).'\') no-repeat center center; background-size:cover; -webkit-background-size:cover; -moz-background-size:cover;" class="entry-video embed-responsive embed-responsive-16by9">';
 						echo $video_html;
 					echo '</figure>';
 				}
@@ -112,7 +112,7 @@ if ( ! function_exists( 'be_page_posts_formats_audio' ) ) :
 		// If not a single post, highlight the audio file.
 		if ( ! empty( $audio ) ) :
 			foreach ( $audio as $audio_html ) {
-				echo '<figure style="background: url(\''.$post_thumbnail_url.'\') no-repeat center center; background-size:cover; -webkit-background-size:cover; -moz-background-size:cover;" class="entry-video embed-responsive embed-responsive-16by9"><div class="audio-center">';
+				echo '<figure style="background: url(\''.esc_url( $post_thumbnail_url ).'\') no-repeat center center; background-size:cover; -webkit-background-size:cover; -moz-background-size:cover;" class="entry-video embed-responsive embed-responsive-16by9"><div class="audio-center">';
 						echo $audio_html;
 					echo '</div></figure>';
 					
@@ -145,7 +145,7 @@ if ( ! function_exists( 'be_page_posts_formats_gallery' ) ) :
 				$post_thumbnail_url = wp_get_attachment_url( $post_thumbnail_id );
 			endif;
 		if ( get_post_gallery() ) :
-			echo '<figure style="background: url(\''.$post_thumbnail_url.'\') no-repeat center center; background-size:cover; -webkit-background-size:cover; -moz-background-size:cover;" class="gallery-media owlGallery">';
+			echo '<figure style="background: url(\''.esc_url( $post_thumbnail_url ).'\') no-repeat center center; background-size:cover; -webkit-background-size:cover; -moz-background-size:cover;" class="gallery-media owlGallery">';
 			
 				$gallery = get_post_gallery( $post, false );
 				$ids = explode( ",", $gallery['ids'] );
@@ -284,7 +284,7 @@ if ( ! function_exists( 'be_page_single_posts_get_author' ) ) :
 function be_page_single_posts_get_author( $post_id = 0 ){
      $post = get_post( $post_id );
     if( $post->post_author != "" ){
-		echo get_the_author_meta( 'user_url', $post->post_author );
+	
 	 printf( '<div class="post-author"><a href="%1$s" class="avatar_round">%2$s</a></div>',  esc_url( get_author_posts_url( get_the_author_meta( 'ID', $post->post_author ) ) ), get_avatar( get_the_author_meta( 'user_email', $post->post_author ), $size = '40') . esc_html__( 'by ', 'be-page' ). get_the_author_meta( 'display_name', $post->post_author ) ); 
 	}
 }

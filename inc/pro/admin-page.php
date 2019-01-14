@@ -102,7 +102,7 @@ class be_page_Admin {
 			<a class="cresta-message-close notice-dismiss" href="<?php echo esc_url( wp_nonce_url( remove_query_arg( array( 'activated' ), add_query_arg( 'be_page-hide-notice', 'welcome' ) ), 'be_page_hide_notices_nonce', '_be_page_notice_nonce' ) ); ?>"><?php  /* translators: %s: plugin name. */ esc_html_e( 'Dismiss', 'be-page' ); ?></a>
 			<p><?php printf( /* translators: %s: plugin name. */  esc_html__( 'Welcome! Thank you for choosing Be Page! To fully take advantage of the best our theme can offer please make sure you visit our %1$swelcome page%2$s.', 'be-page' ), '<a href="' . esc_url( admin_url( 'themes.php?page=welcome' ) ) . '">', '</a>' ); ?></p>
 			<p class="submit">
-				<a class="button-secondary" href="<?php echo esc_url( admin_url( 'themes.php?page=welcome' ) ); ?>"><?php echo apply_filters( 'be_page_getting_started', esc_html__( 'Getting Started Be Page', 'be-page' )); ?></a>
+				<a class="button-secondary" href="<?php echo esc_url( admin_url( 'themes.php?page=welcome' ) ); ?>"><?php echo esc_html__( 'Getting Started Be Page', 'be-page' ); ?></a>
 			</p>
 		</div>
 		<?php
@@ -419,6 +419,14 @@ class be_page_Admin {
                   <td><span class="dashicons dashicons-no"></span></td>
                   <td><span class="dashicons dashicons-yes"></span></td>
                 </tr>
+                <tr>
+						<td></td>
+						<td></td>
+						<td class="btn-wrapper">
+							
+							<a href="<?php echo esc_url( $this->prourl ); ?>" class="button button-secondary" target="_blank"><?php esc_html_e( 'More Information', 'be-page' ); ?></a>
+						</td>
+					</tr>
               </tbody>
             </table>
 

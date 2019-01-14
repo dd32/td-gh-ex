@@ -14,13 +14,20 @@ if( $type == 'excerpt' )  :
 
 $media = get_media_embedded_in_content( get_the_content(), array( 'audio', 'video', 'object', 'embed', 'iframe' ) );
 $class = ( !has_post_thumbnail() && !get_post_gallery() && $media == "" ) ? 'full-row' : '';
+$embedded = get_media_embedded_in_content( get_the_content(), array( 'video', 'object', 'embed', 'iframe','audio' ) );
+$content_fluid = 'fluid';
 ?>
 
 <article data-animation="fadeInUp" id="post-<?php the_ID(); ?>" <?php post_class(array('side-post',$align, $class )); ?>>
+   <?php 
+   if ( has_post_thumbnail() || ! empty( $embedded ) || get_post_gallery() ) :
+   $content_fluid = ''; 
+   ?>
   <div class="side-post-image odd_even_layout">
     <?php do_action('be_page_posts_blog_media');?>
   </div>
-  <div class="side-post-content">
+  <?php endif; ?>
+  <div class="side-post-content <?php echo esc_attr( $content_fluid );?>">
     <div class="post-content-wrapper">
       <?php be_page_posted_on();?>
       <div class="post-title">
@@ -40,7 +47,7 @@ $class = ( !has_post_thumbnail() && !get_post_gallery() && $media == "" ) ? 'ful
 <article id="post-<?php the_ID(); ?>" <?php post_class( array( 'card-post' )); ?>>
   <div class="card-post-wrapper">
     <div class="card-post-image">
-      <?php do_action('be_page_posts_blog_media');?>
+      <?php do_action('be_page_posts_formats_thumbnail');?>
     </div>
     <div class="card-post-content">
       <div class="post-body">

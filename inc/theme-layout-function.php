@@ -218,7 +218,7 @@ if ( ! function_exists( 'be_page_page_wrp_before' ) ) :
 		$bg_color = get_background_color() != "" ? 'background-color:#'. get_background_color().';' : '';
 		$bg_img = get_background_image() != "" ? 'background-image:url('. get_background_image() .');' : '';
 	?>
-    <section class="<?php echo is_singular('post') ? 'last-section':'';?>" style=" <?php echo $bg_color.$bg_img;?>">
+    <section class="<?php echo is_singular('post') ? 'last-section':'';?>" style=" <?php echo esc_attr( $bg_color ). esc_attr( $bg_img );?>">
     	<div class="container">
     		<div class="row">  
         
