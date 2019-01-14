@@ -17,9 +17,9 @@ get_header();
     <div class="container">
       <div class="error-page">
         <div class="title">
-          <h1 class="colored-text"><?php esc_html_e( '404', 'be-page' ); ?></h1>
-          <h2><?php esc_html_e( 'Oh no! There was an error.', 'be-page' ); ?></h2>
-          <h4><?php esc_html_e( 'We couldn\'t find the page you were looking for.', 'be-page' ); ?></h4>
+          <h1 class="colored-text"><?php esc_html_e( '404', 'be-page' );?></h1>
+          <h2><?php esc_html_e( 'Oh no! There was an error.', 'be-page' );?></h2>
+          <h4><?php esc_html_e( 'We couldn\'t find the page you were looking for.', 'be-page' );?></h4>
         </div><a class="btn btn-color" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php esc_html_e( 'Back to the home', 'be-page' ); ?></a>
       </div>
     </div>

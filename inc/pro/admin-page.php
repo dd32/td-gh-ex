@@ -77,6 +77,7 @@ class be_page_Admin {
 	 * Hide a notice if the GET variable is set.
 	 */
 	public static function hide_notices() {
+	
 		if ( isset( $_GET['be_page-hide-notice'] ) && isset( $_GET['_be_page_notice_nonce'] ) ) {
 			if ( ! wp_verify_nonce( wp_unslash($_GET['_be_page_notice_nonce']), 'be_page_hide_notices_nonce' ) ) {
 				/* translators: %s: plugin name. */

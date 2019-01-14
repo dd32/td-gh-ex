@@ -369,6 +369,7 @@ if ( ! function_exists( 'be_page_page_footer' ) ) :
   </div>
 </div>
 </footer>
+<a href="javascript:void(0)" id="backToTop" class="ui-to-top active"> <?php echo esc_html__( 'BACK TO TOP', 'be-page' );?><i class="fa fa-long-arrow-up " aria-hidden="true"></i></a>
     <?php	
 	}
 	add_action('be_page_page_wrp_after','be_page_page_footer',80);
