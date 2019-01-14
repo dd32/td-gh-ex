@@ -65,6 +65,9 @@ Images
     http://pixabay.com/en/key-metal-home-security-wedding-96233/
 
 == Changelog ==
+Version 2.83
+* Added Styles for Guttenberg Compatible
+* Updates Minor CSS
 
 Version 2.82
 * Fixed Dynamic Color issue in responsive menu

@@ -83,6 +83,15 @@ function accesspresslite_setup() {
 		'caption',
 	) );
 
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	// Add support for responsive embedded content.
+	add_theme_support( 'responsive-embeds' );
+
 }
 endif; // accesspresslite_setup
 add_action( 'after_setup_theme', 'accesspresslite_setup' );
