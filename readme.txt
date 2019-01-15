@@ -23,6 +23,9 @@ It has fully support for Gutenberg blocks and easy customizations.
 
 == Changelog ==
 
+= 1.0.8 - 15/01/2019 =
+* Updated: review
+
 = 1.0.7 - 03/01/2019 =
 * Updated: review
 
@@ -85,9 +88,8 @@ Source: http://github.hubspot.com/pace/docs/welcome/
 
 [Lato Font](https://fonts.google.com/specimen/Lato) by Łukasz Dziedzic - Licensed under the [SIL Open Font License, 1.1](http://scripts.sil.org/OFL).
 
-Macbook Minimal Mockup (freebie)
-Source: https://dribbble.com/shots/4208160-Macbook-Minimal-Mockup-freebie
-License: Free to use
+Macbook Mockup created by me | GPLv3
+License: https://www.gnu.org/licenses/gpl-3.0.html
 
 Computer Screen on Screenshot created by me | GPLv3
 License: https://www.gnu.org/licenses/gpl-3.0.html

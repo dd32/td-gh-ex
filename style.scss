@@ -3,10 +3,10 @@ Theme Name: Absolutte
 Theme URI: https://www.quemalabs.com/theme/absolutte/
 Description: Absolutte is a beautiful One page free WordPress theme, perfect for small business.
 It has fully support for Gutenberg blocks and easy customizations.
-Version: 1.0.7
+Version: 1.0.8
 Author: Quema Labs
 Author URI: https://www.quemalabs.com/
-License: GNU General Public License v2 or later
+License: GNU General Public License v3 or later
 License URI: LICENSE
 Tags: two-columns, custom-background, threaded-comments, custom-menu, custom-logo, custom-colors, footer-widgets, theme-options, featured-images, sticky-post, translation-ready, full-width-template
 Text Domain: absolutte
@@ -27,6 +27,7 @@ TABLE OF CONTENTS
 9. Footer
 10. Animate
 11. Menu
+12. Gutenberg
 ----------------------------------------------------------------
 */
 
@@ -127,3 +128,10 @@ $fa-font-path: "theme-scss/fontawesome/webfonts";
 ==========================================
 */
 @import "theme-scss/menu";
+
+/*
+==========================================
+12. Gutenberg
+==========================================
+*/
+@import "theme-scss/gutenberg";

@@ -44,10 +44,13 @@
         $absolutte_logo_container_classes = '';
     endif;
 ?>
-<header id="header" class="site-header<?php echo ' ' . esc_attr( $absolutte_header_classes ); ?>"<?php echo ' ' . ( $header_image ) ? 'style="background-image: url(' . esc_url( $header_image ) . '); margin-bottom: ' . esc_attr( $absolutte_header_margin ) . 'px;"' : 'style=" margin-bottom: ' . esc_attr( $absolutte_header_margin ) . 'px;"'; ?>>
+<header id="header" class="site-header<?php echo ' ' . esc_attr( $absolutte_header_classes ); ?>" <?php echo ' ' . (
+    $header_image ) ? 'style="background-image: url(' . esc_url( $header_image ) . '); margin-bottom: ' . esc_attr(
+    $absolutte_header_margin ) . 'px;"' : 'style=" margin-bottom: ' . esc_attr( $absolutte_header_margin ) . 'px;"' ; ?>>
 
     <div class="absolutte-nav-btn-wrap">
-        <button id="ql_nav_btn2" type="button" class="collapsed absolutte-nav-btn" data-toggle="collapse" data-target="#ql_nav_collapse" aria-expanded="false">
+        <button id="ql_nav_btn2" type="button" class="collapsed absolutte-nav-btn" data-toggle="collapse" data-target="#ql_nav_collapse"
+            aria-expanded="false">
             <i class="fa fa-navicon"></i>
         </button>
     </div>
@@ -82,13 +85,26 @@
                 $logo = '<a href="' . esc_url( home_url( '/' ) ) . '" rel="home" class="ql_logo"><img src="' . esc_url( $absolutte_logo_contrast ) . '" /></a>';
             }
         ?>
-<?php if ( is_front_page() ): ?>
-            <h1 class="site-title"><?php echo wp_kses_post( $logo ); ?>&nbsp;</h1>
+        <?php if ( is_front_page() ): ?>
+        <h1 class="site-title">
+            <?php echo wp_kses_post( $logo ); ?>&nbsp;</h1>
         <?php else: ?>
-            <p class="site-title"><?php echo wp_kses_post( $logo ); ?></p>
+        <p class="site-title">
+            <?php echo wp_kses_post( $logo ); ?>
+        </p>
         <?php endif; ?>
 
-        <button id="absolutte-nav-btn" type="button" class="menu-toggle" data-toggle="collapse" aria-controls="primary-menu" aria-expanded="false">
+        <?php
+            $absolutte_description = get_bloginfo( 'description', 'display' );
+            if ( $absolutte_description || is_customize_preview() ):
+        ?>
+        <p class="site-description">
+            <?php echo $absolutte_description; /* WPCS: xss ok. */ ?>
+        </p>
+        <?php endif; ?>
+
+        <button id="absolutte-nav-btn" type="button" class="menu-toggle" data-toggle="collapse" aria-controls="primary-menu"
+            aria-expanded="false">
             <i class="fa fa-navicon"></i>
         </button>
     </div><!-- /absolutte-logo-wrap -->
