@@ -78,5 +78,5 @@
 			add_action( 'architectonic_primary_content', 'architectonic_add_'. $section .'_section', $i . 0 );
 			$i++;
 		}
-		do_action( 'architectonic_primary_content' );
+		do_action( 'architectonic_primary_content' ); 
 	}
