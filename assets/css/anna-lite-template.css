@@ -327,7 +327,7 @@ p.demo_store {
 	width:0;
 	height:100%;
 	padding:0;
-	z-index:999;
+	z-index:1001;
 	-webkit-transition-property: width, height, -webkit-transform;
     transition-property: width, height, transform;
     -webkit-transition-duration: 0.5s;
@@ -904,7 +904,7 @@ nav#mobilemenu .sf-sub-indicator {
 	bottom:15px;
 	right:15px;
 	display:none;
-	z-index:998
+	z-index:1000
 }
 
 #back-to-top i {
