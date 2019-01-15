@@ -2,9 +2,9 @@
 
 Contributors: specia
 Requires at least: WordPress 4.4
-Tested up to: WordPress 5.0.2
-Stable tag: 1.0.55
-Version: 1.0.55
+Tested up to: WordPress 5.0.3
+Stable tag: 1.0.56
+Version: 1.0.56
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, education, entertainment, food-and-drink, photography, portfolio, editor-style, grid-layout
@@ -78,6 +78,9 @@ Source: https://www.pexels.com/
 License: CC0 License
 
 ##Changelog
+version 1.0.56
+* Tested With WordPress 5.0.3
+
 version 1.0.55
 * Copyright Changed
 
