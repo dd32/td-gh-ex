@@ -47,7 +47,7 @@ endif;
 if ( !function_exists('acmeblog_sanitize_page') ) :
 	function acmeblog_sanitize_page( $input ) {
 		/*Ensure $input is an absolute integer.*/
-		$page_id = absint( $input );
+		$page_id = intval( $input );
 		/*If $page_id is an ID of a published page, return it; otherwise, return false*/
 		return ( 'publish' == get_post_status( $page_id ) ? $page_id : false );
 	}

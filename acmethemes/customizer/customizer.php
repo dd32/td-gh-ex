@@ -61,6 +61,11 @@ function acmeblog_customize_register( $wp_customize ) {
     */
 	require_once acmeblog_file_directory('acmethemes/customizer/design-options/design-panel.php');
 
+	/*
+   * file for design/layout panel
+   */
+	require_once acmeblog_file_directory('acmethemes/customizer/wc-options/wc-panel.php');
+
     /*
     * file for single post sections
     */

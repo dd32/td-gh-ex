@@ -25,7 +25,7 @@ $acmeblog_blog_single_image_layout = $acmeblog_customizer_all_values['acmeblog-s
 	       $acmeblog_customizer_all_values['acmeblog-single-post-layout'] == 'large-image' )
 	){
 		?>
-        <div class="single-feat clearfix">
+        <div class="single-feat">
             <figure class="single-thumb single-thumb-full">
 				<?php the_post_thumbnail( $acmeblog_blog_single_image_layout );?>
             </figure>

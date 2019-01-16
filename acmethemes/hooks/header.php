@@ -266,7 +266,20 @@ if ( ! function_exists( 'acmeblog_before_content' ) ) :
         global $acmeblog_customizer_all_values;
         $acmeblog_enable_feature = $acmeblog_customizer_all_values['acmeblog-enable-feature'];
         if ( is_front_page() && 1 == $acmeblog_enable_feature ) {
-            echo '<div class="slider-feature-wrap clearfix">';
+
+	        $acmeblog_beside_slider_ids = array();
+	        if( !empty( $acmeblog_customizer_all_values['acmeblog-feature-post-one'] ) && -1 != $acmeblog_customizer_all_values['acmeblog-feature-post-one'] ){
+		        $acmeblog_beside_slider_ids[] = $acmeblog_customizer_all_values['acmeblog-feature-post-one'];
+	        }
+	        if( !empty( $acmeblog_customizer_all_values['acmeblog-feature-post-one'] ) && -1 != $acmeblog_customizer_all_values['acmeblog-feature-post-two'] ){
+		        $acmeblog_beside_slider_ids[] = $acmeblog_customizer_all_values['acmeblog-feature-post-two'];
+	        }
+
+	        $has_beside_sidebar= 'has_beside_sidebar';
+	        if( empty($acmeblog_beside_slider_ids) ){
+	            $has_beside_sidebar= 'has_not_beside_sidebar';
+            }
+            echo '<div class="slider-feature-wrap clearfix '.$has_beside_sidebar.'">';
             /**
              * Slide
              * acmeblog_action_feature_slider
@@ -283,7 +296,9 @@ if ( ! function_exists( 'acmeblog_before_content' ) ) :
              *
              * @hooked acmeblog_feature_side-  0
              */
-            do_action('acmeblog_action_feature_side');
+	        if( !empty($acmeblog_beside_slider_ids) ){
+		        do_action('acmeblog_action_feature_side');
+	        }
             echo "</div>";
             $acmeblog_content_id = "home-content";
         } else {
@@ -292,6 +307,10 @@ if ( ! function_exists( 'acmeblog_before_content' ) ) :
         ?>
     <div id="<?php echo esc_attr( $acmeblog_content_id ); ?>" class="site-content">
     <?php
+	    $sidebar_layout = acmeblog_sidebar_selection(get_the_ID());
+	    if( 'both-sidebar' == $sidebar_layout ) {
+		    echo '<div id="primary-wrap" class="clearfix">';
+	    }
         if( 1 == $acmeblog_customizer_all_values['acmeblog-show-breadcrumb'] && !is_front_page() ){
             acmeblog_breadcrumbs();
         }

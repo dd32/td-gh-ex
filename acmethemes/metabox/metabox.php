@@ -11,22 +11,30 @@
 if ( !function_exists('acmeblog_sidebar_layout_options') ) :
     function acmeblog_sidebar_layout_options() {
         $acmeblog_sidebar_layout_options = array(
-            'default-sidebar' => array(
-                'value'     => 'default-sidebar',
-                'thumbnail' => get_template_directory_uri() . '/acmethemes/images/default-sidebar.jpg'
-            ),
-            'left-sidebar' => array(
-                'value'     => 'left-sidebar',
-                'thumbnail' => get_template_directory_uri() . '/acmethemes/images/left-sidebar.jpg'
-            ),
-            'right-sidebar' => array(
-                'value' => 'right-sidebar',
-                'thumbnail' => get_template_directory_uri() . '/acmethemes/images/right-sidebar.jpg'
-            ),
-            'no-sidebar' => array(
-                'value'     => 'no-sidebar',
-                'thumbnail' => get_template_directory_uri() . '/acmethemes/images/no-sidebar.jpg'
-            )
+	        'default-sidebar' => array(
+		        'value'     => 'default-sidebar',
+		        'thumbnail' => get_template_directory_uri() . '/acmethemes/images/default-sidebar.png'
+	        ),
+	        'left-sidebar' => array(
+		        'value'     => 'left-sidebar',
+		        'thumbnail' => get_template_directory_uri() . '/acmethemes/images/left-sidebar.png'
+	        ),
+	        'right-sidebar' => array(
+		        'value' => 'right-sidebar',
+		        'thumbnail' => get_template_directory_uri() . '/acmethemes/images/right-sidebar.png'
+	        ),
+	        'both-sidebar' => array(
+		        'value' => 'both-sidebar',
+		        'thumbnail' => get_template_directory_uri() . '/acmethemes/images/both-sidebar.png'
+	        ),
+	        'middle-col' => array(
+		        'value'     => 'middle-col',
+		        'thumbnail' => get_template_directory_uri() . '/acmethemes/images/middle-col.png'
+	        ),
+	        'no-sidebar' => array(
+		        'value'     => 'no-sidebar',
+		        'thumbnail' => get_template_directory_uri() . '/acmethemes/images/no-sidebar.png'
+	        )
         );
         return apply_filters( 'acmeblog_sidebar_layout_options', $acmeblog_sidebar_layout_options );
     }

@@ -87,11 +87,19 @@ if ( ! function_exists( 'acmeblog_dynamic_css' ) ) :
             .breadcrumb::after {
                 border-left: 5px solid {$acmeblog_primary_color};
             }
+            .rtl .breadcrumb::after {
+                border-right: 5px solid {$acmeblog_primary_color};
+                border-left:none;
+            }
             .tagcloud a{
                 border: 1px solid {$acmeblog_primary_color};
             }
             .widget-title{
                 border-left: 2px solid {$acmeblog_primary_color};
+            }
+            .rtl .widget-title {
+                border-right: 5px solid {$acmeblog_primary_color};
+                border-left:none;
             }
          ";
         /*media width*/

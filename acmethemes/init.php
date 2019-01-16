@@ -46,6 +46,12 @@ require_once acmeblog_file_directory('acmethemes/customizer/customizer.php');
 * file for additional functions files
 */
 require_once acmeblog_file_directory('acmethemes/functions.php');
+require_once acmeblog_file_directory('acmethemes/functions/sidebar-selection.php');
+
+
+/*WooCommerce*/
+require_once acmeblog_file_directory('acmethemes/woocommerce/functions-woocommerce.php');
+
 
 /*
 * files for hooks
@@ -83,6 +89,7 @@ require_once acmeblog_file_directory('acmethemes/sidebar-widget/sidebar.php');
 * file for core functions imported from functions.php while downloading Underscores
 */
 require_once acmeblog_file_directory('acmethemes/core.php');
+require_once acmeblog_file_directory('acmethemes/gutenberg/gutenberg-init.php');
 
 /**
  * Implement Custom Metaboxes

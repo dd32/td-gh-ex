@@ -16,10 +16,10 @@ if ( !function_exists('acmeblog_feature_side') ) :
         echo '<div class="besides-slider">';
         /*Featured Post Beside Slider*/
         $acmeblog_beside_slider_ids = array();
-        if( -1 != $acmeblog_customizer_all_values['acmeblog-feature-post-one'] ){
+        if( !empty( $acmeblog_customizer_all_values['acmeblog-feature-post-one'] ) && -1 != $acmeblog_customizer_all_values['acmeblog-feature-post-one'] ){
             $acmeblog_beside_slider_ids[] = $acmeblog_customizer_all_values['acmeblog-feature-post-one'];
         }
-        if( -1 != $acmeblog_customizer_all_values['acmeblog-feature-post-two'] ){
+        if( !empty( $acmeblog_customizer_all_values['acmeblog-feature-post-one'] ) && -1 != $acmeblog_customizer_all_values['acmeblog-feature-post-two'] ){
             $acmeblog_beside_slider_ids[] = $acmeblog_customizer_all_values['acmeblog-feature-post-two'];
         }
         if( !empty($acmeblog_beside_slider_ids) ){

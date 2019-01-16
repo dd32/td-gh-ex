@@ -4,7 +4,7 @@ $wp_customize->add_section( 'acmeblog-design-sidebar-layout-option', array(
     'priority'       => 20,
     'capability'     => 'edit_theme_options',
     'theme_supports' => '',
-    'title'          => __( 'Default Sidebar Layout', 'acmeblog' ),
+    'title'          => __( 'Single Page/Post Sidebar Layout', 'acmeblog' ),
     'panel'          => 'acmeblog-design-panel'
 ) );
 
