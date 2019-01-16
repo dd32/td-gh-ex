@@ -30,8 +30,7 @@
 	// Accent Color
 	asheLivePreview( 'colors_content_accent', function( val ) {
 		var selectors = '\
-			.page-content h1 a,\
-			.page-content h2 a,\
+			.page-content .post-title a,\
 			.page-content .post-comments,\
 			.page-content .post-author a,\
 			.page-content .post-share a,\

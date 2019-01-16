@@ -180,14 +180,13 @@ function ashe_true_false( $option ) {
 		}
 
 		/* Title */
-		.page-content h1 a,
 		.page-content h1,
 		.page-content h2,
-		.page-content h2 a,
 		.page-content h3,
 		.page-content h4,
 		.page-content h5,
 		.page-content h6,
+		.page-content .post-title a,
 		.page-content .author-description h4 a,
 		.page-content .related-posts h4 a,
 		.page-content .blog-pagination .previous-page a,
@@ -197,9 +196,8 @@ function ashe_true_false( $option ) {
 			color: #030303;
 		}
 
-		.page-content h1 a:hover,
-		.page-content h2 a:hover {
-			color: '. esc_html(ashe_hex2rgba( '#030303', 0.75 )).';
+		.page-content .post-title a:hover {
+			color: '. esc_html(ashe_hex2rgba( '#030303', 0.75 )) .';
 		}
 	
 		/* Meta */
