@@ -4,17 +4,18 @@
 .nav li {float: right;}
 .article ol {margin: 0 40px 20px 0;}
 .article ul {margin: 0 20px 20px 0;}
+
 /********** @media **********/
-@media all and (max-width: 480px) {
+@media all and (max-width: 768px) {
 
 }
 /********** @media **********/
-@media all and (min-width: 481px) and (max-width: 1199px) {
-	.section {float: right;}
-	.aside {float: left;}
+@media all and (min-width: 769px) and (max-width: 1199px) {
+	.section {float: right; width: 60%; margin: 3%;}
+	.aside {float: left; width: 24%; margin: 3%;}
 }
 /********** @media **********/
 @media all and (min-width: 1200px) {
-	.section {float: right;}
-	.aside {float: left;}
+	.section {float: right; width: 780px; margin: 30px;}
+	.aside {float: left; width: 300px; margin: 30px;}
 }
