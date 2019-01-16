@@ -11,8 +11,6 @@
 * Defines sections, settings and function of customizer and return and array
 * Also used to get the default options array, in this case $get_default = true and we DISABLE the __get_option (=>infinite loop)
 *
-* @package Customizr
-* @since Customizr 3.0
 */
 function czr_fn_get_customizer_map( $get_default = null,  $what = null ) {
     if ( ! ( defined( 'CZR_IS_MODERN_STYLE' ) && CZR_IS_MODERN_STYLE ) ) {
@@ -561,7 +559,14 @@ function czr_fn_header_design_option_map( $get_default = null ) {
                             'type'          => 'select' ,
                             'priority'      => 8,
           ),
-
+          'tc_header_no_borders'  =>  array(
+                            'default'       => czr_fn_user_started_before_version( '4.1.26', '2.1.16' ) ? false : true,
+                            'control'       => 'CZR_controls' ,
+                            'label'         => __( 'Remove header borders', 'customizr' ),
+                            'section'       => 'header_layout_sec' ,
+                            'type'          => 'checkbox',
+                            'priority'      => 8,
+          ),
           'tc_header_show_topbar'  =>  array(
                             'default'       => 'none',
                             'control'       => 'CZR_controls' ,
