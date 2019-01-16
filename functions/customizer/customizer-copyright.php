@@ -21,7 +21,7 @@
     'appointment_options[footer_copyright_text]',
     array(
         'default' => '<p>'.__( '<a href="https://wordpress.org">Proudly powered by WordPress</a> | Theme: <a href="https://webriti.com" rel="designer">Appointment Red</a> by Webriti', 'appointment-red' ).'</p>',
-		'sanitize_callback' => 'appointment-red_footer_copyright_sanitize_html',
+		'sanitize_callback' => 'appointment_red_footer_copyright_sanitize_html',
 		'type' =>'option'
     )
 	
