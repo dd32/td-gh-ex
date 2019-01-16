@@ -41,6 +41,12 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == Changelog ==
+= Version 1.4.2 - 2019-01-16 =
+* Fix - Gallery padding for Gutenberg
+* Tweak - Add alt attributes to missed img tags
+* Tweak - Utilize single custom JS file for required theme JS settings.
+* Recommend - Zakra theme
+
 = Version 1.4.1 - 2018-11-21 =
 * Added - Gutenberg compatibility
 * Remove - Backward compatible for favicon
