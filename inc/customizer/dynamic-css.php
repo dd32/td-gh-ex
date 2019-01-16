@@ -201,14 +201,13 @@ $css = '';
 		}
 
 		/* Title */
-		.page-content h1 a,
 		.page-content h1,
 		.page-content h2,
-		.page-content h2 a,
 		.page-content h3,
 		.page-content h4,
 		.page-content h5,
 		.page-content h6,
+		.page-content .post-title a,
 		.page-content .post-author a,
 		.page-content .author-description h3 a,
 		.page-content .related-posts h5 a,
@@ -225,8 +224,7 @@ $css = '';
 		}
 
 		.page-content .read-more a:hover,
-		.page-content h1 a:hover,
-		.page-content h2 a:hover {
+		.page-content .post-title a:hover {
 			color: '. esc_html( bard_hex2rgba( '#030303', 0.75 ) ) .';
 		}
 	
