@@ -6,7 +6,7 @@
 * Requires at least: 4.9
 * Tested up to: 5.0.3
 * Requires PHP: 7.2
-* Version: 1.1.10
+* Version: 1.1.11
 * Stable Tag: trunk
 * License: MIT
 * License URI: https://opensource.org/licenses/mit-license.php
@@ -82,6 +82,9 @@ Source: https://github.com/originecode/aemi
 
 
 ## Changelog
+
+1.1.11 :
+	- Fixed : Bug with Gutenberg Styling on child theme
 
 1.1.10 :
 	- Added : Add Inter UI font as default Gutenberg editor font. 
