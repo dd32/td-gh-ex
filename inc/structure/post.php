@@ -3,15 +3,13 @@
 if ( ! function_exists( 'aemi_post_header' ) )
 {
 	function aemi_post_header()
-	{ ?>
+	{
 
-		<div class="post-header">
+		?><div class="post-header"><?php
 
-			<?php aemi_featured_image(); ?>
+			aemi_featured_image();
 
-			<div class="post-info">
-
-				<?php
+			?><div class="post-info"><?php
 
 				if ( is_single() ) {
 
@@ -23,42 +21,23 @@ if ( ! function_exists( 'aemi_post_header' ) )
 
 				}
 
-				aemi_post_meta_header(); 
+				aemi_meta_header(); 
 
-				?>
-
-			</div>
-
-		</div>
-
-		<?php
+				?></div>
+		</div><?php
 	}
 }
 
 if ( ! function_exists( 'aemi_post_content' ) )
 {
 	function aemi_post_content()
-	{ ?>
-		<div class="post-content" itemprop="articleBody">
-
-			<?php
+	{
+		?><div class="post-content" itemprop="articleBody"><?php
 
 			the_content();
 
-			wp_link_pages( array(
-				'before'    => '<div id="post-pagination" class="pagination"><div class="nav-previous">',
-				'after'     => '</div></div>',
-				'next_or_number' => 'next',
-				'nextpagelink' => 'next page &rarr;',
-				'previouspagelink' => '&larr; previous page',
-				'separator' => '</div><div class="nav-next">'
-			) );
+			aemi_page_navigation();
 
-			?>
-
-		</div>
-
-		<?php
-
+		?></div><?php
 	}
 }
