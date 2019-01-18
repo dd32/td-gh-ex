@@ -1,18 +1,18 @@
 === Figure/Ground ===
 Contributors: celloexpressions
-Tags: one-column, flexible-header, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
+Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, block-styles, wide-blocks
 Requires at least: 4.5
-Tested up to: 4.7
-Stable tag: 1.2
-Description: Figure/Ground is a bold blogging theme featuring a dynamic animation and extensive customization options. 
+Tested up to: 5.1
+Stable tag: 2.0
+Description: Figure/Ground is a bold blogging theme featuring a dynamic background and extensive customization options. 
 License: GPLv2
 
 == Description ==
 Figure/Ground is a bold blogging theme that transforms your site into a dynamic, visually stimulating canvas of abstract shapes and content.
 
-Meticulously designed on a responsive 64-pixel square grid with a 16-pixel sub-grid, Figure/Ground features comprehensive customization options including the ability to customize every color and an alternate "Circular" mode that makes things more curvy.
+Meticulously designed on a responsive 64-pixel square grid with a 16-pixel sub-grid, Figure/Ground features comprehensive customization options including the ability to customize every color and alternate "Circular" and "Orthogonal" modes.
 
-Your content flows down the center of the page, blending into the background animation in an alternating sequence, before coming to the widgetized footer. A fixed header features space for a small site icon, a search bar, and a togglable menu.
+Your content flows down the center of the page, blending into the background animation in an alternating sequence, before coming to the widgetized footer. A fixed header features space for a small site logo, a search bar, and a togglable menu. Wide and full-width images break across the canvas with support for the block editor (Gutenberg).
 
 From its bold design to its out-of-the-box functionality and easy customization, Figure/Ground is sure to make your site memorable!
 
@@ -20,10 +20,10 @@ From its bold design to its out-of-the-box functionality and easy customization,
 The following options are available for this theme, via the Customizer:
 * Two Figure/Ground Color pickers.
 * Two Accent Color pickers.
-* Option for orthogonal or circular design details and animation.
+* Option for orthogonal, circular, or rhombus design details and animation.
 * Size of the figure/ground animation shapes.
-* Speed of the figure/ground animation, or turn the animation off.
-* Number of animation iterations to perform on page-load.
+* Speed of the figure/ground animation, or turn the animation off (off by default).
+* Initial density of the figure/ground animation.
 * Custom copyright name field.
 * Show or hide "Proudly powered by WordPress".
 * Show or hide theme information display.
@@ -37,24 +37,24 @@ The following features are also available:
 * Custom styling for galleries, audio and video players, and playlists, which are also included in the editor styles.
 * Images get special treatment and really stand out in the highly abstract, artistic design of Figure/Ground. Accordingly, featured images and single-view image pages display large images without unnecessary padding or other chrome.
 * Abundant iconography (via Genericons), in post meta, post formats, archive page headers, and more.
-* Clean code built on _s and written by a WordPress core contributor.
-
+* Wide and full-width image support with the block editor.
+* Block editor style support, with custom styles for several elements in the editor and on the frontend.
 
 == Installation ==
-1. Take the easy route and install through the WordPress Theme Installer adder OR
+1. Take the easy route and install through the WordPress Theme Installer, or,
 1. Download the .zip file and upload the unzipped folder to the `/wp-content/themes/` directory.
 1. Activate the plugin through the 'Themes' screen in WordPress.
-1. Go to the Customizer (Appearance -> Customize) to select custom colors, Figure/Ground animation settings, and to customize the standard options, ranging from widgets to menus and a custom header.
+1. Go to the Customizer (Appearance -> Customize) to select custom colors, Figure/Ground animation settings, and to customize the core options, ranging from widgets to menus and a custom header.
 
 
 == Frequently Asked Questions ==
 = Supported Colors =
-It is extremely important that your two selected Figure/Ground colors have adequate contrast with each other, as they are alternately used as the foreground and background colors throughout this theme. But don't worry about looking up how to calculate color contrast. Figure/Ground automatically ensures that the bare minimum color contrast guidelines are met, and will adjust your color selections as needed to do so. If you find that the resulting color is significantly different from the one you selected, it's best to find the perfect shade within the general brightness of the generated color.
+It is extremely important that your two selected Figure/Ground colors have adequate contrast with each other, as they are alternately used as the foreground and background colors throughout this theme. But don't worry about looking up how to calculate color contrast. Figure/Ground automatically ensures that the bare minimum color contrast guidelines are met, and will adjust your color selections as needed to do so. If you find that the resulting color is significantly different from the one you selected, it's best to find your perfect shade within the general brightness of the generated color.
 
-Additionally, contrast between accent colors and their respective figure/ground colors is checked and tweaked as needed.
+Additionally, contrast between accent colors and their respective figure/ground colors is checked and adjusted as needed.
 
 == Copyrights & License ==
-Figure/Ground WordPress Theme, Copyright 2016 Nick Halsey.
+Figure/Ground WordPress Theme, Copyright 2019 Nick Halsey.
 Figure/Ground is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 Figure/Ground is distributed under the terms of the GNU GPL.
 
@@ -77,6 +77,17 @@ Genericons are licensed under the terms of the GNU GPL, Version 2 (or later)
 Source: http://genericons.com
 
 == Changelog ==
+= 2.0 =
+* Implement accessibility improvements throughout the theme. Figure/Ground is now accessibility-ready.
+* Add a new, default, "Rhombus" mode for the figure/ground animation. Adjust defaults and update customizer options accordingly.
+* Add styles for the new editor blocks in WordPress 5.0, fixing broken styles for core backwards compatibility breaks.
+* Add editor styles for the block editor.
+* Add support for the wide and full image alignments in the block editor.
+* Apply custom colors to the block editor color palattes.
+* Customize styling of site embeds externally to match theme styling.
+* Add support for the footer privacy policy link.
+* Fix styling for media elements in widgets.
+* Replace custom header image functionality with the custom logo feature, which is more consistent with this theme's design intent.
 
 = 1.2 =
 * Add support for visible edit shortcuts in the customizer for site title and tagline and footer options by adding support for Selective Refresh in addition to instant JS-based previewing.
@@ -102,6 +113,12 @@ Source: http://genericons.com
 
 
 == Upgrade Notice ==
+= 2.0 =
+* Accessibility improvements, block editor support, new "Rhombus" mode for the figure/ground animation, WordPress 4,8, 4.9, 5.0, 5.1 support.
+
+= 1.2 =
+* Customize preview improvements, starter content for new sites.
+
 = 1.1 =
 * Faster previews in the customizer, a new social menu, and miscellaneous bugfixes.
 

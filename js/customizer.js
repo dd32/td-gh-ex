@@ -43,7 +43,17 @@
 			window.fg.settings.type = to;
 			window.fg.clearCanvas();
 			window.fg.init();
-			$( 'body' ).toggleClass( 'circular' );
+			switch( to ) {
+				case 'orthogonal': 
+					$( 'body' ).removeClass( 'circular rhombus' );
+					break;
+				case 'circular':
+					$( 'body' ).removeClass( 'rhombus' ).addClass( 'circular' );
+					break;
+				case 'rhombus':
+					$( 'body' ).removeClass( 'circular' ).addClass( 'rhombus' );
+					break;
+			}
 		} );
 	} );
 
@@ -81,7 +91,7 @@
 	} );
 
 	// Custom colors. Only updates selected colors, generated colors are 
-	//  updated with Selective Refresh a few seconds later.
+	// updated with Selective Refresh a few seconds later.
 	wp.customize( 'fg_color_light', function( value ) {
 		value.bind( function( to ) {
 			// Update custom color CSS

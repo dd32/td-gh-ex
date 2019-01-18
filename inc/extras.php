@@ -25,6 +25,9 @@ function figureground_body_classes( $classes ) {
 		$classes[] = 'group-blog';
 	}
 
+	// Add support for responsive embeds.
+	$classes[] = 'wp-embed-responsive';
+
 	return $classes;
 }
 add_filter( 'body_class', 'figureground_body_classes' );

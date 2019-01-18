@@ -57,9 +57,14 @@ function figureground_fg_colors_css() {
 	.site-main article:nth-child(odd) footer.entry-meta li:nth-child(even) a,
 	.site-main article:nth-child(even) footer.entry-meta li:nth-child(odd) a,
 	.gallery-item:nth-of-type(even) .gallery-caption,
+	.wp-block-gallery .blocks-gallery-image:nth-of-type(even) figcaption,
+	.wp-block-gallery .blocks-gallery-item:nth-of-type(even) figcaption,
 	.hentry .mejs-container .mejs-controls .mejs-time span,
+	.widget .mejs-container .mejs-controls .mejs-time span,
 	.hentry .mejs-overlay-button,
+	.widget .mejs-overlay-button,
 	.hentry .mejs-controls .mejs-button button,
+	.widget .mejs-controls .mejs-button button,
 	article:nth-child(even) .mejs-overlay:hover .mejs-overlay-button,
 	.wp-playlist.wp-playlist-light,
 	.wp-playlist-light .wp-playlist-item,
@@ -70,7 +75,10 @@ function figureground_fg_colors_css() {
 	.comment-respond,
 	p.no-comments,
 	aside.widget:nth-child(even),
-	#menu-social li a {
+	#menu-social li a,
+	.has-fg-dark-color,
+	#figureground-animation-toggle:hover,
+	#figureground-animation-toggle:focus {
 		color: ' . $fg_dark . ';
 	}
 
@@ -89,13 +97,19 @@ function figureground_fg_colors_css() {
 	article.formatted-post a.post-format-link:before,
 	footer.entry-meta li,
 	.hentry .mejs-controls .mejs-time-rail .mejs-time-loaded,
+	.widget .mejs-controls .mejs-time-rail .mejs-time-loaded,
 	.hentry .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
+	.widget .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
 	article:nth-child(even) .mejs-mediaelement,
 	article:nth-child(even) .mejs-container .mejs-controls,
 	article:nth-child(odd) .wp-playlist.wp-playlist-light,
 	.comment-list .pingback,
 	aside.widget,
-	.site-info {
+	.site-info,
+	.gallery-caption,
+	.wp-block-gallery .blocks-gallery-image figcaption,
+	.wp-block-gallery .blocks-gallery-item figcaption,
+	#figureground-animation-toggle {
 		background: ' . $fg_dark . ';
 	}
 
@@ -103,10 +117,14 @@ function figureground_fg_colors_css() {
 		border-left-color: ' . $fg_dark . ';
 	}
 
-	.gallery-caption,
+	#figureground-animation-toggle {
+		border-color: ' . $fg_dark . ';
+	}
+
 	article:nth-child(even) .hentry .mejs-overlay-button,
 	article.comment-body,
-	.comment-navigation {
+	.comment-navigation,
+	.has-fg-dark-background-color {
 		background-color: ' . $fg_dark . ';
 	}
 
@@ -140,21 +158,31 @@ function figureground_fg_colors_css() {
 	.site-main article:nth-child(odd) footer.entry-meta li:nth-child(even),
 	.site-main article:nth-child(even) footer.entry-meta li:nth-child(odd),
 	.hentry .mejs-mediaelement,
+	.widget .mejs-mediaelement,
 	.hentry .mejs-container .mejs-controls,
+	.widget .mejs-container .mejs-controls,
 	article:nth-child(even) .mejs-controls .mejs-time-rail .mejs-time-loaded,
 	article:nth-child(even) .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
 	.wp-playlist.wp-playlist-light,
 	.comments-title,
 	p.no-comments,
 	aside.widget:nth-child(even),
-	#menu-social li a {
+	#menu-social li a,
+	.gallery-item:nth-of-type(even) .gallery-caption,
+	.wp-block-gallery .blocks-gallery-image:nth-of-type(even) figcaption,
+	.wp-block-gallery .blocks-gallery-item:nth-of-type(even) figcaption,
+	.alignwide figcaption,
+	.alignfull figcaption,
+	#figureground-animation-toggle:hover,
+	#figureground-animation-toggle:focus {
 		background: ' . $fg_light . ';
 	}
 
-	.gallery-item:nth-of-type(even) .gallery-caption,
 	.hentry .mejs-overlay-button,
+	.widget .mejs-overlay-button,
 	.comment-list > li:nth-child(even) article.comment-body,
-	.comment-respond {
+	.comment-respond,
+	.has-fg-light-background-color {
 		background-color: ' . $fg_light . ';
 	}
 
@@ -162,10 +190,33 @@ function figureground_fg_colors_css() {
 		border-color: ' . $fg_light . ';
 	}
 
+	.button,
+	.site-main .entry-content .button,
+	.wp-block-button__link,
+	.site-main .entry-content .wp-block-file__button,
+	.site-main .entry-content .wp-block-button__link,
 	button,
-	html input[type="button"],
+	input[type="button"],
 	input[type="reset"],
 	input[type="submit"],
+	.button:hover,
+	.site-main .entry-content .button:hover,
+	.wp-block-button__link:hover,
+	.site-main .entry-content .wp-block-file__button:hover,
+	.site-main .entry-content .wp-block-button__link:hover,
+	button:hover,
+	input[type="button"]:hover,
+	input[type="reset"]:hover,
+	input[type="submit"]:hover,
+	.button:focus,
+	.site-main .entry-content .button:focus,
+	.wp-block-button__link:focus,
+	.site-main .entry-content .wp-block-file__button:focus,
+	.site-main .entry-content .wp-block-button__link:focus,
+	button:focus,
+	input[type="button"]:focus,
+	input[type="reset"]:focus,
+	input[type="submit"]:focus,
 	header#masthead,
 	h1.site-title a,
 	.site-header .search-form label:before,
@@ -193,8 +244,8 @@ function figureground_fg_colors_css() {
 	footer.entry-meta li.image-size a,
 	footer.entry-meta li.posted-in a,
 	footer.entry-meta li div,
-	.gallery-caption,
 	.hentry .mejs-overlay:hover .mejs-overlay-button,
+	.widget .mejs-overlay:hover .mejs-overlay-button,
 	article:nth-child(even) .mejs-container .mejs-controls .mejs-time span,
 	article:nth-child(even) .mejs-controls .mejs-button button,
 	article:nth-child(odd) .wp-playlist.wp-playlist-light,
@@ -207,7 +258,13 @@ function figureground_fg_colors_css() {
 	.comment-navigation,
 	aside.widget,
 	.site-info a,
-	.site-info {
+	.site-info,
+	.gallery-caption,
+	.wp-block-gallery .blocks-gallery-image figcaption,
+	.wp-block-gallery .blocks-gallery-item figcaption,
+	.has-fg-light-color,
+	.alignwide figcaption,
+	.alignfull figcaption {
 		color: ' . $fg_light . ';
 	}
 
@@ -258,7 +315,8 @@ function figureground_accent_colors_css() {
 	#menu-social li a:focus {
 		background: ' . $accent_light . ';
 	}
-	article:nth-child(even) .mejs-overlay:hover .mejs-overlay-button {
+	article:nth-child(even) .mejs-overlay:hover .mejs-overlay-button,
+	.has-accent-light-background-color {
 		background-color: ' . $accent_light . ';
 	}
 	a,
@@ -285,7 +343,8 @@ function figureground_accent_colors_css() {
 	.site-main article footer.entry-meta li.edit-link a:active:before,
 	.site-main article footer.entry-meta li.edit-link a:focus:before,
 	article:nth-child(even) .mejs-controls .mejs-button button:hover,
-	article:nth-child(odd) .wp-playlist-light .wp-playlist-item .wp-playlist-caption:hover {
+	article:nth-child(odd) .wp-playlist-light .wp-playlist-item .wp-playlist-caption:hover,
+	.has-accent-light-color {
 		color: ' . $accent_light . ';
 	}';
 
@@ -312,22 +371,30 @@ function figureground_accent_colors_css() {
 
 	// Dark accent color, must contrast with light figure/ground color.
 	$css .= '
+	.button,
+	.entry-content .button,
+	.wp-block-button__link,
+	.site-main .entry-content .wp-block-file__button,
+	.site-main .entry-content .wp-block-button__link,
 	button,
-	html input[type="button"],
+	input[type="button"],
 	input[type="reset"],
 	input[type="submit"],
 	article.sticky,
 	article.sticky .entry-header,
 	article.sticky .entry-content,
 	footer.entry-meta li div,
-	.hentry .mejs-controls .mejs-time-rail .mejs-time-current {
+	.hentry .mejs-controls .mejs-time-rail .mejs-time-current,
+	.widget .mejs-controls .mejs-time-rail .mejs-time-current {
 		background: ' . $accent_dark . ';
 	}
 	footer.entry-meta li.toggled {
 		background: ' . $accent_dark . ' !important;
 	}
 	.hentry .mejs-overlay:hover .mejs-overlay-button,
-	.comment-list .comment.bypostauthor > article.comment-body {
+	.widget .mejs-overlay:hover .mejs-overlay-button,
+	.comment-list .comment.bypostauthor > article.comment-body,
+	.has-accent-dark-background-color {
 		background-color: ' . $accent_dark . ';
 	}
 	.site-main article:nth-child(even) a,
@@ -347,22 +414,34 @@ function figureground_accent_colors_css() {
 	.site-main article:nth-child(even) footer.entry-meta li.edit-link a:active:before,
 	.site-main article:nth-child(even) footer.entry-meta li.edit-link a:focus:before,
 	.hentry .mejs-controls .mejs-button button:hover,
+	.widget .mejs-controls .mejs-button button:hover,
 	.wp-playlist-light .wp-playlist-item .wp-playlist-caption:hover,
 	.comment-respond a,
 	.comment-list > li:nth-child(even) article.comment-body a,
-	aside.widget:nth-child(even) a {
+	aside.widget:nth-child(even) a,
+	.has-accent-dark-color {
 		color: ' . $accent_dark . ';
 	}';
 
 	// Modified dark accent color.
 	$accent_dark_lightened = figureground_adjust_color( $accent_dark, 64 );
 	$css .= '
+	.button:hover,
+	.entry-content .button:hover,
+	.wp-block-button__link:hover,
+	.site-main .entry-content .wp-block-file__button:hover,
+	.site-main .entry-content .wp-block-button__link:hover,
 	button:hover,
-	html input[type="button"]:hover,
+	input[type="button"]:hover,
 	input[type="reset"]:hover,
 	input[type="submit"]:hover,
+	.button:focus,
+	.entry-content .button:focus,
+	.wp-block-button__link:focus,
+	.site-main .entry-content .wp-block-file__button:focus,
+	.entry-content .wp-block-button__link:focus,
 	button:focus,
-	html input[type="button"]:focus,
+	input[type="button"]:focus,
 	input[type="reset"]:focus,
 	input[type="submit"]:focus {
 		background: ' . $accent_dark_lightened . ';

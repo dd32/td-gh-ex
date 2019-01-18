@@ -18,18 +18,26 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div class="screen-reader-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'figureground' ); ?>"><?php _e( 'Skip to content', 'figureground' ); ?></a></div>
-<canvas id="figure-ground"></canvas>
+<div class="skip-link"><a href="#content" class="screen-reader-text "><?php _e( 'Skip to content', 'figureground' ); ?></a></div>
+<canvas id="figure-ground" role="img" aria-label="<?php _e( 'Solid/void dynamic background graphic', 'figureground' ); ?>"></canvas>
+<?php if ( 0 < absint( get_theme_mod( 'fg_speed', 0 ) || is_customize_preview() ) ) {
+	echo '<button type="button" id="figureground-animation-toggle"  class="on"><span class="pause">'
+			. __( 'Pause', 'figureground' ) . '</span><span class="play">'
+			. __( 'Play', 'figureground' ) . '</span><span class="screen-reader-text"> '
+			. __( 'background graphic animation', 'figureground' ) . '</button>';
+} ?>
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="header-inner">
 			<div class="site-branding">
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-					<?php if ( get_header_image() ) : ?>
+				<h1 class="site-title">
+					<?php if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
+						the_custom_logo();
+					} elseif ( get_header_image() ) { // Back compat for Figure/Ground 1.X ?>
 						<img src="<?php header_image(); ?>" class="site-logo" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
-					<?php endif; ?>
-					<span class="title"><?php bloginfo( 'name' ); ?></span></a></h1>
+					<?php } ?>
+					<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><span class="title"><?php bloginfo( 'name' ); ?></span></a></h1>
 				<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
 			</div>
 

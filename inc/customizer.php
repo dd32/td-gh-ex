@@ -60,13 +60,13 @@ function figureground_customize_register( $wp_customize ) {
 	// Add the Figure/Ground section.
 	$wp_customize->add_section( 'figure_ground' , array(
 		'title'	      => __( 'Figure/Ground', 'figureground' ),
-		'description' => __( 'These settings control the background animation. Try out the circular mode for something even more different, and adjust the detail and speed of the animation.', 'figureground' ),
+		'description' => __( 'These settings control the background animation. Try out the different modes, adjust the pattern scale, and tweak the speed or turn off the animation.', 'figureground' ),
 		'priority'    => 60,
 	) );
 
 	// Add the Figure/Ground settings, which all support postMessage.
 	$wp_customize->add_setting( 'fg_type' , array(
-		'default'			=> 'orthogonal',
+		'default'			=> 'rhombus',
 		'transport'         => 'postMessage',
 		'sanitize_callback' => 'figureground_sanitize_type',
 	) );
@@ -84,13 +84,13 @@ function figureground_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'fg_speed' , array(
-		'default'			=> 320,
+		'default'			=> 0,
 		'transport'         => 'postMessage',
 		'sanitize_callback'	=> 'absint',
 	) );
 
 	$wp_customize->add_setting( 'fg_initial' , array(
-		'default'			=> 192,
+		'default'			=> 320,
 		'transport'         => 'postMessage',
 		'sanitize_callback'	=> 'absint',
 	) );
@@ -149,6 +149,7 @@ function figureground_customize_register( $wp_customize ) {
 		'choices'	=> array(
 			'orthogonal'	=> __( 'Orthogonal', 'figureground' ),
 			'circular'		=> __( 'Circular', 'figureground' ),
+			'rhombus'		=> __( 'Rhombus', 'figureground' ),
 		),
 	) );
 
@@ -181,13 +182,13 @@ function figureground_customize_register( $wp_customize ) {
 		'type'      => 'range',
 		'input_attrs' => array(
 			'min'  => 0,
-			'max'  => 16000,
-			'step' => 32,
+			'max'  => 6000,
+			'step' => 300,
 		),
 	) );
 
 	$wp_customize->add_control( 'fg_initial', array(
-		'label'		=> __( 'Iterations on Page-load', 'figureground' ),
+		'label'		=> __( 'Initial Density', 'figureground' ),
 		'section'	=> 'figure_ground',
 		'type'      => 'range',
 		'input_attrs' => array(
@@ -258,7 +259,7 @@ add_action( "update_option_theme_mods_$figureground_theme", 'figureground_rebuil
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function figureground_customize_preview_js() {
-	wp_enqueue_script( 'figureground_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20140622', true );
+	wp_enqueue_script( 'figureground_customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20190115', true );
 }
 add_action( 'customize_preview_init', 'figureground_customize_preview_js' );
 
@@ -271,7 +272,7 @@ add_action( 'customize_preview_init', 'figureground_customize_preview_js' );
  * @return string Filtered type (orthogonal|circular).
  */
 function figureground_sanitize_type( $type ) {
-	if ( ! in_array( $type, array( 'orthogonal', 'circular' ) ) ) {
+	if ( ! in_array( $type, array( 'orthogonal', 'circular', 'rhombus' ) ) ) {
 		$type = 'orthogonal';
 	}
 
@@ -327,8 +328,10 @@ add_action( 'wp_head', 'figureground_custom_colors_head' );
  * @return array Filtered body classes.
  */
 function figureground_customizer_body_class( $classes ) {
-	if( 'circular' === get_theme_mod( 'fg_type', 'orthogonal' ) ) {
+	if ( 'circular' === get_theme_mod( 'fg_type', 'orthogonal' ) ) {
 		$classes[] = 'circular';
+	} elseif ( 'rhombus' === get_theme_mod( 'fg_type', 'orthogonal' ) ) {
+		$classes[] = 'rhombus';
 	}
 
 	return $classes;

@@ -2,15 +2,15 @@
 Theme Name: Figure/Ground
 Theme URI: http://themes.halsey.co/figureground
 Author: Nick Halsey
-Author URI: http://themes.halsey.co/
-Description: Figure/Ground is a bold blogging theme that transforms your site into a dynamic, visually stimulating canvas of abstract shapes and content. Meticulously designed on a 64-pixel square grid with a 16-pixel sub-grid, Figure/Ground features comprehensive customization options including the ability to customize every color and an alternate "Circular" mode that makes things more curvy. Your content flows down the center of the page, blending into the background animation in an alternating sequence, before coming to the widgetized footer. A fixed header features space for a small site icon, a search bar, and a togglable menu and social menu. From its bold design to its out-of-the-box functionality and easy customization, Figure/Ground is sure to make your site memorable!
-Version: 1.2
+Author URI: https://celloexpressions.com/
+Description: Figure/Ground is a bold blogging theme that transforms your site into a dynamic, visually stimulating canvas of abstract shapes and content. Meticulously designed on a responsive 64-pixel square grid with a 16-pixel sub-grid, Figure/Ground features comprehensive customization options including the ability to customize every color and alternate "Circular" and "Orthogonal" modes. Your content flows down the center of the page, blending into the background animation in an alternating sequence, before coming to the widgetized footer. A fixed header features space for a small site logo, a search bar, and a togglable menu. Wide and full-width images break across the canvas with support for the block editor (Gutenberg). From its bold design to its out-of-the-box functionality and easy customization, Figure/Ground is sure to make your site memorable!
+Version: 2.0
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: figureground
-Tags: one-column, flexible-header, custom-colors, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
+Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
 
-Figure/Ground WordPress Theme, Copyright 2016 Nick Halsey.
+Figure/Ground WordPress Theme, Copyright 2019 Nick Halsey.
 Figure/Ground is based on Underscores http://underscores.me/, (C) 2012-2013 Automattic, Inc.
 Figure/Ground is distributed under the terms of the GNU GPL.
 
@@ -133,6 +133,7 @@ h1, h2, h3, h4, h5, h6 {
 	clear: both;
 	font-family: 'Raleway', serif;
 	font-weight: 600;
+	margin: 0 0 16px;
 }
 
 h1 {
@@ -207,13 +208,31 @@ dfn, cite, em, i {
 	font-style: italic;
 }
 
-blockquote {
+blockquote,
+blockquote.wp-block-quote,
+.wp-block-quote:not(.is-large):not(.is-style-large) {
 	margin: 0 0 0 32px;
 	padding: 0 0 0 12px;
-	border-left: 4px solid #f7f7ec;
+	border-left: 4px solid;
+}
+
+blockquote,
+blockquote.wp-block-quote,
+.wp-block-quote p {
 	font-size: 24px;
 	line-height: 32px;
+	margin-bottom: 16px;
 	font-family: Raleway, sans-serif;
+}
+
+cite,
+.wp-block-quote__citation,
+.wp-block-quote cite,
+.wp-block-quote footer {
+	color: inherit;
+	font-size: 16px;
+	font-style: italic;
+    vertical-align: top;
 }
 
 cite:before {
@@ -322,37 +341,62 @@ input {
 	line-height: normal; /* Addresses FF3/4 setting line-height using !important in the UA stylesheet */
 }
 
+.button,
+.site-main .entry-content .button,
+.wp-block-button__link,
+.site-main .entry-content .wp-block-file__button,
+.site-main .entry-content .wp-block-button__link,
 button,
-html input[type="button"],
+input[type="button"],
 input[type="reset"],
 input[type="submit"] {
+	font-family: Raleway, serif;
 	border: none;
 	border-radius: 3px;
 	background: #903;
 	box-shadow: 1px 1px 1px rgba(0,0,0,.8);
 	color: #f7f7ec;
 	cursor: pointer; /* Improves usability and consistency of cursor style between image-type 'input' and others */
-	-webkit-appearance: button; /* Corrects inability to style clickable 'input' types in iOS */
 	font-size: 18px;
 	font-weight: 600;
 	line-height: 1;
 	padding: 12px 18px;
+	text-decoration: none;
 	transition: .2s all cubic-bezier(.8,.1,.1,.5);
+	opacity: 1;
 }
 
+.button:hover,
+.site-main .entry-content .button:hover,
+.wp-block-button__link:hover,
+.site-main .entry-content .wp-block-file__button:hover,
+.site-main .entry-content .wp-block-button__link:hover,
 button:hover,
-html input[type="button"]:hover,
+input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover,
+.button:focus,
+.site-main .entry-content .button:focus,
+.wp-block-button__link:focus,
+.site-main .entry-content .wp-block-file__button:focus,
+.site-main .entry-content .wp-block-button__link:focus,
 button:focus,
-html input[type="button"]:focus,
+input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus {
 	background: #b25;
+	color: #f7f7ec;
+	opacity: 1;
 }
 
+
+.button:active,
+.entry-content .button:active,
+.wp-block-button__link:active,
+.site-main .entry-content .wp-block-file__button:active,
+.entry-content .wp-block-button__link:active,
 button:active,
-html input[type="button"]:active,
+input[type="button"]:active,
 input[type="reset"]:active,
 input[type="submit"]:active {
 	-webkit-transform: scale(.95); /* avoid horrific webkit-wide bugs */
@@ -433,6 +477,13 @@ a:active {
 	color: #aaf;
 }
 
+
+.entry-content a,
+.comments-area a,
+.entry-meta a {
+	text-decoration: underline;
+}
+
 .entry-content a:hover,
 .comments-area a:hover,
 .entry-meta a:hover,
@@ -441,8 +492,13 @@ a:active {
 .entry-meta a:focus,
 .entry-content a:active,
 .comments-area a:active,
-.entry-meta a:active {
-	text-decoration: underline;
+.entry-meta a:active,
+.entry-content h2 a,
+.entry-content h3 a,
+.entry-content h4 a,
+.entry-content h5 a,
+.entry-content h6 a {
+	text-decoration: none;
 }
 
 ::selection {
@@ -461,16 +517,28 @@ a:active {
 	margin-right: 16px;
 }
 
-.alignright {
+.alignright,
+.wp-block-image .alignright {
 	display: inline;
 	float: right;
 	margin-left: 16px;
 }
 
-.aligncenter {
+.aligncenter,
+.wp-block-image .aligncenter {
 	clear: both;
 	display: block;
 	margin: 0 auto;
+}
+
+.wp-caption.alignleft,
+.wp-block-iimage .alignleft {
+	margin-right: 16px;
+}
+
+.wp-caption.alignright,
+.wp-block-image .alignright {
+	margin-left: 16px;
 }
 
 .entry-content .alignleft {
@@ -485,6 +553,7 @@ a:active {
 /* Text meant only for screen readers */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
+	clip-path: inset(50%);
 	position: absolute !important;
 }
 
@@ -495,6 +564,7 @@ a:active {
 	border-radius: 3px;
 	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
 	clip: auto !important;
+	clip-path: none;
 	color: #222;
 	display: block;
 	font-size: 14px;
@@ -529,8 +599,8 @@ a:active {
 /* Figure/Ground Background Canvas */
 
 canvas#figure-ground {
-	width: 100%;
-	height: 100%;
+	min-width: 100%;
+	min-height: 100%;
 	margin: 0;
 	padding: 0;
 	position: fixed;
@@ -538,6 +608,42 @@ canvas#figure-ground {
 	left: 0;
 	background: #f7f7ec;
 	z-index: 1;
+}
+
+#figureground-animation-toggle {
+	display: block;
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	z-index: 3;
+	font-size: 14px;
+	background: #222;
+	border: 2px solid #222;
+	border-radius: 0;
+}
+
+@media screen and (max-width:760px) {
+	#figureground-animation-toggle {
+		display: none;
+	}
+}
+
+#figureground-animation-toggle:hover,
+#figureground-animation-toggle:focus {
+	background: #f7f7ec;
+	color: #222;
+}
+
+#figureground-animation-toggle.on .play {
+	display: none;
+}
+
+#figureground-animation-toggle .pause {
+	display: none;
+}
+
+#figureground-animation-toggle.on .pause {
+	display: inline;
 }
 
 #main {
@@ -672,6 +778,91 @@ footer.site-footer {
 	border-radius: 100%;
 }
 
+/* Chamfer Corners in Rhombus Mode */
+.rhombus input {
+	border-radius: 0;
+	clip-path: polygon( 0 0,
+	                    calc(100% - 8px) 0,
+						100% 50%,
+						100% 100%,
+						8px 100%,
+						0 50% );
+}
+
+.rhombus .page-header,
+.rhombus .post-navigation,
+.rhombus .paging-navigation,
+.rhombus .comments-title,
+.rhombus .comment-respond,
+.rhombus .comment-navigation,
+.rhombus .comment-body {
+	clip-path: polygon( 28px 0,
+	                    calc(100% - 19px) 0,
+						100% 32px,
+						100% calc(100% - 48px),
+						calc(100% - 28px) 100%,
+						19px 100%,
+						0 calc(100% - 32px),
+						0 48px );
+}
+
+.rhombus article {
+	clip-path: polygon( 19px 0,
+	                    calc(100% - 37px) 0,
+						100% 64px,
+						calc(100% + 50vw) 64px,
+						calc(100% + 50vw) calc(100% - 96px),
+						100% calc(100% - 96px),
+						calc(100% - 56px) 100%,
+						37px 100%,
+						0 calc(100% - 64px),
+						-50vw calc(100% - 64px),
+						-50vw 32px,
+						0 32px ); /* Expand region horizontally to allow wide elements to flow out of the clipped container */
+}
+
+.rhombus footer.entry-meta .edit-link {
+	right: 64px;
+}
+
+.rhombus article .entry-thumbnail,
+.rhombus article .entry-thumbnail img.attachment-post-thumbnail {
+	clip-path: polygon( 74px 0,
+	                    calc(100% - 37px) 0,
+						100% 64px,
+						100% 100%,
+						0 100%,
+						0 128px );
+}
+
+.rhombus .gallery-caption {
+	transition: none; /* This element breaks out of its clipped container when animating. */
+}
+
+.rhombus aside.widget {
+	clip-path: polygon( 19px 0,
+	                    calc(100% - 19px) 0,
+						100% 32px,
+						100% calc(100% - 32px),
+						calc(100% - 19px) 100%,
+						19px 100%,
+						0 calc(100% - 32px),
+						0 32px );
+}
+
+.rhombus footer.entry-meta li {
+	clip-path: polygon( 0 0,
+	                    calc(100% - 16px) 0,
+						100% 28px,
+						100% 100%,
+						16px 100%,
+						0 calc(100% - 28px) );
+}
+
+.rhombus footer.entry-meta li.toggled {
+	clip-path: none; /* Don't clip expanded sections */
+}
+
 /* Header */
 header#masthead {
 	position: fixed;
@@ -699,7 +890,8 @@ header#masthead {
     float: right;
 }
 
-.site-logo {
+.site-logo, /* header image back compat pre-custom-logo */
+.custom-logo {
 	float: left;
 	margin: -8px 16px -8px 0;
 	transition: opacity .18s ease-in-out;
@@ -707,7 +899,11 @@ header#masthead {
 	max-width: 96px;
 }
 
-a:hover .site-logo {
+a:hover .site-logo,
+a:hover .custom-logo,
+a:focus .custom-logo,
+.site-title a:hover,
+.site-title a:focus {
 	opacity: .7;
 }
 
@@ -729,12 +925,11 @@ h1.site-title a {
 
 h2.site-description {
 	float: right;
-	font-size: 20px;
-	color: rgba(128,128,128,.75);
+	font-size: 16px;
+	color: #b7b7ac;
 	clear: none;
-	
 	max-width: 500px;
-	padding: 8px 0;
+	padding: 12px 0;
 	overflow: hidden;
 	white-space: nowrap;
 	text-overflow: ellipsis;
@@ -810,6 +1005,7 @@ h2.site-description {
 	z-index: 2;
 	right: 70px;
 	top: 8px;
+	font-weight: normal;
 }
 
 .menu-toggle:focus:before,
@@ -868,7 +1064,7 @@ h2.site-description {
 	height: 48px;
 	padding: 8px 0;
 	position: relative;
-	top: -48px;
+	top: -62px;
 }
 
 .main-navigation ul {
@@ -1229,6 +1425,8 @@ h1.page-title {
 .entry-header h1.entry-title {
 	font-size: 48px;
 	line-height: 64px;
+	margin: 0;
+	padding: 16px 0 0;
 }
 
 article.sticky .entry-header,
@@ -1279,10 +1477,6 @@ article.formatted-post .entry-header,
 article.formatted-post .entry-summary,
 article.formatted-post .entry-content {
 	margin-left: 128px;
-}
-
-article.formatted-post a.post-format-link {
-	font-size: 0;
 }
 
 article.formatted-post a.post-format-link:hover:before,
@@ -1424,6 +1618,25 @@ footer.entry-meta li.edit-link a:before {
 	-webkit-font-smoothing: antialiased;
 }
 
+/* Only show the number of comments, visually */
+.comments-link:not(.has-comments) a {
+    clip-path: polygon(0 0, 64px 0, 64px 64px, 0 64px); /* Icon only */
+    display: inline-block;
+	width: 64px;
+}
+
+.comments-link.has-comments a {
+	clip-path: polygon( 0 0, 82px 0, 82px 100%, 0 100% ); /* Icon + ~ 1 character of text */
+	display: inline-block;
+	width: 90px;
+	white-space: nowrap;
+}
+
+.comments-link.has-comments.double-digit a {
+	clip-path: polygon( 0 0, 106px 0, 106px 100%, 0 100% ); /* Icon + ~ 2 characters of text */
+	width: 114px;
+}
+
 footer.entry-meta li.post-author:before {
 	content: '\f304';
 	display: none; /* Show avatar instead... */
@@ -1505,14 +1718,9 @@ footer.entry-meta li div {
 	width: 320px;
 	overflow: hidden;
 	
-	padding: 0;
-	min-height: 0;
-	max-height: 0;
-	height: 0;
-	transition: min-height linear .16s, max-height linear .48s;
-
 	background: #903;
 	color: #f7f7ec;
+	display: none;
 }
 
 footer.entry-meta li.toggled {
@@ -1526,6 +1734,7 @@ footer.entry-meta li.toggled div {
 	min-height: 64px;
 	max-height: 192px;
 	overflow-y: auto;
+	display: block;
 }
 
 footer.entry-meta li div a {
@@ -1592,7 +1801,9 @@ article.formatted-post footer.entry-meta li div.post-tags-list {
 	padding: 0;
 }
 
-.wp-caption {
+.wp-caption,
+.wp-block-image figcaption,
+.wp-block-audio figcaption {
 	margin-bottom: 1.5em;
 	max-width: 100%;
 }
@@ -1603,12 +1814,15 @@ article.formatted-post footer.entry-meta li div.post-tags-list {
 	max-width: 98%;
 }
 
-.wp-caption-text {
+.wp-caption-text,
+.wp-caption .wp-caption-text,
+.wp-block-image figcaption,
+.wp-block-audio figcaption {
 	text-align: center;
-}
-
-.wp-caption .wp-caption-text {
 	margin: 0.8em 0;
+	color: inherit;
+	font-size: .8em;
+	line-height: inherit;
 }
 
 .entry-attachment .entry-caption {
@@ -1620,71 +1834,71 @@ article.formatted-post footer.entry-meta li div.post-tags-list {
 
 /* Galleries */
 
-.gallery {
-	margin-bottom: 16px;
-	overflow: hidden;
+.gallery,
+.wp-block-gallery {
+	margin: 0 0 24px 0;
 }
 
-.gallery-item {
+.gallery-item { /* Classic editor galleries only */
 	float: left;
 	margin: 0 16px 16px 0;
 	overflow: hidden;
 	position: relative;
 }
 
-.gallery-columns-1 .gallery-item {
+.gallery-columns-1 .gallery-item { /* Classic editor galleries only */
 	max-width: 100%;
 }
 
-.gallery-columns-2 .gallery-item {
+.gallery-columns-2 .gallery-item { /* Classic editor galleries only */
 	max-width: 48%;
 	max-width: -webkit-calc(50% - 16px);
 	max-width:         calc(50% - 16px);
 }
 
-.gallery-columns-3 .gallery-item {
+.gallery-columns-3 .gallery-item { /* Classic editor galleries only */
 	max-width: 32%;
 	max-width: -webkit-calc(33.3% - 16px);
 	max-width:         calc(33.3% - 16px);
 	width: auto;
 }
 
-.gallery-columns-4 .gallery-item {
+.gallery-columns-4 .gallery-item { /* Classic editor galleries only */
 	max-width: 23%;
 	max-width: -webkit-calc(25% - 16px);
 	max-width:         calc(25% - 16px);
 	width: auto;
 }
 
-.gallery-columns-5 .gallery-item {
+.gallery-columns-5 .gallery-item { /* Classic editor galleries only */
 	max-width: 19%;
 	max-width: -webkit-calc(20% - 16px);
 	max-width:         calc(20% - 16px);
 	width: auto;
 }
 
-.gallery-columns-6 .gallery-item {
+.gallery-columns-6 .gallery-item { /* Classic editor galleries only */
 	max-width: 15%;
 	max-width: -webkit-calc(16.7% - 16px);
 	max-width:         calc(16.7% - 16px);
 	width: auto;
 }
 
-.gallery-columns-7 .gallery-item {
+.gallery-columns-7 .gallery-item { /* Classic editor galleries only */
 	max-width: 13%;
 	max-width: -webkit-calc(14.28% - 16px);
 	max-width:         calc(14.28% - 16px);
 	width: auto;
 }
 
-.gallery-columns-8 .gallery-item {
+.gallery-columns-8 .gallery-item { /* Classic editor galleries only */
 	max-width: 11%;
 	max-width: -webkit-calc(12.5% - 16px);
 	max-width:         calc(12.5% - 16px);
 	width: auto;
 }
 
-.gallery-columns-9 .gallery-item {
+.gallery-columns-9 .gallery-item { /* Classic editor galleries only */
 	max-width: 9%;
 	max-width: -webkit-calc(11.1% - 16px);
 	max-width:         calc(11.1% - 16px);
@@ -1699,19 +1913,21 @@ article.formatted-post footer.entry-meta li div.post-tags-list {
 .gallery-columns-6 .gallery-item:nth-of-type(6n),
 .gallery-columns-7 .gallery-item:nth-of-type(7n),
 .gallery-columns-8 .gallery-item:nth-of-type(8n),
-.gallery-columns-9 .gallery-item:nth-of-type(9n) {
+.gallery-columns-9 .gallery-item:nth-of-type(9n) { /* Classic editor galleries only */
 	margin-right: 0;
 }
 
 .gallery-columns-1.gallery-size-medium figure.gallery-item:nth-of-type(1n+1),
 .gallery-columns-1.gallery-size-thumbnail figure.gallery-item:nth-of-type(1n+1),
 .gallery-columns-2.gallery-size-thumbnail figure.gallery-item:nth-of-type(2n+1),
-.gallery-columns-3.gallery-size-thumbnail figure.gallery-item:nth-of-type(3n+1) {
+.gallery-columns-3.gallery-size-thumbnail figure.gallery-item:nth-of-type(3n+1) { /* Classic editor galleries only */
 	clear: left;
 }
 
-.gallery-caption {
-	background-color: #222;
+.gallery-caption,
+.wp-block-gallery .blocks-gallery-image figcaption,
+.wp-block-gallery .blocks-gallery-item figcaption {
+	background: #222;
 	color: #f7f7ec;
 	font-size: 12px;
 	line-height: 1.5;
@@ -1725,14 +1941,19 @@ article.formatted-post footer.entry-meta li div.post-tags-list {
 	text-align: left;
 	width: 100%;
 	transition: .16s opacity ease;
+	overflow: hidden;
 }
 
-.gallery-item:nth-of-type(even) .gallery-caption {
-	background-color: #f7f7ec;
+.gallery-item:nth-of-type(even) .gallery-caption,
+.wp-block-gallery .blocks-gallery-image:nth-of-type(even) figcaption,
+.wp-block-gallery .blocks-gallery-item:nth-of-type(even) figcaption {
+	background: #f7f7ec;
 	color: #222;
 }
 
-.gallery-caption:before {
+.gallery .gallery-caption:before,
+.wp-block-gallery .blocks-gallery-image figcaption:before,
+.wp-block-gallery .blocks-gallery-item figcaption:before {
 	content: "";
 	height: 100%;
 	min-height: 49px;
@@ -1742,7 +1963,11 @@ article.formatted-post footer.entry-meta li div.post-tags-list {
 	width: 100%;
 }
 
-.gallery-item:hover .gallery-caption {
+.gallery .gallery-item:hover .gallery-caption,
+.wp-block-gallery .blocks-gallery-image:hover figcaption,
+.wp-block-gallery .blocks-gallery-image a:focus + figcaption,
+.wp-block-gallery .blocks-gallery-item:hover figcaption,
+.wp-block-gallery .blocks-gallery-item a:focus + figcaption {
 	opacity: 1;
 }
 
@@ -1750,7 +1975,7 @@ article.formatted-post footer.entry-meta li div.post-tags-list {
 .gallery-columns-6 .gallery-caption,
 .gallery-columns-7 .gallery-caption,
 .gallery-columns-8 .gallery-caption,
-.gallery-columns-9 .gallery-caption {
+.gallery-columns-9 .gallery-caption { /* Classic editor galleries only */
 	display: none;
 }
 
@@ -1762,48 +1987,58 @@ object {
 }
 
 /* Mediaelements */
-.hentry .mejs-container {
+.hentry .mejs-container,
+.widget .mejs-container {
 	margin: 16px 0;
 }
 
 .hentry .mejs-mediaelement,
-.hentry .mejs-container .mejs-controls {
+.widget .mejs-mediaelement,
+.hentry .mejs-container .mejs-controls,
+.widget .mejs-container .mejs-controls {
 	background: #f7f7ec;
 }
 
-.hentry .mejs-container .mejs-controls .mejs-time span {
+.hentry .mejs-container .mejs-controls .mejs-time span,
+.widget .mejs-container .mejs-controls .mejs-time span {
 	color: #222;
 }
 
 .hentry .mejs-controls .mejs-time-rail .mejs-time-loaded,
-.hentry .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
+.widget .mejs-controls .mejs-time-rail .mejs-time-loaded,
+.hentry .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
+.widget .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
 	background: #222;
 }
 
-.hentry .mejs-controls .mejs-time-rail .mejs-time-current {
+.hentry .mejs-controls .mejs-time-rail .mejs-time-current,
+.widget .mejs-controls .mejs-time-rail .mejs-time-current {
 	background: #903;
 }
 
+.widget .mejs-controls .mejs-time-rail .mejs-time-total,
 .hentry .mejs-controls .mejs-time-rail .mejs-time-total,
+.widget .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total,
 .hentry .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total {
 	background: rgba(0, 0, 0, .33);
 }
 
-.hentry .mejs-container .mejs-controls .mejs-time {
-	padding-top: 9px;
-}
-
 .hentry .mejs-controls .mejs-time-rail span,
+.widget .mejs-controls .mejs-time-rail span,
 .hentry .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total,
-.hentry .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
+.widget .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-total,
+.hentry .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current,
+.widget .mejs-controls .mejs-horizontal-volume-slider .mejs-horizontal-volume-current {
 	border-radius: 0;
 }
 
-.hentry .mejs-overlay-loading {
+.hentry .mejs-overlay-loading,
+.widget .mejs-overlay-loading {
 	background: transparent;
 }
 
-.hentry .mejs-overlay-button {
+.hentry .mejs-overlay-button,
+.widget .mejs-overlay-button {
 	background-color: #f7f7ec;
 	background-image: none;
 	box-shadow: 1px 1px 1px rgba(0,0,0,.8);
@@ -1813,7 +2048,8 @@ object {
 	width: 64px;
 }
 
-.hentry .mejs-overlay-button:before {
+.hentry .mejs-overlay-button:before,
+.widget .mejs-overlay-button:before {
 	-webkit-font-smoothing: antialiased;
 	content: '\f452';
 	display: inline-block;
@@ -1823,11 +2059,13 @@ object {
 	left: 10px;
 }
 
-.hentry .mejs-controls .mejs-button button:focus {
+.hentry .mejs-controls .mejs-button button:focus,
+.widget .mejs-controls .mejs-button button:focus {
 	outline: none;
 }
 
-.hentry .mejs-controls .mejs-button button {
+.hentry .mejs-controls .mejs-button button,
+.widget .mejs-controls .mejs-button button {
 	-webkit-font-smoothing: antialiased;
 	background: none;
 	box-shadow: none;
@@ -1837,15 +2075,18 @@ object {
 	font: normal 16px/1 Genericons;
 }
 
-.hentry .mejs-playpause-button.mejs-play button:before {
+.hentry .mejs-playpause-button.mejs-play button:before,
+.widget .mejs-playpause-button.mejs-play button:before {
 	content: '\f452';
 }
 
-.hentry .mejs-playpause-button.mejs-pause button:before {
+.hentry .mejs-playpause-button.mejs-pause button:before,
+.widget .mejs-playpause-button.mejs-pause button:before {
 	content: '\f448';
 }
 
-.hentry .mejs-volume-button.mejs-mute button:before {
+.hentry .mejs-volume-button.mejs-mute button:before,
+.widget .mejs-volume-button.mejs-mute button:before {
 	content: '\f109';
 	font-size: 20px;
 	position: absolute;
@@ -1853,27 +2094,32 @@ object {
 	left: 0;
 }
 
-.hentry .mejs-volume-button.mejs-unmute button:before {
+.hentry .mejs-volume-button.mejs-unmute button:before,
+.widget .mejs-volume-button.mejs-unmute button:before {
 	content: '\f109';
 	left: 0;
 	position: absolute;
 	top: 0;
 }
 
-.hentry .mejs-fullscreen-button button:before {
+.hentry .mejs-fullscreen-button button:before,
+.widget .mejs-fullscreen-button button:before {
 	content: '\f474';
 }
 
-.hentry .mejs-fullscreen-button.mejs-unfullscreen button:before {
+.hentry .mejs-fullscreen-button.mejs-unfullscreen button:before,
+.widget .mejs-fullscreen-button.mejs-unfullscreen button:before {
 	content: '\f406';
 }
 
-.hentry .mejs-overlay:hover .mejs-overlay-button {
+.hentry .mejs-overlay:hover .mejs-overlay-button,
+.widget .mejs-overlay:hover .mejs-overlay-button {
 	background-color: #903;
 	color: #f7f7ec;
 }
 
-.hentry .mejs-controls .mejs-button button:hover {
+.hentry .mejs-controls .mejs-button button:hover,
+.widget .mejs-controls .mejs-button button:hover {
 	color: #903;
 }
 
@@ -1936,6 +2182,13 @@ article:nth-child(even) .mejs-controls .mejs-button button:hover {
 .wp-playlist-light .wp-playlist-playing,
 .wp-playlist-light .wp-playlist-item .wp-playlist-caption {
 	color: #222;
+}
+
+.hentry .wp-playlist-light .wp-playlist-caption,
+.widget .wp-playlist-light .wp-playlist-caption,
+.hentry .wp-playlist-dark .wp-playlist-caption,
+.widget .wp-playlist-dark .wp-playlist-caption {
+	color: inherit;
 }
 
 .wp-playlist-light .wp-playlist-item .wp-playlist-caption:hover {
@@ -2199,6 +2452,11 @@ p.no-comments {
 	text-align: center;
 }
 
+#wp-comment-cookies-consent {
+	margin-right: 16px;
+}
+
+
 /* =Widgets
 ----------------------------------------------- */
 .widgets-container {
@@ -2288,7 +2546,7 @@ aside.widget:nth-child(even) a:focus {
 	width: device-width;
 }
 
-@media screen and (max-width:1280px) {
+@media screen and (max-width:1200px) {
 	h2.site-description {
 		display: none;
 	}
@@ -2443,4 +2701,111 @@ aside.widget:nth-child(even) a:focus {
 .customize-partial-edit-shortcut-blogname {
 	margin-left: 24px; /* Don't cut off the site title shortcut or cover up the site title itself, put the icon below it. */
 	margin-top: 32px;
+}
+
+/* Block Styles */
+.has-fg-dark-color {
+	color: #222;
+}
+
+.has-fg-light-color {
+	color: #f7f7ec;
+}
+
+.has-accent-light-color {
+	color: #87f;
+}
+
+.has-accent-dark-color {
+	color: #903;
+}
+
+.has-fg-dark-background-color {
+	background-color: #222;
+}
+
+.has-fg-light-background-color {
+	background-color: #f7f7ec;
+}
+
+.has-accent-light-background-color {
+	background-color: #87f;
+}
+
+.has-accent-dark-background-color {
+	background-color: #903;
+}
+
+/**
+ * Full & wide block alignments
+ */
+
+@media screen and (min-width: 640px) {
+	.wp-block-cover.alignfull,
+	.wp-block-image.alignfull,
+	.wp-block-cover.alignwide,
+	.wp-block-image.alignwide {
+		margin-left: calc(-100vw / 2 + 594px / 2); /* 640px article width - 64px content padding */
+		margin-right: calc(-100vw / 2 + 594px / 2);
+		text-align: center;
+		width: auto;
+		max-width: 100vw;
+	}
+}
+
+@media screen and (min-width:1280px) {
+	.wp-block-cover.alignwide,
+	.wp-block-image.alignwide {
+		width: 1280px;
+		margin-left: -352px; /* 640px / 2 article width + 32px half content padding */
+		margin-right: -352px;
+	}
+}
+
+.alignwide figcaption,
+.alignfull figcaption {
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 16px;
+	background: #222;
+	color: #f7f7ec;
+}
+
+/* We float the img inside the figure that has .alignleft applied.
+   This makes the .alignleft element have the same main column width as text.
+   What makes the float work is that the figure collapses into a zero height element */
+ 
+.wp-block-image figure.alignleft {
+	display: block;
+	float: left;
+	margin-right: 16px;
+}
+
+.wp-block-image figure.alignright {
+	display: block;
+	float: right;
+	margin-left: 16px;
+}
+
+/* For captions, we display the figure itself as a table.
+   This ensures the figcaption will retain the same width as the image,
+   which is important when the caption is long. */
+.wp-block-image figure.alignleft,
+.wp-block-image figure.alignright {
+	display: table;
+}
+
+.wp-block-image figure.alignleft figcaption,
+.wp-block-image figure.alignright figcaption {
+	display: table-caption;
+	caption-side: bottom;
+}
+
+.wp-block-file {
+	margin: 16px 0;
+}
+
+.site-main .entry-content .wp-block-file a:not(.wp-block-file__button) {
+	text-decoration: none;
+	color: inherit;
 }

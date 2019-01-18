@@ -35,12 +35,6 @@ function figureground_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
-	/*
-	 * This theme styles the visual editor to resemble the theme style,
-	 * specifically font, colors, icons, and column width.
-	 */
-	add_editor_style( array( 'editor-style.css', 'genericons/genericons/genericons.css', figureground_fonts_url() ) );
-
 	// Switches default core markup for search form, comment form, and comments
 	// to output valid HTML5.
 	add_theme_support( 'html5', array( 'search-form', 'comment-form', 'comment-list', 'gallery', 'caption' ) );
@@ -72,9 +66,9 @@ function figureground_setup() {
 	add_theme_support( 'automatic-feed-links' );
 
 	/**
-	 * Set up custom headers.
+	 * Set up custom logos.
 	 *
-	 * There is no image by default, and headers are fairly small in this theme.
+	 * There is no logo by default, and logos are fairly small in this theme.
 	 */
 	$defaults = array(
 		'width'                  => 48,
@@ -82,9 +76,8 @@ function figureground_setup() {
 		'flex-height'            => false,
 		'flex-width'             => true,
 		'header-text'            => false,
-		'uploads'                => true,
 	);
-	add_theme_support( 'custom-header', $defaults );
+	add_theme_support( 'custom-logo', $defaults );
 
 	/**
 	 * Allow widgets to be previewed faster in the customizer with selective refresh.
@@ -128,6 +121,54 @@ function figureground_setup() {
 			),
 		),
 	) );
+
+	// Disable user-defined font size selection to encourage consistency.
+	add_theme_support( 'disable-custom-font-sizes' );
+
+	// Disable color pickers in the editor in favor of colors defined in the customizer.
+	add_theme_support( 'disable-custom-colors' );
+
+	// Load classic editor styles into the block editor.
+	add_theme_support( 'editor-styles' );
+
+	/*
+	 * This theme styles the visual editor to resemble the theme style,
+	 * specifically font, colors, icons, and column width.
+	 */
+	add_editor_style( array( 'editor-style.css', 'genericons/genericons/genericons.css', figureground_fonts_url() ) );
+
+	// Load default block styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for wide alignments in the block editor;
+	add_theme_support( 'align-wide' );
+
+	// Add support for custom color scheme.
+	add_theme_support(
+		'editor-color-palette',
+		array(
+			array(
+				'name'  => __( 'Figure/Ground Dark', 'figureground' ),
+				'slug'  => 'fg-dark',
+				'color' => get_theme_mod( 'fg_color_dark', '#222222' ),
+			),
+			array(
+				'name'  => __( 'Figure/Ground Light', 'figureground' ),
+				'slug'  => 'fg-light',
+				'color' => get_theme_mod( 'fg_color_light', '#f7f7ec' ),
+			),
+			array(
+				'name'  => __( 'Accent Light', 'figureground' ),
+				'slug'  => 'accent-light',
+				'color' => get_theme_mod( 'accent_color_light', '#87f' ),
+			),
+			array(
+				'name'  => __( 'Accent Dark', 'figureground' ),
+				'slug'  => 'accent-dark',
+				'color' => get_theme_mod( 'accent_color_dark', '#903' ),
+			),
+		)
+	);
 }
 endif; // figureground_setup
 add_action( 'after_setup_theme', 'figureground_setup' );
@@ -164,13 +205,14 @@ function figureground_scripts() {
 	wp_enqueue_script( 'figureground-functions', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20160717', true );
 
 	// Load Figure/Ground animation.
-	wp_enqueue_script( 'figureground', get_template_directory_uri() . '/js/figure-ground.js', array(), '20140622', false );
+	wp_enqueue_script( 'figureground', get_template_directory_uri() . '/js/figure-ground.js', array(), '20190115', false );
 
 	// Load theme options to pass to the Figure/Ground script.
 	$type = get_theme_mod( 'fg_type', 'orthogonal' );
 	$maxh = get_theme_mod( 'fg_max_height', 256 );
 	$maxw = get_theme_mod( 'fg_max_width', 256 );
 	$maxr = $maxw * 2 / 3;
+	$linet = 3;
 	$delay = get_theme_mod( 'fg_speed', 320 );
 	$initial = get_theme_mod( 'fg_initial', 192 );
 	$color = get_theme_mod( 'fg_color_dark', '#222' );
@@ -181,6 +223,7 @@ function figureground_scripts() {
 		'maxw'    => $maxw,
 		'maxh'    => $maxh,
 		'maxr'    => $maxr,
+		'linet'   => $linet,
 		'delay'   => $delay,
 		'initial' => $initial,
 		'color'   => $color,
@@ -220,6 +263,18 @@ function figureground_fonts_url() {
 }
 
 /**
+ * Enqueue styles for the block-based editor.
+ *
+ * @since Figure/Ground 1.3
+ */
+function figureground_block_editor_styles() {
+	// Add custom fonts. These do not work with `add_editor_style` in the block editor.
+	wp_enqueue_style( 'figureground-fonts', figureground_fonts_url(), array(), null );
+	wp_enqueue_style( 'figureground-genericons', 'genericons/genericons/genericons.css', array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'figureground_block_editor_styles' );
+
+/**
  * Adjust content_width value for post-formatted posts.
  *
  * @since Figure/Ground 1.0
@@ -249,3 +304,8 @@ require get_template_directory() . '/inc/extras.php';
  * Register theme options via the Customizer.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * Load custom styles for embeds.
+ */
+require get_template_directory() . '/inc/embed-styles.php';

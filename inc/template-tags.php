@@ -18,7 +18,7 @@ function figureground_post_meta() {
 	}
 	
 	// Author
-	if( is_multi_author() ){
+	if( is_multi_author() ) {
 		printf( __( '<li class="post-author">%1$s</li>', 'figureground' ),
 			sprintf( '<a href="%1$s" title="%2$s">%3$s<span class="author-name">%4$s</span></a>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
@@ -30,8 +30,10 @@ function figureground_post_meta() {
 	}
 
 	// Date/time
-	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
+	$time_string = '<span class="screen-reader-text">' . __( 'Posted on: ', 'figureground' ) . '</span>';
+	$time_string .= '<time class="entry-date published" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
+		$time_string .= '<span class="screen-reader-text">' . __( 'Updated on: ', 'figureground' ) . '</span>';
 		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
 	}
 
@@ -54,14 +56,14 @@ function figureground_post_meta() {
 	if ( 'post' === get_post_type() && figureground_categorized_blog() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$category_list = get_the_category_list( __( ', ', 'figureground' ) );
-		echo '<li class="post-categories"><div class="post-categories-list">' . $category_list . '</div></li>';
+		echo '<li class="post-categories"><button type="button" class="post-meta-toggle screen-reader-text">' . __( 'Toggle category list', 'figureground' ) . '</button><div class="post-categories-list">' . $category_list . '</div></li>';
 	}
 
 	// Tags
 	if ( 'post' === get_post_type() && has_tag() ) {	
 		/* translators: used between list items, there is a space after the comma */
 		$tag_list = get_the_tag_list( '', __( ', ', 'figureground' ) );
-		echo '<li class="post-tags"><div class="post-tags-list">' . $tag_list . '</div></li>';
+		echo '<li class="post-tags"><button type="button" class="post-meta-toggle screen-reader-text">' . __( 'Toggle tags list', 'figureground' ) . '</button><div class="post-tags-list">' . $tag_list . '</div></li>';
 	}
 
 	// Comments
@@ -70,8 +72,11 @@ function figureground_post_meta() {
 		if ( 0 != get_comments_number() ) {
 			$class .= ' has-comments';
 		}
+		if ( 10 <= get_comments_number() ) {
+			$class .= ' double-digit';
+		}
 		echo '<li class="' . $class . '">';
-		comments_popup_link( '', '1', '%' );
+		comments_popup_link();
 		echo '</li>';
 	}
 
@@ -313,15 +318,19 @@ add_action( 'save_post',     'figureground_category_transient_flusher' );
  * Display footer credits area.
  */
 function figureground_footer_credits() {
-	do_action( 'figureground_credits' ); ?>
+	do_action( 'figureground_credits' ); 
+	$sep_span = '<span class="sep" role="separator" aria-hidden="true"> | </span>'; ?>
 	&copy <?php echo date('Y'); ?> <a href="<?php echo home_url(); ?>" id="footer-copy-name"><?php echo get_theme_mod( 'copy_name', get_bloginfo( 'name' ) ); ?></a>
 	<?php if ( get_theme_mod( 'powered_by_wp', true ) || is_customize_preview() ) { ?>
 		<span class="wordpress-credit" <?php if ( ! get_theme_mod( 'powered_by_wp', true ) && is_customize_preview() ) { echo 'style="display: none;"'; } ?>>
-			<span class="sep"> | </span><a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'figureground' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'figureground' ), 'WordPress' ); ?></a>
+			<?php echo $sep_span; ?><a href="https://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'figureground' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'figureground' ), 'WordPress' ); ?></a>
 		</span>
 	<?php } if ( get_theme_mod( 'theme_meta', false ) || is_customize_preview() ) { ?>
 		<span class="theme-credit" <?php if ( ! get_theme_mod( 'theme_meta', false ) && is_customize_preview() ) { echo 'style="display: none;"'; } ?>>
-			<span class="sep"> | </span><?php printf( __( 'Theme: %1$s by %2$s.', 'figureground' ), 'Figure/Ground', '<a href="http://themes.halsey.co/" rel="designer">Halsey Themes</a>' ); ?>
+			<?php echo $sep_span; printf( __( 'Theme: %1$s by %2$s.', 'figureground' ), 'Figure/Ground', '<a href="https://celloexpressions.com/" rel="designer">Nick Halsey</a>' ); ?>
 		</span>
-	<?php }
+	<?php if ( function_exists( 'the_privacy_policy_link' ) ) {
+			the_privacy_policy_link( $sep_span, '' );
+		}
+	}
 }
