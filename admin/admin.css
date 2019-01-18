@@ -1238,13 +1238,15 @@
           box-sizing: border-box;
 }
 .welcome-page-wrapper .the_title {
-  font-size: 40px;
-  line-height: 1.2em;
+  font-size: 2.44rem;
+  x-font-step: 4;
+  line-height: 1.2295082;
   font-weight: 200;
 }
 .welcome-page-wrapper h4 {
-  font-size: 25px;
-  line-height: 1.92em;
+  font-size: 1.56rem;
+  x-font-step: 2;
+  line-height: 1.44230769;
 }
 .welcome-page-wrapper a {
   text-decoration: none;
@@ -1255,8 +1257,9 @@
   text-decoration: underline;
 }
 .welcome-page-wrapper p {
-  font-size: 16px;
-  line-height: 1.5em;
+  font-size: 1rem;
+  x-font-step: 0;
+  line-height: 1.5;
   margin-bottom: 24px;
 }
 .welcome-page-wrapper img {
@@ -1431,16 +1434,19 @@
 }
 @media (min-width: 768px) {
   .welcome-page h3 {
-    font-size: 44px;
-    line-height: 1.22727273em;
+    font-size: 2.44rem;
+    x-font-step: 4;
+    line-height: 1.2295082;
   }
   .welcome-page h4 {
-    font-size: 29px;
-    line-height: 1.86206897em;
+    font-size: 1.56rem;
+    x-font-step: 2;
+    line-height: 1.44230769;
   }
   .welcome-page p {
-    font-size: 18px;
-    line-height: 1.5em;
+    font-size: 1rem;
+    x-font-step: 0;
+    line-height: 1.5;
     margin-bottom: 27px;
   }
   .welcome-page .content-row {

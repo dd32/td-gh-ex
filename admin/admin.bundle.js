@@ -1710,34 +1710,37 @@ var _agncySidebar2 = _interopRequireDefault(_agncySidebar);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-wp.customize('agncy_header_layout', function (setting) {
-	var handleLogoPosOption = function handleLogoPosOption() {
-		wp.customize.control('agncy_header_logo_position', function (control) {
-			var $ = jQuery;
+if (typeof wp.customize !== "undefined") {
 
-			var centerLabel = $(control.container).find('label[for="agncy_header_logo_position-center"]');
-			var input = $('input', centerLabel);
+	wp.customize('agncy_header_layout', function (setting) {
+		var handleLogoPosOption = function handleLogoPosOption() {
+			wp.customize.control('agncy_header_logo_position', function (control) {
+				var $ = jQuery;
 
-			if (centerLabel.length) {
-				if ('side-by-side' === setting.get()) {
-					input.attr('disabled', true);
-					centerLabel.addClass('disabled');
-				} else {
-					input.attr('disabled', false);
-					centerLabel.removeClass('disabled');
+				var centerLabel = $(control.container).find('label[for="agncy_header_logo_position-center"]');
+				var input = $('input', centerLabel);
+
+				if (centerLabel.length) {
+					if ('side-by-side' === setting.get()) {
+						input.attr('disabled', true);
+						centerLabel.addClass('disabled');
+					} else {
+						input.attr('disabled', false);
+						centerLabel.removeClass('disabled');
+					}
 				}
-			}
-		});
-	};
+			});
+		};
 
-	// init check
-	if ('side-by-side' === setting.get()) {
-		handleLogoPosOption();
-	}
+		// init check
+		if ('side-by-side' === setting.get()) {
+			handleLogoPosOption();
+		}
 
-	// bind to change
-	setting.bind(handleLogoPosOption);
-});
+		// bind to change
+		setting.bind(handleLogoPosOption);
+	});
+}
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(11), __webpack_require__(1)))
 
 /***/ }),

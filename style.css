@@ -4,7 +4,7 @@
  * Description: Agncy is a beautiful news and blogging theme that has beautiful typography, powerful color customisation and an elegant, light layout. Customise your theme to the colours you need and upload your own logo. Enjoy reading even long texts with the beautiful font 'Fira' and experience how fast font loading can be with an innovative font loading technique.
  * Author: WP Munich
  * Author URI: http://www.wp-munich.com
- * Version: 1.4.4
+ * Version: 1.5.0
  * Text Domain: agncy
  * Domain Path: /languages
  * License: GPL-2.0+
@@ -943,82 +943,100 @@ html {
 }
 body,
 p {
-  font-size: 16px;
-  line-height: 1.5em;
+  font-size: 1rem;
+  x-font-step: 0;
+  line-height: 1.5;
 }
 h1 {
-  font-size: 25px;
-  line-height: 1.92em;
+  font-size: 1.56rem;
+  x-font-step: 2;
+  line-height: 1.44230769;
 }
 h2 {
-  font-size: 20px;
-  line-height: 1.2em;
+  font-size: 1.25rem;
+  x-font-step: 1;
+  line-height: 1.8;
 }
 h3 {
-  font-size: 16px;
-  line-height: 1.5em;
+  font-size: 1rem;
+  x-font-step: 0;
+  line-height: 1.5;
 }
 h4,
 h5,
 h6 {
-  font-size: 16px;
-  line-height: 1.5em;
+  font-size: 1rem;
+  x-font-step: 0;
+  line-height: 1.5;
 }
 blockquote:not(.testimonial_quote) {
-  font-size: 20px;
-  line-height: 1.2em;
+  font-size: 1.25rem;
+  x-font-step: 1;
+  line-height: 1.8;
 }
 input,
 label,
 select,
 button,
 textarea {
-  font-size: 16px;
-  line-height: 1.5em;
+  font-size: 1rem;
+  x-font-step: 0;
+  line-height: 1.5;
 }
 .logo-text {
-  font-size: 25px;
-  line-height: 1.92em;
+  font-size: 1.56rem;
+  x-font-step: 2;
+  line-height: 1.44230769;
 }
 footer .credit {
-  font-size: 13px;
-  line-height: 1.84615385em;
+  font-size: 0.8rem;
+  x-font-step: -1;
+  line-height: 1.875;
 }
 .breadcrumbs {
-  font-size: 13px;
-  line-height: 1.84615385em;
+  font-size: 0.8rem;
+  x-font-step: -1;
+  line-height: 1.875;
 }
 .the_loop .the_post_title {
-  font-size: 20px;
-  line-height: 1.2em;
+  font-size: 1.25rem;
+  x-font-step: 1;
+  line-height: 1.8;
 }
 .post_meta_info {
-  font-size: 13px;
-  line-height: 1.84615385em;
+  font-size: 0.8rem;
+  x-font-step: -1;
+  line-height: 1.875;
 }
 .gallery-caption {
-  font-size: 11px;
-  line-height: 2.18181818em;
+  font-size: 0.64rem;
+  x-font-step: -2;
+  line-height: 2.34375;
 }
 #comments .comment-edit-link {
-  font-size: 13px;
-  line-height: 1.84615385em;
+  font-size: 0.8rem;
+  x-font-step: -1;
+  line-height: 1.875;
 }
 .header_404 .the_title {
-  font-size: 49px;
-  line-height: 1.46938776em;
+  font-size: 3.05rem;
+  x-font-step: 5;
+  line-height: 1.2295082;
 }
 .header_404 .the_title span {
-  font-size: 20px;
-  line-height: 1.2em;
+  font-size: 1.25rem;
+  x-font-step: 1;
+  line-height: 1.8;
 }
 .cta-social-url .fa {
-  font-size: 40px;
-  line-height: 1.2em;
+  font-size: 2.44rem;
+  x-font-step: 4;
+  line-height: 1.2295082;
 }
 .widget .calendar_wrap table thead tr th {
-  font-size: 10px !important;
-  line-height: 2.4em !important;
+  font-size: 0.61rem !important;
+  x-font-step: -2.2 !important;
+  line-height: 2.45901639 !important;
 }
 .widget .widgettitle,
 .widget .textwidget,
@@ -1027,16 +1045,18 @@ footer .credit {
 .widget .tagcloud .tag-cloud-link,
 .widget .rss-date,
 .widget cite {
-  font-size: 12px !important;
-  line-height: 2em !important;
+  font-size: 0.73rem !important;
+  x-font-step: -1.4 !important;
+  line-height: 2.05479452 !important;
 }
 .widget .breadcrumbs,
 .widget a,
 .widget .calendar_wrap table caption,
 .widget .calendar_wrap table tbody tr td,
 .widget .rssSummary {
-  font-size: 14px !important;
-  line-height: 1.71428571em !important;
+  font-size: 0.86rem !important;
+  x-font-step: -0.7 !important;
+  line-height: 1.74418605 !important;
 }
 h1,
 h2,
@@ -1062,8 +1082,9 @@ address {
 }
 .icon_box_img_wrapper .fa,
 .content_box_img_wrapper .fa {
-  font-size: 40px;
-  line-height: 1.2em;
+  font-size: 2.44rem;
+  x-font-step: 4;
+  line-height: 1.2295082;
 }
 @media (min-width: 768px) {
   html {
@@ -1072,97 +1093,119 @@ address {
   }
   body,
   p {
-    font-size: 18px;
-    line-height: 1.5em;
+    font-size: 1rem;
+    x-font-step: 0;
+    line-height: 1.5;
   }
   h1 {
-    font-size: 36px;
-    line-height: 1.5em;
+    font-size: 1.95rem;
+    x-font-step: 3;
+    line-height: 1.53846154;
   }
   h2 {
-    font-size: 29px;
-    line-height: 1.86206897em;
+    font-size: 1.56rem;
+    x-font-step: 2;
+    line-height: 1.44230769;
   }
   h3 {
-    font-size: 23px;
-    line-height: 1.17391304em;
+    font-size: 1.25rem;
+    x-font-step: 1;
+    line-height: 1.8;
   }
   h4 {
-    font-size: 18px;
-    line-height: 1.5em;
+    font-size: 1rem;
+    x-font-step: 0;
+    line-height: 1.5;
   }
   h5,
   h6 {
-    font-size: 18px;
-    line-height: 1.5em;
+    font-size: 1rem;
+    x-font-step: 0;
+    line-height: 1.5;
   }
-  blockquote:not(.testimonial_quote) {
-    font-size: 23px;
-    line-height: 1.17391304em;
+  blockquote {
+    font-size: 1.25rem;
+    x-font-step: 1;
+    line-height: 1.8;
   }
   input,
   label,
   select,
   button,
   textarea {
-    font-size: 18px;
-    line-height: 1.5em;
+    font-size: 1rem;
+    x-font-step: 0;
+    line-height: 1.5;
   }
   .logo-text {
-    font-size: 29px;
-    line-height: 1.86206897em;
+    font-size: 1.56rem;
+    x-font-step: 2;
+    line-height: 1.44230769;
   }
   nav.header-menu .menu-item {
-    font-size: 15px;
-    line-height: 1.8em;
+    font-size: 0.8rem;
+    x-font-step: -1;
+    line-height: 1.875;
   }
   nav.header-menu .sub-menu .menu-item {
-    font-size: 13px;
-    line-height: 2.07692308em;
+    font-size: 0.72rem;
+    x-font-step: -1.5;
+    line-height: 2.08333333;
   }
   .header-contact-wrapper {
-    font-size: 12px;
-    line-height: 2.25em;
+    font-size: 0.64rem;
+    x-font-step: -2;
+    line-height: 2.34375;
   }
   footer .credit {
-    font-size: 15px;
-    line-height: 1.8em;
+    font-size: 0.8rem;
+    x-font-step: -1;
+    line-height: 1.875;
   }
   .breadcrumbs {
-    font-size: 15px;
-    line-height: 1.8em;
+    font-size: 0.8rem;
+    x-font-step: -1;
+    line-height: 1.875;
   }
   .the_loop .the_post_title {
-    font-size: 23px;
-    line-height: 1.17391304em;
+    font-size: 1.25rem;
+    x-font-step: 1;
+    line-height: 1.8;
   }
   .post_meta_info {
-    font-size: 15px;
-    line-height: 1.8em;
+    font-size: 0.8rem;
+    x-font-step: -1;
+    line-height: 1.875;
   }
   .gallery-caption {
-    font-size: 12px;
-    line-height: 2.25em;
+    font-size: 0.64rem;
+    x-font-step: -2;
+    line-height: 2.34375;
   }
   #comments .comment-edit-link {
-    font-size: 15px;
-    line-height: 1.8em;
+    font-size: 0.8rem;
+    x-font-step: -1;
+    line-height: 1.875;
   }
   .header_404 .the_title {
-    font-size: 69px;
-    line-height: 1.17391304em;
+    font-size: 3.81rem;
+    x-font-step: 6;
+    line-height: 1.18110236;
   }
   .header_404 .the_title span {
-    font-size: 23px;
-    line-height: 1.17391304em;
+    font-size: 1.25rem;
+    x-font-step: 1;
+    line-height: 1.8;
   }
   .cta-social-url .fa {
-    font-size: 44px;
-    line-height: 1.22727273em;
+    font-size: 2.44rem;
+    x-font-step: 4;
+    line-height: 1.2295082;
   }
   .widget .calendar_wrap table thead tr th {
-    font-size: 10px !important;
-    line-height: 2.7em !important;
+    font-size: 0.54rem !important;
+    x-font-step: -2.8 !important;
+    line-height: 2.77777778 !important;
   }
   .widget .widgettitle,
   .widget .textwidget,
@@ -1171,16 +1214,18 @@ address {
   .widget .tagcloud .tag-cloud-link,
   .widget .rss-date,
   .widget cite {
-    font-size: 12px !important;
-    line-height: 2.25em !important;
+    font-size: 0.64rem !important;
+    x-font-step: -2 !important;
+    line-height: 2.34375 !important;
   }
   .widget .breadcrumbs,
   .widget a,
   .widget .calendar_wrap table caption,
   .widget .calendar_wrap table tbody tr td,
   .widget .rssSummary {
-    font-size: 14px !important;
-    line-height: 1.92857143em !important;
+    font-size: 0.77rem !important;
+    x-font-step: -1.2 !important;
+    line-height: 1.94805195 !important;
   }
   h1,
   h2,
@@ -1206,8 +1251,9 @@ address {
   }
   .icon_box_img_wrapper .fa,
   .content_box_img_wrapper .fa {
-    font-size: 44px;
-    line-height: 1.22727273em;
+    font-size: 2.44rem;
+    x-font-step: 4;
+    line-height: 1.2295082;
   }
 }
 /* ----------------------------------------------------------------------------------------------------
@@ -2349,45 +2395,13 @@ select[multiple] {
     display: none !important;
   }
 }
-/**
- * Definitions for media alignment from WordPress
- */
-.alignnone {
-  margin: 0 0 6px 0;
-}
-.aligncenter,
-div.aligncenter {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  text-align: center;
-}
 .alignright {
   float: right;
   margin-left: 16px;
 }
 .alignleft {
   float: left;
-  margin-left: 16px;
   margin-right: 16px;
-}
-a img.alignright {
-  float: right;
-  margin-left: 16px;
-}
-a img.alignnone {
-  margin-left: 16px;
-  margin-right: 16px;
-}
-a img.alignleft {
-  float: left;
-  margin-left: 16px;
-  margin-right: 16px;
-}
-a img.aligncenter {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
 }
 div.gallery {
   margin: 0 0 24px;
@@ -2472,28 +2486,23 @@ div.gallery.gallery-columns-9 .gallery-item {
   max-width: calc(100% -  32px);
   text-align: center;
 }
-.wp-caption.alignnone {
-  margin-left: 16px;
-  margin-right: 16px;
-}
 .wp-caption.alignleft {
-  margin-left: 16px;
   margin-right: 16px;
 }
 .wp-caption.alignright {
   margin-left: 16px;
-  margin-right: 16px;
 }
 .wp-caption img {
   border: 0 none;
   height: auto;
-  margin: 0;
+  margin: 0 auto;
   padding: 0;
   width: auto;
 }
 .wp-caption .wp-caption-text {
-  font-size: 16px;
-  line-height: 1.5em;
+  font-size: 1rem;
+  x-font-step: 0;
+  line-height: 1.5;
   padding: 6px 16px;
 }
 /* Text meant only for screen readers. */
@@ -2536,8 +2545,9 @@ div.gallery.gallery-columns-9 .gallery-item {
     margin: 0 0 27px;
   }
   .wp-caption .wp-caption-text {
-    font-size: 18px;
-    line-height: 1.5em;
+    font-size: 1rem;
+    x-font-step: 0;
+    line-height: 1.5;
     padding: 6.75px 16px;
   }
 }
@@ -2545,8 +2555,9 @@ div.gallery.gallery-columns-9 .gallery-item {
   padding: 12px 16px;
   margin-bottom: 48px;
   margin-top: 48px;
-  font-size: 20px;
-  line-height: 1.2em;
+  font-size: 1.25rem;
+  x-font-step: 1;
+  line-height: 1.8;
   color: #fff;
 }
 .comments-title .title {
@@ -2660,8 +2671,9 @@ div.gallery.gallery-columns-9 .gallery-item {
   -webkit-box-flex: 1;
       -ms-flex: 1 1 auto;
           flex: 1 1 auto;
-  font-size: 13px;
-  line-height: 1.84615385em;
+  font-size: 0.8rem;
+  x-font-step: -1;
+  line-height: 1.875;
 }
 .comment-meta .comment-metadata a {
   color: #fff;
@@ -2734,8 +2746,9 @@ div.gallery.gallery-columns-9 .gallery-item {
     padding: 13.5px 16px;
     margin-bottom: 54px;
     margin-top: 54px;
-    font-size: 23px;
-    line-height: 1.17391304em;
+    font-size: 1.25rem;
+    x-font-step: 1;
+    line-height: 1.8;
   }
   .comment-list {
     margin-bottom: 54px;
@@ -2758,8 +2771,9 @@ div.gallery.gallery-columns-9 .gallery-item {
     height: 54px;
   }
   .comment-meta .comment-metadata {
-    font-size: 18px;
-    line-height: 1.5em;
+    font-size: 1rem;
+    x-font-step: 0;
+    line-height: 1.5;
   }
   .comment-meta .reply .comment-reply-link {
     padding: 13.5px 16px;
@@ -2780,8 +2794,9 @@ div.gallery.gallery-columns-9 .gallery-item {
   color: #fff;
   position: relative;
   z-index: 1;
-  font-size: 20px;
-  line-height: 1.2em;
+  font-size: 1.25rem;
+  x-font-step: 1;
+  line-height: 1.8;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -2802,8 +2817,9 @@ div.gallery.gallery-columns-9 .gallery-item {
   font-size: inherit;
 }
 .comment-reply-title #cancel-comment-reply-link {
-  font-size: 13px;
-  line-height: 1.84615385em;
+  font-size: 0.8rem;
+  x-font-step: -1;
+  line-height: 1.875;
   display: block;
   background-color: rgba(255, 255, 255, 0.9);
   padding: 0 16px;
@@ -2847,12 +2863,14 @@ div.gallery.gallery-columns-9 .gallery-item {
 @media (min-width: 768px) {
   .comment-reply-title {
     padding: 13.5px 16px;
-    font-size: 23px;
-    line-height: 1.17391304em;
+    font-size: 1.25rem;
+    x-font-step: 1;
+    line-height: 1.8;
   }
   .comment-reply-title #cancel-comment-reply-link {
-    font-size: 15px;
-    line-height: 1.8em;
+    font-size: 0.8rem;
+    x-font-step: -1;
+    line-height: 1.875;
   }
   .comment-form {
     padding: 0 16px 13.5px;
@@ -2897,6 +2915,9 @@ html {
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+}
+figure {
+  margin: 0;
 }
 .page-wrapper {
   padding-top: 72px;
@@ -4188,26 +4209,31 @@ footer.main-footer .credit {
   padding-right: 16px;
 }
 .has-small-font-size {
-  font-size: 13px;
-  line-height: 1.84615385em;
+  font-size: 0.8rem;
+  x-font-step: -1;
+  line-height: 1.875;
 }
 .has-regular-font-size {
-  font-size: 16px;
-  line-height: 1.5em;
+  font-size: 1rem;
+  x-font-step: 0;
+  line-height: 1.5;
 }
 .has-large-font-size {
-  font-size: 20px;
-  line-height: 1.2em;
+  font-size: 1.25rem;
+  x-font-step: 1;
+  line-height: 1.8;
 }
 .has-huge-font-size,
 .has-larger-font-size {
-  font-size: 32px;
-  line-height: 1.5em;
+  font-size: 1.95rem;
+  x-font-step: 3;
+  line-height: 1.53846154;
 }
 img {
   display: block;
   padding: 0;
   max-width: 100%;
+  margin: 0 auto;
   height: auto;
   overflow: auto;
 }
@@ -4220,20 +4246,24 @@ img {
     padding-bottom: 27px;
   }
   .has-small-font-size {
-    font-size: 12px;
-    line-height: 2.25em;
+    font-size: 0.64rem;
+    x-font-step: -2;
+    line-height: 2.34375;
   }
   .has-regular-font-size {
-    font-size: 18px;
-    line-height: 1.5em;
+    font-size: 1rem;
+    x-font-step: 0;
+    line-height: 1.5;
   }
   .has-large-font-size {
-    font-size: 29px;
-    line-height: 1.86206897em;
+    font-size: 1.56rem;
+    x-font-step: 2;
+    line-height: 1.44230769;
   }
   .has-larger-font-size {
-    font-size: 36px;
-    line-height: 1.5em;
+    font-size: 1.95rem;
+    x-font-step: 3;
+    line-height: 1.53846154;
   }
 }
 /**
@@ -4284,6 +4314,7 @@ img {
 .entry-summary > *.alignleft,
 .entry-content > *.alignright,
 .entry-summary > *.alignright {
+  margin-top: 0;
   max-width: calc(50% -  16px);
 }
 .entry-content > *.alignleft,
@@ -4294,10 +4325,16 @@ img {
 .entry-summary > *.alignright {
   margin-left: 16px;
 }
+.entry-content > *.aligncenter,
+.entry-summary > *.aligncenter {
+  margin-right: auto;
+  margin-left: auto;
+}
 .entry-content > * figcaption,
 .entry-summary > * figcaption {
-  font-size: 13px;
-  line-height: 1.84615385em;
+  font-size: 0.8rem;
+  x-font-step: -1;
+  line-height: 1.875;
   margin-top: 12px;
 }
 @media (min-width: 768px) {
@@ -4309,8 +4346,9 @@ img {
   }
   .entry-content > * figcaption,
   .entry-summary > * figcaption {
-    font-size: 15px;
-    line-height: 1.8em;
+    font-size: 0.8rem;
+    x-font-step: -1;
+    line-height: 1.875;
     margin-top: 13.5px;
     margin-bottom: 0;
   }
@@ -4385,7 +4423,8 @@ img {
  */
 p.has-drop-cap:first-letter {
   font-family: "LH Fira Sans", Arial, Helvetica, sans-serif;
-  font-size: 96px;
+  font-size: 5.96rem;
+  x-font-step: 8;
   line-height: 85%;
   font-weight: 700;
   margin: 0 8px 0 0;
@@ -4405,7 +4444,8 @@ p.has-background {
 }
 @media (min-width: 768px) {
   p.has-drop-cap:first-letter {
-    font-size: 108px;
+    font-size: 5.96rem;
+    x-font-step: 8;
   }
   p.has-background {
     padding-top: 27px;
@@ -4427,16 +4467,18 @@ p.has-background {
   margin: 0;
   font-family: "LH Fira Sans", Arial, Helvetica, sans-serif;
   padding: 24px 16px;
-  font-size: 25px;
-  line-height: 1.92em;
+  font-size: 1.56rem;
+  x-font-step: 2;
+  line-height: 1.44230769;
 }
 @media (min-width: 768px) {
   .wp-block-cover-image {
     min-height: 486px;
   }
   .wp-block-cover-image .wp-block-cover-image-text {
-    font-size: 29px;
-    line-height: 1.86206897em;
+    font-size: 1.56rem;
+    x-font-step: 2;
+    line-height: 1.44230769;
   }
 }
 @media (min-width: 992px) {
@@ -4444,8 +4486,9 @@ p.has-background {
     min-height: 594px;
   }
   .wp-block-cover-image .wp-block-cover-image-text {
-    font-size: 32px;
-    line-height: 1.6875em;
+    font-size: 1.75rem;
+    x-font-step: 2.5;
+    line-height: 1.28571429;
   }
 }
 @media (min-width: 1200px) {
@@ -4453,8 +4496,9 @@ p.has-background {
     min-height: 648px;
   }
   .wp-block-cover-image .wp-block-cover-image-text {
-    font-size: 36px;
-    line-height: 1.5em;
+    font-size: 1.95rem;
+    x-font-step: 3;
+    line-height: 1.53846154;
   }
 }
 /**
@@ -4481,8 +4525,9 @@ p.has-background {
   width: 100%;
 }
 .wp-block-image figcaption {
-  font-size: 13px;
-  line-height: 1.84615385em;
+  font-size: 0.8rem;
+  x-font-step: -1;
+  line-height: 1.875;
   margin-top: 12px;
 }
 @media (min-width: 768px) {
@@ -4491,8 +4536,9 @@ p.has-background {
     margin-bottom: 27px;
   }
   .wp-block-image figcaption {
-    font-size: 15px;
-    line-height: 1.8em;
+    font-size: 0.8rem;
+    x-font-step: -1;
+    line-height: 1.875;
     margin-top: 13.5px;
   }
 }
@@ -4542,6 +4588,12 @@ ul.wp-block-gallery.alignleft {
 }
 ul.wp-block-gallery.alignright {
   margin-right: -24px;
+}
+ul.wp-block-gallery .blocks-gallery-image figure,
+ul.wp-block-gallery .blocks-gallery-item figure {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 @media (min-width: 992px) {
   ul.wp-block-gallery {
@@ -4619,8 +4671,9 @@ ul.wp-block-gallery.alignright {
 }
 @media (min-width: 768px) {
   .wp-block-pullquote figcaption {
-    font-size: 15px;
-    line-height: 1.8em;
+    font-size: 0.8rem;
+    x-font-step: -1;
+    line-height: 1.875;
     margin-top: 13.5px;
   }
 }
@@ -4783,6 +4836,15 @@ ul.wp-block-gallery.alignright {
     padding-left: 16px;
     padding-right: 16px;
   }
+}
+/**
+ * Spacer Block
+ * Needed styles to modify the default look of the Gutenberg core block.
+ *
+ * @see: https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/spacer/
+ */
+.wp-block-spacer {
+  margin: 0 !important;
 }
 /**
  * Split Block
@@ -5031,13 +5093,15 @@ ul.wp-block-gallery.alignright {
     margin-bottom: 27px;
   }
   body.error404 .header_404 .the_title {
-    font-size: 69px;
-    line-height: 1.17391304em;
+    font-size: 3.81rem;
+    x-font-step: 6;
+    line-height: 1.18110236;
     font-weight: 600;
   }
   body.error404 .header_404 .the_title span {
-    font-size: 23px;
-    line-height: 1.17391304em;
+    font-size: 1.25rem;
+    x-font-step: 1;
+    line-height: 1.8;
     top: 20.25px;
   }
   body.error404 .header_404.has_image {
@@ -5297,7 +5361,7 @@ ul.wp-block-gallery.alignright {
  */
   .desktop-menu {
     margin: 0;
-    padding: 0.75em 0;
+    padding: 13.5px 0;
     list-style: inside none;
     display: -webkit-box;
     display: -ms-flexbox;
@@ -5323,7 +5387,7 @@ ul.wp-block-gallery.alignright {
   }
   .desktop-menu .menu-item a {
     display: block;
-    padding: 0.375em 16px;
+    padding: 6.75px 16px;
     font-weight: 400 !important;
     text-transform: uppercase;
   }
@@ -5398,7 +5462,7 @@ ul.wp-block-gallery.alignright {
   }
   .desktop-menu .sub-menu a {
     display: block;
-    padding: 0.375em 15px;
+    padding: 6.75px 15px;
     margin: 0;
     -webkit-transition: .5s all ease;
     transition: .5s all ease;
