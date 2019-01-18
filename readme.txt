@@ -55,6 +55,10 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.9.8
+1. Added link settings in project.
+@version 1.9.7
+1. Added WooCommerce Gallery Support.
 @version 1.9.6
 1. Fixed Upgrade css issue.
 @version 1.9.5

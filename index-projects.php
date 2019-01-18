@@ -34,14 +34,22 @@ if( $current_options['home_project_section_enabled'] == 'on' ) {
 							<?php } ?>
 							<?php if($current_options['project_thumb_one']!='') {?>
 							<img alt="" src="<?php echo esc_url($current_options['project_thumb_one']); ?>" class="project_feature_img" />
-							<?php } ?></a>
+							<?php } ?>
+							<?php if($current_options['project_one_url']!='') {?>
+							</a>
+							<?php } ?>
 						</figure>
 						<div class="portfolio-info">
 							<div class="entry-header">
+								<h4 class="entry-title">
 								<?php if($current_options['project_one_url']!='') {?>
-								<h4 class="entry-title"><a href="<?php echo esc_url($current_options['project_one_url']); ?>">
-								<?php } if($current_options['project_title_one']!='') {
-								echo esc_html($current_options['project_title_one']); ?></a>
+								<a href="<?php echo esc_url($current_options['project_one_url']); ?>">
+								<?php } 
+								if($current_options['project_title_one']!='') {
+								echo esc_html($current_options['project_title_one']); ?>
+								<?php } ?>
+								<?php if($current_options['project_one_url']!='') {?>
+								</a>
 								<?php } ?>
 								</h4>
 							</div>
@@ -61,14 +69,22 @@ if( $current_options['home_project_section_enabled'] == 'on' ) {
 							<?php } ?>
 							<?php if($current_options['project_thumb_two']!='') {?>
 							<img alt="" src="<?php echo esc_url($current_options['project_thumb_two']); ?>" class="project_feature_img" />
-							<?php } ?></a>
+							<?php } ?>
+							<?php if($current_options['project_two_url']!='') {?>
+							</a>
+							<?php } ?>
 						</figure>
 						<div class="portfolio-info">
 							<div class="entry-header">
+								<h4 class="entry-title">
 								<?php if($current_options['project_two_url']!='') {?>
-								<h4 class="entry-title"><a href="<?php echo esc_url($current_options['project_two_url']); ?>">
-								<?php } if($current_options['project_title_two']!='') {
-								echo esc_html($current_options['project_title_two']); ?></a>
+								<a href="<?php echo esc_url($current_options['project_two_url']); ?>">
+								<?php }
+								if($current_options['project_title_two']!='') {
+								echo esc_html($current_options['project_title_two']); ?>
+								<?php }
+								 if($current_options['project_two_url']!='') {?>
+								</a>
 								<?php } ?>
 								</h4>
 							</div>
@@ -88,15 +104,24 @@ if( $current_options['home_project_section_enabled'] == 'on' ) {
 							<?php } ?>
 							<?php if($current_options['project_thumb_three']!='') {?>
 							<img alt="" src="<?php echo esc_url($current_options['project_thumb_three']); ?>" class="project_feature_img" />
-							<?php } ?></a>
+							<?php } ?>
+							<?php if($current_options['project_three_url']!='') {?>
+							</a>
+							<?php } ?>
 						</figure>
 						<div class="portfolio-info">
 							<div class="entry-header">
+								
+								<h4 class="entry-title">
 								<?php if($current_options['project_three_url']!='') {?>
-								<h4 class="entry-title"><a href="<?php echo esc_url($current_options['project_three_url']); ?>">
-								<?php } if($current_options['project_title_three']!='') {
-								echo esc_html($current_options['project_title_three']); ?></a>
-								<?php } ?>
+								<a href="<?php echo esc_url($current_options['project_three_url']); ?>">
+								<?php }
+								if($current_options['project_title_three']!='') {
+								echo esc_html($current_options['project_title_three']); ?>
+								<?php }
+								 if($current_options['project_three_url']!='') {?>
+								</a>
+								<?php }?>
 								</h4>
 							</div>
 							<div class="entry-content">
@@ -115,14 +140,22 @@ if( $current_options['home_project_section_enabled'] == 'on' ) {
 							<?php } ?>
 							<?php if($current_options['project_thumb_four']!='') {?>
 							<img alt="" src="<?php echo esc_url($current_options['project_thumb_four']); ?>" class="project_feature_img" />
-							<?php } ?></a>
+							<?php } ?>
+							<?php if($current_options['project_four_url']!='') {?>
+							</a>
+							<?php } ?>
 						</figure>
 						<div class="portfolio-info">
 							<div class="entry-header">
+								<h4 class="entry-title">
 								<?php if($current_options['project_four_url']!='') {?>
-								<h4 class="entry-title"><a href="<?php echo esc_url($current_options['project_four_url']); ?>">
-								<?php } if($current_options['project_title_four']!='') {
-								echo esc_html($current_options['project_title_four']); ?></a>
+								<a href="<?php echo esc_url($current_options['project_four_url']); ?>">
+								<?php }
+								if($current_options['project_title_four']!='') {
+								echo esc_html($current_options['project_title_four']); ?>
+								<?php } ?>
+								<?php if($current_options['project_four_url']!='') {?>
+								</a>
 								<?php } ?>
 								</h4>
 							</div>

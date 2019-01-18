@@ -62,6 +62,11 @@
 	// supports featured image
 	add_theme_support( 'post-thumbnails' );
 	
+	//Added Woocommerce Galllery Support
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
+	
 		
 	add_theme_support( 'custom-header');
 	

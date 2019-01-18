@@ -434,6 +434,20 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			'type' => 'text',
 		));
 		
+		//Project One link
+		$wp_customize->add_setting(
+		'busiprof_theme_options[project_one_url]', array(
+			'default'        => '#',
+			'capability'     => 'edit_theme_options',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
+			'type' => 'option',
+		));
+		$wp_customize->add_control('busiprof_theme_options[project_one_url]', array(
+			'label'   => __('Link', 'busiprof'),
+			'section' => 'projects_settings',
+			'type' => 'text',
+		));
+		
 		
 		//Project Two Title
 		$wp_customize->add_setting(
@@ -480,6 +494,20 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		));
 		$wp_customize->add_control('busiprof_theme_options[project_text_two]', array(
 			'label'   => __('Description', 'busiprof'),
+			'section' => 'projects_settings',
+			'type' => 'text',
+		));
+		
+		//Project Two link
+		$wp_customize->add_setting(
+		'busiprof_theme_options[project_two_url]', array(
+			'default'        => '#',
+			'capability'     => 'edit_theme_options',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
+			'type' => 'option',
+		));
+		$wp_customize->add_control('busiprof_theme_options[project_two_url]', array(
+			'label'   => __('Link', 'busiprof'),
 			'section' => 'projects_settings',
 			'type' => 'text',
 		));
@@ -533,6 +561,20 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 			'type' => 'text',
 		));
 		
+		//Project three link
+		$wp_customize->add_setting(
+		'busiprof_theme_options[project_three_url]', array(
+			'default'        => '#',
+			'capability'     => 'edit_theme_options',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
+			'type' => 'option',
+		));
+		$wp_customize->add_control('busiprof_theme_options[project_three_url]', array(
+			'label'   => __('Link', 'busiprof'),
+			'section' => 'projects_settings',
+			'type' => 'text',
+		));
+		
 		
 		//Project Four Title
 		$wp_customize->add_setting(
@@ -577,6 +619,20 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		));
 		$wp_customize->add_control('busiprof_theme_options[project_text_four]', array(
 			'label'   => __('Description', 'busiprof'),
+			'section' => 'projects_settings',
+			'type' => 'text',
+		));
+		
+		//Project four link
+		$wp_customize->add_setting(
+		'busiprof_theme_options[project_four_url]', array(
+			'default'        => '#',
+			'capability'     => 'edit_theme_options',
+			'sanitize_callback' => 'busiprof_input_field_sanitize_text',
+			'type' => 'option',
+		));
+		$wp_customize->add_control('busiprof_theme_options[project_four_url]', array(
+			'label'   => __('Link', 'busiprof'),
 			'section' => 'projects_settings',
 			'type' => 'text',
 		));
