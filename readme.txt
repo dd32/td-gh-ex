@@ -1,10 +1,13 @@
 === Chip Life ===
-Contributors: TutorialChip.com
-Requires at least: WordPress 4.7
-Tested up to: WordPress 4.9.4
+Contributors: life.object
+Tags: two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
+Requires at least: WordPress 4.8
+Tested up to: WordPress 5.0.3
+Requires PHP: 5.6
+Stable tag: 2.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
+
 
 == Description ==
 Chip Life is an elegant theme powered by an advanced code architecture and grid system. Along with the elegant design the theme is easily customizable with numerous theme options. Make it yours with a custom menu, logo, and background.
@@ -86,8 +89,14 @@ Source: https://unsplash.com/
 
 == Changelog ==
 
+= 2.0.7 =
+Released: January 18, 2019
+
+* Gutenberg blocks support added.
+* File `readme.txt` updated.
+
 = 2.0.6 =
-Released: March 18, 2017
+Released: March 18, 2018
 
 * Theme support added for `customize-selective-refresh-widgets`.
 * Function `chip_life_widgets_init` changed to `chip_life_register_sidebars`.

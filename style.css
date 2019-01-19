@@ -3,8 +3,8 @@ Theme Name: Chip Life
 Theme URI: http://www.tutorialchip.com/chip-life/
 Author: TutorialChip
 Author URI: http://www.tutorialchip.com/
-Description: Chip Life is a charming and modern blog WordPress theme. It has a responsive layout having clean and content focused design with straightforward functionality. Chip Life is a perfect solution for sharing your valuable content and creativity with the world. Chip Life is a versatile, sophisticated WordPress theme designed for creatives and bloggers.
-Version: 2.0.6
+Description: Chip Life is a charming and modern blog WordPress theme. Chip Life theme is compatible with Gutenberg blocks. It has a responsive layout having clean and content focused design with straightforward functionality. Chip Life is a perfect solution for sharing your valuable content and creativity with the world. Chip Life is a versatile, sophisticated WordPress theme designed for creatives and bloggers.
+Version: 2.0.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: chip-life
@@ -72,14 +72,22 @@ and Blueprint http://www.blueprintcss.org/
 	11.5 - Post Formats
 	11.6 - Author Info
 	11.7 - Comments
-12.0 - Widgets
-	12.1 - Search Form Widget
-	12.2 - Tag Cloud Widget
-13.0 - Media
-	13.1 - Captions
-	13.2 - Galleries
-	13.3 - Media Elements
-14.0 - Media Queries
+12.0 - Blocks (Gutenberg)
+	12.1 - Block Image
+	12.2 - Block Cover Image
+	12.3 - Block Gallery
+	12.4 - Block Embed
+	12.5 - Block Button
+13.0 - Widgets
+	13.1 - Search Form Widget
+	13.2 - Tag Cloud Widget
+14.0 - Media
+	14.1 - Captions
+	14.2 - Galleries
+	14.3 - Media Elements
+15.0 - Utilities
+	15.1 - Misc
+16.0 - Media Queries
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 - Normalize
@@ -110,8 +118,7 @@ html {
   /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
   -ms-text-size-adjust: 100%;
   /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* Apply a natural box layout model to the document; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
   -ms-overflow-style: scrollbar;
 }
@@ -120,8 +127,7 @@ html {
 *:before,
 *:after {
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
@@ -264,8 +270,7 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -276,8 +281,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="search"] {
   -webkit-appearance: textfield;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -557,8 +561,7 @@ code, kbd, samp, tt, var {
 kbd {
   background-color: #020202;
   border-radius: 2px;
-  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
-          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
   color: #fff;
   font-size: 90%;
   padding: 2px 4px;
@@ -566,8 +569,7 @@ kbd {
 }
 
 kbd kbd {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   font-size: 100%;
   font-weight: bold;
   padding: 0;
@@ -945,8 +947,7 @@ textarea {
 .screen-reader-text:focus {
   background-color: #f1f1f1;
   border-radius: 3px;
-  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   color: #21759b;
   display: block;
@@ -968,8 +969,7 @@ textarea {
 /* must have higher specificity than alternative color schemes inline styles */
 .site .skip-link {
   background-color: #f1f1f1;
-  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
   color: #21759b;
   display: block;
   font-size: 14px;
@@ -985,8 +985,7 @@ textarea {
 }
 
 .logged-in .site .skip-link {
-  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .site .skip-link:focus {
@@ -1119,7 +1118,6 @@ textarea {
 
 .toggle-menu-wrapper a, .toggle-menu-wrapper a:visited {
   color: #007ada;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1135,22 +1133,15 @@ textarea {
 }
 
 .has-custom-header .site-header .toggle-menu-wrapper a, .has-custom-header .site-header .toggle-menu-wrapper a:visited {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  align-items: center;
   background: #fff;
   border: 1px solid #eee;
   border-radius: 50%;
   color: #242424;
-  display: -webkit-inline-box;
-  display: -ms-inline-flexbox;
   display: inline-flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  justify-content: center;
   width: 40px;
   height: 40px;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1170,7 +1161,6 @@ textarea {
   padding: 30px;
   padding: 1.875rem;
   position: relative;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -1289,7 +1279,6 @@ textarea {
   padding: 0.5625rem 0.875rem;
   text-transform: uppercase;
   text-decoration: none;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1344,7 +1333,6 @@ textarea {
   display: block;
   padding: 0;
   position: relative;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1504,19 +1492,10 @@ textarea {
 10.4 Site Branding Wrapper
 --------------------------------------------------------------*/
 .site-branding-wrapper {
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  display: -webkit-box;
-  display: -ms-flexbox;
+  align-items: center;
   display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  flex-direction: column;
+  justify-content: center;
   margin: 0 auto;
   overflow: hidden;
   width: 100%;
@@ -1845,7 +1824,6 @@ textarea {
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1896,7 +1874,6 @@ textarea {
   padding: 0.625rem 1.875rem;
   text-transform: uppercase;
   text-decoration: none;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2302,7 +2279,70 @@ div#respond #cancel-comment-reply-link {
 }
 
 /*--------------------------------------------------------------
-12.0 Widgets
+12.0 - Blocks (Gutenberg)
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+12.1 - Block Image
+--------------------------------------------------------------*/
+.wp-block-image {
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
+}
+
+.wp-block-image:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+12.2 - Block Cover Image
+--------------------------------------------------------------*/
+.wp-block-cover-image {
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
+}
+
+.wp-block-cover-image:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+12.3 - Block Gallery
+--------------------------------------------------------------*/
+.wp-block-gallery {
+  margin: 0 0 26px 0;
+  margin: 0 0 1.625rem 0;
+}
+
+.wp-block-gallery:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+12.4 - Block Embed
+--------------------------------------------------------------*/
+.wp-block-embed {
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
+}
+
+.wp-block-embed:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+12.5 - Block Button
+--------------------------------------------------------------*/
+.wp-block-button {
+  margin-bottom: 26px;
+  margin-bottom: 1.625rem;
+}
+
+.wp-block-button:last-child {
+  margin-bottom: 0;
+}
+
+/*--------------------------------------------------------------
+13.0 Widgets
 --------------------------------------------------------------*/
 .widget {
   margin: 0 0 40px;
@@ -2393,7 +2433,7 @@ div#respond #cancel-comment-reply-link {
 }
 
 /*--------------------------------------------------------------
-12.1 Search Form Widget
+13.1 Search Form Widget
 --------------------------------------------------------------*/
 .search-form {
   margin: 0;
@@ -2419,7 +2459,6 @@ div#respond #cancel-comment-reply-link {
   width: 60px;
   height: 50px;
   text-align: center;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2432,7 +2471,7 @@ div#respond #cancel-comment-reply-link {
 }
 
 /*--------------------------------------------------------------
-12.2 Tag Cloud Widget
+13.2 Tag Cloud Widget
 --------------------------------------------------------------*/
 .widget_tag_cloud > div:before,
 .widget_tag_cloud > div:after {
@@ -2457,12 +2496,11 @@ div#respond #cancel-comment-reply-link {
   font-size: 0.8125rem !important;
   text-decoration: none;
   text-transform: uppercase;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
 /*--------------------------------------------------------------
-13.0 Media
+14.0 Media
 --------------------------------------------------------------*/
 .page-content img.wp-smiley,
 .entry-content img.wp-smiley,
@@ -2474,7 +2512,7 @@ div#respond #cancel-comment-reply-link {
 }
 
 /*--------------------------------------------------------------
-13.1 Captions
+14.1 Captions
 --------------------------------------------------------------*/
 /* Attachment Caption */
 .entry-caption {
@@ -2533,7 +2571,7 @@ div#respond #cancel-comment-reply-link {
 }
 
 /*--------------------------------------------------------------
-13.2 Galleries
+14.2 Galleries
 --------------------------------------------------------------*/
 .gallery {
   margin: 0 0 26px;
@@ -2608,7 +2646,7 @@ div#respond #cancel-comment-reply-link {
 }
 
 /*--------------------------------------------------------------
-13.3 Media Elements
+14.3 Media Elements
 --------------------------------------------------------------*/
 .hentry .mejs-container {
   margin: 0 0 26px;
@@ -2649,10 +2687,29 @@ div#respond #cancel-comment-reply-link {
 }
 
 /*--------------------------------------------------------------
-14.0 Media Queries
+15.0 Utilities
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
-14.1 Small devices (landscape phones, 544px and up)
+15.1 Misc
+--------------------------------------------------------------*/
+.img-featured,
+.img-postlist {
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  opacity: 1;
+  transition: opacity .2s ease-in-out;
+}
+
+.img-featured:hover,
+.img-postlist:hover {
+  opacity: 0.6;
+}
+
+/*--------------------------------------------------------------
+16.0 Media Queries
+--------------------------------------------------------------*/
+/*--------------------------------------------------------------
+16.1 Small devices (landscape phones, 544px and up)
 --------------------------------------------------------------*/
 @media (min-width: 544px) {
   /* Typography: Blockquote */
@@ -2677,8 +2734,6 @@ div#respond #cancel-comment-reply-link {
   }
   /* Navigation Misc: Navigation Post */
   .post-navigation .nav-links {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .post-navigation .nav-previous,
@@ -2701,15 +2756,9 @@ div#respond #cancel-comment-reply-link {
   }
   /* Content: Author Info */
   .author-info {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    align-items: center;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
   .author-info .author-avatar {
     margin: 0;
@@ -2764,7 +2813,7 @@ div#respond #cancel-comment-reply-link {
 }
 
 /*--------------------------------------------------------------
-14.2 Medium devices (tablets, 768px and up)
+16.2 Medium devices (tablets, 768px and up)
 --------------------------------------------------------------*/
 @media (min-width: 768px) {
   /* Typography: Global */
@@ -2944,8 +2993,7 @@ div#respond #cancel-comment-reply-link {
     text-align: center;
   }
   .sf-menu ul {
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     min-width: 12em;
     /* allow long menu items to determine submenu width */
     max-width: 12em;
@@ -2975,7 +3023,6 @@ div#respond #cancel-comment-reply-link {
     padding: 1.0625rem;
     text-transform: uppercase;
     text-decoration: none;
-    -webkit-transition: all .25s ease-out;
     transition: all .25s ease-out;
   }
   .sf-menu a:hover,
@@ -3007,7 +3054,6 @@ div#respond #cancel-comment-reply-link {
     word-wrap: break-word;
     white-space: normal;
     /* no need for Supersubs plugin */
-    -webkit-transition: background .2s;
     transition: background .2s;
   }
   .sf-menu ul li {
@@ -3019,7 +3065,6 @@ div#respond #cancel-comment-reply-link {
   .sf-menu li:hover,
   .sf-menu li.sfHover {
     /* only transition out, not in */
-    -webkit-transition: none;
     transition: none;
   }
   /* Last Child Reverse */
@@ -3157,6 +3202,31 @@ div#respond #cancel-comment-reply-link {
     padding: 30px;
     padding: 1.875rem;
   }
+  /* Blocks: Block Image */
+  .wp-block-image {
+    margin-bottom: 28px;
+    margin-bottom: 1.75rem;
+  }
+  /* Blocks: Block Cover Image */
+  .wp-block-cover-image {
+    margin-bottom: 28px;
+    margin-bottom: 1.75rem;
+  }
+  /* Blocks: Block Gallery */
+  .wp-block-gallery {
+    margin: 0 0 28px 0;
+    margin: 0 0 1.75rem 0;
+  }
+  /* Blocks: Block Embed */
+  .wp-block-embed {
+    margin-bottom: 28px;
+    margin-bottom: 1.75rem;
+  }
+  /* Blocks: Block Button */
+  .wp-block-button {
+    margin-bottom: 28px;
+    margin-bottom: 1.75rem;
+  }
   /* Widgets */
   .widget {
     margin: 0 0 60px;
@@ -3212,7 +3282,7 @@ div#respond #cancel-comment-reply-link {
 }
 
 /*--------------------------------------------------------------
-14.3 Large devices (desktops, 992px and up)
+16.3 Large devices (desktops, 992px and up)
 --------------------------------------------------------------*/
 @media (min-width: 992px) {
   /* Elements: Table */
@@ -3296,7 +3366,7 @@ div#respond #cancel-comment-reply-link {
 }
 
 /*--------------------------------------------------------------
-14.4 Extra large devices (large desktops, 1200px and up)
+16.4 Extra large devices (large desktops, 1200px and up)
 --------------------------------------------------------------*/
 @media (min-width: 1200px) {
   /* Elements: Table */
