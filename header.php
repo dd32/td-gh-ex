@@ -19,7 +19,7 @@
 
 <body <?php body_class(); ?>>
 <div class="skip-link"><a href="#content" class="screen-reader-text "><?php _e( 'Skip to content', 'figureground' ); ?></a></div>
-<canvas id="figure-ground" role="img" aria-label="<?php _e( 'Solid/void dynamic background graphic', 'figureground' ); ?>"></canvas>
+<canvas id="figure-ground" role="img" aria-label="<?php esc_attr_e( 'Solid/void dynamic background graphic', 'figureground' ); ?>"></canvas>
 <?php if ( 0 < absint( get_theme_mod( 'fg_speed', 0 ) || is_customize_preview() ) ) {
 	echo '<button type="button" id="figureground-animation-toggle"  class="on"><span class="pause">'
 			. __( 'Pause', 'figureground' ) . '</span><span class="play">'

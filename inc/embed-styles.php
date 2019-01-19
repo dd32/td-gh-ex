@@ -5,8 +5,8 @@
 
 add_action( 'embed_head', 'figureground_embed_head' );
 function figureground_embed_head() {
-	$light = get_theme_mod( 'fg_color_light', '#f7f7ec' );
-	$dark = get_theme_mod( 'fg_color_dark', '#222' );
+	$light = sanitize_hex_color( get_theme_mod( 'fg_color_light', '#f7f7ec' ) );
+	$dark = sanitize_hex_color( get_theme_mod( 'fg_color_dark', '#222' ) );
 ?>
 <style type="text/css">
 	/* Figure/Ground Theme Styles for External Embeds */

@@ -21,10 +21,10 @@ get_header();
 						</li>
 						<?php $metadata = wp_get_attachment_metadata(); ?>
 						<li class="image-size">
-							<a href="<?php echo esc_url( wp_get_attachment_url() ); ?>" title="Link to full-size image"><?php echo $metadata['width']; ?> &times; <?php echo $metadata['height']; ?></a>
+							<a href="<?php echo esc_url( wp_get_attachment_url() ); ?>"><?php echo $metadata['width']; ?> &times; <?php echo $metadata['height']; ?></a>
 						</li>
 						<li class="posted-in">
-							<a href="<?php echo esc_url( get_permalink( $post->post_parent ) ); ?>" title="<?php echo __( 'Return to ', 'figureground' ) . esc_attr( strip_tags( get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php echo get_the_title( $post->post_parent ); ?></a>
+							<a href="<?php echo esc_url( get_permalink( $post->post_parent ) ); ?>" title="<?php esc_attr_e( __( 'Return to ', 'figureground' ) . strip_tags( get_the_title( $post->post_parent ) ) ); ?>" rel="gallery"><?php echo get_the_title( $post->post_parent ); ?></a>
 						</li>
 						<?php
 							if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) {

@@ -30,6 +30,13 @@
 		$( '.menu-toggle' ).on( 'click.figureground', function() {
 			nav.toggleClass( 'toggled' );
 		} );
+		
+		menu.on( 'focusout', function( event ) {
+			if ( ! $( event.relatedTarget ).parent().hasClass( 'menu-item' ) ) {
+				nav.removeClass( 'toggled' );
+			}
+		});
+
 	} )();
 
 	/**

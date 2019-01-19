@@ -10,7 +10,7 @@ function figureground_fg_colors_css() {
 	$fg_dark = get_theme_mod( 'fg_color_dark', '#222222' );
 
 	// Defaults for both, so don't need to do anything.
-	if ( 'f7f7ec' === $fg_light && '#222222' === $fg_dark && ! is_customize_preview() ) {
+	if ( '#f7f7ec' === $fg_light && '#222222' === $fg_dark && ! is_customize_preview() ) {
 		return '';
 	}
 
@@ -220,7 +220,7 @@ function figureground_fg_colors_css() {
 	header#masthead,
 	h1.site-title a,
 	.site-header .search-form label:before,
-	.menu-toggle:before,
+	.menu-toggle,
 	.main-navigation li a,
 	header.page-header,
 	.site-main article .entry-thumbnail,
@@ -320,9 +320,9 @@ function figureground_accent_colors_css() {
 		background-color: ' . $accent_light . ';
 	}
 	a,
-	.menu-toggle:focus:before,
-	.menu-toggle:hover:before,
-	.main-navigation.toggled .menu-toggle:before,
+	.menu-toggle:focus,
+	.menu-toggle:hover,
+	.main-navigation.toggled .menu-toggle,
 	.main-navigation.toggled .nav-menu:before,
 	.main-navigation li.current_page_item a,
 	.main-navigation li.current-menu-item a,
@@ -460,21 +460,6 @@ function figureground_accent_colors_css() {
 	aside.widget:nth-child(even) a:active,
 	aside.widget:nth-child(even) a:focus {
 		color: ' . $accent_dark_lightened . ';
-	}';
-
-	// Accent light that contrasts with accent dark.
-	$contrasting_accent_light = $accent_light;
-	if ( 3 > figureground_contrast_ratio( $accent_dark, $accent_light ) ) {
-		// There isn't enough contrast, so we need to adjust the chosen color.
-		// Only change the light accent color, so 3:1 contrast may not be acheived.
-		while ( 3 > figureground_contrast_ratio( $accent_dark, $contrasting_accent_light )
-				&& 0 < figureground_relative_luminance( $contrasting_accent_light ) ) {
-					$contrasting_accent_light = figureground_adjust_color( $contrasting_accent_light, -8 );
-				}
-	}
-	$css .= '
-	article.sticky .entry-content a {
-		color: ' . $contrasting_accent_light . ';
 	}';
 
 	return $css;

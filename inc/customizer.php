@@ -310,7 +310,7 @@ function figureground_custom_colors_head() {
 			'accent_color_dark' => '#990033',
 		);
 		foreach ( $colors as $color => $default ) {
-			 $data .= ' data-' . $color . '="' . get_theme_mod( $color, $default ) . '"';
+			 $data .= ' data-' . $color . '="' . esc_attr( get_theme_mod( $color, $default ) ) . '"';
 		}
 	}
 	echo '<style type="text/css" id="figureground-colors"' . $data . '>' .

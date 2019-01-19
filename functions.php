@@ -208,14 +208,14 @@ function figureground_scripts() {
 	wp_enqueue_script( 'figureground', get_template_directory_uri() . '/js/figure-ground.js', array(), '20190115', false );
 
 	// Load theme options to pass to the Figure/Ground script.
-	$type = get_theme_mod( 'fg_type', 'orthogonal' );
-	$maxh = get_theme_mod( 'fg_max_height', 256 );
-	$maxw = get_theme_mod( 'fg_max_width', 256 );
+	$type = esc_html( get_theme_mod( 'fg_type', 'orthogonal' ) );
+	$maxh = absint( get_theme_mod( 'fg_max_height', 256 ) );
+	$maxw = absint( get_theme_mod( 'fg_max_width', 256 ) );
 	$maxr = $maxw * 2 / 3;
 	$linet = 3;
-	$delay = get_theme_mod( 'fg_speed', 320 );
-	$initial = get_theme_mod( 'fg_initial', 192 );
-	$color = get_theme_mod( 'fg_color_dark', '#222' );
+	$delay = absint( get_theme_mod( 'fg_speed', 320 ) );
+	$initial = absint( get_theme_mod( 'fg_initial', 192 ) );
+	$color = sanitize_hex_color( get_theme_mod( 'fg_color_dark', '#222' ) );
 
 	// Pass data to JS.
 	$settings = array(

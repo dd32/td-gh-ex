@@ -77,6 +77,11 @@ Genericons are licensed under the terms of the GNU GPL, Version 2 (or later)
 Source: http://genericons.com
 
 == Changelog ==
+= 2.1 =
+* Additional accessibility improvements.
+* Fix color contrast patterns for sticky posts.
+* Improve menu toggle button interactions.
+
 = 2.0 =
 * Implement accessibility improvements throughout the theme. Figure/Ground is now accessibility-ready.
 * Add a new, default, "Rhombus" mode for the figure/ground animation. Adjust defaults and update customizer options accordingly.
