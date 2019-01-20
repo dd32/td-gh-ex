@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.3.2
+ * @version   1.3.3
  */
 
 /* TABLE OF CONTENT
@@ -58,12 +58,12 @@ if ( ! function_exists( 'avik_setup' ) ) :
 		add_theme_support("post-thumbnails");
 
 		// create custom size images
-		add_image_size('avik_big', 1400, 800, true);
+		add_image_size('avik_big', 1920, 1080, true);
 		add_image_size('avik_single', 750, 450, true);
 		add_image_size('avik_brand', 115, 100, true);
 		add_image_size('avik_services', 80, 80, true);
-    add_image_size('avik_team',250, 310, true);
-    add_image_size('avik_news',300, 220, true);
+        add_image_size('avik_team',250, 310, true);
+        add_image_size('avik_news',300, 220, true);
 		// create custom menus
 		register_nav_menus( array(
 			'menu-1' => esc_html__('Primary (Home)', 'avik'),

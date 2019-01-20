@@ -3,7 +3,7 @@
  *
  * author    Denis Franchi
  * package   Avik
- * version   1.3.2
+ * version   1.3.3
  */
 
 (function(api) {
@@ -28,8 +28,6 @@
             'social_contact_color',
             'hover_social_contact_color',
             'social_team_color',
-            'social_share_color',
-            'hover_social_share_color',
             'background_breadcrumbs_color',
             'background_preloader_color',
             'preloader_color',

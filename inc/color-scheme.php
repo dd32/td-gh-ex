@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.2
+* @version   1.3.3
 */
 
 class Avik_Color_Scheme {
@@ -33,7 +33,7 @@ class Avik_Color_Scheme {
 
 		$wp_customize->add_control( 'avik_color_scheme', array(
 			'label'   => __( 'Skins', 'avik' ),
-			'description'=> __('Choose the most suitable skins for your site, or change the colors as you wish','avik'),
+			'description'=> __('Choose the most suitable skins for your site, or change the colors as you wish.Note :the Avik skin can not be changed!','avik'),
 			'section' => 'colors',
 			'type'    => 'select',
 			'priority'=> 2,
@@ -60,8 +60,6 @@ class Avik_Color_Scheme {
 			'social_contact_color'            => __( 'Social contact color', 'avik' ),
 			'hover_social_contact_color'      => __( 'Hover Social contact color', 'avik' ),
 			'social_team_color'               => __( 'Social Team color', 'avik' ),
-			'social_share_color'              => __( 'Social share color', 'avik' ),
-			'hover_social_share_color'        => __( 'Hover Social share color', 'avik' ),
 			'background_breadcrumbs_color'    => __( 'Background breadcrumbs color', 'avik' ),
 			'background_preloader_color'      => __( 'Background preloader color', 'avik' ),
 			'preloader_color'                 => __( 'Preloader color', 'avik' ),
@@ -105,8 +103,6 @@ class Avik_Color_Scheme {
 		'social_contact_color',
 		'hover_social_contact_color',
 		'social_team_color',
-		'social_share_color',
-		'hover_social_share_color',
 		'background_breadcrumbs_color',
 		'background_preloader_color',
 		'preloader_color',
@@ -218,6 +214,7 @@ class Avik_Color_Scheme {
 		}
 
 		.avik-social-icons-header i:hover,
+		.avik-social-icons-video i:hover,
 		.avik-social-icons-footer i:hover{
 			color:%16$s;
 		}
@@ -234,28 +231,20 @@ class Avik_Color_Scheme {
 			color:%19$s;
 		}
 
-		.social-share i{
-			color:%20$s;
-		}
-
-		.social-share i:hover{
-			color:%21$s;
-		}
-
 		.breadcrumbs{
-			background-color: %22$s;
+			background-color: %20$s;
 		}
 
 		.avik-loader{
-			background-color: %23$s;
+			background-color: %21$s;
 		}
 
 		.loader{
-			background-color: %24$s;
+			background-color: %22$s;
 		}
 
 		body{
-			background-color: %25$s;
+			background-color: %23$s;
 		}
 
 
@@ -294,8 +283,6 @@ class Avik_Color_Scheme {
 			'social_contact_color'             => '{{ data.social_contact_color}}',
 			'hover_social_contact_color'       => '{{ data.hover_social_contact_color}}',
 			'social_team_color'                => '{{ data.social_team_color}}',
-			'social_share_color'               => '{{ data.social_share_color}}',
-			'hover_social_share_color'         => '{{ data.hover_social_share_color}}',
 			'background_breadcrumbs_color'     => '{{ data.background_breadcrumbs_color}}',
 			'background_preloader_color'       => '{{ data.background_preloader_color}}',
 			'preloader_color'                  => '{{ data.preloader_color}}',
@@ -368,8 +355,6 @@ class Avik_Color_Scheme {
 					'#363636',  // 17 Social contact color
 					'#838383',  // 18 Hover social contact color
 					'#fff',     // 19 Social team color
-					'#6b6868',  // 20 Social share color
-					'#000',     // 21 Hover social share color
 					'#f6f6f6',  // 22 Background breadcrumbs color
 					'#000',     // 23 Background preloader color
 					'#fff',     // 24 Preloader color
@@ -399,8 +384,6 @@ class Avik_Color_Scheme {
 					'#8500b2',  // 17 Social contact color
 					'#000',     // 18 Hover social contact color
 					'#8500b2',  // 19 Social team color
-					'#8500b2',  // 20 Social share color
-					'#000',     // 21 Hover social share color
 					'#f7f4ff',  // 22 Background breadcrumbs color
 					'#fff',     // 23 Background preloader color
 					'#8500b2',  // 24 Preloader color
@@ -430,8 +413,6 @@ class Avik_Color_Scheme {
 					'#00a31d',  // 17 Social contact color
 					'#000',     // 18 Hover social contact color
 					'#00a31d',  // 19 Social team color
-					'#00a31d',  // 20 Social share color
-					'#000',     // 21 Hover social share color
 					'#f3fff2',  // 22 Background breadcrumbs color
 					'#000',     // 23 Background preloader color
 					'#00a31d',  // 24 Preloader color
@@ -461,8 +442,6 @@ class Avik_Color_Scheme {
 					'#dd0000',  // 17 Social contact color
 					'#000',     // 18 Hover social contact color
 					'#dd0000',  // 19 Social team color
-					'#dd0000',  // 20 Social share color
-					'#000',     // 21 Hover social share color
 					'#f7f7f7',  // 22 Background breadcrumbs color
 					'#000',     // 23 Background preloader color
 					'#dd0000',  // 24 Preloader color
@@ -492,8 +471,6 @@ class Avik_Color_Scheme {
 					'#f1cdf7',  // 17 Social contact color
 					'#000',     // 18 Hover social contact color
 					'#f1cdf7',  // 19 Social team color
-					'#f1cdf7',  // 20 Social share color
-					'#000',     // 21 Hover social share color
 					'#efdcf7',  // 22 Background breadcrumbs color
 					'#b9eae8',  // 23 Background preloader color
 					'#efdcf7',  // 24 Preloader color

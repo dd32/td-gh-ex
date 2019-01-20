@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.2
+* @version   1.3.3
 */
 
 if ( post_password_required() ) {

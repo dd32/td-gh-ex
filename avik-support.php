@@ -5,7 +5,7 @@
 *
 * @package Avik
 *
-*  @version   1.3.2
+*  @version   1.3.3
 */
 ?>
 
@@ -35,7 +35,7 @@ background-position: center center;background-size: cover;" >
 			<br>
 			<?php esc_html_e('For a complete experience, go to the','avik');?>
 		<button class="avik-button-admin-support"><a target="_blank" class="avik-button" href="<?php echo esc_url('https://www.denisfranchi.com/avik-pro-10-0-0/' ); ?>"><?php esc_html_e('Pro Version', 'avik'); ?></a></button></p>
-			<div class="avik-update"><p><b><?php esc_html_e('Avik Version: 1.3.2','avik');?></b> <button class="avik-button-admin-support"><a target="_blank" class="avik-button" href="<?php echo esc_url( 'https://www.denisfranchi.com/avik-1-2-7/' ); ?>"><?php esc_html_e('Update details', 'avik'); ?></a></button></div></p>
+			<div class="avik-update"><p><b><?php esc_html_e('Avik Version: 1.3.3','avik');?></b> <button class="avik-button-admin-support"><a target="_blank" class="avik-button" href="<?php echo esc_url( 'https://www.denisfranchi.com/avik-1-2-7/' ); ?>"><?php esc_html_e('Update details', 'avik'); ?></a></button></div></p>
 	</div>
 	<!-- Guides -->
 	<div id="GUIDES" class="tabcontent">
@@ -424,7 +424,7 @@ background-position: center center;background-size: cover;" >
 					<tr>
 						<td></td>
 						<td><div class="avik-no-button-free"></div></td>
-						<td><a href="https://www.denisfranchi.com/avik-pro-10-0-0/" class="price-buy" target="_blank"><?php esc_html_e('GO PRO','avik');?><span class="hide-mobile"></span></a></td>
+						<td><a href="<?php echo esc_url('https://www.denisfranchi.com/avik-pro-10-0-0/');?>" class="price-buy" target="_blank"><?php esc_html_e('GO PRO','avik');?><span class="hide-mobile"></span></a></td>
 					</tr>
 				</tbody>
 			</table>
@@ -443,7 +443,7 @@ background-position: center center;background-size: cover;" >
 		<a class="avik-link-pro-version" href="<?php echo esc_url( 'https://www.denisfranchi.com/avik-pro/' ); ?>" target="_blank">
 			<?php esc_html_e( 'Pro Version', 'avik' ); ?></a>
 			<?php esc_html_e(', and you need to register (create an account) and open a ticket in the Avik Section.', 'avik'); ?></p>
-		<button class="avik-button-admin-support"><a class="avik-button" href="<?php echo esc_url( 'https://www.denisfranchi.com/comunity/index.php' ); ?>" target="_blank"><?php esc_html_e('Open Forum', 'avik'); ?></a></button>
+		<button class="avik-button-admin-support"><a class="avik-button" href="<?php echo esc_url( 'https://www.denisfranchi.com/community/index.php' ); ?>" target="_blank"><?php esc_html_e('Open Forum', 'avik'); ?></a></button>
 	</div>
 </div>
 <script>

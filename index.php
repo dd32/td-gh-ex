@@ -4,10 +4,10 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.2
+* @version   1.3.3
 */
 
-get_header();
+get_header('post');
 ?>
 
 <div id="primary" class="content-area">
