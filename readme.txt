@@ -71,6 +71,9 @@ Source: https://stocksnap.io/photo/SWR31HJ4D8
 
 
 == Changelog ==
+= Version 1.0.2 2019-01-21 =
+* add review issues fix
+
 = Version 1.0.1 2019-01-21 =
 * quick review issues fix
 
