@@ -23,28 +23,27 @@ if( !function_exists('academic_hub_file_directory') ){
 /*=========================================================================
  * Breadcrumb Trail - A breadcrumb menu script for WordPress.
 ==========================================================================*/
-require academic_hub_file_directory('academic-hub/compatibility/class-breadcrumb-trail.php');
-
+load_template(trailingslashit( get_template_directory() ) . 'academic-hub/compatibility/class-breadcrumb-trail.php');
 
 /*=========================================================================
 =                         Core File Require
 ==========================================================================*/
-require academic_hub_file_directory('academic-hub/core/custom-header.php');
-require academic_hub_file_directory('academic-hub/core/template-tags.php');
-require academic_hub_file_directory('academic-hub/core/template-functions.php');
-require academic_hub_file_directory('academic-hub/core/customizer.php');
+load_template(trailingslashit( get_template_directory() ) . 'academic-hub/core/custom-header.php');
+load_template(trailingslashit( get_template_directory() ) . 'academic-hub/core/template-tags.php');
+load_template(trailingslashit( get_template_directory() ) . 'academic-hub/core/template-functions.php');
+load_template(trailingslashit( get_template_directory() ) . 'academic-hub/core/customizer.php');
 
  /**============================================================================
  * =                     Academic Hub Action Hooks
  * =============================================================================*/
-require academic_hub_file_directory('academic-hub/hooks/academic-huc-action-hooks.php');
-require academic_hub_file_directory('academic-hub/hooks/theme-hooks.php');
+load_template(trailingslashit( get_template_directory() ) . 'academic-hub/hooks/academic-huc-action-hooks.php');
+load_template(trailingslashit( get_template_directory() ) . 'academic-hub/hooks/theme-hooks.php');
 
  /**============================================================================
  * =                             Plugin Activation 
  * =============================================================================*/
-require academic_hub_file_directory('academic-hub/tgm-plugin-activation/class-tgm-plugin-activation.php');
-require academic_hub_file_directory('academic-hub/tgm-plugin-activation/plugin-required-list.php');
+load_template(trailingslashit( get_template_directory() ) . 'academic-hub/tgm-plugin-activation/class-tgm-plugin-activation.php');
+load_template(trailingslashit( get_template_directory() ) . 'academic-hub/tgm-plugin-activation/plugin-required-list.php');
 
 /**============================================================================
  * =                        define theme version
@@ -58,7 +57,8 @@ if ( ! defined( 'ACADEMIC_THEME_VERSION' ) ) {
 /**============================================================================
  * =                     Core Excerpt
  * =============================================================================*/
-require academic_hub_file_directory('academic-hub/core/excerpt.php');
+load_template(trailingslashit( get_template_directory() ) . 'academic-hub/core/excerpt.php');
+
 
 
 
@@ -66,4 +66,4 @@ require academic_hub_file_directory('academic-hub/core/excerpt.php');
 /**============================================================================
  * =                     Core Excerpt
  * =============================================================================*/
-require academic_hub_file_directory('academic-hub/template-functions.php');
+load_template(trailingslashit( get_template_directory() ) . 'academic-hub/template-functions.php');

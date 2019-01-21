@@ -10,7 +10,7 @@
 get_header(); 
 
 if ( 'posts' == get_option( 'show_on_front' ) ) { //Show Static Blog Page
-    include( get_home_template() );
+    load_template(get_home_template());
     
 }else{ 
 

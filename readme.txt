@@ -1,8 +1,8 @@
 === Academic Hub ===
 Author: Podamibe Nepal
 Requires at least: WordPress 5.0.2
-Tested up to: WordPress 4.9
-Version: 1.0.0
+Tested up to: WordPress 5.0
+Version: 1.0.1
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags:  blog, one-column,right-sidebar,custom-background, custom-header, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready,editor-style
@@ -66,13 +66,14 @@ Images used in Screenshot of Academic Hub theme:
 Logo, Copyright © 2018, Podamibe Nepal
 License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
 
-License: CC0 Public Domain, https://pixabay.com/en/service/terms/#usage
-Source: https://pixabay.com/en/people-academic-book-books-2941951/
-
-License: CC0 Public Domain, https://pixabay.com/en/service/terms/#usage
-Source:https://pixabay.com/en/library-study-of-classmate-academic-1822683/
+License: CC0 Public Domain
+Source: https://stocksnap.io/photo/SWR31HJ4D8
 
 
 == Changelog ==
+= Version 1.0.1 2019-01-21 =
+* quick review issues fix
+
 = Version 1.0.0 2019-01-03 =
 * Initial release
+

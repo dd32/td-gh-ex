@@ -79,7 +79,7 @@ if( ! class_exists( 'Academic_Hub_Repeater_Control' ) ) {
     		$this->row_label( $args );
     
     		if ( empty( $this->button_label ) ) {
-    			$this->button_label = sprintf( esc_attr__( 'Add new %s', 'academic-hub' ), $this->row_label['value'] );
+    			$this->button_label = sprintf( esc_attr__( 'Add new %s', 'academic-hub' ), esc_attr( $this->row_label['value'] ) );
     		}
     
     		if ( empty( $args['fields'] ) || ! is_array( $args['fields'] ) ) {
@@ -506,7 +506,8 @@ if( ! class_exists( 'Academic_Hub_Repeater_Control' ) ) {
     	}
         
         function get_icon_list(){
-    	    $icons = include wp_normalize_path( get_template_directory() . '/academic-hub/customizer/fontawesome.php' ); 
+			
+    	    $icons =  wp_normalize_path( load_template( get_template_directory() . '/academic-hub/customizer/fontawesome.php' )); 
             if( $icons ){ ?>
             <div class="font-awesome-list-template">
                 <div class="font-awesome-list">

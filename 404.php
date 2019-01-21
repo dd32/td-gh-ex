@@ -15,16 +15,45 @@ get_header();
 		<div id="primary" class="content-area">
 			<main id="main" class="site-main">
 				<?php academic_hub_content_top(); ?>
+						<section class="error-404 not-found">
+							<header class="page-header">
+								<h1 class="page-title"><?php echo esc_html__( 'Oops! That page can&rsquo;t be found.', 'academic-hub' ); ?></h1>
+							</header><!-- .page-header -->
 
-					<section class="error-404 not-found">
-						<div class="page-content">
-							<div class="page-not-found text-center academic-title">
-								<h1><?php echo esc_html__( '404 Page Not Found', 'academic-hub' ); ?></h1>
-								<p><?php echo esc_html__( 'The page you were looking for appears to have been moved, deleted or does not exist. You could go back to where you were.', 'academic-hub' ); ?></p>
-								<p><?php esc_html_e( 'Try searching or ', 'academic-hub' ); ?><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_html_e( 'Go back to Home', 'academic-hub' ); ?></a></p>
-							</div>
-						</div><!-- .page-content -->
-					</section><!-- .error-404 -->
+							<div class="page-content">
+								<p><?php echo esc_html__( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'academic-hub' ); ?></p>
+
+								<?php
+								get_search_form();
+
+								the_widget( 'WP_Widget_Recent_Posts' );
+								?>
+
+								<div class="widget widget_categories">
+									<h2 class="widget-title"><?php echo esc_html__( 'Most Used Categories', 'academic-hub' ); ?></h2>
+									<ul>
+										<?php
+										wp_list_categories( array(
+											'orderby'    => 'count',
+											'order'      => 'DESC',
+											'show_count' => 1,
+											'title_li'   => '',
+											'number'     => 10,
+										) );
+										?>
+									</ul>
+								</div><!-- .widget -->
+
+								<?php
+								/* translators: %1$s: smiley */
+								$academic_hub_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'academic-hub' ), convert_smilies( ':)' ) ) . '</p>';
+								the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$academic_hub_archive_content" );
+
+								the_widget( 'WP_Widget_Tag_Cloud' );
+								?>
+
+							</div><!-- .page-content -->
+						</section><!-- .error-404 -->
 				<?php academic_hub_content_bottom(); ?>
 
 			</main><!-- #main -->

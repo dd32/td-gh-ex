@@ -33,14 +33,14 @@ $academic_hub_author_post_count = count_user_posts( $academic_hub_author_id );
     <div class="tg-author-meta">
         <?php if ( $academic_hub_author_url ) : ?>
             <div class="tg-author__website">
-                <span><?php esc_html_e( 'Website', 'academic-hub' ); ?></span>
+                <span><?php echo esc_html__( 'Website', 'academic-hub' ); ?></span>
                 <a href="<?php echo esc_url( $academic_hub_author_url ); ?>" target="_blank"><?php echo esc_url( $academic_hub_author_url ); ?></a>
             </div><!-- .tg-author-website -->
         <?php endif; ?>
 
         <?php if ( $academic_hub_author_post_count ) : ?>
             <div class="tg-author__post-count">
-                <span><?php esc_html_e( 'Posts created', 'academic-hub' ); ?></span>
+                <span><?php echo esc_html__( 'Posts created', 'academic-hub' ); ?></span>
                 <strong><?php echo intval( $academic_hub_author_post_count ); ?></strong>
             </div><!-- .tg-author-post-count -->
         <?php endif; ?>

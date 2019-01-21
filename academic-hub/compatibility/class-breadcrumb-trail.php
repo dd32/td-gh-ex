@@ -206,7 +206,7 @@ class Breadcrumb_Trail {
 		$breadcrumb = apply_filters( 'breadcrumb_trail', $breadcrumb, $this->args );
 		if ( false === $this->args['echo'] )
 			return $breadcrumb;
-		echo $breadcrumb;
+		echo wp_kses_post( $breadcrumb );
 	}
 	/* ====== Protected Methods ====== */
 	/**

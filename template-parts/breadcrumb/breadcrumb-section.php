@@ -9,13 +9,6 @@
 if ( is_front_page() || is_home() ) {
 	return;
 }
-
-// If file is not already loaded, loaded it now.
-if ( ! function_exists( 'breadcrumb_trail' ) ) {
-	include get_template_directory() . '/inc/compatibility/breadcrumb.php';
-}
-
-
 ?>
 <!-- Academic Hub Breadcrumb  -->
 <nav id="breadcrumb" class="academic-hub-breadcrumb academic-hub-breadcrumb--light">

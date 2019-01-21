@@ -14,12 +14,12 @@ $academic_hub_sub_sections = array(
 );
 
 foreach( $academic_hub_panels as $panel ){
-   require trailingslashit( get_template_directory() ) . 'academic-hub/customizer/panels/' . $panel . '.php';
+    load_template(trailingslashit( get_template_directory() ) . 'academic-hub/customizer/panels/' . $panel . '.php');
 }
 
 foreach( $academic_hub_sub_sections as $k => $v ){
-    foreach( $v as $w ){        
-        require trailingslashit( get_template_directory() ) . 'academic-hub/customizer/panels/' . $k . '/' . $w . '.php';
+    foreach( $v as $w ){    
+        load_template(trailingslashit( get_template_directory() ) . 'academic-hub/customizer/panels/' . $k . '/' . $w . '.php');
     }
 }
 
@@ -44,6 +44,5 @@ add_action( 'customize_controls_enqueue_scripts', 'academic_hub_customizer_scrip
 /**
  * Sanitize callback for checkbox
 */
-require trailingslashit( get_template_directory() ) . 'academic-hub/customizer/sanitization-functions.php';
-require trailingslashit( get_template_directory() ) . 'academic-hub/customizer/customizer-callback.php';
-
+load_template(trailingslashit( get_template_directory() ) . 'academic-hub/customizer/sanitization-functions.php');
+load_template(trailingslashit( get_template_directory() ) . 'academic-hub/customizer/customizer-callback.php');
