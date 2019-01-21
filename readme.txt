@@ -1,5 +1,5 @@
 ﻿Theme Name : Awaken
-Version    : 2.1.9
+Version    : 2.2.0
 Theme URL  : http://www.themezhut.com/themes/awaken
 Theme Documentation  : http://www.themezhut.com/awaken-theme-documentation
 License: GNU General Public License v2 or later
@@ -235,3 +235,6 @@ Changed HEADER_TEXTCOLOR to use add_theme_support('custom-header).
 - Version 2.1.9
 * Updated Popular Posts, Comments, Tags widget to display only approved comments.
 * Used (document).ready() method instead of (window).load() method for slider.
+
+- Version 2.2.0
+* Added Gutenberg Support

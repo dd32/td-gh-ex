@@ -4,7 +4,7 @@ Theme URI: http://themezhut.com/themes/awaken
 Author: ThemezHut
 Author URI: http://themezhut.com/
 Description: Awaken WordPress theme is an elegant magazine/news WordPress theme. It has a magazine layout with two main widget areas. And the theme is featured with three post widgets to display posts in different styles. This theme consists with a responsive layout which is created using twitter bootstrap. Some of the main features of this theme are theme customizer, featured slider, ad widgets, youtube video widget and social media. Find more information about this theme at http://www.themezhut.com/themes/awaken. View the demonstration at http://www.themezhut.com/demo/awaken.
-Version: 2.1.9
+Version: 2.2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: awaken
@@ -37,7 +37,8 @@ Awaken is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic,
 11.0 - Infinite scroll
 12.0 - Media
 	12.1 - Captions
-	12.2 - Galleries
+  12.2 - Galleries
+13.0 - Gutenberg Blocks
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
 1.0 - Reset
@@ -329,7 +330,7 @@ table {
 }
 
 th {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   font-size: 14px;
   font-size: 1.4rem;
   background: #f8f8f8;
@@ -2857,3 +2858,149 @@ a.woocommerce-review-link:hover {
 .woocommerce ul.products li.product h3 {
     color: #353434;
 }
+
+/*--------------------------------------------------------------
+13.0 - Gutenberg Blocks
+--------------------------------------------------------------*/
+
+.wp-block-quote {
+  font-size: 16px;
+  padding: 1.5em;
+  margin: 1.5em 0;
+  background: #f8f8f8;
+  border-left: 2px solid #fa5742;
+}
+
+.wp-block-quote:not(.is-large):not(.is-style-large) {
+  border-left: 2px solid #fa5742;
+  padding-left: 1.5em;
+}
+
+.wp-block-quote.is-large, .wp-block-quote.is-style-large {
+  padding: 1.5em;
+  margin: 1.5em 0;
+}
+
+.wp-block-quote.is-large p {
+  font-size: 21px;
+  font-style: normal;
+}
+
+.wp-block-quote cite, .wp-block-quote footer, .wp-block-quote__citation,
+.wp-block-quote .wp-block-quote__citation {
+  color: inherit;
+  display: block;
+  font-size: inherit;
+  font-style: normal;
+  font-weight: normal;
+  margin-top: 1em;
+}
+
+.wp-block-quote cite, .wp-block-quote footer, .wp-block-quote__citation {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.wp-block-quote.is-large cite, .wp-block-quote footer, .wp-block-quote__citation {
+  margin-top: 1em;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.wp-block-quote.is-large cite, .wp-block-quote.is-large footer, .wp-block-quote.is-style-large cite, .wp-block-quote.is-style-large footer {
+  text-align: left;
+}
+
+.wp-block-quote.alignleft p,
+.wp-block-quote.alignright p,
+.wp-block-quote.alignleft .wp-block-quote__citation,
+.wp-block-quote.alignright .wp-block-quote__citation {
+  font-size: 14px;
+}
+
+.wp-block-quote.alignleft p:last-of-type,
+.wp-block-quote.alignright p:last-of-type {
+  margin-bottom: 0;
+}
+
+/* Pullquote */
+.wp-block-pullquote {
+  border: 0;
+  line-height: 1.6;
+}
+
+.wp-block-pullquote p {
+  margin-bottom: 0.8em;
+}
+
+.wp-block-pullquote.alignleft p,
+.wp-block-pullquote.alignright p {
+  font-size: 18px;
+  margin-bottom: 0.8em;
+}
+
+.wp-block-pullquote .wp-block-pullquote__citation {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: none;
+  margin-top: 1em;
+}
+
+/* Cover Image */
+.wp-block-cover .wp-block-cover-text p {
+  font-size: 2em;
+  padding: 1em;
+}
+
+.wp-block-cover.alignleft p,
+.wp-block-cover.alignright p {
+  font-size: 1.4em;
+  padding: 1em;
+}
+
+.wp-block-pullquote cite,
+.wp-block-pullquote footer,
+.wp-block-pullquote__citation {
+  font-size: 14px;
+  font-weight: bold;
+  text-transform: none;
+  margin-top: 1em;
+}
+
+ul.wp-block-gallery,
+ol.wp-block-gallery {
+  margin: 0;
+  padding-left: 0;
+}
+
+.wp-block-pullquote {
+  border-top: none;
+  border-bottom: none;
+  color: inherit;
+  padding: 0;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: none;
+}
+
+.wp-block-pullquote.alignleft {
+  margin-right: 25px;
+}
+
+.wp-block-pullquote.alignright {
+  margin-left: 25px;
+}
+
+.wp-block-separator {
+  background-color: #cccccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
+}
+
+.wp-block-table td,
+.wp-block-table th {
+  border: 1px solid #ededed;
+  padding: 8px 15px;
+}
+

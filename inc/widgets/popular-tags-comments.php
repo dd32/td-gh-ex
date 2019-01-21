@@ -138,7 +138,9 @@ class Awaken_Tabbed_Widget extends WP_Widget {
                     </a>                               
 				</figure> 
 				<span class="awaken_comment_author"><?php echo get_comment_author( $comment->comment_ID ); ?> </span> - <span class="awaken_comment_post"><?php echo get_the_title($comment->comment_post_ID); ?></span>
-				<?php echo '<p class="acmmnt-body">' . $comment->comment_content . '</p>'; ?>
+				<p class="acmmnt-body">
+					<?php comment_excerpt( $comment->comment_ID ); ?>
+				</p>
 				</div>
 			<?php }
 		} else {

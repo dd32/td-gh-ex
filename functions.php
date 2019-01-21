@@ -61,13 +61,14 @@ function awaken_setup() {
 
 	add_editor_style( array( 'editor-style.css', awaken_fonts_url() ) );
 
-	/*
-	 * Enable support for Post Formats.
-	 * See http://codex.wordpress.org/Post_Formats
-	 */
-	/*add_theme_support( 'post-formats', array(
-		'aside', 'image', 'video', 'quote', 'link',
-	) );*/
+	// Load regular editor styles into the new block-based editor.
+	add_theme_support( 'editor-styles' );
+
+ 	// Load default block styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
 
 	// Setup the WordPress core custom background feature.
 	add_theme_support( 'custom-background', apply_filters( 'awaken_custom_background_args', array(
@@ -358,7 +359,7 @@ function awaken_fonts_url() {
             'subset' => urlencode( 'latin,latin-ext' ),
         );
  
-        $fonts_url = add_query_arg( $query_args, '//fonts.googleapis.com/css' );
+        $fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
     }
  
     return $fonts_url;
@@ -370,6 +371,19 @@ function awaken_font_styles() {
     wp_enqueue_style( 'awaken-fonts', awaken_fonts_url(), array(), null );
 }
 add_action( 'wp_enqueue_scripts', 'awaken_font_styles' );
+
+/**
+ * Enqueue editor styles for Gutenberg
+ *
+ * @since Awaken 2.2.0
+ */
+function awaken_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'awaken-block-editor-style', get_theme_file_uri( '/css/editor-blocks.css' ) );
+	// Add custom fonts.
+	wp_enqueue_style( 'awaken-fonts', awaken_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'awaken_block_editor_styles' );
 
 /**
 * Enqueue awaken options panel custom css.
