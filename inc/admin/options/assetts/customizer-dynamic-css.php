@@ -75,7 +75,6 @@ function igthemes_add_daynamic_css() {
     .widget-area .widget,
     .hentry,
     .comment-body,
-    .home .portfolio,
     .home .testimonials {
         background: '. igthemes_color_brightness($bg_color,15 ).';
         border: 1px solid '. igthemes_color_brightness($bg_color,-20 ).';
@@ -95,8 +94,6 @@ function igthemes_add_daynamic_css() {
         background: '. igthemes_color_brightness(get_theme_mod('footer_background_color', $footer_background_color ),-5 ).';
         border: 1px solid '. igthemes_color_brightness(get_theme_mod('footer_background_color', $footer_background_color ),5 ).';
     }
-    .home .portfolio h2.title,
-    .home .testimonials h2.title,
     .header-widget-region .widget .widget-title,
     .widget-area .widget .widget-title {
         background: '. igthemes_color_brightness($bg_color,-5 ).';

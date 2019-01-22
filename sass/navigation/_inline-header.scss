@@ -1,10 +1,10 @@
 //inline header
-@include media(769px) {
+@media screen and (min-width:769px) {
     .site-header {
         .header-content {
             .site-branding {
                 &.inline {
-                    @include span-columns(6);
+                    @include span(6/12);
                     @include padding($base__spacing);
                     float: left;
                 }
@@ -12,8 +12,7 @@
             //header navigation
             .header-nav {
                 &.inline {
-                    @include span-columns(6);
-                    @include omega();
+                    @include span(6/12);
                     float: right;
                     background: none;
                     @include padding($big__spacing $base__spacing);
@@ -86,10 +85,10 @@
         }
     }
 }
-@include media(max-width 768px) {
+@media screen and (max-width:768px) {
     .site-branding {
         &.inline {
-            @include span-columns(12);
+            @include column(6/12);
             @include padding($base__spacing);
             @include margin(0);
             float: left;
@@ -97,7 +96,7 @@
      }
     .header-nav {
         &.inline {
-            @include span-columns(12);
+            @include column(12/12);
             @include padding(0);
             background: none;
             ul {

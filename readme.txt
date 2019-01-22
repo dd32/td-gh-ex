@@ -2,7 +2,7 @@
 Contributors: iografica
 Requires at least: 4.4
 Tested up to: 4.5
-Version: 2.12
+Version: 2.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, footer-widgets, full-width-template, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce
@@ -298,3 +298,7 @@ All Javascript is located in /js/ with license headers where appropriate.
 
 == 2.12 ==
 * Minor fix.
+
+== 2.13 ==
+* Updated grid system.
+* Fixed customizer minor issue.
