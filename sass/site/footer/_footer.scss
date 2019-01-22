@@ -18,17 +18,18 @@
     }
     .site-info {
         text-align: center;
-        @include margin($base__spacing);
-        @include padding(0);
+        @include margin(0);
+        @include padding($base__spacing);
     }
     .footer-text {
-        @extend .site-info;
+        text-align: center;
         @include margin(0);
-        @include padding(0);;
+        @include padding(0);
     }
     .scroll-top {
         text-align: center;
         @include padding(0);
+        @include margin(30px 15px 15px 15px);
         #scrolltop {
             border: 1px solid $color__gray;
             @include font-size(1.1);

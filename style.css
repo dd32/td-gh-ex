@@ -4,7 +4,7 @@ Theme URI: https://iograficathemes.com/wordpress-themes/base-wp/
 Author: iografica
 Author URI: https://www.iograficathemes.com/
 Description: Base WP is a beautiful responsive, elegant and clean coded WordPress theme that can be used for pesonal, business or ecommerce websites. Base WP is e-commerce, multilingual ready, SEO friendly and cross-browser compatible. The theme is fully integrated with the most popular and free Wordpress plugins like WooCommerce, Easy Digital Downloads, Yoast Seo, Beaver Builder, Elementor and much more. You can customize Base WP via the Customizer and use this theme as an ecommerce or as a simple blogging platform.
-Version: 2.12
+Version: 2.13
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: base-wp
@@ -41,14 +41,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
     ## Captions
     ## Galleries
-/*------------------------------------------------------------*/
-html {
-  box-sizing: border-box; }
-
-*, *::after, *::before {
-  box-sizing: inherit; }
-
-/*--------------------------------------------------------------*/
+--------------------------------------------------------------*/
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -140,6 +133,7 @@ figure {
   margin: 0; }
 
 hr {
+  -webkit-box-sizing: content-box;
   box-sizing: content-box;
   height: 0; }
 
@@ -154,13 +148,14 @@ samp {
   font-size: 1em; }
 
 button, .woocommerce #respond input#submit.alt,
-.woocommerce a.button.alt, .woocommerce input.button.alt, .woocommerce button.button.alt,
-.woocommerce .button.alt.edd-submit, .woocommerce a.button,
+.woocommerce a.button.alt,
+.woocommerce input.button.alt,
+.woocommerce button.button.alt, .woocommerce .button.alt.edd-submit, .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button,
 .woocommerce #respond input#submit, .edd-submit,
 #edd-purchase-button,
-input[type="submit"].edd-submit,
+input.edd-submit[type="submit"],
 input,
 optgroup,
 select,
@@ -170,58 +165,61 @@ textarea {
   margin: 0; }
 
 button, .woocommerce #respond input#submit.alt,
-.woocommerce a.button.alt, .woocommerce input.button.alt, .woocommerce button.button.alt,
-.woocommerce .button.alt.edd-submit, .woocommerce a.button,
+.woocommerce a.button.alt,
+.woocommerce input.button.alt,
+.woocommerce button.button.alt, .woocommerce .button.alt.edd-submit, .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button,
 .woocommerce #respond input#submit, .edd-submit,
 #edd-purchase-button,
-input[type="submit"].edd-submit {
+input.edd-submit[type="submit"] {
   overflow: visible; }
 
 button, .woocommerce #respond input#submit.alt,
-.woocommerce a.button.alt, .woocommerce input.button.alt, .woocommerce button.button.alt,
-.woocommerce .button.alt.edd-submit, .woocommerce a.button,
+.woocommerce a.button.alt,
+.woocommerce input.button.alt,
+.woocommerce button.button.alt, .woocommerce .button.alt.edd-submit, .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button,
 .woocommerce #respond input#submit, .edd-submit,
 #edd-purchase-button,
-input[type="submit"].edd-submit,
+input.edd-submit[type="submit"],
 select {
   text-transform: none; }
 
 button, .woocommerce #respond input#submit.alt,
-.woocommerce a.button.alt, .woocommerce input.button.alt, .woocommerce button.button.alt,
-.woocommerce .button.alt.edd-submit, .woocommerce a.button,
+.woocommerce a.button.alt,
+.woocommerce input.button.alt,
+.woocommerce button.button.alt, .woocommerce .button.alt.edd-submit, .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button,
 .woocommerce #respond input#submit, .edd-submit,
 #edd-purchase-button,
-input[type="submit"].edd-submit,
+input.edd-submit[type="submit"],
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   -webkit-appearance: button;
   cursor: pointer; }
 
-button[disabled],
-.woocommerce [disabled].button.alt.edd-submit, .woocommerce a[disabled].button,
-.woocommerce button[disabled].button,
-.woocommerce input[disabled].button,
-.woocommerce #respond input[disabled]#submit, [disabled].edd-submit,
-[disabled]#edd-purchase-button,
-input[disabled][type="submit"].edd-submit,
+button[disabled], .woocommerce .button.alt.edd-submit[disabled], .woocommerce a.button[disabled],
+.woocommerce button.button[disabled],
+.woocommerce input.button[disabled],
+.woocommerce #respond input#submit[disabled], .edd-submit[disabled],
+#edd-purchase-button[disabled],
+input.edd-submit[disabled][type="submit"],
 html input[disabled] {
   cursor: default; }
 
 button::-moz-focus-inner, .woocommerce #respond input#submit.alt::-moz-focus-inner,
-.woocommerce a.button.alt::-moz-focus-inner, .woocommerce input.button.alt::-moz-focus-inner, .woocommerce button.button.alt::-moz-focus-inner,
-.woocommerce .button.alt.edd-submit::-moz-focus-inner, .woocommerce a.button::-moz-focus-inner,
+.woocommerce a.button.alt::-moz-focus-inner,
+.woocommerce input.button.alt::-moz-focus-inner,
+.woocommerce button.button.alt::-moz-focus-inner, .woocommerce .button.alt.edd-submit::-moz-focus-inner, .woocommerce a.button::-moz-focus-inner,
 .woocommerce button.button::-moz-focus-inner,
 .woocommerce input.button::-moz-focus-inner,
 .woocommerce #respond input#submit::-moz-focus-inner, .edd-submit::-moz-focus-inner,
 #edd-purchase-button::-moz-focus-inner,
-input[type="submit"].edd-submit::-moz-focus-inner,
+input.edd-submit[type="submit"]::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0; }
@@ -231,6 +229,7 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   padding: 0; }
 
@@ -272,142 +271,467 @@ th {
 --------------------------------------------------------------*/
 @media screen and (min-width: 769px) {
   .grid-container {
-    content: "";
-    display: table;
-    table-layout: fixed;
-    max-width: 1190px;
+    width: auto;
+    max-width: 1200px;
+    float: none;
+    display: block;
+    margin-right: auto;
     margin-left: auto;
-    margin-right: auto; }
+    padding-left: 0;
+    padding-right: 0; }
+    .grid-container::after {
+      content: '';
+      display: table;
+      clear: both; }
   .col2 {
     float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%; }
+    clear: none;
+    text-align: inherit;
+    width: 48.5%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .col2::after {
+      content: '';
+      display: table;
+      clear: both; }
     .col2:last-child {
-      margin-right: 0; }
-    .col2:nth-child(2n) {
-      margin-right: 0; }
-    .col2:nth-child(2n+1) {
-      clear: left; }
+      margin-right: 0%; }
   .col3 {
     float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 31.76157%; }
+    clear: none;
+    text-align: inherit;
+    width: 31.33333%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .col3::after {
+      content: '';
+      display: table;
+      clear: both; }
     .col3:last-child {
-      margin-right: 0; }
-    .col3:nth-child(3n) {
-      margin-right: 0; }
-    .col3:nth-child(3n+1) {
-      clear: left; }
+      margin-right: 0%; }
   .col4 {
     float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 23.23176%; }
+    clear: none;
+    text-align: inherit;
+    width: 22.75%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .col4::after {
+      content: '';
+      display: table;
+      clear: both; }
     .col4:last-child {
-      margin-right: 0; }
-    .col4:nth-child(4n) {
-      margin-right: 0; }
-    .col4:nth-child(4n+1) {
-      clear: left; }
-  .omega {
-    margin-right: 0; }
+      margin-right: 0%; }
   .focused {
-    padding-left: 9em;
-    padding-right: 9em; } }
-
-/*--------------------------------------------------------------
-# Layout
---------------------------------------------------------------*/
-@media screen and (min-width: 769px) {
-  .site-content {
-    content: "";
-    display: table;
-    table-layout: fixed;
-    max-width: 1190px;
-    margin-left: auto;
+    width: auto;
+    max-width: 980px;
+    float: none;
+    display: block;
     margin-right: auto;
-    display: block;
-    clear: both; }
-  .content-area {
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0; }
+    .focused::after {
+      content: '';
+      display: table;
+      clear: both; } }
+
+@media screen and (min-width: 769px) {
+  .column-one {
     float: left;
-    display: block;
-    width: 68.23843%; }
-    .content-area:last-child {
-      width: 65.88078%; }
-  .widget-area {
+    clear: none;
+    text-align: inherit;
+    width: 5.58333%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .column-one::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .column-one:last-child {
+      margin-right: 0%; }
+  .column-two {
     float: left;
-    display: block;
-    width: 34.11922%; }
-    .widget-area:last-child {
-      width: 31.76157%; }
-  .sidebar-left .content-area {
+    clear: none;
+    text-align: inherit;
+    width: 14.16667%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .column-two::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .column-two:last-child {
+      margin-right: 0%; }
+  .column-three {
     float: left;
-    display: block;
-    width: 68.23843%;
-    float: right; }
-    .sidebar-left .content-area:last-child {
-      width: 65.88078%; }
-  .sidebar-left .widget-area {
+    clear: none;
+    text-align: inherit;
+    width: 22.75%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .column-three::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .column-three:last-child {
+      margin-right: 0%; }
+  .column-four {
     float: left;
-    display: block;
-    width: 34.11922%;
-    float: left; }
-    .sidebar-left .widget-area:last-child {
-      width: 31.76157%; }
-  .page-template-page-focus .content-area {
+    clear: none;
+    text-align: inherit;
+    width: 31.33333%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .column-four::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .column-four:last-child {
+      margin-right: 0%; }
+  .column-five {
     float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 82.94039%;
-    margin-left: 8.5298%; }
-    .page-template-page-focus .content-area:last-child {
-      margin-right: 0; }
-  .sidebar-left .full-width .content-area,
-  .full-width .content-area {
+    clear: none;
+    text-align: inherit;
+    width: 39.91667%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .column-five::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .column-five:last-child {
+      margin-right: 0%; }
+  .column-six {
     float: left;
-    display: block;
-    margin-right: 2.35765%;
+    clear: none;
+    text-align: inherit;
+    width: 48.5%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .column-six::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .column-six:last-child {
+      margin-right: 0%; }
+  .column-seven {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 57.08333%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .column-seven::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .column-seven:last-child {
+      margin-right: 0%; }
+  .column-eight {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 65.66667%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .column-eight::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .column-eight:last-child {
+      margin-right: 0%; }
+  .column-nine {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 74.25%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .column-nine::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .column-nine:last-child {
+      margin-right: 0%; }
+  .column-ten {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 82.83333%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .column-ten::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .column-ten:last-child {
+      margin-right: 0%; }
+  .column-elven {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 91.41667%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .column-elven::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .column-elven:last-child {
+      margin-right: 0%; }
+  .column-twelve {
+    float: left;
+    clear: none;
+    text-align: inherit;
     width: 100%;
-    margin-left: 0%; }
-    .sidebar-left .full-width .content-area:last-child,
-    .full-width .content-area:last-child {
-      margin-right: 0; } }
+    margin-left: 0%;
+    margin-right: 3%; }
+    .column-twelve::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .column-twelve:last-child {
+      margin-right: 0%; }
+  .column-cycle-two {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 48.5%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .column-cycle-two::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .column-cycle-two:nth-child(n) {
+      margin-right: 3%;
+      float: left;
+      clear: none; }
+    .column-cycle-two:nth-child(2n) {
+      margin-right: 0%;
+      float: right; }
+    .column-cycle-two:nth-child(2n + 1) {
+      clear: both; }
+  .column-cycle-three {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 31.33333%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .column-cycle-three::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .column-cycle-three:nth-child(n) {
+      margin-right: 3%;
+      float: left;
+      clear: none; }
+    .column-cycle-three:nth-child(3n) {
+      margin-right: 0%;
+      float: right; }
+    .column-cycle-three:nth-child(3n + 1) {
+      clear: both; }
+  .column-cycle-four {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 22.75%;
+    margin-left: 0%;
+    margin-right: 3%; }
+    .column-cycle-four::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .column-cycle-four:nth-child(n) {
+      margin-right: 3%;
+      float: left;
+      clear: none; }
+    .column-cycle-four:nth-child(3n) {
+      margin-right: 0%;
+      float: right; }
+    .column-cycle-four:nth-child(3n + 1) {
+      clear: both; }
+  .span-one {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 8.33333%;
+    margin-left: 0%;
+    margin-right: 0%; }
+    .span-one::after {
+      content: '';
+      display: table;
+      clear: both; }
+  .span-two {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 16.66667%;
+    margin-left: 0%;
+    margin-right: 0%; }
+    .span-two::after {
+      content: '';
+      display: table;
+      clear: both; }
+  .span-three {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 25%;
+    margin-left: 0%;
+    margin-right: 0%; }
+    .span-three::after {
+      content: '';
+      display: table;
+      clear: both; }
+  .span-four {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: 0%; }
+    .span-four::after {
+      content: '';
+      display: table;
+      clear: both; }
+  .span-five {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 41.66667%;
+    margin-left: 0%;
+    margin-right: 0%; }
+    .span-five::after {
+      content: '';
+      display: table;
+      clear: both; }
+  .span-six {
+    @nclude span(6/12); }
+  .span-seven {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 58.33333%;
+    margin-left: 0%;
+    margin-right: 0%; }
+    .span-seven::after {
+      content: '';
+      display: table;
+      clear: both; }
+  .span-eight {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 66.66667%;
+    margin-left: 0%;
+    margin-right: 0%; }
+    .span-eight::after {
+      content: '';
+      display: table;
+      clear: both; }
+  .span-nine {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 75%;
+    margin-left: 0%;
+    margin-right: 0%; }
+    .span-nine::after {
+      content: '';
+      display: table;
+      clear: both; }
+  .span-ten {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 83.33333%;
+    margin-left: 0%;
+    margin-right: 0%; }
+    .span-ten::after {
+      content: '';
+      display: table;
+      clear: both; }
+  .span-elven {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 91.66667%;
+    margin-left: 0%;
+    margin-right: 0%; }
+    .span-elven::after {
+      content: '';
+      display: table;
+      clear: both; }
+  .span-twelve {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 0%; }
+    .span-twelve::after {
+      content: '';
+      display: table;
+      clear: both; } }
 
-.site-content {
-  margin-top: 0;
-  margin-bottom: 0;
-  padding: 14px 0 0; }
+.unmove {
+  position: static;
+  left: 0; }
 
-.page-template-elementor .site-content,
-.page-template-beaver-builder .site-content {
-  content: "";
-  display: table;
-  table-layout: fixed;
-  max-width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+.stack {
+  display: block;
+  clear: both;
+  float: none;
   width: 100%;
-  padding: 0; }
+  margin-left: auto;
+  margin-right: auto; }
+  .stack:first-child {
+    margin-left: auto; }
+  .stack:last-child {
+    margin-right: auto; }
+
+.unstack {
+  text-align: left;
+  display: inline;
+  clear: none;
+  width: auto;
+  margin-left: 0;
+  margin-right: 0; }
+  .unstack:first-child {
+    margin-left: 0; }
+  .unstack:last-child {
+    margin-right: 0; }
+
+.align {
+  position: absolute;
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+.clearfix::after {
+  content: '';
+  display: table;
+  clear: both; }
 
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
-body,
-button,
-.woocommerce #respond input#submit.alt,
+body, button, .woocommerce #respond input#submit.alt,
 .woocommerce a.button.alt,
 .woocommerce input.button.alt,
-.woocommerce button.button.alt,
-.woocommerce .button.alt.edd-submit,
-.woocommerce a.button,
+.woocommerce button.button.alt, .woocommerce .button.alt.edd-submit, .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button,
-.woocommerce #respond input#submit,
-.edd-submit,
+.woocommerce #respond input#submit, .edd-submit,
 #edd-purchase-button,
-input[type="submit"].edd-submit,
+input.edd-submit[type="submit"],
 input,
 select,
 textarea {
@@ -434,7 +758,8 @@ h6 {
   padding: 0; }
 
 h1 a,
-h2 a, legend a,
+h2 a,
+legend a,
 h3 a,
 h4 a,
 h5 a,
@@ -445,7 +770,9 @@ h6 a {
 h1 {
   font-size: 2.4em; }
 
-h2, legend {
+
+h2,
+legend {
   font-size: 2em; }
 
 h3 {
@@ -1086,6 +1413,7 @@ big {
 # Elements
 --------------------------------------------------------------*/
 html {
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
   overflow-x: hidden; }
 
@@ -1093,6 +1421,7 @@ html {
 *:before,
 *:after {
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  -webkit-box-sizing: inherit;
   box-sizing: inherit; }
 
 body {
@@ -1154,15 +1483,11 @@ table, .woocommerce table.shop_attributes,
   width: 100%;
   text-align: left;
   margin-bottom: 14px; }
-  table th, .woocommerce table.shop_attributes th,
-  .woocommerce table.shop_table th,
-  .woocommerce table.my_account_orders th, .edd-checkout #edd_checkout_cart th {
+  table th, .woocommerce table.shop_attributes th, .woocommerce table.shop_table th, .woocommerce table.my_account_orders th, .edd-checkout #edd_checkout_cart th {
     margin: 0;
     padding: 14px 7px;
     text-align: left; }
-  table td, .woocommerce table.shop_attributes td,
-  .woocommerce table.shop_table td,
-  .woocommerce table.my_account_orders td, .edd-checkout #edd_checkout_cart td {
+  table td, .woocommerce table.shop_attributes td, .woocommerce table.shop_table td, .woocommerce table.my_account_orders td, .edd-checkout #edd_checkout_cart td {
     margin: 0;
     padding: 7px; }
 
@@ -1264,23 +1589,25 @@ table, .woocommerce table.shop_attributes,
 # Forms
 --------------------------------------------------------------*/
 button, .woocommerce #respond input#submit.alt,
-.woocommerce a.button.alt, .woocommerce input.button.alt, .woocommerce button.button.alt,
-.woocommerce .button.alt.edd-submit, .woocommerce a.button,
+.woocommerce a.button.alt,
+.woocommerce input.button.alt,
+.woocommerce button.button.alt, .woocommerce .button.alt.edd-submit, .woocommerce a.button,
 .woocommerce button.button,
 .woocommerce input.button,
 .woocommerce #respond input#submit, .edd-submit,
 #edd-purchase-button,
-input[type="submit"].edd-submit,
+input.edd-submit[type="submit"],
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
   border: 1px solid;
-  border-color: #ff6633;
+  border-color: #ff9900;
   -webkit-border-radius: 3px;
   -moz-border-radius: 3px;
   border-radius: 3px;
-  background: #ff6633;
+  background: #ff9900;
   color: #ffffff;
+  -webkit-box-shadow: none;
   box-shadow: none;
   line-height: 1.7;
   margin: 0;
@@ -1288,41 +1615,41 @@ input[type="submit"] {
   -webkit-appearance: none;
   -webkit-transition: all 0.3s ease 0s;
   -moz-transition: all 0.3s ease 0s;
+  -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s; }
-  button:hover,
-  .woocommerce .button.alt.edd-submit:hover, .woocommerce a.button:hover,
+  button:hover, .woocommerce .button.alt.edd-submit:hover, .woocommerce a.button:hover,
   .woocommerce button.button:hover,
   .woocommerce input.button:hover,
   .woocommerce #respond input#submit:hover, .edd-submit:hover,
   #edd-purchase-button:hover,
-  input[type="submit"].edd-submit:hover,
+  input.edd-submit:hover[type="submit"],
   input[type="button"]:hover,
   input[type="reset"]:hover,
   input[type="submit"]:hover {
-    background: #ff5533;
-    border-color: #ff5533;
+    background: #ff8800;
+    border-color: #ff8800;
+    -webkit-box-shadow: none;
     box-shadow: none;
     color: #ffffff; }
-  button:active,
-  .woocommerce .button.alt.edd-submit:active, .woocommerce a.button:active,
+  button:active, .woocommerce .button.alt.edd-submit:active, .woocommerce a.button:active,
   .woocommerce button.button:active,
   .woocommerce input.button:active,
   .woocommerce #respond input#submit:active, .edd-submit:active,
   #edd-purchase-button:active,
-  input[type="submit"].edd-submit:active, button:focus,
-  .woocommerce .button.alt.edd-submit:focus, .woocommerce a.button:focus,
+  input.edd-submit:active[type="submit"], button:focus, .woocommerce .button.alt.edd-submit:focus, .woocommerce a.button:focus,
   .woocommerce button.button:focus,
   .woocommerce input.button:focus,
   .woocommerce #respond input#submit:focus, .edd-submit:focus,
   #edd-purchase-button:focus,
-  input[type="submit"].edd-submit:focus,
+  input.edd-submit:focus[type="submit"],
   input[type="button"]:active,
   input[type="button"]:focus,
   input[type="reset"]:active,
   input[type="reset"]:focus,
   input[type="submit"]:active,
   input[type="submit"]:focus {
-    border-color: #ff5533;
+    border-color: #ff8800;
+    -webkit-box-shadow: none;
     box-shadow: none;
     color: #ffffff; }
 
@@ -1443,7 +1770,7 @@ a {
   .main-navigation ul {
     display: block; } }
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 769px) {
   .main-navigation {
     clear: both;
     width: 100%;
@@ -1572,24 +1899,31 @@ a {
 @media screen and (min-width: 769px) {
   .site-header .header-content .site-branding.inline {
     float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
+    clear: none;
+    text-align: inherit;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: 0%;
     padding: 24px;
     float: left; }
-    .site-header .header-content .site-branding.inline:last-child {
-      margin-right: 0; }
+    .site-header .header-content .site-branding.inline::after {
+      content: '';
+      display: table;
+      clear: both; }
   .site-header .header-content .header-nav.inline {
     float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 48.82117%;
-    margin-right: 0;
+    clear: none;
+    text-align: inherit;
+    width: 50%;
+    margin-left: 0%;
+    margin-right: 0%;
     float: right;
     background: none;
     padding: 36px 24px; }
-    .site-header .header-content .header-nav.inline:last-child {
-      margin-right: 0; }
+    .site-header .header-content .header-nav.inline::after {
+      content: '';
+      display: table;
+      clear: both; }
     .site-header .header-content .header-nav.inline ul {
       list-style: none;
       text-align: right;
@@ -1643,23 +1977,35 @@ a {
 @media screen and (max-width: 768px) {
   .site-branding.inline {
     float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 100%;
+    clear: none;
+    text-align: inherit;
+    width: 48.5%;
+    margin-left: 0%;
+    margin-right: 3%;
     padding: 24px;
     margin: 0;
     float: left; }
+    .site-branding.inline::after {
+      content: '';
+      display: table;
+      clear: both; }
     .site-branding.inline:last-child {
-      margin-right: 0; }
+      margin-right: 0%; }
   .header-nav.inline {
     float: left;
-    display: block;
-    margin-right: 2.35765%;
+    clear: none;
+    text-align: inherit;
     width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
     padding: 0;
     background: none; }
+    .header-nav.inline::after {
+      content: '';
+      display: table;
+      clear: both; }
     .header-nav.inline:last-child {
-      margin-right: 0; }
+      margin-right: 0%; }
     .header-nav.inline ul {
       list-style: none;
       margin: 24px 0 0 24px; }
@@ -1727,8 +2073,8 @@ ul.page-numbers {
     margin: 0 -1px 0 0; }
     ul.page-numbers li .dots,
     ul.page-numbers li .current,
-    ul.page-numbers li .breadcrumb a, .breadcrumb
-    ul.page-numbers li a,
+    ul.page-numbers li .breadcrumb a,
+    .breadcrumb ul.page-numbers li a,
     ul.page-numbers li a {
       display: block;
       text-decoration: none;
@@ -1738,7 +2084,8 @@ ul.page-numbers {
   border: 1px solid rgba(100, 105, 105, 0.1);
   display: inline-block; }
   .page-links .page-links-title,
-  .page-links .num, .page-links .page-links-title {
+  .page-links .num,
+  .page-links .page-links-title {
     float: left;
     text-decoration: none;
     padding: 7px 14px;
@@ -1782,6 +2129,7 @@ ul.page-numbers {
   .screen-reader-text:focus {
     background-color: #fafafa;
     border-radius: 3px;
+    -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
     box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
     clip: auto !important;
     color: #666666;
@@ -1825,21 +2173,21 @@ ul.page-numbers {
 /*--------------------------------------------------------------
 # Clearings
 --------------------------------------------------------------*/
-.clear:before,
-.clear:after,
-.entry-content:before,
-.entry-content:after,
-.comment-content:before,
-.comment-content:after,
-.site-header:before,
-.site-header:after,
-.site-content:before,
-.site-content:after,
-.site-footer:before,
-.site-footer:after {
-  content: "";
+.clear:before::after,
+.clear:after::after,
+.entry-content:before::after,
+.entry-content:after::after,
+.comment-content:before::after,
+.comment-content:after::after,
+.site-header:before::after,
+.site-header:after::after,
+.site-content:before::after,
+.site-content:after::after,
+.site-footer:before::after,
+.site-footer:after::after {
+  content: '';
   display: table;
-  table-layout: fixed; }
+  clear: both; }
 
 .clear:after,
 .entry-content:after,
@@ -2002,27 +2350,28 @@ h3.widget-title {
   float: left;
   height: 5px;
   background: -webkit-radial-gradient(50% -3%, ellipse cover, rgba(0, 0, 0, 0.1), rgba(97, 97, 97, 0) 40%);
+  background: -webkit-radial-gradient(50% 0%, ellipse, rgba(0, 0, 0, 0.1), rgba(97, 97, 97, 0) 80%);
+  background: -o-radial-gradient(50% 0%, ellipse, rgba(0, 0, 0, 0.1), rgba(97, 97, 97, 0) 80%);
   background: radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.1), rgba(97, 97, 97, 0) 80%); }
 
 .site-header .header-content {
-  content: "";
-  display: table;
-  table-layout: fixed;
-  max-width: 1190px;
-  margin-left: auto;
+  width: auto;
+  max-width: 1200px;
+  float: none;
+  display: block;
   margin-right: auto;
-  width: 100%; }
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0; }
+  .site-header .header-content::after {
+    content: '';
+    display: table;
+    clear: both; }
   .site-header .header-content .site-branding.center {
     text-align: center;
-    float: left;
-    display: block;
-    margin-right: 2.35765%;
-    width: 100%;
     margin: 0;
     padding: 24px;
     float: none; }
-    .site-header .header-content .site-branding.center:last-child {
-      margin-right: 0; }
   .site-header .header-content .site-branding .site-title {
     margin: 0;
     padding: 0; }
@@ -2066,6 +2415,8 @@ h3.widget-title {
     float: left;
     height: 5px;
     background: -webkit-radial-gradient(50% -3%, ellipse cover, rgba(0, 0, 0, 0.1), rgba(97, 97, 97, 0) 40%);
+    background: -webkit-radial-gradient(50% 0%, ellipse, rgba(0, 0, 0, 0.1), rgba(97, 97, 97, 0) 80%);
+    background: -o-radial-gradient(50% 0%, ellipse, rgba(0, 0, 0, 0.1), rgba(97, 97, 97, 0) 80%);
     background: radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.1), rgba(97, 97, 97, 0) 80%); }
   .site-footer .scroll-top,
   .site-footer .social-url {
@@ -2073,16 +2424,18 @@ h3.widget-title {
     display: block;
     text-align: center;
     margin: 0; }
-  .site-footer .site-info, .site-footer .footer-text {
+  .site-footer .site-info {
     text-align: center;
-    margin: 24px;
-    padding: 0; }
+    margin: 0;
+    padding: 24px; }
   .site-footer .footer-text {
+    text-align: center;
     margin: 0;
     padding: 0; }
   .site-footer .scroll-top {
     text-align: center;
-    padding: 0; }
+    padding: 0;
+    margin: 30px 15px 15px; }
     .site-footer .scroll-top #scrolltop {
       border: 1px solid rgba(100, 105, 105, 0.1);
       font-size: 17.6px;
@@ -2100,6 +2453,116 @@ h3.widget-title {
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+/*-----------------------------
+# Layout
+------------------------------*/
+@media screen and (min-width: 769px) {
+  .site-content {
+    width: auto;
+    max-width: 1200px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0;
+    display: block;
+    clear: both; }
+    .site-content::after {
+      content: '';
+      display: table;
+      clear: both; }
+  .content-area {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 66.66667%;
+    margin-left: 0%;
+    margin-right: 0%; }
+    .content-area::after {
+      content: '';
+      display: table;
+      clear: both; }
+  .widget-area {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 33.33333%;
+    margin-left: 0%;
+    margin-right: 0%; }
+    .widget-area::after {
+      content: '';
+      display: table;
+      clear: both; }
+  .sidebar-left .content-area {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 66.66667%;
+    margin-left: 0%;
+    margin-right: 0%;
+    float: right; }
+    .sidebar-left .content-area::after {
+      content: '';
+      display: table;
+      clear: both; }
+  .sidebar-left .widget-area {
+    float: left; }
+  .page-template-page-focus .content-area {
+    width: auto;
+    max-width: 980px;
+    float: none;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    padding-left: 0;
+    padding-right: 0; }
+    .page-template-page-focus .content-area::after {
+      content: '';
+      display: table;
+      clear: both; }
+  .sidebar-left .full-width .content-area,
+  .full-width .content-area {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 100%;
+    margin-left: 0%;
+    margin-right: 3%;
+    position: relative;
+    left: 0%; }
+    .sidebar-left .full-width .content-area::after,
+    .full-width .content-area::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .sidebar-left .full-width .content-area:last-child,
+    .full-width .content-area:last-child {
+      margin-right: 0%; } }
+
+.site-content {
+  margin-top: 0;
+  margin-bottom: 0;
+  padding: 14px 0 0; }
+
+.page-template-elementor .site-content,
+.page-template-beaver-builder .site-content {
+  width: auto;
+  max-width: 1200px;
+  float: none;
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  padding-left: 0;
+  padding-right: 0;
+  width: 100%;
+  padding: 0; }
+  .page-template-elementor .site-content::after,
+  .page-template-beaver-builder .site-content::after {
+    content: '';
+    display: table;
+    clear: both; }
+
 /*-----------------------------
 # Singular
 ------------------------------*/
@@ -2202,42 +2665,47 @@ h3.widget-title {
 ------------------------------*/
 .home .testimonials,
 .home .portfolio {
-  display: inline-block;
-  text-align: center;
-  margin: 24px;
-  padding: 24px;
-  clear: both;
-  -webkit-box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.05);
-  -moz-box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.05);
-  box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.05); }
-  .home .testimonials h2.title, .home .testimonials legend.title,
-  .home .portfolio h2.title,
-  .home .portfolio legend.title {
-    background: none !important; }
-
-.home .testimonials .ig-testimonials-page {
-  display: inline-block;
-  clear: both;
   margin-top: 14px; }
+  .home .testimonials h2.title, .home .testimonials legend.title, .home .testimonials .description,
+  .home .portfolio h2.title,
+  .home .portfolio legend.title,
+  .home .portfolio .description {
+    text-align: center; }
 
-.home .testimonials .ig-testimonials {
-  text-align: left;
-  float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 48.82117%; }
-  .home .testimonials .ig-testimonials:last-child {
-    margin-right: 0; }
-  .home .testimonials .ig-testimonials:nth-child(2n) {
-    margin-right: 0; }
-  .home .testimonials .ig-testimonials:nth-child(2n+1) {
-    clear: left; }
-
-.home .testimonials .page-numbers {
-  display: none; }
+.home .testimonials {
+  margin: 24px;
+  padding: 24px; }
+  .home .testimonials::after {
+    content: '';
+    display: table;
+    clear: both; }
+  .home .testimonials .ig-testimonials-page {
+    padding-top: 24px; }
+  .home .testimonials .ig-testimonials {
+    float: left;
+    clear: none;
+    text-align: inherit;
+    width: 48.5%;
+    margin-left: 0%;
+    margin-right: 3%;
+    text-align: left; }
+    .home .testimonials .ig-testimonials::after {
+      content: '';
+      display: table;
+      clear: both; }
+    .home .testimonials .ig-testimonials:nth-child(n) {
+      margin-right: 3%;
+      float: left;
+      clear: none; }
+    .home .testimonials .ig-testimonials:nth-child(2n) {
+      margin-right: 0%;
+      float: right; }
+    .home .testimonials .ig-testimonials:nth-child(2n + 1) {
+      clear: both; }
+  .home .testimonials .page-numbers {
+    display: none; }
 
 .home .portfolio .ig-portfolio-gallery {
-  display: inline-block;
   margin-top: 14px; }
 
 /*--------------------------------------------------------------
@@ -2395,56 +2863,88 @@ object {
 # WoooCommerce
 --------------------------------------------------------------*/
 .woocommerce #respond input#submit.alt,
-.woocommerce a.button.alt, .woocommerce #respond input.button.alt#submit, .woocommerce a.button.alt, .woocommerce input.button.alt, .woocommerce button.button.alt,
+.woocommerce a.button.alt,
+.woocommerce #respond input.button.alt#submit,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
 .woocommerce .button.alt.edd-submit,
-.woocommerce
-.button.alt#edd-purchase-button,
+.woocommerce .button.alt#edd-purchase-button,
 .woocommerce input.button.alt {
   font-size: 1em; }
 
-.woocommerce a.button, .woocommerce #respond input.button.alt#submit, .woocommerce a.button.alt, .woocommerce input.button.alt, .woocommerce button.button.alt,
+.woocommerce a.button,
+.woocommerce #respond input.button.alt#submit,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
 .woocommerce .button.alt.edd-submit,
-.woocommerce
-.button.alt#edd-purchase-button, .woocommerce a.button.alt, .woocommerce input.button.alt, .woocommerce button.button.alt, .woocommerce .button.alt.edd-submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, .woocommerce #respond input.button#submit,
+.woocommerce .button.alt#edd-purchase-button,
+.woocommerce a.button.alt,
+.woocommerce button.button.alt,
+.woocommerce input.button.alt,
+.woocommerce a.button,
+.woocommerce button.button,
+.woocommerce input.button,
+.woocommerce #respond input.button#submit,
 .woocommerce .button.edd-submit,
-.woocommerce
-.button#edd-purchase-button,
+.woocommerce .button#edd-purchase-button,
 .woocommerce input.button,
 .woocommerce #respond input#submit {
-  background-color: #ff6633;
+  background-color: #ff9900;
   color: #fff;
   -webkit-appearance: none; }
-  .woocommerce a.button:hover, .woocommerce #respond input.button.alt#submit:hover, .woocommerce a.button.alt:hover, .woocommerce input.button.alt:hover, .woocommerce button.button.alt:hover,
+  .woocommerce a.button:hover,
+  .woocommerce #respond input.button.alt#submit:hover,
+  .woocommerce a.button.alt:hover,
+  .woocommerce button.button.alt:hover,
+  .woocommerce input.button.alt:hover,
   .woocommerce .button.alt.edd-submit:hover,
-  .woocommerce
-  .button.alt#edd-purchase-button:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover, .woocommerce #respond input.button#submit:hover,
+  .woocommerce .button.alt#edd-purchase-button:hover,
+  .woocommerce a.button:hover,
+  .woocommerce button.button:hover,
+  .woocommerce input.button:hover,
+  .woocommerce #respond input.button#submit:hover,
   .woocommerce .button.edd-submit:hover,
-  .woocommerce
-  .button#edd-purchase-button:hover,
+  .woocommerce .button#edd-purchase-button:hover,
   .woocommerce input.button:hover,
   .woocommerce #respond input#submit:hover {
-    background-color: #ff5533;
-    border-color: #ff5533;
+    background-color: #ff8800;
+    border-color: #ff8800;
+    -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
-  .woocommerce a.button:active, .woocommerce a.button:focus, .woocommerce #respond input.button.alt#submit:active, .woocommerce a.button.alt:active, .woocommerce input.button.alt:active, .woocommerce button.button.alt:active,
+  .woocommerce a.button:active, .woocommerce a.button:focus,
+  .woocommerce #respond input.button.alt#submit:active,
+  .woocommerce a.button.alt:active,
+  .woocommerce button.button.alt:active,
+  .woocommerce input.button.alt:active,
   .woocommerce .button.alt.edd-submit:active,
-  .woocommerce
-  .button.alt#edd-purchase-button:active, .woocommerce #respond input.button.alt#submit:focus, .woocommerce a.button.alt:focus, .woocommerce input.button.alt:focus, .woocommerce button.button.alt:focus,
+  .woocommerce .button.alt#edd-purchase-button:active,
+  .woocommerce #respond input.button.alt#submit:focus,
+  .woocommerce a.button.alt:focus,
+  .woocommerce button.button.alt:focus,
+  .woocommerce input.button.alt:focus,
   .woocommerce .button.alt.edd-submit:focus,
-  .woocommerce
-  .button.alt#edd-purchase-button:focus, .woocommerce a.button:active, .woocommerce button.button:active, .woocommerce input.button:active, .woocommerce #respond input.button#submit:active,
+  .woocommerce .button.alt#edd-purchase-button:focus,
+  .woocommerce a.button:active,
+  .woocommerce button.button:active,
+  .woocommerce input.button:active,
+  .woocommerce #respond input.button#submit:active,
   .woocommerce .button.edd-submit:active,
-  .woocommerce
-  .button#edd-purchase-button:active, .woocommerce a.button:focus, .woocommerce button.button:focus, .woocommerce input.button:focus, .woocommerce #respond input.button#submit:focus,
+  .woocommerce .button#edd-purchase-button:active,
+  .woocommerce a.button:focus,
+  .woocommerce button.button:focus,
+  .woocommerce input.button:focus,
+  .woocommerce #respond input.button#submit:focus,
   .woocommerce .button.edd-submit:focus,
-  .woocommerce
-  .button#edd-purchase-button:focus,
+  .woocommerce .button#edd-purchase-button:focus,
   .woocommerce input.button:active,
   .woocommerce input.button:focus,
   .woocommerce #respond input#submit:active,
   .woocommerce #respond input#submit:focus {
-    border-color: #ff5533;
+    border-color: #ff8800;
+    -webkit-box-shadow: none;
     box-shadow: none;
     color: #fff; }
 
@@ -2526,6 +3026,7 @@ object {
 .woocommerce .star-rating {
   color: #f1c40f; }
 
+
 .woocommerce table.shop_table.shop_table_responsive.cart, .woocommerce .edd-checkout .shop_table.shop_table_responsive.cart#edd_checkout_cart, .edd-checkout .woocommerce .shop_table.shop_table_responsive.cart#edd_checkout_cart {
   margin-bottom: 4em; }
   .woocommerce table.shop_table.shop_table_responsive.cart input.button, .woocommerce .edd-checkout .shop_table.shop_table_responsive.cart#edd_checkout_cart input.button, .edd-checkout .woocommerce .shop_table.shop_table_responsive.cart#edd_checkout_cart input.button {
@@ -2538,8 +3039,10 @@ object {
 .woocommerce table.shop_table td, .woocommerce .edd-checkout .shop_table#edd_checkout_cart td, .edd-checkout .woocommerce .shop_table#edd_checkout_cart td, .woocommerce table.shop_table th, .woocommerce .edd-checkout .shop_table#edd_checkout_cart th, .edd-checkout .woocommerce .shop_table#edd_checkout_cart th {
   border: none; }
 
-.woocommerce .wc-proceed-to-checkout button, .woocommerce .wc-proceed-to-checkout .button.alt.edd-submit, .woocommerce .wc-proceed-to-checkout a.button, .woocommerce .wc-proceed-to-checkout input.button, .woocommerce .wc-proceed-to-checkout #respond input#submit, .woocommerce #respond .wc-proceed-to-checkout input#submit, .woocommerce .wc-proceed-to-checkout .edd-submit, .woocommerce .wc-proceed-to-checkout
-#edd-purchase-button {
+.woocommerce .wc-proceed-to-checkout button, .woocommerce .wc-proceed-to-checkout a.button,
+.woocommerce .wc-proceed-to-checkout input.button,
+.woocommerce .wc-proceed-to-checkout #respond input#submit, .woocommerce #respond .wc-proceed-to-checkout input#submit, .woocommerce .wc-proceed-to-checkout .edd-submit,
+.woocommerce .wc-proceed-to-checkout #edd-purchase-button {
   font-size: 20px;
   font-size: 1.25rem;
   padding: .8em 2em;
@@ -2657,21 +3160,23 @@ object {
 --------------------------------------------------------------*/
 .edd_download_columns_3 .edd_download {
   float: left;
-  display: block;
-  margin-right: 2.35765%;
-  width: 31.76157%; }
+  clear: none;
+  text-align: inherit;
+  width: 31.33333%;
+  margin-left: 0%;
+  margin-right: 3%; }
+  .edd_download_columns_3 .edd_download::after {
+    content: '';
+    display: table;
+    clear: both; }
   .edd_download_columns_3 .edd_download:last-child {
-    margin-right: 0; }
-  .edd_download_columns_3 .edd_download:nth-child(3n) {
-    margin-right: 0; }
-  .edd_download_columns_3 .edd_download:nth-child(3n+1) {
-    clear: left; }
+    margin-right: 0%; }
 
 .edd-submit,
 #edd-purchase-button,
 input[type="submit"].edd-submit {
-  background: #ff6633;
-  border-color: #ff6633;
+  background: #ff9900;
+  border-color: #ff9900;
   color: #fff; }
 
 .edd-checkout .entry-header {

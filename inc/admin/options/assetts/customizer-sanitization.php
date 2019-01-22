@@ -28,13 +28,12 @@ function igthemes_sanitize_hex_color( $input ) {
 // Sanitization for text input
 function igthemes_sanitize_text( $input ) {
     global $allowedtags;
-    return wp_kses(force_balance_tags( $input , $allowedtags ));
+    return force_balance_tags(wp_kses($input,$allowedtags));
 }
 // Sanitization for textarea field
 function igthemes_sanitize_textarea( $input ) {
-    global $allowedposttags;
-    $output = wp_kses (force_balance_tags($input, $allowedposttags ));
-    return $output;
+    global $allowedtags;
+    return force_balance_tags(wp_kses($input,$allowedtags));
 }
 // CSS sanitization callback.
 function igthemes_sanitize_css( $input  ) {

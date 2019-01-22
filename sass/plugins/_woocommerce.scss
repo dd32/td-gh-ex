@@ -201,7 +201,7 @@
             }
         }
     }
-    @include media(max-width 770px) {
+    @media screen and (max-width:770px) {
         .woocommerce-MyAccount-navigation {
             width: 100%;
             ul {

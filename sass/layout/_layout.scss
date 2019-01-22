@@ -1,48 +1,117 @@
-@include media(769px) {
-    .site-content {
-        @include outer-container;
-        display: block;
-        clear: both;
+// Grid
+@media screen and (min-width:769px) {
+    .grid-container {
+        @include center();
     }
-    .content-area {
-        @include span-columns(8,block-collapse);
+    .col2 {
+        @include column(6/12);
     }
-    .widget-area {
-        @include span-columns(4,block-collapse);
+    .col3 {
+        @include column(4/12);
     }
-    .sidebar-left {
-        .content-area {
-            @include span-columns(8,block-collapse);
-            float:right;
-        }
-        .widget-area {
-            @include span-columns(4,block-collapse);
-            float: left;
-        }
+    .col4 {
+        @include column(3/12);
     }
-    .page-template-page-focus {
-            .content-area {
-                @include span-columns(10);
-                @include shift(1);
-            }
-        }
-    .sidebar-left .full-width,
-    .full-width {
-        .content-area {
-            @include span-columns(12 of 12);
-            @include shift(0);
-        }
+    .focused {
+        @include center(980px);
     }
 }
-.site-content {
-    @include margin(0 null);
-    @include padding($small__spacing 0 0 0);
-}
-.page-template-elementor,
-.page-template-beaver-builder {
-    .site-content {
-        @include outer-container(100%);
-        width:100%;
-        padding: 0;
+@media screen and (min-width: 769px) {
+    .column-one {
+        @include column(1/12);
+
+    }.column-two {
+        @include column(2/12);
+    }
+    .column-three {
+        @include column(3/12);
+    }
+    .column-four {
+        @include column(4/12);
+    }
+    .column-five {
+        @include column(5/12);
+    }
+    .column-six {
+        @include column(6/12);
+    }
+    .column-seven {
+        @include column(7/12);
+    }
+    .column-eight {
+        @include column(8/12);
+    }
+    .column-nine {
+        @include column(9/12);
+    }
+    .column-ten {
+        @include column(10/12);
+    }
+    .column-elven {
+        @include column(11/12);
+    }
+    .column-twelve{
+        @include column(12/12);
+    }
+    .column-cycle-two {
+        @include column(6/12,$cycle: 2);
+    }
+    .column-cycle-three {
+        @include column(4/12,$cycle: 3);
+    }
+    .column-cycle-four {
+        @include column(3/12,$cycle: 3);
+    }
+    .span-one {
+        @include span(1/12);
+
+    }.span-two {
+        @include span(2/12);
+    }
+    .span-three {
+        @include span(3/12);
+    }
+    .span-four {
+        @include span(4/12);
+    }
+    .span-five {
+        @include span(5/12);
+    }
+    .span-six {
+        @nclude span(6/12);
+    }
+    .span-seven {
+        @include span(7/12);
+    }
+    .span-eight {
+        @include span(8/12);
+    }
+    .span-nine {
+        @include span(9/12);
+    }
+    .span-ten {
+        @include span(10/12);
+    }
+    .span-elven {
+        @include span(11/12);
+    }
+    .span-twelve{
+        @include span(12/12);
     }
 }
+.unmove {
+    @include unmove();
+}
+.stack {
+    @include stack();
+}
+.unstack {
+    @include unstack();
+}
+.align {
+    @include align();
+}
+.clearfix {
+    @include clearfix();
+}
+

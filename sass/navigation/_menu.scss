@@ -1,5 +1,5 @@
 //main navigation
-@include media(769px) {
+@media screen and (min-width:769px) {
 .main-navigation {
     //first
 	ul {
@@ -46,7 +46,7 @@
         display: block;
     }
 }
-@include media(max-width 768px) {
+@media screen and (max-width:769px) {
     .main-navigation {
         clear: both;
         width: 100%;

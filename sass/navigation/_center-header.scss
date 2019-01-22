@@ -1,5 +1,5 @@
 //center header
-@include media(769px) {
+@media screen and (min-width:769px) {
     .site-header {
         .header-content {
             //header navigation
@@ -68,7 +68,7 @@
         }
     }
 }
-@include media(max-width 768px) {
+@media screen and (max-width:768px) {
     .header-nav {
         &.center {
             ul {

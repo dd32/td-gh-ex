@@ -1,4 +1,54 @@
 /*-----------------------------
+# Layout
+------------------------------*/
+@media screen and (min-width:769px) {
+    .site-content {
+        @include center();
+        display: block;
+        clear: both;
+    }
+    .content-area {
+        @include span(8/12);
+    }
+    .widget-area {
+        @include span(4/12);
+    }
+    .sidebar-left {
+        .content-area {
+            @include span(8/12);
+            float:right;
+        }
+        .widget-area {
+            float: left;
+        }
+    }
+    .page-template-page-focus {
+            .content-area {
+                @include center(980px);
+            }
+        }
+    .sidebar-left .full-width,
+    .full-width {
+        .content-area {
+            @include column(12/12);
+            @include move(0);
+        }
+    }
+}
+.site-content {
+    @include margin(0 null);
+    @include padding($small__spacing 0 0 0);
+}
+.page-template-elementor,
+.page-template-beaver-builder {
+    .site-content {
+        @include center();
+        width:100%;
+        padding: 0;
+    }
+}
+
+/*-----------------------------
 # Singular
 ------------------------------*/
 .content-area{
@@ -119,26 +169,21 @@ article {
 .home {
     .testimonials,
     .portfolio {
-        display: inline-block;
-        text-align: center;
-        margin: $base__spacing;
-        padding: $base__spacing;
-        clear: both;
-        @include box-shadow(1px, 2px, 2px, rgba(0, 0, 0, 0.05));
-        h2.title {
-            background: none!important;
+        margin-top: $small__spacing;
+        h2.title, .description {
+            text-align: center;
         }
     }
     .testimonials {
+        @include clearfix();
+        margin:  $base__spacing;
+        padding:  $base__spacing;
         .ig-testimonials-page {
-            display: inline-block;
-            clear: both;
-            margin-top: $small__spacing;
+            padding-top: $base__spacing;
         }
         .ig-testimonials {
+            @include column(6/12,$cycle: 2);
             text-align: left;
-            @include span-columns(6);
-            @include omega(2n);
         }
         .page-numbers {
             display: none;
@@ -146,7 +191,6 @@ article {
     }
     .portfolio {
         .ig-portfolio-gallery {
-            display: inline-block;
             margin-top: $small__spacing;
         }
     }

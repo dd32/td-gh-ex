@@ -30,7 +30,7 @@
             </a>
         </p>
     </div>
-     <div class="col2 omega">
+     <div class="col2">
         <h3><?php esc_html_e( 'Enjoying the theme?', 'base-wp' ); ?></h3>
         <p class="about"><?php esc_html_e( 'If you like this theme why not leave us a review on WordPress.org?  We\'d really appreciate it!', 'base-wp' ); ?></p>
         <p>

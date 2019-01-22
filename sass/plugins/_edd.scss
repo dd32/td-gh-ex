@@ -1,7 +1,6 @@
 .edd_download_columns_3 {
     .edd_download {
-        @include span_columns(4);
-         @include omega(3n);
+        @include column(4/12);
       }
 }
 //download button
@@ -26,7 +25,7 @@ input[type="submit"].edd-submit {
         @extend table;
     }
 }
-@include media(max-width 600px) { 
+@media screen and(max-width:600px) { 
     .edd_download_columns_3 {
         .edd_download {
             width: 100%!important;

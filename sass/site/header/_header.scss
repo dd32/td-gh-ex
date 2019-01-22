@@ -9,12 +9,10 @@
         background: radial-gradient(ellipse at 50% 0%, rgba(0, 0, 0, 0.1), rgba(97, 97, 97, 0) 80%);
     }
     .header-content {
-         @include outer-container();
-         width: 100%;
+         @include center();
         .site-branding {
             &.center {
                 text-align: center;
-                @include span-columns(12);
                 @include margin(0);
                 @include padding($base__spacing);
                 float: none;
