@@ -68,6 +68,14 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.14
+* Style tweaks/fixes
+* Set pingback only if is_singular() && pings_open()
+* Remove unused code
+* Updated the language .pot file
+Premium: Added setting to adjust Header Bottom spacing
+Premium: Added setting to adjust Footer Top spacing
+
 #### 1.1.13
 * Style tweaks/fixes
 * Added new Gutenberg template & compatibility for new WordPress Gutenberg editor

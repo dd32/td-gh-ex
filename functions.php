@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.13' );
+define( 'AVANT_THEME_VERSION' , '1.1.14' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -228,6 +228,16 @@ function avant_add_editor_styles() {
 add_action( 'admin_init', 'avant_add_editor_styles' );
 
 /**
+ * Add pingback to header
+ */
+function avant_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		printf( '<link rel="pingback" href="%s">' . "\n", get_bloginfo( 'pingback_url' ) );
+	}
+}
+add_action( 'wp_head', 'avant_pingback_header' );
+
+/**
  * Enqueue admin styling.
  */
 function avant_load_admin_script() {
@@ -376,19 +386,6 @@ function avant_register_required_plugins() {
 add_action( 'tgmpa_register', 'avant_register_required_plugins' );
 
 /**
- * Elementor Check
- */
-if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
-	define( 'ELEMENTOR_PARTNER_ID', 2118 );
-}
-/**
- * WPForms Partner ID
- */
-if ( !defined( 'WPFORMS_SHAREASALE_ID' ) ) {
-    define( 'WPFORMS_SHAREASALE_ID', 1128843 );
-}
-
-/**
  * Add classes to the admin body class
  */
 function avant_add_admin_body_class() {
@@ -456,42 +453,3 @@ function avant_cat_columns_array_push_after( $src, $avant_cat_in, $pos ) {
     }
     return $R;
 }
-
-/**
- * Insert dismissable admin notices
- */
-function avant_admin_notice() {
-	$user_id = get_current_user_id();
-	
-	$response = wp_remote_get( 'https://kairaweb.com/wp-json/wp/v2/themes/avant/' );
-	
-	if ( is_wp_error( $response ) ) {
-		return;
-	}
-	
-	$posts = json_decode( wp_remote_retrieve_body( $response ) );
-	
-	if ( empty( $posts ) ) {
-		return;
-	} else {
-		$message_id = trim( $posts[0]->free_notification_id );
-		$message 	= trim( $posts[0]->free_notification );
-		
-		if ( !empty( $message ) && !get_user_meta( $user_id, 'avant_admin_notice_' .$message_id. '_dismissed' ) ) {
-			$class = 'notice notice-success is-dismissible';
-			printf( '<div class="%1$s"><p>%2$s</p><p><a href="?avant-admin-notice-dismissed&avant-admin-notice-id=%3$s">Dismiss this notice</a></p></div>', esc_attr( $class ), $message, $message_id );
-		}
-	}
-}
-add_action( 'admin_notices', 'avant_admin_notice' );
-/**
- * Dismiss admin notices
- */
-function avant_admin_notice_dismissed() {
-    $user_id = get_current_user_id();
-    if ( isset( $_GET['avant-admin-notice-dismissed'] ) ) {
-    	$avant_admin_notice_id = $_GET['avant-admin-notice-id'];
-		add_user_meta( $user_id, 'avant_admin_notice_' .$avant_admin_notice_id. '_dismissed', 'true', true );
-	}
-}
-add_action( 'admin_init', 'avant_admin_notice_dismissed' );

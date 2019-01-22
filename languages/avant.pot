@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2019-01-09 11:14+0200\n"
+"POT-Creation-Date: 2019-01-22 15:01+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -722,7 +722,7 @@ msgid ""
 "Adjust Footer top & bottom padding"
 msgstr ""
 
-#: customizer/customizer-options.php:798 functions.php:344
+#: customizer/customizer-options.php:798 functions.php:354
 msgid "WooCommerce"
 msgstr ""
 
@@ -1190,19 +1190,19 @@ msgstr ""
 msgid "The footer will divide into however many widgets are placed here."
 msgstr ""
 
-#: functions.php:349
+#: functions.php:359
 msgid "Elementor Page Builder"
 msgstr ""
 
-#: functions.php:354
+#: functions.php:364
 msgid "Contact Form by WPForms"
 msgstr ""
 
-#: functions.php:359
+#: functions.php:369
 msgid "Breadcrumb NavXT"
 msgstr ""
 
-#: functions.php:364
+#: functions.php:374
 msgid "Meta Slider"
 msgstr ""
 
