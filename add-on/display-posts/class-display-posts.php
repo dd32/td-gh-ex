@@ -54,7 +54,7 @@ class Display_Posts {
 		add_filter( 'bayleaf_dp_wrapper_classes', [ self::get_instance(), 'wrapper_classes' ], 10, 3 );
 		add_filter( 'bayleaf_dp_entry_classes', [ self::get_instance(), 'entry_classes' ], 10, 3 );
 		add_filter( 'bayleaf_dp_styles', [ self::get_instance(), 'dp_styles' ], 10, 2 );
-		add_filter( 'bayleaf_after_title', [ self::get_instance(), 'dp_wid_title' ], 10, 2 );
+		add_filter( 'bayleaf_after_dp_widget_title', [ self::get_instance(), 'dp_wid_title' ], 10, 2 );
 		add_action( 'widgets_init', [ self::get_instance(), 'register_custom_widget' ] );
 		add_action( 'admin_enqueue_scripts', [ self::get_instance(), 'enqueue_admin' ] );
 		add_action( 'bayleaf_dp_entry', [ self::get_instance(), 'dp_entry' ], 10, 3 );
@@ -72,6 +72,7 @@ class Display_Posts {
 			'list-view1' => esc_html__( 'List View 1', 'bayleaf' ),
 			'grid-view1' => esc_html__( 'Grid View 1', 'bayleaf' ),
 			'grid-view2' => esc_html__( 'Grid View 2', 'bayleaf' ),
+			'grid-view3' => esc_html__( 'Grid View 3', 'bayleaf' ),
 		];
 	}
 
@@ -102,11 +103,15 @@ class Display_Posts {
 	 * @return str Entry posts classes.
 	 */
 	public function entry_classes( $classes, $instance, $widget ) {
-		if ( 'grid-view1' === $instance['styles'] ) {
-			$classes[] = 'entry fw-tab-6 fw-tabr-4';
-		} elseif ( 'grid-view2' === $instance['styles'] ) {
-			$classes[] = 'entry fw-tab-6 fw-tabr-6';
+
+		if ( false !== strpos( $instance['styles'], 'grid' ) ) {
+			if ( 'grid-view2' === $instance['styles'] ) {
+				$classes[] = 'entry fw-tab-6 fw-tabr-6';
+			} else {
+				$classes[] = 'entry fw-tab-6 fw-tabr-4';
+			}
 		}
+
 		return $classes;
 	}
 
@@ -195,18 +200,19 @@ class Display_Posts {
 						$this->meta();
 						break;
 					case 'thumbnail-small':
-						$this->featured( 'thumbnail' );
+						$this->featured( 'thumbnail', $style );
 						break;
 					case 'thumbnail-medium':
-						$this->featured( 'bayleaf-medium' );
+						$this->featured( 'bayleaf-medium', $style );
 						break;
 					case 'thumbnail-large':
-						$this->featured( 'bayleaf-large' );
+						$this->featured( 'bayleaf-large', $style );
 						break;
 					case 'no-thumb':
-						$this->featured( false );
+						$this->featured( false, $style );
 						break;
 					default:
+						do_action( 'bayleaf_display_dp_item', $args );
 						break;
 				}
 			}
@@ -260,6 +266,9 @@ class Display_Posts {
 				$d = [ 'thumbnail-medium', [ 'title' ] ];
 				break;
 			case 'grid-view2':
+				$d = [ 'thumbnail-medium', [ 'category', 'title' ] ];
+				break;
+			case 'grid-view3':
 				$d = [ 'thumbnail-medium', [ 'category', 'title' ] ];
 				break;
 			default:
@@ -332,17 +341,23 @@ class Display_Posts {
 	 * @since 1.0.0
 	 *
 	 * @param str $size Thumbanil Size.
+	 * @param str $style  Current display post style.
 	 */
-	public function featured( $size ) {
+	public function featured( $size, $style = '' ) {
 		if ( bayleaf_get_mod( 'bayleaf_thumbnail_placeholder', 'none' ) || has_post_thumbnail() ) {
 
-			bayleaf_markup(
-				'dp-featured-content',
-				[
+			if ( $style && in_array( $style, [ 'slider1', 'slider2' ], true ) ) {
+				$featured_content = [
+					[ [ $this, 'thumbnail' ], $size ],
+				];
+			} else {
+				$featured_content = [
 					[ 'bayleaf_get_template_partial', 'template-parts/meta', 'meta-permalink' ],
 					[ [ $this, 'thumbnail' ], $size ],
-				]
-			);
+				];
+			}
+
+			bayleaf_markup( 'dp-featured-content', $featured_content );
 		}
 	}
 
@@ -357,6 +372,7 @@ class Display_Posts {
 		if ( ! has_post_thumbnail() ) {
 			return;
 		}
+
 		if ( $size ) {
 			echo '<div class="dp-thumbnail">';
 			the_post_thumbnail( $size );
@@ -383,8 +399,14 @@ class Display_Posts {
 	 * @param str $style  Current display post style.
 	 */
 	public function excerpt( $style ) {
-		$text = get_the_content( '' );
 
+		// Short circuit filter.
+		$check = apply_filters( 'bayleaf_display_posts_excerpt', false, $style );
+		if ( false !== $check ) {
+			return;
+		}
+
+		$text = get_the_content( '' );
 		$text = wp_strip_all_tags( strip_shortcodes( $text ) );
 
 		/** This filter is documented in wp-includes/post-template.php */

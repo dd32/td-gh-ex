@@ -279,7 +279,7 @@
 .wp-block-freeform.block-library-rich-text__tinymce h4,
 .wp-block-freeform.block-library-rich-text__tinymce h5,
 .wp-block-freeform.block-library-rich-text__tinymce h6 {
-	font-family: PT Sans, sans-serif;
+	font-family: Poppins, sans-serif;
 	font-weight: 700;
 	margin: 0 0 1.75rem;
 	letter-spacing: normal;
@@ -421,7 +421,6 @@
 
 .wp-block-freeform.block-library-rich-text__tinymce blockquote {
 	font-size: 1.323rem;
-	font-style: italic;
 	line-height: 1.32275;
 	position: relative;
 	margin-top: 0;
@@ -469,7 +468,6 @@
 
 .wp-block-freeform.block-library-rich-text__tinymce .wp-block-pullquote blockquote,
 .wp-block-freeform.block-library-rich-text__tinymce blockquote.wp-block-pullquote {
-	font-style: italic;
 	margin-right: 0;
 	margin-bottom: 0;
 	padding: 3em 0;
@@ -525,7 +523,7 @@
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce a.button {
-	font-family: PT Serif, serif;
+	font-family: Montserrat, sans-serif;
 	font-size: 0.7862rem;
 	font-weight: 700;
 	line-height: 1;
@@ -577,7 +575,7 @@
 body.block-editor-page #editor .edit-post-visual-editor,
 body.block-editor-page #editor .edit-post-visual-editor p,
 body.block-editor-page #editor .editor-block-list__block {
-	font-family: PT Serif, serif;
+	font-family: Montserrat, sans-serif;
 }
 
 body.block-editor-page #editor .edit-post-visual-editor .editor-post-title textarea.editor-post-title__input,
@@ -586,12 +584,12 @@ body.block-editor-page #editor .editor-block-list__block h2,
 body.block-editor-page #editor .editor-block-list__block h3,
 body.block-editor-page #editor .editor-block-list__block h4,
 body.block-editor-page #editor .editor-block-list__block h5 {
-	font-family: PT Sans, sans-serif;
+	font-family: Poppins, sans-serif;
 }
 
 body.block-editor-page #editor .editor-post-title textarea.editor-post-title__input {
-	font-size: 2.013rem;
-	line-height: 1.7387;
+	font-size: 1.75rem;
+	line-height: 1.15;
 	margin-bottom: 0.4375rem;
 }
 
@@ -793,7 +791,6 @@ body.block-editor-page #editor .editor-block-list__block[data-align="right"][dat
 
 blockquote,
 blockquote.wp-block-quote {
-	font-style: italic;
 	position: relative;
 	margin-top: 0;
 	margin-bottom: 1.75rem;
@@ -857,7 +854,6 @@ blockquote.wp-block-quote:before {
 
 blockquote.wp-block-pullquote,
 .wp-block-pullquote blockquote {
-	font-style: italic;
 	margin-right: 0;
 	margin-left: 0;
 	padding: 3em 0;
@@ -895,28 +891,28 @@ blockquote.wp-block-pullquote:before,
 	color: #757575;
 }
 
-.wp-block-table table {
+table.wp-block-table {
 	width: 100%;
 	margin-bottom: 1.75rem;
 	border-spacing: 0;
 	border-collapse: collapse;
 }
 
-.wp-block-table table td,
-.wp-block-table table th {
+table.wp-block-table td,
+table.wp-block-table th {
 	padding: 0.4em;
 	text-align: left;
 	border-width: 0;
 	border-bottom: 0.1rem solid #e6e6e6;
 }
 
-.wp-block-table table td:first-child,
-.wp-block-table table th:first-child {
+table.wp-block-table td:first-child,
+table.wp-block-table th:first-child {
 	padding-left: 0;
 }
 
-.wp-block-table table td:last-child,
-.wp-block-table table th:last-child {
+table.wp-block-table td:last-child,
+table.wp-block-table th:last-child {
 	padding-right: 0;
 }
 
@@ -955,6 +951,10 @@ ul.wp-block-gallery > li.blocks-gallery-item:first-child {
 ul.wp-block-gallery > li.blocks-gallery-item.has-add-item-button,
 ul.wp-block-gallery > li.blocks-gallery-item:first-child.has-add-item-button {
 	width: 100%;
+}
+
+p.has-drop-cap:not(:focus)::first-letter {
+	font-size: 4.5em;
 }
 
 .wp-block-button .wp-block-button__link {

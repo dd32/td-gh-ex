@@ -38,6 +38,7 @@ bayleaf_add_markup_for( 'hentry', 'inside_entry' );
 // Display secondary site content.
 bayleaf_add_markup_for( 'post_author', 'inside_entry' );
 bayleaf_add_markup_for( 'image_navigation', 'inside_entry' );
+bayleaf_add_markup_for( 'comments_toggle', 'before_comments' );
 bayleaf_add_markup_for( 'post_navigation', 'inside_main_content' );
 bayleaf_add_markup_for( 'post_pagination', 'after_main_content' );
 bayleaf_add_markup_for( 'home_below_content_area', 'after_site_content' );
@@ -298,9 +299,13 @@ function bayleaf_page_entry_header() {
 function bayleaf_page_entry_header_items() {
 
 	$page_entry_header_items = [
-		[ 'bayleaf_get_template_partial', 'template-parts/post', 'entry-title' ],
 		'bayleaf_entry_meta_wrapper',
+		[ 'bayleaf_get_template_partial', 'template-parts/post', 'entry-title' ],
 	];
+
+	if ( has_excerpt() ) {
+		$page_entry_header_items[] = [ 'bayleaf_markup', 'single-excerpt', [ 'the_excerpt' ] ];
+	}
 
 	bayleaf_markup( 'page-entry-header-items', $page_entry_header_items );
 }
@@ -334,10 +339,36 @@ function bayleaf_blog_title() {
  * @since 1.0.0
  */
 function bayleaf_main_loop() {
-	if ( is_front_page() && bayleaf_get_mod( 'bayleaf_front_page_widget', 'none' ) ) {
-		return;
-	}
 	bayleaf_get_template_partial( 'template-parts/loop', 'main-loop' );
+}
+
+/**
+ * Include comment toggle template.
+ *
+ * @since 1.0.0
+ */
+function bayleaf_comments_toggle() {
+	$text = '';
+	if ( comments_open() ) {
+		if ( have_comments() ) {
+			$text = esc_html__( 'Join the Conversation', 'bayleaf' );
+		} else {
+			$text = esc_html__( 'Leave a comment', 'bayleaf' );
+		}
+	} else {
+		if ( have_comments() ) {
+			$text = esc_html__( 'Show comments', 'bayleaf' );
+		}
+	}
+
+	if ( $text ) {
+		$toggle_text = sprintf( '<span class="toggle-text">%s</span>', $text ); // WPCS xss ok.
+		printf( '<button class="comments-toggle">%1$s%2$s%3$s</button>',
+			$toggle_text,
+			bayleaf_get_icon( [ 'icon' => 'angle-down' ] ),
+			bayleaf_get_icon( [ 'icon' => 'angle-up' ] )
+		); // WPCS xss ok. Variables already escaped.
+	}
 }
 
 /**

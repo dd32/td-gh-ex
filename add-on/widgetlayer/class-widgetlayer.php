@@ -289,23 +289,29 @@ class WidgetLayer {
 				$val = $instance[ $key ];
 				switch ( $key ) {
 					case 'bayleaf_width':
-						$col       = $instance['bayleaf_width'] ? $instance['bayleaf_width'] : '12';
+						$col       = $val ? $val : '12';
 						$classes[] = esc_html( 'fw-tabr-' . $col );
 						if ( '' === $instance['bayleaf_width_tablet'] ) {
 							$classes[] = esc_html( 'fw-tab-' . $col );
 						}
 						break;
 					case 'bayleaf_width_tablet':
-						if ( '' !== $instance['bayleaf_width_tablet'] ) {
-							$col       = 'fw-tab-' . $instance['bayleaf_width_tablet'];
+						if ( '' !== $val ) {
+							$col       = 'fw-tab-' . $val;
 							$classes[] = esc_html( $col );
 						}
 						break;
 					case 'bayleaf_text_widget_title':
-						if ( 'large' === $instance['bayleaf_text_widget_title'] ) {
+						if ( 'large' === $val ) {
 							$classes[] = 'lg-title';
-						} elseif ( 'small' === $instance['bayleaf_text_widget_title'] ) {
+						} elseif ( 'small' === $val ) {
 							$classes[] = 'sm-title';
+						}
+						break;
+					case 'bayleaf_widget_featured_image':
+						if ( $val ) {
+							$classes[] = 'has-featured-img';
+							$classes[] = 'widescreen';
 						}
 						break;
 					default:
@@ -459,9 +465,16 @@ class WidgetLayer {
 			$input_attrs = isset( $value['input_attrs'] ) ? (array) $value['input_attrs'] : [];
 			$description = $value['description'] ? sprintf( '<span class="%s wid-setting-desc">%s</span>', esc_attr( $value['setting'] ) . '-desc', esc_html( $value['description'] ) ) : '';
 
-			// Check if current Widget Option to be shown for this widget type.
-			if ( 'all' !== $value['id_base'] && $widget->id_base !== $value['id_base'] ) {
-				continue;
+			if ( is_array( $value['id_base'] ) ) {
+				// Check if current Widget Option to be shown for this widget type.
+				if ( ! in_array( $widget->id_base, $value['id_base'], true ) ) {
+					continue;
+				}
+			} else {
+				// Check if current Widget Option to be shown for this widget type.
+				if ( 'all' !== $value['id_base'] && $widget->id_base !== $value['id_base'] ) {
+					continue;
+				}
 			}
 
 			// Prepare markup for custom widget options.

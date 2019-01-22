@@ -108,10 +108,7 @@ class Display_Posts_Widget extends \WP_Widget {
 		$wrapper_class = apply_filters( 'bayleaf_dp_wrapper_classes', [ $instance['styles'] ], $instance, $this );
 		$wrapper_class = array_map( 'esc_attr', $wrapper_class );
 
-		$entry_class = apply_filters( 'bayleaf_dp_entry_classes', [], $instance, $this );
-		$entry_class = array_map( 'esc_attr', $entry_class );
-
-		$after_title = apply_filters( 'bayleaf_after_title', $args['after_title'], $instance );
+		$after_title = apply_filters( 'bayleaf_after_dp_widget_title', $args['after_title'], $instance );
 
 		echo $args['before_widget']; // WPCS xss ok. Contains HTML.
 
@@ -161,18 +158,42 @@ class Display_Posts_Widget extends \WP_Widget {
 		$post_query = new \WP_Query( $query_args );
 
 		if ( $post_query->have_posts() ) :
+			$action_args = [
+				'instance' => $instance,
+				'query'    => $post_query,
+			];
 			?>
 			<div class="dp-wrapper <?php echo join( ' ', $wrapper_class ); // WPCS xss ok. Value escaped. ?>">
 
 			<?php
+			/**
+			 * Fires before custom loop starts.
+			 *
+			 * @since 1.0.0
+			 *
+			 * @param array $action_args Settings & args for the current widget instance..
+			 */
+			do_action( 'bayleaf_before_dp_loop', $action_args );
+
 			while ( $post_query->have_posts() ) :
 				$post_query->the_post();
+				$entry_class = apply_filters( 'bayleaf_dp_entry_classes', [], $instance, $this );
+				$entry_class = array_map( 'esc_attr', $entry_class );
 				?>
 				<div class="dp-entry <?php echo join( ' ', $entry_class ); // WPCS xss ok. Value escaped. ?>">
 					<?php do_action( 'bayleaf_dp_entry', $args, $instance, $this ); ?>
 				</div><!-- .dp-entry -->
 			<?php
 			endwhile;
+
+			/**
+			 * Fires after custom loop starts.
+			 *
+			 * @since 1.0.0
+			 *
+			 * @param array $action_args Settings & args for the current widget instance..
+			 */
+			do_action( 'bayleaf_after_dp_loop', $action_args );
 			?>
 
 			</div>

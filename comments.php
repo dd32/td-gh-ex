@@ -19,8 +19,20 @@ if ( post_password_required() ) {
 }
 ?>
 
-<div id="comments"<?php bayleaf_attr( 'comments-area' ); ?>>
+<div id="comments"<?php bayleaf_attr( 'discussion-area' ); ?>>
 
+	<?php
+	/**
+	 * Fires immediately before comments area markup.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param str $calledby Hook by which the function has been called.
+	 */
+	do_action( 'bayleaf_before_comments', 'before_comments' );
+	?>
+
+	<div id="comments"<?php bayleaf_attr( 'comments-area' ); ?>>
 	<?php
 	if ( have_comments() ) :
 	?>
@@ -85,7 +97,17 @@ if ( post_password_required() ) {
 		]
 	);
 	?>
+	</div><!-- .comments-area -->
+
+	<?php
+	/**
+	 * Fires immediately after comments area markup.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param str $calledby Hook by which the function has been called.
+	 */
+	do_action( 'bayleaf_after_comments', 'after_comments' );
+	?>
 
 </div><!-- #comments -->
-
-<?php

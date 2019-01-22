@@ -162,7 +162,7 @@ function bayleaf_setup() {
 			'default-image'          => '',
 			'random-default'         => false,
 			'width'                  => 1280,
-			'height'                 => 425,
+			'height'                 => 500,
 			'flex-width'             => false,
 			'flex-height'            => false,
 			'default_text_color'     => '',
@@ -326,18 +326,18 @@ function bayleaf_font_url() {
 
 	/*
 	 * Translators: If there are characters in your language that are not supported
-	 * by PT Serif, translate this to 'off'. Do not translate into your own language.
+	 * by Montserrat, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'PT Serif font: on or off', 'bayleaf' ) ) {
-		$fonts[] = 'PT Serif:400,700,400italic,700italic';
+	if ( 'off' !== _x( 'on', 'Montserrat font: on or off', 'bayleaf' ) ) {
+		$fonts[] = 'Montserrat:400,700,400italic,700italic';
 	}
 
 	/*
 	 * Translators: If there are characters in your language that are not supported
-	 * by PT Sans, translate this to 'off'. Do not translate into your own language.
+	 * by Poppins, translate this to 'off'. Do not translate into your own language.
 	 */
-	if ( 'off' !== _x( 'on', 'PT Sans font: on or off', 'bayleaf' ) ) {
-		$fonts[] = 'PT Sans:400,700,400italic,700italic';
+	if ( 'off' !== _x( 'on', 'Poppins font: on or off', 'bayleaf' ) ) {
+		$fonts[] = 'Poppins:400,700,800,400italic,700italic';
 	}
 
 	/**
@@ -412,7 +412,11 @@ function bayleaf_scripts() {
 	// Theme localize scripts data.
 	$l10n = apply_filters( 'bayleaf_localize_script_data',
 		array(
-			'menu' => 'primary-menu', // ID of nav-menu first UL element.
+			'menu'   => 'primary-menu', // ID of nav-menu first UL element.
+			'play'   => bayleaf_get_icon( array( 'icon' => 'play' ) ),
+			'pause'  => bayleaf_get_icon( array( 'icon' => 'pause' ) ),
+			'volume' => bayleaf_get_icon( array( 'icon' => 'volume' ) ),
+			'mute'   => bayleaf_get_icon( array( 'icon' => 'mute' ) ),
 		)
 	);
 

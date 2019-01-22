@@ -17,7 +17,7 @@
 function bayleaf_body_classes( $classes ) {
 	// Adds a class for Single and Index view pages.
 	if ( is_singular() ) {
-		$classes[] = 'singular';
+		$classes[] = 'singular-view';
 
 		if ( is_singular( [ 'post', 'page' ] ) ) {
 
@@ -36,7 +36,9 @@ function bayleaf_body_classes( $classes ) {
 	}
 
 	if ( is_home() || is_front_page() ) {
-		if ( get_header_image() ) {
+		if ( is_singular() && has_post_thumbnail() ) {
+			$classes[] = 'has-header-image';
+		} elseif ( get_header_image() ) {
 			$classes[] = 'has-header-image';
 		}
 	}
@@ -151,7 +153,6 @@ function bayleaf_color_scheme_css( $css ) {
 	}
 
 	$rgb_color = bayleaf_hex_to_rgb( $color, true );
-	$rgba      = sprintf( 'rgba( %s, 0.6 )', $rgb_color );
 
 	$css .= sprintf( '
 		a,
@@ -201,10 +202,11 @@ function bayleaf_color_scheme_css( $css ) {
 			-webkit-box-shadow: inset 0 0 1px %1$s;
 	        		box-shadow: inset 0 0 1px %1$s;
 		}
-		.site-description {
-			background-color: %2$s;
+		.site-description,
+		.slider1 .sub-entry {
+			background-color: rgba( %2$s, 0.8 );
 		}
-	', $color, $rgba );
+	', $color, $rgb_color );
 
 	return $css;
 }

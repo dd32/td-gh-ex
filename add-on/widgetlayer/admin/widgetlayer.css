@@ -29,7 +29,7 @@ p.bayleaf_text_align {
 	border-bottom: 1px solid #e5e5e5;
 }
 
-p.bayleaf_text_featured_image {
+p.bayleaf_widget_featured_image {
 	padding-top: 1.5em;
 	margin-top: 1.5em;
 	border-top: 1px solid #e5e5e5;
@@ -39,6 +39,43 @@ span.wid-setting-desc {
 	display: block;
 	margin: 4px 0;
 	font-style: italic;
+}
+
+a.bayleaf-widget-img-uploader {
+	display: block;
+	cursor: pointer;
+	width: 100%;
+	transition: all .1s ease-out;
+	border: 1px dashed #a2aab2;
+	background-color: #edeff0;
+	padding: 10px 0;
+	margin: 10px 0;
+	text-align: center;
+}
+
+a.bayleaf-widget-img-uploader img,
+.bayleaf-widget-img-instruct {
+	display: block;
+}
+
+a.bayleaf-widget-img-uploader:hover,
+a.bayleaf-widget-img-uploader:focus {
+	color: #0073aa;
+	background-color: transparent;
+}
+
+a.has-image.bayleaf-widget-img-uploader {
+	padding: 0;
+	border-width: 0;
+}
+
+a.bayleaf-widget-img-remover {
+	cursor: pointer;
+}
+
+img.custom-widget-thumbnail {
+	width: 100%;
+	height: auto;
 }
 
 .bayleaf-hidden {

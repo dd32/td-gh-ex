@@ -43,13 +43,28 @@ function bayleaf_markup( $class = '', $callbacks = [], $open = '<div%s>', $close
 	 */
 	$callbacks = apply_filters( "bayleaf_markup_{$hook}", $callbacks );
 
+	// Return if there are no display functions.
+	if ( empty( $callbacks ) ) {
+		return;
+	}
+
 	printf( $open, bayleaf_get_attr( $context, [ 'class' => $classes ] ) ); // WPCS xss ok. Contains HTML, other values escaped.
 
 	foreach ( $callbacks as $callback ) {
 		$callback = (array) $callback;
 		$function = array_shift( $callback );
-		if ( is_callable( $function ) ) {
-			call_user_func_array( $function, $callback );
+
+		// Display output of a function which returns the markup.
+		if ( 'echo' === $function ) {
+			$function = array_shift( $callback );
+
+			if ( is_callable( $function ) ) {
+				echo call_user_func_array( $function, $callback ); // WPCS xss ok. Probably will contain HTML. Called function will handle escaping.
+			}
+		} else {
+			if ( is_callable( $function ) ) {
+				call_user_func_array( $function, $callback );
+			}
 		}
 	}
 
@@ -236,19 +251,27 @@ function bayleaf_get_icon( $args = [] ) {
  *
  * @since 1.0.0
  *
- * @param string $nav_id Menu container ID.
- * @param string $label  Menu label.
- * @param array  $args   Additional wp_nav_menu args.
+ * @param string $nav_classes Menu container ID.
+ * @param string $label       Menu label.
+ * @param array  $args        Additional wp_nav_menu args.
  */
-function bayleaf_nav_menu( $nav_id, $label, $args = [] ) {
+function bayleaf_nav_menu( $nav_classes, $label, $args = [] ) {
 
 	$menu  = sprintf( '<h2 class="screen-reader-text">%s</h2>', esc_html( $label ) );
 	$menu .= wp_nav_menu( array_merge( $args, [ 'echo' => false ] ) );
 
+	if ( is_array( $nav_classes ) ) {
+		$nav_id      = $nav_classes[0];
+		$nav_classes = array_map( 'esc_attr', $nav_classes );
+		$nav_classes = join( ' ', $nav_classes );
+	} else {
+		$nav_id = $nav_classes;
+	}
+
 	printf(
 		'<nav id="%1$s" class="%2$s" aria-label="%3$s">%4$s</nav>',
 		esc_attr( $nav_id ),
-		esc_attr( $nav_id ),
+		esc_attr( $nav_classes ),
 		esc_attr( $label ),
 		$menu
 	); // WPCS xss ok. $menu contains HTML, variable values escaped properly.

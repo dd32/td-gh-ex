@@ -1,6 +1,8 @@
 /* global bayleafScreenReaderText */
 ( function( $ ) {
 
+"use strict";
+
 var isIos          = /iPad|iPhone|iPod/.test( navigator.userAgent ) && ! window.MSStream,
 	header         = $( '#masthead' ),
 	body           = $( 'body' ),
@@ -317,7 +319,7 @@ function fadeInScroll() {
 				top = offset - $( document ).scrollTop(),
 				percent = Math.floor( top / windowHeight * 100 );
 
-			if ( percent < 90 ) {
+			if ( percent < 80 ) {
 				$( this ).addClass( 'fadeInUp' );
 			}
 
@@ -327,5 +329,25 @@ function fadeInScroll() {
 	}
 }
 fadeInScroll();
+
+/**
+ * Toggle post comment area.
+ *
+ * @since 1.0.0
+ */
+
+function toggleComments() {
+	var wrapper, comments, toggle;
+	wrapper  = $( '#comments' );
+	comments = wrapper.find( '.comments-area' );
+	toggle   = wrapper.find( '.comments-toggle' );
+
+	toggle.click( function() {
+		comments.slideToggle( 'slow' );
+		$( this ).toggleClass( 'toggled' );
+	} );
+}
+toggleComments();
+
 
 } )( jQuery );
