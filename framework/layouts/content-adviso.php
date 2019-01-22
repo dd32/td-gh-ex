@@ -18,7 +18,7 @@
 
         <div class="out-thumb">
             <h3><a class="post-title" href="<?php the_permalink() ?>"><?php the_title(); ?></a></h3>
-            <p class="entry-excerpt"><?php echo adviso_excerpt( 50 ); ?></p>
+            <p class="entry-excerpt"><?php $post->post_excerpt == '' ? adviso_excerpt(50) : the_excerpt();?></p>
 
             <div class="postedon">
                 <i class="fa fa-calendar"></i><?php adviso_posted_on_date(); ?>

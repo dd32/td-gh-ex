@@ -271,5 +271,5 @@ $excerpt = substr($excerpt, 0, strripos($excerpt, " "));
 if ( strlen(get_the_content()) > $limit ) {
 	$excerpt	=	$excerpt . '...';
 }
-return $excerpt;
+echo $excerpt;
 }

@@ -4,8 +4,8 @@ Contributors: InkHive
 Tags: custom-background, two-columns, one-column, custom-colors, flexible-header, right-sidebar, grid-layout, custom-menu, sticky-post, theme-options, threaded-comments, translation-ready, featured-images, full-width-template, custom-header, footer-widgets, e-commerce
 
 Requires at least: 4.0
-Tested up to: 5.0.1
-Stable tag: 0.994
+Tested up to: 5.0.2
+Stable tag: 0.995
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,6 +19,9 @@ Demo Here: http://demo.inkhive.com/adviso/
 
 
 == Changelog ==
+
+= 0.995 =
+* Twelfth Review Changes
 
 = 0.994 =
 * Eleventh Review Changes
@@ -96,6 +99,6 @@ Demo Here: http://demo.inkhive.com/adviso/
 * BigSlide © 2018  Adam D. Scott, MIT
 * Custom Controls © 2018 Anthony Hortin, GNU General Public License v2 or later
 * Owl Slider © 2014 Owl, MIT
-* Screenshot Stock Image, https://pixabay.com/en/marigold-calendula-orange-blossom-1568646/, CC0 License
+* Screenshot Stock Image, https://pixabay.com/en/pawns-chess-figures-colorful-chess-3467512/, CC0 License
 
 All Other Resources, apart from the ones mentioned above have been created by me fall under GPL v3 license of the theme.

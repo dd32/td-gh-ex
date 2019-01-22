@@ -20,10 +20,8 @@
                 <h3 class="entry-title title-font mdl-card__title-text"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3>
             </header><!-- .entry-header -->
             <div class="postedon"><?php adviso_posted_on(); ?></div>
-            <p class="entry-excerpt"><?php echo adviso_excerpt(90);?></p>
+            <p class="entry-excerpt"><?php $post->post_excerpt == '' ? adviso_excerpt(90) : the_excerpt();?></p>
             <div class="readmore"><a href="<?php the_permalink(); ?>"><?php esc_html_e('Read More','adviso'); ?></a></div>
 		</div><!--.out-thumb-->
-			
-		
 		
 </article><!-- #post-## -->
