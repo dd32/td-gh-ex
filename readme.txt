@@ -302,3 +302,6 @@ All Javascript is located in /js/ with license headers where appropriate.
 == 2.13 ==
 * Updated grid system.
 * Fixed customizer minor issue.
+
+== 2.14 ==
+* Minor fix.
