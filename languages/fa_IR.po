@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-12-19 11:46+0545\n"
-"PO-Revision-Date: 2018-12-19 11:46+0545\n"
+"POT-Creation-Date: 2019-01-22 18:39+0545\n"
+"PO-Revision-Date: 2019-01-22 18:39+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: wiki10.net, Ali Akbar Kaviani <persian@wiki10.net>\n"
 "Language: fa\n"
@@ -16,7 +16,7 @@ msgstr ""
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:14
@@ -629,11 +629,11 @@ msgstr "‏Theme: Catch Box by "
 msgid "Catch Themes"
 msgstr "کچ‌تمز"
 
-#: ../inc/default-options.php:236
+#: ../inc/default-options.php:236 ../inc/default-options.php:239
 msgid "Copyright"
 msgstr "کپی‌رایت"
 
-#: ../inc/default-options.php:236
+#: ../inc/default-options.php:236 ../inc/default-options.php:239
 #, fuzzy
 #| msgid "All Rights Reserved"
 msgid "All Rights Reserved."

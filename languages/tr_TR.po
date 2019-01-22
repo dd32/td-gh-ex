@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-12-19 11:47+0545\n"
-"PO-Revision-Date: 2018-12-19 11:47+0545\n"
+"POT-Creation-Date: 2019-01-22 18:40+0545\n"
+"PO-Revision-Date: 2019-01-22 18:40+0545\n"
 "Last-Translator: \n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: tr\n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__;"
 "esc_html_x\n"
@@ -630,11 +630,11 @@ msgstr "Tema: Catch Box"
 msgid "Catch Themes"
 msgstr "Catch Temaları"
 
-#: ../inc/default-options.php:236
+#: ../inc/default-options.php:236 ../inc/default-options.php:239
 msgid "Copyright"
 msgstr "Telif Hakları"
 
-#: ../inc/default-options.php:236
+#: ../inc/default-options.php:236 ../inc/default-options.php:239
 #, fuzzy
 #| msgid "All Rights Reserved"
 msgid "All Rights Reserved."

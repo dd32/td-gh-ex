@@ -5,8 +5,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-12-19 11:46+0545\n"
-"PO-Revision-Date: 2018-12-19 11:46+0545\n"
+"POT-Creation-Date: 2019-01-22 18:40+0545\n"
+"PO-Revision-Date: 2019-01-22 18:40+0545\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Piotrekkk\n"
 "Language: pl\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 "
 "|| n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: utf-8\n"
@@ -637,11 +637,11 @@ msgstr "Theme: Catch Box by "
 msgid "Catch Themes"
 msgstr "Catch Themes"
 
-#: ../inc/default-options.php:236
+#: ../inc/default-options.php:236 ../inc/default-options.php:239
 msgid "Copyright"
 msgstr "Copyright"
 
-#: ../inc/default-options.php:236
+#: ../inc/default-options.php:236 ../inc/default-options.php:239
 #, fuzzy
 #| msgid "All Rights Reserved"
 msgid "All Rights Reserved."

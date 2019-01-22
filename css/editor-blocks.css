@@ -629,3 +629,8 @@ hr {
 .edit-post-visual-editor .wp-block-latest-posts.is-grid li {
 	margin-bottom: 16px;
 }
+
+
+.editor-styles-wrapper div.editor-inserter {
+	margin-top: -14px;
+}
