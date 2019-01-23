@@ -27,7 +27,7 @@ $no_of_post = 0; // for number of posts
 
 	for ( $i = 1; $i <= $number; $i++ ) {
 		$post_id = '';
-		
+
 			$post_id =  get_theme_mod( 'audioman_testimonial_cpt_' . $i );
 
 		if ( $post_id && '' !== $post_id ) {
@@ -56,7 +56,7 @@ if ( $loop -> have_posts() ) :
 	while ( $loop -> have_posts() ) :
 		$loop -> the_post();
 
-		get_template_part( 'template-parts/testimonial/content', 'testimonial' ); 
+		get_template_part( 'template-parts/testimonial/content', 'testimonial' );
 		$i = absint( $loop->current_post + 1 );
 		//end and start testimonial_slider_wrap div based on logic
 		if ( 0 === ( $i % $layouts ) && $i < $no_of_post ) : ?>

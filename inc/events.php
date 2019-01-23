@@ -360,7 +360,7 @@ if ( ! function_exists( 'audioman_custom_events' ) ) :
 			$title = get_theme_mod( 'audioman_events_title_' . $i );
 
 			if ( class_exists( 'Polylang' ) ) {
-				$title = pll__( esc_attr( $title ) );
+				$title = pll__( $title );
 			}
 
 			$date_day = get_theme_mod( 'audioman_events_date_day_' . $i );
