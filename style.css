@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/audioman/
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Audioman is a well-designed, modern and trendy music WordPress theme built for musicians and bands that focuses on promoting their music and events. Simple modules and features are available in Audioman so you can build a complete and custom website right away. The theme comes with an array of features — such as header media, featured slider, featured content, hero content, playlist, portfolio, testimonials, and more — to keep your music website on the forefront. Audioman is completely responsive, which means your website will look incredibly sleek and visually appealing on all the devices with different screen resolution. The theme is deeply engaging, and the features provided in it will assist you in gaining genuine followers in a short period of time. To top it all, the theme is translation ready. For more details, check out Theme Instructions at https://catchthemes.com/themes/audioman/#theme-instructions, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/audioman/
-Version: 1.0.3
+Version: 1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, entertainment, photography, portfolio
@@ -2483,6 +2483,10 @@ blockquote:after,
 	margin: 0;
 }
 
+.widget .menu-social-container {
+	padding: 0;
+}
+
 
 /**
  * 12.0 - Content
@@ -3176,9 +3180,9 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 	padding: 2em 0;
 }
 
-.comments-area .comment-list li:first-child > article,
-.comments-area .comment-list li.pingback:first-child,
-.comments-area .comment-list li.trackback:first-child {
+.comments-area .comment-list > li:first-child > article,
+.comments-area .comment-list > li.pingback:first-child,
+.comments-area .comment-list > li.trackback:first-child {
 	border-top: none;
 }
 
@@ -3215,18 +3219,15 @@ body:not(.has-header-image):not(.has-header-video) .custom-header-media {
 
 .comment-meta .edit-link,
 .pingback .edit-link {
+	display: inline-block;
 	font-size: 13px;
 	font-size: 0.8125rem;
 	line-height: 1.6153846154;
+	text-transform: uppercase;
 }
 
 .comment-meta {
 	margin-bottom: 0.778em;
-}
-
-.comment-meta  .edit-link,
-.pingback .edit-link {
-	display: inline-block;
 }
 
 .comment-meta  .edit-link:before,
@@ -8741,6 +8742,12 @@ dl.variation p {
 	    margin: 0 0 56px;
 	}
 
+	.posts-navigation,
+	.pagination,
+	#content #infinite-handle {
+		margin: 36px 0 0;
+	}
+
 	.single .site-main .entry-header,
 	.page .site-main .entry-header,
 	.archive .page-header,
@@ -9275,6 +9282,8 @@ a:hover,
 #events-section.has-foreground-image .entry-title a:focus,
 #portfolio-content-section .entry-title a:hover,
 #portfolio-content-section .entry-title a:focus,
+#portfolio-content-section .hentry-inner:hover .entry-title,
+#portfolio-content-section .hentry-inner:hover .entry-title a,
 .team-content-wrapper .hentry-inner:hover .entry-title a,
 .team-content-wrapper .hentry-inner:focus .entry-title a,
 .audioman-mejs-container.mejs-container button:hover,

@@ -114,7 +114,7 @@ function audioman_testimonial_options( $wp_customize ) {
                 'name'              => 'audioman_testimonial_cpt_' . $i,
                 'sanitize_callback' => 'audioman_sanitize_post',
                 'active_callback'   => 'audioman_is_testimonial_active',
-                'label'             => esc_html__( 'Testimoial', 'audioman' ) . ' ' . $i ,
+                'label'             => esc_html__( 'Testimonial', 'audioman' ) . ' ' . $i ,
                 'section'           => 'audioman_testimonials',
                 'type'              => 'select',
                 'choices'           => audioman_generate_post_array( 'jetpack-testimonial' ),

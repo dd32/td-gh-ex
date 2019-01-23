@@ -86,7 +86,7 @@ if ( ! function_exists( 'audioman_featured_image' ) ) :
 	 */
 	function audioman_featured_image() {
 		if ( is_header_video_active() && has_header_video() ) {
-			return true;
+			return get_header_image();
 		}
 		$thumbnail = 'audioman-slider';
 
