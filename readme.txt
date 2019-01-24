@@ -117,6 +117,10 @@ The rest of the content...
 
 == Changelog ==
 
+Version 1.18 (2019-01-24)
+-------------------------
+- Fixed the date output on the archive page template
+
 Version 1.17 (2018-12-07)
 -------------------------
 - Fixed Gutenberg style changes required due to changes in the block editor CSS and classes
