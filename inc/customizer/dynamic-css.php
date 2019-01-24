@@ -292,7 +292,8 @@ function ashe_true_false( $option ) {
 		table tr,
 		table th,
 		table td,
-		pre {
+		pre,
+		.category-description {
 			border-color: #e8e8e8;
 		}
 
@@ -680,6 +681,10 @@ function ashe_true_false( $option ) {
 		.logo-img {
 			max-width: '. (int)ashe_options( 'title_tagline_logo_width' ) .'px;
 		}
+
+		.mini-logo a {
+			max-width: '. ashe_options( 'main_nav_mini_logo_width' ) .'px;
+		}
 	';
 
 
@@ -724,10 +729,21 @@ function ashe_true_false( $option ) {
 			  right: 40px;
 			  z-index: 2;
 			}
+
+			.mini-logo {
+			  position: absolute;
+			  left: auto;
+			  top: 0;
+			}
+
+			.main-nav-sidebar ~ .mini-logo {
+			  margin-left: 30px;
+			}
 		';
 	} else {
 		$css .= '
-			.main-nav-sidebar {
+			.main-nav-sidebar,
+			.mini-logo {
 			  float: left;
 			  margin-right: 15px;
 			}

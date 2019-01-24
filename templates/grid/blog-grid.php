@@ -49,12 +49,24 @@
 					</h2>
 					<?php endif; ?>
 
-					<?php if ( ashe_options( 'blog_page_show_date' ) === true ) : ?>
+					<?php if ( ashe_options( 'blog_page_show_date' ) || ashe_options( 'blog_page_show_comments' ) ) : ?>
 					<div class="post-meta clear-fix">
-						<span class="post-date"><?php the_time( get_option( 'date_format' ) ); ?></span>
+
+						<?php if ( ashe_options( 'blog_page_show_date' ) === true ) : ?>
+							<span class="post-date"><?php the_time( get_option( 'date_format' ) ); ?></span>
+						<?php endif; ?>
+						
+						<span class="meta-sep">/</span>
+						
+						<?php
+						if ( ashe_post_sharing_check() && ashe_options( 'blog_page_show_comments' ) === true ) {
+							comments_popup_link( esc_html__( '0 Comments', 'ashe' ), esc_html__( '1 Comment', 'ashe' ), '% '. esc_html__( 'Comments', 'ashe' ), 'post-comments');
+						}
+						?>
+
 					</div>
 					<?php endif; ?>
-					
+
 				</header>
 
 				<?php if ( ashe_options( 'blog_page_post_description' ) !== 'none' ) : ?>
@@ -87,9 +99,13 @@
 					<?php endif; ?>
 
 					<?php
-					if ( ashe_options( 'blog_page_show_comments' ) === true ) {
+			
+					if ( ashe_post_sharing_check() ) {
+						ashe_post_sharing();
+					} else if ( ashe_options( 'blog_page_show_comments' ) === true ) {
 						comments_popup_link( esc_html__( '0 Comments', 'ashe' ), esc_html__( '1 Comment', 'ashe' ), '% '. esc_html__( 'Comments', 'ashe' ), 'post-comments');
 					}
+
 					?>
 					
 				</footer>

@@ -48,7 +48,8 @@
 							<a href="<?php esc_url( the_permalink() ); ?>"><?php the_title(); ?></a>
 						</h2>
 						<?php endif; ?>
-
+						
+						<?php if ( ashe_options( 'blog_page_show_author' ) || ashe_options( 'blog_page_show_date' ) || ashe_options( 'blog_page_show_comments' ) ) : ?>
 						<div class="post-meta clear-fix">
 
 							<?php if ( ashe_options( 'blog_page_show_author' ) === true ) : ?>
@@ -60,12 +61,13 @@
 							<span class="post-date"><?php the_time( get_option( 'date_format' ) ); ?></span>
 							<?php endif; ?>
 
-							<?php if (  ashe_options( 'blog_page_show_comments' ) === true && comments_open() ) : ?>
+							<?php if ( ashe_options( 'blog_page_show_comments' ) === true && comments_open() ) : ?>
 							<span class="meta-sep">/</span>
 								<?php comments_popup_link( esc_html__( '0 Comments', 'ashe' ), esc_html__( '1 Comment', 'ashe' ), '% '. esc_html__( 'Comments', 'ashe' ), 'post-comments'); ?>
 							<?php endif; ?>
 							
 						</div>
+						<?php endif; ?>
 						
 					</header>
 
@@ -88,6 +90,8 @@
 					<div class="read-more">
 						<a href="<?php echo esc_url( get_permalink() ); ?>"><?php esc_html_e( 'read more','ashe' ); ?></a>
 					</div>
+
+					<?php ashe_post_sharing(); ?>
 					
 				</div>
 

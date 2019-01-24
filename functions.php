@@ -159,7 +159,7 @@ add_action( 'wp_head', 'ashe_pingback_header' );
 function ashe_scripts() {
 
 	// Theme Stylesheet
-	wp_enqueue_style( 'ashe-style', get_stylesheet_uri(), array(), '1.7.9.3' );
+	wp_enqueue_style( 'ashe-style', get_stylesheet_uri(), array(), '1.8' );
 
 	// FontAwesome Icons
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/css/font-awesome.css' ) );
@@ -179,11 +179,11 @@ function ashe_scripts() {
 	}
 	
 	// Theme Responsive CSS
-	wp_enqueue_style( 'ashe-responsive', get_theme_file_uri( '/assets/css/responsive.css' ), array(), '1.7.9.3'  );
+	wp_enqueue_style( 'ashe-responsive', get_theme_file_uri( '/assets/css/responsive.css' ), array(), '1.8'  );
 
 	// Enqueue Custom Scripts
-	wp_enqueue_script( 'ashe-plugins', get_theme_file_uri( '/assets/js/custom-plugins.js' ), array( 'jquery' ), '1.7.9.3', true );
-	wp_enqueue_script( 'ashe-custom-scripts', get_theme_file_uri( '/assets/js/custom-scripts.js' ), array( 'jquery' ), '1.7.9.3', true );
+	wp_enqueue_script( 'ashe-plugins', get_theme_file_uri( '/assets/js/custom-plugins.js' ), array( 'jquery' ), '1.8', true );
+	wp_enqueue_script( 'ashe-custom-scripts', get_theme_file_uri( '/assets/js/custom-scripts.js' ), array( 'jquery' ), '1.8', true );
 
 	// Comment reply link
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -538,6 +538,79 @@ add_filter( 'get_search_form', 'ashe_custom_search_form' );
 
 
 /*
+**  Post Share
+*/
+
+function ashe_post_sharing_check() {
+	if ( ashe_options( 'blog_page_show_facebook' ) || ashe_options( 'blog_page_show_twitter' ) || ashe_options( 'blog_page_show_pinterest' ) || ashe_options( 'blog_page_show_google' ) || ashe_options( 'blog_page_show_linkedin' ) || ashe_options( 'blog_page_show_tumblr' ) || ashe_options( 'blog_page_show_reddit' ) ) {
+	return true;
+	}
+	return false;
+}
+
+
+if ( ! function_exists( 'ashe_post_sharing' ) ) { 
+	function ashe_post_sharing() {	
+	
+	global $post; ?>	
+	<div class="post-share">
+
+		<?php if ( ashe_options( 'blog_page_show_facebook' ) ) : 
+		$facebook_src = 'https://www.facebook.com/sharer/sharer.php?u='.esc_url( get_the_permalink() ); ?>
+		<a class="facebook-share" target="_blank" href="<?php echo esc_url ( $facebook_src ); ?>">
+			<i class="fa fa-facebook"></i>
+		</a>
+		<?php endif; ?>
+
+		<?php if ( ashe_options( 'blog_page_show_twitter' ) ) : 
+		$twitter_src = 'https://twitter.com/home?status=Check%20out%20this%20article:%20'.get_the_title().'%20-%20'.esc_url( get_the_permalink() ); ?>
+		<a class="twitter-share" target="_blank" href="<?php echo esc_url ( $twitter_src ); ?>">
+			<i class="fa fa-twitter"></i>
+		</a>
+		<?php endif; ?>
+
+		<?php if ( ashe_options( 'blog_page_show_pinterest' ) ) : 
+		$pinterest_src = 'https://pinterest.com/pin/create/button/?url='.esc_url( get_the_permalink() ).'&amp;media='.esc_url( wp_get_attachment_url( get_post_thumbnail_id($post->ID)) ).'&amp;description='.get_the_title(); ?>
+		<a class="pinterest-share" target="_blank" href="<?php echo esc_url ( $pinterest_src ); ?>">
+			<i class="fa fa-pinterest"></i>
+		</a>
+		<?php endif; ?>
+
+		<?php if ( ashe_options( 'blog_page_show_google' ) ) : 
+		$google_src = 'https://plus.google.com/share?url='. esc_url( get_the_permalink() ); ?>
+		<a class="googleplus-share" target="_blank" href="<?php echo esc_url ( $google_src ); ?>">
+			<i class="fa fa-google-plus"></i>
+		</a>										
+		<?php endif; ?>
+
+		<?php if ( ashe_options( 'blog_page_show_linkedin' ) ) :
+		$linkedin_src = 'http://www.linkedin.com/shareArticle?url='.esc_url( get_the_permalink() ).'&amp;title='.get_the_title(); ?>
+		<a class="linkedin-share" target="_blank" href="<?php echo esc_url( $linkedin_src ); ?>">
+			<i class="fa fa-linkedin"></i>
+		</a>
+		<?php endif; ?>
+
+		<?php if ( ashe_options( 'blog_page_show_tumblr' ) ) : 
+		$tumblr_src = 'http://www.tumblr.com/share/link?url='. urlencode( esc_url(get_permalink()) ) .'&amp;name='.urlencode( get_the_title() ).'&amp;description='.urlencode( wp_trim_words( get_the_excerpt(), 50 ) ); ?>
+		<a class="tumblr-share" target="_blank" href="<?php echo esc_url( $tumblr_src ); ?>">
+			<i class="fa fa-tumblr"></i>
+		</a>
+		<?php endif; ?>
+
+		<?php if ( ashe_options( 'blog_page_show_reddit' ) ) : 
+		$reddit_src = 'http://reddit.com/submit?url='. esc_url( get_the_permalink() ) .'&amp;title='.get_the_title(); ?>
+		<a class="reddit-share" target="_blank" href="<?php echo esc_url( $reddit_src ); ?>">
+			<i class="fa fa-reddit"></i>
+		</a>
+		<?php endif; ?>
+
+	</div>
+	<?php
+	}
+}
+
+
+/*
 ** Comments Form Section
 */
 
@@ -687,9 +760,11 @@ add_action( 'woocommerce_pagination', 'ashe_woocommerce_pagination', 10 );
 */
 
 // Customizer
+require get_parent_theme_file_path( '/inc/customizer/customizer-repeater/inc/customizer.php' );
 require get_parent_theme_file_path( '/inc/customizer/customizer.php' );
 require get_parent_theme_file_path( '/inc/customizer/customizer-defaults.php' );
 require get_parent_theme_file_path( '/inc/customizer/dynamic-css.php' );
+require get_parent_theme_file_path( '/inc/customizer/css/theme-skins.php' );
 require get_parent_theme_file_path( '/inc/preview/demo-preview.php' );
 
 // About Ashe

@@ -142,6 +142,10 @@
 		$('.header-logo a').css( 'max-width', val +'px' );
 	});
 
+	asheLivePreview( 'main_nav_mini_logo_width', function( val ) {
+		$('.mini-logo a').css( 'max-width', val +'px' );
+	});
+
 
 /*
 ** Typography

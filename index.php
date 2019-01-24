@@ -5,12 +5,16 @@ get_header();
 if ( is_home() ) {
 
 	// Featured Slider, Carousel
-	if ( ashe_options( 'featured_slider_label' ) === true || ashe_is_preview() ) {
-		get_template_part( 'templates/header/featured', 'slider' );
+	if ( ashe_options( 'featured_slider_label' ) === true && ashe_options( 'featured_slider_location' ) !== 'front' ) {
+		if ( ashe_options( 'featured_slider_source' ) === 'posts' ) {
+			get_template_part( 'templates/header/featured', 'slider' );
+		} else {
+			get_template_part( 'templates/header/featured', 'slider-custom' );
+		}
 	}
 
 	// Featured Links, Banners
-	if ( ashe_options( 'featured_links_label' ) === true || ashe_is_preview() ) {
+	if ( ashe_options( 'featured_links_label' ) === true && ashe_options( 'featured_links_location' ) !== 'front' ) {
 		get_template_part( 'templates/header/featured', 'links' ); 
 	}
 

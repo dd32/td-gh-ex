@@ -15,6 +15,14 @@
 		</div>
 		<?php endif; ?>
 
+		<!-- Mini Logo -->
+		<?php if ( ashe_options( 'main_nav_mini_logo' ) !== '' ) : ?>
+		<div class="mini-logo">
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php esc_attr( bloginfo('name') ); ?>" >
+				<img src="<?php echo esc_url( ashe_options( 'main_nav_mini_logo' ) ); ?>" alt="<?php esc_attr( bloginfo('name') ); ?>">
+			</a>
+		</div>
+		<?php endif; ?>
 
 		<!-- Icons -->
 		<div class="main-nav-icons">

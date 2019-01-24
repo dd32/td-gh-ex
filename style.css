@@ -4,7 +4,7 @@ Theme URI: https://wp-royal.com/themes/item-ashe-free/
 Author: WP Royal
 Author URI: https://wp-royal.com/
 Description: Personal and Multi-Author Free WordPress Blog Theme. Perfect for personal, lifestyle, health & fitness, food, cooking, bakery, travel, beauty, fashion, wedding, photography, news, quotes blog, auto blog, small business website and any other kind of amazing blogs. Minimal, elegant & mobile friendly layout with WooCommerce shop (storefront) support will WOW and inspire your visitors. Well documented and very easy to use even for WordPress beginners. Clean and Modern Responsive design will perfectly showcase your content on any device, even on tablet, mobile & retina displays. Very fast, compatibility with many popular plugins & of course translation & RTL (right to left language) ready, coded with best SEO practices. The theme has features like Text & Image logo, Fullscreen Slider, Header image, Instagram slider widget support, footer menu support, GDPR compatibility plugins support and many more. Works perfectly with all major drag and drop page builders like Elementor, Beaver Builder, Visual Composer, SiteOrigin, Divi. You just need to write and be awesome! TEMPLATE DEMO: https://wp-royal.com/themes/ashe-free/demo/
-Version: 1.7.9.3
+Version: 1.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
 Text Domain: ashe
@@ -783,6 +783,15 @@ sup {
   display: none;
 }
 
+.mini-logo a {
+  display: block;
+  position: relative;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 100%;
+}
+
 
 /*--------------------------------------------------------------
 5.0 Featured Slider
@@ -934,6 +943,7 @@ sup {
   line-height: 44px;
   letter-spacing: 1px;
   margin-bottom: 25px;
+  color: inherit !important;
 }
 
 .slider-content {
@@ -1490,7 +1500,7 @@ sup {
   line-height: 30px;
 }
 
-.post-comments {
+.post-footer .post-comments {
   float: right;
   font-style: italic;
   line-height: 30px;
@@ -1564,6 +1574,10 @@ sup {
     margin: 10px 0 0;
 }
 
+[data-layout*="list"] .post-share {
+    margin-top: 21px;
+}
+
 [data-layout*="list"] .post-footer {
   padding: 10px 0;
 }
@@ -1579,7 +1593,6 @@ sup {
   padding-bottom: 15px;
   border-bottom-style: solid;
   border-bottom-width: 1px;
-  border-color: #e8e8e8;
   text-align: center;
   overflow-wrap: break-word;
   margin-bottom: 30px;
@@ -2747,7 +2760,8 @@ body {
   line-height: 60px;
 }
 
-.main-nav-sidebar {
+.main-nav-sidebar,
+.mini-logo {
   height: 60px;
 }
 

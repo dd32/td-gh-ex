@@ -8,6 +8,8 @@
 	/*
 	** Reusable Functions
 	*/
+		var optPrefix = '#customize-control-ashe_options-';
+		
 		// Label
 		function ashe_customizer_label( id, title, video ) {
 
@@ -101,6 +103,7 @@
 
 		// Main Navigation
 		ashe_customizer_checkbox_label( 'main_nav_label', '' );
+		ashe_customizer_label( 'main_nav_mini_logo', 'Mini Logo', '' );
 
 		// Featured Slider
 		ashe_customizer_checkbox_label( 'featured_slider_label', 'https://www.youtube.com/watch?v=H9i-cKOey98' );
@@ -135,6 +138,59 @@
 		// Contditional Logics
 		ashe_customizer_select( 'featured_slider_display', '#customize-control-ashe_options-featured_slider_category', 'category' );
 		ashe_customizer_select( 'blog_page_post_description', '#customize-control-ashe_options-blog_page_excerpt_length,#customize-control-ashe_options-blog_page_grid_excerpt_length', 'excerpt' );
+
+
+		// Theme Skin Change
+		var bodyBG = $( '#customize-control-background_color, #customize-control-background_image' ),
+			bodyBGLabel = $('#customize-control-background_image').prev('.tab-title'),
+			lastColor = $('#customize-control-background_color').prev('li');
+		// on change
+		$( optPrefix + 'skins_select select' ).change( function() {
+			if ( $(this).val() === 'dark' ) {
+				bodyBG.hide();
+				bodyBGLabel.hide();
+				lastColor.css('padding-bottom', '20px');
+			} else {
+				bodyBG.show();
+				bodyBGLabel.show();
+				lastColor.css('padding-bottom', '0');
+			}
+		});
+		// on load
+		if ( $( optPrefix + 'skins_select select' ).val()  === 'dark' ) {
+			bodyBG.hide();
+			bodyBGLabel.hide();
+			lastColor.css('padding-bottom', '20px');
+		} else {
+			bodyBG.show();
+			bodyBGLabel.show();
+			lastColor.css('padding-bottom', '0');
+		}
+
+		// Featured Slider Source
+		var sliderRepeater = '#customize-control-featured_slider_repeater',
+			sliderPostOpts = [
+				optPrefix +'featured_slider_display',
+				optPrefix +'featured_slider_amount',
+			];
+		// on change
+		$( optPrefix + 'featured_slider_source select' ).change( function() {
+			if ( $(this).val() !== 'custom' ) {
+				$( sliderPostOpts.join(',') ).show();
+				$(sliderRepeater).hide();
+			} else {
+				$(sliderRepeater).show();
+				$( sliderPostOpts.join(',') ).hide();
+			}
+		});
+		// on load
+		if ( $( optPrefix + 'featured_slider_source select' ).val()  !== 'custom' ) {
+			$( sliderPostOpts.join(',') ).show();
+			$(sliderRepeater).hide();
+		} else {
+			$(sliderRepeater).show();
+			$( sliderPostOpts.join(',') ).hide();
+		}
 
 
 		// Add bottom space to tabs
