@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    1.0
- * @version  2.5.4
+ * @version  2.6.0
  *
  * Contents:
  *
@@ -26,6 +26,10 @@
 /**
  * 1) Required files
  */
+
+	// Theme options
+
+		require_once( get_template_directory() . '/includes/theme-options/theme-options.php' );
 
 	// Post media
 
@@ -267,7 +271,7 @@
 	 * Theme setup
 	 *
 	 * @since    1.0
-	 * @version  2.5.0
+	 * @version  2.6.0
 	 */
 	if ( ! function_exists( 'wm_setup' ) ) {
 		function wm_setup() {
@@ -278,15 +282,27 @@
 
 				// WordPress visual editor CSS stylesheets
 
+					$visual_editor_css = array();
+
 					$rtl_suffix = ( is_rtl() ) ? ( '-rtl' ) : ( '' );
 
-					$visual_editor_css = array_filter( (array) apply_filters( 'wmhook_wm_setup_visual_editor_css', array(
-							str_replace( ',', '%2C', wm_google_fonts_url() ),
-							esc_url_raw( add_query_arg( array( 'ver' => wp_get_theme( get_template() )->get( 'Version' ) ), wm_get_stylesheet_directory_uri( 'assets/fonts/genericons-neue/genericons-neue.css' ) ) ),
-							esc_url_raw( add_query_arg( array( 'ver' => wp_get_theme( get_template() )->get( 'Version' ) ), wm_get_stylesheet_directory_uri( 'assets/css/editor-style' . $rtl_suffix . '.css' ) ) ),
-						) ) );
+					if ( $load_google_fonts = wm_google_fonts_url() ) {
+						$visual_editor_css[] = str_replace( ',', '%2C', $load_google_fonts );
+					}
 
-						add_editor_style( $visual_editor_css );
+					$editor_stylesheets = array(
+						'main' . $rtl_suffix,
+						'custom-editor',
+						'editor-style' . $rtl_suffix,
+					);
+					foreach ( $editor_stylesheets as $stylesheet ) {
+						$visual_editor_css[] = esc_url_raw( add_query_arg(
+							array( 'ver' => wp_get_theme( get_template() )->get( 'Version' ) ),
+							get_theme_file_uri( 'assets/css/' . $stylesheet . '.css' )
+						) );
+					}
+
+					$visual_editor_css = array_filter( (array) apply_filters( 'wmhook_wm_setup_visual_editor_css', $visual_editor_css ) );
 
 
 			// Processing
@@ -313,12 +329,16 @@
 
 					add_theme_support( 'child-theme-stylesheet' );
 
+				// Add editor stylesheets
+
+					add_editor_style( $visual_editor_css );
+
 				// Custom menus
 
 					register_nav_menus( apply_filters( 'wmhook_wm_setup_menus', array(
-							'primary' => esc_html__( 'Primary Menu', 'auberge' ),
-							'social'  => esc_html__( 'Social Links Menu', 'auberge' ),
-						) ) );
+						'primary' => esc_html__( 'Primary Menu', 'auberge' ),
+						'social'  => esc_html__( 'Social Links Menu', 'auberge' ),
+					) ) );
 
 				// Post types supports
 
@@ -357,12 +377,12 @@
 					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#HTML5
 					 */
 					add_theme_support( 'html5', array(
-							'comment-list',
-							'comment-form',
-							'search-form',
-							'gallery',
-							'caption',
-						) );
+						'comment-list',
+						'comment-form',
+						'search-form',
+						'gallery',
+						'caption',
+					) );
 
 				// Custom header
 
@@ -370,38 +390,38 @@
 					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Header
 					 */
 					add_theme_support( 'custom-header', apply_filters( 'wmhook_wm_setup_custom_header_args', array(
-							'default-text-color' => 'ffffff',
-							'header-text'        => true,
-							'random-default'     => true,
-							'width'              => ( isset( $image_sizes['auberge_banner'] ) ) ? ( $image_sizes['auberge_banner'][0] ) : ( 1920 ),
-							'height'             => ( isset( $image_sizes['auberge_banner'] ) ) ? ( $image_sizes['auberge_banner'][1] ) : ( 1080 ),
-							'flex-height'        => true,
-							'flex-width'         => true,
-						) ) );
+						'default-text-color' => 'ffffff',
+						'header-text'        => true,
+						'random-default'     => true,
+						'width'              => ( isset( $image_sizes['auberge_banner'] ) ) ? ( $image_sizes['auberge_banner'][0] ) : ( 1920 ),
+						'height'             => ( isset( $image_sizes['auberge_banner'] ) ) ? ( $image_sizes['auberge_banner'][1] ) : ( 1080 ),
+						'flex-height'        => true,
+						'flex-width'         => true,
+					) ) );
 
 					// Default custom headers packed with the theme (thumbnail size: 275x155 px)
 
 						register_default_headers( array(
 
-								'header-1' => array(
-									'url'           => '%s/assets/images/header/header-1.jpg',
-									'thumbnail_url' => '%s/assets/images/header/thumbnail/header-1.jpg',
-									'description'   => esc_html_x( 'Coffee machine', 'Header image description.', 'auberge' ),
-								),
+							'header-1' => array(
+								'url'           => '%s/assets/images/header/header-1.jpg',
+								'thumbnail_url' => '%s/assets/images/header/thumbnail/header-1.jpg',
+								'description'   => esc_html_x( 'Coffee machine', 'Header image description.', 'auberge' ),
+							),
 
-								'header-2' => array(
-									'url'           => '%s/assets/images/header/header-2.jpg',
-									'thumbnail_url' => '%s/assets/images/header/thumbnail/header-2.jpg',
-									'description'   => esc_html_x( 'Restaurant interior from above', 'Header image description.', 'auberge' ),
-								),
+							'header-2' => array(
+								'url'           => '%s/assets/images/header/header-2.jpg',
+								'thumbnail_url' => '%s/assets/images/header/thumbnail/header-2.jpg',
+								'description'   => esc_html_x( 'Restaurant interior from above', 'Header image description.', 'auberge' ),
+							),
 
-								'header-3' => array(
-									'url'           => '%s/assets/images/header/header-3.jpg',
-									'thumbnail_url' => '%s/assets/images/header/thumbnail/header-3.jpg',
-									'description'   => esc_html_x( 'Pouring coffee', 'Header image description.', 'auberge' ),
-								),
+							'header-3' => array(
+								'url'           => '%s/assets/images/header/header-3.jpg',
+								'thumbnail_url' => '%s/assets/images/header/thumbnail/header-3.jpg',
+								'description'   => esc_html_x( 'Pouring coffee', 'Header image description.', 'auberge' ),
+							),
 
-							) );
+						) );
 
 				// Custom background
 
@@ -409,8 +429,8 @@
 					 * @link  https://codex.wordpress.org/Function_Reference/add_theme_support#Custom_Background
 					 */
 					add_theme_support( 'custom-background', apply_filters( 'wmhook_wm_setup_custom_background_args', array(
-							'default-color' => 'eaecee',
-						) ) );
+						'default-color' => 'eaecee',
+					) ) );
 
 				// Thumbnails support
 
@@ -423,111 +443,22 @@
 					// Image sizes (x, y, crop)
 
 						if ( ! empty( $image_sizes ) ) {
-
 							foreach ( $image_sizes as $size => $setup ) {
-
-								if (
-										in_array( $size, array( 'thumbnail', 'medium', 'large' ) )
-										&& ! get_theme_mod( '__image_size-' . $size )
-									) {
-
-									/**
-									 * Force the default image sizes on theme installation only.
-									 * This allows users to set their own sizes later, but a notification is displayed.
-									 */
-
-									$original_image_width = get_option( $size . '_size_w' );
-
-										if ( $image_sizes[ $size ][0] != $original_image_width ) {
-											update_option( $size . '_size_w', $image_sizes[ $size ][0] );
-										}
-
-									$original_image_height = get_option( $size . '_size_h' );
-
-										if ( $image_sizes[ $size ][1] != $original_image_height ) {
-											update_option( $size . '_size_h', $image_sizes[ $size ][1] );
-										}
-
-									$original_image_crop = get_option( $size . '_crop' );
-
-										if ( $image_sizes[ $size ][2] != $original_image_crop ) {
-											update_option( $size . '_crop', $image_sizes[ $size ][2] );
-										}
-
-									set_theme_mod(
-											'__image_size-' . $size,
-											array(
-												$original_image_width,
-												$original_image_height,
-												$original_image_crop
-											)
-										);
-
-								} else {
-
+								if ( !in_array( $size, array( 'thumbnail', 'medium', 'large' ) ) ) {
 									add_image_size(
-											$size,
-											$image_sizes[ $size ][0],
-											$image_sizes[ $size ][1],
-											$image_sizes[ $size ][2]
-										);
-
+										$size,
+										$image_sizes[ $size ][0],
+										$image_sizes[ $size ][1],
+										$image_sizes[ $size ][2]
+									);
 								}
-
-							} // /foreach
-
+							}
 						}
 
 		}
 	} // /wm_setup
 
 	add_action( 'after_setup_theme', 'wm_setup', 10 );
-
-
-
-	/**
-	 * Theme version 2.0 upgrade admin notice
-	 *
-	 * @since    2.0
-	 * @version  2.0
-	 *
-	 * @param  float $current_theme_version
-	 * @param  float $new_theme_version
-	 */
-	if ( ! function_exists( 'wm_theme_v2_upgrade_notice' ) ) {
-		function wm_theme_v2_upgrade_notice( $current_theme_version, $new_theme_version ) {
-
-			// Processing
-
-				if (
-						version_compare( $current_theme_version, '2.0', '<' )
-						&& is_child_theme()
-					) {
-
-					set_transient(
-							'auberge_admin_notice',
-							array(
-								esc_html__( 'Thank you for upgrading your theme.', 'auberge' )
-								. ' ' . esc_html__( 'We have noticed you are using a child theme.', 'auberge' )
-								. '<br><strong>'
-								. esc_html__( 'Please note that there has been a lot of changes in this new theme version and you should check the code in your child theme for compatibility!', 'auberge' )
-								. '</strong>'
-								. '<br><a href="https://github.com/webmandesign/auberge/blob/master/changelog.md" target="_blank">'
-								. esc_html__( 'Read theme changelog &raquo;', 'auberge' )
-								. '</a>',
-								'notice-error',
-								'switch_themes',
-								3
-							),
-							( 60 * 60 * 48 )
-						);
-
-				}
-
-		}
-	} // /wm_theme_v2_upgrade_notice
-
-	add_action( 'wmhook_theme_upgrade', 'wm_theme_v2_upgrade_notice', 10, 2 );
 
 
 
@@ -699,73 +630,6 @@
 		} // /wm_image_sizes
 
 		add_filter( 'wmhook_wm_setup_image_sizes', 'wm_image_sizes' );
-
-
-
-		/**
-		 * Reset predefined image sizes to their original values
-		 *
-		 * @since    2.0
-		 * @version  2.0
-		 */
-		if ( ! function_exists( 'wm_image_sizes_reset' ) ) {
-			function wm_image_sizes_reset() {
-
-				// Helper variables
-
-					$image_sizes = array( 'thumbnail', 'medium', 'large' );
-					$theme_old   = get_option( 'theme_switched' );
-					$theme_mods  = get_option( 'theme_mods_' . $theme_old );
-
-					$update_theme_mods = false;
-
-
-				// Processing
-
-					foreach ( $image_sizes as $size ) {
-
-						$values = (array) ( isset( $theme_mods[ '__image_size-' . $size ] ) ) ? ( $theme_mods[ '__image_size-' . $size ] ) : ( array() );
-
-						// Skip processing if we do not have the image height and crop value
-
-							if ( ! isset( $values[1] ) || ! isset( $values[2] ) ) {
-								continue;
-							}
-
-						// Old image width
-
-							if ( $values[0] ) {
-								update_option( $size . '_size_w', $values[0] );
-							}
-
-						// Old image height
-
-							if ( $values[1] ) {
-								update_option( $size . '_size_h', $values[1] );
-							}
-
-						// Old image crop
-
-							if ( $values[2] ) {
-								update_option( $size . '_crop', $values[2] );
-							}
-
-						// Remove the image settings from theme mods for future reset
-
-							unset( $theme_mods[ '__image_size-' . $size ] );
-
-							$update_theme_mods = true;
-
-					} // /foreach
-
-					if ( $update_theme_mods ) {
-						update_option( 'theme_mods_' . $theme_old, $theme_mods );
-					}
-
-			}
-		} // /wm_image_sizes_reset
-
-		add_action( 'switch_theme', 'wm_image_sizes_reset' );
 
 
 
@@ -1006,7 +870,7 @@
 		 * Register predefined widget areas (sidebars)
 		 *
 		 * @since    1.0
-		 * @version  1.0
+		 * @version  2.6.0
 		 */
 		if ( ! function_exists( 'wm_register_widget_areas' ) ) {
 			function wm_register_widget_areas() {
@@ -1014,17 +878,15 @@
 				// Processing
 
 					foreach( wm_helper_var( 'widget-areas' ) as $id => $area ) {
-
 						register_sidebar( array(
-								'id'            => $id,
-								'name'          => $area['name'],
-								'description'   => $area['description'],
-								'before_widget' => '<div id="%1$s" class="widget %2$s">',
-								'after_widget'  => '</div>',
-								'before_title'  => '<h3 class="widget-title">',
-								'after_title'   => '</h3>'
-							) );
-
+							'id'            => $id,
+							'name'          => $area['name'],
+							'description'   => $area['description'],
+							'before_widget' => '<section id="%1$s" class="widget %2$s">',
+							'after_widget'  => '</section>',
+							'before_title'  => '<h3 class="widget-title">',
+							'after_title'   => '</h3>'
+						) );
 					}
 
 			}
@@ -1115,7 +977,7 @@
 	 * Registering theme styles and scripts
 	 *
 	 * @since    1.0
-	 * @version  2.5.0
+	 * @version  2.6.0
 	 */
 	if ( ! function_exists( 'wm_register_assets' ) ) {
 		function wm_register_assets() {
@@ -1130,13 +992,19 @@
 				// Styles
 
 					$register_styles = apply_filters( 'wmhook_wm_register_assets_register_styles', array(
-							'genericons-neue' => array( wm_get_stylesheet_directory_uri( 'assets/fonts/genericons-neue/genericons-neue.css' ) ),
-							'slick'           => array( wm_get_stylesheet_directory_uri( 'assets/css/slick.css' ) ),
-							'wm-google-fonts' => array( wm_google_fonts_url() ),
-							'wm-main'         => array( wm_get_stylesheet_directory_uri( 'assets/css/main.css' ) ),
-							'wm-stylesheet'   => array( get_stylesheet_uri() ),
-							'wm-custom'       => array( wm_get_stylesheet_directory_uri( 'assets/css/custom.css' ), 'deps' => array( 'wm-main' ) ),
-						) );
+
+						'auberge' => array( 'src' => '' ), // For wp_add_inline_style().
+
+						'genericons-neue' => array( get_theme_file_uri( 'assets/fonts/genericons-neue/genericons-neue.css' ) ),
+						'slick'           => array( get_theme_file_uri( 'assets/css/slick.css' ) ),
+
+						'wm-google-fonts' => array( wm_google_fonts_url() ),
+
+						'wm-main'   => array( get_theme_file_uri( 'assets/css/main.css' ) ),
+						'wm-custom' => array( get_theme_file_uri( 'assets/css/custom.css' ), 'deps' => array( 'wm-main' ) ),
+
+						'wm-stylesheet' => array( 'src' => get_stylesheet_uri(), 'deps' => array( 'auberge' ) ),
+					) );
 
 					foreach ( $register_styles as $handle => $atts ) {
 						$src   = ( isset( $atts['src'] )   ) ? ( $atts['src']   ) : ( $atts[0] );
@@ -1150,11 +1018,11 @@
 				// Scripts
 
 					$register_scripts = apply_filters( 'wmhook_wm_register_assets_register_scripts', array(
-							'slick'                  => array( 'src' => wm_get_stylesheet_directory_uri( 'assets/js/vendor/slick.min.js' ), 'deps' => array( 'jquery' ) ),
-							'wm-scripts-global'      => array( 'src' => wm_get_stylesheet_directory_uri( 'assets/js/scripts-global.js' ), 'deps' => array( 'jquery', 'imagesloaded', 'wm-scripts-navigation' ) ),
-							'wm-scripts-navigation'  => array( wm_get_stylesheet_directory_uri( 'assets/js/scripts-navigation.js' ) ),
-							'wm-skip-link-focus-fix' => array( wm_get_stylesheet_directory_uri( 'assets/js/skip-link-focus-fix.js' ) ),
-						) );
+						'slick'                  => array( 'src' => get_theme_file_uri( 'assets/js/vendor/slick.min.js' ), 'deps' => array( 'jquery' ) ),
+						'wm-scripts-global'      => array( 'src' => get_theme_file_uri( 'assets/js/scripts-global.js' ), 'deps' => array( 'jquery', 'imagesloaded', 'wm-scripts-navigation' ) ),
+						'wm-scripts-navigation'  => array( get_theme_file_uri( 'assets/js/scripts-navigation.js' ) ),
+						'wm-skip-link-focus-fix' => array( get_theme_file_uri( 'assets/js/skip-link-focus-fix.js' ) ),
+					) );
 
 					foreach ( $register_scripts as $handle => $atts ) {
 						$src       = ( isset( $atts['src'] )       ) ? ( $atts['src']       ) : ( $atts[0] );
@@ -1176,7 +1044,7 @@
 	 * Frontend HTML head assets enqueue
 	 *
 	 * @since    1.0
-	 * @version  2.5.0
+	 * @version  2.6.0
 	 */
 	if ( ! function_exists( 'wm_enqueue_assets' ) ) {
 		function wm_enqueue_assets() {
@@ -1185,51 +1053,38 @@
 
 				$enqueue_styles = $enqueue_scripts = array();
 
-				$custom_styles = wm_custom_styles();
-
-				$inline_styles_handle = apply_filters( 'wmhook_wm_enqueue_assets_inline_styles_handle', 'wm-main' );
-
 
 			// Processing
 
 				// Styles
 
 					// Google Fonts
-
-						if ( wm_google_fonts_url() ) {
-							$enqueue_styles[] = 'wm-google-fonts';
-						}
+					if ( wm_google_fonts_url() ) {
+						$enqueue_styles[] = 'wm-google-fonts';
+					}
 
 					// Food menu icon for search results
-
-						if (
-								( is_search() || is_archive() )
-								&& defined( 'JETPACK__VERSION' )
-								&& class_exists( 'WM_Nova_Restaurant' )
-							) {
-							wp_enqueue_style( 'nova-font',  plugins_url( 'css/nova-font.css', JETPACK__PLUGIN_DIR . 'modules/custom-post-types/nova.php' ), array(), JETPACK__VERSION );
-						}
+					if (
+						( is_search() || is_archive() )
+						&& defined( 'JETPACK__VERSION' )
+						&& class_exists( 'WM_Nova_Restaurant' )
+					) {
+						wp_enqueue_style( 'nova-font',  plugins_url( 'css/nova-font.css', JETPACK__PLUGIN_DIR . 'modules/custom-post-types/nova.php' ), array(), JETPACK__VERSION );
+					}
 
 					// Banner slider
-
-						if (
-								is_front_page()
-								&& wm_has_banner_posts( 2 )
-							) {
-							$enqueue_styles[] = 'slick';
-						}
+					if (
+						is_front_page()
+						&& wm_has_banner_posts( 2 )
+					) {
+						$enqueue_styles[] = 'slick';
+					}
 
 					// Main
-
-						$enqueue_styles[] = 'genericons-neue';
-						$enqueue_styles[] = 'wm-main';
-						$enqueue_styles[] = 'wm-stylesheet';
-
-					// Colors
-
-						if ( empty( $custom_styles ) ) {
-							$enqueue_styles[] = 'wm-custom';
-						}
+					$enqueue_styles[] = 'genericons-neue';
+					$enqueue_styles[] = 'wm-main';
+					$enqueue_styles[] = 'wm-custom';
+					$enqueue_styles[] = 'wm-stylesheet';
 
 					$enqueue_styles = apply_filters( 'wmhook_wm_enqueue_assets_enqueue_styles', $enqueue_styles );
 
@@ -1244,72 +1099,53 @@
 
 				// Styles - inline
 
-					// Customizer setup custom styles
-
-						if ( ! empty( $custom_styles ) ) {
-							wp_add_inline_style( $inline_styles_handle, "\r\n" . apply_filters( 'wmhook_esc_css', $custom_styles ) . "\r\n" );
-						}
-
-					// Custom styles set in post/page 'custom-css' custom field
-
-						if (
-								is_singular()
-								&& $output = get_post_meta( get_the_ID(), 'custom_css', true )
-							) {
-							$output = apply_filters( 'wmhook_wm_enqueue_assets_styles_inline_singular', "\r\n\r\n/* Custom singular styles */\r\n" . $output . "\r\n" );
-
-							wp_add_inline_style( $inline_styles_handle, apply_filters( 'wmhook_esc_css', $output ) . "\r\n" );
-						}
-
 					// Beaver Builder support
+					if ( isset( $_GET['fl_builder'] ) ) {
+						$output = apply_filters( 'wmhook_wm_enqueue_assets_styles_inline_beaver_builder', "\r\n"
+						          . '.fl-lightbox .fl-builder-settings-fields select { background-image: none; -webkit-appearance: menulist; -moz-appearance: menulist; }'
+						          . 'body .fl-builder-lightbox .fl-lightbox { width: 720px; }'
+						          . 'body .fl-builder-settings-tab { width: 100%; }'
+						          . '.fl-row:not(:hover) { z-index: 0; }'
+						          . '.fl-col-content .fl-module:hover { position: relative; z-index: 999; }'
+						          . "\r\n" );
 
-						if ( isset( $_GET['fl_builder'] ) ) {
-							$output = apply_filters( 'wmhook_wm_enqueue_assets_styles_inline_beaver_builder', "\r\n"
-							          . '.fl-lightbox .fl-builder-settings-fields select { background-image: none; -webkit-appearance: menulist; -moz-appearance: menulist; }'
-							          . 'body .fl-builder-lightbox .fl-lightbox { width: 720px; }'
-							          . 'body .fl-builder-settings-tab { width: 100%; }'
-							          . '.fl-row:not(:hover) { z-index: 0; }'
-							          . '.fl-col-content .fl-module:hover { position: relative; z-index: 999; }'
-							          . "\r\n" );
-
-							wp_add_inline_style( $inline_styles_handle, apply_filters( 'wmhook_esc_css', $output ) . "\r\n" );
-						}
+						wp_add_inline_style(
+							'auberge',
+							apply_filters( 'wmhook_esc_css', $output ) . "\r\n"
+						);
+					}
 
 				// Scripts
 
 					// Masonry script (in footer and in archives)
-
-						$footer_widgets = wp_get_sidebars_widgets();
-						if (
-								(
-									is_array( $footer_widgets )
-									&& isset( $footer_widgets['footer'] )
-									&& count( $footer_widgets['footer'] ) > absint( apply_filters( 'wmhook_widgets_columns', 3, 'footer' ) )
-								)
-								|| ( is_archive() && ! is_tax( 'nova_menu' ) )
-								|| is_front_page()
-								|| is_home()
-								|| is_search()
-							) {
-							$enqueue_scripts[] = 'jquery-masonry';
-						}
+					$footer_widgets = wp_get_sidebars_widgets();
+					if (
+						(
+							is_array( $footer_widgets )
+							&& isset( $footer_widgets['footer'] )
+							&& count( $footer_widgets['footer'] ) > absint( apply_filters( 'wmhook_widgets_columns', 3, 'footer' ) )
+						)
+						|| ( is_archive() && ! is_tax( 'nova_menu' ) )
+						|| is_front_page()
+						|| is_home()
+						|| is_search()
+					) {
+						$enqueue_scripts[] = 'jquery-masonry';
+					}
 
 					// Banner slider
-
-						if (
-								is_front_page()
-								&& wm_has_banner_posts( 2 )
-							) {
-							$enqueue_scripts[] = 'slick';
-						}
+					if (
+						is_front_page()
+						&& wm_has_banner_posts( 2 )
+					) {
+						$enqueue_scripts[] = 'slick';
+					}
 
 					// Global theme scripts
-
-						$enqueue_scripts[] = 'wm-scripts-global';
+					$enqueue_scripts[] = 'wm-scripts-global';
 
 					// Skip link focus fix
-
-						$enqueue_scripts[] = 'wm-skip-link-focus-fix';
+					$enqueue_scripts[] = 'wm-skip-link-focus-fix';
 
 					$enqueue_scripts = apply_filters( 'wmhook_wm_enqueue_assets_enqueue_scripts', $enqueue_scripts );
 
@@ -1356,7 +1192,7 @@
 		 * Customizer preview assets enqueue
 		 *
 		 * @since    1.4
-		 * @version  2.0
+		 * @version  2.6.0
 		 */
 		if ( ! function_exists( 'wm_customizer_preview_enqueue_assets' ) ) {
 			function wm_customizer_preview_enqueue_assets() {
@@ -1365,7 +1201,7 @@
 
 					wp_enqueue_script(
 							'wm-customizer-preview',
-							wm_get_stylesheet_directory_uri( 'assets/js/customize-preview.js' ),
+							get_theme_file_uri( 'assets/js/customize-preview.js' ),
 							array( 'customize-preview' ),
 							esc_attr( trim( wp_get_theme( get_template() )->get( 'Version' ) ) ),
 							true
@@ -1518,7 +1354,7 @@
 	 * Add featured image as background image to post navs
 	 *
 	 * @since    1.0
-	 * @version  1.4.5
+	 * @version  2.6.0
 	 */
 	if ( ! function_exists( 'wm_post_nav_background' ) ) {
 		function wm_post_nav_background() {
@@ -1530,16 +1366,16 @@
 				}
 
 
-			// Helper variables
+			// Variables
 
 				$output   = '';
 				$previous = ( is_attachment() ) ? ( get_post( get_post()->post_parent ) ) : ( get_adjacent_post( false, '', true ) );
 				$next     = get_adjacent_post( false, '', false );
 
 				if (
-						is_attachment()
-						&& 'attachment' == $previous->post_type
-					) {
+					is_attachment()
+					&& 'attachment' == $previous->post_type
+				) {
 					return;
 				}
 
@@ -1561,7 +1397,10 @@
 
 			// Output
 
-				wp_add_inline_style( 'wm-stylesheet', apply_filters( 'wmhook_esc_css', $output ) . "\r\n" );
+				wp_add_inline_style(
+					'auberge',
+					apply_filters( 'wmhook_esc_css', $output ) . "\r\n"
+				);
 
 		}
 	} // /wm_post_nav_background
@@ -1600,7 +1439,7 @@
 	 * Website HEAD
 	 *
 	 * @since    1.0
-	 * @version  2.0
+	 * @version  2.6.0
 	 */
 	if ( ! function_exists( 'wm_head' ) ) {
 		function wm_head() {
@@ -1612,10 +1451,10 @@
 
 			// Processing
 
-				$output[10] = '<meta charset="' . get_bloginfo( 'charset' ) . '" />';
+				$output[10] = '<meta charset="' . esc_attr( get_bloginfo( 'charset' ) ) . '" />';
 				$output[20] = '<meta name="viewport" content="width=device-width, initial-scale=1" />';
 				$output[30] = '<link rel="profile" href="http://gmpg.org/xfn/11" />';
-				$output[40] = '<link rel="pingback" href="' . get_bloginfo( 'pingback_url' ) . '" />';
+				$output[40] = '<link rel="pingback" href="' . esc_attr( get_bloginfo( 'pingback_url' ) ) . '" />';
 
 				// Filter output array
 
@@ -3128,7 +2967,7 @@
 		 * Pagination
 		 *
 		 * @since    1.0
-		 * @version  2.5.3
+		 * @version  2.6.0
 		 */
 		if ( ! function_exists( 'wm_pagination' ) ) {
 			function wm_pagination() {
@@ -3147,18 +2986,18 @@
 					$output = '';
 
 					$pagination = array(
-							'prev_text' => esc_html_x( '&laquo;', 'Pagination text (visible): previous.', 'auberge' ) . '<span class="screen-reader-text"> '
-							               . esc_html_x( 'Previous page', 'Pagination text (hidden): previous.', 'auberge' ) . '</span>',
-							'next_text' => '<span class="screen-reader-text">' . esc_html_x( 'Next page', 'Pagination text (hidden): next.', 'auberge' )
-							               . ' </span>' . esc_html_x( '&raquo;', 'Pagination text (visible): next.', 'auberge' ),
-						);
+						'prev_text' => esc_html_x( '&laquo;', 'Pagination text (visible): previous.', 'auberge' ) . '<span class="screen-reader-text"> '
+						               . esc_html_x( 'Previous page', 'Pagination text (hidden): previous.', 'auberge' ) . '</span>',
+						'next_text' => '<span class="screen-reader-text">' . esc_html_x( 'Next page', 'Pagination text (hidden): next.', 'auberge' )
+						               . ' </span>' . esc_html_x( '&raquo;', 'Pagination text (visible): next.', 'auberge' ),
+					);
 
 
 				// Processing
 
 					if ( $output = paginate_links( $pagination ) ) {
 						$output = '<nav class="pagination" aria-labelledby="pagination-label">'
-						          . '<h2 class="screen-reader-text" id="pagination-label">' . esc_attr__( 'Posts Navigation', 'auberge' ) . '</h2>'
+						          . '<h2 class="screen-reader-text" id="pagination-label">' . esc_html__( 'Posts Navigation', 'auberge' ) . '</h2>'
 						          . $output
 						          . '</nav>';
 					}
@@ -3166,7 +3005,7 @@
 
 				// Output
 
-					echo $output;
+					echo $output; // WPCS: XSS OK.
 
 			}
 		} // /wm_pagination
@@ -3440,65 +3279,20 @@
 
 
 	/**
-	 * Font CSS name
-	 *
-	 * @since    1.0
-	 * @version  1.0
-	 *
-	 * @param  string $value       @see wm_custom_styles_value()
-	 * @param  array  $skin_option @see wm_custom_styles_value()
-	 */
-	if ( ! function_exists( 'wm_css_font_name' ) ) {
-		function wm_css_font_name( $value, $skin_option ) {
-
-			// Helper variables
-
-				$helper = wm_helper_var( 'google-fonts' );
-
-
-			// Processing
-
-				if (
-						isset( $skin_option['id'] )
-						&& false !== strpos( $skin_option['id'], 'font-family' )
-						&& is_string( $value )
-					) {
-
-					$value = trim( $value );
-
-					if ( isset( $helper[ $value ] ) ) {
-						$value = "'" . $helper[ $value ] . "', ";
-					}
-
-				}
-
-
-			// Output
-
-				return $value;
-
-		}
-	} // /wm_css_font_name
-
-	add_filter( 'wmhook_wm_custom_styles_value', 'wm_css_font_name', 10, 2 );
-
-
-
-	/**
 	 * Get Google Fonts link
 	 *
 	 * Returns a string such as:
-	 * //fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Exo+2:400,700|Allan&subset=latin,latin-ext
+	 * https://fonts.googleapis.com/css?family=Alegreya+Sans:300,400|Exo+2:400,700|Allan&subset=latin,latin-ext
 	 *
 	 * @since    1.0
-	 * @version  1.4.8
+	 * @version  2.6.0
 	 *
 	 * @param  array $fonts Fallback fonts.
 	 */
 	if ( ! function_exists( 'wm_google_fonts_url' ) ) {
 		function wm_google_fonts_url( $fonts = array() ) {
 
-			// Helper variables
+			// Variables
 
 				$output = '';
 				$family = array();
@@ -3509,6 +3303,8 @@
 				if ( empty( $fonts_setup ) && ! empty( $fonts ) ) {
 					$fonts_setup = (array) $fonts;
 				}
+
+				$http = ( is_ssl() ) ? ( 'https' ) : ( 'http' );
 
 
 			// Requirements check
@@ -3529,9 +3325,9 @@
 
 				if ( ! empty( $family ) ) {
 					$output = esc_url_raw( add_query_arg( array(
-							'family' => implode( '|', (array) array_unique( $family ) ),
-							'subset' => implode( ',', (array) $subset ), //Subset can be array if multiselect Customizer input field used
-						), '//fonts.googleapis.com/css' ) );
+						'family' => implode( '|', (array) array_unique( $family ) ),
+						'subset' => implode( ',', (array) $subset ), //Subset can be array if multiselect Customizer input field used
+					), $http . '://fonts.googleapis.com/css' ) );
 				}
 
 
@@ -3758,10 +3554,4 @@
 
 		if ( ( class_exists( 'OCDI_Plugin' ) || class_exists( 'PT_One_Click_Demo_Import' ) ) && is_admin() ) {
 			require_once( get_template_directory() . '/includes/plugins/one-click-demo-import/class-one-click-demo-import.php' );
-		}
-
-	// Smart Slider 3 setup
-
-		if ( class_exists( 'N2SS3' ) ) {
-			require_once( get_template_directory() . '/includes/plugins/smart-slider/smart-slider.php' );
 		}
