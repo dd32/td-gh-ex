@@ -576,7 +576,7 @@ if ( ! function_exists( 'benevolent_excerpt_length' ) ) :
  * Changes the default 55 character in excerpt 
 */
 function benevolent_excerpt_length( $length ) {
-  return 60;
+  return is_admin() ? $length : 60;
 }
 add_filter( 'excerpt_length', 'benevolent_excerpt_length', 999 );
 endif;
@@ -600,7 +600,7 @@ function benevolent_footer_credit(){
        $text .= get_the_privacy_policy_link();
    }
     $text .= '<span class="by">';
-    $text .= '<a href="' . esc_url( 'http://raratheme.com/wordpress-themes/benevolent/' ) .'" rel="author" target="_blank">' . esc_html__( 'Benevolent by Rara Theme', 'benevolent' ) . '</a>. ';
+    $text .= '<a href="' . esc_url( 'https://raratheme.com/wordpress-themes/benevolent/' ) .'" rel="author" target="_blank">' . esc_html__( 'Benevolent by Rara Theme', 'benevolent' ) . '</a>. ';
     $text .= sprintf( esc_html__( 'Powered by %s', 'benevolent' ), '<a href="'. esc_url( __( 'https://wordpress.org/', 'benevolent' ) ) .'" target="_blank">WordPress</a>.' );
     $text .= '</span></div></div>';
     echo apply_filters( 'benevolent_footer_text', $text );    

@@ -23,6 +23,63 @@
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
 <div id="page" class="site">
 	
+    <div class="mobile-header">
+        <div class="container">
+            <?php 
+                $site_title = get_bloginfo( 'name' );
+                $description = get_bloginfo( 'description', 'display' );
+                
+                if( has_custom_logo() && ( $site_title || $description ) ) {
+                    $add_class = 'logo-text';
+                }else{
+                    $add_class = '';
+                }?>
+                <div class="site-branding <?php echo esc_attr( $add_class ); ?>" itemscope itemtype="http://schema.org/Organization">
+                
+                    <?php if( function_exists( 'has_custom_logo' ) && has_custom_logo() ) {
+                        echo '<div class="site-logo">';
+                        the_custom_logo();
+                        echo '</div>';
+                    }?>
+                    <div class="site-title-wrap">
+                        <p class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home" itemprop="url"><?php bloginfo( 'name' ); ?></a></p>
+                        <?php  
+                    
+                        $description = get_bloginfo( 'description', 'display' );
+                        if ( $description || is_customize_preview() ) : ?>
+                            <p class="site-description" itemprop="description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+                        <?php endif; ?>
+                    </div>
+                </div><!-- .site-branding -->
+            <div class="btn-donate">
+                <?php 
+                    $button_text = get_theme_mod( 'benevolent_button_text', __( 'Donate Now', 'benevolent' ) );
+                    $button_url = get_theme_mod( 'benevolent_button_url' );
+                    if( $button_text && $button_url ) echo '<a href="' . esc_url( $button_url ). '">' . esc_html( $button_text ) . '</a>';
+                ?>
+            </div>
+            <div class="menu-opener">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div> <!-- container -->
+        <div class="mobile-menu">
+            <nav class="primary-menu" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                    <?php wp_nav_menu( array( 'theme_location' => 'primary', 'menu_id' => 'primary-menu' ) ); ?>
+                </nav><!-- #site-navigation -->
+            <?php if( has_nav_menu( 'secondary' ) ) { ?>
+                
+                <nav class="secondary-menu" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+                    <?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_id' => 'secondary-menu', 'fallback_cb' => false ) ); ?>
+                </nav><!-- #site-navigation -->
+                <?php } ?>
+                <?php if( get_theme_mod( 'benevolent_ed_social_header' ) ) do_action( 'benevolent_social_links' ); ?>
+        </div>
+    </div> <!-- mobile-header -->
+
+
+
 	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
         
         <div class="header-top">

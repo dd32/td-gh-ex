@@ -44,6 +44,7 @@
         
         ?>
 	</footer><!-- #colophon -->
+    <div class="overlay"></div>
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

@@ -4,7 +4,7 @@ Theme URI: https://raratheme.com/wordpress-themes/benevolent/
 Author: Rara Theme
 Author URI: https://raratheme.com/
 Description: Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. Check the demo at https://demo.raratheme.com/benevolent/, documentation at https://raratheme.com/documentation/benevolent/ and get support at https://raratheme.com/support-forum/. 
-Version: 1.1.8
+Version: 1.1.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: benevolent
@@ -3079,6 +3079,30 @@ object {
     display: none;
 }
 
+.mobile-header{
+    display: none;
+}
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    z-index: 1;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: ease 0.35s;
+    -moz-transition: ease 0.35s;
+    transition: ease 0.35s;
+}
+
+body.menu-open .overlay{
+    opacity: 1;
+    visibility: visible;
+}
+
 /*responsive style*/
 @media only screen and (max-width: 1199px) {
     .container {
@@ -3128,6 +3152,259 @@ object {
 
     .banner .banner-text {
         top: 30%;
+    }
+}
+
+@media only screen and (max-width: 1024px){
+    .site-header{
+        display: none;
+    }
+
+    .mobile-header{
+        display: block;
+        background: #fff;
+        padding: 20px 0;
+    }
+
+    .mobile-header .container{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .mobile-header .container:after{
+        display: none;
+    }
+
+    .mobile-header .site-branding{
+        flex-basis: 0;
+        flex-grow: 1;
+        margin-right: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .mobile-header .site-branding .site-title{
+        font-size: 2rem;
+        font-weight: 700;
+        margin: 0;
+    }
+
+    .mobile-header .site-branding .site-title a{
+        color: #000;
+    }
+
+    .mobile-header .site-branding .site-title a:hover,
+    .mobile-header .site-branding .site-title a:focus{
+        text-decoration: none;
+    }
+
+    .mobile-header .site-branding .site-description{
+        margin: 0;
+        font-size: 1rem;
+    }
+
+    .mobile-header .site-branding .site-logo{
+        margin-right: 15px;
+    }
+
+    .mobile-header .btn-donate a{
+        display: inline-block;
+        font-size: 18px;
+        line-height: 1.625em;
+        font-weight: 600;
+        color: #fcb216;
+        border: 1px solid #fcb216;
+        text-align: center;
+        padding: 10px 30px;
+        -webkit-transition: ease 0.2s;
+        -moz-transition: ease 0.2s;
+        transition: ease 0.2s;
+    }
+
+    .mobile-header .btn-donate a:hover,
+    .mobile-header .btn-donate a:focus{
+        text-decoration: none;
+        color: #fff;
+        background: #fcb216;
+    }
+
+    .mobile-header .menu-opener{
+        width: 20px;
+        height: 16px;
+        margin-left: 15px;
+        cursor: pointer;
+    }
+
+    .mobile-header .menu-opener span{
+        display: block;
+        width: 100%;
+        height: 2px;
+        background: #000;
+        margin-bottom: 5px;
+    }
+
+    .mobile-header .menu-opener span:last-child{
+        margin-bottom: 0;
+    }
+
+    .mobile-header .mobile-menu{
+        position: fixed;
+        right: 0;
+        width: 320px;
+        background: #fff;
+        top: 0;
+        z-index: 2;
+        height: 100%;
+        padding-top: 80px;
+        overflow-y: auto;
+        -webkit-transform: translateX(320px);
+        -moz-transform: translateX(320px);
+        transform: translateX(320px);
+        -webkit-transition: ease 0.35s;
+        -moz-transition: ease 0.35s;
+        transition: ease 0.35s;
+    }
+
+    body.menu-open .mobile-header .mobile-menu{
+        -webkit-transform: translateX(0);
+        -moz-transform: translateX(0);
+        transform: translateX(0);
+    }
+
+    .mobile-header .mobile-menu .btn-menu-close{
+        position: absolute;
+        top: 27px;
+        right: 20px;
+        background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 320 512'%3E%3Cpath d='M193.94 256L296.5 153.44l21.15-21.15c3.12-3.12 3.12-8.19 0-11.31l-22.63-22.63c-3.12-3.12-8.19-3.12-11.31 0L160 222.06 36.29 98.34c-3.12-3.12-8.19-3.12-11.31 0L2.34 120.97c-3.12 3.12-3.12 8.19 0 11.31L126.06 256 2.34 379.71c-3.12 3.12-3.12 8.19 0 11.31l22.63 22.63c3.12 3.12 8.19 3.12 11.31 0L160 289.94 262.56 392.5l21.15 21.15c3.12 3.12 8.19 3.12 11.31 0l22.63-22.63c3.12-3.12 3.12-8.19 0-11.31L193.94 256z'/%3E%3C/svg%3E") center center no-repeat;
+        width: 20px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .mobile-header .mobile-menu .primary-menu ul,
+    .mobile-header .mobile-menu .secondary-menu ul{
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        font-size: 1rem;
+    }
+
+    .mobile-header .mobile-menu .primary-menu ul li,
+    .mobile-header .mobile-menu .secondary-menu ul li{
+        border-top: 1px solid rgba(0, 0, 0, 0.1);
+        position: relative;
+    }
+
+    .mobile-header .mobile-menu .primary-menu ul li .angle-down,
+    .mobile-header .mobile-menu .secondary-menu ul li .angle-down{
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 53px;
+        height: 53px;
+        background: transparent;
+        cursor: pointer;
+        -webkit-transition: ease 0.2s;
+        -moz-transition: ease 0.2s;
+        transition: ease 0.2s;
+    }
+
+    .mobile-header .mobile-menu .primary-menu ul li .angle-down.active,
+    .mobile-header .mobile-menu .secondary-menu ul li .angle-down.active{
+        -webkit-transform: rotate(180deg);
+        -moz-transform: rotate(180deg);
+        transform: rotate(180deg);
+    }
+
+    .mobile-header .mobile-menu .primary-menu ul li .angle-down:after,
+    .mobile-header .mobile-menu .secondary-menu ul li .angle-down:after{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        background: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23000' viewBox='0 0 256 512'%3E%3Cpath d='M119.5 326.9L3.5 209.1c-4.7-4.7-4.7-12.3 0-17l7.1-7.1c4.7-4.7 12.3-4.7 17 0L128 287.3l100.4-102.2c4.7-4.7 12.3-4.7 17 0l7.1 7.1c4.7 4.7 4.7 12.3 0 17L136.5 327c-4.7 4.6-12.3 4.6-17-.1z'/%3E%3C/svg%3E") center center no-repeat;
+        width: 15px;
+        height: 25px;
+        content: '';
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+    }
+
+    .mobile-header .mobile-menu .primary-menu ul li a,
+    .mobile-header .mobile-menu .secondary-menu ul li a{
+        display: block;
+        color: #000;
+        padding: 12px 30px;
+        -webkit-transition: ease 0.2s;
+        -moz-transition: ease 0.2s;
+        transition: ease 0.2s;
+    }
+
+    .mobile-header .mobile-menu .primary-menu ul li a:hover,
+    .mobile-header .mobile-menu .secondary-menu ul li a:hover,
+    .mobile-header .mobile-menu .primary-menu ul li a:focus,
+    .mobile-header .mobile-menu .secondary-menu ul li a:focus,
+    .mobile-header .mobile-menu .primary-menu ul li:hover > a,
+    .mobile-header .mobile-menu .primary-menu ul li:focus > a,
+    .mobile-header .mobile-menu .secondary-menu ul li:hover > a,
+    .mobile-header .mobile-menu .secondary-menu ul li:focus > a,
+    .mobile-header .mobile-menu .primary-menu ul .current-menu-item > a,
+    .mobile-header .mobile-menu .primary-menu ul .current-menu-ancestor > a,
+    .mobile-header .mobile-menu .primary-menu ul .current_page_item > a,
+    .mobile-header .mobile-menu .primary-menu ul .current_page_ancestor > a,
+    .mobile-header .mobile-menu .secondary-menu ul .current-menu-item > a,
+    .mobile-header .mobile-menu .secondary-menu ul .current-menu-ancestor > a,
+    .mobile-header .mobile-menu .secondary-menu ul .current_page_item > a,
+    .mobile-header .mobile-menu .secondary-menu ul .current_page_ancestor > a{
+        text-decoration: none;
+        color: #45c267;
+    }
+
+    .mobile-header .mobile-menu .primary-menu ul ul,
+    .mobile-header .mobile-menu .secondary-menu ul ul{
+        display: none;
+    }
+
+    .mobile-menu .social-networks{
+        margin: 50px 0 0;
+        padding: 0 30px;
+        list-style: none;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+    }
+
+    .mobile-menu .social-networks li{
+        margin: 0 10px 10px 0;
+    }
+
+    .mobile-menu .social-networks li a{
+        display: block;
+        width: 40px;
+        height: 40px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: rgba(0, 0, 0, 0.5);
+        -webkit-transition: ease 0.2s;
+        -moz-transition: ease 0.2s;
+        transition: ease 0.2s;
+    }
+
+    .mobile-menu .social-networks li a:hover,
+    .mobile-menu .social-networks li a:focus{
+        text-decoration: none;
+        color: #fff;
+        background: #45c267;
+        border-color: #45c267;
+    }
+
+    body.menu-open{
+        overflow-y: hidden;
     }
 }
 
@@ -3669,5 +3946,19 @@ object {
     .widget.widget_benevolent_social_links .social-networks li {
         float: none;
         display: inline-block;
+    }
+}
+
+@media only screen and (max-width: 600px){
+    .mobile-header .site-branding{
+        flex-basis: inherit;
+        flex-grow: inherit;
+        width: 100%;
+        justify-content: center;
+        margin: 0 0 20px;
+    }
+
+    .mobile-header .container{
+        justify-content: space-between;
     }
 }

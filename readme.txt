@@ -1,11 +1,11 @@
 === Benevolent ===
-Author: Rara Theme (http://raratheme.com)
+Author: Rara Theme (https://raratheme.com)
 
 Tags: Blog, two-columns, right-sidebar, footer-widgets, education, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options
 
 Requires at least: 4.7
-Tested up to: 4.9.8
-Stable tag: 1.1.8
+Tested up to: 5.0.3
+Stable tag: 1.1.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -156,6 +156,10 @@ Benevolent WordPress Theme is distributed under the terms of the GPLv2 or later
    
    
 == Changelog ==
+    
+    1.1.9
+    * Updated fontawesome to version 5.6.3.
+    * Responsive devices header improved.
 
     1.1.8
     * Instagram Icon from the widget issue fixed.
