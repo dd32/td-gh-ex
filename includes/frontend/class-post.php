@@ -6,7 +6,7 @@
  * @copyright  WebMan Design, Oliver Juhas
  *
  * @since    2.0.0
- * @version  2.2.0
+ * @version  2.3.0
  *
  * Contents:
  *
@@ -159,7 +159,7 @@ class Modern_Post {
 		 * @uses  `wmhook_modern_title_primary_disable` global hook to disable `#primary` section H1
 		 *
 		 * @since    2.0.0
-		 * @version  2.0.0
+		 * @version  2.3.0
 		 *
 		 * @param  array $args Heading setup arguments
 		 */
@@ -173,7 +173,7 @@ class Modern_Post {
 
 				if ( false !== $pre ) {
 					if ( true !== $pre ) {
-						echo $pre;
+						echo $pre; // Functionality bypass via filter.
 					}
 					return;
 				}
@@ -340,7 +340,7 @@ class Modern_Post {
 		 * Post navigation
 		 *
 		 * @since    2.0.0
-		 * @version  2.0.0
+		 * @version  2.3.0
 		 */
 		public static function navigation() {
 
@@ -427,7 +427,7 @@ class Modern_Post {
 				}
 
 				if ( $styles ) {
-					$styles = (string) apply_filters( 'wmhook_modern_post_navigation_styles', '<style id="post-navigation-css" type="text/css">' . apply_filters( 'wmhook_modern_esc_css', $styles ) . '</style>' );
+					$styles = (string) apply_filters( 'wmhook_modern_post_navigation_styles', '<style id="post-navigation-css" type="text/css">' . Modern_Customize_Styles::esc_css( $styles ) . '</style>' );
 				}
 
 
@@ -444,12 +444,10 @@ class Modern_Post {
 
 
 			/**
-			 * Post navigation styles
-			 *
-			 * @uses  `wmhook_modern_esc_css` global hook
+			 * Post navigation styles.
 			 *
 			 * @since    1.0.0
-			 * @version  2.2.0
+			 * @version  2.3.0
 			 */
 			public static function navigation_styles() {
 
@@ -500,7 +498,7 @@ class Modern_Post {
 
 						wp_add_inline_style(
 							'modern',
-							(string) apply_filters( 'wmhook_modern_esc_css', $output, 'Modern_Post::navigation_styles' )
+							Modern_Customize_Styles::esc_css( $output, 'Modern_Post::navigation_styles' )
 						);
 
 					}
