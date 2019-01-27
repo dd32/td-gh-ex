@@ -6,7 +6,7 @@ full-width-template, editor-style
 Requires at least: 4.9.0
 Tested up to: 4.9.8
 Requires PHP: 5.2.4
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -44,6 +44,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.0.1 =
+* increase slider height
+* replace screenshot image with CC0 licence images
+
 = 1.0.0 =
 * Initial Release
 
@@ -58,7 +62,4 @@ AyaClub is distributed under the terms of the GNU General Public License v2
 == Resources ==
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * js/owl.carousel.js, © 2016-2018 David Deutsch, MIT
-* screenshot.png (slide), © 2017 @nadinheli22 https://pixabay.com/en/supermarket-vegetables-food-shop-2384476/, CC0
-* screenshot.png (col #1), © 2018 @Annalise1988 https://pixabay.com/en/vegetables-salad-broccoli-corn-3832560/, CC0
-* screenshot.png (col #2), © 2017 @mohamed_hassan https://pixabay.com/en/design-icon-modern-internet-sign-2381160/, CC0
-* screenshot.png (col #3), © 2018 @pinterastudio https://pixabay.com/en/chef-cook-delicious-food-culinary-3857333/, CC0
+* screenshot.png (slide), © 2017 Monika Stawowy https://pxhere.com/en/photo/1418280, CC0

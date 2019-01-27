@@ -45,6 +45,8 @@
 
 		   $('.sub-menu-item-toggle').on('click', function(e) {
 
+			 e.stopPropagation();
+
 		     var subMenu = $(this).parent().find('> ul.sub-menu');
 
 		     $('#navmain ul ul.sub-menu').not(subMenu).hide();
