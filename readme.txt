@@ -1,160 +1,86 @@
 === Welcome to Aamla ===
 
-Created by: Vedathemes
+Contributors: vedathemes
+tags: two-columns, left-sidebar, right-sidebar, grid-layout, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-Commerce
 Requires at least: WordPress 4.7
-Tested up to: WordPress 5.0.2
-Version: 1.1.4
-PHP required : PHP 5.4+
-IE Browser Support: IE11+
+Tested up to: WordPress 5.0.3
+Stable tag: 1.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: two-columns, left-sidebar, right-sidebar, grid-layout, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-Commerce
+
+Aamla is a framework-like coding focused personal blog & wooCommerce theme.
 
 == Description ==
 
 Aamla is a feature rich, Gutenberg friendly, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla helps you to build your pages even without pagebuilders and make your audios and videos stand out. It is compatible with gutenberg, woocommerce and many other plugins. Aamla is written with clean code and the most current HTML5 conventions. Aamla can be used as a solid base to build beautiful and functional websites.
 
-== Installation ==
+== Frequently Asked Questions ==
+= What are the minimum requirmens for using this theme? =
+PHP 5.4+, IE11+, WordPress 4.7+
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
-4. Navigate to Appearance > Customize in your admin panel and customize to taste.
-
-== Copyright ==
-
-Aamla WordPress Theme, Copyright 2018-2019 Vedathemes
-Aamla is distributed under the terms of the GNU GPL
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-== Credits ==
-
-Aamla WordPress Theme is based on Underscores, (C) 2012-2017 Automattic, Inc.
-Licenses: [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-Source: http://underscores.me/
-
-Aamla WordPress Theme incorporates code from Twenty Fifteen WordPress Theme, Copyright 2014-2017 WordPress.org & Automattic.com
-Twenty Fifteen is distributed under the terms of the GNU GPL.
-
-Aamla WordPress Theme incorporates code from Twenty Seventeen WordPress Theme, Copyright 2016-2017 WordPress.org & Automattic.com
-Twenty Seventeen is distributed under the terms of the GNU GPL.
-
-Aamla WordPress Theme incorporates code from Stargazer WordPress Theme, Copyright 2013-2018 Justin Tadlock
-Stargazer is distributed under the terms of the GNU GPL.
-
-Aamla WordPress Theme bundles the following third-party resources:
-
-1.	normalize.css, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal
-	Licenses: [MIT](http://opensource.org/licenses/MIT)
-	Source:  http://github.com/necolas/normalize.css
-
-2.	SVG Icons collection has been created from following,
-
-	Font Awesome SVG icons, Copyright Dave Gandy
-	License: CC BY 4.0 (https://fontawesome.com/license/free)
-	Source: http://fontawesome.io/
-
-	Icomoon SVG icons ( Free Version ), Copyright Roonas
-	License: GPL / CC BY 4.0. (https://icomoon.io/icons-icomoon.html)
-	Source: https://icomoon.io
-
-	Feather SVG icons, Copyright Colebemis
-	License: [MIT](http://opensource.org/licenses/MIT)
-	Source: https://github.com/feathericons/feather
-
-3.	Images used for theme screenshot
-
-	https://pixabay.com/en/guitar-country-girl-acoustic-guitar-944261/
-	by langll (https://pixabay.com/en/users/langll-822640/)
-	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-
-	https://pixabay.com/en/santorini-oia-greece-people-person-1663658/
-	by Mariamichelle (https://pixabay.com/en/users/Mariamichelle-165491/)
-	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-
-	https://pixabay.com/en/raspberry-berry-summer-closeup-2023404/
-	by Daria-Yakovleva (https://pixabay.com/en/users/Daria-Yakovleva-3938704/)
-	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-
-	https://pixabay.com/en/evening-sky-colorful-sunset-1777352/
-	by sbtlneet (https://pixabay.com/en/users/sbtlneet-3591002/)
-	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-
-	https://pixabay.com/en/harp-musical-instrument-classical-384557/
-	by Skitterphoto (https://pixabay.com/en/users/Skitterphoto-324082/)
-	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-
-	https://pixabay.com/en/musician-performer-keyboard-1031110/
-	by Free-Photos (https://pixabay.com/en/users/Free-Photos-242387/)
-	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-
-4.	Image used on 404-error page
-	https://pixabay.com/en/not-found-404-error-file-not-found-2384304/
-	by draguth (https://pixabay.com/en/users/draguth-1837346/)
-	License: [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+= How to disable google fonts? =
+Bayleaf WordPress theme uses Google Fonts for your website by default. Fonts and their respective stylesheets are downloaded from google's website. Refer link [ https://developers.google.com/fonts/faq#what_does_using_the_google_fonts_api_mean_for_the_privacy_of_my_users ] for google font's privacy related information. If you do not want to use google fonts for your website, you can disable it from theme customizer (Appearance > Customize > Theme options).
 
 == Changelog ==
 
-= 1.1.4 - Dec 21 2018 =
+= 1.1.5 =
+* Add - GPL v2 license file
+* Modify - Readme.txt format to meet latest WP org requirements
+* Modify - WordPress gallery item height modification
+* Modify - Error 404 page design simplification
+* Error Fix - Block editor styling minor issues
+
+= 1.1.4 =
 * Modify - Change in theme's Author URI and Theme URI
 
-= 1.1.3 - Dec 13 2018 =
+= 1.1.3 =
 * Modify - Conpatibility with WP 5.0
 * Modify - Block editor styling improvements
 * Error Fix - Minor css error fix and improvements
 
-= 1.1.2 - Nov 28 2018 =
+= 1.1.2 =
 * Modify - Typography improvements.
 * Modify - Thumbnail size and excerpt text modification on index pages.
 * Add - Scroll-to-top functionality included.
 * Add - Horizontal divider line option added in widgetlayer blank widget.
 
-= 1.1.1 - Nov 15 2018 =
+= 1.1.1 =
 * Error Fix - Deferred media should not run if media type is not an iframe.
 * Error Fix - Gutenberg styling issues.
 
-= 1.1 - Oct 27 2018 =
+= 1.1.0 =
 * Error fix - CSS issues in Gutenberg compatibility.
 * Error fix - Media manager code fixes.
 * Error Fix - Minor css issues in WooCommerce.
 * Error Fix - Minor css and code improvements.
 
-= 1.0.9 - Sep 02 2018 =
+= 1.0.9 =
 * Modify - Make theme screenshot comply with updated requirements.
 * Error Fix - Minor css and code improvements.
 
-= 1.0.8 - Aug 14 2018 =
+= 1.0.8 =
 * Modify - Make theme screenshot comply with updated requirements.
 * Error Fix - Media Manager autoplay/pause video streamlined.
 
-= 1.0.7 - Aug 10 2018 =
+= 1.0.7 =
 * Modify - Change theme screenshot to better adhere to theme guidelines.
 * Error Fix - Use wp_kses_post for page excerpts incase DOMdocument is not available.
 * Error Fix - Minor css modifications and error fix.
 
-= 1.0.6 - Aug 8 2018 =
+= 1.0.6 =
 * Modify - Replace esc_attr__ & esc_attr_e with esc_attr_x to make translation friendly
 * Modify - Translation friendly instructions for Footer text placeholders.
 * Modify - Change theme screenshot.
 * Error Fix - DOMDocument generate DOCTYPE, HTML and BODY tags on saveHTML.
 * Error Fix - IFRAME empty src attribute HTML markup warning in media manager
 
-= 1.0.5 - Aug 07 2018 =
+= 1.0.5 =
 * Error Fix - Gutenberg Gallery styling fix
 * Error Fix - WooCommerce single product main image overflow its container (if multiple images)
 * Error Fix - Various display posts style's thumbnail aspect ratio streamlined
 * Error Fix - Reduce display posts title font size in grid layout
 
-= 1.0.4 - Aug 05 2018 =
+= 1.0.4 =
 * Add - Media Manager support for external embedded audio.
 * Modify - Rename 'typography' addon to 'google-fonts' addon.
 * Modify - Method for Media Manager to load iframe content only on click.
@@ -169,7 +95,7 @@ Aamla WordPress Theme bundles the following third-party resources:
 * Error Fix - Styling of audio files added via gutenberg editor.
 * Error Fix - Other minor styling and Javascript improvements.
 
-= 1.0.3 - Aug 02 2018 =
+= 1.0.3 =
 * Add - Additional image size to cater laptop screens.
 * Add - Customizer option to not display thumbnails on single posts.
 * Add - Number of columns in display posts grid specific styles.
@@ -188,7 +114,7 @@ Aamla WordPress Theme bundles the following third-party resources:
 * Error Fix - Gutenberg page/post style to be compatible with display posts widget.
 * Error Fix - Minor markup, commenting and styling issues.
 
-= 1.0.2 - Jul 13 2018 =
+= 1.0.2 =
 * Error Fix - Empty string supplied as input to loadHTML()
 * Error Fix - Fatal Error on installing theme below PHP 5.4
 * Error Fix - Replace esc_html to esc_attr for escaping attributes
@@ -198,7 +124,7 @@ Aamla WordPress Theme bundles the following third-party resources:
 * Error Fix - Minor RTL style correction for pagination and WooCommerce
 * Error Fix - WooCommerce archive pages sidebar position
 
-= 1.0.1 - Jul 02 2018 =
+= 1.0.1 =
 * Add - Archive page grid layout option.
 * Add - Display Posts, Media Manager, Typography and WidgetLayer addons.
 * Add - JetPack, Gutenberg and WooCommerce Support.
@@ -208,5 +134,26 @@ Aamla WordPress Theme bundles the following third-party resources:
 * Modify - Improved editor stylesheet.
 * Modify - PHP, css and JS code improvements.
 
-= 1.0.0 - Mar 31 2018 =
+= 1.0.0 =
 * Initial release
+
+== Upgrade Notice ==
+
+= 1.1.5 =
+* Upgrade to receive latest theme updates.
+
+== Resources ==
+* Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+* Font Awesome SVG icons http://fontawesome.io/, (C) Dave Gandy, [CC BY 4.0](https://fontawesome.com/license/free)
+* Icomoon SVG icons https://icomoon.io, (C) Roonas, [GPL / CC BY 4.0](https://icomoon.io/icons-icomoon.html)
+* Feather SVG icons https://github.com/feathericons/feather, (C) Colebemis, [MIT](http://opensource.org/licenses/MIT)
+* Image in screenshot https://pixabay.com/en/guitar-country-girl-acoustic-guitar-944261/, (C) langll, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image in screenshot https://pixabay.com/en/santorini-oia-greece-people-person-1663658/, (C) Mariamichelle, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image in screenshot https://pixabay.com/en/raspberry-berry-summer-closeup-2023404/, (C) Daria-Yakovleva, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image in screenshot https://pixabay.com/en/evening-sky-colorful-sunset-1777352/, (C) sbtlneet, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image in screenshot https://pixabay.com/en/harp-musical-instrument-classical-384557/, (C) Skitterphoto, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image in screenshot https://pixabay.com/en/musician-performer-keyboard-1031110/, (C) Free-Photos, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Incorporates code from Twenty Fifteen WordPress Theme, (C) Automattic & WordPress.org, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* Incorporates code from Twenty Seventeen WordPress Theme, (C) Automattic & WordPress.org, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* Incorporates code from Stargazer WordPress Theme, (C) Justin Tadlock, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)

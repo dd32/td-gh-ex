@@ -4,7 +4,7 @@ Theme URI: https://vedathemes.com/blog/vedaitems/aamla-theme/
 Author: Vedathemes
 Author URI: https://vedathemes.com/
 Description: Aamla is a feature rich, Gutenberg friendly, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla helps you to build your pages even without pagebuilders and make your audios and videos stand out. It is compatible with gutenberg, woocommerce and many other plugins. Aamla is written with clean code and the most current HTML5 conventions. Aamla can be used as a solid base to build beautiful and functional websites.
-Version: 1.1.4
+Version: 1.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aamla
@@ -325,7 +325,7 @@ p .alignnone {
 .gallery-item .gallery-icon:after {
 	display: block;
 	width: 100%;
-	padding-top: 66.66%;
+	padding-top: 56.25%;
 	content: "";
 }
 
@@ -1884,29 +1884,25 @@ body.grid:not(.error404) .page-header {
 }
 
 .error404 .error-404 {
-	margin-bottom: 60px;
-	padding-bottom: 60px;
-	border-bottom: 1px solid #e6e6e6;
+	max-width: 600px;
+	margin: 0 auto;
+	padding: 4.375rem 0 8.75rem;
+	text-align: center;
 }
 
-.error404 .error-404:after {
-	display: table;
-	clear: both;
-	content: "";
+.error404 .error-404 .search-form {
+	width: 300px;
+	max-width: 100%;
+	margin: 0 auto;
 }
 
 .error404 .content-area {
 	width: 100%;
-	padding-bottom: 40px;
 }
 
-.error404 .image-404 {
-	display: block;
-	margin: 0 auto;
-}
-
-.error404 .not-found-details li {
-	margin-bottom: 15px;
+.error404 .page-content h2 {
+	font-size: 1rem;
+	line-height: 1.75;
 }
 
 .page-entry-header {
@@ -2552,21 +2548,6 @@ body.grid:not(.error404) .page-header {
 	}
 	.list .entry-featured-content {
 		margin: 0 0 0 30px;
-	}
-	.error404 .error-404 {
-		margin-bottom: 0;
-		padding-bottom: 0;
-		border-bottom-width: 0;
-	}
-	.error404 .page-content {
-		float: right;
-		width: calc( 60% - 40px);
-		margin-left: 40px;
-	}
-	.error404 .image-404 {
-		float: left;
-		width: auto;
-		max-width: 40%;
 	}
 	.page-entry-header {
 		min-height: 50vw;

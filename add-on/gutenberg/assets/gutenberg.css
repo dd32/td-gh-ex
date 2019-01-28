@@ -84,6 +84,17 @@ ul.wp-block-gallery > li.blocks-gallery-item:first-child {
 	margin-bottom: 1.75rem;
 }
 
+.wp-block-table.aligncenter,
+.wp-block-table.alignleft,
+.wp-block-table.alignright {
+	display: table;
+	width: 100%;
+}
+
+.wp-block-gallery .blocks-gallery-item figure {
+	position: relative;
+}
+
 @media only screen and (min-width: 768px) {
 
 	.alignfull {
