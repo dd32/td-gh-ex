@@ -149,7 +149,7 @@ function bayleaf_main_navigation() {
 	}
 
 	printf(
-		'<button aria-expanded="false" class="menu-toggle"><span class="bar"><span class="screen-reader-text">%1$s<span></span></button>',
+		'<button aria-expanded="false" class="menu-toggle"><span class="bar"><span class="screen-reader-text">%1$s</span></span></button>',
 		esc_html__( 'Site Navigation', 'bayleaf' )
 	); // WPCS xss ok.
 
@@ -188,7 +188,7 @@ function bayleaf_user_action_items() {
  */
 function bayleaf_header_widgets() {
 	printf(
-		'<button class="action-toggle"><span class="bar"><span class="screen-reader-text">%1$s<span></span></button>',
+		'<button class="action-toggle"><span class="bar"><span class="screen-reader-text">%1$s</span></span></button>',
 		esc_html__( 'Show secondary sidebar', 'bayleaf' )
 	); // WPCS xss ok.
 	echo '<div id="header-widget-area" class="header-widget-area">';

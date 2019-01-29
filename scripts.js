@@ -10,18 +10,25 @@ var isIos          = /iPad|iPhone|iPod/.test( navigator.userAgent ) && ! window.
 	mainMenu       = header.find( '#' + bayleafScreenReaderText.menu ),
 	menuToggle     = header.find( '.menu-toggle' ),
 	scrollDisabled = false,
-	scrollTop;
+	scrollTop      = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0,
+	positionCache;
 
 if ( isIos ) {
 	document.documentElement.classList.add( 'ios-device' );
 }
+
+( function() {
+	onRaf( function() {
+		scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+	} );
+} )();
 
 function scrollDisable() {
 	if ( scrollDisabled ) {
 		return;
 	}
 
-    scrollTop = $( window ).scrollTop();
+	positionCache = scrollTop;
 	body.addClass( 'no-scroll' ).css({
 		top: -1 * scrollTop
 	});
@@ -34,10 +41,36 @@ function scrollEnable() {
 		return;
 	}
 
+	scrollTop = positionCache;
 	body.removeClass( 'no-scroll' );
 	$( window ).scrollTop( scrollTop );
 
 	scrollDisabled = false;
+}
+
+function onRaf( callback ) {
+	var raf = window.requestAnimationFrame ||
+		window.webkitRequestAnimationFrame ||
+		window.mozRequestAnimationFrame ||
+		window.msRequestAnimationFrame ||
+		window.oRequestAnimationFrame,
+		caf = window.cancelAnimationFrame ||
+		window.mozCancelAnimationFrame,
+		id;
+
+	if ( raf ) {
+		loop();
+	}
+
+	function loop() {
+		var goRaf;
+		goRaf = callback();
+		if ( true !== goRaf ) {
+			id = raf( loop );
+		} else if ( caf ) {
+			caf( id );
+		}
+	}
 }
 
 // ObjectFit fallback.
@@ -237,47 +270,6 @@ headerWidgetToggle();
  * @since 1.0.0
  */
 
-function toggleScrollClass() {
-	var scrlTotop,
-		scroll = function( $scrollTop ) {
-			if ( 300 < $scrollTop ) {
-				scrlTotop.classList.add( 'makeitvisible' );
-			} else {
-				scrlTotop.classList.remove( 'makeitvisible' );
-			}
-		},
-		raf = window.requestAnimationFrame ||
-		window.webkitRequestAnimationFrame ||
-		window.mozRequestAnimationFrame ||
-		window.msRequestAnimationFrame ||
-		window.oRequestAnimationFrame,
-		lastScrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-
-	scrlTotop = document.getElementsByClassName( 'scrl-to-top' );
-	if ( ! scrlTotop.length ) {
-		return;
-	}
-	scrlTotop = scrlTotop[0];
-	if ( raf ) {
-		loop();
-	}
-
-	function loop() {
-		var scrollTop = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-		if ( lastScrollTop === scrollTop ) {
-			raf( loop );
-			return;
-		} else {
-			lastScrollTop = scrollTop;
-
-			// Fire scroll function if scrolls vertically
-			scroll( lastScrollTop );
-			raf( loop );
-		}
-	}
-}
-toggleScrollClass();
-
 function scrollToTop() {
 	var scrlTotop;
 	scrlTotop = document.getElementsByClassName( 'scrl-to-top' );
@@ -285,6 +277,15 @@ function scrollToTop() {
 		return;
 	}
 	scrlTotop = scrlTotop[0];
+
+	onRaf( function() {
+		if ( 300 < scrollTop ) {
+			scrlTotop.classList.add( 'makeitvisible' );
+		} else {
+			scrlTotop.classList.remove( 'makeitvisible' );
+		}
+	} );
+
 	scrlTotop.addEventListener( 'click', function() {
 		$( 'html, body' ).animate({ scrollTop: 0 }, 'slow' );
 	} );
@@ -298,35 +299,36 @@ scrollToTop();
  */
 
 function fadeInScroll() {
-	var raf = window.requestAnimationFrame ||
-		window.webkitRequestAnimationFrame ||
-		window.mozRequestAnimationFrame ||
-		window.msRequestAnimationFrame ||
-		window.oRequestAnimationFrame;
 
-	if ( raf ) {
-		loop();
-	}
+	var object = $( '.brick' ),
+		windowHeight = $( window ).height();
 
-	function loop() {
-		var object = $( '.brick' );
+	// Loop through each object in the array.
+	$.each( object, function() {
+		var entries, brick = $( this ), offset = $( this ).offset().top;
 
-		// Loop through each object in the array.
-		$.each( object, function() {
+		if ( brick.hasClass( 'posts-grid' ) ) {
+			entries = brick.find( '.dp-grid > .dp-entry' );
+		} else if ( brick.hasClass( 'display_feeds' ) ) {
+			entries = brick.find( '.podcast-details, .podcast-feeds' );
+		}
 
-			var windowHeight = $( window ).height(),
-				offset = $( this ).offset().top,
-				top = offset - $( document ).scrollTop(),
+		if ( undefined !== entries ) {
+			$.each( entries, function( index ) {
+				$( this ).css( { 'transition-delay': index * 150 + 'ms' } );
+			} );
+		}
+
+		onRaf( function() {
+			var top = offset - scrollTop,
 				percent = Math.floor( top / windowHeight * 100 );
 
 			if ( percent < 80 ) {
-				$( this ).addClass( 'fadeInUp' );
+				brick.addClass( 'fadeInUp' );
+				return true;
 			}
-
-		});
-
-		raf( loop );
-	}
+		} );
+	});
 }
 fadeInScroll();
 

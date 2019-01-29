@@ -51,6 +51,7 @@ class Display_Posts {
 	 * @since 1.0.0
 	 */
 	public static function init() {
+		add_filter( 'bayleaf_widget_custom_classes', [ self::get_instance(), 'widget_classes' ], 10, 2 );
 		add_filter( 'bayleaf_dp_wrapper_classes', [ self::get_instance(), 'wrapper_classes' ], 10, 3 );
 		add_filter( 'bayleaf_dp_entry_classes', [ self::get_instance(), 'entry_classes' ], 10, 3 );
 		add_filter( 'bayleaf_dp_styles', [ self::get_instance(), 'dp_styles' ], 10, 2 );
@@ -77,12 +78,34 @@ class Display_Posts {
 	}
 
 	/**
+	 * Add classes to widget's main wrapper.
+	 *
+	 * @param str   $classes  Comma separated widget classes.
+	 * @param array $widget_data {
+	 *     Current widget's data to generate customized output.
+	 *     @type str   $widget_id  Widget ID.
+	 *     @type int   $widget_pos Widget position in widgetlayer widget-area.
+	 *     @type array $instance   Current widget instance settings.
+	 *     @type str   $id_base    Widget ID base.
+	 * }
+	 * @return array Widget classes.
+	 */
+	public function widget_classes( $classes, $widget_data ) {
+		$instance = $widget_data[2];
+		if ( isset( $instance['styles'] ) && false !== strpos( $instance['styles'], 'grid' ) ) {
+			$classes[] = 'posts-grid';
+		}
+
+		return $classes;
+	}
+
+	/**
 	 * Register widget display posts entry wrapper classes.
 	 *
 	 * @param str    $classes  Comma separated entry posts classes.
 	 * @param array  $instance Settings for the current widget instance.
 	 * @param Object $widget   The widget instance.
-	 * @return str Entry posts classes.
+	 * @return array Entry posts classes.
 	 */
 	public function wrapper_classes( $classes, $instance, $widget ) {
 		$classes[] = 'index-view';

@@ -318,7 +318,7 @@
 
 .wp-block-freeform.block-library-rich-text__tinymce a {
 	text-decoration: none;
-	color: #e22c2f;
+	color: #dc1e21;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce a:hover {
@@ -540,7 +540,7 @@
 	color: #fff;
 	border: none;
 	border-radius: 25px;
-	background-color: #e22c2f;
+	background-color: #dc1e21;
 }
 
 .wp-block-freeform.block-library-rich-text__tinymce a.button:hover,
@@ -671,6 +671,12 @@ body.block-editor-page #editor .editor-block-list__block[data-align="right"][dat
 	margin: 0;
 }
 
+body.block-editor-page #editor .editor-block-list__block[data-type="core/table"][data-align="center"] table,
+body.block-editor-page #editor .editor-block-list__block[data-type="core/table"][data-align="left"] table,
+body.block-editor-page #editor .editor-block-list__block[data-type="core/table"][data-align="right"] table {
+	width: 100%;
+}
+
 .edit-post-visual-editor,
 .edit-post-visual-editor p,
 .editor-block-list__block.editor-block-list__block,
@@ -728,7 +734,7 @@ body.block-editor-page #editor .editor-block-list__block[data-align="right"][dat
 	-webkit-transition: 0.15s ease-in;
 	        transition: 0.15s ease-in;
 	text-decoration: none;
-	color: #e22c2f;
+	color: #dc1e21;
 	background-image: linear-gradient(transparent calc(100% - 1px), currentColor 1px);
 }
 
@@ -1142,13 +1148,13 @@ p.has-drop-cap:not(:focus)::first-letter {
 	}
 	blockquote cite,
 	blockquote.wp-block-quote cite {
-		font-size: 0.8695rem;
-		line-height: 2.01265;
+		font-size: 0.851rem;
+		line-height: 2.0564;
 	}
 	blockquote.wp-block-pullquote > .editor-rich-text cite,
 	.wp-block-pullquote blockquote > .editor-rich-text cite {
-		font-size: 0.8695rem;
-		line-height: 2.01265;
+		font-size: 0.851rem;
+		line-height: 2.0564;
 	}
 	.wp-block-cover-image {
 		min-height: 515px;

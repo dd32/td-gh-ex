@@ -4,7 +4,7 @@ Contributors: vedathemes
 tags: grid-layout, custom-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, food-and-drink
 Requires at least: 4.7
 Tested up to: 5.0.3
-Stable tag: 1.1
+Stable tag: 1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,8 +23,10 @@ Bayleaf WordPress theme uses Google Fonts for your website by default. Fonts and
 
 == Changelog ==
 
-= 1.0 =
-* Initial release
+= 1.2 =
+* Javascript performance optimization
+* Modify CSS animations
+* CSS minor error fix
 
 = 1.1 =
 * Block editor styling optimization
@@ -33,7 +35,13 @@ Bayleaf WordPress theme uses Google Fonts for your website by default. Fonts and
 * PHP code optimization
 * CSS minor error fix
 
+= 1.0 =
+* Initial release
+
 == Upgrade Notice ==
+
+= 1.2 =
+* Upgrade to receive performance optimization.
 
 = 1.1 =
 * Upgrade to receive latest theme updates.
