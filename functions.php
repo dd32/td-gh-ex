@@ -11,7 +11,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 // Set our theme version.
-define( 'BEKKO_VERSION', '1.0.2' );
+define( 'BEKKO_VERSION', '1.0.3' );
 
 if ( ! function_exists( 'bekko_setup' ) ) {
 	add_action( 'after_setup_theme', 'bekko_setup' );
@@ -100,6 +100,7 @@ require get_template_directory() . '/inc/markup.php';
 require get_template_directory() . '/inc/element-classes.php';
 require get_template_directory() . '/inc/typography.php';
 require get_template_directory() . '/inc/plugin-compat.php';
+require get_template_directory() . '/inc/class-tgm-plugin-activation.php';
 
 if ( is_admin() ) {
 	require get_template_directory() . '/inc/meta-box.php';
