@@ -74,8 +74,7 @@ function igthemes_add_daynamic_css() {
     .header-widget-region .widget,
     .widget-area .widget,
     .hentry,
-    .comment-body,
-    .home .testimonials {
+    .comment-body {
         background: '. igthemes_color_brightness($bg_color,15 ).';
         border: 1px solid '. igthemes_color_brightness($bg_color,-20 ).';
     }

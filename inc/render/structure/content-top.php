@@ -98,7 +98,7 @@ if ( ! function_exists( 'igthemes_home_testimonials' )  ) {
                 if ( get_theme_mod('home_testimonials_description','We make every thing with best quality, our customers and partners are very happy!')) {
                     echo '<p class="description">' . get_theme_mod('home_testimonials_description','We make every thing with best quality, our customers and partners are very happy!') . '</p>';
                 }
-                echo do_shortcode('[ig-testimonials image="true" perpage="4" cat="'. $cat .'"]');
+                echo do_shortcode('[ig-testimonials-carousel perpage="8" items="2" cat="'. $cat .'"]');
             echo '</div>';
         }
     }

@@ -39,11 +39,10 @@
     @include margin(0 null);
     @include padding($small__spacing 0 0 0);
 }
-.page-template-elementor,
-.page-template-beaver-builder {
+.page-template-page-elementor,
+.page-template-page-beaver-builder {
     .site-content {
-        @include center();
-        width:100%;
+        @include center(100%);
         padding: 0;
     }
 }
@@ -177,17 +176,11 @@ article {
     .testimonials {
         @include clearfix();
         margin:  $base__spacing;
-        padding:  $base__spacing;
-        .ig-testimonials-page {
-            padding-top: $base__spacing;
+        .ig-testimonials-carousel .slick-dots {
+            bottom: -20px;
+            text-align: center;
         }
-        .ig-testimonials {
-            @include column(6/12,$cycle: 2);
-            text-align: left;
-        }
-        .page-numbers {
-            display: none;
-        }
+
     }
     .portfolio {
         .ig-portfolio-gallery {

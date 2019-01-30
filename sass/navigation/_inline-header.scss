@@ -88,7 +88,7 @@
 @media screen and (max-width:768px) {
     .site-branding {
         &.inline {
-            @include column(6/12);
+            @include column(12/12);
             @include padding($base__spacing);
             @include margin(0);
             float: left;
