@@ -1,66 +1,41 @@
 === Catch Base ===
+Contributors: catchthemes
+Tags: blog, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+Requires at least: 4.8
+Tested up to: 5.0.3
+Stable tag: 3.2.1
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+
+Catch Base is a simple, clean and responsive WordPress Theme. Use this as a base for your theme development or custom site development
+
+== Description ==
 
 If you are looking to tailor-make a unique site without having to spend time coding a strong base for a theme that is smooth and displays well in all mobile and desktop devices, Catch Base is where your search ends. Catch Base is a simple, clean and responsive WordPress Theme. Use this as a base for your theme development or custom site development, and you will be thrilled with its ease and efficiency! Catch Base is built in HTML5, CSS3 and WordPress Theme Customizer for real time customization. This theme is translation ready and also currently translated in Swedish, French, Brazilian Portuguese, German, Hungarian, Lithuanian and Danish languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/catch-base/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/catch-base/
 
-== Support ==
+For more information about Catch Base please go to https://catchthemes.com/themes/catch-base/
 
-Support: https://catchthemes.com/support/
-Support Forum: https://catchthemes.com/support-forum/forum/catch-base-free/
+== Installation ==
 
+1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+2. Type in Catch Base in the search form and press the 'Enter' key on your keyboard.
+3. Click on the 'Activate' button to use your new theme right away.
+4. Go to https://catchthemes.com/theme-instructions/catch-base/ for a guide on how to customize this theme.
+5. Navigate to Appearance -> Customize in your admin panel and customize to taste.
 
-== Translation ==
+== Frequently Asked Questions ==
 
-Catch Base theme is translation ready.
-Added Translation for Swedish by Anders Paulcén ( Email: anderspaulcen@gmail.com )
-Added Translation for French by Jérôme Joseph ( Email: jerome.joseph28@hotmail.com )
-Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@gmail.com )
-Added Translation for German by Jürgen Zapp ( Email: j_m_z@hotmail.com ) and Micky261 ( Email: karlo261@hotmail.de )
-Added Translation for Hungarian by Kürti Gábor ( Email: gabor.kurti@gmail.com )
-Added Translation for Lithuanian
-Added Translation for Danish by Pernille Kvamsdal (pkvamsdal@outlook.com)
+= Does this theme support any plugins? =
 
+Theme supports all plugins from catchplugins.com
 
-== License ==
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
-License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Catch Base WordPress Theme, Copyright 2015 Catchthemes.com
-Catch Base is distributed under the terms of the GNU General Public License v3
+= Where can I find theme documentation? =
 
-Catchbase is based on Underscores http://underscores.me/, (C) Automattic, Inc.
+You can check our Theme Instructions at https://catchthemes.com/themes/catch-base in the Theme Instructions Tab.
 
-Images used are released under the CC0 license
-1. http://pixabay.com/en/buddha-deity-himalayan-park-nepal-100706/ - header image
-2. http://pixabay.com/en/new-york-city-manhattan-island-20211/ - 1st slider image and screenshot image
-3. http://pixabay.com/en/bridge-sun-manhattan-brooklyn-370562/ - 2nd slider image
-4. All other images are self shot image by (CatchThemes.com)
+= Where can I find theme demo? =
 
-Font Icons
-	Genericons by Automattic, Inc.
-  	Genericons is Licensed under the GPL, version 2 or later
-	http://genericons.com/
-
-JS Files
-    HTML5-Shiv is Licensed under the MIT and GPL licenses
-    https://github.com/afarkas/html5shiv
-
-    jQuery Cycle 2 is Licensed under the MIT and GPL licenses
-    http://jquery.malsup.com/cycle2/
-
-    fitvids is Licensed under the  WTFPL license
-    http://fitvidsjs.com/
-
-    Sidr is Licensed under the MIT License
-    https://github.com/artberri/sidr
-
-
-== Getting Started ==
-
-= Installation =
-
-1. In your admin panel, go to Appearance -> Themes and click the Add New button.
-2. Click Upload and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
+You can check our Theme Demo at https://catchthemes.com/demo/catch-base/
 
 = Custom Menus =
 
@@ -148,10 +123,29 @@ Number:
 
 For detail instructions, check out theme instructions page at https://catchthemes.com/theme-instructions/catch-base/
 
+== Translation ==
 
-== Change log ==
+Catch Base theme is translation ready.
+Added Translation for Swedish by Anders Paulcén ( Email: anderspaulcen@gmail.com )
+Added Translation for French by Jérôme Joseph ( Email: jerome.joseph28@hotmail.com )
+Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.trombini@gmail.com )
+Added Translation for German by Jürgen Zapp ( Email: j_m_z@hotmail.com ) and Micky261 ( Email: karlo261@hotmail.de )
+Added Translation for Hungarian by Kürti Gábor ( Email: gabor.kurti@gmail.com )
+Added Translation for Lithuanian
+Added Translation for Danish by Pernille Kvamsdal (pkvamsdal@outlook.com)
 
-= 3.2 (Released: October 19, 2018 )
+= More FAQ =
+
+For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
+
+== Changelog ==
+
+= 3.2.1 (Released: January 30, 2019 ) =
+* Bug Fixed: get_privacy_policy_link() issue on old WP versions
+* Updated: Readme file as per new requirement
+* Updated: Metabox UI
+
+= 3.2 (Released: October 19, 2018 ) =
 * Added: Core Privacy Policy link support in footer
 * Bug Fixed: Updated Content delivered through the_content filter
 * Updated: Upgrade to pro button css update
@@ -386,3 +380,36 @@ For detail instructions, check out theme instructions page at https://catchtheme
 
 = 0.1 =
 * Submitted to WordPress.org
+
+== Copyright ==
+
+Catch Base WordPress Theme, Copyright 2012-2018 Catchthemes.com
+Catch Base is distributed under the terms of the GNU GPL
+
+== Resources ==
+* Based on Underscores http://underscores.me/, (C) 2012-2018 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+
+* Images
+    Images used are released under the CC0 license
+    1. http://pixabay.com/en/buddha-deity-himalayan-park-nepal-100706/ - header image
+    2. http://pixabay.com/en/new-york-city-manhattan-island-20211/ - 1st slider image and screenshot image
+    3. http://pixabay.com/en/bridge-sun-manhattan-brooklyn-370562/ - 2nd slider image
+    4. All other images are self shot image by (CatchThemes.com)
+
+* Font Icons
+    Genericons by Automattic, Inc.
+    Genericons is Licensed under the GPL, version 2 or later
+    http://genericons.com/
+
+* JS Files
+    HTML5-Shiv is Licensed under the MIT and GPL licenses
+    https://github.com/afarkas/html5shiv
+
+    jQuery Cycle 2 is Licensed under the MIT and GPL licenses
+    http://jquery.malsup.com/cycle2/
+
+    fitvids is Licensed under the  WTFPL license
+    http://fitvidsjs.com/
+
+    Sidr is Licensed under the MIT License
+    https://github.com/artberri/sidr

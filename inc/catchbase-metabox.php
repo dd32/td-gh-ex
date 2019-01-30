@@ -10,18 +10,12 @@
  * @since Catch Base 1.0
  */
 
- if ( ! defined( 'CATCHBASE_THEME_VERSION' ) ) {
-	header( 'Status: 403 Forbidden' );
-	header( 'HTTP/1.1 403 Forbidden' );
-	exit();
-}
-
 /**
  * Class to Add, Render and save metabox options
  *
  * @since Catchbase 1.8
  */
-class CatchbaseMetaBox {
+class Catch_Base_Metabox {
 	private $meta_box;
 
 	private $fields;
@@ -29,7 +23,7 @@ class CatchbaseMetaBox {
 	/**
 	* Constructor
 	*
-	* @since Catch Base 1.8
+	* @since Catch Base 2.3.1
 	*
 	* @access public
 	*
@@ -37,23 +31,23 @@ class CatchbaseMetaBox {
 	public function __construct( $meta_box_id, $meta_box_title, $post_type ) {
 
 		$this->meta_box = array (
-							'id' 		=> $meta_box_id,
-							'title' 	=> $meta_box_title,
-							'post_type' => $post_type,
-							);
+			'id'        => $meta_box_id,
+			'title'     => $meta_box_title,
+			'post_type' => $post_type,
+		);
 
 		$this->fields = array(
-								'catchbase-layout-option',
-								'catchbase-header-image',
-								'catchbase-featured-image'
-							);
+			'catchbase-layout-option',
+			'catchbase-header-image',
+			'catchbase-featured-image',
+		);
 
 
 		// Add metaboxes
 		add_action( 'add_meta_boxes', array( $this, 'add' ) );
 
 		add_action( 'save_post', array( $this, 'save' ) );
-   	}
+	}
 
 	/**
 	* Add Meta Box for multiple post types.
@@ -62,16 +56,14 @@ class CatchbaseMetaBox {
 	*
 	* @access public
 	*/
-	public function add($postType) {
-		if ( in_array( $postType, $this->meta_box['post_type'] ) ) {
-			add_meta_box( $this->meta_box['id'], $this->meta_box['title'], array( $this, 'show' ), $postType );
-		}
+	public function add( $post_type ) {
+		add_meta_box( $this->meta_box['id'], $this->meta_box['title'], array( $this, 'show' ), $post_type, 'side', 'high' );
 	}
 
 	/**
 	* Renders metabox
 	*
-	* @since Catch Base 1.8
+	* @since Catch Base 2.3.1
 	*
 	* @access public
 	*/
@@ -79,97 +71,63 @@ class CatchbaseMetaBox {
 		global $post;
 
 		$layout_options			= catchbase_metabox_layouts();
-		$featured_image_options	= catchbase_metabox_featured_image_options();
 		$header_image_options 	= catchbase_metabox_header_featured_image_options();
+		$featured_image_options	= catchbase_metabox_featured_image_options();
 
+		// Use nonce for verification
+		wp_nonce_field( basename( __FILE__ ), 'catchbase_custom_meta_box_nonce' );
 
-	    // Use nonce for verification
-	    wp_nonce_field( basename( __FILE__ ), 'catchbase_custom_meta_box_nonce' );
+		// Begin the field table and loop  ?>
+		<p class="post-attributes-label-wrapper"><label class="post-attributes-label" for="catchbase-layout-option"><?php esc_html_e( 'Layout Options', 'catch-base' ); ?></label></p>
+		<select class="widefat" name="catchbase-layout-option" id="catchbase-layout-option">
+			 <?php
+				$meta_value = get_post_meta( $post->ID, 'catchbase-layout-option', true );
+				
+				if ( empty( $meta_value ) ){
+					$meta_value = 'default';
+				}
+				
+				foreach ( $layout_options as $field =>$label ) {  
+				?>
+					<option value="<?php echo esc_attr( $label['value'] ); ?>" <?php selected( $meta_value, $label['value'] ); ?>><?php echo esc_html( $label['label'] ); ?></option>
+				<?php
+				} // end foreach
+			?>
+		</select>
 
-	    // Begin the field table and loop  ?>
-	    <div id="catchbase-ui-tabs" class="ui-tabs">
-		    <ul class="catchbase-ui-tabs-nav" id="catchbase-ui-tabs-nav">
-		    	<li><a href="#frag1"><?php _e( 'Layout Options', 'catch-base' ); ?></a></li>
-		    	<li><a href="#frag3"><?php _e( 'Header Featured Image Options', 'catch-base' ); ?></a></li>
-		    	<li><a href="#frag4"><?php _e( 'Single Page/Post Image Layout ', 'catch-base' ); ?></a></li>
-		    </ul>
-		    <div id="frag1" class="catch_ad_tabhead">
-		    	<table id="layout-options" class="form-table" width="100%">
-		            <tbody>
-		                <tr>
-		                    <select name="catchbase-layout-option" id="custom_element_grid_class">
-		      					<?php
-			                    foreach ( $layout_options as $field ) {
-			                        $metalayout = get_post_meta( $post->ID, 'catchbase-layout-option', true );
-			                        if ( empty( $metalayout ) ){
-			                            $metalayout='default';
-			                        }
-			                   	?>
-			                   		<option value="<?php echo $field['value']; ?>" <?php selected( $metalayout, $field['value'] ); ?>><?php echo $field['label']; ?></option>
-		    					<?php
-		    					} // end foreach
-			                    ?>
-		                    </select>
-		                </tr>
-		            </tbody>
-		        </table>
-		    </div>
+		<p class="post-attributes-label-wrapper"><label class="post-attributes-label" for="catchbase-header-image"><?php esc_html_e( 'Header Featured Image Options', 'catch-base' ); ?></label></p>
+		<select class="widefat" name="catchbase-header-image" id="catchbase-header-image">
+			 <?php
+				$meta_value = get_post_meta( $post->ID, 'catchbase-header-image', true );
+				
+				if ( empty( $meta_value ) ){
+					$meta_value = 'default';
+				}
+				
+				foreach ( $header_image_options as $field =>$label ) {  
+				?>
+					<option value="<?php echo esc_attr( $label['value'] ); ?>" <?php selected( $meta_value, $label['value'] ); ?>><?php echo esc_html( $label['label'] ); ?></option>
+				<?php
+				} // end foreach
+			?>
+		</select>
 
-		    <div id="frag3" class="catch_ad_tabhead">
-		    	<table id="header-image-metabox" class="form-table" width="100%">
-		            <tbody>
-		                <tr>
-		                    <?php
-		                    foreach ( $header_image_options as $field ) {
-
-							 	$metaheader = get_post_meta( $post->ID, $field['id'], true );
-
-		                        if ( empty( $metaheader ) ){
-		                            $metaheader='default';
-		                        }
-		                    ?>
-
-		                        <td style="width: 100px;">
-		                            <label class="description">
-		                                <input type="radio" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $metaheader ); ?>/>&nbsp;&nbsp;<?php echo $field['label']; ?>
-		                            </label>
-		                        </td>
-
-		                    <?php
-		                    } // end foreach
-		                    ?>
-		                </tr>
-		            </tbody>
-		        </table>
-		    </div>
-
-		    <div id="frag4" class="catch_ad_tabhead">
-		    	<table id="featured-image-metabox" class="form-table" width="100%">
-		            <tbody>
-		                <tr>
-		                    <?php
-		                    foreach ($featured_image_options as $field) {
-
-							 	$metaimage = get_post_meta( $post->ID, $field['id'], true );
-
-		                        if (empty( $metaimage ) ){
-		                            $metaimage='default';
-		                        }
-		                    ?>
-		                        <td style="width: 100px;">
-		                            <label class="description">
-		                                <input type="radio" name="<?php echo $field['id']; ?>" value="<?php echo $field['value']; ?>" <?php checked( $field['value'], $metaimage ); ?>/>&nbsp;&nbsp;<?php echo $field['label']; ?>
-		                            </label>
-		                        </td>
-
-		                    <?php
-		                    } // end foreach
-		                    ?>
-		                </tr>
-		            </tbody>
-		        </table>
-		    </div>
-		</div>
+		<p class="post-attributes-label-wrapper"><label class="post-attributes-label" for="catchbase-featured-image"><?php esc_html_e( 'Single Page/Post Image Layout', 'catch-base' ); ?></label></p>
+		<select class="widefat" name="catchbase-featured-image" id="catchbase-featured-image">
+			 <?php
+				$meta_value = get_post_meta( $post->ID, 'catchbase-featured-image', true );
+				
+				if ( empty( $meta_value ) ){
+					$meta_value = 'default';
+				}
+				
+				foreach ( $featured_image_options as $field =>$label ) {  
+				?>
+					<option value="<?php echo esc_attr( $label['value'] ); ?>" <?php selected( $meta_value, $label['value'] ); ?>><?php echo esc_html( $label['label'] ); ?></option>
+				<?php
+				} // end foreach
+			?>
+		</select>
 	<?php
 	}
 
@@ -178,7 +136,7 @@ class CatchbaseMetaBox {
 	 *
 	 * @action save_post
 	 *
-	 * @since Catch Base 1.8
+	 * @since Catch Base 2.3.1
 	 *
 	 * @access public
 	 */
@@ -187,16 +145,16 @@ class CatchbaseMetaBox {
 
 		$post_type_object = get_post_type_object( $post_type );
 
-	    if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )                      // Check Autosave
-	    || ( ! isset( $_POST['post_ID'] ) || $post_id != $_POST['post_ID'] )        // Check Revision
-	    || ( ! in_array( $post_type, $this->meta_box['post_type'] ) )                  // Check if current post type is supported.
-	    || ( ! check_admin_referer( basename( __FILE__ ), 'catchbase_custom_meta_box_nonce') )    // Check nonce - Security
-	    || ( ! current_user_can( $post_type_object->cap->edit_post, $post_id ) ) )  // Check permission
-	    {
-	      return $post_id;
-	    }
+		if ( ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE )                      // Check Autosave
+		|| ( ! isset( $_POST['post_ID'] ) || $post_id != $_POST['post_ID'] )        // Check Revision
+		|| ( ! in_array( $post_type, $this->meta_box['post_type'] ) )                  // Check if current post type is supported.
+		|| ( ! check_admin_referer( basename( __FILE__ ), 'catchbase_custom_meta_box_nonce') )    // Check nonce - Security
+		|| ( ! current_user_can( $post_type_object->cap->edit_post, $post_id ) ) )  // Check permission
+		{
+		  return $post_id;
+		}
 
-	    foreach ( $this->fields as $field ) {
+		foreach ( $this->fields as $field ) {
 			$old = get_post_meta( $post_id, $field, true);
 
 			$new = $_POST[ $field ];
@@ -204,9 +162,8 @@ class CatchbaseMetaBox {
 			delete_post_meta( $post_id, $field );
 
 			if ( '' == $new || array() == $new ) {
-				return;
-			}
-			else {
+				continue;
+			} else {
 				if ( ! update_post_meta ($post_id, $field, sanitize_key ( $new ) ) ) {
 					add_post_meta($post_id, $field, sanitize_key ( $new ), true );
 				}
@@ -215,8 +172,8 @@ class CatchbaseMetaBox {
 	}
 }
 
-$catchbase_metabox = new CatchbaseMetaBox(
-									'catchbase-options', 					//metabox id
-									__( 'Catchbase Options', 'catch-base' ), //metabox title
-									array( 'page', 'post' )				//metabox post types
-									);
+$catchbase_metabox = new Catch_Base_Metabox(
+	'catchbase-options', 					//metabox id
+	esc_html__( 'Catchbase Options', 'catch-base' ), //metabox title
+	array( 'page', 'post' )					//metabox post types
+);
