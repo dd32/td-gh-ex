@@ -5,7 +5,7 @@ Tags: blog, news, custom-background, custom-header, one-column, two-columns, thr
 
 Requires at least: 4.5
 Tested up to: 4.9.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -38,6 +38,9 @@ All the images are CCO license, https://pxhere.com/en/license
 * https://pxhere.com/en/photo/1432347
 
 == Changelog ==
+= 1.0.2 - January 30 2019 =
+* Text Domain Changed
+
 = 1.0.1 - January 30 2019 =
 * Changed screenshot Image
 

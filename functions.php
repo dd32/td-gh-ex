@@ -54,7 +54,7 @@ if ( !function_exists('free_blog_default_theme_options_values') ) :
         	'free_blog_enable_slider' => 0,
         	'free-blog-select-category'=> 0,
         	'free-blog-slider-number'=>3,
-        	'free-blog-slider-read-more'=> esc_html__('Continue Reading','free-blog'),
+        	'free-blog-slider-read-more'=> esc_html__('Continue Reading','aki-blog'),
         	'free-blog-slider-suggestions'=> 1,
 
         	/*Blog Page Default Value*/
@@ -63,29 +63,29 @@ if ( !function_exists('free_blog_default_theme_options_values') ) :
         	'free-blog-content-show-from'=>'excerpt',
         	'free-blog-excerpt-length'=>25,
         	'free-blog-pagination-options'=>'numeric',
-        	'free-blog-read-more-text'=> esc_html__('Continue Reading','free-blog'),
+        	'free-blog-read-more-text'=> esc_html__('Continue Reading','aki-blog'),
 
         	/*Single Page Default Value*/
         	'free-blog-single-page-featured-image'=> 1,
         	'free-blog-single-page-related-posts'=> 1,
-        	'free-blog-single-page-related-posts-title'=> esc_html__('Related Posts','free-blog'),
+        	'free-blog-single-page-related-posts-title'=> esc_html__('Related Posts','aki-blog'),
 
         	/*Sticky Sidebar Options*/
         	'free-blog-enable-sticky-sidebar'=> 1,
 
         	/*Footer Section*/
-        	'free-blog-footer-copyright' =>  esc_html__('All Right Reserved 2018','free-blog'),
+        	'free-blog-footer-copyright' =>  esc_html__('All Right Reserved 2018','aki-blog'),
         	'free-blog-go-to-top'=> 1,
 
 
         	/*Font Options*/
         	'free-blog-font-family-url'=> esc_url('//fonts.googleapis.com/css?family=Merriweather'),
-        	'free-blog-font-family-name'=> esc_html__('Merriweather, sans-serif', 'free-blog'),
+        	'free-blog-font-family-name'=> esc_html__('Merriweather, sans-serif', 'aki-blog'),
         	'free-blog-font-paragraph-font-size'=>16,
 
             /*Extra Options*/
             'free-blog-extra-breadcrumb'=> 1,
-            'free-blog-breadcrumb-text'=>  esc_html__('You are Here','free-blog')
+            'free-blog-breadcrumb-text'=>  esc_html__('You are Here','aki-blog')
         );
 
         return apply_filters( 'free_blog_default_theme_options_values', $default_theme_options );

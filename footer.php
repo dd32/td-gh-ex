@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package Free_Blog
+ * @package Aki_Blog
  */
 global $free_blog_theme_options;
 $copyright = wp_kses_post($free_blog_theme_options['free-blog-footer-copyright']);
@@ -64,16 +64,16 @@ if ( is_active_sidebar('footer-1') || is_active_sidebar('footer-2') || is_active
 				<?php echo $copyright; ?>
 			</div>
 			<div class="site-info">
-				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'free-blog' ) ); ?>">
+				<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'aki-blog' ) ); ?>">
 					<?php
 					/* translators: %s: CMS name, i.e. WordPress. */
-					printf( esc_html__( 'Proudly powered by %s', 'free-blog' ), 'WordPress' );
+					printf( esc_html__( 'Proudly powered by %s', 'aki-blog' ), 'WordPress' );
 					?>
 				</a>
 				<span class="sep"> | </span>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'free-blog' ), 'Aki Blog', '<a href="https://www.akithemes.com/">Aki Themes</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'aki-blog' ), 'Aki Blog', '<a href="https://www.akithemes.com/">Aki Themes</a>' );
 				?>
 			</div>
 		</footer>
