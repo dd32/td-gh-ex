@@ -25,7 +25,7 @@
                 <li><?php esc_html_e( 'Premium support', 'base-wp' ); ?></li>
                 <li><?php esc_html_e( 'Money back guarantee', 'base-wp' ); ?></li>
             </ul>
-            <a href="<?php echo esc_url( 'https://iograficathemes.com/shop/wordpress-themes/'. $theme_data->get( 'TextDomain' )); ?>" target="_blank" class="button-upgrade">
+            <a href="<?php echo esc_url( 'https://iograficathemes.com/theme/'. $theme_data->get( 'TextDomain' )); ?>" target="_blank" class="button-upgrade">
                 <?php esc_html_e('view all premium features', 'base-wp'); ?>
             </a>
         </p>
