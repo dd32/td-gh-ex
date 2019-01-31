@@ -122,3 +122,6 @@ Source: https://creativecommons.org/publicdomain/zero/1.0/
   
 - Version 0.996
   * Thirteenth Review Changes
+  
+- Version 0.997
+  * Screenshot Fixed
