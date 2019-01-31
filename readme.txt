@@ -5,7 +5,7 @@ Tags: custom-background, two-columns, one-column, custom-colors, flexible-header
 
 Requires at least: 4.0
 Tested up to: 5.0.2
-Stable tag: 0.995
+Stable tag: 0.996
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -99,6 +99,6 @@ Demo Here: http://demo.inkhive.com/adviso/
 * BigSlide © 2018  Adam D. Scott, MIT
 * Custom Controls © 2018 Anthony Hortin, GNU General Public License v2 or later
 * Owl Slider © 2014 Owl, MIT
-* Screenshot Stock Image, https://pixabay.com/en/pawns-chess-figures-colorful-chess-3467512/, CC0 License
+* Screenshot Stock Image, https://pxhere.com/en/photo/1418846, CC0 License
 
 All Other Resources, apart from the ones mentioned above have been created by me fall under GPL v3 license of the theme.
