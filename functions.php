@@ -406,8 +406,8 @@ function awada_pagination_link()
 {?>
     <div class="next_prev text-center">
 		<ul class="pager">
-			<li class="previous"><?php previous_post_link('%link', '&laquo; Older');?></li>
-			<li class="next"><?php next_post_link('%link', 'Newer &raquo;');?></li>
+			<li class="previous"><?php previous_post_link('%link', sprintf('&laquo %s',__('Older')));?></li>
+			<li class="next"><?php next_post_link('%link', sprintf('%s &raquo;',__('Newer')));?></li>
 		</ul>
 	</div><?php
 }

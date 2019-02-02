@@ -1,3 +1,5 @@
+###Version 1.7 [02-FEB-2019]
+* Added translation of blog post pagination link texts.
 ###Version 1.6.9 [25-DEC-2018]
 * New Slider Style Added.
 * Gutenburg Support Added.
