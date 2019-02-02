@@ -27,9 +27,13 @@
 		?>
 		<h3 id="comments-title">
 			<?php
-				printf( // translators: 1 is a total number of comments.
-					esc_html( _n( '%1$s Response to &ldquo;%2$s&rdquo;', '%1$s Responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'best-reloaded' ) ),
-					absint( number_format_i18n( get_comments_number() ) ), '<span>' . get_the_title() . '</span>'
+				printf(
+					esc_html(
+						// translators: 1 is a total number of comments.
+						_n( '%1$s Response to &ldquo;%2$s&rdquo;', '%1$s Responses to &ldquo;%2$s&rdquo;', get_comments_number(), 'best-reloaded' )
+					),
+					absint( number_format_i18n( get_comments_number() ) ),
+					'<span>' . get_the_title() . '</span>'
 				);
 			?>
 		</h3>
@@ -86,6 +90,7 @@
 		$commenter = wp_get_current_commenter();
 		$req       = get_option( 'require_name_email' );
 		$aria_req  = ( $req ? " aria-required='true'" : '' );
+		$consent   = empty( $commenter['comment_author_email'] ) ? '' : ' checked="checked"';
 		comment_form(
 			array(
 				'comment_field'       =>
@@ -96,20 +101,22 @@
 				'label_submit'        => esc_html__( 'Leave Comment', 'best-reloaded' ),
 				'comment_notes_after' => '',
 				'fields'              => array(
-					'author' =>
+					'author'  =>
 						'<div class="comment-form-author form-group row"><label for="author" class="col-2">' . __( 'Name', 'best-reloaded' ) . ' ' . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
 						'<input id="author" name="author" type="text" class="form-control col-10" value="' . esc_attr( $commenter['comment_author'] ) .
 						'" size="30"' . $aria_req . ' /></div>',
 
-					'email'  =>
+					'email'   =>
 						'<div class="comment-form-email form-group row"><label for="email" class="col-2">' . __( 'Email', 'best-reloaded' ) . ' ' . ( $req ? '<span class="required">*</span>' : '' ) . '</label>' .
 						'<input id="email" name="email" type="email" class="form-control col-10" value="' . esc_attr( $commenter['comment_author_email'] ) .
 						'" size="30"' . $aria_req . ' /></div>',
 
-					'url'    =>
+					'url'     =>
 						'<div class="comment-form-url form-group row"><label for="url" class="col-2">' . __( 'Website', 'best-reloaded' ) . '</label>' .
 						'<input id="url" name="url" type="text" class="form-control col-10" value="' . esc_attr( $commenter['comment_author_url'] ) .
 						'" size="30" /></div>',
+					'cookies' => '<p class="comment-form-cookies-consent"><input id="wp-comment-cookies-consent" name="wp-comment-cookies-consent" type="checkbox" value="yes"' . $consent . ' />' .
+						'<label for="wp-comment-cookies-consent">' . esc_html__( 'Save my name, email, and website in this browser for the next time I comment.', 'best-reloaded' ) . '</label></p>',
 				),
 				'class_submit'        => 'submit btn btn-lg btn-theme',
 			)
