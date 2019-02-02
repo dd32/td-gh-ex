@@ -58,6 +58,12 @@ Source: http://flexslider.woothemes.com
 
 == Changelog ==
 
+Version 1.22 (2019-02-02)
+-------------------------
+- Updated Genericons enqueue to work better with child themes
+- Update output of menus in the header to only call wp_nav_menu() once
+- Fixed small images in centered figures to being centered within the figure
+
 Version 1.21 (2018-12-31)
 -------------------------
 - If the .grid-sizer element doesn't exist, add it to .posts before initializing Masonry

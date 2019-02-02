@@ -22,20 +22,26 @@
 
 					$nav_args = array( 
 						'container' 		=> '', 
+						'echo'				=> false,
 						'items_wrap' 		=> '%3$s',
 						'theme_location' 	=> 'primary'
 					);
 																	
-					wp_nav_menu( $nav_args );
+					$primary_nav = wp_nav_menu( $nav_args );
+
+					echo $primary_nav;
 
 				} else {
 
 					$list_pages_args = array(
 						'container' => '',
+						'echo'		=> false,
 						'title_li' 	=> ''
 					);
 
-					wp_list_pages( $list_pages_args );
+					$pages_list = wp_list_pages( $list_pages_args );
+
+					echo $pages_list;
 					
 				} 
 				?>
@@ -81,10 +87,10 @@
 				<ul class="main-menu">
 
 					<?php 
-					if ( has_nav_menu( 'primary' ) ) {						
-						wp_nav_menu( $nav_args ); 
+					if ( isset( $primary_nav ) ) {
+						echo $primary_nav;
 					} else {
-						wp_list_pages( $list_pages_args );	
+						echo $pages_list;
 					} 
 					?>
 
@@ -103,8 +109,8 @@
 				<div class="credits">
 
 					<p>&copy; <?php echo date( 'Y' ); ?> <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php bloginfo( 'name' ); ?></a>.</p>
-					<p><?php _e( 'Powered by', 'fukasawa' ); ?> <a href="http://www.wordpress.org">WordPress</a>.</p>
-					<p><?php _e( 'Theme by', 'fukasawa' ); ?> <a href="http://www.andersnoren.se">Anders Nor&eacute;n</a>.</p>
+					<p><?php _e( 'Powered by', 'fukasawa' ); ?> <a href="https://www.wordpress.org">WordPress</a>.</p>
+					<p><?php _e( 'Theme by', 'fukasawa' ); ?> <a href="https://www.andersnoren.se">Anders Nor&eacute;n</a>.</p>
 
 				</div>
 
