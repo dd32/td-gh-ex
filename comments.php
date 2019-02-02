@@ -29,10 +29,29 @@ if ( post_password_required() ) {
 
 		<h2 class="comments-title">
 			<?php
-				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'aileron' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
+			$comments_number = get_comments_number();
+			if ( '1' === $comments_number ) {
+				printf(
+				/* translators: %s: post title */
+					esc_html( _x( 'One thought on &ldquo;%s&rdquo;', 'comments title', 'aileron' ) ),
+					get_the_title()
+				);
+			} else {
+				printf(
+				/* translators: 1: number of comments, 2: post title */
+					esc_html( _nx(
+						'%1$s thought on &ldquo;%2$s&rdquo;',
+						'%1$s thoughts on &ldquo;%2$s&rdquo;',
+						$comments_number,
+						'comments title',
+						'aileron'
+					) ),
+					number_format_i18n( $comments_number ),
+					get_the_title()
+				);
+			}
 			?>
-		</h2>
+        </h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="navigation comment-navigation" role="navigation">
