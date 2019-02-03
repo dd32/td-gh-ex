@@ -1,8 +1,10 @@
 === Keratin ===
-Contributors: ThemeCot.com
-Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, theme-options, microformats, sticky-post, threaded-comments, translation-ready
-Requires at least: 4.7
-Tested up to: 4.9.4
+Contributors: ThemeCot
+Tags: two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, post-formats, theme-options, microformats, sticky-post, threaded-comments, translation-ready, blog, news
+Requires at least: 4.8
+Tested up to: 5.0.3
+Requires PHP: 5.6
+Stable tag: 1.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -65,6 +67,15 @@ Licenses: MIT/GPL
 Source: http://users.tpg.com.au/j_birch/plugins/superfish/
 
 == Changelog ==
+
+= 1.0.8 =
+Released: February 3, 2019
+
+* Code improvements.
+* Custom header logic improved.
+* Pingback url auto-discovery header added.
+* IE HTML conditional tags removed.
+* POT file updated.
 
 = 1.0.7 =
 Release Date: March 28, 2018
