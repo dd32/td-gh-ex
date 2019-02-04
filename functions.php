@@ -202,19 +202,19 @@ function figureground_scripts() {
 	}
 
 	// Includes misc. theme scripts.
-	wp_enqueue_script( 'figureground-functions', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20160717', true );
+	wp_enqueue_script( 'figureground-functions', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20190203', true );
 
 	// Load Figure/Ground animation.
 	wp_enqueue_script( 'figureground', get_template_directory_uri() . '/js/figure-ground.js', array(), '20190115', false );
 
 	// Load theme options to pass to the Figure/Ground script.
-	$type = esc_html( get_theme_mod( 'fg_type', 'orthogonal' ) );
-	$maxh = absint( get_theme_mod( 'fg_max_height', 256 ) );
-	$maxw = absint( get_theme_mod( 'fg_max_width', 256 ) );
+	$type = esc_html( get_theme_mod( 'fg_type', 'rhombus' ) );
+	$maxh = absint( get_theme_mod( 'fg_max_height', 160 ) );
+	$maxw = absint( get_theme_mod( 'fg_max_width', 160 ) );
 	$maxr = $maxw * 2 / 3;
 	$linet = 3;
-	$delay = absint( get_theme_mod( 'fg_speed', 320 ) );
-	$initial = absint( get_theme_mod( 'fg_initial', 192 ) );
+	$delay = absint( get_theme_mod( 'fg_speed', 0 ) );
+	$initial = absint( get_theme_mod( 'fg_initial', 320 ) );
 	$color = sanitize_hex_color( get_theme_mod( 'fg_color_dark', '#222' ) );
 
 	// Pass data to JS.

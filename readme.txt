@@ -3,7 +3,7 @@ Contributors: celloexpressions
 Tags: one-column, accessibility-ready, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, block-styles, wide-blocks
 Requires at least: 4.5
 Tested up to: 5.1
-Stable tag: 2.0
+Stable tag: 2.2
 Description: Figure/Ground is a bold blogging theme featuring a dynamic background and extensive customization options. 
 License: GPLv2
 
@@ -77,6 +77,11 @@ Genericons are licensed under the terms of the GNU GPL, Version 2 (or later)
 Source: http://genericons.com
 
 == Changelog ==
+= 2.2 =
+* Sync setting defaults in customizer and on front end.
+* Fix keyboard naviation for menu toggle on certain browsers and menu types.
+* Fix color patterns for wide and full-width images.
+
 = 2.1 =
 * Additional accessibility improvements.
 * Fix color contrast patterns for sticky posts.

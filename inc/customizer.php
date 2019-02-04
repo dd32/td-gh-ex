@@ -72,13 +72,13 @@ function figureground_customize_register( $wp_customize ) {
 	) );
 
 	$wp_customize->add_setting( 'fg_max_width' , array(
-		'default'			=> 256,
+		'default'			=> 160,
 		'transport'         => 'postMessage',
 		'sanitize_callback'	=> 'absint',
 	) );
 
 	$wp_customize->add_setting( 'fg_max_height' , array(
-		'default'			=> 256,
+		'default'			=> 160,
 		'transport'         => 'postMessage',
 		'sanitize_callback'	=> 'absint',
 	) );

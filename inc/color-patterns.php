@@ -107,6 +107,8 @@ function figureground_fg_colors_css() {
 	aside.widget,
 	.site-info,
 	.gallery-caption,
+	.alignwide figcaption,
+	.alignfull figcaption,
 	.wp-block-gallery .blocks-gallery-image figcaption,
 	.wp-block-gallery .blocks-gallery-item figcaption,
 	#figureground-animation-toggle {
@@ -171,8 +173,6 @@ function figureground_fg_colors_css() {
 	.gallery-item:nth-of-type(even) .gallery-caption,
 	.wp-block-gallery .blocks-gallery-image:nth-of-type(even) figcaption,
 	.wp-block-gallery .blocks-gallery-item:nth-of-type(even) figcaption,
-	.alignwide figcaption,
-	.alignfull figcaption,
 	#figureground-animation-toggle:hover,
 	#figureground-animation-toggle:focus {
 		background: ' . $fg_light . ';

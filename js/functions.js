@@ -32,7 +32,7 @@
 		} );
 		
 		menu.on( 'focusout', function( event ) {
-			if ( ! $( event.relatedTarget ).parent().hasClass( 'menu-item' ) ) {
+			if ( 'a' !== event.relatedTarget.localName ) {
 				nav.removeClass( 'toggled' );
 			}
 		});

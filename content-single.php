@@ -20,7 +20,10 @@
 	</header>
 
 	<div class="entry-content">
-		<?php the_content(); ?>
+		<?php /* translators: %s is the post title */
+		the_content( sprintf( __( 'Continue reading %s', 'figureground' ),
+			'<span class="screen-reader-text">' . get_the_title() .
+			' </span><span class="meta-nav">&rarr;</span>' ) ); ?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'figureground' ),
