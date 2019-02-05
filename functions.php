@@ -17,21 +17,20 @@ if ( ! function_exists( 'aster_theme_setup' ) ) :
 
 	function aster_theme_setup() {
 
-		// Localization support
+		// Localization support.
 		load_theme_textdomain( 'aster', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
 
-		// Title Tag
+		// Title Tag.
 		add_theme_support( 'title-tag' );
 
-		// Register navigation menu
+		// Register navigation menu.
 		register_nav_menus(
 			array(
 				'main-menu' => __( 'Primary Menu', 'aster' )
 			) );
-
 
 		// Switch default core markup for search form, comment form, and comments to output valid HTML5.
 		add_theme_support( 'html5', array(
@@ -39,7 +38,7 @@ if ( ! function_exists( 'aster_theme_setup' ) ) :
 			'caption',
 		) );
 
-		// Custom Logo
+		// Custom Logo.
 		add_theme_support( 'custom-logo' );
 
 		// Set up the WordPress core custom background feature.
@@ -50,13 +49,13 @@ if ( ! function_exists( 'aster_theme_setup' ) ) :
 
 		add_theme_support( 'woocommerce' );
 
-		// Post thumbnails
+		// Post thumbnails.
 		add_theme_support( 'post-thumbnails' );
 		add_image_size( 'aster-post-thumbnails', 750, 450, true );
 		add_image_size( 'aster-recent-post', 110, 80, true );
 
 	}
-endif; // aster_theme_setup
+endif; // aster_theme_setup.
 
 add_action( 'after_setup_theme', 'aster_theme_setup' );
 
@@ -113,15 +112,15 @@ function aster_all_scripts_and_css() {
 	wp_enqueue_style( 'aster-stylesheet', get_stylesheet_uri() );
 	wp_enqueue_style( 'aster-responsive', get_template_directory_uri() . '/assets/css/responsive.css', array(), null );
 
-	// Google Fonts
+	// Google Fonts.
 	wp_enqueue_style( 'aster-google-fonts', aster_fonts_url(), array(), null );
 
-	// JS Files
+	// JS Files.
 	wp_enqueue_script( 'jquery-bootstrap', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array( 'jquery' ), '3.3.6', true );
 	wp_enqueue_script( 'jquery-smoothscroll', get_template_directory_uri() . '/assets/js/smoothscroll.js', array( 'jquery' ), '0.9.9', true );
 	wp_enqueue_script( 'jquery-slicknav', get_template_directory_uri() . '/assets/js/jquery.slicknav.js', array( 'jquery' ), null, true );
 	wp_enqueue_script( 'jquery-fitvids', get_template_directory_uri() . '/assets/js/jquery.fitvids.js', array( 'jquery' ), '1.1', true );
-	wp_enqueue_script( 'jquery-masonry', array( 'jquery' ), null, true);
+	wp_enqueue_script( 'jquery-masonry', array( 'jquery' ), null, true );
 	wp_enqueue_script( 'aster-scripts', get_template_directory_uri() . '/assets/js/scripts.js', array( 'jquery' ), null, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

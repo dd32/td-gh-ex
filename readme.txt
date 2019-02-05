@@ -19,6 +19,9 @@ Aster is one of the most Elegant, Trendy, Clean and Creative high-performance Re
 = 1.5.1 =
 * Add pre-loader on/off option
 
+= 1.5.2 =
+* New: WooCommerce support.
+
 
 == Upgrade Notice ==
 
