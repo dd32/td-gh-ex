@@ -101,6 +101,22 @@ $wp_customize->add_section(
 		'settings'   => 'enigma_options[breadcrumb]',
 	) );
 	
+	$wp_customize->add_setting(
+		'enigma_options[breadcrumb_title]',
+		array(
+			'type'    => 'option',
+			'default'=>$wl_theme_options['breadcrumb_title'],
+			'sanitize_callback'=>'enigma_sanitize_checkbox',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control( 'breadcrumb_title', array(
+		'label'        => __( 'Enable Breadcrumb Title', 'enigma' ),
+		'type'=>'checkbox',
+		'section'    => 'general_sec',
+		'settings'   => 'enigma_options[breadcrumb_title]',
+	) );
+	
 	// site title and logo position : left and center //
 	$wp_customize->add_setting(
 		'enigma_options[title_position]',

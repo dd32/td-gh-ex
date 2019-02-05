@@ -43,6 +43,7 @@
 			'read_more'=>__('Read More', 'enigma' ),
 			'autoplay'=>'1',
 			'breadcrumb'=>'1',
+			'breadcrumb_title'=>'1',
 			'box_layout'=>'1',
 
 			'slider_image_speed' => '',
@@ -470,7 +471,9 @@ if($theme_options['snoweffect'] =='1'){
 	add_action( 'wp_enqueue_scripts', 'snow_script' );
 }
 
-
+if (is_admin()) {
+	require_once('core/admin/hire-us.php');
+}
 if (is_admin()) {
 	require_once('core/admin/admin-themes.php');
 }

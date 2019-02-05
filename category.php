@@ -14,6 +14,12 @@ if($wl_theme_options['breadcrumb']!='') { ?>
 		</div>
 	</div>	
 </div>
+<?php } else { ?>
+<style>
+.row.enigma_blog_wrapper {
+    margin-top: 70px;
+}
+</style>
 <?php } ?>
 <div class="container">	
 	<div class="row enigma_blog_wrapper">
