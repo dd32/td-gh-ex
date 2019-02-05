@@ -45,7 +45,7 @@
             easing: "linear"
         });
 
-        $(".gallery-columns-1").each(function() {
+        $(".gallery-columns-1, .wp-block-gallery.columns-1").each(function () {
             $(this).slick({
                 slidesToShow: 1,
                 slidesToScroll: 1,
@@ -53,9 +53,27 @@
                 autoplay: true,
                 autoplaySpeed: 8000,
                 infinite: true,
+                dots: true,
                 nextArrow: '<i class="navcontrol-icon slide-next ion-ios-arrow-right"></i>',
                 prevArrow: '<i class="navcontrol-icon slide-prev ion-ios-arrow-left"></i>',
-                dots: true
+                easing: "linear"
+            });
+        });
+
+        $('.gallery, .blocks-gallery-item').each(function () {
+            $(this).magnificPopup({
+                delegate: 'a',
+                type: 'image',
+                gallery: {
+                    enabled: true
+                },
+                zoom: {
+                    enabled: true,
+                    duration: 300,
+                    opener: function (element) {
+                        return element.find('img');
+                    }
+                }
             });
         });
     });

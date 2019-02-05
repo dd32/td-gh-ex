@@ -4,7 +4,7 @@ Theme URI: https://wpinterface.com/themes/advance-blog/
 Author: WPInterface
 Author URI: http://wpinterface.com
 Description: Advance Blog is a perfect, modern, clean, responsive and retina-ready WordPress blog theme also suitable for magazines, newspapers, or review sites. The theme comes with several awesome features, including a featured posts slideshow, a color options, a magazine homepage template, and a two columned layout that makes your site in flash. A clean and elegant design helps you to deliever or present your content in a stilish way. Easy customization options with use of customizer API can give you an advance features to obtain a perfect looking site.
-Version: 1.0.8
+Version: 1.0.9
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-blog
@@ -2743,5 +2743,92 @@ object {
     .main-navigation .social-icons ul li a:after{
         height: 30px;
         line-height: 30px;
+    }
+}
+
+/*Support for Gutenberg*/
+.wp-block-gallery {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.wp-block-quote {
+    margin: 30px 0 30px 0 !important;
+    padding: 50px !important;
+    font-style: normal;
+    text-align: left;
+    quotes: none;
+    box-sizing: border-box;
+    font-weight: 400;
+    position: relative;
+    border-left: 0 !important;
+    background: #e8e8e8;
+}
+
+.wp-block-quote:before {
+    content: "";
+    background-image: url(assets/icons/open_quote.svg);
+    width: 70px;
+    height: 70px;
+    position: absolute;
+    top: 0;
+    left: 40px;
+    padding: 0;
+    background-color: transparent;
+    margin: 0 auto;
+}
+
+.wp-block-quote:before,
+.wp-block-quote:after{
+    background-size: 100%;
+}
+
+.wp-block-quote:after {
+    content: none;
+    display: none;
+}
+
+.wp-block-quote cite {
+    display: block;
+    font-size: 14px;
+    font-style: normal;
+}
+
+.wp-block-quote.is-style-large {
+    margin-bottom: 23px;
+    margin-top: 0 !important;
+}
+
+.wp-block-quote.is-style-large p {
+    font-size: 24px !important;
+    line-height: 1.5 !important;
+}
+
+.wp-block-quote p {
+    font-style: italic;
+    font-size: 16px;
+    line-height: 25px !important;
+}
+
+@media only screen and (min-width: 768px) {
+    .alignfull {
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        width: auto;
+        max-width: 1000%;
+    }
+
+    .alignwide {
+        margin-left: calc(25% - 25vw);
+        margin-right: calc(25% - 25vw);
+        width: auto;
+        max-width: 1000%;
+    }
+
+    .alignwide img,
+    .alignfull img {
+        display: block;
+        margin: 0 auto;
     }
 }

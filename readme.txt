@@ -3,8 +3,8 @@
 Contributors: WPinterface
 
 Requires at least:4.0
-Tested up to:4.9
-Stable tag: 1.0.8
+Tested up to:5.0.3
+Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -14,7 +14,7 @@ Description: Advance Blog is a perfect, modern, clean, responsive and retina-rea
 
 == License ==
 
-Advance Blog WordPress Theme, Copyright (C) 2018, Themematic
+Advance Blog WordPress Theme, Copyright (C) 2018, wpinterface
 Advance Blog is distributed under the terms of the GNU GPL
 
 == Installation ==
@@ -30,6 +30,9 @@ Advance Blog is distributed under the terms of the GNU GPL
 Advance Blog includes support for Jetpack's Infinite Scroll as well as other features.
 
 == Changelog ==
+
+= 1.0.9 - [05-Feb-2019] =
+* Checked compatibilty for WordPress 5.0
 
 = 1.0.8 - [28-jul-2018] =
 * Fixed bugs on update
@@ -70,4 +73,7 @@ MIT License: https://github.com/driftyco/ionicons
 * Author: Ken Wheeler
 * License - Licensed under the MIT license. https://github.com/kenwheeler/slick/blob/master/LICENSE
 
-
+* Magnific Popup
+* Author: Chubby Ninja
+* Source: https://github.com/dimsemenov/Magnific-Popup
+* License: Licensed under the MIT license

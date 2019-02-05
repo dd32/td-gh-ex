@@ -38,6 +38,6 @@ function advance_blog_customize_preview_js() {
 add_action( 'customize_preview_init', 'advance_blog_customize_preview_js' );
 
 function advance_blog_upsell_js() {
-    wp_enqueue_script( 'advance_blog_customize_controls', get_template_directory_uri() . '/inc/customizer/customizer-upsell.js', array( 'customize-controls' ) );
+    wp_enqueue_script( 'advance_blog_customize_controls', get_template_directory_uri() . '/inc/customizer/upsell.js', array( 'customize-controls' ) );
 }
 add_action( 'customize_controls_enqueue_scripts', 'advance_blog_upsell_js',0 );
