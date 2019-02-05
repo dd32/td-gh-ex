@@ -1,54 +1,57 @@
-----------------------------------
-Easy
-----------------------------------
-Version: 	1.5
-Developer: 	D5 Creation
-Author URI: 	https://d5creation.com
+=== Easy ===
 
-Donation Link: 	https://d5creation.com/donate/
+Contributors: D5 Creation
+Tags: two-columns, right-sidebar, custom-header, custom-menu, threaded-comments, footer-widgets, translation-ready, blog, portfolio,  sticky-post, rtl-language-support, entertainment, full-width-template, theme-options
+Requires at least: 4.0
+Tested up to: 5.0.4-alpha
+Stable tag: 1.7
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright: 	D5 Creation
-License: 	GNU General Public License v2 or later
-License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+Easy Blog and Tutorial WP Theme
 
-This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the GNU GPL or GPL Competible License.
+== Description ==
 
-License of the Images used in the screenshot.png
-----------------------------------------------------
+HTML5 and CSS3 powered Easy WordPress Theme is mainly for Personal and Company Blog and/or Tutorial Sites. Easy Theme is Elegant and Responsive. There is a Premium Extended Version of this Theme which has Many Advanced Features.
 
-1. 	Author:		werner22brigitte
-	License:		CC0 Creative Commons
-	Source:		https://pixabay.com/en/girl-flowers-yellow-beauty-nature-2864757
+== Frequently Asked Questions ==
 
-2. 	Author:		thisismyurl 
-	License:		CC0 Creative Commons
-	Source:		https://pixabay.com/en/woman-model-female-young-portrait-2542253
+= What to do after Theme Installation ? =
+After installing the Theme Please go to Appearance > Customize. You can set the Slide  and Other Options there
+
+= Why is Easy? =
+Easy is really Easy Theme for Blog and Tutorial Sites
+
+= Can it be used for Personal or Company Websites? =
+Yes, Of Course
+
+= Is it only for Blogs ? =
+No, It is for Blogs, Company, Personal Websites
 
 
-All other images are Lincenced Under GNU GPL and Copyrighted to D5 Creation
+== Changelog ==
 
-================================================================
+= 1.7 =
+* Change Images
+* Adding new readme.txt
 
-You can set Site Logo from Appearance > Header
-For Front Page Heading, Social Links and Quotation you can go Appearance > Customize
+= 1.5 =
+* Styling Change
+* Customizer Update
 
-================================================================
+= 1.3 =
+* Code Cleanup
 
-You can Visit the Easy Theme Page at http://d5creation/theme/easy 
-You can use the Easy Extend for more Features and Options. If you like this Theme you are requested for a positive review at WordPress Theme Page.
+= 1.2 =
+* Options Updated
 
-Changelog: 1.5
--------------------
-This is a Major Change
-- Coding Updates
-- Style Improvement
-- Customizer Updates
-- Image Updates
+= 1.0 =
+* Initial Release
 
-Changelog: 1.3
--------------------
-Code Cleanup
+== Resources ==
+* html5.js: https://github.com/aFarkas/html5shiv, MIT/GPL2
+* slider-full.js, slider.js: ©John Cobb, http://www.basic-slider.com, GPL3
+* jquery.easing.1.3.js:  http://gsgd.co.uk/sandbox/jquery/easing, BSD
+* themefeatures.png: FontAwesome Icons' Image, http://fortawesome.github.io/Font-Awesome
 
-Changelog: 1.2
--------------------
-Options Framework Updated
+* screenshot.png: https://stocksnap.io/photo/KMFUUDYLGA, https://stocksnap.io/photo/TCHBOFXNQ1, http://pickupimage.com/free-photos/A-Beautiful-Woman-Posing-With-A-Nectarine-Outdoors/2321347#.XFk8aVwza01, https://stocksnap.io/photo/5XNVSJFNB1

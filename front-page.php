@@ -12,7 +12,7 @@ get_header(); ?>
             <div id="widthscale"></div>
             <div id="slideshow"><ul class="bjqs">
 			
-            <?php $easy_args = easy_ppp(); query_posts( $easy_args ); if (have_posts()) : while (have_posts()) : the_post();?>
+            <?php $easy_args = easy_ppp(); $easyslide = new WP_Query( $easy_args );  if ( $easyslide -> have_posts()) : while ( $easyslide -> have_posts()) : $easyslide -> the_post();?>
             
           <li><a href="<?php the_permalink(); ?>"><?php the_post_thumbnail('slide-thumb'); ?></a><div class="post-slide"><h2><?php the_title(); ?></h2><?php  $EasyExcerptLength=15; the_excerpt(); ?></div></li>
 			
