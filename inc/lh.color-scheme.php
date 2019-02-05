@@ -54,7 +54,8 @@ class AgncyColorScheme {
 
 		// Parse the arguments against default values.
 		$args = wp_parse_args(
-			$args, array(
+			$args,
+			array(
 				'name'      => '',
 				'slug'      => '',
 				'primary'   => '#ffffff',

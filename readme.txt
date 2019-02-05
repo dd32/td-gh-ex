@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, grid-layout, custom-colors, custom
 Requires at least: 4.8
 Tested up to: 4.9
 Requires PHP: 5.6
-Stable tag: 1.5.0
+Stable tag: 1.5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,12 @@ Agncy is a beautiful news and blogging theme that has beautiful typography, powe
 4. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Changelog ==
+
+= 1.5.2 =
+* Minor fixes to translatability and escaping
+
+= 1.5.1 =
+* Fixed an issue with image sizes
 
 = 1.5.0 =
 * Fixed an issue where the missing customize library was not catched
@@ -101,22 +107,21 @@ Agncy is a beautiful news and blogging theme that has beautiful typography, powe
 * Sticky Kit, MIT, https://github.com/leafo/sticky-kit
 * Font Awesome, CC-BY-4 / SIL OFL / MIT, https://fontawesome.com/v4.7.0/license/
 * Fira Sans, SIL OFL, https://github.com/mozilla/Fira
-* Slick Slider, MIT, https://github.com/kenwheeler/slick/
 * lodash, MIT, https://github.com/lodash/lodash
 
 == Copyright ==
 
 Agncy WordPress Theme, Copyright 2018 wpmunich
-Agncy is distributed under the terms of the GNU GPL
+Agncy is distributed under the terms of the GNU GPLv2
 
 === Images ===
 
-* Theme Screenshot, https://pixabay.com/de/stühle-konferenzraum-zeitgenössische-2181980/, License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
-* Theme Screenshot, https://pixabay.com/de/laptop-computer-technologie-monitor-3190194/, License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
-* Theme Screenshot, https://pixabay.com/de/computer-laptop-technologie-büro-3368242/, License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
-* Theme Screenshot, https://pixabay.com/de/büro-arbeit-schreibtisch-computer-932926/, License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
-* color-schemes.jpg, https://pixabay.com/de/abstrakt-kunst-hintergrund-farbe-2468874/, License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
-* more-color-schemes.jpg, https://pixabay.com/de/wasserperlen-farbstifte-unterwasser-2137080/, License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
-* custom-colors.jpg, https://pixabay.com/de/kunst-farbe-wasser-farben-1209519/, License: CC0 Creative Commons (CC0) license (https://pixabay.com/en/service/terms/#usage)
-* footer-text.jpg, self made
+* Theme Screenshot, https://commons.wikimedia.org/wiki/File:7_Grays_Inn_Rd,_London,_United_Kingdom_(Unsplash).jpg, License: CC0 Creative Commons (CC0) license
+* Theme Screenshot, https://commons.wikimedia.org/wiki/File:207_King_St,_London,_Canada_(Unsplash).jpg, License: CC0 Creative Commons (CC0) license
+* Theme Screenshot, https://commons.wikimedia.org/wiki/File:21_Poland_St,_London,_United_Kingdom_(Unsplash).jpg, License: CC0 Creative Commons (CC0) license
+* Theme Screenshot, https://commons.wikimedia.org/wiki/File:153_W_27th_St,_New_York,_United_States_(Unsplash).jpg, License: CC0 Creative Commons (CC0) license
+* color-schemes.jpg, https://stocksnap.io/photo/VCZIE6GSHD, License: CC0 Creative Commons (CC0) license (https://stocksnap.io/license)
+* more-color-schemes.jpg, https://stocksnap.io/photo/A5G6T8F11N, License: CC0 Creative Commons (CC0) license (https://stocksnap.io/license)
+* custom-colors.jpg, https://stocksnap.io/photo/V7QLBDJHST, License: CC0 Creative Commons (CC0) license (https://stocksnap.io/license)
+* footer-text.jpg, self made, License: CC0 Creative Commons (CC0) license
 * gutenberg.jpg, https://commons.wikimedia.org/wiki/File:Gutenberg.jpg, Public Domain

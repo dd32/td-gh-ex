@@ -18,7 +18,7 @@ if ( !defined( 'AGNCY_JS_URL' ) ) {
     define( 'AGNCY_JS_URL', esc_url( get_template_directory_uri() ) );
 }
 if ( !defined( 'AGNCY_VERSION' ) ) {
-    define( 'AGNCY_VERSION', '1.5.0' );
+    define( 'AGNCY_VERSION', '1.5.2' );
 }
 if ( !defined( 'AGNCY_DEFAULT_PRIMARY' ) ) {
     define( 'AGNCY_DEFAULT_PRIMARY', '#225378' );
@@ -102,7 +102,7 @@ function agncy_enqueue_scripts()
         'style',
         AGNCY_THEME_URL . '/style.min.css',
         array( 'font-awesome' ),
-        '1.5.0',
+        '1.5.2',
         'all'
     );
     /*
@@ -115,7 +115,7 @@ function agncy_enqueue_scripts()
         'main',
         AGNCY_JS_URL . '/js/script.min.js',
         array( 'jquery' ),
-        '1.5.0',
+        '1.5.2',
         true
     );
     wp_enqueue_script( 'main' );
@@ -134,7 +134,7 @@ function agncy_enqueue_scripts()
     wp_register_script(
         'agncy_font',
         AGNCY_JS_URL . '/js/fonts.min.js',
-        '1.5.0',
+        '1.5.2',
         false
     );
     wp_enqueue_script( 'agncy_font' );
@@ -175,7 +175,7 @@ function agncy_admin_scripts()
             'wp-date',
             'wp-edit-post'
         ),
-            '1.5.0',
+            '1.5.2',
             true
         );
         wp_enqueue_script( 'admin' );
@@ -242,18 +242,18 @@ function agncy_theme_image()
         $base_y * 24,
         true
     );
-    // 768 * 432 // Corrected to 970 * 545
+    // 768 * 432
     add_image_size(
         'agncy_sixteen_nine_small',
-        970,
-        546,
+        $base_x * 60,
+        $base_y * 60,
         true
     );
-    // "HD-Ready" / "Half"-Full HD - 1280 * 720 // Corrected to 1170 * 658
+    // "HD-Ready" / "Half"-Full HD - 1280 * 720
     add_image_size(
         'agncy_sixteen_nine_medium',
-        1170,
-        658,
+        $base_x * 80,
+        $base_y * 80,
         true
     );
     // Full HD - 1920 * 1080.
@@ -270,6 +270,8 @@ function agncy_theme_image()
         $base_y * 160,
         true
     );
+    // Set post thumbnail size to HD-Ready.
+    set_post_thumbnail_size( $base_x * 80, $base_y * 80, true );
 }
 
 add_action( 'init', 'agncy_theme_image' );

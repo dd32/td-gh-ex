@@ -17,7 +17,7 @@ if ( empty( $disable_title ) || '1' !== $disable_title ) :
 	 * @see https://codex.wordpress.org/Conditional_Tags
 	 */
 
-	$title = get_the_archive_title();
+	$page_title = get_the_archive_title();
 
 	// The wrapper classes.
 	$classes = array( 'page_title_wrapper', 'has-primary-background-color' );
@@ -30,9 +30,9 @@ if ( empty( $disable_title ) || '1' !== $disable_title ) :
 
 		if ( $search_term ) {
 			// translators: The search term.
-			$title = sprintf( __( 'Results for "%s"', 'agncy' ), $search_term );
+			$page_title = sprintf( __( 'Results for "%s"', 'agncy' ), $search_term );
 		} else {
-			$title = __( 'Search results', 'agncy' );
+			$page_title = __( 'Search results', 'agncy' );
 		}
 	}
 
@@ -40,39 +40,39 @@ if ( empty( $disable_title ) || '1' !== $disable_title ) :
 	if ( is_home() && is_front_page() ) {
 
 		// On the site front page.
-		$title = get_bloginfo( 'description' );
+		$page_title = get_bloginfo( 'description' );
 
 	} elseif ( is_home() && ! is_front_page() ) {
 
 		// On the page assigned to display the blog posts index.
-		$title = get_the_title( get_option( 'page_for_posts' ) );
+		$page_title = get_the_title( get_option( 'page_for_posts' ) );
 	} elseif ( is_singular() ) {
 
-		$title = get_the_title();
+		$page_title = get_the_title();
 
 	}
 
 	/*
 	 * Use this filters to apply your own business logic for the archive title, either in a plugin or a child theme
 	 */
-	$title   = apply_filters( 'agncy_archive_title', $title );
-	$classes = apply_filters( 'agncy_archive_title_classes', $classes );
+	$page_title = apply_filters( 'agncy_archive_title', $page_title );
+	$classes    = apply_filters( 'agncy_archive_title_classes', $classes );
 
 	/*
-	 * Only show this whole ordeal, if we actually have a $title
+	 * Only show this whole ordeal, if we actually have a $page_title
 	 */
-	if ( $title ) :
+	if ( $page_title ) :
 		?>
 		<div class="<?php echo esc_attr( implode( ' ', $classes ) ); ?>">
 			<div class="container">
 				<div class="row the_page_title_row">
 					<div class="col-xs-12 col-md-12">
-						<h1 class="the_page_title entry-title"><?php echo wp_kses_post( $title ); ?></h1>
+						<h1 class="the_page_title entry-title"><?php echo wp_kses_post( $page_title ); ?></h1>
 					</div>
 				</div>
 			</div>
 		</div>
 		<?php
-	endif; // /$title check
+	endif; // /$page_title check
 
 endif; // /Disable Title Check

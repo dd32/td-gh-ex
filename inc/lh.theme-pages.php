@@ -150,7 +150,8 @@ class AgncyAdminPages {
 		$description = __(
 			'Agncy is a beautiful, Gutenberg ready news and blogging theme that has beautiful typography, powerful color customisation and an elegant, light layout.
 
-		Customise your theme to the colours you need and upload your own logo. Enjoy reading even long texts with the beautiful font "Fira" and experience how fast font loading can be with an innovative font loading technique.', 'agncy'
+		Customise your theme to the colours you need and upload your own logo. Enjoy reading even long texts with the beautiful font "Fira" and experience how fast font loading can be with an innovative font loading technique.',
+			'agncy'
 		);
 
 		return apply_filters( 'the_content', $description );
@@ -162,7 +163,7 @@ class AgncyAdminPages {
 	 * @return array $buttons An array of button objects.
 	 */
 	private function define_buttons() {
-		require_once AGNCY_THEME_PATH . '/inc/onboarding/class-onboarding-button.php';
+		require_once AGNCY_THEME_PATH . '/inc/onboarding/class-onboarding-button.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 		$buttons = array();
 
 		$buttons[] = new AgncyOnboardingButton(
@@ -217,7 +218,7 @@ class AgncyAdminPages {
 	 * @return array An array of feature objects
 	 */
 	private function define_features() {
-		require_once AGNCY_THEME_PATH . '/inc/onboarding/class-onboarding-feature.php';
+		require_once AGNCY_THEME_PATH . '/inc/onboarding/class-onboarding-feature.php'; // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 		$features = array();
 
 		$features[] = new AgncyOnboardingFeature(

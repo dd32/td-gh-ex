@@ -73,7 +73,8 @@ class AgncyOnboardingFeature {
 	 */
 	public function __construct( $args ) {
 			$args = wp_parse_args(
-				$args, array(
+				$args,
+				array(
 					'title'       => '',
 					'description' => '',
 					'tier'        => 'free',

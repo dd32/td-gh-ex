@@ -26,7 +26,7 @@ class Walker_Comment_Agncy extends Walker_Comment {
 	protected function html5_comment( $comment, $depth, $args ) {
 		$tag = ( 'div' === $args['style'] ) ? 'div' : 'li';
 		?>
-		<<?php echo $tag; ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( ( $this->has_children ? 'parent' : '' ) . ' has-primary-background-color', $comment ); ?>>
+		<<?php echo esc_attr( $tag ); ?> id="comment-<?php comment_ID(); ?>" <?php comment_class( ( $this->has_children ? 'parent' : '' ) . ' has-primary-background-color', $comment ); ?>>
 			<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 				<footer class="comment-meta has-primary-background-color">
 					<div class="highlight-bar has-secondary-background-color"></div>
@@ -41,10 +41,12 @@ class Walker_Comment_Agncy extends Walker_Comment {
 					<div class="comment-metadata">
 						<div class="comment-author vcard">
 							<?php
-								printf(
-									/* translators: %s: comment author link */
-									__( '%s <span class="says">says:</span>', 'agncy' ),
-									sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) )
+								echo wp_kses_post(
+									sprintf(
+										/* translators: %s: comment author link */
+										__( '%s <span class="says">says:</span>', 'agncy' ),
+										sprintf( '<b class="fn">%s</b>', get_comment_author_link( $comment ) )
+									)
 								);
 							?>
 						</div><!-- .comment-author -->
@@ -52,7 +54,7 @@ class Walker_Comment_Agncy extends Walker_Comment {
 							<time datetime="<?php comment_time( 'c' ); ?>">
 								<?php
 									/* translators: 1: comment date, 2: comment time */
-									printf( __( '%1$s at %2$s', 'agncy' ), get_comment_date( '', $comment ), get_comment_time() );
+									echo esc_attr( sprintf( __( '%1$s at %2$s', 'agncy' ), get_comment_date( '', $comment ), get_comment_time() ) );
 								?>
 							</time>
 						</a>
@@ -74,7 +76,7 @@ class Walker_Comment_Agncy extends Walker_Comment {
 					);
 					?>
 					<?php if ( '0' == $comment->comment_approved ) : ?>
-					<p class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'agncy' ); ?></p>
+					<p class="comment-awaiting-moderation"><?php esc_attr_e( 'Your comment is awaiting moderation.', 'agncy' ); ?></p>
 					<?php endif; ?>
 				</footer><!-- .comment-meta -->
 

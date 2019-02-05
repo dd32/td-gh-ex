@@ -19,7 +19,7 @@ class AgncyYoastCompatibility {
 	 */
 	public function __construct() {
 		// Only fire this class if the yoast plugin is really active.
-		include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+		include_once( ABSPATH . 'wp-admin/includes/plugin.php' ); // phpcs:ignore WPThemeReview.CoreFunctionality.FileInclude.FileIncludeFound
 		if ( is_plugin_active( 'wordpress-seo/wp-seo.php' ) ) {
 			$this->action_dispatcher();
 			$this->filter_dispatcher();

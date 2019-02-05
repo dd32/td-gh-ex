@@ -4,7 +4,7 @@
  * Description: Agncy is a beautiful news and blogging theme that has beautiful typography, powerful color customisation and an elegant, light layout. Customise your theme to the colours you need and upload your own logo. Enjoy reading even long texts with the beautiful font 'Fira' and experience how fast font loading can be with an innovative font loading technique.
  * Author: WP Munich
  * Author URI: http://www.wp-munich.com
- * Version: 1.5.0
+ * Version: 1.5.2
  * Text Domain: agncy
  * Domain Path: /languages
  * License: GPL-2.0+
@@ -5012,12 +5012,6 @@ ul.wp-block-gallery .blocks-gallery-item figure {
   }
   .post_meta_info {
     margin-bottom: 27px;
-  }
-  .slick-slider .slick-track .slick-slide {
-    padding: 0 32px;
-  }
-  .slick-slider .slick-arrow i.fa {
-    font-size: 54px;
   }
   .widget {
     margin-bottom: 54px;

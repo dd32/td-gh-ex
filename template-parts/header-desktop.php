@@ -35,7 +35,7 @@
 		$style_tag = 'style="' . esc_attr( implode( '; ', $styles ) ) . '"';
 	}
 	?>
-<header class="<?php echo esc_attr( implode( ' ', $header_classes ) ); ?>" role="banner" <?php echo $style_tag; ?>>
+<header class="<?php echo esc_attr( implode( ' ', $header_classes ) ); ?>" role="banner" <?php echo $style_tag; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
 
 	<?php get_template_part( 'template-parts/header/contact-bar' ); ?>
 

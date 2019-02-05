@@ -45,7 +45,8 @@ class AgncyOnboardingButton {
 	 */
 	public function __construct( $args ) {
 			$args = wp_parse_args(
-				$args, array(
+				$args,
+				array(
 					'label'               => '',
 					'target'              => '',
 					'visibility_callback' => null,

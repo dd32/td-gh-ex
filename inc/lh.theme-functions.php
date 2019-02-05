@@ -50,9 +50,11 @@ class AgncyThemeFunctions {
 	 * @return void
 	 */
 	function lh_admin_footer() {
-		$url  = __( 'http://www.wp-munich.com', 'agncy' );
-		$name = __( 'WP Munich', 'agncy' );
-		echo '<i>Made with &#x2661; by <a href="' . esc_url( $url ) . '" target="_blank">' . esc_attr( $name ) . '</a>. Powered by <a href="http://www.wordpress.org" target="_blank">WordPress</a>.</i>';
+		$url        = __( 'http://www.wp-munich.com', 'agncy' );
+		$name       = __( 'WP Munich', 'agncy' );
+		$made_with  = __( 'Made with &#x2661; by ', 'agncy' );
+		$powered_by = __( 'Powered by', 'agncy' );
+		echo '<i>' . esc_html( $made_with ) . ' <a href="' . esc_url( $url ) . '" target="_blank">' . esc_attr( $name ) . '</a>. ' . esc_html( $powered_by ) . ' <a href="http://www.wordpress.org" target="_blank">WordPress</a>.</i>';
 	}
 
 	/**
@@ -63,7 +65,8 @@ class AgncyThemeFunctions {
 	 * @return string $more The custom more link.
 	 */
 	public function excerpt_more( $more ) {
-		$more = '<a href="' . get_the_permalink() . '" class="read-more-link"><span>Read more <i class="fa fa-angle-right"></i></span></a>';
+		$readmore = __( 'Read more', 'agncy' );
+		$more     = '<a href="' . get_the_permalink() . '" class="read-more-link"><span>' . esc_html( $readmore ) . ' <i class="fa fa-angle-right"></i></span></a>';
 		return $more;
 	}
 
@@ -90,7 +93,8 @@ class AgncyThemeFunctions {
 	public function comment_form_defaults( $defaults ) {
 
 		$defaults = array_merge(
-			$defaults, array(
+			$defaults,
+			array(
 				'title_reply_before' => '<h3 id="reply-title" class="comment-reply-title has-tertiary-background-color">',
 				'title_reply'        => '<span class="text">' . __( 'Leave a Reply', 'agncy' ) . '</span>',
 				// translators: the name of the author of the reply to comment.
