@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Innovation Lite\n"
-"POT-Creation-Date: 2016-12-06 01:38+0600\n"
+"POT-Creation-Date: 2019-02-05 16:04+0600\n"
 "PO-Revision-Date: 2015-10-29 02:02+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.9\n"
+"X-Generator: Poedit 1.8.13\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -126,39 +126,39 @@ msgstr ""
 msgid "Pages"
 msgstr ""
 
-#: functions.php:12
+#: functions.php:10
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:106 functions.php:112
+#: functions.php:104 functions.php:110
 msgid "Read More ..."
 msgstr ""
 
-#: functions.php:127
+#: functions.php:125
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:136
+#: functions.php:134
 msgid "Secondary Sidebar"
 msgstr ""
 
-#: functions.php:145
+#: functions.php:143
 msgid "Footer Area One"
 msgstr ""
 
-#: functions.php:147 functions.php:157 functions.php:167 functions.php:177
+#: functions.php:145 functions.php:155 functions.php:165 functions.php:175
 msgid "An optional widget area for your site footer"
 msgstr ""
 
-#: functions.php:155
+#: functions.php:153
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions.php:165
+#: functions.php:163
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions.php:175
+#: functions.php:173
 msgid "Footer Area Four"
 msgstr ""
 
@@ -299,14 +299,14 @@ msgid "D5 Socialia"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "http://d5creation.com/theme/socialia/"
+msgid "https://d5creation.com/theme/socialia/"
 msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"The D5 Socialia theme for WordPress is sophisticated, lightweight, and "
-"adaptable. This theme is better for Social Organizations, basically for the "
-"organizations working for Climate Change, Disaster Management, Natural "
+"D5 Socialia Theme for WordPress is sophisticated, lightweight, and "
+"adaptable. This theme is better for the Social Organizations, basically for "
+"the organizations working for Climate Change, Disaster Management, Natural "
 "Resources Management, Environment, Environmental Management, Social Works, "
 "Social Development, Cultural Organizations etc. It can also be used for "
 "Personal or Company Websites. You Can find a Live Demo of D5 Socialia Theme "
@@ -320,5 +320,5 @@ msgid "D5 Creation"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://d5creation.com/"
+msgid "https://d5creation.com/"
 msgstr ""

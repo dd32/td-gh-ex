@@ -41,13 +41,13 @@ wp_head(); ?>
       <div id ="header-content">
       
 		<!-- Site Titele and Description Goes Here -->
-        <a href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if ( get_header_image() !='' ): ?><img class="site-logo" src="<?php header_image(); ?>"/><?php else: ?><h1 class="site-title"><?php echo bloginfo( 'name' ); ?></h1><?php endif; ?></a>
+        <a id="logotitle" href="<?php echo esc_url( home_url( '/' ) ); ?>"><?php if ( get_header_image() !='' ): ?><img class="site-logo" src="<?php header_image(); ?>"/><?php else: ?><h1 class="site-title"><?php echo bloginfo( 'name' ); ?></h1><?php endif; ?></a>
 		<h2 class="site-title-des"><?php bloginfo( 'description' ); ?></h2>
                 
         <!-- Site Main Menu Goes Here -->
-        <nav id="socialia-main-menu">
-		<?php if ( has_nav_menu( 'main-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'main-menu' )); else: wp_page_menu(); endif; ?>
-        </nav><div class="clear"> </div>
+        <nav id="main-menu-con">
+		<?php if ( has_nav_menu( 'main-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'main-menu', 'menu_class' => 'main-menu-items' )); else: wp_page_menu(); endif; ?>
+        </nav><div class="whiteline"></div><div class="clear"> </div>
       
       </div><!-- header-content -->
       </div><!-- header -->
@@ -63,11 +63,3 @@ foreach (range(1, 12) as $sinumber) { ?>
 </div> <!-- slide-container -->
 
 <div id="container">
-       
-	         
-       
-       
-      
-	  
-	 
-	  

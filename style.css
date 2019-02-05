@@ -5,11 +5,11 @@ Theme URI: https://d5creation.com/theme/socialia/
 Author: D5 Creation
 Author URI: https://d5creation.com/
 
-Description: The D5 Socialia theme for WordPress is sophisticated, lightweight, and adaptable. This theme is better for Social Organizations, basically for the organizations working for Climate Change, Disaster Management, Natural Resources Management, Environment, Environmental Management, Social Works, Social Development, Cultural Organizations etc. It can also be used for Personal or Company Websites. You Can find a Live Demo of D5 Socialia Theme in this link <a href="http://demo.d5creation.com/themes/?theme=Socialia" target="_blank">http://demo.d5creation.com/wp/themes/d5socialia.</a>. Before Installing or Updating you must read the Readme File of this Theme.
+Description: D5 Socialia Theme for WordPress is sophisticated, lightweight, and adaptable. This theme is better for the Social Organizations, basically for the organizations working for Climate Change, Disaster Management, Natural Resources Management, Environment, Environmental Management, Social Works, Social Development, Cultural Organizations etc. It can also be used for Personal or Company Websites. You Can find a Live Demo of D5 Socialia Theme in this link <a href="http://demo.d5creation.com/themes/?theme=Socialia" target="_blank">http://demo.d5creation.com/wp/themes/d5socialia.</a>. Before Installing or Updating you must read the Readme File of this Theme.
 
-Version: 3.4.1
+Version: 3.5
 
-Tags: one-column, two-columns, right-sidebar, custom-background, blog, portfolio, education, custom-colors, custom-header, custom-menu, editor-style, featured-images, full-width-template, rtl-language-support, sticky-post, translation-ready, theme-options 
+Tags: one-column, two-columns, right-sidebar, custom-background, blog, portfolio, education, custom-colors, custom-header, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, translation-ready, theme-options 
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -64,10 +64,12 @@ img{max-width:100%;border:none}
 #top-menu-container #s:focus{background-color:#FFF;width:150px}
 #top-menu-container #searchform input[type="submit"]{display:none}
 #header{min-height:75px;min-width:1000px}
-img.site-logo,h1.site-title{color:#158E09;float:left;font-size:40px;font-weight:700;height:auto;max-width:50%;margin:-5px 0 10px}
-#header-content{margin:0 auto;min-height:75px;width:1000px}
+#logotitle{ max-width:50%; margin:10px 0; }
+img.site-logo,h1.site-title{color:#158E09;font-size:40px;font-weight:700;height:auto; }
+img.site-logo{max-width: 300px;}
+#header-content{margin:0 auto;min-height:75px;width:1000px;position: relative; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center;}
 .site-title-hidden{display:none}
-.site-title-des{color:#158E09;float:right;font-size:21px;margin:30px 20px 0 0;max-width:40%;text-align:right;text-shadow:-1px -1px 1px #ECF6FD}
+.site-title-des{color:#158E09;float:right;font-size:21px;margin:10px 0;max-width:calc(50% - 30px);text-align:right;text-shadow:-1px -1px 1px #ECF6FD}
 #content{float:left;width:70%}
 #content-full{width:1000px}
 .content-ver-sep{clear:both;height:1px;background:#CCC;border-bottom:1px solid #FFF}
@@ -113,27 +115,48 @@ embed{max-width:100%}
 
 /* Menu Elements 
 ------------------------------------------------------------- */
-#socialia-main-menu{background:url(images/nav.png) repeat scroll 0 0 #F60;border-radius:7px 7px 0 0;clear:both;display:block;float:left;height:41px;width:1000px;text-align:center}
-#socialia-main-menu .menu{display:inline-block}
-#socialia-main-menu ul{list-style:none outside none}
-#socialia-main-menu li{float:left;position:relative;background:url(images/nav_border.png) no-repeat scroll right center transparent}
-#socialia-main-menu a{color:#FFF;display:block;padding:2px 15px;text-decoration:none;text-transform:uppercase;line-height:3.5}
-#socialia-main-menu a:hover{background:url(images/nav-hover.png) no-repeat scroll center top transparent;color:#FFF}
-#socialia-main-menu .current-menu-item > a,#socialia-main-menu .current-menu-ancestor > a,#socialia-main-menu .current_page_item > a,#socialia-main-menu .current_page_ancestor > a{font-weight:700}
-#socialia-main-menu li ul{float:left;position:relative;margin:0}
-#socialia-main-menu ul ul,.sub-menu,.sub-menu ul ul{background:#F60;background:rgba(255,102,0,0.9);border-bottom:7px solid #316022;border-radius:0 0 5px 5px;border-top:3px solid #316022;box-shadow:0 3px 3px rgba(0,0,0,0.2);display:none;float:left;left:0;margin:0;position:absolute;width:188px;z-index:99999;padding:0 5px}
-#socialia-main-menu ul li ul li{padding:0;margin:0;background:transparent;border-bottom:1px dotted #CCC;-moz-transition:all 1s;-o-transition:all 1s;-webkit-transition:all 1s}
-#socialia-main-menu ul li ul li:hover{background:#AAA;background:rgba(179,74,4,.9)}
-#socialia-main-menu ul ul ul{left:100%;top:0;z-index:999}
-#socialia-main-menu ul ul a{background:transparent;border:none;color:#FFF;font-size:12px;font-weight:400;height:auto;line-height:1em;padding:10px 5px;width:178px;text-transform:none;text-align:left;-moz-transition:all 1s;-o-transition:all 1s;-webkit-transition:all 1s}
-#socialia-main-menu ul ul a:hover{padding-left:20px;background:transparent;width:163px}
-#socialia-main-menu ul li:hover > ul{display:block;margin-top:-5px}
+#main-menu-con { background: #ff6600; border-radius: 7px 7px 0 0; clear: both; display: block; text-align: center; width: 100%; position: relative; height: 45px; }
+#main-menu-con .main-menu-items { display: inline-block;	padding: 0; margin: 0; }
+#main-menu-con ul { list-style: none outside none; }
+#main-menu-con li { float:left;position:relative; background: url("images/nav_border.png") no-repeat scroll right center transparent; }
+#main-menu-con ul.main-menu-items > li:last-child { background: transparent; }
+
+#main-menu-con a { color: #ffffff; display: block; line-height: 1.5; padding: 11px 15px; text-decoration: none; text-transform: uppercase; }
+#main-menu-con a:hover { background: url("images/nav-hover.png") no-repeat scroll center top transparent; }
+
+#main-menu-con .current-menu-item > a, #main-menu-con .current-menu-ancestor > a, #main-menu-con .current_page_item > a, #main-menu-con .current_page_ancestor > a  { font-weight:bold; }
+#main-menu-con li ul { float: left; position: relative; margin: 0; }
+
+#main-menu-con ul ul, .sub-menu, .sub-menu ul ul { background: rgba(255, 102, 0, 0.95); border-bottom: 7px solid #316022; border-radius: 0 0 5px 5px; box-shadow: 0 3px 3px rgba(0,0,0,0.2); display: none; float: left; left: 0; margin: 0; position: absolute; width: 210px; z-index: 99999; padding: 0; }
+
+#main-menu-con ul li ul li { padding: 0; background: transparent; margin:0; width: 100%; border-bottom: 1px dotted #cccccc; transition: all 1s; }
+#main-menu-con ul li ul li:last-child { border-bottom: none; }
+
+#main-menu-con ul li ul li:hover { background: rgba(179,74,4,.9); }
+#main-menu-con ul ul ul { left: 100%; top: 0; z-index: 999; }
+
+#main-menu-con ul ul a  { background: transparent; border: none; color: #ffffff; font-size: 12px; font-weight: normal; height: auto; line-height: 1em; padding: 10px; width: 100%; text-transform:none; text-align: left; transition: all 1s; }
+
+#main-menu-con ul ul a:hover { background: transparent; padding-left: 20px; }
+#main-menu-con ul ul li:hover > ul { /* display: block; */ margin-top: -5px; }
+
+#main-menu-con .menu-item-has-children > a, #main-menu-con .page_item_has_children > a { padding-right: 25px;  }
+#main-menu-con li.menu-item-has-children > a:after, #main-menu-con li.page_item_has_children > a:after { content: ''; right:10px; position: absolute; top: 50%; transform: translateY(-50%); border-style: solid;
+border-width: 7px 5px 0 5px; border-color: #ffffff transparent transparent transparent; }
+#main-menu-con .menu-item-has-children ul li.menu-item-has-children > a:after, #main-menu-con .page_item_has_children ul li.menu-item-has-children > a:after { transform: rotate(270deg); right:5px; } 
+
+#mobile-menu { color: #ffffff; background: #ff6600; padding: 10px; font-size: 20px; display: none; cursor:pointer; width: 100%; text-align: center; justify-content: space-between; align-items: center; }
+#mobile-menu::before { content:'\f0c9'; font-size: 20px; padding-right: 10px; }
+#mobile-menu::after { content: '\f0d7'; padding-left: 10px; }
+#mobile-menu.yesclick::after { content:'\f0d8'; }
+
+.whiteline { background: rgba(255, 255, 255, 0.3); height: 1px; width: 100%; position: absolute; bottom: 5px; }
 
 /* Wedget Elements 
 ------------------------------------------------------------- */
 .widget{display:block;word-wrap:break-word}
 .widget ul,.widget ol{padding:0}
-#right-sidebar .widget{width:220px;box-shadow:0 1px 1px #AAA;background:#CCC;background:none repeat scroll 0 0 rgba(0,0,0,0.15);border-radius:10px;box-shadow:0 -1px 1px rgba(255,255,255,0.3);clear:both;margin:1px 0 15px;padding:10px 15px}
+#right-sidebar .widget{width:220px; background:#CCC;background:none repeat scroll 0 0 rgba(0,0,0,0.15);border-radius:10px;box-shadow:0 -1px 1px rgba(255,255,255,0.3);clear:both;margin:1px 0 15px;padding:10px 15px}
 #right-sidebar .widget h3{background:#F60;color:#FFF;font-size:13px;font-weight:700;padding:3px 5px;text-align:center;text-transform:uppercase}
 #right-sidebar .widget,#right-sidebar .widget li,#right-sidebar .widget a,#right-sidebar .widget a:hover{text-decoration:none;color:#555}
 #right-sidebar .widget ul,#right-sidebar .widget ol{margin-left:15px}
@@ -197,6 +220,8 @@ button:active,input[type="reset"]:active,input[type="button"]:active,input[type=
 #content img,#content-full img{height:auto;margin:0;max-width:100%;vertical-align:middle}
 #heading{font-size:35px;margin:20px 0;text-align:center;text-transform:uppercase}
 #slide-container{min-width:1000px;margin:0 auto}
+.box_skitter_large{border-radius: 0 0 7px 7px; overflow: hidden; }
+.box_skitter .info_slide_dots {  right: 15px; left: auto !important; }
 blockquote{margin:20px 10px;padding:10px;quotes:'<<' '>>';background:#ECF6FD;border-left:10px solid #158E09;border-right:10px solid #158E09}
 blockquote:before{content:'\201C';font-size:4em;line-height:.1em;margin-right:.2em;vertical-align:-.4em;color:#158E09}
 blockquote:after{content:'\201D';font-size:4em;line-height:.1em;margin-left:.2em;vertical-align:-.4em;color:#158E09}
