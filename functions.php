@@ -589,7 +589,7 @@ function fcorpo_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fcorpo_slider_display',
 							array(
-								'label'          => __( 'Display Slider', 'fcorpo' ),
+								'label'          => __( 'Display Slider on a Static Front Page', 'fcorpo' ),
 								'section'        => 'fcorpo_slider_section',
 								'settings'       => 'fcorpo_slider_display',
 								'type'           => 'checkbox',
