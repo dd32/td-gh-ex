@@ -42,6 +42,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.1.3 =
+* update Slider Display text in Customizer option to 'Display Slider on a Static Front Page'
+
 = 1.1.2 =
 * improve primary menu under menu
 

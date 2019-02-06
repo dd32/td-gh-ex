@@ -43,7 +43,7 @@ if ( ! function_exists( 'artgallery_customize_register' ) ) :
 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'artgallery_slider_display',
 								array(
-									'label'          => __( 'Display Slider', 'artgallery' ),
+									'label'          => __( 'Display Slider on a Static Front Page', 'artgallery' ),
 									'section'        => 'artgallery_slider_section',
 									'settings'       => 'artgallery_slider_display',
 									'type'           => 'checkbox',
