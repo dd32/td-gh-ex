@@ -4,7 +4,7 @@
  * @package Asteroid
  *
  */
-$ast_version = '1.2.7';
+$ast_version = '1.2.8';
 /*-------------------------------------
 	Setup Theme Options
 --------------------------------------*/
@@ -106,45 +106,45 @@ function asteroid_register_sidebars() {
 	register_sidebar(array(
 		'name' 			=> __( 'Sidebar', 'asteroid' ),
 		'id' 			=> 'widgets_sidebar',
-		'before_widget' => '<div id="%1$s" class="widget-sidebar asteroid-widget %2$s">',
-		'after_widget' 	=> '</div>',
-		'before_title' 	=> '<h4 class="widget-title">',
-		'after_title' 	=> '</h4>' ) );
+		'before_widget' => '<section id="%1$s" class="widget-sidebar asteroid-widget %2$s">',
+		'after_widget' 	=> '</section>',
+		'before_title' 	=> '<h2 class="widget-title">',
+		'after_title' 	=> '</h2>' ) );
 
 	register_sidebar(array(
 		'name' 			=> __( 'Header', 'asteroid' ),
 		'id' 			=> 'widgets_header',
-		'before_widget' => '<div id="%1$s" class="widget-header asteroid-widget %2$s">',
-		'after_widget' 	=> '</div>',
-		'before_title' 	=> '<h4 class="widget-title">',
-		'after_title' 	=> '</h4>' ) );
+		'before_widget' => '<section id="%1$s" class="widget-header asteroid-widget %2$s">',
+		'after_widget' 	=> '</section>',
+		'before_title' 	=> '<h2 class="widget-title">',
+		'after_title' 	=> '</h2>' ) );
 
 	register_sidebar(array(
 		'name' 			=> __( 'Footer: Full Width', 'asteroid' ),
 		'id' 			=> 'widgets_footer_full',
 		'description'	=> __( 'Widget spans the entire width of the footer. Ideal for horizontal banners & 728x90 ads.', 'asteroid' ),
-		'before_widget' => '<div id="%1$s" class="widget-footer-full asteroid-widget %2$s">',
-		'after_widget' 	=> '</div>',
-		'before_title' 	=> '<h4 class="widget-title">',
-		'after_title' 	=> '</h4>' ) );
+		'before_widget' => '<section id="%1$s" class="widget-footer-full asteroid-widget %2$s">',
+		'after_widget' 	=> '</section>',
+		'before_title' 	=> '<h2 class="widget-title">',
+		'after_title' 	=> '</h2>' ) );
 
 	register_sidebar(array(
 		'name' 			=> __( 'Footer: 3 Column', 'asteroid' ),
 		'id' 			=> 'widgets_footer_3',
 		'description'	=> __( 'Widgets are arranged into 3 columns.', 'asteroid' ),
-		'before_widget' => '<div id="%1$s" class="widget-footer-3 asteroid-widget %2$s">',
-		'after_widget' 	=> '</div>',
-		'before_title' 	=> '<h4 class="widget-title">',
-		'after_title' 	=> '</h4>' ) );
+		'before_widget' => '<section id="%1$s" class="widget-footer-3 asteroid-widget %2$s">',
+		'after_widget' 	=> '</section>',
+		'before_title' 	=> '<h2 class="widget-title">',
+		'after_title' 	=> '</h2>' ) );
 
 	if ( asteroid_option( 'ast_widget_body' ) == 1 ) {
 		register_sidebar(array(
 			'name' 			=> __( 'Body', 'asteroid' ),
 			'id' 			=> 'widgets_body',
-			'before_widget' => '<div id="%1$s" class="widget-body asteroid-widget %2$s">',
-			'after_widget' 	=> '</div>',
-			'before_title' 	=> '<h4 class="widget-title">',
-			'after_title' 	=> '</h4>' ) );
+			'before_widget' => '<section id="%1$s" class="widget-body asteroid-widget %2$s">',
+			'after_widget' 	=> '</section>',
+			'before_title' 	=> '<h2 class="widget-title">',
+			'after_title' 	=> '</h2>' ) );
 	}
 
 	if ( asteroid_option( 'ast_widget_below_menu' ) == 1 ) {
@@ -152,70 +152,70 @@ function asteroid_register_sidebars() {
 			'name' 			=> __( 'Below Menu', 'asteroid' ),
 			'id' 			=> 'widgets_below_menu',
 			'description'	=> __( 'Widget spans the entire width of the container. Ideal for horizontal banners & 728x90 ads.', 'asteroid' ),
-			'before_widget' => '<div id="%1$s" class="widget-below-menu asteroid-widget %2$s">',
-			'after_widget' 	=> '</div>',
-			'before_title' 	=> '<h4 class="widget-title">',
-			'after_title' 	=> '</h4>' ) );
+			'before_widget' => '<section id="%1$s" class="widget-below-menu asteroid-widget %2$s">',
+			'after_widget' 	=> '</section>',
+			'before_title' 	=> '<h2 class="widget-title">',
+			'after_title' 	=> '</h2>' ) );
 	}
 
 	if ( asteroid_option( 'ast_widget_before_content' ) == 1 ) {
 		register_sidebar(array(
 			'name' 			=> __( 'Before Content', 'asteroid' ),
 			'id' 			=> 'widgets_before_content',
-			'before_widget' => '<div id="%1$s" class="widget-before-content asteroid-widget %2$s">',
-			'after_widget' 	=> '</div>',
-			'before_title' 	=> '<h4 class="widget-title">',
-			'after_title' 	=> '</h4>' ) );
+			'before_widget' => '<section id="%1$s" class="widget-before-content asteroid-widget %2$s">',
+			'after_widget' 	=> '</section>',
+			'before_title' 	=> '<h2 class="widget-title">',
+			'after_title' 	=> '</h2>' ) );
 	}
 
 	if ( asteroid_option( 'ast_widget_below_excerpts' ) == 1 ) {
 		register_sidebar(array(
 			'name' 			=> __( 'Below Excerpts', 'asteroid' ),
 			'id' 			=> 'widgets_below_excerpts',
-			'before_widget' => '<div id="%1$s" class="widget-below-excerpts asteroid-widget %2$s">',
-			'after_widget' 	=> '</div>',
-			'before_title' 	=> '<h4 class="widget-title">',
-			'after_title' 	=> '</h4>' ) );
+			'before_widget' => '<section id="%1$s" class="widget-below-excerpts asteroid-widget %2$s">',
+			'after_widget' 	=> '</section>',
+			'before_title' 	=> '<h2 class="widget-title">',
+			'after_title' 	=> '</h2>' ) );
 	}
 
 	if ( asteroid_option( 'ast_widget_before_post' ) == 1 ) {
 		register_sidebar(array(
 			'name' 			=> __( 'Before Post', 'asteroid' ),
 			'id' 			=> 'widgets_before_post',
-			'before_widget' => '<div id="%1$s" class="widget-before-post asteroid-widget %2$s">',
-			'after_widget' 	=> '</div>',
-			'before_title' 	=> '<h4 class="widget-title">',
-			'after_title' 	=> '</h4>' ) );
+			'before_widget' => '<section id="%1$s" class="widget-before-post asteroid-widget %2$s">',
+			'after_widget' 	=> '</section>',
+			'before_title' 	=> '<h2 class="widget-title">',
+			'after_title' 	=> '</h2>' ) );
 	}
 
 	if ( asteroid_option( 'ast_widget_before_post_content' ) == 1 ) {
 		register_sidebar(array(
 			'name' 			=> __( 'Before Post - Content', 'asteroid' ),
 			'id' 			=> 'widgets_before_post_content',
-			'before_widget' => '<div id="%1$s" class="widget-before-post-content asteroid-widget %2$s">',
-			'after_widget' 	=> '</div>',
-			'before_title' 	=> '<h4 class="widget-title">',
-			'after_title' 	=> '</h4>' ) );
+			'before_widget' => '<section id="%1$s" class="widget-before-post-content asteroid-widget %2$s">',
+			'after_widget' 	=> '</section>',
+			'before_title' 	=> '<h2 class="widget-title">',
+			'after_title' 	=> '</h2>' ) );
 	}
 
 	if ( asteroid_option( 'ast_widget_after_post_content' ) == 1 ) {
 		register_sidebar(array(
 			'name' 			=> __( 'After Post - Content', 'asteroid' ),
 			'id' 			=> 'widgets_after_post_content',
-			'before_widget' => '<div id="%1$s" class="widget-after-post-content asteroid-widget %2$s">',
-			'after_widget' 	=> '</div>',
-			'before_title' 	=> '<h4 class="widget-title">',
-			'after_title' 	=> '</h4>' ) );
+			'before_widget' => '<section id="%1$s" class="widget-after-post-content asteroid-widget %2$s">',
+			'after_widget' 	=> '</section>',
+			'before_title' 	=> '<h2 class="widget-title">',
+			'after_title' 	=> '</h2>' ) );
 	}
 
 	if ( asteroid_option( 'ast_widget_after_post' ) == 1 ) {
 		register_sidebar(array(
 			'name' 			=> __( 'After Post', 'asteroid' ),
 			'id' 			=> 'widgets_after_post',
-			'before_widget' => '<div id="%1$s" class="widget-after-post asteroid-widget %2$s">',
-			'after_widget' 	=> '</div>',
-			'before_title' 	=> '<h4 class="widget-title">',
-			'after_title' 	=> '</h4>' ) );
+			'before_widget' => '<section id="%1$s" class="widget-after-post asteroid-widget %2$s">',
+			'after_widget' 	=> '</section>',
+			'before_title' 	=> '<h2 class="widget-title">',
+			'after_title' 	=> '</h2>' ) );
 	}
 }
 add_action( 'widgets_init', 'asteroid_register_sidebars' );
@@ -345,7 +345,7 @@ jQuery( document ).ready( function() {
 }
 
 function asteroid_menu_style_script() {
-	if ( asteroid_option( 'ast_menu_style', 'stack' ) == 'stack' ) : ?>
+	if ( asteroid_option( 'ast_menu_style', 'drop' ) == 'stack' ) : ?>
 <script type="text/javascript">
 jQuery(document).ready(function($) {
 	$( '.menu-item-has-children' ).click(function(){

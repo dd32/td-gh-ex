@@ -1,11 +1,11 @@
 <?php get_header();?>
 
-<div id="content" class="cf" <?php asteroid_schema( 'content' ); ?>>
+<div id="content" class="cf" <?php asteroid_schema( 'content' ); ?> role="main">
 	<?php do_action( 'ast_hook_before_content' ); ?>
 
 	<!-- Widgets: Before Content -->
 	<?php if ( is_active_sidebar( 'widgets_before_content' ) )  : ?>
-		<div id="widgets-wrap-before-content" class="cf"><?php dynamic_sidebar( 'widgets_before_content' ); ?></div>
+		<aside id="widgets-wrap-before-content" class="cf"><?php dynamic_sidebar( 'widgets_before_content' ); ?></aside>
 	<?php endif; ?>
 
 	<?php if ( is_archive() || is_search() ) : ?>

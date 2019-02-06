@@ -6,15 +6,15 @@
 	
 	<div id="footer-area" class="cf">
 		<?php if ( is_active_sidebar( 'widgets_footer_full' ) ) : ?>
-			<div id="widgets-wrap-footer-full" class="cf"><?php dynamic_sidebar( 'widgets_footer_full' ); ?></div>
+			<aside id="widgets-wrap-footer-full" class="cf"><?php dynamic_sidebar( 'widgets_footer_full' ); ?></aside>
 		<?php endif ; ?>
 		
 		<?php if ( is_active_sidebar( 'widgets_footer_3' ) ) : ?>
-			<div id="widgets-wrap-footer-3" class="cf"><?php dynamic_sidebar( 'widgets_footer_3' ); ?></div>
+			<aside id="widgets-wrap-footer-3" class="cf"><?php dynamic_sidebar( 'widgets_footer_3' ); ?></aside>
 		<?php endif ; ?>
 	</div>
 
-	<div id="footer-bottom" class="cf">
+	<div id="footer-bottom" class="cf" role="contentinfo">
 		<div id="footer-links">
 			<?php echo asteroid_option( 'ast_hook_footer_links' ); ?>
 		</div>

@@ -6,7 +6,7 @@
 
 <!-- Widgets: Before Post -->
 <?php if ( ( is_active_sidebar( 'widgets_before_post' ) ) && is_singular() ) : ?>
-	<div id="widgets-wrap-before-post" class="cf"><?php dynamic_sidebar( 'widgets_before_post' ); ?></div>
+	<aside id="widgets-wrap-before-post" class="cf"><?php dynamic_sidebar( 'widgets_before_post' ); ?></aside>
 <?php endif; ?>
 
 <!-- Date & Author -->
@@ -38,14 +38,14 @@
 
 	<!-- Widgets: Before Post Content -->
 	<?php if ( ( is_active_sidebar( 'widgets_before_post_content' ) ) && is_singular() ) : ?>
-		<div id="widgets-wrap-before-post-content" class="cf"><?php dynamic_sidebar( 'widgets_before_post_content' ); ?></div>
+		<aside id="widgets-wrap-before-post-content" class="cf"><?php dynamic_sidebar( 'widgets_before_post_content' ); ?></aside>
 	<?php endif; ?>
 
 	<?php the_content(); ?>
 
 	<!-- Widgets: After Post Content -->
 	<?php if ( ( is_active_sidebar( 'widgets_after_post_content' ) ) && is_singular() ) : ?>
-		<div id="widgets-wrap-after-post-content" class="cf"><?php dynamic_sidebar( 'widgets_after_post_content' ); ?></div>
+		<aside id="widgets-wrap-after-post-content" class="cf"><?php dynamic_sidebar( 'widgets_after_post_content' ); ?></aside>
 	<?php endif; ?>
 
 	<?php wp_link_pages( array(
@@ -85,7 +85,7 @@
 
 	<!-- Widgets: After Post -->
 	<?php if ( ( is_active_sidebar( 'widgets_after_post' ) ) && is_singular() ) : ?>
-		<div id="widgets-wrap-after-post" class="cf"><?php dynamic_sidebar( 'widgets_after_post' ); ?></div>
+		<aside id="widgets-wrap-after-post" class="cf"><?php dynamic_sidebar( 'widgets_after_post' ); ?></aside>
 	<?php endif; ?>
 
 	<?php if ( is_singular( 'post' ) || is_attachment() ) : ?>

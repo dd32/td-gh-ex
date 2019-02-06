@@ -4,8 +4,8 @@ Theme URI: https://ronangelo.com/asteroid/
 Description: Asteroid is a simple, clean and responsive theme. It incorporates various widget areas that make management of banners and ads a lot easier, especially for ad-supported sites. The theme is ideal for use on a blog, a static website or both. The theme’s development focuses on user customization and minimizing HTTP requests to help conserve server resource. Asteroid supports RTL Language, custom headers, backgrounds, menus, full-width page templates, basic schema.org markup and more.
 Author: ronangelo
 Author URI: https://ronangelo.com/
-Version: 1.2.7
-Tags: two-columns, right-sidebar, custom-header, custom-background, featured-images, custom-menu, custom-colors, theme-options, threaded-comments, sticky-post, editor-style, full-width-template, threaded-comments, microformats, translation-ready, rtl-language-support
+Version: 1.2.8
+Tags: two-columns, right-sidebar, custom-header, custom-background, featured-images, custom-menu, custom-colors, theme-options, threaded-comments, sticky-post, editor-style, full-width-template, microformats, translation-ready, rtl-language-support
 Text Domain: asteroid
 License: GNU General Public License, Version 3 or later
 License URI: https://www.gnu.org/licenses/gpl.html
@@ -397,11 +397,6 @@ address {margin-bottom: 10px;}
 
 #nav .drop-toggle {
 	display: none;
-	color: #FFF;
-	font-size: 30px;
-	height: auto;
-	padding: 10px;
-	width: auto;
 }
 
 /*-------------------------------------
@@ -1007,17 +1002,7 @@ img[class*="attachment-"],
 	display: table;
 }
 
-.asteroid-widget * {
-	max-width: 100%;
-}
-
-.asteroid-widget .widget-title {
-	max-width: none;
-}
-
-.asteroid-widget img {
-	height: auto;
-}
+.asteroid-widget p {margin: 4px 0 12px;}
 
 .asteroid-widget li {
 	list-style: none;

@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 
-<div id="content" class="cf">
+<div id="content" class="cf" role="main">
 
 	<div id="author-<?php the_author_meta( 'ID' ); ?>">
 

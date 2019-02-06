@@ -1,7 +1,7 @@
 <?php // Template Name: Sitemap ?>
 <?php get_header(); ?>
 
-<div id="content" class="cf">
+<div id="content" class="cf" role="main">
 	<?php do_action( 'ast_hook_before_content' ); ?>
 
 	<div class="single-wrap sitemap-template cf">

@@ -97,7 +97,14 @@
 	.rtl #nav .sub-menu .sub-menu .sub-menu .sub-menu a {padding-left: 20px; padding-right: 80px;}
 	
 	#nav .drop-toggle {
+		background: transparent;
+		border: none;
+		color: #FFF;
+		cursor: pointer;
 		display: block;
+		font-size: 30px;
+		line-height: 1.4;
+		margin: 0 auto;
 		text-align: center;
 	}
 

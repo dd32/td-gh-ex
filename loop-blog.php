@@ -63,7 +63,7 @@
 
 		<!-- Widgets: Below Excerpts -->
 		<?php if ( is_active_sidebar( 'widgets_below_excerpts' ) )  : ?>
-			<div id="widgets-wrap-below-excerpts" class="cf"><?php dynamic_sidebar( 'widgets_below_excerpts' ); ?></div>
+			<aside id="widgets-wrap-below-excerpts" class="cf"><?php dynamic_sidebar( 'widgets_below_excerpts' ); ?></aside>
 		<?php endif; ?>
 
 	<?php else : ?>
