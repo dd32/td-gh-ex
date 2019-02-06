@@ -264,7 +264,7 @@ function fkidd_customize_register( $wp_customize ) {
 	// Add display slider option
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fkidd_slider_display',
 							array(
-								'label'          => __( 'Display Slider', 'fkidd' ),
+								'label'          => __( 'Display Slider on a Static Front Page', 'fkidd' ),
 								'section'        => 'fkidd_slider_section',
 								'settings'       => 'fkidd_slider_display',
 								'type'           => 'checkbox',
