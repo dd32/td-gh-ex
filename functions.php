@@ -567,7 +567,7 @@ function fgymm_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fgymm_slider_display',
 							array(
-								'label'          => __( 'Display Slider', 'fgymm' ),
+								'label'          => __( 'Display Slider on a Static Front Page', 'fgymm' ),
 								'section'        => 'fgymm_slider_section',
 								'settings'       => 'fgymm_slider_display',
 								'type'           => 'checkbox',
