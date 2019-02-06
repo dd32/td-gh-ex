@@ -105,7 +105,7 @@ function ascend_post_header_title() {
 
 add_action( 'ascend_single_attachment_before_header', 'ascend_single_attachment_image', 20 );
 function ascend_single_attachment_image() {
-	 echo wp_get_attachment_image( get_the_ID(), 'full' );
+	echo wp_get_attachment_image( get_the_ID(), 'full' );
 }
 
 // CATEGORY OUTPUT
@@ -135,9 +135,7 @@ function ascend_post_footer_tags() {
 		echo '</div>';
 	}
 }
-add_action( 'ascend_post_grid_excerpt_footer', 'ascend_post_footer_meta', 30 );
-add_action( 'ascend_post_excerpt_footer', 'ascend_post_footer_meta', 30 );
-add_action( 'ascend_single_loop_post_footer', 'ascend_post_footer_meta', 30 );
+
 add_action( 'ascend_single_post_footer', 'ascend_post_footer_meta', 30 );
 function ascend_post_footer_meta() {
 	get_template_part('templates/entry', 'footer-meta');
@@ -198,7 +196,7 @@ add_action( 'ascend_post_photo_grid_excerpt_header', 'ascend_post_grid_excerpt_h
 add_action( 'ascend_post_grid_excerpt_header', 'ascend_post_grid_excerpt_header_title', 10 );
 function ascend_post_grid_excerpt_header_title() {
 	echo '<a href="'.esc_url( get_the_permalink() ).'">';
-    	echo '<h5 class="entry-title" itemprop="name headline">';
+    	echo '<h5 class="entry-title">';
           		the_title();
     	echo '</h5>';
     echo '</a>';

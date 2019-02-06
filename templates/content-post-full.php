@@ -22,7 +22,7 @@
 
     do_action( 'ascend_single_post_before' ); 
     ?> 
-    <article <?php post_class($postclass); ?> itemscope itemtype="http://schema.org/BlogPosting">
+    <article <?php post_class($postclass); ?>>
          <?php 
           /**
           * @hooked ascend_single_post_headcontent - 10
@@ -39,7 +39,7 @@
             do_action( 'ascend_single_loop_post_header' );
             ?>
         </header>
-        <div class="entry-content clearfix" itemprop="articleBody">
+        <div class="entry-content clearfix">
         <?php 
             do_action( 'ascend_single_post_content_before' );
 

@@ -141,11 +141,11 @@ table.shop_table.customer_details,
   font-family: 'kt-font-awesome';
   content: "\f016";
   line-height: 1.618;
-  margin-left: .53em;
+  margin-left: 0.53em;
   width: 1.387em;
   text-align: right;
   float: right;
-  opacity: .50;
+  opacity: 0.5;
   -webkit-transition: opacity 0.2 ease-in-out;
   -o-transition: opacity 0.2 ease-in-out;
   transition: opacity 0.2 ease-in-out;
@@ -191,7 +191,7 @@ ul.order_details:after {
 }
 ul.order_details li {
   padding: 1em 1.618em;
-  font-size: .8em;
+  font-size: 0.8em;
   text-transform: uppercase;
 }
 ul.order_details li strong {
@@ -201,24 +201,24 @@ ul.order_details li strong {
 }
 .my_account_orders .button,
 .woocommerce-MyAccount-downloads .button {
-  padding: .618em .857em;
-  font-size: .857em;
-  margin-right: .236em;
+  padding: 0.618em 0.857em;
+  font-size: 0.857em;
+  margin-right: 0.236em;
 }
 .my_account_orders .button.view:after {
   font-family: 'kt-font-awesome';
   content: "\f06e";
-  margin-left: .53em;
+  margin-left: 0.53em;
 }
 p.order-again .button:after {
   font-family: 'kt-font-awesome';
   content: "\f079";
-  margin-left: .53em;
+  margin-left: 0.53em;
 }
 .woocommerce-MyAccount-downloads .button:after {
   font-family: 'kt-font-awesome';
   content: "\f019";
-  margin-left: .53em;
+  margin-left: 0.53em;
 }
 .woocommerce-MyAccount-content h2 {
   font-size: 2em;
@@ -539,6 +539,9 @@ li.wc_payment_method.payment_method_paypal a.about_paypal:hover {
   background-color: red;
   color: white;
   border-color: red;
+}
+ul.kt-mobile-cart-contain {
+  padding-left: 0;
 }
 .quantity {
   max-width: 50px;
@@ -1324,7 +1327,7 @@ table.shop_attributes td {
   left: 10px;
   right: 10px;
   top: 0;
-  opacity: .7;
+  opacity: 0.7;
   bottom: 10px;
   position: absolute;
   display: block;
@@ -1402,7 +1405,7 @@ select.kt-no-select2 {
   padding: 0 2px;
 }
 .woocommerce-product-gallery .flex-control-thumbs li img {
-  opacity: .5;
+  opacity: 0.5;
   -webkit-transition: all 0.2s ease-in-out;
   -o-transition: all 0.2s ease-in-out;
   transition: all 0.2s ease-in-out;
@@ -1651,7 +1654,7 @@ select.kt-no-select2 {
   backface-visibility: hidden;
 }
 .product_item a.product_item_link:hover .kad-product-noflipper {
-  opacity: .9;
+  opacity: 0.9;
 }
 .product_item {
   -webkit-transform: translate3d(0, 0, 0);

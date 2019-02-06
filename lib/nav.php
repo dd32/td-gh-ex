@@ -54,25 +54,30 @@ function ascend_menu_nav_li_css_classes($classes, $item, $args, $depth) {
 	}
 	return $classes;
 }
-add_filter('nav_menu_css_class', 'ascend_menu_nav_li_css_classes', 20, 4);
+add_filter( 'nav_menu_css_class', 'ascend_menu_nav_li_css_classes', 20, 4 );
 /**
  * Clean up wp_nav_menu_args
  *
  * Remove the container
+ *
+ * @param array $args array of args.
  */
-function ascend_nav_menu_args($args = '') {
-	$ascend_args['container'] = false;
-  	if (!$args['items_wrap']) {
-    	$ascend_args['items_wrap'] = '<ul class="%2$s">%3$s</ul>';
-  	}
+function ascend_nav_menu_args( $args = '' ) {
+	$ascend_args = array();
+	if ( ( ! isset( $args['container_class'] ) || empty( $args['container_class'] ) ) && ( ! isset( $args['container_id'] ) || empty( $args['container_id'] ) ) ) {
+		$ascend_args['container'] = false;
+	}
+	if ( ! $args['items_wrap'] ) {
+		$ascend_args['items_wrap'] = '<ul class="%2$s">%3$s</ul>';
+	}
 
-  	if ((!$args['walker'])) {
-    	$ascend_args['walker'] = new Ascend_Nav_Walker();
-  	}
+	if ( ! $args['walker'] ) {
+		$ascend_args['walker'] = new Ascend_Nav_Walker();
+	}
 
-  	return array_merge($args, $ascend_args);
+	return array_merge( $args, $ascend_args );
 }
-add_filter('wp_nav_menu_args', 'ascend_nav_menu_args', '10');
+add_filter( 'wp_nav_menu_args', 'ascend_nav_menu_args', '10' );
 
 /**
  * Custom Menu Walker

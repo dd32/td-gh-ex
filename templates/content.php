@@ -1,50 +1,48 @@
 <?php
-/*
-* Post loop contnet
-*
-*
-*/
+/**
+ * Post loop contnet
+ *
+ * @package Ascend Theme.
+ */
+
 global $post, $ascend_has_sidebar, $ascend_feat_width;
-	$ascend = ascend_get_options();
-    if (has_post_format( 'quote' )) { ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class('kad_blog_item postclass clearfix'); ?> itemscope itemtype="http://schema.org/CreativeWork">
-              <div class="postcontent">
-               <?php if (has_post_thumbnail( $post->ID ) ) { 
-                    $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
-                    $style = 'background-image: url('.esc_url($image[0]).');'; 
-                    $quote_class = 'kt-image-quote'; ?>
-                    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                        <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
-                        <meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
-                        <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
-                    </div>
-                   <?php 
-                } else {
-                    $quote_class = 'kt-text-quote';
-                    $style = '';
-                } ?>
-                <div class="entry-content kt-quote-post-outer <?php echo esc_attr($quote_class);?> clearfix" itemprop="description" style="<?php echo esc_attr($style);?>" >
-                    <div class="kt-quote-post">
-                        <?php 
-                             do_action( 'ascend_post_excerpt_content_before' );
+$ascend = ascend_get_options();
+if ( has_post_format( 'quote' ) ) { ?>
+	<article id="post-<?php the_ID(); ?>" <?php post_class( 'kad_blog_item postclass clearfix' ); ?>>
+		<div class="postcontent">
+			<?php
+			if ( has_post_thumbnail( $post->ID ) ) {
+				$image       = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
+				$style       = 'background-image: url(' . esc_url( $image[0] ) . ');';
+				$quote_class = 'kt-image-quote';
+			} else {
+				$quote_class = 'kt-text-quote';
+				$style       = '';
+			}
+			?>
+			<div class="entry-content kt-quote-post-outer <?php echo esc_attr( $quote_class ); ?> clearfix" style="<?php echo esc_attr( $style ); ?>">
+				<div class="kt-quote-post">
+				<?php
+					do_action( 'ascend_post_excerpt_content_before' );
 
-                             the_content();
+					the_content();
 
-                             do_action( 'ascend_post_excerpt_content_after' );
-                        ?>
-                   </div>
-                   </div>
-                    <?php $author = get_post_meta( $post->ID, '_kad_quote_author', true ); 
-		                if(!empty($author)) {
-		                    echo '<div class="kt-quote-post-author">';
-		                    echo '<p>- '. esc_html($author).'</p>';
-		                    echo '</div>';
-		                }
-		                ?>
-              </div><!-- Text size -->
-    	</article> <!-- Article -->
-    <?php
-    } else {
+					do_action( 'ascend_post_excerpt_content_after' );
+				?>
+				</div>
+			</div>
+			<?php
+			$author = get_post_meta( $post->ID, '_kad_quote_author', true );
+			if ( ! empty( $author ) ) {
+				echo '<div class="kt-quote-post-author">';
+				echo '<p>- ' . esc_html( $author ) . '</p>';
+				echo '</div>';
+			}
+			?>
+		</div><!-- Text size -->
+	</article> <!-- Article -->
+<?php
+} else {
 
         if($ascend_has_sidebar){
             $ascend_feat_width = apply_filters('ascend_blog_image_width_sidebar', ascend_post_sidebar_image_width()); 
@@ -91,7 +89,7 @@ global $post, $ascend_has_sidebar, $ascend_feat_width;
         // get post summary
         $postsummery = ascend_get_postsummary();
         ?>
-        <article id="post-<?php the_ID(); ?>" <?php post_class('kad_blog_item postclass clearfix'); ?> itemscope itemtype="http://schema.org/BlogPosting">
+        <article id="post-<?php the_ID(); ?>" <?php post_class('kad_blog_item postclass clearfix'); ?>>
             <div class="row">
                 <?php 
                 if($postsummery == 'img_landscape') { 
@@ -166,7 +164,7 @@ global $post, $ascend_has_sidebar, $ascend_feat_width;
 	            do_action( 'ascend_post_excerpt_before_content' );
             	?>
 
-              	<div class="<?php echo esc_attr($textsize);?> post-text-container postcontent">
+              	<div class="<?php echo esc_attr( $textsize );?> post-text-container postcontent">
                 	<div class="post-text-inner">
                    	<?php 
                     /**
@@ -183,7 +181,7 @@ global $post, $ascend_has_sidebar, $ascend_feat_width;
                         do_action( 'ascend_post_excerpt_header' );
                         ?>
                    	</header>
-                   	<div class="entry-content" itemprop="articleBody">
+                   	<div class="entry-content">
                         <?php 
                              do_action( 'ascend_post_excerpt_content_before' );
 

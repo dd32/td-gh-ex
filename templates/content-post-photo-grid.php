@@ -39,8 +39,8 @@ global $post, $ascend_has_sidebar, $ascend_grid_columns, $ascend_grid_carousel;
 
     $image_width = apply_filters('ascend_post_grid_image_width', $image_width);
     $image_height = apply_filters('ascend_post_grid_image_height', $image_height);
-    if(isset($ascend_grid_carousel) && $ascend_grid_carousel != true) {
-	    if(isset($ascend['postexcerpt_hard_crop']) && $ascend['postexcerpt_hard_crop'] == 1) {
+    if ( isset( $ascend_grid_carousel ) && $ascend_grid_carousel != true) {
+	    if ( isset( $ascend['postexcerpt_hard_crop']) && $ascend['postexcerpt_hard_crop'] == 1) {
 	        $image_crop = true;
 	    } else {
 	        $image_height = null;
@@ -50,10 +50,10 @@ global $post, $ascend_has_sidebar, $ascend_grid_columns, $ascend_grid_carousel;
 		$image_crop = true;
 	}
     ?>
-    <article id="post-<?php the_ID(); ?>" class="blog_item blog_photo_item kt_item_fade_in grid_item" itemscope itemtype="http://schema.org/CreativeWork">
+    <article id="post-<?php the_ID(); ?>" class="blog_item blog_photo_item kt_item_fade_in grid_item">
         <div class="imghoverclass img-margin-center blog-grid-photo">
         <?php 
-        $img = ascend_get_image_array($image_width, $image_height, $image_crop, null, null, null, true);
+        $img = ascend_get_image_array( $image_width, $image_height, $image_crop, null, null, null, true );
         if( ascend_lazy_load_filter() ) {
             $image_src_output = 'src="data:image/gif;base64,R0lGODdhAQABAPAAAP///wAAACwAAAAAAQABAEACAkQBADs=" data-lazy-src="'.esc_url($img['src']).'" '; 
         } else {
@@ -62,11 +62,8 @@ global $post, $ascend_has_sidebar, $ascend_grid_columns, $ascend_grid_carousel;
         ?>
             <div class="kt-intrinsic" style="padding-bottom:<?php echo esc_attr(($img['height']/$img['width']) * 100);?>%;">
                 <?php 
-                echo '<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">';
-                    echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" '.$img['srcset'].' class="'.esc_attr($img['class']).'" itemprop="contentUrl" alt="'.esc_attr($img['alt']).'">';
-                    echo '<meta itemprop="url" content="'.esc_url($img['src']).'">';
-                    echo '<meta itemprop="width" content="'.esc_attr($img['width']).'px">';
-                    echo '<meta itemprop="height" content="'.esc_attr($img['height']).'>px">';
+                echo '<div>';
+                    echo '<img '.$image_src_output.' width="'.esc_attr($img['width']).'" height="'.esc_attr($img['height']).'" '.$img['srcset'].' class="'.esc_attr($img['class']).'" alt="'.esc_attr($img['alt']).'">';
                 echo '</div>';
                ?>
             </div> 

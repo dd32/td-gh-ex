@@ -70,7 +70,7 @@ add_action( 'wp_loaded', 'ascend_hide_toolkit_plugin_notice' );
  * Add Notice for blocks if not installed
  */
 function ascend_kadence_blocks_notice() {
-	if ( ! class_exists( 'ascend_toolkit_welcome' ) || get_transient( 'ascend_theme_blocks_plugin_notice' ) || ! current_user_can( 'manage_options' ) || ! function_exists( 'register_block_type' ) ) {
+	if ( ! class_exists( 'virtue_toolkit_welcome' ) || get_transient( 'ascend_theme_blocks_plugin_notice' ) || ! current_user_can( 'manage_options' ) || ! function_exists( 'register_block_type' ) ) {
 		return;
 	}
 	$installed_plugins = get_plugins();

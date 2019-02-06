@@ -20,7 +20,7 @@
 	            */
 	           	do_action( 'ascend_single_attachment_header' ); ?>
     		</header>
-    		<div class="entry-content clearfix" itemprop="description articleBody">
+    		<div class="entry-content clearfix">
       			 <?php
                     do_action( 'ascend_single_attachment_content_before' );
                     

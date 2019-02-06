@@ -37,20 +37,20 @@ global $post, $ascend_has_sidebar, $ascend_grid_columns;
         }
     }
 
-    $image_width = apply_filters('ascend_post_grid_image_width', $image_width);
-    $image_height = apply_filters('ascend_post_grid_image_height', $image_height);
+	$image_width = apply_filters( 'ascend_post_grid_image_width', $image_width );
+	$image_height = apply_filters( 'ascend_post_grid_image_height', $image_height );
 
-    if(isset($ascend['postexcerpt_hard_crop']) && $ascend['postexcerpt_hard_crop'] == 1) {
-        // do nothing
-        $image_crop = true;
-    } else {
-        $image_height = null;
-        $image_crop = false;
-    }
+	if ( isset( $ascend['postexcerpt_hard_crop'] ) && $ascend['postexcerpt_hard_crop'] == 1 ) {
+		// do nothing
+		$image_crop = true;
+	} else {
+		$image_height = null;
+		$image_crop = false;
+	}
 
     $postsummery = ascend_get_postsummary();
     ?>
-    <article id="post-<?php the_ID(); ?>" class="blog_item kt_item_fade_in grid_item kt-post-summary-<?php echo esc_attr($postsummery);?>" itemscope itemtype="http://schema.org/BlogPosting">
+    <article id="post-<?php the_ID(); ?>" class="blog_item kt_item_fade_in grid_item kt-post-summary-<?php echo esc_attr($postsummery);?>">
     <?php 
     if($postsummery == 'img_landscape' || $postsummery == 'img_portrait') { ?>
         <div class="imghoverclass img-margin-center blog-grid-media">
@@ -102,7 +102,7 @@ global $post, $ascend_has_sidebar, $ascend_grid_columns;
             do_action( 'ascend_post_grid_excerpt_header' );
             ?>
         </header>
-        <div class="entry-content" itemprop="articleBody">
+        <div class="entry-content">
              <?php 
              do_action( 'ascend_post_grid_excerpt_content_before' );
 

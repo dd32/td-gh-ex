@@ -90,6 +90,11 @@ function ascend_custom_css() {
 	} else {
 		$secondmenu_font_color = '';
 	}
+	if(isset($ascend['font_mobile_menu']) && !empty($ascend['font_mobile_menu']['color'])) {
+		$font_mobile_menu_placeholder = '.pop-modal-body .kt-woo-account-nav .kad-customer-name h5, .pop-modal-body .kt-woo-account-nav a, .pop-modal-body ul.product_list_widget li a:not(.remove), .pop-modal-body ul.product_list_widget {color:'.$ascend['font_mobile_menu']['color'].';} .kt-mobile-menu form.search-form input[type="search"]::-webkit-input-placeholder {color:'.$ascend['font_mobile_menu']['color'].';}.kt-mobile-menu form.search-form input[type="search"]:-ms-input-placeholder {color:'.$ascend['font_mobile_menu']['color'].';}.kt-mobile-menu form.search-form input[type="search"]::-moz-placeholder {color:'.$ascend['font_mobile_menu']['color'].';}';
+	} else {
+		$font_mobile_menu_placeholder = '';
+	}
 	if(isset($ascend['site_layout']) && $ascend['site_layout'] != 'above' ) {
 		$hd_height = 0;
 		$tb_height = 0;
@@ -308,7 +313,7 @@ function ascend_custom_css() {
 	}
 
 	$kad_custom_css  = '<style type="text/css" id="kt-custom-css">';
-	$kad_custom_css .= $primary_color . $header_height . $header_width . $header_logo_width . $mobile_subnav . $mobile_slider . $tbheight . $mhheight . $mhheight_items . $hbg_color . $trans_hbg_color . $trans_second_color . $titlecss . $stminheight . $mobile_height . $mobile_height_small . $secondmenu_font_color . $menu_font_color . $titlealign . $dropdown_font . $social_border . $dbg_color . $product_button . $title_padding . $notavailable_placeholder_text . $logo_switch . $mobile_logo_switch . $title_uppercase . $subtitle_uppercase . $post_author . $post_cats . $post_comments . $post_postdate . $custom_css;
+	$kad_custom_css .= $primary_color . $header_height . $header_width . $header_logo_width . $mobile_subnav . $mobile_slider . $tbheight . $mhheight . $mhheight_items . $hbg_color . $trans_hbg_color . $trans_second_color . $titlecss . $stminheight . $mobile_height . $mobile_height_small . $secondmenu_font_color . $font_mobile_menu_placeholder . $menu_font_color . $titlealign . $dropdown_font . $social_border . $dbg_color . $product_button . $title_padding . $notavailable_placeholder_text . $logo_switch . $mobile_logo_switch . $title_uppercase . $subtitle_uppercase . $post_author . $post_cats . $post_comments . $post_postdate . $custom_css;
 	$kad_custom_css .= '</style>';
 
 	echo $kad_custom_css;

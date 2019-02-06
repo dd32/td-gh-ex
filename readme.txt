@@ -28,6 +28,10 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.3.8 | 6th February 2018 =
+* Update: Remove Loop Schema.
+* Fix: Mobile cart, issue.
+
 = Version 1.3.7 | 4th December 2018 =
 * Update: WordPress 5 ready.
 

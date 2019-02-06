@@ -1,14 +1,23 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) {
-    exit; // Exit if accessed directly
-}
-function ascend_get_options() {
-    $options = get_option( 'ascend' );
-	if ( isset( $_REQUEST['wp_customize'] ) ) {
-    	$options = apply_filters('ascend_theme_options_filter', $options);
-    }
+/**
+ * Config
+ *
+ * @package Ascend Theme
+ */
 
-    return $options;
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+/**
+ * Get Ascend Options.
+ */
+function ascend_get_options() {
+	$options = get_option( 'ascend' );
+	if ( isset( $_REQUEST['wp_customize'] ) ) {
+		$options = apply_filters( 'ascend_theme_options_filter', $options );
+	}
+	return $options;
 }
 /**
  * Configuration values

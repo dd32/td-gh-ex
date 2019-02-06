@@ -1,5 +1,5 @@
 <div class="post-grid-footer-meta kt_color_gray">
-    <span class="postdate kt-post-date updated" itemprop="datePublished">
+    <span class="postdate kt-post-date">
         <?php echo get_the_date(get_option( 'date_format' ));?>
     </span> 
     <?php 
@@ -8,8 +8,7 @@
     } ?>
     <span class="postauthor kt-post-author author vcard">
             <span>
-                <span class="kt_color_gray" rel="author" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo esc_attr(get_the_author()); ?>">
-                	<meta itemprop="author" class="fn" content="<?php echo esc_attr(get_the_author()); ?>">
+                <span class="kt_color_gray" data-toggle="tooltip" data-placement="top" data-original-title="<?php echo esc_attr(get_the_author()); ?>">
                  	<i class="kt-icon-user"></i>
                 </span>
             </span>

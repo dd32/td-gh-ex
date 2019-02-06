@@ -39,11 +39,8 @@ if ( isset( $ascend['postexcerpt_hard_crop'] ) && '1' == $ascend['postexcerpt_ha
 		<a href="<?php the_permalink(); ?>" class="imghoverclass img-margin-center">
 			<div class="kt-intrinsic" style="padding-bottom:<?php echo esc_attr( ( $img['height'] / $img['width'] ) * 100 ); ?>%;">
 			<?php
-			echo '<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">';
-				echo '<img ' . $image_src_output . ' width="' . esc_attr( $img['width'] ) . '" height="' . esc_attr( $img['height'] ) . '" ' . $img['srcset'] . ' class="' . esc_attr( $img['class'] ) . '" itemprop="contentUrl" alt="' . esc_attr( $img['alt'] ) . '">';
-				echo '<meta itemprop="url" content="' . esc_url( $img['src'] ) . '">';
-				echo '<meta itemprop="width" content="' . esc_attr( $img['width'] ) . 'px">';
-				echo '<meta itemprop="height" content="' . esc_attr( $img['height'] ) . 'px">';
+			echo '<div>';
+				echo '<img ' . $image_src_output . ' width="' . esc_attr( $img['width'] ) . '" height="' . esc_attr( $img['height'] ) . '" ' . $img['srcset'] . ' class="' . esc_attr( $img['class'] ) . '" alt="' . esc_attr( $img['alt'] ) . '">';
 			echo '</div>';
 			?>
 			</div> 

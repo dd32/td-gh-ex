@@ -9,22 +9,17 @@
 
     do_action( 'ascend_single_post_before' ); 
     ?> 
-    <article <?php post_class($postclass); ?> itemscope itemtype="http://schema.org/CreativeWork">
+    <article <?php post_class($postclass); ?>>
                 <?php if (has_post_thumbnail( $post->ID ) ) { 
                     $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' );
                     $style = 'background-image: url('.esc_url($image[0]).');'; 
                     $quote_class = 'kt-image-quote'; ?>
-                    <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-                        <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
-                        <meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
-                        <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
-                    </div>
                    <?php 
                 } else {
                     $quote_class = 'kt-text-quote';
                     $style = '';
                 } ?>
-                <div class="entry-content kt-quote-post-outer <?php echo esc_attr($quote_class);?> clearfix" itemprop="description" style="<?php echo esc_attr($style);?>">
+                <div class="entry-content kt-quote-post-outer <?php echo esc_attr($quote_class);?> clearfix" style="<?php echo esc_attr($style);?>">
                     <div class="kt-quote-post">
                         <?php
                         do_action( 'ascend_single_post_content_before' );

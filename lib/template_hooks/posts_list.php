@@ -9,7 +9,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 add_action( 'ascend_post_excerpt_header', 'ascend_post_excerpt_header_title', 10 );
 function ascend_post_excerpt_header_title() {
 	echo '<a href="'.esc_url( get_the_permalink() ).'">';
-    	echo '<h3 class="entry-title" itemprop="name headline">';
+    	echo '<h3 class="entry-title">';
           		the_title();
     	echo '</h3>';
     echo '</a>';
@@ -18,7 +18,7 @@ function ascend_post_excerpt_header_title() {
 add_action( 'ascend_single_loop_post_header', 'ascend_post_full_loop_title', 20 );
 function ascend_post_full_loop_title() {
 	echo '<a href="'.esc_url( get_the_permalink() ).'">';
-    	echo '<h2 class="entry-title" itemprop="name headline">';
+    	echo '<h2 class="entry-title">';
           		the_title();
     	echo '</h2>';
     echo '</a>';

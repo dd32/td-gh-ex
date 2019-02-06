@@ -80,19 +80,20 @@ function ascend_mobile_menu_sldr() {
 	   	<?php 
 	   
 }
-add_action('wp_footer', 'ascend_mobile_cart_sldr', 30);
+add_action( 'wp_footer', 'ascend_mobile_cart_sldr', 30 );
 function ascend_mobile_cart_sldr() { 
-	if (class_exists('woocommerce'))  { 
+	if ( class_exists( 'woocommerce' ) )  { 
 		$ascend = ascend_get_options();  
 		if(isset($ascend['mobile_header_cart']) && ($ascend['mobile_header_cart'] == 'right' || $ascend['mobile_header_cart'] == 'left'))  {?>
     		<div class="mag-pop-sldr mfp-hide mfp-with-anim kt-mobile-cart" id="kt-mobile-cart" tabindex="-1" role="dialog" aria-hidden="true">
 	            <div class="pop-modal-content">
 	                <div class="pop-modal-body">
-                    <?php do_action('ascend_mobile_cart_before'); ?>
-                  	
-                  	<div class="kt-mini-cart-refreash">
-						<?php woocommerce_mini_cart(); ?>
-					</div>
+                    <?php do_action( 'ascend_mobile_cart_before' ); ?>
+                  	<ul class="kt-mobile-cart-contain">
+	                  	<li class="kt-mini-cart-refreash">
+							<?php woocommerce_mini_cart(); ?>
+						</li>
+					</ul>
                   	<?php do_action('ascend_mobile_cart_after'); ?>
 	                </div>
 	            </div>
