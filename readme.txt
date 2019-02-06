@@ -1,70 +1,62 @@
-----------------------------------
-Selfie
-----------------------------------
-Version: 	1.5
-Developer: 	D5 Creation
-Author URI: 	https://d5creation.com
+=== SELFIE ===
 
-Donation Link: 	https://d5creation.com/donate/
+Contributors: D5 Creation
+Tags: one-column, two-columns, right-sidebar, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, rtl-language-support, translation-ready, theme-options
+Requires at least: 4.0
+Tested up to: 5.0.4-alpha
+Stable tag: 1.9
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright: 	D5 Creation
-License: 	GNU General Public License v2 or later
-License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+Selfie Blog and Corporate Theme
 
-This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same License (GPL) of the Theme or Compatible  Licenses.
+== Description ==
 
+HTML5 and CSS3 powered Easy WordPress Theme is mainly for Personal and Company Blog and/or Tutorial Sites. Easy Theme is Elegant and Responsive. There is a Premium Extended Version of this Theme which has Many Advanced Features.
 
+== Frequently Asked Questions ==
 
-License of the Images used : 
-----------------------------------------------------
-1. 	Author:		Mariamichelle
-	License:		Public Domain CC0
-	Source:		http://pixabay.com/en/oia-santorini-greece-sunset-island-416136/
+= What to do after Theme Installation ? =
+After installing/Updating the Theme Please go to Appearance > Customize. You can set the Slide  and Other Options there
 
-2. 	Author:		Ben_Kerckx
-	License:		Public Domain CC0
-	Source:		http://pixabay.com/en/wine-glass-holiday-parasol-391674/
+=  Sub Menu  ? =
+No Sub Menus will be shown in the Top Menu. But You can show Sub Menus in Main Mneu
 
-3. 	Author:		dMz
-	License:		Public Domain CC0
-	Source:		http://pixabay.com/en/santorini-sea-greece-stairs-home-360216/
+= Can it be used for Personal or Company Websites? =
+Yes, Of Course
 
-
-4. 	Author:		danigeza
-	License:		Public Domain CC0
-	Source:		http://pixabay.com/en/hand-phone-red-174283/
+= Is it only for Blogs ? =
+No, It is for Blogs, Company, Personal Websites
 
 
-Options Framework, License: GPL-2.0+, Author: Devin Price, Source: http://wptheming.com
-Genericons Fonts, License: GPL, Author: AUTOMATTIC, Source: http://genericons.com
-All other images are Lincenced Under GNU GPL and Copyrighted to D5 Creation
+== Changelog ==
 
-NB: 	
-No Sub Menus will be shown in the Top Menu
-You can set your Social Page Links and the Top Phone Number from Appearance > Selfie Options
+= 1.9 =
+* readme.txt update
+* Adding new Images
 
+= 1.7 =
+* Style Cleanup
+* Customizer Update
 
-Changelog
-==================
+= 1.3 =
+* Code Cleanup
 
-Version 1.7
-___________________
-- Style Cleanup
+= 1.2.3 =
+* Missing Options Added
+* Template Name removed from front-page.php
 
-Version 1.3
-___________________
-- Code Cleanup
+= 1.2 =
+* Extra Features added, Banner Image, Banner Heading
+* Some Images changed
 
-Version 1.2.3
-___________________
-- Missing Options Added
-- Template Name removed from front-page.php
+= 1.0 =
+* Initial Release
 
+== Resources ==
 
-Version 1.2
-___________________
-- Extra Features added, Banner Image, Banner Heading
-- Some Images changed
-
-
-
+* html5.js: https://github.com/aFarkas/html5shiv, MIT/GPL2
+* Genericons Fonts: AUTOMATTIC, http://genericons.com, GPL
+* themefeatures.png: FontAwesome Icons' Image, http://fortawesome.github.io/Font-Awesome
+* banner-image.jpg: https://stocksnap.io/photo/UUW7JAWUU1
+* screenshot.png: https://stocksnap.io/photo/UUW7JAWUU1, http://pickupimage.com/free-photos/A-Beautiful-Woman-Posing-With-A-Nectarine-Outdoors/2321347#.XFk8aVwza01, https://stocksnap.io/photo/5XNVSJFNB1

@@ -7,23 +7,17 @@
 ?>
 <div class="clear"></div>
 <div id="footer">
-
-<div class="versep"></div>
-<div id="footer-content">
-
 <div class="social social-link">
 	  <?php foreach (range(1, 5 ) as $numslinksn) { 
-	  if ( of_get_option('sl' . $numslinksn, '#') != '' ): echo '<a href="'. esc_url(of_get_option('sl' . $numslinksn, '#')) .'" target="_blank"> </a>'; endif;
+	  if ( selfie_get_option('sl' . $numslinksn, '#') != '' ): echo '<a href="'. esc_url(selfie_get_option('sl' . $numslinksn, '#')) .'" target="_blank"> </a>'; endif;
 	  } ?>
 </div>
-
+<div id="footer-content">
 <?php
    	get_sidebar( 'footer' );
 ?>
-
-<div id="creditline"><?php selfie_creditline(); ?></div>
-
 </div> <!-- footer-content -->
+<div id="creditline"><?php selfie_creditline(); ?></div>
 </div> <!-- footer -->
 <a href="#" class="go-top"></a>
 <div class="clear"> </div>

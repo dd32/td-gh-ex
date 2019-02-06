@@ -27,12 +27,12 @@
                 
 		<h2 class="site-title-hidden"><?php bloginfo( 'description' ); ?></h2>
                 
-        <nav id="selfie-top-menu">
-		<?php get_search_form(); if (of_get_option ('contactnumber', '(000) 111-222') != ''):echo '<div class="connumber">'.  esc_attr(of_get_option ('contactnumber', '(000) 111-222')). '</div>';  endif; ?>
+        <nav id="top-menu-con">
+		<?php get_search_form(); if (selfie_get_option ('contactnumber', '(000) 111-222') != ''):echo '<div class="connumber">'.  esc_attr(selfie_get_option ('contactnumber', '(000) 111-222')). '</div>';  endif; ?>
 		<?php if ( has_nav_menu( 'top-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'top-menu' )); endif; ?>
         </nav>
         <!-- Site Main Menu Goes Here -->
-        <nav id="selfie-main-menu">
+        <nav id="main-menu-con">
 		<?php if ( has_nav_menu( 'main-menu' ) ) :  wp_nav_menu( array( 'theme_location' => 'main-menu' )); else: wp_page_menu(); endif; ?>
         </nav>
       

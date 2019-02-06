@@ -6,33 +6,33 @@
 
 @media screen and (max-width: 1279px) {
 	body { min-width: 1000px; }
-	#selfie-main-menu a { font-size: 13px; font-weight: 300; padding: 10px 10px 15px; }
-	#selfie-top-menu input#s:focus { width: 100px; }
+	#main-menu-con a { font-size: 13px; font-weight: 300; padding: 10px 10px 15px; }
+	#top-menu-con input#s:focus { width: 100px; }
 	.effect .mask { border-width: 190px; }
 }
 
 @media screen and (max-width: 1023px) {
 	body { min-width: 775px; }
-	#selfie-main-menu a { font-size: 13px; font-weight: 300; padding: 10px 10px 15px; }
-	#selfie-top-menu input#s:focus { width: 100px; }
+	#main-menu-con a { font-size: 13px; font-weight: 300; padding: 10px 10px 15px; }
+	#top-menu-con input#s:focus { width: 100px; }
 	.effect .mask { border-width: 200px; }
-	#selfie-top-menu { display: block; float: left; width: 100%; }
+	#top-menu-con { display: block; float: left; width: 100%; }
 	img.site-logo,.site-title { float: none; width: 45%; margin: 0 auto; display: block; }
-	#selfie-top-menu ul.menu { display: block; float: left; margin: 0; }
-	#selfie-main-menu { float: none; max-width: 100%; text-align: center; }
-	#selfie-main-menu ul { display: inline-block; margin: 0; }
-	#selfie-main-menu.gobottom { position: relative; right:auto; }
+	#top-menu-con ul.menu { display: block; float: left; margin: 0; }
+	#main-menu-con { float: none; max-width: 100%; text-align: center; }
+	#main-menu-con ul { display: inline-block; margin: 0; }
+	#main-menu-con.gobottom { position: relative; right:auto; }
 	.featured-box, .bqpcontainer .featured-box { width: 42%; }
 	.bqpcontainer .fpthumb { max-height: 30vw; }
 }
 
 @media screen and (max-width: 799px) {
 	body { min-width: 575px; }
-	#selfie-main-menu a { font-size: 13px; font-weight: 100; padding: 5px; }
-	#selfie-main-menu ul ul ul { left: 15px;; top: 20px; }
+	#main-menu-con a { font-size: 13px; font-weight: 100; padding: 5px; }
+	#main-menu-con ul ul ul { left: 15px;; top: 20px; }
 	.effect .mask { border-width: 170px; }
-	#selfie-top-menu { display: block; float: left; width: 100%; overflow: hidden; margin-left: -40000px; opacity: 0; }
-	#selfie-top-menu ul.menu { display: block; float: left; margin: 0; }
+	#top-menu-con { display: block; float: left; width: 100%; overflow: hidden; margin-left: -40000px; opacity: 0; }
+	#top-menu-con ul.menu { display: block; float: left; margin: 0; }
 	.bqpcontainer .tesheading .read-more { position: relative; }
 	#content, #right-sidebar { width: 100%; float: left; }
 	.post-container .fpthumb { max-height: 40vw; }
@@ -41,14 +41,14 @@
 
 @media screen and (max-width: 599px) {
 	body { min-width: 300px; }
-	#selfie-main-menu.gobottom { position: relative; right:auto; }
+	#main-menu-con.gobottom { position: relative; right:auto; }
 	.featured-box, .bqpcontainer .featured-box { width: 100%; }
 	.bqpcontainer .tesheading .read-more { position: relative; right: 0; }
 	.floatleft, .floatright { width: 100%; }
 	.bqpcontainer .fpthumb { max-height: 50vw; }
 	#header { position:relative; } 
 	.headerheight { display: none; }
-	#selfie-main-menu a { margin: 3px auto; border-bottom: 1px solid #EEEEEE; padding: 10px; background: #EEEEEE; width: 100%; }
-	#selfie-main-menu li { float: none; width: 220px; margin: 0 auto; }
-	#selfie-main-menu ul ul a { margin: 0 auto; width: 100%; }
+	#main-menu-con a { margin: 3px auto; border-bottom: 1px solid #EEEEEE; padding: 10px; background: #EEEEEE; width: 100%; }
+	#main-menu-con li { float: none; width: 220px; margin: 0 auto; }
+	#main-menu-con ul ul a { margin: 0 auto; width: 100%; }
 }

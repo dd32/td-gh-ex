@@ -5,9 +5,12 @@
 	Since Selfie 1.0
 */
 
-// 	Load the D5 Framework Optios Page
-	define( 'OPTIONS_FRAMEWORK_DIRECTORY', get_template_directory_uri() . '/inc/' );
-	require_once dirname( __FILE__ ) . '/inc/options-framework.php';
+	require_once ( trailingslashit(get_template_directory()) . 'inc/customize.php' );
+	function selfie_about_page() { 
+	add_theme_page( 'Selfie Options', 'Selfie Options', 'edit_theme_options', 'theme-about', 'selfie_theme_about' ); 
+	}
+	add_action('admin_menu', 'selfie_about_page');
+	function selfie_theme_about() {  require_once ( trailingslashit(get_template_directory()) . 'inc/theme-about.php' ); }
 
 	function selfie_setup() {
 //	Theme TextDomain for the Language File
@@ -71,6 +74,9 @@
 	}
 	add_action( 'wp_enqueue_scripts', 'selfie_enqueue_scripts' );
 
+	// 	Functions for adding script to Admin Area
+	function selfie_admin_style() { wp_enqueue_style( 'selfie_admin_css', get_template_directory_uri() . '/inc/admin-style.css', false ); }
+	add_action( 'admin_enqueue_scripts', 'selfie_admin_style' );
 
 // 	Functions for adding some custom code within the head tag of site
 	function selfie_custom_code() {
@@ -83,7 +89,7 @@
 	
 	color: #<?php echo get_header_textcolor(); ?>;
 	}
-	<?php if ( is_admin_bar_showing() && of_get_option('header-fixed', '1') != '0' ): echo '#header { top: 32px; }'; endif; ?>
+	<?php if ( is_admin_bar_showing() && selfie_get_option('header-fixed', '1') != '0' ): echo '#header { top: 32px; }'; endif; ?>
 	</style>
 	
 <?php 

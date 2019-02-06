@@ -1,4 +1,4 @@
-jQuery(document).ready(function(){ jQuery("#selfie-main-menu ul ul").css({display: "none"}); jQuery('#selfie-main-menu ul li').hover( function() { jQuery(this).find('ul:first').slideDown(200).css('visibility', 'visible'); jQuery(this).addClass('selected'); }, function() { jQuery(this).find('ul:first').slideUp(200); jQuery(this).removeClass('selected'); }); });
+jQuery(document).ready(function(){ jQuery("#main-menu-con ul ul").css({display: "none"}); jQuery('#main-menu-con ul li').hover( function() { jQuery(this).find('ul:first').slideDown(200).css('visibility', 'visible'); jQuery(this).addClass('selected'); }, function() { jQuery(this).find('ul:first').slideUp(200); jQuery(this).removeClass('selected'); }); });
 
 		jQuery(document).ready(function() { 
 		
@@ -6,13 +6,13 @@ jQuery(document).ready(function(){ jQuery("#selfie-main-menu ul ul").css({displa
 		
 			jQuery(window).scroll(function() {
 				if (jQuery(this).scrollTop() > jQuery('#header').outerHeight(true)) {
-					jQuery("#selfie-top-menu").hide();
-					jQuery("#selfie-main-menu").addClass("gobottom");
+					jQuery("#top-menu-con").hide();
+					jQuery("#main-menu-con").addClass("gobottom");
 					jQuery('.go-top').fadeIn(150);
 
 				} else {
-					jQuery("#selfie-top-menu").show();;
-					jQuery("#selfie-main-menu").removeClass("gobottom");
+					jQuery("#top-menu-con").show();;
+					jQuery("#main-menu-con").removeClass("gobottom");
 					jQuery('.go-top').fadeOut(150);
 				}
 			});

@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Innovation Lite\n"
-"POT-Creation-Date: 2018-04-16 20:14+0600\n"
+"POT-Creation-Date: 2019-02-06 12:16+0600\n"
 "PO-Revision-Date: 2015-10-29 02:02+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.4\n"
+"X-Generator: Poedit 1.8.13\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -72,195 +72,136 @@ msgstr ""
 msgid "Learn More"
 msgstr ""
 
-#: functions.php:17
+#: functions.php:20
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:17
+#: functions.php:20
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:98
+#: functions.php:104
 msgid "Theme by:"
 msgstr ""
 
-#: functions.php:98
+#: functions.php:104
 msgid "Powered by:"
 msgstr ""
 
-#: functions.php:114 functions.php:120
+#: functions.php:120 functions.php:126
 msgid "Read More"
 msgstr ""
 
-#: functions.php:134
+#: functions.php:140
 msgid "Edit"
 msgstr ""
 
-#: functions.php:144
+#: functions.php:150
 msgid "SORRY, NOT FOUND ANYTHING"
 msgstr ""
 
-#: functions.php:145
+#: functions.php:151
 msgid "You Can Try Another Search..."
 msgstr ""
 
-#: functions.php:147
+#: functions.php:153
 msgid "&laquo; Or Return to the Home Page"
 msgstr ""
 
-#: functions.php:157
+#: functions.php:163
 msgid "NEWER ENTRIES"
 msgstr ""
 
-#: functions.php:158
+#: functions.php:164
 msgid "OLDER ENTRIES"
 msgstr ""
 
-#: functions.php:167
+#: functions.php:173
 msgid "Primary Sidebar"
 msgstr ""
 
-#: functions.php:176
+#: functions.php:182
 msgid "Secondary Sidebar"
 msgstr ""
 
-#: functions.php:185
+#: functions.php:191
 msgid "Footer Area One"
 msgstr ""
 
-#: functions.php:194
+#: functions.php:200
 msgid "Footer Area Two"
 msgstr ""
 
-#: functions.php:203
+#: functions.php:209
 msgid "Footer Area Three"
 msgstr ""
 
-#: functions.php:213
+#: functions.php:219
 msgid "Footer Area Four"
 msgstr ""
 
-#: inc/includes/class-options-framework-admin.php:85
-#: inc/includes/class-options-framework-admin.php:86
-#: inc/includes/class-options-framework-admin.php:305 inc/options.php:23
+#: inc/customize.php:9
 msgid "Selfie Options"
 msgstr ""
 
-#: inc/includes/class-options-framework-admin.php:171
-msgid "Save Options"
-msgstr ""
-
-#: inc/includes/class-options-framework-admin.php:172
-msgid "Restore Defaults"
-msgstr ""
-
-#: inc/includes/class-options-framework-admin.php:172
-msgid "Click OK to reset. Any theme settings will be lost!"
-msgstr ""
-
-#: inc/includes/class-options-framework-admin.php:203
-msgid "Default options restored."
-msgstr ""
-
-#: inc/includes/class-options-framework-admin.php:257
-msgid "Options saved."
-msgstr ""
-
-#: inc/options.php:27
+#: inc/customize.php:10
 msgid ""
-"If you like this FREE Theme You can consider for a small Donation to us. "
-"Your Donation will be spent for the Disadvantaged Children and Students. You "
-"can visit our"
+"Selfie is CSS3 Powered and WordPress Latest Version Ready Responsive Theme. "
+"You can Learn More about the Features from the"
 msgstr ""
 
-#: inc/options.php:27
-msgid "DONATION PAGE"
+#: inc/customize.php:10
+msgid "Selfie Theme Page"
 msgstr ""
 
-#: inc/options.php:27
-msgid "and Take your decision."
+#: inc/customize.php:24
+msgid "Slide Banner Image"
 msgstr ""
 
-#: inc/options.php:27
-msgid "We appreciate an"
+#: inc/customize.php:27
+msgid "Upload or Input the Image URL Here. Recommended Size: 2000px X 900px"
 msgstr ""
 
-#: inc/options.php:27
-msgid "Honest Review"
+#: inc/customize.php:33
+msgid "(000) 111-222"
 msgstr ""
 
-#: inc/options.php:27
-msgid "of this Theme if you Love our Work."
-msgstr ""
-
-#: inc/options.php:28
-msgid ""
-"is a Revolutionary One Page Theme with Hundreds of Features and "
-"Opportunities including Slides, Portfolio, Gallery, Services, Videos, Color "
-"Changing etc for Self Hosted WordPress Sites. Try"
-msgstr ""
-
-#: inc/options.php:28
-msgid "You can Visit the"
-msgstr ""
-
-#: inc/options.php:28
-msgid "Demo Here"
-msgstr ""
-
-#: inc/options.php:32
+#: inc/customize.php:41
 msgid "Contact Number"
 msgstr ""
 
-#: inc/options.php:33
-msgid "Set Your Contact Number"
+#: inc/customize.php:48
+msgid "WordPress is web <em>software you can use to create websites!</em>"
 msgstr ""
 
-#: inc/options.php:40
-msgid "Banner Image"
-msgstr ""
-
-#: inc/options.php:41
-msgid ""
-"Upload an image for the Front Page Banner. 2000px X 900px image is "
-"recommended. If you do not want to show anything here leave the box blank."
-msgstr ""
-
-#: inc/options.php:48
+#: inc/customize.php:56
 msgid "Front Page Heading"
 msgstr ""
 
-#: inc/options.php:49
-msgid "Input your heading text here.  Please limit it within 30 Letters."
+#: inc/customize.php:63
+msgid ""
+"It is Amazing!  <em>Over 60 million people</em> have chosen WordPress to "
+"power the place on the web"
 msgstr ""
 
-#: inc/options.php:56
+#: inc/customize.php:71
 msgid "Front Page Heading Description"
 msgstr ""
 
-#: inc/options.php:57
-msgid ""
-"Input your heading description here. Please limit it within 100 Letters."
-msgstr ""
-
-#: inc/options.php:63
+#: inc/customize.php:87
 msgid "Front Page Heading Button Link"
 msgstr ""
 
-#: inc/options.php:64
-msgid "Input the Heading Button URL here."
-msgstr ""
-
-#: inc/options.php:73
+#: inc/customize.php:102
 msgid "Social Link - "
 msgstr ""
 
-#: inc/options.php:74
-msgid ""
-"Input Your Social Page Link. Example: <b>http://profiles.wordpress.org/"
-"d5creation</b>.  If you do not want to show anything here leave the box "
-"blank. This Version supports only WordPress, Dribbble, Github, Tumblr, "
-"YouTube, Flickr, Vimeo, Instagram, Codepen and LinkedIn"
+#: inc/customize.php:105
+msgid "Social Page Link. Example: <b>https://facebook.com/d5creation</b>"
+msgstr ""
+
+#: inc/theme-about.php:38
+msgid "D5 Creation Themes"
 msgstr ""
 
 #: post-content.php:35

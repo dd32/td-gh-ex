@@ -7,7 +7,7 @@ Author URI: https://d5creation.com/
 
 Description: Selfie is CSS3 Powered and Latest WordPress Version Ready Responsive Theme.  Super Elegant and Professional Selfie Theme will be adjusted automatically with all smart devices.  Full Wide Template can be used for showing showcase or other pages. You can Visit the Selfie Demo at http://demo.d5creation.com/themes/?theme=Selfie
 
-Version: 1.7
+Version: 1.9
 
 Tags: one-column, two-columns, right-sidebar, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, full-width-template, rtl-language-support, translation-ready, theme-options 
 
@@ -86,40 +86,40 @@ img.site-logo,.site-title {
 	float:left;
 }
 
-#selfie-main-menu {
+#main-menu-con {
 	float:left;
 }
 
-#selfie-main-menu li {
+#main-menu-con li {
 	float:right;
 }
 
-#selfie-main-menu li ul {
+#main-menu-con li ul {
 	float:right;
 }
 
-#selfie-main-menu ul ul,
+#main-menu-con ul ul,
 .sub-menu, .sub-menu ul ul {
 	float:right;
 	right:0;
 	left: auto;
 }
 
-#selfie-main-menu ul ul ul {
+#main-menu-con ul ul ul {
 	right:100%;
 	left: auto;
 }
 
-#selfie-main-menu ul ul a {
+#main-menu-con ul ul a {
 	text-align:right;
 }
 
-#selfie-main-menu .menu-item-has-children a, #selfie-main-menu .page_item_has_children a {
+#main-menu-con .menu-item-has-children a, #main-menu-con .page_item_has_children a {
 	padding-left: 20px;
 	padding-right: 0;
 }
 
-#selfie-main-menu li.menu-item-has-children a:after, #selfie-main-menu li.page_item_has_children a:after {
+#main-menu-con li.menu-item-has-children a:after, #main-menu-con li.page_item_has_children a:after {
 	margin-right: 5px;
 	padding-right: 5px;
 	left: 3px;
@@ -128,27 +128,27 @@ img.site-logo,.site-title {
 	margin-left: auto;
 }
 
-#selfie-top-menu {
+#top-menu-con {
 	float: left;
 }
 
-#selfie-top-menu ul.menu {
+#top-menu-con ul.menu {
 	float: left;
 }
 
-#selfie-top-menu .menu li {
+#top-menu-con .menu li {
 	float:right;
 }
 
-#selfie-top-menu .menu a:before {
+#top-menu-con .menu a:before {
 	padding: 0 0 0 5px;
 }
 
-#selfie-top-menu #searchform {
+#top-menu-con #searchform {
 	float: left;
 }
 
-#selfie-top-menu #searchsubmit {
+#top-menu-con #searchsubmit {
 	margin-right: -5px;
 	margin-left: auto;
 }
@@ -316,7 +316,7 @@ h2.commentsbox:before {
 	margin:0 -25px 0 0;
 }
 
-#selfie-main-menu.gobottom {
+#main-menu-con.gobottom {
 	left: 5%;
 	right: auto;
 }
