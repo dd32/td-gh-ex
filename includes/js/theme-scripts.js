@@ -270,6 +270,17 @@ $str(document).ready(function() {
 	
 	// Set side menu width for boxed layout
 	bentoSideMenuWidth();
+	
+	
+	// Side menu scrollable if too high
+	if ( bentoThemeVars.menu_config == 3 ) {
+		var $bento_header = $str('.header-side .site-header');
+		var bento_headerHeight = $bento_header.outerHeight(true);
+		var bento_bodyHeight = $str(document).height();
+		if ( bento_headerHeight > bento_bodyHeight ) {
+			$bento_header.addClass('header-side-high');
+		}
+	}
 		
 		
 });

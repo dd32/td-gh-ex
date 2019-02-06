@@ -5,7 +5,7 @@ Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-
 
 Requires at least: 4.0
 Tested up to: 4.9.7
-Stable tag: 2.0.5
+Stable tag: 2.0.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,9 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 2.0.6 / 6 February 2019
+Improved side menu scrolling for very long menu cases.
 
 * 2.0.5 / 26 November 2018
 Updated theme screenshot to comply with the latest requirements.
