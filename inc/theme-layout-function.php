@@ -125,11 +125,11 @@ if ( ! function_exists( 'be_page_header_page_title' ) ) :
 			  	$post_thumbnail_id = get_post_thumbnail_id( get_the_ID() );
 				$post_thumbnail_url = wp_get_attachment_url( $post_thumbnail_id );
 			   ?>
-               <img src="<?php echo esc_url( $post_thumbnail_url );?>" alt="<?php echo get_the_title();?>">
+               <img src="<?php echo esc_url( $post_thumbnail_url );?>" alt="<?php echo esc_attr( the_title_attribute() );?>">
               <?php else:
 			  	$header_image = get_header_image();
 			   ?>
-               <img src=" <?php echo esc_url( $header_image );?>" alt="<?php echo get_the_title();?>">
+               <img src=" <?php echo esc_url( $header_image );?>" alt="<?php echo esc_attr( the_title_attribute() );?>">
               <?php endif;?>
              
             </div>

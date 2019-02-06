@@ -154,7 +154,7 @@ if ( ! function_exists( 'be_page_posts_formats_gallery' ) ) :
 				
 				   $link   = wp_get_attachment_url( $id );
 				
-				  echo '<div class="item"><img src="' . esc_url( $link ) . '"  class="img-responsive" alt="' .esc_attr( get_the_title() ). '" title="' .esc_attr( get_the_title() ). '"  /></div>';
+				  echo '<div class="item"><img src="' . esc_url( $link ) . '"  class="img-responsive" alt="' .esc_attr( the_title_attribute() ). '" title="' .esc_attr( get_the_title() ). '"  /></div>';
 				
 				} 
 				
@@ -210,12 +210,14 @@ if ( ! function_exists( 'be_page_short_excerpt' ) ) :
 	 * @param int $length Excerpt length.
 	 * @return int (Maybe) modified excerpt length.
 	 */
-	function be_page_short_excerpt($excerpt){
-		$length =  get_theme_mod( 'excerpt_length', 160 ) ;
-		return substr($excerpt, 0, absint( $length ) );
-	}
-	add_filter('the_excerpt', 'be_page_short_excerpt');
-	
+	function be_page_short_excerpt( $length ){
+        if ( is_admin() ) {
+            return $length;
+        }
+
+        return absint( get_theme_mod( 'excerpt_length', 160 ) );
+    }
+    add_filter( 'excerpt_length', 'be_page_short_excerpt', 999 );
 endif;
 
 

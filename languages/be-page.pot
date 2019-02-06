@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Be Page\n"
-"POT-Creation-Date: 2018-09-11 21:22+0600\n"
-"PO-Revision-Date: 2018-09-11 21:22+0600\n"
+"POT-Creation-Date: 2019-02-06 15:49+0600\n"
+"PO-Revision-Date: 2019-02-06 15:49+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -133,349 +133,346 @@ msgstr ""
 msgid "Blog Layout Options"
 msgstr ""
 
-#: inc/kirki-configuration.php:157 inc/kirki-configuration.php:208
+#: inc/kirki-configuration.php:157 inc/kirki-configuration.php:207
 msgid "Choose between different layout options to be used as default"
 msgstr ""
 
-#: inc/kirki-configuration.php:163 inc/kirki-configuration.php:214
+#: inc/kirki-configuration.php:163 inc/kirki-configuration.php:213
 msgid "Primary Sidebar - Content"
 msgstr ""
 
-#: inc/kirki-configuration.php:164 inc/kirki-configuration.php:215
+#: inc/kirki-configuration.php:164 inc/kirki-configuration.php:214
 msgid "Content - Primary Sidebar"
 msgstr ""
 
-#: inc/kirki-configuration.php:165 inc/kirki-configuration.php:216
-msgid "No Sidebar ( Pro only ) "
-msgstr ""
-
-#: inc/kirki-configuration.php:166 inc/kirki-configuration.php:217
-msgid "Full Container ( Pro only ) "
-msgstr ""
-
-#: inc/kirki-configuration.php:174
+#: inc/kirki-configuration.php:173
 msgid "Set Blog Excerpt Length"
 msgstr ""
 
-#: inc/kirki-configuration.php:182
+#: inc/kirki-configuration.php:181
 msgid "Blog Posts Content type"
 msgstr ""
 
-#: inc/kirki-configuration.php:183
+#: inc/kirki-configuration.php:182
 msgid ""
 "Choose between different Loop Posts Content options to be used as default"
 msgstr ""
 
-#: inc/kirki-configuration.php:189
+#: inc/kirki-configuration.php:188
 msgid "Excerpt Only"
 msgstr ""
 
-#: inc/kirki-configuration.php:190
+#: inc/kirki-configuration.php:189
 msgid "Content Only"
 msgstr ""
 
-#: inc/kirki-configuration.php:199 inc/kirki-configuration.php:207
+#: inc/kirki-configuration.php:198 inc/kirki-configuration.php:206
 msgid "Page Layout Options"
 msgstr ""
 
-#: inc/kirki-configuration.php:229
-msgid "Blog Home Page Dialog Options"
-msgstr ""
-
-#: inc/kirki-configuration.php:237
-msgid "Blog Home Page Hero Heading Text"
-msgstr ""
-
-#: inc/kirki-configuration.php:245
-msgid "Blog Home Page Hero Description Text"
-msgstr ""
-
-#: inc/posts-hooks.php:239
+#: inc/posts-hooks.php:241
 #, php-format
 msgctxt "post date"
 msgid "Posted on %s"
 msgstr ""
 
-#: inc/posts-hooks.php:248
+#: inc/posts-hooks.php:250
 msgid ", "
 msgstr ""
 
-#: inc/posts-hooks.php:251
+#: inc/posts-hooks.php:253
 #, php-format
 msgid "in %1$s"
 msgstr ""
 
-#: inc/posts-hooks.php:256 inc/posts-hooks.php:273 inc/posts-hooks.php:288
+#: inc/posts-hooks.php:258 inc/posts-hooks.php:275 inc/posts-hooks.php:290
 msgid "by "
 msgstr ""
 
-#: inc/posts-hooks.php:314
+#: inc/posts-hooks.php:316
 #, php-format
 msgid "Posted on %1$s at %2$s"
 msgstr ""
 
-#: inc/posts-hooks.php:317
+#: inc/posts-hooks.php:319
 msgid "Reply"
 msgstr ""
 
-#: inc/posts-hooks.php:340
+#: inc/posts-hooks.php:342
 msgctxt "list item separator"
 msgid " "
 msgstr ""
 
-#: inc/posts-hooks.php:351 template-parts/content-page.php:33
+#: inc/posts-hooks.php:353 template-parts/content-page.php:33
 #, php-format
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
 #: inc/pro/admin-page.php:41 inc/pro/admin-page.php:42
-msgid "Getting Started My vCard Resume"
+#: inc/pro/admin-page.php:106
+msgid "Getting Started Be Page"
 msgstr ""
 
-#: inc/pro/admin-page.php:83
+#: inc/pro/admin-page.php:84
 msgid "Action failed. Please refresh the page and retry."
 msgstr ""
 
-#: inc/pro/admin-page.php:88
+#: inc/pro/admin-page.php:89
 msgid "Cheatin&#8217; huh?"
 msgstr ""
 
-#: inc/pro/admin-page.php:102
+#: inc/pro/admin-page.php:103
 msgid "Dismiss"
 msgstr ""
 
-#: inc/pro/admin-page.php:103
+#: inc/pro/admin-page.php:104
 #, php-format
 msgid ""
 "Welcome! Thank you for choosing Be Page! To fully take advantage of the best "
 "our theme can offer please make sure you visit our %1$swelcome page%2$s."
 msgstr ""
 
-#: inc/pro/admin-page.php:105
-msgid "Getting Started Be Page"
-msgstr ""
-
-#: inc/pro/admin-page.php:122
+#: inc/pro/admin-page.php:123
 msgid "About"
 msgstr ""
 
-#: inc/pro/admin-page.php:129
+#: inc/pro/admin-page.php:130
 msgid "Theme Info"
 msgstr ""
 
-#: inc/pro/admin-page.php:131
+#: inc/pro/admin-page.php:132
 msgid "View Demo"
 msgstr ""
 
-#: inc/pro/admin-page.php:133
+#: inc/pro/admin-page.php:134
 msgid "View PRO version Demo"
 msgstr ""
 
-#: inc/pro/admin-page.php:135
+#: inc/pro/admin-page.php:136
 msgid "Rate this theme"
 msgstr ""
 
-#: inc/pro/admin-page.php:148
+#: inc/pro/admin-page.php:149
 msgid "Free Vs PRO"
 msgstr ""
 
-#: inc/pro/admin-page.php:151
+#: inc/pro/admin-page.php:152
 msgid "Changelog"
 msgstr ""
 
-#: inc/pro/admin-page.php:191
+#: inc/pro/admin-page.php:192 inc/pro/admin-page.php:305
 msgid "Theme Customizer"
 msgstr ""
 
-#: inc/pro/admin-page.php:192
+#: inc/pro/admin-page.php:193
 msgid "All Theme Options are available via Customize screen."
 msgstr ""
 
-#: inc/pro/admin-page.php:193
+#: inc/pro/admin-page.php:194
 msgid "Customize"
 msgstr ""
 
-#: inc/pro/admin-page.php:197
+#: inc/pro/admin-page.php:198
 msgid "Got theme support question?"
 msgstr ""
 
-#: inc/pro/admin-page.php:198
+#: inc/pro/admin-page.php:199
 msgid "Please put it in our support forum."
 msgstr ""
 
-#: inc/pro/admin-page.php:199
+#: inc/pro/admin-page.php:200
 msgid "Support"
 msgstr ""
 
-#: inc/pro/admin-page.php:203
+#: inc/pro/admin-page.php:204
 msgid "Need more features?"
 msgstr ""
 
-#: inc/pro/admin-page.php:204 inc/pro/admin-page.php:287
+#: inc/pro/admin-page.php:205 inc/pro/admin-page.php:288
 msgid "Upgrade to PRO version for more exciting features."
 msgstr ""
 
-#: inc/pro/admin-page.php:205
+#: inc/pro/admin-page.php:206
 msgid "Info about PRO version"
 msgstr ""
 
-#: inc/pro/admin-page.php:215
+#: inc/pro/admin-page.php:216
 msgid "Return to Updates"
 msgstr ""
 
-#: inc/pro/admin-page.php:215
+#: inc/pro/admin-page.php:216
 msgid "Return to Dashboard &rarr; Updates"
 msgstr ""
 
-#: inc/pro/admin-page.php:218
+#: inc/pro/admin-page.php:219
 msgid "Go to Dashboard &rarr; Home"
 msgstr ""
 
-#: inc/pro/admin-page.php:218
+#: inc/pro/admin-page.php:219
 msgid "Go to Dashboard"
 msgstr ""
 
-#: inc/pro/admin-page.php:235
+#: inc/pro/admin-page.php:236
 msgid "View changelog below:"
 msgstr ""
 
-#: inc/pro/admin-page.php:292
+#: inc/pro/admin-page.php:293
 msgid "Features"
 msgstr ""
 
-#: inc/pro/admin-page.php:293
-msgid "My vCard Resume"
-msgstr ""
-
 #: inc/pro/admin-page.php:294
-msgid "My vCard Resume PRO"
+msgid "Be PAGE"
 msgstr ""
 
-#: inc/pro/admin-page.php:299
-msgid "24/7 Priority Support"
+#: inc/pro/admin-page.php:295
+msgid "Be PAGE PRO"
 msgstr ""
 
 #: inc/pro/admin-page.php:300
-msgid "WP forum ( 48 / 5 )"
+msgid "24/7 Priority Support"
 msgstr ""
 
 #: inc/pro/admin-page.php:301
-msgid "Own Ticket, email , Skype & Teamviewer ( 24 / 7 )"
+msgid "WP forum ( 48 / 5 )"
 msgstr ""
 
-#: inc/pro/admin-page.php:304
-msgid "Multi-Purpose Design"
+#: inc/pro/admin-page.php:302
+msgid "Own Ticket, email , Skype &amp; Teamviewer ( 24 / 7 )"
 msgstr ""
 
-#: inc/pro/admin-page.php:310
-msgid " Theme Customizer "
-msgstr ""
-
-#: inc/pro/admin-page.php:311
+#: inc/pro/admin-page.php:306
 msgid "lite features Customizer"
 msgstr ""
 
-#: inc/pro/admin-page.php:312
+#: inc/pro/admin-page.php:307
 msgid "Full features Customizer"
 msgstr ""
 
-#: inc/pro/admin-page.php:315
-msgid "king composer toolkit Addons"
+#: inc/pro/admin-page.php:310
+msgid "Elementor toolkit & Addons"
 msgstr ""
 
-#: inc/pro/admin-page.php:316
-msgid "Only KC plugins"
+#: inc/pro/admin-page.php:311
+msgid "Only Elementor plugins"
 msgstr ""
 
-#: inc/pro/admin-page.php:317
+#: inc/pro/admin-page.php:312
 msgid "Theme Own Addons"
 msgstr ""
 
+#: inc/pro/admin-page.php:315
+msgid "Slider Plugins"
+msgstr ""
+
+#: inc/pro/admin-page.php:316
+msgid "3rd party plugins"
+msgstr ""
+
+#: inc/pro/admin-page.php:317
+msgid "Theme Own Slider or 3rd party plugins"
+msgstr ""
+
 #: inc/pro/admin-page.php:320
-msgid "One Click Demo Import"
+msgid "Services Sections"
 msgstr ""
 
-#: inc/pro/admin-page.php:326
-msgid "Third Party Addons"
+#: inc/pro/admin-page.php:325
+msgid "Features Sections"
 msgstr ""
 
-#: inc/pro/admin-page.php:331
+#: inc/pro/admin-page.php:330
+msgid "Team Sections"
+msgstr ""
+
+#: inc/pro/admin-page.php:335
+msgid "Portfolio & Project Sections"
+msgstr ""
+
+#: inc/pro/admin-page.php:341
+msgid "Testimonials Sections"
+msgstr ""
+
+#: inc/pro/admin-page.php:347
+msgid "Pricing Sections"
+msgstr ""
+
+#: inc/pro/admin-page.php:352
+msgid "Latest Posts Wigets"
+msgstr ""
+
+#: inc/pro/admin-page.php:358
 msgid "Unlimited colors"
 msgstr ""
 
-#: inc/pro/admin-page.php:337
+#: inc/pro/admin-page.php:363
 msgid "Unlimited Fonts"
 msgstr ""
 
-#: inc/pro/admin-page.php:342
-msgid "Service KC Addons"
+#: inc/pro/admin-page.php:369
+msgid "Custom Page Template"
 msgstr ""
 
-#: inc/pro/admin-page.php:348
-msgid "Service Section KC Addons"
+#: inc/pro/admin-page.php:375
+msgid "Custom Blog Template"
 msgstr ""
 
-#: inc/pro/admin-page.php:353
-msgid "List styled KC Addons "
+#: inc/pro/admin-page.php:381
+msgid "Blog Posts Layout"
 msgstr ""
 
-#: inc/pro/admin-page.php:359
-msgid "Interests Section KC Addons"
-msgstr ""
-
-#: inc/pro/admin-page.php:365
-msgid "Clients Section KC Addons / Shortcode"
-msgstr ""
-
-#: inc/pro/admin-page.php:371
-msgid "Skills Section KC Addons / Shortcode"
-msgstr ""
-
-#: inc/pro/admin-page.php:377
-msgid "Work Experience Section KC Addons / Shortcode"
+#: inc/pro/admin-page.php:382
+msgid "Standard layout"
 msgstr ""
 
 #: inc/pro/admin-page.php:383
-msgid "Education Section KC Addons / Shortcode"
+msgid "Standard,Grids, Standard left, Standard right layout"
 msgstr ""
 
-#: inc/pro/admin-page.php:389
-msgid "Works Profolio Section KC Addons / Shortcode"
+#: inc/pro/admin-page.php:386
+msgid "Related Posts "
 msgstr ""
 
-#: inc/pro/admin-page.php:395
-msgid "Testimonials Section KC Addons / Shortcode"
+#: inc/pro/admin-page.php:391
+msgid "Related Share "
 msgstr ""
 
-#: inc/pro/admin-page.php:400
-msgid "Sidebar Disable / Enable"
+#: inc/pro/admin-page.php:397
+msgid "Comment Layout"
+msgstr ""
+
+#: inc/pro/admin-page.php:398
+msgid "1"
+msgstr ""
+
+#: inc/pro/admin-page.php:399
+msgid "2"
+msgstr ""
+
+#: inc/pro/admin-page.php:403
+msgid "Sidebar Style"
+msgstr ""
+
+#: inc/pro/admin-page.php:404
+msgid "One Style"
 msgstr ""
 
 #: inc/pro/admin-page.php:405
+msgid "Three Style"
+msgstr ""
+
+#: inc/pro/admin-page.php:409
+msgid "Sidebar Disable / Enable"
+msgstr ""
+
+#: inc/pro/admin-page.php:414
 msgid "Footer Carditis"
 msgstr ""
 
-#: inc/pro/admin-page.php:410
-msgid "Social Sharing Features"
-msgstr ""
-
-#: inc/pro/admin-page.php:415
-msgid "Sticky Menu"
-msgstr ""
-
-#: inc/pro/admin-page.php:420
-msgid "Guide Video , Step by Step"
-msgstr ""
-
-#: inc/pro/admin-page.php:425
-msgid "Documentation + FAQ Page"
-msgstr ""
-
-#: inc/pro/admin-page.php:431
+#: inc/pro/admin-page.php:419
 msgid "You can control overall everything without code"
 msgstr ""
 
-#: inc/pro/admin-page.php:441
+#: inc/pro/admin-page.php:428
 msgid "More Information"
 msgstr ""
 
@@ -501,21 +498,21 @@ msgstr ""
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:336
+#: inc/tgm/class-tgm-plugin-activation.php:337
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
 msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:342
+#: inc/tgm/class-tgm-plugin-activation.php:345
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
 msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:348
+#: inc/tgm/class-tgm-plugin-activation.php:353
 #, php-format
 msgid ""
 "The following plugin needs to be updated to its latest version to ensure "
@@ -526,188 +523,188 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:354
+#: inc/tgm/class-tgm-plugin-activation.php:361
 #, php-format
 msgid "There is an update available for: %1$s."
 msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:360
+#: inc/tgm/class-tgm-plugin-activation.php:369
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
 msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:366
+#: inc/tgm/class-tgm-plugin-activation.php:377
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
 msgid_plural "The following recommended plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:371
+#: inc/tgm/class-tgm-plugin-activation.php:384
 msgid "Begin installing plugin"
 msgid_plural "Begin installing plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:376
+#: inc/tgm/class-tgm-plugin-activation.php:390
 msgid "Begin updating plugin"
 msgid_plural "Begin updating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:381
+#: inc/tgm/class-tgm-plugin-activation.php:396
 msgid "Begin activating plugin"
 msgid_plural "Begin activating plugins"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:385
+#: inc/tgm/class-tgm-plugin-activation.php:400
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:386
-#: inc/tgm/class-tgm-plugin-activation.php:827
-#: inc/tgm/class-tgm-plugin-activation.php:2533
-#: inc/tgm/class-tgm-plugin-activation.php:3580
+#: inc/tgm/class-tgm-plugin-activation.php:401
+#: inc/tgm/class-tgm-plugin-activation.php:842
+#: inc/tgm/class-tgm-plugin-activation.php:2548
+#: inc/tgm/class-tgm-plugin-activation.php:3595
 msgid "Return to the Dashboard"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:387
-#: inc/tgm/class-tgm-plugin-activation.php:3159
+#: inc/tgm/class-tgm-plugin-activation.php:402
+#: inc/tgm/class-tgm-plugin-activation.php:3174
 msgid "Plugin activated successfully."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:388
-#: inc/tgm/class-tgm-plugin-activation.php:2952
+#: inc/tgm/class-tgm-plugin-activation.php:403
+#: inc/tgm/class-tgm-plugin-activation.php:2967
 msgid "The following plugin was activated successfully:"
 msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:390
+#: inc/tgm/class-tgm-plugin-activation.php:405
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:392
+#: inc/tgm/class-tgm-plugin-activation.php:407
 #, php-format
 msgid ""
 "Plugin not activated. A higher version of %s is needed for this theme. "
 "Please update the plugin."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:394
+#: inc/tgm/class-tgm-plugin-activation.php:409
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:395
+#: inc/tgm/class-tgm-plugin-activation.php:410
 msgid "Dismiss this notice"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:396
+#: inc/tgm/class-tgm-plugin-activation.php:411
 msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:397
+#: inc/tgm/class-tgm-plugin-activation.php:412
 msgid "Please contact the administrator of this site for help."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:522
+#: inc/tgm/class-tgm-plugin-activation.php:537
 msgid "This plugin needs to be updated to be compatible with your theme."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:523
+#: inc/tgm/class-tgm-plugin-activation.php:538
 msgid "Update Required"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:934
+#: inc/tgm/class-tgm-plugin-activation.php:949
 msgid ""
 "The remote plugin package does not contain a folder with the desired slug "
 "and renaming did not work."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:934
-#: inc/tgm/class-tgm-plugin-activation.php:937
+#: inc/tgm/class-tgm-plugin-activation.php:949
+#: inc/tgm/class-tgm-plugin-activation.php:952
 msgid ""
 "Please contact the plugin provider and ask them to package their plugin "
 "according to the WordPress guidelines."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:937
+#: inc/tgm/class-tgm-plugin-activation.php:952
 msgid ""
 "The remote plugin package consists of more than one file, but the files are "
 "not packaged in a folder."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:1121
-#: inc/tgm/class-tgm-plugin-activation.php:2948
+#: inc/tgm/class-tgm-plugin-activation.php:1136
+#: inc/tgm/class-tgm-plugin-activation.php:2963
 msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:1982
+#: inc/tgm/class-tgm-plugin-activation.php:1997
 #, php-format
 msgid "TGMPA v%s"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2273
+#: inc/tgm/class-tgm-plugin-activation.php:2288
 msgid "Required"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2276
+#: inc/tgm/class-tgm-plugin-activation.php:2291
 msgid "Recommended"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2292
+#: inc/tgm/class-tgm-plugin-activation.php:2307
 msgid "WordPress Repository"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2295
+#: inc/tgm/class-tgm-plugin-activation.php:2310
 msgid "External Source"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2298
+#: inc/tgm/class-tgm-plugin-activation.php:2313
 msgid "Pre-Packaged"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2315
+#: inc/tgm/class-tgm-plugin-activation.php:2330
 msgid "Not Installed"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2319
+#: inc/tgm/class-tgm-plugin-activation.php:2334
 msgid "Installed But Not Activated"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2321
+#: inc/tgm/class-tgm-plugin-activation.php:2336
 msgid "Active"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2327
+#: inc/tgm/class-tgm-plugin-activation.php:2342
 msgid "Required Update not Available"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2330
+#: inc/tgm/class-tgm-plugin-activation.php:2345
 msgid "Requires Update"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2333
+#: inc/tgm/class-tgm-plugin-activation.php:2348
 msgid "Update recommended"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2342
+#: inc/tgm/class-tgm-plugin-activation.php:2357
 #, php-format
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2388
+#: inc/tgm/class-tgm-plugin-activation.php:2403
 #, php-format
 msgctxt "plugins"
 msgid "All <span class=\"count\">(%s)</span>"
@@ -715,193 +712,193 @@ msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2392
+#: inc/tgm/class-tgm-plugin-activation.php:2407
 #, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
 msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2396
+#: inc/tgm/class-tgm-plugin-activation.php:2411
 #, php-format
 msgid "Update Available <span class=\"count\">(%s)</span>"
 msgid_plural "Update Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2400
+#: inc/tgm/class-tgm-plugin-activation.php:2415
 #, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
 msgid_plural "To Activate <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2482
+#: inc/tgm/class-tgm-plugin-activation.php:2497
 msgctxt "as in: \"version nr unknown\""
 msgid "unknown"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2490
+#: inc/tgm/class-tgm-plugin-activation.php:2505
 msgid "Installed version:"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2498
+#: inc/tgm/class-tgm-plugin-activation.php:2513
 msgid "Minimum required version:"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2510
+#: inc/tgm/class-tgm-plugin-activation.php:2525
 msgid "Available version:"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2533
+#: inc/tgm/class-tgm-plugin-activation.php:2548
 msgid "No plugins to install, update or activate."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2547
+#: inc/tgm/class-tgm-plugin-activation.php:2562
 msgid "Plugin"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2548
+#: inc/tgm/class-tgm-plugin-activation.php:2563
 msgid "Source"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2549
+#: inc/tgm/class-tgm-plugin-activation.php:2564
 msgid "Type"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2553
+#: inc/tgm/class-tgm-plugin-activation.php:2568
 msgid "Version"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2554
+#: inc/tgm/class-tgm-plugin-activation.php:2569
 msgid "Status"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2603
+#: inc/tgm/class-tgm-plugin-activation.php:2618
 #, php-format
 msgid "Install %2$s"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2608
+#: inc/tgm/class-tgm-plugin-activation.php:2623
 #, php-format
 msgid "Update %2$s"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2614
+#: inc/tgm/class-tgm-plugin-activation.php:2629
 #, php-format
 msgid "Activate %2$s"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2684
+#: inc/tgm/class-tgm-plugin-activation.php:2699
 msgid "Upgrade message from the plugin author:"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2717
+#: inc/tgm/class-tgm-plugin-activation.php:2732
 msgid "Install"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2723
+#: inc/tgm/class-tgm-plugin-activation.php:2738
 msgid "Update"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2726
+#: inc/tgm/class-tgm-plugin-activation.php:2741
 msgid "Activate"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2757
+#: inc/tgm/class-tgm-plugin-activation.php:2772
 msgid "No plugins were selected to be installed. No action taken."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2759
+#: inc/tgm/class-tgm-plugin-activation.php:2774
 msgid "No plugins were selected to be updated. No action taken."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2800
+#: inc/tgm/class-tgm-plugin-activation.php:2815
 msgid "No plugins are available to be installed at this time."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2802
+#: inc/tgm/class-tgm-plugin-activation.php:2817
 msgid "No plugins are available to be updated at this time."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2908
+#: inc/tgm/class-tgm-plugin-activation.php:2923
 msgid "No plugins were selected to be activated. No action taken."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:2934
+#: inc/tgm/class-tgm-plugin-activation.php:2949
 msgid "No plugins are available to be activated at this time."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:3158
+#: inc/tgm/class-tgm-plugin-activation.php:3173
 msgid "Plugin activation failed."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:3498
+#: inc/tgm/class-tgm-plugin-activation.php:3513
 #, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:3501
+#: inc/tgm/class-tgm-plugin-activation.php:3516
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:3503
+#: inc/tgm/class-tgm-plugin-activation.php:3518
 #, php-format
 msgid "The installation of %1$s failed."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:3507
+#: inc/tgm/class-tgm-plugin-activation.php:3522
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:3509
+#: inc/tgm/class-tgm-plugin-activation.php:3524
 #, php-format
 msgid "%1$s installed and activated successfully."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:3509
-#: inc/tgm/class-tgm-plugin-activation.php:3517
+#: inc/tgm/class-tgm-plugin-activation.php:3524
+#: inc/tgm/class-tgm-plugin-activation.php:3532
 msgid "Show Details"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:3509
-#: inc/tgm/class-tgm-plugin-activation.php:3517
+#: inc/tgm/class-tgm-plugin-activation.php:3524
+#: inc/tgm/class-tgm-plugin-activation.php:3532
 msgid "Hide Details"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:3510
+#: inc/tgm/class-tgm-plugin-activation.php:3525
 msgid "All installations and activations have been completed."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:3512
+#: inc/tgm/class-tgm-plugin-activation.php:3527
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:3515
+#: inc/tgm/class-tgm-plugin-activation.php:3530
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:3517
+#: inc/tgm/class-tgm-plugin-activation.php:3532
 #, php-format
 msgid "%1$s installed successfully."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:3518
+#: inc/tgm/class-tgm-plugin-activation.php:3533
 msgid "All installations have been completed."
 msgstr ""
 
-#: inc/tgm/class-tgm-plugin-activation.php:3520
+#: inc/tgm/class-tgm-plugin-activation.php:3535
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: inc/theme-core.php:49
+#: inc/theme-core.php:53
 msgid "Primary"
 msgstr ""
 
@@ -938,11 +935,15 @@ msgstr ""
 msgid "404 Error"
 msgstr ""
 
-#: inc/theme-layout-function.php:362
+#: inc/theme-layout-function.php:364
 #, php-format
 msgid ""
 "Copyright %1$s %2$s All Right Reserved. Theme By %3$s . Proudly powered by "
 "%4$s"
+msgstr ""
+
+#: inc/theme-layout-function.php:372
+msgid "BACK TO TOP"
 msgstr ""
 
 #: index.php:60 search.php:41
@@ -983,7 +984,7 @@ msgstr ""
 msgid "Next Article"
 msgstr ""
 
-#: template-parts/content.php:54
+#: template-parts/content.php:61
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
@@ -1544,19 +1545,17 @@ msgstr ""
 
 #. Description of the plugin/theme
 msgid ""
-"be page features full and seamless integration with KingComposer – Free Drag "
-"and Drop page builder and Ultimate Addons. Stylista is a clean & minimal "
-"Fashion WooCommerce WordPress Theme for online fashion stores with minimal "
-"design and focus on  Corporate, Portfolio, Personal, Agency, Business, "
-"Education, Restaurant, Wedding, Landing, Shop, Blog, Real estate, App "
-"landing, Travel , anything. be-page is a Powerful MultiPurpose Bootstrap 3 "
-"Template that has endless possibilities for creating stunning websites, no "
-"matter what type of website is .It is also fully compatible with most "
-"popular plugins like KingComposer, WPML, Yoast SEO, All in One WP Migration, "
-"W3 Total Cache and many others. without any coding involved. Inspite of "
-"being powerful & flexible, Oshine is quite easy to use, which is why it is "
-"loved by beginners and advanced users alike. Check out Theme Support at "
-"https://edatastyle.com/dwqa-questions/ and Demo at https://eds.edatastyle."
+"Be Page is a Responsive Corporate One Page & Minimal Multipurpose WordPress "
+"Theme for Corporate, Portfolio, Personal, Agency, Business, Education, "
+"Restaurant, Wedding, Landing, Shop, Blog, Real estate, App landing, Travel "
+"or web agencies anything .It’s based on Bootstrap framework and HTML5/CSS3 "
+"technologies, with a minimal design, clean and elegant, fully responsive and "
+"customizable. Be page features full and seamless integration with Elementor "
+"Theme Builder – Free Drag and Drop page builder and Ultimate Addons. Quick "
+"and easy setup to create a portfolio and show your works and services. The "
+"Theme is optimized for smartphone and tablets, it provides a clear "
+"documentation and no coding knowledge is required. Check out Theme Support "
+"at https://edatastyle.com/dwqa-questions/ and Demo at https://eds.edatastyle."
 "com/demo/be-page"
 msgstr ""
 
@@ -1565,5 +1564,5 @@ msgid "eDataStyle"
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "http://athemeart.com"
+msgid "https://edatastyle.com"
 msgstr ""

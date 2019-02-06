@@ -3,7 +3,7 @@
 Contributors: eDataStyle
 Requires at least: 4.0
 Tested up to: 5.0.3
-Stable tag: 1.8
+Stable tag: 1.9
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -81,6 +81,11 @@ CC0 Public Domain
 
 
 == Changelog ==
+
+= 1.9 =
+* Review team Feedback updated
+
+
 = 1.7 =
 * pixabay image revmoed
 * re-check theme

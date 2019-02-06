@@ -65,12 +65,19 @@ function be_page_register_required_plugins() {
 			'slug'      => 'elementor',
 			'required'  => false,
 		),
-
+		
 		array(
-			'name'        => 'WordPress SEO by Yoast',
-			'slug'        => 'wordpress-seo',
-			'is_callable' => 'wpseo_init',
+			'name'        => 'MetaSlider',
+			'slug'        => 'ml-slider',
+			
 		),
+		array(
+			'name'        => 'Catch Instagram Feed Gallery & Widget',
+			'slug'        => 'catch-instagram-feed-gallery-widget',
+			
+		),
+		
+		
 
 	);
 

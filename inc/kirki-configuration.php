@@ -67,7 +67,7 @@ class be_page_Kirki_Options extends Kirki {
 			$this->be_page_social_media();
 			$this->be_page_blog_layout_options();
 			$this->be_page_page_layout_options();
-			$this->be_page_dialog_options();
+			
 		
 	}
 	
@@ -221,32 +221,6 @@ class be_page_Kirki_Options extends Kirki {
 	}
 	
 	
-	public function be_page_dialog_options(){
-		
-			$this->add_section( 'page_dialog_options', array(
-				'title'          => esc_attr__( 'Blog Home Page Dialog Options', 'be-page' ),
-				'panel'          => $this->panel,
-				'priority'       => 100,
-			) );
-			  
-			$this->add_field( $this->config_id, array(
-				'type'     => 'text',
-				'settings' => 'heading_text',
-				'label'    => esc_attr__( 'Blog Home Page Hero Heading Text', 'be-page' ),
-				'section'  => 'page_dialog_options',
-				'priority' => 10,
-			) );
-			
-			$this->add_field( $this->config_id, array(
-				'type'     => 'textarea',
-				'settings' => 'hero_description',
-				'label'    => esc_attr__( 'Blog Home Page Hero Description Text', 'be-page' ),
-				'section'  => 'page_dialog_options',
-				'priority' => 10,
-			) );
-			
-			
-	}
 	
 }
 be_page_Kirki_Options::instance();
