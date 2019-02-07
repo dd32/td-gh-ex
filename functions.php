@@ -504,7 +504,7 @@ if ( ! function_exists( 'ayaclub_customize_register' ) ) :
 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayaclub_slider_display',
 								array(
-									'label'          => __( 'Display Slider', 'ayaclub' ),
+									'label'          => __( 'Display Slider on a Static Front Page', 'ayaclub' ),
 									'section'        => 'ayaclub_slider_section',
 									'settings'       => 'ayaclub_slider_display',
 									'type'           => 'checkbox',
