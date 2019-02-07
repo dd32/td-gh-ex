@@ -517,7 +517,7 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayaphotography_slider_display',
 								array(
-									'label'          => __( 'Display Slider', 'ayaphotography' ),
+									'label'          => __( 'Display Slider on a Static Front Page', 'ayaphotography' ),
 									'section'        => 'ayaphotography_slider_section',
 									'settings'       => 'ayaphotography_slider_display',
 									'type'           => 'checkbox',
