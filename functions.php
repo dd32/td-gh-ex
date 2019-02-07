@@ -497,7 +497,7 @@ if ( ! function_exists( 'ayamedicine_customize_register' ) ) :
 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayamedicine_slider_display',
 								array(
-									'label'          => __( 'Display Slider', 'ayamedicine' ),
+									'label'          => __( 'Display Slider on a Static Front Page', 'ayamedicine' ),
 									'section'        => 'ayamedicine_slider_section',
 									'settings'       => 'ayamedicine_slider_display',
 									'type'           => 'checkbox',
