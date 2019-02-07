@@ -41,6 +41,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.1.4 =
+* Updating Slider Display text into 'Display Slider on a Static Front Page' in Customizer option
+
 = 1.1.3 =
 * Update primary menu first level items with collapse/expand functionality under Mobile
 

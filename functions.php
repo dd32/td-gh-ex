@@ -527,7 +527,7 @@ if ( ! function_exists( 'ayaportfolio_customize_register' ) ) :
 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayaportfolio_slider_display',
 								array(
-									'label'          => __( 'Display Slider', 'ayaportfolio' ),
+									'label'          => __( 'Display Slider on a Static Front Page', 'ayaportfolio' ),
 									'section'        => 'ayaportfolio_slider_section',
 									'settings'       => 'ayaportfolio_slider_display',
 									'type'           => 'checkbox',
