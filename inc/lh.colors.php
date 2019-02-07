@@ -65,7 +65,7 @@ class AgncyColors
         $cls = get_called_class();
         // late-static-bound class name.
         if ( !isset( self::$instances[$cls] ) ) {
-            self::$instances[$cls] = new static();
+            self::$instances[$cls] = new self();
         }
         return self::$instances[$cls];
     }

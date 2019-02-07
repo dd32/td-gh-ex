@@ -177,17 +177,9 @@ class AgncyAdminPages {
 
 		$buttons[] = new AgncyOnboardingButton(
 			array(
-				'label'   => __( 'Subscribe on YouTube', 'agncy' ),
-				'target'  => 'https://www.youtube.com/c/WPMunich',
-				'classes' => array( 'tertiary', 'tutorials' ),
-			)
-		);
-
-		$buttons[] = new AgncyOnboardingButton(
-			array(
-				'label'   => __( 'Like us on Facebook', 'agncy' ),
-				'target'  => 'https://www.facebook.com/wpmunich/',
-				'classes' => array( 'tertiary', 'social' ),
+				'label'   => __( 'Documentation', 'agncy' ),
+				'target'  => 'https://help.wp-munich.com',
+				'classes' => array( 'secondary', 'docs' ),
 			)
 		);
 

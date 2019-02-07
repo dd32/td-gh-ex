@@ -18,7 +18,7 @@ if ( !defined( 'AGNCY_JS_URL' ) ) {
     define( 'AGNCY_JS_URL', esc_url( get_template_directory_uri() ) );
 }
 if ( !defined( 'AGNCY_VERSION' ) ) {
-    define( 'AGNCY_VERSION', '1.5.2' );
+    define( 'AGNCY_VERSION', '1.5.3' );
 }
 if ( !defined( 'AGNCY_DEFAULT_PRIMARY' ) ) {
     define( 'AGNCY_DEFAULT_PRIMARY', '#225378' );
@@ -102,7 +102,7 @@ function agncy_enqueue_scripts()
         'style',
         AGNCY_THEME_URL . '/style.min.css',
         array( 'font-awesome' ),
-        '1.5.2',
+        '1.5.3',
         'all'
     );
     /*
@@ -115,7 +115,7 @@ function agncy_enqueue_scripts()
         'main',
         AGNCY_JS_URL . '/js/script.min.js',
         array( 'jquery' ),
-        '1.5.2',
+        '1.5.3',
         true
     );
     wp_enqueue_script( 'main' );
@@ -134,7 +134,7 @@ function agncy_enqueue_scripts()
     wp_register_script(
         'agncy_font',
         AGNCY_JS_URL . '/js/fonts.min.js',
-        '1.5.2',
+        '1.5.3',
         false
     );
     wp_enqueue_script( 'agncy_font' );
@@ -175,7 +175,7 @@ function agncy_admin_scripts()
             'wp-date',
             'wp-edit-post'
         ),
-            '1.5.2',
+            '1.5.3',
             true
         );
         wp_enqueue_script( 'admin' );
@@ -644,3 +644,20 @@ function agncy_register_required_plugins()
 }
 
 add_action( 'tgmpa_register', 'agncy_register_required_plugins' );
+if ( !function_exists( 'get_called_class' ) ) {
+    /**
+     * Polyfill for 'get_called_class' in 5.2
+     */
+    function get_called_class()
+    {
+        foreach ( debug_backtrace() as $trace ) {
+            if ( isset( $trace['object'] ) ) {
+                if ( $trace['object'] instanceof $trace['class'] ) {
+                    return get_class( $trace['object'] );
+                }
+            }
+        }
+        return false;
+    }
+
+}
