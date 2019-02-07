@@ -392,7 +392,7 @@ if ( ! function_exists( 'ayawild_customize_register' ) ) :
 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayawild_slider_display',
 								array(
-									'label'          => __( 'Display Slider', 'ayawild' ),
+									'label'          => __( 'Display Slider on a Static Front Page', 'ayawild' ),
 									'section'        => 'ayawild_slider_section',
 									'settings'       => 'ayawild_slider_display',
 									'type'           => 'checkbox',
