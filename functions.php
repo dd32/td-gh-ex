@@ -506,7 +506,7 @@ if ( ! function_exists( 'ayafreelance_customize_register' ) ) :
 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayafreelance_slider_display',
 								array(
-									'label'          => __( 'Display Slider', 'ayafreelance' ),
+									'label'          => __( 'Display Slider on a Static Front Page', 'ayafreelance' ),
 									'section'        => 'ayafreelance_slider_section',
 									'settings'       => 'ayafreelance_slider_display',
 									'type'           => 'checkbox',
