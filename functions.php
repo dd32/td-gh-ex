@@ -500,7 +500,7 @@ if ( ! function_exists( 'ayapsychology_customize_register' ) ) :
 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayapsychology_slider_display',
 								array(
-									'label'          => __( 'Display Slider', 'ayapsychology' ),
+									'label'          => __( 'Display Slider on a Static Front Page', 'ayapsychology' ),
 									'section'        => 'ayapsychology_slider_section',
 									'settings'       => 'ayapsychology_slider_display',
 									'type'           => 'checkbox',

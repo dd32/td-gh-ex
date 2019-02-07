@@ -4,7 +4,7 @@ Description: AyaPsychology is fully Responsive WordPress Theme with Built-in Hom
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayapsychology
-Version: 1.0.6
+Version: 1.0.7
 Text Domain: ayapsychology
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -270,11 +270,16 @@ ul {
 
 .header-social-widget {
 	display:inline-block;
+	text-align:center;
 }
 
 .header-social-widget li {
-	margin-right:0;
+	margin-right:5px;
 	display:inline;
+}
+
+.header-social-widget li:last-of-type {
+	margin-right:0;
 }
 
 #header-top {
@@ -612,6 +617,175 @@ article,
 	text-decoration:none;
 }
 
+.github16:before {
+	content: "\f09b";
+}
+
+.github32:before {
+	content: "\f092";
+}
+
+.bitbucket16:before {
+	content: "\f171";
+}
+
+.bitbucket32:before {
+	content: "\f172";
+}
+
+.reddit16:before {
+	content: "\f1a1";
+}
+
+.reddit32:before {
+	content: "\f1a2";
+}
+
+.xing16:before {
+	content: "\f168";
+}
+
+.xing32:before {
+	content: "\f169";
+}
+
+.slack16:before,
+.slack32:before {
+	content: "\f198";
+}
+
+.wechat16:before,
+.wechat32:before {
+	content: "\f1d7";
+}
+
+.snapchat16:before {
+	content: "\f2ab";
+}
+
+.snapchat32:before {
+	content: "\f2ad";
+}
+
+.dribbble16:before,
+.dribbble32:before {
+	content: "\f17d";
+}
+
+.bandcamp16:before,
+.bandcamp32:before {
+	content: "\f2d5";
+}
+
+.lastfm16:before {
+	content: "\f202";
+}
+
+.lastfm32:before {
+	content: "\f203";
+}
+
+.soundcloud16:before,
+.soundcloud32:before {
+  content: "\f1be";
+}
+
+.vimeo16:before {
+	content: "\f27d";
+}
+
+.vimeo32:before {
+	content: "\f194";
+}
+
+.skype16:before,
+.skype32:before {
+	content: "\f17e";
+}
+
+.deviantart16:before,
+.deviantart32:before {
+  content: "\f1bd";
+}
+
+.yahoo16:before,
+.yahoo32:before {
+  content: "\f19e";
+}
+
+.amazon16:before,
+.amazon32:before {
+  content: "\f270";
+}
+
+.etsy16:before,
+.etsy32:before {
+  content: "\f2d7";
+}
+
+.foursquare16:before,
+.foursquare32:before {
+  content: "\f180";
+}
+
+.quora16:before,
+.quora32:before {
+  content: "\f2c4";
+}
+
+.yelp16:before,
+.yelp32:before {
+  content: "\f1e9";
+}
+
+.github16:before,
+.bitbucket16:before,
+.reddit16:before,
+.xing16:before,
+.slack16:before,
+.wechat16:before,
+.snapchat16:before,
+.dribbble16:before,
+.bandcamp16:before,
+.lastfm16:before,
+.soundcloud16:before,
+.vimeo16:before,
+.skype16:before,
+.deviantart16:before,
+.yahoo16:before,
+.amazon16:before,
+.etsy16:before,
+.foursquare16:before,
+.quora16:before,
+.yelp16:before {
+	font-family:'FontAwesome';
+	font-size: 16px;
+}
+
+.github32:before,
+.bitbucket32:before,
+.reddit32:before,
+.xing32:before,
+.slack32:before,
+.wechat32:before,
+.snapchat32:before,
+.dribbble32:before,
+.bandcamp32:before,
+.lastfm32:before,
+.vimeo32:before,
+.skype32:before,
+.deviantart32:before,
+.yahoo32:before,
+.soundcloud32:before,
+.amazon32:before,
+.etsy32:before,
+.foursquare32:before,
+.quora32:before,
+.yelp32:before {
+	font-family:'FontAwesome';
+	font-size: 32px;
+}
+
 .facebook16:before {
 	content: "\f09a";
 }
@@ -788,14 +962,14 @@ textarea {
 
 input[type="submit"],
 button {
-	font-size:14px;
+	font-size:16px;
 }
 
 input[type="submit"],
 button,
 .btn,
 #main .button {
-	padding:8px 12px;
+	padding:12px 16px;
 	text-decoration:none;
 	font-weight:normal;
 	border:none;
@@ -936,7 +1110,7 @@ blockquote, figure {
 /* homepage classes */
 #home-cols {
 	clear:both;
-	padding:0 2%;
+	padding:10px 2% 20px 2%;
 }
 
 #top-widget {
@@ -1726,6 +1900,15 @@ blockquote {
 	border-radius:45px;
 }
 
+.IN-widget button {
+	min-width:auto !important;
+	background-image:none !important;
+}
+
+.IN-widget {
+	vertical-align: unset !important;
+}
+
 .social-sharing-box {
 	clear:both;
 }
@@ -2167,13 +2350,13 @@ blockquote {
 
 	#contact-form input[type="text"],
 	#contact-form input[type="email"]{
-		width:145px;
-		padding-top:7px;
-		padding-bottom:7px;
+		padding-top:10px;
+		padding-bottom:10px;
+		margin-bottom:5px;
 	}
 	
 	#contact-form textarea {
-		width:465px;
+		width:100%;
 		display:block;
 		padding-top:7px;
 		padding-bottom:7px;
@@ -2182,18 +2365,24 @@ blockquote {
 
 	.contact-form-author,
 	.contact-form-email {
-		width:150px;
+		width:47%;
 		float:left;
 	}
 
-	.contact-form-author,
-	.contact-form-email	{
-		margin-right:10px;
+	.contact-form-author {
+		margin-right:4%;
 	}
 
+	.contact-form-author input,
+	.contact-form-email input,
+	.contact-form-subject input {
+		width:100%;
+	}
+
+	.contact-form-subject,
 	.contact-form-message {
 		clear:both;
-		width:100%;
+		width:98%;
 	}
 	
 	#sidebar #searchsubmit {
@@ -2272,6 +2461,10 @@ blockquote {
 	
 	.cart-contents-icon:hover {
 		text-decoration:none !important;
+	}
+	
+	#header-top {
+		padding-top:20px;
 	}
 	
 	.search-form-icon {
