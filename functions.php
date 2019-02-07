@@ -533,7 +533,7 @@ if ( ! function_exists( 'ayablogging_customize_register' ) ) :
 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayablogging_slider_display',
 								array(
-									'label'          => __( 'Display Slider', 'ayablogging' ),
+									'label'          => __( 'Display Slider on a Static Front Page', 'ayablogging' ),
 									'section'        => 'ayablogging_slider_section',
 									'settings'       => 'ayablogging_slider_display',
 									'type'           => 'checkbox',
