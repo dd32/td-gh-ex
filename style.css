@@ -5,7 +5,7 @@ Author: eDataStyle
 Author URI: https://edatastyle.com
 Description: Be Page is a Responsive Corporate One Page & Minimal Multipurpose WordPress Theme for Corporate, Portfolio, Personal, Agency, Business, Education, Restaurant, Wedding, Landing, Shop, Blog, Real estate, App landing, Travel or web agencies anything .It’s based on Bootstrap framework and HTML5/CSS3 technologies, with a minimal design, clean and elegant, fully responsive and customizable. Be page features full and seamless integration with Elementor Theme Builder – Free Drag and Drop page builder and Ultimate Addons. Quick and easy setup to create a portfolio and show your works and services. The Theme is optimized for smartphone and tablets, it provides a clear documentation and no coding knowledge is required. Check out Theme Support at https://edatastyle.com/dwqa-questions/ and Demo at https://eds.edatastyle.com/demo/be-page
 
-Version: 1.9
+Version: 2.0
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: be-page
@@ -4455,7 +4455,7 @@ section.section-skewed.section-bordered #home-slider:after {
 */
 @media only screen and (min-width: 992px) {
   #footer {
-    position: fixed;
+   /* position: fixed;*/
     left: 0;
     right: 0;
     bottom: 0;
@@ -8239,3 +8239,59 @@ figure{
 	  display:none;
     }
  }
+
+
+/*
+ be-feature-box
+*/
+.be-feature-box {
+	padding: 30px;
+	border-radius: 5px;
+	position: relative;
+	overflow: hidden;
+	border: 1px solid #f3f3f3;
+	margin:14px 0px;
+}
+.be-feature-box .box-wrp {
+	position: relative;
+	z-index: 999
+}
+.be-feature-box .box-wrp .be-icon i {
+	text-align: left;
+	font-size: 60px;
+	color: #2ed3ae;
+	font-weight: 600
+}
+.be-feature-box:before {
+	background: #fff;
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	transition: all .5s ease-in-out;
+	transition: all .5s ease-in-out;
+	-moz-transition: all .5s ease-in-out;
+	-ms-transition: all .5s ease-in-out;
+	-o-transition: all .5s ease-in-out;
+	-webkit-transition: all .5s ease-in-out
+}
+.be-feature-box:hover:before {
+	background: rgba(0,0,0,.7);
+	content: "";
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	-webkit-box-shadow: 0 0 30px 5px rgba(102,102,102,.25);
+	-moz-box-shadow: 0 0 30px 5px rgba(102,102,102,.25);
+	box-shadow: 0 0 30px 5px rgba(102,102,102,.25)
+}
+.be-feature-box:hover .box-wrp h3 {
+	color: #fff
+}
+.be-feature-box:hover .box-wrp {
+	color: #fff
+}

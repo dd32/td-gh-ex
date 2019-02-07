@@ -376,3 +376,14 @@ if ( ! function_exists( 'be_page_page_footer' ) ) :
 endif;
 
 
+add_action( 'wp_head', 'be_page_move_theme_down' );
+function be_page_move_theme_down() {
+  if ( is_admin_bar_showing() ) {
+    ?>
+    <style type="text/css">
+   		#navbar{ top:30px;}
+    </style>
+    <?php
+  }
+}
+

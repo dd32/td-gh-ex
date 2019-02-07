@@ -63,3 +63,14 @@ require get_template_directory() . '/inc/pro/admin-page.php';
 * Customizer .
 */
 require get_template_directory() . '/inc/customizer/customizer.php';
+
+
+/**
+* Widget Helper .
+*/
+require_once get_template_directory() . '/vendors/widgets-helper/class-widget-helper.php';
+
+/**
+* Theme Widgets .
+*/
+require_once get_template_directory() . '/inc/widgets.php';

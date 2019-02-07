@@ -75,7 +75,7 @@ jQuery(document).ready(function($) {
 	
 	$window
 	.on('resize', function() {
-		$('.footer-spacer').css('height', $('#footer').height());
+		//$('.footer-spacer').css('height', $('#footer').height());
 	})
 	.trigger('resize');
 	 $($navBar).find('li.menu-item-has-children').append('<i class="fa fa-angle-down toggle-sub-menu" aria-hidden="true"></i>');

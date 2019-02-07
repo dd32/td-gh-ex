@@ -11,7 +11,7 @@
 
 ?>  
 
-<div class="footer-spacer"></div>
+<!--<div class="footer-spacer"></div>-->
 </div><!-- #wrapper -->
 <?php wp_footer(); ?>
 

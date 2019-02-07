@@ -61,6 +61,10 @@ Kirki, Copyright © 2016 Aristeides Stathopoulos:
 Source: https://github.com/aristath/kirki
 License: MIT License, http://www.opensource.org/licenses/MIT
 
+WordPress Widgets Helper:
+Source: https://github.com/sksmatt/WordPress-Widgets-Helper-Class
+License: GPLv2 or later
+
 
 == Google Fonts ==
 Source Sans Pro
@@ -82,9 +86,12 @@ CC0 Public Domain
 
 == Changelog ==
 
+= 2.0 =
+* Review team feedbakc fixed
+* WordPress Widgets Helper
+
 = 1.9 =
 * Review team Feedback updated
-
 
 = 1.7 =
 * pixabay image revmoed
