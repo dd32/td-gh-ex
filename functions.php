@@ -507,7 +507,7 @@ if ( ! function_exists( 'ayageek_customize_register' ) ) :
 
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayageek_slider_display',
 								array(
-									'label'          => __( 'Display Slider', 'ayageek' ),
+									'label'          => __( 'Display Slider on a Static Front Page', 'ayageek' ),
 									'section'        => 'ayageek_slider_section',
 									'settings'       => 'ayageek_slider_display',
 									'type'           => 'checkbox',
