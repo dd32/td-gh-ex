@@ -83,7 +83,13 @@ $slider_data .= '}';
 						?>
 
 						<?php if( $repeater_item->title !== '' ) : ?>
-						<h2 class="slider-title"><?php echo $repeater_item->title; ?></h2>
+							<?php if ( $repeater_item->link !== '' ) : ?>
+								<h2 class="slider-title">
+									<a href="<?php echo esc_url( $repeater_item->link ); ?>"><?php echo $repeater_item->title; ?></a>	
+								</h2>
+							<?php else: ?>
+								<h2 class="slider-title"><?php echo $repeater_item->title; ?></h2>
+							<?php endif; ?>
 						<?php endif; ?>
 
 						<?php if ( $repeater_item->text !== '' ): ?>							

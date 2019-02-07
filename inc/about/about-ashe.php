@@ -308,8 +308,8 @@ function ashe_about_page_output() {
 				// Recent Posts Widget
 				ashe_recommended_plugin( 'recent-posts-widget-with-thumbnails', 'recent-posts-widget-with-thumbnails' );
 
-				// Instagram Widget
-				ashe_recommended_plugin( 'wp-instagram-widget', 'wp-instagram-widget' );
+				// Meks Easy Instagram Widget
+				ashe_recommended_plugin( 'meks-easy-instagram-widget', 'meks-easy-instagram-widget' );
 
 				// Ajax Thumbnail Rebuild
 				ashe_recommended_plugin( 'ajax-thumbnail-rebuild', 'ajax-thumbnail-rebuild' );
@@ -597,12 +597,12 @@ function ashe_import_demo_files_filter( $default_text ) {
 	}
 
 	// Activate WPIW Plugin After Import
-	if ( is_plugin_active( 'wp-instagram-widget/wp-instagram-widget.php' ) ) {
+	if ( is_plugin_active( 'meks-easy-instagram-widget/meks-easy-instagram-widget.php' ) ) {
 		$wpiw_plugin_link = '';
-	} elseif ( ashe_check_installed_plugin( 'wp-instagram-widget', 'wp-instagram-widget' ) ) {
-		$wpiw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=wp-instagram-widget/wp-instagram-widget.php' ), 'activate-plugin_wp-instagram-widget/wp-instagram-widget.php' ) ) .'" target="_blank">'. esc_html__( 'Activate - WP Instagram Widget', 'ashe' ) .'</a></li>';
+	} elseif ( ashe_check_installed_plugin( 'meks-easy-instagram-widget', 'meks-easy-instagram-widget' ) ) {
+		$wpiw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=meks-easy-instagram-widget/meks-easy-instagram-widget.php' ), 'activate-plugin_meks-easy-instagram-widget/meks-easy-instagram-widget.php' ) ) .'" target="_blank">'. esc_html__( 'Activate - WP Instagram Widget', 'ashe' ) .'</a></li>';
 	} else {
-		$wpiw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=wp-instagram-widget' ), 'install-plugin_wp-instagram-widget' ) ) .'" target="_blank">'. esc_html__( 'Install/Activate - WP Instagram Widget', 'ashe' ) .'</a></li>';
+		$wpiw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=meks-easy-instagram-widget' ), 'install-plugin_meks-easy-instagram-widget' ) ) .'" target="_blank">'. esc_html__( 'Install/Activate - WP Instagram Widget', 'ashe' ) .'</a></li>';
 	}
 
 	$activate_plugins_notice = '';
@@ -658,12 +658,12 @@ function ashe_enqueue_about_page_scripts($hook) {
 	}
 
 	// enqueue CSS
-	wp_enqueue_style( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/css/about-ashe-page.css' ), array(), '1.8' );
+	wp_enqueue_style( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/css/about-ashe-page.css' ), array(), '1.8.1' );
 
 	// Demo Import
 	wp_enqueue_script( 'plugin-install' );
 	wp_enqueue_script( 'updates' );
-	wp_enqueue_script( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/js/about-ashe-page.js' ), array(), '1.8' );
+	wp_enqueue_script( 'ashe-about-page-css', get_theme_file_uri( '/inc/about/js/about-ashe-page.js' ), array(), '1.8.1' );
 
 }
 add_action( 'admin_enqueue_scripts', 'ashe_enqueue_about_page_scripts' );
