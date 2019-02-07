@@ -1,8 +1,10 @@
 == Arise ==
 Contributors: themefreesia
 Tags: threaded-comments, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, sticky-post, theme-options, translation-ready, post-formats, footer-widgets, blog, e-commerce, education, entertainment, news, portfolio
-Requires at least: 4.0
-Tested up to: 4.8.1
+Requires at least: 4.9
+Tested up to: 4.9.8
+Requires PHP: 7.0
+Stable tag: 2.1.3.7
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -87,6 +89,11 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 	- Google Fonts - Apache License, version 2.0
 
+	- TRT Customize Pro -
+		https://github.com/justintadlock/trt-customizer-pro#copyright-and-license
+		Copyright: Justin Tadlock.
+		Licensed: GNU GPL, version 2 or later.
+
 
 
 All the theme files and other un-specified scripts are licensed under GNU General Public License Version 3 or later and can be used or modify for both commercial and personal use.
@@ -110,7 +117,12 @@ All the theme files and other un-specified scripts are licensed under GNU Genera
 =================================================================================
 
 == CHANGE LOG ==
-== 2.1.3.6 =
+== 2.1.3.7 =
+	- Update - Requires PHP field added
+				- Missing license key added
+	- Fix - Sanitization issue fixed
+
+= 2.1.3.6 =
 	- Fix - SEO issue fixed on displaying Logo Only
 			- Page Title SEO fixed
 

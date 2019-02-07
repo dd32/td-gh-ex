@@ -86,7 +86,7 @@ class arise_parallax_video_widget extends WP_Widget {
 					$video_links = get_the_content();
 					$attachment_id = get_post_thumbnail_id();
 			$image_attributes = wp_get_attachment_image_src($attachment_id,'slider'); ?>
-			<div class="parallax_video_content" <?php if (has_post_thumbnail()) { ?> style="background-image:url('<?php echo $image_attributes[0]; ?>');" <?php } ?> >
+			<div class="parallax_video_content" <?php if (has_post_thumbnail()) { ?> style="background-image:url('<?php echo esc_url($image_attributes[0]); ?>');" <?php } ?> >
 				<div class="container clearfix">
 					<div class="column">
 						<div class="two-column">

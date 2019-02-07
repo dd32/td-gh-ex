@@ -75,16 +75,16 @@
 
 		if( $post_type == 'latest' ) {
 			$get_featured_posts = new WP_Query( array(
-				'posts_per_page' 			=> $number,
+				'posts_per_page' 			=> absint($number),
 				'post_type'					=> 'post',
 				'ignore_sticky_posts' 	=> true
 			) );
 		}
 		else {
 			$get_featured_posts = new WP_Query( array(
-				'posts_per_page' 			=> $number,
+				'posts_per_page' 			=> absint($number),
 				'post_type'					=> 'post',
-				'category__in'				=> $category
+				'category__in'				=> esc_attr($category)
 			) );
 		}
 		echo '<!-- Latest Blog Widget ============================================= -->' .$before_widget;

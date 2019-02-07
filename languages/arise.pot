@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: arise 1.0\n"
-"POT-Creation-Date: 2017-05-01 19:41+0545\n"
+"POT-Creation-Date: 2018-10-09 06:52+0545\n"
 "PO-Revision-Date: 2015-08-07 08:34+0545\n"
 "Last-Translator: \n"
 "Language-Team: ThemeFreesia <themefreesia@gmail.com>\n"
@@ -15,7 +15,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __e;__;esc_attr__;esc_attr_e;_x;_n;esc_html__;"
-"esc_html_e;_e\n"
+"esc_html_e;_e;_nx\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:28
@@ -24,6 +24,11 @@ msgstr ""
 
 #: 404.php:31
 msgid "It looks like nothing was found at this location. Maybe try a search?"
+msgstr ""
+
+#: comments.php:18
+#, php-format
+msgid "One thought on &ldquo;%2$s&rdquo;"
 msgstr ""
 
 #: comments.php:39
@@ -58,7 +63,8 @@ msgstr ""
 msgid ", "
 msgstr ""
 
-#: content.php:78 inc/settings/arise-functions.php:186
+#: content.php:78 inc/customizer/arise-default-values.php:26
+#: inc/settings/arise-functions.php:196
 #: inc/widgets/widgets-functions/portfolio-widgets.php:121
 #: inc/widgets/widgets-functions/post-widgets.php:144
 #: page-templates/arise-corporate.php:66
@@ -66,6 +72,26 @@ msgid "Read More"
 msgstr ""
 
 #: footer.php:85
+msgid "Designed by:"
+msgstr ""
+
+#: footer.php:85
+msgid "Themefreesia"
+msgstr ""
+
+#: footer.php:85
+msgid "Theme Freesia"
+msgstr ""
+
+#: footer.php:86
+msgid "Powered by:"
+msgstr ""
+
+#: footer.php:86
+msgid "WordPress"
+msgstr ""
+
+#: footer.php:95
 msgid "Go to Top"
 msgstr ""
 
@@ -81,32 +107,36 @@ msgstr ""
 msgid "Add Social Icons Only"
 msgstr ""
 
-#: functions.php:132 functions.php:133
+#: functions.php:131 functions.php:132
 msgid "Review Arise"
 msgstr ""
 
-#: functions.php:135 functions.php:136
+#: functions.php:134 functions.php:135
 msgid "Theme Instructions"
 msgstr ""
 
-#: functions.php:138
+#: functions.php:137
 msgid "Support Ticket"
 msgstr ""
 
-#: functions.php:139
+#: functions.php:138
 msgid "Forum"
 msgstr ""
 
-#: functions.php:141 functions.php:142
+#: functions.php:140 functions.php:141
 msgid "View Demo"
 msgstr ""
 
-#: functions.php:144 functions.php:145
+#: functions.php:143 functions.php:144
 msgid "View ThemeFreesia Themes"
 msgstr ""
 
-#: functions.php:151
+#: functions.php:150
 msgid "About Arise"
+msgstr ""
+
+#: inc/customizer/arise-default-values.php:33
+msgid "Search &hellip;"
 msgstr ""
 
 #: inc/customizer/functions/design-options.php:11
@@ -421,26 +451,6 @@ msgstr ""
 
 #: inc/customizer/functions/theme-options.php:317
 msgid "Static Front Page"
-msgstr ""
-
-#: inc/footer-details.php:17
-msgid "Designed by:"
-msgstr ""
-
-#: inc/footer-details.php:17
-msgid "Themefreesia"
-msgstr ""
-
-#: inc/footer-details.php:17
-msgid "Theme Freesia"
-msgstr ""
-
-#: inc/footer-details.php:18
-msgid "Powered by:"
-msgstr ""
-
-#: inc/footer-details.php:18
-msgid "WordPress"
 msgstr ""
 
 #: inc/settings/arise-common-functions.php:15

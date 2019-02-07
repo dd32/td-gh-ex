@@ -181,7 +181,7 @@ function arise_page_sliders() {
 				$remove_link = $arise_settings['arise_slider_link'];
 					if($remove_link == 0){
 						if ($title_attribute != '') {
-							$arise_page_sliders_display .= '<h2 class="slider-title"><a href="'.get_permalink().'" title="'.the_title('', '', false).'" rel="bookmark">'.get_the_title().'</a></h2><!-- .slider-title -->';
+							$arise_page_sliders_display .= '<h2 class="slider-title"><a href="'.esc_url(get_permalink()).'" title="'.the_title('', '', false).'" rel="bookmark">'.get_the_title().'</a></h2><!-- .slider-title -->';
 						}
 					}else{
 						$arise_page_sliders_display .= '<h2 class="slider-title">'.get_the_title().'</h2><!-- .slider-title -->';
@@ -193,9 +193,9 @@ function arise_page_sliders() {
 						$arise_page_sliders_display .= '<div class="slider-buttons">';
 						if($arise_settings['arise_slider_button'] == 0){
 							if($excerpt_text == '' || $excerpt_text == 'Read More') :
-								$arise_page_sliders_display 	.= '<a title='.'"'.get_the_title(). '"'. ' '.'href="'.get_permalink().'"'.' class="btn-default vivid">'.__('Read More', 'arise').'</a>';
+								$arise_page_sliders_display 	.= '<a title='.'"'.get_the_title(). '"'. ' '.'href="'.esc_url(get_permalink()).'"'.' class="btn-default vivid">'.__('Read More', 'arise').'</a>';
 							else:
-							$arise_page_sliders_display 	.= '<a title='.'"'.get_the_title(). '"'. ' '.'href="'.get_permalink().'"'.' class="btn-default vivid">'.$arise_settings[ 'arise_tag_text' ].'</a>';
+							$arise_page_sliders_display 	.= '<a title='.'"'.get_the_title(). '"'. ' '.'href="'.esc_url(get_permalink()).'"'.' class="btn-default vivid">'.$arise_settings[ 'arise_tag_text' ].'</a>';
 							endif;
 								}
 							if(!empty($slider_custom_text)){

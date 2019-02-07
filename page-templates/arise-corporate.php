@@ -28,7 +28,7 @@ $arise_settings = arise_get_theme_options();
 				$arise_features 	.= '<section class="our_feature">
 						<div class="container clearfix">';
 						$get_featured_posts 		= new WP_Query(array(
-						'posts_per_page'      	=> $arise_settings['arise_total_features'],
+						'posts_per_page'      	=> absint($arise_settings['arise_total_features']),
 						'post_type'           	=> array('page'),
 						'post__in'            	=> $arise_list_page,
 						'orderby'             	=> 'post__in',
@@ -47,11 +47,11 @@ $arise_settings = arise_get_theme_options();
 							$excerpt               	 	 = get_the_excerpt();
 					$arise_features .= '<div class="three-column">';
 					if ($image_attributes) {
-						$arise_features 	.= '<a class="feature-icon" href="'.get_permalink().'" title="'.the_title('', '', false).'"' .' alt="'.get_permalink().'">'.get_the_post_thumbnail($post->ID, 'thumbnail').'</a>';
+						$arise_features 	.= '<a class="feature-icon" href="'.esc_url(get_permalink()).'" title="'.the_title('', '', false).'"' .' alt="'.esc_url(get_permalink()).'">'.get_the_post_thumbnail($post->ID, 'thumbnail').'</a>';
 					}
 					$arise_features 	.= '<article>';
 					if ($title_attribute != '') {
-								$arise_features .= '<h3 class="feature-title"><a href="'.get_permalink().'" title="'.the_title('', '', false).'" rel="bookmark">'.get_the_title().'</a></h3>';
+								$arise_features .= '<h3 class="feature-title"><a href="'.esc_url(get_permalink()).'" title="'.the_title('', '', false).'" rel="bookmark">'.get_the_title().'</a></h3>';
 					}
 					if ($excerpt != '') {
 						$excerpt_text = $arise_settings['arise_tag_text'];
@@ -63,9 +63,9 @@ $arise_settings = arise_get_theme_options();
 					if(strlen($excerpt) < strlen($content)){
 						$excerpt_text = $arise_settings['arise_tag_text'];
 						if($excerpt_text == '' || $excerpt_text == 'Read More') :
-							$arise_features 	.= '<a title='.'"'.get_the_title(). '"'. ' '.'href="'.get_permalink().'"'.' class="more-link">'.__('Read More', 'arise').'</a>';
+							$arise_features 	.= '<a title='.'"'.get_the_title(). '"'. ' '.'href="'.esc_url(get_permalink()).'"'.' class="more-link">'.__('Read More', 'arise').'</a>';
 						else:
-						$arise_features 	.= '<a title='.'"'.get_the_title(). '"'. ' '.'href="'.get_permalink().'"'.' class="more-link">'.$arise_settings[ 'arise_tag_text' ].'</a>';
+						$arise_features 	.= '<a title='.'"'.get_the_title(). '"'. ' '.'href="'.esc_url(get_permalink()).'"'.' class="more-link">'.esc_attr($arise_settings[ 'arise_tag_text' ]).'</a>';
 						endif;
 					}
 					$arise_features 	.='</div><!-- .column -->';

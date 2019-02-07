@@ -45,9 +45,9 @@ class arise_widget_testimonial extends WP_Widget {
 		$post_type = isset( $instance[ 'post_type' ] ) ? $instance[ 'post_type' ] : 'latest' ;
 		$category = isset( $instance[ 'category' ] ) ? $instance[ 'category' ] : '';
 			$get_featured_posts = new WP_Query( array(
-				'posts_per_page' 			=> $number,
+				'posts_per_page' 			=> absint($number),
 				'post_type'					=> 'post',
-				'category__in'				=> $category,
+				'category__in'				=> esc_attr($category),
 				'ignore_sticky_posts' 	=> true
 			) );
 		echo '<!-- Testimonial Widget ============================================= -->' .$before_widget; ?>

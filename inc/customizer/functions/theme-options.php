@@ -114,7 +114,7 @@
 	));
 	$wp_customize->add_setting('arise_theme_options[arise_Header_description]', array(
 		'default' =>'',
-		'sanitize_callback' => 'esc_textarea',
+		'sanitize_callback' => 'sanitize_textarea_field',
 		'type' => 'option',
 		'capability' => 'manage_options'
 	));
