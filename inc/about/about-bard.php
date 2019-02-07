@@ -304,11 +304,8 @@ function bard_about_page_output() {
 				// Recent Posts Widget
 				bard_recommended_plugin( 'recent-posts-widget-with-thumbnails', 'recent-posts-widget-with-thumbnails' );
 
-				// Instagram Slider
-				bard_recommended_plugin( 'instagram-slider-widget', 'instaram_slider' );
-
-				// Instagram Widget
-				bard_recommended_plugin( 'wp-instagram-widget', 'wp-instagram-widget' );
+				// Meks Easy Instagram Widget
+				bard_recommended_plugin( 'meks-easy-instagram-widget', 'meks-easy-instagram-widget' );
 
 				// Ajax Thumbnail Rebuild
 				bard_recommended_plugin( 'ajax-thumbnail-rebuild', 'ajax-thumbnail-rebuild' );
@@ -606,12 +603,12 @@ function bard_import_demo_files_filter( $default_text ) {
 	}
 
 	// Activate ISW Plugin After Import
-	if ( is_plugin_active( 'instagram-slider-widget/instaram_slider.php' ) ) {
+	if ( is_plugin_active( 'meks-easy-instagram-widget/meks-easy-instagram-widget.php' ) ) {
 		$isw_plugin_link = '';
-	} elseif ( bard_check_installed_plugin( 'instagram-slider-widget', 'instaram_slider' ) ) {
-		$isw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=instagram-slider-widget/instaram_slider.php' ), 'activate-plugin_instagram-slider-widget/instaram_slider.php' ) ) .'" target="_blank">'. esc_html__( 'Activate - Instagram Slider Widget', 'bard' ) .'</a></li>';
+	} elseif ( bard_check_installed_plugin( 'meks-easy-instagram-widget', 'meks-easy-instagram-widget' ) ) {
+		$isw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'plugins.php?action=activate&plugin=meks-easy-instagram-widget/meks-easy-instagram-widget.php' ), 'activate-plugin_meks-easy-instagram-widget/meks-easy-instagram-widget.php' ) ) .'" target="_blank">'. esc_html__( 'Activate - Instagram Slider Widget', 'bard' ) .'</a></li>';
 	} else {
-		$isw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=instagram-slider-widget' ), 'install-plugin_instagram-slider-widget' ) ) .'" target="_blank">'. esc_html__( 'Install/Activate - Instagram Slider Widget', 'bard' ) .'</a></li>';
+		$isw_plugin_link = '<li><a href="'. esc_url( wp_nonce_url( self_admin_url( 'update.php?action=install-plugin&plugin=meks-easy-instagram-widget' ), 'install-plugin_meks-easy-instagram-widget' ) ) .'" target="_blank">'. esc_html__( 'Install/Activate - Instagram Slider Widget', 'bard' ) .'</a></li>';
 	}
 
 	$activate_plugins_notice = '';
