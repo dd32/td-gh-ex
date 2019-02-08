@@ -838,8 +838,7 @@ body.woocommerce-cart .woocommerce_cart_details .line:before {
 .woocommerce .cart input.button {
     float: right;
     width: 32%;
-	padding:10px 20px;
-	color:#fff;
+	padding:8px 20px;
 	font-weight:bold;
 	-moz-border-radius: 0;
     -webkit-border-radius: 0;

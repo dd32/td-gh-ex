@@ -3,7 +3,7 @@ Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, blog, e-commerce, photography
 Requires at least: 4.0
 Tested up to: 5.0.3
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,7 +19,7 @@ Avventura Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
 
-= 1.0.0 =
+= 1.0.1 =
 * Initial version
 
 == Resources ==
