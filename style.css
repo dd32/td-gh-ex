@@ -5,7 +5,7 @@ Author: eDataStyle
 Author URI: https://edatastyle.com
 Description: Be Page is a Responsive Corporate One Page & Minimal Multipurpose WordPress Theme for Corporate, Portfolio, Personal, Agency, Business, Education, Restaurant, Wedding, Landing, Shop, Blog, Real estate, App landing, Travel or web agencies anything .It’s based on Bootstrap framework and HTML5/CSS3 technologies, with a minimal design, clean and elegant, fully responsive and customizable. Be page features full and seamless integration with Elementor Theme Builder – Free Drag and Drop page builder and Ultimate Addons. Quick and easy setup to create a portfolio and show your works and services. The Theme is optimized for smartphone and tablets, it provides a clear documentation and no coding knowledge is required. Check out Theme Support at https://edatastyle.com/dwqa-questions/ and Demo at https://eds.edatastyle.com/demo/be-page
 
-Version: 2.0
+Version: 2.1
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: be-page
@@ -365,8 +365,9 @@ section.page-title {
   background:#FFF;
 }
 section.slider-widgets {
- 
-  background:#FFF;
+    padding-top:0px;
+    padding-bottom: 0px;
+	background-color: #282E34;
 }
 section.page-title.parallax-section {
  

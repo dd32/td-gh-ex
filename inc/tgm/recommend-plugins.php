@@ -67,8 +67,8 @@ function be_page_register_required_plugins() {
 		),
 		
 		array(
-			'name'        => 'MetaSlider',
-			'slug'        => 'ml-slider',
+			'name'        => 'Smart Slider 3',
+			'slug'        => 'smart-slider-3',
 			
 		),
 		array(
