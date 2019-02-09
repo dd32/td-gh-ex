@@ -1,10 +1,10 @@
 === Bayleaf ===
 
 Contributors: vedathemes
-tags: grid-layout, custom-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, food-and-drink
+tags: Tags: grid-layout, custom-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, block-styles, wide-blocks, food-and-drink
 Requires at least: 4.7
 Tested up to: 5.0.3
-Stable tag: 1.2
+Stable tag: 1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,12 @@ Bayleaf WordPress theme uses Google Fonts for your website by default. Fonts and
 
 == Changelog ==
 
+= 1.3 =
+* Added compatibility support for vasious popular wp plugins
+* Added new display posts styles
+* Added WooCommerce support
+* Show related posts after single post content.
+
 = 1.2 =
 * Javascript performance optimization
 * Modify CSS animations
@@ -40,6 +46,9 @@ Bayleaf WordPress theme uses Google Fonts for your website by default. Fonts and
 
 == Upgrade Notice ==
 
+= 1.3 =
+* Upgrade to receive newly added features and compatibility.
+
 = 1.2 =
 * Upgrade to receive performance optimization.
 
@@ -53,12 +62,10 @@ Bayleaf WordPress theme uses Google Fonts for your website by default. Fonts and
 * Icomoon SVG icons https://icomoon.io, (C) Roonas, [GPL / CC BY 4.0](https://icomoon.io/icons-icomoon.html)
 * Feather SVG icons https://github.com/feathericons/feather, (C) Colebemis, [MIT](http://opensource.org/licenses/MIT)
 * Genericons Neue SVG icons https://github.com/Automattic/genericons-neue, (C) Automattic, [GPL](https://github.com/Automattic/genericons-neue/blob/master/LICENSE.md)
-* Image in screenshot https://pxhere.com/en/photo/1435829, (C) Dana Tentis, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-* Image in screenshot https://pxhere.com/en/photo/598790, (C) Dana Tentis, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-* Image in screenshot https://pxhere.com/en/photo/1009209, (C) pxhere, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-* Image in screenshot https://stocksnap.io/photo/OWUKI8EBBT, (C) Brooke Lark, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-* Image in screenshot https://www.publicdomainpictures.net/en/view-image.php?image=222395&picture=dessert-plate, (C) Jean Beaufort, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-* Image in screenshot https://www.publicdomainpictures.net/en/view-image.php?image=241397&picture=cream-puffs, (C) Jean Beaufort, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image in screenshot https://pxhere.com/en/photo/1440153, (C) rawpixel.com, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image in screenshot https://pxhere.com/en/photo/666692, (C) pxhere, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image in screenshot https://pxhere.com/en/photo/688119, (C) pxhere, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image in screenshot https://stocksnap.io/photo/UKIR16JH2V, (C) Brooke Lark, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 * Incorporates code from Twenty Fifteen WordPress Theme, (C) Automattic & WordPress.org, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * Incorporates code from Twenty Seventeen WordPress Theme, (C) Automattic & WordPress.org, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * Incorporates code from Stargazer WordPress Theme, (C) Justin Tadlock, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)

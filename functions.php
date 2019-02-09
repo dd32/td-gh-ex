@@ -200,6 +200,11 @@ function bayleaf_setup() {
 			'widgetlayer',
 			'display-posts',
 			'gutenberg',
+			'woocommerce',
+			'plugins-compat',
+			'widgetlayer-pro',
+			'display-posts-pro',
+			'related-posts',
 		)
 	);
 	foreach ( $addons as $addon ) {

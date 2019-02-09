@@ -4,11 +4,11 @@ Theme URI: https://vedathemes.com/blog/vedaitems/bayleaf/
 Author: Vedathemes
 Author URI: https://www.vedathemes.com
 Description: Bayleaf is designed for cooking or food blog with elegant visual look and feel. This is a modern & minimalist theme with color scheme customizer options and home page widget areas. This theme offers full width single column layout on single pages for distraction free display of your food recipe. Bayleaf is also compatible with Gutenberg.
-Version: 1.2
+Version: 1.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: bayleaf
-Tags: grid-layout, custom-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, food-and-drink
+Tags: grid-layout, custom-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, block-styles, wide-blocks, food-and-drink
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -3153,6 +3153,119 @@ body:not(.error404) .page-header-description {
 	        box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.14), 0 1px 18px 0 rgba(0, 0, 0, 0.12), 0 3px 5px -1px rgba(0, 0, 0, 0.2);
 }
 
+.index-view.post-type-archive-tribe_events .entry:not(.product) {
+	max-width: none;
+	-ms-flex-preferred-size: 100%;
+	flex-basis: 100%;
+}
+
+.index-view.post-type-archive-tribe_events .entry:not(.product) .entry-index-wrapper {
+	padding: 1.75em;
+}
+
+.tribe-events-tooltip {
+	padding: 20px;
+}
+
+.single-tribe_events .tribe-events-schedule h2 {
+	font-size: 1rem;
+	font-weight: normal;
+	line-height: 1.75;
+}
+
+.single-tribe_events .tribe-events-schedule .tribe-events-cost,
+.single-tribe_events .tribe-events-schedule h3 {
+	font-size: 0.8865rem;
+	font-weight: normal;
+	line-height: 1.97406;
+	display: block;
+	margin: 0;
+}
+
+.single-tribe_events h1.tribe-events-single-event-title {
+	font-size: 1.75rem;
+	line-height: 1.15;
+	margin-bottom: 0.875rem;
+}
+
+.single-tribe_events #tribe-events-header {
+	margin: 1.3125rem 0;
+}
+
+.single-tribe_events .tribe-events-venue-map {
+	margin: 20px 4% 20px 0;
+}
+
+#tribe-events-content {
+	margin-bottom: 0;
+}
+
+.entry-event {
+	font-size: 0.8865rem;
+	line-height: 1.97406;
+}
+
+.entry-event .event-schedule {
+	font-style: normal;
+	margin-bottom: 0.875rem;
+}
+
+.entry-event .event-venue {
+	font-weight: 700;
+}
+
+.entry-event .events-address {
+	font-style: normal;
+	margin-bottom: 0;
+}
+
+#tribe-events .tribe-events-content p {
+	margin-bottom: 1.75rem;
+}
+
+.has-featured-img {
+	position: relative;
+}
+
+.has-featured-img .custom-widget-thumbnail {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	overflow: hidden;
+	border-radius: 8px;
+}
+
+.has-featured-img .custom-widget-thumbnail .thumb-wrapper,
+.has-featured-img .custom-widget-thumbnail .thumb-wrapper img {
+	width: 100%;
+	height: 100%;
+}
+
+.has-featured-img .custom-widget-thumbnail .thumb-wrapper img {
+	-o-object-fit: cover;
+	   object-fit: cover;
+}
+
+.has-featured-img .custom-widget-content {
+	position: relative;
+	padding: 1.75rem;
+}
+
+.has-featured-img .custom-widget-content .custom-content-wrapper {
+	padding: 1.75rem;
+	border-radius: 8px;
+	background-color: rgba(255, 255, 255, 0.95);
+}
+
+.has-featured-img .custom-widget-content .custom-content-wrapper .mc4wp-form {
+	padding: 0;
+	background-color: transparent;
+}
+
+.has-featured-img .custom-widget-content .custom-content-wrapper .widget-title {
+	margin-bottom: 0.875rem;
+}
+
 @media only screen and (min-width: 640px) {
 	.gallery-item {
 		width: 33.3333%;
@@ -3307,7 +3420,7 @@ body:not(.error404) .page-header-description {
 		padding-left: 0.875rem;
 	}
 	.site-header + .widgetlayer {
-		padding-top: 0;
+		padding-top: 0.875rem;
 	}
 	.header-image {
 		height: calc( 39.0625vw - ( 0.390625 * 3.5rem ));
@@ -3462,8 +3575,8 @@ body:not(.error404) .page-header-description {
 	}
 	.widgetlayer .brick {
 		margin: 0;
-		padding-top: 1.75rem;
-		padding-bottom: 1.75rem;
+		padding-top: 0.875rem;
+		padding-bottom: 0.875rem;
 	}
 	.has-ww-line:after,
 	.has-fb-line:after {
@@ -3480,6 +3593,21 @@ body:not(.error404) .page-header-description {
 	}
 	.has-ww-line:after {
 		width: calc( 100% - 1.75rem);
+	}
+	.has-featured-img .custom-widget-thumbnail {
+		top: 0.875rem;
+		right: 0.875rem;
+		bottom: 0.875rem;
+		left: 0.875rem;
+	}
+	.has-featured-img.widescreen .custom-widget-content:after {
+		display: block;
+		clear: both;
+		content: "";
+	}
+	.has-featured-img.widescreen .custom-widget-content .custom-content-wrapper {
+		float: right;
+		width: 50%;
 	}
 }
 
@@ -3939,6 +4067,29 @@ body:not(.error404) .page-header-description {
 		-webkit-transform: none;
 		transform: none;
 		opacity: 1;
+	}
+	.single-tribe_events .tribe-events-schedule {
+		margin: 0 0 1.3125rem;
+		padding: 0 0 0.4375em;
+		border-bottom: 1px solid #e6e6e6;
+	}
+	.grid-view2 .dp-event .entry-index-wrapper .dp-featured-content {
+		-ms-flex-preferred-size: 40%;
+		flex-basis: 40%;
+	}
+	.grid-view2 .dp-event .entry-index-wrapper .sub-entry {
+		text-align: left;
+		-ms-flex-preferred-size: 60%;
+		flex-basis: 60%;
+	}
+	.has-featured-img.widescreen .custom-widget-content {
+		padding: 4.375rem 3.5rem;
+	}
+	.footer-widget-area .has-featured-img.widescreen .custom-widget-content {
+		padding: 0.875rem;
+	}
+	.has-featured-img.widescreen .custom-widget-content .custom-content-wrapper {
+		width: 40%;
 	}
 }
 
