@@ -3,7 +3,7 @@ Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, blog, e-commerce, photography
 Requires at least: 4.0
 Tested up to: 5.0.3
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -17,10 +17,18 @@ PDF documentation available on the link below:
 https://demo.themeinprogress.com/anna/anna-lite-documentation.pdf
 
 Created by ThemeinProgress, http://www.themeinprogress.com
-Anna Lite WordPress Theme, Copyright 2018 ThemeinProgress.
+Anna Lite WordPress Theme, Copyright 2019 ThemeinProgress.
 Anna Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.0.4 =
+Release date - February, 09 - 2019
+
+* Fixed - Instagram embed size
+* Updated - readme.txt file
+* Updated - screenshot.png file
+* Edit - Code optimized
 
 = 1.0.3 =
 Release date - January, 15 - 2019
@@ -33,11 +41,11 @@ Release date - January, 15 - 2019
 
 == Resources ==
 
-Screenshot images By Pixabay - https://www.pixabay.com
-* Featured image : https://pixabay.com/en/bridge-golden-light-mystical-19513/ by Larisa-K ( https://pixabay.com/en/users/Larisa-K-1107275/ ) - CC0
-* Featured image : https://pixabay.com/en/bridge-japanese-garden-arch-park-53769/ by JamesDeMers ( https://pixabay.com/en/users/JamesDeMers-3416/ ) - CC0
-* Featured image : https://pixabay.com/en/mountain-landscape-mountains-2031539/ by composita ( https://pixabay.com/en/users/composita-4384506/ ) - CC0
-* Featured image : https://pixabay.com/en/holiday-travel-vacation-summer-2880261/ by veerasantinithi ( https://pixabay.com/en/users/veerasantinithi-6722948/ ) - CC0
+Screenshot images By pxhere - https://www.pxhere.com
+* Featured image : https://pxhere.com/it/photo/1571887 by cadfka27 ( https://pxhere.com/it/photographer/2043675 ) - CC0
+* Featured image : https://pxhere.com/it/photo/1432895 by An Min ( https://pxhere.com/it/photographer/366822 ) - CC0
+* Featured image : https://pxhere.com/it/photo/1431119 by rawpixel.com ( https://pxhere.com/it/photographer/795663 ) - CC0
+* Featured image : https://pxhere.com/it/photo/1435819 by adiceles ( https://pxhere.com/it/photographer/1059055 ) - CC0
 
 Font Awesome By Dave Gandy - http://fortawesome.github.io/Font-Awesome/
 ** Font License under SIL OFL 1.1 - http://scripts.sil.org/OFL ( Applies to all desktop and webfont files in the following directory: /anna-lite/assets/fonts/ )

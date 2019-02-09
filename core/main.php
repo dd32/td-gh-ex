@@ -621,8 +621,6 @@ if (!function_exists('anna_lite_scripts_styles')) {
 
 		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 		
-		wp_enqueue_script('jquery');
-		 
 		wp_enqueue_script('anna-lite-html5shiv', get_template_directory_uri().'/assets/scripts/html5shiv.js', FALSE, '3.7.3');
 		wp_script_add_data('anna-lite-html5shiv', 'conditional', 'IE 8' );
 		wp_enqueue_script('anna-lite-selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr.js', FALSE, '1.0.3b');

@@ -263,6 +263,10 @@ span.button:hover {
 	height:auto;
 }
 
+#wrapper iframe.instagram-media {
+	height:100%;
+}
+
 /* ===============================================
    HEADER
    =============================================== */
