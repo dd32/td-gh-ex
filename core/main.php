@@ -622,17 +622,13 @@ if (!function_exists('avventura_lite_scripts_styles')) {
 
 		wp_enqueue_style( 'avventura-lite-' . get_theme_mod('avventura_lite_skin', 'orange') , get_template_directory_uri() . '/assets/skins/' . get_theme_mod('avventura_lite_skin', 'orange') . '.css', array( 'avventura-lite-template' ), '1.0.0' ); 
 
-		wp_enqueue_script('jquery-ui-core', array('jquery'));
-		wp_enqueue_script('jquery-ui-tabs', array('jquery'));
-		wp_enqueue_script('masonry', array('jquery') );
-
 		wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/assets/js/jquery.easing.js' , array('jquery'), '1.3', TRUE ); 
-		wp_enqueue_script( 'imagesLoaded', get_template_directory_uri() . '/assets/js/imagesloaded.js' , array('jquery'), '1.1.0', TRUE ); 
 		wp_enqueue_script( 'jquery-nicescroll', get_template_directory_uri() . '/assets/js/jquery.nicescroll.js' , array('jquery'), '3.7.6', TRUE ); 
 		wp_enqueue_script( 'prettyPhoto', get_template_directory_uri() . '/assets/js/prettyPhoto.js' , array('jquery'), '3.1.4', TRUE ); 
 		wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.js' , array('jquery'), '1.8.0', TRUE ); 
 		wp_enqueue_script( 'jquery-touchSwipe', get_template_directory_uri() . '/assets/js/jquery.touchSwipe.js' , array('jquery'), '1.6.18', TRUE ); 
-		wp_enqueue_script( 'avventura-lite-template', get_template_directory_uri() . '/assets/js/avventura-lite-template.js' , array('jquery'), '1.0.0', TRUE ); 
+		
+		wp_enqueue_script( 'avventura-lite-template',get_template_directory_uri() . '/assets/js/avventura-lite-template.js',array('jquery', 'imagesloaded', 'masonry'), '1.0.0', TRUE ); 
 
 		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 		

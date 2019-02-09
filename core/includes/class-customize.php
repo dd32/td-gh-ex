@@ -36,9 +36,7 @@ if( !class_exists( 'avventura_lite_customize' ) ) {
 			
 			if ( $pagenow == 'post.php' || $pagenow == 'post-new.php' || $pagenow == 'edit.php' ) {
 				wp_enqueue_style ( 'avventura-lite-panel',  $file_dir . 'css/panel.css', array(), '1.0.0' ); 
-				wp_enqueue_script( 'avventura-lite-script', $file_dir . 'js/panel.js', array('jquery'),'1.0.0',TRUE ); 
-				wp_enqueue_script( 'jquery-ui-core', array('jquery'));
-				wp_enqueue_script( 'jquery-ui-tabs', array('jquery'));
+				wp_enqueue_script( 'avventura-lite-script', $file_dir . 'js/panel.js', array('jquery', 'jquery-ui-core', 'jquery-ui-tabs'),'1.0.0', TRUE ); 
 			}
 			
 			if ( !get_user_meta( get_current_user_id(), 'AvventuraLite_AdminID_Notice_' . get_current_user_id(), TRUE ) ) {

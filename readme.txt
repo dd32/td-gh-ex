@@ -3,7 +3,7 @@ Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, blog, e-commerce, photography
 Requires at least: 4.0
 Tested up to: 5.0.3
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,11 @@ Avventura Lite WordPress Theme, Copyright 2019 ThemeinProgress.
 Avventura Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.0.2 =
+Release date - February, 09 - 2019
+
+* Edit - Code optimized
 
 = 1.0.1 =
 * Initial version
@@ -49,9 +54,6 @@ prettyPhoto By Stephane Caron - http://www.no-margin-for-errors.com/projects/pre
 
 Slick Slider By Ken Wheeler - https://github.com/kenwheeler/slick/
 * slick.css - Licensed under MIT license ( Applies to slick.css file in /avventura-lite/assets/css/ )
-
-imagesLoaded By desandro - https://imagesloaded.desandro.com/
-* imagesLoaded.js v4.1.4 - Licensed under MIT license ( Applies to imagesLoaded.js file in /avventura-lite/assets/js/ )
 
 jQuery Easing By George McGinley Smith - http://gsgd.co.uk/sandbox/jquery/easing/
 * jquery.easing.js v1.3 - Licensed under BSD License ( Applies to jquery.easing.js file in /avventura-lite/assets/js/ )
