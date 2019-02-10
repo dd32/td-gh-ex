@@ -29,7 +29,7 @@ class be_page_Admin {
 		add_action( 'admin_menu', array( $this, 'admin_menu' ) );
 		add_action( 'wp_loaded', array( __CLASS__, 'hide_notices' ) );
 		add_action( 'load-themes.php', array( $this, 'admin_notice' ) );
-		$this->prourl = apply_filters( 'be_page_pro_theme_url',esc_url( 'https://edatastyle.com/product/be-page' ));
+		$this->prourl = apply_filters( 'be_page_pro_theme_url',esc_url( 'https://edatastyle.com/product/be-page-pro/' ));
 	}
 
 	/**
@@ -133,7 +133,7 @@ class be_page_Admin {
 
 					<a href="<?php echo esc_url( $this->prourl ); ?>" class="button button-primary docs" target="_blank"><?php esc_html_e( 'View PRO version Demo', 'be-page' ); ?></a>
 
-					<a href="<?php echo esc_url( 'http://wordpress.org/support/view/theme-reviews/be_page?#postform' ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'be-page' ); ?></a>
+					<a href="<?php echo esc_url( 'https://wordpress.org/support/theme/be-page/reviews/' ); ?>" class="button button-secondary docs" target="_blank"><?php esc_html_e( 'Rate this theme', 'be-page' ); ?></a>
 				</p>
 				</div>
 

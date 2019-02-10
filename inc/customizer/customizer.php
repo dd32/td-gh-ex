@@ -31,7 +31,7 @@ function be_page_customize_register( $wp_customize ) {
 			array(
 				'title'    => esc_html__( 'Be Page ', 'be-page' ),
 				'pro_text' => esc_html__( 'Upgrade To Pro', 'be-page' ),
-				'pro_url'  => 'https://edatastyle.com/product/be-page',
+				'pro_url'  => 'https://edatastyle.com/product/be-page-pro/',
 				'priority'  => 1,
 			)
 		)
