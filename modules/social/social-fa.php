@@ -6,7 +6,7 @@
 
 <ul>
 	<?php
-	for ($i = 1; $i < 8; $i++) : 
+	for ($i = 1; $i < 7; $i++) : 
 		$social = get_theme_mod('adviso_social_'.$i);
 		$social_url = get_theme_mod('adviso_social_url'.$i);
 		if ( ($social != 'none') && ($social != '') && ($social_url !='' ) ) : ?>

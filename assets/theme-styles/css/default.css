@@ -129,6 +129,17 @@ body.page-template .section-title {
   bottom: 0;
   background: rgba(0, 0, 0, 0.6);
 }
+/*	Gutenberg Compatibility	*/
+body.sidebar-disabled .alignwide {
+  max-width: 100vw;
+  margin-left: -100px;
+  margin-right: -100px;
+}
+body.sidebar-disabled .alignfull {
+  max-width: 100vw;
+  margin-left: calc(-100vw/2 + 100%/2);
+  margin-right: calc(-100vw/2 + 100%/2);
+}
 #social-wrapper {
   display: flex;
   display: -webkit-flex;

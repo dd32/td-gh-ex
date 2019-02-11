@@ -28,6 +28,8 @@ function adviso_load_sidebar() {
         $load_sidebar = false;
     elseif( get_theme_mod('adviso_disable_sidebar_front') == 'disable' && ( is_front_page() && !is_home() )  ) :
         $load_sidebar = false;
+    elseif( is_page_template( 'templates/page-full-width.php') ) :
+    	$load_sidebar = false;
     endif;
 
     return  $load_sidebar;
@@ -43,7 +45,6 @@ function adviso_body_class( $classes ) {
     return array_merge( $classes, array( $sidebar_class_name ) );
 }
 add_filter( 'body_class', 'adviso_body_class' );
-
 
 
 /*

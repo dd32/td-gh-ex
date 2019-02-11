@@ -4,8 +4,8 @@ Contributors: InkHive
 Tags: custom-background, two-columns, one-column, custom-colors, flexible-header, right-sidebar, grid-layout, custom-menu, sticky-post, theme-options, threaded-comments, translation-ready, featured-images, full-width-template, custom-header, footer-widgets, e-commerce
 
 Requires at least: 4.0
-Tested up to: 5.0.2
-Stable tag: 0.996
+Tested up to: 5.0.3
+Stable tag: 1.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,6 +19,12 @@ Demo Here: http://demo.inkhive.com/adviso/
 
 
 == Changelog ==
+
+= 1.0 =
+* Gutenberg support added for Wide and Full-Width aligned blocks
+
+= 0.996, 0.997 =
+* Thirteenth Review Changes
 
 = 0.995 =
 * Twelfth Review Changes

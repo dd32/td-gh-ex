@@ -87,3 +87,20 @@ pre {
   bottom: 0;
   background: fade(black,60%);
 }
+
+
+/*	Gutenberg Compatibility	*/
+body {
+	&.sidebar-disabled {
+		.alignwide {
+			max-width: 100vw;
+			margin-left: -100px;
+			margin-right: -100px;
+		}
+		.alignfull {
+			max-width: 100vw;
+			margin-left: calc(~"-100vw/2 + 100%/2");
+			margin-right: calc(~"-100vw/2 + 100%/2");
+		}
+	}
+}
