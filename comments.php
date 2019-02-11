@@ -88,7 +88,7 @@ if ( have_comments() && post_password_required() == false ) :
 	
 		comment_form(
 			array(
-				'label_submit' =>  esc_html__('Comment','anna-lite'),
+				'label_submit' =>  esc_attr__('Comment','anna-lite'),
 				'comment_field' => '<p class="comment-form-comment"><label for="comment">' . esc_html_x( 'Comment', 'Comment field textarea.', 'anna-lite' ) . '</label><textarea id="comment" name="comment" cols="45" rows="8" aria-required="true"></textarea></p>'
 			) 
 		); 
