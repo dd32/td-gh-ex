@@ -19,10 +19,10 @@
                             <?php if (novalite_setting('novalite_copyright_text')): ?>
                                <?php echo stripslashes(novalite_setting('novalite_copyright_text','html')); ?>
                             <?php else: ?>
-                              <?php esc_html_e('Copyright','novalite'); ?> <?php echo get_bloginfo("name"); ?> <?php echo date("Y"); ?> 
+                              <?php esc_html_e('Copyright','nova-lite'); ?> <?php echo get_bloginfo("name"); ?> <?php echo date("Y"); ?> 
                             <?php endif; ?> 
-                            | <?php esc_html_e('Theme by','novalite'); ?> <a href="http://www.themeinprogress.com/" target="_blank">Theme in Progress</a> |
-                            <a href="<?php echo esc_url( 'http://wordpress.org'); ?>" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'novalite' ); ?>" rel="generator"><?php printf( esc_html__( 'Proudly powered by %s', 'novalite' ), 'WordPress' ); ?></a>
+                            | <?php esc_html_e('Theme by','nova-lite'); ?> <a href="http://www.themeinprogress.com/" target="_blank">Theme in Progress</a> |
+                            <a href="<?php echo esc_url( 'http://wordpress.org'); ?>" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'nova-lite' ); ?>" rel="generator"><?php printf( esc_html__( 'Proudly powered by %s', 'nova-lite' ), 'WordPress' ); ?></a>
                         
                         </p>
                     

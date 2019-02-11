@@ -19,16 +19,16 @@ function novalite_before_content_function() {
     
         <div class="entry-info">
        
-            <div class="entry-date"><strong> <?php esc_html_e( 'Posted on:','novalite'); ?> </strong> <?php echo get_the_date(); ?> <span class="sep">/</span> </div>
+            <div class="entry-date"><strong> <?php esc_html_e( 'Posted on:','nova-lite'); ?> </strong> <?php echo get_the_date(); ?> <span class="sep">/</span> </div>
             
             <?php if  ( ( comments_open() ) && (novalite_setting('novalite_view_comments') == "on" ) ) : ?>
-                <div class="entry-comments"> <strong><?php esc_html_e( 'Comments: ','novalite'); ?></strong>
-                    <?php echo comments_number( '<a href="'.get_permalink($post->ID).'#respond">'.esc_html__( "No comments","novalite").'</a>', '<a href="'.get_permalink($post->ID).'#comments">1 '.esc_html__( "comment","novalite").'</a>', '<a href="'.get_permalink($post->ID).'#comments">% '.esc_html__( "comments","novalite").'</a>' ); ?>
+                <div class="entry-comments"> <strong><?php esc_html_e( 'Comments: ','nova-lite'); ?></strong>
+                    <?php echo comments_number( '<a href="'.get_permalink($post->ID).'#respond">'.esc_html__( "No comments","nova-lite").'</a>', '<a href="'.get_permalink($post->ID).'#comments">1 '.esc_html__( "comment","nova-lite").'</a>', '<a href="'.get_permalink($post->ID).'#comments">% '.esc_html__( "comments","nova-lite").'</a>' ); ?>
                 <span class="sep">/</span> </div> 
             <?php endif; ?>
             
             <div class="entry-standard"> 
-            	<strong> <?php esc_html_e( 'Categories: ','novalite'); echo the_category(', '); ?> </strong>
+            	<strong> <?php esc_html_e( 'Categories: ','nova-lite'); echo the_category(', '); ?> </strong>
             </div>
 
         </div>

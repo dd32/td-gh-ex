@@ -21,15 +21,15 @@
             <div class="span12">
 				<?php if (is_tag()) { ?>
 
-                    <p><?php esc_html_e( 'Tag','novalite'); ?> : <?php echo get_query_var('tag');  ?> </p>
+                    <p><?php esc_html_e( 'Tag','nova-lite'); ?> : <?php echo get_query_var('tag');  ?> </p>
 				
 				<?php  } else if (is_category()) { ?>
                 
-                    <p><?php esc_html_e( 'Category','novalite'); ?> : <?php single_cat_title(); ?> </p>
+                    <p><?php esc_html_e( 'Category','nova-lite'); ?> : <?php single_cat_title(); ?> </p>
 
 				<?php  } else if (is_month()) { ?>
 
-                    <p><?php esc_html_e( 'Archive for','novalite'); ?> : <?php the_time('F, Y'); ?> </p>
+                    <p><?php esc_html_e( 'Archive for','nova-lite'); ?> : <?php the_time('F, Y'); ?> </p>
 
                 <?php } ?>
                 
@@ -64,8 +64,8 @@
                         
                         <article class="article">
         
-                            <h1 class="title"><?php esc_html_e( 'Not found',"novalite" ) ?></h1>           
-                            <p><?php esc_html_e( 'Sorry, no posts matched into ',"novalite" ); echo ":".single_cat_title(); ?></p>
+                            <h1 class="title"><?php esc_html_e( 'Not found',"nova-lite" ) ?></h1>           
+                            <p><?php esc_html_e( 'Sorry, no posts matched into ',"nova-lite" ); echo ":".single_cat_title(); ?></p>
                          
                         </article>
                         
@@ -87,15 +87,6 @@
                         
                         } else { 
                             
-                            the_widget( 'WP_Widget_Calendar',
-                            array("title"=> esc_html__('Calendar','novalite')),
-                                array('before_widget' => '<div class="pin-article span4"><div class="article">',
-                                      'after_widget'  => '</div></div>',
-                                      'before_title'  => '<h3 class="title">',
-                                      'after_title'   => '</h3>'
-                                )
-                            );
-            
                             the_widget( 'WP_Widget_Archives','',
                                 array('before_widget' => '<div class="pin-article span4"><div class="article">',
                                       'after_widget'  => '</div></div>',
@@ -105,6 +96,15 @@
                             );
             
                             the_widget( 'WP_Widget_Categories','',
+                                array('before_widget' => '<div class="pin-article span4"><div class="article">',
+                                      'after_widget'  => '</div></div>',
+                                      'before_title'  => '<h3 class="title">',
+                                      'after_title'   => '</h3>'
+                                )
+                            );
+							
+                            the_widget( 'WP_Widget_Calendar',
+                            array("title"=> esc_html__('Calendar','nova-lite')),
                                 array('before_widget' => '<div class="pin-article span4"><div class="article">',
                                       'after_widget'  => '</div></div>',
                                       'before_title'  => '<h3 class="title">',

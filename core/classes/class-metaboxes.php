@@ -182,7 +182,7 @@
 						
 							<input id="<?php echo $field['id']; ?>" type="text" name="<?php echo $field['id']; ?>" class="idattachment" value="<?php if ( novalite_postmeta($field['id']) != "") { echo novalite_postmeta($field['id']) ; } else { echo $field['std']; } ?>" />
 									
-							<input type="button" name="just_button" class="button" value="<?php esc_attr_e('Upload','novalite'); ?>" />
+							<input type="button" name="just_button" class="button" value="<?php esc_attr_e('Upload','nova-lite'); ?>" />
 							
 						</div>
 
@@ -235,7 +235,7 @@
 					<div class="wip_inputbox">
 						<label for="<?php echo $field['id']; ?>"><?php echo $field['name']; ?></label>
 						<select name="<?php echo $field['id']; ?>" id="<?php echo $field['id']; ?>" style="width:100%">
-							<option value="all"> <?php esc_html_e('All','novalite'); ?> </option>
+							<option value="all"> <?php esc_html_e('All','nova-lite'); ?> </option>
 							<?php foreach ( $wp_terms as $option => $values) { ?>
 							<option <?php if (novalite_postmeta( $field['id']) == $option) { echo 'selected="selected"'; } ?> value="<?php echo $option; ?>"><?php echo $values; ?></option><?php } ?>
 						</select>

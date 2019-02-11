@@ -15,34 +15,47 @@
 
 function novalite_header_content() {
 	
-if ( ( is_page()) && (novalite_postmeta('novalite_slogan')) ) : ?>
+	if ( is_home() && novalite_setting('novalite_homepage_description') == 'on' ) : ?>
 
-<section id="subheader">
-	<div class="container">
-    	<div class="row">
-        	<div class="span12">
-            	<p> <?php echo novalite_postmeta('novalite_slogan'); ?> </p>
+        <section id="subheader">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <h1><?php echo esc_html(get_bloginfo('description'));  ?> </h1>
+                    </div>
+                </div>
             </div>
-        </div>
-    </div>
-</section>
+        </section>
 
-<?php endif; ?>
+<?php 
+	
+	endif;
+	
+	if ( is_page() && novalite_postmeta('novalite_slogan') ) : ?>
 
-<?php if ( ( novalite_postmeta('novalite_header_sidebar') <> "none" ) && ( is_active_sidebar('header_sidebar_area') ) ) : ?>
+        <section id="subheader">
+            <div class="container">
+                <div class="row">
+                    <div class="span12">
+                        <p> <?php echo novalite_postmeta('novalite_slogan'); ?> </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+<?php 
+	
+	endif;
+	if ( novalite_postmeta('novalite_header_sidebar') <> "none" && is_active_sidebar('header_sidebar_area') ) : ?>
 	
     <section class="container head_widget content">
 		<div class="container">
             
 			<?php if ( is_active_sidebar('header_sidebar_area') ) : ?>
-                
-				<!-- FOOTER WIDGET BEGINS -->
                     
-                        <section class="row widget">
-                            <?php dynamic_sidebar('header_sidebar_area') ?>
-                        </section>
-        
-				<!-- FOOTER WIDGET END -->
+				<section class="row widget">
+					<?php dynamic_sidebar('header_sidebar_area') ?>
+				</section>
                     
 			<?php endif; ?>
         

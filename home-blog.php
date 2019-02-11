@@ -24,8 +24,8 @@
                         
                         <article class="article">
         
-                            <h1 class="title"><?php esc_html_e( 'Not found',"novalite" ) ?></h1>           
-                            <p><?php esc_html_e( 'Sorry, no posts matched found ',"novalite" ) ?></p>
+                            <h1 class="title"><?php esc_html_e( 'Not found',"nova-lite" ) ?></h1>           
+                            <p><?php esc_html_e( 'Sorry, no posts matched found ',"nova-lite" ) ?></p>
                          
                         </article>
                         
@@ -46,15 +46,6 @@
                         
                         } else { 
                             
-                            the_widget( 'WP_Widget_Calendar',
-                            array("title"=> esc_html__('Calendar','novalite')),
-                                array('before_widget' => '<div class="pin-article span4"><div class="article">',
-                                      'after_widget'  => '</div></div>',
-                                      'before_title'  => '<h3 class="title">',
-                                      'after_title'   => '</h3>'
-                                )
-                            );
-            
                             the_widget( 'WP_Widget_Archives','',
                                 array('before_widget' => '<div class="pin-article span4"><div class="article">',
                                       'after_widget'  => '</div></div>',
@@ -70,8 +61,16 @@
                                       'after_title'   => '</h3>'
                                 )
                             );
+
+                            the_widget( 'WP_Widget_Calendar',
+                            array("title"=> esc_html__('Calendar','nova-lite')),
+                                array('before_widget' => '<div class="pin-article span4"><div class="article">',
+                                      'after_widget'  => '</div></div>',
+                                      'before_title'  => '<h3 class="title">',
+                                      'after_title'   => '</h3>'
+                                )
+                            );
             
-                        
                          } ?>
                     </div>
                 </section>

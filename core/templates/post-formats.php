@@ -15,7 +15,10 @@ function novalite_postformat_function() {
 		$postformats = "page";
 	} 
 	
-	else if ( !get_post_format() )  {
+	else if ( 
+		!get_post_format() || 
+		in_array( get_post_format(), array('image','status','chat'))
+	)  {
 		$postformats = "standard";
 	} 
 					

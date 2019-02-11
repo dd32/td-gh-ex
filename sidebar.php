@@ -8,15 +8,6 @@
                 dynamic_sidebar('side_sidebar_area');
             
             } else { 
-                
-                the_widget( 'WP_Widget_Calendar',
-				array("title"=> esc_html__('Calendar','novalite')),
-					array('before_widget' => '<div class="pin-article span4"><div class="article">',
-						  'after_widget'  => '</div></div>',
-						  'before_title'  => '<h3 class="title">',
-						  'after_title'   => '</h3>'
-					)
-				);
 
                 the_widget( 'WP_Widget_Archives','',
 					array('before_widget' => '<div class="pin-article span4"><div class="article">',
@@ -34,6 +25,14 @@
 					)
 				);
 
+                the_widget( 'WP_Widget_Calendar',
+				array("title"=> esc_html__('Calendar','nova-lite')),
+					array('before_widget' => '<div class="pin-article span4"><div class="article">',
+						  'after_widget'  => '</div></div>',
+						  'before_title'  => '<h3 class="title">',
+						  'after_title'   => '</h3>'
+					)
+				);
             
              } ?>
 

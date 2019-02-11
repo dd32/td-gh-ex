@@ -13,7 +13,7 @@ $novalite_new_metaboxes = new novalite_metaboxes ('page', array (
 
 array( "name" => "Navigation",  
        "type" => "navigation",  
-       "item" => array( "setting" => esc_html__( "Setting","novalite") ),   
+       "item" => array( "setting" => esc_html__( "Setting","nova-lite") ),   
        "start" => "<ul>", 
        "end" => "</ul>"),  
 
@@ -21,24 +21,24 @@ array( "type" => "begintab",
 	   "tab" => "setting",
 	   "element" =>
 
-		array( "name" => esc_html__( "Setting","novalite"),
+		array( "name" => esc_html__( "Setting","nova-lite"),
 			   "type" => "title",
 		),
 
-		array( "name" => esc_html__( "Slogan","novalite"),
-			   "desc" => esc_html__( "Insert the slogan of page","novalite"),
+		array( "name" => esc_html__( "Slogan","nova-lite"),
+			   "desc" => esc_html__( "Insert the slogan of page","nova-lite"),
 			   "id" => "novalite_slogan",
 			   "type" => "text",
 		),
 
-		array( "name" => esc_html__( "Template","novalite"),
-			   "desc" => esc_html__( "Select a template for this page","novalite"),
+		array( "name" => esc_html__( "Template","nova-lite"),
+			   "desc" => esc_html__( "Select a template for this page","nova-lite"),
 			   "id" => "novalite_template",
 			   "type" => "select",
 			   "options" => array(
-				   "full" => esc_html__( "Full Width","novalite"),
-				   "left-sidebar" =>  esc_html__( "Left Sidebar","novalite"),
-				   "right-sidebar" => esc_html__( "Right Sidebar","novalite"),
+				   "full" => esc_html__( "Full Width","nova-lite"),
+				   "left-sidebar" =>  esc_html__( "Left Sidebar","nova-lite"),
+				   "right-sidebar" => esc_html__( "Right Sidebar","nova-lite"),
 				   ),
 			   "std" => "full",
 		),
