@@ -379,22 +379,28 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 .show-desktop,      /* user to show/hide on areas */
 .show-mobile,
 .show-smalltablet,
-.show-phone {
+.show-phone,
+.show-logged-in,
+.show-not-logged-in {
 	display:		none;       /* implementation requires "opposite" of desired show/hide here */
 }
 
 .hide-desktop,
 .hide-mobile,
 .hide-smalltablet,
-.hide-phone {
+.hide-phone,
+.hide-logged-in,
+.hide-not-logged-in{
 	display:		block;
 }
 
 .is-desktop .show-desktop,      /* actual implementation of the show/hide classes */
 .is-mobile  .show-mobile,
 .is-smalltablet .show-smalltablet,
-.is-phone .show-phone {
-	display:		block;
+.is-phone .show-phone,
+.logged-in .show-logged-in,
+.not-logged-in .show-not-logged-in {
+	display:		block !important;
 }
 
 
@@ -402,8 +408,10 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 .is-desktop .hide-desktop,
 .is-mobile .hide-mobile,
 .is-smalltablet .hide-smalltablet,
-.is-phone .hide-phone {
-	display:		none;
+.is-phone .hide-phone,
+.logged-in .hide-logged-in,
+.not-logged-in .hide-not-logged-in {
+	display:		none !important;
 }
 /* -- /User Utility */
 
@@ -1668,7 +1676,7 @@ ul.wvrx-menu {
 	margin:			0 .5em 0 .5em;
 	padding:		0;
 	position:		relative;
-	/* z-index:		30; */
+	z-index:		30;
 }
 
 .menu-primary .custom-logo-on-menu img {

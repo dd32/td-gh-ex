@@ -128,7 +128,9 @@ function weaverx_showtabs( $raw_template = false, $template = 'default' ) {
 
 	<div id="pp-pwp" class="tab_mainopt" > 			<!-- ******************* PWP ********************* -->
 	<?php weaverx_pp_page_with_posts_opts( $raw_template, $template ); ?>
-	</div>											<!-- ******************* /PWP ********************* -->
+	</div>
+
+<!-- ******************* /PWP ********************* -->
 <?php if (defined('WVRX_TS_PAGEBUILDERS') && WVRX_TS_PAGEBUILDERS) : ?>
 	<div id="pp-builder" class="tab_mainopt" > 			<!-- ******************* PWP ********************* -->
 	<?php weaverx_pp_page_builder_opts( $raw_template ); ?>
@@ -975,7 +977,7 @@ function weaverx_pp_post_extras() {
 <p>
 <?php
 	weaverx_check_editor_style();		// see if we need an update...
-	
+
 	echo '<strong>' . __('Per Post Options','weaver-xtreme' /*adm*/) . '</strong>';
 	weaverx_help_link('help.html#PerPage', __('Help for Per Post Options','weaver-xtreme' /*adm*/));
 	echo '<span style="float:right;">(' . __('This Post\'s ID: ','weaver-xtreme' /*adm*/); the_ID() ; echo ')</span>';

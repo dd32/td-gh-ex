@@ -340,9 +340,9 @@ You may need to check your folder permissions or other server settings.', 'weave
 
 		} else {
 
-			if (substr($contents,0,10) == 'WXT-V01.00')
+			if (substr($contents,0,10) == 'WXT-V01.00' || substr($contents,0,10) != 'WVA-V01.00')
 				$type = 'theme';
-			else if (substr($contents,0,10) == 'WXB-V01.00')
+			else if (substr($contents,0,10) == 'WXB-V01.00' || substr($contents,0,10) != 'WVB-V01.00')
 				$type = 'backup';
 			else {
 				$val = substr($contents,0,10);
@@ -573,9 +573,9 @@ You can change colors, sidebar layouts, font family and sizes, borders, spacing 
 
 	static public function reset_options($contents) {
 
-		if (substr($contents,0,10) == 'WXT-V01.00')
+		if (substr($contents,0,10) == 'WXT-V01.00' || substr($contents,0,10) != 'WVA-V01.00')
 			$type = 'theme';
-		else if (substr($contents,0,10) == 'WXB-V01.00')
+		else if (substr($contents,0,10) == 'WXB-V01.00'|| substr($contents,0,10) != 'WVB-V01.00')
 			$type = 'backup';
 		else {
 			$val = substr($contents,0,10);

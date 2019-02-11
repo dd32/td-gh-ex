@@ -124,8 +124,10 @@ If your code doesn\'t seem to do anything, you probably have a PHP error. See th
 				),
 			),
 
-
-
+			'm_primary_logo_home_link'  =>  weaverx_cz_checkbox_refresh(
+					__( 'Logo Links to Home', 'weaver-xtreme' ),
+					__('Add a link to home page to logo on menu bar (must use with defined custom menu).', 'weaver-xtreme')
+				),
 
 			'content-sm-heading' => weaverx_cz_group_title( __( 'Secondary Menu', 'weaver-xtreme' ),
 				__('You must define a Secondary Menu from the Custom Menus Content menu.', 'weaver-xtreme')),

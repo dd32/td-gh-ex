@@ -93,9 +93,7 @@ function weaverx_customize_preview_js() {
 
 	WeaverX_Restore_WX_Settings::controls_print_scripts();
 
-
 	weaverx_check_customizer_memory();
-	weaverx_check_support_plugin_version();
 
 	if ( weaverx_options_level() < 1) {		// show if not set
 		weaverx_alert(__('Thank you for using Weaver Xtreme 4!\r\n\r\n        IMPORTANT NOTE  -- New Theme Feature\r\n\r\nThis theme has 3 Customizer Option Interface Levels: Basic, Standard, and Full.        If you are just getting started, using the Basic Level can simplify the learning curve.\r\n\r\nAfter the Customizer loads, please open the **General Options / Admin** panel, and then the **Set Options Interface Level** panel, and select an Interface Level.\r\n\r\nThis message will continue to be displayed until you select a level.', 'weaver-xtreme'));
@@ -644,7 +642,7 @@ function weaverx_cz_getdefaults() {
 
 	if (empty($contents)) return array();
 
-	if (substr($contents,0,10) != 'WXT-V01.00')
+	if (substr($contents,0,10) != 'WXT-V01.00' && substr($contents,0,10) != 'WVA-V01.00')
 		return array();
 
 	$restore = array();

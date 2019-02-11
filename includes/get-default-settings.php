@@ -20,7 +20,7 @@ function weaverx_get_default_settings() {
 
 	if (empty($contents)) return false;
 
-	if (substr($contents,0,10) != 'WXT-V01.00')
+	if (substr($contents,0,10) != 'WXT-V01.00' && substr($contents,0,10) != 'WVA-V01.00')
 		return false;
 
 	$restore = array();

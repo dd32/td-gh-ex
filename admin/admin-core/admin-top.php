@@ -47,8 +47,6 @@ function weaverx_do_admin() {
 
 	weaverx_check_support_plugin_version();
 
-	weaverx_check_version();           // check version RSS
-
 	weaverx_clear_both();
 	$site_url = get_admin_url();
 	$site_url = str_replace('http://', '//', $site_url);

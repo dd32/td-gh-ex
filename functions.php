@@ -662,28 +662,10 @@ function weaverx_increase_max_srcset_image_width( $max_width ) {
 add_filter( 'max_srcset_image_width', 'weaverx_increase_max_srcset_image_width' );
 }
 
-/**
- *	Action: Support for Woo Commerece
- *
- */
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-add_action('woocommerce_before_main_content', 'weaverx_woo_wrapper_start', 10);
-add_action('woocommerce_after_main_content', 'weaverx_woo_wrapper_end', 10);
-
-function weaverx_woo_wrapper_start() {
-  echo '<div id="container" class="container"><div id="content" class="weaver-woo" role="main">';
+// Checking if WooCommerce is active, load support if it is
+if ( class_exists( 'WooCommerce' ) ) {
+    require_once('woocommerce_support.php');
 }
-
-
-function weaverx_woo_wrapper_end() {
-	echo '</div></div> <!-- end weaver-woo -->';
-}
-
-add_theme_support( 'woocommerce' );
-add_theme_support( 'wc-product-gallery-zoom' );
-add_theme_support( 'wc-product-gallery-lightbox' );
-add_theme_support( 'wc-product-gallery-slider' );
 
 // THE END OF functions.php
 ?>

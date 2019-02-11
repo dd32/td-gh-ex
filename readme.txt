@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.9
 Tested up to: 5.0
-Stable tag: 4.2.2
+Stable tag: 4.2.4
 
 == Description ==
 
@@ -572,3 +572,13 @@ with testing and feature suggestions.
 
 = Version 4.2.2 =
 * Fix: issue with alignfull and alignwide on pages with sidebars
+
+= Version 4.2.3 =
+* Tweak: removed some obsolete theme version checking code from Customizer
+
+= Version 4.2.4 =
+* Tweak: changed http://schema.org to https://schema.org
+* Tweak: reorganized Woocommerce runtime support code
+* New: added .show-logged-in, .hide-logged-in, .hide-not-logged-in, and .show-not-logged-in classes
+* Tweak: added link logo on menu option to Customizer, fixed z-index for link.
+* Tweak: new Classic Editor default font family styling

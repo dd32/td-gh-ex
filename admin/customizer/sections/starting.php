@@ -93,14 +93,11 @@ based on WHERE you want to make the customizations. Remember: <strong style="col
 					'control_type' => 'WeaverX_Load_WX_Subtheme',
 					'label' => __( 'Predefined Weaver Xtreme Subthemes', 'weaver-xtreme' ),
 					'description' => __('Get a quick start on your site by selecting on of these predefined subthemes.
-Once you\'ve picked a subtheme, you can tweak it to look just like you want. The Legacy Weaver Xtreme Admin Subthemes tab
-offers many additional subthemes to choose from.', 'weaver-xtreme'),
+Once you\'ve picked a subtheme, you can tweak it to look just like you want.', 'weaver-xtreme'),
 				),
 			),
 		)
 	);
-
-
 
 	/**
 	 * Help links

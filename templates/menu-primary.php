@@ -23,10 +23,11 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 			if ( weaverx_getopt('m_primary_logo_home_link') ) {
 				$logo = apply_filters('weaverx_menu_logo', '<span class="custom-logo-on-menu"><a href="' . get_home_url() . '" alt="Site Home"><img src="' . $custom_logo_url . '" alt="logo"/></a></span>', $custom_logo_url);	// +since: 3.1.10: add alt=
 			}
-			else
-				$logo = apply_filters('weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="logo"/></span>', $custom_logo_url);	// +since: 3.1.10: add alt=
-
+			else {
+				$logo = 'NONO' . apply_filters('weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="logo"/></span>', $custom_logo_url);	// +since: 3.1.10: add alt=
+			}
 		}
+
 	}
 
 	$site_title = '';
@@ -136,6 +137,7 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 		'items_wrap'      => $left . $right .
 				'<div class="wvrx-menu-clear"></div><ul id="%1$s" class="%2$s">%3$s</ul><div style="clear:both;"></div>'
 	);
+
 
 	$alt_menu = weaverx_get_per_page_value('_pp_alt_primary_menu');
 	if ( $alt_menu != '' ) {

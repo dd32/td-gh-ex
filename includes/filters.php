@@ -544,11 +544,6 @@ function weaverx_mce_css_filter( $default_style ) {
 	if ( $style_file != $default_style )
 		return $style_file;
 
-	//$mce_css_file = trailingslashit(get_template_directory()) . 'editor-style-css.php';
-	//$mce_css_dir = trailingslashit(get_template_directory_uri()) . 'editor-style-css.php';
-	//if (!@file_exists($mce_css_file)) {	// see if it is there
-	//	return $default_style;
-	//}
 
 	return $default_style;
 

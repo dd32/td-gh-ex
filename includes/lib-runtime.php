@@ -496,58 +496,58 @@ function weaverx_schema(  $who, $aux = '' ) {		// added 3.1.13
 		case 'category':
 		case 'single':
 		case 'tag':
-			return ' itemtype="http://schema.org/Blog" itemscope';
+			return ' itemtype="https://schema.org/Blog" itemscope';
 
 		case 'body':
 			if ( is_search() ) {
-				return ' itemtype="http://schema.org/SearchResultsPage" itemscope';
+				return ' itemtype="https://schema.org/SearchResultsPage" itemscope';
 			} else
-				return ' itemtype="http://schema.org/WebPage" itemscope';
+				return ' itemtype="https://schema.org/WebPage" itemscope';
 
 		case 'branding':
-			return ' itemtype="http://schema.org/WPHeader" itemscope';
+			return ' itemtype="https://schema.org/WPHeader" itemscope';
 
 		case 'entry-content':
 			return '';	// doesnt work?? ' itemprop="mainEntityOfPage"';
 
 		case 'footer':
-			return ' itemtype="http://schema.org/WPFooter" itemscope';
+			return ' itemtype="https://schema.org/WPFooter" itemscope';
 
 		case 'headline':
 			return ' itemprop="headline name"';
 
 		case 'image':
 			$fix = str_replace( 'src=', 'itemprop="url" src=', $aux);	// add in url prop
-			return '<span itemtype="http://schema.org/ImageObject" itemprop="image" itemscope>' . $fix . '</span>';
+			return '<span itemtype="https://schema.org/ImageObject" itemprop="image" itemscope>' . $fix . '</span>';
 
 		case 'attachment':
-			return ' itemtype="http://schema.org/ImageObject" itemprop="image" itemscope' ;
+			return ' itemtype="https://schema.org/ImageObject" itemprop="image" itemscope' ;
 
 		case 'mainEntityOfPage':
 			return '<link itemprop="mainEntityOfPage" href="' . get_permalink() . '" />';
 
 		case 'menu':
-			return ' itemtype="http://schema.org/SiteNavigationElement" itemscope';
+			return ' itemtype="https://schema.org/SiteNavigationElement" itemscope';
 
 		case 'person':
-			return '<span itemtype="http://schema.org/Person" itemscope itemprop="author"><span itemprop="name">'
+			return '<span itemtype="https://schema.org/Person" itemscope itemprop="author"><span itemprop="name">'
 					  . $aux . '</span></span>';
 
 		case 'post':
 			if ( is_search() ) {
-				return  ' itemtype="http://schema.org/Article" itemscope';		// searches don't want to be Blogs, just articles
+				return  ' itemtype="https://schema.org/Article" itemscope';		// searches don't want to be Blogs, just articles
 			} else {
-				return  ' itemtype="http://schema.org/BlogPosting" itemscope itemprop="blogPost"';
+				return  ' itemtype="https://schema.org/BlogPosting" itemscope itemprop="blogPost"';
 			}
 
 		case 'image':
 		case 'page':
-			return ' itemtype="http://schema.org/WebPageElement" itemscope itemprop="mainContentOfPage"';
+			return ' itemtype="https://schema.org/WebPageElement" itemscope itemprop="mainContentOfPage"';
 
 		case 'published':// <meta itemprop="datePublished" content="2009-05-08">
 			$schema = '<meta itemprop="datePublished" content="' .  esc_attr( get_the_date( 'c' ))  . '"/>' . "\n"
 						. '<meta itemprop="dateModified" content="' .  esc_attr( get_the_modified_date( 'c' ))  . '"/>' . "\n"
-						. '<span style="display:none" itemscope itemprop="publisher" itemtype="http://schema.org/Organization">'
+						. '<span style="display:none" itemscope itemprop="publisher" itemtype="https://schema.org/Organization">'
 						. '<span itemprop="name">' . get_bloginfo('name') . "</span>";
 
 			$logo = weaverx_get_wp_custom_logo_url();
@@ -560,13 +560,13 @@ function weaverx_schema(  $who, $aux = '' ) {		// added 3.1.13
 			break;
 
 		case 'show_posts_begin':
-			return '<div class="atw-show-posts-schema" itemtype="http://schema.org/Blog" itemscope > <!-- begin Blog -->' . "\n";
+			return '<div class="atw-show-posts-schema" itemtype="https://schema.org/Blog" itemscope > <!-- begin Blog -->' . "\n";
 
 		case 'show_posts_end':
 			return '</div> <!-- end Blog -->';
 
 		case 'sidebar':
-			return ' itemtype="http://schema.org/WPSideBar" itemscope';
+			return ' itemtype="https://schema.org/WPSideBar" itemscope';
 
 		default:
 			return '';
@@ -1460,7 +1460,7 @@ function weaverx_check_editor_style() {		// see if we need an update...
 	$updir = wp_upload_dir();
 	$dir = trailingslashit($updir['basedir']) . 'weaverx-subthemes/editor-style-wvrx.css';
 
-	if (!@file_exists( $dir ) || weaverx_getopt('settings_version') != WEAVERX_SETTINGS_VERSION ){	// save latest version)  {
+	if (!@file_exists( $dir ) || weaverx_getopt('settings_version') != WEAVERX_SETTINGS_VERSION ) {	// save latest version)  {
 		//weaverx_alert( __('Notice!\r\n Your Weaver Xtreme Theme settings have been automatically updated.','weaver-xtreme' /*adm*/) );
 		if ( weaverx_getopt('settings_version') != WEAVERX_SETTINGS_VERSION ) {
 			weaverx_setopt('settings_version', WEAVERX_SETTINGS_VERSION);		// save latest version

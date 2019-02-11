@@ -2,7 +2,7 @@
 // ======================================= MCE CSS FILE GENERATION ================================
 
 /**
- *	Generate and save mcecss and Gutenberf style file.
+ *	Generate and save mcecss and Gutenberg style file.
  *
  *	This function generates custom CSS files for the tinyMCE and Gutenberg editors. It allows the
  *	editors to display close to WYSIWYG viewing in the visual editors.
@@ -199,7 +199,12 @@ function weaverx_output_edit_style( $editor='mce' ) {
 		$selector_bg = '.editor-styles-wrapper';
 	}
 
+	// ** default FONT FAMILY **/
 
+	$body_font_family = weaverx_get_cascade_opt('_font_family', 'inherit');	// necessary if some plugin (Jetpack!) puts font-family editor stylesheet
+	$body_selector = 'body#tinymce.wp-editor,.mce-content-body';
+	$put .= weaverx_put_font_family( $body_font_family, $body_selector );
+	
 	// ** FONT SIZE **
 
 	if (($base_font_px = weaverx_getopt('site_fontsize_int')) == '' )
