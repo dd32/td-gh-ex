@@ -35,13 +35,14 @@ function graphene_customizer_display_options( $wp_customize ){
 		'type' 		=> 'radio',
 		'section' 	=> 'graphene-display-columns-layout',
 		'label' 	=> __( 'Layout', 'graphene' ),
+		'hide_radio'=> true,
 		'choices'	=> array(
-			'one_column'		=> sprintf( '<img src="%1$s/admin/images/template-onecolumn.png" alt="%2$s" title="%2$s" />', GRAPHENE_ROOTURI, __( 'One column', 'graphene' ) ),
-			'two_col_left'		=> sprintf( '<img src="%1$s/admin/images/template-twocolumnsleft.png" alt="%2$s" title="%2$s" />', GRAPHENE_ROOTURI, __( 'Two columns, right sidebar', 'graphene' ) ),
-			'two_col_right'		=> sprintf( '<img src="%1$s/admin/images/template-twocolumnsright.png" alt="%2$s" title="%2$s" />', GRAPHENE_ROOTURI, __( 'Two columns, left sidebar', 'graphene' ) ),
-			'three_col_left'	=> sprintf( '<img src="%1$s/admin/images/template-threecolumnsleft.png" alt="%2$s" title="%2$s" />', GRAPHENE_ROOTURI, __( 'Three columns, right sidebars', 'graphene' ) ),
-			'three_col_right'	=> sprintf( '<img src="%1$s/admin/images/template-threecolumnsright.png" alt="%2$s" title="%2$s" />', GRAPHENE_ROOTURI, __( 'Three columns, left sidebars', 'graphene' ) ),
-			'three_col_center'	=> sprintf( '<img src="%1$s/admin/images/template-threecolumnscenter.png" alt="%2$s" title="%2$s" />', GRAPHENE_ROOTURI, __( 'Three columns, left & right sidebars', 'graphene' ) ),
+			'one_column'		=> sprintf( '<img src="%1$s/admin/images/layout-one-col.png" alt="%2$s" title="%2$s" />', GRAPHENE_ROOTURI, __( 'One column', 'graphene' ) ),
+			'two_col_left'		=> sprintf( '<img src="%1$s/admin/images/layout-two-col-left.png" alt="%2$s" title="%2$s" />', GRAPHENE_ROOTURI, __( 'Two columns, right sidebar', 'graphene' ) ),
+			'two_col_right'		=> sprintf( '<img src="%1$s/admin/images/layout-two-col-right.png" alt="%2$s" title="%2$s" />', GRAPHENE_ROOTURI, __( 'Two columns, left sidebar', 'graphene' ) ),
+			'three_col_left'	=> sprintf( '<img src="%1$s/admin/images/layout-three-col-left.png" alt="%2$s" title="%2$s" />', GRAPHENE_ROOTURI, __( 'Three columns, right sidebars', 'graphene' ) ),
+			'three_col_right'	=> sprintf( '<img src="%1$s/admin/images/layout-three-col-right.png" alt="%2$s" title="%2$s" />', GRAPHENE_ROOTURI, __( 'Three columns, left sidebars', 'graphene' ) ),
+			'three_col_center'	=> sprintf( '<img src="%1$s/admin/images/layout-three-col-center.png" alt="%2$s" title="%2$s" />', GRAPHENE_ROOTURI, __( 'Three columns, left & right sidebars', 'graphene' ) ),
 		),
 	) ) );
 
@@ -74,30 +75,35 @@ function graphene_customizer_display_options( $wp_customize ){
 		'type' 		=> 'checkbox',
 		'section' 	=> 'graphene-display-posts',
 		'label' 	=> __( 'Hide post author', 'graphene' ),
+		'priority'	=> 1,
 	) );
 
 	$wp_customize->add_control( 'graphene_settings[hide_post_cat]', array(
 		'type' 		=> 'checkbox',
 		'section' 	=> 'graphene-display-posts',
 		'label' 	=> __( 'Hide post categories', 'graphene' ),
+		'priority'	=> 2,
 	) );
 
 	$wp_customize->add_control( 'graphene_settings[hide_post_tags]', array(
 		'type' 		=> 'checkbox',
 		'section' 	=> 'graphene-display-posts',
 		'label' 	=> __( 'Hide post tags', 'graphene' ),
+		'priority'	=> 3,
 	) );
 
 	$wp_customize->add_control( 'graphene_settings[hide_post_commentcount]', array(
 		'type' 		=> 'checkbox',
 		'section' 	=> 'graphene-display-posts',
 		'label' 	=> __( 'Hide post comment count', 'graphene' ),
+		'priority'	=> 4,
 	) );
 
 	$wp_customize->add_control( 'graphene_settings[hide_author_bio]', array(
 		'type' 		=> 'checkbox',
 		'section' 	=> 'graphene-display-posts',
 		'label' 	=> __( 'Hide author bio', 'graphene' ),
+		'priority'	=> 5,
 	) );
 
 	$wp_customize->add_control( 'graphene_settings[post_date_display]', array(

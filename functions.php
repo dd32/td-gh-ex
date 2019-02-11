@@ -46,6 +46,7 @@ require( GRAPHENE_ROOTDIR . '/inc/plugins.php' 			);
 require( GRAPHENE_ROOTDIR . '/inc/compat.php' 			);
 require( GRAPHENE_ROOTDIR . '/inc/functions.php' 		);
 require( GRAPHENE_ROOTDIR . '/inc/setup.php' 			);
+require( GRAPHENE_ROOTDIR . '/inc/ajax-handler.php' 	);
 require( GRAPHENE_ROOTDIR . '/vendors/menu-item-custom-fields/menu-item-custom-fields.php' );
 
 

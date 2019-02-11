@@ -95,6 +95,21 @@ function graphene_customizer_general_options( $wp_customize ){
 	  'label' 		=> __( 'Disable slider', 'graphene' ),
 	) );
 
+
+	$post_type_objects = get_post_types( array( 'public' => true ), 'object' );
+	unset( $post_type_objects['attachment'] );
+
+	$post_types = array();
+	foreach ( $post_type_objects as $post_type => $post_type_object ) {
+		$post_types[$post_type] = $post_type_object->label;
+	}
+
+	$wp_customize->add_control( new Graphene_Multiple_Checkbox_Control( $wp_customize, 'graphene_settings[slider_post_types]', array(
+		'section' 	=> 'graphene-general-slider',
+		'label'		=> __( 'Post types', 'graphene' ),
+		'choices'	=> $post_types,
+	) ) );
+
 	$wp_customize->add_control( new Graphene_Radio_HTML_Control( $wp_customize, 'graphene_settings[slider_display_style]', array(
 		'section' 	=> 'graphene-general-slider',
 		'label'	=> __( 'Display style', 'graphene' ),
@@ -537,7 +552,13 @@ function graphene_customizer_general_options( $wp_customize ){
 	  'type' 	=> 'checkbox',
 	  'section' => 'graphene-general-adsense',
 	  'label' 	=>  __( 'Include Front Page', 'graphene' )
-	) );	
+	) );
+
+	$wp_customize->add_control( 'graphene_settings[adsense_max_count]', array(
+	  'type' 	=> 'text',
+	  'section' => 'graphene-general-adsense',
+	  'label' 	=>  __( 'Maximum number of ads per page', 'graphene' )
+	) );
 
 	$wp_customize->add_control( new Graphene_Code_Control( $wp_customize, 'graphene_settings[adsense_code]', array(
 		'type' 		=> 'textarea',

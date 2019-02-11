@@ -88,6 +88,8 @@ function graphene_localize_scripts(){
 	
 	$js_object = array(
 		/* General */
+		'siteurl'				=> home_url(),
+		'ajaxurl'				=> admin_url('admin-ajax.php'),
 		'templateUrl'			=> GRAPHENE_ROOTURI,
 		'isSingular'			=> is_singular(),
 
@@ -133,6 +135,10 @@ function graphene_localize_scripts(){
 										'window.grapheneInfScrollCommentsPerPage', 
 										'window.grapheneInfScrollCommentsLeft' ),
 		'infScrollCommentsFinishedMsg'	=> __( 'All comments loaded!', 'graphene' ),
+
+		/* Live search */
+		'disableLiveSearch'		=> ( isset( $graphene_settings['disable_live_search'] ) ) ? $graphene_settings['disable_live_search'] : true,
+		'txtNoResult'			=> __( 'No result found.', 'graphene' ),
 
 		/* Posts layout */
 		'isMasonry'				=> ( isset( $graphene_settings['posts_layout'] ) && $graphene_settings['posts_layout'] == 'masonry' ) ? true : false,

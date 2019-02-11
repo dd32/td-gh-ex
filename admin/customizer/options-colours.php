@@ -39,6 +39,12 @@ function graphene_customizer_colour_options( $wp_customize ){
 			'menu_primary_dd_active_item'	=> array( 'label' => __( 'Dropdown menu text (active state)', 'graphene' ) ),
 		)
 	);
+
+	if ( graphene_has_mega_menu( 'Header Menu' ) ) {
+		unset( $options['options']['menu_primary_dd_item'] );
+		unset( $options['options']['menu_primary_dd_active_item'] );
+	}
+
 	graphene_add_customizer_options( $options, $wp_customize );
 
 

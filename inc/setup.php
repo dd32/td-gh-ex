@@ -293,10 +293,13 @@ function graphene_widgets_init() {
 			) );
 		endif;
                 
+
+        if ( ! is_array( $graphene_settings['widget_hooks'] ) ) $graphene_settings['widget_hooks'] = explode( ',', $graphene_settings['widget_hooks'] );
+        
 		/* Action hooks widget areas */
 		if ( count( $graphene_settings['widget_hooks'] ) > 0 ) {
 			$available_hooks = graphene_get_action_hooks( true );
-			
+
 			foreach ($graphene_settings['widget_hooks'] as $hook) {
 				if (in_array($hook, $available_hooks)) {
 					register_sidebar(array(
@@ -342,5 +345,8 @@ function graphene_display_dynamic_widget_hooks(){
  * Adds a responsive embed wrapper around oEmbed content
  */
 function graphene_responsive_embed( $html, $url, $attr ) {
+	global $post;
+
+	if ( stripos( $post->post_content, '<!-- wp:' ) !== false ) return $html;
     return $html !== '' ? '<div class="embed-container">' . $html . '</div>' : '';
 }

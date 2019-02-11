@@ -4,7 +4,7 @@
  */
 function graphene_export_options(){
 	if ( ! isset( $_GET['graphene-export'] ) ) return;
-    ob_clean();
+    ob_end_clean();
 	
 	/* Check authorisation */
 	$authorised = true;

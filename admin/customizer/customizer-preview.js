@@ -140,16 +140,16 @@ jQuery(document).ready(function($) {
 
 	/* Primary Menu */
 	wp.customize('graphene_settings[menu_primary_bg]', function(value){ value.bind(function(to){
-		$('#graphene-preview-css').append('.navbar, .navbar #header-menu-wrap, .navbar #header-menu-wrap {background:' + to + '}');
+		$('#graphene-preview-css').append('.navbar {background:' + to + '}');
 	});	});
 	wp.customize('graphene_settings[menu_primary_item]', function(value){ value.bind(function(to){
-		$('#graphene-preview-css').append('.navbar-inverse .nav > li > a {color:' + to + '}');
+		$('#graphene-preview-css').append('.navbar-inverse .nav > li > a, #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu > li.mega-menu-item > a.mega-menu-link {color:' + to + '}');
 	});	});
 	wp.customize('graphene_settings[menu_primary_active_bg]', function(value){ value.bind(function(to){
-		$('#graphene-preview-css').append('.navbar #header-menu-wrap .nav li:focus, .navbar #header-menu-wrap .nav li:hover, .navbar #header-menu-wrap .nav li.current-menu-item, .navbar #header-menu-wrap .nav li.current-menu-ancestor, .navbar #header-menu-wrap .dropdown-menu li, .navbar #header-menu-wrap .dropdown-menu > li > a:focus, .navbar #header-menu-wrap .dropdown-menu > li > a:hover, .navbar #header-menu-wrap .dropdown-menu > .active > a, .navbar #header-menu-wrap .dropdown-menu > .active > a:focus, .navbar #header-menu-wrap .dropdown-menu > .active > a:hover, .navbar #header-menu-wrap .navbar-nav>.open>a, .navbar #header-menu-wrap .navbar-nav>.open>a:focus, .navbar #header-menu-wrap .navbar-nav>.open>a:hover, .navbar .navbar-nav>.active>a, .navbar .navbar-nav>.active>a:focus, .navbar .navbar-nav>.active>a:hover {background:' + to + '}');
+		$('#graphene-preview-css').append('.navbar #header-menu-wrap .nav li:focus, .navbar #header-menu-wrap .nav li:hover, .navbar #header-menu-wrap .nav li.current-menu-item, .navbar #header-menu-wrap .nav li.current-menu-ancestor, .navbar #header-menu-wrap .dropdown-menu li, .navbar #header-menu-wrap .dropdown-menu > li > a:focus, .navbar #header-menu-wrap .dropdown-menu > li > a:hover, .navbar #header-menu-wrap .dropdown-menu > .active > a, .navbar #header-menu-wrap .dropdown-menu > .active > a:focus, .navbar #header-menu-wrap .dropdown-menu > .active > a:hover, .navbar #header-menu-wrap .navbar-nav>.open>a, .navbar #header-menu-wrap .navbar-nav>.open>a:focus, .navbar #header-menu-wrap .navbar-nav>.open>a:hover, .navbar .navbar-nav>.active>a, .navbar .navbar-nav>.active>a:focus, .navbar .navbar-nav>.active>a:hover, #header-menu-wrap #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu li.mega-current-menu-item, #header-menu-wrap #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu > li.mega-menu-item > a.mega-menu-link:hover, #header-menu-wrap #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu > li.mega-toggle-on > a.mega-menu-link, #header-menu-wrap #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu > li.mega-current-menu-item > a.mega-menu-link {background:' + to + '}');
 	});	});
 	wp.customize('graphene_settings[menu_primary_active_item]', function(value){ value.bind(function(to){
-		$('#graphene-preview-css').append('.navbar #header-menu-wrap .navbar-nav>.active>a, .navbar #header-menu-wrap .navbar-nav>.active>a:focus, .navbar #header-menu-wrap .navbar-nav>.active>a:hover, .navbar #header-menu-wrap .navbar-nav>.open>a, .navbar #header-menu-wrap .navbar-nav>.open>a:focus, .navbar #header-menu-wrap .navbar-nav>.open>a:hover, .navbar #header-menu-wrap .navbar-nav>.current-menu-item>a, .navbar #header-menu-wrap .navbar-nav>.current-menu-item>a:hover, .navbar #header-menu-wrap .navbar-nav>.current-menu-item>a:focus, .navbar #header-menu-wrap .navbar-nav>.current-menu-ancestor>a, .navbar #header-menu-wrap .navbar-nav>.current-menu-ancestor>a:hover, .navbar #header-menu-wrap .navbar-nav>.current-menu-ancestor>a:focus, .navbar #header-menu-wrap .navbar-nav>li>a:focus, .navbar #header-menu-wrap .navbar-nav>li>a:hover {color:' + to + '}');
+		$('#graphene-preview-css').append('.navbar #header-menu-wrap .navbar-nav>.active>a, .navbar #header-menu-wrap .navbar-nav>.active>a:focus, .navbar #header-menu-wrap .navbar-nav>.active>a:hover, .navbar #header-menu-wrap .navbar-nav>.open>a, .navbar #header-menu-wrap .navbar-nav>.open>a:focus, .navbar #header-menu-wrap .navbar-nav>.open>a:hover, .navbar #header-menu-wrap .navbar-nav>.current-menu-item>a, .navbar #header-menu-wrap .navbar-nav>.current-menu-item>a:hover, .navbar #header-menu-wrap .navbar-nav>.current-menu-item>a:focus, .navbar #header-menu-wrap .navbar-nav>.current-menu-ancestor>a, .navbar #header-menu-wrap .navbar-nav>.current-menu-ancestor>a:hover, .navbar #header-menu-wrap .navbar-nav>.current-menu-ancestor>a:focus, .navbar #header-menu-wrap .navbar-nav>li>a:focus, .navbar #header-menu-wrap .navbar-nav>li>a:hover, #header-menu-wrap #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu li.mega-current-menu-item, #header-menu-wrap #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu > li.mega-menu-item > a.mega-menu-link:hover, #header-menu-wrap #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu > li.mega-toggle-on > a.mega-menu-link, #header-menu-wrap #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu > li.mega-current-menu-item > a.mega-menu-link {color:' + to + '}');
 	});	});
 	wp.customize('graphene_settings[menu_primary_dd_item]', function(value){ value.bind(function(to){
 		$('#graphene-preview-css').append('.navbar-inverse .nav ul li a {color:' + to + '}');
@@ -260,16 +260,16 @@ jQuery(document).ready(function($) {
 
 	/* Archives */
 	wp.customize('graphene_settings[archive_bg]', function(value){ value.bind(function(to){
-		$('#graphene-preview-css').append('.post-nav-top, .archive-title, .page-title, .category-desc {background-color: ' + to + ';}');
+		$('#graphene-preview-css').append('.post-nav-top, .archive-title, .page-title, .term-desc {background-color: ' + to + ';}');
 	});	});
 	wp.customize('graphene_settings[archive_border]', function(value){ value.bind(function(to){
-		$('#graphene-preview-css').append('.post-nav-top, .archive-title, .page-title, .category-desc {border-color: ' + to + ';}');
+		$('#graphene-preview-css').append('.post-nav-top, .archive-title, .page-title, .term-desc {border-color: ' + to + ';}');
 	});	});
 	wp.customize('graphene_settings[archive_label]', function(value){ value.bind(function(to){
 		$('#graphene-preview-css').append('.archive-title span {color: ' + to + '}');
 	});	});
 	wp.customize('graphene_settings[archive_text]', function(value){ value.bind(function(to){
-		$('#graphene-preview-css').append('.page-title, .archive-title, .category-desc {color: ' + to + '}');
+		$('#graphene-preview-css').append('.page-title, .archive-title, .term-desc {color: ' + to + '}');
 	});	});
 
 

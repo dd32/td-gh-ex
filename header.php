@@ -83,12 +83,14 @@
             <nav class="navbar row <?php if ( ! $graphene_settings['light_header'] ) echo 'navbar-inverse'; ?>">
 
                 <div class="navbar-header align-<?php echo $graphene_settings['header_text_align']; ?>">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-menu-wrap, #secondary-menu-wrap">
-                        <span class="sr-only"><?php _e( 'Toggle navigation', 'graphene' ); ?></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
+                	<?php if ( ! graphene_has_mega_menu( 'Header Menu' ) ) : ?>
+	                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#header-menu-wrap, #secondary-menu-wrap">
+	                        <span class="sr-only"><?php _e( 'Toggle navigation', 'graphene' ); ?></span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                        <span class="icon-bar"></span>
+	                    </button>
+                	<?php endif; ?>
                     
                     <?php /* The site title and description */ 
                         $show_title = ( ! in_array( get_theme_mod( 'header_textcolor', apply_filters( 'graphene_header_textcolor', 'ffffff' ) ), array( 'blank', '' ) ) ) ? true : false;
@@ -117,7 +119,7 @@
                 </div>
 
                 <?php graphene_container_wrapper( 'start' ); ?>
-                    <div class="collapse navbar-collapse" id="header-menu-wrap">
+                    <div class="<?php if ( ! graphene_has_mega_menu( 'Header Menu' ) ) echo 'collapse'; ?> navbar-collapse" id="header-menu-wrap">
 
             			<?php
                         /* Header menu */

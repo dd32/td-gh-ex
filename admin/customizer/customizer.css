@@ -199,3 +199,24 @@
 	height: 50px;
 	border: 1px dashed #ddd;
 }
+.customize-control .customize-inside-control-row.hide-radio {
+	margin-left: 0;
+	margin-right: 10px;
+	display: inline-block;
+}
+.customize-control-radio .hide-radio input {
+	margin-left: -9999em;
+}
+.customize-control-radio .hide-radio label {
+	display: inline-block;
+	width: 60px;
+	height: 40px;
+	overflow: hidden;
+}
+#customize-controls .customize-control-radio .hide-radio label img {
+	float: left;
+	max-width: none;
+}
+#customize-controls .customize-control-radio .hide-radio input:checked ~ img {
+	float: right;
+}

@@ -44,16 +44,19 @@ function graphene_add_customizer_controls( $wp_customize ) {
 	 */
 	class Graphene_Radio_HTML_Control extends WP_Customize_Control {
 		public $type = 'radio';
+		public $hide_radio = false;
 		
 		public function render_content() {
 			if ( empty( $this->choices ) ) return;
             $name = '_customize-radio-' . $this->id;
+            $class = 'customize-inside-control-row';
+            if ( $this->hide_radio ) $class .= ' hide-radio';
             ?>
             	<span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
             <?php foreach ( $this->choices as $value => $label ) : ?>
-            	<span class="customize-inside-control-row">
-	                <label>
-	                    <input type="<?php echo $this->type; ?>" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?> />
+            	<span class="<?php echo $class; ?>">
+                	<label for="<?php echo esc_attr( $this->id ) . '-' . $value; ?>">
+	                    <input type="<?php echo $this->type; ?>" value="<?php echo esc_attr( $value ); ?>" name="<?php echo esc_attr( $name ); ?>" <?php $this->link(); checked( $this->value(), $value ); ?> id="<?php echo esc_attr( $this->id ) . '-' . $value; ?>" />
 	                    <?php echo $label; ?>
 	                </label>
 	            </span>

@@ -99,6 +99,10 @@
 	.navbar-nav ul {
 		padding-bottom: 5px;
 	}
+	.boxed-wrapper .navbar-fixed-top {
+		left: 0;
+		right: 0;
+	}
 	.navbar-fixed-top {
 		margin-left: 0;
 		margin-right: 0;

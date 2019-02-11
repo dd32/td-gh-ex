@@ -4,6 +4,20 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.6
+	* Added: Option to allow custom post types in slider
+	* Added: Option to specify maximum number of ads to display per page
+	* Added: Switch to single-column layout if stretched content is detected in block editor
+	* Fixed: Minor styling issue with fixed menu on mobile devices
+	* Fixed: Empty <img> tag being added if header image is hidden
+	* Fixed: Styling issue with tag descriptions
+	* Fixed: Empty space when embedding links to other WordPress sites
+	* Fixed: Block editor width does not reflect actual content width
+	* Fixed: Graphene settings export file sometimes contain garbled data in some configurations
+	* Fixed: PHP warning in /inc/functions.php
+	* Fixed: PHP warning in /wp-includes/post-template.php
+	* Fixed: graphene_post_meta and graphene_post_footer hooks not run if there is no entry meta to display
+
 Version 2.5.3
 	* Added: Link to individual comments
 	* Fixed: Navbar sizing and margin when using fixed navbar with certain container styles

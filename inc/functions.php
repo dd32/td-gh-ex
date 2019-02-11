@@ -235,11 +235,11 @@ function graphene_grid_width( $mod = '', $grid_one = 1, $grid_two = '', $grid_th
 	
 	$width = $grid_width;
 	
-	if ( strpos( $column_mode, 'one_col' ) === 0 )
+	if ( strpos( $column_mode, 'one_col' ) === 0 && is_numeric( $grid_one ) )
 		$width = $grid_width * $grid_one * $container_width - $gutter_width;
-	if ( strpos( $column_mode, 'two_col' ) === 0 )
+	if ( strpos( $column_mode, 'two_col' ) === 0 && is_numeric( $grid_two ) )
 		$width = $grid_width * $grid_two * $container_width - $gutter_width;
-	if ( strpos( $column_mode, 'three_col' ) === 0 )
+	if ( strpos( $column_mode, 'three_col' ) === 0 && is_numeric( $grid_three ) )
 		$width = $grid_width * $grid_three * $container_width - $gutter_width;
 		
 	if ( $mod )	$width += $mod;

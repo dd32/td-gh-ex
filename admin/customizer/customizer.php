@@ -30,9 +30,9 @@ function graphene_enqueue_customizer_scripts() {
 	wp_enqueue_script( 'jquery-ui-sortable' );
 
 	wp_enqueue_style( 'graphene-chosen', 		GRAPHENE_ROOTURI . '/js/chosen/chosen.css' );
-	wp_enqueue_style( 'graphene-customizer', 	GRAPHENE_ROOTURI . '/admin/customizer/customizer.css', $version );
 	wp_enqueue_style( 'jquery-ui-slider', 		GRAPHENE_ROOTURI . '/js/jquery-ui/jquery.ui.custom.css', array(), false );
 	wp_enqueue_style( 'font-awesome', 			GRAPHENE_ROOTURI . '/fonts/font-awesome/css/font-awesome.min.css' );
+	wp_enqueue_style( 'graphene-customizer', 	GRAPHENE_ROOTURI . '/admin/customizer/customizer.css', $version );
 	
 	$l10n_data = array(
 		'chosen_no_search_result'	=> __( 'Oops, nothing found.', 'graphene' ),
@@ -258,6 +258,7 @@ function graphene_get_customizer_validator_settings(){
 
 	/* Slider options */
 	$validator_settings['slider_type']					= 'sanitize_text_field';
+	$validator_settings['slider_post_types']			= 'graphene_validate_multiple_checkboxes';
 	$validator_settings['slider_specific_posts'] 		= 'sanitize_text_field';
     $validator_settings['slider_specific_categories']	= 'graphene_validate_multiple_select';
 	$validator_settings['slider_exclude_categories']	= 'sanitize_text_field';

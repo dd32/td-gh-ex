@@ -342,3 +342,246 @@ function graphene_page_css_class( $classes, $page, $depth, $args, $current_page 
 	return $classes;
 }
 add_filter( 'page_css_class', 'graphene_page_css_class', 10, 5 );
+
+
+/**
+ * Check if mega menu is active
+ */
+function graphene_has_mega_menu( $theme_location ){
+	if ( function_exists( 'max_mega_menu_is_enabled' ) ) return max_mega_menu_is_enabled( $theme_location );
+	else return false;
+}
+
+
+/**
+ * Add Graphene Plus default mega menu theme
+ */
+function graphene_default_mega_menu_theme( $themes ) {
+    $themes['graphene-plus'] = array(
+        'title' => 'Graphene Plus',
+        'container_background_from' => 'rgba(241, 241, 241, 0)',
+        'container_background_to' => 'rgba(241, 241, 241, 0)',
+        'container_padding_left' => '0',
+        'container_padding_right' => '0',
+        'container_padding_top' => '0',
+        'container_padding_bottom' => '0',
+        'container_border_radius_top_left' => '0',
+        'container_border_radius_top_right' => '0',
+        'container_border_radius_bottom_left' => '0',
+        'container_border_radius_bottom_right' => '0',
+        'arrow_up' => 'dash-f343',
+        'arrow_down' => 'dash-f347',
+        'arrow_left' => 'dash-f341',
+        'arrow_right' => 'dash-f345',
+        'menu_item_background_hover_from' => 'rgba(241, 241, 241, 0)',
+        'menu_item_background_hover_to' => 'rgba(51, 51, 51, 0)',
+        'menu_item_spacing' => '0',
+        'menu_item_link_font_size' => '16px',
+        'menu_item_link_height' => '60px',
+        'menu_item_link_padding_left' => '15px',
+        'menu_item_link_padding_right' => '15px',
+        'menu_item_link_padding_top' => '10px',
+        'menu_item_link_padding_bottom' => '10px',
+        'menu_item_link_border_radius_top_left' => '0',
+        'menu_item_link_border_radius_top_right' => '0',
+        'menu_item_link_border_radius_bottom_left' => '0',
+        'menu_item_link_border_radius_bottom_right' => '0',
+        'menu_item_border_color' => 'rgba(255, 255, 255, 0.1)',
+        'menu_item_border_left' => '0',
+        'menu_item_border_right' => '1px',
+        'menu_item_border_top' => '0',
+        'menu_item_border_bottom' => '0',
+        'menu_item_border_color_hover' => 'rgba(255, 255, 255, 0.1)',
+        'menu_item_highlight_current' => 'off',
+        'menu_item_divider_color' => 'rgb(255, 255, 255)',
+        'panel_background_from' => 'rgb(255, 255, 255)',
+        'panel_background_to' => 'rgb(255, 255, 255)',
+        'panel_border_color' => 'rgb(238, 238, 238)',
+        'panel_border_left' => '1px',
+        'panel_border_right' => '1px',
+        'panel_border_bottom' => '1px',
+        'panel_border_radius_bottom_left' => '3px',
+        'panel_border_radius_bottom_right' => '3px',
+        'panel_header_border_color' => '#555',
+        'panel_padding_top' => '10px',
+        'panel_font_size' => '14px',
+        'panel_font_color' => '#666',
+        'panel_font_family' => 'inherit',
+        'panel_second_level_font_color' => '#555',
+        'panel_second_level_font_color_hover' => '#555',
+        'panel_second_level_text_transform' => 'uppercase',
+        'panel_second_level_font' => 'inherit',
+        'panel_second_level_font_size' => '16px',
+        'panel_second_level_font_weight' => 'bold',
+        'panel_second_level_font_weight_hover' => 'bold',
+        'panel_second_level_text_decoration' => 'none',
+        'panel_second_level_text_decoration_hover' => 'none',
+        'panel_second_level_border_color' => '#555',
+        'panel_third_level_font_color' => '#666',
+        'panel_third_level_font_color_hover' => '#666',
+        'panel_third_level_font' => 'inherit',
+        'panel_third_level_font_size' => '14px',
+        'flyout_menu_background_from' => 'rgb(245, 245, 245)',
+        'flyout_menu_background_to' => 'rgb(245, 245, 245)',
+        'flyout_link_padding_left' => '15px',
+        'flyout_link_padding_right' => '15px',
+        'flyout_link_padding_top' => '10px',
+        'flyout_link_padding_bottom' => '10px',
+        'flyout_link_size' => '14px',
+        'flyout_link_color' => '#666',
+        'flyout_link_color_hover' => '#666',
+        'flyout_link_family' => 'inherit',
+        'responsive_breakpoint' => '768px',
+        'line_height' => '1.5',
+        'mobile_columns' => '1',
+        'toggle_background_from' => 'rgba(34, 34, 34, 0)',
+        'toggle_background_to' => 'rgba(34, 34, 34, 0)',
+        'toggle_bar_height' => '0',
+        'mobile_background_from' => '#222',
+        'mobile_background_to' => '#222',
+        'mobile_menu_item_link_font_size' => '14px',
+        'mobile_menu_item_link_color' => '#ffffff',
+        'mobile_menu_item_link_text_align' => 'left',
+        'mobile_menu_item_link_color_hover' => '#ffffff',
+        'mobile_menu_item_background_hover_from' => '#333',
+        'mobile_menu_item_background_hover_to' => '#333',
+        'custom_css' => '/** Push menu onto new line **/ 
+			#{$wrap} { 
+			    clear: both; 
+			}
+			#header-menu-wrap #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu li.mega-current-menu-item,
+			#header-menu-wrap #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu > li.mega-current-menu-item > a.mega-menu-link,
+			#header-menu-wrap #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu > li.mega-menu-item > a.mega-menu-link:hover,
+			#header-menu-wrap #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu > li.mega-toggle-on > a.mega-menu-link {
+				background: #0b0a0b;
+				color: #ffffff;
+			}
+			#mega-menu-wrap-Header-Menu #mega-menu-Header-Menu > li.mega-menu-item > a.mega-menu-link {
+				vertical-align: top;
+				line-height: 1.5em;
+				height: auto;
+				padding-top: 7px;
+				padding-bottom: 23px;
+			}
+			.navbar-pinned #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu > li.mega-menu-item > a.mega-menu-link,
+			#mega-menu-wrap-Header-Menu #mega-menu-Header-Menu > li.mega-has-description > a.mega-menu-link {
+				padding-top: 7px;
+				padding-bottom: 8px;
+			}
+			#mega-menu-wrap-Header-Menu #mega-menu-Header-Menu li.mega-menu-item a.fa.mega-menu-link:before {
+				font-family: FontAwesome;
+			}
+			#header-menu-wrap #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu a.mega-menu-link .mega-description-group .mega-menu-description {
+				line-height: normal;
+			    font-size: 12px;
+			    font-weight: normal;
+			    font-style: normal;
+			    display: block;
+			    opacity: 0.5;
+			    white-space: normal;
+			}
+			#header-menu-wrap #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu .mega-sub-menu a.mega-menu-link .mega-description-group .mega-menu-description {
+				opacity: 0.7;
+			}
+			.navbar-pinned #mega-menu-Header-Menu > .mega-menu-item > .mega-menu-link > .mega-description-group > .mega-menu-description {
+				display: none !important;
+			}
+			.mega-menu-megamenu > .mega-sub-menu {
+				box-shadow: 0 0 5px rgba(0,0,0,0.1) !important;
+			}
+			#mega-menu-wrap-Header-Menu #mega-menu-Header-Menu li.mega-menu-item-has-children > a.mega-menu-link:after, 
+			#mega-menu-wrap-Header-Menu #mega-menu-Header-Menu li.mega-menu-item-has-children > a.mega-menu-link span.mega-indicator:after {
+				font-size: 12px;
+			}
+			.Menu #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu > li.mega-menu-megamenu > ul.mega-sub-menu > li.mega-menu-item h4.mega-block-title, 
+			.Menu #mega-menu-wrap-Header-Menu #mega-menu-Header-Menu > li.mega-menu-megamenu > ul.mega-sub-menu li.mega-menu-column > ul.mega-sub-menu > li.mega-menu-item h4.mega-block-title {
+			    font-size: 0.75em;
+			    font-weight: bold;
+			    letter-spacing: 1px;
+			    line-height: normal;
+				padding: 0;
+				width: 100%;
+				zoom: 1;
+				margin-bottom: 15px;
+			}
+			.mega-menu-item-type-widget ol {
+				list-style-position: outside;
+				margin-left: 29px;
+			}
+			.mega-menu-item-type-widget ol ol {
+				list-style-type: lower-alpha;
+				margin-left: 20px;
+			}
+			.mega-menu-item-type-widget ul ul {
+				margin-left: 20px;
+			}
+			.mega-menu-item-type-widget ol ol ol {
+				list-style-type: lower-roman;
+			}
+			.mega-menu-item-type-widget ol li {
+				line-height: 15px;
+				padding: 2px 0;
+			}
+			.mega-menu-item-type-widget ul ul li {
+				border: none;
+			}
+			.mega-menu-item-type-widget ul ul li {
+				line-height: 15px;
+			}
+			.mega-menu-item-type-widget ul {
+				list-style-position: outside;
+				list-style-type: none;
+			}
+			.mega-menu-item-type-widget ul li {
+				border-bottom: 1px solid #e9e9e9;
+			    font-size: 14px;
+			    line-height: 1.5em;
+				padding: 8px 0;
+			}
+			.mega-menu-item-type-widget ul li img,
+			.mega-menu-item-type-widget ol li img {
+				display: inline-block;
+				margin: 0 2px;
+				vertical-align: middle;
+			}
+			.mega-menu-item-type-widget ul li span.meta-rss {
+				display: inline-block;
+				width: 0;
+				height: 16px;
+			}
+			.mega-menu-item-type-widget li .post-date, 
+			.mega-menu-item-type-widget li .rss-date {
+			    display: block;
+			    font-size: 12px;
+			    text-transform: uppercase;
+			    opacity: 0.7;
+			}
+			.mega-sub-menu .widget_recent_entries a, 
+			.mega-sub-menu .widget_rss ul a {
+			    font-size: 16px;
+			    font-weight: bold;
+			    line-height: 22px;
+			}
+			.mega-menu-toggle-block {
+				position: absolute;
+				top: -25px;
+				right: 10px;
+			}',
+    );
+    return $themes;
+}
+add_filter( 'megamenu_themes', 'graphene_default_mega_menu_theme' );
+
+
+/**
+ * Set the default mega menu theme to Graphene Plus
+ */
+function graphene_override_default_mega_menu_theme( $value ) {
+
+	if ( ! isset( $value['Header Menu']['theme'] ) ) {
+		$value['Header Menu']['theme'] = 'graphene-plus';
+	}
+
+	return $value;
+}
+add_filter( 'default_option_megamenu_settings', 'graphene_override_default_mega_menu_theme' );

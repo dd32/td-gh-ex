@@ -52,6 +52,45 @@ jQuery(document).ready(function($) {
 			$('.boxed-wrapper .navbar').width(parentWidth);
 		}
 	}
+
+
+	/* Live search */
+	if ( ! grapheneJS.disableLiveSearch ) {
+		$('.live-search-input input').autocomplete({
+		    serviceUrl				: grapheneJS.siteurl + '/?autocomplete=post',
+		    deferRequestBy			: 200,
+		    showNoSuggestionNotice	: true,
+		    noSuggestionNotice 		: grapheneJS.txtNoResult,
+		    onSearchStart: function (query) {
+		    	$(this).siblings('.live-search-icon').show();
+		    },
+		    onSearchComplete: function (query, suggestions) {
+		    	$(this).siblings('.live-search-icon').hide();
+		    },
+		    onSelect: function (suggestion) {
+		        window.location.href = suggestion.data;
+		    }
+		});
+
+		/* bbPress */
+		$('input[name="bbp_search"]').wrap('<div class="bbpress-live-search"></div>');
+		$('input[name="bbp_search"]').after('<i class="fa fa-spin fa-circle-o-notch live-search-icon" style="display:none"></i>');
+		$('.bbpress-live-search input').autocomplete({
+		    serviceUrl				: grapheneJS.siteurl + '/?autocomplete=bbpress',
+		    deferRequestBy			: 200,
+		    showNoSuggestionNotice	: true,
+		    noSuggestionNotice 		: grapheneJS.txtNoResult,
+		    onSearchStart: function (query) {
+		    	$(this).siblings('.live-search-icon').show();
+		    },
+		    onSearchComplete: function (query, suggestions) {
+		    	$(this).siblings('.live-search-icon').hide();
+		    },
+		    onSelect: function (suggestion) {
+		        window.location.href = suggestion.data;
+		    }
+		});
+	}
 	
 
 	/* Graphene Slider */
@@ -76,7 +115,7 @@ jQuery(document).ready(function($) {
 		}
 
 		/* Fix Bootstrap Carousel not pausing on hover */
-		$(document).on( 'mouseenter hover', '.carousel', function() {
+		$(document).on( 'mouseenter', '.carousel', function() {
 			$(this).carousel( 'pause' );
 		});
 		$(document).on( 'mouseleave', '.carousel', function() {
@@ -246,6 +285,15 @@ jQuery(document).ready(function($) {
 			});
 		});
 	}
+
+
+	/**
+	 * Remember user preference to hide auto column switch notification
+	 */
+	$('#graphene-auto-column-switch-alert .close').click(function(){
+		data = { action: 'graphene-hide-auto-column-switch-alert' };
+		$.post(grapheneJS.ajaxurl, data);
+	});
 });
 
 

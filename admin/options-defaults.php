@@ -29,6 +29,7 @@ $graphene_defaults = apply_filters( 'graphene_defaults', array(
 	
 	/* Slider options */
 	'slider_type' 				=> 'latest_posts', 	// latest_posts | random | posts_pages | categories
+	'slider_post_types'			=> array( 'post' ),
 	'slider_specific_posts' 	=> '',
     'slider_specific_categories'=> array(),
 	'slider_exclude_categories'	=> false,
@@ -101,6 +102,7 @@ $graphene_defaults = apply_filters( 'graphene_defaults', array(
 	/* Adsense Options */
 	'show_adsense' 				=> false,
 	'adsense_code' 				=> '',
+	'adsense_max_count'			=> 3,
 	'adsense_show_frontpage'    => false,
 	
 	/* Google Analytics options */

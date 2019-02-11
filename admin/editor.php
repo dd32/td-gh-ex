@@ -11,12 +11,12 @@ function graphene_blocks_dynamic_css(){
 
 	/* Basic editor style */
 	$style = '
-		body.gutenberg-editor-page .editor-post-title__block,
-		body.gutenberg-editor-page .editor-default-block-appender,
-		body.gutenberg-editor-page .editor-block-list__block {
+		body.block-editor-page .editor-post-title__block,
+		body.block-editor-page .editor-default-block-appender,
+		body.block-editor-page .editor-block-list__block {
 		    max-width: ' . $content_width . 'px !important;
 		}
-		body.gutenberg-editor-page .editor-block-list__block[data-align="wide"] {
+		body.block-editor-page .editor-block-list__block[data-align="wide"] {
 		    max-width: ' . $wide_width . 'px !important;
 		}
 		.edit-post-visual-editor .editor-block-list__block[data-align=full] {

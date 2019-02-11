@@ -92,7 +92,7 @@ function graphene_get_action_hooks( $hooksonly = false ) {
                     if ( $hooksonly ){ $hooks = array_merge( $hooks, $matches ); }
                     else {
 						$filename = basename( $file );
-						if ( stripos( $filename, 'theme-' ) === 0 ) { $filename = 'includes/' . $filename; }
+						if ( stripos( $file, 'inc/' ) !== false ) { $filename = 'inc/' . $filename; }
 						$hooks[] = array( 'file' => $filename, 'hooks' => $matches );
 					}
                 }                                
@@ -108,58 +108,6 @@ function graphene_get_action_hooks( $hooksonly = false ) {
 		
     return $hooks;
 }
-
-
-if ( ! function_exists( 'graphene_column_mode' ) ) :
-/**
- * Get the theme's final column mode setting for display
- */
-function graphene_column_mode( $post_id = NULL ){
-    global $graphene_settings;
-    
-    // Check the front-end template
-	if ( ! is_admin() && ! $post_id){
-		if ( is_page_template( 'template-onecolumn.php' ) )
-			return 'one_column';
-		elseif ( is_page_template( 'template-twocolumnsleft.php' ) )
-			return 'two_col_left';
-		elseif ( is_page_template( 'template-twocolumnsright.php' ) )
-			return 'two_col_right';
-		elseif ( is_page_template( 'template-threecolumnsleft.php' ) )
-			return 'three_col_left';
-		elseif ( is_page_template( 'template-threecolumnsright.php' ) )
-			return 'three_col_right';
-		elseif ( is_page_template( 'template-threecolumnscenter.php' ) )
-			return 'three_col_center';
-	}
-		
-	/* Check the template in Edit Page screen in admin */
-	if ( is_admin() || $post_id ){
-		
-		if ( ! $post_id ){
-			$post_id = ( isset( $_GET['post'] ) ) ? $_GET['post'] : NULL;
-		}
-		
-		$page_template = get_post_meta( $post_id, '_wp_page_template', true );
-		
-		if ( $page_template != 'default' ){
-			if ( strpos( $page_template, 'template-onecolumn' ) === 0 )
-				return 'one_column';
-			elseif ( strpos( $page_template, 'template-twocolumns' ) === 0 )
-				return 'two_col';
-			elseif ( strpos( $page_template, 'template-threecolumns' ) === 0 )
-				return 'three_col';
-		}
-	}
-    
-	// Return the settings for BBPress column mode if viewing a BBPress page
-	if ( class_exists( 'bbPress' ) && is_bbpress() )
-		return str_replace( '-', '_', $graphene_settings['bbp_column_mode'] );
-	
-	// Return the settings as defined in the theme options 
-    return str_replace( '-', '_', $graphene_settings['column_mode'] );
-}
-endif;
 
 
 /**

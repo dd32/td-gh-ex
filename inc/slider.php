@@ -9,6 +9,7 @@ function graphene_slider( $args = array() ){
 		'title'					=> '',
 		'description'			=> '',
 		'type' 					=> $graphene_settings['slider_type'],
+		'post_types' 			=> $graphene_settings['slider_post_types'],
 		'specific_posts' 		=> $graphene_settings['slider_specific_posts'],
 		'specific_categories'	=> $graphene_settings['slider_specific_categories'],
 		'exclude_categories'	=> $graphene_settings['slider_exclude_categories'],
@@ -276,6 +277,7 @@ function graphene_get_slider_posts( $args = array() ){
 
 	$defaults = array(
 		'type' 					=> $graphene_settings['slider_type'],
+		'post_types'			=> $graphene_settings['slider_post_types'],
 		'specific_posts' 		=> $graphene_settings['slider_specific_posts'],
 		'specific_categories'	=> $graphene_settings['slider_specific_categories'],
 		'exclude_categories'	=> $graphene_settings['slider_exclude_categories'],
@@ -299,7 +301,7 @@ function graphene_get_slider_posts( $args = array() ){
 	extract( $args, EXTR_SKIP );
 
 	/* Set the post types to be displayed */
-	$slider_post_type = ( in_array( $type, array( 'posts_pages', 'categories' ) ) ) ? array( 'post', 'page' ) : array( 'post' ) ;
+	$slider_post_type = ( in_array( $type, array( 'posts_pages', 'categories' ) ) ) ? array( 'post', 'page' ) : $post_types ;
 	$slider_post_type = apply_filters( 'graphene_slider_post_type', $slider_post_type );
 		
 	/* Get the number of posts to show */
@@ -312,8 +314,8 @@ function graphene_get_slider_posts( $args = array() ){
 		'suppress_filters' 	=> 0,
 		'post_type' 		=> $slider_post_type,
 		'ignore_sticky_posts' => 1, // otherwise the sticky posts show up undesired
-	);		
-	
+	);
+
 	/* Get the slider content to display */
 	if ( $type == 'random' ) {
 		$query_args = array_merge( $query_args, array( 'orderby' => 'rand' ) );

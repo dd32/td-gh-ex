@@ -12,22 +12,30 @@ endif;
 
 
 /**
+ * Init the counter for adsense ad count
+ */
+function graphene_ads_counter(){
+	global $graphene_settings, $graphene_ads_count;
+	$graphene_ads_count = 1;
+}
+add_action( 'after_setup_theme', 'graphene_ads_counter' );
+
+
+/**
  * Function to display ads from adsense
 */
-$adsense_adcount = 1;
-$ad_limit = apply_filters( 'graphene_adsense_ads_limit', 3 );
 if ( ! function_exists( 'graphene_adsense' ) ) :
 	function graphene_adsense(){
-		global $adsense_adcount, $ad_limit, $graphene_settings;
-		
-		if ( $graphene_settings['show_adsense'] && $adsense_adcount <= $ad_limit) : ?>
-            <div class="post adsense_single clearfix" id="adsense-ad-<?php echo $adsense_adcount; ?>">
+		global $graphene_ads_count, $graphene_settings;
+
+		if ( $graphene_settings['show_adsense'] && $graphene_ads_count <= $graphene_settings['adsense_max_count'] ) : ?>
+            <div class="post adsense_single clearfix" id="adsense-ad-<?php echo $graphene_ads_count; ?>">
                 <?php echo stripslashes( $graphene_settings['adsense_code'] ); ?>
             </div>
             <?php do_action( 'graphene_show_adsense' ); ?>
 		<?php endif;
 		
-		$adsense_adcount++;
+		$graphene_ads_count++;
 		
 		do_action( 'graphene_adsense' );
 	}
@@ -905,10 +913,11 @@ function graphene_entry_meta(){
 	if ( $byline ) $meta['byline'] = array( 'class'	=> 'byline', 'meta'	=> $byline );
 
 	/* Inline post date */
-	if ( graphene_post_date_setting( get_the_ID() ) == 'text' ) {
+	if ( graphene_post_date_setting( get_the_ID() ) == 'text' && $post_date = graphene_post_date() ) {
 		$meta['date'] = array(
+			'icon'	=> 'clock-o',
 			'class'	=> 'date-inline',
-			'meta'	=> graphene_post_date()
+			'meta'	=> $post_date
 		);
 	}
 
@@ -937,14 +946,18 @@ function graphene_entry_meta(){
 	}
 	
 	$meta = apply_filters( 'graphene_entry_meta', $meta, $post_id );
-	if ( ! $meta ) return;
-	?>
+	if ( $meta ) : ?>
 	    <ul class="post-meta">
-	    	<?php foreach ( $meta as $item ) : ?>
-	        <li class="<?php echo esc_attr( $item['class'] ); ?>"><?php echo $item['meta']; ?></li>
+	    	<?php foreach ( $meta as $item ) : if ( isset( $item['icon'] ) ) $item['class'] .= ' has-icon'; ?>
+	        <li class="<?php echo esc_attr( $item['class'] ); ?>">
+	        	<?php 
+	        		if ( isset( $item['icon'] ) ) echo '<i class="fa fa-' . $item['icon'] . '"></i>';
+	        		echo $item['meta']; 
+	        	?>
+	        </li>
 	        <?php endforeach; ?>
 	    </ul>
-    <?php
+    <?php endif;
 	
 	do_action( 'graphene_post_meta' );
 }
@@ -1002,14 +1015,13 @@ function graphene_entry_footer(){
 	
 	
 	$meta = apply_filters( 'graphene_entry_footer', $meta, $post_id );
-	if ( ! $meta ) return;
-	?>
+	if ( $meta ) : ?>
 	    <ul class="entry-footer">
 	    	<?php foreach ( $meta as $item ) : ?>
 	        <li class="<?php echo esc_attr( $item['class'] ); ?>"><?php echo $item['meta']; ?></li>
 	        <?php endforeach; ?>
 	    </ul>
-    <?php
+    <?php endif;
 	
 	do_action( 'graphene_post_footer' );
 }
@@ -1145,6 +1157,7 @@ function graphene_header_image(){
 
 	if ( ! $graphene_settings['slider_as_header'] ) {
 		$header_img = graphene_get_header_image( $post_id );
+		if ( ! $header_img ) return;
 	} else {
 		$header_img = get_header_image();
 		if ( ! $header_img ) return;
@@ -1187,5 +1200,87 @@ function graphene_featured_image(){
 				do_action( 'graphene_featured_image' );
 			?>
 		</div>
+	<?php
+}
+
+
+if ( ! function_exists( 'graphene_column_mode' ) ) :
+/**
+ * Get the theme's final column mode setting for display
+ */
+function graphene_column_mode( $post_id = NULL ){
+    global $graphene_settings, $post;
+
+    $column_mode = '';
+
+    // Check the front-end template
+	if ( ! is_admin() && ! $post_id ){
+		if ( is_page_template( 'template-onecolumn.php' ) )
+			$column_mode = 'one_column';
+		elseif ( is_page_template( 'template-twocolumnsleft.php' ) )
+			$column_mode = 'two_col_left';
+		elseif ( is_page_template( 'template-twocolumnsright.php' ) )
+			$column_mode = 'two_col_right';
+		elseif ( is_page_template( 'template-threecolumnsleft.php' ) )
+			$column_mode = 'three_col_left';
+		elseif ( is_page_template( 'template-threecolumnsright.php' ) )
+			$column_mode = 'three_col_right';
+		elseif ( is_page_template( 'template-threecolumnscenter.php' ) )
+			$column_mode = 'three_col_center';
+	}
+		
+	/* Check the template in Edit Page screen in admin */
+	if ( is_admin() || $post_id ){
+		
+		if ( ! $post_id ){
+			$post_id = ( isset( $_GET['post'] ) ) ? $_GET['post'] : NULL;
+		}
+		
+		$page_template = get_post_meta( $post_id, '_wp_page_template', true );
+		
+		if ( $page_template != 'default' ){
+			if ( strpos( $page_template, 'template-onecolumn' ) === 0 )
+				$column_mode = 'one_column';
+			elseif ( strpos( $page_template, 'template-twocolumns' ) === 0 )
+				$column_mode = 'two_col';
+			elseif ( strpos( $page_template, 'template-threecolumns' ) === 0 )
+				$column_mode = 'three_col';
+		}
+	}
+    
+	// $column_mode = the settings for BBPress column mode if viewing a BBPress page
+	if ( class_exists( 'bbPress' ) && is_bbpress() ) $column_mode = str_replace( '-', '_', $graphene_settings['bbp_column_mode'] );
+	
+    /* Switch to one-column mode if wide- or full-width block in used in content */
+    $is_wide = false;
+    if ( $post || $post_id ) {
+    	if ( ! $post ) $post = get_post( $post_id );
+    	if ( stripos( $post->post_content, 'alignwide' ) !== false || stripos( $post->post_content, 'alignfull' ) !== false ) {
+	    	$column_mode = 'one_column';
+	    	$is_wide = true;
+	    	add_action( 'graphene_before_post_content', 'graphene_column_mode_auto_switch_notice' );
+	    }
+    }
+
+    // $column_mode = the settings as defined in the theme options 
+    if ( ! $column_mode ) $column_mode = str_replace( '-', '_', $graphene_settings['column_mode'] );
+
+    return apply_filters( 'graphene_column_mode', $column_mode, $is_wide );
+}
+endif;
+
+
+/**
+ * Add a notice highlighting about the automatic column mode switching
+ */
+function graphene_column_mode_auto_switch_notice(){
+	global $post;
+	if ( ! current_user_can( 'edit_post', $post->ID ) ) return;
+	if ( get_user_meta( get_current_user_id(), 'graphene_hide_auto_column_switch_alert', true ) ) return;
+	?>
+	<div id="graphene-auto-column-switch-alert" class="alert alert-info alert-dismissible" role="alert">
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+		<?php _e( 'Graphene has automatically switched the layout of this page to single column due to wide or full-width block being used in the content.', 'graphene' ); ?>
+	</div>
 	<?php
 }
