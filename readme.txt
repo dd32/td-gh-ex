@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.9
 Tested up to: 5.0
-Stable tag: 4.2.4
+Stable tag: 4.2.5
 
 == Description ==
 
@@ -582,3 +582,6 @@ with testing and feature suggestions.
 * New: added .show-logged-in, .hide-logged-in, .hide-not-logged-in, and .show-not-logged-in classes
 * Tweak: added link logo on menu option to Customizer, fixed z-index for link.
 * Tweak: new Classic Editor default font family styling
+
+= Version 4.2.5 =
+* Fix: link on logo stray text bug

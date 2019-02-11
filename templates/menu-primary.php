@@ -24,7 +24,7 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 				$logo = apply_filters('weaverx_menu_logo', '<span class="custom-logo-on-menu"><a href="' . get_home_url() . '" alt="Site Home"><img src="' . $custom_logo_url . '" alt="logo"/></a></span>', $custom_logo_url);	// +since: 3.1.10: add alt=
 			}
 			else {
-				$logo = 'NONO' . apply_filters('weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="logo"/></span>', $custom_logo_url);	// +since: 3.1.10: add alt=
+				$logo = apply_filters('weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="logo"/></span>', $custom_logo_url);	// +since: 3.1.10: add alt=
 			}
 		}
 
