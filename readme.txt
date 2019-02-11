@@ -3,7 +3,7 @@ Contributors: nikeo, alxmedia, d4z_c0nf
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-colors, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 4.6
 Tested up to: 5.0
-Stable tag: 3.4.12
+Stable tag: 3.4.13
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -13,10 +13,19 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 The Hueman theme helps you increase your traffic and engage your visitors. It loads fast and is 100% mobile-friendly according to Google. Best rated theme for blogs and magazines on WordPress.org. Powering 70K+ websites around the world.
 
 == Upgrade Notice ==
-= 3.4.12 =
-Added an option to filter the home/blog posts by category. Fixed the social icons tooltips hidden by the header content in some cases.
+= 3.4.13 =
+Fixed various minor issues. Improved compatibility with the Disqus plugin comments.
 
 == Changelog ==
+= 3.4.13 February 11th, 2019 =
+* fixed : Custom subheading option not reachable. fixes #760
+* fixed : the blog category filter for pro infinite scroll. fixes #755
+* fixed : social icon links like tel:*** or skype:**** or call:**** should be allowed
+* fixed : the back to top icon font-size should be fixed and not in em. fixes #758
+* fixed : removed title attribute "Permalink To" on thumbnails links in post lists. fixes #763
+* fixed : white-space CSS rule problem with long tag. fixes #764
+* improved : compatibility with Disqus comments system. fixes #754
+
 = 3.4.12 January 16th, 2019 =
 * improved : use default browser title tooltip for the social icons. fixes #731
 * added : the option to filter the home/blog posts by category. fixes #659
