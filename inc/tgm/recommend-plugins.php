@@ -60,11 +60,6 @@ function be_page_register_required_plugins() {
 	$plugins = array(
 
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
-		array(
-			'name'      => 'Elementor Page Builder',
-			'slug'      => 'elementor',
-			'required'  => false,
-		),
 		
 		array(
 			'name'        => 'Smart Slider 3',
