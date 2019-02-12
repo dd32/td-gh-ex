@@ -28,22 +28,9 @@
 
 	<header id="masthead" class="site-header grid" role="banner">
 		<div class="site-branding col-3-12 mobile-col-1-2">
-            <h1 class="site-title">
-            <?php
-
-                $output = null;
-
-                if ( function_exists( 'the_custom_logo' ) && has_custom_logo() ) {
-                    $output .= get_custom_logo();
-                } else {
-                    $output .= '<a href="'. esc_url( trailingslashit( home_url() ) ).'" title="'.esc_attr( get_bloginfo( 'name' ) ).'" rel="home">';
-                    $output .= get_bloginfo( 'name' );
-                    $output .= '</a>';
-                }
-
-                echo $output; ?>
-                
-            </h1>
+			<h1 class="site-title">
+            <?php the_custom_logo();?>
+                <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
             <?php
 
             $description = get_bloginfo( 'description', 'display' );

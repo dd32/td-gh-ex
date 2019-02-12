@@ -1,14 +1,14 @@
 /*
 Theme Name: Aqua Portfolio
-Theme URI: https://portfolio.thepixeltribe.com/#aqua
+Theme URI:
 Author: afrothemes
-Author URI: https://portfolio.thepixeltribe.com/
+Author URI: http://aperturewp.com
 Description: Aqua portfolio is a free WordPress Ajax portfolio theme built for digital agencies, creative portfolio, photography sites, design studio, illustrators & any content creator. Brix portfolio is freely availble, use posts to create portfolio items and display them on a modern responsive grid. Want a more professional look? upgrade to the pro version for  detailed portfolio pages with video and image galleries, a modern looking homepage for a portfolio you'd be proud to share.
-Version: 1.0.14
+Version: 1.0.9
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aqua-portfolio
-Tags: grid-layout, custom-background, custom-menu, custom-logo, featured-images, translation-ready, blog, portfolio, photography
+Tags: grid-layout, custom-background, custom-menu, custom-logo, featured-images, translation-ready, blog, portfolio
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -507,12 +507,6 @@ textarea {
 }
 #masthead {
   padding: 1em 0;
-  justify-content: flex-start;
-  display: flex;
-  align-items: center;
-}
-.push-right {
-  margin-left: auto;
 }
 .site-branding {
   text-align: left;

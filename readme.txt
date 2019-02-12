@@ -1,10 +1,9 @@
 === Aquarius === 
 
 Contributors: Afrothemes
-Tags: grid-layout, custom-background, custom-menu, custom-logo, featured-images, translation-ready, blog, portfolio, photography
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 Requires at least: 4.5
-Tested up to: 5.2
-Requires PHP: 5.2.4
+Tested up to: 4.9
 Stable tag: 1.0.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
@@ -43,7 +42,3 @@ https://stocksnap.io/photo/KRQQUX0GMS
 
 = 1.0 - feb 2018 =
 * Initial release
-
-== May 3 2019 ==
-* added flexbox to header
-* fixed logo display
