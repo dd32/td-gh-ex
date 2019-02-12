@@ -3,7 +3,7 @@ Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, blog,  news, photography
 Requires at least: 4.0
 Tested up to: 5.0.2
-Stable tag: 1.2.0
+Stable tag: 1.2.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +19,11 @@ Diarjo Lite WordPress Theme, Copyright 2019 ThemeinProgress.
 Diarjo Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.2.1 =
+Release date - February, 12 - 2019
+
+* Updated - Screenshot.png file
 
 = 1.2.0 =
 Release date - January, 08 - 2019
@@ -88,8 +93,8 @@ Release date - June, 09 - 2014
 
 == Resources ==
 
-Screenshot images By Pixabay - https://www.pixabay.com
-* Featured image : https://pixabay.com/en/vw-camper-volkswagen-vw-car-336606/ by crgutman ( https://pixabay.com/en/users/crgutman-11146621/ ) - CC0
+Screenshot images By StockSnap - https://stocksnap.io
+* Featured image : https://stocksnap.io/photo/GROZSLEHSY/ by Studio 7042 ( https://stocksnap.io/author/studio7042 ) - CC0
 
 Font Awesome By Dave Gandy - http://fortawesome.github.io/Font-Awesome/
 ** Font License under SIL OFL 1.1 - http://scripts.sil.org/OFL ( Applies to all desktop and webfont files in the following directory: /diarjo-lite/assets/fonts/ )
