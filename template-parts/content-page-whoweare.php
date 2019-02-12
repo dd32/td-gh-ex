@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.3.3
+ * @version   1.3.4
  */
  ?>
 

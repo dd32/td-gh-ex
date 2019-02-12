@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.3
+* @version   1.3.4
 */
 
 /* TABLE OF CONTENT
@@ -353,53 +353,37 @@ class Avik_Simple_Notice_Custom_Control extends WP_Customize_Control {
       transition-timing-function: ease;
     }
 
-    .simple-notice-custom-control:hover{
-      box-shadow:
-      1px 1px #000,
-      2px 2px #000,
-      3px 3px #0000;
-      -webkit-transform: translateX(-3px);
-      transform: translateX(-3px);
-      -webkit-transition:  0.7s ease-in;
-      -moz-transition:  0.7s ease-in;
-      transition:  0.7s ease-in ;
-    }
-
+    
     .customize-control-description{
       font-style: normal!important;
     }
 
     .simple-notice-custom-control button {
-    	border-color: #000;
     	background: transparent;
     	color: #000;
     	padding: 8px;
     	font-size: 14px;
     	position: relative;
-    	transition: all 500ms ease;
       margin-top: 10px;
       margin-bottom: 10px;
+      border-radius: 4px;
+      border:1px solid #ccc!important;
+      margin-left:5px;
     }
 
     .simple-notice-custom-control a{
-      color: #000;
+      color: #666;
       text-decoration: none;
     }
 
-    .simple-notice-custom-control a:hover{
-      color: #d5f83e;
-    }
 
-    .simple-notice-custom-control button a:hover {
-      color: #d5f83e;
-    }
+.simple-notice-custom-control a:hover{
+   color: #fff!important;
+}
 
-
-    .simple-notice-custom-control button:hover {
-    	background: #000;
-    	color: #fff;
-      border-color: #fff;
-    }
+.simple-notice-custom-control button:hover {
+   background-color: gray;
+}
 
     </style>
   <?php

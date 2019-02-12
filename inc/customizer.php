@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.3
+* @version   1.3.4
 */
 
 /* TABLE OF CONTENT
@@ -3321,7 +3321,7 @@ function avik_customize_register( $wp_customize ) {
 																														      'transport' => 'postMessage',
 																														      'sanitize_callback' => 'avik_text_sanitization'
 																														   )
-																														);
+																														); 
 
 																														$wp_customize->add_control( new Avik_Simple_Notice_Custom_control( $wp_customize, 'avik_go_pro_version',
 																														   array(

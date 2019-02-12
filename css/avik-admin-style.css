@@ -4,7 +4,7 @@
 * @link https://www.denisfranchi.com
 *
 * @package Avik
-* @version   1.3.3
+* @version   1.3.4
 */
 
 /* TABLE OF CONTENT
@@ -96,7 +96,6 @@ p.avik-welkome-support {
 
 .tab button:hover {
   background-color: #000!important;
-  color: #d5f83e;
 }
 
 .tab button.active {
@@ -185,7 +184,7 @@ button.avik-button-guide-admin-support:hover{
 .avik-guide i{
   padding-top: 0.5em;
   padding-right: 0.5em;
-  color:##d5f83e;
+  color:#d5f83e;
 }
 
 .avik-guide-support-admin div{
@@ -233,35 +232,36 @@ ul.avik-ul-support{
 
 
 button.avik-button-admin-support{
-  background-color: #000;
-  border: none;
-  color: white;
   padding: 8px 16px;
   text-align: center;
   text-decoration: none;
   font-size: 14px;
+  border-radius: 4px;
+  background-color: transparent;
+  border: 1px solid #ccc;
+
 }
 
 button.avik-button-admin-support:hover{
-  color:#d5f83e;
-  background-color: #000;
+  background-color: grey;
+}
+
+button.avik-button-admin-support:hover a.avik-button{
+color: #fff;
 }
 
 a.avik-button{
-  color: white;
+  color: #666;
   text-decoration: none;
-  font-size: 22px;
+  font-size: 20px;
 }
 
-a.avik-button:hover{
-  color: #d5f83e;
-  text-decoration: none;
-}
+
 
 .avik-welkome-support a{
   text-decoration: none;
-  color: #fff;
-  font-size: 22px;
+  color: #666;
+  font-size: 20px;
 }
 
 a.avik-link-pro-version{
@@ -384,23 +384,23 @@ i.avik-icon-free{
 }
 
 .comparison .price-buy {
-  background: #000;
+  background-color: transparent;
   padding: 10px 20px;
   font-size: 14px;
   display: inline-block;
-  color: #fff;
+  color: #666;
   text-decoration: none;
-  border-radius: 3px;
+  border-radius: 4px;
   text-transform: uppercase;
   margin: 5px 0 10px 0;
   letter-spacing: 1px;
   cursor: pointer;
-  -webkit-transition: .3s all ease;
-  transition: .3s all ease;
+  border: 1px solid #ccc;
 }
 
 .comparison .price-buy:hover {
-  color:#d5f83e;
+  color:#fff;
+  background-color: gray;
 }
 
 @media screen and (min-width: 721px) and (max-width: 1000px) {
