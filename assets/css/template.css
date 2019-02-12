@@ -9,7 +9,7 @@ body {
 }
 
 body.custombody { 
-	background:url(../images/background/patterns/pattern1.jpg) repeat #f3f3f3 ;
+	background:#f3f3f3 ;
 }
 
 /* ====================== START TYPOGRAPHY ====================== */
@@ -1011,6 +1011,7 @@ h3#reply-title small, .logged-in-as {
 	border:none;
 }
 
+.woocommerce-product-search button,
 .woocommerce-product-search input[type=submit],
 #searchform input[type=submit],
 .comment-form input[type=submit] {
@@ -1033,6 +1034,7 @@ h3#reply-title small, .logged-in-as {
 	display: block;
 }
 
+.woocommerce-product-search button:hover,
 .woocommerce-product-search input[type=submit]:hover,
 #searchform input[type=submit]:hover,
 .comment-form input[type=submit]:hover {
@@ -1048,6 +1050,7 @@ h3#reply-title small, .logged-in-as {
 }
 
 #searchform input[type=submit],
+.woocommerce-product-search button,
 .woocommerce-product-search input[type=submit]{
 	width: 25%;
 	margin:0;
@@ -1063,6 +1066,7 @@ h3#reply-title small, .logged-in-as {
 	display:inline-block;
 }
 .col-md-12 #searchform #searchsubmit,
+.col-md-12 .woocommerce-product-search button,
 .col-md-12 .woocommerce-product-search input[type=submit] {
 	width:15%;
 }
@@ -1072,6 +1076,7 @@ h3#reply-title small, .logged-in-as {
 }
 
 .col-md-4 #searchform #searchsubmit,
+.col-md-4 .woocommerce-product-search button,
 .col-md-4 .woocommerce-product-search input[type=submit] {
 	width:35%;
 }
@@ -1088,9 +1093,9 @@ h3#reply-title small, .logged-in-as {
 #searchform input[type=search]:focus {
     outline:0px !important;
 	-webkit-appearance:none;
-	box-shadow: none;
 	-moz-box-shadow: none;
 	-webkit-box-shadow: none;
+	box-shadow: none;
 }
 .logged-in-as a, 
 #comments a {

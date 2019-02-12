@@ -1,5 +1,18 @@
 <?php
 
+/**
+ *
+ * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+} // Exit if accessed directly
+
+
 class alhenalite_customize {
 
 	public $theme_fields;
@@ -16,27 +29,12 @@ class alhenalite_customize {
 	public function customize_scripts() {
 
 		wp_enqueue_style ( 
-			'alhenalite_panel', 
+			'alhena-lite_panel', 
 			get_template_directory_uri() . '/core/admin/assets/css/customize.css', 
 			array(), 
 			''
 		);
 
-		wp_enqueue_script( 
-			  'customizer-preview',
-			  get_template_directory_uri().'/core/admin/assets/js/customizer-preview.js',
-			  array( 'jquery' ),
-			  '1.0.0', 
-			  true
-		);
-
-		$alhenalite_details = array(
-			'label' => esc_html__( 'Upgrade to Alhena Premium', 'alhena-lite' ),
-			'url' => esc_url('https://www.themeinprogress.com/alhena-free-responsive-corporate-wordpress-theme/?ref=2&campaign=alhena-panel')
-		);
-	
-		wp_localize_script( 'customizer-preview', 'alhenalite_details', $alhenalite_details );
-	  
 	}
 	
 	public function customize_panel ( $wp_customize ) {
@@ -222,7 +220,7 @@ class alhenalite_customize {
 							
 				break;
 
-				case 'alhenalite-customize-info' :
+				case 'alhena-lite-customize-info' :
 
 					$wp_customize->add_section( $element['id'], array(
 					
@@ -307,28 +305,32 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 		public $type = "alhenalite-customize-info";
 
 		public function render_content() { ?>
-
-			<h2><?php esc_html_e('Get support','alhena-lite');?></h2> 
-            
+        
             <div class="inside">
-    
-                <p><?php esc_html_e("If you've opened a new support ticket from <strong>WordPress.org</strong>, please send a reminder to <strong>support@wpinprogress.com</strong>, to get a faster reply.","alhena-lite");?></p>
+
+				<h2><?php esc_html_e('Alhena premium version','alhena-lite');?></h2> 
+
+                <p><?php esc_html_e("Upgrade to the premium version of Alhena, to enable 600+ Google Fonts, unlimited sidebars, portfolio section and much more.","alhena-lite");?></p>
 
                 <ul>
                 
-                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/theme/alhena-lite' ); ?>" title="<?php esc_attr_e('Open a new ticket','alhena-lite');?>" target="_blank"><?php esc_html_e('Open a new ticket','alhena-lite');?></a></li>
-                    <li><a class="button" href="<?php echo esc_url( 'mailto:support@wpinprogress.com' ); ?>" title="<?php esc_attr_e('Send a reminder','alhena-lite');?>" target="_blank"><?php esc_html_e('Send a reminder','alhena-lite');?></a></li>
+                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/alhena-free-responsive-corporate-wordpress-theme/?ref=2&campaign=alhena-lite-panel' ); ?>" title="<?php esc_attr_e('Upgrade to Alhena premium','alhena-lite');?>" target="_blank"><?php esc_html_e('Upgrade to Alhena premium','alhena-lite');?></a></li>
                 
                 </ul>
-    
 
-                <p><?php esc_html_e("If you like this theme and support, <strong>I'd appreciate</strong> any of the following:","alhena-lite");?></p>
+            </div>
+            
+            <div class="inside">
+
+                <h2><?php esc_html_e('Become a supporter','alhena-lite');?></h2> 
+
+                <p><?php esc_html_e("If you like this theme and support, I'd appreciate any of the following:","alhena-lite");?></p>
 
                 <ul>
                 
-                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/alhena-lite#postform' ); ?>" title="<?php esc_attr_e('Rate this Theme','alhena-lite');?>" target="_blank"><?php esc_html_e('Rate this Theme','alhena-lite');?></a></li>
-                    <li><a class="button" href="<?php echo esc_url( 'https://www.facebook.com/WpInProgress' ); ?>" title="<?php esc_attr_e('Like on Facebook','alhena-lite');?>" target="_blank"><?php esc_html_e('Like on Facebook','alhena-lite');?></a></li>
-                    <li><a class="button" href="<?php echo esc_url( 'http://eepurl.com/SknoL' ); ?>" title="<?php esc_attr_e('Subscribe our newsletter','alhena-lite');?>" target="_blank"><?php esc_html_e('Subscribe our newsletter','alhena-lite');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/'.get_stylesheet().'#postform' ); ?>" title="<?php esc_attr_e('Rate this Theme','alhena-lite');?>" target="_blank"><?php esc_html_e('Rate this Theme','alhena-lite');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'https://www.themeinprogress.com/reserved-area/' ); ?>" title="<?php esc_attr_e('Subscribe our newsletter','alhena-lite');?>" target="_blank"><?php esc_html_e('Subscribe our newsletter','alhena-lite');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/themes/author/alexvtn/' ); ?>" title="<?php esc_attr_e('Download our free WordPress themes','alhena-lite');?>" target="_blank"><?php esc_html_e('Download our free WordPress themes','alhena-lite');?></a></li>
                 
                 </ul>
     

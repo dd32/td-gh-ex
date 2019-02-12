@@ -1,90 +1,104 @@
-Alhena Lite WordPress Theme
----------------------
+=== Alhena Lite ===
+Contributors: alexvtn
+Tags: blog, custom-background, custom-colors, custom-header, custom-logo, custom-menu, e-commerce, featured-images, flexible-header, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, news
+Requires at least: 4.0
+Tested up to: 5.0.3
+Stable tag: 2.3.6
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Alhena offers a creative twist to a corporate WordPress theme. This theme gives you the ability to customize your site’s and now is compatible with WooCommerce plugin, to manage your e-commerce site, with a beautiful masonry layout. The theme is a responsive design, supporting all modern browsers (Firefox, Chrome, Safari, Opera and IE 8, 9, and 10) and is developed using HTML5 and CSS3.
+Alhena Lite offers a creative twist to a corporate and ecommerce WordPress theme.
 
-Created by ThemeinProgress, https://www.themeinprogress.com 
-Demo: http://demo.themeinprogress.com/?theme=Alhena
+== Description ==
 
+Alhena Lite offers a creative twist to a corporate and ecommerce WordPress theme. This theme gives you the ability to customize your site’s and now is compatible with WooCommerce plugin, to manage your e-commerce and shop site, with a beautiful masonry layout. The theme is a responsive design, supporting all modern browsers (Firefox, Chrome, Safari, Opera and IE 8, 9, and 10) and is developed using HTML5 and CSS3.
 
-License
--------
-Alhena Lite is licensed under GNU General Public License v3.
+Created by ThemeinProgress, http://www.themeinprogress.com
+Alhena Lite WordPress Theme, Copyright 2019 ThemeinProgress.
+Alhena Lite is distributed under the terms of the GPLv2 or later
 
+== Changelog ==
 
-Credits
--------
+= 2.3.6 =
+Release date - February, 12 - 2019
 
-/** IMAGES **/
+* Updated - readme.txt file
+* Updated - screenshot.png file
+* Edit - Code optimized
 
-- Patters
+== Resources ==
 
--- By Theme in Progress - http://www.themeinprogress.com
+Screenshot images By StockSnap - https://stocksnap.io
+* Featured image : https://stocksnap.io/photo/UHAQDIYT6X by EVG Photos ( https://stocksnap.io/author/evgphotos ) - CC0
+* Featured image : https://stocksnap.io/photo/TE9BDY8EYB by Kaci Baum ( https://stocksnap.io/author/34643 ) - CC0
+* Featured image : https://stocksnap.io/photo/M2U9VL0ZWG by Clem Onojeghuo ( https://stocksnap.io/author/11287 ) - CC0
 
---- Licensed under GNU General Public License v3.
+Font Awesome By Dave Gandy - http://fortawesome.github.io/Font-Awesome/
+** Font License under SIL OFL 1.1 - http://scripts.sil.org/OFL ( Applies to all desktop and webfont files in the following directory: /alhena-lite/assets/fonts/ )
+** Code License under MIT License - http://opensource.org/licenses/mit-license.html ( Applies to the font-awesome.css file in /alhena-lite/assets/css/ )
+** Brand Icons - All brand icons are trademarks of their respective owners. The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome, nor vice versa.
 
-/** ICONS **/
+Google Web Fonts (Raleway, Roboto, Playfair Display) By Google - http://google.com
+** Cinzel Decorative, Font by Multiple Designers, Licensed under Open Font License, https://fonts.google.com/specimen/Raleway
+** Merriweather, Font by Christian Robertson, Licensed under Apache License, Version 2.0, https://fonts.google.com/specimen/Roboto
+** Playfair Display, Font by Birgit Pulk, Licensed under Open Font License, https://fonts.google.com/specimen/Kristi
 
-- Font Awesome
+Bootstrap By Twitter, Inc - http://getbootstrap.com
+* bootstrap.css v3.3.7 - Licensed under MIT license ( Applies to bootstrap.css file in /alhena-lite/assets/css/ )
 
--- By Dave Gandy - http://fortawesome.github.io/Font-Awesome/
+prettyPhoto By Stephane Caron - http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/ 
+* prettyPhoto.css v3.1.6 - Licensed under GPLv2 or Creative Commons 2.5 license ( Applies to prettyPhoto.css file in /alhena-lite/assets/css/ )
 
---- Font License under SIL OFL 1.1 - http://scripts.sil.org/OFL ( Applies to all desktop and webfont files in the following directory: /sueva/fonts/ )
---- Code License under MIT License - http://opensource.org/licenses/mit-license.html ( Applies to the font-awesome.min.css file in /sueva/css/ )
---- Brand Icons - All brand icons are trademarks of their respective owners. The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome, nor vice versa.
+jQuery Easing By George McGinley Smith - http://gsgd.co.uk/sandbox/jquery/easing/
+* jquery.easing.js v1.3 - Licensed under BSD License ( Applies to jquery.easing.js file in /alhena-lite/assets/js/ )
 
-/** FONTS **/
+prettyPhoto By Stephane Caron - http://www.no-margin-for-errors.com
+* prettyPhoto.js v3.1.4 - Licensed under MIT license ( Applies to prettyPhoto.js file in /alhena-lite/assets/js/ )
 
-- Google Web Fonts
+tinynav By @viljamis - http://tinynav.viljamis.com
+* jquery.tinynav.js v1.1 - Licensed under MIT license ( Applies to jquery.tinynav.js file in /alhena-lite/assets/js/ )
 
--- By Google - http://google.com
+tipsy By jason frame - http://onehackoranother.com/projects/jquery/tipsy
+* jquery.tinynav.js v1.0.0a - Licensed under MIT license ( Applies to jquery.tinynav.js file in /alhena-lite/assets/js/ )
 
---- License - https://developers.google.com/fonts/faq?hl=it-IT#Any_Page_OK
+HTML5 Shiv By @afarkas @jdalton @jon_neal @rem - https://github.com/aFarkas/html5shiv
+* html5shiv.js v3.7.0 - Licensed under MIT and GPL2 license ( Applies to html5shiv.js file in /alhena-lite/assets/scripts/ )
 
-/** FRAMEWORK **/
+selectivizr By Keith Clark - https://github.com/keithclark/selectivizr
+* selectivizr.js v1.0.3b - Licensed under MIT license ( Applies to selectivizr.js file in /alhena-lite/assets/scripts/ )
 
-- Twitter Bootstrap
+The following scripts and styles are coded by me and they are released under MIT license
 
--- By Twitter Bootstrap - http://getbootstrap.com/2.3.2/
+* /alhena-lite/assets/skins/blue.css
+* /alhena-lite/assets/skins/green.css
+* /alhena-lite/assets/skins/orange.css
+* /alhena-lite/assets/skins/pink.css
+* /alhena-lite/assets/skins/purple.css
+* /alhena-lite/assets/skins/red.css
+* /alhena-lite/assets/skins/turquoise.css
+* /alhena-lite/assets/skins/yellow.css
+* /alhena-lite/assets/skins/dark_blue.css
+* /alhena-lite/assets/skins/dark_green.css
+* /alhena-lite/assets/skins/dark_orange.css
+* /alhena-lite/assets/skins/dark_pink.css
+* /alhena-lite/assets/skins/dark_purple.css
+* /alhena-lite/assets/skins/dark_red.css
+* /alhena-lite/assets/skins/dark_turquoise.css
+* /alhena-lite/assets/skins/dark_yellow.css
+* /alhena-lite/assets/skins/light_blue.css
+* /alhena-lite/assets/skins/light_green.css
+* /alhena-lite/assets/skins/light_orange.css
+* /alhena-lite/assets/skins/light_pink.css
+* /alhena-lite/assets/skins/light_purple.css
+* /alhena-lite/assets/skins/light_red.css
+* /alhena-lite/assets/skins/light_turquoise.css
+* /alhena-lite/assets/skins/light_yellow.css
+* /alhena-lite/assets/css/woocommerce.css
+* /alhena-lite/assets/css/template.css
+* /alhena-lite/assets/js/template.js
 
---- Licensed under Apache License v2.0
+The following images are created by me and they are released under CC0 license
 
-/** JQUERY **/
-
-- Jquery
-
--- By Jquery - https://jquery.org
-
---- Licensed under MIT License
-
-- Jquery UI
-
--- By Jquery - http://jqueryui.com/
-
---- Licensed under MIT License 
-
-- Jquery Easing:
-
--- By George McGinley Smith - http://gsgd.co.uk/sandbox/jquery/easing/
-
---- Licensed under BSD License
-
-/* VARIOUS */
-
-- Tipsy:
-
--- By Jason Frame - http://onehackoranother.com/projects/jquery/tipsy/
-
---- Licensed under MIT License
-
-- Tinynav:
-
--- By Viljamis - http://tinynav.viljamis.com
-
---- Licensed under MIT License
-
-- Pretty Photo:
-
--- By Pretty Photo - http://www.no-margin-for-errors.com/projects/prettyphoto-jquery-lightbox-clone/
-
---- Licensed under GPLv2 or Creative Commons 2.5 license
+* /alhena-lite/assets/images/icons/comment.png
+* /alhena-lite/assets/images/icons/dark_stripes.png
+* /alhena-lite/assets/images/icons/light_stripes.png

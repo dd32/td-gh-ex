@@ -161,151 +161,6 @@ if (!function_exists('alhenalite_is_single')) {
 }
 
 /*-----------------------------------------------------------------------------------*/
-/* REQUIRE */
-/*-----------------------------------------------------------------------------------*/ 
-
-if (!function_exists('alhenalite_require')) {
-
-	function alhenalite_require($folder) {
-	
-		if (isset($folder)) : 
-		
-			$dir = get_template_directory() . $folder ;  
-				
-			$files = scandir($dir);  
-				  
-			foreach ($files as $key => $value) {  
-
-				if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
-						
-					if ( !is_dir( $dir . $value) ) { 
-							
-						require_once $dir . $value;
-						
-					} 
-					
-				} 
-
-			}  
-				
-		
-		endif;
-		
-	}
-
-}
-
-/*-----------------------------------------------------------------------------------*/
-/* SCRIPTS */
-/*-----------------------------------------------------------------------------------*/ 
-
-if (!function_exists('alhenalite_enqueue_script')) {
-
-	function alhenalite_enqueue_script($folder) {
-	
-		if ( isset($folder) ) : 
-	
-			$dir = get_template_directory() . $folder ;  
-				
-			$files = scandir($dir);  
-				  
-			foreach ($files as $key => $value) {  
-
-				if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
-						
-					if ( !is_dir( $dir . $value ) && strstr ( $value, 'js' )) { 
-							
-						wp_enqueue_script( str_replace('.js','',$value), get_template_directory_uri() . $folder . "/" . $value , array('jquery'), FALSE, TRUE ); 
-						
-					} 
-					
-				} 
-
-			}  
-
-		endif;
-	
-	}
-
-}
-
-/*-----------------------------------------------------------------------------------*/
-/* STYLES */
-/*-----------------------------------------------------------------------------------*/ 
-
-if (!function_exists('alhenalite_enqueue_style')) {
-
-	function alhenalite_enqueue_style($folder) {
-	
-		if (isset($folder)) : 
-	
-			$dir = get_template_directory() . $folder ;  
-				
-			$files = scandir($dir);  
-				  
-			foreach ($files as $key => $value) {  
-
-				if ( !in_array($value,array(".DS_Store",".","..") ) && !strstr( $value, '._' ) ) { 
-						
-					if ( !is_dir( $dir . $value ) && strstr ( $value, 'css' )) { 
-						
-						wp_enqueue_style( str_replace('.css','',$value), get_template_directory_uri() . $folder . "/" . $value ); 
-						
-					} 
-					
-				} 
-
-			}  
-			
-		endif;
-	
-	}
-
-}
-
-/*-----------------------------------------------------------------------------------*/
-/* TAG TITLE */
-/*-----------------------------------------------------------------------------------*/  
-
-if ( ! function_exists( '_wp_render_title_tag' ) ) {
-
-	function alhenalite_title( $title, $sep ) {
-		
-		global $paged, $page;
-	
-		if ( is_feed() )
-			return $title;
-	
-		$title .= get_bloginfo( 'name' );
-	
-		$site_description = get_bloginfo( 'description', 'display' );
-		if ( $site_description && ( is_home() || is_front_page() ) )
-			$title = "$title $sep $site_description";
-	
-		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( esc_html__( 'Page %s', "alhena-lite" ), max( $paged, $page ) );
-	
-		return $title;
-		
-	}
-
-	add_filter( 'wp_title', 'alhenalite_title', 10, 2 );
-
-	function alhenalite_addtitle() {
-		
-?>
-
-	<title><?php wp_title( '|', true, 'right' ); ?></title>
-
-<?php
-
-	}
-
-	add_action( 'wp_head', 'alhenalite_addtitle' );
-
-}
-
-/*-----------------------------------------------------------------------------------*/
 /* POST ICON */
 /*-----------------------------------------------------------------------------------*/ 
 
@@ -669,32 +524,44 @@ if (!function_exists('alhenalite_template')) {
 if (!function_exists('alhenalite_scripts_styles')) {
 
 	function alhenalite_scripts_styles() {
-	
-		alhenalite_enqueue_style('/assets/css');
 
-		wp_enqueue_style( 'alhenalite-style', get_stylesheet_uri(), array() );
+		wp_enqueue_style( 'alhenalite', get_stylesheet_uri(), array() );
 
-		if ( ( get_theme_mod('wip_skin') ) && ( get_theme_mod('wip_skin') <> "light_blue" ) ):
+		$googleFontsArgs = array(
+			'family' =>	str_replace('|', '%7C','Raleway:400,700,500,600,300,200,100,800,900|Roboto:400,700,400italic,500,500italic,300italic,300,100italic,100,700italic,900,900italic|Kristi'),
+			'subset' =>	'latin,latin-ext'
+		);
+
+		wp_enqueue_style('google-fonts', add_query_arg ($googleFontsArgs, "https://fonts.googleapis.com/css" ), array(), '1.0.0' );
+
+		wp_enqueue_style('bootstrap', get_template_directory_uri() . '/assets/css/bootstrap.css', array(), '3.3.7' );
+		wp_enqueue_style('font-awesome', get_template_directory_uri() . '/assets/css/font-awesome.css', array(), '4.7.0' );
+		wp_enqueue_style('prettyPhoto', get_template_directory_uri() . '/assets/css/prettyPhoto.css', array(), '3.1.6' );
+		wp_enqueue_style('alhena-lite-template', get_template_directory_uri() . '/assets/css/template.css', array(), '1.0.0' );
+		wp_enqueue_style('alhena-lite-woocommerce', get_template_directory_uri() . '/assets/css/woocommerce.css', array(), '1.0.0' );
+
+
+		if ( get_theme_mod('wip_skin') && get_theme_mod('wip_skin') <> 'light_blue' ):
 	
-			wp_enqueue_style( 'alhenalite ' . get_theme_mod('wip_skin') , get_template_directory_uri() . '/assets/skins/' . get_theme_mod('wip_skin') . '.css' ); 
+			wp_enqueue_style(
+				'alhenalite ' . get_theme_mod('wip_skin'),
+				get_template_directory_uri() . '/assets/skins/' . get_theme_mod('wip_skin') . '.css'
+			); 
 		
 		endif;
 
-		wp_enqueue_style( 'google-fonts', '//fonts.googleapis.com/css?family=Raleway:400,700,500,600,300,200,100,800,900|Roboto:400,700,400italic,500,500italic,300italic,300,100italic,100,700italic,900,900italic|Kristi&subset=latin,latin-ext' );
-
 		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 	
-		wp_enqueue_script( "jquery-ui-core", array('jquery'));
-		wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
-		wp_enqueue_script( "masonry", array('jquery') );
+		wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/assets/js/jquery.easing.js' , array('jquery'), '1.3', TRUE ); 
+		wp_enqueue_script( 'jquery-tinynav', get_template_directory_uri() . '/assets/js/jquery.tinynav.js' , array('jquery'), '1.1', TRUE ); 
+		wp_enqueue_script( 'jquery-tipsy', get_template_directory_uri() . '/assets/js/jquery.tipsy.js' , array('jquery'), '1.0.0a', TRUE ); 
+		wp_enqueue_script( 'prettyPhoto', get_template_directory_uri() . '/assets/js/prettyPhoto.js' , array('jquery'), '3.1.4', TRUE ); 
+		wp_enqueue_script( 'alhena-lite-template',get_template_directory_uri() . '/assets/js/template.js',array('jquery', 'imagesloaded', 'masonry'), '1.0.0', TRUE ); 
 
-		alhenalite_enqueue_script('/assets/js');
-
-		wp_enqueue_script  ( 'alhenalite-html5', get_template_directory_uri().'/assets/scripts/html5.js');
-		wp_script_add_data ( 'alhenalite-html5', 'conditional', 'IE 8' );
-		
-		wp_enqueue_script  ( 'alhenalite-selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr-min.js');
-		wp_script_add_data ( 'alhenalite-selectivizr', 'conditional', 'IE 8' );
+		wp_enqueue_script('alhena-lite-html5shiv', get_template_directory_uri().'/assets/scripts/html5shiv.js', FALSE, '3.7.3');
+		wp_script_add_data('alhena-lite-html5shiv', 'conditional', 'IE 8' );
+		wp_enqueue_script('alhena-lite-selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr.js', FALSE, '1.0.3b');
+		wp_script_add_data('alhena-lite-selectivizr', 'conditional', 'IE 8' );
 
 	}
 	
@@ -740,20 +607,32 @@ if (!function_exists('alhenalite_setup')) {
 	
 		load_theme_textdomain("alhena-lite", get_template_directory() . '/languages');
 		
-		$require_array = array (
-			"/core/classes/",
-			"/core/admin/customize/",
-			"/core/functions/",
-			"/core/templates/",
-			"/core/metaboxes/",
-		);
-		
-		foreach ( $require_array as $require_file ) {	
-		
-			alhenalite_require($require_file);
-		
-		}
-		
+		require_once( trailingslashit( get_template_directory() ) . '/core/classes/class-customize.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/classes/class-metaboxes.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/classes/class-notice.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/classes/class-plugin-activation.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/admin/customize/customize.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/admin/customize/general.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/functions/masonry_script.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/functions/required_plugins.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/functions/style.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/functions/widgets.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/functions/woocommerce.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/after-content.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/before-content.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/footer-content.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/footer.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/general.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/header-content.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/masonry.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/media.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/post-formats.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/post-info.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/templates/title.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/metaboxes/page.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/metaboxes/post.php' );
+		require_once( trailingslashit( get_template_directory() ) . '/core/metaboxes/product.php' );
+
 	}
 
 	add_action( 'after_setup_theme', 'alhenalite_setup' );

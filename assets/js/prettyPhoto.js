@@ -3,7 +3,6 @@
 	Use: Lightbox clone for jQuery
 	Author: Stephane Caron (http://www.no-margin-for-errors.com)
 	Version: 3.1.4
-	Licensed under GPLv2 or Creative Commons 2.5 license
 ------------------------------------------------------------------------- */
 (function($) {
 	$.prettyPhoto = {version: '3.1.4'};

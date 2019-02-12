@@ -1,5 +1,4 @@
 body.custombody {
-    background: url(../images/background/patterns/pattern2.jpg);
     background-repeat: repeat;
     background-color: #f3f3f3;
 }
@@ -63,7 +62,8 @@ ol {
 .socials.share a,
 .woocommerce .widget_price_filter .ui-slider .ui-slider-range,
 .woocommerce .widget_price_filter .ui-slider .ui-slider-handle,
-.header-cart-widget .widget_shopping_cart a.remove {
+.header-cart-widget .widget_shopping_cart a.remove,
+.woocommerce-product-search button {
     background-color: #e74c3c;
 }
 
@@ -181,6 +181,7 @@ blockquote h4.title a:hover,
 .woocommerce nav.woocommerce-pagination ul li a:focus,
 .woocommerce nav.woocommerce-pagination ul li a:hover,
 .woocommerce-product-search input[type=submit]:hover,
+.woocommerce-product-search button:hover,
 .socials.share a:hover,
 #top-box .slick-wrapper .post-container:hover,
 .header-cart-widget .widget_shopping_cart a.remove:hover {
@@ -188,6 +189,8 @@ blockquote h4.title a:hover,
 }
 
 .slick-wrapper .post-container:hover,
+.woocommerce-product-search button,
+.woocommerce-product-search button:hover
 .woocommerce-product-search input[type=submit],
 .woocommerce-product-search input[type=submit]:hover {
     border-color: #c0392b !important;
@@ -224,6 +227,7 @@ blockquote h4.title a:hover,
 .woocommerce button.button,
 .woocommerce input.button,
 .woocommerce .wc-proceed-to-checkout input,
+.woocommerce-product-search button:hover,
 .woocommerce-product-search input[type=submit]:hover {
     border-color: #c0392b !important;
 }

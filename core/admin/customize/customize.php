@@ -10,10 +10,10 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 
 			array(
 			
-				"title" => esc_html__( "Get support","alhena-lite"),
-				"id" => "alhenalite-customize-info",
-				"type" => "alhenalite-customize-info",
-				"section" => "alhenalite-customize-info",
+				"title" => esc_html__( "Upgrade to Alhena Premium","alhena-lite"),
+				"id" => "alhena-lite-customize-info",
+				"type" => "alhena-lite-customize-info",
+				"section" => "alhena-lite-customize-info",
 				"priority" => "09",
 
 			),

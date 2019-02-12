@@ -1,8 +1,11 @@
-/**
-	Functionality for Alhena Lite theme.
-	Author: ThemeinProgress.
-	Licensed under GNU General Public License v3 or later.
-*/
+/*
+ * jQuery Alhena Lite theme functions file
+ * https://www.themeinprogress.com
+ *
+ * Copyright 2019, ThemeinProgress
+ * Licensed under MIT license
+ * https://opensource.org/licenses/mit-license.php
+ */
 
 jQuery.noConflict()(function($){
 
