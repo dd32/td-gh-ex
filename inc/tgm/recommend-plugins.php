@@ -62,9 +62,8 @@ function be_page_register_required_plugins() {
 		// This is an example of how to include a plugin from the WordPress Plugin Repository.
 		
 		array(
-			'name'        => 'Smart Slider 3',
-			'slug'        => 'smart-slider-3',
-			
+			'name'        => 'Elementor Page Builder',
+			'slug'        => 'elementor',
 		),
 		array(
 			'name'        => 'Catch Instagram Feed Gallery & Widget',
