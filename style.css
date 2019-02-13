@@ -3,7 +3,7 @@ Theme Name: Redesign
 
 Theme URI: https://toth-illustration.com/redesign-wordpress-theme/
 
-Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it easy to read in handheld units. Max width is 1366 px, adapted for modern desktop computers. The theme is suitable for blogging, news or business. Not based on any other WP theme. It's made from scratch.
+Description: Redesign is a simple, sans serif, clean and highly visible theme. It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it easy to read in handheld units. It's a multipurpose theme, including a wide page template, suitable to design with Gutenberg blocks.
 
 - Transparent graphics.
 - Choose from several transparent color post formats.
@@ -20,7 +20,7 @@ Resource Fonts: Raleway, by The League of Movable Type, under SIL Open Font Lice
 
 Author: Robert Toth
 Author URI: https://toth-illustration.com
-Version: 1.3.7
+Version: 1.3.8
 Copyright: Robert Toth, http://toth-illustration.com
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -791,6 +791,16 @@ pre{
 
 /*BUTTONS & FORMS*/
 
+fieldset {
+	border:1px solid #DDD;
+	padding:10px;
+	margin:10px 0;
+}
+
+legend {
+	font-weight:bold;
+}
+
 input,
 textarea,
 select{
@@ -819,7 +829,8 @@ input[type="url"],
 input[type="text"],
 input[type="search"],
 input[type="email"],
-input[type="file"] {
+input[type="file"],
+input[type="reset"]{
     appearance: none !important;
     -webkit-appearance: none !important;
     -moz-appearance: none !important;

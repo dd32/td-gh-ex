@@ -3,7 +3,11 @@ Theme Name: Redesign
 
 Theme URI: https://toth-illustration.com/redesign-wordpress-theme/
 
-Description: Redesign is a simple, clean and highly visible theme. It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it easy to read in handheld units. Max width is 1366 px, adapted for modern desktop computers. The theme is suitable for blogging, news or business. Not based on any other WP theme. It's made from scratch.
+Description: Redesign is a simple, sans serif, clean and highly visible theme. 
+
+It has transparent graphic elements and colored post formats. Responsive, liquid layout makes it easy to read in handheld units. 
+
+It's a multipurpose theme, including a wide page template, suitable to design with Gutenberg blocks.
 
 - Transparent graphics.
 - Choose from several transparent color post formats.
@@ -40,7 +44,7 @@ The Redesign theme is responsive, and easy to read in handheld units.
 
 Future development:
 ---
-A PREMIUM version of the Redesign theme will be launched soon.
+The theme will be developed accordingly to Wordpress standards.
 
 Configuration:
 ---
