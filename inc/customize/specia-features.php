@@ -83,7 +83,7 @@ function benzer_features_setting( $wp_customize ) {
     	array(
 	        'default'			=> '',
 			'capability'     	=> 'edit_theme_options',
-			'sanitize_callback' => 'specia_sanitize_text',
+			'sanitize_callback' => 'specia_sanitize_html',
 		)
 	);	
 	

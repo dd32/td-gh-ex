@@ -3,8 +3,8 @@
 Contributors: specia
 Requires at least: WordPress 4.4
 Tested up to: WordPress 5.0.3
-Stable tag: 1.0.30
-Version: 1.0.30
+Stable tag: 1.0.31
+Version: 1.0.31
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, editor-style, blog, photography, portfolio, grid-layout
@@ -68,13 +68,22 @@ WOW Js by @matthieu
 License - GNU GPL license v3
 Source: https://github.com/matthieua/WOW
 
-
-Screenshot Image
+x) Screenshot Image
 URL: https://pixabay.com/en/london-cityscape-england-1081820/
 Source: https://pixabay.com/
 License: CC0 License
 
+xi)Feature Section Image
+URL: https://stocksnap.io/photo/BEI6CTBM5S
+Source: https://stocksnap.io
+License: CC0 Public Domain
+
+
 ##Changelog
+version 1.0.31
+* Resolve Escaping Issue
+* Feature Image Change
+
 version 1.0.30
 * Tested With WordPress 5.0.3
 
