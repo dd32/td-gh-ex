@@ -5,15 +5,13 @@
 	Since Smartia 2.0
 */
 ?>
-
 </div> <!-- conttainer -->
 <div id="footer">
-
-<?php
-   	get_sidebar( 'footer' );
-?>
-<div id="creditline"><?php echo d5smartia_get_option('copyright', '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ) . ', All Rights Reserved'); ?> <span class="credit">| Smartia Theme by: <a href="<?php esc_url('http://d5creation.com'); ?>" target="_blank"><img src="<?php echo get_template_directory_uri(); ?>/images/d5logofooter.png" /> D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span></div>
-</div> <!-- footer -->
+	<div id="footer-container">
+		<?php get_sidebar( 'footer' ); ?>
+		<div id="creditline"><?php echo d5smartia_get_option('copyright', '&copy; ' . date("Y"). ': ' . get_bloginfo( 'name' ) . ', All Rights Reserved'); ?> <span class="credit">| Smartia Theme by: <a href="<?php esc_url('https://d5creation.com'); ?>" target="_blank">D5 Creation</a> | Powered by: <a href="http://wordpress.org" target="_blank">WordPress</a></span></div>
+	</div>
+</div><!-- footer -->
 </div> <!-- site container -->
 <div class=" clear"> </div>
 <?php wp_footer(); ?>

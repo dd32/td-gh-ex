@@ -9,7 +9,7 @@ function d5smartia_customize_register($wp_customize){
 		'title'    		=> __('SMARTIA OPTIONS', 'd5-smartia'),
         'description'   => ' <div class="infohead">' . __('We appreciate an','d5-smartia') . ' <a href="http://wordpress.org/support/view/theme-reviews/d5-smartia" target="_blank">' . __('Honest Review','d5-smartia') . '</a> ' . __('of this Theme if you Love our Work','d5-smartia') . '<br /> <br />
 
-' . __('Need More Features and Options including Exciting Slide and 100+ Advanced Features? Try ','d5-smartia') . '<a href="' . esc_url('http://d5creation.com/theme/smartia/') .'
+' . __('Need More Features and Options including Exciting Slide and 100+ Advanced Features? Try ','d5-smartia') . '<a href="' . esc_url('https://d5creation.com/theme/smartia/') .'
 " target="_blank"><strong>' . __('Smartia Extend','d5-smartia') . '</strong></a><br /> <br /> 
         
         

@@ -3,12 +3,10 @@
 	Copyright: 2012-2017, D5 Creation, www.d5creation.com
 	Based on the Simplest D5 Framework for WordPress
 	Since Smartia 2.0
-*/
-   
-  
+*/  
 
 function d5smartia_setup() {
-	register_nav_menus( array( 'main-menu' => __('Main Menu','d5-smartia' ) ) );
+	register_nav_menus( array( 'main-menu' => __('Main Menu','d5-smartia' ), 'top-menu' => __('Top Menu','d5-smartia' ) ) );
 //	Set the content width based on the theme's Smartia and stylesheet.
 	load_theme_textdomain( 'd5-smartia', get_template_directory() . '/languages' );	
 	global $content_width;
@@ -19,13 +17,10 @@ function d5smartia_setup() {
 	require_once ( trailingslashit(get_template_directory()) . 'inc/customize.php' );
 	
 	function d5smartia_about_page() { 
-	add_theme_page( 'D5 Creation Themes', 'D5 Creation Themes', 'edit_theme_options', 'd5-themes', 'd5smartia_d5_themes' );
 	add_theme_page( 'Smartia Options', 'Smartia Options', 'edit_theme_options', 'theme-about', 'd5smartia_theme_about' ); 
 	}
 	add_action('admin_menu', 'd5smartia_about_page');
-	function d5smartia_d5_themes() {  require_once ( trailingslashit(get_template_directory()) . 'inc/d5-themes.php' ); }
 	function d5smartia_theme_about() {  require_once ( trailingslashit(get_template_directory()) . 'inc/theme-about.php' ); }
-
 
 	add_theme_support( "title-tag" );
 	
@@ -38,7 +33,25 @@ function d5smartia_setup() {
 	add_theme_support( 'post-thumbnails' );
 	set_post_thumbnail_size( 600, 200, true );
 	}
-		
+	
+	// 	WordPress 3.4 Custom Header Support				
+	$d5smartia_custom_header = array(
+	'default-image'          => '',
+	'default-image'          => get_template_directory_uri() . '/images/logo.png',
+	'random-default'         => false,
+	'width'                  => 300,
+	'height'                 => 90,
+	'flex-height'            => false,
+	'flex-width'             => false,
+	'default-text-color'     => '000000',
+	'header-text'            => false,
+	'uploads'                => false,
+	'wp-head-callback' 		 => '',
+	'admin-head-callback'    => '',
+	'admin-preview-callback' => ''
+	);
+	add_theme_support( 'custom-header', $d5smartia_custom_header );
+			
 		
 // 	WordPress 3.4 Custom Background Support	
 	$d5smartia_custom_background = array(
@@ -54,6 +67,9 @@ function d5smartia_setup() {
 	function smartia_enqueue_scripts() {
 	wp_enqueue_style('d5smartia-style', get_stylesheet_uri(), false );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) { wp_enqueue_script( 'comment-reply' ); 	}
+		
+	wp_enqueue_script( 'd5smartia-html5', get_template_directory_uri().'/js/html5.js'); 
+    wp_script_add_data( 'd5smartia-html5', 'conditional', 'lt IE 9' );
 	
 	wp_enqueue_script( 'd5smartia-menu-style', get_template_directory_uri(). '/js/menu.js', array( 'jquery' ) );
 	wp_register_style('d5smartia-gfonts1', '//fonts.googleapis.com/css?family=Carrois+Gothic', false );

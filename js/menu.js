@@ -1,5 +1,12 @@
-jQuery(document).ready(function(){ jQuery("#smartia-main-menu ul ul").css({display: "none"}); jQuery('#smartia-main-menu ul li').hover( function() { jQuery(this).find('ul:first').slideDown(200).css('visibility', 'visible'); jQuery(this).addClass('selected'); }, function() { jQuery(this).find('ul:first').slideUp(200); jQuery(this).removeClass('selected'); }); });
+jQuery(document).ready(function(){ 'use strict'; jQuery("#main-menu-con ul ul").css({display: "none"}); jQuery('#main-menu-con ul li').hover( function() { jQuery(this).find('ul:first').slideDown(300).css('visibility', 'visible');  }, function() { jQuery(this).find('ul:first').slideUp(100); }); 
 
-jQuery(document).ready(function(){ jQuery("ul.lboxd ul").css({display: "none"}); jQuery('ul.lboxd li').hover( function() { jQuery(this).find('ul:first').slideDown(200).css('visibility', 'visible'); jQuery(this).addClass('selected'); }, function() { jQuery(this).find('ul:first').slideUp(200); jQuery(this).removeClass('selected'); }); });
+jQuery('#mobile-menu').click(function(){ jQuery('#main-menu-con').toggle(); jQuery(this).toggleClass('yesclick'); });
+});
 
-jQuery.noConflict();jQuery(document).ready(function(){jQuery(".box_skitter_large").skitter({numbers_align:"center",dots:false,numbers:false,preview:true,focus:false,navigation:false,focus_position:"leftTop",controls:false,interval:2e3,controls_position:"leftTop",progressbar:false,mouseOutButton:function(){jQuery(this).stop().animate({opacity:.3},500)},mouseOverButton:function(){jQuery(this).stop().animate({opacity:.9},500)},animateNumberOver:{backgroundColor:"#555"},enable_navigation_keys:true,numbers_align:"right",onLoad:function(e){if(this.thumbs)jQuery(".border-skitter").height(400);box_skitter_large=e}})})
+jQuery.noConflict();
+jQuery(document).ready(function(){ 'use strict'; 
+	var sldwid = jQuery("#slidecon").width();
+	var sldhgt = sldwid*0.3;
+	jQuery(".box_skitter, .box_skitter img, .box_skitter_large").css({"width": sldwid+"px", "height": sldhgt+"px"});							  
+	jQuery(".box_skitter_large").skitter({ dots:true,numbers:false,preview:false,focus:false,navigation:false,controls:false,interval:5000,controls_position:"rightTop",progressbar:false});
+});

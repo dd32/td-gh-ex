@@ -1,58 +1,66 @@
-----------------------------------
-Smartia Theme
-----------------------------------
-Version: 	3.2
-Developer: 	D5 Creation
-Author URI: 	http://d5creation.com
+=== D5 Smartia ===
 
-Donation Link: 	http://d5creation.com/donate/
+Contributors: D5 Creation
+Tags: one-column, two-columns, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, translation-ready, blog, education, portfolio
+Requires at least: 4.0
+Tested up to: 5.0.4-alpha
+Stable tag: 3.3
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright: 	D5 Creation
-License: 	GNU General Public License v2 or later
-License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+Personal and Corporate WP Theme
 
-This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same GPL or Compatible License.
+== Description ==
 
-Images and The Scripts License Description URLs:
-themefeatures.png - FontAwesome Icons' Image, http://fortawesome.github.io/Font-Awesome/
-innovation.png - https://pixabay.com/en/woman-model-ipad-happiness-joy-692799/
-premium.png, newspress.png, simplify.png - https://pixabay.com/en/model-girl-beauty-bella-fashion-456964/
+D5 Smartia theme for WordPress is sophisticated, lightweight, adaptable and Responsive. You can use D5 Smartia for Smart Blogging, Personal or Corporate Websites.
 
-(1).jpg - https://pixabay.com/en/water-creative-modern-art-263054/
-(2).jpg - https://pixabay.com/en/couple-kissing-hugging-love-man-789824/
+== Frequently Asked Questions ==
 
-html5.js: MIT/GPL2 Licensed, https://github.com/aFarkas/html5shiv
-
-jquery.skitter.js: Dual licensed under the MIT or GPL Version 2 licenses, http://thiagosf.net
-
-jquery.easing.1.3.js:   Open source under the BSD License, http://gsgd.co.uk/sandbox/jquery/easing/
-
-
-Changelog
-===================
-
-Version 3.2
-====================================
-- Code Cleanup
-
-
-Version 3.0
-====================================
-The 3.0 Version is a Major Version
-- Added Customize for Theme Options
-- Removed Options Framework
-- Added Translation Features
-- Added Sanitization and Escaping 
-- Added new Images
-
-Please keep a backup of the Previous Theme before updating. Thus you can go back to the previous if you feel anything wrong with this new version
-
-
-Version 2.5
-______________
-- Options Framework Updated
-
-
-INSTALLATION INSTRUCTIONS
-====================================
+= What to do after Theme Installation ? =
 After installing the Theme Please go to Appearance > Customize. You can set the Slide Images there with Title and Description
+
+= Why is Smartia? =
+Socialia is for Personal and Corporate Web Sites
+
+= Can it be used for Personal or Company Websites? =
+You can use for Personal to Corporate Sites
+
+= Is it only for Blogs ? =
+No, It is for Blogs, Company, Personal Websites
+
+
+== Changelog ==
+
+= 3.3 =
+* Code Cleanup
+* Image Change
+* New readme.txt Format Added
+
+= 3.2 =
+* Code Cleanup
+
+= 3.0 =
+* Added Customize for Theme Options
+* Removed Options Framework
+* Added Translation Features
+* Added Sanitization and Escaping 
+* Added new Images
+
+= 2.5 =
+* Options Framework Updated
+
+== Upgrade Notice ==
+
+= 3.0 =
+* Please keep a backup of the Previous Theme before updating. Thus you can go back to the previous if you feel anything wrong with this new version.
+
+== Resources ==
+* html5.js: https://github.com/aFarkas/html5shiv, MIT/GPL2
+* jquery.skitter.js: http://thiagosf.net, MIT or GPL2
+* jquery.easing.1.3.js:  http://gsgd.co.uk/sandbox/jquery/easing, BSD
+* themefeatures.png: FontAwesome Icons' Image, http://fortawesome.github.io/Font-Awesome
+
+* (1).jpg: https://stocksnap.io/photo/NJVNNNG7TM, https://stocksnap.io/photo/PRLPYJ0ACZ
+* (2).jpg: https://stocksnap.io/photo/WV7YXINMGM, https://stocksnap.io/photo/FIGLTLWW8E
+* (3).jpg: https://stocksnap.io/photo/NN4RIQ1ZKI, https://stocksnap.io/photo/AKOSRTQSHH
+* 4.png: https://stocksnap.io/photo/M2BS230XLH

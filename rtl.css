@@ -1,20 +1,20 @@
 /*
 Theme Name: D5 Smartia
-Theme URI: http://d5creation.com/theme/smartia/
+Theme URI: https://d5creation.com/theme/smartia/
 
 Author: D5 Creation
-Author URI: http://d5creation.com/
+Author URI: https://d5creation.com/
 
-Description: D5 Smartia theme for WordPress is sophisticated, lightweight, adaptable and Responsive. You can use D5 Smartia for Black and White looking Smart Blogging, Personal or Corporate Websites. 
+Description: D5 Smartia theme for WordPress is sophisticated, lightweight, adaptable and Responsive. You can use D5 Smartia for Smart Blogging, Personal or Corporate Websites. 
 
-Version: 3.2
+Version: 3.3
 
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-menu, featured-images, full-width-template, rtl-language-support, sticky-post, theme-options, translation-ready, blog, education, portfolio
 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-D5 Smartia WordPress Theme, Copyright 2012-2015: D5 Creation (www.d5creation.com)
+D5 Smartia WordPress Theme, Copyright 2012-2019: D5 Creation (www.d5creation.com)
 
 Text Domain: d5-smartia
 
@@ -22,243 +22,217 @@ Text Domain: d5-smartia
 /* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
 -------------------------------------------------------------- */
 
-caption, th, td {
-	text-align: right;
+caption,th,td {
+	text-align:right;
 }
 
 /* =WordPress Core and Addition
 -------------------------------------------------------------- */
-.alignnone,
-#content .alignnone,
-#content-full .alignnone,
-div .alignnone {
-	margin: 5px 0 20px 20px;
+.alignnone,#content .alignnone,#content-full .alignnone,div .alignnone {
+	margin:5px 0 20px 20px;
 }
 
-.alignleft,
-#content .alignleft,
-#content-full .alignleft,
-div .alignleft {
+.alignleft,#content .alignleft,#content-full .alignleft,div .alignleft {
 	float:left;
-	margin: 5px 20px 20px 0;
+	margin:5px 20px 20px 0;
 }
 
-.alignright,
-#content .alignright,
-#content-full .alignright,
-div .alignright {
+.alignright,#content .alignright,#content-full .alignright,div .alignright {
 	float:right;
-	margin: 5px 0 20px 20px;
+	margin:5px 0 20px 20px;
 }
 
 a img.alignleft {
 	float:left;
-	margin: 5px 20px 20px 0;
+	margin:5px 20px 20px 0;
 }
 
 a img.alignnone {
-	margin: 5px 0 20px 20px;
+	margin:5px 0 20px 20px;
 }
 
 a img.alignright {
 	float:right;
-	margin: 5px 0 20px 20px;
+	margin:5px 0 20px 20px;
 }
 
 a img.aligncenter {
-	margin-right: auto;
-	margin-left: auto;
+	margin-right:auto;
+	margin-left:auto;
 }
 
 .wp-caption.alignnone {
-	margin: 5px 0 20px 20px;
+	margin:5px 0 20px 20px;
 }
 
 .wp-caption.alignright {
-	margin: 5px 0 20px 20px;
+	margin:5px 0 20px 20px;
 }
 
 .wp-caption.alignleft {
-	margin: 5px 20px 20px 0;
+	margin:5px 20px 20px 0;
 }
 
 /* =Structure
 ----------------------------------------------- */
 
-#top-menu-container {
-	left: 20px;
-	right: auto;
-}
-
-#smartia-main-menu #s {
-	float: left;
-	padding-right: 30px;
-	padding-left: 0;
-}
-
 #content {
-	border-left: 1px dotted #CCCCCC;
-	float: right;
-	padding-left: 2%;
-	padding-right: 0;
-	border-right: none;
+	float:right;
 }
 
-#left-sidebar {
-	float: left;
-	padding-right: 2%;
-	padding-left: 0;
-}
-
-.facebook-link, 
-.twitter-link, 
-.gplus-link, 
-.blog-link,
-.ytube-link,
-.lin-link {
-	float: right;
+.widthbox100 {
+	margin-right: 0;
+	margin-left: 0;
 }
 
 /* Common Elements 
 ------------------------------------------------------------- */
-ol, 
-ul {
-	padding: 0 10px 10px 0;
+ol,ul {
+	padding:0 10px 10px 0;
 }
 
 address {
-	text-align: left;
+	text-align:left;
 }
 
 /* Menu Elements 
 ------------------------------------------------------------- */
 
-#smartia-main-menu {
-	float: right;
-	background-image: -webkit-gradient( linear, right top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #CCCCCC), color-stop(1, #F6F6F6) );
+#main-menu-con li {
+	float:right;
+	background: url("images/nav_border.png") no-repeat scroll left center transparent;
 }
 
-#smartia-main-menu .menu {
-	float: right;
-}
-
-#smartia-main-menu li {
+#main-menu-con li ul {
 	float: right;
 }
 
-#smartia-main-menu a {
-	padding: 12px 0 11px 20px;
-}
-
-#smartia-main-menu li ul {
-	float: right;
-}
-
-#smartia-main-menu ul ul, 
-.sub-menu, .sub-menu ul ul {
+#main-menu-con ul ul, .sub-menu, .sub-menu ul ul {
 	float: right;
 	right: 0;
 	left: auto;
 }
 
-#smartia-main-menu ul ul ul {
+#main-menu-con ul ul ul {
 	right: 100%;
 	left: auto;
 }
 
-#smartia-main-menu ul ul a {
+#main-menu-con ul ul a {
 	text-align: right;
 }
 
-#smartia-main-menu ul ul a:hover {
+#main-menu-con ul ul a:hover {
 	padding-right: 20px;
 	padding-left: 0;
+}
+
+#main-menu-con .menu-item-has-children > a, #main-menu-con .page_item_has_children > a {
+	padding-left:25px;
+	padding-right: 0;
+}
+
+#main-menu-con li.menu-item-has-children > a:after, #main-menu-con li.page_item_has_children > a:after {
+	left:10px;
+	right: auto;
+}
+
+#main-menu-con .menu-item-has-children ul li.menu-item-has-children > a:after, #main-menu-con .page_item_has_children ul li.menu-item-has-children > a:after {
+	left:5px;
+	right: auto;
+}
+
+#top-menu  li {
+	float:right;
+}
+
+#top-menu a {
+	padding:5px 19px 5px 10px;
+}
+
+#top-menu a::before {
+	right: 9px;
+	left: auto;
+}
+
+/* Search Box
+------------------------------------------------------------- */
+
+#top-menu-con #searchform {
+	margin-right: 20px;
+	margin-left: auto;
+}
+
+#searchsubmit, .woocommerce-product-search button[type="submit"] {
+	margin: 0 -5px 0 0;
 }
 
 /* Wedget Elements 
 ------------------------------------------------------------- */
 
-#left-sidebar .widget ul,
-#left-sidebar .widget ol {
-	margin-right: 15px;
+#left-sidebar {
+	float: left;
+}
+
+#left-sidebar .widget ul,#left-sidebar .widget ol {
+	margin-right:15px;
 	margin-left: auto;
 }
 
-#footer-sidebar .first-footer-widget {
-	float:right;
-}
-
-#footer-sidebar .footer-widgets {
-	margin-right: 2%;
-	float:right;
+#footer-sidebar .widget ul,#footer-sidebar .widget ol {
+	margin-right:10px;
 	margin-left: auto;
-}
-
-#footer-sidebar .widget ul,
- #footer-sidebar .widget ol {
-	margin-right: 10px;
-	margin-left: auto;
-}
-
-#left-sidebar input#s, #footer-sidebar input#s {
-	float: right;
 }
 
 /* Design Elements 
 ------------------------------------------------------------- */
 
-button,
-input[type="reset"],
-input[type="button"],
-input[type="submit"],
-#respond .form-submit input#submit,
-#wp-submit {
-	background-image: -webkit-gradient( linear, right top, right bottom, color-stop(0, #FFFFFF), color-stop(1, #CCCCCC), color-stop(1, #F6F6F6) );
+/* Calendar
+------------------------------------------------------------- */
+
+button,input[type="reset"],input[type="button"],input[type="submit"],#respond .form-submit input#submit,#wp-submit {
+	background-image:-webkit-gradient(linear,right top,right bottom,color-stop(0,#FFF),color-stop(1,#CCC),color-stop(1,#F6F6F6));
 }
 
 #slide-container {
-	float: right;
+	float:right;
 }
 
 blockquote {
-	border-right: 10px solid #777777;
+	border-right:10px solid #777;
 	border-left: none;
 }
 
 blockquote:before {
-	margin-left:.20em;
+	margin-left:.2em;
 	margin-right: auto;
 }
 
 blockquote:after {
-	margin-right:.20em;
+	margin-right:.2em;
 	margin-left: auto;
 }
 
 #container .attachment-post-thumbnail {
-	float: right;
-	margin: 5px 0 10px 10px;
+	float:right;
+	margin:5px 0 10px 10px;
 }
 
-h1.page-title, h1.arc-post-title {
-	text-align: right;
+h1.page-title,h1.arc-post-title {
+	text-align:right;
 }
 
-h2.post-title, 
-h2.comments, 
-h3#reply-title, 
-h2.post-title-color,
-h2.post-title a {
-	text-align: right;
+h2.post-title,h2.comments,h3#reply-title,h2.post-title-color,h2.post-title a {
+	text-align:right;
 }
 
 .floatright {
-	float: right;
+	float:right;
 	text-align:right;
 }
 
 .floatleft {
-	float: left;
+	float:left;
 	text-align:left;
 }
 
@@ -270,47 +244,29 @@ h2.post-title a {
 	text-align:right;
 }
 
-/* .... Sign In ......
--------------------------------------------------- */
-
-ul.lboxd {
-	float:left;
-}
-
-a.loginicon {
-	margin: -10px 0 0 -15px;
-}
-
-ul.lboxd ul {
-	padding: 20px 20px 20px 40px;
-	left: 30px;
-	right: auto;
-}
-
 /*.... Comments ......
 -------------------------------------------------- */
 
 #commentsbox .avatar {
-	float: right;
-	right: -100px;
+	float:right;
+	right:-100px;
 	left: auto;
 }
 
 .comment-body:before {
-	right: -21px;
+	right:-21px;
 	left: auto;
 }
 
 #commentsbox .comment-body ol li {
-	padding: 5px 20px 5px 0;
+	padding:5px 20px 5px 0;
 }
 
-#commentsbox .comment-body ul  li {
-	padding: 5px 20px 5px 0;
+#commentsbox .comment-body ul li {
+	padding:5px 20px 5px 0;
 }
 
 #commentsbox .commentlist li.comment {
-	padding: 5px 50px 0 0;
 	padding:5px 100px 0 0;
 }
 
@@ -320,8 +276,6 @@ ul.lboxd ul {
 /* Text meant only for screen readers. */
 
 .screen-reader-text:focus {
-	right: 5px;
+	right:5px;
 	left: auto;
 }
-
-
