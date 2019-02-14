@@ -3,7 +3,7 @@
 function d5smartia_customize_register($wp_customize){
 
     
-    $wp_customize->add_section('d5smartia_options', array(
+    $wp_customize->add_section('smartia_options', array(
         'priority' 		=> 10,
 		'capability'     => 'edit_theme_options',
 		'title'    		=> __('SMARTIA OPTIONS', 'd5-smartia'),
@@ -17,6 +17,47 @@ function d5smartia_customize_register($wp_customize){
         </div>		
 		'
     ));
+	
+	
+	// Contact Number
+    $wp_customize->add_setting('smartia[contactnumber]', array(
+        'default'        	=> __('012-345-6789','d5-smartia'),
+        'capability'     	=> 'edit_theme_options',
+    	'sanitize_callback' => 'esc_textarea',
+        'type'           	=> 'option'
+
+    ));
+
+    $wp_customize->add_control('smartia_contactnumber', array(
+        'label'      => __('Contact Number', 'd5-smartia'),
+        'section'    => 'smartia_options',
+        'settings'   => 'smartia[contactnumber]'
+    ));
+	
+	// Contact E-Mail
+    $wp_customize->add_setting('smartia[extra-num]', array(
+        'default'        	=> 'info@example.com',
+        'capability'     	=> 'edit_theme_options',
+    	'sanitize_callback' => 'esc_textarea',
+        'type'           	=> 'option'
+
+    ));
+
+    $wp_customize->add_control('smartia_extra-num', array(
+        'label'      => __('Contact E-Mail', 'd5-smartia'),
+        'section'    => 'smartia_options',
+        'settings'   => 'smartia[extra-num]'
+    ));
+	
+	
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
+
+ $wp_customize->add_section('smartia_ads', array(
+        'priority' 		=> 11,
+		'capability'     => 'edit_theme_options',
+		'title'    		=> __('&nbsp;&nbsp;&nbsp;&nbsp; - ADs', 'd5-smartia'),
+        'description'   => ''
+    ));	
 
 
 //  Left Ad Image
@@ -31,7 +72,7 @@ function d5smartia_customize_register($wp_customize){
 
     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'adcodel', array(
         'label'    			=> __('Left Ad Image', 'd5-smartia'),
-        'section'  			=> 'd5smartia_options',
+        'section'  			=> 'smartia_ads',
         'settings' 			=> 'smartia[adcodel]',
 		'description'   	=> __('180px X 150px image is recommended','d5-smartia')
     )));
@@ -48,13 +89,22 @@ function d5smartia_customize_register($wp_customize){
 
     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'adcoder', array(
         'label'    			=> __('Right Ad Image', 'd5-smartia'),
-        'section'  			=> 'd5smartia_options',
+        'section'  			=> 'smartia_ads',
         'settings' 			=> 'smartia[adcoder]',
 		'description'   	=> __('180px X 150px image is recommended','d5-smartia')
     )));
   
+	
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
+
+ $wp_customize->add_section('smartia_slide', array(
+        'priority' 		=> 12,
+		'capability'     => 'edit_theme_options',
+		'title'    		=> __('&nbsp;&nbsp;&nbsp;&nbsp; - Slide', 'd5-smartia'),
+        'description'   => ''
+    ));	
   
-  foreach (range(1, 2) as $opsinumber) {
+  foreach (range(1, 3) as $opsinumber) {
 	  
 //  Slide Image
     $wp_customize->add_setting('smartia[slide-image-'. $opsinumber .']', array(
@@ -67,8 +117,8 @@ function d5smartia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, 'slide-image-'. $opsinumber, array(
-        'label'    			=> __('Sliding Image', 'd5-smartia') . '-' . $opsinumber,
-        'section'  			=> 'd5smartia_options',
+        'label'    			=> __('SLIDE IMAGE', 'd5-smartia') . '-' . $opsinumber,
+        'section'  			=> 'smartia_slide',
         'settings' 			=> 'smartia[slide-image-'. $opsinumber .']',
 		'description'   	=> __('1300px X 300px image is recommended','d5-smartia')
     )));
@@ -83,8 +133,8 @@ function d5smartia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('d5smartia_slide-image-' . $opsinumber . '-title' , array(
-        'label'      => __('Image Title', 'd5-smartia') . '-' . $opsinumber,
-        'section'    => 'd5smartia_options',
+        'label'      => __('Title', 'd5-smartia') . '-' . $opsinumber,
+        'section'    => 'smartia_slide',
         'settings'   => 'smartia[slide-image-' . $opsinumber .'-title]'
     ));
 
@@ -99,14 +149,53 @@ function d5smartia_customize_register($wp_customize){
     ));
 
     $wp_customize->add_control('d5smartia_slide-image-' . $opsinumber . '-description' , array(
-        'label'      => __('Image Description', 'd5-smartia') . '-' . $opsinumber,
-        'section'    => 'd5smartia_options',
+        'label'      => __('Description', 'd5-smartia') . '-' . $opsinumber,
+        'section'    => 'smartia_slide',
         'settings'   => 'smartia[slide-image-' . $opsinumber .'-description]',
 		'type' 		 => 'textarea'
     ));
 	
   }
- 
+	
+	
+// +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ //
+
+ $wp_customize->add_section('smartia_social', array(
+        'priority' 		=> 13,
+		'capability'     => 'edit_theme_options',
+		'title'    		=> __('&nbsp;&nbsp;&nbsp;&nbsp; - Slide', 'd5-smartia'),
+        'description'   => ''
+    ));
+	
+//  Facebook Link
+    $wp_customize->add_setting('smartia[fb_link]', array(
+        'default'        	=> '#',
+    	'sanitize_callback' => 'esc_url',
+        'capability'     	=> 'edit_theme_options',
+        'type'           	=> 'option'
+
+    ));
+
+    $wp_customize->add_control('d5smartia_fb_link', array(
+        'label'      => __('Facebook Link', 'd5-smartia'),
+        'section'    => 'smartia_social',
+        'settings'   => 'smartia[fb_link]'
+    ));
+	
+//  Twitter Link
+    $wp_customize->add_setting('smartia[tw_link]', array(
+        'default'        	=> '#',
+    	'sanitize_callback' => 'esc_url',
+        'capability'     	=> 'edit_theme_options',
+        'type'           	=> 'option'
+
+    ));
+
+    $wp_customize->add_control('d5smartia_tw_link', array(
+        'label'      => __('Twitter Link', 'd5-smartia'),
+        'section'    => 'smartia_social',
+        'settings'   => 'smartia[tw_link]'
+    ));
  
 //  Linked In Link
     $wp_customize->add_setting('smartia[lin_link]', array(
@@ -119,7 +208,7 @@ function d5smartia_customize_register($wp_customize){
 
     $wp_customize->add_control('d5smartia_lin_link', array(
         'label'      => __('Linked In Link', 'd5-smartia'),
-        'section'    => 'd5smartia_options',
+        'section'    => 'smartia_social',
         'settings'   => 'smartia[lin_link]'
     ));
 	
@@ -134,7 +223,7 @@ function d5smartia_customize_register($wp_customize){
 
     $wp_customize->add_control('d5smartia_ytube_link', array(
         'label'      => __('YouTube Link', 'd5-smartia'),
-        'section'    => 'd5smartia_options',
+        'section'    => 'smartia_social',
         'settings'   => 'smartia[ytube_link]'
     ));
 
@@ -150,11 +239,9 @@ function d5smartia_customize_register($wp_customize){
 
     $wp_customize->add_control('d5smartia_blog_link', array(
         'label'      => __('Blog/News Link', 'd5-smartia'),
-        'section'    => 'd5smartia_options',
+        'section'    => 'smartia_social',
         'settings'   => 'smartia[blog_link]'
     ));
-
-
 
 }
 
@@ -166,7 +253,7 @@ add_action('customize_register', 'd5smartia_customize_register');
 	function d5smartia_get_option( $d5smartia_name, $d5smartia_default = false ) {
 	$d5smartia_config = get_option( 'smartia' );
 
-	if ( ! isset( $d5smartia_config ) ) : return $d5smartia_default; else: $d5smartia_options = $d5smartia_config; endif;
-	if ( isset( $d5smartia_options[$d5smartia_name] ) ):  return $d5smartia_options[$d5smartia_name]; else: return $d5smartia_default; endif;
+	if ( ! isset( $d5smartia_config ) ) : return $d5smartia_default; else: $smartia_options = $d5smartia_config; endif;
+	if ( isset( $smartia_options[$d5smartia_name] ) ):  return $smartia_options[$d5smartia_name]; else: return $d5smartia_default; endif;
 	}
 	endif;

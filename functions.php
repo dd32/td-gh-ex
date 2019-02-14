@@ -37,7 +37,7 @@ function d5smartia_setup() {
 	// 	WordPress 3.4 Custom Header Support				
 	$d5smartia_custom_header = array(
 	'default-image'          => '',
-	'default-image'          => get_template_directory_uri() . '/images/logo.png',
+	//'default-image'          => get_template_directory_uri() . '/images/logo.png',
 	'random-default'         => false,
 	'width'                  => 300,
 	'height'                 => 90,

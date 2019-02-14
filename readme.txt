@@ -31,6 +31,9 @@ No, It is for Blogs, Company, Personal Websites
 
 == Changelog ==
 
+= 3.4 =
+* Minor Issues Fixed
+
 = 3.3 =
 * Code Cleanup
 * Image Change

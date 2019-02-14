@@ -20,7 +20,12 @@ wp_head(); ?>
 	<div id ="header">
 		<div id="top-menu-con" class="box100">
 			<div id="top-menu-items" class="box90 flexcenteralign">
-				<?php if(has_nav_menu('top-menu')): ?><nav id="top-menu" class="flexcenter"><?php wp_nav_menu( array( 'theme_location' => 'top-menu' )); ?></nav><?php endif; ?>			
+				<?php if(has_nav_menu('top-menu')): ?><nav id="top-menu" class="flexcenter"><?php wp_nav_menu( array( 'theme_location' => 'top-menu' )); ?></nav><?php endif; 
+				$contactn = d5smartia_get_option('contactnumber', '012-345-6789');
+				$extranum = d5smartia_get_option('extra-num', 'info@example.com');
+				if ($contactn):?><div class="connumber flexcenter"><?php echo  esc_html($contactn); ?></div><?php  endif;	
+				if ($extranum): ?><div class="extranumber flexcenter"><?php echo esc_html($extranum); ?></div><?php endif;
+				?>			
 				<?php get_search_form(); ?>
 				<div id="social" class="flexcenter">
 					<?php
