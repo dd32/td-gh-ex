@@ -1,18 +1,18 @@
 === Absolutte ===
-Contributors: nicoandrade
-Tags: two-columns, custom-background, threaded-comments, custom-menu, custom-logo, custom-colors, footer-widgets, theme-options, featured-images, sticky-post, translation-ready, full-width-template
-Requires at least: 4.0
-Tested up to: 5.0.2
-Stable tag: 1.0.7
+Contributors: nicoandrade  
+Requires at least: 4.0  
+Tested up to: 5.0.3  
+Stable tag: 1.0.9  
+Requires PHP: 5.6  
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.en.html
+Tags: two-columns, custom-background, threaded-comments, custom-menu, custom-logo, custom-colors, footer-widgets, theme-options, featured-images, sticky-post, translation-ready, full-width-template
 
-Absolutte is a beautiful One page free WordPress theme, perfect for small business.
-It has fully support for Gutenberg blocks and easy customizations.
+Absolutte is a beautiful One page free WordPress theme, perfect for small business. 
+Full support for Gutenberg blocks and easy customizations.
 
 == Description ==
-Absolutte is a beautiful One page free WordPress theme, perfect for small business.
-It has fully support for Gutenberg blocks and easy customizations.
+Absolutte is a beautiful One page free WordPress theme, perfect for small business. Full support for Gutenberg blocks and easy customizations. Also includes support for Quema Labs Blocks plugin which makes this theme look amazing. Please refer to our demo to see the full preview: http://demo.quemalabs.com/absolutte/
 
 == Installation ==
 	
@@ -22,6 +22,10 @@ It has fully support for Gutenberg blocks and easy customizations.
 
 
 == Changelog ==
+
+= 1.0.9 - 14/02/2019 =
+* Updated: Readme file
+* Updated: Theme description
 
 = 1.0.8 - 15/01/2019 =
 * Updated: review
