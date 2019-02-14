@@ -2,8 +2,8 @@
 Contributors: ThemesPride
 Tags: one-column, two-columns, right-sidebar, left-sidebar, three-columns, four-columns, grid-layout, custom-colors, custom-header, custom-background, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 Requires at least: 4.7
-Tested up to: 5.0.2
-Stable tag: 0.1
+Tested up to: 5.0.3
+Stable tag: 0.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,9 @@ Installation
 
 = 0.1 =
 	. Initial version released.
+
+= 0.1.1 =
+	. Changed the image urls and screenshot.
 
 == Resources ==
 
@@ -46,11 +49,11 @@ GNU General Public License for more details.
 Automobile Hub bundles the following third-party resources:
 
 CSS bootstrap.css
-License: Copyright 2011-2018 The Bootstrap Authors
+License: bootstrap is licensed under the MIT License
 Source: https://github.com/twbs/bootstrap/blob/master/LICENSE
 
 JS bootstrap.js
-License: Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+License: bootstrap is licensed under the MIT License
 Source: https://github.com/twbs/bootstrap/blob/master/LICENSE
 
 Font Awesome icons, Copyright Dave Gandy
@@ -58,16 +61,17 @@ License: SIL Open Font License, version 1.1.
 Source: http://fontawesome.io/
 
 JS Superfish
-License: https://github.com/joeldbirch/superfish
+License: superfish is licensed under the MIT License
+Source: https://github.com/joeldbirch/superfish
 
-Pixabay Images
+Stocksnap Images
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://pixabay.com/en/service/terms/
+Source: https://stocksnap.io/license
 
-Banner image: Copyright Toby_Parsons
+Banner image: Copyright Evgeny Tchebotarev
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://pixabay.com/en/ferrari-458-spider-ferrari-458-2932191/
+Source: https://stocksnap.io/photo/O5SWVS90WZ
 
-Post image: Copyright Mysticsartdesign
+Post image: Copyright Remy_Loz
 License: CC0 1.0 Universal (CC0 1.0)
-Source: https://pixabay.com/en/auto-sports-car-paint-flitzer-2208807/
+Source: https://stocksnap.io/photo/W63VV8AK4E
