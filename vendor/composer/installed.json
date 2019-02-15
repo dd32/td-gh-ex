@@ -1,0 +1,46 @@
+[
+    {
+        "name": "benlumia007/backdrop-core",
+        "version": "1.0.0",
+        "version_normalized": "1.0.0.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/benlumia007/backdrop-core.git",
+            "reference": "d772f23291901cadc503fdf2e5863d39076c3dff"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/benlumia007/backdrop-core/zipball/d772f23291901cadc503fdf2e5863d39076c3dff",
+            "reference": "d772f23291901cadc503fdf2e5863d39076c3dff",
+            "shasum": ""
+        },
+        "require": {
+            "php": ">=5.6"
+        },
+        "time": "2019-02-14T22:07:11+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "files": [
+                "src/framework.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "GPL-2.0-or-later"
+        ],
+        "authors": [
+            {
+                "name": "Benjamin Lu",
+                "email": "benlumia007@gmail.com",
+                "homepage": "https://getbenonit.com",
+                "role": "Developer"
+            }
+        ],
+        "description": "A framework that helps you build amazing themes",
+        "homepage": "https://github.com/benlumia007/backdrop-core",
+        "keywords": [
+            "wordpress"
+        ]
+    }
+]
