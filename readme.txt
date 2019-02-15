@@ -3,7 +3,7 @@ Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, blog, e-commerce, news
 Requires at least: 4.0
 Tested up to: 5.0.2
-Stable tag: 3.0.8
+Stable tag: 3.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,12 @@ SuevaFree is distributed under the terms of the GNU GPLv3.
 
 == Changelog ==
 
+= 3.0.9 =
+Release date - February, 15 - 2019
+
+* Updated - readme.txt file
+* Updated - screenshot.png file
+
 = 3.0.8 =
 Release date - January, 08 - 2019
 
@@ -37,10 +43,10 @@ Release date - January, 06 - 2019
 
 == Resources ==
 
-Screenshot images By Pixabay - https://www.pixabay.com
-* Featured image : https://www.pexels.com/photo/hands-with-cup-of-coffee-5599/ by Kaboompics ( https://www.pexels.com/u/kaboompics/ ) - CC0 : https://creativecommons.org/publicdomain/zero/1.0/
-* Featured image : https://pixabay.com/en/business-branding-blank-paper-792113/ by kaboompics ( https://pixabay.com/en/users/kaboompics-1013994/ ) - CC0 : https://creativecommons.org/publicdomain/zero/1.0/
-* Featured image : https://pixabay.com/en/holiday-travel-vacation-summer-2880261/ by veerasantinithi ( https://pixabay.com/en/users/veerasantinithi-6722948/ ) - CC0 : https://creativecommons.org/publicdomain/zero/1.0/
+Screenshot images By StockSnap - https://stocksnap.io
+* Featured image : https://stocksnap.io/photo/NHCJGP8NPM/ by Rawpixel.com ( https://stocksnap.io/author/rawpixel ) - CC0
+* Featured image : https://stocksnap.io/photo/PELOYL0SPD/ by Chatree Petjan ( https://stocksnap.io/author/chatree ) - CC0
+* Featured image : https://stocksnap.io/photo/DZ7DC58DSV/ by Burst ( https://stocksnap.io/author/burstshopify ) - CC0
 
 Google Web Fonts (Abel, Allura, Fjalla One, Roboto Slab) By Google - http://google.com
 ** Abel, Font by MADType, Licensed under Open Font License, https://fonts.google.com/specimen/Abel

@@ -1,12 +1,11 @@
 <?php
-
 /*-----------------------------------------------------------------------------------*/
 /* STYLES AND SCRIPTS */
 /*-----------------------------------------------------------------------------------*/ 
 
-if (!function_exists('sneaklite_scripts_styles')) {
+if (!function_exists('sneak_lite_scripts_styles')) {
 
-	function sneaklite_scripts_styles() {
+	function sneak_lite_scripts_styles() {
 
 		wp_deregister_style ( 'suevafree_style' );
 		wp_deregister_style( 'suevafree-header_layout_1'); 
@@ -14,14 +13,27 @@ if (!function_exists('sneaklite_scripts_styles')) {
 		wp_enqueue_style( 'sneaklite-style', get_stylesheet_directory_uri() . '/style.css' );
 		wp_enqueue_style( 'sneaklite-woocommerce', get_stylesheet_directory_uri() . '/assets/css/woocommerce.css' ); 
 
-		if ( suevafree_setting('suevafree_skin'))
-			wp_enqueue_style( 'sneaklite-' . get_theme_mod('suevafree_skin') , get_stylesheet_directory_uri() . '/assets/skins/' . suevafree_setting('suevafree_skin') . '.css' ); 
-		
-		if ( suevafree_setting('suevafree_header_layout'))
-			wp_deregister_style( 'suevafree-' . suevafree_setting('suevafree_header_layout')); 
+		if ( get_theme_mod('suevafree_skin') ) :
+			
+			wp_enqueue_style(
+				'sneak-lite-' . esc_attr(get_theme_mod('suevafree_skin')),
+				get_stylesheet_directory_uri() . '/assets/skins/' . esc_attr(get_theme_mod('suevafree_skin')) . '.css'
+			); 
 
-		$sneaklite_header = suevafree_setting( 'sneaklite_header_layout', 'header_layout_3');
-		wp_enqueue_style('sneaklite-' . $sneaklite_header, get_template_directory_uri() . '/assets/css/header/' . $sneaklite_header . '.css'); 
+		endif;
+
+		if ( get_theme_mod('suevafree_header_layout') ) :
+			
+			wp_deregister_style(
+				'suevafree-' . esc_attr(suevafree_setting('suevafree_header_layout'))
+			); 
+
+		endif;
+		
+		wp_enqueue_style(
+			'sneak-lite-' . esc_attr(get_theme_mod( 'sneaklite_header_layout', 'header_layout_3')),
+			get_template_directory_uri() . '/assets/css/header/' . esc_attr(get_theme_mod( 'sneaklite_header_layout', 'header_layout_3')) . '.css'
+		); 
 
 		wp_deregister_style( 'suevafree_google_fonts' );
 
@@ -30,11 +42,11 @@ if (!function_exists('sneaklite_scripts_styles')) {
 			'subset' =>	'latin,greek,greek-ext,vietnamese,cyrillic-ext,latin-ext,cyrillic'
 		);
 		
-		wp_enqueue_style( 'sneaklite-google-fonts', add_query_arg ($fonts_args, "https://fonts.googleapis.com/css" ), array(), null);
+		wp_enqueue_style( 'google-fonts', add_query_arg ($fonts_args, "https://fonts.googleapis.com/css" ), array(), null);
 
 	}
 	
-	add_action( 'wp_enqueue_scripts', 'sneaklite_scripts_styles', 99 );
+	add_action( 'wp_enqueue_scripts', 'sneak_lite_scripts_styles', 99 );
 
 }
 
@@ -42,15 +54,15 @@ if (!function_exists('sneaklite_scripts_styles')) {
 /* SETUP */
 /*-----------------------------------------------------------------------------------*/ 
 
-if (!function_exists('sneaklite_theme_setup')) {
+if (!function_exists('sneak_lite_theme_setup')) {
 
-	function sneaklite_theme_setup() {
+	function sneak_lite_theme_setup() {
 
-		load_child_theme_textdomain( 'sneaklite', get_stylesheet_directory() . '/languages' );
+		load_child_theme_textdomain( 'sneak-lite', get_stylesheet_directory() . '/languages' );
 
 	}
 
-	add_action( 'after_setup_theme', 'sneaklite_theme_setup', 11 );
+	add_action( 'after_setup_theme', 'sneak_lite_theme_setup', 11 );
 
 }
 
@@ -58,9 +70,9 @@ if (!function_exists('sneaklite_theme_setup')) {
 /* CUSTOMIZE */
 /*-----------------------------------------------------------------------------------*/   
 
-if (!function_exists('sneaklite_customize_register')) {
+if (!function_exists('sneak_lite_customize_register')) {
 
-	function sneaklite_customize_register( $wp_customize ) {
+	function sneak_lite_customize_register( $wp_customize ) {
 
 		$wp_customize->remove_setting( 'suevafree_header_layout');
 		$wp_customize->remove_control( 'suevafree_header_layout');
@@ -71,7 +83,7 @@ if (!function_exists('sneaklite_customize_register')) {
 
 		$wp_customize->add_setting( 'sneaklite_header_layout', array(
 			'default' => 'header_layout_3',
-			'sanitize_callback' => 'sneaklite_select_sanitize',
+			'sanitize_callback' => 'sneak_lite_select_sanitize',
 		));
 
 		$wp_customize->add_control( 'sneaklite_header_layout' , array(
@@ -79,19 +91,19 @@ if (!function_exists('sneaklite_customize_register')) {
 			'type' => 'select',
 			'section' => 'layouts_section',
 			'priority' => 1,
-			'label' => esc_html__('Header Layout','sneaklite'),
-			'description' => esc_html__('Header Layout','sneaklite'),
+			'label' => esc_html__('Header Layout','sneak-lite'),
+			'description' => esc_html__('Header Layout','sneak-lite'),
 			'choices'  => array (
-				'header_layout_3' => esc_html__( 'SneakLite Header Layout', 'sneaklite'),
-				'header_layout_1' => esc_html__( 'SuevaFree Header Layout 1', 'sneaklite'),
-				'header_layout_2' => esc_html__( 'SuevaFree Header Layout 2', 'sneaklite'),
-				'header_layout_4' => esc_html__( 'SuevaFree Header Layout 4', 'sneaklite'),
-				'header_layout_5' => esc_html__( 'SuevaFree Header Layout 5', 'sneaklite'),
+				'header_layout_3' => esc_html__( 'SneakLite Header Layout', 'sneak-lite'),
+				'header_layout_1' => esc_html__( 'SuevaFree Header Layout 1', 'sneak-lite'),
+				'header_layout_2' => esc_html__( 'SuevaFree Header Layout 2', 'sneak-lite'),
+				'header_layout_4' => esc_html__( 'SuevaFree Header Layout 4', 'sneak-lite'),
+				'header_layout_5' => esc_html__( 'SuevaFree Header Layout 5', 'sneak-lite'),
 			),
 												
 		));
 
-		function sneaklite_select_sanitize ($value, $setting) {
+		function sneak_lite_select_sanitize ($value, $setting) {
 		
 			global $wp_customize;
 					
@@ -111,7 +123,7 @@ if (!function_exists('sneaklite_customize_register')) {
 
 	}
 	
-	add_action( 'customize_register', 'sneaklite_customize_register', 99 );
+	add_action( 'customize_register', 'sneak_lite_customize_register', 99 );
 
 }
 

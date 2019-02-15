@@ -12,4 +12,4 @@
 
 <body <?php body_class(); ?>>
 
-<?php do_action( 'suevafree_' . suevafree_setting( 'sneaklite_header_layout', 'header_layout_3'), 'main-menu', 'default-menu' ); ?>
+<?php do_action( 'suevafree_' . esc_attr(suevafree_setting( 'sneaklite_header_layout', 'header_layout_3')), 'main-menu', 'default-menu' ); ?>
