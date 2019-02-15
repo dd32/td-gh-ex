@@ -70,6 +70,11 @@ function be_page_register_required_plugins() {
 			'slug'        => 'catch-instagram-feed-gallery-widget',
 			
 		),
+		array(
+			'name'        => 'Smart Slider 3',
+			'slug'        => 'smart-slider-3',
+			
+		),
 		
 		
 
