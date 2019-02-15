@@ -58,10 +58,9 @@ Designer: Carrois Apostrophe
 License: Sil Open Font License
 Source: https://fonts.google.com/specimen/Fira+Sans
 
-Monoar (https://pixabay.com/en/users/Monoar-2240009/)
-Source: https://pixabay.com/en/pencil-wood-pencil-education-1486278/
-License: https://pixabay.com/en/service/terms/#usage
-
 Benjamin Lu (https://github.com/benlumia007/)
 Backdrop Core (https://github.com/benlumia007/backdrop-core)
 License: GPLv2 or Higher
+
+== Screenshot ==
+Header Image - CCO (Benjamin Lu)

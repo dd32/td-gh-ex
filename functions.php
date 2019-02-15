@@ -21,7 +21,7 @@
 /**
  * 1.0 - Compatibility Check
  */
-function initiator_compatibility_check() {
+function auspicious_compatibility_check() {
 	if ( version_compare( $GLOBALS['wp_version'], '4.9.6', '<' ) ) {
 		return sprintf(
 			// translators: 1 =  a version string, 2 = current wp version string.
@@ -43,33 +43,33 @@ function initiator_compatibility_check() {
 /**
  * Triggered after switch themes and check if it meets the requirements.
  */
-function initiator_switch_theme() {
+function auspicious_switch_theme() {
 	if ( version_compare( $GLOBALS['wp_version'], '4.9.6', '<' ) || version_compare( PHP_VERSION, '5.6', '<' ) ) {
 		switch_theme( get_option( 'theme_switched' ) );
-		add_action( 'admin_notices', 'initiator_upgrade_notice' );
+		add_action( 'admin_notices', 'auspicious_upgrade_notice' );
 	}
 	return false;
 }
-add_action( 'after_switch_theme', 'initiator_switch_theme' );
+add_action( 'after_switch_theme', 'auspicious_switch_theme' );
 
 /**
  * Displays an error if it doesn't meet the requirements.
  */
-function initiator_upgrade_notice() {
-	printf( '<div class="error"><p>%s</p></div>', esc_html( initiator_compatibility_check() ) );
+function auspicious_upgrade_notice() {
+	printf( '<div class="error"><p>%s</p></div>', esc_html( auspicious_compatibility_check() ) );
 }
 
 /**
  * 2.0 - Load Theme Setup
  */
-function initiator_load_theme_setup() {
+function auspicious_load_theme_setup() {
 	/**
 	 * The load_theme_textdomain( 'auspicious' );. This should translate all translation in the theme. If there is a
 	 * second text-domain, it should ignore since translation only takes the primary text domain.
 	 */
 	load_theme_textdomain( 'auspicious' );
 }
-add_action( 'after_setup_theme', 'initiator_load_theme_setup' );
+add_action( 'after_setup_theme', 'auspicious_load_theme_setup' );
 
 /**
  * 3.0 - Autoload Backrop Core
