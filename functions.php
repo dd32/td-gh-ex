@@ -25,14 +25,14 @@ function auspicious_compatibility_check() {
 	if ( version_compare( $GLOBALS['wp_version'], '4.9.6', '<' ) ) {
 		return sprintf(
 			// translators: 1 =  a version string, 2 = current wp version string.
-			__( 'Initiator requires at least WordPress version %1$s. You are currently running %2$s. Please upgrade and try again.', 'auspicious' ),
+			__( 'Auspicious requires at least WordPress version %1$s. You are currently running %2$s. Please upgrade and try again.', 'auspicious' ),
 			'4.9.6',
 			$GLOBALS['wp_version']
 		);
 	} elseif ( version_compare( PHP_VERSION, '5.6', '<' ) ) {
 		return sprintf(
 			// translators: 1 =  a version string, 2 = current wp version string.
-			__( 'Initiator requires at least PHP version %1$s. You are currently running %2$s. Please upgrade and try again.', 'auspicious' ),
+			__( 'Auspicious requires at least PHP version %1$s. You are currently running %2$s. Please upgrade and try again.', 'auspicious' ),
 			'5.6',
 			PHP_VERSION
 		);
