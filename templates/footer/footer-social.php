@@ -11,39 +11,39 @@
 			endif;
 
 			if( get_theme_mod( 'avant-social-skype' ) ) :
-			    echo '<a href="skype:' . esc_html( get_theme_mod( 'avant-social-skype' ) ) . '?userinfo" title="' . esc_attr__( 'Contact Us on Skype', 'avant' ) . '" class="footer-social-icon footer-social-skype"><i class="fas fa-skype"></i></a>';
+			    echo '<a href="skype:' . esc_html( get_theme_mod( 'avant-social-skype' ) ) . '?userinfo" title="' . esc_attr__( 'Contact Us on Skype', 'avant' ) . '" class="footer-social-icon footer-social-skype"><i class="fab fa-skype"></i></a>';
 			endif;
 
 			if( get_theme_mod( 'avant-social-facebook' ) ) :
-			    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-facebook' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Facebook', 'avant' ) . '" class="footer-social-icon footer-social-facebook"><i class="fas fa-facebook"></i></a>';
+			    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-facebook' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Facebook', 'avant' ) . '" class="footer-social-icon footer-social-facebook"><i class="fab fa-facebook"></i></a>';
 			endif;
 
 			if( get_theme_mod( 'avant-social-twitter' ) ) :
-			    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-twitter' ) ) . '" target="_blank" title="' . esc_attr__( 'Follow Us on Twitter', 'avant' ) . '" class="footer-social-icon footer-social-twitter"><i class="fas fa-twitter"></i></a>';
+			    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-twitter' ) ) . '" target="_blank" title="' . esc_attr__( 'Follow Us on Twitter', 'avant' ) . '" class="footer-social-icon footer-social-twitter"><i class="fab fa-twitter"></i></a>';
 			endif;
 			
 			if( get_theme_mod( 'avant-social-pinterest' ) ) :
-			    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-pinterest' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Pinterest', 'avant' ) . '" class="footer-social-icon footer-social-pinterest"><i class="fas fa-pinterest"></i></a>';
+			    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-pinterest' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Pinterest', 'avant' ) . '" class="footer-social-icon footer-social-pinterest"><i class="fab fa-pinterest"></i></a>';
 			endif;
 			
 			if( get_theme_mod( 'avant-social-linkedin' ) ) :
-			    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-linkedin' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on LinkedIn', 'avant' ) . '" class="footer-social-icon footer-social-linkedin"><i class="fas fa-linkedin"></i></a>';
+			    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-linkedin' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on LinkedIn', 'avant' ) . '" class="footer-social-icon footer-social-linkedin"><i class="fab fa-linkedin"></i></a>';
 			endif;
 
 			if( get_theme_mod( 'avant-social-tumblr' ) ) :
-			    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-tumblr' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Tumblr', 'avant' ) . '" class="footer-social-icon footer-social-tumblr"><i class="fas fa-tumblr"></i></a>';
+			    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-tumblr' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Tumblr', 'avant' ) . '" class="footer-social-icon footer-social-tumblr"><i class="fab fa-tumblr"></i></a>';
 			endif;
 
 			if( get_theme_mod( 'avant-social-flickr' ) ) :
-			    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-flickr' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Flickr', 'avant' ) . '" class="footer-social-icon footer-social-flickr"><i class="fas fa-flickr"></i></a>';
+			    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-flickr' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on Flickr', 'avant' ) . '" class="footer-social-icon footer-social-flickr"><i class="fab fa-flickr"></i></a>';
 			endif;
 			
 			if( get_theme_mod( 'avant-social-vk' ) ) :
-			    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-vk' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on VK', 'avant' ) . '" class="footer-social-icon social-vk"><i class="fas fa-vk"></i></a>';
+			    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-vk' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on VK', 'avant' ) . '" class="footer-social-icon social-vk"><i class="fab fa-vk"></i></a>';
 			endif;
 			
 			if( get_theme_mod( 'avant-social-github' ) ) :
-			    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-github' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on GitHub', 'avant' ) . '" class="footer-social-icon footer-social-github"><i class="fas fa-github"></i></a>';
+			    echo '<a href="' . esc_url( get_theme_mod( 'avant-social-github' ) ) . '" target="_blank" title="' . esc_attr__( 'Find Us on GitHub', 'avant' ) . '" class="footer-social-icon footer-social-github"><i class="fab fa-github"></i></a>';
 			endif; ?>
 			
 		<?php printf( __( '<div class="site-footer-social-copy">Theme: %1$s by %2$s', 'avant' ), 'Avant', '<a href="https://kairaweb.com/">Kaira</a></div><div class="clearboth"></div></div>' ); ?>

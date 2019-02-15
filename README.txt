@@ -68,6 +68,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.15
+* Fixed Social Footer Icons breaking
+* Style tweaks/fixes
+
 #### 1.1.14
 * Style tweaks/fixes
 * Set pingback only if is_singular() && pings_open()
