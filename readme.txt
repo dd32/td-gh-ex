@@ -3,7 +3,7 @@ Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, flexible-header, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, blog, e-commerce, news
 Requires at least: 4.0
 Tested up to: 5.0.2
-Stable tag: 1.5.6
+Stable tag: 1.5.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,13 @@ Bazaar Lite WordPress Theme, Copyright 2018 ThemeinProgress.
 Bazaar Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.5.7 =
+Release date - February, 16 - 2019
+
+* Updated - readme.txt file
+* Updated - screenshot.png file
+* Edit  - Code optimized.
 
 = 1.5.6 =
 Release date - January, 08 - 2019
@@ -224,13 +231,13 @@ Release date - 27.05.2016
 
 == Resources ==
 
-Screenshot images By Pixabay - https://www.pixabay.com
+Screenshot images By StockSnap - https://stocksnap.io
 
-* Slideshow image : https://pixabay.com/en/typewriter-book-notes-paper-801921/ by Free-Photos ( https://pixabay.com/en/users/Free-Photos-242387/ ) - CC0
-* Slideshow image : https://pixabay.com/en/laptop-coffee-arm-desktop-notebook-1205256/ by 27707 ( https://pixabay.com/en/users/27707-27707/ ) - CC0
-* Featured image : https://pixabay.com/en/blue-orange-colors-animal-beach-2309309/ by 1643606 ( https://pixabay.com/en/users/1643606-1643606/ ) - CC0
-* Featured image : https://pixabay.com/en/model-girl-woman-young-fashion-616189/ by RyanMcGuire ( https://pixabay.com/en/users/RyanMcGuire-123690/ ) - CC0
-* Featured image : https://pixabay.com/en/rabbit-hare-bunny-costume-animal-542554/ by RyanMcGuire ( https://pixabay.com/en/users/RyanMcGuire-123690/ ) - CC0
+* Slideshow image : https://stocksnap.io/photo/VV0697QWMS/ by Dustin Lee ( https://stocksnap.io/author/6050 ) - CC0
+* Slideshow image : https://stocksnap.io/photo/KMXT5BDYPU by Rawpixel.com ( https://stocksnap.io/author/rawpixel ) - CC0
+* Featured image : https://stocksnap.io/photo/0ZOYKABLON by Bernard Spragg ( https://stocksnap.io/author/bernardspragg ) - CC0
+* Featured image : https://stocksnap.io/photo/UPH5IH4QQO by Sean O' Riordan ( https://stocksnap.io/author/seanoriordan ) - CC0
+* Featured image : https://stocksnap.io/photo/A189DFB220 by Dave Meier ( https://stocksnap.io/author/480 ) - CC0
 
 Font Awesome By Dave Gandy - http://fortawesome.github.io/Font-Awesome/
 ** Font License under SIL OFL 1.1 - http://scripts.sil.org/OFL ( Applies to all desktop and webfont files in the following directory: /bazaar-lite/assets/fonts/ )
