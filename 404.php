@@ -36,6 +36,6 @@
 				<?php Benlumia007\Backdrop\CustomQuery\display( 'custom-blog' ); ?>
 			</div>
 		</div>
-		<?php get_sidebar(); ?>
+		<?php Benlumia007\Backdrop\Sidebar\display( 'primary' ); ?>
 	</div>
 <?php get_footer(); ?>

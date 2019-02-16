@@ -8,7 +8,7 @@
  * License:         GNU General Public License v2.0 or later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  * Tags:            grid-layout, left-sidebar, one-column, right-sidebar, two-columns, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
- * Version:         1.0.2
+ * Version:         1.0.3
  * Text Domain:     auspicious
  */
 
@@ -1020,6 +1020,31 @@ a:focus {
 	
 }
 
+.custom-blog {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 1.125em;
+}
+
+.blog-items {
+	background: #ffffff;
+	border: 0.063em solid #cccccc;
+	padding: 1.125em;
+}
+
+.blog-items .recent-header {
+	text-align: center;
+}
+
+.blog-items .recent-header .recent-title {
+	margin: 0;
+	padding: 0;
+}
+
+.blog-items .entry-excerpt {
+	line-height: 1.7em;
+}
+
 /**
  * 18.0 - Content (Comments)
  */
@@ -1274,6 +1299,23 @@ p.comment-awaiting-moderation {
 /**
  * 19.0 - Content (Archives)
  */
+.archive-header {
+	background: #ffffff;
+	border: 0.063em solid #cccccc;
+	margin-bottom: 1.125em;
+	padding: 1.125em;
+	text-align: center;
+}
+
+.archive-header .archive-title {
+	margin: 0;
+	padding: 0;
+}
+
+.archive-header .archive-description {
+	display: block;
+	font-size: 0.5em;
+}
 
 /**
  * 20.0 - Content (Search and 404)

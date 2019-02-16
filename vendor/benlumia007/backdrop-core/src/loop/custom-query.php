@@ -42,7 +42,7 @@ function display( $feature = '' ) {
 					<?php the_post_thumbnail( 'backdrop-small-thumbnails' ); ?>
 					<header class="recent-header">
 						<h2 class="recent-title"><a href="<?php echo esc_url( get_permalink() ); ?>"><?php the_title(); ?></a></h2>
-						<span class="entry-timestamp"><?php echo wp_kses_post( \Benlumia007\Backdrop\Entry\display( 'entry-timestamp' ) ); ?></span>
+						<span class="entry-timestamp"><?php echo wp_kses_post( \Benlumia007\Backdrop\Entry\display( 'entry-posted-on' ) ); ?></span>
 					</header>
 					<div class="entry-excerpt">
 						<?php the_excerpt(); ?>
