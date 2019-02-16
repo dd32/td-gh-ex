@@ -47,7 +47,7 @@ function display( $feature = '' ) {
 		if ( has_nav_menu( 'secondary' ) ) {
 			?>
 			<div class="main-navigation">
-				<nav id="site-navigation" class="primary-navigation">
+				<nav id="site-navigation" class="secondary-navigation">
 					<button class="menu-toggle" aria-conrol="primary-menu" aria-expanded="false"><?php esc_html_e( 'Menu', 'auspicious' ); ?></button>
 					<?php
 						wp_nav_menu(
@@ -55,6 +55,7 @@ function display( $feature = '' ) {
 								'theme_location' => 'primary',
 								'menu_id'        => 'primary-menu',
 								'menu_class'     => 'nav-menu',
+								'depth'          => '1',
 							)
 						);
 					?>

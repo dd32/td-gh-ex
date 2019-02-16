@@ -14,6 +14,12 @@
 ?>
 	</section>
 </section>
+<div id="secondary" class="secondary-navigation">
+	<?php Benlumia007\Backdrop\Menu\display( 'secondary' ); ?>
+</div>
+<div id="social" class="social-navigation">
+	<?php Benlumia007\Backdrop\Menu\display( 'social' ); ?>
+</div>
 <footer id="footer" class="site-footer">
 		<div class="site-info">
 			<?php

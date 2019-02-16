@@ -39,6 +39,18 @@ Not Available at this time
 == Upgrade Notice ==
 
 == Changelog ==
+Version: 1.0.4
+Fixed Secondary and Social navigation
+
+Version: 1.0.3
+Fixed post format quotes
+
+Version: 1.0.2 
+Minor Change
+
+Version: 1.0.1
+Minor Change
+
 Version: 1.0.0
 Initial Release
 
