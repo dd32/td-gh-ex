@@ -20,7 +20,7 @@ if ( ! function_exists( 'atento_register_recommended_plugins' ) ) :
             array(
                 'name'     => esc_html__( 'One Click Demo Importer', 'atento' ),
                 'slug'     => 'one-click-demo-import',
-                'required' => false,
+                'required' => true,
             ),
             array(
                 'name'     => esc_html__( 'MailChimp Sign-Up Form', 'atento' ),

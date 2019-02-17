@@ -4,12 +4,12 @@ Contributors: Precise Themes
 Tags: two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog
 Requires at least: 4.8
 Tested up to: 4.8
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-Description: Atento is a minimalist WordPress blog theme beautifully crafted to help you create a stunning blog, suitable for any kind of blog fashion, travel, music, car, real state, beauty, design, food, wedding, movie, photography, technology, personal blog sites. It is designed with a focus on minimal & clean design, unique styling, elegant typography selection to highlight and emphasis your blog content to your readers. Read more details at https://precisethemes.com/go/atento and View Demo at https://precisethemes.com/go/atento-demo
+Description: Atento is a minimalist WordPress blog theme beautifully crafted to help you create a stunning blog, suitable for any kind of blog fashion, travel, music, car, real state, beauty, design, food, wedding, movie, photography, technology, personal blog sites. It is designed with a focus on minimal & clean design, unique styling, elegant typography selection to highlight and emphasis your blog content to your readers.
 
 == Frequently Asked Questions ==
 = Ho to setup homepage as in demo? =
@@ -26,20 +26,6 @@ Description: Atento is a minimalist WordPress blog theme beautifully crafted to 
 
 = Does Atento use featured images? =
     Atento makes us of Featured Images, which helps to visually tell your story. Featured Images are displayed below the title on the blog posts and archive pages. A smaller version of the image is used on the blog index page. For the optimal result, provide an image at least 1200px wide.
-
-== Changelog ==
-
-Version 1.0.3 - 2018-11-25
-* Added getting started page.
-
-Version 1.0.2 - 2018-11-06
-* Standarised readme.txt, Updated hero image UX.
-
-Version 1.0.1 - 2018-10-28
-* Updated CSS, PHP, Screenshot, readme.txt
-
-Version 1.0.0 - 2018-10-17
-* Initial release
 
 == Resources  ==
 * Based on Underscores http://underscores.me/, (C) 2012-2015 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
@@ -87,3 +73,19 @@ Version 1.0.0 - 2018-10-17
 
 2. Kirki: - http://aristath.github.io/kirki/
    Licensed under the MIT license - http://opensource.org/licenses/MIT
+
+== Changelog ==
+Version 1.0.4 - 2019-02-15
+* Fixed getting started admin notice
+
+Version 1.0.3 - 2018-11-25
+* Added getting started page
+
+Version 1.0.2 - 2018-11-06
+* Standardised readme.txt, Updated hero image UX
+
+Version 1.0.1 - 2018-10-28
+* Updated CSS, PHP, Screenshot, readme.txt
+
+Version 1.0.0 - 2018-10-17
+* Initial release

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Atento\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-11-25 05:32+0000\n"
+"POT-Creation-Date: 2019-02-15 06:17+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,7 +13,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.2.0; wp-4.9.8"
+"X-Loco-Version: 2.2.0; wp-5.0.3"
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:125
+msgid " Upgrade to Pro"
+msgstr ""
 
 #: template-parts/footer/footer-bar.php:67
 msgid ""
@@ -31,6 +35,26 @@ msgstr ""
 
 #: functions.php:135 functions.php:153
 msgid "Add widgets here."
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:374
+msgid "Advanced 404 Error Page Editor"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:331
+msgid "Advanced Archive/Blog Settings"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:264
+msgid "Advanced Header Settings"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:367
+msgid "Advanced Post/Page Options"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:355
+msgid "Advanced Post/Page Settings"
 msgstr ""
 
 #: inc/framework/customizer/panel/post.php:54
@@ -58,6 +82,7 @@ msgid "Archives"
 msgstr ""
 
 #. Name of the theme
+#: inc/framework/welcome-screen/class-welcome-screen.php:144
 msgid "Atento"
 msgstr ""
 
@@ -107,6 +132,10 @@ msgstr ""
 msgid "Body"
 msgstr ""
 
+#: inc/framework/welcome-screen/class-welcome-screen.php:294
+msgid "Built-in Custom Widgets"
+msgstr ""
+
 #: inc/framework/customizer/panel/sections.php:131
 msgid "Button Setting"
 msgstr ""
@@ -135,6 +164,10 @@ msgstr ""
 msgid "Center"
 msgstr ""
 
+#: inc/framework/welcome-screen/class-welcome-screen.php:123
+msgid "Changelog"
+msgstr ""
+
 #: inc/helpers/template-functions.php:523
 msgid "Choose a Menu"
 msgstr ""
@@ -147,6 +180,10 @@ msgstr ""
 
 #: inc/framework/customizer/panel/sections.php:68
 msgid "Coming Soon"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:240
+msgid "Coming Soon Page"
 msgstr ""
 
 #: inc/framework/customizer/panel/post.php:62
@@ -170,9 +207,13 @@ msgstr[1] ""
 msgid "Contact Form 7"
 msgstr ""
 
-#: inc/framework/customizer/panel/archive.php:46
+#: inc/framework/welcome-screen/class-welcome-screen.php:416
+msgid "Contact Form 7 Compatible"
+msgstr ""
+
 #: inc/framework/customizer/panel/hero.php:24
 #: inc/framework/customizer/panel/hero.php:63
+#: inc/framework/customizer/panel/archive.php:46
 msgid "Content"
 msgstr ""
 
@@ -196,6 +237,15 @@ msgstr ""
 #: functions.php:203
 msgctxt "Cormorant Garamond font: on or off"
 msgid "on"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:324
+msgid "Custom Responsive Values"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:325
+msgid ""
+"Custom Responsive values for different screen size(Desktop, Tablet, Mobile)."
 msgstr ""
 
 #: inc/framework/customizer/panel/sections.php:132
@@ -260,8 +310,16 @@ msgstr ""
 msgid "Default value is inherit from single post or page settings."
 msgstr ""
 
+#: inc/framework/welcome-screen/class-welcome-screen.php:178
+msgid "Demo content"
+msgstr ""
+
 #: inc/helpers/template-functions.php:165
 msgid "Designed by"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:76
+msgid "Dismiss"
 msgstr ""
 
 #: inc/framework/customizer/panel/footer.php:91
@@ -280,8 +338,12 @@ msgstr ""
 msgid "Documentation"
 msgstr ""
 
-#: inc/framework/customizer/panel/footer.php:66
+#: inc/framework/welcome-screen/class-welcome-screen.php:162
+msgid "Documentation & Installation Guide"
+msgstr ""
+
 #: inc/framework/customizer/panel/post.php:55
+#: inc/framework/customizer/panel/footer.php:66
 msgid "Drag & Drop items to re-arrange order of appearance."
 msgstr ""
 
@@ -291,8 +353,8 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: inc/framework/customizer/panel/footer.php:45
 #: inc/framework/customizer/panel/hero.php:23
+#: inc/framework/customizer/panel/footer.php:45
 msgid "Enable"
 msgstr ""
 
@@ -319,12 +381,24 @@ msgstr ""
 msgid "Featured Posts Slider"
 msgstr ""
 
+#: inc/framework/welcome-screen/class-welcome-screen.php:288
+msgid "Featured Posts Slider for Homepage"
+msgstr ""
+
 #: inc/framework/customizer/panel/footer.php:16
 msgid "Footer"
 msgstr ""
 
 #: inc/framework/customizer/panel/footer.php:24
 msgid "Footer Bar"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:404
+msgid "Footer Copyright Editor"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:380
+msgid "Footer Instagram Feed"
 msgstr ""
 
 #: inc/framework/customizer/panel/footer.php:73
@@ -335,8 +409,34 @@ msgstr ""
 msgid "Footer Widgets Column "
 msgstr ""
 
+#: inc/framework/welcome-screen/class-welcome-screen.php:235
+msgid "Free Version"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:124
+msgid "Free vs Pro"
+msgstr ""
+
 #: inc/helpers/template-functions.php:545
 msgid "Full Width"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:70
+msgid "Get started with Atento"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:35
+#: inc/framework/welcome-screen/class-welcome-screen.php:36
+#: inc/framework/welcome-screen/class-welcome-screen.php:121
+msgid "Getting Started"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:202
+msgid "Go to Customizer"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:187
+msgid "Go to the importer"
 msgstr ""
 
 #: inc/framework/customizer/panel/typography.php:26
@@ -369,6 +469,10 @@ msgstr ""
 msgid "H6"
 msgstr ""
 
+#: inc/framework/welcome-screen/class-welcome-screen.php:142
+msgid "Have you ❤ using Atento? Please rate ⭐⭐⭐⭐⭐ our theme"
+msgstr ""
+
 #: inc/framework/customizer/panel/header.php:16
 msgid "Header"
 msgstr ""
@@ -387,6 +491,10 @@ msgstr ""
 msgid "Header Menu Settings"
 msgstr ""
 
+#: inc/framework/welcome-screen/class-welcome-screen.php:97
+msgid "Hello"
+msgstr ""
+
 #: inc/framework/customizer/panel/sections.php:93
 msgid "Hero Content"
 msgstr ""
@@ -398,6 +506,10 @@ msgstr ""
 #: template-parts/hero/content-hero.php:12
 #: inc/framework/customizer/panel/hero.php:75
 msgid "Hero Short Description Here."
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:282
+msgid "Hero Slider Support"
 msgstr ""
 
 #: template-parts/hero/content-hero.php:10
@@ -414,11 +526,35 @@ msgid "https://precisethemes.com/"
 msgstr ""
 
 #. URI of the theme
-msgid "https://precisethemes.com/go/atento/"
+msgid "https://precisethemes.com/wordpress-theme/atento/"
 msgstr ""
 
 #: inc/framework/customizer/panel/hero.php:84
 msgid "Image"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:191
+msgid "Import Demo"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:410
+msgid "Inbuilt Theme Widgets"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:186
+msgid "Install and Activate"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:181
+msgid ""
+"Install the following plugin and then come back here to access the importer. "
+"With it you can import all demo content and change your homepage and blog "
+"page to the ones from our demo site, automatically. It will also assign a "
+"menu."
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:180
+msgid "Install:  One Click Demo Import"
 msgstr ""
 
 #: 404.php:30
@@ -453,6 +589,10 @@ msgstr ""
 msgid "Logo Height"
 msgstr ""
 
+#: inc/framework/welcome-screen/class-welcome-screen.php:422
+msgid "MailChimp Compatible"
+msgstr ""
+
 #: inc/libraries/tgm/tgm.php:26
 msgid "MailChimp Sign-Up Form"
 msgstr ""
@@ -479,8 +619,28 @@ msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
+#: inc/framework/welcome-screen/class-welcome-screen.php:200
+msgid ""
+"Most of theme settings customization options are available through theme "
+"customizer. To setup and customise your website elements and sections."
+msgstr ""
+
 #: 404.php:41
 msgid "Most Used Categories"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:172
+#: inc/framework/welcome-screen/class-welcome-screen.php:218
+msgid ""
+"Need help to setup your website with Atento theme? Visit our support forum "
+"and browse support topics or create new, one of our support member will "
+"follow and help you to solver your issue."
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:489
+msgid ""
+"Need help to upgrade your website with Atento Pro theme for more exciting "
+"features and additional theme options."
 msgstr ""
 
 #: inc/framework/customizer/customizer.php:135
@@ -516,6 +676,18 @@ msgstr ""
 
 #: template-parts/content-none.php:14
 msgid "Nothing Found"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:392
+msgid "Number of Footer Widgets Position Layouts"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:258
+msgid "Number of Header Layouts"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:145
+msgid "on WordPress.org ☺ Thank you"
 msgstr ""
 
 #: inc/libraries/tgm/tgm.php:21
@@ -558,6 +730,18 @@ msgstr ""
 
 #: inc/framework/customizer/panel/archive.php:22
 msgid "Pagination Settings"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:190
+msgid "Plugin installed and active!"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:434
+msgid "Polylang Support in Customizer"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:386
+msgid "Pop up Box"
 msgstr ""
 
 #: inc/helpers/template-functions.php:223
@@ -615,6 +799,10 @@ msgstr ""
 msgid "Post Navigation"
 msgstr ""
 
+#: inc/framework/welcome-screen/class-welcome-screen.php:343
+msgid "Post Navigation Layout"
+msgstr ""
+
 #: inc/framework/customizer/panel/sections.php:145
 msgid "Posts Listing"
 msgstr ""
@@ -631,9 +819,17 @@ msgstr ""
 msgid "Primary"
 msgstr ""
 
+#: inc/framework/welcome-screen/class-welcome-screen.php:236
+msgid "Pro Version"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:442
+msgid "Quick Ticket Support"
+msgstr ""
+
 #: inc/helpers/template-functions.php:136
-#: template-parts/hero/content-hero.php:13
 #: template-parts/related-posts/content-single.php:13
+#: template-parts/hero/content-hero.php:13
 #: inc/framework/customizer/panel/hero.php:76
 msgid "Read More"
 msgstr ""
@@ -656,6 +852,10 @@ msgstr ""
 #: inc/framework/customizer/panel/post.php:60
 #: inc/framework/customizer/panel/sections.php:186
 msgid "Related Posts"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:349
+msgid "Related Posts for blog/archive page"
 msgstr ""
 
 #: inc/framework/customizer/panel/sections.php:56
@@ -701,17 +901,17 @@ msgstr ""
 msgid "Show Placeholder"
 msgstr ""
 
-#: functions.php:133 inc/framework/customizer/panel/archive.php:24
-#: inc/framework/customizer/panel/global.php:16
-#: inc/framework/customizer/panel/page.php:21
+#: functions.php:133 inc/framework/customizer/panel/global.php:16
+#: inc/framework/customizer/panel/archive.php:24
 #: inc/framework/customizer/panel/post.php:31
+#: inc/framework/customizer/panel/page.php:21
 msgid "Sidebar"
 msgstr ""
 
 #: inc/framework/meta-boxes/class-meta-box.php:321
 #: inc/framework/customizer/panel/archive.php:105
-#: inc/framework/customizer/panel/page.php:41
 #: inc/framework/customizer/panel/post.php:74
+#: inc/framework/customizer/panel/page.php:41
 msgid "Sidebar Layout"
 msgstr ""
 
@@ -747,10 +947,34 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
+#: inc/framework/welcome-screen/class-welcome-screen.php:252
+msgid "Slide in Box"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:276
+msgid "Smooth Page Scroll"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:361
+msgid "Social Share"
+msgstr ""
+
 #: template-parts/content-none.php:37
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:398
+msgid "Sortable Footer Bar Elements"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:270
+msgid "Sticky Header"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:300
+msgid "Sticky Sidebar"
 msgstr ""
 
 #: inc/framework/customizer/panel/hero.php:95
@@ -761,12 +985,42 @@ msgstr ""
 msgid "Support"
 msgstr ""
 
+#: inc/framework/welcome-screen/class-welcome-screen.php:122
+#: inc/framework/welcome-screen/class-welcome-screen.php:170
+#: inc/framework/welcome-screen/class-welcome-screen.php:174
+#: inc/framework/welcome-screen/class-welcome-screen.php:216
+msgid "Support Forum"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:441
+msgid "Support via Forum"
+msgstr ""
+
 #: inc/helpers/template-functions.php:203
 msgid "Tag"
 msgstr ""
 
+#: inc/framework/welcome-screen/class-welcome-screen.php:164
+msgid ""
+"Theme documentation page will guide you to install and configure theme quick "
+"and easy. We have included details, screenshots and stepwise description "
+"about theme installation guides and tutorials."
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:234
+msgid "Theme Features"
+msgstr ""
+
 #: inc/framework/customizer/panel/theme-info.php:30
 msgid "Theme Info"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:198
+msgid "Theme Option & Customization"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:440
+msgid "Theme Support"
 msgstr ""
 
 #: inc/framework/customizer/panel/theme-info.php:15
@@ -784,9 +1038,13 @@ msgstr ""
 msgid "Thumbnail Placeholder"
 msgstr ""
 
-#: inc/framework/customizer/panel/archive.php:53
 #: inc/framework/customizer/panel/hero.php:90
+#: inc/framework/customizer/panel/archive.php:53
 msgid "Title"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:246
+msgid "Top Header Bar"
 msgstr ""
 
 #. %1$s: smiley
@@ -799,8 +1057,55 @@ msgstr ""
 msgid "Typography"
 msgstr ""
 
+#: inc/framework/welcome-screen/class-welcome-screen.php:318
+msgid "Typography Option (850+ Google Fonts)"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:337
+msgid "Unique Page Header"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:312
+msgid "Unique Sidebar Selection"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:306
+msgid "Unlimited Widget Area (Sidebar) Generator"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:487
+#: inc/framework/welcome-screen/class-welcome-screen.php:491
+msgid "Upgrade to Pro"
+msgstr ""
+
 #: inc/framework/customizer/panel/theme-info.php:63
 msgid "View Demos"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:166
+msgid "View Documentation"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:220
+msgid "Visit Support Forum"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:64
+msgid "welcome page"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:57
+msgid "Welcome to Atento"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:103
+msgid "Welcome to Atento version"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:62
+msgid ""
+"Welcome! Thank you for choosing Atento ! To fully take advantage of the best "
+"our theme can offer please make sure you visit our"
 msgstr ""
 
 #: inc/framework/customizer/panel/typography.php:33
@@ -810,6 +1115,10 @@ msgstr ""
 
 #: inc/framework/customizer/panel/footer.php:23
 msgid "Widgets"
+msgstr ""
+
+#: inc/framework/welcome-screen/class-welcome-screen.php:428
+msgid "WPML Compatible"
 msgstr ""
 
 #: inc/helpers/template-functions.php:211

@@ -56,9 +56,11 @@ if ( ! class_exists( 'PAnD' ) ) {
                 return;
             }
 
+            $min = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
+
             wp_enqueue_script(
                 'dismissible-notices',
-                plugins_url( 'dismiss-notice.js', __FILE__ ),
+                get_template_directory_uri() . '/assets/back-end/js/dismiss-notice'.$min.'.js',
                 array( 'jquery', 'common' ),
                 false,
                 true

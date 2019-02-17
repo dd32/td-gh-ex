@@ -122,7 +122,7 @@ if ( ! class_exists( 'Atento_Welcome_Screen' ) ) :
                         <li class="tab-link" data-tab="support"><?php esc_html_e( 'Support Forum', 'atento' ); ?></li>
                         <li class="tab-link" data-tab="changelog"><?php esc_html_e( 'Changelog', 'atento' ); ?></li>
                         <li class="tab-link" data-tab="free_vs_pro"><?php esc_html_e( 'Free vs Pro', 'atento' ); ?></li>
-                        <li class="tab-link" data-tab="upgrade_pro"><span class="dashicons dashicons-star-filled"></span><?php esc_html_e( ' Upgrade to Pro', 'atento' ); ?></li>
+                        <li class="tab-link" data-tab="upgrade_pro"><?php esc_html_e( ' Upgrade to Pro', 'atento' ); ?></li>
                     </ul>
 
                     <?php $this->getting_started();?>
@@ -188,7 +188,7 @@ if ( ! class_exists( 'Atento_Welcome_Screen' ) ) :
                         </p>
                     <?php else : ?>
                         <p style="color:#23d423;font-style:italic;font-size:14px;"><?php esc_html_e( 'Plugin installed and active!', 'atento' ); ?></p>
-                        <a class="button button-primary button-large" href="<?php echo esc_url( admin_url( 'themes.php?page=pt-one-click-demo-import.php' ) ); ?>"><?php esc_html_e( 'Go to the automatic importer', 'atento' ); ?></a>
+                        <a class="button button-primary button-large" href="<?php echo esc_url( admin_url( 'themes.php?page=pt-one-click-demo-import.php' ) ); ?>"><?php esc_html_e( 'Import Demo', 'atento' ); ?></a>
                     <?php endif; ?>
 
                     <br> <br>
@@ -317,6 +317,13 @@ if ( ! class_exists( 'Atento_Welcome_Screen' ) ) :
                     <tr>
                         <td><?php esc_html_e( 'Typography Option (850+ Google Fonts)', 'atento' ); ?></td>
                         <td class="redFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                        <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
+                    </tr>
+
+                    <tr>
+                        <td><?php esc_html_e( 'Custom Responsive Values', 'atento' ); ?>
+                            <br/><p class="description"><?php esc_html_e( 'Custom Responsive values for different screen size(Desktop, Tablet, Mobile).', 'atento' ); ?></p></td>
+                        <td class="redFeature"><span class="dashicons dashicons-no-alt dash-red"></span></td>
                         <td class="greenFeature"><span class="dashicons dashicons-yes dash-green"></span></td>
                     </tr>
 
