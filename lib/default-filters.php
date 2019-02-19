@@ -79,7 +79,7 @@ function bayleaf_social_menu_widget( $nav_menu_args, $nav_menu, $args, $instance
 			'depth'          => 1,
 			'link_before'    => '<span class="screen-reader-text">',
 			'link_after'     => '</span>' . bayleaf_get_icon( [ 'icon' => 'chain' ] ),
-			'items_wrap'     => '<nav id="social-navigation" aria-label="' . esc_attr( 'Social Navigation', 'bayleaf' ) . '"' . bayleaf_get_attr( 'social-navigation' ) . '><ul id="%1$s" class="%2$s">%3$s</ul></nav>',
+			'items_wrap'     => '<nav id="social-navigation" aria-label="' . esc_attr__( 'Social Navigation', 'bayleaf' ) . '"' . bayleaf_get_attr( 'social-navigation' ) . '><ul id="%1$s" class="%2$s">%3$s</ul></nav>',
 		);
 
 	}
