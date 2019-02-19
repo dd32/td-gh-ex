@@ -1,4 +1,4 @@
-# Copyright (C) 2018 vantage
+# Copyright (C) 2019 vantage
 # This file is distributed under the same license as the vantage package.
 msgid ""
 msgstr ""
@@ -59,67 +59,67 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content.php:47, inc/settings.php:383, inc/template-tags.php:544, loops/loop-circleicon.php:22, loops/loop-grid.php:24
+#: content.php:47, inc/settings.php:384, inc/template-tags.php:537, loops/loop-circleicon.php:23, loops/loop-grid.php:24
 msgid "Continue reading"
 msgstr ""
 
-#: functions.php:70
+#: functions.php:69
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:260, inc/customizer.php:36
+#: functions.php:259, inc/customizer.php:36
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:262
+#: functions.php:261
 msgid "Displays to the right or left of the content area."
 msgstr ""
 
-#: functions.php:271
+#: functions.php:270
 msgid "Shop"
 msgstr ""
 
-#: functions.php:273
+#: functions.php:272
 msgid "Displays on WooCommerce pages."
 msgstr ""
 
-#: functions.php:282, inc/customizer.php:40
+#: functions.php:281, inc/customizer.php:40
 msgid "Footer"
 msgstr ""
 
-#: functions.php:284
+#: functions.php:283
 msgid "Displays below the content area."
 msgstr ""
 
-#: functions.php:292
+#: functions.php:291
 msgid "Header"
 msgstr ""
 
-#: functions.php:294
+#: functions.php:293
 msgid "Displays to the right of the logo."
 msgstr ""
 
-#: functions.php:302
+#: functions.php:301
 msgid "Masthead"
 msgstr ""
 
-#: functions.php:304
+#: functions.php:303
 msgid "Replaces the logo and header widget area."
 msgstr ""
 
-#: functions.php:399
+#: functions.php:397
 msgid "Back To Top"
 msgstr ""
 
-#: functions.php:599
+#: functions.php:596
 msgid "SiteOrigin Page Builder"
 msgstr ""
 
-#: functions.php:604
+#: functions.php:601
 msgid "SiteOrigin Widgets Bundle"
 msgstr ""
 
-#: functions.php:609
+#: functions.php:606
 msgid "SiteOrigin CSS"
 msgstr ""
 
@@ -486,7 +486,7 @@ msgstr ""
 msgid "Source"
 msgstr ""
 
-#: inc/class-tgm-plugin-activation.php:2549, inc/settings.php:464
+#: inc/class-tgm-plugin-activation.php:2549, inc/settings.php:465
 msgid "Type"
 msgstr ""
 
@@ -748,11 +748,11 @@ msgstr ""
 msgid "Menu Alignment"
 msgstr ""
 
-#: inc/customizer.php:240, inc/customizer.php:686, inc/widgets.php:168
+#: inc/customizer.php:240, inc/customizer.php:686, inc/widgets.php:171
 msgid "Left"
 msgstr ""
 
-#: inc/customizer.php:241, inc/customizer.php:687, inc/widgets.php:169
+#: inc/customizer.php:241, inc/customizer.php:687, inc/widgets.php:172
 msgid "Right"
 msgstr ""
 
@@ -764,7 +764,7 @@ msgstr ""
 msgid "Background"
 msgstr ""
 
-#: inc/customizer.php:254, inc/widgets.php:135
+#: inc/customizer.php:254, inc/widgets.php:138
 msgid "Text Color"
 msgstr ""
 
@@ -792,7 +792,7 @@ msgstr ""
 msgid "Second Level Hover Text"
 msgstr ""
 
-#: inc/customizer.php:307, inc/widgets.php:152
+#: inc/customizer.php:307, inc/widgets.php:155
 msgid "Icon Color"
 msgstr ""
 
@@ -924,7 +924,7 @@ msgstr ""
 msgid "Masthead Background Image Layout"
 msgstr ""
 
-#: inc/customizer.php:554, inc/customizer.php:581, inc/customizer.php:616, inc/settings.php:484
+#: inc/customizer.php:554, inc/customizer.php:581, inc/customizer.php:616, inc/settings.php:485
 msgid "Default"
 msgstr ""
 
@@ -968,7 +968,7 @@ msgstr ""
 msgid "Widget Titles"
 msgstr ""
 
-#: inc/customizer.php:632, inc/widgets.php:131
+#: inc/customizer.php:632, inc/widgets.php:134
 msgid "Text"
 msgstr ""
 
@@ -1000,7 +1000,7 @@ msgstr ""
 msgid "Sidebar Position"
 msgstr ""
 
-#: inc/customizer.php:685, inc/menu.php:72, inc/widgets.php:141, inc/sliders/sliders.php:8
+#: inc/customizer.php:685, inc/menu.php:72, inc/settings.php:219, inc/widgets.php:144, inc/sliders/sliders.php:8
 msgid "None"
 msgstr ""
 
@@ -1012,7 +1012,7 @@ msgstr ""
 msgid "Slider"
 msgstr ""
 
-#: inc/legacy.php:5, inc/legacy.php:6, inc/settings.php:438
+#: inc/legacy.php:5, inc/legacy.php:6, inc/settings.php:439
 msgid "Theme Settings"
 msgstr ""
 
@@ -1232,7 +1232,7 @@ msgstr ""
 msgid "Boxed"
 msgstr ""
 
-#: inc/settings.php:77, inc/settings.php:486
+#: inc/settings.php:77, inc/settings.php:487
 msgid "Full Width"
 msgstr ""
 
@@ -1424,7 +1424,7 @@ msgstr ""
 msgid "Featured Image Type"
 msgstr ""
 
-#: inc/settings.php:217, inc/widgets.php:177, inc/widgets.php:346
+#: inc/settings.php:217, inc/widgets.php:180, inc/widgets.php:349
 msgid "Large"
 msgstr ""
 
@@ -1432,299 +1432,299 @@ msgstr ""
 msgid "Small Icon"
 msgstr ""
 
-#: inc/settings.php:220
+#: inc/settings.php:221
 msgid "Size of the featured image in the blog post archives when using default blog layout."
 msgstr ""
 
-#: inc/settings.php:223
+#: inc/settings.php:224
 msgid "Featured Image"
 msgstr ""
 
-#: inc/settings.php:224, inc/settings.php:229, inc/settings.php:234, inc/settings.php:239, inc/settings.php:244, inc/settings.php:249, inc/settings.php:254, inc/settings.php:259, inc/settings.php:269
+#: inc/settings.php:225, inc/settings.php:230, inc/settings.php:235, inc/settings.php:240, inc/settings.php:245, inc/settings.php:250, inc/settings.php:255, inc/settings.php:260, inc/settings.php:270
 msgid "Display"
 msgstr ""
 
-#: inc/settings.php:225
+#: inc/settings.php:226
 msgid "Show the featured image on a post single page."
 msgstr ""
 
-#: inc/settings.php:228
+#: inc/settings.php:229
 msgid "Post Metadata"
 msgstr ""
 
-#: inc/settings.php:230
+#: inc/settings.php:231
 msgid "Show the post metadata under the post title."
 msgstr ""
 
-#: inc/settings.php:233
+#: inc/settings.php:234
 msgid "Post Date"
 msgstr ""
 
-#: inc/settings.php:235
+#: inc/settings.php:236
 msgid "Show the post date under the post title."
 msgstr ""
 
-#: inc/settings.php:238
+#: inc/settings.php:239
 msgid "Post Author"
 msgstr ""
 
-#: inc/settings.php:240
+#: inc/settings.php:241
 msgid "Show the post author under the post title."
 msgstr ""
 
-#: inc/settings.php:243
+#: inc/settings.php:244
 msgid "Post Comment Count"
 msgstr ""
 
-#: inc/settings.php:245
+#: inc/settings.php:246
 msgid "Show the number of comments under the post title."
 msgstr ""
 
-#: inc/settings.php:248
+#: inc/settings.php:249
 msgid "Post Categories"
 msgstr ""
 
-#: inc/settings.php:250
+#: inc/settings.php:251
 msgid "Show the post categories below the single post."
 msgstr ""
 
-#: inc/settings.php:253
+#: inc/settings.php:254
 msgid "Post Tags"
 msgstr ""
 
-#: inc/settings.php:255
+#: inc/settings.php:256
 msgid "Show the post tags below the single post."
 msgstr ""
 
-#: inc/settings.php:258
+#: inc/settings.php:259
 msgid "Author Box"
 msgstr ""
 
-#: inc/settings.php:260
+#: inc/settings.php:261
 msgid "Show an author box below each blog post."
 msgstr ""
 
-#: inc/settings.php:263
+#: inc/settings.php:264
 msgid "Post Author's Comments"
 msgstr ""
 
-#: inc/settings.php:264
+#: inc/settings.php:265
 msgid "Text displayed as a label next to the post author's comments."
 msgstr ""
 
-#: inc/settings.php:268
+#: inc/settings.php:269
 msgid "Read More Button"
 msgstr ""
 
-#: inc/settings.php:270
+#: inc/settings.php:271
 msgid "Show read more button when Post Excerpt is chosen."
 msgstr ""
 
-#: inc/settings.php:273
+#: inc/settings.php:274
 msgid "Read More Text"
 msgstr ""
 
-#: inc/settings.php:274
+#: inc/settings.php:275
 msgid "The link displayed when post content is split using the \"more\" quicktag or when the read more button is enabled."
 msgstr ""
 
-#: inc/settings.php:277
+#: inc/settings.php:278
 msgid "Circle Icon Archive Column Count"
 msgstr ""
 
-#: inc/settings.php:278
+#: inc/settings.php:279
 msgid "The number of columns to display when the circle icon archive layout is set."
 msgstr ""
 
-#: inc/settings.php:284
+#: inc/settings.php:285
 msgid "Grid Archive Column Count"
 msgstr ""
 
-#: inc/settings.php:285
+#: inc/settings.php:286
 msgid "The number of columns to display when the grid archive layout is set."
 msgstr ""
 
-#: inc/settings.php:295
+#: inc/settings.php:296
 msgid "Ajax Comments"
 msgstr ""
 
-#: inc/settings.php:296
+#: inc/settings.php:297
 msgid "Keep your conversations flowing with ajax comments."
 msgstr ""
 
-#: inc/settings.php:304
+#: inc/settings.php:305
 msgid "Site Information Text"
 msgstr ""
 
-#: inc/settings.php:305
+#: inc/settings.php:306
 msgid "Text displayed in your footer. {site-title}, {copyright} and {year} will be replaced with your website title, a copyright symbol and the current year."
 msgstr ""
 
-#: inc/settings.php:309
+#: inc/settings.php:310
 msgid "Privacy Policy Link"
 msgstr ""
 
-#: inc/settings.php:310
+#: inc/settings.php:311
 msgid "Display the Privacy Policy page link in the footer."
 msgstr ""
 
-#: inc/settings.php:313
+#: inc/settings.php:314
 msgid "SiteOrigin Attribution"
 msgstr ""
 
-#: inc/settings.php:314
+#: inc/settings.php:315
 msgid "Add or remove a link to SiteOrigin in your footer."
 msgstr ""
 
-#: inc/settings.php:318
+#: inc/settings.php:319
 msgid "Enqueue JavaScript in Footer"
 msgstr ""
 
-#: inc/settings.php:319
+#: inc/settings.php:320
 msgid "Enqueue JavaScript files in the footer, if possible."
 msgstr ""
 
-#: inc/settings.php:339
+#: inc/settings.php:340
 msgid "Call me! Maybe?"
 msgstr ""
 
-#: inc/settings.php:439
+#: inc/settings.php:440
 msgid "Settings for your theme"
 msgstr ""
 
-#: inc/settings.php:440
+#: inc/settings.php:441
 msgid "Premium Only"
 msgstr ""
 
-#: inc/settings.php:444
+#: inc/settings.php:445
 msgid "Variant"
 msgstr ""
 
-#: inc/settings.php:445
+#: inc/settings.php:446
 msgid "Subset"
 msgstr ""
 
-#: inc/settings.php:448
+#: inc/settings.php:449
 msgid "Vantage Premium Upgrade"
 msgstr ""
 
-#: inc/settings.php:449, inc/mobilenav/mobilenav.php:15, inc/mobilenav/mobilenav.php:69
+#: inc/settings.php:450, inc/mobilenav/mobilenav.php:15, inc/mobilenav/mobilenav.php:69
 msgid "Close"
 msgstr ""
 
-#: inc/settings.php:452
+#: inc/settings.php:453
 msgid "Page settings"
 msgstr ""
 
-#: inc/settings.php:455
+#: inc/settings.php:456
 msgid "Page Template Settings"
 msgstr ""
 
-#: inc/settings.php:456
+#: inc/settings.php:457
 msgid "Change layouts for various pages on your site."
 msgstr ""
 
-#: inc/settings.php:459
+#: inc/settings.php:460
 msgid "Blog Page"
 msgstr ""
 
-#: inc/settings.php:460
+#: inc/settings.php:461
 msgid "Search Results"
 msgstr ""
 
-#: inc/settings.php:461
+#: inc/settings.php:462
 msgid "Date Archives"
 msgstr ""
 
-#: inc/settings.php:462
+#: inc/settings.php:463
 msgid "Not Found"
 msgstr ""
 
-#: inc/settings.php:463
+#: inc/settings.php:464
 msgid "Author Archives"
 msgstr ""
 
-#: inc/settings.php:465
+#: inc/settings.php:466
 msgid "Taxonomy"
 msgstr ""
 
-#: inc/settings.php:482
+#: inc/settings.php:483
 msgid "Page Layout"
 msgstr ""
 
-#: inc/settings.php:485
+#: inc/settings.php:486
 msgid "No Sidebar"
 msgstr ""
 
-#: inc/settings.php:487
+#: inc/settings.php:488
 msgid "Full Width, With Sidebar"
 msgstr ""
 
-#: inc/settings.php:495
+#: inc/settings.php:496
 msgid "Page Featured Image"
 msgstr ""
 
-#: inc/settings.php:496, inc/settings.php:504
+#: inc/settings.php:497, inc/settings.php:505
 msgid "display"
 msgstr ""
 
-#: inc/settings.php:497
+#: inc/settings.php:498
 msgid "Display the page featured image on this page."
 msgstr ""
 
-#: inc/settings.php:503
+#: inc/settings.php:504
 msgid "Page Title"
 msgstr ""
 
-#: inc/settings.php:505
+#: inc/settings.php:506
 msgid "Display the page title on this page."
 msgstr ""
 
-#: inc/settings.php:510
+#: inc/settings.php:511
 msgid "Masthead Bottom Margin"
 msgstr ""
 
-#: inc/settings.php:511, inc/settings.php:518
+#: inc/settings.php:512, inc/settings.php:519
 msgid "enable"
 msgstr ""
 
-#: inc/settings.php:512
+#: inc/settings.php:513
 msgid "Include the margin below the masthead (top area) of your site."
 msgstr ""
 
-#: inc/settings.php:517
+#: inc/settings.php:518
 msgid "Footer Top Margin"
 msgstr ""
 
-#: inc/settings.php:519
+#: inc/settings.php:520
 msgid "Include the margin above your footer."
 msgstr ""
 
-#: inc/settings.php:524
+#: inc/settings.php:525
 msgid "Hide Masthead"
 msgstr ""
 
-#: inc/settings.php:525, inc/settings.php:532
+#: inc/settings.php:526, inc/settings.php:533
 msgid "hide"
 msgstr ""
 
-#: inc/settings.php:526
+#: inc/settings.php:527
 msgid "Hide the masthead on this page."
 msgstr ""
 
-#: inc/settings.php:531
+#: inc/settings.php:532
 msgid "Hide Footer Widgets"
 msgstr ""
 
-#: inc/settings.php:533
+#: inc/settings.php:534
 msgid "Hide the footer widgets on this page."
 msgstr ""
 
-#: inc/settings.php:574
+#: inc/settings.php:575
 msgid "To use these page settings, please use the <strong>Default</strong> template selected under <strong>Page Attributes</strong>"
 msgstr ""
 
-#: inc/settings.php:610
+#: inc/settings.php:611
 msgid "Vantage is a flexible multipurpose theme. Its strength lies in its tight integration with some powerful plugins like Page Builder for responsive page layouts, Meta Slider for big beautiful sliders and WooCommerce to help you sell online. Vantage is fully responsive and retina ready. Use it to start a business site, portfolio or online store."
 msgstr ""
 
@@ -1766,90 +1766,90 @@ msgctxt "Next post link"
 msgid "&rarr;"
 msgstr ""
 
-#: inc/template-tags.php:141
+#: inc/template-tags.php:139
 msgid "Pingback:"
 msgstr ""
 
-#: inc/template-tags.php:141
+#: inc/template-tags.php:139
 msgid "(Edit)"
 msgstr ""
 
 #. translators: 1: date, 2: time
-#: inc/template-tags.php:163
+#: inc/template-tags.php:161
 msgid "%1$s at %2$s"
 msgstr ""
 
-#: inc/template-tags.php:168
+#: inc/template-tags.php:166
 msgid "Edit"
 msgstr ""
 
-#: inc/template-tags.php:173
+#: inc/template-tags.php:171
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/template-tags.php:206
+#: inc/template-tags.php:203
 msgid "View all posts by %s"
 msgstr ""
 
-#: inc/template-tags.php:219
+#: inc/template-tags.php:216
 msgid "Posted on %s"
 msgstr ""
 
-#: inc/template-tags.php:220
+#: inc/template-tags.php:217
 msgid "<span class=\"byline\"> by %s</span>"
 msgstr ""
 
-#: inc/template-tags.php:267
+#: inc/template-tags.php:263
 msgid "%s Logo"
 msgstr ""
 
-#: inc/template-tags.php:367
+#: inc/template-tags.php:361
 msgid "Category Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:371
+#: inc/template-tags.php:365
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:376
+#: inc/template-tags.php:370
 msgid "Author Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:381
+#: inc/template-tags.php:375
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:385
+#: inc/template-tags.php:379
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:389
+#: inc/template-tags.php:383
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:396
+#: inc/template-tags.php:390
 msgid "%s: %s"
 msgstr ""
 
-#: inc/template-tags.php:399
+#: inc/template-tags.php:393
 msgid "Archives"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:414, inc/template-tags.php:417
+#: inc/template-tags.php:408, inc/template-tags.php:411
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:422
+#: inc/template-tags.php:416
 msgid "<strong>Tagged</strong> %2$s."
 msgstr ""
 
-#: inc/template-tags.php:430
+#: inc/template-tags.php:424
 msgid "Posted in %1$s and tagged %2$s."
 msgstr ""
 
-#: inc/template-tags.php:433
+#: inc/template-tags.php:427
 msgid "Posted in %1$s."
 msgstr ""
 
@@ -1861,215 +1861,215 @@ msgstr ""
 msgid "An icon in a circle with some text beneath it"
 msgstr ""
 
-#: inc/widgets.php:80
+#: inc/widgets.php:83
 msgid "More Info"
 msgstr ""
 
-#: inc/widgets.php:123, inc/widgets.php:353
+#: inc/widgets.php:126, inc/widgets.php:356
 msgid "Title"
 msgstr ""
 
-#: inc/widgets.php:127
+#: inc/widgets.php:130
 msgid "Title Color"
 msgstr ""
 
-#: inc/widgets.php:139
+#: inc/widgets.php:142
 msgid "Icon"
 msgstr ""
 
-#: inc/widgets.php:156
+#: inc/widgets.php:159
 msgid "Icon Background Color"
 msgstr ""
 
-#: inc/widgets.php:160
+#: inc/widgets.php:163
 msgid "Circle Background Image URL"
 msgstr ""
 
-#: inc/widgets.php:164
+#: inc/widgets.php:167
 msgid "Icon Position"
 msgstr ""
 
-#: inc/widgets.php:166
+#: inc/widgets.php:169
 msgid "Top"
 msgstr ""
 
-#: inc/widgets.php:167
+#: inc/widgets.php:170
 msgid "Bottom"
 msgstr ""
 
-#: inc/widgets.php:173, inc/widgets.php:357
+#: inc/widgets.php:176, inc/widgets.php:360
 msgid "Icon Size"
 msgstr ""
 
-#: inc/widgets.php:175, inc/widgets.php:348
+#: inc/widgets.php:178, inc/widgets.php:351
 msgid "Small"
 msgstr ""
 
-#: inc/widgets.php:176, inc/widgets.php:296, inc/widgets.php:347
+#: inc/widgets.php:179, inc/widgets.php:299, inc/widgets.php:350
 msgid "Medium"
 msgstr ""
 
-#: inc/widgets.php:181
+#: inc/widgets.php:184
 msgid "More Text"
 msgstr ""
 
-#: inc/widgets.php:185
+#: inc/widgets.php:188
 msgid "More URL"
 msgstr ""
 
-#: inc/widgets.php:191
+#: inc/widgets.php:194
 msgid "Link title and icon to \"More URL\""
 msgstr ""
 
-#: inc/widgets.php:197
+#: inc/widgets.php:200
 msgid "Open link in a new tab"
 msgstr ""
 
-#: inc/widgets.php:204
+#: inc/widgets.php:207
 msgid "Show Box Container"
 msgstr ""
 
-#: inc/widgets.php:224
+#: inc/widgets.php:227
 msgid "Vantage Headline"
 msgstr ""
 
-#: inc/widgets.php:225
+#: inc/widgets.php:228
 msgid "A lovely big headline."
 msgstr ""
 
-#: inc/widgets.php:249
+#: inc/widgets.php:252
 msgid "Headline"
 msgstr ""
 
-#: inc/widgets.php:253
+#: inc/widgets.php:256
 msgid "Sub Headline"
 msgstr ""
 
-#: inc/widgets.php:275
+#: inc/widgets.php:278
 msgid "Vantage Social Media"
 msgstr ""
 
-#: inc/widgets.php:277
+#: inc/widgets.php:280
 msgid "Add nice little icons that link out to your social media profiles."
 msgstr ""
 
-#: inc/widgets.php:282
+#: inc/widgets.php:285
 msgid "Facebook"
 msgstr ""
 
-#: inc/widgets.php:283
+#: inc/widgets.php:286
 msgid "Twitter"
 msgstr ""
 
-#: inc/widgets.php:284
+#: inc/widgets.php:287
 msgid "Google Plus"
 msgstr ""
 
-#: inc/widgets.php:285
+#: inc/widgets.php:288
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/widgets.php:286
+#: inc/widgets.php:289
 msgid "Dribbble"
 msgstr ""
 
-#: inc/widgets.php:287
+#: inc/widgets.php:290
 msgid "Behance"
 msgstr ""
 
-#: inc/widgets.php:288
+#: inc/widgets.php:291
 msgid "DeviantArt"
 msgstr ""
 
-#: inc/widgets.php:289
+#: inc/widgets.php:292
 msgid "Flickr"
 msgstr ""
 
-#: inc/widgets.php:290
+#: inc/widgets.php:293
 msgid "500px"
 msgstr ""
 
-#: inc/widgets.php:291
+#: inc/widgets.php:294
 msgid "Instagram"
 msgstr ""
 
-#: inc/widgets.php:292
+#: inc/widgets.php:295
 msgid "Pinterest"
 msgstr ""
 
-#: inc/widgets.php:293
+#: inc/widgets.php:296
 msgid "Skype"
 msgstr ""
 
-#: inc/widgets.php:294
+#: inc/widgets.php:297
 msgid "YouTube"
 msgstr ""
 
-#: inc/widgets.php:295
+#: inc/widgets.php:298
 msgid "Vimeo"
 msgstr ""
 
-#: inc/widgets.php:297
+#: inc/widgets.php:300
 msgid "Tumblr"
 msgstr ""
 
-#: inc/widgets.php:298
+#: inc/widgets.php:301
 msgid "WordPress"
 msgstr ""
 
-#: inc/widgets.php:299
+#: inc/widgets.php:302
 msgid "GitHub"
 msgstr ""
 
-#: inc/widgets.php:300
+#: inc/widgets.php:303
 msgid "Bitbucket"
 msgstr ""
 
-#: inc/widgets.php:301
+#: inc/widgets.php:304
 msgid "Codepen"
 msgstr ""
 
-#: inc/widgets.php:302
+#: inc/widgets.php:305
 msgid "Mixcloud"
 msgstr ""
 
-#: inc/widgets.php:303
+#: inc/widgets.php:306
 msgid "SoundCloud"
 msgstr ""
 
-#: inc/widgets.php:304
+#: inc/widgets.php:307
 msgid "StumbleUpon"
 msgstr ""
 
-#: inc/widgets.php:305
+#: inc/widgets.php:308
 msgid "VK"
 msgstr ""
 
-#: inc/widgets.php:306
+#: inc/widgets.php:309
 msgid "RSS"
 msgstr ""
 
-#: inc/widgets.php:307
+#: inc/widgets.php:310
 msgid "Email"
 msgstr ""
 
-#: inc/widgets.php:308
+#: inc/widgets.php:311
 msgid "Phone"
 msgstr ""
 
-#: inc/widgets.php:378
+#: inc/widgets.php:381
 msgid "Open in New Window"
 msgstr ""
 
-#: inc/widgets.php:409
+#: inc/widgets.php:412
 msgid "Next"
 msgstr ""
 
-#: inc/widgets.php:410
+#: inc/widgets.php:413
 msgid "Previous"
 msgstr ""
 
-#: inc/widgets.php:452
+#: inc/widgets.php:455
 msgid "Post "
 msgstr ""
 
