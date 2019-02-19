@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.4
+* @version   1.3.5
 */
 ?>
 
@@ -15,7 +15,7 @@
 get_template_part( 'template-parts/content',esc_html( get_theme_mod('avik_order_header_home','page-static') )); ?>
 
 <!-- Section Who we are -->
-
+<?php if ( false == esc_html( get_theme_mod( 'avik_enable_whoweare', false) )):?>
 <?php
 $whowearecontent = esc_attr( get_theme_mod( 'avik_page_id_whoweare' ));
 $whoweare_count = 1;
@@ -59,9 +59,9 @@ while ( $mod->have_posts() ) : $mod->the_post(); { ?>
     <?php }
   endwhile;
   wp_reset_query();?>
-
+<?php endif; ?>
   <!-- Section Services -->
-
+  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_services', false) )):?>
   <section class="tabs" id="services">
     <div class="tab cf is-visible">
       <div class="container">
@@ -88,9 +88,9 @@ while ( $mod->have_posts() ) : $mod->the_post(); { ?>
       </div>
     </div>
   </section>
-
+  <?php endif; ?>
   <!--Section Portfolio -->
-
+  <?php if ( false == esc_html( get_theme_mod( 'avik_enable_portfolio', false) )):?>
   <section class="portfolio" id="portfolio">
     <div class="container">
 
@@ -99,29 +99,39 @@ while ( $mod->have_posts() ) : $mod->the_post(); { ?>
         <h3><?php echo esc_html( get_theme_mod( 'avik_title_portfolio','Portfolio')); ?></h3>
         <ul class="list-portfolio">
           <li class="portfolio-active all" onclick="avikfilterSelection('all')"><?php echo esc_html( get_theme_mod( 'avik_title_nav_all_portfolio')); ?></li>
+          <?php if ( false == esc_html( get_theme_mod( 'avik_enable_portfolio_1', false) )):?>
           <li class="portfolio-active one" onclick="avikfilterSelection('1')"> <?php echo esc_html( get_theme_mod( 'avik_title_nav_1_portfolio')); ?></li>
+          <?php endif; ?>
+          <?php if ( false == esc_html( get_theme_mod( 'avik_enable_portfolio_2', false) )):?>
           <li class="portfolio-active two " onclick="avikfilterSelection('2')"> <?php echo esc_html( get_theme_mod( 'avik_title_nav_2_portfolio')); ?></li>
+          <?php endif; ?>
+          <?php if ( false == esc_html( get_theme_mod( 'avik_enable_portfolio_3', false) )):?>
           <li class="portfolio-active three" onclick="avikfilterSelection('3')"><?php echo esc_html( get_theme_mod( 'avik_title_nav_3_portfolio')); ?></li>
+          <?php endif; ?>
         </ul>
       </div>
       <div class="row">
         <!-- Column 1 -->
-        <?php
+        <?php if ( false == esc_html( get_theme_mod( 'avik_enable_portfolio_1', false) )):?>
+        <?php 
         $portfolio_c_1_cat = esc_url( get_theme_mod('avik_portfolio_c_1_category'));
         $portfolio_c_1_count =6;
-        $new_query = new WP_Query( array( 'cat' => $portfolio_c_1_cat , 'showposts' => $portfolio_c_1_count ));
+        $new_query = new WP_Query( array( 'cat' => $portfolio_c_1_cat , 'showposts' => $portfolio_c_1_count ));     
         while ( $new_query->have_posts() ) : $new_query->the_post(); ?>
         <?php $avik_image_attributes = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'avik_big');?>
         <div class="col-md-4 col-ms-6 column 1 tabcontent">
           <div class="content avik-portfolio">
-            <a href="<?php the_permalink();?>">
+          <a href="<?php the_permalink();?>">
               <img src="<?php if ( $avik_image_attributes[0] ) :
                 echo esc_url($avik_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/avik-default.jpg'; endif; ?>"/></a>
               </div>
             </div>
-          <?php endwhile;
-          wp_reset_query();?>
+            <?php
+  endwhile;
+wp_reset_query();?>
+<?php endif; ?>
           <!-- Column 2 -->
+          <?php if ( false == esc_html( get_theme_mod( 'avik_enable_portfolio_2', false) )):?>
           <?php
           $portfolio_c_2_cat = esc_url( get_theme_mod('avik_portfolio_c_2_category'));
           $portfolio_c_2_count =6;
@@ -137,7 +147,9 @@ while ( $mod->have_posts() ) : $mod->the_post(); { ?>
               </div>
             <?php endwhile;
             wp_reset_query();?>
+            <?php endif; ?>
             <!-- Column 3 -->
+            <?php if ( false == esc_html( get_theme_mod( 'avik_enable_portfolio_3', false) )):?>
             <?php
             $portfolio_c_3_cat = esc_url( get_theme_mod('avik_portfolio_c_3_category'));
             $portfolio_c_3_count =6;
@@ -153,13 +165,14 @@ while ( $mod->have_posts() ) : $mod->the_post(); { ?>
                 </div>
               <?php endwhile;
               wp_reset_query();?>
+              <?php endif; ?>
               <div class="clearfix"></div>
             </div>
           </div>
         </section>
-
+        <?php endif; ?>
         <!-- Section Avik-Blog -->
-
+        <?php if ( false == esc_html( get_theme_mod( 'avik_enable_blog', false) )):?>
         <section class="avik-blog" id="avik-blog">
           <div class="container">
             <div class="row">
@@ -192,9 +205,9 @@ while ( $mod->have_posts() ) : $mod->the_post(); { ?>
           </div>
         </section>
         <div class="clear"></div>
-
+        <?php endif; ?>
         <!-- Section Contact -->
-
+        <?php if ( false == esc_html( get_theme_mod( 'avik_enable_contact', false) )):?>
         <section class="contact" id="contact">
           <div class="row paddong-contact">
             <!-- Address -->
@@ -230,5 +243,5 @@ while ( $mod->have_posts() ) : $mod->the_post(); { ?>
             <?php endwhile;
             wp_reset_query();?>
           </section>
-
+          <?php endif; ?>
           <?php get_footer(); ?>

@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.4
+* @version   1.3.5
 */
 
 /* TABLE OF CONTENT
@@ -93,6 +93,8 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
 
 }
 
+
+
 /* ------------------------------------*
 ##  1.2 Class Category Control */
 /* ----------------------------------- */
@@ -104,8 +106,9 @@ if (class_exists('WP_Customize_Control')) {
         array(
           'name'              => '_customize-dropdown-category-' . $this->id,
           'echo'              => 0,
+          'show_count'        => 1,
           'show_option_none'  => __( '&mdash; Select &mdash;','avik' ),
-          'option_none_value' => '0',
+          'option_none_value' => 1,
           'selected'          => $this->value(),
         )
       );

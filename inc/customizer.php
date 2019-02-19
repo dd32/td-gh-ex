@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.4
+* @version   1.3.5
 */
 
 /* TABLE OF CONTENT
@@ -303,6 +303,33 @@ function avik_customize_register( $wp_customize ) {
 								));
 
 								$wp_customize->add_panel( $avikwhoweare );
+
+								/* Enable Who we are */
+
+								$wp_customize->add_section(
+									'avik_section_enable_whoweare',
+									array(
+										'title'      => __('Enable Who we are','avik'),
+										'priority'   => 5,
+										'capability' => 'edit_theme_options',
+										'panel'      => 'avik_whoweare',
+									)
+								);
+
+								// Enable Whoweare
+								$wp_customize->add_setting( 'avik_enable_whoweare',
+								array(
+									'default' => 0,
+									'transport' => 'refresh',
+									'sanitize_callback' => 'avik_switch_sanitization',
+								));
+
+								$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_whoweare',
+								array(
+									'label' => __( 'Enable/Disable Who we  are Section','avik' ),
+									'section' => 'avik_section_enable_whoweare',
+									'priority'=> 10,
+								)) );
 
 								/* Page Who we are */
 
@@ -1982,7 +2009,22 @@ function avik_customize_register( $wp_customize ) {
 																						'capability' => 'edit_theme_options',
 																						'panel'      => 'avik_services',
 																					)
-																				);
+																					);
+
+								// Enable Services
+								$wp_customize->add_setting( 'avik_enable_services',
+								array(
+									'default' => 0,
+									'transport' => 'refresh',
+									'sanitize_callback' => 'avik_switch_sanitization',
+								));
+
+								$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_services',
+								array(
+									'label' => __( 'Enable/Disable Services Section','avik' ),
+									'section' => 'avik_section_settings_services',
+									'priority'=> 3,
+								)) );
 
 																				// Title Services
 
@@ -2257,6 +2299,21 @@ function avik_customize_register( $wp_customize ) {
 																							)
 																						);
 
+																						// Enable Portfolio
+								$wp_customize->add_setting( 'avik_enable_portfolio',
+								array(
+									'default' => 0,
+									'transport' => 'refresh',
+									'sanitize_callback' => 'avik_switch_sanitization',
+								));
+
+								$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_portfolio',
+								array(
+									'label' => __( 'Enable/Disable Portfolio Section','avik' ),
+									'section' => 'avik_section_settings_portfolio',
+									'priority'=> 12,
+								)) );
+
 																						// Title Portfolio
 
 																						$wp_customize->add_setting( 'avik_title_portfolio', array(
@@ -2301,6 +2358,20 @@ function avik_customize_register( $wp_customize ) {
 																							'label'   => __( 'Title Nav all Portfolio','avik' ),
 																						) );
 
+																						// Enable Column 1 Portoflio
+																						$wp_customize->add_setting( 'avik_enable_portfolio_1',
+																						array(
+																							'default' => 0,
+																							'transport' => 'refresh',
+																							'sanitize_callback' => 'avik_switch_sanitization',
+																						));
+
+																						$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_portfolio_1',
+																						array(
+																							'label' => __( 'Enable/Disable Column 1 Portoflio','avik' ),
+																							'section' => 'avik_section_settings_portfolio',
+																							'priority'=> 15,
+																						)) );
 																						// Title Column 1 Portfolio
 
 																						$wp_customize->add_setting( 'avik_title_nav_1_portfolio', array(
@@ -2316,6 +2387,20 @@ function avik_customize_register( $wp_customize ) {
 																							'priority'=> 20,
 																							'label'   => __( 'Title Nav column 1 Portfolio','avik' ),
 																						) );
+																						// Enable Column 2 Portoflio
+																						$wp_customize->add_setting( 'avik_enable_portfolio_2',
+																						array(
+																							'default' => 0,
+																							'transport' => 'refresh',
+																							'sanitize_callback' => 'avik_switch_sanitization',
+																						));
+
+																						$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_portfolio_2',
+																						array(
+																							'label' => __( 'Enable/Disable Column 2 Portoflio','avik' ),
+																							'section' => 'avik_section_settings_portfolio',
+																							'priority'=> 25,
+																						)) );
 
 																						// Title Column 2 Portfolio
 
@@ -2332,6 +2417,20 @@ function avik_customize_register( $wp_customize ) {
 																							'priority'=> 30,
 																							'label'   => __( 'Title Nav column 2 Portfolio','avik' ),
 																						) );
+																						// Enable Column 3 Portoflio
+																						$wp_customize->add_setting( 'avik_enable_portfolio_3',
+																						array(
+																							'default' => 0,
+																							'transport' => 'refresh',
+																							'sanitize_callback' => 'avik_switch_sanitization',
+																						));
+
+																						$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_portfolio_3',
+																						array(
+																							'label' => __( 'Enable/Disable Column 3 Portoflio','avik' ),
+																							'section' => 'avik_section_settings_portfolio',
+																							'priority'=> 35,
+																						)) );
 
 																						// Title Column 3 Portfolio
 
@@ -2480,6 +2579,20 @@ function avik_customize_register( $wp_customize ) {
 																											'panel'      => 'avik_blog',
 																										)
 																									);
+																									// Enable Blog
+								$wp_customize->add_setting( 'avik_enable_blog',
+								array(
+									'default' => 0,
+									'transport' => 'refresh',
+									'sanitize_callback' => 'avik_switch_sanitization',
+								));
+
+								$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_blog',
+								array(
+									'label' => __( 'Enable/Disable Blog Section','avik' ),
+									'section' => 'avik_section_settings_blog',
+									'priority'=> 12,
+								)) );
 
 																									// Title Blog
 
@@ -2642,6 +2755,22 @@ function avik_customize_register( $wp_customize ) {
 																														'panel'      => 'avik_contact',
 																													)
 																												);
+
+																												// Enable Contact
+								$wp_customize->add_setting( 'avik_enable_contact',
+								array(
+									'default' => 0,
+									'transport' => 'refresh',
+									'sanitize_callback' => 'avik_switch_sanitization',
+								));
+
+								$wp_customize->add_control( new Avik_Toggle_Switch_Custom_control( $wp_customize, 'avik_enable_contact',
+								array(
+									'label' => __( 'Enable/Disable Contact Section','avik' ),
+									'section' => 'avik_section_settings_contact',
+									'priority'=> 12,
+								)) );
+
 
 																												// Category for Contact
 
