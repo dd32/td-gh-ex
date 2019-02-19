@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package arena
+ * @package arenabiz
  */
 
 ?>
@@ -13,7 +13,7 @@
 
 <?php if( has_post_thumbnail() ) : ?>
 	<div class="entry-thumbnail">
-	<?php arena_post_thumbnail(); ?>
+	<?php arenabiz_post_thumbnail(); ?>
 	</div>
 	<?php endif; ?>
 	
@@ -31,7 +31,7 @@
 			?>
 			<div class="entry-meta">
 				<?php
-				arena_posted_on();
+				arenabiz_posted_on();
 				
 				?>
 			</div><!-- .entry-meta -->
@@ -48,7 +48,7 @@
 			<?php endif; ?>
 			<?php
 				wp_link_pages( array(
-					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'arena' ),
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'arenabiz' ),
 					'after'  => '</div>',
 				) );
 			?>

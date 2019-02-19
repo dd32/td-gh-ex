@@ -8,33 +8,33 @@
  *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
  *
- * @package arena
+ * @package arenabiz
  */
 
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses arena_header_style()
+ * @uses arenabiz_header_style()
  */
-function arena_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'arena_custom_header_args', array(
+function arenabiz_custom_header_setup() {
+	add_theme_support( 'custom-header', apply_filters( 'arenabiz_custom_header_args', array(
 		'default-image'          => '',
 		'default-text-color'     => '000000',
 		'width'                  => 1000,
 		'height'                 => 250,
 		'flex-height'            => true,
-		'wp-head-callback'       => 'arena_header_style',
+		'wp-head-callback'       => 'arenabiz_header_style',
 	) ) );
 }
-add_action( 'after_setup_theme', 'arena_custom_header_setup' );
+add_action( 'after_setup_theme', 'arenabiz_custom_header_setup' );
 
-if ( ! function_exists( 'arena_header_style' ) ) :
+if ( ! function_exists( 'arenabiz_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
-	 * @see arena_custom_header_setup().
+	 * @see arenabiz_custom_header_setup().
 	 */
-	function arena_header_style() {
+	function arenabiz_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

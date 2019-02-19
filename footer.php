@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package arena
+ * @package arenabiz
  */
 
 ?>
@@ -43,7 +43,7 @@
 	
 	
 		<div class="site-info">
-			<?php _e( 'Copyright', 'arena' ); ?> <?php echo date( 'Y' ); ?> <?php echo esc_html(themeszen_get_option('arena_footertext')); ?> | <?php _e( 'Powered by', 'arena' ); ?> <a href="http://www.wordpress.org"><?php _e( 'WordPress', 'arena' ); ?></a> | <?php _e( 'arena theme by', 'arena' ); ?> <a href="https://www.themeszen.com"><?php _e( 'themeszen', 'arena' ); ?></a>
+			<?php _e( 'Copyright', 'arenabiz' ); ?> <?php echo date_i18n(__('Y','arenabiz')); ?> <?php echo esc_html(arenabiz_get_option('arenabiz_footertext')); ?> | <?php _e( 'Powered by', 'arenabiz' ); ?> <a href="http://www.wordpress.org"><?php _e( 'WordPress', 'arenabiz' ); ?></a> | <?php _e( 'arenabiz theme by', 'arenabiz' ); ?> <a href="https://www.arenabiz.com"><?php _e( 'arenabiz', 'arenabiz' ); ?></a>
 		</div><!-- .site-info -->
 		
 	</div><!-- .container -->

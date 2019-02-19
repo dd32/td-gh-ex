@@ -2,17 +2,17 @@
 /**
  * Info class
  *
- * @package arena
+ * @package arenabiz
  */
 
-if ( ! class_exists( 'arena_Info' ) ) {
+if ( ! class_exists( 'arenabiz_Info' ) ) {
 
 	/**
 	 * Main class.
 	 *
 	 * @since 1.0.0
 	 */
-	class arena_Info {
+	class arenabiz_Info {
 
 		/**
 		 * Version
@@ -69,7 +69,7 @@ if ( ! class_exists( 'arena_Info' ) ) {
 		/**
 		 * Single instance.
 		 *
-		 * @var arena_Info $instance Instance object.
+		 * @var arenabiz_Info $instance Instance object.
 		 */
 		private static $instance;
 
@@ -89,8 +89,8 @@ if ( ! class_exists( 'arena_Info' ) ) {
 		 * @param array $config Configuration array.
 		 */
 		public static function init( $config ) {
-			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof arena_Info ) ) {
-				self::$instance = new arena_Info;
+			if ( ! isset( self::$instance ) && ! ( self::$instance instanceof arenabiz_Info ) ) {
+				self::$instance = new arenabiz_Info;
 				if ( ! empty( $config ) && is_array( $config ) ) {
 					self::$instance->config = $config;
 					self::$instance->configure();
@@ -118,12 +118,12 @@ if ( ! class_exists( 'arena_Info' ) ) {
 
 			$this->theme_version = $theme->get( 'Version' );
 			$this->theme_slug    = $theme->get_template();
-			$this->menu_name     = isset( $this->config['menu_name'] ) ? $this->config['menu_name'] : sprintf( esc_html__( '%s Info', 'arena' ), $this->theme_name );
-			$this->page_name     = isset( $this->config['page_name'] ) ? $this->config['page_name'] : sprintf( esc_html__( '%s Info', 'arena' ), $this->theme_name );
+			$this->menu_name     = isset( $this->config['menu_name'] ) ? $this->config['menu_name'] : sprintf( esc_html__( '%s Info', 'arenabiz' ), $this->theme_name );
+			$this->page_name     = isset( $this->config['page_name'] ) ? $this->config['page_name'] : sprintf( esc_html__( '%s Info', 'arenabiz' ), $this->theme_name );
 			$this->tabs          = isset( $this->config['tabs'] ) ? $this->config['tabs'] : array();
 			$this->page_slug     = $this->theme_slug . '-info';
 			$this->page_url     = admin_url( 'themes.php?page=' . $this->page_slug );
-			$this->notice        = '<p>' . sprintf( esc_html__( 'Welcome! Thank you for choosing %1$s. To fully take advantage of the best our theme can offer please make sure you visit theme info page.', 'arena' ), esc_html( $this->theme_name ) ) . '</p><p><a href="' . esc_url( $this->page_url ) . '" class="button button-primary">' . sprintf( esc_html__( 'Get started with %1$s', 'arena' ), $this->theme_name ) . '</a><a href="#" class="btn-dismiss" data-userid="' . esc_attr( get_current_user_id() ) . '" data-nonce="' . esc_attr( wp_create_nonce( 'arena_dismiss_nonce' ) ) . '">' . esc_html__( 'Dismiss this notice', 'arena' ) . '</a></p>';
+			$this->notice        = '<p>' . sprintf( esc_html__( 'Welcome! Thank you for choosing %1$s. To fully take advantage of the best our theme can offer please make sure you visit theme info page.', 'arenabiz' ), esc_html( $this->theme_name ) ) . '</p><p><a href="' . esc_url( $this->page_url ) . '" class="button button-primary">' . sprintf( esc_html__( 'Get started with %1$s', 'arenabiz' ), $this->theme_name ) . '</a><a href="#" class="btn-dismiss" data-userid="' . esc_attr( get_current_user_id() ) . '" data-nonce="' . esc_attr( wp_create_nonce( 'arenabiz_dismiss_nonce' ) ) . '">' . esc_html__( 'Dismiss this notice', 'arenabiz' ) . '</a></p>';
 		}
 
 		/**
@@ -143,8 +143,8 @@ if ( ! class_exists( 'arena_Info' ) ) {
 			add_action( 'admin_enqueue_scripts', array( $this, 'assets' ) );
 
 			// Dismiss AJAX.
-			add_action( 'wp_ajax_arena_dismiss', array( $this, 'dismiss_callback' ) );
-			add_action( 'wp_ajax_nopriv_arena_dismiss', array( $this, 'dismiss_callback' ) );
+			add_action( 'wp_ajax_arenabiz_dismiss', array( $this, 'dismiss_callback' ) );
+			add_action( 'wp_ajax_nopriv_arenabiz_dismiss', array( $this, 'dismiss_callback' ) );
 		}
 
 		/**
@@ -229,7 +229,7 @@ if ( ! class_exists( 'arena_Info' ) ) {
 			if ( method_exists( $this, $method ) ) {
 				$this->{$method}();
 			} else {
-				printf( esc_html__( '%s() method does not exist.', 'arena' ), $method );
+				printf( esc_html__( '%s() method does not exist.', 'arenabiz' ), $method );
 			}
 		}
 
@@ -338,7 +338,7 @@ if ( ! class_exists( 'arena_Info' ) ) {
 				<?php endif; ?>
 
 				<?php if ( true !== $tgmpa_complete ) : ?>
-					<a href="<?php echo esc_url( $tgmpa_url ); ?>" class="button button-primary"><?php esc_html_e( 'Manage Plugins', 'arena' ); ?></a>
+					<a href="<?php echo esc_url( $tgmpa_url ); ?>" class="button button-primary"><?php esc_html_e( 'Manage Plugins', 'arenabiz' ); ?></a>
 				<?php endif; ?>
 
 				<?php if ( ! empty( $plugins ) ) : ?>
@@ -379,7 +379,7 @@ if ( ! class_exists( 'arena_Info' ) ) {
 						$tgmpa_complete = $tgmpa->is_tgmpa_complete();
 						if ( true !== $tgmpa_complete ) {
 							?>
-							<a href="<?php echo esc_url( $tgmpa_url ); ?>" class="button button-primary"><?php esc_html_e( 'Manage Plugins', 'arena' ); ?></a>
+							<a href="<?php echo esc_url( $tgmpa_url ); ?>" class="button button-primary"><?php esc_html_e( 'Manage Plugins', 'arenabiz' ); ?></a>
 							<?php
 						}
 					}
@@ -448,8 +448,8 @@ if ( ! class_exists( 'arena_Info' ) ) {
 			$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
 			if ( in_array( $hook, array( 'themes.php', 'appearance_page_' . $this->page_slug ), true ) ) {
-			wp_enqueue_style( 'arena-info', get_template_directory_uri() . '/admin/about/css/info' . $min . '.css', array(), '1.0.0' );
-			wp_enqueue_script( 'arena-info', get_template_directory_uri() . '/admin/about/js/info' . $min . '.js', array(), '1.0.0' );
+			wp_enqueue_style( 'arenabiz-info', get_template_directory_uri() . '/admin/about/css/info' . $min . '.css', array(), '1.0.0' );
+			wp_enqueue_script( 'arenabiz-info', get_template_directory_uri() . '/admin/about/js/info' . $min . '.js', array(), '1.0.0' );
 			}
 
 		}
@@ -468,7 +468,7 @@ if ( ! class_exists( 'arena_Info' ) ) {
 			}
 
 			$user_id = get_current_user_id();
-			$dismiss_status = get_user_meta( $user_id, 'arena_dismiss_status', true );
+			$dismiss_status = get_user_meta( $user_id, 'arenabiz_dismiss_status', true );
 			?>
 			<?php if ( current_user_can( 'edit_theme_options' ) && 'themes' === $screen_id && 1 !== absint( $dismiss_status ) ) : ?>
 				<div class="wt-info-notice notice notice-info">
@@ -534,11 +534,11 @@ if ( ! class_exists( 'arena_Info' ) ) {
 			$userid  = ( isset( $_GET['userid'] ) ) ? esc_attr( wp_unslash( $_GET['userid'] ) ) : '';
 			$wpnonce = ( isset( $_GET['_wpnonce'] ) ) ? esc_attr( wp_unslash( $_GET['_wpnonce'] ) ) : '';
 
-			if ( false === wp_verify_nonce( $wpnonce, 'arena_dismiss_nonce' ) ) {
+			if ( false === wp_verify_nonce( $wpnonce, 'arenabiz_dismiss_nonce' ) ) {
 				wp_send_json( $output );
 			}
 
-			update_user_meta( $userid, 'arena_dismiss_status', 1 );
+			update_user_meta( $userid, 'arenabiz_dismiss_status', 1 );
 
 			$output['status'] = true;
 

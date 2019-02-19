@@ -1,17 +1,17 @@
 /*!
-Theme Name: ArenaBiz
-Theme URI: https://themeszen.com/arena-theme/
+Theme Name: arenabiz
+Theme URI: https://themeszen.com/arenabiz-theme/
 Author: Manishg
 Author URI: https://themeszen.com/
 Description: A very neat and clean blue and white business theme. The theme is fully responsive that looks great on any device. The theme supports widgets. And features theme-options, threaded-comments and multi-level dropdown menu. A simple and neat typography. Uses WordPress custom menu, header image, and background. Get free support on https://themeszen.com/?page_id=33
-Version: 1.0.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
-Text Domain: arena
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Text Domain: arenabiz
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready,blog, portfolio
 
  *
- * arena WordPress Theme, Copyright (C) 2018 Manish Gori
+ * arenabiz WordPress Theme, Copyright (C) 2018 Manish Gori
  *
  * This program is free software; you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -26,7 +26,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
  * Note: see the "license.htm" page for copyright and 
  * license information for bundled resources, including images
 
-arena is helperd on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
+arenabiz is helperd on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc.
 Underscores is distributed under the terms of the GNU GPL v2 or later.
 
 Normalizing styles have been helped along thanks to the fine work of
@@ -555,9 +555,9 @@ input[type="button"],
 input[type="reset"],
 input[type="submit"] {
 	border: 1px solid;
-	border-color: #3764eb;
+	border-color: #7cc048;
 	border-radius: 3px;
-	background: #3764eb;
+	background: #7cc048;
 	color: #fff;
 	font-size: 12px;
 	font-size: 0.75rem;
@@ -640,12 +640,12 @@ textarea {
 ## Links
 --------------------------------------------------------------*/
 a {
-	color: #3764eb;
+	color: #7cc048;
 text-decoration: none;	
 }
 
 a:visited {
-	color: #3764eb;
+	color: #7cc048;
 }
 
 a:hover, a:focus, a:active {
@@ -871,7 +871,7 @@ a:hover, a:active {
 .main-navigation li.current-page-item > a,
 .main-navigation li:hover > a {
     color:#fff;
-    background-color: #3764eb;	
+    background-color: #7cc048;	
 }
 .main-navigation ul li ul li > a:hover:after,
 .main-navigation ul li ul li.current-menu-item > a:after,
@@ -882,7 +882,7 @@ a:hover, a:active {
 
 .main-navigation ul li.menu-item-has-children.current-menu-item > a::after,
 .main-navigation ul li.page-item-has-children.current-menu-item > a::after {
-    border-top-color: #3764eb;
+    border-top-color: #7cc048;
 }
 
 
@@ -890,7 +890,7 @@ a:hover, a:active {
 .main-navigation li li.current-menu-item > a,
 .main-navigation li li.current-page-item > a,
 .main-navigation li li:hover > a{
-    background-color: #3764eb;
+    background-color: #7cc048;
     border-bottom: 1px solid #cccccc;
     padding-left: 20px;
     color:#fff;
@@ -1076,13 +1076,13 @@ a.custom-logo-link {
 }
 
 .site-title a span {
-    color: #3764eb;
+    color: #7cc048;
 }
 
 .site-title a:hover,
 .site-title a:focus,
 .site-title a:active{
-    color: #3764eb;
+    color: #7cc048;
 }
 
 .site-description {
@@ -1118,7 +1118,7 @@ a.custom-logo-link {
 --------------------------------------------------------------*/
 	
 	.slider_bar {
-    background: #3764eb;
+    background: #7cc048;
 	font-size: 18px;
 	padding-top: 20px;
 	padding-bottom: 20px;
@@ -1142,11 +1142,21 @@ a.custom-logo-link {
 	text-decoration: none;
 	background: #fff;
 	color: #000;
+		-webkit-border-radius: 3px;
+		   -moz-border-radius: 3px;
+			 -o-border-radius: 3px;
+				border-radius: 3px;
+		-webkit-transition: all 0.3s;
+		   -moz-transition: all 0.3s;
+		    -ms-transition: all 0.3s;
+		     -o-transition: all 0.3s;
+		        transition: all 0.3s;	
 }
 
 .sb-btn-wrapper a:hover {
-	background: #272727;
+	background-color: transparent;
 	color: #fff;
+	border: 1px solid #fff;
 }
 
 /*--------------------------------------------------------------
@@ -1154,7 +1164,7 @@ a.custom-logo-link {
 --------------------------------------------------------------*/
 	
 	.cta_bar {
-    background: #3764eb;
+    background: #7cc048;
 	font-size: 24px;
 	padding-top: 30px;
 	padding-bottom: 30px;
@@ -1165,7 +1175,6 @@ a.custom-logo-link {
 .cta-caption{
 	text-align: center;
 	padding-bottom: 25px;
-	text-transform: uppercase;
 	font-weight: bold;
 }
 
@@ -1173,22 +1182,28 @@ a.custom-logo-link {
 	text-align: center;
 	padding-bottom: 15px;
 }
-
-
 .cta-btn-wrapper a {
 	font-size: 16px;
 	padding: 10px 26px;
 	text-decoration: none;
 	background: #fff;
 	color: #000;
+			-webkit-border-radius: 3px;
+		   -moz-border-radius: 3px;
+			 -o-border-radius: 3px;
+				border-radius: 3px;
+		-webkit-transition: all 0.3s;
+		   -moz-transition: all 0.3s;
+		    -ms-transition: all 0.3s;
+		     -o-transition: all 0.3s;
+		        transition: all 0.3s;	
 }
 
 .cta-btn-wrapper a:hover {
-	background: #272727;
+	background-color: transparent;
 	color: #fff;
+	border: 1px solid #fff;
 }
-
-
 
 /*--------------------------------------------------------------
 # Accessibility
@@ -1348,7 +1363,7 @@ a.custom-logo-link {
 
 .widget_container .widget-title::after {
     content: "";
-    background-color: #3764eb;
+    background-color: #7cc048;
     width: 70px;
     height: 1px;
     bottom: 0;
@@ -1362,27 +1377,27 @@ a.custom-logo-link {
 ### Advaneced recent post widget
 --------------------------------------------------------------*/
 
-.arena_helper_widget_recent_posts .recent-posts-title {
+.arenabiz_helper_widget_recent_posts .recent-posts-title {
     font-size: 16px;
     line-height: 1.5;
     margin-bottom: 0;
 }
 
-.arena_helper_widget_recent_posts .recent-posts-meta {
+.arenabiz_helper_widget_recent_posts .recent-posts-meta {
     font-size: 14px;
 }
 
-.arena_helper_widget_recent_posts .recent-posts-item {
+.arenabiz_helper_widget_recent_posts .recent-posts-item {
     clear: both;
     margin-top: 20px;
 }
-.arena_helper_widget_recent_posts .recent-posts-item::after {
+.arenabiz_helper_widget_recent_posts .recent-posts-item::after {
     clear: both;
     content: "";
     display: table;
 }
 
-.arena_helper_widget_recent_posts .recent-posts-date::before{
+.arenabiz_helper_widget_recent_posts .recent-posts-date::before{
     display: inline-block;
     font-family: FontAwesome;
     height: 15px;
@@ -1391,7 +1406,7 @@ a.custom-logo-link {
 }
 
 
-.arena_widget_advanced_recent_posts .advanced-recent-posts-item {
+.arenabiz_widget_advanced_recent_posts .advanced-recent-posts-item {
 
     float: left;
     width: 50%;
@@ -1400,30 +1415,30 @@ a.custom-logo-link {
     padding-bottom: 15px;
 }
 
-.arena_widget_advanced_recent_posts  .advanced-recent-posts-text-wrap {
+.arenabiz_widget_advanced_recent_posts  .advanced-recent-posts-text-wrap {
     display: table-cell;
 }
 
-.arena_widget_advanced_recent_posts .advanced-recent-posts-summary p {
+.arenabiz_widget_advanced_recent_posts .advanced-recent-posts-summary p {
     margin-bottom: 0;
     font-size: 14px;
 }
-.arena_widget_advanced_recent_posts  .advanced-recent-posts-item:first-child {
+.arenabiz_widget_advanced_recent_posts  .advanced-recent-posts-item:first-child {
     margin: 0;
 }
 
-.arena_widget_advanced_recent_posts  .advanced-recent-posts-title {
+.arenabiz_widget_advanced_recent_posts  .advanced-recent-posts-title {
     font-size: 15px;
     margin-bottom:0;
 }
 
-.arena_widget_advanced_recent_posts .advanced-recent-posts-date {
+.arenabiz_widget_advanced_recent_posts .advanced-recent-posts-date {
     display: block;
     margin-bottom: 3px;
     font-size: 13px;
 }
 
-.arena_widget_advanced_recent_posts .advanced-recent-posts-date::before,
+.arenabiz_widget_advanced_recent_posts .advanced-recent-posts-date::before,
 .widget_recent_entries span.post-date {
     display: inline-block;
     font-family: FontAwesome;
@@ -1691,7 +1706,7 @@ h4.themeszen_portfolio_main_desc {
     display: block;
     content: "";
     height: 2px;
-    background: #3764eb;
+    background: #7cc048;
     width: 50px;
     margin-top: 10px;
     margin-bottom: 20px;
@@ -1733,7 +1748,7 @@ h4.themeszen_portfolio_main_desc {
 #footer-widgets a:hover,
 #footer-widgets a:active,
 #footer-widgets a:focus {
-    color:#3764eb;
+    color:#7cc048;
 }
 
 #footer-widgets .footer-active-1 {
@@ -1762,7 +1777,7 @@ h4.themeszen_portfolio_main_desc {
 	text-align:left;
 	background: #fff;
 	padding: 10px 0;
-	border-top: 2px solid #3764eb;
+	border-top: 2px solid #7cc048;
 }
 
 
@@ -1834,7 +1849,7 @@ body {
 .boxed {
 	background: #fff none repeat scroll 0 0;
 	box-shadow: 0 2px 6px rgba(100, 100, 100, 0.3);
-	border-top: 3px solid #3764eb;
+	border-top: 3px solid #7cc048;
 	position: relative;
 }
 
@@ -1931,7 +1946,7 @@ body {
 .entry-meta a:hover,
 .entry-meta a:focus,
 .entry-meta a:active {
-    color: #3764eb;
+    color: #7cc048;
 }
 
 .entry-title a,
@@ -1942,7 +1957,7 @@ body {
 .entry-title a:hover,
 .entry-title a:focus,
 .entry-title a:active {
-    color: #3764eb;
+    color: #7cc048;
 }
 
 /*--------------------------------------------------------------
@@ -2003,7 +2018,7 @@ body {
     display: block;
     width: 50px;
     height: 2px;
-    background: #3764eb;
+    background: #7cc048;
     position: absolute;
     bottom: -1px;
 }
@@ -2091,8 +2106,8 @@ body {
 }
 
 .widget .tagcloud a:hover {
-    border: 1px solid #3764eb;
-    color: #3764eb;
+    border: 1px solid #7cc048;
+    color: #7cc048;
 }
 
 .widget .tagcloud {
@@ -2120,7 +2135,7 @@ span.post-date {
 .sidebar  ul li a:hover,
 .sidebar  ul li a:focus,
 .sidebar  ul li a:active {
-    color:#3764eb;
+    color:#7cc048;
 }
 
 /*calendar section*/
@@ -2294,13 +2309,23 @@ color: #fff !important;
 	font-size: 14px;
 	padding: 12px 25px;
 	text-decoration: none;
-	background: #3764eb;
+	background: #7cc048;
 	color: #fff;
+		-webkit-border-radius: 3px;
+		   -moz-border-radius: 3px;
+			 -o-border-radius: 3px;
+				border-radius: 3px;
+		-webkit-transition: all 0.3s;
+		   -moz-transition: all 0.3s;
+		    -ms-transition: all 0.3s;
+		     -o-transition: all 0.3s;
+		        transition: all 0.3s;	
 }
 
 .flex-btn-wrapper a:hover {
-	background: #272727;
+	background-color: transparent;
 	color: #fff;
+	border: 1px solid #fff;
 }
 
 .flexslider1 .slider-image::after {

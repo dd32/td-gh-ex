@@ -1,49 +1,55 @@
-          <?php if (themeszen_get_option('arena_testimonial_status', 'on') == 'on') { ?>   
+          <?php if (arenabiz_get_option('arenabiz_testimonial_status') != "off") { ?>   
    
    <div class="testimonial_item_container"> 
                     <div class="testimonial_heading_container"> 
-                        <h2 class="themeszen_testimonial_main_head">
-	<?php if(esc_html(themeszen_get_option('themeszen_testimonial_main_head')) != NULL){ echo esc_html(themeszen_get_option(		'themeszen_testimonial_main_head'));} else echo __('Our Client Testimonials', 'arena'); ?></h2>
-                        <h4 class="themeszen_testimonial_main_desc"><?php if(esc_html(themeszen_get_option('themeszen_testimonial_main_desc')) != NULL){ echo esc_html(themeszen_get_option('themeszen_testimonial_main_desc'));} else echo __('What our Clients say.', 'arena');?></h4>
+                        <h2 class="arenabiz_testimonial_main_head">
+	<?php if(esc_html(arenabiz_get_option('arenabiz_testimonial_main_head')) != NULL){ echo esc_html(arenabiz_get_option(		'arenabiz_testimonial_main_head'));} else echo __('Our Client Testimonials', 'arenabiz'); ?></h2>
+                        <h4 class="arenabiz_testimonial_main_desc"><?php if(esc_html(arenabiz_get_option('arenabiz_testimonial_main_desc')) != NULL){ echo esc_html(arenabiz_get_option('arenabiz_testimonial_main_desc'));} else echo __('What our Clients say.', 'arenabiz');?></h4>
                     </div>
      
                         <div class="testimonial_item_content row"> 
+						
+			<?php for ($i = 1; $i <= 3; $i++) { 
+			
+					$arenabiz_testimonial_page_id = esc_html(arenabiz_get_option('arenabiz_testimonial_page'.$i));
+
+		if($arenabiz_testimonial_page_id){
+			$args = array( 
+                        'page_id' => absint($arenabiz_testimonial_page_id) 
+                        );
+			$query = new WP_Query($args);
+			if( $query->have_posts() ):
+				while($query->have_posts()) : $query->the_post();
+				?>			
+										
                             <div class="col-md-4 col-sm-4 testimonial_col_wrap">
-                                <div class="testimonial_item themeszen_testimonial center">  
-                                    <p class="testm_descbox"><?php if(esc_html(themeszen_get_option('themeszen_testimonial')) != NULL){ echo esc_html(themeszen_get_option('themeszen_testimonial'));} else echo __('Very Elegant and Beautiful theme. Sure to go for, get it today and have wonderful experience.', 'arena');?>
+                                <div class="testimonial_item arenabiz_testimonial center">  
+                                    <p class="testm_descbox">
+									<?php if(has_excerpt()){
+						the_excerpt();
+					}else{
+						the_content(); 
+					} ?>
 									</p>
-                                    <div class="testimonial_item_inner themeszen_testimonial_img">  
-<img src="<?php if(esc_url(themeszen_get_option('themeszen_testimonial_img')) != NULL){ echo esc_url(themeszen_get_option('themeszen_testimonial_img'));} else echo get_template_directory_uri() . '/images/quote.png' ?>" />
+                                    <div class="testimonial_item_inner arenabiz_testimonial_img">  
+					<?php 
+					if(has_post_thumbnail()){
+						$arenabiz_testimonial_image = wp_get_attachment_image_src(get_post_thumbnail_id(),'full');
+						echo '<img alt="'. esc_html(get_the_title()) .'" src="'.esc_url($arenabiz_testimonial_image[0]).'">';
+			} else echo '<img alt="'. esc_html(get_the_title()) .'" src="'.get_template_directory_uri() . '/images/quote.png'.'">';
+					?>
                                         <div class="testimonial_name_wrapper">  
-                                            <p><?php if(esc_html(themeszen_get_option('themeszen_testimonial_name')) != NULL){ echo esc_html(themeszen_get_option('themeszen_testimonial_name'));} else echo __('Manish gori', 'arena'); ?></p>
+                        <p><?php if(esc_html(get_the_title()) != NULL){ echo esc_html(get_the_title());} else echo __('Manish gori', 'arenabiz'); ?></p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="col-md-4 col-sm-4 testimonial_col_wrap">
-                                <div class="testimonial_item themeszen_testimonial_2 center">    
-                                    <p class="testm_descbox"><?php if(esc_html(themeszen_get_option('themeszen_testimonial_2')) != NULL){ echo esc_html(themeszen_get_option('themeszen_testimonial_2'));} else echo __('Very Elegant and Beautiful theme. Sure to go for, get it today and have wonderful experience.', 'arena');?>
-									</p>
-                                    <div class="testimonial_item_inner themeszen_testimonial_img_2">  
-<img src="<?php if(esc_url(themeszen_get_option('themeszen_testimonial_img_2')) != NULL){ echo esc_url(themeszen_get_option('themeszen_testimonial_img_2'));} else echo get_template_directory_uri() . '/images/quote.png' ?>" />
-                                        <div class="testimonial_name_wrapper">  
-                                            <p><?php if(esc_html(themeszen_get_option('themeszen_testimonial_name_2')) != NULL){ echo esc_html(themeszen_get_option('themeszen_testimonial_name_2'));} else echo __('Pia', 'arena'); ?></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4 col-sm-4 testimonial_col_wrap">
-                                <div class="testimonial_item themeszen_testimonial_3 center">    
-      <p class="testm_descbox"><?php if(esc_html(themeszen_get_option('themeszen_testimonial_3')) != NULL){ echo esc_html(themeszen_get_option('themeszen_testimonial_3'));} else echo __('Very Elegant and Beautiful theme. Sure to go for, get it today and have wonderful experience.', 'arena');?>
-									</p>
-                                    <div class="testimonial_item_inner themeszen_testimonial_img_3">  
-<img src="<?php if(esc_url(themeszen_get_option('themeszen_testimonial_img_3')) != NULL){ echo esc_url(themeszen_get_option('themeszen_testimonial_img_3'));} else echo get_template_directory_uri() . '/images/quote.png' ?>" />
-                                        <div class="testimonial_name_wrapper">  
-                                            <p><?php if(esc_html(themeszen_get_option('themeszen_testimonial_name_3')) != NULL){ echo esc_html(themeszen_get_option('themeszen_testimonial_name_3'));} else echo __('WordPress', 'arena'); ?></p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+
+				<?php
+				endwhile;
+			endif;
+		}
+	} ?>
                         </div>
                        
                 </div>

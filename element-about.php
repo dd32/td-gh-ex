@@ -1,31 +1,46 @@
 			
 <?php
- 	if (themeszen_get_option('arena_about_status', 'on') == 'on') {
+ 	if (arenabiz_get_option('arenabiz_about_status') == 'on') {
 		?>		
 <!-- Portfolio Section -->
-<section class="about-section">			
+<section class="about-section">
 			
 			<div class="container">
 	
 		<!-- Section Title -->
                     <div class="about_heading_container"> 
-                        <h2 class="themeszen_about_main_head">
-						<?php if(esc_html(themeszen_get_option('themeszen_about_main_head')) != NULL){ echo esc_html(themeszen_get_option('themeszen_about_main_head'));} else echo __('Who we are', 'arena'); ?></h2>
-                        <h4 class="themeszen_about_main_desc"><?php if(esc_html(themeszen_get_option('themeszen_about_main_desc')) != NULL){ echo esc_html(themeszen_get_option('themeszen_about_main_desc'));} else echo __('Something about us.', 'arena');?>
+                        <h2 class="arenabiz_about_main_head">
+						<?php if(esc_html(arenabiz_get_option('arenabiz_about_main_head')) != NULL){ echo esc_html(arenabiz_get_option('arenabiz_about_main_head'));} else echo __('Who we are', 'arenabiz'); ?></h2>
+                        <h4 class="arenabiz_about_main_desc"><?php if(esc_html(arenabiz_get_option('arenabiz_about_main_desc')) != NULL){ echo esc_html(arenabiz_get_option('arenabiz_about_main_desc'));} else echo __('Something about us.', 'arenabiz');?>
 						</h4>
                     </div>
 		<!-- /Section Title -->
 		
 		<div class="row box-wrapper">
 
-			<?php for ($i = 1; $i <= 3; $i++) { ?>
+			<?php for ($i = 1; $i <= 3; $i++) { 
+			
+					$arenabiz_about_page_id = esc_html(arenabiz_get_option('arenabiz_about_page'.$i));
+
+		if($arenabiz_about_page_id){
+			$args = array( 
+                        'page_id' => absint($arenabiz_about_page_id) 
+                        );
+			$query = new WP_Query($args);
+			if( $query->have_posts() ):
+				while($query->have_posts()) : $query->the_post();
+				?>
 		
 				<div class="col-md-4 col-sm-4">
 				
 					<div class="box-head">
-								
-	<?php if(esc_url(themeszen_get_option('arena_boxlink' . $i)) != NULL){ ?> <a href="<?php echo esc_url(themeszen_get_option('arena_boxlink' . $i)); ?>"><?php }?><img src="<?php if(esc_url(themeszen_get_option('arena_boximage' . $i)) != NULL){ echo esc_url(themeszen_get_option('arena_boximage' . $i));} else echo get_template_directory_uri() . '/images/pic' .$i. '.jpg' ?>" alt="<?php echo esc_html(themeszen_get_option('arena_boxhead' . $i)); ?>" />
-		<?php if(esc_url(themeszen_get_option('arena_boxlink' . $i)) != NULL){ ?></a><?php }?>
+	
+					<?php 
+					if(has_post_thumbnail()){
+						$arenabiz_about_image = wp_get_attachment_image_src(get_post_thumbnail_id(),'full');
+						echo '<img alt="'. esc_html(get_the_title()) .'" src="'.esc_url($arenabiz_about_image[0]).'">';
+			} else echo '<img alt="'. esc_html(get_the_title()) .'" src="'.get_template_directory_uri() . '/images/pic'.$i.'.jpg'.'">';
+					?>
 
 					
 					</div> <!--box-head close-->
@@ -34,25 +49,30 @@
 						
 				<div class="title-head">
 				
-<?php if(esc_url(themeszen_get_option('arena_boxlink' . $i)) != NULL){ ?> <a href="<?php echo esc_url(themeszen_get_option('arena_boxlink' . $i)); ?>"><?php }?>				
-				
-				<?php if(esc_html(themeszen_get_option('arena_boxhead' . $i)) != NULL){ echo esc_html(themeszen_get_option('arena_boxhead' . $i));} else echo __('Step'. $i, 'arena'); ?>
-				
-		<?php if(esc_url(themeszen_get_option('arena_boxlink' . $i)) != NULL){ ?></a><?php }?>
+				<?php if(esc_html(get_the_title()) != NULL){ echo esc_html(get_the_title());} else echo __('Heading', 'arenabiz'); ?>
 						
 			</div>		
 				</div>
 					
 					<div class="box-content">
 
-				<?php if(esc_textarea(themeszen_get_option('arena_boxtext' . $i)) != NULL){ echo esc_textarea(themeszen_get_option('arena_boxtext' . $i));} else echo __('Nullam posuere felis a lacus tempor eget dignissim arcu adipiscing. Donec est est, rutrum vitae bibendum vel, suscipit non metus.', 'arena'); ?>
+    				<?php 
+					if(has_excerpt()){
+						the_excerpt();
+					}else{
+						the_content(); 
+					} ?>
 					
 					</div> <!--box-content close-->
 					<div class="clear"></div>
 			
 				</div><!--boxes  end-->
 				
-		<?php } ?>
+				<?php
+				endwhile;
+			endif;
+		}
+	} ?>
 			
 	</div>
 		</div>

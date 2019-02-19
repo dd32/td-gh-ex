@@ -6,7 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package arena
+ * @package arenabiz
  */
 
 ?>
@@ -22,7 +22,7 @@
 
 <body <?php body_class(); ?>>
 <div id="page" class="site boxed">
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'arena' ); ?></a>
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'arenabiz' ); ?></a>
 
 	<header id="masthead" class="site-header">
 		<div class="container">
@@ -41,10 +41,10 @@
 				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
 				<?php
 			endif;
-			$arena_description = get_bloginfo( 'description', 'display' );
-			if ( $arena_description || is_customize_preview() ) :
+			$arenabiz_description = get_bloginfo( 'description', 'display' );
+			if ( $arenabiz_description || is_customize_preview() ) :
 				?>
-				<p class="site-description"><?php echo $arena_description; /* WPCS: xss ok. */ ?></p>
+				<p class="site-description"><?php echo $arenabiz_description; /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 	<?php } ?>
 		</div><!-- .site-branding -->
@@ -53,12 +53,12 @@
 <div id="menu_container">
 <div id="main-navigation">
 			<nav id="site-navigation" class="main-navigation">
-				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'arena' ); ?></button>
+				<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'arenabiz' ); ?></button>
 			<?php
 			wp_nav_menu( array(
 				'theme_location' => 'menu-1',
 				'menu_id'        => 'primary-menu',
-				'fallback_cb'    => 'arena_primary_navigation_fallback',				
+				'fallback_cb'    => 'arenabiz_primary_navigation_fallback',				
 			) );
 			?>
 			</nav><!-- #site-navigation -->
@@ -73,7 +73,7 @@
 		
 		<div class="custom-header-content">
 			<div class="container">
-			<?php $header_title = apply_filters( 'arena_filter_title', '' ); ?>
+			<?php $header_title = apply_filters( 'arenabiz_filter_title', '' ); ?>
 			<h1><?php echo esc_html( $header_title ); ?></h1>
 			</div>
 			

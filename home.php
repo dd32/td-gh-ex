@@ -9,7 +9,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package arena
+ * @package arenabiz
  */
 
 get_header();
@@ -20,7 +20,7 @@ get_header();
 		
 		<div class="custom-header-content">
 			<div class="container">
-			<?php $header_title = apply_filters( 'arena_filter_title', '' ); ?>
+			<?php $header_title = apply_filters( 'arenabiz_filter_title', '' ); ?>
 			<h1><?php echo esc_html( $header_title ); ?></h1>
 			</div>
 			
@@ -37,16 +37,6 @@ get_header();
 					
 <?php
 		if ( is_home() && is_front_page() ) { ?>
-		
-	<div class="container">
-	<div class="row">
-	
-		<?php get_template_part( 'element-slider', 'index' ); ?>	
-		
-		</div>
-		
-	</div>
-		
 
 	<div id="content" class="site-content">
 	

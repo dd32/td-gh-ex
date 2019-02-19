@@ -3,13 +3,13 @@ ob_start();
 include_once get_template_directory() . '/admin/customizer.php';
 
 //get the theme option from options array
-function themeszen_get_option($name, $default = '') {
+function arenabiz_get_option($name, $default = '') {
 //    echo $default;
-    $options = get_option('themeszen_options');
+    $options = get_option('arenabiz_options');
     if (isset($options[$name]) && $options[$name] != '') {
         return $options[$name];
     } elseif ($default) {
-        if (themeszen_get_option('arena_dummy_data') == 'on') {
+        if (arenabiz_get_option('arenabiz_dummy_data') == 'on') {
             return $default;
         }
     } else {
@@ -18,34 +18,34 @@ function themeszen_get_option($name, $default = '') {
 }
 
 // Save all option in single array
-function themeszen_save_option($option) {
+function arenabiz_save_option($option) {
     if (!empty($option)) {
-        return update_option('themeszen_options', $option);
+        return update_option('arenabiz_options', $option);
     }
 }
 
 //update theme option
-function themeszen_update_option($name, $value) {
-    $options = get_option('themeszen_options');
+function arenabiz_update_option($name, $value) {
+    $options = get_option('arenabiz_options');
     $options[$name] = $value;
-    return update_option('themeszen_options', $options);
+    return update_option('arenabiz_options', $options);
 }
 
 //delete theme option
-function themeszen_delete_option($name) {
-    $options = get_option('themeszen_options');
+function arenabiz_delete_option($name) {
+    $options = get_option('arenabiz_options');
     unset($options[$name]);
-    return update_option('themeszen_options', $options);
+    return update_option('arenabiz_options', $options);
 }
 /**
- * arena functions and definitions
+ * arenabiz functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package arena
+ * @package arenabiz
  */
 
-if ( ! function_exists( 'arena_setup' ) ) :
+if ( ! function_exists( 'arenabiz_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -53,14 +53,13 @@ if ( ! function_exists( 'arena_setup' ) ) :
 	 * runs before the init hook. The init hook is too late for some features, such
 	 * as indicating support for post thumbnails.
 	 */
-	function arena_setup() {
+	function arenabiz_setup() {
 		/*
 		 * Make theme available for translation.
 		 * Translations can be filed in the /languages/ directory.
-		 * If you're building a theme based on arena, use a find and replace
-		 * to change 'arena' to the name of your theme in all the template files.
+		 * If you're building a theme based on arenabiz, use a find and replace
+		 * to change 'arenabiz' to the name of your theme in all the template files.
 		 */
-		load_theme_textdomain( 'arena', get_template_directory() . '/languages' );
 
 		// Add default posts and comments RSS feed links to head.
 		add_theme_support( 'automatic-feed-links' );
@@ -79,11 +78,11 @@ if ( ! function_exists( 'arena_setup' ) ) :
 		 * @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		 */
 		add_theme_support( 'post-thumbnails' );
-		add_image_size( 'arena-thumb', 380, 360, true );	
+		add_image_size( 'arenabiz-thumb', 380, 360, true );	
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'menu-1' => esc_html__( 'Primary', 'arena' ),
+			'menu-1' => esc_html__( 'Primary', 'arenabiz' ),
 		) );
 
 		/*
@@ -91,7 +90,6 @@ if ( ! function_exists( 'arena_setup' ) ) :
 		 * to output valid HTML5.
 		 */
 		add_theme_support( 'html5', array(
-			'search-form',
 			'comment-form',
 			'comment-list',
 			'gallery',
@@ -99,7 +97,7 @@ if ( ! function_exists( 'arena_setup' ) ) :
 		) );
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'arena_custom_background_args', array(
+		add_theme_support( 'custom-background', apply_filters( 'arenabiz_custom_background_args', array(
 			'default-color' => 'ffffff',
 			'default-image' => '',
 		) ) );
@@ -120,7 +118,7 @@ if ( ! function_exists( 'arena_setup' ) ) :
 		) );
 	}
 endif;
-add_action( 'after_setup_theme', 'arena_setup' );
+add_action( 'after_setup_theme', 'arenabiz_setup' );
 
 /**
  * Set the content width in pixels, based on the theme's design and stylesheet.
@@ -129,24 +127,24 @@ add_action( 'after_setup_theme', 'arena_setup' );
  *
  * @global int $content_width
  */
-function arena_content_width() {
+function arenabiz_content_width() {
 	// This variable is intended to be overruled from themes.
 	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
 	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
-	$GLOBALS['content_width'] = apply_filters( 'arena_content_width', 640 );
+	$GLOBALS['content_width'] = apply_filters( 'arenabiz_content_width', 640 );
 }
-add_action( 'after_setup_theme', 'arena_content_width', 0 );
+add_action( 'after_setup_theme', 'arenabiz_content_width', 0 );
 
 /**
  * Register widget area.
  *
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
-function arena_widgets_init() {
+function arenabiz_widgets_init() {
 	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'arena' ),
+		'name'          => esc_html__( 'Sidebar', 'arenabiz' ),
 		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'arena' ),
+		'description'   => esc_html__( 'Add widgets here.', 'arenabiz' ),
 		'before_widget' => '<section id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</section>',
 		'before_title'  => '<h2 class="widget-title">',
@@ -155,7 +153,7 @@ function arena_widgets_init() {
 	
 	for ( $i = 1; $i <= 3; $i++ ) {
 		register_sidebar( array(
-			'name'          => sprintf( esc_html__( 'Footer %d', 'arena' ), $i ),
+			'name'          => sprintf( esc_html__( 'Footer %d', 'arenabiz' ), $i ),
 			'id'            => 'footer-' . $i,
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => '</div>',
@@ -164,55 +162,54 @@ function arena_widgets_init() {
 		) );
 	}
 }
-add_action( 'widgets_init', 'arena_widgets_init' );
+add_action( 'widgets_init', 'arenabiz_widgets_init' );
 
 /**
  * Enqueue scripts and styles.
  */
-function arena_scripts() {
+function arenabiz_scripts() {
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 	
-	wp_enqueue_style( 'arena-style', get_stylesheet_uri() );
+	wp_enqueue_style( 'arenabiz-style', get_stylesheet_uri() );
 	
-	wp_register_style( 'flexslider', get_template_directory_uri() . '/css/flexslider.css' );
-	wp_enqueue_style( 'flexslider' );
+	wp_register_style( 'arenabiz-flexslider', get_template_directory_uri() . '/css/flexslider.css' );
+	wp_enqueue_style( 'arenabiz-flexslider' );
 	
-	wp_register_style( 'google_fonts', '//fonts.googleapis.com/css?family=Lato' );
-	wp_enqueue_style( 'google_fonts' );
+	wp_register_style( 'arenabiz-google-fonts', '//fonts.googleapis.com/css?family=Lato' );
+	wp_enqueue_style( 'arenabiz-google-fonts' );
 	
-	wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css' );
-	wp_enqueue_style( 'bootstrap' );
+	wp_register_style( 'arenabiz-bootstrap', get_template_directory_uri() . '/css/bootstrap.css' );
+	wp_enqueue_style( 'arenabiz-bootstrap' );
 		
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/fonts/font-awesome/css/font-awesome' . $min . '.css', '', '4.7.0' );
+	wp_enqueue_style( 'arenabiz-font-awesome', get_template_directory_uri() . '/fonts/font-awesome/css/font-awesome' . $min . '.css', '', '4.7.0' );
 
 
-	wp_enqueue_script( 'arena-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
+	wp_enqueue_script( 'arenabiz-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	
-	wp_enqueue_script( 'arena-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
+	wp_enqueue_script( 'arenabiz-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-add_action( 'wp_enqueue_scripts', 'arena_scripts' );
+add_action( 'wp_enqueue_scripts', 'arenabiz_scripts' );
 
-function arena_of_register_js() {
+function arenabiz_of_register_js() {
 	if (!is_admin()) {
 		
 			$suffix = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 		
 
-		wp_register_script('arena_custom', get_template_directory_uri() . '/js/jquery.custom.js', 'jquery', '1.0', TRUE);
-		wp_register_script('selectnav', get_template_directory_uri() . '/js/selectnav.js', 'jquery', '0.1', TRUE);
-		wp_register_script('flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', 'jquery', '2.1', TRUE);
+		wp_register_script('arenabiz-custom', get_template_directory_uri() . '/js/jquery.custom.js', 'jquery', '1.0', TRUE);
+		wp_register_script('arenabiz-selectnav', get_template_directory_uri() . '/js/selectnav.js', 'jquery', '0.1', TRUE);
+		wp_register_script('arenabiz-flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', 'jquery', '2.1', TRUE);
 		
-		wp_enqueue_script('jquery');
-		wp_enqueue_script('arena_custom');
-		wp_enqueue_script('flexslider');		
-		wp_enqueue_script('selectnav');
+		wp_enqueue_script('arenabiz-custom');
+		wp_enqueue_script('arenabiz-flexslider');		
+		wp_enqueue_script('arenabiz-selectnav');
 	}
 }
-add_action('init', 'arena_of_register_js');
+add_action('init', 'arenabiz_of_register_js');
 
 /**
  * Implement the Custom Header feature.
@@ -251,5 +248,5 @@ if ( is_admin() ) {
 	require_once trailingslashit( get_template_directory() ) . 'admin/about/class.info.php';
 	require_once trailingslashit( get_template_directory() ) . 'admin/about/info.php';
 }
-
+require_once( trailingslashit( get_template_directory() ) . 'trt-customizer-pro/arenabiz/class-customize.php' );
 

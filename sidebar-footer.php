@@ -2,7 +2,7 @@
 /**
  * Footer widgets
  *
- * @package arena
+ * @package arenabiz
  */
 
 $active = array();

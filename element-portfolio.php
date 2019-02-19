@@ -1,5 +1,5 @@
 <?php
- 	if (themeszen_get_option('arena_portfolio_status', 'on') == 'on') {
+ 	if (arenabiz_get_option('arenabiz_portfolio_status') != "off") {	
 		?>		
 <!-- Portfolio Section -->
 <section class="portfolio-section">
@@ -7,60 +7,61 @@
 	
 		<!-- Section Title -->
                     <div class="portfolio_heading_container"> 
-                        <h2 class="themeszen_portfolio_main_head">
-						<?php if(esc_html(themeszen_get_option('themeszen_portfolio_main_head')) != NULL){ echo esc_html(themeszen_get_option('themeszen_portfolio_main_head'));} else echo __('Our Portfolio', 'arena'); ?></h2>
-                        <h4 class="themeszen_portfolio_main_desc"><?php if(esc_html(themeszen_get_option('themeszen_portfolio_main_desc')) != NULL){ echo esc_html(themeszen_get_option('themeszen_portfolio_main_desc'));} else echo __('Some of our recent work.', 'arena');?>
+                        <h2 class="arenabiz_portfolio_main_head">
+						<?php if(esc_html(arenabiz_get_option('arenabiz_portfolio_main_head')) != NULL){ echo esc_html(arenabiz_get_option('arenabiz_portfolio_main_head'));} else echo __('Our Portfolio', 'arenabiz'); ?></h2>
+                        <h4 class="arenabiz_portfolio_main_desc"><?php if(esc_html(arenabiz_get_option('arenabiz_portfolio_main_desc')) != NULL){ echo esc_html(arenabiz_get_option('arenabiz_portfolio_main_desc'));} else echo __('Some of our recent work.', 'arenabiz');?>
 						</h4>
                     </div>
 		<!-- /Section Title -->
 				
 		<!-- Item Scroll -->	
 			<div class="row">
+
+			<?php for ($i = 1; $i <= 3; $i++) { 
 			
+					$arenabiz_portfolio_page_id = esc_html(arenabiz_get_option('arenabiz_portfolio_page'.$i));
+
+		if($arenabiz_portfolio_page_id){
+			$args = array( 
+                        'page_id' => absint($arenabiz_portfolio_page_id) 
+                        );
+			$query = new WP_Query($args);
+			if( $query->have_posts() ):
+				while($query->have_posts()) : $query->the_post();
+				?>			
 				
 					<div class="col-md-4 col-sm-4">						
 						<article class="post">
 							<figure class="post-thumbnail">
-								<a href="<?php echo esc_url(themeszen_get_option('arena_portfolio_link')); ?>"><img class="img-responsive" alt="img" src="<?php if(esc_url(themeszen_get_option('themeszen_portfolio_img')) != NULL){ echo esc_url(themeszen_get_option('themeszen_portfolio_img'));} else echo get_template_directory_uri() . '/images/port1.jpg' ?>"></a>
+								
+					<?php 
+					if(has_post_thumbnail()){
+						$arenabiz_portfolio_image = wp_get_attachment_image_src(get_post_thumbnail_id(),'full');
+						echo '<img class="img-responsive" alt="'. esc_html(get_the_title()) .'" src="'.esc_url($arenabiz_portfolio_image[0]).'">';
+			} else echo '<img alt="'. esc_html(get_the_title()) .'" src="'.get_template_directory_uri() . '/images/port'.$i.'.jpg'.'">';
+					?>
 							</figure>
+							
 							<header class="entry-header">
-								<h4 class="entry-title"><?php if(esc_html(themeszen_get_option('themeszen_portfolio_name')) != NULL){ echo esc_html(themeszen_get_option('themeszen_portfolio_name'));} else echo __('Photography', 'arena'); ?></h4>
+								<h4 class="entry-title"><?php if(esc_html(get_the_title()) != NULL){ echo esc_html(get_the_title());} else echo __('Heading', 'arenabiz'); ?></h4>
 							</header>	
 							<div class="entry-content">
-								<p><?php if(esc_html(themeszen_get_option('themeszen_portfolio')) != NULL){ echo esc_html(themeszen_get_option('themeszen_portfolio'));} else echo __('Collection of recent work done for our clients in the recent years.', 'arena');?></p>
+							
+								<?php if(has_excerpt()){
+						the_excerpt();
+					}else{
+						the_content(); 
+					} ?>
+				
 							</div>	
 						</article>
 					</div>
 					
-					<div class="col-md-4 col-sm-4">						
-						<article class="post">
-							<figure class="post-thumbnail">
-									<a href="<?php echo esc_url(themeszen_get_option('arena_portfolio_link1')); ?>"><img class="img-responsive" alt="img" src="<?php if(esc_url(themeszen_get_option('themeszen_portfolio_img_2')) != NULL){ echo esc_url(themeszen_get_option('themeszen_portfolio_img_2'));} else echo get_template_directory_uri() . '/images/port2.jpg' ?>"></a>
-							</figure>
-							<header class="entry-header">
-								<h4 class="entry-title"><?php if(esc_html(themeszen_get_option('themeszen_portfolio_name_2')) != NULL){ echo esc_html(themeszen_get_option('themeszen_portfolio_name_2'));} else echo __('Graphic design', 'arena'); ?></h4>
-							</header>	
-							<div class="entry-content">
-								<p><?php if(esc_html(themeszen_get_option('themeszen_portfolio_2')) != NULL){ echo esc_html(themeszen_get_option('themeszen_portfolio_2'));} else echo __('Collection of recent work done for our clients in the recent years.', 'arena');?></p>
-							</div>	
-						</article>
-					</div>
-					
-					<div class="col-md-4 col-sm-4">						
-						<article class="post">
-							<figure class="post-thumbnail">
-									<a href="<?php echo esc_url(themeszen_get_option('arena_portfolio_link2')); ?>"><img class="img-responsive" alt="img" src="<?php if(esc_url(themeszen_get_option('themeszen_portfolio_img_3')) != NULL){ echo esc_url(themeszen_get_option('themeszen_portfolio_img_3'));} else echo get_template_directory_uri() . '/images/port3.jpg' ?>"></a>
-							</figure>
-							<header class="entry-header">
-								<h4 class="entry-title"><?php if(esc_html(themeszen_get_option('themeszen_portfolio_name_3')) != NULL){ echo esc_html(themeszen_get_option('themeszen_portfolio_name_3'));} else echo __('Our products', 'arena'); ?></h4>
-							</header>
-							<div class="entry-content">
-								<p><?php if(esc_html(themeszen_get_option('themeszen_portfolio_3')) != NULL){ echo esc_html(themeszen_get_option('themeszen_portfolio_3'));} else echo __('Collection of recent work done for our clients in the recent years.', 'arena');?></p>
-							</div>	
-						</article>
-					</div>
-					
-					
+				<?php
+				endwhile;
+			endif;
+		}
+	} ?>
 				</div>			
 			
 		<!-- /Item Scroll -->

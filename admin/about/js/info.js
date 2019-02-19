@@ -18,7 +18,7 @@
 				dataType : 'json',
 				url      : ajaxurl,
 				data     : {
-					'action'   : 'arena_dismiss',
+					'action'   : 'arenabiz_dismiss',
 					'userid'   : userid,
 					'_wpnonce' : nonce
 				},
