@@ -329,6 +329,8 @@ ul.sub-menu .submenu-left {
 #cssmenu ul li.full-width-submenu ul.sub-menu li{
     width: 100%;
 }
+
+
 /* sub-menu end */
 
 /**** Medai Query Start ****/
@@ -617,7 +619,15 @@ ul.sub-menu .submenu-left {
     height: auto;
     min-height: 530px;
 }
-
+.slider-1 {
+    background-image: url(../images/slider-1.jpeg)
+}
+.slider-2 {
+    background-image: url(../images/slider-2.jpeg)
+}
+.slider-3 {
+    background-image: url(../images/slider-3.jpeg)
+}
 .header-text {
     color: #fff;
     margin: 0 auto;
@@ -920,8 +930,6 @@ ul.sub-menu .submenu-left {
     text-align: center;
     text-decoration: none;
     outline: none;
-    font-size: 48px;
-    line-height: 56px;
 }
 .category-box .category-icon a img{
     width: 100%;
@@ -1972,7 +1980,8 @@ ul.sub-menu .submenu-left {
     }
     #leftside-navigation ul.nano-content {
         width: 250px;
-        display: block !important;        
+        display: block !important;
+         /*transition: transform 0.9s cubic-bezier(0.645, 0.045, 0.355, 1) !important; */
         height: 100% !important;
         background: #FFF;
         position: fixed;

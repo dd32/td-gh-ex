@@ -78,9 +78,9 @@ $divider =2; ?>
                                 <div class="nav-pagination">                                    
                                     <?php the_posts_pagination( array(
                                         'type'  => 'list',
-                                        'screen_reader_text' => ' ',                                        
-                                        'prev_text'          => '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'.esc_html__(' Previous','best-classifieds'),
-                                        'next_text'          => esc_html__('Next','best-classifieds').' <i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+                                        'screen_reader_text' => ' ',
+                                        'prev_text'          => '<i class="fa fa-angle-double-left" aria-hidden="true"></i>',
+                                        'next_text'          => '<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
                                     ) ); ?>       
                                 </div>
                             </div>

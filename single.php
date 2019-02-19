@@ -37,7 +37,7 @@ $column_classes =($sidebar_style == 'no_sidebar')?'col-md-10 col-sm-12 col-xs-12
                         <div class="row">
                             <?php if ( have_posts() ) :
                             while ( have_posts() ) : the_post(); ?>
-                                <div id="post-<?php the_ID(); ?>" <?php post_class('col-md-12 col-sm-12 col-xs-12'); ?>>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="main-blog-area">
                                     <?php if(has_post_thumbnail() && !get_theme_mod('single_post_image',false)):?>                                        
                                     <div class="blog-post-img">
@@ -70,9 +70,9 @@ $column_classes =($sidebar_style == 'no_sidebar')?'col-md-10 col-sm-12 col-xs-12
                             <!-- Pagination Start -->                        
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="nav-pagination">                                    
-                                    <?php the_post_navigation( array(                                        
-                                         'prev_text'          => '<i class="fa fa-angle-double-left" aria-hidden="true"></i> '.esc_html__('Previous','best-classifieds'),
-                                        'next_text'          => esc_html__('Next ','best-classifieds').'<i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+                                    <?php the_post_navigation( array(
+                                        'prev_text'          => '<i class="fa fa-angle-double-left" aria-hidden="true"></i>  Previous',
+                                        'next_text'          => 'Next <i class="fa fa-angle-double-right" aria-hidden="true"></i>',
                                         'screen_reader_text'        => ' ',
                                     ) ); ?>       
                                 </div>

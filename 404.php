@@ -13,7 +13,7 @@ $column_classes =($sidebar_style == 'no_sidebar')?'col-md-10 col-sm-12 col-xs-12
         <div class="row">
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="title-blog-area">
-                   <h1 class="heading-title"><?php printf(/* translators: %s is query sting.*/esc_html__('Error 404 : %s', 'best-classifieds'), esc_html(get_search_query()) );  ?></h1>
+                   <h1 class="heading-title"><?php echo esc_html__('Error 404 ', 'best-classifieds') . get_search_query(); ?></h1>
                     <div class="title-divider">
                         <span></span>
                     </div>

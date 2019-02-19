@@ -1,10 +1,10 @@
 == Best Classifieds  ==
 Contributors: Fasterthemes
-Tags: one-column, two-columns,left-sidebar,grid-layout,custom-logo,custom-colors,custom-menu,featured-images,translation-ready,blog,footer-widgets,full-width-template,theme-options,threaded-comments
+Tags: one-column, two-columns,left-sidebar,grid-layout,custom-logo,custom-colors,custom-menu,featured-images,translation-ready,blog,featured-image-header,footer-widgets,full-width-template,theme-options,threaded-comments
 Requires PHP: 5.2.4
 Requires at least: 4.0
 Tested up to: 5.0.0
-Stable tag: 1.0.12
+Stable tag: 1.0.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Short Description : Best Classifieds is a free WordPress theme for launching professional looking classified and ads websites.
@@ -39,46 +39,23 @@ Go to Appearance => Customize menu for logo and other customization needs.
 = 1.0.2 - 18 Feb 2019 =
 * Misc changes
 
-= 1.0.3 - 27 Feb 2019 =
-* Misc changes
-
-= 1.0.4 - 23 March 2019 =
-* owl.carousel.js file update.
-* Misc changes.
-
-= 1.0.5 - 13 April 2019 =
-* Misc changes.
-
-= 1.0.6 - 4 June 2019 =
-* Misc changes.
-
-= 1.0.7 - 7 June 2019 =
-* Screenshot changes.
-
-= 1.0.8 - 10 June 2019 =
-* Pro Featured image added.
-
-= 1.0.9 - 26 August 2019 =
-* Misc Changes.
-
-= 1.0.10 - 6 November 2019 =
-* Misc Changes.
-
-= 1.0.11 - 6 November 2019 =
-* Misc Changes.
-
-= 1.0.12 - 21 April 2020 =
-* Misc Changes.
 
 == Upgrade Notice ==
 
-= 1.0.12 - 21 April 2020 =
-* Misc Changes.
+= 1.0.2 - 18 Feb 2019 =
+* Misc changes.
 
 == Resources ==
 * Montserrat - //fonts.googleapis.com/css?family=Montserrat, MIT 
-* Bootstrap © 2011-2016 Twitter, Inc., MIT License (https://github.com/twbs/bootstrap/blob/master/LICENSE) Version 3.3.7
-* Fontawesome © @fontawesome, MIT License (http://fontawesome.io/license) Version 4.7.0
-* Owl-carousel © @owlcarousel, MIT License ( https://github.com/OwlCarousel2/OwlCarousel2/blob/master/LICENSE) Version 2.3.4
+* bootstrap.js © 2011-2016 Twitter, Inc., MIT  Version 3.3.7
+* bootstrap.css © 2011-2016 Twitter, Inc., MIT Version 3.3.7
+* font-awesome.css © @fontawesome, MIT Version 4.6.1
+* font-awesome font © @fontawesome, MIT Version 4.6.1
+* owl.carousel © 2016-2018 David Deutsch, MIT Version 2.2.1
+* TGM Plugin Activation ,GNU GPL Version 2.6.1
 
 * https://www.pexels.com/photo/architecture-building-business-buy-259098/  © Pixabay , CC0
+* https://www.flaticon.com/free-icon/watching-tv_1187574 © flaticon
+* https://www.flaticon.com/free-icon/sofa_686645  © flaticon
+* https://www.flaticon.com/free-icon/house_618911  © flaticon
+* https://www.flaticon.com/free-icon/car_334998  © flaticon

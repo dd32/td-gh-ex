@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Best Classifieds\n"
-"POT-Creation-Date: 2020-04-21 14:15+0530\n"
-"PO-Revision-Date: 2019-06-04 00:22+0530\n"
+"POT-Creation-Date: 2019-02-19 00:36+0530\n"
+"PO-Revision-Date: 2019-02-19 00:35+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -21,33 +21,22 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#. translators: %s is query sting.
 #: 404.php:16
-#, php-format
-msgid "Error 404 : %s"
+msgid "Error 404 "
 msgstr ""
 
 #: 404.php:41
 msgid "Oops! That page can't be found."
 msgstr ""
 
-#: 404.php:42 search.php:87
+#: 404.php:42 search.php:87 template-parts/post/content-none.php:32
 msgid ""
 "Sorry, but nothing matched your search terms. Please try again with some "
 "different keywords."
 msgstr ""
 
-#: archive.php:65 index.php:68 search.php:64 template-parts/front-page.php:268
+#: archive.php:65 index.php:68 search.php:64 template-parts/front-page.php:333
 msgid "Read More"
-msgstr ""
-
-#: archive.php:82 index.php:85 search.php:79
-msgid " Previous"
-msgstr ""
-
-#: archive.php:83 comments.php:46 index.php:86 search.php:80
-#: template-parts/front-page.php:59
-msgid "Next"
 msgstr ""
 
 #. translators: %s: post title
@@ -69,8 +58,12 @@ msgstr[1] ""
 msgid "Reply"
 msgstr ""
 
-#: comments.php:45 single.php:74 template-parts/front-page.php:55
+#: comments.php:45 template-parts/front-page.php:109
 msgid "Previous"
+msgstr ""
+
+#: comments.php:46 template-parts/front-page.php:113
+msgid "Next"
 msgstr ""
 
 #: footer.php:34
@@ -85,23 +78,7 @@ msgstr ""
 msgid "Top Menu"
 msgstr ""
 
-#: functions.php:46
-msgid "What are you looking for?"
-msgstr ""
-
-#: functions.php:49 inc/theme-customization.php:227
-msgid "Search"
-msgstr ""
-
-#: functions.php:59
-msgid "Pro Feature"
-msgstr ""
-
-#: functions.php:59
-msgid "Best Classifieds Pro"
-msgstr ""
-
-#: inc/breadcumbs.php:19 inc/template-setup.php:67 inc/template-setup.php:68
+#: inc/breadcumbs.php:19
 msgid "Home"
 msgstr ""
 
@@ -129,6 +106,69 @@ msgstr ""
 
 #: inc/breadcumbs.php:213
 msgid "Error 404"
+msgstr ""
+
+#: inc/fonts.php:18
+msgid "Standard Fonts"
+msgstr ""
+
+#: inc/fonts.php:20
+msgid "Google Fonts"
+msgstr ""
+
+#: inc/fonts.php:125
+msgid "All"
+msgstr ""
+
+#: inc/fonts.php:126
+msgid "Cyrillic"
+msgstr ""
+
+#: inc/fonts.php:127
+msgid "Cyrillic Extended"
+msgstr ""
+
+#: inc/fonts.php:128
+msgid "Devanagari"
+msgstr ""
+
+#: inc/fonts.php:129
+msgid "Greek"
+msgstr ""
+
+#: inc/fonts.php:130
+msgid "Greek Extended"
+msgstr ""
+
+#: inc/fonts.php:131
+msgid "Khmer"
+msgstr ""
+
+#: inc/fonts.php:132
+msgid "Latin"
+msgstr ""
+
+#: inc/fonts.php:133
+msgid "Latin Extended"
+msgstr ""
+
+#: inc/fonts.php:134
+msgid "Vietnamese"
+msgstr ""
+
+#: inc/fonts.php:194
+msgctxt "font style"
+msgid "Serif"
+msgstr ""
+
+#: inc/fonts.php:198
+msgctxt "font style"
+msgid "Sans Serif"
+msgstr ""
+
+#: inc/fonts.php:202
+msgctxt "font style"
+msgid "Monospaced"
 msgstr ""
 
 #: inc/template-setup.php:15
@@ -186,314 +226,306 @@ msgstr ""
 msgid "Install Plugins"
 msgstr ""
 
-#: inc/theme-customization.php:10
+#: inc/theme-customization.php:14
 msgid "All Category"
 msgstr ""
 
-#: inc/theme-customization.php:38 inc/theme-customization.php:39
+#: inc/theme-customization.php:42 inc/theme-customization.php:43
 msgid "General Settings"
 msgstr ""
 
-#: inc/theme-customization.php:45
+#: inc/theme-customization.php:49
 msgid "Header & Logo Section"
 msgstr ""
 
-#: inc/theme-customization.php:50
+#: inc/theme-customization.php:54
 msgid "Front Page Options"
 msgstr ""
 
-#: inc/theme-customization.php:51
+#: inc/theme-customization.php:55
 msgid "Front Page options"
 msgstr ""
 
-#: inc/theme-customization.php:58
+#: inc/theme-customization.php:62
 msgid "Front Page : Banner Slider"
 msgstr ""
 
-#: inc/theme-customization.php:74
+#: inc/theme-customization.php:78
 msgid "Click Check box for hide Slider Section."
 msgstr ""
 
-#: inc/theme-customization.php:89
+#: inc/theme-customization.php:93
 msgid "Upload Slider Image "
 msgstr ""
 
-#: inc/theme-customization.php:108
+#: inc/theme-customization.php:112
 msgid "Enter Slider Title "
 msgstr ""
 
-#: inc/theme-customization.php:110
+#: inc/theme-customization.php:114
 msgid "Enter Slider Title"
 msgstr ""
 
-#: inc/theme-customization.php:125
+#: inc/theme-customization.php:129
 msgid "Enter Slider Sub Title "
 msgstr ""
 
-#: inc/theme-customization.php:127
+#: inc/theme-customization.php:131
 msgid "Enter Slider Sub Title"
 msgstr ""
 
-#: inc/theme-customization.php:141
+#: inc/theme-customization.php:145
 msgid "Enter Slider Link "
 msgstr ""
 
-#: inc/theme-customization.php:143
+#: inc/theme-customization.php:147
 msgid "Enter Slider URL"
 msgstr ""
 
-#: inc/theme-customization.php:148
+#: inc/theme-customization.php:152
 msgid "Buy now"
 msgstr ""
 
-#: inc/theme-customization.php:157
+#: inc/theme-customization.php:161
 msgid "Enter Slider Link Title "
 msgstr ""
 
-#: inc/theme-customization.php:159
+#: inc/theme-customization.php:163
 msgid "Enter Slider Link Title"
 msgstr ""
 
-#: inc/theme-customization.php:167
+#: inc/theme-customization.php:171
 msgid "Front Page : Search Area Section"
 msgstr ""
 
-#: inc/theme-customization.php:186
+#: inc/theme-customization.php:190
 msgid "Search Area Section for hide"
 msgstr ""
 
-#: inc/theme-customization.php:193 template-parts/front-page.php:71
+#: inc/theme-customization.php:197
 msgid "Search Awesome Verified Ads!"
 msgstr ""
 
-#: inc/theme-customization.php:201
+#: inc/theme-customization.php:205
 msgid "Enter Search Title "
 msgstr ""
 
-#: inc/theme-customization.php:203 inc/theme-customization.php:275
-#: inc/theme-customization.php:385 inc/theme-customization.php:487
-#: inc/theme-customization.php:566
+#: inc/theme-customization.php:207 inc/theme-customization.php:279
+#: inc/theme-customization.php:365 inc/theme-customization.php:467
+#: inc/theme-customization.php:546
 msgid "Enter Title"
 msgstr ""
 
-#: inc/theme-customization.php:209
+#: inc/theme-customization.php:213
 msgid "What are you looking For?"
 msgstr ""
 
-#: inc/theme-customization.php:217
+#: inc/theme-customization.php:221
 msgid "Enter Search Placeholder "
 msgstr ""
 
-#: inc/theme-customization.php:219
+#: inc/theme-customization.php:223
 msgid "Enter Placeholder"
 msgstr ""
 
-#: inc/theme-customization.php:235
+#: inc/theme-customization.php:231
+msgid "Search"
+msgstr ""
+
+#: inc/theme-customization.php:239
 msgid "Enter Search Button Title "
 msgstr ""
 
-#: inc/theme-customization.php:237
+#: inc/theme-customization.php:241
 msgid "Enter Search Button Title"
 msgstr ""
 
-#: inc/theme-customization.php:242
+#: inc/theme-customization.php:246
 msgid "Front page : Categories Settings"
 msgstr ""
 
-#: inc/theme-customization.php:258
+#: inc/theme-customization.php:262
 msgid "Categories Area Section for hide"
 msgstr ""
 
-#: inc/theme-customization.php:265 template-parts/front-page.php:89
+#: inc/theme-customization.php:269
 msgid "Categories"
 msgstr ""
 
-#: inc/theme-customization.php:273
+#: inc/theme-customization.php:277
 msgid "Enter Section Title "
 msgstr ""
 
-#: inc/theme-customization.php:301
-msgid " Category Icon & Color "
+#: inc/theme-customization.php:297
+msgid "Upload Icon Image Of "
 msgstr ""
 
-#: inc/theme-customization.php:338
+#: inc/theme-customization.php:318
 msgid "Display on front page area,check this box."
 msgstr ""
 
-#: inc/theme-customization.php:348
+#: inc/theme-customization.php:328
 msgid "Front Page : Key Feature Section"
 msgstr ""
 
-#: inc/theme-customization.php:367
+#: inc/theme-customization.php:347
 msgid "Key Feature Section for hide"
 msgstr ""
 
-#: inc/theme-customization.php:383
+#: inc/theme-customization.php:363
 msgid "Enter KeyFeature Section Title "
 msgstr ""
 
-#: inc/theme-customization.php:400 inc/theme-customization.php:402
+#: inc/theme-customization.php:380 inc/theme-customization.php:382
 msgid "Enter Subtitle"
 msgstr ""
 
-#: inc/theme-customization.php:417
+#: inc/theme-customization.php:397
 msgid "Select Category For Key Feature"
 msgstr ""
 
-#: inc/theme-customization.php:442
+#: inc/theme-customization.php:422
 msgid " Key Feature Icon "
 msgstr ""
 
-#: inc/theme-customization.php:451
+#: inc/theme-customization.php:431
 msgid "Front Page : Testimonial Section"
 msgstr ""
 
-#: inc/theme-customization.php:470
+#: inc/theme-customization.php:450
 msgid "Testimonial Section for hide"
 msgstr ""
 
-#: inc/theme-customization.php:485
+#: inc/theme-customization.php:465
 msgid "Enter Testimonial Title "
 msgstr ""
 
-#: inc/theme-customization.php:502
+#: inc/theme-customization.php:482
 msgid "Select Category For Testimonial"
 msgstr ""
 
-#: inc/theme-customization.php:521
+#: inc/theme-customization.php:501
 msgid "Post Count"
 msgstr ""
 
-#: inc/theme-customization.php:522
+#: inc/theme-customization.php:502
 msgid "Enter number. default 3"
 msgstr ""
 
-#: inc/theme-customization.php:529
+#: inc/theme-customization.php:509
 msgid "Front Page : Latest Blog Section"
 msgstr ""
 
-#: inc/theme-customization.php:548
+#: inc/theme-customization.php:528
 msgid "Latest Blog Section"
 msgstr ""
 
-#: inc/theme-customization.php:564
+#: inc/theme-customization.php:544
 msgid "Enter Latest Blog Title "
 msgstr ""
 
-#: inc/theme-customization.php:581
+#: inc/theme-customization.php:561
 msgid "Enter Short Description"
 msgstr ""
 
-#: inc/theme-customization.php:583
+#: inc/theme-customization.php:563
 msgid "Enter Description"
 msgstr ""
 
-#: inc/theme-customization.php:597
+#: inc/theme-customization.php:577
 msgid "Select Category For Latest Blog"
 msgstr ""
 
-#: inc/theme-customization.php:615
+#: inc/theme-customization.php:595
 msgid "Entet Latest Blog Per Page"
 msgstr ""
 
-#: inc/theme-customization.php:616
+#: inc/theme-customization.php:596
 msgid ""
 "Entet Latest Blog Per Page , you would like to display in the Front Page."
 msgstr ""
 
-#: inc/theme-customization.php:634
+#: inc/theme-customization.php:614
 msgid "Theme Color "
 msgstr ""
 
-#: inc/theme-customization.php:653
+#: inc/theme-customization.php:633
 msgid "Secondary Color"
 msgstr ""
 
-#: inc/theme-customization.php:663
+#: inc/theme-customization.php:643
 msgid "Blog(Archive) Page"
 msgstr ""
 
-#: inc/theme-customization.php:675
+#: inc/theme-customization.php:655
 msgid "Check this box for hide meta tag"
 msgstr ""
 
-#: inc/theme-customization.php:686
+#: inc/theme-customization.php:666
 msgid "Check this box for hide post image"
 msgstr ""
 
-#: inc/theme-customization.php:697
+#: inc/theme-customization.php:677
 msgid "Check this box for hide read more link"
 msgstr ""
 
-#: inc/theme-customization.php:710
+#: inc/theme-customization.php:690
 msgid "Post Content Limit"
 msgstr ""
 
-#: inc/theme-customization.php:720 inc/theme-customization.php:765
+#: inc/theme-customization.php:700 inc/theme-customization.php:745
 msgid "Sidebar Layout"
 msgstr ""
 
-#: inc/theme-customization.php:722 inc/theme-customization.php:767
-msgid "Right"
-msgstr ""
-
-#: inc/theme-customization.php:723 inc/theme-customization.php:768
-msgid "Left"
-msgstr ""
-
-#: inc/theme-customization.php:724 inc/theme-customization.php:769
-msgid "Full"
-msgstr ""
-
-#: inc/theme-customization.php:731
+#: inc/theme-customization.php:711
 msgid "Single Post Page"
 msgstr ""
 
-#: inc/theme-customization.php:743
+#: inc/theme-customization.php:723
 msgid "Check this box for hide meta tag."
 msgstr ""
 
-#: inc/theme-customization.php:755
+#: inc/theme-customization.php:735
 msgid "Check this box for hide post image."
 msgstr ""
 
-#: inc/theme-customization.php:776
+#: inc/theme-customization.php:756
 msgid "Top Search Section"
 msgstr ""
 
-#: inc/theme-customization.php:788
+#: inc/theme-customization.php:768
 msgid "Check this box for hide Top Search Section."
 msgstr ""
 
-#: inc/theme-customization.php:801
+#: inc/theme-customization.php:781
 msgid "Enter fontawesome class (ex. fa-search)"
 msgstr ""
 
-#: inc/theme-customization.php:803
+#: inc/theme-customization.php:783
 msgid "Enter fa class (ex. fa-search)"
 msgstr ""
 
-#: inc/theme-customization.php:812
+#: inc/theme-customization.php:792
 msgid "Footer"
 msgstr ""
 
-#: inc/theme-customization.php:813
+#: inc/theme-customization.php:793
 msgid "Footer options"
 msgstr ""
 
-#: inc/theme-customization.php:818
+#: inc/theme-customization.php:798
 msgid "Footer Copyright Area"
 msgstr ""
 
-#: inc/theme-customization.php:835
+#: inc/theme-customization.php:815
 msgid "Enter Copyright Text"
 msgstr ""
 
-#: inc/theme-customization.php:843
+#: inc/theme-customization.php:823
 msgid "Footer Social icons"
 msgstr ""
 
-#: inc/theme-customization.php:845
+#: inc/theme-customization.php:825
 msgid ""
 "In first input box, you need to add FONT AWESOME shortcode which you can "
 "find <a target=\"_blank\" href=\"https://fortawesome.github.io/Font-Awesome/"
@@ -502,19 +534,19 @@ msgid ""
 "hide the icon."
 msgstr ""
 
-#: inc/theme-customization.php:854
+#: inc/theme-customization.php:834
 msgid "Social icons "
 msgstr ""
 
-#: inc/theme-customization.php:871
+#: inc/theme-customization.php:851
 msgid "Enter Icon"
 msgstr ""
 
-#: inc/theme-customization.php:882
+#: inc/theme-customization.php:862
 msgid "Social Link "
 msgstr ""
 
-#: inc/theme-customization.php:900
+#: inc/theme-customization.php:880
 msgid "Enter Url"
 msgstr ""
 
@@ -523,6 +555,7 @@ msgid "BLOG"
 msgstr ""
 
 #: page.php:58 single.php:51 template-parts/full-width.php:46
+#: template-parts/post/content-page.php:22 template-parts/post/content.php:58
 msgid "Pages:"
 msgstr ""
 
@@ -534,24 +567,47 @@ msgstr ""
 msgid "Search..."
 msgstr ""
 
-#: single.php:75
-msgid "Next "
+#: template-parts/front-page.php:26
+msgid "Blog"
 msgstr ""
 
-#: template-parts/front-page.php:24
+#: template-parts/front-page.php:48
+msgid "<i class=\"fa fa-arrow-left\" aria-hidden=\"true\"></i>"
+msgstr ""
+
+#: template-parts/front-page.php:49
+msgid "<i class=\"fa fa-arrow-right\" aria-hidden=\"true\"></i>"
+msgstr ""
+
+#: template-parts/front-page.php:78
 msgid "Buy Now"
 msgstr ""
 
-#: template-parts/front-page.php:138
-msgid "Why we are best"
+#: template-parts/post/content-none.php:12
+msgid "Nothing Found"
 msgstr ""
 
-#: template-parts/front-page.php:189
-msgid "Testimonials"
+#. translators: 1: link to WP admin new post page.
+#: template-parts/post/content-none.php:21
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: template-parts/front-page.php:237
-msgid "Latest Blog"
+#: template-parts/post/content-none.php:36
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/post/content-page.php:26
+msgid "READ MORE"
+msgstr ""
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/post/content.php:55
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
 #. Theme Name of the plugin/theme
