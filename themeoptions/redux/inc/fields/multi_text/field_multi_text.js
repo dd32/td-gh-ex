@@ -33,7 +33,7 @@
                 } else {
                     return;
                 }
-                el.find( '.redux-multi-text-remove' ).on(
+                el.find( '.redux-multi-text-remove' ).live(
                     'click', function() {
                         redux_change( $( this ) );
                         $( this ).prev( 'input[type="text"]' ).val( '' );

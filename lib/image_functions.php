@@ -34,7 +34,7 @@ function kt_check_for_post_image() {
   }
 }
 function pinnacle_default_placeholder_image() {
-    return apply_filters('pinnacle_default_placeholder_image', 'https://placehold.it/');
+    return apply_filters('pinnacle_default_placeholder_image', 'http://placehold.it/');
 }
 function pinnacle_get_options_placeholder_image() {
     global $pinnacle;

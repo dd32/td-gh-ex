@@ -6,10 +6,8 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version     3.6.0
+ * @version     3.4.0
  */
-
-global $product;
 
 if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	$imagecontainer = 'col-md-5'; $productcontainer = 'col-md-7';
@@ -24,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 	 do_action( 'woocommerce_before_single_product' );
 ?>
 
-<div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
+<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="row">
 		<div class="<?php echo esc_attr($imagecontainer); ?> product-img-case">
 

@@ -6,7 +6,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version 3.6.0
+ * @version 3.4.0
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -16,32 +16,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product, $woocommerce_loop, $pinnacle, $post;
 
-// Store column count for displaying the grid.
+// Store column count for displaying the grid
 if ( empty( $woocommerce_loop['columns'] ) ) {
 	$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4 );
 }
 
-// Ensure visibility.
-if ( ! $product || ! $product->is_visible() ) {
+// Ensure visibility
+if ( ! $product || ! $product->is_visible() )
 	return;
-}
+
 $product_column = $woocommerce_loop['columns']; 
-if ( $product_column == '3' ){
-	$itemsize = 'tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12'; 
-} else if ( $product_column == '5' ){
-	$itemsize = 'tcol-md-25 tcol-sm-3 tcol-xs-4 tcol-ss-6'; 
-} else {
-	$itemsize = 'tcol-md-3 tcol-sm-4 tcol-xs-6 tcol-ss-12';
-}
+	if ($product_column == '3'){
+		$itemsize = 'tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12'; 
+	} else if ($product_column == '5'){
+		$itemsize = 'tcol-md-25 tcol-sm-3 tcol-xs-4 tcol-ss-6'; 
+	} else {
+		$itemsize = 'tcol-md-3 tcol-sm-4 tcol-xs-6 tcol-ss-12';
+	}
 
 	// Extra post classes
-	$classes = '';
-	if ( isset( $pinnacle['shop_hide_action']) && $pinnacle['shop_hide_action'] == 1 ) {
-		$classes = ' hidetheaction ';
+	$classes = array();
+	if(isset($pinnacle['shop_hide_action']) && $pinnacle['shop_hide_action'] == 1) {
+		$classes[] = 'hidetheaction';
 	}
+	$classes[] = 'grid_item';
+	$classes[] = 'product_item';
+	$classes[] = 'clearfix';
+	$classes[] = 'postclass';
+	$classes[] = 'kad_product_fade_in';
 ?>
-<div <?php wc_product_class( $itemsize . ' kad_product', $product ); ?>>
-	<div class="grid_item product_item clearfix postclass kad_product_fade_in<?php echo esc_attr( $classes ); ?>">
+<div class="<?php echo esc_attr($itemsize);?> kad_product">
+	<div <?php post_class( $classes ); ?>>
 
 	<?php 	/**
 			 * woocommerce_before_shop_loop_item hook

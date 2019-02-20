@@ -49,7 +49,7 @@
                     allowClear: true,
                 });
 
-                el.find( '.redux-slides-remove' ).on(
+                el.find( '.redux-slides-remove' ).live(
                     'click', function() {
                         redux_change( $( this ) );
 

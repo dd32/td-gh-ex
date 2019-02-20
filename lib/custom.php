@@ -3,6 +3,20 @@
  * Custom functions
  */
 
+remove_action( 'siteorigin_panels_before_interface', 'siteorigin_panels_update_notice'); 
+
+// Add support for qtranslate
+include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+if ( is_plugin_active('qtranslate/qtranslate.php') ) {
+    add_action('portfolio-type_add_form',  'qtrans_modifyTermFormFor');
+    add_action('portfolio-type_edit_form',   'qtrans_modifyTermFormFor');
+    add_action('product_cat_add_form',   'qtrans_modifyTermFormFor');
+    add_action('product_cat_edit_form',  'qtrans_modifyTermFormFor');
+    add_action('product_tag_add_form',   'qtrans_modifyTermFormFor');
+    add_action('product_tag_edit_form',  'qtrans_modifyTermFormFor');
+    add_filter('woocommerce_cart_item_name', 'qtrans_useCurrentLanguageIfNotFoundUseDefaultLanguage', 0);
+}
+
 function kt_get_srcset($width,$height,$url,$id) {
   if(empty($id) || empty($url)) {
     return;

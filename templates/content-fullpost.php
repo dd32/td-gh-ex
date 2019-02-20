@@ -53,7 +53,7 @@
         } else {
               $headcontent = 'none';
         } ?>
-      <div class="single-article">
+      <div class="single-article" itemscope="" itemtype="http://schema.org/BlogPosting">
           <article <?php post_class('postclass'); ?>>
             <?php if ($headcontent == 'flex') { ?>
               <section class="postfeat">
@@ -116,7 +116,7 @@
                     if(empty($image)) { $image = $img_url; }
                       if($image) : ?>
                       <section class="postfeat">
-                        <div class="imghoverclass post-single-img">
+                        <div class="imghoverclass post-single-img" itemprop="image">
                           <a href="<?php echo esc_url($img_url); ?>" data-rel="lightbox" class="">
                             <img src="<?php echo esc_url($image); ?>" alt="<?php the_title(); ?>" />
                           </a>
@@ -129,11 +129,11 @@
               } ?>
               <header>
                 <a href="<?php the_permalink() ?>">
-                  <h1 class="entry-title"><?php the_title(); ?></h1>
+                  <h1 class="entry-title" itemprop="name headline"><?php the_title(); ?></h1>
                 </a>
                 <?php get_template_part('templates/entry', 'meta-subhead'); ?>
               </header>
-              <div class="entry-content clearfix">
+              <div class="entry-content clearfix" itemprop="articleBody">
                 <?php the_content(); ?>
                 <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'pinnacle'), 'after' => '</p></nav>')); ?>
               </div>

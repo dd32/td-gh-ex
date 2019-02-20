@@ -120,56 +120,6 @@ jQuery(document).ready(function ($) {
           }
         });
     });
-     // Gutenberg Gallery
-		$('.wp-block-gallery').each(function(){
-			$(this).find('a[data-rel^="lightbox"]:not(".kt-no-lightbox"):not(".custom-link")').magnificPopup({
-				type: 'image',
-				gallery: {
-					enabled:true
-				},
-				image: {
-					titleSrc: function(item) {
-						if ( item.el.parents('.blocks-gallery-item').find('figcaption').length ) {
-							return item.el.parents('.blocks-gallery-item').find('figcaption').html();
-						} else {
-							return item.el.find('img').attr('alt');
-						}
-					}
-				},
-			});
-		} );
-		$( '.kb-gallery-magnific-init' ).each( function() {
-				var showCaption = $( this ).attr( 'data-lightbox-caption' );
-				var filter = $( this ).attr( 'data-image-filter' );
-				$( this ).find( 'li.kadence-blocks-gallery-item a.kb-gallery-item-link' ).magnificPopup( {
-					type: 'image',
-					mainClass: 'mfp-kt-blocks kb-gal-light-filter-' + filter,
-					gallery: {
-						enabled: true,
-					},
-					image: {
-						titleSrc: function( item ) {
-							if ( 'true' == showCaption && item.el.find( 'figcaption' ).length ) {
-								return item.el.find( 'figcaption' ).html();
-							}
-						},
-					},
-				} );
-				$( this ).find( '.kt-blocks-carousel .kb-slide-item:not(.slick-cloned) a.kb-gallery-item-link' ).magnificPopup( {
-					type: 'image',
-					mainClass: 'mfp-kt-blocks kb-gal-light-filter-' + filter,
-					gallery: {
-						enabled: true,
-					},
-					image: {
-						titleSrc: function( item ) {
-							if ( 'true' == showCaption && item.el.find( 'figcaption' ).length ) {
-								return item.el.find( 'figcaption' ).html();
-							}
-						},
-					},
-				} );
-			} );
 	//Superfish Menu
 		$('ul.sf-menu').superfish({
 			delay:       200,                            // one second delay on mouseout

@@ -9,7 +9,7 @@
         $headcontent = pinnacle_get_post_head_content();
          ?>
         <div id="content" class="container">
-          <div class="row single-article">
+          <div class="row single-article" itemscope="" itemtype="http://schema.org/BlogPosting">
             <div class="main <?php echo esc_attr( pinnacle_main_class() ); ?>" role="main">
               <?php while (have_posts()) : the_post(); ?>
                 <article <?php post_class('postclass'); ?>>
@@ -136,16 +136,16 @@
                   } ?>
                   <header>
                       <?php if(isset($pinnacle['single_post_title_output']) && $pinnacle['single_post_title_output'] == 'h2' ) { ?>
-                      <h2 class="entry-title"><?php the_title(); ?></h2>
+                      <h2 class="entry-title" itemprop="name headline"><?php the_title(); ?></h2>
                       <?php 
                       } else if(isset($pinnacle['single_post_title_output']) && $pinnacle['single_post_title_output'] == 'none' ) {
                         // Do nothing
                       } else { ?>
-                      <h1 class="entry-title"><?php the_title(); ?></h1>
+                      <h1 class="entry-title" itemprop="name headline"><?php the_title(); ?></h1>
                       <?php } ?>
                       <?php get_template_part('templates/entry', 'meta-subhead'); ?>
                   </header>
-                  <div class="entry-content clearfix">
+                  <div class="entry-content clearfix" itemprop="articleBody">
                     <?php the_content(); ?>
                     <?php wp_link_pages(array('before' => '<nav class="page-nav"><p>' . __('Pages:', 'pinnacle'), 'after' => '</p></nav>')); ?>
                   </div>
