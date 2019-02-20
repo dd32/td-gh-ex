@@ -19,7 +19,7 @@ require_once trailingslashit( get_template_directory() ) . 'lib/classes/class-vi
  */
 function virtue_nav_menu_args( $args = '' ) {
 	$virtue_nav_menu_args = array();
-	if ( ! isset( $args['container_class'] ) || empty( $args['container_class'] ) ) {
+	if ( ( ! isset( $args['container_class'] ) || empty( $args['container_class'] ) ) && ( ! isset( $args['container_id'] ) || empty( $args['container_id'] ) ) ) {
 		$virtue_nav_menu_args['container'] = false;
 	}
 

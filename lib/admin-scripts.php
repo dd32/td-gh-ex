@@ -128,7 +128,7 @@ function virtue_editor_dynamic_css() {
 					line-height: ' . esc_attr( $virtue['font_h1']['line-height'] ) . ';
 					font-weight: ' . esc_attr( $virtue['font_h1']['font-weight'] ) . ';
 					font-family: ' . esc_attr( $virtue['font_h1']['font-family'] ) . ';
-					color: ' . esc_attr( $virtue['font_h1']['color'] ) . ';
+					color: ' . esc_attr( ( isset( $virtue['font_h1']['color'] ) && ! empty( $virtue['font_h1']['color'] ) && '#ffffff' !== $virtue['font_h1']['color'] ? $virtue['font_h1']['color'] : '' ) ) . ';
 				}';
 		}
 		if ( isset( $virtue['font_h2'] ) ) {
@@ -137,7 +137,7 @@ function virtue_editor_dynamic_css() {
 				line-height: ' . esc_attr( $virtue['font_h2']['line-height'] ) . ';
 				font-weight: ' . esc_attr( $virtue['font_h2']['font-weight'] ) . ';
 				font-family: ' . esc_attr( $virtue['font_h2']['font-family'] ) . ';
-				color: ' . esc_attr( $virtue['font_h2']['color'] ) . ';
+				color: ' . esc_attr( ( isset( $virtue['font_h2']['color'] ) && ! empty( $virtue['font_h2']['color'] ) && '#ffffff' !== $virtue['font_h2']['color'] ? $virtue['font_h2']['color'] : '' ) ) . ';
 			}';
 		}
 		if ( isset( $virtue['font_h3'] ) ) {
@@ -146,7 +146,7 @@ function virtue_editor_dynamic_css() {
 				line-height: ' . esc_attr( $virtue['font_h3']['line-height'] ) . ';
 				font-weight: ' . esc_attr( $virtue['font_h3']['font-weight'] ) . ';
 				font-family: ' . esc_attr( $virtue['font_h3']['font-family'] ) . ';
-				color: ' . esc_attr( $virtue['font_h3']['color'] ) . ';
+				color: ' . esc_attr( ( isset( $virtue['font_h3']['color'] ) && ! empty( $virtue['font_h3']['color'] ) && '#ffffff' !== $virtue['font_h3']['color'] ? $virtue['font_h3']['color'] : '' ) ) . ';
 			}';
 		}
 		if ( isset( $virtue['font_h4'] ) ) {
@@ -155,7 +155,7 @@ function virtue_editor_dynamic_css() {
 				line-height: ' . esc_attr( $virtue['font_h4']['line-height'] ) . ';
 				font-weight: ' . esc_attr( $virtue['font_h4']['font-weight'] ) . ';
 				font-family: ' . esc_attr( $virtue['font_h4']['font-family'] ) . ';
-				color: ' . esc_attr( $virtue['font_h4']['color'] ) . ';
+				color: ' . esc_attr( ( isset( $virtue['font_h4']['color'] ) && ! empty( $virtue['font_h4']['color'] ) && '#ffffff' !== $virtue['font_h4']['color'] ? $virtue['font_h4']['color'] : '' ) ) . ';
 			} body.gutenberg-editor-page .editor-block-list__block .widgets-container .so-widget h4 {font-size:inherit; letter-spacing:normal; font-family:inherit;}';
 		}
 		if ( isset( $virtue['font_h5'] ) ) {
@@ -164,7 +164,7 @@ function virtue_editor_dynamic_css() {
 				line-height: ' . esc_attr( $virtue['font_h5']['line-height'] ) . ';
 				font-weight: ' . esc_attr( $virtue['font_h5']['font-weight'] ) . ';
 				font-family: ' . esc_attr( $virtue['font_h5']['font-family'] ) . ';
-				color: ' . esc_attr( $virtue['font_h5']['color'] ) . ';
+				color: ' . esc_attr( ( isset( $virtue['font_h5']['color'] ) && ! empty( $virtue['font_h5']['color'] ) && '#ffffff' !== $virtue['font_h5']['color'] ? $virtue['font_h5']['color'] : '' ) ) . ';
 			}';
 		}
 		if ( isset( $virtue['font_p'] ) ) {
@@ -172,7 +172,6 @@ function virtue_editor_dynamic_css() {
 				font-size: ' . esc_attr( $virtue['font_p']['font-size'] ) . ';
 				font-weight: ' . esc_attr( $virtue['font_p']['font-weight'] ) . ';
 				font-family: ' . esc_attr( $virtue['font_p']['font-family'] ) . ';
-				color: ' . esc_attr( $virtue['font_p']['color'] ) . ';
 			}';
 			echo '.block-editor-page .edit-post-visual-editor {
 				font-family: ' . esc_attr( $virtue['font_p']['font-family'] ) . ';

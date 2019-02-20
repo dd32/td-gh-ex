@@ -4,7 +4,7 @@
  *
  * @author 		WooThemes
  * @package 	WooCommerce/Templates
- * @version 3.4.1
+ * @version 3.5.5
  */
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -13,13 +13,15 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 global $product;
 
-$attribute_keys = array_keys( $attributes );
+$attribute_keys  = array_keys( $attributes );
+$variations_json = wp_json_encode( $available_variations );
+$variations_attr = function_exists( 'wc_esc_json' ) ? wc_esc_json( $variations_json ) : _wp_specialchars( $variations_json, ENT_QUOTES, 'UTF-8', true );
 ?>
 
 <?php do_action('woocommerce_before_add_to_cart_form'); ?>
 
 
-<form class="variations_form cart" method="post" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" enctype='multipart/form-data' data-product_id="<?php echo absint( $product->get_id() ); ?>" data-product_variations="<?php echo htmlspecialchars( json_encode( $available_variations ) ) ?>">
+<form class="variations_form cart" method="post" action="<?php echo esc_url( apply_filters( 'woocommerce_add_to_cart_form_action', $product->get_permalink() ) ); ?>" enctype='multipart/form-data' data-product_id="<?php echo absint( $product->get_id() ); ?>" data-product_variations="<?php echo $variations_attr; // WPCS: XSS ok. ?>">
 	<?php do_action( 'woocommerce_before_variations_form' ); ?>
 
 	<?php if ( empty( $available_variations ) && false !== $available_variations ) : ?>

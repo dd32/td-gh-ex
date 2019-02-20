@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Virtue Theme\n"
-"POT-Creation-Date: 2018-09-24 16:47-0600\n"
+"POT-Creation-Date: 2019-02-20 15:20-0700\n"
 "PO-Revision-Date: 2015-05-26 17:23-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -10,7 +10,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-KeywordsList: __;_e;_n:1,2;esc_attr__;esc_attr_e;esc_html__;"
 "esc_html_e;_x:1,2c;_ex:1,2c;esc_attr_x:1,2c;esc_html_x:1,2c\n"
 "X-Poedit-Basepath: ..\n"
@@ -100,17 +100,17 @@ msgstr ""
 msgid "Latest posts from"
 msgstr ""
 
-#: lib/class-tgm-plugin-activation.php:327 lib/kadence-toolkit-plugin.php:99
+#: lib/class-tgm-plugin-activation.php:327 lib/kadence-toolkit-plugin.php:155
 msgid "Install Required Plugins"
 msgstr ""
 
-#: lib/class-tgm-plugin-activation.php:328 lib/kadence-toolkit-plugin.php:100
+#: lib/class-tgm-plugin-activation.php:328 lib/kadence-toolkit-plugin.php:156
 msgid "Install Plugins"
 msgstr ""
 
 #. translators: %s: plugin name.
 #. translators: %s: plugin name
-#: lib/class-tgm-plugin-activation.php:330 lib/kadence-toolkit-plugin.php:102
+#: lib/class-tgm-plugin-activation.php:330 lib/kadence-toolkit-plugin.php:158
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
@@ -121,11 +121,11 @@ msgstr ""
 msgid "Updating Plugin: %s"
 msgstr ""
 
-#: lib/class-tgm-plugin-activation.php:333 lib/kadence-toolkit-plugin.php:103
+#: lib/class-tgm-plugin-activation.php:333 lib/kadence-toolkit-plugin.php:159
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
-#: lib/class-tgm-plugin-activation.php:373 lib/kadence-toolkit-plugin.php:122
+#: lib/class-tgm-plugin-activation.php:373 lib/kadence-toolkit-plugin.php:178
 msgid "Return to Required Plugins Installer"
 msgstr ""
 
@@ -137,7 +137,7 @@ msgid "Return to the Dashboard"
 msgstr ""
 
 #: lib/class-tgm-plugin-activation.php:375
-#: lib/class-tgm-plugin-activation.php:3147 lib/kadence-toolkit-plugin.php:123
+#: lib/class-tgm-plugin-activation.php:3147 lib/kadence-toolkit-plugin.php:179
 msgid "Plugin activated successfully."
 msgstr ""
 
@@ -543,7 +543,7 @@ msgstr ""
 msgid "Activate Kadence Toolkit"
 msgstr ""
 
-#: lib/kadence-toolkit-plugin.php:44
+#: lib/kadence-toolkit-plugin.php:44 lib/kadence-toolkit-plugin.php:100
 msgid "Thanks for choosing the Virtue Theme"
 msgstr ""
 
@@ -555,32 +555,49 @@ msgid ""
 "Toolkit%2$s, this adds extra settings and features."
 msgstr ""
 
-#: lib/kadence-toolkit-plugin.php:47
+#: lib/kadence-toolkit-plugin.php:47 lib/kadence-toolkit-plugin.php:103
 msgid "Activating..."
 msgstr ""
 
-#: lib/kadence-toolkit-plugin.php:47
+#: lib/kadence-toolkit-plugin.php:47 lib/kadence-toolkit-plugin.php:103
 msgid "Activated"
 msgstr ""
 
-#: lib/kadence-toolkit-plugin.php:47
+#: lib/kadence-toolkit-plugin.php:47 lib/kadence-toolkit-plugin.php:103
 msgid "Installing..."
 msgstr ""
 
-#: lib/kadence-toolkit-plugin.php:47
+#: lib/kadence-toolkit-plugin.php:47 lib/kadence-toolkit-plugin.php:103
 msgid "Installed"
 msgstr ""
 
-#: lib/kadence-toolkit-plugin.php:48
+#: lib/kadence-toolkit-plugin.php:48 lib/kadence-toolkit-plugin.php:104
 msgid "Skip"
 msgstr ""
 
-#: lib/kadence-toolkit-plugin.php:62
+#: lib/kadence-toolkit-plugin.php:62 lib/kadence-toolkit-plugin.php:118
 msgid "Authorization failed. Please refresh the page and try again."
 msgstr ""
 
+#: lib/kadence-toolkit-plugin.php:78
+msgid "Install Kadence Blocks"
+msgstr ""
+
+#: lib/kadence-toolkit-plugin.php:81
+msgid "Activate Kadence Blocks"
+msgstr ""
+
+#. translators: %s: <strong> <a>
+#: lib/kadence-toolkit-plugin.php:101
+#, php-format
+msgid ""
+"We have a %1$snew plugin%2$s to extend and enhance the Block editor for your "
+"site. To take full advantage of the Virtue Theme please install the "
+"%3$sKadence Blocks%4$s, this adds extra editor blocks settings and features."
+msgstr ""
+
 #. translators: %1$s: dashboard link
-#: lib/kadence-toolkit-plugin.php:125
+#: lib/kadence-toolkit-plugin.php:181
 #, php-format
 msgid "All plugins installed and activated successfully. %s"
 msgstr ""
@@ -1207,7 +1224,7 @@ msgstr ""
 msgid "By"
 msgstr ""
 
-#: templates/header.php:65
+#: templates/header.php:79
 msgid "Menu"
 msgstr ""
 
@@ -2124,8 +2141,8 @@ msgstr ""
 msgid "Video Embed Code"
 msgstr ""
 
-#: themeoptions/options.php:501 themeoptions/options.php:625
-msgid "If your using a video on the home page place video embed code here."
+#: themeoptions/options.php:501
+msgid "If you are using a video on the home page place video embed code here."
 msgstr ""
 
 #: themeoptions/options.php:512
@@ -2152,6 +2169,10 @@ msgstr ""
 
 #: themeoptions/options.php:528
 msgid "Choose which slider you would like to show for mobile viewers."
+msgstr ""
+
+#: themeoptions/options.php:625
+msgid "If your using a video on the home page place video embed code here."
 msgstr ""
 
 #: themeoptions/options.php:636
@@ -3092,6 +3113,6 @@ msgstr ""
 msgid "Clear selection"
 msgstr ""
 
-#: woocommerce/single-product/product-image.php:95
+#: woocommerce/single-product/product-image.php:94
 msgid "Awaiting product image"
 msgstr ""
