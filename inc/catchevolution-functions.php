@@ -434,8 +434,11 @@ function catchevolution_body_classes( $classes ) {
 		$classes[] = 'disable-header';
 	}
 
-	$layout = catchevolution_get_theme_layout();
+	if ( !empty( $options['enable_menus'] ) ) {
+		$classes[] = 'enable-menu';
+	}
 
+	$layout = catchevolution_get_theme_layout();
 
 	if ( 'three-columns' == $layout || is_page_template( 'page-three-columns.php' ) ) {
 		$classes[] = 'three-columns';

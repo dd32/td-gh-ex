@@ -177,6 +177,17 @@ function catchevolution_customize_register( $wp_customize ) {
 			'default' 			=> $defaults['disable_header_menu'],
 		),
 
+		'enable_menus' => array(
+			'id' 				=> 'enable_menus',
+			'title' 			=> __( 'Check to Enable Footer Menu in Mobile Devices', 'catch-evolution' ),
+			'description'		=> '',
+			'field_type' 		=> 'checkbox',
+			'sanitize' 			=> 'catchevolution_sanitize_checkbox',
+			'panel' 			=> 'theme_options',
+			'section' 			=> 'menu_options',
+			'default' 			=> $defaults['enable_menus'],
+		),
+
 		//Header Options
 		'disable_header' => array(
 			'id' 			=> 'disable_header',

@@ -22,7 +22,7 @@
 }
 .mobile-menu-text {
 	display: block;
-	float: left;	
+	float: left;
 	padding: 0 0 0 8px;
 }
 #mobile-top-menu,
@@ -34,7 +34,7 @@
 #menu-toggle-footer,
 #menu-toggle-header-right {
 	color: #fff;
-	padding: 7px 10px 10px;	
+	padding: 7px 10px 10px;
 }
 .menu-logo #menu-toggle-top {
 	padding-top: 12px;
@@ -45,7 +45,7 @@
 }
 #menu-toggle-secondary {
 	color: #373737;
-	padding: 7px 10px 10px;	
+	padding: 7px 10px 10px;
 }
 .primary-menu-open #mobile-primary-menu .genericon-menu:before,
 .secondary-menu-open #mobile-secondary-menu .genericon-menu:before,
@@ -64,7 +64,7 @@
 	}
 	#secondary {
 		width: 340px;
-	}	
+	}
 	.widget_search #s {
 		width: 84%;
 	}
@@ -76,7 +76,7 @@
 	}
 	.disable-header #main {
 		padding-top: 79px;
-	}	
+	}
 	.hentry, .no-results, #author-info, #disqus_thread, #content .error404 {
 		margin-bottom: 30px;
 		padding: 30px;
@@ -96,7 +96,7 @@
 	}
 	#site-generator .wrapper {
 		padding: 25px 0;
-	}	
+	}
 	/* Three Columns Layout with 2 Sidebars */
 	.three-columns .content-sidebar-wrap {
 		float: right;
@@ -114,7 +114,7 @@
 	}
 }
 
-@media screen and (max-width: 1060px) {		
+@media screen and (max-width: 1060px) {
 	.wrapper {
 		width: 900px;
 	}
@@ -133,10 +133,10 @@
 	}
 	.three-columns #third {
 		width: 200px;
-	}	
+	}
 	img[class*="align"],
 	img[class*="wp-image-"],
-	img[class*="attachment-"], 
+	img[class*="attachment-"],
 	img.size-full,
 	img.size-large,
 	img.wp-post-image {
@@ -159,13 +159,13 @@
 	#header-menu {
 		text-align: center;
 	}
-	#header-menu ul.menu li, 
+	#header-menu ul.menu li,
 	.sidebar-top .widget_nav_menu ul.menu li {
 		display: inline-block;
 		float: none;
 	}
 
-	#header-menu ul.menu ul, 
+	#header-menu ul.menu ul,
 	.sidebar-top .widget_nav_menu ul.menu ul {
 		text-align: left;
 	}
@@ -173,21 +173,21 @@
 }
 
 /* iPads (landscape) ----------- */
-@media only screen 
-and (min-device-width : 768px) 
-and (max-device-width : 1024px) 
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
 and (orientation : landscape) {
 	/* Styles */
 	.site {
 		max-width: 1024px;
-	}		
+	}
 	.wrapper {
 		width: 960px;
 	}
 	#primary {
 		width: 590px;
 	}
-	.one-column.no-sidebar .entry-content, 
+	.one-column.no-sidebar .entry-content,
 	.one-column.no-sidebar .entry-summary {
 		padding: 1em 0 0;
 	}
@@ -199,15 +199,15 @@ and (orientation : landscape) {
 	.entry-title {
 		font-size: 26px;
 		line-height: 1.5em;
-	}	
-	
+	}
+
 	.one-column.no-sidebar #top-logo img {
 		padding: 0;
 	}
 	.one-column.no-sidebar #fixed-header-top .wrapper {
 		padding: 10px 0;
 	}
-	.one-column.no-sidebar #header-menu .wrapper, 
+	.one-column.no-sidebar #header-menu .wrapper,
 	.one-column.no-sidebar #access-footer .wrapper {
 		padding: 14px 0;
 		width: 95%;
@@ -232,7 +232,7 @@ and (orientation : landscape) {
 	.one-column.no-sidebar #colophon #access-footer ul.menu a {
 		display: block;
 		float: none;
-	}	
+	}
 	.one-column.no-sidebar .tinynav {
 		background-image: url("../images/menu.png");
 		background-color: transparent;
@@ -246,14 +246,14 @@ and (orientation : landscape) {
 		margin-top: 0;
 		overflow: hidden;
 		width: 100%;
-	}	
+	}
 	.one-column.no-sidebar #access-secondary .tinynav {
 		color: #000;
 	}
 	.one-column.no-sidebar .tinynav option {
 		background-color: #fff;
 		color: #000;
-	}	
+	}
 	/* Three Columns Layout with 2 Sidebars */
 	.three-columns .content-sidebar-wrap {
 		width: 730px;
@@ -266,10 +266,10 @@ and (orientation : landscape) {
 	}
 	.three-columns #third {
 		width: 200px;
-	}	
+	}
 }
 
-@media screen and (max-width: 960px) {	
+@media screen and (max-width: 960px) {
 	/* Styles */
 	.site {
 		width: : 100%;
@@ -283,8 +283,8 @@ and (orientation : landscape) {
 	.one-column.no-sidebar .site,
 	.one-column.no-sidebar #fixed-header-top {
 		width: 754px;
-	}	
-	.one-column.no-sidebar #header-menu .wrapper, 
+	}
+	.one-column.no-sidebar #header-menu .wrapper,
 	.one-column.no-sidebar #access-footer .wrapper {
 		width: 95%;
 	}
@@ -335,7 +335,7 @@ and (orientation : landscape) {
 		text-transform: none;
 		top: 0;
 		width: 45px;
-	}	
+	}
 	.dropdown-toggle:after {
 		border: 0 solid #eee;
 		border-left-width: 1px;
@@ -349,13 +349,13 @@ and (orientation : landscape) {
 		content: "\f432";
 	}
 	#fixed-header-top .menu,
-	#branding ul.menu li, 
+	#branding ul.menu li,
 	#header-menu ul.menu li,
 	#access-footer ul.menu li {
 		text-align: left;
 	}
 	#fixed-header-top ul li,
-	#header-menu ul.menu li, 
+	#header-menu ul.menu li,
 	.sidebar-top .widget_nav_menu ul.menu li {
 		box-sizing: border-box;
 		display: block;
@@ -421,17 +421,17 @@ and (orientation : landscape) {
 		box-sizing: border-box;
 		width: 100%;
 	}
-	#header-menu ul.menu li, 
+	#header-menu ul.menu li,
 	.sidebar-top .widget_nav_menu ul.menu li,
 	#header-menu #access-secondary ul.menu li {
 		border-right: none;
 	}
-	#header-menu ul.menu ul a, 
+	#header-menu ul.menu ul a,
 	.sidebar-top .widget_nav_menu ul.menu ul a {
 		padding: 1em 2em;
 	}
-	#header-menu ul.menu .menu-item-has-children a, 
-	.sidebar-top .widget_nav_menu ul.menu .menu-item-has-children a, 
+	#header-menu ul.menu .menu-item-has-children a,
+	.sidebar-top .widget_nav_menu ul.menu .menu-item-has-children a,
 	#colophon #access-footer ul.menu .menu-item-has-children a {
 		padding-right: 44px;
 	}
@@ -454,7 +454,7 @@ and (orientation : landscape) {
 	#colophon #access-footer ul.menu li {
 		border-left: none;
 	}
-	.one-column.no-sidebar .entry-content, 
+	.one-column.no-sidebar .entry-content,
 	.one-column.no-sidebar .entry-summary {
 		padding: 1em 0 0;
 	}
@@ -505,12 +505,15 @@ and (orientation : landscape) {
 	#slider {
 		margin-bottom: 60px;
 	}
-	#slider .sep, 
+	#slider .sep,
 	#slider .slider-excerpt {
 		display: none;
 	}
 	#slider-wrap .featured-text .featured-text-wrap {
     	padding: 10px 15px 5px;
+    }
+    #slider.slider-fullheader {
+    	margin-bottom: 29px;
     }
     #controllers {
 	    background-color: #000;
@@ -522,7 +525,7 @@ and (orientation : landscape) {
     }
 }
 
-@media screen and (max-width: 782px) {	
+@media screen and (max-width: 782px) {
 	.admin-bar #fixed-header-top {
 		margin-top: 46px;
 	}
@@ -532,7 +535,7 @@ and (orientation : landscape) {
 	#colophon #supplementary .widget-area {
 		width: 100%;
 	}
-	#site-generator .copyright, 
+	#site-generator .copyright,
 	#site-generator .powered {
 		display: block;
 		margin: 0;

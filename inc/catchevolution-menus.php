@@ -218,12 +218,24 @@ function catchevolution_footer_menu() {
 
         <div id="access-footer" class="<?php echo $menuclass; ?>">
             <?php
-            if ( !empty ($options['enable_menus'] ) ) {
+            if ( empty ($options['disable_responsive'] ) && !empty ($options['enable_menus'] ) ) {
                     ?>
                 <div id="mobile-footer-menu" class="menu-access-wrap clearfix">
+
+                    <?php
+                    $hide_mobile_menu_labels = isset( $options['hide_mobile_menu_labels'] ) ? $options['hide_mobile_menu_labels'] : 0;
+
+                    $label = isset( $options['footer_mobile_menu_label'] ) ? $options['footer_mobile_menu_label'] : esc_html__( 'Menu', 'catch-evolution' );
+
+                    $labelclass = "mobile-menu-text";
+
+                    if ( !empty ( $hide_mobile_menu_labels ) ) {
+                        $labelclass = "screen-reader-text";
+                    }
+                    ?>
                     <div class="mobile-menu-anchor">
                         <button id="menu-toggle-footer" class="genericon genericon-menu">
-                            <span class="mobile-menu-text"><?php esc_html_e( 'Menu', 'catch-evolution' ); ?></span>
+                            <span class="<?php echo esc_attr( $labelclass ); ?>"><?php echo esc_attr( $label ); ?></span>
                         </button>
                     </div><!-- .mobile-menu-anchor -->
                 </div><!-- #mobile-footer-menu -->

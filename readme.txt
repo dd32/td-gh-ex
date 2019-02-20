@@ -1,8 +1,41 @@
 = Catch Evolution =
-* Catch Evolution by the Catch Themes, https://catchthemes.com/
+Contributors: catchthemes
+Tags: dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, threaded-comments, flexible-header, three-columns
+Requires at least: 4.8
+Tested up to: 5.0.3
+Stable tag: 3.0.5
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-== ABOUT Catch Evolution ==
+Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look
+
+== Description ==
+
 Catch Evolution is a beautifully sleek creation of Catch Themes. It exudes a clean and super sharp look. It comes with a whole set of interesting, rich features and flexible theme options. Built on HTML5, CSS3, it has a responsive design which lets the content automatically adapt to the screen's size on different devices. Catch Evolution looks striking in a bigger screen. The layout is wider, bigger and luxuriously spacious. This theme is easily customizable with an advanced theme options panel. It supports popular plugins such as Jetpack, WordPress SEO by Yoast, WP-PageNavi, Contact Form 7, WooCommerce and many more. It is also translation ready and currently translated in Spanish, French, Swedish, German, Danish, Italian, Japanese, Russian, Czech, Bosnian and Brazilian Portuguese. If you need support with this theme, please go to https://catchthemes.com/support/
+
+For more information about Catch Evolution please go to https://catchthemes.com/themes/catch-evolution/
+
+== Installation ==
+
+1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+2. Type in Catch Evolution in the search form and press the 'Enter' key on your keyboard.
+3. Click on the 'Activate' button to use your new theme right away.
+4. Go to https://catchthemes.com/theme-instructions/catch-evolution/ for a guide on how to customize this theme.
+5. Navigate to Appearance -> Customize in your admin panel and customize to taste.
+
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+Theme supports all plugins from catchplugins.com
+
+= Where can I find theme documentation? =
+
+You can check our Theme Instructions at https://catchthemes.com/themes/catch-evolution in the Theme Instructions Tab.
+
+= Where can I find theme demo? =
+
+You can check our Theme Demo at https://catchthemes.com/demo/catch-evolution/
 
 == Translation ==
 Catch Evolution theme is translation ready.
@@ -20,51 +53,28 @@ Added Translation for Brazilian Portuguese by Valdir Trombini ( Email: valdir.tr
 Added Translation for Dutch by Alain Baudrez (Email: a.baudrez@gmail.com)
 Added Translation for Polish by Piotr (Email: fansitepoprostugry@gmail.com)
 
-== License ==
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3, see file license.txt
-License: GNU General Public License v3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Catch Evolution WordPress Theme, Copyright 2012-2015 Catchthemes.com
-Catch Evolution is distributed under the terms of the GNU General Public License v3
-
-Scripts used in the site are as below:
-	1. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2 license
-	2. Slider script uses Cycle script http://jquery.malsup.com/cycle/ lincensed under MIT/GPL license
-	3. jQyery Cookie script (https://github.com/carhartl/jquery-cookie) licensed under MIT license
-	4. DD_belatedPNG script (http://www.dillerdesign.com/experiment/DD_belatedPNG/) licensed under MIT license
-	5. FitVids is Licensed under the  WTFPL license (http://fitvidsjs.com/)
-
-Font Icons
-	Genericons by Automattic, Inc.
-  	Genericons is Licensed under the GPL, version 2 or later
-	http://genericons.com/
-
-Images used in the demo site and the screenshot are from PixaBay.com and are released under the CC0 license
-The screenshot's visible images are as follow:
-1) http://pixabay.com/en/buddha-deity-himalayan-park-nepal-100706/ - header image
-2) http://pixabay.com/en/window-wooden-window-old-window-100934/ - 1st slider image
-3) http://pixabay.com/en/flower-flowers-nature-plant-orchid-179004/ - 2nd slider image
-All other images are selfshot by CatchThemes team, licensed uner GPL3 license
-
 == Post ID shown in the All Posts Table ==
 This theme shows the post id of the posts in the all posts table in the dashboard.This is added to help the users to use those ids in the Featured Post Slider Options.== Theme Support ==Theme support at https://catchthemes.com/support/
 
 == Menus ==
 There are 4 Menus registered in this theme. Fixed Header Top, Primary, Secondary and Footer menu.Fixed Header Top, Primary and Secondary menu is dull drop down menu while the Footer menu displays only parent menu and no drop down.Only Primary Menu and Fixed Header Top menus are visible in responsive mobile devices
 
-== Tags ==
-dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-layout, fluid-layout, responsive-layout, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready, threaded-comments, flexible-header, three-columns
+= More FAQ =
 
-== Installation ==
-1. Primary: Login to your wp-admin area and go to Appearance -> Themes. Select Install tab and click on Upload link. Select theme .zip and ckick on Install now button. If you have any errors, use alternate method.
-2. Alternate: Unzip the template file (catch-evolution.zip) that you have downloaded. Via FTP, upload the whole folder (catch-evolution) to your server and place it in the /wp-content/themes/ folder. Do not change directory name. The template files should thus be here now: /wp-content/themes/catch-evolution/index.php (for example).
-3. Log into your WP admin panel and click on the Design tab. Now click on the Catch Box theme to activate it.
-4. Complete all of the required inputs on the Catch Box Options page (in the WP admin panel) and click "Save Changes".
+For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
-== Change Log ==
+== Changelog ==
+
+= 3.0.5 (Released: February 20, 2019) =
+* Added: Enable Footer Menu in Mobile Devices
+* Added: Featured image size for Header Image
+* Bug Fixed: Added function_exists check for get_the_privacy_policy_link function usage
+* Removed: Legacy Theme Options Support
+* Updated: Readme file as per the new requirement
+* Updated: Metabox UI
 
 = 3.0.4 (Released: September 03, 2018) =
-* Bug Fixed: Code reverted for header image on singular pages.
+* Bug Fixed: Code reverted for header image on singular pages
 
 = 3.0.3 (Released: August 13, 2018) =
 * Added: Core Privacy Policy link support in footer
@@ -269,3 +279,31 @@ dark, light, white, black, gray, one-column, two-columns, left-sidebar, right-si
 
 = 1.0 =
 * Initial Submission to WordPress.org
+
+== Copyright ==
+
+Catch Evolution WordPress Theme, Copyright 2012-2019 Catchthemes.com
+Catch Evolution is distributed under the terms of the GNU GPL
+
+== Resources ==
+* Based on Underscores http://underscores.me/, (C) 2012-2018 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+
+* JS Files
+	1. HTML5 script (https://github.com/aFarkas/html5shiv) licensed under MIT/GPL2 license
+	2. Slider script uses Cycle script http://jquery.malsup.com/cycle/ lincensed under MIT/GPL license
+	3. jQyery Cookie script (https://github.com/carhartl/jquery-cookie) licensed under MIT license
+	4. DD_belatedPNG script (http://www.dillerdesign.com/experiment/DD_belatedPNG/) licensed under MIT license
+	5. FitVids is Licensed under the  WTFPL license (http://fitvidsjs.com/)
+
+* Font Icons
+	Genericons by Automattic, Inc.
+  	Genericons is Licensed under the GPL, version 2 or later
+	http://genericons.com/
+
+* Images
+	Images used in the demo site and the screenshot are from PixaBay.com and are released under the CC0 license
+	The screenshot's visible images are as follow:
+	1) http://pixabay.com/en/buddha-deity-himalayan-park-nepal-100706/ - header image
+	2) http://pixabay.com/en/window-wooden-window-old-window-100934/ - 1st slider image
+	3) http://pixabay.com/en/flower-flowers-nature-plant-orchid-179004/ - 2nd slider image
+	All other images are selfshot by CatchThemes team, licensed uner GPL3 license

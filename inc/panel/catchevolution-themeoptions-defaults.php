@@ -11,6 +11,7 @@ global $catchevolution_options_defaults;
 $catchevolution_options_defaults = array(
 	'featured_logo_header'				=> esc_url( get_template_directory_uri() ).'/images/logo.png',
 	'disable_header'					=> '0',
+	'enable_menus'                      => '0',
  	'remove_header_logo'				=> '1',
  	'remove_site_title'					=> '0',
  	'remove_site_description'			=> '0',
@@ -156,4 +157,121 @@ function catchevolution_transition_effects() {
 	);
 
 	return apply_filters( 'catchevolution_transition_effects', $options );
+}
+
+/**
+ * Function to display the current year.
+ *
+ * @uses date() Gets the current year.
+ * @return string
+ */
+function catchevolution_the_year() {
+    return esc_attr( date_i18n( __( 'Y', 'catch-evolution' ) ) );
+}
+
+
+/**
+ * Function to display a link back to the site.
+ *
+ * @uses get_bloginfo() Gets the site link
+ * @return string
+ */
+function catchevolution_site_link() {
+    return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
+}
+
+
+/**
+ * Function to display a link to WordPress.org.
+ *
+ * @return string
+ */
+function catchevolution_theme_name() {
+    return '<span class="theme-name">' . __( 'Theme: Catch Evolution by ', 'catch-evolution' ) . '</span>';
+}
+
+
+/**
+ * Function to display a link to Theme Link.
+ *
+ * @return string
+ */
+function catchevolution_theme_author() {
+
+    return '<span class="theme-author"><a href="' . esc_url( 'https://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catch-evolution' ) . '">' . __( 'Catch Themes', 'catch-evolution' ) . '</a></span>';
+
+}
+
+/**
+ * Function to display Catch Evolution Assets
+ *
+ * @return string
+ */
+function catchevolution_assets(){
+    $catchevolution_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-evolution' ) . ' &copy; '. catchevolution_the_year() . ' ' . catchevolution_site_link() . ' ' . esc_attr__( 'All Rights Reserved.', 'catch-evolution' ) . ' ' . '</div><div class="powered">'. catchevolution_theme_name() . catchevolution_theme_author() . '</div>';
+
+    if ( function_exists( 'get_the_privacy_policy_link' ) ) {
+    	$catchevolution_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-evolution' ) . ' &copy; '. catchevolution_the_year() . ' ' . catchevolution_site_link() . ' ' . esc_attr__( 'All Rights Reserved.', 'catch-evolution' ) . ' ' . get_the_privacy_policy_link() . '</div><div class="powered">'. catchevolution_theme_name() . catchevolution_theme_author() . '</div>';
+    }
+    return $catchevolution_content;
+}
+
+/*
+ * Clearing the cache if any changes in Admin Theme Option
+ */
+function catchevolution_themeoption_invalidate_caches(){
+    delete_transient( 'catchevolution_responsive' ); // Disable responsive layout
+    delete_transient( 'catchevolution_inline_css' ); // Custom Inline CSS and color options
+    delete_transient( 'catchevolution_sliders' ); // featured post slider
+    delete_transient( 'catchevolution_page_sliders' ); // featured page slider
+    delete_transient( 'catchevolution_category_sliders' ); // featured category slider
+    delete_transient( 'catchevolution_imagesliders' ); // featured image slider
+    delete_transient( 'catchevolution_social_networks' );  // Social links on header
+    delete_transient( 'catchevolution_social_search' );  // Social links with search  on header
+    delete_transient( 'catchevolution_site_verification' ); // scripts which loads on header
+    delete_transient( 'catchevolution_footercode' ); // scripts which loads on footer
+    delete_transient( 'catchevolution_footer_content_new' ); // Footer content
+    delete_transient( 'catchevolution_logo'); // Header logo
+}
+
+/*
+ * Clearing the cache if any changes in post or page
+ */
+function catchevolution_post_invalidate_caches(){
+    delete_transient( 'catchevolution_sliders' ); // featured post slider
+    delete_transient( 'catchevolution_page_sliders' ); // featured page slider
+    delete_transient( 'catchevolution_category_sliders' ); // featured category slider
+}
+//Add action hook here save post
+add_action( 'save_post', 'catchevolution_post_invalidate_caches' );
+
+
+/*
+ * Clearing the cache if any changes in Custom Header
+ */
+function catchevolution_customheader_invalidate_caches(){
+    delete_transient( 'catchevolution_logo'); // Header logo
+}
+//Add action hook here save post
+add_action( 'custom_header_options', 'catchevolution_customheader_invalidate_caches' );
+
+
+/**
+ * Function to display a link to WordPress.org.
+ *
+ * @return string
+ */
+function catchevolution_wp_link() {
+    return '<a href="http://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'catch-evolution' ) . '"><span>' . __( 'WordPress', 'catch-evolution' ) . '</span></a>';
+}
+
+
+/**
+ * Function to display a link to Theme Link.
+ *
+ * @return string
+ */
+function catchevolution_theme_link() {
+    $theme_link = 'https://catchthemes.com/themes/catch-evolution-pro';
+    return '<a href="' . $theme_link . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catch-evolution' ) . '"><span>' . __( 'Catch Evolution Pro', 'catch-evolution' ) . '</span></a>';
 }

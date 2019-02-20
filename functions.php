@@ -127,9 +127,6 @@ function catchevolution_setup() {
 	// Load up theme options defaults
 	require( get_template_directory() . '/inc/panel/catchevolution-themeoptions-defaults.php' );
 
-	// Load up our theme options page and related code.
-	require( get_template_directory() . '/inc/panel/theme-options.php' );
-
 	// Register Sidebar and Widget.
 	require( get_template_directory() . '/inc/catchevolution-widgets.php' );
 
@@ -174,6 +171,9 @@ function catchevolution_setup() {
 
 	//Featured Posts for Full Width
 	add_image_size( 'featured-slider-larger', 1190, 500, true ); // Used for featured posts if a large-feature doesn't exist
+
+	//Featured Posts for Header Width
+	add_image_size( 'featured-slider-header', 1190, 500, true ); // Used for featured posts if a large-feature doesn't exist
 
 	//Plugin Support for WooCommerce
 	catchevolution_woocommerce_activated();
