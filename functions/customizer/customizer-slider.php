@@ -16,6 +16,27 @@ function quality_slider_customizer( $wp_customize ) {
 			'panel'  => 'quality_slider_setting',)
     );
 	
+	//Hide Index Slider Section
+			
+	$wp_customize->add_setting(
+	'quality_pro_options[slider_enable]',
+	array(
+		'default' => true,
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+	)	
+	);
+	
+	$wp_customize->add_control(
+	'quality_pro_options[slider_enable]',
+	array(
+		'label' => __('Enable Slider on homepage.','quality'),
+		'section' => 'slider_section_settings',
+		'type' => 'checkbox',
+	)
+	);
+	
 	
 	$wp_customize->add_setting( 'quality_pro_options[home_feature]',array('default' => get_template_directory_uri().'/images/slider/slide.jpg',
 	'type' => 'option','sanitize_callback' => 'esc_url_raw',

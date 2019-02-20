@@ -36,7 +36,7 @@ if (!function_exists('webriti_companion') && !$hide_install) {
 			public static function enqueue() {
 				wp_enqueue_script('plugin-install');
 				wp_enqueue_script('updates');
-				wp_enqueue_script('quality-companion-install', QUALITY_ADMIN_URI . '/assets/js/plugin-install.js', array('jquery'));
+				wp_enqueue_script('quality-companion-install', QUALITY_TEMPLATE_DIR_URI . '/admin/assets/js/plugin-install.js', array('jquery'));
 				wp_localize_script('quality-companion-install', 'quality_companion_install',
 					array(
 						'installing' => esc_html__('Installing', 'quality'),
@@ -104,7 +104,7 @@ if (!function_exists('webriti_companion') && !$hide_install) {
 			}
 		}
 	}
-	if (!function_exists('quality_companion_installer_register')) {
+	if (!function_exists('webriti_companion_installer_register')) {
 		/**
 		 * Registers the section, setting & control for the Webriti Companion installer.
 		 *
@@ -118,7 +118,7 @@ if (!function_exists('webriti_companion') && !$hide_install) {
 			)));
 
 		}
-		add_action('customize_register', 'quality_companion_installer_register');
+		add_action('customize_register', 'webriti_companion_installer_register');
 	}
 }
 

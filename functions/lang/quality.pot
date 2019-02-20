@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Quality\n"
-"POT-Creation-Date: 2018-09-26 16:09+0530\n"
-"PO-Revision-Date: 2018-09-26 16:09+0530\n"
+"POT-Creation-Date: 2019-02-19 17:55+0530\n"
+"PO-Revision-Date: 2019-02-19 17:54+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -650,15 +650,15 @@ msgid ""
 "This post is password protected. Enter the password to view any comments."
 msgstr ""
 
-#: comments.php:16 content.php:34 index-blog.php:53
+#: comments.php:16 content.php:36 index-blog.php:53
 msgid "No Comments"
 msgstr ""
 
-#: comments.php:16 content.php:34 index-blog.php:53
+#: comments.php:16 content.php:36 index-blog.php:53
 msgid "One comment"
 msgstr ""
 
-#: comments.php:16 content.php:34 index-blog.php:53
+#: comments.php:16 content.php:36 index-blog.php:53
 #, php-format
 msgid "% comments"
 msgstr ""
@@ -708,11 +708,11 @@ msgstr ""
 msgid "Leave a Reply"
 msgstr ""
 
-#: content.php:29 functions.php:105 index-blog.php:48
+#: content.php:31 functions.php:105 index-blog.php:48
 msgid "Read More"
 msgstr ""
 
-#: content.php:37 index-blog.php:56
+#: content.php:39 index-blog.php:56
 msgid "In"
 msgstr ""
 
@@ -773,26 +773,26 @@ msgstr ""
 #: functions/customizer-repeater/class/customizer-repeater-control.php:256
 #: functions/customizer-repeater/class/customizer-repeater-control.php:405
 #: functions/customizer/customizer-blog.php:67
-#: functions/customizer/customizer-slider.php:48
+#: functions/customizer/customizer-slider.php:69
 msgid "Title"
 msgstr ""
 
 #: functions/customizer-repeater/class/customizer-repeater-control.php:263
 #: functions/customizer-repeater/class/customizer-repeater-control.php:412
-#: functions/customizer/customizer-slider.php:63
+#: functions/customizer/customizer-slider.php:84
 msgid "Subtitle"
 msgstr ""
 
 #: functions/customizer-repeater/class/customizer-repeater-control.php:270
 #: functions/customizer-repeater/class/customizer-repeater-control.php:419
 #: functions/customizer/customizer-blog.php:84
-#: functions/customizer/customizer-slider.php:78
+#: functions/customizer/customizer-slider.php:99
 msgid "Description"
 msgstr ""
 
 #: functions/customizer-repeater/class/customizer-repeater-control.php:279
 #: functions/customizer-repeater/class/customizer-repeater-control.php:427
-#: functions/customizer/customizer-slider.php:95
+#: functions/customizer/customizer-slider.php:116
 msgid "Button Text"
 msgstr ""
 
@@ -846,7 +846,7 @@ msgstr ""
 
 #: functions/customizer-repeater/class/customizer-repeater-control.php:558
 #: functions/customizer-repeater/class/customizer-repeater-control.php:604
-#: functions/customizer/customizer-slider.php:30
+#: functions/customizer/customizer-slider.php:51
 msgid "Image"
 msgstr ""
 
@@ -963,11 +963,11 @@ msgstr ""
 msgid "Hide post meta from Blog section"
 msgstr ""
 
-#: functions/customizer/customizer-blog.php:58 theme_setup_data.php:58
+#: functions/customizer/customizer-blog.php:58 theme_setup_data.php:59
 msgid "Our latest blog posts"
 msgstr ""
 
-#: functions/customizer/customizer-blog.php:77 theme_setup_data.php:59
+#: functions/customizer/customizer-blog.php:77 theme_setup_data.php:60
 msgid "News <b>And</b> Updates"
 msgstr ""
 
@@ -975,7 +975,7 @@ msgstr ""
 msgid "Footer copyright settings"
 msgstr ""
 
-#: functions/customizer/customizer-copyright.php:17 theme_setup_data.php:65
+#: functions/customizer/customizer-copyright.php:17 theme_setup_data.php:66
 msgid ""
 "<a href=\"https://wordpress.org\">Proudly powered by WordPress</a> | Theme: "
 "<a href=\"https://webriti.com\" rel=\"designer\">Quality</a> by Webriti"
@@ -1075,23 +1075,27 @@ msgstr ""
 msgid "Featured slider settings"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:42 theme_setup_data.php:15
+#: functions/customizer/customizer-slider.php:34
+msgid "Enable Slider on homepage."
+msgstr ""
+
+#: functions/customizer/customizer-slider.php:63 theme_setup_data.php:16
 msgid "Elegant design"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:57 theme_setup_data.php:16
+#: functions/customizer/customizer-slider.php:78 theme_setup_data.php:17
 msgid "Welcome to Quality theme"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:72 theme_setup_data.php:17
+#: functions/customizer/customizer-slider.php:93 theme_setup_data.php:18
 msgid "Create beautiful websites, 100% responsive and easy to customize."
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:88 theme_setup_data.php:18
+#: functions/customizer/customizer-slider.php:109 theme_setup_data.php:19
 msgid "Get this theme"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:111
+#: functions/customizer/customizer-slider.php:132
 msgid "Button Link"
 msgstr ""
 
@@ -1156,36 +1160,36 @@ msgid ""
 "different keywords."
 msgstr ""
 
-#: theme_setup_data.php:21
+#: theme_setup_data.php:22
 msgid "Our awesome services"
 msgstr ""
 
-#: theme_setup_data.php:25
+#: theme_setup_data.php:26
 msgid "Beautiful Design"
 msgstr ""
 
-#: theme_setup_data.php:26
+#: theme_setup_data.php:27
 msgid "Global Customer Base"
 msgstr ""
 
-#: theme_setup_data.php:27
+#: theme_setup_data.php:28
 msgid "Friendly Support"
 msgstr ""
 
-#: theme_setup_data.php:28
+#: theme_setup_data.php:29
 msgid "A great value"
 msgstr ""
 
-#: theme_setup_data.php:41
+#: theme_setup_data.php:42
 msgid "Featured portfolio projects"
 msgstr ""
 
-#: theme_setup_data.php:42
+#: theme_setup_data.php:43
 msgid "Most popular of our works."
 msgstr ""
 
-#: theme_setup_data.php:45 theme_setup_data.php:48 theme_setup_data.php:51
-#: theme_setup_data.php:54
+#: theme_setup_data.php:46 theme_setup_data.php:49 theme_setup_data.php:52
+#: theme_setup_data.php:55
 msgid "Business cards"
 msgstr ""
 
@@ -1218,54 +1222,12 @@ msgstr ""
 msgid "https://webriti.com/"
 msgstr ""
 
-
-#. Description of the plugin/theme
-msgid ""
-"Quality is a perfect theme to create a corporate/business website. It boasts "
-"3 beautifully designed page templates, namely Business Page, Full-width, and "
-"Blog. Quality is built on the Bootstrap CSS Framework, which makes it fully "
-"responsive on all devices, and is translation-ready. To enable the Business "
-"template, just create a normal WordPress page and select Business Template "
-"as page template. The Business template can be further personalized in the "
-"customizer. Each section in the Business Template is designed according to "
-"current business requirements, with sections like Banner, Services, Projects "
-"etc. You can use this theme for any type of activity. Quality supports "
-"famous plugins like Contact Form 7, to create your contact page or any type "
-"of forms you might want to add. Quality also gives a clean and appealing "
-"look to the WordPress core gallery feature. See Quality's demo at https://"
-"demo.webriti.com/?theme=Quality"
+#. Template Name of the plugin/theme
+msgid "Full-width page"
 msgstr ""
 
-#. Author of the plugin/theme
-msgid "Webriti"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://webriti.com/"
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Webriti"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://webriti.com/"
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Webriti"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://webriti.com/"
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Webriti"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "https://webriti.com/"
+#. Template Name of the plugin/theme
+msgid "Business Template"
 msgstr ""
 
 #, fuzzy
@@ -1273,14 +1235,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Webriti Companion\n"
-"POT-Creation-Date: 2018-06-19 18:11+0530\n"
-"PO-Revision-Date: 2018-06-19 18:11+0530\n"
+"POT-Creation-Date: 2019-02-19 18:05+0530\n"
+"PO-Revision-Date: 2019-02-19 18:05+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: webriti-companion.php\n"
@@ -1291,95 +1253,62 @@ msgstr ""
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
-#: inc/dreamspa/features/feature-slider-section.php:9
-#: inc/spasalon/features/feature-slider-section.php:9
-msgid "Slider settings"
-msgstr ""
-
-#: inc/dreamspa/features/feature-slider-section.php:30
-#: inc/spasalon/features/feature-slider-section.php:30
-msgid "Enable Home slider section"
-msgstr ""
-
-#: inc/dreamspa/features/feature-slider-section.php:53
-#: inc/spasalon/features/feature-slider-section.php:155
-msgid "Slider Image"
-msgstr ""
-
-#: inc/dreamspa/features/feature-slider-section.php:78
-msgid "Slider title"
-msgstr ""
-
-#: inc/dreamspa/features/feature-slider-section.php:94
-msgid "Slider description"
-msgstr ""
-
-#: inc/dreamspa/features/feature-slider-section.php:106
-msgid "Slider caption alignment"
-msgstr ""
-
-#: inc/dreamspa/features/feature-slider-section.php:129
-msgid "Slider caption title color"
-msgstr ""
-
-#: inc/dreamspa/features/feature-slider-section.php:149
-msgid "Slider caption description color"
-msgstr ""
-
 #: inc/quality/features/feature-funfact-section.php:8
 #: inc/quality/features/feature-funfact-section.php:13
 msgid "Funfact settings"
 msgstr ""
 
 #: inc/quality/features/feature-funfact-section.php:25
-#: inc/quality/features/feature-testimonial-section.php:29
-msgid "Background Image"
+msgid "Enable Funfact on homepage."
 msgstr ""
 
 #: inc/quality/features/feature-funfact-section.php:37
+#: inc/quality/features/feature-testimonial-section.php:42
+msgid "Background Image"
+msgstr ""
+
+#: inc/quality/features/feature-funfact-section.php:49
 msgid "Enable funfact image overlay"
 msgstr ""
 
-#: inc/quality/features/feature-funfact-section.php:50
+#: inc/quality/features/feature-funfact-section.php:64
 msgid "Funfact image overlay color"
 msgstr ""
 
-#: inc/quality/features/feature-funfact-section.php:62
+#: inc/quality/features/feature-funfact-section.php:77
 msgid "Funfact content"
 msgstr ""
 
-#: inc/quality/features/feature-funfact-section.php:65
+#: inc/quality/features/feature-funfact-section.php:80
 msgid "Add new funfact"
 msgstr ""
 
-#: inc/quality/features/feature-funfact-section.php:66
+#: inc/quality/features/feature-funfact-section.php:81
 msgid "Funfact"
 msgstr ""
 
-#: inc/quality/features/feature-funfact-section.php:85
+#: inc/quality/features/feature-funfact-section.php:100
 msgid "2500"
 msgstr ""
 
-#: inc/quality/features/feature-funfact-section.php:92
+#: inc/quality/features/feature-funfact-section.php:107
 msgid "550"
 msgstr ""
 
-#: inc/quality/features/feature-funfact-section.php:98
+#: inc/quality/features/feature-funfact-section.php:113
 msgid "90%"
 msgstr ""
 
-#: inc/quality/features/feature-funfact-section.php:106
+#: inc/quality/features/feature-funfact-section.php:121
 msgid "1350"
 msgstr ""
 
 #: inc/quality/features/feature-project-section.php:8
 #: inc/quality/features/feature-project-section.php:14
-#: inc/spasalon/features/feature-project-section.php:8
 msgid "Project settings"
 msgstr ""
 
 #: inc/quality/features/feature-project-section.php:33
-#: inc/spasalon/features/feature-project-section.php:29
 msgid "Enable Home Project section"
 msgstr ""
 
@@ -1395,14 +1324,7 @@ msgstr ""
 #: inc/quality/features/feature-project-section.php:251
 #: inc/quality/features/feature-project-section.php:309
 #: inc/quality/features/feature-service-section.php:50
-#: inc/quality/features/feature-testimonial-section.php:44
-#: inc/spasalon/features/feature-project-section.php:46
-#: inc/spasalon/features/feature-project-section.php:94
-#: inc/spasalon/features/feature-project-section.php:143
-#: inc/spasalon/features/feature-project-section.php:190
-#: inc/spasalon/features/feature-project-section.php:238
-#: inc/spasalon/features/feature-project-section.php:285
-#: inc/spasalon/features/feature-service-section.php:34
+#: inc/quality/features/feature-testimonial-section.php:57
 msgid "Title"
 msgstr ""
 
@@ -1418,14 +1340,7 @@ msgstr ""
 #: inc/quality/features/feature-project-section.php:266
 #: inc/quality/features/feature-project-section.php:324
 #: inc/quality/features/feature-service-section.php:66
-#: inc/quality/features/feature-testimonial-section.php:58
-#: inc/spasalon/features/feature-project-section.php:61
-#: inc/spasalon/features/feature-project-section.php:108
-#: inc/spasalon/features/feature-project-section.php:157
-#: inc/spasalon/features/feature-project-section.php:204
-#: inc/spasalon/features/feature-project-section.php:252
-#: inc/spasalon/features/feature-project-section.php:299
-#: inc/spasalon/features/feature-service-section.php:45
+#: inc/quality/features/feature-testimonial-section.php:71
 msgid "Description"
 msgstr ""
 
@@ -1443,11 +1358,6 @@ msgstr ""
 #: inc/quality/sections/quality-portfolio-section.php:143
 #: inc/quality/sections/quality-portfolio-section.php:147
 #: inc/quality/sections/quality-portfolio-section.php:151
-#: inc/spasalon/sections/spasalon-portfolio-section.php:164
-#: inc/spasalon/sections/spasalon-portfolio-section.php:168
-#: inc/spasalon/sections/spasalon-portfolio-section.php:172
-#: inc/spasalon/sections/spasalon-portfolio-section.php:176
-#: inc/spasalon/sections/spasalon-portfolio-section.php:180
 msgid "Business cards"
 msgstr ""
 
@@ -1456,12 +1366,7 @@ msgstr ""
 #: inc/quality/features/feature-project-section.php:224
 #: inc/quality/features/feature-project-section.php:280
 #: inc/quality/features/feature-project-section.php:338
-#: inc/quality/features/feature-testimonial-section.php:100
-#: inc/spasalon/features/feature-project-section.php:77
-#: inc/spasalon/features/feature-project-section.php:125
-#: inc/spasalon/features/feature-project-section.php:173
-#: inc/spasalon/features/feature-project-section.php:219
-#: inc/spasalon/features/feature-project-section.php:268
+#: inc/quality/features/feature-testimonial-section.php:113
 msgid "Image"
 msgstr ""
 
@@ -1501,17 +1406,14 @@ msgid "Our <b>Awesome</b> Services"
 msgstr ""
 
 #: inc/quality/features/feature-service-section.php:79
-#: inc/spasalon/features/feature-service-section.php:56
 msgid "Service content"
 msgstr ""
 
 #: inc/quality/features/feature-service-section.php:81
-#: inc/spasalon/features/feature-service-section.php:58
 msgid "Add new service"
 msgstr ""
 
 #: inc/quality/features/feature-service-section.php:82
-#: inc/spasalon/features/feature-service-section.php:59
 msgid "Service"
 msgstr ""
 
@@ -1523,84 +1425,88 @@ msgstr ""
 msgid "Homepage testimonial settings"
 msgstr ""
 
-#: inc/quality/features/feature-testimonial-section.php:38
-#: inc/quality/sections/quality-testimonial-section.php:77
+#: inc/quality/features/feature-testimonial-section.php:30
+msgid "Enable Testimonail on homepage."
+msgstr ""
+
+#: inc/quality/features/feature-testimonial-section.php:51
+#: inc/quality/sections/quality-testimonial-section.php:79
 msgid "Client's Feedback"
 msgstr ""
 
-#: inc/quality/features/feature-testimonial-section.php:52
-#: inc/quality/sections/quality-testimonial-section.php:78
+#: inc/quality/features/feature-testimonial-section.php:65
+#: inc/quality/sections/quality-testimonial-section.php:80
 msgid "What <b>People</b> Say"
 msgstr ""
 
-#: inc/quality/features/feature-testimonial-section.php:66
+#: inc/quality/features/feature-testimonial-section.php:79
 msgid "Sed ut Perspiciatis Unde Omnis Iste"
 msgstr ""
 
-#: inc/quality/features/feature-testimonial-section.php:72
+#: inc/quality/features/feature-testimonial-section.php:85
 msgid "Testimonial title"
 msgstr ""
 
-#: inc/quality/features/feature-testimonial-section.php:89
+#: inc/quality/features/feature-testimonial-section.php:102
 msgid "Testimonial description"
 msgstr ""
 
-#: inc/quality/features/feature-testimonial-section.php:114
+#: inc/quality/features/feature-testimonial-section.php:127
 msgid "Name"
 msgstr ""
 
-#: inc/quality/features/feature-testimonial-section.php:121
-#: inc/quality/sections/quality-testimonial-section.php:22
+#: inc/quality/features/feature-testimonial-section.php:134
+#: inc/quality/sections/quality-testimonial-section.php:24
 msgid "Developer"
 msgstr ""
 
-#: inc/quality/features/feature-testimonial-section.php:127
+#: inc/quality/features/feature-testimonial-section.php:140
 msgid "Designation"
 msgstr ""
 
-#: inc/quality/sections/quality-features-section.php:231
-#: inc/quality/sections/quality-features-section.php:289
+#: inc/quality/sections/quality-features-section.php:224
+#: inc/quality/sections/quality-features-section.php:282
 msgid "Highly Customizable"
 msgstr ""
 
-#: inc/quality/sections/quality-features-section.php:238
-#: inc/quality/sections/quality-features-section.php:290
+#: inc/quality/sections/quality-features-section.php:231
+#: inc/quality/sections/quality-features-section.php:283
 msgid "Fully Responsive Layout"
 msgstr ""
 
-#: inc/quality/sections/quality-features-section.php:245
-#: inc/quality/sections/quality-features-section.php:291
+#: inc/quality/sections/quality-features-section.php:238
+#: inc/quality/sections/quality-features-section.php:284
 msgid "User Experience"
 msgstr ""
 
-#: inc/quality/sections/quality-features-section.php:252
-#: inc/quality/sections/quality-features-section.php:292
+#: inc/quality/sections/quality-features-section.php:245
+#: inc/quality/sections/quality-features-section.php:285
 msgid "Creative Web Design"
 msgstr ""
 
-#: inc/quality/sections/quality-features-section.php:260
-#: inc/quality/sections/quality-features-section.php:293
+#: inc/quality/sections/quality-features-section.php:253
+#: inc/quality/sections/quality-features-section.php:286
 msgid "Unique and Clean"
 msgstr ""
 
-#: inc/quality/sections/quality-features-section.php:268
-#: inc/quality/sections/quality-features-section.php:294
+#: inc/quality/sections/quality-features-section.php:261
+#: inc/quality/sections/quality-features-section.php:287
 msgid "Creative Ideas"
 msgstr ""
 
-#: inc/quality/sections/quality-funfact-section.php:53
+#: inc/quality/sections/quality-funfact-section.php:57
 msgid "Happy Customer"
 msgstr ""
 
-#: inc/quality/sections/quality-funfact-section.php:60
+#: inc/quality/sections/quality-funfact-section.php:64
 msgid "Finish Projects"
 msgstr ""
 
-#: inc/quality/sections/quality-funfact-section.php:67
+#: inc/quality/sections/quality-funfact-section.php:71
 msgid "Business Growth"
 msgstr ""
 
-#: inc/quality/sections/quality-funfact-section.php:74
+#: inc/quality/sections/quality-funfact-section.php:78
 msgid "Cups of Coffee"
 msgstr ""
 
@@ -1614,140 +1520,6 @@ msgstr ""
 #: inc/quality/sections/quality-portfolio-section.php:156
 #: inc/quality/sections/quality-portfolio-section.php:157
 msgid "Branding, Illustrator"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:39
-#: inc/spasalon/sections/spasalon-portfolio-section.php:14
-msgid "Spasalon Our Product Range"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:88
-msgid "Make-up Products"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:137
-msgid "Golden Cream"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:184
-msgid "Facial Toner"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:232
-msgid "Premium Cleanser"
-msgstr ""
-
-#: inc/spasalon/features/feature-project-section.php:279
-msgid "Silver Cleanser"
-msgstr ""
-
-#: inc/spasalon/features/feature-service-section.php:8
-msgid "Service Settings"
-msgstr ""
-
-#: inc/spasalon/features/feature-service-section.php:20
-msgid "Enable Home service section"
-msgstr ""
-
-#: inc/spasalon/features/feature-service-section.php:29
-#: inc/spasalon/sections/spasalon-features-section.php:12
-msgid "Treatment we are offering"
-msgstr ""
-
-#: inc/spasalon/features/feature-service-section.php:41
-#: inc/spasalon/sections/spasalon-features-section.php:13
-msgid ""
-"In commodo pulvinar metus, id tristique massa ultrices at. Nulla auctor "
-"turpis ut mi pulvinar eu accumsan risus sagittis. Mauris nunc ligula, "
-"ullamcorper vitae accumsan eu,congue in nulla. Cras hendrerit mi quis nisi "
-"semper in sodales nisl faucibus. Sed quis quam eu ante ornare hendrerit."
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:50
-msgid "Enable Banner strip section"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:62
-#: inc/spasalon/sections/spasalon-slider-section.php:58
-msgid "Producing"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:69
-msgid "Banner title"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:77
-#: inc/spasalon/sections/spasalon-slider-section.php:59
-msgid "Experience"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:85
-msgid "Banner subtitle"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:101
-msgid "Banner description"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:109
-#: inc/spasalon/sections/spasalon-slider-section.php:61
-msgid "Call us on"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:117
-msgid "Banner call title"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:126
-#: inc/spasalon/sections/spasalon-slider-section.php:62
-msgid "201 567 89785"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:134
-msgid "Banner call number"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:178
-msgid "Enable Thumbnail section"
-msgstr ""
-
-#: inc/spasalon/features/feature-slider-section.php:196
-#: inc/spasalon/features/feature-slider-section.php:216
-#: inc/spasalon/features/feature-slider-section.php:237
-msgid "Thumbnail Image"
-msgstr ""
-
-#: inc/spasalon/sections/spasalon-features-section.php:205
-msgid "Spa Treatment"
-msgstr ""
-
-#: inc/spasalon/sections/spasalon-features-section.php:215
-msgid "Detox Treatment"
-msgstr ""
-
-#: inc/spasalon/sections/spasalon-features-section.php:225
-msgid "Facial Treatment"
-msgstr ""
-
-#: inc/spasalon/sections/spasalon-features-section.php:235
-msgid "Other Treatment"
-msgstr ""
-
-#: inc/spasalon/sections/spasalon-portfolio-section.php:15
-msgid ""
-"A SpaSalon Produc Heading Title In commodo pulvinar metus, id tristique "
-"massa ultrices at. Nulla auctor turpis ut mi pulvinar eu accumsan risus "
-"sagittis. Mauris nunc ligula, ullamcorper vitae accumsan eu, congue in "
-"nulla. Cras hendrerit mi quis nisi semper in sodales nisl faucibus. Sed quis "
-"quam eu ante ornare hendrerit."
-msgstr ""
-
-#: inc/spasalon/sections/spasalon-slider-section.php:60
-msgid ""
-"Donec justo odio, lobortis eget congue sed, rutrum sit amet mauris. "
-"Curabitur sed lectus nulla. Curabitur sed lectus nulla.lobortis eget congue "
-"sed, rutrum sit amet mauris. Curabitur sed lectus nulla rutrum sit amet "
-"mauris."
 msgstr ""
 
 #. Plugin Name of the plugin/theme
@@ -1765,3 +1537,4 @@ msgstr ""
 #. Author URI of the plugin/theme
 msgid "https://github.com"
 msgstr ""
+

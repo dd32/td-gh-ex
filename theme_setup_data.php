@@ -12,6 +12,7 @@ function theme_data_setup()
 			'style_sheet' => 'default.css',
 			
 			/* Home Image */
+			'slider_enable' => true,
 			'home_image_title' => __('Elegant design','quality'),
 			'home_image_sub_title' => __('Welcome to Quality theme','quality'),
 			'home_image_description' => __('Create beautiful websites, 100% responsive and easy to customize.','quality'),

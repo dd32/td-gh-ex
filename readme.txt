@@ -153,6 +153,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+@version 2.3
+1. Remove duplicate post title on single view.
+2. Add homepage section ON/OFF setting.
 @version 2.2.7
 1. Some small changes.
 @version 2.2.6.1
