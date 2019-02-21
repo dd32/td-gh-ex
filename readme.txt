@@ -3,7 +3,7 @@
 Contributors: eDataStyle
 Requires at least: 4.0
 Tested up to: 5.0.3
-Stable tag: 2.5
+Stable tag: 2.6
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -87,6 +87,8 @@ CC0 Public Domain
 
 
 == Changelog ==
+= 2.6 =
+* Woocomerce title added  
 
 = 2.4 =
 * Elementor Page Builder added  

@@ -165,6 +165,21 @@ if ( ! function_exists( 'be_page_header_page_title' ) ) :
 								echo single_post_title( '', false );
 							echo '</h1>';
 							
+							
+						}else if ( function_exists('is_shop') && is_shop() ){
+							if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+								echo '<h1>';
+								echo esc_html( woocommerce_page_title() );
+								echo '</h1>';
+							}
+						}else if( function_exists('is_product_category') && is_product_category() ){
+							echo '<h1 class="page-title-text">';
+								echo esc_html( woocommerce_page_title() );
+							echo '</h1>';
+							echo '<p class="subtitle">';
+								do_action( 'woocommerce_archive_description' );
+							echo '</p>';
+						
 						} elseif ( is_archive() ) {
 							 the_archive_title( '<h1 class="display-1">', '</h1>' );
 							 the_archive_description( '<h4 class="upper">', '</h4>' );
@@ -178,6 +193,7 @@ if ( ! function_exists( 'be_page_header_page_title' ) ) :
 								esc_html_e( '404 Error', 'be-page' );
 							echo '</h1>';
 						}
+						do_action( 'be_page_more_element_add' );
                     ?>
                 </div>
              
