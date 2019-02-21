@@ -115,8 +115,13 @@ function weaverx_setup() {
 					WEAVERX_GOOGLE_FONTS_URL));	// from settings.php - in %7C format
 	} else {
 		weaverx_check_editor_style();		// see if we need an update...
+		$vers = weaverx_getopt('style_version');
+		if (!$vers) $vers = '1';
+		else $vers = sprintf("%d",$vers);		// need version for cloudflare or other caching services
+
 		$updir = wp_upload_dir();
-		$css_path = trailingslashit($updir['baseurl']) . 'weaverx-subthemes/editor-early-style-wvrx.css';
+		$css_path = trailingslashit($updir['baseurl']) . 'weaverx-subthemes/editor-early-style-wvrx.css?vers=' . $vers;
+
 		// Enqueue editor styles - without theme editor styles
 		add_editor_style( array (
 					'editor-style.css',		// classic editor

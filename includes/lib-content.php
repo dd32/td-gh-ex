@@ -201,7 +201,7 @@ function weaverx_edit_link($echo = 'echo') {
 		$flink = $link;					// some https vs http bug in WP
 	$edit = $before . $flink . $after;
 
-	
+
 	$is_elementor = ! ! get_post_meta( $post->ID, '_elementor_edit_mode', true );
 
 	if ( $is_elementor ) {
@@ -209,7 +209,7 @@ function weaverx_edit_link($echo = 'echo') {
 
 		$eurl = str_replace('action=edit', 'action=elementor', $url);
 		$after = $after . "\n<!-- url: {$url} eurl: {$eurl} -->";
-		$link = '<a class="post-edit-link post-edit-link-classic" href="' . $eurl . '" title="' . esc_attr( $post_type_obj->labels->edit_item ) . '">' . $link_label . '</a>';
+		$link = '<a class="post-edit-link post-edit-link-builder" href="' . $eurl . '" title="' . esc_attr( $post_type_obj->labels->edit_item ) . '">' . $link_label . '</a>';
 		$flink = apply_filters( 'edit_post_link', $link, $post->ID );
 		if (!$flink)
 			$flink = $link;					// some https vs http bug in WP

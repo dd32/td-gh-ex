@@ -585,3 +585,7 @@ with testing and feature suggestions.
 
 = Version 4.2.5 =
 * Fix: link on logo stray text bug
+
+= Version 4.2.6 =
+* Fix: Add css version to early editor stylesheet for Cloudflare or other caching services
+* Fix: Different editor styling for Classic Editor's changed behavior
