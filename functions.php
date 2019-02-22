@@ -173,7 +173,7 @@ function catchevolution_setup() {
 	add_image_size( 'featured-slider-larger', 1190, 500, true ); // Used for featured posts if a large-feature doesn't exist
 
 	//Featured Posts for Header Width
-	add_image_size( 'featured-slider-header', 1190, 500, true ); // Used for featured posts if a large-feature doesn't exist
+	add_image_size( 'featured-slider-header', 1920, 480, true ); // Used for featured posts for header image size
 
 	//Plugin Support for WooCommerce
 	catchevolution_woocommerce_activated();
