@@ -14,12 +14,17 @@ get_header();
 <?php edit_post_link(__('Edit This', 'northern-web-coders')); ?>
 <ul>
 <li><?php northern_the_breadcrumb(); ?></li>
-<li><?php _e("Published on:", 'northern-web-coders'); ?> <a href="<?php the_permalink() ?>" rel="bookmark"><?php echo the_time("l - d F Y"); ?></a></li>
-<li><?php _e("Categories:", 'northern-web-coders'); ?> <?php the_category(', ') ?> <?php the_tags(__('Tags:&nbsp;', 'northern-web-coders'), ' , ' , ''); ?></li>
 </ul>
 </div>
 
 <?php the_content(__('(more...)', 'northern-web-coders')); ?>
+
+<div class="meta">
+<ul>
+<li><?php _e("Published on:", 'northern-web-coders'); ?> <a href="<?php the_permalink() ?>" rel="bookmark"><?php echo the_time("l - d F Y"); ?></a></li>
+<li><?php _e("Categories:", 'northern-web-coders'); ?> <?php the_category(', ') ?> <?php the_tags(__('Tags:&nbsp;', 'northern-web-coders'), ' , ' , ''); ?></li>
+</ul>
+</div>
 
 <div class="commentlink">
 <?php wp_link_pages(); ?>

@@ -4,7 +4,7 @@
  */
 ?>
 
-<div id="comments" class="animated slideInDown duration1">
+<div id="comments">
 	<?php if ( post_password_required() ) : ?>
 	<p class="nopassword"><?php _e('Protected Comments: Please enter your password to view comments.', 'northern-web-coders'); ?></p>
 </div>

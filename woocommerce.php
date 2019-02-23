@@ -2,7 +2,7 @@
 get_header();
 ?>
 
-<?php woocommerce_content(); ?>
+
 
 
 <article <?php post_class(); ?> id="post-<?php the_ID(); ?>">
@@ -11,7 +11,8 @@ get_header();
 <div class="meta">
 <?php edit_post_link(__('Edit This', 'northern-web-coders')); ?>
 </div>
-<?php the_content(__('(more...)', 'northern-web-coders')); ?>
+
+<?php woocommerce_content(); ?>
 <div class="commentlink">
 <?php wp_link_pages(); ?>
 </div>

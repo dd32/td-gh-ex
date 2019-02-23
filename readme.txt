@@ -1,10 +1,10 @@
 === Suffusion ===
 Author: Kai Ackermann
-Tags: custom-background, custom-header, custom-menu, editor-style, left-sidebar, one-column, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, two-columns
+Tags: one-column, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, wide-blocks
 
-Tested up to: WP 4.8.2
+Tested up to: WP 5.1
 
 == Description ==
-Northern-Web-Coders is a responsive HTML5/CSS3 theme. It supports custom headers, backgrounds and theme-options which supports 3 possibilities for displaying sidebars (left, right or bottom). Animate.css -http://daneden.me/animate is included for header, article, sidebar and in the column-count home category template. If you choose to display the sidebar left or right, the column-count is 2. If the sidebar is stored at the bottom, the column-count is 3. It uses an ubuntu font. A horizontal version of 'Superfish' jQuery drop-down menu – which supports touch devices – is built in. Translation and WooCommerce ready.
+Northern-Web-Coders 3.1 is a responsive HTML5/CSS3 theme. It supports custom headers and background. It uses an Roboto font and a CSS-only responsive multi-level navigation menu. Translation, Gutenberg and WooCommerce ready. Northern-Web-Coders support the theme-customization for colors and backgrounds: Initial color, layout background, layout color, storytitle & aside-title border color, Hamburger color, Hamburger checked color, menu background, menu color, submenu background, submenu color, menuborder color, submenuborder color, arrow color, second-level arrow color, mobile arrowbox background, mobile arrow color, mobile second arrowbox background, mobile second arrow color.
 
 

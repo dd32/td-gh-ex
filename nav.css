@@ -1,0 +1,341 @@
+/*Desktop Menu*/
+#navbox {
+   width: 100%;
+   height: auto;
+   min-height: 38px;
+   font-size: 15px;
+   margin: 10px 0;
+   position: relative;
+   z-index: 3000;
+}
+
+nav {  
+   margin-left  : calc( -70vw / 2 + 100% / 2 );
+   margin-right : calc( -70vw / 2 + 100% / 2 );
+   width: 70vw;
+   max-width: 1000%;
+}
+
+nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+nav li {
+   position: relative;
+   display: block;
+   float: left;   
+}
+
+nav li li {
+   border-bottom: 1px solid #fff
+}
+
+nav a {
+   display: block;
+   color: #544E55; 
+   padding: 0 15px;
+   line-height: 38px;
+   text-decoration: none;
+}
+
+nav a:hover{
+   color: #FF5D4C;
+}
+
+nav div.menu ul .current_page_item > a,
+nav div.menu ul .current_page_ancestor > a,
+nav div.menu ul .current-menu-item > a,
+nav div.menu ul .current-menu-ancestor > a,
+nav div.menu ul .current_page_parent > a
+nav ul.menu .current_page_item > a,
+nav ul.menu .current_page_ancestor > a,
+nav ul.menu .current-menu-item > a,
+nav ul.menu .current-menu-ancestor > a,
+nav ul.menu .current_page_parent > a
+{
+   color: #FF5D4C
+}
+
+nav ul.sub-menu {
+   position: absolute;
+   top: 100%;
+   left: 0;
+   min-width: 250px;
+   z-index: 3000;
+   background: #dfdfdf;
+   display: none;
+   -moz-animation: fadein .85s; /* Firefox */
+   -webkit-animation: fadein .85s; /* Safari and Chrome */
+   -o-animation: fadein .85s; /* Opera */
+   animation: fadein .85s; /* All modern browsers */
+}
+
+@-webkit-keyframes fadein { 0% { opacity: 0; } 100% { opacity: 1; }}
+@-moz-keyframes fadein { 0% { opacity: 0; } 100% { opacity: 1; }}
+@-o-keyframes fadein { 0% { opacity: 0; } 100% { opacity: 1; }}
+@keyframes fadein { 0% { opacity: 0; } 100% { opacity: 1; }}
+
+
+nav ul.sub-menu ul.sub-menu {
+   top: 0;
+   left: 100%;
+}
+
+nav ul.sub-menu li {
+   float: none;
+}
+
+/*Arrows*/
+
+nav li label.arrow{
+
+}
+nav li label.arrow {
+   position: absolute;
+   right: 0;
+   top: 0;
+   width: 28px;  
+   height: 38px;
+   color: #FF5D4C
+}
+
+/*Link with arrow*/
+nav li.menu-item-has-children a {
+   padding: 0 30px 0 13px;
+}
+
+/*Down arrow*/
+nav label.arrow:after {
+   content: '\25BE';
+   line-height: 38px;
+   text-align: center;
+   display: block;
+}
+
+/*Right arrow*/
+nav ul.sub-menu label.arrow:after {
+   content: '\25B8';
+}
+
+
+
+/*Show submenu*/
+nav li:hover > ul.sub-menu,
+nav li:hover > input[type="checkbox"] + ul.sub-menu {
+   display: block;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+input#hamburger,
+label#expand-btn,
+nav input,
+aside ul.menu input
+{
+   display: none;
+}
+
+@keyframes animatetop{
+   from{left:-300px;opacity:0} to{left:0;opacity:1}
+}
+
+@media only screen and (max-width: 940px) {
+
+/*hamburger*/
+#navbox nav {
+   position:absolute;
+   left:-100%;
+   width:100%;
+   height:100%;
+   margin:0;
+   z-index:5;
+   -moz-transition:all 600ms ease-in;
+   -webkit-transition:all 600ms ease-in;
+   -o-transition:all 600ms ease-in;
+   transition:all 600ms ease-in;
+}
+
+label#expand-btn {   
+   z-index:5;
+   margin: 10px 3px 3px 10px;
+   display: block;
+   border-bottom: 17px double #516170;
+   border-top: 6px solid #516170;
+   content:"";
+   min-height: 5px; 
+   width:30px;
+   clear: both;
+}
+
+input[type="checkbox"],
+nav li:hover > input[type="checkbox"] + .sub-menu,
+nav li:hover > ul.sub-menu
+{
+   display:none;
+}
+
+input[type="checkbox"]:checked ~ #navbox nav{
+   left:0;
+}
+
+input[type="checkbox"]:checked ~ label#expand-btn{
+   border-color: #FF5D4C;  
+   -moz-transform: rotate(90deg);
+   -ms-transform: rotate(90deg);
+   -o-transform: rotate(90deg);
+   -webkit-transform: rotate(90deg);
+   transform: rotate(90deg);
+}
+
+/*Mobile Nav*/
+nav a:first-child {
+   padding: 0 15px;
+}
+
+nav li li{
+   padding: 0 0 0 10px;
+   margin-bottom: -1px
+}
+
+nav a {
+   line-height: 45px;
+}
+
+nav ul.sub-menu,
+nav ul.sub-menu ul.sub-menu {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3000;
+  }
+
+nav input[type="checkbox"]:checked ~ ul.sub-menu {
+  display: block;
+  position:relative;
+  animation:animatetop 0.4s
+}
+
+nav ul li li li {
+  border-left: 1px solid #fff
+}
+
+nav ul.menu {
+  position:absolute;
+  left:0px;
+  width:100%;
+  height:auto;
+  background: #dfdfdf;
+  z-index:3000
+}
+
+ul.sub-menu:last-child {
+  border-top: 1px solid #fff;
+  border-bottom: 1px solid #fff
+}
+
+nav ul.menu ul.sub-menu {
+   background: #C8C8C8;
+   margin-bottom: -1px;
+}
+
+nav ul.menu ul.sub-menu ul.sub-menu {
+  background: #D0D0D0;
+}
+
+nav ul.menu ul.sub-menu ul.sub-menu ul.sub-menu {
+  background: #D8D8D8;
+}
+
+nav ul.menu ul.sub-menu ul.sub-menu ul.sub-menu ul.sub-menu  ul.sub-menu {
+  background: #E0E0E0;
+}
+
+nav ul.menu ul.sub-menu ul.sub-menu ul.sub-menu ul.sub-menu ul.sub-menu  ul.sub-menu  {
+  background: #E8E8E8;
+}
+
+nav ul.menu ul.sub-menu ul.sub-menu ul.sub-menu ul.sub-menu ul.sub-menu  ul.sub-menu  ul.sub-menu {
+  background: #F0F0F0;
+}
+
+nav ul.menu ul.sub-menu ul.sub-menu ul.sub-menu ul.sub-menu ul.sub-menu  ul.sub-menu  ul.sub-menu ul.sub-menu {
+  background: #F8F8F8;
+}
+
+nav ul.menu ul.sub-menu ul.sub-menu ul.sub-menu ul.sub-menu ul.sub-menu  ul.sub-menu  ul.sub-menu  ul.sub-menu  ul.sub-menu  {
+  background: #fff;
+}
+
+nav li {
+  float: none;
+  border-bottom: 1px solid #fff
+}
+
+nav ul.sub-menu,
+nav ul.sub-menu ul.sub-menu {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 3000;
+}
+
+nav input[type="checkbox"]:checked ~ ul.sub-menu {
+  display: block;
+  position:relative;
+  animation:animatetop 0.4s
+}
+
+/*unicode + */
+nav label.arrow:after {   
+   content: ' \002B ';
+   line-height: 45px;
+font-weight: bold
+}
+
+/*unicode + */
+nav ul.sub-menu label.arrow:after {
+   content: ' \002B ';
+}
+
+/*unicode - */
+nav input[type="checkbox"]:checked ~  label.arrow:after
+{
+  content: ' \2212 ';
+}
+
+/*Mobile arrowbox*/
+nav li label.arrow {
+   min-width: 45px;  
+   height: 100%;
+   background: #E8E8E8;
+}
+
+
+
+nav li.menu-item-has-children a {
+   padding: 0 55px 0 15px;
+}
+
+
+}
+      

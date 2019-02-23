@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html <?php language_attributes(); ?>>
+<html <?php language_attributes(); ?>  itemscope itemtype="http://schema.org/WebPage">
 <head>
 <meta charset="<?php bloginfo('charset'); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,32 +8,43 @@
 		wp_enqueue_script( 'comment-reply' );
 	wp_head();
 ?>
-
+<script> (function(l){var i,s={touchend:function(){}};for(i in s)l.addEventListener(i,s)})(document); // sticky hover fix in iOS </script>
 </head>
 
 <body <?php body_class(); ?>>
+<?php if ( wp_is_mobile() ) : ?>
+<div id="mobile-background"></div>
+<?php endif; ?>
 
-<header id="header">    
-<h1><a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>">
-<?php bloginfo('name'); ?></a></h1>
-<em><?php bloginfo('description'); ?></em>
-<?php
-// Check to see if the header image has been removed
-$header_image = get_header_image();
-if ( ! empty( $header_image ) ) :
-?>
-<img src="<?php header_image(); ?>" id="headerpic" class="animated fadeIn duration3" width="<?php echo HEADER_IMAGE_WIDTH; ?>" height="<?php echo HEADER_IMAGE_HEIGHT; ?>" alt="Header" />
-<?php endif; // end check for removed header image ?>
+
+<header id="header"> 
+ 
+<h1 class="site-title"><?php
+if ( function_exists( 'the_custom_logo' ) ) {
+    the_custom_logo();
+}
+?>  <a href="<?php echo home_url(); ?>" title="<?php bloginfo('name'); ?>">
+<?php bloginfo('name'); ?></a><em><?php bloginfo('description'); ?></em></h1>
+
+<?php if ( has_header_image() ) { ?>
+<img src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" id="headerpic" />
+<?php } ?>
+
 </header>
 
-<input type="checkbox" id="isexpanded" />
-<label for="isexpanded" id="expand-btn" title="Navigation"></label>
+<div id="wrapper">
+
+<input type="checkbox" id="hamburger" />
+<label for="hamburger" id="expand-btn" title="Navigation"></label>
+
 <div id="navbox">
-<nav class="expandable">
-<?php wp_nav_menu( array( ) ); ?>
+
+<?php if ( has_nav_menu( 'primary' ) ) : ?>
+<nav>
+<?php wp_nav_menu( array ('theme_location' => 'primary','container' => ''));?>
 </nav>
+<?php endif; ?>
+
 </div>
 
-<div id="wrapper">
- 
 <div id="content">
