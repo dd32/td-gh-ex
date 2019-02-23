@@ -47,6 +47,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
             
             add_action( 'wp_head', [ $this, 'IE_Scripts' ] );
             add_action( 'wp_enqueue_scripts', [ $this, 'scripts_styles' ] );
+            add_action( 'admin_enqueue_scripts', [ $this, 'admin_scripts' ] );
             add_action( 'after_setup_theme', [ $this, 'agama_setup' ] );
             add_action( 'tgmpa_register', [ $this, 'tgmpa_register' ] );
             add_action( 'wp_footer', [ $this, 'footer_scripts' ] );
@@ -246,6 +247,19 @@ if( ! class_exists( 'Agama_Core' ) ) {
             );
             wp_localize_script( 'agama-functions', 'agama', $translation_array );
             wp_enqueue_script( 'agama-functions' );
+        }
+        
+        /**
+         * Admin Scripts
+         *
+         * Enqueue admin scripts and styles.
+         *
+         * @since 1.4.1
+         */
+        function admin_scripts() {
+            
+            wp_enqueue_script( 'agama-admin', AGAMA_JS . 'admin.js', [ 'jquery' ], self::$version );
+            
         }
         
         /**

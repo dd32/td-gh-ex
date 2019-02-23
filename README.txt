@@ -3,6 +3,13 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.4.1 - 23 February 2019 =
+* Added mobile hamburger menu icon color feature.
+* Updated Kirki framework to the latest version.
+* Updated theme translation files.
+* Fixed textual logo shrinking while header shrink is disabled.
+* Fixed image logo shrinking while header shrink is disabled.
+
 = 1.4.0 - 08 January 2019 =
 * Added (lost) body background feature in customizer.
 * Updated Kirki framework to the latest version.

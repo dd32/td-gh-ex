@@ -19,6 +19,9 @@ get_template_part( 'framework/admin/partial-refresh' );
 get_template_part( 'framework/admin/modules/agama-upsell/class-customize' );
 get_template_part( 'framework/admin/extra' );
 
+// Disable Kirki Telemetry Module
+add_filter( 'kirki_telemetry', '__return_false' );
+
 /**
  * Update Kirki Path's
  *
@@ -154,7 +157,14 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'default'		    => array(
             'font-family'   => 'Crete Round',
 			'font-size'	    => '28px'
-		)
+		),
+        'active_callback'   => [
+            [
+                'setting'   => 'agama_header_shrink',
+                'operator'  => '==',
+                'value'     => true
+            ]
+        ]
 	) );
 #######################################################
 # GENERAL PANEL
@@ -983,6 +993,24 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'type'			=> 'text',
 		'default'		=> ''
 	) );
+    Kirki::add_field( 'agama_options', array(
+        'label'     => esc_attr__( 'Mobile Menu Icon Color', 'agama' ),
+        'tootlip'   => esc_attr__( 'Customize mobile menu icon color.', 'agama' ),
+        'settings'  => 'agama_nav_mobile_menu_icon_color',
+        'section'   => 'agama_nav_mobile_section',
+        'transport' => 'auto',
+        'type'      => 'color',
+        'output'    => [
+            [
+                'element'  => 'button.mobile-menu-toggle, .mobile-menu-toggle-label',
+                'property' => 'color'
+            ],
+            [
+                'element'  => '.mobile-menu-toggle-inner, .mobile-menu-toggle-inner:before, .mobile-menu-toggle-inner:after',
+                'property' => 'background-color'
+            ]
+        ]
+    ) );
 #########################################
 # MENUS PANEL
 #########################################
@@ -2569,7 +2597,7 @@ function agama_customize_css() { ?>
         font-size: 35px;
     }
     #masthead .sticky-header-shrink .logo {
-        max-height: 93px;
+        max-height: 90px;
     }
     <?php endif; ?>
     
