@@ -60,6 +60,9 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+= 1.0.26 - 24th February, 2019 =
+* RTL Compatibility added.
+
 = 1.0.25 - 31st August, 2018 =
 * Fixed Demo Import Issue.
 
