@@ -202,8 +202,6 @@ function bayleaf_setup() {
 			'gutenberg',
 			'woocommerce',
 			'plugins-compat',
-			'widgetlayer-pro',
-			'display-posts-pro',
 			'related-posts',
 		)
 	);

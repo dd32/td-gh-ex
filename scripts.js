@@ -67,7 +67,7 @@ function onRaf( callback ) {
 		goRaf = callback();
 		if ( true !== goRaf ) {
 			id = raf( loop );
-		} else if ( caf ) {
+		} else if ( caf && undefined !== typeof( id ) ) {
 			caf( id );
 		}
 	}

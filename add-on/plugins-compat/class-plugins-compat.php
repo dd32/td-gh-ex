@@ -2,6 +2,8 @@
 /**
  * Making Bayleaf theme compatible with various plugins.
  *
+ * Compatibility for : "The Events Calendar", "MainChimp for WordPress".
+ *
  * @package Bayleaf
  * @since 1.0.0
  */
@@ -51,7 +53,7 @@ class Plugins_Compat {
 	 * @since 1.0.0
 	 */
 	public static function init() {
-		// Compatibility to Event Calender Plugin.
+		// Compatibility to The Events Calender Plugin.
 		if ( class_exists( 'Tribe__Events__Main' ) ) {
 			add_filter( 'bayleaf_markup_entry_index_wrapper', [ self::get_instance(), 'display_events' ] );
 			add_filter( 'bayleaf_template_page_header', [ self::get_instance(), 'disable_page_header' ] );
@@ -62,6 +64,13 @@ class Plugins_Compat {
 			add_filter( 'bayleaf_dp_entry_classes', [ self::get_instance(), 'entry_classes' ], 12, 3 );
 			add_filter( 'bayleaf_after_dp_widget_title', [ self::get_instance(), 'dp_wid_title' ], 10, 2 );
 			add_action( 'bayleaf_display_dp_item', [ self::get_instance(), 'display_dp_item' ] );
+		}
+
+		// Compatibility to "MailChimp for WordPress" plugin.
+		if ( defined( 'MC4WP_VERSION' ) ) {
+			add_filter( 'bayleaf_widgetlayer_widget_options', [ self::get_instance(), 'widget_options' ] );
+			add_filter( 'bayleaf_before_widget_content', [ self::get_instance(), 'display_widget_image' ], 10, 2 );
+			add_filter( 'bayleaf_after_widget_content', [ self::get_instance(), 'widget_wrapper_close' ], 10, 2 );
 		}
 	}
 
@@ -204,6 +213,96 @@ class Plugins_Compat {
 		}
 
 		return '</span>' . $link_html . '</h3>';
+	}
+
+	/**
+	 * Get array of all widget options.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $options Array of widget options.
+	 */
+	public function widget_options( $options ) {
+
+		return array_merge( $options,
+			[
+				'bayleaf_widget_featured_image' => [
+					'setting' => 'bayleaf_widget_featured_image',
+					'label'   => esc_html__( 'Widget Featured Image', 'bayleaf' ),
+					'type'    => 'image_upload',
+					'id_base' => 'mc4wp_form_widget',
+				],
+			]
+		);
+	}
+
+	/**
+	 * Display featured image before mc4wp widget (if any).
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param str   $markup Widget customized content markup.
+	 * @param array $widget_data {
+	 *     Current widget's data to generate customized output.
+	 *     @type str   $widget_id  Widget ID.
+	 *     @type int   $widget_pos Widget position in widgetlayer widget-area.
+	 *     @type array $instance   Current widget instance settings.
+	 *     @type str   $id_base    Widget ID base.
+	 * }
+	 * @return string Widget customized content markup.
+	 */
+	public function display_widget_image( $markup, $widget_data ) {
+
+		$instance = $widget_data[2];
+		$id_base  = $widget_data[3];
+
+		// Generate markup for text widget featured image.
+		if ( 'mc4wp_form_widget' === $id_base && isset( $instance['bayleaf_widget_featured_image'] ) ) {
+			$image_id = absint( $instance['bayleaf_widget_featured_image'] );
+			if ( $image_id ) {
+				$classes    = [];
+				$image_size = apply_filters( 'bayleaf_widget_image_size', 'bayleaf-large', $widget_data );
+				$classes[]  = 'widget-bg-featured-image';
+				$classes    = apply_filters( 'bayleaf_widget_image_classes', $classes, $widget_data );
+				$img_markup = wp_get_attachment_image( $image_id, $image_size, false, [ 'class' => join( ' ', $classes ) ] );
+
+				$markup = sprintf( '<div class="custom-widget-thumbnail"><div class="thumb-wrapper">%s</div></div><div class="custom-widget-content"><div class="custom-content-wrapper">', $img_markup );
+			}
+		}
+
+		return $markup;
+	}
+
+	/**
+	 * Markup after text widget (if any).
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param str   $markup Widget customized content markup.
+	 * @param array $widget_data {
+	 *     Current widget's data to generate customized output.
+	 *     @type str   $widget_id  Widget ID.
+	 *     @type int   $widget_pos Widget position in widgetlayer widget-area.
+	 *     @type array $instance   Current widget instance settings.
+	 *     @type str   $id_base    Widget ID base.
+	 * }
+	 * @return string Widget customized content markup.
+	 */
+	public function widget_wrapper_close( $markup, $widget_data ) {
+
+		$instance = $widget_data[2];
+		$id_base  = $widget_data[3];
+
+		// Generate markup for text widget featured image.
+		if ( 'mc4wp_form_widget' === $id_base && isset( $instance['bayleaf_widget_featured_image'] ) ) {
+			$image_id = absint( $instance['bayleaf_widget_featured_image'] );
+			if ( $image_id ) {
+
+				$markup = '</div></div>';
+			}
+		}
+
+		return $markup;
 	}
 }
 Plugins_Compat::init();

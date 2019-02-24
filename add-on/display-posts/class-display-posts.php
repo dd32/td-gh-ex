@@ -56,9 +56,12 @@ class Display_Posts {
 		add_filter( 'bayleaf_dp_entry_classes', [ self::get_instance(), 'entry_classes' ], 10, 3 );
 		add_filter( 'bayleaf_dp_styles', [ self::get_instance(), 'dp_styles' ], 10, 2 );
 		add_filter( 'bayleaf_after_dp_widget_title', [ self::get_instance(), 'dp_wid_title' ], 10, 2 );
+		add_filter( 'bayleaf_dp_excerpt_length', [ self::get_instance(), 'excerpt_length' ], 10, 2 );
+		add_filter( 'bayleaf_dp_excerpt_more', [ self::get_instance(), 'excerpt_more' ], 10, 2 );
 		add_action( 'widgets_init', [ self::get_instance(), 'register_custom_widget' ] );
 		add_action( 'admin_enqueue_scripts', [ self::get_instance(), 'enqueue_admin' ] );
 		add_action( 'bayleaf_dp_entry', [ self::get_instance(), 'dp_entry' ], 10, 3 );
+		add_action( 'bayleaf_after_dp_loop', [ self::get_instance(), 'navigate' ] );
 	}
 
 	/**
@@ -74,6 +77,8 @@ class Display_Posts {
 			'grid-view1' => esc_html__( 'Grid View 1', 'bayleaf' ),
 			'grid-view2' => esc_html__( 'Grid View 2', 'bayleaf' ),
 			'grid-view3' => esc_html__( 'Grid View 3', 'bayleaf' ),
+			'slider1'    => esc_html__( 'Slider 1', 'bayleaf' ),
+			'slider2'    => esc_html__( 'Slider 2', 'bayleaf' ),
 		];
 	}
 
@@ -109,11 +114,18 @@ class Display_Posts {
 	 */
 	public function wrapper_classes( $classes, $instance, $widget ) {
 		$classes[] = 'index-view';
+
 		if ( false !== strpos( $instance['styles'], 'grid' ) ) {
 			$classes[] = 'flex-wrapper dp-grid';
 		} else {
 			$classes[] = 'dp-list';
 		}
+
+		if ( false !== strpos( $instance['styles'], 'slider' ) ) {
+			$classes[] = 'slider-wrapper';
+			$classes[] = 'widescreen';
+		}
+
 		return $classes;
 	}
 
@@ -294,6 +306,12 @@ class Display_Posts {
 			case 'grid-view3':
 				$d = [ 'thumbnail-medium', [ 'category', 'title' ] ];
 				break;
+			case 'slider1':
+				$d = [ 'thumbnail-large', [ 'category', 'title', 'excerpt' ] ];
+				break;
+			case 'slider2':
+				$d = [ 'thumbnail-large', [ [ 'title', 'excerpt' ] ] ];
+				break;
 			default:
 				$d = [];
 		}
@@ -469,6 +487,85 @@ class Display_Posts {
 		$text         = wp_trim_words( $text, $excerpt_length, $excerpt_more );
 
 		printf( '<div class="dp-excerpt">%s</div>', $text ); // WPCS xss ok.
+	}
+
+	/**
+	 * Modify display post's excerpt length.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param int $length Excerpt length.
+	 * @param str $style  Current display post style.
+	 * @return int Excerpt length.
+	 */
+	public function excerpt_length( $length, $style ) {
+
+		if ( 'slider1' === $style ) {
+			$length = 0;
+		}
+
+		if ( 'slider2' === $style ) {
+			$length = 25;
+		}
+
+		return $length;
+	}
+
+	/**
+	 * Modify display post's excerpt length.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param str $teaser Excerpt teaser.
+	 * @param str $style  Current display post style.
+	 * @return int Excerpt teaser.
+	 */
+	public function excerpt_more( $teaser, $style ) {
+
+		if ( 'slider1' === $style ) {
+			$exrpt_url  = esc_url( get_permalink() );
+			$exrpt_text = esc_html__( 'Read More', 'bayleaf' );
+			$teaser     = sprintf( '<p class="dp-link-more"><a class="dp-more-link" href="%1$s">%2$s</a></p>', $exrpt_url, $exrpt_text );
+		}
+
+		return $teaser;
+	}
+
+	/**
+	 * Display slider navigation.
+	 *
+	 * @since 1.0.0
+	 *
+	 * @param array $args Settings & args for the current widget instance.
+	 */
+	public function navigate( $args ) {
+		$instance = $args['instance'];
+		$query    = $args['query'];
+
+		if ( 1 >= $query->post_count ) {
+			return;
+		}
+
+		if ( false === strpos( $instance['styles'], 'slider' ) ) {
+			return;
+		}
+
+		$navigation  = sprintf(
+			'<button class="dp-prev-slide">%1$s<span class="screen-reader-text">%2$s</span></button>',
+			bayleaf_get_icon( [ 'icon' => 'angle-left' ] ),
+			esc_html__( 'Previous Slide', 'bayleaf' )
+		);
+		$navigation .= sprintf(
+			'<button class="dp-next-slide">%1$s<span class="screen-reader-text">%2$s</span></button>',
+			bayleaf_get_icon( [ 'icon' => 'angle-right' ] ),
+			esc_html__( 'Next Slide', 'bayleaf' )
+		);
+
+		if ( 'slider2' === $instance['styles'] ) {
+			echo $navigation; // WPCS xss ok. Contains HTML, other values escaped.
+		} else {
+			printf( '<div class="dp-slide-navigate">%s</div>', $navigation ); // WPCS xss ok. Contains HTML, other values escaped.
+		}
 	}
 
 	/**

@@ -93,6 +93,25 @@ class WidgetLayer {
 			return;
 		}
 
+		wp_enqueue_media();
+
+		wp_enqueue_script(
+			'bayleaf_widgetlayer_pro_admin_js',
+			get_template_directory_uri() . '/add-on/widgetlayer/admin/widgetlayer.js',
+			[ 'jquery' ],
+			BAYLEAF_THEME_VERSION,
+			true
+		);
+		// Theme localize scripts data.
+		$l10n = apply_filters( 'bayleaf_localize_script_data',
+			[
+				'uploader_title'       => esc_html__( 'Set Image', 'bayleaf' ),
+				'uploader_button_text' => esc_html__( 'Select', 'bayleaf' ),
+				'set_featured_img'     => esc_html__( 'Set Image', 'bayleaf' ),
+			]
+		);
+		wp_localize_script( 'bayleaf_widgetlayer_pro_admin_js', 'bayleafImageUploadText', $l10n );
+
 		wp_enqueue_style(
 			'bayleaf_widgetlayer_admin_style',
 			get_template_directory_uri() . '/add-on/widgetlayer/admin/widgetlayer.css',
@@ -501,6 +520,12 @@ class WidgetLayer {
 					$field .= $description;
 					$field  = sprintf( '<p class="%s widget-small-text">%s</p>', esc_attr( $setting ), $field );
 					break;
+				case 'image_upload':
+					$field  = '<label for="' . $id . '">' . $value['label'] . '</label>';
+					$field .= $description;
+					$field .= $this->image_upload_form( '', $setting, $id, $name, $instance[ $setting ] );
+					$field  = sprintf( '<p class="%s  widget-setting">%s</p>', esc_attr( $setting ), $field );
+					break;
 				case 'custom':
 					$field  = '<label for="' . $id . '">' . $value['label'] . '</label>';
 					$field .= $description;
@@ -538,6 +563,44 @@ class WidgetLayer {
 			// Display Widget Options.
 			printf( '<div class="widget-options-section">%s%s</div>', $title, $content ); // WPCS xss ok. Contains HTML, other values escaped.
 		}
+	}
+
+	/**
+	 * Image upload option markup.
+	 *
+	 * @since 1.0.2
+	 *
+	 * @param str $markup  Widget form image upload markup.
+	 * @param str $setting Setting Name.
+	 * @param str $id      Field ID.
+	 * @param str $name    Field Name.
+	 * @param int $value   Uploaded image id.
+	 * @return str Widget form image upload markup.
+	 */
+	public function image_upload_form( $markup, $setting, $id, $name, $value ) {
+
+		$value          = absint( $value );
+		$uploader_class = '';
+		$class          = 'bayleaf-hidden';
+
+		if ( $value ) {
+			$image_src = wp_get_attachment_image_src( $value, 'bayleaf-medium' );
+			if ( $image_src ) {
+				$featured_markup = sprintf( '<img class="custom-widget-thumbnail" src="%s">', esc_url( $image_src[0] ) );
+				$class           = '';
+				$uploader_class  = 'has-image';
+			} else {
+				$featured_markup = esc_html__( 'Set Featured Image', 'bayleaf' );
+			}
+		} else {
+			$featured_markup = esc_html__( 'Set Featured Image', 'bayleaf' );
+		}
+
+		$markup  = sprintf( '<a class="bayleaf-widget-img-uploader %s">%s</a>', $uploader_class, $featured_markup );
+		$markup .= sprintf( '<span class="bayleaf-widget-img-instruct %s">%s</span>', $class, esc_html__( 'Click the image to edit/update', 'bayleaf' ) );
+		$markup .= sprintf( '<a class="bayleaf-widget-img-remover %s">%s</a>', $class, esc_html__( 'Remove Featured Image', 'bayleaf' ) );
+		$markup .= sprintf( '<input class="bayleaf-widget-img-id" name="%s" id="%s" value="%s" type="hidden" />', $name, $id, $value );
+		return $markup;
 	}
 
 	/**
@@ -588,6 +651,11 @@ class WidgetLayer {
 					}
 
 					$instance[ $setting ] = ( '' !== $number ) ? $number : '';
+					break;
+				case 'image_upload':
+					$img_id               = absint( $new_instance[ $setting ] );
+					$img_url              = wp_get_attachment_image_src( $img_id );
+					$instance[ $setting ] = $img_url ? $img_id : $instance[ $setting ];
 					break;
 				case 'custom':
 					$instance[ $setting ] = '';
