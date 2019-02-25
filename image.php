@@ -9,7 +9,7 @@
 */
 
 get_header(); ?>
-<div class="inner">
+
     <div id="main-content">
 
         <?php while (have_posts()) : the_post(); ?>
@@ -103,8 +103,6 @@ get_header(); ?>
         
         <?php endwhile; ?>   
     </div><!--/main-content-->
-    <?php get_sidebar('sidebar'); ?>
-
-</div><!--/inner-->
+<?php get_sidebar('sidebar'); ?>
 <?php get_footer(); ?>
 

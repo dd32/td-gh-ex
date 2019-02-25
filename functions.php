@@ -28,9 +28,9 @@
 
 
 /**
- * Aguafuerte only works in WordPress 4.6 or later.
+ * Aguafuerte only works in WordPress 4.9 or later.
  */
-if ( version_compare( $GLOBALS['wp_version'], '4.6', '<' ) ) {
+if ( version_compare( $GLOBALS['wp_version'], '4.9', '<' ) ) {
 	require get_template_directory() . '/inc/back-compat.php';
 }
 
@@ -304,7 +304,7 @@ function aguafuerte_scripts() {
 	wp_enqueue_style( 'aguafuerte-style', get_stylesheet_uri() );
 
 	// Load the JavaScript functions.
-	wp_enqueue_script( 'aguafuerte-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20150315', true );
+	wp_enqueue_script( 'aguafuerte-script', get_template_directory_uri() . '/js/functions.js', array( 'jquery' ), '20180315', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

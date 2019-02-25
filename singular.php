@@ -13,26 +13,22 @@
  */
 
 get_header(); ?>
+<div id="main-content" >
+	<?php
+	// Start the loop.
+	while ( have_posts() ) : the_post();
 
-<div class="inner">
-	<div id="main-content" >
-		<?php
-		// Start the loop.
-		while ( have_posts() ) : the_post();
+		// Include the page content template.
+		if ( is_singular( 'page' ) ) {
+			get_template_part( 'template-parts/content', 'page' );
+		} else {
+			get_template_part( 'template-parts/content', 'single' );
+		}
 
-			// Include the page content template.
-			if ( is_singular( 'page' ) ) {
-				get_template_part( 'template-parts/content', 'page' );
-			} else {
-				get_template_part( 'template-parts/content', 'single' );
-			}
+		// End of the loop.
+	endwhile;
+	?>
 
-			// End of the loop.
-		endwhile;
-		?>
-
-	</div><!--/main-content-->
+</div><!--/main-content-->
 <?php get_sidebar('sidebar'); ?>  
-</div><!--/inner-->
-
 <?php get_footer(); ?>

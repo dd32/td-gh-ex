@@ -35,13 +35,17 @@
 				<?php 	endif ?>
 				</div><!--/site-identity-->
 
-				<?php if (has_nav_menu('primary') || has_nav_menu('secondary') || has_nav_menu('social')): ?>
+				<?php if (has_nav_menu('primary') || has_nav_menu('social')): ?>
 					<button id="nav-button" class="menu-toggle"><span class="screen-reader-text"><?php _e( 'Menus', 'aguafuerte' ); ?></span><span id="nav-icon" class="genericon genericon-menu" aria-hidden="true"></span></button>
 				<?php endif ?>
 
 				<div id="navigation">
 					<nav id="main-menu" class="site-navigation primary-navigation" role="navigation" aria-label='<?php _e( 'Primary Menu ', 'aguafuerte' ); ?>'>
-						<?php wp_nav_menu( array( 'theme_location' => 'primary', 'container' => 'ul', 'menu_id' => 'primary-menu' ) ); ?>
+						<?php wp_nav_menu( array(
+							'theme_location' => 'primary',
+							'container' => 'ul',
+							'menu_id' => 'primary-menu',
+						) ); ?>
 					</nav><!--main-menu-->
 
 				<?php if (has_nav_menu('social')): ?>
@@ -49,7 +53,8 @@
 					   <?php wp_nav_menu( array(
 							'theme_location' => 'social',
 							'container' => 'ul',
-							'menu_id' => 'social-menu',
+							'menu_id' => 'header-social-menu',
+							'menu_class' => 'social-menu',
 							'link_before'    => '<span class="screen-reader-text">',
 							'link_after'     => '</span>', )); ?>
 					</nav><!--social-menu-->
