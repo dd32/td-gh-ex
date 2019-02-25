@@ -3,7 +3,7 @@
 * header.php
 *
 * @author    Franchi Design
-* @package   atomy
+* @package   Atomy
 * @version   1.0.0
 */
 
@@ -48,8 +48,8 @@
                 <!-- Contact top -->
                 <div class="col-lg-5">
                         <div class="top_header_middle">
-                            <a href="#"><i class="fa fa-phone"></i> Call Us: <span>+84 987 654 321</span></a>
-                            <a href="#"><i class="fa fa-envelope"></i> Email: <span>support@yourdomain.com</span></a>
+                            <a href="#"><i class="fa fa-phone"></i><?php esc_html_e('Call Us:','atomy');?><span><?php esc_html_e('+84 987 654 321','atomy')?></span></a>
+                            <a href="#"><i class="fa fa-envelope"></i><?php esc_html_e('Email:','atomy')?><span><?php esc_html_e('support@yourdomain.com','atomy')?></span></a>
                            <!-- Logo -->
                             <?php the_custom_logo();?>
 							<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -69,7 +69,7 @@
                             <!-- Login -->
                             <ul class="top_right">
                                 <li class="user">
-                                  <a data-tooltip="<?php esc_html_e('Wish List','atomy');?>" class="login-contents" href="http://cesco.dev.cc/lista-desiseri/">
+                                  <a data-tooltip="<?php esc_html_e('Wish List','atomy');?>" class="login-contents" href="#">
                                   <i class="fas fa-heart"></i>
 			                       </a>
                                </li>

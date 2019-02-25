@@ -3,8 +3,8 @@
 * functions.php
 *
 * @author    Franchi Design
-* @package   atomy
-* @version   1.0.0
+* @package   Atomy
+* @version   1.0.1
 */
 
 
@@ -119,11 +119,11 @@ function atomy_scripts() {
 	wp_enqueue_style('atomy-style', get_stylesheet_uri() );
 	// Bootstrap
 	wp_enqueue_script('popper-js', get_template_directory_uri() .'/js/popper.min.js', array('jquery'),'v1.14.3' ,true );
-  wp_enqueue_script('bootstrap-js', get_template_directory_uri() .'/js/bootstrap.min.js', array('jquery'),'v4.3.1' ,true );
+    wp_enqueue_script('bootstrap-js', get_template_directory_uri() .'/js/bootstrap.min.js', array('jquery'),'v4.3.1' ,true );
 	wp_enqueue_style('bootstrap-css', get_template_directory_uri() .'/css/bootstrap.min.css');
-  // Font Awesome
-  wp_enqueue_style('font-awesome-css', get_template_directory_uri(). '/css/fontawesome-all.min.css');
-  // Jquery
+    // Font Awesome
+    wp_enqueue_style('font-awesome-css', get_template_directory_uri(). '/css/fontawesome-all.min.css');
+    // Jquery
 	wp_enqueue_script('atomy-jquery-js', get_template_directory_uri() . '/js/jquery-3.3.1.min.js', array(), 'v3.3.1', true );
 	// atomy Script
 	wp_enqueue_script('atomy-custom-script-js', get_template_directory_uri() . '/js/atomy-custom-script.js', array(), 'v1.0.0', true );
@@ -236,11 +236,6 @@ add_filter( 'nav_menu_link_attributes', 'atomy_add_class_to_items_link', 10, 3 )
 
 
 
-add_action( 'woocommerce_after_shop_loop_item', 'bbloomer_display_yith_wishlist_loop', 97 );
- 
-function bbloomer_display_yith_wishlist_loop() {
-echo do_shortcode( "[yith_wcwl_add_to_wishlist]" );
-}
 
 
 

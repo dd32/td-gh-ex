@@ -1,11 +1,16 @@
 <?php
 /**
-* template-functions.php
-* @author    Franchi Design
-* @package   atomy
-* @version   1.0.0
-*/
- 
+ * Functions which enhance the theme by hooking into WordPress
+ *
+ * @package Atomy
+ */
+
+/**
+ * Adds custom classes to the array of body classes.
+ *
+ * @param array $classes Classes for the body element.
+ * @return array
+ */
 function atomy_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
 	if ( ! is_singular() ) {
@@ -21,7 +26,9 @@ function atomy_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'atomy_body_classes' );
 
-// Add a pingback url auto-discovery header for single posts, pages, or attachments.
+/**
+ * Add a pingback url auto-discovery header for single posts, pages, or attachments.
+ */
 function atomy_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );

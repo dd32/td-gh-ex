@@ -1,11 +1,12 @@
 <?php
 /**
-* content-page.php
-*
-* @author    Franchi Design
-* @package   atomy
-* @version   1.0.0
-*/
+ * Template part for displaying page content in page.php
+ *
+ * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
+ *
+ * @package Atomy
+ */
+
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

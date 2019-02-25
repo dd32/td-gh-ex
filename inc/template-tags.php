@@ -1,10 +1,11 @@
 <?php
 /**
-* template-tags.php
-* @author    Franchi Design
-* @package   atomy
-* @version   1.0.0
-*/
+ * Custom template tags for this theme
+ *
+ * Eventually, some of the functionality here could be replaced by core features.
+ *
+ * @package Atomy
+ */
 
 if ( ! function_exists( 'atomy_posted_on' ) ) :
 	/**

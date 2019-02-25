@@ -23,23 +23,23 @@ get_header();?>
 <!-- Slider -->
 <div class="container">
 <div id="carouselExampleIndicators" class="carousel slide carousel-fade" data-ride="carousel" data-interval="9000">
-  <div class="carousel-inner atom-slider-height">
+  <div class="carousel-inner atomy-slider-height">
 	<?php
-	        $atom_header_slider_cat = esc_html( get_theme_mod('atom_category_header_slider'));
-					$atom_carousel_slider_count = 0;
+	        $atomy_header_slider_cat = esc_html( get_theme_mod('atomy_category_header_slider'));
+					$atomy_carousel_slider_count = 0;
 					$args = array(
-					'cat' => $atom_header_slider_cat ,
+					'cat' => $atomy_header_slider_cat ,
 					//'post_type' => 'product',
-					'showposts' => $atom_carousel_slider_count );
-					$atom_carousel_slider = new WP_Query($args);
-					if( $atom_carousel_slider->have_posts() ) :
-						while ( $atom_carousel_slider->have_posts() ) : $atom_carousel_slider->the_post();
-						$atom_image_attributes =  wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'atom_big');?>
-		<div class="carousel-item <?php if($atom_carousel_slider_count == 0){ echo 'active'; } ?>">
-		<?php $atom_carousel_slider_count ++; ?>
+					'showposts' => $atomy_carousel_slider_count );
+					$atomy_carousel_slider = new WP_Query($args);
+					if( $atomy_carousel_slider->have_posts() ) :
+						while ( $atomy_carousel_slider->have_posts() ) : $atomy_carousel_slider->the_post();
+						$atomy_image_attributes =  wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'atomy_big');?>
+		<div class="carousel-item <?php if($atomy_carousel_slider_count == 0){ echo 'active'; } ?>">
+		<?php $atomy_carousel_slider_count ++; ?>
 		<!-- Image -->
-			<img class="d-block w-100" src="<?php if ( $atom_image_attributes[0] ) :
-                        echo esc_url($atom_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/atom-default.jpg'; endif; ?>" alt="<?php the_title();?>">
+			<img class="d-block w-100" src="<?php if ( $atomy_image_attributes[0] ) :
+                        echo esc_url($atomy_image_attributes[0]); else: echo esc_url(get_template_directory_uri()).'/images/atomy-default.jpg'; endif; ?>" alt="<?php the_title();?>">
 			<div class="carousel-caption d-none d-md-block text-right">
 			<a href="<?php the_permalink();?>">
 			<!-- Text -->
@@ -63,39 +63,39 @@ get_header();?>
 </div>
 <!-- Block icons header -->
 		<div class="container mt-5 mb-5">
-				<div class="row atom-header-ecommerce mr-0 ml-0">
-				<div class="col-md-4 atom-col-1">
-					<div class="atom-icon-header">
+				<div class="row atomy-header-ecommerce mr-0 ml-0">
+				<div class="col-md-4 atomy-col-1">
+					<div class="atomy-icon-header">
 				    <i class="fas fa-truck"></i>
           </div>
-        <div class="atom-text-header">
-					 <h4><?php esc_html_e('WORLDWIDE DELIVERY','atom');?></h4>
-					 <p><?php esc_html_e('Shipments in over 200 countries','atom');?></p>
+        <div class="atomy-text-header">
+					 <h4><?php esc_html_e('WORLDWIDE DELIVERY','atomy');?></h4>
+					 <p><?php esc_html_e('Shipments in over 200 countries','atomy');?></p>
         </div>
 				</div>
-				<div class="col-md-4 atom-col-2">
-					<div class="atom-icon-header">
+				<div class="col-md-4 atomy-col-2">
+					<div class="atomy-icon-header">
 					<i class="far fa-credit-card"></i>
         </div>
-          <div class="atom-text-header">
-					 <h4><?php esc_html_e('SECURE PAYMENT','atom');?></h4>
-					 <p><?php esc_html_e('Secure payment methods','atom');?></p>
+          <div class="atomy-text-header">
+					 <h4><?php esc_html_e('SECURE PAYMENT','atomy');?></h4>
+					 <p><?php esc_html_e('Secure payment methods','atomy');?></p>
          </div>
 				</div>
-				<div class="col-md-4 atom-col-3">
-					<div class="atom-icon-header">
+				<div class="col-md-4 atomy-col-3">
+					<div class="atomy-icon-header">
 					<i class="fas fa-phone-volume"></i>
         </div>
-        <div class="atom-text-header-s">
-					 <h4><?php esc_html_e('SUPPORTO 24/7','atom');?></h4>
-					 <p><?php esc_html_e('Online 24 ore al giorno','atom');?></p>
+        <div class="atomy-text-header-s">
+					 <h4><?php esc_html_e('SUPPORTO 24/7','atomy');?></h4>
+					 <p><?php esc_html_e('Online 24 ore al giorno','atomy');?></p>
         </div>
 				</div>
    </div>
 </div>
 <!-- Section Category -->
 <section class="container at-content-woocommerce-page">
-<h1 class="pb-3"><?php esc_html_e('Categorie','atom');?></h1>
+<h1 class="pb-3"><?php esc_html_e('Categorie','atomy');?></h1>
   <div class="row ml-4 mr-0">
   <div class="col-lg-12 col-md-12 col-sx-12 col-xs-12 pl-0">
 
@@ -157,7 +157,7 @@ get_header();?>
 <div class="row featured at-section-featured-product pt-5">
 	    <!-- Sidebar Featured -->
 			<div class="col-lg-3 col-md-12 col-xs-12 pl-0 at-sidebar-featured-product">
-					<h2><?php esc_html_e('Featured Product','atom');?></h2>
+					<h2><?php esc_html_e('Featured Product','atomy');?></h2>
 					<!-- Carousel Control -->
 					<div class="at-carousel-control">
 						<a class="at-carousel-control-prev mr-2" href="#featuredCarousel" role="button" data-slide="prev">
@@ -183,13 +183,13 @@ get_header();?>
               <div class="carousel-item active">
               <div class="row">   
 							<?php
-							  $atom_featured_carousel_1_count = 3;
+							  $atomy_featured_carousel_1_count = 3;
 							  $args = array(
 								'post_type' => 'product',
-								'showposts' => $atom_featured_carousel_1_count );
-								$atom_featured_carousel_1 = new WP_Query($args);
-								if( $atom_featured_carousel_1->have_posts() ) :
-									while ( $atom_featured_carousel_1->have_posts() ) : $atom_featured_carousel_1->the_post(); ?>
+								'showposts' => $atomy_featured_carousel_1_count );
+								$atomy_featured_carousel_1 = new WP_Query($args);
+								if( $atomy_featured_carousel_1->have_posts() ) :
+									while ( $atomy_featured_carousel_1->have_posts() ) : $atomy_featured_carousel_1->the_post(); ?>
 									<div class="col-md-4">
                         <div class="item-box-featured">
                           <div class="item-box-featured-image">
@@ -204,7 +204,7 @@ get_header();?>
                             <div class="item-box-featured-heading">
 																<h5><?php echo esc_html(get_the_title($product_id))?></h5>
 																<?php
-                                  global $atom_woocommerce;
+                                  global $atomy_woocommerce;
                                   $currency = get_woocommerce_currency_symbol();
                                   $price = get_post_meta( get_the_ID(), '_regular_price', true);
                                   $sale = get_post_meta( get_the_ID(), '_sale_price', true);
@@ -229,13 +229,13 @@ get_header();?>
               <div class="carousel-item">
               <div class="row">   
 							<?php
-							  $atom_featured_carousel_2_count = 3;
+							  $atomy_featured_carousel_2_count = 3;
 							  $args = array(
 								'post_type' => 'product',
-								'showposts' => $atom_featured_carousel_2_count );
-								$atom_featured_carousel_2 = new WP_Query($args);
-								if( $atom_featured_carousel_2->have_posts() ) :
-									while ( $atom_featured_carousel_2->have_posts() ) : $atom_featured_carousel_2->the_post(); ?>
+								'showposts' => $atomy_featured_carousel_2_count );
+								$atomy_featured_carousel_2 = new WP_Query($args);
+								if( $atomy_featured_carousel_2->have_posts() ) :
+									while ( $atomy_featured_carousel_2->have_posts() ) : $atomy_featured_carousel_2->the_post(); ?>
 									<div class="col-md-4">
                         <div class="item-box-featured">
                           <div class="item-box-featured-image">
@@ -250,7 +250,7 @@ get_header();?>
 														<div class="item-box-featured-heading">
 																<h5><?php echo esc_html(get_the_title($product_id))?></h5>
 																<?php
-                                  global $atom_woocommerce;
+                                  global $atomy_woocommerce;
                                   $currency = get_woocommerce_currency_symbol();
                                   $price = get_post_meta( get_the_ID(), '_regular_price', true);
                                   $sale = get_post_meta( get_the_ID(), '_sale_price', true);
@@ -275,13 +275,13 @@ get_header();?>
 								<div class="carousel-item">
               <div class="row">   
 							<?php
-							  $atom_featured_carousel_3_count = 3;
+							  $atomy_featured_carousel_3_count = 3;
 							  $args = array(
 								'post_type' => 'product',
-								'showposts' => $atom_featured_carousel_3_count );
-								$atom_featured_carousel_3 = new WP_Query($args);
-								if( $atom_featured_carousel_3->have_posts() ) :
-									while ( $atom_featured_carousel_3->have_posts() ) : $atom_featured_carousel_3->the_post(); ?>
+								'showposts' => $atomy_featured_carousel_3_count );
+								$atomy_featured_carousel_3 = new WP_Query($args);
+								if( $atomy_featured_carousel_3->have_posts() ) :
+									while ( $atomy_featured_carousel_3->have_posts() ) : $atomy_featured_carousel_3->the_post(); ?>
 									<div class="col-md-4">
                         <div class="item-box-featured">
                           <div class="item-box-featured-image">
@@ -296,7 +296,7 @@ get_header();?>
 														<div class="item-box-featured-heading">
 																<h5><?php echo esc_html(get_the_title($product_id))?></h5>
 																<?php
-                                  global $atom_woocommerce;
+                                  global $atomy_woocommerce;
                                   $currency = get_woocommerce_currency_symbol();
                                   $price = get_post_meta( get_the_ID(), '_regular_price', true);
                                   $sale = get_post_meta( get_the_ID(), '_sale_price', true);
@@ -325,39 +325,7 @@ get_header();?>
           </div>
        </div>
       </section>
-	 <!--================Feature Big Add Area =================-->
-   <section class="feature_big_add_area">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-6">
-                    <div class="card bg-dark text-white">
-  <img class="card-img" src="<?php echo esc_url(get_template_directory_uri()).'/images/3.jpg';?>" alt="Card image">
-  <div class="card-img-overlay">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text">Last updated 3 mins ago</p>
-  </div>
-</div>
-                    </div>
-                    <div class="col-lg-6">
-                    <div class="card bg-dark text-white">
-  <img class="card-img" src="<?php echo esc_url(get_template_directory_uri()).'/images/3.jpg';?>" alt="Card image">
-  <div class="card-img-overlay">
-    <h5 class="card-title">Card title</h5>
-    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-    <p class="card-text">Last updated 3 mins ago</p>
-  </div>
-</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-
-
-
-
-
+	
 <?php get_footer(); ?>
 
 

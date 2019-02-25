@@ -1,13 +1,13 @@
 /*!
 Theme Name:  Atomy
-Theme URI:   https://www.denisfranchi.com/avik-pro-10-0-0/
+Theme URI:   https://www.denisfranchi.com/atomy/
 Author:      Franchi Design
 Author URI:  https://www.denisfranchi.com/
-Version:     1.0.0
+Version:     1.0.1
 License:     GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: atomy
-Description: Description
+Description: atomyy is an ecommerce theme ideal for selling food and catering.
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 */
@@ -1019,7 +1019,7 @@ object {
 
 /* Image*/
 
-.atom-slider-height img{
+.atomy-slider-height img{
 	height: 500px;
 	object-fit: cover;
 }
@@ -1033,18 +1033,18 @@ object {
 
 /* Text */
 
-.atom-slider-height h2{
+.atomy-slider-height h2{
 	font-size:44px ;
 	color:#f40101 ;
 }
 
-.atom-slider-height p{
+.atomy-slider-height p{
 	color:#000;
 	font-weight: bold;
 	font-size: 32px;
 }
 
-.atom-slider-height a:hover{
+.atomy-slider-height a:hover{
 	text-decoration: none;
   color: #ff0000;
 }
@@ -1053,66 +1053,66 @@ object {
 
 /* Block icons header */
 
-.atom-icon-header{
+.atomy-icon-header{
 	float: left;
 }
   
-.atom-icon-header i{
+.atomy-icon-header i{
 	font-size: 35px;
 	color: #8c8c8c;
 }
   
-.atom-text-header{
+.atomy-text-header{
 	margin-left: 4em;
 	
 }
 
-.atom-col-1,.atom-col-2{
+.atomy-col-1,.atomy-col-2{
 	border-right: 1px solid #d9d9d9; 
 }
 
 @media (max-width: 767px){
 
-.atom-col-1,.atom-col-2{
+.atomy-col-1,.atomy-col-2{
 	border-right: none; 
 }
 
 }
   
   
-.atom-text-header-s{
+.atomy-text-header-s{
 	margin-left: 3em;
 }
 
 @media (max-width: 767px){
-.atom-text-header-s{
+.atomy-text-header-s{
 	margin-left: 4em;
 }
 }
   
-.atom-text-header h4{
+.atomy-text-header h4{
 	color: #303030;;
 	font-size: 16px;
 	font-weight: 900;
 }
   
-.atom-text-header p{
+.atomy-text-header p{
 	font-size: 14px;
 	color: #545454;
 }
   
-.atom-text-header-s h4{
+.atomy-text-header-s h4{
 	color: #303030;;
 	font-size: 16px;
 	font-weight: 900;
 }
   
-.atom-text-header-s p{
+.atomy-text-header-s p{
 	font-size: 14px;
 	color: #545454;
 }
   
-.atom-header-ecommerce{
+.atomy-header-ecommerce{
 	border: 1px solid #d9d9d9;
 	padding: 2em;
 }
@@ -1141,7 +1141,7 @@ object {
 		  transform:         translateY(-15px)
 	}
 }
-.atom-icon-header i {  
+.atomy-icon-header i {  
 	
 	-webkit-animation-duration: 1s;
 	animation-duration: 1s;
@@ -1152,28 +1152,28 @@ object {
 	animation-iteration-count: infinite;
 	-webkit-animation-iteration-count: infinite;
 }
-.atom-col-1:hover .atom-icon-header i{
+.atomy-col-1:hover .atomy-icon-header i{
 	animation-name: wiggle;
 	animation: wiggle 150ms;
 	animation-timing-function: linear;   
 	-moz-animation-name: bounce;
 }
   
-.atom-col-2:hover .atom-icon-header i{
+.atomy-col-2:hover .atomy-icon-header i{
 	animation-name: wiggle;
 	animation: wiggle 150ms;
 	animation-timing-function: linear;   
 	-moz-animation-name: bounce;
 }
   
-.atom-col-3:hover .atom-icon-header i{
+.atomy-col-3:hover .atomy-icon-header i{
 	animation-name: wiggle;
 	animation: wiggle 150ms;
 	animation-timing-function: linear;   
 	-moz-animation-name: bounce;
 }
   
-.atom-text-nav-header{
+.atomy-text-nav-header{
 	display: inline-flex;
 }
 	

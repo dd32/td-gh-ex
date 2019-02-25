@@ -10,13 +10,13 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 == Copyright ==
 
-Atom WordPress Theme, Copyright (c) 2019  https://www.denisfranchi.com/
-Atom is distributed under the terms of the GNU GPL
+Atomy WordPress Theme, Copyright (c) 2019  https://www.denisfranchi.com/
+Atomy is distributed under the terms of the GNU GPL
 
 
 == Description ==
 
-Description
+Atomy is an ecommerce theme ideal for selling food and catering.
 
 == Installation ==
 
@@ -37,7 +37,7 @@ atom includes support for Infinite Scroll in Jetpack.
 
 == Credits and Reources ==
 
-* Atom is Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* Atomy is Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
 ----------------------------------------------------------------------------------------------
 
@@ -110,3 +110,7 @@ atom includes support for Infinite Scroll in Jetpack.
 
 
 == Images ==
+
+Screenshot
+
+https://stocksnap.io/photo/M08J0R6434

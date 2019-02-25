@@ -1,11 +1,19 @@
 <?php
-/** 
-* jetpack.php
-* @author    Franchi Design
-* @package   atomy
-* @version   1.0.0
-*/
+/**
+ * Jetpack Compatibility File
+ *
+ * @link https://jetpack.com/
+ *
+ * @package Atomy
+ */
 
+/**
+ * Jetpack setup function.
+ *
+ * See: https://jetpack.com/support/infinite-scroll/
+ * See: https://jetpack.com/support/responsive-videos/
+ * See: https://jetpack.com/support/content-options/
+ */
 function atomy_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
@@ -36,8 +44,9 @@ function atomy_jetpack_setup() {
 }
 add_action( 'after_setup_theme', 'atomy_jetpack_setup' );
 
-// Custom render function for Infinite Scroll.
-
+/**
+ * Custom render function for Infinite Scroll.
+ */
 function atomy_infinite_scroll_render() {
 	while ( have_posts() ) {
 		the_post();
