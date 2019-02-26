@@ -7,6 +7,7 @@ require_once( trailingslashit( get_template_directory() ) . 'theme-options.php' 
 require_once( trailingslashit( get_template_directory() ) . 'inc/breadcrumbs.php' );
 require_once( trailingslashit( get_template_directory() ) . 'inc/customizer.php' );
 require_once( trailingslashit( get_template_directory() ) . 'inc/deprecated.php' );
+require_once( trailingslashit( get_template_directory() ) . 'inc/last-updated-meta-box.php' );
 require_once( trailingslashit( get_template_directory() ) . 'inc/review.php' );
 require_once( trailingslashit( get_template_directory() ) . 'inc/scripts.php' );
 require_once( trailingslashit( get_template_directory() ) . 'inc/widgets/image_widget.php' );
@@ -811,7 +812,8 @@ if ( ! function_exists( 'ct_ignite_reset_customizer_options' ) ) {
 			'ct_ignite_author_meta_settings',
 			'ct_ignite_parent_menu_icon_settings',
 			'ct_ignite_excerpt_length_settings',
-			'ct_ignite_read_more_text'
+			'ct_ignite_read_more_text',
+			'last_updated'
 		);
 
 		$social_sites = ct_ignite_customizer_social_media_array();
@@ -836,3 +838,22 @@ if ( ! function_exists( 'ct_ignite_reset_customizer_options' ) ) {
 	}
 }
 add_action( 'admin_init', 'ct_ignite_reset_customizer_options' );
+
+//----------------------------------------------------------------------------------
+// Output the "Last Updated" date on posts
+//----------------------------------------------------------------------------------
+function ct_ignite_output_last_updated_date() {
+	
+	global $post;
+
+	if ( get_the_modified_date() != get_the_date() ) {
+		$updated_post = get_post_meta( $post->ID, 'ct_ignite_last_updated', true );
+		$updated_customizer = get_theme_mod( 'last_updated' );
+		if ( 
+			( $updated_customizer == 'yes' && ($updated_post != 'no') )
+			|| $updated_post == 'yes' 
+			) {
+				echo '<p class="last-updated">'. esc_html__("Last updated on", "ignite") . ' ' . get_the_modified_date() . ' </p>';
+			}
+	}
+}
