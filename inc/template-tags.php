@@ -153,16 +153,16 @@ endif;
  * @since Aguafuerte 1.0.2
  *
  */
-function aguafuerte_custom_logo() {
-	$html = sprintf( '<a href="%1$s" class="custom-logo-link home-link" rel="home" itemprop="url"><img class="custom-logo" src="%2$s" alt="logo"><div class="title-description"><h1 class="site-title">%3$s</h1><h2 class="site-description">%4$s</h2></div></a>',
-		esc_url( home_url( '/' ) ),
-		esc_attr(wp_get_attachment_image_url(get_theme_mod('custom_logo'), 'full') ),
-		esc_html( get_bloginfo( 'name') ) ,
-		esc_html( get_bloginfo( 'description') ) );
+// function aguafuerte_custom_logo() {
+// 	$html = sprintf( '<a href="%1$s" class="custom-logo-link home-link" rel="home" itemprop="url"><img class="custom-logo" src="%2$s" alt="logo"><h1 class="site-title">%3$s</h1><h2 class="site-description">%4$s</h2></a>',
+// 		esc_url( home_url( '/' ) ),
+// 		esc_attr(wp_get_attachment_image_url(get_theme_mod('custom_logo'), 'full') ),
+// 		esc_html( get_bloginfo( 'name') ) ,
+// 		esc_html( get_bloginfo( 'description') ) );
 
-	return $html;
-}
-add_filter('get_custom_logo', 'aguafuerte_custom_logo');
+// 	return $html;
+// }
+// add_filter('get_custom_logo', 'aguafuerte_custom_logo');
 
 if ( ! function_exists( 'aguafuerte_post_navigation' ) ) :
 /**

@@ -4,7 +4,7 @@ Theme URI: http://ebyb.eu/themes/aguafuerte/
 Author: acalfieri
 Author URI: http://ebyb.eu
 Description: Aguafuerte is a theme designed to be fully responsive by taking the mobile-first approach. It features the full range of post formats, two menu locations, one sidebar and three footer widget areas.
-Version: 1.1
+Version: 1.1.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, grid-layout, accessibility-ready, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -683,7 +683,7 @@ input[type="submit"]:focus {
 button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
-input[type="submit"]:focus {
+input[type="submit"]:focus { 
 	outline: thin dotted;
 	outline-width: auto;
 	outline-style: auto;
@@ -810,6 +810,16 @@ a:focus {
  * 6.2 - Menus
  */
 
+#navigation {
+	position: absolute;
+	width: 100%;
+	left: -999em;
+	top: 4.5em;
+	background-color: #fafafa;
+	border-top: 1px solid #9f0000;
+	z-index: 2;
+}
+
 .site-navigation ul {
 	list-style: none;
 	margin: 0;
@@ -861,11 +871,11 @@ a:focus {
 }
 
 .primary-navigation ul ul  {
+	position: absolute;
+	left: -999em; /* -999 so it is not visible until hover. */
 	background-color: transparent;
 	margin: 0;
 	padding-left: 0; /* This is important to reset the padding */
-	position: absolute;
-	left: -999em; /* -999 so it is not visible until hover. */
 	z-index: 99999;
 }
 
@@ -932,16 +942,6 @@ a:focus {
 	border-bottom: 0;
 	margin: 0;
 	padding: 0;
-}
-
-#navigation {
-	position: absolute;
-	width: 100%;
-	left: -999em;
-	top: 4.5em;
-	background-color: #fafafa;
-	border-top: 1px solid #9f0000;
-	z-index: 2;
 }
 
 #masthead.toggled-on {
@@ -1394,8 +1394,8 @@ a:focus {
 /* must have higher specificity than alternative color schemes inline styles */
 .skip-link {
 	background-color: #fafafa;
-	box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
-	color: #1d779f;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	color: #0073aa;
 	display: block;
 	font: bold 14px/normal "Noto Sans", sans-serif;
 	left: -9999em;
@@ -1407,6 +1407,7 @@ a:focus {
 }
 
 .skip-link:focus {
+	color: #0073aa;
 	clip: auto;
 	height: auto;
 	width: auto;
@@ -1639,26 +1640,44 @@ main {
 }
 
 /*---- Formatting of the logo part -----*/
+
 #site-identity {
 	width: 100%;
 	height: 4em;
 	margin: auto;
 	padding-left: 1.5em;
-}
-.site-title {
-	color: #9f0000;
-	margin: 0;
-	line-height: 2
+	overflow: hidden;
 }
 
-.site-title:hover {
-	color: #222;
+.custom-logo-link {
+	width: 70%;
+	display: block;
+}
+
+.custom-logo-link img {
+	margin: 0.5em 0;
+	width: 80%
 }
 
 .home-link {   
-	text-decoration: none;
-	/*! border: 1px solid; */
 	display: block;
+	color: #9f0000;
+	text-decoration: none;
+}
+
+.home-link:hover,
+.home-link:focus {
+	color: #222;
+}
+
+.home-link:focus {
+	outline: 1px dotted #9f0000;
+	outline-offset: -5px;
+}
+
+.site-title {
+	margin: 0;
+	line-height: 2
 }
 
 .site-description {
@@ -1667,13 +1686,7 @@ main {
 	margin: 0.8em 0 0;
 	padding: 0;
 	color: #656565;
-	/*! font-size: 1.4em; */
 	letter-spacing: 0.1em; 
-}
-
-#site-identity img {
-	margin: 0.5em 0;
-	width: 80%
 }
 
 /**
@@ -1914,7 +1927,8 @@ a.entry-date:hover {
 	width: 0;
 }
 
-.tag-links a:hover:before {
+.tag-links a:hover:before,
+.tag-links a:focus:before {
 	border-right-color: #9f0000;
 }
 
@@ -2703,27 +2717,13 @@ h6 {
 }*/
 
 #navigation {
-	position: static;
+	position: relative;
 	width: auto;
 	top: unset;
 	left: unset;
 	margin: 1em auto 0;
 	background-color: transparent;
 	border: 0;
-}
-
-#main-menu {
-	-webkit-flex: 0 1 100%;
-	-ms-flex: 0 1 100%;
-	flex: 0 1 100%;
-}
-	
-#main-menu #primary-menu {
-	/*background-color: transparent;*/
-}
-	
-.site-navigation a {
-	color: #222;
 }
 
 .primary-navigation {
@@ -2791,7 +2791,11 @@ h6 {
 .primary-navigation > ul > .page_item_has_children:hover ul a,
 .primary-navigation > ul > .page_item_has_children.focus ul a {
 	background-color: #f6f6f6;
-	box-shadow: 1px 1px 5px 1px #ccc;
+	box-shadow: 1px 1px 5px 1px #ccc;	
+}
+
+.primary-navigation a:focus {
+	outline-offset: -2px;
 }
 
 .primary-navigation li .menu-item-has-children:hover > ul a,
@@ -2992,18 +2996,21 @@ main {
 
 /*---- Formatting of the logo part -----*/
 #site-identity {
-	width: 100%;  
+	width: 60%;
+	margin: auto;
 	text-align: center;
 	height: initial;
 	padding: 0;
 }
 
-.site-title {
-	font-size: 2.618em;
-	line-height: 1.618em;   
+.custom-logo-link {
 	width: 100%;
-	margin: 0;
-	padding: 0;
+}
+
+.custom-logo-link img {
+	margin: 1em auto 0;
+	width: 400px;
+	height: auto;
 }
 
 .home-link {
@@ -3012,18 +3019,20 @@ main {
 	justify-content: center;
 }
 
+.site-title {
+	font-size: 2.618em;
+	line-height: 2.618;   
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+
 .site-description {
 	font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
 	display: block;
 	width:100%;
 	margin: 0;
 	line-height: 1em;    
-}
-
-#site-identity img {
-	margin: 1em auto;
-	width: 400px;
-	height: auto;
 }
 
 /**
@@ -3201,7 +3210,7 @@ main {
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -50%);
-	z-index: 99;
+	z-index: 1;
 	text-align: center;
 	min-height: auto;
 	height: auto;
