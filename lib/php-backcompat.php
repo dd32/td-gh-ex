@@ -70,7 +70,7 @@ add_action( 'load-customize.php', 'bayleaf_prevent_customize_load' );
  *
  * @global const PHP_VERSION PHP version.
  */
-function aagam_prevent_preview() {
+function bayleaf_prevent_preview() {
 	if ( isset( $_GET['preview'] ) ) {
 		wp_die(
 			sprintf(
@@ -81,4 +81,4 @@ function aagam_prevent_preview() {
 		); // WPCS xss ok. 'PHP_VERSION' is a Predefined Constant.
 	}
 }
-add_action( 'template_redirect', 'aagam_prevent_preview' );
+add_action( 'template_redirect', 'bayleaf_prevent_preview' );

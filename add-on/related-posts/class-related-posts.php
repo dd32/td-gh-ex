@@ -61,7 +61,7 @@ class Related_Posts {
 	 *
 	 * @since 1.0.0
 	 */
-	public static function related_posts() {
+	public function related_posts() {
 
 		global $post;
 
@@ -176,7 +176,7 @@ class Related_Posts {
 	 *
 	 * @param Obj $query WP query object.
 	 */
-	public static function display_posts( $query ) {
+	public function display_posts( $query ) {
 
 		echo '<div class="wrapper"><h3 class="related-posts-title">';
 		esc_html_e( 'You may also like', 'bayleaf' );
@@ -195,7 +195,7 @@ class Related_Posts {
 	 *
 	 * @since 1.0.0
 	 */
-	public static function remove_nav() {
+	public function remove_nav() {
 		if ( bayleaf_get_mod( 'bayleaf_related_posts', 'none' ) ) {
 			remove_action( 'bayleaf_inside_main_content', 'bayleaf_post_navigation' );
 		}

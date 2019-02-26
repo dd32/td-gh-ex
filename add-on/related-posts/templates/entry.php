@@ -12,12 +12,12 @@
 	<div class="entry-index-wrapper">
 		<?php
 		if ( bayleaf_get_mod( 'bayleaf_thumbnail_placeholder', 'none' ) || has_post_thumbnail() ) {
-			$featured_content = [
+			$bayleaf_featured_content = [
 				[ 'bayleaf_get_template_partial', 'template-parts/meta', 'meta-permalink' ],
 				[ 'bayleaf_markup', 'dp-thumbnail', [ [ 'the_post_thumbnail', 'bayleaf-medium' ] ] ],
 			];
 
-			bayleaf_markup( 'dp-featured-content', $featured_content );
+			bayleaf_markup( 'dp-featured-content', $bayleaf_featured_content );
 		}
 		?>
 		<div class="sub-entry">

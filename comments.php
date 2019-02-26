@@ -55,7 +55,7 @@ if ( post_password_required() ) {
 						'comments title',
 						'bayleaf'
 					) ),
-					number_format_i18n( $bayleaf_comments_number ),
+					esc_html( number_format_i18n( $bayleaf_comments_number ) ),
 					'<span>' . get_the_title() . '</span>'
 				);
 			}
