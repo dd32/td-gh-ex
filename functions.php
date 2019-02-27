@@ -203,6 +203,7 @@ function bayleaf_setup() {
 			'woocommerce',
 			'plugins-compat',
 			'related-posts',
+			'admin-page',
 		)
 	);
 	foreach ( $addons as $addon ) {
