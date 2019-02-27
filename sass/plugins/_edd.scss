@@ -1,8 +1,65 @@
 .edd_downloads_list {
-    margin-left: -8px;
-    .edd-download-inner {
-        margin-bottom: $small__spacing;
+    .edd_download{
+        margin-bottom: $base__spacing;
+        .edd_download_title {
+            margin-bottom: $small__spacing;
+        }
+        .edd_download_image,
+        .edd_download_excerpt {
+            margin-bottom: $base__spacing;
+        }
     }
+}
+.edd_pagination {
+    a.page-numbers, .page-numbers {
+        text-decoration: none;
+        padding: 7px 14px;
+    }
+}
+
+//login
+#edd_login_form {
+    label {
+        min-width: 15%;
+        display: inline-block;
+    }
+    .edd-input {
+            width: 80%;
+        }
+    @media screen and (max-width: 768px) { 
+        .edd-input {
+            width: 100%;
+        }
+    }
+
+}
+//profile editor
+#edd_profile_editor_form {
+    label {
+        min-width: 15%;
+        display: inline-block;
+    }
+    .edd-input {
+            width: 80%;
+        }
+    .select {
+            height: 40px;
+    }
+    fieldset {
+        margin-bottom: $base__spacing;
+        legend {
+            font-size: 1em;
+            margin: $small__spacing 0;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+    }
+    @media screen and (max-width: 768px) { 
+        .edd-input {
+            width: 100%;
+        }
+    }
+
 }
 //download button
 .edd-submit,
@@ -19,6 +76,13 @@ input[type="submit"].edd-submit {
 //image
 .edd_download_image {
     margin-bottom: $small__spacing;
+    background: #f1f1f1;
+}
+//single download 
+.single-download {
+    .featured-img {
+        background: #f1f1f1;
+    }
 }
 //checkout 
 .edd-checkout {
@@ -26,28 +90,131 @@ input[type="submit"].edd-submit {
         display: none;
     }
     #edd_checkout_cart {
+        box-shadow: 2px 2px 20px rgba(0,0,0,0.05);
         @extend table;
+        td {
+            padding-top: 15px;
+            padding-bottom: 15px;
+            
+        }
+        
+        th {
+            background: #fafafa;
+        }
+        img {
+            width: 50px;
+            height: auto;
+            display: block;
+            margin-right: 1rem;
+        }
+        .edd_cart_total {
+            text-align: right;
+        }
+    }
+    .edd-payment-icons {
+        margin-bottom: 30px!important;
+    }
+    #edd_checkout_form_wrap {
+        #edd_login_fields,
+        #edd_register_fields{
+            background: #fff;
+            box-shadow: 2px 2px 20px rgba(0,0,0,0.05);
+            border: 1px solid #ededed;
+            #edd_checkout_user_info { 
+                border:none;
+                box-shadow: none;
+            }
+        }
+        #edd_checkout_user_info {
+            background: #fff;
+            box-shadow: 2px 2px 20px rgba(0,0,0,0.05);
+            border: 1px solid #ededed;
+            margin-top: 15px;
+        }
+        fieldset { 
+            box-shadow: none;
+        }
+        input[type="text"], input[type="email"], input[type="url"], input[type="password"], input[type="search"], input[type="number"], input[type="tel"], textarea, select { 
+            padding: 10px;
+            width: 100%;
+            border-radius: 0;
+            box-shadow: 1px 1px 10px rgba(0,0,0,0.03);
+            margin-bottom: 15px;
+        }
+    }
+    #edd_final_total_wrap {
+        font-size: 1.2rem;
+        text-align: center;
+        border: none!important;
+        background: none!important;
+       
+    }
+    #edd-purchase-button {
+        font-size: 1.3rem;
+        text-align: center;
+        width: 100%;
+        text-transform: uppercase;
     }
 }
 .widget_edd_cart_widget {
-    .edd_checkout {
-    }
+
     .edd-cart-number-of-items {
-        border-left: 4px solid $color__gray;
         margin-top: $small__spacing/2;
-        padding-left: $small__spacing/2;
+        padding: $small__spacing/2  $small__spacing;
+        margin-bottom: 0;
+        background: darken(#fafafa,2%);
+        text-align: center;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        font-style: normal;
+        font-size: 90%;
     }
     .edd-cart {
-        padding: $small__spacing;
+        padding: 0;
+
     }
     .edd-cart-meta.edd_subtotal, .edd-cart-meta.edd_total {
-        margin-left: -$small__spacing;
-        margin-right: -$small__spacing;
-        padding-left: $small__spacing;
-        padding-right: $small__spacing;
+        text-align: center;
+        padding: $small__spacing;
+    }
+    .edd-cart-item {
+        background: #fff;
+        padding: $small__spacing;
+    }
+    .empty,
+    .edd_checkout {
+        background: #fff;
+        text-align: center;
+        text-transform: uppercase;
+        padding: $small__spacing;
+    }
+    .edd-remove-from-cart {
+        color: lightcoral;
+        &:hover, &:focus {
+            color: red;
+        }
+    }
+
+}
+.widget_edd_product_details {
+    .edd-submit.button {
+        width: 100%;
+        padding: $small__spacing;
+    }
+    .edd_price_options {
+        background: #fff;
+        box-shadow: 2px 2px 20px rgba(0,0,0,0.05);
+        li {
+            padding: $small__spacing;
+        }
+    }
+    .edd-meta > span {
+        margin-bottom: $small__spacing/2;
+        display: inline-block;
     }
 }
-@include media(max-width 600px) { 
+
+@media screen and (max-width: 600px) { 
     .edd_download_columns_3 {
         .edd_download {
             width: 100%!important;

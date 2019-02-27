@@ -2,7 +2,7 @@
 .site-header {
     .header-content.inline {
         //DESKTOP
-        @include media(769px) {
+        @media screen and (min-width:769px) {
             //header navigation
             .header-nav {
                 margin:0 -99em;
@@ -17,7 +17,7 @@
                         display: inline-block;
                         a {
                             display: block;
-                            @include padding($small__spacing 0 $small__spacing $small__spacing);
+                            @include padding($small__spacing );
                         }
                     }
                 }
@@ -31,14 +31,13 @@
             //site title and logo
             .custom-logo-link,
             .site-title {
-                @include span-columns(6);
+                @include column(6/12);
                 @include padding($base__spacing null $base__spacing $base__spacing );
             }
             //main nav
             .main-navigation {
-                @include span-columns(6);
-                @include omega();
                 @include padding(0);
+                @include column(6/12);
                 //first
                 ul {
                     text-align: right;
@@ -87,14 +86,13 @@
             }
         }
         //MOBILE
-        @include media(max-width 768px) {
+        @media screen and (max-width:768px) {
             .custom-logo-link,
             .site-title {
-                @include span-columns(10);
                 @include padding($base__spacing);
+                display: block;
             }
             .header-nav {
-                @include span-columns(12);
                 @include padding(0 $base__spacing );
                 ul {
                     list-style: none;

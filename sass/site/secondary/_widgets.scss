@@ -1,6 +1,7 @@
 h3.widget-title {
     @include padding(0);
-    margin-bottom: $small__spacing/2;
+    margin-bottom: $small__spacing;
+    text-transform: uppercase;
 }
 .widget-area{
     @include padding($base__spacing);
@@ -130,6 +131,11 @@ h3.widget-title {
 
 //premim widgets
 .ig-recent-posts-widget {
+    li {
+        margin-bottom: $small__spacing;
+        display: block;
+        clear: both;
+    }
     .post-image {
         float: left;
         margin: 0 10px 5px 0;
@@ -147,10 +153,11 @@ h3.widget-title {
 .ig-social-widget {
     a {
         display: block;
-        margin: 5px 0;
+        margin: 8px 0;
         padding: 8px 10px;
         color:#fff!important;
         @include border-radius(2px);
+        box-shadow: 2px 2px 5px rgba(0,0,0,.2);
         .text {
             margin-left: 10px;
         }

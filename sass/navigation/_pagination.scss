@@ -63,6 +63,15 @@ ul.page-numbers {
 .page-links {
     border: 1px solid $color__gray;
     display: inline-block;
+    padding: 6px 0 6px $small__spacing;
+    a,.current {
+        padding: $small__spacing/2  $small__spacing;
+        
+    }
+    .current {
+            background: rgba(0,0,0,.05);
+
+    }
     .page-links-title,
     .num {
         float: left;

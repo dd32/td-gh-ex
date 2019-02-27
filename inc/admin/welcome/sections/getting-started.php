@@ -25,12 +25,12 @@
                 <li><?php esc_html_e( 'Premium support', 'basic-shop' ); ?></li>
                 <li><?php esc_html_e( 'Money back guarantee', 'basic-shop' ); ?></li>
             </ul>
-            <a href="<?php echo esc_url( 'https://iograficathemes.com/shop/'. $theme_data->get( 'TextDomain' )); ?>" target="_blank" class="button-upgrade">
+            <a href="<?php echo esc_url( 'https://iograficathemes.com/theme/'. $theme_data->get( 'TextDomain' )); ?>" target="_blank" class="button-upgrade">
                 <?php esc_html_e('view all premium features', 'basic-shop'); ?>
             </a>
         </p>
     </div>
-     <div class="col2 omega">
+     <div class="col2">
         <h3><?php esc_html_e( 'Enjoying the theme?', 'basic-shop' ); ?></h3>
         <p class="about"><?php esc_html_e( 'If you like this theme why not leave us a review on WordPress.org?  We\'d really appreciate it!', 'basic-shop' ); ?></p>
         <p>

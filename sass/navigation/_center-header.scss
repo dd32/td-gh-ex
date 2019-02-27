@@ -2,7 +2,7 @@
 .site-header {
     .header-content.center {
         //DESKTOP
-        @include media(769px) {
+        @media screen and (min-width:769px) {
             //header navigation
             .header-nav {
                 margin:0 -99em;
@@ -31,13 +31,11 @@
             //site title and logo
             .custom-logo-link,
             .site-title {
-                @include span-columns(12);
                 @include padding($base__spacing);
                 text-align: center;
             }
             //main nav
             .main-navigation {
-                @include span-columns(12);
                 @include padding(0);
                 //first
                 ul {
@@ -84,15 +82,15 @@
             }
         }
         //MOBILE
-        @include media(max-width 768px) {
+        @media screen and (max-width:768px) {
             .custom-logo-link,
             .site-title {
-                @include span-columns(12);
+                @include columns(12);
                 @include padding($small__spacing $base__spacing);
                 text-align: center
             }
             .header-nav {
-                @include span-columns(12);
+                @include columns(12);
                 @include padding(0 $base__spacing );
                 text-align: center;
                 ul {

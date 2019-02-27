@@ -1,7 +1,7 @@
 .site-header {
     border-bottom: 1px solid;
     .header-content {
-         @include outer-container();
+         @include center();
          width: 100%;
         .site-branding {
             .site-title {

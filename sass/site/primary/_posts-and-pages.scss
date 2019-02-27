@@ -1,3 +1,48 @@
+@media screen and (min-width:769px) {
+    .site-content {
+        @include center();
+        display: block;
+        clear: both;
+    }
+    .content-area {
+        @include span(8/12);
+    }
+    .widget-area {
+        @include span(4/12);
+    }
+    .sidebar-left {
+        .content-area {
+            @include span(8/12);
+            float:right;
+        }
+        .widget-area {
+            float: left;
+        }
+    }
+    .page-template-page-focus {
+            .content-area {
+                @include center(980px);
+            }
+        }
+    .sidebar-left .full-width,
+    .full-width {
+        .content-area {
+            @include column(12/12);
+            @include move(0);
+        }
+    }
+}
+.site-content {
+    @include margin(0 null);
+    @include padding($small__spacing 0 0 0);
+}
+.page-template-page-elementor,
+.page-template-page-beaver-builder {
+    .site-content {
+        @include center(100%);
+        padding: 0;
+    }
+}
 /*-----------------------------
 # Singular
 ------------------------------*/
@@ -20,8 +65,9 @@ article {
     display: inline-block;
     width: 100%;
     clear: both;
+    font-size: 95%;
     @include margin(0);
-    @include padding($small__spacing 0 0 0);
+    @include padding($small__spacing/2 0 0 0);
     .byline {
         margin-right: $small__spacing;
     }
@@ -41,7 +87,8 @@ article {
 }
 //entry-footer
 .entry-footer {
-    @include padding(0 0 $small__spacing 0);
+    @include padding(0 0 $small__spacing/2 0);
+    font-size: 95%;
     .tags-links {
         margin-right: $small__spacing;
     }
@@ -130,8 +177,7 @@ article {
         }
         .ig-testimonials {
             text-align: left;
-            @include span-columns(6);
-            @include omega(2n);
+            @include columns(6);
         }
         .page-numbers {
             display: none;

@@ -60,7 +60,7 @@ if ( ! function_exists( 'igthemes_download_content' ) ) {
 		<?php } else { ?>
         <div class="entry-content">
         <?php
-            igthemes_download_thumbnail( 'full' );
+            igthemes_post_thumbnail( 'full' );
 
             the_excerpt( );
         ?>

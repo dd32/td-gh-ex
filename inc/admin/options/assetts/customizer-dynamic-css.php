@@ -50,11 +50,12 @@ function igthemes_add_daynamic_css() {
         background: '. igthemes_color_brightness( get_theme_mod('footer_background_color', $footer_background_color ),5 ).';
         border: 1px solid '. igthemes_color_brightness(get_theme_mod('footer_background_color', $footer_background_color ),-20) .';
     }
+    .edd_pagination .page-numbers, .edd_pagination a.page-numbers,
     ul.page-numbers li {
         background: '. igthemes_color_brightness($bg_color,-1 ).';
         border: 1px solid '. igthemes_color_brightness($bg_color,-15 ).';
     }
-
+    .edd_pagination .page-numbers.current,
     ul.page-numbers .current {
         background: '. igthemes_color_brightness($bg_color,-5 ).';
     }
@@ -77,7 +78,6 @@ function igthemes_add_daynamic_css() {
     .footer-widget .widget_nav_menu ul {
         background:'. igthemes_color_brightness(get_theme_mod('footer_background_color', $footer_background_color ),5) .'; 
     }
-    
     .woocommerce .shop-table {
         border:1px solid '. igthemes_color_brightness($bg_color,-20) .'; 
         background:'. $bg_color .';
@@ -110,6 +110,9 @@ function igthemes_add_daynamic_css() {
     }
     .woocommerce .woocommerce-checkout #payment, .woocommerce #add_payment_method #payment{
         background: '. igthemes_color_brightness($bg_color,15 ).';
+    }
+    .widget_edd_cart_widget {
+        border-bottom: 3px solid '. get_theme_mod('button_background_hover', $body_link_hover) .';
     }
     ';
     wp_add_inline_style( 'dynamic-style', $style );

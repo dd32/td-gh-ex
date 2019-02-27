@@ -2,11 +2,11 @@
 Theme Name: Basic Shop
 Theme URI: https://iograficathemes.com/wordpress-themes/basic-shop/
 Author: iografica
-Author URI: http://www.iograficathemes.com
+Author URI: https://www.iograficathemes.com
 Description: Basic Shop is a basic blog or business, responsive and clean coded, WordPress theme. Thanks to its integrated WooCommerce and Easy Digital Downloads functions, it is also suitable for those wishing to launch a commercial activity.
 Basic Shop is fully compatible with the most popular e-commerce plugins for WordPress like WooCommerce and Easy Digital Downloads and is 100% responsive and optimized for mobile, tablets, and desktop computers.
 The theme works like a charm with tons of free and premium plugins like Yoast Seo, JetPack, Breadcrumb NavXT, WP-PageNavi, Contact Form 7, Elementor Page Builder, Gravity Forms and many more...
-Version: 1.11
+Version: 1.12
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: basic-shop
@@ -43,16 +43,11 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Media
     ## Captions
     ## Galleries
-/*------------------------------------------------------------*/
-@import 'bourbon';
-// Change the grid settings
-$max-width: 1190px;
-@import 'neat';
+--------------------------------------------------------------*/
+@import "bourbon";
 
-/*--------------------------------------------------------------*/
 @import "sass/variables-site/variables-site";
 @import "sass/mixins/mixins-master";
-
 /*--------------------------------------------------------------
 # Normalize
 --------------------------------------------------------------*/
@@ -60,11 +55,8 @@ $max-width: 1190px;
 /*--------------------------------------------------------------
 # Grid
 --------------------------------------------------------------*/
-@import "sass/layout/_grid";
-/*--------------------------------------------------------------
-# Layout
---------------------------------------------------------------*/
-@import "sass/layout/_layout";
+@import "sass/grid/index";
+@import "sass/layout/layout";
 
 /*--------------------------------------------------------------
 # Typography

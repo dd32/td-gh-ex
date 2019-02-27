@@ -16,10 +16,6 @@ get_header(); ?>
             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
             <?php 
                 do_action( 'igthemes_single_download' );
-                the_post_navigation( array(
-                    'next_text' => __( 'Next', 'basic-shop' ),
-                    'prev_text' => __( 'Previous', 'basic-shop' ),
-                ));
                 // If comments are open or we have at least one comment, load up the comment template.
                 if ( comments_open() || get_comments_number() ) :
                     comments_template();

@@ -52,3 +52,9 @@ function igthemes_edd_products_per_page( $query ) {
     }
 }
 add_action( 'pre_get_posts', 'igthemes_edd_products_per_page', 10 );
+
+
+// remove the standard button that shows after the download's content
+if ( is_active_widget(false, false, 'edd_product_details', true) ) {
+    remove_action( 'edd_after_download_content', 'edd_append_purchase_link' );
+}
