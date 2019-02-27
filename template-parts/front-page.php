@@ -5,61 +5,7 @@
  */
 get_header();
 if(is_home()){ ?>
-    <div class="featured_wrap">
-    <div class="container">
-        <?php
-        $blog_layout_class = (get_theme_mod('sidebar_style', 'right_sidebar') == 'left_sidebar') ? "9" : ((get_theme_mod('sidebar_style', 'right_sidebar') == 'right_sidebar') ? "9" : "12");
-        if (get_theme_mod('sidebar_style', 'right_sidebar') == 'left_sidebar') {
-            ?>
-            <!-- Left sidebar -->
-            <div class="col-md-3 col-sm-3 col-xs-12">
-                <div class="sidebar">
-                <div class="<?php echo esc_attr(get_theme_mod('sidebar_style')); ?>">
-                    <?php get_sidebar(); ?>     
-                </div>
-            </div>
-            </div> <!-- and Left sidebar -->
-        <?php } ?>
-        <!-- content -->
-        <div class="col-md-<?php echo esc_attr($blog_layout_class); ?> col-sm-9 col-xs-12">
-            <div class="memory_block ">
-                 <h3 class="widget-title"><?php esc_html_e("Blog",'best-classifieds'); ?></h3>
-                <?php
-                $icounter = 1;
-                while (have_posts()) : the_post();
-                    $icounter = ($icounter > 2) ? 1 : $icounter;
-                    ?>
-                    <div class="every_people">  
-                        <div class="every_sec">  
-                          <div class="post_box">
-                            <ul>  
-                                <?php get_template_part('template-parts/content', 'blog'); ?> 
-                            </ul>
-                          </div>
-                        </div>
-                    </div>
-                    <?php if ($icounter == 2): ?>
-                        <div class="clearfix"></div>
-                    <?php endif; 
-                $icounter++;
-                endwhile; // End of the loop.
-                 the_posts_pagination( array(
-                    'screen_reader_text' => ' ', 
-                    'prev_text' => __( '<i class="fa fa-arrow-left" aria-hidden="true"></i>', 'best-classifieds' ),
-                   'next_text' => __( '<i class="fa fa-arrow-right" aria-hidden="true"></i>', 'best-classifieds' )));
-                ?>
-            </div>
-        </div><!-- and content -->
-        <?php if (get_theme_mod('sidebar_style', 'right_sidebar') == 'right_sidebar') { ?>
-            <!-- right sidebar -->
-            <div class="col-md-3 col-sm-3 col-xs-12">
-                <div class="sidebar">
-                    <?php get_sidebar(); ?>     
-                </div>
-            </div> <!-- and right sidebar -->
-        <?php } ?>
-    </div><!-- and Main  -->
-</div>
+    
 <?php 
 }else{ 
   $theme_i = 0;  if(!get_theme_mod('frontpage_slider_sectionswitch',false)): ?>   
@@ -164,14 +110,14 @@ if(is_home()){ ?>
                     <?php $i= 1;
                      $args             = array('orderby'    => 'id','hide_empty' => 0,);
                      $categories       = get_categories( $args );
-                     foreach ( $categories as $category_list ) :
-                     $cat_img = wp_get_attachment_image_url(get_theme_mod('category_img_' .  $category_list->cat_ID )); 
+                     foreach ( $categories as $category_list ) :                    
                      if(get_theme_mod('category_switch_'.$category_list->cat_ID,false)): ?>
                     <div class="col-md-3 col-sm-3 col-xs-6">
                         <div class="category-box">
-                            <?php if($cat_img!=''): ?>
+                            <?php if(get_theme_mod('category_img_'.$category_list->cat_ID,'fa fa-lightbulb-o' )!=''): ?>
                             <div class="category-icon">
-                                <a href="<?php echo esc_url(get_category_link($category_list->cat_ID));?>"><img src="<?php echo esc_url($cat_img); ?>"></a>
+                                <a href="<?php echo esc_url(get_category_link($category_list->cat_ID));?>" style="color:<?php echo esc_attr(get_theme_mod('category_color_'.$category_list->cat_ID,'#4396FF' )); ?>" ><i class="<?php echo esc_attr(get_theme_mod('category_img_'.$category_list->cat_ID,'fa fa-lightbulb-o' )); ?>" aria-hidden="true"></i>
+                                </a>
                             </div>
                         <?php endif; ?>
                             <div class="category-title">
@@ -220,7 +166,7 @@ if(is_home()){ ?>
                     <div class="col-md-4 col-sm-4 col-xs-12">
                         <div class="weAre-box">
                             <div class="weAre-icon">
-                                <i class="fa <?php echo esc_html(get_theme_mod('homepage_keyfeature'.$i.'_icon','fa-eye')); ?>" aria-hidden="true"></i>
+                                <i class="<?php echo esc_html(get_theme_mod('homepage_keyfeature'.$i.'_icon','fa fa-eye')); ?>" aria-hidden="true"></i>
                             </div>                            
                             <div class="weAre-title-content">
                                 <h3><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>

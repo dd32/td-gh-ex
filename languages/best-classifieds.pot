@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Best Classifieds\n"
-"POT-Creation-Date: 2019-02-19 00:36+0530\n"
+"POT-Creation-Date: 2019-02-27 18:54+0530\n"
 "PO-Revision-Date: 2019-02-19 00:35+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -22,7 +22,8 @@ msgstr ""
 "X-Poedit-SearchPathExcluded-0: *.js\n"
 
 #: 404.php:16
-msgid "Error 404 "
+#, php-format
+msgid "Error 404 : %s"
 msgstr ""
 
 #: 404.php:41
@@ -35,8 +36,16 @@ msgid ""
 "different keywords."
 msgstr ""
 
-#: archive.php:65 index.php:68 search.php:64 template-parts/front-page.php:333
+#: archive.php:65 index.php:68 search.php:64 template-parts/front-page.php:279
 msgid "Read More"
+msgstr ""
+
+#: archive.php:82 index.php:85 search.php:79 single.php:74
+msgid "<i class=\"fa fa-angle-double-left\" aria-hidden=\"true\"></i> Previous"
+msgstr ""
+
+#: archive.php:83 index.php:86 search.php:80 single.php:75
+msgid "Next <i class=\"fa fa-angle-double-right\" aria-hidden=\"true\"></i>"
 msgstr ""
 
 #. translators: %s: post title
@@ -58,11 +67,11 @@ msgstr[1] ""
 msgid "Reply"
 msgstr ""
 
-#: comments.php:45 template-parts/front-page.php:109
+#: comments.php:45 template-parts/front-page.php:55
 msgid "Previous"
 msgstr ""
 
-#: comments.php:46 template-parts/front-page.php:113
+#: comments.php:46 template-parts/front-page.php:59
 msgid "Next"
 msgstr ""
 
@@ -311,8 +320,8 @@ msgid "Enter Search Title "
 msgstr ""
 
 #: inc/theme-customization.php:207 inc/theme-customization.php:279
-#: inc/theme-customization.php:365 inc/theme-customization.php:467
-#: inc/theme-customization.php:546
+#: inc/theme-customization.php:389 inc/theme-customization.php:491
+#: inc/theme-customization.php:570
 msgid "Enter Title"
 msgstr ""
 
@@ -356,176 +365,176 @@ msgstr ""
 msgid "Enter Section Title "
 msgstr ""
 
-#: inc/theme-customization.php:297
-msgid "Upload Icon Image Of "
+#: inc/theme-customization.php:305
+msgid " Category Icon & Color "
 msgstr ""
 
-#: inc/theme-customization.php:318
+#: inc/theme-customization.php:342
 msgid "Display on front page area,check this box."
 msgstr ""
 
-#: inc/theme-customization.php:328
+#: inc/theme-customization.php:352
 msgid "Front Page : Key Feature Section"
 msgstr ""
 
-#: inc/theme-customization.php:347
+#: inc/theme-customization.php:371
 msgid "Key Feature Section for hide"
 msgstr ""
 
-#: inc/theme-customization.php:363
+#: inc/theme-customization.php:387
 msgid "Enter KeyFeature Section Title "
 msgstr ""
 
-#: inc/theme-customization.php:380 inc/theme-customization.php:382
+#: inc/theme-customization.php:404 inc/theme-customization.php:406
 msgid "Enter Subtitle"
 msgstr ""
 
-#: inc/theme-customization.php:397
+#: inc/theme-customization.php:421
 msgid "Select Category For Key Feature"
 msgstr ""
 
-#: inc/theme-customization.php:422
+#: inc/theme-customization.php:446
 msgid " Key Feature Icon "
 msgstr ""
 
-#: inc/theme-customization.php:431
+#: inc/theme-customization.php:455
 msgid "Front Page : Testimonial Section"
 msgstr ""
 
-#: inc/theme-customization.php:450
+#: inc/theme-customization.php:474
 msgid "Testimonial Section for hide"
 msgstr ""
 
-#: inc/theme-customization.php:465
+#: inc/theme-customization.php:489
 msgid "Enter Testimonial Title "
 msgstr ""
 
-#: inc/theme-customization.php:482
+#: inc/theme-customization.php:506
 msgid "Select Category For Testimonial"
 msgstr ""
 
-#: inc/theme-customization.php:501
+#: inc/theme-customization.php:525
 msgid "Post Count"
 msgstr ""
 
-#: inc/theme-customization.php:502
+#: inc/theme-customization.php:526
 msgid "Enter number. default 3"
 msgstr ""
 
-#: inc/theme-customization.php:509
+#: inc/theme-customization.php:533
 msgid "Front Page : Latest Blog Section"
 msgstr ""
 
-#: inc/theme-customization.php:528
+#: inc/theme-customization.php:552
 msgid "Latest Blog Section"
 msgstr ""
 
-#: inc/theme-customization.php:544
+#: inc/theme-customization.php:568
 msgid "Enter Latest Blog Title "
 msgstr ""
 
-#: inc/theme-customization.php:561
+#: inc/theme-customization.php:585
 msgid "Enter Short Description"
 msgstr ""
 
-#: inc/theme-customization.php:563
+#: inc/theme-customization.php:587
 msgid "Enter Description"
 msgstr ""
 
-#: inc/theme-customization.php:577
+#: inc/theme-customization.php:601
 msgid "Select Category For Latest Blog"
 msgstr ""
 
-#: inc/theme-customization.php:595
+#: inc/theme-customization.php:619
 msgid "Entet Latest Blog Per Page"
 msgstr ""
 
-#: inc/theme-customization.php:596
+#: inc/theme-customization.php:620
 msgid ""
 "Entet Latest Blog Per Page , you would like to display in the Front Page."
 msgstr ""
 
-#: inc/theme-customization.php:614
+#: inc/theme-customization.php:638
 msgid "Theme Color "
 msgstr ""
 
-#: inc/theme-customization.php:633
+#: inc/theme-customization.php:657
 msgid "Secondary Color"
 msgstr ""
 
-#: inc/theme-customization.php:643
+#: inc/theme-customization.php:667
 msgid "Blog(Archive) Page"
 msgstr ""
 
-#: inc/theme-customization.php:655
+#: inc/theme-customization.php:679
 msgid "Check this box for hide meta tag"
 msgstr ""
 
-#: inc/theme-customization.php:666
+#: inc/theme-customization.php:690
 msgid "Check this box for hide post image"
 msgstr ""
 
-#: inc/theme-customization.php:677
+#: inc/theme-customization.php:701
 msgid "Check this box for hide read more link"
 msgstr ""
 
-#: inc/theme-customization.php:690
+#: inc/theme-customization.php:714
 msgid "Post Content Limit"
 msgstr ""
 
-#: inc/theme-customization.php:700 inc/theme-customization.php:745
+#: inc/theme-customization.php:724 inc/theme-customization.php:769
 msgid "Sidebar Layout"
 msgstr ""
 
-#: inc/theme-customization.php:711
+#: inc/theme-customization.php:735
 msgid "Single Post Page"
 msgstr ""
 
-#: inc/theme-customization.php:723
+#: inc/theme-customization.php:747
 msgid "Check this box for hide meta tag."
 msgstr ""
 
-#: inc/theme-customization.php:735
+#: inc/theme-customization.php:759
 msgid "Check this box for hide post image."
 msgstr ""
 
-#: inc/theme-customization.php:756
+#: inc/theme-customization.php:780
 msgid "Top Search Section"
 msgstr ""
 
-#: inc/theme-customization.php:768
+#: inc/theme-customization.php:792
 msgid "Check this box for hide Top Search Section."
 msgstr ""
 
-#: inc/theme-customization.php:781
+#: inc/theme-customization.php:805
 msgid "Enter fontawesome class (ex. fa-search)"
 msgstr ""
 
-#: inc/theme-customization.php:783
+#: inc/theme-customization.php:807
 msgid "Enter fa class (ex. fa-search)"
 msgstr ""
 
-#: inc/theme-customization.php:792
+#: inc/theme-customization.php:816
 msgid "Footer"
 msgstr ""
 
-#: inc/theme-customization.php:793
+#: inc/theme-customization.php:817
 msgid "Footer options"
 msgstr ""
 
-#: inc/theme-customization.php:798
+#: inc/theme-customization.php:822
 msgid "Footer Copyright Area"
 msgstr ""
 
-#: inc/theme-customization.php:815
+#: inc/theme-customization.php:839
 msgid "Enter Copyright Text"
 msgstr ""
 
-#: inc/theme-customization.php:823
+#: inc/theme-customization.php:847
 msgid "Footer Social icons"
 msgstr ""
 
-#: inc/theme-customization.php:825
+#: inc/theme-customization.php:849
 msgid ""
 "In first input box, you need to add FONT AWESOME shortcode which you can "
 "find <a target=\"_blank\" href=\"https://fortawesome.github.io/Font-Awesome/"
@@ -534,19 +543,19 @@ msgid ""
 "hide the icon."
 msgstr ""
 
-#: inc/theme-customization.php:834
+#: inc/theme-customization.php:858
 msgid "Social icons "
 msgstr ""
 
-#: inc/theme-customization.php:851
+#: inc/theme-customization.php:875
 msgid "Enter Icon"
 msgstr ""
 
-#: inc/theme-customization.php:862
+#: inc/theme-customization.php:886
 msgid "Social Link "
 msgstr ""
 
-#: inc/theme-customization.php:880
+#: inc/theme-customization.php:904
 msgid "Enter Url"
 msgstr ""
 
@@ -567,19 +576,7 @@ msgstr ""
 msgid "Search..."
 msgstr ""
 
-#: template-parts/front-page.php:26
-msgid "Blog"
-msgstr ""
-
-#: template-parts/front-page.php:48
-msgid "<i class=\"fa fa-arrow-left\" aria-hidden=\"true\"></i>"
-msgstr ""
-
-#: template-parts/front-page.php:49
-msgid "<i class=\"fa fa-arrow-right\" aria-hidden=\"true\"></i>"
-msgstr ""
-
-#: template-parts/front-page.php:78
+#: template-parts/front-page.php:24
 msgid "Buy Now"
 msgstr ""
 

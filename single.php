@@ -70,9 +70,9 @@ $column_classes =($sidebar_style == 'no_sidebar')?'col-md-10 col-sm-12 col-xs-12
                             <!-- Pagination Start -->                        
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <div class="nav-pagination">                                    
-                                    <?php the_post_navigation( array(
-                                        'prev_text'          => '<i class="fa fa-angle-double-left" aria-hidden="true"></i>  Previous',
-                                        'next_text'          => 'Next <i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+                                    <?php the_post_navigation( array(                                        
+                                         'prev_text'          => esc_html__('<i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous','best-classifieds'),
+                                        'next_text'          => esc_html__('Next <i class="fa fa-angle-double-right" aria-hidden="true"></i>','best-classifieds'),
                                         'screen_reader_text'        => ' ',
                                     ) ); ?>       
                                 </div>

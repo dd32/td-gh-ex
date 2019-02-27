@@ -14,7 +14,7 @@ $divider =2;  ?>
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="title-blog-area">
                    <h1 class="heading-title"> <?php $pagefor_post=get_option( 'page_for_posts' ); if(!empty($pagefor_post) ):
-                        echo get_the_title($pagefor_post);
+                        echo esc_html(get_the_title($pagefor_post));
                     else:
                         esc_html_e('BLOG','best-classifieds');
                     endif; ?></h1>
@@ -82,8 +82,8 @@ $divider =2;  ?>
                                     <?php the_posts_pagination( array(
                                         'type'  => 'list',
                                         'screen_reader_text' => ' ',
-                                        'prev_text'          => '<i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous',
-                                        'next_text'          => 'Next <i class="fa fa-angle-double-right" aria-hidden="true"></i>',
+                                        'prev_text'          => esc_html__('<i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous','best-classifieds'),
+                                        'next_text'          => esc_html__('Next <i class="fa fa-angle-double-right" aria-hidden="true"></i>','best-classifieds'),
                                     ) ); ?>       
                                 </div>
                             </div>
