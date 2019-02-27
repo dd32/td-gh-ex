@@ -56,6 +56,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.7.7
+1. Fixed service icon and image issue.
 @version 1.7.6
 1. Added trustworthy website tab.
 @version 1.7.5

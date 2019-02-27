@@ -17,6 +17,7 @@ if(empty($elitepress_service_content)){
 						array(
 						'icon_value' => isset($old_theme_servives['service_one_icon'])? $old_theme_servives['service_one_icon']:'',
 						'title'      => isset($old_theme_servives['service_one_title'])? $old_theme_servives['service_one_title']:'',
+						'choice'    => 'customizer_repeater_icon',
 						'text'       => isset($old_theme_servives['service_one_description'])? $old_theme_servives['service_one_description']:'',
 						'link'       => '',
 						'id'         => 'customizer_repeater_56d7ea7f40b56',
@@ -25,6 +26,7 @@ if(empty($elitepress_service_content)){
 						array(
 						'icon_value' => isset($old_theme_servives['service_two_icon'])? $old_theme_servives['service_two_icon']:'',
 						'title'      => isset($old_theme_servives['service_two_title'])? $old_theme_servives['service_two_title']:'',
+						'choice'    => 'customizer_repeater_icon',
 						'text'       => isset($old_theme_servives['service_two_description'])? $old_theme_servives['service_two_description']:'',
 						'link'       => '',
 						'id'         => 'customizer_repeater_56d7ea7f40b66',
@@ -33,6 +35,7 @@ if(empty($elitepress_service_content)){
 						array(
 						'icon_value' => isset($old_theme_servives['service_three_icon'])? $old_theme_servives['service_three_icon']:'',
 						'title'      => isset($old_theme_servives['service_three_title'])? $old_theme_servives['service_three_title']:'',
+						'choice'    => 'customizer_repeater_icon',
 						'text'       => isset($old_theme_servives['service_three_description'])? $old_theme_servives['service_three_description']:'',
 						'link'       => '',
 						'id'         => 'customizer_repeater_56d7ea7f40b86',
@@ -42,6 +45,7 @@ if(empty($elitepress_service_content)){
 						array(
 						'icon_value' => isset($old_theme_servives['service_four_icon'])? $old_theme_servives['service_four_icon']:'',
 						'title'      => isset($old_theme_servives['service_four_title'])? $old_theme_servives['service_four_title']:'',
+						'choice'    => 'customizer_repeater_icon',
 						'text'       => isset($old_theme_servives['service_four_description'])? $old_theme_servives['service_four_description']:'',
 						'link'       => '',
 						'id'         => 'customizer_repeater_56d7ea7f40b96',
@@ -118,16 +122,22 @@ function elitepress_service_content( $elitepress_service_content, $is_callback =
 			?>
 			<div class="col-md-6 col-sm-6">
 				<div class="media service-area">
+				<?php if($features_item->choice == 'customizer_repeater_image'){ ?>
 					<?php if ( ! empty( $image ) ) : ?>
 						<div class="service-featured-img">
 							<img class="img-responsive" src="<?php echo esc_url( $image ); ?>" <?php if ( ! empty( $title ) ) : ?> alt="<?php echo esc_attr( $title ); ?>" title="<?php echo esc_attr( $title ); ?>" <?php endif; ?> />
 						</div>	
-					<?php endif; ?>
+					<?php endif; 
+				} else if($features_item->choice =='customizer_repeater_icon'){?>
+					
 						<?php if ( ! empty( $icon ) ) :?>
 							<div class="service-box">
 									<i class="fa <?php echo esc_html( $icon ); ?>"></i>
 							</div>
-					<?php endif; ?>
+					    <?php endif; ?>
+					
+                    <?php } ?>					
+					
 					<div class="media-body">			
 					<?php if ( ! empty( $title ) ) : ?>
 					<h4 class="entry-title"><?php echo esc_html( $title ); ?></h4>
