@@ -10,11 +10,11 @@
     <title><?php wp_title( '|' , true, 'right' ); ?></title>
 <?php endif ?>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="profile" href="http://gmpg.org/xfn/11" />
+  <link rel="profile"  href="https://gmpg.org/xfn/11" />
   <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
   <!-- scripts for IE8 and less  -->
   <!--[if lt IE 9]>
-    <script src="<?php echo CZR_FRONT_ASSETS_URL ?>js/vendors/html5.js"></script>
+    <script src="<?php echo CZR_FRONT_ASSETS_URL ?>js/libs/html5.js"></script>
   <![endif]-->
 <?php
   wp_head();

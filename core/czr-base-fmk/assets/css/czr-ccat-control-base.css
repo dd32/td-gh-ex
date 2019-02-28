@@ -229,9 +229,13 @@ li#customize-control-custom_css textarea {
 }
 .customize-control-title {
 	line-height: 19px;
+  font-family: Roboto;
+    font-weight: normal;
 }
 .customize-control span.customize-control-title:first-child {
-    position: relative;
+  position: relative;
+  padding: 10px 0px 5px;
+  /*margin-left: 14px;*/
 }
 
 /* since v4.3 */
@@ -261,17 +265,6 @@ li#customize-control-custom_css textarea {
 
 .customize-control input[type="text"] {
   line-height: 23px;
-}
-
-
-/* CONTROLS */
-li[id*="customize-control-"] {
-    margin: 8px 0;
-    padding: 2%;
-    width: 96%;
-    border: 1px solid rgba(221, 221, 221, 0.43);
-    box-shadow: 1px 0px 2px 0px rgba(204, 204, 204, 0.45);
-    -webkit-box-shadow: 1px 0px 2px 0px rgba(204, 204, 204, 0.45);
 }
 
 /*<@4.9compat>*/
@@ -373,6 +366,18 @@ input:-ms-input-placeholder {
    color: #9A9A9A;
    font-style: italic;
 }
+
+
+.customize-control select {
+  cursor: pointer;
+}
+
+
+
+
+
+
+
 
 
 .czr-customizr-title {
@@ -543,9 +548,9 @@ li#customize-control-tc_theme_options-tc_custom_css textarea {
 
 /* LAYOUT SELECTION SPECIFICS */
 .czr-layout-img {
-  height: 26px;
-  padding-top: 2px;
-  border: 1px solid #FFF;
+  height: 22px;
+  margin-top: 2px;
+  outline: 1px solid #FFF;
 }
 .czr-layout-title {
   padding: 0 0px 18px 12px;
@@ -608,15 +613,20 @@ li#customize-control-tc_theme_options-tc_custom_css textarea {
   margin-bottom: 10px;
 }
 
-/* HOME BUTTON */
+/* NIMBLE */
+#customize-theme-controls #accordion-panel-__sektions__ {
+  margin-bottom: 10px;
+}
+
+/* HEADER => HOME AND ADD MODULE BUTTON */
 #customize-header-actions .customize-controls-close {
   left: 45px;
 }
 
-.customize-controls-home, .customize-controls-close {
+.customize-controls-home-or-add, .customize-controls-close {
   top: -1px;
 }
-.customize-controls-home {
+.customize-controls-home-or-add {
     display: block;
     position: absolute;
     left: 0;
@@ -638,15 +648,21 @@ li#customize-control-tc_theme_options-tc_custom_css textarea {
     -moz-box-sizing: content-box;
     box-sizing: content-box;
 }
+/* for the Nimble button */
+.customize-controls-home-or-add > .material-icons {
+  line-height: 39px;
+  text-align: center;
+  display: block;
+}
 
-.customize-controls-home:before {
+.customize-controls-home-or-add:before {
     font-size: 17px;
     line-height:45px;
     position: relative;
     top: -4px;
     left: 15px;
 }
-.customize-controls-home:hover {
+.customize-controls-home-or-add:hover {
     background: #fff;
     color: #0073aa;
     border-top-color: #0073aa;
@@ -659,12 +675,15 @@ li#customize-control-tc_theme_options-tc_custom_css textarea {
   right: 45px;
   left: auto;
 }
-.rtl.wp-customizer .customize-controls-home {
+.rtl.wp-customizer .customize-controls-home-or-add {
   left: auto;
   right: 0;
   border-right: 0;
   border-left: 1px solid #ddd;
 }
+
+
+
 
 /* HEADER MENU NOTICE */
 .control-panel-content .hu-menu-notice {
@@ -753,6 +772,113 @@ span.czr-panel-subtitle {
 /* END GO PRO SECTION STYLE */
 
 
+
+
+
+
+
+
+/* <CSS LOADER> */
+@-webkit-keyframes czr-mr-loader {
+  0% {
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 1;
+  }
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.0;
+  }
+}
+
+@keyframes czr-mr-loader {
+  0% {
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+    opacity: 1;
+  }
+  70% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0.7;
+  }
+  100% {
+    opacity: 0.0;
+  }
+}
+.czr-css-loader {
+  display: none;
+  width: 50px;
+  height: 50px;
+/*  background-color: #333;*/
+  position: absolute;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+  transform: translate3d(-50%, -50%, 0);
+  top: 50%;
+  left: 50%;
+}
+
+.csstransforms3d .czr-css-loader {
+  display: block;
+}
+
+.czr-mr-loader > div:nth-child(0) {
+  -webkit-animation-delay: -0.8s;
+  animation-delay: -0.8s;
+}
+
+.czr-mr-loader > div:nth-child(1) {
+  -webkit-animation-delay: -0.6s;
+  animation-delay: -0.6s;
+}
+
+.czr-mr-loader > div:nth-child(2) {
+  -webkit-animation-delay: -0.4s;
+  animation-delay: -0.4s;
+}
+
+.czr-mr-loader > div:nth-child(3) {
+  -webkit-animation-delay: -0.2s;
+  animation-delay: -0.2s;
+}
+
+.czr-mr-loader > div {
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
+  position: absolute;
+  /*top: -4%;
+  left: -4%;*/
+  top: -0%;
+  left: -0%;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  border: 2px solid #777;
+  -webkit-animation: czr-mr-loader 1.25s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
+  animation: czr-mr-loader 1.25s 0s infinite cubic-bezier(0.21, 0.53, 0.56, 0.8);
+}
+/* </CSS LOADER> */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* <OLD DONATE LINK> */
 .in-sub-panel #czr-donate-customizer,
  .in-sub-panel .czr-cta-wrap {
@@ -825,15 +951,29 @@ span.czr-panel-subtitle {
 /* </OLD DONATE LINK> *//*******************************************************************
 * DYNAMIC CONTROLS : sidebars, socials, ...
 ********************************************************************/
+li.customize-control[data-module] li {
+  margin-bottom: 0;
+  font-size: 0.85em;
+}
+li.customize-control[data-module] [class*="czr-"] {
+  font-size: 0.9rem;
+}
+li.customize-control[data-module] [class*="czr-"] .hidden {
+  display: none;
+}
+li.customize-control[data-module] .czr-notice {
+  font-size: 12px!important;
+}
 .czr-open-pre-add-new {
   display: block;
   float: left;
   margin: 2% 2% 0%;
   width: 99%;
   padding: 2%;
-  background: #3b8dbd;
+  background: #fff;
+  /* color: #fff;*/
+  color: inherit;
   opacity: 1;
-  color: #fff;
   font-size: 16px;
   cursor: pointer;
   border-width: 1px;
@@ -854,13 +994,14 @@ span.czr-panel-subtitle {
 
 .czr-open-pre-add-new.active {
   background: #646464;
-  opacity: 0.5;
+  color: black;
+  opacity: 0.8;
   border-radius: 3px 3px 0 0;
 }
 
 .czr-single-item {
   padding: 0%;
-  border: 1px solid #ccc;
+  /*border: 1px solid #ccc;*/
   margin: 1% 0 0 2%;
   float: left;
   width: 98%;
@@ -872,17 +1013,19 @@ span.czr-panel-subtitle {
   -o-transition: opacity 1s ease-in-out;
   transition: opacity 1s ease-in-out;
 }
-
+/* Display a thin outline around opened item, for multi-items modules */
 #customize-theme-controls .czr-single-item.open {
-  border: 1px solid #dedede;
+  /*border: 1px solid #dedede;*/
+  outline: 1px solid #ccc;
 }
 /* Keep the normal border for single module, mono items controls */
 #customize-theme-controls .mono-item-mod .czr-single-item {
-  border: 1px solid #ccc;
+  outline: none;
 }
 
 .czr-single-item .czr-item-header, .czr-single-item .czr-item-content {
   padding: 1%;
+  background: none;
 }
 
 .czr-items-wrapper .czr-single-item .czr-builtin-model {
@@ -900,7 +1043,7 @@ span.czr-panel-subtitle {
 
 .czr-single-item .czr-item-header {
   position: relative;
-  background: #dfdfdf;
+  background: #ededed;
   color: white;
   float: left;
   width: 98%;
@@ -942,7 +1085,7 @@ span.czr-panel-subtitle {
   float: left;
   font-size: 17px;
   color: #000;
-  padding: 7px;
+  padding: 4px;
   width: 67%;
 }
 
@@ -973,18 +1116,21 @@ span.czr-panel-subtitle {
 .czr-item-btns a {
   font-size: 17px;
   padding: 7px 5px;
-  color: #777;
-  -webkit-transition: color .1s ease-in-out;
-  -moz-transition: color .1s ease-in-out;
-  -ms-transition: color .1s ease-in-out;
-  -o-transition: color .1s ease-in-out;
-  transition: color .1s ease-in-out;
+  color: #9e9e9e;
+  -webkit-transition: color .25s ease-in-out;
+  -moz-transition: color .25s ease-in-out;
+  -ms-transition: color .25s ease-in-out;
+  -o-transition: color .25s ease-in-out;
+  transition: color .25s ease-in-ou
 }
 .czr-item-btns a:active, .czr-item-btns a:focus {
   outline: none;
   outline: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+.czr-item-btns a:hover, .czr-item-btns a.active {
+    color: #23282d;
 }
 /* sidebar specifics */
 .czr_widget_areas_module .czr-item-btns a {
@@ -1017,8 +1163,9 @@ span.czr-panel-subtitle {
 
 
 .czr-single-item .czr-item-content {
+  float: left;
   display: none;
-  background: rgba(238, 238, 238, 0.5);
+  /*background: rgba(238, 238, 238, 0.5);*/
   clear: both;
   width: 96%;
   padding: 2%;
@@ -1040,7 +1187,9 @@ span.czr-panel-subtitle {
   width: 60%;
 }
 
-.width-100 .czr-input, .czr-sub-set .customize-control-title.width-100 {
+.width-100 .czr-input,
+.czr-sub-set .customize-control-title.width-100,
+.width-100 {
   width: 100%;
 }
 
@@ -1050,6 +1199,14 @@ span.czr-panel-subtitle {
   padding: 1px 0;
   font-size: 13px;
 }
+
+.customize-control-title.width-80 {
+    width: 80%!important;
+}
+.czr-input.width-20 {
+    width: 20%!important;
+}
+
 /* rtl */
 .rtl.wp-customizer .czr-sub-set .customize-control-title {
   float: right;
@@ -1103,12 +1260,12 @@ span.czr-panel-subtitle {
 .czr-pre-add-view-content {
   display: none;
   padding: 3%;
-  border: 1px solid #00a0d2;
+  border: 1px solid #ccc;
+  background: #fff;
   border-top: none;
   margin: 0 0 0 2%;
   float: left;
   width: 92%;
-  background: #eee;
   -webkit-border-radius: 0px 0px 3px 3px;
   -moz-border-radius: 0px 0px 3px 3px;
   border-radius: 0px 0px 3px 3px;
@@ -1274,7 +1431,7 @@ body.czr-editing-modopt #customize-controls  {
   overflow-x: hidden;
   overflow-y: auto;
   margin: 0;
-  z-index: 4;
+  z-index: 999999;/* has to be greater than the Nimble top bar so we can click on the close "x" */
   width: 60%;
   min-width: 300px;
   padding: 1% 2%;
@@ -1367,6 +1524,7 @@ body.czr-editing-modopt .czr-mod-opt-wrapper {
 }
 
 .tabs nav ul li {
+  font-size: 14px;
   position: relative;
   z-index: 1;
   display: block;
@@ -1533,7 +1691,7 @@ section .czr-sub-set:first-child {
 
 .tabs-style-topline nav a span {
   text-transform: uppercase;
-  letter-spacing: 1px;
+  /*letter-spacing: 1px;*/
   font-weight: 700;
 }
 
@@ -1569,9 +1727,12 @@ section .czr-sub-set:first-child {
   padding-left: 5px;
 }
 
+/* styled like the wp api.notifications, info type */
 .slide-mod-skope-notice {
   padding: 3%;
-  background: rgba(116, 210, 116, 0.42);
+  background: #fff;
+  border-left: 4px solid #00a0d2;
+  box-shadow: 0 1px 1px 0 rgba( 0, 0, 0, 0.1 );
   float: left;
   font-size: 12px;
   line-height: 1.5em;
@@ -1657,7 +1818,7 @@ section .czr-sub-set:first-child {
  */
 .selecter-element { *left: -999999px; position: absolute; opacity: 0; }
 .selecter { display: block;float: right;margin: 2px 0;position: relative;width: 100%;z-index: 100; }
-.selecter .selecter-selected { background: #F9F9F9 url(img/jquery.fs.selecter-arrow.png) no-repeat right center; border: 1px solid #ccc; border-radius: 3px; color: #333; cursor: pointer; display: block; font-size: 13px; margin: 0; overflow: hidden; padding: 4px 4.6%; position: relative; text-overflow: clip; z-index: 49; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.07);height: auto;line-height: 18px;width: 90%; }
+.selecter .selecter-selected { background: #F9F9F9 url(img/jquery.fs.selecter-arrow.png) no-repeat right center; border: 1px solid #ccc; border-radius: 3px; color: #333; cursor: pointer; display: block; font-size: 13px; margin: 0; overflow: hidden; padding: 4px 4%; position: relative; text-overflow: clip; z-index: 49; box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.07);height: auto;line-height: 18px;width: 90%; }
 
 .selecter .selecter-options { border: 1px solid #ccc; border-width: 0 1px 1px; background-color: #fefefe; border-radius: 0 0 3px 3px; box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); display: none; left: 0; margin: 0; max-height: 260px; overflow: auto; overflow-x: hidden; padding: 0; position: relative; top: 100%; width: 99%; *width: auto; z-index: 50; }
 .selecter .selecter-group { background: #F9F9F9; border-bottom: 1px solid #e3e3e3; color: #999; display: block; font-size: 11px; padding: 5px 6px 4px; text-transform: uppercase; }
@@ -1924,37 +2085,37 @@ section .czr-sub-set:first-child {
 
 
 /* SELECT 2 SPECIFICS */
-body .select2-container {
+body .czrSelect2-container {
   z-index: 1000000;
   width: 100%!important;
 }
 
-.customize-control-czr_layouts .select2-selection--single {
+.customize-control-czr_layouts .czrSelect2-selection--single {
   height: 33px;
 }
-.customize-control-czr_layouts .select2-container--default .select2-selection--single .select2-selection__arrow {
+.customize-control-czr_layouts .czrSelect2-container--default .czrSelect2-selection--single .czrSelect2-selection__arrow {
   height: 30px;
 }
-.select2-selection__rendered:focus, .customize-control-czr_layouts .select2-selection--single:focus {
+.czrSelect2-selection__rendered:focus, .customize-control-czr_layouts .czrSelect2-selection--single:focus {
   outline: none;
 }
 
 /* Old SELECT2
 * https://github.com/presscustomizr/themes-customizer-fmk/issues/30
 */
-body .select2-drop {
+body .czrSelect2-drop {
   z-index: 1000000;
 }
 
 
 /* SPECIFIC INPUT STYLE */
-span.select2-results, body .select2-container {
+span.czrSelect2-results, body .czrSelect2-container {
   font-size: 14px;
 }
 
 
 /* for multipe picker */
-.select2-container--default .select2-selection--multiple {
+.czrSelect2-container--default .czrSelect2-selection--multiple {
    -webkit-border-radius: 0px;
   -moz-border-radius: 0px;
   border-radius: 0;
@@ -1964,15 +2125,15 @@ span.select2-results, body .select2-container {
     -webkit-box-shadow: inset 0 1px 2px rgba( 0, 0, 0, 0.07 );
     box-shadow: inset 0 1px 2px rgba( 0, 0, 0, 0.07 );
 }
-.select2-container--default.select2-container--focus .select2-selection--multiple {
+.czrSelect2-container--default.czrSelect2-container--focus .czrSelect2-selection--multiple {
   border-color: #00a0d2!important;
       -webkit-box-shadow: 0 0 2px rgba(26, 188, 156, 0.8)!important;
       box-shadow: 0 0 2px rgba(26, 188, 156, 0.8)!important;
 }
-.select2-results__options li {
+.czrSelect2-results__options li {
     margin-bottom: 0
 }
-.select2-container--default .select2-selection--multiple .select2-selection__choice {
+.czrSelect2-container--default .czrSelect2-selection--multiple .czrSelect2-selection__choice {
   padding: 2px;
   font-size: 13px;
   -webkit-border-radius: 2px;
@@ -1980,10 +2141,10 @@ span.select2-results, body .select2-container {
   border-radius: 2px;
   margin-bottom: 0;
 }
-.select2-container--default .select2-results__option--highlighted[aria-selected] {
+.czrSelect2-container--default .czrSelect2-results__option--highlighted[aria-selected] {
   background-color: #00a0d2;
 }
-.select2-container--default .select2-selection--multiple .select2-selection__choice__remove {
+.czrSelect2-container--default .czrSelect2-selection--multiple .czrSelect2-selection__choice__remove {
   font-size: 17px;
   position: relative;
   top: 2px;
@@ -1991,7 +2152,7 @@ span.select2-results, body .select2-container {
 }
 
 /* Socials Specifics */
-.customize-control-czr_socials .select2-container--default .select2-selection--single .select2-selection__rendered {
+.customize-control-czr_socials .czrSelect2-container--default .czrSelect2-selection--single .czrSelect2-selection__rendered {
   padding: 5px;
   line-height: 16px;
 }
@@ -2008,6 +2169,11 @@ span.select2-results, body .select2-container {
 
 
 /* WP TEXT EDITOR */
+/* This CSS Code is inpired from the plugin customize-posts, GPLv2 or later licensed
+    Mostly class names have been modified.
+   Credits : xwp, westonruter, valendesigns, sayedwp, utkarshpatel.
+   Date of original code modification : July 2018
+*/
 #czr-customize-content_editor-pane {
   border-top: solid 1px #ddd;
   position: absolute;
@@ -2022,6 +2188,21 @@ span.select2-results, body .select2-container {
   transition: all 0.2s;
   visibility: hidden;
 }
+.czr-close-editor {
+  position: absolute;
+  cursor: pointer;
+  right: 20px;
+  top: -33px;
+  color: #444;
+  background: #eee;
+  font-size: 13px;
+  line-height: 19px;
+  height: 20px;
+  margin: 5px 0 0 5px;
+  padding: 3px 8px 4px;
+  border: 1px solid #e5e5e5;
+  border-bottom: none;
+}
 body.czr-customize-content_editor-pane-resize #customize-preview,
 body.czr-customize-content_editor-pane-resize #czr-customize-content_editor-pane {
   -webkit-transition: none;
@@ -2031,7 +2212,7 @@ body.mce-fullscreen.czr-customize-content_editor-pane-open #czr-customize-conten
   top: 0;
 }
 body.czr-customize-content_editor-pane-open #czr-customize-content_editor-pane {
-  bottom: 0;
+  bottom: 40px;
   visibility: inherit;
 }
 #czr-customize-content_editor-pane .wp-editor-tools {
@@ -2066,6 +2247,16 @@ body.mce-fullscreen.czr-customize-content_editor-pane-open div.mce-fullscreen {
   position: absolute;
   width: 100%;
   z-index: 21;
+  /* the following makes sure that the icon .czr-resize-handle is centered */
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 body.czr-customize-content_editor-pane-resize #customize-preview:before {
   top: 0;
@@ -2112,7 +2303,12 @@ body.czr-customize-content_editor-pane-resize #customize-preview:before {
 .czr-customize-content_editor-pane-open.mce-fullscreen .wp-full-overlay.collapsed .collapse-sidebar {
   bottom: 8px !important;
 }
-
+.czr-resize-handle {
+  color: #33b3db;
+  font-size: 12px;
+  position: relative;
+  bottom: 2px;
+}
 
 
 /* CONTENT PICKER */
@@ -2175,6 +2371,9 @@ body.czr-customize-content_editor-pane-resize #customize-preview:before {
 
 
 /* RANGE SLIDER rangeslider.js - v2.3.0 - https://github.com/andreruffert/rangeslider.js */
+.czr-sub-set[data-input-type="range_slider"] {
+    padding: 20px 0;
+}
 .rangeslider,
 .rangeslider__fill {
   display: block;
@@ -2192,12 +2391,12 @@ body.czr-customize-content_editor-pane-resize #customize-preview:before {
 }
 
 .rangeslider--horizontal {
-  height: 20px;
+  height: 12px;
   width: 100%;
 }
 
 .rangeslider--vertical {
-  width: 20px;
+  width: 12px;
   min-height: 150px;
   max-height: 100%;
 }
@@ -2225,8 +2424,8 @@ body.czr-customize-content_editor-pane-resize #customize-preview:before {
   border: 1px solid #ccc;
   cursor: pointer;
   display: inline-block;
-  width: 40px;
-  height: 40px;
+  width: 34px;
+  height: 34px;
   position: absolute;
   background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZmZmZmZiIgc3RvcC1vcGFjaXR5PSIwLjAiLz48c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiMwMDAwMDAiIHN0b3Atb3BhY2l0eT0iMC4xIi8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgZmlsbD0idXJsKCNncmFkKSIgLz48L3N2Zz4g');
   background-size: 100%;
@@ -2240,11 +2439,10 @@ body.czr-customize-content_editor-pane-resize #customize-preview:before {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
-  line-height: 42px;
+  line-height: 35px;
   text-align: center;
   color: #000000;
   font-size: 13px;
-  font-weight: bold;
 }
 
 .rangeslider__handle:after {
@@ -2277,12 +2475,12 @@ body.czr-customize-content_editor-pane-resize #customize-preview:before {
   background-image: linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.12));
 }
 .rangeslider--horizontal .rangeslider__handle {
-  top: -10px;
+  top: -13px;
   touch-action: pan-y;
   -ms-touch-action: pan-y;
 }
 .rangeslider--vertical .rangeslider__handle {
-  left: -10px;
+  left: -13px;
   touch-action: pan-x;
   -ms-touch-action: pan-x;
 }
@@ -2299,4 +2497,92 @@ input[type="range"]:focus + .rangeslider .rangeslider__handle {
     color: #000;
     padding: 5px 7px;
     line-height: 1.5em;
+}
+
+
+
+
+
+/* This custom checkbox input is inspired from the one used in the Gutenberg plugin ( https://github.com/WordPress/gutenberg ), released under GNU General Public License
+credits : Gutenberg team @wordpress */
+.czr-toggle-check {
+  position: relative;
+      float: right;
+}
+.czr-toggle-check__input[type=checkbox] {
+    cursor: pointer;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    margin: 0;
+    padding: 0;
+    z-index: 1;
+}
+.czr-toggle-check__input[type="checkbox"]:checked:before {
+    content: "\f147";
+    margin: -3px 0 0 -4px;
+    color: #1e8cbe;
+    float: left;
+    display: inline-block;
+    vertical-align: middle;
+    width: 16px;
+    font: normal 21px/1 dashicons;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.czr-toggle-check .czr-toggle-check__track {
+    content: "";
+    display: inline-block;
+    vertical-align: top;
+    box-sizing: border-box;
+    background-color: #fff;
+    border: 2px solid #6c7781;
+    width: 36px;
+    height: 18px;
+    border-radius: 9px;
+    transition: background .2s ease;
+}
+.czr-toggle-check.is-checked .czr-toggle-check__track {
+    background-color: #33b3db;
+    border: 2px solid #33b3db;
+    border: 9px solid transparent;
+}
+.czr-toggle-check .czr-toggle-check__thumb {
+    display: block;
+    position: absolute;
+    top: 4px;
+    left: 4px;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    transition: transform .1s ease;
+    background-color: #6c7781;
+    border: 5px solid #6c7781;
+    box-sizing: border-box;
+}
+.czr-toggle-check.is-checked .czr-toggle-check__thumb {
+    background-color: #fff;
+    border-width: 0;
+    transform: translateX(18px);
+}
+.czr-toggle-check .czr-toggle-check__off {
+    color: #6c7781;
+    fill: currentColor;
+    right: 6px;
+}
+.czr-toggle-check .czr-toggle-check__on {
+    left: 8px;
+    -webkit-filter: invert(100%) contrast(500%);
+    filter: invert(100%) contrast(500%);
+    outline: 1px solid transparent;
+    outline-offset: -1px;
+}
+.czr-toggle-check .czr-toggle-check__off, .czr-toggle-check .czr-toggle-check__on {
+    position: absolute;
+    top: 6px;
 }
