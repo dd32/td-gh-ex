@@ -17,6 +17,7 @@ if(empty($busiprof_service_content)){
 						array(
 						'icon_value' => isset($old_theme_servives['service_icon_one'])? $old_theme_servives['service_icon_one']:'',
 						'image_url'	 => isset($old_theme_servives['service_image_one'])? $old_theme_servives['service_image_one']:'',
+						'choice'    => 'customizer_repeater_icon',
 						'title'      => isset($old_theme_servives['service_title_one'])? $old_theme_servives['service_title_one']:'',
 						'text'       => isset($old_theme_servives['service_text_one'])? $old_theme_servives['service_text_one']:'',
 						'link'       => '',
@@ -26,6 +27,7 @@ if(empty($busiprof_service_content)){
 						array(
 						'icon_value' => isset($old_theme_servives['service_icon_two'])? $old_theme_servives['service_icon_two']:'',
 						'image_url'	 => isset($old_theme_servives['service_image_two'])? $old_theme_servives['service_image_two']:'',
+						'choice'    => 'customizer_repeater_icon',
 						'title'      => isset($old_theme_servives['service_title_two'])? $old_theme_servives['service_title_two']:'',
 						'text'       => isset($old_theme_servives['service_text_two'])? $old_theme_servives['service_text_two']:'',
 						'link'       => '',
@@ -35,6 +37,7 @@ if(empty($busiprof_service_content)){
 						array(
 						'icon_value' => isset($old_theme_servives['service_icon_three'])? $old_theme_servives['service_icon_three']:'',
 						'image_url'	 => isset($old_theme_servives['service_image_three'])? $old_theme_servives['service_image_three']:'',
+						'choice'    => 'customizer_repeater_icon',
 						'title'      => isset($old_theme_servives['service_title_three'])? $old_theme_servives['service_title_three']:'',
 						'text'       => isset($old_theme_servives['service_text_three'])? $old_theme_servives['service_text_three']:'',
 						'link'       => '',
@@ -45,6 +48,7 @@ if(empty($busiprof_service_content)){
 						array(
 						'icon_value' => isset($old_theme_servives['service_icon_four'])? $old_theme_servives['service_icon_four']:'',
 						'image_url'	 => isset($old_theme_servives['service_image_four'])? $old_theme_servives['service_image_four']:'',
+						'choice'    => 'customizer_repeater_icon',
 						'title'      => isset($old_theme_servives['service_title_four'])? $old_theme_servives['service_title_four']:'',
 						'text'       => isset($old_theme_servives['service_text_four'])? $old_theme_servives['service_text_four']:'',
 						'link'       => '',
@@ -125,6 +129,7 @@ function busiprof_service_content( $busiprof_service_content, $is_callback = fal
 			?>
 			<div class="col-md-3 col-sm-6 col-xs-12 service-box">
 			<div class="post">
+			<?php if($features_item->choice == 'customizer_repeater_image'){ ?>
 								<?php if ( ! empty( $image ) ) : ?>
 									<?php if ( ! empty( $link ) ) : ?>
 										<a href="<?php echo esc_url( $link ); ?>">
@@ -134,16 +139,18 @@ function busiprof_service_content( $busiprof_service_content, $is_callback = fal
 									<?php if ( ! empty( $link ) ) : ?>
 										</a>
 									<?php endif; ?>
-								<?php endif; ?>
+			<?php endif; }?>
 			
 			<?php if ( ! empty( $link ) ) : ?>
 						<a href="<?php echo esc_url( $link ); ?>">
 							<?php endif; ?>
+				<?php if($features_item->choice == 'customizer_repeater_icon'){ ?>
 				<?php if ( ! empty( $icon ) ) :?>
 							<div class="service-icon" <?php if ( ! empty( $color ) ) { echo 'style="color:' . $color . '"'; } ?>>
 									<i class="fa <?php echo esc_html( $icon ); ?>"></i>
 								</div>
 							<?php endif; ?>
+				<?php } ?>
 				<?php if ( ! empty( $title ) ) : ?>
 				
 								<div class="entry-header">

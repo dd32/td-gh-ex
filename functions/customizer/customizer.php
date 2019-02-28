@@ -82,6 +82,7 @@
 				$busiprof_service_content_control->default = json_encode( array(
 					array(
 					'icon_value' => 'fa-laptop',
+					'choice'    => 'customizer_repeater_icon',
 					'title'      => esc_html__( 'Web Design', 'busiprof' ),
 					'text'       => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'busiprof' ),
 					'link'       => '#',
@@ -90,6 +91,7 @@
 					),
 					array(
 					'icon_value' => 'fa-tasks',
+					'choice'    => 'customizer_repeater_icon',
 					'title'      => esc_html__( 'Unique Elements', 'busiprof' ),
 					'text'       => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'busiprof' ),
 					'link'       => '#',
@@ -98,6 +100,7 @@
 					),
 					array(
 					'icon_value' => 'fa-thumbs-o-up',
+					'choice'    => 'customizer_repeater_icon',
 					'title'      => esc_html__( 'User Friendly', 'busiprof' ),
 					'text'       => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'busiprof' ),
 					'link'       => '#',
@@ -107,6 +110,7 @@
 					
 					array(
 					'icon_value' => 'fa-life-ring',
+					'choice'    => 'customizer_repeater_icon',
 					'title'      => esc_html__( '24/7 Support', 'busiprof' ),
 					'text'       => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'busiprof' ),
 					'link'       => '#',
@@ -127,6 +131,7 @@
 				$busiprof_service_content_control->default = json_encode( array(
 					array(
 					'icon_value' => 'fa-laptop',
+					'choice'    => 'customizer_repeater_icon',
 					'title'      => esc_html__( 'Web Design', 'busiprof' ),
 					'text'       => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'busiprof' ),
 					'link'       => '#',
@@ -135,6 +140,7 @@
 					),
 					array(
 					'icon_value' => 'fa-tasks',
+					'choice'    => 'customizer_repeater_icon',
 					'title'      => esc_html__( 'Unique Elements', 'busiprof' ),
 					'text'       => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'busiprof' ),
 					'link'       => '#',
@@ -143,6 +149,7 @@
 					),
 					array(
 					'icon_value' => 'fa-thumbs-o-up',
+					'choice'    => 'customizer_repeater_icon',
 					'title'      => esc_html__( 'User Friendly', 'busiprof' ),
 					'text'       => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'busiprof' ),
 					'link'       => '#',
@@ -152,6 +159,7 @@
 					
 					array(
 					'icon_value' => 'fa-life-ring',
+					'choice'    => 'customizer_repeater_icon',
 					'title'      => esc_html__( '24/7 Support', 'busiprof' ),
 					'text'       => esc_html__( 'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.', 'busiprof' ),
 					'link'       => '#',
