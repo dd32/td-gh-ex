@@ -2,9 +2,9 @@
 
 **Contributors:** iceable
 **Requires at least:** WordPress 4.7
-**Tested up to:** WordPress 4.9.2
-**Stable tag:** 1.2.16
-**Version:** 1.2.16
+**Tested up to:** WordPress 5.1
+**Stable tag:** 1.2.17
+**Version:** 1.2.17
 **License:** GPLv2 or later
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html
 **Tags:** one-column, two-columns, right-sidebar, custom-header, custom-background, custom-menu, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, news
@@ -31,7 +31,7 @@ BoldR Lite is the lite version of BoldR Pro, which comes with many additional fe
 ### Translation
 
 Bundled translations (GPL Licensed):
-* French (fr_FR) translation: Copyright 2013-2018, Iceable Media - Mathieu Sarrasin (https://www.iceablethemes.com)
+* French (fr_FR) translation: Copyright 2013-2019, Iceable Media - Mathieu Sarrasin (https://www.iceablethemes.com)
 * Russian (ru_RU) translation: Copyright Dmitriy Skalubo - http://wordpress.crimea.ua/
 * German (de_DE) translation: Adapted from BoldR Pro translation, Copyright FromBeyond - info@frombeyond.de
 * Spanish (es_ES) translation: Copyright Chema Masip Diaz – http://www.pedaleapormadrid.es/ – chmadi@gmail.com
@@ -48,7 +48,7 @@ Your translation files will be added to the next update. Don't forget to leave y
 
 ## Copyright
 
-BoldR Lite WordPress Theme, Copyright 2013-2018, Iceable Media - Mathieu Sarrasin (https://www.iceablethemes.com)
+BoldR Lite WordPress Theme, Copyright 2013-2019, Iceable Media - Mathieu Sarrasin (https://www.iceablethemes.com)
 BoldR Lite is distributed under the terms of the GNU GPL
 
 BoldR Lite bundles the following third-party resources:
@@ -63,6 +63,10 @@ Source: https://github.com/aFarkas/html5shiv
 
 
 ## Changelog
+
+### 1.2.17
+February 28th, 2019
+* Updated copyright
 
 ### 1.2.16
 January 31th, 2018
