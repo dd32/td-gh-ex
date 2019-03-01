@@ -64,7 +64,7 @@ if (!function_exists('avventura_lite_product_format_function')) {
 		$html .= '</div>';
 		$html .= '</div>';
 		
-		echo  $html;
+		echo $html;
 
 	}
 

@@ -30,6 +30,55 @@ if ( ! function_exists( 'avventura_lite_is_woocommerce_active' ) ) {
 }
 
 /*-----------------------------------------------------------------------------------*/
+/* Get post comments */
+/*-----------------------------------------------------------------------------------*/ 
+
+if ( ! function_exists( 'avventura_lite_comments' ) ) {
+	
+	function avventura_lite_comments($comment, $args, $depth) {
+		
+	?>
+   
+		<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
+ 
+		<div id="comment-<?php comment_ID(); ?>" class="comment-container">
+         
+			<div class="comment-avatar">
+				<?php echo get_avatar($comment->comment_author_email, 80 ); ?>
+			</div>
+         
+			<div class="comment-text">
+			
+            	<header class="comment-author">
+                
+                    <span class="author"><cite><?php printf( esc_html__('%s','avventura-lite'), get_comment_author_link());?> </cite></span>
+                    <time datetime="<?php echo get_comment_date("c")?>" class="comment-date">  
+                    <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(esc_html__('%1$s at %2$s','avventura-lite'), get_comment_date(),  get_comment_time()) ?></a> - 
+                    <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+                    <?php edit_comment_link(esc_html__('(Edit)','avventura-lite')) ?>
+                    </time>
+                
+				</header>
+    
+				<?php if ($comment->comment_approved == '0') : ?>
+				<br /><em><?php esc_html_e('Your comment is awaiting approval.','avventura-lite') ?></em>
+				<?php endif; ?>
+          
+				<?php comment_text() ?>
+          
+			</div>
+        
+			<div class="clear"></div>
+        
+		</div>
+    
+	<?php
+	
+	}
+
+}
+
+/*-----------------------------------------------------------------------------------*/
 /* Function to check if the searchform.php file is loaded inside a sidebar area */
 /*-----------------------------------------------------------------------------------*/ 
 

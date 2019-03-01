@@ -25,7 +25,7 @@ if (!function_exists('avventura_lite_slick_slider_function')) {
                                 
 ?>
 
-        <div class="post-container slick-slideshow" data-columns="<?php echo $columns;?>">
+        <div class="post-container slick-slideshow" data-columns="<?php echo esc_attr($columns);?>">
 
             <div class="slider slick-slides">
 

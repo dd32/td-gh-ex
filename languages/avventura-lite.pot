@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-06 20:48+0100\n"
+"POT-Creation-Date: 2019-03-01 19:02+0100\n"
 "PO-Revision-Date: 2015-09-11 19:05+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
@@ -40,39 +40,12 @@ msgstr ""
 msgid "comments"
 msgstr ""
 
-#: comments.php:43
-#, php-format
-msgid "%s"
-msgstr ""
-
-#: comments.php:45
-#, php-format
-msgid "%1$s at %2$s"
-msgstr ""
-
-#: comments.php:47
-msgid "(Edit)"
-msgstr ""
-
-#: comments.php:53
-msgid "Your comment is awaiting approval."
-msgstr ""
-
-#: comments.php:72
+#: comments.php:31
 msgid "&laquo;"
 msgstr ""
 
-#: comments.php:73
+#: comments.php:32
 msgid "&raquo;"
-msgstr ""
-
-#: comments.php:91
-msgid "Comment"
-msgstr ""
-
-#: comments.php:92
-msgctxt "Comment field textarea."
-msgid "Comment"
 msgstr ""
 
 #: core/admin/customize/customize.php:13 core/includes/class-notice.php:75
@@ -401,24 +374,24 @@ msgstr ""
 #: core/admin/customize/customize.php:424
 #: core/admin/customize/customize.php:454
 #: core/admin/customize/customize.php:473
-#: core/admin/customize/customize.php:491 core/metaboxes/page.php:38
-#: core/metaboxes/post.php:29 core/metaboxes/product.php:38
+#: core/admin/customize/customize.php:491 core/metaboxes/page.php:44
+#: core/metaboxes/post.php:44 core/metaboxes/product.php:44
 msgid "Full Width"
 msgstr ""
 
 #: core/admin/customize/customize.php:425
 #: core/admin/customize/customize.php:455
 #: core/admin/customize/customize.php:474
-#: core/admin/customize/customize.php:492 core/metaboxes/page.php:39
-#: core/metaboxes/post.php:30 core/metaboxes/product.php:39
+#: core/admin/customize/customize.php:492 core/metaboxes/page.php:45
+#: core/metaboxes/post.php:45 core/metaboxes/product.php:45
 msgid "Left Sidebar"
 msgstr ""
 
 #: core/admin/customize/customize.php:426
 #: core/admin/customize/customize.php:456
 #: core/admin/customize/customize.php:475
-#: core/admin/customize/customize.php:493 core/metaboxes/page.php:40
-#: core/metaboxes/post.php:31 core/metaboxes/product.php:40
+#: core/admin/customize/customize.php:493 core/metaboxes/page.php:46
+#: core/metaboxes/post.php:46 core/metaboxes/product.php:46
 msgid "Right Sidebar"
 msgstr ""
 
@@ -912,38 +885,38 @@ msgstr ""
 msgid "Footer widget area"
 msgstr ""
 
-#: core/includes/class-customize.php:420
+#: core/includes/class-customize.php:418
 msgid "Avventura premium version"
 msgstr ""
 
-#: core/includes/class-customize.php:422 core/includes/class-notice.php:69
+#: core/includes/class-customize.php:420 core/includes/class-notice.php:69
 msgid ""
 "Upgrade to the premium version of Avventura, to enable 600+ Google Fonts, "
 "unlimited sidebars, portfolio section and much more."
 msgstr ""
 
-#: core/includes/class-customize.php:426
+#: core/includes/class-customize.php:424
 msgid "Upgrade to Avventura premium"
 msgstr ""
 
-#: core/includes/class-customize.php:434
+#: core/includes/class-customize.php:432
 msgid "Become a supporter"
 msgstr ""
 
-#: core/includes/class-customize.php:436
+#: core/includes/class-customize.php:434
 msgid ""
 "If you like this theme and support, I'd appreciate any of the following:"
 msgstr ""
 
-#: core/includes/class-customize.php:440
+#: core/includes/class-customize.php:438
 msgid "Rate this Theme"
 msgstr ""
 
-#: core/includes/class-customize.php:441
+#: core/includes/class-customize.php:439
 msgid "Subscribe our newsletter"
 msgstr ""
 
-#: core/includes/class-customize.php:442
+#: core/includes/class-customize.php:440
 msgid "Download our free WordPress themes"
 msgstr ""
 
@@ -973,6 +946,70 @@ msgstr ""
 #: core/includes/class-plugin-activation.php:333
 msgid "Something went wrong with the plugin API."
 msgstr ""
+
+#: core/includes/class-plugin-activation.php:336
+#, php-format
+msgid "This theme requires the following plugin: %1$s."
+msgid_plural "This theme requires the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/includes/class-plugin-activation.php:342
+#, php-format
+msgid "This theme recommends the following plugin: %1$s."
+msgid_plural "This theme recommends the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/includes/class-plugin-activation.php:348
+#, php-format
+msgid ""
+"The following plugin needs to be updated to its latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgid_plural ""
+"The following plugins need to be updated to their latest version to ensure "
+"maximum compatibility with this theme: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/includes/class-plugin-activation.php:354
+#, php-format
+msgid "There is an update available for: %1$s."
+msgid_plural "There are updates available for the following plugins: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/includes/class-plugin-activation.php:360
+#, php-format
+msgid "The following required plugin is currently inactive: %1$s."
+msgid_plural "The following required plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/includes/class-plugin-activation.php:366
+#, php-format
+msgid "The following recommended plugin is currently inactive: %1$s."
+msgid_plural "The following recommended plugins are currently inactive: %1$s."
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/includes/class-plugin-activation.php:371
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/includes/class-plugin-activation.php:376
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: core/includes/class-plugin-activation.php:381
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
 
 #: core/includes/class-plugin-activation.php:385
 msgid "Return to Required Plugins Installer"
@@ -1259,130 +1296,160 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: core/main.php:69
+#: core/main.php:54
+#, php-format
+msgid "%s"
+msgstr ""
+
+#: core/main.php:56
+#, php-format
+msgid "%1$s at %2$s"
+msgstr ""
+
+#: core/main.php:58
+msgid "(Edit)"
+msgstr ""
+
+#: core/main.php:64
+msgid "Your comment is awaiting approval."
+msgstr ""
+
+#: core/main.php:119
 #, php-format
 msgid "Category: %s"
 msgstr ""
 
-#: core/main.php:71
+#: core/main.php:121
 #, php-format
 msgid "Tag: %s"
 msgstr ""
 
-#: core/main.php:73
+#: core/main.php:123
 #, php-format
 msgid "Author: %s"
 msgstr ""
 
-#: core/main.php:75
+#: core/main.php:125
 #, php-format
 msgid "Year: %s"
 msgstr ""
 
-#: core/main.php:75
+#: core/main.php:125
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr ""
 
-#: core/main.php:77
+#: core/main.php:127
 #, php-format
 msgid "Month: %s"
 msgstr ""
 
-#: core/main.php:77
+#: core/main.php:127
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr ""
 
-#: core/main.php:79
+#: core/main.php:129
 #, php-format
 msgid "Day: %s"
 msgstr ""
 
-#: core/main.php:79
+#: core/main.php:129
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr ""
 
-#: core/main.php:82
+#: core/main.php:132
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr ""
 
-#: core/main.php:84
+#: core/main.php:134
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr ""
 
-#: core/main.php:86
+#: core/main.php:136
 msgctxt "post format archive title"
 msgid "Images"
 msgstr ""
 
-#: core/main.php:88
+#: core/main.php:138
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr ""
 
-#: core/main.php:90
+#: core/main.php:140
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr ""
 
-#: core/main.php:92
+#: core/main.php:142
 msgctxt "post format archive title"
 msgid "Links"
 msgstr ""
 
-#: core/main.php:94
+#: core/main.php:144
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr ""
 
-#: core/main.php:96
+#: core/main.php:146
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr ""
 
-#: core/main.php:98
+#: core/main.php:148
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr ""
 
-#: core/main.php:101
+#: core/main.php:151
 #, php-format
 msgid "Archives: %s"
 msgstr ""
 
-#: core/main.php:104
+#: core/main.php:154
 #, php-format
 msgid "%1$s: %2$s"
 msgstr ""
 
-#: core/main.php:493 core/main.php:499
+#: core/main.php:543 core/main.php:549
 msgid "Read More"
 msgstr ""
 
-#: core/metaboxes/page.php:18 core/metaboxes/page.php:29
+#: core/metaboxes/page.php:20 core/metaboxes/post.php:20
+#: core/metaboxes/product.php:20
+msgid "Setting"
+msgstr ""
+
+#: core/metaboxes/page.php:34
 msgid "Page settings"
 msgstr ""
 
-#: core/metaboxes/page.php:33 core/metaboxes/post.php:24
-#: core/metaboxes/product.php:33
+#: core/metaboxes/page.php:39 core/metaboxes/post.php:39
+#: core/metaboxes/product.php:39
 msgid "Template"
 msgstr ""
 
-#: core/metaboxes/page.php:34 core/metaboxes/post.php:25
-#: core/metaboxes/product.php:34
+#: core/metaboxes/page.php:40
 msgid "Select a template for this page"
 msgstr ""
 
-#: core/metaboxes/post.php:12 core/metaboxes/post.php:20
+#: core/metaboxes/post.php:34
 msgid "Post settings"
 msgstr ""
 
-#: core/metaboxes/product.php:18 core/metaboxes/product.php:29
+#: core/metaboxes/post.php:40
+msgid "Select a template for this post"
+msgstr ""
+
+#: core/metaboxes/product.php:34
 msgid "Product settings"
+msgstr ""
+
+#: core/metaboxes/product.php:40
+msgid "Select a template for this product"
 msgstr ""
 
 #: core/sidebars/scroll-sidebar.php:32 core/sidebars/side-sidebar.php:38

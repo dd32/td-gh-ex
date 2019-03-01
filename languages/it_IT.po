@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-02-06 20:45+0100\n"
-"PO-Revision-Date: 2019-02-06 20:48+0100\n"
+"POT-Creation-Date: 2019-03-01 19:02+0100\n"
+"PO-Revision-Date: 2019-03-01 19:02+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -40,40 +40,13 @@ msgstr "commento"
 msgid "comments"
 msgstr "commenti"
 
-#: comments.php:43
-#, php-format
-msgid "%s"
-msgstr "%s"
-
-#: comments.php:45
-#, php-format
-msgid "%1$s at %2$s"
-msgstr "%1$s a %2$s"
-
-#: comments.php:47
-msgid "(Edit)"
-msgstr "(Edit)"
-
-#: comments.php:53
-msgid "Your comment is awaiting approval."
-msgstr "Il tuo commento è in attesa di approvazione"
-
-#: comments.php:72
+#: comments.php:31
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: comments.php:73
+#: comments.php:32
 msgid "&raquo;"
 msgstr "&raquo;"
-
-#: comments.php:91
-msgid "Comment"
-msgstr "Commenta"
-
-#: comments.php:92
-msgctxt "Comment field textarea."
-msgid "Comment"
-msgstr "Commenta"
 
 #: core/admin/customize/customize.php:13 core/includes/class-notice.php:75
 msgid "Upgrade to Avventura Premium"
@@ -988,11 +961,11 @@ msgstr ""
 msgid "Footer widget area"
 msgstr "Area widget piè di pagina"
 
-#: core/includes/class-customize.php:420
+#: core/includes/class-customize.php:418
 msgid "Avventura premium version"
 msgstr "Versione premium Avventura"
 
-#: core/includes/class-customize.php:422 core/includes/class-notice.php:69
+#: core/includes/class-customize.php:420 core/includes/class-notice.php:69
 msgid ""
 "Upgrade to the premium version of Avventura, to enable 600+ Google Fonts, "
 "unlimited sidebars, portfolio section and much more."
@@ -1000,30 +973,30 @@ msgstr ""
 "Aggiorna alla versione premium di Avventura, per attivare oltre 600 Google "
 "Fonts, barre laterali illimitate, sezione Portfolio e molto altro."
 
-#: core/includes/class-customize.php:426
+#: core/includes/class-customize.php:424
 msgid "Upgrade to Avventura premium"
 msgstr "Aggiorna ad Avventura premium"
 
-#: core/includes/class-customize.php:434
+#: core/includes/class-customize.php:432
 msgid "Become a supporter"
 msgstr "Diventa un supporter"
 
-#: core/includes/class-customize.php:436
+#: core/includes/class-customize.php:434
 msgid ""
 "If you like this theme and support, I'd appreciate any of the following:"
 msgstr ""
 "Se ti piace il tema oppure il servizio di supporto, è gradita una delle "
 "seguenti azioni:"
 
-#: core/includes/class-customize.php:440
+#: core/includes/class-customize.php:438
 msgid "Rate this Theme"
 msgstr "Valuta questo tema."
 
-#: core/includes/class-customize.php:441
+#: core/includes/class-customize.php:439
 msgid "Subscribe our newsletter"
 msgstr "Registrati alla nostra newsletter."
 
-#: core/includes/class-customize.php:442
+#: core/includes/class-customize.php:440
 msgid "Download our free WordPress themes"
 msgstr "Scarica i nostri temi gratuiti per WordPress"
 
@@ -1425,107 +1398,125 @@ msgstr "Tutte le installazioni sono state completate."
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Installazione plugin %1$s (%2$d/%3$d)"
 
-#: core/main.php:70
+#: core/main.php:54
+#, php-format
+msgid "%s"
+msgstr "%s"
+
+#: core/main.php:56
+#, php-format
+msgid "%1$s at %2$s"
+msgstr "%1$s a %2$s"
+
+#: core/main.php:58
+msgid "(Edit)"
+msgstr "(Edit)"
+
+#: core/main.php:64
+msgid "Your comment is awaiting approval."
+msgstr "Il tuo commento è in attesa di approvazione"
+
+#: core/main.php:119
 #, php-format
 msgid "Category: %s"
 msgstr "Categoria: %s"
 
-#: core/main.php:72
+#: core/main.php:121
 #, php-format
 msgid "Tag: %s"
 msgstr "Tag: %s"
 
-#: core/main.php:74
+#: core/main.php:123
 #, php-format
 msgid "Author: %s"
 msgstr "Autore: %s"
 
-#: core/main.php:76
+#: core/main.php:125
 #, php-format
 msgid "Year: %s"
 msgstr "Anno: %s"
 
-#: core/main.php:76
+#: core/main.php:125
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y"
 
-#: core/main.php:78
+#: core/main.php:127
 #, php-format
 msgid "Month: %s"
 msgstr "Mese: %s"
 
-#: core/main.php:78
+#: core/main.php:127
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y"
 
-#: core/main.php:80
+#: core/main.php:129
 #, php-format
 msgid "Day: %s"
 msgstr "Giorno: %s"
 
-#: core/main.php:80
+#: core/main.php:129
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr "F j, Y"
 
-#: core/main.php:83
+#: core/main.php:132
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr "Digressione"
 
-#: core/main.php:85
+#: core/main.php:134
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr "Gallerie"
 
-#: core/main.php:87
+#: core/main.php:136
 msgctxt "post format archive title"
 msgid "Images"
 msgstr "Immagini"
 
-#: core/main.php:89
+#: core/main.php:138
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr "Video"
 
-#: core/main.php:91
+#: core/main.php:140
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr "Citazioni"
 
-#: core/main.php:93
+#: core/main.php:142
 msgctxt "post format archive title"
 msgid "Links"
 msgstr "Links"
 
-#: core/main.php:95
+#: core/main.php:144
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr "Stati"
 
-#: core/main.php:97
+#: core/main.php:146
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr "Audio"
 
-#: core/main.php:99
+#: core/main.php:148
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr "Chats"
 
-#: core/main.php:102
+#: core/main.php:151
 #, php-format
 msgid "Archives: %s"
 msgstr "Archivi: %s"
 
-#: core/main.php:105
+#: core/main.php:154
 #, php-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: core/main.php:494 core/main.php:500
+#: core/main.php:543 core/main.php:549
 msgid "Read More"
 msgstr "Continua"
 
@@ -1797,6 +1788,13 @@ msgstr "Informazioni aggiuntive"
 #: woocommerce/single-product/up-sells.php:32
 msgid "You may also like&hellip;"
 msgstr "Ti potrebbe anche interessare&hellip;"
+
+#~ msgid "Comment"
+#~ msgstr "Commenta"
+
+#~ msgctxt "Comment field textarea."
+#~ msgid "Comment"
+#~ msgstr "Commenta"
 
 #~ msgid "Upgrade to Anna Premium"
 #~ msgstr "Aggiorna a Anna Premium"
