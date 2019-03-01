@@ -569,6 +569,9 @@ body.home #site-navigation ul.menu > li:hover a {
   text-align: left;
   overflow-y: auto;
   padding-top: 46px;
+  position: fixed;
+  right: -25em;
+  width: 25em;
 }
 @media screen and (min-width: 768px) {
   .mobile-menu #menu {
