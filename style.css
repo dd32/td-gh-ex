@@ -4,14 +4,13 @@
  * Description: Agncy is a beautiful news and blogging theme that has beautiful typography, powerful color customisation and an elegant, light layout. Customise your theme to the colours you need and upload your own logo. Enjoy reading even long texts with the beautiful font 'Fira' and experience how fast font loading can be with an innovative font loading technique.
  * Author: WP Munich
  * Author URI: http://www.wp-munich.com
- * Version: 1.5.3
+ * Version: 1.5.4
  * Text Domain: agncy
  * Domain Path: /languages
  * License: GPL-2.0+
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  * Tags: one-column, two-columns, right-sidebar, grid-layout, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog
  *
- * @fs_premium_only /blocks-premium/
  */
 /*! normalize.css v8.0.0 | MIT License | github.com/necolas/normalize.css */
 /* Document
@@ -3970,6 +3969,10 @@ body.page .singular_content .post_meta_info,
 body.single .singular_content .post_meta_info {
   margin-top: 0;
 }
+body.page .singular_content .the_content,
+body.single .singular_content .the_content {
+  margin-bottom: 48px;
+}
 body.page .post-meta-footer,
 body.single .post-meta-footer {
   margin: 0 0 48px;
@@ -4316,6 +4319,7 @@ img {
 .entry-summary > *.alignright {
   margin-top: 0;
   max-width: calc(50% -  16px);
+  z-index: 1;
 }
 .entry-content > *.alignleft,
 .entry-summary > *.alignleft {
@@ -4380,6 +4384,9 @@ img {
  *
  * @see: https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/button/
  */
+.wp-block-button {
+  min-width: 0;
+}
 .wp-block-button.alignwide > *,
 .wp-block-button.alignfull > * {
   width: 100%;
@@ -4628,15 +4635,18 @@ ul.wp-block-gallery .blocks-gallery-item figure {
  *
  * @see: https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/gallery/
  */
+.wp-block-embed {
+  z-index: 1;
+  position: relative;
+}
 .wp-block-embed .wp-block-embed__wrapper {
   text-align: center;
-  margin: 0;
+  margin: 0 auto;
 }
-.wp-block-embed twitterwidget,
-.wp-block-embed .fb-post,
-.wp-block-embed iframe {
-  margin: 0 auto !important;
-  max-width: 100% !important;
+.wp-block-embed .wp-block-embed__wrapper > * {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 100%;
   min-width: 0 !important;
 }
 .wp-block-embed .fb-post span {
@@ -5221,7 +5231,6 @@ ul.wp-block-gallery .blocks-gallery-item figure {
   .desktop-header .header-container {
     display: grid;
     grid-column-gap: 16px;
-    grid-row-gap: 32px;
     padding-top: 27px;
     padding-bottom: 27px;
   }
@@ -5324,9 +5333,9 @@ ul.wp-block-gallery .blocks-gallery-item figure {
             justify-content: flex-start;
   }
   .desktop-header.header-menu-pos-center .desktop-menu {
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
   }
   .desktop-header.header-menu-pos-right .desktop-menu {
     -webkit-box-pack: end;
@@ -5364,9 +5373,9 @@ ul.wp-block-gallery .blocks-gallery-item figure {
     -webkit-box-direction: normal;
         -ms-flex-flow: row wrap;
             flex-flow: row wrap;
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
+    -webkit-box-align: space-between;
+        -ms-flex-align: space-between;
+            align-items: space-between;
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
@@ -5513,9 +5522,6 @@ ul.wp-block-gallery .blocks-gallery-item figure {
   }
   .content-wrapper {
     padding: 0 16px;
-  }
-  .content-wrapper .the_content {
-    margin-bottom: 48px;
   }
   .thumbnail-wrapper {
     margin-top: -54px;

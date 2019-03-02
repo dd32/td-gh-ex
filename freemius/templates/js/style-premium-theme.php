@@ -17,7 +17,7 @@
 	 */
 	$fs = freemius( $VARS['id'] );
 
-	$slug = esc_attr( $fs->get_slug() );
+	$slug = $fs->get_slug();
 
 ?>
 <script type="text/javascript">
