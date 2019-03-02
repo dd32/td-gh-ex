@@ -60,4 +60,36 @@ jQuery(document).ready(function ( jQuery ) {
 <?php
 }
 add_action('wp_footer','arzine_footer_custom_script');
+
+
+add_action( 'after_switch_theme', 'import_busiprof_theme_data_in_busiprof_child_theme' );
+/**
+* Import theme mods when switching from Busiprof child theme to Busiprof
+*/
+function import_busiprof_theme_data_in_busiprof_child_theme() {
+
+    // Get the name of the previously active theme.
+    $previous_theme = strtolower( get_option( 'theme_switched' ) );
+
+    if ( ! in_array(
+        $previous_theme, array(
+            'busiprof',
+			'vdequator',
+			'vdperanto',
+			'lazyprof',
+        )
+    ) ) {
+        return;
+    }
+
+    // Get the theme mods from the previous theme.
+    $previous_theme_content = get_option( 'theme_mods_' . $previous_theme );
+
+    if ( ! empty( $previous_theme_content ) ) {
+        foreach ( $previous_theme_content as $previous_theme_mod_k => $previous_theme_mod_v ) {
+            set_theme_mod( $previous_theme_mod_k, $previous_theme_mod_v );
+        }
+    }
+} 
+
 ?>
