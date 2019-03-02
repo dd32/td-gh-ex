@@ -2,8 +2,8 @@
 Contributors: catchthemes
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, entertainment, photography, portfolio
 Requires at least: 4.8
-Tested up to: 5.0.3
-Stable tag: 1.1.2
+Tested up to: 5.1
+Stable tag: 1.1.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -43,6 +43,10 @@ For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
 
+= 1.1.3 (Released: March 02, 2019) =
+* Bug Fixed: Menu hover color issue
+* Updated: Meta styles
+
 = 1.1.2 (Released: January 24, 2019) =
 * Bug Fixed: Header Logo issue when logo is not set (Reported by Max Low)
 
@@ -79,7 +83,7 @@ For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Copyright ==
 
-Audioman WordPress Theme, Copyright 2012-2018 Catchthemes.com
+Audioman WordPress Theme, Copyright 2012-2019 Catchthemes.com
 Audioman is distributed under the terms of the GNU GPL
 
 == Resources ==
