@@ -55,6 +55,8 @@ Support
 -------
 
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 2.0
+1. Fixed data migration.
 @version 1.9.9
 1. Fixed service icon and image issue.
 @version 1.9.8
