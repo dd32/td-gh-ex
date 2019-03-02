@@ -30,7 +30,7 @@
 		}
 		}else
 		{
-		$slider_title = __('Responsive WP theme','rambo');
+		$slider_title = isset($current_options['slider_title'])?   $current_options['slider_title'] : 'Responsive WP theme';
 		}		
 		
 		if(isset($current_options['slider_post'])){	
@@ -43,7 +43,7 @@
 		}
 		}else
 		{
-		$slider_text = 'We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.';
+		$slider_text = isset($current_options['slider_text'])?   $current_options['slider_text'] : 'We are a group of passionate designers and developers who really love creating awesome WordPress themes & giving support.';
 		}
 		
 		$home_banner_enabled = isset($current_options['home_banner_enabled'])? $current_options['home_banner_enabled']:true;
