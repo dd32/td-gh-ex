@@ -29,7 +29,17 @@ function arrival_get_default_theme_options() {
     $defaults[$prefix.'_one_page_menus'] = 'no';
     $defaults[$prefix.'_footer_widget_enable'] = 'yes';
     $defaults[$prefix.'_lazyload_image_enable'] = 'yes';
-    $defaults[$prefix.'_theme_color'] = '#50bcda';
+    $defaults[$prefix.'_top_header_bg_color'] = '#E12454';
+    $defaults[$prefix.'_main_nav_bg_color'] = '#fafafa';
+    $defaults[$prefix.'_main_nav_menu_color'] = '#333';
+    $defaults[$prefix.'_link_color'] = '#333';
+    $defaults[$prefix.'_main_container_width'] = 1170;
+    $defaults[$prefix.'_sidebar_width'] = 440;
+    $defaults[$prefix.'_blog_excerpts'] = 580;
+    $defaults[$prefix.'_single_post_sidebars'] = 'right_sidebar';
+    $defaults[$prefix.'_nav_font_weight'] = 500;
+    $defaults[$prefix.'_top_header_txt_color'] = '#fff';
+    $defaults[$prefix.'_theme_color'] = '#E12454';
    
 
    

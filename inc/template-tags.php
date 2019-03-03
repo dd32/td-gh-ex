@@ -98,11 +98,11 @@ function arrival_posted_on() {
 
 	$posted_on = sprintf(
 		/* translators: %s: post date. */
-		esc_html_x( 'Posted on %s', 'post date', 'arrival' ),
+		esc_html_x( '%s', 'post date', 'arrival' ),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . ' </span>'; // WPCS: XSS OK.
+	echo '<span class="posted-on"><i class="fa fa-clock-o" aria-hidden="true"></i>' . $posted_on . ' </span>'; // WPCS: XSS OK.
 
 }
 
@@ -110,13 +110,16 @@ function arrival_posted_on() {
  * Prints HTML with meta information for the current author.
  */
 function arrival_posted_by() {
+	global $post;
+	$author_id = $post->post_author;
+	$avator = get_avatar($author_id);
 	$byline = sprintf(
 		/* translators: %s: post author. */
 		esc_html_x( 'by %s', 'post author', 'arrival' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="byline"> ' . $byline . ' </span>'; // WPCS: XSS OK.
+	echo '<span class="byline"> '.$avator .''. $byline . ' </span>'; // WPCS: XSS OK.
 }
 
 /**
@@ -131,7 +134,7 @@ function arrival_post_categories() {
 		$categories_list = get_the_category_list( esc_html__( ', ', 'arrival' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
-			printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'arrival' ) . ' </span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links">' . esc_html__( ' %1$s', 'arrival' ) . ' </span>', $categories_list ); // WPCS: XSS OK.
 		}
 	}
 }
@@ -145,10 +148,10 @@ function arrival_post_tags() {
 	// Only show tags on post types that have categories.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'arrival' ) );
+		$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'arrival' ) );
 		if ( $tags_list ) {
 			/* translators: 1: list of tags. */
-			printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'arrival' ) . ' </span>', $tags_list ); // WPCS: XSS OK.
+			printf( '<span class="tags-links">' . esc_html__( 'Tagged With: %1$s', 'arrival' ) . ' </span>', $tags_list ); // WPCS: XSS OK.
 		}
 	}
 }
@@ -158,7 +161,7 @@ function arrival_post_tags() {
  */
 function arrival_comments_link() {
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link">';
+		echo '<span class="comments-link"><i class="fa fa-comments-o" aria-hidden="true"></i>';
 		comments_popup_link(
 			sprintf(
 				wp_kses(
@@ -194,7 +197,7 @@ function arrival_edit_post_link() {
 			),
 			get_the_title()
 		),
-		'<span class="edit-link">',
+		'<span class="edit-link"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>',
 		' </span>'
 	);
 }
@@ -205,7 +208,7 @@ function arrival_edit_post_link() {
  * Wraps the post thumbnail in an anchor element on index views, or a div
  * element when on single views.
  */
-function arrival_post_thumbnail() {
+function arrival_post_thumbnail( $size='full' ) {
 	if ( post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
 		return;
 	}
@@ -226,7 +229,7 @@ function arrival_post_thumbnail() {
 			global $wp_query;
 			if ( 0 === $wp_query->current_post ) {
 				the_post_thumbnail(
-					'full',
+					$size,
 					array(
 						'class' => 'skip-lazy',
 						'alt'   => the_title_attribute(
@@ -238,7 +241,7 @@ function arrival_post_thumbnail() {
 				);
 			} else {
 				the_post_thumbnail(
-					'post-thumbnail', array(
+					$size, array(
 						'alt' => the_title_attribute(
 							array(
 								'echo' => false,
@@ -296,4 +299,25 @@ function arrival_the_attachment_navigation() {
 		</div><!-- .nav-links -->
 	</nav><!-- .navigation .attachment-navigation -->
 	<?php
+}
+
+
+/**
+* post view function
+*
+*/
+if( ! function_exists('arrival_post_view')){
+	function arrival_post_view(){
+		if( class_exists('Ultra_Companion')){
+		?>
+		<span class="post-view">
+			<i class="fa fa-eye" aria-hidden="true"></i>
+			<span class="count">
+			<?php echo getPostViews(get_the_ID()); ?>
+			</span>
+		</span>
+		<?php 
+			
+		}
+	}
 }

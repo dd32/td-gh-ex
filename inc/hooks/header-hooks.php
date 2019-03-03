@@ -21,7 +21,7 @@ if( ! function_exists('arrival_site_logo')){
 
 		<?php $arrival_description = get_bloginfo( 'description', 'display' ); ?>
 		<?php if ( $arrival_description || is_customize_preview() ) : ?>
-			<p class="site-description"><?php echo $arrival_description; /* WPCS: xss ok. */ ?></p>
+			<p class="site-description"><?php echo wp_kses_post($arrival_description); /* WPCS: xss ok. */ ?></p>
 		<?php endif; ?>
 	</div><!-- .site-branding -->
 	<?php
@@ -51,14 +51,7 @@ if( ! function_exists('arrival_main_nav')){
 					</amp-state>
 				<?php endif; ?>
 
-				<button class="menu-toggle" aria-label="<?php esc_attr_e( 'Open menu', 'arrival' ); ?>" aria-controls="primary-menu" aria-expanded="false"
-					<?php if ( arrival_is_amp() ) : ?>
-						on="tap:AMP.setState( { siteNavigationMenu: { expanded: ! siteNavigationMenu.expanded } } )"
-						[aria-expanded]="siteNavigationMenu.expanded ? 'true' : 'false'"
-					<?php endif; ?>
-				>
-					<?php esc_html_e( 'Menu', 'arrival' ); ?>
-				</button>
+				
 
 				<div class="primary-menu-container">
 					<?php
@@ -114,11 +107,14 @@ if( ! function_exists('arrival_header_cta_btn_info')){
 		$default = arrival_get_default_theme_options();
 		$arrival_main_nav_right_btn = get_theme_mod('arrival_main_nav_right_btn',$default['arrival_main_nav_right_btn']);
 
+		if( empty($arrival_main_nav_right_btn) ){
+			return;
+		}
 		
 		$the_query = new WP_Query( array( 'page_id' => $arrival_main_nav_right_btn ) );
 		while ($the_query -> have_posts()) : $the_query -> the_post();
 		?>
-		<a href="<?php the_permalink();?>"> <?php the_title(); ?></a>
+		<a href="<?php the_permalink();?>" class="header-cta-btn"> <?php the_title(); ?></a>
 		<?php 
 		endwhile;
 		wp_reset_postdata();
@@ -208,7 +204,7 @@ if( ! function_exists('arrival_top_header_right')){
 							'menu_id'        => 'top-header-menu',
 							'container'      => 'ul',
 							'menu_class'	 => 'arrival-top-navigation',
-							/*'depth'			 => -1*/
+							'fallback_cb'	 =>	false	 
 						)
 					);
 				 ?>
@@ -217,5 +213,42 @@ if( ! function_exists('arrival_top_header_right')){
 		}else{
 			do_action('arrival_social_icons');
 		}
+	}
+}
+
+/**
+* Mobile navigation
+*
+*/
+add_action('arrival_mob_nav','arrival_mob_nav');
+if(! function_exists('arrival_mob_nav')){
+	function arrival_mob_nav(){
+	?>
+	<div class="mob-outer-wrapp">
+	<div class="container clearfix">
+		<?php arrival_site_logo(); ?>
+		<span class="toggle-wrapp">
+			<span class="toggle-box">
+			<span class="menu-toggle"></span>
+			</span>
+		</span>
+		
+	</div>
+		<div class="mob-nav-wrapp">
+				<?php 
+				wp_nav_menu(
+					array(
+						'theme_location' => 'primary',
+						'menu_id'        => 'primary-menu',
+						'container'      => 'ul',
+						'menu_class'	 => 'mob-primary-menu'
+					)
+				);
+				do_action('arrival_social_icons');
+				 ?>
+
+		</div>
+	</div>
+<?php
 	}
 }

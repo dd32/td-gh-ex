@@ -4,82 +4,38 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package arrival
+ * @package Arrival
  */
+$defaults 		= arrival_get_default_theme_options();
+$_blog_excerpts = get_theme_mod('arrival_blog_excerpts',$defaults['arrival_blog_excerpts']);
 
+$post_format 	= get_post_format( get_the_id() );
+
+$slider_class = '';
+if( 'gallery' == $post_format ){
+	$slider_class = 'gallery-post-format';
+}
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
-		<?php
-		if ( is_singular() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		endif;
-
-		if ( 'post' === get_post_type() ) :
-			?>
-			<div class="entry-meta">
-				<?php
-					arrival_posted_on();
-					arrival_posted_by();
-					arrival_comments_link();
-				?>
-			</div><!-- .entry-meta -->
-			<?php
-		endif;
+<article id="post-<?php the_ID(); ?>" <?php post_class('clearfix'); ?>>
+	
+	<div class="post-thumb <?php echo esc_attr($slider_class)?>">
+		<?php arrival_post_format_display(); ?>
+	</div>
+	<div class="post-content-wrap">
+		<?php 
+		arrival_post_categories(); 
+		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
+		echo arrival_get_excerpt_content($_blog_excerpts); //sanitization already done inside arrival_get_excerpt_content()
 		?>
-	</header><!-- .entry-header -->
-
-	<?php arrival_post_thumbnail(); ?>
-
-	<div class="entry-content">
+		<div class="entry-meta">
 		<?php
-		the_content(
-			sprintf(
-				wp_kses(
-					/* translators: %s: Name of current post. Only visible to screen readers */
-					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'arrival' ),
-					array(
-						'span' => array(
-							'class' => array(),
-						),
-					)
-				),
-				get_the_title()
-			)
-		);
-
-		wp_link_pages(
-			array(
-				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'arrival' ),
-				'after'  => '</div>',
-			)
-		);
-		?>
-	</div><!-- .entry-content -->
-
-	<footer class="entry-footer">
-		<?php
-		arrival_post_categories();
-		arrival_post_tags();
+		arrival_posted_by();
+		echo arrival_post_view(); //get post view
+		arrival_posted_on(); 
+		arrival_comments_link();
 		arrival_edit_post_link();
 		?>
-	</footer><!-- .entry-footer -->
+		</div><!-- .entry-meta -->
+	</div>
 </article><!-- #post-<?php the_ID(); ?> -->
-
-<?php
-if ( is_singular() ) :
-	the_post_navigation(
-		array(
-			'prev_text' => '<div class="post-navigation-sub"><span>' . esc_html__( 'Previous:', 'arrival' ) . '</span></div>%title',
-			'next_text' => '<div class="post-navigation-sub"><span>' . esc_html__( 'Next:', 'arrival' ) . '</span></div>%title',
-		)
-	);
-
-	// If comments are open or we have at least one comment, load up the comment template.
-	if ( comments_open() || get_comments_number() ) :
-		comments_template();
-	endif;
-endif;

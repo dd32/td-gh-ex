@@ -28,6 +28,7 @@
 
 	<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'arrival' ); ?></a>
 		<header id="masthead" class="site-header">
+			<?php do_action('arrival_mob_nav'); ?>
 			<?php if( function_exists('arrival_top_header')):
 				arrival_top_header();
 			endif; ?>

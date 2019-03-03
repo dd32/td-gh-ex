@@ -5,13 +5,19 @@ Website: https://wpoperation.com/
 Email: support@wpoperation.com
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
-Tags: translation-ready,right-sidebar,custom-menu, featured-images, threaded-comments,custom-logo, footer-widgets,blog,post-formats,sticky-post,theme-options,news
+Tags: translation-ready,right-sidebar,custom-menu, featured-images, threaded-comments,custom-logo, footer-widgets,blog,post-formats,sticky-post,theme-options,news,editor-style,custom-background,custom-header
 Requires at least: WordPress 4.7
-Tested up to: 5.0.3
+Tested up to: 5.1
 
 == Description ==
 
 Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website with easy drag and drop options. The theme is lightweight, fast and fully compatible with elementor builder.
+
+
+Arrival is a WordPress Theme, 
+Copyright (C) 2019, WPoperation
+Arrival is distributed under the terms of the GNU GPL
+
 
 == Installation ==
 
@@ -23,12 +29,8 @@ Arrival is complete multipurpose WordPress theme. The theme can be used to creat
 -------------------------------------------------------
 Screenshot Licenses
 -------------------------------------------------------
-Screenshot images are all licensed under CCO Universal
-https://pixabay.com/en/geometric-design-computer-1732847/
-https://pixabay.com/en/apple-mac-computer-desktop-monitor-691282/
 
-
-All other images are designed by WPoperation
+All images shown on the screenshot are designed by WPoperation
 
 
 -------------------------------------------------------

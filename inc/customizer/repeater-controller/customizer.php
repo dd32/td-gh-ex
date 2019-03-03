@@ -11,9 +11,10 @@
 * Load scripts for repeater 
 */
   function arrival_enqueue_repeater_scripts() {
-    wp_enqueue_script( 'arrival-repeater-script', get_template_directory_uri() . '/inc/customizer/repeater-controller/repeater-script.js',array( 'jquery','jquery-ui-sortable'));
-    wp_enqueue_style('arrival-repeater-style',get_template_directory_uri() . '/inc/customizer/repeater-controller/repeater-style.css');
-    wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/lib/font-awesome/css/font-awesome.min.css' ), array(), '20180514' );
+    wp_enqueue_script( 'arrival-repeater-script', ARRIVAL_URI . '/inc/customizer/repeater-controller/repeater-script.js',array( 'jquery','jquery-ui-sortable'));
+    wp_enqueue_style('arrival-repeater-style',ARRIVAL_URI . '/inc/customizer/repeater-controller/repeater-style.css');
+    wp_enqueue_style( 'fontawesome', ARRIVAL_LIB_URI. '/font-awesome/css/font-awesome.min.css', array(), ARRIVAL_VER );
+
 } add_action( 'customize_controls_enqueue_scripts', 'arrival_enqueue_repeater_scripts');
 
 /**
@@ -28,7 +29,7 @@ function arrival_repeaters_customize_register( $wp_customize ) {
     
 $wp_customize->add_section( 'arrival_social_icons_section', array(
         'title'     => esc_html__( 'Social Icons', 'arrival' ),
-        'priority'  => 10
+        'priority'  => 40
     )
 );
 /**
@@ -48,7 +49,7 @@ $wp_customize->add_setting( 'arrival_social_icons', array(
     )
 ));
 
-$wp_customize->add_control(  new Wprig_Repeater_Controler( $wp_customize, 'arrival_social_icons', 
+$wp_customize->add_control(  new Arrival_Repeater_Controler( $wp_customize, 'arrival_social_icons', 
     array(
         'label'                     => esc_html__('Social Icons Options','arrival'),
         'description'               => esc_html__('Manage social icons for the site','arrival'),

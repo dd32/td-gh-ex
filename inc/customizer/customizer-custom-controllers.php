@@ -14,7 +14,7 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) {
 }
 
 
-class Wp_Customize_Seperator_Control extends WP_Customize_Control {
+class Arrival_Customize_Seperator_Control extends WP_Customize_Control {
      public function render_content() { ?>
        <span class="customize-control-seperator">
            <?php echo esc_html( $this->label ); ?>
@@ -30,12 +30,30 @@ class Wp_Customize_Seperator_Control extends WP_Customize_Control {
    			<?php endif; ?>
        </span>
       
-       <?php     
+<?php     
   }     
 
 }
 
-class Wprig_Customize_Redirect extends WP_Customize_Control{
+class Arrival_Customize_Pro_Info extends WP_Customize_Control {
+     public function render_content() { ?>
+       <span class="customize-control-pro-info">
+            <?php if($this->description): ?>
+              <span class="desc-pro">
+                <?php echo esc_html( $this->description ); ?>
+                  <?php if($this->label){ ?>
+                  <span><?php echo wp_kses_post( $this->label ); ?></span>
+                  <?php } ?>
+              </span>
+        <?php endif; ?>
+       </span>
+      
+<?php     
+  }     
+
+}
+
+class Arrival_Customize_Redirect extends WP_Customize_Control{
 
    public function render_content(){
 
@@ -69,10 +87,10 @@ class Wprig_Customize_Redirect extends WP_Customize_Control{
       ?>
       <span class="customize-control-title"><?php echo esc_html( $this->label ); ?></span>
             <span class="description customize-control-description"><?php echo esc_html( $this->description ); ?></span>
-      <ul class="controls" id="arrival-lite-img-container">
+      <ul class="controls" id="arrival-img-container">
       <?php
         foreach ( $this->choices as $value => $label ) :
-          $class = ( $this->value() == $value ) ? 'arrival-lite-radio-img-selected arrival-lite-radio-img-img' : 'arrival-lite-radio-img-img';
+          $class = ( $this->value() == $value ) ? 'arrival-radio-img-selected arrival-radio-img-img' : 'arrival-radio-img-img';
       ?>
           <li class="inc-radio-image">
             <label>

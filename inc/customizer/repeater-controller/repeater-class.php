@@ -12,7 +12,7 @@ if( class_exists('WP_Customize_Control')):
     /**
      * Repeater Custom Control
     */
-    class Wprig_Repeater_Controler extends WP_Customize_Control {
+    class Arrival_Repeater_Controler extends WP_Customize_Control {
     	/**
     	 * The control type.
     	 *

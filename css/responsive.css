@@ -1,0 +1,52 @@
+.mob-outer-wrapp{
+	display: none;	
+}
+.menu-toggle {
+		display: none;
+	}
+@media only screen and (max-width: 768px){
+
+    .container,.site {
+        padding: 0 20px;
+    }
+    .mob-outer-wrapp .site-branding{
+        padding-top: 0;
+    }
+	.mob-outer-wrapp{
+		display: block;
+	}
+	.menu-toggle {
+		display: block;
+	}
+	.main-header-wrapp{
+		display: none;
+	}
+
+}
+
+@media only screen and (max-width: 500px){
+    .site-title{
+        font-size: 22px;
+    }
+    .site-description{
+        font-size: 13px;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .mob-nav-wrapp{
+        max-width: 200px;
+    }
+    .mob-primary-menu li a{
+        font-size: 14px;
+    }
+    
+}
+
+@media only screen and (max-width: 385px){
+    .mob-nav-wrapp{
+        max-width: 200px;
+    }
+}
+
+

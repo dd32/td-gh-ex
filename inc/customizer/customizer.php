@@ -10,11 +10,15 @@
  *
  * @param WP_Customize_Manager $wp_customize Theme Customizer object.
  */
-require get_template_directory() . '/inc/customizer/customizer-defaults.php';
-require get_template_directory() . '/inc/customizer/buttonset/init.php';
-require get_template_directory() . '/inc/customizer/customizer-custom-controllers.php';
-require get_template_directory() . '/inc/customizer/customizer-sanitize.php';
-require get_template_directory() . '/inc/customizer/repeater-controller/customizer.php';
+require ARRIVAL_DIR . '/inc/customizer/customizer-defaults.php';
+require ARRIVAL_DIR . '/inc/customizer/buttonset/init.php';
+require ARRIVAL_DIR . '/inc/customizer/customizer-custom-controllers.php';
+require ARRIVAL_DIR . '/inc/customizer/customizer-sanitize.php';
+require ARRIVAL_DIR . '/inc/customizer/repeater-controller/customizer.php';
+require ARRIVAL_DIR . '/inc/customizer/customizer-tabs/init.php';
+require ARRIVAL_DIR . '/inc/customizer/range/class-control-range.php';
+require ARRIVAL_DIR . '/inc/customizer/color/class-control-color.php';
+require ARRIVAL_DIR . '/inc/customizer/dimensions/class-control-dimensions.php';
 
 
 
@@ -75,7 +79,75 @@ add_action( 'customize_preview_init', 'arrival_customize_preview_js' );
 * add customizer scripts
 */
 function arrival_customizer_scripts(){
-	wp_enqueue_style( 'arrival-customizer-styles', get_theme_file_uri( '/css/customizer-styles.css' ), array(), '20180514' );
-	wp_enqueue_script( 'arrival-customizer-scripts', get_theme_file_uri( '/js/customizer-control.js' ), array('customize-controls'), '20180514' );
+	wp_enqueue_style( 'arrival-customizer-colors', get_theme_file_uri( '/css/colors.css' ), array(), ARRIVAL_VER );
+
+	wp_enqueue_style( 'arrival-customizer-styles', get_theme_file_uri( '/css/customizer-styles.css' ), array(), ARRIVAL_VER );
+	wp_enqueue_style( 'arrival-customizer-general', get_theme_file_uri( '/css/customizer-general.css' ), array(), ARRIVAL_VER );
+
+	wp_enqueue_script( 'arrival-customizer-general', get_theme_file_uri( '/js/customizer-general.js' ), array('jquery','customize-base'), ARRIVAL_VER );
+	wp_enqueue_script( 'arrival-customizer-scripts', get_theme_file_uri( '/js/customizer-control.js' ), array('customize-controls'), ARRIVAL_VER );
 }
 add_action('customize_controls_enqueue_scripts','arrival_customizer_scripts');
+
+
+/**
+* Pro info section
+*
+* @return text for premium version
+*/
+
+
+if( ! function_exists('arrival_customizer_pro_info')){
+	function arrival_customizer_pro_info($wp_customize,$call_back_id, $section){
+
+	$pro_info_return = apply_filters('arrival_customizer_text_pro','__return_true');
+
+	if( false == $pro_info_return )
+		return;
+
+	if ( ! class_exists( 'WP_Customize_Control' ) ) {
+		return; 
+	}
+
+
+	$wp_customize->add_setting( $call_back_id, array(
+        'sanitize_callback'   => 'sanitize_text_field',        
+      ) );
+
+	$wp_customize->add_control( new Arrival_Customize_Pro_Info( $wp_customize, $call_back_id, array(
+			'label' 		=> sprintf( __('%1$s Arrival Pro %2$s','arrival'), '<a href="#" target="_blank">', '</a>' ),
+	        'description'   => esc_html__( 'more options available in', 'arrival' ),
+	        'section'       => $section,
+	      ) ) );
+
+	}
+}
+
+
+
+/**
+ * Default color picker palettes
+ *
+ * @since 1.0.1
+ */
+if ( ! function_exists( 'arrival_default_color_palettes' ) ) {
+
+	function arrival_default_color_palettes() {
+
+		$palettes = array(
+			'#000000',
+			'#ffffff',
+			'#dd3333',
+			'#dd9933',
+			'#eeee22',
+			'#81d742',
+			'#1e73be',
+			'#8224e3',
+		);
+
+		// Apply filters and return
+		return apply_filters( 'arrival_default_color_palettes', $palettes );
+
+	}
+
+}

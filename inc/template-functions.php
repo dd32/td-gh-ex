@@ -13,13 +13,20 @@
  */
 function arrival_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
+	$default  = arrival_get_default_theme_options();
+
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
+	if( is_home() || is_category() ){
+		$classes[] = 'list-layout';
+	}
 	$classes[] = 'active-arrival';
 
+	$_single_post_sidebars = get_theme_mod('arrival_single_post_sidebars',$default['arrival_single_post_sidebars']);
+
 	if ( ! is_front_page() || ! is_404() || ! is_page_template('tpl-home.php') ) {
-		if( is_active_sidebar( 'sidebar-1' ) ){
+		if( is_active_sidebar( 'sidebar-1')  && ($_single_post_sidebars != 'no_sidebar') ){
 			global $template;
 			if ( 'front-page.php' !== basename( $template ) ) {
 				$classes[] = 'has-sidebar';
@@ -105,10 +112,6 @@ function arrival_add_body_style() {
 	// Preload content.css.
 	$preloads['arrival-content'] = arrival_get_preload_stylesheet_uri( $wp_styles, 'arrival-content' );
 
-	// Preload sidebar.css.
-	if ( is_active_sidebar( 'sidebar-1' ) ) {
-		$preloads['arrival-sidebar'] = arrival_get_preload_stylesheet_uri( $wp_styles, 'arrival-sidebar' );
-	}
 
 	// Preload comments.css.
 	if ( ! post_password_required() && is_singular() && ( comments_open() || get_comments_number() ) ) {
@@ -229,3 +232,228 @@ if( ! function_exists('arrival_social_icons')){
 
 	}
 }
+
+
+/**
+* Modify default category widget
+*
+* @return adds span to default category widget counts
+*/
+add_filter('wp_list_categories', 'arrival_add_span_cat_count');
+add_filter('wp_list_archive', 'arrival_add_span_cat_count');
+    function arrival_add_span_cat_count($links) {
+    $links = str_replace('</a> (', '</a> <span class="count">', $links);
+    $links = str_replace(')', '</span>', $links);
+    return $links;
+}
+
+
+/**
+* Strip whitespace in dynamic style
+* @package Arrival
+* @since 1.0.1
+*/
+if( !function_exists('arrival_css_strip_whitespace') ){
+    function arrival_css_strip_whitespace($css){
+        $replace = array(
+        "#/\*.*?\*/#s" => "",  // Strip C style comments.
+        "#\s\s+#"      => " ", // Strip excess whitespace.
+        );
+        $search = array_keys($replace);
+        $css = preg_replace($search, $replace, $css);
+        
+        $replace = array(
+        ": "  => ":",
+        "; "  => ";",
+        " {"  => "{",
+        " }"  => "}",
+        ", "  => ",",
+        "{ "  => "{",
+        ";}"  => "}", // Strip optional semicolons.
+        ",\n" => ",", // Don't wrap multiple selectors.
+        "\n}" => "}", // Don't wrap closing braces.
+        //"} "  => "}\n", // Put each rule on it's own line.
+        );
+        $search = array_keys($replace);
+        $css = str_replace($search, $replace, $css);
+        
+        return trim($css);
+    }
+}
+
+
+
+/**
+ * Function for excerpt length
+ */
+if( ! function_exists( 'arrival_get_excerpt_content' ) ):
+    function arrival_get_excerpt_content( $limit ) {
+
+    	$content 			= get_the_content();
+        $striped_contents 	= strip_shortcodes( $content );
+        $striped_content 	= strip_tags( $striped_contents );
+        $limit_content 		= mb_substr( $striped_content, 0 , absint($limit) );
+       
+        return '<p>'.$limit_content.'</p>';
+    }
+
+endif;
+
+/**
+* Numeric post navigation for archive pages
+*
+*/
+if( ! function_exists('arrival_numeric_posts_nav')){
+    function arrival_numeric_posts_nav() {
+     
+        if( is_singular() )
+            return;
+     
+        global $wp_query;
+     
+        /** Stop execution if there's only 1 page */
+        if( $wp_query->max_num_pages <= 1 )
+            return;
+     
+        $paged = get_query_var( 'paged' ) ? absint( get_query_var( 'paged' ) ) : 1;
+        $max   = intval( $wp_query->max_num_pages );
+     
+        /** Add current page to the array */
+        if ( $paged >= 1 )
+            $links[] = $paged;
+     
+        /** Add the pages around the current page to the array */
+        if ( $paged >= 3 ) {
+            $links[] = $paged - 1;
+            $links[] = $paged - 2;
+        }
+     
+        if ( ( $paged + 2 ) <= $max ) {
+            $links[] = $paged + 2;
+            $links[] = $paged + 1;
+        }
+     
+        echo '<div class="arrival-archive-navigation clear">';
+     
+        /** Previous Post Link */
+        if ( get_previous_posts_link() )
+            printf( '<span class="prev">%s</span>' . "\n", get_previous_posts_link() );
+
+        echo '<ul>';
+        /** Link to first page, plus ellipses if necessary */
+        if ( ! in_array( 1, $links ) ) {
+            $class = 1 == $paged ? ' class="active"' : '';
+     
+            printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( 1 ) ), '1' );
+     
+            if ( ! in_array( 2, $links ) )
+                echo '<li>...</li>';
+        }
+     
+        /** Link to current page, plus 2 pages in either direction if necessary */
+        sort( $links );
+        foreach ( (array) $links as $link ) {
+            $class = $paged == $link ? ' class="active"' : '';
+            printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $link ) ), $link );
+        }
+     
+        /** Link to last page, plus ellipses if necessary */
+        if ( ! in_array( $max, $links ) ) {
+            if ( ! in_array( $max - 1, $links ) )
+                echo '<li>...</li>' . "\n";
+     
+            $class = $paged == $max ? ' class="active"' : '';
+            printf( '<li%s><a href="%s">%s</a></li>' . "\n", $class, esc_url( get_pagenum_link( $max ) ), $max );
+        }
+        echo '</ul>';
+        /** Next Post Link */
+        if ( get_next_posts_link() )
+            printf( '<span class="next">%s</span>' . "\n", get_next_posts_link() );
+     
+        echo '</div>' . "\n";
+     
+    }
+}
+
+
+/**
+ * Get media attachment id from url
+ */ 
+if ( ! function_exists( 'arrival_get_attachment_id_from_url' ) ):
+    function arrival_get_attachment_id_from_url( $attachment_url ) {     
+        global $wpdb;
+        $attachment_id = false;
+
+        // If there is no url, return.
+        if ( '' == $attachment_url )
+            return;
+
+        // Get the upload directory paths
+        $upload_dir_paths = wp_upload_dir();
+
+        // Make sure the upload path base directory exists in the attachment URL, to verify that we're working with a media library image
+        if ( false !== strpos( $attachment_url, $upload_dir_paths['baseurl'] ) ) {
+
+            // If this is the URL of an auto-generated thumbnail, get the URL of the original image
+            $attachment_url = preg_replace( '/-\d+x\d+(?=\.(jpg|jpeg|png|gif)$)/i', '', $attachment_url );
+
+            // Remove the upload path base directory from the attachment URL
+            $attachment_url = str_replace( $upload_dir_paths['baseurl'] . '/', '', $attachment_url );
+
+            // Finally, run a custom database query to get the attachment ID from the modified attachment URL
+            $attachment_id = $wpdb->get_var( $wpdb->prepare( "SELECT wposts.ID FROM $wpdb->posts wposts, $wpdb->postmeta wpostmeta WHERE wposts.ID = wpostmeta.post_id AND wpostmeta.meta_key = '_wp_attached_file' AND wpostmeta.meta_value = '%s' AND wposts.post_type = 'attachment'", $attachment_url ) );
+
+        }     
+        return $attachment_id;
+    }
+    endif;
+
+
+/**
+* Post-format control
+* @since 1.0.1
+*/
+if( ! function_exists('arrival_post_format_display')){
+	function arrival_post_format_display(){
+		global $post;
+        $post_id 		= $post->ID;
+        $post_format 	= get_post_format( $post_id );
+        $img_size 		= 'arrival-blog-list-thumb'; 
+
+        if( 'audio' == $post_format ){
+
+        	$audio_url_value = get_post_meta( $post->ID, 'post_embed_audio_url', true );
+        	echo wp_oembed_get(esc_url($audio_url_value));
+
+        }elseif( 'video' == $post_format ){
+
+        	$video_url_value = get_post_meta( $post->ID, 'post_embed_video_url', true );
+			echo wp_oembed_get(esc_url($video_url_value));        	
+
+        }elseif( 'gallery' == $post_format ){
+        	$post_gallery_images = get_post_meta( $post->ID, 'post_images', true );
+        	if( $post_gallery_images ){
+	        	foreach( $post_gallery_images as $post_gallery_image ){
+
+	        		$img_id 	= arrival_get_attachment_id_from_url($post_gallery_image);
+	        		$thumb_img 	= wp_get_attachment_image_src( $img_id, $img_size, true );
+	        		$image_alt 	= get_post_meta( $img_id, '_wp_attachment_image_alt', true );
+
+	        	 ?>
+	        		<div class="img-wrap">
+	        			<img src="<?php echo esc_url($thumb_img[0]);?>" alt="<?php echo esc_attr($image_alt);?>">
+	        		</div>
+				<?php 
+	        	}
+        	}
+
+        }else{
+        	arrival_post_thumbnail($img_size);
+        }
+		
+
+		
+
+	}
+}
+

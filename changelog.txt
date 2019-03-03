@@ -1,0 +1,7 @@
+=== v1.0.1 ===
+- Minor Bugs Fixed
+- Screenshot image changed
+
+
+=== v1.0.0 ===
+- Initial release

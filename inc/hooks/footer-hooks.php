@@ -52,7 +52,7 @@ if(! function_exists('arrival_btm_footer')){
 			<span class="sep"> | </span>
 			<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'arrival' ), '<a href="' . esc_url( 'https://github.com/arrival/arrival/' ) . '">Arrival</a>', 'WPoperation' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'arrival' ), 'Arrival', '<a href="' . esc_url( 'https://wpoperation.com/' ) . '" target="_blank">WPoperation</a>' );
 			?>
 		</div><!-- .site-info -->
 		<div class="social-icons-wrapp">

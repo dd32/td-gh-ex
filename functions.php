@@ -6,6 +6,13 @@
  *
  * @package arrival
  */
+/** important constants **/
+$theme_ob = wp_get_theme();
+$ver      = $theme_ob -> get( 'Version' );
+define( 'ARRIVAL_VER',$ver);
+define( 'ARRIVAL_URI', get_template_directory_uri() );
+define( 'ARRIVAL_DIR', get_template_directory() );
+define( 'ARRIVAL_LIB_URI', get_template_directory_uri(). '/lib' );
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -33,6 +40,10 @@ function arrival_setup() {
 		* provide it for us.
 		*/
 	add_theme_support( 'title-tag' );
+
+
+	/* custom image size */
+	add_image_size( 'arrival-blog-list-thumb', 800, 800, true );
 
 	/*
 		* Enable support for Post Thumbnails on posts and pages.
@@ -64,6 +75,17 @@ function arrival_setup() {
 			'caption',
 		)
 	);
+
+	/*
+	 * Enable support for Post Formats.
+	 * See https://developer.wordpress.org/themes/functionality/post-formats/
+	 */
+	add_theme_support( 'post-formats', array(
+		'audio',
+		'video',
+		'gallery',
+	) );
+	
 
 	// Set up the WordPress core custom background feature.
 	add_theme_support(
@@ -112,47 +134,47 @@ function arrival_setup() {
 	 */
 	add_theme_support( 'editor-color-palette', array(
 		array(
-			'name'  => __( 'Dusty orange', 'arrival' ),
+			'name'  => esc_html__( 'Dusty orange', 'arrival' ),
 			'slug'  => 'dusty-orange',
 			'color' => '#ed8f5b',
 		),
 		array(
-			'name'  => __( 'Dusty red', 'arrival' ),
+			'name'  => esc_html__( 'Dusty red', 'arrival' ),
 			'slug'  => 'dusty-red',
 			'color' => '#e36d60',
 		),
 		array(
-			'name'  => __( 'Dusty wine', 'arrival' ),
+			'name'  => esc_html__( 'Dusty wine', 'arrival' ),
 			'slug'  => 'dusty-wine',
 			'color' => '#9c4368',
 		),
 		array(
-			'name'  => __( 'Dark sunset', 'arrival' ),
+			'name'  => esc_html__( 'Dark sunset', 'arrival' ),
 			'slug'  => 'dark-sunset',
 			'color' => '#33223b',
 		),
 		array(
-			'name'  => __( 'Almost black', 'arrival' ),
+			'name'  => esc_html__( 'Almost black', 'arrival' ),
 			'slug'  => 'almost-black',
 			'color' => '#0a1c28',
 		),
 		array(
-			'name'  => __( 'Dusty water', 'arrival' ),
+			'name'  => esc_html__( 'Dusty water', 'arrival' ),
 			'slug'  => 'dusty-water',
 			'color' => '#41848f',
 		),
 		array(
-			'name'  => __( 'Dusty sky', 'arrival' ),
+			'name'  => esc_html__( 'Dusty sky', 'arrival' ),
 			'slug'  => 'dusty-sky',
 			'color' => '#72a7a3',
 		),
 		array(
-			'name'  => __( 'Dusty daylight', 'arrival' ),
+			'name'  => esc_html__( 'Dusty daylight', 'arrival' ),
 			'slug'  => 'dusty-daylight',
 			'color' => '#97c0b7',
 		),
 		array(
-			'name'  => __( 'Dusty sun', 'arrival' ),
+			'name'  => esc_html__( 'Dusty sun', 'arrival' ),
 			'slug'  => 'dusty-sun',
 			'color' => '#eee9d1',
 		),
@@ -173,26 +195,26 @@ function arrival_setup() {
 	 */
 	add_theme_support( 'editor-font-sizes', array(
 		array(
-			'name'      => __( 'small', 'arrival' ),
-			'shortName' => __( 'S', 'arrival' ),
+			'name'      => esc_html__( 'small', 'arrival' ),
+			'shortName' => esc_html__( 'S', 'arrival' ),
 			'size'      => 16,
 			'slug'      => 'small',
 		),
 		array(
-			'name'      => __( 'regular', 'arrival' ),
-			'shortName' => __( 'M', 'arrival' ),
+			'name'      => esc_html__( 'regular', 'arrival' ),
+			'shortName' => esc_html__( 'M', 'arrival' ),
 			'size'      => 20,
 			'slug'      => 'regular',
 		),
 		array(
-			'name'      => __( 'large', 'arrival' ),
-			'shortName' => __( 'L', 'arrival' ),
+			'name'      => esc_html__( 'large', 'arrival' ),
+			'shortName' => esc_html__( 'L', 'arrival' ),
 			'size'      => 36,
 			'slug'      => 'large',
 		),
 		array(
-			'name'      => __( 'larger', 'arrival' ),
-			'shortName' => __( 'XL', 'arrival' ),
+			'name'      => esc_html__( 'larger', 'arrival' ),
+			'shortName' => esc_html__( 'XL', 'arrival' ),
 			'size'      => 48,
 			'slug'      => 'larger',
 		),
@@ -202,6 +224,23 @@ function arrival_setup() {
 
 }
 add_action( 'after_setup_theme', 'arrival_setup' );
+
+
+/**
+ * Set the content width in pixels, based on the theme's design and stylesheet.
+ *
+ * Priority 0 to make it available to lower priority callbacks.
+ *
+ * @global int $content_width
+ */
+function arrival_content_width() {
+	// This variable is intended to be overruled from themes.
+	// Open WPCS issue: {@link https://github.com/WordPress-Coding-Standards/WordPress-Coding-Standards/issues/1043}.
+	// phpcs:ignore WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound
+	$GLOBALS['content_width'] = apply_filters( 'arrival_content_width', 640 );
+}
+add_action( 'after_setup_theme', 'arrival_content_width', 0 );
+
 
 /**
  * Set the embed width in pixels, based on the theme's design and stylesheet.
@@ -283,7 +322,7 @@ function arrival_gutenberg_styles() {
 	wp_enqueue_style( 'arrival-fonts', arrival_fonts_url(), array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 
 	// Enqueue main stylesheet.
-	wp_enqueue_style( 'arrival-base-style', get_theme_file_uri( '/css/editor-styles.css' ), array(), '20180514' );
+	wp_enqueue_style( 'arrival-base-style', get_theme_file_uri( '/css/editor-styles.css' ), array(), ARRIVAL_VER );
 }
 add_action( 'enqueue_block_editor_assets', 'arrival_gutenberg_styles' );
 
@@ -358,20 +397,23 @@ function arrival_styles() {
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'arrival-fonts', arrival_fonts_url(), array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 
+	wp_enqueue_style( 'arrival-woo-styles', get_theme_file_uri( '/css/woo-styles.css' ), array(), ARRIVAL_VER );
+	wp_enqueue_style( 'slick', get_theme_file_uri( '/lib/slick/slick.css' ), array(), ARRIVAL_VER );
+	wp_enqueue_style( 'slick-theme', get_theme_file_uri( '/lib/slick/slick-theme.css' ), array(), ARRIVAL_VER );
 	//jarallax
-	wp_enqueue_style( 'jquery-jarallax', get_theme_file_uri( '/lib/jarallax/jarallax.css' ), array(), '20180514' );
+	wp_enqueue_style( 'jquery-jarallax', get_theme_file_uri( '/lib/jarallax/jarallax.css' ), array(), ARRIVAL_VER );
 	//fontawesome
-	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/lib/font-awesome/css/font-awesome.min.css' ), array(), '20180514' );
+	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/lib/font-awesome/css/font-awesome.min.css' ), array(), ARRIVAL_VER );
 
 	// Enqueue main stylesheet.
-	wp_enqueue_style( 'arrival-base-style', get_stylesheet_uri(), array(), '20180514' );
+	wp_enqueue_style( 'arrival-base-style', get_stylesheet_uri(), array(), ARRIVAL_VER );
 
 	// Register component styles that are printed as needed.
-	wp_register_style( 'arrival-comments', get_theme_file_uri( '/css/comments.css' ), array(), '20180514' );
-	wp_register_style( 'arrival-content', get_theme_file_uri( '/css/content.css' ), array(), '20180514' );
-	wp_register_style( 'arrival-sidebar', get_theme_file_uri( '/css/sidebar.css' ), array(), '20180514' );
-	wp_register_style( 'arrival-widgets', get_theme_file_uri( '/css/widgets.css' ), array(), '20180514' );
-	wp_register_style( 'arrival-front-page', get_theme_file_uri( '/css/front-page.css' ), array(), '20180514' );
+	wp_register_style( 'arrival-comments', get_theme_file_uri( '/css/comments.css' ), array(), ARRIVAL_VER );
+	wp_enqueue_style( 'arrival-content', get_theme_file_uri( '/css/content.css' ), array(), ARRIVAL_VER );
+	wp_register_style( 'arrival-widgets', get_theme_file_uri( '/css/widgets.css' ), array(), ARRIVAL_VER );
+	wp_register_style( 'arrival-front-page', get_theme_file_uri( '/css/front-page.css' ), array(), ARRIVAL_VER );
+	wp_enqueue_style( 'arrival-responsive', get_theme_file_uri('/css/responsive.css'), array(), ARRIVAL_VER );
 }
 add_action( 'wp_enqueue_scripts', 'arrival_styles' );
 
@@ -387,28 +429,32 @@ function arrival_scripts() {
 	if ( arrival_is_amp() ) {
 		return;
 	}
+
+	wp_enqueue_script( 'arrival-wooButtons', get_theme_file_uri( '/js/wooButtons.js' ), ARRIVAL_VER, false );
+	wp_enqueue_script( 'slick', get_theme_file_uri( '/lib/slick/slick.min.js' ), ARRIVAL_VER, false );
+	wp_enqueue_script( 'jquery-fitvids', get_theme_file_uri( '/lib/jquery-fitvids/jquery.fitvids.js' ), array('jquery'), ARRIVAL_VER, false );
 	//enqueue onepage nav
 	if( 'yes' == $arrival_one_page_menus ):
-	wp_enqueue_script( 'jquery-onepagenav', get_theme_file_uri( '/lib/onepagenav/jquery.nav.js' ), array('jquery'), '20180514', false );
+	wp_enqueue_script( 'jquery-onepagenav', get_theme_file_uri( '/lib/onepagenav/jquery.nav.js' ), array('jquery'), ARRIVAL_VER, false );
 	wp_script_add_data( 'jquery-onepagenav', 'async', true );
 	endif;
 
 	//enqueue jarallax script
-	wp_enqueue_script( 'jquery-jarallax', get_theme_file_uri( '/lib/jarallax/jarallax.min.js' ), array('jquery'), '20180514', false );
+	wp_enqueue_script( 'jquery-jarallax', get_theme_file_uri( '/lib/jarallax/jarallax.min.js' ), array('jquery'), ARRIVAL_VER, false );
 	wp_script_add_data( 'jquery-jarallax', 'async', true );
 	// Enqueue the navigation script.
-	wp_enqueue_script( 'arrival-navigation', get_theme_file_uri( '/js/navigation.js' ), array('jquery'), '20180514', false );
+	//wp_enqueue_script( 'arrival-navigation', get_theme_file_uri( '/js/navigation.js' ), array('jquery'), ARRIVAL_VER, false );
 	wp_script_add_data( 'arrival-navigation', 'async', true );
 	wp_localize_script( 'arrival-navigation', 'arrivalScreenReaderText', array(
-		'expand'   => __( 'Expand child menu', 'arrival' ),
-		'collapse' => __( 'Collapse child menu', 'arrival' ),
+		'expand'   => esc_html__( 'Expand child menu', 'arrival' ),
+		'collapse' => esc_html__( 'Collapse child menu', 'arrival' ),
 	));
 
 	// Enqueue skip-link-focus script.
-	wp_enqueue_script( 'arrival-skip-link-focus-fix', get_theme_file_uri( '/js/skip-link-focus-fix.js' ), array('jquery'), '20180514', false );
+	wp_enqueue_script( 'arrival-skip-link-focus-fix', get_theme_file_uri( '/js/skip-link-focus-fix.js' ), array('jquery'), ARRIVAL_VER, false );
 	wp_script_add_data( 'arrival-skip-link-focus-fix', 'defer', true );
 
-	wp_enqueue_script( 'arrival-scripts', get_theme_file_uri( '/js/custom-scripts.js' ), array('jquery'), '20180514', false );
+	wp_enqueue_script( 'arrival-scripts', get_theme_file_uri( '/js/custom-scripts.js' ), array('jquery'), ARRIVAL_VER, false );
 
 	// Enqueue comment script on singular post/page views only.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -445,6 +491,7 @@ require get_template_directory() . '/inc/customizer/customizer.php';
 
 require get_template_directory() . '/inc/hooks/header-hooks.php';
 require get_template_directory() . '/inc/hooks/footer-hooks.php';
+require get_template_directory() . '/inc/dynamic-styles.php';
 
 /**
  * Optional: Add theme support for lazyloading images.
@@ -452,3 +499,12 @@ require get_template_directory() . '/inc/hooks/footer-hooks.php';
  * @link https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video/
  */
 require get_template_directory() . '/pluggable/lazyload/lazyload.php';
+
+/**
+* WooCommerce functions
+*
+*
+*/
+if( class_exists('woocommerce')){
+	require get_template_directory() . '/inc/woocommerce/woo-functions.php';
+}
