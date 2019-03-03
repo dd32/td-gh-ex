@@ -13,11 +13,11 @@
 
         <!-- post thumbnail -->
         <?php if ( has_post_thumbnail()) : // Check if Thumbnail exists ?>
-        <div class="alignright">
+        <p class="alignright">
             <a class="thumbnail" href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
                 <?php the_post_thumbnail( 'thumbnail' );  ?>
             </a>
-        </div>
+        </p>
         <?php endif; ?>
         <!-- /post thumbnail -->
 

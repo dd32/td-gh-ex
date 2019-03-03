@@ -94,7 +94,11 @@ function quickpress_credits() {
 			'8.0.1'
 			);
 		
-	wp_enqueue_style( 'quickpress', get_stylesheet_uri() );
+	wp_enqueue_style( 'quickpress', 
+					 get_stylesheet_uri(),
+					 array(), 
+			         '1.8.11'
+					);
 		
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ){
         wp_enqueue_script( 'comment-reply' );
