@@ -37,7 +37,7 @@ add_action( 'after_setup_theme', 'quickpress_setup' );
 // Register sidebar widgets
 function quickpress_widgets_init() {
 register_sidebar(array(
-        'name' => 'Sidebar Full',
+        'name' => __( 'Sidebar Full', 'quickpress' ),
         'id' => 'sidebar-1',
         'before_widget' => '',
         'after_widget' => '',
@@ -45,7 +45,8 @@ register_sidebar(array(
         'after_title' => '</h4>',
     ));
 register_sidebar(array(
-        'name' => 'Sidebar Split Left',
+
+        'name' => __( 'Sidebar Split Left', 'quickpress' ),
         'id' => 'sidebar-2',
         'before_widget' => '',
         'after_widget' => '',
@@ -53,7 +54,7 @@ register_sidebar(array(
         'after_title' => '</h4>',
 )); 
 register_sidebar(array(
-         'name' => 'Sidebar Split Right',
+        'name' => __( 'Sidebar Split Right', 'quickpress' ),
         'id' => 'sidebar-3',
         'before_widget' => '',
         'after_widget' => '',
@@ -77,17 +78,24 @@ function quickpress_excerpt_more( $more ) {
 
 // credits
 function quickpress_credits() {
-    echo '<p class="text-center">
-	<a href="http://www.quickonlinethemes.com/wordpress/quickpress/" title="QuickPress Theme" rel="nofollow" >QuickPress Theme</a> powered by <a href="http://wordpress.org">WordPress</a>
-	</p>';
+    echo '<div class="center">
+	<a href="https://wordpress.org/themes/quickpress/" target="_blank" rel="nofollow">QuickPress Theme</a> &bull; Powered by WordPress
+	</div>';
 	}
 	add_action('wp_footer', 'quickpress_credits');
 
 
 // load javascript
 	function quickpress_scripts() {
+		
+		wp_enqueue_style( 'quickpress-normalize', 
+			get_template_directory_uri() . '/css/normalize.css', 
+			array(), 
+			'8.0.1'
+			);
+		
 	wp_enqueue_style( 'quickpress', get_stylesheet_uri() );
-	
+		
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ){
         wp_enqueue_script( 'comment-reply' );
     	}
