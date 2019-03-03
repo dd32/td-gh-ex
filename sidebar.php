@@ -20,6 +20,10 @@
             <li>
                 <?php if ( is_active_sidebar( 'sidebar' ) ) : ?>
                 <?php dynamic_sidebar( 'sidebar' ); ?>
+				
+				<?php else : ?>
+        		<p class="emptybox">Add Widgets Here</p>
+				
                 <?php endif; ?>
             </li>
         </ul>
