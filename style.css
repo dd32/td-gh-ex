@@ -2,14 +2,14 @@
 Theme Name: QuickPress
 Theme URI: https://www.quickonlinetips.com/projects/quickpress-wordpress-theme/
 Description: A lightweight, 2-3 columns, widget ready, SEO optimized, fast loading, easy to customize WordPress theme.
-Version: 1.8.8
+Version: 1.8.9
 Author: QuickOnlineTips
 Author URI: https://www.quickonlinetips.com/
 Tags: two-columns, three-columns, right-sidebar, threaded-comments, sticky-post, custom-background
 Text Domain: quickpress
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-QuickPress WordPress Theme, Copyright 2018 QuickOnlineTips.com
+QuickPress WordPress Theme, Copyright 2019 QuickOnlineTips.com
 QuickPress is distributed under the terms of the GNU GPL
 */
 
@@ -384,15 +384,15 @@ body {
 }
 
 #footer {
-    color: #CCC;
-    padding: 10px 0;
-    font-size: 1.2em;
+    color: #FFF;
+    padding: 15px 0 20px;
+    font-size: 1em;
     clear: both;
 }
 
 #footer p {
     margin: 0;
-    padding: 12px 0;
+    padding: 5px 0;
     text-align: center;
 }
 
@@ -402,8 +402,8 @@ body {
     border-bottom: 1px solid #999;
 }
 
-#footer a:hover {
-    color: #ccc;
+#footer a:hover { 
+	color: #CCC;
     border-bottom: 0px dotted #CCC;
 }
 
@@ -485,7 +485,7 @@ h3.comments {
 }
 
 #menu-header a:hover {
-    color: #666;
+    color: #C32364;
     text-decoration: underline;
 }
 
@@ -516,14 +516,12 @@ img.centered {
 }
 
 img.alignright {
-    padding: 4px;
-    margin: 0 0 2px 7px;
+    padding-left: 10px;
     display: inline;
 }
 
 img.alignleft {
-    padding: 4px;
-    margin: 0px 7px 2px 0;
+    padding-right: 10px;
     display: inline;
 }
 
@@ -543,20 +541,6 @@ img.alignleft {
 
 /* Begin Lists
 ------------------------------------- */
-
-html&gt;
-body .entry ul {
-    margin-left: 0px;
-    padding: 0 0 0 30px;
-    list-style: none;
-    padding-left: 10px;
-    text-indent: -10px;
-}
-
-html&gt;
-body .entry li {
-    margin: 7px 0 8px 10px;
-}
 
 .entry ol {
     padding: 0 0 0 35px;
@@ -632,6 +616,7 @@ input {
     border: 1px solid #999;
     padding: 5px;
     margin: 15px 0;
+	width: 200px;
 }
 
 #searchsubmit {
@@ -658,9 +643,6 @@ select {
 
 .formbutton {
     cursor: pointer;
-    background: #ddd;
-    color: #333;
-    padding: 1px 2px;
 }
 
 #commentform input {
@@ -697,7 +679,7 @@ select {
 }
 
 #commentform #submit:hover {
-    background: #ac2925;
+    background: #C32364;
 }
 
 
@@ -808,7 +790,6 @@ ol.commentlist li div.reply {
 
 ol.commentlist li div.reply a {
     text-decoration: none;
-    background: #FFF;
     padding: 5px;
 }
 
@@ -930,6 +911,13 @@ dd {
     margin: 0;
 }
 
+.emptybox {
+	border: 2px solid #CCC;
+	background-color: #fff;
+	padding: 5px;
+	text-align: center;
+	text-transform: uppercase;
+}
 
 /* Begin Tags &amp; Classes
 ------------------------------------- */

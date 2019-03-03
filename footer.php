@@ -1,6 +1,6 @@
 <footer id="footer">
 
-    <p>
+    <p> 
         &copy;
         <?php _e('Copyright', 'quickpress'); ?>
         <?php echo date('Y'); ?> -

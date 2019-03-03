@@ -87,8 +87,15 @@ function quickpress_credits() {
 
 // load javascript
 	function quickpress_scripts() {
+		
+		wp_enqueue_style( 'quickpress-normalize', 
+			get_template_directory_uri() . '/css/normalize.css', 
+			array(), 
+			'8.0.1'
+			);
+		
 	wp_enqueue_style( 'quickpress', get_stylesheet_uri() );
-	
+		
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ){
         wp_enqueue_script( 'comment-reply' );
     	}

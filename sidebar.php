@@ -7,6 +7,9 @@
                 <li>
                     <?php if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
                     <?php dynamic_sidebar( 'sidebar-1' ); ?>
+					    <?php else : ?>
+        				<p class="emptybox">Add Widgets Here</p>
+					    	
                     <?php endif; ?>
                 </li>
             </ul>
@@ -19,6 +22,7 @@
                 <li>
                     <?php if ( is_active_sidebar( 'sidebar-2' ) ) : ?>
                     <?php dynamic_sidebar( 'sidebar-2' ); ?>
+					
                     <?php endif; ?>
                 </li>
             </ul>
@@ -30,7 +34,8 @@
             <ul>
                 <li>
                     <?php if ( is_active_sidebar( 'sidebar-3' ) ) : ?>
-                    <?php dynamic_sidebar( 'sidebar-3' ); ?>
+					<?php dynamic_sidebar( 'sidebar-3' ); ?> 
+					
                     <?php endif; ?>
                 </li>
             </ul>
