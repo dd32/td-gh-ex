@@ -2081,6 +2081,10 @@ msgstr ""
 msgid "A <a href=\"%s\">SiteOrigin</a> Theme"
 msgstr ""
 
+#: parts/menu.php:32
+msgid "Open the search"
+msgstr ""
+
 #: slider/demo.php:6, slider/demo.php:9, slider/demo.php:14, slider/demo.php:16
 msgid "Demo Slide"
 msgstr ""
@@ -2245,19 +2249,19 @@ msgstr ""
 msgid "You can also read through the %sVantage documentation%s to get to know it even faster."
 msgstr ""
 
-#: inc/customizer/customizer.php:403
+#: inc/customizer/customizer.php:405
 msgid "Theme Design"
 msgstr ""
 
-#: inc/customizer/customizer.php:404
+#: inc/customizer/customizer.php:406
 msgid "Theme Specific Customizations For %s."
 msgstr ""
 
-#: inc/customizer/customizer.php:585
+#: inc/customizer/customizer.php:587
 msgid "Are you sure you want to reset your theme customizations?"
 msgstr ""
 
-#: inc/customizer/customizer.php:586
+#: inc/customizer/customizer.php:588
 msgid "Reset Customizations"
 msgstr ""
 
