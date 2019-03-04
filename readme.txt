@@ -17,7 +17,7 @@ fKidd is a Free Multi-Purpose WordPress Theme.
 fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Responsive, Customizable, Built-in
 Responsive Slider, WooCommerce plugin support, Multi-Level Drop-Down Menu, Homepage and Footer Widgets,
 W3C Markup Validated, Customizer Options: Social Sites, Header Phone and Email, Slider, Header Logo, Footer,
-Search Engine Optimized, Social Sites: Facebook, Google+, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr,
+Search Engine Optimized, Social Sites: Facebook, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr,
 YouTube, Pinterest, VK, Flickr, Vine, Multiple browsers support (IE 9, IE 10, IE 11, Chrome, Firefox, Opera,
 and Safari), Full-Width Page Template, Header and Footer Menu, Translation ready and much more.
 DEMO: DEMO: https://tishonator.com/demo/fkidd
@@ -48,6 +48,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 
 == Changelog ==
+
+= 1.9.7 =
+* fix issue with image caption alignment
+* remove Google+ social icon
 
 = 1.9.6 =
 * update Slider Display text in Customizer option to 'Display Slider on a Static Front Page'

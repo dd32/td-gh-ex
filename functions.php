@@ -163,7 +163,6 @@ function fkidd_setup() {
 			'fkidd_slide3_image' => '{{image-slider-3}}',
 			'fkidd_slide3_content' => _x( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Theme starter content', 'fkidd' ),
 			'fkidd_social_facebook' => _x( '#', 'Theme starter content', 'fkidd' ),
-			'fkidd_social_google' => _x( '#', 'Theme starter content', 'fkidd' ),
 			'fkidd_social_twitter' => _x( '#', 'Theme starter content', 'fkidd' ),
 			'fkidd_social_linkedin' => _x( '#', 'Theme starter content', 'fkidd' ),
 			'fkidd_social_instagram' => _x( '#', 'Theme starter content', 'fkidd' ),
@@ -394,10 +393,6 @@ function fkidd_customize_register( $wp_customize ) {
 	// Add facebook url
 	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_facebook',
 		__( 'Facebook Page URL', 'fkidd' ));
-
-	// Add google+ url
-	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_google',
-		__( 'Google+ Page URL', 'fkidd' ));
 
 	// Add twitter url
 	fkidd_customize_add_social_site($wp_customize, 'fkidd_social_twitter',
@@ -659,8 +654,6 @@ function fkidd_display_single_social_site($socialSiteID, $title, $cssClass) {
 function fkidd_display_social_sites() {
 
 	fkidd_display_single_social_site('fkidd_social_facebook', __('Follow us on Facebook', 'fkidd'), 'facebook16' );
-
-	fkidd_display_single_social_site('fkidd_social_google', __('Follow us on Google+', 'fkidd'), 'google16' );
 
 	fkidd_display_single_social_site('fkidd_social_twitter', __('Follow us on Twitter', 'fkidd'), 'twitter16' );
 
