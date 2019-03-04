@@ -17,7 +17,7 @@ fGymm is a Fully Responsive Gym and Fitness WordPress Theme.
 fGymm is a Fully Responsive Gym and Fitness WordPress Theme designed for health and fitness clubs, 
 CrossFit programs, fitness professionals, personal trainers, etc. Features include Built-in Homepage Slider (Displayed Only on a Static Front Page), 
 WooCommerce plugin support, Multi-level Drop-down Menu, W3C markup validated, Search Engine Optimized, Header
-and Footer Social Icons (Facebook, Google+, Twitter, LinkedIn, Instagram, Tumblr, YouTube, Pinterest, VK,
+and Footer Social Icons (Facebook, Twitter, LinkedIn, Instagram, Tumblr, YouTube, Pinterest, VK,
 Flickr, Vine), Sidebar and 3 Footer Widget Areas, 3 Homepage widget areas, Full-Width Template, Multiple
 Browsers Support, Translation Ready and much more. DEMO: https://tishonator.com/demo/fgymm
 
@@ -43,6 +43,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.7.8 =
+* fix issue with image caption alignment
+* remove Google+ social icon
 
 = 1.7.7 =
 * update Slider Display text in Customizer option to 'Display Slider on a Static Front Page'

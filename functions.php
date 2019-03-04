@@ -159,7 +159,6 @@ function fgymm_setup() {
 			'fgymm_slide3_image' => '{{image-slider-3}}',
 			'fgymm_slide3_content' => _x( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.', 'Theme starter content', 'fgymm' ),
 			'fgymm_social_facebook' => _x( '#', 'Theme starter content', 'fgymm' ),
-			'fgymm_social_google' => _x( '#', 'Theme starter content', 'fgymm' ),
 			'fgymm_social_twitter' => _x( '#', 'Theme starter content', 'fgymm' ),
 			'fgymm_social_linkedin' => _x( '#', 'Theme starter content', 'fgymm' ),
 			'fgymm_social_instagram' => _x( '#', 'Theme starter content', 'fgymm' ),
@@ -371,73 +370,67 @@ function fgymm_show_social_sites() {
 	$socialURL = get_theme_mod('fgymm_social_facebook');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Facebook', 'fgymm') . '" class="facebook16"></a>';
-	}
-
-	$socialURL = get_theme_mod('fgymm_social_google');
-	if ( !empty($socialURL) ) {
-
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Google+', 'fgymm') . '" class="google16"></a>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Facebook', 'fgymm') . '" class="facebook16"></a></li>';
 	}
 
 	$socialURL = get_theme_mod('fgymm_social_twitter');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Twitter', 'fgymm') . '" class="twitter16"></a>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Twitter', 'fgymm') . '" class="twitter16"></a></li>';
 	}
 
 	$socialURL = get_theme_mod('fgymm_social_linkedin');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on LinkedIn', 'fgymm') . '" class="linkedin16"></a>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on LinkedIn', 'fgymm') . '" class="linkedin16"></a></li>';
 	}
 
 	$socialURL = get_theme_mod('fgymm_social_instagram');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Instagram', 'fgymm') . '" class="instagram16"></a>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Instagram', 'fgymm') . '" class="instagram16"></a></li>';
 	}
 
 	$socialURL = get_theme_mod('fgymm_social_rss');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow our RSS Feeds', 'fgymm') . '" class="rss16"></a>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow our RSS Feeds', 'fgymm') . '" class="rss16"></a></li>';
 	}
 
 	$socialURL = get_theme_mod('fgymm_social_tumblr');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Tumblr', 'fgymm') . '" class="tumblr16"></a>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Tumblr', 'fgymm') . '" class="tumblr16"></a></li>';
 	}
 
 	$socialURL = get_theme_mod('fgymm_social_youtube');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Youtube', 'fgymm') . '" class="youtube16"></a>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Youtube', 'fgymm') . '" class="youtube16"></a></li>';
 	}
 
 	$socialURL = get_theme_mod('fgymm_social_pinterest');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Pinterest', 'fgymm') . '" class="pinterest16"></a>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Pinterest', 'fgymm') . '" class="pinterest16"></a></li>';
 	}
 
 	$socialURL = get_theme_mod('fgymm_social_vk');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on VK', 'fgymm') . '" class="vk16"></a>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on VK', 'fgymm') . '" class="vk16"></a></li>';
 	}
 
 	$socialURL = get_theme_mod('fgymm_social_flickr');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Flickr', 'fgymm') . '" class="flickr16"></a>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Flickr', 'fgymm') . '" class="flickr16"></a></li>';
 	}
 
 	$socialURL = get_theme_mod('fgymm_social_vine');
 	if ( !empty($socialURL) ) {
 
-		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Vine', 'fgymm') . '" class="vine16"></a>';
+		echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . __('Follow us on Vine', 'fgymm') . '" class="vine16"></a></li>';
 	}
 }
 
@@ -671,24 +664,6 @@ function fgymm_customize_register( $wp_customize ) {
             'label'          => __( 'Facebook Page URL', 'fgymm' ),
             'section'        => 'fgymm_social_section',
             'settings'       => 'fgymm_social_facebook',
-            'type'           => 'text',
-            )
-        )
-	);
-
-	// Add google+ url
-	$wp_customize->add_setting(
-		'fgymm_social_google',
-		array(
-		    'sanitize_callback' => 'esc_url_raw',
-		)
-	);
-
-	$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'fgymm_social_google',
-        array(
-            'label'          => __( 'Google+ Page URL', 'fgymm' ),
-            'section'        => 'fgymm_social_section',
-            'settings'       => 'fgymm_social_google',
             'type'           => 'text',
             )
         )
