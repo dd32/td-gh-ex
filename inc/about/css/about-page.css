@@ -12,6 +12,13 @@
   font-size: 19px;
 }
 
+.nav-tab-wrapper a:nth-child(5) span {
+  color: orange;
+  padding-top: 2px;
+  padding-right: 3px;
+  font-size: 19px;
+}
+
 .nav-tab-wrapper a {
 	box-shadow: none !important;
 }

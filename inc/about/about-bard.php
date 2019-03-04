@@ -52,7 +52,7 @@ function bard_about_page_output() {
 				<?php esc_html_e( 'Support', 'bard' ); ?>
 			</a>
 			<a href="?page=about-bard&tab=bard_tab_5" class="nav-tab <?php echo $active_tab == 'bard_tab_5' ? 'nav-tab-active' : ''; ?>">
-				<?php esc_html_e( 'Free vs Pro', 'bard' ); ?>
+				<span class="dashicons dashicons-star-filled"></span> <?php esc_html_e( 'Free vs Pro', 'bard' ); ?>
 			</a>
 		</div>
 
