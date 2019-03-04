@@ -65,10 +65,6 @@ msgstr ""
 msgid "Follow us on Facebook"
 msgstr ""
 
-#: ../functions.php:285
-msgid "Follow us on Google+"
-msgstr ""
-
 #: ../functions.php:291
 msgid "Follow us on Twitter"
 msgstr ""
@@ -152,10 +148,6 @@ msgstr ""
 
 #: ../functions.php:500
 msgid "Facebook Page URL"
-msgstr ""
-
-#: ../functions.php:519
-msgid "Google+ Page URL"
 msgstr ""
 
 #: ../functions.php:538

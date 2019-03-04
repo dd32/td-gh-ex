@@ -46,6 +46,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.2 (2019-03-04) =
+* fix issue with image caption alignment
+* remove Google+ social icon
+
 = 1.2.1 (2019-02-06) =
 * update Slider Display text in Customizer option to 'Display Slider on a Static Front Page'
 
