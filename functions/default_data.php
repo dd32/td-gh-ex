@@ -105,7 +105,7 @@ function default_data(){
 	
 	'h2_size'=>30,
 	'h2_fontfamily'=>'Roboto',
-	'h42_fontstyle'=>'normal',
+	'h2_fontstyle'=>'normal',
 	
 	'h3_size'=>24,
 	'h3_fontfamily'=>'Roboto',

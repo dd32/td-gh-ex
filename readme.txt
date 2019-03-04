@@ -124,6 +124,9 @@ Do you enjoy this theme? Send your ideas - issues - on the theme forms . Thank y
 
 
 ============================Change Log================================
+
+@Version 1.9.8
+1. Fixed debug.log file error in defualt data
 @Version 1.9.7
 1. Added WooCommerce Gallery Support
 @Version 1.9.6
