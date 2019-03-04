@@ -16,3 +16,9 @@
 	background-color: #000000 !important;
 	color: #ffffff !important;
 }
+li#accordion-section-cresta_zenzero_buy_pro h3:before {
+	font-family: dashicons;
+    content: "\f488";
+    padding-right: 0.5em;
+    float: left;
+}

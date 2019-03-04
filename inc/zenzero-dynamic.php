@@ -295,6 +295,24 @@ function zenzero_color_primary_register( $wp_customize ) {
     ) );
 	
 	/*
+	Custom Copyright text
+	=====================================================
+	*/
+	$wp_customize->add_setting('zenzero_theme_options_copyright', array(
+		'sanitize_callback' => 'zenzero_sanitize_text',
+		'default'    => '&copy; '.date('Y').' '. get_bloginfo('name'),
+		'type'       => 'theme_mod',
+		'capability' => 'edit_theme_options',
+	) );
+	$wp_customize->add_control('zenzero_theme_options_copyright', array(
+		'label'      => __( 'Copyright Text', 'zenzero' ),
+		'description'	=> __( 'Get the PRO version to remove CrestaProject credits', 'zenzero' ),
+		'section'    => 'cresta_zenzero_options',
+		'settings'   => 'zenzero_theme_options_copyright',
+		'type'       => 'text',
+	) );
+	
+	/*
 	Upgrade to PRO
 	=====================================================
 	*/
@@ -354,6 +372,89 @@ function zenzero_sanitize_checkbox( $input ) {
 		return 1;
 	} else {
 		return '';
+	}
+}
+
+function zenzero_sanitize_text( $input ) {
+	return wp_kses($input, zenzero_allowed_html());
+}
+
+if( ! function_exists('zenzero_allowed_html')){
+	function zenzero_allowed_html() {
+		$allowed_tags = array(
+			'a' => array(
+				'class' => array(),
+				'id'    => array(),
+				'href'  => array(),
+				'rel'   => array(),
+				'title' => array(),
+				'target' => array(),
+			),
+			'abbr' => array(
+				'title' => array(),
+			),
+			'b' => array(),
+			'blockquote' => array(
+				'cite'  => array(),
+			),
+			'cite' => array(
+				'title' => array(),
+			),
+			'code' => array(),
+			'del' => array(
+				'datetime' => array(),
+				'title' => array(),
+			),
+			'dd' => array(),
+			'div' => array(
+				'class' => array(),
+				'title' => array(),
+				'style' => array(),
+			),
+			'dl' => array(),
+			'dt' => array(),
+			'em' => array(),
+			'h1' => array(),
+			'h2' => array(),
+			'h3' => array(),
+			'h4' => array(),
+			'h5' => array(),
+			'h6' => array(),
+			'i' => array(),
+			'br' => array(),
+			'img' => array(
+				'alt'    => array(),
+				'class'  => array(),
+				'height' => array(),
+				'src'    => array(),
+				'width'  => array(),
+			),
+			'li' => array(
+				'class' => array(),
+			),
+			'ol' => array(
+				'class' => array(),
+			),
+			'p' => array(
+				'class' => array(),
+			),
+			'q' => array(
+				'cite' => array(),
+				'title' => array(),
+			),
+			'span' => array(
+				'class' => array(),
+				'title' => array(),
+				'style' => array(),
+			),
+			'strike' => array(),
+			'strong' => array(),
+			'iframe' => array(),
+			'ul' => array(
+				'class' => array(),
+			),
+		);
+		return $allowed_tags;
 	}
 }
 

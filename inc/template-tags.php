@@ -81,12 +81,12 @@ function zenzero_posted_on() {
 	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 	$byline = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 
-	echo '<span class="posted-on"><i class="fa fa-clock-o spaceLeftRight" aria-hidden="true"></i>' . $posted_on . '</span><span class="byline"><i class="fa fa-user spaceLeftRight" aria-hidden="true"></i>' . $byline . '</span>';
+	echo '<span class="posted-on"><i class="fa fa-clock-o spaceLeftRight" aria-hidden="true"></i>' . $posted_on . '</span><span class="byline"><i class="fa fa-user spaceLeftRight" aria-hidden="true"></i>' . $byline . '</span>'; // WPCS: XSS OK.
 	
 	if ( 'post' == get_post_type() ) {
 		$categories_list = get_the_category_list( ' / ' );
 		if ( $categories_list && zenzero_categorized_blog() ) {
-			echo '<span class="cat-links"><i class="fa fa-folder-open-o spaceLeftRight" aria-hidden="true"></i>' . $categories_list . '</span>';
+			printf( '<span class="cat-links"><i class="fa fa-folder-open-o spaceLeftRight" aria-hidden="true"></i>' . $categories_list . '</span>'); // WPCS: XSS OK.
 		}
 	}
 	
@@ -108,7 +108,7 @@ function zenzero_entry_footer() {
 	if ( 'post' == get_post_type() ) {
 		$tags_list = get_the_tag_list( '', '' );
 		if ( $tags_list ) {
-			echo '<span class="tags-links"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>' . $tags_list . '</span>';
+			printf( '<span class="tags-links"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>' . $tags_list . '</span>'); // WPCS: XSS OK.
 		}
 	}
 

@@ -12,16 +12,12 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info smallPart">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'zenzero' ) ); ?>">
-			<?php
-			/* translators: %s: WordPress name */
-			printf( esc_html__( 'Proudly powered by %s', 'zenzero' ), 'WordPress' );
-			?>
-			</a>
+			<?php $copyrightText = get_theme_mod('zenzero_theme_options_copyright', '&copy; '.date('Y').' '. get_bloginfo('name')); ?>
+			<?php echo wp_kses($copyrightText, zenzero_allowed_html()); ?>
 			<span class="sep"> | </span>
 			<?php
 			/* translators: 1: theme name, 2: theme developer */
-			printf( esc_html__( 'Theme: %1$s by %2$s.', 'zenzero' ), '<a target="_blank" href="https://crestaproject.com/downloads/zenzero/" rel="nofollow" title="Zenzero Theme">Zenzero</a>', 'CrestaProject' );
+			printf( esc_html__( 'WordPress Theme: %1$s by %2$s.', 'zenzero' ), '<a target="_blank" href="https://crestaproject.com/downloads/zenzero/" rel="nofollow" title="Zenzero Theme">Zenzero</a>', 'CrestaProject' );
 			?>
 		</div><!-- .site-info -->
 		<?php 
