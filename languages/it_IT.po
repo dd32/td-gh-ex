@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-04-12 20:38+0200\n"
-"PO-Revision-Date: 2017-04-12 20:39+0200\n"
+"POT-Creation-Date: 2019-03-05 12:07+0100\n"
+"PO-Revision-Date: 2019-03-05 12:10+0100\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -14,7 +14,7 @@ msgstr ""
 "esc_html_e;esc_html_x:1,2c\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 1.8.6\n"
 "X-Poedit-SearchPath-0: .\n"
 
 #: 404.php:12 search.php:43
@@ -25,51 +25,51 @@ msgstr "Non Trovato"
 msgid "Sorry, no posts matched your criteria"
 msgstr "Spiacente, nessun articolo risponde ai criteri di ricerca impostati."
 
-#: comments.php:5 core/templates/post-info.php:28
+#: comments.php:6 core/templates/post-info.php:28
 msgid "No comments"
 msgstr "Nessun commento"
 
-#: comments.php:5 core/templates/post-info.php:28
+#: comments.php:7 core/templates/post-info.php:28
 msgid "comment"
 msgstr "commento"
 
-#: comments.php:5 core/templates/post-info.php:28
+#: comments.php:8 core/templates/post-info.php:28
 msgid "comments"
 msgstr "commenti"
 
-#: comments.php:31
+#: comments.php:35
 #, php-format
 msgid "<cite>%s</cite>"
 msgstr "<cite>%s</cite>"
 
-#: comments.php:33
+#: comments.php:37
 #, php-format
 msgid "%1$s at %2$s"
 msgstr "%1$s a %2$s"
 
-#: comments.php:35
+#: comments.php:39
 msgid "(Edit)"
 msgstr "(Edit)"
 
-#: comments.php:41
+#: comments.php:45
 msgid "Your comment is awaiting approval."
 msgstr "Il tuo commento è in attesa di approvazione"
 
-#: comments.php:57
+#: comments.php:61
 msgid "&laquo;"
 msgstr "&laquo;"
 
-#: comments.php:58
+#: comments.php:62
 msgid "&raquo;"
 msgstr "&raquo;"
 
-#: comments.php:66
+#: comments.php:70
 msgid "Comment"
 msgstr "Commenta"
 
-#: core/admin/customize/customize.php:13 core/classes/class-customize.php:300
-msgid "Get support"
-msgstr "Ottieni supporto."
+#: core/admin/customize/customize.php:13 core/classes/class-notice.php:62
+msgid "Upgrade to Alhena Premium"
+msgstr "Aggiorna a Alhena Pro"
 
 #: core/admin/customize/customize.php:25
 msgid "Full Image Background"
@@ -84,12 +84,14 @@ msgstr ""
 "\" dalle impostazioni di attaccamento dell'immagine)"
 
 #: core/admin/customize/customize.php:31 core/admin/customize/customize.php:168
-#: core/admin/customize/customize.php:493
+#: core/admin/customize/customize.php:184
+#: core/admin/customize/customize.php:499
 msgid "No"
 msgstr "No"
 
 #: core/admin/customize/customize.php:32 core/admin/customize/customize.php:169
-#: core/admin/customize/customize.php:494
+#: core/admin/customize/customize.php:185
+#: core/admin/customize/customize.php:500
 msgid "Yes"
 msgstr "Si"
 
@@ -258,394 +260,461 @@ msgid "Do you want to view the comments after articles?"
 msgstr "Vuoi visualizzare i commenti dopo gli articoli?"
 
 #: core/admin/customize/customize.php:178
-msgid "Styles"
-msgstr "Stili"
+msgid "WooCommerce linkable product thumbnails"
+msgstr "Miniature prodotti WooCommerce linkabili"
 
-#: core/admin/customize/customize.php:188
-msgid "Custom css"
-msgstr "Css personalizzato"
+#: core/admin/customize/customize.php:179
+msgid ""
+"Do you want to make linkable the product thumbnails on WooCommerce category "
+"pages?"
+msgstr "Vuoi rendere linkabili le miniature dei prodotti WooCommerce?"
 
-#: core/admin/customize/customize.php:189
-msgid "Insert your custom css code."
-msgstr "Inserisci il tuo codice css personalizzato."
-
-#: core/admin/customize/customize.php:201
+#: core/admin/customize/customize.php:196
 msgid "Layouts"
 msgstr "Layout"
 
-#: core/admin/customize/customize.php:211
+#: core/admin/customize/customize.php:206
 msgid "Home Blog Layout"
 msgstr "Layout per la Homepage"
 
-#: core/admin/customize/customize.php:212
+#: core/admin/customize/customize.php:207
 msgid "If you've set the latest articles, for the homepage, choose a layout."
 msgstr ""
 "Se hai scelto di visualizzare gli ultimi articoli, nella pagina principale, "
 "scegli un layout"
 
-#: core/admin/customize/customize.php:217
-#: core/admin/customize/customize.php:235
-#: core/admin/customize/customize.php:253 core/metaboxes/page.php:38
+#: core/admin/customize/customize.php:212
+#: core/admin/customize/customize.php:230
+#: core/admin/customize/customize.php:248 core/metaboxes/page.php:38
 #: core/metaboxes/post.php:32 core/metaboxes/product.php:38
 msgid "Full Width"
 msgstr "Piena pagina"
 
-#: core/admin/customize/customize.php:218
-#: core/admin/customize/customize.php:236
-#: core/admin/customize/customize.php:254 core/metaboxes/page.php:39
+#: core/admin/customize/customize.php:213
+#: core/admin/customize/customize.php:231
+#: core/admin/customize/customize.php:249 core/metaboxes/page.php:39
 #: core/metaboxes/post.php:33 core/metaboxes/product.php:39
 msgid "Left Sidebar"
 msgstr "Sidebar a sinistra"
 
-#: core/admin/customize/customize.php:219
-#: core/admin/customize/customize.php:237
-#: core/admin/customize/customize.php:255 core/metaboxes/page.php:40
+#: core/admin/customize/customize.php:214
+#: core/admin/customize/customize.php:232
+#: core/admin/customize/customize.php:250 core/metaboxes/page.php:40
 #: core/metaboxes/post.php:34 core/metaboxes/product.php:40
 msgid "Right Sidebar"
 msgstr "Sidebar a destra"
 
-#: core/admin/customize/customize.php:220
-#: core/admin/customize/customize.php:238
+#: core/admin/customize/customize.php:215
+#: core/admin/customize/customize.php:233
 msgid "Masonry"
 msgstr "Muratura"
 
-#: core/admin/customize/customize.php:229
+#: core/admin/customize/customize.php:224
 msgid "Category Layout"
 msgstr "Layout categoria"
 
-#: core/admin/customize/customize.php:230
+#: core/admin/customize/customize.php:225
 msgid "Select a layout for category pages."
 msgstr "Seleziona un layout per le categorie."
 
-#: core/admin/customize/customize.php:247
+#: core/admin/customize/customize.php:242
 msgid "WooCommerce Category Layout"
 msgstr "Layout categorie WooCommerce"
 
-#: core/admin/customize/customize.php:248
+#: core/admin/customize/customize.php:243
 msgid "Select a layout for the woocommerce categories."
 msgstr "Scegli un layout per le categorie di woocommerce"
 
-#: core/admin/customize/customize.php:266
+#: core/admin/customize/customize.php:261
 msgid "Header"
 msgstr "Testata"
 
-#: core/admin/customize/customize.php:276
+#: core/admin/customize/customize.php:271
 msgid "Custom Logo"
 msgstr "Logo personalizzato"
 
-#: core/admin/customize/customize.php:277
+#: core/admin/customize/customize.php:272
 msgid "Upload an image as logo"
 msgstr "Carica un'immagine come logo"
 
-#: core/admin/customize/customize.php:289
+#: core/admin/customize/customize.php:284
 msgid "Footer"
 msgstr "Footer"
 
-#: core/admin/customize/customize.php:299
+#: core/admin/customize/customize.php:294
 msgid "Copyright Text"
 msgstr "Testo del copyright"
 
-#: core/admin/customize/customize.php:300
+#: core/admin/customize/customize.php:295
 msgid "Insert your copyright text."
 msgstr "Inserisci il testo per il copyright"
 
-#: core/admin/customize/customize.php:310
+#: core/admin/customize/customize.php:305
 msgid "Facebook Url"
 msgstr "Url Facebook"
 
-#: core/admin/customize/customize.php:311
+#: core/admin/customize/customize.php:306
 msgid "Insert Facebook Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Facebook, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:321
+#: core/admin/customize/customize.php:316
 msgid "Twitter Url"
 msgstr "Url Twitter"
 
-#: core/admin/customize/customize.php:322
+#: core/admin/customize/customize.php:317
 msgid "Insert Twitter Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Twitter, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:332
+#: core/admin/customize/customize.php:327
 msgid "Flickr Url"
 msgstr "Flickr Url"
 
-#: core/admin/customize/customize.php:333
+#: core/admin/customize/customize.php:328
 msgid "Insert Flickr Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Flickr, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:343
+#: core/admin/customize/customize.php:338
 msgid "Google Url"
 msgstr "Url Google"
 
-#: core/admin/customize/customize.php:344
+#: core/admin/customize/customize.php:339
 msgid "Insert Google Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Google, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:354
+#: core/admin/customize/customize.php:349
 msgid "Linkedin Url"
 msgstr "Url Linkedin"
 
-#: core/admin/customize/customize.php:355
+#: core/admin/customize/customize.php:350
 msgid "Insert Linkedin Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Linkedin, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:365
+#: core/admin/customize/customize.php:360
 msgid "Pinterest Url"
 msgstr "Url Pinterest"
 
-#: core/admin/customize/customize.php:366
+#: core/admin/customize/customize.php:361
 msgid "Insert Pinterest Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Pinterest, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:376
+#: core/admin/customize/customize.php:371
 msgid "Tumblr Url"
 msgstr "Url Tumblr"
 
-#: core/admin/customize/customize.php:377
+#: core/admin/customize/customize.php:372
 msgid "Insert Tumblr Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Tumblr, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:387
+#: core/admin/customize/customize.php:382
 msgid "Youtube Url"
 msgstr "Url Youtube"
 
-#: core/admin/customize/customize.php:388
+#: core/admin/customize/customize.php:383
 msgid "Insert Youtube Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Youtube, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:398
+#: core/admin/customize/customize.php:393
 msgid "Vimeo Url"
 msgstr "Url Vimeo"
 
-#: core/admin/customize/customize.php:399
+#: core/admin/customize/customize.php:394
 msgid "Insert Vimeo Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Vimeo, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:409
+#: core/admin/customize/customize.php:404
 msgid "Skype Url"
 msgstr "Url Skype"
 
-#: core/admin/customize/customize.php:410
+#: core/admin/customize/customize.php:405
 msgid "Insert Skype ID (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Skype, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:420
+#: core/admin/customize/customize.php:415
 msgid "Instagram Url"
 msgstr "Url Instagram"
 
-#: core/admin/customize/customize.php:421
+#: core/admin/customize/customize.php:416
 msgid "Insert Instagram Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Instagram, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:431
+#: core/admin/customize/customize.php:426
 msgid "Deviantart Url"
 msgstr "Url Deviantart"
 
-#: core/admin/customize/customize.php:432
+#: core/admin/customize/customize.php:427
 msgid "Insert Deviantart Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Deviantart , lascia il campo vuoto per non visualizzare "
 "il pulsante."
 
-#: core/admin/customize/customize.php:442
+#: core/admin/customize/customize.php:437
 msgid "Github Url"
 msgstr "Url Github"
 
-#: core/admin/customize/customize.php:443
+#: core/admin/customize/customize.php:438
 msgid "Insert Github Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Github, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:453
+#: core/admin/customize/customize.php:448
 msgid "Xing Url"
 msgstr "Url Xing"
 
-#: core/admin/customize/customize.php:454
+#: core/admin/customize/customize.php:449
 msgid "Insert Xing Url (empty if you want to hide the button)"
 msgstr ""
 "Inserisci l'url di Xing, lascia il campo vuoto per non visualizzare il "
 "pulsante"
 
-#: core/admin/customize/customize.php:465
+#: core/admin/customize/customize.php:460
 msgid "Whatsapp Number"
 msgstr "Numero WhatsApp"
 
-#: core/admin/customize/customize.php:466
+#: core/admin/customize/customize.php:461
 msgid "Insert Whatsapp Number (empty if you want to hide the button)"
 msgstr ""
 "Inserisci il numero WhatsApp (lascia vuoto il campo se vuoi nascondere il "
 "pulsate)"
 
-#: core/admin/customize/customize.php:476
+#: core/admin/customize/customize.php:471
+msgid "Telegram account"
+msgstr "Account Telegram"
+
+#: core/admin/customize/customize.php:472
+msgid "Insert Telegram account (empty if you want to hide the button)"
+msgstr "Inserisci l’account Telegram (vuoto se vuoi nascondere il pulsante)"
+
+#: core/admin/customize/customize.php:482
 msgid "Email Address"
 msgstr "Indirizzo email"
 
-#: core/admin/customize/customize.php:477
+#: core/admin/customize/customize.php:483
 msgid "Insert Email Address (empty if you want to hide the button)"
 msgstr ""
 "Inserisci la tua email, lascia il campo vuoto per non visualizzare il "
 "pulsante."
 
-#: core/admin/customize/customize.php:487
+#: core/admin/customize/customize.php:493
 msgid "Feed Rss Button"
 msgstr "Pulsante Feed Rss"
 
-#: core/admin/customize/customize.php:488
+#: core/admin/customize/customize.php:494
 msgid "Do you want to display the Feed Rss button?"
 msgstr "Vuoi visualizzare il pulsante dei Feed Rss?"
 
-#: core/admin/customize/customize.php:505
-#: core/admin/customize/customize.php:506
+#: core/admin/customize/customize.php:511
+#: core/admin/customize/customize.php:512
 msgid "Typography"
 msgstr "Tipografia"
 
-#: core/admin/customize/customize.php:517
+#: core/admin/customize/customize.php:523
 msgid "Logo"
 msgstr "Font per il logo"
 
-#: core/admin/customize/customize.php:527
-#: core/admin/customize/customize.php:550
-#: core/admin/customize/customize.php:573
+#: core/admin/customize/customize.php:533
+#: core/admin/customize/customize.php:556
+#: core/admin/customize/customize.php:614
 msgid "Font size"
 msgstr "Grandezza del font"
 
-#: core/admin/customize/customize.php:528
+#: core/admin/customize/customize.php:534
 msgid "Insert a size, for logo font (For example, 60px) "
 msgstr "Inserisci una grandezza, per il logo ( Per esempio, 60px )"
 
-#: core/admin/customize/customize.php:540
+#: core/admin/customize/customize.php:546
 msgid "Menu"
 msgstr "Font per il menu"
 
-#: core/admin/customize/customize.php:551
+#: core/admin/customize/customize.php:557
 msgid "Insert a size, for menu font (For example, 14px) "
 msgstr "Inserisci una grandezza, per il menu ( Per esempio, 14px )"
 
-#: core/admin/customize/customize.php:563
+#: core/admin/customize/customize.php:567
+msgid "Menu weight"
+msgstr "Spessore menu"
+
+#: core/admin/customize/customize.php:568
+msgid "Choose a font weight for the menu."
+msgstr "Scegli uno spessore per il font del menu"
+
+#: core/admin/customize/customize.php:573
+#: core/admin/customize/customize.php:710
+msgid "400"
+msgstr "400"
+
+#: core/admin/customize/customize.php:574
+#: core/admin/customize/customize.php:711
+msgid "500"
+msgstr "500"
+
+#: core/admin/customize/customize.php:575
+#: core/admin/customize/customize.php:712
+msgid "600"
+msgstr "600"
+
+#: core/admin/customize/customize.php:576
+#: core/admin/customize/customize.php:713
+msgid "700"
+msgstr "700"
+
+#: core/admin/customize/customize.php:577
+#: core/admin/customize/customize.php:714
+msgid "800"
+msgstr "800"
+
+#: core/admin/customize/customize.php:586
+#: core/admin/customize/customize.php:723
+msgid "Text transform"
+msgstr "Trasformazione testo"
+
+#: core/admin/customize/customize.php:587
+msgid "Do you want to display an uppercase menu?."
+msgstr "Vuoi visualizzare il menu in maiuscolo?"
+
+#: core/admin/customize/customize.php:592
+#: core/admin/customize/customize.php:729
+msgid "None"
+msgstr "Nessuna"
+
+#: core/admin/customize/customize.php:593
+#: core/admin/customize/customize.php:730
+msgid "Uppercase"
+msgstr "Maiuscolo"
+
+#: core/admin/customize/customize.php:604
 msgid "Content"
 msgstr "Contenuto"
 
-#: core/admin/customize/customize.php:574
+#: core/admin/customize/customize.php:615
 msgid "Insert a size, for content font (For example, 14px) "
 msgstr ""
 "Inserisci una grandezza, per il font dei contenuti ( Per esempio, 14px )"
 
-#: core/admin/customize/customize.php:587
+#: core/admin/customize/customize.php:628
 msgid "Headlines"
 msgstr "Titoli"
 
-#: core/admin/customize/customize.php:597
+#: core/admin/customize/customize.php:638
 msgid "H1 headline"
 msgstr "Elementi H1"
 
-#: core/admin/customize/customize.php:598
+#: core/admin/customize/customize.php:639
 msgid "Insert a size, for for H1 elements (For example, 24px) "
 msgstr "Inserisci una grandezza, per i titoli H1 ( Per esempio, 24px )"
 
-#: core/admin/customize/customize.php:608
+#: core/admin/customize/customize.php:649
 msgid "H2 headline"
 msgstr "Elementi H2"
 
-#: core/admin/customize/customize.php:609
+#: core/admin/customize/customize.php:650
 msgid "Insert a size, for for H2 elements (For example, 22px) "
 msgstr "Inserisci una grandezza, per i titoli H2 ( Per esempio, 22px )"
 
-#: core/admin/customize/customize.php:619
+#: core/admin/customize/customize.php:660
 msgid "H3 headline"
 msgstr "Elementi H3"
 
-#: core/admin/customize/customize.php:620
+#: core/admin/customize/customize.php:661
 msgid "Insert a size, for for H3 elements (For example, 20px) "
 msgstr "Inserisci una grandezza, per i titoli H3 ( Per esempio, 20px )"
 
-#: core/admin/customize/customize.php:630
+#: core/admin/customize/customize.php:671
 msgid "H4 headline"
 msgstr "Elementi H4"
 
-#: core/admin/customize/customize.php:631
+#: core/admin/customize/customize.php:672
 msgid "Insert a size, for for H4 elements (For example, 18px) "
 msgstr "Inserisci una grandezza, per i titoli H4 ( Per esempio, 18px )"
 
-#: core/admin/customize/customize.php:641
+#: core/admin/customize/customize.php:682
 msgid "H5 headline"
 msgstr "Elementi H5"
 
-#: core/admin/customize/customize.php:642
+#: core/admin/customize/customize.php:683
 msgid "Insert a size, for for H5 elements (For example, 16px) "
 msgstr "Inserisci una grandezza, per i titoli H5 ( Per esempio, 16px )"
 
-#: core/admin/customize/customize.php:652
+#: core/admin/customize/customize.php:693
 msgid "H6 headline"
 msgstr "Elementi H6"
 
-#: core/admin/customize/customize.php:653
+#: core/admin/customize/customize.php:694
 msgid "Insert a size, for for H6 elements (For example, 14px) "
 msgstr "Inserisci una grandezza, per i titoli H6 ( Per esempio, 14px )"
 
-#: core/classes/class-customize.php:34 core/classes/class-notice.php:62
-msgid "Upgrade to Alhena Premium"
-msgstr "Aggiorna a Alhena Pro"
+#: core/admin/customize/customize.php:704
+msgid "Titles weight"
+msgstr "Spessore font dei titoli"
 
-#: core/classes/class-customize.php:304
+#: core/admin/customize/customize.php:705
+msgid "Choose a font weight for the titles."
+msgstr "Scegli uno spessore per il font dei titoli"
+
+#: core/admin/customize/customize.php:724
+msgid "Do you want to display an uppercase title?."
+msgstr "Vuoi visualizzare i titoli in maiuscolo?"
+
+#: core/classes/class-customize.php:311
+msgid "Alhena premium version"
+msgstr "Versione premium Alhena"
+
+#: core/classes/class-customize.php:313
 msgid ""
-"If you've opened a new support ticket from <strong>WordPress.org</strong>, "
-"please send a reminder to <strong>support@wpinprogress.com</strong>, to get "
-"a faster reply."
+"Upgrade to the premium version of Alhena, to enable 600+ Google Fonts, "
+"unlimited sidebars, portfolio section and much more."
 msgstr ""
-"Se hai aperto un nuovo ticket su <strong>WordPress.org</strong>, per favore "
-"invia un promemoria a <strong>support@wpinprogress.com</strong>, per "
-"ottenere rapidamente una risposta."
+"Aggiorna alla versione premium di Alhena, per attivare oltre 600 Google "
+"Fonts, barre laterali illimitate, sezione Portfolio e molto altro."
 
-#: core/classes/class-customize.php:308
-msgid "Open a new ticket"
-msgstr "Apri un nuovo ticket."
+#: core/classes/class-customize.php:317
+msgid "Upgrade to Alhena premium"
+msgstr "Aggiorna ad Alhena premium"
 
-#: core/classes/class-customize.php:309
-msgid "Send a reminder"
-msgstr "Invia un promemoria."
+#: core/classes/class-customize.php:325
+msgid "Become a supporter"
+msgstr "Diventa un supporter"
 
-#: core/classes/class-customize.php:314
+#: core/classes/class-customize.php:327
 msgid ""
-"If you like this theme and support, <strong>I'd appreciate</strong> any of "
-"the following:"
+"If you like this theme and support, I'd appreciate any of the following:"
 msgstr ""
-"Se ti piace il tema oppure il servizio di supporto, <strong>è gradita</"
-"strong> una delle seguenti azioni:"
+"Se ti piace il tema oppure il servizio di supporto, è gradita una delle "
+"seguenti azioni:"
 
-#: core/classes/class-customize.php:318
+#: core/classes/class-customize.php:331
 msgid "Rate this Theme"
 msgstr "Valuta questo tema."
 
-#: core/classes/class-customize.php:319
-msgid "Like on Facebook"
-msgstr "Seguici su Facebook."
-
-#: core/classes/class-customize.php:320
+#: core/classes/class-customize.php:332
 msgid "Subscribe our newsletter"
 msgstr "Registrati alla nostra newsletter."
+
+#: core/classes/class-customize.php:333
+msgid "Download our free WordPress themes"
+msgstr "Scarica i nostri temi gratuiti per WordPress"
 
 #: core/classes/class-notice.php:58
 msgid ""
@@ -676,7 +745,7 @@ msgstr "Installing il plugin: %s"
 #: core/classes/class-plugin-activation.php:332
 #, php-format
 msgid "Updating Plugin: %s"
-msgstr ""
+msgstr "Aggiornamento Plugin: %1$s"
 
 #: core/classes/class-plugin-activation.php:333
 msgid "Something went wrong with the plugin API."
@@ -772,6 +841,8 @@ msgid ""
 "There are one or more required or recommended plugins to install, update or "
 "activate."
 msgstr ""
+"Ci sono uno o pi&ugrave; dei plugin richiesti o consigliati da installare, "
+"aggiornare o attivare."
 
 #: core/classes/class-plugin-activation.php:397
 msgid "Please contact the administrator of this site for help."
@@ -817,7 +888,7 @@ msgstr ""
 #: core/classes/class-plugin-activation.php:1984
 #, php-format
 msgid "TGMPA v%s"
-msgstr ""
+msgstr "TGMPA v%s"
 
 #: core/classes/class-plugin-activation.php:2275
 msgid "Required"
@@ -877,7 +948,7 @@ msgstr "Versione disponibile"
 
 #: core/classes/class-plugin-activation.php:2535
 msgid "No plugins to install, update or activate."
-msgstr ""
+msgstr "Nessun plugin da installare, aggiornare o attivare."
 
 #: core/classes/class-plugin-activation.php:2549
 msgid "Plugin"
@@ -902,17 +973,17 @@ msgstr "Stato"
 #: core/classes/class-plugin-activation.php:2605
 #, php-format
 msgid "Install %2$s"
-msgstr ""
+msgstr "Installa %2$s"
 
 #: core/classes/class-plugin-activation.php:2610
 #, php-format
 msgid "Update %2$s"
-msgstr ""
+msgstr "Aggiorna %2$s"
 
 #: core/classes/class-plugin-activation.php:2616
 #, php-format
 msgid "Activate %2$s"
-msgstr ""
+msgstr "Attiva %2$s"
 
 #: core/classes/class-plugin-activation.php:2686
 msgid "Upgrade message from the plugin author:"
@@ -1051,10 +1122,6 @@ msgstr "Questa sidebar verrà visualizzata a lato del blog"
 msgid "This sidebar will be shown after the content"
 msgstr "Questa sidebar verrà visualizzata dopo il contenuto della pagina"
 
-#: core/functions/woocommerce.php:37 core/functions/woocommerce.php:65
-msgid "View your shopping cart"
-msgstr "Visualizza il tuo carrello"
-
 #: core/main.php:97
 #, php-format
 msgid "Category: %s"
@@ -1073,12 +1140,12 @@ msgstr "Autore: %s"
 #: core/main.php:103
 #, php-format
 msgid "Year: %s"
-msgstr ""
+msgstr "Anno: %s"
 
 #: core/main.php:103
 msgctxt "yearly archives date format"
 msgid "Y"
-msgstr ""
+msgstr "Y"
 
 #: core/main.php:105
 #, php-format
@@ -1088,7 +1155,7 @@ msgstr "Mese: %s"
 #: core/main.php:105
 msgctxt "monthly archives date format"
 msgid "F Y"
-msgstr ""
+msgstr "F Y"
 
 #: core/main.php:107
 #, php-format
@@ -1098,7 +1165,7 @@ msgstr "Giorno: %s"
 #: core/main.php:107
 msgctxt "daily archives date format"
 msgid "F j, Y"
-msgstr ""
+msgstr "F j, Y"
 
 #: core/main.php:110
 msgctxt "post format archive title"
@@ -1155,16 +1222,11 @@ msgstr "Archivi: %s"
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: core/main.php:286
-#, php-format
-msgid "Page %s"
-msgstr "Pagine %s"
-
-#: core/main.php:336
+#: core/main.php:191
 msgid "Article"
 msgstr "Articolo"
 
-#: core/main.php:429
+#: core/main.php:284
 msgid "Read More"
 msgstr "Continua"
 
@@ -1212,10 +1274,6 @@ msgstr "Torna alla pagina principale"
 msgid "Make a search, from the below form:"
 msgstr "Crea una ricerca, dal seguente modulo:"
 
-#: core/templates/masonry.php:54 core/templates/masonry.php:55 search.php:54
-msgid "Search"
-msgstr "Cerca"
-
 #: footer.php:14
 msgid "Copyright"
 msgstr "Testo del copyright"
@@ -1225,8 +1283,8 @@ msgid "By"
 msgstr "Da"
 
 #: footer.php:17
-msgid "http://wordpress.org/"
-msgstr "http://wordpress.org/"
+msgid "A Semantic Personal Publishing Platform"
+msgstr "Una piattaforma di editoria personale semantica"
 
 #: footer.php:17
 #, php-format
@@ -1249,15 +1307,11 @@ msgstr "<span>Risultati </span> della ricerca per"
 msgid "You can repeat your search with the following form."
 msgstr "Puoi ripetere la tua ricerca tramite il seguente form"
 
-#: search.php:53
-msgid "Search here"
-msgstr "Cerca"
-
 #: woocommerce/cart/cart-totals.php:19
 msgid "Cart Totals"
 msgstr "Totale carrello"
 
-#: woocommerce/cart/cart-totals.php:24 woocommerce/checkout/review-order.php:50
+#: woocommerce/cart/cart-totals.php:24
 msgid "Subtotal"
 msgstr "Subtotale"
 
@@ -1265,9 +1319,7 @@ msgstr "Subtotale"
 msgid "Shipping"
 msgstr "Spedizione"
 
-#: woocommerce/cart/cart-totals.php:78 woocommerce/cart/cart.php:49
-#: woocommerce/cart/cart.php:130 woocommerce/checkout/review-order.php:18
-#: woocommerce/checkout/review-order.php:97
+#: woocommerce/cart/cart-totals.php:78 woocommerce/cart/cart.php:44
 msgid "Total"
 msgstr "Totale"
 
@@ -1285,193 +1337,139 @@ msgstr ""
 "Nota: Spedizione e tasse sono calcolate%s e saranno aggiornate nella cassa, "
 "in base alle tue informazioni di spedizione e fatturazione."
 
-#: woocommerce/cart/cart-totals.php:101
-msgid "Update Shopping Cart"
-msgstr "Aggiorna il carrello"
-
-#: woocommerce/cart/cart-totals.php:102
-msgid "Proceed to Checkout"
-msgstr "Vai alla cassa"
-
-#: woocommerce/cart/cart.php:37
+#: woocommerce/cart/cart.php:32
 msgid "Cart"
 msgstr "Carrello"
 
-#: woocommerce/cart/cart.php:46 woocommerce/cart/cart.php:89
-#: woocommerce/checkout/review-order.php:17
+#: woocommerce/cart/cart.php:41
 msgid "Product"
 msgstr "Prodotto"
 
-#: woocommerce/cart/cart.php:47 woocommerce/cart/cart.php:107
+#: woocommerce/cart/cart.php:42
 msgid "Price"
 msgstr "Prezzo"
 
-#: woocommerce/cart/cart.php:48 woocommerce/cart/cart.php:113
+#: woocommerce/cart/cart.php:43
 msgid "Quantity"
 msgstr "Quantità"
 
-#: woocommerce/cart/cart.php:70
+#: woocommerce/cart/cart.php:66
 msgid "Remove this item"
 msgstr "Rimuovi questo elemento"
 
-#: woocommerce/cart/cart.php:102
+#: woocommerce/cart/cart.php:100
 msgid "Available on backorder"
 msgstr "Disponibile su ordine inevaso"
 
-#: woocommerce/cart/cart.php:148
+#: woocommerce/cart/cart.php:147
 msgid "Coupon:"
-msgstr ""
+msgstr "Coupon:"
 
-#: woocommerce/checkout/form-checkout.php:20
+#: woocommerce/checkout/form-checkout.php:26
 msgid "You must be logged in to checkout."
 msgstr "Devi essere registrato per andare alla cassa"
 
-#: woocommerce/checkout/form-checkout.php:52
+#: woocommerce/checkout/form-checkout.php:57
 msgid "Your order"
 msgstr "Il tuo ordine"
 
-#: woocommerce/checkout/form-coupon.php:24
-msgid "Have a coupon? "
-msgstr "Hai un coupon?"
+#: woocommerce/checkout/form-coupon.php:36
+msgid "If you have a coupon code, please apply it below."
+msgstr "Se disponi di un codice promozionale, inseriscilo di seguito."
 
-#: woocommerce/checkout/form-coupon.php:24
-msgid "Click here to enter your code"
-msgstr "Clicca qui per inserire il tuo codice"
+#: woocommerce/checkout/form-coupon.php:43
+msgid "Apply coupon"
+msgstr "Applica sconto"
 
-#: woocommerce/checkout/form-coupon.php:31
-msgid "Coupon code"
-msgstr "Codice coupon"
-
-#: woocommerce/checkout/form-coupon.php:35
-msgid "Apply Coupon"
-msgstr "Applica coupon"
-
-#: woocommerce/global/form-login.php:26
-msgid "Username or email"
-msgstr "Nome utente o e-mail"
-
-#: woocommerce/global/form-login.php:30
-msgid "Password"
-msgstr "Password"
-
-#: woocommerce/global/form-login.php:39
-msgid "Login"
-msgstr "Accedi"
-
-#: woocommerce/global/form-login.php:42
-msgid "Remember me"
-msgstr "Ricordami"
-
-#: woocommerce/global/form-login.php:46
-msgid "Lost your password?"
-msgstr "Hai perso la tua password?"
-
-#: woocommerce/order/form-tracking.php:20
-msgid ""
-"To track your order please enter your Order ID in the box below and press "
-"the \"Track\" button. This was given to you on your receipt and in the "
-"confirmation email you should have received."
-msgstr ""
-"Per tracciare il tuo ordine, si prega di inserire l’ID del tuo ordine nel "
-"campo seguente e di cliccare sul pulsante “Traccia”. Questo è stato inviato "
-"insieme alla ricevuta e dovrebbe essere stato inviato nella e-mail di "
-"conferma."
-
-#: woocommerce/order/form-tracking.php:22
-msgid "Order ID"
-msgstr "ID ordine"
-
-#: woocommerce/order/form-tracking.php:22
-msgid "Found in your order confirmation email."
-msgstr "Trovato via e-mail di conferma dell'ordine ."
-
-#: woocommerce/order/form-tracking.php:23
-msgid "Billing Email"
-msgstr "Email di fatturazione"
-
-#: woocommerce/order/form-tracking.php:23
-msgid "Email you used during checkout."
-msgstr "Indirizzo email utilizzato alla cassa"
-
-#: woocommerce/order/form-tracking.php:26
-msgid "Track"
-msgstr "Traccia"
-
-#: woocommerce/single-product-reviews.php:26
+#: woocommerce/single-product-reviews.php:37
 msgid "Reviews"
 msgstr "Recensioni"
 
-#: woocommerce/single-product-reviews.php:47
+#: woocommerce/single-product-reviews.php:59
 msgid "There are no reviews yet."
 msgstr "Non ci sono ancora recensioni"
 
-#: woocommerce/single-product-reviews.php:61
+#: woocommerce/single-product-reviews.php:72
 msgid "Add a review"
 msgstr "Aggiungi una recensione"
 
-#: woocommerce/single-product-reviews.php:62
+#: woocommerce/single-product-reviews.php:72
+#, php-format
+msgid "Be the first to review &ldquo;%s&rdquo;"
+msgstr "Sii il primo a recensire &ldquo;%s&rdquo;"
+
+#: woocommerce/single-product-reviews.php:73
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "Rispondi a %s"
 
-#: woocommerce/single-product-reviews.php:66
+#: woocommerce/single-product-reviews.php:76
 msgid "Name"
 msgstr "Nome"
 
-#: woocommerce/single-product-reviews.php:68
+#: woocommerce/single-product-reviews.php:78
 msgid "Email"
 msgstr "Email"
 
-#: woocommerce/single-product-reviews.php:71
+#: woocommerce/single-product-reviews.php:81
 msgid "Submit"
 msgstr "Invia"
 
-#: woocommerce/single-product-reviews.php:77
+#: woocommerce/single-product-reviews.php:87
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a review."
+msgstr "Devi essere <a href=“%s”>loggato</a> per lasciare il tuo voto."
+
+#: woocommerce/single-product-reviews.php:91
 msgid "Your Rating"
 msgstr "La tua valutazione"
 
-#: woocommerce/single-product-reviews.php:78
+#: woocommerce/single-product-reviews.php:92
 msgid "Rate&hellip;"
 msgstr "Valutazione&hellip;"
 
-#: woocommerce/single-product-reviews.php:79
+#: woocommerce/single-product-reviews.php:93
 msgid "Perfect"
 msgstr "Perfetto"
 
-#: woocommerce/single-product-reviews.php:80
+#: woocommerce/single-product-reviews.php:94
 msgid "Good"
 msgstr "Ottimo"
 
-#: woocommerce/single-product-reviews.php:81
+#: woocommerce/single-product-reviews.php:95
 msgid "Average"
 msgstr "Media"
 
-#: woocommerce/single-product-reviews.php:82
+#: woocommerce/single-product-reviews.php:96
 msgid "Not that bad"
 msgstr "Non così male"
 
-#: woocommerce/single-product-reviews.php:83
+#: woocommerce/single-product-reviews.php:97
 msgid "Very Poor"
 msgstr "Molto povero"
 
-#: woocommerce/single-product-reviews.php:87
-msgid "Your Review"
-msgstr "Il tuo voto"
+#: woocommerce/single-product-reviews.php:101
+msgid "Your review"
+msgstr "La tua recensione"
 
-#: woocommerce/single-product-reviews.php:96
+#: woocommerce/single-product-reviews.php:109
 msgid ""
 "Only logged in customers who have purchased this product may leave a review."
 msgstr ""
 "Solo i clienti che hanno effettuato l’accesso e acquistato questo prodotto "
 "posso lasciare una recensione."
 
-#: woocommerce/single-product/product-image.php:55
+#: woocommerce/single-product/product-image.php:38
 msgid "Awaiting product image"
-msgstr ""
+msgstr "In attesa di immagine del prodotto"
 
 #: woocommerce/single-product/related.php:31
 msgid "Related products"
-msgstr ""
+msgstr "prodotti Correlati"
+
+#: woocommerce/single-product/review.php:44
+msgid "out of 5"
+msgstr "su 5"
 
 #: woocommerce/single-product/review.php:51
 msgid "Your comment is awaiting approval"
@@ -1484,6 +1482,119 @@ msgstr "Proprietario verificato"
 #: woocommerce/single-product/up-sells.php:32
 msgid "You may also like&hellip;"
 msgstr "Ti potrebbe anche interessare&hellip;"
+
+#~ msgid "Get support"
+#~ msgstr "Ottieni supporto."
+
+#~ msgid "Styles"
+#~ msgstr "Stili"
+
+#~ msgid "Custom css"
+#~ msgstr "Css personalizzato"
+
+#~ msgid "Insert your custom css code."
+#~ msgstr "Inserisci il tuo codice css personalizzato."
+
+#~ msgid ""
+#~ "If you've opened a new support ticket from <strong>WordPress.org</"
+#~ "strong>, please send a reminder to <strong>support@wpinprogress.com</"
+#~ "strong>, to get a faster reply."
+#~ msgstr ""
+#~ "Se hai aperto un nuovo ticket su <strong>WordPress.org</strong>, per "
+#~ "favore invia un promemoria a <strong>support@wpinprogress.com</strong>, "
+#~ "per ottenere rapidamente una risposta."
+
+#~ msgid "Open a new ticket"
+#~ msgstr "Apri un nuovo ticket."
+
+#~ msgid "Send a reminder"
+#~ msgstr "Invia un promemoria."
+
+#~ msgid ""
+#~ "If you like this theme and support, <strong>I'd appreciate</strong> any "
+#~ "of the following:"
+#~ msgstr ""
+#~ "Se ti piace il tema oppure il servizio di supporto, <strong>è gradita</"
+#~ "strong> una delle seguenti azioni:"
+
+#~ msgid "Like on Facebook"
+#~ msgstr "Seguici su Facebook."
+
+#~ msgid "View your shopping cart"
+#~ msgstr "Visualizza il tuo carrello"
+
+#~ msgid "Page %s"
+#~ msgstr "Pagine %s"
+
+#~ msgid "Search"
+#~ msgstr "Cerca"
+
+#~ msgid "http://wordpress.org/"
+#~ msgstr "http://wordpress.org/"
+
+#~ msgid "Search here"
+#~ msgstr "Cerca"
+
+#~ msgid "Update Shopping Cart"
+#~ msgstr "Aggiorna il carrello"
+
+#~ msgid "Proceed to Checkout"
+#~ msgstr "Vai alla cassa"
+
+#~ msgid "Have a coupon? "
+#~ msgstr "Hai un coupon?"
+
+#~ msgid "Click here to enter your code"
+#~ msgstr "Clicca qui per inserire il tuo codice"
+
+#~ msgid "Coupon code"
+#~ msgstr "Codice coupon"
+
+#~ msgid "Apply Coupon"
+#~ msgstr "Applica coupon"
+
+#~ msgid "Username or email"
+#~ msgstr "Nome utente o e-mail"
+
+#~ msgid "Password"
+#~ msgstr "Password"
+
+#~ msgid "Login"
+#~ msgstr "Accedi"
+
+#~ msgid "Remember me"
+#~ msgstr "Ricordami"
+
+#~ msgid "Lost your password?"
+#~ msgstr "Hai perso la tua password?"
+
+#~ msgid ""
+#~ "To track your order please enter your Order ID in the box below and press "
+#~ "the \"Track\" button. This was given to you on your receipt and in the "
+#~ "confirmation email you should have received."
+#~ msgstr ""
+#~ "Per tracciare il tuo ordine, si prega di inserire l’ID del tuo ordine nel "
+#~ "campo seguente e di cliccare sul pulsante “Traccia”. Questo è stato "
+#~ "inviato insieme alla ricevuta e dovrebbe essere stato inviato nella e-"
+#~ "mail di conferma."
+
+#~ msgid "Order ID"
+#~ msgstr "ID ordine"
+
+#~ msgid "Found in your order confirmation email."
+#~ msgstr "Trovato via e-mail di conferma dell'ordine ."
+
+#~ msgid "Billing Email"
+#~ msgstr "Email di fatturazione"
+
+#~ msgid "Email you used during checkout."
+#~ msgstr "Indirizzo email utilizzato alla cassa"
+
+#~ msgid "Track"
+#~ msgstr "Traccia"
+
+#~ msgid "Your Review"
+#~ msgstr "Il tuo voto"
 
 #~ msgid "Whatsapp Url"
 #~ msgstr "Numero WhatsApp"
@@ -1568,9 +1679,6 @@ msgstr "Ti potrebbe anche interessare&hellip;"
 
 #~ msgid "Rated %d out of 5"
 #~ msgstr "Valutato %d su 5"
-
-#~ msgid "out of 5"
-#~ msgstr "su 5"
 
 #~ msgid "Login Area"
 #~ msgstr "Area Accesso"
@@ -1844,9 +1952,6 @@ msgstr "Ti potrebbe anche interessare&hellip;"
 
 #~ msgid "Choose a background repeat."
 #~ msgstr "Scegli la ripetizione, per lo sfondo"
-
-#~ msgid "None"
-#~ msgstr "Nessuna"
 
 #~ msgid "Repeat"
 #~ msgstr "Ripeti"

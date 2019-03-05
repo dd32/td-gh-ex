@@ -173,6 +173,22 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 			
 			),
 
+			array(
+				
+				'label' => esc_html__( 'WooCommerce linkable product thumbnails','alhena-lite'),
+				'description' => esc_html__( 'Do you want to make linkable the product thumbnails on WooCommerce category pages?','alhena-lite'),
+				'id' => 'wip_linkable_product_thumbnails',
+				'type' => 'select',
+				'section' => 'settings_section',
+				'options' => array (
+				   'off' => esc_html__( 'No','suevafree'),
+				   'on' => esc_html__( 'Yes','suevafree'),
+				),
+				
+				'std' => 'off',
+			
+			),
+
 			/* LAYOUTS SECTION */ 
 
 			array( 

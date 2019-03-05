@@ -157,13 +157,13 @@ jQuery.noConflict()(function($){
    =============================================== */
 
 	$("a[data-rel^='prettyPhoto']").prettyPhoto({
-				// Parameters for PrettyPhoto styling
-				animationSpeed:'fast',
-				slideshow:5000,
-				theme:'pp_default',
-				show_title:false,
-				overlay_gallery: false,
-				social_tools: false
+		animationSpeed:'fast',
+		slideshow:5000,
+		theme:'pp_default',
+		show_title:false,
+		overlay_gallery: false,
+		deeplinking: false,
+		social_tools: false
 	});
 
 });          
