@@ -4,7 +4,7 @@ Description: AyaFreelance is fully Responsive Blogging WordPress Theme. Features
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayafreelance
-Version: 1.1.7
+Version: 1.1.8
 Text Domain: ayafreelance
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -1156,7 +1156,7 @@ img.wp-post-image {
 
 .wp-caption {
 	max-width:95%;
-    padding:4px 4px 4px 4px;
+    padding:5px;
     border:1px solid #ccc;
     color:#555;
     background:#f9f9f9;
@@ -1169,7 +1169,12 @@ img.wp-post-image {
 	clear:both;
 }
 
-.wp-caption p.wp-caption-text { 
+.wp-caption img {
+	width:100%;
+}
+
+.wp-caption p.wp-caption-text {
+	margin:0;
 	background-color:#858581;
 	color:#fff;
 	-moz-border-radius:3px;
