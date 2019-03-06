@@ -40,6 +40,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.1.4 (2019-03-06) =
+* fix issue with image caption alignment
+
 = 1.1.3 (2019-02-06) =
 * Updating Slider Display text into 'Display Slider on a Static Front Page' in Customizer option
 
