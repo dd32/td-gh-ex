@@ -4,7 +4,7 @@ Description: AyaGeek is fully Responsive WordPress Theme with Built-in Homepage 
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayageek
-Version: 1.0.8
+Version: 1.0.9
 Text Domain: ayageek
 Tags: blog, news, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -64,6 +64,10 @@ img {
 }
 
 #slider-content-wrapper img,
+#main-content-wrapper {
+	min-height:100px;
+}
+
 #home-content-wrapper img,
 #main-content-wrapper img,
 #footer-main img {
@@ -1594,7 +1598,7 @@ img.wp-post-image {
 
 .wp-caption {
 	max-width:95%;
-    padding:4px 4px 4px 4px;
+    padding:5px;
     border:1px solid #ccc;
     color:#555;
     background:#f9f9f9;
@@ -1607,7 +1611,12 @@ img.wp-post-image {
 	clear:both;
 }
 
-.wp-caption p.wp-caption-text { 
+.wp-caption img {
+	width:100%;
+}
+
+.wp-caption p.wp-caption-text {
+	margin:0;
 	background-color:#858581;
 	color:#fff;
 	-moz-border-radius:3px;
