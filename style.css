@@ -4,7 +4,7 @@ Description: AyaMagazine is Fully Responsive Magazine WordPress Theme perfect fo
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayamagazine
-Version: 1.0.9
+Version: 1.1.0
 Text Domain: ayamagazine
 Tags: blog, news, three-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -61,6 +61,10 @@ p {
 img {
 	border:0;
 	outline:0;
+}
+
+#main-content-wrapper {
+	min-height:100px;
 }
 
 #home-content-wrapper img,
@@ -469,14 +473,14 @@ textarea {
 
 input[type="submit"],
 button {
-	font-size:14px;
+	font-size:16px;
 }
 
 input[type="submit"],
 button,
 .btn,
 #main .button {
-	padding:8px 12px;
+	padding:12px 16px;
 	text-decoration:none;
 	font-weight:normal;
 	border:none;
