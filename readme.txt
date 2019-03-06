@@ -43,6 +43,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.0.7 =
+* fix issue with image caption alignment
+
 = 1.0.6 =
 * Update primary menu first level items with collapse/expand functionality under Mobile
 
