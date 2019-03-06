@@ -29,6 +29,7 @@ jQuery( document ).ready(function() {
 		     var subMenu = jQuery(this).parent().find('> ul.sub-menu');
 
 		     jQuery('#navmain ul ul.sub-menu').not(subMenu).hide();
+      jQuery('#navmain span.sub-menu-item-toggle').not(this).removeClass('sub-menu-item-toggle-expanded');
 		     jQuery(this).toggleClass('sub-menu-item-toggle-expanded');
 		     subMenu.toggle();
 		     subMenu.find('ul.sub-menu').toggle();
