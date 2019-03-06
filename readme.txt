@@ -44,6 +44,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.0.7 =
+* fix issue with image caption alignment
+
 = 1.0.6 =
 * Update primary menu first level items with collapse/expand functionality under Mobile
 
