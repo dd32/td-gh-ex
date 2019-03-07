@@ -49,6 +49,11 @@ If you want to translate this theme to your language, Please visit:- https://tra
 /**********************************************************/
 
 == Changelog ==
+= Version 1.4.0 - 2019-03-06 =
+* Tweak - Added site library and demo import process in About Accelerate page.
+* Tweak - Modify pingback url autodiscovery for single posts, pages, or attachments.
+* Tweak - separate customize control class via different file
+
 = Version 1.3.9 - 2019-01-16 =
 * Tweak - Utilize single custom JS file for required theme JS settings.
 
