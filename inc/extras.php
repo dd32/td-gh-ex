@@ -449,7 +449,7 @@ if ( ! function_exists( 'astra_get_custom_widget' ) ) {
 			$widget_id = 'footer-widget-2';
 		}
 
-		echo '<div class="ast-' . esc_attr( $widget_id ) . '-area" <?php echo apply_filters( "astra_sidebar_data_attrs", "", $widget_id ); ?>>';
+		echo '<div class="ast-' . esc_attr( $widget_id ) . '-area"' . apply_filters( 'astra_sidebar_data_attrs', '', $widget_id ) . '>';
 				astra_get_sidebar( $widget_id );
 		echo '</div>';
 
@@ -1309,7 +1309,7 @@ if ( ! function_exists( 'astra_entry_header_class' ) ) {
 		$post_meta_markup           = astra_single_get_post_meta( '', '', false );
 		$blog_single_post_structure = astra_get_option( 'blog-single-post-structure' );
 
-		if ( ! $blog_single_post_structure || ( 'single-image' === astra_get_prop( $blog_single_post_structure, 0 ) && empty( $thumb_markup ) ) ) {
+		if ( ! $blog_single_post_structure || ( 'single-image' === astra_get_prop( $blog_single_post_structure, 0 ) && empty( $thumb_markup ) && 'single-title-meta' !== astra_get_prop( $blog_single_post_structure, 1 ) ) ) {
 			$classes[] = 'ast-header-without-markup';
 		} elseif ( empty( $title_markup ) && empty( $thumb_markup ) && ( is_page() || empty( $post_meta_markup ) ) ) {
 			$classes[] = 'ast-header-without-markup';
