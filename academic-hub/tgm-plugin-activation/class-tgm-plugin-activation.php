@@ -3195,10 +3195,6 @@ if ( ! function_exists( 'tgmpa_load_bulk_installer' ) ) {
 					 * For ease of future synchronizations, the adjustments are clearly commented, but no other
 					 * comments are added. Code style has been made to comply.}}
 					 *
-					 * @see Plugin_Upgrader::bulk_upgrade()
-					 * @see https://core.trac.wordpress.org/browser/tags/4.2.1/src/wp-admin/includes/class-wp-upgrader.php#L838
-					 * (@internal Last synced: Dec 31st 2015 against https://core.trac.wordpress.org/browser/trunk?rev=36134}}
-					 *
 					 * @param array $plugins The plugin sources needed for installation.
 					 * @param array $args    Arbitrary passed extra arguments.
 					 * @return array|false   Install confirmation messages on success, false on failure.

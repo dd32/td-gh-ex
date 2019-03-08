@@ -43,19 +43,6 @@ function academic_hub_customize_register_slider( $wp_customize ) {
             $wp_customize, 
             'homepage_slider_section', 
             array(
-                'default' => array(
-                        array(
-                            'slider_header_title'       => esc_html__('Dedicated To Excellence', 'academic-hub'),
-                            'slider_short_desc'         => esc_html__('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.','academic-hub'),
-                            'slider_images'             => esc_url( get_template_directory_uri().'/assets/images/slider-item.png' ),                       
-                        ),
-                        array(
-                            'slider_header_title'       => esc_html__('Dedicated To Excellence', 'academic-hub'),
-                            'slider_short_desc'         => esc_html__('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.','academic-hub'),
-                            'slider_images'             => esc_url( get_template_directory_uri().'/assets/images/slider-item.png' ),                       
-                        ),
-                    )
-                ,
                 'sanitize_callback' => array( 'Academic_Hub_Repeater_Setting', 'sanitize_repeater_setting' ),
             ) 
         ) 

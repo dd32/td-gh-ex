@@ -15,19 +15,7 @@ if ( ! function_exists( 'academic_hub_slider_section' ) ) {
          * Academic Hub section
          * @since 1.0.0
          */
-        $defaults = array(
-            array(
-                'slider_header_title'       => esc_html__('Dedicated To Excellence', 'academic-hub'),
-                'slider_short_desc'         => esc_html__('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.','academic-hub'),
-                'slider_images'             => esc_url( get_template_directory_uri().'/assets/images/slider-item.png' ),                       
-            ),
-            array(
-                'slider_header_title'       => esc_html__('Dedicated To Excellence', 'academic-hub'),
-                'slider_short_desc'         => esc_html__('Lorem ipsum dolor sit amet, consectetuer adipiscing elit.','academic-hub'),
-                'slider_images'             => esc_url( get_template_directory_uri().'/assets/images/slider-item.png' ),                       
-            )
-        );
-        $homepage_slider_section = get_theme_mod('homepage_slider_section',$defaults);
+        $homepage_slider_section = get_theme_mod('homepage_slider_section');
         ?>
             <!-- banner -->
             <div class="banner">
@@ -92,7 +80,7 @@ if ( ! function_exists( 'academic_hub_notices_section' ) ) {
          * @since 1.0.0
          */
         $academic_hub_notice_title = get_theme_mod('academic_hub_notice_title','Academic Notice');
-        $academic_hub_notice_shotdesc = get_theme_mod('academic_hub_notice_shotdesc','Lorem Ipsum is simply dummy text of the printing and typesetting industry.');
+        $academic_hub_notice_shotdesc = get_theme_mod('academic_hub_notice_shotdesc');
         
         ?>
         <section id="academic_notices" class="academic-notices">
@@ -142,27 +130,8 @@ if ( ! function_exists( 'academic_hub_special_info_section' ) ) {
          * @since 1.0.0
          */
         $academic_hub_spcecial_info_header  = get_theme_mod('academic_hub_spcecial_info_header','Why We Are <span>Special</span>');
-        $academic_hub_special_short_desc    = get_theme_mod('academic_hub_special_short_desc','The second most important decision you will make as a parent, apart from deciding to have the kid in the first place is deciding which school for them to enroll in');
-
-        $defaults = array(
-                        array(
-                            'academic_hub_header_title'       => esc_html__('HIGHLY QUALIFIED TEACHERS', 'academic-hub'),
-                            'academic_hub_short_info'         => esc_html__('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor,Aenean massa Cum sociis natoque penatibus','academic-hub'),
-                            'academic_hub_images'             => esc_url( get_template_directory_uri().'/assets/images/logo.png' ),                       
-                        ),
-                        array(
-                            'academic_hub_header_title'       => esc_html__('HIGHLY QUALIFIED TEACHERS', 'academic-hub'),
-                            'academic_hub_short_info'         => esc_html__('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor,Aenean massa Cum sociis natoque penatibus','academic-hub'),
-                            'academic_hub_images'             => esc_url( get_template_directory_uri().'/assets/images/logo.png' ),                       
-                        ),
-                        array(
-                            'academic_hub_header_title'       => esc_html__('HIGHLY QUALIFIED TEACHERS', 'academic-hub'),
-                            'academic_hub_short_info'         => esc_html__('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor,Aenean massa Cum sociis natoque penatibus','academic-hub'),
-                            'academic_hub_images'             => esc_url( get_template_directory_uri().'/assets/images/logo.png' ),                       
-                        ),
-                    );
-
-        $academic_hub_homepage_special_info = get_theme_mod('academic_hub_homepage_special_info',$defaults);
+        $academic_hub_special_short_desc    = get_theme_mod('academic_hub_special_short_desc');
+        $academic_hub_homepage_special_info = get_theme_mod('academic_hub_homepage_special_info');
         
         ?>
         <section id="academic_hub_special_info_section" class="academic-hub-section">
@@ -238,28 +207,8 @@ if ( ! function_exists( 'academic_hub_our_teams_section' ) ) {
          * @since 1.0.0
          */
         $academic_hub_our_team_title    = get_theme_mod('academic_hub_spcecial_our_team_header_title','Meet Our<span> Founders</span>');
-        $academic_hub_our_team_short    = get_theme_mod('academic_hub_our_team_short_desc','Aenean commodo ligal geate dolor. Aenan massa. Loren ipsum dolor sit amet,color tetuer adiois elit, aliquam eget nibh etibra');
-
-        $defaults = array(
-                        array(
-                            'academic_hub_our_team_name'       => esc_html__('LANA DEO', 'academic-hub'),
-                            'academic_hub_our_team_images'     => esc_url( get_template_directory_uri().'/assets/images/profile.png' ),                       
-                        ),
-                        array(
-                            'academic_hub_our_team_name'       => esc_html__('LANA DEO', 'academic-hub'),
-                            'academic_hub_our_team_images'     => esc_url( get_template_directory_uri().'/assets/images/profile.png' ),                       
-                        ),
-                        array(
-                            'academic_hub_our_team_name'       => esc_html__('LANA DEO', 'academic-hub'),
-                            'academic_hub_our_team_images'     => esc_url( get_template_directory_uri().'/assets/images/profile.png' ),                       
-                        ),
-                        array(
-                            'academic_hub_our_team_name'       => esc_html__('LANA DEO', 'academic-hub'),
-                            'academic_hub_our_team_images'     => esc_url( get_template_directory_uri().'/assets/images/profile.png' ),                       
-                        ),
-                    );
-
-        $academic_hub_our_team = get_theme_mod('academic_hub_our_team',$defaults);
+        $academic_hub_our_team_short    = get_theme_mod('academic_hub_our_team_short_desc');
+        $academic_hub_our_team = get_theme_mod('academic_hub_our_team');
         
         ?>
         <section id="academic_hub_our_team" class="academic-hub-section">
@@ -338,31 +287,7 @@ if ( ! function_exists( 'academic_hub_event_section' ) ) {
          * @since 1.0.0
          */
         $academic_hub_event_title    = get_theme_mod('academic_hub_spcecial_our_team_header_title','Conference And <span>Events</span>');
-        
-        $defaults = array(
-                        array(
-                            'academic_hub_event_title'       => esc_html__('LANA DEO', 'academic-hub'),
-                            'academic_hub_event_short'       => wp_kses_post('<p>12/29 7:30 AM-12/31 4:00PM</p><p>Lorem Ipsum Address, 6500 Lorem Ipsum Rd, State Address, Country</p>','academic-hub'),
-                            'academic_hub_event_images'     => esc_url( get_template_directory_uri().'/assets/images/event.png' ),                       
-                        ),
-                        array(
-                            'academic_hub_event_title'       => esc_html__('LANA DEO', 'academic-hub'),
-                            'academic_hub_event_short'       => wp_kses_post('<p>12/29 7:30 AM-12/31 4:00PM</p><p>Lorem Ipsum Address, 6500 Lorem Ipsum Rd, State Address, Country</p>','academic-hub'),
-                            'academic_hub_event_images'     => esc_url( get_template_directory_uri().'/assets/images/event.png' ),                       
-                        ),
-                        array(
-                            'academic_hub_event_title'       => esc_html__('LANA DEO', 'academic-hub'),
-                            'academic_hub_event_short'       => wp_kses_post('<p>12/29 7:30 AM-12/31 4:00PM</p><p>Lorem Ipsum Address, 6500 Lorem Ipsum Rd, State Address, Country</p>','academic-hub'),
-                            'academic_hub_event_images'     => esc_url( get_template_directory_uri().'/assets/images/event.png' ),                       
-                        ),
-                        array(
-                            'academic_hub_event_title'       => esc_html__('LANA DEO', 'academic-hub'),
-                            'academic_hub_event_short'       => wp_kses_post('<p>12/29 7:30 AM-12/31 4:00PM</p><p>Lorem Ipsum Address, 6500 Lorem Ipsum Rd, State Address, Country</p>','academic-hub'),
-                            'academic_hub_event_images'     => esc_url( get_template_directory_uri().'/assets/images/event.png' ),                       
-                        ),
-                    );
-
-        $academic_hub_events = get_theme_mod('academic_hub_event_items',$defaults);
+        $academic_hub_events = get_theme_mod('academic_hub_event_items');
         
         ?>
         <section id="academic_hub_event" class="academic-hub-event-section">

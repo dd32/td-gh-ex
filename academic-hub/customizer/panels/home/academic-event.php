@@ -48,29 +48,6 @@ function academic_hub_event_customizer( $wp_customize ) {
             $wp_customize, 
             'academic_hub_event_items', 
             array(
-                'default' => array(
-                        array(
-                            'academic_hub_event_title'       => esc_html__('LANA DEO', 'academic-hub'),
-                            'academic_hub_event_short'       => wp_kses_post('<p>12/29 7:30 AM-12/31 4:00PM</p><p>Lorem Ipsum Address, 6500 Lorem Ipsum Rd, State Address, Country</p>','academic-hub'),
-                            'academic_hub_event_images'     => esc_url( get_template_directory_uri().'/assets/images/event.png' ),                       
-                        ),
-                        array(
-                            'academic_hub_event_title'       => esc_html__('LANA DEO', 'academic-hub'),
-                            'academic_hub_event_short'       => wp_kses_post('<p>12/29 7:30 AM-12/31 4:00PM</p><p>Lorem Ipsum Address, 6500 Lorem Ipsum Rd, State Address, Country</p>','academic-hub'),
-                            'academic_hub_event_images'     => esc_url( get_template_directory_uri().'/assets/images/event.png' ),                       
-                        ),
-                        array(
-                            'academic_hub_event_title'       => esc_html__('LANA DEO', 'academic-hub'),
-                            'academic_hub_event_short'       => wp_kses_post('<p>12/29 7:30 AM-12/31 4:00PM</p><p>Lorem Ipsum Address, 6500 Lorem Ipsum Rd, State Address, Country</p>','academic-hub'),
-                            'academic_hub_event_images'     => esc_url( get_template_directory_uri().'/assets/images/event.png' ),                       
-                        ),
-                        array(
-                            'academic_hub_event_title'       => esc_html__('LANA DEO', 'academic-hub'),
-                            'academic_hub_event_short'       => wp_kses_post('<p>12/29 7:30 AM-12/31 4:00PM</p><p>Lorem Ipsum Address, 6500 Lorem Ipsum Rd, State Address, Country</p>','academic-hub'),
-                            'academic_hub_event_images'     => esc_url( get_template_directory_uri().'/assets/images/event.png' ),                       
-                        ),
-                    )
-                ,
                 'sanitize_callback' => array( 'Academic_Hub_Repeater_Setting', 'sanitize_repeater_setting' ),
             ) 
         ) 
@@ -87,17 +64,15 @@ function academic_hub_event_customizer( $wp_customize ) {
 				'fields'  => array(
                     'academic_hub_event_title' => array(
                         'type'        => 'text',
-                        'default'     => esc_html__( 'AENEAN COMMODO LIGAL GEATE DOLOR AENAN MASSA', 'academic-hub' ),
                         'label'       => esc_html__( 'Event Title', 'academic-hub' ),
                     ),
                     'academic_hub_event_short' => array(
                         'type'        => 'textarea',
-                        'default'     => wp_kses_post( '<p>12/29 7:30 AM-12/31 4:00PM</p><p>Lorem Ipsum Address, 6500 Lorem Ipsum Rd, State Address, Country</p>', 'academic-hub' ),
+                        'description' => esc_html__( 'Ex: 12/29 7:30 AM-12/31 4:00PM', 'academic-hub' ),
                         'label'       => esc_html__( 'Event Description', 'academic-hub' ),
                     ),
                     'academic_hub_event_images' => array(
                         'type'        => 'image',
-                        'default'     => esc_url( get_template_directory_uri().'/assets/images/profile.png' ),
                         'label'       => esc_html__( 'Event Image Upload', 'academic-hub' ),
                     )
                 ),

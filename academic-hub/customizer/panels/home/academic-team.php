@@ -46,7 +46,6 @@ function academic_hub_customize_team( $wp_customize ) {
     $wp_customize->add_setting(
         'academic_hub_our_team_short_desc',
         array(
-            'default'           => esc_html__( 'Aenean commodo ligal geate dolor. Aenan massa. Loren ipsum dolor sit amet,color tetuer adiois elit, aliquam eget nibh etibra.', 'academic-hub' ),
 			'sanitize_callback' => 'sanitize_text_field',
 			'transport'			=>	'postMessage',
         )
@@ -69,25 +68,6 @@ function academic_hub_customize_team( $wp_customize ) {
             $wp_customize, 
             'academic_hub_our_team', 
             array(
-                'default' => array(
-                        array(
-                            'academic_hub_our_team_name'       => esc_html__('LANA DEO', 'academic-hub'),
-                            'academic_hub_our_team_images'     => esc_url( get_template_directory_uri().'/assets/images/profile.png' ),                       
-                        ),
-                        array(
-                            'academic_hub_our_team_name'       => esc_html__('LANA DEO', 'academic-hub'),
-                            'academic_hub_our_team_images'     => esc_url( get_template_directory_uri().'/assets/images/profile.png' ),                       
-                        ),
-                        array(
-                            'academic_hub_our_team_name'       => esc_html__('LANA DEO', 'academic-hub'),
-                            'academic_hub_our_team_images'     => esc_url( get_template_directory_uri().'/assets/images/profile.png' ),                       
-                        ),
-                        array(
-                            'academic_hub_our_team_name'       => esc_html__('LANA DEO', 'academic-hub'),
-                            'academic_hub_our_team_images'     => esc_url( get_template_directory_uri().'/assets/images/profile.png' ),                       
-                        ),
-                    )
-                ,
                 'sanitize_callback' => array( 'Academic_Hub_Repeater_Setting', 'sanitize_repeater_setting' ),
             ) 
         ) 
@@ -104,12 +84,10 @@ function academic_hub_customize_team( $wp_customize ) {
 				'fields'  => array(
                     'academic_hub_our_team_name' => array(
                         'type'        => 'text',
-                        'default'     => esc_html__( 'LANA DEO', 'academic-hub' ),
                         'label'       => esc_html__( 'Team Name', 'academic-hub' ),
                     ),
                     'academic_hub_our_team_images' => array(
                         'type'        => 'image',
-                        'default'     => esc_url( get_template_directory_uri().'/assets/images/profile.png' ),
                         'label'       => esc_html__( 'Slider Image Upload', 'academic-hub' ),
                     )
                 ),

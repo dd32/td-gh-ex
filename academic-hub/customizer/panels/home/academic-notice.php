@@ -36,7 +36,6 @@ function academic_hub_customize_register_academic_notice( $wp_customize ) {
     $wp_customize->add_setting(
         'academic_hub_notice_shotdesc',
         array(
-            'default'           => esc_html__( 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.', 'academic-hub' ),
 			'sanitize_callback' => 'sanitize_text_field',
 			'transport'			=>	'postMessage',
         )

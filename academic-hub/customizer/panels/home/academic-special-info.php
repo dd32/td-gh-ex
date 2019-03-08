@@ -38,7 +38,6 @@ function academic_hub_customize_special_info( $wp_customize ) {
     $wp_customize->add_setting(
         'academic_hub_special_short_desc',
         array(
-            'default'           => esc_html__( 'The second most important decision you will make as a parent, apart from deciding to have the kid in the first place is deciding which school for them to enroll in.', 'academic-hub' ),
 			'sanitize_callback' => 'sanitize_text_field',
 			'transport'			=>	'postMessage',
         )
@@ -60,24 +59,6 @@ function academic_hub_customize_special_info( $wp_customize ) {
             $wp_customize, 
             'academic_hub_homepage_special_info', 
             array(
-                'default' => array(
-                        array(
-                            'academic_hub_header_title'       => esc_html__('HIGHLY QUALIFIED TEACHERS', 'academic-hub'),
-                            'academic_hub_short_info'         => esc_html__('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor,Aenean massa Cum sociis natoque penatibus','academic-hub'),
-                            'academic_hub_images'             => esc_url( get_template_directory_uri().'/assets/images/logo.png' ),                       
-                        ),
-                        array(
-                            'academic_hub_header_title'       => esc_html__('HIGHLY QUALIFIED TEACHERS', 'academic-hub'),
-                            'academic_hub_short_info'         => esc_html__('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor,Aenean massa Cum sociis natoque penatibus','academic-hub'),
-                            'academic_hub_images'             => esc_url( get_template_directory_uri().'/assets/images/logo.png' ),                       
-                        ),
-                        array(
-                            'academic_hub_header_title'       => esc_html__('HIGHLY QUALIFIED TEACHERS', 'academic-hub'),
-                            'academic_hub_short_info'         => esc_html__('Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor,Aenean massa Cum sociis natoque penatibus','academic-hub'),
-                            'academic_hub_images'             => esc_url( get_template_directory_uri().'/assets/images/logo.png' ),                       
-                        ),
-                    )
-                ,
                 'sanitize_callback' => array( 'Academic_Hub_Repeater_Setting', 'sanitize_repeater_setting' ),
             ) 
         ) 
@@ -94,19 +75,16 @@ function academic_hub_customize_special_info( $wp_customize ) {
 				'fields'  => array(
                     'academic_hub_header_title' => array(
                         'type'        => 'text',
-                        'default'     => esc_html__( 'HIGHLY QUALIFIED TEACHERS', 'academic-hub' ),
                         'label'       => esc_html__( 'Slider Text', 'academic-hub' ),
                         'description' => esc_html__( 'Sider Text Type Hear.', 'academic-hub' ),
                     ),
                     'academic_hub_short_info' => array(
                         'type'        => 'textarea',
-                        'default'     => esc_html__( 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor,Aenean massa Cum sociis natoque penatibus', 'academic-hub' ),
                         'label'       => esc_html__( 'Slider Short Descriptin', 'academic-hub' ),
                         'description' => esc_html__( 'Slider Links Section.', 'academic-hub' ),
                     ),
                     'academic_hub_images' => array(
                         'type'        => 'image',
-                        'default'     => esc_url( get_template_directory_uri().'/assets/images/logo.png' ),
                         'label'       => esc_html__( 'Slider Image Upload', 'academic-hub' ),
                         'description' => esc_html__( 'Upload the slider image', 'academic-hub' ),
                     )

@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Academic Hub\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-01-03 03:56+0000\n"
+"POT-Creation-Date: 2019-03-08 03:36+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,7 +13,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.2.0; wp-5.0.2"
+"X-Loco-Version: 2.2.0; wp-5.1"
 
 #. used between list items, there is a space after the comma
 #: academic-hub/core/template-tags.php:62
@@ -22,10 +22,6 @@ msgstr ""
 
 #: academic-hub/compatibility/class-breadcrumb-trail.php:224
 msgid "404 Not Found"
-msgstr ""
-
-#: 404.php:22
-msgid "404 Page Not Found"
 msgstr ""
 
 #: academic-hub/customizer/panels/home/academic-about.php:39
@@ -37,7 +33,7 @@ msgstr ""
 msgid "About Us"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/academic-event.php:86
+#: academic-hub/customizer/panels/home/academic-event.php:63
 msgid "Academic Events"
 msgstr ""
 
@@ -65,7 +61,7 @@ msgstr ""
 msgid "Academic Notices"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/academic-team.php:103
+#: academic-hub/customizer/panels/home/academic-team.php:83
 msgid "Academic Our Team"
 msgstr ""
 
@@ -94,16 +90,6 @@ msgstr ""
 
 #: academic-hub/customizer/panels/header/top-header.php:29
 msgid "Address"
-msgstr ""
-
-#: academic-hub/customizer/panels/home/academic-event.php:90
-msgid "AENEAN COMMODO LIGAL GEATE DOLOR AENAN MASSA"
-msgstr ""
-
-#: academic-hub/customizer/panels/home/academic-team.php:49
-msgid ""
-"Aenean commodo ligal geate dolor. Aenan massa. Loren ipsum dolor sit amet,"
-"color tetuer adiois elit, aliquam eget nibh etibra."
 msgstr ""
 
 #: academic-hub/customizer/panels/home/academic-blog.php:53
@@ -179,12 +165,6 @@ msgctxt "daily archives date format"
 msgid "j"
 msgstr ""
 
-#: academic-hub/core/excerpt.php:20 academic-hub/core/excerpt.php:25
-#: academic-hub/customizer/panels/home/slider.php:48
-#: academic-hub/customizer/panels/home/slider.php:53
-msgid "Dedicated To Excellence"
-msgstr ""
-
 #: academic-hub/tgm-plugin-activation/plugin-required-list.php:14
 msgid "Easy Google Fonts"
 msgstr ""
@@ -199,19 +179,19 @@ msgstr ""
 msgid "Email"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/academic-event.php:96
+#: academic-hub/customizer/panels/home/academic-event.php:72
 msgid "Event Description"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/academic-event.php:101
+#: academic-hub/customizer/panels/home/academic-event.php:76
 msgid "Event Image Upload"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/academic-event.php:106
+#: academic-hub/customizer/panels/home/academic-event.php:81
 msgid "Event Item"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/academic-event.php:91
+#: academic-hub/customizer/panels/home/academic-event.php:67
 msgid "Event Title"
 msgstr ""
 
@@ -222,6 +202,10 @@ msgstr ""
 
 #: academic-hub/customizer/panels/home/academic-event.php:37
 msgid "Events Header Info"
+msgstr ""
+
+#: academic-hub/customizer/panels/home/academic-event.php:71
+msgid "Ex: 12/29 7:30 AM-12/31 4:00PM"
 msgstr ""
 
 #: template-parts/header/top-header.php:17
@@ -269,21 +253,8 @@ msgstr ""
 msgid "General Settings"
 msgstr ""
 
-#: 404.php:24
-msgid "Go back to Home"
-msgstr ""
-
 #: academic-hub/customizer/custom-controls/repeater/class-control-repeater.php:369
 msgid "Hex Value"
-msgstr ""
-
-#: academic-hub/core/excerpt.php:143 academic-hub/core/excerpt.php:148
-#: academic-hub/core/excerpt.php:153
-#: academic-hub/customizer/panels/home/academic-special-info.php:65
-#: academic-hub/customizer/panels/home/academic-special-info.php:70
-#: academic-hub/customizer/panels/home/academic-special-info.php:75
-#: academic-hub/customizer/panels/home/academic-special-info.php:97
-msgid "HIGHLY QUALIFIED TEACHERS"
 msgstr ""
 
 #: academic-hub/compatibility/class-breadcrumb-trail.php:223
@@ -304,7 +275,13 @@ msgid "http://podamibenepal.com"
 msgstr ""
 
 #. URI of the theme
-msgid "http://podamibenepal.com/wordpress-themes/academic-hub/"
+msgid "https://academic-hub.podamibenepal.com/"
+msgstr ""
+
+#: 404.php:24
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
 msgstr ""
 
 #: template-parts/content-none.php:44
@@ -313,23 +290,7 @@ msgid ""
 "searching can help."
 msgstr ""
 
-#: academic-hub/core/excerpt.php:239 academic-hub/core/excerpt.php:243
-#: academic-hub/core/excerpt.php:247 academic-hub/core/excerpt.php:251
-#: academic-hub/core/excerpt.php:334 academic-hub/core/excerpt.php:339
-#: academic-hub/core/excerpt.php:344 academic-hub/core/excerpt.php:349
-#: academic-hub/customizer/panels/home/academic-event.php:53
-#: academic-hub/customizer/panels/home/academic-event.php:58
-#: academic-hub/customizer/panels/home/academic-event.php:63
-#: academic-hub/customizer/panels/home/academic-event.php:68
-#: academic-hub/customizer/panels/home/academic-team.php:74
-#: academic-hub/customizer/panels/home/academic-team.php:78
-#: academic-hub/customizer/panels/home/academic-team.php:82
-#: academic-hub/customizer/panels/home/academic-team.php:86
-#: academic-hub/customizer/panels/home/academic-team.php:107
-msgid "LANA DEO"
-msgstr ""
-
-#: academic-hub/core/excerpt.php:562
+#: academic-hub/core/excerpt.php:498
 msgid "LEARN MORE"
 msgstr ""
 
@@ -352,28 +313,6 @@ msgstr ""
 
 #: academic-hub/customizer/panels/header.php:11
 msgid "Logo & Header Settings"
-msgstr ""
-
-#: academic-hub/core/excerpt.php:21 academic-hub/core/excerpt.php:26
-#: academic-hub/customizer/panels/home/slider.php:49
-#: academic-hub/customizer/panels/home/slider.php:54
-msgid "Lorem ipsum dolor sit amet, consectetuer adipiscing elit."
-msgstr ""
-
-#: academic-hub/core/excerpt.php:144 academic-hub/core/excerpt.php:149
-#: academic-hub/core/excerpt.php:154
-#: academic-hub/customizer/panels/home/academic-special-info.php:66
-#: academic-hub/customizer/panels/home/academic-special-info.php:71
-#: academic-hub/customizer/panels/home/academic-special-info.php:76
-#: academic-hub/customizer/panels/home/academic-special-info.php:103
-msgid ""
-"Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo "
-"ligula eget dolor,Aenean massa Cum sociis natoque penatibus"
-msgstr ""
-
-#: academic-hub/customizer/panels/home/academic-notice.php:39
-msgid ""
-"Lorem Ipsum is simply dummy text of the printing and typesetting industry."
 msgstr ""
 
 #: academic-hub/customizer/panels/home/slider.php:32
@@ -407,6 +346,10 @@ msgctxt "monthly archives date format"
 msgid "F"
 msgstr ""
 
+#: 404.php:33
+msgid "Most Used Categories"
+msgstr ""
+
 #: template-parts/pagination/pagination.php:27
 msgid "Next"
 msgstr ""
@@ -425,7 +368,7 @@ msgstr ""
 msgid "Nothing Found"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/academic-notice.php:48
+#: academic-hub/customizer/panels/home/academic-notice.php:47
 msgid "Notice "
 msgstr ""
 
@@ -437,6 +380,10 @@ msgstr ""
 #: comments.php:37
 #, php-format
 msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr ""
+
+#: 404.php:20
+msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
 #: academic-hub/customizer/panels/home/academic-team.php:37
@@ -537,7 +484,7 @@ msgid "row"
 msgstr ""
 
 #. %s: search query.
-#: search.php:28
+#: search.php:24
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
@@ -556,12 +503,12 @@ msgstr ""
 msgid "Select Post Category"
 msgstr ""
 
-#: template-parts/header/top-header.php:47
+#: template-parts/header/top-header.php:49
 msgid "Serch Here"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/academic-special-info.php:50
-#: academic-hub/customizer/panels/home/academic-team.php:58
+#: academic-hub/customizer/panels/home/academic-special-info.php:49
+#: academic-hub/customizer/panels/home/academic-team.php:57
 msgid "Short Descriptions: "
 msgstr ""
 
@@ -569,8 +516,8 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/slider.php:76
-#: academic-hub/customizer/panels/home/academic-special-info.php:99
+#: academic-hub/customizer/panels/home/slider.php:63
+#: academic-hub/customizer/panels/home/academic-special-info.php:79
 msgid "Sider Text Type Hear."
 msgstr ""
 
@@ -578,24 +525,24 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/slider.php:71
-#: academic-hub/customizer/panels/home/academic-special-info.php:93
+#: academic-hub/customizer/panels/home/slider.php:58
+#: academic-hub/customizer/panels/home/academic-special-info.php:74
 msgid "Slider Add"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/slider.php:85
-#: academic-hub/customizer/panels/home/academic-special-info.php:110
-#: academic-hub/customizer/panels/home/academic-team.php:113
+#: academic-hub/customizer/panels/home/slider.php:72
+#: academic-hub/customizer/panels/home/academic-special-info.php:88
+#: academic-hub/customizer/panels/home/academic-team.php:91
 msgid "Slider Image Upload"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/slider.php:91
-#: academic-hub/customizer/panels/home/academic-special-info.php:116
+#: academic-hub/customizer/panels/home/slider.php:78
+#: academic-hub/customizer/panels/home/academic-special-info.php:94
 msgid "Slider Item"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/slider.php:81
-#: academic-hub/customizer/panels/home/academic-special-info.php:105
+#: academic-hub/customizer/panels/home/slider.php:68
+#: academic-hub/customizer/panels/home/academic-special-info.php:84
 msgid "Slider Links Section."
 msgstr ""
 
@@ -604,13 +551,13 @@ msgstr ""
 msgid "Slider Settings"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/slider.php:80
-#: academic-hub/customizer/panels/home/academic-special-info.php:104
+#: academic-hub/customizer/panels/home/slider.php:67
+#: academic-hub/customizer/panels/home/academic-special-info.php:83
 msgid "Slider Short Descriptin"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/slider.php:75
-#: academic-hub/customizer/panels/home/academic-special-info.php:98
+#: academic-hub/customizer/panels/home/slider.php:62
+#: academic-hub/customizer/panels/home/academic-special-info.php:78
 msgid "Slider Text"
 msgstr ""
 
@@ -655,25 +602,12 @@ msgstr ""
 msgid "Tagged %1$s"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/academic-team.php:108
+#: academic-hub/customizer/panels/home/academic-team.php:87
 msgid "Team Name"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/academic-team.php:118
+#: academic-hub/customizer/panels/home/academic-team.php:96
 msgid "Teams Item"
-msgstr ""
-
-#: 404.php:23
-msgid ""
-"The page you were looking for appears to have been moved, deleted or does "
-"not exist. You could go back to where you were."
-msgstr ""
-
-#: academic-hub/customizer/panels/home/academic-special-info.php:41
-msgid ""
-"The second most important decision you will make as a parent, apart from "
-"deciding to have the kid in the first place is deciding which school for "
-"them to enroll in."
 msgstr ""
 
 #. 1: Theme name, 2: Theme author.
@@ -682,7 +616,7 @@ msgstr ""
 msgid "Theme: %1$s by %2$s."
 msgstr ""
 
-#: academic-hub/hooks/academic-huc-action-hooks.php:106
+#: academic-hub/hooks/academic-huc-action-hooks.php:101
 msgid "Toggle navigation"
 msgstr ""
 
@@ -690,12 +624,14 @@ msgstr ""
 msgid "Top Header"
 msgstr ""
 
-#: 404.php:24
-msgid "Try searching or "
+#. %1$s: smiley
+#: 404.php:49
+#, php-format
+msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: academic-hub/customizer/panels/home/slider.php:86
-#: academic-hub/customizer/panels/home/academic-special-info.php:111
+#: academic-hub/customizer/panels/home/slider.php:73
+#: academic-hub/customizer/panels/home/academic-special-info.php:89
 msgid "Upload the slider image"
 msgstr ""
 
