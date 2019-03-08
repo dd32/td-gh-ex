@@ -18,7 +18,7 @@
 		 * @param str $calledby Hook by which the function has been called.
 		 */
 		do_action( 'aamla_after_site_content', 'after_site_content' );
-		?>
+?>
 
 		<footer id="colophon"<?php aamla_attr( 'site-footer' ); ?>>
 

@@ -203,12 +203,20 @@ class Media_Grabber {
 				}
 			}
 
-			// If no audio found, check for audio embedded in iframe.
+			// If no audio found, check for audio/video embedded in iframe.
 			if ( ! $this->media && 'audio' === $this->type ) {
 				$iframes = get_media_embedded_in_content( $content, [ 'iframe' ] );
 				if ( $iframes && isset( $iframes[0] ) ) {
-					$this->media = $iframes[0];
-					$this->type  = 'iaudio';
+					$this->media   = $iframes[0];
+					$this->type    = '';
+					$video_hosting = $this->supported_video_hosting_websites();
+					foreach ( $video_hosting as $video ) {
+						if ( false !== strpos( $this->media, $video ) ) {
+							$this->type = 'video';
+							break;
+						}
+					}
+					$this->type = $this->type ? $this->type : 'iaudio';
 				}
 			}
 		}
@@ -266,7 +274,8 @@ class Media_Grabber {
 	 * @return array
 	 */
 	public function supported_video_hosting_websites() {
-		return apply_filters( 'supported_video_hosting_websites',
+		return apply_filters(
+			'aamla_supported_video_hosting_websites',
 			[
 				'youtube.com',
 				'vimeo.com',

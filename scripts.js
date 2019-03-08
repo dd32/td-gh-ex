@@ -344,7 +344,7 @@ function scrollToTop() {
 	}
 	scrlTotop = scrlTotop[0];
 	scrlTotop.addEventListener( 'click', function() {
-		aamla.aniScrollTop( document.documentElement || document.body, 0, 300 );
+		aamla.aniScrollTop( document.scrollingElement || document.documentElement || document.body, 0, 300 );
 	} );
 }
 scrollToTop();

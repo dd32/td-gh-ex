@@ -155,7 +155,8 @@ add_filter( 'wp_page_menu', 'aamla_add_menu_scrolling_buttons', 10, 2 );
  * @return array
  */
 function aamla_custom_image_sizes_to_admin( $size_names ) {
-	return array_merge( $size_names,
+	return array_merge(
+		$size_names,
 		[
 			'aamla-small'  => esc_html__( 'Aamla Small', 'aamla' ),
 			'aamla-medium' => esc_html__( 'Aamla Medium', 'aamla' ),

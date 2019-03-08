@@ -145,6 +145,6 @@ class Customize_Google_Fonts extends \WP_Customize_Control {
 				</div>
 			</div>
 
-	<?php
+		<?php
 	}
 }

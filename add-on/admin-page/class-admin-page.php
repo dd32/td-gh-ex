@@ -50,7 +50,7 @@ class Admin_Page {
 		// Since Manta is not the active theme, let user know Manta Plus will not work.
 		printf(
 			'<div class="updated notice is-dismissible theme-welcome-notice">
-				<p>%s</p><p>%s</p><a href="%s">%s</a><p>%s</p><p>%s</p>
+				<p>%s</p><p>%s</p><a href="%s"> %s </a><p>%s</p><p>%s</p>
 			</div>',
 			esc_html__( 'Hi there!', 'aamla' ),
 			esc_html__( 'Thanks for trying Aamla. Just need to inform that Aamla has some unique and powerful features. Knowing them in advance will certainly help to build your site. Use following link to quickly go through these features.', 'aamla' ),
@@ -154,5 +154,5 @@ class Admin_Page {
 	}
 }
 
-$admin_page = new Admin_Page();
-$admin_page->init();
+$aamla_admin_page = new Admin_Page();
+$aamla_admin_page->init();

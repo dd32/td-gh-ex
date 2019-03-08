@@ -17,7 +17,8 @@
  * @return array Returns array of theme customizer panels.
  */
 function aamla_get_theme_panels( $panels = [] ) {
-	return array_merge( $panels,
+	return array_merge(
+		$panels,
 		[
 			'aamla_theme_panel' =>
 			[
@@ -39,7 +40,8 @@ add_filter( 'aamla_theme_panels', 'aamla_get_theme_panels' );
  * @return array Returns array of theme customizer sections.
  */
 function aamla_get_theme_sections( $sections = [] ) {
-	return array_merge( $sections,
+	return array_merge(
+		$sections,
 		[
 			'aamla_general_section' =>
 			[
@@ -65,7 +67,8 @@ add_filter( 'aamla_theme_sections', 'aamla_get_theme_sections' );
  * @return array Returns array of theme controls and settings.
  */
 function aamla_get_theme_controls( $controls = [] ) {
-	return array_merge( $controls,
+	return array_merge(
+		$controls,
 		[
 			[
 				'label'   => esc_html__( 'Display Site Title', 'aamla' ),
@@ -194,20 +197,23 @@ add_filter( 'aamla_theme_controls', 'aamla_get_theme_controls' );
  * @return array Returns Array of customizer option default values.
  */
 function aamla_get_theme_defaults( $defaults = [] ) {
-	return array_merge( $defaults, [
-		'aamla_display_site_title'     => 1,
-		'aamla_display_site_desc'      => 1,
-		'aamla_index_post_layout'      => 'list-view',
-		'aamla_archive_sidebar_layout' => 'sidebar-right',
-		'aamla_page_sidebar_layout'    => 'sidebar-right',
-		'aamla_post_sidebar_layout'    => 'sidebar-right',
-		'aamla_index_layout'           => 'grid',
-		'aamla_primary_nav'            => 1,
-		'aamla_header_search'          => 1,
-		'aamla_thumbnail_placeholder'  => 1,
-		'aamla_thumbnail_on_single'    => 1,
-		'aamla_print_post_icon'        => 1,
-		'aamla_footer_text'            => '[site_title] [copy_symbol] [current_year] &middot; ' . esc_html__( 'All rights reserved', 'aamla' ), // Note: Translation friendly instructions for using footer text placeholders has been given in customizer control description.
-	] );
+	return array_merge(
+		$defaults,
+		[
+			'aamla_display_site_title'     => 1,
+			'aamla_display_site_desc'      => 1,
+			'aamla_index_post_layout'      => 'list-view',
+			'aamla_archive_sidebar_layout' => 'sidebar-right',
+			'aamla_page_sidebar_layout'    => 'sidebar-right',
+			'aamla_post_sidebar_layout'    => 'sidebar-right',
+			'aamla_index_layout'           => 'grid',
+			'aamla_primary_nav'            => 1,
+			'aamla_header_search'          => 1,
+			'aamla_thumbnail_placeholder'  => 1,
+			'aamla_thumbnail_on_single'    => 1,
+			'aamla_print_post_icon'        => 1,
+			'aamla_footer_text'            => '[site_title] [copy_symbol] [current_year] &middot; ' . esc_html__( 'All rights reserved', 'aamla' ), // Note: Translation friendly instructions for using footer text placeholders has been given in customizer control description.
+		]
+	);
 }
 add_filter( 'aamla_theme_defaults', 'aamla_get_theme_defaults' );

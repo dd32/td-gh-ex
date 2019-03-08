@@ -53,7 +53,6 @@ class Media_Manager {
 	 * @since 1.0.1
 	 */
 	public static function init() {
-		//add_filter( 'aamla_markup_entry_header', [ self::get_instance(), 'entry_header_media' ] );
 		add_filter( 'aamla_markup_entry_featured_content', [ self::get_instance(), 'entry_featured_media' ] );
 		add_filter( 'aamla_markup_dp_featured_content', [ self::get_instance(), 'dp_featured_media' ] );
 		add_action( 'wp_enqueue_scripts', [ self::get_instance(), 'enqueue_front' ] );
@@ -145,7 +144,7 @@ class Media_Manager {
 		}
 
 		if ( $is_main_query && is_single() ) {
-			printf( '<div%1$s>%2$s</div>', aamla_get_attr( 'entry-' . $media_arr[1] ), $media ); // WPCS xss ok. Contains HTML, other values escaped.
+			printf( '<div%1$s>%2$s</div>', aamla_get_attr( 'entry-' . $media_arr[1] ), $media ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			return;
 		}
 
@@ -168,8 +167,11 @@ class Media_Manager {
 		if ( 'video' === $media_arr[1] ) {
 			$media = $this->deferred_media_markup( $media );
 			printf(
-				'<div class="entry-featured-media mm-video"><div class="mm-video-wrapper"><div class="entry-video media-wrapper">%s%s</div>%s</div></div>', $media, $toggle, $title
-			); // WPCS xss ok. Contains HTML, other values escaped.
+				'<div class="entry-featured-media mm-video"><div class="mm-video-wrapper"><div class="entry-video media-wrapper">%s%s</div>%s</div></div>',
+				$media, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				$toggle, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				$title // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			);
 		} else {
 			if ( 'audio' === $media_arr[1] ) {
 				$media = sprintf( '<div class="mm-audio-wrapper">%s</div>', $media );
@@ -191,10 +193,10 @@ class Media_Manager {
 
 			printf(
 				'<div%1$s>%2$s%3$s</div>',
-				aamla_get_attr( 'entry-featured-media' ),
-				$media_post,
-				$media
-			); // WPCS xss ok. Contains HTML, other values escaped.
+				aamla_get_attr( 'entry-featured-media' ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				$media_post, // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				$media // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			);
 		}
 	}
 
@@ -223,11 +225,13 @@ class Media_Manager {
 				// We want to replace special characters into formatted entities.
 				$media = wptexturize( $media );
 				$doc   = new \DOMDocument();
-				$doc->loadHTML( sprintf(
-					'<!DOCTYPE html><html><head><meta charset="%s"></head><body>%s</body></html>',
-					esc_attr( get_bloginfo( 'charset' ) ),
-					$media
-				) );
+				$doc->loadHTML(
+					sprintf(
+						'<!DOCTYPE html><html><head><meta charset="%s"></head><body>%s</body></html>',
+						esc_attr( get_bloginfo( 'charset' ) ),
+						$media
+					)
+				);
 
 				$body  = $doc->getElementsByTagName( 'body' )->item( 0 );
 				$frame = $body->getElementsByTagName( 'iframe' );

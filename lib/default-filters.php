@@ -111,7 +111,8 @@ function aamla_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 	 *
 	 * @param array $social_links_icons Array of social links icons.
 	 */
-	$social_icons = apply_filters( 'aamla_social_links_icons',
+	$social_icons = apply_filters(
+		'aamla_social_links_icons',
 		[
 			'behance.net'     => 'behance',
 			'codepen.io'      => 'codepen',

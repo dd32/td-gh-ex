@@ -74,7 +74,8 @@ function aamla_skip_link() {
 		return;
 	}
 
-	printf( '<a class="skip-link screen-reader-text" href="#content">%s</a>',
+	printf(
+		'<a class="skip-link screen-reader-text" href="#content">%s</a>',
 		esc_html__( 'Skip to content', 'aamla' )
 	);
 }
@@ -149,9 +150,9 @@ function aamla_user_action_items() {
 function aamla_header_widgets() {
 	printf(
 		'<button aria-expanded="false" class="action-toggle">%1$s<span class="screen-reader-text">%2$s</span></button>',
-		aamla_get_icon( [ 'icon' => 'more' ] ),
+		aamla_get_icon( [ 'icon' => 'more' ] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		esc_html__( 'Show possible user actions', 'aamla' )
-	); // WPCS xss ok.
+	);
 	aamla_widgets(
 		'header-widget-area',
 		'header-widget-area',
@@ -241,7 +242,7 @@ function aamla_breadcrumb() {
 
 	// First use 'Breadcrumb NavXT' function (if available).
 	if ( function_exists( 'bcn_display' ) ) {
-		printf( '<p id="breadcrumbs" class="breadcrumbs">%s</p>', bcn_display( true ) ); // WPCS xss ok. Using specific plugin's display safe function.
+		printf( '<p id="breadcrumbs" class="breadcrumbs">%s</p>', bcn_display( true ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		return;
 	}
 
@@ -352,11 +353,13 @@ function aamla_page_excerpt() {
 			$excerpt = wp_kses_post( $excerpt );
 		} else {
 			$doc = new DOMDocument();
-			$doc->loadHTML( sprintf(
-				'<!DOCTYPE html><html><head><meta charset="%s"></head><body>%s</body></html>',
-				esc_attr( get_bloginfo( 'charset' ) ),
-				$excerpt
-			) );
+			$doc->loadHTML(
+				sprintf(
+					'<!DOCTYPE html><html><head><meta charset="%s"></head><body>%s</body></html>',
+					esc_attr( get_bloginfo( 'charset' ) ),
+					$excerpt
+				)
+			);
 
 			$body = $doc->getElementsByTagName( 'body' )->item( 0 );
 
@@ -375,7 +378,7 @@ function aamla_page_excerpt() {
 			$excerpt = str_replace( [ '<body>', '</body>' ], '', $doc->saveHTML( $body ) );
 		}
 
-		printf( '<div class="page-excerpt">%s</div>', $excerpt ); // WPCS xss ok. Contains HTML, other values escaped.
+		printf( '<div class="page-excerpt">%s</div>', $excerpt ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 
@@ -572,12 +575,14 @@ function aamla_post_pagination() {
 		return;
 	}
 
-	the_posts_pagination( array(
-		'mid_size'           => 2,
-		'prev_text'          => '<span class="screen-reader-text">' . esc_html__( 'Previous', 'aamla' ) . '</span>' . aamla_get_icon( array( 'icon' => 'angle-left' ) ) . '<span class="post-pagi">' . esc_html__( 'Previous', 'aamla' ) . '</span>',
-		'next_text'          => '<span class="screen-reader-text show-on-mobile">' . esc_html__( 'Next', 'aamla' ) . '</span><span class="post-pagi">' . esc_html__( 'Next', 'aamla' ) . '</span>' . aamla_get_icon( array( 'icon' => 'angle-right' ) ),
-		'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'aamla' ) . ' </span>',
-	) );
+	the_posts_pagination(
+		array(
+			'mid_size'           => 2,
+			'prev_text'          => '<span class="screen-reader-text">' . esc_html__( 'Previous', 'aamla' ) . '</span>' . aamla_get_icon( array( 'icon' => 'angle-left' ) ) . '<span class="post-pagi">' . esc_html__( 'Previous', 'aamla' ) . '</span>',
+			'next_text'          => '<span class="screen-reader-text show-on-mobile">' . esc_html__( 'Next', 'aamla' ) . '</span><span class="post-pagi">' . esc_html__( 'Next', 'aamla' ) . '</span>' . aamla_get_icon( array( 'icon' => 'angle-right' ) ),
+			'before_page_number' => '<span class="meta-nav screen-reader-text">' . esc_html__( 'Page', 'aamla' ) . ' </span>',
+		)
+	);
 }
 
 /**
@@ -590,10 +595,12 @@ function aamla_post_navigation() {
 		return;
 	}
 
-	the_post_navigation( array(
-		'next_text' => '<span class="meta-nav">' . esc_html__( 'Next Post ', 'aamla' ) . '</span><span class="post-title">%title</span>',
-		'prev_text' => '<span class="meta-nav">' . esc_html__( ' Previous Post', 'aamla' ) . '</span><span class="post-title">%title</span>',
-	) );
+	the_post_navigation(
+		array(
+			'next_text' => '<span class="meta-nav">' . esc_html__( 'Next Post ', 'aamla' ) . '</span><span class="post-title">%title</span>',
+			'prev_text' => '<span class="meta-nav">' . esc_html__( ' Previous Post', 'aamla' ) . '</span><span class="post-title">%title</span>',
+		)
+	);
 }
 
 /**
@@ -664,9 +671,9 @@ function aamla_footer_items() {
 function aamla_scroll_to_top() {
 	printf(
 		'<button class="scrl-to-top">%1$s<span class="screen-reader-text">%2$s</span></button>',
-		aamla_get_icon( [ 'icon' => 'circle-up' ] ),
+		aamla_get_icon( [ 'icon' => 'circle-up' ] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		esc_html__( 'Scroll to top of the page', 'aamla' )
-	); // WPCS xss ok.
+	);
 }
 
 /**
@@ -689,7 +696,7 @@ function aamla_footer_text() {
 	$output = str_replace( '[site_title]', get_bloginfo( 'name', 'display' ), $output );
 	$output = str_replace( '[copy_symbol]', '&copy;', $output );
 
-	printf( '<div class="footer-text">%1$s</div>', $output ); // WPCS xss ok. Contains HTML, other values escaped.
+	printf( '<div class="footer-text">%1$s</div>', $output ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 }
 
 /**

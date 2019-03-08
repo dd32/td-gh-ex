@@ -12,5 +12,6 @@ edit_post_link(
 		__( 'Edit<span class="screen-reader-text"> "%s"</span>', 'aamla' ),
 		get_the_title()
 	),
-	'<span' . aamla_get_attr( 'meta-edit-link' ) . '>', '</span>'
+	'<span' . aamla_get_attr( 'meta-edit-link' ) . '>',
+	'</span>'
 );

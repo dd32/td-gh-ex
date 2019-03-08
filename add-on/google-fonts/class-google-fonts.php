@@ -57,17 +57,20 @@ class Google_Fonts {
 	 * @since  1.0.1
 	 */
 	public function __construct() {
-		$this->font_options = apply_filters( 'aamla_google_fonts_controls', [
-			'primary'   => [
-				'label' => esc_html__( 'Google Font - 1', 'aamla' ),
-			],
-			'secondary' => [
-				'label' => esc_html__( 'Google Font - 2', 'aamla' ),
-			],
-			'tertiary'  => [
-				'label' => esc_html__( 'Google Font - Extra', 'aamla' ),
-			],
-		] );
+		$this->font_options = apply_filters(
+			'aamla_google_fonts_controls',
+			[
+				'primary'   => [
+					'label' => esc_html__( 'Google Font - 1', 'aamla' ),
+				],
+				'secondary' => [
+					'label' => esc_html__( 'Google Font - 2', 'aamla' ),
+				],
+				'tertiary'  => [
+					'label' => esc_html__( 'Google Font - Extra', 'aamla' ),
+				],
+			]
+		);
 	}
 
 	/**
@@ -110,7 +113,8 @@ class Google_Fonts {
 	 * @return array Returns array of theme customizer sections.
 	 */
 	public function add_sections( $sections = [] ) {
-		return array_merge( $sections,
+		return array_merge(
+			$sections,
 			[
 				'aamla_google_fonts_section' =>
 				[
@@ -130,7 +134,8 @@ class Google_Fonts {
 	 * @return array Returns array of theme controls and settings.
 	 */
 	public function add_controls( $controls = [] ) {
-		$controls = array_merge( $controls,
+		$controls = array_merge(
+			$controls,
 			[
 				[
 					'label'   => esc_html__( 'Use Google Fonts', 'aamla' ),
@@ -142,7 +147,8 @@ class Google_Fonts {
 		);
 
 		foreach ( $this->font_options as $id => $args ) {
-			$controls = array_merge( $controls,
+			$controls = array_merge(
+				$controls,
 				[
 					[
 						'label'       => $args['label'],
@@ -176,24 +182,34 @@ class Google_Fonts {
 		$defaults = array_merge( $defaults, [ 'aamla_use_google_fonts' => 1 ] );
 
 		foreach ( $this->font_options as $id => $args ) {
-			$defaults = array_merge( $defaults,
+			$defaults = array_merge(
+				$defaults,
 				[ "aamla_{$id}_font_weights" => [ '400', '700' ] ]
 			);
 			if ( 'primary' === $id ) {
-				$defaults = array_merge( $defaults, [
-					"aamla_{$id}_font_family"    => 'roboto',
-					"aamla_{$id}_font_selectors" => 'body',
-				] );
+				$defaults = array_merge(
+					$defaults,
+					[
+						"aamla_{$id}_font_family"    => 'roboto',
+						"aamla_{$id}_font_selectors" => 'body',
+					]
+				);
 			} elseif ( 'secondary' === $id ) {
-				$defaults = array_merge( $defaults, [
-					"aamla_{$id}_font_family"    => 'lora',
-					"aamla_{$id}_font_selectors" => '.site-title, .entry-header-title',
-				] );
+				$defaults = array_merge(
+					$defaults,
+					[
+						"aamla_{$id}_font_family"    => 'lora',
+						"aamla_{$id}_font_selectors" => '.site-title, .entry-header-title',
+					]
+				);
 			} else {
-				$defaults = array_merge( $defaults, [
-					"aamla_{$id}_font_family"    => 'none',
-					"aamla_{$id}_font_selectors" => '',
-				] );
+				$defaults = array_merge(
+					$defaults,
+					[
+						"aamla_{$id}_font_family"    => 'none',
+						"aamla_{$id}_font_selectors" => '',
+					]
+				);
 			}
 		}
 

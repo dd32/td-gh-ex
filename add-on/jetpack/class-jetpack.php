@@ -67,11 +67,14 @@ class JetPack {
 	 */
 	public function add_jetpack_support() {
 		// Add theme support for Infinite Scroll.
-		add_theme_support( 'infinite-scroll', array(
-			'container' => 'main',
-			'render'    => [ $this, 'infinite_scroll_render' ],
-			'footer'    => 'page',
-		) );
+		add_theme_support(
+			'infinite-scroll',
+			array(
+				'container' => 'main',
+				'render'    => [ $this, 'infinite_scroll_render' ],
+				'footer'    => 'page',
+			)
+		);
 	}
 
 	/**

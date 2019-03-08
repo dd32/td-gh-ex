@@ -41,16 +41,16 @@ require_once get_template_directory() . '/add-on/admin-page/functions/template-f
 		<div id="aml-content" class="aml-content">
 			<ul class="aml-section-title">
 				<?php
-				foreach ( $aamla_help_sections as $id => $label ) {
-					printf( '<li><a href="#aml-%s">%s</a></li>', $id, $label ); // WPCS xss ok. Already escaped.
+				foreach ( $aamla_help_sections as $key => $label ) {
+					printf( '<li><a href="#aml-%s">%s</a></li>', $key, $label ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				}
 				?>
 			</ul>
 			<?php
-			foreach ( $aamla_help_sections as $id => $label ) {
-				printf( '<div id="aml-%s" class="aml-section-content">', $id ); // WPCS xss ok. escaping Not required. Direct value used.
-				aamla_get_template_partial( 'add-on/admin-page/partials', "page-{$id}" );
-				printf( '</div><!-- #aml-%s -->', $id ); // WPCS xss ok. escaping Not required. Direct value used.
+			foreach ( $aamla_help_sections as $key => $label ) {
+				printf( '<div id="aml-%s" class="aml-section-content">', $key ); /// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+				aamla_get_template_partial( 'add-on/admin-page/partials', "page-{$key}" );
+				printf( '</div><!-- #aml-%s -->', $key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 			}
 			?>
 		</div><!-- .aml-content -->
@@ -58,7 +58,7 @@ require_once get_template_directory() . '/add-on/admin-page/functions/template-f
 	<div id="aml-footer" class="aml-footer">
 		<div class="copyright"><span><?php esc_html_e( 'Vedathemes', 'aamla' ); ?> &copy; <?php echo esc_html( date_i18n( __( 'Y', 'aamla' ) ) ); ?></span></div>
 		<div class="aml-footer-links">
-			<a href="<?php echo AAMLA_URI; // WPCS xss ok. URL already escaped. ?>" target="_blank"><?php esc_html_e( 'Contact Us', 'aamla' ); ?></a>
+			<a href="<?php echo AAMLA_URI; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" target="_blank"><?php esc_html_e( 'Contact Us', 'aamla' ); ?></a>
 		</div>
 	</div><!-- .aml-footer -->
 </div><!-- .wrap -->

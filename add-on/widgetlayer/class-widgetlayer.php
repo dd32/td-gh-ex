@@ -152,7 +152,8 @@ class WidgetLayer {
 		remove_action( 'aamla_inside_header', 'aamla_skip_link', 0 );
 
 		// Display revised skip link.
-		printf( '<a class="skip-link screen-reader-text" href="#page-widget-area-top">%s</a>',
+		printf(
+			'<a class="skip-link screen-reader-text" href="#page-widget-area-top">%s</a>',
 			esc_html__( 'Skip to content', 'aamla' )
 		);
 	}
@@ -188,7 +189,8 @@ class WidgetLayer {
 		);
 
 		// Theme localize scripts data.
-		$l10n = apply_filters( 'aamla_localize_script_data',
+		$l10n = apply_filters(
+			'aamla_localize_script_data',
 			[
 				'uploader_title'       => esc_html__( 'Set Text Widget Featured Image', 'aamla' ),
 				'uploader_button_text' => esc_html__( 'Select', 'aamla' ),
@@ -423,7 +425,8 @@ class WidgetLayer {
 	 */
 	public function register_widget_areas( $widgets ) {
 		foreach ( $this->get_pages_with_custom_widget() as $id => $title ) {
-			array_push( $widgets,
+			array_push(
+				$widgets,
 				[
 					'name'          => esc_html__( 'Page - ', 'aamla' ) . esc_html( $title ),
 					'id'            => 'widgetlayer-page-' . absint( $id ),
@@ -497,7 +500,8 @@ class WidgetLayer {
 			return $this->widget_options;
 		}
 
-		$this->widget_options = apply_filters( 'aamla_widgetlayer_widget_options',
+		$this->widget_options = apply_filters(
+			'aamla_widgetlayer_widget_options',
 			[
 				'aamla_width'               => [
 					'setting'     => 'aamla_width',
@@ -585,7 +589,8 @@ class WidgetLayer {
 			$id          = esc_attr( $widget->get_field_id( $setting ) );
 			$name        = esc_attr( $widget->get_field_name( $setting ) );
 			$instance    = wp_parse_args( $instance, [ $setting => '' ] );
-			$value       = wp_parse_args( $value,
+			$value       = wp_parse_args(
+				$value,
 				[
 					'default'        => '',
 					'description'    => '',
@@ -610,7 +615,8 @@ class WidgetLayer {
 					$field .= sprintf( '<select name="%s" id="%s">', $name, $id );
 					$field .= sprintf( '<option value="">%s</option>', $value['default'] );
 					foreach ( $value['choices'] as $val => $label ) {
-						$field .= sprintf( '<option value="%s" %s>%s</option>',
+						$field .= sprintf(
+							'<option value="%s" %s>%s</option>',
 							esc_attr( $val ),
 							selected( $instance[ $setting ], $val, false ),
 							$label
@@ -660,7 +666,7 @@ class WidgetLayer {
 			$content = sprintf( '<div class="widget-options-content">%s</div>', implode( '', $fields['basic'] ) );
 
 			// Display Widget Options.
-			printf( '<div class="widget-options-section">%s%s</div>', $title, $content ); // WPCS xss ok. Contains HTML, other values escaped.
+			printf( '<div class="widget-options-section">%s%s</div>', $title, $content ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 
@@ -820,7 +826,7 @@ class WidgetLayer {
 		$inline_css = $this->get_widget_css( $widget_data );
 		$inline_css = $this->widget_css_array_to_string( $inline_css );
 		if ( $inline_css ) {
-			echo '<style>' . $inline_css . '</style>'; // WPCS xss ok. CSS with strip all tags.
+			echo '<style>' . $inline_css . '</style>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 
 		return $params;

@@ -23,7 +23,7 @@ if ( post_password_required() ) {
 
 	<?php
 	if ( have_comments() ) :
-	?>
+		?>
 		<h2<?php aamla_attr( 'comments-title' ); ?>>
 			<?php
 			$aamla_comments_number = get_comments_number();
@@ -31,20 +31,22 @@ if ( post_password_required() ) {
 				printf(
 					/* translators: %s: post title */
 					esc_html_x( 'One comment on &ldquo;%s&rdquo;', 'comments title', 'aamla' ),
-					'<span>' . get_the_title() . '</span>'
+					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 			} else {
-				printf( // WPCS: XSS OK.
-					/* translators: 1: number of comments, 2: post title */
-					esc_html( _nx(
-						'%1$s comment on &ldquo;%2$s&rdquo;',
-						'%1$s comments on &ldquo;%2$s&rdquo;',
-						$aamla_comments_number,
-						'comments title',
-						'aamla'
-					) ),
-					number_format_i18n( $aamla_comments_number ),
-					'<span>' . get_the_title() . '</span>'
+				printf(
+					esc_html(
+						/* translators: 1: number of comments, 2: post title */
+						_nx(
+							'%1$s comment on &ldquo;%2$s&rdquo;',
+							'%1$s comments on &ldquo;%2$s&rdquo;',
+							$aamla_comments_number,
+							'comments title',
+							'aamla'
+						)
+					),
+					number_format_i18n( $aamla_comments_number ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					'<span>' . get_the_title() . '</span>' // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				);
 			}
 			?>
@@ -71,9 +73,9 @@ if ( post_password_required() ) {
 		the_comments_navigation();
 
 		if ( ! comments_open() && get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
-		?>
+			?>
 			<p<?php aamla_attr( 'no-comments' ); ?>><?php esc_html_e( 'Comments are closed.', 'aamla' ); ?></p>
-		<?php
+			<?php
 		endif;
 
 	endif; // Check for have_comments().

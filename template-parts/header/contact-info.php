@@ -15,7 +15,7 @@ $aamla_email     = aamla_get_mod( 'aamla_email_id', 'email' );
 		<span<?php aamla_attr( 'contact-phone' ); ?>>
 			<?php aamla_icon( [ 'icon' => 'phone' ] ); ?>
 			<span<?php aamla_attr( 'phone-number' ); ?>>
-				<?php echo $aamla_telephone; // WPCS xss ok. Escaped using 'aamla_escape' function. ?>
+				<?php echo $aamla_telephone; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</span>
 		</span>
 	<?php endif; ?>
@@ -24,7 +24,7 @@ $aamla_email     = aamla_get_mod( 'aamla_email_id', 'email' );
 		<span<?php aamla_attr( 'contact-email' ); ?>>
 			<?php aamla_icon( [ 'icon' => 'email' ] ); ?>
 			<span<?php aamla_attr( 'email-id' ); ?>>
-				<?php echo $aamla_email; // WPCS xss ok. Escaped using 'aamla_escape' function. ?>
+				<?php echo $aamla_email; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 			</span>
 		</span>
 	<?php endif; ?>

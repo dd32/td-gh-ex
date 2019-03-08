@@ -8,9 +8,9 @@
 
 if ( has_post_thumbnail() ) :
 	$size = is_singular() ? is_singular( 'page' ) ? 'aamla-page-featured-image' : 'aamla-large' : 'aamla-medium';
-?>
+	?>
 	<div<?php aamla_attr( 'entry-thumbnail' ); ?>>
 		<?php the_post_thumbnail( $size ); ?>
 	</div><!-- .entry-thumbnail -->
-<?php
+	<?php
 endif;

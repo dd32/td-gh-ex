@@ -269,20 +269,22 @@ class Display_Posts {
 		$author = '';
 
 		if ( $instruct[0] ) {
-			$date = sprintf( '<span class="dp-date"><time datetime="%s">%s</time></span>',
+			$date = sprintf(
+				'<span class="dp-date"><time datetime="%s">%s</time></span>',
 				esc_attr( get_the_date( DATE_W3C ) ),
 				esc_html( get_the_date( 'M j, Y' ) )
 			);
 		}
 
 		if ( $instruct[1] ) {
-			$author = sprintf( '<span class="dp-author"><a href="%s"><span>%s</span></a></span>',
+			$author = sprintf(
+				'<span class="dp-author"><a href="%s"><span>%s</span></a></span>',
 				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
 				esc_html( get_the_author_meta( 'display_name' ) )
 			);
 		}
 
-		printf( '<div class="dp-meta">%s%s</div>', $author, $date ); // WPCS xss ok. Contains HTML, other values escaped.
+		printf( '<div class="dp-meta">%s%s</div>', $author, $date ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**
@@ -366,9 +368,6 @@ class Display_Posts {
 		$text = get_the_content( '' );
 
 		$text = wp_strip_all_tags( strip_shortcodes( $text ) );
-
-		/** This filter is documented in wp-includes/post-template.php */
-		$text = apply_filters( 'the_content', $text );
 		$text = str_replace( ']]>', ']]&gt;', $text );
 
 		/**
@@ -388,9 +387,9 @@ class Display_Posts {
 		 * @param string $more_string The string shown within the more link.
 		 */
 		$excerpt_more = apply_filters( 'aamla_dp_excerpt_more', ' [&hellip;]', $style );
-		$text         = wp_trim_words( $text, $excerpt_length, $excerpt_more );
+		$text         = wp_trim_words( esc_html( $text ), $excerpt_length, $excerpt_more );
 
-		echo $text; // WPCS xss ok.
+		echo $text; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**
