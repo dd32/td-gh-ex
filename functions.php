@@ -5,7 +5,7 @@
  * @package Conica
  */
 
-define( 'CONICA_THEME_VERSION' , '1.3.14' );
+define( 'CONICA_THEME_VERSION' , '1.3.15' );
 
 // Get help / Premium Page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -207,6 +207,16 @@ function conica_the_custom_logo() {
 }
 
 /**
+ * Add a pingback url auto-discovery header for single posts, pages, or attachments.
+ */
+function conica_pingback_header() {
+	if ( is_singular() && pings_open() ) {
+		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
+	}
+}
+add_action( 'wp_head', 'conica_pingback_header' );
+
+/**
  * Enqueue admin styling.
  */
 function conica_load_admin_script() {
@@ -307,6 +317,7 @@ function conica_register_required_plugins() {
             'name'      => __( 'Elementor Page Builder', 'conica' ),
             'slug'      => 'elementor',
             'required'  => false,
+			'external_url' => 'https://kairaweb.com/go/elementor/'
         ),
 		array(
 			'name'      => __( 'WooCommerce', 'conica' ),
@@ -337,19 +348,6 @@ function conica_register_required_plugins() {
 	tgmpa( $plugins, $config );
 }
 add_action( 'tgmpa_register', 'conica_register_required_plugins' );
-
-/**
- * Elementor Partner ID
- */
-if ( !defined( 'ELEMENTOR_PARTNER_ID' ) ) {
-    define( 'ELEMENTOR_PARTNER_ID', 2118 );
-}
-/**
- * WPForms Partner ID
- */
-if ( !defined( 'WPFORMS_SHAREASALE_ID' ) ) {
-    define( 'WPFORMS_SHAREASALE_ID', 1128843 );
-}
 
 /**
  * Register a custom Post Categories ID column

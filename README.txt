@@ -79,6 +79,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.15
+* Change/Update pingback_url function
+* Remove old deprecated code
+
 #### 1.3.14
 * Style tweaks/fixes
 * Added new Gutenberg template & compatibility for new WordPress Gutenberg editor
