@@ -130,47 +130,48 @@ function graphene_is_og_plugins_available(){
 	$plugins = array(
 		'2-click-socialmedia-buttons/2-click-socialmedia-buttons.php',
 		// 2 Click Social Media Buttons.
-		'add-link-to-facebook/add-link-to-facebook.php',         // Add Link to Facebook.
-		'add-meta-tags/add-meta-tags.php',                       // Add Meta Tags.
-		'easy-facebook-share-thumbnails/esft.php',               // Easy Facebook Share Thumbnail.
-		'facebook/facebook.php',                                 // Facebook (official plugin).
-		'facebook-awd/AWD_facebook.php',                         // Facebook AWD All in one.
+		'add-link-to-facebook/add-link-to-facebook.php',        // Add Link to Facebook.
+		'add-meta-tags/add-meta-tags.php',                      // Add Meta Tags.
+		'easy-facebook-share-thumbnails/esft.php',              // Easy Facebook Share Thumbnail.
+		'facebook/facebook.php',                                // Facebook (official plugin).
+		'facebook-awd/AWD_facebook.php',                        // Facebook AWD All in one.
 		'facebook-featured-image-and-open-graph-meta-tags/fb-featured-image.php',
 		// Facebook Featured Image & OG Meta Tags.
-		'facebook-meta-tags/facebook-metatags.php',              // Facebook Meta Tags.
+		'facebook-meta-tags/facebook-metatags.php',             // Facebook Meta Tags.
 		'wonderm00ns-simple-facebook-open-graph-tags/wonderm00n-open-graph.php',
 		// Facebook Open Graph Meta Tags for WordPress.
-		'facebook-revised-open-graph-meta-tag/index.php',        // Facebook Revised Open Graph Meta Tag.
-		'facebook-thumb-fixer/_facebook-thumb-fixer.php',        // Facebook Thumb Fixer.
+		'facebook-revised-open-graph-meta-tag/index.php',       // Facebook Revised Open Graph Meta Tag.
+		'facebook-thumb-fixer/_facebook-thumb-fixer.php',       // Facebook Thumb Fixer.
 		'facebook-and-digg-thumbnail-generator/facebook-and-digg-thumbnail-generator.php',
 		// Fedmich's Facebook Open Graph Meta.
-		'network-publisher/networkpub.php',                      // Network Publisher.
-		'nextgen-facebook/nextgen-facebook.php',                 // NextGEN Facebook OG.
-		'opengraph/opengraph.php',                               // Open Graph.
+		'network-publisher/networkpub.php',                     // Network Publisher.
+		'nextgen-facebook/nextgen-facebook.php',                // NextGEN Facebook OG.
+		'opengraph/opengraph.php',                              // Open Graph.
 		'open-graph-protocol-framework/open-graph-protocol-framework.php',
 		// Open Graph Protocol Framework.
-		'seo-facebook-comments/seofacebook.php',                 // SEO Facebook Comments.
-		'seo-ultimate/seo-ultimate.php',                         // SEO Ultimate.
-		'sexybookmarks/sexy-bookmarks.php',                      // Shareaholic.
-		'shareaholic/sexy-bookmarks.php',                        // Shareaholic.
-		'sharepress/sharepress.php',                             // SharePress.
-		'simple-facebook-connect/sfc.php',                       // Simple Facebook Connect.
-		'social-discussions/social-discussions.php',             // Social Discussions.
-		'social-sharing-toolkit/social_sharing_toolkit.php',     // Social Sharing Toolkit.
-		'socialize/socialize.php',                               // Socialize.
+		'seo-facebook-comments/seofacebook.php',                // SEO Facebook Comments.
+		'seo-ultimate/seo-ultimate.php',                        // SEO Ultimate.
+		'sexybookmarks/sexy-bookmarks.php',                     // Shareaholic.
+		'shareaholic/sexy-bookmarks.php',                       // Shareaholic.
+		'sharepress/sharepress.php',                            // SharePress.
+		'simple-facebook-connect/sfc.php',                      // Simple Facebook Connect.
+		'social-discussions/social-discussions.php',            // Social Discussions.
+		'social-sharing-toolkit/social_sharing_toolkit.php',    // Social Sharing Toolkit.
+		'socialize/socialize.php',                              // Socialize.
 		'only-tweet-like-share-and-google-1/tweet-like-plusone.php',
 		// Tweet, Like, Google +1 and Share.
-		'wordbooker/wordbooker.php',                             // Wordbooker.
-		'wpsso/wpsso.php',                                       // WordPress Social Sharing Optimization.
-		'wp-caregiver/wp-caregiver.php',                         // WP Caregiver.
+		'wordbooker/wordbooker.php',                            // Wordbooker.
+		'wpsso/wpsso.php',                                      // WordPress Social Sharing Optimization.
+		'wp-caregiver/wp-caregiver.php',                        // WP Caregiver.
 		'wp-facebook-like-send-open-graph-meta/wp-facebook-like-send-open-graph-meta.php',
 		// WP Facebook Like Send & Open Graph Meta.
-		'wp-facebook-open-graph-protocol/wp-facebook-ogp.php',   // WP Facebook Open Graph protocol.
-		'wp-ogp/wp-ogp.php',                                     // WP-OGP.
-		'zoltonorg-social-plugin/zosp.php',                      // Zolton.org Social Plugin.
+		'wp-facebook-open-graph-protocol/wp-facebook-ogp.php',  // WP Facebook Open Graph protocol.
+		'wp-ogp/wp-ogp.php',                                    // WP-OGP.
+		'zoltonorg-social-plugin/zosp.php',                     // Zolton.org Social Plugin.
 
-		'jetpack/jetpack.php',										// Jetpack
-		'wordpress-seo/wp-seo.php',									// WordPress SEO
+		'jetpack/jetpack.php',									// Jetpack
+		'wordpress-seo/wp-seo.php',								// WordPress SEO
+		'webtexttool/webtexttool.php',							// Web Text Tool
 	);
 
 	$active_plugins = get_option( 'active_plugins' );

@@ -4,6 +4,18 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.6.1
+	* Added: Load theme-bundled language files whenever available instead of WordPress-supplied language files
+	* Added: determine_locale() function compat (WP 5.0)
+	* Updated: Added Web Text Tool plugin into list of SEO plugins providing Open Graph tags
+	* Updated: Single content page navigation links now clickable within a larger area
+	* Fixed: Positioning of fixed header menu when using boxed layout
+	* Fixed: Some plugins are still loading duplicate Bootstrap script causing feature conflicts
+	* Fixed: Entry thumbnail display on mobile devices
+	* Fixed: PHP warnings related to slider stack, header image, menu classes
+	* Fixed: Double H1 tags on the front page when using Static Front Page
+	* Removed: the_remaining_content() function compat (WP 3.6)
+
 Version 2.6
 	* Added: Option to allow custom post types in slider
 	* Added: Option to specify maximum number of ads to display per page

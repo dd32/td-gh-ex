@@ -20,7 +20,7 @@ class Graphene_Walker_Nav_Menu extends Walker_Nav_Menu {
 /**
  * Modify menu item classes
  */
-function graphene_nav_menu_css_class( $classes, $item, $args ){
+function graphene_nav_menu_css_class( $classes, $item, $args, $depth ){
 	
 	if ( has_nav_menu( $args->theme_location ) ) {
 		if ( in_array( 'current-menu-item', $classes ) ) $classes[] = 'active';
@@ -29,7 +29,7 @@ function graphene_nav_menu_css_class( $classes, $item, $args ){
 	
 	return $classes;
 }
-add_filter( 'nav_menu_css_class', 'graphene_nav_menu_css_class', 10, 3 );
+add_filter( 'nav_menu_css_class', 'graphene_nav_menu_css_class', 10, 4 );
 
 
 /**
@@ -39,6 +39,7 @@ function graphene_nav_menu_link_attributes( $atts, $item, $args ){
 	
 	$depth = ( is_object( $args ) ) ? $args->depth : $args['depth'];
 	$classes = ( is_object( $item ) ) ? $item->classes : $item; // If this is default menu, $item is actually $css_class of the link
+	if ( ! is_array( $classes ) ) $classes = array( $classes );
 	$atts['class'] = '';
 
 	/* Dropdown submenu */
@@ -76,6 +77,7 @@ function graphene_walker_nav_menu_start_el( $item_output, $item, $depth, $args )
 	
 	$max_depth = ( is_object( $args ) ) ? $args->depth : $args['depth'];
 	$classes = ( is_object( $item ) ) ? $item->classes : $item; // If this is default menu, $item is actually $css_class of the link
+	if ( ! is_array( $classes ) ) $classes = array( $classes );
 	global $menus_with_desc; if ( ! $menus_with_desc ) $menus_with_desc = array();
 	
 	/* Menu icon */

@@ -31,7 +31,7 @@ function graphene_get_header_image( $post_id = NULL, $size = 'post-thumbnail', $
 			$image = wp_get_attachment_image_src( $image_id, $size );
 
 			if ( $image ) $header_img = $image;
-			else {
+			elseif ( $header_img ) {
 				$dimension = getimagesize( $header_img );
 				$header_img = array( $header_img, $dimension[0], $dimension[1] );
 			}

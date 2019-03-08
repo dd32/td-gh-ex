@@ -350,3 +350,20 @@ function graphene_responsive_embed( $html, $url, $attr ) {
 	if ( stripos( $post->post_content, '<!-- wp:' ) !== false ) return $html;
     return $html !== '' ? '<div class="embed-container">' . $html . '</div>' : '';
 }
+
+
+/**
+ * Load bundled language files for languages with incomplete WordPress Polyglot translation
+ */
+function graphene_load_textdomain_mofile( $mofile, $domain ){
+
+	if ( $domain == 'graphene' && stripos( $mofile, 'wp-content/languages' ) !== false ) {
+		$locale = apply_filters( 'theme_locale', determine_locale(), $domain );
+		if ( is_readable( GRAPHENE_ROOTDIR . '/languages/' . $locale . '.mo' ) ) {
+			$mofile = GRAPHENE_ROOTDIR . '/languages/' . $locale . '.mo';
+		}
+	}
+
+	return $mofile;
+}
+add_action( 'load_textdomain_mofile', 'graphene_load_textdomain_mofile', 10, 2 );

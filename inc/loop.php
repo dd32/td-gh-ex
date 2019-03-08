@@ -242,11 +242,11 @@ endif;
 function graphene_link_pages(){
 	$args = array(
 		'before'           => '<div class="page-links"><h4 class="section-title-sm">' . __( 'Pages:', 'graphene' ) . '</h4><ul class="pagination"><li><span class="page-numbers">',
-		'after'            => '</span></li></ul></div>',
+		'after'            => '</li></ul></div>',
 		'link_before'      => '',
 		'link_after'       => '',
 		'next_or_number'   => 'number',
-		'separator'        => '</span></li><li><span class="page-numbers">',
+		'separator'        => '</span></li><li>',
 		'pagelink'         => '%',
 		'echo'             => 0
 	); 

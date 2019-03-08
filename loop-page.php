@@ -12,10 +12,13 @@
 	<div class="entry clearfix">                
 		
 		<?php /* Post title */ ?>
-        <h1 class="post-title entry-title">
+        <?php 
+        	$tag = ( is_front_page() ) ? 'h2' : 'h1';
+        	echo '<' . $tag . ' class="post-title entry-title">';
+        ?>
 			<?php if ( get_the_title() == '' ) { _e( '(No title)', 'graphene' ); } else { the_title(); } ?>
 			<?php do_action( 'graphene_page_title' ); ?>
-        </h1>
+        <?php echo '</' . $tag . '>'; ?>
 		
 		<?php graphene_entry_meta(); ?>
 		

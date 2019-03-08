@@ -28,6 +28,7 @@ jQuery(document).ready(function ($) {
 	$('#customize-control-graphene_settings-blog_column_mode .customize-control-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
 	$('#customize-control-graphene_settings-pages_column_mode .customize-control-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
 	$('#customize-control-graphene_settings-hide_reading_time label').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
+	$('#customize-control-graphene_settings-adsense_max_count .customize-control-title').append('<span class="new-label">' + grapheneCustomizer.l10n.new + '</span>');
 
 	/* Confirm click */
 	$(document).on( 'click', '.confirm-click', function(e){

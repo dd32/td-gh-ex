@@ -165,14 +165,15 @@
 }
 .graphene-plus-feature span {
 	width: 100%;
+	width: calc(100% + 2px);
 	font-size: 12px;
 	padding: 5px 10px;
-	margin: 0;
+	margin: -1px -1px 0;
 }
 #customize-controls .graphene-plus-feature img {
 	margin: 10px;
 	opacity: 0.6;
-	max-width: 95%;
+	max-width: 96%;
 	height: auto;
 }
 .new-label {

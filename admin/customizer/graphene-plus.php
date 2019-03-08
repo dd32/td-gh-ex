@@ -4,7 +4,6 @@
  */
 function graphene_plus_options_defaults( $defaults ){
 
-	/* Posts layout */
 	$defaults['plus_posts_layout'] = '';
 	$defaults['plus_typography'] = '';
 	$defaults['plus_mce_buttons'] = '';
@@ -14,6 +13,9 @@ function graphene_plus_options_defaults( $defaults ){
 	$defaults['plus_credit'] = '';
 	$defaults['plus_stacks_appearance'] = '';
 	$defaults['plus_stacks_widget_areas'] = '';
+	$defaults['plus_live_search'] = '';
+	$defaults['plus_reading_time'] = '';
+	$defaults['plus_column_layouts'] = '';
 
 	return $defaults;
 }
@@ -51,6 +53,39 @@ function graphene_plus_customizer_options( $wp_customize ){
 		'link'		=> 'https://www.graphene-theme.com/graphene-plus/stand-out-from-the-crowd/',
 		'imgurl'	=> GRAPHENE_ROOTURI . '/admin/images/plus-slider-as-header.png'
 	) ) );
+
+	/* =Live search
+	--------------------------------------------------------------------------------------*/
+	$wp_customize->add_section( 'graphene-general-live-search', array(
+		'title'	=> __( 'Live Search', 'graphene' ),
+		'panel'	=> 'graphene-general',
+	) );
+
+	$wp_customize->add_control( new Graphene_Plus_Feature_Control( $wp_customize, 'graphene_settings[plus_live_search]', array(
+		'section' 	=> 'graphene-general-live-search',
+		'link'		=> 'https://www.graphene-theme.com/graphene-plus/stand-out-from-the-crowd/',
+		'imgurl'	=> GRAPHENE_ROOTURI . '/admin/images/plus-live-search.png'
+	) ) );
+
+
+	/* =Columns Layout
+	--------------------------------------------------------------------------------------*/
+	$wp_customize->add_control( new Graphene_Plus_Feature_Control( $wp_customize, 'graphene_settings[plus_column_layouts]', array(
+		'section' 	=> 'graphene-display-columns-layout',
+		'link'		=> 'https://www.graphene-theme.com/graphene-plus/stand-out-from-the-crowd/',
+		'imgurl'	=> GRAPHENE_ROOTURI . '/admin/images/plus-column-layouts.png'
+	) ) );
+
+
+	/* =Post elements
+	--------------------------------------------------------------------------------------*/
+	$wp_customize->add_control( new Graphene_Plus_Feature_Control( $wp_customize, 'graphene_settings[plus_reading_time]', array(
+		'section' 	=> 'graphene-display-posts',
+		'priority'	=> 6,
+		'link'		=> 'https://www.graphene-theme.com/graphene-plus/stand-out-from-the-crowd/',
+		'imgurl'	=> GRAPHENE_ROOTURI . '/admin/images/plus-reading-time.png'
+	) ) );
+
 
 	/* =Posts layout
 	--------------------------------------------------------------------------------------*/

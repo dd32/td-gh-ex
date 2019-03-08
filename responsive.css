@@ -153,7 +153,8 @@
 		box-shadow: none;
 	}
 	.entry-content .excerpt-thumb {
-		margin: 15px -15px;
+		margin: 0 -15px 1.5em;
+		display: block;
 	}
 	.gallery-columns-2 .gallery-item,
 	.gallery-columns-3 .gallery-item,
