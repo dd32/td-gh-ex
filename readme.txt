@@ -4,8 +4,8 @@ Contributors: specia
 Requires at least: WordPress 4.4
 Tested up to: WordPress 5.0.3
 Requires PHP: 5.6
-Stable tag: 1.0.32
-Version: 1.0.32
+Stable tag: 1.0.33
+Version: 1.0.33
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, editor-style, blog, photography, portfolio, grid-layout
@@ -70,17 +70,21 @@ License - GNU GPL license v3
 Source: https://github.com/matthieua/WOW
 
 x) Screenshot Image
-URL: https://pixabay.com/en/london-cityscape-england-1081820/
-Source: https://pixabay.com/
+URL: https://stocksnap.io/photo/QFFNHZV7SA
+Source: https://stocksnap.io
 License: CC0 License
 
 xi)Feature Section Image
-URL: https://stocksnap.io/photo/BEI6CTBM5S
+URL: https://stocksnap.io/photo/QFFNHZV7SA
 Source: https://stocksnap.io
 License: CC0 Public Domain
 
 
 ##Changelog
+version 1.0.33
+* Screenshot Changed
+* Feature Image Change
+
 version 1.0.32
 * Minimum required php version added
 
