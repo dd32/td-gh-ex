@@ -1,5 +1,14 @@
+/*
+ * Avventura Lite WooCommerce css file
+ * https://www.themeinprogress.com
+ *
+ * Copyright 2019, ThemeinProgress
+ * Licensed under MIT license
+ * https://opensource.org/licenses/mit-license.php
+ */
+
 /* ===============================================
-   Woocommerce style
+   WooCommerce style
    ============================================= */
 
 .shipping-calculator-form,
@@ -8,7 +17,7 @@ form.checkout_coupon {
 }
 
 /* ===============================================
-   Woocommerce Header Cart
+   WooCommerce Header Cart
    ============================================= */
 
 .header-cart { 
@@ -109,7 +118,7 @@ body.woocommerce-checkout .header-cart-widget:after {
 }
 
 /* ===============================================
-   Woocommerce Form
+   WooCommerce Form
    ============================================= */
 
 .woocommerce form.checkout_coupon, 
@@ -288,7 +297,7 @@ a.reset_variations {
 }
 
 /* ===============================================
-   Woocommerce Tabs
+   WooCommerce Tabs
    ============================================= */
 
 .woocommerce div.product form.cart .variations {
@@ -331,7 +340,7 @@ span.sku_wrapper {
 }
 
 /* ===============================================
-   Woocommerce My account page
+   WooCommerce My account page
    ============================================= */
 
 .woocommerce-account .woocommerce-MyAccount-navigation {
@@ -401,7 +410,7 @@ body.woocommerce-order-received .post-container .page-format header.title {
 }
 
 /* ===============================================
-   Woocommerce comments
+   WooCommerce comments
    ============================================= */
 
 .woocommerce .star-rating:before,
@@ -505,7 +514,7 @@ h3.additional_information_title {
 }
 
 /* ===============================================
-   Woocommerce orders
+   WooCommerce orders
    ============================================= */
 
 .woocommerce .order_details {
@@ -544,7 +553,7 @@ h3.additional_information_title {
 }
 
 /* ===============================================
-   Woocommerce various
+   WooCommerce various
    ============================================= */
 
 body.woocommerce-cart .line ,
@@ -685,7 +694,7 @@ body.woocommerce-cart .woocommerce_cart_details .line:before {
 }
 
 /* ===============================================
-   Woocommerce buttons
+   WooCommerce buttons
    ============================================= */
 
 .woocommerce .quantity .qty {
@@ -783,7 +792,7 @@ body.woocommerce-cart .woocommerce_cart_details .line:before {
 
 
 /* ===============================================
-   Woocommerce cart and checkout
+   WooCommerce cart and checkout
    ============================================= */
    
 .cart_totals tr,
@@ -909,7 +918,7 @@ body.woocommerce-cart .woocommerce_cart_details .line:before {
 }
 
 /* ===============================================
-   Woocommerce shop layout
+   WooCommerce shop layout
    ============================================= */
 
 body.archive.woocommerce .products-list .post-article.category h1.title {
@@ -1112,7 +1121,7 @@ body.search .product-content .price,
 }
 
 /* ===============================================
-   Woocommerce pagination
+   WooCommerce pagination
    ============================================= */
 
 .woocommerce nav.woocommerce-pagination {
@@ -1167,7 +1176,7 @@ body.search .product-content .price,
 }
 
 /* ===============================================
-   Woocommerce cart widget 
+   WooCommerce cart widget 
    ============================================= */
 
 .widget_shopping_cart a.remove {
@@ -1252,7 +1261,7 @@ body.search .product-content .price,
 }
 
 /* ===============================================
-   Woocommerce price filter widget
+   WooCommerce price filter widget
    ============================================= */
 
 .woocommerce .widget_price_filter .price_slider_amount .button {
@@ -1276,7 +1285,7 @@ body.search .product-content .price,
 }
 
 /* ===============================================
-   Woocommerce products widget
+   WooCommerce products widget
    ============================================= */
 
 .woocommerce ul.product_list_widget li del {
@@ -1305,7 +1314,7 @@ body.search .product-content .price,
 }
 
 /* ===============================================
-   Woocommerce reviews widget 
+   WooCommerce reviews widget 
    ============================================= */
 
 .widget_recent_reviews,
@@ -1327,7 +1336,7 @@ body.search .product-content .price,
 }
 
 /* ===============================================
-   Woocommerce search widget 
+   WooCommerce search widget 
    ============================================= */
 
 .woocommerce-product-search label {

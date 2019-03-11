@@ -3,7 +3,7 @@ Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, blog, e-commerce, photography
 Requires at least: 4.0
 Tested up to: 5.1
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,12 @@ Avventura Lite WordPress Theme, Copyright 2019 ThemeinProgress.
 Avventura Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.0.4 =
+Release date - March, 11 - 2019
+
+* Updated - Readme.txt file
+* Edit - Code optimized
 
 = 1.0.3 =
 Release date - March, 01 - 2019
@@ -96,6 +102,10 @@ The following scripts and styles are coded by me and they are released under MIT
 * /avventura-lite/assets/css/avventura-lite-woocommerce.css
 * /avventura-lite/assets/css/avventura-lite-template.css
 * /avventura-lite/assets/js/avventura-lite-template.js
+* /avventura-lite/core/admin/assets/css/customize.css
+* /avventura-lite/core/admin/assets/css/notice.css
+* /avventura-lite/core/admin/assets/css/panel.css
+* /avventura-lite/core/admin/assets/js/panel.js
 
 The following images are created by me and they are released under CC0 license
 
