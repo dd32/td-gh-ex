@@ -1,9 +1,9 @@
 === BA Tours light ===
 Contributors: bookingalgorithms
 Requires at least: WordPress 4.6.1
-Tested up to: 5.0.2
-Version: 1.0.3
-Stable tag: 1.0.3
+Tested up to: 5.1.0
+Version: 1.0.4
+Stable tag: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, featured-images, custom-header, custom-menu, custom-logo, footer-widgets, theme-options, translation-ready
@@ -39,6 +39,10 @@ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
 == Changelog ==
+
+= 1.0.4 =
+* Removed Custom CSS option from theme options page
+* Removed shortcodes for widgets filter
 
 = 1.0.3 =
 * Updated style.css

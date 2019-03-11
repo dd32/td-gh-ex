@@ -619,27 +619,6 @@ class BAT_Redux {
 			),
 		);
 		
-		//////////////////////////////////////////////////
-		/**
-		 * Custom CSS.
-		 */
-		
-		$sections[] = array(
-			'title'  => __( 'Custom CSS', 'ba-tours-light' ),
-			'id'     => 'custom-css',
-			'icon'   => 'el el-css',
-			'fields' => array(
-				array(
-					'id'         => 'custom_css_info',
-					'type'        => 'info',
-                    'style' => 'warning',
-                    'icon'  => 'el-icon-info-sign',
-					'title'       => sprintf(__( 'These options are available in %1$sBA Tours theme%2$s only.', 'ba-tours-light' ), '<a href="https://ba-booking.com/ba-tours/">', '</a>'),
-					'description' => '',
-				)
-			)
-		);
-		
 		////////////////////////////
 		//////////////////////////////////////////////////
 		/**

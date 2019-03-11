@@ -14,7 +14,7 @@
  * System defines.
  */
 define( 'BATOURSLIGHT', __FILE__ );
-define( 'BATOURSLIGHT_VERSION', '1.0.3' );
+define( 'BATOURSLIGHT_VERSION', '1.0.4' );
 define( 'BATOURSLIGHT_NAME', 'BA Tours light' );
 define( 'BATOURSLIGHT_URI', get_template_directory_uri() );
 define( 'BATOURSLIGHT_DIR', untrailingslashit( dirname( BATOURSLIGHT ) ) );
@@ -193,10 +193,6 @@ function batourslight_widgets_init(){
         
      return;
 }
-
-// Add shortcodes support for widgets.
-add_filter( 'widget_text', 'shortcode_unautop' );
-add_filter( 'widget_text', 'do_shortcode' );
 
 if ( ! isset( $content_width ) ) $content_width = 900;
 
