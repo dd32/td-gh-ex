@@ -4,7 +4,7 @@ Tags:  blog, one-column, right-sidebar, custom-header, custom-logo, custom-menu,
 Requires at least: 4.5
 Tested up to: 5.0.3
 Requires PHP: 5.2.4
-Stable tag: 1.0.6
+Stable tag: 1.0.4
 License:      GNU General Public License v2 or later
 License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -84,6 +84,8 @@ Source: https://stocksnap.io/photo/SWR31HJ4D8
 * add review issues fix
 
 == Changelog ==
+= Version 1.0.4 2019 March 11 =
+* add review issues fix
 
 = Version 1.0.3 2019 March 8 =
 * add review issues fix

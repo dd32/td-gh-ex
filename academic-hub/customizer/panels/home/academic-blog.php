@@ -28,7 +28,6 @@ function academic_hub_blog_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'academic_hub_blog_header_title',
         array(
-            'default'           => wp_kses_post( 'Latest <span> News</span> And <span>Blogs</span>', 'academic-hub' ),
 			'sanitize_callback' => 'sanitize_text_field',
         )
     );

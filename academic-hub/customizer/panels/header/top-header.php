@@ -97,18 +97,6 @@ function academic_hub_top_header_customizer( $wp_customize ) {
                             'academic_hub_social_icon'       => esc_html__('fa fa-facebook', 'academic-hub'),
                             'academic_hub_social_link'       => esc_url('https://facebook.com/'),
                         ),
-                        array(
-                            'academic_hub_social_icon'       => esc_html__('fa fa-twitter', 'academic-hub'),
-                            'academic_hub_social_link'       => esc_url('https://twitter.com/'),
-                        ),
-                        array(
-                            'academic_hub_social_icon'       => esc_html__('fa fa-instagram', 'academic-hub'),
-                            'academic_hub_social_link'       => esc_url('https://instagram.com/'),
-                        ),
-                        array(
-                            'academic_hub_social_icon'       => esc_html__('fa fa-linkedin', 'academic-hub'),
-                            'academic_hub_social_link'       => esc_url('https://linkedin.com/'),
-                        ),
                     )
                 ,
                 'sanitize_callback' => array( 'Academic_Hub_Repeater_Setting', 'sanitize_repeater_setting' ),

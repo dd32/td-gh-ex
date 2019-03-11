@@ -28,7 +28,6 @@ function academic_hub_about_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'academic_hub_about_header_title',
         array(
-            'default'           => wp_kses_post( 'ABOUT <span> US </span>', 'academic-hub' ),
 			'sanitize_callback' => 'sanitize_text_field',
         )
     );

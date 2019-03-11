@@ -26,7 +26,6 @@ function academic_hub_event_customizer( $wp_customize ) {
     $wp_customize->add_setting(
         'academic_hub_spcecial_our_team_header_title',
         array(
-            'default'           => wp_kses_post( 'Conference And <span>Events</span>', 'academic-hub' ),
 			'sanitize_callback' => 'sanitize_text_field',
         )
     );

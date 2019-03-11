@@ -17,18 +17,6 @@
                                             'academic_hub_social_icon'       => esc_html__('fa fa-facebook', 'academic-hub'),
                                             'academic_hub_social_link'       => esc_url('https://facebook.com/'),
                                         ),
-                                        array(
-                                            'academic_hub_social_icon'       => esc_html__('fa fa-twitter', 'academic-hub'),
-                                            'academic_hub_social_link'       => esc_url('https://twitter.com/'),
-                                        ),
-                                        array(
-                                            'academic_hub_social_icon'       => esc_html__('fa fa-instagram', 'academic-hub'),
-                                            'academic_hub_social_link'       => esc_url('https://instagram.com/'),
-                                        ),
-                                        array(
-                                            'academic_hub_social_icon'       => esc_html__('fa fa-linkedin', 'academic-hub'),
-                                            'academic_hub_social_link'       => esc_url('https://linkedin.com/'),
-                                        ),
                                     );
                         $academic_hub_social_links = get_theme_mod('academic_hub_social_links',$defaults);
 

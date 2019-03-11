@@ -18,7 +18,6 @@ function academic_hub_customize_register_academic_notice( $wp_customize ) {
     $wp_customize->add_setting(
         'academic_hub_notice_title',
         array(
-            'default'           => esc_html__( 'Academic Notice', 'academic-hub' ),
 			'sanitize_callback' => 'sanitize_text_field',
 			'transport'			=>	'postMessage',
         )

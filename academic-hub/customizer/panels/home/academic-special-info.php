@@ -19,7 +19,6 @@ function academic_hub_customize_special_info( $wp_customize ) {
     $wp_customize->add_setting(
         'academic_hub_spcecial_info_header',
         array(
-            'default'           => esc_html__( 'Why We Are Special', 'academic-hub' ),
 			'sanitize_callback' => 'sanitize_text_field',
         )
     );

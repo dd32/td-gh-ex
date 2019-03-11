@@ -79,7 +79,7 @@ if ( ! function_exists( 'academic_hub_notices_section' ) ) {
          * Academic Hub section
          * @since 1.0.0
          */
-        $academic_hub_notice_title = get_theme_mod('academic_hub_notice_title','Academic Notice');
+        $academic_hub_notice_title = get_theme_mod('academic_hub_notice_title');
         $academic_hub_notice_shotdesc = get_theme_mod('academic_hub_notice_shotdesc');
         
         ?>
@@ -129,7 +129,7 @@ if ( ! function_exists( 'academic_hub_special_info_section' ) ) {
          * Academic Hub section
          * @since 1.0.0
          */
-        $academic_hub_spcecial_info_header  = get_theme_mod('academic_hub_spcecial_info_header','Why We Are <span>Special</span>');
+        $academic_hub_spcecial_info_header  = get_theme_mod('academic_hub_spcecial_info_header');
         $academic_hub_special_short_desc    = get_theme_mod('academic_hub_special_short_desc');
         $academic_hub_homepage_special_info = get_theme_mod('academic_hub_homepage_special_info');
         
@@ -206,7 +206,7 @@ if ( ! function_exists( 'academic_hub_our_teams_section' ) ) {
          * Academic Hub section
          * @since 1.0.0
          */
-        $academic_hub_our_team_title    = get_theme_mod('academic_hub_spcecial_our_team_header_title','Meet Our<span> Founders</span>');
+        $academic_hub_our_team_title    = get_theme_mod('academic_hub_spcecial_our_team_header_title');
         $academic_hub_our_team_short    = get_theme_mod('academic_hub_our_team_short_desc');
         $academic_hub_our_team = get_theme_mod('academic_hub_our_team');
         
@@ -286,7 +286,7 @@ if ( ! function_exists( 'academic_hub_event_section' ) ) {
          * Academic Hub section
          * @since 1.0.0
          */
-        $academic_hub_event_title    = get_theme_mod('academic_hub_spcecial_our_team_header_title','Conference And <span>Events</span>');
+        $academic_hub_event_title    = get_theme_mod('academic_hub_spcecial_our_team_header_title');
         $academic_hub_events = get_theme_mod('academic_hub_event_items');
         
         ?>
@@ -476,7 +476,7 @@ if ( ! function_exists( 'academic_hub_about_us_section' ) ) {
          * Academic Hub About Page Section
          * @since 1.0.0
          */
-        $academic_hub_blog_title                = get_theme_mod('academic_hub_blog_header_title','ABOUT <span>US</span>');
+        $academic_hub_blog_title                = get_theme_mod('academic_hub_blog_header_title');
         $page_id_select      = get_theme_mod('academic_hub_about_page_id_select');
     
        /**

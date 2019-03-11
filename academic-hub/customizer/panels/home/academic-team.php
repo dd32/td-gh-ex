@@ -26,7 +26,6 @@ function academic_hub_customize_team( $wp_customize ) {
     $wp_customize->add_setting(
         'academic_hub_spcecial_our_team_header_title',
         array(
-            'default'           => esc_html__( 'Meet Our Founders', 'academic-hub' ),
 			'sanitize_callback' => 'sanitize_text_field',
         )
     );
