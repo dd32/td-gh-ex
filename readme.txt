@@ -42,6 +42,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.1.5 =
+* fix issue with Slider jQuery conflicts
+
 = 1.1.4 =
 * fix issue with image caption alignment
 
