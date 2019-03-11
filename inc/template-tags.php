@@ -58,8 +58,7 @@ if ( ! function_exists( 'ansia_entry_footer' ) ) :
 	function ansia_entry_footer() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'ansia' ) );
+			$tags_list = get_the_tag_list( '', ' ' );
 			if ( $tags_list ) {
 				echo '<span class="tags-links"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>' . $tags_list . '</span>';
 			}
@@ -91,8 +90,7 @@ if ( ! function_exists( 'ansia_entry_category' ) ) :
 	function ansia_entry_category() {
 		// Hide category and tag text for pages.
 		if ( 'post' === get_post_type() ) {
-			/* translators: used between list items, there is a space after the comma */
-			$categories_list = get_the_category_list( esc_html__( ' ', 'ansia' ) );
+			$categories_list = get_the_category_list(' ');
 			if ( $categories_list ) {
 				echo '<span class="cat-links">' . $categories_list . '</span>';
 			}

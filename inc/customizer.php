@@ -137,6 +137,21 @@ function ansia_custom_settings_register( $wp_customize ) {
         'type'       => 'number',
 		'priority' => 5,
     ) );
+	/* Copyright Text */
+	$wp_customize->add_setting('ansia_theme_options[_copyright_text]', array(
+		'sanitize_callback' => 'ansia_sanitize_text',
+		'default'    => '&copy; '.date('Y').' '. get_bloginfo('name'),
+		'type'       => 'option',
+		'capability' => 'edit_theme_options',
+	) );
+	$wp_customize->add_control('ansia_theme_options[_copyright_text]', array(
+		'label'      => __( 'Copyright Text', 'ansia' ),
+		'description' => __( 'Get the PRO version to remove CrestaProject Credits', 'ansia'),
+		'section'    => 'cresta_ansia_theme_options_general',
+		'settings'   => 'ansia_theme_options[_copyright_text]',
+		'type'       => 'text',
+		'priority' => 6,
+	) );
 	/**
 	* ################ POSTS AND PAGES SETTINGS
 	*/
@@ -484,6 +499,10 @@ function ansia_sanitize_checkbox( $input ) {
 	}
 }
 
+function ansia_sanitize_text( $input ) {
+	return wp_kses($input, ansia_allowed_html());
+}
+
 function ansia_sanitize_select( $input, $setting ) {
 	$input = sanitize_key( $input );
 	$choices = $setting->manager->get_control( $setting->id )->choices;
@@ -493,6 +512,85 @@ function ansia_sanitize_select( $input, $setting ) {
 if( ! function_exists('ansia_loadingPage')){
 	function ansia_loadingPage () {
 		echo '<div class="aLoader1"><svg class="circular" viewBox="25 25 50 50"><circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/></svg></div>';
+	}
+}
+
+if( ! function_exists('ansia_allowed_html')){
+	function ansia_allowed_html() {
+		$allowed_tags = array(
+			'a' => array(
+				'class' => array(),
+				'id'    => array(),
+				'href'  => array(),
+				'rel'   => array(),
+				'title' => array(),
+				'target' => array(),
+			),
+			'abbr' => array(
+				'title' => array(),
+			),
+			'b' => array(),
+			'blockquote' => array(
+				'cite'  => array(),
+			),
+			'cite' => array(
+				'title' => array(),
+			),
+			'code' => array(),
+			'del' => array(
+				'datetime' => array(),
+				'title' => array(),
+			),
+			'dd' => array(),
+			'div' => array(
+				'class' => array(),
+				'title' => array(),
+				'style' => array(),
+			),
+			'dl' => array(),
+			'dt' => array(),
+			'em' => array(),
+			'h1' => array(),
+			'h2' => array(),
+			'h3' => array(),
+			'h4' => array(),
+			'h5' => array(),
+			'h6' => array(),
+			'i' => array(),
+			'br' => array(),
+			'img' => array(
+				'alt'    => array(),
+				'class'  => array(),
+				'height' => array(),
+				'src'    => array(),
+				'width'  => array(),
+			),
+			'li' => array(
+				'class' => array(),
+			),
+			'ol' => array(
+				'class' => array(),
+			),
+			'p' => array(
+				'class' => array(),
+			),
+			'q' => array(
+				'cite' => array(),
+				'title' => array(),
+			),
+			'span' => array(
+				'class' => array(),
+				'title' => array(),
+				'style' => array(),
+			),
+			'strike' => array(),
+			'strong' => array(),
+			'iframe' => array(),
+			'ul' => array(
+				'class' => array(),
+			),
+		);
+		return $allowed_tags;
 	}
 }
 
@@ -968,6 +1066,7 @@ function ansia_custom_css_styles() {
 		select,
 		#wp-calendar tbody td,
 		aside ul.menu .indicatorBar,
+		aside ul.product-categories .indicatorBar,
 		.tagcloud a, .tags-links a, .edit-link a,
 		#comments ol .pingback,
 		#comments ol article,
@@ -997,6 +1096,7 @@ function ansia_custom_css_styles() {
 		.site-main .navigation.pagination,
 		aside ul li,
 		aside ul.menu li a,
+		aside ul.product-categories li a,
 		footer.entry-footer {
 			border-bottom-color: <?php echo esc_html($borderColor); ?>;
 		}

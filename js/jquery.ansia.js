@@ -50,13 +50,13 @@
 		/*-----------------------------------------------------------------------------------*/
 		/*  Menu Widget
 		/*-----------------------------------------------------------------------------------*/
-			if ( $( 'aside ul.menu' ).length ) {
-				$('aside ul.menu').find('li').each(function(){
+			if ( $( 'aside ul.menu, aside ul.product-categories' ).length ) {
+				$('aside ul.menu, aside ul.product-categories').find('li').each(function(){
 					if($(this).children('ul').length > 0){
 						$(this).append('<span class="indicatorBar"></span>');
 					}
 				});
-				$('aside ul.menu > li.menu-item-has-children .indicatorBar, .aside ul.menu > li.page_item_has_children .indicatorBar').click(function() {
+				$('aside ul.menu > li.menu-item-has-children .indicatorBar, .aside ul.menu > li.page_item_has_children .indicatorBar, aside ul.product-categories > li.cat-parent .indicatorBar').click(function() {
 					$(this).parent().find('> ul.sub-menu, > ul.children').toggleClass('yesOpenBar');
 					$(this).toggleClass('yesOpenBar');
 					var $self = $(this).parent();

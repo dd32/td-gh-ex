@@ -4,7 +4,7 @@ Theme URI: https://crestaproject.com/downloads/ansia/
 Author: Rizzo Andrea - CrestaProject
 Author URI: https://crestaproject.com
 Description: Ansia is a simple and minimal WordPress theme especially suited to blogging. Its structure allows you to have a classic sidebar and a push sidebar that can be activated through a special button. The full width header allows you to insert your own image and the site structure can be boxed or full width. Ansia theme is also compatible with WooCommerce to create your online store. Unlimited colors, 2 sidebars, footer widget, custom logo and many other options. Compatible with Gutenberg. Demo here https://crestaproject.com/demo/ansia/
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: ansia
@@ -1186,27 +1186,40 @@ aside ul li:first-child {
 	padding-right: 0.5em;
 	float: left;
 }
+.widget.widget_categories ul.children {
+	padding: 1em 0 0 1em;
+}
 
 /* Menu Widget */
-aside ul.menu ul.sub-menu {
+aside ul.menu ul.sub-menu,
+aside ul.product-categories ul.children {
 	display: none;
 	padding-left: 2em;
 }
-aside ul.menu li {
+aside ul.menu li,
+aside ul.product-categories li {
 	position: relative;
 	border-bottom-width: 0;
     border-bottom-style: none;
     border-bottom-color: transparent;
     padding: 0;
 }
-aside ul.menu li a {
+aside ul.product-categories li .count {
+	position: absolute;
+    line-height: 57px;
+    top: 0;
+    right: 0;
+}
+aside ul.menu li a,
+aside ul.product-categories li a {
 	border-bottom-width: 1px;
     border-bottom-style: dashed;
     border-bottom-color: #e0e0e0;
     padding: 1em 0;
 	display: block;
 }
-aside ul.menu .indicatorBar {
+aside ul.menu .indicatorBar,
+aside ul.product-categories .indicatorBar {
 	position: absolute;
     right: 0;
     top: 0;
@@ -1220,11 +1233,13 @@ aside ul.menu .indicatorBar {
     border-left-style: dashed;
     border-color: #e0e0e0;
 }
-aside ul.menu .indicatorBar:before {
+aside ul.menu .indicatorBar:before,
+aside ul.product-categories .indicatorBar:before {
 	content: "\f107";
 }
 
-aside ul.menu .indicatorBar.yesOpenBar:before {
+aside ul.menu .indicatorBar.yesOpenBar:before,
+aside ul.product-categories .indicatorBar.yesOpenBar:before {
 	content: "\f106";
 }
 /* Search widget */

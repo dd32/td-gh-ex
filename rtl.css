@@ -88,7 +88,8 @@ footer.entry-footer .read-more {
 	padding-left: 0.5em;
 	float: right;
 }
-aside ul.menu .indicatorBar {
+aside ul.menu .indicatorBar,
+aside ul.product-categories .indicatorBar {
 	right: inherit;
 	left: 0;
 	border-left-width: 0px;
@@ -96,7 +97,8 @@ aside ul.menu .indicatorBar {
 	border-right-width: 1px;
     border-right-style: dashed;
 }
-aside ul.menu ul.sub-menu {
+aside ul.menu ul.sub-menu,
+aside ul.product-categories ul.children {
     padding-left: inherit;
 	padding-right: 2em;
 }

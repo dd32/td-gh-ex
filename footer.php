@@ -36,14 +36,15 @@
 			</div>
 			<div class="ansia-copyright">
 				<div class="site-info">
-					<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'ansia' ) ); ?>"><?php
-						/* translators: %s: CMS name, i.e. WordPress. */
-						printf( esc_html__( 'Proudly powered by %s', 'ansia' ), 'WordPress' );
-					?></a>
+					<?php
+					$copyrightText = ansia_options('_copyright_text', '&copy; '.date('Y').' '. get_bloginfo('name'));
+					if ($copyrightText || is_customize_preview()): ?>
+						<span class="custom"><?php echo wp_kses($copyrightText, ansia_allowed_html()); ?></span>
+					<?php endif; ?>
 					<span class="sep"> | </span>
 					<?php
 						/* translators: 1: Theme name, 2: Theme author. */
-						printf( esc_html__( 'Theme: %1$s by %2$s.', 'ansia' ), '<a target="_blank" href="https://crestaproject.com/downloads/ansia/" rel="nofollow" title="Ansia Theme">Ansia</a>', 'CrestaProject WordPress Themes' );
+						printf( esc_html__( 'WordPress Theme: %1$s by %2$s.', 'ansia' ), '<a target="_blank" href="https://crestaproject.com/downloads/ansia/" rel="nofollow" title="Ansia Theme">Ansia</a>', 'CrestaProject' );
 					?>
 				</div><!-- .site-info -->
 				<?php 
