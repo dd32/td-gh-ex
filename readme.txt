@@ -49,6 +49,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.9.8 =
+* fix issue with Slider jQuery conflicts
+
 = 1.9.7 =
 * fix issue with image caption alignment
 * remove Google+ social icon
