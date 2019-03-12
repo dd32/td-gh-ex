@@ -22,7 +22,7 @@ if ( ! class_exists( 'Redux' ) ) {
  * Theme administration.
  *
  */
-class BAT_Redux {
+class batourslight_Redux {
 
 	//////////////////////////////////////////////////
 	/**
@@ -37,18 +37,33 @@ class BAT_Redux {
 		add_action( 'after_setup_theme', array( __CLASS__, 'set_help' ), 33, 1 );
 		add_action( 'after_setup_theme', array( __CLASS__, 'set_settings' ), 36, 1 );
         
-        //add_action( 'admin_menu', array( __CLASS__, 'remove_redux_page'), 99 );
+        add_action( 'admin_enqueue_scripts', array( __CLASS__, 'load_assets' ), 10, 1 );
         
-        add_filter( 'redux/options/' . BAT_Settings::$option_name . '/sections', array( __CLASS__, 'sections_altering' ) );
+        add_filter( 'redux/options/' . batourslight_Settings::$option_name . '/sections', array( __CLASS__, 'sections_altering' ) );
         
 		// Save WP site options.
-		add_filter( 'redux/options/' . BAT_Settings::$option_name . '/ajax_save/response', array( __CLASS__, 'after_ajax_save_redux' ), 10, 1 );
+		add_filter( 'redux/options/' . batourslight_Settings::$option_name . '/ajax_save/response', array( __CLASS__, 'after_ajax_save_redux' ), 10, 1 );
         
 		// Look through Redux data.
-		// add_action( 'redux/options/' . BAT_Settings::$option_name . '/validate', array( __CLASS__, 'validate_redux' ), 10, 1 );
+		// add_action( 'redux/options/' . batourslight_Settings::$option_name . '/validate', array( __CLASS__, 'validate_redux' ), 10, 1 );
 		
 		// Cleaning.
 		add_action( 'redux/extensions/before', array( __CLASS__, 'remove_dev_mode' ), 100, 1 );
+	}
+    
+    //////////////////////////////////////////////////
+	/**
+	 * Loads required styles and scripts.
+	 */
+    public static function load_assets() {
+        
+        global $pagenow;
+        
+        if ( 'admin.php' == $pagenow && isset( $_GET['page'] ) && $_GET['page'] == 'bat_options' ) {
+			
+			wp_enqueue_style( 'batourslight-redux', BATOURSLIGHT_URI . '/admin/css/admin.css' , false, BATOURSLIGHT_VERSION );
+            
+		}
 	}
 	
 	//////////////////////////////////////////////////
@@ -124,7 +139,7 @@ class BAT_Redux {
 
 		$args = array(
 			// TYPICAL -> Change these values as you need/desire
-			'opt_name'             => BAT_Settings::$option_name,
+			'opt_name'             => batourslight_Settings::$option_name,
 			// This is where your data is stored in the database and also becomes your global variable name.
 			'display_name'         => sprintf( __( 'BA Tours Light options %1$sTheme Documentation%2$s', 'ba-tours-light' ),'<a href="https://ba-booking.com/ba-tours/documentation/introduction/" target="_blank">','</a>'),
 			// Name that appears at the top of your panel
@@ -175,7 +190,7 @@ class BAT_Redux {
 			// Force your panel to always open to a specific tab (by id)
 			'page_icon'            => 'icon-themes',
 			// Icon displayed in the admin panel next to your menu_title
-			'page_slug'            => '_options',
+			'page_slug'            => 'bat_options',
 			// Page slug used to denote the panel
 			'save_defaults'        => true,
 			// On load save the defaults to DB before user clicks save or not
@@ -247,7 +262,7 @@ class BAT_Redux {
 		// Add content after the form.
 		//$args['footer_text'] = __( '<p>This text is displayed below the options panel. It isn\'t required, but more info is always better! The footer_text field accepts all HTML.</p>', 'ba-tours-light' );
 		
-		Redux::setArgs( BAT_Settings::$option_name, $args );
+		Redux::setArgs( batourslight_Settings::$option_name, $args );
 	}
 	
 	//////////////////////////////////////////////////
@@ -268,13 +283,13 @@ class BAT_Redux {
 		);*/
 		$tabs = array();
 		
-		Redux::setHelpTab( BAT_Settings::$option_name, $tabs );
+		Redux::setHelpTab( batourslight_Settings::$option_name, $tabs );
 		
 		// Help sidebar.
 		//$content = __( '<p>This is the sidebar content, HTML is allowed.</p>', 'ba-tours-light' );
 		$content = '';
 		
-		Redux::setHelpSidebar( BAT_Settings::$option_name, $content );
+		Redux::setHelpSidebar( batourslight_Settings::$option_name, $content );
 	}
 	
 	//////////////////////////////////////////////////
@@ -293,7 +308,7 @@ class BAT_Redux {
 		 */
 		$flag_update_options = false;
 		
-		$options = BAT_Settings::$settings; 
+		$options = batourslight_Settings::$settings; 
 		$custom_logo_id = get_theme_mod( 'custom_logo' );
 		$logo_wp = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 		$logo_wp_thumbnail = wp_get_attachment_image_src( $custom_logo_id , 'thumbnail' );   
@@ -361,7 +376,7 @@ class BAT_Redux {
 		// Update option from WP data.
 		if ( $flag_update_options ) {
 			
-			$result = update_option( BAT_Settings::$option_name, $options );
+			$result = update_option( batourslight_Settings::$option_name, $options );
 		}
 		
 		$sections[] = array(
@@ -388,36 +403,24 @@ class BAT_Redux {
 			'fields' => array(
 				array(
 					'id'         => 'header-phone',
-					'type'       => 'editor',
-					'full_width' => true,
+					'type'       => 'textarea',
+					'full_width' => false,
 					'title'      => __( 'Contact phone', 'ba-tours-light' ),
-					'args'       => array(
-						'wpautop'       => false,
-						'media_buttons' => false,
-						'textarea_rows' => 2,
-					),
+                    'rows' => 3,
 				),
 				array(
 					'id'         => 'header-address',
-					'type'       => 'editor',
-					'full_width' => true,
+					'type'       => 'textarea',
+					'full_width' => false,
 					'title'      => __( 'Address line', 'ba-tours-light' ),
-					'args'       => array(
-						'wpautop'       => false,
-						'media_buttons' => false,
-						'textarea_rows' => 2,
-					),
+					'rows' => 3,
 				),
                 array(
 					'id'         => 'header-times',
-					'type'       => 'editor',
-					'full_width' => true,
+					'type'       => 'textarea',
+					'full_width' => false,
 					'title'      => __( 'Working hours', 'ba-tours-light' ),
-					'args'       => array(
-						'wpautop'       => false,
-						'media_buttons' => false,
-						'textarea_rows' => 2,
-					),
+					'rows' => 3,
 				),
 			),
 		);
@@ -445,7 +448,7 @@ class BAT_Redux {
 				array(
 					'id'         => 'front-header-slideshow',
 					'type'       => 'switch',
-					'full_width' => true,
+					'full_width' => false,
 					'title'      => __( 'Use slideshow', 'ba-tours-light' ),
                     'description' => __( 'If it\'s enabled, Slides posts will be used to get images and titles for slideshow. Otherwise, the page featured image will be displayed.', 'ba-tours-light' ),
 					'default'    => true,
@@ -501,7 +504,7 @@ class BAT_Redux {
 				array(
 					'id'         => 'copyrights',
 					'type'       => 'editor',
-					'full_width' => true,
+					'full_width' => false,
 					'title'      => __( 'Copyrights text', 'ba-tours-light' ),
 					'default'    => __( 'Copyright &copy; {year}, {sitename}', 'ba-tours-light' ),
 					'args'       => array(
@@ -567,20 +570,20 @@ class BAT_Redux {
 		);
 		
 		// Fonts data.
-		foreach ( BAT_Settings::$custom_fonts as $item_id => $item_data ) {
+		foreach ( batourslight_Settings::$custom_fonts as $item_id => $item_data ) {
 		  
             $args = array();
 				
 				$args = array(
 					'id'         => $item_id,
 					'type'       => 'typography',
-					'full_width' => true,
+					'full_width' => false,
 					'title'      => $item_data['name'],
 					'subtitle'   => (isset($item_data['desc']) ? $item_data['desc'] : ''),
-					'default'    => BAT_Settings::$settings[$item_id],
+					'default'    => batourslight_Settings::$settings[$item_id],
 				);
 				
-				foreach ( BAT_Settings::$settings[$item_id] as $id => $value ) {	
+				foreach ( batourslight_Settings::$settings[$item_id] as $id => $value ) {	
 					$args[ $id ] = true;
 				}
 				
@@ -628,7 +631,7 @@ class BAT_Redux {
         
 		foreach ( $sections as $section ) {
 			
-			Redux::setSection( BAT_Settings::$option_name, $section );
+			Redux::setSection( batourslight_Settings::$option_name, $section );
 		}
 	}
 	
@@ -838,5 +841,5 @@ class BAT_Redux {
 /**
  * Calling to setup class.
  */
-BAT_Redux::init();
+batourslight_Redux::init();
 

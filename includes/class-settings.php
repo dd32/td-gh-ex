@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Theme settings
  */
-class BAT_Settings {
+class batourslight_Settings {
     
 	static $settings = array();
     
@@ -968,4 +968,4 @@ class BAT_Settings {
 /**
  * Calling to setup class.
  */
-BAT_Settings::init();
+batourslight_Settings::init();

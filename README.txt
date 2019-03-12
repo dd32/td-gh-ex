@@ -1,9 +1,10 @@
 === BA Tours light ===
 Contributors: bookingalgorithms
-Requires at least: WordPress 4.6.1
+Requires at least: 4.6.1
 Tested up to: 5.1.0
-Version: 1.0.4
-Stable tag: 1.0.4
+Requires PHP: 5.4
+Version: 1.0.5
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, featured-images, custom-header, custom-menu, custom-logo, footer-widgets, theme-options, translation-ready
@@ -38,7 +39,36 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
+BA Tours light theme screenshot uses next free images:
+
+main screenshot image - Santorini, Copyright Michelle Maria
+License: Pixabay License (https://pixabay.com/service/terms/#license)
+Source: https://pixabay.com/photos/oia-santorini-village-greece-416135/
+
+Venice, Copyright David Mark
+License: Pixabay License (https://pixabay.com/service/terms/#license)
+Source: https://pixabay.com/photos/venice-italy-boats-city-urban-2451047/
+
+Rome, Copyright Walkerssk
+License: Pixabay License (https://pixabay.com/service/terms/#license)
+Source: https://pixabay.com/photos/rome-the-vatican-italy-1945033/
+
+Florence, Copyright MustangJoe
+License: Pixabay License (https://pixabay.com/service/terms/#license)
+Source: https://pixabay.com/photos/florence-skyline-sunset-cityscape-1289364/
+
+
 == Changelog ==
+
+= 1.0.5 =
+* Updated readme.txt, fixed PHP Warning in readme validator, added URL and license of all images
+* All prefixes changed to batourslight_
+* home_url() escaped with esc_url()
+* Added full versions of scripts and styles
+* Admin scripts and styles are loaded only in required admin pages
+* Removed unused page template
+* Contact phone, Address line, Working hours fields on theme options page are changed to a textarea
+* Updated theme options redux page slug
 
 = 1.0.4 =
 * Removed Custom CSS option from theme options page
@@ -49,7 +79,7 @@ GNU General Public License for more details.
 * Fixed bug with empty image sizes and empty widgets settings
 
 = 1.0.2 =
-* Updated to Wordpress standards
+* Updated to WordPress standards
 
 = 1.0.1 =
 * Fixed bug with PHP 7 compatibility

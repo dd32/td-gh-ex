@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Individual page template options handeling.
  *
  */
-class BAT_Page_Options {
+class batourslight_Page_Options {
 
 	//////////////////////////////////////////////////
 	/**
@@ -59,7 +59,7 @@ class BAT_Page_Options {
 	 */
 	static function init_options() {
 	   
-       $options = BAT_Settings::$layouts;
+       $options = batourslight_Settings::$layouts;
        $options[0] = __( 'Theme default', 'ba-tours-light' );
 		
 		// Options set.
@@ -331,5 +331,5 @@ class BAT_Page_Options {
 /**
  * Calling to setup class.
  */
-BAT_Page_Options::init();
+batourslight_Page_Options::init();
 

@@ -14,7 +14,7 @@
  * System defines.
  */
 define( 'BATOURSLIGHT', __FILE__ );
-define( 'BATOURSLIGHT_VERSION', '1.0.4' );
+define( 'BATOURSLIGHT_VERSION', '1.0.5' );
 define( 'BATOURSLIGHT_NAME', 'BA Tours light' );
 define( 'BATOURSLIGHT_URI', get_template_directory_uri() );
 define( 'BATOURSLIGHT_DIR', untrailingslashit( dirname( BATOURSLIGHT ) ) );
@@ -59,7 +59,7 @@ function batourslight_setup(){
 	);
     
     /* Add image sizes */
-	$image_sizes = BAT_Settings::$image_sizes;
+	$image_sizes = batourslight_Settings::$image_sizes;
 	if ( !empty( $image_sizes ) ) {
 		foreach ( $image_sizes as $id => $size ) {
 			add_image_size( $id, $size['width'], $size['height'], $size['crop'] );
@@ -90,14 +90,13 @@ function batourslight_enqueue_scripts(){
         wp_enqueue_style('dashicons');
         
         // Output Google fonts if set.
-        $google_fonts = BAT_Settings::google_font_styles();
+        $google_fonts = batourslight_Settings::google_font_styles();
         if ( $google_fonts ) {
             wp_enqueue_style( 'batourslight-gfonts', esc_url( $google_fonts ), false );
         }
     
         $styles = array(
 			'normalize' => 'normalize.css',
-			'bootstrap-reboot' => 'bootstrap-reboot.min.css',
 			'bootstrap-popovers' => 'bootstrap-popovers.css',
             'bootstrap' => 'bootstrap.min.css',
 		);
@@ -114,7 +113,7 @@ function batourslight_enqueue_scripts(){
         wp_enqueue_style( 'batourslight-main' , BATOURSLIGHT_URI . '/style.css', false, BATOURSLIGHT_VERSION );
         
         //// custom styles
-        wp_add_inline_style( 'batourslight-main', BAT_Settings::inline_styles() );
+        wp_add_inline_style( 'batourslight-main', batourslight_Settings::inline_styles() );
         
         //Load comment reply js
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -123,7 +122,6 @@ function batourslight_enqueue_scripts(){
     
         $scripts = array(
 			'html5' => 'html5.js',
-			'navigation' => 'navigation.js',
 			'skip-link-focus-fix' => 'skip-link-focus-fix.js',
             'popper' => 'popper.min.js',
 			'bootstrap' => 'bootstrap.min.js',
@@ -139,36 +137,27 @@ function batourslight_enqueue_scripts(){
     
 }
 
-///////////admin_enqueue_scripts
+///////////////////////////////
 
-add_action( 'admin_enqueue_scripts', 'batourslight_admin_enqueue_scripts', 10, 1 );
+add_filter('script_loader_tag', 'batourslight_async_defer_scripts', 10, 3);
 /**
- * Loads admin styles and scripts.
+ * Loads scripts as async or defer to improve site perfomance.
  *
  */
-function batourslight_admin_enqueue_scripts(){
-    
-    global $pagenow, $typenow;
-    
-        wp_enqueue_style( 'batourslight-fontawesome' , BATOURSLIGHT_URI . '/fonts/fontawesome-free/css/all.min.css', false, '5.5.0' );
-    
-        //Load color picker for categories
-        if ( in_array( $pagenow, array('edit-tags.php', 'term.php') ) && isset( $_GET['taxonomy'] ) && $_GET['taxonomy'] == 'category' ) {
-            wp_enqueue_style( 'wp-color-picker' );
-        }
-        
-        if ( $typenow == 'page' && ($pagenow == 'post.php' || $pagenow == 'post-new.php') ) {
-            wp_enqueue_style ( 'wp-jquery-ui-dialog' );
-        }
-    
-        $styles = array(
-			'admin' => 'admin.css',
-		);
-
-		foreach ( $styles as $id => $style ) {
-			wp_enqueue_style( 'batourslight-' . $id, BATOURSLIGHT_URI . '/admin/css/' . $style, false, BATOURSLIGHT_VERSION );
-		}      
-    
+function batourslight_async_defer_scripts($tag, $handle, $src) {
+   
+   $scripts = array(
+			'html5' => 1,
+			'skip-link-focus-fix' => 1,
+            'popper' => 1,
+			'bootstrap' => 1,
+   );
+   
+   if (isset($scripts[$handle])) {
+       return str_replace(' src', ' async="async" src', $tag);
+   }
+     
+   return $tag;
 }
 
 //////////////////////////////////
@@ -177,7 +166,7 @@ add_action( 'widgets_init', 'batourslight_widgets_init', 10 );
 
 function batourslight_widgets_init(){
       
-     foreach (BAT_Settings::$sidebars as $id => $sidebar){   
+     foreach (batourslight_Settings::$sidebars as $id => $sidebar){   
         register_sidebar(
 			array(
 				'id' => $id,

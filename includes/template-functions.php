@@ -23,7 +23,7 @@ if ( ! function_exists( 'batourslight_update_layout' ) ) {
             $custom_layout = apply_filters( 'batourslight_page_option', '', 'layout' );
             
             if (!$custom_layout){
-                BAT_Settings::$layout_current = 'no-sidebars-wide';
+                batourslight_Settings::$layout_current = 'no-sidebars-wide';
             }
             
         }
@@ -47,9 +47,9 @@ if ( ! function_exists( 'batourslight_get_panel' ) ) {
      */
     function batourslight_get_panel( $sidebar_name ) {
         
-        if (isset(BAT_Settings::$sidebars[$sidebar_name]) && is_active_sidebar($sidebar_name)){
+        if (isset(batourslight_Settings::$sidebars[$sidebar_name]) && is_active_sidebar($sidebar_name)){
             
-            $sidebar_width = isset(BAT_Settings::$layout_vars['width'][$sidebar_name]) ? BAT_Settings::$layout_vars['width'][$sidebar_name] : 12;
+            $sidebar_width = isset(batourslight_Settings::$layout_vars['width'][$sidebar_name]) ? batourslight_Settings::$layout_vars['width'][$sidebar_name] : 12;
             
             if ($sidebar_width){
                 
@@ -112,11 +112,11 @@ if ( ! function_exists( 'batourslight_style_content' ) ) {
         
         if ($region == 'content'){
             
-           if (BAT_Settings::$layout_current == 'frontpage' || BAT_Settings::$layout_current == 'no-sidebars-wide') {
+           if (batourslight_Settings::$layout_current == 'frontpage' || batourslight_Settings::$layout_current == 'no-sidebars-wide') {
             $class = 'container-fluid';
             }
             
-            $class .= ' '.BAT_Settings::$layout_current;
+            $class .= ' '.batourslight_Settings::$layout_current;
             
         }
         
@@ -140,7 +140,7 @@ if ( ! function_exists( 'batourslight_column_width_content' ) ) {
      */
     function batourslight_column_width_content( $class, $region ) {
         
-        if ($region == 'content' && (BAT_Settings::$layout_current == 'frontpage' || BAT_Settings::$layout_current == 'no-sidebars-wide')){
+        if ($region == 'content' && (batourslight_Settings::$layout_current == 'frontpage' || batourslight_Settings::$layout_current == 'no-sidebars-wide')){
             
             $class = '';
             
@@ -1651,7 +1651,7 @@ if ( ! function_exists( 'batourslight_booking_form' ) ) {
 		 */
 		function batourslight_body_custom_class( $classes ) {
 		  
-            if (BAT_Settings::$layout_has_sidebars){
+            if (batourslight_Settings::$layout_has_sidebars){
                 $classes[] = 'sidebars-content'; 
             } else {
                 $classes[] = 'no-sidebar-left';
