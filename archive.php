@@ -18,14 +18,10 @@ get_header(); ?>
       <?php if ( have_posts() ) : ?>
       <?php
 				while ( have_posts() ) : the_post();
-						if ( is_post_type_archive( 'jetpack-portfolio' ) || is_tax( 'jetpack-portfolio-type' ) || is_tax( 'jetpack-portfolio-tag' ) ) :
-							get_template_part( 'content', 'portfolio' );
-						else :
 							get_template_part( 'content', get_post_format() );
-						endif;
 					endwhile;
 				?>
-      <?php adagio_paging_nav(); ?>
+      <?php the_posts_pagination(); ?>
       <?php else : ?>
       <h2 class="center">
         <?php esc_html_e( 'Not Found', 'adagio-lite' ); ?>

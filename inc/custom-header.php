@@ -1,7 +1,7 @@
 <?php
 /**
  *
- * @package Adagio Lite
+ * @package adagio Lite
  */
 
 /**
@@ -19,42 +19,24 @@ function adagio_custom_header_setup() {
 add_action( 'after_setup_theme', 'adagio_custom_header_setup' );
 
 if ( ! function_exists( 'adagio_header_style' ) ) :
-/**
- * Styles the header image and text displayed on the blog
- *
- * @see adagio_custom_header_setup().
- */
-function adagio_header_style() {
-	$header_text_color = get_header_textcolor();
+        function adagio_header_style() {
+                wp_enqueue_style( 'adagio-style', get_stylesheet_uri() );
+                $header_text_color = get_header_textcolor();
+                $position = "absolute";
+                $clip ="rect(1px, 1px, 1px, 1px)";
+                if ( ! display_header_text() ) {
+                        $custom_css = '.site-title, .site-description {
+                                position: '.$position.';
+                                clip: '.$clip.'; 
+                        }';
+                } else{
 
-	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( HEADER_TEXTCOLOR == $header_text_color ) {
-		return;
-	}
+                        $custom_css = 'h1.site-title, h2.site-description  {
+                                color: #' . $header_text_color . ';                     
+                        }';
+                }
+                wp_add_inline_style( 'adagio-style', $custom_css );
+        }
+        add_action( 'wp_enqueue_scripts', 'adagio_header_style' );
 
-	// If we get this far, we have custom styles. Let's do this.
-	?>
-	<style type="text/css">
-	<?php
-		// Has the text been hidden?
-		if ( 'blank' == $header_text_color ) :
-	?>
-		.site-title,
-		.site-description {
-			position: absolute;
-			clip: rect(1px, 1px, 1px, 1px);
-		}
-	<?php
-		// If the user has set a custom color for the text use that
-		else :
-	?>
-		h1.site-title,
-		h2.site-description {
-			color: #<?php echo $header_text_color; ?>;
-		}
-	<?php endif; ?>
-	</style>
-	<?php
-}
 endif;

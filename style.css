@@ -1,17 +1,17 @@
 /*
 Theme Name: Adagio Lite
 Theme URI: http://www.vivathemes.com/wordpress-theme/adagio/
-Description:  Adagio Lite is a clean and professional WordPress theme that will make your website stand out from the crowd. It has a minimal design and a balanced layout that can be used for your personal or business website. Includes custom header, social media menu, three widget location, custom logo image, favicon and much more.
+Description:  Adagio Lite is a clean and professional WordPress theme that will make your website stand out from the crowd. It has a minimal design and a balanced layout that can be used for your personal or business website. Includes custom header, social media menu, three widget location, custom logo image, favicon and much more. Add links to your Social media accounts easily with the integrated Social Media menu. Adagio Lite comes loaded with 28 social media icons to have your visitors connect to you. Easily upload your logo image and favicon, styling for Contact Form 7 plugin are among the features. For even more features check the Pro Version of this theme https://www.vivathemes.com/wordpress-theme/adagio/
 Author: Viva Themes
 Author URI: http://www.vivathemes.com
-License: GNU GPL
-License URI: http://www.gnu.org/licenses/gpl.html
-Version: 1.1
+License: GNU GPLv3
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
+Version: 1.2
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-colors, custom-logo, custom-menu, translation-ready, featured-images, threaded-comments, footer-widgets, blog, entertainment, photography
 Text Domain: adagio-lite
 Domain Path: /languages/
 
-Adagio Lite Theme, (C) 2017 Viva Themes
+Adagio Lite Theme, (C) 2019 Viva Themes
 
 */
 
@@ -793,22 +793,32 @@ a.more-link:focus span {
 
 /* Blog Page Navigation */
 
-.paging-navigation {
+.pagination {
 	clear: left;
 	float: left;
 	width: 100%;
 }
 
-.nav-previous {
+.pagination span,
+.pagination h2,
+.pagination a.page-numbers {
+	display: none;
+}
+
+.pagination a.prev {
 	width: 45%;
 	float: left;
 	text-align: right;
+	font-size: 0;
+	display: block;
 }
 
-.nav-next {
+.pagination a.next {
 	width: 45%;
 	float: right;
 	text-align: left;
+	font-size: 0;
+	display: block;
 }
 
 
@@ -865,7 +875,7 @@ a.more-link:focus span {
 	line-height: 32px;
 }
 
-.paging-navigation .nav-previous a:before,
+.pagination a.prev:before,
 .post-navigation .nav-previous a:before {
 	content: '\f431';
 	display: inline-block;
@@ -883,7 +893,7 @@ a.more-link:focus span {
   	-o-transition:      all 0.5s ease;
 }
 
-.paging-navigation .nav-next a:after,
+.pagination a.next:after,
 .post-navigation .nav-next a:after {
 	content: '\f432';
 	display: inline-block;
@@ -897,8 +907,8 @@ a.more-link:focus span {
     transform: rotate(90deg);
 }
 
-.paging-navigation .nav-next a:hover:after,
-.paging-navigation .nav-previous a:hover:before {
+.pagination a.next:hover:after,
+.pagination a.prev:hover:before {
 	color: #ccc;
 }
 

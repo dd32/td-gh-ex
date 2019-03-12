@@ -30,7 +30,7 @@ get_header(); ?>
     		</div>
 
 			<?php endwhile; ?>
-    		<?php adagio_paging_nav(); ?>
+    		<?php the_posts_pagination(); ?>
     	<?php else : ?>
     		<p class="center">
       			<?php esc_html_e( 'No results.', 'adagio-lite' ); ?>
