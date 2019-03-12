@@ -2,7 +2,7 @@
 Contributors: benlumia007
 Requires at least: 4.9.6
 Tested up to WordPress.5.0.1
-Version: 1.0.0
+Version: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: grid-layout, left-sidebar, one-column, right-sidebar, two-columns, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
@@ -39,6 +39,9 @@ Not Available at this time
 == Upgrade Notice ==
 
 == Changelog ==
+Version: 1.0.5
+- Minor Change to CSS
+
 Version: 1.0.4
 Fixed Secondary and Social navigation
 
