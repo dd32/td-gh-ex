@@ -5,6 +5,7 @@
  */
  
 get_header(); 
+$current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), theme_setup_data() );
 ?>
 <!-- Page Title -->
 <section class="page-header">
@@ -12,7 +13,9 @@ get_header();
 		<div class="row">
 			<div class="col-md-6">
 				<div class="page-title">
-					<h2><?php the_title(); ?></h2>
+					<h2><?php 
+						printf( __( '%1$s %2$s', 'busiprof' ), $current_options['author_prefix'], get_the_author() ); ?>
+					</h2>
 					<p><?php bloginfo('description');?></p>
 				</div>
 			</div>

@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Busiprof\n"
-"POT-Creation-Date: 2019-01-16 17:12+0530\n"
-"PO-Revision-Date: 2019-01-16 17:11+0530\n"
+"POT-Creation-Date: 2019-03-12 18:12+0530\n"
+"PO-Revision-Date: 2019-03-12 18:11+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -37,34 +37,20 @@ msgstr ""
 msgid "Go Back"
 msgstr ""
 
-#: archive.php:17
-msgid "Daily Archive "
+#: archive.php:19 archive.php:23 archive.php:27 author.php:17 category.php:17
+#: index-bannerstrip.php:15 index-bannerstrip.php:28 tag.php:16
+#, php-format
+msgid "%1$s %2$s"
 msgstr ""
 
-#: archive.php:21
-msgid "Monthly Archive "
-msgstr ""
-
-#: archive.php:25
-msgid "Yearly Archive "
-msgstr ""
-
-#: archive.php:29
-msgid "Blog Archive "
-msgstr ""
-
-#: archive.php:69 author.php:51 category.php:50 index.php:26 search.php:35
-#: tag.php:50
+#: archive.php:72 author.php:54 category.php:53 index.php:26 search.php:35
+#: tag.php:52
 msgid "Previous"
 msgstr ""
 
-#: archive.php:70 author.php:52 category.php:51 index.php:27 search.php:36
-#: tag.php:51
+#: archive.php:73 author.php:55 category.php:54 index.php:27 search.php:36
+#: tag.php:53
 msgid "Next"
-msgstr ""
-
-#: category.php:14
-msgid "Category Archive "
 msgstr ""
 
 #: comments.php:11
@@ -126,7 +112,7 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: functions.php:75
+#: functions.php:76
 msgid "Primary Menu"
 msgstr ""
 
@@ -141,6 +127,7 @@ msgid "Archive by category"
 msgstr ""
 
 #: functions/breadcrumbs/breadcrumbs.php:28
+#: functions/customizer/customizer-archive.php:80
 msgid "Search results for"
 msgstr ""
 
@@ -817,36 +804,78 @@ msgstr ""
 msgid "Select column layout"
 msgstr ""
 
-#: functions/customizer/customizer.php:85
-#: functions/customizer/customizer.php:130 index-services.php:172
-msgid "Web Design"
+#: functions/customizer/customizer-archive.php:6
+msgid "Archive page title"
+msgstr ""
+
+#: functions/customizer/customizer-archive.php:15
+#: functions/customizer/customizer-archive.php:24
+msgid "Archive"
+msgstr ""
+
+#: functions/customizer/customizer-archive.php:34
+#: functions/customizer/customizer-archive.php:41
+msgid "Category"
+msgstr ""
+
+#: functions/customizer/customizer-archive.php:49
+msgid "All posts by"
+msgstr ""
+
+#: functions/customizer/customizer-archive.php:56
+msgid "Author"
+msgstr ""
+
+#: functions/customizer/customizer-archive.php:64
+#: functions/customizer/customizer-archive.php:71
+msgid "Tag"
+msgstr ""
+
+#: functions/customizer/customizer-archive.php:87 searchform.php:14
+#: searchform.php:15
+msgid "Search"
+msgstr ""
+
+#: functions/customizer/customizer-archive.php:95
+#: functions/customizer/customizer-archive.php:102
+msgid "404"
+msgstr ""
+
+#: functions/customizer/customizer-archive.php:111
+#: functions/customizer/customizer-archive.php:118
+msgid "Shop"
 msgstr ""
 
 #: functions/customizer/customizer.php:86
-#: functions/customizer/customizer.php:94
-#: functions/customizer/customizer.php:102
-#: functions/customizer/customizer.php:111
-#: functions/customizer/customizer.php:131
-#: functions/customizer/customizer.php:139
-#: functions/customizer/customizer.php:147
-#: functions/customizer/customizer.php:156 index-services.php:186
+#: functions/customizer/customizer.php:135 index-services.php:179
+msgid "Web Design"
+msgstr ""
+
+#: functions/customizer/customizer.php:87
+#: functions/customizer/customizer.php:96
+#: functions/customizer/customizer.php:105
+#: functions/customizer/customizer.php:115
+#: functions/customizer/customizer.php:136
+#: functions/customizer/customizer.php:145
+#: functions/customizer/customizer.php:154
+#: functions/customizer/customizer.php:164 index-services.php:193
 msgid ""
 "It is a long established fact that a reader will be distracted by the "
 "readable content of a page when looking at its layout."
 msgstr ""
 
-#: functions/customizer/customizer.php:93
-#: functions/customizer/customizer.php:138 index-services.php:172
+#: functions/customizer/customizer.php:95
+#: functions/customizer/customizer.php:144 index-services.php:179
 msgid "Unique Elements"
 msgstr ""
 
-#: functions/customizer/customizer.php:101
-#: functions/customizer/customizer.php:146 index-services.php:172
+#: functions/customizer/customizer.php:104
+#: functions/customizer/customizer.php:153 index-services.php:179
 msgid "User Friendly"
 msgstr ""
 
-#: functions/customizer/customizer.php:110
-#: functions/customizer/customizer.php:155 index-services.php:172
+#: functions/customizer/customizer.php:114
+#: functions/customizer/customizer.php:163 index-services.php:179
 msgid "24/7 Support"
 msgstr ""
 
@@ -863,6 +892,11 @@ msgstr ""
 #: functions/widgets/custom-widgets.php:27
 #: functions/widgets/custom-widgets.php:29
 msgid "WooCommerce sidebar area"
+msgstr ""
+
+#: index-bannerstrip.php:31
+#, php-format
+msgid "%1$s"
 msgstr ""
 
 #: index-testimonials.php:97
@@ -882,14 +916,6 @@ msgstr ""
 msgid ""
 "Sorry, but nothing matched your search criteria. Please try again with some "
 "different keywords."
-msgstr ""
-
-#: searchform.php:14 searchform.php:15
-msgid "Search"
-msgstr ""
-
-#: tag.php:14
-msgid "Tag  Archive"
 msgstr ""
 
 #: theme_setup_data.php:141

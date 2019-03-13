@@ -183,6 +183,15 @@ function theme_setup_data()
 			'busi_layout_section3' => 'Project Section',
 			'busi_layout_section4' => 'Testimonials section',
 			'busi_layout_section5' => 'Client strip',
+			
+			// Archive page title
+			'archive_prefix' => 'Archive',
+			'category_prefix' => 'Category',
+			'author_prefix' => 'All posts by',
+			'tag_prefix'	=> 'Tag',
+			'search_prefix'	=> 'Search results for',
+			'404_prefix'	=> '404',
+			'shop_prefix'	=> 'Shop',
 
 	);
 		

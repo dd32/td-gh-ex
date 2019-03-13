@@ -3,7 +3,8 @@
  * The Tag template file
  * @package WordPress
  */
-get_header(); 
+get_header();
+$current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), theme_setup_data() ); 
 ?>
 <!-- Page Title -->
 <section class="page-header">
@@ -11,7 +12,8 @@ get_header();
 		<div class="row">
 			<div class="col-md-6">
 				<div class="page-title">
-					<h2><?php  _e( "Tag  Archive", 'busiprof'); echo single_cat_title( '', false ); ?></h2>
+					<h2><?php 
+					printf( __( '%1$s %2$s', 'busiprof' ), $current_options['tag_prefix'], single_tag_title( '', false ) ); ?></h2>
 					<p><?php bloginfo('description');?></p>
 				</div>
 			</div>
