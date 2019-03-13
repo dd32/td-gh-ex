@@ -4,7 +4,7 @@ Tags: translation-ready, custom-background, theme-options, custom-menu, post-for
 
 Requires at least: 4.5
 Tested up to: 5.1
-Stable tag:1.7.3
+Stable tag:1.7.4
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -25,6 +25,9 @@ Arzine is a responsive, multi-purpose WordPress theme. It’s flexible and suita
 = Does this theme support any plugins? =
 
 == Changelog ==
+= 1.7.4
+* Added Archive page title setting.
+
 = 1.7.3
 * Fixed data migration.
 

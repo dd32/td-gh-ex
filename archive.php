@@ -4,7 +4,10 @@
  * @package WordPress
  */
  
-get_header(); 
+get_header();
+
+$current_options = wp_parse_args(  get_option( 'busiprof_theme_options', array() ), theme_setup_data() ); 
+
 ?>
 <!-- Page Title -->
 <section class="page-header">
@@ -14,19 +17,20 @@ get_header();
 				<div class="page-title">
 					<h2><?php if ( is_day() ) :
 			
-						  _e( "Daily Archive ", 'arzine' ); echo (get_the_date()); 
+							printf( __( '%1$s %2$s', 'arzine' ), $current_options['archive_prefix'], get_the_date() );
 						  
 						 elseif ( is_month() ) : 
 						 
-							 _e( "Monthly Archive ", 'arzine' ); echo (get_the_date( 'F Y' )); 
+							printf( __( '%1$s %2$s', 'arzine' ), $current_options['archive_prefix'], get_the_date('F Y') );
 							 
 						 elseif ( is_year() ) :
 						 
-						 _e( "Yearly Archive ", 'arzine' );  echo (get_the_date( 'Y' )); 
+							printf( __( '%1$s %2$s', 'arzine' ), $current_options['archive_prefix'], get_the_date('Y') );						 
 						 
 						else : 
 						
-							 _e( "Blog Archive ", 'arzine' ); 	
+							 _e( $current_options['archive_prefix'] , 'arzine' );
+							 
 							 
 						 endif; 
 						 ?>
