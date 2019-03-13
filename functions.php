@@ -123,7 +123,11 @@ if ( ! function_exists( 'best_food_get_section_menu' ) ) {
 		$sortable_value = maybe_unserialize( get_theme_mod( 'home_layout',cts_section_default_order() ) );	
 		if ( ! empty( $sortable_value ) ) : 
 		  foreach ( $sortable_value as $checked_value ) :
-			$section_menu = '<li data-menuanchor="'.$checked_value.'"><a href="#'.$checked_value.'">'.ucfirst(esc_html(get_theme_mod( $checked_value.'_section_menu_title',$checked_value) )).'</a></li>'.$section_menu;
+
+			
+		  if( get_theme_mod( $checked_value.'_section_menu_title',$checked_value) != '' ){
+			$section_menu = '<li data-menuanchor="'.$checked_value.'"><a href="'.home_url('/').'#'.$checked_value.'">'.ucfirst(esc_html(get_theme_mod( $checked_value.'_section_menu_title',$checked_value) )).'</a></li>'.$section_menu;
+			}			
 		  endforeach;
 		endif; 
 	

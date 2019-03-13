@@ -65,8 +65,6 @@ Best Food is distributed under the terms of the GNU General Public License v2
     Source: https://www.pexels.com/photo/1-teacup-with-saucer-and-magazine-on-white-surface-818650/
     
 
-
-
 === Frequently Asked Questions ===
 
 Does this theme have a support forum? 
@@ -75,6 +73,9 @@ Theta provides support at https://www.coothemes.com/forum/best-food-theme/.
 
 
 === Changelog ===
+=version 1.0.8 20180313=
+*Fixed mobile menu when menu title is empty
+
 =version 1.0.7 20181015=
 *mod  copyright
 
