@@ -8,7 +8,7 @@
  * License:         GNU General Public License v2.0 or later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  * Tags:            grid-layout, left-sidebar, one-column, right-sidebar, two-columns, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
- * Version:         1.0.5
+ * Version:         1.0.6
  * Text Domain:     auspicious
  */
 
@@ -1655,6 +1655,41 @@ p.comment-awaiting-moderation {
 /**
  * 25.0 - Media Queries (Mobile Small 30em (480px))
  */
+ @media screen and (max-width: 30em) {
+	.site-content {
+		padding: 1.125em;
+	}
+
+    .menu-toggle,
+    .primary-navigation.toggled ul {
+        display: block;
+    }
+    
+	.primary-navigation ul {
+		display: none;
+	}
+    
+    .primary-navigation.toggled {
+        padding: 0.1em;
+    }
+    
+    .nav-menu {
+        margin-bottom: 3.6em;
+    }
+    
+    .primary-navigation .nav-menu {
+        display: none;
+    }
+    
+    .primary-navigation.toggled .nav-menu {
+        display: block;
+        margin: 1em 1em 3.6em 1em;
+    }
+    
+	.content-area .outer-grid {
+		grid-template-columns: 1fr;
+	}
+}
 
 /**
  * 26.0 - Media Queries (Mobile Small 37.5em (600px))
@@ -1697,55 +1732,6 @@ p.comment-awaiting-moderation {
 
 /**
  * 27.0 - Media Queries (Mobile Medium 48.688em (667px))
- */
- @media screen and (min-height: 37.563em) and (max-width: 41.688em) {
-	.site-container {
-		margin: 0;
-		padding: 0;
-	}
-
-	.site-branding {
-		padding: 1.125em;
-		text-align: center;
-	}
-
-	.site-content {
-		padding: 1.125em;
-	}
-
-    .menu-toggle,
-    .primary-navigation.toggled ul {
-        display: block;
-    }
-    
-	.primary-navigation ul {
-		display: none;
-	}
-    
-    .primary-navigation.toggled {
-        padding: 0.1em;
-    }
-    
-    .nav-menu {
-        margin-bottom: 3.6em;
-    }
-    
-    .primary-navigation .nav-menu {
-        display: none;
-    }
-    
-    .primary-navigation.toggled .nav-menu {
-        display: block;
-        margin: 1em 1em 3.6em 1em;
-    }
-    
-	.content-area .outer-grid {
-		grid-template-columns: 1fr;
-	}
-}
-
-/**
- * 28.0 - Media Queries (Mobile Large 46em (736px))
  */
  @media screen and (min-height: 37.563em) and (max-width: 41.688em) {
 	.site-container {
@@ -1840,7 +1826,7 @@ p.comment-awaiting-moderation {
 	.content-area .outer-grid {
 		grid-template-columns: 1fr;
 	}
- }
+}
 
 /**
  * 29.0 - Media Queries (Tablet Small 48em (768px))
@@ -1895,14 +1881,10 @@ p.comment-awaiting-moderation {
  * 30.0 - Media Queries (Tablet Large 64em (1024px))
  */
  @media screen and (min-width: 48.063em) and (max-width: 64em) {
-	.site-branding {
-		float: left;
-		width: 29.230769231%;
-	}
-
-	.main-navigation {
-		float: right;
-		width: 69.230769231%;
+	.site-container {
+		margin: 0;
+		max-width: 64em;
+		padding: 1.125em;
 	}
 
     .primary-navigation {
@@ -1924,7 +1906,7 @@ p.comment-awaiting-moderation {
 	.primary-navigation.toggled ul {
 		max-height: none;
 		padding-left: 0;
-		text-align: right;
+		text-align: center;
         
 	}
 	
@@ -1950,7 +1932,6 @@ p.comment-awaiting-moderation {
 	}
     
     .primary-navigation a {
-		color: #000000;
         padding: 0.5em 1em;
     }
 	
@@ -1967,7 +1948,7 @@ p.comment-awaiting-moderation {
 	.primary-navigation a:hover,
 	.primary-navigation a:focus {
 		background: transparent;
-		color: #000000;
+		color: #ffffff;
 		text-decoration: underline;
 		outline: solid 1px #b3b3b3;
 	}
@@ -2003,7 +1984,6 @@ p.comment-awaiting-moderation {
 	}
     
     .nav-menu {
-		background: #ffffff;
         padding: 0.4em;
     }
 }
@@ -2011,7 +1991,7 @@ p.comment-awaiting-moderation {
 /**
  * 31.0 - Media Queries (Desktop 73.125em 1170px))
  */
- @media screen and (min-width: 73.125em) {
+ @media screen and (min-width: 64.063em) {
     .primary-navigation {
         clear: none;
         float: left;
