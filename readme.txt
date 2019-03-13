@@ -1,12 +1,10 @@
 === Apelle uno ===
-Contributors: DevFabio
-Tags: blog, custom-menu, featured-images, right-sidebar, sticky-post, full-width-template
-Requires at least: 4.8
-Tested up to: 5.6
-Requires PHP: 5.6
-Stable tag: trunk
 
-Copyright (c) 2019-2020 by Invent Your Trade  (https://inventyourtrade.it/)
+Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, right-sidebar, sticky-post, full-width-template
+Requires at least: 4.0
+Tested up to: 5.1
+
+Copyright (c) 2019 by Invent Your Trade  (https://inventyourtrade.it/)
 This Theme is distributed under the terms of the GNU GPL.
 
 License: GNU General Public License v2.0
@@ -42,7 +40,5 @@ Other features:
 
 * Bootstrap http://getbootstrap.com, (C) 2011-2015 Twitter, Inc., [MIT] (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 * Font Awesome icons, Copyright (C) Dave Gandy License: SIL Open Font License, version 1.1. - http://fontawesome.io/
-* popper.min.js Copyright (C) Federico Zivolo 2017 Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
-* header.jpg Header image Copyright (C) Invent Your Trade 2019-2020 (CC BY-SA 4.0) (http://creativecommons.org/licenses/by-sa/4.0/)
 
 == Changelog ==

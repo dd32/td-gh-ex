@@ -1,25 +1,28 @@
 <?php 
 
 function apelleuno_add_theme_scripts() {
+ 
+
   wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bootstrap.min.css', array(), '4.1.3', 'all');
-  wp_enqueue_style( 'style', get_stylesheet_uri() );	 
-  wp_enqueue_script( 'popper-min', get_template_directory_uri() . '/popper.min.js', array(), '1.0.0', true );
-  wp_enqueue_script( 'bootstrap-min', get_template_directory_uri() . '/bootstrap.min.js', array(), '1.0.0', true );
-  wp_enqueue_script( 'stickyfill-init', get_template_directory_uri() . '/stickyfill-init.js', array('jquery'), '2.1.1', true );
-  wp_enqueue_script( 'menu', get_template_directory_uri() . '/menu.js', array('jquery'), '1.0.0', true );
-  if (is_singular()) {
-	  wp_enqueue_script( "comment-reply" );
-  }
+ 
 }
 
-add_action( 'wp_enqueue_scripts', 'apelleuno_add_theme_scripts' );
 
+
+add_action( 'wp_enqueue_scripts', 'apelleuno_add_theme_scripts' );
+function apelleuno_add_theme_scripts_footer() { 
+
+  wp_enqueue_style( 'style', get_stylesheet_uri() );
+  wp_enqueue_script( 'popper-min', get_template_directory_uri() . '/popper.min.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'bootstrap-min', get_template_directory_uri() . '/bootstrap.min.js', array(), '1.0.0', true );
+}
+add_action( 'wp_footer', 'apelleuno_add_theme_scripts_footer' );
 function apelleuno_register_menu_home() {
   register_nav_menus(
     array(
-      'header-home-menu' => __( 'Header Home Menu', 'apelle-uno' ),
-      'central-home-menu' => __( 'Home Menu', 'apelle-uno' ),
-	  'top-primary' => __( 'Primary Menu', 'apelle-uno' ),
+      'header-home-menu' => __( 'Header Home Menu', 'apelleuno' ),
+      'central-home-menu' => __( 'Home Menu', 'apelleuno' ),
+	  'top-primary' => __( 'Primary Menu', 'apelleuno' ),
      )
    );
  }
@@ -49,7 +52,7 @@ function apelleuno_add_menu_parent_class( $items ) {
 
     foreach ( $items as $item ) {
         if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
-            $item->classes[] = 'apelleuno-item';
+            $item->classes[] = 'dropdown-item';
         }
     }
 
@@ -66,7 +69,7 @@ function apelleuno_add_class_to_items_link( $atts, $item, $args ) {
     // add the desired attributes:
     $atts['class'] = 'nav-link dropdown-toggle';
     $atts['data-toggle'] = 'dropdown';
-    //$atts['data-target'] = '#';
+    $atts['data-target'] = '#';
   }
   return $atts;
 }
@@ -74,10 +77,7 @@ class apelleuno_Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
 	
 	function start_lvl(&$output, $depth=0, $args = array()) {
     $indent = str_repeat("\t", $depth);
-	
-	
-	
-    $output .= "\n$indent<ul class=\"apelleuno-menu multi-level \" >\n";
+    $output .= "\n$indent<ul class=\"dropdown-menu multi-level \" >\n";
   }
    
     public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
@@ -97,10 +97,10 @@ class apelleuno_Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
 		
 		if(isset($args->walker) and $args->walker->has_children and isset($item->menu_item_parent) and $item->menu_item_parent != 0 )
         {		
-        	$output .= $indent . '<li class="nav-item apelleuno-submenu" >';
+        	$output .= $indent . '<li class="nav-item dropdown-submenu">';
 		}else
 		{
-				$output .= $indent . '<li class="nav-item" >';
+				$output .= $indent . '<li class="nav-item">';
 			}
 
         $atts = array();
@@ -118,13 +118,6 @@ class apelleuno_Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
                 $attributes .= ' ' . $attr . '="' . $value . '"';
             }
         }
-		$attributesLnk = '';
-        foreach ( $atts as $attr => $value ) {
-            if ( ! empty( $value ) && 'href' === $attr ) {
-                $value = esc_url( $value );
-                $attributesLnk .= ' ' . $attr . '="' . $value . '"';
-            }
-        }
 
       
         $title = apply_filters( 'the_title', $item->title, $item->ID );
@@ -134,34 +127,25 @@ class apelleuno_Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
 	    $item_output = '';
 		if(isset($args->before))
         	$item_output = $args->before;
-        $item_output .= '<a '.$attributesLnk.' class="nav-link">';
+        $item_output .= '<a'. $attributes .'>';
 		if(isset($args->link_before))
         	$item_output .= $args->link_before ;
 		$item_output .= $title ;
 		if(isset($args->link_after)) $args->link_after;
         	$item_output .= '</a>';
-		if($args->walker->has_children )
-		{
-			$apelleuno_primo_menu	=	'';
-			if($item->menu_item_parent == 0)
-				$apelleuno_primo_menu	='style="position:relative"';
-			$item_output .='</li><li class="nav-item " '.$apelleuno_primo_menu.' > ';
-			$item_output .='<a'.$attributes.' class="btn" ></a>';
-		}
 		if(isset($args->after))
        	 $item_output .= $args->after;
 
        
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }
-	
 }
 
 class apelleuno_Apelle_Walker_Nav_Menu extends Walker_Nav_Menu {
 	
 	function start_lvl(&$output, $depth=0,$args = array() ) {
     $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent<ul class=\"apelleuno-menu bg-apelleuno apelleuno-submenu\" >\n";
+    $output .= "\n$indent<ul class=\"dropdown-menu bg-dark \" >\n";
   }
    
     public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
@@ -182,10 +166,10 @@ class apelleuno_Apelle_Walker_Nav_Menu extends Walker_Nav_Menu {
        // $output .= $indent . '<li class="nav-item">';
 		if($args->walker->has_children and $item->menu_item_parent != 0 )
         {		
-        	$output .= $indent . '<li class="nav-item dropdown-submenu" style="position:relative">';
+        	$output .= $indent . '<li class="nav-item dropdown-submenu">';
 		}else
 		{
-				$output .= $indent . '<li class="nav-item" style="position:relative">';
+				$output .= $indent . '<li class="nav-item">';
 			}
 
         $atts = array();
@@ -203,31 +187,17 @@ class apelleuno_Apelle_Walker_Nav_Menu extends Walker_Nav_Menu {
                 $attributes .= ' ' . $attr . '="' . $value . '"';
             }
         }
-		$attributesLnk = '';
-        foreach ( $atts as $attr => $value ) {
-            if ( ! empty( $value ) && 'href' === $attr ) {
-                $value = esc_url( $value );
-                $attributesLnk .= ' ' . $attr . '="' . $value . '"';
-            }
-        }
+
       
         $title = apply_filters( 'the_title', $item->title, $item->ID );
 
       
         $title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
-        
-	        $item_output = '<a'. $attributesLnk .' class="nav-link">';
+        $item_output = $args->before;
+        $item_output .= '<a'. $attributes .'>';
         $item_output .= $args->link_before . $title . $args->link_after;
         $item_output .= '</a>';
-		if($args->walker->has_children )
-		{
-			$apelleuno_primo_menu	=	'';
-			if($item->menu_item_parent == 0)
-				$apelleuno_primo_menu	='style="position:relative"';
-			$item_output .='</li><li class="nav-item " '.$apelleuno_primo_menu.' > ';
-			$item_output .='<a'.$attributes.' class="btn" ></a>';
-		}
         $item_output .= $args->after;
 
        
@@ -235,7 +205,7 @@ class apelleuno_Apelle_Walker_Nav_Menu extends Walker_Nav_Menu {
     }
 }
 
-function apelle_add_description_to_menu($item_output, $item, $depth, $args) {
+function add_description_to_menu($item_output, $item, $depth, $args) {
 	 if( isset($args->theme_location) and  $args->theme_location == 'central-home-menu' ) {
 		if (strlen($item->description) > 0 ) {
 				  
@@ -245,38 +215,23 @@ function apelle_add_description_to_menu($item_output, $item, $depth, $args) {
 
     return $item_output;
 }
-add_filter('walker_nav_menu_start_el', 'apelle_add_description_to_menu', 10, 4);
+add_filter('walker_nav_menu_start_el', 'add_description_to_menu', 10, 4);
 
 
 add_action( 'after_setup_theme', 'apelleuno_wpse_theme_setup' );
 function apelleuno_wpse_theme_setup() {
-	
-	  
+   
     add_theme_support( 'title-tag' );
 	add_theme_support( 'custom-logo' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' ); 
-	$args = array(
-		'default-color' => 'fff',
-	);
-	add_theme_support( "custom-background", $args );
-	
-	$args = array(
-		'flex-width'    => true,
-		'width'         => 980,
-		'flex-height'    => true,
-		'height'        => 200,
-		'default-image' => get_template_directory_uri() . '/images/header.jpg',
-		'uploads'       => true,
-	);
-	add_theme_support( 'custom-header', $args );
 }
 
 
 function apelleuno_logo_setup() {
     $defaults = array(
-        'height'      => 40,
-        'width'       => 220,
+        'height'      => 100,
+        'width'       => 400,
         'flex-height' => true,
         'flex-width'  => true,
         'header-text' => array( 'site-title', 'site-description' ),
@@ -289,63 +244,49 @@ add_action( 'after_setup_theme', 'apelleuno_logo_setup' );
 
 add_action( 'widgets_init', 'apelleuno_widgets_init' );
 function apelleuno_widgets_init() {
-	
-	
+$args = array(
+	'name'          => __( 'Barra Laterale', 'apelleuno' ),
+	'id'            => 'apelleuno-sidebar-laterale',    
+	'description'   => __( 'i widgets in quest\'area verranno mostrati nella Barra Laterale in tutte le pagine.', 'apelleuno' ),
+        'class'         => '',
+	'before_widget' => '<li id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</li>',
+	'before_title'  => '<h2 class="widgettitle">',
+	'after_title'   => '</h2>' ); 
+register_sidebar( $args );
 
+$args = array(
+	'name'          => __( 'Footer 1', 'apelleuno' ),
+	'id'            => 'apelleuno-footer-1',    
+	'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelleuno' ),
+        'class'         => 'list-unstyled text-small',
+	'before_widget' => '<li id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</li>',
+	'before_title'  => '<h5 class="widgettitle">',
+	'after_title'   => '</h5>' ); 
+register_sidebar( $args );
 
-	$args = array(
-		'name'          => __( 'Sidebar', 'apelle-uno' ),
-		'id'            => 'apelleuno-sidebar-laterale',    
-		'description'   => __( 'widgets in this area are shown in the Sidebar on all pages.', 'apelle-uno' ),
-			'class'         => '',
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</li>',
-		'before_title'  => '<h2 class="widgettitle">',
-		'after_title'   => '</h2>' ); 
-	register_sidebar( $args );
+$args = array(
+	'name'          => __( 'Footer 2', 'apelleuno' ),
+	'id'            => 'apelleuno-footer-2',    
+	'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelleuno' ),
+        'class'         => 'list-unstyled text-small',
+	'before_widget' => '<li id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</li>',
+	'before_title'  => '<h5 class="widgettitle">',
+	'after_title'   => '</h5>' ); 
+register_sidebar( $args );
 
-	$args = array(
-		'name'          => __( 'Footer 1', 'apelle-uno' ),
-		'id'            => 'apelleuno-footer-1',    
-		'description'   => __( 'widgets in this area will be shown in the first footer area on all pages.', 'apelle-uno' ),
-			'class'         => 'list-unstyled text-small',
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</li>',
-		'before_title'  => '<h5 class="widgettitle">',
-		'after_title'   => '</h5>' ); 
-	register_sidebar( $args );
-
-	$args = array(
-		'name'          => __( 'Footer 2', 'apelle-uno' ),
-		'id'            => 'apelleuno-footer-2',    
-		'description'   => __( 'widgets in this area will be shown in the first footer area on all pages.', 'apelle-uno' ),
-			'class'         => 'list-unstyled text-small',
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</li>',
-		'before_title'  => '<h5 class="widgettitle">',
-		'after_title'   => '</h5>' ); 
-	register_sidebar( $args );
-
-	$args = array(
-		'name'          => __( 'Footer 3', 'apelle-uno' ),
-		'id'            => 'apelleuno-footer-3',    
-		'description'   => __( 'widgets in this area will be shown in the first footer area on all pages.', 'apelle-uno' ),
-			'class'         => 'list-unstyled text-small',
-		'before_widget' => '<li id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</li>',
-		'before_title'  => '<h5 class="widgettitle">',
-		'after_title'   => '</h5>' ); 
-	register_sidebar( $args );
+$args = array(
+	'name'          => __( 'Footer 3', 'apelleuno' ),
+	'id'            => 'apelleuno-footer-3',    
+	'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelleuno' ),
+        'class'         => 'list-unstyled text-small',
+	'before_widget' => '<li id="%1$s" class="widget %2$s">',
+	'after_widget'  => '</li>',
+	'before_title'  => '<h5 class="widgettitle">',
+	'after_title'   => '</h5>' ); 
+register_sidebar( $args );
 }
 
-
-require get_template_directory() . '/inc/custom-header.php';
-/**
- * Registers an editor stylesheet for apelle theme.
- */
-function apelleuno_add_editor_styles() {
-    add_editor_style( 'custom-editor-style.css' );
-}
-add_action( 'admin_init', 'apelleuno_add_editor_styles' );
-
-
+?>

@@ -1,24 +1,9 @@
-<div class="container">
-	<footer class="pt-4 my-md-5 pt-md-5 border-top">
+<footer class="pt-4 my-md-5 pt-md-5 border-top">
         <div class="row">
           <div class="col-12 col-md">
-            
-            <small class="d-block mb-3 text-muted"> 
-			<?php $blog_info = get_bloginfo( 'name' ); ?>
-			<?php if ( ! empty( $blog_info ) ) : ?>
-				<a class="site-name" href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>,
-			<?php endif; ?>
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'apelle-uno' ) ); ?>" class="imprint">
-				<?php
-				/* translators: %s: WordPress. */
-				printf( esc_html( 'Proudly powered by %s.'), __('WordPress', 'apelle-uno' ) );
-				?>
-			</a>
-			<?php
-			if ( function_exists( 'the_privacy_policy_link' ) ) {
-				the_privacy_policy_link( '', '<span role="separator" aria-hidden="true"></span>' );
-			}
-			?></small>
+            <!--<img class="mb-2" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">-->
+            <?php __('Apelle uno', 'apelleuno' );?>
+            <small class="d-block mb-3 text-muted">&copy; 2018-2019</small>
             <?php the_tags();?>
           </div>
           <div id="container-apelleuno-footer-1" class="col-6 col-md">
@@ -44,10 +29,3 @@
           </div>
         </div>
       </footer>
-      </div>
-  <?php 
-
-    wp_footer();
-?>
-</body>
-</html>
