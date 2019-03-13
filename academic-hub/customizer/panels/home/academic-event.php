@@ -20,70 +20,47 @@ function academic_hub_event_customizer( $wp_customize ) {
         'panel'    =>'academic_hub_homepage_setting'
     ) );
 
+    
+     /*****************************************************
+     * Slider Post Categiry Select
+     *****************************************************/
+	$wp_customize->add_setting( 
+        'academic_hub_event_category_id', 
+        array(
+			'default' => esc_html__( 'all', 'academic-hub' ),
+            'sanitize_callback' => 'academic_hub_sanitize_select'
+        )
+    );
+    $wp_customize->add_control( 
+        'academic_hub_event_category_id', 
+        array(
+			'label'         => esc_html__( 'Select Post Category', 'academic-hub' ),
+            'section'       => 'frontpage_academic_event_section',
+            'type'          => 'select',
+            'choices'       => academic_hub_get_post_categories( ),
+            'priority'      => 2,
+        )
+    );
+    
     /*****************************************************
-     * Events Header Info
+     * Slider Post Post count
      *****************************************************/
     $wp_customize->add_setting(
-        'academic_hub_spcecial_our_team_header_title',
+        'academic_hub_event_number_of_post',
         array(
-			'sanitize_callback' => 'sanitize_text_field',
+            'sanitize_callback' => 'intval',
+            'default'           =>  3
         )
     );
     $wp_customize->add_control(
-		'academic_hub_spcecial_our_team_header_title',
+		'academic_hub_event_number_of_post',
 		array(
 			'section'	  => 'frontpage_academic_event_section',
-			'label'		  => esc_html__( 'Events Header Info', 'academic-hub' ),
-            'type'        => 'text',
-            'priority'    => 1,
+			'label'		  => esc_html__( 'Number Of Slider', 'academic-hub' ),
+            'type'        => 'number',
+            'priority'    => 3,
 		)		
     );
-    
-    /*****************************************************
-     * Custom Events Items
-     *****************************************************/
-    $wp_customize->add_setting( 
-        new Academic_Hub_Repeater_Setting( 
-            $wp_customize, 
-            'academic_hub_event_items', 
-            array(
-                'sanitize_callback' => array( 'Academic_Hub_Repeater_Setting', 'sanitize_repeater_setting' ),
-            ) 
-        ) 
-    );
-    
-    $wp_customize->add_control(
-		new Academic_Hub_Repeater_Control(
-			$wp_customize,
-			'academic_hub_event_items',
-			array(
-                'section' => 'frontpage_academic_event_section',
-                'priority'    => 3,				
-				'label'	  => esc_html__( 'Academic Events', 'academic-hub' ),
-				'fields'  => array(
-                    'academic_hub_event_title' => array(
-                        'type'        => 'text',
-                        'label'       => esc_html__( 'Event Title', 'academic-hub' ),
-                    ),
-                    'academic_hub_event_short' => array(
-                        'type'        => 'textarea',
-                        'description' => esc_html__( 'Ex: 12/29 7:30 AM-12/31 4:00PM', 'academic-hub' ),
-                        'label'       => esc_html__( 'Event Description', 'academic-hub' ),
-                    ),
-                    'academic_hub_event_images' => array(
-                        'type'        => 'image',
-                        'label'       => esc_html__( 'Event Image Upload', 'academic-hub' ),
-                    )
-                ),
-                'row_label' => array(
-                    'type' => 'field',
-                    'value' => esc_html__( 'Event Item', 'academic-hub' ),
-                    'field' => 'slider'
-                )                        
-			)
-		)
-	);
- 
 
 }
 add_action( 'customize_register', 'academic_hub_event_customizer' );

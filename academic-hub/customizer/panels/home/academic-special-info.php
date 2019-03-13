@@ -14,88 +14,45 @@ function academic_hub_customize_special_info( $wp_customize ) {
     ) );
 
     /*****************************************************
-     * Special Features
+     * Slider Post Categiry Select
      *****************************************************/
-    $wp_customize->add_setting(
-        'academic_hub_spcecial_info_header',
+	$wp_customize->add_setting( 
+        'academic_hub_special_category_id', 
         array(
-			'sanitize_callback' => 'sanitize_text_field',
+			'default' => esc_html__( 'all', 'academic-hub' ),
+            'sanitize_callback' => 'academic_hub_sanitize_select'
         )
     );
-    $wp_customize->add_control(
-		'academic_hub_spcecial_info_header',
-		array(
-			'section'	  => 'academic_hub_notices_section',
-			'label'		  => esc_html__( 'Special Features', 'academic-hub' ),
-            'type'        => 'text'
-		)		
+    $wp_customize->add_control( 
+        'academic_hub_special_category_id', 
+        array(
+			'label'         => esc_html__( 'Select Post Category', 'academic-hub' ),
+            'section'       => 'frontpage_academic_hub_frontpage_section',
+            'type'          => 'select',
+            'choices'       => academic_hub_get_post_categories( ),
+            'priority'      => 3,
+        )
     );
     
     /*****************************************************
-     * Special Short Desc
+     * Slider Post Post count
      *****************************************************/
     $wp_customize->add_setting(
-        'academic_hub_special_short_desc',
+        'academic_hub_special_number_of_post',
         array(
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'			=>	'postMessage',
+            'sanitize_callback' => 'intval',
+            'default'           =>  3
         )
     );
     $wp_customize->add_control(
-		'academic_hub_special_short_desc',
+		'academic_hub_special_number_of_post',
 		array(
-			'section'	  => 'academic_hub_notices_section',
-			'label'		  => esc_html__( 'Short Descriptions: ', 'academic-hub' ),
-            'type'        => 'text'
+			'section'	  => 'frontpage_academic_hub_frontpage_section',
+			'label'		  => esc_html__( 'Number of Special Info', 'academic-hub' ),
+            'type'        => 'number',
+            'priority'    => 4,
 		)		
-	);
-    
-    /*****************************************************
-     * Custom Add Slider 
-     *****************************************************/
-    $wp_customize->add_setting( 
-        new Academic_Hub_Repeater_Setting( 
-            $wp_customize, 
-            'academic_hub_homepage_special_info', 
-            array(
-                'sanitize_callback' => array( 'Academic_Hub_Repeater_Setting', 'sanitize_repeater_setting' ),
-            ) 
-        ) 
     );
-    
-    $wp_customize->add_control(
-		new Academic_Hub_Repeater_Control(
-			$wp_customize,
-			'academic_hub_homepage_special_info',
-			array(
-                'section' => 'frontpage_academic_hub_frontpage_section',
-                'priority'    => 4,				
-				'label'	  => esc_html__( 'Slider Add', 'academic-hub' ),
-				'fields'  => array(
-                    'academic_hub_header_title' => array(
-                        'type'        => 'text',
-                        'label'       => esc_html__( 'Slider Text', 'academic-hub' ),
-                        'description' => esc_html__( 'Sider Text Type Hear.', 'academic-hub' ),
-                    ),
-                    'academic_hub_short_info' => array(
-                        'type'        => 'textarea',
-                        'label'       => esc_html__( 'Slider Short Descriptin', 'academic-hub' ),
-                        'description' => esc_html__( 'Slider Links Section.', 'academic-hub' ),
-                    ),
-                    'academic_hub_images' => array(
-                        'type'        => 'image',
-                        'label'       => esc_html__( 'Slider Image Upload', 'academic-hub' ),
-                        'description' => esc_html__( 'Upload the slider image', 'academic-hub' ),
-                    )
-                ),
-                'row_label' => array(
-                    'type' => 'field',
-                    'value' => esc_html__( 'Slider Item', 'academic-hub' ),
-                    'field' => 'slider'
-                )                        
-			)
-		)
-	);
  
 
 }

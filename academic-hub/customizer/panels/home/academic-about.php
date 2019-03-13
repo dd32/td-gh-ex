@@ -22,27 +22,6 @@ function academic_hub_about_customizer( $wp_customize ) {
         'panel'    =>'academic_hub_homepage_setting'
     ) );
 
-    /*****************************************************
-     * About Us Page Header Info
-     *****************************************************/
-    $wp_customize->add_setting(
-        'academic_hub_about_header_title',
-        array(
-			'sanitize_callback' => 'sanitize_text_field',
-        )
-    );
-    $wp_customize->add_control(
-		'academic_hub_about_header_title',
-		array(
-			'section'	  => 'frontpage_academic_about_section',
-			'label'		  => esc_html__( 'About Header Info', 'academic-hub' ),
-            'type'        => 'textarea',
-            'priority'    => 1,
-		)		
-    );
-
-
-
      /*****************************************************
      * Select Blog Section Hear
      *****************************************************/

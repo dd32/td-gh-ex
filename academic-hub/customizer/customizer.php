@@ -9,7 +9,7 @@
 $academic_hub_panels   = array( 'header','general', 'home' );
 $academic_hub_sub_sections = array(
     'header'     => array( 'logo-brand','top-header' ),
-    'home'       => array('slider','academic-notice','academic-about','academic-special-info','academic-team','academic-event','academic-blog','sort'),
+    'home'       => array('slider','academic-notice','academic-about','academic-special-info','academic-event','academic-blog','sort'),
     'general'    => array( 'basic' ),
 );
 

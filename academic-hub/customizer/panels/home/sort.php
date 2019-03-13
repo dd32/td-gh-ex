@@ -18,13 +18,7 @@ function academic_hub_homepage_short( $wp_customize ){
 		'academic_hub_home_page_sort', 
 		array(
 			'default' => array(
-								'academic_hub_slider',
-								'academic_hub_notices',
-								'academic_hub_special_info_section',
-								'academic_hub_our_teams',
-								'academic_hub_event',
-								'academic_hub_blog',
-								'academic_hub_about_us',
+								'academic_hub_slider'
 							),
 			'sanitize_callback' => 'academic_hub_sanitize_sortable',						
 		)
@@ -42,11 +36,10 @@ function academic_hub_homepage_short( $wp_customize ){
 				'choices'     => array(
 					'academic_hub_slider'       		=> esc_html__( 	'Slider Settings', 'academic-hub' ),
 					'academic_hub_notices'       		=> esc_html__( 	'Academic Notices', 'academic-hub' ),
-					'academic_hub_special_info_section' => esc_html__( 	'About Us', 'academic-hub' ),
-					'academic_hub_our_teams'       		=> esc_html__( 	'Special Features', 'academic-hub' ),
-					'academic_hub_event'       			=> esc_html__( 	'Our Teams', 'academic-hub' ),
-					'academic_hub_blog'       			=> esc_html__( 	'Events', 'academic-hub' ),
-					'academic_hub_about_us'       		=> esc_html__( 	'Blog', 'academic-hub' ),
+					'academic_hub_special_info_section' => esc_html__( 	'Special Info', 'academic-hub' ),
+					'academic_hub_event'       			=> esc_html__( 	'Events', 'academic-hub' ),
+					'academic_hub_blog'       			=> esc_html__( 	'Blog', 'academic-hub' ),
+					'academic_hub_about_us'       		=> esc_html__( 	'About Us', 'academic-hub' ),
 				),
 			)
 		)

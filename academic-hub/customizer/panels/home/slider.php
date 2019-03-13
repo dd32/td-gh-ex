@@ -13,74 +13,50 @@ function academic_hub_customize_register_slider( $wp_customize ) {
         'panel'    =>'academic_hub_homepage_setting'
     ) );
 
+    
+
+    
+     /*****************************************************
+     * Slider Post Categiry Select
+     *****************************************************/
+	$wp_customize->add_setting( 
+        'academic_hub_slider_category_id', 
+        array(
+			'default' => esc_html__( 'all', 'academic-hub' ),
+            'sanitize_callback' => 'academic_hub_sanitize_select'
+        )
+    );
+    $wp_customize->add_control( 
+        'academic_hub_slider_category_id', 
+        array(
+			'label'         => esc_html__( 'Select Post Category', 'academic-hub' ),
+            'section'       => 'frontpage_slider_section',
+            'type'          => 'select',
+            'choices'       => academic_hub_get_post_categories( ),
+            'priority'      => 2,
+        )
+    );
+    
     /*****************************************************
-     * Slider Categories List
+     * Slider Post Post count
      *****************************************************/
     $wp_customize->add_setting(
-        'academic_hub_main_slider',
+        'academic_hub_slider_number_of_post',
         array(
-            'default'           => false,
-            'sanitize_callback' => 'academic_hub_sanitize_checkbox',
+            'sanitize_callback' => 'intval',
+            'default'           =>  3
         )
     );
     $wp_customize->add_control(
-		new Academic_Hub_Toggle_Control( 
-			$wp_customize,
-			'academic_hub_main_slider',
-			array(
-				'section'	  => 'frontpage_slider_section',
-				'label'		  => esc_html__( 'Main Slider (on/off)', 'academic-hub' ),
-                'priority'    => 1,
-			)
-		)
+		'academic_hub_slider_number_of_post',
+		array(
+			'section'	  => 'frontpage_slider_section',
+			'label'		  => esc_html__( 'Number Of Slider', 'academic-hub' ),
+            'type'        => 'number',
+            'priority'    => 3,
+		)		
     );
 
-    /*****************************************************
-     * Custom Add Slider 
-     *****************************************************/
-    $wp_customize->add_setting( 
-        new Academic_Hub_Repeater_Setting( 
-            $wp_customize, 
-            'homepage_slider_section', 
-            array(
-                'sanitize_callback' => array( 'Academic_Hub_Repeater_Setting', 'sanitize_repeater_setting' ),
-            ) 
-        ) 
-    );
-    
-    $wp_customize->add_control(
-		new Academic_Hub_Repeater_Control(
-			$wp_customize,
-			'homepage_slider_section',
-			array(
-                'section' => 'frontpage_slider_section',
-                'priority'    => 4,				
-				'label'	  => esc_html__( 'Slider Add', 'academic-hub' ),
-				'fields'  => array(
-                    'slider_header_title' => array(
-                        'type'        => 'text',
-                        'label'       => esc_html__( 'Slider Text', 'academic-hub' ),
-                        'description' => esc_html__( 'Sider Text Type Hear.', 'academic-hub' ),
-                    ),
-                    'slider_short_desc' => array(
-                        'type'        => 'textarea',
-                        'label'       => esc_html__( 'Slider Short Descriptin', 'academic-hub' ),
-                        'description' => esc_html__( 'Slider Links Section.', 'academic-hub' ),
-                    ),
-                    'slider_images' => array(
-                        'type'        => 'image',
-                        'label'       => esc_html__( 'Slider Image Upload', 'academic-hub' ),
-                        'description' => esc_html__( 'Upload the slider image', 'academic-hub' ),
-                    )
-                ),
-                'row_label' => array(
-                    'type' => 'field',
-                    'value' => esc_html__( 'Slider Item', 'academic-hub' ),
-                    'field' => 'slider'
-                )                        
-			)
-		)
-	);
  
 
 }

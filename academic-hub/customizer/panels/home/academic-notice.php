@@ -14,39 +14,26 @@ function academic_hub_customize_register_academic_notice( $wp_customize ) {
         'panel'    =>'academic_hub_homepage_setting'
     ) );
 
-    //academic notice
-    $wp_customize->add_setting(
-        'academic_hub_notice_title',
-        array(
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'			=>	'postMessage',
-        )
-    );
-    $wp_customize->add_control(
-		'academic_hub_notice_title',
-		array(
-			'section'	  => 'academic_hub_notices_section',
-			'label'		  => esc_html__( 'Academic Notice Title', 'academic-hub' ),
-            'type'        => 'text'
-		)		
-    );
     
-    //academic notice short desc
-    $wp_customize->add_setting(
-        'academic_hub_notice_shotdesc',
+    /*****************************************************
+     * Select Blog Section Hear
+     *****************************************************/
+	$wp_customize->add_setting( 
+        'academic_hub_notices_page_id', 
         array(
-			'sanitize_callback' => 'sanitize_text_field',
-			'transport'			=>	'postMessage',
+            'sanitize_callback' => 'academic_hub_sanitize_select'
         )
     );
-    $wp_customize->add_control(
-		'academic_hub_notice_shotdesc',
-		array(
-			'section'	  => 'academic_hub_notices_section',
-			'label'		  => esc_html__( 'Notice ', 'academic-hub' ),
-            'type'        => 'text'
-		)		
-	);
+    $wp_customize->add_control( 
+        'academic_hub_notices_page_id', 
+        array(
+			'label'         => esc_html__( 'Select Page Category', 'academic-hub' ),
+            'section'       => 'academic_hub_notices_section',
+            'type'          => 'select',
+            'choices'       => academic_hub_get_page_list( ),
+            'priority'      => 2,
+        )
+	); 
  
 
 }
