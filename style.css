@@ -8,7 +8,7 @@
  * License:         GNU General Public License v2.0 or later
  * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
  * Tags:            grid-layout, left-sidebar, one-column, right-sidebar, two-columns, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
- * Version:         1.0.6
+ * Version:         1.0.7
  * Text Domain:     auspicious
  */
 
@@ -1656,6 +1656,10 @@ p.comment-awaiting-moderation {
  * 25.0 - Media Queries (Mobile Small 30em (480px))
  */
  @media screen and (max-width: 30em) {
+	.site-container {
+		margin: 0;
+	}
+
 	.site-content {
 		padding: 1.125em;
 	}
@@ -1688,13 +1692,25 @@ p.comment-awaiting-moderation {
     
 	.content-area .outer-grid {
 		grid-template-columns: 1fr;
+	}
+
+	.left-sidebar .content-area,
+	.right-sidebar .content-area,
+	.left-sidebar .widget-area,
+	.right-sidebar .widget-area {
+		float: none;
+		width: 100%;
 	}
 }
 
 /**
  * 26.0 - Media Queries (Mobile Small 37.5em (600px))
  */
- @media screen and (min-height: 30.063em) and (max-width: 37.50em) {
+ @media screen and (min-width: 30.063em) and (max-width: 37.50em) {
+	.site-container {
+		margin: 0;
+	}
+
 	.site-content {
 		padding: 1.125em;
 	}
@@ -1727,13 +1743,21 @@ p.comment-awaiting-moderation {
     
 	.content-area .outer-grid {
 		grid-template-columns: 1fr;
+	}
+
+	.left-sidebar .content-area,
+	.right-sidebar .content-area,
+	.left-sidebar .widget-area,
+	.right-sidebar .widget-area {
+		float: none;
+		width: 100%;
 	}
 }
 
 /**
  * 27.0 - Media Queries (Mobile Medium 48.688em (667px))
  */
- @media screen and (min-height: 37.563em) and (max-width: 41.688em) {
+ @media screen and (min-width: 37.563em) and (max-width: 41.688em) {
 	.site-container {
 		margin: 0;
 		padding: 0;
@@ -1776,13 +1800,21 @@ p.comment-awaiting-moderation {
     
 	.content-area .outer-grid {
 		grid-template-columns: 1fr;
+	}
+
+	.left-sidebar .content-area,
+	.right-sidebar .content-area,
+	.left-sidebar .widget-area,
+	.right-sidebar .widget-area {
+		float: none;
+		width: 100%;
 	}
 }
 
 /**
  * 28.0 - Media Queries (Mobile Large 46em (736px))
  */
- @media screen and (min-height: 41.750em) and (max-width: 46em) {
+ @media screen and (min-width: 41.750em) and (max-width: 46em) {
 	.site-container {
 		margin: 0;
 		padding: 0;
@@ -1825,13 +1857,21 @@ p.comment-awaiting-moderation {
     
 	.content-area .outer-grid {
 		grid-template-columns: 1fr;
+	}
+
+	.left-sidebar .content-area,
+	.right-sidebar .content-area,
+	.left-sidebar .widget-area,
+	.right-sidebar .widget-area {
+		float: none;
+		width: 100%;
 	}
 }
 
 /**
  * 29.0 - Media Queries (Tablet Small 48em (768px))
  */
- @media screen and (min-height: 46.063em) and (max-width: 48em) {
+@media screen and (min-width: 46.063em) and (max-width: 48em) {
 	.site-container {
 		margin: 0;
 		padding: 0;
@@ -1873,7 +1913,21 @@ p.comment-awaiting-moderation {
     }
     
 	.content-area .outer-grid {
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr 1fr;
+	}
+
+	.left-sidebar .content-area,
+	.right-sidebar .content-area {
+		float: none;
+		width: 100%;
+	}
+
+	.left-sidebar .content-area,
+	.right-sidebar .content-area,
+	.left-sidebar .widget-area,
+	.right-sidebar .widget-area {
+		float: none;
+		width: 100%;
 	}
 }
 
@@ -1991,13 +2045,7 @@ p.comment-awaiting-moderation {
 /**
  * 31.0 - Media Queries (Desktop 73.125em 1170px))
  */
- @media screen and (min-width: 64.063em) {
-    .primary-navigation {
-        clear: none;
-        float: left;
-        width: 100%;
-    }
-    
+ @media screen and (min-width: 64.063em) {   
 	/* Position the menu in the header */
 	.primary-navigation,
 	.primary-navigation.toggled {
