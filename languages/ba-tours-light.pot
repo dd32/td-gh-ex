@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: BA Tours light\n"
-"POT-Creation-Date: 2019-01-04 19:27+0200\n"
+"POT-Creation-Date: 2019-03-14 22:17+0200\n"
 "PO-Revision-Date: 2018-04-10 13:59+0300\n"
 "Last-Translator: \n"
 "Language-Team: https://ba-booking.com\n"
@@ -105,11 +105,11 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: includes/class-cmb2-admin.php:91
+#: includes/class-cmb2-admin.php:93
 msgid "Fontawesome Metabox"
 msgstr ""
 
-#: includes/class-cmb2-admin.php:98
+#: includes/class-cmb2-admin.php:99
 msgid "Fontawesome 5 icon class"
 msgstr ""
 
@@ -149,161 +149,157 @@ msgstr ""
 msgid "Page template options"
 msgstr ""
 
-#: includes/class-redux.php:129
+#: includes/class-redux.php:144
 #, php-format
 msgid "BA Tours Light options %1$sTheme Documentation%2$s"
 msgstr ""
 
-#: includes/class-redux.php:137
+#: includes/class-redux.php:152
 msgid "Theme Options"
 msgstr ""
 
-#: includes/class-redux.php:138
+#: includes/class-redux.php:153
 msgid "BA Tours Light options"
 msgstr ""
 
-#: includes/class-redux.php:241
+#: includes/class-redux.php:256
 msgid "Documentation"
 msgstr ""
 
-#: includes/class-redux.php:319
+#: includes/class-redux.php:334
 msgid "Logo"
 msgstr ""
 
-#: includes/class-redux.php:334
+#: includes/class-redux.php:349
 msgid "Site Title"
 msgstr ""
 
-#: includes/class-redux.php:351
+#: includes/class-redux.php:366
 msgid "Tagline"
 msgstr ""
 
-#: includes/class-redux.php:368
+#: includes/class-redux.php:383
 msgid "Site Identity"
 msgstr ""
 
-#: includes/class-redux.php:384
+#: includes/class-redux.php:399
 msgid "Header"
 msgstr ""
 
-#: includes/class-redux.php:386
+#: includes/class-redux.php:401
 msgid "Add your contacts to the site header."
 msgstr ""
 
-#: includes/class-redux.php:393
+#: includes/class-redux.php:408
 msgid "Contact phone"
 msgstr ""
 
-#: includes/class-redux.php:404
+#: includes/class-redux.php:415
 msgid "Address line"
 msgstr ""
 
-#: includes/class-redux.php:415
+#: includes/class-redux.php:422
 msgid "Working hours"
 msgstr ""
 
-#: includes/class-redux.php:432
+#: includes/class-redux.php:435
 msgid "Front Page"
 msgstr ""
 
-#: includes/class-redux.php:442
+#: includes/class-redux.php:445
 #, php-format
 msgid ""
 "To use slideshow and shortcodes like on %1$sDemo site%2$s, you need to download "
 "from theme's site and install our free plugin: %3$sBA Tours light posts%4$s."
 msgstr ""
 
-#: includes/class-redux.php:449
+#: includes/class-redux.php:452
 msgid "Use slideshow"
 msgstr ""
 
-#: includes/class-redux.php:450
+#: includes/class-redux.php:453
 msgid ""
 "If it's enabled, Slides posts will be used to get images and titles for slideshow. "
 "Otherwise, the page featured image will be displayed."
 msgstr ""
 
-#: includes/class-redux.php:463
+#: includes/class-redux.php:466
 msgid "Search Form"
 msgstr ""
 
-#: includes/class-redux.php:477
+#: includes/class-redux.php:480
 msgid "Search Results"
 msgstr ""
 
-#: includes/class-redux.php:489
+#: includes/class-redux.php:492
 msgid "Footer"
 msgstr ""
 
-#: includes/class-redux.php:498
+#: includes/class-redux.php:501
 msgid "Copyrights"
 msgstr ""
 
-#: includes/class-redux.php:505
+#: includes/class-redux.php:508
 msgid "Copyrights text"
 msgstr ""
 
-#: includes/class-redux.php:506 includes/template-functions.php:212
+#: includes/class-redux.php:509 includes/template-functions.php:212
 msgid "Copyright &copy; {year}, {sitename}"
 msgstr ""
 
-#: includes/class-redux.php:528
+#: includes/class-redux.php:531
 msgid "Layouts"
 msgstr ""
 
-#: includes/class-redux.php:538
+#: includes/class-redux.php:541
 #, php-format
 msgid ""
 "Default page/post layout. These options are available in %1$sBA Tours theme%2$s "
 "only."
 msgstr ""
 
-#: includes/class-redux.php:593
+#: includes/class-redux.php:596
 msgid "Fonts"
 msgstr ""
 
-#: includes/class-redux.php:606
+#: includes/class-redux.php:609
 msgid "Colors"
 msgstr ""
 
-#: includes/class-redux.php:616 includes/class-redux.php:637
+#: includes/class-redux.php:619
 #, php-format
 msgid "These options are available in %1$sBA Tours theme%2$s only."
 msgstr ""
 
-#: includes/class-redux.php:628
-msgid "Custom CSS"
-msgstr ""
-
-#: includes/class-redux.php:698
+#: includes/class-redux.php:680
 msgid "Additional select field"
 msgstr ""
 
-#: includes/class-redux.php:699 includes/class-redux.php:814
+#: includes/class-redux.php:681 includes/class-redux.php:796
 msgid "Add terms from selected taxonomy to the search form filters."
 msgstr ""
 
-#: includes/class-redux.php:719 includes/class-redux.php:740
+#: includes/class-redux.php:701 includes/class-redux.php:722
 msgid "Icons line"
 msgstr ""
 
-#: includes/class-redux.php:720
+#: includes/class-redux.php:702
 msgid "Show term icons in the tour preview from selected taxonomies."
 msgstr ""
 
-#: includes/class-redux.php:741
+#: includes/class-redux.php:723
 msgid "Show term icons in the tour page header from selected taxonomies."
 msgstr ""
 
-#: includes/class-redux.php:761
+#: includes/class-redux.php:743
 msgid "Taxonomies support"
 msgstr ""
 
-#: includes/class-redux.php:762
+#: includes/class-redux.php:744
 msgid "Assign selected taxonomies to pages"
 msgstr ""
 
-#: includes/class-redux.php:789
+#: includes/class-redux.php:771
 msgid "None"
 msgstr ""
 

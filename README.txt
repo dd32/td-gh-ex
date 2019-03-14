@@ -1,10 +1,10 @@
 === BA Tours light ===
 Contributors: bookingalgorithms
 Requires at least: 4.6.1
-Tested up to: 5.1.0
+Tested up to: 5.1.1
 Requires PHP: 5.4
-Version: 1.0.5
-Stable tag: 1.0.5
+Version: 1.0.6
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, featured-images, custom-header, custom-menu, custom-logo, footer-widgets, theme-options, translation-ready
@@ -39,26 +39,19 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-BA Tours light theme screenshot uses next free images:
+BA Tours light theme screenshot uses next free image:
 
-main screenshot image - Santorini, Copyright Michelle Maria
-License: Pixabay License (https://pixabay.com/service/terms/#license)
-Source: https://pixabay.com/photos/oia-santorini-village-greece-416135/
-
-Venice, Copyright David Mark
-License: Pixabay License (https://pixabay.com/service/terms/#license)
-Source: https://pixabay.com/photos/venice-italy-boats-city-urban-2451047/
-
-Rome, Copyright Walkerssk
-License: Pixabay License (https://pixabay.com/service/terms/#license)
-Source: https://pixabay.com/photos/rome-the-vatican-italy-1945033/
-
-Florence, Copyright MustangJoe
-License: Pixabay License (https://pixabay.com/service/terms/#license)
-Source: https://pixabay.com/photos/florence-skyline-sunset-cityscape-1289364/
+Bryce Canyon, Copyright Gert Boers
+License: CC0 1.0 Universal (CC0 1.0)
+Source: https://stocksnap.io/photo/7Y84D37QEG
 
 
 == Changelog ==
+
+= 1.0.6 =
+* Updated readme.txt
+* Updated searchform.php
+* Removed bootstrap-popovers.css
 
 = 1.0.5 =
 * Updated readme.txt, fixed PHP Warning in readme validator, added URL and license of all images
