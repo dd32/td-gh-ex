@@ -31,6 +31,25 @@ function arya_multipurpose_customize_register( $wp_customize ) {
 	 */
 	require get_template_directory() . '/customizer/functions/sanitize-callback.php';
 
+	// Upspell
+	require_once trailingslashit( get_template_directory() ) . '/customizer/upgrade-to-pro/upgrade.php';
+
+	$wp_customize->register_section_type( 'Arya_Multipurpose_Customize_Section_Upsell' );
+
+	// Register sections.
+	$wp_customize->add_section(
+		new Arya_Multipurpose_Customize_Section_Upsell(
+			$wp_customize,
+			'theme_upsell',
+			array(
+				'title'    => esc_html__( 'Arya Multipurpose Pro', 'arya-multipurpose' ),
+				'pro_text' => esc_html__( 'Buy Now', 'arya-multipurpose' ),
+				'pro_url'  => 'https://everestthemes.com/themes/arya-multipurpose-pro-themes/',
+				'priority' => 1,
+			)
+		)
+	);
+	
 	/**
 	 * Load customizer options
 	 */
@@ -103,7 +122,11 @@ add_action( 'customize_preview_init', 'arya_multipurpose_customize_preview_js' )
  */
 function arya_multipurpose_customizer_enqueues() {
 
+	wp_enqueue_style( 'arya-multipurpose-upgrade', get_template_directory_uri() . '/customizer/upgrade-to-pro/upgrade.css' );
+
 	wp_enqueue_style( 'arya-multipurpose-customizer-style', get_template_directory_uri() . '/customizer/assets/css/customizer-style.css' );
+
+	wp_enqueue_script( 'arya-multipurpose-upgrade', get_template_directory_uri() . '/customizer/upgrade-to-pro/upgrade.js', array( 'jquery' ), ARYA_MULTIPURPOSE_VERSION, true );
 
 	wp_enqueue_script( 'arya-multipurpose-customizer-script', get_template_directory_uri() . '/customizer/assets/js/customizer-script.js', array( 'jquery' ), ARYA_MULTIPURPOSE_VERSION, true );
 }

@@ -3,8 +3,8 @@
 Contributors: everestthemes
 Requires PHP: 5.4
 Requires at least: 4.8.0
-Tested up to: 5.1.0
-Stable tag: 1.0.0
+Tested up to: 5.1.1
+Stable tag: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-background, custom-logo, custom-menu, custom-colors, featured-images, threaded-comments, translation-ready, post-formats, one-column, two-columns, left-sidebar, right-sidebar, footer-widgets, full-width-template, theme-options, blog, portfolio
@@ -81,6 +81,11 @@ Arya Multipurpose includes support for Infinite Scroll in Jetpack.
 
 
 == Changelog ==
+
+= 1.0.1 - March 14, 2019 =
+
+- Upsell added
+- screenshot changed
 
 = 1.0.0 - March 7, 2019 =
 
