@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Annina\n"
-"POT-Creation-Date: 2019-02-04 19:46+0100\n"
-"PO-Revision-Date: 2019-02-04 19:46+0100\n"
+"POT-Creation-Date: 2019-03-14 12:23+0100\n"
+"PO-Revision-Date: 2019-03-14 12:23+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -164,20 +164,10 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: footer.php:14
-msgid "http://wordpress.org/"
-msgstr ""
-
-#. translators: %s: WordPress name
-#: footer.php:17
-#, php-format
-msgid "Proudly powered by %s"
-msgstr ""
-
 #. translators: 1: theme name, 2: theme developer
-#: footer.php:23
+#: footer.php:22
 #, php-format
-msgid "Theme: %1$s by %2$s."
+msgid "WordPress Theme: %1$s by %2$s."
 msgstr ""
 
 #: functions.php:50
@@ -440,7 +430,7 @@ msgstr ""
 msgid "Powerful theme options"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:343 inc/annina-dynamic.php:261
+#: inc/admin/annina-admin-page.php:343 inc/annina-dynamic.php:278
 msgid "Loading Page"
 msgstr ""
 
@@ -448,7 +438,7 @@ msgstr ""
 msgid "Infinite scroll"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:353 inc/annina-dynamic.php:260
+#: inc/admin/annina-admin-page.php:353 inc/annina-dynamic.php:277
 msgid "Font switcher"
 msgstr ""
 
@@ -464,11 +454,11 @@ msgstr ""
 msgid "Breadcrumb"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:373 inc/annina-dynamic.php:263
+#: inc/admin/annina-admin-page.php:373 inc/annina-dynamic.php:280
 msgid "Post views counter"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:378 inc/annina-dynamic.php:265
+#: inc/admin/annina-admin-page.php:378 inc/annina-dynamic.php:282
 msgid "7 Shortcodes"
 msgstr ""
 
@@ -476,11 +466,11 @@ msgstr ""
 msgid "11 Exclusive Widgets"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:388 inc/annina-dynamic.php:267
+#: inc/admin/annina-admin-page.php:388 inc/annina-dynamic.php:284
 msgid "Related Posts Box"
 msgstr ""
 
-#: inc/admin/annina-admin-page.php:393 inc/annina-dynamic.php:268
+#: inc/admin/annina-admin-page.php:393 inc/annina-dynamic.php:285
 msgid "Information About Author Box"
 msgstr ""
 
@@ -564,51 +554,59 @@ msgstr ""
 msgid "Last Post Box Big?"
 msgstr ""
 
-#: inc/annina-dynamic.php:245
-msgid "Get Annina PRO WP Theme for only"
+#: inc/annina-dynamic.php:247
+msgid "Copyright Text"
 msgstr ""
 
-#: inc/annina-dynamic.php:250
-msgid "Watch the demo"
-msgstr ""
-
-#: inc/annina-dynamic.php:253
-msgid "Get Annina PRO Theme"
-msgstr ""
-
-#: inc/annina-dynamic.php:257
-msgid "Advanced Theme Options"
-msgstr ""
-
-#: inc/annina-dynamic.php:258
-msgid "Logo Upload"
-msgstr ""
-
-#: inc/annina-dynamic.php:259
-msgid "Choose sidebar position"
+#: inc/annina-dynamic.php:248
+msgid "Get the PRO version to remove CrestaProject Credits"
 msgstr ""
 
 #: inc/annina-dynamic.php:262
-msgid "Unlimited Colors and Skin"
+msgid "Get Annina PRO WP Theme for only"
 msgstr ""
 
-#: inc/annina-dynamic.php:264
-msgid "Post format"
-msgstr ""
-
-#: inc/annina-dynamic.php:266
-msgid "12 Exclusive Widgets"
-msgstr ""
-
-#: inc/annina-dynamic.php:269
-msgid "Sticky Sidebar"
+#: inc/annina-dynamic.php:267
+msgid "Watch the demo"
 msgstr ""
 
 #: inc/annina-dynamic.php:270
-msgid "And much more..."
+msgid "Get Annina PRO Theme"
+msgstr ""
+
+#: inc/annina-dynamic.php:274
+msgid "Advanced Theme Options"
+msgstr ""
+
+#: inc/annina-dynamic.php:275
+msgid "Logo Upload"
 msgstr ""
 
 #: inc/annina-dynamic.php:276
+msgid "Choose sidebar position"
+msgstr ""
+
+#: inc/annina-dynamic.php:279
+msgid "Unlimited Colors and Skin"
+msgstr ""
+
+#: inc/annina-dynamic.php:281
+msgid "Post format"
+msgstr ""
+
+#: inc/annina-dynamic.php:283
+msgid "12 Exclusive Widgets"
+msgstr ""
+
+#: inc/annina-dynamic.php:286
+msgid "Sticky Sidebar"
+msgstr ""
+
+#: inc/annina-dynamic.php:287
+msgid "And much more..."
+msgstr ""
+
+#: inc/annina-dynamic.php:293
 msgid "More features? Upgrade to PRO"
 msgstr ""
 

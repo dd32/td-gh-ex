@@ -233,6 +233,23 @@ function annina_color_primary_register( $wp_customize ) {
         'settings'   => 'annina_theme_options_masonrybig',
         'type'       => 'checkbox',
     ) );
+	/*
+	Copyright text
+	=====================================================
+	*/
+	$wp_customize->add_setting('annina_theme_options_copyrighttext', array(
+		'sanitize_callback' => 'annina_sanitize_text',
+		'default'    => '&copy; '.date('Y').' '. get_bloginfo('name'),
+		'type'       => 'theme_mod',
+		'capability' => 'edit_theme_options',
+	) );
+	$wp_customize->add_control('annina_theme_options_copyrighttext', array(
+		'label'      => __( 'Copyright Text', 'annina' ),
+		'description' => __( 'Get the PRO version to remove CrestaProject Credits', 'annina'),
+		'section'    => 'cresta_annina_options',
+		'settings'   => 'annina_theme_options_copyrighttext',
+		'type'       => 'text',
+	) );
 	
 	/*
 	Upgrade to PRO
@@ -296,6 +313,89 @@ function annina_sanitize_checkbox( $input ) {
 		return 1;
 	} else {
 		return '';
+	}
+}
+
+function annina_sanitize_text( $input ) {
+	return wp_kses($input, annina_allowed_html());
+}
+
+if( ! function_exists('annina_allowed_html')){
+	function annina_allowed_html() {
+		$allowed_tags = array(
+			'a' => array(
+				'class' => array(),
+				'id'    => array(),
+				'href'  => array(),
+				'rel'   => array(),
+				'title' => array(),
+				'target' => array(),
+			),
+			'abbr' => array(
+				'title' => array(),
+			),
+			'b' => array(),
+			'blockquote' => array(
+				'cite'  => array(),
+			),
+			'cite' => array(
+				'title' => array(),
+			),
+			'code' => array(),
+			'del' => array(
+				'datetime' => array(),
+				'title' => array(),
+			),
+			'dd' => array(),
+			'div' => array(
+				'class' => array(),
+				'title' => array(),
+				'style' => array(),
+			),
+			'dl' => array(),
+			'dt' => array(),
+			'em' => array(),
+			'h1' => array(),
+			'h2' => array(),
+			'h3' => array(),
+			'h4' => array(),
+			'h5' => array(),
+			'h6' => array(),
+			'i' => array(),
+			'br' => array(),
+			'img' => array(
+				'alt'    => array(),
+				'class'  => array(),
+				'height' => array(),
+				'src'    => array(),
+				'width'  => array(),
+			),
+			'li' => array(
+				'class' => array(),
+			),
+			'ol' => array(
+				'class' => array(),
+			),
+			'p' => array(
+				'class' => array(),
+			),
+			'q' => array(
+				'cite' => array(),
+				'title' => array(),
+			),
+			'span' => array(
+				'class' => array(),
+				'title' => array(),
+				'style' => array(),
+			),
+			'strike' => array(),
+			'strong' => array(),
+			'iframe' => array(),
+			'ul' => array(
+				'class' => array(),
+			),
+		);
+		return $allowed_tags;
 	}
 }
 
