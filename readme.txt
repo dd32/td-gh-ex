@@ -56,6 +56,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.7.8
+1. Fixed service section enable/disable issue.
 @version 1.7.7
 1. Fixed service icon and image issue.
 @version 1.7.6

@@ -60,6 +60,7 @@ if(empty($elitepress_service_content)){
 
 $elitepress_lite_options=theme_data_setup();
 $current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options );
+if( $current_options['service_section_enabled']== true ) {
 ?>
 <!-- Service Section -->
 <section class="service">
@@ -86,7 +87,7 @@ $current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array(
 </section>
 <!-- End of Service Section -->	
 		
-<?php
+<?php  }
 /**
  * Get content for features section.
  *
