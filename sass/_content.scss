@@ -276,35 +276,26 @@ article {
 .page-links {
 	clear: both;
 	margin: 0 0 1.6875em; 
-	
+
 	.page-links-title {
-		border: none;
 		color: $text-color;
 		font-weight: 600; 
-		padding-right: 0; 
-		padding-left: 0; 
-		text-transform: none; 
 	}
 
-	span {
-		border: 0.0625rem solid $highlight-color;
+	.post-page-numbers {
+		border: 0.0625rem solid $border-color;
 		border-radius: 4px;
-		color: $highlight-color; 
+		color: $text-secondary-color;
 		display: inline-block;
 		margin-right: 0.3125em; 
 		padding: 0.4375em 1.0625em 0.375em;
 		text-transform: uppercase;
-	}
 
-	a span {
-		border-color: $border-color; 
-		color: $text-secondary-color;
-		transition: .3s;
-		
-		&:hover {
+		&:hover,
+		&.current {
 			color: $highlight-color;
-			border-color: $highlight-color; 
-		}	
+			border-color: $highlight-color;
+		}
 	}
 }
 

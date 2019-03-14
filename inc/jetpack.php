@@ -19,12 +19,6 @@ function puro_jetpack_setup() {
 		'footer'    => 'page',
 		'posts_per_page' => 8
 	) );
-
-	/*
-	 * Enable support for Responsive Videos.
-	 * See: https://jetpack.com/support/responsive-videos/
-	 */
-	add_theme_support( 'jetpack-responsive-videos' );	
 }
 add_action( 'after_setup_theme', 'puro_jetpack_setup' );
 
