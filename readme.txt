@@ -599,3 +599,7 @@ with testing and feature suggestions.
 * Change: Removed tgm add plugins plugin, modified recommended plugins help panel
 * Code: Significant code refactoring, significant updates to handling of output translatable strings
 * Code: Significant reformatting to improve coding conventions for WP standards
+
+= Version 4.3.1 =
+Fix: Fixed issue with 4.3 fix for paragraph spacing
+Fix: Issue with Sticky Posts in Page with Posts

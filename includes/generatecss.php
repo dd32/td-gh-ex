@@ -483,8 +483,12 @@ function weaverx_output_style( $sout ) {
 	weaverx_css_style_val( $sout, '.entry-summary,.entry-content', '{padding-top:%.5fem;}',
 		'space_after_title_dec' );
 
-	weaverx_css_style_val( $sout, '#content ul,#content ol, #content p', '{margin-bottom:%.5fem;}',
-		'content_p_list_dec' );
+	$val = weaverx_getopt( 'content_p_list_dec' );
+
+	if ( $val && $val != 0 ) {  // treat 0 as default because of previous bug
+		weaverx_css_style_val( $sout, '#content ul,#content ol, #content p', '{margin-bottom:%.5fem;}',
+			'content_p_list_dec' );
+	}
 
 	weaverx_css_style_val( $sout, '#content *[class^="wp-block-"]', '{margin-top:%.5fem;}',
 		'content_block_margin_T' );

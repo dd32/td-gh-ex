@@ -1596,7 +1596,7 @@ if ( ! function_exists( 'weaverx_customizer_define_spacing_sections' ) ) :
 						'setting' => array(
 							'sanitize_callback' => 'weaverx_cz_sanitize_float',
 							'transport'         => 'postMessage',
-							'default'           => 0,
+							'default'           => 1.5,
 						),
 						'control' => array(
 							'control_type' => 'WeaverX_Range_Control',

@@ -188,11 +188,12 @@ if ( post_password_required() ) {
 
 			$weaverx_sticky = false;
 
-			if ( is_array( $sticky_posts ) && ! empty( $sticky_posts ) && in_array( get_the_ID(), $sticky_posts ) ) {
+			if ( ( is_array( $sticky_posts ) && ! empty( $sticky_posts ) && in_array( get_the_ID(), $sticky_posts ) ) || is_sticky() ) {
 				$weaverx_sticky = true;
 			}
 
-			if ( ( is_sticky() || $weaverx_sticky ) && $sticky_one ) {
+
+			if ( $weaverx_sticky  && $sticky_one ) {
 				get_template_part( 'templates/content', get_post_format() );
 			} elseif ( $first_one ) {
 				get_template_part( 'templates/content', get_post_format() );
@@ -232,6 +233,7 @@ if ( post_password_required() ) {
 				}    // end switch $num_cols
 				weaverx_masonry( 'end-post' );
 			}
+
 		}    // end while have posts
 		weaverx_masonry( 'end-posts' );
 		echo( "</div>\n" );
