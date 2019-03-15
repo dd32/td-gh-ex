@@ -3,8 +3,8 @@ Contributors: bookingalgorithms
 Requires at least: 4.6.1
 Tested up to: 5.1.1
 Requires PHP: 5.4
-Version: 1.0.6
-Stable tag: 1.0.6
+Version: 1.0.7
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, featured-images, custom-header, custom-menu, custom-logo, footer-widgets, theme-options, translation-ready
@@ -47,6 +47,9 @@ Source: https://stocksnap.io/photo/7Y84D37QEG
 
 
 == Changelog ==
+
+= 1.0.7 =
+* Fixed bug with missing "bootstrap-popovers.css"
 
 = 1.0.6 =
 * Updated readme.txt

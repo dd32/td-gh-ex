@@ -14,7 +14,7 @@
  * System defines.
  */
 define( 'BATOURSLIGHT', __FILE__ );
-define( 'BATOURSLIGHT_VERSION', '1.0.6' );
+define( 'BATOURSLIGHT_VERSION', '1.0.7' );
 define( 'BATOURSLIGHT_NAME', 'BA Tours light' );
 define( 'BATOURSLIGHT_URI', get_template_directory_uri() );
 define( 'BATOURSLIGHT_DIR', untrailingslashit( dirname( BATOURSLIGHT ) ) );
@@ -97,7 +97,6 @@ function batourslight_enqueue_scripts(){
     
         $styles = array(
 			'normalize' => 'normalize.css',
-			'bootstrap-popovers' => 'bootstrap-popovers.css',
             'bootstrap' => 'bootstrap.min.css',
 		);
 
