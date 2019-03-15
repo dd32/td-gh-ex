@@ -7,7 +7,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 	$wp_customize->add_section( 'project_settings' , array(
 	'title'      => __('Project settings', 'rambo'),
 	'capability'     => 'edit_theme_options',
-	'priority'   => 540,
+	'priority'   => 517,
    	) );
 
 		// enable project section

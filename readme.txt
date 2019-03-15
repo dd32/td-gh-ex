@@ -133,6 +133,10 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
 
 ChangLog
+@version 1.7.3.1
+Update Settings
+@version 1.7.3
+Updated settings
 @version 1.7.2
 1. Fixed slider issue.
 @version 1.7.1

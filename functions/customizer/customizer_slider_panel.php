@@ -16,7 +16,7 @@ function rambo_home_slider_customizer($wp_customize){
 /* Header Section */
 	$wp_customize->add_section( 'slider_section_settings', array(
 		'capability'     => 'edit_theme_options',
-		'priority'   => 510,
+		'priority'   => 514,
 		'title'      => __('Slider settings', 'rambo'),
 	) );
 
@@ -50,7 +50,7 @@ function rambo_home_slider_customizer($wp_customize){
 		
 		
 		//Slider Setting
-		$wp_customize->add_setting( 'rambo_pro_theme_options[slider_post]',array('default' => get_template_directory_uri().'/images/slider.jpg','sanitize_callback' => 'esc_url_raw','type' => 'option',
+		$wp_customize->add_setting( 'rambo_pro_theme_options[slider_post]',array('default' => get_template_directory_uri().'/images/slider.jpg','sanitize_callback' => 'esc_url_raw','type' => 'option','sanitize_callback'	=> 'wp_filter_nohtml_kses',
 		));
  
 		$wp_customize->add_control(

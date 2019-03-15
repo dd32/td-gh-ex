@@ -44,6 +44,7 @@ if ( ! function_exists( 'rambo_service_default_customize_register' ) ) :
 						'button_text' => 'Read More',
 						'link'       => '#',
 						'open_new_tab' => 'yes',
+						'choice'    => 'customizer_repeater_icon',
 						'id'         => 'customizer_repeater_56d7ea7f40b56',
 						),
 						array(
@@ -55,6 +56,7 @@ if ( ! function_exists( 'rambo_service_default_customize_register' ) ) :
 						'button_text' => 'Read More',
 						'link'       => '#',
 						'open_new_tab' => 'yes',
+						'choice'    => 'customizer_repeater_icon',
 						'id'         => 'customizer_repeater_56d7ea7f40b66',
 						),
 						array(
@@ -66,6 +68,7 @@ if ( ! function_exists( 'rambo_service_default_customize_register' ) ) :
 						'button_text' => 'Read More',
 						'link'       => '#',
 						'open_new_tab' => 'yes',
+						'choice'    => 'customizer_repeater_icon',
 						'id'         => 'customizer_repeater_56d7ea7f40b86',
 						),
 						array(
@@ -77,6 +80,7 @@ if ( ! function_exists( 'rambo_service_default_customize_register' ) ) :
 						'button_text' => 'Read More',
 						'link'       => '#',
 						'open_new_tab' => 'yes',
+						'choice'    => 'customizer_repeater_icon',
 						'id'         => 'customizer_repeater_56d7ea7f40b86',
 						),
 						

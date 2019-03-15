@@ -3,7 +3,7 @@ function rambo_header_customizer( $wp_customize ) {
 	
 	/* Header Section */	
 	$wp_customize->add_panel( 'header_options', array(
-		'priority'       => 201,
+		'priority'       => 125,
 		'capability'     => 'edit_theme_options',
 		'title'      => __('Header settings', 'rambo'),
 	) );

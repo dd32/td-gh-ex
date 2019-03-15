@@ -45,6 +45,12 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_import_data.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_emailcourse.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_team.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_shop.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_site_intro_bottom.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_client.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_template_settings.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_typography.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php' );
 	
 	

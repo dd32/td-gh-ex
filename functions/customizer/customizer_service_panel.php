@@ -13,7 +13,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 	$wp_customize->add_section( 'service_settings' , array(
 	'title'      => __('Service settings', 'rambo'),
 	'capability'     => 'edit_theme_options',
-	'priority'   => 530,
+	'priority'   => 516,
    	) );
 	
 		// enable service section

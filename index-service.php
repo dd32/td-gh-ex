@@ -63,6 +63,7 @@ if(empty($rambo_service_content))
 						'button_text' => 'Read More',
 						'link'       => '#',
 						'open_new_tab' => 'yes',
+						'choice'    => 'customizer_repeater_icon',
 						'id'         => 'customizer_repeater_56d7ea7f40b56',
 						),
 						array(
@@ -74,6 +75,7 @@ if(empty($rambo_service_content))
 						'button_text' => 'Read More',
 						'link'       => '#',
 						'open_new_tab' => 'yes',
+						'choice'    => 'customizer_repeater_icon',
 						'id'         => 'customizer_repeater_56d7ea7f40b66',
 						),
 						array(
@@ -85,6 +87,7 @@ if(empty($rambo_service_content))
 						'button_text' => 'Read More',
 						'link'       => '#',
 						'open_new_tab' => 'yes',
+						'choice'    => 'customizer_repeater_icon',
 						'id'         => 'customizer_repeater_56d7ea7f40b76',
 						),
 						array(
@@ -96,6 +99,7 @@ if(empty($rambo_service_content))
 						'button_text' => 'Read More',
 						'link'       => '#',
 						'open_new_tab' => 'yes',
+						'choice'    => 'customizer_repeater_icon',
 						'id'         => 'customizer_repeater_56d7ea7f40b86',
 						),
 						
@@ -130,6 +134,7 @@ foreach ( $rambo_service_content as $service_item ) :
 			$image = ! empty( $service_item->image_url ) ? apply_filters( 'rambo_translate_single_string', $service_item->image_url, 'service section' ) : '';
 			$buttontext = ! empty( $service_item->button_text ) ? apply_filters( 'rambo_translate_single_string', $service_item->button_text, 'service section' ) : '';
 			$opennewtab = ! empty( $service_item->open_new_tab) ? apply_filters('rambo_translate_single_string',$service_item->open_new_tab, 'service section' ) : '';
+			$choice = $service_item->choice;
 	
 			$color = '';
 			if ( is_customize_preview() && ! empty( $service_item->color ) ) {
@@ -139,7 +144,9 @@ foreach ( $rambo_service_content as $service_item ) :
 
 ?>
 			<div class="span3 home_service">
-				<?php if ( ! empty( $image ) ) : ?>
+				<?php 
+					if($choice == 'customizer_repeater_image'){
+				if ( ! empty( $image ) ) : ?>
 					<?php if ( ! empty( $link ) ) {?>
 					<a href="<?php echo esc_url( $link ); ?>" <?php if($opennewtab == 'yes'){ echo 'target="_blank"';}?>>
 					<?php } ?>
@@ -150,14 +157,23 @@ foreach ( $rambo_service_content as $service_item ) :
 					<?php if ( ! empty( $link ) ) {?>
 					</a>
 					<?php }?>
-				<?php endif; ?>
-				
-							
-							<?php if ( ! empty( $icon ) ) :?>
+				<?php endif; 
+					} 
+					if($choice == 'customizer_repeater_icon'){
+					if ( ! empty( $icon ) ) :?>
 							<span class="fa-stack fa-4x icon_align_center">
+							<?php if ( ! empty( $link ) )
+								{?>
+							<a href="<?php echo esc_url( $link ); ?>" <?php if($opennewtab == 'yes'){ echo 'target="_blank"';}?>>
+							<?php } ?>
 								<i class="fa <?php echo esc_html( $icon ); ?> home_media_icon_1x fa-inverse" ></i>
+							<?php if ( ! empty( $link ) ) {?>
+							</a> <?php } ?>
+					
 							</span>
-							<?php endif; ?>
+					<?php endif;
+					}
+					?>
 				
 				<?php if ( ! empty( $title ) ) : ?>
 <a <?php if(!empty($link)){?> href="<?php echo esc_url( $link ); ?>" <?php } ?><?php if($opennewtab == 'yes'){ echo 'target="_blank"';}?>>
