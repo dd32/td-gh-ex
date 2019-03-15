@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Semplicemente\n"
-"POT-Creation-Date: 2018-12-28 18:58+0100\n"
-"PO-Revision-Date: 2018-12-28 18:58+0100\n"
+"POT-Creation-Date: 2019-03-15 08:32+0100\n"
+"PO-Revision-Date: 2019-03-15 08:32+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -173,20 +173,10 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: footer.php:15
-msgid "https://wordpress.org/"
-msgstr ""
-
-#. translators: %s: WordPress name
-#: footer.php:18
-#, php-format
-msgid "Proudly powered by %s"
-msgstr ""
-
 #. translators: 1: theme name, 2: theme developer
-#: footer.php:24
+#: footer.php:23
 #, php-format
-msgid "Theme: %1$s by %2$s."
+msgid "WordPress Theme: %1$s by %2$s."
 msgstr ""
 
 #: functions.php:49
@@ -435,12 +425,12 @@ msgid "Powerful theme options"
 msgstr ""
 
 #: inc/admin/semplicemente-admin-page.php:338
-#: inc/semplicemente-dynamic.php:200
+#: inc/semplicemente-dynamic.php:218
 msgid "Loading Page"
 msgstr ""
 
 #: inc/admin/semplicemente-admin-page.php:343
-#: inc/semplicemente-dynamic.php:199
+#: inc/semplicemente-dynamic.php:217
 msgid "Font switcher"
 msgstr ""
 
@@ -449,12 +439,12 @@ msgid "Breadcrumb"
 msgstr ""
 
 #: inc/admin/semplicemente-admin-page.php:353
-#: inc/semplicemente-dynamic.php:202
+#: inc/semplicemente-dynamic.php:220
 msgid "Post views counter"
 msgstr ""
 
 #: inc/admin/semplicemente-admin-page.php:358
-#: inc/semplicemente-dynamic.php:204
+#: inc/semplicemente-dynamic.php:222
 msgid "7 Shortcodes"
 msgstr ""
 
@@ -463,12 +453,12 @@ msgid "10 Exclusive Widgets"
 msgstr ""
 
 #: inc/admin/semplicemente-admin-page.php:368
-#: inc/semplicemente-dynamic.php:206
+#: inc/semplicemente-dynamic.php:224
 msgid "Related Posts Box"
 msgstr ""
 
 #: inc/admin/semplicemente-admin-page.php:373
-#: inc/semplicemente-dynamic.php:207
+#: inc/semplicemente-dynamic.php:225
 msgid "Information About Author Box"
 msgstr ""
 
@@ -548,47 +538,55 @@ msgstr ""
 msgid "Show Search Button"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:184
+#: inc/semplicemente-dynamic.php:187
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/semplicemente-dynamic.php:188
+msgid "Get the PRO version to remove CrestaProject Credits"
+msgstr ""
+
+#: inc/semplicemente-dynamic.php:202
 msgid "Get Semplicemente PRO WP Theme for only"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:189
+#: inc/semplicemente-dynamic.php:207
 msgid "Watch the demo"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:192
+#: inc/semplicemente-dynamic.php:210
 msgid "Get Semplicemente PRO Theme"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:196
+#: inc/semplicemente-dynamic.php:214
 msgid "Advanced Theme Options"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:197
+#: inc/semplicemente-dynamic.php:215
 msgid "Logo Upload"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:198
+#: inc/semplicemente-dynamic.php:216
 msgid "Choose sidebar position"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:201
+#: inc/semplicemente-dynamic.php:219
 msgid "Unlimited Colors and Skin"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:203
+#: inc/semplicemente-dynamic.php:221
 msgid "Post format"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:205
+#: inc/semplicemente-dynamic.php:223
 msgid "12 Exclusive Widgets"
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:208
+#: inc/semplicemente-dynamic.php:226
 msgid "And much more..."
 msgstr ""
 
-#: inc/semplicemente-dynamic.php:214
+#: inc/semplicemente-dynamic.php:232
 msgid "More features? Upgrade to PRO"
 msgstr ""
 
