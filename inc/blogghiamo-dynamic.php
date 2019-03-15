@@ -252,6 +252,24 @@ function blogghiamo_color_primary_register( $wp_customize ) {
     ) );
 	
 	/*
+	Copyright text
+	=====================================================
+	*/
+	$wp_customize->add_setting('blogghiamo_theme_options_copyrighttext', array(
+		'sanitize_callback' => 'blogghiamo_sanitize_text',
+		'default'    => '&copy; '.date('Y').' '. get_bloginfo('name'),
+		'type'       => 'theme_mod',
+		'capability' => 'edit_theme_options',
+	) );
+	$wp_customize->add_control('blogghiamo_theme_options_copyrighttext', array(
+		'label'      => __( 'Copyright Text', 'blogghiamo' ),
+		'description' => __( 'Get the PRO version to remove CrestaProject Credits', 'blogghiamo'),
+		'section'    => 'cresta_blogghiamo_options',
+		'settings'   => 'blogghiamo_theme_options_copyrighttext',
+		'type'       => 'text',
+	) );
+	
+	/*
 	Upgrade to PRO
 	=====================================================
 	*/
@@ -315,6 +333,89 @@ function blogghiamo_sanitize_checkbox( $input ) {
 		return 1;
 	} else {
 		return '';
+	}
+}
+
+function blogghiamo_sanitize_text( $input ) {
+	return wp_kses($input, blogghiamo_allowed_html());
+}
+
+if( ! function_exists('blogghiamo_allowed_html')){
+	function blogghiamo_allowed_html() {
+		$allowed_tags = array(
+			'a' => array(
+				'class' => array(),
+				'id'    => array(),
+				'href'  => array(),
+				'rel'   => array(),
+				'title' => array(),
+				'target' => array(),
+			),
+			'abbr' => array(
+				'title' => array(),
+			),
+			'b' => array(),
+			'blockquote' => array(
+				'cite'  => array(),
+			),
+			'cite' => array(
+				'title' => array(),
+			),
+			'code' => array(),
+			'del' => array(
+				'datetime' => array(),
+				'title' => array(),
+			),
+			'dd' => array(),
+			'div' => array(
+				'class' => array(),
+				'title' => array(),
+				'style' => array(),
+			),
+			'dl' => array(),
+			'dt' => array(),
+			'em' => array(),
+			'h1' => array(),
+			'h2' => array(),
+			'h3' => array(),
+			'h4' => array(),
+			'h5' => array(),
+			'h6' => array(),
+			'i' => array(),
+			'br' => array(),
+			'img' => array(
+				'alt'    => array(),
+				'class'  => array(),
+				'height' => array(),
+				'src'    => array(),
+				'width'  => array(),
+			),
+			'li' => array(
+				'class' => array(),
+			),
+			'ol' => array(
+				'class' => array(),
+			),
+			'p' => array(
+				'class' => array(),
+			),
+			'q' => array(
+				'cite' => array(),
+				'title' => array(),
+			),
+			'span' => array(
+				'class' => array(),
+				'title' => array(),
+				'style' => array(),
+			),
+			'strike' => array(),
+			'strong' => array(),
+			'iframe' => array(),
+			'ul' => array(
+				'class' => array(),
+			),
+		);
+		return $allowed_tags;
 	}
 }
 

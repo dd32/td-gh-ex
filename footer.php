@@ -12,16 +12,15 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info smallPart">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'blogghiamo' ) ); ?>">
 			<?php
-			/* translators: %s: WordPress name */
-			printf( esc_html__( 'Proudly powered by %s', 'blogghiamo' ), 'WordPress' );
-			?>
-			</a>
+			$copyrightText = get_theme_mod('blogghiamo_theme_options_copyrighttext', '&copy; '.date('Y').' '. get_bloginfo('name'));
+			if ($copyrightText || is_customize_preview()): ?>
+				<span class="custom"><?php echo wp_kses($copyrightText, blogghiamo_allowed_html()); ?></span>
+			<?php endif; ?>
 			<span class="sep"> | </span>
 			<?php
 			/* translators: 1: theme name, 2: theme developer */
-			printf( esc_html__( 'Theme: %1$s by %2$s.', 'blogghiamo' ), '<a title="Blogghiamo Theme" target="_blank" href="https://crestaproject.com/downloads/blogghiamo/" rel="nofollow">Blogghiamo</a>', 'CrestaProject WordPress Themes' );
+			printf( esc_html__( 'WordPress Theme: %1$s by %2$s.', 'blogghiamo' ), '<a title="Blogghiamo Theme" target="_blank" href="https://crestaproject.com/downloads/blogghiamo/" rel="nofollow">Blogghiamo</a>', 'CrestaProject' );
 			?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->

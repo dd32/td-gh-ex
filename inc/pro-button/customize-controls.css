@@ -1,3 +1,9 @@
+li#accordion-section-cresta_blogghiamo_buy_pro h3:before {
+	font-family: dashicons;
+    content: "\f488";
+    padding-right: 0.5em;
+    float: left;
+}
 #customize-controls .control-section-blogghiamoProVersion .accordion-section-title:hover,
 #customize-controls .control-section-blogghiamoProVersion .accordion-section-title:focus {
 	background-color: #fff;
