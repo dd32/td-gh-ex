@@ -3,7 +3,7 @@ Some notes on creating a child theme:
 1. This directory contains a very minimal example of an Weaver Xtreme Child theme.
 
 2. You can use functions.php to write functions to override any function in the main theme that is wrapped by
-   an "if (!function_exists('func_name'))" check. These are known as "pluggable" functions. Many of the original
+   an "if ( !function_exists( 'func_name' ) )" check. These are known as "pluggable" functions. Many of the original
    definitions are found in functions.php, but othere are found elsewhere in the code.
 
 3. You can provide a complete replacement for template-type files in the parent. These are files that generate

@@ -4,30 +4,30 @@
  */
 
 if ( ! function_exists( 'weaverx_customizer_define_starting_sections' ) ) :
-/**
- * Define the sections and settings for the Speed Test panel
- * causes execution time out at: wp-includes/class-wp-customize-setting.php near line 522
- *
- */
-function weaverx_customizer_define_starting_sections( ) {
-	$panel = 'weaverx_starting';
-	$starting_sections = array();
-
 	/**
-	 * Intro
+	 * Define the sections and settings for the Speed Test panel
+	 * causes execution time out at: wp-includes/class-wp-customize-setting.php near line 522
+	 *
 	 */
-	$starting_sections['starting-intro'] = array(
-		'panel'   => $panel,
-		'title'   => __( 'Introduction to Weaver Xtreme', 'weaver-xtreme' ),
-		'description' => __('A concise introduction to Weaver Xtreme.', 'weaver-xtreme') .
-		   ' <br />(' . WEAVERX_THEMEVERSION . ')',		// don't translate theme name/version
-		'options' => array(
-			'starting-intro-header' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Introduction', 'weaver-xtreme' ),
-					'description'   => __(
-'<p><em>Weaver Xtreme</em> allows you to customize virtually every aspect of your site.
+	function weaverx_customizer_define_starting_sections() {
+		$panel             = 'weaverx_starting';
+		$starting_sections = array();
+
+		/**
+		 * Intro
+		 */
+		$starting_sections['starting-intro'] = array(
+			'panel'       => $panel,
+			'title'       => esc_html__( 'Introduction to Weaver Xtreme', 'weaver-xtreme' ),
+			'description' => esc_html__( 'A concise introduction to Weaver Xtreme.', 'weaver-xtreme' ) .
+			                 ' <br />(' . WEAVERX_THEMEVERSION . ')',        // don't translate theme name/version
+			'options'     => array(
+				'starting-intro-header' => array(
+					'control' => array(
+						'control_type' => 'WeaverX_Misc_Control',
+						'label'        => esc_html__( 'Introduction', 'weaver-xtreme' ),
+						'description'  => weaverx_filter_text(
+							'<p><em>Weaver Xtreme</em> allows you to customize virtually every aspect of your site.
 The Customizer Options are organized as top level panels based on WHAT you want to customize, and a second level of sections
 based on WHERE you want to make the customizations. Remember: <strong style="color:red;">WHAT</strong> and <strong style="color:red;">WHERE</strong>.</p>
 <h4>First Level Options: WHAT to Set - Option Categories</h4>
@@ -37,7 +37,7 @@ based on WHERE you want to make the customizations. Remember: <strong style="col
           <li><strong>&#9656; Spacing, Widths, Alignment</strong> - Set margins, padding, spacing, heights, widths, and alignment.</li>
           <li><strong>&#9656; Style</strong> -  Set borders, shadows, rounded corners, list bullet style, icons.</li>
           <li><strong>&#9656; Typography</strong> - Set font family, font size, bold, italic, default base font information.</li>
-          <li><strong>&#9656; Visibility</strong> - Show or hide various elements - usually by device (phone, tablet, desktop).</li>
+          <li><strong>&#9656; Visibility</strong> - Show or hide various elements - usually by device ( phone, tablet, desktop ).</li>
           <li><strong>&#9656; Layout</strong> - Specify element layout - sidebars, etc.</li>
           <li><strong>&#9656; Images</strong> -  Set borders, placement, Featured Images, Header Images, Background Images.</li>
           <li><strong>&#9656; Added Content</strong> - Define added content for extra HTML insertion areas.</li>
@@ -68,71 +68,71 @@ based on WHERE you want to make the customizations. Remember: <strong style="col
   <li><strong>&#9656; Global Options</strong> - some of the Option Categories can include other sections that can apply to global settings. Typography, for example, allows you to specify various global options such as base font size.</li>
 </ul>',
 
-'weaver-xtreme' ),
-					'type'  => 'html',
+							'weaver-xtreme' ),
+						'type'         => 'html',
+					),
 				),
 			),
-		),
-	);
+		);
 
-	/**
-	 * Subtheme
-	 */
+		/**
+		 * Subtheme
+		 */
 
 
-	$starting_sections['starting-subtheme']	 = array(
-		'panel'   => $panel,
-		'title'   => __( 'Try a Pre-defined Subtheme', 'weaver-xtreme' ),
-		'options' => array(
+		$starting_sections['starting-subtheme'] = array(
+			'panel'   => $panel,
+			'title'   => esc_html__( 'Try a Pre-defined Subtheme', 'weaver-xtreme' ),
+			'options' => array(
 
-			'load_subtheme' => array(
-				'setting' => array(
-					'transport' => 'postMessage'
-				),
-				'control' => array(
-					'control_type' => 'WeaverX_Load_WX_Subtheme',
-					'label' => __( 'Predefined Weaver Xtreme Subthemes', 'weaver-xtreme' ),
-					'description' => __('Get a quick start on your site by selecting on of these predefined subthemes.
-Once you\'ve picked a subtheme, you can tweak it to look just like you want.', 'weaver-xtreme'),
+				'load_subtheme' => array(
+					'setting' => array(
+						'transport' => 'postMessage',
+					),
+					'control' => array(
+						'control_type' => 'WeaverX_Load_WX_Subtheme',
+						'label'        => esc_html__( 'Predefined Weaver Xtreme Subthemes', 'weaver-xtreme' ),
+						'description'  => esc_html__( 'Get a quick start on your site by selecting on of these predefined subthemes.
+Once you\'ve picked a subtheme, you can tweak it to look just like you want.', 'weaver-xtreme' ),
+					),
 				),
 			),
-		)
-	);
+		);
 
-	/**
-	 * Help links
-	 */
-	$starting_sections['starting-help'] = array(
-		'panel'   => $panel,
-		'title'   => __( 'Get Help using Weaver Xtreme', 'weaver-xtreme' ),
-		'description' => __('Read the Weaver Xtreme Documentation', 'weaver-xtreme'),
-		'options' => array(
-			'starting-help-header' => array(
-				'control' => array(
-					'control_type' => 'WeaverX_Misc_Control',
-					'label'   => __( 'Get Help', 'weaver-xtreme' ),
-					'description'   => sprintf(__(
-'<h3>Support Forum</h3><p>Please see our active %s <strong>Weaver Xtreme Support Forum</strong></a> for online help.</p>
-<h3>Theme Documentation and Guide</h3><p>See the %s</strong> Weaver Xtreme Online Guide</strong></a> for using the Weaver Xtreme Theme.</p>
-<h3>Theme Demo</h3><p>%s<strong>Weaver Xtreme Demo Site</a></strong><br />Live demo of Weaver Xtreme and Weaver Xtreme Plus features.</p>
-<h3>CSS Tutorial</h3><p>Click for a short %s.</p>
-<h3>Supported Fonts</h3><p>Click for demo of %s.</p>
+		/**
+		 * Help links
+		 */
+		$starting_sections['starting-help'] = array(
+			'panel'       => $panel,
+			'title'       => esc_html__( 'Get Help using Weaver Xtreme', 'weaver-xtreme' ),
+			'description' => esc_html__( 'Read the Weaver Xtreme Documentation', 'weaver-xtreme' ),
+			'options'     => array(
+				'starting-help-header' => array(
+					'control' => array(
+						'control_type' => 'WeaverX_Misc_Control',
+						'label'        => esc_html__( 'Get Help', 'weaver-xtreme' ),
+						'description'  => sprintf( weaverx_filter_text(
+							'<h3>Support Forum</h3><p>Please see our active <strong>%1$s</strong> for online help.</p>
+<h3>Theme Documentation and Guide</h3><p>See the <strong>%2$s</strong> for using the Weaver Xtreme Theme.</p>
+<h3>Theme Demo</h3><p><strong>%3$s</strong><br />Live demo of Weaver Xtreme and Weaver Xtreme Plus features.</p>
+<h3>CSS Tutorial</h3><p>Click for a short <strong>%4$s</strong>.</p>
+<h3>Supported Fonts</h3><p>Click for <strong>%5$s</strong>.</p>
 ', 'weaver-xtreme' ),
-		weaverx_site('','//forum.weavertheme.com/',__('Weaver Xtreme Support Forum', 'weaver-xtreme'),false),
-		weaverx_site('','//guide.weavertheme.com/',__('Weaver Xtreme Guide', 'weaver-xtreme'),false),
-		weaverx_site('','//demo.weavertheme.com/',__('Weaver Xtreme Demo Site', 'weaver-xtreme'),false),
-		weaverx_help_link('css-help.html', __('Weaver CSS Help', 'weaver-xtreme'), __('CSS Tutorial', 'weaver-xtreme'), false),
-		weaverx_help_link('font-demo.html', __('Examples of supported fonts', 'weaver-xtreme'), __('Font Examples', 'weaver-xtreme'), false)
-		),
+							weaverx_site( '', '//forum.weavertheme.com/', esc_html__( 'Weaver Xtreme Support Forum', 'weaver-xtreme' ), false ),
+							weaverx_site( '', '//guide.weavertheme.com/', esc_html__( 'Weaver Xtreme Guide', 'weaver-xtreme' ), false ),
+							weaverx_site( '', '//demo.weavertheme.com/', esc_html__( 'Weaver Xtreme Demo Site', 'weaver-xtreme' ), false ),
+							weaverx_help_link( 'css-help.html', esc_html__( 'Weaver CSS Help', 'weaver-xtreme' ), esc_html__( 'CSS Tutorial', 'weaver-xtreme' ), false ),
+							weaverx_help_link( 'font-demo.html', esc_html__( 'Examples of supported fonts', 'weaver-xtreme' ), esc_html__( 'Font Examples', 'weaver-xtreme' ), false )
+						),
 
-					'type'  => 'HTML',
+						'type' => 'HTML',
+					),
 				),
 			),
-		),
-	);
+		);
 
 
-	return $starting_sections;
-}
+		return $starting_sections;
+	}
 endif;
-?>
+

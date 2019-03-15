@@ -8,8 +8,8 @@ fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red,
 translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.9
-Tested up to: 5.0
-Stable tag: 4.2.5
+Tested up to: 5.1
+Stable tag: 4.2.7
 
 == Description ==
 
@@ -25,16 +25,16 @@ under GPL V2. The source code for Weaver Xtreme is available at
 http://wordpress.org/themes/weaver-xtreme
 * Images: All images included with Weaver Xtreme are either original works of the author which
 have been placed into the public domain, or have been derived from other public domain sources,
-and thus need no license. (This does not include the images provided with any of the
-below listed scripts and libraries. Those images are covered by their respective licenses.)
+and thus need no license. ( This does not include the images provided with any of the
+below listed scripts and libraries. Those images are covered by their respective licenses. )
 * Weaver Xtreme also includes several scripts and libraries that are covered under the terms
 of their own licenses in the listed files in the Weaver Xtreme theme distribution:
-** Yetii - Yet (E)Another Tab Interface Implementation - license in /js/yetii/yetii.js (BSD)
+** Yetii - Yet ( E )Another Tab Interface Implementation - license in /js/yetii/yetii.js ( BSD )
 ** Some Customizer code inspired by Make Theme - GNU General Public License v2 or later
 ** Save, Restore code inspired by Customizer Export / Import plugin, GPL V2 or later
-** Accordion, jQuery Plugin - license in /js/accordion/LICENSE (New BSD)
-** jscolor, JavaScript Color Picker - license in /js/jscolor/jscolor.js (GLGPL)
-** html5 IE lib - license in /js/htm5.js (MIT)
+** Accordion, jQuery Plugin - license in /js/accordion/LICENSE ( New BSD )
+** jscolor, JavaScript Color Picker - license in /js/jscolor/jscolor.js ( GLGPL )
+** html5 IE lib - license in /js/htm5.js ( MIT )
 ** FitVids - WTFPL
 ** javascript-detect-element-resize - MIT
 ** Genericons - GPL V2
@@ -60,7 +60,7 @@ with testing and feature suggestions.
 = Version 1.0.1 =
 * New: Desktop Menu Bar Item Spacing Option
 * New: .wvrx-fullwidth built-in class for full width BG color
-* New: Add CSS Classes to HTML insertion areas, Header, Title/Tagline block (X-Plus)
+* New: Add CSS Classes to HTML insertion areas, Header, Title/Tagline block ( X-Plus )
 * Tweak: Auto change columns for galleries on mobile devices
 * Tweak: Changed default theme to Plain, new screenshot provided
 * Tweak: Some interactions with X-Plus
@@ -71,19 +71,19 @@ with testing and feature suggestions.
 * Fix: added missing .is-desktop to full bg color rules
 * Fix: full width bg unintended left border in some cases
 * Fix: added default font-weight:normal; to menus to avoid override by content link settings
-* Fix: issue with bold font links (Menu)
+* Fix: issue with bold font links ( Menu )
 * Fix: Info Bar page navigation on Page with Posts wasn't displaying
-* Fix: Rounded Corner Radius generated CSS (X-Plus)
+* Fix: Rounded Corner Radius generated CSS ( X-Plus )
 * Fix: Auto margins on right sidebars - stack top
 
 = Version 1.0.2 =
 * New: added 20 new sub-themes
 * New: added filters to many visitor side strings to allow customization - advanced, see help file.
 * New: Exclude Pages From SiteMap option on Advanced Options:Site Options tab. Added CSS IDs to SiteMap sections for custom styling.
-* New: Site Title area Logo/HTML option (Plus)
+* New: Site Title area Logo/HTML option ( Plus )
 * New: .is-ipad, .is-ipod .is-iphone .is-ios, .is-android, .is-windows, .is-macos device/os specific classes
 * New: option to force full browser height for short pages
-* New: extend Area BG color for Header, Container, Footer, and menus (free version!)
+* New: extend Area BG color for Header, Container, Footer, and menus ( free version! )
 * New: set Mobile Menu trigger width for Primary/Secondary menu bars
 * New: support for JetPack's Infinite Scroll - supports blog page, including multiple columns
 * Tweak: Changed default top/bottom margin on Footer and Wrapper Areas to 0
@@ -106,15 +106,15 @@ with testing and feature suggestions.
 * Tweak: Added support for WP 4.1 'title-tag'
 * Tweak: Default Menu alignment and margin rules
 * Tweak: CSS and JS for full height/width
-* Tweak: Right align on alignment (not allowed)
-* Tweak: changed multi-column post styling to allow nth-child rules to work right (div to span clear)
+* Tweak: Right align on alignment ( not allowed )
+* Tweak: changed multi-column post styling to allow nth-child rules to work right ( div to span clear )
 * Fix: Normal Weight for Titles option
 * Fix: Allow non-standard 'property' in <head> <meta> tag.
 
 = Version 1.1 =
 * New: Alternative SmartMenus - X-Plus
 * New: Border around submenus
-* Tweak: Submenu styling (inline-block -> block)
+* Tweak: Submenu styling ( inline-block -> block )
 * Tweak: z-index for full page width
 * Tweak: show Weaver Xtreme Plus version in HTML
 * Tweak: menu layout speeded up
@@ -132,7 +132,7 @@ with testing and feature suggestions.
 * Tweak: italic no longer applied to menu arrows - should not have been applied
 * Tweak: menu handling on some touch devices / browsers - iOS, IE
 * Fix: minimized css/js
-* Fix: MegaMenu border (X-Plus)
+* Fix: MegaMenu border ( X-Plus )
 
 = Version 1.1.2 =
 * Fix: missing <div> for author-link, extra </span>
@@ -144,7 +144,7 @@ with testing and feature suggestions.
 = Version 1.2 =
 * New: Multiple Column option for Page content
 * New: Full Width Subthemes - Dark and Light plus Demo versions
-* New: Set menu bar switch desktop/mobile point (Plus)
+* New: Set menu bar switch desktop/mobile point ( Plus )
 * Tweak: additional support for Plus
 * Tweak: Recommend Plugins - added WP Edit and WP Retina 2x
 * Tweak: A few documentation changes
@@ -164,7 +164,7 @@ with testing and feature suggestions.
 = Version 1.2.3 =
 * New: Plain - Full Width subtheme
 * Tweak: Moved Edit button inside .entry-content on Pages
-* Tweak: Updated to new TGM library (for installing recommended plugins)
+* Tweak: Updated to new TGM library ( for installing recommended plugins )
 * Fix: 3-column Post display on small tablets
 * Fix: z-index for Smart Menu HTML areas
 
@@ -175,14 +175,14 @@ with testing and feature suggestions.
 = Version 1.3 =
 * New: Custom Menu Placeholder item hover cursor specification
 * New: New item on Customizer Menu: link to Theme Options
-* New: Extend multiple column post display to archive-like pages (archive, author, category, tag)
+* New: Extend multiple column post display to archive-like pages ( archive, author, category, tag )
 * Fix: <!--nextpage--> support on pages
 * Fix: style for weaver slider FI's
 * Fix: various translation text domain issues
 * Tweak: Weaver Xtreme Theme Support plugin nag
 * Tweak: Recommended Plugins wording, TGMPA update
-* Tweak: moved loading of style sheets to weaverx_enqueue_scripts() action
-* Tweak: support for shortcodes in Smart Menus (Plus)
+* Tweak: moved loading of style sheets to weaverx_enqueue_scripts( ) action
+* Tweak: support for shortcodes in Smart Menus ( Plus )
 * Tweak: Comment form translation fix
 * Tweak: Page with Posts: sticky + author filter
 
@@ -196,9 +196,9 @@ with testing and feature suggestions.
 * New: Added Header/Footer Center Content within HTML area option
 * New: Retain Menu Bar Hover BG Color option when open submenus
 * New: Top/Bottom margins on Primary, Secondary, Extra Menu bars
-* New: Character and Word spacing (Xtreme Plus)
+* New: Character and Word spacing ( Xtreme Plus )
 * New: Support for Cryllic, Greek, Hebrew, and Vietnamese character sets with some fonts.
-* Change: Removed WP Appearance : "Theme Options" from core theme. (now included with theme support plugin)
+* Change: Removed WP Appearance : "Theme Options" from core theme. ( now included with theme support plugin )
 * Change: Appearance "Theme Options" label changed to "Weaver Xtreme Admin"
 * Change: No longer recommend WP Retina 2x plugin as that functionality is now in WP 4.4
 * Tweak: Default font changed to "Open Sans" from "Arial" to take advantage of Google Fonts.
@@ -232,7 +232,7 @@ with testing and feature suggestions.
 * Tweak: .content-3-col help file information updated
 
 = Version 2.0.5 =
-* New: Disable Google Fonts (Advanced Option)
+* New: Disable Google Fonts ( Advanced Option )
 * Fix: Caption color, image border updates in Customizer
 * Fix: Default WP Site BG Color now shows in Customizer
 
@@ -240,7 +240,7 @@ with testing and feature suggestions.
 * Versioning issue with WP.org upload, no 2.0.6
 
 = Version 2.0.8 =
-* New: Pre and Post #header div position for Header Widget Area (X-Plus)
+* New: Pre and Post #header div position for Header Widget Area ( X-Plus )
 * Fix: tweak TinyMCE styling for paragraph top margin and ul, ol, and li spacing
 * Fix: small issue with breadcrumbs
 * Fix: Header Image now uses WP 4.4 responsive image size loading
@@ -258,11 +258,11 @@ with testing and feature suggestions.
 * Tweak: Fixed Page with Posts to honor Password Protection and not show posts
 * Change: Changed behavior of Use Post Featured Image as Header on Single Page View. Now
           behaves exactly like standard header image - size, centering, etc. The class
-		  .fi-page-header-image is no longer used, and has been removed.
+		 .fi-page-header-image is no longer used, and has been removed.
 
 = Version 2.0.9 =
-* New: Hide Font Family/Size options in Page/Post Editor (Weaver Xtreme Plus)
-* New: $delimiter = apply_filters('weaverx_breadcrumb_delimiter', '&rarr;'); for breadcrumbs
+* New: Hide Font Family/Size options in Page/Post Editor ( Weaver Xtreme Plus )
+* New: $delimiter = apply_filters( 'weaverx_breadcrumb_delimiter', '&rarr;' ); for breadcrumbs
 * Tweak: Internal hooks to Weaver Xtreme Plus and Weaver Xtreme Theme Support
 * Tweak: Handling of .gif header image
 * Fix: Some zero value Customizer settings failed to save correctly.
@@ -279,7 +279,7 @@ with testing and feature suggestions.
 * Fix: Customizer refresh of Archive Page Title font size - had interaction with Page Title font size
 * Tweak: Improved rendering of custom width desktop sidebars. IE8 degrades to showing sidebars at 25% only.
 * Tweak: Improved rendering of menu transitions
-* Tweak: make phone width 100% (was 98%) for most horizontal areas like the top/bottom widget areas, html areas, etc.
+* Tweak: make phone width 100% ( was 98% ) for most horizontal areas like the top/bottom widget areas, html areas, etc.
 
 = Version 2.1.1 =
 * Change: RAW Page template behavior significantly changed so that it is now really "raw".
@@ -289,7 +289,7 @@ with testing and feature suggestions.
 
 = Version 2.1.2 =
 * Fix: Save Theme Settings via Customizer saved file incorrectly.
-* Tweak: Removed obsolete theme tags (e.g., black, dark, etc.)
+* Tweak: Removed obsolete theme tags ( e.g., black, dark, etc. )
 * Fix: Remove some restrictions of <link> parameters in <head> section.
 
 = Version 2.1.3 =
@@ -300,17 +300,17 @@ with testing and feature suggestions.
 = Version 3.0 =
 * New: Full Width Sites: Expand Areas alternative to existing Extend BG Attributes
 * New: Featured Image Locations: Banner, Full Width BG Images: tiled, cover, parallax
-* New: Per Post FI Layout for individual Posts (requires Theme Support Plugin)
+* New: Per Post FI Layout for individual Posts ( requires Theme Support Plugin )
 * New: Checkbox for Fixed-Top Menus and Header Area with auto top margin for wrapper/content
 * New: HTML as replacement for Header Image: allows easy slide show in header creation with shortcode
 * New: Customizer Options interface level - Beginner, Intermediate, Advanced
-* New: Weaver System Info on Help tab (req: Theme Support Plugin)
+* New: Weaver System Info on Help tab ( req: Theme Support Plugin )
 * New: Minimum Server / PHP Memory check for Customizer
 * New: Replace Site Title text with WP Custom Logo image, with height options
 * New: Add WP Custom Logo to Left end of Primary Menu, with height options
 * New: Alternate for Mobile Menu Hamburger
 * New: Check for PHP Memory limit for Customizer Interface
-* New: Render Header Image as a BG image, including Parallax (requires Xtreme Plus)
+* New: Render Header Image as a BG image, including Parallax ( requires Xtreme Plus )
 * New: New default subtheme, plus other new and revised subthemes
 * New: Underline on link hover
 * New: Menu Bar top/bottom padding
@@ -320,7 +320,7 @@ with testing and feature suggestions.
 * New: Top/Bottom padding for Title/Tagline area
 * New: New menus for Full Width Site
 * New: Alternate cursor shape for placeholder menus
-* New: Faster CSS based Extend BG Attributes (vs. JavaScript handling)
+* New: Faster CSS based Extend BG Attributes ( vs. JavaScript handling )
 * New: Compatibility with WP 4.7 - specifically with Customizer and new WP Additional CSS option
 * Change: Reordered Customizer Top Level menus
 * Change: Menu Bar Item top/bottom padding deprecated
@@ -338,8 +338,8 @@ with testing and feature suggestions.
 * Tweak: | to %2C for Google fonts
 * Tweak: Added some .entry-title classes to keep Google happy
 * Tweak: Recognize when WP Admin Bar is at top
-* Tweak: Automatically show overflow for widgets with Extra Menus (X-Plus)
-* Tweak: Optimized custom widget layout CSS (X-Plus)
+* Tweak: Automatically show overflow for widgets with Extra Menus ( X-Plus )
+* Tweak: Optimized custom widget layout CSS ( X-Plus )
 * Fix: Missing .wrapper in site-title color rule - affected [ site_title ]
 * Fix: Styling for default [ gallery ]
 * Fix: Header, Footer custom widget area widths
@@ -433,7 +433,7 @@ with testing and feature suggestions.
 * Tweak: added <!--googleoff/on: all--> around JAVASCRIPT DISABLED message - only matters if user doesn't have blank site title
 * Fix: FI as header image now does have priority over Header HTML Replacement option as stated in option's description.
 * Tweak: Fixed top header widget area will be after Secondary fixed-top menu, and before Primary fixed-top menu.
-* Update: Updated to TGMPA v2.6.1 (used for suggested plugins)
+* Update: Updated to TGMPA v2.6.1 ( used for suggested plugins )
 
 = Version 3.1.10 =
 * New: weaverx_fi_after filter added. See Weaver Xtreme API in The Guide.
@@ -456,11 +456,11 @@ with testing and feature suggestions.
 * Change: removed pluggables.php, returned code to original location due to child theme fractures
 * Fix: issue with Safari only for extended width handling
 * Tweak: account for missing wvrxOpts and wvrxEndOpts variable definitions caused by some plugins messing with loaded JavaScript
-* New: Added do_action('weaverx_alt_header_image') to support plugins to add alternate header image or other content before header widget area
+* New: Added do_action( 'weaverx_alt_header_image' ) to support plugins to add alternate header image or other content before header widget area
 
 = Version 3.2 =
-* New: Scheme.org structured data tags (microformats)
-* New:  Completely redesigned Per Page and Per Post option pages - tabbed interface (requires Weaver Xtreme Theme Support 3.2 plugin)
+* New: Scheme.org structured data tags ( microformats )
+* New:  Completely redesigned Per Page and Per Post option pages - tabbed interface ( requires Weaver Xtreme Theme Support 3.2 plugin )
 * Tweak: updated WordPress theme tags included in style.css
 * IMPORTANT NOTICE: some theme files have significant changes to add the scheme.org that may require updating of child theme files.
 
@@ -518,7 +518,7 @@ with testing and feature suggestions.
 * Fix: Change update to refresh for Align Header Area in Customizer
 * Fix: Left & Right align header image when used with Link to Site
 * Fix: be sure no borders on No Border table option
-* Fix: Boxed layout option removed (for now)
+* Fix: Boxed layout option removed ( for now )
 * Fix: Fixed styling for no border tables
 * Fix: Issue with Extended/Stretched width for infobar
 
@@ -568,7 +568,7 @@ with testing and feature suggestions.
 * Tweak: automatic update for generated style files
 
 = Version 4.2.1 =
-* Fix: Bold and Italic compatibility for blocks that natively support those for text (e.g., gallery and image captions, quote blocsk)
+* Fix: Bold and Italic compatibility for blocks that natively support those for text ( e.g., gallery and image captions, quote blocsk )
 
 = Version 4.2.2 =
 * Fix: issue with alignfull and alignwide on pages with sidebars
@@ -589,3 +589,13 @@ with testing and feature suggestions.
 = Version 4.2.6 =
 * Fix: Add css version to early editor stylesheet for Cloudflare or other caching services
 * Fix: Different editor styling for Classic Editor's changed behavior
+
+= Version 4.3 =
+* New: Top and Bottom Margins for Block Editor Elements (Customizer only, not in current Legacy Options yet)
+* Fix: correct version of help.html file added
+* Fix: list and paragraph bottom margin - only applied to lists before, plus now works with Block Editor
+* Fix: show currently selected subtheme in Customizer subtheme selector
+* Fix: added Elementor and SiteOrigin posts as well as pages to header/footer replacement selectors
+* Change: Removed tgm add plugins plugin, modified recommended plugins help panel
+* Code: Significant code refactoring, significant updates to handling of output translatable strings
+* Code: Significant reformatting to improve coding conventions for WP standards

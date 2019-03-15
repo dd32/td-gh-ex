@@ -1,5 +1,5 @@
 <?php
-if ( !defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /**
  * The template used for displaying page content in page.php
  *
@@ -10,13 +10,13 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 
 weaverx_fi( 'page', 'post-pre' );
 $pclass = 'content-page';
-$cols  = weaverx_get_per_page_value('_pp_page_cols');
-if ($cols == '')
-	$cols = weaverx_getopt('page_cols');
-if ($cols != '' && $cols != '1')
+$cols  = weaverx_get_per_page_value( '_pp_page_cols' );
+if ( $cols == '' )
+	$cols = weaverx_getopt( 'page_cols' );
+if ( $cols != '' && $cols != '1' )
 	$pclass .= " cols-{$cols}";
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class($pclass); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( $pclass ); ?>>
 <?php weaverx_page_title(); ?>
 	<div class="entry-content clearfix">
 
@@ -29,4 +29,4 @@ if ($cols != '' && $cols != '1')
 	</div><!-- .entry-content -->
 
 </article><!-- #post-<?php the_ID(); ?> -->
-<?php weaverx_inject_area('pagecontentbottom'); ?>
+<?php weaverx_inject_area( 'pagecontentbottom' ); ?>

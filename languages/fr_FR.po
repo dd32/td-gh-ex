@@ -281,7 +281,7 @@ msgstr "Lien"
 #: weaver-ii-pro/includes/widgets.php:116
 msgid "Log in/out, admin"
 msgstr ""
-"(Dé)connexion, administration, flux et autres liens internes à WordPress"
+"( Dé )connexion, administration, flux et autres liens internes à WordPress"
 
 #. Text in function
 #: weaver-ii-pro/includes/widgets.php:116

@@ -1,5 +1,5 @@
 <?php
-if ( !defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /**
  * The template for displaying posts in the Status Post Format on index and archive pages
  *
@@ -13,9 +13,9 @@ weaverx_per_post_style();
 
 ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class('post-content content-status post-format ' . weaverx_post_class()); echo weaverx_schema( 'post' ); ?>>
+	<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-content content-status post-format ' . weaverx_post_class() ); echo weaverx_schema( 'post' ); ?>>
 <?php
-	if (!weaverx_compact_post()) {
+	if ( !weaverx_compact_post() ) {
 ?>
 		<header class="entry-header">
 <?php 		weaverx_entry_header( 'status' );
@@ -27,20 +27,20 @@ weaverx_per_post_style();
 		</header><!-- .entry-header -->
 
 		<?php
-		if (weaverx_show_only_title()) {
+		if ( weaverx_show_only_title() ) {
 			return;
 		}
 	}
-		if ( weaverx_do_excerpt() && !weaverx_compact_post()) { // Only display Excerpts for Search
-			weaverx_post_div('summary');
+		if ( weaverx_do_excerpt() && !weaverx_compact_post() ) { // Only display Excerpts for Search
+			weaverx_post_div( 'summary' );
 			weaverx_the_post_excerpt(); ?>
 			<br />
 		</div><!-- .entry-summary -->
 		<?php } else {
-			weaverx_post_div('content');
+			weaverx_post_div( 'content' );
 		?>
 			<span class="post-avatar-status">
-<?php 			echo(get_avatar( get_the_author_meta('user_email') ,32,null,'avatar')); ?>
+<?php 			echo( get_avatar( get_the_author_meta( 'user_email' ) ,32,null,'avatar' ) ); ?>
 			</span><span class="weaver-ml-50">
 <?php 			weaverx_the_post_full();
 			echo '</span>';
@@ -49,16 +49,16 @@ weaverx_per_post_style();
 		</div><!-- .entry-content -->
 <?php
 		}
-		if (!weaverx_compact_post()) {
-			weaverx_format_posted_on_footer('status');
-			weaverx_compact_link('check');
+		if ( !weaverx_compact_post() ) {
+			weaverx_format_posted_on_footer( 'status' );
+			weaverx_compact_link( 'check' );
 		} else {
 			weaverx_compact_link();
 			weaverx_edit_link();
 		}
 ?>
 
-<?php   weaverx_inject_area('postpostcontent');	// inject post comment body ?>
+<?php   weaverx_inject_area( 'postpostcontent' );	// inject post comment body ?>
 	<div style="clear:both;"></div>
 <?php echo weaverx_schema( 'mainEntityOfPage' ); ?>
 </article><!-- /#post-<?php the_ID(); ?> -->

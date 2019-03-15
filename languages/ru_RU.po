@@ -55,7 +55,7 @@ msgstr ""
 #: weaver-ii-pro/functions.php:992 weaver-ii-pro/functions.php:2080
 #: weaver-ii-pro/functions.php:1197
 msgid "<b>%</b> Replies"
-msgstr "Комментарии (<b>%</b>)"
+msgstr "Комментарии ( <b>%</b> )"
 
 #. Text in function
 #: weaver-ii-pro/content-chat.php:52 weaver-ii-pro/functions.php:832

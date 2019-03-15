@@ -1,5 +1,5 @@
 <?php
-if ( !defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /**
  * The template for displaying posts in the Gallery Post Format on index and archive pages
  *
@@ -12,9 +12,9 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 weaverx_per_post_style();
 $entry_summary = 'entry-summary';
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('post-content content-gallery ' . weaverx_post_class()); echo weaverx_schema( 'post' ); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-content content-gallery ' . weaverx_post_class() ); echo weaverx_schema( 'post' ); ?>>
 <?php
-	if (!weaverx_compact_post()) {
+	if ( !weaverx_compact_post() ) {
 ?>
 	<header class="entry-header">
 	<?php
@@ -23,7 +23,7 @@ $entry_summary = 'entry-summary';
 	</header><!-- .entry-header -->
 
 <?php
-	if (weaverx_show_only_title()) {
+	if ( weaverx_show_only_title() ) {
 		return;
 	}
 
@@ -36,7 +36,7 @@ $entry_summary = 'entry-summary';
 	<div class="<?php echo $entry_summary; ?>">
 <?php
 	if ( post_password_required() ) {
-		 weaverx_the_post_full();
+		weaverx_the_post_full();
 	} else {
 		// Let's look for some images from the gallery.
 		$images = get_children( array( 'post_parent' => $post->ID, 'post_type' => 'attachment',
@@ -48,52 +48,52 @@ $entry_summary = 'entry-summary';
 			$image_img_tag = wp_get_attachment_image( $image->ID, 'thumbnail' );
 ?>
 		<figure class="gallery-thumb">
-			<a href="<?php esc_url(the_permalink()); ?>"><?php echo $image_img_tag; ?></a>
+			<a href="<?php esc_url( get_permalink() ); ?>"><?php echo $image_img_tag; ?></a>
 		</figure><!-- .gallery-thumb -->
 <?php		$linked = true;
-			if (weaverx_compact_post())
-				weaverx_clear_both('compact-poat');
+			if ( weaverx_compact_post() )
+				weaverx_clear_both( 'compact-post' );
 ?>
 		<p><em> <?php echo  '<a href="' . esc_url( get_permalink() ) . '" title="' .
-			sprintf( esc_attr__( 'Permalink to %s','weaver-xtreme'), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"' .
-			'>' . __( 'Gallery','weaver-xtreme') . '</a></em></p>';
+			sprintf( esc_attr__( 'Permalink to %s','weaver-xtreme' ), the_title_attribute( 'echo=0' ) ) . '" rel="bookmark"' .
+			'>' . esc_html__( 'Gallery','weaver-xtreme' ) . '</a></em></p>';
 
 		} else {	// did not find any images from the content.
 			// using get_children failed to find any gallery image, so let's do it ourselves.
 
-			$content = do_shortcode(apply_filters( 'the_content', get_the_content('')));	// pick up wp 3.6 post format
-			if (preg_match('/<img[^>]+>/i',$content, $images)) {	// grab <img>s
+			$content = do_shortcode( apply_filters( 'the_content', get_the_content( '' ) ) );	// pick up wp 3.6 post format
+			if ( preg_match( '/<img[^>]+>/i',$content, $images ) ) {	// grab <img>s
 				$src = '';
-				if (preg_match('/src="([^"]*)"/', $images[0], $srcs)) {
+				if ( preg_match( '/src="([^"]*)"/', $images[0], $srcs ) ) {
 					$src = $srcs[0];
-				} else if (preg_match("/src='([^']*)'/", $images[0], $srcs)) {
+				} else if ( preg_match( "/src='([^']*)'/", $images[0], $srcs ) ) {
 					$src = $srcs[0];
 				}
 				$the_image = '<img class="gallery-thumb" ' . $src . 'alt="post image" />';
 				$linked = true;
 	?>
-				<a href="<?php esc_url(the_permalink()); ?>" title="<?php the_title_attribute( 'echo=1' ); ?>" rel="bookmark"><?php echo $the_image; ?></a>
-				<p><em><?php echo __( 'Gallery','weaver-xtreme'); ?></em></p>
+				<a href="<?php esc_url( get_permalink() ); ?>" title="<?php the_title_attribute( 'echo=1' ); ?>" rel="bookmark"><?php echo $the_image; ?></a>
+				<p><em><?php echo esc_html__( 'Gallery','weaver-xtreme' ); ?></em></p>
 	<?php
 			}
 		}
 
-		if ((!weaverx_compact_post() && !$linked) || !$linked)
+		if ( ( !weaverx_compact_post() && !$linked ) || !$linked )
 			weaverx_the_post_excerpt();
 	}	// display gallery format
 	weaverx_link_pages();	// <!--nextpage-->
 	?>
 	</div><!-- .entry-summary -->
-	<?php if (!weaverx_compact_post()) { ?>
+	<?php if ( !weaverx_compact_post() ) { ?>
 		<footer class="entry-utility">
 		<?php weaverx_post_bottom_info(); ?>
 		</footer><!-- #entry-utility -->
-		<?php weaverx_compact_link('check');
+		<?php weaverx_compact_link( 'check' );
 	} else {
-		if (! $linked ) weaverx_compact_link();
+		if ( ! $linked ) weaverx_compact_link();
 		weaverx_edit_link();
 	}
-	weaverx_inject_area('postpostcontent');	// inject post comment body
+	weaverx_inject_area( 'postpostcontent' );	// inject post comment body
 ?>
 <div style="clear:both;"></div>
 <?php echo weaverx_schema( 'mainEntityOfPage' ); ?>

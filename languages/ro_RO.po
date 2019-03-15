@@ -540,7 +540,7 @@ msgstr "Feed necunoscut"
 #. Text in function
 #: weaver-ii-pro/includes/pro/weaverii-pro-sc-feed.php:54
 msgid "Untitled"
-msgstr "(Untitled)"
+msgstr "( Untitled )"
 
 #. Text in function
 #: weaver-ii-pro/functions.php:2080 weaver-ii-pro/content-image.php:57

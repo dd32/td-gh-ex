@@ -2,38 +2,39 @@
 /**
  * Display per page and per post options.
  *
- *  @since 12/10/14
+ * @since 12/10/14
  */
 
-if ( !defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+} // Exit if accessed directly
 // Admin panel that gets added to the page edit page for per page options
 
 
-add_action('admin_menu', 'weaverx_pp_add_page_fields',11);	// allow X-Plus to override us
+add_action( 'admin_menu', 'weaverx_pp_add_page_fields', 11 );    // allow X-Plus to override us
 /**
  * Add per page and per post meta_boxes
  *
  */
 function weaverx_pp_add_page_fields() {
 
-	$per_post_label = defined('WEAVER_XPLUS_VERSION') ? __(' (with Weaver Xtreme Plus Options)','weaver-xtreme') : '';
-	add_meta_box('page-box', __('Weaver Xtreme 4 Options For This Page','weaver-xtreme') . $per_post_label ,
-				 'weaverx_pp_page_extras_load', 'page', 'normal', 'high');
+	$per_post_label = defined( 'WEAVER_XPLUS_VERSION' ) ? esc_html__( ' (with Weaver Xtreme Plus Options)', 'weaver-xtreme' ) : '';
+	add_meta_box( 'page-box', esc_html__( 'Weaver Xtreme 4 Options For This Page', 'weaver-xtreme' ) . $per_post_label,
+		'weaverx_pp_page_extras_load', 'page', 'normal', 'high' );
 
-	add_meta_box('post-box', __('Weaver Xtreme 4 Options For This Post', 'weaver-xtreme')  . $per_post_label, 'weaverx_pp_post_extras_load', 'post', 'normal', 'high');
-	global $post;
+	add_meta_box( 'post-box', esc_html__( 'Weaver Xtreme 4 Options For This Post', 'weaver-xtreme' ) . $per_post_label, 'weaverx_pp_post_extras_load', 'post', 'normal', 'high' );
 
 
-	$i = 1;
-	$args = array( 'public'   => true, '_builtin' => false );
-	$post_types = get_post_types($args,'names','and');
-	foreach ($post_types  as $post_type ) {
-		add_meta_box('post-box' . $i, __('Weaver Xtreme Options For This Post Type','weaver-xtreme') . $per_post_label,
-					 'weaverx_pp_post_extras_pt', $post_type, 'normal', 'high');
-		$i++;
+	$i          = 1;
+	$args       = array( 'public' => true, '_builtin' => false );
+	$post_types = get_post_types( $args, 'names', 'and' );
+	foreach ( $post_types as $post_type ) {
+		add_meta_box( 'post-box' . $i, esc_html__( 'Weaver Xtreme Options For This Post Type', 'weaver-xtreme' ) . $per_post_label,
+			'weaverx_pp_post_extras_pt', $post_type, 'normal', 'high' );
+		$i ++;
 	}
 
-	require_once(dirname( __FILE__ ) . '/admin-page-posts-meta-boxes.php');	// per page-posts admin - needs to be here
+	require_once( dirname( __FILE__ ) . '/admin-page-posts-meta-boxes.php' );    // per page-posts admin - needs to be here
 }
 
 function weaverx_pp_page_extras_load() {
@@ -47,22 +48,19 @@ function weaverx_pp_post_extras_load() {
 function weaverx_pp_post_extras_pt() {
 	// special handling for non-Weaver Custom Post Types
 	$func_opt = WEAVER_GET_OPTION;
-	$opts = $func_opt( apply_filters('weaverx_options',WEAVER_SETTINGS_NAME) , array());
-	if ((isset($opts['_show_per_post_all']) && $opts['_show_per_post_all']) || function_exists('atw_slider_plugins_loaded') ) {
+	$opts     = $func_opt( apply_filters( 'weaverx_options', WEAVER_SETTINGS_NAME ), array() );
+	if ( ( isset( $opts['_show_per_post_all'] ) && $opts['_show_per_post_all'] ) || function_exists( 'atw_slider_plugins_loaded' ) ) {
 		weaverx_pp_post_extras();
 	} else {
-		echo '<p>' .
-__('You can enable Weaver Xtreme Per Post Options for Custom Post Types on the Weaver Xtreme:Advanced Options:Admin Options tab.','weaver-xtreme' /*adm*/) .
-		'</p>';
+		echo '<p>' . esc_html__( 'You can enable Weaver Xtreme Per Post Options for Custom Post Types on the Weaver Xtreme:Advanced Options:Admin Options tab.', 'weaver-xtreme') .
+		     '</p>';
 	}
 }
 
-add_action('admin_enqueue_scripts', 'weaverx_pp_enqueue_admin_scripts');
+add_action( 'admin_enqueue_scripts', 'weaverx_pp_enqueue_admin_scripts' );
 
 function weaverx_pp_enqueue_admin_scripts() {
-	wp_enqueue_script('weaverxYetii', get_template_directory_uri().'/admin/admin-core/assets/js/yetii/yetii.js', false, WEAVERX_VERSION);
-	wp_enqueue_style('weaverxYetiiCSS', get_template_directory_uri().'/admin/admin-core/assets/js/yetii/yetii-weaver'.WEAVERX_MINIFY. '.css', false, WEAVERX_VERSION);
+	wp_enqueue_script( 'weaverxYetii', get_template_directory_uri() . '/admin/admin-core/assets/js/yetii/yetii.js', false, WEAVERX_VERSION );
+	wp_enqueue_style( 'weaverxYetiiCSS', get_template_directory_uri() . '/admin/admin-core/assets/js/yetii/yetii-weaver' . WEAVERX_MINIFY . '.css', false, WEAVERX_VERSION );
 }
 
-
-?>

@@ -1,5 +1,5 @@
 <?php
-if ( !defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 /**
  * The default template for displaying content
  *
@@ -15,25 +15,25 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 weaverx_per_post_style();
 $do_excerpt = weaverx_do_excerpt();
 
-$me = ($do_excerpt) ? 'post_excerpt' : 'post_full';
+$me = ( $do_excerpt ) ? 'post_excerpt' : 'post_full';
 
 
 weaverx_fi( $me, 'post-pre' );
 
 // ------------------------------------------------- COMPACT POSTS ---------------------------------------
 
-if (weaverx_is_checked_page_opt('_pp_pwp_compact_posts')
-	 && ($the_image = weaverx_get_first_post_image()) != '') {  // = Compact Posts
+if ( weaverx_is_checked_page_opt( '_pp_pwp_compact_posts' )
+	&& ( $the_image = weaverx_get_first_post_image() ) != '' ) {  // = Compact Posts
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('post-content content-default content-compact-post ' . weaverx_post_class() ); echo weaverx_schema( 'post' );?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-content content-default content-compact-post ' . weaverx_post_class() ); echo weaverx_schema( 'post' );?>>
 
 <header class="entry-header">
 	<?php weaverx_entry_header( '' ); // compact header ?>
 </header><!-- .entry-header -->
 	<div class="entry-compact"> <!-- Compact Post -->
-	<a href="<?php esc_url(the_permalink()); ?>" title="<?php printf( esc_attr(__( 'Permalink to %s','weaver-xtreme')),
-	   the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
+	<a href="<?php esc_url( get_permalink() ); ?>" title="<?php printf( esc_attr( 'Permalink to %s','weaver-xtreme' ),
+	  the_title_attribute( 'echo=0' ) ); ?>" rel="bookmark">
 		<?php echo $the_image; ?>
 		</a>
 		</div><!-- .entry-compact -->
@@ -43,30 +43,30 @@ if (weaverx_is_checked_page_opt('_pp_pwp_compact_posts')
 // -------------------------------------------------- REGULAR POSTS ---------------------------------------
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('content-default ' . weaverx_post_class() ); echo weaverx_schema( 'post' ); ?>><!-- POST: standard -->
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'content-default ' . weaverx_post_class() ); echo weaverx_schema( 'post' ); ?>><!-- POST: standard -->
 <header class="entry-header">
 <?php
 	weaverx_entry_header( '', $do_excerpt );
 
-	weaverx_post_top_meta('');
+	weaverx_post_top_meta( '' );
 
 ?>
 </header><!-- .entry-header -->
 
 <?php
 
-	if (weaverx_show_only_title()) {        // -------------------- TITLE ONLY? --------------------
+	if ( weaverx_show_only_title() ) {        // -------------------- TITLE ONLY? --------------------
 		return;
 	}
 
 	if ( $do_excerpt ) {                    // -------------------- EXCERPT ------------------------
-		weaverx_post_div('summary');
+		weaverx_post_div( 'summary' );
 		weaverx_the_post_excerpt();
 ?>
 		</div><!-- .entry-summary -->
 <?php
 	} else {                                // ------------------ FULL POST ------------------------
-		weaverx_post_div('content');
+		weaverx_post_div( 'content' );
 		weaverx_the_post_full();
 		weaverx_link_pages();	// <!--nextpage-->
 ?>
@@ -77,11 +77,11 @@ if (weaverx_is_checked_page_opt('_pp_pwp_compact_posts')
 		<footer class="entry-utility"><!-- bottom meta -->
 <?php
 		weaverx_post_bottom_info();
-		weaverx_compact_link('check');
+		weaverx_compact_link( 'check' );
 ?>
 		</footer><!-- #entry-utility -->
 <?php
-		weaverx_inject_area('postpostcontent');	// inject post comment body
+		weaverx_inject_area( 'postpostcontent' );	// inject post comment body
 }
 ?>
 <div class="clear-post-end" style="clear:both;"></div>

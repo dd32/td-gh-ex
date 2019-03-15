@@ -25,7 +25,7 @@ body {
 .oneColFixCtr #container {
 	width: 750px;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
 	background: #FFFFCD;
-	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	margin: 0 auto; /* the auto margins ( in conjunction with a width ) center the page */
 	border: 1px solid #000000;
 	text-align: left; /* this overrides the text-align: center on the body element. */
 }
@@ -128,22 +128,22 @@ h1 {
     you can use. It will be especially useful for using the CSS slide-open options, but can be helpful for writing full snippets as well.</p>
     <p>What is the difference between writing a snippet for the &lt;HEAD&gt; Section, and adding some CSS using the
     slide-open CSS option? Basically, using the sliding CSS interface, you only need to pick a specific element from the <em>Main Options </em>page,
-    and then add appropriate CSS styling parameters (we'll get to the specifics shortly). With a &lt;HEAD&gt; Section snippet, you need
+    and then add appropriate CSS styling parameters ( we'll get to the specifics shortly ). With a &lt;HEAD&gt; Section snippet, you need
     to know the specific CSS class or id, as well as the styling parameter.</p>
-    <p>A simple example should clarify this. Each CSS rule has two parts: a name (called the class/id), and a list of one
-    or more style parameters contained in braces ( {...} ). Each parameter is separated by a semi-colon (;).
+    <p>A simple example should clarify this. Each CSS rule has two parts: a name ( called the class/id ), and a list of one
+    or more style parameters contained in braces ( {...} ). Each parameter is separated by a semi-colon ( ; ).
     Consider the Site Title that is included by default on every WordPress page. The site title is styled by a CSS rule
     with the name &quot;#site-title&quot;. Suppose you wanted to make the site title be displayed in italics, and to be
     larger than the default size. This CSS rule would do that:</p>
     <p class="style1">#site-title {font-style:italic; font-size:300%;}</p>
-    <p>Note the name: <span class="style1">#site-title</span>, and the style parameters: <span class="style1">font-style:italic; font-size:300%;</span>. All CSS rules follow this form. The names will most often begin with a hash (#),  a period (.), or a letter, depending on a technical difference that is not critical at this point. Each of these names is associated with a specific element on your WordPress web page. The style parameters are derived from a very large list of specific possibilities (e.g., font-style), and usually include a value after a colon (:), again from a large list of specific possibilities (e.g., italic) or values (e.g., 300%, but which include many other possible units (e.g., px, em, and more).</p>
-    <p>The fun and challenging part of styling your page is learning all the different possible parameters that can apply to a specific kind of element, and providing the exact styling parameter to achieve just what you want. A completely different challenge is to determine the name of a specific element you want. To use the &lt;HEAD&gt; Section and the snippets, you need to know the name. We know the name of the Site Title element (#site-title), and that it is a text based element (different style parameters are available for different elements - text, links, boxes, images, areas, etc.). The slide-open CSS interface available on the <em>Main Options </em>tab avoids the need to find out the specific name of an element - you can simply provide the parameters.</p>
+    <p>Note the name: <span class="style1">#site-title</span>, and the style parameters: <span class="style1">font-style:italic; font-size:300%;</span>. All CSS rules follow this form. The names will most often begin with a hash ( # ),  a period ( . ), or a letter, depending on a technical difference that is not critical at this point. Each of these names is associated with a specific element on your WordPress web page. The style parameters are derived from a very large list of specific possibilities ( e.g., font-style ), and usually include a value after a colon ( : ), again from a large list of specific possibilities ( e.g., italic ) or values ( e.g., 300%, but which include many other possible units ( e.g., px, em, and more ).</p>
+    <p>The fun and challenging part of styling your page is learning all the different possible parameters that can apply to a specific kind of element, and providing the exact styling parameter to achieve just what you want. A completely different challenge is to determine the name of a specific element you want. To use the &lt;HEAD&gt; Section and the snippets, you need to know the name. We know the name of the Site Title element ( #site-title ), and that it is a text based element ( different style parameters are available for different elements - text, links, boxes, images, areas, etc. ). The slide-open CSS interface available on the <em>Main Options </em>tab avoids the need to find out the specific name of an element - you can simply provide the parameters.</p>
     <p>To summarize by example, if you wanted to style the Site Title as in the example using the &lt;HEAD&gt; Section, you would enter the following into the box between the &lt;style&gt; and &lt;/style&gt; tags:</p>
     <p><span class="style1">#site-title {font-style:italic; font-size:300%;}</span></p>
     <p>If, on the other hand, you wanted to achieve the same effect using the <em>Main Options </em>tab, you would click on the [+] box after the color box on the &quot;Site Title&quot; line. An entry box will slide open, and there you can enter simply:</p>
     <p><span class="style1">{font-style:italic; font-size:300%;</span>}</p>
-    <p>Note that you don't need the name, just the style parameters enclosed in {braces}. The CSS slide-open interface is available for all the elements that have color boxes on the <em>Main Options </em>tab. Note that there are basically four kinds of elements that have color options: text elements, menu elements, link elements, and area elements (areas with bg colors). The following sections will discuss the kinds of style parameters that are most appropriate for each area, as well as a discussion of borders, which can be used for almost all elements.</p>
-    <p>By default, when you've added a CSS rule to a <em>Main Options </em>element, the value box will automatically be displayed. (This applies also when a subtheme has added CSS element rules.) There is an administrative option at the bottom of the <em>Advanced Options</em> tab that will let you hide CSS element slide-open rules.</p>
+    <p>Note that you don't need the name, just the style parameters enclosed in {braces}. The CSS slide-open interface is available for all the elements that have color boxes on the <em>Main Options </em>tab. Note that there are basically four kinds of elements that have color options: text elements, menu elements, link elements, and area elements ( areas with bg colors ). The following sections will discuss the kinds of style parameters that are most appropriate for each area, as well as a discussion of borders, which can be used for almost all elements.</p>
+    <p>By default, when you've added a CSS rule to a <em>Main Options </em>element, the value box will automatically be displayed. ( This applies also when a subtheme has added CSS element rules. ) There is an administrative option at the bottom of the <em>Advanced Options</em> tab that will let you hide CSS element slide-open rules.</p>
     <h2><a name="w3schools" id="w3schools"></a>More CSS Info: w3schools.com</h2>
 
     <p>The web site w3schools.com may be the most definitive web site with CSS information and tutorials. If you want to
@@ -179,7 +179,7 @@ h1 {
     <h2><a name="weaver_elements" id="weaver_elements"></a>Styling Weaver Elements</h2>
     <p>The following sections give a few details on each type of element found on the <em>Main Options </em>tab.</p>
     <p><strong>HINT:</strong> When you are trying to style a specific element, first note the original color, then
-    change the element to a recognizable color (red, for example). Then save the options and view your page.
+    change the element to a recognizable color ( red, for example ). Then save the options and view your page.
     The element you want to style should now be easy to find. Now make your style changes, and test after each change
     to see if you got what you wanted. It is always better to change only one thing at a time until you are sure you got
     what you wanted. Don't forget to change the element back to the original color!</p>
@@ -207,7 +207,7 @@ h1 {
     color around Widget Titles, for example, to get interesting effects for your sidebars. Just how the borders, margins,
     and padding interact is somewhat complex, and often requires trial and error.</p>
     <h3><a name="WeaverCSS" id="WeaverCSS"></a>Special Weaver CSS Elements</h3>
-    <p>Weaver has defined several special CSS id's and classes to help you style some of the more detailed elements on pages. These are elements that most people will find that the default styling is acceptable, and so did not warrant inclusion on the Main Options tab. These include things such as the &quot;Older posts&quot; and &quot;Newer posts&quot; links on blog pages, or the separate fields of the post meta info lines (&quot;Posted on&quot;, etc.). These elements are described in the Snippets document (click Snippets tab).</p>
+    <p>Weaver has defined several special CSS id's and classes to help you style some of the more detailed elements on pages. These are elements that most people will find that the default styling is acceptable, and so did not warrant inclusion on the Main Options tab. These include things such as the &quot;Older posts&quot; and &quot;Newer posts&quot; links on blog pages, or the separate fields of the post meta info lines ( &quot;Posted on&quot;, etc. ). These elements are described in the Snippets document ( click Snippets tab ).</p>
     <h2><a name="more_about" id="more_about"></a>More About Styling</h2>
     <p>Most of the time, you will be able to simply enter the style parameters in the slide-open box. You should include your rules inside {braces}, but if you forget, they will be added automatically. </p>
     <h3><a name="color_vs_bg" id="color_vs_bg"></a>Color vs. Background Color</h3>
@@ -225,52 +225,52 @@ h1 {
         <br />
       </li>
       <li><u>Underlined</u> text: <span class="style1">{text-decoration:underline;}</span><br />
-      (also: overline, line-through)<br />
+      ( also: overline, line-through )<br />
       <br />
       </li>
       <li><span style="font-variant:small-caps;">Small Caps</span> text: <span class="style1">{font-variant:small-caps;}</span><br />
         <br />
       </li>
       <li><span class="style2">Font size</span>: <span class="style1">{font-size:medium;}</span> <br />
-      (also: x-small, small, large, x-large, xx-large, nnn%, and more)<br />
+      ( also: x-small, small, large, x-large, xx-large, nnn%, and more )<br />
       <br />
       </li>
       <li><span class="style3">Font Family</span>: <span class="style1">{font-family:Times, serif;}<br />
-      </span> (many options for this!)<br />
+      </span> ( many options for this! )<br />
         <br />
       </li>
       <li><span class="style4">Text color</span>: <span class="style1">{color:blue;}</span> <br />
-      (or #000000 hex value - style text on a BG element)<br />
+      ( or #000000 hex value - style text on a BG element )<br />
       <br />
       </li>
       <li>Indent Text:<span class="style1">{text-indent:50px;}</span> <br />
         <br />
       </li>
       <li><span style="background-color:green;">BG color:</span> <span class="style1">{background-color:green;}</span><br />
-      (or hex value - add a nice block bg to titles, for example. Use padding to leave padding.)<br />
+      ( or hex value - add a nice block bg to titles, for example. Use padding to leave padding. )<br />
       <br />
       </li>
       <li><span style="border-bottom: 1px solid black;">Borders:</span> <span class="style1">{border-bottom: 1px solid black;}<br />
-      </span>(Many options. This example adds a bar under an element. See the w3schools <a href="//www.w3schools.com/css/css_border.asp" title="All about CSS borders." target="_blank">Border</a> page.)<span class="style1"><br />
+      </span>( Many options. This example adds a bar under an element. See the w3schools <a href="//www.w3schools.com/css/css_border.asp" title="All about CSS borders." target="_blank">Border</a> page. )<span class="style1"><br />
       <br />
       </span></li>
       <li><span style="border: 1px solid black;">Box:</span> <span class="style1">{border: 1px solid blue;}<br />
-      </span> (or border-top, border-bottom, border-left, border-right)<br />
+      </span> ( or border-top, border-bottom, border-left, border-right )<br />
         <br />
       </li>
       <li>Padding: <span class="style1">{padding: 10px;}</span> <br />
-      (or padding-top, etc.)<br />
+      ( or padding-top, etc. )<br />
       <br />
       </li>
       <li>Margins: <span class="style1">{margin:10px;}</span> <br />
-      (or margin-top, etc. Margins and padding interact.)<br />
+      ( or margin-top, etc. Margins and padding interact. )<br />
       <br />
       </li>
       <li>Width: <span class="style1">{width:100px;}</span></li>
     </ol>
     <p>There are, of course, many more things you can do with CSS, but you can do a lot with just the above style parameters. In fact, nearly all the effects found on the various Weave subthemes were accomplished using just the above style parameters.</p>
     <h3><a name="cascading_tags" id="cascading_tags"></a>Cascading Tags</h3>
-    <p>And if you really understand CSS, please note that you can also add a cascaded tag to your rules for most of the elements supported. For example, suppose you've created a dark background for the footers, and your links don't show up properly. What you'd really like to do to avoid resorting to &lt;HEAD&gt; Section rules is add a style for anchor ('a') in the footer. You can do that by adding a style rule in the form 'a{color:#333333;}', which will cause the rule '#footer a{color:#333333;}' to be included in the generated style sheet. (See the Tan and Gray subtheme for an example of this in action!)</p>
+    <p>And if you really understand CSS, please note that you can also add a cascaded tag to your rules for most of the elements supported. For example, suppose you've created a dark background for the footers, and your links don't show up properly. What you'd really like to do to avoid resorting to &lt;HEAD&gt; Section rules is add a style for anchor ( 'a' ) in the footer. You can do that by adding a style rule in the form 'a{color:#333333;}', which will cause the rule '#footer a{color:#333333;}' to be included in the generated style sheet. ( See the Tan and Gray subtheme for an example of this in action! )</p>
     <hr />
     <p>CSS Help V 1.0 - 2/10/2011</p>
     <p>&nbsp;</p>

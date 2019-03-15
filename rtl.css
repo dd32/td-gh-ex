@@ -1,7 +1,7 @@
 /*
 Theme Name: Weaver X
 
-Adding support for language written in a Right To Left (RTL) direction is easy -
+Adding support for language written in a Right To Left ( RTL ) direction is easy -
 it's just a matter of overwriting all the horizontal positioning attributes
 of your CSS stylesheet in a separate stylesheet file named rtl.css.
 
@@ -106,7 +106,7 @@ textarea {
 .menu-toggle-button {
   float: right;
 }
-@media screen and (min-width: 768px) {		/* desktop */
+@media screen and ( min-width: 768px) {		/* desktop */
 .wvrx-menu.sm ul a span.sub-arrow:after {     	/* right arrow on right side of submenus */
 	content:			"\f503";
 }
@@ -145,7 +145,7 @@ textarea {
 
 
 /* Standard arrow styles */
-.is-desktop .menu-arrows .toggle-submenu:after {    /* down arrow on top level menu (both bar and mobile) */
+.is-desktop .menu-arrows .toggle-submenu:after {    /* down arrow on top level menu ( both bar and mobile ) */
 	content:            '\f502';
 	font-family:        "Genericons";
 	font-size:          80%;
@@ -273,14 +273,14 @@ textarea {
 
 /* Comments link */
 .comments-bubble a {
-	background-image: url(assets/css/icons/comment-bubble-rtl.png);
+	background-image: url( assets/css/icons/comment-bubble-rtl.png );
 	background-size:    28px 28px;
 	right: auto;
 	left: 0;
 }
 
 .ie8 .comments-bubble a {
-	background-image: url(assets/css/icons/comment-bubble-rtl-ie8.png);
+	background-image: url( assets/css/icons/comment-bubble-rtl-ie8.png );
 }
 
 /*
@@ -376,17 +376,17 @@ textarea {
 	margin-right:   0;
 }
 
-@media (min-width:581px) and (max-width:767px) { /* =small tablets ========================================================= */
-.widget-area.m-widget-cols-2 aside:nth-of-type(2n) {margin-left:0;}
+@media ( min-width:581px) and ( max-width:767px) { /* =small tablets ========================================================= */
+.widget-area.m-widget-cols-2 aside:nth-of-type( 2n ) {margin-left:0;}
 }
-@media (min-width:768px) {   /* =desktop and large (iPad) tablets =========================================================== */
-.widget-cols-2 aside:nth-of-type(2n) {margin-left:0;}
-.widget-cols-3 aside:nth-of-type(3n) {margin-left:0;}
-.widget-cols-4 aside:nth-of-type(4n) {margin-left:0;}
-.widget-cols-5 aside:nth-of-type(5n) {margin-left:0;}
-.widget-cols-6 aside:nth-of-type(6n) {margin-left:0;}
-.widget-cols-7 aside:nth-of-type(7n) {margin-left:0;}
-.widget-cols-8 aside:nth-of-type(8n) {margin-left:0;}
+@media ( min-width:768px) {   /* =desktop and large ( iPad ) tablets =========================================================== */
+.widget-cols-2 aside:nth-of-type( 2n ) {margin-left:0;}
+.widget-cols-3 aside:nth-of-type( 3n ) {margin-left:0;}
+.widget-cols-4 aside:nth-of-type( 4n ) {margin-left:0;}
+.widget-cols-5 aside:nth-of-type( 5n ) {margin-left:0;}
+.widget-cols-6 aside:nth-of-type( 6n ) {margin-left:0;}
+.widget-cols-7 aside:nth-of-type( 7n ) {margin-left:0;}
+.widget-cols-8 aside:nth-of-type( 8n ) {margin-left:0;}
 
 }
 

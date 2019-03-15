@@ -133,7 +133,7 @@ jQuery( document ).ready( function( $ ) {
 				value = $control.wpColorPicker( 'color' );
 
 				// Set the opacity value on the slider handle when the default color button is clicked.
-				if ( defaultColor == value ) {
+				if (DefaultColor == value ) {
 					alpha = acp_get_alpha_value_from_color( value );
 					$alphaSlider.find( '.ui-slider-handle' ).text( alpha );
 				}
@@ -240,7 +240,7 @@ jQuery( document ).ready( function( $ ) {
 
 		// Bind event handler for clicking on the 'Default' button.
 		$container.find( '.button.wp-picker-default' ).on( 'click', function() {
-			var alpha = acp_get_alpha_value_from_color( defaultColor );
+			var alpha = acp_get_alpha_value_from_color(DefaultColor );
 
 			acp_update_alpha_value_on_alpha_slider( alpha, $alphaSlider );
 		});

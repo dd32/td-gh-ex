@@ -1,30 +1,30 @@
 <?php
-if ( !defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 
 // note - the default menu is handled in weaverx_page_menu() in filters.php
 
-$menu = apply_filters('weaverx_menu_name','primary');
+$menuw = apply_filters( 'weaverx_menu_name','primary' );
 
-if (weaverx_getopt( 'm_primary_hide') != 'hide'
-	&& !weaverx_is_checked_page_opt('_pp_hide_menus') ) {
+if ( weaverx_getopt( 'm_primary_hide' ) != 'hide'
+	&& !weaverx_is_checked_page_opt( '_pp_hide_menus' ) ) {
 
 
-	weaverx_clear_both('menu-primary');
+	weaverx_clear_both( 'menu-primary' );
 
 	$class = weaverx_menu_class( 'm_primary' );
 
 
 	$logo = '';
 
-	if ( weaverx_getopt('m_primary_logo_left') ) {
+	if ( weaverx_getopt( 'm_primary_logo_left' ) ) {
 		$custom_logo_url = weaverx_get_wp_custom_logo_url();
 		// We have a logo. Logo is go.
 		if ( $custom_logo_url ) {
-			if ( weaverx_getopt('m_primary_logo_home_link') ) {
-				$logo = apply_filters('weaverx_menu_logo', '<span class="custom-logo-on-menu"><a href="' . get_home_url() . '" alt="Site Home"><img src="' . $custom_logo_url . '" alt="logo"/></a></span>', $custom_logo_url);	// +since: 3.1.10: add alt=
+			if ( weaverx_getopt( 'm_primary_logo_home_link' ) ) {
+				$logo = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><a href="' . get_home_url() . '" alt="Site Home"><img src="' . $custom_logo_url . '" alt="logo"/></a></span>', $custom_logo_url );	// +since: 3.1.10: add alt=
 			}
 			else {
-				$logo = apply_filters('weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="logo"/></span>', $custom_logo_url);	// +since: 3.1.10: add alt=
+				$logo = apply_filters( 'weaverx_menu_logo', '<span class="custom-logo-on-menu"><img src="' . $custom_logo_url . '" alt="logo"/></span>', $custom_logo_url );	// +since: 3.1.10: add alt=
 			}
 		}
 
@@ -32,7 +32,7 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 
 	$site_title = '';
 
-	if ( weaverx_getopt('m_primary_site_title_left') ) {
+	if ( weaverx_getopt( 'm_primary_site_title_left' ) ) {
 
 		$classt = 'site-title-on-menu wvrx-menu-html wvrx-menu-left';
 
@@ -42,32 +42,32 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 			$classt .= ' font-' . $val;
 		}
 
-		$classt .= weaverx_get_bold_italic('site_title','bold');
-		$classt .= weaverx_get_bold_italic('site_title','italic');
+		$classt .= weaverx_get_bold_italic( 'site_title','bold' );
+		$classt .= weaverx_get_bold_italic( 'site_title','italic' );
 
-		$site_title = '<span class="' . $classt . '"><a href="' . get_home_url() . '" alt="Site Home">' . get_bloginfo('name') . '</a></span>';
+		$site_title = '<span class="' . $classt . '"><a href="' . get_home_url() . '" alt="Site Home">' . get_bloginfo( 'name' ) . '</a></span>';
 	}
 
-	$left = weaverx_getopt('m_primary_html_left');
-	$right = weaverx_getopt('m_primary_html_right');
+	$left = weaverx_getopt( 'm_primary_html_left' );
+	$right = weaverx_getopt( 'm_primary_html_right' );
 
 
 
 	if ( $left ) {
-		$hide = ' ' . weaverx_getopt('m_primary_hide_left');
+		$hide = ' ' . weaverx_getopt( 'm_primary_hide_left' );
 		$left = '<span class="wvrx-menu-html wvrx-menu-left' . $hide .'">' . do_shortcode( $left ) . '</span>';
-		$left = str_replace('%','%%',$left);	// wp_nav_menu uses sprintf! This will almost always fix the issue.
-	} elseif (is_customize_preview()) {
-		$hide = ' ' . weaverx_getopt('m_primary_hide_left');
+		$left = str_replace( '%','%%',$left );	// wp_nav_menu uses sprintf! This will almost always fix the issue.
+	} elseif ( is_customize_preview() ) {
+		$hide = ' ' . weaverx_getopt( 'm_primary_hide_left' );
 		$left = '<span class="wvrx-menu-html wvrx-menu-left' . $hide .'"></span>';
 	}
 
 	if ( $right ) {
-		$hide = ' ' . weaverx_getopt('m_primary_hide_right');
+		$hide = ' ' . weaverx_getopt( 'm_primary_hide_right' );
 		$right = '<span class="wvrx-menu-html wvrx-menu-right ' . $hide . '">' . do_shortcode( $right ) . '</span>';
-		$right = str_replace('%','%%',$right);	// wp_nav_menu uses sprintf!
-	} elseif (is_customize_preview()) {
-		$hide = ' ' . weaverx_getopt('m_primary_hide_right');
+		$right = str_replace( '%','%%',$right );	// wp_nav_menu uses sprintf!
+	} elseif ( is_customize_preview() ) {
+		$hide = ' ' . weaverx_getopt( 'm_primary_hide_right' );
 		$right = '<span class="wvrx-menu-html wvrx-menu-right ' . $hide . '"></span>';
 	}
 
@@ -77,14 +77,14 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 
 	$left = $logo . $site_title . $left;
 
-	if ( weaverx_getopt('use_smartmenus') )
-	{							// ==================  SMART MENUS (make any changes in default menu version, too in filters.php)
-		$hamburger = apply_filters('weaverx_mobile_menu_name',weaverx_getopt('m_primary_hamburger'));
+	if ( weaverx_getopt( 'use_smartmenus' ) )
+	{							// ==================  SMART MENUS ( make any changes in default menu version, too in filters.php )
+		$hamburger = apply_filters( 'weaverx_mobile_menu_name',weaverx_getopt( 'm_primary_hamburger' ) );
 
 
 		if ( $hamburger == '' ) {
-			$alt = weaverx_getopt('mobile_alt_label');
-			if ( $alt == '')
+			$alt = weaverx_getopt( 'mobile_alt_label' );
+			if ( $alt == '' )
 				$hamburger = '<span class="genericon genericon-menu"></span>';
 			else
 				$hamburger = '<span class="menu-toggle-menu">' . $alt . '</span>';
@@ -92,7 +92,7 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 		$left = '<span class="wvrx-menu-button">' . "{$hamburger}</span>{$left}";			// +since: 3.1.10: remove empty href=""
 	}
 
-	$menu_class = apply_filters('weaverx_menu_class', 'weaverx-theme-menu wvrx-menu menu-hover', 'primary');
+	$menu_class = apply_filters( 'weaverx_menu_class', 'weaverx-theme-menu wvrx-menu menu-hover', 'primary' );
 
 	$align = weaverx_getopt( 'm_primary_align' );
 
@@ -116,12 +116,12 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 			$menu_class .= ' menu-alignleft';
 	}
 
-	if ( weaverx_getopt ('m_primary_move') )
+	if ( weaverx_getopt ( 'm_primary_move' ) )
 		$nav_class = 'menu-primary menu-primary-moved menu-type-standard';
 	else
 		$nav_class = 'menu-primary menu-primary-standard menu-type-standard';
 
-	if ( weaverx_getopt('m_primary_fixedtop') == 'fixed-top' ) {	// really is a drop-down value, so need to check for === for backward compat.
+	if ( weaverx_getopt( 'm_primary_fixedtop' ) == 'fixed-top' ) {	// really is a drop-down value, so need to check for === for backward compat.
 		$class .= ' wvrx-fixedtop';
 		$nav_class .= ' wvrx-primary-fixedtop';
 	}
@@ -129,8 +129,8 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 	echo "\n\n" . '<div id="nav-primary" class="' . $nav_class . '"' . weaverx_schema( 'menu' ) . ">\n";
 
 	$args = array(
-		'fallback_cb' 	  => 'weaverx_page_menu',
-		'theme_location'  => $menu,
+		'fallback_cb' 	 => 'weaverx_page_menu',
+		'theme_location'  => $menuw,
 		'menu_class'      => $menu_class,
 		'container'       => 'div',
 		'container_class' => 'wvrx-menu-container ' . $class,
@@ -139,15 +139,15 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 	);
 
 
-	$alt_menu = weaverx_get_per_page_value('_pp_alt_primary_menu');
+	$alt_menu = weaverx_get_per_page_value( '_pp_alt_primary_menu' );
 	if ( $alt_menu != '' ) {
 		$args['theme_location'] = '';
-		$args['menu'] = wp_get_nav_menu_object($alt_menu);
+		$args['menu'] = wp_get_nav_menu_object( $alt_menu );
 	} else {
 		$locations = get_nav_menu_locations();							// note - the default menu is handled in weaverx_page_menu() in filters.php
-		if ( isset( $locations[ $menu ] ) ) {
-			$the_menu = wp_get_nav_menu_object( $locations[ $menu ] );
-			if ( ! empty( $the_menu )) {
+		if ( isset( $locations[ $menuw ] ) ) {
+			$the_menu = wp_get_nav_menu_object( $locations[ $menuw ] );
+			if ( ! empty( $the_menu ) ) {
 				$args['fallback_cb'] = '';
 				$args['walker'] = new weaverx_Walker_Nav_Menu();
 			}
@@ -158,9 +158,9 @@ if (weaverx_getopt( 'm_primary_hide') != 'hide'
 
 	echo "</div><div class='clear-menu-primary-end' style='clear:both;'></div><!-- /.menu-primary -->\n\n";
 
-	if ( weaverx_getopt('use_smartmenus') ) {
-		if ( function_exists('weaverxplus_plugin_installed') )
-			do_action('weaverx_plus_smartmenu', 'nav-primary', 'm_primary');	// emit required JS to invoke smartmenu
+	if ( weaverx_getopt( 'use_smartmenus' ) ) {
+		if ( function_exists( 'weaverxplus_plugin_installed' ) )
+			do_action( 'weaverx_plus_smartmenu', 'nav-primary', 'm_primary' );	// emit required JS to invoke smartmenu
 		else {		// use theme "action"
 			weaverx_smartmenu( 'nav-primary', 'm_primary' );
 		}

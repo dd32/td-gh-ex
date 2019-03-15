@@ -27,7 +27,7 @@ body {
 .oneColFixCtr #container {
 	max-width: 750px;  /* using 20px less than a full 800px width allows for browser chrome and avoids a horizontal scroll bar */
 	background: #FFFFCD;
-	margin: 0 auto; /* the auto margins (in conjunction with a width) center the page */
+	margin: 0 auto; /* the auto margins ( in conjunction with a width ) center the page */
 	border: 1px solid #000000;
 	text-align: left; /* this overrides the text-align: center on the body element. */
 }
@@ -399,8 +399,8 @@ h1 {
           screen, and several ways to display posts in places other than the
           standard blog page.</p>
 <p><strong>Directory Macro Replacement for CSS images</strong></p>
-        <p>Sometimes you might want to add a background image to a style (e.g.,
-          using a url() value). Those images need to be stored someplace
+        <p>Sometimes you might want to add a background image to a style ( e.g.,
+          using a url( ) value ). Those images need to be stored someplace
           available to visitors to your site. One typical place is to use the
           WordPress media gallery, and use the full URL to those images.</p>
         <p>Because you might be building a child theme, or an Add-on Subtheme, <em>Weaver
@@ -409,24 +409,24 @@ h1 {
           some background images for a child theme, and you would like to save
           those images in a directory called /images in the child theme
           directory, you can use the macro %stylesheet_directory% in a style
-          url() value.</p>
+          url( ) value.</p>
         <p>For example, say you've built a child weaver theme, and have a file
           called content-bg.jpg stored in the child theme's /images directory.
           You can specify the location of that file in a site independent manner
           by using:</p>
         <p>#content {background-image:
-          url(%stylesheet_directory%images/content-bg.jpg);}</p>
+          url( %stylesheet_directory%images/content-bg.jpg );}</p>
         <p>The %stylesheet_directory% will be replaced in the generated CSS code
           as</p>
-        <p>url(/wp-content/themes/your-child-theme/images/content-bg.jpg)</p>
+        <p>url( /wp-content/themes/your-child-theme/images/content-bg.jpg )</p>
         <p>The file directory macros supported by <em>Weaver Xtreme</em> will
           produce a root-relative path, and include the trailing /. Using a
           root-relative path eliminates issues with http and https protocols,
           and will be site independent. The following macro values are
           supported:</p>
         <p>%template_directory% - the main theme directory. If the theme is a
-          child theme, this will be the directory of the parent theme (so
-          /weaver-xreme/).</p>
+          child theme, this will be the directory of the parent theme ( so
+          /weaver-xreme/ ).</p>
         <p>%stylesheet_directory% - the directory of the theme's stylesheet -
           thus if it is a child theme, then this will be the child theme's
           directory.</p>
@@ -446,7 +446,7 @@ h1 {
         <p>Technically, any PHP code you add here will be executed at the very
           beginning of the theme's header.php template file. This file does not
           get loaded and executed until the core WordPress engine has loaded the
-          main theme files (e.g., functions.php), so it will be too late to add
+          main theme files ( e.g., functions.php ), so it will be too late to add
           actions or filters for many WordPress options. But any actions or
           filters used to generate content of a page can be added at this point
           of execution. However, the code can <em>not</em> be used to override
@@ -456,7 +456,7 @@ h1 {
           definitions. You can probably add enqueue_style and enqueue_script
           functions as well, as those functions are typically used later in the
           header.php file.</p>
-        <p>The code you define is executed using the PHP eval() function.<em>
+        <p>The code you define is executed using the PHP eval( ) function.<em>
             Any PHP errors will cause failure of the site to load properly.</em>
           Specifically, you should <strong>NOT</strong> wrap the code with
           &lt;?php at the beginning and ?&gt; at the end. You can use them
@@ -482,9 +482,9 @@ h1 {
             adds these class names to every post displayed on a blog page. You
             can use these class names to create custom css styling for posts -
             like adding a different background for even and odd posts, or to
-            display something for a specific numbered post on each page. (The nn
+            display something for a specific numbered post on each page. ( The nn
             starts at 1 on each blog page, and starts over at 1 if your posts
-            are paged.) </li>
+            are paged. ) </li>
           <li>#comment-title.no-comments-made - .no-comments-made is added to
             the #comments-title &lt;div&gt; if no comments have been made yet.</li>
           <li>.show-desktop - show on devices; add these classes to show or hide
@@ -498,7 +498,7 @@ h1 {
             .hide-phone</li>
           <li>.is-desktop - prefix selectors to make rules apply on specific
             devices<br />
-            .is-mobile (either small-tablet or phone)<br />
+            .is-mobile ( either small-tablet or phone )<br />
             .is-smalltablet - note: many phones will be considered smalltablet
             when in landscape view<br />
             .is-phone - usually when in portrait mode only<br />
@@ -547,8 +547,8 @@ h1 {
           Content Areas tab to customize those.</p>
         <p>You can also customize any title on any kind of page with these
           classes:</p>
-        <h4>Title for Page-like pages: (Standard Page, Attachment, 404):</h4>
-        <p> <em>All the same (the default):</em><br />
+        <h4>Title for Page-like pages: ( Standard Page, Attachment, 404 ):</h4>
+        <p> <em>All the same ( the default ):</em><br />
               <span class="css">.page-title {}</span><br />
           <br />
           <em>Just Pages</em>:<br />
@@ -564,8 +564,8 @@ h1 {
           <strong>404:</strong><br />
              <span class="css">.error404 .page-title {}</span><br />
           <br />
-          <strong>The Post Single View Page</strong> (default is same styling as
-          standard Pages)<br />
+          <strong>The Post Single View Page</strong> (Default is same styling as
+          standard Pages )<br />
           <br />
               <span class="css">.title-single {}</span><br />
                 -or-<br />
@@ -641,8 +641,8 @@ h1 {
           box:</p>
         <p class="code1">/* Add filters to change the Older Blog Navigation
           messages */<br />
-          add_filter('weaverx_older_posts','wx_older_posts');<br />
-          function wx_older_posts($older) {<br />
+          add_filter( 'weaverx_older_posts','wx_older_posts' );<br />
+          function wx_older_posts( $older ) {<br />
               return 'Back!';<br />
           }<br />
         </p>
@@ -652,8 +652,8 @@ h1 {
           styling. You have total flexibility in what message comes out. You
           would define similar filters for any of the following defined <em>Weaver
             Xtreme</em> filters.</p>
-        <p>Filters labeled with (%s) mean that the subject of the title (mostly
-          archive page titles) will be used in place of the %s. If you want the
+        <p>Filters labeled with ( %s ) mean that the subject of the title ( mostly
+          archive page titles ) will be used in place of the %s. If you want the
           extra title info, then you need to include the %s in your filter
           replacement. Technically, the title uses sprintf to add the specific
           information to the main title. For example, the tag archive default
@@ -677,23 +677,23 @@ h1 {
           <li>'weaverx_older_posts', 'weaverx_newer_posts' - replace the
             Older/Newer and Previous/Next Blog Navigation Style for navigating
             blog posts.</li>
-          <li>'weaverx_more_message' - the Continue Reading message (already has
-            built-in option)</li>
-          <li>'weaverx_tag_archives' - page title for tag archives (%s)</li>
+          <li>'weaverx_more_message' - the Continue Reading message ( already has
+            built-in option )</li>
+          <li>'weaverx_tag_archives' - page title for tag archives ( %s )</li>
           <li>'weaverx_404_title' - page title for 404 page</li>
           <li>'weaverx_yearly_archives', 'weaverx_monthly_archives',
-            'weaverx_daily_archives' - archive page title (%s)</li>
-          <li>'weaverx_author_archives' - Author Archive page title (%s)</li>
-          <li>'weaverx_category_archives' - Category Archives page title (%s)</li>
-          <li>'weaverx_search_results' - Search results page title (%s)</li>
+            'weaverx_daily_archives' - archive page title ( %s )</li>
+          <li>'weaverx_author_archives' - Author Archive page title ( %s )</li>
+          <li>'weaverx_category_archives' - Category Archives page title ( %s )</li>
+          <li>'weaverx_search_results' - Search results page title ( %s )</li>
           <li>'weaverx_comments_title' - Title of comments section</li>
           <li>'weaverx_newer_comments', 'weaverx_older_comments' - Older/Newer
             comments links</li>
-          <li>'weaverx_leave_reply_blog' - Leave a reply (blog page version)</li>
-          <li>'weaverx_reply_1' - Original: ''&lt;b&gt;1&lt;/b&gt; Reply' (blog
-            page version)</li>
-          <li>'weaverx_reply_many' - Original '&lt;b&gt;%&lt;/b&gt; Replies' (%
-            replaced by number of replies) (blog page version)</li>
+          <li>'weaverx_leave_reply_blog' - Leave a reply ( blog page version )</li>
+          <li>'weaverx_reply_1' - Original: ''&lt;b&gt;1&lt;/b&gt; Reply' ( blog
+            page version )</li>
+          <li>'weaverx_reply_many' - Original '&lt;b&gt;%&lt;/b&gt; Replies' ( %
+            replaced by number of replies ) ( blog page version )</li>
           <li>'weaverx_leave_reply_form' - Leave a Reply message on comment form</li>
           <li>'weaverx_cancel_reply_form' - Cancel Reply message on comment form</li>
           <li>'weaverx_post_comment_form' - Post Comment button on comment form</li>
@@ -710,21 +710,21 @@ h1 {
         <p>The Weaver theme generates content that is wrapped in HTML
           &lt;div&gt;'s with a set of conventional names. A typical site page
           will have the following hierarchy. Knowing this can help you make
-          additional custom modifications. (Another useful thing to do is to use
+          additional custom modifications. ( Another useful thing to do is to use
           the "View Document Source" option of your web browser to see the
-          actual HTML generated by WordPress for your site content.) This
+          actual HTML generated by WordPress for your site content. ) This
           example is a standard page with a Right Sidebar layout. The locations
           of the sidebar areas will differ for different layouts. Moving the
-          menu by options will change where it is located. (<em>Important note:
+          menu by options will change where it is located. ( <em>Important note:
             the names and order of these &lt;div&gt;'s have changed
-            significantly since Weaver II!</em>)</p>
+            significantly since Weaver II!</em> )</p>
         <pre class="codebox">body
     #inject_prewrapper
     #wrapper                        - wraps whole site
 
         #header                     - wraps everything in the header
             #inject_header          - right after #header start
-            .menu-secondary          - secondary menu (top) (.menu-secondary.wvrx-menu-wrap)
+            .menu-secondary          - secondary menu ( top ) ( .menu-secondary.wvrx-menu-wrap )
             #header-widget-area     - the header widget area
             #branding               - the header area
             .title-tagline{-over}   - wraps #site-title and #site-tagline
@@ -734,19 +734,19 @@ h1 {
                 #nav-header-mini    - header mini menu
             #header-image           - the header image
             #header-html            - the header HTML area
-            .menu-primary            - primary menu (bottom) (.menu-primary.wvrx-menu-wrap)
+            .menu-primary            - primary menu ( bottom ) ( .menu-primary.wvrx-menu-wrap )
 
         #container                  - wraps infobar, content, sidebars
             #infobar                - info bar, if after menu bar
-            #primary-widget-area    - the primary widget area (if stacked layout)
+            #primary-widget-area    - the primary widget area ( if stacked layout )
             #content                - wraps page or post content
                 #?-top-widget-area  - the various top widget areas
                 #nav-above          - Previous/Next for blog pages
                 &lt;article&gt;           - page or post content
                 #nav-below          - Previous/Next for blog pages
                 #?-bottom-widget-area - various bottom widget areas
-            #primary-widget-area    - the primary widget area (if non-stacked layout)
-            #secondary-widget-area  - the secondary widget area (always after content)
+            #primary-widget-area    - the primary widget area ( if non-stacked layout )
+            #secondary-widget-area  - the secondary widget area ( always after content )
 
         #inject_prefooter
         #colophon                   - the footer area
@@ -777,7 +777,7 @@ h1 {
 <b>&lt;/</b><b>body</b><b>&gt;</b>
 
 
-<i>&lt;!-- **** example default Blog Page (as Home page) **** --&gt;</i>
+<i>&lt;!-- **** example default Blog Page ( as Home page ) **** --&gt;</i>
 
 <b>&lt;</b><b>body</b> class<i>=</i><b>"home blog weaverx-page-blog weaverx-sb-right"</b><b>&gt;</b>
     ...
@@ -1011,170 +1011,170 @@ Older posts<b>&lt;/</b><b>a</b><b>&gt;</b><b>&lt;/</b><b>div</b><b>&gt;</b>
 
         <h4>weaverx_404_title</h4>
        	<ul>
-       		  	<li><code>apply_filters('weaverx_404_title', __('Sorry, no such page.','weaver-xtreme'))</code></li>
+       		 	<li><code>apply_filters( 'weaverx_404_title', weaverx_filter_text( 'Sorry, no such page.','weaver-xtreme' ) )</code></li>
           		<li>explain<br />
-	    </li>
+	   </li>
        	</ul>
 <h4>weaverx_options</h4>
         	<ul>
-       		  	<li><code>apply_filters('weaverx_options','weaverx_settings_backup')</code></li>
-          		<li>This allows a child theme to load an alternate set of settings from the WP options db. The second parameter is the name of the WP option and will be used as the value of get_option(), etc. The valid values can be: weaverx_settings_backup or weaverx_options. </li>
+       		 	<li><code>apply_filters( 'weaverx_options','weaverx_settings_backup' )</code></li>
+          		<li>This allows a child theme to load an alternate set of settings from the WP options db. The second parameter is the name of the WP option and will be used as the value of get_option( ), etc. The valid values can be: weaverx_settings_backup or weaverx_options. </li>
        		</ul>
 
         <h4>weaverx_daily_archives</h4>
         	<ul>
-       		  	<li><code>apply_filters('weaverx_daily_archives', __( 'Daily Archives: %s','weaver-xtreme'));</code></li>
+       		 	<li><code>apply_filters( 'weaverx_daily_archives', weaverx_filter_text( 'Daily Archives: %s','weaver-xtreme' ) );</code></li>
           		<li>Change the message for Daily Archives</li>
        		</ul>
 
         <h4>weaverx_monthly_archives</h4>
         	<ul>
-       		  	<li><code>apply_filters('weaverx_monthly_archives', __( 'Monthly Archives: %s','weaver-xtreme'));</code></li>
+       		 	<li><code>apply_filters( 'weaverx_monthly_archives', weaverx_filter_text( 'Monthly Archives: %s','weaver-xtreme' ) );</code></li>
           		<li>Change message for Monthly Archives</li>
        		</ul>
 
         <h4>weaverx_yearly_archives</h4>
         	<ul>
-   		  	  <li><code>apply_filters('weaverx_yearly_archives', __( 'Yearly Archives: %s','weaver-xtreme'))</code></li>
+   		 	 <li><code>apply_filters( 'weaverx_yearly_archives', weaverx_filter_text( 'Yearly Archives: %s','weaver-xtreme' ) )</code></li>
           		<li>Change message for Yearly Archives</li>
    		</ul>
 
         <h4>taxonomy_archive_meta</h4>
         	<ul>
-       		  	<li><code>apply_filters( 'taxonomy_archive_meta', '&lt;div class=&quot;tax-archive-meta&quot;&gt;' . $term_description . '&lt;/div&gt;' )</code></li>
-          		<li>Used to replace a taxonomy archive page description as returned by WP function term_description().</li>
+       		 	<li><code>apply_filters( 'taxonomy_archive_meta', '&lt;div class=&quot;tax-archive-meta&quot;&gt;' . $term_description . '&lt;/div&gt;' )</code></li>
+          		<li>Used to replace a taxonomy archive page description as returned by WP function term_description( ).</li>
        		</ul>
 
         <h4>weaverx_author_archives</h4>
         	<ul>
-       		  	<li><code>apply_filters('weaverx_author_archives',  __( 'Author Archives: %s','weaver-xtreme'))</code></li>
+       		 	<li><code>apply_filters( 'weaverx_author_archives',  weaverx_filter_text( 'Author Archives: %s','weaver-xtreme' ) )</code></li>
           		<li>Change message for Author Archives</li>
        		</ul>
 
         <h4>weaverx_category_archives</h4>
         	<ul>
-       		  	<li><code>apply_filters('weaverx_category_archives', __( 'Category Archives: %s','weaver-xtreme'))</code></li>
+       		 	<li><code>apply_filters( 'weaverx_category_archives', weaverx_filter_text( 'Category Archives: %s','weaver-xtreme' ) )</code></li>
           		<li>Change the message for Category Archives</li>
        		</ul>
 
         <h4>category_archive_meta</h4>
         	<ul>
-       		  	<li><code>apply_filters( 'category_archive_meta', '&lt;div class=&quot;category-archive-meta&quot;&gt;' . $category_description . '&lt;/div&gt;' )</code></li>
-          		<li>Used to replace a category archive page description as returned by WP function category_description().</li>
+       		 	<li><code>apply_filters( 'category_archive_meta', '&lt;div class=&quot;category-archive-meta&quot;&gt;' . $category_description . '&lt;/div&gt;' )</code></li>
+          		<li>Used to replace a category archive page description as returned by WP function category_description( ).</li>
        		</ul>
 
         <h4>weaverx_comments_title</h4>
         	<ul>
-       		  	<li><code>echo apply_filters('weaverx_comments_title', __('Comments','weaver-xtreme'))</code></li>
+       		 	<li><code>echo apply_filters( 'weaverx_comments_title', weaverx_filter_text( 'Comments','weaver-xtreme' ) )</code></li>
           		<li>Replace comments section title</li>
        		</ul>
 
         <h4>weaverx_older_comments</h4>
         	<ul>
-       		  	<li><code>apply_filters('weaverx_older_comments',__( '&amp;larr; Older Comments','weaver-xtreme')) </code></li>
+       		 	<li><code>apply_filters( 'weaverx_older_comments', weaverx_filter_text( '&amp;larr; Older Comments','weaver-xtreme' ) ) </code></li>
           		<li>Replace  Older Comments label</li>
        		</ul>
 
         <h4>weaverx_newer_comments</h4>
         	<ul>
-       		  	<li><code>apply_filters('weaverx_newer_comments',__( 'Newer Comments &amp;rarr;','weaver-xtreme'))</code></li>
+       		 	<li><code>apply_filters( 'weaverx_newer_comments', weaverx_filter_text( 'Newer Comments &amp;rarr;','weaver-xtreme' ) )</code></li>
           		<li>Replace Newer Comments label</li>
        		</ul>
 
         <h4>weaverx_reply/comment_form</h4>
         	<ul>
-       		  	<li>apply_filters('weaverx_leave_reply_form', __( 'Leave a Reply','weaver-xtreme' )),<br />
-  apply_filters('weaverx_cancel_reply_form',__( 'Cancel Reply','weaver-xtreme' )),<br />
-  apply_filters('weaverx_post_comment_form',__( 'Post Comment','weaver-xtreme' ))</li>
+       		 	<li>apply_filters( 'weaverx_leave_reply_form', weaverx_filter_text( 'Leave a Reply','weaver-xtreme' ) ),<br />
+  apply_filters( 'weaverx_cancel_reply_form', weaverx_filter_text( 'Cancel Reply','weaver-xtreme' ) ),<br />
+  apply_filters( 'weaverx_post_comment_form', weaverx_filter_text( 'Post Comment','weaver-xtreme' ) )</li>
           		<li>Change messages for reply/comment form</li>
        		</ul>
 
         <h4>weaverx_site_title</h4>
         	<ul>
-       		  	<li><code>apply_filters('weaverx_site_title', get_bloginfo( 'name', 'display' ) )</code></li>
+       		 	<li><code>apply_filters( 'weaverx_site_title', get_bloginfo( 'name', 'display' ) )</code></li>
           		<li>Replace the default site title</li>
        		</ul>
 
         <h4>weaverx_tagline</h4>
         	<ul>
-   		  	  <li><code>apply_filters('weaverx_tagline', get_bloginfo( 'description' ))</code></li>
+   		 	 <li><code>apply_filters( 'weaverx_tagline', get_bloginfo( 'description' ) )</code></li>
           		<li>Replace the default site tagline</li>
    		</ul>
 
         <h4>weaverx_attachment_size</h4>
         	<ul>
-       		  	<li><code>apply_filters( 'weaverx_attachment_size', 'large' )</code></li>
+       		 	<li><code>apply_filters( 'weaverx_attachment_size', 'large' )</code></li>
           		<li>Change the default size for displaying attachment image</li>
        		</ul>
 
         <h4>weaverx_older_posts, weaverx_newer_posts</h4>
         	<ul>
-   		  	  <li><code>apply_filters('weaverx_older_posts','<span class="meta-nav">&larr; </span>' . __('Previous Post','weaver-xtreme')) apply_filters('weaverx_newer_posts', __('Next Post','weaver-xtreme') . '<span class="meta-nav">&rarr; </span>' );</code></li>
+   		 	 <li><code>apply_filters( 'weaverx_older_posts','<span class="meta-nav">&larr; </span>' . weaverx_filter_text( 'Previous Post','weaver-xtreme' ) ) apply_filters( 'weaverx_newer_posts', weaverx_filter_text( 'Next Post','weaver-xtreme' ) . '<span class="meta-nav">&rarr; </span>' );</code></li>
           		<li>Change message for older and newer posts navigation</li>
    		</ul>
 
         <h4>weaverx_more_message</h4>
         	<ul>
-       		  	<li><code>apply_filters('weaverx_more_message','Continue reading')</code></li>
+       		 	<li><code>apply_filters( 'weaverx_more_message','Continue reading' )</code></li>
           		<li>Replace the continue reading message for excerpts</li>
        		</ul>
 
         <h4>edit_post_link</h4>
         	<ul>
-       		  	<li><code>apply_filters( 'edit_post_link', 'Edit', $post-&gt;ID )</code></li>
+       		 	<li><code>apply_filters( 'edit_post_link', 'Edit', $post-&gt;ID )</code></li>
           		<li>Replace the &quot;Edit&quot; link button for $post-&gt;ID - need to include full &lt;a&gt; code and label.</li>
        		</ul>
 
          <h4>weaverx_leave_reply_blog</h4>
         	<ul>
-   		  	  <li><code>apply_filters('weaverx_leave_reply_blog', __( 'Leave a reply','weaver-xtreme'));<br />
-   		  	  </code><code>apply_filters('weaverx_reply_1', __( '<b>1</b> Reply','weaver-xtreme')); <br />
-   		  	  apply_filters('weaverx_reply_many', __( '<b>%</b> Replies','weaver-xtreme'));</code></li>
+   		 	 <li><code>apply_filters( 'weaverx_leave_reply_blog', weaverx_filter_text( 'Leave a reply','weaver-xtreme' ) );<br />
+   		 	 </code><code>apply_filters( 'weaverx_reply_1', weaverx_filter_text( '<b>1</b> Reply','weaver-xtreme' ) ); <br />
+   		 	 apply_filters( 'weaverx_reply_many', weaverx_filter_text( '<b>%</b> Replies','weaver-xtreme' ) );</code></li>
           		<li>Replace messages for &quot;Leaver a Reply&quot; message for blog meta info lines</li>
        		</ul>
 
         <h4>weaverx_posted_on, weaverx_posted_in</h4>
         	<ul>
-       		  	<li><code>apply_filters('weaverx_posted_on',$po, $type)<br />
-       		  	  apply_filters('weaverx_posted_in',$po, $type)   		  	    <br />
-       		  	</code></li>
-          		<li>Replace top and bottom post meta-info line ($po) for blog posts.</li>
+       		 	<li><code>apply_filters( 'weaverx_posted_on',$po, $type )<br />
+       		 	 apply_filters( 'weaverx_posted_in',$po, $type )   		 	   <br />
+       		 	</code></li>
+          		<li>Replace top and bottom post meta-info line ( $po ) for blog posts.</li>
        		</ul>
 
         <h4>weaverx_author_bio_avatar_size</h4>
         	<ul>
-       		  	<li><code>apply_filters( 'weaverx_author_bio_avatar_size', 75 )</code></li>
+       		 	<li><code>apply_filters( 'weaverx_author_bio_avatar_size', 75 )</code></li>
           		<li>Change the size if the author avatar in the bio</li>
        		</ul>
 
         <h4>weaverx_replace_widget_area</h4>
         	<ul>
-       		  	<li><code>apply_filters('weaverx_replace_widget_area',$area_name)</code></li>
+       		 	<li><code>apply_filters( 'weaverx_replace_widget_area',$area_name )</code></li>
           		<li>Replace a standard Weaver Xtreme widget area with a different one</li>
        		</ul>
 
          <h4>weaverx_menu_name</h4>
         	<ul>
-       		  	<li><code>apply_filters('weaverx_menu_name', $weaverx_menu)</code></li>
+       		 	<li><code>apply_filters( 'weaverx_menu_name', $weaverx_menu )</code></li>
           		<li>Replace the custom menu with a different one. </li>
        		</ul>
 
         <h4>weaverx_menu_class</h4>
         	<ul>
-       		  	<li><code>apply_filters('weaverx_menu_class', $class_values, $weaverx_menu)</code></li>
+       		 	<li><code>apply_filters( 'weaverx_menu_class', $class_values, $weaverx_menu )</code></li>
           		<li>Modify menu class - add or delete classes to specific Weaver Xtreme menus</li>
        		</ul>
 
 <h4>filtername</h4>
         	<ul>
-       		  	<li><code>apply_filters</code></li>
+       		 	<li><code>apply_filters</code></li>
           		<li>explain</li>
        		</ul>
 
 
 
         	<h3>Advanced Filters</h3>
-        	<p>The following filters require knowledge of the item format (usually an array), and are usually used for Xtreme Plus to add new options. These can be added to a new option interface, but will require an understanding of the underlying code, and usually extra CSS style rules to support. Search the code for these filters to see what they do.</p>
+        	<p>The following filters require knowledge of the item format ( usually an array ), and are usually used for Xtreme Plus to add new options. These can be added to a new option interface, but will require an understanding of the underlying code, and usually extra CSS style rules to support. Search the code for these filters to see what they do.</p>
        	<p>'weaverx_add_font_size', 'weaverx_add_font_family', 'weaverx_add_shadows', </p>
 
 
@@ -1183,73 +1183,73 @@ Older posts<b>&lt;/</b><b>a</b><b>&gt;</b><b>&lt;/</b><b>div</b><b>&gt;</b>
 
         <h4>weaverx_child_siteoptions</h4>
         	<ul>
-       		  	<li><code>do_action('weaverx_child_siteoptions')</code></li>
+       		 	<li><code>do_action( 'weaverx_child_siteoptions' )</code></li>
           		<li>A child theme can add new options to the botom of the Site Options tab. They can be processed via the 'weaverx_child_process_options' hook.</li>
        		</ul>
 
         <h4>weaverx_child_process_options</h4>
         	<ul>
-       		  	<li><code> do_action('weaverx_child_process_options')</code></li>
+       		 	<li><code> do_action( 'weaverx_child_process_options' )</code></li>
           		<li>Process options supported by a child theme - e.g., added via 'weaverx_child_siteoptions' or other.</li>
        		</ul>
 
             <h4>weaverx_child_saverestore</h4>
         	<ul>
-       		  	<li><code>do_action('weaverx_child_saverestore');</code></li>
+       		 	<li><code>do_action( 'weaverx_child_saverestore' );</code></li>
           		<li>Allow additional save/restore in child </li>
        		</ul>
 
             <h4>weaverx_child_update</h4>
         	<ul>
-       		  	<li><code>do_action('weaverx_child_update')</code></li>
+       		 	<li><code>do_action( 'weaverx_child_update' )</code></li>
           		<li>Update option settings from child</li>
        		</ul>
 
             <h4>weaverx_child_show_extrathemes</h4>
         	<ul>
-       		  	<li><code> do_action('weaverx_child_show_extrathemes');</code></li>
+       		 	<li><code> do_action( 'weaverx_child_show_extrathemes' );</code></li>
           		<li>Allow child to display extra sub-themes.</li>
        		</ul>
 
             <h4>weaverx_nav</h4>
         	<ul>
-   		  	  <li><code>do_action('weaverx_nav', $location)</code></li>
-          		<li>Display the top (secondary) and bottom (primary) menus</li>
+   		 	 <li><code>do_action( 'weaverx_nav', $location )</code></li>
+          		<li>Display the top ( secondary ) and bottom ( primary ) menus</li>
    		</ul>
 
             <h4>weaverx_post_header</h4>
         	<ul>
-       		  	<li><code> do_action('weaverx_post_header')</code></li>
-          		<li>Called after the &lt;/header&gt; and bottom (primary) menu emitted.</li>
+       		 	<li><code> do_action( 'weaverx_post_header' )</code></li>
+          		<li>Called after the &lt;/header&gt; and bottom ( primary ) menu emitted.</li>
        		</ul>
 
             <h4>weaverx_per_page</h4>
         	<ul>
-       		  	<li><code>do_action('weaverx_per_page')</code></li>
+       		 	<li><code>do_action( 'weaverx_per_page' )</code></li>
           		<li>Called right before content is generated for each page. Use to emit per page options.</li>
        		</ul>
 
             <h4>weaverx_per_post</h4>
         	<ul>
-       		  	<li><code> do_action('weaverx_per_post', $cur_post_ID)</code></li>
+       		 	<li><code> do_action( 'weaverx_per_post', $cur_post_ID )</code></li>
           		<li>Called before post content emitted. Used for per-post style.</li>
        		</ul>
 
 
             <h4>weaverx_breadcrumbs</h4>
         	<ul>
-       		  	<li><code>do_action('weaverx_breadcrumbs')</code></li>
+       		 	<li><code>do_action( 'weaverx_breadcrumbs' )</code></li>
           		<li>Called to emit breadcrumbs in infobar.</li>
        		</ul>
 
             <h4>weaverx_paginate</h4>
         	<ul>
-       		  	<li><code>do_action('weaverx_paginate')</code></li>
-          		<li>Called to emit pagination navigation for blog pages (infobar).</li>
+       		 	<li><code>do_action( 'weaverx_paginate' )</code></li>
+          		<li>Called to emit pagination navigation for blog pages ( infobar ).</li>
        		</ul>
                 <h4>do_action</h4>
        	<ul>
-       		  	<li><code>do_action</code></li>
+       		 	<li><code>do_action</code></li>
           		<li>explain</li>
        		</ul>
 
@@ -1257,29 +1257,29 @@ Older posts<b>&lt;/</b><b>a</b><b>&gt;</b><b>&lt;/</b><b>div</b><b>&gt;</b>
        	<h2>Pluggable functions </h2>
        	<p>A &quot;pluggable&quot; function is one that can easily be overridden in a child theme.</p>
 
-        <h4>weaverx_setup()</h4>
+        <h4>weaverx_setup( )</h4>
         <ul>
           		<li>Sets up theme defaults and registers support for various WordPress features.</li>
        	</ul>
 
-        <h4>weaverx_init_opts($who='')</h4>
+        <h4>weaverx_init_opts( $who='' )</h4>
         <ul>
-   		  <li>This sets either the current settings, or the default values.</li>
+   		 <li>This sets either the current settings, or the default values.</li>
        	</ul>
 
-        <h4>weaverx_register_header_images()</h4>
+        <h4>weaverx_register_header_images( )</h4>
         <ul>
-   		  <li>Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.</li>
+   		 <li>Default custom headers packaged with the theme. %s is a placeholder for the theme template directory URI.</li>
        	</ul>
 
-        <h4>weaverx_admin_header_style()</h4>
+        <h4>weaverx_admin_header_style( )</h4>
         <ul>
           		<li>Styles the header image displayed on the Appearance &gt; Header admin panel.</li>
        	</ul>
 
-        <h4>weaverx_register_sidebar($name, $id, $desc, $altclass='')</h4>
+        <h4>weaverx_register_sidebar( $name, $id, $desc, $altclass='' )</h4>
         <ul>
-   		  <li>Register widgetized areas</li>
+   		 <li>Register widgetized areas</li>
        	</ul>
 
         <h4>weaverx_comment( $comment, $args, $depth )</h4>
@@ -1287,44 +1287,44 @@ Older posts<b>&lt;/</b><b>a</b><b>&gt;</b><b>&lt;/</b><b>div</b><b>&gt;</b>
           		<li>Template for comments and pingbacks.</li>
        	</ul>
 
-        <h4>weaverx_comments_popup_link()</h4>
+        <h4>weaverx_comments_popup_link( )</h4>
         <ul>
           		<li>generate comment bubble for posts</li>
        	</ul>
 
-        <h4>weaverx_content_nav( $nav_id , $from_search=false)</h4>
+        <h4>weaverx_content_nav( $nav_id , $from_search=false )</h4>
         <ul>
-   		  <li>Display navigation to next/previous pages when applicable</li>
+   		 <li>Display navigation to next/previous pages when applicable</li>
        	</ul>
 
-        <h4>weaverx_continue_reading_link()</h4>
+        <h4>weaverx_continue_reading_link( )</h4>
         <ul>
-   		  <li>Returns a &quot;Continue Reading&quot; link for excerpts</li>
+   		 <li>Returns a &quot;Continue Reading&quot; link for excerpts</li>
        	</ul>
 
-        <h4>weaverx_edit_link($echo = 'echo')</h4>
+        <h4>weaverx_edit_link( $echo = 'echo' )</h4>
         <ul>
-   		  <li>Generates the &quot;Edit&quot; page/post button</li>
+   		 <li>Generates the &quot;Edit&quot; page/post button</li>
        	</ul>
 
         <h4>weaverx_entry_header( $format_title='', $do_excerpt = false )</h4>
         <ul>
-          		<li>display entry header (title ) for posts</li>
+          		<li>display entry header ( title ) for posts</li>
        	</ul>
 
-        <h4>weaverx_post_title($before='', $after='')</h4>
+        <h4>weaverx_post_title( $before='', $after='' )</h4>
         <ul>
-   		  <li>display the post title</li>
+   		 <li>display the post title</li>
        	</ul>
 
-        <h4>weaverx_link_pages()</h4>
+        <h4>weaverx_link_pages( )</h4>
         <ul>
-   		  <li>Interface to wp_link_pages - pluggable</li>
+   		 <li>Interface to wp_link_pages - pluggable</li>
        	</ul>
 
-        <h4>weaverx_not_found_search($file_name)</h4>
+        <h4>weaverx_not_found_search( $file_name )</h4>
         <ul>
-   		  <li>Output when search not found</li>
+   		 <li>Output when search not found</li>
        	</ul>
 
         <h4>function</h4>

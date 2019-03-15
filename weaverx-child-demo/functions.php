@@ -1,5 +1,7 @@
 <?php
-if ( !defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+} // Exit if accessed directly
 /* This is the main function.php override file - it controls most of the stuff happening with the theme */
 
 /* Anything you need to actively do, put here. This is the first code that will get run whenever the
@@ -10,7 +12,8 @@ function weaverx_continue_reading_link() {
 	/* very simple example - override the read more text... */
 
 	$msg = '[CLICK TO READ MORE]';
-	return ' <a class="more-link" href="'. esc_url(get_permalink()) . '">' . $msg . '</a>';
+
+	return ' <a class="more-link" href="' . esc_url( get_permalink() ) . '">' . $msg . '</a>';
 }
 
 ?>

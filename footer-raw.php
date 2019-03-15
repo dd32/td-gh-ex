@@ -1,5 +1,7 @@
 <?php
-if ( !defined('ABSPATH')) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+} // Exit if accessed directly
 /**
  * The template for displaying the footer.
  *
@@ -14,10 +16,9 @@ if ( !defined('ABSPATH')) exit; // Exit if accessed directly
 </div> <!-- #wrap -->
 <a id="page-bottom"></a>
 <div id="weaver-final" class="weaver-final-raw">
-<?php
+	<?php
 	wp_footer();
-	weaverx_end_body();
-?>
+	?>
 </div> <!-- #weaver-final -->
 </body>
 </html>

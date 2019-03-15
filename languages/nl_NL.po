@@ -476,7 +476,7 @@ msgstr "Status"
 #. Text in function
 #: weaver-ii-pro/includes/pro/weaverii-pro-sc-feed.php:54
 msgid "Syndicate this content"
-msgstr "Syndicate deze inhoud (RSS)"
+msgstr "Syndicate deze inhoud ( RSS )"
 
 #. Text in function
 #: weaver-ii-pro/includes/lib-runtime.php:1603
