@@ -101,7 +101,6 @@ case 'trackback' :
 	}
 	//--
 
-
 	if ( ! function_exists( 'weaverx_content_nav' ) ) {
 		/**
 		 * Display navigation to next/previous pages when applicable

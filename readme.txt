@@ -603,3 +603,6 @@ with testing and feature suggestions.
 = Version 4.3.1 =
 Fix: Fixed issue with 4.3 fix for paragraph spacing
 Fix: Issue with Sticky Posts in Page with Posts
+
+= Version 4.3.1.1 =
+Fix: Older/New Posts links on Page with Posts

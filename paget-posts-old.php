@@ -102,11 +102,15 @@ if ( post_password_required() ) {
 		}
 
 		$qargs = atw_posts_get_qargs( $fargs, array() );
-		// fixed: 4.3.1.1 - only way to "reset" $wp_query is using query_posts().
-		query_posts( apply_filters( 'weaverx_pwp_wp_query', $qargs ) );     // reset $wp_query
+
+		//$wp_queryw = new WP_Query( apply_filters( 'weaverx_pwp_wp_query', $qargs ) );        // reuse $wp_query to make paging work
+		query_posts( $qargs );
+
 	} else {
 		$args      = weaverx_setup_post_args( $args );    // setup custom fields for this page
-		query_posts( apply_filters( 'weaverx_pwp_wp_query', $args ) );
+		//$wp_queryw = new WP_Query( apply_filters( 'weaverx_pwp_wp_query', $args ) );        // reuse $wp_query to make paging work
+		query_posts( $args );
+
 	}
 
 
@@ -115,11 +119,12 @@ if ( post_password_required() ) {
 	echo $top_of_pwp;
 
 
-	if ( $wp_query->have_posts() ) {                // same loop as index.php
+	if ( $wp_queryw->have_posts() ) {                // same loop as index.php
 		global $weaverx_sticky;
 
 
-		weaverx_content_nav( 'nav-above' );
+		//weaverx_content_nav( 'nav-above' );
+		weaverx_content_nav_query( 'nav-above', false, $wp_queryw );
 		$sticky_posts = false;
 
 		// really ugly kludge. This code is copied from WP's WP_Query code. If you specify filters,
@@ -136,16 +141,16 @@ if ( post_password_required() ) {
 			$sticky_posts = get_option( 'sticky_posts' );
 			global $page;
 			if ( is_array( $sticky_posts ) && ! empty( $sticky_posts ) ) {
-				$num_posts     = count( $wp_query->posts );
+				$num_posts     = count( $wp_queryw->posts );
 				$sticky_offset = 0;
 				// Loop over posts and relocate stickies to the front.
 				for ( $i = 0; $i < $num_posts; $i ++ ) {
-					if ( in_array( $wp_query->posts[ $i ]->ID, $sticky_posts ) ) {
-						$sticky_post = $wp_query->posts[ $i ];
+					if ( in_array( $wp_queryw->posts[ $i ]->ID, $sticky_posts ) ) {
+						$sticky_post = $wp_queryw->posts[ $i ];
 						// Remove sticky from current position
-						array_splice( $wp_query->posts, $i, 1 );
+						array_splice( $wp_queryw->posts, $i, 1 );
 						// Move to front, after other stickies
-						array_splice( $wp_query->posts, $sticky_offset, 0, array( $sticky_post ) );
+						array_splice( $wp_queryw->posts, $sticky_offset, 0, array( $sticky_post ) );
 						// Increment the sticky offset. The next sticky will be placed at this offset.
 						$sticky_offset ++;
 					}
@@ -174,8 +179,8 @@ if ( post_password_required() ) {
 
 		weaverx_post_count_clear();
 		echo( "<div class=\"wvrx-posts\">\n" );
-		while ( $wp_query->have_posts() ) {
-			$wp_query->the_post();
+		while ( $wp_queryw->have_posts() ) {
+			$wp_queryw->the_post();
 
 			weaverx_post_count_bump();
 
@@ -238,7 +243,7 @@ if ( post_password_required() ) {
 		weaverx_masonry( 'end-posts' );
 		echo( "</div>\n" );
 
-		weaverx_content_nav( 'nav-below' );
+		weaverx_content_nav_query( 'nav-below', false, $wp_queryw );
 	} else {
 		weaverx_not_found_search( __FILE__ );
 	}
