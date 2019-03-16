@@ -17,7 +17,7 @@ get_header(); ?>
                 <div class="col-lg-4 col-md-4">
                     <?php get_sidebar();?>
                 </div>
-                <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8 col-xs-12'); ?>>
+                <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
                     <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
                         the_archive_description( '<div class="taxonomy-description">', '</div>' );
@@ -45,7 +45,7 @@ get_header(); ?>
             </div>
         <?php }else if($left_right == 'Right Sidebar'){ ?>
             <div class="row">
-                <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8 col-xs-12'); ?>>
+                <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
                     <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
                         the_archive_description( '<div class="taxonomy-description">', '</div>' );
@@ -103,7 +103,7 @@ get_header(); ?>
         <?php }else if($left_right == 'Three Columns'){ ?>
             <div class="row">
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
-                <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-6 col-md-6 col-xs-12'); ?>>
+                <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-6 col-md-6'); ?>>
                     <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
                         the_archive_description( '<div class="taxonomy-description">', '</div>' );
@@ -133,7 +133,7 @@ get_header(); ?>
         <?php }else if($left_right == 'Four Columns'){ ?>
             <div class="row">
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
-                <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-3 col-xs-12'); ?>>
+                <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-3'); ?>>
                     <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
                         the_archive_description( '<div class="taxonomy-description">', '</div>' );
@@ -163,7 +163,7 @@ get_header(); ?>
             </div>
         <?php }else if($left_right == 'Grid Layout'){ ?>
             <div class="row">
-                <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-9 col-md-9 col-xs-12'); ?>>
+                <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-9 col-md-9'); ?>>
                     <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
                         the_archive_description( '<div class="taxonomy-description">', '</div>' );
@@ -194,7 +194,7 @@ get_header(); ?>
             </div>
         <?php }else {?>
             <div class="row">
-                <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8 col-xs-12'); ?>>
+                <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
                     <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
                         the_archive_description( '<div class="taxonomy-description">', '</div>' );

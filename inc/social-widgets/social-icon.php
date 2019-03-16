@@ -2,8 +2,7 @@
 /**
  * Custom Social Icon Widgets
  */
-?>
-<?php 
+
 //custom socila icons
 class Advance_Ecommerce_Store_Social_Widget extends WP_Widget {
 	function __construct() {

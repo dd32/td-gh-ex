@@ -61,7 +61,7 @@
               <a href="<?php echo esc_url( get_permalink( get_option('woocommerce_myaccount_page_id') ) ); ?>"><i class="fas fa-user"></i></a>
             <?php } ?>
           </div>
-          <div class="col-lg-2 col-md-2  cart_icon">
+          <div class="col-lg-2 col-md-2 cart_icon">
             <?php if(class_exists('woocommerce')){ ?>
               <li class="cart_box">
                 <span class="cart-value"> <?php echo wp_kses_data( WC()->cart->get_cart_contents_count() );?></span>
