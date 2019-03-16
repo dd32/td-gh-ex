@@ -15,7 +15,7 @@ if ( ! function_exists( 'academic_hub_slider_section' ) ) {
          * Academic Hub section
          * @since 1.0.0
          */
-        $academic_hub_slider_category_id = get_theme_mod('academic_hub_slider_category_id');
+        $academic_hub_slider_category_id = get_theme_mod('academic_hub_slider_category_id',academic_hub_get_default_categorie());
         $academic_hub_slider_number_of_post = get_theme_mod('academic_hub_slider_number_of_post',3);
         ?>
             <!-- banner -->
@@ -134,7 +134,7 @@ if ( ! function_exists( 'academic_hub_special_info_section' ) ) {
          * Academic Hub section
          * @since 1.0.0
          */ 
-        $academic_hub_special_category_id = get_theme_mod('academic_hub_special_category_id');
+        $academic_hub_special_category_id = get_theme_mod('academic_hub_special_category_id',academic_hub_get_default_categorie());
         $academic_hub_special_number_of_post = get_theme_mod('academic_hub_special_number_of_post',3);
         ?>
         <section id="academic_hub_special_info_section" class="academic-hub-section">
@@ -215,7 +215,7 @@ if ( ! function_exists( 'academic_hub_event_section' ) ) {
          * Academic Hub section
          * @since 1.0.0
          */
-        $academic_hub_event_category_id = get_theme_mod('academic_hub_event_category_id');
+        $academic_hub_event_category_id = get_theme_mod('academic_hub_event_category_id',academic_hub_get_default_categorie());
         $academic_hub_event_number_of_post = get_theme_mod('academic_hub_event_number_of_post',3);
         ?>
         <section id="academic_hub_event" class="academic-hub-event-section">
@@ -305,7 +305,7 @@ if ( ! function_exists( 'academic_hub_blog_section' ) ) {
          * Academic Hub section
          * @since 1.0.0
          */
-        $academic_hub_blog_cat_id       = get_theme_mod('academic_hub_blog_category_id_select');
+        $academic_hub_blog_cat_id       = get_theme_mod('academic_hub_blog_category_id_select', academic_hub_get_default_categorie() );
         $academic_hub_number_of_post    = get_theme_mod('academic_hub_blog_number_of_post',4);
         ?>
         <section id="academic_hub_blog" class="academic-hub-blog-section">
@@ -468,6 +468,40 @@ if( ! function_exists( 'academic_hub_get_post_categories' ) ) {
 		//default value
 		foreach( $all_categories as $category ){
 			$categories[$category->term_id] = $category->name;    
+		}
+		
+		return $categories;
+	}
+
+}
+
+
+
+
+/** 
+ * Academic Hub Category Blog
+ * 
+ * @since 1.0.0
+ * */
+if( ! function_exists( 'academic_hub_get_default_categorie' ) ) {
+	/**
+	 * Get Post Category
+	 *
+	 * @return array
+	 * @since 1.0.0
+	 */
+	function academic_hub_get_default_categorie( ){
+		
+		
+        $all_categories = get_categories( );
+		
+        //default value
+        $count = 1;
+		foreach( $all_categories as $category ){
+            if( $count == 1 ){
+                $categories = $category->term_id; 
+            }
+            $count++;
 		}
 		
 		return $categories;

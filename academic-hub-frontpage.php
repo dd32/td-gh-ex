@@ -20,6 +20,11 @@ if ( 'posts' == get_option( 'show_on_front' ) ) { //Show Static Blog Page
      */
     $defaults = array(
                 'academic_hub_slider',
+                'academic_hub_notices',
+                'academic_hub_special_info_section',
+                'academic_hub_event',
+                'academic_hub_blog',
+                'academic_hub_about_us'
             );
     foreach( get_theme_mod('academic_hub_home_page_sort',$defaults) as $homepage_item ){
         $homepage_function = $homepage_item;

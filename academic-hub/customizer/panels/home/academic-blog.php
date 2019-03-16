@@ -29,7 +29,7 @@ function academic_hub_blog_customizer( $wp_customize ) {
 	$wp_customize->add_setting( 
         'academic_hub_blog_category_id_select', 
         array(
-			'default' => esc_html__( 'all', 'academic-hub' ),
+			'default' => academic_hub_get_default_categorie(),
             'sanitize_callback' => 'academic_hub_sanitize_select'
         )
     );

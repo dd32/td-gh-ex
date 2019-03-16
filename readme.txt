@@ -80,6 +80,9 @@ Source: https://stocksnap.io/photo/SWR31HJ4D8
 
 
 == Upgrade Notice == 
+= 1.0.5 2019 March 16 =
+* fix short section issues
+
 = 1.0.5 2019 March 13 =
 * remove the team section
 * add review issues fix
@@ -88,7 +91,10 @@ Source: https://stocksnap.io/photo/SWR31HJ4D8
 * add review issues fix
 
 == Changelog ==
-= Version 1.0.4 2019 March 13 =
+= Version 1.0.6 2019 March 16 =
+* fix short section issues
+
+= Version 1.0.5 2019 March 13 =
 * remove the team section
 * add review issues fix
 

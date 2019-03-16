@@ -18,7 +18,12 @@ function academic_hub_homepage_short( $wp_customize ){
 		'academic_hub_home_page_sort', 
 		array(
 			'default' => array(
-								'academic_hub_slider'
+								'academic_hub_slider',
+								'academic_hub_notices',
+								'academic_hub_special_info_section',
+								'academic_hub_event',
+								'academic_hub_blog',
+								'academic_hub_about_us'
 							),
 			'sanitize_callback' => 'academic_hub_sanitize_sortable',						
 		)
