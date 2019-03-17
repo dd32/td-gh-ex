@@ -1,7 +1,7 @@
 jQuery(document).ready(function ($) {
     "use strict";
 
-    $('.jarallax').jarallax({
+    $('.arrival-parallax').jarallax({
         speed: 0.2
     });
 

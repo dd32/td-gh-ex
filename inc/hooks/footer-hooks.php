@@ -40,24 +40,39 @@ if( ! function_exists('arrival_theme_footer_widgets')){
 add_action('arrival_footer_section','arrival_btm_footer',15);
 if(! function_exists('arrival_btm_footer')){
 	function arrival_btm_footer(){
+
+		$defaults = arrival_get_default_theme_options();
+		$_footer_copyright_text = get_theme_mod('arrival_footer_copyright_text');
+		$_footer_icons_enable 	= get_theme_mod('arrival_footer_icons_enable',$defaults['arrival_footer_icons_enable']);
+		$_footer_copyright_border_top = get_theme_mod('arrival_footer_copyright_border_top',$defaults['arrival_footer_copyright_border_top']);
+		
+		$footer_border = ($_footer_copyright_border_top == true) ? 'border-enable' : '';
 	?>
-	<div class="footer-btm">
+	<div class="footer-btm <?php echo esc_attr($footer_border);?>">
 		<div class="site-info">
+			<?php if($_footer_copyright_text){ ?>
+				<span class="cppyright-text"><?php echo wp_kses_post($_footer_copyright_text); ?></span>
+			<?php }else{ ?>
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'arrival' ) ); ?>">
 				<?php
 				/* translators: %s: CMS name, i.e. WordPress. */
 				printf( esc_html__( 'Proudly powered by %s', 'arrival' ), 'WordPress' );
 				?>
 			</a>
+			<?php } ?>
 			<span class="sep"> | </span>
 			<?php
 				/* translators: 1: Theme name, 2: Theme author. */
 				printf( esc_html__( 'Theme: %1$s by %2$s.', 'arrival' ), 'Arrival', '<a href="' . esc_url( 'https://wpoperation.com/' ) . '" target="_blank">WPoperation</a>' );
 			?>
 		</div><!-- .site-info -->
+		
+		<?php if( $_footer_icons_enable == 'yes' ){ ?>
 		<div class="social-icons-wrapp">
 			<?php do_action('arrival_social_icons'); ?>
 		</div>
+		<?php } ?>
+
 	</div><!-- .footer-btm -->
 	<?php 
 	}

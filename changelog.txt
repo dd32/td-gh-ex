@@ -1,7 +1,11 @@
+=== v1.0.2 ===
+- Minor Bugs Fixed
+- Minor CSS Improvements
+
 === v1.0.1 ===
 - Minor Bugs Fixed
-- Screenshot image changed
+- Screenshot Image Changed
 
 
 === v1.0.0 ===
-- Initial release
+- Initial Release

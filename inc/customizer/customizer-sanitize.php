@@ -99,8 +99,8 @@ function arrival_sanitize_number_blank( $val ) {
 */
 function arrival_sanitize_page_sidebar( $input ) {
     $valid_keys = array(
-            'right_sidebar' => ARRIVAL_URI . '/images/sidebars/rt.png',
-            'no_sidebar' 	=> ARRIVAL_URI . '/images/sidebars/no.png',
+            'right_sidebar' => ARRIVAL_URI . '/assets/images/sidebars/rt.png',
+            'no_sidebar' 	=> ARRIVAL_URI . '/assets/images/sidebars/no.png',
             
         );
     if ( array_key_exists( $input, $valid_keys ) ) {
@@ -132,4 +132,16 @@ function arrival_sanitize_color( $color ) {
     sscanf( $color, 'rgba(%d,%d,%d,%f)', $red, $green, $blue, $alpha );
 
     return 'rgba('.$red.','.$green.','.$blue.','.$alpha.')';
+}
+
+
+/** Checkbox Sanitization Callback 
+ * 
+ * Sanitization callback for 'checkbox' type controls.
+ * This callback sanitizes $input as a Boolean value, either
+ * TRUE or FALSE.
+ */
+function arrival_sanitize_checkbox( $input ) {
+	// Boolean check 
+	return ( ( isset( $input ) && true == $input ) ? true : false );
 }

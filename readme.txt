@@ -8,10 +8,12 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: translation-ready,right-sidebar,custom-menu, featured-images, threaded-comments,custom-logo, footer-widgets,blog,post-formats,sticky-post,theme-options,news,editor-style,custom-background,custom-header
 Requires at least: WordPress 4.7
 Tested up to: 5.1
+Requires PHP: 5.4
+Stable tag: 1.0.2
 
 == Description ==
 
-Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website with easy drag and drop options. The theme is lightweight, fast and fully compatible with elementor builder.
+Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website with easy drag and drop options. The theme is lightweight, fast and fully compatible with elementor builder. The themes comes with fully gutenberg ready so you are free to edit and publish with new WordPress editor.
 
 
 Arrival is a WordPress Theme, 
@@ -27,7 +29,7 @@ Arrival is distributed under the terms of the GNU GPL
 
 
 -------------------------------------------------------
-Screenshot Licenses
+== Screenshots ==
 -------------------------------------------------------
 
 All images shown on the screenshot are designed by WPoperation
@@ -66,3 +68,9 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 * License: MIT and GPL licenses
 * http://github.com/davist11/jQuery-One-Page-Nav
 * https://github.com/davist11/jQuery-One-Page-Nav/blob/master/LICENSE
+
+
+---------------------
+== Changelog ==
+--------------------
+Please refer to changelot.txt file for changelot informations

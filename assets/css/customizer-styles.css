@@ -54,22 +54,7 @@ span.customizer-desc-wrapp a:hover ~ .desc {
     visibility: visible;
 }
 
-/* #customize-control-arrival_top_right_header_menus,
-.customize-control.op-hidden{
-    display: none !important;
-}
-#customize-control-arrival_top_right_header_menus.op-visible,
-.customize-control.op-visible{
-    display: list-item !important;
-}
-menu last item
-#customize-control-arrival_main_nav_right_btn{
-    display: none !important;
-}
-#customize-control-arrival_main_nav_right_btn.op-visible{
-    display: list-item !important;
-}
- */
+
 /* customizer tweaks */
 .wp-full-overlay-sidebar-content::-webkit-scrollbar,
 .accordion-section-content::-webkit-scrollbar { 

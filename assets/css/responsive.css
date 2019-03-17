@@ -1,0 +1,93 @@
+.mob-outer-wrapp{
+	display: none;	
+}
+.menu-toggle {
+		display: none;
+	}
+@media only screen and (max-width: 768px){
+
+    .container,.site {
+        padding: 0 20px;
+    }
+    .mob-outer-wrapp .site-branding{
+        padding-top: 0;
+    }
+	.mob-outer-wrapp{
+		display: block;
+	}
+	.menu-toggle {
+		display: block;
+	}
+	.main-header-wrapp{
+		display: none;
+	}
+    form.wpcf7-form .form-groups label{
+        display: block;
+        margin: 0 auto;
+    }
+
+}
+@media only screen and (max-width: 640px){
+    .widget h2.widget-title{
+        font-size: 18px;
+    }
+    .widget h2.widget-title:before{
+            top: 5px;
+    }
+    .site-footer .gallery{
+            grid-template-columns: repeat(auto-fill, minmax(58px, 0.1fr));
+    }
+    .site-footer .ftr-widget{
+        width: 31%;
+    }
+}
+
+@media only screen and (max-width: 500px){
+    .site-title{
+        font-size: 22px;
+    }
+    .site-description{
+        font-size: 13px;
+    }
+    .site-footer .ftr-widget {
+        width: 48%;
+        margin-bottom: 30px;
+    }
+     form.wpcf7-form .form-field{
+        width: 100%;
+    }
+    form.wpcf7-form .form-groups label{
+        margin: 0;
+    }
+}
+
+@media only screen and (max-width: 400px){
+    .mob-nav-wrapp{
+        max-width: 200px;
+    }
+    .mob-primary-menu li a{
+        font-size: 14px;
+    }
+    
+}
+
+@media only screen and (max-width: 385px){
+    .mob-nav-wrapp{
+        max-width: 200px;
+    }
+    .top-header-wrapp{
+        padding: 10px 0 0px;
+    }
+    .top-header-wrapp ul.social {
+        padding: 0;
+        margin: 0;
+    }
+    .site-footer .ftr-widget {
+        width: 100%;
+    }
+   
+
+
+}
+
+

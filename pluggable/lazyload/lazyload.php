@@ -221,7 +221,7 @@ function arrival_set_lazy_class( $attributes ) {
  * @return string The URL to the placeholder image.
  */
 function arrival_get_placeholder_image() {
-	return get_theme_file_uri( '/images/placeholder.svg' );
+	return get_theme_file_uri( '/assets/images/placeholder.svg' );
 }
 
 /**

@@ -258,8 +258,8 @@ $wp_customize->add_control( new Arrival_Lite_Image_Radio_Control($wp_customize, 
     'description' => esc_html__( 'Select sidebar style for the theme.', 'arrival' ),
     'section'     => $prefix.'_sidebar_settings',
     'choices'     => array(
-        'right_sidebar' => ARRIVAL_URI . '/images/sidebars/rt.png',
-        'no_sidebar'    => ARRIVAL_URI . '/images/sidebars/no.png',
+        'right_sidebar' => ARRIVAL_URI . '/assets/images/sidebars/rt.png',
+        'no_sidebar'    => ARRIVAL_URI . '/assets/images/sidebars/no.png',
                 
         )
        )
@@ -633,10 +633,7 @@ $wp_customize->add_setting($prefix.'_main_nav_bg_color', array(
         'transport'         => 'postMessage'
     )
 );
-/*$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefix.'_main_nav_bg_color', array(
-            'label'         => esc_html__( 'Background Color', 'arrival' ),
-            'section'       => $prefix.'_main_header_options_panel',
-)));*/
+
 $wp_customize->add_control( new Arrival_Customizer_Color_Control( $wp_customize, $prefix.'_main_nav_bg_color', array(
         'label'           => esc_html__( 'Background Color', 'arrival' ),
         'section'         => $prefix.'_main_header_options_panel',
@@ -737,6 +734,7 @@ $wp_customize->add_section( $prefix.'_footer_settings', array(
 $wp_customize->add_setting( $prefix.'_footer_widget_enable', array(
         'default'             => $default[$prefix.'_footer_widget_enable'],
         'sanitize_callback'   => 'arrival_sanitize_switch',
+        'transport'           => 'postMessage'
         
       ) );
 
@@ -748,3 +746,111 @@ $wp_customize->add_control( new Arrival_Customizer_Buttonset_Control( $wp_custom
           'no'          => esc_html__( 'No', 'arrival' ),
         )
       ) ) );
+
+// footer widgets enable/disable selective refresh
+$wp_customize->selective_refresh->add_partial( $prefix.'_footer_widget_enable', array(
+            'selector'            => 'footer.site-footer .container .footer-widget-wrapper',
+            'render_callback'     => 'arrival_theme_footer_widgets',
+            'container_inclusive' => true
+      ) );
+
+//footer copyright
+$wp_customize->add_setting( $prefix.'_footer_copyright_text', array(
+  'sanitize_callback'   => 'wp_kses_post',
+  'transport'           => 'postMessage'
+) );
+
+$wp_customize->add_control( $prefix.'_footer_copyright_text', array(
+        'type'          => 'text',
+        'label'         => esc_html__( 'Footer Copyright Text', 'arrival' ),
+        'description'   => esc_html__('HTML allowed on this section','arrival'),
+        'section'       => $prefix.'_footer_settings'
+        
+      ) );
+
+
+
+//footer social icons
+$wp_customize->add_setting( $prefix.'_footer_icons_enable', array(
+        'default'             => $default[$prefix.'_footer_icons_enable'],
+        'sanitize_callback'   => 'arrival_sanitize_switch',
+        'transport'           => 'postMessage'
+        
+      ) );
+
+$wp_customize->add_control( new Arrival_Customizer_Buttonset_Control( $wp_customize, $prefix.'_footer_icons_enable', array(
+        'label'         => esc_html__( 'Enable Footer Social Icons', 'arrival' ),
+        'section'       => $prefix.'_footer_settings',
+        'choices'       => array(
+          'yes'         => esc_html__( 'Yes', 'arrival' ),
+          'no'          => esc_html__( 'No', 'arrival' ),
+        )
+      ) ) );
+
+//footer social icons
+$wp_customize->add_setting( $prefix.'_footer_social_redirect_btn', array(
+        'sanitize_callback'     => 'sanitize_text_field',
+        'transport'             => 'postMessage'    
+      ) );
+
+$wp_customize->add_control( new Arrival_Customize_Redirect( $wp_customize, $prefix.'_footer_social_redirect_btn', array(
+        'label'         => esc_html__( 'Configure Social Icons', 'arrival' ),
+        'description'   => 'arrival_social_icons_section',
+        'section'       => $prefix.'_footer_settings',
+      ) ) );
+
+
+/**
+* Footer stylings
+*
+*/
+
+$wp_customize->add_setting($prefix.'_footer_bg_color', array(
+        'default'           => $default[$prefix.'_footer_bg_color'],
+        'sanitize_callback' => 'arrival_sanitize_color',
+        'transport'         => 'postMessage'
+    )
+);
+
+$wp_customize->add_control( new Arrival_Customizer_Color_Control( $wp_customize, $prefix.'_footer_bg_color', array(
+        'label'           => esc_html__( 'Background Color', 'arrival' ),
+        'section'         => $prefix.'_footer_settings',
+      ) ) );
+
+
+//footer copyright top border
+$wp_customize->add_setting( $prefix.'_footer_copyright_border_top', array(
+  'sanitize_callback'   => 'arrival_sanitize_checkbox',
+  'default'             => $default[$prefix.'_footer_copyright_border_top'],
+  'transport'           => 'postMessage'
+) );
+
+$wp_customize->add_control( $prefix.'_footer_copyright_border_top', array(
+        'type'          => 'checkbox',
+        'label'         => esc_html__( 'Enable Copyright Section Top Border', 'arrival' ),
+        'description'   => esc_html__('Check the box to enable top border on copyright section','arrival'),
+        'section'       => $prefix.'_footer_settings'
+        
+      ) );
+
+if( function_exists('arrival_customizer_pro_info')){
+  arrival_customizer_pro_info( $wp_customize, $prefix.'_footer_settings_info',$prefix.'_footer_settings');
+}
+
+
+/**
+* Footer section selective refresh
+* 
+*/
+$footer_ids = array('_footer_copyright_text','_footer_icons_enable','_footer_copyright_border_top');
+
+foreach( $footer_ids as $footer_id ){
+
+  $wp_customize->selective_refresh->add_partial( $prefix.$footer_id, array(
+              'selector'            => '.footer-btm',
+              'render_callback'     => 'arrival_btm_footer',
+              'container_inclusive' => true
+        ) );
+
+}
+

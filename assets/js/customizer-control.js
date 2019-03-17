@@ -65,6 +65,26 @@
 	});
 
 
+    /**
+    * Footer social icon show/hide
+    *
+    */
+    wp.customize( 'arrival_footer_icons_enable', function( setting ) {
+                wp.customize.control( 'arrival_footer_social_redirect_btn', function( control ) {
+                    var visibility = function() {
+                        if ( 'yes' === setting.get() ) {
+                            control.container.removeClass( 'arrival-control-hide' );
+                        } else {
+                            control.container.addClass( 'arrival-control-hide' );
+                        }
+                    };
+
+                    visibility();
+                    setting.bind( visibility );
+                });
+    });
+
+
 	/**
      * Script for sidebars
      */

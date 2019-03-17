@@ -18,11 +18,11 @@ function arrival_dynamic_styles(){
 	?>
 	
 	.top-header-wrapp,.scroll-top-top,.widget h2.widget-title:before,.comment-reply-link, .comment-form .form-submit input,span.tags-links a:hover,.header-last-item.search-wrap.header-btn,.arrival-archive-navigation ul li a:hover,
-	.arrival-archive-navigation ul li.active a,.comment-reply-link, .comment-form .form-submit input,.woocommerce div.product form.cart .button,.woocommerce .products li a.button:hover,.woocommerce #respond input#submit{
+	.arrival-archive-navigation ul li.active a,.comment-reply-link, .comment-form .form-submit input,.woocommerce div.product form.cart .button,.woocommerce .products li a.button:hover,.woocommerce #respond input#submit,.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current,.woocommerce div.product form.cart .button, .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce button.button,button, input[type="button"], input[type="reset"], input[type="submit"]{
 		background: <?php echo  arrival_sanitize_color($_theme_color);?>;
 	}
 
-	.main-navigation a:hover, .main-navigation a:focus, .arrival-top-navigation ul a:hover, .arrival-top-navigation ul a:focus,.main-navigation ul li a:hover,.header-last-item.search-wrap:hover,.widget ul li a:hover,.site-footer a:hover,.site-main a:hover,.entry-meta > span:hover,.main-navigation a:hover,footer .widget_pages a:hover::before, footer .widget_pages a:focus::before, footer .widget_nav_menu a:hover::before, footer .widget_nav_menu a:focus::before,nav.navigation.post-navigation .nav-links a:hover::after{
+	.main-navigation a:hover, .main-navigation a:focus, .arrival-top-navigation ul a:hover, .arrival-top-navigation ul a:focus,.main-navigation ul li a:hover,.header-last-item.search-wrap:hover,.widget ul li a:hover,.site-footer a:hover,.site-main a:hover,.entry-meta > span:hover,.main-navigation a:hover,footer .widget_pages a:hover::before, footer .widget_pages a:focus::before, footer .widget_nav_menu a:hover::before, footer .widget_nav_menu a:focus::before,nav.navigation.post-navigation .nav-links a:hover::after,.site-main .entry-content a{
 		color:	<?php echo  arrival_sanitize_color($_theme_color);?>;
 	}
 	
@@ -146,6 +146,38 @@ function arrival_dynamic_styles(){
 	.main-navigation a{
 		font-weight: <?php echo absint($_nav_font_weight); ?>;
 	}
+
+	<?php 
+	// site link colors
+	$arrival_link_color 		= get_theme_mod('arrival_link_color',$defaults['arrival_link_color']);
+	$arrival_link_color_hover 	= get_theme_mod('arrival_link_color_hover',$defaults['arrival_theme_color']);
+
+	if($arrival_link_color != $defaults['arrival_link_color'] ){
+	?>
+		a,a:visited,.site-main a{
+			color: <?php  arrival_sanitize_color($arrival_link_color);?>;
+		}
+
+	<?php } ?>
+	<?php if( $arrival_link_color_hover != $defaults['arrival_theme_color'] ){ ?>
+			
+			a:hover,.site-main a:hover{
+				color: <?php  arrival_sanitize_color($arrival_link_color_hover);?>;
+			}
+
+	<?php }
+
+	//footer background color
+	$_footer_bg_color = get_theme_mod('arrival_footer_bg_color',$defaults['arrival_footer_bg_color']);
+
+	if( $_footer_bg_color != $defaults['arrival_footer_bg_color'] ){ ?>
+
+		.site-footer{
+			background: <?php  arrival_sanitize_color($_footer_bg_color);?>;
+		}
+
+	<?php } ?>
+
 
 
 	<?php 

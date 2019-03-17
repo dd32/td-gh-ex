@@ -9,10 +9,11 @@
 /** important constants **/
 $theme_ob = wp_get_theme();
 $ver      = $theme_ob -> get( 'Version' );
+define( 'ARRIVAL_THEME', $theme_ob->get( 'Name' ) );
 define( 'ARRIVAL_VER',$ver);
 define( 'ARRIVAL_URI', get_template_directory_uri() );
 define( 'ARRIVAL_DIR', get_template_directory() );
-define( 'ARRIVAL_LIB_URI', get_template_directory_uri(). '/lib' );
+define( 'ARRIVAL_LIB_URI', get_template_directory_uri(). '/assets//lib' );
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
@@ -322,13 +323,13 @@ function arrival_gutenberg_styles() {
 	wp_enqueue_style( 'arrival-fonts', arrival_fonts_url(), array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 
 	// Enqueue main stylesheet.
-	wp_enqueue_style( 'arrival-base-style', get_theme_file_uri( '/css/editor-styles.css' ), array(), ARRIVAL_VER );
+	wp_enqueue_style( 'arrival-base-style', get_theme_file_uri( '/assets/css/editor-styles.css' ), array(), ARRIVAL_VER );
 }
 add_action( 'enqueue_block_editor_assets', 'arrival_gutenberg_styles' );
 
 /** Adding Editor Styles **/
 function arrival_add_editor_styles() {
-    add_editor_style( get_template_directory_uri().'/css/editor-style.css' );
+    add_editor_style( get_template_directory_uri().'/assets/css/editor-style.css' );
 }
 add_action( 'admin_init', 'arrival_add_editor_styles' );
 
@@ -390,108 +391,26 @@ function arrival_widgets_init() {
 }
 add_action( 'widgets_init', 'arrival_widgets_init' );
 
-/**
- * Enqueue styles.
- */
-function arrival_styles() {
-	// Add custom fonts, used in the main stylesheet.
-	wp_enqueue_style( 'arrival-fonts', arrival_fonts_url(), array(), null ); // phpcs:ignore WordPress.WP.EnqueuedResourceParameters.MissingVersion
 
-	wp_enqueue_style( 'arrival-woo-styles', get_theme_file_uri( '/css/woo-styles.css' ), array(), ARRIVAL_VER );
-	wp_enqueue_style( 'slick', get_theme_file_uri( '/lib/slick/slick.css' ), array(), ARRIVAL_VER );
-	wp_enqueue_style( 'slick-theme', get_theme_file_uri( '/lib/slick/slick-theme.css' ), array(), ARRIVAL_VER );
-	//jarallax
-	wp_enqueue_style( 'jquery-jarallax', get_theme_file_uri( '/lib/jarallax/jarallax.css' ), array(), ARRIVAL_VER );
-	//fontawesome
-	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/lib/font-awesome/css/font-awesome.min.css' ), array(), ARRIVAL_VER );
 
-	// Enqueue main stylesheet.
-	wp_enqueue_style( 'arrival-base-style', get_stylesheet_uri(), array(), ARRIVAL_VER );
 
-	// Register component styles that are printed as needed.
-	wp_register_style( 'arrival-comments', get_theme_file_uri( '/css/comments.css' ), array(), ARRIVAL_VER );
-	wp_enqueue_style( 'arrival-content', get_theme_file_uri( '/css/content.css' ), array(), ARRIVAL_VER );
-	wp_register_style( 'arrival-widgets', get_theme_file_uri( '/css/widgets.css' ), array(), ARRIVAL_VER );
-	wp_register_style( 'arrival-front-page', get_theme_file_uri( '/css/front-page.css' ), array(), ARRIVAL_VER );
-	wp_enqueue_style( 'arrival-responsive', get_theme_file_uri('/css/responsive.css'), array(), ARRIVAL_VER );
+/* Require theme files*/
+$file_paths = array(
+	'/inc/enqueue.php',
+	'/inc/image-sizes.php',
+	'/pluggable/custom-header.php',
+	'/inc/template-tags.php',
+	'/inc/template-functions.php',
+	'/inc/customizer/customizer.php',
+    '/inc/hooks/header-hooks.php',
+    '/inc/hooks/footer-hooks.php',
+    '/inc/dynamic-styles.php',
+    '/inc/config/importer-config.php',
+);
+
+foreach ($file_paths as $file_path) {
+	require get_parent_theme_file_path() . $file_path;
 }
-add_action( 'wp_enqueue_scripts', 'arrival_styles' );
-
-/**
- * Enqueue scripts.
- */
-function arrival_scripts() {
-	
-	$default = arrival_get_default_theme_options();
-	$arrival_one_page_menus = get_theme_mod('arrival_one_page_menus',$default['arrival_one_page_menus']);
-
-	// If the AMP plugin is active, return early.
-	if ( arrival_is_amp() ) {
-		return;
-	}
-
-	wp_enqueue_script( 'arrival-wooButtons', get_theme_file_uri( '/js/wooButtons.js' ), ARRIVAL_VER, false );
-	wp_enqueue_script( 'slick', get_theme_file_uri( '/lib/slick/slick.min.js' ), ARRIVAL_VER, false );
-	wp_enqueue_script( 'jquery-fitvids', get_theme_file_uri( '/lib/jquery-fitvids/jquery.fitvids.js' ), array('jquery'), ARRIVAL_VER, false );
-	//enqueue onepage nav
-	if( 'yes' == $arrival_one_page_menus ):
-	wp_enqueue_script( 'jquery-onepagenav', get_theme_file_uri( '/lib/onepagenav/jquery.nav.js' ), array('jquery'), ARRIVAL_VER, false );
-	wp_script_add_data( 'jquery-onepagenav', 'async', true );
-	endif;
-
-	//enqueue jarallax script
-	wp_enqueue_script( 'jquery-jarallax', get_theme_file_uri( '/lib/jarallax/jarallax.min.js' ), array('jquery'), ARRIVAL_VER, false );
-	wp_script_add_data( 'jquery-jarallax', 'async', true );
-	// Enqueue the navigation script.
-	//wp_enqueue_script( 'arrival-navigation', get_theme_file_uri( '/js/navigation.js' ), array('jquery'), ARRIVAL_VER, false );
-	wp_script_add_data( 'arrival-navigation', 'async', true );
-	wp_localize_script( 'arrival-navigation', 'arrivalScreenReaderText', array(
-		'expand'   => esc_html__( 'Expand child menu', 'arrival' ),
-		'collapse' => esc_html__( 'Collapse child menu', 'arrival' ),
-	));
-
-	// Enqueue skip-link-focus script.
-	wp_enqueue_script( 'arrival-skip-link-focus-fix', get_theme_file_uri( '/js/skip-link-focus-fix.js' ), array('jquery'), ARRIVAL_VER, false );
-	wp_script_add_data( 'arrival-skip-link-focus-fix', 'defer', true );
-
-	wp_enqueue_script( 'arrival-scripts', get_theme_file_uri( '/js/custom-scripts.js' ), array('jquery'), ARRIVAL_VER, false );
-
-	// Enqueue comment script on singular post/page views only.
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
-
-}
-add_action( 'wp_enqueue_scripts', 'arrival_scripts' );
-
-/**
- * Custom responsive image sizes.
- */
-require get_template_directory() . '/inc/image-sizes.php';
-
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/pluggable/custom-header.php';
-
-/**
- * Custom template tags for this theme.
- */
-require get_template_directory() . '/inc/template-tags.php';
-
-/**
- * Functions which enhance the theme by hooking into WordPress.
- */
-require get_template_directory() . '/inc/template-functions.php';
-
-/**
- * Customizer additions.
- */
-require get_template_directory() . '/inc/customizer/customizer.php';
-
-require get_template_directory() . '/inc/hooks/header-hooks.php';
-require get_template_directory() . '/inc/hooks/footer-hooks.php';
-require get_template_directory() . '/inc/dynamic-styles.php';
 
 /**
  * Optional: Add theme support for lazyloading images.
@@ -507,4 +426,13 @@ require get_template_directory() . '/pluggable/lazyload/lazyload.php';
 */
 if( class_exists('woocommerce')){
 	require get_template_directory() . '/inc/woocommerce/woo-functions.php';
+}
+
+
+/**
+ * Load welcome section to admin.
+ */
+if ( is_admin() ) {
+    require get_template_directory().'/inc/welcome/class.info.php';
+    require get_template_directory().'/inc/welcome/info.php';
 }

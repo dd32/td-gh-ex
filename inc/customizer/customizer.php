@@ -70,7 +70,7 @@ function arrival_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function arrival_customize_preview_js() {
-	wp_enqueue_script( 'arrival-customizer', get_theme_file_uri( '/js/customizer.js' ), array( 'customize-preview' ), '20151215', true );
+	wp_enqueue_script( 'arrival-customizer', get_theme_file_uri( '/assets/js/customizer.js' ), array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'arrival_customize_preview_js' );
 
@@ -79,13 +79,13 @@ add_action( 'customize_preview_init', 'arrival_customize_preview_js' );
 * add customizer scripts
 */
 function arrival_customizer_scripts(){
-	wp_enqueue_style( 'arrival-customizer-colors', get_theme_file_uri( '/css/colors.css' ), array(), ARRIVAL_VER );
+	wp_enqueue_style( 'arrival-customizer-colors', get_theme_file_uri( '/assets/css/colors.css' ), array(), ARRIVAL_VER );
 
-	wp_enqueue_style( 'arrival-customizer-styles', get_theme_file_uri( '/css/customizer-styles.css' ), array(), ARRIVAL_VER );
-	wp_enqueue_style( 'arrival-customizer-general', get_theme_file_uri( '/css/customizer-general.css' ), array(), ARRIVAL_VER );
+	wp_enqueue_style( 'arrival-customizer-styles', get_theme_file_uri( '/assets/css/customizer-styles.css' ), array(), ARRIVAL_VER );
+	wp_enqueue_style( 'arrival-customizer-general', get_theme_file_uri( '/assets/css/customizer-general.css' ), array(), ARRIVAL_VER );
 
-	wp_enqueue_script( 'arrival-customizer-general', get_theme_file_uri( '/js/customizer-general.js' ), array('jquery','customize-base'), ARRIVAL_VER );
-	wp_enqueue_script( 'arrival-customizer-scripts', get_theme_file_uri( '/js/customizer-control.js' ), array('customize-controls'), ARRIVAL_VER );
+	wp_enqueue_script( 'arrival-customizer-general', get_theme_file_uri( '/assets/js/customizer-general.js' ), array('jquery','customize-base'), ARRIVAL_VER );
+	wp_enqueue_script( 'arrival-customizer-scripts', get_theme_file_uri( '/assets/js/customizer-control.js' ), array('customize-controls'), ARRIVAL_VER );
 }
 add_action('customize_controls_enqueue_scripts','arrival_customizer_scripts');
 

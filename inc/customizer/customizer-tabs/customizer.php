@@ -105,6 +105,45 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
 
 
 
+/**
+* Footer section tabs
+*
+*/
+$wp_customize->add_setting( $prefix.'_footer_control_tabs', array(
+                'sanitize_callback' => 'sanitize_text_field',
+            ));
+
+$wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $prefix.'_footer_control_tabs', array(
+                    'section' => $prefix.'_footer_settings',
+                    'tabs'    => array(
+
+                        'general' => array(
+                            'nicename' => esc_html__( 'General', 'arrival' ),
+                            'icon'     => 'cogs',
+                            'controls' => array(
+                                
+                                $prefix.'_footer_widget_enable',
+                                $prefix.'_footer_copyright_text',
+                                $prefix.'_footer_icons_enable',
+                                $prefix.'_footer_social_redirect_btn'
+                            ),
+                        ),
+
+                        'styles' => array(
+                            'nicename' => esc_html__( 'Styles', 'arrival' ),
+                            'icon'     => 'desktop',
+                            'controls' => array(
+                                $prefix.'_footer_bg_color',
+                                $prefix.'_footer_copyright_border_top',
+                                $prefix.'_footer_settings_info'
+                                
+                            ),
+                        ),
+                       
+                    ),
+                )
+            )
+        );
 
 
 		

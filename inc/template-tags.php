@@ -98,7 +98,7 @@ function arrival_posted_on() {
 
 	$posted_on = sprintf(
 		/* translators: %s: post date. */
-		esc_html_x( '%s', 'post date', 'arrival' ),
+		esc_html( '%s'),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
@@ -134,7 +134,7 @@ function arrival_post_categories() {
 		$categories_list = get_the_category_list( esc_html__( ', ', 'arrival' ) );
 		if ( $categories_list ) {
 			/* translators: 1: list of categories. */
-			printf( '<span class="cat-links">' . esc_html__( ' %1$s', 'arrival' ) . ' </span>', $categories_list ); // WPCS: XSS OK.
+			printf( '<span class="cat-links">' . esc_html( ' %1$s') . ' </span>', $categories_list ); // WPCS: XSS OK.
 		}
 	}
 }
@@ -148,7 +148,7 @@ function arrival_post_tags() {
 	// Only show tags on post types that have categories.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', esc_html_x( ' ', 'list item separator', 'arrival' ) );
+		$tags_list = get_the_tag_list( '', esc_html( ' ') );
 		if ( $tags_list ) {
 			/* translators: 1: list of tags. */
 			printf( '<span class="tags-links">' . esc_html__( 'Tagged With: %1$s', 'arrival' ) . ' </span>', $tags_list ); // WPCS: XSS OK.

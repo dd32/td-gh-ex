@@ -147,4 +147,18 @@ wp.customize( 'arrival_nav_bottom_padding', function( value ) {
 } );
 
 
+//footer background color
+wp.customize( 'arrival_footer_bg_color', function( value ) {
+	value.bind( function( color ) {
+		if (color == '') {
+			wp.customize.preview.send( 'refresh' );
+		}
+		if ( color ) {
+			var dynamicStyle = '.site-footer { background: ' + color + '; } ';
+			arrival_add_dynamic_css( 'arrival_footer_bg_color', dynamicStyle );
+		}
+
+	} );
+} );
+
 })(jQuery);

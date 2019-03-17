@@ -28,9 +28,12 @@ function arrival_get_default_theme_options() {
     $defaults[$prefix.'_main_nav_right_btn'] = 0;
     $defaults[$prefix.'_one_page_menus'] = 'no';
     $defaults[$prefix.'_footer_widget_enable'] = 'yes';
+    $defaults[$prefix.'_footer_icons_enable'] = 'yes';
     $defaults[$prefix.'_lazyload_image_enable'] = 'yes';
     $defaults[$prefix.'_top_header_bg_color'] = '#E12454';
     $defaults[$prefix.'_main_nav_bg_color'] = '#fafafa';
+    $defaults[$prefix.'_footer_bg_color'] = '#223645';
+    $defaults[$prefix.'_footer_copyright_border_top'] = true;
     $defaults[$prefix.'_main_nav_menu_color'] = '#333';
     $defaults[$prefix.'_link_color'] = '#333';
     $defaults[$prefix.'_main_container_width'] = 1170;
