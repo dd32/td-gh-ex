@@ -37,7 +37,7 @@ function aaron_docs() {
 		<a class="button button-primary button-hero load-customize" style="margin:5px;"
 		href="<?php echo esc_url( admin_url( 'customize.php?autofocus[control]=custom_logo' ) ); ?>">
 		<?php esc_html_e( 'Add a logo', 'aaron' ); ?></a>
-				
+
 		<a class="button button-primary button-hero load-customize" style="margin:5px;"
 		href="<?php echo esc_url( admin_url( 'customize.php?autofocus[control]=aaron_highlight1_icon' ) ); ?>">
 		<?php esc_html_e( 'Add your first frontpage Highlight', 'aaron' ); ?></a>
@@ -93,7 +93,6 @@ function aaron_docs() {
 		<b><?php esc_html_e( 'The Social menu', 'aaron' ); ?></b>
 		<?php echo esc_html_x( 'is at the bottom of the page and shows logos of the social networks of your choice. It does not display any text, but has additional information for screen readers.', 'The Social menu', 'aaron' ); ?><br>
 		<?php esc_html_e( 'The icon will be added automatically, all you need to do is add a link to your menu.', 'aaron' ); ?><br><br>
-		
 		<a class="button button-medium load-customize" style="margin-bottom:5px;" 
 		href="<?php echo esc_url( admin_url( 'nav-menus.php' ) ); ?>"><?php esc_html_e( 'Manage menus', 'aaron' ); ?></a>
 		<br>
@@ -122,8 +121,7 @@ function aaron_docs() {
 
 	<div class="doc-box" id="aaron-widgets">
 		<h3><?php esc_html_e( 'Widget areas', 'aaron' ); ?></h3>
-		<?php esc_html_e( 'The theme has one widget area in the header (below the Highlights), and two footer widget areas.
-		The widget area in the footer below the social menu, is intended for your copyright text.', 'aaron' ); ?>
+		<?php esc_html_e( 'The theme has one widget area in the header (below the Highlights), and two footer widget areas.	The widget area in the footer below the social menu, is intended for your copyright text.', 'aaron' ); ?>
 		<br>
 		<?php esc_html_e( 'The theme has two different sidebars: one for the frontpage and blog index, and one for other pages.', 'aaron' ); ?><br>
 		<?php esc_html_e( 'To show either sidebar, all you need to do is place your widgets inside them.', 'aaron' ); ?><br>
@@ -209,7 +207,7 @@ function aaron_docs() {
 			href="<?php echo esc_url( admin_url( 'customize.php?autofocus[control]=aaron_bottom_section1' ) ); ?>">
 			<?php esc_html_e( 'Add pages to the bottom section', 'aaron' ); ?></a>
 			<br><br>
-			
+
 	</div>
 
 	<div class="doc-box" id="aaron-colors">
@@ -233,8 +231,9 @@ function aaron_docs() {
 		<h3><?php esc_html_e( 'Fonts', 'aaron' ); ?></h3>
 		<?php esc_html_e( 'Aaron uses Open Sans for body, and defaults to Montserrat for headings, menus and footer texts.', 'aaron' ); ?>
 		<?php esc_html_e( 'You will find an option to change Montserrat to a different font in the customizer.', 'aaron' ); ?><br>
-		<?php esc_html_e( 'The available fonts are: Montserrat, Open Sans, Oswald, Rambla, Ubuntu Condensed, Fjalla One, 
-		Roboto, Lato, Source Sans Pro, Raleway, Lora, Josefin Sans, Taviraj.', 'aaron' ); ?>
+		<?php
+		esc_html_e( 'Some of the available fonts are: Montserrat, Open Sans, Oswald, Rambla, Ubuntu Condensed, Fjalla One, Roboto, Lato, Source Sans Pro, Raleway, Lora, Josefin Sans, Taviraj.', 'aaron' );
+		?>
 		<?php esc_html_e( 'If you select system fonts, the fonts are: BlinkMacSystemFont, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif.', 'aaron' ); ?>
 		<br><br>
 		<a class="button button-medium load-customize" 
@@ -245,15 +244,13 @@ function aaron_docs() {
 
 	<div class="doc-box" id="aaron-access">
 		<h3><?php esc_html_e( 'Accessibility', 'aaron' ); ?></h3>
-		<?php esc_html_e( 'Note: In version 2.0, the accessibility settings were moved from the 
-		Advanced Settings to its own setting in the customizer.', 'aaron' ); ?>
+		<?php esc_html_e( 'Note: In version 2.0, the accessibility settings were moved from the Advanced Settings to its own setting in the customizer.', 'aaron' ); ?>
 		<br><?php esc_html_e( 'Changing the colors of the theme can affect accessibility.', 'aaron' ); ?>
 		<br><br>
 		<?php
 		printf(
 			/* translators: %s: a link to the Classic Editor plugin in the WordPress.org plugin directory. */
-			__( 'If you are experiencing problems with the new WordPress editor I 
-			recommend that you install the <a href="%s">Classic Editor plugin.</a>', 'aaron' ),
+			__( 'If you are experiencing problems with the new WordPress editor I recommend that you install the <a href="%s">Classic Editor plugin.</a>', 'aaron' ),
 			esc_url( 'https://wordpress.org/plugins/classic-editor/' )
 		);
 		?>
@@ -387,7 +384,7 @@ function aaron_docs() {
 		echo '<br>';
 		esc_html_e( 'This is an opportunity for you who have already selected one of my themes to make it yours and personalize it.' , 'aaron' );
 		echo '<br><br>';
-		echo __('These customizations can include for example:<br>
+		echo __( 'These customizations can include for example:<br>
 		Color changes.<br>
 		Typography like font sizes, font family, uppercase / lowercase.<br>
 		Changing position of content, sections and any other elements.<br>
@@ -398,9 +395,9 @@ function aaron_docs() {
 		echo '<br><br>';
 		esc_html_e( 'If you are not sure if the customization you are wondering about is possible- ask! :)', 'aaron' );
 		echo '<br>';
-		echo __( 'To future proof your changes, I will add the customizations to a child theme.' ,'aaron' );
+		esc_html_e( 'To future proof your changes, I will add the customizations to a child theme.', 'aaron' );
 		echo '<br>';
-		echo __( '-If you are already using a child theme, then I will create a new child theme for you that includes any changes that you have already made.', 'aaron' );
+		esc_html_e( '-If you are already using a child theme, then I will create a new child theme for you that includes any changes that you have already made.', 'aaron' );
 		?>
 		<br><br>
 		<a class="button button-primary button-hero load-customize"

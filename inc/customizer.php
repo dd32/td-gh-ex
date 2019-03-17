@@ -1135,18 +1135,26 @@ function aaron_customize_register( $wp_customize ) {
 				'type'     => 'select',
 				'choices'  => array(
 					'Open Sans'        => 'Open Sans ' . __( '(Default)', 'aaron' ),
-					'Montserrat'       => 'Montserrat',
-					'Oswald'           => 'Oswald',
-					'Rambla'           => 'Rambla',
-					'Ubuntu Condensed' => 'Ubuntu Condensed',
+					'Alegreya'         => 'Alegreya',
 					'Fjalla One'       => 'Fjalla One',
-					'Roboto'           => 'Roboto',
-					'Lato'             => 'Lato',
-					'Source Sans Pro'  => 'Source Sans Pro',
-					'Raleway'          => 'Raleway',
-					'Lora'             => 'Lora',
+					'Hind'             => 'Hind',
 					'Josefin Sans'     => 'Josefin Sans',
+					'Karla'            => 'Karla',
+					'Lato'             => 'Lato',
+					'Lora'             => 'Lora',
+					'Montserrat'       => 'Montserrat',
+					'Muli'             => 'Muli',
+					'Noticia Text'     => 'Noticia Text',
+					'Noto Sans'        => 'Noto Sans',
+					'Noto Serif'       => 'Noto Serif',
+					'Oswald'           => 'Oswald',
+					'Raleway'          => 'Raleway',
+					'Rambla'           => 'Rambla',
+					'Roboto'           => 'Roboto',
+					'Source Sans Pro'  => 'Source Sans Pro',
 					'Taviraj'          => 'Taviraj',
+					'Ubuntu'           => 'Ubuntu',
+					'Ubuntu Condensed' => 'Ubuntu Condensed',
 					"BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" => __( 'System fonts', 'aaron' ),
 				),
 			)
@@ -1171,19 +1179,47 @@ function aaron_customize_register( $wp_customize ) {
 				'settings' => 'aaron_font',
 				'type'     => 'select',
 				'choices'  => array(
-					'Montserrat'       => 'Montserrat ' . __( '(Default)', 'aaron' ),
-					'Open Sans'        => 'Open Sans',
-					'Oswald'           => 'Oswald',
-					'Rambla'           => 'Rambla',
-					'Ubuntu Condensed' => 'Ubuntu Condensed',
-					'Fjalla One'       => 'Fjalla One',
-					'Roboto'           => 'Roboto',
-					'Lato'             => 'Lato',
-					'Source Sans Pro'  => 'Source Sans Pro',
-					'Raleway'          => 'Raleway',
-					'Lora'             => 'Lora',
-					'Josefin Sans'     => 'Josefin Sans',
-					'Taviraj'          => 'Taviraj',
+					'Montserrat'         => 'Montserrat ' . __( '(Default)', 'aaron' ),
+					'Alegreya'           => 'Alegreya',
+					'Alegreya Sans SC'   => 'Alegreya Sans SC',
+					'Arimo'              => 'Arimo',
+					'Bree Serif'         => 'Bree Serif',
+					'Cherry Swash'       => 'Cherry Swash',
+					'Cinzel'             => 'Cinzel',
+					'Exo 2'              => 'Exo 2',
+					'Fjalla One'         => 'Fjalla One',
+					'Fondamento'         => 'Fondamento',
+					'Gentium Book Basic' => 'Gentium Book Basic',
+					'Grand Hotel'        => 'Grand Hotel',
+					'Hind'               => 'Hind',
+					'Josefin Sans'       => 'Josefin Sans',
+					'Karla'              => 'Karla',
+					'La Belle Aurore'    => 'La Belle Aurore',
+					'Lato'               => 'Lato',
+					'Libre Baskerville'  => 'Libre Baskerville',
+					'Lobster Two'        => 'Lobster Two',
+					'Lora'               => 'Lora',
+					'Merriweather'       => 'Merriweather',
+					'Muli'               => 'Muli',
+					'Noticia Text'       => 'Noticia Text',
+					'Noto Sans'          => 'Noto Sans',
+					'Noto Serif'         => 'Noto Serif',
+					'Open Sans'          => 'Open Sans',
+					'Oswald'             => 'Oswald',
+					'Pacifico'           => 'Pacifico',
+					'Playfair Display'   => 'Playfair Display',
+					'Quando'             => 'Quando',
+					'Raleway'            => 'Raleway',
+					'Rambla'             => 'Rambla',
+					'Roboto'             => 'Roboto',
+					'Roboto Slab'        => 'Roboto Slab',
+					'Sorts Mill Goudy'   => 'Sorts Mill Goudy',
+					'Source Sans Pro'    => 'Source Sans Pro',
+					'Tangerine'          => 'Tangerine',
+					'Taviraj'            => 'Taviraj',
+					'Ubuntu'             => 'Ubuntu',
+					'Ubuntu Condensed'   => 'Ubuntu Condensed',
+					'Vollkorn'           => 'Vollkorn',
 					"BlinkMacSystemFont, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif" => __( 'System fonts', 'aaron' ),
 				),
 			)
@@ -1295,3 +1331,29 @@ function aaron_sanitize_page( $input ) {
 	}
 }
 
+/**
+ * Enqueue the list of fonts.
+ */
+function aaron_customizer_fonts() {
+	wp_enqueue_style( 'aaron_customizer_fonts', 'https://fonts.googleapis.com/css?family=Alegreya|Alegreya+Sans+SC|Arimo|Bree+Serif|Cherry+Swash|Cinzel|Exo+2|Fondamento|Gentium+Book+Basic|Grand+Hotel|Hind|Josefin+Sans|Karla|La+Belle+Aurore|Lato|Libre+Baskerville|Lobster+Two|Lora|Merriweather|Montserrat|Muli|Noticia+Text|Noto+Sans|Noto+Serif|Old+Standard+TT|Open+Sans|Oswald|Pacifico|Playfair+Display|Quando|Raleway|Roboto+Slab|Sorts+Mill+Goudy|Tangerine|Ubuntu|VollkornRambla|Ubuntu+Condensed|Fjalla+One|Roboto|Lato|Source+Sans+Pro|Taviraj', array(), null );
+}
+add_action( 'customize_controls_print_styles', 'aaron_customizer_fonts' );
+add_action( 'customize_preview_init', 'aaron_customizer_fonts' );
+
+add_action( 'customize_controls_print_styles', 'aaron_customizer_preview_fonts' );
+/**
+ * Add CSS so that we can preview the fonts.
+ */
+function aaron_customizer_preview_fonts() {
+	?>
+	<style>
+	<?php
+	$arr = array( 'Alegreya', 'Alegreya Sans SC', 'Arimo', 'Bree Serif', 'Cherry Swash', 'Cinzel', 'Exo 2', 'Fondamento', 'Gentium Book Basic', 'Grand Hotel', 'Hind', 'Josefin Sans', 'Karla', 'La Belle Aurore', 'Lato', 'Libre Baskerville', 'Lobster Two', 'Lora', 'Merriweather', 'Montserrat', 'Muli', 'Noticia Text', 'Noto Sans', 'Noto Serif', 'Old Standard TT', 'Open Sans', 'Oswald', 'Pacifico', 'Playfair Display', 'Quando', 'Raleway', 'Roboto Slab', 'Sorts Mill Goudy', 'Tangerine', 'Ubuntu', 'VollkornRambla', 'Ubuntu Condensed', 'Fjalla One', 'Roboto', 'Lato', 'Source Sans Pro', 'Taviraj' );
+
+	foreach ( $arr as $font ) {
+		echo '.customize-control select option[value*="' . $font . '"] {font-family: ' . $font . '; font-size: 22px;}';
+	}
+	?>
+	</style>
+	<?php
+}

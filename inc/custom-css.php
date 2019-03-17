@@ -183,6 +183,12 @@ function aaron_customize_css() {
 		echo ".entry-content {width: 100%;}\n";
 	}
 
+	if ( get_theme_mod( 'aaron_font' ) == 'Grand Hotel' || get_theme_mod( 'aaron_font' ) == 'La Belle Aurore' || get_theme_mod( 'aaron_font' ) == 'Tangerine' || get_theme_mod( 'aaron_font' ) == 'Lobster Two' ) {
+		echo ".widget-title, .widgettitle, .comments-title, .comment-reply-title {font-size:3.5rem;}\n";
+		echo ".entry-title, .entry-title a, .site-description {font-size:4rem;}\n";
+		echo ".featured-post h2 {font-size:2.3rem;}\n";
+	}
+
 	echo '</style>';
 }
 add_action( 'wp_head', 'aaron_customize_css' );

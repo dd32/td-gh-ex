@@ -2,7 +2,7 @@
 Contributors: Poena
 Tags: threaded-comments, custom-menu, sticky-post, editor-style, translation-ready, rtl-language-support, two-columns, one-column, right-sidebar, featured-images, featured-image-header, accessibility-ready, custom-header, custom-logo
 Requires at least: 4.6
-Tested up to: 5.0 Beta
+Tested up to: 5.1.1
 Requires PHP: 5.2
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -27,6 +27,14 @@ Please note that changing the colors of the theme can affect accessibility.
 2. Activate the theme through the 'Appearance' menu in WordPress
 
 == Change log ==
+
+Version 4.0, 2019-03-17
+Included a license file.
+Loaded fonts in the customizer so that you can preview what the fonts look like.
+Added more fonts and adjusted the font size slightly depending on which font is used.
+
+Note: the way the post and page title display in the editor is still buggy.
+
 
 Version 3.9, 2019-01-03
 Fixed problems with icons that did not show up correctly after updating Font Awesome.
