@@ -12,13 +12,7 @@
                         /**
                          * Social Links section
                          */
-                        $defaults = array(
-                                        array(
-                                            'academic_hub_social_icon'       => esc_html__('fa fa-facebook', 'academic-hub'),
-                                            'academic_hub_social_link'       => esc_url('https://facebook.com/'),
-                                        ),
-                                    );
-                        $academic_hub_social_links = get_theme_mod('academic_hub_social_links',$defaults);
+                        $academic_hub_social_links = get_theme_mod('academic_hub_social_links');
 
 
                         /**
@@ -33,10 +27,8 @@
                     ?>
                     <li class="search-icon">
                         <div id="wrap">
-                            <form role="search"  method="get" class="search-form" action="<?php echo esc_url(home_url( '/' )); ?>" autocomplete="on" >
-                                <input id="search" type="text"  type="search" class="form-control" placeholder="<?php echo esc_html__( 'Serch Here', 'academic-hub' ) ?>" value="<?php echo esc_attr( get_search_query() ); ?>" name="s">
-                                <input id="search_submit" value="Rechercher" type="submit"><i class="fa fa-search"></i>
-                            </form>
+                            
+                            <?php get_search_form(); ?>
                         </div>
                     </li>	
                 </ul>

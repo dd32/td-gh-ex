@@ -6,7 +6,6 @@
  */
 $academic_hub_author_id         = get_the_ID(); 
 $academic_hub_author_avatar     = get_avatar( $academic_hub_author_id, 'thumbnail' );
-$academic_hub_author_post_link  = get_the_author_posts_link();
 $academic_hub_author_bio        = get_the_author_meta( 'description' );
 $academic_hub_author_url        = get_the_author_meta( 'user_url' );
 $academic_hub_author_post_count = count_user_posts( $academic_hub_author_id );
@@ -18,9 +17,7 @@ $academic_hub_author_post_count = count_user_posts( $academic_hub_author_id );
 <div class="aurthor">
     <h3><?php echo esc_html__('Post Author :','academic-hub'); ?>  
         <span>
-            <?php if ( $academic_hub_author_post_link ) : ?> 
-                <a href=""><?php echo $academic_hub_author_post_link; // WPCS: XSS ok. ?></a>
-            <?php endif; ?>
+               <a href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ), get_the_author_meta( 'user_nicename' ) ) ); ?>"><?php the_author(); ?></a>
         </span>
     </h3>
     <?php if ( $academic_hub_author_avatar ) : ?>
