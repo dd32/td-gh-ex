@@ -1,3 +1,6 @@
+Version 1.8
+i)  Resolved call_user_func() expects parameter 1 to be a valid callback, function issue.
+
 Version 1.7
 i)  Solve NS-Theme Check Issue.
 

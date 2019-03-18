@@ -42,12 +42,12 @@ if ( post_password_required() )
 		<ol class="comment-list">
 			<?php
 				/* Loop through and list the comments. Tell wp_list_comments()
-				 * to use skt_elastic_comment() to format the comments.
+				 * to use adventure_lite_comment() to format the comments.
 				 * If you want to override this in a child theme, then you can
-				 * define skt_elastic_comment() and that will be used instead.
-				 * See skt_elastic_comment() in inc/template-tags.php for more.
+				 * define adventure_lite_comment() and that will be used instead.
+				 * See adventure_lite_comment() in inc/template-tags.php for more.
 				 */
-				wp_list_comments( array( 'callback' => 'skt_elastic_comment' ) );
+				wp_list_comments( array( 'callback' => 'adventure_lite_comment' ) );
 			?>
 		</ol><!-- .comment-list -->
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
