@@ -54,3 +54,9 @@ color:#fff;
 #accordion-section-spicepress_pro_section h3.accordion-section-title { background: #007cb2!important; color:#fff; }
 #accordion-section-spicepress_pro_section h3.accordion-section-title:hover, #accordion-section-spicepress_pro_section h3.accordion-section-title:focus{color:#fff !important;}
 #accordion-section-spicepress_pro_section h3.accordion-section-title:after{color:#fff !important;}
+.customize-control-radio-image #input_header_logo_placing label:nth-of-type(n + 3) {
+    display: none;
+}
+.customize-control-radio-image #input_header_logo_placing.ui-buttonset {
+    text-align: left !important;
+}

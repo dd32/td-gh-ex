@@ -1,5 +1,8 @@
 == Changelog ==
 
+= 2.9.1 ==
+1. Added the header logo layout setting (left logo, right logo).
+
 = 2.9 ==
 1. Fixed menu issue.
 
