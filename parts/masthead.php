@@ -5,38 +5,48 @@
 ?>
 <header id="masthead" class="site-header" role="banner">
 
-	<hgroup class="full-container">
-		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="logo"><?php vantage_display_logo(); ?></a>
+	<div class="hgroup full-container <?php if ( is_active_sidebar( 'sidebar-masthead' ) ) echo 'masthead-sidebar' ?>">
 
-		<?php if( is_active_sidebar('sidebar-header') ) : ?>
+		<?php if ( ! is_active_sidebar( 'sidebar-masthead' ) ) : ?>
 
-			<div id="header-sidebar">
-				<?php dynamic_sidebar( 'sidebar-header' ); ?>
-			</div>
+			<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="logo">
+				<?php vantage_display_logo(); ?>
+			</a>
+			<?php if ( siteorigin_setting( 'logo_site_description' ) ) : ?>
+				<p class="site-description"><?php bloginfo( 'description' ); ?></p>
+			<?php endif;
+
+			if ( is_active_sidebar( 'sidebar-header' ) ) : ?>
+
+				<div id="header-sidebar" <?php if ( siteorigin_setting( 'logo_no_widget_overlay' ) ) echo 'class="no-logo-overlay"' ?>>
+					<?php
+					// Display the header area sidebar, and tell mobile navigation that we can use menus in here.
+					add_filter( 'siteorigin_mobilenav_is_valid', '__return_true' );
+					dynamic_sidebar( 'sidebar-header' );
+					remove_filter( 'siteorigin_mobilenav_is_valid', '__return_true' );
+					?>
+				</div>
+
+			<?php else : ?>
+
+				<div class="support-text">
+					<?php do_action( 'vantage_support_text' ); ?>
+				</div>
+
+			<?php endif; ?>
 
 		<?php else : ?>
 
-			<div class="support-text">
-				<?php do_action('vantage_support_text'); ?>
-			</div>
-
-		<?php endif; ?>
-
-	</hgroup><!-- hgroup.full-container -->
-
-	<nav role="navigation" class="site-navigation main-navigation primary <?php if( siteorigin_setting('navigation_use_sticky_menu') ) echo 'use-sticky-menu' ?>">
-		<div class="full-container">
-			<?php if( siteorigin_setting('navigation_menu_search') ) : ?>
-				<div id="search-icon">
-					<div id="search-icon-icon"><div class="icon"></div></div>
-					<form method="get" class="searchform" action="<?php echo esc_url( home_url( '/' ) ); ?>" role="search">
-						<input type="text" class="field" name="s" value="<?php echo esc_attr( get_search_query() ); ?>" />
-					</form>
+			<?php if ( is_active_sidebar( 'sidebar-masthead' ) ) : ?>
+				<div id="masthead-widgets" class="full-container">
+					<?php dynamic_sidebar( 'sidebar-masthead' ); ?>
 				</div>
 			<?php endif; ?>
 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary', 'link_before' => '<span class="icon"></span>' ) ); ?>
-		</div>
-	</nav><!-- .site-navigation .main-navigation -->
+		<?php endif; ?>
+
+	</div><!-- .hgroup.full-container -->
+
+	<?php get_template_part( 'parts/menu', apply_filters( 'vantage_menu_type', siteorigin_setting( 'layout_menu' ) ) ); ?>
 
 </header><!-- #masthead .site-header -->

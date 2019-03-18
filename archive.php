@@ -15,7 +15,7 @@ get_header(); ?>
 	<div id="content" class="site-content" role="main">
 
 		<header class="page-header">
-			<h1 id="page-title"><?php echo vantage_get_archive_title() ?></h1>
+			<h1 id="page-title"><?php if( siteorigin_page_setting( 'page_title' ) ) { echo vantage_get_archive_title(); } ?></h1>
 			<?php
 			if ( is_category() ) {
 				// show an optional category description
@@ -29,6 +29,11 @@ get_header(); ?>
 				$tag_description = tag_description();
 				if ( ! empty( $tag_description ) )
 					echo apply_filters( 'vantage_tag_archive_meta', '<div class="taxonomy-description">' . $tag_description . '</div>' );
+			}
+			else {
+				$description = term_description();
+				if ( ! empty( $description ) )
+					echo apply_filters( 'vantage_taxonomy_archive_meta', '<div class="taxonomy-description">' . $description . '</div>' );
 			}
 			?>
 		</header><!-- .page-header -->

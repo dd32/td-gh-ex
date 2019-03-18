@@ -11,15 +11,20 @@
 		<?php while( have_posts() ) : the_post(); ?>
 			<li class="carousel-entry">
 				<div class="thumbnail">
-					<?php if( has_post_thumbnail() ) : $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'vantage-carousel'); ?>
-						<a href="<?php the_permalink() ?>" style="background-image: url(<?php echo esc_url($img[0]) ?>)">
-							<span class="overlay"></span>
+					<?php $img = wp_get_attachment_image_src(get_post_thumbnail_id(), 'vantage-carousel'); ?>
+					<?php if( $img[0] ) : ?>
+						<a href="<?php the_permalink() ?>" style="background-image: url(<?php echo $img[0] ?>)">
 						</a>
 					<?php else : ?>
-						<a href="<?php the_permalink() ?>" class="default-thumbnail"><span class="overlay"></span></a>
+						<a href="<?php the_permalink() ?>" class="default-thumbnail"><span class="vantage-overlay"></span></a>
 					<?php endif; ?>
 				</div>
-				<h3><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h3>
+				<?php
+				$title = get_the_title();
+				if( empty( $title ) ) {
+					$title = __( 'Post', 'vantage' ) . ' ' . get_the_ID();
+				} ?>
+				<h3><a href="<?php the_permalink() ?>"><?php echo $title ?></a></h3>
 			</li>
 		<?php endwhile; ?>
 	</ul>
