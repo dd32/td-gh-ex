@@ -20,7 +20,7 @@
 					?>
                 <!-------- MENU TOP HOME --------------->
          <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#"><?php echo __('Navbar', 'apelleuno' );?></a>
+      <a class="navbar-brand" href="#"><?php echo __('Navbar', 'apelle-uno' );?></a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topHomeMenu" aria-controls="topHomeMenu" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -126,7 +126,7 @@
 			?></div><?php
 			endwhile;
 			else :
-				esc_attr_e( 'Sorry, no posts matched your criteria.', 'apelleuno' );
+				esc_attr_e( 'Sorry, no posts matched your criteria.', 'apelle-uno' );
 			endif;
           ?>
         </div>
@@ -167,7 +167,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
         <div class="modal-header">
-       	 	<h5 class="modal-title"><?php __('Comment', 'apelleuno' );?></h5>
+       	 	<h5 class="modal-title"><?php __('Comment', 'apelle-uno' );?></h5>
        	 	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           		<span aria-hidden="true">&times;</span>
         	</button>
@@ -185,13 +185,13 @@
         <?php 
 		$comments_args = array(
         // change the title of send button 
-        'label_submit'=>__('Send', 'apelleuno' ),
+        'label_submit'=>__('Send', 'apelle-uno' ),
         // change the title of the reply section
-        'title_reply'=>__('Write a Reply or Comment', 'apelleuno' ),
+        'title_reply'=>__('Write a Reply or Comment', 'apelle-uno' ),
         // remove "Text or HTML to be displayed after the set of comment fields"
         'comment_notes_after' => '',
         // redefine your own textarea (the comment body)
-        'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ,'apelleuno' ) . '</label><br /><textarea id="comment" name="comment" aria-required="true"></textarea></p>',
+        'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ,'apelle-uno' ) . '</label><br /><textarea id="comment" name="comment" aria-required="true"></textarea></p>',
 );
 
 comment_form($comments_args);
@@ -202,8 +202,8 @@ comment_form($comments_args);
 	</div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php __('Close', 'apelleuno' );?></button>
-            <button type="button" class="btn btn-primary"><?php __('Save changes', 'apelleuno' );?></button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php __('Close', 'apelle-uno' );?></button>
+            <button type="button" class="btn btn-primary"><?php __('Save changes', 'apelle-uno' );?></button>
         </div>
       
     </div>

@@ -2,7 +2,7 @@
         <div class="row">
           <div class="col-12 col-md">
             <!--<img class="mb-2" src="https://getbootstrap.com/docs/4.0/assets/brand/bootstrap-solid.svg" alt="" width="24" height="24">-->
-            <?php __('Apelle uno', 'apelleuno' );?>
+            <?php __('Apelle uno', 'apelle-uno' );?>
             <small class="d-block mb-3 text-muted">&copy; 2018-2019</small>
             <?php the_tags();?>
           </div>
