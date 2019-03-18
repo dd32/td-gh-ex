@@ -3,7 +3,7 @@
 	position: relative;
 	border-left-color: #2ea2cc !important;
 }
-.cresta-message p {
+.cresta-message p:not(.submit) {
 	font-weight: 700;
 }
 .cresta-message a.button-primary,
