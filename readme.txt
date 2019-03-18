@@ -80,6 +80,9 @@ Source: https://stocksnap.io/photo/SWR31HJ4D8
 
 
 == Upgrade Notice == 
+= 1.0.8 2019 March 18 =
+* add the site links
+
 = 1.0.7 2019 March 17 =
 * change the screenshot
 
@@ -93,7 +96,12 @@ Source: https://stocksnap.io/photo/SWR31HJ4D8
 = 1.0.3 2019 March 8 =
 * add review issues fix
 
+
+
 == Changelog ==
+= Version 1.0.8 2019 March 18 =
+* add the site links
+
 = Version 1.0.7 2019 March 17 =
 * fix all issues
 

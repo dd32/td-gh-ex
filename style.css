@@ -1,10 +1,10 @@
 /*!
 Theme Name: Academic Hub
-Theme URI: 
+Theme URI: http://shop.podamibenepal.com/downloads/academic-hub/
 Author: Podamibe Nepal
 Author URI: http://podamibenepal.com
 Description: Academic Hub is beautifully designed clean WordPress academic theme. Easy to setup and has a nice set of features that make your site stand out. It is suitable for school and college sites.
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: academic-hub
@@ -58,10 +58,10 @@ Nicolas Gallagher and Jonathan Neal https://necolas.github.io/normalize.css/
  */
 
 html {
-    line-height: 1.15;
-    /* 1 */
-    -webkit-text-size-adjust: 100%;
-    /* 2 */
+  line-height: 1.15;
+  /* 1 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */
 }
 
 /* Sections
@@ -72,7 +72,7 @@ html {
  */
 
 body {
-    margin: 0;
+  margin: 0;
 }
 
 /**
@@ -81,8 +81,8 @@ body {
  */
 
 h1 {
-    font-size: 2em;
-    margin: 0.67em 0;
+  font-size: 2em;
+  margin: 0.67em 0;
 }
 
 /* Grouping content
@@ -94,12 +94,12 @@ h1 {
  */
 
 hr {
-    box-sizing: content-box;
-    /* 1 */
-    height: 0;
-    /* 1 */
-    overflow: visible;
-    /* 2 */
+  box-sizing: content-box;
+  /* 1 */
+  height: 0;
+  /* 1 */
+  overflow: visible;
+  /* 2 */
 }
 
 /**
@@ -108,10 +108,10 @@ hr {
  */
 
 pre {
-    font-family: monospace, monospace;
-    /* 1 */
-    font-size: 1em;
-    /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /* Text-level semantics
@@ -122,7 +122,7 @@ pre {
  */
 
 a {
-    background-color: transparent;
+  background-color: transparent;
 }
 
 /**
@@ -131,12 +131,12 @@ a {
  */
 
 abbr[title] {
-    border-bottom: none;
-    /* 1 */
-    text-decoration: underline;
-    /* 2 */
-    text-decoration: underline dotted;
-    /* 2 */
+  border-bottom: none;
+  /* 1 */
+  text-decoration: underline;
+  /* 2 */
+  text-decoration: underline dotted;
+  /* 2 */
 }
 
 /**
@@ -145,7 +145,7 @@ abbr[title] {
 
 b,
 strong {
-    font-weight: bolder;
+  font-weight: bolder;
 }
 
 /**
@@ -156,10 +156,10 @@ strong {
 code,
 kbd,
 samp {
-    font-family: monospace, monospace;
-    /* 1 */
-    font-size: 1em;
-    /* 2 */
+  font-family: monospace, monospace;
+  /* 1 */
+  font-size: 1em;
+  /* 2 */
 }
 
 /**
@@ -167,7 +167,7 @@ samp {
  */
 
 small {
-    font-size: 80%;
+  font-size: 80%;
 }
 
 /**
@@ -177,18 +177,18 @@ small {
 
 sub,
 sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
 }
 
 sub {
-    bottom: -0.25em;
+  bottom: -0.25em;
 }
 
 sup {
-    top: -0.5em;
+  top: -0.5em;
 }
 
 /* Embedded content
@@ -199,7 +199,7 @@ sup {
  */
 
 img {
-    border-style: none;
+  border-style: none;
 }
 
 /* Forms
@@ -215,14 +215,14 @@ input,
 optgroup,
 select,
 textarea {
-    font-family: inherit;
-    /* 1 */
-    font-size: 100%;
-    /* 1 */
-    line-height: 1.15;
-    /* 1 */
-    margin: 0;
-    /* 2 */
+  font-family: inherit;
+  /* 1 */
+  font-size: 100%;
+  /* 1 */
+  line-height: 1.15;
+  /* 1 */
+  margin: 0;
+  /* 2 */
 }
 
 /**
@@ -232,8 +232,8 @@ textarea {
 
 button,
 input {
-    /* 1 */
-    overflow: visible;
+  /* 1 */
+  overflow: visible;
 }
 
 /**
@@ -243,8 +243,8 @@ input {
 
 button,
 select {
-    /* 1 */
-    text-transform: none;
+  /* 1 */
+  text-transform: none;
 }
 
 /**
@@ -255,7 +255,7 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-    -webkit-appearance: button;
+  -webkit-appearance: button;
 }
 
 /**
@@ -266,8 +266,8 @@ button::-moz-focus-inner,
 [type="button"]::-moz-focus-inner,
 [type="reset"]::-moz-focus-inner,
 [type="submit"]::-moz-focus-inner {
-    border-style: none;
-    padding: 0;
+  border-style: none;
+  padding: 0;
 }
 
 /**
@@ -278,7 +278,7 @@ button:-moz-focusring,
 [type="button"]:-moz-focusring,
 [type="reset"]:-moz-focusring,
 [type="submit"]:-moz-focusring {
-    outline: 1px dotted ButtonText;
+  outline: 1px dotted ButtonText;
 }
 
 /**
@@ -286,7 +286,7 @@ button:-moz-focusring,
  */
 
 fieldset {
-    padding: 0.35em 0.75em 0.625em;
+  padding: 0.35em 0.75em 0.625em;
 }
 
 /**
@@ -297,18 +297,18 @@ fieldset {
  */
 
 legend {
-    box-sizing: border-box;
-    /* 1 */
-    color: inherit;
-    /* 2 */
-    display: table;
-    /* 1 */
-    max-width: 100%;
-    /* 1 */
-    padding: 0;
-    /* 3 */
-    white-space: normal;
-    /* 1 */
+  box-sizing: border-box;
+  /* 1 */
+  color: inherit;
+  /* 2 */
+  display: table;
+  /* 1 */
+  max-width: 100%;
+  /* 1 */
+  padding: 0;
+  /* 3 */
+  white-space: normal;
+  /* 1 */
 }
 
 /**
@@ -316,7 +316,7 @@ legend {
  */
 
 progress {
-    vertical-align: baseline;
+  vertical-align: baseline;
 }
 
 /**
@@ -324,7 +324,7 @@ progress {
  */
 
 textarea {
-    overflow: auto;
+  overflow: auto;
 }
 
 /**
@@ -334,10 +334,10 @@ textarea {
 
 [type="checkbox"],
 [type="radio"] {
-    box-sizing: border-box;
-    /* 1 */
-    padding: 0;
-    /* 2 */
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */
 }
 
 /**
@@ -346,7 +346,7 @@ textarea {
 
 [type="number"]::-webkit-inner-spin-button,
 [type="number"]::-webkit-outer-spin-button {
-    height: auto;
+  height: auto;
 }
 
 /**
@@ -355,10 +355,10 @@ textarea {
  */
 
 [type="search"] {
-    -webkit-appearance: textfield;
-    /* 1 */
-    outline-offset: -2px;
-    /* 2 */
+  -webkit-appearance: textfield;
+  /* 1 */
+  outline-offset: -2px;
+  /* 2 */
 }
 
 /**
@@ -366,7 +366,7 @@ textarea {
  */
 
 [type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
+  -webkit-appearance: none;
 }
 
 /**
@@ -375,10 +375,10 @@ textarea {
  */
 
 ::-webkit-file-upload-button {
-    -webkit-appearance: button;
-    /* 1 */
-    font: inherit;
-    /* 2 */
+  -webkit-appearance: button;
+  /* 1 */
+  font: inherit;
+  /* 2 */
 }
 
 /* Interactive
@@ -389,7 +389,7 @@ textarea {
  */
 
 details {
-    display: block;
+  display: block;
 }
 
 /*
@@ -397,7 +397,7 @@ details {
  */
 
 summary {
-    display: list-item;
+  display: list-item;
 }
 
 /* Misc
@@ -408,7 +408,7 @@ summary {
  */
 
 template {
-    display: none;
+  display: none;
 }
 
 /**
@@ -416,7 +416,7 @@ template {
  */
 
 [hidden] {
-    display: none;
+  display: none;
 }
 
 /*--------------------------------------------------------------
@@ -429,11 +429,11 @@ input,
 select,
 optgroup,
 textarea {
-    color: #404040;
-    font-family: sans-serif;
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.5;
+  color: #404040;
+  font-family: sans-serif;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
 h1,
@@ -442,63 +442,63 @@ h3,
 h4,
 h5,
 h6 {
-    clear: both;
+  clear: both;
 }
 
 p {
-    margin-bottom: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 dfn,
 cite,
 em,
 i {
-    font-style: italic;
+  font-style: italic;
 }
 
 blockquote {
-    margin: 0 1.5em;
+  margin: 0 1.5em;
 }
 
 address {
-    margin: 0 0 1.5em;
+  margin: 0 0 1.5em;
 }
 
 pre {
-    background: #eee;
-    font-family: "Courier 10 Pitch", Courier, monospace;
-    font-size: 15px;
-    font-size: 0.9375rem;
-    line-height: 1.6;
-    margin-bottom: 1.6em;
-    max-width: 100%;
-    overflow: auto;
-    padding: 1.6em;
+  background: #eee;
+  font-family: "Courier 10 Pitch", Courier, monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  margin-bottom: 1.6em;
+  max-width: 100%;
+  overflow: auto;
+  padding: 1.6em;
 }
 
 code,
 kbd,
 tt,
 var {
-    font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
-    font-size: 15px;
-    font-size: 0.9375rem;
+  font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
+  font-size: 15px;
+  font-size: 0.9375rem;
 }
 
 abbr,
 acronym {
-    border-bottom: 1px dotted #666;
-    cursor: help;
+  border-bottom: 1px dotted #666;
+  cursor: help;
 }
 
 mark,
 ins {
-    background: #fff9c0;
-    text-decoration: none;
+  background: #fff9c0;
+  text-decoration: none;
 }
 
 big {
-    font-size: 125%;
+  font-size: 125%;
 }
 
 /*--------------------------------------------------------------
@@ -506,70 +506,70 @@ big {
 --------------------------------------------------------------*/
 
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-    /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-    box-sizing: inherit;
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+  box-sizing: inherit;
 }
 
 body {
-    background: #fff;
-    /* Fallback for when there is no custom background color defined. */
+  background: #fff;
+  /* Fallback for when there is no custom background color defined. */
 }
 
 hr {
-    background-color: #ccc;
-    border: 0;
-    height: 1px;
-    margin-bottom: 1.5em;
+  background-color: #ccc;
+  border: 0;
+  height: 1px;
+  margin-bottom: 1.5em;
 }
 
 ul,
 ol {
-    margin: 0 0 1.5em 3em;
+  margin: 0 0 1.5em 3em;
 }
 
 ul {
-    list-style: none;
+  list-style: none;
 }
 
 ol {
-    list-style: none;
+  list-style: none;
 }
 
-li>ul,
-li>ol {
-    margin-bottom: 0;
-    margin-left: 1.5em;
+li > ul,
+li > ol {
+  margin-bottom: 0;
+  margin-left: 1.5em;
 }
 
 dt {
-    font-weight: bold;
+  font-weight: bold;
 }
 
 dd {
-    margin: 0 1.5em 1.5em;
+  margin: 0 1.5em 1.5em;
 }
 
 img {
-    height: auto;
-    /* Make sure images are scaled correctly. */
-    max-width: 100%;
-    /* Adhere to container width. */
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
 }
 
 figure {
-    margin: 1em 0;
-    /* Extra wide images within figure tags don't overflow the content area. */
+  margin: 1em 0;
+  /* Extra wide images within figure tags don't overflow the content area. */
 }
 
 table {
-    margin: 0 0 1.5em;
-    width: 100%;
+  margin: 0 0 1.5em;
+  width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -580,22 +580,22 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    border: 1px solid;
-    border-color: #ccc #ccc #bbb;
-    border-radius: 3px;
-    background: #e6e6e6;
-    color: rgba(0, 0, 0, 0.8);
-    font-size: 12px;
-    font-size: 0.75rem;
-    line-height: 1;
-    padding: .6em 1em .4em;
+  border: 1px solid;
+  border-color: #ccc #ccc #bbb;
+  border-radius: 3px;
+  background: #e6e6e6;
+  color: rgba(0, 0, 0, 0.8);
+  font-size: 12px;
+  font-size: 0.75rem;
+  line-height: 1;
+  padding: 0.6em 1em 0.4em;
 }
 
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-    border-color: #ccc #bbb #aaa;
+  border-color: #ccc #bbb #aaa;
 }
 
 button:active,
@@ -606,7 +606,7 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-    border-color: #aaa #bbb #bbb;
+  border-color: #aaa #bbb #bbb;
 }
 
 input[type="text"],
@@ -625,10 +625,10 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-    color: #666;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    padding: 3px;
+  color: #666;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  padding: 3px;
 }
 
 input[type="text"]:focus,
@@ -647,15 +647,15 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-    color: #111;
+  color: #111;
 }
 
 select {
-    border: 1px solid #ccc;
+  border: 1px solid #ccc;
 }
 
 textarea {
-    width: 100%;
+  width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -667,26 +667,26 @@ textarea {
 --------------------------------------------------------------*/
 
 a {
-    color: royalblue;
+  color: royalblue;
 }
 
 a:visited {
-    color: purple;
+  color: purple;
 }
 
 a:hover,
 a:focus,
 a:active {
-    color: midnightblue;
+  color: midnightblue;
 }
 
 a:focus {
-    outline: thin dotted;
+  outline: thin dotted;
 }
 
 a:hover,
 a:active {
-    outline: 0;
+  outline: 0;
 }
 
 /*--------------------------------------------------------------
@@ -694,93 +694,93 @@ a:active {
 --------------------------------------------------------------*/
 
 .main-navigation {
-    clear: both;
-    display: block;
-    float: left;
-    width: 100%;
+  clear: both;
+  display: block;
+  float: left;
+  width: 100%;
 }
 
 .main-navigation ul {
-    display: none;
-    list-style: none;
-    margin: 0;
-    padding-left: 0;
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding-left: 0;
 }
 
 .main-navigation ul ul {
-    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-    float: left;
-    position: absolute;
-    top: 100%;
-    left: -999em;
-    z-index: 99999;
+  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+  float: left;
+  position: absolute;
+  top: 100%;
+  left: -999em;
+  z-index: 99999;
 }
 
 .main-navigation ul ul ul {
-    left: -999em;
-    top: 0;
+  left: -999em;
+  top: 0;
 }
 
-.main-navigation ul ul li:hover>ul,
-.main-navigation ul ul li.focus>ul {
-    left: 100%;
+.main-navigation ul ul li:hover > ul,
+.main-navigation ul ul li.focus > ul {
+  left: 100%;
 }
 
 .main-navigation ul ul a {
-    width: 200px;
+  width: 200px;
 }
 
-.main-navigation ul li:hover>ul,
-.main-navigation ul li.focus>ul {
-    left: auto;
+.main-navigation ul li:hover > ul,
+.main-navigation ul li.focus > ul {
+  left: auto;
 }
 
 .main-navigation li {
-    float: left;
-    position: relative;
+  float: left;
+  position: relative;
 }
 
 .main-navigation a {
-    display: block;
-    text-decoration: none;
+  display: block;
+  text-decoration: none;
 }
 
 /* Small menu. */
 
 .menu-toggle,
 .main-navigation.toggled ul {
-    display: block;
+  display: block;
 }
 
 @media screen and (min-width: 37.5em) {
-    .menu-toggle {
-        display: none;
-    }
-    .main-navigation ul {
-        display: block;
-    }
+  .menu-toggle {
+    display: none;
+  }
+  .main-navigation ul {
+    display: block;
+  }
 }
 
 .site-main .comment-navigation,
 .site-main .posts-navigation,
 .site-main .post-navigation {
-    margin: 0 0 1.5em;
-    overflow: hidden;
+  margin: 0 0 1.5em;
+  overflow: hidden;
 }
 
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-    float: left;
-    width: 50%;
+  float: left;
+  width: 50%;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-    float: right;
-    text-align: right;
-    width: 50%;
+  float: right;
+  text-align: right;
+  width: 50%;
 }
 
 /*--------------------------------------------------------------
@@ -790,45 +790,45 @@ a:active {
 /* Text meant only for screen readers. */
 
 .screen-reader-text {
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-    clip-path: inset(50%);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute !important;
-    width: 1px;
-    word-wrap: normal !important;
-    /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 
 .screen-reader-text:focus {
-    background-color: #f1f1f1;
-    border-radius: 3px;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-    clip: auto !important;
-    clip-path: none;
-    color: #21759b;
-    display: block;
-    font-size: 14px;
-    font-size: 0.875rem;
-    font-weight: bold;
-    height: auto;
-    left: 5px;
-    line-height: normal;
-    padding: 15px 23px 14px;
-    text-decoration: none;
-    top: 5px;
-    width: auto;
-    z-index: 100000;
-    /* Above WP toolbar. */
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
 }
 
 /* Do not show the outline on the skip link target. */
 
 #content[tabindex="-1"]:focus {
-    outline: 0;
+  outline: 0;
 }
 
 /*--------------------------------------------------------------
@@ -836,22 +836,22 @@ a:active {
 --------------------------------------------------------------*/
 
 .alignleft {
-    display: inline;
-    float: left;
-    margin-right: 1.5em;
+  display: inline;
+  float: left;
+  margin-right: 1.5em;
 }
 
 .alignright {
-    display: inline;
-    float: right;
-    margin-left: 1.5em;
+  display: inline;
+  float: right;
+  margin-left: 1.5em;
 }
 
 .aligncenter {
-    clear: both;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  clear: both;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 /*--------------------------------------------------------------
@@ -870,9 +870,9 @@ a:active {
 .site-content:after,
 .site-footer:before,
 .site-footer:after {
-    content: "";
-    display: table;
-    table-layout: fixed;
+  content: "";
+  display: table;
+  table-layout: fixed;
 }
 
 .clear:after,
@@ -881,7 +881,7 @@ a:active {
 .site-header:after,
 .site-content:after,
 .site-footer:after {
-    clear: both;
+  clear: both;
 }
 
 /*--------------------------------------------------------------
@@ -889,12 +889,12 @@ a:active {
 --------------------------------------------------------------*/
 
 .widget {
-    margin: 0 0 1.5em;
-    /* Make sure select elements fit in widgets. */
+  margin: 0 0 1.5em;
+  /* Make sure select elements fit in widgets. */
 }
 
 .widget select {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 /*--------------------------------------------------------------
@@ -906,27 +906,27 @@ a:active {
 --------------------------------------------------------------*/
 
 .sticky {
-    display: block;
+  display: block;
 }
 
 .post,
 .page {
-    margin: 0;
+  margin: 0;
 }
 
 .updated:not(.published) {
-    display: none;
+  display: none;
 }
 
 .page-content,
 .entry-content,
 .entry-summary {
-    margin: 1.5em 0 0;
+  margin: 1.5em 0 0;
 }
 
 .page-links {
-    clear: both;
-    margin: 0 0 1.5em;
+  clear: both;
+  margin: 0 0 1.5em;
 }
 
 /*--------------------------------------------------------------
@@ -934,11 +934,11 @@ a:active {
 --------------------------------------------------------------*/
 
 .comment-content a {
-    word-wrap: break-word;
+  word-wrap: break-word;
 }
 
 .bypostauthor {
-    display: block;
+  display: block;
 }
 
 /*--------------------------------------------------------------
@@ -949,14 +949,14 @@ a:active {
 
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-    /* Theme Footer (when set to scrolling) */
-    display: none;
+  /* Theme Footer (when set to scrolling) */
+  display: none;
 }
 
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
 
 .infinity-end.neverending .site-footer {
-    display: block;
+  display: block;
 }
 
 /*--------------------------------------------------------------
@@ -966,10 +966,10 @@ a:active {
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
-    border: none;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding: 0;
+  border: none;
+  margin-bottom: 0;
+  margin-top: 0;
+  padding: 0;
 }
 
 /* Make sure embeds and iframes fit their containers. */
@@ -977,13 +977,13 @@ a:active {
 embed,
 iframe,
 object {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 /* Make sure logo link wraps around logo image. */
 
 .custom-logo-link {
-    display: inline-block;
+  display: inline-block;
 }
 
 /*--------------------------------------------------------------
@@ -991,22 +991,22 @@ object {
 --------------------------------------------------------------*/
 
 .wp-caption {
-    margin-bottom: 1.5em;
-    max-width: 100%;
+  margin-bottom: 1.5em;
+  max-width: 100%;
 }
 
 .wp-caption img[class*="wp-image-"] {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .wp-caption .wp-caption-text {
-    margin: 0.8075em 0;
+  margin: 0.8075em 0;
 }
 
 .wp-caption-text {
-    text-align: center;
+  text-align: center;
 }
 
 /*--------------------------------------------------------------
@@ -1014,102 +1014,102 @@ object {
 --------------------------------------------------------------*/
 
 .gallery {
-    margin-bottom: 1.5em;
+  margin-bottom: 1.5em;
 }
 
 .gallery-item {
-    display: inline-block;
-    text-align: center;
-    vertical-align: top;
-    width: 100%;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 100%;
 }
 
 .gallery-columns-2 .gallery-item {
-    max-width: 50%;
+  max-width: 50%;
 }
 
 .gallery-columns-3 .gallery-item {
-    max-width: 33.33%;
+  max-width: 33.33%;
 }
 
 .gallery-columns-4 .gallery-item {
-    max-width: 25%;
+  max-width: 25%;
 }
 
 .gallery-columns-5 .gallery-item {
-    max-width: 20%;
+  max-width: 20%;
 }
 
 .gallery-columns-6 .gallery-item {
-    max-width: 16.66%;
+  max-width: 16.66%;
 }
 
 .gallery-columns-7 .gallery-item {
-    max-width: 14.28%;
+  max-width: 14.28%;
 }
 
 .gallery-columns-8 .gallery-item {
-    max-width: 12.5%;
+  max-width: 12.5%;
 }
 
 .gallery-columns-9 .gallery-item {
-    max-width: 11.11%;
+  max-width: 11.11%;
 }
 
 .gallery-caption {
-    display: block;
+  display: block;
 }
 
 #academic_hub_event.conference-wrapper .event-img {
-    width: 20%;
+  width: 20%;
 }
 
 #academic_hub_event .conference-wrapper .event-content {
-    width: 78%;
+  width: 78%;
 }
 
 #academic_hub_event .conference-wrapper div {
-    display: inline-block;
+  display: inline-block;
 }
 
 #academic_hub_blog .event-img {
-    display: inline-block;
+  display: inline-block;
 }
 
 .event-content {
-    width: 78%;
-    display: inline-block;
+  width: 78%;
+  display: inline-block;
 }
 
 #academic_hub_blog .event-img img {
-    height: 100px;
-    object-fit: cover;
+  height: 100px;
+  object-fit: cover;
 }
 
 .breadcrumb_wrap .col-md-12.col-xs-12.blog-title a,
 .breadcrumb_wrap .col-md-12.col-xs-12.blog-title {
-    font-size: 14px;
-    padding: 0px 10px;
+  font-size: 14px;
+  padding: 0px 10px;
 }
 
 .breadcrumb {
-    padding: 8px 15px;
-    margin-bottom: 20px;
-    list-style: none;
-    background-color: #ffffff;
-    border-radius: 4px;
+  padding: 8px 15px;
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #ffffff;
+  border-radius: 4px;
 }
 
 .nav-links a {
-    border-radius: 50%;
-    outline: 0;
-    font-weight: 600;
-    margin-right: 13px;
-    padding: 6px 12px;
-    margin-left: -1px;
-    line-height: 1.42857143;
-    color: #337ab7;
-    text-decoration: none;
-    background-color: #fff;
-    border: 1px solid #ddd;
+  border-radius: 50%;
+  outline: 0;
+  font-weight: 600;
+  margin-right: 13px;
+  padding: 6px 12px;
+  margin-left: -1px;
+  line-height: 1.42857143;
+  color: #337ab7;
+  text-decoration: none;
+  background-color: #fff;
+  border: 1px solid #ddd;
 }
