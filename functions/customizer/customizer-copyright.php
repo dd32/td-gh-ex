@@ -1,12 +1,20 @@
 <?php
 // Footer copyright section 
 	function quality_copyright_customizer( $wp_customize ) {
+	    
+		//slider Section 
+	$wp_customize->add_panel( 'quality_footer_setting', array(
+		'priority'       => 500,
+		'capability'     => 'edit_theme_options',
+		'title'      => __('Footer settings', 'quality'),
+	) );    
 	
 	$wp_customize->add_section(
         'copyright_section_one',
         array(
             'title' => __('Footer copyright settings','quality'),
             'priority' => 1100,
+            'panel'  => 'quality_footer_setting',
         )
     );
 	

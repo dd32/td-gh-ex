@@ -5,7 +5,8 @@ function quality_blog_customizer( $wp_customize ) {
         'blog_setting',
         array(
             'title' => __('Recent Blog setting','quality'),
-			'priority'   => 1000,
+            'panel'  => 'quality_homepage_section_setting',
+			'priority'   => 6,
 			
 			)
     );

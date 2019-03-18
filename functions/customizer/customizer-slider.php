@@ -3,17 +3,18 @@ function quality_slider_customizer( $wp_customize ) {
 	$selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 
 	//slider Section 
-	$wp_customize->add_panel( 'quality_slider_setting', array(
+	$wp_customize->add_panel( 'quality_homepage_section_setting', array(
 		'priority'       => 500,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Slider settings', 'quality'),
+		'title'      => __('Homepage section settings', 'quality'),
 	) );
 	
 	$wp_customize->add_section(
         'slider_section_settings',
         array(
-            'title' => __('Featured slider settings','quality'),
-			'panel'  => 'quality_slider_setting',)
+            'title' => __('Slider settings','quality'),
+			'panel'  => 'quality_homepage_section_setting',
+			'priority' => 1,)
     );
 	
 	//Hide Index Slider Section
@@ -134,6 +135,42 @@ function quality_slider_customizer( $wp_customize ) {
 	'priority'	=> 150,
 	'type' => 'text',
 	));
+	
+	// adding upgrade to por message for slider
+	class WP_slider_pro_Customize_Control extends WP_Customize_Control {
+    public $type = 'new_menu';
+    /**
+    * Render the control's content.
+    */
+    public function render_content() {
+    ?>
+     <div class="pro-version">
+	 <p><?php _e('To add more slides and animation effects click to upgrade to pro','quality');?></p>
+	 </div>
+	  <div class="pro-box">
+	 <a href="<?php echo esc_url('http://webriti.com/quality/');?>" class="service" id="review_pro" target="_blank"><?php _e( 'Upgrade to Pro','quality' ); ?></a>
+	 <div>
+    <?php
+    }
+}
+
+	$wp_customize->add_setting(
+		'slider_upgrade',
+		array(
+			'capability'     => 'edit_theme_options',
+			'sanitize_callback' => 'sanitize_text_field',
+		)	
+	);
+	$wp_customize->add_control( new WP_slider_pro_Customize_Control( $wp_customize, 'slider_upgrade', array(	
+			'section' => 'slider_section_settings',
+			'setting' => 'slider_upgrade',
+			'priority' => 1,
+	
+	)));
+	
+	
+	
+	
 	
 	 }
 	add_action( 'customize_register', 'quality_slider_customizer' );

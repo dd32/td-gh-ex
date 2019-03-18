@@ -146,3 +146,5 @@ display:none !important;
 	width: 100px;
     height: 50px;
 }
+#accordion-section-team_section_settings .accordion-section-title:after,#accordion-section-shop_section_settings .accordion-section-title:after{content:"\f160";color:#a0a5aa;}
+#customize-control-quality_team_content .button-secondary,#customize-control-quality_team_content .customizer-repeater-new-field{pointer-events:none;}

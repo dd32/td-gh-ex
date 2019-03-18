@@ -153,6 +153,8 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+@Version 2.3.1
+Corrected Sanitization issue
 @version 2.3
 1. Remove duplicate post title on single view.
 2. Add homepage section ON/OFF setting.
