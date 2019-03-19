@@ -527,4 +527,3 @@ function weaverx_cz_add_injection( $root, $label = '', $description = '', $versi
 
 }
 
-?>

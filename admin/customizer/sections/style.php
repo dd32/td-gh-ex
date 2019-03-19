@@ -860,4 +860,4 @@ if ( ! function_exists( 'weaverx_customizer_define_style_sections' ) ) :
 		return $style_sections;
 	}
 endif;
-?>
+

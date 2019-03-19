@@ -1009,6 +1009,3 @@ function weaverx_has_widgetarea( $area_name ) {
 	return false;
 }
 
-//--
-
-?>

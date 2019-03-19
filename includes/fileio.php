@@ -189,4 +189,3 @@ function weaverx_f_fail( $msg ) {
 	return false;
 }
 
-?>

@@ -1,5 +1,7 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+} // Exit if accessed directly
 /**
  * Quote
  *
@@ -7,12 +9,13 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
 weaverx_per_post_style();
 ?>
 
-	<article id="post-<?php the_ID(); ?>" <?php post_class( 'content-quote post-content ' . weaverx_post_class() ); echo weaverx_schema( 'post' ); ?>>
-<?php
-	if ( !weaverx_compact_post() ) {
-?>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'content-quote post-content ' . weaverx_post_class() );
+echo weaverx_schema( 'post' ); ?>>
+	<?php
+	if ( ! weaverx_compact_post() ) {
+		?>
 		<header class="entry-header">
-		<?php
+			<?php
 			weaverx_entry_header( 'quote' );
 			weaverx_post_top_meta(); ?>
 		</header><!-- .entry-header -->
@@ -22,33 +25,33 @@ weaverx_per_post_style();
 			return;
 		}
 	}
-		if ( weaverx_do_excerpt() && !weaverx_compact_post() ) { // Only display Excerpts for Search
-			weaverx_post_div( 'summary' );
-			weaverx_the_post_excerpt(); ?>
+	if ( weaverx_do_excerpt() && ! weaverx_compact_post() ) { // Only display Excerpts for Search
+		weaverx_post_div( 'summary' );
+		weaverx_the_post_excerpt(); ?>
 		</div><!-- .entry-summary -->
-<?php
-		} else {
-			weaverx_post_div( 'content' );
-			weaverx_the_post_full();
-			weaverx_link_pages();	// <!--nextpage-->
-?>
-			</div><!-- .entry-content -->
-<?php 	}
-	if ( !weaverx_compact_post() ) {
-?>
+		<?php
+	} else {
+		weaverx_post_div( 'content' );
+		weaverx_the_post_full();
+		weaverx_link_pages();    // <!--nextpage-->
+		?>
+		</div><!-- .entry-content -->
+	<?php }
+	if ( ! weaverx_compact_post() ) {
+		?>
 
 		<footer class="entry-utility">
-<?php
-		weaverx_post_bottom_info();
-		weaverx_compact_link( 'check' );
-?>
+			<?php
+			weaverx_post_bottom_info();
+			weaverx_compact_link( 'check' );
+			?>
 		</footer><!--  -->
-<?php
+		<?php
 	} else {
 		weaverx_compact_link();
 		weaverx_edit_link();
 	}
-	weaverx_inject_area( 'postpostcontent' );	// inject post comment body ?>
+	weaverx_inject_area( 'postpostcontent' );    // inject post comment body ?>
 	<div style="clear:both;"></div>
 	<?php echo weaverx_schema( 'mainEntityOfPage' ); ?>
-	</article><!-- /#post-<?php the_ID(); ?> -->
+</article><!-- /#post-<?php the_ID(); ?> -->

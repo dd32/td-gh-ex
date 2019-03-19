@@ -34,19 +34,19 @@ function weaverx_fwrite_current_css() {
 
 	$theme_dir_exists = weaverx_f_mkdir( $save_dir );
 	if ( ! $theme_dir_exists ) {
-		weaverx_f_file_access_fail( esc_html__( 'Unable to create directory. Probably a file system permission problem. Directory', 'weaver-xtreme') . $save_dir );
+		weaverx_f_file_access_fail( esc_html__( 'Unable to create directory. Probably a file system permission problem. Directory', 'weaver-xtreme' ) . $save_dir );
 	}
 	$theme_dir_writable = $theme_dir_exists;
 
 	if ( ! weaverx_f_is_writable( $save_dir ) ) {
-		weaverx_f_file_access_fail( esc_html__( 'Directory not writable. Probably a file system permission problem. Directory: ', 'weaver-xtreme') . $save_dir );
+		weaverx_f_file_access_fail( esc_html__( 'Directory not writable. Probably a file system permission problem. Directory: ', 'weaver-xtreme' ) . $save_dir );
 		$theme_dir_writable = false;
 	}
 
 	$filename = $save_dir . '/' . $usename;    // we will add txt
 
 	if ( ! $theme_dir_writable || ! $theme_dir_exists || ! ( $handle = weaverx_f_open( $filename, 'w' ) ) ) {
-		weaverx_f_file_access_fail( esc_html__( 'Unable to create file. Probably a file system permission problem. File: ', 'weaver-xtreme') . $filename );
+		weaverx_f_file_access_fail( esc_html__( 'Unable to create file. Probably a file system permission problem. File: ', 'weaver-xtreme' ) . $filename );
 
 		return '';
 	}
@@ -59,7 +59,7 @@ function weaverx_fwrite_current_css() {
 
 	weaverx_output_style( $handle );
 	if ( ! weaverx_f_close( $handle ) ) {
-		weaverx_f_file_access_fail( esc_html__( 'Unable to create file. Probably a file system permission problem. File: ', 'weaver-xtreme') . $filename );
+		weaverx_f_file_access_fail( esc_html__( 'Unable to create file. Probably a file system permission problem. File: ', 'weaver-xtreme' ) . $filename );
 
 		return '';
 	}
@@ -117,40 +117,41 @@ function weaverx_output_style( $sout ) {
 
 	$full = weaverx_getopt( 'site_layout' );
 	if ( $full == 'fullwidth' || $full == 'stretched' ) {            // okay, we have a value to manipulate
-		$clear = array(                        // all the extend/expand options need to be cleared to start;
-		                                       'wrapper_fullwidth',
-		                                       'expand_header',
-		                                       'expand_header-image',
-		                                       'expand_site_title',
-		                                       'expand_header-widget-area',
-		                                       'expand_header-html',
-		                                       'expand_m_primary',
-		                                       'expand_m_secondary',
-		                                       'expand_container',
-		                                       'expand_post',
-		                                       'expand_footer',
-		                                       'expand_footer_sb',
-		                                       'expand_footer_html',
-		                                       'expand_site-ig-wrap',
-		                                       'container_extend_width',
-		                                       'header_extend_width',
-		                                       'header_sb_extend_width',
-		                                       'header_html_extend_width',
-		                                       'm_primary_extend_width',
-		                                       'm_secondary_extend_width',
-		                                       'infobar_extend_width',
-		                                       'post_extend_width',
-		                                       'footer_extend_width',
-		                                       'footer_sb_extend_width',
-		                                       'footer_html_extend_width',
-		                                       'header_extend_bgcolor',
-		                                       'm_primary_extend_bgcolor',
-		                                       'm_secondary_extend_bgcolor',
-		                                       'm_extra_extend_bgcolor',
-		                                       'container_extend_bgcolor',
-		                                       'content_extend_bgcolor',
-		                                       'footer_extend_bgcolor',
-		                                       'wrapper_border',
+		$clear = array(
+			// all the extend/expand options need to be cleared to start;
+			'wrapper_fullwidth',
+			'expand_header',
+			'expand_header-image',
+			'expand_site_title',
+			'expand_header-widget-area',
+			'expand_header-html',
+			'expand_m_primary',
+			'expand_m_secondary',
+			'expand_container',
+			'expand_post',
+			'expand_footer',
+			'expand_footer_sb',
+			'expand_footer_html',
+			'expand_site-ig-wrap',
+			'container_extend_width',
+			'header_extend_width',
+			'header_sb_extend_width',
+			'header_html_extend_width',
+			'm_primary_extend_width',
+			'm_secondary_extend_width',
+			'infobar_extend_width',
+			'post_extend_width',
+			'footer_extend_width',
+			'footer_sb_extend_width',
+			'footer_html_extend_width',
+			'header_extend_bgcolor',
+			'm_primary_extend_bgcolor',
+			'm_secondary_extend_bgcolor',
+			'm_extra_extend_bgcolor',
+			'container_extend_bgcolor',
+			'content_extend_bgcolor',
+			'footer_extend_bgcolor',
+			'wrapper_border',
 		);
 		// allow 'expand_infobar' as an option to leave set
 		foreach ( $clear as $opt )            // clear relevant options
@@ -234,13 +235,14 @@ function weaverx_output_style( $sout ) {
 
 // ========================= GENERAL APPEARANCE ===============================
 
-	$b_c   = weaverx_getopt_default( 'border_color', WEAVERX_DEF_BORDER_COLOR );    //+
-	$b_w   = weaverx_getopt_default( 'border_width_int', WEAVERX_DEF_BORDER_WIDTH );
-	$b_s   = weaverx_getopt_default( 'border_style', WEAVERX_DEF_BORDER_STYLE );
-	$menus = array(             /* can't use multiple selectors here! */
-	                            'm_primary'   => '.menu-primary',
-	                            'm_secondary' => '.menu-secondary',
-	                            'm_extra'     => '.menu-extra',
+	$b_c = weaverx_getopt_default( 'border_color', WEAVERX_DEF_BORDER_COLOR );    //+
+	$b_w = weaverx_getopt_default( 'border_width_int', WEAVERX_DEF_BORDER_WIDTH );
+	$b_s = weaverx_getopt_default( 'border_style', WEAVERX_DEF_BORDER_STYLE );
+	$menus = array(
+		/* can't use multiple selectors here! */
+		'm_primary'   => '.menu-primary',
+		'm_secondary' => '.menu-secondary',
+		'm_extra'     => '.menu-extra',
 	);
 
 	if ( $b_c != '#222' || $b_w != 1 || $b_s != 'solid' ) {
@@ -282,11 +284,11 @@ function weaverx_output_style( $sout ) {
 			weaverx_f_write( $sout, '@media ( min-width:768px) { ' );
 			// 3 kinds of rounding: whole box + hover, top sub-item, bottom sub-item
 			$round_sub = str_replace( '8', $r, "{border-radius:8px;z-index:2001;" );
-			$menu      = "{$tag} ul.sub-menu, {$tag} ul.children";
-			$mega      = "{$tag} ul.mega-menu li";
+			$menu = "{$tag} ul.sub-menu, {$tag} ul.children";
+			$mega = "{$tag} ul.mega-menu li";
 
 			$pad = ( int ) ( $r - ( $r * .25 ) );    // pad it to avoid anchor bg from overwriting rounding
-			$bg  = weaverx_getopt( "{$id}_sub_bgcolor" );
+			$bg = weaverx_getopt( "{$id}_sub_bgcolor" );
 			if ( $bg == '' ) {
 				$bg = 'transparent';
 			}
@@ -462,7 +464,7 @@ function weaverx_output_style( $sout ) {
 
 	$img_w = weaverx_getopt( 'media_lib_border_int' );
 	if ( $img_w > 3 ) {
-		$half             = $img_w / 2 + 1;
+		$half = $img_w / 2 + 1;
 		$small_border_tag = '.container .gallery-icon img,.container .gallery-thumb img,#content img.gallery-thumb,#content img.avatar';
 		weaverx_f_write( $sout, sprintf( "{$small_border_tag}{padding:{$half}px;}\n" ) ); // make the thumbs smaller
 	}
@@ -674,25 +676,28 @@ function weaverx_output_style( $sout ) {
 		'm_extra_sub'     => '.menu-extra .wvrx-menu ul li a,.menu-extra .wvrx-menu ul.mega-menu li',
 	);
 
-	$menu_links_bg = array(    // xxx_link_bgcolor
-	                           'm_primary'   => '.menu-primary .wvrx-menu > li > a',
-	                           'm_secondary' => '.menu-secondary .wvrx-menu > li > a',
-	                           'm_extra'     => '.menu-extra .wvrx-menu > li > a',
+	$menu_links_bg = array(
+		// xxx_link_bgcolor
+		'm_primary'   => '.menu-primary .wvrx-menu > li > a',
+		'm_secondary' => '.menu-secondary .wvrx-menu > li > a',
+		'm_extra'     => '.menu-extra .wvrx-menu > li > a',
 	);
 
-	$menu_links = array( // color, _hover_color, _hover_bg_color
-	                     'm_primary'       => '.menu-primary .wvrx-menu > li > a',
-	                     'm_secondary'     => '.menu-secondary .wvrx-menu > li > a',
-	                     'm_extra'         => '.menu-extra .wvrx-menu > li > a',
-	                     'm_primary_sub'   => '.menu-primary .wvrx-menu ul li a',
-	                     'm_secondary_sub' => '.menu-secondary .wvrx-menu ul li a',
-	                     'm_extra_sub'     => '.menu-extra .wvrx-menu ul li a',
+	$menu_links = array(
+		// color, _hover_color, _hover_bg_color
+		'm_primary'       => '.menu-primary .wvrx-menu > li > a',
+		'm_secondary'     => '.menu-secondary .wvrx-menu > li > a',
+		'm_extra'         => '.menu-extra .wvrx-menu > li > a',
+		'm_primary_sub'   => '.menu-primary .wvrx-menu ul li a',
+		'm_secondary_sub' => '.menu-secondary .wvrx-menu ul li a',
+		'm_extra_sub'     => '.menu-extra .wvrx-menu ul li a',
 	);
 
-	$menu_detail = array(             /* can't use multiple selectors here! */
-	                                  'm_primary'   => '.menu-primary',
-	                                  'm_secondary' => '.menu-secondary',
-	                                  'm_extra'     => '.menu-extra',
+	$menu_detail = array(
+		/* can't use multiple selectors here! */
+		'm_primary'   => '.menu-primary',
+		'm_secondary' => '.menu-secondary',
+		'm_extra'     => '.menu-extra',
 	);
 
 // =Menus ------------------------------------------------------------
@@ -773,9 +778,9 @@ function weaverx_output_style( $sout ) {
 		}
 
 
-		$pad         = weaverx_getopt( $id . '_menu_pad_dec' );
-		$dcolor      = weaverx_getopt( $id . '_dividers_color' );
-		$rpad        = weaverx_getopt( $id . '_right_padding_dec' );
+		$pad = weaverx_getopt( $id . '_menu_pad_dec' );
+		$dcolor = weaverx_getopt( $id . '_dividers_color' );
+		$rpad = weaverx_getopt( $id . '_right_padding_dec' );
 		$hide_arrows = weaverx_getopt( $id . '_hide_arrows' );
 
 		weaverx_f_write( $sout, "@media( min-width:768px) {\n" );    // following are really .is-desktop. Note last align rule has closing }
@@ -809,7 +814,7 @@ function weaverx_output_style( $sout ) {
 
 		if ( $rpad != '' ) {
 			$rpad_arrow = $rpad + 1.5;
-			$rpad_a     = $rpad + 0.75;
+			$rpad_a = $rpad + 0.75;
 			weaverx_f_write( $sout, "{$tag} .wvrx-menu-container li a{padding-right:{$rpad_a}em;}\n" );
 			weaverx_f_write( $sout, "{$tag} .menu-hover.menu-arrows .has-submenu > a{padding-right:{$rpad_arrow}em;}\n" );
 			weaverx_f_write( $sout, "{$tag} .menu-arrows.menu-hover .toggle-submenu{margin-right:{$rpad}em;}\n" );
@@ -851,7 +856,7 @@ function weaverx_output_style( $sout ) {
 		$align = weaverx_getopt_default( "{$id}_align", 'left' );
 		$align = str_replace( 'alignwide ', '', $align );
 		$align = str_replace( 'alignfull ', '', $align );
-		$lh    = '';
+		$lh = '';
 		if ( $align == 'center' )        // compensate for centered display:inline-block
 		{
 			$lh = 'line-height:0;';
@@ -966,13 +971,14 @@ function weaverx_output_style( $sout ) {
 		weaverx_css_style_val( $sout, $tag, '{margin-bottom:%dpx;}', $id . '_margin_B' );
 	}
 
-	$max_w_areas = array(             // special areas with px max-width andF extend bg color
-	                                  'header'      => '#header',
-	                                  'footer'      => '#colophon',
-	                                  'container'   => '#container',
-	                                  'm_primary'   => '.menu-primary',
-	                                  'm_secondary' => '.menu-secondary',
-	                                  'm_extra'     => '.menu-extra',
+	$max_w_areas = array(
+		// special areas with px max-width andF extend bg color
+		'header'      => '#header',
+		'footer'      => '#colophon',
+		'container'   => '#container',
+		'm_primary'   => '.menu-primary',
+		'm_secondary' => '.menu-secondary',
+		'm_extra'     => '.menu-extra',
 	);
 
 	foreach ( $max_w_areas as $id => $tag ) {
@@ -993,7 +999,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 // custom widths for header, footer widget areas
 
-	$hf_sb   = array(
+	$hf_sb = array(
 		'_header_sb_'     => '#header-widget-area',
 		'_footer_sb_'     => '#footer-widget-area',
 		'alt:_header_sb_' => '.widget-area-header',
@@ -1039,11 +1045,11 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 			weaverx_f_write( $sout, "{$area} .widget {float:left;margin-left:0;margin-right:0}\n" );  // reset previous list margins
 
 			$clear = 'clear:both';
-			$i     = 0;
+			$i = 0;
 			foreach ( $list as $val ) {              // step through the list of values
 				$i ++;
 
-				$w      = str_replace( ';', '', $val );    // strip ;
+				$w = str_replace( ';', '', $val );    // strip ;
 				$at_end = ( $w != $val );          // force end if was a ; before
 
 				if ( $w === '0' ) {                 // hide this widget
@@ -1097,36 +1103,37 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 	// ARRAY DEFINITION: Includes Both Expand and Extend elements *** Only 5 sub areas with width% for Extend need to be marked width => true
 
-	$extend = array(                    // Areas with _extend_width and expand with option with only true on supporting sub areas for Extend
-	                                    // Expand only Sub areas should all be width > false as you are not suppose to expand a limited width area
-	                                    'header'      => array( 'sel' => '#header', 'width' => false, 'xpad' => 'x' ),
-	                                    'header_sb'   => array( 'sel' => '#header-widget-area', 'width' => true, 'xpad' => 'header' ),            // does not have _max_width_int, but can safely use 0
-	                                    'header_html' => array( 'sel' => '#header-html', 'width' => true, 'xpad' => 'header' ),                // no _max_width_int
+	$extend = array(
+		// Areas with _extend_width and expand with option with only true on supporting sub areas for Extend
+		// Expand only Sub areas should all be width > false as you are not suppose to expand a limited width area
+		'header'      => array( 'sel' => '#header', 'width' => false, 'xpad' => 'x' ),
+		'header_sb'   => array( 'sel' => '#header-widget-area', 'width' => true, 'xpad' => 'header' ),            // does not have _max_width_int, but can safely use 0
+		'header_html' => array( 'sel' => '#header-html', 'width' => true, 'xpad' => 'header' ),                // no _max_width_int
 
-	                                    'm_primary'          => array( 'sel' => '#nav-primary .wvrx-menu-container', 'width' => false, 'xpad' => 'header' ),            // padding: none?
-	                                    'm_secondary'        => array( 'sel' => '#nav-secondary .wvrx-menu-container', 'width' => false, 'xpad' => 'header' ),        // padding: none?
-	                                    //Header sub Areas for expand_only ( all width > false )
-	                                    'header-image'       => array( 'sel' => '#header-image', 'width' => false, 'xpad' => 'header' ),
-	                                    'site_title'         => array( 'sel' => '#title-tagline', 'width' => false, 'xpad' => 'header' ),
-	                                    'header-widget-area' => array( 'sel' => '#header-widget-area', 'width' => false, 'xpad' => 'header' ),    // should have the same name as extend name
-	                                    'header-html'        => array( 'sel' => '#header-html', 'width' => false, 'xpad' => 'header' ),                    // should have the same name as extend name
+		'm_primary'          => array( 'sel' => '#nav-primary .wvrx-menu-container', 'width' => false, 'xpad' => 'header' ),            // padding: none?
+		'm_secondary'        => array( 'sel' => '#nav-secondary .wvrx-menu-container', 'width' => false, 'xpad' => 'header' ),        // padding: none?
+		//Header sub Areas for expand_only ( all width > false )
+		'header-image'       => array( 'sel' => '#header-image', 'width' => false, 'xpad' => 'header' ),
+		'site_title'         => array( 'sel' => '#title-tagline', 'width' => false, 'xpad' => 'header' ),
+		'header-widget-area' => array( 'sel' => '#header-widget-area', 'width' => false, 'xpad' => 'header' ),    // should have the same name as extend name
+		'header-html'        => array( 'sel' => '#header-html', 'width' => false, 'xpad' => 'header' ),                    // should have the same name as extend name
 
-	                                    'container' => array( 'sel' => '#container', 'width' => false, 'xpad' => 'x' ),
-	                                    'infobar'   => array( 'sel' => '#infobar', 'width' => true, 'xpad' => 'container' ),
-	                                    'post'      => array( 'sel' => '#content .post-area', 'width' => false, 'xpad' => 'container' ),    // doesn't work with CSS for now, .post-area includes custom-post types
+		'container' => array( 'sel' => '#container', 'width' => false, 'xpad' => 'x' ),
+		'infobar'   => array( 'sel' => '#infobar', 'width' => true, 'xpad' => 'container' ),
+		'post'      => array( 'sel' => '#content .post-area', 'width' => false, 'xpad' => 'container' ),    // doesn't work with CSS for now, .post-area includes custom-post types
 
-	                                    'footer'       => array( 'sel' => '#colophon', 'width' => false, 'xpad' => 'x' ),
-	                                    'footer_sb'    => array( 'sel' => '#footer-widget-area', 'width' => true, 'xpad' => 'footer' ),            // no _max_width_int
-	                                    'footer_html'  => array( 'sel' => '#footer-html', 'width' => true, 'xpad' => 'footer' ),                // no _max_width_int
-	                                    //Footer sub areas for Expand only
-	                                    'site-ig-wrap' => array( 'sel' => '#site-ig-wrap', 'width' => false, 'xpad' => 'footer' ),            // no _max_width_int
+		'footer'       => array( 'sel' => '#colophon', 'width' => false, 'xpad' => 'x' ),
+		'footer_sb'    => array( 'sel' => '#footer-widget-area', 'width' => true, 'xpad' => 'footer' ),            // no _max_width_int
+		'footer_html'  => array( 'sel' => '#footer-html', 'width' => true, 'xpad' => 'footer' ),                // no _max_width_int
+		//Footer sub areas for Expand only
+		'site-ig-wrap' => array( 'sel' => '#site-ig-wrap', 'width' => false, 'xpad' => 'footer' ),            // no _max_width_int
 	);
 
 	$inside_container = array( 'infobar', 'post' );
 
 	$skip_container = array( 'container', 'infobar', 'post' );
-	$skip_header    = array( 'header', 'header_sb', 'header_html', 'header-html', 'm_primary', 'm_secondary', 'header-image', 'site_title', 'header-widget-area' );
-	$skip_footer    = array( 'footer', 'footer_sb', 'footer_html', 'site-ig-wrap' );
+	$skip_header = array( 'header', 'header_sb', 'header_html', 'header-html', 'm_primary', 'm_secondary', 'header-image', 'site_title', 'header-widget-area' );
+	$skip_footer = array( 'footer', 'footer_sb', 'footer_html', 'site-ig-wrap' );
 
 	$nest_header = ( weaverx_getopt_default( 'header_width_int', 100 ) != 100 ||
 	                 ( ( $tmp = weaverx_getopt( 'header_max_width_int' ) ) && $tmp < $themew ) );
@@ -1139,18 +1146,18 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 	// VARIABLES
 
-	$pre_css   = '';        // Global css no @media
-	$xcss      = '';        // Over sitewidth css
+	$pre_css = '';        // Global css no @media
+	$xcss = '';        // Over sitewidth css
 	$media_css = '';        // between 580 and sitewidth css
 
 	$vis_container = '';
-	$vis_content   = '';
+	$vis_content = '';
 
 	// Changed: 3.1.11 - changed scroll bar width to 8px instead of 16. Firefox seems to have changed its width, and 8 works across most browsers
 
-	$w_view_scb   = '( 100vw - 8px) '; // Viewport width scrollbar
+	$w_view_scb = '( 100vw - 8px) '; // Viewport width scrollbar
 	$w_view_noscb = '100vw '; // Viewport width No scrollbar
-	$m_wrap_scb   = '( 50vw - 4px - ( ' . $themew . 'px / 2 ) ) '; // Margin wrapper scrollbar
+	$m_wrap_scb = '( 50vw - 4px - ( ' . $themew . 'px / 2 ) ) '; // Margin wrapper scrollbar
 	$m_wrap_noscb = '( 50vw - ( ' . $themew . 'px / 2 ) ) '; // Margin wrapper no scrollbar
 
 	foreach ( $extend as $opt => $vals ) {        // loop through all areas with expand/extend
@@ -1177,43 +1184,43 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 			}
 
 			// PADDING Calculations
-			$pad_left  = '0';
+			$pad_left = '0';
 			$pad_right = '0';
-			$m_left    = '0';
-			$m_right   = '0'; // assume none
+			$m_left = '0';
+			$m_right = '0'; // assume none
 
 			//Adding Wrapper paddings
-			$wrap_p_left  = weaverx_getopt_default( 'wrapper_padding_L', 0 );
+			$wrap_p_left = weaverx_getopt_default( 'wrapper_padding_L', 0 );
 			$wrap_p_right = weaverx_getopt_default( 'wrapper_padding_R', 0 );
 
 			// Handle padding of parents
-			$m_left  = weaverx_getopt_default( $vals['xpad'] . '_padding_L', 0 );
+			$m_left = weaverx_getopt_default( $vals['xpad'] . '_padding_L', 0 );
 			$m_right = weaverx_getopt_default( $vals['xpad'] . '_padding_R', 0 );
 
 			// This areas own padding
-			$pad_left  = weaverx_getopt_default( $opt . '_padding_L', 0 ) + $m_left;
+			$pad_left = weaverx_getopt_default( $opt . '_padding_L', 0 ) + $m_left;
 			$pad_right = weaverx_getopt_default( $opt . '_padding_R', 0 ) + $m_right;
 
 			//Footer specific calculations: Empty value for footer and footer widget area means 8
 			if ( $vals['xpad'] == 'footer' ) {
-				$m_left  = weaverx_getopt_default( $vals['xpad'] . '_padding_L', 8 );
+				$m_left = weaverx_getopt_default( $vals['xpad'] . '_padding_L', 8 );
 				$m_right = weaverx_getopt_default( $vals['xpad'] . '_padding_R', 8 );
 			}
 			if ( ( $opt == 'footer' ) || ( $opt == 'footer_sb' ) ) {
-				$pad_left  = weaverx_getopt_default( $opt . '_padding_L', 8 ) + $m_left;
+				$pad_left = weaverx_getopt_default( $opt . '_padding_L', 8 ) + $m_left;
 				$pad_right = weaverx_getopt_default( $opt . '_padding_R', 8 ) + $m_right;
 			}
-			$pad_left  .= 'px';
+			$pad_left .= 'px';
 			$pad_right .= 'px';
 
-			$m_left  .= 'px';
+			$m_left .= 'px';
 			$m_right .= 'px'; // these expressions must end up with units
 
-			$wrap_p_left  .= 'px';
+			$wrap_p_left .= 'px';
 			$wrap_p_right .= 'px';
 
 // *** Small section was moved up a bit as it applies to ALL posts or no posts
-			$align_left  = '';
+			$align_left = '';
 			$align_right = '';
 
 			$width = '';
@@ -1226,7 +1233,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 						continue;
 					} // skip this one, continue loop
 					$widthval = $width / 100; //*** retain the strict value for calculations later
-					$width    = $width . '%';
+					$width = $width . '%';
 				}
 			}
 
@@ -1242,21 +1249,21 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 				if ( weaverx_getopt_default( 'blog_cols', 1 ) > 1 || weaverx_getopt_default( 'masonry_cols', 1 ) > 1 ) {
 					continue;
 				}    // bail to JS on multi column
-				$no_sdb    = ".weaverx-sb-one-column ";   // No sidebar selector so rules do not apply to post pages with sidebars
-				$cnt_left  = weaverx_getopt_default( 'content_padding_L', 2 ); // also add in #content padding ( in % ) if extending post
+				$no_sdb = ".weaverx-sb-one-column ";   // No sidebar selector so rules do not apply to post pages with sidebars
+				$cnt_left = weaverx_getopt_default( 'content_padding_L', 2 ); // also add in #content padding ( in % ) if extending post
 				$cnt_right = weaverx_getopt_default( 'content_padding_R', 2 );
 				// post paddings are in %, needed to redo value
-				$pad_left  = weaverx_getopt_default( $opt . '_padding_L', 0 ) . '%' . ' + ' . $m_left;
+				$pad_left = weaverx_getopt_default( $opt . '_padding_L', 0 ) . '%' . ' + ' . $m_left;
 				$pad_right = weaverx_getopt_default( $opt . '_padding_R', 0 ) . '%' . ' + ' . $m_left;
 
 				// *** Building the various content padding Converting them in px or viewport units so the value is right when placed in post rules
 				// _x for values above site-width; _scb values Under site width with scrollbar; _noscb values under site width with no scrollbar
-				$cnt_pad_l_x     = '0px';
-				$cnt_pad_r_x     = '0px';
+				$cnt_pad_l_x = '0px';
+				$cnt_pad_r_x = '0px';
 				$cnt_pad_l_noscb = '0px';
 				$cnt_pad_r_noscb = '0px';
-				$cnt_pad_l_scb   = '0px';
-				$cnt_pad_r_scb   = '0px';
+				$cnt_pad_l_scb = '0px';
+				$cnt_pad_r_scb = '0px';
 				//Content padding % is computed against width( wrapper or browser ) - wrapper paddings - container paddings
 				$wrap_pad_all = weaverx_getopt_default( 'wrapper_padding_L', 0 ) + weaverx_getopt_default( 'wrapper_padding_R', 0 );
 				$cont_pad_all = weaverx_getopt_default( 'container_padding_L', 0 ) + weaverx_getopt_default( 'container_padding_R', 0 );
@@ -1267,7 +1274,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 					// *** Content padding below sitewidth	( convert to viewport units )
 					$cnt_pad_l_noscb = "( " . $cnt_left / 100 . " * ( 100vw - " . $wrap_pad_all . "px - " . $cont_pad_all . "px) )";
-					$cnt_pad_l_scb   = "( " . $cnt_left / 100 . " * ( 100vw - 16px - " . $wrap_pad_all . "px - " . $cont_pad_all . "px) )";
+					$cnt_pad_l_scb = "( " . $cnt_left / 100 . " * ( 100vw - 16px - " . $wrap_pad_all . "px - " . $cont_pad_all . "px) )";
 				}
 				if ( $cnt_right != 0 ) {
 					// *** Content padding above sitewidth ( convert to pixel value )
@@ -1275,7 +1282,7 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 					// *** Content padding below sitewidth	( convert to viewport units )
 					$cnt_pad_r_noscb = "( " . $cnt_right / 100 . " * ( 100vw - " . $wrap_pad_all . "px - " . $cont_pad_all . "px) )";
-					$cnt_pad_r_scb   = "( " . $cnt_right / 100 . " * ( 100vw - 16px - " . $wrap_pad_all . "px - " . $cont_pad_all . "px) )";
+					$cnt_pad_r_scb = "( " . $cnt_right / 100 . " * ( 100vw - 16px - " . $wrap_pad_all . "px - " . $cont_pad_all . "px) )";
 				}
 
 				//==============================================================  POST SPECIFIC RULES  =========================================================
@@ -1337,13 +1344,13 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 				// media_css SPECIALIZED Padding Rules for Limited width Sub Areas between 580px and sitewidth. ***Revised formula!
 				if ( $width && weaverx_getopt( $opt . '_extend_width' ) ) {
-					$align           = weaverx_getopt( $opt . '_align' );
+					$align = weaverx_getopt( $opt . '_align' );
 					$themew_less_one = $themew - 1;
 					// *** the rules below had a useless no-vert-scrolbar rules.
 					// *** The padding rules in this section do not contain viewport units so do not need a no-scrollbar version
 					switch ( $align ) {
 						case 'center':
-							$align_left  = " + ( 100% - {$width} ) / 2";
+							$align_left = " + ( 100% - {$width} ) / 2";
 							$align_right = $align_left; // center = same
 							//Centered Padding rules corrected
 							$media_css .= "{$not_safari}{$vals['sel']}{padding-left:calc( {$wrap_p_left} + {$pad_left}{$align_left} ); padding-right:calc( {$wrap_p_right} + {$pad_right}{$align_right} );}\n";
@@ -1472,21 +1479,22 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 	weaverx_put_bgcolor( $sout, 'search_bgcolor', '.search-field,#header-search .search-field:focus,.menu-search .search-field:focus' );
 	weaverx_put_color( $sout, 'search_color', '.search-field, #header-search .search-field:focus' );
 
-	$search_areas = array(                        /* search box icon color */
+	$search_areas = array(
+		/* search box icon color */
 
-	                                              'primary'   => '#primary-widget-area',
-	                                              'secondary' => '#secondary-widget-area',
-	                                              'm_primary' => '.menu-primary .wvrx-menu-container',
-	                                              'top'       => '.widget-area-top',
-	                                              'bottom'    => '.widget-area-bottom',
-	                                              'header_sb' => '.widget-area-header',
-	                                              'footer'    => '#colophon',
-	                                              'footer_sb' => '.widget-area-footer',
-	                                              'content'   => '#content',
-	                                              'container' => '#container',
-	                                              'infobar'   => '#infobar',
-	                                              'wrapper'   => '#wrapper',
-	                                              'widget'    => '.widget',
+		'primary'   => '#primary-widget-area',
+		'secondary' => '#secondary-widget-area',
+		'm_primary' => '.menu-primary .wvrx-menu-container',
+		'top'       => '.widget-area-top',
+		'bottom'    => '.widget-area-bottom',
+		'header_sb' => '.widget-area-header',
+		'footer'    => '#colophon',
+		'footer_sb' => '.widget-area-footer',
+		'content'   => '#content',
+		'container' => '#container',
+		'infobar'   => '#infobar',
+		'wrapper'   => '#wrapper',
+		'widget'    => '.widget',
 	);
 
 	foreach ( $search_areas as $area => $tag ) {
@@ -1555,10 +1563,10 @@ border-left:9999px solid {$xbg};box-shadow:9999px 0 0 {$xbg};z-index:-1;}\n"
 
 	//limited header calculations
 	//These are only for when browser is wider than sitewidth. Below that, they are left:0 positionned with existing rules
-	$align     = weaverx_getopt_default( 'header_align', 'left' );
-	$width     = weaverx_getopt_default( 'header_width_int', 100 );
+	$align = weaverx_getopt_default( 'header_align', 'left' );
+	$width = weaverx_getopt_default( 'header_width_int', 100 );
 	$max_width = weaverx_getopt_default( 'header_max_width_int', 0 );
-	$reduct    = ( $themew - ( $width / 100 ) * ( $themew - $wrpadl - $wrpadr ) ) . 'px';  // This is the width reduction when browser is larger than sitewidth
+	$reduct = ( $themew - ( $width / 100 ) * ( $themew - $wrpadl - $wrpadr ) ) . 'px';  // This is the width reduction when browser is larger than sitewidth
 
 	//!! We cant support both a width% and max-width at the same time, it would be way too complicated.
 	// Depending which one of if( $width ) or if( $max_width ) is last below, it will be the winning one ( revert order between if( $width ) and if( $max_width ) )
@@ -1707,13 +1715,13 @@ function weaverx_sidebar_style( $sout, $override = 0 ) {
 	}  // some sanity check
 
 	if ( ! $override ) {
-		$l_sb_w  = weaverx_getopt_default( 'left_sb_width_int', '25' );
-		$r_sb_w  = weaverx_getopt_default( 'right_sb_width_int', '25' );
+		$l_sb_w = weaverx_getopt_default( 'left_sb_width_int', '25' );
+		$r_sb_w = weaverx_getopt_default( 'right_sb_width_int', '25' );
 		$ls_sb_w = weaverx_getopt_default( 'left_split_sb_width_int', '25' );
 		$rs_sb_w = weaverx_getopt_default( 'right_split_sb_width_int', '25' );
 	} else {
-		$l_sb_w  = $override;        // using per page override - forces symmetrical split, but that's better than nothing
-		$r_sb_w  = $override;
+		$l_sb_w = $override;        // using per page override - forces symmetrical split, but that's better than nothing
+		$r_sb_w = $override;
 		$ls_sb_w = $override;
 		$rs_sb_w = $override;
 	}
@@ -1727,8 +1735,8 @@ function weaverx_sidebar_style( $sout, $override = 0 ) {
 
 	weaverx_f_write( $sout, "@media screen and ( min-width:768px) {\n" );
 	if ( $r_sb_w != 25 || $smart != 1 || $override ) {      // changed right sidebar width ( or smart width )
-		$cw     = 100 - $r_sb_w;
-		$cw_m   = $cw - $smart;
+		$cw = 100 - $r_sb_w;
+		$cw_m = $cw - $smart;
 		$r_sb_m = $r_sb_w - $smart;
 		weaverx_f_write( $sout, sprintf( ".l-content-rsb{width:%.5f%%;}.l-content-rsb-m{width:%.5f%%;margin-right:%.5f%%;}
 .l-sb-right{width:%.5f%%;}.l-sb-right-lm{width:%.5f%%;margin-left:%.5f%%;}.l-sb-right-rm {width:%.5f%%;margin-right:%.5f%%;}\n",
@@ -1737,8 +1745,8 @@ function weaverx_sidebar_style( $sout, $override = 0 ) {
 	}
 
 	if ( $l_sb_w != 25 || $smart != 1 || $override ) {      // changed left sidebar width
-		$cw     = 100 - $l_sb_w;
-		$cw_m   = $cw - $smart;
+		$cw = 100 - $l_sb_w;
+		$cw_m = $cw - $smart;
 		$l_sb_m = $l_sb_w - $smart;
 		weaverx_f_write( $sout, sprintf( ".l-content-lsb{width:%.5f%%;}.l-content-lsb-m{width:%.5f%%;margin-left:%.5f%%;}
 .l-sb-left{width:%.5f%%;}.l-sb-left-lm{width:%.5f%%;margin-left:%.5f%%;}.l-sb-left-rm {width:%.5f%%;margin-right:%.5f%%;}\n",
@@ -1747,12 +1755,12 @@ function weaverx_sidebar_style( $sout, $override = 0 ) {
 	}
 
 	if ( $ls_sb_w != 25 || $rs_sb_w != 25 || $smart != 1 || $override ) {     // changed a split width
-		$cw         = 100 - $ls_sb_w - $rs_sb_w;
+		$cw = 100 - $ls_sb_w - $rs_sb_w;
 		$lsb_margin = $cw + $rs_sb_w;
-		$cw_l_m     = $ls_sb_w + $smart;
-		$cw_m       = $cw - $smart - $smart;
-		$l_m        = $ls_sb_w - $smart;
-		$r_m        = $rs_sb_w - $smart;
+		$cw_l_m = $ls_sb_w + $smart;
+		$cw_m = $cw - $smart - $smart;
+		$l_m = $ls_sb_w - $smart;
+		$r_m = $rs_sb_w - $smart;
 
 		weaverx_f_write( $sout,
 			sprintf( ".l-sb-right-split{width:%.5f%%}\n", $rs_sb_w ) .
@@ -1786,8 +1794,8 @@ function weaverx_sidebar_style( $sout, $override = 0 ) {
 		);
 
 		foreach ( $sb_horizontal_areas as $id => $tag ) {     // horizontal area widths
-			$id   = str_replace( 'alt:', '', $id );
-			$w    = weaverx_getopt( $id . '_width_int' );
+			$id = str_replace( 'alt:', '', $id );
+			$w = weaverx_getopt( $id . '_width_int' );
 			$ltag = str_replace( '.', '.l-', $tag );
 			if ( $w === 0 || $w === '0' )    // detects 0 rather than false
 			{
@@ -1847,9 +1855,9 @@ function weaverx_put_bgcolor( $sout, $opt, $tag, $important = false ) {
 			weaverx_f_write( $sout, sprintf( "$tag {background-color:{$color}{$imp};}\n" ) );
 		} else {    // rgba - so create IE8 compatible version as well
 
-			$argb  = weaverx_rgba2argb( $color );
+			$argb = weaverx_rgba2argb( $color );
 			$split = explode( ',', $tag );
-			$ie8   = '';
+			$ie8 = '';
 			foreach ( $split as $id ) {
 				if ( $ie8 != '' ) {
 					$ie8 .= ',';
@@ -1891,10 +1899,10 @@ function weaverx_rgba2argb( $rgba_in ) {
 	$rgb = str_replace( ' ', '', $rgb );
 
 	list( $r, $g, $b, $a ) = explode( ',', $rgb );    // retrieve the rgba values
-	$a   = intval( $a * 255. );
-	$r   = intval( $r );
-	$g   = intval( $g );
-	$b   = intval( $b );
+	$a = intval( $a * 255. );
+	$r = intval( $r );
+	$g = intval( $g );
+	$b = intval( $b );
 	$hex = "#";
 	$hex .= str_pad( dechex( $a ), 2, "0", STR_PAD_LEFT );
 	$hex .= str_pad( dechex( $r ), 2, "0", STR_PAD_LEFT );
@@ -1937,7 +1945,7 @@ function weaverx_put_css_plus( $sout, $id, $tag ) {
 		if ( strpos( $style, '%selector' ) !== false ) {     // user is using $selectors
 			$tags = explode( ',', $tag );
 			foreach ( $tags as $selector ) {
-				$replaced      = str_replace( '%selector%', trim( $selector ), $style );
+				$replaced = str_replace( '%selector%', trim( $selector ), $style );
 				$wvrx_css_plus .= apply_filters( 'weaverx_css', sprintf( "%s%s %s%s\n", $prefix, $selector, $replaced, $suffix ) );
 				//weaverx_f_write( $sout, apply_filters( 'weaverx_css', sprintf( "%s%s %s%s\n", $selector, $replaced ) ) );
 			}
@@ -2037,4 +2045,3 @@ function weaverx_put_elementor_colors( $sout ) {
 	}
 }
 
-?>

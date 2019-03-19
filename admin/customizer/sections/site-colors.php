@@ -1015,4 +1015,3 @@ if ( ! function_exists( 'weaverx_customizer_define_colorscheme_sections' ) ) :
 	}
 endif;
 
-?>

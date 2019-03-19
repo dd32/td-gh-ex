@@ -72,4 +72,3 @@ if ( ! function_exists( 'weaverx_generate_wphead' ) ) {    /* Allow child to ove
 	}
 }
 
-?>

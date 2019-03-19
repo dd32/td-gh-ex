@@ -1,5 +1,7 @@
 <?php
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit;
+} // Exit if accessed directly
 /**
  * The default template for displaying content
  *
@@ -11,12 +13,12 @@ if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
  */
 ?>
 
-	<div id="post-<?php the_ID(); ?>" <?php post_class( 'content-page-builder' ); ?>>
-<?php
+<div id="post-<?php the_ID(); ?>" <?php post_class( 'content-page-builder' ); ?>>
+	<?php
 	echo weaverx_schema( 'mainEntityOfPage' );
 	//weaverx_the_page_content( 'page' );
 	the_content();
 
-?>
-	</div><!-- #post-<?php the_ID(); ?> -->
-<?php 	weaverx_edit_link(); ?>
+	?>
+</div><!-- #post-<?php the_ID(); ?> -->
+<?php weaverx_edit_link(); ?>

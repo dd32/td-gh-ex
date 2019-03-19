@@ -1173,4 +1173,3 @@ background-size:cover;background-color:transparent;box-sizing:border-box;"; // c
 		add_filter( 'get_the_excerpt', 'weaverx_trim_excerpt' );
 
 
-		?>

@@ -854,4 +854,3 @@ function weaverx_area_replacement_id( $area ) {
 	return $use_id;
 }
 
-?>

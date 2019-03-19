@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.9
 Tested up to: 5.1
-Stable tag: 4.2.7
+Stable tag: 4.3.1.2
 
 == Description ==
 
@@ -606,3 +606,6 @@ Fix: Issue with Sticky Posts in Page with Posts
 
 = Version 4.3.1.1 =
 Fix: Older/New Posts links on Page with Posts
+
+= Version 4.3.1.2 =
+Fix: Page with Posts issue when home page substitute

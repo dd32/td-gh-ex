@@ -700,4 +700,4 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 	}
 
 } // disable customizer?
-?>
+

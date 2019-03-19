@@ -14,11 +14,11 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Then output the infobar with the page breadcrumbs and the posts page-navi and the page buffer
  * Finally, start the new loop.
  */
-$GLOBALS['weaverx_page_who']        = 'pwp';
+$GLOBALS['weaverx_page_who'] = 'pwp';
 $GLOBALS['weaverx_page_is_archive'] = false;    // need these for body class
 get_header( 'pwp' );
 
-// build infobar front part - replace get_template_part( 'infobar' ); with local code
+// build infobar front part - replace get_template_part('infobar'); with local code
 // we need to build it in a buffer
 
 weaverx_container_div( 'pwp' );       // #container
@@ -27,12 +27,12 @@ ob_start();            // generate the stuff that comes AFTER the infobar for pw
 
 $sb_layout = weaverx_sb_layout( 'blog' );
 
-// ********* get_template_part( 'templates/infobar' );	// put the info bar
+// ********* get_template_part('templates/infobar');	// put the info bar
 
 weaverx_sidebar_before( $sb_layout, 'blog' );          // sidebars if top-stacking
 do_action( 'weaverx_per_page' );
 
-$pagedw = weaverx_get_page();
+$paged = weaverx_get_page();
 
 // and next the content area.
 
@@ -50,7 +50,7 @@ if ( ! is_front_page() ) {
 	$GLOBALS['weaverx_pwp_title'] = get_the_title();    // Make breadcrumbs work a bit better
 }
 
-if ( $pagedw == 1 ) {    // only show on the first page
+if ( $paged == 1 ) {    // only show on the first page
 	// If we have content for this page, let's display it.
 	if ( get_the_content() != '' ||
 	     ( get_the_title() != '' && ! weaverx_is_checked_page_opt( '_pp_hide_page_title', true ) ) ) {
@@ -81,15 +81,16 @@ if ( post_password_required() ) {
 	weaverx_get_footer( 'blog' );
 
 } else {        // show posts
-	global $wp_query;
+
 
 	// Now, the posts
+	global $wp_query;
 
 	$args = array(
 		'ignore_sticky_posts' => false,
 		'orderby'             => 'date',
 		'order'               => 'DESC',
-		'paged'               => $pagedw,
+		'paged'               => $paged,
 	);
 
 	$filter = weaverx_get_per_page_value( '_pp_post_filter' );      // ATW Show Posts filter
@@ -102,20 +103,42 @@ if ( post_password_required() ) {
 		}
 
 		$qargs = atw_posts_get_qargs( $fargs, array() );
-		// fixed: 4.3.1.1 - only way to "reset" $wp_query is using query_posts().
-		query_posts( apply_filters( 'weaverx_pwp_wp_query', $qargs ) );     // reset $wp_query
+		query_posts( apply_filters('weaverx_pwp_wp_query',$args) );
+
 	} else {
-		$args      = weaverx_setup_post_args( $args );    // setup custom fields for this page
-		query_posts( apply_filters( 'weaverx_pwp_wp_query', $args ) );
+		$args = weaverx_setup_post_args( $args );    // setup custom fields for this page
+		query_posts( apply_filters('weaverx_pwp_wp_query',$args) );
 	}
 
+	/**
+	 * need to fix sticky post handling - perhaps start with this code:
+	 * https://stackoverflow.com/questions/19814320/wordpress-query-to-show-only-sticky-posts
+	 *
+	 * // get sticky posts from DB
+	 * $sticky = get_option('sticky_posts');
+	 * // check if there are any
+	 * if (!empty($sticky)) {
+	 * // optional: sort the newest IDs first
+	 * rsort($sticky);
+	 * // override the query
+	 * $args = array(
+	 * 'post__in' => $sticky
+	 * );
+	 * query_posts($args);
+	 * // the loop
+	 * while (have_posts()) {
+	 * the_post();
+	 * // your code
+	 * }
+	 * }
+	 */
 
 	// now have to put the sidebar
 	get_template_part( 'templates/infobar' );    // put the info bar now that the posts info is available
 	echo $top_of_pwp;
 
 
-	if ( $wp_query->have_posts() ) {                // same loop as index.php
+	if ( have_posts() ) {                // same loop as index.php
 		global $weaverx_sticky;
 
 
@@ -125,7 +148,7 @@ if ( post_password_required() ) {
 		// really ugly kludge. This code is copied from WP's WP_Query code. If you specify filters,
 		// then the sticky post code is essentially ignored by WP, so we have to do this ourselves.
 		// So - if there are sticky posts, we have to move them to the top of the posts list, and
-		// manually add 'sticky' to the post's class. ( 1/11/12 )
+		// manually add 'sticky' to the post's class. (1/11/12)
 
 		if ( ! weaverx_is_checked_page_opt( '_pp_hide_sticky' )
 		     && ( weaverx_get_per_page_value( '_pp_category' )
@@ -136,7 +159,7 @@ if ( post_password_required() ) {
 			$sticky_posts = get_option( 'sticky_posts' );
 			global $page;
 			if ( is_array( $sticky_posts ) && ! empty( $sticky_posts ) ) {
-				$num_posts     = count( $wp_query->posts );
+				$num_posts = count( $wp_query->posts );
 				$sticky_offset = 0;
 				// Loop over posts and relocate stickies to the front.
 				for ( $i = 0; $i < $num_posts; $i ++ ) {
@@ -155,7 +178,7 @@ if ( post_password_required() ) {
 
 		/* Start the Loop */
 		$num_cols = weaverx_getopt( 'blog_cols' ); // default
-		$pp       = weaverx_get_per_page_value( '_pp_wvrx_pwp_cols' );
+		$pp = weaverx_get_per_page_value( '_pp_wvrx_pwp_cols' );
 		if ( $pp ) {
 			$num_cols = $pp;
 		}
@@ -163,10 +186,10 @@ if ( post_password_required() ) {
 			$num_cols = 1;
 		}
 
-		$sticky_one   = weaverx_getopt_checked( 'blog_sticky_one' ) && $pagedw <= 1;
-		$first_one    = weaverx_getopt_checked( 'blog_first_one' ) && $pagedw <= 1;
+		$sticky_one = weaverx_getopt_checked( 'blog_sticky_one' ) && $paged <= 1;
+		$first_one = weaverx_getopt_checked( 'blog_first_one' ) && $paged <= 1;
 		$masonry_wrap = false;    // need this for one-column posts
-		$col          = 0;
+		$col = 0;
 		$hide_n_posts = weaverx_get_per_page_value( '_pp_hide_n_posts' );
 		if ( $hide_n_posts == '' || $hide_n_posts < 1 || $hide_n_posts > 100 ) {
 			$hide_n_posts = 0;
@@ -174,8 +197,8 @@ if ( post_password_required() ) {
 
 		weaverx_post_count_clear();
 		echo( "<div class=\"wvrx-posts\">\n" );
-		while ( $wp_query->have_posts() ) {
-			$wp_query->the_post();
+		while ( have_posts() ) {
+			the_post();
 
 			weaverx_post_count_bump();
 
@@ -188,12 +211,11 @@ if ( post_password_required() ) {
 
 			$weaverx_sticky = false;
 
-			if ( ( is_array( $sticky_posts ) && ! empty( $sticky_posts ) && in_array( get_the_ID(), $sticky_posts ) ) || is_sticky() ) {
+			if ( is_array( $sticky_posts ) && ! empty( $sticky_posts ) && in_array( get_the_ID(), $sticky_posts ) ) {
 				$weaverx_sticky = true;
 			}
 
-
-			if ( $weaverx_sticky  && $sticky_one ) {
+			if ( ( is_sticky() || $weaverx_sticky ) && $sticky_one ) {
 				get_template_part( 'templates/content', get_post_format() );
 			} elseif ( $first_one ) {
 				get_template_part( 'templates/content', get_post_format() );
@@ -233,10 +255,10 @@ if ( post_password_required() ) {
 				}    // end switch $num_cols
 				weaverx_masonry( 'end-post' );
 			}
-
 		}    // end while have posts
 		weaverx_masonry( 'end-posts' );
 		echo( "</div>\n" );
+
 
 		weaverx_content_nav( 'nav-below' );
 	} else {
