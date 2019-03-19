@@ -19,7 +19,7 @@ get_header(); ?>
 
 							<?php
 							// Retrieve attachment metadata.
-							$metadata = wp_get_attachment_metadata();
+							$cell_metadata = wp_get_attachment_metadata();
 							?>
 
 							<div class="entry-header-wrapper">
@@ -48,7 +48,7 @@ get_header(); ?>
 										<li>
 											<span class="full-size-link">
 												<a href="<?php echo esc_url( wp_get_attachment_url() ); ?>">
-													<?php echo esc_html( $metadata['width'] ); ?> &times; <?php echo esc_html( $metadata['height'] ); ?>
+													<?php echo esc_html( $cell_metadata['width'] ); ?> &times; <?php echo esc_html( $cell_metadata['height'] ); ?>
 												</a>
 											</span>
 										</li>

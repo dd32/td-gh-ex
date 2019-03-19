@@ -14,9 +14,9 @@
 			 * Filter the Cell author bio avatar size.
 			 * @param int $size The avatar height and width size in pixels.
 			 */
-			$author_bio_avatar_size = apply_filters( 'cell_author_bio_avatar_size', 80 );
+			$cell_author_bio_avatar_size = apply_filters( 'cell_author_bio_avatar_size', 80 );
 
-			echo get_avatar( get_the_author_meta( 'user_email' ), $author_bio_avatar_size );
+			echo get_avatar( get_the_author_meta( 'user_email' ), $cell_author_bio_avatar_size );
 			?>
 		</div><!-- .author-avatar-inside -->
 	</div><!-- .author-avatar -->

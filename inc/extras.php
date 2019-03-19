@@ -209,11 +209,6 @@ function cell_body_classes( $classes ) {
 		$classes[] = 'has-no-sidebar';
 	}
 
-	// Excerpt Class
-	if ( cell_has_excerpt() ) {
-		$classes[] = 'has-excerpt';
-	}
-
 	return $classes;
 }
 add_filter( 'body_class', 'cell_body_classes' );

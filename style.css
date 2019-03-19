@@ -3,8 +3,8 @@ Theme Name: Cell
 Theme URI: https://designorbital.com/cell/
 Author: DesignOrbital
 Author URI: https://designorbital.com/
-Description: Cell is a responsive Wordpress theme having clean design and smart theme settings. It is developed with website performance and easy setup in mind. Cell is a perfect theme for fashion, tech, social, lifestyle and any blog.
-Version: 1.1.4
+Description: Cell is a responsive WordPress theme having clean design and smart theme settings. It is developed with website performance and easy setup in mind. Cell is a perfect theme for fashion, tech, social, lifestyle and any blog.
+Version: 1.1.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: cell
@@ -113,8 +113,7 @@ html {
   /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
   -ms-text-size-adjust: 100%;
   /* www.456bereastreet.com/archive/201012/controlling_text_size_in_safari_for_ios_without_disabling_user_zoom/ */
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   /* Apply a natural box layout model to the document; see http://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
 }
 
@@ -122,8 +121,7 @@ html {
 *:before,
 *:after {
   /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-  -webkit-box-sizing: inherit;
-          box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 body {
@@ -266,8 +264,7 @@ input {
 
 input[type="checkbox"],
 input[type="radio"] {
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
   padding: 0;
 }
 
@@ -278,8 +275,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 input[type="search"] {
   -webkit-appearance: textfield;
-  -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 input[type="search"]::-webkit-search-cancel-button,
@@ -563,8 +559,7 @@ code, kbd, samp, tt, var {
 kbd {
   background-color: #020202;
   border-radius: 2px;
-  -webkit-box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
-          box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
+  box-shadow: inset 0 -1px 0 rgba(0, 0, 0, 0.25);
   color: #fff;
   font-size: 90%;
   padding: 2px 4px;
@@ -572,8 +567,7 @@ kbd {
 }
 
 kbd kbd {
-  -webkit-box-shadow: none;
-          box-shadow: none;
+  box-shadow: none;
   font-size: 100%;
   font-weight: bold;
   padding: 0;
@@ -952,8 +946,7 @@ textarea {
 .screen-reader-text:focus {
   background-color: #f1f1f1;
   border-radius: 3px;
-  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
   clip: auto !important;
   color: #21759b;
   display: block;
@@ -975,8 +968,7 @@ textarea {
 /* must have higher specificity than alternative color schemes inline styles */
 .site .skip-link {
   background-color: #f1f1f1;
-  -webkit-box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 1px 1px rgba(0, 0, 0, 0.2);
   color: #21759b;
   display: block;
   font-size: 14px;
@@ -992,8 +984,7 @@ textarea {
 }
 
 .logged-in .site .skip-link {
-  -webkit-box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
-          box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.2);
 }
 
 .site .skip-link:focus {
@@ -1124,7 +1115,6 @@ textarea {
 
 .toggle-menu-wrapper a, .toggle-menu-wrapper a:visited {
   color: #1295a6;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1169,7 +1159,6 @@ body.has-responsive-menu {
   width: 280px;
   height: 100%;
   z-index: 99999;
-  -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
 
@@ -1314,7 +1303,6 @@ body.has-responsive-menu {
   padding: 0.5625rem 0.875rem;
   text-transform: uppercase;
   text-decoration: none;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1369,7 +1357,6 @@ body.has-responsive-menu {
   display: block;
   padding: 0;
   position: relative;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1910,7 +1897,6 @@ body.has-responsive-menu {
   text-align: center;
   text-transform: uppercase;
   text-decoration: none;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -1956,7 +1942,6 @@ body.has-responsive-menu {
   font-size: 0.75rem;
   text-transform: uppercase;
   text-decoration: none;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2489,7 +2474,6 @@ div#respond #cancel-comment-reply-link {
   width: 60px;
   height: 50px;
   text-align: center;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2526,7 +2510,6 @@ div#respond #cancel-comment-reply-link {
   font-size: 15px !important;
   font-size: 0.9375rem !important;
   text-decoration: none;
-  -webkit-transition: all .25s ease-out;
   transition: all .25s ease-out;
 }
 
@@ -2768,7 +2751,6 @@ div#respond #cancel-comment-reply-link {
   width: 100%;
   height: 100%;
   z-index: 99995;
-  -webkit-transition: opacity 250ms cubic-bezier(0.23, 1, 0.32, 1);
   transition: opacity 250ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
@@ -2783,7 +2765,6 @@ div#respond #cancel-comment-reply-link {
 .img-featured,
 .img-postlist {
   opacity: 1;
-  -webkit-transition: opacity .2s ease-in-out;
   transition: opacity .2s ease-in-out;
 }
 
@@ -2870,8 +2851,6 @@ img[id*="botd"] {
   }
   /* Navigation Misc: Navigation Post */
   .post-navigation .nav-links {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
   }
   .post-navigation .nav-previous,
@@ -2889,12 +2868,8 @@ img[id*="botd"] {
   }
   /* Content: Entry (Posts,Pages) Block */
   .entry-wrapper {
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
   .entry-wrapper .entry-content-wrapper {
     padding: 0 0 60px 15px;
@@ -2930,15 +2905,9 @@ img[id*="botd"] {
   }
   /* Content: Author Info */
   .author-info {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    align-items: center;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
   .author-info .author-avatar {
     margin: 0;
@@ -3169,8 +3138,7 @@ img[id*="botd"] {
   }
   .sf-menu ul {
     background: #fff;
-    -webkit-box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
     min-width: 15em;
     /* allow long menu items to determine submenu width */
     max-width: 15em;
@@ -3194,7 +3162,6 @@ img[id*="botd"] {
     padding: 0 0.9375rem;
     text-transform: uppercase;
     text-decoration: none;
-    -webkit-transition: all .25s ease-out;
     transition: all .25s ease-out;
   }
   .sf-menu > li > a:hover,
@@ -3241,7 +3208,6 @@ img[id*="botd"] {
     word-wrap: break-word;
     white-space: normal;
     /* no need for Supersubs plugin */
-    -webkit-transition: background .2s;
     transition: background .2s;
   }
   .sf-menu ul li {
@@ -3253,7 +3219,6 @@ img[id*="botd"] {
   .sf-menu li:hover,
   .sf-menu li.sfHover {
     /* only transition out, not in */
-    -webkit-transition: none;
     transition: none;
   }
   /* Last & Second Last Child Drop Down Menu Second Level */
@@ -3556,15 +3521,9 @@ img[id*="botd"] {
   /* Skeleton: Header */
   .has-site-branding .site-header-inside-wrapper,
   .wp-custom-logo .site-header-inside-wrapper {
-    -webkit-box-align: center;
-        -ms-flex-align: center;
-            align-items: center;
-    display: -webkit-box;
-    display: -ms-flexbox;
+    align-items: center;
     display: flex;
-    -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    justify-content: center;
   }
   .has-site-branding .site-header-inside-wrapper .site-branding-wrapper,
   .wp-custom-logo .site-header-inside-wrapper .site-branding-wrapper {
@@ -3589,7 +3548,6 @@ img[id*="botd"] {
   }
   /* Skeleton: Site Custom Logo */
   .custom-logo {
-    -webkit-transition: all .25s ease-out;
     transition: all .25s ease-out;
   }
   .site-header.stuck .custom-logo {
@@ -3755,3 +3713,4 @@ img[id*="botd"] {
     margin: 0 1.875rem 0.9375rem 0;
   }
 }
+

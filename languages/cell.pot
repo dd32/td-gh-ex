@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Cell\n"
-"POT-Creation-Date: 2018-01-19 16:42+0500\n"
+"POT-Creation-Date: 2019-03-20 00:10+0500\n"
 "PO-Revision-Date: 2016-08-24 18:13+0500\n"
 "Last-Translator: DesignOrbital <care@designorbital.com>\n"
 "Language-Team: DesignOrbital <care@designorbital.com>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.6\n"
+"X-Generator: Poedit 2.2\n"
 "X-Poedit-Basepath: ..\n"
 "X-Poedit-WPHeader: style.css\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -19,6 +19,13 @@ msgstr ""
 "_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
 "X-Poedit-SearchPath-0: .\n"
 "X-Poedit-SearchPathExcluded-0: *.js\n"
+"X-Poedit-SearchPathExcluded-1: dist\n"
+"X-Poedit-SearchPathExcluded-2: fonts\n"
+"X-Poedit-SearchPathExcluded-3: js\n"
+"X-Poedit-SearchPathExcluded-4: languages\n"
+"X-Poedit-SearchPathExcluded-5: node_modules\n"
+"X-Poedit-SearchPathExcluded-6: src\n"
+"X-Poedit-SearchPathExcluded-7: vendor\n"
 
 #: 404.php:19
 msgid "Oops! That page can&rsquo;t be found."
@@ -35,27 +42,33 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: comments.php:33
+#: comments.php:38
 #, php-format
 msgctxt "comments title"
-msgid "One thought"
-msgid_plural "%1$s thoughts"
+msgid "One Thought to &ldquo;%s&rdquo;"
+msgstr ""
+
+#: comments.php:50
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Thought to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Thoughts to &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: comments.php:41 comments.php:61
+#: comments.php:66 comments.php:86
 msgid "Comment navigation"
 msgstr ""
 
-#: comments.php:43 comments.php:63
+#: comments.php:68 comments.php:88
 msgid "Older Comments"
 msgstr ""
 
-#: comments.php:44 comments.php:64
+#: comments.php:69 comments.php:89
 msgid "Newer Comments"
 msgstr ""
 
-#: comments.php:77
+#: comments.php:102
 msgid "Comments are closed."
 msgstr ""
 
@@ -63,15 +76,15 @@ msgstr ""
 msgid "Header Menu"
 msgstr ""
 
-#: functions.php:110
+#: functions.php:113
 msgid "Main Sidebar"
 msgstr ""
 
-#: header.php:49
+#: header.php:48
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:51 header.php:52
+#: header.php:50 header.php:51
 msgid "Menu"
 msgstr ""
 
@@ -216,16 +229,16 @@ msgctxt "Add new subset (cyrillic, greek, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: inc/extras.php:248
+#: inc/extras.php:243
 msgid "by"
 msgstr ""
 
-#: inc/extras.php:252
+#: inc/extras.php:247
 msgctxt "Footer Credit Separator"
 msgid "&sdot;"
 msgstr ""
 
-#: inc/extras.php:253
+#: inc/extras.php:248
 msgid "Powered by"
 msgstr ""
 

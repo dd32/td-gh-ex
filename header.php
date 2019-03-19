@@ -19,7 +19,6 @@
 <body <?php body_class(); ?>>
 <div id="page" class="site-wrapper site">
 
-	<?php do_action( 'before' ); ?>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="container">
 			<div class="row">
@@ -37,10 +36,10 @@
 								<?php endif; ?>
 
 								<?php
-								$description = get_bloginfo( 'description', 'display' );
-								if ( $description || is_customize_preview() ) :
+								$cell_description = get_bloginfo( 'description', 'display' );
+								if ( $cell_description || is_customize_preview() ) :
 								?>
-								<p class="site-description"><?php echo esc_html( $description ); /* WPCS: xss ok. */ ?></p>
+								<p class="site-description"><?php echo esc_html( $cell_description ); /* WPCS: xss ok. */ ?></p>
 								<?php endif; ?>
 							</div>
 						</div><!-- .site-branding-wrapper -->

@@ -1,10 +1,12 @@
 === Cell Lite ===
-Contributors: DesignOrbital.com
-Requires at least: WordPress 4.7
-Tested up to: WordPress 4.9.4
+Contributors: DesignOrbital
+Tags: one-column, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
+Requires at least: WordPress 4.9
+Tested up to: WordPress 5.1.1
+Requires PHP: 5.6
+Stable tag: 1.1.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: one-column, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, photography
 
 == Description ==
 Cell is a responsive Wordpress theme having clean design and smart theme settings. It is developed with website performance and easy setup in mind. Cell is a perfect theme for fashion, tech, social, lifestyle and any blog.
@@ -65,6 +67,14 @@ Licensed under the terms of CC0
 
 == Changelog ==
 
+= 1.1.5 =
+Released: March 20, 2019
+
+* Code improvements.
+* Readme file updated.
+* PHP Warning fixed.
+* POT file updated.
+
 = 1.1.4 =
 Released: March 29, 2018
 
@@ -98,6 +108,3 @@ Release Date: August 24, 2016
 Release Date: November 24, 2012
 
 * Initial release
-
-
-
