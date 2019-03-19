@@ -36,6 +36,9 @@ https://pixabay.com/en/teddy-bear-stuffed-animal-teddy-3599680/
 
 
 == Changelog ==
+= 19 March 2018 =
+* Menu border issue fixed
+
 = 1.0.4 - 31 Oct 2018 =
 * Same size image heights
 * added new image size (adri-large 1000xauto) instead of loading full images.

@@ -4,7 +4,7 @@ Theme URI: https://aperturewp.com/downloads/free-wordpress-theme-for-photographe
 Author: Afrothemes
 Author URI:https://aperturewp.com
 Description: Adri is a simple WordPress theme for photography portfolio, use it for a travel, food or photography bloging & portfolio. Adri can also be use be used for creative agency or photo studio. Try it out for free today.
-Version: 1.0.8
+Version: 1.0.9
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: adri
@@ -871,7 +871,7 @@ background: #eee;
 
 #cssmenu>ul>li:after {
   content: '';
-  display: block;
+  display: none;
   position: absolute;
   width: 100%;
   height: 1px;
