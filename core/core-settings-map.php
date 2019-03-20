@@ -125,7 +125,10 @@ function czr_fn_popul_setting_control_map( $_map, $get_default = null ) {
     'czr_fn_placeholders_notice_map',
     'czr_fn_external_resources_option_map',
     'czr_fn_responsive_option_map',
-    'czr_fn_style_option_map'
+    'czr_fn_style_option_map',
+
+    //WOOCOMMERCE OPTIONS
+    'czr_fn_woocommerce_option_map'
   );
 
   $_settings_groups = apply_filters( 'czr_settings_sections', $_settings_groups );
@@ -2375,6 +2378,27 @@ function czr_fn_style_option_map( $get_default = null ) {
 
   );
 }
+
+/******************************************************************************************************
+*******************************************************************************************************
+* PANEL : WOOCOMMERCE
+*******************************************************************************************************
+******************************************************************************************************/
+function czr_fn_woocommerce_option_map( $get_default = null ) {
+    return array(
+          'tc_woocommerce_display_product_thumb_before_mw' => array(
+                            'default'     => czr_fn_user_started_before_version( '4.1.31' , '2.1.22') ? 1 : 0,
+                            'control'     => 'CZR_controls' ,
+                            'label'         => __( 'Display the product featured image' , 'customizr' ),
+                            'title'         => __( 'Featured Image' , 'customizr' ),
+                            'section'       => 'woocommerce_product_images' ,
+                            'type'      =>  'checkbox',
+                            'priority'      => 10,
+                            'active_callback' => apply_filters( 'tc_woocommerce_options_enabled', '__return_false' )
+          )
+    );
+}
+
 
 
 /***************************************************************
