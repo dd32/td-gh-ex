@@ -244,10 +244,22 @@ add_action( 'after_setup_theme', 'apelleuno_logo_setup' );
 
 add_action( 'widgets_init', 'apelleuno_widgets_init' );
 function apelleuno_widgets_init() {
+	
 $args = array(
-	'name'          => __( 'Barra Laterale', 'apelle-uno' ),
+	'flex-width'    => true,
+	'width'         => 980,
+	'flex-height'    => true,
+	'height'        => 200,
+	'default-image' => get_template_directory_uri() . '/images/header.jpg',
+	'uploads'       => true,
+);
+add_theme_support( 'custom-header', $args );
+
+
+$args = array(
+	'name'          => __( 'Sidebar', 'apelle-uno' ),
 	'id'            => 'apelleuno-sidebar-laterale',    
-	'description'   => __( 'i widgets in quest\'area verranno mostrati nella Barra Laterale in tutte le pagine.', 'apelle-uno' ),
+	'description'   => __( 'widgets in this area are shown in the Sidebar on all pages.', 'apelle-uno' ),
         'class'         => '',
 	'before_widget' => '<li id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</li>',
@@ -258,7 +270,7 @@ register_sidebar( $args );
 $args = array(
 	'name'          => __( 'Footer 1', 'apelle-uno' ),
 	'id'            => 'apelleuno-footer-1',    
-	'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelle-uno' ),
+	'description'   => __( 'widgets in this area will be shown in the first footer area on all pages.', 'apelle-uno' ),
         'class'         => 'list-unstyled text-small',
 	'before_widget' => '<li id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</li>',
