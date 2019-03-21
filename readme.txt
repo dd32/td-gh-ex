@@ -1,8 +1,10 @@
 === Apelle uno ===
-
+Contributors: DevFabio
 Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, right-sidebar, sticky-post, full-width-template
-Requires at least: 4.0
+Requires at least: 4.8
 Tested up to: 5.1
+Requires PHP: 5.6
+Stable tag: trunk
 
 Copyright (c) 2019 by Invent Your Trade  (https://inventyourtrade.it/)
 This Theme is distributed under the terms of the GNU GPL.
