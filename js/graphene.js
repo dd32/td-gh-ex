@@ -10,7 +10,11 @@ jQuery(document).ready(function($) {
 	$('.dropdown-submenu > a[href]').click(function(e){
 		if ( $(window).width() <= 991 ) {
 			e.preventDefault(); event.stopPropagation();
+			$('.dropdown-submenu', $(this).parents('.dropdown-menu') ).removeClass('open');
 			$(this).parent().toggleClass('open');
+
+			$('.dropdown-menu', $(this).parents('.dropdown-menu') ).hide();
+			$(this).siblings('.dropdown-menu').show();
 		}
 	});
 

@@ -4,6 +4,11 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.6.2
+	* Fixed: Multi-level menu not opening when using hover and on tablet devices
+	* Fixed: Custom social profile icon not working when using custom icon URL
+	* Fixed: PHP warnings when customizing social profiles
+
 Version 2.6.1
 	* Added: Load theme-bundled language files whenever available instead of WordPress-supplied language files
 	* Added: determine_locale() function compat (WP 5.0)

@@ -45,6 +45,9 @@ if ( ! function_exists( 'graphene_setup' ) ):
  */
 function graphene_setup() {
 	global $graphene_settings, $graphene_defaults, $content_width;
+	
+	add_filter( 'graphene_settings', 'graphene_customizer_filter_settings', 999 );
+
 	graphene_init_settings();
 	
 	$content_width = graphene_get_content_width();

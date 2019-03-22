@@ -323,7 +323,6 @@ function graphene_customizer_filter_settings( $graphene_settings ){
 	}
 	return $graphene_settings;
 }
-add_filter( 'graphene_settings', 'graphene_customizer_filter_settings', 999 );
 
 
 /**

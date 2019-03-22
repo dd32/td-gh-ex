@@ -138,9 +138,9 @@ add_filter( 'body_class', 'graphene_body_class' );
 function graphene_social_profiles(){
     global $graphene_settings;
 
-    /* Loop through the registered custom social modia */
+    /* Loop through the registered custom social media */
     $social_profiles = $graphene_settings['social_profiles'];
-	if ( ! $social_profiles || in_array( false, $social_profiles ) ) return;
+	if ( ! $social_profiles || ( is_array( $social_profiles ) && in_array( false, $social_profiles ) ) ) return;
 	if ( empty( $social_profiles ) ) return;
 	?>
 	<ul class="social-profiles">
@@ -169,7 +169,7 @@ function graphene_social_profiles(){
 			            <li class="social-profile social-profile-<?php echo $social_profile['type']; ?>">
 			            	<a href="<?php echo esc_url( $url ); ?>" title="<?php echo esc_attr( $title ); ?>" id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $class ); ?>"<?php echo $extra; ?>>
 			            		<?php if ( $social_profile['type'] == 'custom' ) : ?>
-	                        		<?php if ( isset( $social_profile['icon_name'] ) ) : ?>
+	                        		<?php if ( isset( $social_profile['icon_name'] ) && $social_profile['icon_name'] ) : ?>
 	                        			<i class="fa fa-<?php echo $social_profile['icon_name']; ?>"></i>
 	                        		<?php else : ?>
 		                            	<img class="mysocial-icon" src="<?php echo $social_profile['icon_url']; ?>" alt="" />
