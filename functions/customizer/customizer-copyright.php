@@ -58,7 +58,7 @@ add_action( 'customize_register', 'quality_copyright_customizer' );
 function quality_register_home_copy_right_section_partials( $wp_customize ){
 
 $wp_customize->selective_refresh->add_partial( 'quality_pro_options[footer_copyright_text]', array(
-		'selector'            => '.qua_footer_area .col-md-12',
+		'selector'            => '.site-footer .site-info',
 		'settings'            => 'quality_pro_options[footer_copyright_text]',
 	
 	) );

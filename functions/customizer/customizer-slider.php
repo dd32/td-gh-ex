@@ -168,11 +168,8 @@ function quality_slider_customizer( $wp_customize ) {
 	
 	)));
 	
-	
-	
-	
-	
-	 }
+
+	}
 	add_action( 'customize_register', 'quality_slider_customizer' );
 	
 /**

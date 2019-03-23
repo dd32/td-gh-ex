@@ -153,6 +153,9 @@ Support
 Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank you!
 
 ChangLog:
+
+@Version 2.3.2
+Added the customizer selective refresh for the footer copyright.
 @Version 2.3.1
 Corrected Sanitization issue
 @version 2.3
