@@ -68,22 +68,11 @@ if(is_home()){ ?>
     <div class="filter-wrap">
         <div class="container">
             <div class="search-filter-title">
-                <h5><?php echo esc_html(get_theme_mod('homepage_search_area_title','Search Awesome Verified Ads!'));?></h5>
+                <h5><?php echo esc_html(get_theme_mod('homepage_search_area_title',esc_html__('Search Awesome Verified Ads!','best-classifieds') ));?></h5>
             </div>
             <div class="search-filter">
                 <div class="row">
-                    <form action="<?php echo esc_url(site_url()); ?>" role="search" method="get" id="searchformtop">
-                        <div class="filter-category">
-                            <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">    
-                                   
-                                        <input type="search"  placeholder="<?php echo esc_attr(get_theme_mod('search_area_placeholder','What are you looking for?')); ?>" name="s" id="s" required="">
-                                    
-                            </div>                        
-                            <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                                <input type="submit" value="<?php echo esc_html(get_theme_mod('search_area_btn_title','Search')); ?>">
-                            </div>
-                        </div>
-                    </form>
+                    <?php get_search_form(); ?>
                 </div>                
             </div>
         </div>
@@ -97,7 +86,7 @@ if(is_home()){ ?>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="main-heading">
                         <?php if(get_theme_mod('homepage_category_area_title','Categories')!=''): ?>
-                        <h1 class="heading-title"><?php echo esc_html(get_theme_mod('homepage_category_area_title','Categories')); ?></h1>                    
+                        <h1 class="heading-title"><?php echo esc_html(get_theme_mod('homepage_category_area_title',esc_html__('Categories','best-classifieds'))); ?></h1>                    
                         <div class="title-divider">
                             <span></span>
                         </div>
@@ -146,7 +135,7 @@ if(is_home()){ ?>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="main-heading">
                         <?php if(get_theme_mod('homepage_keyfeature_title','Why we are best')!=''): ?>
-                        <h1 class="heading-title"><?php echo esc_html(get_theme_mod('homepage_keyfeature_title','Why we are best')); ?></h1>
+                        <h1 class="heading-title"><?php echo esc_html(get_theme_mod('homepage_keyfeature_title',esc_html__('Why we are best','best-classifieds'))); ?></h1>
                         <?php endif; if(get_theme_mod('homepage_keyfeature_title','Why we are best')!=''): ?>
                         <div class="title-divider">
                             <span></span>
@@ -197,7 +186,7 @@ if(is_home()){ ?>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <?php if(get_theme_mod('homepage_testimonial_section_title','Testimonials')!=''): ?>
                     <div class="main-heading">
-                        <h1 class="heading-title"><?php echo esc_html(get_theme_mod('homepage_testimonial_section_title','Testimonials')); ?></h1>
+                        <h1 class="heading-title"><?php echo esc_html(get_theme_mod('homepage_testimonial_section_title',esc_html__('Testimonials','best-classifieds'))); ?></h1>
                         <div class="title-divider">
                             <span></span>
                         </div>
@@ -245,7 +234,7 @@ if(is_home()){ ?>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="main-heading">
                         <?php if(get_theme_mod('homepage_latest_blog_section_title','Latest Blog')!=''): ?>
-                        <h1 class="heading-title"><?php echo esc_html(get_theme_mod('homepage_latest_blog_section_title','Latest Blog')); ?></h1>
+                        <h1 class="heading-title"><?php echo esc_html(get_theme_mod('homepage_latest_blog_section_title',esc_html__('Latest Blog','best-classifieds'))); ?></h1>
                         <?php endif; if(get_theme_mod('homepage_latest_blog_section_title','Latest Blog')!=''): ?>
                         <div class="title-divider">
                             <span></span>

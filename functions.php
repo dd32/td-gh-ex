@@ -36,6 +36,23 @@ function best_classifieds_change_logo_class($html)
 	$html = str_replace('class="custom-logo-link"', 'class="img-responsive logo-fixed"', $html);
 	return $html;
 }
+// Filter for search form.
+add_filter('get_search_form', 'best_classifieds_search_form');
+function best_classifieds_search_form($html) {
+	if(is_front_page()):
+		$html='<form action="<?php echo esc_url(home_url()); ?>" role="search" method="get" id="searchformtop">
+            <div class="filter-category">
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">                           
+                    <input type="search"  placeholder="'.esc_attr(get_theme_mod('search_area_placeholder',esc_html__('What are you looking for?','best-classifieds'))).'" name="s" id="s" required="">                        
+                </div>                        
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+                    <input type="submit" value="'.esc_html(get_theme_mod('search_area_btn_title',esc_html__('Search','best-classifieds'))).'">
+                </div>
+            </div>
+        </form>';
+    endif;
+ return $html;
+}
 
 include get_template_directory().'/inc/breadcumbs.php';
 include get_template_directory().'/inc/fonts.php';

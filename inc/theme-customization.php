@@ -2,11 +2,7 @@
 /**
 * Customization options
 **/
-function best_classifieds_color_escaping_option_sanitize( $input ) {
-    $input = esc_attr( $input );
 
-    return $input;
-  }
 function best_classifieds_posts_category(){
   $args = array('parent' => 0);
   $categories = get_categories($args);
@@ -723,9 +719,9 @@ $wp_customize->add_control(
     'section' => 'blog_page_section',
     'label' => esc_html__( 'Sidebar Layout', 'best-classifieds' ),
     'choices' => array(
-      'right_sidebar' => 'Right',
-      'left_sidebar' => 'Left',
-      'no_sidebar' => 'Full',
+      'right_sidebar' => esc_html__( 'Right', 'best-classifieds' ),
+      'left_sidebar' => esc_html__( 'Left', 'best-classifieds' ),
+      'no_sidebar' => esc_html__( 'Full', 'best-classifieds' ),
       )
   ) );
   // End Blog Listing Section
@@ -768,9 +764,9 @@ $wp_customize->add_control(
     'section' => 'single_page_section',
     'label' => esc_html__( 'Sidebar Layout', 'best-classifieds' ),
     'choices' => array(
-      'right_sidebar' => 'Right',
-      'left_sidebar' => 'Left',
-      'no_sidebar' => 'Full',
+      'right_sidebar' => esc_html__( 'Right', 'best-classifieds' ),
+      'left_sidebar' => esc_html__( 'Left', 'best-classifieds' ),
+      'no_sidebar' => esc_html__( 'Full', 'best-classifieds' ),
     )
   ) );
   // End Blog Page Section

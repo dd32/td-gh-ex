@@ -37,7 +37,7 @@ $column_classes =($sidebar_style == 'no_sidebar')?'col-md-10 col-sm-12 col-xs-12
                         <div class="row">
                             <?php if ( have_posts() ) :
                             while ( have_posts() ) : the_post(); ?>
-                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <div id="post-<?php the_ID(); ?>" <?php post_class('col-md-12 col-sm-12 col-xs-12'); ?>>
                                 <div class="main-blog-area">
                                     <?php if(has_post_thumbnail() && !get_theme_mod('single_post_image',false)):?>                                        
                                     <div class="blog-post-img">

@@ -64,8 +64,8 @@ add_action( 'widgets_init', 'best_classifieds_widgets_init' );
 function best_classifieds_default_menu() {
     $html = '<ul id="menu-main-menu" class="offside nav navbar-nav">';
     $html .= '<li class="menu-item menu-item-type-post_type menu-item-object-page">';
-    $html .= '<a href="' . esc_url(home_url()) . '" title="' . esc_attr('Home', 'best-classifieds') . '">';
-    $html .= esc_html('Home', 'best-classifieds');
+    $html .= '<a href="' . esc_url(home_url()) . '" title="' . esc_attr__('Home', 'best-classifieds') . '">';
+    $html .= esc_html__('Home', 'best-classifieds');
     $html .= '</a>';
     $html .= '</li>';
     $html .= '</ul>';
