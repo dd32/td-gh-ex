@@ -193,6 +193,19 @@ function nnfy_scripts() {
 add_action( 'wp_enqueue_scripts', 'nnfy_scripts' );
 
 
+/**
+ * Enqueue styles for the block-based editor.
+ */
+function nnfy_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( '99fy-block-editor-style', get_template_directory_uri() . '/css/editor-blocks.css', array(), '1.0.0' );
+
+	// Add custom fonts.
+	wp_enqueue_style( 'nnfy-fonts', nnfy_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'nnfy_block_editor_styles' );
+
+
 // nnfy Company Info widget js
 if( !function_exists('nnfy_admin_scripts') ) {
   function nnfy_admin_scripts($hook) {
