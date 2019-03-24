@@ -162,8 +162,8 @@ if( ! function_exists('arrival_top_header_left')){
 					<i class="fa fa-envelope"></i>
 					<span>
 						<?php esc_html_e('Mail Us:','arrival'); ?>
-						<a href="mailto:<?php echo esc_attr($arrival_top_header_email)?>">
-							<?php echo esc_html($arrival_top_header_email); ?>
+						<a href="mailto:<?php echo sanitize_email($arrival_top_header_email)?>">
+							<?php echo sanitize_email($arrival_top_header_email); ?>
 						</a>
 					</span>
 				</div>

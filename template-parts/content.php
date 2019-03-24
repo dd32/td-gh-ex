@@ -31,7 +31,7 @@ if( 'gallery' == $post_format ){
 		<div class="entry-meta">
 		<?php
 		arrival_posted_by();
-		echo arrival_post_view(); //get post view
+		echo arrival_post_view(); //sanitization already done
 		arrival_posted_on(); 
 		arrival_comments_link();
 		arrival_edit_post_link();

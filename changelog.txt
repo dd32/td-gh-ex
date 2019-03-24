@@ -1,3 +1,6 @@
+=== v1.0.3 ===
+- Minor Bugs Fixed
+
 === v1.0.2 ===
 - Minor Bugs Fixed
 - Minor CSS Improvements

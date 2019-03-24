@@ -52,12 +52,6 @@ function arrival_scripts() {
 	//enqueue jarallax script
 	wp_enqueue_script( 'jarallax', get_theme_file_uri( '/assets/lib/jarallax/jarallax.min.js' ), array('jquery'), ARRIVAL_VER, false );
 	
-	// Enqueue the navigation script.
-	wp_script_add_data( 'arrival-navigation', 'async', true );
-	wp_localize_script( 'arrival-navigation', 'arrivalScreenReaderText', array(
-		'expand'   => esc_html__( 'Expand child menu', 'arrival' ),
-		'collapse' => esc_html__( 'Collapse child menu', 'arrival' ),
-	));
 
 	// Enqueue skip-link-focus script.
 	wp_enqueue_script( 'arrival-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array('jquery'), ARRIVAL_VER, false );

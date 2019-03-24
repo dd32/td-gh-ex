@@ -7,9 +7,9 @@ License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: translation-ready,right-sidebar,custom-menu, featured-images, threaded-comments,custom-logo, footer-widgets,blog,post-formats,sticky-post,theme-options,news,editor-style,custom-background,custom-header
 Requires at least: WordPress 4.7
-Tested up to: 5.1
+Tested up to: 5.1.1
 Requires PHP: 5.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 
 == Description ==
 
@@ -33,6 +33,8 @@ Arrival is distributed under the terms of the GNU GPL
 -------------------------------------------------------
 
 All images shown on the screenshot are designed by WPoperation
+
+Image License: GNU General Public License, version 3 (GPLv3) 
 
 
 -------------------------------------------------------
@@ -68,6 +70,27 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 * License: MIT and GPL licenses
 * http://github.com/davist11/jQuery-One-Page-Nav
 * https://github.com/davist11/jQuery-One-Page-Nav/blob/master/LICENSE
+
+
+
+-------------------------------------------------------
+= jQuery FitVids =
+-------------------------------------------------------
+* Copyright 2013, Chris Coyier
+* License: Licensed under MIT
+* https://github.com/davatron5000/FitVids.js/
+* https://opensource.org/licenses/MIT
+
+
+
+-------------------------------------------------------
+Slick Slider
+-------------------------------------------------------
+* Slick Slider
+* License: Licensed under MIT
+* https://github.com/kenwheeler/slick
+* https://github.com/kenwheeler/slick/blob/master/LICENSE
+
 
 
 ---------------------

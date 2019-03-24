@@ -155,10 +155,7 @@ add_action( 'wp_head', 'arrival_add_body_style' );
  */
 function arrival_add_primary_menu_dropdown_symbol( $item_output, $item, $depth, $args ) {
 
-	// Only for our primary menu location.
-	/*if ( empty( $args->theme_location ) || 'primary' != $args->theme_location || 'top' != $args->theme_location ) {
-		return $item_output;
-	}*/
+	
 
 	// Add the dropdown for items that have children.
 	if ( ! empty( $item->classes ) && in_array( 'menu-item-has-children', $item->classes ) ) {

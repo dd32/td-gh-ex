@@ -19,8 +19,8 @@ function arrival_get_default_theme_options() {
     $defaults = array();
     
     $defaults[$prefix.'_top_header_enable'] = 'on';
-    $defaults[$prefix.'_top_header_email'] = 'webmaster@example.com';
-    $defaults[$prefix.'_top_header_phone'] = '+977-9877-998769';
+    $defaults[$prefix.'_top_header_email'] = '';
+    $defaults[$prefix.'_top_header_phone'] = '';
     $defaults[$prefix.'_top_right_header_content'] = 'menus';
     $defaults[$prefix.'_top_right_header_menus'] = 'top';
     $defaults[$prefix.'_main_nav_layout'] = 'boxed';
