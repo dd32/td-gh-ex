@@ -9,6 +9,27 @@ function elitepress_blog_customizer( $wp_customize ){
 			'priority'       => 800,)
     );	
 	
+	
+	//Hide Index Blog Section
+	
+	$wp_customize->add_setting(
+    'elitepress_lite_options[blog_section_enabled]',
+    array(
+        'default' => true,
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option'
+    )	
+	);
+	$wp_customize->add_control(
+    'elitepress_lite_options[blog_section_enabled]',
+    array(
+        'label' => __('Enable Blog section on front page','elitepress'),
+        'section' => 'blog_setting',
+        'type' => 'checkbox',
+    )
+	);
+	
 $wp_customize->add_setting(
     'elitepress_lite_options[blog_title]',
     array(

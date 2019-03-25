@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: ElitePress\n"
-"POT-Creation-Date: 2018-08-01 12:00+0530\n"
-"PO-Revision-Date: 2018-08-01 12:00+0530\n"
+"POT-Creation-Date: 2019-03-19 16:08+0530\n"
+"PO-Revision-Date: 2019-03-19 16:08+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -61,8 +61,8 @@ msgstr ""
 #: banner-header.php:46
 #: functions/customizer-repeater/class/customizer-repeater-control.php:256
 #: functions/customizer-repeater/class/customizer-repeater-control.php:405
-#: functions/customizer/customizer-blog.php:21
-#: functions/customizer/customizer-homecallout.php:26
+#: functions/customizer/customizer-blog.php:42
+#: functions/customizer/customizer-homecallout.php:49
 #: functions/customizer/customizer-project.php:46
 #: functions/customizer/customizer-project.php:82
 #: functions/customizer/customizer-project.php:137
@@ -75,9 +75,9 @@ msgstr ""
 #: functions/customizer/customizer_banner.php:171
 #: functions/customizer/customizer_banner.php:217
 #: functions/customizer/customizer_banner.php:265
-#: functions/widget/elitepress_header_widget.php:85 theme_setup_data.php:132
-#: theme_setup_data.php:135 theme_setup_data.php:138 theme_setup_data.php:144
-#: theme_setup_data.php:147
+#: functions/widget/elitepress_header_widget.php:85 theme_setup_data.php:134
+#: theme_setup_data.php:137 theme_setup_data.php:140 theme_setup_data.php:146
+#: theme_setup_data.php:149
 msgid "Title"
 msgstr ""
 
@@ -172,8 +172,8 @@ msgid "Leave a Reply"
 msgstr ""
 
 #: content.php:20 fullwidth.php:13 functions.php:119 functions.php:136
-#: functions/customizer/customizer-homecallout.php:49 index-slider.php:100
-#: page.php:13 theme_setup_data.php:76
+#: functions/customizer/customizer-homecallout.php:72 index-slider.php:100
+#: page.php:13 theme_setup_data.php:77
 msgid "Read More"
 msgstr ""
 
@@ -209,8 +209,8 @@ msgstr ""
 
 #: functions/customizer-repeater/class/customizer-repeater-control.php:270
 #: functions/customizer-repeater/class/customizer-repeater-control.php:419
-#: functions/customizer/customizer-blog.php:34
-#: functions/customizer/customizer-homecallout.php:41
+#: functions/customizer/customizer-blog.php:55
+#: functions/customizer/customizer-homecallout.php:64
 #: functions/customizer/customizer-project.php:60
 #: functions/customizer/customizer-project.php:113
 #: functions/customizer/customizer-project.php:225
@@ -228,7 +228,7 @@ msgstr ""
 
 #: functions/customizer-repeater/class/customizer-repeater-control.php:279
 #: functions/customizer-repeater/class/customizer-repeater-control.php:427
-#: functions/customizer/customizer-homecallout.php:55
+#: functions/customizer/customizer-homecallout.php:78
 msgid "Button Text"
 msgstr ""
 
@@ -265,7 +265,7 @@ msgid "Delete field"
 msgstr ""
 
 #: functions/customizer-repeater/class/customizer-repeater-control.php:523
-#: functions/customizer/customizer-homecallout.php:83
+#: functions/customizer/customizer-homecallout.php:106
 #: functions/widget/elitepress_social_icon.php:200
 #: functions/widget/elitepress_social_icon.php:206
 #: functions/widget/elitepress_social_icon.php:212
@@ -353,7 +353,11 @@ msgstr ""
 msgid "Latest News Settings"
 msgstr ""
 
-#: functions/customizer/customizer-blog.php:15 theme_setup_data.php:128
+#: functions/customizer/customizer-blog.php:27
+msgid "Enable Blog section on front page"
+msgstr ""
+
+#: functions/customizer/customizer-blog.php:36 theme_setup_data.php:129
 msgid "Latest news"
 msgstr ""
 
@@ -362,12 +366,12 @@ msgstr ""
 msgid "Footer copyright settings"
 msgstr ""
 
-#: functions/customizer/customizer-copyright.php:22 theme_setup_data.php:82
+#: functions/customizer/customizer-copyright.php:22 theme_setup_data.php:83
 msgid "©2017 All Rights Reserved - Webriti. - Designed and Developed by"
 msgstr ""
 
 #. Author of the plugin/theme
-#: functions/customizer/customizer-copyright.php:22 theme_setup_data.php:82
+#: functions/customizer/customizer-copyright.php:22 theme_setup_data.php:83
 msgid "Webriti"
 msgstr ""
 
@@ -447,15 +451,19 @@ msgid "Enable search bar on header"
 msgstr ""
 
 #: functions/customizer/customizer-homecallout.php:5
-#: functions/customizer/customizer-homecallout.php:11
+#: functions/customizer/customizer-homecallout.php:13
 msgid "Home header callout setting"
 msgstr ""
 
-#: functions/customizer/customizer-homecallout.php:20 theme_setup_data.php:74
+#: functions/customizer/customizer-homecallout.php:34
+msgid "Enable Callout section on front page"
+msgstr ""
+
+#: functions/customizer/customizer-homecallout.php:43 theme_setup_data.php:75
 msgid "Want to say hey or find out more?"
 msgstr ""
 
-#: functions/customizer/customizer-homecallout.php:69
+#: functions/customizer/customizer-homecallout.php:92
 msgid "Button Link"
 msgstr ""
 
@@ -491,7 +499,7 @@ msgstr ""
 msgid "Enable project section on home Page"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:40 theme_setup_data.php:90
+#: functions/customizer/customizer-project.php:40 theme_setup_data.php:91
 msgid "Latest projects"
 msgstr ""
 
@@ -499,7 +507,7 @@ msgstr ""
 msgid "Portfolio one"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:76 theme_setup_data.php:93
+#: functions/customizer/customizer-project.php:76 theme_setup_data.php:94
 msgid "Growing your business"
 msgstr ""
 
@@ -507,7 +515,7 @@ msgstr ""
 msgid "Portfolio two"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:131 theme_setup_data.php:97
+#: functions/customizer/customizer-project.php:131 theme_setup_data.php:98
 msgid "Functional elegance"
 msgstr ""
 
@@ -515,7 +523,7 @@ msgstr ""
 msgid "Portfolio three"
 msgstr ""
 
-#: functions/customizer/customizer-project.php:186 theme_setup_data.php:101
+#: functions/customizer/customizer-project.php:186 theme_setup_data.php:102
 msgid "Planning your next move"
 msgstr ""
 
@@ -539,7 +547,7 @@ msgstr ""
 msgid "Enable Service section on front page"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:33 theme_setup_data.php:108
+#: functions/customizer/customizer-service.php:33 theme_setup_data.php:109
 msgid "Our services"
 msgstr ""
 
@@ -599,23 +607,23 @@ msgstr ""
 msgid "A clean and fresh design"
 msgstr ""
 
-#: functions/customizer/customizer.php:130 index-service.php:146
-#: theme_setup_data.php:112
+#: functions/customizer/customizer.php:134 index-service.php:157
+#: theme_setup_data.php:113
 msgid "Responsive design"
 msgstr ""
 
-#: functions/customizer/customizer.php:137 index-service.php:146
-#: theme_setup_data.php:116
+#: functions/customizer/customizer.php:142 index-service.php:157
+#: theme_setup_data.php:117
 msgid "Twitter Bootstrap 3.2.0"
 msgstr ""
 
-#: functions/customizer/customizer.php:144 index-service.php:146
-#: theme_setup_data.php:120
+#: functions/customizer/customizer.php:150 index-service.php:157
+#: theme_setup_data.php:121
 msgid "Exclusive support"
 msgstr ""
 
-#: functions/customizer/customizer.php:152 index-service.php:146
-#: theme_setup_data.php:124
+#: functions/customizer/customizer.php:159 index-service.php:157
+#: theme_setup_data.php:125
 msgid "Incredibly flexible"
 msgstr ""
 
@@ -651,7 +659,7 @@ msgstr ""
 msgid "404"
 msgstr ""
 
-#: functions/customizer/customizer_banner.php:162 theme_setup_data.php:141
+#: functions/customizer/customizer_banner.php:162 theme_setup_data.php:143
 msgid "404 title"
 msgstr ""
 
@@ -1233,4 +1241,12 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://webriti.com/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Fullwidth"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Home Page"
 msgstr ""

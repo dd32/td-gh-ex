@@ -1,6 +1,6 @@
 <?php $elitepress_lite_options=theme_data_setup(); 
 $current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array() ), $elitepress_lite_options );
-?>
+if( $current_options['blog_section_enabled']== true ) { ?>
 <!-- Blog Section -->
 <div class="home-blog">
 	<div class="container">
@@ -57,3 +57,4 @@ $current_options = wp_parse_args(  get_option( 'elitepress_lite_options', array(
 </div>
 <!-- /Blog Section -->
 <div class="clearfix"></div>
+<?php }?>

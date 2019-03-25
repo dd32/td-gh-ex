@@ -71,6 +71,7 @@ function theme_data_setup()
 			'header_search_bar_enabled' => true,
 			
 			//Home Top Call Out Area
+			'topcalout_section_enabled' => true,
 			'header_call_out_title'=> __('Want to say hey or find out more?','elitepress'),
 			'header_call_out_description'=> 'Reprehen derit in voluptate velit cillum dolore eu fugiat nulla pariaturs  sint occaecat proidentse.',
 			'header_call_out_btn_text'=> __('Read More','elitepress'),
@@ -129,6 +130,7 @@ function theme_data_setup()
 			'blog_description' => 'Lorem ipsum dolor sit ametconsectetuer adipiscing elit.',
 			
 			//Banner Heading
+			'blog_section_enabled' => true,
 			'banner_title_category' => __('Title','elitepress'),
 			'banner_description_category' => 'Autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et dolore feugait.',
 			

@@ -4,6 +4,8 @@ $wp_customize->add_panel( 'home_callout_setting', array(
 		'capability'     => 'edit_theme_options',
 		'title'      => __('Home header callout setting', 'elitepress'),
 	) );
+	
+	
 //Home top callout
 $wp_customize->add_section(
         'header_home_callout',
@@ -13,6 +15,27 @@ $wp_customize->add_section(
 			'panel' => 'home_callout_setting',
         )
     );
+	
+	
+	//Hide Top Callout
+	
+	$wp_customize->add_setting(
+    'elitepress_lite_options[topcalout_section_enabled]',
+    array(
+        'default' => true,
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option'
+    )	
+	);
+	$wp_customize->add_control(
+    'elitepress_lite_options[topcalout_section_enabled]',
+    array(
+        'label' => __('Enable Callout section on front page','elitepress'),
+        'section' => 'header_home_callout',
+        'type' => 'checkbox',
+    )
+	);
 	
 	//Header Top Call Out Title
 	$wp_customize->add_setting(
