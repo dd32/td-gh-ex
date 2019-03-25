@@ -1,6 +1,6 @@
 <?php 
 
-function add_theme_scripts() {
+function apelleuno_add_theme_scripts() {
  
 
   wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bootstrap.min.css', array(), '4.1.3', 'all');
@@ -9,26 +9,26 @@ function add_theme_scripts() {
 
 
 
-add_action( 'wp_enqueue_scripts', 'add_theme_scripts' );
-function add_theme_scripts_footer() { 
+add_action( 'wp_enqueue_scripts', 'apelleuno_add_theme_scripts' );
+function apelleuno_add_theme_scripts_footer() { 
 
   wp_enqueue_style( 'style', get_stylesheet_uri() );
   wp_enqueue_script( 'popper-min', get_template_directory_uri() . '/popper.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'bootstrap-min', get_template_directory_uri() . '/bootstrap.min.js', array(), '1.0.0', true );
 }
-add_action( 'wp_footer', 'add_theme_scripts_footer' );
-function register_menu_home() {
+add_action( 'wp_footer', 'apelleuno_add_theme_scripts_footer' );
+function apelleuno_register_menu_home() {
   register_nav_menus(
     array(
-      'header-home-menu' => __( 'Header Home Menu', 'apelleuno' ),
-      'central-home-menu' => __( 'Home Menu', 'apelleuno' ),
-	  'top-primary' => __( 'Primary Menu', 'apelleuno' ),
+      'header-home-menu' => __( 'Header Home Menu', 'apelle-uno' ),
+      'central-home-menu' => __( 'Home Menu', 'apelle-uno' ),
+	  'top-primary' => __( 'Primary Menu', 'apelle-uno' ),
      )
    );
  }
- add_action( 'init', 'register_menu_home' );
+ add_action( 'init', 'apelleuno_register_menu_home' );
  
- function add_link_atts($atts,$item, $args ) {
+ function apelleuno_add_link_atts($atts,$item, $args ) {
 	 if( isset($args->theme_location) and $args->theme_location == 'header-home-menu' ) {
 		 
 		  $atts['class'] = "nav-link";
@@ -44,11 +44,11 @@ function register_menu_home() {
 	 }
 	  return $atts;
 }
-add_filter( 'nav_menu_link_attributes', 'add_link_atts', 10, 3);
+add_filter( 'nav_menu_link_attributes', 'apelleuno_add_link_atts', 10, 3);
 
 // Add CSS class to children menu item on WordPress
-add_filter( 'wp_nav_menu_objects', 'add_menu_parent_class' );
-function add_menu_parent_class( $items ) {
+add_filter( 'wp_nav_menu_objects', 'apelleuno_add_menu_parent_class' );
+function apelleuno_add_menu_parent_class( $items ) {
 
     foreach ( $items as $item ) {
         if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
@@ -58,9 +58,9 @@ function add_menu_parent_class( $items ) {
 
     return $items;
 }
-add_filter( 'nav_menu_link_attributes', 'add_class_to_items_link', 10, 3 );
+add_filter( 'nav_menu_link_attributes', 'apelleuno_add_class_to_items_link', 10, 3 );
 
-function add_class_to_items_link( $atts, $item, $args ) {
+function apelleuno_add_class_to_items_link( $atts, $item, $args ) {
   // check if the item has children
   $hasChildren=0;
   if(isset($item->classes) and is_array($item->classes))
@@ -73,7 +73,7 @@ function add_class_to_items_link( $atts, $item, $args ) {
   }
   return $atts;
 }
-class Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
+class apelleuno_Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
 	
 	function start_lvl(&$output, $depth=0, $args = array()) {
     $indent = str_repeat("\t", $depth);
@@ -141,7 +141,7 @@ class Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
     }
 }
 
-class Apelle_Walker_Nav_Menu extends Walker_Nav_Menu {
+class apelleuno_Apelle_Walker_Nav_Menu extends Walker_Nav_Menu {
 	
 	function start_lvl(&$output, $depth=0,$args = array() ) {
     $indent = str_repeat("\t", $depth);
@@ -218,13 +218,18 @@ function add_description_to_menu($item_output, $item, $depth, $args) {
 add_filter('walker_nav_menu_start_el', 'add_description_to_menu', 10, 4);
 
 
-add_action( 'after_setup_theme', 'wpse_theme_setup' );
-function wpse_theme_setup() {
+add_action( 'after_setup_theme', 'apelleuno_wpse_theme_setup' );
+function apelleuno_wpse_theme_setup() {
+	
+	load_theme_textdomain( 'apelle-uno', get_template_directory() . '/languages' );
    
     add_theme_support( 'title-tag' );
+	add_theme_support( 'custom-logo' );
+	add_theme_support( 'automatic-feed-links' );
+	add_theme_support( 'post-thumbnails' ); 
 }
 
-add_theme_support( 'custom-logo' );
+
 function apelleuno_logo_setup() {
     $defaults = array(
         'height'      => 100,
@@ -236,15 +241,27 @@ function apelleuno_logo_setup() {
    add_theme_support( 'custom-logo', $defaults );
 }
 add_action( 'after_setup_theme', 'apelleuno_logo_setup' );
-remove_filter( 'the_content', 'wpautop' );
-remove_filter( 'the_excerpt', 'wpautop' );
-add_theme_support( 'automatic-feed-links' );
+//remove_filter( 'the_content', 'wpautop' );
+//remove_filter( 'the_excerpt', 'wpautop' );
+
 add_action( 'widgets_init', 'apelleuno_widgets_init' );
 function apelleuno_widgets_init() {
+	
 $args = array(
-	'name'          => __( 'Barra Laterale', 'apelleuno' ),
+	'flex-width'    => true,
+	'width'         => 980,
+	'flex-height'    => true,
+	'height'        => 200,
+	'default-image' => get_template_directory_uri() . '/images/header.jpg',
+	'uploads'       => true,
+);
+add_theme_support( 'custom-header', $args );
+
+
+$args = array(
+	'name'          => __( 'Sidebar', 'apelle-uno' ),
 	'id'            => 'apelleuno-sidebar-laterale',    
-	'description'   => __( 'i widgets in quest\'area verranno mostrati nella Barra Laterale in tutte le pagine.', 'apelleuno' ),
+	'description'   => __( 'widgets in this area are shown in the Sidebar on all pages.', 'apelle-uno' ),
         'class'         => '',
 	'before_widget' => '<li id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</li>',
@@ -253,9 +270,9 @@ $args = array(
 register_sidebar( $args );
 
 $args = array(
-	'name'          => __( 'Footer 1', 'apelleuno' ),
+	'name'          => __( 'Footer 1', 'apelle-uno' ),
 	'id'            => 'apelleuno-footer-1',    
-	'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelleuno' ),
+	'description'   => __( 'widgets in this area will be shown in the first footer area on all pages.', 'apelle-uno' ),
         'class'         => 'list-unstyled text-small',
 	'before_widget' => '<li id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</li>',
@@ -264,9 +281,9 @@ $args = array(
 register_sidebar( $args );
 
 $args = array(
-	'name'          => __( 'Footer 2', 'apelleuno' ),
+	'name'          => __( 'Footer 2', 'apelle-uno' ),
 	'id'            => 'apelleuno-footer-2',    
-	'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelleuno' ),
+	'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelle-uno' ),
         'class'         => 'list-unstyled text-small',
 	'before_widget' => '<li id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</li>',
@@ -275,9 +292,9 @@ $args = array(
 register_sidebar( $args );
 
 $args = array(
-	'name'          => __( 'Footer 3', 'apelleuno' ),
+	'name'          => __( 'Footer 3', 'apelle-uno' ),
 	'id'            => 'apelleuno-footer-3',    
-	'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelleuno' ),
+	'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelle-uno' ),
         'class'         => 'list-unstyled text-small',
 	'before_widget' => '<li id="%1$s" class="widget %2$s">',
 	'after_widget'  => '</li>',
@@ -285,5 +302,5 @@ $args = array(
 	'after_title'   => '</h5>' ); 
 register_sidebar( $args );
 }
-add_theme_support( 'post-thumbnails' ); 
+
 ?>

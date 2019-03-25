@@ -1,95 +1,5 @@
-<!doctype html>
-<html <?php language_attributes(); ?>>
-<head>
-    <meta charset="utf-8">
 <?php 
-	wp_enqueue_script("jquery");
-	wp_head(); ?>
-    <meta name="viewport" content="width=device-width">
-</head>
-
-<body <?php body_class(); ?>>
-
-
-<div class="page-wrapper page-wrapper page-wrapper">
-    <header id="main-header" class="l-header  l-header--concierge" role="banner" aria-hidden="false">
-		<div class="l-header__top-strip">
-			<div class="l-top-strip js-topStrip ">
-				<div class="l-top-strip__cta-list">	
-                <?php if ( has_nav_menu( 'header-home-menu' ) ) {
-					?>
-                <!-------- MENU TOP HOME --------------->
-         <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-      <a class="navbar-brand" href="#">Navbar</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topHomeMenu" aria-controls="topHomeMenu" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-
-                <?php 
-                    wp_nav_menu(
-                      array(
-                        'menu' => 'header-home-menu',
-                        'theme_location' => 'header-home-menu',
-                        'container' => 'div',
-                        'container_id' => 'topHomeMenu',
-                        'container_class' => 'collapse navbar-collapse',
-                        'menu_class'=>'nav navbar-nav',
-                        'link_before' => '',
-                        'link_after' => '',
-						'depth'=>'11',
-						'walker'=> new Apelle_Walker_Nav_Menu()
-                      )
-                    );
-                    
-                    
-                    ?>
-           
-</nav>  
-                <!-------- FINE MENU TOP HOME ---------->
-<?php } ?>
-				</div>
-            </div>
-		</div>
-        
-        <div class="l-header__inner" style="margin-top:50px" >
-			<div class="l-header__top-banner">
-				<div class="l-top-banner" >
-					<div class="l-top-banner__inner">
-						 <?php if ( has_nav_menu( 'top-primary' ) ) {
-					?>
-                        <!-------- PRIMARY TOP MENU --------------->
-						<div class="l-top-banner__primary-nav">
-                        	<nav class="navbar navbar-expand-lg navbar-light bg-light">
-						<?php 
-                            wp_nav_menu(
-                              array(
-                                'menu' => 'top-primary',
-                                'theme_location' => 'top-primary',
-                                'container' => 'div',
-                                'container_id' => 'topPrimaryMenu',
-                                'container_class' => 'collapse navbar-collapse',
-								'menu_class'=>'navbar-nav',
-                                'link_before' => '',
-                                'link_after' => '',
-								'depth'=>'11',
-								'walker'=> new Apelle_Walker_Nav_Menu_primary()
-                              )
-                            );
-                            
-                            
-                            ?>
-                            </nav>
-                        </div>
-                        <!-------- PRIMARY TOP MENU ---------->
-                        <?php } ?>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-	</header>
-	<?php 
+	get_header();
 	if ( ! isset( $content_width ) ) $content_width = 900;
 	?>
 	<main class="container" id="main-content" role="main" style="max-width:<?php echo $content_width?>" data-view="responsive/AnimationHandler" aria-hidden="false">
@@ -128,7 +38,7 @@
 			?></div><?php
 			endwhile;
 			else :
-				esc_attr_e( 'Sorry, no posts matched your criteria.', 'apelleuno' );
+				esc_attr_e( 'Sorry, no posts matched your criteria.', 'apelle-uno' );
 			endif;
           ?>
         </div>
@@ -169,7 +79,7 @@
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
         <div class="modal-header">
-       	 	<h5 class="modal-title">Comemnti</h5>
+       	 	<h5 class="modal-title"><?php __('Comment', 'apelle-uno' );?></h5>
        	 	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           		<span aria-hidden="true">&times;</span>
         	</button>
@@ -187,13 +97,13 @@
         <?php 
 		$comments_args = array(
         // change the title of send button 
-        'label_submit'=>'Send',
+        'label_submit'=>__('Send', 'apelle-uno' ),
         // change the title of the reply section
-        'title_reply'=>'Write a Reply or Comment',
+        'title_reply'=>__('Write a Reply or Comment', 'apelle-uno' ),
         // remove "Text or HTML to be displayed after the set of comment fields"
         'comment_notes_after' => '',
         // redefine your own textarea (the comment body)
-        'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ,'apelleuno' ) . '</label><br /><textarea id="comment" name="comment" aria-required="true"></textarea></p>',
+        'comment_field' => '<p class="comment-form-comment"><label for="comment">' . _x( 'Comment', 'noun' ,'apelle-uno' ) . '</label><br /><textarea id="comment" name="comment" aria-required="true"></textarea></p>',
 );
 
 comment_form($comments_args);
@@ -204,8 +114,8 @@ comment_form($comments_args);
 	</div>
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal"><?php __('Close', 'apelle-uno' );?></button>
+            <button type="button" class="btn btn-primary"><?php __('Save changes', 'apelle-uno' );?></button>
         </div>
       
     </div>

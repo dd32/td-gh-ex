@@ -1,13 +1,13 @@
 /*
 Theme Name: Apelle uno 
-Theme URI: https://xxi.xxii.it/apello
+Theme URI: https://xxi.xxii.it/apellu
 Author: DevFabio
 Author URI: https://inventyourtrade.it/
 Description: Semplice ed essenziale, snello e pulito.
-Version: 1.0.6
+Version: 1.1.10
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: apelleuno
+Text Domain: apelle-uno
 Tags: custom-menu
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -126,3 +126,5 @@ li.widget {
 		list-style: none;}
 #container-apelleuno-footer-3 ul li ul li a{
 		color: #6c757d!important;}
+.apelle-uno-header-image{
+	text-align:center;}
