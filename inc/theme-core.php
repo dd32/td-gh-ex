@@ -176,7 +176,7 @@ function bc_business_consulting_scripts() {
 	wp_enqueue_style( 'font-awesome', get_theme_file_uri( '/vendors/font-awesome/font-awesome.css' ), '4.7.0' );
 	wp_enqueue_style( 'magnific-popup', get_theme_file_uri( '/vendors/magnific-popup/magnific-popup.css' ), '1.1.0' );
 	wp_enqueue_style( 'owl-carousel', get_theme_file_uri( '/vendors/owl-carousel/owl-carousel.css' ), '2.2.1' );
-	
+	wp_enqueue_style( 'aos-next', get_template_directory_uri() . '/vendors/aos-next/aos.css');
 	
 	/* THEME CORE CSS */
 	wp_enqueue_style( 'bc-business-consulting-navigation', get_theme_file_uri( '/assets/navigation-menu.css' ), '1.0.0' );
@@ -185,7 +185,7 @@ function bc_business_consulting_scripts() {
 
 	/* PLUGIN JS */
 	wp_enqueue_script( 'bootstrap', get_theme_file_uri( '/vendors/bootstrap/bootstrap.js' ), 0, '3.3.7', true );
-	
+	wp_enqueue_script( 'aos-next-js', get_template_directory_uri() . '/vendors/aos-next/aos.js',0, '3.3.7', true );
 	wp_enqueue_script( 'jquery-magnific-popup', get_template_directory_uri().'/vendors/magnific-popup/jquery.magnific-popup.js', 0, '1.1.0',true );
 	wp_enqueue_script( 'jquery-owl-carousel', get_theme_file_uri( '/vendors/owl-carousel/owl-carousel.js' ),0,'2.2.1',true );
 	wp_enqueue_script( 'jquery-sticky', get_theme_file_uri( '/vendors/sticky/jquery.sticky.js' ),0,'1.0.4',true );

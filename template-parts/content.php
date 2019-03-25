@@ -9,7 +9,7 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class( array('type-post','loop-posts') ); ?>>
+<article data-aos="fade-up" id="post-<?php the_ID(); ?>" <?php post_class( array('type-post','loop-posts') ); ?>>
 	
 		<?php
         /**

@@ -37,6 +37,11 @@ function bc_business_consulting_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
+			'name'      => 'Smart Slider ',
+			'slug'      => 'smart-slider-3',
+			'required'  => false,
+		),
+		array(
 			'name'      => 'Contact Form 7',
 			'slug'      => 'contact-form-7',
 			'required'  => false,
