@@ -483,10 +483,10 @@ table, caption, tbody, tfoot, thead, tr, th, td {
 }
 
 .is-phone .content-2-col,
-.is-phone .content-3-col {
+.is-phone .content-3-col {		/* changed in V 4.3.3 to be consistent with general #content padding rules */
 	width:         100%;
-	padding-right: 0;
-	padding-left:  0;
+	padding-right: 2%;
+	padding-left:  2%;
 }
 
 .atw-2-col-divider {

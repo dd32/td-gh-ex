@@ -97,7 +97,7 @@ function weaverx_do_admin() {
 
 
 			<div id="tab_themes" class="tab">
-				<?php do_weaverx_admin_subthemes(); ?>
+				<?php  do_weaverx_admin_subthemes(); ?>
 			</div>
 
 			<?php
@@ -107,13 +107,13 @@ function weaverx_do_admin() {
 			weaverx_sapi_form_top( 'weaverx_settings_group', 'weaverx_options_form' );
 			?>
 			<div id="tab_main" class="tab">
-				<?php do_weaverx_admin_mainopts(); ?>
+				<?php  do_weaverx_admin_mainopts(); ?>
 			</div>
 
 			<?php if ( has_action( 'weaverx_admin_advancedopts' ) ) { ?>
 
 				<div id="tab_advanced" class="tab">
-					<?php do_weaverx_admin_advancedopts(); ?>
+					<?php  do_weaverx_admin_advancedopts(); ?>
 				</div>
 				<?php
 			}
@@ -124,11 +124,11 @@ function weaverx_do_admin() {
 			?>
 
 			<div id="tab_pro" class="tab">
-				<?php weaverx_admin_pro(); ?>
+				<?php  weaverx_admin_pro(); ?>
 			</div>
 
 			<div id="tab_saverestore" class="tab">
-				<?php do_weaverx_admin_saverestore(); ?>
+				<?php  do_weaverx_admin_saverestore(); ?>
 			</div>
 
 		</div> <!-- #tab-saverestore -->

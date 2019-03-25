@@ -609,3 +609,7 @@ Fix: Older/New Posts links on Page with Posts
 
 = Version 4.3.1.2 =
 Fix: Page with Posts issue when home page substitute
+
+= Version 4.3.1.3 =
+Tweak: add l/r padding for 2 and 3 column content for consistency with general content padding
+Fix: hide post date broken

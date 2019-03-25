@@ -397,7 +397,6 @@ case 'trackback' :
 	}
 	//--
 
-
 	if ( ! function_exists( 'weaverx_meta_info_class' ) ) {
 		function weaverx_meta_info_class( $who ) {
 			// 'post_hide_date', 'post_hide_author', 'post_hide_categories', 'hide_singleton_category', 'post_hide_tags'
@@ -585,16 +584,16 @@ case 'trackback' :
 				$po .= '</span>';
 			}
 
-
-			$po .= sprintf( weaverx_filter_text( __( '<span class="sep posted-on">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>', 'weaver-xtreme' ) ),
-				esc_url( get_permalink() ),
-				esc_attr( get_the_time() ),
-				esc_attr( get_the_date( 'c' ) ),
-				esc_html( get_the_date() ),
-				esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
-				sprintf( esc_attr( esc_html__( 'View all posts by %s', 'weaver-xtreme' ) ), get_the_author() ),
-				weaverx_get_the_author()
-			);
+			// weaverx_filter_text strips <time>
+			$po .= sprintf( weaverx_filter_code( __( '<span class="sep posted-on">Posted on </span><a href="%1$s" title="%2$s" rel="bookmark"><time class="entry-date" datetime="%3$s">%4$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%5$s" title="%6$s" rel="author">%7$s</a></span></span>','weaver-xtreme') ),
+		esc_url( get_permalink() ),
+		esc_attr( get_the_time() ),
+		esc_attr( get_the_date( 'c' ) ),
+		esc_html( get_the_date() ),
+		esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+		sprintf( esc_attr(__( 'View all posts by %s','weaver-xtreme')), get_the_author() ),
+		weaverx_get_the_author()
+	);
 
 
 			// updated time changed 3.1.11 to handle published as well. Can't mess with messages because of translations.
