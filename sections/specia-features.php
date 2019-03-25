@@ -29,7 +29,7 @@
 					<?php endif; ?>
 					
 					<?php if ($features_description)  : ?>
-						<p><?php echo esc_html($features_description); ?></p>
+						<p class="section-description"><?php echo esc_html($features_description); ?></p>
 					<?php endif; ?>
                 </div>
             </div>

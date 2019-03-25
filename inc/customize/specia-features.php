@@ -1,6 +1,6 @@
 <?php
 function benzer_features_setting( $wp_customize ) {
-
+$selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' : 'refresh';
 	/*=========================================
 	Features Section Panel
 	=========================================*/
@@ -64,6 +64,7 @@ function benzer_features_setting( $wp_customize ) {
 	        'default'			=> '',
 			'capability'     	=> 'edit_theme_options',
 			'sanitize_callback' => 'specia_sanitize_html',
+			'transport'         => $selective_refresh,
 		)
 	);	
 	
@@ -84,6 +85,7 @@ function benzer_features_setting( $wp_customize ) {
 	        'default'			=> '',
 			'capability'     	=> 'edit_theme_options',
 			'sanitize_callback' => 'specia_sanitize_html',
+			'transport'         => $selective_refresh,
 		)
 	);	
 	
@@ -152,4 +154,35 @@ function benzer_features_setting( $wp_customize ) {
 }
 
 add_action( 'customize_register', 'benzer_features_setting' );
+
+// Feature section selective refresh
+function benzer_home_feature_section_partials( $wp_customize ){
+
+	// features_title
+	$wp_customize->selective_refresh->add_partial( 'features_title', array(
+		'selector'            => '.features-version-one .section-heading',
+		'settings'            => 'features_title',
+		'render_callback'  => 'benzer_home_features_title_render_callback',
+	
+	) );
+	
+	// features_description
+	$wp_customize->selective_refresh->add_partial( 'features_description', array(
+		'selector'            => '.features-version-one .section-description',
+		'settings'            => 'features_description',
+		'render_callback'  => 'benzer_home_features_description_render_callback',
+	
+	) );
+	}
+
+add_action( 'customize_register', 'benzer_home_feature_section_partials' );
+
+// features_title
+function benzer_home_features_title_render_callback() {
+	return get_theme_mod( 'features_title' );
+}
+// features_description
+function benzer_home_features_description_render_callback() {
+	return get_theme_mod( 'features_description' );
+}
 ?>
