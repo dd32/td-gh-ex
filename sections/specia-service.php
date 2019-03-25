@@ -36,7 +36,7 @@
 				<?php endif; ?>
 				
 				<?php if ($service_description) : ?>
-					<p><?php echo esc_html($service_description); ?></p>
+					<p class="section-description"><?php echo esc_html($service_description); ?></p>
 				<?php endif; ?>
 				</div>
 			</div>

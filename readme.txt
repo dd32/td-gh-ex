@@ -4,11 +4,11 @@ Contributors: specia
 Requires at least: WordPress 4.4
 Tested up to: WordPress 5.0.3
 Requires PHP: 5.6
-Stable tag: 1.0.61
-Version: 1.0.61
+Stable tag: 1.0.62
+Version: 1.0.62
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
-Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, education, entertainment, food-and-drink, photography, portfolio, editor-style, grid-layout
+Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, portfolio, editor-style, grid-layout
 
 Avira WordPress Theme, Copyright 2019 Specia Theme
 Avira is distributed under the terms of the GNU GPL
@@ -79,6 +79,10 @@ Source: https://stocksnap.io
 License: CC0 License
 
 ##Changelog
+version 1.0.62
+* Add Selctive Refresh Feature
+* Remove some tags
+
 version 1.0.61
 * Add images alt feature
 
