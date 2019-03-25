@@ -5,56 +5,67 @@
  */
 
 get_header(); 
+if (!is_home() && is_front_page()) {
+	$hideslide = get_theme_mod('hide_slider', '1');
+	 if($hideslide == ''){   
+$pages = array();
+for($sld=7; $sld<10; $sld++) { 
+	$mod = absint( get_theme_mod('page-setting'.$sld));
+    if ( 'page-none-selected' != $mod ) {
+      $pages[] = $mod;
+    }	
+} 
+if( !empty($pages) ) :
+$args = array(
+      'posts_per_page' => 3,
+      'post_type' => 'page',
+      'post__in' => $pages,
+      'orderby' => 'post__in'
+    );
+    $query = new WP_Query( $args );
+    if ( $query->have_posts() ) :	
+	$sld = 7;
 ?>
-
-            
-<?php if ( is_front_page() && !is_home() ) { ?>
-	<?php $hideslide = get_theme_mod('hide_slider', '1'); ?>
-		<?php if($hideslide == ''){ ?>
-                <!-- Slider Section -->
-                <?php for($sld=7; $sld<10; $sld++) { ?>
-                	<?php if( get_theme_mod('page-setting'.$sld)) { ?>
-                	<?php $slidequery = new WP_query(array('page_id' => get_theme_mod('page-setting'.$sld,true))); ?>
-                	<?php while( $slidequery->have_posts() ) : $slidequery->the_post();
-                			$image = wp_get_attachment_url( get_post_thumbnail_id($post->ID));
-                			$img_arr[] = $image;
-               				$id_arr[] = $post->ID;
-                		endwhile;
-						wp_reset_postdata();
-                	}
-                }
-                ?>
-<?php if(!empty($id_arr)){ ?>
-        <div id="slider" class="nivoSlider">
-            <?php 
-            $i=1;
-            foreach($img_arr as $url){ ?>
-            <?php if(!empty($url)){ ?>
-            <img src="<?php echo esc_url($url); ?>" title="#slidecaption<?php echo esc_attr($i); ?>" />
-            <?php } ?>
-            <?php $i++; }  ?>
-        </div>   
-<?php 
-	$i=1;
-		foreach($id_arr as $id){ 
-		$title = get_the_title( $id ); 
-		$post = get_post($id); 
-?>                 
-<div id="slidecaption<?php echo esc_attr($i); ?>" class="nivo-html-caption">
-    <div class="top-bar">
-    	<h2><a href="<?php the_permalink(); ?>"><?php echo esc_html($title); ?></a></h2>
-    	<?php the_excerpt(); ?>
-        <a class="slide-button" href="<?php the_permalink(); ?>"><?php echo esc_attr(get_theme_mod('slide_text',__('Read More','babycare')));?></a>
+<section id="home_slider">
+  <div class="slider-wrapper theme-default">
+    <div id="slider" class="nivoSlider">
+		<?php
+        $i = 0;
+        while ( $query->have_posts() ) : $query->the_post();
+          $i++;
+          $babycare_slideno[] = $i;
+          $babycare_slidetitle[] = get_the_title();
+		  $babycare_slidedesc[] = get_the_excerpt();
+          $babycare_slidelink[] = esc_url(get_permalink());
+          ?>
+          <img src="<?php the_post_thumbnail_url('full'); ?>" title="#slidecaption<?php echo esc_attr( $i ); ?>" />
+          <?php
+        $sld++;
+        endwhile;
+          ?>
     </div>
-</div>      
-    <?php $i++; } ?>       
-     </div>
-<div class="clear"></div>        
+        <?php
+        $k = 0;
+        foreach( $babycare_slideno as $babycare_sln ){ ?>
+    <div id="slidecaption<?php echo esc_attr( $babycare_sln ); ?>" class="nivo-html-caption">
+      <div class="top-bar">
+        <h2><a href="<?php echo esc_url($babycare_slidelink[$k] ); ?>"><?php echo esc_html($babycare_slidetitle[$k] ); ?></a></h2>
+        <p><?php echo esc_html($babycare_slidedesc[$k] ); ?></p>
+        <div class="clear"></div>
+        <a class="slide-button" href="<?php echo esc_url($babycare_slidelink[$k] ); ?>">
+          <?php echo esc_html(get_theme_mod('slide_text',__('Read More','babycare')));?>
+          </a>
+      </div>
+    </div>
+ 	<?php $k++;
+       wp_reset_postdata();
+      } ?>
+<?php endif; endif; ?>
+  </div>
+  <div class="clear"></div>
 </section>
-<?php } ?>
-<div class="clear"></div>
-<!-- Slider Section -->
-<?php } } ?>
+<?php } } 
+?>
 
   <div class="main-container">
                        <?php $hidebox = get_theme_mod('hide_section', '1'); ?>  

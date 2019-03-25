@@ -4,8 +4,8 @@
 
 Theme Name      :   Babycare
 Theme URI       :   https://flythemes.net/wordpress-themes/free-babysitter-wordpress-theme/
-Version         :   1.0
-Tested up to    :   WP 4.9.6
+Version         :   1.1
+Tested up to    :   WP 5.1.1
 Author          :   Flythemes
 Author URI      :   https://www.flythemes.net/
 

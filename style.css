@@ -5,7 +5,7 @@ Author: Flythemes
 Author URI: https://flythemes.net
 Description:  Babycare is a professional, modern and responsive babysitter WordPress theme is best suitable for job listings site, especially for babysitters/nannies and parents, nannies site, a mom’s blog or other baby oriented sites. Babycare includes few options in its customizer panel where you can add slider upto 3 images and some services boxes also You can easily change any theme color. Babycare is fully optimized to be viewed on all devices and screen sizes which means it’s totally responsive and it will contribute a lot to your business’s success. TYhis theme is comaptible with the latest version of WordPress. This theme is working well with the plugins like woocommerce, jetpack and contact form 7.
 
-Version: 1.0
+Version: 1.1
 License: GNU General Public License
 License URI: license.txt
 Text Domain: babycare
@@ -148,7 +148,7 @@ img.aligncenter {
     display: none;
 }
 section {
-    padding: 50px 0;
+    padding:0;
     position: relative;
 }
 h2.section-title {
