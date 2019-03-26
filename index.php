@@ -6,7 +6,7 @@
     <div class="l-top-banner__logo">
 
                             <div class="c-logo " itemscope="" itemtype="http://schema.org/Organization">
-                                <a href="/" id="logo" itemprop="url">
+                                <a href="<?php echo esc_url(get_site_url()); ?>" id="logo" itemprop="url">
                                     <meta itemprop="name" content="Demo">
                                     <?php 
 			$custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -26,9 +26,9 @@
         <?php	
 			if ( have_posts() ) : while ( have_posts() ) : the_post();
 			?><div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-            <h1><?php 
+            <a href="<?php echo esc_url( get_permalink() ); ?>"><h1><?php 
 				the_title();
-			?></h1>
+			?></h1></a>
             
 			<?php 
 			if ( has_post_thumbnail() ) {
