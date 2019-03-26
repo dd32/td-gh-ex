@@ -582,12 +582,12 @@ function bento_metaboxes() {
 			'id' => $bento_prefix . 'orderby_grid',
 			'type' => 'select',
 			'options' => array(
-				'date' => esc_html__( 'Created date (default)', 'bento' ),
+				'date_created' => esc_html__( 'Created date (default)', 'bento' ),
 				'modified' => esc_html__( 'Last modified', 'bento' ),
 				'title' => esc_html__( 'Post title', 'bento' ),
 				'comment_count' => esc_html__( 'Comment count', 'bento' ),
 			),
-			'default_cb' => 'date',
+			'default_cb' => 'date_created',
 		)
 	);
 	$bento_grid_settings->add_field(

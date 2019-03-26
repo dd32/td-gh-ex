@@ -124,6 +124,20 @@
 	margin-left: -18px;
 }
 
+.metabox-location-normal .postbox h2 {
+	background-color: #f5f5f5;
+	font-size: 18px;
+	color: #000;
+}
+
+.metabox-location-normal .postbox .inside {
+	padding-left: 30px;
+}
+
+#grid_settings_metabox {
+	display: none;
+}
+
 
 /* Smaller mobile screens */
 @media screen and (min-width: 10em) {

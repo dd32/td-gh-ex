@@ -123,15 +123,13 @@ function bento_admin_scripts() {
 	$screen = get_current_screen();
 	$edit_screens = array( 'post', 'page', 'project', 'product' );
 	if ( in_array( $screen->id, $edit_screens ) ) {
-		wp_enqueue_script( 'bento-admin-scripts', get_template_directory_uri().'/includes/admin/admin-scripts.js', array('jquery'), false, true );
+		wp_enqueue_script( 'bento-admin-scripts', get_template_directory_uri().'/includes/admin/admin-scripts.js' );
 	}
 	$old_options = get_option( 'satori_options', 'none' );
 	if ( $old_options != 'none' ) {
-		wp_enqueue_script( 'bento-migrate-scripts', get_template_directory_uri().'/includes/js/migrate-scripts.js', array('jquery'), false, true );
+		wp_enqueue_script( 'bento-migrate-scripts', get_template_directory_uri().'/includes/js/migrate-scripts.js' );
 	}
-	if ( 'appearance_page_about-bento' == $screen->id ) {
-		wp_enqueue_style( 'bento-admin-styles', get_template_directory_uri().'/includes/admin/admin-styles.css', array(), null, 'all' );
-	}
+	wp_enqueue_style( 'bento-admin-styles', get_template_directory_uri().'/includes/admin/admin-styles.css', array(), null, 'all' );
 	
 	// Passing php variables to admin scripts
 	bento_localize_migrate_scripts();
@@ -1033,6 +1031,9 @@ function bento_grid_query() {
 		$bento_grid_query_args['orderby'] = $bento_grid_orderby;
 	}
 	$bento_grid_order = get_post_meta( $post_id, 'bento_order_grid', true );
+	if ( $bento_grid_order == 'date_created' ) {
+		$bento_grid_order = 'date';
+	}
 	if ( $bento_grid_order != '' ) {
 		$bento_grid_query_args['order'] = $bento_grid_order;
 	}
