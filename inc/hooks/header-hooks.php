@@ -175,7 +175,7 @@ if( ! function_exists('arrival_top_header_left')){
 				<span>
 					<?php esc_html_e('Call Us:','arrival'); ?>
 				</span>
-				<a href="tel:<?php echo esc_attr($arrival_top_header_phone);?>">
+				<a href="<?php echo esc_url('tel:'.$arrival_top_header_phone);?>">
 					<?php echo esc_html($arrival_top_header_phone); ?>
 				</a>
 			</div>
