@@ -42,7 +42,7 @@ echo weaverx_schema( 'post' ); ?>>
 		<footer class="entry-utility<?php echo weaverx_text_class( 'post_info_bottom' ); ?>">
 
 			<?php
-			printf( weaverx_filter_code( __( '<a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s">%3$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s" rel="author">%6$s</a></span></span>', 'weaver-xtreme' ) ),
+			printf( weaverx_filter_styled_translation( __( '<a href="%1$s" rel="bookmark"><time class="entry-date" datetime="%2$s">%3$s</time></a><span class="by-author"> <span class="sep"> by </span> <span class="author vcard"><a class="url fn n" href="%4$s" title="%5$s" rel="author">%6$s</a></span></span>', 'weaver-xtreme' ) ),
 				esc_url( get_permalink() ),
 				get_the_date( 'c' ),
 				get_the_date(),

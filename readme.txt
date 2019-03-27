@@ -9,7 +9,7 @@ translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.9
 Tested up to: 5.1
-Stable tag: 4.3.1.2
+Stable tag: 4.3.1.4
 
 == Description ==
 
@@ -613,3 +613,6 @@ Fix: Page with Posts issue when home page substitute
 = Version 4.3.1.3 =
 Tweak: add l/r padding for 2 and 3 column content for consistency with general content padding
 Fix: hide post date broken
+
+= Version 4.3.1.4 =
+Fix: hide post author

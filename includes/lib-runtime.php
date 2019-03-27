@@ -548,6 +548,10 @@ function weaverx_filter_head( $text ) {
 	}
 }
 
+function weaverx_filter_styled_translation ( $text ) {
+	return wp_check_invalid_utf8( trim( $text ) );
+
+}
 function weaverx_filter_code( $text ) {
 
 	// Much option input from Weaver Xtreme can be code, and thus must not be
