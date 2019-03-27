@@ -2,8 +2,8 @@
 Contributors: catchthemes
 Tags: two-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, portfolio
 Requires at least: 4.8
-Tested up to: 5.0
-Stable tag: 1.3.1
+Tested up to: 5.1.1
+Stable tag: 1.3.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -42,6 +42,11 @@ You can check our Theme Demo at https://catchthemes.com/demo/adonis/
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 1.3.2 (Released: March 27, 2019) =
+* Bug Fixed: Color issue in menu
+* Bug Fixed: No-sidebar full width layout for full align option
+* Bug Fixed: get_privacy_policy_link() issue on old WP versions
 
 = 1.3.1 (Released: December 18, 2018) =
 * Added: Theme support for for editor styles
@@ -90,7 +95,7 @@ For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Copyright ==
 
-Adonis WordPress Theme, Copyright 2012-2018 Catchthemes.com
+Adonis WordPress Theme, Copyright 2012-2019 Catchthemes.com
 Adonis is distributed under the terms of the GNU GPL
 
 == Resources ==

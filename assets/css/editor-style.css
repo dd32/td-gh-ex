@@ -1,23 +1,6 @@
 /*
 Theme Name: Adonis
-Theme URI: https://catchthemes.com/themes/adonis
-Author: Catch Themes
-Author URI: https://catchthemes.com/
-Description: Description
-Version: 0.1
-License: GNU General Public License v2 or later
-License URI: LICENSE
-Text Domain: adonis
-Tags:
-
-This theme, like WordPress, is licensed under the GPL.
-Use it to make something cool, have fun, and share what you've learned with others.
-
-Adonis is based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc.
-Underscores is distributed under the terms of the GNU GPL v2 or later.
-
-Normalizing styles have been helped along thanks to the fine work of
-Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
+Description: Used to style the TinyMCE editor.
 */
 
 /*--------------------------------------------------------------
@@ -31,24 +14,14 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Navigation
 	## Links
 # Alignments
-# Content
 # Padding/Margin
 # Content
 	## Posts and pages
 # Media
 	## Captions
 	## Galleries
-# Modules
-	## Stat Section & Contact Section
-	## Portfolio Section
-	## Testimonial Section & Clients Section
-	## Hero Content 
-	## Archive Post Wrap 
-	## Singular Content Wrap	
-# Footer
-# Extra Elements
 # Media Queries
-	## >= 640px
+	## >= 768px
 	## >= 1024px
 	## >= 1366px
 	## >= 1600px
@@ -89,7 +62,6 @@ blockquote {
 	font-size: 1.125rem;
 }
 
-button, 
 .button, 
 input[type="button"], 
 input[type="reset"], 
@@ -365,11 +337,11 @@ td {
 }
 
 .drop-cap:first-letter {
-  	float: left;
-  	font-size: 100px;
-  	font-size: 6.25rem;
-  	line-height: 0.6;
-  	margin: 8px 16px -15px -3px;
+	float: left;
+	font-size: 102px;
+	font-size: 6.375rem;
+	line-height: 0.6;
+	margin: 8px 16px 3px -3px;
 }
 
 
@@ -381,9 +353,6 @@ input {
 	line-height: normal;
 }
 
-button,
-button[disabled]:hover,
-button[disabled]:focus,
 .button,
 input[type="button"],
 input[type="button"][disabled]:hover,
@@ -408,7 +377,6 @@ input[type="submit"][disabled]:focus {
 	transition:         all 0.2s ease-in-out;
 }
 
-button:focus,
 input[type="button"]:focus,
 input[type="reset"]:focus,
 input[type="submit"]:focus {
@@ -433,7 +401,7 @@ textarea {
 	border: 1px solid;
 	-webkit-border-radius: 3px;
 	border-radius: 3px;
-	padding: 11px 13px;
+	padding: 13px;
 	width: 100%;
 }
 
@@ -772,31 +740,9 @@ p > video {
 	display: none;
 }
 
-
 /*--------------------------------------------------------------
-## Stat Section & Contact Section
+# Media Queries
 --------------------------------------------------------------*/
-
-.contact-item {
-	margin-bottom: 30px;
-}
-
-.contact-item > :last-child {
-	margin-bottom: 0;
-}
-
-#contact-section {
-	text-align: left;
-}
-
-.contact-icon {
-	float: left;
-}
-
-.contact-icon .icon {
-	margin-right: 15px;
-}
-
 
 /*--------------------------------------------------------------
 ## >= 768px
@@ -867,12 +813,6 @@ p > video {
 ## >= 1366px
 --------------------------------------------------------------*/
 @media screen and (min-width: 85.375em) {
-	.drop-cap:first-letter {
-	  	font-size: 114px;
-	  	font-size: 7.125rem;
-	  	margin: 10px 16px -20px -3px;
-	}	
-
 	h1,
 	.mce-content-body h1 {
 		font-size: 38px;
@@ -898,12 +838,6 @@ p > video {
 --------------------------------------------------------------*/ 
 
 @media screen and (min-width: 100em) {
-	.drop-cap:first-letter {
-	  	font-size: 122px;
-	  	font-size: 7.625rem;
-	  	margin: 12px 16px -20px -3px;
-	}	
-
 	caption, 
 	th, 
 	td {
@@ -952,11 +886,6 @@ textarea {
 }
 
 /* Button Text Color */
-button,
-button:hover,
-button:focus,
-button[disabled]:hover,
-button[disabled]:focus,
 .button,
 .button:hover,
 .button:focus,
@@ -979,9 +908,6 @@ input[type="submit"]:focus {
 }/* Button Hover Text Color is Same as button text color */
 
 /* Button Background Color */
-button,
-button[disabled]:hover,
-button[disabled]:focus,
 .button,
 input[type="button"],
 input[type="button"][disabled]:hover,
@@ -996,8 +922,6 @@ input[type="submit"][disabled]:focus {
 }
 
 /* Button Hover Background Color */
-button:hover,
-button:focus,
 .button:hover,
 .button:focus,
 input[type="button"]:hover,
@@ -1069,12 +993,8 @@ textarea {
 
 .rtl .drop-cap::first-letter {
     float: right;
-    margin: 10px -3px -20px 16px;
+    margin: 10px -3px -3px 14px;
 }
-
-/*--------------------------------------------------------------
-# Typography
---------------------------------------------------------------*/
 
 .rtl blockquote {
 	padding: 0 55px 0 0;

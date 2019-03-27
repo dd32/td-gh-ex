@@ -85,6 +85,10 @@ Description: Used to style Gutenberg Blocks.
 	    margin-right: -120px;
 	    max-width: 1310px;
 	}
+
+	.no-sidebar.full-width-layout .alignwide {
+	    max-width: 1870px;
+	}
 }
 
 /*--------------------------------------------------------------

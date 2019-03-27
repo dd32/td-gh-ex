@@ -118,8 +118,14 @@ function adonis_footer_content() {
 		return;
 	}
 
-	$search  = array( '[the-year]', '[site-link]', '[privacy-policy-link]' );
-	$replace = array( esc_attr( date_i18n( __( 'Y', 'adonis' ) ) ), '<a href="'. esc_url( home_url( '/' ) ) .'">'. esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>', get_the_privacy_policy_link() );
+	$search  = array( '[the-year]', '[site-link]' );
+		
+	$replace = array( esc_attr( date_i18n( __( 'Y', 'adonis' ) ) ), '<a href="'. esc_url( home_url( '/' ) ) .'">'. esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>' );
+
+	if ( function_exists( 'get_the_privacy_policy_link' ) ) {
+		$search  = array( '[the-year]', '[site-link]', '[privacy-policy-link]' );
+		$replace = array( esc_attr( date_i18n( __( 'Y', 'adonis' ) ) ), '<a href="'. esc_url( home_url( '/' ) ) .'">'. esc_attr( get_bloginfo( 'name', 'display' ) ) . '</a>', get_the_privacy_policy_link() );
+	}
 
 	$footer_content = str_replace( $search, $replace, $footer_content );
 
