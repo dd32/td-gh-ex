@@ -1,10 +1,10 @@
 ﻿=== Bagility ===
 Contributors: Managethemes
-Tags: three-columns, left-sidebar, right-sidebar, custom-colors, custom-logo, featured-images, full-width-template, threaded-comments, blog, e-commerce, entertainment, food-and-drink, news
+Tags: three-columns, left-sidebar, right-sidebar, custom-colors, custom-logo, featured-images, full-width-template, threaded-comments, blog, e-commerce, news
 Requires at least: 4.0.5
 Tested up to: 4.8.5
 Requires PHP: 5.6
-Stable tag: 1.0
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,15 +29,15 @@ Bagility WordPress Theme is distributed under the terms of the GNU GPL
 Yes. Theme supports SiteOrigin Page Builder and Contact Form 7.
 
 == Changelog ==
---- Version 1.0 ----
+--- Version 1.1 ----
 1. Released
 
 == Screenshots ==
 ============================================
-**** Screenshot Images
+**** Screenshot Image & Banner Image
 	 Stocksnap Images
 	 License: CC0 1.0 Universal (CC0 1.0)
 	 Source: https://stocksnap.io/license
 
-***** Screenshot image CCO by Christina Morillo *****/
+***** Screenshot & Banner image CCO by Christina Morillo *****/
 1. https://stocksnap.io/photo/WNOZYNJ0VM
