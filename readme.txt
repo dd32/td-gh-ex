@@ -1,10 +1,11 @@
 === Advocator Lite WordPress Theme ===
 Contributors: rescuethemes
 Donate link: https://rescuethemes.com
-Tags: custom-menu, translation-ready, threaded-comments, theme-options, two-columns, custom-colors, featured-images
+Tags: custom-menu, translation-ready, threaded-comments, theme-options, two-columns, custom-colors, featured-images, right-sidebar,responsive-layout
+
 Requires at least: 4.1
-Tested up to: 4.8.2
-Stable tag: 1.0.4
+Tested up to: 5.1
+Stable tag: 1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -144,15 +145,21 @@ Copyright: @jamigibbs
 
 == Changelog ==
 
+= 1.1 - 2019-03-14
+
+	* Support for WordPress 5.1, block editor styles and Gutenberg
+
+
 = 1.0.5 - 2018-5-7 =
-* Tested with support for 4.9.5
+
+	* Tested with support for 4.9.5
 
 = 1.0.4 - 2017-10-17 = 
 
-* Tested with 4.8.2
+	* Tested with 4.8.2
 
 = 1.0.3 - 2017-3-15 =
 
-* First Release
+	* First Release
 
 

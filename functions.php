@@ -43,6 +43,35 @@ function rescue_setup() {
 	add_theme_support( 'post-thumbnails' );
     add_image_size( 'advocator-blog_posts', 550, 380, false );
     add_image_size( 'advocator-full_page', 1000, 550, false );
+   
+    
+    // Adding support for core block visual styles.
+	add_theme_support( 'wp-block-styles' );
+	
+	/* Add support for editor styles */
+	add_editor_style( array( 'editor-style.css', '//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,400,300,600,700,800') );
+	
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+		
+	// Add support for custom color scheme.
+	add_theme_support( 'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'Advocator Light Green', 'advocator-lite' ),
+				'slug'  => 'Advocator-light-green',
+				'color' => '#7faf3f',
+			),
+			array(
+				'name'  => esc_html__( 'Advocator Dark Gray', 'advocator-lite' ),
+				'slug'  => 'advocator-dark-green',
+				'color' => '#198562',
+			),
+			array(
+				'name'  => esc_html__( 'Advocator Gray', 'advocator-lite' ),
+				'slug'  => 'advocator-gray',
+				'color' => '#666666',
+			),
+	) );
 
 	// Register our navigation areas
 	register_nav_menus(
@@ -207,6 +236,17 @@ function rescue_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'rescue_scripts' );
+
+/**
+ * Enqueue theme styles within Gutenberg.
+ */
+function advocator_lite_block_editor_assets() {
+
+	wp_enqueue_style( 'advocator_lite_block_editor', get_theme_file_uri( '/inc/block-editor.css' ), false, $advocator['Version'], 'all' );
+
+}
+add_action( 'enqueue_block_editor_assets', 'advocator_lite_block_editor_assets' );
+
 
 /*----------------------------------------------------*/
 /*  Customizer Library

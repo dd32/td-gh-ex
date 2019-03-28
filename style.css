@@ -5,7 +5,7 @@ Theme URI: https://rescuethemes.com/wordpress-themes/advocator-lite/
 Author: Rescue Themes
 Author URI: https://rescuethemes.com
 Description: A WordPress theme for non-profits, charities, and organizations that do good.
-Version:  1.0.5
+Version:  1.1 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advocator-lite
@@ -55,6 +55,7 @@ Advocator is based on Underscores http://underscores.me/, (C) 2012-2015 Automatt
 14.0 Give Donations
 15.0 WooCommerce
 16.0 Clearings
+17.0 Gutenberg
 
 --------------------------------------------------------------*/
 /*--------------------------------------------------------------
@@ -91,7 +92,7 @@ a {
   -moz-transition: 0.2s;
   -webkit-transition: 0.2s;
   transition: 0.2s;
-  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
   /* Remove Gray Highlight When Tapping Links in Mobile Safari - http://goo.gl/cs61C1 */ }
 
 a:hover, a:focus {
@@ -311,7 +312,7 @@ object {
   top: 13px;
   right: 5px;
   border-width: 3px;
-  border-color: transparent transparent transparent;
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
   background-color: #4b4f52;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -358,7 +359,7 @@ object {
   top: 13px;
   right: 5px;
   border-width: 4px;
-  border-color: transparent transparent transparent;
+  border-color: rgba(0, 0, 0, 0) rgba(0, 0, 0, 0) rgba(0, 0, 0, 0);
   background-color: #FFFFFF;
   -webkit-border-radius: 20px;
   -moz-border-radius: 20px;
@@ -1355,7 +1356,7 @@ a.image_hover {
   margin-top: 10px;
   padding: 28px 125px !important;
   background: url("img/paypal_button.png") no-repeat #FFFFFF;
-  box-shadow: 0 0 1px transparent;
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
   /* Mobile */ }
   @media only screen and (max-width: 40em) {
     #dgx-donate-form input.dgx-donate-pay-enabled input.dgx-donate-pay-enabled {
@@ -1910,4 +1911,69 @@ blockquote:after,
 .content-bottom-widgets:after {
   clear: both; }
 
+/*--------------------------------------------------------------
+17.0 Gutenberg
+--------------------------------------------------------------*/
+.wp-block-pullquote {
+  padding: 1em;
+  border-top: none;
+  border-bottom: none; }
 
+.wp-block-image figure {
+  margin-top: 0; }
+
+.wp-block-separator.is-style-dots:before {
+  color: #DDDDDD; }
+
+.wp-block-table td, .wp-block-table th {
+  border: none; }
+
+.wp-block-button__link {
+  background-color: #7faf3f;
+  color: #fff;
+  font-size: 14px;
+  margin: 0;
+  line-height: 1;
+  padding: .818em 1.2em;
+  font-weight: 400;
+  border-radius: 4px;
+  left: auto;
+  border: 0;
+  display: inline-block;
+  background-image: none;
+  box-shadow: none;
+  text-shadow: none;
+  font-family: "Open Sans", Verdana, Helvetica, sans-serif; }
+
+.wp-block-button__link:hover {
+  background-color: #198562;
+  color: #fff; }
+
+.wp-block-button.aligncenter {
+  padding-bottom: 1.5em; }
+
+.wp-block-button.alignleft, .wp-block-button.alignright {
+  margin-top: 1.5em; }
+
+.pre.wp-block-preformatted, pre.wp-block-verse, .wp-block-quote.is-style-large, .wp-block-quote.is-large {
+  padding: 1.5em; }
+
+ul.wp-block-gallery {
+  margin-left: 0; }
+
+hr.wp-block-separator {
+  border-bottom: 1px solid #DDDDDD;
+  border-width: 1px 0 0;
+  clear: both;
+  height: 0; }
+
+.wp-block-pullquote {
+  border-bottom: none;
+  border-top: none; }
+
+.entry-content .alignfull {
+  margin-left: calc( -100vw / 2 + 100% / 2 );
+  margin-right: calc( -100vw / 2 + 100% / 2 );
+  max-width: 100vw; }
+
+/*# sourceMappingURL=style.css.map */
