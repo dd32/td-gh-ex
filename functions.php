@@ -143,8 +143,8 @@ function appointment_add_to_author_profile( $contactmethods ) {
       'import_file_url'            => 'https://webriti.com/themes/dummydata/appointment/lite/appointment-content.xml',
       'import_widget_file_url'     => 'https://webriti.com/themes/dummydata/appointment/lite/appointment-widget.json',
       'import_customizer_file_url' => 'https://webriti.com/themes/dummydata/appointment/lite/appointment-customize.dat',
-      'import_notice'              => sprintf(__( 'Click the large blue button to start the dummy data import process.</br></br>Please be patient while WordPress imports all the content.</br></br>
-			<h3>Recommended Plugins</h3> Appointment theme supports the following plugins:</br> </br><li> <a href="https://wordpress.org/plugins/contact-form-7/"> Contact form 7</a> </l1> </br></br> <li> <a href="https://wordpress.org/plugins/bootstrap-3-shortcodes/"> Bootstrap Shortcodes</a> </l1>','appointment' )),
+      'import_notice'              => sprintf(__( 'Click the large blue button to start the dummy data import process.<br /><br />Please be patient while WordPress imports all the content.<br /><br />
+			<h3>Recommended Plugins</h3> Appointment theme supports the following plugins:<br /><br /><li> <a href="https://wordpress.org/plugins/contact-form-7/"> Contact Form 7</a> </li> <br /><br /> <li> <a href="https://wordpress.org/plugins/bootstrap-3-shortcodes/"> Bootstrap Shortcodes</a> </li>','appointment' )),
 			),
     	
     	

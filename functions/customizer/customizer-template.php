@@ -217,7 +217,7 @@ class appointment_Customize_contact_callout_upgrade extends WP_Customize_Control
 		'appointment_options[contact_google_map_enabled]',
 		array(
 			'type' => 'checkbox',
-			'label' => __('Hide Google Map','appointment'),
+			'label' => __('Hide Google Maps','appointment'),
 			'section' => 'contact_section_settings',
 		)
 	);
@@ -250,7 +250,7 @@ class appointment_Customize_contact_callout_upgrade extends WP_Customize_Control
 		)
 	);	
 	$wp_customize->add_control( 'appointment_options[contact_google_map_url]',array(
-    'label'   => __('Google Map URL','appointment'),
+    'label'   => __('Google Maps URL','appointment'),
     'section' => 'contact_section_settings',
 	 'type' => 'textarea','textarea_attrs'=> array('disabled'=>'disabled'))  );
 	 
@@ -264,7 +264,7 @@ class appointment_Customize_contact_callout_upgrade extends WP_Customize_Control
     */
     public function render_content() {
     ?>
-    <a href="#" class="button"><?php _e( 'Click here to add Google Map', 'appointment' ); ?></a>
+    <a href="#" class="button"><?php _e( 'Click here to add Google Maps', 'appointment' ); ?></a>
     <?php
     }
 }

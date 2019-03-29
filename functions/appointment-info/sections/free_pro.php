@@ -44,7 +44,7 @@
 						</li>
 						
 						<li>
-							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Google Map','appointment' ); ?></span>
+							<span class="plan-feature"><i class="fa fa-check-circle-o green-icon"></i> <?php esc_html_e( 'Google Maps','appointment' ); ?></span>
 							<p><?php esc_html_e( 'Display your Shop and Business location on your website using Google Maps.','appointment' ); ?></p>
 						</li>
 						
