@@ -1,4 +1,6 @@
 Appointment Blue is the child version of Appointment theme.
+@version 1.1.7.1
+1. Update string.
 @version 1.1.7
 1. Update string.
 @version 1.1.6
