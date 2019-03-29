@@ -5,7 +5,7 @@ jQuery(document).ready( function() {
         menu: '#menu',
         side: 'right',
         easyClose: true,
-        menuWidth: '25em',
+        menuWidth: '16.25em',
         beforeOpen: function() {jQuery('.panel_hide_button').fadeIn()},
         beforeClose: function() {jQuery('.panel_hide_button').fadeOut()},
     });

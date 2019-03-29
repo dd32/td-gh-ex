@@ -5,7 +5,7 @@ Tags: custom-background, two-columns, one-column, custom-colors, flexible-header
 
 Requires at least: 4.0
 Tested up to: 5.1
-Stable tag: 1.1
+Stable tag: 1.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -19,6 +19,9 @@ Demo Here: http://demo.inkhive.com/adviso/
 
 
 == Changelog ==
+
+= 1.2 =
+* Fixed the Mobile Navigation issue
 
 = 1.1 =
 * Fixed the Navigation Blink issue for Mobiles

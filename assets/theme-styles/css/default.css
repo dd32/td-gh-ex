@@ -257,11 +257,15 @@ body.sidebar-disabled .alignfull {
   font-weight: 300;
   line-height: 1.5em;
   margin-top: 5%;
-  white-space: pre-line;
 }
 @media screen and (max-width: 768px) {
   #masthead .header-text {
     font-size: 28px;
+  }
+}
+@media screen and (min-width: 769px) {
+  #masthead .header-text {
+    white-space: pre-line;
   }
 }
 #masthead .header-cta {
