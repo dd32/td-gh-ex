@@ -215,6 +215,15 @@ $wp_customize->add_control(new Social_Textarea_Control($wp_customize, 'rss_url',
 	'label' => 'Show Tags on Home Page',
 	'section' => 'io_posts_settings',
 	));
+	$wp_customize->add_setting( 'iconic_one_updated_date', array(
+	'default' => '',
+	'sanitize_callback' => 'iconic_one_sanitize_checkbox',
+	));
+	$wp_customize->add_control('iconic_one_updated_date',array(
+	'type' => 'checkbox',
+	'label' =>  __( 'Replace published date with last updated date', 'iconic-one' ),
+	'section' => 'io_posts_settings',
+	));
 	// Add Section for Pro Version 
 	$wp_customize->add_section( 'iopro-upgrade', array(
 	'title'    => __( 'PRO Version', 'iconic-one' ),
@@ -236,7 +245,7 @@ $wp_customize->add_control(new Social_Textarea_Control($wp_customize, 'rss_url',
     );
 	$wp_customize->add_control( new Iconic_Customize_Text_Control(
         $wp_customize, 'iconic-one_pro_version', array(
-            'label' =>  __( 'Learn more about Iconic One Pro with Unlimited colors, Home Page Slider, Beautiful Author Pages with inbuilt Authorship, Ad Manager for Adsense and banner ads, breadcrumb, pagination and many more..', 'iconic-one' ),
+            'label' =>  __( 'Learn more about Iconic One Pro with Unlimited colors, Home Page Slider, Beautiful Author Pages, Ad Manager for Adsense and banner ads, breadcrumb, pagination and many more..', 'iconic-one' ),
             'section' => 'iopro-upgrade',
             'settings' => 'iconic-one-customizer-setting',
             'priority' => 	2

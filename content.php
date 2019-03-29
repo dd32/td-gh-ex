@@ -28,7 +28,11 @@
 			<span class="fn"><?php echo the_author_posts_link(); ?></span>
         </span>
         <span class="meta-sep">|</span> 
-			<span class="date updated"><?php echo get_the_date(); ?></span>		 
+			<?php if ( get_theme_mod( 'iconic_one_updated_date') != '1' )  { ?>	
+				<span class="date updated"><?php echo get_the_date(); ?></span>
+			<?php } else { ?>
+				<span class="date updated"><?php echo  get_the_modified_date('F j, Y'); ?></span>
+			<?php } ?>	 
         </div>
 		<div class="adt-comment">
 		<a class="link-comments" href="<?php  comments_link(); ?>"><?php comments_number(__('0 Comment','iconic-one'),__('1 Comment','iconic-one'),__('% Comments','iconic-one')); ?></a> 

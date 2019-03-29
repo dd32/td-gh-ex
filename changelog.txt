@@ -1,6 +1,12 @@
 Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/iconic-one/ for latest version
 
--------------- 17 January 2019 ----------------
+-------------- 29 March 2019 ----------------
+
+
+29/03/2019  - Version 1.9.9
+
+- Added option to choose published date or last updated date in customizer -> post settings
+- Minor below title meta style correction
 
 17/01/2019  - Version 1.9.8
 
