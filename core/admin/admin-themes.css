@@ -469,15 +469,7 @@ a.add_page {
 .seting-page h2 {
     font-size: 36px;
 }
-p.notice-text {
-    font-size: 15px;
-    float: left;
-	    padding: 10px 20px;
-}
-.notice.notice-success.is-dismissible {
-    background-color: #232121eb;
-    color: #fff;
-}
+
 /*hire-page*/
 .row{
 	margin:0!important;
@@ -554,4 +546,24 @@ h3.high-title {
     right: 0;
     border-top: 15px solid #595959;
     border-right: 15px solid transparent;
+}
+.notice.notice-success{
+    background-color: #232121eb;
+    color: #fff;
+    position: relative;
+}
+
+p.notice-text {
+    font-size: 15px;
+    float: left;
+    padding: 10px 20px;
+}
+a.dismiss {
+    color: #fff;
+    position: absolute;
+    text-align: right;
+    font-size: 24px;
+    right: 10px;
+    top: 10px;
+    z-index: 999;
 }
