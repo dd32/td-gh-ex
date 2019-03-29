@@ -48,8 +48,7 @@ if ( ! class_exists( 'Avid_Magazine_Multi_Check_Control' ) ) {
 			}
 		}
         
-        public function enqueue() {            
-            wp_enqueue_style( 'avid-magazine-multi-check', get_template_directory_uri() . '/inc/custom-controls/multicheck/multi-check.css', null );
+        public function enqueue() {
             wp_enqueue_script( 'avid-magazine-multi-check', get_template_directory_uri() . '/inc/custom-controls/multicheck/multi-check.js', array( 'jquery' ), false, true );             
         }
 

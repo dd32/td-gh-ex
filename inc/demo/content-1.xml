@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/5.1" created="2019-03-11 10:52" -->
+	<!-- generator="WordPress/5.1.1" created="2019-03-29 10:11" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>Avid Magazine</title>
 	<link>https://avidthemes.com/demo/avid-magazine</link>
 	<description>My WordPress Blog</description>
-	<pubDate>Mon, 11 Mar 2019 10:52:20 +0000</pubDate>
+	<pubDate>Fri, 29 Mar 2019 10:11:11 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://avidthemes.com/demo/avid-magazine</wp:base_site_url>
@@ -51,9 +51,13 @@
 	</wp:category>
 		<wp:category>
 		<wp:term_id>4</wp:term_id>
-		<wp:category_nicename><![CDATA[lifestyle]]></wp:category_nicename>
+		<wp:category_nicename><![CDATA[holiday]]></wp:category_nicename>
 		<wp:category_parent><![CDATA[]]></wp:category_parent>
-		<wp:cat_name><![CDATA[Lifestyle]]></wp:cat_name>
+		<wp:cat_name><![CDATA[Holiday]]></wp:cat_name>
+		<wp:termmeta>
+			<wp:meta_key><![CDATA[category-image-id]]></wp:meta_key>
+			<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:termmeta>
 	</wp:category>
 		<wp:category>
 		<wp:term_id>5</wp:term_id>
@@ -221,7 +225,7 @@
 	<wp:term><wp:term_id>18</wp:term_id><wp:term_taxonomy>nav_menu</wp:term_taxonomy><wp:term_slug><![CDATA[topnav]]></wp:term_slug><wp:term_name><![CDATA[topnav]]></wp:term_name>
 </wp:term>
 
-	<generator>https://wordpress.org/?v=5.1</generator>
+	<generator>https://wordpress.org/?v=5.1.1</generator>
 
 		<item>
 		<title>
@@ -384,11 +388,9 @@
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/2019/03/11/</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				 		]]>		</content:encoded>
+				<![CDATA[ ]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>269</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-11 10:38:32]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-11 10:38:32]]></wp:post_date_gmt>
@@ -397,7 +399,7 @@
 		<wp:post_name><![CDATA[269]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>6</wp:menu_order>
+		<wp:menu_order>7</wp:menu_order>
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
@@ -437,76 +439,16 @@
 							</item>
 					<item>
 		<title>
-				Buy Now		</title>
-		<link>https://avidthemes.com/demo/avid-magazine/2019/03/11/buy-now/</link>
-		<pubDate>Mon, 11 Mar 2019 10:38:32 +0000</pubDate>
-		<dc:creator><![CDATA[aib1y]]></dc:creator>
-		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/2019/03/11/buy-now/</guid>
-		<description></description>
-		<content:encoded>
-				<![CDATA[]]>		</content:encoded>
-		<excerpt:encoded>
-				<![CDATA[						]]>		</excerpt:encoded>
-		<wp:post_id>270</wp:post_id>
-		<wp:post_date><![CDATA[2019-03-11 10:38:32]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-03-11 10:38:32]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[buy-now]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>3</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="main-nav"><![CDATA[Main Nav]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[0]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[270]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[custom]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[http://phantomthemes.com/downloads/housepress-wordpress-theme/]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title>
 				564ade1f51e14d9732541902513e-1434991		</title>
-		<link>https://avidthemes.com/demo/avid-magazine/564ade1f51e14d9732541902513e-1434991/</link>
+		<link>https://avidthemes.com/demo/avid-magazine/full-width/564ade1f51e14d9732541902513e-1434991/</link>
 		<pubDate>Fri, 08 Mar 2019 12:29:53 +0000</pubDate>
 		<dc:creator><![CDATA[aib1y]]></dc:creator>
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/wp-content/uploads/2019/03/564ade1f51e14d9732541902513e-1434991.jpg</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-						]]>		</content:encoded>
+				<![CDATA[						]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>703</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-08 12:29:53]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-08 12:29:53]]></wp:post_date_gmt>
@@ -514,7 +456,7 @@
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
 		<wp:post_name><![CDATA[564ade1f51e14d9732541902513e-1434991]]></wp:post_name>
 		<wp:status><![CDATA[inherit]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
+		<wp:post_parent>337</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
 		<wp:post_type><![CDATA[attachment]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
@@ -526,7 +468,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:800;s:4:"file";s:48:"2019/03/564ade1f51e14d9732541902513e-1434991.jpg";s:5:"sizes";a:4:{s:9:"thumbnail";a:4:{s:4:"file";s:48:"564ade1f51e14d9732541902513e-1434991-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:48:"564ade1f51e14d9732541902513e-1434991-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:48:"564ade1f51e14d9732541902513e-1434991-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:49:"564ade1f51e14d9732541902513e-1434991-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:800;s:4:"file";s:48:"2019/03/564ade1f51e14d9732541902513e-1434991.jpg";s:5:"sizes";a:7:{s:21:"woocommerce_thumbnail";a:5:{s:4:"file";s:48:"564ade1f51e14d9732541902513e-1434991-300x300.jpg";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:10:"image/jpeg";s:9:"uncropped";b:0;}s:29:"woocommerce_gallery_thumbnail";a:4:{s:4:"file";s:48:"564ade1f51e14d9732541902513e-1434991-100x100.jpg";s:5:"width";i:100;s:6:"height";i:100;s:9:"mime-type";s:10:"image/jpeg";}s:18:"woocommerce_single";a:4:{s:4:"file";s:48:"564ade1f51e14d9732541902513e-1434991-600x400.jpg";s:5:"width";i:600;s:6:"height";i:400;s:9:"mime-type";s:10:"image/jpeg";}s:9:"thumbnail";a:4:{s:4:"file";s:48:"564ade1f51e14d9732541902513e-1434991-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:48:"564ade1f51e14d9732541902513e-1434991-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:48:"564ade1f51e14d9732541902513e-1434991-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:49:"564ade1f51e14d9732541902513e-1434991-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -538,11 +480,9 @@
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/wp-content/uploads/2019/03/de01b63b993c45c639de59a6d10c-1451437.jpg</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-						]]>		</content:encoded>
+				<![CDATA[						]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>704</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-08 12:29:54]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-08 12:29:54]]></wp:post_date_gmt>
@@ -562,7 +502,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:800;s:4:"file";s:48:"2019/03/de01b63b993c45c639de59a6d10c-1451437.jpg";s:5:"sizes";a:4:{s:9:"thumbnail";a:4:{s:4:"file";s:48:"de01b63b993c45c639de59a6d10c-1451437-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:48:"de01b63b993c45c639de59a6d10c-1451437-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:48:"de01b63b993c45c639de59a6d10c-1451437-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:49:"de01b63b993c45c639de59a6d10c-1451437-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:800;s:4:"file";s:48:"2019/03/de01b63b993c45c639de59a6d10c-1451437.jpg";s:5:"sizes";a:7:{s:21:"woocommerce_thumbnail";a:5:{s:4:"file";s:48:"de01b63b993c45c639de59a6d10c-1451437-300x300.jpg";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:10:"image/jpeg";s:9:"uncropped";b:0;}s:29:"woocommerce_gallery_thumbnail";a:4:{s:4:"file";s:48:"de01b63b993c45c639de59a6d10c-1451437-100x100.jpg";s:5:"width";i:100;s:6:"height";i:100;s:9:"mime-type";s:10:"image/jpeg";}s:18:"woocommerce_single";a:4:{s:4:"file";s:48:"de01b63b993c45c639de59a6d10c-1451437-600x400.jpg";s:5:"width";i:600;s:6:"height";i:400;s:9:"mime-type";s:10:"image/jpeg";}s:9:"thumbnail";a:4:{s:4:"file";s:48:"de01b63b993c45c639de59a6d10c-1451437-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:48:"de01b63b993c45c639de59a6d10c-1451437-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:48:"de01b63b993c45c639de59a6d10c-1451437-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:49:"de01b63b993c45c639de59a6d10c-1451437-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -574,11 +514,9 @@
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/wp-content/uploads/2019/03/bike_road_person_girl_riding-108041.jpg</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-						]]>		</content:encoded>
+				<![CDATA[						]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>705</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-08 12:29:57]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-08 12:29:57]]></wp:post_date_gmt>
@@ -598,7 +536,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:800;s:4:"file";s:47:"2019/03/bike_road_person_girl_riding-108041.jpg";s:5:"sizes";a:4:{s:9:"thumbnail";a:4:{s:4:"file";s:47:"bike_road_person_girl_riding-108041-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:47:"bike_road_person_girl_riding-108041-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:47:"bike_road_person_girl_riding-108041-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:48:"bike_road_person_girl_riding-108041-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:800;s:4:"file";s:47:"2019/03/bike_road_person_girl_riding-108041.jpg";s:5:"sizes";a:7:{s:21:"woocommerce_thumbnail";a:5:{s:4:"file";s:47:"bike_road_person_girl_riding-108041-300x300.jpg";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:10:"image/jpeg";s:9:"uncropped";b:0;}s:29:"woocommerce_gallery_thumbnail";a:4:{s:4:"file";s:47:"bike_road_person_girl_riding-108041-100x100.jpg";s:5:"width";i:100;s:6:"height";i:100;s:9:"mime-type";s:10:"image/jpeg";}s:18:"woocommerce_single";a:4:{s:4:"file";s:47:"bike_road_person_girl_riding-108041-600x400.jpg";s:5:"width";i:600;s:6:"height";i:400;s:9:"mime-type";s:10:"image/jpeg";}s:9:"thumbnail";a:4:{s:4:"file";s:47:"bike_road_person_girl_riding-108041-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:47:"bike_road_person_girl_riding-108041-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:47:"bike_road_person_girl_riding-108041-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:48:"bike_road_person_girl_riding-108041-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -634,7 +572,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:800;s:4:"file";s:77:"2019/03/jet_ski_water_sport_water_bike_water_boat_ocean_splash_man-666293.jpg";s:5:"sizes";a:4:{s:9:"thumbnail";a:4:{s:4:"file";s:77:"jet_ski_water_sport_water_bike_water_boat_ocean_splash_man-666293-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:77:"jet_ski_water_sport_water_bike_water_boat_ocean_splash_man-666293-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:77:"jet_ski_water_sport_water_bike_water_boat_ocean_splash_man-666293-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:78:"jet_ski_water_sport_water_bike_water_boat_ocean_splash_man-666293-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:800;s:4:"file";s:77:"2019/03/jet_ski_water_sport_water_bike_water_boat_ocean_splash_man-666293.jpg";s:5:"sizes";a:7:{s:21:"woocommerce_thumbnail";a:5:{s:4:"file";s:77:"jet_ski_water_sport_water_bike_water_boat_ocean_splash_man-666293-300x300.jpg";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:10:"image/jpeg";s:9:"uncropped";b:0;}s:29:"woocommerce_gallery_thumbnail";a:4:{s:4:"file";s:77:"jet_ski_water_sport_water_bike_water_boat_ocean_splash_man-666293-100x100.jpg";s:5:"width";i:100;s:6:"height";i:100;s:9:"mime-type";s:10:"image/jpeg";}s:18:"woocommerce_single";a:4:{s:4:"file";s:77:"jet_ski_water_sport_water_bike_water_boat_ocean_splash_man-666293-600x400.jpg";s:5:"width";i:600;s:6:"height";i:400;s:9:"mime-type";s:10:"image/jpeg";}s:9:"thumbnail";a:4:{s:4:"file";s:77:"jet_ski_water_sport_water_bike_water_boat_ocean_splash_man-666293-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:77:"jet_ski_water_sport_water_bike_water_boat_ocean_splash_man-666293-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:77:"jet_ski_water_sport_water_bike_water_boat_ocean_splash_man-666293-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:78:"jet_ski_water_sport_water_bike_water_boat_ocean_splash_man-666293-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -646,11 +584,9 @@
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/wp-content/uploads/2019/03/sport_water_runner_athlete_splash-180869.jpg</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-						]]>		</content:encoded>
+				<![CDATA[						]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>708</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-08 12:30:03]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-08 12:30:03]]></wp:post_date_gmt>
@@ -670,7 +606,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:800;s:4:"file";s:52:"2019/03/sport_water_runner_athlete_splash-180869.jpg";s:5:"sizes";a:4:{s:9:"thumbnail";a:4:{s:4:"file";s:52:"sport_water_runner_athlete_splash-180869-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:52:"sport_water_runner_athlete_splash-180869-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:52:"sport_water_runner_athlete_splash-180869-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:53:"sport_water_runner_athlete_splash-180869-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:800;s:4:"file";s:52:"2019/03/sport_water_runner_athlete_splash-180869.jpg";s:5:"sizes";a:7:{s:21:"woocommerce_thumbnail";a:5:{s:4:"file";s:52:"sport_water_runner_athlete_splash-180869-300x300.jpg";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:10:"image/jpeg";s:9:"uncropped";b:0;}s:29:"woocommerce_gallery_thumbnail";a:4:{s:4:"file";s:52:"sport_water_runner_athlete_splash-180869-100x100.jpg";s:5:"width";i:100;s:6:"height";i:100;s:9:"mime-type";s:10:"image/jpeg";}s:18:"woocommerce_single";a:4:{s:4:"file";s:52:"sport_water_runner_athlete_splash-180869-600x400.jpg";s:5:"width";i:600;s:6:"height";i:400;s:9:"mime-type";s:10:"image/jpeg";}s:9:"thumbnail";a:4:{s:4:"file";s:52:"sport_water_runner_athlete_splash-180869-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:52:"sport_water_runner_athlete_splash-180869-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:52:"sport_water_runner_athlete_splash-180869-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:53:"sport_water_runner_athlete_splash-180869-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -682,11 +618,9 @@
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/wp-content/uploads/2019/03/football_american_game_runner_ball_running_back_ball_carrier_touchdown-720048.jpg</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-						]]>		</content:encoded>
+				<![CDATA[						]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>709</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-08 12:30:05]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-08 12:30:05]]></wp:post_date_gmt>
@@ -706,7 +640,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:800;s:4:"file";s:89:"2019/03/football_american_game_runner_ball_running_back_ball_carrier_touchdown-720048.jpg";s:5:"sizes";a:4:{s:9:"thumbnail";a:4:{s:4:"file";s:89:"football_american_game_runner_ball_running_back_ball_carrier_touchdown-720048-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:89:"football_american_game_runner_ball_running_back_ball_carrier_touchdown-720048-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:89:"football_american_game_runner_ball_running_back_ball_carrier_touchdown-720048-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:90:"football_american_game_runner_ball_running_back_ball_carrier_touchdown-720048-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:800;s:4:"file";s:89:"2019/03/football_american_game_runner_ball_running_back_ball_carrier_touchdown-720048.jpg";s:5:"sizes";a:7:{s:21:"woocommerce_thumbnail";a:5:{s:4:"file";s:89:"football_american_game_runner_ball_running_back_ball_carrier_touchdown-720048-300x300.jpg";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:10:"image/jpeg";s:9:"uncropped";b:0;}s:29:"woocommerce_gallery_thumbnail";a:4:{s:4:"file";s:89:"football_american_game_runner_ball_running_back_ball_carrier_touchdown-720048-100x100.jpg";s:5:"width";i:100;s:6:"height";i:100;s:9:"mime-type";s:10:"image/jpeg";}s:18:"woocommerce_single";a:4:{s:4:"file";s:89:"football_american_game_runner_ball_running_back_ball_carrier_touchdown-720048-600x400.jpg";s:5:"width";i:600;s:6:"height";i:400;s:9:"mime-type";s:10:"image/jpeg";}s:9:"thumbnail";a:4:{s:4:"file";s:89:"football_american_game_runner_ball_running_back_ball_carrier_touchdown-720048-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:89:"football_american_game_runner_ball_running_back_ball_carrier_touchdown-720048-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:89:"football_american_game_runner_ball_running_back_ball_carrier_touchdown-720048-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:90:"football_american_game_runner_ball_running_back_ball_carrier_touchdown-720048-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -740,7 +674,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:800;s:4:"file";s:87:"2019/03/bodybuilder_muscles_fitness_weight_lifting_training_exercise_man_guy-860263.jpg";s:5:"sizes";a:4:{s:9:"thumbnail";a:4:{s:4:"file";s:87:"bodybuilder_muscles_fitness_weight_lifting_training_exercise_man_guy-860263-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:87:"bodybuilder_muscles_fitness_weight_lifting_training_exercise_man_guy-860263-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:87:"bodybuilder_muscles_fitness_weight_lifting_training_exercise_man_guy-860263-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:88:"bodybuilder_muscles_fitness_weight_lifting_training_exercise_man_guy-860263-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:800;s:4:"file";s:87:"2019/03/bodybuilder_muscles_fitness_weight_lifting_training_exercise_man_guy-860263.jpg";s:5:"sizes";a:7:{s:21:"woocommerce_thumbnail";a:5:{s:4:"file";s:87:"bodybuilder_muscles_fitness_weight_lifting_training_exercise_man_guy-860263-300x300.jpg";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:10:"image/jpeg";s:9:"uncropped";b:0;}s:29:"woocommerce_gallery_thumbnail";a:4:{s:4:"file";s:87:"bodybuilder_muscles_fitness_weight_lifting_training_exercise_man_guy-860263-100x100.jpg";s:5:"width";i:100;s:6:"height";i:100;s:9:"mime-type";s:10:"image/jpeg";}s:18:"woocommerce_single";a:4:{s:4:"file";s:87:"bodybuilder_muscles_fitness_weight_lifting_training_exercise_man_guy-860263-600x400.jpg";s:5:"width";i:600;s:6:"height";i:400;s:9:"mime-type";s:10:"image/jpeg";}s:9:"thumbnail";a:4:{s:4:"file";s:87:"bodybuilder_muscles_fitness_weight_lifting_training_exercise_man_guy-860263-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:87:"bodybuilder_muscles_fitness_weight_lifting_training_exercise_man_guy-860263-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:87:"bodybuilder_muscles_fitness_weight_lifting_training_exercise_man_guy-860263-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:88:"bodybuilder_muscles_fitness_weight_lifting_training_exercise_man_guy-860263-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_custom_header_last_used_avid-magazine-pro]]></wp:meta_key>
@@ -764,11 +698,9 @@
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/wp-content/uploads/2017/11/football_referee_coin_toss_official_sport_stripes_uniform_game-495806.jpg</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-						]]>		</content:encoded>
+				<![CDATA[						]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>720</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-08 13:28:55]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-08 13:28:55]]></wp:post_date_gmt>
@@ -788,7 +720,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_attachment_metadata]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:800;s:4:"file";s:81:"2017/11/football_referee_coin_toss_official_sport_stripes_uniform_game-495806.jpg";s:5:"sizes";a:4:{s:9:"thumbnail";a:4:{s:4:"file";s:81:"football_referee_coin_toss_official_sport_stripes_uniform_game-495806-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:81:"football_referee_coin_toss_official_sport_stripes_uniform_game-495806-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:81:"football_referee_coin_toss_official_sport_stripes_uniform_game-495806-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:82:"football_referee_coin_toss_official_sport_stripes_uniform_game-495806-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
+		<wp:meta_value><![CDATA[a:5:{s:5:"width";i:1200;s:6:"height";i:800;s:4:"file";s:81:"2017/11/football_referee_coin_toss_official_sport_stripes_uniform_game-495806.jpg";s:5:"sizes";a:7:{s:21:"woocommerce_thumbnail";a:5:{s:4:"file";s:81:"football_referee_coin_toss_official_sport_stripes_uniform_game-495806-300x300.jpg";s:5:"width";i:300;s:6:"height";i:300;s:9:"mime-type";s:10:"image/jpeg";s:9:"uncropped";b:0;}s:29:"woocommerce_gallery_thumbnail";a:4:{s:4:"file";s:81:"football_referee_coin_toss_official_sport_stripes_uniform_game-495806-100x100.jpg";s:5:"width";i:100;s:6:"height";i:100;s:9:"mime-type";s:10:"image/jpeg";}s:18:"woocommerce_single";a:4:{s:4:"file";s:81:"football_referee_coin_toss_official_sport_stripes_uniform_game-495806-600x400.jpg";s:5:"width";i:600;s:6:"height";i:400;s:9:"mime-type";s:10:"image/jpeg";}s:9:"thumbnail";a:4:{s:4:"file";s:81:"football_referee_coin_toss_official_sport_stripes_uniform_game-495806-150x150.jpg";s:5:"width";i:150;s:6:"height";i:150;s:9:"mime-type";s:10:"image/jpeg";}s:6:"medium";a:4:{s:4:"file";s:81:"football_referee_coin_toss_official_sport_stripes_uniform_game-495806-300x200.jpg";s:5:"width";i:300;s:6:"height";i:200;s:9:"mime-type";s:10:"image/jpeg";}s:12:"medium_large";a:4:{s:4:"file";s:81:"football_referee_coin_toss_official_sport_stripes_uniform_game-495806-768x512.jpg";s:5:"width";i:768;s:6:"height";i:512;s:9:"mime-type";s:10:"image/jpeg";}s:5:"large";a:4:{s:4:"file";s:82:"football_referee_coin_toss_official_sport_stripes_uniform_game-495806-1024x683.jpg";s:5:"width";i:1024;s:6:"height";i:683;s:9:"mime-type";s:10:"image/jpeg";}}s:10:"image_meta";a:12:{s:8:"aperture";s:1:"0";s:6:"credit";s:0:"";s:6:"camera";s:0:"";s:7:"caption";s:0:"";s:17:"created_timestamp";s:1:"0";s:9:"copyright";s:0:"";s:12:"focal_length";s:1:"0";s:3:"iso";s:1:"0";s:13:"shutter_speed";s:1:"0";s:5:"title";s:0:"";s:11:"orientation";s:1:"0";s:8:"keywords";a:0:{}}}]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -800,11 +732,9 @@
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/2019/03/11/</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				 		]]>		</content:encoded>
+				<![CDATA[ ]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>722</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-11 10:38:36]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-11 10:38:36]]></wp:post_date_gmt>
@@ -813,7 +743,7 @@
 		<wp:post_name><![CDATA[722]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>5</wp:menu_order>
+		<wp:menu_order>2</wp:menu_order>
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
@@ -824,7 +754,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[734]]></wp:meta_value>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
@@ -860,11 +790,9 @@
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/2019/03/11/</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				 		]]>		</content:encoded>
+				<![CDATA[ ]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>723</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-11 10:38:36]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-11 10:38:36]]></wp:post_date_gmt>
@@ -873,7 +801,7 @@
 		<wp:post_name><![CDATA[723]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>3</wp:menu_order>
+		<wp:menu_order>4</wp:menu_order>
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
@@ -920,11 +848,9 @@
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/2019/03/11/</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				 		]]>		</content:encoded>
+				<![CDATA[ ]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>724</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-11 10:38:36]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-11 10:38:36]]></wp:post_date_gmt>
@@ -933,7 +859,7 @@
 		<wp:post_name><![CDATA[724]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>4</wp:menu_order>
+		<wp:menu_order>8</wp:menu_order>
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
@@ -944,7 +870,7 @@
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[734]]></wp:meta_value>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
@@ -980,11 +906,9 @@
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/2019/03/11/</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				 		]]>		</content:encoded>
+				<![CDATA[ ]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>725</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-11 10:38:36]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-11 10:38:36]]></wp:post_date_gmt>
@@ -993,7 +917,7 @@
 		<wp:post_name><![CDATA[725]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>10</wp:menu_order>
+		<wp:menu_order>11</wp:menu_order>
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
@@ -1040,11 +964,9 @@
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/2019/03/11/</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				 		]]>		</content:encoded>
+				<![CDATA[ ]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>726</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-11 10:38:36]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-11 10:38:36]]></wp:post_date_gmt>
@@ -1053,7 +975,7 @@
 		<wp:post_name><![CDATA[726]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>11</wp:menu_order>
+		<wp:menu_order>12</wp:menu_order>
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
@@ -1100,11 +1022,9 @@
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/2019/03/11/</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				 		]]>		</content:encoded>
+				<![CDATA[ ]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>727</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-11 10:38:36]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-11 10:38:36]]></wp:post_date_gmt>
@@ -1113,7 +1033,7 @@
 		<wp:post_name><![CDATA[727]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>12</wp:menu_order>
+		<wp:menu_order>13</wp:menu_order>
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
@@ -1153,49 +1073,60 @@
 							</item>
 					<item>
 		<title>
-				Sample Page		</title>
-		<link>https://avidthemes.com/demo/avid-magazine/sample-page/</link>
-		<pubDate>Mon, 11 Mar 2019 10:31:44 +0000</pubDate>
+						</title>
+		<link>https://avidthemes.com/demo/avid-magazine/2019/03/11/728/</link>
+		<pubDate>Mon, 11 Mar 2019 10:38:36 +0000</pubDate>
 		<dc:creator><![CDATA[aib1y]]></dc:creator>
-		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine-pro/?page_id=2</guid>
+		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/2019/03/11/</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[<!-- wp:paragraph -->
-<p>This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:quote -->
-<blockquote class="wp-block-quote"><p>Hi there! I'm a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin' caught in the rain.)</p></blockquote>
-<!-- /wp:quote -->
-
-<!-- wp:paragraph -->
-<p>...or something like this:</p>
-<!-- /wp:paragraph -->
-
-<!-- wp:quote -->
-<blockquote class="wp-block-quote"><p>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</p></blockquote>
-<!-- /wp:quote -->
-
-<!-- wp:paragraph -->
-<p>As a new WordPress user, you should go to <a href="https://avidthemes.com/demo/avid-magazine-pro/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!</p>
-<!-- /wp:paragraph -->]]>		</content:encoded>
+				<![CDATA[ ]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[]]>		</excerpt:encoded>
-		<wp:post_id>2</wp:post_id>
-		<wp:post_date><![CDATA[2019-03-11 10:31:44]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-03-11 10:31:44]]></wp:post_date_gmt>
+				<![CDATA[						]]>		</excerpt:encoded>
+		<wp:post_id>728</wp:post_id>
+		<wp:post_date><![CDATA[2019-03-11 10:38:36]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-03-11 10:38:36]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[open]]></wp:ping_status>
-		<wp:post_name><![CDATA[sample-page]]></wp:post_name>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[728]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:menu_order>14</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-														<wp:postmeta>
-		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+										<category domain="nav_menu" nicename="main-menu"><![CDATA[main menu]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[725]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[500]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -1271,16 +1202,124 @@
 		<guid isPermaLink="false">http://thebootstrapthemes.com/demo/restaurant_bootstrap/?page_id=2</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:
-
-<blockquote>Hi there! I'm a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin' caught in the rain.)</blockquote>
-
+				<![CDATA[This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:
+<blockquote>Hi there! I'm a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like piña coladas. (And gettin' caught in the rain.)</blockquote>
 ...or something like this:
-
 <blockquote>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</blockquote>
+As a new WordPress user, you should go to <a href="http://thebootstrapthemes.com/demo/restaurant_bootstrap/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!
 
-As a new WordPress user, you should go to <a href="http://thebootstrapthemes.com/demo/restaurant_bootstrap/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!		]]>		</content:encoded>
+The style guide provides you with a blueprint of Paperback’s&nbsp;default post and page styles. The style guide is also a great reference for suggested typographic treatment and styles for your content.
+
+<hr>
+
+<h4>Right Aligned Image</h4>
+<img class="size-medium wp-image-720 alignright" src="https://avidthemes.com/demo/avid-magazine/wp-content/uploads/2017/11/football_referee_coin_toss_official_sport_stripes_uniform_game-495806-300x200.jpg" alt="" width="300" height="200">Images may be two-dimensional, such as a photograph, screen display, and as well as a three-dimensional, such as a statue or hologram. They may be captured by optical devices – such as cameras, mirrors, lenses, telescopes, microscopes, etc. and natural objects and phenomena, such as the human eye or water surfaces. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
+
+The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.&nbsp;The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.&nbsp;The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
+
+<hr>
+
+<h4>Left Aligned Image</h4>
+<img class="size-medium wp-image-703 alignleft" src="https://avidthemes.com/demo/avid-magazine/wp-content/uploads/2019/03/564ade1f51e14d9732541902513e-1434991-300x200.jpg" alt="" width="300" height="200">The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. In this wider sense, images can also be rendered manually, such as by drawing, painting, carving, rendered automatically by printing or computer graphics technology, or developed by a combination of methods. Images may be two-dimensional, such as a photograph, screen display, and as well as a three-dimensional, such as a statue or hologram. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
+
+A volatile image is one that exists only for a short period of time. This may be a reflection of an object by a mirror, a projection of a camera obscura, or a scene displayed on a cathode ray tube. A fixed image, also called a hard copy.
+
+<hr>
+
+<h1>Heading One</h1>
+<h2>Heading Two</h2>
+<h3>Heading Three</h3>
+<h4>Heading Four</h4>
+<h5>Heading Five</h5>
+<h6>Heading Six</h6>
+<h6>&nbsp;</h6>
+
+<hr>
+
+<h3>Blockquote</h3>
+<blockquote>The greatest gift of life is friendship, and I have received it.</blockquote>
+<h3 id="pull-quotes">Typography Styles</h3>
+<span id="dropcap" class="dropcap">A</span>drop cap is a decorative element typically used in documents at the start of a section or chapter. It’s a large capital letter at the beginning or a paragraph or text block that has the depth of two or more lines of normal text. You can easily add a dropcap to any paragraph by adding the class&nbsp;<strong>dropcap</strong>&nbsp;as seen below:
+<pre>&lt;span class="dropcap"&gt;T&lt;/span&gt;his is how you add a dropcap.</pre>
+
+<hr>
+
+<h3>Table Styles</h3>
+<table class="table table-hover  table-bordered  table-striped">
+<thead>
+<tr>
+<th>BEATLE</th>
+<th>INSTRUMENT</th>
+<th>SONG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>John Lennon</td>
+<td>Guitar</td>
+<td>A Day In the Life</td>
+</tr>
+<tr class="even">
+<td>George Harrison</td>
+<td>Guitar</td>
+<td>Old Brown Shoe</td>
+</tr>
+<tr class="odd">
+<td>Paul McCartney</td>
+<td>Bass</td>
+<td>Helter Skelter</td>
+</tr>
+<tr class="even">
+<td>Ringo Starr</td>
+<td>Drums</td>
+<td>Don’t Pass Me By</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h3>Code Formatting</h3>
+<pre>pre {
+    position: relative;
+    background: #f7f7f7;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    padding: 1.6em;
+    overflow: auto;
+    max-width: 100%;
+    tab-size: 4;
+}</pre>
+
+<hr>
+
+<h3>Mixed List Items</h3>
+<ul>
+ 	<li>Unordered list item one</li>
+ 	<li>Unordered list item two
+<ol>
+ 	<li>Ordered list item one</li>
+ 	<li>Ordered list item two
+<ul>
+ 	<li>Unordered list item one</li>
+ 	<li>Unordered list item two
+<ol>
+ 	<li>Ordered list item one</li>
+ 	<li>Ordered list item two</li>
+ 	<li>Ordered list item three</li>
+</ol>
+</li>
+ 	<li>Unordered list item three</li>
+</ul>
+</li>
+ 	<li>Ordered list item three</li>
+</ol>
+</li>
+ 	<li>Unordered list item three</li>
+</ul>]]>		</content:encoded>
 		<excerpt:encoded>
 				<![CDATA[
 						]]>		</excerpt:encoded>
@@ -1372,22 +1411,19 @@ As a new WordPress user, you should go to <a href="http://thebootstrapthemes.com
 		<guid isPermaLink="false">http://thebootstrapthemes.com/demo/magazine-newspaper-pro/?page_id=337</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				The style guide provides you with a blueprint of Paperback’s default post and page styles. The style guide is also a great reference for suggested typographic treatment and styles for your content.
+				<![CDATA[The style guide provides you with a blueprint of Paperback’s default post and page styles. The style guide is also a great reference for suggested typographic treatment and styles for your content.
 
 <hr />
 
 <h4>Right Aligned Image</h4>
-<img class="wp-image-15 size-medium alignright" src="http://thebootstrapthemes.com/demo/magazine-newspaper/wp-content/uploads/2017/11/football-461340_1280-300x200.jpg" alt="" width="300" height="200" />
-
-Images may be two-dimensional, such as a photograph, screen display, and as well as a three-dimensional, such as a statue or hologram. They may be captured by optical devices – such as cameras, mirrors, lenses, telescopes, microscopes, etc. and natural objects and phenomena, such as the human eye or water surfaces. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
+<img class="size-medium wp-image-720 alignright" src="https://avidthemes.com/demo/avid-magazine/wp-content/uploads/2017/11/football_referee_coin_toss_official_sport_stripes_uniform_game-495806-300x200.jpg" alt="" width="300" height="200" />Images may be two-dimensional, such as a photograph, screen display, and as well as a three-dimensional, such as a statue or hologram. They may be captured by optical devices – such as cameras, mirrors, lenses, telescopes, microscopes, etc. and natural objects and phenomena, such as the human eye or water surfaces. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
 
 The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
 
 <hr />
 
 <h4>Left Aligned Image</h4>
-<img class="wp-image-22 size-medium alignleft" src="http://thebootstrapthemes.com/demo/magazine-newspaper/wp-content/uploads/2017/11/bundestag-2463236_1280-300x180.jpg" alt="" width="300" height="180" />The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. In this wider sense, images can also be rendered manually, such as by drawing, painting, carving, rendered automatically by printing or computer graphics technology, or developed by a combination of methods. Images may be two-dimensional, such as a photograph, screen display, and as well as a three-dimensional, such as a statue or hologram. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
+<img class="size-medium wp-image-703 alignleft" src="https://avidthemes.com/demo/avid-magazine/wp-content/uploads/2019/03/564ade1f51e14d9732541902513e-1434991-300x200.jpg" alt="" width="300" height="200" />The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. In this wider sense, images can also be rendered manually, such as by drawing, painting, carving, rendered automatically by printing or computer graphics technology, or developed by a combination of methods. Images may be two-dimensional, such as a photograph, screen display, and as well as a three-dimensional, such as a statue or hologram. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
 
 A volatile image is one that exists only for a short period of time. This may be a reflection of an object by a mirror, a projection of a camera obscura, or a scene displayed on a cathode ray tube. A fixed image, also called a hard copy.
 
@@ -1412,7 +1448,7 @@ A volatile image is one that exists only for a short period of time. This may be
 <hr />
 
 <h3>Table Styles</h3>
-<table  class="table table-hover  table-bordered  table-striped">
+<table class="table table-hover  table-bordered  table-striped">
 <thead>
 <tr>
 <th>BEATLE</th>
@@ -1486,7 +1522,7 @@ A volatile image is one that exists only for a short period of time. This may be
 </ol>
 </li>
  	<li>Unordered list item three</li>
-</ul>		]]>		</content:encoded>
+</ul>]]>		</content:encoded>
 		<excerpt:encoded>
 				<![CDATA[
 						]]>		</excerpt:encoded>
@@ -1526,6 +1562,10 @@ A volatile image is one that exists only for a short period of time. This may be
 		<wp:meta_key><![CDATA[_wxr_import_has_attachment_refs]]></wp:meta_key>
 		<wp:meta_value><![CDATA[1]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[704]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title>
@@ -1564,33 +1604,32 @@ As a new WordPress user, you should go to <a href="http://thebootstrapthemes.com
 							</item>
 					<item>
 		<title>
-				Left Sidebar		</title>
-		<link>https://avidthemes.com/demo/avid-magazine/left-sidebar/</link>
+				Right Sidebar		</title>
+		<link>https://avidthemes.com/demo/avid-magazine/right-sidebar/</link>
 		<pubDate>Fri, 23 Feb 2018 13:23:33 +0000</pubDate>
 		<dc:creator><![CDATA[aib1y]]></dc:creator>
 		<guid isPermaLink="false">http://thebootstrapthemes.com/demo/magazine-newspaper-pro/?page_id=339</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				The style guide provides you with a blueprint of Paperback’s default post and page styles. The style guide is also a great reference for suggested typographic treatment and styles for your content.
+				<![CDATA[The style guide provides you with a blueprint of Paperback’s&nbsp;default post and page styles. The style guide is also a great reference for suggested typographic treatment and styles for your content.
 
-<hr />
+<hr>
 
 <h4>Right Aligned Image</h4>
-<img class="wp-image-15 size-medium alignright" src="http://thebootstrapthemes.com/demo/magazine-newspaper/wp-content/uploads/2017/11/football-461340_1280-300x200.jpg" alt="" width="300" height="200" />
+<img class="wp-image-15 size-medium alignright" src="http://thebootstrapthemes.com/demo/magazine-newspaper/wp-content/uploads/2017/11/football-461340_1280-300x200.jpg" alt="" width="300" height="200">
 
 Images may be two-dimensional, such as a photograph, screen display, and as well as a three-dimensional, such as a statue or hologram. They may be captured by optical devices – such as cameras, mirrors, lenses, telescopes, microscopes, etc. and natural objects and phenomena, such as the human eye or water surfaces. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
 
-The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
+The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.&nbsp;The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.&nbsp;The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
 
-<hr />
+<hr>
 
 <h4>Left Aligned Image</h4>
-<img class="wp-image-22 size-medium alignleft" src="http://thebootstrapthemes.com/demo/magazine-newspaper/wp-content/uploads/2017/11/bundestag-2463236_1280-300x180.jpg" alt="" width="300" height="180" />The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. In this wider sense, images can also be rendered manually, such as by drawing, painting, carving, rendered automatically by printing or computer graphics technology, or developed by a combination of methods. Images may be two-dimensional, such as a photograph, screen display, and as well as a three-dimensional, such as a statue or hologram. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
+<img class="wp-image-22 size-medium alignleft" src="http://thebootstrapthemes.com/demo/magazine-newspaper/wp-content/uploads/2017/11/bundestag-2463236_1280-300x180.jpg" alt="" width="300" height="180">The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. In this wider sense, images can also be rendered manually, such as by drawing, painting, carving, rendered automatically by printing or computer graphics technology, or developed by a combination of methods. Images may be two-dimensional, such as a photograph, screen display, and as well as a three-dimensional, such as a statue or hologram.&nbsp;The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.&nbsp;The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
 
 A volatile image is one that exists only for a short period of time. This may be a reflection of an object by a mirror, a projection of a camera obscura, or a scene displayed on a cathode ray tube. A fixed image, also called a hard copy.
 
-<hr />
+<hr>
 
 <h1>Heading One</h1>
 <h2>Heading Two</h2>
@@ -1600,18 +1639,18 @@ A volatile image is one that exists only for a short period of time. This may be
 <h6>Heading Six</h6>
 <h6></h6>
 
-<hr />
+<hr>
 
 <h3>Blockquote</h3>
 <blockquote>The greatest gift of life is friendship, and I have received it.</blockquote>
 <h3 id="pull-quotes">Typography Styles</h3>
-<span id="dropcap" class="dropcap">A</span>drop cap is a decorative element typically used in documents at the start of a section or chapter. It’s a large capital letter at the beginning or a paragraph or text block that has the depth of two or more lines of normal text. You can easily add a dropcap to any paragraph by adding the class <strong>dropcap</strong> as seen below:
+<span id="dropcap" class="dropcap">A</span>drop cap is a decorative element typically used in documents at the start of a section or chapter. It’s a large capital letter at the beginning or a paragraph or text block that has the depth of two or more lines of normal text. You can easily add a dropcap to any paragraph by adding the class&nbsp;<strong>dropcap</strong>&nbsp;as seen below:
 <pre>&lt;span class="dropcap"&gt;T&lt;/span&gt;his is how you add a dropcap.</pre>
 
-<hr />
+<hr>
 
 <h3>Table Styles</h3>
-<table  class="table table-hover  table-bordered  table-striped">
+<table class="table table-hover  table-bordered  table-striped">
 <thead>
 <tr>
 <th>BEATLE</th>
@@ -1643,7 +1682,7 @@ A volatile image is one that exists only for a short period of time. This may be
 </tbody>
 </table>
 
-<hr />
+<hr>
 
 <h3>Code Formatting</h3>
 <pre>pre {
@@ -1660,7 +1699,7 @@ A volatile image is one that exists only for a short period of time. This may be
     tab-size: 4;
 }</pre>
 
-<hr />
+<hr>
 
 <h3>Mixed List Items</h3>
 <ul>
@@ -1685,7 +1724,7 @@ A volatile image is one that exists only for a short period of time. This may be
 </ol>
 </li>
  	<li>Unordered list item three</li>
-</ul>		]]>		</content:encoded>
+</ul>]]>		</content:encoded>
 		<excerpt:encoded>
 				<![CDATA[
 						]]>		</excerpt:encoded>
@@ -1694,7 +1733,7 @@ A volatile image is one that exists only for a short period of time. This may be
 		<wp:post_date_gmt><![CDATA[2018-02-23 13:23:33]]></wp:post_date_gmt>
 		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
 		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[left-sidebar]]></wp:post_name>
+		<wp:post_name><![CDATA[right-sidebar]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
 		<wp:menu_order>0</wp:menu_order>
@@ -1813,105 +1852,16 @@ A volatile image is one that exists only for a short period of time. This may be
 														</item>
 					<item>
 		<title>
-				My account		</title>
-		<link>https://avidthemes.com/demo/avid-magazine/my-account/</link>
-		<pubDate>Wed, 06 Jun 2018 16:09:08 +0000</pubDate>
-		<dc:creator><![CDATA[aib1y]]></dc:creator>
-		<guid isPermaLink="false">http://127.0.0.1:8080/photography_bootstrap/?page_id=502</guid>
-		<description></description>
-		<content:encoded>
-				<![CDATA[
-				[woocommerce_my_account]		]]>		</content:encoded>
-		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
-		<wp:post_id>502</wp:post_id>
-		<wp:post_date><![CDATA[2018-06-06 16:09:08]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2018-06-06 16:09:08]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[my-account]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>0</wp:menu_order>
-		<wp:post_type><![CDATA[page]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-														</item>
-					<item>
-		<title>
 						</title>
-		<link>https://avidthemes.com/demo/avid-magazine/2019/03/11/728/</link>
-		<pubDate>Mon, 11 Mar 2019 10:38:36 +0000</pubDate>
-		<dc:creator><![CDATA[aib1y]]></dc:creator>
-		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/2019/03/11/</guid>
-		<description></description>
-		<content:encoded>
-				<![CDATA[
-				 		]]>		</content:encoded>
-		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
-		<wp:post_id>728</wp:post_id>
-		<wp:post_date><![CDATA[2019-03-11 10:38:36]]></wp:post_date>
-		<wp:post_date_gmt><![CDATA[2019-03-11 10:38:36]]></wp:post_date_gmt>
-		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
-		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
-		<wp:post_name><![CDATA[728]]></wp:post_name>
-		<wp:status><![CDATA[publish]]></wp:status>
-		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>13</wp:menu_order>
-		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
-		<wp:post_password><![CDATA[]]></wp:post_password>
-		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="nav_menu" nicename="main-menu"><![CDATA[main menu]]></category>
-						<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
-		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
-		<wp:meta_value><![CDATA[725]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
-		<wp:meta_value><![CDATA[500]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
-		<wp:meta_value><![CDATA[page]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							<wp:postmeta>
-		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
-		<wp:meta_value><![CDATA[]]></wp:meta_value>
-		</wp:postmeta>
-							</item>
-					<item>
-		<title>
-				Home		</title>
 		<link>https://avidthemes.com/demo/avid-magazine/2019/03/11/home-2/</link>
 		<pubDate>Mon, 11 Mar 2019 10:38:36 +0000</pubDate>
 		<dc:creator><![CDATA[aib1y]]></dc:creator>
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/2019/03/11/home-2/</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-						]]>		</content:encoded>
+				<![CDATA[ ]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>729</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-11 10:38:36]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-11 10:38:36]]></wp:post_date_gmt>
@@ -2083,11 +2033,9 @@ A volatile image is one that exists only for a short period of time. This may be
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/2019/03/11/733/</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				 		]]>		</content:encoded>
+				<![CDATA[ ]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>733</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-11 10:38:37]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-11 10:38:37]]></wp:post_date_gmt>
@@ -2096,7 +2044,7 @@ A volatile image is one that exists only for a short period of time. This may be
 		<wp:post_name><![CDATA[733]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>9</wp:menu_order>
+		<wp:menu_order>10</wp:menu_order>
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
@@ -2143,11 +2091,9 @@ A volatile image is one that exists only for a short period of time. This may be
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/2019/03/11/734/</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				 		]]>		</content:encoded>
+				<![CDATA[ ]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>734</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-11 10:38:37]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-11 10:38:37]]></wp:post_date_gmt>
@@ -2156,7 +2102,7 @@ A volatile image is one that exists only for a short period of time. This may be
 		<wp:post_name><![CDATA[734]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>2</wp:menu_order>
+		<wp:menu_order>3</wp:menu_order>
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
@@ -2203,11 +2149,9 @@ A volatile image is one that exists only for a short period of time. This may be
 		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/2019/03/11/735/</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				 		]]>		</content:encoded>
+				<![CDATA[ ]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[						]]>		</excerpt:encoded>
 		<wp:post_id>735</wp:post_id>
 		<wp:post_date><![CDATA[2019-03-11 10:38:37]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2019-03-11 10:38:37]]></wp:post_date_gmt>
@@ -2216,7 +2160,7 @@ A volatile image is one that exists only for a short period of time. This may be
 		<wp:post_name><![CDATA[735]]></wp:post_name>
 		<wp:status><![CDATA[publish]]></wp:status>
 		<wp:post_parent>0</wp:post_parent>
-		<wp:menu_order>8</wp:menu_order>
+		<wp:menu_order>9</wp:menu_order>
 		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
@@ -2236,6 +2180,180 @@ A volatile image is one that exists only for a short period of time. This may be
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
 		<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>
+						</title>
+		<link>https://avidthemes.com/demo/avid-magazine/2019/03/28/749/</link>
+		<pubDate>Thu, 28 Mar 2019 07:17:39 +0000</pubDate>
+		<dc:creator><![CDATA[aib1y]]></dc:creator>
+		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/?p=749</guid>
+		<description></description>
+		<content:encoded>
+				<![CDATA[ ]]>		</content:encoded>
+		<excerpt:encoded>
+				<![CDATA[]]>		</excerpt:encoded>
+		<wp:post_id>749</wp:post_id>
+		<wp:post_date><![CDATA[2019-03-28 07:17:39]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-03-28 07:17:39]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[749]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>3</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="main-nav"><![CDATA[Main Nav]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[0]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[166]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[page]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>
+				Category Page		</title>
+		<link>https://avidthemes.com/demo/avid-magazine/2019/03/28/category-page/</link>
+		<pubDate>Thu, 28 Mar 2019 11:26:00 +0000</pubDate>
+		<dc:creator><![CDATA[aib1y]]></dc:creator>
+		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/?p=759</guid>
+		<description></description>
+		<content:encoded>
+				<![CDATA[]]>		</content:encoded>
+		<excerpt:encoded>
+				<![CDATA[]]>		</excerpt:encoded>
+		<wp:post_id>759</wp:post_id>
+		<wp:post_date><![CDATA[2019-03-28 11:26:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-03-28 11:26:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[category-page]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>5</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="main-menu"><![CDATA[main menu]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[taxonomy]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[734]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[category]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_classes]]></wp:meta_key>
+		<wp:meta_value><![CDATA[a:1:{i:0;s:0:"";}]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_xfn]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_url]]></wp:meta_key>
+		<wp:meta_value><![CDATA[]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>
+				Post Page		</title>
+		<link>https://avidthemes.com/demo/avid-magazine/2019/03/28/post-page/</link>
+		<pubDate>Thu, 28 Mar 2019 11:26:00 +0000</pubDate>
+		<dc:creator><![CDATA[aib1y]]></dc:creator>
+		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine/?p=760</guid>
+		<description></description>
+		<content:encoded>
+				<![CDATA[]]>		</content:encoded>
+		<excerpt:encoded>
+				<![CDATA[]]>		</excerpt:encoded>
+		<wp:post_id>760</wp:post_id>
+		<wp:post_date><![CDATA[2019-03-28 11:26:00]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-03-28 11:26:00]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[post-page]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>6</wp:menu_order>
+		<wp:post_type><![CDATA[nav_menu_item]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+										<category domain="nav_menu" nicename="main-menu"><![CDATA[main menu]]></category>
+						<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_type]]></wp:meta_key>
+		<wp:meta_value><![CDATA[post_type]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_menu_item_parent]]></wp:meta_key>
+		<wp:meta_value><![CDATA[734]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[26]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_menu_item_object]]></wp:meta_key>
+		<wp:meta_value><![CDATA[post]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_menu_item_target]]></wp:meta_key>
@@ -2293,7 +2411,7 @@ SiteGround experts not only develop various solutions for WordPress sites, but a
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bttk_view_count]]></wp:meta_key>
-		<wp:meta_value><![CDATA[16]]></wp:meta_value>
+		<wp:meta_value><![CDATA[22]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
@@ -2302,19 +2420,65 @@ SiteGround experts not only develop various solutions for WordPress sites, but a
 							</item>
 					<item>
 		<title>
-				Drag and Drog Responsive WordPress Theme		</title>
+				Sample Page		</title>
+		<link>https://avidthemes.com/demo/avid-magazine/sample-page/</link>
+		<pubDate>Mon, 11 Mar 2019 10:31:44 +0000</pubDate>
+		<dc:creator><![CDATA[aib1y]]></dc:creator>
+		<guid isPermaLink="false">https://avidthemes.com/demo/avid-magazine-pro/?page_id=2</guid>
+		<description></description>
+		<content:encoded>
+				<![CDATA[<!-- wp:paragraph -->
+<p>This is an example page. It's different from a blog post because it will stay in one place and will show up in your site navigation (in most themes). Most people start with an About page that introduces them to potential site visitors. It might say something like this:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><p>Hi there! I'm a bike messenger by day, aspiring actor by night, and this is my website. I live in Los Angeles, have a great dog named Jack, and I like pi&#241;a coladas. (And gettin' caught in the rain.)</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>...or something like this:</p>
+<!-- /wp:paragraph -->
+
+<!-- wp:quote -->
+<blockquote class="wp-block-quote"><p>The XYZ Doohickey Company was founded in 1971, and has been providing quality doohickeys to the public ever since. Located in Gotham City, XYZ employs over 2,000 people and does all kinds of awesome things for the Gotham community.</p></blockquote>
+<!-- /wp:quote -->
+
+<!-- wp:paragraph -->
+<p>As a new WordPress user, you should go to <a href="https://avidthemes.com/demo/avid-magazine-pro/wp-admin/">your dashboard</a> to delete this page and create new pages for your content. Have fun!</p>
+<!-- /wp:paragraph -->]]>		</content:encoded>
+		<excerpt:encoded>
+				<![CDATA[]]>		</excerpt:encoded>
+		<wp:post_id>2</wp:post_id>
+		<wp:post_date><![CDATA[2019-03-11 10:31:44]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2019-03-11 10:31:44]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[open]]></wp:ping_status>
+		<wp:post_name><![CDATA[sample-page]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														<wp:postmeta>
+		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
+		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							</item>
+					<item>
+		<title>
+				Responsive WordPress Theme		</title>
 		<link>https://avidthemes.com/demo/avid-magazine/2015/12/20/u/</link>
 		<pubDate>Sun, 20 Dec 2015 10:57:26 +0000</pubDate>
 		<dc:creator><![CDATA[aib1y]]></dc:creator>
 		<guid isPermaLink="false">http://thebootstrapthemes.com/demo/thebootstrapthemes_darkpress/?p=10</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
+				<![CDATA[Collaboratively administrate empowered markets via plug-and-play networks. Dynamically procrastinate B2C users after installed base benefits. Dramatically visualize customer directed convergence without revolutionary ROI.
 
 Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. Dramatically maintain clicks-and-mortar solutions without functional solutions.
 
-Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.		]]>		</content:encoded>
+Completely synergize resource taxing relationships via premier niche markets. Professionally cultivate one-to-one customer service with robust ideas. Dynamically innovate resource-leveling customer service for state of the art customer service.]]>		</content:encoded>
 		<excerpt:encoded>
 				<![CDATA[
 				Efficiently unleash cross-media information without cross-media value. Quickly maximize timely deliverables for real-time schemas. 		]]>		</excerpt:encoded>
@@ -2337,26 +2501,138 @@ Completely synergize resource taxing relationships via premier niche markets. Pr
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
-		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		<wp:meta_value><![CDATA[fullwidth-1.php]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bttk_view_count]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
+		<wp:meta_value><![CDATA[10]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[704]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
 		<title>
-				They are still using those farms		</title>
+				Alphabet Village and the subline of her own road		</title>
 		<link>https://avidthemes.com/demo/avid-magazine/2018/11/21/farm/</link>
 		<pubDate>Wed, 21 Nov 2018 18:00:32 +0000</pubDate>
 		<dc:creator><![CDATA[aib1y]]></dc:creator>
 		<guid isPermaLink="false">http://thebootstrapthemes.com/demo/magazine-newspaper/?p=26</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.
+				<![CDATA[The style guide provides you with a blueprint of Paperback’s&nbsp;default post and page styles. The style guide is also a great reference for suggested typographic treatment and styles for your content.
 
-On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their projects again and again.		]]>		</content:encoded>
+<hr>
+
+<h4>Right Aligned Image</h4>
+<img class="size-medium wp-image-720 alignright" src="https://avidthemes.com/demo/avid-magazine/wp-content/uploads/2017/11/football_referee_coin_toss_official_sport_stripes_uniform_game-495806-300x200.jpg" alt="" width="300" height="200">Images may be two-dimensional, such as a photograph, screen display, and as well as a three-dimensional, such as a statue or hologram. They may be captured by optical devices – such as cameras, mirrors, lenses, telescopes, microscopes, etc. and natural objects and phenomena, such as the human eye or water surfaces. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
+
+The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.&nbsp;The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.&nbsp;The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
+
+<hr>
+
+<h4>Left Aligned Image</h4>
+<img class="size-medium wp-image-703 alignleft" src="https://avidthemes.com/demo/avid-magazine/wp-content/uploads/2019/03/564ade1f51e14d9732541902513e-1434991-300x200.jpg" alt="" width="300" height="200">The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. In this wider sense, images can also be rendered manually, such as by drawing, painting, carving, rendered automatically by printing or computer graphics technology, or developed by a combination of methods. Images may be two-dimensional, such as a photograph, screen display, and as well as a three-dimensional, such as a statue or hologram. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
+
+A volatile image is one that exists only for a short period of time. This may be a reflection of an object by a mirror, a projection of a camera obscura, or a scene displayed on a cathode ray tube. A fixed image, also called a hard copy.
+
+<hr>
+
+<h1>Heading One</h1>
+<h2>Heading Two</h2>
+<h3>Heading Three</h3>
+<h4>Heading Four</h4>
+<h5>Heading Five</h5>
+<h6>Heading Six</h6>
+<h6>&nbsp;</h6>
+
+<hr>
+
+<h3>Blockquote</h3>
+<blockquote>The greatest gift of life is friendship, and I have received it.</blockquote>
+<h3 id="pull-quotes">Typography Styles</h3>
+<span id="dropcap" class="dropcap">A</span>drop cap is a decorative element typically used in documents at the start of a section or chapter. It’s a large capital letter at the beginning or a paragraph or text block that has the depth of two or more lines of normal text. You can easily add a dropcap to any paragraph by adding the class&nbsp;<strong>dropcap</strong>&nbsp;as seen below:
+<pre>&lt;span class="dropcap"&gt;T&lt;/span&gt;his is how you add a dropcap.</pre>
+
+<hr>
+
+<h3>Table Styles</h3>
+<table class="table table-hover  table-bordered  table-striped">
+<thead>
+<tr>
+<th>BEATLE</th>
+<th>INSTRUMENT</th>
+<th>SONG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>John Lennon</td>
+<td>Guitar</td>
+<td>A Day In the Life</td>
+</tr>
+<tr class="even">
+<td>George Harrison</td>
+<td>Guitar</td>
+<td>Old Brown Shoe</td>
+</tr>
+<tr class="odd">
+<td>Paul McCartney</td>
+<td>Bass</td>
+<td>Helter Skelter</td>
+</tr>
+<tr class="even">
+<td>Ringo Starr</td>
+<td>Drums</td>
+<td>Don’t Pass Me By</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h3>Code Formatting</h3>
+<pre>pre {
+    position: relative;
+    background: #f7f7f7;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    padding: 1.6em;
+    overflow: auto;
+    max-width: 100%;
+    tab-size: 4;
+}</pre>
+
+<hr>
+
+<h3>Mixed List Items</h3>
+<ul>
+ 	<li>Unordered list item one</li>
+ 	<li>Unordered list item two
+<ol>
+ 	<li>Ordered list item one</li>
+ 	<li>Ordered list item two
+<ul>
+ 	<li>Unordered list item one</li>
+ 	<li>Unordered list item two
+<ol>
+ 	<li>Ordered list item one</li>
+ 	<li>Ordered list item two</li>
+ 	<li>Ordered list item three</li>
+</ol>
+</li>
+ 	<li>Unordered list item three</li>
+</ul>
+</li>
+ 	<li>Ordered list item three</li>
+</ol>
+</li>
+ 	<li>Unordered list item three</li>
+</ul>]]>		</content:encoded>
 		<excerpt:encoded>
 				<![CDATA[
 				She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.		]]>		</excerpt:encoded>
@@ -2372,7 +2648,7 @@ On her way she met a copy. The copy warned the Little Blind Text, that where it 
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="lifestyle"><![CDATA[Lifestyle]]></category>
+										<category domain="category" nicename="holiday"><![CDATA[Holiday]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[wpb_post_views_count]]></wp:meta_key>
 		<wp:meta_value><![CDATA[18]]></wp:meta_value>
@@ -2387,7 +2663,7 @@ On her way she met a copy. The copy warned the Little Blind Text, that where it 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bttk_view_count]]></wp:meta_key>
-		<wp:meta_value><![CDATA[32]]></wp:meta_value>
+		<wp:meta_value><![CDATA[88]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
@@ -2411,10 +2687,9 @@ On her way she met a copy. The copy warned the Little Blind Text, that where it 
 		<guid isPermaLink="false">http://thebootstrapthemes.com/demo/restaurant_bootstrap/?p=1</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.
+				<![CDATA[She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.
 
-On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their projects again and again.		]]>		</content:encoded>
+On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their projects again and again.]]>		</content:encoded>
 		<excerpt:encoded>
 				<![CDATA[
 						]]>		</excerpt:encoded>
@@ -2431,7 +2706,7 @@ On her way she met a copy. The copy warned the Little Blind Text, that where it 
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="category" nicename="design"><![CDATA[Design]]></category>
-		<category domain="category" nicename="lifestyle"><![CDATA[Lifestyle]]></category>
+		<category domain="category" nicename="holiday"><![CDATA[Holiday]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[wpb_post_views_count]]></wp:meta_key>
 		<wp:meta_value><![CDATA[15]]></wp:meta_value>
@@ -2448,20 +2723,27 @@ On her way she met a copy. The copy warned the Little Blind Text, that where it 
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
 		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_bttk_view_count]]></wp:meta_key>
+		<wp:meta_value><![CDATA[2]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[705]]></wp:meta_value>
+		</wp:postmeta>
 							</item>
 					<item>
 		<title>
-				Leave for the far world of grammar		</title>
+				One day however a small line of blind text		</title>
 		<link>https://avidthemes.com/demo/avid-magazine/2018/06/11/sports/</link>
 		<pubDate>Mon, 11 Jun 2018 17:21:16 +0000</pubDate>
 		<dc:creator><![CDATA[aib1y]]></dc:creator>
 		<guid isPermaLink="false">http://thebootstrapthemes.com/demo/magazine-newspaper/?p=13</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.
+				<![CDATA[Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.
 
-She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.		]]>		</content:encoded>
+She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.]]>		</content:encoded>
 		<excerpt:encoded>
 				<![CDATA[
 				Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.		]]>		</excerpt:encoded>
@@ -2477,7 +2759,7 @@ She packed her seven versalia, put her initial into the belt and made herself on
 		<wp:post_type><![CDATA[post]]></wp:post_type>
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
-										<category domain="category" nicename="lifestyle"><![CDATA[Lifestyle]]></category>
+										<category domain="category" nicename="holiday"><![CDATA[Holiday]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[wpb_post_views_count]]></wp:meta_key>
 		<wp:meta_value><![CDATA[2]]></wp:meta_value>
@@ -2492,7 +2774,7 @@ She packed her seven versalia, put her initial into the belt and made herself on
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bttk_view_count]]></wp:meta_key>
-		<wp:meta_value><![CDATA[75]]></wp:meta_value>
+		<wp:meta_value><![CDATA[84]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
@@ -2538,7 +2820,7 @@ On her way she met a copy. The copy warned the Little Blind Text, that where it 
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="category" nicename="design"><![CDATA[Design]]></category>
-		<category domain="category" nicename="lifestyle"><![CDATA[Lifestyle]]></category>
+		<category domain="category" nicename="holiday"><![CDATA[Holiday]]></category>
 		<category domain="category" nicename="slider"><![CDATA[slider]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_old_slug]]></wp:meta_key>
@@ -2582,12 +2864,11 @@ On her way she met a copy. The copy warned the Little Blind Text, that where it 
 		<guid isPermaLink="false">http://thebootstrapthemes.com/demo/magazine-newspaper/?p=21</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.
+				<![CDATA[Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic life One day however a small line of blind text by the name of Lorem Ipsum decided to leave for the far World of Grammar. The Big Oxmox advised her not to do so, because there were thousands of bad Commas, wild Question Marks and devious Semikoli, but the Little Blind Text didn’t listen.
 
 She packed her seven versalia, put her initial into the belt and made herself on the way. When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her hometown Bookmarksgrove, the headline of Alphabet Village and the subline of her own road, the Line Lane. Pityful a rethoric question ran over her cheek, then she continued her way.
 
-On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their projects again and again.		]]>		</content:encoded>
+On her way she met a copy. The copy warned the Little Blind Text, that where it came from it would have been rewritten a thousand times and everything that was left from its origin would be the word "and" and the Little Blind Text should turn around and return to its own, safe country. But nothing the copy said could convince her and so it didn’t take long until a few insidious Copy Writers ambushed her, made her drunk with Longe and Parole and dragged her into their agency, where they abused her for their projects again and again.]]>		</content:encoded>
 		<excerpt:encoded>
 				<![CDATA[
 						]]>		</excerpt:encoded>
@@ -2614,11 +2895,15 @@ On her way she met a copy. The copy warned the Little Blind Text, that where it 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bttk_view_count]]></wp:meta_key>
-		<wp:meta_value><![CDATA[8]]></wp:meta_value>
+		<wp:meta_value><![CDATA[10]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
 		<wp:meta_value><![CDATA[default]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[717]]></wp:meta_value>
 		</wp:postmeta>
 							</item>
 					<item>
@@ -2656,7 +2941,7 @@ And if she hasn’t been rewritten, then they are still using her. Far far away,
 		<wp:post_password><![CDATA[]]></wp:post_password>
 		<wp:is_sticky>0</wp:is_sticky>
 										<category domain="category" nicename="design"><![CDATA[Design]]></category>
-		<category domain="category" nicename="lifestyle"><![CDATA[Lifestyle]]></category>
+		<category domain="category" nicename="holiday"><![CDATA[Holiday]]></category>
 						<wp:postmeta>
 		<wp:meta_key><![CDATA[wpb_post_views_count]]></wp:meta_key>
 		<wp:meta_value><![CDATA[17]]></wp:meta_value>
@@ -2751,15 +3036,152 @@ Sports are usually governed by a set of rules or customs, which serve to ensure 
 							</item>
 					<item>
 		<title>
-				Passion for photography		</title>
+				My account		</title>
+		<link>https://avidthemes.com/demo/avid-magazine/my-account/</link>
+		<pubDate>Wed, 06 Jun 2018 16:09:08 +0000</pubDate>
+		<dc:creator><![CDATA[aib1y]]></dc:creator>
+		<guid isPermaLink="false">http://127.0.0.1:8080/photography_bootstrap/?page_id=502</guid>
+		<description></description>
+		<content:encoded>
+				<![CDATA[
+				[woocommerce_my_account]		]]>		</content:encoded>
+		<excerpt:encoded>
+				<![CDATA[
+						]]>		</excerpt:encoded>
+		<wp:post_id>502</wp:post_id>
+		<wp:post_date><![CDATA[2018-06-06 16:09:08]]></wp:post_date>
+		<wp:post_date_gmt><![CDATA[2018-06-06 16:09:08]]></wp:post_date_gmt>
+		<wp:comment_status><![CDATA[closed]]></wp:comment_status>
+		<wp:ping_status><![CDATA[closed]]></wp:ping_status>
+		<wp:post_name><![CDATA[my-account]]></wp:post_name>
+		<wp:status><![CDATA[publish]]></wp:status>
+		<wp:post_parent>0</wp:post_parent>
+		<wp:menu_order>0</wp:menu_order>
+		<wp:post_type><![CDATA[page]]></wp:post_type>
+		<wp:post_password><![CDATA[]]></wp:post_password>
+		<wp:is_sticky>0</wp:is_sticky>
+														</item>
+					<item>
+		<title>
+				Sports Activities		</title>
 		<link>https://avidthemes.com/demo/avid-magazine/2015/12/20/sl/</link>
 		<pubDate>Sun, 20 Dec 2015 10:57:08 +0000</pubDate>
 		<dc:creator><![CDATA[aib1y]]></dc:creator>
 		<guid isPermaLink="false">http://thebootstrapthemes.com/demo/thebootstrapthemes_darkpress/?p=6</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains. Dramatically engage top-line web services vis-a-vis cutting-edge deliverables.		]]>		</content:encoded>
+				<![CDATA[The style guide provides you with a blueprint of Paperback’s&nbsp;default post and page styles. The style guide is also a great reference for suggested typographic treatment and styles for your content.
+
+<hr>
+
+<h4>Right Aligned Image</h4>
+<img class="size-medium wp-image-720 alignright" src="https://avidthemes.com/demo/avid-magazine/wp-content/uploads/2017/11/football_referee_coin_toss_official_sport_stripes_uniform_game-495806-300x200.jpg" alt="" width="300" height="200">Images may be two-dimensional, such as a photograph, screen display, and as well as a three-dimensional, such as a statue or hologram. They may be captured by optical devices – such as cameras, mirrors, lenses, telescopes, microscopes, etc. and natural objects and phenomena, such as the human eye or water surfaces. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
+
+The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.&nbsp;The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.&nbsp;The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
+
+<hr>
+
+<h4>Left Aligned Image</h4>
+<img class="size-medium wp-image-703 alignleft" src="https://avidthemes.com/demo/avid-magazine/wp-content/uploads/2019/03/564ade1f51e14d9732541902513e-1434991-300x200.jpg" alt="" width="300" height="200">The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. In this wider sense, images can also be rendered manually, such as by drawing, painting, carving, rendered automatically by printing or computer graphics technology, or developed by a combination of methods. Images may be two-dimensional, such as a photograph, screen display, and as well as a three-dimensional, such as a statue or hologram. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting. The word image is also used in the broader sense of any two-dimensional figure such as a map, a graph, a pie chart, or an abstract painting.
+
+A volatile image is one that exists only for a short period of time. This may be a reflection of an object by a mirror, a projection of a camera obscura, or a scene displayed on a cathode ray tube. A fixed image, also called a hard copy.
+
+<hr>
+
+<h1>Heading One</h1>
+<h2>Heading Two</h2>
+<h3>Heading Three</h3>
+<h4>Heading Four</h4>
+<h5>Heading Five</h5>
+<h6>Heading Six</h6>
+<h6>&nbsp;</h6>
+
+<hr>
+
+<h3>Blockquote</h3>
+<blockquote>The greatest gift of life is friendship, and I have received it.</blockquote>
+<h3 id="pull-quotes">Typography Styles</h3>
+<span id="dropcap" class="dropcap">A</span>drop cap is a decorative element typically used in documents at the start of a section or chapter. It’s a large capital letter at the beginning or a paragraph or text block that has the depth of two or more lines of normal text. You can easily add a dropcap to any paragraph by adding the class&nbsp;<strong>dropcap</strong>&nbsp;as seen below:
+<pre>&lt;span class="dropcap"&gt;T&lt;/span&gt;his is how you add a dropcap.</pre>
+
+<hr>
+
+<h3>Table Styles</h3>
+<table class="table table-hover  table-bordered  table-striped">
+<thead>
+<tr>
+<th>BEATLE</th>
+<th>INSTRUMENT</th>
+<th>SONG</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>John Lennon</td>
+<td>Guitar</td>
+<td>A Day In the Life</td>
+</tr>
+<tr class="even">
+<td>George Harrison</td>
+<td>Guitar</td>
+<td>Old Brown Shoe</td>
+</tr>
+<tr class="odd">
+<td>Paul McCartney</td>
+<td>Bass</td>
+<td>Helter Skelter</td>
+</tr>
+<tr class="even">
+<td>Ringo Starr</td>
+<td>Drums</td>
+<td>Don’t Pass Me By</td>
+</tr>
+</tbody>
+</table>
+
+<hr>
+
+<h3>Code Formatting</h3>
+<pre>pre {
+    position: relative;
+    background: #f7f7f7;
+    font-family: "Courier 10 Pitch", Courier, monospace;
+    font-size: 15px;
+    font-size: 1.5rem;
+    line-height: 1.6;
+    margin-bottom: 1.6em;
+    padding: 1.6em;
+    overflow: auto;
+    max-width: 100%;
+    tab-size: 4;
+}</pre>
+
+<hr>
+
+<h3>Mixed List Items</h3>
+<ul>
+ 	<li>Unordered list item one</li>
+ 	<li>Unordered list item two
+<ol>
+ 	<li>Ordered list item one</li>
+ 	<li>Ordered list item two
+<ul>
+ 	<li>Unordered list item one</li>
+ 	<li>Unordered list item two
+<ol>
+ 	<li>Ordered list item one</li>
+ 	<li>Ordered list item two</li>
+ 	<li>Ordered list item three</li>
+</ol>
+</li>
+ 	<li>Unordered list item three</li>
+</ul>
+</li>
+ 	<li>Ordered list item three</li>
+</ol>
+</li>
+ 	<li>Unordered list item three</li>
+</ul>]]>		</content:encoded>
 		<excerpt:encoded>
 				<![CDATA[
 				Objectively innovate empowered manufactured products whereas parallel platforms. Holisticly predominate extensible testing procedures for reliable supply chains.		]]>		</excerpt:encoded>
@@ -2790,7 +3212,11 @@ Sports are usually governed by a set of rules or customs, which serve to ensure 
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bttk_view_count]]></wp:meta_key>
-		<wp:meta_value><![CDATA[68]]></wp:meta_value>
+		<wp:meta_value><![CDATA[73]]></wp:meta_value>
+		</wp:postmeta>
+							<wp:postmeta>
+		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
+		<wp:meta_value><![CDATA[709]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:comment>
 			<wp:comment_id>2</wp:comment_id>
@@ -3046,6 +3472,22 @@ Now may know ways to make cash with Squidoo, Nevertheless it is true that you ca
 lens or at least, updating might help to prevent already hold.
 You've now gained an an opportunity to earn cyberspace.
 How you inside the most of this opportunity is entirely to you. http://ntc33.fun/index.php/other-games/ace333]]></wp:comment_content>
+			<wp:comment_approved><![CDATA[0]]></wp:comment_approved>
+			<wp:comment_type><![CDATA[]]></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+			<wp:comment_user_id>0</wp:comment_user_id>
+							</wp:comment>
+					<wp:comment>
+			<wp:comment_id>14</wp:comment_id>
+			<wp:comment_author><![CDATA[online casino zdarma]]></wp:comment_author>
+			<wp:comment_author_email><![CDATA[BriannaTranter75@store.dobunny.com]]></wp:comment_author_email>
+			<wp:comment_author_url>http://riderpos.com/__media__/js/netsoltrademark.php?d=rollex.world%2Findex.php%2Fdownload%2F28-rollex11</wp:comment_author_url>
+			<wp:comment_author_IP><![CDATA[181.113.225.130]]></wp:comment_author_IP>
+			<wp:comment_date><![CDATA[2019-03-29 09:50:17]]></wp:comment_date>
+			<wp:comment_date_gmt><![CDATA[2019-03-29 09:50:17]]></wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[Download online casino software from the online casino of the 
+choice you have to gambling online today! Must ensure recognize all guidelines of joker poker perform well.
+So the difference is in the knowing your holiday destination. http://riderpos.com/__media__/js/netsoltrademark.php?d=rollex.world%2Findex.php%2Fdownload%2F28-rollex11]]></wp:comment_content>
 			<wp:comment_approved><![CDATA[0]]></wp:comment_approved>
 			<wp:comment_type><![CDATA[]]></wp:comment_type>
 			<wp:comment_parent>0</wp:comment_parent>

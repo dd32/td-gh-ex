@@ -16,7 +16,7 @@ get_header(); ?>
 <?php $sidebar_position = get_theme_mod( 'blog_post_layout', 'sidebar-right' ); ?>
 <?php  $view = get_theme_mod( 'blog_post_view', 'grid-view' ); ?>
 <?php
-  $width_class = 'col-sm-9';
+  $width_class = 'col-sm-9 sticky-area';
   if( $sidebar_position == 'no-sidebar' ) {
     $width_class = 'col-sm-12';
   }

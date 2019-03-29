@@ -15,11 +15,8 @@ function avid_magazine_register_custom_controls( $wp_customize ) {
     require_once get_template_directory() . '/inc/custom-controls/repeater/class-control-repeater.php';
     require_once get_template_directory() . '/inc/custom-controls/sortable/class-sortable-control.php';
     require_once get_template_directory() . '/inc/custom-controls/dropdown-taxonomies/class-dropdown-taxonomies-control.php';
-    require_once get_template_directory() . '/inc/custom-controls/posttype-taxonomies/class-post-type-taxonomies-control.php';
     require_once get_template_directory() . '/inc/custom-controls/multicheck/class-multi-check-control.php';
-
-
-    require_once get_template_directory() . '/inc/custom-controls/notes.php';
+    require_once get_template_directory() . '/inc/custom-controls/custom-text.php';
             
     // Register the control type.
     $wp_customize->register_control_type( 'Avid_Magazine_Radio_Buttonset_Control' );

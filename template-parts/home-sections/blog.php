@@ -5,7 +5,7 @@
 		$width_class = 'col-sm-12';
 	}
 ?>
-<div class="content-area">
+<div class="content-area sticky-area">
 <div class="container">
 	<div class="row">
 		<?php if( $sidebar_position == 'sidebar-left' && is_active_sidebar( 'sidebar-left' ) ) : ?>

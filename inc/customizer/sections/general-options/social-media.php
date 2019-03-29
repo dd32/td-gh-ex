@@ -31,11 +31,6 @@ function avid_magazine_social_media_sections( $wp_customize ) {
 				'description' => esc_html__( 'This will be the label.', 'avid-magazine' ),
 				'default'     => '',
 			),
-			'social_media_class' => array(
-				'type'        => 'text',
-				'label'       => esc_html__( 'Social Media Class', 'avid-magazine' ),
-				'default'     => '',
-			),
 			'social_media_link' => array(
 				'type'      => 'url',
 				'label'     => esc_html__( 'Social Media Links', 'avid-magazine' ),

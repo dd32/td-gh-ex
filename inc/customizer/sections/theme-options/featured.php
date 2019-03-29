@@ -74,7 +74,7 @@ function avid_magazine_customize_register_featured_lifestyle( $wp_customize ) {
     $wp_customize->add_setting( 'featured_lifestyle_show_hide_details', array(
         'capability'  => 'edit_theme_options',        
         'sanitize_callback' => 'avid_magazine_sanitize_array',
-        'default'     => array( 'date', 'categories', 'tags', 'description', 'read-more' ),
+        'default'     => array( 'date', 'categories', 'tags' ),
     ) );
 
     $wp_customize->add_control( new Avid_Magazine_Multi_Check_Control( $wp_customize, 'featured_lifestyle_show_hide_details', array(

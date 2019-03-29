@@ -41,11 +41,8 @@
 						<div class="social-icons">
 							<ul class="list-inline">
 								<?php foreach ( $social_media_filtered as $value ) { ?>
-									<?php
-										$no_space_class = str_replace( 'fa fa-', '', $value['social_media_class'] );
-										$class = strtolower( $no_space_class );
-									?>
-							        <li class="<?php echo esc_attr( $class ); ?>"><a href="<?php echo esc_url( $value['social_media_link'] ); ?>" target="_blank"><i class="<?php echo esc_attr( $value['social_media_class'] ); ?>"></i></a></li>
+									<?php $class = strtolower( 'fa fa-' . $value['social_media_title'] ); ?>
+							        <li class="<?php echo esc_attr( strtolower( $value['social_media_title'] ) ); ?>"><a href="<?php echo esc_url( $value['social_media_link'] ); ?>" target="_blank"><i class="<?php echo esc_attr( $class ); ?>"></i></a></li>
 							    <?php } ?>
 							</ul>
 						</div>

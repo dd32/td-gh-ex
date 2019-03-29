@@ -106,7 +106,6 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend({
 				theNewRow = control.addRow();
 				theNewRow.toggleMinimize();
 				control.initColorPicker();
-				control.initDropdownPages( theNewRow );
 			} else {
 				jQuery( control.selector + ' .limit' ).addClass( 'highlight' );
 			}
@@ -167,7 +166,6 @@ wp.customize.controlConstructor.repeater = wp.customize.Control.extend({
 			_.each( settingValue, function( subValue ) {
 				theNewRow = control.addRow( subValue );
 				control.initColorPicker();
-				//control.initDropdownPages( theNewRow, subValue );
 			});
 		}
 

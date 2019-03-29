@@ -49,7 +49,7 @@ function avid_magazine_dynamic_css() {
                 header .logo img{ height: {$logo_size}"."px; }
                 header .logo h1{ font-size: {$logo_font_size}"."px; font-family: {$site_identity_font_family}; }
                 section.top-bar{padding: {$header_image_height}" . "px 0;}
-                header .logo h1, header .logo h2{color: $site_title_color}
+                header .logo h1, header .logo h2{color: $site_title_color !important;}
                 
                 
                 h1{ font: $heading_font_weight {$heading[1]}"."px $heading_font_family }
@@ -61,22 +61,22 @@ function avid_magazine_dynamic_css() {
 
                 .navbar-nav > li > a {color: $menu_font_color;}
 
-                header .main-nav{background-color: $menu_background_color;}
-                
+                header .main-nav{background-color: $menu_background_color;}                
                 footer.main{background-color: $footer_background_color;}
 
                 
                 /* Primary Colors */
-                .pri-bg-color{background-color: $primary_color;}
+                header .navbar-nav .dropdown-menu > li > a:hover{color: $primary_color;}
+                .pri-bg-color,.headline-title, .navbar-nav > .active > a,.navbar-nav > .active > a, .navbar-nav > .active > a:hover,.current-menu-parent,h5.widget-title:after, .section-heading:after{background-color: $primary_color;}
 
                 /* Secondary Colors */
-                a,a.readmore,.navbar-nav > .active > a,button.loadmore,.navbar-nav .current-menu-ancestor>a,.navbar-nav > .active > a, .navbar-nav > .active > a:hover,.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus{background:none;color: $secondary_color;}
+                a,a:visited,a.readmore,button.loadmore{color: $secondary_color;}
 
                 /*Heading Title*/
                 h1,h2,h3,h4,h5,h6{color: $heading_title_color;}
 
                 /*Heading Link*/
-                h2 a, h3 a,h4 a{color: $heading_link_color;}
+                h2 a, h3 a, h4 a,h2 a:visited, h3 a:visited, h4 a:visited{color: $heading_link_color;}
 
 
                 /*buttons*/
@@ -85,8 +85,7 @@ function avid_magazine_dynamic_css() {
                 .woocommerce button.button.alt, .woocommerce input.button.alt,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button,
                 .woocommerce input.button,form#wte_enquiry_contact_form input#enquiry_submit_button,#blossomthemes-email-newsletter-626 input.subscribe-submit-626,
                 .jetpack_subscription_widget,.widget_search,.search-submit,.widget-instagram .owl-carousel .owl-nav .owl-prev,
-                .widget-instagram .owl-carousel .owl-nav .owl-next,.widget_search input.search-submit,
-                .featured-blog-view-4 h6.category a,.featured-blog-view-3 h6.category a,.featured-blog-view-2 h6.category a
+                .widget-instagram .owl-carousel .owl-nav .owl-next,.widget_search input.search-submit, .featured-layout h6.category a
                 {background-color: $button_color;}
 
                

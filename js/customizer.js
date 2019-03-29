@@ -57,16 +57,15 @@
 
 	wp.customize( 'primary_colors', function( value ) {
 		value.bind( function( to ) {
-			$( '.pri-bg-color' ).css( 'background-color', to );
+			$( 'header .navbar-nav .dropdown-menu > li > a:hover' ).css( 'color', to );
+			$( '.pri-bg-color,.headline-title, .navbar-nav > .active > a,.navbar-nav > .active > a, .navbar-nav > .active > a:hover,.current-menu-parent,h5.widget-title:after, .section-heading:after' ).css( 'background-color', to );
 		} );
 	} );
 
 
 	wp.customize( 'secondary_colors', function( value ) {
 		value.bind( function( to ) {
-			$( 'a.readmore,.navbar-nav > .active > a,button.loadmore,.navbar-nav .current-menu-ancestor>a,.navbar-nav > .active > a, .navbar-nav > .active > a:hover,.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus' ).css( 'background', 'none' );
-
-			$( 'a.readmore,.navbar-nav > .active > a,button.loadmore,.navbar-nav .current-menu-ancestor>a,.navbar-nav > .active > a, .navbar-nav > .active > a:hover,.dropdown-menu > .active > a, .dropdown-menu > .active > a:hover, .dropdown-menu > .active > a:focus' ).css( 'color', to );
+			$( 'a.readmore,button.loadmore' ).css( 'color', to );
 		} );
 	} );
 
@@ -99,14 +98,14 @@
 
 	wp.customize( 'heading_link_color', function( value ) {
 		value.bind( function( to ) {
-			$( 'h2 a, h3 a, h4 a' ).css( 'color', to );
+			$( 'h2 a, h3 a, h4 a,h2 a:visited, h3 a:visited, h4 a:visited' ).css( 'color', to );
 		} );
 	} );
 
 	
 	wp.customize( 'button_color', function( value ) {
 		value.bind( function( to ) {
-			$( 'header .search-submit,.widget .profile-link, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,form#wte_enquiry_contact_form input#enquiry_submit_button,#blossomthemes-email-newsletter-626 input.subscribe-submit-626, .jetpack_subscription_widget,.widget_search,.search-submit,.widget-instagram .owl-carousel .owl-nav .owl-prev,.widget-instagram .owl-carousel .owl-nav .owl-next,.widget_search input.search-submit' ).css( 'background-color', to );
+			$( 'header .search-submit,.widget .profile-link, .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,form#wte_enquiry_contact_form input#enquiry_submit_button,#blossomthemes-email-newsletter-626 input.subscribe-submit-626, .jetpack_subscription_widget,.widget_search,.search-submit,.widget-instagram .owl-carousel .owl-nav .owl-prev, .widget-instagram .owl-carousel .owl-nav .owl-next,.widget_search input.search-submit, .featured-layout h6.category a' ).css( 'background-color', to );
 		} );
 	} );
 

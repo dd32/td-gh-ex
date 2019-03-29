@@ -28,7 +28,7 @@ get_header(); ?>
 					<div class="post-content">
 					<div class="image-title-overlay">
 					<?php if ( has_post_thumbnail() ) : ?>
-					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'medium' ); ?>
+					<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
 					<figure class="feature-image" style="background-image:url(<?php echo esc_url( $image[0] ); ?>);" >					</figure>
 					<?php endif; ?> 
 

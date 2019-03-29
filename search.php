@@ -6,9 +6,9 @@
  */
 
 get_header(); ?>
-<div class="spacer post-list content-area">
+<div class="post-list content-area">
     <div class="container">
-        <section id="primary" class="content-area">
+        <section id="primary">
             <main id="main" class="site-main" role="main">
 
                 <?php if ( have_posts() ) : ?>
