@@ -6,7 +6,7 @@
  */
 function kirki_toolkit()
 {
-    if (is_plugin_active('kirki/kirki.php')) {
+    if ( class_exists( 'Kirki' ) ) {
         require_once BEAM_THEME_DIR . 'options-config.php';
     }
 }
