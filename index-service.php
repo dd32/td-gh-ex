@@ -115,6 +115,9 @@ function elitepress_service_content( $elitepress_service_content, $is_callback =
 			$title = ! empty( $features_item->title ) ? apply_filters( 'elitepress_translate_single_string', $features_item->title, 'Features section' ) : '';
 			$text = ! empty( $features_item->text ) ? apply_filters( 'elitepress_translate_single_string', $features_item->text, 'Features section' ) : '';
 			$link = ! empty( $features_item->link ) ? apply_filters( 'elitepress_translate_single_string', $features_item->link, 'Features section' ) : '';
+			$link_target = ! empty( $features_item->open_new_tab ) ? apply_filters( 'elitepress_translate_single_string', $features_item->open_new_tab, 'Features section' ) : '';
+			$button_text = !empty( $features_item->button_text ) ? apply_filters( 'elitepress_translate_single_string', $features_item->button_text, 'Features section' ) : '';
+			
 			$image = ! empty( $features_item->image_url ) ? apply_filters( 'elitepress_translate_single_string', $features_item->image_url, 'Features section' ) : '';
 			$color = '';
 			if ( is_customize_preview() && ! empty( $features_item->color ) ) {
@@ -146,6 +149,11 @@ function elitepress_service_content( $elitepress_service_content, $is_callback =
 					<?php if ( ! empty( $text ) ) : ?>
 					<p><?php echo wp_kses( html_entity_decode( $text ), $allowed_html ); ?></p>
 					<?php endif; ?>
+					<?php if($button_text != '') {?>
+							<div class="service-btn">
+								<a href="<?php echo $link ?>" <?php if($link_target== 'yes') { echo "target='_blank'"; } ?>><?php echo $button_text ?></a>
+							</div>	
+							<?php }?>
 					</div>		
 				</div>
 			</div>
@@ -162,8 +170,11 @@ function elitepress_service_content( $elitepress_service_content, $is_callback =
 					<div class="service-box">
 						<i class="<?php echo $icon[$i]; ?>"></i>
 					</div>
+					<div class="media-body">
 					<h4 class="entry-title"><?php echo $title[$i]; ?></h4>
-				<p><?php echo 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.'; ?></p>	
+				<p><?php echo 'Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Cras mattis consectetur purus sit amet ferment etiam porta sem malesuada magna mollis.'; ?></p>
+					<div class="service-btn"><a title="Read More" href="#"><?php _e('Read More', 'elitepress'); ?></a></div>
+				</div>
 				</div>
 			</div>
 			<?php } 

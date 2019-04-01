@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: ElitePress\n"
-"POT-Creation-Date: 2019-03-19 16:08+0530\n"
-"PO-Revision-Date: 2019-03-19 16:08+0530\n"
+"POT-Creation-Date: 2019-04-01 18:49+0530\n"
+"PO-Revision-Date: 2019-04-01 18:49+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -172,8 +172,8 @@ msgid "Leave a Reply"
 msgstr ""
 
 #: content.php:20 fullwidth.php:13 functions.php:119 functions.php:136
-#: functions/customizer/customizer-homecallout.php:72 index-slider.php:100
-#: page.php:13 theme_setup_data.php:77
+#: functions/customizer/customizer-homecallout.php:72 index-service.php:176
+#: index-slider.php:100 page.php:13 theme_setup_data.php:77
 msgid "Read More"
 msgstr ""
 
@@ -607,22 +607,29 @@ msgstr ""
 msgid "A clean and fresh design"
 msgstr ""
 
-#: functions/customizer/customizer.php:134 index-service.php:157
+#: functions/customizer/customizer.php:142 index-service.php:165
 #: theme_setup_data.php:113
 msgid "Responsive design"
 msgstr ""
 
-#: functions/customizer/customizer.php:142 index-service.php:157
+#: functions/customizer/customizer.php:147
+#: functions/customizer/customizer.php:158
+#: functions/customizer/customizer.php:169
+#: functions/customizer/customizer.php:181
+msgid "Read more"
+msgstr ""
+
+#: functions/customizer/customizer.php:153 index-service.php:165
 #: theme_setup_data.php:117
 msgid "Twitter Bootstrap 3.2.0"
 msgstr ""
 
-#: functions/customizer/customizer.php:150 index-service.php:157
+#: functions/customizer/customizer.php:164 index-service.php:165
 #: theme_setup_data.php:121
 msgid "Exclusive support"
 msgstr ""
 
-#: functions/customizer/customizer.php:159 index-service.php:157
+#: functions/customizer/customizer.php:176 index-service.php:165
 #: theme_setup_data.php:125
 msgid "Incredibly flexible"
 msgstr ""

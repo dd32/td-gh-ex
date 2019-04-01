@@ -78,6 +78,9 @@
 				'customizer_repeater_title_control' => true,
 				'customizer_repeater_text_control'  => true,
 				'customizer_repeater_image_control' => true,
+				'customizer_repeater_button_text_control' => true,
+				'customizer_repeater_link_control'  => true,
+				'customizer_repeater_checkbox_control' => true,
 				) ) );
 		}
 
