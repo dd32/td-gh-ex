@@ -26,16 +26,16 @@
 			$classes[] = 'group-blog';
 		}
 
-		if( Kirki::get_option( 'bo', 'opt_default_width' ) ) { 
-			$opt_layout = Kirki::get_option( 'bo', 'opt_default_width' );
-			if ( $opt_layout == 'option-2') {
-				$classes[] = 'width-1170px';
+		if (class_exists('Kirki')) {
+			if( Kirki::get_option( 'bo', 'opt_default_width' ) ) { 
+				$opt_layout = Kirki::get_option( 'bo', 'opt_default_width' );
+				if ( $opt_layout == 'option-2') {
+					$classes[] = 'width-1170px';
+				}
+				else {
+					$classes[] = 'width-980px';
+				}
 			}
-			else {
-				$classes[] = 'width-980px';
-			}
-		}
-
 
 	/*
 	* to-do
@@ -59,7 +59,7 @@
 					$classes[] = 'double-sidebar';
 				}
 			}
-
+		}
 
 		return $classes;
 	}
