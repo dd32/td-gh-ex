@@ -4,7 +4,7 @@ Theme URI: https://beamtheme.com
 Author: Emir Muracevic
 Author URI: https://twitter.com/muracevic
 Description: Beam is a Clean, Fast, Responsive and Customizable WordPress theme. Ready (and recommended) to use with Child themes. Translatation ready. Features four layout types and five page templates.
-Version: 1.4.3
+Version: 1.4.4
 License: GNU General Public License v3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: beam
@@ -5938,7 +5938,7 @@ footer.entry-meta .fa-permalink a {
 }
 
 .site-info a {
-    color: #fafafa
+    color: #4a4a72;
 }
 
 .edit-link a,

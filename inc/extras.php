@@ -26,7 +26,7 @@
 			$classes[] = 'group-blog';
 		}
 
-		if (class_exists('Kirki')) {
+		if ( class_exists('Kirki') ) {
 			if( Kirki::get_option( 'bo', 'opt_default_width' ) ) { 
 				$opt_layout = Kirki::get_option( 'bo', 'opt_default_width' );
 				if ( $opt_layout == 'option-2') {
