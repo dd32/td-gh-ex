@@ -2,8 +2,8 @@
 Contributors: catchthemes
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, entertainment, photography, portfolio
 Requires at least: 4.8
-Tested up to: 5.1
-Stable tag: 1.1.3
+Tested up to: 5.1.1
+Stable tag: 1.1.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,7 +20,7 @@ For more information about Audioman please go to https://catchthemes.com/themes/
 1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
 2. Type in Audioman in the search form and press the 'Enter' key on your keyboard.
 3. Click on the 'Activate' button to use your new theme right away.
-4. Go to https://catchthemes.com/theme-instructions/audioman/ for a guide on how to customize this theme.
+4. Go to https://catchthemes.com/themes/audioman/#theme-instructions for a guide on how to customize this theme.
 5. Navigate to Appearance -> Customize in your admin panel and customize to taste.
 
 == Frequently Asked Questions ==
@@ -43,9 +43,17 @@ For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
 
+= 1.1.4 (Released: April 02, 2019) =
+* Bug Fixed: No sidebar template width alignment issue
+* Bug Fixed: Header Media issue in boxed layout
+* Bug Fixed: Spacing in header media in tablet
+* Bug Fixed: Header Media logo not appearing on entire site
+* Updated: Transition effects
+
 = 1.1.3 (Released: March 02, 2019) =
-* Bug Fixed: Menu hover color issue
+* Updated: Search icon when selected
 * Updated: Meta styles
+* Bug Fixed: Menu hover color issue
 
 = 1.1.2 (Released: January 24, 2019) =
 * Bug Fixed: Header Logo issue when logo is not set (Reported by Max Low)

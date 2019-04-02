@@ -247,10 +247,11 @@ if ( ! function_exists( 'audioman_header_media_text' ) ):
 		$content_alignment = get_theme_mod( 'audioman_header_media_content_alignment', 'content-align-center' );
 
 		$header_media_logo = get_theme_mod( 'audioman_header_media_logo', trailingslashit( esc_url( get_template_directory_uri() ) ) . 'assets/images/header-media-logo.png' );
+		$enable_homepage_logo = get_theme_mod( 'audioman_header_media_logo_option', 'homepage' );
 		?>
 		<div class="custom-header-content sections header-media-section <?php echo esc_attr( $content_alignment ); ?>">
 			<?php
-			if ( audioman_check_section( 'homepage' ) && $header_media_logo ) {  ?>
+			if ( audioman_check_section( $enable_homepage_logo ) && $header_media_logo ) {  ?>
 				<div class="site-header-logo">
 					<img src="<?php echo esc_url( $header_media_logo ); ?>" title="<?php echo esc_url( home_url( '/' ) ); ?>" />
 				</div><!-- .site-header-logo -->

@@ -58,7 +58,7 @@
 		
 		<div id="primary-search-wrapper" class="menu-wrapper">
 			<div class="menu-toggle-wrapper">
-				<button id="social-search-toggle" class="menu-toggle">
+				<button id="social-search-toggle" class="menu-toggle serch-toggle">
 					<span class="menu-label screen-reader-text"><?php echo esc_html_e( 'Search', 'audioman' ); ?>
 				</button>
 			</div><!-- .menu-toggle-wrapper -->
