@@ -71,6 +71,42 @@ function avid_magazine_customize_register_featured_lifestyle( $wp_customize ) {
     ) ) );
 
 
+    $wp_customize->add_setting( 'featured_fullwidth_option', array(
+      'sanitize_callback'     =>  'avid_magazine_sanitize_checkbox',
+      'default'               =>  false
+    ) );
+
+    $wp_customize->add_control( new Avid_Magazine_Toggle_Control( $wp_customize, 'featured_fullwidth_option', array(
+      'label' => esc_html__( 'Fullwidth Display?','avid-magazine' ),
+      'section' => 'avid_magazine_featured_lifestyle_sections',
+      'settings' => 'featured_fullwidth_option',
+      'type'=> 'toggle',
+    ) ) );
+
+    $wp_customize->add_setting( 'number_of_featured_posts', array(
+        'sanitize_callback'     =>  'avid_magazine_sanitize_select',
+        'default'               =>  '5'
+    ) );
+
+
+    $wp_customize->add_control( new Avid_Magazine_Select_Control( $wp_customize, 'number_of_featured_posts', array(
+        'label' => esc_html__( 'Number of posts', 'avid-magazine' ),
+        'section' => 'avid_magazine_featured_lifestyle_sections',
+        'settings' => 'number_of_featured_posts',
+        'type'=> 'select',
+        'choices'     => array(
+            '3' => '3',
+            '4' => '4',
+            '5' => '5',
+            '6' => '6',
+            '7' => '7',
+            '8' => '8',
+            '9' => '9',
+            '10' => '10',
+        ),
+    ) ) );
+
+
     $wp_customize->add_setting( 'featured_lifestyle_show_hide_details', array(
         'capability'  => 'edit_theme_options',        
         'sanitize_callback' => 'avid_magazine_sanitize_array',

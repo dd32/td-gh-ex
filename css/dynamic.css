@@ -20,7 +20,7 @@ footer.main{background-color: #ececec;}
 
 /* Primary Colors */
 header .navbar-nav .dropdown-menu > li > a:hover{color: #1d2028;}
-.pri-bg-color,.headline-title, .navbar-nav > .active > a,.navbar-nav > .active > a, .navbar-nav > .active > a:hover,.current-menu-parent,h5.widget-title:after, .section-heading:after{background-color: #1d2028;}
+.pri-bg-color,.navbar-nav > .active > a,.navbar-nav > .active > a, .navbar-nav > .active > a:hover,.current-menu-parent,h5.widget-title:after, .section-heading:after{background-color: #1d2028;}
 
 /* Secondary Colors */
 a,a:visited,a.readmore,button.loadmore{color: #278728;}
@@ -38,5 +38,5 @@ header .search-submit,.widget .profile-link,
 .woocommerce button.button.alt, .woocommerce input.button.alt,.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button,
 .woocommerce input.button,form#wte_enquiry_contact_form input#enquiry_submit_button,#blossomthemes-email-newsletter-626 input.subscribe-submit-626,
 .jetpack_subscription_widget,.widget_search,.search-submit,.widget-instagram .owl-carousel .owl-nav .owl-prev,
-.widget-instagram .owl-carousel .owl-nav .owl-next,.widget_search input.search-submit, h6.category a
+.widget-instagram .owl-carousel .owl-nav .owl-next,.widget_search input.search-submit,.featured-layout  h6.category a
 {background-color: #278728;}

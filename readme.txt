@@ -27,6 +27,12 @@ Avid Magazine WordPress Theme is very lightweight, easy to use, SEO friendly and
 = Changelog =
 
 
+	= 1.0.2 =
+
+		* Release Date: April 2, 2019
+			i)   Heading Title Overflow issue fixed.
+
+
 	= 1.0.1 =
 
 		* Release Date: March 11, 2019

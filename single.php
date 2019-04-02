@@ -11,7 +11,7 @@ get_header(); ?>
   <div class="container">
     <div class="row"> 
 
-      <div class="col-sm-9 sticky-area">
+      <div class="col-sm-9" id="main-content">
         <section class="page-section">
           <div class="detail-content">
 

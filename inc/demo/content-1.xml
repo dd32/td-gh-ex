@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/5.1.1" created="2019-03-29 10:11" -->
+	<!-- generator="WordPress/5.1.1" created="2019-04-02 07:10" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>Avid Magazine</title>
 	<link>https://avidthemes.com/demo/avid-magazine</link>
 	<description>My WordPress Blog</description>
-	<pubDate>Fri, 29 Mar 2019 10:11:11 +0000</pubDate>
+	<pubDate>Tue, 02 Apr 2019 07:10:00 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>https://avidthemes.com/demo/avid-magazine</wp:base_site_url>
@@ -2381,17 +2381,15 @@ A volatile image is one that exists only for a short period of time. This may be
 		<guid isPermaLink="false">https://thebootstrapthemes.com/demo/avid-magazine-pro/2018/06/21/wordpress-resources-at-siteground/</guid>
 		<description></description>
 		<content:encoded>
-				<![CDATA[
-				WordPress is an award-winning web software, used by millions of webmasters worldwide for building their website or blog. SiteGround is proud to host this particular WordPress installation and provide users with multiple resources to facilitate the management of their WP websites:
+				<![CDATA[WordPress is an award-winning web software, used by millions of webmasters worldwide for building their website or blog. SiteGround is proud to host this particular WordPress installation and provide users with multiple resources to facilitate the management of their WP websites:
 <h3>Expert <a href="http://www.siteground.com/wordpress-hosting.htm">WordPress Hosting</a></h3>
 SiteGround provides superior WordPress hosting focused on speed, security and customer service. We take care of WordPress sites security with unique server-level customizations, WP auto-updates, and daily backups. We make them faster by regularly upgrading our hardware, offering free CDN with Railgun and developing our SuperCacher that speeds sites up to 100 times! And last but not least, we provide real WordPress help 24/7! Learn more about SiteGround WordPress hosting
 <h3>Wordpress tutorial and knowledgebase articles</h3>
 WordPress is considered an easy to work with software. Yet, if you are a beginner you might need some help, or you might be looking for tweaks that do not come naturally even to more advanced users. SiteGround <a href="http://www.siteground.com/tutorials/wordpress/">WordPress tutorial</a> includes installation and theme change instructions, management of WordPress plugins, manual upgrade and backup creation, and more. If you are looking for a more rare setup or modification, you may visit <a href="http://kb.siteground.com">SiteGround Knowledgebase</a>.
 <h3><a href="http://www.siteground.com/wordpress-hosting/wordpress-themes.htm">Free WordPress themes</a></h3>
-SiteGround experts not only develop various solutions for WordPress sites, but also create unique designs that you could download for free. SiteGround WordPress themes are easy to customize for the particular use of the webmaster.		]]>		</content:encoded>
+SiteGround experts not only develop various solutions for WordPress sites, but also create unique designs that you could download for free. SiteGround WordPress themes are easy to customize for the particular use of the webmaster.]]>		</content:encoded>
 		<excerpt:encoded>
-				<![CDATA[
-						]]>		</excerpt:encoded>
+				<![CDATA[]]>		</excerpt:encoded>
 		<wp:post_id>1</wp:post_id>
 		<wp:post_date><![CDATA[2018-06-21 11:34:39]]></wp:post_date>
 		<wp:post_date_gmt><![CDATA[2018-06-21 11:34:39]]></wp:post_date_gmt>
@@ -2411,7 +2409,7 @@ SiteGround experts not only develop various solutions for WordPress sites, but a
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bttk_view_count]]></wp:meta_key>
-		<wp:meta_value><![CDATA[22]]></wp:meta_value>
+		<wp:meta_value><![CDATA[26]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
@@ -2663,7 +2661,7 @@ A volatile image is one that exists only for a short period of time. This may be
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bttk_view_count]]></wp:meta_key>
-		<wp:meta_value><![CDATA[88]]></wp:meta_value>
+		<wp:meta_value><![CDATA[93]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
@@ -2774,7 +2772,7 @@ She packed her seven versalia, put her initial into the belt and made herself on
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bttk_view_count]]></wp:meta_key>
-		<wp:meta_value><![CDATA[84]]></wp:meta_value>
+		<wp:meta_value><![CDATA[86]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_wp_page_template]]></wp:meta_key>
@@ -3212,7 +3210,7 @@ A volatile image is one that exists only for a short period of time. This may be
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_bttk_view_count]]></wp:meta_key>
-		<wp:meta_value><![CDATA[73]]></wp:meta_value>
+		<wp:meta_value><![CDATA[86]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_thumbnail_id]]></wp:meta_key>
@@ -3488,6 +3486,84 @@ How you inside the most of this opportunity is entirely to you. http://ntc33.fun
 			<wp:comment_content><![CDATA[Download online casino software from the online casino of the 
 choice you have to gambling online today! Must ensure recognize all guidelines of joker poker perform well.
 So the difference is in the knowing your holiday destination. http://riderpos.com/__media__/js/netsoltrademark.php?d=rollex.world%2Findex.php%2Fdownload%2F28-rollex11]]></wp:comment_content>
+			<wp:comment_approved><![CDATA[0]]></wp:comment_approved>
+			<wp:comment_type><![CDATA[]]></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+			<wp:comment_user_id>0</wp:comment_user_id>
+							</wp:comment>
+					<wp:comment>
+			<wp:comment_id>15</wp:comment_id>
+			<wp:comment_author><![CDATA[live blackjack android app]]></wp:comment_author>
+			<wp:comment_author_email><![CDATA[KevinCobby@price.zanycabs.com]]></wp:comment_author_email>
+			<wp:comment_author_url>http://Rwjenterprises.com/__media__/js/netsoltrademark.php?d=www.ongbaby.com%2Fblog%2Fcategories%2Fntc33</wp:comment_author_url>
+			<wp:comment_author_IP><![CDATA[180.250.243.250]]></wp:comment_author_IP>
+			<wp:comment_date><![CDATA[2019-03-29 12:58:37]]></wp:comment_date>
+			<wp:comment_date_gmt><![CDATA[2019-03-29 12:58:37]]></wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[Understanding it may also increase the likelihood of winning.
+
+This is because crucial to you . money goes go round and 
+round in an online casino. Your order of betting is fixed in all rounds of betting. http://Rwjenterprises.com/__media__/js/netsoltrademark.php?d=www.ongbaby.com%2Fblog%2Fcategories%2Fntc33]]></wp:comment_content>
+			<wp:comment_approved><![CDATA[0]]></wp:comment_approved>
+			<wp:comment_type><![CDATA[]]></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+			<wp:comment_user_id>0</wp:comment_user_id>
+							</wp:comment>
+					<wp:comment>
+			<wp:comment_id>16</wp:comment_id>
+			<wp:comment_author><![CDATA[web design oman]]></wp:comment_author>
+			<wp:comment_author_email><![CDATA[DwayneBowmaker39@all.quirkymeme.com]]></wp:comment_author_email>
+			<wp:comment_author_url>http://islandography.com/__media__/js/netsoltrademark.php?d=austudio.global%2Findex.php%2Fservices%2Fproduct%2F3-web-maintenance-service</wp:comment_author_url>
+			<wp:comment_author_IP><![CDATA[177.38.5.63]]></wp:comment_author_IP>
+			<wp:comment_date><![CDATA[2019-03-29 17:10:53]]></wp:comment_date>
+			<wp:comment_date_gmt><![CDATA[2019-03-29 17:10:53]]></wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[It's all about marketing combined with real return. If a 
+company is charging low prices, this doesn't imply that substantial a company of top 
+quality. This stems from the nature of websites. http://islandography.com/__media__/js/netsoltrademark.php?d=austudio.global%2Findex.php%2Fservices%2Fproduct%2F3-web-maintenance-service]]></wp:comment_content>
+			<wp:comment_approved><![CDATA[0]]></wp:comment_approved>
+			<wp:comment_type><![CDATA[]]></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+			<wp:comment_user_id>0</wp:comment_user_id>
+							</wp:comment>
+					<wp:comment>
+			<wp:comment_id>17</wp:comment_id>
+			<wp:comment_author><![CDATA[sky777 casino]]></wp:comment_author>
+			<wp:comment_author_email><![CDATA[AnastasiaMancia@that.milltrill.com]]></wp:comment_author_email>
+			<wp:comment_author_url>https://scr888.group/other-games-download/2493-download-sky777</wp:comment_author_url>
+			<wp:comment_author_IP><![CDATA[101.255.32.250]]></wp:comment_author_IP>
+			<wp:comment_date><![CDATA[2019-03-30 00:08:09]]></wp:comment_date>
+			<wp:comment_date_gmt><![CDATA[2019-03-30 00:08:09]]></wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[Practicing self hypnosis should be seen as gift from 
+ahead of. Now, who says that every vote doesn't quantify? And don't even search calling the authorities - they're peace officials. https://scr888.group/other-games-download/2493-download-sky777]]></wp:comment_content>
+			<wp:comment_approved><![CDATA[0]]></wp:comment_approved>
+			<wp:comment_type><![CDATA[]]></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+			<wp:comment_user_id>0</wp:comment_user_id>
+							</wp:comment>
+					<wp:comment>
+			<wp:comment_id>18</wp:comment_id>
+			<wp:comment_author><![CDATA[online casino credit]]></wp:comment_author>
+			<wp:comment_author_email><![CDATA[GuadalupeBloomfield23@most.milltrill.com]]></wp:comment_author_email>
+			<wp:comment_author_url>http://www.cuisindex.com/__media__/js/netsoltrademark.php?d=ntc33.fun%2Findex.php%2Fother-games%2Frollex11</wp:comment_author_url>
+			<wp:comment_author_IP><![CDATA[177.8.219.51]]></wp:comment_author_IP>
+			<wp:comment_date><![CDATA[2019-03-30 07:56:54]]></wp:comment_date>
+			<wp:comment_date_gmt><![CDATA[2019-03-30 07:56:54]]></wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[This adds to the welcome bonus Internet sites give 
+every one of them. Practically nothing could be more enjoyable like slots games appropriate.
+If you have a low involving budget, you will need to be selective here. http://www.cuisindex.com/__media__/js/netsoltrademark.php?d=ntc33.fun%2Findex.php%2Fother-games%2Frollex11]]></wp:comment_content>
+			<wp:comment_approved><![CDATA[0]]></wp:comment_approved>
+			<wp:comment_type><![CDATA[]]></wp:comment_type>
+			<wp:comment_parent>0</wp:comment_parent>
+			<wp:comment_user_id>0</wp:comment_user_id>
+							</wp:comment>
+					<wp:comment>
+			<wp:comment_id>19</wp:comment_id>
+			<wp:comment_author><![CDATA[hatch sandwich bar]]></wp:comment_author>
+			<wp:comment_author_email><![CDATA[co.n.c.er.ne.dn.e.i.gh.b.or94.9.5.4@gmail.com]]></wp:comment_author_email>
+			<wp:comment_author_url>http://hatchsandwich.com/</wp:comment_author_url>
+			<wp:comment_author_IP><![CDATA[200.220.199.90]]></wp:comment_author_IP>
+			<wp:comment_date><![CDATA[2019-03-31 03:32:18]]></wp:comment_date>
+			<wp:comment_date_gmt><![CDATA[2019-03-31 03:32:18]]></wp:comment_date_gmt>
+			<wp:comment_content><![CDATA[I pay a quick visit everyday a few sites and blogs to read articles, however this weblog gives feature based writing. http://hatchsandwich.com/]]></wp:comment_content>
 			<wp:comment_approved><![CDATA[0]]></wp:comment_approved>
 			<wp:comment_type><![CDATA[]]></wp:comment_type>
 			<wp:comment_parent>0</wp:comment_parent>

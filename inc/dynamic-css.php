@@ -1,8 +1,8 @@
 <?php
 function avid_magazine_dynamic_css() {
-	wp_enqueue_style(
-		'avid-magazine-dynamic-css', get_template_directory_uri() . '/css/dynamic.css'
-	);
+    wp_enqueue_style(
+        'avid-magazine-dynamic-css', get_template_directory_uri() . '/css/dynamic.css'
+    );
 
         $site_title_color = get_theme_mod( 'site_title_color_option', '#000' );
 
@@ -39,9 +39,9 @@ function avid_magazine_dynamic_css() {
                 '6' =>  12,
         );
 
-	    for( $i = 1; $i <= 6 ; $i++ ) {
-	    	$heading[$i] = absint( get_theme_mod( 'avid_magazine_heading_' . $i . '_size', absint( $default_size[$i] ) ) );
-	    }
+        for( $i = 1; $i <= 6 ; $i++ ) {
+            $heading[$i] = absint( get_theme_mod( 'avid_magazine_heading_' . $i . '_size', absint( $default_size[$i] ) ) );
+        }
 
 
         $dynamic_css = "
@@ -64,19 +64,24 @@ function avid_magazine_dynamic_css() {
                 header .main-nav{background-color: $menu_background_color;}                
                 footer.main{background-color: $footer_background_color;}
 
-                
-                /* Primary Colors */
-                header .navbar-nav .dropdown-menu > li > a:hover{color: $primary_color;}
-                .pri-bg-color,.headline-title, .navbar-nav > .active > a,.navbar-nav > .active > a, .navbar-nav > .active > a:hover,.current-menu-parent,h5.widget-title:after, .section-heading:after{background-color: $primary_color;}
-
-                /* Secondary Colors */
-                a,a:visited,a.readmore,button.loadmore{color: $secondary_color;}
 
                 /*Heading Title*/
                 h1,h2,h3,h4,h5,h6{color: $heading_title_color;}
 
                 /*Heading Link*/
                 h2 a, h3 a, h4 a,h2 a:visited, h3 a:visited, h4 a:visited{color: $heading_link_color;}
+
+
+                
+                /* Primary Colors */
+                header .navbar-nav .dropdown-menu > li > a:hover{color: $primary_color;}
+                h3 a:hover,h4 a:hover{color: $primary_color !important;}
+                .pri-bg-color,.dropdown-menu > .active > a, .navbar-nav > .active > a,.navbar-nav > .active > a, .navbar-nav > .active > a:hover,.current-menu-parent,h5.widget-title:after, .section-heading:after{background-color: $primary_color;}
+
+                /* Secondary Colors */
+                a,a:visited,a.readmore,button.loadmore{color: $secondary_color;}
+
+                
 
 
                 /*buttons*/

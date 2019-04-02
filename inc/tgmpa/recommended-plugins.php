@@ -73,8 +73,14 @@ function avid_magazine_register_required_plugins() {
         ),
 
         array(
-            'name'      => esc_attr__( 'One Click Demo Import', 'avid-magazine' ),
+            'name'      => esc_html__( 'One Click Demo Import', 'avid-magazine' ),
             'slug'      => 'one-click-demo-import',
+            'required'  => false,
+        ),
+
+        array(
+            'name'      => esc_html__( 'WP Sticky Sidebar', 'avid-magazine' ),
+            'slug'      => 'mystickysidebar',
             'required'  => false,
         ),
     );

@@ -6,7 +6,9 @@
     
       $category_id = get_theme_mod( 'featured_lifestyle_category' );
       $title = get_theme_mod( 'featured_lifestyle_section_title' );
-      $posts_per_page = get_theme_mod( 'number_of_featured_lifestyle', 5 );
+      $posts_per_page = get_theme_mod( 'number_of_featured_posts', 5 );
+      $fullwidth = get_theme_mod( 'featured_fullwidth_option', false );
+
 
       $args = array(
         'cat' => absint( $category_id ),
@@ -25,8 +27,14 @@
       }
   ?>
 
+  <?php
+    $width_class = 'container';
+    if( $fullwidth )
+      $width_class = 'fullwidth';
+  ?>
+
       <div class="featured-blog"> 
-        <div class="container">
+        <div class="<?php echo esc_attr( $width_class ); ?>">
           <?php if( $title ) : ?>
             <h5 class="section-heading"><?php echo esc_html( $title ); ?></h5>
           <?php endif; ?>

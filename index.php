@@ -36,7 +36,8 @@ get_header();
 <?php if ( have_posts() ) { ?>
 
     <div class="home-archive inside-page post-list">
-        <div class="container">        
+        <div class="container">
+          <h1><?php echo get_the_title( get_option( 'page_for_posts', true ) ); ?></h1>
             <div class="row">
               <?php if( $layout == 'sidebar-left' ) { ?>
                 <div class="<?php echo esc_attr( $sidebar_left_class ); ?>"><?php dynamic_sidebar( 'left-sidebar' ); ?></div>
