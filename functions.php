@@ -233,7 +233,7 @@ function fgymm_load_scripts() {
 	);
 	wp_localize_script('fgymm-utilities-js', 'fgymm_options', $data);
 	
-	wp_enqueue_script( 'jquery.mobile.customized', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
+	
 	wp_enqueue_script( 'jquery.easing.1.3', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
 	wp_enqueue_script( 'camera', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
 }
@@ -528,10 +528,35 @@ function fgymm_the_content_single() {
 	the_content( __( 'Read More...', 'fgymm') );
 }
 
-function fgymm_sanitize_checkbox( $checked ) {
-	// Boolean check.
-	return ( ( isset( $checked ) && true == $checked ) ? true : false );
-}
+if ( ! function_exists( 'fgymm_sanitize_checkbox' ) ) :
+	/**
+	 * Sanitization callback for 'checkbox' type controls. This callback sanitizes `$checked`
+	 * as a boolean value, either TRUE or FALSE.
+	 *
+	 * @param bool $checked Whether the checkbox is checked.
+	 * @return bool Whether the checkbox is checked.
+	 */
+	function fgymm_sanitize_checkbox( $checked ) {
+		// Boolean check.
+		return ( ( isset( $checked ) && true == $checked ) ? true : false );
+	}
+endif; // fgymm_sanitize_checkbox
+
+if ( ! function_exists( 'fgymm_sanitize_html' ) ) :
+
+	function fgymm_sanitize_html( $html ) {
+		return wp_filter_post_kses( $html );
+	}
+
+endif; // fgymm_sanitize_html
+
+if ( ! function_exists( 'fgymm_sanitize_url' ) ) :
+
+	function fgymm_sanitize_url( $url ) {
+		return esc_url_raw( $url );
+	}
+
+endif; // fgymm_sanitize_url
 
 /**
  * Register theme settings in the customizer
@@ -578,7 +603,7 @@ function fgymm_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			$slideContentId,
 			array(
-				'sanitize_callback' => 'force_balance_tags',
+				'sanitize_callback' => 'fgymm_sanitize_html',
 			)
 		);
 		
@@ -596,7 +621,7 @@ function fgymm_customize_register( $wp_customize ) {
 		$wp_customize->add_setting( $slideImageId,
 			array(
 				'default' => $defaultSliderImagePath,
-				'sanitize_callback' => 'esc_url_raw'
+				'sanitize_callback' => 'fgymm_sanitize_url'
 			)
 		);
 
@@ -655,7 +680,7 @@ function fgymm_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fgymm_social_facebook',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fgymm_sanitize_url',
 		)
 	);
 
@@ -673,7 +698,7 @@ function fgymm_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fgymm_social_twitter',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fgymm_sanitize_url',
 		)
 	);
 
@@ -691,7 +716,7 @@ function fgymm_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fgymm_social_linkedin',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fgymm_sanitize_url',
 		)
 	);
 
@@ -709,7 +734,7 @@ function fgymm_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fgymm_social_instagram',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fgymm_sanitize_url',
 		)
 	);
 
@@ -727,7 +752,7 @@ function fgymm_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fgymm_social_rss',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fgymm_sanitize_url',
 		)
 	);
 
@@ -745,7 +770,7 @@ function fgymm_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fgymm_social_tumblr',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fgymm_sanitize_url',
 		)
 	);
 
@@ -763,7 +788,7 @@ function fgymm_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fgymm_social_youtube',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fgymm_sanitize_url',
 		)
 	);
 
@@ -781,7 +806,7 @@ function fgymm_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fgymm_social_pinterest',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fgymm_sanitize_url',
 		)
 	);
 
@@ -799,7 +824,7 @@ function fgymm_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fgymm_social_vk',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fgymm_sanitize_url',
 		)
 	);
 
@@ -817,7 +842,7 @@ function fgymm_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fgymm_social_flickr',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fgymm_sanitize_url',
 		)
 	);
 
@@ -835,7 +860,7 @@ function fgymm_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fgymm_social_vine',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fgymm_sanitize_url',
 		)
 	);
 
@@ -865,7 +890,7 @@ function fgymm_customize_register( $wp_customize ) {
 			'fgymm_animations_display',
 			array(
 					'default'           => 1,
-					'sanitize_callback' => 'esc_attr',
+					'sanitize_callback' => 'fgymm_sanitize_checkbox',
 			)
 	);
 

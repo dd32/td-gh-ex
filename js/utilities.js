@@ -88,6 +88,7 @@ jQuery( document ).ready(function() {
 
 	jQuery(function(){
 		jQuery('#camera_wrap').camera({
+				navigationHover : false,
 			height: '500px',
 			loader: 'bar',
 			pagination: true,

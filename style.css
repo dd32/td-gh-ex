@@ -5,7 +5,7 @@ Theme URI: https://tishonator.com/product/fgymm
 Author: tishonator
 Author URI: https://tishonator.com
 Text Domain: fgymm
-Version: 1.7.9
+Version: 1.8.0
 Tags: blog, entertainment, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -231,6 +231,8 @@ dt.gallery-icon:before {
 
 #header-top {
 	text-align:right;
+	padding-top:5px;
+	padding-bottom:5px;
 }
 
 .cart-contents-icon:before {
@@ -503,7 +505,7 @@ article,
 	background-color:#453f43;
 	color:#888888;
 	margin:20px 0 0 0;
-	padding:10px 2% 5px 2%;
+	padding:25px 2% 10px 2%;
 }
 
 #footer-main a {
@@ -836,7 +838,6 @@ article,
 
 .header-social-widget a {
 	display:inline-block;
-	width:20px;
 	height:20px;
 	line-height:20px;
 	text-align:center;
@@ -1584,11 +1585,11 @@ img.wp-post-image {
 .home-col-title {
 	padding:10px 5px 1px 1px;
 	font-weight:normal;
-	font-size:22px;
+	font-size:20px;
 	letter-spacing:1px;
 	float:left;
 	clear:both;
-	border-bottom:4px solid #81b441;
+	border-bottom:3px solid #81b441;
 	margin-bottom:-2px;
 }
 
@@ -1636,8 +1637,8 @@ img.wp-post-image {
 	padding:0 5px 1px 1px;
 	margin-bottom:-2px;
 	font-weight:normal;
-	font-size:22px;
-	border-bottom:4px solid #cccccc;
+	font-size:18px;
+	border-bottom:3px solid #cccccc;
 	color:#eeeeee;
 	letter-spacing:1px;
 	float:left;
@@ -2186,7 +2187,7 @@ mark {
 	}
 	
 	.header-social-widget li {
-		margin-left:10px;
+		margin-left:5px;
 	}
 	
 	#header-logo {
@@ -2224,7 +2225,7 @@ mark {
 	}
 	
 	#navmain > div > ul > li {
-		margin-right:5px;
+		margin-right:8px;
 	}
 	
 	#navmain ul a {
@@ -2358,6 +2359,8 @@ mark {
 		content: "\f107";
 		font-family:'FontAwesome';
 		margin:0 0 0 5px;
+		font-size:12px;
+		opacity:0.7;
 	}
 	
 	.level-two-sub-menu > a:before {
@@ -2366,6 +2369,8 @@ mark {
 		position:absolute;
 		right:10px;
 		top:9px;
+		font-size:12px;
+		line-height:14px;
 	}
 
 	/* comments */
