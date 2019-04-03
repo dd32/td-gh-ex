@@ -469,6 +469,14 @@ if ( ! function_exists( 'fmuzz_sanitize_checkbox' ) ) :
 
 endif;
 
+if ( ! function_exists( 'fmuzz_sanitize_url' ) ) :
+
+	function fmuzz_sanitize_url( $url ) {
+		return esc_url_raw( $url );
+	}
+
+endif; // fmuzz_sanitize_url
+
 // Doing this customizer thang!
 fmuzz_Customize::get_instance();
 
@@ -495,7 +503,7 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_facebook',
 			array(
-			    'sanitize_callback' => 'esc_url_raw',
+			    'sanitize_callback' => 'fmuzz_sanitize_url',
 			)
 		);
 
@@ -513,7 +521,7 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_twitter',
 			array(
-			    'sanitize_callback' => 'esc_url_raw',
+			    'sanitize_callback' => 'fmuzz_sanitize_url',
 			)
 		);
 
@@ -531,7 +539,7 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_linkedin',
 			array(
-			    'sanitize_callback' => 'esc_url_raw',
+			    'sanitize_callback' => 'fmuzz_sanitize_url',
 			)
 		);
 
@@ -549,7 +557,7 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_instagram',
 			array(
-			    'sanitize_callback' => 'esc_url_raw',
+			    'sanitize_callback' => 'fmuzz_sanitize_url',
 			)
 		);
 
@@ -567,7 +575,7 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_rss',
 			array(
-			    'sanitize_callback' => 'esc_url_raw',
+			    'sanitize_callback' => 'fmuzz_sanitize_url',
 			)
 		);
 
@@ -585,7 +593,7 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_tumblr',
 			array(
-			    'sanitize_callback' => 'esc_url_raw',
+			    'sanitize_callback' => 'fmuzz_sanitize_url',
 			)
 		);
 
@@ -603,7 +611,7 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_youtube',
 			array(
-			    'sanitize_callback' => 'esc_url_raw',
+			    'sanitize_callback' => 'fmuzz_sanitize_url',
 			)
 		);
 
@@ -621,7 +629,7 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_pinterest',
 			array(
-			    'sanitize_callback' => 'esc_url_raw',
+			    'sanitize_callback' => 'fmuzz_sanitize_url',
 			)
 		);
 
@@ -639,7 +647,7 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_vk',
 			array(
-			    'sanitize_callback' => 'esc_url_raw',
+			    'sanitize_callback' => 'fmuzz_sanitize_url',
 			)
 		);
 
@@ -657,7 +665,7 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_flickr',
 			array(
-			    'sanitize_callback' => 'esc_url_raw',
+			    'sanitize_callback' => 'fmuzz_sanitize_url',
 			)
 		);
 
@@ -675,7 +683,7 @@ if ( ! function_exists( 'fmuzz_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'fmuzz_social_vine',
 			array(
-			    'sanitize_callback' => 'esc_url_raw',
+			    'sanitize_callback' => 'fmuzz_sanitize_url',
 			)
 		);
 

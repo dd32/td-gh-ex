@@ -4,7 +4,7 @@ Description: fMuzz is Fully Responsive and Easy to use e-Commerce WordPress Them
 Author: tishonator
 Author URI: https://tishonator.com
 Theme URI: https://tishonator.com/product/fmuzz
-Version: 1.4.7
+Version: 1.4.8
 Text Domain: fmuzz
 Tags: blog, news, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -415,7 +415,7 @@ article,
 	background-color:#353535;
 	color:#FFFFFF;
 	margin:20px 0 0 0;
-	padding:10px 2% 5px 2%;
+	padding:25px 2% 10px 2%;
 }
 
 #footer-main a {
@@ -836,7 +836,6 @@ article,
 
 .header-social-widget a {
 	display:inline-block;
-	width:17px;
 	height:17px;
 	padding-top:3px;
 }
@@ -1702,7 +1701,7 @@ blockquote {
 .home-col-title {
 	padding:10px 5px 1px 1px;
 	font-weight:normal;
-	font-size:22px;
+	font-size:20px;
 	letter-spacing:1px;
 	float:left;
 	clear:both;
@@ -2350,7 +2349,7 @@ mark {
 @media screen and (min-width: 800px) {
 	
 	.header-social-widget li {
-		margin-left:10px;
+		margin-left:5px;
 	}
 	
 	#header-logo {
@@ -2387,7 +2386,7 @@ mark {
 	}
 	
 	#navmain > div > ul > li {
-		margin-right:5px;
+		margin-right:8px;
 	}
 	
 	#navmain ul a {
@@ -2483,6 +2482,8 @@ mark {
 		content: "\f107";
 		font-family:'FontAwesome';
 		margin:0 0 0 5px;
+		font-size:12px;
+		opacity:0.7;
 	}
 	
 	.level-two-sub-menu > a:before {
@@ -2491,6 +2492,8 @@ mark {
 		position:absolute;
 		right:10px;
 		top:9px;
+		font-size:12px;
+		line-height:14px;
 	}
 	
 	/* columns */
