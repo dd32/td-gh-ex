@@ -481,6 +481,9 @@ li.wc_payment_method.payment_method_paypal a.about_paypal:hover {
 .form-row.woocommerce-invalid input.input-text {
   border-left: 2px solid #e2401c;
 }
+.woocommerce form .form-row .required {
+  text-decoration: none;
+}
 .woocommerce .blockUI.blockOverlay {
   position: relative;
 }
@@ -732,6 +735,11 @@ p.no-comments a.button {
 }
 .woocommerce-error {
   background: #e2401c;
+}
+.woocommerce-info li,
+.woocommerce-message li,
+.woocommerce-error li {
+  margin-bottom: 0;
 }
 p.demo_store {
   position: fixed;

@@ -28,7 +28,13 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
-= Version 1.3.8 | 6th February 2018 =
+= Version 1.3.9 | 3rd April 2019 =
+* Fix: Bug with images not centering.
+* Update: CSS for comment paragraphs.
+* Update: CSS better woo messages.
+* Update: Better Elementor Support Sticky.
+
+= Version 1.3.8 | 6th February 2019 =
 * Update: Remove Loop Schema.
 * Fix: Mobile cart, issue.
 

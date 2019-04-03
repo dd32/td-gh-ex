@@ -28,6 +28,13 @@ jQuery(document).ready(function ($) {
 		if( !kt_isMobile.any() ) {
 			$('[data-toggle=tooltip]').tooltip();
 		}
+		var sticky_enabled = (typeof $().sticky == 'function');
+		if ( sticky_enabled == false ) {
+			$.fn.sticky = function( method ) {
+				$( this ).ktsticky( method );
+			};
+		};
+
 		$("[data-toggle=popover]").popover();
 		$('.kt-tabs a').click(function (e) {
 			e.preventDefault(); 
@@ -713,10 +720,10 @@ jQuery(document).ready(function ($) {
                 });
             };
 		if (shrink == 1) {
-			stickyitem.sticky({topSpacing:topOffest, zIndex:1000});
+			stickyitem.ktsticky({topSpacing:topOffest, zIndex:1000});
 			win.scroll(set_height);
 		} else {
-			stickyitem.sticky({topSpacing:topOffest, zIndex:1000});
+			stickyitem.ktsticky({topSpacing:topOffest, zIndex:1000});
 		}
 	}
 	if($('.kt-header-position-above').length){
@@ -729,17 +736,17 @@ jQuery(document).ready(function ($) {
 		var stickyitem = $('.second-navclass').attr('data-sticky');
 		if(stickyitem == 'second') {
 			var topOffest = $('body').hasClass('admin-bar') ? 32 : 0;
-			$('.second-navclass').sticky({topSpacing:topOffest, zIndex:1000});
+			$('.second-navclass').ktsticky({topSpacing:topOffest, zIndex:1000});
 			$(window).on("debouncedresize", function( event ) {
 				 $('.second-navclass').unstick();
-				 $('.second-navclass').sticky({topSpacing:topOffest, zIndex:1000});
+				 $('.second-navclass').ktsticky({topSpacing:topOffest, zIndex:1000});
 			});
 		}
 	}
 
 	var menustick = $('#kad-banner').attr('data-menu-stick');
 	if(menustick == 1) {
-		$('#nav-main').sticky({topSpacing:topOffest});
+		$('#nav-main').ktsticky({topSpacing:topOffest});
 	}
 	function kad_mobile_sticky_header() {
 		var mobile_header_height = $('#kad-mobile-banner').height(),
@@ -752,11 +759,11 @@ jQuery(document).ready(function ($) {
 			topOffest = 46;
 		}
 		if (mobilestickyheader == 1) {
-			$('#kad-mobile-banner').sticky({topSpacing:topOffest, zIndex:1000});
+			$('#kad-mobile-banner').ktsticky({topSpacing:topOffest, zIndex:1000});
 			$(window).on("debouncedresize", function( event ) {
 				if( !kt_isMobile.any() ) {
 					$('#kad-mobile-banner').unstick();
-				 	$('#kad-mobile-banner').sticky({topSpacing:topOffest, zIndex:1000});
+				 	$('#kad-mobile-banner').ktsticky({topSpacing:topOffest, zIndex:1000});
 				}
 			});
 		}

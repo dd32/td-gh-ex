@@ -34,7 +34,8 @@ function ascend_scripts() {
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/min/bootstrap-min.js', array( 'jquery' ), ASCEND_VERSION, true );
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/min/slick-min.js', array( 'jquery' ), ASCEND_VERSION, true );
 	wp_enqueue_script( 'ascend_plugins', get_template_directory_uri() . '/assets/js/min/ascend-plugins-min.js', array( 'jquery', 'hoverIntent' ), ASCEND_VERSION, true );
-	wp_enqueue_script( 'ascend_main', get_template_directory_uri() . '/assets/js/min/ascend-main-min.js', array( 'jquery', 'hoverIntent', 'masonry' ), ASCEND_VERSION, true );
+	wp_enqueue_script( 'kadence-sticky', get_template_directory_uri() . '/assets/js/min/ascend_sticky-min.js', array( 'jquery' ), ASCEND_VERSION, true );
+	wp_enqueue_script( 'ascend_main', get_template_directory_uri() . '/assets/js/min/ascend-main-min.js', array( 'jquery', 'hoverIntent', 'kadence-sticky', 'ascend_plugins', 'masonry' ), ASCEND_VERSION, true );
 
 	if ( class_exists( 'woocommerce' ) ) {
 		if ( is_product() ) {

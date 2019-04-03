@@ -1,4 +1,9 @@
-// Sticky Plugin v1.0.4 for jQuery  (EDITED FOR ASCEND THEME)
+/*
+ * Renamed to prevent conflict with Elementor
+ * Sticky Plugin v1.0.4 for jQuery
+ * Author: Anthony Garand
+ */
+// Sticky Plugin v1.0.4 for jQuery
 // =============
 // Author: Anthony Garand
 // Improvements by German M. Bravo (Kronuz) and Ruud Kamphuis (ruudk)
@@ -51,6 +56,7 @@
           elementTop = parseInt(Math.max(0,s.stickyWrapper.offset().top), 10),
           etse = elementTop - s.topSpacing - extra;
 
+          if(etse<=0) etse=0;
         //update height in case of dynamic content
         //s.stickyWrapper.css('height', s.stickyElement.outerHeight());
 
@@ -69,7 +75,7 @@
           }
         }
         else {
-          var newTop = documentHeight - s.stickyElement.outerHeight()
+          var newTop = $document.height() - s.stickyElement.outerHeight()
             - s.topSpacing - s.bottomSpacing - scrollTop - extra;
           if (newTop < 0) {
             newTop = newTop + s.topSpacing;
@@ -205,6 +211,7 @@
             }
           });
           mutationObserver.observe(stickyElement, {subtree: true, childList: true});
+          $(stickyElement).data('sticky.mutationObserver', mutationObserver);
         } else {
           if (window.addEventListener) {
             stickyElement.addEventListener('DOMNodeInserted', function() {
@@ -238,6 +245,8 @@
             }
           }
           if(removeIdx !== -1) {
+          	var mutationObserver = $(unstickyElement).data('sticky.mutationObserver');
+            mutationObserver.disconnect();
             unstickyElement.unwrap();
             unstickyElement
               .css({
@@ -262,7 +271,7 @@
     window.attachEvent('onresize', resizer);
   }
 
-  $.fn.sticky = function(method) {
+  $.fn.ktsticky = function(method) {
     if (methods[method]) {
       return methods[method].apply(this, slice.call(arguments, 1));
     } else if (typeof method === 'object' || !method ) {
@@ -271,7 +280,6 @@
       $.error('Method ' + method + ' does not exist on jQuery.sticky');
     }
   };
-
   $.fn.unstick = function(method) {
     if (methods[method]) {
       return methods[method].apply(this, slice.call(arguments, 1));

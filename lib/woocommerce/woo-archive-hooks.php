@@ -128,6 +128,50 @@ function ascend_woo_archive_support() {
 */
 function ascend_woo_archive_hooks_output() {
 
+	/**
+	 * Product Class output
+	 *
+	 * @param mixed $classes the added classes.
+	 */
+	function ascend_add_product_loop_classes( $classes = array() ) {
+		global $product, $post, $woocommerce_loop, $ascend;
+		// Store column count for displaying the grid.
+		if ( empty( $woocommerce_loop['columns'] ) ) {
+			$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4 );
+		}
+
+		$product_column = $woocommerce_loop['columns'];
+
+		if ( '1' == $product_column ) {
+			$itemsize = 'col-md-12 col-sm-12 col-xs-12 col-ss-12';
+		} elseif ( '2' == $product_column ) {
+			$itemsize = 'col-xxl-4 col-xl-6 col-md-6 col-sm-6 col-xs-12 col-ss-12';
+		} elseif ( '3' == $product_column ) {
+			$itemsize = 'col-xxl-25 col-xl-3 col-md-4 col-sm-4 col-xs-6 col-ss-12';
+		} elseif ( '6' == $product_column ) {
+			$itemsize = 'col-xxl-15 col-xl-2 col-md-2 col-sm-3 col-xs-4 col-ss-6';
+		} elseif ( '5' == $product_column ) {
+			$itemsize = 'col-xxl-2 col-xl-25 col-md-25 col-sm-3 col-xs-4 col-ss-6';
+		} else {
+			$itemsize = 'col-xxl-2 col-xl-25 col-md-3 col-sm-4 col-xs-6 col-ss-6';
+		}
+		$classes[] = $itemsize;
+		$terms = get_the_terms( $post->ID, 'product_cat' );
+		if ( $terms && ! is_wp_error( $terms ) ) {
+			$links = array();
+			foreach ( $terms as $term ) {
+				$links[] = $term->slug;
+			}
+			$links = preg_replace( '/[^a-zA-Z 0-9]+/', '-', $links );
+			$tax = join( ' ', $links );
+		} else {
+			$tax = '';
+		}
+		$classes[] = $tax;
+		$classes[] = 'kad_product';
+		return array_filter( array_unique( $classes ) );
+	}
+	add_filter( 'kadence_woo_ele_product_loop_classes', 'ascend_add_product_loop_classes' );
 	/*
 	* woocommerce_before_shop_loop_item
 	*/
