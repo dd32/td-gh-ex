@@ -266,7 +266,7 @@ function fcorpo_load_scripts() {
 	wp_localize_script('fcorpo-js', 'fcorpo_options', $data);
 
 	// Load Slider JS Scripts
-	wp_enqueue_script( 'jquery.mobile.customized', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
+	
 	wp_enqueue_script( 'jquery.easing.1.3', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
 	wp_enqueue_script( 'camera', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
 }
@@ -550,10 +550,48 @@ function fcorpo_display_social_sites() {
 	echo '</ul>';
 }
 
-function fcorpo_sanitize_checkbox( $checked ) {
-	// Boolean check.
-	return ( ( isset( $checked ) && true == $checked ) ? true : false );
-}
+if ( ! function_exists( 'fcorpo_sanitize_checkbox' ) ) :
+	/**
+	 * Sanitization callback for 'checkbox' type controls. This callback sanitizes `$checked`
+	 * as a boolean value, either TRUE or FALSE.
+	 *
+	 * @param bool $checked Whether the checkbox is checked.
+	 * @return bool Whether the checkbox is checked.
+	 */
+	function fcorpo_sanitize_checkbox( $checked ) {
+		// Boolean check.
+		return ( ( isset( $checked ) && true == $checked ) ? true : false );
+	}
+endif; // fcorpo_sanitize_checkbox
+
+if ( ! function_exists( 'fcorpo_sanitize_html' ) ) :
+
+	function fcorpo_sanitize_html( $html ) {
+		return wp_filter_post_kses( $html );
+	}
+
+endif; // fcorpo_sanitize_html
+
+if ( ! function_exists( 'fcorpo_sanitize_url' ) ) :
+
+	function fcorpo_sanitize_url( $url ) {
+		return esc_url_raw( $url );
+	}
+
+endif; // fcorpo_sanitize_url
+
+if ( ! function_exists( 'fcorpo_sanitize_email' ) ) :
+
+	function fcorpo_sanitize_email( $email, $setting ) {
+		// Strips out all characters that are not allowable in an email address.
+		$email = sanitize_email( $email );
+		
+		// If $email is a valid email, return it; otherwise, return the default.
+		return ( ! is_null( $email ) ? $email : $setting->default );
+	}
+
+endif; // fcorpo_sanitize_email
+
 
 /**
  * Register theme settings in the customizer
@@ -600,7 +638,7 @@ function fcorpo_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			$slideContentId,
 			array(
-				'sanitize_callback' => 'force_balance_tags',
+				'sanitize_callback' => 'fcorpo_sanitize_html',
 			)
 		);
 		
@@ -618,7 +656,7 @@ function fcorpo_customize_register( $wp_customize ) {
 		$wp_customize->add_setting( $slideImageId,
 			array(
 				'default' => $defaultSliderImagePath,
-				'sanitize_callback' => 'esc_url_raw'
+				'sanitize_callback' => 'fcorpo_sanitize_url'
 			)
 		);
 
@@ -665,7 +703,7 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_header_email',
 		array(
-		    'sanitize_callback' => 'sanitize_text_field',
+		    'sanitize_callback' => 'fcorpo_sanitize_email',
 		)
 	);
 
@@ -713,7 +751,7 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_facebook',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fcorpo_sanitize_url',
 		)
 	);
 
@@ -731,7 +769,7 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_twitter',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fcorpo_sanitize_url',
 		)
 	);
 
@@ -749,7 +787,7 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_linkedin',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fcorpo_sanitize_url',
 		)
 	);
 
@@ -767,7 +805,7 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_instagram',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fcorpo_sanitize_url',
 		)
 	);
 
@@ -785,7 +823,7 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_rss',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fcorpo_sanitize_url',
 		)
 	);
 
@@ -803,7 +841,7 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_tumblr',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fcorpo_sanitize_url',
 		)
 	);
 
@@ -821,7 +859,7 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_youtube',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fcorpo_sanitize_url',
 		)
 	);
 
@@ -839,7 +877,7 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_pinterest',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fcorpo_sanitize_url',
 		)
 	);
 
@@ -857,7 +895,7 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_vk',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fcorpo_sanitize_url',
 		)
 	);
 
@@ -875,7 +913,7 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_flickr',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fcorpo_sanitize_url',
 		)
 	);
 
@@ -893,7 +931,7 @@ function fcorpo_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fcorpo_social_vine',
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fcorpo_sanitize_url',
 		)
 	);
 

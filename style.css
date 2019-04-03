@@ -4,7 +4,7 @@ Description: fCorpo a perfect choice for your Corporate, Business, Company, Port
 Theme URI: https://tishonator.com/product/fcorpo
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 1.2.3
+Version: 1.2.4
 Text Domain: fcorpo
 Tags: blog, news, e-commerce, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, post-formats, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
@@ -853,7 +853,6 @@ article,
 
 .header-social-widget a {
 	display:inline-block;
-	width:17px;
 	height:17px;
 	padding-top:3px;
 }
@@ -1586,7 +1585,7 @@ img.wp-post-image {
 	font-size:26px;
 	float:left;
 	clear:both;
-	border-bottom:4px solid #a81010;
+	border-bottom:3px solid #a81010;
 }
 
 .sidebar-title:not(:first-child) {
@@ -1610,8 +1609,8 @@ img.wp-post-image {
 	padding:0 5px 1px 1px;
 	margin-bottom:-2px;
 	font-weight:normal;
-	font-size:22px;
-	border-bottom:4px solid #a81010;
+	font-size:18px;
+	border-bottom:3px solid #a81010;
 	color:#eeeeee;
 	letter-spacing:1px;
 	float:left;
@@ -2200,7 +2199,7 @@ mark {
 	}
 	
 	#navmain > div > ul > li {
-		margin-right:5px;
+		margin-right:8px;
 	}
 	
 	#navmain ul a {
@@ -2329,6 +2328,8 @@ mark {
 		content: "\f107";
 		font-family:'FontAwesome';
 		margin:0 0 0 5px;
+		font-size:12px;
+		opacity:0.7;
 	}
 	
 	.level-two-sub-menu > a:before {
@@ -2337,6 +2338,8 @@ mark {
 		position:absolute;
 		right:10px;
 		top:9px;
+		font-size:12px;
+		line-height:14px;
 	}
 
 	/* comments */

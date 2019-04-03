@@ -59,6 +59,7 @@ jQuery( document ).ready(function() {
 	
 	jQuery(function(){
 		jQuery('#camera_wrap').camera({
+				navigationHover : false,
 			height: fcorpo_IsLargeResolution() ? '450px' : '300px',
 			loader: 'bar',
 			pagination: true,
