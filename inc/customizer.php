@@ -14,6 +14,22 @@ if ( ! function_exists( 'artgallery_sanitize_checkbox' ) ) :
 	}
 endif; // artgallery_sanitize_checkbox
 
+if ( ! function_exists( 'artgallery_sanitize_html' ) ) :
+
+	function artgallery_sanitize_html( $html ) {
+		return wp_filter_post_kses( $html );
+	}
+
+endif; // artgallery_sanitize_html
+
+if ( ! function_exists( 'artgallery_sanitize_url' ) ) :
+
+	function artgallery_sanitize_url( $url ) {
+		return esc_url_raw( $url );
+	}
+
+endif; // artgallery_sanitize_url
+
 if ( ! function_exists( 'artgallery_customize_register' ) ) :
 	/**
 	 * Add postMessage support for site title and description for the Theme Customizer.
@@ -61,7 +77,7 @@ if ( ! function_exists( 'artgallery_customize_register' ) ) :
 			$wp_customize->add_setting(
 				$slideContentId,
 				array(
-					'sanitize_callback' => 'force_balance_tags',
+					'sanitize_callback' => 'artgallery_sanitize_html',
 				)
 			);
 			
@@ -79,7 +95,7 @@ if ( ! function_exists( 'artgallery_customize_register' ) ) :
 			$wp_customize->add_setting( $slideImageId,
 				array(
 					'default' => $defaultSliderImagePath,
-					'sanitize_callback' => 'esc_url_raw'
+					'sanitize_callback' => 'artgallery_sanitize_url'
 				)
 			);
 

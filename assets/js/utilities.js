@@ -150,6 +150,7 @@
 
 		$(function(){
 			$('#camera_wrap').camera({
+				navigationHover : false,
 				height: '450px',
 				loader: 'bar',
 				pagination: true,

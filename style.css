@@ -4,7 +4,7 @@ Description: ArtGallery is fully Responsive Art WordPress Theme. Features: Anima
 Author: customizablethemes
 Author URI: https://customizablethemes.com
 Theme URI: https://customizablethemes.com/product/artgallery/
-Version: 1.1.5
+Version: 1.1.6
 Text Domain: artgallery
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2 or later
@@ -425,7 +425,7 @@ article ul > li:before {
 	background-color:#ffffff; 
 	color:#111111; 
 	margin:50px 0 0 0;
-	padding:10px 2% 5px 2%;
+	padding:25px 2% 10px 2%;
 }
 
 #footer-main a {
@@ -1362,7 +1362,7 @@ dt.gallery-icon > a:before,
 	}
 	
 	#navmain > div > ul > li {
-		margin-right:5px;
+		margin-right:8px;
 	}
 	
 	#navmain ul a {
@@ -1480,6 +1480,8 @@ dt.gallery-icon > a:before,
 		content: "\f107";
 		font-family:'FontAwesome';
 		margin:0 0 0 5px;
+		font-size:12px;
+		opacity:0.7;
 	}
 	
 	.level-two-sub-menu > a:before {
@@ -1488,6 +1490,8 @@ dt.gallery-icon > a:before,
 		position:absolute;
 		right:10px;
 		top:9px;
+		font-size:12px;
+		line-height:14px;
 	}
 	
 	/* columns */
