@@ -216,7 +216,7 @@ function fkidd_customize_add_social_site($wp_customize, $controlId, $label) {
 	$wp_customize->add_setting(
 		$controlId,
 		array(
-		    'sanitize_callback' => 'esc_url_raw',
+		    'sanitize_callback' => 'fkidd_sanitize_url',
 		)
 	);
 
@@ -231,10 +231,47 @@ function fkidd_customize_add_social_site($wp_customize, $controlId, $label) {
 	);
 }
 
-function fkidd_sanitize_checkbox( $checked ) {
-	// Boolean check.
-	return ( ( isset( $checked ) && true == $checked ) ? true : false );
-}
+if ( ! function_exists( 'fkidd_sanitize_checkbox' ) ) :
+	/**
+	 * Sanitization callback for 'checkbox' type controls. This callback sanitizes `$checked`
+	 * as a boolean value, either TRUE or FALSE.
+	 *
+	 * @param bool $checked Whether the checkbox is checked.
+	 * @return bool Whether the checkbox is checked.
+	 */
+	function fkidd_sanitize_checkbox( $checked ) {
+		// Boolean check.
+		return ( ( isset( $checked ) && true == $checked ) ? true : false );
+	}
+endif; // fkidd_sanitize_checkbox
+
+if ( ! function_exists( 'fkidd_sanitize_html' ) ) :
+
+	function fkidd_sanitize_html( $html ) {
+		return wp_filter_post_kses( $html );
+	}
+
+endif; // fkidd_sanitize_html
+
+if ( ! function_exists( 'fkidd_sanitize_url' ) ) :
+
+	function fkidd_sanitize_url( $url ) {
+		return esc_url_raw( $url );
+	}
+
+endif; // fkidd_sanitize_url
+
+if ( ! function_exists( 'fkidd_sanitize_email' ) ) :
+
+	function fkidd_sanitize_email( $email, $setting ) {
+		// Strips out all characters that are not allowable in an email address.
+		$email = sanitize_email( $email );
+		
+		// If $email is a valid email, return it; otherwise, return the default.
+		return ( ! is_null( $email ) ? $email : $setting->default );
+	}
+
+endif; // fkidd_sanitize_email
 
 /**
  * Register theme settings in the customizer
@@ -281,7 +318,7 @@ function fkidd_customize_register( $wp_customize ) {
 		$wp_customize->add_setting(
 			$slideContentId,
 			array(
-				'sanitize_callback' => 'force_balance_tags',
+				'sanitize_callback' => 'fkidd_sanitize_html',
 			)
 		);
 		
@@ -299,7 +336,7 @@ function fkidd_customize_register( $wp_customize ) {
 		$wp_customize->add_setting( $slideImageId,
 			array(
 				'default' => $defaultSliderImagePath,
-				'sanitize_callback' => 'esc_url_raw'
+				'sanitize_callback' => 'fkidd_sanitize_url'
 			)
 		);
 
@@ -346,7 +383,7 @@ function fkidd_customize_register( $wp_customize ) {
 	$wp_customize->add_setting(
 		'fkidd_header_email',
 		array(
-		    'sanitize_callback' => 'sanitize_text_field',
+		    'sanitize_callback' => 'fkidd_sanitize_email',
 		)
 	);
 
@@ -498,7 +535,7 @@ function fkidd_load_scripts() {
 	);
 	wp_localize_script('fkidd-utilities-js', 'fkidd_options', $data);
 	
-	wp_enqueue_script( 'jquery.mobile.customized', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
+	
 	wp_enqueue_script( 'jquery.easing.1.3', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
 	wp_enqueue_script( 'camera', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
 }
