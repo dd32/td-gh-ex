@@ -529,7 +529,7 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'ayaphotography_slide1_content',
 			array(
-			    'sanitize_callback' => 'wp_kses_post',
+			    'sanitize_callback' => 'ayaphotography_sanitize_html',
 			)
 		);
 
@@ -547,7 +547,7 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayaphotography_slide1_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '1.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayaphotography_sanitize_url',
 			)
 		);
 
@@ -564,7 +564,7 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'ayaphotography_slide2_content',
 			array(
-			    'sanitize_callback' => 'wp_kses_post',
+			    'sanitize_callback' => 'ayaphotography_sanitize_html',
 			)
 		);
 
@@ -582,7 +582,7 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayaphotography_slide2_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '2.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayaphotography_sanitize_url',
 			)
 		);
 
@@ -599,7 +599,7 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'ayaphotography_slide3_content',
 			array(
-			    'sanitize_callback' => 'wp_kses_post',
+			    'sanitize_callback' => 'ayaphotography_sanitize_html',
 			)
 		);
 
@@ -617,7 +617,7 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayaphotography_slide3_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '3.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayaphotography_sanitize_url',
 			)
 		);
 
@@ -634,7 +634,7 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'ayaphotography_slide4_content',
 			array(
-			    'sanitize_callback' => 'wp_kses_post',
+			    'sanitize_callback' => 'ayaphotography_sanitize_html',
 			)
 		);
 
@@ -652,7 +652,7 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayaphotography_slide4_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '4.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayaphotography_sanitize_url',
 			)
 		);
 
@@ -669,7 +669,7 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'ayaphotography_slide5_content',
 			array(
-			    'sanitize_callback' => 'wp_kses_post',
+			    'sanitize_callback' => 'ayaphotography_sanitize_html',
 			)
 		);
 
@@ -687,7 +687,7 @@ if ( ! function_exists( 'ayaphotography_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayaphotography_slide5_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '5.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayaphotography_sanitize_url',
 			)
 		);
 
@@ -773,3 +773,19 @@ if ( ! function_exists( 'ayaphotography_sanitize_checkbox' ) ) :
 	}
 
 endif; // ayaphotography_sanitize_checkbox
+
+if ( ! function_exists( 'ayaphotography_sanitize_html' ) ) :
+
+	function ayaphotography_sanitize_html( $html ) {
+		return wp_filter_post_kses( $html );
+	}
+
+endif; // ayaphotography_sanitize_html
+
+if ( ! function_exists( 'ayaphotography_sanitize_url' ) ) :
+
+	function ayaphotography_sanitize_url( $url ) {
+		return esc_url_raw( $url );
+	}
+
+endif; // ayaphotography_sanitize_url

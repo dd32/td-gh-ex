@@ -4,7 +4,7 @@ Description: AyaPhotography is fully Responsive WordPress Theme with Built-in Ho
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayaphotography
-Version: 1.0.9
+Version: 1.1.0
 Text Domain: ayaphotography
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -495,7 +495,7 @@ article,
 	background-color:#5F9E0F; 
 	color:#670A15; 
 	margin:20px 0 0 0;
-	padding:10px 2% 5px 2%;
+	padding:25px 2% 10px 2%;
 }
 
 #footer-main a {
@@ -916,7 +916,6 @@ article,
 
 .header-social-widget a {
 	display:inline-block;
-	width:17px;
 	height:17px;
 	padding-top:3px;
 }
@@ -1800,7 +1799,7 @@ blockquote {
 	letter-spacing:1px;
 	float:none;
 	clear:both;
-	border-bottom:4px solid #fdd247;
+	border-bottom:3px solid #fdd247;
 	margin-bottom:5px;
 }
 
@@ -1844,8 +1843,8 @@ blockquote {
 	padding:0 5px 1px 1px;
 	margin-bottom:-2px;
 	font-weight:normal;
-	font-size:22px;
-	border-bottom:4px solid #FDD247;;
+	font-size:18px;
+	border-bottom:3px solid #FDD247;;
 	color:#eeeeee;
 	letter-spacing:1px;
 }
@@ -2065,7 +2064,7 @@ blockquote {
 	}
 	
 	.header-social-widget li {
-		margin-left:10px;
+		margin-left:5px;
 	}
 	
 	#header-logo {
@@ -2089,7 +2088,7 @@ blockquote {
 	}
 	
 	#navmain > div > ul > li {
-		margin-right:5px;
+		margin-right:8px;
 	}
 	
 	#navmain ul a {
