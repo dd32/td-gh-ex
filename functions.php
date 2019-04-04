@@ -212,7 +212,7 @@ function ayaspirit_customize_register( $wp_customize ) {
 			'ayaspirit_animations_display',
 			array(
 					'default'           => 1,
-					'sanitize_callback' => 'esc_attr',
+					'sanitize_callback' => 'ayaspirit_sanitize_checkbox',
 			)
 	);
 
