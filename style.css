@@ -4,7 +4,7 @@ Description: AyaMedicine is fully Responsive WordPress Theme with Built-in Homep
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayamedicine
-Version: 1.0.9
+Version: 1.1.0
 Text Domain: ayamedicine
 Tags: blog, news, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -448,7 +448,7 @@ article,
 	background-color:#43A28A; 
 	color:#ffffff; 
 	margin:20px 0 0 0;
-	padding:10px 2% 5px 2%;
+	padding:25px 2% 10px 2%;
 }
 
 #footer-main a {
@@ -869,7 +869,6 @@ article,
 
 .header-social-widget a {
 	display:inline-block;
-	width:17px;
 	height:17px;
 	padding-top:3px;
 }
@@ -1998,7 +1997,7 @@ blockquote {
 	}
 	
 	.header-social-widget li {
-		margin-left:10px;
+		margin-left:5px;
 	}
 	
 	#header-logo {
@@ -2036,7 +2035,7 @@ blockquote {
 	}
 	
 	#navmain > div > ul > li {
-		margin-right:5px;
+		margin-right:8px;
 	}
 	
 	#navmain ul a {

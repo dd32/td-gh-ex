@@ -514,7 +514,7 @@ if ( ! function_exists( 'ayamedicine_customize_register' ) ) :
 			$wp_customize->add_setting( $slideImageId,
 				array(
 					'default' => $defaultSliderImagePath,
-					'sanitize_callback' => 'esc_url_raw'
+					'sanitize_callback' => 'ayamedicine_sanitize_url'
 				)
 			);
 
@@ -601,3 +601,11 @@ if ( ! function_exists( 'ayamedicine_sanitize_checkbox' ) ) :
 	}
 
 endif; // ayamedicine_sanitize_checkbox
+
+if ( ! function_exists( 'ayamedicine_sanitize_url' ) ) :
+
+	function ayamedicine_sanitize_url( $url ) {
+		return esc_url_raw( $url );
+	}
+
+endif; // ayamedicine_sanitize_url
