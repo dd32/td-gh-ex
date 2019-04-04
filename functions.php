@@ -455,17 +455,37 @@ final class ayaportfolio_Customize {
 // Doing this customizer thang!
 ayaportfolio_Customize::get_instance();
 
-/**
- * Sanitization callback for 'checkbox' type controls. This callback sanitizes `$checked`
- * as a boolean value, either TRUE or FALSE.
- *
- * @param bool $checked Whether the checkbox is checked.
- * @return bool Whether the checkbox is checked.
- */
-function ayaportfolio_sanitize_checkbox( $checked ) {
-	// Boolean check.
-	return ( ( isset( $checked ) && true == $checked ) ? true : false );
-}
+if ( ! function_exists( 'ayaportfolio_sanitize_checkbox' ) ) :
+
+	/**
+	 * Sanitization callback for 'checkbox' type controls. This callback sanitizes `$checked`
+	 * as a boolean value, either TRUE or FALSE.
+	 *
+	 * @param bool $checked Whether the checkbox is checked.
+	 * @return bool Whether the checkbox is checked.
+	 */
+	function ayaportfolio_sanitize_checkbox( $checked ) {
+		// Boolean check.
+		return ( ( isset( $checked ) && true == $checked ) ? true : false );
+	}
+
+endif; // ayaportfolio_sanitize_checkbox
+
+if ( ! function_exists( 'ayaportfolio_sanitize_html' ) ) :
+
+	function ayaportfolio_sanitize_html( $html ) {
+		return wp_filter_post_kses( $html );
+	}
+
+endif; // ayaportfolio_sanitize_html
+
+if ( ! function_exists( 'ayaportfolio_sanitize_url' ) ) :
+
+	function ayaportfolio_sanitize_url( $url ) {
+		return esc_url_raw( $url );
+	}
+
+endif; // ayaportfolio_sanitize_url
 
 if ( ! function_exists( 'ayaportfolio_customize_register' ) ) :
 	/**
@@ -545,7 +565,7 @@ if ( ! function_exists( 'ayaportfolio_customize_register' ) ) :
 			$wp_customize->add_setting(
 				$slideContentId,
 				array(
-					'sanitize_callback' => 'force_balance_tags',
+					'sanitize_callback' => 'ayaportfolio_sanitize_html',
 				)
 			);
 			
@@ -563,7 +583,7 @@ if ( ! function_exists( 'ayaportfolio_customize_register' ) ) :
 			$wp_customize->add_setting( $slideImageId,
 				array(
 					'default' => $defaultSliderImagePath,
-					'sanitize_callback' => 'esc_url_raw'
+					'sanitize_callback' => 'ayaportfolio_sanitize_url'
 				)
 			);
 
@@ -593,7 +613,7 @@ if ( ! function_exists( 'ayaportfolio_customize_register' ) ) :
 				'ayaportfolio_animations_display',
 				array(
 						'default'           => 1,
-						'sanitize_callback' => 'esc_attr',
+						'sanitize_callback' => 'ayaportfolio_sanitize_checkbox',
 				)
 		);
 
