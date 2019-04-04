@@ -545,7 +545,7 @@ if ( ! function_exists( 'ayablogging_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayablogging_slide1_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '1.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayablogging_sanitize_url'
 			)
 		);
 
@@ -562,7 +562,7 @@ if ( ! function_exists( 'ayablogging_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayablogging_slide2_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '2.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayablogging_sanitize_url'
 			)
 		);
 
@@ -579,7 +579,7 @@ if ( ! function_exists( 'ayablogging_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayablogging_slide3_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '3.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayablogging_sanitize_url'
 			)
 		);
 
@@ -665,3 +665,11 @@ if ( ! function_exists( 'ayablogging_sanitize_checkbox' ) ) :
 	}
 
 endif; // ayablogging_sanitize_checkbox
+
+if ( ! function_exists( 'ayablogging_sanitize_url' ) ) :
+
+	function ayablogging_sanitize_url( $url ) {
+		return esc_url_raw( $url );
+	}
+
+endif; // ayablogging_sanitize_url
