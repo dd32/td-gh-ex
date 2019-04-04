@@ -69,7 +69,7 @@ if( ! defined( 'ABSPATH' ) ) {
 			<?php if( get_theme_mod('agama_footer_social', true) ): ?>
 			<div class="social col-md-6">
 				
-				<?php Agama::sociali('top'); ?>
+				<?php Agama::social_icons('top'); ?>
 				
 			</div>
 			<?php endif; ?>

@@ -25,7 +25,7 @@ global $top_nav, $social_icons; ?>
 			<div class="pull-right nobottommargin">
 				<!-- Social Icons -->
 				<div id="top-social">
-				    <?php Agama::sociali( false, 'animated' ); ?>
+				    <?php Agama::social_icons( false, 'animated' ); ?>
 				</div><!-- Social Icons End -->
 			</div>
             <?php endif; ?>

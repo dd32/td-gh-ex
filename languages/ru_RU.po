@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Agama\n"
-"POT-Creation-Date: 2019-02-23 21:55+0100\n"
-"PO-Revision-Date: 2019-02-23 21:55+0100\n"
+"POT-Creation-Date: 2019-04-04 21:55+0200\n"
+"PO-Revision-Date: 2019-04-04 21:55+0200\n"
 "Last-Translator: Theme Vision <support@theme-vision.com>\n"
 "Language-Team: Theme-Vision <support@theme-vision.com>\n"
 "Language: ru_RU\n"
@@ -66,7 +66,7 @@ msgstr "Архивы"
 msgid "Author Archives: %s"
 msgstr "Архивы автора: %s"
 
-#: author.php:67 author.php:120 framework/class-agama.php:440
+#: author.php:67 author.php:120 framework/class-agama.php:428
 #, php-format
 msgid "About %s"
 msgstr "Об %s"
@@ -494,12 +494,12 @@ msgstr "Идентификационные данные сайта"
 #: framework/admin/customizer.php:69 framework/admin/customizer.php:173
 #: framework/admin/customizer.php:356 framework/admin/customizer.php:403
 #: framework/admin/customizer.php:1033 framework/admin/customizer.php:1443
-#: framework/admin/customizer.php:1965 framework/admin/customizer.php:2458
+#: framework/admin/customizer.php:1965 framework/admin/customizer.php:2322
 msgid "General"
 msgstr "Основной"
 
 #: framework/admin/customizer.php:76 framework/admin/customizer.php:740
-#: framework/admin/customizer.php:2497
+#: framework/admin/customizer.php:2361
 msgid "Styling"
 msgstr "Стиль"
 
@@ -744,7 +744,7 @@ msgid "Enable top navigation. Working only with header V2 & V3."
 msgstr "Эта фишка работает только с заголовком v2 и v3."
 
 #: framework/admin/customizer.php:442 framework/admin/customizer.php:2166
-#: framework/admin/customizer.php:2463
+#: framework/admin/customizer.php:2172 framework/admin/customizer.php:2327
 msgid "Social Icons"
 msgstr "Иконки соцсетей"
 
@@ -1025,7 +1025,7 @@ msgstr "Настройки слайдера."
 
 #: framework/admin/customizer.php:1038 framework/admin/customizer.php:1487
 #: framework/admin/customizer.php:1606 framework/admin/customizer.php:1725
-#: framework/admin/customizer.php:1844 framework/admin/customizer.php:2391
+#: framework/admin/customizer.php:1844 framework/admin/customizer.php:2255
 msgid "Enable"
 msgstr "Включено"
 
@@ -1075,7 +1075,7 @@ msgid ""
 msgstr "Миллисекунды между концом эффекта слайдера и началом следующего."
 
 #: framework/admin/customizer.php:1104 framework/admin/customizer.php:1457
-#: framework/admin/customizer.php:2399
+#: framework/admin/customizer.php:2263
 msgid "Visibility"
 msgstr "Видимость"
 
@@ -1607,365 +1607,358 @@ msgstr "Комментарии поста"
 msgid "Enable post meta comments counter."
 msgstr "Включить счётчик комментариев поста ?"
 
-#: framework/admin/customizer.php:2171
-msgid "URL Target"
-msgstr "Целевой URL"
+#: framework/admin/customizer.php:2173
+msgid "Add | Remove | Re-Order - Social Icons"
+msgstr ""
 
-#: framework/admin/customizer.php:2172
+#: framework/admin/customizer.php:2178
 #, fuzzy
-#| msgid "If \"blank\" selected all urls will be open in new tab."
-msgid "If \"_blank\" selected the social icons url will be open in new tab."
-msgstr "Если выбран \"пустой\" все ссылки будут открываться в новой закладке."
+#| msgid "Social Icons"
+msgid "Social Icon"
+msgstr "Иконки соцсетей"
 
-#: framework/admin/customizer.php:2183
-msgid "Facebook URL"
-msgstr "Facebook URL"
-
-#: framework/admin/customizer.php:2184
-msgid "Set your facebook page url."
-msgstr "Задайте ссылку Вашей страницы Facebook."
-
-#: framework/admin/customizer.php:2191
-msgid "Twitter URL"
-msgstr "Twitter URL"
+#: framework/admin/customizer.php:2181
+#: framework/admin/customizer/builder/class-agama-page-builder.php:118
+#, fuzzy
+#| msgid "Add new"
+msgid "Add New"
+msgstr "Добавить новый"
 
 #: framework/admin/customizer.php:2192
-msgid "Set your twitter page url."
-msgstr "Задайте ссылку Вашей страницы Twitter."
+msgid "Open in New Tab ?"
+msgstr ""
+
+#: framework/admin/customizer.php:2196
+msgid "Icon"
+msgstr ""
+
+#: framework/admin/customizer.php:2197
+#, fuzzy
+#| msgid "Select sidebar position."
+msgid "Select social icon."
+msgstr "Выберите положение бокового меню."
 
 #: framework/admin/customizer.php:2199
-msgid "Flickr URL"
-msgstr "Flickr URL"
+#, fuzzy
+#| msgid "Select a Page"
+msgid "-- Select --"
+msgstr "Выберите страницу"
 
 #: framework/admin/customizer.php:2200
-msgid "Set your flickr page url."
-msgstr "Задайте ссылку Вашей страницы Flickr."
-
-#: framework/admin/customizer.php:2207
-msgid "RSS URL"
-msgstr "RSS URL"
-
-#: framework/admin/customizer.php:2208
-msgid "Set your rss page url."
-msgstr "Задайте ссылку Вашей страницы RSS."
-
-#: framework/admin/customizer.php:2215
-msgid "Vimeo URL"
-msgstr "Vimeo URL"
-
-#: framework/admin/customizer.php:2216
-msgid "Set your vimeo page url."
-msgstr "Задайте ссылку Вашей страницы Vimeo."
-
-#: framework/admin/customizer.php:2223
-msgid "Youtube URL"
-msgstr "Youtube URL"
-
-#: framework/admin/customizer.php:2224
-msgid "Set your youtube page url."
-msgstr "Задайте ссылку Вашей страницы YouTube ."
-
-#: framework/admin/customizer.php:2231
-msgid "Instagram URL"
-msgstr "Instagram URL"
-
-#: framework/admin/customizer.php:2232
-msgid "Set your instagram page url."
-msgstr "Задайте ссылку Вашей страницы Instagram ."
-
-#: framework/admin/customizer.php:2239
-msgid "Pinterest URL"
-msgstr "Pinterest URL"
-
-#: framework/admin/customizer.php:2240
-msgid "Set your pinterest page url."
-msgstr "Задайте ссылку Вашей страницы Pinterest."
-
-#: framework/admin/customizer.php:2247
-msgid "Tumblr URL"
-msgstr "Tumblr URL"
-
-#: framework/admin/customizer.php:2248
-msgid "Set your tumblr page url."
-msgstr "Задайте ссылку Вашей страницы Tumblr."
-
-#: framework/admin/customizer.php:2255
-msgid "Google+ URL"
-msgstr "Google+ URL"
-
-#: framework/admin/customizer.php:2256
-msgid "Set your google+ page url."
-msgstr "Задайте ссылку Вашей страницы Google+ ."
-
-#: framework/admin/customizer.php:2263
-msgid "Dribbble URL"
-msgstr "Dribbble URL"
-
-#: framework/admin/customizer.php:2264
-msgid "Set your dribbble page url."
-msgstr "Задайте ссылку Вашей страницы Dribbble."
-
-#: framework/admin/customizer.php:2271
-msgid "Digg URL"
-msgstr "Digg URL"
-
-#: framework/admin/customizer.php:2272
-msgid "Set your digg page url."
-msgstr "Задайте ссылку Вашей страницы Digg."
-
-#: framework/admin/customizer.php:2279
-msgid "LinkedIn URL"
-msgstr "LinkedIn URL"
-
-#: framework/admin/customizer.php:2280
-msgid "Set your linkedin page url."
-msgstr "Задайте ссылку Вашей страницы LinkedIn."
-
-#: framework/admin/customizer.php:2287
-msgid "Blogger URL"
-msgstr "Blogger URL"
-
-#: framework/admin/customizer.php:2288
-msgid "Set your blogger page url."
-msgstr "Задайте ссылку Вашей страницы Blogger."
-
-#: framework/admin/customizer.php:2295
-#, fuzzy
-#| msgid "Skype URL"
-msgid "Skype Username"
-msgstr "Skype URL"
-
-#: framework/admin/customizer.php:2296
-msgid "Enter your Skype username. Eg: johndoe"
+msgid "Amazon"
 msgstr ""
 
-#: framework/admin/customizer.php:2303
-msgid "MySpace URL"
-msgstr "MySpace URL"
+#: framework/admin/customizer.php:2201
+msgid "Android"
+msgstr ""
 
-#: framework/admin/customizer.php:2304
-msgid "Set your myspace page url."
-msgstr "Задайте ссылку Вашей страницы MySpace."
+#: framework/admin/customizer.php:2202
+msgid "Behance"
+msgstr ""
 
-#: framework/admin/customizer.php:2311
-msgid "Deviantart URL"
+#: framework/admin/customizer.php:2203
+msgid "Bitbucket"
+msgstr ""
+
+#: framework/admin/customizer.php:2204
+msgid "BitCoin"
+msgstr ""
+
+#: framework/admin/customizer.php:2205
+msgid "Delicious"
+msgstr ""
+
+#: framework/admin/customizer.php:2206
+#, fuzzy
+#| msgid "Deviantart URL"
+msgid "DeviantArt"
 msgstr "Deviantart URL"
 
-#: framework/admin/customizer.php:2312
-msgid "Set your deviantart page url."
-msgstr "Задайте ссылку Вашей страницы Deviantart."
-
-#: framework/admin/customizer.php:2319
-msgid "Yahoo URL"
-msgstr "Yahoo URL"
-
-#: framework/admin/customizer.php:2320
-msgid "Set your yahoo page url."
-msgstr "Задайте ссылку Вашей страницы Yahoo."
-
-#: framework/admin/customizer.php:2327
-msgid "Reddit URL"
-msgstr "Reddit URL"
-
-#: framework/admin/customizer.php:2328
-msgid "Set your reddit page url."
-msgstr "Задайте ссылку Вашей страницы Reddit."
-
-#: framework/admin/customizer.php:2335
-msgid "PayPal URL"
-msgstr "PayPal URL"
-
-#: framework/admin/customizer.php:2336
-msgid "Set your paypal page url."
-msgstr "Задайте ссылку Вашей страницы PayPal."
-
-#: framework/admin/customizer.php:2343
-msgid "Phone Number"
-msgstr ""
-
-#: framework/admin/customizer.php:2344
-msgid "Enter your phone number. Eg: +381 60 000 000"
-msgstr ""
-
-#: framework/admin/customizer.php:2351
-msgid "Dropbox URL"
+#: framework/admin/customizer.php:2207
+#, fuzzy
+#| msgid "Dropbox URL"
+msgid "DropBox"
 msgstr "Dropbox URL"
 
-#: framework/admin/customizer.php:2352
-msgid "Set your dropbox page url."
-msgstr "Задайте ссылку Вашей страницы Dropbox."
-
-#: framework/admin/customizer.php:2359
-msgid "SoundCloud URL"
-msgstr "SoundCloud URL"
-
-#: framework/admin/customizer.php:2360
-msgid "Set your soundcloud page url."
-msgstr "Задайте ссылку Вашей страницы SoundCloud."
-
-#: framework/admin/customizer.php:2367
-msgid "VK URL"
-msgstr "ВК URL"
-
-#: framework/admin/customizer.php:2368
-msgid "Set your vk page url."
-msgstr "Задайте ссылку Вашей страницы ВК."
-
-#: framework/admin/customizer.php:2375
-msgid "E-mail Address"
-msgstr ""
-
-#: framework/admin/customizer.php:2376
-msgid "Enter your email address. Eg: johndoe@example.com"
-msgstr ""
-
-#: framework/admin/customizer.php:2386
+#: framework/admin/customizer.php:2208
 #, fuzzy
-#| msgid "Social icons settings section."
-msgid "Social Share"
-msgstr "Раздел настроек иконок соцсетей."
+#| msgid "Dribbble URL"
+msgid "Dribbble"
+msgstr "Dribbble URL"
 
-#: framework/admin/customizer.php:2392
+#: framework/admin/customizer.php:2209
 #, fuzzy
-#| msgid "Social icons settings section."
-msgid "Enable social share icons ?"
-msgstr "Раздел настроек иконок соцсетей."
+#| msgid "Digg URL"
+msgid "Digg"
+msgstr "Digg URL"
 
-#: framework/admin/customizer.php:2400
-#, fuzzy
-#| msgid "Select where the slider should be visible."
-msgid "Select where to show share box."
-msgstr "Выберите где слайдер будет видимым."
+#: framework/admin/customizer.php:2210 framework/admin/customizer.php:2288
+#: framework/agama-filters.php:57
+msgid "Email"
+msgstr "Email"
 
-#: framework/admin/customizer.php:2405
-msgid "Posts"
-msgstr ""
-
-#: framework/admin/customizer.php:2406
-#, fuzzy
-#| msgid "Pages:"
-msgid "Pages"
-msgstr "Страницы:"
-
-#: framework/admin/customizer.php:2407
-#, fuzzy
-#| msgid "Front Page"
-msgid "Post & Pages"
-msgstr "Первая страница"
-
-#: framework/admin/customizer.php:2412
-#, fuzzy
-#| msgid "Share Box"
-msgid "Share Icons"
-msgstr "Share Box"
-
-#: framework/admin/customizer.php:2413
-msgid "Enable and sort share icons per your own needs."
-msgstr ""
-
-#: framework/admin/customizer.php:2418
+#: framework/admin/customizer.php:2211 framework/admin/customizer.php:2282
 #, fuzzy
 #| msgid "Facebook URL"
 msgid "Facebook"
 msgstr "Facebook URL"
 
-#: framework/admin/customizer.php:2419
+#: framework/admin/customizer.php:2212
 #, fuzzy
-#| msgid "Twitter URL"
-msgid "Twitter"
-msgstr "Twitter URL"
+#| msgid "Flickr URL"
+msgid "Flickr"
+msgstr "Flickr URL"
 
-#: framework/admin/customizer.php:2420
-#, fuzzy
-#| msgid "Pinterest URL"
-msgid "Pinterest"
-msgstr "Pinterest URL"
+#: framework/admin/customizer.php:2213
+msgid "GitHub"
+msgstr ""
 
-#: framework/admin/customizer.php:2421 framework/agama-actions.php:162
+#: framework/admin/customizer.php:2214
 #, fuzzy
 #| msgid "Google+ URL"
-msgid "Google+"
+msgid "Google"
 msgstr "Google+ URL"
 
-#: framework/admin/customizer.php:2422 framework/agama-actions.php:167
+#: framework/admin/customizer.php:2215
+#, fuzzy
+#| msgid "Instagram URL"
+msgid "Instagram"
+msgstr "Instagram URL"
+
+#: framework/admin/customizer.php:2216 framework/admin/customizer.php:2286
+#: framework/agama-actions.php:167
 #, fuzzy
 #| msgid "LinkedIn URL"
 msgid "LinkedIn"
 msgstr "LinkedIn URL"
 
-#: framework/admin/customizer.php:2423
+#: framework/admin/customizer.php:2217
+#, fuzzy
+#| msgid "MySpace URL"
+msgid "MySpace"
+msgstr "MySpace URL"
+
+#: framework/admin/customizer.php:2218
+#, fuzzy
+#| msgid "PayPal URL"
+msgid "PayPal"
+msgstr "PayPal URL"
+
+#: framework/admin/customizer.php:2219
+msgid "Phone"
+msgstr ""
+
+#: framework/admin/customizer.php:2220 framework/admin/customizer.php:2284
+#, fuzzy
+#| msgid "Pinterest URL"
+msgid "Pinterest"
+msgstr "Pinterest URL"
+
+#: framework/admin/customizer.php:2221
+#, fuzzy
+#| msgid "Reddit URL"
+msgid "Reddit"
+msgstr "Reddit URL"
+
+#: framework/admin/customizer.php:2222 framework/admin/customizer.php:2287
 #, fuzzy
 #| msgid "RSS URL"
 msgid "RSS"
 msgstr "RSS URL"
 
-#: framework/admin/customizer.php:2424 framework/agama-filters.php:57
-msgid "Email"
-msgstr "Email"
+#: framework/admin/customizer.php:2223
+msgid "Skype"
+msgstr ""
 
-#: framework/admin/customizer.php:2440
+#: framework/admin/customizer.php:2224
+#, fuzzy
+#| msgid "SoundCloud URL"
+msgid "SoundCloud"
+msgstr "SoundCloud URL"
+
+#: framework/admin/customizer.php:2225
+msgid "Spotify"
+msgstr ""
+
+#: framework/admin/customizer.php:2226
+msgid "StackOverflow"
+msgstr ""
+
+#: framework/admin/customizer.php:2227
+msgid "Steam"
+msgstr ""
+
+#: framework/admin/customizer.php:2228
+msgid "Stumbleupon"
+msgstr ""
+
+#: framework/admin/customizer.php:2229
+msgid "Telegram"
+msgstr ""
+
+#: framework/admin/customizer.php:2230
+#, fuzzy
+#| msgid "Tumblr URL"
+msgid "Tumblr"
+msgstr "Tumblr URL"
+
+#: framework/admin/customizer.php:2231
+#, fuzzy
+#| msgid "Switch Editor"
+msgid "Twitch"
+msgstr "Поменять редактор"
+
+#: framework/admin/customizer.php:2232 framework/admin/customizer.php:2283
+#, fuzzy
+#| msgid "Twitter URL"
+msgid "Twitter"
+msgstr "Twitter URL"
+
+#: framework/admin/customizer.php:2233
+#, fuzzy
+#| msgid "Vimeo URL"
+msgid "Vimeo"
+msgstr "Vimeo URL"
+
+#: framework/admin/customizer.php:2234
+msgid "VK"
+msgstr ""
+
+#: framework/admin/customizer.php:2235
+#, fuzzy
+#| msgid "Yahoo URL"
+msgid "Yahoo"
+msgstr "Yahoo URL"
+
+#: framework/admin/customizer.php:2236
+msgid "YouTube"
+msgstr ""
+
+#: framework/admin/customizer.php:2241
+#, fuzzy
+#| msgid "PayPal URL"
+msgid "Page URL"
+msgstr "PayPal URL"
+
+#: framework/admin/customizer.php:2242
+#, fuzzy
+#| msgid "Set social icons url target."
+msgid "Add social icon page url."
+msgstr "Задайте ссылку иконок соцсетей."
+
+#: framework/admin/customizer.php:2250
+#, fuzzy
+#| msgid "Social icons settings section."
+msgid "Social Share"
+msgstr "Раздел настроек иконок соцсетей."
+
+#: framework/admin/customizer.php:2256
+#, fuzzy
+#| msgid "Social icons settings section."
+msgid "Enable social share icons ?"
+msgstr "Раздел настроек иконок соцсетей."
+
+#: framework/admin/customizer.php:2264
+#, fuzzy
+#| msgid "Select where the slider should be visible."
+msgid "Select where to show share box."
+msgstr "Выберите где слайдер будет видимым."
+
+#: framework/admin/customizer.php:2269
+msgid "Posts"
+msgstr ""
+
+#: framework/admin/customizer.php:2270
+#, fuzzy
+#| msgid "Pages:"
+msgid "Pages"
+msgstr "Страницы:"
+
+#: framework/admin/customizer.php:2271
+#, fuzzy
+#| msgid "Front Page"
+msgid "Post & Pages"
+msgstr "Первая страница"
+
+#: framework/admin/customizer.php:2276
+#, fuzzy
+#| msgid "Share Box"
+msgid "Share Icons"
+msgstr "Share Box"
+
+#: framework/admin/customizer.php:2277
+msgid "Enable and sort share icons per your own needs."
+msgstr ""
+
+#: framework/admin/customizer.php:2285 framework/agama-actions.php:162
+#, fuzzy
+#| msgid "Google+ URL"
+msgid "Google+"
+msgstr "Google+ URL"
+
+#: framework/admin/customizer.php:2304
 msgid "WooCommerce"
 msgstr "WooCommerce"
 
-#: framework/admin/customizer.php:2447
+#: framework/admin/customizer.php:2311
 msgid "Widgets"
 msgstr "Виджеты"
 
-#: framework/admin/customizer.php:2454
+#: framework/admin/customizer.php:2318
 msgid "Footer"
 msgstr "Подвал"
 
-#: framework/admin/customizer.php:2464
+#: framework/admin/customizer.php:2328
 #, fuzzy
 #| msgid "Enable social icons on footer ?"
 msgid "Enable social icons in footer right area."
 msgstr "Включить иконки соцсетей в подвале ?"
 
-#: framework/admin/customizer.php:2477
+#: framework/admin/customizer.php:2341
 msgid "Copyright"
 msgstr "Копирайт"
 
-#: framework/admin/customizer.php:2478
+#: framework/admin/customizer.php:2342
 #, fuzzy
 #| msgid "Add custom footer copyright."
 msgid "Add custom copyright text in footer area."
 msgstr "Добавьте свой копирайт в подвал."
 
-#: framework/admin/customizer.php:2502
+#: framework/admin/customizer.php:2366
 msgid "Widget Area BG Color"
 msgstr "Цвет фона области виджета"
 
-#: framework/admin/customizer.php:2503
+#: framework/admin/customizer.php:2367
 msgid "Set footer widget area background color."
 msgstr "Задать цвет фона виджета подвала"
 
-#: framework/admin/customizer.php:2524
+#: framework/admin/customizer.php:2388
 msgid "Footer Area BG Color"
 msgstr "Цвет фона области подвала"
 
-#: framework/admin/customizer.php:2525
+#: framework/admin/customizer.php:2389
 msgid "Set footer area background color."
 msgstr "Задать цвет фона области подвала."
 
-#: framework/admin/customizer.php:2546
+#: framework/admin/customizer.php:2410
 #, fuzzy
 #| msgid "Links Color"
 msgid "Copyright Links Color"
 msgstr "Цвет ссылок"
 
-#: framework/admin/customizer.php:2547
+#: framework/admin/customizer.php:2411
 #, fuzzy
 #| msgid "Add custom footer copyright."
 msgid "Set custom color for copyright links in footer area."
 msgstr "Добавьте свой копирайт в подвал."
 
-#: framework/admin/customizer.php:2561
+#: framework/admin/customizer.php:2425
 #, fuzzy
 #| msgid "Social Icons"
 msgid "Social Icons Color"
 msgstr "Иконки соцсетей"
 
-#: framework/admin/customizer.php:2562
+#: framework/admin/customizer.php:2426
 #, fuzzy
 #| msgid "Enable social icons on footer ?"
 msgid "Set custom color for social icons in footer area."
@@ -2012,12 +2005,6 @@ msgstr ""
 #: framework/admin/customizer/builder/class-agama-page-builder.php:95
 msgid "Coming Soon"
 msgstr ""
-
-#: framework/admin/customizer/builder/class-agama-page-builder.php:118
-#, fuzzy
-#| msgid "Add new"
-msgid "Add New"
-msgstr "Добавить новый"
 
 #: framework/admin/customizer/controls/control-editor.php:27
 #: framework/widgets/widget-about.php:146
@@ -2778,7 +2765,7 @@ msgstr ""
 msgid "Share"
 msgstr "Share Box"
 
-#: framework/agama-actions.php:243 framework/class-agama.php:395
+#: framework/agama-actions.php:243 framework/class-agama.php:383
 msgid " comments"
 msgstr " комментариев"
 
@@ -2823,7 +2810,7 @@ msgstr "метки и атрибуты"
 msgid "Leave a"
 msgstr "Покинуть"
 
-#: framework/agama-functions.php:146 framework/class-agama.php:410
+#: framework/agama-functions.php:146 framework/class-agama.php:398
 msgid "Post navigation"
 msgstr "Навигация по постам"
 
@@ -3422,17 +3409,17 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: framework/class-agama.php:411
+#: framework/class-agama.php:399
 msgctxt "Previous post link"
 msgid "&larr;"
 msgstr "&larr;"
 
-#: framework/class-agama.php:412
+#: framework/class-agama.php:400
 msgctxt "Next post link"
 msgid "&rarr;"
 msgstr "&rarr;"
 
-#: framework/class-agama.php:444
+#: framework/class-agama.php:432
 #, php-format
 msgid "View all posts by %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr "Просмотреть все посты за %s <span class=„meta-nag“>&rarr;</span>"
@@ -3655,6 +3642,113 @@ msgstr "Поиск по"
 msgid "Tag Archives: %s"
 msgstr "Метка архивов: %s"
 
+#~ msgid "URL Target"
+#~ msgstr "Целевой URL"
+
+#, fuzzy
+#~| msgid "If \"blank\" selected all urls will be open in new tab."
+#~ msgid "If \"_blank\" selected the social icons url will be open in new tab."
+#~ msgstr ""
+#~ "Если выбран \"пустой\" все ссылки будут открываться в новой закладке."
+
+#~ msgid "Facebook URL"
+#~ msgstr "Facebook URL"
+
+#~ msgid "Set your facebook page url."
+#~ msgstr "Задайте ссылку Вашей страницы Facebook."
+
+#~ msgid "Twitter URL"
+#~ msgstr "Twitter URL"
+
+#~ msgid "Set your twitter page url."
+#~ msgstr "Задайте ссылку Вашей страницы Twitter."
+
+#~ msgid "Set your flickr page url."
+#~ msgstr "Задайте ссылку Вашей страницы Flickr."
+
+#~ msgid "RSS URL"
+#~ msgstr "RSS URL"
+
+#~ msgid "Set your rss page url."
+#~ msgstr "Задайте ссылку Вашей страницы RSS."
+
+#~ msgid "Set your vimeo page url."
+#~ msgstr "Задайте ссылку Вашей страницы Vimeo."
+
+#~ msgid "Youtube URL"
+#~ msgstr "Youtube URL"
+
+#~ msgid "Set your youtube page url."
+#~ msgstr "Задайте ссылку Вашей страницы YouTube ."
+
+#~ msgid "Set your instagram page url."
+#~ msgstr "Задайте ссылку Вашей страницы Instagram ."
+
+#~ msgid "Pinterest URL"
+#~ msgstr "Pinterest URL"
+
+#~ msgid "Set your pinterest page url."
+#~ msgstr "Задайте ссылку Вашей страницы Pinterest."
+
+#~ msgid "Set your tumblr page url."
+#~ msgstr "Задайте ссылку Вашей страницы Tumblr."
+
+#~ msgid "Google+ URL"
+#~ msgstr "Google+ URL"
+
+#~ msgid "Set your google+ page url."
+#~ msgstr "Задайте ссылку Вашей страницы Google+ ."
+
+#~ msgid "Set your dribbble page url."
+#~ msgstr "Задайте ссылку Вашей страницы Dribbble."
+
+#~ msgid "Set your digg page url."
+#~ msgstr "Задайте ссылку Вашей страницы Digg."
+
+#~ msgid "LinkedIn URL"
+#~ msgstr "LinkedIn URL"
+
+#~ msgid "Set your linkedin page url."
+#~ msgstr "Задайте ссылку Вашей страницы LinkedIn."
+
+#~ msgid "Blogger URL"
+#~ msgstr "Blogger URL"
+
+#~ msgid "Set your blogger page url."
+#~ msgstr "Задайте ссылку Вашей страницы Blogger."
+
+#, fuzzy
+#~| msgid "Skype URL"
+#~ msgid "Skype Username"
+#~ msgstr "Skype URL"
+
+#~ msgid "Set your myspace page url."
+#~ msgstr "Задайте ссылку Вашей страницы MySpace."
+
+#~ msgid "Set your deviantart page url."
+#~ msgstr "Задайте ссылку Вашей страницы Deviantart."
+
+#~ msgid "Set your yahoo page url."
+#~ msgstr "Задайте ссылку Вашей страницы Yahoo."
+
+#~ msgid "Set your reddit page url."
+#~ msgstr "Задайте ссылку Вашей страницы Reddit."
+
+#~ msgid "Set your paypal page url."
+#~ msgstr "Задайте ссылку Вашей страницы PayPal."
+
+#~ msgid "Set your dropbox page url."
+#~ msgstr "Задайте ссылку Вашей страницы Dropbox."
+
+#~ msgid "Set your soundcloud page url."
+#~ msgstr "Задайте ссылку Вашей страницы SoundCloud."
+
+#~ msgid "VK URL"
+#~ msgstr "ВК URL"
+
+#~ msgid "Set your vk page url."
+#~ msgstr "Задайте ссылку Вашей страницы ВК."
+
 #~ msgid "Hex Value"
 #~ msgstr "Шестнадцатеричное значение"
 
@@ -3762,16 +3856,6 @@ msgstr "Метка архивов: %s"
 #~| msgid "No Repeat"
 #~ msgid "Repeater"
 #~ msgstr "Не повторять"
-
-#, fuzzy
-#~| msgid "Select a Page"
-#~ msgid "Select"
-#~ msgstr "Выберите страницу"
-
-#, fuzzy
-#~| msgid "Switch Editor"
-#~ msgid "Switch"
-#~ msgstr "Поменять редактор"
 
 #, fuzzy
 #~| msgid "Background Color"
@@ -4041,9 +4125,6 @@ msgstr "Метка архивов: %s"
 
 #~ msgid "Works with header V2 & V3."
 #~ msgstr "Работает с заголовком v2 и v3."
-
-#~ msgid "Set social icons url target."
-#~ msgstr "Задайте ссылку иконок соцсетей."
 
 #~ msgid "Forrst URL"
 #~ msgstr "Forrst URL"

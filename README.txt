@@ -3,6 +3,27 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.4.2 - 04 April 2019 =
+* Added Android social icon.
+* Added Amazon social icon.
+* Added Behance social icon.
+* Added Bitcoin social icon.
+* Added Bitbucket social icon.
+* Added Delicious social icon.
+* Added GitHub social icon.
+* Added Google social icon.
+* Added Spotify social icon.
+* Added StackOverflow social icon.
+* Added Steam social icon.
+* Added Stumbleupon social icon.
+* Added Telegram social icon.
+* Added Twitch social icon.
+* Removed Blogger social icon.
+* Removed Google+ social icon.
+* Updated Kirki framework to the latest version.
+* Updated theme translation files.
+* Completely rewritten social icons code.
+
 = 1.4.1 - 23 February 2019 =
 * Added mobile hamburger menu icon color feature.
 * Updated Kirki framework to the latest version.

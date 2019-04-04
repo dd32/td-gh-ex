@@ -22,7 +22,7 @@ global $top_nav, $social_icons; ?>
         <!-- Social Icons -->
         <div id="top-social" class="pull-right">
             <?php if( get_theme_mod( 'agama_top_nav_social', true ) ): ?>
-                <?php Agama::sociali( false, 'animated' ); ?>
+                <?php Agama::social_icons( false, 'animated' ); ?>
             <?php endif; ?>
         </div><!-- Social Icons End -->
         <?php endif; ?>

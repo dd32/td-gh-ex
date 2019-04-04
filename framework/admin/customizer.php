@@ -2162,223 +2162,86 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 ############################################################
 # SOCIAL ICONS
 ############################################################
-	Kirki::add_section( 'agama_social_icons_section', array(
-		'title'			=> __( 'Social Icons', 'agama' ),
+	Kirki::add_section( 'agama_social_icons_section', [
+		'title'			=> esc_attr__( 'Social Icons', 'agama' ),
 		'capability'	=> 'edit_theme_options',
 		'priority'		=> 90,
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'URL Target', 'agama' ),
-		'tooltip'	    => __( 'If "_blank" selected the social icons url will be open in new tab.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'agama_social_url_target',
-		'type'			=> 'select',
-		'choices'		=> array(
-			'_self'		=> '_self',
-			'_blank'	=> '_blank'
-		),
-		'default'		=> '_self'
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Facebook URL', 'agama' ),
-		'tooltip'	    => __( 'Set your facebook page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_facebook',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Twitter URL', 'agama' ),
-		'tooltip'	    => __( 'Set your twitter page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_twitter',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Flickr URL', 'agama' ),
-		'tooltip'	    => __( 'Set your flickr page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_flickr',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'RSS URL', 'agama' ),
-		'tooltip'	    => __( 'Set your rss page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_rss',
-		'type'			=> 'text',
-		'default'		=> esc_url_raw( get_bloginfo('rss2_url') )
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Vimeo URL', 'agama' ),
-		'tooltip'	    => __( 'Set your vimeo page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_vimeo',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Youtube URL', 'agama' ),
-		'tooltip'	    => __( 'Set your youtube page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_youtube',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Instagram URL', 'agama' ),
-		'tooltip'	    => __( 'Set your instagram page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_instagram',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Pinterest URL', 'agama' ),
-		'tooltip'	    => __( 'Set your pinterest page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_pinterest',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Tumblr URL', 'agama' ),
-		'tooltip'	    => __( 'Set your tumblr page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_tumblr',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Google+ URL', 'agama' ),
-		'tooltip'	    => __( 'Set your google+ page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_google',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Dribbble URL', 'agama' ),
-		'tooltip'	    => __( 'Set your dribbble page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_dribbble',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Digg URL', 'agama' ),
-		'tooltip'	    => __( 'Set your digg page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_digg',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'LinkedIn URL', 'agama' ),
-		'tooltip'	    => __( 'Set your linkedin page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_linkedin',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Blogger URL', 'agama' ),
-		'tooltip'	    => __( 'Set your blogger page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_blogger',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Skype Username', 'agama' ),
-		'tooltip'	    => __( 'Enter your Skype username. Eg: johndoe', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_skype',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'MySpace URL', 'agama' ),
-		'tooltip'	    => __( 'Set your myspace page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_myspace',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Deviantart URL', 'agama' ),
-		'tooltip'	    => __( 'Set your deviantart page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_deviantart',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Yahoo URL', 'agama' ),
-		'tooltip'	    => __( 'Set your yahoo page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_yahoo',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Reddit URL', 'agama' ),
-		'tooltip'	    => __( 'Set your reddit page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_reddit',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'PayPal URL', 'agama' ),
-		'tooltip'	    => __( 'Set your paypal page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_paypal',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-    Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Phone Number', 'agama' ),
-		'tooltip'	    => __( 'Enter your phone number. Eg: +381 60 000 000', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_phone',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Dropbox URL', 'agama' ),
-		'tooltip'	    => __( 'Set your dropbox page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_dropbox',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'SoundCloud URL', 'agama' ),
-		'tooltip'	    => __( 'Set your soundcloud page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_soundcloud',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'VK URL', 'agama' ),
-		'tooltip'	    => __( 'Set your vk page url.', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_vk',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
-	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'E-mail Address', 'agama' ),
-		'tooltip'	    => __( 'Enter your email address. Eg: johndoe@example.com', 'agama' ),
-		'section'		=> 'agama_social_icons_section',
-		'settings'		=> 'social_email',
-		'type'			=> 'text',
-		'default'		=> ''
-	) );
+	] );
+    Kirki::add_field( 'agama_options', [
+        'type'          => 'repeater',
+        'label'         => esc_attr__( 'Social Icons', 'agama' ),
+        'section'       => 'agama_social_icons_section',
+        'settings'      => 'agama_social_icons',
+        'row_label'     => [
+            'type'      => 'field',
+            'value'     => esc_attr__( 'Social Icon', 'agama' ),
+            'field'     => 'icon'
+        ],
+        'button_label'  => esc_attr__( 'Add New', 'agama' ),
+        'default'       => [
+            [
+                'target' => '',
+                'icon'   => 'rss',
+                'url'    => esc_url_raw( get_bloginfo('rss2_url') )
+            ]
+        ],
+        'fields' => [
+            'target' => [
+                'type'          => 'checkbox',
+                'label'         => esc_attr__( 'Open in New Tab ?', 'agama' ),
+            ],
+            'icon' => [
+                'type'          => 'select',
+                'label'         => esc_attr__( 'Icon', 'agama' ),
+                'description'   => esc_attr__( 'Select social icon.', 'agama' ),
+                'choices'       => [
+                    ''              => esc_attr__( '-- Select --', 'agama' ),
+                    'amazon'        => esc_attr__( 'Amazon', 'agama' ),
+                    'android'       => esc_attr__( 'Android', 'agama' ),
+                    'behance'       => esc_attr__( 'Behance', 'agama' ),
+                    'bitbucket'     => esc_attr__( 'Bitbucket', 'agama' ),
+                    'bitcoin'       => esc_attr__( 'BitCoin', 'agama' ),
+                    'delicious'     => esc_attr__( 'Delicious', 'agama' ),
+                    'deviantart'    => esc_attr__( 'DeviantArt', 'agama' ),
+                    'dropbox'       => esc_attr__( 'DropBox', 'agama' ),
+                    'dribbble'      => esc_attr__( 'Dribbble', 'agama' ),
+                    'digg'          => esc_attr__( 'Digg', 'agama' ),
+                    'email'         => esc_attr__( 'Email', 'agama' ),
+                    'facebook'      => esc_attr__( 'Facebook', 'agama' ),
+                    'flickr'        => esc_attr__( 'Flickr', 'agama' ),
+                    'github'        => esc_attr__( 'GitHub', 'agama' ),
+                    'google'        => esc_attr__( 'Google', 'agama' ),
+                    'instagram'     => esc_attr__( 'Instagram', 'agama' ),
+                    'linkedin'      => esc_attr__( 'LinkedIn', 'agama' ),
+                    'myspace'       => esc_attr__( 'MySpace', 'agama' ),
+                    'paypal'        => esc_attr__( 'PayPal', 'agama' ),
+                    'phone'         => esc_attr__( 'Phone', 'agama' ),
+                    'pinterest'     => esc_attr__( 'Pinterest', 'agama' ),
+                    'reddit'        => esc_attr__( 'Reddit', 'agama' ),
+                    'rss'           => esc_attr__( 'RSS', 'agama' ),
+                    'skype'         => esc_attr__( 'Skype', 'agama' ),
+                    'soundcloud'    => esc_attr__( 'SoundCloud', 'agama' ),
+                    'spotify'       => esc_attr__( 'Spotify', 'agama' ),
+                    'stack-overflow'=> esc_attr__( 'StackOverflow', 'agama' ),
+                    'steam'         => esc_attr__( 'Steam', 'agama' ),
+                    'stumbleupon'   => esc_attr__( 'Stumbleupon', 'agama' ),
+                    'telegram'      => esc_attr__( 'Telegram', 'agama' ),
+                    'tumblr'        => esc_attr__( 'Tumblr', 'agama' ),
+                    'twitch'        => esc_attr__( 'Twitch', 'agama' ),
+                    'twitter'       => esc_attr__( 'Twitter', 'agama' ),
+                    'vimeo'         => esc_attr__( 'Vimeo', 'agama' ),
+                    'vk'            => esc_attr__( 'VK', 'agama' ),
+                    'yahoo'         => esc_attr__( 'Yahoo', 'agama' ),
+                    'youtube'       => esc_attr__( 'YouTube', 'agama' )
+                ]
+            ],
+            'url' => [
+                'type'          => 'text',
+                'label'         => esc_attr__( 'Page URL', 'agama' ),
+                'description'   => esc_attr__( 'Add social icon page url.', 'agama' )
+            ]
+        ]
+    ] );
 ###################################################################################
 # SHARE ICONS
 ###################################################################################

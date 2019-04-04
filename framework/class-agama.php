@@ -233,101 +233,96 @@ if( ! class_exists( 'Agama' ) ) {
 		}
 		
 		/**
-		 * Render Social Icons
+		 * Social Icons
+         *
+         * Display social icons.
 		 *
+         * @param string $tip_position (optional) The position of tooltip.
+         * @param string $style (optional) The social icons style name.
+         *
 		 * @since 1.1.1
-		 * @updated @since 1.1.2
+		 * @since 1.4.2 Updated the code.
+         * @access public
+         * @return mixed
 		 */
-		public static function sociali( $tip_position = false, $style = false ) {
-			
-			// Url target
-			$_target = esc_attr( get_theme_mod('agama_social_url_target', '_self') );
-			
-			// Social icons
-			$social  = array(
-				'Facebook'	=> esc_url( get_theme_mod('social_facebook', '') ),
-				'Twitter'	=> esc_url( get_theme_mod('social_twitter', '') ),
-				'Flickr'	=> esc_url( get_theme_mod('social_flickr', '') ),
-				'Vimeo'		=> esc_url( get_theme_mod('social_vimeo', '') ),
-				'Youtube'	=> esc_url( get_theme_mod('social_youtube', '') ),
-				'Instagram'	=> esc_url( get_theme_mod('social_instagram', '') ),
-				'Pinterest'	=> esc_url( get_theme_mod('social_pinterest', '') ),
-				'Tumblr'	=> esc_url( get_theme_mod('social_tumblr', '') ),
-				'Google'	=> esc_url( get_theme_mod('social_google', '') ),
-				'Dribbble'	=> esc_url( get_theme_mod('social_dribbble', '') ),
-				'Digg'		=> esc_url( get_theme_mod('social_digg', '') ),
-				'Linkedin'	=> esc_url( get_theme_mod('social_linkedin', '') ),
-				'Blogger'	=> esc_url( get_theme_mod('social_blogger', '') ),
-				'Skype'		=> esc_attr( get_theme_mod('social_skype', '') ),
-				'Myspace'	=> esc_url( get_theme_mod('social_myspace', '') ),
-				'Deviantart'=> esc_url( get_theme_mod('social_deviantart', '') ),
-				'Yahoo'		=> esc_url( get_theme_mod('social_yahoo', '') ),
-				'Reddit'	=> esc_url( get_theme_mod('social_reddit', '') ),
-				'PayPal'	=> esc_url( get_theme_mod('social_paypal', '') ),
-                'Phone'     => esc_attr( get_theme_mod('social_phone' ) ),
-				'Dropbox'	=> esc_url( get_theme_mod('social_dropbox', '') ),
-				'Soundcloud'=> esc_url( get_theme_mod('social_soundcloud', '') ),
-				'VK'		=> esc_url( get_theme_mod('social_vk', '') ),
-				'Email'		=> esc_attr( get_theme_mod('social_email', '') ),
-				'RSS'		=> esc_url( get_theme_mod('social_rss', get_bloginfo('rss2_url')) )
-			);
-			if( $style == 'animated' ):
-				echo '<ul>';
-				foreach( $social as $name => $url ) {
-					if( ! empty( $url ) ) {
+		public static function social_icons( $tip_position = null, $style = null ) {
+			$settings = get_theme_mod( 'agama_social_icons', [
+                [
+                    'target'    => '',
+                    'icon'      => 'rss',
+                    'url'       => esc_url_raw( get_bloginfo('rss2_url') )
+                ] 
+            ]);
+            if( $settings && is_array( $settings ) ) {
+                if( 'animated' == $style ) echo '<ul>';
+                foreach( $settings as $setting ) {
+                    if( 'animated' == $style ) echo '<li>';
                         
-                        if( $name == 'Phone' ) {
-                            $url = 'tel:' . $url;
+                        // Format VK and RSS icon names.
+                        if( 'rss' == $setting['icon'] || 'vk' == $setting['icon'] ) {
+                            $title = strtoupper( $setting['icon'] );
+                        } 
+                        else // Format StackOverflow icon name.
+                        if( 'stack-overflow' == $setting['icon'] ) {
+                            $title = str_replace( '-', '', $setting['icon'] );
+                            $title = ucfirst( $title );
+                        } else {
+                            $title = ucfirst( $setting['icon'] );
                         }
-                        if( $name == 'Skype' ) {
-                            $url = 'skype:' . $url . '?call';
+                    
+                        // Format url data.
+                        $data  = 'title="'. esc_html( $title ) .'"';
+                        if( 'animated' !== $style ) {
+                            $data .= ' data-toggle="tooltip"';
+                            if( $tip_position ) {
+                                $data .= ' data-placement="'. esc_attr( $tip_position ) .'"';
+                            }
                         }
-                        if( $name == 'Email' ) {
-                            $url = 'mailto:' . $url;
+                    
+                        // Format url target.
+                        if( $setting['target'] ) {
+                            $target = 'target="_blank"';
+                        } else {
+                            $target = 'target="_self"';
                         }
-                        
-                        $fa_class = 'fa-' . strtolower( $name );
-                        
-                        if( $name == 'Email' ) {
-                            $fa_class = 'fa-at';
+                    
+                        // Format url class name.
+                        'animated' == $style ? $class = 'tv-' . strtolower( $setting['icon'] ) : $class = 'social-icons ' . strtolower( $setting['icon'] );
+                    
+                        // Format fontawesome class name.
+                        $fontawesome = 'fa-' . strtolower( $setting['icon'] );
+                    
+                        // Format fontawesome email icon class.
+                        if( 'email' == $setting['icon'] ) {
+                            $fontawesome = 'fa-at';
                         }
                         
-						echo sprintf
-						(
-							'<li><a class="tv-%s" href="%s" target="%s"><span class="tv-icon"><i class="fa %s"></i></span><span class="tv-text">%s</span></a></li>', 
-							esc_attr( strtolower($name) ), $url, $_target, esc_attr( $fa_class ), esc_attr( $name )
-						);
-					}
-				}
-				echo '</ul>';
-			else:
-				foreach( $social as $name => $url ) {
-					if( ! empty( $url ) ) {
-                        
-                        if( $name == 'Phone' ) {
-                            $url = 'tel:' . $url;
+                        // Format email url.
+                        if( 'email' == $setting['icon'] ) {
+                            $setting['url'] = 'mailto:'. esc_attr( $setting['url'] );
                         }
-                        if( $name == 'Skype' ) {
-                            $url = 'skype:' . $url . '?call';
+                        else
+                        // Format phone url.
+                        if( 'phone' == $setting['icon'] ) {
+                            $setting['url'] = 'tel:'. esc_attr( $setting['url'] );
                         }
-                        if( $name == 'Email' ) {
-                            $url = 'mailto:' . $url;
+                        else
+                        // Format skype url.
+                        if( 'skype' == $setting['icon'] ) {
+                            $setting['url'] = 'skype:'. esc_attr( $setting['url'] ) .'?call';
+                        } else { // Escape all other urls.
+                            $setting['url'] = esc_url( $setting['url'] );
                         }
-                        
-                        $fa_class = 'fa-' . strtolower( $name );
-                        
-                        if( $name == 'Email' ) {
-                            $fa_class = 'fa-at';
-                        }
-                        
-						echo sprintf
-						(
-							'<a class="social-icons %s" href="%s" target="%s" data-toggle="tooltip" data-placement="%s" title="%s"></a>', 
-							esc_attr( strtolower($name) ), $url, $_target, esc_attr( $tip_position ), esc_attr( $name )
-						);
-					}
-				}
-			endif;
+                    
+                        echo '<a href="'. $setting['url'] .'" class="'. esc_attr( $class ) .'" ' . $target . $data .'>';
+                            if( 'animated' == $style ) echo '<span class="tv-icon"><i class="fa '. esc_attr( $fontawesome ) .'"></i></span>';
+                            if( 'animated' == $style ) echo '<span class="tv-text">'. esc_html( $title ) .'</span>';
+                        echo '</a>';
+                    
+                    if( 'animated' == $style ) echo '</li>';
+                }
+                if( 'animated' == $style ) echo '</ul>';
+            }
 		}
 		
 		/**

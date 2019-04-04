@@ -25,7 +25,7 @@ class Agama_Partial_Refresh {
      */
     function preview_top_nav_social_icons() {
         if( get_theme_mod( 'agama_top_nav_social', true ) ) {
-            Agama::sociali( false, 'animated' );
+            Agama::social_icons( false, 'animated' );
         }
     }
     
@@ -255,7 +255,7 @@ class Agama_Partial_Refresh {
      */
     function preview_footer_social_icons() {
         if( get_theme_mod( 'agama_footer_social', true ) ) {
-            Agama::sociali('top');
+            Agama::social_icons('top');
         }
     }
     
