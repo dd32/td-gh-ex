@@ -92,6 +92,7 @@
 
 		$(function(){
 			$('#camera_wrap').camera({
+				navigationHover : false,
 				height: '600px',
 				loader: 'bar',
 				pagination: true,

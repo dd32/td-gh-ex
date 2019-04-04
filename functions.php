@@ -138,7 +138,7 @@ if ( ! function_exists( 'ayapsychology_load_scripts' ) ) :
     	);
     	wp_localize_script('ayapsychology-utilities', 'ayapsychology_options', $data);
 
-    	wp_enqueue_script( 'jquery.mobile.customized', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
+    	
 		wp_enqueue_script( 'jquery.easing.1.3', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
 		wp_enqueue_script( 'camera', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
 	}
@@ -518,7 +518,7 @@ if ( ! function_exists( 'ayapsychology_customize_register' ) ) :
 			$wp_customize->add_setting(
 				$slideContentId,
 				array(
-					'sanitize_callback' => 'force_balance_tags',
+					'sanitize_callback' => 'ayapsychology_sanitize_html',
 				)
 			);
 			
@@ -536,7 +536,7 @@ if ( ! function_exists( 'ayapsychology_customize_register' ) ) :
 			$wp_customize->add_setting( $slideImageId,
 				array(
 					'default' => $defaultSliderImagePath,
-					'sanitize_callback' => 'esc_url_raw'
+					'sanitize_callback' => 'ayapsychology_sanitize_url'
 				)
 			);
 
@@ -623,3 +623,19 @@ if ( ! function_exists( 'ayapsychology_sanitize_checkbox' ) ) :
 	}
 
 endif; // ayapsychology_sanitize_checkbox
+
+if ( ! function_exists( 'ayapsychology_sanitize_html' ) ) :
+
+	function ayapsychology_sanitize_html( $html ) {
+		return wp_filter_post_kses( $html );
+	}
+
+endif; // ayapsychology_sanitize_html
+
+if ( ! function_exists( 'ayapsychology_sanitize_url' ) ) :
+
+	function ayapsychology_sanitize_url( $url ) {
+		return esc_url_raw( $url );
+	}
+
+endif; // ayapsychology_sanitize_url
