@@ -518,7 +518,7 @@ if ( ! function_exists( 'ayafreelance_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayafreelance_slide1_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '1.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayafreelance_sanitize_url'
 			)
 		);
 
@@ -535,7 +535,7 @@ if ( ! function_exists( 'ayafreelance_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayafreelance_slide2_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '2.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayafreelance_sanitize_url'
 			)
 		);
 
@@ -552,7 +552,7 @@ if ( ! function_exists( 'ayafreelance_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayafreelance_slide3_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '3.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayafreelance_sanitize_url'
 			)
 		);
 
@@ -642,3 +642,11 @@ if ( ! function_exists( 'ayafreelance_sanitize_checkbox' ) ) :
 		return ( ( isset( $checked ) && true == $checked ) ? true : false );
 	}
 endif; // ayafreelance_sanitize_checkbox
+
+if ( ! function_exists( 'ayafreelance_sanitize_url' ) ) :
+
+	function ayafreelance_sanitize_url( $url ) {
+		return esc_url_raw( $url );
+	}
+
+endif; // ayafreelance_sanitize_url
