@@ -350,7 +350,7 @@ if ( ! function_exists( 'ayacoffeeshop_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayacoffeeshop_slide1_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '1.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayacoffeeshop_sanitize_url'
 			)
 		);
 
@@ -367,7 +367,7 @@ if ( ! function_exists( 'ayacoffeeshop_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayacoffeeshop_slide2_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '2.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayacoffeeshop_sanitize_url'
 			)
 		);
 
@@ -384,7 +384,7 @@ if ( ! function_exists( 'ayacoffeeshop_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayacoffeeshop_slide3_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '3.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayacoffeeshop_sanitize_url'
 			)
 		);
 
@@ -470,6 +470,14 @@ if ( ! function_exists( 'ayacoffeeshop_sanitize_checkbox' ) ) :
 	}
 
 endif; // ayacoffeeshop_sanitize_checkbox
+
+if ( ! function_exists( 'ayacoffeeshop_sanitize_url' ) ) :
+
+	function ayacoffeeshop_sanitize_url( $url ) {
+		return esc_url_raw( $url );
+	}
+
+endif; // ayacoffeeshop_sanitize_url
 
 if ( ! function_exists( 'ayacoffeeshop_should_display_slider' ) ) :
 
