@@ -519,7 +519,7 @@ if ( ! function_exists( 'ayageek_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'ayageek_slide1_content',
 			array(
-			    'sanitize_callback' => 'wp_kses_post',
+			    'sanitize_callback' => 'ayageek_sanitize_html',
 			)
 		);
 
@@ -537,7 +537,7 @@ if ( ! function_exists( 'ayageek_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayageek_slide1_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '1.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayageek_sanitize_url'
 			)
 		);
 
@@ -554,7 +554,7 @@ if ( ! function_exists( 'ayageek_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'ayageek_slide2_content',
 			array(
-			    'sanitize_callback' => 'wp_kses_post',
+			    'sanitize_callback' => 'ayageek_sanitize_html',
 			)
 		);
 
@@ -572,7 +572,7 @@ if ( ! function_exists( 'ayageek_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayageek_slide2_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '2.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayageek_sanitize_url'
 			)
 		);
 
@@ -589,7 +589,7 @@ if ( ! function_exists( 'ayageek_customize_register' ) ) :
 		$wp_customize->add_setting(
 			'ayageek_slide3_content',
 			array(
-			    'sanitize_callback' => 'wp_kses_post',
+			    'sanitize_callback' => 'ayageek_sanitize_html',
 			)
 		);
 
@@ -607,7 +607,7 @@ if ( ! function_exists( 'ayageek_customize_register' ) ) :
 		$wp_customize->add_setting( 'ayageek_slide3_image',
 			array(
 				'default' => get_template_directory_uri().'/images/slider/' . '3.jpg',
-	    		'sanitize_callback' => 'esc_url_raw'
+	    		'sanitize_callback' => 'ayageek_sanitize_url'
 			)
 		);
 
@@ -693,3 +693,19 @@ if ( ! function_exists( 'ayageek_sanitize_checkbox' ) ) :
 	}
 
 endif; // ayageek_sanitize_checkbox
+
+if ( ! function_exists( 'ayageek_sanitize_html' ) ) :
+
+	function ayageek_sanitize_html( $html ) {
+		return wp_filter_post_kses( $html );
+	}
+
+endif; // ayageek_sanitize_html
+
+if ( ! function_exists( 'ayageek_sanitize_url' ) ) :
+
+	function ayageek_sanitize_url( $url ) {
+		return esc_url_raw( $url );
+	}
+
+endif; // ayageek_sanitize_url
