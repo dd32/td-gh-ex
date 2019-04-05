@@ -15,6 +15,7 @@ function apelleuno_add_theme_scripts_footer() {
   wp_enqueue_style( 'style', get_stylesheet_uri() );
   wp_enqueue_script( 'popper-min', get_template_directory_uri() . '/popper.min.js', array(), '1.0.0', true );
 	wp_enqueue_script( 'bootstrap-min', get_template_directory_uri() . '/bootstrap.min.js', array(), '1.0.0', true );
+	wp_enqueue_script( 'stickyfill-init', get_template_directory_uri() . '/stickyfill-init.js', array(), '2.1.0', true );
 }
 add_action( 'wp_footer', 'apelleuno_add_theme_scripts_footer' );
 function apelleuno_register_menu_home() {
@@ -232,8 +233,8 @@ function apelleuno_wpse_theme_setup() {
 
 function apelleuno_logo_setup() {
     $defaults = array(
-        'height'      => 100,
-        'width'       => 400,
+        'height'      => 40,
+        'width'       => 220,
         'flex-height' => true,
         'flex-width'  => true,
         'header-text' => array( 'site-title', 'site-description' ),

@@ -4,7 +4,7 @@ Theme URI: https://xxi.xxii.it/apellu
 Author: DevFabio
 Author URI: https://inventyourtrade.it/
 Description: Semplice ed essenziale, snello e pulito.
-Version: 1.1.11
+Version: 1.1.12
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: apelle-uno
@@ -16,7 +16,9 @@ Use it to make something cool, have fun, and share what you've learned with othe
 	max-width:100%;
 	}
 .wp-caption-text{}
-.sticky{}
+.sticky{
+	
+  }
 .screen-reader-text{}
 .gallery-caption{}
 .bypostauthor{}
@@ -89,6 +91,7 @@ h1{
     -moz-border-radius: 6px 0 6px 6px;
     border-radius: 6px 0 6px 6px;
 }
+
 body.admin-bar nav.fixed-top {
 	top:28px;}
 li.widget {
@@ -128,3 +131,4 @@ li.widget {
 		color: #6c757d!important;}
 .apelle-uno-header-image{
 	text-align:center;}
+

@@ -3,24 +3,7 @@
 	if ( ! isset( $content_width ) ) $content_width = 900;
 	?>
 	<main class="container" id="main-content" role="main" style="max-width:<?php echo $content_width?>" data-view="responsive/AnimationHandler" aria-hidden="false">
-    <div class="l-top-banner__logo">
-
-                            <div class="c-logo " itemscope="" itemtype="http://schema.org/Organization">
-                                <a href="<?php echo esc_url(get_site_url()); ?>" id="logo" itemprop="url">
-                                    <meta itemprop="name" content="Demo">
-                                    <?php 
-			$custom_logo_id = get_theme_mod( 'custom_logo' );
-			$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-			if ( has_custom_logo() ) {
-					echo '<img src="'. esc_url( $logo[0] ) .'" alt="Demo logo" class="c-logo__img" itemprop="logo">';
-			} else {
-					echo '<h1>'. get_bloginfo( 'name' ) .'</h1>';
-			}
-			?>
-                                </a>
-                            </div>
-
-						</div>
+    
     <div class="row">
         <div class="col-sm-12 <?php if ( is_active_sidebar( 'apelleuno-sidebar-laterale' ) ){ echo "col-md-8"; }?> ">
         <?php	
