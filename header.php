@@ -14,7 +14,7 @@
 
 <div class="page-wrapper page-wrapper page-wrapper">
     <header id="main-header" class="l-header  l-header--concierge" role="banner" aria-hidden="false">
-        <div class="container-fluid">
+        <div class="container-fluid bg-apelleuno">
           <div class="row">
             <div class="col-12 apelle-uno-header-image">
                 <img class="rounded-bottom" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
@@ -27,7 +27,7 @@
                 <?php if ( has_nav_menu( 'header-home-menu' ) ) {
 					?>
                 <!-------- MENU TOP HOME --------------->
-         <nav class="navbar navbar-expand-md navbar-dark bg-dark " id="stickyMenu"   >
+         <nav class="navbar navbar-expand-md navbar-apelleuno bg-apelleuno " id="stickyMenu"   >
      
 
                             <div class="c-logo " itemscope="" itemtype="http://schema.org/Organization">

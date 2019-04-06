@@ -61,14 +61,14 @@ if ( post_password_required() ) {
 		the_comments_navigation();
 
 		// If comments are closed and there are comments, let's leave a little note, shall we?
-		if ( ! comments_open() ) :
+		
+
+	endif; // Check for have_comments().
+if ( ! comments_open() ) :
 			?>
 			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'apelle-uno' ); ?></p>
 			<?php
 		endif;
-
-	endif; // Check for have_comments().
-
 	comment_form();
 	?>
 

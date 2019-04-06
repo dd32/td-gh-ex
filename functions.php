@@ -304,4 +304,17 @@ $args = array(
 register_sidebar( $args );
 }
 
+
+require get_template_directory() . '/inc/custom-header.php';
+/**
+ * Registers an editor stylesheet for apelle theme.
+ */
+function apelleuno_add_editor_styles() {
+    add_editor_style( 'custom-editor-style.css' );
+}
+add_action( 'admin_init', 'apelleuno_add_editor_styles' );
+$args = array(
+	'default-color' => 'fff',
+);
+add_theme_support( "custom-background", $args ) 
 ?>
