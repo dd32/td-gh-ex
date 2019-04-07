@@ -114,6 +114,10 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.34 (2019-04-07)
+-------------------------
+- Added the new wp_body_open() function, along with a function_exists check
+
 Version 1.33 (2019-01-18)
 -------------------------
 - Fixed the global $current_user variable being overwritten in the contributor template
