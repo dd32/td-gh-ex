@@ -58,6 +58,10 @@ Source: http://flexslider.woothemes.com
 
 == Changelog ==
 
+Version 1.23 (2019-04-07)
+-------------------------
+- Fixed a misplaced conditional that prevented wp_link_pages() from showing up on pages
+
 Version 1.22 (2019-02-02)
 -------------------------
 - Updated Genericons enqueue to work better with child themes

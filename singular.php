@@ -86,37 +86,45 @@
 					
 					<div class="clear"></div>
 
-					<?php if ( is_single() ) : ?>
+					<?php 
+
+					$args = array(
+						'before'           => '<div class="clear"></div><p class="page-links"><span class="title">' . __( 'Pages:','fukasawa' ) . '</span>',
+						'after'            => '</p>',
+						'link_before'      => '<span>',
+						'link_after'       => '</span>',
+						'separator'        => '',
+						'pagelink'         => '%',
+						'echo'             => false
+					);
+				
+					$link_pages = wp_link_pages( $args ); 
+					
+					if ( is_single() || $link_pages ) : ?>
 					
 						<div class="post-meta-bottom">
-						
+
 							<?php 
-							$args = array(
-								'before'           => '<div class="clear"></div><p class="page-links"><span class="title">' . __( 'Pages:','fukasawa' ) . '</span>',
-								'after'            => '</p>',
-								'link_before'      => '<span>',
-								'link_after'       => '</span>',
-								'separator'        => '',
-								'pagelink'         => '%',
-								'echo'             => 1
-							);
+							
+							echo $link_pages;
+							
+							if ( is_single() ) : ?>
 						
-							wp_link_pages( $args ); 
-							?>
-						
-							<ul>
-								<li class="post-date"><a href="<?php the_permalink(); ?>"><?php the_date( get_option( 'date_format' ) ); ?></a></li>
+								<ul>
+									<li class="post-date"><a href="<?php the_permalink(); ?>"><?php the_date( get_option( 'date_format' ) ); ?></a></li>
 
-								<?php if ( has_category() ) : ?>
-									<li class="post-categories"><?php _e( 'In', 'fukasawa' ); ?> <?php the_category( ', ' ); ?></li>
-								<?php endif; ?>
+									<?php if ( has_category() ) : ?>
+										<li class="post-categories"><?php _e( 'In', 'fukasawa' ); ?> <?php the_category( ', ' ); ?></li>
+									<?php endif; ?>
 
-								<?php if ( has_tag() ) : ?>
-									<li class="post-tags"><?php the_tags('', ' '); ?></li>
-								<?php endif; ?>
+									<?php if ( has_tag() ) : ?>
+										<li class="post-tags"><?php the_tags('', ' '); ?></li>
+									<?php endif; ?>
 
-								<?php edit_post_link( __( 'Edit post', 'fukasawa' ), '<li>', '</li>' ); ?>
-							</ul>
+									<?php edit_post_link( __( 'Edit post', 'fukasawa' ), '<li>', '</li>' ); ?>
+								</ul>
+
+							<?php endif; ?>
 							
 							<div class="clear"></div>
 							
