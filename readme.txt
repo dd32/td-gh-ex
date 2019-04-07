@@ -63,6 +63,10 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.25 (2019-04-07)
+-------------------------
+- Added the new wp_body_open() function, along with a function_exists check
+
 Version 1.24 (2018-12-28)
 -------------------------
 - Merged archive.php and search.php into index.php
