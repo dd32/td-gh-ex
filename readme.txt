@@ -41,6 +41,10 @@ Source: http://www.unsplash.com
 
 == Changelog ==
 
+Version 1.75 (2019-04-07)
+-------------------------
+- Added the new wp_body_open() function, along with a function_exists check
+
 Version 1.74 (2019-01-08)
 -------------------------
 - Changed the entry title in singular.php to only be a link when displaying posts
