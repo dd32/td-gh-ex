@@ -49,14 +49,26 @@ Source: http://flexslider.woothemes.com
 
 == Use the video post format
 
-1. Go to Admin > Posts > Add New.
-2. Select the "Video" post format in the Post Attributes box.
-3. A meta box with the title "Video URL" should appear in the top of the right sidebar.
-4. Paste the URL to the video you wish to display in the box, and publish/update the post.
-5. The video you linked to should now be displayed in the media section above the post.
+1. Create a new post.
+2. Select "Video" in the Format window to the right.
+3. In the post content, enter the full url to the video you want to include.
+4. Directly after the url, add the <!--more--> tag (or "More" block in the Block Editor) followed by the rest of the content. Example:
+
+https://www.youtube.com/watch?v=iszwuX1AK6A
+<!--more-->
+The rest of the content...
+
+5. Publish.
+6. The video will now be displayed in the featured image position, above the title of your post.
 
 
 == Changelog ==
+
+Version 1.24 (2019-04-07)
+-------------------------
+- Updated the readme to describe the new method of adding featured videos (new = four years ago)
+- Fixed a potential notice for the video format
+- Added the new wp_body_open() function, along with a function_exists check
 
 Version 1.23 (2019-04-07)
 -------------------------

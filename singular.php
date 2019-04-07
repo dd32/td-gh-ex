@@ -73,8 +73,8 @@
 					<div class="post-content">
 					
 						<?php 
-						if ( $post_format == 'video' ) { 
-							$content = $content_parts['extended'];
+						if ( $post_format == 'video' && isset( $content_parts ) ) { 
+							$content = $content_parts['extended'] ?: '';
 							$content = apply_filters( 'the_content', $content );
 							echo $content;
 						} else {
