@@ -32,7 +32,12 @@ Yes, go here: https://wordpress.org/support/theme/pinnacle
 
 == Changelog ==
 
-= 1.7.2 | 6th Feb 2018 = 
+= 1.7.3 | 8th April 2019 = 
+* Update: Gutenberg css.
+* Update: Notice in WooCommerce.
+* Update: Woo 3.6 support.
+
+= 1.7.2 | 6th Feb 2019 = 
 * Update: Woocommerce 3.5.5 support.
 
 = 1.7.1 | 18th December 2018 = 

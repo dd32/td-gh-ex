@@ -71,7 +71,7 @@
                 $slideheight = 400;
             
         } ?>
-          <article id="post-<?php the_ID(); ?>" <?php post_class('kad_blog_item postclass kad-animation'); ?> data-animation="fade-in" data-delay="0" itemscope="" itemtype="http://schema.org/BlogPosting">
+          <article id="post-<?php the_ID(); ?>" <?php post_class('kad_blog_item postclass kad-animation'); ?> data-animation="fade-in" data-delay="0">
               <div class="row">
                 <?php if($postsummery == 'img_landscape') { 
                             $textsize = 'col-md-12'; 
@@ -86,12 +86,9 @@
                               	}
                               if(empty($image[0])) { $image = array($thumbnailURL,$image_url[1],$image_url[2]);} ?>
                                 <div class="col-md-12">
-                                    <div class="imghoverclass img-margin-center" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                                    <div class="imghoverclass img-margin-center" >
                                       <a href="<?php the_permalink(); ?>" title="<?php the_title_attribute(); ?>">
-                                        <img src="<?php echo esc_url($image[0]);?>" alt="<?php the_title_attribute(); ?>" itemprop="contentUrl" class="iconhover" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" <?php echo kt_get_srcset_output($image[1], $image[2], $thumbnailURL, $image_id);?>>
-					                    <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
-					                    <meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
-					                    <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
+                                        <img src="<?php echo esc_url($image[0]);?>" alt="<?php the_title_attribute(); ?>" class="iconhover" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" <?php echo kt_get_srcset_output($image[1], $image[2], $thumbnailURL, $image_id);?>>
                                       </a> 
                                     </div>
                                 </div>
@@ -105,12 +102,9 @@
                               	$image = aq_resize($thumbnailURL, 360, 360, true, false, false, $image_id);
                               if(empty($image[0])) { $image = array($thumbnailURL,$image_url[1],$image_url[2]);} ?>
                                 <div class="<?php echo esc_attr($portraitimg);?>">
-                                    <div class="imghoverclass img-margin-center" itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
+                                    <div class="imghoverclass img-margin-center" >
                                         <a href="<?php the_permalink()  ?>" title="<?php the_title_attribute(); ?>">
-                                            <img src="<?php echo esc_url($image[0]);?>" alt="<?php the_title_attribute(); ?>" itemprop="contentUrl" class="iconhover" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" <?php echo kt_get_srcset_output($image[1], $image[2], $thumbnailURL, $image_id);?>>
-                                            <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
-					                    	<meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
-					                    	<meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
+                                            <img src="<?php echo esc_url($image[0]);?>" alt="<?php the_title_attribute(); ?>" class="iconhover" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" <?php echo kt_get_srcset_output($image[1], $image[2], $thumbnailURL, $image_id);?>>
                                         </a> 
                                      </div>
                                  </div>
@@ -135,11 +129,8 @@
                                                     if(empty($image[0])) { $image = array($thumbnailURL,$image_url[1],$image_url[2]);} ?>
                                                     <li>
                                                       	<a href="<?php the_permalink() ?>">
-	                                                      	<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-	                                                        	<img src="<?php echo esc_url($image[0]);?>" alt="<?php esc_attr($attachment_post->post_excerpt);?>" itemprop="contentUrl" class="iconhover" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" <?php echo kt_get_srcset_output($image[1], $image[2], $attachment_url, $attachment);?>>
-	                                                        	<meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
-					                    						<meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
-					                    						<meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
+	                                                      	<div>
+	                                                        	<img src="<?php echo esc_url($image[0]);?>" alt="<?php esc_attr($attachment_post->post_excerpt);?>" class="iconhover" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" <?php echo kt_get_srcset_output($image[1], $image[2], $attachment_url, $attachment);?>>
 									                        </div>
                                                       	</a>
                                                     </li>
@@ -167,11 +158,8 @@
                                                     if(empty($image[0])) { $image = array($thumbnailURL,$image_url[1],$image_url[2]);} ?>
                                                     <li>
                                                       <a href="<?php the_permalink() ?>" alt="<?php the_title_attribute(); ?>">
-                                                      	<div itemprop="image" itemscope itemtype="http://schema.org/ImageObject">
-                                                        	<img src="<?php echo esc_url($image[0]);?>" alt="<?php esc_attr($attachment_post->post_excerpt);?>" itemprop="contentUrl" class="iconhover" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" <?php echo kt_get_srcset_output($image[1], $image[2], $attachment_url, $attachment);?>>
-	                                                        	<meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
-					                    						<meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
-					                    						<meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
+                                                      	<div>
+                                                        	<img src="<?php echo esc_url($image[0]);?>" alt="<?php esc_attr($attachment_post->post_excerpt);?>" class="iconhover" width="<?php echo esc_attr($image[1]);?>" height="<?php echo esc_attr($image[2]);?>" <?php echo kt_get_srcset_output($image[1], $image[2], $attachment_url, $attachment);?>>
 									                    </div>
                                                       </a>
                                                     </li>
@@ -188,14 +176,6 @@
                                 <div class="videofit">
                                     <?php echo get_post_meta( $post->ID, '_kad_post_video', true );?>
                                 </div>
-                                <?php if (has_post_thumbnail( $post->ID ) ) { 
-				            $image = wp_get_attachment_image_src( get_post_thumbnail_id( $post->ID ), 'full' ); ?>
-				            <div itemprop="image" itemscope itemtype="https://schema.org/ImageObject">
-				                <meta itemprop="url" content="<?php echo esc_url($image[0]); ?>">
-				                <meta itemprop="width" content="<?php echo esc_attr($image[1])?>">
-				                <meta itemprop="height" content="<?php echo esc_attr($image[2])?>">
-				            </div>
-				        <?php } ?>
                             </div>
                     <?php } else { 
                             $textsize = 'col-md-12'; 
@@ -203,10 +183,10 @@
                       <div class="<?php echo esc_attr($textsize);?> postcontent">
                           <?php if(isset($pinnacle['hide_author_img']) && $pinnacle['hide_author_img'] == '1') { get_template_part('templates/entry', 'meta-author'); } ?>
                             <header>
-                                <a href="<?php the_permalink() ?>"><h3 class="entry-title" itemprop="name headline"><?php the_title(); ?></h3></a>
+                                <a href="<?php the_permalink() ?>"><h3 class="entry-title"><?php the_title(); ?></h3></a>
                                   <?php get_template_part('templates/entry', 'meta-subhead'); ?>
                             </header>
-                            <div class="entry-content" itemprop="description">
+                            <div class="entry-content">
                                 <?php the_excerpt(); ?>
                             </div>
                       </div><!-- Text size -->
