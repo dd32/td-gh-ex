@@ -6,7 +6,7 @@ Template Name: Full-Width
 	get_header();
 	if ( ! isset( $content_width ) ) $content_width = 900;
 	?>
-	<main class="container" id="main-content" role="main" style="max-width:<?php echo $content_width?>" data-view="responsive/AnimationHandler" aria-hidden="false">
+	<main class="container-fluid" id="main-content" role="main" style="max-width:<?php echo $content_width?>" data-view="responsive/AnimationHandler" aria-hidden="false">
     
     <div class="row">
         <div class="col-sm-12 ">

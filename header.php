@@ -14,10 +14,10 @@
 
 <div class="page-wrapper page-wrapper page-wrapper">
     <header id="main-header" class="l-header  l-header--concierge" role="banner" aria-hidden="false">
-        <div class="container-fluid bg-apelleuno">
-          <div class="row">
-            <div class="col-12 apelle-uno-header-image">
-                <img class="rounded-bottom" src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="<?php echo get_custom_header()->width; ?>" alt="" />
+        <div style="padding-left:0px; padding-right:0px" class="container-fluid bg-apelleuno">
+          <div class="row" style="margin:0px">
+            <div class="col-12 apelle-uno-header-image" style="padding: 0;">
+                <img  src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="100%" alt="" />
             </div>
           </div>
         </div>

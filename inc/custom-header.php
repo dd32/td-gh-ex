@@ -34,7 +34,7 @@ function apelleuno_customize_register( $wp_customize ) {
         array(
             'default'     => '255,255,255',
 			'transport' => 'refresh',
-            'sanitize_callback' => 'awstheme_sanitize_rgba',
+            'sanitize_callback' => 'apelleuno_sanitize_rgba',
         )
     );
     $wp_customize->add_control(
@@ -48,7 +48,7 @@ function apelleuno_customize_register( $wp_customize ) {
             ) )
     );
 }
-function awstheme_sanitize_rgba( $color ) {
+function apelleuno_sanitize_rgba( $color ) {
     if ( empty( $color ) || is_array( $color ) )
         return 'rgba(0,0,0,0)';
 

@@ -28,7 +28,7 @@
 <?php } ?>
         </div>
       <?php if ( is_active_sidebar( 'apelleuno-sidebar-laterale' ) ) : ?>
-       <div class=" col-sm-12 col-md-4 d-none d-md-block bg-light sidebar">
+       <div class=" col-sm-12 col-md-4 d-md-block bg-light sidebar">
             <ul id="apelleuno-sidebar-laterale">
                 <?php dynamic_sidebar( 'apelleuno-sidebar-laterale' ); ?>
             </ul>
