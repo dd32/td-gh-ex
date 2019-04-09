@@ -53,7 +53,7 @@ function apelleuno_add_menu_parent_class( $items ) {
 
     foreach ( $items as $item ) {
         if ( $item->menu_item_parent && $item->menu_item_parent > 0 ) {
-            $item->classes[] = 'dropdown-item';
+            $item->classes[] = 'apelleuno-item';
         }
     }
 
@@ -70,7 +70,7 @@ function apelleuno_add_class_to_items_link( $atts, $item, $args ) {
     // add the desired attributes:
     $atts['class'] = 'nav-link dropdown-toggle';
     $atts['data-toggle'] = 'dropdown';
-    $atts['data-target'] = '#';
+    //$atts['data-target'] = '#';
   }
   return $atts;
 }
@@ -78,7 +78,10 @@ class apelleuno_Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
 	
 	function start_lvl(&$output, $depth=0, $args = array()) {
     $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent<ul class=\"dropdown-menu multi-level \" >\n";
+	
+	
+	
+    $output .= "\n$indent<ul class=\"apelleuno-menu multi-level \" >\n";
   }
    
     public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
@@ -98,10 +101,10 @@ class apelleuno_Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
 		
 		if(isset($args->walker) and $args->walker->has_children and isset($item->menu_item_parent) and $item->menu_item_parent != 0 )
         {		
-        	$output .= $indent . '<li class="nav-item dropdown-submenu">';
+        	$output .= $indent . '<li class="nav-item apelleuno-submenu" >';
 		}else
 		{
-				$output .= $indent . '<li class="nav-item">';
+				$output .= $indent . '<li class="nav-item" >';
 			}
 
         $atts = array();
@@ -119,6 +122,13 @@ class apelleuno_Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
                 $attributes .= ' ' . $attr . '="' . $value . '"';
             }
         }
+		$attributesLnk = '';
+        foreach ( $atts as $attr => $value ) {
+            if ( ! empty( $value ) && 'href' === $attr ) {
+                $value = esc_url( $value );
+                $attributesLnk .= ' ' . $attr . '="' . $value . '"';
+            }
+        }
 
       
         $title = apply_filters( 'the_title', $item->title, $item->ID );
@@ -128,25 +138,34 @@ class apelleuno_Apelle_Walker_Nav_Menu_primary extends Walker_Nav_Menu {
 	    $item_output = '';
 		if(isset($args->before))
         	$item_output = $args->before;
-        $item_output .= '<a'. $attributes .'>';
+        $item_output .= '<a '.$attributesLnk.' class="nav-link">';
 		if(isset($args->link_before))
         	$item_output .= $args->link_before ;
 		$item_output .= $title ;
 		if(isset($args->link_after)) $args->link_after;
         	$item_output .= '</a>';
+		if($args->walker->has_children )
+		{
+			$apelleuno_primo_menu	=	'';
+			if($item->menu_item_parent == 0)
+				$apelleuno_primo_menu	='style="position:relative"';
+			$item_output .='</li><li class="nav-item " '.$apelleuno_primo_menu.' > ';
+			$item_output .='<a'.$attributes.' class="btn" ></a>';
+		}
 		if(isset($args->after))
        	 $item_output .= $args->after;
 
        
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }
+	
 }
 
 class apelleuno_Apelle_Walker_Nav_Menu extends Walker_Nav_Menu {
 	
 	function start_lvl(&$output, $depth=0,$args = array() ) {
     $indent = str_repeat("\t", $depth);
-    $output .= "\n$indent<ul class=\"dropdown-menu bg-dark \" >\n";
+    $output .= "\n$indent<ul class=\"apelleuno-menu bg-apelleuno apelleuno-submenu\" >\n";
   }
    
     public function start_el( &$output, $item, $depth = 0, $args = array(), $id = 0 ) {
@@ -167,10 +186,10 @@ class apelleuno_Apelle_Walker_Nav_Menu extends Walker_Nav_Menu {
        // $output .= $indent . '<li class="nav-item">';
 		if($args->walker->has_children and $item->menu_item_parent != 0 )
         {		
-        	$output .= $indent . '<li class="nav-item dropdown-submenu">';
+        	$output .= $indent . '<li class="nav-item dropdown-submenu" style="position:relative">';
 		}else
 		{
-				$output .= $indent . '<li class="nav-item">';
+				$output .= $indent . '<li class="nav-item" style="position:relative">';
 			}
 
         $atts = array();
@@ -188,17 +207,31 @@ class apelleuno_Apelle_Walker_Nav_Menu extends Walker_Nav_Menu {
                 $attributes .= ' ' . $attr . '="' . $value . '"';
             }
         }
-
+		$attributesLnk = '';
+        foreach ( $atts as $attr => $value ) {
+            if ( ! empty( $value ) && 'href' === $attr ) {
+                $value = esc_url( $value );
+                $attributesLnk .= ' ' . $attr . '="' . $value . '"';
+            }
+        }
       
         $title = apply_filters( 'the_title', $item->title, $item->ID );
 
       
         $title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
-        $item_output = $args->before;
-        $item_output .= '<a'. $attributes .'>';
+        
+	        $item_output .= '<a'. $attributesLnk .' class="nav-link">';
         $item_output .= $args->link_before . $title . $args->link_after;
         $item_output .= '</a>';
+		if($args->walker->has_children )
+		{
+			$apelleuno_primo_menu	=	'';
+			if($item->menu_item_parent == 0)
+				$apelleuno_primo_menu	='style="position:relative"';
+			$item_output .='</li><li class="nav-item " '.$apelleuno_primo_menu.' > ';
+			$item_output .='<a'.$attributes.' class="btn" ></a>';
+		}
         $item_output .= $args->after;
 
        

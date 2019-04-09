@@ -57,10 +57,11 @@
                         'theme_location' => 'header-home-menu',
                         'container' => 'div',
                         'container_id' => 'topHomeMenu',
-                        'container_class' => 'collapse navbar-collapse',
-                        'menu_class'=>'nav navbar-nav',
+                        'container_class' => 'collapse navbar-collapse ',
+                        'menu_class'=>'nav navbar-nav multi-level',
                         'link_before' => '',
                         'link_after' => '',
+						'items_wrap'=>'<ul id="%1$s" class="%2$s multi-level ">%3$s</ul>',
 						'depth'=>'11',
 						'walker'=> new apelleuno_Apelle_Walker_Nav_Menu()
                       )
@@ -93,7 +94,8 @@
                                 'container_id' => 'topPrimaryMenu',
                                 'container_class' => 'collapse navbar-collapse',
 								'menu_class'=>'navbar-nav',
-                                'link_before' => '',
+                                'link_before' => '',								
+								'items_wrap'=>'<ul id="%1$s" class="%2$s multi-level ">%3$s</ul>',
                                 'link_after' => '',
 								'depth'=>'11',
 								'walker'=> new apelleuno_Apelle_Walker_Nav_Menu_primary()
@@ -111,5 +113,22 @@
             </div>
         </div>
         
-	</header>
+	</header><script type="text/javascript">
+jQuery('.multi-level a.dropdown-toggle').on('click', function(e) {
+	console.log('click');
+  if (!jQuery(this).next().hasClass('show')) {
+	jQuery(this).parents('.apelleuno-menu').first().find('.show').removeClass("show");
+  }
+  var $subMenu = jQuery(this).next(".apelleuno-menu");
+  $subMenu.toggleClass('show');
+
+
+  jQuery(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
+	jQuery('.apelleuno-submenu .show').removeClass("show");
+  });
+
+
+  return false;
+});
+    </script>
     
