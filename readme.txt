@@ -56,6 +56,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.8
+1. Upadte customizer and added upgrade to pro links.
 @version 1.7.9.1
 1. Added read more settings in service section.
 @version 1.7.9

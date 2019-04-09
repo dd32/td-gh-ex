@@ -37,20 +37,21 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
             }
        }
  }
-// list contro categories
+// list contro categories		
 
 	//slider Section 
-	$wp_customize->add_panel( 'elitepress_slider_setting', array(
+	$wp_customize->add_panel( 'elitepress_homepage_setting', array(
 		'priority'       => 400,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Slider settings', 'elitepress'),
+		'title'      => __('Homepage section settings', 'elitepress'),
 	) );
 	
 	$wp_customize->add_section(
         'slider_section_settings',
         array(
             'title' => __('Slider settings','elitepress'),
-            'panel'  => 'elitepress_slider_setting',)
+			'priority'   => 400,
+            'panel'  => 'elitepress_homepage_setting',)
     );
 	
 	//Hide slider
@@ -132,8 +133,10 @@ if ( ! class_exists( 'WP_Customize_Control' ) ) return NULL;
         'section' => 'slider_section_settings',
 		 'choices' => array('500'=>'0.5','1000'=>'1.0','1500'=>'1.5','2000'=>'2.0','2500'=>'2.5','3000'=>'3.0','3500'=>'3.5','4000'=>'4.0','4500'=>'4.5','5000'=>'5.0','5500'=>'5.5'),
 		
-		));	
-		}
+		));
+
+		
+}
 	add_action( 'customize_register', 'elitepress_slider_customizer' );
 	
 	function elitepress_slider_sanitize_layout( $value ) {

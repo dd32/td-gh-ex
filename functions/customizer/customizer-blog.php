@@ -1,14 +1,14 @@
 <?php // Adding customizer home page settings
 function elitepress_blog_customizer( $wp_customize ){
 	
-
+	// blog section settings
 	$wp_customize->add_section(
         'blog_setting',
         array(
-            'title' => __('Latest News Settings','elitepress'),
-			'priority'       => 800,)
-    );	
-	
+            'title' => __('Latest News settings','elitepress'),
+			'priority'   => 405,
+            'panel'  => 'elitepress_homepage_setting',)
+    );
 	
 	//Hide Index Blog Section
 	

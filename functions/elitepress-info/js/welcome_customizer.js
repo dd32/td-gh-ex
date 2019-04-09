@@ -11,9 +11,6 @@ jQuery(document).ready(function() {
     if ( !jQuery( ".elitepress-upsells" ).length ) {
         jQuery('#customize-theme-controls > ul').prepend('<li class="accordion-section elitepress-upsells">');
     }
-    if (typeof elitepress_aboutpage !== 'undefined') {
-        jQuery('.elitepress-upsells').append('<a style="width: 80%; margin: 5px auto 5px auto; display: block; text-align: center;" href="' + elitepress_aboutpage + '" class="button" target="_blank">{themeinfo}</a>'.replace('{themeinfo}', elitepressLiteWelcomeScreenCustomizerObject.themeinfo));
-    }
     if ( !jQuery( ".elitepress-upsells" ).length ) {
         jQuery('#customize-theme-controls > ul').prepend('</li>');
     }

@@ -1,11 +1,13 @@
 <?php function elitepress_service_customizer( $wp_customize ) {
  
-	//Service section panel
-	$wp_customize->add_section( 'service_section_head' , array(
-		'title'      => __('Service settings', 'elitepress'),
-		'priority'       => 500,
-   	) );
-	
+    //Service Section
+	$wp_customize->add_section(
+        'service_section_settings',
+        array(
+            'title' => __('Service settings','elitepress'),
+			'priority'   => 403,
+            'panel'  => 'elitepress_homepage_setting',)
+    );
 	
 	//Hide Index Service Section
 	
@@ -22,7 +24,7 @@
     'elitepress_lite_options[service_section_enabled]',
     array(
         'label' => __('Enable Service section on front page','elitepress'),
-        'section' => 'service_section_head',
+        'section' => 'service_section_settings',
         'type' => 'checkbox',
     )
 	);
@@ -40,7 +42,7 @@
     'elitepress_lite_options[service_title]',
     array(
         'label' => __('Title','elitepress'),
-        'section' => 'service_section_head',
+        'section' => 'service_section_settings',
         'type' => 'text',
     )
 	);
@@ -57,7 +59,7 @@
     'elitepress_lite_options[service_description]',
     array(
         'label' => __('Description','elitepress'),
-        'section' => 'service_section_head',
+        'section' => 'service_section_settings',
         'type' => 'text',
 		'sanitize_callback' => 'sanitize_text_field',
     )
@@ -70,7 +72,7 @@
 
 			$wp_customize->add_control( new Elitepress_Repeater( $wp_customize, 'elitepress_service_content', array(
 				'label'                             => esc_html__( 'Service Content', 'elitepress' ),
-				'section'                           => 'service_section_head',
+				'section'                           => 'service_section_settings',
 				'priority'                          => 10,
 				'add_field_label'                   => esc_html__( 'Add new Service', 'elitepress' ),
 				'item_name'                         => esc_html__( 'Service', 'elitepress' ),

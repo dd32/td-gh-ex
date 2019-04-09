@@ -1,18 +1,12 @@
-<?php function elitepress_home_callout_customizer( $wp_customize ){
-$wp_customize->add_panel( 'home_callout_setting', array(
-		'priority'       => 400,
-		'capability'     => 'edit_theme_options',
-		'title'      => __('Home header callout setting', 'elitepress'),
-	) );
-	
+<?php function elitepress_home_callout_customizer( $wp_customize ){	
 	
 //Home top callout
 $wp_customize->add_section(
         'header_home_callout',
         array(
-            'title' => __('Home header callout setting','elitepress'),
-           'priority'    => 4,
-			'panel' => 'home_callout_setting',
+            'title' => __('Callout setting','elitepress'),
+           'priority'    => 402,
+			'panel' => 'elitepress_homepage_setting',
         )
     );
 	

@@ -74,6 +74,41 @@ $wp_customize->add_section( 'header_image' , array(
 			'bittersweet.css' => 'default.png',
     )
 	)));
-	}
+	
+	
+	// adding upgrade to por message for slider
+	class WP_theme_style_pro_Customize_Control extends WP_Customize_Control {
+    public $type = 'new_menu';
+    /**
+    * Render the control's content.
+    */
+		public function render_content() {
+		?>
+			 <div class="pro-version">
+			 <p><?php _e('To change more theme color and custom color click to upgrade to pro','elitepress');?></p>
+			 </div>
+			  <div class="pro-box">
+			 <a href="<?php echo esc_url('http://webriti.com/elitepress/');?>" class="service" id="review_pro" target="_blank"><?php _e( 'Upgrade to Pro','elitepress' ); ?></a>
+			 <div>
+			<?php
+		}
+    }
+
+	$wp_customize->add_setting(
+		'theme_style_upgrade',
+		array(
+			'capability'     => 'edit_theme_options',
+			'sanitize_callback' => 'sanitize_text_field',
+		)	
+	);
+	$wp_customize->add_control( new WP_theme_style_pro_Customize_Control( $wp_customize, 'theme_style_upgrade', array(	
+			'section' => 'header_image',
+			'setting' => 'theme_style_upgrade',
+			'priority' => 1,
+	
+	)));
+	
+	
+}
 	add_action( 'customize_register', 'elitepress_theme_style_customizer' );
 ?>

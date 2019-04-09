@@ -22,6 +22,11 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-service.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-home.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-project.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-testimonial.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-layout-manager.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_template_settings.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-client.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-contact.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-blog.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-copyright.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
@@ -138,6 +143,11 @@ function get_home_blog_excerpt()
 		else
 		{ return $excerpt; }
 	}
+	
+function elitepress_enqueue_scripts(){
+	wp_enqueue_style('drag-drop-css', WEBRITI_TEMPLATE_DIR_URI . '/css/drag-drop.css');
+}
+add_action( 'admin_enqueue_scripts', 'elitepress_enqueue_scripts' );
 	
 
 ?>

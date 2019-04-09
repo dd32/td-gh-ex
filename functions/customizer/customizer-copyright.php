@@ -1,9 +1,9 @@
 <?php // Footer copyright section 
 	function elitepress_copyright_customizer( $wp_customize ) {
 	$wp_customize->add_panel( 'elitepress_copyright_setting', array(
-		'priority'       => 900,
+		'priority'       => 800,
 		'capability'     => 'edit_theme_options',
-		'title'      => __('Footer copyright settings', 'elitepress'),
+		'title'      => __('Footer settings', 'elitepress'),
 	) );
 	
 	$wp_customize->add_section(
@@ -50,6 +50,38 @@ $wp_customize->add_control(
         'section' => 'copyright_section_one',
         'type' => 'checkbox',
     ));
+	
+// adding upgrade to por message for slider
+	class WP_Footer_pro_Customize_Control extends WP_Customize_Control {
+    public $type = 'new_menu';
+    /**
+    * Render the control's content.
+    */
+		public function render_content() {
+		?>
+			 <div class="pro-version">
+			 <p><?php _e('To want use more footer options click to upgrade to pro','elitepress');?></p>
+			 </div>
+			  <div class="pro-box">
+			 <a href="<?php echo esc_url('http://webriti.com/elitepress/');?>" class="service" id="review_pro" target="_blank"><?php _e( 'Upgrade to Pro','elitepress' ); ?></a>
+			 <div>
+			<?php
+		}
+    }
+
+	$wp_customize->add_setting(
+		'footer_upgrade',
+		array(
+			'capability'     => 'edit_theme_options',
+			'sanitize_callback' => 'sanitize_text_field',
+		)	
+	);
+	$wp_customize->add_control( new WP_Footer_pro_Customize_Control( $wp_customize, 'footer_upgrade', array(	
+			'section' => 'copyright_section_one',
+			'setting' => 'footer_upgrade',
+			'priority' => 1,
+	
+	)));
 	
 	
 	function elitepress_copyright_sanitize_text( $input ) {
