@@ -32,7 +32,7 @@
 	
 	
 	//Customizer
-	
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_theme_color.php' );
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_header.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_slider_panel.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_site_intro.php');
@@ -52,6 +52,7 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_template_settings.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_typography.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php' );
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_layout.php' );
 	
 	
 	// Rambo Info Page

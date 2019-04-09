@@ -3,17 +3,20 @@
 	// creating control for adding message to the top of the section
 	class rambo_Customize_client_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php echo sprintf(__("Want to show your clients? <a href='http://webriti.com/rambo' target='_blank'>Upgrade to Pro</a>","rambo"));
+		
+		<h3><?php _e('Want to show your clients? ','rambo'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/rambo' ); ?>" target="_blank">
+			<?php _e('Upgrade to Pro','rambo'); ?> </a></h3>
+		<?php
 		}
 	}
 	
 	
 /* Client settings */
-			$wp_customize->add_section( 'client_settings' , array(
-				'title'      => __('Client Settings', 'rambo'),
-				//'panel'  => 'section_settings',
-				'priority'       => 520,
-			) );
+	$wp_customize->add_section( 'client_settings' , array(
+		'title'      => __('Client Settings', 'rambo'),
+		'panel'  => 'section_settings',
+		'priority'       => 520,
+	) );
 			
 			
 			// Upgrade to Pro Label

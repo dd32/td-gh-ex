@@ -12,11 +12,19 @@ function rambo_home_slider_customizer($wp_customize){
     }
 	
 	
+	$wp_customize->add_panel( 'section_settings', array(
+		'priority'       => 126,
+		'capability'     => 'edit_theme_options',
+		'title'      => __('Homepage section settings', 'rambo'),
+	) );
+	
+	
 		
 /* Header Section */
 	$wp_customize->add_section( 'slider_section_settings', array(
 		'capability'     => 'edit_theme_options',
 		'priority'   => 514,
+		'panel'  => 'section_settings',
 		'title'      => __('Slider settings', 'rambo'),
 	) );
 
@@ -150,6 +158,41 @@ function rambo_home_slider_customizer($wp_customize){
 			'section' => 'slider_section_settings',
 			'type' => 'checkbox',
 		));
+		
+		
+		
+		
+		
+		//Upgrade to Pro
+		class WP_slider_Customize_Control extends WP_Customize_Control {
+		public $type = 'new_menu';
+		/**
+		* Render the control's content.
+		*/
+		public function render_content() {
+		?>
+		 <div class="pro-vesrion">
+		 <P><?php _e('Want to add more Slides and use animation effect in slider? Then upgrade to Pro.','rambo');?></P>
+		 </div>
+		  <div class="pro-box">
+		 <a href="<?php echo esc_url('http://webriti.com/rambo/');?>" class="service" id="review_pro" target="_blank"><?php _e('Upgrade to Pro','rambo' ); ?></a>
+		 </div>
+		<?php
+		}
+		}
+
+		$wp_customize->add_setting(
+			'Slider_pro',
+			array(
+				'capability'     => 'edit_theme_options',
+				'sanitize_callback' => 'sanitize_text_field',
+			)	
+		);
+		$wp_customize->add_control( new WP_slider_Customize_Control( $wp_customize, 'Slider_pro', array(	
+				'section' => 'slider_section_settings',
+				'setting' => 'Slider_pro',
+			))
+		); 
 		
 		
 		function rambo_input_field_sanitize_text( $input ) 

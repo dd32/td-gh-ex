@@ -2,15 +2,17 @@
 function rambo_team_section_customizer( $wp_customize ) {
 	class rambo_Customize_team_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php echo sprintf(__("Want to add team? <a href='http://webriti.com/rambo' target='_blank'>Upgrade to Pro</a>","rambo"));
+		
+		<h3><?php _e('Want to add team? ','rambo'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/rambo' ); ?>" target="_blank">
+			<?php _e('Upgrade to Pro','rambo'); ?> </a></h3>
+		<?php
 		}
 	}
-	
-		
 	
 		//Site Intro Section
 		$wp_customize->add_section( 'team_settings_section' , array(
 		'title'      => __('Team settings', 'rambo'),
+		'panel'  => 'section_settings',
 		'priority'   => 518,
 		) );
 		

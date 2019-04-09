@@ -7,6 +7,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 	$wp_customize->add_section( 'project_settings' , array(
 	'title'      => __('Project settings', 'rambo'),
 	'capability'     => 'edit_theme_options',
+	'panel'  => 'section_settings',
 	'priority'   => 517,
    	) );
 
@@ -258,7 +259,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 		 </div>
 		  <div class="pro-box">
 		 <a href="<?php echo esc_url('http://webriti.com/rambo/');?>" class="service" id="review_pro" target="_blank"><?php _e('Upgrade to Pro','rambo' ); ?></a>
-		 <div>
+		 </div>
 		<?php
 		}
 		}

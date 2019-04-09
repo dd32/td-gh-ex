@@ -3,39 +3,39 @@ function rambo_site_intro_bottom_customizer( $wp_customize ) {
 	
 	class rambo_Customize_ctb_upgrade extends WP_Customize_Control {
 		public function render_content() { ?>
-        <h3><?php echo sprintf(__("Want to add CTA at the bottom? <a href='http://webriti.com/rambo' target='_blank'>Upgrade to Pro</a>","rambo"));
+		
+		<h3><?php _e('Want to add CTA at the bottom? ','rambo'); ?><a href="<?php echo esc_url( 'http://www.webriti.com/rambo' ); ?>" target="_blank">
+			<?php _e('Upgrade to Pro','rambo'); ?> </a></h3>
+		<?php
+		
 		}
 	}
 	
-		
-		
+	//Site Intro Section
+	$wp_customize->add_section( 'site_intro_bottom_settings' , array(
+	'title'      => __('Call to action bottom settings', 'rambo'),
+	'panel'  => 'section_settings',
+	'priority'   => 521,
+	) );
 	
-		
-		//Site Intro Section
-		$wp_customize->add_section( 'site_intro_bottom_settings' , array(
-		'title'      => __('Call to action bottom settings', 'rambo'),
-		//'panel'  => 'section_settings',
-		'priority'   => 521,
-		) );
-		
-		
-			// Upgrade to Pro Label
-		$wp_customize->add_setting( 'rambo_pro_theme_options[site_bottom_intro_message]', array(
-		'default'				=> false,
-		'capability'			=> 'edit_theme_options',
-		'sanitize_callback'	=> 'wp_filter_nohtml_kses',
-		));
-		$wp_customize->add_control(
-			new rambo_Customize_ctb_upgrade(
-			$wp_customize,
-			'rambo_pro_theme_options[team_upgrade_message]',
-				array(
-					'label'					=> __('Upgrade to Pro','rambo'),
-					'section'				=> 'site_intro_bottom_settings',
-					'settings'				=> 'rambo_pro_theme_options[site_bottom_intro_message]',
-				)
+	
+		// Upgrade to Pro Label
+	$wp_customize->add_setting( 'rambo_pro_theme_options[site_bottom_intro_message]', array(
+	'default'				=> false,
+	'capability'			=> 'edit_theme_options',
+	'sanitize_callback'	=> 'wp_filter_nohtml_kses',
+	));
+	$wp_customize->add_control(
+		new rambo_Customize_ctb_upgrade(
+		$wp_customize,
+		'rambo_pro_theme_options[team_upgrade_message]',
+			array(
+				'label'					=> __('Upgrade to Pro','rambo'),
+				'section'				=> 'site_intro_bottom_settings',
+				'settings'				=> 'rambo_pro_theme_options[site_bottom_intro_message]',
 			)
-		);
+		)
+	);
 		
 		
 	$wp_customize->add_setting(

@@ -113,7 +113,8 @@ if(empty($rambo_service_content))
 }
 function rambo_service_content( $rambo_service_content, $is_callback = false ) {
 if ( ! $is_callback ) { ?>
-<div class="row sidebar-service">
+<div class="sidebar-service">
+<div class="row">
 <?php } 
 if ( ! empty( $rambo_service_content ) ) {
 
@@ -207,6 +208,7 @@ foreach ( $rambo_service_content as $service_item ) :
 <?php } 
 	}
 	if ( ! $is_callback ) { ?>
+		</div>
 		</div>
 		<?php
 	

@@ -9,10 +9,12 @@ function service_customizer_service_panel( $wp_customize ) {
 
 $selective_refresh = isset( $wp_customize->selective_refresh ) ? true : false;
 
+
 	//Service panel
 	$wp_customize->add_section( 'service_settings' , array(
 	'title'      => __('Service settings', 'rambo'),
 	'capability'     => 'edit_theme_options',
+	'panel'  => 'section_settings',
 	'priority'   => 516,
    	) );
 	
@@ -105,6 +107,12 @@ $wp_customize->selective_refresh->add_partial( 'rambo_pro_theme_options[service_
 	$wp_customize->selective_refresh->add_partial( 'rambo_pro_theme_options[service_section_descritpion]', array(
 		'selector'            => '.home_service_section .featured_port_title p',
 		'settings'            => 'rambo_pro_theme_options[service_section_descritpion]',
+	
+	) );
+	
+	$wp_customize->selective_refresh->add_partial( 'rambo_pro_theme_options[rambo_service_content]', array(
+		'selector'            => '.home_service_section .sidebar-service',
+		'settings'            => 'rambo_pro_theme_options[rambo_service_content]',
 	
 	) );
 }

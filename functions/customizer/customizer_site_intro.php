@@ -6,6 +6,7 @@ function rambo_site_intro_customizer( $wp_customize ) {
 /* Site Intro Panel */
 	$wp_customize->add_section( 'site_intro_settings' , array(
 			'title'      => __('Call to action top settings', 'rambo'),
+			'panel'  => 'section_settings',
 			'priority'   => 515,
 		) );
 		
