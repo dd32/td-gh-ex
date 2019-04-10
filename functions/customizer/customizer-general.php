@@ -49,6 +49,38 @@ public $type = 'new_menu';
 	) );
 	
 	
+	//Upgrade to pro
+	class quality_customize_general_settings_upgrade_pro_message extends WP_Customize_Control {
+		public function render_content() { ?>
+		
+		<div class="pro-vesrion">
+		 <P><?php _e('Want to use theme predefined colors and custom color? Then upgrade to Pro.','quality');?></P>
+		 </div>
+		  <div class="pro-box">
+		 <a href="<?php echo esc_url('http://webriti.com/quality/');?>" class="service" id="review_pro" target="_blank"><?php _e('Upgrade to Pro','quality' ); ?></a>
+		 </div>
+		<?php
+		}
+	}
+	
+	
+	$wp_customize->add_setting( 'general_settings_upgrade', array(
+		'capability'			=> 'edit_theme_options',
+		'sanitize_callback'	=> 'wp_filter_nohtml_kses',
+	));
+	$wp_customize->add_control(
+		new quality_customize_general_settings_upgrade_pro_message(
+		$wp_customize,
+		'general_settings_upgrade',
+			array(
+				'section'				=> 'theme_color',
+				'settings'				=> 'general_settings_upgrade',
+			)
+		)
+	);
+	
+	
+	
 	$wp_customize->add_setting(
 	'quality_pro_options[style_sheet]', array(
         'default'        => 'default.css',

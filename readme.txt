@@ -154,6 +154,8 @@ Do you enjoy this theme? Send your ideas - issues - on the theme forum . Thank y
 
 ChangLog:
 
+@Version 2.3.2.1
+Added upgrade to pro link in missing pro settings.
 @Version 2.3.2
 Added the customizer selective refresh for the footer copyright.
 @Version 2.3.1

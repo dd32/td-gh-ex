@@ -18,7 +18,6 @@ function appointment_header_customizer( $wp_customize ) {
     ) );
     
     $wp_customize->add_setting('quality_pro_options[upload_image_favicon]', array(
-      'sanitize_callback' => 'esc_url_raw',
 	   'capability'     => 'edit_theme_options',
 	   'type' => 'option', 
 	   'sanitize_callback' => 'esc_url_raw',

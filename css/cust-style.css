@@ -1,3 +1,49 @@
+.sortable{ 
+list-style-type: none;
+ margin: 0;
+ padding: 0; 
+ margin-bottom: 10px;
+ min-height:100px;
+ padding:5px 0;
+ }
+ .customizer_layout {
+  background-color:#ccc;
+ }
+ .sortable li {
+ margin: 5px;
+ padding: 5px;
+ width: 215px; 
+ background-color:#fff;
+ border:1px solid #000;
+ text-align:center;
+ }
+ 
+ #customize-control-appointment_options-front_page_data label , #customize-control-appointment_options-layout_textbox_disable label , #customize-control-quality_pro_options-style_sheet input ,#customize-control-quality_pro_options-back_image input
+ { display:none !important;}
+ 
+ #customize-control-quality_pro_options-back_image label img
+ { border:2px solid #ccc; width:50px !important; height:50px !important;}
+ 
+ .color_scheem_active{
+	border: 1px solid #000 !important;
+    border-radius: 2px;
+ }
+ .background_active{
+	border: 1px solid #f1c40f !important;
+    border-radius: 2px;
+ }
+
+ 
+ 
+#customize-control-quality_pro_options-style_sheet label, 
+#customize-control-quality_pro_options-back_image label {
+    display: inline-block;
+    line-height: 20px;
+    margin: 3px;
+    padding: 0;
+}
+
+
 #accordion-section-appointment_pro_section h3
 {background-color: #f5f5f5!important;
 color:#555 !important;
@@ -146,5 +192,5 @@ display:none !important;
 	width: 100px;
     height: 50px;
 }
-#accordion-section-team_section_settings .accordion-section-title:after,#accordion-section-shop_section_settings .accordion-section-title:after{content:"\f160";color:#a0a5aa;}
+#accordion-section-team_section_settings .accordion-section-title:after,#accordion-section-shop_section_settings .accordion-section-title:after,#accordion-section-client_section_settings .accordion-section-title:after,#accordion-panel-quality_template .accordion-section-title:after,#accordion-panel-quality_layout_setting .accordion-section-title:after,#accordion-panel-quality_typography_setting .accordion-section-title:after,#accordion-section-callout_section_settings .accordion-section-title:after{content:"\f160";color:#a0a5aa;}
 #customize-control-quality_team_content .button-secondary,#customize-control-quality_team_content .customizer-repeater-new-field{pointer-events:none;}
