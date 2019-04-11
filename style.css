@@ -1,10 +1,10 @@
 /*
 Theme Name: Hiero
-Theme URI: http://athemes.com/theme/hiero
+Theme URI: https://athemes.com/theme/hiero/
 Author: aThemes
-Author URI: http://athemes.com
+Author URI: https://athemes.com/
 Description:  Hiero is an awesome magazine theme for your WordPress site feature bold colors and details to the content. Responsive layout, post thumbnails support, threaded comments and more.
-Version: 1.8
+Version: 1.8.1
 License: GNU General Public License v3.0
 License URI: license.txt
 Text Domain: hiero
@@ -21,6 +21,10 @@ body {
 	line-height: 1.8;
 	background: #fff;
 	}
+
+html body {
+    font-size: 16px;
+}
 
 /* Headings */
 h1, h2, h3, h4, h5, h6 {
@@ -338,6 +342,9 @@ object {
 	}
 #main-navigation .sf-menu {
 	background: #060608;
+	}
+#main-navigation > .sf-menu > ul {
+	z-index: 9;
 	}
 #main-navigation .sf-menu > ul > li:after {
 	width: 1px;
@@ -1201,3 +1208,11 @@ body.search .page .entry-footer {
 	}
 @media screen and (max-width: 320px) {
 	}
+
+/* Bootstrap "span" word bug workaround begin */
+[class*="span"] {
+    float: unset;
+    min-height: unset;
+    margin-left: unset;
+}
+/* Bootstrap "span" word bug workaround end */

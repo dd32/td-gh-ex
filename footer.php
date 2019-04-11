@@ -11,9 +11,6 @@
 	<!-- #main --></div>
 
 	<?php
-		/* A sidebar in the footer? Yep. You can can customize
-		 * your footer with up to four columns of widgets.
-		 */
 		get_sidebar( 'footer' );
 	?>
 
@@ -24,7 +21,7 @@
 			</div><!-- .site-info -->
 
 			<div class="site-credit">
-				<a href="http://athemes.com/theme/hiero">Hiero</a> by aThemes
+				<a href="https://athemes.com/theme/hiero/">Hiero</a> by aThemes
 			</div><!-- .site-credit -->
 		</div>
 	<!-- #colophon --></footer>

@@ -25,7 +25,7 @@ get_header();
 							<a href="<?php echo esc_url(get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>" rel="me">More Posts</a>
 
 							<?php if ( get_the_author_meta( 'twitter' ) ) : ?>
-							<a href="http://twitter.com/<?php echo get_the_author_meta( 'twitter' ); ?>">Twitter</a>
+							<a href="https://twitter.com/<?php echo get_the_author_meta( 'twitter' ); ?>">Twitter</a>
 							<?php endif; ?>
 
 							<?php if ( get_the_author_meta( 'facebook' ) ) : ?>
@@ -33,7 +33,7 @@ get_header();
 							<?php endif; ?>
 
 							<?php if ( get_the_author_meta( 'linkedin' ) ) : ?>
-							<a href="http://linkedin.com/in/<?php echo get_the_author_meta( 'linkedin' ); ?>">LinkedIn</a>
+							<a href="https://linkedin.com/in/<?php echo get_the_author_meta( 'linkedin' ); ?>">LinkedIn</a>
 							<?php endif; ?>
 						</div>
 					</div>

@@ -8,31 +8,31 @@ You can remove the footer link if you like but we would appreciate your support 
 CREDITS
 
 Underscores (_s) - Base Theme
-URL: http://underscores.me/
+URL: https://underscores.me/
 License: GNU GPL
 Copyright: Automattic, automattic.com
 
 Bootstrap - Base CSS
-URL: http://twitter.github.io/bootstrap/
+URL: https://getbootstrap.com/
 License: Apache License v2.0
 Copyright:  Mark Otto (@mdo) & Jacob (@fat)
 
 Font Awesome - Icon Fonts
-URL: http://fortawesome.github.com/Font-Awesome/
+URL: https://fontawesome.com/
 License: SIL OFL 1.1
 Copyright: Dave Gandy (@davegandy)
 
 Entypo - Icon Fonts
-URL: http://www.entypo.com/
+URL: www.entypo.com
 License: SIL OFL 1.1
 Copyright: Daniel Bruce (@danielbruce_)
 
 Yanone Kaffeesatz - Font
-URL: http://www.google.com/fonts/specimen/Yanone+Kaffeesatz
+URL: https://fonts.google.com/specimen/Yanone+Kaffeesatz
 License: SIL OFL 1.1
 Copyright: Yanone, https://plus.google.com/117851060215561914602/about
 
 Superfish - Dropdown menu jQuery plugin.
-URL: http://users.tpg.com.au/j_birch/plugins/superfish/
+URL: https://superfish.joelbirch.design/
 License: MIT and GPL
 Copyright: Joel Birch, https://github.com/joeldbirch
