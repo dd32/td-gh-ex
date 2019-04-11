@@ -168,7 +168,7 @@ add_action( 'widgets_init', 'bc_business_consulting_widgets_init' );
 function bc_business_consulting_scripts() {
 	/* FONTS*/
 	wp_enqueue_style( 'bc-business-consulting-Roboto+Condensed', '//fonts.googleapis.com/css?family=Roboto+Condensed:300i,400,700');
-	wp_enqueue_style( 'bc-business-consulting-Roboto', '/fonts.googleapis.com/css?family=Roboto:400,500');
+	wp_enqueue_style( 'bc-business-consulting-Roboto', '//fonts.googleapis.com/css?family=Roboto:400,500');
 
 	
 	/* PLUGIN CSS */
