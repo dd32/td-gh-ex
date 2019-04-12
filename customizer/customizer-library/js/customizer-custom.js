@@ -7,12 +7,12 @@
     $( window ).load( function() {
 
         // Show / Hide Fonts Google/Websafe settings
-        guten_websafe_check();
+        topshop_websafe_check();
         $( '#customize-control-topshop-disable-google-fonts input[type=checkbox]' ).on( 'change', function() {
-            guten_websafe_check();
+            topshop_websafe_check();
         });
         
-        function guten_websafe_check() {
+        function topshop_websafe_check() {
             if ( $( '#customize-control-topshop-disable-google-fonts input[type=checkbox]' ).is( ':checked' ) ) {
                 $( '#sub-accordion-section-topshop-styling #customize-control-topshop-body-font' ).hide();
                 $( '#sub-accordion-section-topshop-styling #customize-control-topshop-heading-font' ).hide();

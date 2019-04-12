@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.18' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.19' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -267,7 +267,8 @@ function topshop_register_required_plugins() {
 		array(
             'name'      => __( 'Elementor Page Builder', 'topshop' ),
             'slug'      => 'elementor',
-            'required'  => false,
+			'required'  => false,
+			'external_url' => 'https://kairaweb.com/go/elementor/'
         ),
 		array(
 			'name'      => __( 'WooCommerce', 'topshop' ),
@@ -298,19 +299,6 @@ function topshop_register_required_plugins() {
 	tgmpa( $plugins, $config );
 }
 add_action( 'tgmpa_register', 'topshop_register_required_plugins' );
-
-/**
- * Elementor Check
- */
-if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
-    define( 'ELEMENTOR_PARTNER_ID', 2118 );
-}
-/**
- * WPForms Partner ID
- */
-if ( !defined( 'WPFORMS_SHAREASALE_ID' ) ) {
-    define( 'WPFORMS_SHAREASALE_ID', 1128843 );
-}
 
 /**
  * Register a custom Post Categories ID column
@@ -346,42 +334,3 @@ function topshop_cat_columns_array_push_after( $src, $topshop_cat_in, $pos ) {
     }
     return $R;
 }
-
-/**
- * Insert dismissable admin notices
- */
-function topshop_admin_notice() {
-	$user_id = get_current_user_id();
-	
-	$response = wp_remote_get( 'https://kairaweb.com/wp-json/wp/v2/themes/topshop/' );
-	
-	if ( is_wp_error( $response ) ) {
-		return;
-	}
-	
-	$posts = json_decode( wp_remote_retrieve_body( $response ) );
-	
-	if ( empty( $posts ) ) {
-		return;
-	} else {
-		$message_id = trim( $posts[0]->free_notification_id );
-		$message 	= trim( $posts[0]->free_notification );
-		
-		if ( !empty( $message ) && !get_user_meta( $user_id, 'topshop_admin_notice_' .$message_id. '_dismissed' ) ) {
-			$class = 'notice notice-success is-dismissible';
-			printf( '<div class="%1$s"><p>%2$s</p><p><a href="?topshop-admin-notice-dismissed&topshop-admin-notice-id=%3$s">Dismiss this notice</a></p></div>', esc_attr( $class ), $message, $message_id );
-		}
-	}
-}
-add_action( 'admin_notices', 'topshop_admin_notice' );
-/**
- * Dismiss admin notices
- */
-function topshop_admin_notice_dismissed() {
-    $user_id = get_current_user_id();
-    if ( isset( $_GET['topshop-admin-notice-dismissed'] ) ) {
-    	$topshop_admin_notice_id = $_GET['topshop-admin-notice-id'];
-		add_user_meta( $user_id, 'topshop_admin_notice_' .$topshop_admin_notice_id. '_dismissed', 'true', true );
-	}
-}
-add_action( 'admin_init', 'topshop_admin_notice_dismissed' );

@@ -116,7 +116,7 @@ function customizer_library_topshop_options() {
         'id' => 'topshop-help-layout',
         'section' => $section,
         'type'    => 'help',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Enable WooCommerce Drop Down Cart/Basket<br />- Set custom website width<br />- Set custom sidebar width<br />- Change the site layout to boxed or full width<br />- Select between 3 header layouts<br />- Remove Page Titles<br />- Change WooCommerce cart icon<br />- Add shortcode for better Product search (an added plugin)', 'topshop' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Select custom font for Main Navigation<br />- Edit the Main Navigation font size- Enable WooCommerce Drop Down Cart/Basket<br />- Set custom website width<br />- Set custom sidebar width<br />- Change the site layout to boxed or full width<br />- Select between 3 header layouts<br />- Remove Page Titles<br />- Change WooCommerce cart icon<br />- Add shortcode for better Product search (an added plugin)', 'topshop' )
     );
     
     

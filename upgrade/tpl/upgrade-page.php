@@ -20,6 +20,13 @@
             <p class="topshop-upgrade-p">
                 <?php printf( __( 'Help on how to <strong><a href="%s" target="_blank">install the premium theme</a></strong>', 'topshop' ) , 'https://kairaweb.com/support/install-the-premium-theme/' ); ?>
             </p>
+
+            <h3><?php _e( 'Latest Features added to TopShop Premium', 'topshop' ); ?></h3>
+            <ul>
+                <li><?php _e( 'Set a custom font for the Main Navigation', 'topshop' ); ?></li>
+                <li><?php _e( 'Edit the size of the Main Navigation font', 'topshop' ); ?></li>
+                <li><?php _e( 'Styling fixes & tweaks', 'topshop' ); ?></li>
+            </ul>
             
         </div>
         <div class="clearboth"></div>
@@ -28,7 +35,7 @@
             
             <div class="topshop-upgrade-page-inner-wrap">
                 
-                <h3><?php _e( 'TopShop Premium is a once off payment of $25', 'topshop' ); ?></h3>
+                <h3><?php _e( 'TopShop Premium is a once off payment of $25 for lifetime updates<span>This is a <b>time limited special offer now available</b> on all our themes</span>', 'topshop' ); ?></h3>
                 
                 <div class="topshop-upgrade-block">
                     <div class="topshop-upgrade-block-left">

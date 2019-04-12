@@ -70,6 +70,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.19
+* Removed old/deprecated code
+* Neatened up code/comments
+* Updated language .pot file
+Premium: Added setting to select custom font for site navigation
+Premium: Added setting to adjust main navigation font size
+
 #### 1.3.18
 * Styling fixes/tweaks
 * Neatened up Customizer theme settings
