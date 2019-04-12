@@ -5,7 +5,7 @@
  * @package Electa
  */
 
-define( 'KAIRA_THEME_VERSION' , '1.3.07' );
+define( 'KAIRA_THEME_VERSION' , '1.3.08' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -219,6 +219,7 @@ function kaira_register_required_plugins() {
             'name'      => __( 'Elementor Page Builder', 'electa' ),
             'slug'      => 'elementor',
             'required'  => false,
+            'external_url' => 'https://kairaweb.com/go/elementor/'
         ),
         array(
             'name'      => __( 'Breadcrumb NavXT', 'electa' ),
@@ -239,13 +240,6 @@ function kaira_register_required_plugins() {
     tgmpa( $plugins, $config );
 }
 add_action( 'tgmpa_register', 'kaira_register_required_plugins' );
-
-/**
- * Elementor Check
- */
-if ( ! defined( 'ELEMENTOR_PARTNER_ID' ) ) {
-    define( 'ELEMENTOR_PARTNER_ID', 2118 );
-}
 
 /**
  * Register a custom Post Categories ID column

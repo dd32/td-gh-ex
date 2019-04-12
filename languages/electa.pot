@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Electa\n"
-"POT-Creation-Date: 2018-10-04 17:26+0200\n"
+"POT-Creation-Date: 2019-04-12 15:22+0200\n"
 "PO-Revision-Date: 2016-08-28 17:03+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -233,10 +233,11 @@ msgstr ""
 
 #: customizer/customizer-options.php:75
 msgid ""
-"<b>Premium Extra Features:</b><br />- Settings to adjust Site Title font and "
-"sizing<br />- Setting to adjust Site Tagline sizing and spacing<br />- "
-"Remove All Page titles<br />- Enable a sticky header<br />- Align Navigation "
-"- Left\\Center\\Right<br />- Remove Navigation lines"
+"<b>Premium Extra Features:</b><br />- Change Header to Top Layout<br />- "
+"Settings to adjust Site Title font and sizing<br />- Setting to adjust Site "
+"Tagline sizing and spacing<br />- Remove All Page titles<br />- Enable a "
+"sticky header<br />- Align Navigation - Left\\Center\\Right<br />- Remove "
+"Navigation lines"
 msgstr ""
 
 #: customizer/customizer-options.php:84
@@ -426,11 +427,11 @@ msgstr ""
 msgid "Elementor Page Builder"
 msgstr ""
 
-#: functions.php:224
+#: functions.php:225
 msgid "Breadcrumb NavXT"
 msgstr ""
 
-#: functions.php:229
+#: functions.php:230
 msgid "Meta Slider"
 msgstr ""
 
@@ -929,7 +930,9 @@ msgid ""
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:31
-msgid "Electa Premium is a once off payment of $25"
+msgid ""
+"Electa Premium is a once off payment of $25 for lifetime updates<span>This "
+"is a <b>time limited special offer now available</b> on all our themes</span>"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:35

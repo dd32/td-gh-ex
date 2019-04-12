@@ -28,7 +28,7 @@
             
             <div class="electa-upgrade-page-inner-wrap">
                 
-                <h3><?php _e( 'Electa Premium is a once off payment of $25', 'electa' ); ?></h3>
+                <h3><?php _e( 'Electa Premium is a once off payment of $25 for lifetime updates<span>This is a <b>time limited special offer now available</b> on all our themes</span>', 'electa' ); ?></h3>
                 
                 <div class="electa-upgrade-block">
                     <div class="electa-upgrade-block-left">

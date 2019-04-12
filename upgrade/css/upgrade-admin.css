@@ -141,6 +141,15 @@ a.upgrade-page-link:hover {
     font-size: 18px;
     font-weight: 400;
 }
+.electa-upgrade-page-inner-wrap h3 span {
+	display: block;
+	opacity: 0.5;
+	margin: 5px 0 0;
+	font-size: 0.8em;
+}
+.electa-upgrade-page-inner-wrap h3 span b {
+	color: #006CC9;
+}
 .electa-upgrade-result-button {
 	display: inline-block;
 	border-radius: 3px;

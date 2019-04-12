@@ -60,6 +60,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.08
+* Removed old/deprecated code
+* Neatened up code/comments
+* Updated language .pot file
+Premium: Added setting to change the header to a Top Layout
+Premium: Added setting to adjust Navigation font size
+
 #### 1.3.07
 * Styling fixes/tweaks
 * Added setting to move Social Icons above Navigation
