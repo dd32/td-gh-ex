@@ -221,7 +221,7 @@ class apelleuno_Apelle_Walker_Nav_Menu extends Walker_Nav_Menu {
         $title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
 
         
-	        $item_output .= '<a'. $attributesLnk .' class="nav-link">';
+	        $item_output = '<a'. $attributesLnk .' class="nav-link">';
         $item_output .= $args->link_before . $title . $args->link_after;
         $item_output .= '</a>';
 		if($args->walker->has_children )
