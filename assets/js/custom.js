@@ -5,10 +5,12 @@
 		$('.main-slider').slick();
 
 		// latest product slider
-		$('.latest-product-items').slick();	
+		$('.latest-product-items').slick({
+            lazyLoad: 'ondemand'
+		});
 
 		$('#main-nav').meanmenu({
-			meanScreenWidth: "1050",
+			meanScreenWidth: "1050"
 		});
 
 		// Go to top.

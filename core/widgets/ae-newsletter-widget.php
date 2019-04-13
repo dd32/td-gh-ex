@@ -11,14 +11,16 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
      *
      * @since 1.0.0
      */
-    class Agency_Ecommerce_Newsletter_Widget extends WP_Widget {
+    class Agency_Ecommerce_Newsletter_Widget extends WP_Widget
+    {
 
         /**
          * Constructor.
          *
          * @since 1.0.0
          */
-        function __construct() {
+        function __construct()
+        {
             $opts = array(
                 'classname' => 'agency_ecommerce_widget_newsletter',
                 'description' => esc_html__('Newsletter Widget', 'agency-ecommerce'),
@@ -31,21 +33,23 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
          *
          * @since 1.0.0
          *
-         * @param array $args     Display arguments including before_title, after_title,
+         * @param array $args Display arguments including before_title, after_title,
          *                        before_widget, and after_widget.
          * @param array $instance The settings for the particular instance of the widget.
          */
-        function widget($args, $instance) {
+        function widget($args, $instance)
+        {
             $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
             $sub_title = !empty($instance['sub_title']) ? esc_html($instance['sub_title']) : '';
             $shortcode = !empty($instance['shortcode']) ? esc_html($instance['shortcode']) : '';
-
+            $background_color = !empty($instance['background_color']) ? sanitize_hex_color($instance['background_color']) : '#0b1f41';
+            $args['before_widget'] = str_replace('class="', 'style="background:' . $background_color . ' " class="', $args['before_widget']);
             echo $args['before_widget'];
             ?>
 
             <div class="newsletter-content-holder newsletter-widget">
 
-                <div class="content-wrap"> 
+                <div class="content-wrap">
 
                     <div class="newsletter-wrapper">
 
@@ -54,7 +58,8 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
                             <div class="newsletter-text">
 
                                 <span class="newsletter-icon">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/envelope.png" alt="<?php esc_attr_e('newsletter', 'agency-ecommerce'); ?>">
+                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/envelope.png"
+                                         alt="<?php esc_attr_e('newsletter', 'agency-ecommerce'); ?>">
                                 </span>
 
                                 <?php
@@ -104,7 +109,8 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
          * @param array $old_instance Old settings for this instance.
          * @return array Settings to save or bool false to cancel saving.
          */
-        function update($new_instance, $old_instance) {
+        function update($new_instance, $old_instance)
+        {
 
             $instance = $old_instance;
 
@@ -113,6 +119,8 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
             $instance['sub_title'] = sanitize_text_field($new_instance['sub_title']);
 
             $instance['shortcode'] = sanitize_text_field($new_instance['shortcode']);
+
+            $instance['background_color'] = sanitize_hex_color($new_instance['background_color']);
 
             return $instance;
         }
@@ -124,40 +132,47 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
          *
          * @param array $instance Current settings.
          */
-        function form($instance) {
+        function form($instance)
+        {
 
-            $instance = wp_parse_args((array) $instance, array(
+            $instance = wp_parse_args((array)$instance, array(
                 'title' => '',
                 'sub_title' => '',
                 'shortcode' => '',
+                'background_color' => '#0b1f41',
             ));
             ?>
             <p>
                 <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><strong><?php esc_html_e('Title:', 'agency-ecommerce'); ?></strong></label>
-                <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>" name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text" value="<?php echo esc_attr($instance['title']); ?>" />
+                <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>"
+                       name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text"
+                       value="<?php echo esc_attr($instance['title']); ?>"/>
             </p>
             <p>
                 <label for="<?php echo esc_attr($this->get_field_id('sub_title')); ?>"><strong><?php esc_html_e('Sub Title:', 'agency-ecommerce'); ?></strong></label>
-                <input class="widefat" id="<?php echo esc_attr($this->get_field_id('sub_title')); ?>" name="<?php echo esc_attr($this->get_field_name('sub_title')); ?>" type="text" value="<?php echo esc_attr($instance['sub_title']); ?>" />
+                <input class="widefat" id="<?php echo esc_attr($this->get_field_id('sub_title')); ?>"
+                       name="<?php echo esc_attr($this->get_field_name('sub_title')); ?>" type="text"
+                       value="<?php echo esc_attr($instance['sub_title']); ?>"/>
             </p>
             <p>
                 <label for="<?php echo esc_attr($this->get_field_id('shortcode')); ?>"><strong><?php esc_html_e('Newsletter Shortcode:', 'agency-ecommerce'); ?></strong></label>
-                <input class="widefat" id="<?php echo esc_attr($this->get_field_id('shortcode')); ?>" name="<?php echo esc_attr($this->get_field_name('shortcode')); ?>" type="text" value="<?php echo esc_attr($instance['shortcode']); ?>" />
+                <input class="widefat" id="<?php echo esc_attr($this->get_field_id('shortcode')); ?>"
+                       name="<?php echo esc_attr($this->get_field_name('shortcode')); ?>" type="text"
+                       value="<?php echo esc_attr($instance['shortcode']); ?>"/>
                 <small>
                     <?php esc_html_e('Shortcode of MailChimp or other mailing applications can be used.', 'agency-ecommerce'); ?>
                 </small>
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id('background_color'); ?>"><?php esc_html_e('Background Color', 'agency-ecommerce'); ?></label><br>
+                <input type="text" name="<?php echo $this->get_field_name('background_color'); ?>" class="color-picker"
+                       id="<?php echo $this->get_field_id('background_color'); ?>"
+                       value="<?php echo esc_attr($instance['background_color']); ?>" data-default-color="#e6e9ec"/>
             </p>
             <?php
         }
 
     }
 
-    
-
-    
-
-    
-
-            
 
 endif;

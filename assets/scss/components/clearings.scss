@@ -1,0 +1,28 @@
+.clear-fix::before,
+.clear-fix::after,
+.entry-content::before,
+.entry-content::after,
+.comment-content::before,
+.comment-content::after,
+.site-header::before,
+.site-header::after,
+.site-content::before,
+.site-content::after,
+.site-footer::before,
+.site-footer::after,
+#home-page-widget-area::after,
+#home-page-widget-area::before,
+#featured-slider::after,
+#featured-slider::before {
+  content: "";
+  display: table;
+}
+
+.clear-fix::after,
+.entry-content::after,
+.comment-content::after,
+.site-header::after,
+.site-content::after,
+.site-footer::after {
+  clear: both;
+}

@@ -1,27 +1,29 @@
-# Copyright (C) 2018 mantrabrain
-# This file is distributed under the GNU General Public License v2 or later.
-#, fuzzy
+# <!=Copyright (C) 2019 mantrabrain
+# This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Agency Ecommerce 2.1.0\n"
-"Report-Msgid-Bugs-To: https://www.mantrabrain.com/contact\n"
-"POT-Creation-Date: 2019-03-21 13:56+0545\n"
+"Project-Id-Version: Agency Ecommerce 1.0.1\n"
+"Report-Msgid-Bugs-To: mantrabrain@gmail.com\n"
+"POT-Creation-Date: 2019-04-13 16:20:38+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
-"Last-Translator: mantrabrain Translate Team <contact@mantrabrain.com>\n"
-"Language-Team: mantrabrain Translate <contact@mantrabrain.com>\n"
-"X-Generator: Poedit 2.0.8\n"
-"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;"
-"_nx_noop:1,2,3c;esc_attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;"
-"esc_html_x:1,2c\n"
-"Language: en\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
-"X-Poedit-SourceCharset: UTF-8\n"
-"X-Poedit-Basepath: ..\n"
-"X-Textdomain-Support: yes\n"
-"X-Poedit-SearchPath-0: .\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
+
+#: core/customizer/options/shop.php:71
+msgid "2"
+msgstr ""
+
+#: core/customizer/options/shop.php:72
+msgid "3"
+msgstr ""
+
+#: core/customizer/options/shop.php:73
+msgid "4"
+msgstr ""
 
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
@@ -29,100 +31,9 @@ msgstr ""
 
 #: 404.php:21
 msgid ""
-"It looks like nothing was found at this location. Maybe try one of the links "
-"below or a search?"
+"It looks like nothing was found at this location. Maybe try one of the "
+"links below or a search?"
 msgstr ""
-
-#: assets/vendor/breadcrumbs/breadcrumbs.php:244
-msgid "Browse:"
-msgstr ""
-
-#: assets/vendor/breadcrumbs/breadcrumbs.php:245
-msgctxt "breadcrumbs aria label"
-msgid "Breadcrumbs"
-msgstr ""
-
-#: assets/vendor/breadcrumbs/breadcrumbs.php:246 core/customizer/core.php:95
-msgid "Home"
-msgstr ""
-
-#: assets/vendor/breadcrumbs/breadcrumbs.php:247
-msgid "404 Not Found"
-msgstr ""
-
-#: assets/vendor/breadcrumbs/breadcrumbs.php:248
-msgid "Archives"
-msgstr ""
-
-#: assets/vendor/breadcrumbs/breadcrumbs.php:250
-#, php-format
-msgid "Search results for &#8220;%s&#8221;"
-msgstr ""
-
-#: assets/vendor/breadcrumbs/breadcrumbs.php:252
-#, php-format
-msgid "Page %s"
-msgstr ""
-
-#: assets/vendor/breadcrumbs/breadcrumbs.php:254
-#, php-format
-msgid "Minute %s"
-msgstr ""
-
-#: assets/vendor/breadcrumbs/breadcrumbs.php:256
-#, php-format
-msgid "Week %s"
-msgstr ""
-
-#: assets/vendor/breadcrumbs/breadcrumbs.php:708
-msgctxt "minute and hour archives time format"
-msgid "g:i a"
-msgstr ""
-
-#: assets/vendor/breadcrumbs/breadcrumbs.php:725
-msgctxt "minute archives time format"
-msgid "i"
-msgstr ""
-
-#: assets/vendor/breadcrumbs/breadcrumbs.php:742
-msgctxt "hour archives time format"
-msgid "g a"
-msgstr ""
-
-#: assets/vendor/breadcrumbs/breadcrumbs.php:758
-#: assets/vendor/breadcrumbs/breadcrumbs.php:787
-#: assets/vendor/breadcrumbs/breadcrumbs.php:814
-#: assets/vendor/breadcrumbs/breadcrumbs.php:841
-#: assets/vendor/breadcrumbs/breadcrumbs.php:1180
-msgctxt "yearly archives date format"
-msgid "Y"
-msgstr ""
-
-#: assets/vendor/breadcrumbs/breadcrumbs.php:759
-#: assets/vendor/breadcrumbs/breadcrumbs.php:815
-#: assets/vendor/breadcrumbs/breadcrumbs.php:1184
-msgctxt "monthly archives date format"
-msgid "F"
-msgstr ""
-
-#: assets/vendor/breadcrumbs/breadcrumbs.php:760
-#: assets/vendor/breadcrumbs/breadcrumbs.php:1188
-msgctxt "daily archives date format"
-msgid "j"
-msgstr ""
-
-#: assets/vendor/breadcrumbs/breadcrumbs.php:788
-msgctxt "weekly archives date format"
-msgid "W"
-msgstr ""
-
-#: comments.php:32
-#, php-format
-msgctxt "comments title"
-msgid "%1$s thought on &ldquo;%2$s&rdquo;"
-msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
-msgstr[0] ""
-msgstr[1] ""
 
 #: comments.php:41 comments.php:62
 msgid "Comment navigation"
@@ -140,54 +51,20 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: functions.php:53
+#: core/class-agency-ecommerce-core.php:141
 msgid "Top Header Menu"
 msgstr ""
 
-#: functions.php:54
-msgid "Primary Header Menu"
+#: core/class-agency-ecommerce-core.php:142
+msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:55
+#: core/class-agency-ecommerce-core.php:143
 msgid "Social Links"
 msgstr ""
 
-#: functions.php:110
-msgid "Blog Sidebar"
-msgstr ""
-
-#: functions.php:112
-msgid "Add widgets here to appear in Sidebar."
-msgstr ""
-
-#: functions.php:122 core/customizer/options/shop.php:26
-msgid "Shop Sidebar"
-msgstr ""
-
-#: functions.php:124
-msgid "Widgets added here will appear in sidebar of shop pages only."
-msgstr ""
-
-#: functions.php:134
-msgid "Advertisements Below Slider"
-msgstr ""
-
-#: functions.php:136
-msgid ""
-"Add widgets here to appear in advertisement area below main slider of home page"
-msgstr ""
-
-#: functions.php:143
-msgid "Home Page Widget Area"
-msgstr ""
-
-#: functions.php:145
-msgid "Add widgets here to appear in Home Page Widget Area."
-msgstr ""
-
-#: functions.php:152 functions.php:160 functions.php:168 functions.php:176
-#, php-format
-msgid "Footer %d"
+#: core/class-agency-ecommerce-core.php:144
+msgid "Special Menu( Display Beside Primary Menu)"
 msgstr ""
 
 #: core/customizer/core.php:65
@@ -198,7 +75,8 @@ msgstr ""
 msgid "Search Products ..."
 msgstr ""
 
-#: core/customizer/core.php:73 core/hooks.php:221
+#: core/customizer/core.php:73
+#: core/hooks/class-agency-ecommerce-header-hooks.php:249
 msgid "Select Category"
 msgstr ""
 
@@ -210,18 +88,14 @@ msgstr ""
 msgid "Copyright &copy; All rights reserved."
 msgstr ""
 
-#: core/customizer/core.php:99 core/customizer/core.php:100
-#: core/customizer/core.php:101 core/customizer/core.php:102
-#: core/customizer/core.php:103 core/customizer/options/slider.php:104
+#. Template Name of the plugin/theme
+msgid "Home"
+msgstr ""
+
+#: core/customizer/core.php:100 core/customizer/core.php:101
+#: core/customizer/core.php:102 core/customizer/core.php:103
+#: core/customizer/core.php:104 core/customizer/options/slider.php:117
 msgid "Shop Now"
-msgstr ""
-
-#: core/customizer/customizer.php:52 core/theme-info/class-about.php:762
-msgid "Agency Ecommerce Plus"
-msgstr ""
-
-#: core/customizer/customizer.php:53
-msgid "Buy PRO"
 msgstr ""
 
 #: core/customizer/options/blog.php:11
@@ -426,6 +300,10 @@ msgstr ""
 msgid "Shop Page Options"
 msgstr ""
 
+#: core/customizer/options/shop.php:26 core/widgets/widgets.php:121
+msgid "Shop Sidebar"
+msgstr ""
+
 #: core/customizer/options/shop.php:47
 msgid "Products Per Page"
 msgstr ""
@@ -440,18 +318,6 @@ msgstr ""
 
 #: core/customizer/options/shop.php:66
 msgid "Number of products shown per row"
-msgstr ""
-
-#: core/customizer/options/shop.php:71
-msgid "2"
-msgstr ""
-
-#: core/customizer/options/shop.php:72
-msgid "3"
-msgstr ""
-
-#: core/customizer/options/shop.php:73
-msgid "4"
 msgstr ""
 
 #: core/customizer/options/shop.php:87
@@ -470,94 +336,648 @@ msgstr ""
 msgid "Disable Related Products at Product Detail Page"
 msgstr ""
 
-#: core/customizer/options/slider.php:11
+#: core/customizer/options/slider.php:14
 msgid "Featured Slider Options"
 msgstr ""
 
-#: core/customizer/options/slider.php:19
-msgid "Slider On/Off"
+#: core/customizer/options/slider.php:29
+msgid "Enable/Disable Slider"
 msgstr ""
 
-#: core/customizer/options/slider.php:33
-msgid "Enable Slider"
+#: core/customizer/options/slider.php:45
+msgid "Make full width slider?"
 msgstr ""
 
-#: core/customizer/options/slider.php:56
+#: core/customizer/options/slider.php:46
+msgid "This option allows you to make slider full width."
+msgstr ""
+
+#: core/customizer/options/slider.php:69
 msgid "Slide "
 msgstr ""
 
-#: core/customizer/options/slider.php:71
+#: core/customizer/options/slider.php:84
 msgid "Select Page"
 msgstr ""
 
-#: core/customizer/options/slider.php:88
+#: core/customizer/options/slider.php:101
 msgid "Caption Position"
 msgstr ""
 
-#: core/customizer/options/slider.php:92
-#: core/widgets/advertisement.php:339
+#: core/customizer/options/slider.php:105
+#: core/widgets/ae-advertisement-widget.php:351
+#: core/widgets/ae-cta-widget.php:334
 msgid "Left"
 msgstr ""
 
-#: core/customizer/options/slider.php:93
-#: core/widgets/advertisement.php:340
+#: core/customizer/options/slider.php:106
+#: core/widgets/ae-advertisement-widget.php:352
+#: core/widgets/ae-cta-widget.php:335
 msgid "Right"
 msgstr ""
 
-#: core/customizer/options/slider.php:94
+#: core/customizer/options/slider.php:107
+#: core/widgets/ae-advertisement-widget.php:353
+#: core/widgets/ae-cta-widget.php:336
 msgid "Center"
 msgstr ""
 
-#: core/customizer/options/slider.php:110
+#: core/customizer/options/slider.php:123
 msgid "Button Text"
 msgstr ""
 
-#: core/customizer/options/slider.php:127
+#: core/customizer/options/slider.php:140
 msgid "Button Link"
 msgstr ""
 
-#: core/customizer/options/slider.php:140
-msgid "Slider Setting"
-msgstr ""
-
-#: core/customizer/options/slider.php:154
+#: core/customizer/options/slider.php:160
 msgid "Transition Effect"
 msgstr ""
 
-#: core/customizer/options/slider.php:158
+#: core/customizer/options/slider.php:164
 msgid "Fade"
 msgstr ""
 
-#: core/customizer/options/slider.php:159
+#: core/customizer/options/slider.php:165
 msgid "Scroll"
 msgstr ""
 
-#: core/customizer/options/slider.php:173
+#: core/customizer/options/slider.php:179
 msgid "Transition Delay"
 msgstr ""
 
-#: core/customizer/options/slider.php:174
+#: core/customizer/options/slider.php:180
 msgid "in seconds"
 msgstr ""
 
-#: core/customizer/options/slider.php:191
+#: core/customizer/options/slider.php:197
+msgid "Adaptive Height"
+msgstr ""
+
+#: core/customizer/options/slider.php:212
 msgid "Show Pager"
 msgstr ""
 
-#: core/customizer/options/slider.php:206
+#: core/customizer/options/slider.php:227
 msgid "Enable Autoplay"
 msgstr ""
 
-#: core/demo/demo.php:18
-msgid "Theme Demo Content"
+#: core/helpers.php:198
+msgid "%1$s page does not contain %2$s shortcode."
 msgstr ""
 
+#: core/helpers.php:201
+msgid "%s page is not set."
+msgstr ""
+
+#: core/hooks/class-agency-ecommerce-header-hooks.php:151
+msgid "Log Out"
+msgstr ""
+
+#: core/hooks/hooks.php:127
+msgid "%1$s by %2$s"
+msgstr ""
+
+#: core/template-functions.php:249
+msgid "WooCommerce"
+msgstr ""
+
+#: core/template-functions.php:254
+msgid "One Click Demo Import"
+msgstr ""
+
+#: core/template-functions.php:259
+msgid "MailChimp for WordPress"
+msgstr ""
+
+#: core/template-functions.php:264
+msgid "Contact Form 7"
+msgstr ""
+
+#: core/template-functions.php:269
+msgid "YITH WooCommerce Wishlist"
+msgstr ""
+
+#: core/template-functions.php:274
+msgid "Video Tab For WooCommerce"
+msgstr ""
+
+#: core/template-tags.php:57
+#. translators: %s: post title
+msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr ""
+
+#: core/template-tags.php:92
+#. translators: %s: Name of current post. Only visible to screen readers
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr ""
+
+#: core/vendor/breadcrumbs/breadcrumbs.php:244
+msgid "Browse:"
+msgstr ""
+
+#: core/vendor/breadcrumbs/breadcrumbs.php:247
+msgid "404 Not Found"
+msgstr ""
+
+#: core/vendor/breadcrumbs/breadcrumbs.php:248
+msgid "Archives"
+msgstr ""
+
+#: core/vendor/breadcrumbs/breadcrumbs.php:250
+#. Translators: %s is the search query. The HTML entities are opening and
+#. closing curly quotes.
+msgid "Search results for &#8220;%s&#8221;"
+msgstr ""
+
+#: core/vendor/breadcrumbs/breadcrumbs.php:252
+#. Translators: %s is the page number.
+msgid "Page %s"
+msgstr ""
+
+#: core/vendor/breadcrumbs/breadcrumbs.php:254
+#. Translators: Minute archive title. %s is the minute time format.
+msgid "Minute %s"
+msgstr ""
+
+#: core/vendor/breadcrumbs/breadcrumbs.php:256
+#. Translators: Weekly archive title. %s is the week date format.
+msgid "Week %s"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:25
+msgid ""
+"Widget to display advertisement. Recommended to use in Advertisement Below "
+"Slider area"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:27
+msgid "AE: Advertisement"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:229
+#: core/widgets/ae-cta-widget.php:196
+msgid "50%"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:230
+#: core/widgets/ae-cta-widget.php:197
+msgid "OFF"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:231
+msgid "Start Shopping"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:268
+#: core/widgets/ae-contact-widget.php:204 core/widgets/ae-cta-widget.php:234
+#: core/widgets/ae-featured-categories-widget.php:222
+#: core/widgets/ae-features-widget.php:205
+#: core/widgets/ae-features-widget.php:228
+#: core/widgets/ae-features-widget.php:251
+#: core/widgets/ae-latest-news-widget.php:160
+#: core/widgets/ae-latest-products-widget.php:209
+#: core/widgets/ae-newsletter-widget.php:146
+#: core/widgets/ae-social-links-widget.php:94
+msgid "Title:"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:272
+#: core/widgets/ae-cta-widget.php:240 core/widgets/ae-newsletter-widget.php:152
+msgid "Sub Title:"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:276
+#: core/widgets/ae-cta-widget.php:246
+msgid "Offer Percent:"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:280
+#: core/widgets/ae-cta-widget.php:252
+msgid "Offer Text:"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:285
+#: core/widgets/ae-cta-widget.php:281
+msgid "Primary Button Text:"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:289
+#: core/widgets/ae-cta-widget.php:287
+msgid "Primary Button URL:"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:294
+#: core/widgets/ae-cta-widget.php:258
+msgid "Content Position:"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:306
+#: core/widgets/ae-cta-widget.php:270
+msgid "Content style:"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:319
+#: core/widgets/ae-cta-widget.php:295
+msgid "Background Image:"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:323
+#: core/widgets/ae-cta-widget.php:303
+msgid "Preview"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:325
+#: core/widgets/ae-cta-widget.php:306
+msgid "Upload"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:325
+#: core/widgets/ae-cta-widget.php:307
+msgid "Select Background Image"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:325
+#: core/widgets/ae-cta-widget.php:308
+msgid "Choose Image"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:331
+#: core/widgets/ae-cta-widget.php:317
+msgid "Enable parallax background"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:335
+msgid "Disable overlay of the image"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:381
+#: core/widgets/ae-cta-widget.php:365
+msgid "Style One"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:382
+#: core/widgets/ae-cta-widget.php:366
+msgid "Style Two"
+msgstr ""
+
+#: core/widgets/ae-contact-widget.php:20
+msgid ""
+"Widget to display contact informations like address, email and phone with "
+"icon. Recommended to use in footer or sidebar only"
+msgstr ""
+
+#: core/widgets/ae-contact-widget.php:22
+msgid "AE: Contact"
+msgstr ""
+
+#: core/widgets/ae-contact-widget.php:211
+#: core/widgets/ae-features-widget.php:190
+msgid ""
+"ET-LINE icons are used for icon of each blocks. You can find icon code "
+"%1$shere%2$s."
+msgstr ""
+
+#: core/widgets/ae-contact-widget.php:216
+msgid "Block #1"
+msgstr ""
+
+#: core/widgets/ae-contact-widget.php:220
+#: core/widgets/ae-contact-widget.php:236
+#: core/widgets/ae-contact-widget.php:252
+#: core/widgets/ae-contact-widget.php:268
+#: core/widgets/ae-features-widget.php:199
+#: core/widgets/ae-features-widget.php:222
+#: core/widgets/ae-features-widget.php:245
+msgid "Icon:"
+msgstr ""
+
+#: core/widgets/ae-contact-widget.php:226
+#: core/widgets/ae-contact-widget.php:242
+#: core/widgets/ae-contact-widget.php:258
+#: core/widgets/ae-contact-widget.php:274
+msgid "Text:"
+msgstr ""
+
+#: core/widgets/ae-contact-widget.php:232
+msgid "Block #2"
+msgstr ""
+
+#: core/widgets/ae-contact-widget.php:248
+msgid "Block #3"
+msgstr ""
+
+#: core/widgets/ae-contact-widget.php:264
+msgid "Block #4"
+msgstr ""
+
+#: core/widgets/ae-cta-widget.php:27
+msgid "Call To Action Widget"
+msgstr ""
+
+#: core/widgets/ae-cta-widget.php:29
+msgid "AE: CTA"
+msgstr ""
+
+#: core/widgets/ae-cta-widget.php:200
+msgid "Purchase Now"
+msgstr ""
+
+#: core/widgets/ae-featured-categories-widget.php:22
+msgid "Widget to display featured categories of Woo-Commerce with carousel"
+msgstr ""
+
+#: core/widgets/ae-featured-categories-widget.php:25
+msgid "AE: Featured Categories"
+msgstr ""
+
+#: core/widgets/ae-featured-categories-widget.php:211
+msgid "View Details"
+msgstr ""
+
+#: core/widgets/ae-featured-categories-widget.php:229
+#: core/widgets/ae-latest-news-widget.php:164
+#: core/widgets/ae-latest-products-widget.php:214
+msgid "Select Category:"
+msgstr ""
+
+#: core/widgets/ae-featured-categories-widget.php:268
+msgid "No product categories found"
+msgstr ""
+
+#: core/widgets/ae-featured-categories-widget.php:274
+msgid "Categories selected here will be used as featured category at frontend."
+msgstr ""
+
+#: core/widgets/ae-featured-categories-widget.php:279
+msgid "View Detail Text:"
+msgstr ""
+
+#: core/widgets/ae-featured-categories-widget.php:289
+msgid "Show Product Counts"
+msgstr ""
+
+#: core/widgets/ae-featured-categories-widget.php:296
+#: core/widgets/ae-latest-products-widget.php:251
+msgid "Disable Carousel Mode"
+msgstr ""
+
+#: core/widgets/ae-featured-categories-widget.php:299
+#: core/widgets/ae-latest-products-widget.php:254
+#: core/widgets/ae-newsletter-widget.php:167
+msgid "Background Color"
+msgstr ""
+
+#: core/widgets/ae-features-widget.php:19
+msgid ""
+"Widget to display features with icon and description including one main "
+"image."
+msgstr ""
+
+#: core/widgets/ae-features-widget.php:21
+msgid "AE: Features"
+msgstr ""
+
+#: core/widgets/ae-features-widget.php:195
+msgid "Feature #1"
+msgstr ""
+
+#: core/widgets/ae-features-widget.php:212
+#: core/widgets/ae-features-widget.php:235
+#: core/widgets/ae-features-widget.php:258
+msgid "Short Description:"
+msgstr ""
+
+#: core/widgets/ae-features-widget.php:218
+msgid "Feature #2"
+msgstr ""
+
+#: core/widgets/ae-features-widget.php:241
+msgid "Feature #3"
+msgstr ""
+
+#: core/widgets/ae-latest-news-widget.php:19
+msgid ""
+"Widget to dispaly latest posts with thumbnail, title, short content and "
+"read more link"
+msgstr ""
+
+#: core/widgets/ae-latest-news-widget.php:22
+msgid "AE: Latest News"
+msgstr ""
+
+#: core/widgets/ae-latest-news-widget.php:174
+#: core/widgets/ae-latest-products-widget.php:224
+msgid "All Categories"
+msgstr ""
+
+#: core/widgets/ae-latest-news-widget.php:180
+msgid "Exclude Categories:"
+msgstr ""
+
+#: core/widgets/ae-latest-news-widget.php:183
+msgid ""
+"Enter category id seperated with comma. Posts from these categories will be "
+"excluded from latest post listing."
+msgstr ""
+
+#: core/widgets/ae-latest-news-widget.php:189
+msgid "Excerpt Length:"
+msgstr ""
+
+#: core/widgets/ae-latest-news-widget.php:196
+msgid "Hide Posted Date"
+msgstr ""
+
+#: core/widgets/ae-latest-products-widget.php:20
+msgid ""
+"Widget to display latest product or featured products of Woo-Commerce with "
+"carousel"
+msgstr ""
+
+#: core/widgets/ae-latest-products-widget.php:23
+msgid "AE: Products Carousel"
+msgstr ""
+
+#: core/widgets/ae-latest-products-widget.php:231
+msgid "Product Type:"
+msgstr ""
+
+#: core/widgets/ae-latest-products-widget.php:244
+msgid "Number of Products:"
+msgstr ""
+
+#: core/widgets/ae-latest-products-widget.php:275
+msgid "Latest"
+msgstr ""
+
+#: core/widgets/ae-latest-products-widget.php:276
+msgid "Featured"
+msgstr ""
+
+#: core/widgets/ae-newsletter-widget.php:26
+msgid "Newsletter Widget"
+msgstr ""
+
+#: core/widgets/ae-newsletter-widget.php:28
+msgid "AE: Newsletter"
+msgstr ""
+
+#: core/widgets/ae-newsletter-widget.php:62
+msgid "newsletter"
+msgstr ""
+
+#: core/widgets/ae-newsletter-widget.php:158
+msgid "Newsletter Shortcode:"
+msgstr ""
+
+#: core/widgets/ae-newsletter-widget.php:163
+msgid "Shortcode of MailChimp or other mailing applications can be used."
+msgstr ""
+
+#: core/widgets/ae-social-links-widget.php:25
+msgid "Social Icons Widget"
+msgstr ""
+
+#: core/widgets/ae-social-links-widget.php:27
+msgid "AE: Social"
+msgstr ""
+
+#: core/widgets/ae-social-links-widget.php:100
+msgid ""
+"Social menu is not set. Please create menu and assign it to Social Theme "
+"Location."
+msgstr ""
+
+#: core/widgets/widgets.php:109
+msgid "Blog Sidebar"
+msgstr ""
+
+#: core/widgets/widgets.php:111
+msgid "Add widgets here to appear in Sidebar."
+msgstr ""
+
+#: core/widgets/widgets.php:123
+msgid "Widgets added here will appear in sidebar of shop pages only."
+msgstr ""
+
+#: core/widgets/widgets.php:133
+msgid "Advertisement (Below Slider)"
+msgstr ""
+
+#: core/widgets/widgets.php:135
+msgid ""
+"Add widgets here to appear in advertisement area below main slider of home "
+"page"
+msgstr ""
+
+#: core/widgets/widgets.php:142
+msgid "Homepage Widget Area"
+msgstr ""
+
+#: core/widgets/widgets.php:144
+msgid "Add widgets here to appear in Home Page Widget Area."
+msgstr ""
+
+#: core/widgets/widgets.php:151 core/widgets/widgets.php:159
+#: core/widgets/widgets.php:167 core/widgets/widgets.php:175
+msgid "Footer %d"
+msgstr ""
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr ""
+
+#: template-parts/content-none.php:25
+#. translators: 1: link to WP admin new post page.
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/content-none.php:38
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+
+#: template-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+
+#: template-parts/content-page.php:27
+#. translators: %s: Name of current post.
+msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
+msgstr ""
+
+#: template-parts/content-page.php:31 template-parts/content.php:51
+msgid "Pages:"
+msgstr ""
+
+#: template-parts/content-page.php:43
+#. translators: %s: Name of current post
+msgid "Edit %s"
+msgstr ""
+
+#: template-parts/content.php:40
+#. translators: %s: Name of current post. Only visible to screen readers
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr ""
+
+#: template-parts/home-widgets.php:26
+#. translators: 1: link to WP admin new post page.
+msgid ""
+"No widgets found. Please add widgets to Home Page Widget Area. <a "
+"href=\"%1$s\">Get started here</a>."
+msgstr ""
+
+#: template-parts/home-widgets.php:39
+msgid "No widgets found. Please add widgets to Home Page Widget Area."
+msgstr ""
+
+#. Theme Name of the plugin/theme
+msgid "Agency Ecommerce"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid ""
+"https://mantrabrain.com/downloads/agency-ecommerce-wordpress-woocommerce-"
+"theme/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"Agency Ecommerce is a powerful, dynamic and highly customized WordPress "
+"multipurpose e-commerce theme."
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "mantrabrain"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "https://www.mantrabrain.com/"
+msgstr ""
+
+#: comments.php:32
+#. translators: 1: number of comments, 2: post title
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+msgstr[1] ""
+
 #: core/helpers.php:58
+#. translators: If there are characters in your language that are not supported
+#. by Barlow, translate this to 'off'. Do not translate into your own language.
 msgctxt "Barlow font: on or off"
 msgid "on"
 msgstr ""
 
 #: core/helpers.php:63
+#. translators: If there are characters in your language that are not supported
+#. by Playfair Display, translate this to 'off'. Do not translate into your own
+#. language.
 msgctxt "Playfair Display font: on or off"
 msgid "on"
 msgstr ""
@@ -582,1220 +1002,71 @@ msgctxt "page setting"
 msgid "My account"
 msgstr ""
 
-#: core/helpers.php:198
-#, php-format
-msgid "%1$s page does not contain %2$s shortcode."
-msgstr ""
-
-#: core/helpers.php:201
-#, php-format
-msgid "%s page is not set."
-msgstr ""
-
-#: core/hooks.php:123
-msgid "Log Out"
-msgstr ""
-
-#: core/hooks.php:209
+#: core/hooks/class-agency-ecommerce-header-hooks.php:237
 msgctxt "placeholder"
 msgid "Search Products &hellip;"
 msgstr ""
 
-#: core/hooks.php:257
+#: core/hooks/class-agency-ecommerce-header-hooks.php:285
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: core/hooks.php:586
-#, php-format
-msgid "%1$s by %2$s"
-msgstr ""
-
-#: core/template-functions.php:249 core/theme-info/about.php:118
-msgid "WooCommerce"
-msgstr ""
-
-#: core/template-functions.php:254 core/theme-info/about.php:140
-#: core/theme-info/about.php:157
-msgid "One Click Demo Import"
-msgstr ""
-
-#: core/template-functions.php:259
-msgid "MailChimp for WordPress"
-msgstr ""
-
-#: core/template-functions.php:264
-msgid "Contact Form 7"
-msgstr ""
-
-#: core/template-functions.php:269
-msgid "YITH WooCommerce Wishlist"
-msgstr ""
-
-#: core/template-functions.php:274
-msgid "Video Tab For WooCommerce"
-msgstr ""
-
 #: core/template-tags.php:42 core/template-tags.php:82
+#. translators: used between list items, there is a space after the comma
 msgctxt "list item separator"
 msgid ", "
 msgstr ""
 
-#: core/template-tags.php:57
-#, php-format
-msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+#: core/vendor/breadcrumbs/breadcrumbs.php:245
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
 msgstr ""
 
-#: core/template-tags.php:92
-#, php-format
-msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+#: core/vendor/breadcrumbs/breadcrumbs.php:708
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
 msgstr ""
 
-#: core/tgm/class-tgm-plugin-activation.php:327
-msgid "Install Required Plugins"
+#: core/vendor/breadcrumbs/breadcrumbs.php:725
+msgctxt "minute archives time format"
+msgid "i"
 msgstr ""
 
-#: core/tgm/class-tgm-plugin-activation.php:328
-msgid "Install Plugins"
+#: core/vendor/breadcrumbs/breadcrumbs.php:742
+msgctxt "hour archives time format"
+msgid "g a"
 msgstr ""
 
-#: core/tgm/class-tgm-plugin-activation.php:330
-#, php-format
-msgid "Installing Plugin: %s"
+#: core/vendor/breadcrumbs/breadcrumbs.php:758
+#: core/vendor/breadcrumbs/breadcrumbs.php:787
+#: core/vendor/breadcrumbs/breadcrumbs.php:814
+#: core/vendor/breadcrumbs/breadcrumbs.php:841
+#: core/vendor/breadcrumbs/breadcrumbs.php:1180
+msgctxt "yearly archives date format"
+msgid "Y"
 msgstr ""
 
-#: core/tgm/class-tgm-plugin-activation.php:332
-#, php-format
-msgid "Updating Plugin: %s"
+#: core/vendor/breadcrumbs/breadcrumbs.php:759
+#: core/vendor/breadcrumbs/breadcrumbs.php:815
+#: core/vendor/breadcrumbs/breadcrumbs.php:1184
+msgctxt "monthly archives date format"
+msgid "F"
 msgstr ""
 
-#: core/tgm/class-tgm-plugin-activation.php:333
-msgid "Something went wrong with the plugin API."
+#: core/vendor/breadcrumbs/breadcrumbs.php:760
+#: core/vendor/breadcrumbs/breadcrumbs.php:1188
+msgctxt "daily archives date format"
+msgid "j"
 msgstr ""
 
-#: core/tgm/class-tgm-plugin-activation.php:336
-#, php-format
-msgid "This theme requires the following plugin: %1$s."
-msgid_plural "This theme requires the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: core/tgm/class-tgm-plugin-activation.php:342
-#, php-format
-msgid "This theme recommends the following plugin: %1$s."
-msgid_plural "This theme recommends the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: core/tgm/class-tgm-plugin-activation.php:348
-#, php-format
-msgid ""
-"The following plugin needs to be updated to its latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgid_plural ""
-"The following plugins need to be updated to their latest version to ensure "
-"maximum compatibility with this theme: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: core/tgm/class-tgm-plugin-activation.php:354
-#, php-format
-msgid "There is an update available for: %1$s."
-msgid_plural "There are updates available for the following plugins: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: core/tgm/class-tgm-plugin-activation.php:360
-#, php-format
-msgid "The following required plugin is currently inactive: %1$s."
-msgid_plural "The following required plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: core/tgm/class-tgm-plugin-activation.php:366
-#, php-format
-msgid "The following recommended plugin is currently inactive: %1$s."
-msgid_plural "The following recommended plugins are currently inactive: %1$s."
-msgstr[0] ""
-msgstr[1] ""
-
-#: core/tgm/class-tgm-plugin-activation.php:371
-msgid "Begin installing plugin"
-msgid_plural "Begin installing plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: core/tgm/class-tgm-plugin-activation.php:376
-msgid "Begin updating plugin"
-msgid_plural "Begin updating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: core/tgm/class-tgm-plugin-activation.php:381
-msgid "Begin activating plugin"
-msgid_plural "Begin activating plugins"
-msgstr[0] ""
-msgstr[1] ""
-
-#: core/tgm/class-tgm-plugin-activation.php:385
-msgid "Return to Required Plugins Installer"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:386
-#: core/tgm/class-tgm-plugin-activation.php:827
-#: core/tgm/class-tgm-plugin-activation.php:2533
-#: core/tgm/class-tgm-plugin-activation.php:3580
-msgid "Return to the Dashboard"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:387
-#: core/tgm/class-tgm-plugin-activation.php:3159
-msgid "Plugin activated successfully."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:388
-#: core/tgm/class-tgm-plugin-activation.php:2952
-msgid "The following plugin was activated successfully:"
-msgid_plural "The following plugins were activated successfully:"
-msgstr[0] ""
-msgstr[1] ""
-
-#: core/tgm/class-tgm-plugin-activation.php:390
-#, php-format
-msgid "No action taken. Plugin %1$s was already active."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:392
-#, php-format
-msgid ""
-"Plugin not activated. A higher version of %s is needed for this theme. Please "
-"update the plugin."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:394
-#, php-format
-msgid "All plugins installed and activated successfully. %1$s"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:395
-msgid "Dismiss this notice"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:396
-msgid ""
-"There are one or more required or recommended plugins to install, update or "
-"activate."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:397
-msgid "Please contact the administrator of this site for help."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:522
-msgid "This plugin needs to be updated to be compatible with your theme."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:523
-msgid "Update Required"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:934
-msgid ""
-"The remote plugin package does not contain a folder with the desired slug and "
-"renaming did not work."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:934
-#: core/tgm/class-tgm-plugin-activation.php:937
-msgid ""
-"Please contact the plugin provider and ask them to package their plugin "
-"according to the WordPress guidelines."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:937
-msgid ""
-"The remote plugin package consists of more than one file, but the files are not "
-"packaged in a folder."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:1121
-#: core/tgm/class-tgm-plugin-activation.php:2948
-msgctxt "plugin A *and* plugin B"
-msgid "and"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:1982
-#, php-format
-msgid "TGMPA v%s"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2273
-msgid "Required"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2276
-msgid "Recommended"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2292
-msgid "WordPress Repository"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2295
-msgid "External Source"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2298
-msgid "Pre-Packaged"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2315
-msgid "Not Installed"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2319
-msgid "Installed But Not Activated"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2321
-msgid "Active"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2327
-msgid "Required Update not Available"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2330
-msgid "Requires Update"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2333
-msgid "Update recommended"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2342
-#, php-format
-msgctxt "Install/Update Status"
-msgid "%1$s, %2$s"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2388
-#, php-format
-msgctxt "plugins"
-msgid "All <span class=\"count\">(%s)</span>"
-msgid_plural "All <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2392
-#, php-format
-msgid "To Install <span class=\"count\">(%s)</span>"
-msgid_plural "To Install <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2396
-#, php-format
-msgid "Update Available <span class=\"count\">(%s)</span>"
-msgid_plural "Update Available <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2400
-#, php-format
-msgid "To Activate <span class=\"count\">(%s)</span>"
-msgid_plural "To Activate <span class=\"count\">(%s)</span>"
-msgstr[0] ""
-msgstr[1] ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2482
-msgctxt "as in: \"version nr unknown\""
-msgid "unknown"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2490
-msgid "Installed version:"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2498
-msgid "Minimum required version:"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2510
-msgid "Available version:"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2533
-msgid "No plugins to install, update or activate."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2547
-msgid "Plugin"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2548
-msgid "Source"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2549
-msgid "Type"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2553
-msgid "Version"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2554
-msgid "Status"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2603
-#, php-format
-msgid "Install %2$s"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2608
-#, php-format
-msgid "Update %2$s"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2614
-#, php-format
-msgid "Activate %2$s"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2684
-msgid "Upgrade message from the plugin author:"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2717
-#: core/theme-info/class-about.php:561
-msgid "Install"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2723
-msgid "Update"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2726
-#: core/theme-info/class-about.php:565
-msgid "Activate"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2757
-msgid "No plugins were selected to be installed. No action taken."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2759
-msgid "No plugins were selected to be updated. No action taken."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2800
-msgid "No plugins are available to be installed at this time."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2802
-msgid "No plugins are available to be updated at this time."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2908
-msgid "No plugins were selected to be activated. No action taken."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:2934
-msgid "No plugins are available to be activated at this time."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:3158
-msgid "Plugin activation failed."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:3498
-#, php-format
-msgid "Updating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:3501
-#, php-format
-msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:3503
-#, php-format
-msgid "The installation of %1$s failed."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:3507
-msgid ""
-"The installation and activation process is starting. This process may take a "
-"while on some hosts, so please be patient."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:3509
-#, php-format
-msgid "%1$s installed and activated successfully."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:3509
-#: core/tgm/class-tgm-plugin-activation.php:3517
-msgid "Show Details"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:3509
-#: core/tgm/class-tgm-plugin-activation.php:3517
-msgid "Hide Details"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:3510
-msgid "All installations and activations have been completed."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:3512
-#, php-format
-msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:3515
-msgid ""
-"The installation process is starting. This process may take a while on some "
-"hosts, so please be patient."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:3517
-#, php-format
-msgid "%1$s installed successfully."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:3518
-msgid "All installations have been completed."
-msgstr ""
-
-#: core/tgm/class-tgm-plugin-activation.php:3520
-#, php-format
-msgid "Installing Plugin %1$s (%2$d/%3$d)"
-msgstr ""
-
-#: core/theme-info/about.php:9 core/theme-info/about.php:10
-msgid "About Agency Ecommerce"
-msgstr ""
-
-#: core/theme-info/about.php:13
-#, php-format
-msgid "Welcome to %s - "
-msgstr ""
-
-#: core/theme-info/about.php:16
-#, php-format
-msgid ""
-"We hope this page will help you to setup %1$s with few clicks. We believe you "
-"will find it easy to use and perfect for your website development."
-msgstr ""
-
-#: core/theme-info/about.php:21
-msgid "Theme Details"
-msgstr ""
-
-#: core/theme-info/about.php:25
-msgid "View Demo"
-msgstr ""
-
-#: core/theme-info/about.php:29 core/theme-info/about.php:175
-msgid "View Documentation"
-msgstr ""
-
-#: core/theme-info/about.php:33
-msgid "Rate This Theme"
-msgstr ""
-
-#: core/theme-info/about.php:37
-msgid "Upgrade To Pro Theme"
-msgstr ""
-
-#: core/theme-info/about.php:45
-msgid "Getting Started"
-msgstr ""
-
-#: core/theme-info/about.php:46 core/theme-info/about.php:65
-msgid "Recommended Actions"
-msgstr ""
-
-#: core/theme-info/about.php:47
-msgid "Useful Plugins"
-msgstr ""
-
-#: core/theme-info/about.php:48
-msgid "Demo Content"
-msgstr ""
-
-#: core/theme-info/about.php:49
-msgid "Support"
-msgstr ""
-
-#: core/theme-info/about.php:50
-msgid "FREE VS. PRO"
-msgstr ""
-
-#: core/theme-info/about.php:56 core/theme-info/about.php:172
-msgid "Theme Documentation"
-msgstr ""
-
-#: core/theme-info/about.php:57
-msgid ""
-"Find step by step instructions with video documentation to setup theme easily."
-msgstr ""
-
-#: core/theme-info/about.php:58
-msgid "View documentation"
-msgstr ""
-
-#: core/theme-info/about.php:66
-msgid ""
-"We recommend few steps to take so that you can get complete site like shown in "
-"demo."
-msgstr ""
-
-#: core/theme-info/about.php:67
-msgid "Check recommended actions"
-msgstr ""
-
-#: core/theme-info/about.php:74
-msgid "Customize Everything"
-msgstr ""
-
-#: core/theme-info/about.php:75
-msgid "Start customizing every aspect of the website with customizer."
-msgstr ""
-
-#: core/theme-info/about.php:76
-msgid "Go to Customizer"
-msgstr ""
-
-#: core/theme-info/about.php:84 core/theme-info/about.php:191
-msgid "Youtube Video Tutorials"
-msgstr ""
-
-#: core/theme-info/about.php:85 core/theme-info/about.php:193
-msgid ""
-"Please check our youtube channel for video instructions of Agency Ecommerce setup "
-"and customization."
-msgstr ""
-
-#: core/theme-info/about.php:86 core/theme-info/about.php:194
-msgid "Video Tutorials"
-msgstr ""
-
-#: core/theme-info/about.php:94 core/theme-info/about.php:181
-msgid "Pro Version"
-msgstr ""
-
-#: core/theme-info/about.php:95 core/theme-info/about.php:184
-msgid "Upgrade to pro version for additional features and options."
-msgstr ""
-
-#: core/theme-info/about.php:96 core/theme-info/about.php:185
-msgid "View Pro Version"
-msgstr ""
-
-#: core/theme-info/about.php:104 core/theme-info/about.php:106
-#: core/theme-info/about.php:163 core/theme-info/about.php:166
-msgid "Contact Support"
-msgstr ""
-
-#: core/theme-info/about.php:105 core/theme-info/about.php:165
-msgid ""
-"If you have any problem, feel free to create ticket on our dedicated Support "
-"forum."
-msgstr ""
-
-#: core/theme-info/about.php:119
-msgid "Please install WooCommerce plugin."
-msgstr ""
-
-#: core/theme-info/about.php:125
-msgid "WooCommerce Pages"
-msgstr ""
-
-#: core/theme-info/about.php:126
-#, php-format
-msgid "Please make sure all WooCommerce pages are set properly. %1$s"
-msgstr ""
-
-#: core/theme-info/about.php:126
-msgid "Reference"
-msgstr ""
-
-#: core/theme-info/about.php:132
-msgid "Setting Static Front Page"
-msgstr ""
-
-#: core/theme-info/about.php:133
-msgid ""
-"Create a new page to display on front page ( Ex: Home ) and assign \"Home\" "
-"template. Select A static page then Front page and Posts page to display front "
-"page specific sections. Note: Static page will be set automatically when you "
-"import demo content."
-msgstr ""
-
-#: core/theme-info/about.php:136
-msgid "Static Front Page"
-msgstr ""
-
-#: core/theme-info/about.php:141
-msgid ""
-"Please install the One Click Demo Import plugin to import the demo content. "
-"After activation go to Appearance >> Import Demo Data and import it."
-msgstr ""
-
-#: core/theme-info/about.php:151
-msgid ""
-"This theme supports some helpful WordPress plugins to enhance your website."
-msgstr ""
-
-#: core/theme-info/about.php:152
-msgid "Useful Plugins List:"
-msgstr ""
-
-#: core/theme-info/about.php:157
-#, php-format
-msgid ""
-"Install %1$s plugin to import demo content. Demo data are bundled within the "
-"theme, Please make sure plugin is installed and activated. After plugin "
-"activation, go to Import Demo Data menu under Appearance and import it."
-msgstr ""
-
-#: core/theme-info/about.php:174
-msgid ""
-"Kindly check our theme documentation for detailed information and video "
-"instructions."
-msgstr ""
-
-#: core/theme-info/about.php:200 core/theme-info/about.php:203
-msgid "Customization Request"
-msgstr ""
-
-#: core/theme-info/about.php:202
-msgid ""
-"We have dedicated team members for theme customization. Feel free to contact us "
-"any time if you need any customization service."
-msgstr ""
-
-#: core/theme-info/about.php:209
-msgid "Child Theme"
-msgstr ""
-
-#: core/theme-info/about.php:211
-msgid ""
-"If you want to customize theme file, you should use child theme rather than "
-"modifying theme file itself."
-msgstr ""
-
-#: core/theme-info/about.php:212
-msgid "About child theme"
-msgstr ""
-
-#: core/theme-info/about.php:223
-msgid "WooCommerce Ready"
-msgstr ""
-
-#: core/theme-info/about.php:224
-msgid "Theme supports/works with WooCommerce plugin"
-msgstr ""
-
-#: core/theme-info/about.php:225 core/theme-info/about.php:226
-#: core/theme-info/about.php:233 core/theme-info/about.php:244
-#: core/theme-info/about.php:245 core/theme-info/about.php:251
-#: core/theme-info/about.php:256 core/theme-info/about.php:257
-#: core/theme-info/about.php:263 core/theme-info/about.php:264
-#: core/theme-info/about.php:270 core/theme-info/about.php:276
-#: core/theme-info/about.php:287
-msgid "yes"
-msgstr ""
-
-#: core/theme-info/about.php:230
-msgid "Slider Support"
-msgstr ""
-
-#: core/theme-info/about.php:231
-msgid "Supports Slider Revolution, Layer Slider, Hero Slider, etc."
-msgstr ""
-
-#: core/theme-info/about.php:232 core/theme-info/about.php:250
-#: core/theme-info/about.php:269 core/theme-info/about.php:275
-msgid "no"
-msgstr ""
-
-#: core/theme-info/about.php:236
-msgid "Google Fonts"
-msgstr ""
-
-#: core/theme-info/about.php:237
-msgid "Google fonts options for changing the overall site fonts"
-msgstr ""
-
-#: core/theme-info/about.php:239
-msgid "100+"
-msgstr ""
-
-#: core/theme-info/about.php:242
-msgid "Primary Color Option"
-msgstr ""
-
-#: core/theme-info/about.php:243
-msgid "Option to change primary color of the site"
-msgstr ""
-
-#: core/theme-info/about.php:248
-msgid "Advance Color Options"
-msgstr ""
-
-#: core/theme-info/about.php:249
-msgid ""
-"Options to change color of individual sections like top header, site title, "
-"menu, footer, etc of the site"
-msgstr ""
-
-#: core/theme-info/about.php:254
-msgid "Latest Product Carousel"
-msgstr ""
-
-#: core/theme-info/about.php:255
-msgid "Widget to display latest products in carousel mode"
-msgstr ""
-
-#: core/theme-info/about.php:261
-msgid "Featured Product Carousel"
-msgstr ""
-
-#: core/theme-info/about.php:262
-msgid "Widget to display featured products in carousel mode"
-msgstr ""
-
-#: core/theme-info/about.php:267
-msgid "Hide Footer Credit"
-msgstr ""
-
-#: core/theme-info/about.php:268
-msgid "Option to enable/disable Powerby(Designer) credit in footer"
-msgstr ""
-
-#: core/theme-info/about.php:273
-msgid "Override Footer Credit"
-msgstr ""
-
-#: core/theme-info/about.php:274
-msgid "Option to Override existing Powerby credit of footer"
-msgstr ""
-
-#: core/theme-info/about.php:279
-msgid "SEO"
-msgstr ""
-
-#: core/theme-info/about.php:280
-msgid "Developed with high skilled SEO tools."
-msgstr ""
-
-#: core/theme-info/about.php:285
-msgid "Support Forum"
-msgstr ""
-
-#: core/theme-info/about.php:286
-msgid ""
-"Highly experienced and dedicated support team for your help plus online chat."
-msgstr ""
-
-#: core/theme-info/about.php:288
-msgid "High Priority"
-msgstr ""
-
-#: core/theme-info/class-about.php:164
-#, php-format
-msgid ""
-"Welcome! Thank you for choosing %1$s! To fully take advantage of the best our "
-"theme can offer please make sure you visit our %2$swelcome page%3$s."
-msgstr ""
-
-#: core/theme-info/class-about.php:164
-#, php-format
-msgid "Get started with %s"
-msgstr ""
-
-#: core/theme-info/class-about.php:569
-msgid "Deactivate"
-msgstr ""
-
-#: core/theme-info/class-about.php:603
-msgid "Upgrade to Pro"
-msgstr ""
-
-#: core/theme-info/class-about.php:638
-msgid "Great, all recommended plugins are intalled and active."
-msgstr ""
-
-#: core/theme-info/class-about.php:646
-msgid "Manage Plugins"
-msgstr ""
-
-#: core/theme-info/class-about.php:761
-msgid "Agency Ecommerce"
-msgstr ""
-
-#: core/widgets/advertisement.php:25
-msgid ""
-"Widget to display advertisement. Recommended to use in Advertisement Below "
-"Slider area"
-msgstr ""
-
-#: core/widgets/advertisement.php:27
-msgid "AE: Advertisement"
-msgstr ""
-
-#: core/widgets/advertisement.php:222 core/widgets/cta.php:177
-msgid "50%"
-msgstr ""
-
-#: core/widgets/advertisement.php:223 core/widgets/cta.php:178
-msgid "OFF"
-msgstr ""
-
-#: core/widgets/advertisement.php:224
-msgid "Start Shopping"
-msgstr ""
-
-#: core/widgets/advertisement.php:260 core/widgets/contact.php:204
-#: core/widgets/cta.php:212 core/widgets/featured-categories.php:202
-#: core/widgets/features.php:220 core/widgets/features.php:243
-#: core/widgets/features.php:266 core/widgets/latest-news.php:165
-#: core/widgets/latest-products.php:201 core/widgets/newsletter.php:139
-#: core/widgets/social-links.php:94
-msgid "Title:"
-msgstr ""
-
-#: core/widgets/advertisement.php:264 core/widgets/cta.php:216
-#: core/widgets/newsletter.php:143
-msgid "Sub Title:"
-msgstr ""
-
-#: core/widgets/advertisement.php:268 core/widgets/cta.php:220
-msgid "Offer Percent:"
-msgstr ""
-
-#: core/widgets/advertisement.php:272 core/widgets/cta.php:224
-msgid "Offer Text:"
-msgstr ""
-
-#: core/widgets/advertisement.php:277 core/widgets/cta.php:229
-msgid "Primary Button Text:"
-msgstr ""
-
-#: core/widgets/advertisement.php:281 core/widgets/cta.php:233
-msgid "Primary Button URL:"
-msgstr ""
-
-#: core/widgets/advertisement.php:286
-msgid "Content Position:"
-msgstr ""
-
-#: core/widgets/advertisement.php:298
-msgid "Content style:"
-msgstr ""
-
-#: core/widgets/advertisement.php:311 core/widgets/cta.php:239
-msgid "Background Image:"
-msgstr ""
-
-#: core/widgets/advertisement.php:315 core/widgets/cta.php:243
-msgid "Preview"
-msgstr ""
-
-#: core/widgets/advertisement.php:317 core/widgets/cta.php:245
-msgid "Upload"
-msgstr ""
-
-#: core/widgets/advertisement.php:317 core/widgets/cta.php:245
-msgid "Select Background Image"
-msgstr ""
-
-#: core/widgets/advertisement.php:317 core/widgets/cta.php:245
-msgid "Choose Image"
+#: core/vendor/breadcrumbs/breadcrumbs.php:788
+msgctxt "weekly archives date format"
+msgid "W"
 msgstr ""
 
-#: core/widgets/advertisement.php:318 core/widgets/cta.php:246
+#: core/widgets/ae-advertisement-widget.php:326
+#: core/widgets/ae-cta-widget.php:309
 msgctxt "Remove Button"
 msgid "X"
-msgstr ""
-
-#: core/widgets/advertisement.php:323
-msgid "Disable overlay of the image"
-msgstr ""
-
-#: core/widgets/advertisement.php:368
-msgid "Style One"
-msgstr ""
-
-#: core/widgets/advertisement.php:369
-msgid "Style Two"
-msgstr ""
-
-#: core/widgets/contact.php:20
-msgid ""
-"Widget to display contact informations like address, email and phone with icon. "
-"Recommended to use in footer or sidebar only"
-msgstr ""
-
-#: core/widgets/contact.php:22
-msgid "AE: Contact"
-msgstr ""
-
-#: core/widgets/contact.php:211 core/widgets/features.php:205
-#, php-format
-msgid ""
-"ET-LINE icons are used for icon of each blocks. You can find icon code %1$shere"
-"%2$s."
-msgstr ""
-
-#: core/widgets/contact.php:216
-msgid "Block #1"
-msgstr ""
-
-#: core/widgets/contact.php:220 core/widgets/contact.php:236
-#: core/widgets/contact.php:252 core/widgets/contact.php:268
-#: core/widgets/features.php:214 core/widgets/features.php:237
-#: core/widgets/features.php:260
-msgid "Icon:"
-msgstr ""
-
-#: core/widgets/contact.php:226 core/widgets/contact.php:242
-#: core/widgets/contact.php:258 core/widgets/contact.php:274
-msgid "Text:"
-msgstr ""
-
-#: core/widgets/contact.php:232
-msgid "Block #2"
-msgstr ""
-
-#: core/widgets/contact.php:248
-msgid "Block #3"
-msgstr ""
-
-#: core/widgets/contact.php:264
-msgid "Block #4"
-msgstr ""
-
-#: core/widgets/cta.php:25
-msgid "Call To Action Widget"
-msgstr ""
-
-#: core/widgets/cta.php:27
-msgid "AE: CTA"
-msgstr ""
-
-#: core/widgets/cta.php:179
-msgid "Purchase Now"
-msgstr ""
-
-#: core/widgets/featured-categories.php:20
-msgid "Widget to display featured categories of Woo-Commerce with carousel"
-msgstr ""
-
-#: core/widgets/featured-categories.php:23
-msgid "AE: Featured Categories"
-msgstr ""
-
-#: core/widgets/featured-categories.php:192
-msgid "View Details"
-msgstr ""
-
-#: core/widgets/featured-categories.php:207
-#: core/widgets/latest-news.php:169 core/widgets/latest-products.php:206
-msgid "Select Category:"
-msgstr ""
-
-#: core/widgets/featured-categories.php:244
-msgid "No product categories found"
-msgstr ""
-
-#: core/widgets/featured-categories.php:250
-msgid "Categories selected here will be used as featured category at frontend."
-msgstr ""
-
-#: core/widgets/featured-categories.php:255
-msgid "View Detail Text:"
-msgstr ""
-
-#: core/widgets/featured-categories.php:261
-msgid "Show Product Counts"
-msgstr ""
-
-#: core/widgets/featured-categories.php:266
-#: core/widgets/latest-products.php:243
-msgid "Disable Carousel Mode"
-msgstr ""
-
-#: core/widgets/features.php:20
-msgid ""
-"Widget to display features with icon and description including one main image."
-msgstr ""
-
-#: core/widgets/features.php:22
-msgid "AE: Features"
-msgstr ""
-
-#: core/widgets/features.php:210
-msgid "Feature #1"
-msgstr ""
-
-#: core/widgets/features.php:227 core/widgets/features.php:250
-#: core/widgets/features.php:273
-msgid "Short Description:"
-msgstr ""
-
-#: core/widgets/features.php:233
-msgid "Feature #2"
-msgstr ""
-
-#: core/widgets/features.php:256
-msgid "Feature #3"
-msgstr ""
-
-#: core/widgets/latest-news.php:20
-msgid ""
-"Widget to dispaly latest posts with thumbnail, title, short content and read "
-"more link"
-msgstr ""
-
-#: core/widgets/latest-news.php:23
-msgid "AE: Latest News"
-msgstr ""
-
-#: core/widgets/latest-news.php:179 core/widgets/latest-products.php:216
-msgid "All Categories"
-msgstr ""
-
-#: core/widgets/latest-news.php:185
-msgid "Exclude Categories:"
-msgstr ""
-
-#: core/widgets/latest-news.php:188
-msgid ""
-"Enter category id seperated with comma. Posts from these categories will be "
-"excluded from latest post listing."
-msgstr ""
-
-#: core/widgets/latest-news.php:194
-msgid "Excerpt Length:"
-msgstr ""
-
-#: core/widgets/latest-news.php:201
-msgid "Hide Posted Date"
-msgstr ""
-
-#: core/widgets/latest-products.php:20
-msgid ""
-"Widget to display latest product or featured products of Woo-Commerce with "
-"carousel"
-msgstr ""
-
-#: core/widgets/latest-products.php:23
-msgid "AE: Products Carousel"
-msgstr ""
-
-#: core/widgets/latest-products.php:223
-msgid "Product Type:"
-msgstr ""
-
-#: core/widgets/latest-products.php:236
-msgid "Number of Products:"
-msgstr ""
-
-#: core/widgets/latest-products.php:261
-msgid "Latest"
-msgstr ""
-
-#: core/widgets/latest-products.php:262
-msgid "Featured"
-msgstr ""
-
-#: core/widgets/newsletter.php:25
-msgid "Newsletter Widget"
-msgstr ""
-
-#: core/widgets/newsletter.php:27
-msgid "AE: Newsletter"
-msgstr ""
-
-#: core/widgets/newsletter.php:57
-msgid "newsletter"
-msgstr ""
-
-#: core/widgets/newsletter.php:147
-msgid "Newsletter Shortcode:"
-msgstr ""
-
-#: core/widgets/newsletter.php:150
-msgid "Shortcode of MailChimp or other mailing applications can be used."
-msgstr ""
-
-#: core/widgets/social-links.php:25
-msgid "Social Icons Widget"
-msgstr ""
-
-#: core/widgets/social-links.php:27
-msgid "AE: Social"
-msgstr ""
-
-#: core/widgets/social-links.php:100
-msgid ""
-"Social menu is not set. Please create menu and assign it to Social Theme "
-"Location."
-msgstr ""
-
-#: template-parts/content-none.php:14
-msgid "Nothing Found"
-msgstr ""
-
-#: template-parts/content-none.php:25
-#, php-format
-msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: template-parts/content-none.php:38
-msgid ""
-"Sorry, but nothing matched your search terms. Please try again with some "
-"different keywords."
-msgstr ""
-
-#: template-parts/content-none.php:44
-msgid ""
-"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching "
-"can help."
-msgstr ""
-
-#: template-parts/content-page.php:28
-#, php-format
-msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
-msgstr ""
-
-#: template-parts/content-page.php:33 template-parts/content.php:51
-msgid "Pages:"
-msgstr ""
-
-#: template-parts/content-page.php:45
-#, php-format
-msgid "Edit %s"
-msgstr ""
-
-#: template-parts/content.php:40
-#, php-format
-msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
-msgstr ""
-
-#: template-parts/home-widgets.php:26
-#, php-format
-msgid ""
-"No widgets found. Please add widgets to Home Page Widget Area. <a href=\"%1$s"
-"\">Get started here</a>."
-msgstr ""
-
-#: template-parts/home-widgets.php:39
-msgid "No widgets found. Please add widgets to Home Page Widget Area."
 msgstr ""

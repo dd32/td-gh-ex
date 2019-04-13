@@ -21,6 +21,7 @@ if ( ! class_exists( 'Agency_Ecommerce_Latest_Products_Widget' ) ) :
     		);
 
 			parent::__construct( 'agency-ecommerce-latest-products', esc_html__( 'AE: Products Carousel', 'agency-ecommerce' ), $opts );
+
 	    }
 
 
@@ -36,7 +37,12 @@ if ( ! class_exists( 'Agency_Ecommerce_Latest_Products_Widget' ) ) :
 
 			$disable_carousel  	= ! empty( $instance['disable_carousel'] ) ? $instance['disable_carousel'] : 0;
 
-	        echo $args['before_widget']; ?>
+			$background_color  	= ! empty( $instance['background_color'] ) ? sanitize_hex_color($instance['background_color']) : '#e6e9ec';
+
+            $args['before_widget'] = str_replace('class="', 'style="background:' . $background_color . ' " class="', $args['before_widget']);
+
+            echo $args['before_widget'];
+            ?>
 
 	        <div class="latest-products-wrapper">
 
@@ -154,9 +160,9 @@ if ( ! class_exists( 'Agency_Ecommerce_Latest_Products_Widget' ) ) :
 
 	                            	wc_get_template_part( 'content', 'product' );
 
-								endwhile; 
+								endwhile;
 
-								woocommerce_reset_loop();
+                                wc_reset_loop();
 
 	                            wp_reset_postdata(); ?>
 
@@ -182,6 +188,7 @@ if ( ! class_exists( 'Agency_Ecommerce_Latest_Products_Widget' ) ) :
 			$instance['product_type'] 	    = sanitize_text_field( $new_instance['product_type'] );
 			$instance['product_number']  	= absint( $new_instance['product_number'] );
 			$instance['disable_carousel']   = (bool) $new_instance['disable_carousel'] ? 1 : 0;
+			$instance['background_color']   = isset($new_instance['background_color']) ? sanitize_hex_color($new_instance['background_color']) : 'e6e9ec';
 
 	        return $instance;
 	    }
@@ -194,6 +201,7 @@ if ( ! class_exists( 'Agency_Ecommerce_Latest_Products_Widget' ) ) :
 				'product_type'          => 'latest',
 				'product_number' 		=> 6,
 				'disable_carousel'   	=> 0,
+				'background_color'   	=> '#e6e9ec',
 
 	        ) );
 	        ?>
@@ -242,6 +250,12 @@ if ( ! class_exists( 'Agency_Ecommerce_Latest_Products_Widget' ) ) :
 	            <input class="checkbox" type="checkbox" <?php checked( $instance['disable_carousel'] ); ?> id="<?php echo $this->get_field_id( 'disable_carousel' ); ?>" name="<?php echo $this->get_field_name( 'disable_carousel' ); ?>" />
 	            <label for="<?php echo $this->get_field_id( 'disable_carousel' ); ?>"><?php esc_html_e( 'Disable Carousel Mode', 'agency-ecommerce' ); ?></label>
 	        </p>
+            <p>
+                <label for="<?php echo $this->get_field_id('background_color'); ?>"><?php esc_html_e('Background Color', 'agency-ecommerce'); ?></label><br>
+                <input type="text" name="<?php echo $this->get_field_name('background_color'); ?>" class="color-picker"
+                       id="<?php echo $this->get_field_id('background_color'); ?>"
+                       value="<?php echo esc_attr($instance['background_color']); ?>" data-default-color="#e6e9ec"/>
+            </p>
 
 	        <?php
 	    }

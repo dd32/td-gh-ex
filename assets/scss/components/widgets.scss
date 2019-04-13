@@ -1,0 +1,111 @@
+.widget {
+  margin: 30px 0 0;
+}
+
+.widget:first-child {
+  margin: 0;
+}
+
+/* Make sure select elements fit in widgets. */
+
+.widget select {
+  max-width: 100%;
+}
+
+.section-title,
+.section-title .seperator {
+  float: left;
+  width: 100%;
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.section-title .seperator {
+  margin-bottom: 5px;
+  display: none;
+}
+
+.section-title .seperator span {
+  display: inline-block;
+  position: relative;
+}
+
+.section-title .seperator span:before,
+.section-title .seperator span:after {
+  background-color: #ddd;
+  content: "";
+  height: 1px;
+  position: absolute;
+  top: 50%;
+  width: 60px;
+  position: absolute;
+}
+
+.section-title .seperator span:before {
+  right: 100%;
+}
+
+.section-title .seperator span:after {
+  left: 100%;
+}
+
+.section-title .seperator i {
+  color: #6c50fb;
+  font-size: 20px;
+  font-family: "FontAwesome";
+  padding: 5px 15px;
+  display: inline-block;
+}
+
+#home-page-widget-area section {
+  padding: 80px 0px;
+  margin: 0;
+  float: left;
+  width: 100%;
+}
+
+#home-page-widget-area .widget-title {
+  color: #0a0b0c;
+  display: block;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 35px;
+  overflow: hidden;
+  padding-left: 0px;
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+#home-page-widget-area .widget-title span {
+  position: relative;
+}
+
+#home-page-widget-area .widget-title span::before {
+  background-color: #fff;
+  content: "";
+  height: 1px;
+  position: absolute;
+  top: 0;
+  width: 100px;
+  right: 100%;
+  margin-right: 30px;
+  top: 46%;
+}
+
+#home-page-widget-area .widget-title span::after {
+  background-color: #fff;
+  content: "";
+  height: 1px;
+  position: absolute;
+  top: 0;
+  width: 100px;
+  left: 100%;
+  margin-left: 30px;
+  top: 46%;
+}
+
+#home-page-widget-area .bg_enabled .widget-title span::before,
+#home-page-widget-area .bg_enabled .widget-title span::after {
+  background-color: #6c50fb;
+}

@@ -10,7 +10,7 @@ if (1 !== absint($slider_status)) {
     return;
 }
 
-if (!( is_front_page()) && !is_page_template('templates/home-template.php')) {
+if (!(is_front_page()) && !is_page_template('templates/home-template.php')) {
     return;
 }
 
@@ -27,6 +27,7 @@ $slick_args = array(
     'arrows' => false,
     'slidesToShow' => 1,
     'slidesToScroll' => 1,
+    'adaptiveHeight' => (boolean)agency_ecommerce_get_option('slider_adaptive_height')
 );
 
 if (1 === absint($slider_autoplay_status)) {
@@ -70,56 +71,83 @@ $slider_args = array(
 
 $slider_posts = new WP_Query($slider_args);
 
+$special_menu = agency_ecommerce_get_option('special_menu');
+
+$enable_fullwidth_slider = (boolean) agency_ecommerce_get_option('enable_fullwidth_slider');
+
+$slider_class = 'main-slider';
+
+if ($special_menu) {
+
+    $slider_class .= ' special-menu-enable';
+}
+
 if ($slider_posts->have_posts()) :
     ?>
+    <?php $hide_caption = apply_filters('agency_ecommerce_slider_hide_caption', false);
+    if(!$enable_fullwidth_slider){
+    ?>
+    <div class="container">
+        <?php } ?>
 
-    <div class="main-slider" data-slick='<?php echo $slick_args_encoded; ?>'>
-
-        <?php
-        $count = 1;
-
-        while ($slider_posts->have_posts()) :
-
-            $slider_posts->the_post();
-
-            $caption_position = agency_ecommerce_get_option('caption_position_' . $count);
-
-            $readmore_text = agency_ecommerce_get_option('button_text_' . $count);
-
-            $readmore_link = agency_ecommerce_get_option('button_link_' . $count);
-
-            $image_array = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
-
-            ?>
-            <div class="item caption-position-<?php echo esc_attr($caption_position); ?>" style="background: url(<?php echo esc_url($image_array[0]); ?>); background-size: cover; background-position: center center;">
-
-                <div class="slider-caption">
-                    <div class="container">
-                        <div class="caption-wrap">
-                            <div class="caption-inner">
-                                <span><?php the_title(); ?></span>
-                                <div class="slider-meta"><?php the_content(); ?></div>
-                                <?php if (!empty($readmore_text) && !empty($readmore_link)) { ?>
-                                    <a href="<?php echo esc_url($readmore_link); ?>" class="button slider-button"><?php echo esc_html($readmore_text); ?></a>
-                                <?php }
-                                ?>
-                            </div>
-                        </div>
-                    </div><!-- .caption-wrap -->
-                </div><!-- .slider-caption -->
-
-            </div>
+        <div class="<?php echo esc_attr($slider_class); ?>" data-slick='<?php echo $slick_args_encoded; ?>'>
 
             <?php
-            $count++;
+            $count = 1;
 
-        endwhile;
+            while ($slider_posts->have_posts()) :
 
-        wp_reset_postdata();
-        ?>
+                $slider_posts->the_post();
 
-    </div> <!-- #main-slider -->
-    <?php
+                $caption_position = agency_ecommerce_get_option('caption_position_' . $count);
 
-    
-		endif;
+                $readmore_text = agency_ecommerce_get_option('button_text_' . $count);
+
+                $readmore_link = agency_ecommerce_get_option('button_link_' . $count);
+
+                $image_array = wp_get_attachment_image_src(get_post_thumbnail_id($post->ID), 'full');
+
+                ?>
+                <div class="item caption-position-<?php echo esc_attr($caption_position); ?>"
+                     style="background-image: url(<?php echo esc_url($image_array[0]); ?>); background-size: cover; background-position: center center;">
+
+                    <?php if (!$hide_caption) {
+                        ?>
+                        <div class="slider-caption">
+                            <div class="container">
+                                <div class="caption-wrap">
+                                    <div class="caption-inner">
+                                        <span><?php the_title(); ?></span>
+                                        <div class="slider-meta"><?php the_content(); ?></div>
+                                        <?php if (!empty($readmore_text) && !empty($readmore_link)) { ?>
+                                            <a href="<?php echo esc_url($readmore_link); ?>"
+                                               class="button slider-button"><?php echo esc_html($readmore_text); ?></a>
+                                        <?php }
+                                        ?>
+                                    </div>
+                                </div>
+                            </div><!-- .caption-wrap -->
+                        </div><!-- .slider-caption -->
+
+                    <?php } ?>
+
+                </div>
+
+                <?php
+                $count++;
+
+            endwhile;
+
+            wp_reset_postdata();
+            ?>
+
+        </div> <!-- #main-slider -->
+        <?php    if(!$enable_fullwidth_slider){
+            ?>
+            </div>
+        <?php } ?>
+
+<?php
+
+
+endif;

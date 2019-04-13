@@ -60,11 +60,13 @@ if (!class_exists('Agency_Ecommerce_Assets')) :
 
             if( 'widgets.php' === $hook ){
 
-                wp_enqueue_style( 'agency-ecommerce-admin', get_template_directory_uri() . '/core/widgets/css/admin.css', array(), '1.0.0' );
+                wp_enqueue_script('underscore');
+
+                wp_enqueue_style( 'agency-ecommerce-admin', get_template_directory_uri() . '/core/widgets/css/admin.css', array(), AGENCY_ECOMMERCE_THEME_VERSION );
 
                 wp_enqueue_media();
 
-                wp_enqueue_script( 'agency-ecommerce-admin', get_template_directory_uri() . '/core/widgets/js/admin.js', array( 'jquery' ), '1.0.0' );
+                wp_enqueue_script( 'agency-ecommerce-admin', get_template_directory_uri() . '/core/widgets/js/admin.js', array( 'jquery' ), AGENCY_ECOMMERCE_THEME_VERSION );
 
             }
 
@@ -81,7 +83,7 @@ if (!class_exists('Agency_Ecommerce_Assets')) :
 
             wp_enqueue_style( 'jquery-slick', get_template_directory_uri() . '/assets/lib/slick/slick.css', '', '1.6.0' );
 
-            wp_enqueue_style( 'agency-ecommerce-icons', get_template_directory_uri() . '/assets/lib/et-line/css/icons.css', '', '1.0.0' );
+            wp_enqueue_style( 'agency-ecommerce-icons', get_template_directory_uri() . '/assets/lib/et-line/css/icons.css', '', AGENCY_ECOMMERCE_THEME_VERSION );
 
             wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/lib/font-awesome/css/font-awesome.min.css', '', '4.7.0' );
 
@@ -106,7 +108,7 @@ if (!class_exists('Agency_Ecommerce_Assets')) :
 
             }
 
-            wp_enqueue_script( 'agency-ecommerce-custom', get_template_directory_uri() . '/assets/js/custom.js', array( 'jquery' ), '1.0.0', true );
+            wp_enqueue_script( 'agency-ecommerce-custom', get_template_directory_uri() . '/assets/js/custom.js', array( 'jquery' ), AGENCY_ECOMMERCE_THEME_VERSION, true );
 
             if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
                 wp_enqueue_script( 'comment-reply' );

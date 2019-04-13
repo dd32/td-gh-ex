@@ -5,270 +5,306 @@
  * @package Agency_Ecommerce
  */
 
-if ( ! class_exists( 'Agency_Ecommerce_Featured_Categories_Widget' ) ) :
+if (!class_exists('Agency_Ecommerce_Featured_Categories_Widget')) :
 
-	/**
-	 * Featured Categories widget class.
-	 *
-	 * @since 1.0.0
-	 */
-	class Agency_Ecommerce_Featured_Categories_Widget extends WP_Widget {
+    /**
+     * Featured Categories widget class.
+     *
+     * @since 1.0.0
+     */
+    class Agency_Ecommerce_Featured_Categories_Widget extends WP_Widget
+    {
 
-	    function __construct() {
-	    	$opts = array(
-				'classname'   => 'agency_ecommerce_widget_featured_categories',
-				'description' => esc_html__( 'Widget to display featured categories of Woo-Commerce with carousel', 'agency-ecommerce' ),
-    		);
+        function __construct()
+        {
+            $opts = array(
+                'classname' => 'agency_ecommerce_widget_featured_categories',
+                'description' => esc_html__('Widget to display featured categories of Woo-Commerce with carousel', 'agency-ecommerce'),
+            );
 
-			parent::__construct( 'agency-ecommerce-featured-categories', esc_html__( 'AE: Featured Categories', 'agency-ecommerce' ), $opts );
-	    }
+            parent::__construct('agency-ecommerce-featured-categories', esc_html__('AE: Featured Categories', 'agency-ecommerce'), $opts);
 
 
-	    function widget( $args, $instance ) {
+        }
 
-			$title             	= apply_filters( 'widget_title', empty( $instance['title'] ) ? '' : $instance['title'], $instance, $this->id_base );
 
-			$featured_cats 		= array_map( 'esc_attr', $instance['featured_cats'] );
+        function widget($args, $instance)
+        {
 
-			$view_details  		= ! empty( $instance['view_details'] ) ? esc_html( $instance['view_details'] ) : '';
+            $title = apply_filters('widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
 
-			$show_counts  	   	= ! empty( $instance['show_counts'] ) ? $instance['show_counts'] : 0;
+            $featured_cats = array_map('esc_attr', $instance['featured_cats']);
 
-			$disable_carousel  	= ! empty( $instance['disable_carousel'] ) ? $instance['disable_carousel'] : 0;
+            $view_details = !empty($instance['view_details']) ? esc_html($instance['view_details']) : '';
 
-	        echo $args['before_widget']; ?>
+            $show_counts = !empty($instance['show_counts']) ? $instance['show_counts'] : 0;
 
-	        <div class="latest-products-wrapper featured-categories-wrapper">
+            $disable_carousel = !empty($instance['disable_carousel']) ? $instance['disable_carousel'] : 0;
 
-        		<?php 
+            $background_color = !empty($instance['background_color']) ? sanitize_hex_color($instance['background_color']) : '#e6e9ec';
 
-        		if ( $title ) { 
+            $args['before_widget'] = str_replace('class="', 'style="background:' . $background_color . ' " class="', $args['before_widget']);
 
-        			echo $args['before_title'] . esc_html( $title ) . $args['after_title']; 
+            echo $args['before_widget']; ?>
 
-        		} 
+            <div class="latest-products-wrapper featured-categories-wrapper">
 
-		        $carousel_args = array(
-		        	'slidesToShow' 	=> 4,
-		        	'slidesToScroll'=> 4,
-		        	'dots'         	=> true,
-		        	'arrows'       	=> false,
-		        	'responsive'   	=> array(
-		        		array(
-		        			'breakpoint' => 1024,
-		        			'settings'   => array(
-		        				'slidesToShow' => 4,
-		        				),
-		        			),
-		        		array(
-		        			'breakpoint' => 992,
-		        			'settings'   => array(
-		        				'slidesToShow' 	=> 3,
-		        				'slidesToScroll'=> 3,
-		        				),
-		        			),
-		        		array(
-		        			'breakpoint' => 768,
-		        			'settings'   => array(
-		        				'slidesToShow' 	=> 2,
-		        				'slidesToScroll'=> 2,
-		        				),
-		        			),
-		        		array(
-		        			'breakpoint' => 479,
-		        			'settings'   => array(
-		        				'slidesToShow' 	=> 1,
-		        				'slidesToScroll'=> 1,
-		        				),
-		        			),
-		        		),
-		        	);
+                <?php
 
-		        $carousel_args_encoded = wp_json_encode( $carousel_args );
+                if ($title) {
 
-		        ?>
+                    echo $args['before_title'] . esc_html($title) . $args['after_title'];
 
-	        	<div class="inner-wrapper">
+                }
 
-			        <div class="products-carousel-wrap">
+                $carousel_args = array(
+                    'slidesToShow' => 4,
+                    'slidesToScroll' => 4,
+                    'dots' => true,
+                    'arrows' => false,
+                    'responsive' => array(
+                        array(
+                            'breakpoint' => 1024,
+                            'settings' => array(
+                                'slidesToShow' => 4,
+                            ),
+                        ),
+                        array(
+                            'breakpoint' => 992,
+                            'settings' => array(
+                                'slidesToShow' => 3,
+                                'slidesToScroll' => 3,
+                            ),
+                        ),
+                        array(
+                            'breakpoint' => 768,
+                            'settings' => array(
+                                'slidesToShow' => 2,
+                                'slidesToScroll' => 2,
+                            ),
+                        ),
+                        array(
+                            'breakpoint' => 479,
+                            'settings' => array(
+                                'slidesToShow' => 1,
+                                'slidesToScroll' => 1,
+                            ),
+                        ),
+                    ),
+                );
 
-			        	<?php
+                $carousel_args_encoded = wp_json_encode($carousel_args);
 
-			        	if( 1 !== $disable_carousel ){ ?>
+                ?>
 
-			        		<ul class="latest-product-items latest-products-main carousel-mode" data-slick='<?php echo $carousel_args_encoded; ?>'> 
+                <div class="inner-wrapper">
 
-			        		<?php
-			        	}else{ ?>
+                    <div class="products-carousel-wrap">
 
-			        		<ul class="latest-product-grid latest-products-main grid-mode"> 
-			        		<?php
-			        	}
+                        <?php
 
-				        foreach ( $featured_cats as $term_id => $value ) {
+                        if (1 !== $disable_carousel){ ?>
 
-				        	$taxonomy 		= 'product_cat';
+                        <ul class="latest-product-items latest-products-main carousel-mode"
+                            data-slick='<?php echo $carousel_args_encoded; ?>'>
 
-				        	$term_details 	= get_term_by( 'id', $term_id, $taxonomy );
+                            <?php
+                            }else{ ?>
 
-				        	if( !empty( $term_details ) ){
+                            <ul class="latest-product-grid latest-products-main grid-mode">
+                                <?php
+                                }
 
-					        	$term_title 	= $term_details->name;
+                                foreach ($featured_cats as $term_id => $value) {
 
-				        		$term_link 		= get_term_link( $term_id, $taxonomy );
+                                    $taxonomy = 'product_cat';
 
-				        		$thumbnail_id 	= get_term_meta( $term_id, 'thumbnail_id', true );
-				        		
-				        		$image_url 		= wp_get_attachment_image_src( $thumbnail_id, 'shop_catalog');
+                                    $term_details = get_term_by('id', $term_id, $taxonomy);
 
-				        		if( !empty( $image_url ) ){
+                                    if (!empty($term_details)) {
 
-				        			$cat_image = $image_url[0];
+                                        $term_title = $term_details->name;
 
-				        		}else{
+                                        $term_link = get_term_link($term_id, $taxonomy);
 
-				        			$cat_image = wc_placeholder_img_src();
-				        			
-				        		} ?>
+                                        $thumbnail_id = get_term_meta($term_id, 'thumbnail_id', true);
 
-				        		<li class="product-cat product">
-				        			<div class="product-thumb-wrap">
-				        				<img src="<?php echo esc_url( $cat_image ); ?>" alt="<?php echo esc_html( $term_title ); ?>">
+                                        $image_url = wp_get_attachment_image_src($thumbnail_id, 'shop_catalog');
 
-				        				<?php if( !empty( $view_details ) ){ ?>
-					        				<div class="add-to-cart-wrap view-details-wrap">
-					        					<a href="<?php echo esc_url( $term_link ); ?>" class="button btn-view-details"><?php echo esc_html( $view_details ) ?></a>
-					        				</div>
-				        				<?php } ?>
+                                        if (!empty($image_url)) {
 
-				        			</div>
+                                            $cat_image = $image_url[0];
 
-				        			<div class="product-info-wrap">
-				        				<a href="<?php echo esc_url( $term_link ); ?>"><h4 class="featured-cat-title"><?php echo esc_html( $term_title ); ?><?php if( 1 === $show_counts ){ ?><span class="count"><?php echo ' ('.absint( $term_details->count ).')'; ?></span><?php } ?></h4></a>
-				        			</div>
-				        		</li>
+                                        } else {
 
-				        		<?php
-				        	}
-				        	
-		                } ?>
+                                            $cat_image = wc_placeholder_img_src();
 
-                        </ul>
+                                        } ?>
+
+                                        <li class="product-cat product">
+                                            <div class="product-thumb-wrap">
+                                                <img src="<?php echo get_template_directory_uri(); ?>/assets/images/placeholder/agency-ecommerce-300-300.png" data-lazy="<?php echo esc_url($cat_image); ?>"
+                                                     alt="<?php echo esc_html($term_title); ?>">
+
+                                                <?php if (!empty($view_details)) { ?>
+                                                    <div class="add-to-cart-wrap view-details-wrap">
+                                                        <a href="<?php echo esc_url($term_link); ?>"
+                                                           class="button btn-view-details"><?php echo esc_html($view_details) ?></a>
+                                                    </div>
+                                                <?php } ?>
+
+                                            </div>
+
+                                            <div class="product-info-wrap">
+                                                <a href="<?php echo esc_url($term_link); ?>"><h4
+                                                            class="featured-cat-title"><?php echo esc_html($term_title); ?><?php if (1 === $show_counts) { ?>
+                                                            <span class="count"><?php echo ' (' . absint($term_details->count) . ')'; ?></span><?php } ?>
+                                                    </h4></a>
+                                            </div>
+                                        </li>
+
+                                        <?php
+                                    }
+
+                                } ?>
+
+                            </ul>
 
                     </div>
 
                 </div>
 
-	         </div><!-- .latest-news-widget -->
+            </div><!-- .latest-news-widget -->
 
-	        <?php
-	        echo $args['after_widget'];
+            <?php
+            echo $args['after_widget'];
 
-	    }
+        }
 
-	    function update( $new_instance, $old_instance ) {
+        function update($new_instance, $old_instance)
+        {
 
-	        $instance = $old_instance;
+            $instance = $old_instance;
 
-			$instance['title']         		= sanitize_text_field( $new_instance['title'] );
+            $instance['title'] = sanitize_text_field($new_instance['title']);
 
-			$instance['featured_cats'] 		= ( isset( $new_instance['featured_cats'] ) && is_array( $new_instance['featured_cats'] ) ) ? array_map( 'absint', $new_instance['featured_cats'] ) : array();
+            $instance['featured_cats'] = (isset($new_instance['featured_cats']) && is_array($new_instance['featured_cats'])) ? array_map('absint', $new_instance['featured_cats']) : array();
 
-			$instance['view_details'] 		= sanitize_text_field( $new_instance['view_details'] );
+            $instance['view_details'] = sanitize_text_field($new_instance['view_details']);
 
-			$instance['show_counts']      	= (bool) $new_instance['show_counts'] ? 1 : 0;
+            $instance['show_counts'] = (bool)$new_instance['show_counts'] ? 1 : 0;
 
-			$instance['disable_carousel']   = (bool) $new_instance['disable_carousel'] ? 1 : 0;
+            $instance['disable_carousel'] = (bool)$new_instance['disable_carousel'] ? 1 : 0;
+
+            $instance['background_color'] = isset($new_instance['background_color']) ? sanitize_hex_color($new_instance['background_color']) : '#e6e9ec';
 
 
-	        return $instance;
-	    }
+            return $instance;
+        }
 
-	    function form( $instance ) {
+        function form($instance)
+        {
 
-	        $instance = wp_parse_args( (array) $instance, array(
-				'title'          		=> '',
-				'product_category'		=> '',
-				'view_details'          => esc_html__( 'View Details', 'agency-ecommerce' ),
-				'featured_cats' 		=> array(),
-				'show_counts'		   	=> 0,
-				'disable_carousel'   	=> 0,
+            $instance = wp_parse_args((array)$instance, array(
+                'title' => '',
+                'product_category' => '',
+                'view_details' => esc_html__('View Details', 'agency-ecommerce'),
+                'featured_cats' => array(),
+                'show_counts' => 0,
+                'disable_carousel' => 0,
+                'background_color' => '#e6e9ec',
 
-	        ) );
+            ));
 
-	        $featured_cats = array_map( 'esc_attr', $instance['featured_cats'] );
-	        ?>
-	        <p>
-	          <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><strong><?php esc_html_e( 'Title:', 'agency-ecommerce' ); ?></strong></label>
-	          <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['title'] ); ?>" />
-	        </p>
-	        
+            $featured_cats = array_map('esc_attr', $instance['featured_cats']);
+            ?>
             <p>
-				<label for="<?php echo  esc_attr( $this->get_field_id( 'product_category' ) ); ?>"><strong><?php esc_html_e( 'Select Category:', 'agency-ecommerce' ); ?></strong></label>
-				
-				<div class="multiple-checkbox-holder">
-					<?php
-					$cat_args = array(
-									'taxonomy'     	=> 'product_cat',
-									'hide_empty'   	=> true,
-									'orderby' 		=> 'name',
-								);
+                <label for="<?php echo esc_attr($this->get_field_id('title')); ?>"><strong><?php esc_html_e('Title:', 'agency-ecommerce'); ?></strong></label>
+                <input class="widefat" id="<?php echo esc_attr($this->get_field_id('title')); ?>"
+                       name="<?php echo esc_attr($this->get_field_name('title')); ?>" type="text"
+                       value="<?php echo esc_attr($instance['title']); ?>"/>
+            </p>
 
-					$product_categories = get_categories( $cat_args );
+            <p>
+            <label for="<?php echo esc_attr($this->get_field_id('product_category')); ?>"><strong><?php esc_html_e('Select Category:', 'agency-ecommerce'); ?></strong></label>
 
-					if( !empty( $product_categories ) ){
+            <div class="multiple-checkbox-holder">
+            <?php
+            $cat_args = array(
+                'taxonomy' => 'product_cat',
+                'hide_empty' => true,
+                'orderby' => 'name',
+            );
 
-						foreach( $product_categories as $category ) {
+            $product_categories = get_categories($cat_args);
 
-							$cat_id 	= $category->term_id;
-							$cat_title 	= $category->name;
+            if (!empty($product_categories)) {
 
-							if( isset( $featured_cats[$cat_id] ) ) {
+                foreach ($product_categories as $category) {
 
-								$featured_cats[$cat_id] = 1;
+                    $cat_id = $category->term_id;
+                    $cat_title = $category->name;
 
-							}else{
+                    if (isset($featured_cats[$cat_id])) {
 
-								$featured_cats[$cat_id] = 0;
+                        $featured_cats[$cat_id] = 1;
 
-							} ?>
-							<p>
-								<input id="<?php echo esc_attr( $this->get_field_id($cat_id) ); ?>" name="<?php echo esc_attr( $this->get_field_name('featured_cats').'['.$cat_id.']' ); ?>" type="checkbox" value="1" <?php checked('1', $featured_cats[$cat_id]); ?>/>
-								<label for="<?php echo esc_attr( $this->get_field_id($cat_id) ); ?>"><?php echo esc_html( $cat_title ); ?></label>
-							</p>
-							<?php
-						}
+                    } else {
 
-					} else{
+                        $featured_cats[$cat_id] = 0;
 
-						esc_html_e('No product categories found', 'agency-ecommerce');
+                    } ?>
+                    <p>
+                        <input id="<?php echo esc_attr($this->get_field_id($cat_id)); ?>"
+                               name="<?php echo esc_attr($this->get_field_name('featured_cats') . '[' . $cat_id . ']'); ?>"
+                               type="checkbox" value="1" <?php checked('1', $featured_cats[$cat_id]); ?>/>
+                        <label for="<?php echo esc_attr($this->get_field_id($cat_id)); ?>"><?php echo esc_html($cat_title); ?></label>
+                    </p>
+                    <?php
+                }
 
-					} ?>
-				</div>
+            } else {
 
-				<small>
-		        	<?php esc_html_e('Categories selected here will be used as featured category at frontend.', 'agency-ecommerce'); ?>
-		        </small>
-        	</p>
+                esc_html_e('No product categories found', 'agency-ecommerce');
 
-        	<p>
-        		<label for="<?php echo esc_attr( $this->get_field_id( 'view_details' ) ); ?>"><strong><?php esc_html_e( 'View Detail Text:', 'agency-ecommerce' ); ?></strong></label>
-        		<input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'view_details' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'view_details' ) ); ?>" type="text" value="<?php echo esc_attr( $instance['view_details'] ); ?>" />
-        	</p>
+            } ?>
+            </div>
 
-	        <p>
-	            <input class="checkbox" type="checkbox" <?php checked( $instance['show_counts'] ); ?> id="<?php echo $this->get_field_id( 'show_counts' ); ?>" name="<?php echo $this->get_field_name( 'show_counts' ); ?>" />
-	            <label for="<?php echo $this->get_field_id( 'show_counts' ); ?>"><?php esc_html_e( 'Show Product Counts', 'agency-ecommerce' ); ?></label>
-	        </p>
+            <small>
+                <?php esc_html_e('Categories selected here will be used as featured category at frontend.', 'agency-ecommerce'); ?>
+            </small>
+            </p>
 
-	        <p>
-	            <input class="checkbox" type="checkbox" <?php checked( $instance['disable_carousel'] ); ?> id="<?php echo $this->get_field_id( 'disable_carousel' ); ?>" name="<?php echo $this->get_field_name( 'disable_carousel' ); ?>" />
-	            <label for="<?php echo $this->get_field_id( 'disable_carousel' ); ?>"><?php esc_html_e( 'Disable Carousel Mode', 'agency-ecommerce' ); ?></label>
-	        </p>
+            <p>
+                <label for="<?php echo esc_attr($this->get_field_id('view_details')); ?>"><strong><?php esc_html_e('View Detail Text:', 'agency-ecommerce'); ?></strong></label>
+                <input class="widefat" id="<?php echo esc_attr($this->get_field_id('view_details')); ?>"
+                       name="<?php echo esc_attr($this->get_field_name('view_details')); ?>" type="text"
+                       value="<?php echo esc_attr($instance['view_details']); ?>"/>
+            </p>
 
-	        <?php
-	    }
+            <p>
+                <input class="checkbox" type="checkbox" <?php checked($instance['show_counts']); ?>
+                       id="<?php echo $this->get_field_id('show_counts'); ?>"
+                       name="<?php echo $this->get_field_name('show_counts'); ?>"/>
+                <label for="<?php echo $this->get_field_id('show_counts'); ?>"><?php esc_html_e('Show Product Counts', 'agency-ecommerce'); ?></label>
+            </p>
 
-	}
+            <p>
+                <input class="checkbox" type="checkbox" <?php checked($instance['disable_carousel']); ?>
+                       id="<?php echo $this->get_field_id('disable_carousel'); ?>"
+                       name="<?php echo $this->get_field_name('disable_carousel'); ?>"/>
+                <label for="<?php echo $this->get_field_id('disable_carousel'); ?>"><?php esc_html_e('Disable Carousel Mode', 'agency-ecommerce'); ?></label>
+            </p>
+            <p>
+                <label for="<?php echo $this->get_field_id('background_color'); ?>"><?php esc_html_e('Background Color', 'agency-ecommerce'); ?></label><br>
+                <input type="text" name="<?php echo $this->get_field_name('background_color'); ?>" class="color-picker"
+                       id="<?php echo $this->get_field_id('background_color'); ?>"
+                       value="<?php echo esc_attr($instance['background_color']); ?>" data-default-color="#e6e9ec"/>
+            </p>
+
+            <?php
+        }
+
+    }
 
 endif;

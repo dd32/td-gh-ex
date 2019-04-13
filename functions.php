@@ -10,8 +10,8 @@
  */
 
 
-define('AGENCY_ECOMMERCE_THEME_VERSION', '1.0.0');
-define('AGENCY_ECOMMERCE_THEME_SETTINGS', 'subidha-settings');
+define('AGENCY_ECOMMERCE_THEME_VERSION', '1.0.1');
+define('AGENCY_ECOMMERCE_THEME_SETTINGS', 'agency-ecommerce-settings');
 
 define('AGENCY_ECOMMERCE_THEME_DIR', trailingslashit(get_template_directory()));
 define('AGENCY_ECOMMERCE_THEME_URI', trailingslashit(esc_url(get_template_directory_uri())));

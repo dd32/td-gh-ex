@@ -16,10 +16,17 @@
 	 */
 	do_action( 'agency_ecommerce_after_content' );
 
-?>
 
-	<?php get_template_part( 'template-parts/footer-widgets' ); ?>
+	get_template_part( 'template-parts/footer-widgets' );
 
+
+    /**
+     * Hook - agency_ecommerce_before_footer_copyright_area.
+     *
+     * @hooked agency_ecommerce_before_footer_copyright_area_action - 10
+     */
+    do_action('agency_ecommerce_before_footer_copyright_area');
+    ?>
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
 			<div class="site-footer-wrap">
@@ -45,8 +52,15 @@
 			</div>
 		</div><!-- .container -->
 	</footer><!-- #colophon -->
+<?php
+    /**
+     * Hook - agency_ecommerce_after_footer_copyright_area.
+     *
+     * @hooked agency_ecommerce_after_footer_copyright_area_action - 10
+     */
+    do_action('agency_ecommerce_after_footer_copyright_area');
+?>
 </div><!-- #page -->
-
 <?php wp_footer(); ?>
 </body>
 </html>

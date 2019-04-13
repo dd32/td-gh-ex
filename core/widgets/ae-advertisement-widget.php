@@ -45,22 +45,27 @@ if ( ! class_exists( 'Agency_Ecommerce_Advertisement_Widget' ) ) :
 			$button_url  	= ! empty( $instance['button_url'] ) ? esc_url( $instance['button_url'] ) : '';
 			$content_position 	= !empty( $instance['content_position'] ) ? $instance['content_position'] : '';
 			$content_style 	= !empty( $instance['content_style'] ) ? $instance['content_style'] : '';
-			$bg_pic  	 	= ! empty( $instance['bg_pic'] ) ? esc_url( $instance['bg_pic'] ) : '';
+			$background_image  	 	= ! empty( $instance['background_image'] ) ? esc_url( $instance['background_image'] ) : '';
+
+			$parallax_background = ! empty( $instance['parallax_background'] ) ? (boolean) $instance['parallax_background'] : 0;
 
 			$disable_overlay = ! empty( $instance['disable_overlay'] ) ? $instance['disable_overlay'] : 0;
 
 			echo $args['before_widget']; 
 
+			$content_class = 'content-left-aligned';
 			//For content position
 			if( 'right' === $content_position ){
 
 				$content_class = 'content-right-aligned';
 
-			}else{
+			}else if ('center' === $content_position ){
 
-				$content_class = 'content-left-aligned';
+				$content_class = 'content-center-aligned';
 
-			} 
+			} else{
+			    $content_class = 'content-left-aligned';
+			}
 
 			//For content styles
 			if( 'style-2' === $content_style ){
@@ -87,9 +92,9 @@ if ( ! class_exists( 'Agency_Ecommerce_Advertisement_Widget' ) ) :
 			<div class="advertisement-content-holder advertisement-widget <?php echo $content_class.' '.$content_style.' '.$overlay_class; ?>">
 
 				<?php 
-				if( !empty( $bg_pic ) ){ ?>
+				if( !empty( $background_image ) ){ ?>
 
-					<div class="advertisement-wrap" style="background: url(<?php echo esc_url( $bg_pic ); ?>); background-size: cover; background-position: center center;">
+					<div class="advertisement-wrap <?php echo $parallax_background ? 'mb-parallax':'' ?>" style="background: url(<?php echo esc_url( $background_image ); ?>); background-size: cover; background-position: center center;">
 
 					<?php 
 
@@ -200,7 +205,9 @@ if ( ! class_exists( 'Agency_Ecommerce_Advertisement_Widget' ) ) :
 
 			$instance['content_style'] 		= sanitize_text_field( $new_instance['content_style'] );
 
-			$instance['bg_pic']  	 		= esc_url_raw( $new_instance['bg_pic'] );
+			$instance['background_image']  	 		= esc_url_raw( $new_instance['background_image'] );
+
+			$instance['parallax_background']    = (bool) $new_instance['parallax_background'] ? 1 : 0;
 
 			$instance['disable_overlay']    = (bool) $new_instance['disable_overlay'] ? 1 : 0;
 
@@ -225,28 +232,29 @@ if ( ! class_exists( 'Agency_Ecommerce_Advertisement_Widget' ) ) :
 				'button_url'  			=> '',
 				'content_position'  	=> 'left',
 				'content_style'  	    => 'style-1',
-				'bg_pic'      			=> '',
+				'background_image'      			=> '',
+				'parallax_background'      			=> 0,
 				'disable_overlay'   	=> 0,
 			) );
 
-			$bg_pic = '';
+			$background_image = '';
 
-            if ( ! empty( $instance['bg_pic'] ) ) {
+            if ( ! empty( $instance['background_image'] ) ) {
 
-                $bg_pic = $instance['bg_pic'];
+                $background_image = $instance['background_image'];
 
             }
 
             $wrap_style = '';
 
-            if ( empty( $bg_pic ) ) {
+            if ( empty( $background_image ) ) {
 
                 $wrap_style = ' style="display:none;" ';
             }
 
             $image_status = false;
 
-            if ( ! empty( $bg_pic ) ) {
+            if ( ! empty( $background_image ) ) {
                 $image_status = true;
             }
 
@@ -307,17 +315,21 @@ if ( ! class_exists( 'Agency_Ecommerce_Advertisement_Widget' ) ) :
             </p>
 
 			<div class="cover-image">
-                <label for="<?php echo esc_attr( $this->get_field_id( 'bg_pic' ) ); ?>">
+                <label for="<?php echo esc_attr( $this->get_field_id( 'background_image' ) ); ?>">
                     <strong><?php esc_html_e( 'Background Image:', 'agency-ecommerce' ); ?></strong>
                 </label>
-                <input type="text" class="img widefat" name="<?php echo esc_attr( $this->get_field_name( 'bg_pic' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'bg_pic' ) ); ?>" value="<?php echo esc_url( $instance['bg_pic'] ); ?>" />
+                <input type="text" class="img widefat" name="<?php echo esc_attr( $this->get_field_name( 'background_image' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'background_image' ) ); ?>" value="<?php echo esc_url( $instance['background_image'] ); ?>" />
                 <div class="rtam-preview-wrap" <?php echo $wrap_style; ?>>
-                    <img src="<?php echo esc_url( $bg_pic ); ?>" alt="<?php esc_attr_e( 'Preview', 'agency-ecommerce' ); ?>" />
+                    <img src="<?php echo esc_url( $background_image ); ?>" alt="<?php esc_attr_e( 'Preview', 'agency-ecommerce' ); ?>" />
                 </div><!-- .rtam-preview-wrap -->
                 <input type="button" class="select-img button button-primary" value="<?php esc_html_e( 'Upload', 'agency-ecommerce' ); ?>" data-uploader_title="<?php esc_html_e( 'Select Background Image', 'agency-ecommerce' ); ?>" data-uploader_button_text="<?php esc_html_e( 'Choose Image', 'agency-ecommerce' ); ?>" />
                 <input type="button" value="<?php echo esc_attr_x( 'X', 'Remove Button', 'agency-ecommerce' ); ?>" class="button button-secondary btn-image-remove" style="<?php echo esc_attr( $delete_button ); ?>" />
             </div>
 
+            <p>
+                <input class="checkbox" type="checkbox" <?php checked( $instance['parallax_background'] ); ?> id="<?php echo $this->get_field_id( 'parallax_background' ); ?>" name="<?php echo $this->get_field_name( 'parallax_background' ); ?>" />
+                <label for="<?php echo $this->get_field_id( 'parallax_background' ); ?>"><?php esc_html_e( 'Enable parallax background', 'agency-ecommerce' ); ?></label>
+            </p>
             <p>
                 <input class="checkbox" type="checkbox" <?php checked( $instance['disable_overlay'] ); ?> id="<?php echo $this->get_field_id( 'disable_overlay' ); ?>" name="<?php echo $this->get_field_name( 'disable_overlay' ); ?>" />
                 <label for="<?php echo $this->get_field_id( 'disable_overlay' ); ?>"><?php esc_html_e( 'Disable overlay of the image', 'agency-ecommerce' ); ?></label>
@@ -335,10 +347,11 @@ if ( ! class_exists( 'Agency_Ecommerce_Advertisement_Widget' ) ) :
 			$r = wp_parse_args( $args, $defaults );
 			$output = '';
 
-			$choices = array(
-				'left' 		=> esc_html__( 'Left', 'agency-ecommerce' ),
+			$choices = apply_filters( 'agency_ecommerce_advertisement_widget_content_position',array(
+			     'left' 		=> esc_html__( 'Left', 'agency-ecommerce' ),
 				'right' 	=> esc_html__( 'Right', 'agency-ecommerce' ),
-			);
+				'center' 	=> esc_html__( 'Center', 'agency-ecommerce' ),
+			));
 
 			if ( ! empty( $choices ) ) {
 
@@ -364,10 +377,10 @@ if ( ! class_exists( 'Agency_Ecommerce_Advertisement_Widget' ) ) :
     		$r = wp_parse_args( $args, $defaults );
     		$output = '';
 
-    		$choices = array(
+    		$choices = apply_filters( 'agency_ecommerce_advertisement_widget_content_style',array(
     			'style-1' 	=> esc_html__( 'Style One', 'agency-ecommerce' ),
     			'style-2' 	=> esc_html__( 'Style Two', 'agency-ecommerce' ),
-    		);
+    		));
 
     		if ( ! empty( $choices ) ) {
 

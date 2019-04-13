@@ -34,6 +34,12 @@
 
 	<div id="page" class="site">
 		<?php
+        /**
+         * Hook - agency_ecommerce_before_top_header.
+         *
+         * @hooked agency_ecommerce_before_top_header_action - 10
+         */
+        do_action( 'agency_ecommerce_before_top_header' );
 		/**
 		 * Hook - agency_ecommerce_top_header.
 		 *
@@ -41,8 +47,15 @@
 		 */
 		do_action( 'agency_ecommerce_top_header' );
 
+        /**
+         * Hook - agency_ecommerce_after_top_header.
+         *
+         * @hooked agency_ecommerce_after_top_header_action - 10
+         */
+        do_action( 'agency_ecommerce_after_top_header' );
+
 		/**
-		* Hook - winsone_before_header.
+		* Hook - agency_ecommerce_before_header.
 		*
 		* @hooked agency_ecommerce_before_header_action - 10
 		*/

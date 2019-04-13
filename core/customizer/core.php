@@ -96,6 +96,7 @@ if ( ! function_exists( 'agency_ecommerce_get_default_theme_options' ) ) :
 
         // Slider.
         $defaults['slider_status']                  = false;
+        $defaults['enable_fullwidth_slider']        = true;
         $defaults['button_text_1']                  = esc_html__( 'Shop Now', 'agency-ecommerce' );
         $defaults['button_text_2']                  = esc_html__( 'Shop Now', 'agency-ecommerce' );
         $defaults['button_text_3']                  = esc_html__( 'Shop Now', 'agency-ecommerce' );
@@ -107,11 +108,13 @@ if ( ! function_exists( 'agency_ecommerce_get_default_theme_options' ) ) :
         $defaults['caption_position_4']             = 'left';
         $defaults['caption_position_5']             = 'left';
         $defaults['slider_autoplay_status']         = true;
+        $defaults['slider_adaptive_height']         = false;
         $defaults['slider_pager_status']            = true;
         $defaults['slider_transition_effect']       = 'fade';
         $defaults['slider_transition_delay']        = 3;
+        $defaults['special_menu']        =  false;
 
-        return $defaults;
+        return apply_filters ('agency_ecommerce_default_theme_options', $defaults);
     }
 
 endif;
