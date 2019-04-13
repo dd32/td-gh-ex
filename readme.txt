@@ -45,6 +45,10 @@ Source: https://github.com/dachcom-digital/jquery-doubletaptogo
 
 == Changelog ==
 
+Version 1.30 (2019-04-13)
+-------------------------
+- Styling for select elements
+
 Version 1.29 (2019-04-07)
 -------------------------
 - Added the new wp_body_open() function, along with a function_exists check
