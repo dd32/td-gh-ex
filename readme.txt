@@ -4,7 +4,7 @@ Tags: one-column, two-columns,left-sidebar,grid-layout,custom-logo,custom-colors
 Requires PHP: 5.2.4
 Requires at least: 4.0
 Tested up to: 5.0.0
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Short Description : Best Classifieds is a free WordPress theme for launching professional looking classified and ads websites.
@@ -46,10 +46,12 @@ Go to Appearance => Customize menu for logo and other customization needs.
 * owl.carousel.js file update.
 * Misc changes.
 
+= 1.0.5 - 13 April 2019 =
+* Misc changes.
+
 == Upgrade Notice ==
 
-= 1.0.4 - 23 March 2019 =
-* owl.carousel.js file update.
+= 1.0.5 - 13 April 2019 =
 * Misc changes.
 
 == Resources ==

@@ -55,7 +55,6 @@ function best_classifieds_search_form($html) {
 }
 
 include get_template_directory().'/inc/breadcumbs.php';
-include get_template_directory().'/inc/fonts.php';
 include get_template_directory().'/inc/fontawasome.php';
 include get_template_directory().'/inc/template-setup.php';
 include get_template_directory().'/inc/enqueues.php';
