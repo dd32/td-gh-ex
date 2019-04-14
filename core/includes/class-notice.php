@@ -21,7 +21,10 @@ if( !class_exists( 'anna_lite_admin_notice' ) ) {
 		 
 		public function __construct( $fields = array() ) {
 
-			if ( !get_user_meta( get_current_user_id(), 'AnnaLite_AdminID_Notice_' . get_current_user_id() , TRUE ) ) {
+			if ( 
+				!get_user_meta( get_current_user_id(), 'AnnaLite_AdminID_Notice_' . get_current_user_id() , TRUE ) &&
+				version_compare( PHP_VERSION, ANNA_LITE_MIN_PHP_VERSION, '>=' )
+			) {
 
 				add_action( 'admin_notices', array(&$this, 'admin_notice') );
 				add_action( 'admin_head', array( $this, 'dismiss' ) );
