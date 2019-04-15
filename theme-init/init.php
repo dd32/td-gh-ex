@@ -67,7 +67,7 @@ if (!function_exists('atlast_business_set_header_image')):
 
         $html .= '<div class="header-texts text-center">';
         if (!empty($header_text)):
-            $html .= '<h2>' . esc_html($header_text) . '</h2>';
+            $html .= '<h1>' . esc_html($header_text) . '</h1>';
         endif;
         if (!empty($header_subtext)):
             $html .= '<h3>' . esc_html($header_subtext) . '</h3>';

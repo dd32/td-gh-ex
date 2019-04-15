@@ -1,8 +1,8 @@
 === Atlast Business WordPress Theme ===
 Contributors: ArchimidisM
 Requires at least: WordPress 4.5.1
-Tested up to: WordPress 4.9.8
-Version: 1.5.8.4
+Tested up to: WordPress 5.1.1
+Version: 1.5.8.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: theme-options,full-width-template,two-columns, custom-header, custom-background,custom-logo, custom-menu,flexible-header,translation-ready, featured-images
@@ -263,3 +263,8 @@ Removed unnecessary files
 
 = Version 1.5.8.4 =
 - Fixed submenu level 2 and beyond offset
+
+= Version 1.5.8.5 =
+- Added support for responsive embeds.
+- Changed h2 from the header to h1 for better SEO.
+- Fixed CSS styles.
