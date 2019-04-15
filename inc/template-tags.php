@@ -79,7 +79,7 @@ function wp_fanzone_posted_on() {
 	);
 
 	$posted_on = sprintf(
-		_x( '%s', 'post date', 'wp-fanzone' ),
+		'%s',
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
