@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.15' );
+define( 'AVANT_THEME_VERSION' , '1.1.16' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -354,6 +354,7 @@ function avant_register_required_plugins() {
 			'name'      => __( 'WooCommerce', 'avant' ),
 			'slug'      => 'woocommerce',
 			'required'  => false,
+			'external_url' => 'https://kairaweb.com/go/elementor/'
 		),
 		array(
 			'name'      => __( 'Elementor Page Builder', 'avant' ),
@@ -405,11 +406,11 @@ add_filter( 'admin_body_class', 'avant_add_admin_body_class' );
  */
 function avant_cat_title_remove_pretext( $avant_cat_title ) {
 	if ( is_category() ) {
-        $avant_cat_title = the_archive_title( '', false );
+        $avant_cat_title = single_cat_title( '', false );
     } elseif ( is_post_type_archive() ) {
 		$avant_cat_title = post_type_archive_title( '', false );
     } elseif ( is_tag() ) {
-        $avant_cat_title = the_archive_title( '', false );
+        $avant_cat_title = single_tag_title( '', false );
     } elseif ( is_author() ) {
         $avant_cat_title = '<span class="vcard">' . get_the_author() . '</span>' ;
     }

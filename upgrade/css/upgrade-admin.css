@@ -255,8 +255,15 @@ a.upgrade-page-link:hover {
 	font-size: 14px;
 	color: #000;
 }
-.upgrade-rating-slider-block-rating {
-	
+.upgrade-order-offer {
+	margin: 40px 0 20px;
+	font-size: 16px;
+}
+.upgrade-order-offer b {
+	color: #006CC9;
+}
+.upgrade-order-offer a {
+	color: #f18500;
 }
 .upgrade-rating-slider-wrap:hover .upgrade-rating-slider-prev,
 .upgrade-rating-slider-wrap:hover .upgrade-rating-slider-next {

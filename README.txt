@@ -68,6 +68,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.16
+* Fixed Remove archive pre-text setting
+* Removed old/deprecated code
+* Neatened up code/comments
+* Updated language .pot file
+Premium: Add a setting to build your own "Site Built By" backlink in the Footer
+
 #### 1.1.15
 * Fixed Social Footer Icons breaking
 * Style tweaks/fixes

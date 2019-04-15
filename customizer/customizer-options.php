@@ -152,7 +152,7 @@ function customizer_library_avant_options() {
         'id' => 'avant-noteon-layout',
         'section' => $section,
         'type'    => 'note',
-        'description' => __( '<b>Premium Extra Features:</b><br />- Add Title & Tagline with uploaded logo and adjust<br />- Set custom website container width<br />- Set custom Sidebar width<br />- Change Side Social Links design<br />- Change Site Attribution text', 'avant' )
+        'description' => __( '<b>Premium Extra Features:</b><br />- Add your own "Site Built By" backlink in the Footer<br />- Add Title & Tagline with uploaded logo and adjust<br />- Set custom website container width<br />- Set custom Sidebar width<br />- Change Side Social Links design<br />- Change Site Attribution text', 'avant' )
     );
 
 

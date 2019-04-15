@@ -9,16 +9,19 @@
         <div class="upgrade-page-top">
             
             <div class="upgrade-order-number-info-btns-link">
-                <a href="https://kairaweb.com/theme/avant/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
+                <a href="https://kairaweb.com/go/avant/" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
                     <?php printf( __( '<span>Avant Premium </span><em>$29</em>', 'avant' ) ); ?>
                 </a>
+                <div class="upgrade-order-offer">
+                    <?php _e( '<b>Time limited offer, only advertised here</b>... Get Avant Premium now for a <b><a href="https://kairaweb.com/go/avant/" target="_blank">once off payment of $29 for lifetime updates</a></b>', 'avant' ); ?>
+                </div>
             </div>
             
             <p class="avant-upgrade-p">
-                <?php printf( __( '<strong>All settings for Avant</strong> are neatly built into the <a href="%s">WordPress Customizer</a> so you can change and edit settings to view what happens before saving and making any of the changes live', 'avant' ) , admin_url( 'customize.php' ) ); ?>
+                <?php printf( __( 'Read more here on  <strong><a href="%s" target="_blank">what is included in premium</a></strong> or see <a href="%2" target="_blank"><b>how to install premium</b></a>', 'avant' ), 'https://kairaweb.com/theme/avant/#premium-features', 'https://kairaweb.com/support/install-the-premium-theme/' ); ?>
             </p>
             <p class="avant-upgrade-p">
-                <?php printf( __( 'Help on how to <strong><a href="%s" target="_blank">install the premium theme</a></strong>', 'avant' ) , 'https://kairaweb.com/support/install-the-premium-theme/' ); ?>
+                <?php printf( __( '<strong>All settings for Avant</strong> are neatly built into the <a href="%s">WordPress Customizer</a> so you can change and edit settings to view what happens before saving and making any of the changes live', 'avant' ) , admin_url( 'customize.php' ) ); ?>
             </p>
             
         </div>
@@ -28,7 +31,7 @@
             
             <div class="avant-upgrade-page-inner-wrap">
                 
-                <h3><?php _e( 'Avant Premium is a once off payment of $29', 'avant' ); ?></h3>
+                <h3><?php _e( 'Avant Premium is a once off payment for lifetime update right now!', 'avant' ); ?></h3>
                 
                 <div class="avant-upgrade-block">
                     <div class="avant-upgrade-block-left">
