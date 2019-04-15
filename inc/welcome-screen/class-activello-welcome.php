@@ -288,6 +288,46 @@ class Activello_Welcome {
 	}
 
 	public function check_active( $slug ) {
+	    // check for Modula Image Gallery
+	    if('modula-best-grid-gallery' == $slug){
+            if ( file_exists( ABSPATH . 'wp-content/plugins/' . $slug . '/Modula.php' ) ) {
+                include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+                $needs = is_plugin_active( $slug . '/Modula.php' ) ? 'deactivate' : 'activate';
+
+                return array(
+                    'status' => is_plugin_active( $slug . '/Modula.php' ),
+                    'needs' => $needs,
+                );
+            }
+        }
+
+		if('fancybox-for-wordpress' == $slug){
+			if ( file_exists( ABSPATH . 'wp-content/plugins/' . $slug . '/fancybox.php' ) ) {
+				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+				$needs = is_plugin_active( $slug . '/fancybox.php' ) ? 'deactivate' : 'activate';
+
+				return array(
+					'status' => is_plugin_active( $slug . '/fancybox.php' ),
+					'needs' => $needs,
+				);
+			}
+		}
+
+		if('colorlib-coming-soon-maintenance' == $slug){
+			if ( file_exists( ABSPATH . 'wp-content/plugins/' . $slug . '/colorlib-coming-soon-and-maintenance-mode.php' ) ) {
+				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+
+				$needs = is_plugin_active( $slug . '/colorlib-coming-soon-and-maintenance-mode.php' ) ? 'deactivate' : 'activate';
+
+				return array(
+					'status' => is_plugin_active( $slug . '/colorlib-coming-soon-and-maintenance-mode.php' ),
+					'needs' => $needs,
+				);
+			}
+		}
+
 		if ( file_exists( ABSPATH . 'wp-content/plugins/' . $slug . '/' . $slug . '.php' ) ) {
 			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
@@ -334,22 +374,81 @@ class Activello_Welcome {
 				);
 				break;
 			case 'deactivate':
-				return add_query_arg( array(
-					'action'        => 'deactivate',
-					'plugin'        => rawurlencode( $slug . '/' . $slug . '.php' ),
-					'plugin_status' => 'all',
-					'paged'         => '1',
-					'_wpnonce'      => wp_create_nonce( 'deactivate-plugin_' . $slug . '/' . $slug . '.php' ),
-				), network_admin_url( 'plugins.php' ) );
+			    //check for Modula Image Gallery
+			    if('modula-best-grid-gallery' == $slug){
+                    return add_query_arg( array(
+                        'action'        => 'deactivate',
+                        'plugin'        => rawurlencode( $slug . '/Modula.php' ),
+                        'plugin_status' => 'all',
+                        'paged'         => '1',
+                        '_wpnonce'      => wp_create_nonce( 'deactivate-plugin_' . $slug . '/Modula.php' ),
+                    ), network_admin_url( 'plugins.php' ) );
+                } else if('fancybox-for-wordpress' == $slug){
+				    return add_query_arg( array(
+					    'action'        => 'deactivate',
+					    'plugin'        => rawurlencode( $slug . '/fancybox.php' ),
+					    'plugin_status' => 'all',
+					    'paged'         => '1',
+					    '_wpnonce'      => wp_create_nonce( 'deactivate-plugin_' . $slug . '/fancybox.php' ),
+				    ), network_admin_url( 'plugins.php' ) );
+                } else if('colorlib-coming-soon-maintenance' == $slug){
+				    return add_query_arg( array(
+					    'action'        => 'deactivate',
+					    'plugin'        => rawurlencode( $slug . '/colorlib-coming-soon-and-maintenance-mode.php' ),
+					    'plugin_status' => 'all',
+					    'paged'         => '1',
+					    '_wpnonce'      => wp_create_nonce( 'deactivate-plugin_' . $slug . '/colorlib-coming-soon-and-maintenance-mode.php' ),
+				    ), network_admin_url( 'plugins.php' ) );
+                } else {
+                    return add_query_arg( array(
+                        'action'        => 'deactivate',
+                        'plugin'        => rawurlencode( $slug . '/' . $slug . '.php' ),
+                        'plugin_status' => 'all',
+                        'paged'         => '1',
+                        '_wpnonce'      => wp_create_nonce( 'deactivate-plugin_' . $slug . '/' . $slug . '.php' ),
+                    ), network_admin_url( 'plugins.php' ) );
+                }
+
+
 				break;
 			case 'activate':
-				return add_query_arg( array(
-					'action'        => 'activate',
-					'plugin'        => rawurlencode( $slug . '/' . $slug . '.php' ),
-					'plugin_status' => 'all',
-					'paged'         => '1',
-					'_wpnonce'      => wp_create_nonce( 'activate-plugin_' . $slug . '/' . $slug . '.php' ),
-				), network_admin_url( 'plugins.php' ) );
+				//check for Modula Image Gallery
+				//check for Modula Image Gallery
+				if ( 'modula-best-grid-gallery' == $slug ) {
+					return add_query_arg( array(
+						'action'        => 'activate',
+						'plugin'        => rawurlencode( $slug . '/Modula.php' ),
+						'plugin_status' => 'all',
+						'paged'         => '1',
+						'_wpnonce'      => wp_create_nonce( 'activate-plugin_' . $slug . '/Modula.php' ),
+					), network_admin_url( 'plugins.php' ) );
+				} else if('fancybox-for-wordpress' == $slug){
+					return add_query_arg( array(
+						'action'        => 'activate',
+						'plugin'        => rawurlencode( $slug . '/fancybox.php' ),
+						'plugin_status' => 'all',
+						'paged'         => '1',
+						'_wpnonce'      => wp_create_nonce( 'activate-plugin_' . $slug . '/fancybox.php' ),
+					), network_admin_url( 'plugins.php' ) );
+                } else if('colorlib-coming-soon-maintenance' == $slug){
+					return add_query_arg( array(
+						'action'        => 'activate',
+						'plugin'        => rawurlencode( $slug . '/colorlib-coming-soon-and-maintenance-mode.php' ),
+						'plugin_status' => 'all',
+						'paged'         => '1',
+						'_wpnonce'      => wp_create_nonce( 'activate-plugin_' . $slug . '/colorlib-coming-soon-and-maintenance-mode.php' ),
+					), network_admin_url( 'plugins.php' ) );
+                } else {
+					return add_query_arg( array(
+						'action'        => 'activate',
+						'plugin'        => rawurlencode( $slug . '/' . $slug . '.php' ),
+						'plugin_status' => 'all',
+						'paged'         => '1',
+						'_wpnonce'      => wp_create_nonce( 'activate-plugin_' . $slug . '/' . $slug . '.php' ),
+					), network_admin_url( 'plugins.php' ) );
+				}
+
+
 				break;
 		}
 	}

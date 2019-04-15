@@ -42,7 +42,7 @@ wp_enqueue_script( 'updates' );
 			<div
 				class="action_bar <?php echo ( 'install' !== $active['needs'] && $active['status'] ) ? 'active' : '' ?>">
 				<span
-					class="plugin_name"><?php echo ( 'install' !== $active['needs'] && $active['status'] ) ? 'Active: ' : '' ?><?php echo $info->name; ?></span>
+					class="plugin_name"><?php echo $info->name; ?></span>
 			</div>
 			<span
 				class="plugin-card-<?php echo esc_attr( $plugin ) ?> action_button <?php echo ( 'install' !== $active['needs'] && $active['status'] ) ? 'active' : '' ?>">
