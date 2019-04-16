@@ -91,6 +91,12 @@ if ( ! function_exists( 'bazzinga_setup' ) ) :
 		}
 		add_filter( 'excerpt_length', 'bazzinga_excerpt_length', 999 );
 
+		// Load regular editor styles into the new block-based editor.
+		add_theme_support( 'editor-styles' );
+
+	 	// Load default block styles.
+		add_theme_support( 'wp-block-styles' );
+
 	}
 endif;
 add_action( 'after_setup_theme', 'bazzinga_setup' );
@@ -358,3 +364,9 @@ require get_template_directory(). '/inc/widgets/widgets.php';
  * Load TGM Plgin to recommended plugins
  */
 require get_template_directory() . '/inc/library/tgm-plugin-activation/bazzinga-plugin-activation.php';
+
+
+/**
+ * Load class for upsells links
+ */
+require get_template_directory(). '/inc/blaze-upsells/blaze-pro-btn/class-customize.php';

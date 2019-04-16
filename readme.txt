@@ -53,6 +53,9 @@ All options are in the Customizer.
 * Added move to top feature 
 * Solve plugin activation bug in tgm plugin
 
+= 2.0.0 - Sept 17 2018 =
+* Made theme compatible with Gutenberg
+
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License  v2 or later
 License: GNU General Public License v2 or later
