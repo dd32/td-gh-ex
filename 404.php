@@ -21,10 +21,5 @@ get_header();
 			</div><!-- .error-404 -->
 		</main>
 	</div>
-
-	<div class="container"><?php get_footer();?></div>
-	<?php 
-wp_footer();
-?>
-</body>
-</html>
+    
+<?php get_footer(); ?>

@@ -1,23 +1,15 @@
 <?php 
 
 function apelleuno_add_theme_scripts() {
- 
-
   wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/bootstrap.min.css', array(), '4.1.3', 'all');
- 
-}
-
-
-
-add_action( 'wp_enqueue_scripts', 'apelleuno_add_theme_scripts' );
-function apelleuno_add_theme_scripts_footer() { 
-
   wp_enqueue_style( 'style', get_stylesheet_uri() );
   wp_enqueue_script( 'popper-min', get_template_directory_uri() . '/popper.min.js', array(), '1.0.0', true );
-	wp_enqueue_script( 'bootstrap-min', get_template_directory_uri() . '/bootstrap.min.js', array(), '1.0.0', true );
-	wp_enqueue_script( 'stickyfill-init', get_template_directory_uri() . '/stickyfill-init.js', array(), '2.1.0', true );
+  wp_enqueue_script( 'bootstrap-min', get_template_directory_uri() . '/bootstrap.min.js', array(), '1.0.0', true );
+  wp_enqueue_script( 'stickyfill-init', get_template_directory_uri() . '/stickyfill-init.js', array('jquery'), '2.1.0', true );
 }
-add_action( 'wp_footer', 'apelleuno_add_theme_scripts_footer' );
+
+add_action( 'wp_enqueue_scripts', 'apelleuno_add_theme_scripts' );
+
 function apelleuno_register_menu_home() {
   register_nav_menus(
     array(
@@ -265,6 +257,16 @@ function apelleuno_wpse_theme_setup() {
 		'default-color' => 'fff',
 	);
 	add_theme_support( "custom-background", $args );
+	
+	$args = array(
+		'flex-width'    => true,
+		'width'         => 980,
+		'flex-height'    => true,
+		'height'        => 200,
+		'default-image' => get_template_directory_uri() . '/images/header.jpg',
+		'uploads'       => true,
+	);
+	add_theme_support( 'custom-header', $args );
 }
 
 
@@ -285,15 +287,7 @@ add_action( 'after_setup_theme', 'apelleuno_logo_setup' );
 add_action( 'widgets_init', 'apelleuno_widgets_init' );
 function apelleuno_widgets_init() {
 	
-	$args = array(
-		'flex-width'    => true,
-		'width'         => 980,
-		'flex-height'    => true,
-		'height'        => 200,
-		'default-image' => get_template_directory_uri() . '/images/header.jpg',
-		'uploads'       => true,
-	);
-	add_theme_support( 'custom-header', $args );
+	
 
 
 	$args = array(

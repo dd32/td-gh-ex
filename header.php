@@ -2,8 +2,7 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="utf-8">
-<?php 
-	wp_enqueue_scripts();
+<?php 	
 	wp_head(); ?>
     <meta name="viewport" content="width=device-width">
     

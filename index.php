@@ -37,7 +37,7 @@
       </div>
     </main>
     <div class="container">
-    	<?php get_footer(); ?>
+    	
         <div><?php the_posts_navigation() ?>
             <?php wp_link_pages(); ?>
         </div>
@@ -85,10 +85,4 @@
 </div>
 
 <!-- FINE Large modal -->
-<?php 
-
-    wp_footer();
-?>
-<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
-</body>
-</html>
+<?php get_footer(); ?>

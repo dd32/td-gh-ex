@@ -1,4 +1,5 @@
-<footer class="pt-4 my-md-5 pt-md-5 border-top">
+<div class="container">
+	<footer class="pt-4 my-md-5 pt-md-5 border-top">
         <div class="row">
           <div class="col-12 col-md">
             
@@ -43,3 +44,11 @@
           </div>
         </div>
       </footer>
+      </div>
+  <?php 
+
+    wp_footer();
+?>
+<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
+</body>
+</html>
