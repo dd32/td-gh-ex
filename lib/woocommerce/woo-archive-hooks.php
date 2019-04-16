@@ -36,8 +36,96 @@ function virtue_woocommerce_archive_hooks() {
 			return $virtue['products_per_page'];
 		}
 	}
+
+	/**
+	 * Product Class output
+	 *
+	 * @param mixed $classes the added classes.
+	 */
+	function virtue_add_product_loop_classes( $classes = array() ) {
+		global $product, $post, $woocommerce_loop;
+		// Store column count for displaying the grid.
+		if ( empty( $woocommerce_loop['columns'] ) ) {
+			$woocommerce_loop['columns'] = apply_filters( 'loop_shop_columns', 4 );
+		}
+
+		$product_column = $woocommerce_loop['columns'];
+		if ( '1' == $product_column ) {
+			$itemsize = 'tcol-md-12 tcol-sm-12 tcol-xs-12 tcol-ss-12';
+		} elseif ( '2' == $product_column ) {
+			$itemsize = 'tcol-md-6 tcol-sm-6 tcol-xs-12 tcol-ss-12';
+		} elseif ( '3' == $product_column ) {
+			$itemsize = 'tcol-md-4 tcol-sm-4 tcol-xs-6 tcol-ss-12';
+		} elseif ( '6' == $product_column ) {
+			$itemsize = 'tcol-md-2 tcol-sm-3 tcol-xs-4 tcol-ss-6';
+		} elseif ( '5' == $product_column ) {
+			$itemsize = 'tcol-md-25 tcol-sm-3 tcol-xs-4 tcol-ss-6';
+		} else {
+			$itemsize = 'tcol-md-3 tcol-sm-4 tcol-xs-6 tcol-ss-12';
+		}
+		$classes[] = $itemsize;
+		$classes[] = 'kad_product';
+		return array_filter( array_unique( $classes ) );
+	}
+	add_filter( 'virtue_product_loop_classes', 'virtue_add_product_loop_classes' );
+	add_filter( 'kadence_woo_ele_product_loop_classes', 'virtue_add_product_loop_classes' );
+	/**
+	 * Product Loop Class
+	 *
+	 * @param mixed $class the added classes.
+	 */
+	function virtue_product_class( $class = null, $product = null ) {
+		echo 'class="' . esc_attr( join( ' ', apply_filters( 'virtue_product_loop_classes', virtue_get_product_class( $class, $product ) ) ) ) . '"';
+	}
+	/**
+	 * Woocommerce_before_shop_loop_item
+	 */
+	function virtue_add_product_loop_open() {
+		$classes = array();
+		$classes[] = 'grid_item';
+		$classes[] = 'product_item';
+		$classes[] = 'clearfix';
+
+		echo '<div class="' . esc_attr( join( ' ', $classes ) ) . '">';
+	}
+	add_action( 'woocommerce_before_shop_loop_item', 'virtue_add_product_loop_open', 1 );
+
+	// Elementor Builder.
+	add_action( 'kadence_woocommerce_loop_builder_before', 'virtue_add_product_loop_open', 1 );
+
+	/**
+	 * Product Class output
+	 *
+	 * @param mixed $class the added classes.
+	 * @param mixed $product the product object or ID.
+	 */
+	function virtue_get_product_class( $class = null, $product = null ) {
+		if ( version_compare( WC_VERSION, '3.4', '>' ) ) {
+			$classes = wc_get_product_class( '', $product );
+		} else {
+			$classes = array();
+		}
+
+		if ( $class ) {
+			if ( ! is_array( $class ) ) {
+				$class = preg_split( '#\s+#', $class );
+			}
+			$classes = array_map( 'esc_attr', $class );
+		}
+
+		return array_filter( array_unique( $classes ) );
+	}
+	/**
+	 * Woocommerce_after_shop_loop_item
+	 */
+	function virtue_add_product_loop_close() {
+		echo '</div>';
+	}
+	add_action( 'woocommerce_after_shop_loop_item', 'virtue_add_product_loop_close', 100 );
+	add_action( 'kadence_woocommerce_loop_builder_after', 'virtue_add_product_loop_close', 100 );
+
 	function virtue_woocommerce_archive_content_wrap_start() {
-    	echo '<div class="details_product_item">';
+		echo '<div class="details_product_item">';
 	}
 	add_action( 'woocommerce_shop_loop_item_title', 'virtue_woocommerce_archive_content_wrap_start', 5 );
 	function virtue_woocommerce_archive_title_wrap_start() {
@@ -218,7 +306,7 @@ function virtue_woocommerce_archive_hooks() {
 		if ( 'off' == $img_ratio ) {
 			woocommerce_subcategory_thumbnail( $category );
 		} else {
-			$thumbnail_id = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true );
+			$thumbnail_id = get_term_meta( $category->term_id, 'thumbnail_id', true );
 			if ( ! empty( $thumbnail_id ) ) {
 				$img = virtue_get_image_array( $catimgwidth, $catimgheight, true, null, null, $thumbnail_id, false );
 				echo '<div class="kt-cat-intrinsic" style="padding-bottom:' . esc_attr( ( $img['height'] / $img['width'] ) * 100 ) . '%;">';

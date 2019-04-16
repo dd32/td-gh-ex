@@ -14,9 +14,11 @@ get_template_part( 'templates/head' ); ?>
 <body <?php body_class(); ?>>
 	<?php 
 		/**
-		* Good place to hook in google tag manager
-		*/
+		 * Good place to hook in google tag manager
+		 */
 		do_action( 'virtue_after_body' );
+
+		wp_body_open();
 	?>
 
 	<div id="wrapper" class="container">

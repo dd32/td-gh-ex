@@ -4,28 +4,32 @@
  *
  * Override this template by copying it to yourtheme/woocommerce/content-single-product.php
  *
- * @author 		WooThemes
- * @package 	WooCommerce/Templates
- * @version     3.4.0
+ * @author WooThemes
+ * @package WooCommerce/Templates
+ * @version 3.6.0
  */
 
-if ( ! defined( 'ABSPATH' ) ) exit; // Exit if accessed directly
+if ( ! defined( 'ABSPATH' ) ) {
+	exit; // Exit if accessed directly.
+}
+
+global $product;
 ?>
 
 <?php
 	/**
-	 * woocommerce_before_single_product hook
+	 * Woocommerce_before_single_product hook
 	 *
 	 * @hooked woocommerce_show_messages - 10
 	 */
-	 do_action( 'woocommerce_before_single_product' );
-	  if ( post_password_required() ) {
-	 	echo get_the_password_form();
-	 	return;
-	 }
+	do_action( 'woocommerce_before_single_product' );
+	if ( post_password_required() ) {
+		echo get_the_password_form();
+		return;
+	}
 ?>
 
-<div id="product-<?php the_ID(); ?>" <?php post_class(); ?>>
+<div id="product-<?php the_ID(); ?>" <?php wc_product_class( '', $product ); ?>>
 	<div class="row">
 		<div class="col-md-5 product-img-case">
 

@@ -18,7 +18,7 @@ function virtue_setup() {
 		'footer_navigation'    => __( 'Footer Navigation', 'virtue' ),
 	));
 
-	define( 'VIRTUE_VERSION', '3.3.2' );
+	define( 'VIRTUE_VERSION', '3.3.4' );
 
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
@@ -61,6 +61,15 @@ function virtue_setup() {
 		),
 	) );
 	add_theme_support( 'align-wide' );
+
+	if ( ! function_exists( 'wp_body_open' ) ) {
+		/**
+		 * WP Body Open
+		 */
+		function wp_body_open() {
+			do_action( 'wp_body_open' );
+		}
+	}
 }
 add_action( 'after_setup_theme', 'virtue_setup' );
 

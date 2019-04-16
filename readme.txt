@@ -30,6 +30,11 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.3.4 | 16th April 2019 = 
+* Update: WC 3.6 support.
+* Add: WP Body Open support. 
+* Tweek Gutenberg styles.
+
 = Version 3.3.3 | 20th December 2018 = 
 * Update: Tweek CSS for Gutenberg.
 * Update: Change the font color in Gutenberg Editor.
