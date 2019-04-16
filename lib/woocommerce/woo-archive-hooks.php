@@ -447,7 +447,7 @@ function ascend_woo_archive_cat_image_output() {
         if($img_ratio == 'off') {
                 woocommerce_subcategory_thumbnail($category);
         } else {
-            $thumbnail_id = get_woocommerce_term_meta( $category->term_id, 'thumbnail_id', true  );
+            $thumbnail_id = get_term_meta( $category->term_id, 'thumbnail_id', true  );
             if ( $thumbnail_id ) {
             	$img = ascend_get_image_array( $catimgwidth, $catimgheight, true, 'attachment-shop_catalog wp-post-image', null, $thumbnail_id, true);
             } else {

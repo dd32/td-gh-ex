@@ -666,13 +666,13 @@ jQuery(document).ready(function ($) {
 		$('.titleclass .entry-title').each(function(){
 			var maxsize = $(this).data('max-size'),
 			minsize = $(this).data('min-size');
-			$(this).kt_fitText(1.4, { minFontSize: minsize, maxFontSize: maxsize, maxWidth: 1140, minWidth: 400 });
+			$(this).kt_fitText(1.4, { minFontSize: minsize, maxFontSize: maxsize, maxWidth: 1110, minWidth: 400 });
 		});
 		if($('.titleclass .subtitle').length) {
 			$('.titleclass .subtitle').each(function(){
 				var sub_maxsize = $(this).data('max-size'),
 				sub_minsize = $(this).data('min-size');
-				$(this).kt_fitText(1.5, { minFontSize: sub_minsize, maxFontSize: sub_maxsize, maxWidth: 1140, minWidth: 400  });
+				$(this).kt_fitText(1.5, { minFontSize: sub_minsize, maxFontSize: sub_maxsize, maxWidth: 1110, minWidth: 400  });
 			});
 		}
 	}

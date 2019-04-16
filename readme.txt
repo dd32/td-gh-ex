@@ -28,6 +28,9 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.4.0 | 16th April 2019 =
+* Update: WC 3.6 support.
+
 = Version 1.3.9 | 3rd April 2019 =
 * Fix: Bug with images not centering.
 * Update: CSS for comment paragraphs.
