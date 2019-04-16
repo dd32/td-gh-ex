@@ -1,6 +1,6 @@
 === Apelle uno ===
 Contributors: DevFabio
-Tags: blog, custom-menu, featured-images, threaded-comments, translation-ready, right-sidebar, sticky-post, full-width-template
+Tags: blog, custom-menu, featured-images, right-sidebar, sticky-post, full-width-template
 Requires at least: 4.8
 Tested up to: 5.1
 Requires PHP: 5.6

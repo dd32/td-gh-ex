@@ -32,15 +32,15 @@ if ( post_password_required() ) {
 			if ( '1' === $apelleuno_comment_count ) {
 				printf(
 					
-					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'apelle-uno' ),
-					'<span>' . get_the_title() . '</span>'
+					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'apelle-uno' ),
+					'<span>' . esc_html_e(get_the_title(), 'apelle-uno') . '</span>'
 				);
 			} else {
 				printf( 
 					
 					esc_html( _nx( '%1$s thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', $apelleuno_comment_count, 'comments title', 'apelle-uno' ) ),
-					number_format_i18n( $apelleuno_comment_count ),
-					'<span>' . get_the_title() . '</span>'
+					esc_html_e(number_format_i18n( $apelleuno_comment_count ), 'apelle-uno'),
+					'<span>' . esc_html_e(get_the_title(), 'apelle-uno') . '</span>'
 				);
 			}
 			?>

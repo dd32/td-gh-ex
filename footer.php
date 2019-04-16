@@ -10,7 +10,7 @@
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'apelle-uno' ) ); ?>" class="imprint">
 				<?php
 				/* translators: %s: WordPress. */
-				printf( __( 'Proudly powered by %s.', 'apelle-uno' ), 'WordPress' );
+				printf( esc_html_e( 'Proudly powered by %s.', 'apelle-uno' ), 'WordPress' );
 				?>
 			</a>
 			<?php

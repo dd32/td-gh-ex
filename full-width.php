@@ -6,7 +6,7 @@ Template Name: Full-Width
 	get_header();
 	if ( ! isset( $content_width ) ) $content_width = 900;
 	?>
-	<main class="container-fluid" id="main-content" role="main" style="max-width:<?php echo $content_width?>" data-view="responsive/AnimationHandler" aria-hidden="false">
+	<main class="container-fluid" id="main-content" role="main" style="max-width:<?php echo esc_attr($content_width)?>" data-view="responsive/AnimationHandler" aria-hidden="false">
     
     <div class="row">
         <div class="col-sm-12 ">
@@ -50,7 +50,7 @@ Template Name: Full-Width
   <div class="modal-dialog modal-lg">
     <div class="modal-content">
         <div class="modal-header">
-       	 	<h5 class="modal-title"><?php echo __('Comment', 'apelle-uno' );?></h5>
+       	 	<h5 class="modal-title"><?php echo esc_html_e('Comment', 'apelle-uno' );?></h5>
        	 	<button type="button" class="close" data-dismiss="modal" aria-label="Close">
           		<span aria-hidden="true">&times;</span>
         	</button>
@@ -63,7 +63,7 @@ Template Name: Full-Width
     
         </div>
         <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal" ><?php echo __('Close', 'apelle-uno' );?></button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" ><?php echo esc_html_e('Close', 'apelle-uno' );?></button>
         </div>
       
     </div>

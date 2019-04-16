@@ -239,7 +239,7 @@ class apelleuno_Apelle_Walker_Nav_Menu extends Walker_Nav_Menu {
     }
 }
 
-function add_description_to_menu($item_output, $item, $depth, $args) {
+function apelle_add_description_to_menu($item_output, $item, $depth, $args) {
 	 if( isset($args->theme_location) and  $args->theme_location == 'central-home-menu' ) {
 		if (strlen($item->description) > 0 ) {
 				  
@@ -249,7 +249,7 @@ function add_description_to_menu($item_output, $item, $depth, $args) {
 
     return $item_output;
 }
-add_filter('walker_nav_menu_start_el', 'add_description_to_menu', 10, 4);
+add_filter('walker_nav_menu_start_el', 'apelle_add_description_to_menu', 10, 4);
 
 
 add_action( 'after_setup_theme', 'apelleuno_wpse_theme_setup' );
@@ -261,6 +261,10 @@ function apelleuno_wpse_theme_setup() {
 	add_theme_support( 'custom-logo' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' ); 
+	$args = array(
+		'default-color' => 'fff',
+	);
+	add_theme_support( "custom-background", $args );
 }
 
 
@@ -281,60 +285,60 @@ add_action( 'after_setup_theme', 'apelleuno_logo_setup' );
 add_action( 'widgets_init', 'apelleuno_widgets_init' );
 function apelleuno_widgets_init() {
 	
-$args = array(
-	'flex-width'    => true,
-	'width'         => 980,
-	'flex-height'    => true,
-	'height'        => 200,
-	'default-image' => get_template_directory_uri() . '/images/header.jpg',
-	'uploads'       => true,
-);
-add_theme_support( 'custom-header', $args );
+	$args = array(
+		'flex-width'    => true,
+		'width'         => 980,
+		'flex-height'    => true,
+		'height'        => 200,
+		'default-image' => get_template_directory_uri() . '/images/header.jpg',
+		'uploads'       => true,
+	);
+	add_theme_support( 'custom-header', $args );
 
 
-$args = array(
-	'name'          => __( 'Sidebar', 'apelle-uno' ),
-	'id'            => 'apelleuno-sidebar-laterale',    
-	'description'   => __( 'widgets in this area are shown in the Sidebar on all pages.', 'apelle-uno' ),
-        'class'         => '',
-	'before_widget' => '<li id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</li>',
-	'before_title'  => '<h2 class="widgettitle">',
-	'after_title'   => '</h2>' ); 
-register_sidebar( $args );
+	$args = array(
+		'name'          => __( 'Sidebar', 'apelle-uno' ),
+		'id'            => 'apelleuno-sidebar-laterale',    
+		'description'   => __( 'widgets in this area are shown in the Sidebar on all pages.', 'apelle-uno' ),
+			'class'         => '',
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h2 class="widgettitle">',
+		'after_title'   => '</h2>' ); 
+	register_sidebar( $args );
 
-$args = array(
-	'name'          => __( 'Footer 1', 'apelle-uno' ),
-	'id'            => 'apelleuno-footer-1',    
-	'description'   => __( 'widgets in this area will be shown in the first footer area on all pages.', 'apelle-uno' ),
-        'class'         => 'list-unstyled text-small',
-	'before_widget' => '<li id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</li>',
-	'before_title'  => '<h5 class="widgettitle">',
-	'after_title'   => '</h5>' ); 
-register_sidebar( $args );
+	$args = array(
+		'name'          => __( 'Footer 1', 'apelle-uno' ),
+		'id'            => 'apelleuno-footer-1',    
+		'description'   => __( 'widgets in this area will be shown in the first footer area on all pages.', 'apelle-uno' ),
+			'class'         => 'list-unstyled text-small',
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h5 class="widgettitle">',
+		'after_title'   => '</h5>' ); 
+	register_sidebar( $args );
 
-$args = array(
-	'name'          => __( 'Footer 2', 'apelle-uno' ),
-	'id'            => 'apelleuno-footer-2',    
-	'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelle-uno' ),
-        'class'         => 'list-unstyled text-small',
-	'before_widget' => '<li id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</li>',
-	'before_title'  => '<h5 class="widgettitle">',
-	'after_title'   => '</h5>' ); 
-register_sidebar( $args );
+	$args = array(
+		'name'          => __( 'Footer 2', 'apelle-uno' ),
+		'id'            => 'apelleuno-footer-2',    
+		'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelle-uno' ),
+			'class'         => 'list-unstyled text-small',
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h5 class="widgettitle">',
+		'after_title'   => '</h5>' ); 
+	register_sidebar( $args );
 
-$args = array(
-	'name'          => __( 'Footer 3', 'apelle-uno' ),
-	'id'            => 'apelleuno-footer-3',    
-	'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelle-uno' ),
-        'class'         => 'list-unstyled text-small',
-	'before_widget' => '<li id="%1$s" class="widget %2$s">',
-	'after_widget'  => '</li>',
-	'before_title'  => '<h5 class="widgettitle">',
-	'after_title'   => '</h5>' ); 
-register_sidebar( $args );
+	$args = array(
+		'name'          => __( 'Footer 3', 'apelle-uno' ),
+		'id'            => 'apelleuno-footer-3',    
+		'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelle-uno' ),
+			'class'         => 'list-unstyled text-small',
+		'before_widget' => '<li id="%1$s" class="widget %2$s">',
+		'after_widget'  => '</li>',
+		'before_title'  => '<h5 class="widgettitle">',
+		'after_title'   => '</h5>' ); 
+	register_sidebar( $args );
 }
 
 
@@ -346,8 +350,3 @@ function apelleuno_add_editor_styles() {
     add_editor_style( 'custom-editor-style.css' );
 }
 add_action( 'admin_init', 'apelleuno_add_editor_styles' );
-$args = array(
-	'default-color' => 'fff',
-);
-add_theme_support( "custom-background", $args ) 
-?>

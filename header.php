@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
 <?php 
-	wp_enqueue_script("jquery");
+	wp_enqueue_scripts();
 	wp_head(); ?>
     <meta name="viewport" content="width=device-width">
     
@@ -17,7 +17,7 @@
         <div style="padding-left:0px; padding-right:0px" class="container-fluid bg-apelleuno">
           <div class="row" style="margin:0px">
             <div class="col-12 apelle-uno-header-image" style="padding: 0;">
-                <img  src="<?php header_image(); ?>" height="<?php echo get_custom_header()->height; ?>" width="100%" alt="" />
+                <img  src="<?php esc_url(header_image()); ?>" height="<?php echo esc_attr(get_custom_header()->height); ?>" width="100%" alt="" />
             </div>
           </div>
         </div>
@@ -39,7 +39,7 @@
 			if ( has_custom_logo() ) {
 					echo '<img src="'. esc_url( $logo[0] ) .'" alt="Demo logo" class="c-logo__img" itemprop="logo">';
 			} else {
-					echo '<b>'. get_bloginfo( 'name' ) .'</b>';
+					echo '<b>'. esc_html(get_bloginfo( 'name' )) .'</b>';
 			}
 			?>
                                 </a>
