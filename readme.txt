@@ -42,5 +42,5 @@ Other features:
 
 * Bootstrap http://getbootstrap.com, (C) 2011-2015 Twitter, Inc., [MIT] (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 * Font Awesome icons, Copyright (C) Dave Gandy License: SIL Open Font License, version 1.1. - http://fontawesome.io/
-
+* popper.min.js Copyright (C) Federico Zivolo 2017 Distributed under the MIT License (license terms are at http://opensource.org/licenses/MIT).
 == Changelog ==

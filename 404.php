@@ -22,7 +22,9 @@ get_header();
 		</main>
 	</div>
 
-<?php
-get_footer();
+	<div class="container"><?php get_footer();?></div>
+	<?php 
 wp_footer();
-?></body>
+?>
+</body>
+</html>
