@@ -314,3 +314,23 @@ add_filter( 'woocommerce_cross_sells_columns', 'bcshop_change_cross_sells_column
 function bcshop_change_cross_sells_columns( $columns ) {
 	return 3;
 }
+
+
+if ( ! function_exists( 'bcshop_loop_shop_per_page' ) ) :
+	/**
+	 * Returns correct posts per page for the shop
+	 *
+	 * @since 1.0.0
+	 */
+	function bcshop_loop_shop_per_page() {
+		
+		$posts_per_page = ( isset( $_GET['products-per-page'] ) ) ? sanitize_text_field( wp_unslash( $_GET['products-per-page'] ) ) : get_theme_mod( 'shopstore_woo_shop_posts_per_page', s_get_option('woo_number_of_product_per_page') );
+
+		if ( $posts_per_page == 'all' ) {
+			$posts_per_page = wp_count_posts( 'product' )->publish;
+		}
+		
+		return $posts_per_page;
+	}
+	add_filter( 'loop_shop_per_page', 'bcshop_loop_shop_per_page', 20 );
+endif;

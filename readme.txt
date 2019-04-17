@@ -47,6 +47,9 @@ BC Business Consulting  WordPress Theme is distributed under the terms of the GN
 * https://www.pexels.com/photo/black-framed-hippie-sunglasses-701877/ ( CC0 License )
 
 == Changelog ==
+ 
+= 1.4 =
+* Woocommerce product filter fixed
 
 = 1.3 =
 * Woocommerce default product screenshot
@@ -57,4 +60,15 @@ BC Business Consulting  WordPress Theme is distributed under the terms of the GN
 = 1.0 =
 * Initial release
 
+
+== Upgrade Notice ==
+
+= 1.3 =
+* Woocommerce default product screenshot
+
+= 1.2 =
+* Review team Feedback fixed
+
+= 1.0 =
+* Initial release
 
