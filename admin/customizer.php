@@ -796,8 +796,6 @@ add_action('customize_register', array('arenabiz_Customizer', 'arenabiz_Register
 
 function arenabiz_registers() {
     wp_register_script('arenabiz_jquery_ui', '//code.jquery.com/ui/1.11.0/jquery-ui.js', array("jquery"), true);
-    wp_register_script('arenabiz_customizer_script', get_template_directory_uri() . '/admin/js/arenabiz_customizer.js', array("jquery", "arenabiz_jquery_ui"), true);
-    wp_enqueue_script('arenabiz_customizer_script');
 }
 
 add_action('customize_controls_enqueue_scripts', 'arenabiz_registers');

@@ -1,4 +1,4 @@
-			 <?php if(arenabiz_get_option('arenabiz_home_page_slider') != "off") { ?>	
+<?php if(arenabiz_get_option('arenabiz_home_page_slider') != "off") { ?>	
 	
 	<div class="slider_bar">
 		<div class="container">

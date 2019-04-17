@@ -2,7 +2,7 @@
 Contributors: manish_gori
 Requires at least: 4.6
 Tested up to: 4.9.4
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 Requires PHP: 5.2
 Version: 1.0.1
 License: GPLv2 or later
@@ -34,7 +34,7 @@ Go to appearance - widgets. Drag widgets from left side and drop into First foot
 Support is available at http://themeszen.com/?page_id=33
 
 = How to use menus =
-For Menus: Use wordpress Menu system under Appearance tab.
+For Menus: Use WordPress Menu system under Appearance tab.
 
 = How to use image as Logo =
 Go to appereance/customize. And then go to general settings/site title and tagline.
@@ -50,25 +50,21 @@ arenabiz is distributed under the terms of the GNU GPL
 The following opensource projects, graphics, fonts, API's or other files as listed have been used in developing this theme. Thanks to the author for the creative work they made. All creative works are licensed as being GPL or GPL compatible.
 
 
-[1.01] Superfish jQuery menu plugin, Copyright 2008 Joel Birch
+[1.00] font-awesome, Copyright Dave Gandy.
 
-	Source: http://users.tpg.com.au/j_birch/plugins/superfish/
-	License: Dual licensed under the MIT and GPL licenses
-	License URI: http://www.opensource.org/licenses/mit-license.php
-	http://www.gnu.org/licenses/gpl.html
+	Source: http://fontawesome.io/
+	License: Licensed under MIT
+	License URI: http://opensource.org/licenses/MIT
+
+[1.01] trt-customizer-pro, Copyright 2016 Justin Tadlock.
+
+	Source: https://github.com/justintadlock/trt-customizer-pro
+	License:  Licensed under the GNU GPL, version 2 or later.
+	License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 	
 
 
-
-[1.02] Custom header script, Copyright AUTOMATTIC
-
-	Source: https://github.com/Automattic/_s/blob/master/inc/custom-header.php
-	License: Free to use under the GPL license.
-	License URI: http://www.gnu.org/licenses/gpl.html
-	
-
-
-[1.03] jQuery FlexSlider v2.1, Copyright 2012 WooThemes
+[1.02] jQuery FlexSlider v2.1, Copyright 2012 WooThemes
 
 	Source: http://www.woothemes.com/flexslider
 	License: Free to use under the GPLv2 license.
@@ -76,7 +72,7 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	
 
 
-[1.04] Bootstrap v4.1.3, Copyright 2011-2018 The Bootstrap Authors. Copyright 2011-2018 Twitter, Inc.
+[1.03] Bootstrap v4.1.3, Copyright 2011-2018 The Bootstrap Authors. Copyright 2011-2018 Twitter, Inc.
 
 	Source: https://getbootstrap.com/
 	License: Licensed under MIT
@@ -84,7 +80,7 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	
 
 
-[1.05] SelectNav (v. 0.1), Copyright (c) 2012 Lukasz Fiszer
+[1.04] SelectNav (v. 0.1), Copyright (c) 2012 Lukasz Fiszer
 
 	Source: https://github.com/lukaszfiszer/selectnav.js
 	License: Available under the MIT license.
@@ -92,9 +88,9 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	
 
 
-[1.06] Images: logo.jpg are custom made, not copyrightable.
+[1.05] Images: logo.jpg are custom made, not copyrightable.
 
-[1.07] images/pic3.jpg, Copyright 2018 pixabay
+[1.06] images/pic3.jpg, Copyright 2018 pixabay
 
 	Source: https://www.pexels.com/photo/woman-in-gray-turtleneck-shirt-portrait-41366/
 	License: Free for personal and commercial use.
@@ -102,7 +98,7 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	
 
 
-[1.08] images/pic1.jpg, Copyright 2018 pixabay
+[1.07] images/pic1.jpg, Copyright 2018 pixabay
 
 	Source: https://www.pexels.com/photo/woman-in-black-scoop-neck-shirt-smiling-38554/
 	License: Free for personal and commercial use.
@@ -110,7 +106,7 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	
 
 
-[1.09] images/pic2.jpg, Copyright 2018 pixabay
+[1.08] images/pic2.jpg, Copyright 2018 pixabay
 
 	Source: https://www.pexels.com/photo/adult-black-background-businessman-casual-262391/
 	License: Free for personal and commercial use.
@@ -118,7 +114,7 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	
 
 
-[1.10] images/port3.jpg, Copyright 2018 Kaboompics .com
+[1.9] images/port3.jpg, Copyright 2018 Kaboompics .com
 
 	Source: https://www.pexels.com/photo/black-pencils-and-design-word-6444
 	License: Free for commercial and noncommercial purposes.
@@ -126,7 +122,7 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	
 
 
-[1.11] images/port2.jpg, Copyright 2018 Pixabay
+[1.10] images/port2.jpg, Copyright 2018 Pixabay
 
 	Source: https://www.pexels.com/photo/abstract-blackboard-bulb-chalk-355948
 	License: Free for personal and commercial use
@@ -134,7 +130,7 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	
 
 
-[1.12] images/port1.jpg, Copyright 2018 Negative Space 
+[1.11] images/port1.jpg, Copyright 2018 Negative Space 
 
 	Source: https://www.pexels.com/photo/notebook-macbook-pro-designer-technology-34199/
 	License: Free for personal and commercial use
@@ -142,7 +138,7 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	
 
 
-[1.13] images/slide1.jpg, Copyright 2018 JÉSHOOTS
+[1.12] images/slide1.jpg, Copyright 2018 JÉSHOOTS
 
 	Source: https://www.pexels.com/photo/woman-in-black-elbow-sleeve-shirt-and-blue-denim-jeans-sitting-on-the-grey-rock-during-daytime-7442/
 	License: Free for personal and commercial use
@@ -150,14 +146,14 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	
 
 
-[1.14] images/slide2.jpg, Copyright 2018 Pixabay
+[1.13] images/slide2.jpg, Copyright 2018 Pixabay
 
 	Source: https://www.pexels.com/photo/business-computer-connection-contemporary-270640/
 	License: Free for personal and commercial use
-	License URI: https://unsplash.com/license
+	License URI: https://www.pexels.com/creative-commons-images
 
 
-[1.15] Bundled Icons (images/quote.png)
+[1.14] Bundled Icons (images/quote.png)
 
  	Icons, Copyright 2018 WPZOOM
 
@@ -168,6 +164,10 @@ The following opensource projects, graphics, fonts, API's or other files as list
 
 == Changelog ==:
 = 1.0.1
+- Fixed:   Changes as requested by TRT.
+
+4/15/2019
+= 1.0.2
 - Fixed:   Changes as requested by TRT.
 
 

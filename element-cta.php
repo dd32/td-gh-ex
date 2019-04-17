@@ -1,4 +1,4 @@
-			 <?php if(arenabiz_get_option('arenabiz_home_page_cta') != "off") { ?>	
+<?php if(arenabiz_get_option('arenabiz_home_page_cta') != "off") { ?>	
 	
 	<div class="cta_bar">
 		<div class="container">

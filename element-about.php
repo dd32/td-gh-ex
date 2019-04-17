@@ -1,4 +1,3 @@
-			
 <?php
  	if (arenabiz_get_option('arenabiz_about_status') == 'on') {
 		?>		
@@ -38,8 +37,8 @@
 					<?php 
 					if(has_post_thumbnail()){
 						$arenabiz_about_image = wp_get_attachment_image_src(get_post_thumbnail_id(),'full');
-						echo '<img alt="'. esc_html(get_the_title()) .'" src="'.esc_url($arenabiz_about_image[0]).'">';
-			} else echo '<img alt="'. esc_html(get_the_title()) .'" src="'.get_template_directory_uri() . '/images/pic'.$i.'.jpg'.'">';
+						echo '<img alt="'. the_title_attribute('echo=0') .'" src="'.esc_url($arenabiz_about_image[0]).'">';
+			} else echo '<img alt="'. the_title_attribute('echo=0') .'" src="'.get_template_directory_uri() . '/images/pic'.$i.'.jpg'.'">';
 					?>
 
 					
@@ -49,7 +48,7 @@
 						
 				<div class="title-head">
 				
-				<?php if(esc_html(get_the_title()) != NULL){ echo esc_html(get_the_title());} else echo __('Heading', 'arenabiz'); ?>
+				<?php if(the_title_attribute('echo=0') != NULL){ echo the_title_attribute('echo=0');} else echo __('Heading', 'arenabiz'); ?>
 						
 			</div>		
 				</div>

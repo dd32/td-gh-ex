@@ -20,9 +20,9 @@ if ( 0 === count( $active ) ) {
 <div id="footer-widgets">
 	<div class="container">
 		<div class="row">
-			<?php foreach ( $active as $id ) : ?>
+			<?php foreach ( $active as $arenabiz_id ) : ?>
 				<aside class="footer-active-<?php echo absint( count( $active ) ); ?> footer-widget-area">
-				<?php dynamic_sidebar( 'footer-' . $id ); ?>
+				<?php dynamic_sidebar( 'footer-' . $arenabiz_id ); ?>
 				</aside><!-- .footer-widget-area -->
 			<?php endforeach; ?>
 		</div><!-- .inner-wrapper -->

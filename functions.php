@@ -172,14 +172,14 @@ function arenabiz_scripts() {
 	
 	wp_enqueue_style( 'arenabiz-style', get_stylesheet_uri() );
 	
-	wp_register_style( 'arenabiz-flexslider', get_template_directory_uri() . '/css/flexslider.css' );
-	wp_enqueue_style( 'arenabiz-flexslider' );
+	wp_register_style( 'flexslider', get_template_directory_uri() . '/css/flexslider.css' );
+	wp_enqueue_style( 'flexslider' );
 	
 	wp_register_style( 'arenabiz-google-fonts', '//fonts.googleapis.com/css?family=Lato' );
 	wp_enqueue_style( 'arenabiz-google-fonts' );
 	
-	wp_register_style( 'arenabiz-bootstrap', get_template_directory_uri() . '/css/bootstrap.css' );
-	wp_enqueue_style( 'arenabiz-bootstrap' );
+	wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css' );
+	wp_enqueue_style( 'bootstrap' );
 		
 	wp_enqueue_style( 'arenabiz-font-awesome', get_template_directory_uri() . '/fonts/font-awesome/css/font-awesome' . $min . '.css', '', '4.7.0' );
 
@@ -201,20 +201,16 @@ function arenabiz_of_register_js() {
 		
 
 		wp_register_script('arenabiz-custom', get_template_directory_uri() . '/js/jquery.custom.js', 'jquery', '1.0', TRUE);
-		wp_register_script('arenabiz-selectnav', get_template_directory_uri() . '/js/selectnav.js', 'jquery', '0.1', TRUE);
-		wp_register_script('arenabiz-flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', 'jquery', '2.1', TRUE);
+		wp_register_script('selectnav', get_template_directory_uri() . '/js/selectnav.js', 'jquery', '0.1', TRUE);
+		wp_register_script('flexslider', get_template_directory_uri() . '/js/jquery.flexslider.js', 'jquery', '2.1', TRUE);
 		
 		wp_enqueue_script('arenabiz-custom');
-		wp_enqueue_script('arenabiz-flexslider');		
-		wp_enqueue_script('arenabiz-selectnav');
+		wp_enqueue_script('flexslider');		
+		wp_enqueue_script('selectnav');
 	}
 }
 add_action('init', 'arenabiz_of_register_js');
 
-/**
- * Implement the Custom Header feature.
- */
-require get_template_directory() . '/inc/custom-header.php';
 
 /**
  * Custom template tags for this theme.

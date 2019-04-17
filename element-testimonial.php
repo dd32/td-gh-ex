@@ -1,4 +1,4 @@
-          <?php if (arenabiz_get_option('arenabiz_testimonial_status') != "off") { ?>   
+<?php if (arenabiz_get_option('arenabiz_testimonial_status') != "off") { ?>   
    
    <div class="testimonial_item_container"> 
                     <div class="testimonial_heading_container"> 
@@ -35,11 +35,11 @@
 					<?php 
 					if(has_post_thumbnail()){
 						$arenabiz_testimonial_image = wp_get_attachment_image_src(get_post_thumbnail_id(),'full');
-						echo '<img alt="'. esc_html(get_the_title()) .'" src="'.esc_url($arenabiz_testimonial_image[0]).'">';
-			} else echo '<img alt="'. esc_html(get_the_title()) .'" src="'.get_template_directory_uri() . '/images/quote.png'.'">';
+						echo '<img alt="'. the_title_attribute('echo=0') .'" src="'.esc_url($arenabiz_testimonial_image[0]).'">';
+			} else echo '<img alt="'. the_title_attribute('echo=0') .'" src="'.get_template_directory_uri() . '/images/quote.png'.'">';
 					?>
                                         <div class="testimonial_name_wrapper">  
-                        <p><?php if(esc_html(get_the_title()) != NULL){ echo esc_html(get_the_title());} else echo __('Manish gori', 'arenabiz'); ?></p>
+                        <p><?php if(the_title_attribute('echo=0') != NULL){ echo the_title_attribute('echo=0');} else echo __('Manish gori', 'arenabiz'); ?></p>
                                         </div>
                                     </div>
                                 </div>

@@ -49,7 +49,7 @@ if ( ! function_exists( 'arenabiz_title' ) ) :
 	function arenabiz_title( $title ) {
 
 		if ( is_home() ) {
-			$title = themeszen_get_option('arenabiz_blogtitle');
+			$title = arenabiz_get_option('arenabiz_blogtitle');
 		} elseif ( is_singular() ) {
 			$title = single_post_title( '', false );
 		} elseif ( is_category() || is_tag() ) {
