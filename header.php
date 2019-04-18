@@ -47,7 +47,7 @@
                             </div>
 
 					
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topHomeMenu" aria-controls="topHomeMenu" aria-expanded="false" aria-label="<?php echo esc_attr_e( "Toggle navigation" ,'apelle-uno' ); ?>">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topHomeMenu" aria-controls="topHomeMenu" aria-expanded="false" aria-label="<?php esc_attr_e( "Toggle navigation" ,'apelle-uno' ); ?>">
         <span class="navbar-toggler-icon"></span>
       </button>
 

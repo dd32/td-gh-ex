@@ -1,4 +1,6 @@
-var distance = jQuery('#stickyMenu').offset().top; 
+if(jQuery('#stickyMenu').length){
+	
+	var distance = jQuery('#stickyMenu').offset().top; 
 
     jQuery(window).scroll(function () {
 
@@ -8,3 +10,5 @@ var distance = jQuery('#stickyMenu').offset().top;
              jQuery('#stickyMenu').removeClass("fixed-top");
          }
      });
+	 
+}
