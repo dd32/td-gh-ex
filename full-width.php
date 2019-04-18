@@ -21,7 +21,16 @@ Template Name: Full-Width
 			if ( has_post_thumbnail() ) {
 				the_post_thumbnail();
 			} 	
+			
+			if (is_singular()) {
+				
 				the_content();
+				
+			}else{
+				
+				the_excerpt();
+				
+				}
 			?></div><?php
 			endwhile;
 			else :
