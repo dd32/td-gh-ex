@@ -49,6 +49,5 @@
 
     wp_footer();
 ?>
-<?php if ( is_singular() ) wp_enqueue_script( "comment-reply" ); ?>
 </body>
 </html>

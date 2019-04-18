@@ -13,6 +13,7 @@
 
 <div class="page-wrapper page-wrapper page-wrapper">
     <header id="main-header" class="l-header  l-header--concierge" role="banner" aria-hidden="false">
+        <?php if ( has_header_image() ) { ?>
         <div style="padding-left:0px; padding-right:0px" class="container-fluid bg-apelleuno">
           <div class="row" style="margin:0px">
             <div class="col-12 apelle-uno-header-image" style="padding: 0;">
@@ -20,6 +21,7 @@
             </div>
           </div>
         </div>
+        <?php } ?>
 		<div class="l-header__top-strip">
 			<div class="l-top-strip js-topStrip ">
 				<div class="l-top-strip__cta-list">	
@@ -45,7 +47,7 @@
                             </div>
 
 					
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topHomeMenu" aria-controls="topHomeMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topHomeMenu" aria-controls="topHomeMenu" aria-expanded="false" aria-label="<?php echo esc_attr_e( "Toggle navigation" ,'apelle-uno' ); ?>">
         <span class="navbar-toggler-icon"></span>
       </button>
 
