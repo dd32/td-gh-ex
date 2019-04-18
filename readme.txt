@@ -2,7 +2,7 @@
 Contributors: alvinkonda
 Requires at least: 4.0
 Tested up to: 5.1
-Version: 1.5.0
+Version: 1.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, editor-style, featured-images, footer-widgets, translation-ready
@@ -34,6 +34,10 @@ If you want to setup your front page like our demo, just follow these steps:
 BasicStore is made for WooCommerce plugin, but you may use it for any WordPress website, even without using WooCommerce.
 
 == Changelog ==
+
+= 1.5.1 - Apr 19 2019 =
+- POT file updated.
+- Tags updated in style.css.
 
 = 1.5.0 - Apr 19 2019 =
 - Outdated WooCommerce templates updated.
