@@ -2,9 +2,9 @@
 Contributors: manish_gori
 Requires at least: 4.6
 Tested up to: 4.9.4
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires PHP: 5.2
-Version: 1.0.1
+Version: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: threaded-comments,two-columns,theme-options, blog, portfolio
@@ -170,5 +170,8 @@ The following opensource projects, graphics, fonts, API's or other files as list
 = 1.0.2
 - Fixed:   Changes as requested by TRT.
 
+4/17/2019
+= 1.0.3
+- Fixed:   Changes as requested by TRT.
 
 
