@@ -75,6 +75,9 @@ Description: Atento is a minimalist WordPress blog theme beautifully crafted to 
    Licensed under the MIT license - http://opensource.org/licenses/MIT
 
 == Changelog ==
+Version 1.0.5 - 2019-04-18
+* Fixed theme switcher option on customizer
+
 Version 1.0.4 - 2019-02-15
 * Fixed getting started admin notice
 
