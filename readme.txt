@@ -1,39 +1,45 @@
-=== Basic Store ===
-Contributors: Theme.al,algoritmika,karzin,anbinder
-Requires at least: WordPress 4.0
-Tested up to: WordPress 4.8
-Version: 1.4.5
+=== BasicStore ===
+Contributors: alvinkonda
+Requires at least: 4.0
+Tested up to: 5.1
+Version: 1.5.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, editor-style, featured-images, footer-widgets, translation-ready
 
 == Description ==
 
-Basicstore is a free theme for shop owners using WooCommerce who like the bootstrap framework and want a clean design
+BasicStore is a free theme for shop owners using WooCommerce who like the bootstrap framework and want a clean design.
 
 == Installation ==
 
-1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
-2. Type in Basic Store in the search form and press the 'Enter' key on your keyboard.
-3. Click on the 'Activate' button to use your new theme right away.
+1. In your admin panel, go to "Appearance > Themes" and click the "Add New" button.
+2. Type in BasicStore in the search form and press the "Enter" key on your keyboard.
+3. Click on the "Activate" button to use your new theme right away.
 
 == Setting Up Demo ==
 
 If you want to setup your front page like our demo, just follow these steps:
 
-1. Create a Page Called Home
-2. Select the page as "Front Page" template
-3. Setup it using the native WordPress customizer, on Appearance > Themes > Basicstore > Customize > Theme options > Front Page Options
-4. Optionally, add some widgets to the Footer sidebar. If you just want some simple text, like our demo, you can use the "Custom Html" widget
-5. Don't forget to add a menu. You can do that accessing the Front page on front-end and clicking on "Add a menu"
+1. Create a page called "Home".
+2. Select the page as "Front Page" template.
+3. Setup it using the native WordPress customizer, on "Appearance > Themes > BasicStore > Customize > Theme options > Front Page Options".
+4. Optionally, add some widgets to the "Footer" sidebar. If you just want some simple text, like our demo, you can use the "Custom HTML" widget.
+5. Don't forget to add a menu. You can do that accessing the front page on front-end and clicking on "Add a menu".
 
 == Frequently Asked Questions ==
 
 = Does this theme support any plugins? =
 
-Basic Store is made for WooCommerce plugin, but you may use it for any WordPress website, even without using WooCommerce.
+BasicStore is made for WooCommerce plugin, but you may use it for any WordPress website, even without using WooCommerce.
 
 == Changelog ==
+
+= 1.5.0 - Apr 19 2019 =
+- Outdated WooCommerce templates updated.
+- Unnecessary WooCommerce templates overrides removed.
+- Assets: `WooCommerce.ttf`, `WooCommerce.woff` and `loader.svg` added.
+- General clean up; author and theme URI updated etc.
 
 = 1.4.5 - Apr 01 2018 =
 - Update outdated templates
@@ -142,15 +148,15 @@ Basic Store is made for WooCommerce plugin, but you may use it for any WordPress
 - payments-methods.php Translation issue
 
 = 1.0.0 - Apr 18 2017 =
-* Initial release
+- Initial release
 
 == Upgrade Notice ==
 
-= 1.4.5 =
-- Update outdated templates
-- Fix body padding related to navbar
+= 1.0.0 =
+This is the first release of the theme.
 
 == Credits ==
+
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * WooCommerce plugin [GNUv3](https://github.com/woocommerce/woocommerce/blob/master/license.txt)
 * Bootstrap framework [MIT](https://github.com/twbs/bootstrap/blob/master/LICENSE)

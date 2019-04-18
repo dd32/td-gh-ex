@@ -4,7 +4,7 @@
  *
  * @link https://jetpack.com/
  *
- * @package basic_store
+ * @package basicstore
  */
 
 /**

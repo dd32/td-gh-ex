@@ -6,6 +6,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
+ * @version 1.5.0
  * @package basicstore
  */
 
@@ -46,7 +47,7 @@
 
 				<span class="sep"> | </span>
 
-				<?php printf( esc_html__( 'Theme: %1$s by %2$s', 'basicstore' ), 'BasicStore', '<a href="https://wpcodefactory.com/author/theme-al/" target="_blank">Theme.al</a>' ); ?></p>
+				<?php printf( esc_html__( 'Theme: %1$s by %2$s', 'basicstore' ), 'BasicStore', '<a href="https://wpfactory.com/author/theme-al/" target="_blank">Theme.al</a>' ); ?></p>
 
 			</div><!-- .site-info -->
 
