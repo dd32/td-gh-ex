@@ -324,7 +324,7 @@ if ( ! function_exists( 'bcshop_loop_shop_per_page' ) ) :
 	 */
 	function bcshop_loop_shop_per_page() {
 		
-		$posts_per_page = ( isset( $_GET['products-per-page'] ) ) ? sanitize_text_field( wp_unslash( $_GET['products-per-page'] ) ) : get_theme_mod( 'shopstore_woo_shop_posts_per_page', s_get_option('woo_number_of_product_per_page') );
+		$posts_per_page = ( isset( $_GET['products-per-page'] ) ) ? sanitize_text_field( wp_unslash( $_GET['products-per-page'] ) ) : get_theme_mod( 'shopstore_woo_shop_posts_per_page',12 );
 
 		if ( $posts_per_page == 'all' ) {
 			$posts_per_page = wp_count_posts( 'product' )->publish;
