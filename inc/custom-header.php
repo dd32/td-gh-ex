@@ -63,17 +63,6 @@ function apelleuno_sanitize_rgba( $color ) {
     return $red.','.$green.','.$blue;}
 add_action( 'customize_register', 'apelleuno_customize_register' );
 
-
-add_action( 'wp_enqueue_scripts', 'theme_review_styles' );
-function theme_review_styles() {
-        $custom_css = "
-                .mycolor{
-                        background: red;
-                }";
-        wp_add_inline_style( 'theme-style', $custom_css );
-}
-
-
 add_action( 'wp_enqueue_scripts', 'apelleuno_customizer_css');
 function apelleuno_customizer_css()
 {
