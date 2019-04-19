@@ -18,7 +18,7 @@ get_header(); ?>
     			<?php while ( have_posts() ) : the_post(); ?>	
                     
                     <h1><?php the_title();?></h1>
-                    <img src="<?php the_post_thumbnail_url(); ?>" width="100%">
+                    <img src="<?php the_post_thumbnail_url(); ?>" >
                     <p><?php the_content();?></p>
                     <?php	
                         if ( comments_open() || '0' != get_comments_number() )

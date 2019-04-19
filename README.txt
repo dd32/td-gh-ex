@@ -1,9 +1,10 @@
 === Aagaz Startup ===
 Contributors: ThemesEye
-Tags: left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, rtl-language-support, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce
+Tags: left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, rtl-language-support, post-formats, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce
 Requires at least: 4.7
-Tested up to: 5.0.3
-Stable tag: 0.1
+Tested up to: 5.1.1
+Requires PHP: 7.2.14
+Stable tag: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -16,7 +17,12 @@ Aagaz Startup is a smart, stylish, innovative and professional looking startup W
 == Changelog ==
 
 = 0.1 =
-	Initial Version Released.
+	* Initial Version Released.
+
+= 0.2 =
+  * Removed warning of readme file.
+  * Added Post format.
+  * Change Style.css
 
 == Resources ==
 
@@ -54,21 +60,22 @@ Aagaz Startup bundles the following third-party resources:
   Font Awesome CSS, LESS, and Sass files are licensed under the MIT License:
   https://opensource.org/licenses/mit-license.html
 
-* Customizer Pro
+* Customizer Pro, Copyright 2016 © Justin Tadlock.
+  License: All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
   Source: https://github.com/justintadlock/trt-customizer-pro
 
 * HTML5 Shiv, Copyright 2014 Alexander Farkas
   Licenses: MIT/GPL2
   Source: https://github.com/aFarkas/html5shiv
 
-* Stocksnap Images
+* Stocksnap Images, 
   License: CC0 1.0 Universal (CC0 1.0)
   Source: https://stocksnap.io/license
 
-  Slider, Copyright Bruce Mars
+  Slider Image, Copyright Bruce Mars
   License: CC0 1.0 Universal (CC0 1.0)
   Source: https://stocksnap.io/photo/3LTVJMIIKW
 
-  About Us, Copyright Rawpixel.com
+  About Us Image, Copyright Domenico Loia
   License: CC0 1.0 Universal (CC0 1.0)
-  Source: https://stocksnap.io/photo/GCBKO6CFTA
+  Source: https://stocksnap.io/photo/IHIHTFK8YH

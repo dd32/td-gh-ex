@@ -19,6 +19,12 @@ function aagaz_startup_setup() {
 	register_nav_menus( array(
 		'top'    => __( 'Top Menu', 'aagaz-startup' ),
 	) );
+	/*
+	 * Enable support for Post Formats.
+	 *
+	 * See: https://codex.wordpress.org/Post_Formats
+	 */
+	add_theme_support( 'post-formats', array('image','video','gallery','audio',) );
 
 	add_theme_support( 'html5', array(
 		'comment-form',
