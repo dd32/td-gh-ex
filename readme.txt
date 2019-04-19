@@ -72,6 +72,10 @@ GPL compatible for own images
 ----------------------------------------------------
 == Changelog ==
 
+Version 2.5.4
+ * Fixed issue with breadcrumb function
+ * Minor CSS improvements
+
 Version 2.5.3
  * Added Styles for Guttenberg Compatible
  * Updates Minor CSS

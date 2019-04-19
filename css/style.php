@@ -16,7 +16,6 @@
                     .bread-you,
                     .entry-meta .post-categories li a,
                     .error404 .error-num .num,
-                    .navigation .nav-links a:hover,
                     .bttn:hover,
                     button,
                     input[type=\"button\"]:hover,
