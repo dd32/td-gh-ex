@@ -1,8 +1,12 @@
-<?php if ( 'posts' == get_option( 'show_on_front' ) ) {
-    include( get_home_template() );
-} else { ?>
+<?php 
 
-<?php get_header(); ?>
+/**
+ * Template Name: Home Page
+ *
+ * @package arenabiz
+ */
+
+get_header(); ?>
 
 <!-- slider -->
 
@@ -45,5 +49,3 @@
 		
 		<div class="clear"></div>
 <?php get_footer(); ?>
-
-<?php } ?>

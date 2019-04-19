@@ -15,19 +15,27 @@
 get_header();
 ?>
 
+		<div class="custom-header-content">
+			<div class="container">
+			<?php $header_title = apply_filters( 'arenabiz_filter_title', '' ); ?>
+			<h1><?php echo esc_html( $header_title ); ?></h1>
+			</div>
+			
+		</div>
+		
+
+	<div id="content" class="site-content">
+	
+					<div class="container">
+
+					<div class="row">
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
 		<?php
 		if ( have_posts() ) :
 
-			if ( is_home() && ! is_front_page() ) :
-				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
-				<?php
-			endif;
 
 			/* Start the Loop */
 			while ( have_posts() ) :
@@ -55,5 +63,15 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
-get_footer();
+get_sidebar(); ?>
+
+
+
+</div><!-- .inner-wrapper -->
+
+			</div><!-- .container -->
+
+	</div><!-- #content -->
+
+
+<?php get_footer();

@@ -15,6 +15,21 @@
 get_header();
 ?>
 
+		<div class="custom-header-content">
+			<div class="container">
+			<?php $header_title = apply_filters( 'arenabiz_filter_title', '' ); ?>
+			<h1><?php echo esc_html( $header_title ); ?></h1>
+			</div>
+			
+		</div>
+		
+
+	<div id="content" class="site-content">
+	
+					<div class="container">
+
+					<div class="row">
+
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
@@ -36,5 +51,15 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-get_sidebar();
-get_footer();
+get_sidebar(); ?>
+
+
+
+</div><!-- .inner-wrapper -->
+
+			</div><!-- .container -->
+
+	</div><!-- #content -->
+
+
+<?php get_footer();

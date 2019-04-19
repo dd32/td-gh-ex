@@ -68,23 +68,3 @@
 
 	</div><!-- .container -->			
 	</header><!-- #masthead -->
-	<?php
-		if (! is_front_page() && !is_home() ) { ?>
-		
-		<div class="custom-header-content">
-			<div class="container">
-			<?php $header_title = apply_filters( 'arenabiz_filter_title', '' ); ?>
-			<h1><?php echo esc_html( $header_title ); ?></h1>
-			</div>
-			
-		</div>
-		
-
-	<div id="content" class="site-content">
-	
-					<div class="container">
-
-					<div class="row">
-					
-					<?php } ?>
-					

@@ -10,28 +10,6 @@
  */
 
 ?>
-
-<?php
-		if (! is_front_page() && !is_home() ) { ?>
-
-</div><!-- .inner-wrapper -->
-
-			</div><!-- .container -->
-
-	</div><!-- #content -->
-	
-	<?php } ?>
-	
-	<?php
-		if ( is_home() ) { ?>
-
-</div><!-- .inner-wrapper -->
-
-			</div><!-- .container -->
-
-	</div><!-- #content -->
-	
-	<?php } ?>
 	
 	<?php
 	get_sidebar( 'footer' );

@@ -1,5 +1,5 @@
 <?php
- 	if (arenabiz_get_option('arenabiz_about_status') == 'on') {
+ 	if (arenabiz_get_option('arenabiz_about_status') != "off") {
 		?>		
 <!-- Portfolio Section -->
 <section class="about-section">

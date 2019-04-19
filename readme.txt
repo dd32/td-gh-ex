@@ -2,9 +2,9 @@
 Contributors: manish_gori
 Requires at least: 4.6
 Tested up to: 4.9.4
-Stable tag: 1.0.3
+Stable tag: 1.0.4
 Requires PHP: 5.2
-Version: 1.0.3
+Version: 1.0.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: threaded-comments,two-columns,theme-options, blog, portfolio
@@ -25,7 +25,7 @@ of your WordPress installation. You will then be able to activate the theme.
 == Frequently Asked Questions ==
 
 = How to setup Home/front-page with out Blog =
-Go to settings - reading and select A static page as option for front page display. Select any page as front page and a page called say "Blog" for blog page.
+Go to settings - reading and select A static page as option for front page display. Select any page as front page (Make sure the page you select is set as  Home Page as a page template from Template drop-down option in the page editor area) and a page called say "Blog" for blog page.
 
 = Footer-sidebar.php, How to add footer widgets =
 Go to appearance - widgets. Drag widgets from left side and drop into First footer widget, second footer widget...and so on..
@@ -174,4 +174,7 @@ The following opensource projects, graphics, fonts, API's or other files as list
 = 1.0.3
 - Fixed:   Changes as requested by TRT.
 
+4/18/2019
+= 1.0.4
+- Fixed:   Changes as requested by TRT.
 
