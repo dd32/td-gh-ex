@@ -4,8 +4,8 @@ Contributors: specia
 Requires at least: WordPress 4.4
 Tested up to: WordPress 5.0.3
 Requires PHP: 5.6
-Stable tag: 1.0.63
-Version: 1.0.63
+Stable tag: 1.0.64
+Version: 1.0.64
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, portfolio, editor-style, grid-layout
@@ -79,6 +79,9 @@ Source: https://stocksnap.io
 License: CC0 License
 
 ##Changelog
+version 1.0.64
+* Code Beautify
+
 version 1.0.63
 * Improve Styles
 
