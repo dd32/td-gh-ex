@@ -3,7 +3,7 @@ Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, blog, e-commerce, photography
 Requires at least: 4.0
 Tested up to: 5.1.1
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +18,12 @@ Avventura Lite WordPress Theme, Copyright 2019 ThemeinProgress.
 Avventura Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.0.6 =
+Release date - April, 20 - 2019
+
+* Updated - WooCommerce templates
+* Updated - Readme.txt file
 
 = 1.0.5 =
 Release date - April, 09 - 2019
@@ -95,7 +101,10 @@ HTML5 Shiv By @afarkas @jdalton @jon_neal @rem - https://github.com/aFarkas/html
 selectivizr By Keith Clark - https://github.com/keithclark/selectivizr
 * selectivizr.js v1.0.3b - Licensed under MIT license ( Applies to selectivizr.js file in /avventura-lite/assets/scripts/ )
 
-The following scripts and styles are coded by me and they are released under MIT license
+TGM Plugin Activation By Thomas Griffin, Gary Jones, Juliette Reinders Folmer - http://tgmpluginactivation.com
+* class-plugin-activation.php v2.6.1 - Licensed under GPL2 license ( Applies to class-plugin-activation.php file in /avventura-lite/core/includes/ )
+
+The following scripts and styles are self created and they are released under MIT license
 
 * /avventura-lite/assets/skins/cyan.css
 * /avventura-lite/assets/skins/orange.css
@@ -114,7 +123,7 @@ The following scripts and styles are coded by me and they are released under MIT
 * /avventura-lite/core/admin/assets/css/panel.css
 * /avventura-lite/core/admin/assets/js/panel.js
 
-The following images are created by me and they are released under CC0 license
+The following images are self created and they are released under CC0 license
 
 * /avventura-lite/assets/images/background/paper.jpg
 * /avventura-lite/assets/images/icons/scotch-left.png
