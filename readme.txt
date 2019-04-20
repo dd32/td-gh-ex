@@ -3,7 +3,7 @@ Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, blog, e-commerce, photography
 Requires at least: 4.0
 Tested up to: 5.1.1
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,6 +21,12 @@ Anna Lite WordPress Theme, Copyright 2019 ThemeinProgress.
 Anna Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.0.7 =
+Release date - April, 20 - 2019
+
+* Updated - WooCommerce templates
+* Updated - Readme.txt file
 
 = 1.0.6 =
 Release date - April, 14 - 2019
@@ -99,7 +105,10 @@ HTML5 Shiv By @afarkas @jdalton @jon_neal @rem - https://github.com/aFarkas/html
 selectivizr By Keith Clark - https://github.com/keithclark/selectivizr
 * selectivizr.js v1.0.3b - Licensed under MIT license ( Applies to selectivizr.js file in /anna-lite/assets/scripts/ )
 
-The following scripts and styles are coded by me and they are released under MIT license
+TGM Plugin Activation By Thomas Griffin, Gary Jones, Juliette Reinders Folmer - http://tgmpluginactivation.com
+* class-plugin-activation.php v2.6.1 - Licensed under GPL2 license ( Applies to class-plugin-activation.php file in /anna-lite/core/includes/ )
+
+The following scripts and styles are self created and they are released under MIT license
 
 * /anna-lite/assets/skins/cyan.css
 * /anna-lite/assets/skins/orange.css
@@ -114,7 +123,7 @@ The following scripts and styles are coded by me and they are released under MIT
 * /anna-lite/assets/css/anna-lite-template.css
 * /anna-lite/assets/js/anna-lite-template.js
 
-The following images are created by me and they are released under CC0 license
+The following images are self created and they are released under CC0 license
 
 * /anna-lite/assets/images/background/paper.jpg
 * /anna-lite/assets/images/icons/scotch-left.png
