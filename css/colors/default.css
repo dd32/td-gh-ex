@@ -245,6 +245,10 @@ input[type="submit"]:active {
 .woocommerce-MyAccount-navigation ul li.is-active {
 	background: #6ea81a;
 }
+.page-wrapper .posts-navigation a:hover {
+    background: #6ea81a;
+	border: 2px solid #6ea81a;
+}
 
 /* --------------------------------------
 =========================================
@@ -397,3 +401,7 @@ ins {
 #add_payment_method #payment div.payment_box:before, .woocommerce-cart #payment div.payment_box:before, .woocommerce-checkout #payment div.payment_box:before {
 	border: 1em solid #0d0d0d;
 }	
+.page-wrapper .posts-navigation a {
+    color: #0d0d0d;
+    border: solid 2px #0d0d0d;
+}
