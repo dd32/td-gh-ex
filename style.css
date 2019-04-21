@@ -4,7 +4,7 @@ Theme URI: http://ebyb.eu/themes/aguafuerte/
 Author: acalfieri
 Author URI: http://ebyb.eu
 Description: Aguafuerte is a theme designed to be fully responsive by taking the mobile-first approach. It features the full range of post formats, two menu locations, one sidebar and three footer widget areas.
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, grid-layout, accessibility-ready, custom-background, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -728,11 +728,6 @@ textarea:focus {
 	margin-bottom: 1.5em;
 }
 
-.post-password-form p:last-of-type {
-	width: 50%;
-	margin: auto;
-}
-
 .post-password-form label {
 	color: #777;
 	display: block;
@@ -1223,6 +1218,7 @@ a:focus {
 	font-family: 'Source Sans Pro', 'Helvetica Neue', sans-serif;
 	font-size: 1em;
 	font-weight: 700;
+	word-wrap: anywhere;
 }
 
 .post-navigation a:hover,
@@ -1443,18 +1439,18 @@ a:focus {
 
 img.alignleft {
 	float: left;
-	margin: 0.375em 1.667em 1.667em -1.667em;
+	margin: 0.375em 1.5em 1.5em 0;
 }
 
 img.alignright {
 	float: right;
-	margin: 0.375em -1.667em 1.667em 1.667em;
+	margin: 0.375em 0 1.5em 1.5em;
 }
 
 img.aligncenter {
 	clear: both;
 	display: block;
-	margin: 0 auto 1.667em;
+	margin: 0 auto 1.5em;
 }
 
 blockquote.alignleft {
@@ -1511,7 +1507,9 @@ aside:after,
 #main-content:before,
 #main-content:after,
 #footer-widget-area:before,
-#footer-widget-area:after {
+#footer-widget-area:after,
+.entry-content:before,
+.entry-content:after {
 	content: "";
 	display: block;
 }
@@ -1527,7 +1525,8 @@ aside:after,
 .sidebar:after,
 .contributor:after,
 #main-content:after,
-#footer-widget-area:after {
+#footer-widget-area:after,
+.entry-content:after {
 	clear: both;
 }
 
@@ -1821,6 +1820,7 @@ main {
 	transition: all 0.5s;
 }
 
+.featured-image img,
 .page-thumbnail img {
 	width: 100%;
 }
@@ -2057,7 +2057,8 @@ a.entry-date:hover {
 	content: '\f105';
 }
 
-.format-video iframe {
+.format-video iframe,
+.wp-block-embed iframe {
 	max-height: 180px;
 }
 
@@ -2086,6 +2087,15 @@ a.entry-date:hover {
 .single .format-chat .entry-content p:nth-child(even) {
 	background-color: #fefefe;
 	padding: 0 0.8em;
+}
+
+.wp-block-gallery {
+	margin-left: 0;
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+	max-width: 100px;
+	height: 2px;
 }
 
 /**
@@ -2704,6 +2714,16 @@ h6 {
 }
 
 /**
+ * 5.0 - Forms
+ */
+
+.post-password-form p:last-of-type {
+	width: 50%;
+	margin: 0;
+}
+
+
+/**
  * 6.0 - Navigation
  */
 
@@ -2936,7 +2956,7 @@ main {
 
 #main-content {
 	width: 72%;
-	padding: 2em 2em 2em 4em;
+	padding: 4em 2em 4em 6em;
 	margin: 0;
 	font-size: 1.125em;
 	letter-spacing:0.02em;
@@ -2948,34 +2968,39 @@ main {
 	padding: 0;
 }
 
-.page-template-no-sidebar-full-width #main-content {
+#primary-sidebar {
+	width: 28%;
+	margin: 0;
+	padding: 4em 6em 4em 2em;
+	border: none;
+}
+
+.no-sidebar #main-content {
+	width: 68.75%;
+	margin: auto;
+	padding: 4em;
+}
+
+.page-template-no-sidebar-full-width #main-content,
+.page-template-contributors-template #main-content {
 	width: 100%;
-	padding: 2em 6em;
+	padding: 4em 6em;
+}
+
+.page-template-featured-articles-template #main-content {
+	width: 100%;
+	padding: 0;
 }
 
 .page-template-no-sidebar #main-content {
 	width: 100%;
-	padding: 2em 28% 2em 4em;
+	padding: 4em 28% 4em 6em;
 }
 
-#primary-sidebar {
-	width: 28%;
-	margin: 0;
-	padding: 2em 4em 2em 2em;
-	border: none;
-}
-
-.no-sidebar #main-content,
-.page-template-contributors-template #main-content {
-	width: 100%;
-	padding: 2em 4em;
-}
-	
 .no-sidebar.single #main-content {
 	width: 68.75%;
 	margin: auto;
-	float:none;
-	padding: 2em;
+	padding: 4em;
 }
 
 /**
@@ -2989,6 +3014,7 @@ main {
 #masthead { /*   Revisar todo */
 	height: auto;
 	display: flex;
+	flex-direction: column;
 	flex-wrap: wrap;
 	align-items: center;
 	border: 0;
