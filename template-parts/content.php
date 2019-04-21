@@ -8,6 +8,7 @@
  */
 $defaults 		= arrival_get_default_theme_options();
 $_blog_excerpts = get_theme_mod('arrival_blog_excerpts',$defaults['arrival_blog_excerpts']);
+$_blog_layout 	= get_theme_mod('arrival_blog_layout',$defaults['arrival_blog_layout']);
 
 $post_format 	= get_post_format( get_the_id() );
 
@@ -30,7 +31,10 @@ if( 'gallery' == $post_format ){
 		?>
 		<div class="entry-meta">
 		<?php
-		arrival_posted_by();
+		if( $_blog_layout == 'list-layout' ){
+			arrival_posted_by();	
+		}
+		
 		echo arrival_post_view(); //sanitization already done
 		arrival_posted_on(); 
 		arrival_comments_link();

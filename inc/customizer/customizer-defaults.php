@@ -22,6 +22,7 @@ function arrival_get_default_theme_options() {
     $defaults[$prefix.'_top_header_email'] = '';
     $defaults[$prefix.'_top_header_phone'] = '';
     $defaults[$prefix.'_top_right_header_content'] = 'menus';
+    $defaults[$prefix.'_blog_layout'] = 'list-layout';
     $defaults[$prefix.'_top_right_header_menus'] = 'top';
     $defaults[$prefix.'_main_nav_layout'] = 'boxed';
     $defaults[$prefix.'_main_nav_right_content'] = 'search';
@@ -33,11 +34,14 @@ function arrival_get_default_theme_options() {
     $defaults[$prefix.'_top_header_bg_color'] = '#E12454';
     $defaults[$prefix.'_main_nav_bg_color'] = '#fafafa';
     $defaults[$prefix.'_footer_bg_color'] = '#223645';
+    $defaults[$prefix.'_footer_text_color'] = '#fff';
+    $defaults[$prefix.'_footer_link_color'] = '#fff';
     $defaults[$prefix.'_footer_copyright_border_top'] = true;
     $defaults[$prefix.'_main_nav_menu_color'] = '#333';
     $defaults[$prefix.'_link_color'] = '#333';
     $defaults[$prefix.'_main_container_width'] = 1170;
     $defaults[$prefix.'_sidebar_width'] = 440;
+    $defaults[$prefix.'_header_box_shadow_disable'] = false;
     $defaults[$prefix.'_blog_excerpts'] = 580;
     $defaults[$prefix.'_single_post_sidebars'] = 'right_sidebar';
     $defaults[$prefix.'_nav_font_weight'] = 500;

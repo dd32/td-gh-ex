@@ -45,6 +45,7 @@ function arrival_setup() {
 
 	/* custom image size */
 	add_image_size( 'arrival-blog-list-thumb', 800, 800, true );
+	add_image_size( 'arrival-blog-masonry-thumb', 520, 345, true );
 
 	/*
 		* Enable support for Post Thumbnails on posts and pages.

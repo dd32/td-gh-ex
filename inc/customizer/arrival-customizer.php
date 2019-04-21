@@ -280,12 +280,28 @@ $wp_customize->add_section( $prefix.'_blog_settings', array(
     )
   );
 
+//blog layout
+$wp_customize->add_setting( $prefix.'_blog_layout', array(
+        'default'               => $default[$prefix.'_blog_layout'],
+        'sanitize_callback'     => 'arrival_sanitize_blog_layout',
+      ) );
+
+$wp_customize->add_control( $prefix.'_blog_layout', array(
+        'label'         => esc_html__( 'Blog Layout', 'arrival' ),
+        'description'   => esc_html__('Select your blog layout','arrival'),
+        'section'       => $prefix.'_blog_settings',
+        'type'      => 'select',
+        'choices' => array(
+          'list-layout' => esc_html__('Default','arrival'),
+          'masonry-layout' => esc_html__('Grid','arrival')
+        )
+        
+      ) );
 
 //blog excerpts
 $wp_customize->add_setting( $prefix.'_blog_excerpts', array(
         'default'             => $default[$prefix.'_blog_excerpts'],
         'sanitize_callback'   => 'absint',
-        'transport'           => 'postMessage'
         
       ) );
 
@@ -487,6 +503,7 @@ $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefi
 $wp_customize->add_setting($prefix.'_top_header_txt_color', array(
         'default'           => $default[$prefix.'_top_header_txt_color'],
         'sanitize_callback' => 'arrival_sanitize_color',
+        'transport'         => 'postMessage'
     )
 );
 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefix.'_top_header_txt_color', array(
@@ -714,7 +731,20 @@ $wp_customize->add_control( $prefix.'_nav_font_weight', array(
         
       ) );
 
+//disable header box-shadow
+$wp_customize->add_setting($prefix.'_header_box_shadow_disable', array(
+        'default'           => $default[$prefix.'_header_box_shadow_disable'],
+        'sanitize_callback' => 'arrival_sanitize_checkbox',
+    )
+);
 
+$wp_customize->add_control( $prefix.'_header_box_shadow_disable',array(
+        'label'      => esc_html__( 'Disable Box-shadow', 'arrival' ),
+        'description' => esc_html__('Check the box to disable the header box-shadow','arrival'),
+        'section'    => $prefix.'_main_header_options_panel',
+        'type'       => 'checkbox',
+
+));
 
 if( function_exists('arrival_customizer_pro_info')){
   arrival_customizer_pro_info( $wp_customize, $prefix.'_main_header_colors_info',$prefix.'_main_header_options_panel');
@@ -817,6 +847,31 @@ $wp_customize->add_control( new Arrival_Customizer_Color_Control( $wp_customize,
         'section'         => $prefix.'_footer_settings',
       ) ) );
 
+//foter text colors
+$wp_customize->add_setting($prefix.'_footer_text_color', array(
+        'default'           => $default[$prefix.'_footer_text_color'],
+        'sanitize_callback' => 'arrival_sanitize_color',
+        'transport'         => 'postMessage'
+    )
+);
+
+$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $prefix.'_footer_text_color', array(
+        'label'           => esc_html__( 'Text Color', 'arrival' ),
+        'section'         => $prefix.'_footer_settings',
+      ) ) );
+
+//link color
+$wp_customize->add_setting($prefix.'_footer_link_color', array(
+        'default'           => $default[$prefix.'_footer_link_color'],
+        'sanitize_callback' => 'arrival_sanitize_color',
+        'transport'         => 'postMessage'
+    )
+);
+
+$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, $prefix.'_footer_link_color', array(
+        'label'           => esc_html__( 'Link Color', 'arrival' ),
+        'section'         => $prefix.'_footer_settings',
+      ) ) );
 
 //footer copyright top border
 $wp_customize->add_setting( $prefix.'_footer_copyright_border_top', array(

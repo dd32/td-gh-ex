@@ -74,6 +74,20 @@ function arrival_sanitize_switch( $input ) {
 	return '';
 }
 
+//blog layout sanitize
+function arrival_sanitize_blog_layout( $input ) {
+	$valid = array(
+		'list-layout' => esc_html__('Default','arrival'),
+        'masonry-layout' => esc_html__('Masonry','arrival')
+	);
+
+	if ( array_key_exists( $input, $valid ) ) {
+		return $input;
+	}
+
+	return '';
+}
+
 /**
  * Number sanitization callback
  *

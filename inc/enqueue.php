@@ -32,8 +32,9 @@ add_action( 'wp_enqueue_scripts', 'arrival_styles' );
  */
 function arrival_scripts() {
 	
-	$default = arrival_get_default_theme_options();
+	$default 				= arrival_get_default_theme_options();
 	$arrival_one_page_menus = get_theme_mod('arrival_one_page_menus',$default['arrival_one_page_menus']);
+	$_blog_layout 			= get_theme_mod('arrival_blog_layout',$default['arrival_blog_layout']);
 
 	// If the AMP plugin is active, return early.
 	if ( arrival_is_amp() ) {
@@ -51,6 +52,7 @@ function arrival_scripts() {
 
 	//enqueue jarallax script
 	wp_enqueue_script( 'jarallax', get_theme_file_uri( '/assets/lib/jarallax/jarallax.min.js' ), array('jquery'), ARRIVAL_VER, false );
+	
 	
 
 	// Enqueue skip-link-focus script.

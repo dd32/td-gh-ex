@@ -93,7 +93,8 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
                                 $prefix.'_main_nav_menu_color_hover',
                                 $prefix.'_nav_header_padding',
                                 $prefix.'_main_header_colors_info',
-                                $prefix.'_nav_font_weight'
+                                $prefix.'_nav_font_weight',
+                                $prefix.'_header_box_shadow_disable'
                                 
                             ),
                         ),
@@ -135,7 +136,9 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
                             'controls' => array(
                                 $prefix.'_footer_bg_color',
                                 $prefix.'_footer_copyright_border_top',
-                                $prefix.'_footer_settings_info'
+                                $prefix.'_footer_settings_info',
+                                $prefix.'_footer_text_color',
+                                $prefix.'_footer_link_color'
                                 
                             ),
                         ),

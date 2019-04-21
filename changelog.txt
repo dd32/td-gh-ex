@@ -1,3 +1,6 @@
+=== v1.0.5 ===
+- Minor bugs fixed
+
 === v1.0.4 ===
 - Fixed sanitization issue
 

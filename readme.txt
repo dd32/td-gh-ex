@@ -13,7 +13,8 @@ Stable tag: 1.0.3
 
 == Description ==
 
-Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website with easy drag and drop options. The theme is lightweight, fast and fully compatible with elementor builder. The themes comes with fully gutenberg ready so you are free to edit and publish with new WordPress editor.
+Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website with easy drag and drop options. The theme is lightweight, fast and fully compatible with elementor builder. The theme comes with fully Gutenberg ready so you are free to edit and publish with new WordPress editor.
+The theme is a combination of power, freedom, and beauty which means there is no limit of anything you need to create a feature website with your own creative ideas.
 
 
 Arrival is a WordPress Theme, 

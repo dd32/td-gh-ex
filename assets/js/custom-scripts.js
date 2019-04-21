@@ -105,4 +105,7 @@ $('.gallery-post-format').slick({
     arrows: true
 });
 
+
+
+
 });

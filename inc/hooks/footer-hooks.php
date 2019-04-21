@@ -61,10 +61,10 @@ if(! function_exists('arrival_btm_footer')){
 			</a>
 			<?php } ?>
 			<span class="sep"> | </span>
-			<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'arrival' ), 'Arrival', '<a href="' . esc_url( 'https://wpoperation.com/' ) . '" target="_blank">WPoperation</a>' );
-			?>
+			<?php echo esc_html__('Theme: Arrival by','arrival'); ?>
+			<a href="<?php echo esc_url( __('https://wpoperation.com/','arrival') )?>">
+				<?php echo esc_html__('WPoperation','arrival'); ?>
+			</a>
 		</div><!-- .site-info -->
 		
 		<?php if( $_footer_icons_enable == 'yes' ){ ?>

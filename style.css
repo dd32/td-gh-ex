@@ -3,8 +3,9 @@ Theme Name: Arrival
 Theme URI: https://wpoperation.com/themes/arrival/
 Author: WPoperation
 Author URI: http://wpoperation.com/
-Description: Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website with easy drag and drop options. The theme is lightweight, fast and fully compatible with elementor builder. The themes comes with fully gutenberg ready so you are free to edit and publish with new WordPress editor.
-Version: 1.0.4
+Description: Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website with easy drag and drop options. The theme is lightweight, fast and fully compatible with elementor builder. The theme comes with fully Gutenberg ready so you are free to edit and publish with new WordPress editor.
+The theme is a combination of power, freedom, and beauty which means there is no limit of anything you need to create a feature website with your own creative ideas.
+Version: 1.0.5
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: arrival
@@ -2231,3 +2232,41 @@ input.wpcf7-form-control:focus,
 textarea.wpcf7-form-control.wpcf7-textarea:focus {
     outline: none;
 }
+
+/* masonry blog */
+body.masonry-layout .site-main article.post{
+	float: left;
+    width: 31%;
+    margin-bottom: 35px;
+    outline: 1px solid #efefef;
+    -webkit-transition: all 0.3s;
+       -moz-transition: all 0.3s;
+        -ms-transition: all 0.3s;
+         -o-transition: all 0.3s;
+            transition: all 0.3s;
+}
+body.masonry-layout .site-main article.post:not(:nth-child(3n)){
+	margin-right: 3.5%;
+}
+body.masonry-layout .site-main article.post:nth-child(4){
+	clear: both;
+}
+body.masonry-layout .arrival-archive-navigation{
+	clear: both;
+}
+body.masonry-layout .post-content-wrap {
+    padding: 16px;
+}
+body.masonry-layout .site-main article.post:hover{
+	-webkit-transform: translate(0, -4px);
+	   -moz-transform: translate(0, -4px);
+	    -ms-transform: translate(0, -4px);
+	     -o-transform: translate(0, -4px);
+	        transform: translate(0, -4px);
+	-webkit-box-shadow: 0 6px 10px rgba(0, 0, 0, 0.055);
+		        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.055);	
+}
+body.masonry-layout .post-content-wrap p{
+	color: #aaa;
+}
+

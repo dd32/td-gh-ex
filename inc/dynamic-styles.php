@@ -97,6 +97,17 @@ function arrival_dynamic_styles(){
 	<?php 
 	}
 
+	//header box-shadow
+	$_header_box_shadow_disable = get_theme_mod('arrival_header_box_shadow_disable',$defaults['arrival_header_box_shadow_disable']);
+
+	if( $_header_box_shadow_disable == true ){ ?>
+		.main-header-wrapp.boxed .container, .main-header-wrapp.full{
+			-webkit-box-shadow: unset;
+			box-shadow: unset;
+		}
+	<?php 
+	}
+
 	//container width
 	$main_container_width = get_theme_mod('arrival_main_container_width',$defaults['arrival_main_container_width']);
 	if( $main_container_width ){ ?>
@@ -155,32 +166,49 @@ function arrival_dynamic_styles(){
 	if($arrival_link_color != $defaults['arrival_link_color'] ){
 	?>
 		a,a:visited,.site-main a{
-			color: <?php  arrival_sanitize_color($arrival_link_color);?>;
+			color: <?php  echo arrival_sanitize_color($arrival_link_color);?>;
 		}
 
 	<?php } ?>
 	<?php if( $arrival_link_color_hover != $defaults['arrival_theme_color'] ){ ?>
 			
 			a:hover,.site-main a:hover{
-				color: <?php  arrival_sanitize_color($arrival_link_color_hover);?>;
+				color: <?php  echo arrival_sanitize_color($arrival_link_color_hover);?>;
 			}
 
 	<?php }
 
 	//footer background color
-	$_footer_bg_color = get_theme_mod('arrival_footer_bg_color',$defaults['arrival_footer_bg_color']);
+	$_footer_bg_color 	= get_theme_mod('arrival_footer_bg_color',$defaults['arrival_footer_bg_color']);
+	$_footer_text_color = get_theme_mod('arrival_footer_text_color',$defaults['arrival_footer_text_color']);
+	$_footer_link_color = get_theme_mod('arrival_footer_link_color',$defaults['arrival_footer_link_color']);
 
 	if( $_footer_bg_color != $defaults['arrival_footer_bg_color'] ){ ?>
 
 		.site-footer{
-			background: <?php  arrival_sanitize_color($_footer_bg_color);?>;
+			background: <?php echo arrival_sanitize_color($_footer_bg_color);?>;
 		}
 
-	<?php } ?>
+	<?php }
 
+	if( $_footer_text_color != $defaults['arrival_footer_text_color'] ){ ?>
 
+		.site-footer h2.widget-title,.site-footer{
+			color: <?php echo arrival_sanitize_color($_footer_text_color);?>;
+		}
 
-	<?php 
+	<?php
+	}
+
+	if( $_footer_link_color != $defaults['arrival_footer_link_color'] ){ ?>
+
+		.site-footer ul li a,.site-footer a{
+			color: <?php echo arrival_sanitize_color($_footer_link_color);?>;
+		}
+
+	<?php
+	}
+
 
 
 	$custom_css = ob_get_clean();
