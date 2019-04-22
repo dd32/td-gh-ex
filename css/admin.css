@@ -1,0 +1,13 @@
+/**
+ * Admin Styles
+ */
+ 
+.custom_post_thumbs img,
+.custom_pages_columns img {
+	width: 150px;
+	height: auto;
+}
+
+.customize-control-kirki-radio-image input:checked + label img {
+	border: none !important;	
+}
