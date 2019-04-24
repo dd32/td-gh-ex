@@ -169,6 +169,7 @@ if ( hu_is_customizing() ) {
 /* ------------------------------------------------------------------------- *
  *  Nimble Integration
 /* ------------------------------------------------------------------------- */
+// Replaces the default Nimble theme template by a custom one for Hueman
 add_filter( 'nimble_get_locale_template_path', 'hu_set_specific_nimble_template', 10, 2 );
 function hu_set_specific_nimble_template( $path, $file_name ) {
     if ( 'nimble_template' === $file_name ) {
@@ -177,11 +178,31 @@ function hu_set_specific_nimble_template( $path, $file_name ) {
     return $path;
 }
 
-add_action( '__after_header', 'hu_render_nimble_sections_on_specific_hueman_hook', PHP_INT_MAX );
-function hu_render_nimble_sections_on_specific_hueman_hook() {
+add_action( '__after_header', 'hu_render_nimble_sections_after_header', PHP_INT_MAX );
+function hu_render_nimble_sections_after_header() {
+    if ( function_exists( 'Nimble\sek_page_uses_nimble_header_footer' ) && \Nimble\sek_page_uses_nimble_header_footer() )
+      return;
+
+    hu_do_render_nimble_sections();
     // this occurs only when user pick the nimble template for a given context
-    if ( function_exists( '\Nimble\sek_get_locale_template' ) && 'nimble-tmpl.php' === basename( \Nimble\sek_get_locale_template() ) ) {
-        \Nimble\render_content_sections_for_nimble_template();
+    // 'nimble-tmpl.php' is the Hueman theme template overriding the Nimble one. Located in HU_BASE .'tmpl/nimble-tmpl.php'
+}
+
+function hu_do_render_nimble_sections() {
+    if ( function_exists( 'Nimble\sek_get_locale_template' ) && 'nimble-tmpl.php' === basename( \Nimble\sek_get_locale_template() ) ) {
+        if ( function_exists('Nimble\Nimble_Manager') && function_exists('Nimble\sek_get_local_content_locations') ) {
+            if ( method_exists( \Nimble\Nimble_Manager(), 'render_nimble_locations') ) {
+                \Nimble\Nimble_Manager()->render_nimble_locations(
+                    array_keys( \Nimble\sek_get_local_content_locations() ),//array( 'loop_start', 'before_content', 'after_content', 'loop_end'),
+                    array(
+                        // the location rendered even if empty.
+                        // This way, the user starts customizing with only one location for the content instead of four
+                        // But if the other locations were already customized, they will be printed.
+                        'fallback_location' => 'loop_start'
+                    )
+                );
+            }
+        }
     }
 }
 
@@ -194,7 +215,7 @@ function hu_body_class_for_nimble_template( $classes ) {
 }
 
 /* ------------------------------------------------------------------------- *
- *  Register locations for Nimble Builder when ^posts are featured on top of the blog
+ *  Register locations for Nimble Builder when posts are featured on top of the blog
  *  @see if ( hu_is_checked('featured-posts-enabled') ) { get_template_part('parts/featured'); }
 /* ------------------------------------------------------------------------- */
 add_action( 'init', 'czr_fn_maybe_register_nimble_location');

@@ -1,78 +1,98 @@
-# Hueman v3.4.2
-![Hueman - Free Wordpress Theme](/screenshot.png)
+=== Hueman ===
+Contributors: nikeo, alxmedia, d4z_c0nf
+Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-colors, custom-menu, featured-images, flexible-header, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
+Requires at least: 4.6
+Tested up to: 5.1
+Stable tag: 3.4.20
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-> The Hueman theme helps you increase your traffic and engage your visitors. It loads fast and is 100% mobile-friendly according to Google. Best rated theme for blogs and magazines on WordPress.org. Powering 70K+ websites around the world.
+> Good looking, fast and mobile friendly theme. Perfect for blogs and magazines websites.
 
-View more themes from this author: https://presscustomizr.com
+== Description ==
+The Hueman theme helps you increase your traffic and engage your visitors. It loads fast and is 100% mobile-friendly according to Google. Best rated theme for blogs and magazines on WordPress.org. Powering 70K+ websites around the world.
 
-## Demo and Documentation
-* DEMO : https://demo-hueman.presscustomizr.com/
-* DOCUMENTATION : https://hueman.presscustomizr.com/
+== Upgrade Notice ==
+= 3.4.20 =
+New option to display the primary sidebar before the content in mobile view.
 
+== Changelog ==
+= 3.4.20 April 24th, 2019 =
+* fixed : smooth scroll throwing JS errors in latest chrome. fixes #787
+* improved : sidebar => add an option to set an order on mobile devices. fixes #779
 
-## Theme License
-The **Hueman WordPress theme** theme itself is nothing but 100% GPLv3. See headers of files for further details.[GNU GPL v3.0 or later](http://www.gnu.org/licenses/gpl-3.0.en.html)
+= 3.4.19 April 9th, 2019 =
+* fixed : make sure a default option using 'nimblecheck' type is turned into a boolean.
 
+= 3.4.18 April 5th, 2019 =
+* fixed : display correctly taxonomy/post_type_archive titles. fixes #750
+* improved : new style for checkboxes in customizer controls. 
 
-## Font Awesome License
-Font License - http://fontawesome.io
-License: SIL OFL 1.1
-License URI: http://scripts.sil.org/OFL
-Copyright: Dave Gandy, http://fontawesome.io
+= 3.4.17 March 20th, 2019 =
+* fixed : possible fatal error in WooCommerce single products. fixes #780
 
-Code License - http://fontawesome.io
-License: MIT License
-License URI: http://opensource.org/licenses/mit-license.html
-Copyright: Dave Gandy, http://fontawesome.io
+= 3.4.16 March 2nd, 2019 =
+* fixed : possible PHP error when upgrading server to PHP 7.0+. fixes #775
 
-Brand Icons
-All brand icons are trademarks of their respective owners.
-The use of these trademarks does not indicate endorsement of the trademark holder by Font Awesome, nor vice versa.
+= 3.4.15 February 27th, 2019 =
+* fixed : wp commentform cookies consent checkbox style. fixes #770
+* fixed : search button in the topbar menu now displayed on tablet. fixes #653
+* fixed : style blockquotes in comments. fixes #772
+* improved : footer credits now uses parsable tags like {{year}}.
 
+= 3.4.14 February 13th, 2019 =
+* fixed : BBPress profile links displaying unwanted dots. fixes #765
+* added : a new RGB+ alpha color control in the customizer, allowing transparency customization. fixes #767
 
-## Titillium License
-Titillium Font - http://www.campivisivi.net/titillium/
-License: SIL OFL 1.1
-License URI: http://scripts.sil.org/OFL
-Copyright: Accademia di Belle Arti di Urbino, http://campivisivi.net
+= 3.4.13 February 11th, 2019 =
+* fixed : Custom subheading option not reachable. fixes #760
+* fixed : the blog category filter for pro infinite scroll. fixes #755
+* fixed : social icon links like tel:*** or skype:**** or call:**** should be allowed
+* fixed : the back to top icon font-size should be fixed and not in em. fixes #758
+* fixed : removed title attribute "Permalink To" on thumbnails links in post lists. fixes #763
+* fixed : white-space CSS rule problem with long tag. fixes #764
+* improved : compatibility with Disqus comments system. fixes #754
 
+= 3.4.12 January 16th, 2019 =
+* improved : use default browser title tooltip for the social icons. fixes #731
+* added : the option to filter the home/blog posts by category. fixes #659
 
-## Theme screenshot images
-CC0-licensed (GPL-compatible) images from http://pixabay.com/ and http://unsplash.com/
+= 3.4.11 December 19th, 2018 =
+* improved : the new block editor style. Especially to enlarge the editor content width. fixes #732
 
-Left sidebar, top to bottom:
+= 3.4.10 December 15th, 2018 =
+* fixed : admin style not compatible with WP5.0
+* fixed : WooCommerce related product position in some cases. fixes #729
+* improved : update FontAwesome to v5.5.0. fixes #727
+* improved : compatibility with Nimble Builder v1.4.0
+* improved : analytics params to external links
 
-1. unsplash - http://bit.ly/18NNxqe
-2. pixabay ID 210801
-3. pixabay ID 164985
-4. pixabay ID 181744
-5. pixabay ID 205220
-6. pixabay ID 74570
-7. pixabay ID 122694
-8. pixabay ID 97433
+= 3.4.9 November 23rd 2018 =
+* fixed : set only the featured posts thumbnail img width to 100%. fixes #703
+* fixed : hu_is_customize_left_panel() => the check on $pagenow does not work on multisite install
+* added : add sidebars background color option. fixes #718
+* improved : add wp 5.0 compatibility patch. fixes #719
+* improved : improve gutenberg alignment compatibility. fixes #702
+* improved : Nimble Builder compatibility. Don't load css and javascript front assets when using the full Nimble template
+* improved : replace select2 with our namespaced czrSelect2
 
-Content, top to bottom, left to right:
+= 3.4.7 October 24th 2018 =
+fixed : The "cover image" block of the new WP editor has been renamed "cover". See https://github.com/WordPress/gutenberg/pull/10659, but posts created with the former cover-image block will still use the wp-block-cover-image css class. related to #702
 
-1. pixabay ID 74570
-2. unsplash - http://bit.ly/18NNxqe
-3. pixabay ID 166705
-4. pixabay ID 68827
-5. pixabay ID 171732
+= 3.4.6 October 24th 2018 =
+* added : support for new WordPress editor, block cover image alignwide/alignfull
+* improved : readme.txt file, according to the latest TRT requirements https://make.wordpress.org/themes/2015/04/29/a-revised-readme/
 
-Right sidebar, top to bottom:
+= 3.4.5 October 13th 2018 =
+* fixed : prefixed TGMPA class with HU_ to fix potential collision with other plugins using the same class. see issue https://github.com/presscustomizr/customizr/issues/1603
 
-1. pixabay ID 9950
-2. pixabay ID 181744
-3. pixabay ID 122705
-4. pixabay ID 195684
-5. pixabay ID 83810
-6. pixabay ID 18279
+= 3.4.4 October 12th 2018 =
+* improved : display only one admin notification ( if any ) at a time
+* improved : various minor plugin compatibility improvements
 
+= 3.4.3 October 8th 2018 =
+* added : a new option for collapsible submenus in mobiles
 
-## Other Licenses
-See headers of files for further details.
-
-# Changelog
 = 3.4.2 October 7th 2018 =
 * Fix: Gutenberg reponsive video embed compatiblity issue. fixes #698
 * Imp : better Nimble section builder integration
@@ -797,3 +817,10 @@ See headers of files for further details.
 
 = October 31 2013 - 1.0.0 =
 * Theme released
+
+
+== Resources ==
+* Font Awesome Font : http://fontawesome.io, licensed SIL OFL 1.1, MIT License
+* Titillium Font : Licensed SIL OFL 1.1
+* Theme screenshot images : CC0-licensed (GPL-compatible) images from http://pixabay.com/ and http://unsplash.com/
+* Other resources licenses : see headers of assets files for further details.

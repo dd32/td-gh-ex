@@ -75,13 +75,15 @@ if ( ! class_exists( 'HU_utils' ) ) :
                       60*60*24*3650
                   );
               }
-              if ( ! get_transient( 'hu_start_date' ) && class_exists( 'DateTime' ) ) {
-                  set_transient(
-                      'hu_start_date',
-                      new DateTime("now"),
-                      60*60*24*3650
-                  );
-              }
+              // Commented since https://github.com/presscustomizr/hueman/issues/775
+              // was not used anyway since the removal of the welcome note
+              // if ( ! get_transient( 'hu_start_date' ) && class_exists( 'DateTime' ) ) {
+              //     set_transient(
+              //         'hu_start_date',
+              //         new DateTime("now"),
+              //         60*60*24*3650
+              //     );
+              // }
         }
         //the db updates for retro compat can be done now.
         //=> @see functions/init-retro-compat.php
@@ -277,10 +279,12 @@ if ( ! class_exists( 'HU_utils' ) ) :
 
           $option_name = $key;
           //write default option in array
-          if( isset($options['default']) )
-            $defaults[$option_name] = ( 'checkbox' == $options['type'] ) ? (bool) $options['default'] : $options['default'];
-          else
+          if( array_key_exists( 'default', $options ) ) {
+              // added check on 'nimblecheck' to fix https://github.com/presscustomizr/customizr/issues/1732
+              $defaults[$option_name] = in_array( $options['type'], array( 'checkbox', 'nimblecheck' ) ) ? (bool)$options['default'] : $options['default'];
+          } else {
             $defaults[$option_name] = null;
+          }
         }//end foreach
 
         return $defaults;
