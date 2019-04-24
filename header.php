@@ -21,6 +21,7 @@
 </head>
 
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <?php if(ansia_options('_show_loader', '0') == 1 ) : ?>
 	<div class="ansiaLoader">
 		<?php ansia_loadingPage(); ?>

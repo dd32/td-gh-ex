@@ -655,6 +655,15 @@ if( ! function_exists('ansia_show_social_network')){
 }
 
 /**
+ * Backwards Compatibility for wp_body_open() function in WP 5.2
+ */
+if ( ! function_exists( 'wp_body_open' ) ) {
+	function wp_body_open() {
+		do_action( 'wp_body_open' );
+	}
+}
+
+/**
  * Add Custom CSS to Header 
  */
 function ansia_custom_css_styles() {
