@@ -4,11 +4,11 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-theme-for-business/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Business is a powerful, bold, flexible, dynamic and neatly-structured business WordPress theme suitable for corporate companies, IT firms and start-ups, small and medium sized businesses, online businesses, commercial websites, ad agencies, digital agencies and other business websites. The theme is best suited for marketing businesses, investment agencies, promotional firms, crypto currency businesses, bitcoin share business, sales targeting company and anything related to business. Give it a twist and use it as a blog giving business tips. This business theme provides all the modern website essentials under one roof. It is responsive with a mobile-first approach, cross-browser compatible, translation ready, RTL writing enabled and speed optimized. For a business to grow faster, it is important to reach maximum people which can be easily achieved through the social media icons embedded in it. The theme is readily customizable to change it according to your brand. This business WordPress theme is capable to give you a good traffic influx with higher rank of website in search engine results. With proper use of call to action buttons, lead visitors to your area of interest. Advance Business is compatible with WooCommerce plugin to easily set up an online store. For a business website, it is important to have a bug-free and secure coding structure which is provided by this theme. Demo: https://themeshopy.com/advance-business-pro/
-Version: 0.1
+Version: 0.2
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-business
-Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
+Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 
 Advance Business WordPress Theme has been created by Themeshopy, 2018.
 Advance Business WordPress Theme is released under the terms of GNU GPL
@@ -283,7 +283,7 @@ a.button{
 	padding:10px;
 	display:block;
 }
-#header ul.sub-menu:before {
+/*#header ul.sub-menu:before {
   content: "";
   display: block;
   position: absolute;
@@ -296,7 +296,7 @@ a.button{
   width: 0;
   height: 0;
   margin-left: -5px;
-}
+}*/
 /*-----------------Search pop up----------------*/
 .search-image {
  background: url(images/searchicon.png);
@@ -406,7 +406,7 @@ input.search-field {
 }
 #slider img {
   width: 100%;
-  opacity: 0.7;
+  opacity: 0.3;
 }
 #slider .carousel-control-next-icon, #slider .carousel-control-prev-icon {
   width: auto;
@@ -428,22 +428,21 @@ input.search-field {
 }
 #slider .carousel-caption {
   transform: translateY(-50%);
-  top: 52%;
+  top: 50%;
   left: 13%;
   right: 40%;
 }
 #slider .inner_carousel h2 {
   margin: 0;
-  font-size: 44px;
+  font-size: 40px;
   letter-spacing: 1px;
   color: #fe8e1e;
-  padding: 6px 2px;
   text-align: left;
-  font-weight: 900;
+  font-weight: 700;
 }
 #slider .inner_carousel p {
   font-size: 15px;
-  line-height: 1.5;
+  line-height: 2;
   padding: 10px 0px;
 }
 #slider .inner_carousel {
@@ -453,8 +452,10 @@ input.search-field {
 #slider .inner_carousel .know-btn a {
   border: 1px solid #212121;
   color: #212121;
-  padding: 14px;
-  border-radius: 28px;
+  padding: 15px;
+  border-radius: 25px;
+  font-size: 13px;
+  font-weight: 500;
 }
 #slider .inner_carousel .know-btn a:hover {
   background: #fe8e1e;
@@ -485,16 +486,18 @@ input.search-field {
 .contact p.heading-line {
   color: #9c9c9c;
   font-size: 16px;
+  margin: 15px 0 0 0;
 }
 .contact i {
   color: #fe8e1e;
-  padding: 29px;
+  padding: 18px 35px;
   font-size: 36px;
 }
 .contact p {
-  color: #212121;
-  margin-top: 15px;
+ color: #212121;
+  margin: 0;
   font-weight: 500;
+  padding: 2px 0px;
 }
 
 /*---------- Latest Projects section -----------*/
@@ -747,7 +750,7 @@ table#wp-calendar {
   margin-top: -38px;
 }
 .copyright p {
-  font-size: 16px !important;
+  font-size: 15px;
   color: #fff;
   margin-bottom: 0;
 }
@@ -756,7 +759,7 @@ table#wp-calendar {
 }
 .copyright {
   background: #fe8e1e;
-  padding: 20px 0px;
+  padding: 15px 0px;
   text-align:center;
 }
 #footer .tagcloud a {
@@ -930,7 +933,7 @@ nav.woocommerce-MyAccount-navigation ul {
 nav.woocommerce-MyAccount-navigation ul li {
   background: #fe8e1e !important;
   padding: 12px!important;
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 }
 nav.woocommerce-MyAccount-navigation ul li a{
   color: #fff;
@@ -1137,6 +1140,12 @@ h1.page-title {
     color:#000;
 	font-weight:bold;
 }
+iframe{
+  width: 100%;
+}
+.entry-audio audio {
+    width: 100%;
+}
 
 /* Media */
 @media screen and (max-width: 768px) and (min-width: 720px){	
@@ -1159,7 +1168,8 @@ h1.page-title {
     display: none;
   }
   #slider .carousel-caption {
-    top: 46%;
+    top: 40%;
+    transform: translateY(-60%);
   }
   .contact i {
     padding: 6px;
@@ -1170,6 +1180,9 @@ h1.page-title {
   }
   .project-box {
     margin-bottom: 10px;
+  }
+  .contact p.heading-line{
+    margin: 0;
   }
 }
 @media screen and (max-width:720px) {	
@@ -1189,8 +1202,9 @@ h1.page-title {
     margin-left: 0;
   }
   #slider .carousel-caption{
-    right: 0;
-    left: 0;
+    right: 10%;
+    left: 10%;
+    top: 42%;
   }
   #slider .inner_carousel p,
   #slider .inner_carousel h2 {
@@ -1208,7 +1222,12 @@ h1.page-title {
   .contact i{
     padding: 0;
   }
-
+  .contact {
+    margin-bottom: 10px;
+  }
+  .contact p.heading-line{
+    margin: 0;
+  }
 	#comments input[type="submit"].submit{
 		width: 100% !important;
 	}
@@ -1300,7 +1319,7 @@ h1.page-title {
 		background:#000;
 		width:200px;
 		position:absolute;
-		top:20px;
+		top:25px;
 		left:0;
 		text-align:left;
 		z-index:99;
@@ -1310,7 +1329,7 @@ h1.page-title {
 	}
 	#header .nav ul li:hover > ul li a{
 		color:#ffffff;
-		border-bottom: solid 1px #333;
+		border: solid 1px #333;
 	}
 	#header .nav ul li:hover ul li ul{
 	 	display:none;
@@ -1366,18 +1385,18 @@ h1.page-title {
 	#footer td{
 		padding: 4px;
 	}
-  #slider .carousel-caption {
-    top: 60%;
+  #slider .inner_carousel p{
+    padding: 0;
   }
   #slider .inner_carousel h2 {
     font-size: 33px;
     padding: 0px 2px;
   }
-  #slider .inner_carousel p {
-    display: none;
-  }
   .contact-box {
     margin-top: -8%;
+  }
+  .contact i {
+    padding: 18px 28px;
   }
 }
 @media screen and (max-width: 425px){

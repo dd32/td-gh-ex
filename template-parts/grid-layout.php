@@ -7,7 +7,7 @@
  * @since advance-business 1.0
  */
 ?>
-<div class="col-md-4 col-sm-4">
+<div class="col-lg-4 col-md-4">
     <div class="page-box">
         <h4><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h4>
         <div class="metabox">

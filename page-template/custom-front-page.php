@@ -7,12 +7,11 @@ get_header(); ?>
 
 <?php do_action( 'advance_business_above_slider' ); ?>
 
-
 <?php if( get_theme_mod( 'advance_business_slider_hide') != '') { ?>
   <section id="slider">
       <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
           <?php $pages = array();
-            for ( $count = 1; $count <= 3; $count++ ) {
+            for ( $count = 1; $count <= 4; $count++ ) {
               $mod = intval( get_theme_mod( 'advance_business_slider_page' . $count ));
               if ( 'page-none-selected' != $mod ) {
                 $pages[] = $mod;
@@ -75,8 +74,8 @@ get_header(); ?>
                   <i class="fas fa-map"></i>
                 </div>
                 <div class="col-lg-9 col-md-9">
-                  <p><?php echo esc_html( get_theme_mod('advance_business_location',__('+14 256 265 2589','advance-business') )); ?></p>
                   <p class="heading-line"><?php echo esc_html(get_theme_mod('advance_business_location_title','')); ?> </p>
+                  <p><?php echo esc_html( get_theme_mod('advance_business_location','')); ?></p>
                 </div>
               </div>
             </div>
@@ -90,8 +89,8 @@ get_header(); ?>
                     <i class="fa fa-envelope" aria-hidden="true"></i>
                   </div>
                   <div class="col-lg-9 col-md-9">
-                    <p><?php echo esc_html( get_theme_mod('advance_business_email',__('example@123.com','advance-business')) ); ?></p>
                     <p class="heading-line"><?php echo esc_html(get_theme_mod('advance_business_email_title','')); ?> </p>
+                    <p><?php echo esc_html( get_theme_mod('advance_business_email','') ); ?></p>                    
                   </div>
                 </div>
             </div>
@@ -105,8 +104,8 @@ get_header(); ?>
                     <i class="fa fa-phone" aria-hidden="true"></i>
                   </div>
                   <div class="col-lg-9 col-md-9">
-                    <p><?php echo esc_html( get_theme_mod('advance_business_contact',__('+14 256 265 2589','advance-business') )); ?></p>
                     <p class="heading-line"><?php echo esc_html(get_theme_mod('advance_business_contact_title','')); ?> </p>
+                    <p><?php echo esc_html( get_theme_mod('advance_business_contact','')); ?></p>                    
                   </div>
                 </div>
               </div>
@@ -120,7 +119,7 @@ get_header(); ?>
 
 <?php do_action( 'advance_business_below_business_contact' ); ?>
 
-<?php if( get_theme_mod( 'advance_business_projects_title') != '') { ?>
+<?php if( get_theme_mod( 'advance_business_projects_title') != '' || get_theme_mod( 'advance_business_projects_category_category') != '') { ?>
   <section id="latest-projects">
     <div class="container">
         <?php if( get_theme_mod('advance_business_projects_title') != ''){ ?>

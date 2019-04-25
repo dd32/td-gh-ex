@@ -26,7 +26,7 @@ get_header(); ?>
               <?php if ( have_posts() ) :
                 /* Start the Loop */
                 while ( have_posts() ) : the_post();
-                  get_template_part( 'template-parts/content' ); 
+                  get_template_part( 'template-parts/content' , get_post_format()); 
                 endwhile;
                 else :
                   get_template_part( 'no-results' );
@@ -50,7 +50,7 @@ get_header(); ?>
               <?php if ( have_posts() ) :
                 /* Start the Loop */
                 while ( have_posts() ) : the_post();
-                  get_template_part( 'template-parts/content' ); 
+                  get_template_part( 'template-parts/content', get_post_format() ); 
                 endwhile;
                 else :
                   get_template_part( 'no-results' );
@@ -76,7 +76,7 @@ get_header(); ?>
             <?php if ( have_posts() ) :
               /* Start the Loop */
               while ( have_posts() ) : the_post();
-                get_template_part( 'template-parts/content' ); 
+                get_template_part( 'template-parts/content', get_post_format() ); 
               endwhile;
               else :
                 get_template_part( 'no-results' );
@@ -100,7 +100,7 @@ get_header(); ?>
               <?php if ( have_posts() ) :
                 /* Start the Loop */
                 while ( have_posts() ) : the_post();
-                  get_template_part( 'template-parts/content' ); 
+                  get_template_part( 'template-parts/content', get_post_format() ); 
                 endwhile;
                 else :
                   get_template_part( 'no-results' );
@@ -121,12 +121,12 @@ get_header(); ?>
           </div>
         <?php }else if($left_right == 'Four Columns'){ ?>
           <div class="row">
-            <div id="sidebar" class="col-lg-3"><?php dynamic_sidebar('sidebar-1');?></div>
+            <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
             <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-3 col-md-3'); ?>>
               <?php if ( have_posts() ) :
                 /* Start the Loop */
                 while ( have_posts() ) : the_post();
-                  get_template_part( 'template-parts/content' ); 
+                  get_template_part( 'template-parts/content', get_post_format() ); 
                 endwhile;
                 else :
                   get_template_part( 'no-results' );
@@ -167,6 +167,33 @@ get_header(); ?>
                 ) );
               ?>
              </div> 
+          </div>
+        <?php }else {?>
+          <div class="row">
+            <div id="post-<?php the_ID(); ?>" <?php post_class('col-lg-8 col-md-8'); ?>>
+              <?php if ( have_posts() ) :
+                /* Start the Loop */
+                while ( have_posts() ) : the_post();
+                  get_template_part( 'template-parts/content', get_post_format() ); 
+                endwhile;
+                else :
+                  get_template_part( 'no-results' );
+                endif; 
+              ?>
+              <div class="navigation">
+                <?php
+                  // Previous/next page navigation.
+                  the_posts_pagination( array(
+                      'prev_text'          => __( 'Previous page', 'advance-business' ),
+                      'next_text'          => __( 'Next page', 'advance-business' ),
+                      'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-business' ) . ' </span>',
+                  ) );
+                ?>
+               </div> 
+            </div>
+            <div class="col-lg-4 col-md-4">
+              <?php get_sidebar();?>
+            </div>
           </div>
         <?php }?>
   		  <div class="clearfix"></div>

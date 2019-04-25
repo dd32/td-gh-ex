@@ -15,6 +15,7 @@ function advance_business_setup() {
 
 	$GLOBALS['content_width'] = apply_filters('advance_business_content_width', 640);
 
+	load_theme_textdomain( 'advance-business', get_template_directory() . '/languages' );
 	add_theme_support('automatic-feed-links');
 	add_theme_support('post-thumbnails');
 	add_theme_support('woocommerce');
@@ -35,14 +36,41 @@ function advance_business_setup() {
 	));
 
 	/*
+	* Enable support for Post Formats.
+	*
+	* See: https://codex.wordpress.org/Post_Formats
+	*/
+	add_theme_support( 'post-formats', array('image','video','gallery','audio',) );
+
+	/*
+	* Enable support for Post Formats.
+	*
+	* See: https://codex.wordpress.org/Post_Formats
+	*/
+	add_theme_support( 'post-formats', array('image','video','gallery','audio',) );
+
+	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
 	add_editor_style(array('css/editor-style.css', advance_business_font_url()));
+// Theme Activation Notice
+	global $pagenow;
+	
+	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+		add_action( 'admin_notices', 'advance_business_activation_notice' );
+	}
 }
-
 endif;
-add_action('after_setup_theme', 'advance_business_setup');
+add_action( 'after_setup_theme', 'advance_business_setup' );
+
+// Notice after Theme Activation
+function advance_business_activation_notice() {
+	echo '<div class="notice notice-success is-dismissible get-started">';
+		echo '<p>'. esc_html__( 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.', 'advance-business' ) .'</p>';
+		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=advance_business_guide' ) ) .'" class="button button-primary">'. esc_html__( 'Click here...', 'advance-business' ) .'</a></p>';
+	echo '</div>';
+}
 
 /* Theme Widgets Setup */
 function advance_business_widgets_init() {
@@ -177,11 +205,17 @@ function advance_business_string_limit_words($string, $word_limit) {
 	return implode(' ', $words);
 }
 
+define('ADVANCE_BUSINESS_BUY_NOW','https://www.themeshopy.com/themes/wordpress-theme-for-business/','advance-business');
+define('ADVANCE_BUSINESS_LIVE_DEMO','https://themeshopy.com/advance-business-pro/','advance-business');
+define('ADVANCE_BUSINESS_PRO_DOC','https://themeshopy.com/demo/docs/advance-business-pro/','advance-business');
+define('ADVANCE_BUSINESS_FREE_DOC','https://themeshopy.com/demo/docs/free-advance-business/','advance-business');
+define('ADVANCE_BUSINESS_CONTACT','https://wordpress.org/support/theme/advance-business/','advance-business');
+
 define('ADVANCE_BUSINESS_CREDIT', 'https://www.themeshopy.com/themes/free-wordpress-theme-for-business/', 'advance-business');
 
 if (!function_exists('advance_business_credit')) {
 	function advance_business_credit() {
-		echo "<a href=".esc_url(ADVANCE_BUSINESS_CREDIT)." target='_blank'>".esc_html__('Business Theme.', 'advance-business')."</a>";
+		echo "<a href=".esc_url(ADVANCE_BUSINESS_CREDIT)." target='_blank'>".esc_html__('Business WordPress Theme', 'advance-business')."</a>";
 	}
 }
 
@@ -201,3 +235,6 @@ require get_template_directory().'/inc/template-tags.php';
 
 /* Customizer additions. */
 require get_template_directory().'/inc/customizer.php';
+
+/* Get Started. */
+require get_template_directory().'/inc/admin/admin.php';

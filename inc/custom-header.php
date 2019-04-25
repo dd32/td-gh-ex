@@ -32,7 +32,7 @@ function advance_business_header_style() {
 	//Check if user has defined any header image.
 	if ( get_header_image() ) :
 	$custom_css = "
-        .page-template-custom-front-page .menu-bar, #header{
+        #header{
 			background-image:url('".esc_url(get_header_image())."');
 			background-position: center top;
 		}";
