@@ -4,7 +4,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Agency Ecommerce 1.0.1\n"
 "Report-Msgid-Bugs-To: mantrabrain@gmail.com\n"
-"POT-Creation-Date: 2019-04-13 16:20:38+00:00\n"
+"POT-Creation-Date: 2019-04-25 13:15:28+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -51,19 +51,19 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: core/class-agency-ecommerce-core.php:141
+#: core/class-agency-ecommerce-core.php:140
 msgid "Top Header Menu"
 msgstr ""
 
-#: core/class-agency-ecommerce-core.php:142
+#: core/class-agency-ecommerce-core.php:141
 msgid "Primary Menu"
 msgstr ""
 
-#: core/class-agency-ecommerce-core.php:143
+#: core/class-agency-ecommerce-core.php:142
 msgid "Social Links"
 msgstr ""
 
-#: core/class-agency-ecommerce-core.php:144
+#: core/class-agency-ecommerce-core.php:143
 msgid "Special Menu( Display Beside Primary Menu)"
 msgstr ""
 
@@ -365,20 +365,20 @@ msgid "Caption Position"
 msgstr ""
 
 #: core/customizer/options/slider.php:105
-#: core/widgets/ae-advertisement-widget.php:351
-#: core/widgets/ae-cta-widget.php:334
+#: core/widgets/ae-advertisement-widget.php:352
+#: core/widgets/ae-cta-widget.php:335
 msgid "Left"
 msgstr ""
 
 #: core/customizer/options/slider.php:106
-#: core/widgets/ae-advertisement-widget.php:352
-#: core/widgets/ae-cta-widget.php:335
+#: core/widgets/ae-advertisement-widget.php:353
+#: core/widgets/ae-cta-widget.php:336
 msgid "Right"
 msgstr ""
 
 #: core/customizer/options/slider.php:107
-#: core/widgets/ae-advertisement-widget.php:353
-#: core/widgets/ae-cta-widget.php:336
+#: core/widgets/ae-advertisement-widget.php:354
+#: core/widgets/ae-cta-widget.php:337
 msgid "Center"
 msgstr ""
 
@@ -582,42 +582,42 @@ msgstr ""
 msgid "Background Image:"
 msgstr ""
 
-#: core/widgets/ae-advertisement-widget.php:323
-#: core/widgets/ae-cta-widget.php:303
+#: core/widgets/ae-advertisement-widget.php:324
+#: core/widgets/ae-cta-widget.php:304
 msgid "Preview"
 msgstr ""
 
-#: core/widgets/ae-advertisement-widget.php:325
-#: core/widgets/ae-cta-widget.php:306
+#: core/widgets/ae-advertisement-widget.php:326
+#: core/widgets/ae-cta-widget.php:307
 msgid "Upload"
 msgstr ""
 
-#: core/widgets/ae-advertisement-widget.php:325
-#: core/widgets/ae-cta-widget.php:307
+#: core/widgets/ae-advertisement-widget.php:326
+#: core/widgets/ae-cta-widget.php:308
 msgid "Select Background Image"
 msgstr ""
 
-#: core/widgets/ae-advertisement-widget.php:325
-#: core/widgets/ae-cta-widget.php:308
+#: core/widgets/ae-advertisement-widget.php:326
+#: core/widgets/ae-cta-widget.php:309
 msgid "Choose Image"
 msgstr ""
 
-#: core/widgets/ae-advertisement-widget.php:331
-#: core/widgets/ae-cta-widget.php:317
+#: core/widgets/ae-advertisement-widget.php:332
+#: core/widgets/ae-cta-widget.php:318
 msgid "Enable parallax background"
 msgstr ""
 
-#: core/widgets/ae-advertisement-widget.php:335
+#: core/widgets/ae-advertisement-widget.php:336
 msgid "Disable overlay of the image"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:381
-#: core/widgets/ae-cta-widget.php:365
-msgid "Style One"
 msgstr ""
 
 #: core/widgets/ae-advertisement-widget.php:382
 #: core/widgets/ae-cta-widget.php:366
+msgid "Style One"
+msgstr ""
+
+#: core/widgets/ae-advertisement-widget.php:383
+#: core/widgets/ae-cta-widget.php:367
 msgid "Style Two"
 msgstr ""
 
@@ -684,7 +684,7 @@ msgid "Purchase Now"
 msgstr ""
 
 #: core/widgets/ae-featured-categories-widget.php:22
-msgid "Widget to display featured categories of Woo-Commerce with carousel"
+msgid "Widget to display featured categories of WooCommerce with carousel"
 msgstr ""
 
 #: core/widgets/ae-featured-categories-widget.php:25
@@ -1065,8 +1065,8 @@ msgctxt "weekly archives date format"
 msgid "W"
 msgstr ""
 
-#: core/widgets/ae-advertisement-widget.php:326
-#: core/widgets/ae-cta-widget.php:309
+#: core/widgets/ae-advertisement-widget.php:327
+#: core/widgets/ae-cta-widget.php:310
 msgctxt "Remove Button"
 msgid "X"
 msgstr ""

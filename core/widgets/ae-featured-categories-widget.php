@@ -19,7 +19,7 @@ if (!class_exists('Agency_Ecommerce_Featured_Categories_Widget')) :
         {
             $opts = array(
                 'classname' => 'agency_ecommerce_widget_featured_categories',
-                'description' => esc_html__('Widget to display featured categories of Woo-Commerce with carousel', 'agency-ecommerce'),
+                'description' => esc_html__('Widget to display featured categories of WooCommerce with carousel', 'agency-ecommerce'),
             );
 
             parent::__construct('agency-ecommerce-featured-categories', esc_html__('AE: Featured Categories', 'agency-ecommerce'), $opts);

@@ -1,6 +1,7 @@
 /*--------------------------------------------------------------
 ## Posts and pages
 --------------------------------------------------------------*/
+
 .sticky {
   display: block;
 }
@@ -12,23 +13,20 @@
 .updated:not(.published) {
   display: none;
 }
-.add-to-cart-wrap a.quick_view.button, .woocommerce ul.products li.product .add-to-cart-wrap a.quick_view.button{
-  margin-top:20px;
+
+.add-to-cart-wrap a.quick_view.button, .woocommerce ul.products li.product .add-to-cart-wrap a.quick_view.button {
+  margin-top: 20px;
 }
-.single .byline,
-.group-blog .byline {
+
+.single .byline, .group-blog .byline {
   display: inline;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
+.page-content, .entry-content, .entry-summary {
   margin: 1.5em 0 0;
 }
 
-.entry-meta > span,
-.entry-footer > span,
-.single-post-meta > span {
+.entry-meta > span, .entry-footer > span, .single-post-meta > span {
   margin: 0 15px 0 0;
 }
 
@@ -37,15 +35,11 @@
   font-style: normal;
 }
 
-.page-content,
-.entry-content,
-.entry-summary {
+.page-content, .entry-content, .entry-summary {
   margin: 15px 0 0;
 }
 
-.entry-meta > span::before,
-.entry-footer > span::before,
-.single-post-meta > span::before {
+.entry-meta > span::before, .entry-footer > span::before, .single-post-meta > span::before {
   display: inline-block;
   font-family: FontAwesome;
   height: 15px;
@@ -60,78 +54,80 @@
 
 .entry-footer span {
   margin-right: 15px;
-}
-
-.entry-footer span.author.vcard {
-  margin-right: 0px;
+  &.author.vcard {
+    margin-right: 0px;
+  }
 }
 
 span.comments-link::before {
   content: "\f0e6";
 }
 
-.entry-meta .posted-on::before,
-.single-post-meta .posted-on::before {
+.entry-meta .posted-on::before, .single-post-meta .posted-on::before {
   content: "\f274 ";
 }
 
-.entry-footer > .cat-links::before,
-.entry-meta .cat-links::before {
+.entry-footer > .cat-links::before {
   content: "\f115";
 }
 
-.entry-meta .byline::before,
+.entry-meta {
+  .cat-links::before {
+    content: "\f115";
+  }
+  .byline::before {
+    content: "\f2c0";
+  }
+}
+
 .single-post-meta .byline::before {
   content: "\f2c0";
 }
 
-.entry-footer .edit-link::before {
-  content: "\f044";
-}
-
-.entry-footer .tags-links::before {
-  content: "\f02c";
+.entry-footer {
+  .edit-link::before {
+    content: "\f044";
+  }
+  .tags-links::before {
+    content: "\f02c";
+  }
 }
 
 /*--------------------------------------------------------------
 ## Asides
 --------------------------------------------------------------*/
-.blog .format-aside .entry-title,
-.archive .format-aside .entry-title {
+
+.blog .format-aside .entry-title, .archive .format-aside .entry-title {
   display: none;
 }
 
 /*--------------------------------------------------------------
 ## Comments
 --------------------------------------------------------------*/
-.authorbox .author-avatar {
-  float: left;
-  margin: 5px 15px 10px 0;
-}
 
 .authorbox {
+  .author-avatar {
+    float: left;
+    margin: 5px 15px 10px 0;
+  }
   background: #e6ffff;
   border: 1px solid #dddddd;
   margin-top: 20px;
   overflow: hidden;
   padding: 15px;
-}
-
-.authorbox.no-author-avatar .author-info {
-  margin-left: 0;
-}
-
-.authorbox .author-bio-posts-content {
-  margin-top: 10px;
-}
-
-.authorbox .author-bio-posts-content p {
-  margin: 0;
-}
-
-.authorbox .author-bio-posts-content ul {
-  list-style-position: inside;
-  margin: 0;
+  &.no-author-avatar .author-info {
+    margin-left: 0;
+  }
+  .author-bio-posts-content {
+    margin-top: 10px;
+    p {
+      margin: 0;
+    }
+    ul {
+      list-style-position: inside;
+      margin: 0;
+    }
+  }
 }
 
 #respond {
@@ -153,21 +149,24 @@ span.comments-link::before {
   display: block;
 }
 
-.comments-area form#commentform p {
-  float: left;
-  width: 33.33%;
-}
-
-.comments-area form#commentform p.comment-form-cookies-consent,
-.comments-area #commentform p.comment-notes,
-.comments-area #commentform p.comment-form-comment {
-  width: 100%;
-}
-
-.comments-area form#commentform p.comment-form-cookies-consent input[type="checkbox"] {
-  margin-right: 10px;
-  margin-top: 9px;
-  float: left;
+.comments-area {
+  form#commentform p {
+    float: left;
+    width: 33.33%;
+    &.comment-form-cookies-consent {
+      width: 100%;
+    }
+  }
+  #commentform p {
+    &.comment-notes, &.comment-form-comment {
+      width: 100%;
+    }
+  }
+  form#commentform p.comment-form-cookies-consent input[type="checkbox"] {
+    margin-right: 10px;
+    margin-top: 9px;
+    float: left;
+  }
 }
 
 .comment-content a {
@@ -182,26 +181,24 @@ span.comments-link::before {
   margin: 0 -15px;
 }
 
-.comments-area form#commentform p.logged-in-as,
 .comments-area form#commentform p {
+  &.logged-in-as {
+    padding: 0 15px;
+  }
   padding: 0 15px;
 }
 
-.woocommerce #review_form #respond p.comment-form-comment,
-.comment-form-author input,
-.comment-form-email input,
-.comment-form-url input {
+.woocommerce #review_form #respond p.comment-form-comment, .comment-form-author input, .comment-form-email input, .comment-form-url input {
   width: 100%;
 }
 
-#tab-reviews .comment-form-author,
-#tab-reviews .comment-form-email,
-#tab-reviews .comment-form-url {
-  width: 50%;
-}
-
-#tab-reviews .comment-form-author {
-  padding-right: 10px;
+#tab-reviews {
+  .comment-form-author, .comment-form-email, .comment-form-url {
+    width: 50%;
+  }
+  .comment-form-author {
+    padding-right: 10px;
+  }
 }
 
 .comments-area form#commentform p.logged-in-as {
@@ -209,19 +206,16 @@ span.comments-link::before {
   width: 100%;
 }
 
-.comment-form-author,
-.comment-form-email,
-.comment-form-url {
+.comment-form-author, .comment-form-email, .comment-form-url {
   width: 33.33%;
   float: left;
 }
 
-.comment-list li.comment::after {
-  content: inherit;
-  display: none;
-}
-
 .comment-list li {
+  &.comment::after {
+    content: inherit;
+    display: none;
+  }
   padding-left: 0;
 }
 
@@ -232,15 +226,13 @@ span.comments-link::before {
   width: 100%;
 }
 
-ol.comment-list .comment {
-  margin-bottom: 15px;
-}
-
-ol.comment-list .comment:first-child {
-  margin-bottom: 0px;
-}
-
 ol.comment-list {
+  .comment {
+    margin-bottom: 15px;
+    &:first-child {
+      margin-bottom: 0px;
+    }
+  }
   border-radius: 5px;
   float: left;
   margin-bottom: 15px;
@@ -249,28 +241,31 @@ ol.comment-list {
   overflow: inherit;
   padding: 0;
   width: 100%;
+  .children {
+    border: medium none;
+    float: left;
+    margin: 15px 0 5px 15px;
+    width: 98%;
+  }
+  li {
+    list-style: outside none none;
+    margin-bottom: 0px;
+  }
 }
 
-ol.comment-list .children {
-  border: medium none;
-  float: left;
-  margin: 15px 0 5px 15px;
-  width: 98%;
-}
-
-ol.comment-list li {
-  list-style: outside none none;
-  margin-bottom: 0px;
-}
-
-.comment-list .comment-content ul,
-.comment-list .comment-content ul li {
-  list-style: disc;
-}
-
-.comment-list .comment-content ol,
-.comment-list .comment-content ol li {
-  list-style: decimal;
+.comment-list .comment-content {
+  ul {
+    list-style: disc;
+    li {
+      list-style: disc;
+    }
+  }
+  ol {
+    list-style: decimal;
+    li {
+      list-style: decimal;
+    }
+  }
 }
 
 .comment .comment-body {
@@ -292,18 +287,19 @@ ol.comment-list li {
   margin-bottom: 5px;
 }
 
-.comment-list .children {
-  background-position: left 20px;
-  background-repeat: no-repeat;
-  border-left: 1px solid rgb(238, 238, 238);
-  margin-left: 0;
-  padding-left: 40px;
-}
-
-.comment-list li.comment > div img.avatar {
-  left: 29px;
-  position: absolute;
-  top: 29px;
+.comment-list {
+  .children {
+    background-position: left 20px;
+    background-repeat: no-repeat;
+    border-left: 1px solid rgb(238, 238, 238);
+    margin-left: 0;
+    padding-left: 40px;
+  }
+  li.comment > div img.avatar {
+    left: 29px;
+    position: absolute;
+    top: 29px;
+  }
 }
 
 #comment-form-title {
@@ -362,16 +358,16 @@ a.comment-reply-link:hover {
   display: block;
 }
 
-#commentform label {
-  display: inline-block;
-}
-
-#commentform input[type="submit"] {
-  line-height: 1.1;
-  border: 1px solid #6c50fb;
-}
-
-#commentform input[type="submit"]:hover {
-  background: transparent;
-  color: #6c50fb;
+#commentform {
+  label {
+    display: inline-block;
+  }
+  input[type="submit"] {
+    line-height: 1.1;
+    border: 1px solid #6c50fb;
+    &:hover {
+      background: transparent;
+      color: #6c50fb;
+    }
+  }
 }

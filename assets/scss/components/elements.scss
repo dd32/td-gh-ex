@@ -1,23 +1,29 @@
-
 html {
   box-sizing: border-box;
 }
 
-*,
-*::before,
-*::after { /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+* {
+  /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
   box-sizing: inherit;
+  &::before, &::after {
+    /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+    box-sizing: inherit;
+  }
 }
 
-blockquote::before,
-blockquote::after,
-q::before,
-q::after {
-  content: "";
+blockquote {
+  &::before, &::after {
+    content: "";
+  }
 }
 
-blockquote,
 q {
+  &::before, &::after {
+    content: "";
+  }
+}
+
+blockquote, q {
   quotes: "" "";
 }
 
@@ -28,8 +34,7 @@ hr {
   margin-bottom: 1.5em;
 }
 
-ul,
-ol {
+ul, ol {
   margin: 0 0 1.5em 3em;
 }
 
@@ -41,10 +46,11 @@ ol {
   list-style: decimal;
 }
 
-li > ul,
-li > ol {
-  margin-bottom: 0;
-  margin-left: 1.5em;
+li > {
+  ul, ol {
+    margin-bottom: 0;
+    margin-left: 1.5em;
+  }
 }
 
 ul, ol {
@@ -61,8 +67,10 @@ dd {
 }
 
 img {
-  height: auto; /* Make sure images are scaled correctly. */
-  max-width: 100%; /* Adhere to container width. */
+  height: auto;
+  /* Make sure images are scaled correctly. */
+  max-width: 100%;
+  /* Adhere to container width. */
 }
 
 table {

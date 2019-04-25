@@ -318,10 +318,11 @@ if ( ! class_exists( 'Agency_Ecommerce_Advertisement_Widget' ) ) :
                 <label for="<?php echo esc_attr( $this->get_field_id( 'background_image' ) ); ?>">
                     <strong><?php esc_html_e( 'Background Image:', 'agency-ecommerce' ); ?></strong>
                 </label>
-                <input type="text" class="img widefat" name="<?php echo esc_attr( $this->get_field_name( 'background_image' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'background_image' ) ); ?>" value="<?php echo esc_url( $instance['background_image'] ); ?>" />
-                <div class="rtam-preview-wrap" <?php echo $wrap_style; ?>>
+                <br/>
+                <input type="hidden" class="img widefat" name="<?php echo esc_attr( $this->get_field_name( 'background_image' ) ); ?>" id="<?php echo esc_attr( $this->get_field_id( 'background_image' ) ); ?>" value="<?php echo esc_url( $instance['background_image'] ); ?>" />
+                <div class="agency-ecommerce-preview-wrap" <?php echo $wrap_style; ?>>
                     <img src="<?php echo esc_url( $background_image ); ?>" alt="<?php esc_attr_e( 'Preview', 'agency-ecommerce' ); ?>" />
-                </div><!-- .rtam-preview-wrap -->
+                </div><!-- .agency-ecommerce-preview-wrap -->
                 <input type="button" class="select-img button button-primary" value="<?php esc_html_e( 'Upload', 'agency-ecommerce' ); ?>" data-uploader_title="<?php esc_html_e( 'Select Background Image', 'agency-ecommerce' ); ?>" data-uploader_button_text="<?php esc_html_e( 'Choose Image', 'agency-ecommerce' ); ?>" />
                 <input type="button" value="<?php echo esc_attr_x( 'X', 'Remove Button', 'agency-ecommerce' ); ?>" class="button button-secondary btn-image-remove" style="<?php echo esc_attr( $delete_button ); ?>" />
             </div>

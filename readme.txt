@@ -5,8 +5,8 @@ Requires at least:  WordPress 4.5
 Tested up to:       WordPress 5.1.1
 Requires PHP:       5.4
 Tested up to:       5.1.1
-Version:            1.0.1
-Stable tag:         1.0.1
+Version:            1.0.2
+Stable tag:         1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,11 +77,19 @@ Elegant Themes (https://github.com/pprince/etlinefont-bower), [GPLv2 or later](h
 
 
 == Changelog ==
+
+= 1.0.2 | 2019/04/25 =
+* Fixed - Minor widget related issue fixed
+* Fixed - Design issue fixed
+* Fixed - Validation issue fixed
+* Fixed - Image picker issue fixed
+
 = 1.0.1 | 2019/04/13 =
 * Fixed - Widget option issue
 * Fixed - Slider background option updated
 * Fixed - Readme validation and other minor issue fixed
 * Added - Hooks for premium themes
 * Fixed - Product carousel lazy load issue
+
 = 1.0.0 | 2019/03/22 =
 * Initial release

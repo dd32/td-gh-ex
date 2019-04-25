@@ -1,7 +1,4 @@
-button,
-input,
-select,
-textarea {
+button, input, select, textarea {
   color: #404040;
   font-size: 15px;
   line-height: 1.5;
@@ -16,13 +13,7 @@ body {
   font-family: 'Barlow', sans-serif;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p {
+h1, h2, h3, h4, h5, h6, p {
   margin: 0 0 15px 0;
 }
 
@@ -48,18 +39,11 @@ h4 {
   font-size: 18px;
 }
 
-h5 {
+h5, h6 {
   font-size: 15px;
 }
 
-h6 {
-  font-size: 15px;
-}
-
-dfn,
-cite,
-em,
-i {
+dfn, cite, em, i {
   font-style: italic;
 }
 
@@ -83,10 +67,7 @@ pre {
   padding: 1.6em;
 }
 
-code,
-kbd,
-tt,
-var {
+code, kbd, tt, var {
   font-family: Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace;
   font-size: 15px;
   font-size: 0.9375rem;
@@ -101,14 +82,12 @@ code {
   border: 1px solid #eee;
 }
 
-abbr,
-acronym {
+abbr, acronym {
   border-bottom: 1px dotted #666;
   cursor: help;
 }
 
-mark,
-ins {
+mark, ins {
   background: #fff9c0;
   text-decoration: none;
 }

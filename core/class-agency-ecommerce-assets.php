@@ -62,11 +62,11 @@ if (!class_exists('Agency_Ecommerce_Assets')) :
 
                 wp_enqueue_script('underscore');
 
-                wp_enqueue_style( 'agency-ecommerce-admin', get_template_directory_uri() . '/core/widgets/css/admin.css', array(), AGENCY_ECOMMERCE_THEME_VERSION );
+                wp_enqueue_style( 'agency-ecommerce-admin', get_template_directory_uri() . '/assets/admin/css/admin.css', array(), AGENCY_ECOMMERCE_THEME_VERSION );
 
                 wp_enqueue_media();
 
-                wp_enqueue_script( 'agency-ecommerce-admin', get_template_directory_uri() . '/core/widgets/js/admin.js', array( 'jquery' ), AGENCY_ECOMMERCE_THEME_VERSION );
+                wp_enqueue_script( 'agency-ecommerce-admin', get_template_directory_uri() . '/assets/admin/js/admin.js', array( 'jquery' ), AGENCY_ECOMMERCE_THEME_VERSION );
 
             }
 

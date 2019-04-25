@@ -10,7 +10,7 @@
  */
 
 
-define('AGENCY_ECOMMERCE_THEME_VERSION', '1.0.1');
+define('AGENCY_ECOMMERCE_THEME_VERSION', '1.0.2');
 define('AGENCY_ECOMMERCE_THEME_SETTINGS', 'agency-ecommerce-settings');
 
 define('AGENCY_ECOMMERCE_THEME_DIR', trailingslashit(get_template_directory()));

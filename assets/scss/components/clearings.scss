@@ -1,28 +1,59 @@
-.clear-fix::before,
-.clear-fix::after,
-.entry-content::before,
-.entry-content::after,
-.comment-content::before,
-.comment-content::after,
-.site-header::before,
-.site-header::after,
-.site-content::before,
-.site-content::after,
-.site-footer::before,
-.site-footer::after,
-#home-page-widget-area::after,
-#home-page-widget-area::before,
-#featured-slider::after,
-#featured-slider::before {
-  content: "";
-  display: table;
+.clear-fix {
+  &::before, &::after {
+    content: "";
+    display: table;
+  }
 }
 
-.clear-fix::after,
-.entry-content::after,
-.comment-content::after,
-.site-header::after,
-.site-content::after,
-.site-footer::after {
+.entry-content {
+  &::before, &::after {
+    content: "";
+    display: table;
+  }
+}
+
+.comment-content {
+  &::before, &::after {
+    content: "";
+    display: table;
+  }
+}
+
+.site-header {
+  &::before, &::after {
+    content: "";
+    display: table;
+  }
+}
+
+.site-content {
+  &::before, &::after {
+    content: "";
+    display: table;
+  }
+}
+
+.site-footer {
+  &::before, &::after {
+    content: "";
+    display: table;
+  }
+}
+
+#home-page-widget-area {
+  &::after, &::before {
+    content: "";
+    display: table;
+  }
+}
+
+#featured-slider {
+  &::after, &::before {
+    content: "";
+    display: table;
+  }
+}
+
+.clear-fix::after, .entry-content::after, .comment-content::after, .site-header::after, .site-content::after, .site-footer::after {
   clear: both;
 }
