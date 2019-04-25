@@ -4,11 +4,11 @@ Theme URI: https://www.themeshopy.com/themes/free-automobile-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, mechanic, car repairing centre, motorbike showroom, bike garage, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements. It has smart use of call to action (CTA) buttons and a welcoming homepage slider which can be full screen, full width or boxed. This automobile WordPress theme has 100% fluid layout and loads seamlessly on all browsing platforms. It can be translated to many other languages; supports RTL writing as well. It is packed with social media icons to easily promote your services and SEO is well taken care. This automobile theme has super smooth navigation with sliders and parallax scrolling. The thoroughly explained documentation will help you install, configure and make small changes to the theme. Demo: https://themeshopy.com/advance-automobile-pro/
-Version: 0.1
+Version: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-automobile
-Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
+Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 
 Advance Automobile WordPress Theme has been created by Themeshopy, 2018.
 Advance Automobile WordPress Theme is released under the terms of GNU GPL
@@ -470,10 +470,13 @@ input.search-field {
   margin-top: 23px;
 }
 #slider .carousel-control-next {
-  right: 5%;
+  right: 20%;
 }
 #slider .carousel-control-prev {
   left: 76%;
+}
+a.carousel-control-next, a.carousel-control-prev{
+  width: 0%;
 }
 /* contact details */
 #contact-details {
@@ -1216,6 +1219,12 @@ h1.page-title {
     color:#50a65d;
 	font-weight:bold;
 }
+iframe {
+    width: 100%;
+}
+.entry-audio audio {
+    width: 100%;
+}
 
 /* Media */
 @media screen and (max-width: 768px) and (min-width: 720px){	
@@ -1239,8 +1248,6 @@ h1.page-title {
   #slider .carousel-caption {
     top: 46%;
   }
-  
-
 }
 @media screen and (max-width:720px) {	
 	#header,
@@ -1279,7 +1286,7 @@ h1.page-title {
 		overflow-x:hidden;
 		width: 100%;
 		left: 0;
-		top:-68px;
+		top:-104px;
 	}
 	#header .nav ul{
 		width:100%;
@@ -1447,7 +1454,7 @@ h1.page-title {
     top:0;
   }
   #slider .carousel-control-prev{
-    left: 5%;
+    left: 21%;
   }
   .social-icons i{
     margin-left: 10px;

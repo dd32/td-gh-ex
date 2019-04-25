@@ -1,4 +1,4 @@
-/* Basic Style */
+/* RTL Style */
 *{
   margin:0;
   padding:0;
@@ -428,8 +428,7 @@ input.search-field {
   color: #06393a;
 }
 #slider .inner_carousel p {
-  font-size: 13px;
-  font-weight: 600;
+  font-size: 14px;
   line-height: 1.5;
   padding: 5px 0 8px 0px;
 }
@@ -691,7 +690,7 @@ a.r_button {
 }
 section .innerlightbox{
   background-size:100% 100%;
-  padding:4.5em 0;
+  padding: 3em 0;
   color:#50a65d;
 }
 

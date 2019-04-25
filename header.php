@@ -88,7 +88,7 @@
       <div class="serach_outer">
         <div class="closepop"><i class="far fa-window-close"></i></div>
         <div class="serach_inner">
-         <?php get_search_form(); ?>
+          <?php get_search_form(); ?>
         </div>
       </div>
     </div>
