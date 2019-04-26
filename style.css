@@ -4,11 +4,11 @@ Theme URI: https://www.themeshopy.com/themes/free-coaching-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Coaching is an elegant, resourceful, versatile and polished WordPress education theme for coaching centre, school, college, campus, physical and educational training centre, LMS, sports coach, personal life coach, hobby class, teachers and lecturers, personal trainer, mentor, religious and spiritual preacher, motivational speaker and other relevant websites. This advanced theme has a beautiful layout that gives the website a professional look. It has responsive layout with mobile-first approach to adjust on mobiles, tablets and desktops of variable screen size. It is multilingual; tested to work on all browsers; supports RTL writing; SEO friendly; retina ready and optimized for speed. This coaching WordPress theme can be customized to give it a personalized touch to suit your brand. It supports various post formats like standard, image, gallery, video etc. Gallery is a place where you can add images of your coaching centre or school or college to attract more parents and students to take your services. In the testimonial section, people can give feedback about your teaching and services. It can be used as a one page or multi-page theme. This coaching theme has smartly used call to action button (CTA) to get potential leads. It is documented to ease its usage. Demo: https://www.themeshopy.com/advance-coaching-pro/
-Version: 0.1
+Version: 0.2
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-coaching
-Tags:left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, education
+Tags:left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, post-formats, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, education
 
 Advance Coaching WordPress Theme has been created by Themeshopy, 2018.
 Advance Coaching WordPress Theme is released under the terms of GNU GPL
@@ -501,18 +501,18 @@ input.search-field {
 }
 #slider .carousel-caption {
   transform: translateY(-50%);
-  top: 52%;
+  top: 50%;
   left: 8%;
   right: 40%;
 }
 #slider .inner_carousel h2 {
   margin: 0;
-  font-size: 44px;
+  font-size: 40px;
   letter-spacing: 1px;
   color: #fff;
   padding: 6px 2px;
   text-align: left;
-  font-weight: 900;
+  font-weight: 800;
 }
 #slider .inner_carousel p {
   font-size: 15px;
@@ -597,6 +597,7 @@ input.search-field {
   color: #fff;
   opacity: 0;
   padding-top: 25px;
+  padding: 10px;
   -moz-transform: rotate(30deg) translate(30px,-89px);
   -webkit-transform: rotate(30deg) translate(30px,-89px);
   -ms-transform: rotate(30deg) translate(30px,-89px);
@@ -873,6 +874,9 @@ table#wp-calendar {
 	padding:0 0 17px 0;
 	color: #2379d2;
 }
+#footer a.rsswidget {
+  color: #2379d2;
+}
 #footer p{
 	font-size:14px;
 }
@@ -1058,7 +1062,7 @@ nav.woocommerce-MyAccount-navigation ul {
 nav.woocommerce-MyAccount-navigation ul li {
   background: #2379d2 !important;
   padding: 12px!important;
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 }
 nav.woocommerce-MyAccount-navigation ul li a{
   color: #fff;
@@ -1291,6 +1295,13 @@ h1.page-title {
     color:#051f31;
 	font-weight:bold;
 }
+/* iframe */
+iframe {
+    width: 100%;
+}
+.entry-audio audio {
+    width: 100%;
+}
 
 /* Media */
 @media screen and (max-width: 768px) and (min-width: 720px){	
@@ -1311,9 +1322,6 @@ h1.page-title {
   }
   #slider .inner_carousel p {
     display: none;
-  }
-  #slider .carousel-caption {
-    top: 46%;
   }
   .contact i {
     padding: 6px;
@@ -1350,10 +1358,10 @@ h1.page-title {
     width: 100%;
   }
   #slider .carousel-control-next {
-    right: 5%;
+    right: 37%;
   }
   #slider .carousel-control-prev {
-    left: 5%;
+    left: 37%;
   }
 	#comments input[type="submit"].submit{
 		width: 100% !important;
@@ -1386,7 +1394,7 @@ h1.page-title {
 		overflow-x:hidden;
 		width: 100%;
 		left: 0;
-		top:-26.7em;
+		top:-29em;
 	}
 	#header .nav ul{
 		width:100%;
@@ -1400,10 +1408,11 @@ h1.page-title {
 		float:none;
 		text-align:left;
 	}
-	.nav ul li a{
-		padding:5px 10px;
+	#header .nav ul li a{
+		padding: 10px;
 		display:block;
 		color:#ffffff !important;
+    text-align: left;
 	}
 	.nav ul li a:hover{
 		color:#ff8a00;
@@ -1430,9 +1439,22 @@ h1.page-title {
     margin-top: 4px;
     margin-bottom: 10px;
   }
+  #footer input[type="search"]{
+    width: 100%;
+  }
+  .woocommerce ul.products[class*=columns-] li.product,
+  .woocommerce-page ul.products[class*=columns-] li.product{
+    width: 100% !important;
+    float: none !important;
+  }
+  .top-header{
+    padding-bottom: 15px;
+  }
+  #header .nav ul li a:after{
+    display: none;
+  }
 }
 @media screen and (min-width:720px){
-
 	#header .nav ul li ul{
 	 	display:none;
 		z-index:2;
@@ -1495,18 +1517,6 @@ h1.page-title {
 	}	
 }
 @media screen and (min-width: 1000px) and (max-width: 1024px){
-	#header #header-inner .nav ul li ul li{
-	 	display:block;
-		position:relative;
-		float:none;
-	}
-	#header #header-inner .nav ul li ul li a{
-		color:#051f31;
-		display:block;
-		padding-top:10px;
-		padding-bottom:10px;
-		border-bottom:1px #313131 solid;
-	}
 	#footer input[type="submit"]{
 		margin-top: 5px;
 	}
@@ -1514,65 +1524,42 @@ h1.page-title {
 	#footer td{
 		padding: 4px;
 	}
-  #slider .carousel-caption {
-    top: 60%;
-  }
   #slider .inner_carousel h2 {
     font-size: 33px;
     padding: 0px 2px;
   }
-}
-@media screen and (max-width: 425px){
-	#footer input[type="search"]{
-		width: 100%;
-	}
-	.woocommerce ul.products[class*=columns-] li.product,
-	.woocommerce-page ul.products[class*=columns-] li.product{
-		width: 100% !important;
-		float: none !important;
-	}
-  #slider .carousel-caption{
-    right: 0;
-    left: 0;
-    top:30%;
+  .request-btn a{
+    font-size: 11px;
+    padding: 10px;
   }
-  .top-header{
-    padding-bottom: 15px;
-  }
-}
-@media screen and (min-width: 426px) and (max-width: 767px){
-  #slider .carousel-caption{
-    top:40%;
-  }
-  .page-template-custom-front-page .contact-content{
-    position: static;
-  }
-  .topbar{
-    text-align: center;
+  .request-btn a i{
+    margin-left: 0px;
+    padding: 5px 7px;
   }
   #slider .carousel-control-next {
-    right: 5%;
+    right: 40%;
   }
   #slider .carousel-control-prev {
-    left: 5%;
+    left: 40%;
+  }
+  .contact_data .mail i{
+    margin-left: 0px;
   }
 }
+@media screen and (max-width: 425px){
 
-@media screen and (max-width: 768px){
-  
 }
 @media screen and (min-width: 768px) and (max-width: 999px){
   #slider .carousel-control-next {
     right: 38%;
   }
-  #slider .carousel-control-prev {
-  left: 40%;
-  }
-  #slider .carousel-caption {
-    top: 63%;
-  }
-  #slider .inner_carousel p{
+  #slider .inner_carousel p,
+  .box .description{
     display: none;
+  }
+  .box .title{
+    font-size: 16px;
+    margin-top: 0;
   }
   .top-header .time{
     padding: 0px;
@@ -1596,32 +1583,17 @@ h1.page-title {
   }
   .request-btn a{
     font-size: 10px;
-    padding: 7px;
+    padding: 7px 10px;
   }
   #slider .carousel-control-next {
     right: 40%;
   }
-  #slider .carousel-control-prev {
-    left: 37%;
-  }
-}
-@media screen and (min-width: 1000px) and (max-width: 1024px){
-  .request-btn a{
-    font-size: 11px;
-    padding: 10px;
-  }
-  .request-btn a i{
-    margin-left: 0px;
-    padding: 5px 7px;
-  }
-  #slider .carousel-control-next {
-    right: 40%;
-  }
-  #slider .carousel-control-prev {
-    left: 37%;
-  }
-  .contact_data .mail i{
-    margin-left: 0px;
+  .page-template-custom-front-page .contact-content {
+    position: static;
+    width: 100%;
+    margin-top: -3.5em;
+    background: #051f31;
+    padding-bottom: 10px;
   }
 }
 @media screen and (min-width: 1025px){

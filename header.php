@@ -32,7 +32,7 @@
                   <i class="far fa-clock"></i>
                 </div>
                 <div class="col-lg-9 col-md-9 p-0">
-                  <p><?php echo esc_html( get_theme_mod('advance_coaching_time',__('Mon - Sat 9:00 - 19:00 Sunday Closed','advance-coaching') )); ?></p>
+                  <p><?php echo esc_html( get_theme_mod('advance_coaching_time','' )); ?></p>
                 </div>
               </div>
             </div>  
@@ -41,14 +41,14 @@
         <div class="col-lg-6 col-md-6">
           <div class="welcome-text">
           <?php if( get_theme_mod('advance_coaching_welcome_text') != ''){ ?>
-            <p><?php echo esc_html( get_theme_mod('advance_coaching_welcome_text',__('Welcome to coaching theme','advance-coaching') )); ?></p>
+            <p><?php echo esc_html( get_theme_mod('advance_coaching_welcome_text','' )); ?></p>
           <?php } ?>
           </div>
         </div>
         <div class="col-lg-3 col-md-3">
           <div class="request-btn">
             <?php if ( get_theme_mod('advance_coaching_course1','') != "" ) {?>
-               <span><a href="<?php echo esc_html(get_theme_mod('advance_coaching_course')); ?>"><?php echo esc_html(get_theme_mod('advance_coaching_course1',__('REQUEST FREE COURSE','advance-coaching'))); ?> <i class="fas fa-angle-right"></i></a></span>
+               <span><a href="<?php echo esc_html(get_theme_mod('advance_coaching_course')); ?>"><?php echo esc_html(get_theme_mod('advance_coaching_course1','')); ?> <i class="fas fa-angle-right"></i></a></span>
             <?php }?>
           </div>
         </div>
@@ -104,10 +104,10 @@
                       </div>
                       <div class="col-lg-9 col-md-12">
                         <?php if( get_theme_mod('advance_coaching_mail') != ''){ ?>
-                          <p class="color"><?php echo esc_html( get_theme_mod('advance_coaching_mail',__('MAIL ADDRESS','advance-coaching') )); ?></p>
+                          <p class="color"><?php echo esc_html( get_theme_mod('advance_coaching_mail','' )); ?></p>
                         <?php } ?>
                         <?php if( get_theme_mod('advance_coaching_mail1') != ''){ ?>
-                          <p><?php echo esc_html( get_theme_mod('advance_coaching_mail1',__('coachingtsg@gmail.com','advance-coaching') )); ?></p>
+                          <p><?php echo esc_html( get_theme_mod('advance_coaching_mail1','' )); ?></p>
                         <?php } ?>
                       </div>
                     </div>  
@@ -123,10 +123,10 @@
                         </div>
                         <div class="col-lg-9 col-md-12">
                           <?php if( get_theme_mod('advance_coaching_phone') != ''){ ?>
-                            <p class="color"><?php echo esc_html( get_theme_mod('advance_coaching_phone',__('PHONE','advance-coaching') )); ?></p>
+                            <p class="color"><?php echo esc_html( get_theme_mod('advance_coaching_phone','' )); ?></p>
                           <?php } ?>
                           <?php if( get_theme_mod('advance_coaching_phone1') != ''){ ?>
-                            <p><?php echo esc_html( get_theme_mod('advance_coaching_phone1',__('0123456789','advance-coaching') )); ?></p>
+                            <p><?php echo esc_html( get_theme_mod('advance_coaching_phone1','' )); ?></p>
                           <?php } ?>
                         </div>
                       </div> 
@@ -142,10 +142,10 @@
                         </div>
                         <div class="col-lg-9 col-md-12">
                           <?php if( get_theme_mod('advance_coaching_address') != ''){ ?>
-                          <p class="color"><?php echo esc_html( get_theme_mod('advance_coaching_address',__('ADDRESS','advance-coaching') )); ?></p>
+                          <p class="color"><?php echo esc_html( get_theme_mod('advance_coaching_address','' )); ?></p>
                           <?php } ?>
                           <?php if( get_theme_mod('advance_coaching_address1') != ''){ ?>
-                          <p><?php echo esc_html( get_theme_mod('advance_coaching_address1',__('Ocean,Hilton Head Island, ORT 1236','advance-coaching') )); ?></p>
+                          <p><?php echo esc_html( get_theme_mod('advance_coaching_address1','' )); ?></p>
                           <?php } ?>
                         </div>
                       </div>

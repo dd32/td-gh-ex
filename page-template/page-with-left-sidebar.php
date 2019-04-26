@@ -14,7 +14,7 @@ get_header(); ?>
     	</div>
         <div class="col-md-8 col-sm-8">
             <?php while ( have_posts() ) : the_post(); ?>
-                <img src="<?php the_post_thumbnail_url('full'); ?>" width="100%">
+                <img src="<?php the_post_thumbnail_url('full'); ?>" >
                 <h1><?php the_title(); ?></h1>
                 <?php the_content();?>
             <?php endwhile; // end of the loop. ?>
