@@ -13,3 +13,13 @@
 	} );
 
 } )( wp.customize );
+
+
+	jQuery(document).ready(function () {
+	    jQuery('.controls#advance-fitness-gym-img-container li img').click(function () {
+	        jQuery('.controls#advance-fitness-gym-img-container li').each(function () {
+	            jQuery(this).find('img').removeClass('advance-fitness-gym-radio-img-selected');
+	        });
+	        jQuery(this).addClass('advance-fitness-gym-radio-img-selected');
+	    });
+	});

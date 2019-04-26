@@ -244,6 +244,40 @@ function advance_fitness_gym_customize_register($wp_customize) {
 }
 add_action('customize_register', 'advance_fitness_gym_customize_register');
 
+load_template( ABSPATH . 'wp-includes/class-wp-customize-control.php' );
+
+class Advance_Fitness_Gym_Image_Radio_Control extends WP_Customize_Control {
+
+    public function render_content() {
+ 
+        if (empty($this->choices))
+            return;
+ 
+        $name = '_customize-radio-' . $this->id;
+        ?>
+        <span class="customize-control-title"><?php echo esc_html($this->label); ?></span>
+        <ul class="controls" id='advance-fitness-gym-img-container'>
+            <?php
+            foreach ($this->choices as $value => $label) :
+                $class = ($this->value() == $value) ? 'advance-fitness-gym-radio-img-selected advance-fitness-gym-radio-img-img' : 'advance-fitness-gym-radio-img-img';
+                ?>
+                <li style="display: inline;">
+                    <label>
+                        <input <?php $this->link(); ?>style = 'display:none' type="radio" value="<?php echo esc_attr($value); ?>" name="<?php echo esc_attr($name); ?>" <?php
+                              $this->link();
+                              checked($this->value(), $value);
+                              ?> />
+                        <img src='<?php echo esc_url($label); ?>' class='<?php echo esc_attr($class); ?>' />
+                    </label>
+                </li>
+                <?php
+            endforeach;
+            ?>
+        </ul>
+        <?php
+    } 
+}
+
 /**
  * Singleton class for handling the theme's customizer integration.
  *
@@ -337,7 +371,7 @@ final class Advance_Fitness_Gym_Customize {
 	public function enqueue_control_scripts() {
 
 		wp_enqueue_script('advance-fitness-gym-customize-controls', trailingslashit(get_template_directory_uri()).'/js/customize-controls.js', array('customize-controls'));
-https://www.themeshopy.com/themes/wordpress-fitness-theme/
+
 		wp_enqueue_style('advance-fitness-gym-customize-controls', trailingslashit(get_template_directory_uri()).'/css/customize-controls.css');
 	}
 }

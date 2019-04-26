@@ -35,14 +35,35 @@ function advance_fitness_gym_setup() {
 	));
 
 	/*
+	* Enable support for Post Formats.
+	*
+	* See: https://codex.wordpress.org/Post_Formats
+	*/
+	add_theme_support( 'post-formats', array('image','video','gallery','audio',) );
+
+	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
 	 */
 	add_editor_style(array('css/editor-style.css', advance_fitness_gym_font_url()));
+// Theme Activation Notice
+	global $pagenow;
+	
+	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+		add_action( 'admin_notices', 'advance_fitness_gym_activation_notice' );
+	}
+}
+endif;
+add_action( 'after_setup_theme', 'advance_fitness_gym_setup' );
+
+// Notice after Theme Activation
+function advance_fitness_gym_activation_notice() {
+	echo '<div class="notice notice-success is-dismissible get-started">';
+		echo '<p>'. esc_html__( 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.', 'advance-fitness-gym' ) .'</p>';
+		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=advance_fitness_gym_guide' ) ) .'" class="button button-primary">'. esc_html__( 'Click here...', 'advance-fitness-gym' ) .'</a></p>';
+	echo '</div>';
 }
 
-endif;
-add_action('after_setup_theme', 'advance_fitness_gym_setup');
 
 /* Theme Widgets Setup */
 function advance_fitness_gym_widgets_init() {
@@ -187,11 +208,16 @@ function advance_fitness_gym_string_limit_words($string, $word_limit) {
 	return implode(' ', $words);
 }
 
+define('ADVANCE_FITNESS_GYM_BUY_NOW','https://www.themeshopy.com/themes/wordpress-fitness-theme/','advance-fitness-gym');
+define('ADVANCE_FITNESS_GYM_LIVE_DEMO','https://themeshopy.com/advance-fitness-gym-pro/','advance-fitness-gym');
+define('ADVANCE_FITNESS_GYM_PRO_DOC','https://www.themeshopy.com/demo/docs/advance-fitness-gym-pro/');
+define('ADVANCE_FITNESS_GYM_FREE_DOC','https://themeshopy.com/demo/docs/free-advance-fitness-gym/','advance-fitness-gym');
+define('ADVANCE_FITNESS_GYM_CONTACT','https://wordpress.org/support/theme/advance-fitness-gym/','advance-fitness-gym');
 define('ADVANCE_FITNESS_GYM_CREDIT', 'https://www.themeshopy.com/themes/free-wordpress-fitness-theme/', 'advance-fitness-gym');
 
 if (!function_exists('advance_fitness_gym_credit')) {
 	function advance_fitness_gym_credit() {
-		echo "<a href=".esc_url(ADVANCE_FITNESS_GYM_CREDIT)." target='_blank'>".esc_html__('Advance Fitness Theme', 'advance-fitness-gym')."</a>";
+		echo "<a href=".esc_url(ADVANCE_FITNESS_GYM_CREDIT)." target='_blank'>".esc_html__('Fitness WordPress Theme', 'advance-fitness-gym')."</a>";
 	}
 }
 
@@ -211,3 +237,6 @@ require get_template_directory().'/inc/template-tags.php';
 
 /* Customizer additions. */
 require get_template_directory().'/inc/customizer.php';
+
+/* Get Started */
+require get_template_directory().'/inc/admin/admin.php';

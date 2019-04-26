@@ -1,0 +1,460 @@
+# <!=Copyright (C) 2018 Themeshopy
+# This file is distributed under the GNU General Public License.=!>
+msgid ""
+msgstr ""
+"Project-Id-Version: Advance Fitness Gym 0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Themeshopy <support@themeshopy.com>\n"
+"Language-Team: \n"
+"X-Poedit-KeywordsList: "
+"__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
+"attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
+"Language: en_US\n"
+"X-Poedit-SearchPath-0: ../../advance-ecommerce-store\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Generator: grunt-wp-i18n1.0.0\n"
+
+#: 404.php:13  
+msgid '404'
+msgstr ""
+
+#: 404.php:13
+msgid 'Not Found'
+msgstr ""
+
+#: 404.php:14
+msgid 'Looks like you have taken a wrong turn&hellip'
+msgstr ""
+
+#: 404.php:15 
+#: no-results.php:21
+msgid 'Dont worry&hellip it happens to the best of us'
+msgstr ""
+
+#: 404.php:17
+msgid 'Back to Home Page'
+msgstr ""
+
+#: archive.php:38 
+#: archive.php:67
+#: archive.php:98 
+#: archive.php:127
+#: archive.php:158
+#: archive.php:197
+#: archive.php:229
+#: image.php:38 
+#: image.php:66 
+#: image.php:96 
+#: image.php:124 
+#: image.php:154 
+#: image.php:184 
+#: image.php:215
+#: index.php:39 
+#: index.php:63 
+#: index.php:89 
+#: index.php:113 
+#: index.php:139 
+#: index.php:164
+#: index.php:187 
+#: search.php:36 
+#: search.php:62 
+#: search.php:90
+#: search.php:116
+#: search.php:144 
+#: search.php:172
+#: search.php:201
+msgid 'Previous page'
+msgstr ""
+
+#: archive.php:39 
+#: archive.php:68
+#: archive.php:99
+#: archive.php:128
+#: archive.php:159 
+#: archive.php:198 
+#: archive.php:230
+#: image.php:39 
+#: image.php:67 
+#: image.php:97 
+#: image.php:125 
+#: image.php:155 
+#: image.php:185 
+#: image.php:216
+#: index.php:40 
+#: index.php:64 
+#: index.php:90 
+#: index.php:114 
+#: index.php:140 
+#: index.php:165
+#: index.php:188 
+#: search.php:37 
+#: search.php:63 
+#: search.php:91
+#: search.php:117
+#: search.php:145 
+#: search.php:173
+#: search.php:202
+msgid 'Next page'
+msgstr ""
+
+#: archive.php:40
+#: archive.php:69
+#: archive.php:100
+#: archive.php:129
+#: archive.php:160 
+#: archive.php:199
+#: archive.php:231
+#: image.php:40
+#: image.php:68 
+#: image.php:98 
+#: image.php:126 
+#: image.php:156 
+#: image.php:186 
+#: image.php:217
+#: index.php:41 
+#: index.php:65 
+#: index.php:91 
+#: index.php:115 
+#: index.php:141 
+#: index.php:166
+#: index.php:189 
+#: search.php:38 
+#: search.php:64 
+#: search.php:92
+#: search.php:118
+#: search.php:146 
+#: search.php:174
+#: search.php:203
+#: template-parts/single-post.php:30 
+msgid 'page'
+msgstr ""
+
+#: comments.php:28
+msgid 'comments title'
+msgstr ""
+
+#: comments.php:37
+msgid 'comments title'
+msgstr ""
+
+#: comments.php:68
+msgid 'Comments are closed'
+msgstr ""
+
+#: footer.php:29
+msgid 'Copyright 2018 -'
+msgstr ""
+
+#: functions.php:30
+msgid 'Primary Menu'
+msgstr ""
+
+#: functions.php:62
+msgid 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.'
+msgstr ""
+
+#: functions.php:63
+msgid 'Click here...'
+msgstr ""
+
+#: functions.php:71
+msgid 'Blog Sidebar'
+msgstr ""
+
+#: functions.php:72
+msgid 'Appears on blog page sidebar'
+msgstr ""
+
+#: functions.php:81
+msgid 'page sidebar'
+msgstr ""
+
+#: functions.php:82
+#: functions.php:92
+msgid 'Appears on page sidebar'
+msgstr ""
+
+#: functions.php:91
+msgid 'Third Column Sidebar'
+msgstr ""
+
+#: functions.php:101
+msgid 'Footer Navigation 1'
+msgstr ""
+
+#: functions.php:102 
+#: functions.php:112 
+#: functions.php:122
+#: functions.php:132
+msgid 'Appears on footer'
+msgstr ""
+
+#: functions.php:111
+msgid 'Footer Navigation 2'
+msgstr ""
+
+#: functions.php:121
+msgid 'Footer Navigation 3'
+msgstr ""
+
+#: functions.php:131
+msgid 'Footer Navigation 4'
+msgstr ""
+
+#: functions.php:141
+msgid 'Home Page Sidebar'
+msgstr ""
+
+#: functions.php:142
+msgid 'Appears on home page'
+msgstr ""
+
+#: functions.php:221
+msgid 'Advance Fitness Theme'
+msgstr ""
+
+#: header.php:21
+msgid 'Menu'
+msgstr ""
+
+#: no-results.php:11
+msgid 'Nothing Found'
+msgstr ""
+
+#: no-results.php:16
+msgid 'Ready to publish your first post? Get started here'
+msgstr ""
+
+#: no-results.php:18
+msgid 'Sorry, but nothing matched your search terms. Please try again with some different keywords'
+msgstr ""
+
+#: no-results.php:23
+msgid 'Return to Home Page'
+msgstr ""
+
+#: search.php:22
+#: search.php:48 
+#: search.php:76 
+#: search.php:102
+#: search.php:130 
+#: search.php:158
+#: search.php:187
+msgid 'Results For: %s'
+msgstr ""
+
+#: searchform.php:10 
+#: searchform.php:12
+msgid 'Search'
+msgstr ""
+
+#: searchform.php:10
+msgid 'placeholder'
+msgstr ""
+
+#: searchform.php:12
+msgid 'submit button'
+msgstr ""
+
+#: sidebar.php:12
+msgid 'Archives'
+msgstr ""
+
+#: sidebar.php:18
+msgid 'Meta'
+msgstr ""
+
+#: template-parts/single-post.php:14
+#: template-parts/content.php:15
+#: template-parts/content-audio.php:24
+#: template-parts/content-gallery.php:15
+#: template-parts/content-image.php:15
+#: template-parts/content-video.php:24
+msgid '0 Comment'
+msgstr ""
+
+#: template-parts/single-post.php:26
+#: template-parts/image-layout.php:27
+msgid 'Pages:'
+msgstr ""
+
+#: template-parts/single-post.php:37
+#: template-parts/image-layout.php:42
+msgid 'Parent post link'
+msgstr ""
+
+#: template-parts/single-post.php:42
+#: template-parts/image-layout.php:47
+msgid 'Next'
+msgstr ""
+
+#: template-parts/single-post.php:43
+#: template-parts/image-layout.php:48
+msgid 'Next post:'
+msgstr ""
+
+#: template-parts/single-post.php:46
+#: template-parts/image-layout.php:51
+msgid 'Previous post:'
+msgstr ""
+
+#: template-parts/single-post.php:45
+#: template-parts/image-layout.php:50
+msgid 'Previous'
+msgstr ""
+
+#: page-template/custom-front-page.php:111
+#: template-parts/content.php:23 
+#: template-parts/grid-layout.php:19
+#: template-parts/content-audio.php:43
+#: template-parts/content-gallery.php:33
+#: template-parts/content-image.php:23
+#: template-parts/content-video.php:43
+msgid 'Read More'
+msgstr ""
+
+#: template-parts/image-layout.php:32
+msgid 'Edit'
+msgstr ""
+
+#: inc/customizer.php:20
+msgid 'Theme Settings'
+msgstr ""
+
+#: inc/customizer.php:21
+msgid 'Description of what this panel does.'
+msgstr ""
+
+#: inc/customizer.php:26
+msgid 'Layout Settings'
+msgstr ""
+
+#: inc/customizer.php:33 
+#: inc/customizer.php:42
+msgid 'Right Sidebar'
+msgstr ""
+
+#: inc/customizer.php:38
+msgid 'Change Layouts'
+msgstr ""
+
+#: inc/customizer.php:41
+msgid 'Left Sidebar'
+msgstr ""
+
+#: inc/customizer.php:43
+msgid 'One Column'
+msgstr ""
+
+#: inc/customizer.php:44
+msgid 'Three Columns'
+msgstr ""
+
+#: inc/customizer.php:45
+msgid 'Four Columns'
+msgstr ""
+
+#: inc/customizer.php:46
+msgid 'Grid Layout'
+msgstr ""
+
+#: inc/customizer.php:52
+msgid 'Topbar Section'
+msgstr ""
+
+#: inc/customizer.php:53
+msgid 'Add Header Content here'
+msgstr ""
+
+#: inc/customizer.php:63
+msgid 'Add Phone Number'
+msgstr ""
+
+#: inc/customizer.php:74
+msgid 'Add Email'
+msgstr ""
+
+#: inc/customizer.php:82
+msgid 'Social Icon Section'
+msgstr ""
+
+#: inc/customizer.php:83
+msgid 'Add Social Link here'
+msgstr ""
+
+#: inc/customizer.php:93
+msgid 'Add Facebook link'
+msgstr ""
+
+#: inc/customizer.php:104
+msgid 'Add Twitter link'
+msgstr ""
+
+#: inc/customizer.php:115
+msgid 'Add Google Plus link'
+msgstr ""
+
+
+#: inc/customizer.php:126
+msgid 'Add Instagram link'
+msgstr ""
+
+#: inc/customizer.php:137
+msgid 'Add Linkedin link'
+msgstr ""
+
+#: inc/customizer.php:145
+msgid 'Slider Settings'
+msgstr ""
+
+#: inc/customizer.php:156
+msgid 'Show / Hide slider'
+msgstr ""
+
+#: inc/customizer.php:168
+msgid 'Select Slide Image Page'
+msgstr ""
+
+#: inc/customizer.php:176
+msgid 'Services'
+msgstr ""
+
+#: inc/customizer.php:200
+msgid 'Select Category to display Services'
+msgstr ""
+
+#: inc/customizer.php:206
+msgid 'Welcome Section'
+msgstr ""
+
+#: inc/customizer.php:207
+msgid 'Add Welcome sections below.'
+msgstr ""
+
+#: inc/customizer.php:223
+msgid 'Select Post'
+msgstr ""
+
+#: inc/customizer.php:229
+msgid 'Footer Text'
+msgstr ""
+
+#: inc/customizer.php:230
+msgid 'Add some text for footer like copyright etc'
+msgstr ""
+
+#: inc/customizer.php:240
+msgid 'Copyright Text'
+msgstr ""
+
+#: inc/customizer.php:356
+msgid 'Fitness Pro Theme'
+msgstr ""
+
+#: inc/customizer.php:357
+msgid 'Go Pro'
+msgstr ""
