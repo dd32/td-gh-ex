@@ -102,15 +102,14 @@ if ( ! function_exists( 'barletta_the_custom_logo' ) ) :
 function barletta_the_custom_logo() {
 	// Try to retrieve the Custom Logo
 	$output = '';
-	if ((function_exists('get_custom_logo'))&&(has_custom_logo()))
-		$output = get_custom_logo();
+	if ((function_exists('the_custom_logo'))&&(has_custom_logo())) {
+		the_custom_logo();
 
 		// Nothing in the output: Custom Logo is not supported, or there is no selected logo
 		// In both cases we display the site's name
-	if (empty($output))
-		$output = '<hgroup><h1><a href="' . esc_url(home_url('/')) . '" rel="home">' . esc_attr(get_bloginfo('name')) . '</a></h1><div class="description">'.esc_attr(get_bloginfo('description')).'</div></hgroup>';
-
-	echo force_balance_tags($output);
+	} else {
+		echo '<hgroup><h1><a href="' . esc_url(home_url('/')) . '" rel="home">' . esc_html(get_bloginfo('name')) . '</a></h1><div class="description">'.esc_html(get_bloginfo('description')).'</div></hgroup>';
+	}
 }
 endif; // sanremo_custom_logo
 
