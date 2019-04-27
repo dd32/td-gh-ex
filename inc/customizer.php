@@ -94,7 +94,7 @@ function advance_education_customize_register($wp_customize) {
 	//Popular Courses 
 	$wp_customize->add_section('advance_education_category',array(
 		'title'	=> __('Popular Courses','advance-education'),
-		'description'	=> __('Add  section below.','advance-education'),
+		'description'	=> __('Add section below.','advance-education'),
 		'panel' => 'advance_education_panel_id',
 	));
 
