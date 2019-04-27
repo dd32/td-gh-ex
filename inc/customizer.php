@@ -376,6 +376,24 @@ function benevolent_customize_register( $wp_customize ) {
             'type' => 'textarea',
         )
     );
+
+    /** Open in new tab */
+    $wp_customize->add_setting(
+        'benevolent_intro_section_new_tab',
+        array(
+            'default' => '1',
+            'sanitize_callback' => 'benevolent_sanitize_checkbox',
+        )
+    );
+    
+    $wp_customize->add_control(
+        'benevolent_intro_section_new_tab', 
+        array(
+            'label' => __( 'Open in new tab', 'benevolent' ),
+            'section' => 'benevolent_intro_settings',
+            'type' => 'checkbox',
+        )
+    );
     
     /** Intro One Title */
     $wp_customize->add_setting(

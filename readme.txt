@@ -5,7 +5,7 @@ Tags: Blog, two-columns, right-sidebar, footer-widgets, education, custom-backgr
 
 Requires at least: 4.7
 Tested up to: 5.0.3
-Stable tag: 1.1.9
+Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -157,6 +157,11 @@ Benevolent WordPress Theme is distributed under the terms of the GPLv2 or later
    
 == Changelog ==
     
+    1.2.0
+    * Added feature to open link on new tab in homepage intro section.
+    * Added fallback image for homepage blog section.
+    * Made footer link no-follow.
+
     1.1.9
     * Updated fontawesome to version 5.6.3.
     * Responsive devices header improved.

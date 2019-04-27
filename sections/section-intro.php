@@ -6,8 +6,9 @@
  */
  
 
-$intro_section_title = get_theme_mod( 'benevolent_intro_section_title' );
+$intro_section_title   = get_theme_mod( 'benevolent_intro_section_title' );
 $intro_section_content = get_theme_mod( 'benevolent_intro_section_content' );
+$ed_new_tab            = get_theme_mod( 'benevolent_intro_section_new_tab', '1' );
 
 $intros = array(
     'one'   => array(
@@ -48,7 +49,7 @@ $intros = array(
 	<div class="row">
 		<?php 
             foreach( $intros as $intro ){
-                benevolent_intro_helper( $intro['image'], $intro['logo'], $intro['title'], $intro['link'], $intro['url'] );
+                benevolent_intro_helper( $intro['image'], $intro['logo'], $intro['title'], $intro['link'], $intro['url'], $ed_new_tab );
             }
          ?>
 	</div>

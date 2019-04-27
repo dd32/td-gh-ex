@@ -488,7 +488,7 @@ add_action( 'benevolent_promotional', 'benevolent_promotional_cb' );
 /**
  * Helper function for listing Intro section
 */
-function benevolent_intro_helper( $image, $logo, $title, $link, $url ){
+function benevolent_intro_helper( $image, $logo, $title, $link, $url, $ed_new_tab ){
     
     if( $image ){
         $img = wp_get_attachment_image_src( $image, 'full' );
@@ -499,11 +499,12 @@ function benevolent_intro_helper( $image, $logo, $title, $link, $url ){
         
         if( $logo ) echo '<div class="icon-holder"><img src="' . esc_url( $log[0] ) .'" alt="' . esc_attr( $title ) . '" /></div>';
         
-    if( $title || $url ){ 
-            echo '<div class="text-holder">';
-      if( $title ) echo '<strong class="title">' . esc_html( $title ) . '</strong>'; 
-      if( $url && $link ) echo '<a class="btn" href="' . esc_url( $url ) . '" target="_blank">' . esc_html( $link ) . '<span class="fa fa-angle-right"></span></a>';
-            echo '</div>';
+        if( $title || $url ){ 
+          $target = $ed_new_tab ? ' target="_blank"' : '';
+          echo '<div class="text-holder">';
+          if( $title ) echo '<strong class="title">' . esc_html( $title ) . '</strong>'; 
+          if( $url && $link ) echo '<a class="btn" href="' . esc_url( $url ) . '"'. $target .'>' . esc_html( $link ) . '<span class="fa fa-angle-right"></span></a>';
+                echo '</div>';
         } 
         echo '</div>';
     }
@@ -600,7 +601,8 @@ function benevolent_footer_credit(){
        $text .= get_the_privacy_policy_link();
    }
     $text .= '<span class="by">';
-    $text .= '<a href="' . esc_url( 'https://raratheme.com/wordpress-themes/benevolent/' ) .'" rel="author" target="_blank">' . esc_html__( 'Benevolent by Rara Theme', 'benevolent' ) . '</a>. ';
+    $text .= esc_html__( 'Benevolent | Developed By ', 'benevolent' );
+    $text .= '<a href="' . esc_url( 'https://raratheme.com/' ) .'" rel="nofollow" target="_blank">' . esc_html__( 'Rara Theme', 'benevolent' ) . '</a>. ';
     $text .= sprintf( esc_html__( 'Powered by %s', 'benevolent' ), '<a href="'. esc_url( __( 'https://wordpress.org/', 'benevolent' ) ) .'" target="_blank">WordPress</a>.' );
     $text .= '</span></div></div>';
     echo apply_filters( 'benevolent_footer_text', $text );    

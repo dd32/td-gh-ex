@@ -41,9 +41,16 @@ if( $blog_section_title || $blog_section_content ){
                 ?>
                 <div class="columns-3">
     				<div class="post">
-                        <?php if( has_post_thumbnail() ){ ?>
-    					<a href="<?php the_permalink(); ?>" class="post-thumbnail"><?php the_post_thumbnail( 'benevolent-blog', array( 'itemprop' => 'image' ) ); ?></a>
-                        <?php } ?>
+    					<a href="<?php the_permalink(); ?>" class="post-thumbnail">
+                        <?php 
+                            if( has_post_thumbnail() ){ 
+                                the_post_thumbnail( 'benevolent-blog', array( 'itemprop' => 'image' ) ); 
+                            }else{
+                                $placeholder_src = get_template_directory_uri() . '/images/benevolent-blog.jpg';
+                                echo '<img src="' . esc_url( $placeholder_src ) . '" alt="' . esc_attr( strip_tags( get_the_title() ) ) . '" itemprop="image"/>';
+                            }
+                        ?>
+                        </a>
     					<div class="text-holder">
     						<header class="entry-header">
     							<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h3>
