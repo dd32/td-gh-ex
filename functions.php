@@ -15,6 +15,7 @@ function advance_it_company_setup() {
 
 	$GLOBALS['content_width'] = apply_filters('advance_it_company_content_width', 640);
 
+	load_theme_textdomain( 'advance-it-company', get_template_directory() . '/languages' );
 	add_theme_support('automatic-feed-links');
 	add_theme_support('post-thumbnails');
 	add_theme_support('woocommerce');
@@ -33,6 +34,13 @@ function advance_it_company_setup() {
 	add_theme_support('custom-background', array(
 		'default-color' => 'f1f1f1',
 	));
+	/*
+	* Enable support for Post Formats.
+	*
+	* See: https://codex.wordpress.org/Post_Formats
+	*/
+	add_theme_support( 'post-formats', array('image','video','gallery','audio',) );
+
 
 	/*
 	 * This theme styles the visual editor to resemble the theme style,
@@ -200,6 +208,13 @@ function advance_it_company_scripts() {
 }
 add_action('wp_enqueue_scripts', 'advance_it_company_scripts');
 
+define('ADVANCE_IT_COMPANY_BUY_NOW','https://www.themeshopy.com/themes/it-company-wordpress-theme/','advance-it-company');
+define('ADVANCE_IT_COMPANY_LIVE_DEMO','https://www.themeshopy.com/advance-it-company-pro/','advance-it-company');
+define('ADVANCE_IT_COMPANY_PRO_DOC','https://www.themeshopy.com/demo/docs/advance-it-company-pro/','advance-it-company');
+define('ADVANCE_IT_COMPANY_FREE_DOC','https://www.themeshopy.com/demo/docs/free-advance-it-company/','advance-it-company');
+define('ADVANCE_IT_COMPANY_CONTACT','https://wordpress.org/support/theme/advance-it-company/','advance-it-company');
+define('ADVANCE_IT_COMPANY_CREDIT','https://www.themeshopy.com/free/wp-advance-it-company-theme/','advance-it-company');
+
 /* Custom header additions. */
 require get_template_directory().'/inc/custom-header.php';
 
@@ -208,3 +223,5 @@ require get_template_directory().'/inc/template-tags.php';
 
 /* Customizer additions. */
 require get_template_directory().'/inc/customizer.php';
+/* Admin about theme */
+require get_template_directory() . '/inc/admin/admin.php';

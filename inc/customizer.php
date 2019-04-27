@@ -156,7 +156,7 @@ function advance_it_company_customize_register($wp_customize) {
 		'sanitize_callback'	=> 'esc_url_raw'
 	));	
 	$wp_customize->add_control('advance_it_company_youtube_url',array(
-		'label'	=> __('Add Google Plus link','advance-it-company'),
+		'label'	=> __('Add You Tube link','advance-it-company'),
 		'section'	=> 'advance_it_company_social_icons',
 		'setting'	=> 'advance_it_company_youtube_url',
 		'type'	=> 'url'
@@ -370,7 +370,7 @@ final class Advance_It_Company_Customize {
 				'example_1',
 				array(
 					'priority' => 9,
-					'title'    => esc_html__('IT Company Pro Theme', 'advance-it-company'),
+					'title'    => esc_html__('IT Company Pro', 'advance-it-company'),
 					'pro_text' => esc_html__('Go Pro', 'advance-it-company'),
 					'pro_url'  => esc_url('https://www.themeshopy.com/themes/it-company-wordpress-theme/'),
 				)
