@@ -1,14 +1,9 @@
 == Changelog ==
 
-Version 1.0
-* Initial Release
+    = 2.0.0 - April 27 2019 =
+    * Upgrade new
 
-Version 1.6.05
-* Copyright Text option fixed
-* Unused tag removed
-* Footer link fixed
+    = 1.6.06 - April 13 2015 =
+    * Initial release
 
-Version 1.6.05
-* Theme URI update
-* Info and documentation tab removed.
-* 
+    

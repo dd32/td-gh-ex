@@ -1,266 +1,81 @@
 <?php
 /**
- * Custom template tags for this theme.
- *
- * Eventually, some of the functionality here could be replaced by core features.
- *
- * @package bnw
+ *  Template Tags
  */
 
-if ( ! function_exists( 'the_posts_navigation' ) ) :
-/**
- * Display navigation to next/previous set of posts when applicable.
- *
- * @todo Remove this function when WordPress 4.3 is released.
- */
-function the_posts_navigation() {
-	// Don't print empty markup if there's only one page.
-	if ( $GLOBALS['wp_query']->max_num_pages < 2 ) {
-		return;
-	}
-	?>
-	<nav class="navigation posts-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'bnw' ); ?></h2>
-		<div class="nav-links">
+// Show Date
+if( ! function_exists( "bnw_theme_meta_date" ) ):
 
-			<?php if ( get_next_posts_link() ) : ?>
-			<div class="nav-previous"><?php next_posts_link( __( 'Older posts', 'bnw' ) ); ?></div>
-			<?php endif; ?>
+    function bnw_theme_meta_date(){
 
-			<?php if ( get_previous_posts_link() ) : ?>
-			<div class="nav-next"><?php previous_posts_link( __( 'Newer posts', 'bnw' ) ); ?></div>
-			<?php endif; ?>
+        $archive_year  = get_the_time('Y'); 
+        $archive_month = get_the_time('m'); 
+        $archive_day   = get_the_time('d');
+        $date_link = get_day_link( $archive_year, $archive_month, $archive_day);
+        $date = get_the_date();
 
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
-}
+        echo sprintf ( __( 'On <a href="%1$1s">%2$2s</a>' , "bnw-theme" ), $date_link , $date );
+    
+    }
+
 endif;
 
-if ( ! function_exists( 'the_post_navigation' ) ) :
-/**
- * Display navigation to next/previous post when applicable.
- *
- * @todo Remove this function when WordPress 4.3 is released.
- */
-function the_post_navigation() {
-	// Don't print empty markup if there's nowhere to navigate.
-	$previous = ( is_attachment() ) ? get_post( get_post()->post_parent ) : get_adjacent_post( false, '', true );
-	$next     = get_adjacent_post( false, '', false );
+// Show Author 
+if (! function_exists ( "bnw_theme_meta_author" ) ):
 
-	if ( ! $next && ! $previous ) {
-		return;
-	}
-	?>
-	<nav class="navigation post-navigation" role="navigation">
-		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'bnw' ); ?></h2>
-		<div class="nav-links">
-			<?php
-				previous_post_link( '<div class="nav-previous">%link</div>', '%title' );
-				next_post_link( '<div class="nav-next">%link</div>', '%title' );
-			?>
-		</div><!-- .nav-links -->
-	</nav><!-- .navigation -->
-	<?php
-}
+    function bnw_theme_meta_author(){
+        $author_link =  esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) ;
+        $author = get_the_author();
+
+        echo sprintf ( __( 'By <a href="%1$s">%2$s</a>' , "bnw-theme" ), $author_link , $author );
+    }   
+
 endif;
 
-if ( ! function_exists( 'bnw_posted_on' ) ) :
-/**
- * Prints HTML with meta information for the current post-date/time and author.
- */
-function bnw_posted_on() {
-	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time><time class="updated" datetime="%3$s">%4$s</time>';
-	}
+// Show Comment popup link
+if (! function_exists ( "bnw_theme_comment_link" ) ):
 
-	$time_string = sprintf( $time_string,
-		esc_attr( get_the_date( 'c' ) ),
-		esc_html( get_the_date() ),
-		esc_attr( get_the_modified_date( 'c' ) ),
-		esc_html( get_the_modified_date() )
-	);
+    function bnw_theme_comment_link(){
+        
+        comments_popup_link( __( 'No comments', "bnw-theme" ) , '1 comment', '% comments', 'comments-link', 'Comments Off' );
+        
+    }
 
-	$posted_on = sprintf(
-		_x( 'Posted on %s', 'post date', 'bnw' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
-
-	$byline = sprintf(
-		_x( 'by %s', 'post author', 'bnw' ),
-		' <span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
-
-	echo '<span class="posted-on"><i class="fa fa-calendar-o"></i> ' . $posted_on . '</span> <span class="byline"> | ' . $byline . '</span>';
-
-}
 endif;
 
-if ( ! function_exists( 'bnw_entry_footer' ) ) :
-/**
- * Prints HTML with meta information for the categories, tags and comments.
- */
-function bnw_entry_footer() {
-	// Hide category and tag text for pages.
-	if ( 'post' == get_post_type() ) {
-		/* translators: used between list items, there is a space after the comma */
-		$categories_list = get_the_category_list( __( ', ', 'bnw' ) );
-		if ( $categories_list && bnw_categorized_blog() ) {
-			printf( '<span class="cat-links"><i class="fa fa-folder-open"></i> ' . __( 'Posted in %1$s', 'bnw' ) . '</span> ', $categories_list );
-		}
+// Show post edit link
+if (! function_exists ( "bnw_theme_edit_link" ) ):
 
-		/* translators: used between list items, there is a space after the comma */
-		$tags_list = get_the_tag_list( '', __( ', ', 'bnw' ) );
-		if ( $tags_list ) {
-			printf( '<span class="tags-links"> <i class="fa fa-tags"></i> ' . __( 'Tagged %1$s', 'bnw' ) . '</span> ', $tags_list );
-		}
-	}
+    function bnw_theme_edit_link(){
+        $post_edit_link = esc_url( get_edit_post_link() );
 
-	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link"> <i class="fa fa-comments-o"></i> ';
-		comments_popup_link( __( 'Leave a comment', 'bnw' ), __( '1 Comment', 'bnw' ), __( '% Comments', 'bnw' ) );
-		echo '</span> ';
-	}
+        echo sprintf ( __( '<a href="%s">Edit</a>' , "bnw-theme" ) , $post_edit_link );
+    }
 
-	edit_post_link( __( 'Edit', 'bnw' ), '<i class="fa fa-pencil"></i> <span class="edit-link">', '</span>' );
-}
 endif;
 
-if ( ! function_exists( 'the_archive_title' ) ) :
-/**
- * Shim for `the_archive_title()`.
- *
- * Display the archive title based on the queried object.
- *
- * @todo Remove this function when WordPress 4.3 is released.
- *
- * @param string $before Optional. Content to prepend to the title. Default empty.
- * @param string $after  Optional. Content to append to the title. Default empty.
- */
-function the_archive_title( $before = '', $after = '' ) {
-	if ( is_category() ) {
-		$title = sprintf( __( 'Category: %s', 'bnw' ), single_cat_title( '', false ) );
-	} elseif ( is_tag() ) {
-		$title = sprintf( __( 'Tag: %s', 'bnw' ), single_tag_title( '', false ) );
-	} elseif ( is_author() ) {
-		$title = sprintf( __( 'Author: %s', 'bnw' ), '<span class="vcard">' . get_the_author() . '</span>' );
-	} elseif ( is_year() ) {
-		$title = sprintf( __( 'Year: %s', 'bnw' ), get_the_date( _x( 'Y', 'yearly archives date format', 'bnw' ) ) );
-	} elseif ( is_month() ) {
-		$title = sprintf( __( 'Month: %s', 'bnw' ), get_the_date( _x( 'F Y', 'monthly archives date format', 'bnw' ) ) );
-	} elseif ( is_day() ) {
-		$title = sprintf( __( 'Day: %s', 'bnw' ), get_the_date( _x( 'F j, Y', 'daily archives date format', 'bnw' ) ) );
-	} elseif ( is_tax( 'post_format' ) ) {
-		if ( is_tax( 'post_format', 'post-format-aside' ) ) {
-			$title = _x( 'Asides', 'post format archive title', 'bnw' );
-		} elseif ( is_tax( 'post_format', 'post-format-gallery' ) ) {
-			$title = _x( 'Galleries', 'post format archive title', 'bnw' );
-		} elseif ( is_tax( 'post_format', 'post-format-image' ) ) {
-			$title = _x( 'Images', 'post format archive title', 'bnw' );
-		} elseif ( is_tax( 'post_format', 'post-format-video' ) ) {
-			$title = _x( 'Videos', 'post format archive title', 'bnw' );
-		} elseif ( is_tax( 'post_format', 'post-format-quote' ) ) {
-			$title = _x( 'Quotes', 'post format archive title', 'bnw' );
-		} elseif ( is_tax( 'post_format', 'post-format-link' ) ) {
-			$title = _x( 'Links', 'post format archive title', 'bnw' );
-		} elseif ( is_tax( 'post_format', 'post-format-status' ) ) {
-			$title = _x( 'Statuses', 'post format archive title', 'bnw' );
-		} elseif ( is_tax( 'post_format', 'post-format-audio' ) ) {
-			$title = _x( 'Audio', 'post format archive title', 'bnw' );
-		} elseif ( is_tax( 'post_format', 'post-format-chat' ) ) {
-			$title = _x( 'Chats', 'post format archive title', 'bnw' );
-		}
-	} elseif ( is_post_type_archive() ) {
-		$title = sprintf( __( 'Archives: %s', 'bnw' ), post_type_archive_title( '', false ) );
-	} elseif ( is_tax() ) {
-		$tax = get_taxonomy( get_queried_object()->taxonomy );
-		/* translators: 1: Taxonomy singular name, 2: Current taxonomy term */
-		$title = sprintf( __( '%1$s: %2$s', 'bnw' ), $tax->labels->singular_name, single_term_title( '', false ) );
-	} else {
-		$title = __( 'Archives', 'bnw' );
-	}
+// Show category lists 
+if (! function_exists ( "bnw_theme_meta_cat_list" ) ):
 
-	/**
-	 * Filter the archive title.
-	 *
-	 * @param string $title Archive title to be displayed.
-	 */
-	$title = apply_filters( 'get_the_archive_title', $title );
+    function bnw_theme_meta_cat_list(){
+		//$separate_meta = __( '', "bnw-theme" );
+		$categories_list = get_the_category_list();
+        
+        //echo  $categories_list;
+        echo get_the_category_list();
+    }
 
-	if ( ! empty( $title ) ) {
-		echo $before . $title . $after;
-	}
-}
 endif;
 
-if ( ! function_exists( 'the_archive_description' ) ) :
-/**
- * Shim for `the_archive_description()`.
- *
- * Display category, tag, or term description.
- *
- * @todo Remove this function when WordPress 4.3 is released.
- *
- * @param string $before Optional. Content to prepend to the description. Default empty.
- * @param string $after  Optional. Content to append to the description. Default empty.
- */
-function the_archive_description( $before = '', $after = '' ) {
-	$description = apply_filters( 'get_the_archive_description', term_description() );
+// Show tag list
+if (! function_exists ( "bnw_theme_meta_tag_list" ) ):
 
-	if ( ! empty( $description ) ) {
-		/**
-		 * Filter the archive description.
-		 *
-		 * @see term_description()
-		 *
-		 * @param string $description Archive description to be displayed.
-		 */
-		echo $before . $description . $after;
-	}
-}
+    function bnw_theme_meta_tag_list(){
+		//$separate_meta = __( '', "bnw-theme" );
+		$tag_list = get_the_tag_list();
+        
+        //echo $tag_list;
+        echo get_the_tag_list();
+    }
+
 endif;
-
-/**
- * Returns true if a blog has more than 1 category.
- *
- * @return bool
- */
-function bnw_categorized_blog() {
-	if ( false === ( $all_the_cool_cats = get_transient( 'bnw_categories' ) ) ) {
-		// Create an array of all the categories that are attached to posts.
-		$all_the_cool_cats = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
-
-		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $all_the_cool_cats );
-
-		set_transient( 'bnw_categories', $all_the_cool_cats );
-	}
-
-	if ( $all_the_cool_cats > 1 ) {
-		// This blog has more than 1 category so bnw_categorized_blog should return true.
-		return true;
-	} else {
-		// This blog has only 1 category so bnw_categorized_blog should return false.
-		return false;
-	}
-}
-
-/**
- * Flush out the transients used in bnw_categorized_blog.
- */
-function bnw_category_transient_flusher() {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
-	// Like, beat it. Dig?
-	delete_transient( 'bnw_categories' );
-}
-add_action( 'edit_category', 'bnw_category_transient_flusher' );
-add_action( 'save_post',     'bnw_category_transient_flusher' );

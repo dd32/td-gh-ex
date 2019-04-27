@@ -1,35 +1,46 @@
 <?php
 /**
- * The template for displaying all single posts.
- *
- * @package bnw
+ *  Single
  */
 
 get_header(); ?>
-<div class="content">
-	<div class="content-container">
-		<div class="container">
-			<div id="primary" class="content-area article">
-				<main id="main" class="site-main" role="main">
 
-				<?php while ( have_posts() ) : the_post(); ?>
+    <section class="content-wrapper">
+        <div class="content-container">
+            <div class="container">
+                <div class="row">
+                    <div class="eight columns">
+                        <div class="entry-wrapper-single">
 
-					<?php get_template_part( 'content', 'single' ); ?>
+                            <?php while ( have_posts() ): ?>
 
-					<?php the_post_navigation(); ?>
+                                <?php the_post(); ?>
+                                
+                                <?php get_template_part( 'template-parts/post/content', get_post_format() ); ?>
 
-					<?php
-						// If comments are open or we have at least one comment, load up the comment template
-						if ( comments_open() || get_comments_number() ) :
-							comments_template();
-						endif;
-					?>
+                                <?php get_template_part( 'template-parts/extra/author'); ?>
 
-				<?php endwhile; // end of the loop. ?>
+                                <div class="entry-post-navigation">
+                                    <?php the_post_navigation(); ?>
+                                </div>
+                                
+                                <div class="comment-wrapper">
+                                    <?php 
+                                        if( comments_open() ){
+                                            comments_template();
+                                        }
+                                    ?>
+                                </div>
 
-				</main><!-- #main -->
-			</div><!-- #primary -->
-		</div>
-	</div>
-</div><!-- /content -->
+                            <?php endwhile; ?>
+                        
+                        </div>
+                    </div>
+                    <div class="four columns">
+                        <?php get_sidebar(); ?>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 <?php get_footer(); ?>

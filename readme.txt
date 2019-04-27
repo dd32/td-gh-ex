@@ -1,61 +1,50 @@
-/*  Theme License
-/* ------------------------------------ */
+=== B & W ===
 
-The theme itself is nothing but 100% GPLv3. See headers of files for further details.
-http://www.gnu.org/licenses/gpl-3.0.html
+Contributors: ali_siddique
+Tags: blog, e-commerce, one-column, two-columns, right-sidebar, full-width-template, sticky-post, translation-ready
 
-/*  underscores Theme License
-/* ------------------------------------ */
-
-License: GNU General Public License v2 or later
+Requires at least: WordPress 4.9.10
+Tested up to: WordPress 5.1.1
+Version: 2.0.0
+License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Copyright: Automattic, http://automattic.com/
 
-/*  Font Awesome License
-/* ------------------------------------ */
+B & W clean and simple WordPress Blog theme. B & W based on underscore. Get free support at https://alisiddique.com/support/
 
-Font License - http://fontawesome.io
-License: SIL OFL 1.1
-License URI: http://scripts.sil.org/OFL
-Copyright: Dave Gandy, http://fontawesome.io
+== Description ==
+B & W clean and simple WordPress Blog theme. B & W based on underscore. Get free support at https://alisiddique.com/support/
 
-Code License - http://fontawesome.io
-License: MIT License
-License URI: http://opensource.org/licenses/mit-license.html
-Copyright: Dave Gandy, http://fontawesome.io
+== Installation ==
 
-/*  Animate.css License
-/* ------------------------------------ */
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
 
-Code License - http://daneden.github.io/animate.css
-License: MIT license
-License URI: http://opensource.org/licenses/MIT
-Copyright: Daniel Eden, http://daneden.me/
+== Frequently Asked Questions ==
 
-/*  WOW License
-/* ------------------------------------ */
+	= A question that someone might have =
+	An answer to that question.
 
-Code License - http://mynameismatthieu.com/WOW/
-License: MIT license
-License URI: https://github.com/matthieua/WOW/blob/master/LICENSE-MIT
-Copyright: Matt Aussaguel, http://mynameismatthieu.com/
+== Documentation ==
 
-/*  jQuery Waypoints License
-/* ------------------------------------ */
+https://alisiddique.com/work-items/b-w-wordpress-theme/
 
-Code License - http://imakewebthings.com/jquery-waypoints/
-License: The MIT License
-License URI: https://github.com/imakewebthings/jquery-waypoints/blob/master/licenses.txt
-Copyright: Copyright (c) 2011-2012 Caleb Troughton
-
-/*  Theme images
-/* ------------------------------------ */
+== Copyright ==
 
 
+== THIRD-PARTY RESOURCES ==
 
+	-- Demo Images --
 
-/*  Other Licenses
-/* ------------------------------------ */
+	Info - https://stocksnap.io
+	License: CC0 1.0 Universal (CC0 1.0)
+	License URI: https://creativecommons.org/publicdomain/zero/1.0/
+	Copyright: stocksnap, https://stocksnap.io
 
-See headers of files for further details.
+	-- Responsive Mobile Menu v1.1 --
+
+	Info - responsivemultimenu.com
+	License: MIT
+	License URI: http://opensource.org/licenses/MIT
+	Copyright: Adam Wysocki, http://oncebuilder.com
 

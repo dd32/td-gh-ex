@@ -1,41 +1,51 @@
 <?php
 /**
- * The main template file.
+ *  The main template file.
  */
 get_header(); ?>
-<div class="content-container">
-	<div class="container">
-		<div class="row">
-			<div class="eight columns animated fadeInUp">
-			
-				<div id="primary" class="content-area article">
-					<main id="main" class="site-main" role="main">
-						<?php if ( have_posts() ) : ?>
-							<?php /* Start the Loop */ ?>
-							<?php while ( have_posts() ) : the_post(); ?>
-								<?php
-									get_template_part( 'content', 'loop' );
-								?>
-							<?php endwhile; ?>
-							
-							<div class="container">
-								<?php the_posts_navigation(); ?>
-							</div>
 
-							<?php else : ?>
-							<?php get_template_part( 'content', 'none' ); ?>
-							
-						<?php endif; ?>
-					</main><!-- #main -->
-					
-				</div>
-			</div>
-			<div class="four columns animated fadeInUp">
-				<?php get_sidebar(); ?>
-			</div>
-		</div>
-		
-		
-	</div>
-</div>
+    <section class="content-wrapper">
+        <div class="content-container">
+            <div class="container">
+
+                <div class="row">
+                    <div class="eight columns">
+                        <div class="blog-wrapper">
+
+                            <?php if (have_posts()): ?>
+
+                                <?php while (have_posts()) : the_post(); ?>
+
+                                    <?php get_template_part('template-parts/post/content', get_post_format()); ?>
+
+                                <?php endwhile; ?>
+
+                                <?php
+                                    the_posts_pagination(array(
+                                        'screen_reader_text' => '',
+                                        'mid_size' => 2,
+                                        'prev_text' => __('Pre', 'bnw-theme'),
+                                        'next_text' => __('Next', 'bnw-theme'),
+                                    ));
+                                ?>
+
+                            <?php else: ?>
+
+                                <?php get_template_part('template-parts/post/content', 'none'); ?>
+
+                            <?php endif; ?>
+
+                        </div>
+                    </div>
+                    <div class="four columns">
+
+                        <?php get_sidebar(); ?>
+                        
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+	
 <?php get_footer(); ?>

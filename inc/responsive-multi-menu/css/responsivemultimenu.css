@@ -1,0 +1,281 @@
+/* minimal styles for that navi */
+
+.rmm {
+	/*margin: 0 auto;*/
+}
+.rmm ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	position: relative;
+	/*background: #000;*/
+}
+.rmm ul:after {
+	content: "";
+	clear: both;
+	display: block;
+}
+.rmm ul li {
+	float: left;
+}
+.rmm ul li:hover {
+	background: #202020;
+}
+.rmm ul li:hover > ul {
+	display: block;
+}
+.rmm ul li:hover a {
+	color: #fff;
+}
+.rmm ul li a {
+	color: #fff;
+	display: block;
+	text-decoration: none;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+}
+.rmm ul ul {
+	display: none;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	top: 100%;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+}
+.rmm ul ul li {
+	float: none;
+	position: relative;
+}
+.rmm ul ul li a {
+	color: #fff;
+	-webkit-transition: all .5s ease;
+	-moz-transition: all .5s ease;
+	-ms-transition: all .5s ease;
+	-o-transition: all .5s ease;
+	transition: all .5s ease;
+}
+.rmm ul ul li a:hover {
+	background: #202020;
+}
+.rmm ul ul ul {
+	position: absolute;
+	left: 100%;
+	top: 0;
+	width: 100%;
+}
+/* mobile menu header button */
+
+.rmm-toggled {
+	width: 100%;
+	background-color: #555555;
+	min-height: 50px;
+	margin: 0 auto;
+	display: none;
+	cursor: pointer;
+}
+.rmm-closed ~ .rmm-mobile {
+	display: none!important;
+}
+.rmm-toggled-controls {
+	width: 100%;
+}
+.rmm-toggled-title {
+	width: 60%;
+	float: left;
+	font-size: 16px;
+	color: #fff;
+	font-weight: 600;
+	display: block;
+	padding: 13px 8px 8px 13px;
+	text-decoration: none;
+	text-transform: uppercase;
+	text-align: left;
+}
+.rmm-toggled-button {
+	width: 20%;
+	float: left;
+	margin-top: 3px;
+	display: block;
+	width: 32px;
+	padding: 0 !important;
+	margin: 10px 10px 0 0;
+	/*border: 1px solid #fff;*/
+	border-radius: 0;
+	float: right;
+}
+.rmm-toggled-button span {
+	float: left;
+	display: block;
+	margin: 3px 6px;
+	height: 3px;
+	background: white;
+	width: 20px;
+}
+/* normalny back button visible only on mobiles  */
+
+.rmm .rmm-back {
+	display: none;
+	font-size: 12px;
+}
+.rmm .rmm-back:after {
+	display: none;
+}
+.rmm .rmm-back a:after {
+	font-family: 'FontAwesome';
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	content: "\f107";
+	position: relative;
+	display: inline-block;
+	-webkit-transform: rotate(90deg);
+	transform: rotate(90deg);
+	top: 3px;
+	right: 3px;
+	float: left;
+	font-size: 10px;
+}
+.rmm-mobile .rmm-back {
+	display: block;
+}
+/* mobile menu list */
+
+.rmm-mobile {
+	width: 100%;
+}
+.rmm-mobile .rmm-dropdown:hover ~ ul,
+.rmm-mobile .rmm-dropdown:hover > ul,
+.rmm-mobile .rmm-dropdown:hover + ul {
+	display: none!important;
+}
+.rmm-mobile ul {
+	width: 100%;
+	position: inherit!important;
+}
+.rmm-mobile li {
+	width: 100%;
+}
+/* mobile menu js action */
+
+.rmm-dropdown {
+	display: block!important;
+}
+.rmm-mobile .rmm-subview {
+	display: block!important;
+	width: 100%;
+}
+.rmm-mobile .rmm-subover-hidden {
+	display: none!important;
+}
+.rmm-mobile .rmm-subover-visible {
+	display: block;
+}
+.rmm-mobile .rmm-subover-header {
+	display: none!important;
+	padding: 0;
+	margin: 0;
+}
+/* mobile menu content */
+
+.rmm-mobile .rmm-submenu {
+	position: relative;
+	left: 0px;
+}
+.rmm .rmm-mobile li:hover > ul {
+	display: none;
+}
+/* arrow down for wide screen */
+
+.rmm.style {
+	text-align: left;
+	/*font-family: Tahoma;*/
+	font-family: inherit;
+}
+.rmm.style ul {
+	/*background: #990;*/
+	text-transform: uppercase;
+	/*display: inline-table;*/
+	display: block;
+	text-align: left;
+}
+.rmm.style ul li {
+	text-align: left;
+	margin-bottom: 0;
+}
+.rmm.style ul li:hover {
+	background: #000;
+}
+.rmm.style ul ul {
+	display: none;
+	margin: 0;
+	background: #5f6975;
+	border-radius: 0px;
+	padding: 0;
+	position: absolute;
+}
+.rmm.style ul li a {
+	color: #fff;
+	display: block;
+	padding: 14px 20px;
+	text-decoration: none;
+	font-weight: 400;
+}
+.rmm.style ul ul li {
+	/*border-bottom: 1px solid #575F6A;*/
+	/*border-top: 1px solid #6B727C;*/
+	z-index: 100;
+}
+.rmm.style ul ul li a {
+	padding: 10px 30px 10px 20px;
+	color: #fff;
+	background: #000;
+	min-width: 160px;
+}
+.rmm.style ul ul li a:hover {
+	background: #1e1e1e;
+}
+/* arrow down for wide screen */
+
+.rmm.style ul li > a:not(:only-child):after {
+	font-family: 'FontAwesome';
+	speak: none;
+	-webkit-font-smoothing: antialiased;
+	content: "\f107";
+	position: relative;
+	display: inline-block;
+	-webkit-transform: rotate(0);
+	transform: rotate(0);
+	top: -3px;
+	left: 4px;
+	font-size: 10px;
+}
+/* arrow left for wide screen submenus  */
+
+.rmm.style ul ul li > a:not(:only-child):after {
+	-webkit-transform: rotate(-90deg)!important;
+	transform: rotate(-90deg)!important;
+	top: 4px;
+	float: right;
+	margin-right: -20px;
+}
+/* mobile style */
+
+.rmm.style .rmm-mobile li > a:not(:only-child):after {
+	-webkit-transform: rotate(0)!important;
+	transform: rotate(0)!important;
+	top: 4px!important;
+	font-size: 14px!important;
+	float: right;
+	margin-right: -10px;
+}
+.rmm.style .rmm-mobile li {
+	background: #353D46;
+	border-bottom: 1px solid #575f6a!important;
+	border-top: 0!important;
+}

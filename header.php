@@ -1,99 +1,96 @@
-<?php
-/**
- * The header for our theme.
- */
-?><!DOCTYPE html>
-<html <?php language_attributes(); ?>>
-<head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="profile" href="http://gmpg.org/xfn/11">
-	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<!doctype html>
+<html class="no-js" <?php language_attributes(); ?>>
+    <head>
+		<!-- Basic Page Needs
+		================================================== -->
+        <meta charset="<?php bloginfo('charset'); ?>">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<link rel="profile" href="http://gmpg.org/xfn/11">
+		<link rel="pingback" href="<?php bloginfo('pingback_url'); ?>">
 
-	<?php wp_head(); ?>
-</head>
-
-<body <?php body_class(); ?>>
-<div class="wrapper">
-	<div class="wrapper-container">
+		<!-- Mobile Specific Meta
+		================================================== -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+		        
+		<?php wp_head(); ?>
+		
+	</head>
 	
-		<a class="skip-link screen-reader-text" href="#content">
-			<?php _e( 'Skip to content', 'bnw' ); ?>
-		</a>
-		<!-- Header -->
-		<div class="header">
-			<div class="header-container">
-				<div class="top-header">
-					<div class="container">
-						<div class="logo animated fadeIn">
-							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home">
-							<?php
-								if (class_exists("TitanFramework")){
-									$titan = TitanFramework::getInstance( 'bnw' );
-									$imageID = $titan->getOption( 'upload_logo' );
-									// The value may be a URL to the image (for the default parameter)
-									// or an attachment ID to the selected image.
-									$imageSrc = $imageID; // For the default value
-									if ( is_numeric( $imageID ) ) {
-										$imageAttachment = wp_get_attachment_image_src( $imageID );
-										$imageSrc = $imageAttachment[0];
-									}
-									if(strlen($imageSrc)>0){
-										?>
-											<img src='<?php echo esc_url( $imageSrc ); ?>' width=""/>
-										<?php
-									}
-									else{
-										?>
-											<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-										<?php
-									}
-								}
-								else{
-									?>
-										<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-									<?php
-								}
-							?>
-							</a>
-							
-									
+    <body <?php body_class(); ?>>
+        <div class="wrapper">
+			<div class="wrapper-container">
+
+                <header class="header-wrapper">
+					<div class="header-container">
+
+						<div class="top-header">
+							<div class="container-box">
+								<div class="">
+									<div class="top-header-inner u-text-center">
+										
+									</div>
+								</div>
+							</div>
 						</div>
-						<div class="tagline">
-							<?php		
-								if (!class_exists("TitanFramework")){
-									bloginfo( 'description' );
-								}else{
-									$titan = TitanFramework::getInstance( 'bnw' );
-									$siteTagline = $titan->getOption( 'site_tagline' );
-									if($siteTagline>0){
-										echo bloginfo( 'description' );
-									}
-								}
-							?>
-							<?php
-								if (class_exists("TitanFramework")){
-									$titan = TitanFramework::getInstance( 'bnw' );
-									$customTagline = $titan->getOption( 'custom_tagline' );
-									echo $customTagline;
-								}
-							?>
+
+						<div class="middle-header">
+							<div class="container-box">
+								<div class="">
+									<div class="middle-header-inner u-text-center">
+
+										<div class="row">
+											<div class="twelve columns">
+
+												<div class="brand-logo-text">
+													
+													<h2>
+														<a href="<?php echo esc_url(home_url('/')); ?>">
+															<?php bloginfo('name'); ?>
+														</a>
+													</h2>
+													
+												</div>
+
+												<div class="brand-desc-alt">
+													<?php bloginfo('description'); ?>
+												</div>
+
+											</div>
+										</div>
+										
+									</div>
+								</div>
+							</div>
 						</div>
+
+						<div class="bottom-header">
+							<div class="container-box">
+								<div class="">
+									<div class="bottom-header-inner">
+										<div class="menu-container">
+											<nav id="main-navigation" class="main-navigation" role="navigation">
+
+												<?php if (has_nav_menu('main-menu')) : ?>
+
+													<?php
+                                                        wp_nav_menu(array(
+                                                            'theme_location' => 'main-menu',
+                                                            'menu_id' => '',
+                                                            'menu_class' => '',
+                                                            'container_id' => 'main-menu',
+                                                            'container_class' => 'rmm style main-menu',
+                                                        ));
+                                                    ?>
+
+												<?php endif; ?>
+												
+											</nav><!-- #site-navigation -->
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+
 					</div>
-				</div>
-				<div class="middle-header">
-					<div class="container">
-						<div class="main-menu">
-							<nav id="site-navigation" class="main-navigation" role="navigation">
-								<button class="menu-toggle" aria-controls="menu" aria-expanded="false">
-									<?php _e( 'Primary Menu', 'bnw' ); ?>
-								</button>
-								<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-							</nav>
-						</div>
-					</div>
-				</div>
-				<div class="bottom-header">
-				</div>
-			</div>
-		</div><!-- /header -->
+
+				</header>
