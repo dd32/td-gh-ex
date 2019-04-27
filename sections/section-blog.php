@@ -40,7 +40,13 @@ $blog_page   = get_theme_mod('bakes_and_cakes_blog_page');
 							<a href="<?php the_permalink(); ?>" class="post-thumbnail">
 								<?php the_post_thumbnail('bakes-and-cakes-blog-thumb', array( 'itemprop' => 'image' ) );?>
 							</a>
-						<?php } ?>
+						<?php } else{ ?>
+								<a href="<?php the_permalink(); ?>" class="post-thumbnail">
+									<?php echo '<img src="' . esc_url( get_template_directory_uri() . '/images/fallback-blog-thumb.png' ) . '" itemprop="image"/>'; ?>
+								</a>
+							<?php 
+							} 
+						?>
 						<div class="text-holder">
 							<header class="entry-header">
 								<span class="posted-on"><a href="<?php the_permalink(); ?>"><time><?php echo esc_html(get_the_date()); ?></time></a></span>

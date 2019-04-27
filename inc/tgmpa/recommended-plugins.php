@@ -49,17 +49,21 @@ function bakes_and_cakes_register_required_plugins() {
     $plugins = array(
 
         array(
-            'name'      => 'Contact Form 7',
+            'name'      => __('Contact Form 7', 'bakes-and-cakes'),
             'slug'      => 'contact-form-7',
             'required'  => false,
         ),
 
         array(
-            'name'      => 'Woocommerce',
+            'name'      => __('Woocommerce', 'bakes-and-cakes'),
             'slug'      => 'woocommerce',
             'required'  => false,
+        ),
+        array(
+            'name'     => __( 'Rara One Click Demo Import', 'bakes-and-cakes' ),
+            'slug'     => 'rara-one-click-demo-import',
+            'required' => false,
         ),        
-   
     );
 
     /*

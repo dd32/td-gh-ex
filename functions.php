@@ -222,10 +222,8 @@ function bakes_and_cakes_scripts() {
 	$query_args = array(
 		'family' => 'Open+Sans:400,400italic,700|Niconne',
 	);
-	wp_enqueue_style('font-awesome', get_template_directory_uri() . '/css' . $build . '/font-awesome' . $suffix . '.css');
     wp_enqueue_style('animate', get_template_directory_uri(). '/css' . $build . '/animate' . $suffix . '.css' );
     wp_enqueue_style('owl-carousel', get_template_directory_uri(). '/css' . $build . '/owl.carousel' . $suffix . '.css' );
-	wp_enqueue_style('jquery-sidr-light-style', get_template_directory_uri() . '/css' . $build . '/jquery.sidr.light' . $suffix . '.css');
 	wp_enqueue_style('bakes-and-cakes-google-fonts', add_query_arg($query_args, "//fonts.googleapis.com/css"));
 	wp_enqueue_style('bakes-and-cakes-style', get_stylesheet_uri(), array(), BAKES_AND_CAKES_THEME_VERSION );
 	
@@ -235,7 +233,8 @@ function bakes_and_cakes_scripts() {
     wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/js' . $build . '/owl.carousel' . $suffix . '.js', array('jquery'), '2.2.1', true);
 	wp_enqueue_script('tab', get_template_directory_uri() . '/js' . $build . '/tab' . $suffix . '.js', array(), '20120206', true);
 	wp_enqueue_script('same-height', get_template_directory_uri() . '/js' . $build . '/sameheight' . $suffix . '.js', array(), '20120206', true);
-	wp_enqueue_script('sidr', get_template_directory_uri() . '/js' . $build . '/jquery.sidr' . $suffix . '.js', array('jquery'), '2.0.8', true);
+	wp_enqueue_script( 'all', get_template_directory_uri() . '/js' . $build . '/all' . $suffix . '.js', array( 'jquery' ), '5.6.3', true );
+    wp_enqueue_script( 'v4-shims', get_template_directory_uri() . '/js' . $build . '/v4-shims' . $suffix . '.js', array( 'jquery' ), '5.6.3', true );
 	wp_register_script('bakes-and-cakes-custom', get_template_directory_uri() . '/js' . $build . '/custom' . $suffix . '.js', array('jquery'), BAKES_AND_CAKES_THEME_VERSION, true);
 	
     $slider_auto      = get_theme_mod( 'bakes_and_cakes_slider_auto', '1' );
@@ -288,12 +287,12 @@ endif;
 add_action( 'customize_controls_enqueue_scripts', 'bakes_and_cakes_customizer_js' );
 
 
-if ( ! function_exists( 'bakes_and_cakes_excerpt_more' ) && ! is_admin() ) :
+if ( ! function_exists( 'bakes_and_cakes_excerpt_more' ) ) :
 	/**
 	* Replaces "[...]" (appended to automatically generated excerpts) with ... * 
 	*/
-	function bakes_and_cakes_excerpt_more() {
-		return ' &hellip; ';
+	function bakes_and_cakes_excerpt_more( $more ) {
+		return is_admin() ? $more : ' &hellip; ';
 	}
 
 endif;
@@ -305,7 +304,7 @@ if ( ! function_exists( 'bakes_and_cakes_excerpt_length' ) ) :
 	* Changes the default 55 character in excerpt 
 	*/
 	function bakes_and_cakes_excerpt_length( $length ) {
-		return 50;
+		return is_admin() ? $length : 50;
 	}
 
 endif;

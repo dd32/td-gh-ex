@@ -58,34 +58,34 @@ class bakes_and_cakes_Social_Links extends WP_Widget {
             <ul class="social-networks">
 				
 				<?php if( $facebook ){ ?>
-                <li><a href="<?php echo esc_url( $facebook ); ?>" target="_blank" title="<?php esc_attr_e( 'Facebook', 'bakes-and-cakes' ); ?>" class="fa fa-facebook"></a></li>
+                <li><a href="<?php echo esc_url( $facebook ); ?>" target="_blank" title="<?php esc_attr_e( 'Facebook', 'bakes-and-cakes' ); ?>"><i class="fa fa-facebook"></i></a></li>
 				
 				<?php } if( $twitter ){ ?>
-                <li><a href="<?php echo esc_url( $twitter ); ?>" target="_blank" title="<?php esc_attr_e( 'Twitter', 'bakes-and-cakes' ); ?>" class="fa fa-twitter"></a></li>
+                <li><a href="<?php echo esc_url( $twitter ); ?>" target="_blank" title="<?php esc_attr_e( 'Twitter', 'bakes-and-cakes' ); ?>"><i class="fa fa-twitter"></i></a></li>
 				
 				<?php } if( $linkedin ){ ?>
-                <li><a href="<?php echo esc_url( $linkedin ); ?>" target="_blank" title="<?php esc_attr_e( 'Linkedin', 'bakes-and-cakes' ); ?>" class="fa fa-linkedin"></a></li>
+                <li><a href="<?php echo esc_url( $linkedin ); ?>" target="_blank" title="<?php esc_attr_e( 'Linkedin', 'bakes-and-cakes' ); ?>"><i class="fa fa-linkedin"></i></a></li>
 				
 				<?php } if( $instagram ){ ?>
-                <li><a href="<?php echo esc_url( $instagram ); ?>" target="_blank" title="<?php esc_attr_e( 'Instagram', 'bakes-and-cakes' ); ?>" class="fa fa-instagram"></a></li>
+                <li><a href="<?php echo esc_url( $instagram ); ?>" target="_blank" title="<?php esc_attr_e( 'Instagram', 'bakes-and-cakes' ); ?>"><i class="fa fa-instagram"></i></a></li>
 				
 				<?php } if( $google_plus ){ ?>
-                <li><a href="<?php echo esc_url( $google_plus ); ?>" target="_blank" title="<?php esc_attr_e( 'Google Plus', 'bakes-and-cakes' ); ?>" class="fa fa-google-plus"></a></li>
+                <li><a href="<?php echo esc_url( $google_plus ); ?>" target="_blank" title="<?php esc_attr_e( 'Google Plus', 'bakes-and-cakes' ); ?>"><i class="fa fa-google-plus"></i></a></li>
 				
 				<?php } if( $pinterest ){ ?>
-                <li><a href="<?php echo esc_url( $pinterest ); ?>" target="_blank" title="<?php esc_attr_e( 'Pinterest', 'bakes-and-cakes' ); ?>" class="fa fa-pinterest"></a></li>
+                <li><a href="<?php echo esc_url( $pinterest ); ?>" target="_blank" title="<?php esc_attr_e( 'Pinterest', 'bakes-and-cakes' ); ?>"><i class="fa fa-pinterest"></i></a></li>
 				
 				<?php } if( $youtube ){ ?>
-                <li><a href="<?php echo esc_url( $youtube ); ?>" target="_blank" title="<?php esc_attr_e( 'YouTube', 'bakes-and-cakes' ); ?>" class="fa fa-youtube"></a></li>
+                <li><a href="<?php echo esc_url( $youtube ); ?>" target="_blank" title="<?php esc_attr_e( 'YouTube', 'bakes-and-cakes' ); ?>"><i class="fa fa-youtube"></i></a></li>
 
                 <?php } if( $ok ){ ?>
-                <li><a href="<?php echo esc_url( $ok ); ?>" target="_blank" title="<?php esc_attr_e( 'OK', 'bakes-and-cakes' ); ?>" class="fa fa-odnoklassniki"></a></li>
+                <li><a href="<?php echo esc_url( $ok ); ?>" target="_blank" title="<?php esc_attr_e( 'OK', 'bakes-and-cakes' ); ?>"><i class="fa fa-odnoklassniki"></i></a></li>
 
                 <?php }if( $vk ){ ?>
-                <li><a href="<?php echo esc_url( $vk ); ?>" target="_blank" title="<?php esc_attr_e( 'VK', 'bakes-and-cakes' ); ?>" class="fa fa-vk"></a></li>
+                <li><a href="<?php echo esc_url( $vk ); ?>" target="_blank" title="<?php esc_attr_e( 'VK', 'bakes-and-cakes' ); ?>"><i class="fa fa-vk"></i></a></li>
 
                 <?php } if( $xing ){ ?>
-                <li><a href="<?php echo esc_url( $xing ); ?>" target="_blank" title="<?php esc_attr_e( 'Xing', 'bakes-and-cakes' ); ?>" class="fa fa-xing"></a></li>
+                <li><a href="<?php echo esc_url( $xing ); ?>" target="_blank" title="<?php esc_attr_e( 'Xing', 'bakes-and-cakes' ); ?>"><i class="fa fa-xing"></i></a></li>
                 <?php } ?>
 			</ul>
         <?php

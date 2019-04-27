@@ -414,8 +414,9 @@ function bakes_and_cakes_footer_info(){
             }
         ?>
         </span>
-        <a href="<?php echo esc_url( 'http://raratheme.com/wordpress-themes/bakes-and-cakes/' ); ?>" rel="author" target="_blank">
-            <?php echo esc_html__( 'Bakes and Cakes by Rara Theme.', 'bakes-and-cakes' ); ?>
+        <?php echo esc_html__( 'Bakes and Cakes | Developed By', 'bakes-and-cakes' ); ?>
+        <a href="<?php echo esc_url( 'https://raratheme.com/' ); ?>" rel="nofollow" target="_blank">
+            <?php echo esc_html__( 'Rara Theme', 'bakes-and-cakes' ); ?>
         </a>
         <?php printf(esc_html__('Powered by %s', 'bakes-and-cakes'), '<a href="' . esc_url(__('https://wordpress.org/', 'bakes-and-cakes')) . '">WordPress.</a>'); ?>
 

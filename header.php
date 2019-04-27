@@ -31,6 +31,7 @@
               if( function_exists( 'has_custom_logo' ) && has_custom_logo() ){
                 the_custom_logo();
               } ?>
+              <div class="text-logo">
     			    <?php if ( is_front_page() ) : ?>
                   <h1 class="site-title" itemprop="name"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
               <?php else : ?>
@@ -40,13 +41,12 @@
     			if ( $description || is_customize_preview() ) : ?>
     				<p class="site-description" itemprop="description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
     			<?php endif; ?>
+        </div>
     		</div><!-- .site-branding -->
-        <div id="mobile-header">
-          <a id="responsive-menu-button" href="#sidr-main">
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </a>
+        <div class="menu-opener">
+          <span></span>
+          <span></span>
+          <span></span>
         </div>
 			</div>
 		</div>

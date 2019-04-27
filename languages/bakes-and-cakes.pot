@@ -1,18 +1,17 @@
-#, fuzzy
+# <!=Copyright (C) 2019 Rara Theme
+# This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: PACKAGE VERSION\n"
-"Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-06-27 11:00+0000\n"
-"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: \n"
-"Language: \n"
-"Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
+"Project-Id-Version: Bakes And Cakes 1.1.7\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/theme/bakes-and-cakes\n"
+"POT-Creation-Date: 2019-02-05 08:18:47+00:00\n"
 "MIME-Version: 1.0\n"
-"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Loco https://localise.biz/"
+"PO-Revision-Date: 2019-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"X-Generator: grunt-wp-i18n 1.0.3\n"
 
 #: 404.php:21
 msgid "404 Error"
@@ -42,7 +41,6 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#. WPCS: XSS OK.
 #: comments.php:31
 msgid "Comments"
 msgstr ""
@@ -63,7 +61,7 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: footer.php:26
+#: footer.php:27
 msgid "Top"
 msgstr ""
 
@@ -99,15 +97,6 @@ msgstr ""
 msgid "Footer Third"
 msgstr ""
 
-#: search.php:19
-#, php-format
-msgid "Search Results for: %s"
-msgstr ""
-
-#. Name of the template
-msgid "Home Page"
-msgstr ""
-
 #: inc/custom-functions.php:72 inc/customizer.php:150
 msgid ">"
 msgstr ""
@@ -141,7 +130,6 @@ msgid "Bakes and Cakes by Rara Theme."
 msgstr ""
 
 #: inc/custom-functions.php:420
-#, php-format
 msgid "Powered by %s"
 msgstr ""
 
@@ -435,18 +423,17 @@ msgid "Demo Content Import"
 msgstr ""
 
 #: inc/demo-content.php:22
-#, php-format
 msgid ""
 "Bakes and Cakes comes with demo content import feature. You can import the "
-"demo content with just one click. For step-by-step video tutorial, %1$sClick "
-"here%2$s"
+"demo content with just one click. For step-by-step video tutorial, "
+"%1$sClick here%2$s"
 msgstr ""
 
 #: inc/demo-content.php:38
 msgid "Plugin required"
 msgstr ""
 
-#: inc/demo-content.php:38
+#: inc/demo-content.php:38 inc/tgmpa/recommended-plugins.php:63
 msgid "Rara One Click Demo Import"
 msgstr ""
 
@@ -489,7 +476,6 @@ msgstr ""
 msgid "VIEW PRO THEME"
 msgstr ""
 
-#. $id
 #: inc/metabox.php:13
 msgid "Sidebar Layout"
 msgstr ""
@@ -506,41 +492,382 @@ msgstr ""
 msgid "Choose Sidebar Template"
 msgstr ""
 
-#: inc/template-tags.php:24
-#, php-format
-msgctxt "post date"
-msgid " %s"
-msgstr ""
-
-#: inc/template-tags.php:29
-#, php-format
-msgctxt "post author"
-msgid " %s"
-msgstr ""
-
-#. translators: used between list items, there is a space after the comma
 #: inc/template-tags.php:35 inc/template-tags.php:51
+#. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
 #: inc/template-tags.php:37
-#, php-format
 msgid " %1$s"
 msgstr ""
 
 #: inc/template-tags.php:53
-#, php-format
 msgid " %1$s "
 msgstr ""
 
-#. translators: %s: Name of current post
-#. translators: %s: Name of current post
 #: inc/template-tags.php:60 template-parts/content-page.php:40
-#, php-format
+#. translators: %s: Name of current post
 msgid "Edit %s"
 msgstr ""
 
-#. Base ID
+#: inc/tgmpa/class-tgm-plugin-activation.php:327
+msgid "Install Required Plugins"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:328
+msgid "Install Plugins"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:330
+#. translators: %s: plugin name.
+msgid "Installing Plugin: %s"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:332
+#. translators: %s: plugin name.
+msgid "Updating Plugin: %s"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:333
+msgid "Something went wrong with the plugin API."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:370
+#. translators: 1: plugin name(s).
+msgid "Begin installing plugin"
+msgid_plural "Begin installing plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:375
+msgid "Begin updating plugin"
+msgid_plural "Begin updating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:380
+msgid "Begin activating plugin"
+msgid_plural "Begin activating plugins"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:385
+msgid "Return to Required Plugins Installer"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:386
+#: inc/tgmpa/class-tgm-plugin-activation.php:827
+#: inc/tgmpa/class-tgm-plugin-activation.php:2533
+#: inc/tgmpa/class-tgm-plugin-activation.php:3580
+msgid "Return to the Dashboard"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:387
+#: inc/tgmpa/class-tgm-plugin-activation.php:3159
+msgid "Plugin activated successfully."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:388
+#: inc/tgmpa/class-tgm-plugin-activation.php:2952
+msgid "The following plugin was activated successfully:"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:390
+#. translators: 1: plugin name.
+msgid "No action taken. Plugin %1$s was already active."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:392
+#. translators: 1: plugin name.
+msgid ""
+"Plugin not activated. A higher version of %s is needed for this theme. "
+"Please update the plugin."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:394
+#. translators: 1: dashboard link.
+msgid "All plugins installed and activated successfully. %1$s"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:395
+msgid "Dismiss this notice"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:396
+msgid ""
+"There are one or more required or recommended plugins to install, update or "
+"activate."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:397
+msgid "Please contact the administrator of this site for help."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:522
+msgid "This plugin needs to be updated to be compatible with your theme."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:523
+msgid "Update Required"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:934
+msgid ""
+"The remote plugin package does not contain a folder with the desired slug "
+"and renaming did not work."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:934
+#: inc/tgmpa/class-tgm-plugin-activation.php:937
+msgid ""
+"Please contact the plugin provider and ask them to package their plugin "
+"according to the WordPress guidelines."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:937
+msgid ""
+"The remote plugin package consists of more than one file, but the files are "
+"not packaged in a folder."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:1982
+#. translators: %s: version number
+msgid "TGMPA v%s"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2273
+msgid "Required"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2276
+msgid "Recommended"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2292
+msgid "WordPress Repository"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2295
+msgid "External Source"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2298
+msgid "Pre-Packaged"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2315
+msgid "Not Installed"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2319
+msgid "Installed But Not Activated"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2321
+msgid "Active"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2327
+msgid "Required Update not Available"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2330
+msgid "Requires Update"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2333
+msgid "Update recommended"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2392
+#. translators: 1: number of plugins.
+msgid "To Install <span class=\"count\">(%s)</span>"
+msgid_plural "To Install <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2396
+#. translators: 1: number of plugins.
+msgid "Update Available <span class=\"count\">(%s)</span>"
+msgid_plural "Update Available <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2400
+#. translators: 1: number of plugins.
+msgid "To Activate <span class=\"count\">(%s)</span>"
+msgid_plural "To Activate <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2490
+msgid "Installed version:"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2498
+msgid "Minimum required version:"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2510
+msgid "Available version:"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2533
+msgid "No plugins to install, update or activate."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2547
+msgid "Plugin"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2548
+msgid "Source"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2549
+msgid "Type"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2553
+msgid "Version"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2554
+msgid "Status"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2603
+#. translators: %2$s: plugin name in screen reader markup
+msgid "Install %2$s"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2608
+#. translators: %2$s: plugin name in screen reader markup
+msgid "Update %2$s"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2614
+#. translators: %2$s: plugin name in screen reader markup
+msgid "Activate %2$s"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2684
+msgid "Upgrade message from the plugin author:"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2717
+msgid "Install"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2723
+msgid "Update"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2726
+msgid "Activate"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2757
+msgid "No plugins were selected to be installed. No action taken."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2759
+msgid "No plugins were selected to be updated. No action taken."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2800
+msgid "No plugins are available to be installed at this time."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2802
+msgid "No plugins are available to be updated at this time."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2908
+msgid "No plugins were selected to be activated. No action taken."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2934
+msgid "No plugins are available to be activated at this time."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:3158
+msgid "Plugin activation failed."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:3498
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+msgid "Updating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:3501
+#. translators: 1: plugin name, 2: error message.
+msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:3503
+#. translators: 1: plugin name.
+msgid "The installation of %1$s failed."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:3507
+msgid ""
+"The installation and activation process is starting. This process may take "
+"a while on some hosts, so please be patient."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:3509
+#. translators: 1: plugin name.
+msgid "%1$s installed and activated successfully."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:3509
+#: inc/tgmpa/class-tgm-plugin-activation.php:3517
+msgid "Show Details"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:3509
+#: inc/tgmpa/class-tgm-plugin-activation.php:3517
+msgid "Hide Details"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:3510
+msgid "All installations and activations have been completed."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:3512
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:3515
+msgid ""
+"The installation process is starting. This process may take a while on some "
+"hosts, so please be patient."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:3517
+#. translators: 1: plugin name.
+msgid "%1$s installed successfully."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:3518
+msgid "All installations have been completed."
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:3520
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
+msgid "Installing Plugin %1$s (%2$d/%3$d)"
+msgstr ""
+
+#: inc/tgmpa/recommended-plugins.php:52
+msgid "Contact Form 7"
+msgstr ""
+
+#: inc/tgmpa/recommended-plugins.php:58
+msgid "Woocommerce"
+msgstr ""
+
 #: inc/widget-popular-post.php:26
 msgid "RARA: Popular Post"
 msgstr ""
@@ -556,7 +883,6 @@ msgstr ""
 
 #: inc/widget-popular-post.php:72 inc/widget-popular-post.php:73
 #: inc/widget-recent-post.php:75 inc/widget-recent-post.php:76
-#, php-format
 msgid "%1$s"
 msgstr ""
 
@@ -577,7 +903,6 @@ msgstr ""
 msgid "Show Post Date"
 msgstr ""
 
-#. Base ID
 #: inc/widget-recent-post.php:26
 msgid "RARA: Recent Post"
 msgstr ""
@@ -591,7 +916,6 @@ msgstr ""
 msgid "Recent Posts"
 msgstr ""
 
-#. Base ID
 #: inc/widget-social-links.php:25
 msgid "RARA: Social Links"
 msgstr ""
@@ -657,6 +981,10 @@ msgstr ""
 msgid "Sidebar displaying only in woocommerce pages."
 msgstr ""
 
+#: search.php:19
+msgid "Search Results for: %s"
+msgstr ""
+
 #: sections/section-about.php:28 template-parts/content.php:70
 msgid "Read More"
 msgstr ""
@@ -666,9 +994,7 @@ msgid "Nothing Found"
 msgstr ""
 
 #: template-parts/content-none.php:21
-#, php-format
-msgid ""
-"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgid "Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
 #: template-parts/content-none.php:25
@@ -687,42 +1013,81 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#. translators: %s: Name of current post.
 #: template-parts/content.php:43 template-parts/content.php:52
-#, php-format
+#. translators: %s: Name of current post.
 msgid "Continue reading %s <span class=\"meta-nav\">&rarr;</span>"
 msgstr ""
 
-#. Name of the theme
+#. Theme Name of the plugin/theme
 msgid "Bakes And Cakes"
 msgstr ""
 
-#. Description of the theme
+#. Theme URI of the plugin/theme
+msgid "https://raratheme.com/wordpress-themes/bakes-and-cakes/"
+msgstr ""
+
+#. Description of the plugin/theme
 msgid ""
-"Bakes and Cakes is a beautifully designed WordPress theme for Bakery website."
-" The theme is SEO friendly with optimized codes, which make it easy for your "
-"site to rank on Google and other search engines. Bakes and Cakes comes with "
-"several features to make user-friendly, interactive and visually stunning "
-"website. It has various useful section such as testimonial section, Product "
-"section, about section, team section, banner, and Call to action section etc."
-"  The theme is Woocommerce compatible. The theme is rigorously tested and "
-"optimized for speed and faster page load time and has a secure and clean "
-"code. The theme is also translation ready. Designed with visitor engagement "
-"in mind, Bakes and Cakes helps you to easily and intuitively create "
-"professional and appealing websites for your bakery, restaurant and cafe. "
-"Check the demo at https://raratheme.com/preview/bakes-and-cakes/ , video "
-"documentation at https://raratheme.com/documentation/bakes-cakes/ and get "
-"support at http://raratheme.com/support-ticket/"
+"Bakes and Cakes is a beautifully designed WordPress theme for Bakery "
+"website. The theme is SEO friendly with optimized codes, which make it easy "
+"for your site to rank on Google and other search engines. Bakes and Cakes "
+"comes with several features to make user-friendly, interactive and visually "
+"stunning website. It has various useful section such as testimonial "
+"section, Product section, about section, team section, banner, and Call to "
+"action section etc.  The theme is Woocommerce compatible. The theme is "
+"rigorously tested and optimized for speed and faster page load time and has "
+"a secure and clean code. The theme is also translation ready. Designed with "
+"visitor engagement in mind, Bakes and Cakes helps you to easily and "
+"intuitively create professional and appealing websites for your bakery, "
+"restaurant and cafe. Check the demo at "
+"https://demo.raratheme.com/bakes-and-cakes/ , video documentation at "
+"https://raratheme.com/documentation/bakes-cakes/ and get support at "
+"http://raratheme.com/support-ticket/"
 msgstr ""
 
-#. URI of the theme
-msgid "http://raratheme.com/wordpress-themes/bakes-and-cakes/"
-msgstr ""
-
-#. Author of the theme
+#. Author of the plugin/theme
 msgid "Rara Theme"
 msgstr ""
 
-#. Author URI of the theme
-msgid "http://raratheme.com/"
+#. Author URI of the plugin/theme
+msgid "https://raratheme.com/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Home Page"
+msgstr ""
+
+#: inc/template-tags.php:24
+msgctxt "post date"
+msgid " %s"
+msgstr ""
+
+#: inc/template-tags.php:29
+msgctxt "post author"
+msgid " %s"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:1121
+#: inc/tgmpa/class-tgm-plugin-activation.php:2948
+msgctxt "plugin A *and* plugin B"
+msgid "and"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2342
+#. translators: 1: install status, 2: update status
+msgctxt "Install/Update Status"
+msgid "%1$s, %2$s"
+msgstr ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2388
+#. translators: 1: number of plugins.
+msgctxt "plugins"
+msgid "All <span class=\"count\">(%s)</span>"
+msgid_plural "All <span class=\"count\">(%s)</span>"
+msgstr[0] ""
+msgstr[1] ""
+
+#: inc/tgmpa/class-tgm-plugin-activation.php:2482
+msgctxt "as in: \"version nr unknown\""
+msgid "unknown"
 msgstr ""

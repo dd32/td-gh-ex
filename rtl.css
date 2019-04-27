@@ -19,13 +19,13 @@ body {
     display: none;
 }
 
-.main-navigation ul li:hover > ul {
+.main-navigation ul li:hover>ul {
     left: auto;
     right: 0;
     display: block;
 }
 
-.main-navigation ul ul li:hover > ul {
+.main-navigation ul ul li:hover>ul {
     left: auto;
     right: 100%;
     display: block;
@@ -116,8 +116,8 @@ div.wpcf7 .ajax-loader {
 }
 
 .widget.widget_bakes_and_cakes_recent_post ul li .entry-header .entry-meta .posted-on a::before,
-.widget.widget_bakes_and_cakes_popular_post ul li .entry-header .entry-meta .posted-on a::before ,
-.content-area .post .readmore{
+.widget.widget_bakes_and_cakes_popular_post ul li .entry-header .entry-meta .posted-on a::before,
+.content-area .post .readmore {
     display: inline-block;
 }
 
@@ -136,26 +136,64 @@ div.wpcf7 .ajax-loader {
     margin-left: 8px;
 }
 
-.edit-link{
-	float: left;
+.edit-link {
+    float: left;
 }
 
-.testimonial .tab-content{
+.testimonial .tab-content {
     background-position: 100% 0;
 }
-.testimonial .tabset li a{
+
+.testimonial .tabset li a {
     display: inline-block;
 }
-.testimonial .tabset li .active img{
+
+.testimonial .tabset li .active img {
     float: right;
 }
-.testimonial .tabset li .active::before{
+
+.testimonial .tabset li .active::before {
     left: auto;
     right: 15px;
 }
-.testimonial .tabset li .active{
+
+.testimonial .tabset li .active {
     text-align: right;
 }
-.testimonial .tabset li .active .text-holder{
+
+.testimonial .tabset li .active .text-holder {
     float: left;
+}
+
+@media only screen and (max-width: 1024px){
+    .site-branding .custom-logo-link{
+        margin-right: 0;
+        margin-left: 15px;
+    }
+
+    .site-branding{
+        text-align: right;
+    }
+
+    .main-navigation{
+        right: inherit;
+        left: 0;
+        -webkit-transform: translateX(-420px);
+        -moz-transform: translateX(-420px);
+        transform: translateX(-420px);
+    }
+
+    .main-navigation .btn-close-menu{
+        right: inherit;
+        left: 25px;
+    }
+
+    .main-navigation ul{
+        text-align: right;
+    }
+
+    .main-navigation ul li .angle-down{
+        right: inherit;
+        left: 0;
+    }
 }
