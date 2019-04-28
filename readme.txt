@@ -3,7 +3,7 @@
 Contributors: Rara Theme
 Requires at least: 4.7
 Tested up to: 5.0.3
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 
 == Description ==
 
@@ -39,6 +39,9 @@ Images used in screenshots.
 All other images including icon image and images used in customizer settings are self created and are under the GPL.
 
 == Changelog ==
+
+= 1.0.1 =
+* Made footer link no-follow.
 
 = 1.0.0 =
 * Initial release

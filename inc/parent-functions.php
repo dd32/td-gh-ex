@@ -174,7 +174,8 @@ function book_landing_page_footer_credit(){
       echo '</a>';
     }
     echo "</span>";
-    echo '<span class="author-link"><a href="' . esc_url( 'https://raratheme.com/wordpress-themes/author-landing-page/' ) .'" rel="author" target="_blank">' . esc_html__( ' Author Landing Page', 'author-landing-page' ) . '</a>' . esc_html__( ' by Rara Theme.', 'author-landing-page' ) . '</span>';
+    echo esc_html__( 'Author Landing Page | Developed By ', 'author-landing-page' );
+    echo '<span class="author-link"><a href="' . esc_url( 'https://raratheme.com/' ) .'" rel="nofollow" target="_blank">' . esc_html__( 'Rara Theme ', 'author-landing-page' ) . '</a>';
     printf( esc_html__( 'Powered by %s ', 'author-landing-page' ), '<span class="wp-link"><a href="'. esc_url( __( 'https://wordpress.org/', 'author-landing-page' ) ) .'" target="_blank">WordPress.</a></span>' );
     if ( function_exists( 'the_privacy_policy_link' ) ) {
         the_privacy_policy_link();
