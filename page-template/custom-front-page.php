@@ -11,7 +11,7 @@ get_header(); ?>
   <section id="slider">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
       <?php $pages = array();
-        for ( $count = 1; $count <= 3; $count++ ) {
+        for ( $count = 1; $count <= 4; $count++ ) {
           $mod = intval( get_theme_mod( 'advance_pet_care_slider_page' . $count ));
           if ( 'page-none-selected' != $mod ) {
             $pages[] = $mod;
@@ -72,10 +72,10 @@ get_header(); ?>
               $query = new WP_Query( $args );
               if ( $query->have_posts() ) :
                 while ( $query->have_posts() ) : $query->the_post(); ?>
-                  <div class="col-lg-6 col-md-6">
+                  <div class="col-lg-5 col-md-5">
                     <img src="<?php the_post_thumbnail_url('full'); ?>"/>                  
                   </div>
-                  <div class="col-lg-6 col-md-6">
+                  <div class="col-lg-7 col-md-7">
                       <h3><?php the_title(); ?></h3>
                       <p><?php the_excerpt(); ?></p>            
                       <div class ="discover-btn">

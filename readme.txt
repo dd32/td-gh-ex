@@ -1,9 +1,10 @@
 === Advance Pet Care WordPress Theme ===
 Contributors: Themeshopy
-Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
+Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Requires at least: 4.3
-Tested up to: 4.9.8
-Stable tag: 0.2
+Tested up to: 5.1.1
+Requires PHP: 7.2.14
+Stable tag: 0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +23,13 @@ Advance Pet Care is a robust, reliable and clean WordPress theme for animal care
 * Changed screenshot.
 * Resolved minor theme errors.
 * Changed the readme file format as per WordPress standard.
+
+= 0.3 =
+* Resolved minor theme errors.
+* Added typography in theme.
+* Added language folder in theme.
+* Added Post Formats.
+* Changed screenshot.
 
 == Resources ==
 
@@ -60,26 +68,25 @@ Theme is Built using the following resource bundles.
 	Font Awesome 5.0.0 by @davegandy - http://fontawesome.io - @fontawesome
  	-- License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 
-4	Customizer Pro
+4	Customizer Pro, Copyright 2016 © Justin Tadlock.
+	License: All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
 	Source: https://github.com/justintadlock/trt-customizer-pro
 
-5   Images used from pixabay.
+5   Screenshot Images.
+	License: CC0 1.0 Universal (CC0 1.0) 
+	Source: https://stocksnap.io/license
 
-	Pixabay Images
+	Slider image, Copyright Dhyamis Kleber
 	License: CC0 1.0 Universal (CC0 1.0)
-	Source:	https://pixabay.com/en/service/terms/
+	Source: https://stocksnap.io/photo/V2DFYA7WPC
 
-	Slider image, copyright 3194556
+	Post image, Copyright Shannon Richards
 	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/puppy-dog-pet-animal-cute-white-1903313/
+	Source: https://stocksnap.io/photo/1V6C1OMMLM
 
-	Post image, copyright 947051 
+	Background image, Copyright Pete Johnson
 	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/bordeaux-mastiff-dog-animal-white-869036/
-	
-	Background image, copyright maja7777
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/golden-retriever-isolated-dog-pet-3139491/
+	Source: https://stocksnap.io/photo/Q9NNV4DCOO
 
 6   SmoothScroll
 	Sources: http://www.smoothscroll.net/

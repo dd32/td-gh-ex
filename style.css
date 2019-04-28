@@ -4,12 +4,11 @@ Theme URI: https://www.themeshopy.com/themes/free-pet-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Pet Care is a robust, reliable and clean WordPress theme for animal care centre, pet house, dog washing, dog grooming centre, animal care centre, pet shop, veterinary doctor, animal health consultant, animal spa, animal accessories store, animal grooming and training, pet food shop and other suitable websites. This high quality theme is the best solution to build a professional looking website in just a few minutes. The foundation of this pet WP theme is made with Bootstrap framework which eases theme use. It is fully responsive, cross-browser compatible, translation ready and deeply customizable. It does not matter whether you are an experienced web developer or a WordPress newbie, setting up your own website with this theme does not need coding knowledge. This pet WordPress theme is optimized for search engines and will give your website higher rank. It has banners and sliders to make the theme more impressive. Advance Pet Care has sections like gallery and supports various post formats like image, gallery, video etc. It is embedded with social media icons. It is extensible with third party plugins. You can set up your very own online store and start selling products, all with the help of WooCommerce plugin which is compatible with it. Demo: https://www.themeshopy.com/advance-pet-care-pro/
-Version: 0.2
+Version: 0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-pet-care
-Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
-
+Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, portfolio
 Advance Pet Care WordPress Theme has been created by Themeshopy, 2018.
 Advance Pet Care WordPress Theme is released under the terms of GNU GPL
 
@@ -210,7 +209,7 @@ input[type="submit"] {
 	padding:7px 30px;
 	background: #ff896d;
 	font-weight:bold;
-	color:#4bd6c5;
+	color:#fff;
 }
 
 /* ---------Buttons--------- */
@@ -258,13 +257,18 @@ input[type="submit"] {
 .social-icons i{
   color: #fff;
   margin-left: 20px;
+  font-size: 13px;
 }
 .mail i,
 .phone i{
   margin-right: 5px;
 }
 .phone{
+  font-size: 14px;
   text-align: center;
+}
+.mail {
+  font-size: 14px;
 }
 .pet-top .address,
 .pet-top .time{
@@ -281,10 +285,10 @@ input[type="submit"] {
 .pet-top p.color{
   color: #4bd6c5;
   text-transform: capitalize;
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 3px;
   font-family: 'Lobster', cursive;
-  letter-spacing: 2px;
+  font-weight: 500;
 }
 .pet-top p{
   text-transform: capitalize;
@@ -442,7 +446,7 @@ input.search-field {
 }
 #slider img {
   width: 100%;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 #slider .carousel-control-next-icon, #slider .carousel-control-prev-icon {
   width: auto;
@@ -471,7 +475,7 @@ input.search-field {
   color: #fff;
   padding: 6px 2px;
   text-align: left;
-  font-weight: 900;
+  font-weight: 500;
   text-transform: capitalize;
 }
 #slider .inner_carousel p {
@@ -484,7 +488,7 @@ input.search-field {
   text-align: left;
 }
 #slider .inner_carousel .get-apt-btn a {
-  border: 1px solid #4bd6c5;
+ /* border: 1px solid #4bd6c5;*/
   color: #fff;
   padding: 12px 25px;
   border-radius: 28px;
@@ -493,14 +497,20 @@ input.search-field {
   letter-spacing: 1px;
   font-weight: bold;
 }
+#slider .inner_carousel .get-apt-btn a:hover,
+#welcome .discover-btn a:hover {
+  background: #ff896d;
+}
 #slider .inner_carousel .get-apt-btn {
   margin-top: 23px;
 }
 #slider .carousel-control-next {
   right: 5%;
+  width: 5%;
 }
 #slider .carousel-control-prev {
-  left: 77%;
+  left: 87%;
+  width: 5%;
 }
 /*----------------- Welcome Setting ----------------*/
 #welcome {
@@ -509,12 +519,12 @@ input.search-field {
   background-size: 100%;
 }
 #welcome h3{
-  text-transform:capitalize; 
-  letter-spacing: 2px;
+  text-transform: capitalize;
   font-size: 30px;
+  font-weight: 500;
 }
 #welcome .discover-btn a {
-  border: 1px solid #4bd6c5;
+  /*border: 1px solid #4bd6c5;*/
   color: #fff;
   padding: 12px 25px;
   border-radius: 28px;
@@ -668,6 +678,9 @@ section .innerlightbox{
   border: solid 1px #ff896d;
   color: #3a4d5e;
 }
+#footer input[type="search"]::placeholder {
+  color: #fff;
+}
 #footer input[type="submit"] {
   font-size: 10px;
   padding: 12px 8px;
@@ -736,7 +749,6 @@ table#wp-calendar {
 	text-align:left;
 	font-size:24px;
   text-transform: capitalize;
-	font-weight: bold;
 	padding:0 0 17px 0;
 	color: #ff896d;
 }
@@ -764,6 +776,7 @@ table#wp-calendar {
   font-size: 15px;
   color: #fff;
   margin-bottom: 0;
+  font-weight: 600;
 }
 .copyright p a{
   color: #fff;
@@ -924,7 +937,7 @@ nav.woocommerce-MyAccount-navigation ul {
 nav.woocommerce-MyAccount-navigation ul li {
   background: #4bd6c5 !important;
   padding: 12px!important;
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 }
 nav.woocommerce-MyAccount-navigation ul li a{
   color: #fff;
@@ -1157,6 +1170,16 @@ h1.page-title {
     color:#ff896d;
 	font-weight:bold;
 }
+.entry-video iframe {
+    width: 100%;
+}
+.entry-audio audio {
+    width: 100%;
+}
+iframe {
+    width: 100%;
+}
+
 
 /* Media */
 @media screen and (max-width: 768px) and (min-width: 720px){	
@@ -1316,6 +1339,8 @@ h1.page-title {
     font-weight: bold;
     font-size: 12px;
     text-transform: uppercase;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
 	}
   #header .nav ul li a:hover,
   #header .current-menu-item{
@@ -1467,7 +1492,7 @@ h1.page-title {
     display: none;
   }
   #slider .carousel-control-prev {
-    left: 73%;
+    left: 84%;
   }
   #footer:before{
     top:0px;
@@ -1475,7 +1500,7 @@ h1.page-title {
 }
 @media screen and (min-width: 1000px) and (max-width: 1024px){
   #slider .carousel-control-prev {
-    left: 73%;
+    left: 86%;
   }
   #slider .carousel-caption {
     top: 50%;

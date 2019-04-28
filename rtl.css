@@ -1,4 +1,4 @@
-/* Basic Style */
+/* RTL Style */
 *{
   margin:0;
   padding:0;
@@ -10,9 +10,9 @@ body{
   -ms-word-wrap:break-word;
   word-wrap:break-word;
   background-color:#fff;
-  font-size: 15px;
-  color:#5b5b5b;
+  color: #aeb4b9;
   font-family: 'Open Sans', sans-serif;
+  letter-spacing: 1px;
   
 }
 img{
@@ -192,7 +192,7 @@ input[type="submit"] {
   padding:7px 30px;
   background: #ff896d;
   font-weight:bold;
-  color:#4bd6c5;
+  color:#fff;
 }
 
 /* ---------Buttons--------- */
@@ -240,13 +240,18 @@ input[type="submit"] {
 .social-icons i{
   color: #fff;
   margin-right: 20px;
+  font-size: 13px;
 }
 .mail i,
 .phone i{
   margin-left: 5px;
 }
 .phone{
+  font-size: 14px;
   text-align: center;
+}
+.mail {
+  font-size: 14px;
 }
 .pet-top .address,
 .pet-top .time{
@@ -263,10 +268,10 @@ input[type="submit"] {
 .pet-top p.color{
   color: #4bd6c5;
   text-transform: capitalize;
-  font-size: 15px;
+  font-size: 16px;
   margin-bottom: 3px;
   font-family: 'Lobster', cursive;
-  letter-spacing: 2px;
+  font-weight: 500;
 }
 .pet-top p{
   text-transform: capitalize;
@@ -424,7 +429,7 @@ input.search-field {
 }
 #slider img {
   width: 100%;
-  opacity: 0.7;
+  opacity: 0.6;
 }
 #slider .carousel-control-next-icon, #slider .carousel-control-prev-icon {
   width: auto;
@@ -453,7 +458,7 @@ input.search-field {
   color: #fff;
   padding: 6px 2px;
   text-align: right;
-  font-weight: 900;
+  font-weight: 500;
   text-transform: capitalize;
 }
 #slider .inner_carousel p {
@@ -466,7 +471,7 @@ input.search-field {
   text-align: right;
 }
 #slider .inner_carousel .get-apt-btn a {
-  border: 1px solid #4bd6c5;
+ /* border: 1px solid #4bd6c5;*/
   color: #fff;
   padding: 12px 25px;
   border-radius: 28px;
@@ -475,29 +480,34 @@ input.search-field {
   letter-spacing: 1px;
   font-weight: bold;
 }
+#slider .inner_carousel .get-apt-btn a:hover,
+#welcome .discover-btn a:hover {
+  background: #ff896d;
+}
 #slider .inner_carousel .get-apt-btn {
   margin-top: 23px;
 }
 #slider .carousel-control-next {
   left: 5%;
+  width: 5%;
 }
 #slider .carousel-control-prev {
-  right: 77%;
+  right: 87%;
+  width: 5%;
 }
 /*----------------- Welcome Setting ----------------*/
-#welcome{
-  padding:2% 0;
-  background: url('./images/bg-img.png') no-repeat;
-  background-size: 100% 100%;
-
+#welcome {
+  padding: 3% 0;
+  background: url(./images/bg-img.png) no-repeat 0em -8em;
+  background-size: 100%;
 }
 #welcome h3{
-  text-transform:capitalize; 
-  letter-spacing: 2px;
+  text-transform: capitalize;
   font-size: 30px;
+  font-weight: 500;
 }
 #welcome .discover-btn a {
-  border: 1px solid #4bd6c5;
+  /*border: 1px solid #4bd6c5;*/
   color: #fff;
   padding: 12px 25px;
   border-radius: 28px;
@@ -651,6 +661,9 @@ section .innerlightbox{
   border: solid 1px #ff896d;
   color: #3a4d5e;
 }
+#footer input[type="search"]::placeholder {
+  color: #fff;
+}
 #footer input[type="submit"] {
   font-size: 10px;
   padding: 12px 8px;
@@ -719,7 +732,6 @@ table#wp-calendar {
   text-align:right;
   font-size:24px;
   text-transform: capitalize;
-  font-weight: bold;
   padding:0 0 17px 0;
   color: #ff896d;
 }
@@ -747,6 +759,7 @@ table#wp-calendar {
   font-size: 15px;
   color: #fff;
   margin-bottom: 0;
+  font-weight: 600;
 }
 .copyright p a{
   color: #fff;
@@ -907,7 +920,7 @@ nav.woocommerce-MyAccount-navigation ul {
 nav.woocommerce-MyAccount-navigation ul li {
   background: #4bd6c5 !important;
   padding: 12px!important;
-  margin-bottom: 10px;
+  margin-bottom: 10px !important;
 }
 nav.woocommerce-MyAccount-navigation ul li a{
   color: #fff;
@@ -1299,6 +1312,8 @@ h1.page-title {
     font-weight: bold;
     font-size: 12px;
     text-transform: uppercase;
+    border-right: 2px solid transparent;
+    border-left: 2px solid transparent;
   }
   #header .nav ul li a:hover,
   #header .current-menu-item{
@@ -1450,7 +1465,7 @@ h1.page-title {
     display: none;
   }
   #slider .carousel-control-prev {
-    right: 73%;
+    right: 84%;
   }
   #footer:before{
     top:0px;
@@ -1458,7 +1473,7 @@ h1.page-title {
 }
 @media screen and (min-width: 1000px) and (max-width: 1024px){
   #slider .carousel-control-prev {
-    right: 73%;
+    right: 86%;
   }
   #slider .carousel-caption {
     top: 50%;
