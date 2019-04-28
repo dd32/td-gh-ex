@@ -465,10 +465,11 @@ function app_landing_page_footer_credit(){
     if( $copyright_text ){
       echo wp_kses_post( $copyright_text );
     }else{
-      echo date_i18n( esc_html__( 'Y', 'app-landing-page' ) );
+      echo esc_html( date_i18n( __( 'Y', 'app-landing-page' ) ) );
       echo ' &nbsp;<a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>.&nbsp;';
     }
-    printf( ' %s', '<a href="'. esc_url( 'http://raratheme.com/wordpress-themes/app-landing-page/' ) .'" target="_blank">'. esc_html__( 'App Landing Page By Rara Theme', 'app-landing-page' ) .'</a>. ' );
+    esc_html_e( 'App Landing Page | Developed By ', 'app-landing-page' );
+    echo '<a href="'. esc_url( 'https://raratheme.com/' ) .'" rel="nofollow" target="_blank">'. esc_html__( 'Rara Theme', 'app-landing-page' ) . '</a>. ';
     printf( esc_html__( 'Powered by %s', 'app-landing-page' ), '<a href="'. esc_url( 'https://wordpress.org/', 'app-landing-page' ) .'" target="_blank">'. esc_html__( 'WordPress', 'app-landing-page' ) . '</a>. ' );
     if ( function_exists( 'the_privacy_policy_link' ) ) {
         the_privacy_policy_link();
