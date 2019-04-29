@@ -16,6 +16,7 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<?php wp_body_open(); ?>
 <div id="page" class="hfeed site">
 <?php 
 	$hideSearch = get_theme_mod('annina_theme_options_hidesearch', '1');

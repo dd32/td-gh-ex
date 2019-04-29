@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Annina\n"
-"POT-Creation-Date: 2019-03-14 12:23+0100\n"
-"PO-Revision-Date: 2019-03-14 12:23+0100\n"
+"POT-Creation-Date: 2019-04-29 18:40+0100\n"
+"PO-Revision-Date: 2019-04-29 18:40+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -210,67 +210,67 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:40
+#: header.php:41
 msgid "Search for:"
 msgstr ""
 
-#: header.php:41
+#: header.php:42
 msgid "Type here and hit enter..."
 msgstr ""
 
-#: header.php:44
+#: header.php:45
 msgid "Close"
 msgstr ""
 
-#: header.php:50
+#: header.php:51
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:69
+#: header.php:70
 msgid "Main Menu"
 msgstr ""
 
-#: header.php:75
+#: header.php:76
 msgid "Facebook"
 msgstr ""
 
-#: header.php:79
+#: header.php:80
 msgid "Twitter"
 msgstr ""
 
-#: header.php:83
+#: header.php:84
 msgid "Google Plus"
 msgstr ""
 
-#: header.php:87
+#: header.php:88
 msgid "Linkedin"
 msgstr ""
 
-#: header.php:91
+#: header.php:92
 msgid "Instagram"
 msgstr ""
 
-#: header.php:95
+#: header.php:96
 msgid "YouTube"
 msgstr ""
 
-#: header.php:99
+#: header.php:100
 msgid "Pinterest"
 msgstr ""
 
-#: header.php:103
+#: header.php:104
 msgid "VK"
 msgstr ""
 
-#: header.php:107
+#: header.php:108
 msgid "SoundCloud"
 msgstr ""
 
-#: header.php:111
+#: header.php:112
 msgid "Reddit"
 msgstr ""
 
-#: header.php:115
+#: header.php:116
 msgid "Email"
 msgstr ""
 

@@ -24,7 +24,7 @@
 					  columnWidth: '.grid-sizer',
 					  itemSelector: '.anninamas',
 					  transitionDuration: '0.3s',
-					  isRTL: whatText
+					  isRTL: whatText,
 					});
 				});
 			}
