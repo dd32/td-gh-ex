@@ -3,11 +3,11 @@
 /*-----------------------------------------------------------------------------------*/
 
 Theme Name      :   Adventure Lite
-Theme URI       :   https://www.sktthemes.net/shop/free-travel-blog-wordpress-theme
-Version         :   1.8
-Tested up to    :   WP 5.1.1
+Theme URI       :   https://www.sktthemes.org/shop/free-travel-blog-wordpress-theme
+Version         :   1.9
+Tested up to    :   WP 5.2
 Author          :   SKT Themes
-Author URI      :   https://www.sktthemes.net
+Author URI      :   https://www.sktthemes.org
 
 license         :   GNU General Public License v3.0
 License URI     :   http://www.gnu.org/licenses/gpl.html

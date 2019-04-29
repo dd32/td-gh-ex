@@ -1,3 +1,7 @@
+Version 1.9
+i)  Author URI and Theme URI changed.
+ii) Removed anchor link from footer.
+
 Version 1.8
 i)  Resolved call_user_func() expects parameter 1 to be a valid callback, function issue.
 

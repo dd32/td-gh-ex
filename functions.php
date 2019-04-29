@@ -139,12 +139,12 @@ function adventure_lite_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'adventure_lite_scripts' );
 
-define('ADVENTURE_LITE_SKTTHEMES_URL','https://www.sktthemes.net','adventure-lite');
-define('ADVENTURE_LITE_SKTTHEMES_PRO_THEME_URL','https://www.sktthemes.net/shop/adventure-wordpress-theme/','adventure-lite');
-define('ADVENTURE_LITE_SKTTHEMES_FREE_THEME_URL','https://www.sktthemes.net/shop/free-travel-blog-wordpress-theme/','adventure-lite');
+define('ADVENTURE_LITE_SKTTHEMES_URL','https://www.sktthemes.org','adventure-lite');
+define('ADVENTURE_LITE_SKTTHEMES_PRO_THEME_URL','https://www.sktthemes.org/shop/adventure-wordpress-theme/','adventure-lite');
+define('ADVENTURE_LITE_SKTTHEMES_FREE_THEME_URL','https://www.sktthemes.org/shop/free-travel-blog-wordpress-theme/','adventure-lite');
 define('ADVENTURE_LITE_SKTTHEMES_THEME_DOC','http://sktthemesdemo.net/documentation/adventure-documentation/','adventure-lite');
 define('ADVENTURE_LITE_SKTTHEMES_LIVE_DEMO','http://sktperfectdemo.com/demos/adventure/','adventure-lite');
-define('ADVENTURE_LITE_SKTTHEMES_THEMES','https://www.sktthemes.net/themes/','adventure-lite');
+define('ADVENTURE_LITE_SKTTHEMES_THEMES','https://www.sktthemes.org/themes/','adventure-lite');
 
 /**
  * Implement the Custom Header feature.
