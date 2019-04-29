@@ -3,7 +3,7 @@
 class Quill_Testimonials extends WP_Widget {
 
 // constructor
-    function quill_testimonials() {
+	function __construct() {
 		$widget_ops = array('classname' => 'quill_testimonials_widget', 'description' => __( 'Display testimonials from your clients.', 'quill') );
         parent::__construct(false, $name = __('Quill FP: Testimonials', 'quill'), $widget_ops);
 		$this->alt_option_name = 'quill_testimonials_widget';

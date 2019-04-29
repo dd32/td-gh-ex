@@ -3,7 +3,7 @@
 class Quill_About extends WP_Widget {
 
 // constructor
-    function quill_about() {
+	function __construct() {
 		$widget_ops = array('classname' => 'quill_about_widget', 'description' => __( 'Add some info about your firm', 'quill') );
         parent::__construct(false, $name = __('Quill FP: About us', 'quill'), $widget_ops);
 		$this->alt_option_name = 'quill_about_widget';

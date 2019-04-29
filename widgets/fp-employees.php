@@ -3,7 +3,7 @@
 class Quill_Employees extends WP_Widget {
 
 // constructor
-    function quill_employees() {
+	function __construct() {
 		$widget_ops = array('classname' => 'quill_employees_widget', 'description' => __( 'Display your team members in a stylish way.', 'quill') );
         parent::__construct(false, $name = __('Quill FP: Employees', 'quill'), $widget_ops);
 		$this->alt_option_name = 'quill_employees_widget';

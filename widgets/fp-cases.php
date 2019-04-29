@@ -3,7 +3,7 @@
 class Quill_Cases extends WP_Widget {
 
 // constructor
-    function quill_cases() {
+	function __construct() {
 		$widget_ops = array('classname' => 'quill_cases_widget', 'description' => __( 'Show your most interesting cases.', 'quill') );
         parent::__construct(false, $name = __('Quill FP: Cases', 'quill'), $widget_ops);
 		$this->alt_option_name = 'quill_cases_widget';

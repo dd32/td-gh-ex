@@ -17,7 +17,7 @@
 		<div class="site-info container">
 			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'quill' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'quill' ), 'WordPress' ); ?></a>
 			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %2$s by %1$s', 'quill' ), 'aThemes', '<a href="http://athemes.com/theme/quill">Quill</a>' ); ?>
+			<?php printf( __( 'Theme: %2$s by %1$s', 'quill' ), 'aThemes', '<a href="http://athemes.com/theme/quill" rel="nofollow">Quill</a>' ); ?>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

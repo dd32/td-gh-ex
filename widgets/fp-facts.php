@@ -3,7 +3,7 @@
 class Quill_Facts extends WP_Widget {
 
 // constructor
-    function quill_facts() {
+	function __construct() {
 		$widget_ops = array('classname' => 'quill_facts_widget', 'description' => __( 'Show your visitors some facts about your company.', 'quill') );
         parent::__construct(false, $name = __('Quill FP: Facts', 'quill'), $widget_ops);
 		$this->alt_option_name = 'quill_facts_widget';
