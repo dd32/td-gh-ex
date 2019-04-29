@@ -274,7 +274,7 @@ function airi_footer_credits() {
 			<span class="sep"> | </span>
 			<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %2$s by %1$s.', 'airi' ), 'aThemes', '<a href="https://athemes.com/theme/airi">Airi</a>' );
+				printf( esc_html__( 'Theme: %2$s by %1$s.', 'airi' ), 'aThemes', '<a href="https://athemes.com/theme/airi" rel="nofollow">Airi</a>' );
 			?>
 		<?php else : ?>
 			<?php echo wp_kses_post( $credits ); ?>
