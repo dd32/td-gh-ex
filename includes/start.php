@@ -14,7 +14,7 @@ if ( ! function_exists( 'at_business_scripts' ) ) :
 	 */
 	function at_business_scripts() {
 		wp_enqueue_style( 'business-key-parent', get_template_directory_uri() . '/style.css' );
-		wp_enqueue_style( 'at-business-style', get_stylesheet_directory_uri() . '/style.css', array( 'business-key-parent' ), '1.0.0' );
+		wp_enqueue_style( 'at-business-style', get_stylesheet_directory_uri() . '/style.css', array( 'business-key-parent' ), '1.0.1' );
 	}
 
 endif;

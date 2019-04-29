@@ -3,8 +3,8 @@
 Contributors: axlethemes
 Requires PHP: 5.2
 Requires at least: 4.7
-Tested up to: 4.9.6
-Stable tag: 1.0.0
+Tested up to: 5.1.1
+Stable tag: 1.0.1
 
 == Description ==
 
@@ -18,13 +18,16 @@ AT Business is a child theme of Business Key theme. You can try theme demo here 
 
 == Credits ==
 
-AT Business WordPress Theme, Copyright (C) 2018, Axle Themes
+AT Business WordPress Theme, Copyright (C) 2019, Axle Themes
 AT Business is distributed under the terms of the GNU GPL
 
-AT Business WordPress Theme is child theme of Business Key WordPress Theme, Copyright (C) 2018, Axle Themes
+AT Business WordPress Theme is child theme of Business Key WordPress Theme, Copyright (C) 2019, Axle Themes
 Business Key WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+= 1.0.1 - Apr 29 2019 =
+* Minor updates
 
 = 1.0.0 - Jun 22 2018 =
 * Initial release
