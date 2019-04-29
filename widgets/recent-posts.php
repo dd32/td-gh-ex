@@ -3,9 +3,9 @@
 class Solon_Recent_Posts extends WP_Widget {
 
 // constructor
-    function solon_Recent_Posts() {
+	function __construct() {
 		$widget_ops = array('classname' => 'solon_recent_posts_widget', 'description' => __( 'Display your site&#8217;s recent posts with thumbnails.', 'solon') );
-        parent::WP_Widget(false, $name = __('solon: Recent Posts', 'solon'), $widget_ops);
+        parent::__construct(false, $name = __('solon: Recent Posts', 'solon'), $widget_ops);
 		$this->alt_option_name = 'solon_recent_posts_widget';
 		
 		add_action( 'save_post', array($this, 'flush_widget_cache') );

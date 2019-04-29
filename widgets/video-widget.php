@@ -3,9 +3,9 @@
 class Solon_Video_Widget extends WP_Widget {
 
 // constructor
-    function solon_video_widget() {
+	function __construct() {
 		$widget_ops = array('classname' => 'solon_video_widget_widget', 'description' => __( 'Display a video in your sidebar.', 'solon') );
-        parent::WP_Widget(false, $name = __('Solon: Video', 'solon'), $widget_ops);
+        parent::__construct(false, $name = __('Solon: Video', 'solon'), $widget_ops);
 		$this->alt_option_name = 'solon_video_widget';
 		
 		add_action( 'save_post', array($this, 'flush_widget_cache') );

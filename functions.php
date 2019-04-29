@@ -66,6 +66,8 @@ function solon_setup() {
 		'gallery',
 		'caption',
 	) );
+
+	add_theme_support( 'title-tag' );
 }
 endif; // solon_setup
 add_action( 'after_setup_theme', 'solon_setup' );
