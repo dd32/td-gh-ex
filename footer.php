@@ -21,7 +21,7 @@
 			</div><!-- .site-info -->
 
 			<div class="site-credit">
-				<a href="https://athemes.com/theme/hiero/">Hiero</a> by aThemes
+				<a href="https://athemes.com/theme/hiero/" rel="nofollow">Hiero</a> by aThemes
 			</div><!-- .site-credit -->
 		</div>
 	<!-- #colophon --></footer>
