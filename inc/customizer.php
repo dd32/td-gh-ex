@@ -50,97 +50,97 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	) );
 
 	$font_array = array(
-        '' => __( 'No Fonts', 'bb-ecommerce-store' ),
-        'Abril Fatface' => __( 'Abril Fatface', 'bb-ecommerce-store' ),
-        'Acme' => __( 'Acme', 'bb-ecommerce-store' ),
-        'Anton' => __( 'Anton', 'bb-ecommerce-store' ),
-        'Architects Daughter' => __( 'Architects Daughter', 'bb-ecommerce-store' ),
-        'Arimo' => __( 'Arimo', 'bb-ecommerce-store' ),
-        'Arsenal' => __( 'Arsenal', 'bb-ecommerce-store' ),
-        'Arvo' => __( 'Arvo', 'bb-ecommerce-store' ),
-        'Alegreya' => __( 'Alegreya', 'bb-ecommerce-store' ),
-        'Alfa Slab One' => __( 'Alfa Slab One', 'bb-ecommerce-store' ),
-        'Averia Serif Libre' => __( 'Averia Serif Libre', 'bb-ecommerce-store' ),
-        'Bangers' => __( 'Bangers', 'bb-ecommerce-store' ),
-        'Boogaloo' => __( 'Boogaloo', 'bb-ecommerce-store' ),
-        'Bad Script' => __( 'Bad Script', 'bb-ecommerce-store' ),
-        'Bitter' => __( 'Bitter', 'bb-ecommerce-store' ),
-        'Bree Serif' => __( 'Bree Serif', 'bb-ecommerce-store' ),
-        'BenchNine' => __( 'BenchNine', 'bb-ecommerce-store' ),
-        'Cabin' => __( 'Cabin', 'bb-ecommerce-store' ),
-        'Cardo' => __( 'Cardo', 'bb-ecommerce-store' ),
-        'Courgette' => __( 'Courgette', 'bb-ecommerce-store' ),
-        'Cherry Swash' => __( 'Cherry Swash', 'bb-ecommerce-store' ),
-        'Cormorant Garamond' => __( 'Cormorant Garamond', 'bb-ecommerce-store' ),
-        'Crimson Text' => __( 'Crimson Text', 'bb-ecommerce-store' ),
-        'Cuprum' => __( 'Cuprum', 'bb-ecommerce-store' ),
-        'Cookie' => __( 'Cookie', 'bb-ecommerce-store' ),
-        'Chewy' => __( 'Chewy', 'bb-ecommerce-store' ),
-        'Days One' => __( 'Days One', 'bb-ecommerce-store' ),
-        'Dosis' => __( 'Dosis', 'bb-ecommerce-store' ),
-        'Droid Sans' => __( 'Droid Sans', 'bb-ecommerce-store' ),
-        'Economica' => __( 'Economica', 'bb-ecommerce-store' ),
-        'Fredoka One' => __( 'Fredoka One', 'bb-ecommerce-store' ),
-        'Fjalla One' => __( 'Fjalla One', 'bb-ecommerce-store' ),
-        'Francois One' => __( 'Francois One', 'bb-ecommerce-store' ),
-        'Frank Ruhl Libre' => __( 'Frank Ruhl Libre', 'bb-ecommerce-store' ),
-        'Gloria Hallelujah' => __( 'Gloria Hallelujah', 'bb-ecommerce-store' ),
-        'Great Vibes' => __( 'Great Vibes', 'bb-ecommerce-store' ),
-        'Handlee' => __( 'Handlee', 'bb-ecommerce-store' ),
-        'Hammersmith One' => __( 'Hammersmith One', 'bb-ecommerce-store' ),
-        'Inconsolata' => __( 'Inconsolata', 'bb-ecommerce-store' ),
-        'Indie Flower' => __( 'Indie Flower', 'bb-ecommerce-store' ),
-        'IM Fell English SC' => __( 'IM Fell English SC', 'bb-ecommerce-store' ),
-        'Julius Sans One' => __( 'Julius Sans One', 'bb-ecommerce-store' ),
-        'Josefin Slab' => __( 'Josefin Slab', 'bb-ecommerce-store' ),
-        'Josefin Sans' => __( 'Josefin Sans', 'bb-ecommerce-store' ),
-        'Kanit' => __( 'Kanit', 'bb-ecommerce-store' ),
-        'Lobster' => __( 'Lobster', 'bb-ecommerce-store' ),
-        'Lato' => __( 'Lato', 'bb-ecommerce-store' ),
-        'Lora' => __( 'Lora', 'bb-ecommerce-store' ),
-        'Libre Baskerville' => __( 'Libre Baskerville', 'bb-ecommerce-store' ),
-        'Lobster Two' => __( 'Lobster Two', 'bb-ecommerce-store' ),
-        'Merriweather' => __( 'Merriweather', 'bb-ecommerce-store' ),
-        'Monda' => __( 'Monda', 'bb-ecommerce-store' ),
-        'Montserrat' => __( 'Montserrat', 'bb-ecommerce-store' ),
-        'Muli' => __( 'Muli', 'bb-ecommerce-store' ),
-        'Marck Script' => __( 'Marck Script', 'bb-ecommerce-store' ),
-        'Noto Serif' => __( 'Noto Serif', 'bb-ecommerce-store' ),
-        'Open Sans' => __( 'Open Sans', 'bb-ecommerce-store' ),
-        'Overpass' => __( 'Overpass', 'bb-ecommerce-store' ),
-        'Overpass Mono' => __( 'Overpass Mono', 'bb-ecommerce-store' ),
-        'Oxygen' => __( 'Oxygen', 'bb-ecommerce-store' ),
-        'Orbitron' => __( 'Orbitron', 'bb-ecommerce-store' ),
-        'Patua One' => __( 'Patua One', 'bb-ecommerce-store' ),
-        'Pacifico' => __( 'Pacifico', 'bb-ecommerce-store' ),
-        'Padauk' => __( 'Padauk', 'bb-ecommerce-store' ),
-        'Playball' => __( 'Playball', 'bb-ecommerce-store' ),
-        'Playfair Display' => __( 'Playfair Display', 'bb-ecommerce-store' ),
-        'PT Sans' => __( 'PT Sans', 'bb-ecommerce-store' ),
-        'Philosopher' => __( 'Philosopher', 'bb-ecommerce-store' ),
-        'Permanent Marker' => __( 'Permanent Marker', 'bb-ecommerce-store' ),
-        'Poiret One' => __( 'Poiret One', 'bb-ecommerce-store' ),
-        'Quicksand' => __( 'Quicksand', 'bb-ecommerce-store' ),
-        'Quattrocento Sans' => __( 'Quattrocento Sans', 'bb-ecommerce-store' ),
-        'Raleway' => __( 'Raleway', 'bb-ecommerce-store' ),
-        'Rubik' => __( 'Rubik', 'bb-ecommerce-store' ),
-        'Rokkitt' => __( 'Rokkitt', 'bb-ecommerce-store' ),
-        'Russo One' => __( 'Russo One', 'bb-ecommerce-store' ),
-        'Righteous' => __( 'Righteous', 'bb-ecommerce-store' ),
-        'Slabo' => __( 'Slabo', 'bb-ecommerce-store' ),
-        'Source Sans Pro' => __( 'Source Sans Pro', 'bb-ecommerce-store' ),
-        'Shadows Into Light Two' => __( 'Shadows Into Light Two', 'bb-ecommerce-store'),
-        'Shadows Into Light' => __( 'Shadows Into Light', 'bb-ecommerce-store' ),
-        'Sacramento' => __( 'Sacramento', 'bb-ecommerce-store' ),
-        'Shrikhand' => __( 'Shrikhand', 'bb-ecommerce-store' ),
-        'Tangerine' => __( 'Tangerine', 'bb-ecommerce-store' ),
-        'Ubuntu' => __( 'Ubuntu', 'bb-ecommerce-store' ),
-        'VT323' => __( 'VT323', 'bb-ecommerce-store' ),
-        'Varela Round' => __( 'Varela Round', 'bb-ecommerce-store' ),
-        'Vampiro One' => __( 'Vampiro One', 'bb-ecommerce-store' ),
-        'Vollkorn' => __( 'Vollkorn', 'bb-ecommerce-store' ),
-        'Volkhov' => __( 'Volkhov', 'bb-ecommerce-store' ),
-        'Yanone Kaffeesatz' => __( 'Yanone Kaffeesatz', 'bb-ecommerce-store' )
+        '' =>'No Fonts',
+        'Abril Fatface' => 'Abril Fatface',
+        'Acme' => 'Acme',
+        'Anton' => 'Anton',
+        'Architects Daughter' =>'Architects Daughter',
+        'Arimo' => 'Arimo',
+        'Arsenal' => 'Arsenal',
+        'Arvo' => 'Arvo',
+        'Alegreya' => 'Alegreya',
+        'Alfa Slab One' => 'Alfa Slab One',
+        'Averia Serif Libre' =>'Averia Serif Libre',
+        'Bangers' =>  'Bangers',
+        'Boogaloo' => 'Boogaloo',
+        'Bad Script' => 'Bad Script',
+        'Bitter' => 'Bitter',
+        'Bree Serif' =>'Bree Serif',
+        'BenchNine' => 'BenchNine',
+        'Cabin' => 'Cabin',
+        'Cardo' => 'Cardo',
+        'Courgette' => 'Courgette',
+        'Cherry Swash' =>'Cherry Swash',
+        'Cormorant Garamond' => 'Cormorant Garamond',
+        'Crimson Text' => 'Crimson Text',
+        'Cuprum' => 'Cuprum',
+        'Cookie' => 'Cookie',
+        'Chewy' => 'Chewy',
+        'Days One' => 'Days One',
+        'Dosis' => 'Dosis',
+        'Droid Sans' => 'Droid Sans',
+        'Economica' => 'Economica',
+        'Fredoka One' => 'Fredoka One',
+        'Fjalla One' => 'Fjalla One',
+        'Francois One' =>'Francois One',
+        'Frank Ruhl Libre' => 'Frank Ruhl Libre',
+        'Gloria Hallelujah' => 'Gloria Hallelujah',
+        'Great Vibes' => 'Great Vibes',
+        'Handlee' => 'Handlee',
+        'Hammersmith One' => 'Hammersmith One',
+        'Inconsolata' => 'Inconsolata',
+        'Indie Flower' => 'Indie Flower',
+        'IM Fell English SC' => 'IM Fell English SC',
+        'Julius Sans One' => 'Julius Sans One',
+        'Josefin Slab' => 'Josefin Slab',
+        'Josefin Sans' => 'Josefin Sans',
+        'Kanit' => 'Kanit',
+        'Lobster' => 'Lobster',
+        'Lato' =>'Lato',
+        'Lora' => 'Lora',
+        'Libre Baskerville' => 'Libre Baskerville',
+        'Lobster Two' => 'Lobster Two',
+        'Merriweather' =>'Merriweather',
+        'Monda' =>'Monda',
+        'Montserrat' => 'Montserrat',
+        'Muli' => 'Muli',
+        'Marck Script' => 'Marck Script',
+        'Noto Serif' => 'Noto Serif',
+        'Open Sans' => 'Open Sans',
+        'Overpass' => 'Overpass',
+        'Overpass Mono' => 'Overpass Mono',
+        'Oxygen' =>'Oxygen',
+        'Orbitron' => 'Orbitron',
+        'Patua One' =>'Patua One',
+        'Pacifico' => 'Pacifico',
+        'Padauk' => 'Padauk',
+        'Playball' =>'Playball',
+        'Playfair Display' => 'Playfair Display',
+        'PT Sans' =>  'PT Sans',
+        'Philosopher' => 'Philosopher',
+        'Permanent Marker' => 'Permanent Marker',
+        'Poiret One' =>'Poiret One',
+        'Quicksand' =>'Quicksand',
+        'Quattrocento Sans' => 'Quattrocento Sans',
+        'Raleway' => 'Raleway',
+        'Rubik' => 'Rubik',
+        'Rokkitt' => 'Rokkitt',
+        'Russo One' => 'Russo One',
+        'Righteous' =>'Righteous',
+        'Slabo' => 'Slabo',
+        'Source Sans Pro' => 'Source Sans Pro',
+        'Shadows Into Light Two' => 'Shadows Into Light Two',
+        'Shadows Into Light' =>'Shadows Into Light',
+        'Sacramento' => 'Sacramento',
+        'Shrikhand' => 'Shrikhand',
+        'Tangerine' =>'Tangerine',
+        'Ubuntu' => 'Ubuntu',
+        'VT323' => 'VT323',
+        'Varela Round' => 'Varela Round',
+        'Vampiro One' => 'Vampiro One',
+        'Vollkorn' => 'Vollkorn',
+        'Volkhov' =>'Volkhov',
+        'Yanone Kaffeesatz' => 'Yanone Kaffeesatz'
     );
 
 	//Typography
@@ -541,6 +541,18 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'type'	=> 'url'
 	) );
 
+	$wp_customize->add_setting('bb_ecommerce_store_instagram_url',array(
+		'default'	=> '',
+		'sanitize_callback'	=> 'esc_url_raw'
+	) );
+	
+	$wp_customize->add_control('bb_ecommerce_store_instagram_url',array(
+		'label'	=> __('Add Instagram link','bb-ecommerce-store'),
+		'section'	=> 'bb_ecommerce_store_social',
+		'setting'	=> 'bb_ecommerce_store_instagram_url',
+		'type'	=> 'url'
+	) );
+
 	$wp_customize->add_setting('bb_ecommerce_store_rss_url',array(
 		'default'	=> '',
 		'sanitize_callback'	=> 'esc_url_raw'
@@ -560,25 +572,65 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'panel' => 'bb_ecommerce_store_panel_id'
 	) );
 
+	$wp_customize->add_setting('bb_ecommerce_store_slider_hide_show',array(
+      'default' => 'false',
+      'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('bb_ecommerce_store_slider_hide_show',array(
+	  'type' => 'checkbox',
+	  'label' => __('Show / Hide slider','bb-ecommerce-store'),
+	  'section' => 'bb_ecommerce_store_slidersettings',
+	));
+
 	for ( $count = 1; $count <= 4; $count++ ) {
 
 		// Add color scheme setting and control.
-		$wp_customize->add_setting( 'bb_ecommerce_store_slidersettings-page-' . $count, array(
+		$wp_customize->add_setting( 'bb_ecommerce_store_slider' . $count, array(
 				'default'           => '',
 				'sanitize_callback' => 'bb_ecommerce_store_sanitize_dropdown_pages'
 		) );
 
-		$wp_customize->add_control( 'bb_ecommerce_store_slidersettings-page-' . $count, array(
+		$wp_customize->add_control( 'bb_ecommerce_store_slider' . $count, array(
 			'label'    => __( 'Select Slide Image Page', 'bb-ecommerce-store' ),
 			'section'  => 'bb_ecommerce_store_slidersettings',
 			'type'     => 'dropdown-pages'
 		) );
 	}
 
-	//OUR services
+	// SERVICES
+	$wp_customize->add_section('bb_ecommerce_store_services',array(
+		'title'	=> __('Services','bb-ecommerce-store'),
+		'description'=> __('This section will appear below the slider.','bb-ecommerce-store'),
+		'panel' => 'bb_ecommerce_store_panel_id',
+	));
+
+	$categories = get_categories();
+	$cats = array();
+	$i = 0;
+	$cat_post[]= 'select';
+	foreach($categories as $category){
+	if($i==0){
+	$default = $category->slug;
+	$i++;
+	}
+	$cat_post[$category->slug] = $category->name;
+	}
+
+	$wp_customize->add_setting('bb_ecommerce_store_services_category',array(
+	'default'	=> 'select',
+	'sanitize_callback' => 'bb_ecommerce_store_sanitize_choices',
+	));
+	$wp_customize->add_control('bb_ecommerce_store_services_category',array(
+	'type'    => 'select',
+	'choices' => $cat_post,
+	'label' => __('Select Category to display post','bb-ecommerce-store'),
+	'section' => 'bb_ecommerce_store_services',
+	));
+
+	//OUR PRODUCTS
 	$wp_customize->add_section('bb_ecommerce_store_product',array(
 		'title'	=> __('Products','bb-ecommerce-store'),
-		'description'=> __('This section will appear below the slider.','bb-ecommerce-store'),
+		'description'=> __('This section will appear below the services.','bb-ecommerce-store'),
 		'panel' => 'bb_ecommerce_store_panel_id',
 	));
 	
@@ -595,18 +647,15 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'type'=> 'text'
 	));	
 
-	for ( $count = 0; $count <= 0; $count++ ) {
-
-		$wp_customize->add_setting( 'bb_ecommerce_store_servicesettings-page-' . $count, array(
-			'default'           => '',
-			'sanitize_callback' => 'bb_ecommerce_store_sanitize_dropdown_pages'
-		));
-		$wp_customize->add_control( 'bb_ecommerce_store_servicesettings-page-' . $count, array(
-			'label'    => __( 'Select Page', 'bb-ecommerce-store' ),
-			'section'  => 'bb_ecommerce_store_product',
-			'type'     => 'dropdown-pages'
-		));
-	}
+	$wp_customize->add_setting( 'bb_ecommerce_store_servicesettings', array(
+		'default'           => '',
+		'sanitize_callback' => 'bb_ecommerce_store_sanitize_dropdown_pages'
+	));
+	$wp_customize->add_control( 'bb_ecommerce_store_servicesettings', array(
+		'label'    => __( 'Select Page', 'bb-ecommerce-store' ),
+		'section'  => 'bb_ecommerce_store_product',
+		'type'     => 'dropdown-pages'
+	));
 
 	//footer
 	$wp_customize->add_section('bb_ecommerce_store_footer_section',array(
@@ -625,8 +674,7 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 		'section'	=> 'bb_ecommerce_store_footer_section',
 		'type'		=> 'text'
 	));
-	
-	
+		
 }
 add_action( 'customize_register', 'bb_ecommerce_store_customize_register' );	
 
@@ -707,7 +755,7 @@ final class BB_Ecommerce_Store_Customize {
 				array(
 					'priority'   => 9,
 					'title'    => esc_html__( 'BB Ecommerce Pro', 'bb-ecommerce-store' ),
-					'pro_text' => esc_html__( 'Go Pro',         'bb-ecommerce-store' ),
+					'pro_text' => esc_html__( 'Go Pro','bb-ecommerce-store' ),
 					'pro_url'  => esc_url('https://www.themeshopy.com/premium/ecommerce-store-wordpress-theme/')
 				)
 			)

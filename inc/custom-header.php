@@ -22,22 +22,16 @@ if ( ! function_exists( 'bb_ecommerce_store_header_style' ) ) :
  *
  * @see bb_ecommerce_store_custom_header_setup().
  */
+add_action( 'wp_enqueue_scripts', 'bb_ecommerce_store_header_style' );
 function bb_ecommerce_store_header_style() {
-
-		$header_text_color = get_header_textcolor();
-	?>
-		<style type="text/css">
-			<?php
-				//Check if user has defined any header image.
-				if ( get_header_image() ) :
-			?>
-				.header{
-					background: url(<?php echo esc_url(get_header_image()); ?>) no-repeat;
-					background-position: center top;
-				}
-			<?php endif; ?>	
-		</style>
-	<?php
-
+	//Check if user has defined any header image.
+	if ( get_header_image() ) :
+	$custom_css = "
+        .header{
+			background-image:url('".esc_url(get_header_image())."');
+			background-position: center top;
+		}";
+	   	wp_add_inline_style( 'bb-ecommerce-store-basic-style', $custom_css );
+	endif;
 }
 endif; // bb_ecommerce_store_header_style

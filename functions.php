@@ -138,9 +138,9 @@ function bb_ecommerce_store_widgets_init() {
 	) );
 
 	register_sidebar( array(
-		'name'          => __( 'Static page Sidebar', 'bb-ecommerce-store' ),
-		'description'   => __( 'Appears on posts and pages', 'bb-ecommerce-store' ),
-		'id'            => 'static-sidebar',
+		'name'          => __( 'Home Page Sidebar', 'bb-ecommerce-store' ),
+		'description'   => __( 'Appears on Home Page', 'bb-ecommerce-store' ),
+		'id'            => 'homepage',
 		'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</aside>',
 		'before_title'  => '<h3 class="widget-title">',
@@ -256,7 +256,6 @@ function bb_ecommerce_store_font_url(){
 	return $font_url;
 }
 
-
 /* Theme enqueue scripts */
 function bb_ecommerce_store_scripts() {
 	wp_enqueue_style( 'bb-ecommerce-store-font', bb_ecommerce_store_font_url(), array() );
@@ -264,7 +263,6 @@ function bb_ecommerce_store_scripts() {
 	wp_enqueue_style( 'bb-ecommerce-store-basic-style', get_stylesheet_uri() );
 	wp_style_add_data( 'bb-ecommerce-store-style', 'rtl', 'replace' );
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/fontawesome-all.css' );
-	wp_enqueue_style( 'nivo-style', get_template_directory_uri().'/css/nivo-slider.css' );
 
 	// Paragraph
 	    $bb_ecommerce_store_paragraph_color = get_theme_mod('bb_ecommerce_store_paragraph_color', '');
@@ -300,7 +298,6 @@ function bb_ecommerce_store_scripts() {
 		$bb_ecommerce_store_h6_color = get_theme_mod('bb_ecommerce_store_h6_color', '');
 	    $bb_ecommerce_store_h6_font_family = get_theme_mod('bb_ecommerce_store_h6_font_family', '');
 	    $bb_ecommerce_store_h6_font_size = get_theme_mod('bb_ecommerce_store_h6_font_size', '');
-
 
 		$custom_css ='
 			p,span{
@@ -349,8 +346,6 @@ function bb_ecommerce_store_scripts() {
 
 			';
 		wp_add_inline_style( 'bb-ecommerce-store-basic-style',$custom_css );
-
-	wp_enqueue_script( 'jquery-nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
 	wp_enqueue_script( 'bb-ecommerce-store-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -368,14 +363,14 @@ add_action('wp_enqueue_scripts','bb_ecommerce_store_ie_stylesheet');
 
 define('BB_ECOMMERCE_STORE_BUY_NOW','https://www.themeshopy.com/premium/ecommerce-store-wordpress-theme/','bb-ecommerce-store');
 define('BB_ECOMMERCE_STORE_LIVE_DEMO','https://www.themeshopy.com/ecommerce-store-wordpress-theme/','bb-ecommerce-store');
-define('BB_ECOMMERCE_STORE_PRO_DOC','https://themeshopy.com/docs/bb-ecommerce-store/','bb-ecommerce-store');
-define('BB_ECOMMERCE_STORE_FREE_DOC','https://themeshopy.com/docs/free-bb-ecommerce/','bb-ecommerce-store');
+define('BB_ECOMMERCE_STORE_PRO_DOC','https://themeshopy.com/demo/docs/bb-ecommerce-store/','bb-ecommerce-store');
+define('BB_ECOMMERCE_STORE_FREE_DOC','https://www.themeshopy.com/demo/docs/free-bb-ecommerce/','bb-ecommerce-store');
 define('BB_ECOMMERCE_STORE_CONTACT','https://wordpress.org/support/theme/bb-ecommerce-store/','bb-ecommerce-store');
-define('BB_ECOMMERCE_STORE_CREDIT','https://www.themeshopy.com/','bb-ecommerce-store');
+define('BB_ECOMMERCE_STORE_CREDIT','https://www.themeshopy.com/free/wp-ecommerce-store-wordpress-theme/','bb-ecommerce-store');
 
 if ( ! function_exists( 'bb_ecommerce_store_credit' ) ) {
 	function bb_ecommerce_store_credit(){
-		echo "<a href=".esc_url(BB_ECOMMERCE_STORE_CREDIT)." target='_blank'>".esc_html__('ThemeShopy','bb-ecommerce-store')."</a>";
+		echo "<a href=".esc_url(BB_ECOMMERCE_STORE_CREDIT)." target='_blank'>".esc_html__('Ecommerce WordPress Theme','bb-ecommerce-store')."</a>";
 	}
 }
 
@@ -398,27 +393,21 @@ function bb_ecommerce_store_sanitize_dropdown_pages( $page_id, $setting ) {
     }
 }
 
-add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
-function woocommerce_header_add_to_cart_fragment( $fragments ) {
-    ob_start();
-    ?>
-    <a class="cart-contents" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php esc_html_e( 'View your shopping cart', 'bb-ecommerce-store' ); ?>"><?php echo esc_html(WC() )->cart->get_cart_total(); ?></a> 
-    <?php
-    
-    $fragments['a.cart-contents'] = ob_get_clean();
-    
-    return $fragments;
-}
-
-
 // Change number or products per row to 3
-add_filter('loop_shop_columns', 'loop_columns');
-	if (!function_exists('loop_columns')) {
-		function loop_columns() {
+add_filter('loop_shop_columns', 'bb_ecommerce_store_loop_columns');
+	if (!function_exists('bb_ecommerce_store_loop_columns')) {
+		function bb_ecommerce_store_loop_columns() {
 	return 3; // 3 products per row
 	}
 }
 
+//* Excerpt Limit Begin */
+function bb_ecommerce_store_string_limit_words($string, $word_limit) {
+	$words = explode(' ', $string, ($word_limit + 1));
+	if(count($words) > $word_limit)
+	array_pop($words);
+	return implode(' ', $words);
+}
 
 /* Custom template tags for this theme. */
 require get_template_directory() . '/inc/template-tags.php';

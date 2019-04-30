@@ -1,19 +1,3 @@
-/*
-Theme Name: BB Ecommerce Store
-Theme URI: https://www.themeshopy.com/free/wp-ecommerce-store-wordpress-theme/
-Author: ThemeShopy
-Author URI: https://www.themeshopy.com
-Description: E-commerce Store is a free multipurpose E-commerce WordPress theme. E-commerce Store is an elegant E-commerce/Woo-Commerce WordPress theme suitable for E-commerce websites of any store type such as online bookstore, electronic store, apparel & clothing store, fashion store, sport & athletic goods store, handbags & feminine products store, cosmetics & saloon item shop, jewelry & luxury item store and various multipurpose online stores. The modern design and smooth coding standard make them perfect for business, corporate, companies and freelancers. Who wants to have an impactful and awesome online presence? We also utilize best and clean coding standard that functions well with the latest WordPress version. This Free customizable responsive Woo-commerce WordPress theme includes plenty of customization options that are fairly easy to use. You can easily customize them, using the short codes and hook. Setting up, an astonishing e-store that's a dazzling beauty was never this easy before. Main features of our Free e-commerce-store includes Customizer theme options, background image, and color, SEO optimized, fully responsive, fast loading. Why stop there? If you can setup your website, easily utilizing our free business WordPress theme.  why not take it a notch further?  Upgrade to your premium theme, as it offers an army of features, along with customization options with a customer care support that will resolve your problems in no time. We have a devoted team of developers that believes in perfection and providing the best product for the users. This team will be ready at the helm to provide you with support and being your ultimate back-up. If you ever required our assistance. Customer satisfaction is our top priority; we strive to deliver the best and aren’t going to be ever content with anything less. If it doesn’t satisfy the user then it won’t please us either. You can easily set up and dip your hands into the world E-marketing with our free corporate WordPress theme. Our free themes are user and mobile friendly, very responsive and have a beautiful professional look.  It is not going to be enough in a longer run. Your business is bound to grow and with a booming business, you would need to make upgrades in almost every business aspect. The way your website appears and works is significant for an online store.  Upgrading to premium WordPress theme should take first priority, in that case. The first impression is the last impression and you can leave an ever-lasting one, with the aid of our premium WordPress theme.  Upgrade your free theme to premium now! You can take a free demo tour of our premium theme and see how it will sit on your website. Click on the click below to being your demo tour. https://www.themeshopy.com/ecommerce-store-wordpress-theme/
-Version: 1.3.3
-License: GNU General Public License
-License URI: license.txt
-Text Domain: bb-ecommerce-store
-Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, front-page-post-form, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, e-commerce,post-formats, portfolio
-BB Ecommerce Store WordPress Theme has been created by ThemeShopy(themeshopy.com), 2017.
-BB Ecommerce Store WordPress Theme is released under the terms of GNU GPL
-*/
-
-
 *{ 
   margin:0;
   padding:0;
@@ -26,7 +10,7 @@ body{
   -ms-word-wrap:break-word;
   word-wrap:break-word;
   background-color:#fff;
-  font:12px/22px arial;
+  font-family:'Roboto';
   color:#5b5b5b;
 }
 
@@ -54,9 +38,9 @@ h6{
 
 p, span {
    
-    font-size: 12px;
-    color: #000;
-    }
+  font-size: 12px;
+  color: #000;
+}
 
 p{ 
   margin:0;
@@ -218,7 +202,6 @@ section{
 }
 
 h2.section-title { 
-  font-family:'Roboto';
   font-size:30px;
   font-weight:700;
   padding:0 0 45px 0;
@@ -231,62 +214,64 @@ table{
 }
 
 /* --------- SLIDER--------- */
+#slider .carousel-control-next-icon,
+#slider .carousel-control-prev-icon{
+  background: transparent;
+  color: #fff;
+}
 #slider{ 
   max-width:100%;
-  margin:auto;
+  margin:auto; 
   padding:0;
-  position:relative;
+  background: #000;
+}
+#slider img {
+  width: 100%;
+  opacity: 0.7;
+}
+#slider .carousel-item-next,#slider .carousel-item-prev,#slider .carousel-item.active {
+  display: block !important;
 }
 
-.nivo-caption {
-  top:25%!important;
+#slider .carousel-control-next, #slider .carousel-control-prev{
+  opacity: 1;
 }
-
-#slider .slide-cap{ 
-  position:relative;
-  margin:auto;
-  width:90%;
-  margin-left:auto;
-  margin-right:auto;top:25%;
+.carousel-control-next-icon, .carousel-control-prev-icon{
+  width: auto;
+  height:auto;
 }
-
-#slider .slide-cap h4{
-  text-transform:uppercase;
-  font-size:25px;
-  width:100%;
-  margin:0 auto;
-  background:url('images/welcome.png') center no-repeat;
-  background-position: center;
-  padding:5px 0;
-  font-weight:bold;
-}
-
-#slider .slide-cap h3 {
-  font: 700 80px 'Roboto';
+#slider .inner_carousel h2{
+  font-weight: bolder;
+  letter-spacing: 1px;
+  color: #fff;
+  padding: 0px;
+  font-size: 35px;
   text-transform: uppercase;
-  background: url('images/border.png') no-repeat center bottom;
-  padding-bottom: 50px;
-  font-size: 38px;
 }
 
-#slider .slide-cap p{ 
-  color:#ffffff;
-  font-weight:700;
-  margin:0 0 0 0;
-  line-height:20px;
-  border-radius:0 0 5px 5px;
-  font:20px arial;
-  text-transform:uppercase;
-  font-weight:bold;
+#slider .inner_carousel {
+  text-align:right;
+  color: #fff;
 }
-
-#slider .slide-cap a.read-more{
-  display:none;
-  border-radius:3px;
-  padding:10px 25px;
-  border:1px solid #ffffff;
-  color:#ffffff;
+#slider .more-btn a {
+  color: #fff;
+  background: #e22626;
+  padding: 10px;
+  border: 2px #fff solid;
+  font-size: 18px;
+  font-weight: 600;
 }
+#slider .more-btn {
+  padding: 20px 0px;
+}
+#slider .carousel-caption {
+  position: absolute;
+  transform: translateY(-50%);
+  left: 10%;
+  right: 40%;
+  top: 50%;
+}
+/* slider end */
 
 a.blog-more{ 
   display:inline-block;
@@ -320,26 +305,23 @@ a.blog-more{
   margin:0;
   padding:0 0 15px;
 }
-
 .header .logo h1{ 
   padding:0;
   margin-bottom:8px;
   font-size:20px;
 }
-
 .header .logo a{ 
   color:#fff;
-  font-family:'Roboto';
   font-size:37px;
   text-decoration:none;
 }
-
 .header .logo p{ 
   font-size:14px;
-  font-family:'Roboto';
   color:#fff;
 }
-
+.header .cart-btn-box {
+  display: -webkit-box;
+}
 .toggle{
   display:none;
 }
@@ -351,43 +333,36 @@ a.blog-more{
   padding-top:15px;
   background: #333;
 }
-
 .header .nav{ 
   margin:0;
   padding:0;
   text-align:right;
   background: #e22626;
 }
-
 .header .nav ul { 
   margin:10px 0 0;
   padding:0;
-  font-family:'Roboto';
   font-weight:400;
   font-size:14px;
 }
-
 .header .nav ul li{ 
   display:inline-block;
   margin:0;
   position:relative;
 }
-
 .header .nav ul li a{ 
   color:#ffffff;
   padding:10px 10px;
   display:block;
 }
-
 .header .nav ul li a:hover{
   background:#e22626;
   color:#fff;
   text-decoration:none;
 }
-
 .header .nav ul li a:active{
-  background:#ffd34e;
-  color:#000;
+  background: #fff;
+  color: #000;
 }
 .cathead {
   background: #333;
@@ -409,20 +384,21 @@ a.blog-more{
   color: #fff;
 }
 .topbar {
-  font-family: Roboto;
   background: #e22626;
   padding: 5px 0;
 }
 .social-media i {
   color: #fff;
   margin-right: 5%;
+  font-size: 19px;
 }
-.top-contact {
+.top-contact span {
   color: #fff;
-  font-size: 12px;
+  font-size: 16px;
 }
 .top-contact i {
   margin-left: 5%;
+  color: #fff;
 }
 .social-media {
   text-align: left;
@@ -445,34 +421,46 @@ a.blog-more{
   border-right:1px solid #f1f1f1;
   padding-right:5px;
 }
+form.woocommerce-product-search {
+  display: flex;
+}
+form.woocommerce-product-search button[type="submit"] {
+  padding: 10px 25px;
+  background:url(images/search.png) no-repeat scroll 14px #e22626;
+  text-indent: -9999px;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  right: 0;
+}
 
 /*----------static page----------*/
 #sidebar .search-field::placeholder {
-    color: white;
+  color: white;
 }
-.cart_no {
-  color: #fff;
-  font-size: 18px;
-  font-weight: bold;
-  margin-bottom: 3%;
+.cart_icon {
+  margin-bottom: 15px;
 }
-.cart_no a{
+.cart_icon a{
   color: #fff;
 }
 .cart_icon i {
-  background: #e22626;
-  color: #fff;
+  background: #fff;
+  color: #e22626;
   padding: 12px;
   border-radius: 50%;
+  font-size: 20px;
+  margin-left: 10px;
 }
 button.search-submit {
   background: #e22626;
   border: none;
-  padding: 11px 15px;
+  padding: 10px 15px;
   color: #fff;
 }
 input#woocommerce-product-search-field {
-    width: 90%;
+  width: 90%;
 }
 .woocommerce ul.products li.product .price {
   color: #000 !important;
@@ -482,7 +470,7 @@ input#woocommerce-product-search-field {
   margin-top: 2% !important;
 }
 h2.woocommerce-loop-product__title {
-    font-size: 18px !important;
+  font-size: 18px !important;
 }
 #our-products a.button {
   border: 2px solid;
@@ -506,9 +494,16 @@ h2.woocommerce-loop-product__title {
   padding: 15px !important;
   background: #f5f5f5;
 }
+.product-category img {
+  width: 27px;
+}
+ul.products.columns-4 h2:hover {
+  color: #e22626 ;
+}
 .static-sidebar {
   background: #f3f3f3;
   color: #222222;
+  padding: 0px 18px;
 }
 .static-sidebar h3 {
   font-size: 20px;
@@ -538,8 +533,12 @@ h2.woocommerce-loop-product__title {
   padding: 8px 5px;
 }
 .static-sidebar li a {
-  color: #e22626;
-  font-size: 15px;
+  color: #222222;
+  font-size: 19px;
+  border-bottom: 1px #e7e7e7 solid;
+  border-bottom-width: 100%;
+  display: -webkit-box;
+  padding: 3px 0;
 }
 .static-sidebar ul li {
   list-style: none;
@@ -574,6 +573,30 @@ section {
   font: 26px 'PT sans';
   margin: 0;
 }
+#our-service {
+  background: #e22626;
+  padding: 2% 8%;
+}
+#our-service .service a h4 {
+  color: #fff;
+}
+#our-service .service p {
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  text-align: center;
+}
+#our-service .service {
+  margin: 5px 0;
+}
+#our-service .service a h4 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+}
 .services {
   padding:0;
   margin-top: 3%;
@@ -593,6 +616,9 @@ section {
   font-size: 15px;
   padding: 0 15px;
   letter-spacing: 1px;
+}
+#our-services .search-form .search-submit {
+  padding: 10px;
 }
 .inner-service {
   background: #fff;
@@ -622,27 +648,6 @@ h3.ecomercepost-title {
   margin: 0 18%;
   display: inline-block;
 }
-
-/* --------- POST --------- */
-.bradcrumbs{
-  padding:30px 0;
-}
-.bradcrumbs a{
-  background:#f1f1f1;
-  color:#000;
-  padding:5px 15px;
-  margin-left:5px;
-  line-height: 37px;
-}
-.bradcrumbs a:hover{
-  background:#ffd34e;
-}
-.bradcrumbs span{
-  background:#dddddd;
-  color:#000;
-  padding:5px 15px;
-}
-
 /* --------- Blog Page ------- */
 .blogbutton-small{
   background:none;
@@ -659,33 +664,19 @@ h3.ecomercepost-title {
   display:table;
 }
 .box-image img {
-    width: 100%;
+  width: 100%;
 }
-.metabox{color:#000;
+.metabox{
+  color:#000;
   padding:15px 15px;
   clear:both;
 }
-.metabox .entry-date{
-  background:url('images/date.png') no-repeat;
-  padding: 0 20px 0 0;
-  margin:0 0 0 13px;
-  font-size: 15px;
-  color: #636060;
+.metabox span{
+  margin-left:10px;
 }
-.metabox .entry-author{
-  background:url('images/author.png') no-repeat;
-  padding: 0 20px 0 0;
-  margin:0 0 0 20px;
-  font-size: 15px;
-  color: #636060;
+.metabox i{
+  margin-left: 5px;
 }
-.metabox .entry-comments{
-  background:url('images/comments.png') no-repeat;
-  padding: 0 20px 0 0;
-  font-size: 15px;
-  color: #636060;
-}
-
 /* Comments BOX */
 #comments{
   margin-top:40px;
@@ -776,7 +767,7 @@ h3.ecomercepost-title {
   text-align: center;
 }
 #sidebar td {
-  padding: 10px;
+  padding: 7px;
   color: #fff;
 }
 #sidebar th {
@@ -801,10 +792,12 @@ h3.ecomercepost-title {
   text-align: right;
   padding: 15px;
   font-size: 24px;
-  font-family: Roboto;
   background: #e22626;
   color: #fff;
   margin-bottom: 5%;
+}
+#sidebar h3 a{
+  color: #fff;
 }
 #sidebar input[type="search"] {
   background:none;
@@ -856,6 +849,14 @@ h3.ecomercepost-title {
   margin:0 0 5px;
   display:inline-block;
 }
+.copyright-wrapper form label {
+  display: inline-block;
+  margin-bottom: .5rem;
+  width: 61%;
+}
+.copyright-wrapper .textwidget p {
+  color: #fff;
+}
 #sidebar .tagcloud a:hover,
 .copyright-wrapper .tagcloud a:hover{
   background:#e22626;
@@ -875,7 +876,7 @@ a.showcoupon,
   color: #e22626;
 }
 .woocommerce-message {
-    border-top-color: #e22626;
+  border-top-color: #e22626;
 }
 .woocommerce span.onsale{
   background: #e22626;
@@ -906,16 +907,15 @@ span.woocommerce-input-wrapper,
 .woocommerce label {
  width: 100%;
 }
-
 h2.woocommerce-loop-product__title,
 .woocommerce div.product .product_title {
-    color: #000;
-    letter-spacing: 1px;
-    font-weight: 500;
+  color: #000;
+  letter-spacing: 1px;
+  font-weight: 500;
 }
 .woocommerce ul.products li.product .price,
 .woocommerce div.product p.price, .woocommerce div.product span.price {
-    color: #000;
+  color: #000;
 }
 .woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price{
   margin-bottom: 5px;
@@ -937,6 +937,13 @@ h2.woocommerce-loop-product__title,
   border: solid 1px #000;
   color: #000;
 }
+.woocommerce .cart .button, .woocommerce .cart input.button {
+    padding: 11.1px;
+}
+.woocommerce div.product .woocommerce-tabs ul.tabs li.active,
+.woocommerce-checkout #content-bb ul li{
+  color: #000;
+}
 /* Page */
 .title-box{
   background-repeat:no-repeat;
@@ -947,14 +954,6 @@ h2.woocommerce-loop-product__title,
   font-weight:bold;
   text-align:center;
   margin-bottom:25px;
-  font-family:Roboto;
-}
-.date-box{
-  background:url(images/calender.png) no-repeat 1px 3px;
-  padding:0 25px 0 0;
-  font-style:italic;
-  font-weight:bold;
-  margin:0 0 15px 0;
 }
 .cat-box{
   background:url(images/cat-icon.png) no-repeat 1px 3px;
@@ -966,9 +965,6 @@ h2.woocommerce-loop-product__title,
 .single .title-box{
   background-size:100% 100%;
 }
-#content-bb {
-  font-family:Roboto;
-}
 #content-bb p{
   line-height: 25px;
   font-size: 16px;
@@ -977,12 +973,13 @@ h2.woocommerce-loop-product__title,
 #content-bb hr{
   border:none;
   border-bottom:2px dotted #7e7e7e;
-  margin:35px 0;
+  margin:10px 0;
   clear:both;
 }
 #content-bb h1{
   font-size:35px;
   margin:20px 0 0 0;
+  text-transform: capitalize;
 }
 #content-bb h2{
   font-size:30px;
@@ -991,7 +988,6 @@ h2.woocommerce-loop-product__title,
   padding:0;
   color:#000;
   margin:0 0 15px;
-  font-family:Roboto;
 }
 #content-bb h3{
   font-size:36px;
@@ -1000,7 +996,6 @@ h2.woocommerce-loop-product__title,
   padding:0;
   color:#000;
   margin:0 0 25px;
-  font-family:Roboto;
 }
 #content-bb h4{
   font-size:20px;
@@ -1009,7 +1004,6 @@ h2.woocommerce-loop-product__title,
   padding:0;
   color:#333;
   margin:0 0 10px;
-  font-family:Roboto;
 }
 #content-bb  h6{
   font-size:18px;
@@ -1120,9 +1114,6 @@ a.button {
 .copyright-wrapper .widget ul{
   margin-right: 0;
 }
-.copyright-wrapper .widget {
-    padding: 20px 0;
-}
 .copyright-wrapper input[type="submit"]{
   margin-top: 0;
   padding: 10px 9px;
@@ -1131,6 +1122,7 @@ a.button {
 .copyright-wrapper input.search-submit {
   float: left;
   width: 39%;
+  padding: 11px;
 }
 .copyright-wrapper .search-form .search-field {
   width: 100%;
@@ -1147,12 +1139,11 @@ a.button {
   text-align: center;
 }
 .copyright-wrapper td {
-  padding: 9px;
+  padding: 3px;
   color: #fff;
 }
 .copyright-wrapper th {
   text-align: center;
-  padding: 10px;
   color: #fff;
 }
 .copyright-wrapper select {
@@ -1313,8 +1304,9 @@ form.search-form{
 
 input.search-field,
 .post-password-form input[type=password]{
-  border:1px #eee solid;
-  padding:9px 2px;
+  border:1px #6c6c6c solid;
+  padding:9px;
+  width: 88%;
   background: transparent;
   color: #e22626;
 }
@@ -1395,7 +1387,10 @@ nav.post-navigation{
 .wpcf7-form p{ 
   color:#222222;
 }
-
+/*video*/
+iframe{
+  width: 100%;
+}
 /*responsive menu*/
 @media screen and (max-width:686px){
   #content-bb #comments ul{
@@ -1457,7 +1452,6 @@ nav.post-navigation{
     float:none;
     text-align:right;
   }
-
   .nav ul li a{
     padding:5px 10px;
     display:block;
@@ -1507,6 +1501,15 @@ nav.post-navigation{
     margin: 20px 0 0 0;
     min-height: auto;
   }
+  .woocommerce ul.products[class*=columns-] li.product, .woocommerce-page ul.products[class*=columns-] li.product {
+    width: 100%;
+  }
+  .header .cart-btn-box {
+    display: inline-block;
+    text-align: center;
+    max-width: 100%; 
+    top: 10px;
+  }
 }
 @media screen and (min-width:720px){
   .header .nav ul li ul{
@@ -1515,23 +1518,26 @@ nav.post-navigation{
     font-weight:normal;
     margin: 5% 0 0 0;
   }
+  input#woocommerce-product-search-field {
+    width: 86%;
+  }
   .header .nav ul li:hover > ul{
-    display:block;
-    background:#222222;
-    width:200px;
-    position:absolute;
-    top:41px;
-    right:0;
-    text-align:right;
-    padding:10px 0;
-    z-index:99;
+    display: block;
+    background: #222222;
+    width: 200px;
+    position: absolute;
+    right: 0;
+    top: 45px;
+    z-index: 99;
   }
   .header .nav ul li:hover > ul li{ 
     display:block;
   }
   .header .nav ul li:hover > ul li a{ 
-    padding:7px 10px 7px 0px;
-    color:#ffffff;
+    padding: 10px 10px 10px 0px;
+    color: #ffffff;
+    font-size: 15px;
+    font-weight: 600;
   }
   .header .nav ul li:hover ul li ul{
     display:none;
@@ -1541,7 +1547,7 @@ nav.post-navigation{
     display:block;
     position:absolute;
     right:200px;
-    top:5px;
+    top: -6px;
   }
   
   .header .nav ul.sub-menu{
@@ -1551,6 +1557,7 @@ nav.post-navigation{
   .header .nav ul.sub-menu li a:hover{
     background:#e22626;
     color:#fff;
+    border: 1px #fff solid;
   }
   .header .nav ul {
     margin:0;
@@ -1559,6 +1566,7 @@ nav.post-navigation{
     color:#fff;
     padding:15px;
     display:block;
+    font-weight: 600;
   }
 }
 @media screen and (min-width: 1000px) {
@@ -1574,12 +1582,6 @@ nav.post-navigation{
     padding-bottom:10px;
     border-bottom:1px #313131 solid;
   }
-}
-@media print{    
-    .nav *,#sidebar *
-    {
-        display: none !important;
-    }
 }
 @media screen and (max-width: 720px) and (min-width: 320px){
   #sidebar {
@@ -1614,8 +1616,15 @@ nav.post-navigation{
 }
 @media screen and (max-width: 768px) and (min-width: 721px){
   #our-products .woocommerce ul.products li.product {
-      margin: 0 4px 2.992em;
-      width: 48%;
+    margin: 0 4px 2.992em;
+    width: 48%;
+  }
+  #slider .carousel-caption {
+    top: 58px;
+    right: 10%;
+  }
+  .cathead {
+    top:0px;
   }
 }
 @media screen and (max-width: 1024px) and (min-width: 990px){
@@ -1623,8 +1632,43 @@ nav.post-navigation{
       margin: 0 4px 2.992em;
       width: 23.8%;
   }
+   #slider .inner_carousel h2 a {
+    font-weight: bolder;
+    letter-spacing: 1px;
+    padding: 0px;
+    font-size: 28px;
+  }
+  #slider .carousel-caption {
+    right: 20%;
+  }
 }
-/*video*/
-iframe{
-  width: 100%;
+@media screen and (max-width: 999px) and (min-width: 768px){
+  #sidebar td, #sidebar th,
+  .copyright-wrapper td,
+  .copyright-wrapper th{
+    padding: 0px !important; 
+  }
+}
+@media only screen and (max-width: 1024px) and (min-width: 1000px){
+  #sidebar td, #sidebar td#prev a, #sidebar th,
+  #footer td ,#footer th{
+    padding: 2px !important;
+  }
+}
+@media screen and (max-width: 425px){
+  #slider .inner_carousel h2
+  {
+    display: none;
+  }
+  #slider .carousel-caption{
+    right:30%;
+  }
+}
+@media only screen and (max-width: 767px) and (min-width: 426px){
+  #slider .inner_carousel h2{
+    display: none;
+  }
+  #slider .carousel-caption{
+    right:30%;
+  }
 }

@@ -84,7 +84,7 @@ if ( ! function_exists( 'bb_ecommerce_store_the_custom_logo' ) ) :
  *
  * Does nothing if the custom logo is not available.
  *
- * @since Twenty Sixteen 1.2
+ * @since BB Ecommerce Store
  */
 function bb_ecommerce_store_the_custom_logo() {
 	if ( function_exists( 'the_custom_logo' ) ) {

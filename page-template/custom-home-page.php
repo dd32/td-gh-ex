@@ -7,113 +7,163 @@ get_header(); ?>
 
 <div class="container">
 	<div class="row">
-		<div class="col-md-3 static-sidebar">
-	        <div class="cathead"><i class="fa fa-bars" aria-hidden="true"></i><span><?php echo esc_html('ALL CATEGORIES') ?></span></div>
-			<div class="sidepro">
-				<?php dynamic_sidebar('static-sidebar');?>
-			</div>
+		<?php do_action( 'bb_ecommerce_store_before_static_sidebar' ); ?>
+		<div class="col-lg-3 col-md-3 static-sidebar">
+	        <div class="cathead">
+	          <i class="fa fa-bars" aria-hidden="true"></i><span><?php echo esc_html_e('ALL CATEGORIES','bb-ecommerce-store'); ?></span>
+	        </div>
+	        <?php if(class_exists('woocommerce')){ ?>
+	        <div class="product-category">
+	            <?php
+	              $args = array(
+	                //'number'     => $number,
+	                'orderby'    => 'title',
+	                'order'      => 'ASC',
+	                'hide_empty' => 0,
+	                'parent'  => 0
+	                //'include'    => $ids
+	              );
+	              $product_categories = get_terms( 'product_cat', $args );
+	              $count = count($product_categories);
+	              if ( $count > 0 ){
+	                  foreach ( $product_categories as $product_category ) {
+	                      $cat_id   = $product_category->term_id;
+	                    $cat_link = get_category_link( $cat_id );
+	                    $thumbnail_id = get_woocommerce_term_meta( $product_category->term_id, 'thumbnail_id', true ); // Get Category Thumbnail
+	                    $image = wp_get_attachment_url( $thumbnail_id );
+	                    if ($product_category->category_parent == 0) {
+	                      ?>
+	                   <li class="drp_dwn_menu"><a href="<?php echo esc_url(get_term_link( $product_category ) ); ?>">
+	                    <?php
+	                   if ( $image ) {
+	                  echo '<img class="thumd_img" src="' . esc_url( $image ) . '" alt="" />';
+	                }
+	                  echo esc_html( $product_category->name ); ?></a></li>
+	                   <?php
+	                  }
+	                }
+	              }
+	            ?>
+	          </div>
+	        <?php } ?>
+	       	<div id="sidebar">
+	       		<?php dynamic_sidebar('homepage'); ?>
+	       	</div>
 		</div>
-		<div class="col-md-9">
+		<div class="col-lg-9 col-md-9">
 			<?php do_action( 'bb_ecommerce_store_before_slider' ); ?>
 
-			<?php /** slider section **/ ?>
-				<?php
-				// Get pages set in the customizer (if any)
-				$pages = array();
-				for ( $count = 1; $count <= 5; $count++ ) {
-				$mod = absint( get_theme_mod( 'bb_ecommerce_store_slidersettings-page-' . $count ));
-				if ( 'page-none-selected' != $mod ) {
-				  $pages[] = $mod;
-				}
-				}
-				if( !empty($pages) ) :
-				  $args = array(
-				    'posts_per_page' => 5,
-				    'post_type' => 'page',
-				    'post__in' => $pages,
-				    'orderby' => 'post__in'
-				  );
-				  $query = new WP_Query( $args );
-				  if ( $query->have_posts() ) :
-				    $count = 1;
-				    ?>
-					<div class="slider-main">
-				    	<div id="slider" class="nivoSlider">
-					      <?php
-					        $bb_ecommerce_store_n = 0;
-							while ( $query->have_posts() ) : $query->the_post();
-							  
-							  $bb_ecommerce_store_n++;
-							  $bb_ecommerce_store_slideno[] = $bb_ecommerce_store_n;
-							  $bb_ecommerce_store_slidetitle[] = get_the_title();
-							  $bb_ecommerce_store_slidelink[] = esc_url(get_permalink());
-							  ?>
-							    <img src="<?php the_post_thumbnail_url('full'); ?>" title="#slidecaption<?php echo esc_attr( $bb_ecommerce_store_n ); ?>" />
-							  <?php
-							$count++;
-							endwhile;
-					      ?>
-					    </div>
-
-					    <?php
-					    $bb_ecommerce_store_k = 0;
-				      	foreach( $bb_ecommerce_store_slideno as $bb_ecommerce_store_sln )
-				      	{ ?>
-					      <div id="slidecaption<?php echo esc_attr( $bb_ecommerce_store_sln ); ?>" class="nivo-html-caption">
-					        <div class="slide-cap  ">
-					          <div class="container">
-					            <h2><?php echo esc_html($bb_ecommerce_store_slidetitle[$bb_ecommerce_store_k] ); ?></h2>
-					            <a class="read-more" href="<?php echo esc_url($bb_ecommerce_store_slidelink[$bb_ecommerce_store_k] ); ?>"><?php esc_html_e( 'Learn More','bb-ecommerce-store' ); ?></a>
-					          </div>
+			<?php if( get_theme_mod('bb_ecommerce_store_slider_hide_show') != ''){ ?>
+				<section id="slider">
+				  	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
+					    <?php $pages = array();
+					      	for ( $count = 1; $count <= 4; $count++ ) {
+						        $mod = intval( get_theme_mod( 'bb_ecommerce_store_slider' . $count ));
+						        if ( 'page-none-selected' != $mod ) {
+						          $pages[] = $mod;
+						        }
+					      	}
+					      	if( !empty($pages) ) :
+					        $args = array(
+					          	'post_type' => 'page',
+					          	'post__in' => $pages,
+					          	'orderby' => 'post__in'
+					        );
+					        $query = new WP_Query( $args );
+					        if ( $query->have_posts() ) :
+					          $i = 1;
+					    ?>     
+					    <div class="carousel-inner" role="listbox">
+					      	<?php  while ( $query->have_posts() ) : $query->the_post(); ?>
+					        <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
+					          	<img src="<?php the_post_thumbnail_url('full'); ?>"/>
+					          	<div class="carousel-caption">
+						            <div class="inner_carousel">
+						              	<h2><?php the_title();?></h2>
+						              	<div class="more-btn">              
+				                        <a href="<?php the_permalink(); ?>"><?php esc_html_e('SHOP NOW','bb-ecommerce-store'); ?></a>
+				                      </div>		            
+						            </div>
+					          	</div>
 					        </div>
-					      </div>
-					        <?php $bb_ecommerce_store_k++;				    	
-					    } ?>
-					</div>
-				    <?php else : ?>
-				      <div class="header-no-slider"></div>
-				    <?php
-				  endif;
-				endif;
-			?>
+					      	<?php $i++; endwhile; 
+					      	wp_reset_postdata();?>
+					    </div>
+					    <?php else : ?>
+					    <div class="no-postfound"></div>
+					      <?php endif;
+					    endif;?>
+					    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+					      <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+					    </a>
+					    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+					      <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+					    </a>
+				  	</div>  
+				  	<div class="clearfix"></div>
+				</section> 
+			<?php }?>
 
 			<?php do_action( 'bb_ecommerce_store_after_slider' ); ?>
 
-			<section id="our-products">
-			    <div class="text-center innerlightbox">
-			        <?php if( get_theme_mod('bb_ecommerce_store_sec1_title') != ''){ ?>     
-			            <h3><?php echo esc_html(get_theme_mod('bb_ecommerce_store_sec1_title',__('New Products','bb-ecommerce-store'))); ?></h3>
-			        <?php }?>
-			    </div>
-				<?php $pages = array();
-				for ( $count = 0; $count <= 0; $count++ ) {
-					$mod = intval( get_theme_mod( 'bb_ecommerce_store_servicesettings-page-' . $count ));
-					if ( 'page-none-selected' != $mod ) {
-					  $pages[] = $mod;
-					}
-				}
-				if( !empty($pages) ) :
-				  $args = array(
-				    'post_type' => 'page',
-				    'post__in' => $pages,
-				    'orderby' => 'post__in'
-				  );
-				  $query = new WP_Query( $args );
-				  if ( $query->have_posts() ) :
-				    $count = 0;
-						while ( $query->have_posts() ) : $query->the_post(); ?>
-						    <div class="row box-image text-center">
-						        <p><?php the_content(); ?></p>
-						        <div class="clearfix"></div>
-						    </div>
-						<?php $count++; endwhile; ?>
-				  <?php else : ?>
-				      <div class="no-postfound"></div>
-				  <?php endif;
-				endif;
-				wp_reset_postdata();?>
-			    <div class="clearfix"></div> 
-			</section>
+			<?php if( get_theme_mod('bb_ecommerce_store_services_category') != ''){ ?> 
+				<section id="our-service">					
+					<div class="row">
+					    <?php 
+						  $catData=  get_theme_mod('bb_ecommerce_store_services_category');
+						  if($catData){
+					    $page_query = new WP_Query(array( 'category_name' => esc_html($catData,'bb-ecommerce-store')));?>
+					     	<?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
+					     		<div class="col-lg-4 col-md-4">
+					     			<div class="service">
+					          			<a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
+					          			<p><?php $excerpt = get_the_excerpt(); echo esc_html( bb_ecommerce_store_string_limit_words( $excerpt,10 ) ); ?></p>
+					          		</div>
+					        	</div>
+				     	<?php endwhile;
+				     	wp_reset_postdata();
+						}?>
+					</div>
+				</section>
+			<?php }?>
+
+			<?php do_action( 'bb_ecommerce_store_after_services_category' ); ?>
+
+			<?php if( get_theme_mod('bb_ecommerce_store_sec1_title') != ''){ ?>   
+				<section id="our-products">
+					    <div class="text-center innerlightbox">
+					        <?php if( get_theme_mod('bb_ecommerce_store_sec1_title') != ''){ ?>     
+					            <h3><?php echo esc_html(get_theme_mod('bb_ecommerce_store_sec1_title',__('New Products','bb-ecommerce-store'))); ?></h3>
+					        <?php }?>
+					    </div>
+						<?php $pages = array();
+							$mod = intval( get_theme_mod( 'bb_ecommerce_store_servicesettings' ));
+							if ( 'page-none-selected' != $mod ) {
+							  $pages[] = $mod;
+							}
+						if( !empty($pages) ) :
+						  $args = array(
+						    'post_type' => 'page',
+						    'post__in' => $pages,
+						    'orderby' => 'post__in'
+						  );
+						  $query = new WP_Query( $args );
+						  if ( $query->have_posts() ) :
+						   
+								while ( $query->have_posts() ) : $query->the_post(); ?>
+								    <div class="row box-image text-center">
+								        <p><?php the_content(); ?></p>
+								        <div class="clearfix"></div>
+								    </div>
+								<?php endwhile; ?>
+						  <?php else : ?>
+						      <div class="no-postfound"></div>
+						  <?php endif;
+						endif;
+						wp_reset_postdata();?>
+					    <div class="clearfix"></div> 
+				</section>
+			<?php }?>
 
 			<?php do_action( 'bb_ecommerce_store_after_productsec' ); ?>
 

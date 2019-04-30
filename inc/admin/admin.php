@@ -16,10 +16,11 @@ function bb_ecommerce_store_mostrar_guide() {
 	//custom function about theme customizer
 	$return = add_query_arg( array()) ;
 ?>
- <div class="wrapper-info">
+
+<div class="wrapper-info">
 	 <div class="header">
 	 	<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/logo.png" alt="" />
-		<h2><?php esc_html_e('Welcome to Ecommerce Lite Theme', 'bb-ecommerce-store'); ?></h2>
+		<h2><?php esc_html_e('Welcome to BB Ecommerce Theme', 'bb-ecommerce-store'); ?></h2>
  		<p><?php esc_html_e('Most of our outstanding theme is elegant, responsive, multifunctional, SEO friendly has amazing features and functionalities that make them highly demanding for designers and bloggers, who ought to excel in web development domain. Our Themeshopy has got everything that an individual and group need to be successful in their venture.', 'bb-ecommerce-store'); ?></p>
 		<div class="main-button">
 			<a href="<?php echo esc_url( BB_ECOMMERCE_STORE_BUY_NOW ); ?>" target="_blank"><?php esc_html_e('Buy Now', 'bb-ecommerce-store'); ?></a>
@@ -70,7 +71,7 @@ function bb_ecommerce_store_mostrar_guide() {
 		</div>
 	  	<div class="features-section">
 	  		<div class="col-4">
-	  			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/screenshot.png" alt="" />
+	  			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/screenshot.jpg" alt="" />
 	  			<p><?php esc_html_e( 'BB Ecommerce Store WordPress Theme is an extremely user-friendly premium Ecommerce WordPress Theme. It is a multipurpose Ecommerce WordPress theme designed to build stunning online business stores. It is very flexible and has ample of options that makes the website development swift and easy. This is the perfect solution for webmasters who want to create modern online stores with ample number of useful features along with user & mobile friendly design. It comprises of a responsive layout design with the help of its advanced customization options. Easily change the entire look of your ecommerce store, with the help of hook and child theme features. Our WordPress ecommerce store made with secure and clean code and it best ecommerce ready WordPress themes available on the web now. It is built on the Bootstrap and has valid HTML and CSS codes. It features beautiful image galleries, numerous sidebars, well-built sections, menus, etc. This certainly makes our themes one of the best WordPress woo commerce Theme available on the internet. Sell out your products and inventory with BB Ecommerce theme and leave all your competitors battered and beaten.', 'bb-ecommerce-store' ); ?></p>
 	  		</div>
 	  		<div class="col-4">
