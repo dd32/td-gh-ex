@@ -148,12 +148,12 @@ function bakers_lite_scripts() {
 add_action( 'wp_enqueue_scripts', 'bakers_lite_scripts' );
 
 
-define('BAKERS_LITE_SKTTHEMES_URL','https://www.sktthemes.net','bakers-lite');
-define('BAKERS_LITE_SKTTHEMES_PRO_THEME_URL','https://www.sktthemes.net/shop/cakery-wordpress-theme/','bakers-lite');
-define('BAKERS_LITE_SKTTHEMES_FREE_THEME_URL','https://www.sktthemes.net/shop/free-cake-art-wordpress-theme','bakers-lite');
+define('BAKERS_LITE_SKTTHEMES_URL','https://www.sktthemes.org','bakers-lite');
+define('BAKERS_LITE_SKTTHEMES_PRO_THEME_URL','https://www.sktthemes.org/shop/cakery-wordpress-theme/','bakers-lite');
+define('BAKERS_LITE_SKTTHEMES_FREE_THEME_URL','https://www.sktthemes.org/shop/free-cake-art-wordpress-theme','bakers-lite');
 define('BAKERS_LITE_SKTTHEMES_THEME_DOC','http://sktthemesdemo.net/documentation/bakers-documentation/','bakers-lite');
 define('BAKERS_LITE_SKTTHEMES_LIVE_DEMO','https://www.sktperfectdemo.com/demos/bakers/','bakers-lite');
-define('BAKERS_LITE_SKTTHEMES_THEMES','https://www.sktthemes.net/themes/','bakers-lite');
+define('BAKERS_LITE_SKTTHEMES_THEMES','https://www.sktthemes.org/themes/','bakers-lite');
 /**
  * Custom template for about theme.
  */

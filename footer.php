@@ -33,7 +33,7 @@ if ( is_active_sidebar( 'fc-1' ) || is_active_sidebar( 'fc-2' ) || is_active_sid
          <div id="copyright-area">
          <div class="copyright-wrapper">
         	<div class="container">
-           		 <div class="copyright-txt"><?php printf('<a target="_blank" href="'.esc_url(BAKERS_LITE_SKTTHEMES_FREE_THEME_URL).'" rel="nofollow">Bakers Lite</a>' ); ?></div>
+           		 <div class="copyright-txt"><?php echo esc_html('SKT Bakers Lite');?></div>
             	 <div class="design-by">
                  	<?php
 						$fb_link = get_theme_mod('fb_link'); 

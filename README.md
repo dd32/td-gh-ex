@@ -2,15 +2,15 @@
 
 **Contributors:** SKT Themes
 **Requires at least:** WordPress 4.4  
-**Tested up to:** WordPress 4.9.8
-**Version:** 1.1
+**Tested up to:** WordPress 5.2
+**Version:** 1.2
 **License:** GPLv2 or later  
 **License URI:** http://www.gnu.org/licenses/gpl-2.0.html  
 **Tags:** two-columns,right-sidebar,custom-background,custom-colors,custom-menu,sticky-post,theme-options,threaded-comments
 
 ## Description
 
-Bakers Lite is a bakery WordPress theme and can be used for cup cake, pastry, muffin, cookies, chocolate, eateries, cafe, coffee and other food related websites. Cakes mean celebration of birthday, wedding, engagement, anniversary, marriage. Coded with page builder plugins and Gutenberg in mind. Coded with WooCommerce compatible so can sell cake directly online. Parcel, food delivery, caterers, fast food, pizza, cuisine, chef, recipe, drinks, wine, restaurant owners can also use this template. SEO optimized and speed optimized. Fast loading, flexible and simple easy to use. You have option to change color scheme of the template.
+SKT Bakers Lite is a bakery WordPress theme and can be used for cup cake, pastry, muffin, cookies, chocolate, eateries, cafe, coffee and other food related websites. Cakes mean celebration of birthday, wedding, engagement, anniversary, marriage. Coded with page builder plugins and Gutenberg in mind. Coded with WooCommerce compatible so can sell cake directly online. Parcel, food delivery, caterers, fast food, pizza, cuisine, chef, recipe, drinks, wine, restaurant owners can also use this template. SEO optimized and speed optimized. Fast loading, flexible and simple easy to use. You have option to change color scheme of the template.
  
 ## Theme Resources
 
@@ -121,6 +121,10 @@ License URL: http://www.gnu.org/licenses/gpl-2.0.html
 For any help you can mail us at support[at]sktthemes.com
 
 ## Changelog
+Version 1.2
+i)   Author URI and Theme URI changed.
+ii)  Removed anchor link from footer.
+
 Version 1.1
 i)   Changed Theme Screen Shot.
 
