@@ -1,0 +1,8 @@
+Version 1.0
+- Initial Release.
+
+Version 1.0.1
+- Added missing license.
+
+Version 1.0.2
+- Added readme and changeloe.
