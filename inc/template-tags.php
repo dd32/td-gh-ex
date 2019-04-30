@@ -82,7 +82,7 @@ if ( ! function_exists( 'advance_portfolio_the_custom_logo' ) ) :
  *
  * Does nothing if the custom logo is not available.
  *
- * @since advance-portfolio 1.2
+ * @since advance-portfolio
  */
 function advance_portfolio_the_custom_logo() {
 	if ( function_exists( 'the_custom_logo' ) ) {

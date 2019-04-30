@@ -23,7 +23,7 @@
   <div id="header">
     <div class="container">
       <div class="row">
-        <div class="logo col-md-4 col-sm-4">
+        <div class="logo col-lg-4 col-md-4">
           <?php if( has_custom_logo() ){ advance_portfolio_the_custom_logo();
            }else{ ?>
           <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
@@ -32,7 +32,7 @@
             <p class="site-description"><?php echo esc_html($description); ?></p>       
           <?php endif; }?>
         </div>
-        <div class="col-md-8 col-sm-8">
+        <div class="col-lg-8 col-md-8">
           <div class="nav">
             <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
           </div>

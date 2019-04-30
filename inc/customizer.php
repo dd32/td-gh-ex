@@ -32,103 +32,516 @@ function advance_portfolio_customize_register($wp_customize) {
 	$wp_customize->add_setting('advance_portfolio_layout_options', array(
 			'default'           => __('Right Sidebar', 'advance-portfolio'),
 			'sanitize_callback' => 'advance_portfolio_sanitize_choices',
-		)
-	);
+	)	);
+	$wp_customize->add_control('advance_portfolio_layout_options', array(
+		'type'           => 'radio',
+		'label'          => __('Change Layouts', 'advance-portfolio'),
+		'section'        => 'advance_portfolio_left_right',
+		'choices'        => array(
+			'Left Sidebar'  => __('Left Sidebar', 'advance-portfolio'),
+			'Right Sidebar' => __('Right Sidebar', 'advance-portfolio'),
+			'One Column'    => __('One Column', 'advance-portfolio'),
+			'Three Columns' => __('Three Columns', 'advance-portfolio'),
+			'Four Columns'  => __('Four Columns', 'advance-portfolio'),
+			'Grid Layout'   => __('Grid Layout', 'advance-portfolio')
+		),
+	));
 
-	$wp_customize->add_control('advance_portfolio_layout_options',
-		array(
-			'type'           => 'radio',
-			'label'          => __('Change Layouts', 'advance-portfolio'),
-			'section'        => 'advance_portfolio_left_right',
-			'choices'        => array(
-				'Left Sidebar'  => __('Left Sidebar', 'advance-portfolio'),
-				'Right Sidebar' => __('Right Sidebar', 'advance-portfolio'),
-				'One Column'    => __('One Column', 'advance-portfolio'),
-				'Three Columns' => __('Three Columns', 'advance-portfolio'),
-				'Four Columns'  => __('Four Columns', 'advance-portfolio'),
-				'Grid Layout'   => __('Grid Layout', 'advance-portfolio')
-			),
-		));
+	$font_array = array(
+        '' => 'No Fonts',
+        'Abril Fatface' => 'Abril Fatface', 
+        'Acme' => 'Acme', 
+        'Anton' => 'Anton',
+        'Architects Daughter' =>'Architects Daughter', 
+        'Arimo' => 'Arimo', 
+        'Arsenal' => 'Arsenal', 
+        'Arvo' => 'Arvo', 
+        'Alegreya' => 'Alegreya',
+        'Alfa Slab One' =>  'Alfa Slab One', 
+        'Averia Serif Libre' =>  'Averia Serif Libre',
+        'Bangers' => 'Bangers', 
+        'Boogaloo' => 'Boogaloo',
+        'Bad Script' => 'Bad Script', 
+        'Bitter' =>  'Bitter', 
+        'Bree Serif' => 'Bree Serif', 
+        'BenchNine' => 'BenchNine',
+        'Cabin' => 'Cabin', 
+        'Cardo' => 'Cardo', 
+        'Courgette' => 'Courgette', 
+        'Cherry Swash' => 'Cherry Swash', 
+        'Cormorant Garamond' => 'Cormorant Garamond', 
+        'Crimson Text' => 'Crimson Text',
+        'Cuprum' => 'Cuprum', 
+        'Cookie' => 'Cookie', 
+        'Chewy' => 'Chewy', 
+        'Days One' => 'Days One',
+        'Dosis' => 'Dosis', 
+        'Droid Sans' => 'Droid Sans',
+        'Economica' =>  'Economica',
+        'Fredoka One' => 'Fredoka One', 
+        'Fjalla One' => 'Fjalla One', 
+        'Francois One' => 'Francois One', 
+        'Frank Ruhl Libre' => 'Frank Ruhl Libre', 
+        'Gloria Hallelujah' => 'Gloria Hallelujah',
+        'Great Vibes' =>  'Great Vibes', 
+        'Handlee' => 'Handlee',
+        'Hammersmith One' =>'Hammersmith One', 
+        'Inconsolata' => 'Inconsolata', 
+        'Indie Flower' => 'Indie Flower', 
+        'IM Fell English SC' => 'IM Fell English SC',
+        'Julius Sans One' => 'Julius Sans One', 
+        'Josefin Slab' => 'Josefin Slab', 
+        'Josefin Sans' => 'Josefin Sans',
+        'Kanit' => 'Kanit', 
+        'Lobster' =>  'Lobster', 
+        'Lato' => 'Lato', 
+        'Lora' =>'Lora',
+        'Libre Baskerville' =>  'Libre Baskerville', 
+        'Lobster Two' => 'Lobster Two',
+        'Merriweather' => 'Merriweather', 
+        'Monda' => 'Monda', 
+        'Montserrat' => 'Montserrat', 
+        'Muli' => 'Muli', 
+        'Marck Script' => 'Marck Script', 
+        'Noto Serif' => 'Noto Serif', 
+        'Open Sans' => 'Open Sans', 
+        'Overpass' => 'Overpass', 
+        'Overpass Mono' =>  'Overpass Mono', 
+        'Oxygen' => 'Oxygen', 
+        'Orbitron' => 'Orbitron',
+        'Patua One' => 'Patua One', 
+        'Pacifico' =>  'Pacifico',
+        'Padauk' => 'Padauk',
+        'Playball' =>  'Playball', 
+        'Playfair Display' => 'Playfair Display',
+        'PT Sans' => 'PT Sans', 
+        'Philosopher' => 'Philosopher', 
+        'Permanent Marker' => 'Permanent Marker', 
+        'Poiret One' => 'Poiret One', 
+        'Quicksand' => 'Quicksand', 
+        'Quattrocento Sans' =>'Quattrocento Sans',
+        'Raleway' => 'Raleway', 
+        'Rubik' => 'Rubik', 
+        'Rokkitt' => 'Rokkitt', 
+        'Russo One' => 'Russo One', 
+        'Righteous' => 'Righteous', 
+        'Slabo' => 'Slabo', 
+        'Source Sans Pro' => 'Source Sans Pro',
+        'Shadows Into Light Two' => 'Shadows Into Light Two',
+        'Shadows Into Light' => 'Shadows Into Light',
+        'Sacramento' => 'Sacramento', 
+        'Shrikhand' => 'Shrikhand',
+        'Tangerine' => 'Tangerine', 
+        'Ubuntu' => 'Ubuntu', 
+        'VT323' => 'VT323', 
+        'Varela Round' => 'Varela Round',
+        'Vampiro One' => 'Vampiro One', 
+        'Vollkorn' => 'Vollkorn', 
+        'Volkhov' => 'Volkhov', 
+        'Yanone Kaffeesatz' =>'Yanone Kaffeesatz', 
+    );
+
+	//Typography
+	$wp_customize->add_section( 'advance_portfolio_typography', array(
+    	'title'      => __( 'Typography', 'advance-portfolio' ),
+		'priority'   => 30,
+		'panel' => 'advance_portfolio_panel_id'
+	) );
+	
+	// This is Paragraph Color picker setting
+	$wp_customize->add_setting( 'advance_portfolio_paragraph_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_portfolio_paragraph_color', array(
+		'label' => __('Paragraph Color', 'advance-portfolio'),
+		'section' => 'advance_portfolio_typography',
+		'settings' => 'advance_portfolio_paragraph_color',
+	)));
+
+	//This is Paragraph FontFamily picker setting
+	$wp_customize->add_setting('advance_portfolio_paragraph_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_portfolio_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_portfolio_paragraph_font_family', array(
+	    'section'  => 'advance_portfolio_typography',
+	    'label'    => __( 'Paragraph Fonts','advance-portfolio'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	$wp_customize->add_setting('advance_portfolio_paragraph_font_size',array(
+		'default'	=> '12px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_portfolio_paragraph_font_size',array(
+		'label'	=> __('Paragraph Font Size','advance-portfolio'),
+		'section'	=> 'advance_portfolio_typography',
+		'setting'	=> 'advance_portfolio_paragraph_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is "a" Tag Color picker setting
+	$wp_customize->add_setting( 'advance_portfolio_atag_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_portfolio_atag_color', array(
+		'label' => __('"a" Tag Color', 'advance-portfolio'),
+		'section' => 'advance_portfolio_typography',
+		'settings' => 'advance_portfolio_atag_color',
+	)));
+
+	//This is "a" Tag FontFamily picker setting
+	$wp_customize->add_setting('advance_portfolio_atag_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_portfolio_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_portfolio_atag_font_family', array(
+	    'section'  => 'advance_portfolio_typography',
+	    'label'    => __( '"a" Tag Fonts','advance-portfolio'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	// This is "a" Tag Color picker setting
+	$wp_customize->add_setting( 'advance_portfolio_li_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_portfolio_li_color', array(
+		'label' => __('"li" Tag Color', 'advance-portfolio'),
+		'section' => 'advance_portfolio_typography',
+		'settings' => 'advance_portfolio_li_color',
+	)));
+
+	//This is "li" Tag FontFamily picker setting
+	$wp_customize->add_setting('advance_portfolio_li_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_portfolio_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_portfolio_li_font_family', array(
+	    'section'  => 'advance_portfolio_typography',
+	    'label'    => __( '"li" Tag Fonts','advance-portfolio'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	// This is H1 Color picker setting
+	$wp_customize->add_setting( 'advance_portfolio_h1_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_portfolio_h1_color', array(
+		'label' => __('H1 Color', 'advance-portfolio'),
+		'section' => 'advance_portfolio_typography',
+		'settings' => 'advance_portfolio_h1_color',
+	)));
+
+	//This is H1 FontFamily picker setting
+	$wp_customize->add_setting('advance_portfolio_h1_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_portfolio_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_portfolio_h1_font_family', array(
+	    'section'  => 'advance_portfolio_typography',
+	    'label'    => __( 'H1 Fonts','advance-portfolio'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H1 FontSize setting
+	$wp_customize->add_setting('advance_portfolio_h1_font_size',array(
+		'default'	=> '50px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_portfolio_h1_font_size',array(
+		'label'	=> __('H1 Font Size','advance-portfolio'),
+		'section'	=> 'advance_portfolio_typography',
+		'setting'	=> 'advance_portfolio_h1_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H2 Color picker setting
+	$wp_customize->add_setting( 'advance_portfolio_h2_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_portfolio_h2_color', array(
+		'label' => __('h2 Color', 'advance-portfolio'),
+		'section' => 'advance_portfolio_typography',
+		'settings' => 'advance_portfolio_h2_color',
+	)));
+
+	//This is H2 FontFamily picker setting
+	$wp_customize->add_setting('advance_portfolio_h2_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_portfolio_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_portfolio_h2_font_family', array(
+	    'section'  => 'advance_portfolio_typography',
+	    'label'    => __( 'h2 Fonts','advance-portfolio'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H2 FontSize setting
+	$wp_customize->add_setting('advance_portfolio_h2_font_size',array(
+		'default'	=> '45px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_portfolio_h2_font_size',array(
+		'label'	=> __('h2 Font Size','advance-portfolio'),
+		'section'	=> 'advance_portfolio_typography',
+		'setting'	=> 'advance_portfolio_h2_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H3 Color picker setting
+	$wp_customize->add_setting( 'advance_portfolio_h3_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_portfolio_h3_color', array(
+		'label' => __('h3 Color', 'advance-portfolio'),
+		'section' => 'advance_portfolio_typography',
+		'settings' => 'advance_portfolio_h3_color',
+	)));
+
+	//This is H3 FontFamily picker setting
+	$wp_customize->add_setting('advance_portfolio_h3_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_portfolio_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_portfolio_h3_font_family', array(
+	    'section'  => 'advance_portfolio_typography',
+	    'label'    => __( 'h3 Fonts','advance-portfolio'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H3 FontSize setting
+	$wp_customize->add_setting('advance_portfolio_h3_font_size',array(
+		'default'	=> '36px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_portfolio_h3_font_size',array(
+		'label'	=> __('h3 Font Size','advance-portfolio'),
+		'section'	=> 'advance_portfolio_typography',
+		'setting'	=> 'advance_portfolio_h3_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H4 Color picker setting
+	$wp_customize->add_setting( 'advance_portfolio_h4_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_portfolio_h4_color', array(
+		'label' => __('h4 Color', 'advance-portfolio'),
+		'section' => 'advance_portfolio_typography',
+		'settings' => 'advance_portfolio_h4_color',
+	)));
+
+	//This is H4 FontFamily picker setting
+	$wp_customize->add_setting('advance_portfolio_h4_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_portfolio_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_portfolio_h4_font_family', array(
+	    'section'  => 'advance_portfolio_typography',
+	    'label'    => __( 'h4 Fonts','advance-portfolio'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H4 FontSize setting
+	$wp_customize->add_setting('advance_portfolio_h4_font_size',array(
+		'default'	=> '30px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_portfolio_h4_font_size',array(
+		'label'	=> __('h4 Font Size','advance-portfolio'),
+		'section'	=> 'advance_portfolio_typography',
+		'setting'	=> 'advance_portfolio_h4_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H5 Color picker setting
+	$wp_customize->add_setting( 'advance_portfolio_h5_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_portfolio_h5_color', array(
+		'label' => __('h5 Color', 'advance-portfolio'),
+		'section' => 'advance_portfolio_typography',
+		'settings' => 'advance_portfolio_h5_color',
+	)));
+
+	//This is H5 FontFamily picker setting
+	$wp_customize->add_setting('advance_portfolio_h5_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_portfolio_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_portfolio_h5_font_family', array(
+	    'section'  => 'advance_portfolio_typography',
+	    'label'    => __( 'h5 Fonts','advance-portfolio'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H5 FontSize setting
+	$wp_customize->add_setting('advance_portfolio_h5_font_size',array(
+		'default'	=> '25px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_portfolio_h5_font_size',array(
+		'label'	=> __('h5 Font Size','advance-portfolio'),
+		'section'	=> 'advance_portfolio_typography',
+		'setting'	=> 'advance_portfolio_h5_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H6 Color picker setting
+	$wp_customize->add_setting( 'advance_portfolio_h6_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_portfolio_h6_color', array(
+		'label' => __('h6 Color', 'advance-portfolio'),
+		'section' => 'advance_portfolio_typography',
+		'settings' => 'advance_portfolio_h6_color',
+	)));
+
+	//This is H6 FontFamily picker setting
+	$wp_customize->add_setting('advance_portfolio_h6_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_portfolio_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_portfolio_h6_font_family', array(
+	    'section'  => 'advance_portfolio_typography',
+	    'label'    => __( 'h6 Fonts','advance-portfolio'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H6 FontSize setting
+	$wp_customize->add_setting('advance_portfolio_h6_font_size',array(
+		'default'	=> '18px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_portfolio_h6_font_size',array(
+		'label'	=> __('h6 Font Size','advance-portfolio'),
+		'section'	=> 'advance_portfolio_typography',
+		'setting'	=> 'advance_portfolio_h6_font_size',
+		'type'	=> 'text'
+	));
 
 	//social icons
 	$wp_customize->add_section('advance_portfolio_topbar_header', array(
-			'title'       => __('Social Icon link', 'advance-portfolio'),
-			'description' => __('Add Top Bar Content here', 'advance-portfolio'),
-			'priority'    => null,
-			'panel'       => 'advance_portfolio_panel_id',
-		));
+		'title'       => __('Social Icon link', 'advance-portfolio'),
+		'description' => __('Add Top Bar Content here', 'advance-portfolio'),
+		'priority'    => null,
+		'panel'       => 'advance_portfolio_panel_id',
+	));
 
 	$wp_customize->add_setting('advance_portfolio_facebook_url', array(
-			'default'           => '',
-			'sanitize_callback' => 'esc_url_raw',
-		));
+		'default'           => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
 
 	$wp_customize->add_control('advance_portfolio_facebook_url', array(
-			'label'   => __('Add Facebook link', 'advance-portfolio'),
-			'section' => 'advance_portfolio_topbar_header',
-			'setting' => 'advance_portfolio_facebook_url',
-			'type'    => 'url',
-		));
+		'label'   => __('Add Facebook link', 'advance-portfolio'),
+		'section' => 'advance_portfolio_topbar_header',
+		'setting' => 'advance_portfolio_facebook_url',
+		'type'    => 'url',
+	));
 
 	$wp_customize->add_setting('advance_portfolio_twitter_url', array(
-			'default'           => '',
-			'sanitize_callback' => 'esc_url_raw',
-		));
+		'default'           => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
 
 	$wp_customize->add_control('advance_portfolio_twitter_url', array(
-			'label'   => __('Add Twitter link', 'advance-portfolio'),
-			'section' => 'advance_portfolio_topbar_header',
-			'setting' => 'advance_portfolio_twitter_url',
-			'type'    => 'url',
-		));
+		'label'   => __('Add Twitter link', 'advance-portfolio'),
+		'section' => 'advance_portfolio_topbar_header',
+		'setting' => 'advance_portfolio_twitter_url',
+		'type'    => 'url',
+	));
 
 	$wp_customize->add_setting('advance_portfolio_linkedin_url', array(
-			'default'           => '',
-			'sanitize_callback' => 'esc_url_raw',
-		));
+		'default'           => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
 
 	$wp_customize->add_control('advance_portfolio_linkedin_url', array(
-			'label'   => __('Add Linkedin link', 'advance-portfolio'),
-			'section' => 'advance_portfolio_topbar_header',
-			'setting' => 'advance_portfolio_linkedin_url',
-			'type'    => 'url',
-		));
+		'label'   => __('Add Linkedin link', 'advance-portfolio'),
+		'section' => 'advance_portfolio_topbar_header',
+		'setting' => 'advance_portfolio_linkedin_url',
+		'type'    => 'url',
+	));
 
 	$wp_customize->add_setting('advance_portfolio_insta_url', array(
-			'default'           => '',
-			'sanitize_callback' => 'esc_url_raw',
-		));
+		'default'           => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
 
 	$wp_customize->add_control('advance_portfolio_insta_url', array(
-			'label'   => __('Add Instagram link', 'advance-portfolio'),
-			'section' => 'advance_portfolio_topbar_header',
-			'setting' => 'advance_portfolio_insta_url',
-			'type'    => 'url',
-		));
+		'label'   => __('Add Instagram link', 'advance-portfolio'),
+		'section' => 'advance_portfolio_topbar_header',
+		'setting' => 'advance_portfolio_insta_url',
+		'type'    => 'url',
+	));
 
 	$wp_customize->add_setting('advance_portfolio_youtube_url', array(
-			'default'           => '',
-			'sanitize_callback' => 'esc_url_raw',
-		));
+		'default'           => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
 
 	$wp_customize->add_control('advance_portfolio_youtube_url', array(
-			'label'   => __('Add Youtube link', 'advance-portfolio'),
-			'section' => 'advance_portfolio_topbar_header',
-			'setting' => 'advance_portfolio_youtube_url',
-			'type'    => 'url',
-		));
+		'label'   => __('Add Youtube link', 'advance-portfolio'),
+		'section' => 'advance_portfolio_topbar_header',
+		'setting' => 'advance_portfolio_youtube_url',
+		'type'    => 'url',
+	));
 
 	$wp_customize->add_setting('advance_portfolio_behance_url', array(
-			'default'           => '',
-			'sanitize_callback' => 'esc_url_raw',
-		));
+		'default'           => '',
+		'sanitize_callback' => 'esc_url_raw',
+	));
 
 	$wp_customize->add_control('advance_portfolio_behance_url', array(
-			'label'   => __('Add Behance link', 'advance-portfolio'),
-			'section' => 'advance_portfolio_topbar_header',
-			'setting' => 'advance_portfolio_behance_url',
-			'type'    => 'url',
-		));
+		'label'   => __('Add Behance link', 'advance-portfolio'),
+		'section' => 'advance_portfolio_topbar_header',
+		'setting' => 'advance_portfolio_behance_url',
+		'type'    => 'url',
+	));
 
 	//Banner
 	$wp_customize->add_section('advance_portfolio_banner', array(
@@ -137,21 +550,16 @@ function advance_portfolio_customize_register($wp_customize) {
 		'panel'       => 'advance_portfolio_panel_id',
 	));
 
-	for ($count = 0; $count <= 0; $count++) {
-
-		$wp_customize->add_setting('advance_portfolio_page_settings'.$count, array(
-			'default'           => '',
-			'sanitize_callback' => 'advance_portfolio_sanitize_dropdown_pages',
-		));
-
-		$wp_customize->add_control('advance_portfolio_page_settings'.$count, array(
-			'label'       => __('Select Banner Page', 'advance-portfolio'),
-			'description' => __('Size of image should be 1600x800', 'advance-portfolio'),
-			'section'     => 'advance_portfolio_banner',
-			'type'        => 'dropdown-pages',
-		));
-
-	}
+	$wp_customize->add_setting('advance_portfolio_page_settings', array(
+		'default'           => '',
+		'sanitize_callback' => 'advance_portfolio_sanitize_dropdown_pages',
+	));
+	$wp_customize->add_control('advance_portfolio_page_settings', array(
+		'label'       => __('Select Banner Page', 'advance-portfolio'),
+		'description' => __('Size of image should be 1600x800', 'advance-portfolio'),
+		'section'     => 'advance_portfolio_banner',
+		'type'        => 'dropdown-pages',
+	));
 
 	//AWESOME PORTFOLIO
 	$wp_customize->add_section('advance_portfolio_page_awesome', array(
@@ -172,9 +580,10 @@ function advance_portfolio_customize_register($wp_customize) {
 	));
 
 	$post_list = get_posts();
-	$i         = 0;
-	foreach ($post_list as $post) {
-		$posts[$post->post_title] = $post->post_title;
+	$i = 0;
+	$pst[]='Select';  
+	foreach($post_list as $post){
+		$pst[$post->post_title] = $post->post_title;
 	}
 
 	$wp_customize->add_setting('advance_portfolio_awesome_setting', array(
@@ -182,16 +591,17 @@ function advance_portfolio_customize_register($wp_customize) {
 	));
 	$wp_customize->add_control('advance_portfolio_awesome_setting', array(
 		'type'        => 'select',
-		'choices'     => $posts,
+		'choices'     => $pst,
 		'label'       => __('Select post', 'advance-portfolio'),
 		'description' => __('Size of image should be 270x270', 'advance-portfolio'),
 		'section'     => 'advance_portfolio_page_awesome',
 	));
 
 	$post_list = get_posts();
-	$i         = 0;
-	foreach ($post_list as $post) {
-		$posts[$post->post_title] = $post->post_title;
+	$i = 0;
+	$pst1[]='Select';  
+	foreach($post_list as $post){
+		$pst1[$post->post_title] = $post->post_title;
 	}
 
 	$wp_customize->add_setting('advance_portfolio_awesome_setting1', array(
@@ -199,16 +609,17 @@ function advance_portfolio_customize_register($wp_customize) {
 	));
 	$wp_customize->add_control('advance_portfolio_awesome_setting1', array(
 		'type'        => 'select',
-		'choices'     => $posts,
+		'choices'     => $pst1,
 		'label'       => __('Select post', 'advance-portfolio'),
 		'description' => __('Size of image should be 270x270', 'advance-portfolio'),
 		'section'     => 'advance_portfolio_page_awesome',
 	));
 
 	$post_list = get_posts();
-	$i         = 0;
-	foreach ($post_list as $post) {
-		$posts[$post->post_title] = $post->post_title;
+	$i = 0;
+	$pst2[]='Select';  
+	foreach($post_list as $post){
+		$pst2[$post->post_title] = $post->post_title;
 	}
 
 	$wp_customize->add_setting('advance_portfolio_awesome_setting2', array(
@@ -216,16 +627,17 @@ function advance_portfolio_customize_register($wp_customize) {
 	));
 	$wp_customize->add_control('advance_portfolio_awesome_setting2', array(
 		'type'        => 'select',
-		'choices'     => $posts,
+		'choices'     => $pst2,
 		'label'       => __('Select post', 'advance-portfolio'),
 		'description' => __('Size of image should be 570x270', 'advance-portfolio'),
 		'section'     => 'advance_portfolio_page_awesome',
 	));
 
 	$post_list = get_posts();
-	$i         = 0;
-	foreach ($post_list as $post) {
-		$posts[$post->post_title] = $post->post_title;
+	$i = 0;
+	$pst3[]='Select';  
+	foreach($post_list as $post){
+		$pst3[$post->post_title] = $post->post_title;
 	}
 
 	$wp_customize->add_setting('advance_portfolio_awesome_setting3', array(
@@ -233,7 +645,7 @@ function advance_portfolio_customize_register($wp_customize) {
 	));
 	$wp_customize->add_control('advance_portfolio_awesome_setting3', array(
 		'type'        => 'select',
-		'choices'     => $posts,
+		'choices'     => $pst3,
 		'label'       => __('Select post', 'advance-portfolio'),
 		'description' => __('Size of image should be 570x570', 'advance-portfolio'),
 		'section'     => 'advance_portfolio_page_awesome',
@@ -251,7 +663,6 @@ function advance_portfolio_customize_register($wp_customize) {
 		'default'           => '',
 		'sanitize_callback' => 'sanitize_text_field',
 	));
-
 	$wp_customize->add_control('advance_portfolio_footer_copy', array(
 		'label'   => __('Copyright Text', 'advance-portfolio'),
 		'section' => 'advance_portfolio_footer_section',
