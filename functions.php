@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.16' );
+define( 'AVANT_THEME_VERSION' , '1.1.17' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -354,12 +354,12 @@ function avant_register_required_plugins() {
 			'name'      => __( 'WooCommerce', 'avant' ),
 			'slug'      => 'woocommerce',
 			'required'  => false,
-			'external_url' => 'https://kairaweb.com/go/elementor/'
 		),
 		array(
 			'name'      => __( 'Elementor Page Builder', 'avant' ),
 			'slug'      => 'elementor',
 			'required'  => false,
+			'external_url' => 'https://kairaweb.com/go/elementor/'
 		),
 		array(
 			'name'      => __( 'Contact Form by WPForms', 'avant' ),
@@ -454,3 +454,77 @@ function avant_cat_columns_array_push_after( $src, $avant_cat_in, $pos ) {
     }
     return $R;
 }
+
+/*
+ * Notice for Page Layouts
+ */
+function avant_page_layouts_notice() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	
+	if (!get_user_meta($user_id, 'avant_page_layouts_notice_ignore')) {
+		echo '<div class="updated notice avant-notice-layouts"><p>'. __( 'Avant Premium now offers Elementor Page Layouts to import!<br /><br />Use the code <b><i>5_dollar_less</i></b> to <a href="https://kairaweb.com/go/avant/" target="_blank">get $5 off the premium theme now</a>... Sale Ends 4nd May', 'avant' ) .' <a href="?avant-layouts-notice-ignore" class="avant-noticemiss">Dismiss</a></p></div>';
+	}
+}
+add_action('admin_notices', 'avant_page_layouts_notice');
+
+function avant_page_layouts_notice_ignore() {
+	global $current_user;
+	
+	$user_id = $current_user->ID;
+	if (isset($_GET['avant-layouts-notice-ignore'])) {
+		add_user_meta($user_id, 'avant_page_layouts_notice_ignore', 'true', true);
+	}
+}
+add_action('admin_init', 'avant_page_layouts_notice_ignore');
+
+/**
+ * Adjust the Recent Posts widget query if avant-slider-cats is set
+ */
+function avant_filter_recent_posts_widget_parameters( $params ) {
+	$slider_categories = get_theme_mod( 'avant-slider-cats' );
+    $slider_type 	   = get_theme_mod( 'avant-slider-type', customizer_library_get_default( 'avant-slider-type' ) );
+	
+	if ( $slider_categories && $slider_type == 'avant-slider-default' ) {
+		if ( count( $slider_categories ) > 0 ) {
+			// do not alter the query on wp-admin pages and only alter it if it's the main query
+			$params['category__not_in'] = $slider_categories;
+		}
+	}
+	
+	return $params;
+}
+add_filter( 'widget_posts_args', 'avant_filter_recent_posts_widget_parameters' );
+
+/**
+ * Adjust the widget categories query if avant-slider-cats is set
+ */
+function avant_set_widget_categories_args($args){
+	$slider_categories = get_theme_mod( 'avant-slider-cats' );
+    $slider_type 	   = get_theme_mod( 'avant-slider-type', customizer_library_get_default( 'avant-slider-type' ) );
+	
+	if ( $slider_categories && $slider_type == 'avant-slider-default' ) {
+		//if ( count($slider_categories) > 0) {
+			//$exclude = implode(',', $slider_categories);
+			$args['exclude'] = $slider_categories;
+		//}
+	}
+	
+	return $args;
+}
+add_filter( 'widget_categories_args', 'avant_set_widget_categories_args' );
+
+function avant_set_widget_categories_dropdown_arg($args){
+	$slider_categories = get_theme_mod( 'avant-slider-cats' );
+    $slider_type 	   = get_theme_mod( 'avant-slider-type', customizer_library_get_default( 'avant-slider-type' ) );
+	
+	if ( $slider_categories && $slider_type == 'avant-slider-default' ) {
+		// if ( count($slider_categories) > 0) {
+			// $exclude = implode(',', $slider_categories);
+			$args['exclude'] = $slider_categories;
+		// }
+	}
+	
+	return $args;
+}
+add_filter( 'widget_categories_dropdown_args', 'avant_set_widget_categories_dropdown_arg' );

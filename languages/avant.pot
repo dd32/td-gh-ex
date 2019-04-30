@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2019-04-15 13:52+0200\n"
+"POT-Creation-Date: 2019-04-30 13:45+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -115,6 +115,21 @@ msgstr ""
 msgid "Site Identity"
 msgstr ""
 
+#: customizer/customizer-options.php:39 customizer/customizer-options.php:84
+msgid ""
+"Change/edit the <a href=\"#avant-site-layout-section-header\" rel=\"tc-"
+"section\">Header</a> & <a href=\"#avant-site-layout-section-footer\" rel="
+"\"tc-section\">Footer</a> Layouts<br />Edit/Change <a href=\"#avant-panel-"
+"colors\" rel=\"tc-panel\">Theme Colors</a><br />Add a <a href=\"#avant-site-"
+"layout-section-slider\" rel=\"tc-section\">Home Page Slider</a><br />Change/"
+"edit the <a href=\"#avant-blog-section-blog\" rel=\"tc-section\">Blog "
+"Layout</a><br />Add/edit <a href=\"#avant-site-layout-section-page\" rel="
+"\"tc-section\">Pages Featured Image</a><br />Add/edit <a href=\"#avant-blog-"
+"section-post\" rel=\"tc-section\">Single Posts featured image</a><br />Add "
+"<a href=\"#avant-social-section\" rel=\"tc-section\">Social Links</a> to "
+"your site"
+msgstr ""
+
 #: customizer/customizer-options.php:44
 msgid "Site Title top padding"
 msgstr ""
@@ -202,6 +217,15 @@ msgstr ""
 #: customizer/customizer-options.php:1384
 #: customizer/customizer-options.php:1479
 msgid "Header"
+msgstr ""
+
+#: customizer/customizer-options.php:165
+msgid ""
+"Customize the <a href=\"#avant-panel-colors\" rel=\"tc-panel\">Header "
+"Colors</a>, add <a href=\"#avant-social-section\" rel=\"tc-section\">Social "
+"links</a> and edit <a href=\"#avant-website-section-text-header\" rel=\"tc-"
+"section\">Header text</a> or <a href=\"#avant-panel-font-settings\" rel=\"tc-"
+"panel\">Site Fonts</a>"
 msgstr ""
 
 #: customizer/customizer-options.php:171
@@ -675,6 +699,14 @@ msgstr ""
 
 #: customizer/customizer-options.php:730 customizer/customizer-options.php:1329
 msgid "Footer"
+msgstr ""
+
+#: customizer/customizer-options.php:732
+msgid ""
+"Customize the <a href=\"#avant-panel-colors\" rel=\"tc-panel\">Footer "
+"Colors</a>, add <a href=\"#avant-social-section\" rel=\"tc-section\">Social "
+"links</a> or <a href=\"#avant-panel-font-settings\" rel=\"tc-panel\">Site "
+"Fonts</a>"
 msgstr ""
 
 #: customizer/customizer-options.php:737
@@ -1191,7 +1223,7 @@ msgstr ""
 msgid "The footer will divide into however many widgets are placed here."
 msgstr ""
 
-#: functions.php:360
+#: functions.php:359
 msgid "Elementor Page Builder"
 msgstr ""
 
@@ -1205,6 +1237,14 @@ msgstr ""
 
 #: functions.php:375
 msgid "Meta Slider"
+msgstr ""
+
+#: functions.php:466
+msgid ""
+"Avant Premium now offers Elementor Page Layouts to import!<br /><br />Use "
+"the code <b><i>5_dollar_less</i></b> to <a href=\"https://kairaweb.com/go/"
+"avant/\" target=\"_blank\">get $5 off the premium theme now</a>... Sale Ends "
+"4nd May"
 msgstr ""
 
 #: includes/avant-pro/class-customize.php:76
@@ -1784,84 +1824,94 @@ msgid "Avant Premium is a once off payment for lifetime update right now!"
 msgstr ""
 
 #: upgrade/tpl/upgrade-page.php:38
+msgid "Page Layouts"
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:39
+msgid ""
+"Avant Premium offers a bunch on Elementor Page layouts built into the "
+"theme<br />so you can simply import page layouts to use."
+msgstr ""
+
+#: upgrade/tpl/upgrade-page.php:46
 msgid ""
 "View the Avant Premium Demo, and try out all the settings neatly built into "
 "the Customizer"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:42
+#: upgrade/tpl/upgrade-page.php:50
 msgid "Avant Premium Demo"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:49
+#: upgrade/tpl/upgrade-page.php:57
 msgid "Download a working Child Theme for Avant"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:50
+#: upgrade/tpl/upgrade-page.php:58
 #, php-format
 msgid ""
 "Or learn more on creating/editing a <a href=\"%s\" target=\"_blank\">Child "
 "Theme</a>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:54
+#: upgrade/tpl/upgrade-page.php:62
 msgid "Avant Child Theme"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:61
+#: upgrade/tpl/upgrade-page.php:69
 msgid ""
 "We have on-growing documentation on setting up your website with the Avant "
 "theme"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:65
+#: upgrade/tpl/upgrade-page.php:73
 msgid "Documentation"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:72
+#: upgrade/tpl/upgrade-page.php:80
 msgid "Have you enjoyed using Avant?"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:73
+#: upgrade/tpl/upgrade-page.php:81
 msgid "Please help by giving us a rating on WordPress.org :)"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:77
+#: upgrade/tpl/upgrade-page.php:85
 msgid "Give Avant a rating"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:82
+#: upgrade/tpl/upgrade-page.php:90
 #, php-format
 msgid "Theme: Avant, built by <a href=\"%s\" target=\"_blank\">Kaira</a>"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:91
+#: upgrade/tpl/upgrade-page.php:99
 msgid ""
 "We aim to keep our prices cheaper than other theme shops, while still "
 "offering you the best WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:93
+#: upgrade/tpl/upgrade-page.php:101
 msgid ""
 "Upgrading will support us and enable us to keep building WordPress themes."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:95
+#: upgrade/tpl/upgrade-page.php:103
 #, php-format
 msgid ""
 "If you like our themes and/or found our support helpful, please let us know "
 "by <a href='%s' target='_blank'>giving us a review</a>."
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:99
+#: upgrade/tpl/upgrade-page.php:107
 msgid "Theme Ratings"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:111
+#: upgrade/tpl/upgrade-page.php:119
 msgid "Karmawordz"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:114
+#: upgrade/tpl/upgrade-page.php:122
 msgid ""
 "The Avant theme works. It is stable, reliable and amazing. I had a few "
 "questions and Zack answered them almost instantly. Great attitude and an "
@@ -1869,21 +1919,21 @@ msgid ""
 "woocommerce themes I have ever used!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:120
+#: upgrade/tpl/upgrade-page.php:128
 msgid "Adrigrove"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:123
+#: upgrade/tpl/upgrade-page.php:131
 msgid ""
 "By far the most beautiful and customizable free theme available.<br /><br /"
 ">The support has been extremely quick and professional. Highly recommended!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:129
+#: upgrade/tpl/upgrade-page.php:137
 msgid "PixieLauren"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:132
+#: upgrade/tpl/upgrade-page.php:140
 msgid ""
 "This theme is so pretty. It's customizable, it's fast, and even the free "
 "version offers lots of options to get the look you want for your site.<br /"
@@ -1891,11 +1941,11 @@ msgid ""
 "features - it's really affordable for such a great theme. Love it!"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:138
+#: upgrade/tpl/upgrade-page.php:146
 msgid "AllisonMandel"
 msgstr ""
 
-#: upgrade/tpl/upgrade-page.php:141
+#: upgrade/tpl/upgrade-page.php:149
 msgid ""
 "This theme has a clean design with many options for customization. "
 "Flexibility is key, especially with an online store.<br /><br />Plus, when I "

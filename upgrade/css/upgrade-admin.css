@@ -1,6 +1,3 @@
-.upgrade-page-wrap {
-    
-}
 .upgrade-page-inner-wrap {
 	max-width: 980px;
 	padding: 0 10px;
@@ -22,6 +19,26 @@
 .upgrade-page-top {
 	padding: 20px 0 5px;
 	text-align: center;
+}
+
+.upgrade-page-right-box-img {
+	text-align: center;
+	color: #a5a5a5;
+	margin: 0 0 -12px;
+}
+.upgrade-page-right-box-img h4 {
+	margin: 0 0 8px;
+    padding: 0;
+	font-size: 20px;
+	color: #424242;
+}
+.upgrade-page-right-box-image {
+	background-image: url(../images/page-layouts-img.png);
+    background-repeat: no-repeat;
+    background-position: right 0;
+    background-size: 100% auto;
+	height: 132px;
+	margin: 10px 0 0;
 }
 
 a.upgrade-btn {
@@ -162,6 +179,9 @@ a.upgrade-page-link:hover {
 .avant-upgrade-block {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	padding: 20px;
+}
+.avant-upgrade-block-layouts {
+	padding: 20px 10px 0;
 }
 .avant-upgrade-block-alt {
 	background-color: #f3f3f3;

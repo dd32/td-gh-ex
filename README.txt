@@ -68,6 +68,14 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.17
+* WooCommerce style tweaks/fixes
+* Added code to remove Slider Posts from the Categories Widget
+* Added code to remove Slider Posts from the Recent Posts Widget
+* Added missing translations
+* Updated language .pot file
+Premium: Added Elementor Page Layouts to import into the theme Dashboard -> Appearance -> Page Layouts
+
 #### 1.1.16
 * Fixed Remove archive pre-text setting
 * Removed old/deprecated code

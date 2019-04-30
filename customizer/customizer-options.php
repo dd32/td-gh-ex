@@ -36,7 +36,7 @@ function customizer_library_avant_options() {
         'id' => $section,
         'title' => __( 'Site Identity', 'avant' ),
         'priority' => '10',
-        'description' => 'Change/edit the <a href="#avant-site-layout-section-header" rel="tc-section">Header</a> & <a href="#avant-site-layout-section-footer" rel="tc-section">Footer</a> Layouts<br />Edit/Change <a href="#avant-panel-colors" rel="tc-panel">Theme Colors</a><br />Add a <a href="#avant-site-layout-section-slider" rel="tc-section">Home Page Slider</a><br />Change/edit the <a href="#avant-blog-section-blog" rel="tc-section">Blog Layout</a><br />Add/edit <a href="#avant-site-layout-section-page" rel="tc-section">Pages Featured Image</a><br />Add/edit <a href="#avant-blog-section-post" rel="tc-section">Single Posts featured image</a><br />Add <a href="#avant-social-section" rel="tc-section">Social Links</a> to your site',
+        'description' => __( 'Change/edit the <a href="#avant-site-layout-section-header" rel="tc-section">Header</a> & <a href="#avant-site-layout-section-footer" rel="tc-section">Footer</a> Layouts<br />Edit/Change <a href="#avant-panel-colors" rel="tc-panel">Theme Colors</a><br />Add a <a href="#avant-site-layout-section-slider" rel="tc-section">Home Page Slider</a><br />Change/edit the <a href="#avant-blog-section-blog" rel="tc-section">Blog Layout</a><br />Add/edit <a href="#avant-site-layout-section-page" rel="tc-section">Pages Featured Image</a><br />Add/edit <a href="#avant-blog-section-post" rel="tc-section">Single Posts featured image</a><br />Add <a href="#avant-social-section" rel="tc-section">Social Links</a> to your site', 'avant' ),
     );
 
     $options['avant-branding-top-pad'] = array(
@@ -81,7 +81,7 @@ function customizer_library_avant_options() {
 		'id' => $section,
 		'title' => __( 'Site Layout', 'avant' ),
 		'priority' => '10',
-        'description' => 'Change/edit the <a href="#avant-site-layout-section-header" rel="tc-section">Header</a> & <a href="#avant-site-layout-section-footer" rel="tc-section">Footer</a> Layouts<br />Edit/Change <a href="#avant-panel-colors" rel="tc-panel">Theme Colors</a><br />Add a <a href="#avant-site-layout-section-slider" rel="tc-section">Home Page Slider</a><br />Change/edit the <a href="#avant-blog-section-blog" rel="tc-section">Blog Layout</a><br />Add/edit <a href="#avant-site-layout-section-page" rel="tc-section">Pages Featured Image</a><br />Add/edit <a href="#avant-blog-section-post" rel="tc-section">Single Posts featured image</a><br />Add <a href="#avant-social-section" rel="tc-section">Social Links</a> to your site',
+        'description' => __( 'Change/edit the <a href="#avant-site-layout-section-header" rel="tc-section">Header</a> & <a href="#avant-site-layout-section-footer" rel="tc-section">Footer</a> Layouts<br />Edit/Change <a href="#avant-panel-colors" rel="tc-panel">Theme Colors</a><br />Add a <a href="#avant-site-layout-section-slider" rel="tc-section">Home Page Slider</a><br />Change/edit the <a href="#avant-blog-section-blog" rel="tc-section">Blog Layout</a><br />Add/edit <a href="#avant-site-layout-section-page" rel="tc-section">Pages Featured Image</a><br />Add/edit <a href="#avant-blog-section-post" rel="tc-section">Single Posts featured image</a><br />Add <a href="#avant-social-section" rel="tc-section">Social Links</a> to your site', 'avant' ),
         'panel' => $panel
 	);
     
@@ -162,7 +162,7 @@ function customizer_library_avant_options() {
         'id' => $section,
         'title' => __( 'Header', 'avant' ),
         'priority' => '20',
-        'description' => 'Customize the <a href="#avant-panel-colors" rel="tc-panel">Header Colors</a>, add <a href="#avant-social-section" rel="tc-section">Social links</a> and edit <a href="#avant-website-section-text-header" rel="tc-section">Header text</a> or <a href="#avant-panel-font-settings" rel="tc-panel">Site Fonts</a>',
+        'description' => __( 'Customize the <a href="#avant-panel-colors" rel="tc-panel">Header Colors</a>, add <a href="#avant-social-section" rel="tc-section">Social links</a> and edit <a href="#avant-website-section-text-header" rel="tc-section">Header text</a> or <a href="#avant-panel-font-settings" rel="tc-panel">Site Fonts</a>', 'avant' ),
         'panel' => $panel
     );
 
@@ -729,7 +729,7 @@ function customizer_library_avant_options() {
         'id' => $section,
         'title' => __( 'Footer', 'avant' ),
         'priority' => '80',
-        'description' => 'Customize the <a href="#avant-panel-colors" rel="tc-panel">Footer Colors</a>, add <a href="#avant-social-section" rel="tc-section">Social links</a> or <a href="#avant-panel-font-settings" rel="tc-panel">Site Fonts</a>',
+        'description' => __( 'Customize the <a href="#avant-panel-colors" rel="tc-panel">Footer Colors</a>, add <a href="#avant-social-section" rel="tc-section">Social links</a> or <a href="#avant-panel-font-settings" rel="tc-panel">Site Fonts</a>', 'avant' ),
         'panel' => $panel
     );
 

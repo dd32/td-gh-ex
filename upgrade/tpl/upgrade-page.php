@@ -33,6 +33,14 @@
                 
                 <h3><?php _e( 'Avant Premium is a once off payment for lifetime update right now!', 'avant' ); ?></h3>
                 
+                <div class="avant-upgrade-block avant-upgrade-block-layouts">
+                    <div class="upgrade-page-right-box-img">
+                        <h4><?php _e( 'Page Layouts', 'avant' ); ?></h4>
+                        <?php _e( 'Avant Premium offers a bunch on Elementor Page layouts built into the theme<br />so you can simply import page layouts to use.', 'avant' ); ?>
+                        <div class="upgrade-page-right-box-image"></div>
+                    </div>
+                </div>
+
                 <div class="avant-upgrade-block">
                     <div class="avant-upgrade-block-left">
                         <?php _e( 'View the Avant Premium Demo, and try out all the settings neatly built into the Customizer', 'avant' ); ?>

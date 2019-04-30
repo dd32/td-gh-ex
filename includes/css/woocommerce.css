@@ -32,6 +32,9 @@
 }
 
 /* -------- Products Styling -------- */
+.term-description {
+    font-size: 14px;
+}
 .woocommerce .woocommerce-result-count,
 .woocommerce-page .woocommerce-result-count {
     display: block;
@@ -390,6 +393,19 @@
 .wc-proceed-to-checkout a.checkout-button {
     color: #FFF !important;
     float: right;
+}
+
+.woocommerce-notices-wrapper {
+    display: block;
+    clear: both;
+    padding: 10px 0 0;
+}
+.woocommerce-message {
+    padding: 15px 20px 15px 40px;
+}
+.woocommerce-message::before {
+    top: 16px;
+    left: 16px !important;
 }
 
 .woocommerce #review_form #respond .form-submit input,

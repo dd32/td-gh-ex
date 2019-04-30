@@ -25,6 +25,22 @@ span.premium-link {
     color: #00b9eb;
 }
 
+.notice.avant-notice-layouts {
+    position: relative;
+}
+.notice.avant-notice-layouts p {
+    font-size: 16px;
+}
+.notice.avant-notice-layouts a.avant-noticemiss {
+    position: absolute;
+    top: 14px;
+    right: 15px;
+    font-size: 11px;
+}
+.notice.avant-notice-layouts i {
+    color: #006CC9;
+}
+
 /* ---- Category ID Column ---- */
 .cat_id_note {
     display: block;
