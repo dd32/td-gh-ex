@@ -2,7 +2,8 @@
 
 function weblizar_gl_customizer( $wp_customize ) {
 	wp_enqueue_style('customizr', WL_TEMPLATE_DIR_URI .'/css/customizr.css');
-	wp_enqueue_style('FA', WL_TEMPLATE_DIR_URI .'/css/font-awesome-4.7.0/css/font-awesome.min.css');
+	//wp_enqueue_style('FA', WL_TEMPLATE_DIR_URI .'/css/font-awesome-4.7.0/css/font-awesome.min.css');
+	wp_enqueue_style('FA-5.8.1', WL_TEMPLATE_DIR_URI .'/css/font-awesome-5.8.1/css/all.min.css');
 	$ImageUrl1 = esc_url(get_template_directory_uri() ."/images/1.png");
 	$ImageUrl2 = esc_url(get_template_directory_uri() ."/images/2.png");
 	$ImageUrl3 = esc_url(get_template_directory_uri() ."/images/3.png");
@@ -1699,7 +1700,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Enigma_Customize
 					<?php echo esc_html( $this->label ); ?>
 				</span>
 				<div class="input-group icp-container">
-					<input data-placement="bottomRight" class="icp icp-auto" <?php $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" type="text">
+					<input data-placement="bottomRight" class="icp icp-auto icon-picker-input" <?php $this->link(); ?> value="<?php echo esc_attr( $this->value() ); ?>" type="text">
 					<span class="input-group-addon"></span>
 				</div>
 			</label>

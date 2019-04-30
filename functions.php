@@ -485,7 +485,7 @@ if ( is_admin() && isset($_GET['activated'])  && $pagenow == "themes.php" ) {
 }
 add_action( 'admin_notices', 'enigma_activation_notice' );
 function enigma_activation_notice(){
-	wp_enqueue_style('enigma-font-awesome', get_template_directory_uri() . '/css/font-awesome-4.7.0/css/font-awesome.css');
+	wp_enqueue_style('enigma-font-awesome', get_template_directory_uri() . '/css/font-awesome-5.8.1/css/all.min.css');
 	wp_enqueue_style('admin',  get_template_directory_uri() .'/core/admin/admin-themes.css');
 	$wl_th_info = wp_get_theme(); 
 	$currentversion = str_replace('.','',(esc_html( $wl_th_info->get('Version') )));
