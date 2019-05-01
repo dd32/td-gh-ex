@@ -242,7 +242,7 @@ function bazzinga_scripts() {
 	wp_enqueue_style( 'bazzinga-style', get_stylesheet_uri() );
 
 	// lightslider js
-	wp_enqueue_script('lightslider-js', get_template_directory_uri() . '/inc/library/lightslider/lightslider.min.js', array(), '1.1.6' );
+	wp_enqueue_script('lightslider-js', get_template_directory_uri() . '/inc/library/lightslider/lightslider.min.js', array('jquery'), '1.1.6' );
 
 	wp_enqueue_script('imagesloaded');
 

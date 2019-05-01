@@ -56,6 +56,9 @@ All options are in the Customizer.
 = 2.0.0 - Sept 17 2018 =
 * Made theme compatible with Gutenberg
 
+= 2.1.0 - May 1 2019 =
+* Fixing bug in light slider in creative home page template
+
 == License ==
 Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License  v2 or later
 License: GNU General Public License v2 or later
