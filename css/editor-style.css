@@ -429,6 +429,9 @@ object {
 	background: transparent;
 	border: 0;
 }
+.entry-audio audio{
+	width: 100%;
+}
 
 /* Playlist Color Overrides: Light */
 

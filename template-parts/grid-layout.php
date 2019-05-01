@@ -7,7 +7,7 @@
  * @since BB Mobile Application 1.0
  */
 ?>
-<div class="col-md-4 col-sm-4">
+<div class="col-lg-4 col-md-4">
   <div class="page-box">
     <div class="box-image">
       <?php 

@@ -16,7 +16,7 @@ get_header(); ?>
                 $left_right = get_theme_mod( 'bb_mobile_application_theme_options','Right Sidebar');
                 if($left_right == 'Left Sidebar'){ ?>
                 <div class="row">
-                  <div id="sidebar" class="col-lg-4"><?php get_sidebar();?></div>
+                  <div id="sidebar" class="col-lg-4 col-md-4"><?php get_sidebar();?></div>
                   <div class="col-lg-8 col-md-8">
                       <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -70,7 +70,7 @@ get_header(); ?>
                         ?>
                     </div> 
                 </div>        
-                <div id="sidebar" class="col-lg-4"><?php get_sidebar();?></div>
+                <div id="sidebar" class="col-lg-4 col-md-4"><?php get_sidebar();?></div>
               </div>
             <?php }else if($left_right == 'One Column'){ ?>
                     <?php
@@ -98,7 +98,7 @@ get_header(); ?>
                     </div>                 
             <?php }else if($left_right == 'Three Columns'){ ?>
               <div class="row">
-                <div id="sidebar" class="col-lg-3"><?php dynamic_sidebar('sidebar-1');?></div>
+                <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
                 <div class="col-lg-6 col-md-6">
                     <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -124,11 +124,11 @@ get_header(); ?>
                         ?>
                     </div> 
                 </div>
-                <div id="sidebar" class="col-lg-3"><?php dynamic_sidebar('sidebar-2');?></div>
+                <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
               </div>
             <?php }else if($left_right == 'Four Columns'){ ?>
               <div class="row">
-                <div id="sidebar" class="col-lg-3"><?php dynamic_sidebar('sidebar-1');?></div>
+                <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1');?></div>
                 <div class="col-lg-3 col-md-3">
                     <?php
                         the_archive_title( '<h1 class="page-title">', '</h1>' );
@@ -154,8 +154,8 @@ get_header(); ?>
                         ?>
                     </div> 
                 </div>
-                <div id="sidebar" class="col-lg-3"><?php dynamic_sidebar('sidebar-2');?></div>
-                <div id="sidebar" class="col-lg-3"><?php dynamic_sidebar('sidebar-3');?></div>
+                <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
+                <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-3');?></div>
               </div>
             <?php }else if($left_right == 'Grid Layout'){ ?>
               <div class="row">
@@ -210,7 +210,7 @@ get_header(); ?>
                         ?>
                     </div> 
                 </div>        
-                <div id="sidebar" class="col-lg-4"><?php get_sidebar();?></div>
+                <div id="sidebar" class="col-lg-4 col-md-4"><?php get_sidebar();?></div>
               </div>
             <?php }?>
 

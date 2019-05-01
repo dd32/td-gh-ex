@@ -23,7 +23,7 @@ get_header(); ?>
 
     <div id="content-ts" class="container">
         <div class="middle-align">
-                <img src="<?php the_post_thumbnail_url(); ?>" width="100%">
+                <img src="<?php the_post_thumbnail_url(); ?>">
                 <?php the_content();
                 wp_link_pages( array(
                     'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bb-mobile-application' ) . '</span>',

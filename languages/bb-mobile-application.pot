@@ -122,70 +122,70 @@ msgstr ""
 msgid 'Primary Menu'
 msgstr ""
 
-#: functions.php:67
+#: functions.php:66
 msgid 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you'
 msgstr ""
 
-#: functions.php:68
+#: functions.php:67
 msgid 'Click here...'
 msgstr ""
 
-#: functions.php:75
+#: functions.php:74
 msgid 'Blog Sidebar'
 msgstr ""
 
-#: functions.php:76
+#: functions.php:75
 msgid 'Appears on blog page sidebar'
 msgstr ""
 
-#: functions.php:85
+#: functions.php:84
 msgid 'Page Sidebar'
 msgstr ""
 
-#: functions.php:86 
-#: functions.php:96
+#: functions.php:85 
+#: functions.php:95
 msgid 'Appears on page sidebar'
 msgstr ""
 
-#: functions.php:86 
-#: functions.php:95
+#: functions.php:87
+#: functions.php:94
 msgid 'Third Column Sidebar'
 msgstr ""
 
-#: functions.php:105
+#: functions.php:104
 msgid 'Footer Nav 1'
 msgstr ""
 
-#: functions.php:106
+#: functions.php:105
 msgid 'footer-1'
 msgstr ""
 
-#: functions.php:115
+#: functions.php:114
 msgid 'Footer Nav 2'
 msgstr ""
 
-#: functions.php:116
+#: functions.php:115
 msgid 'footer-2'
 msgstr ""
 
-#: functions.php:125
+#: functions.php:124
 msgid 'Footer Nav 3'
 msgstr ""
 
-#: functions.php:126
+#: functions.php:125
 msgid 'footer-3'
 msgstr ""
 
-#: functions.php:135
+#: functions.php:134
 msgid 'Footer Nav 4'
 msgstr ""
 
-#: functions.php:136
+#: functions.php:135
 msgid 'footer-4'
 msgstr ""
 
-#: functions.php:364
-msgid 'BB Mobile Application'
+#: functions.php:363
+msgid 'Mobile App WordPress Theme'
 msgstr ""
 
 #: header.php:24

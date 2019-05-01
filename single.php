@@ -16,7 +16,7 @@ get_header(); ?>
 		    	<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
 				<div class="col-lg-8 col-md-8" id="content-ts">
 					<?php while ( have_posts() ) : the_post(); 
-						 get_template_part( 'template-parts/single-post.php');
+						 get_template_part( 'template-parts/single-post');
 		            endwhile; // end of the loop. ?>
 		       	</div>
 	        </div>
@@ -24,7 +24,7 @@ get_header(); ?>
 	    	<div class="row">
 		       	<div class="col-lg-8 col-md-8" id="content-ts">
 					<?php while ( have_posts() ) : the_post(); 
-					get_template_part( 'template-parts/single-post.php');	
+					get_template_part( 'template-parts/single-post');	
 		            endwhile; // end of the loop. ?>
 		       	</div>
 				<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
@@ -32,7 +32,7 @@ get_header(); ?>
 		<?php }else if($left_right == 'One Column'){ ?>
 			<div id="content-ts">
 				<?php while ( have_posts() ) : the_post(); 
-					get_template_part( 'template-parts/single-post.php');
+					get_template_part( 'template-parts/single-post');
 	            endwhile; // end of the loop. ?>
 	       	</div>
 	    <?php }else if($left_right == 'Three Columns'){ ?>
@@ -40,7 +40,7 @@ get_header(); ?>
 		       	<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
 		       	<div class="col-lg-6 col-md-6" id="content-ts">
 					<?php while ( have_posts() ) : the_post();
-						get_template_part( 'template-parts/single-post.php');
+						get_template_part( 'template-parts/single-post');
 		            endwhile; // end of the loop. ?>
 		       	</div>
 				<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
@@ -50,7 +50,7 @@ get_header(); ?>
 		       	<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
 		       	<div class="col-lg-3 col-md-3" id="content-ts">
 					<?php while ( have_posts() ) : the_post(); 
-						get_template_part( 'template-parts/single-post.php');
+						get_template_part( 'template-parts/single-post');
 		            endwhile; // end of the loop. ?>
 		       	</div>
 				<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
@@ -60,7 +60,7 @@ get_header(); ?>
 			<div class="row">
 				<div class="col-lg-8 col-md-8" id="content-ts">
 					<?php while ( have_posts() ) : the_post();
-						get_template_part( 'template-parts/single-post.php');
+						get_template_part( 'template-parts/single-post');
 		            endwhile; // end of the loop. ?>
 		       	</div>
 				<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
@@ -69,7 +69,7 @@ get_header(); ?>
 			<div class="row">
 		       	<div class="col-lg-8 col-md-8" id="content-ts">
 					<?php while ( have_posts() ) : the_post(); 
-						get_template_part( 'template-parts/single-post.php');
+						get_template_part( 'template-parts/single-post');
 		            endwhile; // end of the loop. ?>
 		       	</div>
 				<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
