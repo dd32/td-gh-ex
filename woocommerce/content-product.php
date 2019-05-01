@@ -82,10 +82,10 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 						<div class="view-detail-wrap">
 							<?php 
 
-							$link = apply_filters( 'woocommerce_loop_product_link', get_the_permalink(), $product );
+							$product_link = apply_filters( 'woocommerce_loop_product_link', get_the_permalink(), $product );
 
 							?>
-							<a href="<?php echo esc_url( $link ); ?>" class="view-product"><i class="fa fa-eye" aria-hidden="true"></i></a>
+							<a href="<?php echo esc_url( $product_link ); ?>" class="view-product"><i class="fa fa-eye" aria-hidden="true"></i></a>
 						</div>
 						<?php 
 					} ?>

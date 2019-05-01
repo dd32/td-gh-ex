@@ -5,8 +5,8 @@ Requires at least:  WordPress 4.5
 Tested up to:       WordPress 5.1.1
 Requires PHP:       5.4
 Tested up to:       5.1.1
-Version:            1.0.2
-Stable tag:         1.0.2
+Version:            1.0.3
+Stable tag:         1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -77,6 +77,9 @@ Elegant Themes (https://github.com/pprince/etlinefont-bower), [GPLv2 or later](h
 
 
 == Changelog ==
+
+= 1.0.3 | 2019/05/01 =
+* Fixed - Minor issue fixed
 
 = 1.0.2 | 2019/04/25 =
 * Fixed - Minor widget related issue fixed
