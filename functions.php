@@ -2,10 +2,6 @@
 
 require_once get_parent_theme_file_path( '/functions/better-comments.php' );
 
-add_theme_support('title-tag');
-add_theme_support('custom-logo');
-add_theme_support('automatic-feed-links');
-
 if ( ! isset( $content_width ) ) 
 {
 	$content_width = 600;
@@ -18,10 +14,12 @@ function atreus_after_setup_theme()
         'width'       => 400,
         'flex-height' => true,
         'flex-width'  => true,
-        'header-text' => array( 'site-title', 'site-description' ),
+        'header-text' => array('site-title', 'site-description'),
     );
 
-    add_theme_support( 'custom-logo', $defaults );
+    add_theme_support('custom-logo', $defaults);
+    add_theme_support('title-tag');
+    add_theme_support('automatic-feed-links');
 }
 
 add_action( 'after_setup_theme', 'atreus_after_setup_theme' );
@@ -30,8 +28,8 @@ function atreus_init()
 {   
     register_nav_menus(
         array(
-            'hero-header-menu' => __( 'Hero Header Menu', 'atreus' ),
-            'hero-footer-menu' => __( 'Hero Footer Menu', 'atreus' )
+            'hero-header-menu' => __('Hero Header Menu', 'atreus'),
+            'hero-footer-menu' => __('Hero Footer Menu', 'atreus')
         )
     );
 }
@@ -54,9 +52,9 @@ function atreus_widgets_init()
 {
     register_sidebar(
         array (
-            'name' => __( 'Sidebar', 'atreus' ),
+            'name' => __('Sidebar', 'atreus'),
             'id' => 'custom-side-bar',
-            'description' => __( 'Sidebar', 'atreus' ),
+            'description' => __('Sidebar', 'atreus'),
             'before_widget' => '<div class="widget">',
             'after_widget' => "</div>",
             'before_title' => '<h3>',
@@ -69,13 +67,13 @@ add_action( 'widgets_init', 'atreus_widgets_init' );
 
 function atreus_get_search_form($form) 
 {
-    $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
+    $form = '<form role="search" method="get" id="searchform" class="searchform" action="' . esc_url( '/' ) . '" >
         <div class="field is-grouped">
             <div class="control">
-                <input class="input" type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="Search this site">
+                <input class="input" type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="'. __('Search this site', 'atreus') .'">
             </div>
             <div class="control">
-                <input type="submit" class="button is-link" id="searchsubmit" value="'. esc_attr__( 'Search', 'atreus' ) .'">
+                <input type="submit" class="button is-link" id="searchsubmit" value="'. __('Search', 'atreus') .'">
             </div>
         </div>
     </form>';

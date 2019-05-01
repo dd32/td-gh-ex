@@ -5,4 +5,7 @@ Version 1.0.1
 - Added missing license.
 
 Version 1.0.2
-- Added readme and changeloe.
+- Added readme and changelog.
+
+Version 1.0.3
+- Made fixes requested by review team.

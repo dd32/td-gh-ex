@@ -2,12 +2,12 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-    <meta name="description" content="<?php echo get_bloginfo( 'description' ); ?>">
+    <meta name="description" content="<?php echo get_bloginfo('description'); ?>">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
-    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+    <script defer src="<?php echo esc_url(get_template_directory_uri()); ?>/js/fontawesome.js"></script>
+    <link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/css/bulma.min.css">
 	<link rel="stylesheet" href="<?php echo esc_url(get_template_directory_uri()); ?>/style.css ?>">
 	<link rel="shortcut icon" href="<?php echo esc_url(get_template_directory_uri()); ?>/images/favicon.png" />
 	
@@ -23,8 +23,8 @@
                     <div class="navbar-brand">
                         <a class="navbar-item" href="<?php echo esc_url(site_url());?>">
                             <?php
-                                $custom_logo_id = get_theme_mod( 'custom_logo' );
-                                $logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+                                $custom_logo_id = get_theme_mod('custom_logo');
+                                $logo = wp_get_attachment_image_src($custom_logo_id , 'full');
 
                                 if (has_custom_logo()) 
                                 {
@@ -66,12 +66,19 @@
 
         <div class="hero-body">
             <div class="container">
-                <h1 class="title">
-					<?php echo get_bloginfo( 'name' ); ?>
-                </h1>
-                <h2 class="subtitle">
-					<?php echo get_bloginfo( 'description' ); ?>
-                </h2>
+                <?php
+                if (get_theme_mod('header_text') !== 0)
+                {
+                    ?>
+                    <h1 class="title">
+                        <?php echo get_bloginfo('name'); ?>
+                    </h1>
+                    <h2 class="subtitle">
+                        <?php echo get_bloginfo('description'); ?>
+                    </h2>
+                    <?php                          
+                }
+                ?>
             </div>
         </div>
 

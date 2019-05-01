@@ -11,8 +11,8 @@
 					endwhile; 
 					?>
 
-					<div class="alignleft"><?php previous_posts_link( 'Newer posts' ); ?></div>
-					<div class="alignright"><?php next_posts_link( 'Older posts' ); ?></div>
+					<div class="alignleft"><?php previous_posts_link(__('Newer posts', 'atreus')); ?></div>
+					<div class="alignright"><?php next_posts_link(__('Older posts', 'atreus')); ?></div>
 					
 					<?php wp_link_pages(); ?>
 					<?php

@@ -17,17 +17,17 @@
 		</p>
     <?php endif; ?>
     
-    <p class="alignleft"><?php next_comments_link( 'Newer comments' ); ?></p>
-    <p class="alignright"><?php previous_comments_link( 'Older comments' ); ?></p>
+    <p class="alignleft"><?php next_comments_link(__('Newer comments', 'atreus')); ?></p>
+    <p class="alignright"><?php previous_comments_link(__('Older comments', 'atreus')); ?></p>
     <br>
     <hr />
     <?php 
     $args = array(
         'fields' => apply_filters('comment_form_default_fields', array(
-            'author' => '<div class="field"><label class="label">Name *</label><div class="control"><input class="input" id="author" name="author" type="text" placeholder="Text input" value="' . esc_attr($commenter['comment_author']) . '"' . $aria_req . ' /></div></div>',
-            'email' => '<div class="field"> <label class="label">Email *</label> <div class="control"><input id="email" name="email" class="input" type="email" placeholder="e.g. alexsmith@gmail.com" value="' . esc_attr(  $commenter['comment_author_email'] ) . '" ' . $aria_req . ' /></div></div>'
+            'author' => '<div class="field"><label class="label">' . __('Name', 'atreus') . ' *</label><div class="control"><input class="input" id="author" name="author" type="text" value="' . esc_attr($commenter['comment_author']) . '"' . $aria_req . ' /></div></div>',
+            'email' => '<div class="field"> <label class="label">' . __('Email', 'atreus') . ' *</label> <div class="control"><input id="email" name="email" class="input" type="email" value="' . esc_attr( $commenter['comment_author_email']) . '" ' . $aria_req . ' /></div></div>'
         )),
-        'comment_field' => '<div class="field"><label class="label">Comment *</label><div class="control"><textarea id="comment" name="comment" class="textarea" placeholder="e.g. I think this post is great!" aria-required="true"></textarea></div></div>',
+        'comment_field' => '<div class="field"><label class="label">' . __('Comment', 'atreus') . ' *</label><div class="control"><textarea id="comment" name="comment" class="textarea" aria-required="true"></textarea></div></div>',
         'class_submit' => 'button is-link'
         );
 

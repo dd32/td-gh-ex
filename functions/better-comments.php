@@ -22,7 +22,7 @@
 							get_comment_date(),
 							get_comment_time()
 						); ?>
-					</a><?php edit_comment_link( __( '(Edit)', 'atreus' ), '  ', '' ); ?>
+					</a><?php edit_comment_link( __('(Edit)', 'atreus' ), '  ', '' ); ?>
                     </p>
                 </div>
             </div>
@@ -32,7 +32,7 @@
                 <?php
 				// Display comment moderation text
 				if ( $comment->comment_approved == '0' ) { ?>
-					<em class="comment-awaiting-moderation"><?php _e( 'Your comment is awaiting moderation.', 'atreus' ); ?></em><br/><?php
+					<em class="comment-awaiting-moderation"><?php _e('Your comment is awaiting moderation.', 'atreus'); ?></em><br/><?php
 				} ?>
                 <p>
                     <?php
