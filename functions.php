@@ -20,6 +20,7 @@ function atreus_after_setup_theme()
     add_theme_support('custom-logo', $defaults);
     add_theme_support('title-tag');
     add_theme_support('automatic-feed-links');
+    add_theme_support('post-thumbnails'); 
 }
 
 add_action( 'after_setup_theme', 'atreus_after_setup_theme' );
@@ -73,7 +74,7 @@ function atreus_get_search_form($form)
                 <input class="input" type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="'. __('Search this site', 'atreus') .'">
             </div>
             <div class="control">
-                <input type="submit" class="button is-link" id="searchsubmit" value="'. __('Search', 'atreus') .'">
+                <input type="submit" class="button '. get_theme_mod('atreus_theme_colour_setting') . '" id="searchsubmit" value="'. __('Search', 'atreus') .'">
             </div>
         </div>
     </form>';
@@ -92,3 +93,46 @@ function atreus_comment_form_before()
 }
 
 add_action( 'comment_form_before', 'atreus_comment_form_before' );
+
+
+
+add_action( 'customize_register', 'atreus_customize_register' );
+
+function atreus_customize_register($wp_customize) 
+{
+    $wp_customize -> add_section('atreus_theme_colour_section', array(
+        'title'      => __('Theme Colour', 'atreus'),
+        'priority'   => 30,
+        'capability'  => 'edit_theme_options',
+        'description' => __('Allows you to customize settings for Theme.', 'atreus'),
+    ));
+
+    $wp_customize -> add_setting('atreus_theme_colour_setting', array(
+        'default'    => 'is-link',
+        'type'       => 'theme_mod',
+        'capability' => 'edit_theme_options'
+    ));
+
+    $wp_customize -> add_control(new WP_Customize_Control($wp_customize, 'atreus_them_colour_control', array(
+       'label'       => __('Select Theme Colour', 'atreus'),
+       'description' => __('Using this option you can change the theme colors', 'atreus'),
+       'settings'    => 'atreus_theme_colour_setting',
+       'priority'    => 10,
+       'section'     => 'atreus_theme_colour_section',
+       'type'        => 'select',
+       'choices'     => array(
+            'is-link'    => 'Blue',
+            'is-success' => 'Green',
+            'is-danger'  => 'Red',
+            'is-warning' => 'Yellow',
+            'is-primary' => 'Turqoise'
+        )
+   )));
+}
+
+function atreus_the_post_thumbnail()
+{
+    
+}
+
+add_action( 'the_post_thumbnail', 'atreus_the_post_thumbnail' );

@@ -28,7 +28,7 @@
             'email' => '<div class="field"> <label class="label">' . __('Email', 'atreus') . ' *</label> <div class="control"><input id="email" name="email" class="input" type="email" value="' . esc_attr( $commenter['comment_author_email']) . '" ' . $aria_req . ' /></div></div>'
         )),
         'comment_field' => '<div class="field"><label class="label">' . __('Comment', 'atreus') . ' *</label><div class="control"><textarea id="comment" name="comment" class="textarea" aria-required="true"></textarea></div></div>',
-        'class_submit' => 'button is-link'
+        'class_submit' => 'button ' . get_theme_mod('atreus_theme_colour_setting')
         );
 
     comment_form($args); ?>
