@@ -29,6 +29,7 @@ $selective_refresh = isset( $wp_customize->selective_refresh ) ? 'postMessage' :
 			'default' 		=> __( 'on', 'benzer' ),
 			'capability' 	=> 'edit_theme_options',
 			'sanitize_callback' => 'specia_sanitize_select',
+			'transport'         => $selective_refresh,
 		) 
 	);
 	
@@ -157,7 +158,17 @@ add_action( 'customize_register', 'benzer_features_setting' );
 
 // Feature section selective refresh
 function benzer_home_feature_section_partials( $wp_customize ){
-
+	
+	// hide_show_features
+	$wp_customize->selective_refresh->add_partial(
+		'hide_show_features', array(
+			'selector' => '.features-version-one',
+			'container_inclusive' => true,
+			'render_callback' => 'features_setting',
+			'fallback_refresh' => true,
+		)
+	);
+	
 	// features_title
 	$wp_customize->selective_refresh->add_partial( 'features_title', array(
 		'selector'            => '.features-version-one .section-heading',
