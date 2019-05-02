@@ -51,7 +51,7 @@ global $post;
 	} elseif ( is_attachment() ) {
 		printf( __( 'Blog Post Image: %s', 'lan-thinkupthemes' ), esc_html( get_the_title( $post->post_parent ) ) );
 	} else if ( is_single() ) {
-		printf( '%s', esc_html( get_the_title() ) );
+		printf( '%s', html_entity_decode( esc_html( get_the_title() ) ) );
 	} else if ( is_search() ) {
 		printf( __( 'Search Results: %s', 'lan-thinkupthemes' ), get_search_query() );
 	} else if ( is_404() ) {
@@ -72,12 +72,25 @@ global $post;
 		printf( __( 'Yearly Archives: %s', 'lan-thinkupthemes' ), get_the_date( 'Y' ) );
 	} elseif ( is_post_type_archive( 'portfolio' ) ) {
 		printf( __( 'Portfolio', 'lan-thinkupthemes' ) );
+	} elseif ( is_archive() ) {
+		printf( get_the_archive_title() );
+	} elseif ( is_tax() ) {
+		printf( get_queried_object()->name );
 	} elseif ( thinkup_check_isblog() ) {
 		printf( __( 'Blog', 'lan-thinkupthemes' ) );
 	} else {
-		printf( '%s', esc_html( get_the_title() ) );
+		printf( '%s', html_entity_decode( esc_html( get_the_title() ) ) );
 	}
 }
+
+// Remove "archive" text from custom post type archive pages
+function thinkup_title_select_cpt($title) {
+    if ( is_post_type_archive() ) {
+		$title = post_type_archive_title( '', false );
+	}
+	return $title;
+};
+add_filter( 'get_the_archive_title', 'thinkup_title_select_cpt' );
 
 
 //----------------------------------------------------------------------------------
@@ -120,13 +133,29 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 			$category = get_the_category();
 			$num_cat = count($category);
 			if ($num_cat <=1) {
-				echo ' ' . get_the_title();
+				echo ' ' . esc_html( get_the_title() );
 			} else {
-				echo the_category( $delimiter_inner, multiple);
+
+				// Count Total categories
+				foreach( get_the_category() as $category) {
+					$count_categories++;
+				}
+				
+				// Output Categories
+				foreach( get_the_category() as $category) {
+					$count_loop++;
+
+					if ( $count_loop < $count_categories ) {
+						echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->cat_name ) . '</a>' . $delimiter_inner; 
+					} else {
+						echo '<a href="' . esc_url( get_category_link( $category->term_id ) ) . '">' . esc_html( $category->cat_name ) . '</a>'; 
+					}
+				}
+				
 				if (strlen(get_the_title()) >= $maxLength) {
-					echo ' ' . $delimiter . trim(substr(get_the_title(), 0, $maxLength)) . ' ...';
+					echo ' ' . $delimiter . esc_html( trim( substr( get_the_title(), 0, $maxLength ) ) ) . ' &hellip;';
 				} else {
-					echo ' ' . $delimiter . get_the_title();
+					echo ' ' . $delimiter . esc_html( get_the_title() );
 				}
 			}
 		} elseif (is_category()) {
@@ -143,7 +172,7 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 		} elseif ( is_search() ) {
 			_e( 'Search Results for: ', 'lan-thinkupthemes' ) . esc_html( get_search_query() ) . '"';
 		} elseif ( is_page() && !$post->post_parent ) {
-			echo get_the_title();
+			echo esc_html( get_the_title() );
 		} elseif ( is_page() && $post->post_parent ) {
 			$post_array = get_post_ancestors( $post );
 			krsort( $post_array ); 
@@ -161,8 +190,17 @@ $thinkup_general_breadcrumbdelimeter = thinkup_var ( 'thinkup_general_breadcrumb
 			_e( 'Error 404 - Not Found.', 'lan-thinkupthemes' );
 		} elseif ( is_post_type_archive( $portfolio )	) {
 			_e( 'Portfolio', 'lan-thinkupthemes' );
+		} elseif ( is_archive() ) {
+			echo get_the_archive_title();
+		} elseif( is_tax() ) {
+			echo esc_html( get_queried_object()->name );
+		} elseif ( thinkup_check_isblog() ) {
+			_e( 'Blog', 'lan-thinkupthemes' );
+		} else {
+			echo html_entity_decode( esc_html( get_the_title() ) );
 		}
-       echo '</div></div>';
+
+		echo '</div></div>';
     }
 }
 
