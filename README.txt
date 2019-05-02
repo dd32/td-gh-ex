@@ -47,6 +47,12 @@ Images
 
 
 == Changelog ==
+= 2.3.7 =
+** Fixed Woocommerce outdated template issue.
+** Fixed Woocommerce dynamic row option related issue.
+** Fixed Dynamic color option related issue.
+** Minior Css issue fixed.
+
 = 2.3.6 =
 ** Added Styles for Guttenberg Compatible
 ** Updates Minor CSS

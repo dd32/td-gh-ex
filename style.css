@@ -4,7 +4,7 @@ Theme URI: https://accesspressthemes.com/wordpress-themes/accesspress-store/
 Author: AccessPress Themes
 Author URI: http://accesspressthemes.com/
 Description: AccessPress Store is free WordPress theme that work beautifully with WooCommerce. The theme is packed with lots of exciting feature that enhances the ecommerce experience. It features Product slider, advanced whistlist, Featured product show list, call to action and many more. With its advanced customizer options, setting up the ecommerce website has become much more easy. Great customer support via online chat, email, support forum. Official support forum: http://accesspressthemes.com/support/ View full demo here: http://demo.accesspressthemes.com/accesspress-store/
-Version: 2.3.6
+Version: 2.3.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: accesspress-store
@@ -3649,7 +3649,6 @@ Responsive grid for pages
 }
 .woocommerce ul.products li.product,
 .woocommerce-page ul.products li.product {
-    clear: none;
     float: left;
     margin: 0 0 20px 2%;
     overflow: hidden;
@@ -3668,6 +3667,9 @@ Responsive grid for pages
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+.woocommerce ul.products.columns-4 li.product, .woocommerce-page ul.products.columns-4 li.product {
+    width: 24.75%;
 }
 .woocommerce ul.products li.product:hover h3 {
     opacity: 1;
@@ -3690,7 +3692,6 @@ Responsive grid for pages
 }
 .woocommerce ul.products li.product,
 .woocommerce-page ul.products li.product {
-    clear: none;
     float: left;
     padding: 0px 10px;
     margin: 0px;
@@ -3735,7 +3736,7 @@ Responsive grid for pages
     font-family: FontAwesome;
     content: "\f07a";
     margin-right: 5px;
-    color: #ffffff !important;
+    color: #ffffff;
 }
 .woocommerce ul.products li.product:hover a.item-wishlist {
     left: 0px;
@@ -3945,7 +3946,8 @@ ul.products.list li.product .woocommerce-product-details__short-description{
 .woocommerce #respond input#submit:hover,
 .woocommerce a.button:hover,
 .woocommerce button.button:hover,
-.woocommerce input.button:hover {
+.woocommerce input.button:hover,
+.woocommerce ul.products li.product .price-cart .add_to_cart_button:hover {
     color: #C05860;
     background: #FFF;
 }
@@ -3954,7 +3956,6 @@ ul.products.list li.product .woocommerce-product-details__short-description{
 .woocommerce button.button,
 .woocommerce input.button {
     background: #e24545;
-    color: #FFF !important;
     border-radius: 0px !important;
     border: 2px solid #e24545;
 }
@@ -3997,14 +3998,6 @@ ul.products.list li.product .woocommerce-product-details__short-description{
 
 a.compare.button {
     margin-top: 40px;
-}
-
-.woocommerce #respond input#submit:hover,
-.woocommerce a.button:hover,
-.woocommerce button.button:hover,
-.woocommerce input.button:hover {
-    background-color: #C05860;
-    color: #FFF;
 }
 .mini_cart_item .quantity {
     -ms-transform: rotate(7deg);    
@@ -4784,8 +4777,8 @@ span.onsale:after,
     padding: 1.7px 10px;
     float: none;
     width: auto;
-    background: #e7e7e7;
-    color: #8f8f8f;
+    background: #e24545;
+    color: #fff;
     margin-top: 0px;
     font-size: 14px;
     line-height: inherit;
@@ -4797,8 +4790,12 @@ span.onsale:after,
     -o-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
+.woocommerce.single.single-product .entry-summary form button.button:hover,
+.woocommerce ul.products li.product .price-cart .add_to_cart_button {
+    background: #fff;
+}
 .woocommerce.single.single-product .entry-summary form button.button:hover:before {
-    color: #e24545!important;
+    color: #e24545;
 }
 .woocommerce.single.single-product .entry-summary .add_to_wishlist {
     float: right;
@@ -4943,10 +4940,78 @@ span.onsale:after,
     text-transform: uppercase;
     padding-right: 0;
 }
+.content-area .description_tab.active::after,
+.content-area .reviews_tab.active::after,
+.content-area .additional_information_tab.active::after  {
+    display: block !important;
+    position: absolute;
+    content: '';
+    left: auto !important;
+    right: 20px !important;
+    border-style: solid;
+    border-width: 0 0 26px 15px !important;
+    border-color: transparent transparent #e24545 transparent !important;
+    width: 0 !important;
+    height: 0 !important;
+    bottom: 0px !important;
+    z-index: 5;
+    border-radius: 0 !important;
+}
+.content-area .description_tab{
+    position: relative;
+}
+.content-area .description_tab.active{
+    position: relative;
+}
+.content-area .description_tab.active::before,
+.content-area .reviews_tab.active::before,
+.content-area .additional_information_tab.active::before  {
+    position: absolute;
+    content: '';
+    background: #e24545;
+    bottom: 0;
+    right: 0;
+    height: 100% !important;
+    width: 20px !important;
+    z-index: 5;
+    display: block !important;
+    left: auto !important;
+    box-shadow: none;
+    border-radius: 0 !important;
+}
+.content-area .description_tab::after {
+    display: block !important;
+    position: absolute;
+    content: '';
+    left: auto !important;
+    right: 20px !important;
+    border-style: solid;
+    border-width: 0 0 26px 15px !important;
+    border-color: transparent transparent #e7e7e7 transparent !important;
+    width: 0 !important;
+    height: 0 !important;
+    bottom: 0px !important;
+    z-index: 5;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+}
+.content-area .description_tab::before {
+    position: absolute;
+    content: '';
+    background-color: #e7e7e7;
+    bottom: 0;
+    right: 0;
+    height: 100% !important;
+    width: 20px !important;
+    z-index: 5;
+    display: block !important;
+    left: auto !important;
+    box-shadow: none;
+    border-radius: 0 !important;
+}
 .woocommerce.single.single-product .woocommerce-tabs ul.tabs li.active {
     border: none;
     border-bottom: 1px solid #e24545;
-    background: url(images/tab.png) no-repeat right;
     position: relative;
 }
 .woocommerce.single.single-product .woocommerce-tabs ul.tabs li.active:after {
@@ -5736,7 +5801,7 @@ li.cat-parent {
 .woocommerce .widget_products ul li {
     font-size: 14px !important;
     line-height: 22px !important;
-    color: #e24545 !important;
+    color: #e24545;
     font-weight: 700 !important;
     padding: 20px 0px !important;
     border-bottom: 1px solid #f2f2f2 !important;
@@ -5776,13 +5841,30 @@ li.cat-parent {
     -webkit-appearance: none;
     -moz-appearance: none;
     appearance: none;
-    background: url(images/drop.jpg) 100% 15% no-repeat #efefef;
+    background: url(images/drop.png) 100% 15% no-repeat #efefef;
     border: none;
     color: #989898;
     font-weight: 400;
     font-size: 14px;
     line-height: 30px;
     overflow: hidden;
+}
+form.woocommerce-ordering:after{
+    position: absolute;
+    top: 0;
+    right: 0;
+    content: '\f0d7';
+    font-family: fontawesome;
+    color: #fff;
+    background: #e24545;
+    height: 32px;
+    width: 30px;
+    text-align: center;
+    line-height: 32px;
+    pointer-events: none;
+}
+form.woocommerce-ordering{
+    position: relative;
 }
 .single .woocommerce .content-area select { margin: 0px !important; }
 .single .woocommerce.single.single-product .woocommerce-tabs ul.tabs li a{

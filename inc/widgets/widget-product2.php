@@ -101,7 +101,7 @@ class accesspress_store_product2 extends WP_Widget {
                 <div class="feature-cat-product-wrap">
                       <div class="feature-cat-image <?php echo esc_attr($product_alignment); ?>">
                           <?php 
-                              $thumbnail_id = get_woocommerce_term_meta($product_category, 'thumbnail_id', true);
+                              $thumbnail_id = get_term_meta($product_category, 'thumbnail_id', true);
                               if (!empty($thumbnail_id)) {
                                   $image = wp_get_attachment_image_src($thumbnail_id, 'accesspress-prod-cat-size');
                                   echo '<img src="' . esc_url($image[0]) . '" />';
