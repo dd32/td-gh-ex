@@ -1,9 +1,9 @@
 === Alante Boxed ===
 Contributors: thinkupthemes
 Requires at least: 4.6
-Tested up to: 5.0.3
+Tested up to: 5.1.1
 Requires PHP: 5.2.4
-Version: 1.0.2
+Version: 1.0.3
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, editor-style, featured-images, featured-image-header, post-formats, sticky-post, translation-ready, flexible-header, custom-background, grid-layout, footer-widgets, blog, e-commerce, portfolio, rtl-language-support
@@ -52,6 +52,9 @@ Alante Boxed is a child theme or Alante and as such uses the same opensource pro
 
 
 == Changelog ==
+
+= 1.0.3
+- Updated: Tested up to version updated to ensure users know full compatibility with WordPress v5.1.1
 
 = 1.0.2
 - Updated: "Requires PHP" information added to readme.txt.
