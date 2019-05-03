@@ -1,5 +1,4 @@
 <?php
-
 /**
  * bb wedding bliss functions and definitions
  *
@@ -19,6 +18,7 @@ function bb_wedding_bliss_setup() {
 	load_theme_textdomain( 'bb-wedding-bliss', get_template_directory() . '/languages' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'post-thumbnails' );
+	add_theme_support( 'woocommerce' );
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'custom-logo', array(
 		'height'      => 240,
@@ -240,7 +240,7 @@ function bb_wedding_bliss_font_url(){
 	$font_family[] = 'Unica One';
 
 	$query_args = array(
-		'family'	=> urlencode(implode('|',$font_family)),
+		'family'	=> rawurlencode(implode('|',$font_family)),
 	);
 	$font_url = add_query_arg($query_args,'//fonts.googleapis.com/css');
 	return $font_url;
@@ -254,7 +254,6 @@ function bb_wedding_bliss_scripts() {
 	wp_enqueue_style( 'bb-wedding-bliss-effect', get_template_directory_uri().'/css/effect.css' );
 	
 	wp_enqueue_style( 'font-awesome', get_template_directory_uri().'/css/fontawesome-all.css' );
-	wp_enqueue_style( 'jquery-nivo-slider', get_template_directory_uri().'/css/nivo-slider.css' );
 
 	// Paragraph
 	    $bb_wedding_bliss_paragraph_color = get_theme_mod('bb_wedding_bliss_paragraph_color', '');
@@ -340,9 +339,8 @@ function bb_wedding_bliss_scripts() {
 			';
 		wp_add_inline_style( 'bb-wedding-bliss-basic-style',$custom_css );
 
-	wp_enqueue_script( 'jquery-nivo-slider', get_template_directory_uri() . '/js/jquery.nivo.slider.js', array('jquery') );
 	wp_enqueue_script( 'bb-wedding-bliss-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
-	wp_enqueue_script( 'bootstrap-js', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') );
+	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -353,15 +351,38 @@ add_action( 'wp_enqueue_scripts', 'bb_wedding_bliss_scripts' );
 
 define('BB_WEDDING_BLISS_BUY_NOW','https://www.themeshopy.com/premium/bb-wedding-bliss-wordpress-theme/','bb-wedding-bliss');
 define('BB_WEDDING_BLISS_LIVE_DEMO','https://themeshopy.com/bb-wedding-bliss-theme/','bb-wedding-bliss');
-define('BB_WEDDING_BLISS_PRO_DOC','https://themeshopy.com/docs/bb-wedding-bliss/','bb-wedding-bliss');
-define('BB_WEDDING_BLISS_FREE_DOC','https://www.themeshopy.com/docs/free-bb-wedding-bliss/','bb-wedding-bliss');
+define('BB_WEDDING_BLISS_PRO_DOC','https://themeshopy.com/demo/docs/bb-wedding-bliss/','bb-wedding-bliss');
+define('BB_WEDDING_BLISS_FREE_DOC','https://themeshopy.com/demo/docs/free-bb-wedding-bliss/','bb-wedding-bliss');
 define('BB_WEDDING_BLISS_CONTACT','https://wordpress.org/support/theme/bb-wedding-bliss/','bb-wedding-bliss');
-define('BB_WEDDING_BLISS_CREDIT','https://www.themeshopy.com/','bb-wedding-bliss');
+define('BB_WEDDING_BLISS_CREDIT','https://www.themeshopy.com/free/bb-free-wedding-bliss-wordpress-theme/','bb-wedding-bliss');
 
 if ( ! function_exists( 'bb_wedding_bliss_credit' ) ) {
 	function bb_wedding_bliss_credit(){
-		echo "<a href=".esc_url(BB_WEDDING_BLISS_CREDIT)." target='_blank'>By ThemeShopy</a>";
+		echo "<a href=".esc_url(BB_WEDDING_BLISS_CREDIT)." target='_blank'>". esc_html__('Wedding WordPress Theme','bb-wedding-bliss')."</a>";
 	}
+}
+
+// Change number or products per row to 3
+add_filter('loop_shop_columns', 'bb_wedding_bliss_loop_columns');
+if (!function_exists('bb_wedding_bliss_loop_columns')) {
+	function bb_wedding_bliss_loop_columns() {
+		return 3; // 3 products per row
+	}
+}
+
+/* Excerpt Limit Begin */
+function bb_wedding_bliss_string_limit_words($string, $word_limit) {
+	$words = explode(' ', $string, ($word_limit + 1));
+	if(count($words) > $word_limit)
+	array_pop($words);
+	return implode(' ', $words);
+}
+
+function bb_wedding_bliss_sanitize_dropdown_pages( $page_id, $setting ) {
+  // Ensure $input is an absolute integer.
+  $page_id = absint( $page_id );
+  // If $page_id is an ID of a published page, return it; otherwise, return the default.
+  return ( 'publish' == get_post_status( $page_id ) ? $page_id : $setting->default );
 }
 
 /*radio button sanitization*/

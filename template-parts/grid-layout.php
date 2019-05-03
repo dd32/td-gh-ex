@@ -7,7 +7,7 @@
  * @since bb wedding bliss 1.0
  */
 ?>
-<div class="col-md-4 col-sm-4">
+<div class="col-lg-4 col-md-4">
   <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <div class="page-box grid">
       <div class="box-image">

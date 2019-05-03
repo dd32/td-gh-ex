@@ -1,133 +1,107 @@
-/*-----------------------------------------------------------------------------------*/
-/* bb wedding bliss Responsive WordPress Theme */
-/*-----------------------------------------------------------------------------------*/
+=== BB Wedding Bliss ===
+Contributors: Themeshopy
+Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, post-formats, buddypress, full-width-template, theme-options, threaded-comments, blog, portfolio, e-commerce
+Requires at least: 4.7
+Tested up to: 5.1.1
+Requires PHP: 7.2.14
+Stable tag: 1.0.8
+License: GNU General Public License v3.0
+License URI:  http://www.gnu.org/licenses/gpl.html
 
-Theme Name      :   BB Wedding Bliss
-Theme URI       :   https://www.themeshopy.com/free/bb-free-wedding-bliss-wordpress-theme/
-Version         :   1.0.7
-Tested up to    :   WP 4.9.6
-Author          :   Themeshopy
-Author URI      :   https://www.themeshopy.com/
-license         :   GNU General Public License v3.0
-License URI     :   http://www.gnu.org/licenses/gpl.html
+BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage, engagement, couples, wedding planners, wedding band, personal, portfolio, art, design, business, photography, girlie or feminine blogs and websites, as well as photographer type of clients. You can make beautiful wedding websites with this multipurpose theme that caters to businesses such as hospitality, lodge, hotel, restaurant, café, food joints, cuisines, recipe, eatery, etc. 
 
-/*-----------------------------------------------------------------------------------*/
-/* About Author - Contact Details */
-/*-----------------------------------------------------------------------------------*/
+== Description ==
 
-email       	:   support@themeshopy.com
+BB Wedding Bliss is a wedding WordPress theme to construct websites for marriage, engagement, couples, wedding planners, wedding band, personal, portfolio, art, design, business, photography, girlie or feminine blogs and websites, as well as photographer type of clients. You can make beautiful wedding websites with this multipurpose theme that caters to businesses such as hospitality, lodge, hotel, restaurant, café, food joints, cuisines, recipe, eatery, etc. It’s a completely mobile-friendly theme which is built using Bootstrap – an excellent framework. It has powerful shortcodes that will set up a pleasing website for you. It has a well-integrated versatile banner with attractive Call to Action Button (CTA). From the testimonial section, you can spread client reviews about your site. This theme has many features such social media tools, amazing typography options, color choices, customizable admin panel, etc. The optimized codes support faster page load time to give a stunning user experience. BB Wedding WordPress Theme is SEO friendly that gets over the top in search result pages. Take away this professional Wedding WordPress Theme which will give a beautiful touch to your wedding website.
 
-/*-----------------------------------------------------------------------------------*/
-/* Theme Resources */
-/*-----------------------------------------------------------------------------------*/
+== Changelog ==
+
+= 0.1 =
+  * Initial Version Released
+
+= 1.0.1 =
+  * Resolved errors.
+  * Added changelog in readme file as per standerd.
+
+= 1.0.2 =
+  * Resolved errors.
+
+= 1.0.3 =
+  * Changed the layout of the theme.
+  * Tested theme upto wordpress version 4.8.3.
+
+= 1.0.4 =
+  * Resolved the error of template tag.  
+  * Tested upto Wordpress version 4.9.2
+  * Added Hooks.
+  * Removed unwanted css.
+
+= 1.0.5 =
+  * Fontawesome update.  
+  * Resolved theme errors.
+  * Removed the js files.
+
+= 1.0.6 =
+  * Removed the unused css.
+  * Resolved the errors.
+  * Update the bootstrap to version 4.0.0.
+  * Added the post format tag and done the changes in template files.
+  * Update the pot file in language folder.
+
+= 1.0.7 =
+  * Added typography section.
+  * Updated pot file.
+
+= 1.0.8 =
+  * Changed the slider.
+  * Added woocommerce.
+  * Updated pot file.
+  * Resolved theme errors.
+  * Changed theme screenshot.
+
+== Resources ==
 
 BB wedding bliss WordPress Theme, Copyright 2017 Themeshopy
 BB wedding bliss is distributed under the terms of the GNU GPL
 
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 3 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU General Public License for more details.
-
-You should have received a copy of the GNU General Public License
-along with this program.  If not, see .
-
-BB Wedding Bliss WordPress Theme, Copyright 2017 Themeshopy
-BB wedding bliss is distributed under the terms of the GNU GPL
-
-BB Wedding Bliss WordPress Theme is derived from Twenty Sixteen WordPress Theme, Copyright 2014-2015 WordPress.org
-Twenty Sixteen is distributed under the terms of the GNU GPL
-
 Theme is Built using the following resource bundles.
 
-1 - PT Sans font - https://www.google.com/fonts/specimen/Open+Sans
-	License: Distributed under the terms of the Apache License, version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
+* PT Sans font - https://www.google.com/fonts/specimen/Open+Sans
+  License: Distributed under the terms of the Apache License, version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
 
-2 -	CSS bootstrap.css
-    -- Copyright 2011-2018 The Bootstrap Authors
-    -- https://github.com/twbs/bootstrap/blob/master/LICENSE
-    
-    JS bootstrap.js
-    -- Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
-    -- https://github.com/twbs/bootstrap/blob/master/LICENSE
+* CSS bootstrap.css
+  -- Copyright 2011-2018 The Bootstrap Authors
+  -- https://github.com/twbs/bootstrap/blob/master/LICENSE
+  
+  JS bootstrap.js
+  -- Copyright 2011-2018 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+  -- https://github.com/twbs/bootstrap/blob/master/LICENSE
 
-    CSS nivo-slider.css
-        Copyright 2012, Dev7studios
-        Free to use and abuse under the MIT license.
-        http://www.opensource.org/licenses/mit-license.php
+* The Font Awesome font is licensed under the SIL OFL 1.1:
+  http://scripts.sil.org/OFL
+  Font Awesome CSS, LESS, and Sass files are licensed under the MIT License:
+  https://opensource.org/licenses/mit-license.html
 
-    JS nivo slider.js
-    	jquery.nivo.slider.js, License: MIT, License Url: https://opensource.org/licenses/MIT
+*  Screenshot Images.
+  License: CC0 1.0 Universal (CC0 1.0) 
+  Source: https://stocksnap.io/license
 
-3 - The Font Awesome font is licensed under the SIL OFL 1.1:
-	http://scripts.sil.org/OFL
-	Font Awesome CSS, LESS, and Sass files are licensed under the MIT License:
-	https://opensource.org/licenses/mit-license.html
+  Slider image, Copyright Wu Jianxiong
+  License: CC0 1.0 Universal (CC0 1.0)
+  Source: https://stocksnap.io/photo/HB1CUEWMRS
 
-4 - Images used from Pixabay.
-	Pixabay provides images under CC0 license (https://creativecommons.org/about/cc0)
+  Post image, Copyright Anggoro Sakti
+  License: CC0 1.0 Universal (CC0 1.0)
+  Source: https://stocksnap.io/photo/DSGMWWUKM8
+  
+  Post image, Copyright maryna
+  License: CC0 1.0 Universal (CC0 1.0)
+  Source: https://stocksnap.io/photo/4V5A467UNZ
 
-	Bundled header image, Copyright scottwebb
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/life-beauty-scene-bride-bridal-863708/
+  Post image, Copyright The Lazy Artist Gallery
+  License: CC0 1.0 Universal (CC0 1.0)
+  Source: https://stocksnap.io/photo/PDRQFBMYET
 
-	Bundled header image, Copyright MiguelRPerez
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/bride-love-wedding-couple-groom-1520821/
-
-	Bundled header image, Copyright Alvin Engler
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/wedding-grooms-embracing-each-other-1183278/
-
-All the icons taken from genericons licensed under GPL License v2.0.
-http://genericons.com/ 
-
-/*-----------------------------------------------------------------------------------*/
-/* Changelog */
-/*-----------------------------------------------------------------------------------*/
-
-Version 1.0
-i) Intial version Release
-
-Version 1.0.1
-i) Resolved errors.
-ii) Added changelog in readme file as per standerd.
-
-Version 1.0.2
-i) Resolved errors.
-
-Version 1.0.3
-i)  Changed the layout of the theme.
-ii) Tested theme upto wordpress version 4.8.3.
-
-Version 1.0.4
-i)   Resolved the error of template tag.  
-ii)  Tested upto Wordpress version 4.9.2
-iii) Added Hooks.
-iv)  Removed unwanted css.
-
-Version 1.0.5
-i)   Fontawesome update.  
-ii)  Resolved theme errors.
-iii) Removed the js files.
-
-Version 1.0.6
-i) 	 Removed the unused css.
-ii)	 Resolved the errors.
-iii) Update the bootstrap to version 4.0.0.
-iv)  Added the post format tag and done the changes in template files.
-v)   Update the pot file in language folder.
-
-Version 1.0.7
-i)  Added typography section.
-ii) Updated pot file.
-	
-BB Wedding Bliss Free version
-==========================================================
-BB Wedding Bliss Free version is compatible with GPL licensed.
-For any help you can mail us at support[at]themeshopy.com
+  Post image, Copyright Alvin Mahmudov
+  License: CC0 1.0 Universal (CC0 1.0)
+  Source: https://stocksnap.io/photo/JQYJR3DCYX

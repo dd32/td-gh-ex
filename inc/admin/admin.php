@@ -123,7 +123,5 @@ function bb_wedding_bliss_mostrar_guide() {
 	    elmnt.style.backgroundColor = color;
 
 	}
-	// Get the element with id="defaultOpen" and click on it
-	document.getElementById("defaultOpen").click();
 </script>
 <?php } ?>

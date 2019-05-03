@@ -30,7 +30,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('bb_wedding_bliss_layout_options',array(
-	        'default' => '',
+	        'default' => __('Right Sidebar','bb-wedding-bliss'),
 	        'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices'	        
 	    )
     );
@@ -52,97 +52,100 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
     );
 
     $font_array = array(
-        '' => __( 'No Fonts', 'bb-wedding-bliss' ),
-        'Abril Fatface' => __( 'Abril Fatface', 'bb-wedding-bliss' ),
-        'Acme' => __( 'Acme', 'bb-wedding-bliss' ),
-        'Anton' => __( 'Anton', 'bb-wedding-bliss' ),
-        'Architects Daughter' => __( 'Architects Daughter', 'bb-wedding-bliss' ),
-        'Arimo' => __( 'Arimo', 'bb-wedding-bliss' ),
-        'Arsenal' => __( 'Arsenal', 'bb-wedding-bliss' ),
-        'Arvo' => __( 'Arvo', 'bb-wedding-bliss' ),
-        'Alegreya' => __( 'Alegreya', 'bb-wedding-bliss' ),
-        'Alfa Slab One' => __( 'Alfa Slab One', 'bb-wedding-bliss' ),
-        'Averia Serif Libre' => __( 'Averia Serif Libre', 'bb-wedding-bliss' ),
-        'Bangers' => __( 'Bangers', 'bb-wedding-bliss' ),
-        'Boogaloo' => __( 'Boogaloo', 'bb-wedding-bliss' ),
-        'Bad Script' => __( 'Bad Script', 'bb-wedding-bliss' ),
-        'Bitter' => __( 'Bitter', 'bb-wedding-bliss' ),
-        'Bree Serif' => __( 'Bree Serif', 'bb-wedding-bliss' ),
-        'BenchNine' => __( 'BenchNine', 'bb-wedding-bliss' ),
-        'Cabin' => __( 'Cabin', 'bb-wedding-bliss' ),
-        'Cardo' => __( 'Cardo', 'bb-wedding-bliss' ),
-        'Courgette' => __( 'Courgette', 'bb-wedding-bliss' ),
-        'Cherry Swash' => __( 'Cherry Swash', 'bb-wedding-bliss' ),
-        'Cormorant Garamond' => __( 'Cormorant Garamond', 'bb-wedding-bliss' ),
-        'Crimson Text' => __( 'Crimson Text', 'bb-wedding-bliss' ),
-        'Cuprum' => __( 'Cuprum', 'bb-wedding-bliss' ),
-        'Cookie' => __( 'Cookie', 'bb-wedding-bliss' ),
-        'Chewy' => __( 'Chewy', 'bb-wedding-bliss' ),
-        'Days One' => __( 'Days One', 'bb-wedding-bliss' ),
-        'Dosis' => __( 'Dosis', 'bb-wedding-bliss' ),
-        'Droid Sans' => __( 'Droid Sans', 'bb-wedding-bliss' ),
-        'Economica' => __( 'Economica', 'bb-wedding-bliss' ),
-        'Fredoka One' => __( 'Fredoka One', 'bb-wedding-bliss' ),
-        'Fjalla One' => __( 'Fjalla One', 'bb-wedding-bliss' ),
-        'Francois One' => __( 'Francois One', 'bb-wedding-bliss' ),
-        'Frank Ruhl Libre' => __( 'Frank Ruhl Libre', 'bb-wedding-bliss' ),
-        'Gloria Hallelujah' => __( 'Gloria Hallelujah', 'bb-wedding-bliss' ),
-        'Great Vibes' => __( 'Great Vibes', 'bb-wedding-bliss' ),
-        'Handlee' => __( 'Handlee', 'bb-wedding-bliss' ),
-        'Hammersmith One' => __( 'Hammersmith One', 'bb-wedding-bliss' ),
-        'Inconsolata' => __( 'Inconsolata', 'bb-wedding-bliss' ),
-        'Indie Flower' => __( 'Indie Flower', 'bb-wedding-bliss' ),
-        'IM Fell English SC' => __( 'IM Fell English SC', 'bb-wedding-bliss' ),
-        'Julius Sans One' => __( 'Julius Sans One', 'bb-wedding-bliss' ),
-        'Josefin Slab' => __( 'Josefin Slab', 'bb-wedding-bliss' ),
-        'Josefin Sans' => __( 'Josefin Sans', 'bb-wedding-bliss' ),
-        'Kanit' => __( 'Kanit', 'bb-wedding-bliss' ),
-        'Lobster' => __( 'Lobster', 'bb-wedding-bliss' ),
-        'Lato' => __( 'Lato', 'bb-wedding-bliss' ),
-        'Lora' => __( 'Lora', 'bb-wedding-bliss' ),
-        'Libre Baskerville' => __( 'Libre Baskerville', 'bb-wedding-bliss' ),
-        'Lobster Two' => __( 'Lobster Two', 'bb-wedding-bliss' ),
-        'Merriweather' => __( 'Merriweather', 'bb-wedding-bliss' ),
-        'Monda' => __( 'Monda', 'bb-wedding-bliss' ),
-        'Montserrat' => __( 'Montserrat', 'bb-wedding-bliss' ),
-        'Muli' => __( 'Muli', 'bb-wedding-bliss' ),
-        'Marck Script' => __( 'Marck Script', 'bb-wedding-bliss' ),
-        'Noto Serif' => __( 'Noto Serif', 'bb-wedding-bliss' ),
-        'Open Sans' => __( 'Open Sans', 'bb-wedding-bliss' ),
-        'Overpass' => __( 'Overpass', 'bb-wedding-bliss' ),
-        'Overpass Mono' => __( 'Overpass Mono', 'bb-wedding-bliss' ),
-        'Oxygen' => __( 'Oxygen', 'bb-wedding-bliss' ),
-        'Orbitron' => __( 'Orbitron', 'bb-wedding-bliss' ),
-        'Patua One' => __( 'Patua One', 'bb-wedding-bliss' ),
-        'Pacifico' => __( 'Pacifico', 'bb-wedding-bliss' ),
-        'Padauk' => __( 'Padauk', 'bb-wedding-bliss' ),
-        'Playball' => __( 'Playball', 'bb-wedding-bliss' ),
-        'Playfair Display' => __( 'Playfair Display', 'bb-wedding-bliss' ),
-        'PT Sans' => __( 'PT Sans', 'bb-wedding-bliss' ),
-        'Philosopher' => __( 'Philosopher', 'bb-wedding-bliss' ),
-        'Permanent Marker' => __( 'Permanent Marker', 'bb-wedding-bliss' ),
-        'Poiret One' => __( 'Poiret One', 'bb-wedding-bliss' ),
-        'Quicksand' => __( 'Quicksand', 'bb-wedding-bliss' ),
-        'Quattrocento Sans' => __( 'Quattrocento Sans', 'bb-wedding-bliss' ),
-        'Raleway' => __( 'Raleway', 'bb-wedding-bliss' ),
-        'Rubik' => __( 'Rubik', 'bb-wedding-bliss' ),
-        'Rokkitt' => __( 'Rokkitt', 'bb-wedding-bliss' ),
-        'Russo One' => __( 'Russo One', 'bb-wedding-bliss' ),
-        'Righteous' => __( 'Righteous', 'bb-wedding-bliss' ),
-        'Slabo' => __( 'Slabo', 'bb-wedding-bliss' ),
-        'Source Sans Pro' => __( 'Source Sans Pro', 'bb-wedding-bliss' ),
-        'Shadows Into Light Two' => __( 'Shadows Into Light Two', 'bb-wedding-bliss'),
-        'Shadows Into Light' => __( 'Shadows Into Light', 'bb-wedding-bliss' ),
-        'Sacramento' => __( 'Sacramento', 'bb-wedding-bliss' ),
-        'Shrikhand' => __( 'Shrikhand', 'bb-wedding-bliss' ),
-        'Tangerine' => __( 'Tangerine', 'bb-wedding-bliss' ),
-        'Ubuntu' => __( 'Ubuntu', 'bb-wedding-bliss' ),
-        'VT323' => __( 'VT323', 'bb-wedding-bliss' ),
-        'Varela Round' => __( 'Varela Round', 'bb-wedding-bliss' ),
-        'Vampiro One' => __( 'Vampiro One', 'bb-wedding-bliss' ),
-        'Vollkorn' => __( 'Vollkorn', 'bb-wedding-bliss' ),
-        'Volkhov' => __( 'Volkhov', 'bb-wedding-bliss' ),
-        'Yanone Kaffeesatz' => __( 'Yanone Kaffeesatz', 'bb-wedding-bliss' )
+        '' =>'No Fonts',
+        'Abril Fatface' => 'Abril Fatface',
+        'Acme' =>'Acme', 
+        'Anton' => 'Anton', 
+        'Architects Daughter' =>'Architects Daughter',
+        'Arimo' => 'Arimo', 
+        'Arsenal' =>'Arsenal',
+        'Arvo' =>'Arvo',
+        'Alegreya' =>'Alegreya',
+        'Alfa Slab One' =>'Alfa Slab One',
+        'Averia Serif Libre' =>'Averia Serif Libre', 
+        'Bangers' =>'Bangers', 
+        'Boogaloo' =>'Boogaloo', 
+        'Bad Script' =>'Bad Script',
+        'Bitter' =>'Bitter', 
+        'Bree Serif' =>'Bree Serif', 
+        'BenchNine' =>'BenchNine',
+        'Cabin' =>'Cabin',
+        'Cardo' =>'Cardo', 
+        'Courgette' =>'Courgette', 
+        'Cherry Swash' =>'Cherry Swash',
+        'Cormorant Garamond' =>'Cormorant Garamond', 
+        'Crimson Text' =>'Crimson Text',
+        'Cuprum' =>'Cuprum', 
+        'Cookie' =>'Cookie',
+        'Chewy' =>'Chewy',
+        'Days One' =>'Days One',
+        'Dosis' =>'Dosis',
+        'Droid Sans' =>'Droid Sans', 
+        'Economica' =>'Economica', 
+        'Fredoka One' =>'Fredoka One',
+        'Fjalla One' =>'Fjalla One',
+        'Francois One' =>'Francois One', 
+        'Frank Ruhl Libre' => 'Frank Ruhl Libre', 
+        'Gloria Hallelujah' =>'Gloria Hallelujah',
+        'Great Vibes' =>'Great Vibes', 
+        'Handlee' =>'Handlee', 
+        'Hammersmith One' =>'Hammersmith One',
+        'Inconsolata' =>'Inconsolata',
+        'Indie Flower' =>'Indie Flower', 
+        'IM Fell English SC' =>'IM Fell English SC',
+        'Julius Sans One' =>'Julius Sans One',
+        'Josefin Slab' =>'Josefin Slab',
+        'Josefin Sans' =>'Josefin Sans',
+        'Kanit' =>'Kanit',
+        'Lobster' =>'Lobster',
+        'Lato' => 'Lato',
+        'Lora' =>'Lora', 
+        'Libre Baskerville' =>'Libre Baskerville',
+        'Lobster Two' => 'Lobster Two',
+        'Merriweather' =>'Merriweather',
+        'Monda' =>'Monda',
+        'Montserrat' =>'Montserrat',
+        'Muli' =>'Muli',
+        'Marck Script' =>'Marck Script',
+        'Noto Serif' =>'Noto Serif',
+        'Open Sans' =>'Open Sans',
+        'Overpass' => 'Overpass', 
+        'Overpass Mono' =>'Overpass Mono',
+        'Oxygen' =>'Oxygen',
+        'Orbitron' =>'Orbitron',
+        'Patua One' =>'Patua One',
+        'Pacifico' =>'Pacifico',
+        'Padauk' =>'Padauk',
+        'Playball' =>'Playball',
+        'Playfair Display' =>'Playfair Display',
+        'PT Sans' =>'PT Sans',
+        'Philosopher' =>'Philosopher',
+        'Permanent Marker' =>'Permanent Marker',
+        'Poiret One' =>'Poiret One',
+        'Quicksand' =>'Quicksand',
+        'Quattrocento Sans' =>'Quattrocento Sans',
+        'Raleway' =>'Raleway',
+        'Rubik' =>'Rubik',
+        'Rokkitt' =>'Rokkitt',
+        'Russo One' => 'Russo One', 
+        'Righteous' =>'Righteous', 
+        'Slabo' =>'Slabo', 
+        'Source Sans Pro' =>'Source Sans Pro',
+        'Shadows Into Light Two' =>'Shadows Into Light Two',
+        'Shadows Into Light' =>  'Shadows Into Light',
+        'Sacramento' =>'Sacramento',
+        'Shrikhand' =>'Shrikhand',
+        'Tangerine' => 'Tangerine',
+        'Ubuntu' =>'Ubuntu',
+        'Unica One' =>'Unica One',
+        'VT323' =>'VT323',
+        'Varela Round' =>'Varela Round',
+        'Vampiro One' =>'Vampiro One',
+        'Vollkorn' => 'Vollkorn',
+        'Volkhov' =>'Volkhov',
+        'Kavoon' =>'Kavoon',
+        'Poppins' => 'Poppins',
+        'Yanone Kaffeesatz' =>'Yanone Kaffeesatz'
     );
 
 	//Typography
@@ -467,43 +470,10 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'type'	=> 'text'
 	));
 
-	
-	//Topbar section
-	$wp_customize->add_section('bb_wedding_bliss_topbar_icon',array(
-		'title'	=> __('Topbar Section','bb-wedding-bliss'),
-		'description'	=> __('Add Header Content here','bb-wedding-bliss'),
-		'priority'	=> null,
-		'panel' => 'bb_wedding_bliss_panel_id',
-	));
-
-	$wp_customize->add_setting('bb_wedding_bliss_contact',array(
-		'default'	=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('bb_wedding_bliss_contact',array(
-		'label'	=> __('Add Phone Number','bb-wedding-bliss'),
-		'section'	=> 'bb_wedding_bliss_topbar_icon',
-		'setting'	=> 'bb_wedding_bliss_contact',
-		'type'		=> 'text'
-	));
-
-	$wp_customize->add_setting('bb_wedding_bliss_email',array(
-		'default'	=> '',
-		'sanitize_callback'	=> 'sanitize_text_field'
-	));
-	
-	$wp_customize->add_control('bb_wedding_bliss_email',array(
-		'label'	=> __('Add Email','bb-wedding-bliss'),
-		'section'	=> 'bb_wedding_bliss_topbar_icon',
-		'setting'	=> 'bb_wedding_bliss_email',
-		'type'		=> 'text'
-	));
-
-	//Social Icons(topbar)
-	$wp_customize->add_section('bb_wedding_bliss_topbar_header',array(
+	//Social Icons
+	$wp_customize->add_section('bb_wedding_bliss_social_icons',array(
 		'title'	=> __('Social Icon Section','bb-wedding-bliss'),
-		'description'	=> __('Add Header Content here','bb-wedding-bliss'),
+		'description'	=> __('Social icons will appear in footer.','bb-wedding-bliss'),
 		'priority'	=> null,
 		'panel' => 'bb_wedding_bliss_panel_id',
 	));
@@ -515,7 +485,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_control('bb_wedding_bliss_youtube_url',array(
 		'label'	=> __('Add Youtube link','bb-wedding-bliss'),
-		'section'	=> 'bb_wedding_bliss_topbar_header',
+		'section'	=> 'bb_wedding_bliss_social_icons',
 		'setting'	=> 'bb_wedding_bliss_youtube_url',
 		'type'		=> 'url'
 	));
@@ -527,7 +497,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_control('bb_wedding_bliss_facebook_url',array(
 		'label'	=> __('Add Facebook link','bb-wedding-bliss'),
-		'section'	=> 'bb_wedding_bliss_topbar_header',
+		'section'	=> 'bb_wedding_bliss_social_icons',
 		'setting'	=> 'bb_wedding_bliss_facebook_url',
 		'type'	=> 'url'
 	));
@@ -539,7 +509,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_control('bb_wedding_bliss_twitter_url',array(
 		'label'	=> __('Add Twitter link','bb-wedding-bliss'),
-		'section'	=> 'bb_wedding_bliss_topbar_header',
+		'section'	=> 'bb_wedding_bliss_social_icons',
 		'setting'	=> 'bb_wedding_bliss_twitter_url',
 		'type'	=> 'url'
 	));
@@ -551,7 +521,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_control('bb_wedding_bliss_rss_url',array(
 		'label'	=> __('Add RSS link','bb-wedding-bliss'),
-		'section'	=> 'bb_wedding_bliss_topbar_header',
+		'section'	=> 'bb_wedding_bliss_social_icons',
 		'setting'	=> 'bb_wedding_bliss_rss_url',
 		'type'	=> 'url'
 	));
@@ -563,7 +533,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_control('bb_wedding_bliss_insta_url',array(
 		'label'	=> __('Add Instagram link','bb-wedding-bliss'),
-		'section'	=> 'bb_wedding_bliss_topbar_header',
+		'section'	=> 'bb_wedding_bliss_social_icons',
 		'setting'	=> 'bb_wedding_bliss_insta_url',
 		'type'	=> 'url'
 	));
@@ -575,7 +545,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_control('bb_wedding_bliss_google_url',array(
 		'label'	=> __('Add Google link','bb-wedding-bliss'),
-		'section'	=> 'bb_wedding_bliss_topbar_header',
+		'section'	=> 'bb_wedding_bliss_social_icons',
 		'setting'	=> 'bb_wedding_bliss_google_url',
 		'type'	=> 'url'
 	));
@@ -587,7 +557,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	
 	$wp_customize->add_control('bb_wedding_bliss_pint_url',array(
 		'label'	=> __('Add Pintrest link','bb-wedding-bliss'),
-		'section'	=> 'bb_wedding_bliss_topbar_header',
+		'section'	=> 'bb_wedding_bliss_social_icons',
 		'setting'	=> 'bb_wedding_bliss_pint_url',
 		'type'	=> 'url'
 	));	
@@ -599,20 +569,28 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 		'panel' => 'bb_wedding_bliss_panel_id'
 	) );
 
+	$wp_customize->add_setting('bb_wedding_bliss_slider_arrows',array(
+      'default' => 'false',
+      'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	$wp_customize->add_control('bb_wedding_bliss_slider_arrows',array(
+	    'type' => 'checkbox',
+	    'label' => __('Show / Hide slider','bb-wedding-bliss'),
+	    'section' => 'bb_wedding_bliss_slidersettings',
+	));
+
 	for ( $count = 1; $count <= 4; $count++ ) {
 
-		// Add color scheme setting and control.
-		$wp_customize->add_setting( 'bb_wedding_bliss_slidersettings-page-' . $count, array(
+		$wp_customize->add_setting( 'bb_wedding_bliss_slidersettings_page' . $count, array(
 			'default'           => '',
-			'sanitize_callback' => 'absint'
+			'sanitize_callback' => 'bb_wedding_bliss_sanitize_dropdown_pages'
 		) );
 
-		$wp_customize->add_control( 'bb_wedding_bliss_slidersettings-page-' . $count, array(
+		$wp_customize->add_control( 'bb_wedding_bliss_slidersettings_page' . $count, array(
 			'label'    => __( 'Select Slide Image Page', 'bb-wedding-bliss' ),
 			'section'  => 'bb_wedding_bliss_slidersettings',
 			'type'     => 'dropdown-pages'
 		) );
-
 	}
 
 	//Love Story
@@ -623,9 +601,10 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	));
 
 	$post_list = get_posts();
-	$i = 0;
+ 	$i = 0;
+	$pst[]='Select';  
 	foreach($post_list as $post){
-		$posts[$post->post_title] = $post->post_title;
+		$pst[$post->post_title] = $post->post_title;
 	}
 
 	$wp_customize->add_setting('bb_wedding_bliss_love_post_setting',array(
@@ -634,7 +613,7 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control('bb_wedding_bliss_love_post_setting',array(
 		'type'    => 'select',
-		'choices' => $posts,
+		'choices' => $pst,
 		'label' => __('Select post','bb-wedding-bliss'),
 		'section' => 'bb_wedding_bliss_lovestory',
 	));
@@ -651,7 +630,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	    'default' => '',
 	    'sanitize_callback' => 'sanitize_text_field',
   	));
-
   	$wp_customize->add_control('bb_wedding_bliss_main_title',array(
 	    'label' => __('Title','bb-wedding-bliss'),
 	    'section' => 'bb_wedding_bliss_event_section',
@@ -662,7 +640,6 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	    'default' => '',
 	    'sanitize_callback' => 'sanitize_text_field',
  	));
-
   	$wp_customize->add_control('bb_wedding_bliss_short_line',array(
 	    'label' => __('Short Line','bb-wedding-bliss'),
 	    'section' => 'bb_wedding_bliss_event_section',
@@ -672,22 +649,22 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	$categories = get_categories();
 	$cats = array();
 	$i = 0;
+	$cat_post[]='Select';
 	foreach($categories as $category){
 		if($i==0){
 			$default = $category->slug;
 			$i++;
 		}
-		$cats[$category->slug] = $category->name;
+		$cat_post[$category->slug] = $category->name;
 	}
 
 	$wp_customize->add_setting('bb_wedding_bliss_event_setting',array(
 	    'default' => 'select',
 	    'sanitize_callback' => 'bb_wedding_bliss_sanitize_choices',
   	));
-
   	$wp_customize->add_control('bb_wedding_bliss_event_setting',array(
 	    'type'    => 'select',
-	    'choices' => $cats,
+	    'choices' => $cat_post,
 	    'label' => __('Select Category to display Latest Post','bb-wedding-bliss'),
 	    'section' => 'bb_wedding_bliss_event_section',
   	));
@@ -790,7 +767,7 @@ final class BB_Wedding_Bliss_Customize {
 				array(
 					'priority'  => 9,
 					'title'    => esc_html__( 'Upgrade to Pro', 'bb-wedding-bliss' ),
-					'pro_text' => esc_html__( 'Go Pro',         'bb-wedding-bliss' ),
+					'pro_text' => esc_html__( 'Go Pro', 'bb-wedding-bliss' ),
 					'pro_url'  => esc_url('https://www.themeshopy.com/premium/bb-wedding-bliss-wordpress-theme/'),
 				)
 			)

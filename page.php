@@ -15,19 +15,17 @@ get_header(); ?>
 <?php do_action( 'bb_wedding_bliss_header_page' ); ?>
 
 <div class="container">
-    <div class="middle-align row">    
-        <div id="content-ts" >
-            <?php while ( have_posts() ) : the_post(); ?>        
-                <h1><?php the_title();?></h1>
-                <img src="<?php the_post_thumbnail_url(); ?>" width="100%">
-                <?php the_content();
-                
-                //If comments are open or we have at least one comment, load up the comment template
-                    if ( comments_open() || '0' != get_comments_number() )
-                        comments_template();
-                ?>
-            <?php endwhile; // end of the loop. ?>
-        </div>
+    <div id="content-ts" class="middle-align">
+        <?php while ( have_posts() ) : the_post(); ?>
+            <h1><?php the_title();?></h1>
+            <img src="<?php the_post_thumbnail_url(); ?>" >
+            <?php the_content();
+            
+            //If comments are open or we have at least one comment, load up the comment template
+                if ( comments_open() || '0' != get_comments_number() )
+                    comments_template();
+            ?>
+        <?php endwhile; // end of the loop. ?>
         <div class="clear"></div>    
     </div>
 </div>
