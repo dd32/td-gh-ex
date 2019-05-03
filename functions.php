@@ -552,7 +552,7 @@ endif;
  */
 function academica_the_footer_text( $date_fmt = 'Y', $echo = true ) {
 
-	$text = sprintf( __( 'Powered by <a href="%s">WordPress</a> / Academica WordPress Theme by <a href="%s">WPZOOM</a>', 'academica' ), 'http://wordpress.org', 'http://www.wpzoom.com' );
+	$text = sprintf( __( 'Powered by <a href="%s">WordPress</a> / Academica WordPress Theme by <a href="%s" rel="nofollow">WPZOOM</a>', 'academica' ), 'http://wordpress.org', 'http://www.wpzoom.com' );
 
 	$html = apply_filters( 'academica_the_footer_text', $text ) ;
 	$html = apply_filters( 'academica_the_footer_text', $html, $text );

@@ -3,6 +3,9 @@ https://www.wpzoom.com/themes/academica
 
 CHANGELOG
 ---------
+v 2.0.5 (May 3, 2019)
+    - Fixed a problem with the footer links
+
 v 2.0.4 (June 3, 2018)
     - Minor fixes to comments form
 
