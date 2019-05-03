@@ -42,3 +42,7 @@ https://stocksnap.io/photo/KRQQUX0GMS
 
 = 1.0 - feb 2018 =
 * Initial release
+
+== May 3 2019 ==
+* added flexbox to header
+* fixed logo display

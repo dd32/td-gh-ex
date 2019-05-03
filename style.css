@@ -4,7 +4,7 @@ Theme URI: https://aperturewp.com/downloads/aqua-portfolio/
 Author: afrothemes
 Author URI: http://aperturewp.com
 Description: Aqua portfolio is a free WordPress Ajax portfolio theme built for digital agencies, creative portfolio, photography sites, design studio, illustrators & any content creator. Brix portfolio is freely availble, use posts to create portfolio items and display them on a modern responsive grid. Want a more professional look? upgrade to the pro version for  detailed portfolio pages with video and image galleries, a modern looking homepage for a portfolio you'd be proud to share.
-Version: 1.0.10
+Version: 1.0.11
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aqua-portfolio
@@ -507,6 +507,12 @@ textarea {
 }
 #masthead {
   padding: 1em 0;
+  justify-content: flex-start;
+  display: flex;
+  align-items: center;
+}
+.push-right {
+  margin-right: auto;
 }
 .site-branding {
   text-align: left;

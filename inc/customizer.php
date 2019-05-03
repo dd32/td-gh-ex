@@ -17,7 +17,7 @@ function aqua_portfolio_customize_register( $wp_customize ) {
 
 	// View PRO Version
 	$wp_customize->add_section( 'aqua_portfolio_style_view_pro', array(
-		'title'       => '' . esc_html__( 'Upgrage to Pro', 'aperture-portfolio' ),
+		'title'       => '' . esc_html__( 'Upgrage to Pro', 'aqua-portfolio' ),
 		'priority'    => 2,
 		'description' => sprintf(
 			//unintrosive upsell message
@@ -45,8 +45,8 @@ function aqua_portfolio_customize_register( $wp_customize ) {
                             	<div class="description">Get one on one email support from our experienced support stuff, we can also help you modify the theme to your liking</div>
                             </li>
                             
-                    </ul> %s </div>', 'aperture-portfolio' ),
-			sprintf( '<a href="%1$s" target="_blank" class="button button-primary">%2$s</a>', esc_url( aqua_portfolio_get_pro_link() ), esc_html__( 'Upgrade To PRO', 'aperture-portfolio' ) )
+                    </ul> %s </div>', 'aqua-portfolio' ),
+			sprintf( '<a href="%1$s" target="_blank" class="button button-primary">%2$s</a>', esc_url( aqua_portfolio_get_pro_link() ), esc_html__( 'Upgrade To PRO', 'aqua-portfolio' ) )
 		),
 	) );
 
