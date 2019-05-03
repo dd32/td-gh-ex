@@ -20,6 +20,9 @@ Enigma is an outstanding superfine creation from weblizar, Enigma has become one
 Please drop your issues here <a href="https://wordpress.org/support/theme/enigma"> we'll try to triage issues reported on the theme forum, you'll get a faster response.
 
 == Changelog ==
+= 4.9.6 =
+* Minor Fix.
+
 
 = 4.9.5 =
 * Integrated font awesome 5.8.1
