@@ -12,8 +12,8 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info smallPart">
-			<?php $copyrightText = get_theme_mod('zenzero_theme_options_copyright', '&copy; '.date('Y').' '. get_bloginfo('name')); ?>
-			<?php echo wp_kses($copyrightText, zenzero_allowed_html()); ?>
+			<?php $zenzero_copyrightText = get_theme_mod('zenzero_theme_options_copyright', '&copy; '.date('Y').' '. get_bloginfo('name')); ?>
+			<?php echo wp_kses($zenzero_copyrightText, zenzero_allowed_html()); ?>
 			<span class="sep"> | </span>
 			<?php
 			/* translators: 1: theme name, 2: theme developer */
@@ -21,14 +21,14 @@
 			?>
 		</div><!-- .site-info -->
 		<?php 
-		$hideSearch = get_theme_mod('zenzero_theme_options_hidesearch', '1');
+		$zenzero_hideSearch = get_theme_mod('zenzero_theme_options_hidesearch', '1');
 		zenzero_social_button();
 		?>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 <?php get_sidebar(); ?>
 <a href="#top" id="toTop" class="showTop"><i class="fa fa-angle-up"></i></a>
-<?php if ($hideSearch == 1 ) : ?>
+<?php if ($zenzero_hideSearch == 1 ) : ?>
 	<div id="open-search" class="showSearch"><i class="fa fa-search"></i></div>
 	<!-- Start: Search Form -->
 	<div id="search-full">
