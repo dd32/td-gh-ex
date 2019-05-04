@@ -109,7 +109,7 @@ add_filter( 'aamla_get_attr_site_footer', 'aamla_site_footer_classes' );
  */
 function aamla_excerpt_length( $length ) {
 	// Number of words to be shown in post excerpt.
-	$length = 20;
+	$length = 15;
 	return $length;
 }
 add_filter( 'excerpt_length', 'aamla_excerpt_length' );

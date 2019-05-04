@@ -101,10 +101,11 @@ function aamla_header_items() {
  * @since 1.0.0
  */
 function aamla_contact_information() {
-	$telephone = aamla_get_mod( 'aamla_tel_number', 'none' );
-	$email     = aamla_get_mod( 'aamla_email_id', 'none' );
+	$telephone   = aamla_get_mod( 'aamla_tel_number', 'none' );
+	$email       = aamla_get_mod( 'aamla_email_id', 'none' );
+	$hide_social = aamla_get_mod( 'aamla_hide_social_icons_on_contact_bar', 'none' );
 
-	if ( ! ( $email || $telephone || has_nav_menu( 'social' ) ) ) {
+	if ( ! ( $email || $telephone || ( has_nav_menu( 'social' ) && ! $hide_social ) ) ) {
 		return;
 	}
 	aamla_markup(
@@ -393,7 +394,6 @@ function aamla_entry_title_area() {
 		[
 			[ 'aamla_get_template_partial', 'template-parts/post', 'entry-title' ],
 			'aamla_entry_meta_wrapper',
-			'aamla_entry_extra',
 		]
 	);
 }
@@ -511,7 +511,7 @@ function aamla_entry_content() {
 		aamla_get_template_partial( 'template-parts/post', 'entry-content' );
 	} else {
 		the_excerpt();
-		aamla_get_template_partial( 'template-parts/meta', 'meta-categories' );
+		aamla_get_template_partial( 'template-parts/meta', 'meta-author' );
 	}
 }
 

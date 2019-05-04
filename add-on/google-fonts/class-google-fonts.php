@@ -190,7 +190,7 @@ class Google_Fonts {
 				$defaults = array_merge(
 					$defaults,
 					[
-						"aamla_{$id}_font_family"    => 'roboto',
+						"aamla_{$id}_font_family"    => 'pt-sans',
 						"aamla_{$id}_font_selectors" => 'body',
 					]
 				);
@@ -198,7 +198,7 @@ class Google_Fonts {
 				$defaults = array_merge(
 					$defaults,
 					[
-						"aamla_{$id}_font_family"    => 'lora',
+						"aamla_{$id}_font_family"    => 'pt-serif',
 						"aamla_{$id}_font_selectors" => '.site-title, .entry-header-title',
 					]
 				);

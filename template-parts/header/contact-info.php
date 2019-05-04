@@ -9,8 +9,8 @@
 $aamla_telephone = aamla_get_mod( 'aamla_tel_number' );
 $aamla_email     = aamla_get_mod( 'aamla_email_id', 'email' );
 ?>
-
 <div<?php aamla_attr( 'contact-wrapper' ); ?>>
+	<div class="contact-container">
 	<?php if ( $aamla_telephone ) : ?>
 		<span<?php aamla_attr( 'contact-phone' ); ?>>
 			<?php aamla_icon( [ 'icon' => 'phone' ] ); ?>
@@ -46,4 +46,8 @@ $aamla_email     = aamla_get_mod( 'aamla_email_id', 'email' );
 	endif;
 	printf( '<button class="contact-bar-scroll" type="button" aria-hidden="true"></button>' );
 	?>
+	</div>
 </div>
+<button aria-expanded="false" class="contact-toggle">
+	<span class="contact-toggle-text"><?php esc_html_e( 'Contact Us', 'aamla' ); ?></span>
+</button>

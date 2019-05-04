@@ -157,12 +157,6 @@ function aamla_get_theme_controls( $controls = [] ) {
 				'type'    => 'checkbox',
 			],
 			[
-				'label'   => esc_html__( 'Show Print Post Icon', 'aamla' ),
-				'section' => 'aamla_general_section',
-				'setting' => 'aamla_print_post_icon',
-				'type'    => 'checkbox',
-			],
-			[
 				'label'       => esc_html__( 'Your Mobile/Telephone Number', 'aamla' ),
 				'section'     => 'aamla_contact_section',
 				'setting'     => 'aamla_tel_number',
@@ -200,19 +194,20 @@ function aamla_get_theme_defaults( $defaults = [] ) {
 	return array_merge(
 		$defaults,
 		[
-			'aamla_display_site_title'     => 1,
-			'aamla_display_site_desc'      => 1,
-			'aamla_index_post_layout'      => 'list-view',
-			'aamla_archive_sidebar_layout' => 'sidebar-right',
-			'aamla_page_sidebar_layout'    => 'sidebar-right',
-			'aamla_post_sidebar_layout'    => 'sidebar-right',
-			'aamla_index_layout'           => 'grid',
-			'aamla_primary_nav'            => 1,
-			'aamla_header_search'          => 1,
-			'aamla_thumbnail_placeholder'  => 1,
-			'aamla_thumbnail_on_single'    => 1,
-			'aamla_print_post_icon'        => 1,
-			'aamla_footer_text'            => '[site_title] [copy_symbol] [current_year] &middot; ' . esc_html__( 'All rights reserved', 'aamla' ), // Note: Translation friendly instructions for using footer text placeholders has been given in customizer control description.
+			'aamla_display_site_title'               => 1,
+			'aamla_display_site_desc'                => 1,
+			'aamla_index_post_layout'                => 'list-view',
+			'aamla_archive_sidebar_layout'           => 'sidebar-right',
+			'aamla_page_sidebar_layout'              => 'sidebar-right',
+			'aamla_post_sidebar_layout'              => 'sidebar-right',
+			'aamla_index_layout'                     => 'grid',
+			'aamla_primary_nav'                      => 1,
+			'aamla_header_search'                    => 1,
+			'aamla_thumbnail_placeholder'            => 1,
+			'aamla_thumbnail_on_single'              => 1,
+			'aamla_print_post_icon'                  => 1,
+			'aamla_hide_social_icons_on_contact_bar' => 1,
+			'aamla_footer_text'                      => '[site_title] [copy_symbol] [current_year] &middot; ' . esc_html__( 'All rights reserved', 'aamla' ), // Note: Translation friendly instructions for using footer text placeholders has been given in customizer control description.
 		]
 	);
 }

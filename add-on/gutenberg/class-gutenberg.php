@@ -64,7 +64,6 @@ class GutenBerg {
 	public function add_gutenberg_support() {
 		// Add theme support for Wide Alignment.
 		add_theme_support( 'align-wide' );
-
 	}
 
 	/**

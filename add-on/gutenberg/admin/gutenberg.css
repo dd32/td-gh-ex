@@ -1095,14 +1095,6 @@ ul.wp-block-gallery > li.blocks-gallery-item:first-child.has-add-item-button {
 		font-size: 2.315rem;
 		line-height: 1.51188;
 	}
-	blockquote.wp-block-quote cite {
-		font-size: 0.76rem;
-		line-height: 2.30263;
-	}
-	blockquote.wp-block-pullquote > .editor-rich-text cite {
-		font-size: 0.76rem;
-		line-height: 2.30263;
-	}
 	ul.wp-block-gallery.alignwide,
 	ul.wp-block-gallery.alignfull {
 		width: calc( 100% + 4px);

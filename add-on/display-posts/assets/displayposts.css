@@ -298,11 +298,6 @@
 	.dp-grid-4 .dp-entry {
 		width: 25%;
 	}
-
-	.dp-featured-content .quick-action {
-		font-size: 0.76rem;
-		line-height: 2.30263;
-	}
 }
 
 @media only screen and (min-width: 1200px) {

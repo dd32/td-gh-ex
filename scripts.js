@@ -289,6 +289,27 @@ function headerWidgetToggle() {
 }
 headerWidgetToggle();
 
+function contactToggle() {
+	var wrapper = document.getElementsByClassName( 'contact-information' ),
+		elem, toggle;
+
+	if ( ! wrapper.length ) {
+		return;
+	}
+
+	elem = wrapper[0].getElementsByClassName( 'contact-wrapper' );
+	toggle = wrapper[0].getElementsByClassName( 'contact-toggle' );
+
+	if ( elem.length && toggle.length ) {
+		toggle[0].addEventListener( 'click', function() {
+			elem[0].classList.toggle( 'makeitvisible' );
+			toggle.classList.toggle( 'toggled-btn' );
+			toggle.setAttribute( 'aria-expanded', elem.classList.contains( 'makeitvisible' ) );
+		});
+	}
+}
+contactToggle();
+
 /**
  * Toggle a class on scroll to display scroll button.
  *

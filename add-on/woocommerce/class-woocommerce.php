@@ -74,6 +74,7 @@ class WooCommerce {
 		add_filter( 'aamla_theme_sections', [ self::get_instance(), 'customizer_section' ] );
 		add_filter( 'aamla_theme_controls', [ self::get_instance(), 'customizer_controls' ] );
 		add_filter( 'aamla_theme_defaults', [ self::get_instance(), 'customizer_defaults' ] );
+		add_filter( 'get_terms_defaults', [ self::get_instance(), 'bug_fix_wc_change_get_terms_defaults' ], 9, 2 );
 	}
 
 	/**
@@ -472,6 +473,26 @@ class WooCommerce {
 			'all'
 		);
 		wp_style_add_data( 'aamla_woocommerce_style', 'rtl', 'replace' );
+	}
+
+	/**
+	 * Bug fix for WooCommerce 'wc_change_get_terms_defaults' function in 'includes/wc-term-fruntions.php'.
+	 *
+	 * To be removed once this bug is resolved in WooCommerce.
+	 *
+	 * @since 1.2.0
+	 *
+	 * @param array $defaults   An array of default get_terms() arguments.
+	 * @param array $taxonomies An array of taxonomies.
+	 * @return array
+	 */
+	public function bug_fix_wc_change_get_terms_defaults( $defaults, $taxonomies ) {
+		if ( is_array( $taxonomies ) && ! isset( $taxonomies[0] ) ) {
+			remove_filter( 'get_terms_defaults', 'wc_change_get_terms_defaults', 10, 2 );
+			return $defaults;
+		}
+
+		return $defaults;
 	}
 }
 

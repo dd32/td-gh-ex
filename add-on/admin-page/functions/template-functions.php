@@ -21,7 +21,7 @@ function aamla_admin_theme_information() {
 		],
 		[
 			'label' => esc_html__( 'Last Updated on', 'aamla' ),
-			'value' => esc_html__( 'Mar 08, 2019', 'aamla' ),
+			'value' => esc_html__( 'May 04, 2019', 'aamla' ),
 		],
 		[
 			'label' => esc_html__( 'Minimum PHP Required', 'aamla' ),

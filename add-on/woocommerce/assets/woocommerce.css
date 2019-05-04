@@ -2518,7 +2518,7 @@ button.pswp__button--zoom:hover {
 }
 
 .widget_shopping_cart a.wc-forward {
-	font-family: sans-serif;
+	font-family: PT Serif, serif;
 	font-size: 14px;
 	font-weight: 400;
 	width: 100%;
@@ -2600,7 +2600,7 @@ ul.products .price ins {
 
 ul.products .button,
 ul.products a.added_to_cart {
-	font-family: sans-serif;
+	font-family: PT Serif, serif;
 	font-size: 16px;
 	font-weight: 400;
 	position: relative;
@@ -2647,7 +2647,7 @@ ul.products .woo-sold-out {
 }
 
 .woocommerce-loop-product__title {
-	font-family: sans-serif;
+	font-family: PT Serif, serif;
 	font-size: 1em;
 	font-weight: 400;
 	margin: 0;
@@ -2666,13 +2666,13 @@ ul.products .woo-sold-out {
 }
 
 .woocommerce-products-header h1 {
-	font-family: sans-serif;
+	font-family: PT Serif, serif;
 	font-size: 30px;
 	margin: 0 15px 0 0;
 }
 
 .woocommerce-result-count {
-	font-family: sans-serif;
+	font-family: PT Serif, serif;
 	font-size: 15px;
 	line-height: 36px;
 	margin: 8px 0;
@@ -2818,7 +2818,7 @@ div.product .star-rating {
 }
 
 div.product .woocommerce-review-link {
-	font-family: sans-serif;
+	font-family: PT Serif, serif;
 	font-size: 15px;
 	letter-spacing: 1px;
 	color: #757575;
@@ -2861,7 +2861,7 @@ div.product .woocommerce-review-link {
 }
 
 .woocommerce-tabs .wc-tabs li a {
-	font-family: sans-serif;
+	font-family: PT Serif, serif;
 	display: block;
 	margin-bottom: 0.875rem;
 	padding-bottom: 0.875rem;
