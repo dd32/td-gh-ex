@@ -1690,6 +1690,7 @@ if ( class_exists( 'WP_Customize_Control' ) && ! class_exists( 'Enigma_Customize
 			wp_enqueue_script( 'fontawesome-iconpicker', get_template_directory_uri() . '/iconpicker-control/assets/js/fontawesome-iconpicker.min.js', array( 'jquery' ), '1.0.0', true );
 			wp_enqueue_script( 'iconpicker-control', get_template_directory_uri() . '/iconpicker-control/assets/js/iconpicker-control.js', array( 'jquery' ), '1.0.0', true );
 			wp_enqueue_style( 'fontawesome-iconpicker', get_template_directory_uri() . '/iconpicker-control/assets/css/fontawesome-iconpicker.min.css' );
+			wp_enqueue_style('font-awesome-latest', get_template_directory_uri(). '/css/font-awesome-latest/css/fontawesome-all.css');
 		}
 		
 		
