@@ -132,6 +132,10 @@ This theme makes use of the SiteOrigin Settings Framework contained in the /inc 
 
 == Changelog ==
 
+= 1.1.7 - 05 May 2019 =
+* Mobile Menu: Allow empty parent link open the submenu.
+* Corrected error in `puro_read_more_link` function causing read more links to break.
+
 = 1.1.6 - 14 March 2019 =
 * Adjusted page link styling for changed HTML structure.
 * Removed support for Jetpack Responsive Videos in favour of FitVids.

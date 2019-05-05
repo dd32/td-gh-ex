@@ -216,12 +216,14 @@ article {
 	
 	ul {	
 		display: block;
+		height: 20px;
 		list-style: none;
 		margin: 3.375em 0 -0.5625rem;
 		
 		li {
-			display: inline-block;
-			vertical-align: top;
+			display: block;
+			float: left;
+			line-height: normal;
 			
 			.fb_iframe_widget {
 

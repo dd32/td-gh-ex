@@ -4,7 +4,7 @@ Author: Puro
 Author URI: https://purothemes.com/
 Theme URI: https://purothemes.com/themes/puro/
 Description: A content focussed minimalist theme, perfect for your blog, portfolio or small business site. We've closely integrated SiteOrigin's Page Builder for responsive layouts and Meta Slider for smooth, easy to build sliders. Puro is responsive, Retina-ready and fully compatible with Jetpack, Contact Form 7, Gravity Forms and WP PageNavi. Included is a .rtl CSS file for right to left languages. For assistance, check out our <a href="https://purothemes.com/documentation/puro-theme/">theme documentation</a> (http://purothemes.com/documentation/) or ask a question on our <a href="https://purothemes.com/support/forum/puro/">support forum</a> (https://purothemes.com/support/forum/puro/).
-Version: 1.1.6
+Version: 1.1.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: puro
@@ -654,10 +654,12 @@ a {
         top: 0; }
     .main-navigation ul li:hover > ul {
       display: block; }
-  .main-navigation .menu-item-has-children {
+  .main-navigation .menu-item-has-children,
+  .main-navigation .page_item_has_children {
     margin-right: 2.6607em;
     padding-right: 0; }
-    .main-navigation .menu-item-has-children a:before {
+    .main-navigation .menu-item-has-children a:before,
+    .main-navigation .page_item_has_children a:before {
       content: "\f063";
       font-family: "FontAwesome";
       font-size: 0.625em;
@@ -665,9 +667,15 @@ a {
       position: absolute;
       right: -1.5625em;
       top: 0.1875em; }
-    .main-navigation .menu-item-has-children .sub-menu .menu-item-has-children {
+    .main-navigation .menu-item-has-children .sub-menu .menu-item-has-children,
+    .main-navigation .menu-item-has-children .children .page_item_has_children,
+    .main-navigation .page_item_has_children .sub-menu .menu-item-has-children,
+    .main-navigation .page_item_has_children .children .page_item_has_children {
       margin-right: 0; }
-    .main-navigation .menu-item-has-children .sub-menu a:before {
+    .main-navigation .menu-item-has-children .sub-menu a:before,
+    .main-navigation .menu-item-has-children .children a:before,
+    .main-navigation .page_item_has_children .sub-menu a:before,
+    .main-navigation .page_item_has_children .children a:before {
       content: none; }
 
 .center-logo .main-navigation {
@@ -1425,11 +1433,13 @@ article {
   margin-left: auto; }
   .entry-footer ul {
     display: block;
+    height: 20px;
     list-style: none;
     margin: 3.375em 0 -0.5625rem; }
     .entry-footer ul li {
-      display: inline-block;
-      vertical-align: top; }
+      display: block;
+      float: left;
+      line-height: normal; }
       .entry-footer ul li .fb_iframe_widget span[style] {
         vertical-align: top !important; }
       .entry-footer ul li .fb_iframe_widget iframe {

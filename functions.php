@@ -7,7 +7,7 @@
  * @license GPL 2.0
  */
 
-define( 'SITEORIGIN_THEME_VERSION' , '1.1.6' );
+define( 'SITEORIGIN_THEME_VERSION' , '1.1.7' );
 define( 'SITEORIGIN_THEME_ENDPOINT' , 'http://updates.purothemes.com' );
 define( 'SITEORIGIN_THEME_JS_PREFIX', defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min' );
 
@@ -294,7 +294,7 @@ if ( ! function_exists( 'puro_read_more_link' ) ) :
  */
 function puro_read_more_link() {
 	$read_more_text = siteorigin_setting( 'blog_read_more' ) ? esc_html( siteorigin_setting( 'blog_read_more' ) ) : __( 'Continue reading', 'puro' );
-	return '<a class="more-link"href="' . get_permalink() . '">' . $read_more_text . '</a>';
+	return '<a class="more-link" href="' . get_permalink() . '">' . $read_more_text . '</a>';
 }
 add_filter( 'the_content_more_link', 'puro_read_more_link' );
 endif;
