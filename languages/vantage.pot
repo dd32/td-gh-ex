@@ -59,7 +59,7 @@ msgstr ""
 msgid "Pages:"
 msgstr ""
 
-#: content.php:47, inc/settings.php:389, inc/template-tags.php:537, loops/loop-circleicon.php:23, loops/loop-grid.php:24
+#: content.php:47, inc/settings.php:389, inc/template-tags.php:536, loops/loop-circleicon.php:23, loops/loop-grid.php:24
 msgid "Continue reading"
 msgstr ""
 
@@ -1807,57 +1807,57 @@ msgstr ""
 msgid "<span class=\"byline\"> by %s</span>"
 msgstr ""
 
-#: inc/template-tags.php:263
+#: inc/template-tags.php:262
 msgid "%s Logo"
 msgstr ""
 
-#: inc/template-tags.php:361
+#: inc/template-tags.php:360
 msgid "Category Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:365
+#: inc/template-tags.php:364
 msgid "Tag Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:370
+#: inc/template-tags.php:369
 msgid "Author Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:375
+#: inc/template-tags.php:374
 msgid "Daily Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:379
+#: inc/template-tags.php:378
 msgid "Monthly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:383
+#: inc/template-tags.php:382
 msgid "Yearly Archives: %s"
 msgstr ""
 
-#: inc/template-tags.php:390
+#: inc/template-tags.php:389
 msgid "%s: %s"
 msgstr ""
 
-#: inc/template-tags.php:393
+#: inc/template-tags.php:392
 msgid "Archives"
 msgstr ""
 
 #. translators: used between list items, there is a space after the comma
 #. translators: used between list items, there is a space after the comma
-#: inc/template-tags.php:408, inc/template-tags.php:411
+#: inc/template-tags.php:407, inc/template-tags.php:410
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:416
+#: inc/template-tags.php:415
 msgid "<strong>Tagged</strong> %2$s."
 msgstr ""
 
-#: inc/template-tags.php:424
+#: inc/template-tags.php:423
 msgid "Posted in %1$s and tagged %2$s."
 msgstr ""
 
-#: inc/template-tags.php:427
+#: inc/template-tags.php:426
 msgid "Posted in %1$s."
 msgstr ""
 
