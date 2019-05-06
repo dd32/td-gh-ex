@@ -2,11 +2,11 @@
 
 Contributors: axlethemes
 Requires at least: 4.7
-Tested up to: 4.9.6
-Stable tag: 1.0.8
+Tested up to: 5.1.1
+Stable tag: 2.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Copyright: (c) 2017 Axle Themes
+Copyright: (c) 2019 Axle Themes
 
 Business WordPress Theme
 
@@ -21,6 +21,11 @@ Best Business is a modern and trendy, useful and resourceful, versatile and flex
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 2.0.1 - May 06 2019 =
+* Frontpage template added
+* Compatible with Elementor
+* Theme URI and footer info updated
 
 = 1.0.8 - May 18 2018 =
 * Fix comment form

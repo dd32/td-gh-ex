@@ -225,7 +225,7 @@ if ( ! function_exists( 'best_business_footer_copyright' ) ) :
 			</div>
 		<?php endif; ?>
 		<div class="site-info">
-			<?php echo esc_html__( 'Best Business by', 'best-business' ) . ' <a target="_blank" rel="designer" href="https://axlethemes.com/">Axle Themes</a>'; ?>
+			<?php echo esc_html__( 'Best Business by', 'best-business' ) . ' <a target="_blank" rel="nofollow" href="https://axlethemes.com/">Axle Themes</a>'; ?>
 		</div>
 		<?php
 	}
@@ -342,7 +342,7 @@ if ( ! function_exists( 'best_business_add_front_page_widget_area' ) ) :
 	 */
 	function best_business_add_front_page_widget_area() {
 
-		if ( is_front_page() && ! is_home() ) {
+		if ( is_page_template( 'templates/front.php' ) ) {
 			if ( is_active_sidebar( 'sidebar-front-page-widget-area' ) ) {
 				echo '<div id="sidebar-front-page-widget-area" class="widget-area">';
 				dynamic_sidebar( 'sidebar-front-page-widget-area' );
@@ -386,7 +386,7 @@ if ( ! function_exists( 'best_business_add_custom_header' ) ) :
 	 */
 	function best_business_add_custom_header() {
 
-		if ( is_front_page() || is_home() ) {
+		if ( is_front_page() || is_home() || is_page_template('elementor_header_footer') ) {
 			return;
 		}
 

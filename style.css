@@ -1,16 +1,16 @@
 /*
 Theme Name: Best Business
-Theme URI: https://axlethemes.com/downloads/best-business/
+Theme URI: https://axlethemes.com/wordpress-themes/best-business/
 Author: Axle Themes
 Author URI: https://axlethemes.com/
-Description: Best Business is a modern and trendy, useful and resourceful, versatile and flexible, powerful and easy to use and responsive WordPress creative multipurpose website theme. It is a theme that allows everyone to construct an impressive business page, regardless of their skill level. It comes packed with many useful features, and a design that never fails to impress. It is perfect for all sorts of applications and website archetypes, from professional and personal projects to business and corporate endeavors. Regardless of your previous development or coding experience, it delivers sharp, polished results. Personal, corporate, professional and business users alike find this theme an ideal solution for their purpose.
-Version: 1.0.8
+Description: Best Business is a modern and trendy, useful and resourceful, versatile and flexible, powerful and easy to use and responsive WordPress creative multipurpose website theme compatible with Elementor. It is a theme that allows everyone to construct an impressive business page, regardless of their skill level. It comes packed with many useful features, and a design that never fails to impress. It is perfect for all sorts of applications and website archetypes, from professional and personal projects to business and corporate endeavors. Regardless of your previous development or coding experience, it delivers sharp, polished results. Personal, corporate, professional and business users alike find this theme an ideal solution for their purpose.
+Version: 2.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: best-business
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-menu, custom-header, featured-images, full-width-template, translation-ready, theme-options, editor-style, threaded-comments, footer-widgets, custom-logo, blog
 
-Best Business WordPress Theme, Copyright 2017 Axle Themes
+Best Business WordPress Theme, Copyright 2019 Axle Themes
 Best Business is distributed under the terms of the GNU GPL
 
 This theme, like WordPress, is licensed under the GPL.
@@ -2557,9 +2557,12 @@ span.divider-button {
     clear: both;
 }
 
-
-.home.page  #content {
+.page-template-front #content {
     display: none;
+}
+
+.elementor-template-full-width #content {
+    padding: 0;
 }
 
 #featured-content{

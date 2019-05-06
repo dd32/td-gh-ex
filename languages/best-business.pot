@@ -2,7 +2,7 @@
 # This file is distributed under the GPLv3.
 msgid ""
 msgstr ""
-"Project-Id-Version: Best Business 1.0.8\n"
+"Project-Id-Version: Best Business 2.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2017-08-18 03:59:12+00:00\n"
 "MIME-Version: 1.0\n"
@@ -1360,7 +1360,7 @@ msgid "Best Business"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://axlethemes.com/downloads/best-business/"
+msgid "https://axlethemes.com/wordpress-themes/best-business/"
 msgstr ""
 
 #. Description of the plugin/theme
