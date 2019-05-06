@@ -47,6 +47,13 @@ Images
 
 
 == Changelog ==
+= 2.3.8 =
+** Fixed Promo widget media uploader issue.
+** Fixed Dynamic color option related issue on header one.
+** Fixed Woocommerce related product column design issue.
+** Fixed woocommerce compatible issue.  
+** Minior Css issue fixed.
+
 = 2.3.7 =
 ** Fixed Woocommerce outdated template issue.
 ** Fixed Woocommerce dynamic row option related issue.

@@ -47,6 +47,7 @@ function unicon_lite_dynamic_styles() {
             .content-area .reviews_tab.active:before,
             form.woocommerce-ordering:after,
             .content-area .additional_information_tab.active::before,
+            .search-form button.searchsubmit,
             .edit-link a{
     		  background: {$tpl_color};
     		}";
@@ -186,6 +187,8 @@ function unicon_lite_dynamic_styles() {
                 .woocommerce.single.single-product .woocommerce-tabs ul.tabs li.active,
                 .content-area .description_tab.active:after,
                 .content-area .reviews_tab.active:after,
+                .search-form button.searchsubmit,
+                .inner_home,
                 nav.woocommerce-MyAccount-navigation{
                    border-color: {$tpl_color}; 
                 }";
@@ -230,7 +233,8 @@ function unicon_lite_dynamic_styles() {
             
         /** Border Top Color **/
             $custom_css .= "
-                .headertwo .home_navigation .inner_home #menu .main-navigation ul.menu > li:hover::after{
+                .headertwo .home_navigation .inner_home #menu .main-navigation ul.menu > li:hover::after,
+                .main-navigation ul.menu > li:hover::after{
                     border-top-color: {$tpl_color};                
                 }";
 

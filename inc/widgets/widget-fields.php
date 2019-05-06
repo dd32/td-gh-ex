@@ -227,8 +227,9 @@ function accesspress_store_widgets_show_widget_field($instance = '', $widget_fie
             if ($value != '') {
                 $image = preg_match('/(^.*\.jpg|jpeg|png|gif|ico*)/i', $value);
                 if ($image) {
+                    
                     ?>
-                    <img src="' . $value . '" alt="" /><a class="remove-image">Remove</a>
+                    <img src="<?php echo esc_url($value);?>" alt="" /><a class="remove-image"><?php esc_html_e('Remove','accesspress-store'); ?></a>
                     <?php
                 } else {
                     $parts = explode("/", $value);

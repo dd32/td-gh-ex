@@ -43,7 +43,7 @@ require $accesspress_store_widget_promo_file_path = accesspress_store_file_direc
 /**
  * Check if WooCommerce is active
 */
-if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', get_option( 'active_plugins' ) ) ) ) {
+if (class_exists( 'WooCommerce' ) ) {
 	require $accesspress_store_widget_product1_file_path = accesspress_store_file_directory('inc/widgets/widget-product1.php');
 	require $accesspress_store_widget_product2_file_path = accesspress_store_file_directory('inc/widgets/widget-product2.php');
 }

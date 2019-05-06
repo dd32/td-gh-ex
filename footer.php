@@ -55,7 +55,7 @@
             $other_seal_2 = get_theme_mod('other3_image');
             ?>
             <?php if(!empty($payment_partner_1)) : ?>
-                <img id="partner_logo1" class="partner-logos" src="<?php echo esc_url($payment_partner_1)?>" alt="<?php esc_html_e('Partner Logo 1', 'accesspress-store') ?>" />
+                <img id="partner_logo1" class="partner-logos" src="<?php echo esc_url($payment_partner_1)?>" alt="<?php esc_attr_e('Partner Logo 1', 'accesspress-store') ?>" />
             <?php endif; ?>
 
             <?php if(!empty($payment_partner_2)) : ?>
