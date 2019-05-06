@@ -20,7 +20,7 @@ function bard_about_page_output() {
 		</h1>
 		<p class="welcome-text">
 			<?php /* translators: %s theme name */
-					printf( esc_html__( '%s theme is one of the most Popular Free WordPress theme of 2017-2018 years. To understand better what the theme can offer, please click the button below.', 'bard' ), esc_html( $theme_data->Name ) );
+					printf( esc_html__( '%s theme is one of the most Popular Free WordPress theme of 2017-2019 years. To understand better what the theme can offer, please click the button below.', 'bard' ), esc_html( $theme_data->Name ) );
 				?>
 				<br><br><a href="<?php echo esc_url('http://wp-royal.com/themes/bard-free/demo/?ref=bard-free-backend-about-theme-prev-btn'); ?>" class="button button-primary button-hero" target="_blank"><?php esc_html_e( 'Theme Demo Preview', 'bard' ); ?></a>
 		</p><br>

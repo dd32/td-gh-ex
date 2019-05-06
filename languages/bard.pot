@@ -179,7 +179,7 @@ msgstr ""
 #: inc/about/about-bard.php:23
 #, php-format
 msgid ""
-"%s theme is one of the most Popular Free WordPress theme of 2017-2018 years. "
+"%s theme is one of the most Popular Free WordPress theme of 2017-2019 years. "
 "To understand better what the theme can offer, please click the button below."
 msgstr ""
 
