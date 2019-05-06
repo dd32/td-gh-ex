@@ -217,9 +217,7 @@ if ( ! function_exists( 'best_commerce_footer_copyright' ) ) :
 			</div>
 		<?php endif; ?>
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'best-commerce' ) ); ?>"><?php printf( esc_html__( 'Powered by %s', 'best-commerce' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( esc_html__( '%1$s by %2$s', 'best-commerce' ), 'Best Commerce', '<a href="https://axlethemes.com">Axle Themes</a>' ); ?>
+			<?php printf( esc_html__( '%1$s by %2$s', 'best-commerce' ), 'Best Commerce', '<a target="_blank" rel="nofollow" href="https://axlethemes.com">Axle Themes</a>' ); ?>
 		</div>
 		<?php
 	}
@@ -348,7 +346,7 @@ if ( ! function_exists( 'best_commerce_add_custom_header' ) ) :
 	 */
 	function best_commerce_add_custom_header() {
 
-		if ( is_front_page() || is_home() ) {
+		if ( is_front_page() || is_home() || is_page_template('elementor_header_footer') ) {
 			return;
 		}
 

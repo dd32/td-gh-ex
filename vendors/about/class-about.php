@@ -19,7 +19,7 @@ if ( ! class_exists( 'Best_Commerce_About' ) ) {
 		 *
 		 * @var string $version Version.
 		 */
-		private $version = '1.0.1';
+		private $version = '2.0.1';
 
 		/**
 		 * Page configuration.
@@ -445,8 +445,8 @@ if ( ! class_exists( 'Best_Commerce_About' ) ) {
 				wp_enqueue_script( 'plugin-install' );
 				wp_enqueue_script( 'updates' );
 
-				wp_enqueue_style( 'best-commerce-about', get_template_directory_uri() . '/vendors/about/css/about' . $min . '.css', array(), '1.0.1' );
-				wp_enqueue_script( 'best-commerce-about', get_template_directory_uri() . '/vendors/about/js/about' . $min . '.js', array( 'jquery' ), '1.0.1' );
+				wp_enqueue_style( 'best-commerce-about', get_template_directory_uri() . '/vendors/about/css/about' . $min . '.css', array(), '2.0.1' );
+				wp_enqueue_script( 'best-commerce-about', get_template_directory_uri() . '/vendors/about/js/about' . $min . '.js', array( 'jquery' ), '2.0.1' );
 				$js_vars = array(
 					'ajaxurl' => esc_url( admin_url( 'admin-ajax.php' ) ),
 				);
@@ -470,7 +470,7 @@ if ( ! class_exists( 'Best_Commerce_About' ) ) {
 
 					foreach ( $getting_started as $getting_started_item ) {
 
-						echo '<div class="col">';
+						echo '<div class="col card">';
 
 						if ( ! empty( $getting_started_item['title'] ) ) {
 							echo '<h3>' . esc_html( $getting_started_item['title'] ) . '</h3>';
@@ -728,7 +728,7 @@ if ( ! class_exists( 'Best_Commerce_About' ) ) {
 
 					foreach ( $support_steps as $support_step ) {
 
-						echo '<div class="col">';
+						echo '<div class="col card">';
 
 						if ( ! empty( $support_step['title'] ) ) {
 							echo '<h3>';

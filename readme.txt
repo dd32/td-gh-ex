@@ -2,11 +2,11 @@
 
 Contributors: axlethemes
 Requires at least: 4.7
-Tested up to: 4.9.6
-Stable tag: 1.0.6
+Tested up to: 5.1.1
+Stable tag: 2.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
-Copyright: (c) 2017 Axle Themes
+Copyright: (c) 2019 Axle Themes
 
 Simple e-commerce WordPress Theme.
 
@@ -21,6 +21,10 @@ Best Commerce is an aesthetically pure and clean and highly customizable, profes
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 2.0.1 - May 06 2019 =
+* Theme URI and footer credit updated
+* Compatible with Elementor page builder
 
 = 1.0.6 - Jun 7 2018 =
 * Fix price in carousel

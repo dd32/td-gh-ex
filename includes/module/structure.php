@@ -74,8 +74,14 @@ if ( ! function_exists( 'best_commerce_content_start' ) ) :
 	 *
 	 * @since 1.0.0
 	 */
-	function best_commerce_content_start() {
-		?><div id="content" class="site-content"><div class="container"><div class="inner-wrapper"><?php
+	function best_commerce_content_start() { ?>
+		<div id="content" class="site-content">
+		<?php  
+		if( !is_page_template('elementor_header_footer') ){ ?>
+		    <div class="container">
+		    <div class="inner-wrapper">
+		    <?php 
+		}
 	}
 endif;
 
@@ -89,7 +95,13 @@ if ( ! function_exists( 'best_commerce_content_end' ) ) :
 	 * @since 1.0.0
 	 */
 	function best_commerce_content_end() {
-		?></div><!-- .inner-wrapper --></div><!-- .container --></div><!-- #content --><?php
+		if( !is_page_template('elementor_header_footer') ){ ?>
+		    </div><!-- .inner-wrapper -->
+		    </div><!-- .container -->
+		    <?php 
+		} ?>
+		</div><!-- #content -->
+		<?php
 	}
 endif;
 

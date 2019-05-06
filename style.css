@@ -1,16 +1,16 @@
 /*
 Theme Name: Best Commerce
-Theme URI: https://axlethemes.com/downloads/best-commerce/
+Theme URI: https://axlethemes.com/wordpress-themes/best-commerce/
 Author: Axle Themes
 Author URI: https://axlethemes.com/
 Description: Best Commerce is an aesthetically pure and clean and highly customizable, professionally composed and very lightweight and fast loading, responsive WordPress e-commerce theme. It smoothly integrates WooCommerce, one of the best e-commerce plugin, to make professional and stunning stores. It comes with an eye-catching layout design that will instantly draw the attention of anyone who visits your website. It is designed with strong focus on usability and overall excellent user experience. It exists so that you can speedily and efficiently craft powerful e-Commerce websites across all niches and markets in a matter of minutes, without having to write a line of code.
-Version: 1.0.6
+Version: 2.0.1
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: best-commerce
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, custom-menu, custom-header, featured-images, full-width-template, translation-ready, theme-options, threaded-comments, footer-widgets, custom-logo, blog, e-commerce
 
-Best Commerce WordPress Theme, Copyright 2017 Axle Themes
+Best Commerce WordPress Theme, Copyright 2019 Axle Themes
 Best Commerce is distributed under the terms of the GNU GPL
 
 This theme, like WordPress, is licensed under the GPL.
@@ -2242,6 +2242,9 @@ div#mob-menu-quick,
     padding: 40px 0;
     clear: both;
     background: #fdfdfd;
+}
+.elementor-template-full-width #content {
+    padding: 0;
 }
 #featured-content{
     float: left;

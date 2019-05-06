@@ -30,7 +30,7 @@ function best_commerce_customize_register( $wp_customize ) {
 			array(
 				'title'    => esc_html__( 'Best Commerce Pro', 'best-commerce' ),
 				'pro_text' => esc_html__( 'Buy Pro', 'best-commerce' ),
-				'pro_url'  => 'https://axlethemes.com/downloads/best-commerce-pro/',
+				'pro_url'  => 'https://axlethemes.com/wordpress-themes/best-commerce-pro/',
 				'priority' => 1,
 			)
 		)
@@ -126,8 +126,8 @@ function best_commerce_customize_controls_register_scripts() {
 
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-	wp_enqueue_style( 'best-commerce-customize-controls', get_template_directory_uri() . '/css/customize-controls' . $min . '.css', array(), '1.0.0' );
-	wp_enqueue_script( 'best-commerce-customize-controls', get_template_directory_uri() . '/js/customize-controls' . $min . '.js', array( 'jquery', 'customize-controls' ), '1.0.0', true );
+	wp_enqueue_style( 'best-commerce-customize-controls', get_template_directory_uri() . '/css/customize-controls' . $min . '.css', array(), '2.0.1' );
+	wp_enqueue_script( 'best-commerce-customize-controls', get_template_directory_uri() . '/js/customize-controls' . $min . '.js', array( 'jquery', 'customize-controls' ), '2.0.1', true );
 }
 
 add_action( 'customize_controls_enqueue_scripts', 'best_commerce_customize_controls_register_scripts', 0 );

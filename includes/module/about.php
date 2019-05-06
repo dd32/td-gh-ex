@@ -19,7 +19,7 @@ $config = array(
 	'quick_links' => array(
 		'theme_url' => array(
 			'text' => esc_html__( 'Theme Details','best-commerce' ),
-			'url'  => 'https://axlethemes.com/downloads/best-commerce/',
+			'url'  => 'https://axlethemes.com/wordpress-themes/best-commerce/',
 			),
 		'demo_url' => array(
 			'text' => esc_html__( 'View Demo','best-commerce' ),
@@ -175,7 +175,7 @@ $config = array(
 			'icon'         => 'dashicons dashicons-star-filled',
 			'text'         => esc_html__( 'Upgrade to pro version for more exciting features and additional theme options.', 'best-commerce' ),
 			'button_label' => esc_html__( 'View Pro Version', 'best-commerce' ),
-			'button_link'  => 'https://axlethemes.com/downloads/best-commerce-pro/',
+			'button_link'  => 'https://axlethemes.com/wordpress-themes/best-commerce-pro/',
 			'is_button'    => true,
 			'is_new_tab'   => true,
 		),
@@ -212,7 +212,7 @@ $config = array(
 	'upgrade_to_pro' => array(
 		'description'  => esc_html__( 'Upgrade to pro version for more exciting features and additional theme options.', 'best-commerce' ),
 		'button_label' => esc_html__( 'Upgrade to Pro', 'best-commerce' ),
-		'button_link'  => 'https://axlethemes.com/downloads/best-commerce-pro/',
+		'button_link'  => 'https://axlethemes.com/wordpress-themes/best-commerce-pro/',
 		'is_new_tab'   => true,
 	),
 
