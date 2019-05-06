@@ -103,7 +103,7 @@ if( ! function_exists( 'agama_social_share' ) ) {
         $visibility = esc_attr( get_theme_mod( 'agama_share_box_visibility', 'posts' ) );
         $icons      = get_theme_mod( 
             'agama_social_share_icons',
-            array( 'facebook', 'twitter', 'pinterest', 'gplus', 'linkedin', 'rss', 'email' )
+            array( 'facebook', 'twitter', 'pinterest', 'linkedin', 'rss', 'email' )
         );
         
         // Check if Social Share is Enabled
@@ -156,11 +156,6 @@ if( ! function_exists( 'agama_social_share' ) ) {
                                             get_permalink(), 
                                             get_the_post_thumbnail_url() 
                                         );
-                        break;
-                        case 'gplus':
-                            $url    = sprintf( 'https://plus.google.com/share?url=%s', get_permalink() );
-                            $title  = esc_html__( 'Google+', 'agama' );
-                            $fa     = 'google-plus';
                         break;
                         case 'linkedin':
                             $url    = sprintf( 'http://www.linkedin.com/shareArticle?mini=true&url=%s', get_permalink() );

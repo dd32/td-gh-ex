@@ -87,6 +87,22 @@ final class Agama_Customizer_Upsell {
                 )
             )
         );
+        
+        // General Section Upsell
+        $manager->add_section(
+            new Agama_Customizer_Upsell_Section(
+                $manager,
+                'agama-upsell-general-sections',
+                [
+                    'panel'     => 'agama_general_panel',
+                    'priority'  => 500,
+                    'options'   => [
+                        __( 'Headings', 'agama' ),
+                        __( 'Preloader', 'agama' )
+                    ]
+                ]
+            )
+        );
 
         // Slider Sections Upsell.
         $manager->add_section(
@@ -105,9 +121,7 @@ final class Agama_Customizer_Upsell {
                         esc_html__( 'Slide #8', 'agama' ),
                         esc_html__( 'Slide #9', 'agama' ),
                         esc_html__( 'Slide #10', 'agama' ),
-                    ),
-                    'button_url'  => esc_url( 'https://theme-vision.com/agama-pro/' ),
-                    'button_text' => esc_html__( 'Upgrade to PRO', 'agama' ),
+                    )
                 )
             )
         );
@@ -125,9 +139,38 @@ final class Agama_Customizer_Upsell {
                         esc_html__( 'Front Page Box #6', 'agama' ),
                         esc_html__( 'Front Page Box #7', 'agama' ),
                         esc_html__( 'Front Page Box #8', 'agama' ),
-                    ),
-                    'button_url'  => esc_url( 'https://theme-vision.com/agama-pro/' ),
-                    'button_text' => esc_html__( 'Upgrade to PRO', 'agama' ),
+                    )
+                )
+            )
+        );
+        
+        // WooCommerce Sections Upsell.
+        $manager->add_section(
+            new Agama_Customizer_Upsell_Section(
+                $manager, 
+                'agama-woocommerce-sections', 
+                array(
+                    'panel'       => 'woocommerce',
+                    'priority'    => 500,
+                    'options'     => array(
+                        esc_html__( 'General', 'agama' ),
+                        esc_html__( 'Styling', 'agama' )
+                    )
+                )
+            )
+        );
+        
+        // Footer Sections Upsell.
+        $manager->add_section(
+            new Agama_Customizer_Upsell_Section(
+                $manager, 
+                'agama-footer-sections', 
+                array(
+                    'panel'       => 'agama_footer_panel',
+                    'priority'    => 500,
+                    'options'     => array(
+                        esc_html__( 'Widgets', 'agama' )
+                    )
                 )
             )
         );

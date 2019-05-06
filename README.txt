@@ -3,6 +3,12 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.4.3 - 06 May 2019 =
+* Updated theme translation files.
+* Removed Forrst social icon.
+* Removed MySpace social icon.
+* Removed Google+ share icon.
+
 = 1.4.2 - 04 April 2019 =
 * Added Android social icon.
 * Added Amazon social icon.

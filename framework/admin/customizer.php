@@ -166,6 +166,16 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
             ]
         ]
 	) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_title_tagline_typo_upsell',
+        'section'     => 'agama_title_tagline_typo',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Site Title Shrinked Typography</li>' .  
+                         '</ul>' . 
+                         '</div>'
+    ] );
 #######################################################
 # GENERAL PANEL
 #######################################################
@@ -219,6 +229,16 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
             )
         )
     ) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_general_body_upsell',
+        'section'     => 'background_image',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Background Animate</li>' . 
+                         '</ul>' . 
+                         '</div>'
+    ] );
     #########################################################
     # GENERAL SKINS SECTION
     #########################################################
@@ -273,6 +293,17 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'transport'		=> 'auto',
 		'default'		=> '#FE6663'
 	) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_general_skins_upsell',
+        'section'     => 'agama_general_skins_section',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Links Color</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Links Hover Color</li>' . 
+                         '</ul>' . 
+                         '</div>'
+    ] );
     #######################################################
     # SEARCH PAGE SECTION
     #######################################################
@@ -311,6 +342,16 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'type'			=> 'switch',
 		'default'		=> true
 	) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_general_comments_upsell',
+        'section'     => 'agama_comments_section',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Enable / Disable Comments</li>' . 
+                         '</ul>' . 
+                         '</div>'
+    ] );
     #################################################
     # EXTRA SECTION
     #################################################
@@ -334,6 +375,19 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'type'			=> 'switch',
 		'default'		=> true
 	) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_general_extra_upsell',
+        'section'     => 'agama_extra_section',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Development Mode</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Rich Snippets</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Custom jQuery Head</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Custom jQuery Footer</li>' . 
+                         '</ul>' . 
+                         '</div>'
+    ] );
     ########################################
     # GENERAL ADDITIONAL CSS SECTION
     ########################################
@@ -369,6 +423,16 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		),
 		'default'		=> 'fullwidth'
 	) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_layout_general_upsell',
+        'section'     => 'agama_layout_general_section',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Layout Width</li>' . 
+                         '</ul>' . 
+                         '</div>'
+    ] );
     ##########################################################
     # LAYOUT SIDEBAR SECTION
     ##########################################################
@@ -389,6 +453,19 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		),
 		'default'		=> 'right'
 	) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_layout_sidebar_upsell',
+        'section'     => 'agama_layout_sidebar_section',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Heading Typography</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Body Typography</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Links Color</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Links Hover Color</li>' . 
+                         '</ul>' . 
+                         '</div>'
+    ] );
 ###################################################################################
 # HEADER
 ###################################################################################
@@ -405,17 +482,17 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'panel'			=> 'agama_header_panel'
 	) );
 	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Header Style', 'agama' ),
-		'tooltip'	    => __( 'Select header style.', 'agama' ),
-		'section'		=> 'agama_header_section',
-		'settings'		=> 'agama_header_style',
-		'type'			=> 'radio-buttonset',
-		'choices'		=> array(
+		'label'			    => __( 'Header Style', 'agama' ),
+		'tooltip'	        => __( 'Select header style.', 'agama' ),
+		'section'		    => 'agama_header_section',
+		'settings'		    => 'agama_header_style',
+		'type'			    => 'radio-buttonset',
+		'choices'		    => array(
 			'transparent'	=> __( 'Header V1', 'agama' ),
 			'default'		=> __( 'Header V2', 'agama' ),
 			'sticky'		=> __( 'Header V3', 'agama' )
 		),
-		'default'		=> 'sticky'
+		'default'		    => 'sticky'
 	) );
     Kirki::add_field( 'agama_options', array(
 		'label'				=> __( 'Top Navigation', 'agama' ),
@@ -530,6 +607,19 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
         ),
 		'default'		   => '3'
 	) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_header_general_upsell',
+        'section'     => 'agama_header_section',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Top Border Style</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Top Border Color</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Inner Margin (H-V2)</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Search Icon</li>' . 
+                         '</ul>' . 
+                         '</div>'
+    ] );
 	#######################################################
 	# HEADER LOGO SECTION
 	#######################################################
@@ -698,6 +788,17 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
             )
         )
 	) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_header_logo_upsell',
+        'section'     => 'agama_header_logo_section',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Logo Align</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Logo Shrinked Max-Height</li>' . 
+                         '</ul>' . 
+                         '</div>'
+    ] );
 	##########################################
 	# HEADER IMAGE SECTION
 	##########################################
@@ -842,6 +943,20 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		),
 		'default'		=> 'rgba(238, 238, 238, 1)'
 	) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_header_styling_upsell',
+        'section'     => 'agama_header_styling_section',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Background Image</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Background Image Repeat</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Background Image Size</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Background Image Attachment</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Background Image Position</li>' . 
+                         '</ul>' . 
+                         '</div>'
+    ] );
 ###############################################
 # NAVIGATIONS PANEL
 ###############################################
@@ -1011,6 +1126,17 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
             ]
         ]
     ) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_navigation_mobile_upsell',
+        'section'     => 'agama_nav_mobile_section',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Top Navigation</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Background Color</li>' . 
+                         '</ul>' . 
+                         '</div>'
+    ] );
 #########################################
 # MENUS PANEL
 #########################################
@@ -1428,6 +1554,27 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'type'			=> 'color',
 		'default'		=> '#444'
 	) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_breadcrumb_upsell',
+        'section'     => 'agama_breadcrumb_section',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Breadcrumb Height</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Breadcrumb Prefix</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Breadcrumb Separator</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Post Categories</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Post Archives</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Background Image</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Background Image Repeat</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Background Image Size</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Background Image Attachment</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Background Image Position</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Links Hover Color</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Breadcrumb Typography</li>' . 
+                         '</ul>' . 
+                         '</div>'
+    ] );
 ###################################################################################
 # FRONTPAGE BOXES
 ###################################################################################
@@ -1967,17 +2114,17 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'panel'			=> 'agama_blog_panel'
 	) );
 	Kirki::add_field( 'agama_options', array(
-		'label'			=> __( 'Layout', 'agama' ),
-		'tooltip'	    => __( 'Select blog layout.', 'agama' ),
-		'section'		=> 'agama_blog_general_section',
-		'settings'		=> 'agama_blog_layout',
-		'type'			=> 'select',
-		'choices'		=> array(
+		'label'			    => __( 'Layout', 'agama' ),
+		'tooltip'	        => __( 'Select blog layout.', 'agama' ),
+		'section'		    => 'agama_blog_general_section',
+		'settings'		    => 'agama_blog_layout',
+		'type'			    => 'select',
+		'choices'		    => array(
 			'list'			=> __( 'List Layout', 'agama' ),
 			'grid'			=> __( 'Grid Layout', 'agama' ),
 			'small_thumbs'	=> __( 'Small Thumbs Layout', 'agama' )
 		),
-		'default'		=> 'list'
+		'default'		    => 'list'
 	) );
 	Kirki::add_field( 'agama_options', array(
 		'label'			=> __( 'Posts Animated', 'agama' ),
@@ -2067,6 +2214,19 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		),
 		'default'		=> 'button'
 	) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_blog_general_upsell',
+        'section'     => 'agama_blog_general_section',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Featured Images Crop</li>' .  
+                         '<li><span class="upsell-pro-label"></span> Images Hover Effect</li>' .   
+                         '<li><span class="upsell-pro-label"></span> LightBox</li>' .  
+                         '<li><span class="upsell-pro-label"></span> Pagination</li>' .  
+                         '</ul>' . 
+                         '</div>'
+    ] );
 	############################################################
 	# BLOG SINGLE POST SECTION
 	############################################################
@@ -2083,6 +2243,19 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		'type'			=> 'switch',
 		'default'		=> true
 	) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_blog_single_post_upsell',
+        'section'     => 'agama_blog_single_post_section',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Post Titles</li>' .  
+                         '<li><span class="upsell-pro-label"></span> Post Meta</li>' .   
+                         '<li><span class="upsell-pro-label"></span> Post Tags</li>' .  
+                         '<li><span class="upsell-pro-label"></span> Post Navigation</li>' .  
+                         '</ul>' . 
+                         '</div>'
+    ] );
 	##########################################################
 	# BLOG POST META SECTION
 	##########################################################
@@ -2159,6 +2332,16 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
 		),
 		'default'		=> true
 	) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_blog_post_meta_upsell',
+        'section'     => 'agama_blog_post_meta_section',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Post Views Counter</li>' .    
+                         '</ul>' . 
+                         '</div>'
+    ] );
 ############################################################
 # SOCIAL ICONS
 ############################################################
@@ -2281,7 +2464,6 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
             'facebook'  => esc_html__( 'Facebook', 'agama' ),
             'twitter'   => esc_html__( 'Twitter', 'agama' ),
             'pinterest' => esc_html__( 'Pinterest', 'agama' ),
-            'gplus'     => esc_html__( 'Google+', 'agama' ),
             'linkedin'  => esc_html__( 'LinkedIn', 'agama' ),
             'rss'       => esc_html__( 'RSS', 'agama' ),
             'email'     => esc_html__( 'Email', 'agama' )
@@ -2290,7 +2472,6 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
             'facebook',
             'twitter',
             'pinterest',
-            'gplus',
             'linkedin',
             'rss',
             'email'
@@ -2353,6 +2534,18 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
             )
         )
 	) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_footer_general_upsell',
+        'section'     => 'agama_footer_general_section',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Social Icons Color</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Social Icons Hover Color</li>' . 
+                         '<li><span class="upsell-pro-label"></span> Copyright Typography</li>' . 
+                         '</ul>' . 
+                         '</div>'
+    ] );
     ##########################################################
     #   FOOTER STYLING SECTION
     ##########################################################
@@ -2435,6 +2628,16 @@ add_filter( 'kirki/config', 'agama_theme_kirki_update_url' );
         ),
         'default'       => '#cddeee'
     ) );
+    Kirki::add_field( 'agama_options', [
+        'type'        => 'custom',
+        'settings'    => 'agama_footer_styling_upsell',
+        'section'     => 'agama_footer_styling_section',
+        'default'     => '<div class="themevision-upsell themevision-boxed-section control-subsection">' . 
+                         '<ul class="themevision-upsell-features">' . 
+                         '<li><span class="upsell-pro-label"></span> Footer Background Image</li>' .  
+                         '</ul>' . 
+                         '</div>'
+    ] );
 #######################################
 # REMOVE SECTIONS
 #######################################
