@@ -165,3 +165,11 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 = Version 1.5.4 =
 * Improved compatibility with Gutenberg and WordPress 5.0
 * Minor bug fixes
+
+= Version 1.5.5 =
+* Minor bug fixes
+
+= Version 1.5.6 =
+* Added support wp_body_open() for WordPress 5.2
+* Minify jquery.storto.js
+* Minor bug fixes

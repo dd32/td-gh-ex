@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Storto\n"
-"POT-Creation-Date: 2019-03-11 18:40+0100\n"
-"PO-Revision-Date: 2019-03-11 18:40+0100\n"
+"POT-Creation-Date: 2019-05-06 17:15+0100\n"
+"PO-Revision-Date: 2019-05-06 17:15+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -229,47 +229,47 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:51
+#: header.php:52
 msgid "Facebook"
 msgstr ""
 
-#: header.php:54
+#: header.php:55
 msgid "Twitter"
 msgstr ""
 
-#: header.php:57
+#: header.php:58
 msgid "Google Plus"
 msgstr ""
 
-#: header.php:60
+#: header.php:61
 msgid "Linkedin"
 msgstr ""
 
-#: header.php:63
+#: header.php:64
 msgid "Instagram"
 msgstr ""
 
-#: header.php:66
+#: header.php:67
 msgid "YouTube"
 msgstr ""
 
-#: header.php:69
+#: header.php:70
 msgid "Pinterest"
 msgstr ""
 
-#: header.php:72
+#: header.php:73
 msgid "Tumblr"
 msgstr ""
 
-#: header.php:75
+#: header.php:76
 msgid "VK"
 msgstr ""
 
-#: header.php:83
+#: header.php:84
 msgid "Type and hit enter..."
 msgstr ""
 
-#: header.php:88
+#: header.php:89
 msgid "Select a page..."
 msgstr ""
 
