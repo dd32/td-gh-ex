@@ -76,6 +76,8 @@ function undedicated_setup() {
 		'default-color' => 'ffffff',
 		'default-image' => '',
 	) ) );
+
+
 }
 endif; // undedicated_setup
 add_action( 'after_setup_theme', 'undedicated_setup' );
@@ -91,6 +93,26 @@ function undedicated_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'undedicated_content_width', 1024 );
 }
 add_action( 'after_setup_theme', 'undedicated_content_width', 0 );
+
+
+/**
+ * Add read more link to excerpt
+ */
+function undedicated_excerpt_more( $more ) {
+    return ' ... ';
+}
+add_filter( 'excerpt_more', 'undedicated_excerpt_more' );
+
+
+/**
+ * Modify the custom excerpt & add read more link 
+ */
+function undedicated_excerpt_more_link( $excerpt ){
+	
+	$excerpt = wp_strip_all_tags($excerpt, true);
+	return '<p> '. $excerpt . ' <a class="read-more meta-nav" href="'.get_the_permalink().'">'. esc_attr__('Read more', 'undedicated'). ' &raquo;</a></p>';
+}
+add_filter( 'the_excerpt', 'undedicated_excerpt_more_link', 21 );
 
 /**
  * Register widget area.

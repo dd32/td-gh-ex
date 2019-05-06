@@ -1,18 +1,14 @@
 === Undedicated V2 ===
-
-Undedicated V2
-Author: XtraPunch.com
-Author URI: http://xtrapunch.com
-Support Email: info@xtrapunch.com
-
-Requires at least: 4.0
-Tested up to: 4.2.2
-Stable tag: 1.0.0
+Contributors: reduxthemes
+Author: ReduxThemes.com
+Author URI: http://reduxthemes.com
+Requires at least: WordPress 4.7
+Tested up to: WordPress 5.1.1
+Requires PHP: 5.6
+Stable tag: 2.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Copyright with the author.
-
-Tags: translation-ready, custom-background, theme-options, custom-menu, post-formats, threaded-comments
+Support Email: info@xtrapunch.com
 
 == Description ==
 
@@ -44,6 +40,13 @@ Undedicated includes support for Infinite Scroll in Jetpack.
 
 = 1.0 - November 20, 2015 =
 * Initial release
+
+== Photos ==
+Screenshot Photos via Stocksnap.io, Lincese @ CC0
+https://stocksnap.io/photo/2EJYQBPJUU (Jama Masjid)
+https://stocksnap.io/photo/ZG6VSR9UTT (Landscape with Man)
+https://stocksnap.io/photo/CIOPTKHSK1 (Mountain)
+https://stocksnap.io/photo/MPUMJ612OH (Bokeh)
 
 == Credits ==
 

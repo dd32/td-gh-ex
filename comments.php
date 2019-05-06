@@ -33,7 +33,7 @@ if ( post_password_required() ) {
 
 				<?php echo get_avatar( $comment ); ?>
 				<strong class="comment-author"><?php comment_author_link(); ?></strong><br />
-				<time><a class="comment-permalink" href="<?php echo htmlspecialchars ( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s'), get_comment_date(), get_comment_time()) ?></a></time>
+				<time><a class="comment-permalink" href="<?php echo htmlspecialchars ( get_comment_link( $comment->comment_ID ) ) ?>"><?php echo get_comment_date(); ?></a></time>
 				<?php edit_comment_link(); ?>
 			</header><!-- .comment-meta -->
 

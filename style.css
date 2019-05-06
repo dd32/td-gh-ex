@@ -3,12 +3,13 @@ Theme Name: Undedicated
 Theme URI: http://reduxthemes.com/themes/undedicated/
 Author: ReduxThemes.com
 Author URI: http://reduxthemes.com
-Description: A clean and simple theme with focus on typography & content, and incorporates responsive design and menu.
-Version: 2.0.6
+Description: A clean and simple theme with focus on typography & content, and incorporates responsive design and menu. The theme sshows the excerpt is defined, else full content till the more tag shown on blog index page. Remove widgets from the sidebar to turn the blog into single-column design.
+Version: 2.0.7
+Requires at least: WordPress 4.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: undedicated
-Tags: white, blue, light, one-column, two-columns, right-sidebar, custom-header, custom-menu, responsive-layout, translation-ready
+Tags: one-column, two-columns, right-sidebar, custom-header, custom-menu, translation-ready
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -1123,6 +1124,11 @@ object {
 	border-bottom: 1px solid;
 }
 
+.widget-area .widget_media_gallery .gallery-caption {
+	display: none;
+	height: 1px;
+}
+
 /*--------------------------------------------------------------
 ## Footer
 --------------------------------------------------------------*/
@@ -1146,8 +1152,7 @@ blockquote {
 	padding:    0.5rem 1.5rem 1.5rem;
 	font-size:  1em; /* relative to parent */
 	font-style: normal;
-	border:     2px dashed;
-	outline:    10px solid;
+	border:     5px solid rgba(0,0,0,0.5);
 }
 
 blockquote p:first-child {
