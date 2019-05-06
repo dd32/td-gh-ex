@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Bakes And Cakes 1.1.7\n"
+"Project-Id-Version: Bakes And Cakes 1.1.8\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/bakes-and-cakes\n"
-"POT-Creation-Date: 2019-02-05 08:18:47+00:00\n"
+"POT-Creation-Date: 2019-05-06 08:06:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -125,31 +125,39 @@ msgstr ""
 msgid "&copy; "
 msgstr ""
 
-#: inc/custom-functions.php:418
-msgid "Bakes and Cakes by Rara Theme."
+#: inc/custom-functions.php:412
+msgid "Y"
 msgstr ""
 
-#: inc/custom-functions.php:420
+#: inc/custom-functions.php:417
+msgid "Bakes and Cakes | Developed By"
+msgstr ""
+
+#. Author of the plugin/theme
+msgid "Rara Theme"
+msgstr ""
+
+#: inc/custom-functions.php:421
 msgid "Powered by %s"
 msgstr ""
 
-#: inc/custom-functions.php:420
+#: inc/custom-functions.php:421
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: inc/custom-functions.php:510
+#: inc/custom-functions.php:511
 msgid "Name*"
 msgstr ""
 
-#: inc/custom-functions.php:513
+#: inc/custom-functions.php:514
 msgid "Email*"
 msgstr ""
 
-#: inc/custom-functions.php:516
+#: inc/custom-functions.php:517
 msgid "Website"
 msgstr ""
 
-#: inc/custom-functions.php:533
+#: inc/custom-functions.php:534
 msgid "Comment"
 msgstr ""
 
@@ -973,11 +981,11 @@ msgstr ""
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/woocommerce-functions.php:36
+#: inc/woocommerce-functions.php:44
 msgid "Shop Sidebar"
 msgstr ""
 
-#: inc/woocommerce-functions.php:38
+#: inc/woocommerce-functions.php:46
 msgid "Sidebar displaying only in woocommerce pages."
 msgstr ""
 
@@ -1043,10 +1051,6 @@ msgid ""
 "https://demo.raratheme.com/bakes-and-cakes/ , video documentation at "
 "https://raratheme.com/documentation/bakes-cakes/ and get support at "
 "http://raratheme.com/support-ticket/"
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Rara Theme"
 msgstr ""
 
 #. Author URI of the plugin/theme

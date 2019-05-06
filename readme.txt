@@ -5,8 +5,8 @@ Tags: blog, one-column, two-columns, right-sidebar, footer-widgets, custom-backg
 
 
 Requires at least: 4.7 
-Tested up to: 5.0.3
-Stable tag: 1.1.7
+Tested up to: 5.1.1
+Stable tag: 1.1.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -226,6 +226,9 @@ Bakes and Cakes WordPress Theme is distributed under the terms of the GPLv2 or l
    GNU General Public License for more details.
 
 == Changelog ==
+    1.1.8
+    * Fixed footer date translation issue.
+    * Added support for WooCommerce gallery slider, lightbox and zoom.
 
     1.1.7
     * Updated fontawesome to version 5.6.3.

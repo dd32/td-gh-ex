@@ -409,7 +409,7 @@ function bakes_and_cakes_footer_info(){
                 echo wp_kses_post( $copyright_text );
             }else{
                 esc_html_e( '&copy; ', 'bakes-and-cakes' ); 
-                esc_html_e( date_i18n( 'Y' ), 'bakes-and-cakes' );
+                echo date_i18n( esc_html__( 'Y', 'bakes-and-cakes' ) );
                 echo ' <a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>.';    
             }
         ?>

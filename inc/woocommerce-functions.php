@@ -25,7 +25,15 @@ add_action( 'widgets_init',                    'bakes_and_cakes_wc_widgets_init'
  * Declare Woocommerce Support
 */
 function bakes_and_cakes_woocommerce_support() {
+    global $woocommerce;
+    
     add_theme_support( 'woocommerce' );
+    
+    if( version_compare( $woocommerce->version, '3.0', ">=" ) ) {
+        add_theme_support( 'wc-product-gallery-zoom' );
+        add_theme_support( 'wc-product-gallery-lightbox' );
+        add_theme_support( 'wc-product-gallery-slider' );
+    }
 }
 
 /**
