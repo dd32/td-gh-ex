@@ -15,12 +15,14 @@
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="site-info wrap">
-			<?php _e( 'Powered by ', 'undedicated' ); ?><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'undedicated' ) ); ?>"><?php _e( 'WordPress', 'undedicated' ); ?></a>
+			<?php esc_attr_e( 'Powered by ', 'undedicated' ); ?><a href="<?php echo esc_url( __( 'https://wordpress.org/', 'undedicated' ) ); ?>"><?php esc_attr_e( 'WordPress', 'undedicated' ); ?></a>
 			<span class="sep"> & </span>
 			<?php
 				if ( is_front_page() ) {
+					/* translators: 1: Theme name, 2: Designer Name & Link */
 					printf( esc_html__( '%1$s theme by %2$s.', 'undedicated' ), 'Undedicated', '<a href="http://reduxthemes.com" rel="designer">ReduxThemes.com</a>' );
 				} else {
+					/* translators: 1: Theme name, 2: Designer Name & Link */
 					printf( esc_html__( '%1$s theme by %2$s.', 'undedicated' ), 'Undedicated', '<a href="http://reduxthemes.com" rel="nofollow">ReduxThemes.com</a>' );
 				
 				} 

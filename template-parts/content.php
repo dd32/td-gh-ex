@@ -15,18 +15,17 @@
 		<?php
 		//Define width of image
 		if ( is_active_sidebar( 'primary-sidebar' ) ) {
-				$img_minwidth = 750;
-				$img_thumb = 'feature-narrow';		
+				$undedicated_imgsize = 'feature-narrow';		
 		} else {
-				$img_minwidth = 950;			
-				$img_thumb = 'feature-wide';		
+				$undedicated_imgsize = 'feature-wide';		
 		}
 		
-		if ( !is_singular() ) {		
-			get_the_image( array( 'size' => $img_thumb, 'order' => array( 'featured', 'attachment' ), 'link_to_post' => true, 'min_width' => $img_minwidth ) );
-		} else {
-			get_the_image( array( 'size' => 'original', 'order' => array( 'featured', 'attachment' ), 'link_to_post' => true, 'min_width' => $img_minwidth ) );
+		if ( !is_singular() && has_post_thumbnail() ) {		
+			$undedicated_featured_image = the_post_thumbnail( $undedicated_imgsize );
+		} elseif( has_post_thumbnail() ) {
+			$undedicated_featured_image = the_post_thumbnail( 'feature-wide' );
 		}
+
 		?>
 
 		<?php the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' ); ?>

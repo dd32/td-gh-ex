@@ -5,10 +5,10 @@ Author URI: http://reduxthemes.com
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.1.1
 Requires PHP: 5.6
-Stable tag: 2.0.7
+Stable tag: 2.0.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Support Email: info@xtrapunch.com
+Support Email: contact@reduxthemes.com
 
 == Description ==
 
@@ -17,10 +17,9 @@ It comes with HTML5 & responsive CSS design to fit all devices.
 
 * Well-commented, modern, HTML5 templates
 * Supports custom header & header text on/off
-* Supports featured image for posts and displays only the right size 
-(Use images with minimum width of 1200px; smaller images are ignored in single-column layout when the sidebar is not in use.)
+* Supports featured image for posts and displays
 * Helpful 404 template for your lost readers
-* Automatically turns on two-column layout when sidebar is poulated, otherwise uses single-column layout
+* Automatically turns on two-column layout when sidebar is populated, otherwise uses single-column layout
 * Toggle menu on small screens (like your phone)
 * Licensed under GPLv2 or later. :) Use it to make something cool.
 

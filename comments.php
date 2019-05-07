@@ -22,9 +22,8 @@ if ( post_password_required() ) {
 
 <?php
 
-    function xtrapunch_comment($comment, $args, $depth) {
-    
-       $GLOBALS['comment'] = $comment; ?>
+    function undedicated_comment($comment, $args, $depth) {
+    ?>
        
         <li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
                 
@@ -33,7 +32,7 @@ if ( post_password_required() ) {
 
 				<?php echo get_avatar( $comment ); ?>
 				<strong class="comment-author"><?php comment_author_link(); ?></strong><br />
-				<time><a class="comment-permalink" href="<?php echo htmlspecialchars ( get_comment_link( $comment->comment_ID ) ) ?>"><?php echo get_comment_date(); ?></a></time>
+				<time><a class="comment-permalink" href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php echo esc_attr(get_comment_date()); ?></a></time>
 				<?php edit_comment_link(); ?>
 			</header><!-- .comment-meta -->
 
@@ -58,12 +57,26 @@ if ( post_password_required() ) {
 
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
+
 			<?php
-				printf( // WPCS: XSS OK.
-					esc_html( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'undedicated' ) ),
-					number_format_i18n( get_comments_number() ),
-					'<span>' . get_the_title() . '</span>'
-				);
+			$undedicated_comments_number    =   get_comments_number();
+			if( 1 === $undedicated_comments_number ) {
+				/* translators: %s is post title */
+				printf( esc_attr_x( 'One Reply to &ldquo;%s&rdquo;', 'comments title', 'undedicated' ), esc_attr(get_the_title()) );
+			} else {
+				printf(
+					/* translators: 1: number of comments, 2: post title */
+					esc_attr(_nx(
+						'%1$s Reply to &ldquo;%2$s&rdquo;',
+						'%1$s Replies to &ldquo;%2$s&rdquo;',
+						$undedicated_comments_number,
+						'comments title',
+						'undedicated'
+					),
+					esc_attr(number_format_i18n( $undedicated_comments_number )),
+					esc_attr( get_the_title() )
+				));
+			}
 			?>
 		</h2>
 
@@ -84,7 +97,7 @@ if ( post_password_required() ) {
 				wp_list_comments( array(
 					'style'      => 'ol',
 					'short_ping' => true,
-					'callback' => 'xtrapunch_comment',
+					'callback' => 'undedicated_comment',
 				) );
 			?>
 		</ol><!-- .comment-list -->

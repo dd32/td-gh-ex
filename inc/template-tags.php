@@ -24,33 +24,24 @@ function undedicated_posted_on() {
 		esc_html( get_the_modified_date() )
 	);
 
-	$posted_on = sprintf(
-		esc_html_x( '%s', 'post date', 'undedicated' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
-	$byline = sprintf(
-		esc_html_x( '%s', 'post author', 'undedicated' ),
-		'<span class="author entry-author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
+	$byline = '<span class="author entry-author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 	
-	echo '<span class="byline"> ' . $byline . '</span>&nbsp;<span class="posted-on">' . $posted_on . '</span>';
+	echo '<span class="byline"> ' . $byline . '</span> <span class="posted-on">' . $posted_on . '</span>';
 
 	// Hide category and tag text for pages.
 	if ( 'post' === get_post_type() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ', ', 'undedicated' ) );
 		if ( $categories_list && undedicated_categorized_blog() ) {
-			$catlist = sprintf(
-				esc_html_x( '%s', 'post category', 'undedicated' ),
-				'<span class="cat-links">' . $categories_list . '</span>'
-				);
+			$catlist = '<span class="cat-links">' . $categories_list . '</span>';
+			echo '&nbsp;<span class="entry-category">' . $catlist . '</span>&nbsp;';
 		}
-		echo '&nbsp;<span class="entry-category">' . $catlist . '</span>&nbsp;';
 	}
 		
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		comments_popup_link( __( '<span class="comments-link"> [+]</span>', 'undedicated' ), __( '<span class="comments-link"> 1</span>', 'undedicated' ), __( '<span class="comments-link"> %</span>', 'undedicated' ) );
+		comments_popup_link( __( '&nbsp;<span class="comments-link"> [+]</span>', 'undedicated' ), __( '&nbsp;<span class="comments-link"> 1</span>', 'undedicated' ), __( '&nbsp;<span class="comments-link"> %</span>', 'undedicated' ) );
 	}
 }
 endif;
@@ -65,6 +56,7 @@ function undedicated_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'undedicated' ) );
 		if ( $tags_list ) {
+			/* translators: 1. list of tags */
 			printf( '<p class="tags-links">' . esc_html__( 'Tags: %1$s', 'undedicated' ) . '</p>', $tags_list ); // WPCS: XSS OK.
 		}
 	}

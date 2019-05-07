@@ -4,7 +4,7 @@ Theme URI: http://reduxthemes.com/themes/undedicated/
 Author: ReduxThemes.com
 Author URI: http://reduxthemes.com
 Description: A clean and simple theme with focus on typography & content, and incorporates responsive design and menu. The theme sshows the excerpt is defined, else full content till the more tag shown on blog index page. Remove widgets from the sidebar to turn the blog into single-column design.
-Version: 2.0.7
+Version: 2.0.8
 Requires at least: WordPress 4.7
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -894,14 +894,13 @@ nav.pagination {
 
 /* === Comment list === */
 
-.comment-list {
+.comment-list  {
 	list-style: none;
 	margin:     0 0 1.5rem;
 	padding-left: 0;
 }
 
-.comment-list li > .children,
-.comment-list .children li > .children { list-style: none; }
+.comment-list .children { list-style: none; }
 
 /* === Individual comments */
 

@@ -37,9 +37,9 @@
 				<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
 			<?php endif;
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+			$undedicated_description = get_bloginfo( 'description', 'display' );
+			if ( $undedicated_description || is_customize_preview() ) : ?>
+				<p class="site-description"><?php echo esc_attr($undedicated_description); /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 	<?php endif; // Get Header Image ?>

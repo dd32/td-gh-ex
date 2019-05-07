@@ -45,10 +45,10 @@ if ( ! function_exists( 'undedicated_header_style' ) ) :
  * @see undedicated_custom_header_setup().
  */
 function undedicated_header_style() {
-	$header_text_color = get_header_textcolor();
+	$undedicated_header_text_color = get_header_textcolor();
 
 	// If no custom options for text are set, let's bail
-	if ( '000000' === $header_text_color ) {
+	if ( '000000' === $undedicated_header_text_color ) {
 		return;
 	}
 
@@ -122,9 +122,9 @@ function undedicated_admin_header_image() {
 				<h2 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h2>
 			<?php endif;
 
-			$description = get_bloginfo( 'description', 'display' );
-			if ( $description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $description; /* WPCS: xss ok. */ ?></p>
+			$undedicated_description = get_bloginfo( 'description', 'display' );
+			if ( $undedicated_description || is_customize_preview() ) : ?>
+				<p class="site-description"><?php echo esc_attr($undedicated_description); /* WPCS: xss ok. */ ?></p>
 			<?php endif; ?>
 		</div><!-- .site-branding -->
 

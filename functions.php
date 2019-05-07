@@ -90,7 +90,7 @@ add_action( 'after_setup_theme', 'undedicated_setup' );
  * @global int $content_width
  */
 function undedicated_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'undedicated_content_width', 1024 );
+	if ( ! isset( $content_width ) ) $content_width = 1024;
 }
 add_action( 'after_setup_theme', 'undedicated_content_width', 0 );
 
@@ -162,11 +162,6 @@ add_theme_support( 'custom-background' );
 require get_template_directory() . '/inc/custom-header.php';
 
 /**
- * Implement the Get The Image feature.
- */
-require get_template_directory() . '/inc/get-the-image.php';
-
-/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
@@ -185,3 +180,13 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Check the theme requirements on activation
+ */
+require get_template_directory() . '/inc/requirements.php';
+
+/**
+ * Add the theme info page
+ */
+require get_template_directory() . '/inc/welcome.php';
