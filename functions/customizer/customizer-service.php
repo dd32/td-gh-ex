@@ -34,6 +34,25 @@ $wp_customize->add_panel( 'wallstreet_service_options', array(
         'type' => 'checkbox',
     )
 	);
+	//Enable and disable Service section
+	$wp_customize->add_setting(
+	'wallstreet_pro_options[service_section_animation_enabled]'
+    ,
+    array(
+        'default' => true,
+		'capability'     => 'edit_theme_options',
+		'sanitize_callback' => 'sanitize_text_field',
+		'type' => 'option',
+    )	
+	);
+	$wp_customize->add_control(
+    'wallstreet_pro_options[service_section_animation_enabled]',
+    array(
+        'label' => __('Enable Service Animation','wallstreet'),
+        'section' => 'service_section_head',
+        'type' => 'checkbox',
+    )
+	);
 	
 //service section one
 	$wp_customize->add_section( 'service_section_one' , array(

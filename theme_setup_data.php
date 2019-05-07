@@ -28,6 +28,7 @@ function theme_data_setup()
 			
 			// service
 			'service_section_enabled' => true,
+			'service_section_animation_enabled' => true,
 			
 			'service_image_one' => $service_image1, 
 			'service_title_one'=> __('Product Design','wallstreet'),

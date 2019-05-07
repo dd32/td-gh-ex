@@ -20,7 +20,7 @@
 		</div>
 	</div>	
 	<div class="row">
-		<div class="col-md-4 col-sm-6 service-effect">
+		<div class="col-md-4 col-sm-6 <?php if($current_options['service_section_animation_enabled']==true) { echo "service-effect";} else { echo "stop-service-effect";}?>">
 			<?php if($current_options['service_image_one']) { ?>
 			<div class="service-box">
 				<img class="img-responsive service-box-image" alt="Sleek &amp; Beautiful" src="<?php echo esc_url($current_options['service_image_one']); ?>">
@@ -36,7 +36,7 @@
 			</div><!-- / service-area -->
 		</div> <!-- / service-effect column -->
 		
-		<div class="col-md-4 col-sm-6 service-effect">
+		<div class="col-md-4 col-sm-6 <?php if($current_options['service_section_animation_enabled']==true) { echo "service-effect";} else { echo "stop-service-effect";}?>">
 			<?php if($current_options['service_image_two']) { ?>
 			<div class="service-box">
 				<img class="img-responsive service-box-image" alt="Sleek &amp; Beautiful" src="<?php echo esc_url($current_options['service_image_two']); ?>">
@@ -52,7 +52,7 @@
 			</div><!-- / service-area -->
 		</div> <!-- / service-effect column -->
 		
-		<div class="col-md-4 col-sm-6 service-effect">
+		<div class="col-md-4 col-sm-6 <?php if($current_options['service_section_animation_enabled']==true) { echo "service-effect";} else { echo "stop-service-effect";}?>">
 			<?php if($current_options['service_image_three']) { ?>
 			<div class="service-box">
 				<img class="img-responsive service-box-image" alt="Sleek &amp; Beautiful" src="<?php echo esc_url($current_options['service_image_three']); ?>">

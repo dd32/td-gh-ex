@@ -3,14 +3,14 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Wallstreet\n"
-"POT-Creation-Date: 2018-09-26 17:39+0530\n"
+"POT-Creation-Date: 2019-05-06 13:30+0530\n"
 "PO-Revision-Date: 2018-09-26 17:24+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.0.1\n"
+"X-Generator: Poedit 2.2.1\n"
 "X-Poedit-Basepath: ../..\n"
 "X-Poedit-Flags-xgettext: --add-comments=translators:\n"
 "X-Poedit-WPHeader: style.css\n"
@@ -53,12 +53,12 @@ msgstr ""
 msgid "Blog Archive"
 msgstr ""
 
-#: archive.php:57 author.php:46 category.php:48 functions.php:100
+#: archive.php:57 author.php:46 category.php:48 functions.php:111
 #: index-blog.php:46 index.php:52 search.php:50 tag.php:47
 msgid "Read More"
 msgstr ""
 
-#: archive.php:58 author.php:47 category.php:49 functions.php:56
+#: archive.php:58 author.php:47 category.php:49 functions.php:69
 #: functions/breadcrumbs/breadcrumbs.php:98 index.php:53 single.php:31
 #: tag.php:48
 msgid "Page"
@@ -76,11 +76,13 @@ msgstr ""
 msgid "Install Plugins"
 msgstr ""
 
+#. translators: %s: plugin name.
 #: class-tgm-plugin-activation.php:330
 #, php-format
 msgid "Installing Plugin: %s"
 msgstr ""
 
+#. translators: %s: plugin name.
 #: class-tgm-plugin-activation.php:332
 #, php-format
 msgid "Updating Plugin: %s"
@@ -90,6 +92,7 @@ msgstr ""
 msgid "Something went wrong with the plugin API."
 msgstr ""
 
+#. translators: 1: plugin name(s).
 #: class-tgm-plugin-activation.php:336
 #, php-format
 msgid "This theme requires the following plugin: %1$s."
@@ -97,6 +100,7 @@ msgid_plural "This theme requires the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: plugin name(s).
 #: class-tgm-plugin-activation.php:342
 #, php-format
 msgid "This theme recommends the following plugin: %1$s."
@@ -104,6 +108,7 @@ msgid_plural "This theme recommends the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: plugin name(s).
 #: class-tgm-plugin-activation.php:348
 #, php-format
 msgid ""
@@ -115,6 +120,7 @@ msgid_plural ""
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: plugin name(s).
 #: class-tgm-plugin-activation.php:354
 #, php-format
 msgid "There is an update available for %1$s."
@@ -122,6 +128,7 @@ msgid_plural "There are updates available for the following plugins: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: plugin name(s).
 #: class-tgm-plugin-activation.php:360
 #, php-format
 msgid "The following required plugin is currently inactive: %1$s."
@@ -129,6 +136,7 @@ msgid_plural "The following required plugins are currently inactive: %1$s."
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: plugin name(s).
 #: class-tgm-plugin-activation.php:366
 #, php-format
 msgid "The following recommended plugin is currently inactive: %1$s."
@@ -173,11 +181,13 @@ msgid_plural "The following plugins were activated successfully:"
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: plugin name.
 #: class-tgm-plugin-activation.php:390
 #, php-format
 msgid "No action taken. Plugin %1$s was already active."
 msgstr ""
 
+#. translators: 1: plugin name.
 #: class-tgm-plugin-activation.php:392
 #, php-format
 msgid ""
@@ -185,6 +195,7 @@ msgid ""
 "Please update the plugin."
 msgstr ""
 
+#. translators: 1: dashboard link.
 #: class-tgm-plugin-activation.php:394
 #, php-format
 msgid "All plugins installed and activated successfully. %1$s"
@@ -235,6 +246,7 @@ msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
+#. translators: %s: version number
 #: class-tgm-plugin-activation.php:1982
 #, php-format
 msgid "TGMPA v%s"
@@ -284,12 +296,14 @@ msgstr ""
 msgid "Update recommended"
 msgstr ""
 
+#. translators: 1: install status, 2: update status
 #: class-tgm-plugin-activation.php:2342
 #, php-format
 msgctxt "Install/Update Status"
 msgid "%1$s, %2$s"
 msgstr ""
 
+#. translators: 1: number of plugins.
 #: class-tgm-plugin-activation.php:2388
 #, php-format
 msgctxt "plugins"
@@ -298,6 +312,7 @@ msgid_plural "All <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: number of plugins.
 #: class-tgm-plugin-activation.php:2392
 #, php-format
 msgid "To Install <span class=\"count\">(%s)</span>"
@@ -305,6 +320,7 @@ msgid_plural "To Install <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: number of plugins.
 #: class-tgm-plugin-activation.php:2396
 #, php-format
 msgid "Updates Available <span class=\"count\">(%s)</span>"
@@ -312,6 +328,7 @@ msgid_plural "Updates Available <span class=\"count\">(%s)</span>"
 msgstr[0] ""
 msgstr[1] ""
 
+#. translators: 1: number of plugins.
 #: class-tgm-plugin-activation.php:2400
 #, php-format
 msgid "To Activate <span class=\"count\">(%s)</span>"
@@ -360,16 +377,19 @@ msgstr ""
 msgid "Status"
 msgstr ""
 
+#. translators: %2$s: plugin name in screen reader markup
 #: class-tgm-plugin-activation.php:2603
 #, php-format
 msgid "Install %2$s"
 msgstr ""
 
+#. translators: %2$s: plugin name in screen reader markup
 #: class-tgm-plugin-activation.php:2608
 #, php-format
 msgid "Update %2$s"
 msgstr ""
 
+#. translators: %2$s: plugin name in screen reader markup
 #: class-tgm-plugin-activation.php:2614
 #, php-format
 msgid "Activate %2$s"
@@ -419,16 +439,19 @@ msgstr ""
 msgid "Plugin activation failed."
 msgstr ""
 
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: class-tgm-plugin-activation.php:3498
 #, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
+#. translators: 1: plugin name, 2: error message.
 #: class-tgm-plugin-activation.php:3501
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 
+#. translators: 1: plugin name.
 #: class-tgm-plugin-activation.php:3503
 #, php-format
 msgid "The installation of %1$s failed."
@@ -440,6 +463,7 @@ msgid ""
 "while on some hosts, so please be patient."
 msgstr ""
 
+#. translators: 1: plugin name.
 #: class-tgm-plugin-activation.php:3509
 #, php-format
 msgid "%1$s installed and activated successfully."
@@ -457,6 +481,7 @@ msgstr ""
 msgid "All installations and activations have been completed."
 msgstr ""
 
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: class-tgm-plugin-activation.php:3512
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
@@ -468,6 +493,7 @@ msgid ""
 "hosts, so please be patient."
 msgstr ""
 
+#. translators: 1: plugin name.
 #: class-tgm-plugin-activation.php:3517
 #, php-format
 msgid "%1$s installed successfully."
@@ -477,6 +503,7 @@ msgstr ""
 msgid "All installations have been completed."
 msgstr ""
 
+#. translators: 1: plugin name, 2: action number 3: total number of actions.
 #: class-tgm-plugin-activation.php:3520
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
@@ -543,35 +570,35 @@ msgstr ""
 msgid "Send Message"
 msgstr ""
 
-#: functions.php:73
+#: functions.php:86
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:108 functions.php:110
+#: functions.php:119 functions.php:121
 msgid "Sidebar widget area"
 msgstr ""
 
-#: functions.php:118 functions.php:120
+#: functions.php:129 functions.php:131
 msgid "Footer widget area"
 msgstr ""
 
-#: functions.php:128 functions.php:130
+#: functions.php:139 functions.php:141
 msgid "WooCommerce sidebar widget area"
 msgstr ""
 
-#: functions.php:169
+#: functions.php:180
 msgid "Reply"
 msgstr ""
 
-#: functions.php:176
+#: functions.php:187
 msgid "Posted on &nbsp;"
 msgstr ""
 
-#: functions.php:178
+#: functions.php:189
 msgid "Edit"
 msgstr ""
 
-#: functions.php:183
+#: functions.php:194
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
@@ -600,7 +627,19 @@ msgstr ""
 msgid "Homepage blog settings"
 msgstr ""
 
-#: functions/customizer/customizer-blog.php:27
+#: functions/customizer/customizer-blog.php:15
+msgid "Want to more blog setting? Then"
+msgstr ""
+
+#: functions/customizer/customizer-blog.php:16
+#: functions/customizer/customizer-layout.php:98
+#: functions/customizer/customizer-post-type-slugs.php:24
+#: functions/customizer/customizer-slider.php:14
+#: functions/customizer/customizer_theme_style.php:47
+msgid "Upgrade to Plus"
+msgstr ""
+
+#: functions/customizer/customizer-blog.php:50
 msgid "Enable Homepage Blog Section"
 msgstr ""
 
@@ -613,7 +652,7 @@ msgstr ""
 #: functions/customizer/customizer-pro.php:12
 #: functions/customizer/customizer-pro.php:19
 #: functions/customizer/customizer-project.php:299
-#: functions/customizer/customizer-service.php:234
+#: functions/customizer/customizer-service.php:253
 #: functions/customizer/customizer-template.php:6
 #: functions/customizer/customizer-template.php:15
 #: functions/customizer/customizer-template.php:24
@@ -669,10 +708,10 @@ msgstr ""
 #: functions/customizer/customizer-project.php:120
 #: functions/customizer/customizer-project.php:180
 #: functions/customizer/customizer-project.php:240
-#: functions/customizer/customizer-service.php:75
-#: functions/customizer/customizer-service.php:135
-#: functions/customizer/customizer-service.php:194
-#: functions/customizer/customizer-slider.php:38
+#: functions/customizer/customizer-service.php:94
+#: functions/customizer/customizer-service.php:154
+#: functions/customizer/customizer-service.php:213
+#: functions/customizer/customizer-slider.php:62
 #: functions/customizer/customizer-template.php:105
 #: functions/customizer/customizer-template.php:215
 #: functions/customizer/customizer-template.php:475
@@ -695,10 +734,10 @@ msgstr ""
 #: functions/customizer/customizer-project.php:138
 #: functions/customizer/customizer-project.php:198
 #: functions/customizer/customizer-project.php:258
-#: functions/customizer/customizer-service.php:93
-#: functions/customizer/customizer-service.php:153
-#: functions/customizer/customizer-service.php:212
-#: functions/customizer/customizer-slider.php:68
+#: functions/customizer/customizer-service.php:112
+#: functions/customizer/customizer-service.php:172
+#: functions/customizer/customizer-service.php:231
+#: functions/customizer/customizer-slider.php:92
 #: functions/customizer/customizer-template.php:125
 #: functions/customizer/customizer-template.php:604
 msgid "Description"
@@ -708,7 +747,7 @@ msgstr ""
 msgid "Footer copyright settings"
 msgstr ""
 
-#: functions/customizer/customizer-copyright.php:15 theme_setup_data.php:88
+#: functions/customizer/customizer-copyright.php:15 theme_setup_data.php:89
 msgid ""
 "<a href=\"https://wordpress.org\">Proudly powered by WordPress</a> | Theme: "
 "<a href=\"https://webriti.com\" rel=\"designer\"> Wallstreet</a> by Webriti"
@@ -736,10 +775,10 @@ msgstr ""
 #: functions/customizer/customizer-project.php:151
 #: functions/customizer/customizer-project.php:212
 #: functions/customizer/customizer-project.php:272
-#: functions/customizer/customizer-service.php:53
-#: functions/customizer/customizer-service.php:114
-#: functions/customizer/customizer-service.php:173
-#: functions/customizer/customizer-slider.php:20
+#: functions/customizer/customizer-service.php:72
+#: functions/customizer/customizer-service.php:133
+#: functions/customizer/customizer-service.php:192
+#: functions/customizer/customizer-slider.php:44
 msgid "Image"
 msgstr ""
 
@@ -781,7 +820,7 @@ msgstr ""
 msgid "Contact email"
 msgstr ""
 
-#: functions/customizer/customizer-heading.php:76 theme_setup_data.php:70
+#: functions/customizer/customizer-heading.php:76 theme_setup_data.php:71
 msgid "Our services"
 msgstr ""
 
@@ -790,7 +829,7 @@ msgid "Services Title"
 msgstr ""
 
 #: functions/customizer/customizer-heading.php:95
-#: functions/customizer/customizer-template.php:116 theme_setup_data.php:71
+#: functions/customizer/customizer-template.php:116 theme_setup_data.php:72
 msgid "We offer great services to our clients."
 msgstr ""
 
@@ -798,7 +837,7 @@ msgstr ""
 msgid "Services Description"
 msgstr ""
 
-#: functions/customizer/customizer-heading.php:113 theme_setup_data.php:72
+#: functions/customizer/customizer-heading.php:113 theme_setup_data.php:73
 msgid "Featured portfolio project"
 msgstr ""
 
@@ -807,7 +846,7 @@ msgstr ""
 msgid "Portfolio Title"
 msgstr ""
 
-#: functions/customizer/customizer-heading.php:132 theme_setup_data.php:73
+#: functions/customizer/customizer-heading.php:132 theme_setup_data.php:74
 msgid "Our most popular work"
 msgstr ""
 
@@ -815,7 +854,7 @@ msgstr ""
 msgid "Portfolio Description"
 msgstr ""
 
-#: functions/customizer/customizer-heading.php:151 theme_setup_data.php:74
+#: functions/customizer/customizer-heading.php:151 theme_setup_data.php:75
 msgid "Our latest blog post"
 msgstr ""
 
@@ -823,7 +862,7 @@ msgstr ""
 msgid "Homepage blog section heading"
 msgstr ""
 
-#: functions/customizer/customizer-heading.php:170 theme_setup_data.php:75
+#: functions/customizer/customizer-heading.php:170 theme_setup_data.php:76
 msgid "We work with new customers and grow their business."
 msgstr ""
 
@@ -884,6 +923,79 @@ msgstr ""
 msgid "Custom CSS"
 msgstr ""
 
+#: functions/customizer/customizer-layout.php:19
+#: functions/customizer/customizer-layout.php:148
+msgid "Enable"
+msgstr ""
+
+#: functions/customizer/customizer-layout.php:27
+#: functions/customizer/customizer-layout.php:166
+msgid "Disable"
+msgstr ""
+
+#: functions/customizer/customizer-layout.php:34
+msgid "Slider section always top on the home page"
+msgstr ""
+
+#: functions/customizer/customizer-layout.php:35
+msgid "Note :"
+msgstr ""
+
+#: functions/customizer/customizer-layout.php:35
+msgid ""
+"By default, all the sections are enabled on the homepage. If you do not want "
+"to display any section just drag that section to the disabled box."
+msgstr ""
+
+#: functions/customizer/customizer-layout.php:85
+#: functions/customizer/customizer-layout.php:90
+msgid "Theme layout manager"
+msgstr ""
+
+#: functions/customizer/customizer-layout.php:97
+msgid "Want to use layout manager setting? Then"
+msgstr ""
+
+#: functions/customizer/customizer-post-type-slugs.php:10
+msgid "SEO Friendly URL"
+msgstr ""
+
+#: functions/customizer/customizer-post-type-slugs.php:15
+msgid "SEO Friendly Url's"
+msgstr ""
+
+#: functions/customizer/customizer-post-type-slugs.php:23
+msgid "Want to use seo setting? Then"
+msgstr ""
+
+#: functions/customizer/customizer-post-type-slugs.php:52
+msgid "Slider slug"
+msgstr ""
+
+#: functions/customizer/customizer-post-type-slugs.php:65
+msgid "Service slug"
+msgstr ""
+
+#: functions/customizer/customizer-post-type-slugs.php:78
+msgid "Team slug"
+msgstr ""
+
+#: functions/customizer/customizer-post-type-slugs.php:91
+msgid "Portfolio slug"
+msgstr ""
+
+#: functions/customizer/customizer-post-type-slugs.php:105
+msgid "Portfolio category slug"
+msgstr ""
+
+#: functions/customizer/customizer-post-type-slugs.php:119
+msgid "Testimonial slug"
+msgstr ""
+
+#: functions/customizer/customizer-post-type-slugs.php:133
+msgid "Client slug"
+msgstr ""
+
 #: functions/customizer/customizer-pro.php:46
 msgid "ADD YOUR REVIEW"
 msgstr ""
@@ -914,16 +1026,16 @@ msgstr ""
 #: functions/customizer/customizer-project.php:44
 #: functions/customizer/customizer-project.php:114
 #: functions/customizer/customizer-project.php:174
-#: functions/customizer/customizer-project.php:234 theme_setup_data.php:47
-#: theme_setup_data.php:51 theme_setup_data.php:55 theme_setup_data.php:59
+#: functions/customizer/customizer-project.php:234 theme_setup_data.php:48
+#: theme_setup_data.php:52 theme_setup_data.php:56 theme_setup_data.php:60
 msgid "WallStreet style"
 msgstr ""
 
 #: functions/customizer/customizer-project.php:60
 #: functions/customizer/customizer-project.php:129
 #: functions/customizer/customizer-project.php:189
-#: functions/customizer/customizer-project.php:249 theme_setup_data.php:48
-#: theme_setup_data.php:52 theme_setup_data.php:56 theme_setup_data.php:60
+#: functions/customizer/customizer-project.php:249 theme_setup_data.php:49
+#: theme_setup_data.php:53 theme_setup_data.php:57 theme_setup_data.php:61
 msgid ""
 "A wonderful serenity has taken possession of my entire soul, like these "
 "sweet mornings."
@@ -962,35 +1074,39 @@ msgstr ""
 msgid "Enable Service section"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:40
+#: functions/customizer/customizer-service.php:51
+msgid "Enable Service Animation"
+msgstr ""
+
+#: functions/customizer/customizer-service.php:59
 msgid "Service one"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:66 theme_setup_data.php:33
+#: functions/customizer/customizer-service.php:85 theme_setup_data.php:34
 msgid "Product Design"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:101
+#: functions/customizer/customizer-service.php:120
 msgid "Service two"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:126 theme_setup_data.php:37
+#: functions/customizer/customizer-service.php:145 theme_setup_data.php:38
 msgid "WordPress themes"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:160
+#: functions/customizer/customizer-service.php:179
 msgid "Service three"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:185
+#: functions/customizer/customizer-service.php:204
 msgid "Easy to use"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:218
+#: functions/customizer/customizer-service.php:237
 msgid "Add more services"
 msgstr ""
 
-#: functions/customizer/customizer-service.php:231
+#: functions/customizer/customizer-service.php:250
 msgid "Want to add more services? Then upgrade to Pro."
 msgstr ""
 
@@ -998,19 +1114,23 @@ msgstr ""
 msgid "Banner image settings"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:32 theme_setup_data.php:24
+#: functions/customizer/customizer-slider.php:13
+msgid "Want to add more banner image? Then"
+msgstr ""
+
+#: functions/customizer/customizer-slider.php:56 theme_setup_data.php:24
 msgid "Clean & fresh theme"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:47 theme_setup_data.php:25
+#: functions/customizer/customizer-slider.php:71 theme_setup_data.php:25
 msgid "Welcome to WallStreet"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:53
+#: functions/customizer/customizer-slider.php:77
 msgid "Sub title"
 msgstr ""
 
-#: functions/customizer/customizer-slider.php:62
+#: functions/customizer/customizer-slider.php:86
 msgid ""
 "A state-of-the-art HTML5-powered flexible layout with lightspeed fast CSS3 "
 "transition effects. Works perfectly in any modern mobile."
@@ -1347,6 +1467,22 @@ msgstr ""
 msgid "Callout button"
 msgstr ""
 
+#: functions/customizer/customizer_theme_style.php:14
+msgid "Light & Dark Predefined Colors Setting"
+msgstr ""
+
+#: functions/customizer/customizer_theme_style.php:40
+msgid "Theme Style settings"
+msgstr ""
+
+#: functions/customizer/customizer_theme_style.php:46
+msgid "Want to use theme style setting? Then"
+msgstr ""
+
+#: functions/customizer/customizer_theme_style.php:110
+msgid "Change skin color for light and dark background"
+msgstr ""
+
 #: search.php:32
 #, php-format
 msgid "Search results for: %s"
@@ -1389,7 +1525,7 @@ msgid ""
 "transition effects. Works perfectly on any modern mobile device."
 msgstr ""
 
-#: theme_setup_data.php:41
+#: theme_setup_data.php:42
 msgid "Responsive designs"
 msgstr ""
 
@@ -1407,4 +1543,12 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://www.webriti.com"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Full Width Page"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Home Page"
 msgstr ""

@@ -38,7 +38,7 @@
 }
 .slide-text-bg3 p {
     display: inline-block;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 25px;
     margin: 0;
 }
@@ -390,6 +390,9 @@
 
 @media only screen and (min-width: 200px) and (max-width: 480px) {
 /*Header Top Area----------------*/	
+.slide-text-bg3 {
+    padding: 0;
+}
 .head-contact-social, .head-contact-info {
     float: none;
     text-align: center;
@@ -438,10 +441,9 @@
     margin: 0 0 5px;
 }
 .slide-text-bg3 p {
-    display: none;
-    font-size: 14px;
-    line-height: 20px;
-    margin: 0;
+    font-size: 12px;
+        line-height: 15px;
+    margin: 3px;
 }
 
 

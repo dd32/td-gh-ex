@@ -20,6 +20,9 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-project.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-social.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-blog.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-post-type-slugs.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-layout.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_theme_style.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-heading.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-feature.php');
@@ -31,8 +34,18 @@
 	
 	
 	
-	
-	
+	add_action( 'admin_init', 'wallstreet_detect_button' );
+	function wallstreet_detect_button() {
+	wp_enqueue_style( 'wallstreet-info-button', WEBRITI_TEMPLATE_DIR_URI . '/css/import-button.css' );
+}
+	function webriti_custom_enqueue_css()
+{	global $pagenow;
+	if ( in_array( $pagenow, array( 'post.php', 'post-new.php', 'page-new.php', 'page.php' ) ) ) {
+		wp_enqueue_style('meta-box-css', WEBRITI_TEMPLATE_DIR_URI . '/css/meta-box.css');	
+	}
+	wp_enqueue_style('drag-drop', WEBRITI_TEMPLATE_DIR_URI . '/css/drag-drop.css');
+}
+add_action( 'admin_print_styles', 'webriti_custom_enqueue_css', 10 );
 	
 	
 	
@@ -73,7 +86,7 @@
 		register_nav_menu( 'primary', __( 'Primary Menu', 'wallstreet' ) ); //Navigation
 		// theme support 	
 		$args = array('default-color' => '000000',);
-		add_theme_support( 'custom-background', $args  ); 
+		add_theme_support( 'custom-background', $args  );
 		add_theme_support( 'automatic-feed-links');
 		
 		

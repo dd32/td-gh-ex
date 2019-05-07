@@ -25,7 +25,7 @@
 <!-- /Page Title Section -->
 
 <!-- Blog & Sidebar Section -->
-<div class="container">
+<div class="container category">
 	<div class="row">
 
 		<div class="<?php if(is_active_sidebar('sidebar_primary')){ echo 'col-md-8'; } else { echo 'col-md-12'; } ?>" >

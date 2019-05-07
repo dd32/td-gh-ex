@@ -51,6 +51,11 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.7.9
+1. Add Service Animation Setting for homepage service section
+2. Prevent customizer's preview refresh on pro locked
+3. Layout issue when video in post/page/archive page
+4. Sider description issue for mobile has been fixed
 @Version 1.7.8.5
 1. Update String.
 @Version 1.7.8.4

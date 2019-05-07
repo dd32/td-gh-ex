@@ -5,7 +5,31 @@ function wallstreet_slider_customizer( $wp_customize ) {
         'slider_section_settings',
         array(
             'title' => __('Banner image settings','wallstreet')));
-	
+
+
+	//Banner Image plus
+		class wallstreet_theme_banner_upgrade extends WP_Customize_Control {
+			public function render_content() { ?>
+			<h3><?php _e('Want to add more banner image? Then','wallstreet'); ?><a href="<?php echo esc_url( 'https://webriti.com/wallstreet/' ); ?>" target="_blank">
+			<?php _e('Upgrade to Plus','wallstreet'); ?> </a>  
+			<?php
+			}
+		}
+		
+		$wp_customize->add_setting( 'theme_banner_upgrade', array(
+			'capability'			=> 'edit_theme_options',
+			'sanitize_callback'	=> 'wp_filter_nohtml_kses',
+		));
+		$wp_customize->add_control(
+			new wallstreet_theme_banner_upgrade(
+			$wp_customize,
+			'theme_banner_upgrade',
+				array(
+					'section'				=> 'slider_section_settings',
+					'settings'				=> 'theme_banner_upgrade',
+				)
+			)
+		);
 	
 	$wp_customize->add_setting( 'wallstreet_pro_options[slider_image]',array('default' => get_template_directory_uri().'/images/slider.jpg',
 	'type' => 'option','sanitize_callback' => 'esc_url_raw',

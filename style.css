@@ -2,7 +2,7 @@
 * Theme Name: Wallstreet
 * Theme URI: https://webriti.com/wallstreet-lite-version-details-page/
 * Description: WallStreet is a Business WordPress Theme that contains many features for customizing your website as you need. Already, thousands of users are enjoying this theme because it is designed for multiple businesses like corporates, law firms, digital media agencies, architecture firms, personal blogs, portfolios and freelancer websites. The theme is developed using Bootstrap 3 CSS framework which makes it friendly for all devices such as mobiles, tablets, and laptops, etc. In WallStreet Lite, you can easily set a Featured Banner / Slide, Social Icons in the header, Contact Information, Services, Portfolio, and a 4-column widgetized footer. Several page templates are also added: Homepage and a Full Width page template. In the premium version, you will get 2 color skins (Lite and Dark), 10 predefined color schemes, a feature for creating your own custom color scheme, an eye-catching slider, and Services, Testimonials, Portfolio, Clients / Sponsors, Blog Layouts, Layout Manager and Latest News. You will also get various page templates including About, Services, Portfolio, Blog and Contact Us. The theme has support for popular plugins such as WPML, Polylang and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium versions of WallStreet theme come with various locales. Check the premium version theme demo at https://webriti.com/demo/wp/wallstreet
-* Version: 1.7.8.5
+* Version: 1.7.9
 * Author: webriti
 * Author URI: https://www.webriti.com
 * Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready,featured-images, blog, photography, entertainment,footer-widgets
@@ -2964,4 +2964,21 @@ li.cat-item { padding: 5px 0; }
 
 .pswp__caption__center {
    text-align: center;
+}
+.col-md-8 .blog-detail-section .blog-post-title .blog-post-title-wrapper iframe
+{
+    width: 100%;
+}
+@media only screen and (max-width: 767px) and (min-width: 200px){
+.col-md-12 .blog-detail-section .blog-post-title .blog-post-title-wrapper iframe {
+    width: 100%;
+}}
+
+body.custom-background .product_title.entry-title, body.custom-background .woocommerce-Price-amount.amount, body.custom-background .sku_wrapper, body.custom-background .product_meta .posted_in, body.custom-background .woocommerce-Tabs-panel h2, body.custom-background .related.products h2, body.custom-background .woocommerce-Tabs-panel .woocommerce-Reviews .comment-reply-title
+{
+color: #e5e5e5 !important;
+}
+.container.theme-index iframe, .container.archive  iframe, .container.author iframe, .container.category iframe
+{
+    width:100%;
 }
