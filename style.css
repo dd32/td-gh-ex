@@ -4,7 +4,7 @@ Description: ArtGallery is fully Responsive Art WordPress Theme. Features: Anima
 Author: customizablethemes
 Author URI: https://customizablethemes.com
 Theme URI: https://customizablethemes.com/product/artgallery/
-Version: 1.1.6
+Version: 1.1.7
 Text Domain: artgallery
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2 or later
@@ -186,6 +186,29 @@ dt.gallery-icon:before {
 
 dt.gallery-icon:before {
 	content:'';
+}
+
+
+#footer-bottom-widget-area {
+	margin-top:10px;
+}
+
+#footer-bottom-area {
+	clear:both;
+	padding:15px 2% 10px 2%;
+	background-color:#D3D3D3;
+}
+
+#footer-bottom-area {
+	color:#111111;
+}
+
+#footer-bottom-area a {
+	color:#aaaaaa;
+}
+
+#footer-bottom-area a:hover {
+	color:#111111;
 }
 
 #header-logo h1 {
@@ -468,6 +491,7 @@ article ul > li:before {
 	margin:5px 0 5px 0;
 }
 
+#footer-bottom-area,
 #copyright {
 	clear:both;
 	text-align:center;
@@ -1234,7 +1258,7 @@ dt.gallery-icon > a:before,
 .gallery-item {
 	display: inline-block;
 	max-width: 33.33%;
-	padding: 0 1.1400652% 2.2801304%;
+	padding: 0 1.1400652% 0;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
@@ -1274,6 +1298,8 @@ dt.gallery-icon > a:before,
 
 .gallery-icon img {
 	margin: 0 auto;
+	max-width:100%;
+	height:auto;
 }
 
 .gallery-caption {
@@ -2032,7 +2058,8 @@ dt.gallery-icon > a:before,
 	#home-cols-inner,
 	#bottom-widget-inner,
 	#main-content-wrapper,
-	#footer-content-wrapper	{
+	#footer-content-wrapper,
+    #footer-bottom-content-wrapper	{
 		margin:0 auto;
 		width:1150px;
 	}
@@ -2061,7 +2088,8 @@ dt.gallery-icon > a:before,
 		margin-right:0;
 	}
 	
-	#footer-main {
+	#footer-main,
+	#footer-bottom-area {
 		padding-left:0;
 		padding-right:0;
 	}
