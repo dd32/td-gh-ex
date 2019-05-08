@@ -5,6 +5,7 @@ featured-images, threaded-comments, translation-ready, sticky-post, theme-option
 full-width-template, editor-style
 Requires at least: 4.9.0
 Tested up to: 4.9.8
+Requires PHP: 5.2.4
 Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -40,6 +41,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.0.4 =
+* improve footer with a copyright background color
 
 = 1.0.3 =
 * update Resources' images info 
