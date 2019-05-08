@@ -4,7 +4,7 @@ Description: fKidd is a Free Multi-Purpose WordPress Theme. Features: Fully Resp
 Theme URI: https://tishonator.com/product/fkidd
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 1.9.9
+Version: 2.0.0
 Text Domain: fkidd
 Tags: education, blog, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, post-formats, threaded-comments, sticky-post, theme-options, footer-widgets, translation-ready, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
@@ -173,6 +173,29 @@ span > object {
 
 dt.gallery-icon:before {
 	content:'';
+}
+
+
+#footer-bottom-widget-area {
+	margin-top:10px;
+}
+
+#footer-bottom-area {
+	clear:both;
+	padding:15px 2% 10px 2%;
+	background-color:#2F7077;
+}
+
+#footer-bottom-area {
+	color:#FFFFFF;
+}
+
+#footer-bottom-area a {
+	color:#FFFFFF;
+}
+
+#footer-bottom-area a:hover {
+	color:#ed265a;
 }
 
 #header-logo h1 {
@@ -564,6 +587,7 @@ article,
 	text-align:center;
 }
 
+#footer-bottom-area,
 #copyright {
 	clear:both;
 	text-align:center;
@@ -1564,7 +1588,8 @@ img.wp-post-image {
 }
 
 #page-header h1 {
-	margin:0;
+    display:inline;
+    margin:0;
 	padding:0;
 }
 
@@ -1631,13 +1656,13 @@ img.wp-post-image {
 
 
 .gallery {
-	margin: 0 -1.1666667% 1.75em;
+	margin: 0 -1.1666667% 0;
 }
 
 .gallery-item {
 	display: inline-block;
 	max-width: 33.33%;
-	padding: 0 1.1400652% 2.2801304%;
+	padding: 0 1.1400652% 0;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
@@ -1677,6 +1702,8 @@ img.wp-post-image {
 
 .gallery-icon img {
 	margin: 0 auto;
+	max-width:100%;
+	height:auto;
 }
 
 .gallery-caption {
@@ -2812,7 +2839,8 @@ mark {
 	}
 
 	#main-content-wrapper,
-	#footer-content-wrapper	{
+	#footer-content-wrapper,
+    #footer-bottom-content-wrapper	{
 		margin:0 auto;
 		width:1150px;
 	}
@@ -2842,7 +2870,8 @@ mark {
 		margin-right:0;
 	}
 	
-	#footer-main {
+	#footer-main,
+	#footer-bottom-area {
 		padding-left:0;
 		padding-right:0;
 	}

@@ -23,6 +23,10 @@
 					<div class="clear">
 					</div>
 
+				</div>
+			</footer>
+			<div id="footer-bottom-area">
+				<div id="footer-bottom-content-wrapper">
 					<div id="copyright">
 						<p>
 						 <?php fkidd_show_copyright_text(); ?> <a href="<?php echo esc_url( 'https://tishonator.com/product/fkidd' ); ?>" title="<?php esc_attr_e( 'fkidd Theme', 'fkidd' ); ?>">
@@ -31,7 +35,7 @@
 						</p>
 					</div>
 				</div>
-			</footer>
+			</div>
 		</div>
 		<?php wp_footer(); ?>
 	</body>
