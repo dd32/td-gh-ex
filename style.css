@@ -4,7 +4,7 @@ Description: AyaFreelance is fully Responsive Blogging WordPress Theme. Features
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayafreelance
-Version: 1.1.9
+Version: 1.2.0
 Text Domain: ayafreelance
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -181,6 +181,29 @@ dt.gallery-icon:before {
 
 #site-identity strong {
 	font-weight:normal;
+}
+
+
+#footer-bottom-widget-area {
+	margin-top:10px;
+}
+
+#footer-bottom-area {
+	clear:both;
+	padding:15px 2% 10px 2%;
+	background-color:#2A2A2A;
+}
+
+#footer-bottom-area {
+	color:#fcfdf8;
+}
+
+#footer-bottom-area a {
+	color:#c1b5b1;
+}
+
+#footer-bottom-area a:hover {
+	color:#FAFAFA;
 }
 
 #header-logo h1 {
@@ -510,6 +533,7 @@ article,
 	width:96%;
 	margin:5px 0 5px 0;
 }
+#footer-bottom-area,
 #copyright {
 	clear:both;
 	text-align:center;
@@ -1303,13 +1327,13 @@ dt.gallery-icon > a:before,
 }
 
 .gallery {
-	margin: 0 -1.1666667% 1.75em;
+	margin: 0 -1.1666667% 0;
 }
 
 .gallery-item {
 	display: inline-block;
 	max-width: 33.33%;
-	padding: 0 1.1400652% 2.2801304%;
+	padding: 0 1.1400652% 0;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
@@ -1349,6 +1373,8 @@ dt.gallery-icon > a:before,
 
 .gallery-icon img {
 	margin: 0 auto;
+	max-width:100%;
+	height:auto;
 }
 
 .gallery-caption {
@@ -2074,7 +2100,8 @@ dt.gallery-icon > a:before,
 	}
 
 	#main-content-wrapper,
-    #footer-content-wrapper {
+    #footer-content-wrapper,
+    #footer-bottom-content-wrapper {
         margin:0 auto;
         width:1150px;
     }
@@ -2106,7 +2133,8 @@ dt.gallery-icon > a:before,
 		margin-right:0;
 	}
 	
-	#footer-main {
+	#footer-main,
+	#footer-bottom-area {
 		padding-left:0;
 		padding-right:0;
 	}
