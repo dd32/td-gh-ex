@@ -5,7 +5,7 @@ Theme URI: https://ayatemplates.com/product/ayabiostorelite
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Template: ayaclub
-Version: 1.0.1
+Version: 1.0.2
 Text Domain: ayabiostorelite
 Tags: e-commerce, news, blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2 or later
@@ -45,6 +45,10 @@ p {
 img {
 	border:0;
 	outline:0;
+}
+
+#main-content-wrapper {
+	min-height:100px;
 }
 
 #home-content-wrapper img,
@@ -169,6 +173,29 @@ span > object {
 
 dt.gallery-icon:before {
 	content:'';
+}
+
+
+#footer-bottom-widget-area {
+	margin-top:10px;
+}
+
+#footer-bottom-area {
+	clear:both;
+	padding:15px 2% 10px 2%;
+	background-color:#1DB280;
+}
+
+#footer-bottom-area {
+	color:#FFFFFF;
+}
+
+#footer-bottom-area a {
+	color:#0b443e;
+}
+
+#footer-bottom-area a:hover {
+	color:#08322f;
 }
 
 #header-logo h1 {
@@ -457,7 +484,7 @@ article,
 	background-color:#23d79b;
 	color:#FFFFFF;
 	margin:20px 0 0 0;
-	padding:10px 2% 5px 2%;
+	padding:25px 2% 10px 2%;
 }
 
 #footer-main a {
@@ -539,6 +566,7 @@ article,
 	text-align:center;
 }
 
+#footer-bottom-area,
 #copyright {
 	clear:both;
 	text-align:center;
@@ -868,7 +896,6 @@ article,
 
 .header-social-widget a {
 	display:inline-block;
-	width:17px;
 	height:17px;
 	padding-top:3px;
 }
@@ -1602,7 +1629,7 @@ img.wp-post-image {
 .wp-caption {
     clear:both;
     max-width:95%;
-    padding:4px 4px 4px 4px;
+    padding:5px;
     border:1px solid #ccc;
     color:#555;
     background:#f9f9f9;
@@ -1614,7 +1641,12 @@ img.wp-post-image {
     border-radius:5px;
 }
 
-.wp-caption p.wp-caption-text { 
+.wp-caption img {
+	width:100%;
+}
+
+.wp-caption p.wp-caption-text {
+	margin:0;
 	background-color:#858581;
 	color:#fff;
 	-moz-border-radius:3px;
@@ -1706,9 +1738,8 @@ img.wp-post-image {
 #breadcrumbs {
 	list-style:none;
 	overflow:hidden;
-	font-size:12px;
 	float:right;
-	margin-top:10px;
+	margin-top:5px;
 	margin-right:15px;
 }
 
@@ -1737,11 +1768,11 @@ blockquote {
 .home-col-title {
 	padding:10px 5px 1px 1px;
 	font-weight:normal;
-	font-size:22px;
+	font-size:20px;
 	letter-spacing:1px;
 	float:left;
 	clear:both;
-	border-bottom:4px solid #24d8d8;
+	border-bottom:3px solid #24d8d8;
 	margin-bottom:-2px;
 }
 
@@ -1767,7 +1798,7 @@ blockquote {
 	letter-spacing:0.5px;
 	float:left;
 	clear:both;
-	border-bottom:4px solid #24d8d8;
+	border-bottom:3px solid #24d8d8;
 }
 
 .sidebar-title:not(:first-child) {
@@ -1791,8 +1822,8 @@ blockquote {
 	padding:0 5px 1px 1px;
 	margin-bottom:-2px;
 	font-weight:normal;
-	font-size:22px;
-	border-bottom:4px solid #24d8d8;
+	font-size:18px;
+	border-bottom:3px solid #24d8d8;
 	color:#eeeeee;
 	letter-spacing:1px;
 	float:left;
@@ -2417,6 +2448,10 @@ li.product:before {
     font-size: 11px;
 }
 
+mark {
+    background-color: unset;
+}
+
 /* theme has built-in breadcrumb, so hide the woocommerce breadcrumb */
 #main-content-wrapper .woocommerce-breadcrumb {
 	display:none !important;
@@ -2469,13 +2504,13 @@ li.product:before {
 }
 
 .gallery {
-	margin: 0 -1.1666667% 1.75em;
+	margin: 0 -1.1666667% 0;
 }
 
 .gallery-item {
 	display: inline-block;
 	max-width: 33.33%;
-	padding: 0 1.1400652% 2.2801304%;
+	padding: 0 1.1400652% 0;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
@@ -2515,6 +2550,8 @@ li.product:before {
 
 .gallery-icon img {
 	margin: 0 auto;
+	max-width:100%;
+	height:auto;
 }
 
 .gallery-caption {
@@ -2574,7 +2611,7 @@ li.product:before {
 	}
 	
 	.header-social-widget li {
-		margin-left:10px;
+		margin-left:5px;
 	}
 	
 	#header-logo {
@@ -2612,7 +2649,7 @@ li.product:before {
 	}
 	
 	#navmain > div > ul > li {
-		margin-right:5px;
+		margin-right:8px;
 	}
 	
 	#navmain ul a {
@@ -2710,6 +2747,8 @@ li.product:before {
 		content: "\f107";
 		font-family:'FontAwesome';
 		margin:0 0 0 5px;
+		font-size:12px;
+		opacity:0.7;
 	}
 	
 	.level-two-sub-menu > a:before {
@@ -2718,6 +2757,8 @@ li.product:before {
 		position:absolute;
 		right:10px;
 		top:9px;
+		font-size:12px;
+		line-height:14px;
 	}
 	
 	/* columns */
@@ -3294,7 +3335,8 @@ li.product:before {
 	#home-cols-inner,
 	#bottom-widget-inner,
 	#main-content-wrapper,
-    #footer-content-wrapper {
+    #footer-content-wrapper,
+    #footer-bottom-content-wrapper {
         margin:0 auto;
         width:1150px;
     }
@@ -3329,7 +3371,8 @@ li.product:before {
 		margin-left:7px;
 	}
 	
-	#footer-main {
+	#footer-main,
+	#footer-bottom-area {
 		padding-left:0;
 		padding-right:0;
 	}
