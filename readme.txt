@@ -41,6 +41,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.1.7 =
+* improve footer with a copyright background color
+
 = 1.1.6 =
 * update FontAwesome license declaration in readme.txt file
 * improve Customizer Sanitization Callback functions
