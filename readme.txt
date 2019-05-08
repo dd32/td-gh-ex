@@ -51,6 +51,8 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@Version 1.7.9.1
+1. Issue fixed with bluestreet child theme fixed
 @Version 1.7.9
 1. Add Service Animation Setting for homepage service section
 2. Prevent customizer's preview refresh on pro locked

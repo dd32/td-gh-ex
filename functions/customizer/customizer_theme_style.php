@@ -67,7 +67,7 @@ public $type = 'new_menu';
 	 //Theme Color Scheme
 	$wp_customize->add_setting(
 	'wallstreet_pro_options[webriti_stylesheet]', array(
-	'default' => '#00c2a9',  
+	'default' => 'default.css',  
 	'capability'     => 'edit_theme_options',
 	'type' => 'option',
 	'transport'         => $selective_refresh,
