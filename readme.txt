@@ -1,9 +1,9 @@
 === Aaron ===
 Contributors: Poena
 Tags: threaded-comments, custom-menu, sticky-post, editor-style, translation-ready, rtl-language-support, two-columns, one-column, right-sidebar, featured-images, featured-image-header, accessibility-ready, custom-header, custom-logo
-Requires at least: 4.6
-Tested up to: 5.1.1
-Requires PHP: 5.2
+Requires at least: 5.0
+Tested up to: 5.2
+Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Copyright: 2015-2019 Carolina Nymark
@@ -27,6 +27,13 @@ Please note that changing the colors of the theme can affect accessibility.
 2. Activate the theme through the 'Appearance' menu in WordPress
 
 == Change log ==
+
+Version 4.1, 2019-05-08
+Fixed a problem with a broken link to font awesome in style.css and rtl.css
+Added support for wp_body_open.
+Added a block style for the gallery which hides the image captions.
+Updated required WordPress version and PHP version.
+
 
 Version 4.0, 2019-03-17
 Included a license file.

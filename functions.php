@@ -273,7 +273,7 @@ function aaron_scripts() {
 	}
 
 	if ( class_exists( 'bbPress' ) ) {
-    	wp_enqueue_style( 'aaron-bbpress', get_template_directory_uri() . '/inc/bbpress.css', array(), wp_get_theme()->get( 'Version' ) );
+		wp_enqueue_style( 'aaron-bbpress', get_template_directory_uri() . '/inc/bbpress.css', array(), wp_get_theme()->get( 'Version' ) );
 	}
 
 }
@@ -288,7 +288,17 @@ function aaron_gutenberg_assets() {
 	wp_enqueue_style( 'open-sans' );
 	wp_enqueue_style( 'aaron-fonts-gutenberg', aaron_fonts_url(), array(), null );
 	wp_enqueue_style( 'aaron-gutenberg', get_theme_file_uri( '/inc/gutenberg-editor.css' ), false );
+	wp_enqueue_script( 'aaron-block-styles-script', get_theme_file_uri( '/js/block-styles.js' ), array( 'wp-blocks', 'wp-i18n' ) );
+	wp_set_script_translations( 'aaron-block-styles-script', 'aaron' );
 }
+
+/**
+ * Add custom block styles.
+ */
+function aaron_block_styles() {
+	wp_enqueue_style( 'aaron-block-styles', get_theme_file_uri( '/inc/custom-block-styles.css' ), false );
+}
+add_action( 'enqueue_block_assets', 'aaron_block_styles' );
 
 /**
  * Enqueue styles for the setup help page.
@@ -311,7 +321,7 @@ add_action( 'admin_enqueue_scripts', 'aaron_admin_scripts' );
  * @link https://git.io/vWdr2
  */
 function aaron_skip_link_focus_fix() {
-	// The following is minified. The original file is in js/skip-link-focus-fix.js`.
+	// The following is minified. The original file is in js/skip-link-focus-fix.js.
 	?>
 	<script>
 	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);

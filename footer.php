@@ -14,9 +14,9 @@
 	<h2 class="screen-reader-text"><?php echo esc_html( get_theme_mod( 'aaron_footer_screen_reader', __( 'Footer Content', 'aaron' ) ) ); ?></h2>
 	<?php
 	if ( is_active_sidebar( 'sidebar-2' ) ) {
-	?>
+		?>
 		<div class="widget-area" role="complementary" itemscope="itemscope" itemtype="https://schema.org/WPSideBar"><?php dynamic_sidebar( 'sidebar-2' ); ?></div>
-	<?php
+		<?php
 	}
 
 	if ( has_nav_menu( 'social' ) ) {

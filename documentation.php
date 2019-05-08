@@ -382,7 +382,7 @@ function aaron_docs() {
 		<?php
 		esc_html_e( 'I will do five customizations of any of my free themes that are available on WordPress.org.', 'aaron' );
 		echo '<br>';
-		esc_html_e( 'This is an opportunity for you who have already selected one of my themes to make it yours and personalize it.' , 'aaron' );
+		esc_html_e( 'This is an opportunity for you who have already selected one of my themes to make it yours and personalize it.', 'aaron' );
 		echo '<br><br>';
 		echo __( 'These customizations can include for example:<br>
 		Color changes.<br>
