@@ -1,11 +1,11 @@
 /*!
 Theme Name: AyaHairSalon
-Description: AyaHairSalon is a child theme of AyaClub WordPress Theme. This theme includes new default colos design and layout, header social icons: Facebook, Google+, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr, YouTube, Pinterest, VK, Flickr, and Vine.
+Description: AyaHairSalon is a child theme of AyaClub WordPress Theme. This theme includes new default colos design and layout, header social icons: Facebook, Twitter, LinkedIn, Instagram, RSS Feeds, Tumblr, YouTube, Pinterest, VK, Flickr, and Vine.
 Theme URI: https://ayatemplates.com/product/ayahairsalon
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Template: ayaclub
-Version: 1.0.1
+Version: 1.0.2
 Text Domain: ayahairsalon
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2 or later
@@ -75,6 +75,28 @@ h2 {
 #navmain > div > ul > .current-menu-item > a, #navmain > div > ul > .current-menu-ancestor > a,
 #navmain > div > ul > li > a:hover, .cart-contents-icon:hover, .search-form-icon:hover {
 	color:#FBC191; 
+}
+
+#footer-bottom-widget-area {
+	margin-top:10px;
+}
+
+#footer-bottom-area {
+	clear:both;
+	padding:15px 2% 10px 2%;
+	background-color:#BF4D18;
+}
+
+#footer-bottom-area {
+	color:#D5DCE2;
+}
+
+#footer-bottom-area a {
+	color:#48300E;
+}
+
+#footer-bottom-area a:hover {
+	color:#FCFCFA;
 }
 
 #footer-main {
@@ -190,6 +212,175 @@ button:hover,
 	color:#48300E !important;
 }
 
+.github16:before {
+	content: "\f09b";
+}
+
+.github32:before {
+	content: "\f092";
+}
+
+.bitbucket16:before {
+	content: "\f171";
+}
+
+.bitbucket32:before {
+	content: "\f172";
+}
+
+.reddit16:before {
+	content: "\f1a1";
+}
+
+.reddit32:before {
+	content: "\f1a2";
+}
+
+.xing16:before {
+	content: "\f168";
+}
+
+.xing32:before {
+	content: "\f169";
+}
+
+.slack16:before,
+.slack32:before {
+	content: "\f198";
+}
+
+.wechat16:before,
+.wechat32:before {
+	content: "\f1d7";
+}
+
+.snapchat16:before {
+	content: "\f2ab";
+}
+
+.snapchat32:before {
+	content: "\f2ad";
+}
+
+.dribbble16:before,
+.dribbble32:before {
+	content: "\f17d";
+}
+
+.bandcamp16:before,
+.bandcamp32:before {
+	content: "\f2d5";
+}
+
+.lastfm16:before {
+	content: "\f202";
+}
+
+.lastfm32:before {
+	content: "\f203";
+}
+
+.soundcloud16:before,
+.soundcloud32:before {
+  content: "\f1be";
+}
+
+.vimeo16:before {
+	content: "\f27d";
+}
+
+.vimeo32:before {
+	content: "\f194";
+}
+
+.skype16:before,
+.skype32:before {
+	content: "\f17e";
+}
+
+.deviantart16:before,
+.deviantart32:before {
+  content: "\f1bd";
+}
+
+.yahoo16:before,
+.yahoo32:before {
+  content: "\f19e";
+}
+
+.amazon16:before,
+.amazon32:before {
+  content: "\f270";
+}
+
+.etsy16:before,
+.etsy32:before {
+  content: "\f2d7";
+}
+
+.foursquare16:before,
+.foursquare32:before {
+  content: "\f180";
+}
+
+.quora16:before,
+.quora32:before {
+  content: "\f2c4";
+}
+
+.yelp16:before,
+.yelp32:before {
+  content: "\f1e9";
+}
+
+.github16:before,
+.bitbucket16:before,
+.reddit16:before,
+.xing16:before,
+.slack16:before,
+.wechat16:before,
+.snapchat16:before,
+.dribbble16:before,
+.bandcamp16:before,
+.lastfm16:before,
+.soundcloud16:before,
+.vimeo16:before,
+.skype16:before,
+.deviantart16:before,
+.yahoo16:before,
+.amazon16:before,
+.etsy16:before,
+.foursquare16:before,
+.quora16:before,
+.yelp16:before {
+	font-family:'FontAwesome';
+	font-size: 16px;
+}
+
+.github32:before,
+.bitbucket32:before,
+.reddit32:before,
+.xing32:before,
+.slack32:before,
+.wechat32:before,
+.snapchat32:before,
+.dribbble32:before,
+.bandcamp32:before,
+.lastfm32:before,
+.vimeo32:before,
+.skype32:before,
+.deviantart32:before,
+.yahoo32:before,
+.soundcloud32:before,
+.amazon32:before,
+.etsy32:before,
+.foursquare32:before,
+.quora32:before,
+.yelp32:before {
+	font-family:'FontAwesome';
+	font-size: 32px;
+}
+
 .facebook16:before {
 	content: "\f09a";
 }
@@ -265,7 +456,6 @@ button:hover,
 
 .header-social-widget a {
 	display:inline-block;
-	width:17px;
 	height:17px;
 	padding-top:3px;
 }
@@ -302,7 +492,7 @@ button:hover,
 	}
 	
 	#navmain > div > ul > li {
-		margin-right:5px;
+		margin-right:8px;
 	}
 	
 	#navmain ul a {

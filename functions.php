@@ -142,73 +142,67 @@ if ( ! function_exists( 'ayahairsalon_show_social_sites' ) ) :
 		$socialURL = get_theme_mod('ayahairsalon_social_facebook');
 		if ( !empty($socialURL) ) {
 
-			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Facebook', 'ayahairsalon') ) . '" class="facebook16"></a>';
-		}
-
-		$socialURL = get_theme_mod('ayahairsalon_social_google');
-		if ( !empty($socialURL) ) {
-
-			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Google+', 'ayahairsalon') ) . '" class="google16"></a>';
+			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Facebook', 'ayahairsalon') ) . '" class="facebook16"></a></li>';
 		}
 
 		$socialURL = get_theme_mod('ayahairsalon_social_twitter');
 		if ( !empty($socialURL) ) {
 
-			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Twitter', 'ayahairsalon') ) . '" class="twitter16"></a>';
+			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Twitter', 'ayahairsalon') ) . '" class="twitter16"></a></li>';
 		}
 
 		$socialURL = get_theme_mod('ayahairsalon_social_linkedin');
 		if ( !empty($socialURL) ) {
 
-			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on LinkedIn', 'ayahairsalon') ) . '" class="linkedin16"></a>';
+			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on LinkedIn', 'ayahairsalon') ) . '" class="linkedin16"></a></li>';
 		}
 
 		$socialURL = get_theme_mod('ayahairsalon_social_instagram');
 		if ( !empty($socialURL) ) {
 
-			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Instagram', 'ayahairsalon') ) . '" class="instagram16"></a>';
+			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Instagram', 'ayahairsalon') ) . '" class="instagram16"></a></li>';
 		}
 
 		$socialURL = get_theme_mod('ayahairsalon_social_rss');
 		if ( !empty($socialURL) ) {
 
-			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow our RSS Feeds', 'ayahairsalon') ) . '" class="rss16"></a>';
+			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow our RSS Feeds', 'ayahairsalon') ) . '" class="rss16"></a></li>';
 		}
 
 		$socialURL = get_theme_mod('ayahairsalon_social_tumblr');
 		if ( !empty($socialURL) ) {
 
-			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Tumblr', 'ayahairsalon') ) . '" class="tumblr16"></a>';
+			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Tumblr', 'ayahairsalon') ) . '" class="tumblr16"></a></li>';
 		}
 
 		$socialURL = get_theme_mod('ayahairsalon_social_youtube');
 		if ( !empty($socialURL) ) {
 
-			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Youtube', 'ayahairsalon') ) . '" class="youtube16"></a>';
+			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Youtube', 'ayahairsalon') ) . '" class="youtube16"></a></li>';
 		}
 
 		$socialURL = get_theme_mod('ayahairsalon_social_pinterest');
 		if ( !empty($socialURL) ) {
 
-			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Pinterest', 'ayahairsalon') ) . '" class="pinterest16"></a>';
+			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Pinterest', 'ayahairsalon') ) . '" class="pinterest16"></a></li>';
 		}
 
 		$socialURL = get_theme_mod('ayahairsalon_social_vk');
 		if ( !empty($socialURL) ) {
 
-			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on VK', 'ayahairsalon') ) . '" class="vk16"></a>';
+			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on VK', 'ayahairsalon') ) . '" class="vk16"></a></li>';
 		}
 
 		$socialURL = get_theme_mod('ayahairsalon_social_flickr');
 		if ( !empty($socialURL) ) {
 
-			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Flickr', 'ayahairsalon') ) . '" class="flickr16"></a>';
+			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Flickr', 'ayahairsalon') ) . '" class="flickr16"></a></li>';
 		}
 
 		$socialURL = get_theme_mod('ayahairsalon_social_vine');
 		if ( !empty($socialURL) ) {
 
-			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Vine', 'ayahairsalon') ) . '" class="vine16"></a>';
+			echo '<li><a href="' . esc_url( $socialURL ) . '" title="' . esc_attr( __('Follow us on Vine', 'ayahairsalon') ) . '" class="vine16"></a></li>';
 		}
 	}
 endif; // ayahairsalon_show_social_sites
@@ -244,24 +238,6 @@ if ( ! function_exists( 'ayahairsalon_customize_register' ) ) :
 	            'label'          => __( 'Facebook Page URL', 'ayahairsalon' ),
 	            'section'        => 'ayahairsalon_social_section',
 	            'settings'       => 'ayahairsalon_social_facebook',
-	            'type'           => 'text',
-	            )
-	        )
-		);
-
-		// Add google+ url
-		$wp_customize->add_setting(
-			'ayahairsalon_social_google',
-			array(
-			    'sanitize_callback' => 'esc_url_raw',
-			)
-		);
-
-		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'ayahairsalon_social_google',
-	        array(
-	            'label'          => __( 'Google+ Page URL', 'ayahairsalon' ),
-	            'section'        => 'ayahairsalon_social_section',
-	            'settings'       => 'ayahairsalon_social_google',
 	            'type'           => 'text',
 	            )
 	        )

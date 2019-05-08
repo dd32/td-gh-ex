@@ -15,7 +15,7 @@ AyaHairSalon is a child theme of AyaClub WordPress Theme.
 == Description ==
 
 AyaHairSalon is a child theme of AyaClub WordPress Theme. This theme includes new default colos
-design and layout, header social icons: Facebook, Google+,  Twitter,  LinkedIn,  Instagram, 
+design and layout, header social icons: Facebook,  Twitter,  LinkedIn,  Instagram, 
 RSS Feeds, Tumblr, YouTube, Pinterest, VK, Flickr, and Vine.
 
 
@@ -62,6 +62,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.0.2 =
+* improve footer with a copyright background color
 
 = 1.0.1 =
 * escape translated text inside link attributes of social links
