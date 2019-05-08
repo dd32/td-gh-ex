@@ -7,7 +7,7 @@
  *
  * @link https://codex.wordpress.org/Template_Hierarchy
  *
- * @package bunny
+ * @package Bunny
  */
 
 /**
@@ -20,7 +20,7 @@ if ( post_password_required() ) {
 	return;
 }
 ?>
-<div id="comments">
+<section id="comments">
 <?php if ( have_comments() ) { ?>
 	<div class="comment-header">
 		<h2 id="comments-title">
@@ -36,10 +36,11 @@ if ( post_password_required() ) {
 	<?php
 	the_comments_navigation(
 		array(
-			'prev_text' => __( '&larr; Older Comments','bunny' ),
+			'prev_text' => __( '&larr; Older Comments', 'bunny' ),
 			'next_text' => __( 'Newer Comments &rarr;', 'bunny' ),
-			)
-	); ?>
+		)
+	);
+	?>
 	<ol class="commentlist">
 		<?php
 		wp_list_comments(
@@ -52,12 +53,12 @@ if ( post_password_required() ) {
 	<?php
 	the_comments_navigation(
 		array(
-			'prev_text' => __( '&larr; Older Comments','bunny' ),
+			'prev_text' => __( '&larr; Older Comments', 'bunny' ),
 			'next_text' => __( 'Newer Comments &rarr;', 'bunny' ),
-			)
+		)
 	);
 } // End if().
 
 comment_form();
 ?>
-</div><!--  end comments -->
+</section><!--  end comments -->

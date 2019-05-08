@@ -4,7 +4,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
  *
- * @package bunny
+ * @package Bunny
  */
 
 /**
@@ -19,21 +19,34 @@ function bunny_content_width() {
 }
 add_action( 'after_setup_theme', 'bunny_content_width', 0 );
 
+/**
+ * Theme setup
+ */
 function bunny_setup() {
-	add_theme_support( 'custom-logo', array(
-		'height'      => 140,
-		'width'       => 200,
-		'flex-height' => false,
-		'flex-width'  => true,
-	) );
+	add_theme_support(
+		'custom-logo',
+		array(
+			'height'      => 140,
+			'width'       => 200,
+			'flex-height' => false,
+			'flex-width'  => true,
+		)
+	);
+
 	add_theme_support( 'title-tag' );
+
 	/* This theme does not use a header image, only the header-text options.*/
-	add_theme_support( 'custom-header', array(
-		'uploads'	=> false,
-		'header-text'	 => true,
-		'default-text-color'	=> '000000',
-	) );
+	add_theme_support(
+		'custom-header',
+		array(
+			'uploads'            => false,
+			'header-text'        => true,
+			'default-text-color' => '000000',
+		)
+	);
+
 	add_theme_support( 'post-thumbnails' );
+
 	add_theme_support( 'automatic-feed-links' );
 
 	register_nav_menus(
@@ -51,7 +64,6 @@ add_action( 'after_setup_theme', 'bunny_setup' );
 if ( ! function_exists( 'bunny_fonts_url' ) ) {
 	function bunny_fonts_url() {
 		$fonts_url = '';
-
 		/*
 		* Translators: If there are characters in your language that are not
 		* supported by Oswald, translate this to 'off'. Do not translate
@@ -104,8 +116,8 @@ function bunny_fonts_styles() {
 		wp_enqueue_script( 'bunny-circletype-helper', get_template_directory_uri() . '/inc/circletype_helper.js', array( 'jquery' ) );
 
 		$array = array(
-			'headline' => esc_attr( get_theme_mod( 'bunny_title_arc_size','400' ) ),
-			'tagine' => esc_attr( get_theme_mod( 'bunny_tagline_arc_size','400' ) ),
+			'headline' => esc_attr( get_theme_mod( 'bunny_title_arc_size', '400' ) ),
+			'tagine' => esc_attr( get_theme_mod( 'bunny_tagline_arc_size', '400' ) ),
 		);
 		wp_localize_script( 'bunny-circletype-helper', 'bunny_text_radius', $array );
 
@@ -123,21 +135,46 @@ function bunny_fonts_styles() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 
-	// Add Easter eggs.
-	if ( get_theme_mod( 'bunny_easter_eggs' ) ) {
-		wp_enqueue_style( 'bunny-eggs', get_template_directory_uri() . '/inc/eggs.css' );
+	if ( ! get_theme_mod( 'bunny_hide' ) ) {
+		// Add Easter eggs.
+		if ( get_theme_mod( 'bunny_easter_eggs' ) ) {
+			wp_enqueue_style( 'bunny-eggs', get_template_directory_uri() . '/inc/eggs.css' );
+		}
 		// Add that Christmas feeling.
-	} elseif ( get_theme_mod( 'bunny_christmas' ) ) {
-		wp_enqueue_style( 'bunny-christmas', get_template_directory_uri() . '/inc/christmas.css' );
+		if ( get_theme_mod( 'bunny_christmas' ) ) {
+			wp_enqueue_style( 'bunny-christmas', get_template_directory_uri() . '/inc/christmas.css' );
+		}
 		// Spook things up.
-	} elseif ( get_theme_mod( 'bunny_spooky' ) ) {
-		wp_enqueue_style( 'bunny-spooky', get_template_directory_uri() . '/inc/spooky.css' );
+		if ( get_theme_mod( 'bunny_spooky' ) ) {
+			wp_enqueue_style( 'bunny-spooky', get_template_directory_uri() . '/inc/spooky.css' );
+		}
 	}
-
 }
 add_action( 'wp_enqueue_scripts', 'bunny_fonts_styles' );
 
+add_action( 'enqueue_block_editor_assets', 'bunny_gutenberg_assets' );
+/**
+ *  Add styles for the new block editor.
+ */
+function bunny_gutenberg_assets() {
+	wp_enqueue_style( 'bunny-fonts', bunny_fonts_url(), array(), null );
+	wp_enqueue_style( 'bunny-gutenberg', get_theme_file_uri( '/inc/gutenberg-editor.css' ), false );
+	wp_enqueue_script( 'bunny-block-styles-script', get_theme_file_uri( '/inc/block-styles.js' ), array( 'wp-blocks', 'wp-i18n' ) );
+	wp_set_script_translations( 'bunny-block-styles-script', 'bunny' );
+}
 
+/**
+ * Add custom block styles.
+ */
+function bunny_block_styles() {
+	wp_enqueue_style( 'bunny-block-styles', get_theme_file_uri( '/inc/custom-block-styles.css' ), false );
+}
+add_action( 'enqueue_block_assets', 'bunny_block_styles' );
+
+
+/**
+ * Custom CSS
+ */
 function bunny_css() {
 	echo '<style type="text/css">
 	.site-title, .site-title a, .site-description, .site-description a{ color: #' . esc_attr( get_header_textcolor() ) . '; text-decoration:none;}';
@@ -186,13 +223,36 @@ function bunny_css() {
 		}';
 	}
 
+	if ( get_theme_mod( 'bunny_animation' ) ) {
+		echo '.near-clouds{ top: 6%; }';
+	}
+
+	if ( ! get_theme_mod( 'bunny_hide' ) ) {
+		if ( get_theme_mod( 'bunny_replace' ) ) {
+			$new_image = wp_get_attachment_image_src( get_theme_mod( 'bunny_replace' ), 'full' );
+			echo '.kanin, .kaninsmall { display:none; }';
+			echo '.replace-kanin {
+				position: fixed;
+				top: 45%;
+				left: 0;
+				width: 436px;
+				height: 443px;
+				overflow: hidden;
+				z-index: 2; /*Display in front of grass*/
+				background: transparent url(' . esc_url( $new_image[0] ) . ') no-repeat;}';
+			echo '@media screen and (max-width:960px) {
+				.replace-kanin{ display:none; }
+			}';
+		}
+	}
+
 	echo '</style>';
 }
 add_action( 'wp_head', 'bunny_css' );
 
 /**
- *	Add a class to body if the header-menu is active.
- *	This allows us to push down the clouds below the menu.
+ * Add a class to body if the header-menu is active.
+ * This allows us to push down the clouds below the menu.
  */
 function bunny_classes( $classes ) {
 	if ( has_nav_menu( 'header' ) ) {
@@ -256,16 +316,16 @@ add_filter( 'the_title', 'bunny_post_title' );
 function bunny_widgets_init() {
 	register_sidebar(
 		array(
-		'name' => __( 'Sidebar', 'bunny' ),
-		'id' => 'sidebar-1',
-		'description' => __( 'Widgets in this area will be shown in the right hand sidebar.', 'bunny' ),
+			'name'        => __( 'Sidebar', 'bunny' ),
+			'id'          => 'sidebar-1',
+			'description' => __( 'Widgets in this area will be shown in the right hand sidebar.', 'bunny' ),
 		)
 	);
 	register_sidebar(
 		array(
-		'name' => __( 'Footer Widget area', 'bunny' ),
-		'id' => 'sidebar-2',
-		'description' => __( 'Widgets in this area will be shown in the footer.', 'bunny' ),
+			'name'        => __( 'Footer Widget area', 'bunny' ),
+			'id'          => 'sidebar-2',
+			'description' => __( 'Widgets in this area will be shown in the footer.', 'bunny' ),
 		)
 	);
 }
@@ -275,7 +335,7 @@ add_action( 'widgets_init', 'bunny_widgets_init' );
 if ( ! function_exists( 'bunny_meta' ) ) {
 	function bunny_meta() {
 		if ( ! get_theme_mod( 'bunny_meta' ) ) {
-		?>
+			?>
 			<div class="meta">
 				<?php
 				if ( get_avatar( get_the_author_meta( 'ID' ) ) ) {
@@ -318,9 +378,9 @@ if ( ! function_exists( 'bunny_meta' ) ) {
 				}
 
 				edit_post_link( '<span class="screen-reader-text">' . esc_html__( 'Edit','bunny' ) . '</span><i class="edit-links fa"></i>' );
-			?>
+				?>
 			</div>
-		<?php
+			<?php
 		} // End if().
 	}
 } // End if().

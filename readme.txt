@@ -1,8 +1,9 @@
 === Bunny ===
-Contributors: Carolina Nymark
-Requires at least: WordPress 4.5
-Tested up to: WordPress 4.8.1
-Version: 1.8
+Contributors: poena
+Requires at least: WordPress 5.0
+Tested up to: WordPress 5.2
+Version: 1.9
+Requires PHP: 5.6
 Tags: threaded-comments, custom-menu, sticky-post, translation-ready, one-column, two-columns, editor-style, featured-images, theme-options, right-sidebar, blog
 License: MIT
 License URI: http://opensource.org/licenses/MIT
@@ -20,7 +21,7 @@ The code is sometimes commented in both English and Swedish. -In those cases, th
 2. For help on adjusting the site title and tagline, see the FAQ.
 
 == Copyright ==
-Copyright 2014-2017 Carolina Nymark
+Copyright 2014-2019 Carolina Nymark
 
 == Frequently Asked Questions ==
 = Where can I get support for this theme? =
@@ -31,6 +32,16 @@ Please open the theme customizer. Under the Theme Options panel and the 'Arc Set
 Set a small number for a high arc, and high number for a low arc.
 
 == Changelog ==
+
+= 1.9 2019-05-08 =
+Added license file.
+Updated required WordPress version and PHP version.
+Improved support for the block editor.
+Improved the option that hides all images.
+Added an option to upload an image that replaces the bunny.
+Minor style improvements for when the animations are turned off.
+Code style changes to better match WordPress coding standards and html5.
+Increased color contrast and removed duplicate links to improve accessibility.
 
 = 1.8 2017-08-06 =
 Fixed a missing placeholder for the comments number in comments.php line 29.
