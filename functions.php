@@ -14,7 +14,7 @@ if ( ! function_exists( 'bagility_theme_css' ) ) :
 	 */
 	function bagility_theme_css() {
 
-		wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
+	wp_enqueue_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.css');
 	wp_enqueue_style( 'style', get_template_directory_uri() . '/style.css' );
 	wp_enqueue_style( 'bagility-child-style', get_stylesheet_uri(), array( 'bagility-parent-style' ) );
 	wp_enqueue_style( 'bagility-default-css', get_stylesheet_directory_uri()."/css/colors/default.css" );
@@ -31,6 +31,7 @@ add_action( 'wp_enqueue_scripts', 'bagility_theme_css', 99 );
 function bagility_theme_setup(){
 	require( get_stylesheet_directory() . '/inc/mnt/customize/slider.php' );
 	require( get_stylesheet_directory() . '/inc/mnt/customize/header-banner.php' );
+	load_theme_textdomain( 'bagility', get_template_directory() . '/languages' );
 }
 add_action('after_setup_theme','bagility_theme_setup');
 

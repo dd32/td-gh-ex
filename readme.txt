@@ -1,10 +1,10 @@
 ﻿=== Bagility ===
-Contributors: Managethemes
+Contributors: Themeansar
 Tags: three-columns, left-sidebar, right-sidebar, custom-colors, custom-logo, featured-images, full-width-template, threaded-comments, blog, e-commerce, news
 Requires at least: 4.0.5
 Tested up to: 4.8.5
 Requires PHP: 5.6
-Stable tag: 1.1
+Stable tag: 1.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -29,6 +29,9 @@ Bagility WordPress Theme is distributed under the terms of the GNU GPL
 Yes. Theme supports SiteOrigin Page Builder and Contact Form 7.
 
 == Changelog ==
+--- Version 1.2 ----
+1. Fixed string issue
+
 --- Version 1.1 ----
 1. Released
 

@@ -38,8 +38,8 @@ bagility_theme_banner();
 			  <div class="pagination">
 					<?php //Previous / next page navigation
 					the_posts_pagination( array(
-					'prev_text'          => __( '<i class="fa fa-arrow-left"></i>', 'bagility' ),
-					'next_text'          => __( '<i class="fa fa-arrow-right"></i>', 'bagility' ),
+					'prev_text'          => '<i class="fa fa-arrow-left"></i>',
+					'next_text'          => '<i class="fa fa-arrow-right"></i>',
 					) ); ?>
 			  </div>
 		  </div>

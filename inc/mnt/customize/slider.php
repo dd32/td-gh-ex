@@ -170,7 +170,7 @@ class Bagility_Toggle_Switch_Custom_control extends WP_Customize_Control {
 			
 		));
 		$wp_customize->add_control('slider_btn_target', array(
-			'label'   => __('Open link in new mtb', 'bagility'),
+			'label'   => __('Open link in a new tab', 'bagility'),
 			'section' => 'slider_section',
 			'type' => 'checkbox',
 		));
