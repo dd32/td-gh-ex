@@ -4,7 +4,7 @@ Description: AyaHandmade is Fully Responsive WordPress Theme, suitable for handm
 Theme URI: https://ayatemplates.com/product/ayahandmade
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.0.6
+Version: 1.0.7
 Text Domain: ayahandmade
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, full-width-template, editor-style
 License: GNU General Public License v2.0
@@ -445,12 +445,34 @@ article,
     margin-right:20px;
 }
 
+#footer-bottom-widget-area {
+	margin-top:10px;
+}
+
+#footer-bottom-area {
+	clear:both;
+	padding:15px 2% 10px 2%;
+	background-color:#7F61A5;
+}
+
+#footer-bottom-area {
+	color:#fcfdf8;
+}
+
+#footer-bottom-area a {
+	color:#9fb129;
+}
+
+#footer-bottom-area a:hover {
+	color:#a2def4;
+}
+
 #footer-main {
 	clear:both;
 	background-color:#7d348c;
 	color:#000000;
 	margin:20px 0 0 0;
-	padding:10px 2% 5px 2%;
+	padding:25px 2% 10px 2%;
 }
 
 #footer-main a {
@@ -483,6 +505,7 @@ article,
 	padding-bottom:0 !important;
 }
 
+#footer-bottom-area,
 #copyright {
 	clear:both;
 	text-align:center;
@@ -1278,7 +1301,8 @@ img.wp-post-image {
 }
 
 #page-header h1 {
-	margin:0;
+    display:inline;
+    margin:0;
 	padding:0;
 }
 blockquote {
@@ -1365,13 +1389,13 @@ dt.gallery-icon > a:before,
 }
 
 .gallery {
-	margin: 0 -1.1666667% 1.75em;
+	margin: 0 -1.1666667% 0;
 }
 
 .gallery-item {
 	display: inline-block;
 	max-width: 33.33%;
-	padding: 0 1.1400652% 2.2801304%;
+	padding: 0 1.1400652% 0;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
@@ -1411,6 +1435,8 @@ dt.gallery-icon > a:before,
 
 .gallery-icon img {
 	margin: 0 auto;
+	max-width:100%;
+	height:auto;
 }
 
 .gallery-caption {
@@ -1479,7 +1505,7 @@ dt.gallery-icon > a:before,
 	}
 	
 	.header-social-widget li {
-		margin-left:10px;
+		margin-left:5px;
 	}
 	
 	#header-logo {
@@ -1507,7 +1533,7 @@ dt.gallery-icon > a:before,
 	}
 	
 	#navmain > div > ul > li {
-		margin-right:5px;
+		margin-right:8px;
 	}
 	
 	#navmain ul a {
@@ -1642,6 +1668,8 @@ dt.gallery-icon > a:before,
 		content: "\f107";
 		font-family:'FontAwesome';
 		margin:0 0 0 5px;
+		font-size:12px;
+		opacity:0.7;
 	}
 	
 	.level-two-sub-menu > a:before {
@@ -1650,6 +1678,8 @@ dt.gallery-icon > a:before,
 		position:absolute;
 		right:10px;
 		top:9px;
+		font-size:12px;
+		line-height:14px;
 	}
 
 	/* columns */
@@ -2113,7 +2143,8 @@ dt.gallery-icon > a:before,
 
 	#top-widget-inner,
 	#main-content-wrapper,
-    #footer-content-wrapper {
+    #footer-content-wrapper,
+    #footer-bottom-content-wrapper {
         margin:0 auto;
         width:1150px;
     }
@@ -2149,7 +2180,8 @@ dt.gallery-icon > a:before,
 		margin-right:0;
 	}
 	
-	#footer-main {
+	#footer-main,
+	#footer-bottom-area {
 		padding-left:0;
 		padding-right:0;
 	}
@@ -2243,7 +2275,7 @@ dt.gallery-icon > a:before,
 	}
 	
 	#navmain > div > ul > li {
-		margin-right:5px;
+		margin-right:8px;
 	}
 	
 	#navmain ul a {
@@ -2350,6 +2382,8 @@ dt.gallery-icon > a:before,
 		content: "\f107";
 		font-family:'FontAwesome';
 		margin:0 0 0 5px;
+		font-size:12px;
+		opacity:0.7;
 	}
 	
 	.level-two-sub-menu > a:before {
@@ -2358,6 +2392,8 @@ dt.gallery-icon > a:before,
 		position:absolute;
 		right:10px;
 		top:9px;
+		font-size:12px;
+		line-height:14px;
 	}
 	
 	/* columns */
@@ -3004,7 +3040,8 @@ dt.gallery-icon > a:before,
 	#bottom-widget-inner,
 	#main-content-wrapper,
 #main-content-wrapper-landing,
-	#footer-content-wrapper	{
+	#footer-content-wrapper,
+    #footer-bottom-content-wrapper	{
 		margin:0 auto;
 		width:1150px;
 	}
@@ -3044,7 +3081,8 @@ dt.gallery-icon > a:before,
 		width:300px;
 	}
 	
-	#footer-main {
+	#footer-main,
+	#footer-bottom-area {
 		padding-left:0;
 		padding-right:0;
 	}
