@@ -170,7 +170,7 @@ if ( ! function_exists( 'ayaclub_load_scripts' ) ) :
     	);
     	wp_localize_script('ayaclub-utilities', 'ayaclub_options', $data);
 
-    	wp_enqueue_script( 'jquery.mobile.customized', get_template_directory_uri() . '/js/jquery.mobile.customized.min.js', array( 'jquery' ) );
+    	
 		wp_enqueue_script( 'jquery.easing.1.3', get_template_directory_uri() . '/js/jquery.easing.1.3.js', array( 'jquery' ) );
 		wp_enqueue_script( 'camera', get_template_directory_uri() . '/js/camera.min.js', array( 'jquery' ) );
 	}

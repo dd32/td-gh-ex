@@ -4,7 +4,7 @@ Description: AyaClub is fully Responsive Music Club WordPress Theme. Features: A
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayaclub
-Version: 1.1.5
+Version: 1.1.6
 Text Domain: ayaclub
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -174,6 +174,29 @@ dt.gallery-icon:before {
 #header-logo {
     display: flex;
     align-items: center;
+}
+
+
+#footer-bottom-widget-area {
+	margin-top:10px;
+}
+
+#footer-bottom-area {
+	clear:both;
+	padding:15px 2% 10px 2%;
+	background-color:#2B2B2B;
+}
+
+#footer-bottom-area {
+	color:#FFFFFF;
+}
+
+#footer-bottom-area a {
+	color:#FF9318;
+}
+
+#footer-bottom-area a:hover {
+	color:#FF9318;
 }
 
 #header-logo h1 {
@@ -414,7 +437,7 @@ article,
 	background-color:#353535;
 	color:#FFFFFF;
 	margin:20px 0 0 0;
-	padding:10px 2% 5px 2%;
+	padding:25px 2% 10px 2%;
 }
 
 #footer-main a {
@@ -457,6 +480,7 @@ article,
 	width:96%;
 	margin:5px 0 5px 0;
 }
+#footer-bottom-area,
 #copyright {
 	clear:both;
 	text-align:center;
@@ -1230,13 +1254,13 @@ dt.gallery-icon > a:before,
 }
 
 .gallery {
-	margin: 0 -1.1666667% 1.75em;
+	margin: 0 -1.1666667% 0;
 }
 
 .gallery-item {
 	display: inline-block;
 	max-width: 33.33%;
-	padding: 0 1.1400652% 2.2801304%;
+	padding: 0 1.1400652% 0;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
@@ -1276,6 +1300,8 @@ dt.gallery-icon > a:before,
 
 .gallery-icon img {
 	margin: 0 auto;
+	max-width:100%;
+	height:auto;
 }
 
 .gallery-caption {
@@ -1336,7 +1362,7 @@ dt.gallery-icon > a:before,
 	}
 	
 	.header-social-widget li {
-		margin-left:10px;
+		margin-left:5px;
 	}
 	
 	#header-logo {
@@ -1364,7 +1390,7 @@ dt.gallery-icon > a:before,
 	}
 	
 	#navmain > div > ul > li {
-		margin-right:5px;
+		margin-right:8px;
 	}
 	
 	#navmain ul a {
@@ -1460,6 +1486,8 @@ dt.gallery-icon > a:before,
 		content: "\f107";
 		font-family:'FontAwesome';
 		margin:0 0 0 5px;
+		font-size:12px;
+		opacity:0.7;
 	}
 	
 	.level-two-sub-menu > a:before {
@@ -1468,6 +1496,8 @@ dt.gallery-icon > a:before,
 		position:absolute;
 		right:10px;
 		top:9px;
+		font-size:12px;
+		line-height:14px;
 	}
 	
 	/* columns */
@@ -1978,7 +2008,8 @@ dt.gallery-icon > a:before,
 
 	#home-cols-inner,
 	#main-content-wrapper,
-    #footer-content-wrapper {
+    #footer-content-wrapper,
+    #footer-bottom-content-wrapper {
         margin:0 auto;
         width:1150px;
     }
@@ -2010,7 +2041,8 @@ dt.gallery-icon > a:before,
 		margin-right:0;
 	}
 	
-	#footer-main {
+	#footer-main,
+	#footer-bottom-area {
 		padding-left:0;
 		padding-right:0;
 	}

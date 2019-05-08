@@ -40,6 +40,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.1.6 =
+* improve footer with a copyright background color
+
 = 1.1.5 (2019-03-11) =
 * fix issue with Slider jQuery conflicts
 
@@ -107,5 +110,3 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * js/camera.min.js, © 2012 by Manuel Masia, MIT
 * js/camera.js, © 2012 by Manuel Masia, MIT
 * js/jquery.easing.1.3.js, © 2008 George McGinley Smith, BSD
-* js/jquery.mobile.customized.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
-* js/jquery.mobile.customized.min.js, © 2010, 2014 jQuery Foundation, Inc. and other contributors, MIT
