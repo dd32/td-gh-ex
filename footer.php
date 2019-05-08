@@ -22,6 +22,11 @@
 					<div class="clear">
 					</div>
 
+				</div><!-- #footer-content-wrapper -->
+
+			</footer>
+			<div id="footer-bottom-area">
+				<div id="footer-bottom-content-wrapper">
 					<div id="copyright">
 
 						<p>
@@ -36,10 +41,8 @@
 						</p>
 						
 					</div><!-- #copyright -->
-
-				</div><!-- #footer-content-wrapper -->
-
-			</footer><!-- #footer-main -->
+				</div>
+			</div><!-- #footer-main -->
 
 		</div><!-- #body-content-wrapper -->
 		<?php wp_footer(); ?>
