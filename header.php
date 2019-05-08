@@ -11,7 +11,15 @@
 
 <body <?php body_class(); ?>>
 
-<?php do_action( 'avventura_lite_mobile_menu' ); ?>
+<?php
+
+if ( function_exists('wp_body_open') ) {
+	wp_body_open();
+}
+
+do_action( 'avventura_lite_mobile_menu' );
+
+?>
         
 <div id="overlay-body"></div>
 <div id="wrapper">

@@ -28,7 +28,7 @@ if (!function_exists('avventura_lite_after_content_function')) {
 		
 			the_content();
 	
-			the_tags( '<footer class="line"><span class="entry-info"><strong>Tags:</strong> ', ', ', '</span></footer>' );
+			the_tags( '<footer class="line"><span class="entry-info"><strong>' . esc_html__('Tags:', 'avventura-lite') . '</strong> ', ', ', '</span></footer>' );
 	
 			comments_template();
 		
