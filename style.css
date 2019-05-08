@@ -5,7 +5,7 @@ Theme URI: https://tishonator.com/product/fgymm
 Author: tishonator
 Author URI: https://tishonator.com
 Text Domain: fgymm
-Version: 1.8.0
+Version: 1.8.1
 Tags: blog, entertainment, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -190,6 +190,29 @@ ul {
 #header-logo {
     display: flex;
     align-items: center;
+}
+
+
+#footer-bottom-widget-area {
+	margin-top:10px;
+}
+
+#footer-bottom-area {
+	clear:both;
+	padding:15px 2% 10px 2%;
+	background-color:#393437;
+}
+
+#footer-bottom-area {
+	color:#888888;
+}
+
+#footer-bottom-area a {
+	color:#cccccc;
+}
+
+#footer-bottom-area a:hover {
+	color:#ffffff;
 }
 
 #header-logo h1 {
@@ -586,11 +609,7 @@ article,
 	text-align:center;
 }
 
-#copyright {
-	clear: both;
-	border-top: 1px solid #515151;
-    padding: 15px 0;
-}
+
 
 .header-social-widget,
 .footer-social-widget {
@@ -1577,7 +1596,8 @@ img.wp-post-image {
 }
 
 #page-header h1 {
-	margin:0;
+    display:inline;
+    margin:0;
 	padding:0;
 }
 
@@ -1676,13 +1696,13 @@ img.wp-post-image {
 
 
 .gallery {
-	margin: 0 -1.1666667% 1.75em;
+	margin: 0 -1.1666667% 0;
 }
 
 .gallery-item {
 	display: inline-block;
 	max-width: 33.33%;
-	padding: 0 1.1400652% 2.2801304%;
+	padding: 0 1.1400652% 0;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
@@ -1722,6 +1742,8 @@ img.wp-post-image {
 
 .gallery-icon img {
 	margin: 0 auto;
+	max-width:100%;
+	height:auto;
 }
 
 .gallery-caption {
@@ -2954,7 +2976,8 @@ mark {
 
 	#home-cols-inner,
 	#main-content-wrapper,
-	#footer-content-wrapper	{
+	#footer-content-wrapper,
+    #footer-bottom-content-wrapper	{
 		margin:0 auto;
 		width:1150px;
 	}
@@ -2980,7 +3003,8 @@ mark {
 		margin-right:0;
 	}
 	
-	#footer-main {
+	#footer-main,
+	#footer-bottom-area {
 		padding-left:0;
 		padding-right:0;
 	}

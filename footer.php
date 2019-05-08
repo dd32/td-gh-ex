@@ -19,6 +19,10 @@
 					<div class="clear">
 					</div><!-- .clear -->
 
+				</div>
+			</footer>
+			<div id="footer-bottom-area">
+				<div id="footer-bottom-content-wrapper">
 					<div id="copyright">
 					<p>
 						 <?php fgymm_show_copyright_text(); ?> <a href="<?php echo esc_url( 'https://tishonator.com/product/fgymm' ); ?>" title="<?php esc_attr_e( 'fgymm Theme', 'fgymm' ); ?>">
@@ -27,7 +31,7 @@
 						</p>
 					</div>
 				</div>
-			</footer>
+			</div>
 		</div>
 		<?php wp_footer(); ?>
 	</body>
