@@ -20,7 +20,23 @@ function academic_hub_register_required_plugins() {
             'slug' => 'contact-form-7',
             'required' => false,
         ),
+        array(
+            'name' => esc_html__( 'Elementor Page Builder', 'academic-hub'),
+            'slug' => 'elementor',
+            'required' => false,
+        ),
+        array(
+            'name' => esc_html__( 'One Click Demo Import', 'academic-hub'),
+            'slug' => 'one-click-demo-import',
+            'required' => false,
+        ),
+        array(
+            'name' => esc_html__( 'Contact Form  Everest Forms', 'academic-hub'),
+            'slug' => 'everest-forms',
+            'required' => false,
+        ),
 
+        
     );
 
     /*

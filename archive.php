@@ -7,6 +7,7 @@
  * @package Academic_Hub
  */
 get_header();?>
+<?php academic_hub_after_header(); ?>
 <?php academic_hub_before_mainsec(); ?>
 	<div class="blog-section">
 		<div class="container">

@@ -67,3 +67,10 @@ load_template(trailingslashit( get_template_directory() ) . 'academic-hub/core/e
  * =                     Core Excerpt
  * =============================================================================*/
 load_template(trailingslashit( get_template_directory() ) . 'academic-hub/template-functions.php');
+
+
+
+/**============================================================================
+ * =                     Demo Import
+ * =============================================================================*/
+load_template(trailingslashit( get_template_directory() ) . 'academic-hub/demo-import/demo-import.php');

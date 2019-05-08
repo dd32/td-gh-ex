@@ -168,106 +168,6 @@ h2 {
     transition: opacity .4s ease;
 }
 
-/* navigation-part 
-  ==================================================*/
-
-.navbar-default {
-    border-color: #003b6e;
-    background: #003b6e;
-    border-radius: 0;
-    margin-bottom: 0;
-}
-
-.navbar-header a {
-    outline: 0;
-}
-
-.navbar-brand {
-    height: 130px;
-    padding-top: 40px;
-}
-
-.navbar-default .navbar-nav .active a {
-    background: #0a63b1;
-    color: #fff;
-    outline: 0;
-}
-
-.navbar-default .navbar-right {
-    padding-top: 40px;
-}
-
-.navbar-default .navbar-nav .active a:hover {
-    background: #0a63b1;
-    color: #fff;
-}
-
-.navbar-default .navbar-nav li a {
-    text-transform: uppercase;
-}
-
-.navbar-default .navbar-nav li a:hover {
-    background: #0a63b1;
-    color: #fff;
-    -webkit-transition: all .50s ease;
-    -o-transition: all .50s ease;
-    transition: all .50s ease;
-}
-
-.navbar-default .navbar-nav>li>a:focus {
-    color: #fff;
-}
-
-.navbar-default .navbar-nav li a {
-    outline: 0;
-    color: #bbcbd8;
-    -webkit-transition: all .50s ease;
-    -o-transition: all .50s ease;
-    transition: all .50s ease;
-}
-
-/* drop down */
-
-.navbar-nav .dropdown-menu {
-    left: 0;
-    border-radius: 0;
-}
-
-.navbar-default .dropdown-menu li a {
-    white-space: normal;
-    padding: 15px;
-}
-
-.navbar-default .dropdown ul {
-    background: #004b91;
-}
-
-.navbar-default .dropdown-menu>li>a:focus {
-    background: #0a63b1;
-}
-
-.navbar-default .navbar-nav>.open>a,
-.navbar-default .navbar-nav>.open>a:focus,
-.navbar-default .navbar-nav>.open>a:hover {
-    background: #0a63b1;
-    color: #fff;
-}
-
-/* toggle bar */
-
-.navbar-default .navbar-toggle {
-    border-color: #fdc721;
-    margin-top: 40px;
-}
-
-.navbar-default .navbar-toggle .icon-bar {
-    background: #fdc721;
-}
-
-.navbar-default .navbar-toggle:focus,
-.navbar-default .navbar-toggle:hover {
-    background: transparent;
-}
 
 /* banner 
   ==================================================*/
@@ -2014,10 +1914,6 @@ textarea:focus {
     border-bottom: 10px solid #fdc707;
 }
 
-#footer-inner {
-    padding-top: 51px;
-    padding-bottom: 25px;
-}
 
 .widget h3 {
     margin-top: 0;
@@ -2482,27 +2378,28 @@ textarea:focus {
 
 /* re-edited css */
 
-.site-branding {
+/* .site-branding {
     float: left;
     padding: 15px 15px;
     font-size: 18px;
     line-height: 20px;
     color: #fff;
     height: 130px;
+} */
+
+.site-branding {
+    float: left;
+    /* padding: 15px 15px; */
+    font-size: 18px;
+    /* line-height: 100px; */
+    color: #333;
+    /* height: 130px; */
 }
 
 .site-branding h1.site-title a {
-    color: #fff;
+    color: #333;
 }
 
-.academic-hub-breadcrumb ul li {
-    display: inline-block;
-    margin-right: 10px;
-}
-
-.academic-hub-breadcrumb ul li:not(:last-of-type):after {
-    content: " / ";
-}
 
 li.page_item a {
     outline: 0;
@@ -2531,7 +2428,6 @@ li.page_item a {
 li.trail-item.trail-begin a {
     color: #034680;
     text-decoration: none;
-    font-size: 38px;
     font-weight: 600;
 }
 
@@ -2555,9 +2451,14 @@ li.trail-item.trail-begin a {
     font-size: 16px;
     margin: 0;
 }
+.academic-hub-breadcrumb {
+    background: #fafafa none repeat scroll 0 0;
+}
+.breadcrumb-trail.breadcrumbs .trail-items li {
+    display: inline-block;
+}
 
 input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="file"]) {
-    width: 200px;
     border-radius: 0;
     font-weight: 400;
     outline: 0;
@@ -2705,12 +2606,47 @@ span.page-numbers.current {
     color: #fff;
     border: 1px solid #337ab7;
 }
+.logo-text .site-title a {
+    color: #333;
+}
+/*--------------------------------------------------------------
+# Navigation
+--------------------------------------------------------------*/
 
-li.current_page_item {
-    background: #0a63b1;
+/*--------------------------------------------------------------
+## Links
+--------------------------------------------------------------*/
+
+a {
+    color: #fff;
+    text-decoration: none;
 }
 
-li.trail-item {
-    text-transform: capitalize;
-    font-size: 25px;
+a:visited {
+    color: #fff;
+    text-decoration: none;
 }
+
+a:hover,
+a:focus,
+a:active {
+    color: #10b64e;
+    text-decoration: none;
+}
+
+a:focus {
+    outline: 0;
+    text-decoration: none;
+}
+
+a:hover,
+a:active {
+    outline: 0;
+    text-decoration: none;
+}
+
+a:not([href]):not([tabindex]) {
+    color: #888;
+    text-decoration: none;
+}
+

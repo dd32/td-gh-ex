@@ -27,19 +27,19 @@ $academic_hub_author_post_count = count_user_posts( $academic_hub_author_id );
     <p><?php echo wp_kses_post( $academic_hub_author_bio ); ?></p>
     <?php endif; ?>
 
-    <div class="tg-author-meta">
+    <div class="academic-hub-author-meta">
         <?php if ( $academic_hub_author_url ) : ?>
-            <div class="tg-author__website">
+            <div class="academic-hub-author__website">
                 <span><?php echo esc_html__( 'Website', 'academic-hub' ); ?></span>
                 <a href="<?php echo esc_url( $academic_hub_author_url ); ?>" target="_blank"><?php echo esc_url( $academic_hub_author_url ); ?></a>
-            </div><!-- .tg-author-website -->
+            </div><!-- .academic-hub-author-website -->
         <?php endif; ?>
 
         <?php if ( $academic_hub_author_post_count ) : ?>
-            <div class="tg-author__post-count">
+            <div class="academic-hub-author__post-count">
                 <span><?php echo esc_html__( 'Posts created', 'academic-hub' ); ?></span>
                 <strong><?php echo intval( $academic_hub_author_post_count ); ?></strong>
-            </div><!-- .tg-author-post-count -->
+            </div><!-- .academic-hub-author-post-count -->
         <?php endif; ?>
-    </div><!-- .tg-author-meta -->
+    </div><!-- .academic-hub-author-meta -->
 </div>

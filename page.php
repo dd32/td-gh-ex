@@ -13,6 +13,7 @@
  */
 
 get_header();?>
+<?php academic_hub_after_header(); ?>
 <?php academic_hub_before_mainsec(); ?>
 	<div class="single-section">
 		<div class="container">

@@ -14,13 +14,14 @@
                          */
                         $academic_hub_social_links = get_theme_mod('academic_hub_social_links');
 
-
                         /**
                          * Academic Hub social links
                          * @since 1.0.0
                          */
                         if( !empty($academic_hub_social_links) ){
+                            
                             foreach( $academic_hub_social_links as $social_links ){
+                                
                                 echo ' <li><a href="'.esc_url( $social_links['academic_hub_social_link'] ).'"><i class="'.esc_attr( $social_links['academic_hub_social_icon'] ).'"></i></a></li>';
                             }
                         }

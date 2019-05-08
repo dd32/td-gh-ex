@@ -9,9 +9,10 @@
 if ( is_front_page() || is_home() ) {
 	return;
 }
+$title = get_the_title(get_the_ID()); 
 ?>
 <!-- Academic Hub Breadcrumb  -->
-<nav id="breadcrumb" class="academic-hub-breadcrumb academic-hub-breadcrumb--light">
+<nav id="academic-breadcrumb" class="breadcrumb-trail breadcrumbs">
 	<?php
 	breadcrumb_trail( array(
 		'container'   => 'div',

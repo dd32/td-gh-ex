@@ -223,6 +223,7 @@ function academic_hub_scripts() {
 	 * Add Enqueue Script File
 	 * @since 1.0.0
 	 */
+	wp_enqueue_script( 'jquery-nav-js', get_template_directory_uri() . '/assets/library/jquery-nav/jquery.nav.js', array('jquery'), $theme_version , true );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/library/bootstrap/js/bootstrap.min.js', array('jquery'), $theme_version , true );
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/library/slick/slick.js', array('jquery'), $theme_version , true );
 	wp_enqueue_script( 'academic-hub-custom', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'), $theme_version , true );
@@ -246,6 +247,7 @@ add_action( 'wp_enqueue_scripts', 'academic_hub_scripts' );
  * @since 1.0.0
  */
 require trailingslashit( get_template_directory() ) . 'academic-hub/init.php';
+
 
 /**
  * Add Require Academic Customizer Conrol

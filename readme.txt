@@ -99,6 +99,11 @@ Source: https://stocksnap.io/photo/SWR31HJ4D8
 
 
 == Changelog ==
+= Version 1.0.9 2019 March 18 =
+* add the elementor plugin compitable
+* add the demo import section
+
+
 = Version 1.0.8 2019 March 18 =
 * add the site links
 

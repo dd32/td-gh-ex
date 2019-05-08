@@ -96,30 +96,32 @@ if ( ! function_exists( 'academic_hub_header_nav_section' ) ) {
 	 */
 	function academic_hub_header_nav_section(){
         ?>
-        <!-- Academic Hub Header Section -->
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only"><?php echo esc_html__('Toggle navigation','academic-hub'); ?></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+       
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <?php
-                /**
-                 * Nav Menu
-                 * @since 1.0.0
-                 */
-                    wp_nav_menu( array(
-                        'theme_location' 	=> 'menu-1',
-                        'menu_id'        	=> 'menu-1',
-                        'container'			=>'ul',
-                        'menu_class'	 	=>  'nav navbar-nav navbar-right',
-                    ) );
-                ?>
-            </div><!-- /.navbar-collapse -->
-        <!-- #Academic Hub Header Section -->
+        <nav id="site-navigation" class="main-navigation">
+                        <button class="main-menu-toggle" aria-controls="primary-menu" aria-expanded="false"><i
+                                    class="fa fa-bars"></i></button>
+                        <div class="search_main_menu">
+                            <a href="javascript:void(0)"><i class="fas fa-search"></i></a>
+                        </div>
+                        <div class="main-menu-container-collapse">
+                        <?php
+                        /**
+                         * Nav Menu
+                         * @since 1.0.0
+                         */
+                            wp_nav_menu( array(
+                                'theme_location' 	=> 'menu-1',
+                                'menu_id'        	=> 'primary-menu',
+                                'container'			=>'ul',
+                                'menu_class'	 	=>  'menu nav-menu',
+                            ) );
+                        ?>
+                           
+                        </div>`
+                    </nav>
+
+
 		<?php
 	}
 }
