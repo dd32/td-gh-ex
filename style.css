@@ -4,7 +4,7 @@ Description: AyaMagazine is Fully Responsive Magazine WordPress Theme perfect fo
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayamagazine
-Version: 1.1.0
+Version: 1.1.1
 Text Domain: ayamagazine
 Tags: blog, news, three-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -192,6 +192,29 @@ dt.gallery-icon:before {
 #header-logo {
     display: flex;
     align-items: center;
+}
+
+
+#footer-bottom-widget-area {
+	margin-top:10px;
+}
+
+#footer-bottom-area {
+	clear:both;
+	padding:15px 2% 10px 2%;
+	background-color:#2A2A2A;
+}
+
+#footer-bottom-area {
+	color:#ffffff;
+}
+
+#footer-bottom-area a {
+	color:#FF9318;
+}
+
+#footer-bottom-area a:hover {
+	color:#FF9318;
 }
 
 #header-logo h1 {
@@ -413,7 +436,7 @@ article ul > li:before {
 	background-color:#333333;
 	color:#ffffff;
 	margin:20px 0 0 0;
-	padding:10px 2% 5px 2%;
+	padding:25px 2% 10px 2%;
 }
 
 #footer-main a {
@@ -453,6 +476,7 @@ article ul > li:before {
 	width:100%;
 }
 
+#footer-bottom-area,
 #copyright {
 	clear:both;
 	text-align:center;
@@ -1197,7 +1221,8 @@ img.wp-post-image {
 }
 
 #page-header h1 {
-	margin:0;
+    display:inline;
+    margin:0;
 	padding:0;
 }
 
@@ -1276,7 +1301,7 @@ blockquote {
 .gallery-item {
 	display: inline-block;
 	max-width: 33.33%;
-	padding: 0 1.1400652% 2.2801304%;
+	padding: 0 1.1400652% 0;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
@@ -1316,6 +1341,8 @@ blockquote {
 
 .gallery-icon img {
 	margin: 0 auto;
+	max-width:100%;
+	height:auto;
 }
 
 .gallery-caption {
@@ -1425,7 +1452,7 @@ dt.gallery-icon > a:before,
 	}
 	
 	#navmain > div > ul > li {
-		margin-right:5px;
+		margin-right:8px;
 	}
 	
 	#navmain ul a {
@@ -1521,6 +1548,8 @@ dt.gallery-icon > a:before,
 		content: "\f107";
 		font-family:'FontAwesome';
 		margin:0 0 0 5px;
+		font-size:12px;
+		opacity:0.7;
 	}
 	
 	.level-two-sub-menu > a:before {
@@ -1529,6 +1558,8 @@ dt.gallery-icon > a:before,
 		position:absolute;
 		right:10px;
 		top:9px;
+		font-size:12px;
+		line-height:14px;
 	}
 
 	.commentlist li {
@@ -1922,7 +1953,8 @@ dt.gallery-icon > a:before,
 #home-cols-inner,
 #bottom-widget-inner,
 #main-content-wrapper,
-    #footer-content-wrapper    {
+    #footer-content-wrapper,
+    #footer-bottom-content-wrapper    {
         margin:0 auto;
         width:1150px;
     }
@@ -1954,7 +1986,8 @@ dt.gallery-icon > a:before,
 		margin-right:0;
 	}
 	
-	#footer-main {
+	#footer-main,
+	#footer-bottom-area {
 		padding-left:0;
 		padding-right:0;
 	}

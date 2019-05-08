@@ -42,6 +42,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.1.1 =
+* improve footer with a copyright background color
+
 = 1.1.0 =
 * fix issue with image caption alignment
 
@@ -79,7 +82,8 @@ Installation using 'Add New Theme'
 * Initial Release
 
 == Resources ==
-* FontAwesome icon font, © Font Awesome, SIL OFL 1.1
+* Font-Awesome https://github.com/FortAwesome/Font-Awesome FontAwesome 4.6.3 Copyright 2012 Dave Gandy Font License: SIL OFL 1.1 Code License: MIT License http://fontawesome.io/license/
+* Code examples and snippet library, © 2018 WordPress Theme Review Team https://github.com/WPTRT/code-examples/, GPL-2.0
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
 * js/viewportchecker.js, © 2014 Dirk Groenen, MIT
