@@ -4,7 +4,7 @@ Description: AyaGeek is fully Responsive WordPress Theme with Built-in Homepage 
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayageek
-Version: 1.1.0
+Version: 1.1.1
 Text Domain: ayageek
 Tags: blog, news, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -202,6 +202,29 @@ dt.gallery-icon:before {
 #header-logo {
     display: flex;
     align-items: center;
+}
+
+
+#footer-bottom-widget-area {
+	margin-top:10px;
+}
+
+#footer-bottom-area {
+	clear:both;
+	padding:15px 2% 10px 2%;
+	background-color:#003044;
+}
+
+#footer-bottom-area {
+	color:#04BEFB;
+}
+
+#footer-bottom-area a {
+	color:#C7D2F8;
+}
+
+#footer-bottom-area a:hover {
+	color:#D9FBF2;
 }
 
 #header-logo h1 {
@@ -530,6 +553,7 @@ article ul > li:before {
 	text-align:center;
 }
 
+#footer-bottom-area,
 #copyright {
 	clear:both;
 	text-align:center;
@@ -1879,13 +1903,13 @@ blockquote {
 }
 
 .gallery {
-	margin: 0 -1.1666667% 1.75em;
+	margin: 0 -1.1666667% 0;
 }
 
 .gallery-item {
 	display: inline-block;
 	max-width: 33.33%;
-	padding: 0 1.1400652% 2.2801304%;
+	padding: 0 1.1400652% 0;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
@@ -1925,6 +1949,8 @@ blockquote {
 
 .gallery-icon img {
 	margin: 0 auto;
+	max-width:100%;
+	height:auto;
 }
 
 .gallery-caption {
@@ -2686,7 +2712,8 @@ blockquote {
 	#bottom-widget-inner,
 	#main-content-wrapper,
 	#slider-inner-content-wrapper,
-	#footer-content-wrapper	{
+	#footer-content-wrapper,
+    #footer-bottom-content-wrapper	{
 		margin:0 auto;
 		width:1150px;
 	}
@@ -2716,7 +2743,8 @@ blockquote {
 		margin-right:0;
 	}
 	
-	#footer-main {
+	#footer-main,
+	#footer-bottom-area {
 		padding-left:0;
 		padding-right:0;
 	}
