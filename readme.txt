@@ -46,6 +46,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.5 =
+* add background color at footer bottom
+
 = 1.2.4 (2019-04-03) =
 * update FontAwesome license declaration in readme.txt file
 * improve Customizer Sanitization Callback functions

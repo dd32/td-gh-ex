@@ -4,7 +4,7 @@ Description: fCorpo a perfect choice for your Corporate, Business, Company, Port
 Theme URI: https://tishonator.com/product/fcorpo
 Author: tishonator
 Author URI: https://tishonator.com
-Version: 1.2.4
+Version: 1.2.5
 Text Domain: fcorpo
 Tags: blog, news, e-commerce, two-columns, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, post-formats, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
@@ -467,6 +467,29 @@ article ul > li:before {
 	padding:10px 0 10px 0;
 }
 
+
+#footer-bottom-widget-area {
+	margin-top:10px;
+}
+
+#footer-bottom-area {
+	clear:both;
+	padding:15px 2% 10px 2%;
+	background-color:#1C1C1C;
+}
+
+#footer-bottom-area {
+	color:#dddddd;
+}
+
+#footer-bottom-area a {
+	color:#ffffff;
+}
+
+#footer-bottom-area a:hover {
+	color:#919191;
+}
+
 #header-logo h1 {
 	padding-top:0;
 }
@@ -606,6 +629,7 @@ article,
 	text-align:center;
 }
 
+#footer-bottom-area,
 #copyright {
 	clear:both;
 	text-align:center;
@@ -1574,7 +1598,8 @@ img.wp-post-image {
 }
 
 #page-header h1 {
-	margin:0;
+    display:inline;
+    margin:0;
 	padding:0;
 }
 
@@ -1642,13 +1667,13 @@ img.wp-post-image {
 
 
 .gallery {
-	margin: 0 -1.1666667% 1.75em;
+	margin: 0 -1.1666667% 0;
 }
 
 .gallery-item {
 	display: inline-block;
 	max-width: 33.33%;
-	padding: 0 1.1400652% 2.2801304%;
+	padding: 0 1.1400652% 0;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
@@ -1688,6 +1713,8 @@ img.wp-post-image {
 
 .gallery-icon img {
 	margin: 0 auto;
+	max-width:100%;
+	height:auto;
 }
 
 .gallery-caption {
@@ -2129,7 +2156,7 @@ mark {
 		padding-bottom:28px !important;
 	}
 
-	.header-content-spacing #header-logo h1 {
+	#header-logo h1 {
 		margin-top:10px;
 	}
 
@@ -2878,7 +2905,8 @@ mark {
 
 	#home-cols-inner,
 	#main-content-wrapper,
-	#footer-content-wrapper	{
+	#footer-content-wrapper,
+    #footer-bottom-content-wrapper	{
 		margin:0 auto;
 		width:1150px;
 	}
@@ -2904,7 +2932,8 @@ mark {
 		margin-right:0;
 	}
 	
-	#footer-main {
+	#footer-main,
+	#footer-bottom-area {
 		padding-left:0;
 		padding-right:0;
 	}
