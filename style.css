@@ -4,7 +4,7 @@ Description: AyaSpirit is a Fully Responsive WordPress Theme, a perfect choice f
 Theme URI: https://ayatemplates.com/product/ayaspirit
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.2.0
+Version: 1.2.1
 Text Domain: ayaspirit
 Tags: blog, education, entertainment, two-columns, right-sidebar, custom-background, custom-logo, custom-colors, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, full-width-template, front-page-post-form, footer-widgets
 License: GNU General Public License v2.0
@@ -168,13 +168,13 @@ dt.gallery-icon > a:before,
 }
 
 .gallery {
-	margin: 0 -1.1666667% 1.75em;
+	margin: 0 -1.1666667% 0;
 }
 
 .gallery-item {
 	display: inline-block;
 	max-width: 33.33%;
-	padding: 0 1.1400652% 2.2801304%;
+	padding: 0 1.1400652% 0;
 	text-align: center;
 	vertical-align: top;
 	width: 100%;
@@ -214,6 +214,8 @@ dt.gallery-icon > a:before,
 
 .gallery-icon img {
 	margin: 0 auto;
+	max-width:100%;
+	height:auto;
 }
 
 .gallery-caption {
@@ -240,6 +242,29 @@ dt.gallery-icon > a:before,
 #header-logo > a.custom-logo-link,
 #header-logo #site-identity {
     display:inline-block;
+}
+
+
+#footer-bottom-widget-area {
+	margin-top:10px;
+}
+
+#footer-bottom-area {
+	clear:both;
+	padding:15px 2% 10px 2%;
+	background-color:#3F291B;
+}
+
+#footer-bottom-area {
+	color:#ffffff;
+}
+
+#footer-bottom-area a {
+	color:#c0f4fe;
+}
+
+#footer-bottom-area a:hover {
+	color:#33d4f4;
 }
 
 #header-logo h1 {
@@ -467,6 +492,7 @@ article,
 	text-align:center;
 }
 
+#footer-bottom-area,
 #copyright {
 	clear:both;
 	text-align:center;
@@ -1921,7 +1947,8 @@ blockquote {
 	#home-cols-inner,
 	#bottom-widget-inner,
 	#main-content-wrapper,
-	#footer-content-wrapper	{
+	#footer-content-wrapper,
+    #footer-bottom-content-wrapper	{
 		margin:0 auto;
 		width:1150px;
 	}
@@ -1953,7 +1980,8 @@ blockquote {
 		margin-right:0;
 	}
 	
-	#footer-main {
+	#footer-main,
+	#footer-bottom-area {
 		padding-left:0;
 		padding-right:0;
 	}
