@@ -33,6 +33,9 @@ Set a small number for a high arc, and high number for a low arc.
 
 == Changelog ==
 
+= 2.0 2019-05-09 =
+Fixed typos...
+
 = 1.9 2019-05-08 =
 Added license file.
 Updated required WordPress version and PHP version.

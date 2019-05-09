@@ -1,4 +1,4 @@
 wp.blocks.registerBlockStyle('core/gallery', {
-	name: 'aaron-hide-caption',
+	name: 'bunny-hide-caption',
 	label: wp.i18n.__('Hide captions', 'bunny')
 });
