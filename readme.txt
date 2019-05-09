@@ -3,9 +3,9 @@
 Contributors: Tsvetomir Tsvetanov
 Tags: one-column, two-columns, three-columns, left-sidebar, right-sidebar, rtl-language-support, translation-ready, footer-widgets, microformats, theme-options, flexible-header, custom-header, custom-logo, full-width-template, sticky-post, custom-background, custom-menu, custom-colors, featured-image-header, featured-images, threaded-comments, blog, news, e-commerce
 
-Requires at least: 5.1
-Tested up to: 5.1
-Stable tag: 1.0.0
+Requires at least: 5.2
+Tested up to: 5.2
+Stable tag: 1.1.0
 Author URI: https://seosthemes.com
 Theme URI: https://seosthemes.com/black-and-white-wordpress-theme/
 License: GNU General Public License version 3.0
@@ -36,7 +36,10 @@ score includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0.0 - april 24 2019 =
+= 1.1.0 - May 09 2019 =
+* FIXED: Undefined variables
+
+= 1.0.0 - April 24 2019 =
 * Initial release
 
 == Credits ==

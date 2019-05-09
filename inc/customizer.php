@@ -614,7 +614,7 @@ function baw_customizing_styles() {
 											.woocommerce-page .woocommerce-info .button:hover,
 											.woocommerce-page .woocommerce-message .button:hover {background: {$button_hover} !important;}";} else {$style25 ="";}
         wp_add_inline_style( 'black-and-white-style', 
-		$style1.$style2.$style3.$style4.$style5.$style6.$style7.$style8.$style9.$style10.$style11.$style12.$style14.$style15.$style16.$style17.$style18.$style19.$style20.$style21.$style22.$style23.$style24.$style25.$style26.$style27.$style28
+		$style1.$style2.$style3.$style4.$style5.$style6.$style7.$style8.$style9.$style10.$style11.$style12.$style14.$style17.$style19.$style22.$style23.$style24.$style25.$style26.$style27.$style28
 		);
 }
 add_action( 'wp_enqueue_scripts', 'baw_customizing_styles' );
