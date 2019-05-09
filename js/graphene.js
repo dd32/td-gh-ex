@@ -202,7 +202,7 @@ jQuery(document).ready(function($) {
 			}
 		}
 		
-		$(infScroll).infinitescroll(infScrollOptions, function(newElems){
+		$(infScroll).infinitescroll(infScrollOptions, function(newElems, response, path){
 			infScrollBtnObj.data('remaining-posts', infScrollBtnObj.data('remainingPosts') - parseInt(newElems.length));
 			
 			if ( infScrollBtnObj.data('method') == 'click' ) infScrollBtnObj.html(grapheneGetInfScrollBtnLbl(infScrollBtnObj.data('remainingPosts')));
@@ -222,6 +222,8 @@ jQuery(document).ready(function($) {
 				infScrollBtnObj.html(grapheneJS.infScrollFinishedText).addClass('disabled').removeAttr('href');
 				$(infScroll).infinitescroll('destroy');
 			}
+
+			$(infScroll).trigger( 'append.infinitescroll', [newElems, response, path] );
 		});
 		$($(this).data('navSelector')).hide();
 		

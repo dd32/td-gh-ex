@@ -50,11 +50,10 @@
 	}
 	.header_title {
 		margin: 0;
-		padding: 0 15px;
+		padding: 15px 0;
 		text-align: left;
 		font-size: 1em;
 		letter-spacing: normal;
-		line-height: 50px;
 	}
 	.header_title,
 	.header_title a,
@@ -82,6 +81,8 @@
 	}
 	.navbar-inverse .navbar-toggle {
 		border-color: #333;
+		background-color: #444;
+		background-color: rgba(0,0,0,0.4);
 	}
 	.navbar-inverse .navbar-toggle .icon-bar {
 		background-color: #fff;

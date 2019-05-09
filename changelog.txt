@@ -4,6 +4,15 @@ https://www.graphene-theme.com/
 
 CHANGELOG
 
+Version 2.6.3
+	* Added: append.infinitescroll event 
+	* Added: wp_body_open() function call
+	* Fixed: Compatibility issue with Elementor
+	* Fixed: Error importing theme options due to WP recognizing the import file as text/html
+	* Fixed: "autocomplete is not a function" script error
+	* Fixed: Search results count sometimes show incorrect value when formatted
+	* Fixed: PHP warnings related to custom header image
+
 Version 2.6.2
 	* Fixed: Multi-level menu not opening when using hover and on tablet devices
 	* Fixed: Custom social profile icon not working when using custom icon URL

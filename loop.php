@@ -55,7 +55,7 @@
                 
 				<?php /* The excerpt */ ?>
 				<?php the_excerpt(); ?>
-                
+
 			<?php endif; ?>
 			
 			<?php graphene_link_pages(); ?>

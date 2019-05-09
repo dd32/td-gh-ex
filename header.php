@@ -15,7 +15,7 @@
         <?php wp_head(); ?>
     </head>
     <body <?php body_class(); ?>>
-        <?php do_action( 'graphene_container_before' ); ?>
+        <?php wp_body_open(); do_action( 'graphene_container_before' ); ?>
 
         <div class="<?php echo ( $graphene_settings['container_style'] == 'boxed' ) ? 'container boxed-wrapper' : 'container-fluid'; ?>">
             
@@ -105,15 +105,17 @@
                             $desc_tag = 'h3';
                         }
                         ?>
-                        <?php echo "<$title_tag class=\"$title_tag_class\">"; ?>
-                            <?php if ( ! is_front_page() ) : ?><a href="<?php echo apply_filters( 'graphene_header_link' , home_url() ); ?>" title="<?php esc_attr_e( 'Go back to the front page', 'graphene' ); ?>"><?php endif; ?>
-                                <?php bloginfo( 'name' ); ?>
-                            <?php if ( ! is_front_page() ) : ?></a><?php endif; ?>
-                        <?php echo "</$title_tag>"; ?>
+                        <?php graphene_container_wrapper( 'start' ); ?>
+	                        <?php echo "<$title_tag class=\"$title_tag_class\">"; ?>
+	                            <?php if ( ! is_front_page() ) : ?><a href="<?php echo apply_filters( 'graphene_header_link' , home_url() ); ?>" title="<?php esc_attr_e( 'Go back to the front page', 'graphene' ); ?>"><?php endif; ?>
+	                                <?php bloginfo( 'name' ); ?>
+	                            <?php if ( ! is_front_page() ) : ?></a><?php endif; ?>
+	                        <?php echo "</$title_tag>"; ?>
                         
-                        <?php if ( ! $graphene_settings['slider_as_header'] && $show_title ) : ?>
-                            <?php echo "<$desc_tag class=\"header_desc\">"; ?><?php bloginfo( 'description' ); ?><?php echo "</$desc_tag>"; ?>
-                        <?php endif; ?>
+	                        <?php if ( ! $graphene_settings['slider_as_header'] && $show_title ) : ?>
+	                            <?php echo "<$desc_tag class=\"header_desc\">"; ?><?php bloginfo( 'description' ); ?><?php echo "</$desc_tag>"; ?>
+	                        <?php endif; ?>
+                        <?php graphene_container_wrapper( 'end' ); ?>
 
                     <?php do_action( 'graphene_navbar_header' ); ?>
                 </div>

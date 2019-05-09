@@ -81,3 +81,13 @@ function determine_locale() {
     return apply_filters( 'determine_locale', $determined_locale );
 }
 endif;
+
+
+if ( ! function_exists( 'wp_body_open' ) ) :
+/**
+ * Backward compatibility for WP < 5.2
+ */
+function wp_body_open() {
+    do_action( 'wp_body_open' );
+}
+endif;

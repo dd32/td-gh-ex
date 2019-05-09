@@ -27,7 +27,7 @@ if ( file_exists( $mobile_path ) ) { include( $mobile_path ); }
 */
 global $graphene_settings;
 require( GRAPHENE_ROOTDIR . '/admin/options-init.php'	);
-require( GRAPHENE_ROOTDIR . '/admin/editor.php'	);
+require( GRAPHENE_ROOTDIR . '/admin/editor.php'			);
 require( GRAPHENE_ROOTDIR . '/inc/scripts.php' 			);
 require( GRAPHENE_ROOTDIR . '/inc/utils.php' 			);
 require( GRAPHENE_ROOTDIR . '/inc/head.php' 			);

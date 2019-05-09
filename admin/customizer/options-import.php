@@ -134,7 +134,7 @@ function graphene_import_file() {
 	if ( ! function_exists( 'wp_handle_upload' ) ) require_once( ABSPATH . 'wp-admin/includes/file.php' );
 	$file = $_FILES['graphene-import-file'];
 
-	$import_file = wp_handle_upload( $file, array( 'test_form' => false, 'mimes' => array( 'txt' => 'text/plain' ) ) );
+	$import_file = wp_handle_upload( $file, array( 'test_form' => false, 'action' => 'graphene_import_file', 'mimes' => array( 'txt' => 'text/html' ) ) );
 	if ( isset( $import_file['error'] ) ) wp_die( $import_file['error'] );
 
 	/* Get filesystem credentials to read the file */
