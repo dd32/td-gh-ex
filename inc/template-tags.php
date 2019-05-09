@@ -51,7 +51,7 @@ if ( ! function_exists( 'star_entry_footer' ) ) {
 
 			echo '<div class="byline">' . get_avatar( get_the_author_meta( 'ID' ), 60 ) . '<div class="author">' . esc_html( get_the_author() ) . '</div>
 			<div class="author-link"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' .
-			esc_html( 'View more posts by this author', 'star' ) . '</a></div></div>';
+			esc_html__( 'View more posts by this author', 'star' ) . '</a></div></div>';
 
 			/* Display jetpack's share if it's active*/
 			if ( function_exists( 'sharing_display' ) ) {

@@ -1,10 +1,13 @@
-=== star ===
+=== Star ===
 Contributors: Poena
+Requires at least: 5.0
+Tested up to: 5.2
+Requires PHP: 5.6
 Tags: threaded-comments, custom-menu, translation-ready, editor-style, two-columns, featured-images, accessibility-ready, custom-header, blog, custom-logo
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright 2011-2018 Carolina Nymark
+Copyright 2011-2019 Carolina Nymark
 
 Important
 The header area with the Site title, Slogan, logo, header image or icon is only visible on your front page.
@@ -14,8 +17,14 @@ You can also hide the Call to Action in the customzier.
 The category list only shows parent categories, not child categories.
 At 1100px width, the sidebar widgets will display in 3 columns below your post content.
 
-
 == Change log ==
+
+Version: 1.13 2019-05-09
+Updated readme.
+Added license file.
+Added support for wp_body_open.
+Fixed a missing translation function.
+
 
 Version: 1.12 2018-10-20
 Updated credits.

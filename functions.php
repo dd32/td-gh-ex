@@ -201,7 +201,6 @@ function star_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'star_scripts' );
 
-
 /**
  * Add styles and fonts for the Gutenberg editor.
  */
@@ -209,9 +208,18 @@ function star_gutenberg_assets() {
 	wp_enqueue_style( 'open-sans' );
 	wp_enqueue_style( 'star-fonts-gutenberg', star_fonts_url(), array(), null );
 	wp_enqueue_style( 'star-gutenberg', get_theme_file_uri( '/inc/gutenberg-editor.css' ), false );
+	wp_enqueue_script( 'star-block-styles-script', get_theme_file_uri( '/js/block-styles.js' ), array( 'wp-blocks', 'wp-i18n' ) );
+	wp_set_script_translations( 'star-block-styles-script', 'star' );
 }
 add_action( 'enqueue_block_editor_assets', 'star_gutenberg_assets' );
 
+/**
+ * Add custom block styles.
+ */
+function star_block_styles() {
+	wp_enqueue_style( 'star-block-styles', get_theme_file_uri( '/inc/custom-block-styles.css' ), false );
+}
+add_action( 'enqueue_block_assets', 'star_block_styles' );
 
 /**
  * Custom template tags for this theme.
