@@ -37,10 +37,10 @@ get_header(); ?>
 <?php
 if ( is_active_sidebar( 'sidebar-2' ) ) {
 	?>
-	<div class="widget-area sidebar-2" role="complementary">
+	<aside class="widget-area sidebar-2" role="complementary">
 		<h2 class="screen-reader-text"><?php esc_html_e( 'Sidebar', 'miranda' ); ?></h2>
 		<?php dynamic_sidebar( 'sidebar-2' ); ?>
-	</div>
+</aside>
 	<?php
 }
 

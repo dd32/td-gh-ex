@@ -142,8 +142,8 @@ function miranda_widgets_init() {
 			'name'          => __( 'Sidebar 1 (left)', 'miranda' ),
 			'id'            => 'sidebar-1',
 			'description'   => '',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)
@@ -154,8 +154,8 @@ function miranda_widgets_init() {
 			'name'          => __( 'Sidebar 2 (right)', 'miranda' ),
 			'id'            => 'sidebar-2',
 			'description'   => '',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)
@@ -166,8 +166,8 @@ function miranda_widgets_init() {
 			'name'          => __( 'Footer widget area', 'miranda' ),
 			'id'            => 'sidebar-3',
 			'description'   => '',
-			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
-			'after_widget'  => '</aside>',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</div>',
 			'before_title'  => '<h2 class="widget-title">',
 			'after_title'   => '</h2>',
 		)
@@ -175,10 +175,58 @@ function miranda_widgets_init() {
 }
 add_action( 'widgets_init', 'miranda_widgets_init' );
 
+if ( ! function_exists( 'miranda_fonts_url' ) ) {
+	/**
+	 * Register custom fonts.
+	 * Credits:
+	 * Twenty Seventeen WordPress Theme, Copyright 2016 WordPress.org
+	 * Twenty Seventeen is distributed under the terms of the GNU GPL
+	 */
+	function miranda_fonts_url() {
+		$fonts_url = '';
+
+		$font_families = array();
+		$font_families[] = get_theme_mod( 'miranda_body_font', 'Open Sans' );
+		$font_families[] = get_theme_mod( 'miranda_title_font' );
+		$font_families[] = get_theme_mod( 'miranda_description_font' );
+		$font_families[] = get_theme_mod( 'miranda_post_title_font' );
+
+		$font_families = array_unique( $font_families );
+
+		$query_args = array(
+			'family' => urlencode( implode( '|', $font_families ) ),
+			'subset' => urlencode( 'latin,latin-ext' ),
+		);
+
+		$fonts_url = add_query_arg( $query_args, 'https://fonts.googleapis.com/css' );
+
+		return esc_url_raw( $fonts_url );
+	}
+}
+
+/**
+ * Add preconnect for Google Fonts.
+ *
+ * @param array  $urls           URLs to print for resource hints.
+ * @param string $relation_type  The relation type the URLs are printed.
+ * @return array $urls           URLs to print for resource hints.
+ */
+function miranda_resource_hints( $urls, $relation_type ) {
+	if ( wp_style_is( 'miranda-fonts', 'queue' ) && 'preconnect' === $relation_type ) {
+		$urls[] = array(
+			'href' => 'https://fonts.gstatic.com',
+			'crossorigin',
+		);
+	}
+
+	return $urls;
+}
+add_filter( 'wp_resource_hints', 'miranda_resource_hints', 10, 2 );
 /**
  * Enqueue scripts and styles.
  */
 function miranda_scripts() {
+	wp_enqueue_style( 'miranda-fonts', miranda_fonts_url(), array(), null );
 	wp_enqueue_style( 'miranda-style', get_stylesheet_uri(), array( 'dashicons' ) );
 	wp_style_add_data( 'miranda-style', 'rtl', 'replace' );
 
@@ -197,8 +245,19 @@ add_action( 'wp_enqueue_scripts', 'miranda_scripts' );
  */
 function miranda_gutenberg_assets() {
 	wp_enqueue_style( 'miranda-gutenberg', get_theme_file_uri( 'gutenberg-editor.css' ), false );
+	wp_enqueue_script( 'miranda-block-styles-script', get_theme_file_uri( '/js/block-styles.js' ), array( 'wp-blocks', 'wp-i18n' ) );
+	wp_set_script_translations( 'miranda-block-styles-script', 'miranda' );
 }
 add_action( 'enqueue_block_editor_assets', 'miranda_gutenberg_assets' );
+
+/**
+ * Add custom block styles.
+ */
+function miranda_block_styles() {
+	wp_enqueue_style( 'miranda-block-styles', get_theme_file_uri( '/inc/custom-block-styles.css' ), false );
+}
+add_action( 'enqueue_block_assets', 'miranda_block_styles' );
+
 
 /**
  * Custom header for this theme.
@@ -214,7 +273,7 @@ require get_template_directory() . '/inc/template-tags.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
-
+require get_template_directory() . '/inc/customizer-fonts.php';
 
 add_filter( 'the_title', 'miranda_post_title' );
 /**
@@ -300,6 +359,13 @@ function miranda_customize_css() {
 
 	echo '.social-menu li a:before, .menu-toggle:before, .bypostauthor .fn,.bypostauthor .says{color: ' . esc_attr( get_theme_mod( 'miranda_color', '#861a50' ) ) . ';}';
 	echo "\n";
+
+	/* Fonts */
+	echo 'html, body, button, input, select, textarea { font-family:' . esc_attr( get_theme_mod( 'miranda_body_font', "Open Sans, BlinkMacSystemFont, -apple-system, Roboto, Helvetica, Arial, sans-serif" ) ) . ';}';
+	echo '.site-title, site-title a{ font-family:' . esc_attr( get_theme_mod( 'miranda_title_font', "Open Sans, BlinkMacSystemFont, -apple-system, Roboto, Helvetica, Arial, sans-serif" ) ) . ';}';
+	echo '.site-description { font-family:' . esc_attr( get_theme_mod( 'miranda_description_font', "Open Sans, BlinkMacSystemFont, -apple-system, Roboto, Helvetica, Arial, sans-serif" ) ) . ';}';
+	echo '.entry-title, .entry-title a { font-family:' . esc_attr( get_theme_mod( 'miranda_post_title_font', "Open Sans, BlinkMacSystemFont, -apple-system, Roboto, Helvetica, Arial, sans-serif" ) ) . ';}';
+
 	echo '</style>';
 }
 add_action( 'wp_head', 'miranda_customize_css' );

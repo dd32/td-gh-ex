@@ -1,12 +1,12 @@
 === Miranda ===
 Contributors: Poena
 Tags: threaded-comments, custom-menu, sticky-post, editor-style, translation-ready, two-columns, three-columns, left-sidebar, right-sidebar, featured-images, accessibility-ready, rtl-language-support, custom-colors, custom-header
-Requires at least: 4.6
-Tested up to: 5.0
-Requires PHP: 5.2
+Requires at least: 5.0
+Tested up to: 5.2
+Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Copyright: 2014-2018 Carolina Nymark
+Copyright: 2014-2019 Carolina Nymark
 
 Miranda is an accessible blog theme with a sidebar, two menus, and color options.
 
@@ -23,6 +23,16 @@ Description: Miranda is an accessible, responsive blog theme. It has two menus (
 If you have any questions or suggestions for this theme, please visit https://wordpress.org/support/theme/miranda.
 
 == Change log ==
+
+Version 1.7 2019-05-09
+Added support for wp_body_open.
+Added a block style for the gallery which hides the image captions.
+Added font options.
+Updated required WordPress version and PHP version.
+Changed the markup of the sidebars, since previosuely all individual widgets
+ were placed in asides: There were too many asides :)
+
+
 
 Version 1.6 2018-12-04
 
