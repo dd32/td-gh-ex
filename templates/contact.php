@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Template Name: Contact Us
+ * Template Name: Contact page
  *
  * This is the template that displays all pages by default.
  * Please note that this is the WordPress construct of pages

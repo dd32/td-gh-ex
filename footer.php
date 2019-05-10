@@ -47,7 +47,7 @@
 				<span class="sep"> | </span>
 				<?php
 				/* translators: placeholder replaced with string */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'bagility' ), 'Bagility', '<a href="' . esc_url( __( 'https://managethemes.com/', 'bagility' ) ) . '" rel="designer">Managethemes</a>' );
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'bagility' ), 'Bagility', '<a href="' . esc_url( __( 'https://themeansar.com/', 'bagility' ) ) . '" rel="designer">Themeansar</a>' );
 				?>
 				
 				

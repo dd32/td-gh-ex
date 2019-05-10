@@ -17,7 +17,7 @@ bagility_theme_banner();
 				</div>   
 				<ul class="mt-breadcrumb-nav text-center">
 					<li><a href="#"><?php echo esc_html_e('Home','bagility'); ?></a></li>
-					<li class="active"><?php echo esc_html_e('404 Error Page','bagility'); ?></li>
+					<li class="active"><?php echo esc_html_e('404','bagility'); ?></li>
 				</ul>
 			</div>
 		</div>
