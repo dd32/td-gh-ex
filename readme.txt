@@ -44,6 +44,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.0.3 =
+* updating screenshot image 
+
 = 1.0.2 =
 * improve footer with a copyright background color
 
@@ -65,4 +68,4 @@ AyaClub is distributed under the terms of the GNU General Public License v2
 == Resources ==
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * js/owl.carousel.js, © 2016-2018 David Deutsch, MIT
-* screenshot.png (slide), © 2017 Monika Stawowy https://pxhere.com/en/photo/1418280, CC0
+* screenshot.png (slide), © 2017 Monika Stawowy https://pxhere.com/bg/photo/544027, CC0
