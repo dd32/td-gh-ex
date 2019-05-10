@@ -44,6 +44,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+
+= 1.1.0 =
+* updating screenshot.png image
+
 = 1.0.9 =
 * improve footer with a copyright background color
 
@@ -84,4 +88,4 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 * images/slider/1.jpg, © 2016 @Pexels https://pixabay.com/en/coffee-cup-drink-flora-flower-hot-1845623/, CC0
 * images/slider/2.jpg, © 2014 @gollosojov23 https://pixabay.com/en/coffee-cup-drink-espresso-hot-3348813/, CC0
 * images/slider/3.jpg, © 2015 @Free-Photos https://pixabay.com/en/coffee-cup-drink-espresso-caffeine-690054/, CC0
-* screenshot.png (slider img), © 2016 @Pexels https://pixabay.com/en/coffee-cup-drink-flora-flower-hot-1845623/, CC0
+* screenshot.png (slider img), © 2016 @Pexels https://pxhere.com/bg/photo/847370, CC0
