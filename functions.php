@@ -4,7 +4,6 @@
  * @package Automobile Car Dealer
  */
 
-
 /* Theme Setup */
 if ( ! function_exists( 'automobile_car_dealer_setup' ) ) :
 
@@ -49,8 +48,13 @@ function automobile_car_dealer_setup() {
 	 */
 	add_editor_style( array( 'css/editor-style.css', automobile_car_dealer_font_url() ) );
 }
+
+
+
 endif; // automobile_car_dealer_setup
 add_action( 'after_setup_theme', 'automobile_car_dealer_setup' );
+
+
 
 /*radio button sanitization*/
  function automobile_car_dealer_sanitize_choices( $input, $setting ) {
@@ -134,6 +138,20 @@ function automobile_car_dealer_widgets_init() {
 		'before_title'  => '<h3 class="widget-title">',
 		'after_title'   => '</h3>',
 	) );
+
+	//Footer widget areas
+	$widget_areas = get_theme_mod('footer_widget_areas', '3');
+	for ($i=1; $i<=$widget_areas; $i++) {
+		register_sidebar( array(
+			'name'          => __( 'Footer Widget', 'automobile-car-dealer' ) . $i,
+			'id'            => 'footer-' . $i,
+			'description'   => '',
+			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</aside>',
+			'before_title'  => '<h3 class="widget-title">',
+			'after_title'   => '</h3>',
+		) );
+	}
 
 }
 add_action( 'widgets_init', 'automobile_car_dealer_widgets_init' );
@@ -266,7 +284,6 @@ function automobile_car_dealer_scripts() {
 	$automobile_car_dealer_h1_color       = get_theme_mod('automobile_car_dealer_h1_color', '');
 	$automobile_car_dealer_h1_font_family = get_theme_mod('automobile_car_dealer_h1_font_family', '');
 	$automobile_car_dealer_h1_font_size   = get_theme_mod('automobile_car_dealer_h1_font_size', '');
-
 	// H2
 	$automobile_car_dealer_h2_color       = get_theme_mod('automobile_car_dealer_h2_color', '');
 	$automobile_car_dealer_h2_font_family = get_theme_mod('automobile_car_dealer_h2_font_family', '');
@@ -288,52 +305,51 @@ function automobile_car_dealer_scripts() {
 	$automobile_car_dealer_h6_font_family = get_theme_mod('automobile_car_dealer_h6_font_family', '');
 	$automobile_car_dealer_h6_font_size   = get_theme_mod('automobile_car_dealer_h6_font_size', '');
 
-
 	$custom_css = '
-			p,span{
-			    color:'.esc_html($automobile_car_dealer_paragraph_color).'!important;
-			    font-family: '.esc_html($automobile_car_dealer_paragraph_font_family).';
-			    font-size: '.esc_html($automobile_car_dealer_paragraph_font_size).';
-			}
-			a{
-			    color:'.esc_html($automobile_car_dealer_atag_color).'!important;
-			    font-family: '.esc_html($automobile_car_dealer_atag_font_family).';
-			}
-			li{
-			    color:'.esc_html($automobile_car_dealer_li_color).'!important;
-			    font-family: '.esc_html($automobile_car_dealer_li_font_family).';
-			}
-			h1{
-			    color:'.esc_html($automobile_car_dealer_h1_color).'!important;
-			    font-family: '.esc_html($automobile_car_dealer_h1_font_family).'!important;
-			    font-size: '.esc_html($automobile_car_dealer_h1_font_size).'!important;
-			}
-			h2{
-			    color:'.esc_html($automobile_car_dealer_h2_color).'!important;
-			    font-family: '.esc_html($automobile_car_dealer_h2_font_family).'!important;
-			    font-size: '.esc_html($automobile_car_dealer_h2_font_size).'!important;
-			}
-			h3{
-			    color:'.esc_html($automobile_car_dealer_h3_color).'!important;
-			    font-family: '.esc_html($automobile_car_dealer_h3_font_family).'!important;
-			    font-size: '.esc_html($automobile_car_dealer_h3_font_size).'!important;
-			}
-			h4{
-			    color:'.esc_html($automobile_car_dealer_h4_color).'!important;
-			    font-family: '.esc_html($automobile_car_dealer_h4_font_family).'!important;
-			    font-size: '.esc_html($automobile_car_dealer_h4_font_size).'!important;
-			}
-			h5{
-			    color:'.esc_html($automobile_car_dealer_h5_color).'!important;
-			    font-family: '.esc_html($automobile_car_dealer_h5_font_family).'!important;
-			    font-size: '.esc_html($automobile_car_dealer_h5_font_size).'!important;
-			}
-			h6{
-			    color:'.esc_html($automobile_car_dealer_h6_color).'!important;
-			    font-family: '.esc_html($automobile_car_dealer_h6_font_family).'!important;
-			    font-size: '.esc_html($automobile_car_dealer_h6_font_size).'!important;
-			}
-			';
+		p,span{
+		    color:'.esc_html($automobile_car_dealer_paragraph_color).'!important;
+		    font-family: '.esc_html($automobile_car_dealer_paragraph_font_family).';
+		    font-size: '.esc_html($automobile_car_dealer_paragraph_font_size).';
+		}
+		a{
+		    color:'.esc_html($automobile_car_dealer_atag_color).'!important;
+		    font-family: '.esc_html($automobile_car_dealer_atag_font_family).';
+		}
+		li{
+		    color:'.esc_html($automobile_car_dealer_li_color).'!important;
+		    font-family: '.esc_html($automobile_car_dealer_li_font_family).';
+		}
+		h1{
+		    color:'.esc_html($automobile_car_dealer_h1_color).'!important;
+		    font-family: '.esc_html($automobile_car_dealer_h1_font_family).'!important;
+		    font-size: '.esc_html($automobile_car_dealer_h1_font_size).'!important;
+		}
+		h2{
+		    color:'.esc_html($automobile_car_dealer_h2_color).'!important;
+		    font-family: '.esc_html($automobile_car_dealer_h2_font_family).'!important;
+		    font-size: '.esc_html($automobile_car_dealer_h2_font_size).'!important;
+		}
+		h3{
+		    color:'.esc_html($automobile_car_dealer_h3_color).'!important;
+		    font-family: '.esc_html($automobile_car_dealer_h3_font_family).'!important;
+		    font-size: '.esc_html($automobile_car_dealer_h3_font_size).'!important;
+		}
+		h4{
+		    color:'.esc_html($automobile_car_dealer_h4_color).'!important;
+		    font-family: '.esc_html($automobile_car_dealer_h4_font_family).'!important;
+		    font-size: '.esc_html($automobile_car_dealer_h4_font_size).'!important;
+		}
+		h5{
+		    color:'.esc_html($automobile_car_dealer_h5_color).'!important;
+		    font-family: '.esc_html($automobile_car_dealer_h5_font_family).'!important;
+		    font-size: '.esc_html($automobile_car_dealer_h5_font_size).'!important;
+		}
+		h6{
+		    color:'.esc_html($automobile_car_dealer_h6_color).'!important;
+		    font-family: '.esc_html($automobile_car_dealer_h6_font_family).'!important;
+		    font-size: '.esc_html($automobile_car_dealer_h6_font_size).'!important;
+		}
+		';
 	wp_add_inline_style('automobile-car-dealer-basic-style', $custom_css);
 	
 	wp_enqueue_script( 'tether', get_template_directory_uri() . '/js/tether.js', array('jquery') ,'',true);
@@ -343,7 +359,6 @@ function automobile_car_dealer_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
-
 add_action( 'wp_enqueue_scripts', 'automobile_car_dealer_scripts' );
 
 function automobile_car_dealer_ie_stylesheet(){
@@ -351,19 +366,19 @@ function automobile_car_dealer_ie_stylesheet(){
 	wp_enqueue_style('automobile-car-dealer-ie', get_template_directory_uri().'/css/ie.css', array('automobile-car-dealer-style'));
 	wp_style_add_data( 'automobile-car-dealer-ie', 'conditional', 'IE' );
 }
-
 add_action('wp_enqueue_scripts','automobile_car_dealer_ie_stylesheet');
+
 define('AUTOMOBILE_CAR_DEALER_LIVE_DEMO','https://buywptemplates.com/automobile-car-dealer-pro/','automobile-car-dealer');
 define('AUTOMOBILE_CAR_DEALER_BUY_PRO','https://www.buywptemplates.com/themes/premium-automotive-wordpress-theme/','automobile-car-dealer');
-define('AUTOMOBILE_CAR_DEALER_PRO_DOC','https://www.buywptemplates.com/docs/automobile-car-dealer-pro/','automobile-car-dealer');
-define('AUTOMOBILE_CAR_DEALER_FREE_DOC','https://buywptemplates.com/docs/free-automobile-car-dealer/','automobile-car-dealer');
-define('AUTOMOBILE_CAR_DEALER_PRO_SUPPORT','https://www.buywptemplates.com/forum/automobile-car-dealer-theme/','automobile-car-dealer');
+define('AUTOMOBILE_CAR_DEALER_PRO_DOC','https://buywptemplates.com/demo/docs/automobile-car-dealer-pro/','automobile-car-dealer');
+define('AUTOMOBILE_CAR_DEALER_FREE_DOC','https://buywptemplates.com/demo/docs/free-automobile-car-dealer/','automobile-car-dealer');
+define('AUTOMOBILE_CAR_DEALER_PRO_SUPPORT','https://www.buywptemplates.com/support/','automobile-car-dealer');
 define('AUTOMOBILE_CAR_DEALER_FREE_SUPPORT','https://wordpress.org/support/theme/automobile-car-dealer/','automobile-car-dealer');
 define('AUTOMOBILE_CAR_DEALER_CREDIT','https://www.buywptemplates.com/','automobile-car-dealer');
 
 if ( ! function_exists( 'automobile_car_dealer_credit' ) ) {
 	function automobile_car_dealer_credit(){
-		echo "<a href=".esc_url(AUTOMOBILE_CAR_DEALER_CREDIT)." target='_blank'>".esc_html__('BuywpTemplate.com','automobile-car-dealer')."</a>";
+		echo "<a href=".esc_url(AUTOMOBILE_CAR_DEALER_CREDIT)." target='_blank'>".esc_html__('Buywptemplate','automobile-car-dealer')."</a>";
 	}
 }
 
@@ -380,6 +395,14 @@ function automobile_car_dealer_string_limit_words($string, $word_limit) {
 	if(count($words) > $word_limit)
 	array_pop($words);
 	return implode(' ', $words);
+}
+
+// Change number or products per row to 3
+add_filter('loop_shop_columns', 'automobile_car_dealer_loop_columns');
+	if (!function_exists('automobile_car_dealer_loop_columns')) {
+		function automobile_car_dealer_loop_columns() {
+	return 3; // 3 products per row
+	}
 }
 
 /* Implement the Custom Header feature. */

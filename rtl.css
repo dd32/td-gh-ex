@@ -1,3 +1,4 @@
+/*rtl css*/
 
 *{ 
   margin:0;
@@ -173,16 +174,7 @@ h2.section-title {
 #slider .carousel-control-prev-icon{
 background: transparent;
 }
-#slider .metabox span{
-  margin-left: 15px;
-}
-#slider .metabox {
-    font-size: 12px;
-    margin-bottom: 2em;
-}
-#slider .metabox i{
-  margin-left: 10px;
-}
+
 #slider{ 
   max-width:100%;
   margin:auto; 
@@ -204,53 +196,42 @@ background: transparent;
   width: auto;
   height: auto;
 }
-#slider .inner_carousel h2 a {
+#slider .inner_carousel h2 {
   font-weight: bolder;
   letter-spacing: 1px;
   color: #fff;
-  padding:0px;
-}
-#slider .inner_carousel h2{
-  padding: 0px;
+  padding:0px 8px;
+  border-right: 3px solid #fff;
+  display: inline-block;
 }
 #slider .inner_carousel {
-  text-align: right;
+  text-align: center;
   color: #fff;
 }
 #slider .carousel-caption{
-  padding-bottom:0px !important;
-  top: 46%;
-}
-#slider hr{
-  margin-top: -29rem;
-  border:none;
-
-}
-#slider .inner_carousel h2{
-  border-right: 3px solid white;
-  margin-left: 10px;
-  text-align: center;
+  top: 60%;
+  transform: translateY(-50%);
 }
 #slider p{
-  text-align: center;
   margin: 10px;
 }
 .slide-button a {
   color: #fff;
-  font-size: 20px;
+  font-size: 15px;
   padding: 10px 15px;
+  font-weight: bold;
 }
 .slide-button {
   margin: 20px;
-  margin-right: 43%;
+  text-align: center;
 }
 #slider i{
   font-size: 20px;
 }
 .slide-button i {
-    background: red;
-    padding: 8px;
-    font-size: 20px;
+  background: #dd3333;
+  padding: 8px;
+  margin-left: 10px;
 }
 /*-----------------Search pop up----------------*/
 .serach_outer {
@@ -339,9 +320,9 @@ input.search-field {
   background: transparent;
 }
 .appointbtn i{
-  font-size: 20px;
-  color: white;
-  padding: 4px;
+  font-size: 16px;
+  color: #fff;
+  margin-left: 10px;
 }
 #header{
   background: #fff;
@@ -355,12 +336,12 @@ input.search-field {
 }
 .appointbtn {
   background: #dd3333;
-  padding: 5px 0;
+  padding: 8px 0;
   text-align: center;
 }
 .appointbtn a {
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
 }
 .topbar {
   padding: 15px 0;
@@ -388,7 +369,7 @@ input.search-field {
   text-decoration: none;
 }
 .blog-section {
-    top: 36px;
+  margin-top: 3%;
 }
 #header .logo{
   margin:0;
@@ -441,16 +422,14 @@ input.search-field {
 }
 #header .nav ul li a {
   color: #fff;  
-  padding: 22px 12px;
-  font-size: 15px;
+  padding:24px 10px;
+  font-size: 12px;
   display: block;
-  text-align: right;
   text-transform: none;
-  letter-spacing: 2px;
   font-weight: normal;
 }
 #header .nav ul li a:hover{
-  background: #dd3333;
+  color: #dd3333;
   text-decoration: none;
 }
 #header .nav ul.sub-menu li{
@@ -459,17 +438,18 @@ input.search-field {
 #header .nav ul.children li {
   display: inline;
 }
-.socialbox {
-    text-align: right;
-}
-.m-1 {
-    margin: 0px 0px 0px 0.25rem !important;
-}
-
 /* --------- Homepage --------- */
 #blog_sec i {
   font-size: 13px;
   color: #000;
+  margin-left: 10px;
+}.metabox{
+  color:#000;
+  padding:15px 0;
+  clear:both;
+}
+.metabox i,
+.metabox span{
   margin-left: 10px;
 }
 .postbtn a {
@@ -707,6 +687,9 @@ iframe{
 }
 
 /*--------------- Sidebar -----------------*/
+#sidebar .widget.widget_calendar table,#sidebar td,#sidebar th {
+    border: 1px solid;
+}
 #sidebar {
   padding-top: 36px;
 }
@@ -828,10 +811,7 @@ table {
   background-color: #686868;
   color: #fff;
 }
-.widget th,
-.widget td {
-  padding: 0.5384615385em;
-}
+
 #sidebar form.search-form {
   display: table;
   padding: 0px 10px;
@@ -847,31 +827,23 @@ table {
 #content_box hr{
   border:none;
   border-bottom:2px solid #7e7e7e;
-  margin:20px 0;
+  margin:15px 0;
   clear:both;
 }
 #content_box h2{
   font-size:32px;
-  font-weight:normal;
-  margin:0;
   padding:0;
-  color:#000;
   margin:0 0 25px;
 }
 #content_box h3{
   font-size:36px;
-  font-weight:normal;
-  margin:0;
   padding:0;
-  color:#000;
   margin:0 0 25px;
 }
 #content_box h4{
   font-size:20px;
-  font-weight:bold;
-  margin:0;
   padding:0;
-  color:#333;
+  color:#000;
   margin:0 0 25px;
 }
 #content_box  h6{
@@ -881,8 +853,6 @@ table {
   margin:0 0 15px;
   font-size:17px;
   padding:0;
-  font-weight:bold;
-  line-height:normal;
 }
 #content_box ul{
   list-style:none;
@@ -892,8 +862,8 @@ table {
 }
 #content_box ul li{
   list-style-type: none;
-    margin: 0 0 20px 21px;
-    line-height: 25px;
+  margin: 0 0 20px 21px;
+  line-height: 25px;
 }
 #content_box ul li ul li{
   list-style-type: circle;
@@ -918,8 +888,6 @@ table {
   margin:0 0 15px;
   font-size:18px;
   padding:0;
-  font-weight:bold;
-  line-height:normal;
 }
 .read-moresec{
   margin:2% 0;
@@ -937,12 +905,11 @@ a.button {
 
 /*copyright css*/
 .copyright-wrapper { 
-  padding:20px 0;
-  background-color:#dd3333;
-  font-size: 18px;
+  background-color: #dd3333;
+  font-size: 15px;
   font-weight: bold;
   text-align: center;
-  padding:20px 0;
+  padding: 15px 0;
 }
 .copyright-wrapper p,
 .copyright-wrapper a {
@@ -973,16 +940,17 @@ a.button {
 .footer-wp input[type="search"]{
   width:100%;
   padding:8px 5%;
-  float:right;
 }
 .footer-wp input[type="submit"] {
   padding: 9px 12px;
-  float: left;
   border: none;
   background: #dd3333;
   border-radius: 0;
   margin: 0;
   font-size: 12px;
+}
+.footer-wp label{
+  width: 100%;
 }
 .footer-wp  td#prev a {
   color: #fff;
@@ -1080,64 +1048,6 @@ label{
 #content_box .pagination ul li{
   margin:0;
 }
-
-/* ------ Contact Form ------ */
-.wpcf7{ 
-  margin:0;
-  padding:0;
-  color:#222222;
-}
-.wpcf7 form{ 
-  margin:0;
-  padding:0;
-}
-.wpcf7 form span.last{ 
-  float:none !important;
-}
-.wpcf7 form input[type="text"],
-.wpcf7 form input[type="email"],
-.wpcf7 form input[type="tel"],
-.wpcf7 form input[type="url"],
-.wpcf7 form input[type="date"],
-.wpcf7 form select, .leftdiv input[type="text"],
-.leftdiv input [type="url"],
-.leftdiv input[type="email"],
-.leftdiv input[type="tel"],
-.wpcf7 form textarea,
-.rightdiv textarea{ 
-  width:94%;
-  background-color:#f8f8f8;
-  border:1px solid #e6e5e5;
-  padding:10px;
-  margin-top:15px;
-  color:#777777;
-}
-.wpcf7 form textarea, .rightdiv textarea{
-  height:132px;
-}
-.wpcf7 form input[type="checkbox"],
-.wpcf7 form input[type="radio"],
-.wpcf7 form input[type="file"]{ 
-  margin-top:10px;
-  padding:0;
-}
-span.wpcf7-list-item{ 
-  margin:0 0 0 15px !important;
-}
-.wpcf7 form input[type="submit"],
-#contact input[type="submit"],
-#contactform_main input[type='submit']{
-  margin:25px 0 0 0;
-  padding:5px 20px;
-  border:none;
-  color:#ffffff;
-  border-radius:4px;
-  -moz-border-radius:4px;
-  -o-border-radius:4px;
-  -webkit-border-radius:4px;
-  cursor:pointer;
-  background-color:#00A885;
-}
 .pagination{
   display:table;
   clear:both;
@@ -1193,13 +1103,12 @@ input.search-submit,
   padding:4px 10px;
   cursor:pointer;
 }
-.wpcf7-form p{ 
-  color:#222222;
-}
 
 /*---Our Project --*/
+#project{
+  padding: 2% 0;
+}
 #project h3 {
-  text-align: right;
   font-size: 35px;
   color: #111111;
 }
@@ -1210,16 +1119,17 @@ input.search-submit,
 .categorybox {
   background: #fff;
   box-shadow: -5px 5px 4px 0 #bbb;
-  float: right;
-  width: 100%;
   margin-bottom: 16px;
   padding: 10px 0; 
 }
 .categorybox h4 {
-  font-size: 15px;  
-  font-weight: bold;
+  font-size: 18px;
+  font-weight: 700;
   color: #000;
-  padding: 0;
+  padding-bottom: 6px;
+}
+.categorybox p{
+  font-size: 15px;
 }
 .mainbox p {
   margin-bottom: 8px;
@@ -1332,37 +1242,31 @@ span.woocommerce-input-wrapper,
   .topbar span {
     display: block;
     text-align: center;
-}
-#slider{
-  margin-top: 67%;
-}
-#slider p, #slider h2 {
-    display: none;
-}
-.slide-button{
-  margin-right: 0px;
-  text-align: center;
-  margin-bottom: 31%;
-}
-.topbar span {
+  }
+  .topbar span {
     font-size: 15px;
     float: none;
-}
-#header .nav{
-  top:-200px;
-}
-.socialbox {
+  }
+  .socialbox {
     text-align: center;
-}
+  }
 }
 @media screen and (max-width:720px) {
   .menus{
     background: transparent;
   }
+ #slider .inner_carousel h2, #slider .inner_carousel p {
+      display: none;
+  }
+  .slide-button{
+    margin: 0px;
+  }
+  .page-template-custom-home-page #header{
+    position: static;
+  }
   #header .top_headbar{
     background: #435061;
   }
-  .contact,
   .topbar {
     text-align: center;
   }
@@ -1380,16 +1284,13 @@ span.woocommerce-input-wrapper,
   .nav{
     display:none;
   }
-  .admin-bar .header .nav{
-    top: -86px;
-  }
   .header .nav{
     float:none;
     margin:0;
     position:absolute;
     z-index:999;
     overflow-x:hidden;
-    top: 22px;
+    top: 0px;
     width: 100%;
   }
   .header .nav ul{ 
@@ -1494,23 +1395,6 @@ span.woocommerce-input-wrapper,
     display:block;
   }
 }
-@media screen and (min-width: 1000px) {
-  #header #header-inner .nav ul li ul li{
-    display:block;
-    position:relative;
-    float:none;
-  }
-  #header #header-inner .nav ul li ul li a{
-    color:#000;
-    display:block;
-    padding-top:10px;
-    padding-bottom:10px;
-    border-bottom:1px #313131 solid;
-  }
-   label {
-    width: 75%;
-}
-}
 @media screen and (max-width: 720px) and (min-width: 320px){
   .blog-section .new-line {
     padding-bottom: 5px;
@@ -1521,9 +1405,39 @@ span.woocommerce-input-wrapper,
   #sidebar {
     clear: both;
   }
+  .woocommerce ul.products[class*=columns-] li.product,
+  .woocommerce-page ul.products[class*=columns-] li.product{
+    width: 95% !important;
+    float: none !important;
+  }
 }
-@media screen and (max-width: 768px){
-label {
-    width: 55%;
-}
+@media screen and (max-width: 768px) and (min-width: 720px){
+  .page-template-custom-home-page #header{
+    position: static;
+  }
+  .topbar i{
+    margin-left: 5px;
+  }
+  .topbar span{
+    margin-left: 20px;
+  }
+  #slider .inner_carousel p{
+    display: none;
+  }
+  #slider .carousel-caption{
+    top:50%;
+  }
+  #sidebar input[type="submit"]{
+    width: 100%;
+  }
+  #sidebar label {
+    width: 100%;
+    margin-bottom: 5px;
+  }
+  .woocommerce ul.products[class*=columns-] li.product,
+    .woocommerce-page ul.products[class*=columns-] li.product{
+    width: 42% !important;
+    float: right !important;
+    margin-left: 10px;
+  }
 }

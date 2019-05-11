@@ -43,7 +43,7 @@
 
 	/**** Hidden search box ***/
 	jQuery('document').ready(function($){
-		$('.search-box span i').click(function(){
+		$('.search-box i').click(function(){
 	        $(".serach_outer").slideDown(700);
 	    });
 

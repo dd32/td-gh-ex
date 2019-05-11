@@ -496,7 +496,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'sanitize_callback'	=> 'esc_url_raw'
 	));	
 	$wp_customize->add_control('automobile_car_dealer_pinterest',array(
-		'label'	=> __('Add Pintrest link','automobile-car-dealer'),
+		'label'	=> __('Add Pinterest link','automobile-car-dealer'),
 		'section'	=> 'automobile_car_dealer_topbar_header',
 		'setting'	=> 'automobile_car_dealer_pinterest',
 		'type'		=> 'url'
@@ -559,15 +559,25 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'panel' => 'automobile_car_dealer_panel_id'
 	) );
 
+	$wp_customize->add_setting('automobile_car_dealer_slider_hide',array(
+       'default' => 'false',
+       'sanitize_callback'	=> 'sanitize_text_field'
+    ));
+    $wp_customize->add_control('automobile_car_dealer_slider_hide',array(
+       'type' => 'checkbox',
+       'label' => __('Show / Hide slider','automobile-car-dealer'),
+       'section' => 'automobile_car_dealer_slidersettings',
+    ));
+
 	for ( $count = 1; $count <= 4; $count++ ) {
 
 		// Add color scheme setting and control.
-		$wp_customize->add_setting( 'automobile_car_dealer_slidersettings-page-' . $count, array(
+		$wp_customize->add_setting( 'automobile_car_dealer_slider' . $count, array(
 			'default'           => '',
 			'sanitize_callback' => 'automobile_car_dealer_sanitize_dropdown_pages'
 		) );
 
-		$wp_customize->add_control( 'automobile_car_dealer_slidersettings-page-' . $count, array(
+		$wp_customize->add_control( 'automobile_car_dealer_slider' . $count, array(
 			'label'    => __( 'Select Slide Image Page', 'automobile-car-dealer' ),
 			'section'  => 'automobile_car_dealer_slidersettings',
 			'type'     => 'dropdown-pages'
@@ -594,6 +604,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 
 	$post_list = get_posts();
 	$i = 0;
+	$posts[]='Select';  
 	foreach($post_list as $post){
 		$posts[$post->post_title] = $post->post_title;
 	}
@@ -613,12 +624,13 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 	$categories = get_categories();
 	$cats = array();
 	$i = 0;
+	$cat_post[]= 'select';
 	foreach($categories as $category){
 	if($i==0){
 	$default = $category->slug;
 	$i++;
 	}
-	$cats[$category->slug] = $category->name;
+	$cat_post[$category->slug] = $category->name;
 	}
 
 	$wp_customize->add_setting('automobile_car_dealer_project_category',array(
@@ -627,7 +639,7 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 	));
 	$wp_customize->add_control('automobile_car_dealer_project_category',array(
 		'type'    => 'select',
-		'choices' => $cats,
+		'choices' => $cat_post,
 		'label' => __('Select Category to display Latest Post','automobile-car-dealer'),
 		'section' => 'automobile_car_dealer_project',
 	));
@@ -635,9 +647,25 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 	//footer text
 	$wp_customize->add_section('automobile_car_dealer_footer_section',array(
 		'title'	=> __('Footer Text','automobile-car-dealer'),
-		'description'	=> __('Add some text for footer like copyright etc.','automobile-car-dealer'),
 		'panel' => 'automobile_car_dealer_panel_id'
 	));
+
+	$wp_customize->add_setting('footer_widget_areas',array(
+        'default'           => '3',
+        'sanitize_callback' => 'automobile_car_dealer_sanitize_choices',
+    ));
+    $wp_customize->add_control('footer_widget_areas',array(
+        'type'        => 'radio',
+        'label'       => __('Footer widget area', 'automobile-car-dealer'),
+        'section'     => 'automobile_car_dealer_footer_section',
+        'description' => __('Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets.', 'automobile-car-dealer'),
+        'choices' => array(
+            '1'     => __('One', 'automobile-car-dealer'),
+            '2'     => __('Two', 'automobile-car-dealer'),
+            '3'     => __('Three', 'automobile-car-dealer'),
+            '4'     => __('Four', 'automobile-car-dealer')
+        ),
+    ));
 	
 	$wp_customize->add_setting('automobile_car_dealer_footer_copy',array(
 		'default'	=> '',
@@ -646,9 +674,10 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 	$wp_customize->add_control('automobile_car_dealer_footer_copy',array(
 		'label'	=> __('Copyright Text','automobile-car-dealer'),
 		'section'	=> 'automobile_car_dealer_footer_section',
+		'description'	=> __('Add some text for footer like copyright etc.','automobile-car-dealer'),
 		'type'		=> 'text'
 	));
-	
+
 }
 add_action( 'customize_register', 'automobile_car_dealer_customize_register' );	
 
@@ -748,6 +777,21 @@ final class Automobile_Car_Dealer_Customize {
 
 		wp_enqueue_style( 'automobile-car-dealer-customize-controls', trailingslashit( get_template_directory_uri() ) . '/css/customize-controls.css' );
 	}
+
+	//Footer widget areas
+		function automobile_car_dealer_sanitize_choices( $input ) {
+		    $valid = array(
+		        '1'     => __('One', 'automobile-car-dealer'),
+		        '2'     => __('Two', 'automobile-car-dealer'),
+		        '3'     => __('Three', 'automobile-car-dealer'),
+		        '4'     => __('Four', 'automobile-car-dealer')
+		    );
+		    if ( array_key_exists( $input, $valid ) ) {
+		        return $input;
+		    } else {
+		        return '';
+		    }
+		}
 }
 
 // Doing this customizer thang!

@@ -1,6 +1,6 @@
 <?php
 /**
- * The template part for displaying slider
+ * The template part for displaying content
  * @package Automobile Car Dealer
  * @subpackage automobile_car_dealer
  * @since 1.0

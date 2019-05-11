@@ -6,17 +6,13 @@ msgstr ""
 "Last-Translator: \n"
 "Language-Team: buywptemplates <support@buywptemplates.com>\n"
 "Language: English\n"
-"MIME-Version: 1.2.4\n"
+"MIME-Version: 1.2.5\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Poedit 1.5.7\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
-
-#: 404.php:11
-msgid '404'
-msgstr ""
 
 #: 404.php:11
 msgid 'Not Found'
@@ -42,33 +38,90 @@ msgstr ""
 #: archive.php:124
 #: archive.php:155
 #: archive.php:184
+#: archive.php:214
 #: index.php:28
 #: index.php:53
 #: index.php:80
 #: index.php:106
 #: index.php:130
 #: index.php:157
+#: index.php:182
 #: search.php:28
 #: search.php:54
 #: search.php:82
 #: search.php:112
 #: search.php:140
 #: search.php:166
-#: single.php:49
-#: single.php:106
-#: single.php:165
-#: single.php:224
-#: single.php:283
-#: single.php:340
+#: search.php:193
+#: template-parts/single-post.php:45
 msgid "Previous page"
+msgstr ""
+
+#: archive.php:32
+#: archive.php:61
+#: archive.php:92
+#: archive.php:125
+#: archive.php:156
+#: archive.php:185
+#: archive.php:215
+#: index.php:29
+#: index.php:54
+#: index.php:81
+#: index.php:107
+#: index.php:131
+#: index.php:158
+#: index.php:183
+#: search.php:29
+#: search.php:55
+#: search.php:83
+#: search.php:113
+#: search.php:141
+#: search.php:167
+#: search.php:194
+#: template-parts/single-post.php:42
+msgid "Next page"
+msgstr ""
+
+#: archive.php:33
+#: archive.php:62
+#: archive.php:93
+#: archive.php:126
+#: archive.php:157
+#: archive.php:186
+#: archive.php:216
+#: index.php:30
+#: index.php:55
+#: index.php:82
+#: index.php:108
+#: index.php:132
+#: index.php:159
+#: index.php:184
+#: search.php:30
+#: search.php:56
+#: search.php:84
+#: search.php:114
+#: search.php:142
+#: search.php:168
+#: search.php:195
+#: page.php:27
+#: template-parts/single-post.php:30
+msgid "page"
+msgstr ""
+
+#: comments.php:19
+msgid 'One thought on &ldquo;%s&rdquo;'
+msgstr ""
+
+#: comments.php:32
+msgid 'comments title'
 msgstr ""
 
 #: comments.php:66
 msgid 'Comments are closed.'
 msgstr ""
 
-#: footer.php:27
-msgid "Automobile Theme Design & Developed By"
+#: footer.php:47
+msgid 'Theme Design & Developed By'
 msgstr ""
 
 #: functions.php:27
@@ -85,12 +138,12 @@ msgstr ""
 msgid "Appears on posts and pages"
 msgstr ""
 
-#: functions.php:89
-msgid "Third Column Sidebar"
-msgstr ""
-
 #: functions.php:79
 msgid "Posts and Pages Sidebar"
+msgstr ""
+
+#: functions.php:89
+msgid "Third Column Sidebar"
 msgstr ""
 
 #: functions.php:99
@@ -116,19 +169,21 @@ msgstr ""
 msgid "Appears on footer"
 msgstr ""
 
-#: header.php:16
+#: functions.php:142
+msgid "Footer Widget"
+msgstr ""
+
+#: functions.php:378
+msgid "Buywptemplate"
+msgstr ""
+
+#: header.php:71
 msgid "Menu"
 msgstr ""
 
-
-#: header.php:36
-msgid "example@123.com"
+#: header.php:85
+msgid 'MAKE AN APPOINTMENT'
 msgstr ""
-
-#: header.php:84
-msgid "Make an Appointment"
-msgstr ""
-
 
 #: image.php:35
 #: image.php:71
@@ -136,13 +191,9 @@ msgstr ""
 #: image.php:140
 #: image.php:177
 #: image.php:214
+#: image.php:251
 #: page.php:23
-#: single.php:30
-#: single.php:87
-#: single.php:146
-#: single.php:205
-#: single.php:264
-#: single.php:321
+#: template-parts/single-post.php:26
 msgid "Pages:"
 msgstr ""
 
@@ -152,62 +203,17 @@ msgstr ""
 #: image.php:145
 #: image.php:182
 #: image.php:219
+#: image.php:256
 msgid "Edit"
 msgstr ""
 
-#: archive.php:32
-#: archive.php:61
-#: archive.php:92
-#: archive.php:125
-#: archive.php:156
-#: archive.php:185
-#: index.php:29
-#: index.php:54
-#: index.php:81
-#: index.php:107
-#: index.php:131
-#: index.php:158
-#: search.php:29
-#: search.php:55
-#: search.php:83
-#: search.php:113
-#: search.php:141
-#: search.php:167
-#: single.php:46
-#: single.php:103
-#: single.php:162
-#: single.php:221
-#: single.php:280
-#: single.php:337
-msgid "Next page"
-msgstr ""
-
-#: archive.php:33
-#: archive.php:62
-#: archive.php:93
-#: archive.php:126
-#: archive.php:157
-#: archive.php:186
-#: index.php:30
-#: index.php:55
-#: index.php:82
-#: index.php:108
-#: index.php:132
-#: index.php:159
-#: page.php:27
-#: search.php:30
-#: search.php:56
-#: search.php:84
-#: search.php:114
-#: search.php:142
-#: search.php:168
-#: single.php:34
-#: single.php:91
-#: single.php:150
-#: single.php:209
-#: single.php:268
-#: single.php:325
-msgid "page"
+#: search.php:14
+#: search.php:40
+#: search.php:68
+#: search.php:96
+#: search.php:126
+#: search.php:152
+msgid 'Search Results for: %s'
 msgstr ""
 
 #: no-results.php:9
@@ -227,7 +233,6 @@ msgstr ""
 msgid "Search"
 msgstr ""
 
-
 #: searchform.php:9
 msgid "placeholder"
 msgstr ""
@@ -244,34 +249,46 @@ msgstr ""
 msgid "Meta"
 msgstr ""
 
-#: single.php:47
-#: single.php:104
-#: single.php:163
-#: single.php:222
-#: single.php:281
-#: single.php:338
-msgid "Next post:"
+#: page-template/custom-home-page.php:40
+msgid 'READ MORE'
 msgstr ""
 
-#: single.php:50
-#: single.php:107
-#: single.php:166
-#: single.php:225
-#: single.php:284
-#: single.php:341
-msgid "Previous post:"
+#: template-parts/content-audio.php:40
+#: template-parts/content-gallery.php:29
+#: template-parts/content-image.php:22
+#: template-parts/content-video.php:40
+#: template-parts/content.php:22
+#: template-parts/grid-layout.php:23
+msgid "View More"
 msgstr ""
 
-
-#: single.php:20
-#: single.php:75
-#: single.php:134
-#: single.php:193
-#: single.php:252
-#: single.php:309
-msgid "0 Comment"
+#: template-parts/single-post.php:14
+msgid '0 Comment'
 msgstr ""
 
+#: template-parts/single-post.php:13
+msgid "% Comment"
+msgstr ""
+
+#: template-parts/single-post.php:37
+msgid 'Parent post link'
+msgstr ""
+
+#: template-parts/single-post.php:43
+msgid 'Next post:'
+msgstr ""
+
+#: template-parts/single-post.php:46
+msgid 'Previous post:'
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:26
+msgid 'You must be logged in to checkout.'
+msgstr ""
+
+#: woocommerce/checkout/form-checkout.php:52
+msgid 'Your order'
+msgstr ""
 
 #: inc/customizer.php:18
 msgid "Theme Settings"
@@ -285,8 +302,8 @@ msgstr ""
 msgid "Layout Settings"
 msgstr ""
 
-#: inc/customizer.php:43
-msgid "Left Sidebar"
+#: inc/customizer.php:36
+msgid 'Do you want this section'
 msgstr ""
 
 #: inc/customizer.php:31
@@ -310,119 +327,238 @@ msgstr ""
 msgid "Grid Layout"
 msgstr ""
 
-#: inc/customizer.php:571
-msgid "Slider Settings"
+#: inc/customizer.php:43
+msgid "Left Sidebar"
 msgstr ""
 
-#: inc/customizer.php:585
-msgid "Select Slide Image Page"
+#: inc/customizer.php:145
+msgid 'Typography'
 msgstr ""
 
-#: inc/customizer.php:468
+#: inc/customizer.php:156
+msgid 'Paragraph Color'
+msgstr ""
+
+#: inc/customizer.php:169
+msgid 'Paragraph Fonts'
+msgstr ""
+
+#: inc/customizer.php:180
+msgid 'Paragraph Font Size'
+msgstr ""
+
+#: inc/customizer.php:192
+msgid '"a" Tag Color'
+msgstr ""
+
+#: inc/customizer.php:205
+msgid '"a" Tag Fonts'
+msgstr ""
+
+#: inc/customizer.php:216
+msgid '"li" Tag Color'
+msgstr ""
+
+#: inc/customizer.php:229
+msgid '"li" Tag Fonts'
+msgstr ""
+
+#: inc/customizer.php:240
+msgid 'H1 Color'
+msgstr ""
+
+#: inc/customizer.php:253
+msgid 'H1 Fonts'
+msgstr ""
+
+#: inc/customizer.php:265
+msgid 'H1 Font Size'
+msgstr ""
+
+#: inc/customizer.php:276
+msgid 'h2 Color'
+msgstr ""
+
+#: inc/customizer.php:289
+msgid 'h2 Fonts'
+msgstr ""
+
+#: inc/customizer.php:301
+msgid 'h2 Font Size'
+msgstr ""
+
+#: inc/customizer.php:313
+msgid 'H3 Color'
+msgstr ""
+
+#: inc/customizer.php:326
+msgid 'H3 Fonts'
+msgstr ""
+
+#: inc/customizer.php:337
+msgid 'H3 Font Size'
+msgstr ""
+
+#: inc/customizer.php:349
+msgid 'H4 Color'
+msgstr ""
+
+#: inc/customizer.php:362
+msgid 'H4 Fonts'
+msgstr ""
+
+#: inc/customizer.php:374
+msgid 'H4 Font Size'
+msgstr ""
+
+#: inc/customizer.php:386
+msgid 'H5 Color'
+msgstr ""
+
+#: inc/customizer.php:399
+msgid 'H5 Fonts'
+msgstr ""
+
+#: inc/customizer.php:411
+msgid 'H5 Font Size'
+msgstr ""
+
+#: inc/customizer.php:423
+msgid 'H6 Color'
+msgstr ""
+
+#: inc/customizer.php:436
+msgid 'H6 Fonts'
+msgstr ""
+
+#: inc/customizer.php:447
+msgid 'H6 Font Size'
+msgstr ""
+
+#: inc/customizer.php:455
 msgid "Social Icon Section"
 msgstr ""
 
-#: inc/customizer.php:469
+#: inc/customizer.php:456
 msgid "Add Social Link here"
 msgstr ""
 
-#: inc/customizer.php:479
+#: inc/customizer.php:466
 msgid "Add Facebook link"
 msgstr ""
 
-#: inc/customizer.php:490
+#: inc/customizer.php:477
 msgid "Add Twitter link"
 msgstr ""
 
-#: inc/customizer.php:501
+#: inc/customizer.php:488
 msgid "Add Google Plus link"
 msgstr ""
 
-#: inc/customizer.php:512
-msgid "Add Pintrest link"
+#: inc/customizer.php:499
+msgid "Add Pinterest link"
 msgstr ""
 
-#: inc/customizer.php:523
+#: inc/customizer.php:510
 msgid "Add Tumblr link"
 msgstr ""
 
-#: inc/customizer.php:645
-msgid "Select Category to display Latest Post"
-msgstr ""
-
-#: inc/customizer.php:651
-msgid "Footer Text"
-msgstr ""
-
-#: inc/customizer.php:652
-msgid "Add some text for footer like copyright etc."
-msgstr ""
-
-#: inc/customizer.php:662
-msgid "Copyright Text"
-msgstr ""
-
-#: inc/customizer.php:744
-msgid "Automobile Pro"
-msgstr ""
-
-#: inc/customizer.php:745
-msgid "Go Pro"
-msgstr ""
-
-#: inc/customizer.php:36
-msgid "Do you want this section"
-msgstr ""
-
-#: inc/customizer.php:531
+#: inc/customizer.php:518
 msgid "Contact Us"
 msgstr ""
 
-#: inc/customizer.php:532
+#: inc/customizer.php:519
 msgid "Add contact us here"
 msgstr ""
 
-#: inc/customizer.php:542
+#: inc/customizer.php:529
 msgid "Email"
 msgstr ""
 
-#: inc/customizer.php:552
+#: inc/customizer.php:539
 msgid "Phone No"
 msgstr ""
 
-#: inc/customizer.php:563
+#: inc/customizer.php:549
 msgid "Appointment us url"
 msgstr ""
 
-#: inc/customizer.php:593
+#: inc/customizer.php:557
+msgid "Slider Settings"
+msgstr ""
+
+#: inc/customizer.php:568
+msgid 'Show / Hide slider'
+msgstr ""
+
+#: inc/customizer.php:581
+msgid 'Select Slide Image Page'
+msgstr ""
+
+#: inc/customizer.php:589
 msgid "Our Project Section"
 msgstr ""
 
-#: inc/customizer.php:594
+#: inc/customizer.php:590
 msgid "Add Our Project sections below."
 msgstr ""
 
-#: inc/customizer.php:604
+#: inc/customizer.php:600
 msgid "Title"
 msgstr ""
 
-#: inc/customizer.php:623
+#: inc/customizer.php:620
 msgid "Select post"
 msgstr ""
 
-
-#: page-template/custom-home-page.php:42
-msgid "Read More"
+#: inc/customizer.php:643
+msgid "Select Category to display Latest Post"
 msgstr ""
 
-#: page-template/custom-home-page.php:71
-msgid "About Us"
+#: inc/customizer.php:649
+msgid "Footer Text"
 msgstr ""
 
-#: template-parts/custom-audio.php:40
-#: template-parts/custom-gallery.php:29
-#: template-parts/custom-image.php:22
-#: template-parts/custom-video.php:40
-#: template-parts/grid-layout.php:23
-msgid "View More"
+#: inc/customizer.php:659
+msgid "Footer widget area"
+msgstr ""
+
+#: inc/customizer.php:661
+msgid "Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets"
+msgstr ""
+
+#: inc/customizer.php:663
+#: inc/customizer.php:784
+msgid "One"
+msgstr ""
+
+#: inc/customizer.php:664
+#: inc/customizer.php:785
+msgid "Two"
+msgstr ""
+
+#: inc/customizer.php:665
+#: inc/customizer.php:786
+msgid "Three"
+msgstr ""
+
+#: inc/customizer.php:666
+#: inc/customizer.php:787
+msgid "Four"
+msgstr ""
+
+#: inc/customizer.php:675
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/customizer.php:677
+msgid "Add some text for footer like copyright etc."
+msgstr ""
+
+#: inc/customizer.php:758
+msgid "Automobile Pro"
+msgstr ""
+
+#: inc/customizer.php:759
+msgid "Go Pro"
 msgstr ""

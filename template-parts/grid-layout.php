@@ -1,12 +1,12 @@
 <?php
 /**
- * The template part for displaying slider
+ * The template part for displaying grid layout
  * @package Automobile Car Dealer
  * @subpackage automobile_car_dealer
  * @since 1.0
  */
 ?>
-<div class="col-md-4 col-sm-4">
+<div class="col-lg-4 col-md-4">
   <div id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>    
     <h3 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h3>  
     <div class="box-image">

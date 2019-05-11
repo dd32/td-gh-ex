@@ -1,6 +1,6 @@
 <?php
 /**
- * The template part for displaying slider
+ * The template part for displaying gallery post
  * @package Automobile Car Dealer
  * @subpackage automobile_car_dealer
  * @since 1.0
@@ -10,22 +10,20 @@
   <h3 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h3>  
   <div class="box-image">
     <?php
-          if ( ! is_single() ) {
-
-            // If not a single post, highlight the gallery.
-            if ( get_post_gallery() ) {
-              echo '<div class="entry-gallery">';
-              echo get_post_gallery();
-              echo '</div>';
-            };
-
-          };
+      if ( ! is_single() ) {
+        // If not a single post, highlight the gallery.
+        if ( get_post_gallery() ) {
+          echo '<div class="entry-gallery">';
+          echo get_post_gallery();
+          echo '</div>';
+        };
+      };
     ?> 
   </div>
   <div class="new-text">
     <p><?php the_excerpt();?></p>
   </div>
   <div class="postbtn">
-    <a href="<?php the_permalink(); ?>"><?php esc_html_e('Veiw More','automobile-car-dealer'); ?></a>
+    <a href="<?php the_permalink(); ?>"><?php esc_html_e('View More','automobile-car-dealer'); ?></a>
   </div>
 </div>

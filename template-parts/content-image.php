@@ -1,6 +1,6 @@
 <?php
 /**
- * The template part for displaying slider
+ * The template part for displaying image post
  * @package Automobile Car Dealer
  * @subpackage automobile_car_dealer
  * @since 1.0
@@ -19,6 +19,6 @@
     <p><?php the_excerpt();?></p>
   </div>
   <div class="postbtn">
-    <a href="<?php the_permalink(); ?>"><?php esc_html_e('Veiw More','automobile-car-dealer'); ?></a>
+    <a href="<?php the_permalink(); ?>"><?php esc_html_e('View More','automobile-car-dealer'); ?></a>
   </div>
 </div>

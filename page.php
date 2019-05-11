@@ -14,7 +14,7 @@ get_header(); ?>
             <h1><?php the_title();?></h1>
             <?php if(has_post_thumbnail()) { ?>
                 <div class="feature-box">   
-                    <img src="<?php the_post_thumbnail_url('full'); ?>" width="100%">
+                    <img src="<?php the_post_thumbnail_url('full'); ?>">
                 </div>
             <?php } ?>
             <?php the_content();
