@@ -81,6 +81,7 @@ class WooCommerce {
 		add_filter( 'woocommerce_product_get_rating_html', [ self::get_instance(), 'modify_rating_html' ], 10, 3 );
 		add_filter( 'bayleaf_get_attr_site_main', [ self::get_instance(), 'remove_wrapper' ] );
 		add_filter( 'bayleaf_after_woo_widget_title', [ self::get_instance(), 'woo_wid_title' ], 10, 2 );
+		add_filter( 'get_terms_defaults', [ self::get_instance(), 'bug_fix_wc_change_get_terms_defaults' ], 9, 2 );
 	}
 
 	/**
@@ -530,6 +531,26 @@ class WooCommerce {
 			'all'
 		);
 		wp_style_add_data( 'bayleaf_woocommerce_style', 'rtl', 'replace' );
+	}
+
+	/**
+	 * Bug fix for WooCommerce 'wc_change_get_terms_defaults' function in 'includes/wc-term-fruntions.php'.
+	 *
+	 * To be removed once this bug is resolved in WooCommerce.
+	 *
+	 * @since 1.3.6
+	 *
+	 * @param array $defaults   An array of default get_terms() arguments.
+	 * @param array $taxonomies An array of taxonomies.
+	 * @return array
+	 */
+	public function bug_fix_wc_change_get_terms_defaults( $defaults, $taxonomies ) {
+		if ( is_array( $taxonomies ) && ! isset( $taxonomies[0] ) ) {
+			remove_filter( 'get_terms_defaults', 'wc_change_get_terms_defaults', 10, 2 );
+			return $defaults;
+		}
+
+		return $defaults;
 	}
 
 	/**

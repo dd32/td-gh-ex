@@ -65,7 +65,7 @@ let library = {
 		if (window.requestAnimationFrame) {
 			window.requestAnimationFrame(this.onRaf.bind(this));
 		} else {
-			setTimeout(this.onRaf.bind(this), 66);
+			setTimeout(this.onRaf.bind(this), 1000/60);
 		}
 	},
 
@@ -133,7 +133,7 @@ let library = {
 			clearTimeout(scrollTimer);
 			scrollTimer = setTimeout( () => {
 				this.isScrolling = false;
-			}, 16.66 );
+			}, 1000/60 );
 		});
 	},
 
@@ -154,7 +154,7 @@ let library = {
 				resizeTimer2 = setTimeout( () => {
 					this.isResizing = false;
 				}, 60 );
-			}, 16.66 );
+			}, 1000/60 );
 		});
 	},
 
@@ -423,7 +423,7 @@ let library = {
 	 */
 	animation(elem, time, from, change, duration, fn, lastfn) {
 
-		const increment = 16.66;
+		const increment = 1000/60;
 		time += increment;
 		let value = this.easeInOutQuad(time, from, change, duration);
 		fn(elem, value);

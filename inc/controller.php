@@ -112,6 +112,12 @@ function bayleaf_get_theme_controls( $controls = [] ) {
 				'type'    => 'checkbox',
 			],
 			[
+				'label'   => esc_html__( 'Blog Title', 'bayleaf' ),
+				'section' => 'bayleaf_general_section',
+				'setting' => 'bayleaf_blog_title',
+				'type'    => 'text',
+			],
+			[
 				'label'       => esc_html__( 'Footer Text', 'bayleaf' ),
 				'section'     => 'bayleaf_general_section',
 				'setting'     => 'bayleaf_footer_text',
@@ -141,6 +147,7 @@ function bayleaf_get_theme_defaults( $defaults = [] ) {
 			'bayleaf_primary_nav'           => 1,
 			'bayleaf_related_posts'         => 1,
 			'bayleaf_thumbnail_placeholder' => 1,
+			'bayleaf_blog_title'            => esc_html__( 'Latest from - The Blog', 'bayleaf' ),
 			'bayleaf_footer_text'           => '[site_title] [copy_symbol] [current_year] &middot; ' . esc_html__( 'All rights reserved', 'bayleaf' ), // Note: Translation friendly instructions for using footer text placeholders has been given in customizer control description.
 		]
 	);

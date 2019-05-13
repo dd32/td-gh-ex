@@ -53,7 +53,7 @@ class Plugins_Compat {
 	 * @since 1.0.0
 	 */
 	public static function init() {
-		// Compatibility to The Events Calender Plugin.
+		// Compatibility to The Events Calendar Plugin.
 		if ( class_exists( 'Tribe__Events__Main' ) ) {
 			add_filter( 'bayleaf_markup_entry_index_wrapper', [ self::get_instance(), 'display_events' ] );
 			add_filter( 'bayleaf_template_page_header', [ self::get_instance(), 'disable_page_header' ] );
@@ -209,7 +209,7 @@ class Plugins_Compat {
 		}
 
 		if ( 'tribe_events' === $instance['post_type'] ) {
-			$link_html = sprintf( '<span class="dp-term-links"><a class="term-link" href="%1$s">%2$s %3$s</a></span>', esc_url( tribe_get_events_link() ), esc_html__( 'Calender', 'bayleaf' ), bayleaf_get_icon( array( 'icon' => 'long-arrow-right' ) ) );
+			$link_html = sprintf( '<span class="dp-term-links"><a class="term-link" href="%1$s">%2$s %3$s</a></span>', esc_url( tribe_get_events_link() ), esc_html__( 'Calendar', 'bayleaf' ), bayleaf_get_icon( array( 'icon' => 'long-arrow-right' ) ) );
 		}
 
 		return '</span>' . $link_html . '</h3>';

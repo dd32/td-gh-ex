@@ -151,9 +151,11 @@ function bayleaf_main_navigation() {
 	}
 
 	printf(
-		'<button aria-expanded="false" class="menu-toggle"><span class="bar"><span class="screen-reader-text">%1$s</span></span></button>',
-		esc_html__( 'Site Navigation', 'bayleaf' )
-	); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		'<button aria-expanded="false" class="menu-toggle"><span class="screen-reader-text">%1$s</span>%2$s%3$s</button>',
+		esc_html__( 'Site Navigation', 'bayleaf' ),
+		bayleaf_get_icon( [ 'icon' => 'menu' ] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		bayleaf_get_icon( [ 'icon' => 'close' ] ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	);
 
 	bayleaf_nav_menu(
 		'site-navigation',
@@ -190,9 +192,11 @@ function bayleaf_user_action_items() {
  */
 function bayleaf_header_widgets() {
 	printf(
-		'<button class="action-toggle"><span class="bar"><span class="screen-reader-text">%1$s</span></span></button>',
-		esc_html__( 'Show secondary sidebar', 'bayleaf' )
-	); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		'<button class="action-toggle"><span class="screen-reader-text">%1$s</span>%2$s%3$s</button>',
+		esc_html__( 'Show secondary sidebar', 'bayleaf' ),
+		bayleaf_get_icon( [ 'icon' => 'more' ] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		bayleaf_get_icon( [ 'icon' => 'close' ] ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	);
 	echo '<div id="header-widget-area" class="header-widget-area">';
 	if ( is_active_sidebar( 'sidebar' ) ) {
 		bayleaf_widgets(
@@ -328,11 +332,25 @@ function bayleaf_page_header() {
  */
 function bayleaf_blog_title() {
 	if ( is_home() ) {
-		printf(
-			'<div class="title-wrapper wrapper"><div class="blog-title"><span class="bt-1">%s</span><span class="bt-2">%s</span></div></div>',
-			esc_html__( 'Latest from', 'bayleaf' ),
-			esc_html__( 'The Blog', 'bayleaf' )
-		);
+		$blog_title = bayleaf_get_mod( 'bayleaf_blog_title', 'html' );
+		if ( ! $blog_title ) {
+			return;
+		}
+		$blog_title = explode( '-', $blog_title );
+		?>
+		<div class="title-wrapper wrapper">
+			<div class="blog-title">
+				<?php
+				if ( isset( $blog_title[0] ) ) {
+					printf( '<span class="bt-1">%s</span>', esc_html( trim( $blog_title[0] ) ) );
+				}
+				if ( isset( $blog_title[1] ) ) {
+					printf( '<span class="bt-2">%s</span>', esc_html( trim( $blog_title[1] ) ) );
+				}
+				?>
+			</div>
+		</div>
+		<?php
 	}
 }
 
