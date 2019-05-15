@@ -4,7 +4,7 @@ Tags:  blog, one-column, right-sidebar, custom-header, custom-logo, custom-menu,
 Requires at least: 4.5
 Tested up to: 5.0.3
 Requires PHP: 5.2.4
-Stable tag: 1.0.5
+Stable tag: 1.1.0
 License:      GNU General Public License v2 or later
 License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -76,7 +76,7 @@ Logo, Copyright © 2018, Podamibe Nepal
 License: GNU GPL, Version 3, https://www.gnu.org/licenses/gpl-3.0.html
 
 License: CC0 Public Domain
-Source: https://stocksnap.io/photo/SWR31HJ4D8
+Source: https://stocksnap.io/photo/LFOKYK5LRE
 
 
 == Upgrade Notice == 
@@ -99,6 +99,9 @@ Source: https://stocksnap.io/photo/SWR31HJ4D8
 
 
 == Changelog ==
+= Version 1.1.0 2019 March 18 =
+* add the new demo data
+
 = Version 1.0.9 2019 March 18 =
 * add the elementor plugin compitable
 * add the demo import section

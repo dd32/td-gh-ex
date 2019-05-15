@@ -10,22 +10,22 @@
 function academic_hub_import_files() {
     return array(
       array(
-        'import_file_name'           => 'Default',
+        'import_file_name'           => 'Education',
         'categories'                 => array( 'Education'),
-        'import_file_url'            =>  get_template_directory_uri() . '/academic-hub/demo-import/content.xml',
-        'import_widget_file_url'     =>  get_template_directory_uri() . '/academic-hub/demo-import/widgets.wie',
-        'import_customizer_file_url' =>  get_template_directory_uri() . '/academic-hub/demo-import/customizer.dat',
-        'import_preview_image_url'   =>  get_template_directory_uri() . '/screenshot.png',
+        'import_file_url'            =>  get_template_directory_uri() . '/academic-hub/demo-import/demo-2//content.xml',
+        'import_widget_file_url'     =>  get_template_directory_uri() . '/academic-hub/demo-import/demo-2//widgets.wie',
+        'import_customizer_file_url' =>  get_template_directory_uri() . '/academic-hub/demo-import/demo-2//customizer.dat',
+        'import_preview_image_url'   =>  get_template_directory_uri() . '/academic-hub/demo-import/demo-2/screenshot.png',
         'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'academic-hub' ),
         'preview_url'                => 'https://academic-hub.podamibenepal.com/',
       ),
       array(
-        'import_file_name'           => 'Default',
+        'import_file_name'           => 'Education Old',
         'categories'                 => array( 'Education'),
-        'import_file_url'            =>  get_template_directory_uri() . '/academic-hub/demo-import/content.xml',
-        'import_widget_file_url'     =>  get_template_directory_uri() . '/academic-hub/demo-import/widgets.wie',
-        'import_customizer_file_url' =>  get_template_directory_uri() . '/academic-hub/demo-import/customizer.dat',
-        'import_preview_image_url'   =>  get_template_directory_uri() . '/screenshot.png',
+        'import_file_url'            =>  get_template_directory_uri() . '/academic-hub/demo-import/demo-1//content.xml',
+        'import_widget_file_url'     =>  get_template_directory_uri() . '/academic-hub/demo-import/demo-1//widgets.wie',
+        'import_customizer_file_url' =>  get_template_directory_uri() . '/academic-hub/demo-import/demo-1//customizer.dat',
+        'import_preview_image_url'   =>  get_template_directory_uri() . '/academic-hub/demo-import/demo-1/screenshot.png',
         'import_notice'              => __( 'After you import this demo, you will have to setup the slider separately.', 'academic-hub' ),
         'preview_url'                => 'https://academic-hub.podamibenepal.com/',
       ),
@@ -49,8 +49,8 @@ function academic_hub_after_import_setup() {
   );
 
   // Assign front page and posts page (blog page).
-  $front_page_id = get_page_by_title( 'Home' );
-  $blog_page_id  = get_page_by_title( 'Blogs' );
+  $front_page_id = get_page_by_title( 'home' );
+  $blog_page_id  = get_page_by_title( 'News' );
 
   update_option( 'show_on_front', 'page' );
   update_option( 'page_on_front', $front_page_id->ID );
