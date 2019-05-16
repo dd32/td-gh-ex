@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/audioman/
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Audioman is a well-designed, modern and trendy music WordPress theme built for musicians and bands that focuses on promoting their music and events. Simple modules and features are available in Audioman so you can build a complete and custom website right away. The theme comes with an array of features — such as header media, featured slider, featured content, hero content, playlist, portfolio, testimonials, and more — to keep your music website on the forefront. Audioman is completely responsive, which means your website will look incredibly sleek and visually appealing on all the devices with different screen resolution. The theme is deeply engaging, and the features provided in it will assist you in gaining genuine followers in a short period of time. To top it all, the theme is translation ready. For more details, check out Theme Instructions at https://catchthemes.com/themes/audioman/#theme-instructions, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/audioman/
-Version: 1.1.4
+Version: 2.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, entertainment, photography, portfolio
@@ -380,11 +380,7 @@ textarea {
 	line-height: 1.333333333333333;
 }
 
-.site-title {
-	font-size: 20px;
-	font-size: 1.25rem;
-}
-
+.site-title ,
 #site-generator .social-navigation a {
 	font-size: 24px;
 	font-size: 1.5rem;
@@ -1536,6 +1532,7 @@ body.menu-open {
 	background-color: transparent;
 	display: block;
 	font-weight: 400;
+	line-height: 1.375;
 	margin: 0 auto;
 }
 
@@ -1547,13 +1544,13 @@ body.menu-open {
 }
 
 #primary-search-wrapper .menu-toggle {
-	-webkit-border-radius: 38px;
-	border-radius: 38px;
+	-webkit-border-radius: 36px;
+	border-radius: 36px;
 	display: inline-block;
-	height: 38px;
+	height: 36px;
 	padding: 0;
 	text-align: center;
-	width: 38px;
+	width: 36px;
 }
 
 /* Dropdown Toggle */
@@ -1603,7 +1600,7 @@ body.menu-open {
 }
 
 #primary-search-wrapper > .social-navigation .menu-social-container {
-	padding: 21px 0;
+	padding: 22px 0;
 }
 
 .site-header-menu .menu-label {
@@ -1679,11 +1676,11 @@ body.menu-open {
 	display: inline-block;
 	font-size: 16px;
 	font-size: 1rem;
-	height: 38px;
-	line-height: 38px;
+	height: 36px;
+	line-height: 36px;
 	margin: 2px 4px;
 	text-align: center;
-	width: 38px;
+	width: 36px;
 }
 
 .widget .social-links-menu a {
@@ -1691,6 +1688,51 @@ body.menu-open {
 	height: 42px;
 	line-height: 42px;
 	width: 42px;
+}
+
+.widget .social-links-menu a:hover:before {
+  -webkit-animation: toBottomFromTop 0.3s forwards;
+  -moz-animation: toBottomFromTop 0.3s forwards;
+  animation: toBottomFromTop 0.3s forwards;
+}
+
+@-webkit-keyframes toBottomFromTop {
+	49% {
+		-webkit-transform: translateY(100%);
+	}
+	50% {
+		opacity: 0;
+		-webkit-transform: translateY(-100%);
+	}
+	51% {
+		opacity: 1;
+	}
+}
+
+@-moz-keyframes toBottomFromTop {
+	49% {
+		-moz-transform: translateY(100%);
+	}
+	50% {
+		opacity: 0;
+		-moz-transform: translateY(-100%);
+	}
+	51% {
+		opacity: 1;
+	}
+}
+
+@keyframes toBottomFromTop {
+	49% {
+		transform: translateY(100%);
+	}
+	50% {
+		opacity: 0;
+		transform: translateY(-100%);
+	}
+	51% {
+		opacity: 1;
+	}
 }
 
 #site-generator .social-navigation {
@@ -1702,7 +1744,7 @@ body.menu-open {
 }
 
 #site-generator .social-navigation a:before {
-	line-height: 38px;
+	line-height: 36px;
 }
 
 .social-navigation a:before {
@@ -2439,7 +2481,7 @@ blockquote:after,
 #footer-newsletter .section-heading-wrapper {
 	padding-left: 0;
 	padding-right: 0;
-	padding-bottom: 7px;
+	padding-bottom: 21px;
 }
 
 #footer-newsletter .ew-newsletter-wrap form {
@@ -4477,15 +4519,15 @@ body .flashy-container .flashy-content {
 @-webkit-keyframes a {
     to {
         -webkit-transform: rotate(1turn);
-        transform: rotate(1turn)
-    };
+        transform: rotate(1turn);
+    }
 }
 
 @keyframes a {
     to {
         -webkit-transform: rotate(1turn);
-        transform: rotate(1turn)
-    };
+        transform: rotate(1turn);
+    }
 }
 
 .mejs-controls {
@@ -5304,7 +5346,7 @@ video.wp-video-shortcode {
 
 .wp-playlist .wp-playlist-current-item img {
     float: left;
-    max-width: 60px;
+    max-width: 55px;
     height: auto;
     margin-right: 10px;
     padding: 0;
@@ -6551,7 +6593,7 @@ input[type="submit"]:disabled {
 	font-size: 16px;
 	font-size: 1rem;
 	letter-spacing: 0.1em;
-	line-height: 1;
+	line-height: 1.375;
 	padding: 17px;
 	text-decoration: none;
 	text-transform: uppercase;
@@ -7644,7 +7686,7 @@ dl.variation p {
 @media screen and (min-width: 48em) {
 	/* Woocommerce styles */
 	.site-header-cart {
-	    padding: 8px 10px;
+	    padding: 24px 10px;
 	}
 
 	table.shop_table {
@@ -7728,7 +7770,7 @@ dl.variation p {
 	}
 
 	.site-header-cart .cart-contents {
-		padding: 11px 10px;
+		padding: 7px 10px;
 	}
 
 	.site-header-cart .cart-contents .count {
@@ -7804,11 +7846,11 @@ dl.variation p {
 	.menu-toggle-wrapper {
 		display: block;
 		float: left;
-		padding: 8px 0;
+		padding: 24px 7px;
 	}
 
 	.menu-toggle {
-		padding: 10px;
+		padding: 7px 10px;
 	}
 
 	.menu-inside-wrapper {
@@ -8527,7 +8569,7 @@ dl.variation p {
 	}
 
 	.navigation-classic .main-navigation a {
-		padding: 14px 20px;
+		padding: 28px 20px;
 		line-height: 2;
 	}
 
@@ -8979,9 +9021,14 @@ body {
 	background-color: #151515;
 }
 
-@media screen and (min-width: 64em) {
-	.navigation-classic .main-navigation ul ul,
+@media screen and (min-width: 48em) {
 	.site-header-cart .widget_shopping_cart {
+		background-color: #151515;
+	}
+}
+
+@media screen and (min-width: 64em) {
+	.navigation-classic .main-navigation ul ul {
 		background-color: #151515;
 	}
 }

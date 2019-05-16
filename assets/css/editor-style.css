@@ -1,5 +1,5 @@
 /*
-Theme Name: Audioman
+Theme Name: Audioman 
 Description: Used to style the TinyMCE editor
 
 /**
@@ -59,7 +59,6 @@ blockquote,
 	font-size: 1.125rem;
 }
 
-button,
 .button,
 input[type="button"],
 input[type="reset"],
@@ -93,8 +92,7 @@ i {
 }
 
 blockquote {
-	border: 4px solid;
-	border-width: 4px 0 4px 4px; 
+	border-left: 4px solid;
 	font-weight: 700;
 	line-height: 1.4;
 	margin: 0 0 1.4736842105em;
@@ -148,17 +146,25 @@ address {
 }
 
 code,
+.mce-content-body code,
 kbd,
+.mce-content-body kbd,
 tt,
+.mce-content-body tt, 
 var,
-samp {
+.mce-content-body var,
+samp,
+.mce-content-body samp {
 	font-family: Inconsolata, monospace;
 	font-size: 16px;
 	font-size: 1rem;
 }
 
-pre {
+pre,
+.mce-content-body pre {
+	color: inherit;
 	font-family: Inconsolata, monospace;
+	font-size: 1em;
 	line-height: 1.555;
 	margin: 0 0 1.75em;
 	max-width: 100%;
@@ -169,7 +175,8 @@ pre {
 	word-wrap: break-word;
 }
 
-code {
+code,
+.mce-content-body code {
 	padding: 0.125em 0.25em;
 }
 
@@ -307,8 +314,11 @@ td,
 }
 
 caption,
+.mce-item-table caption,
 th,
-td {
+.mce-item-table th,
+td,
+.mce-item-table td {
     padding: 0.778em;
 }
 
@@ -342,7 +352,6 @@ td {
 	padding: 7px 14px;
 }
 
-button,
 .button,
 input[type="button"],
 input[type="reset"],
@@ -379,9 +388,6 @@ input {
 	line-height: normal;
 }
 
-button,
-button[disabled]:hover,
-button[disabled]:focus,
 .button,
 input[type="button"],
 input[type="button"][disabled]:hover,
@@ -677,24 +683,10 @@ h6:first-child {
  }
 
  .wp-audio-shortcode,
- .wp-video/*,
- .wp-playlist.wp-audio-playlist*/ {
+ .wp-video {
      margin-top: 0;
      margin-bottom: 1.75em;
  }
-
- /*.wp-playlist.wp-audio-playlist {
-     padding-bottom: 0;
- }*/
-
- /*.wp-playlist .wp-playlist-tracks {
-     margin-top: 0;
- }
-
- .wp-playlist-item .wp-playlist-caption {
-     border-bottom: 0;
-     padding: 0.7142857143em 0;
- }*/
 
  .wp-playlist-item .wp-playlist-item-length {
      top: 0.75em;
@@ -971,15 +963,15 @@ h6:first-child {
 @-webkit-keyframes a {
     to {
         -webkit-transform: rotate(1turn);
-        transform: rotate(1turn)
-    };
+        transform: rotate(1turn);
+    }
 }
 
 @keyframes a {
     to {
         -webkit-transform: rotate(1turn);
-        transform: rotate(1turn)
-    };
+        transform: rotate(1turn);
+    }
 }
 
 .mejs-controls {
@@ -1803,7 +1795,7 @@ video.wp-video-shortcode {
 
 .wp-playlist .wp-playlist-current-item img {
     float: left;
-    max-width: 60px;
+    max-width: 55px;
     height: auto;
     margin-right: 10px;
     padding: 0;
@@ -1850,6 +1842,12 @@ video.wp-video-shortcode {
     bottom: 0;
     left: 0;
     width: 100%;
+}
+
+.mejs-container .mejs-controls .mejs-playpause-button.mejs-button button {
+	-webkit-border-radius: 50%;
+	border-radius: 50%;
+	color: #fff;
 }
 
 .mejs-container .mejs-controls .mejs-button button:before {
@@ -1971,9 +1969,9 @@ body .wp-playlist {
 }
 
 body .wp-playlist .wp-playlist-current-item img {
-    margin-right: 10px;
-    width: 40px;
-    height: 40px;
+    margin-right: 14px;
+    width: 55px;
+    height: 55px;
 }
 
 body .wp-playlist-caption,
@@ -2396,9 +2394,7 @@ body .wp-playlist-item:hover .wp-playlist-item-artist,
 body .wp-playlist-item:focus .wp-playlist-item-artist,
 body .wp-playlist-item:hover .wp-playlist-caption,
 body .wp-playlist-item:focus .wp-playlist-caption,
-/*.mejs-container button:hover,
-.mejs-container button:focus,
-.wp-playlist-light*/ .mejs-container button,
+.mejs-container button,
 .mejs-container .mejs-controls .mejs-time {
 	color: #fff;
 }
@@ -2406,8 +2402,8 @@ body .wp-playlist-item:focus .wp-playlist-caption,
 /* Link Hover Color */
 a:focus,
 a:hover,
-/*.wp-playlist-light */.mejs-container button:hover,
-/*.wp-playlist-light */.mejs-container button:focus {
+.mejs-container button:hover,
+.mejs-container button:focus {
 	color: #fb3a64;
 }
 
@@ -2463,9 +2459,6 @@ td,
 .page-links a,
 .page-links a:hover,
 .page-links a:focus,
-button,
-button[disabled]:hover,
-button[disabled]:focus,
 .button,
 input[type="button"],
 input[type="button"][disabled]:hover,
@@ -2476,8 +2469,6 @@ input[type="reset"][disabled]:focus,
 input[type="submit"],
 input[type="submit"][disabled]:hover,
 input[type="submit"][disabled]:focus,
-button:hover,
-button:focus,
 .button:hover,
 .button:focus,
 input[type="button"]:hover,
@@ -2491,9 +2482,6 @@ input[type="submit"]:focus {
 
 /* Button Background Color */
 .button,
-button,
-button[disabled]:hover,
-button[disabled]:focus,
 input[type="button"],
 input[type="button"][disabled]:hover,
 input[type="button"][disabled]:focus,
@@ -2502,21 +2490,12 @@ input[type="reset"][disabled]:hover,
 input[type="reset"][disabled]:focus,
 input[type="submit"],
 input[type="submit"][disabled]:hover,
-input[type="submit"][disabled]:focus {
+input[type="submit"][disabled]:focus,
+.mejs-container .mejs-controls .mejs-playpause-button.mejs-button button {
 	background-image: linear-gradient(-180deg, #f857a6 0%, #ff5858 100%);
 }
 
-/* Remaining */
-blockquote {
-	-webkit-border-image: -webkit-linear-gradient(-180deg, #f857a6, #ff5858) 1 100%; 
-	-moz-border-image: -moz-linear-gradient(-180deg, #f857a6, #ff5858) 1 100%; 
-	-o-border-image: -o-linear-gradient(-180deg, #f857a6, #ff5858) 1 100%; 
-	border-image: linear-gradient(-180deg, #f857a6, #ff5858) 1 100%; 
-}
-
 /* Button Hover Background Color */
-button:hover,
-button:focus,
 .button:hover,
 .button:focus,
 input[type="button"]:hover,
@@ -2526,7 +2505,9 @@ input[type="reset"]:focus,
 input[type="submit"]:hover,
 input[type="submit"]:focus,
 .page-links a:hover,
-.page-links a:focus {
+.page-links a:focus,
+.mejs-container .mejs-controls .mejs-playpause-button.mejs-button button:hover,
+.mejs-container .mejs-controls .mejs-playpause-button.mejs-button button:focus  {
 	background-image: linear-gradient(-360deg, #f857a6 0%, #ff5858 100%);
 }
 
@@ -2565,5 +2546,9 @@ body .wp-playlist-dark .wp-playlist-item:focus {
 }
 
 body .wp-playlist-dark .wp-playlist-current-item .wp-playlist-item-meta {
+	color: #fff;
+}
+
+.mejs-container .mejs-controls .mejs-playpause-button.mejs-button button {
 	color: #fff;
 }

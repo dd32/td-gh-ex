@@ -237,6 +237,98 @@ if ( ! function_exists( 'audioman_setup' ) ) :
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
+
+		// Add support for Block Styles.
+		add_theme_support( 'wp-block-styles' );
+
+		// Add support for full and wide align images.
+		add_theme_support( 'align-wide' );
+
+		// Add support for editor styles.
+		add_theme_support( 'editor-styles' );
+
+		// Add support for responsive embeds.
+		add_theme_support( 'responsive-embeds' );
+
+		// Add custom editor font sizes.
+		add_theme_support(
+			'editor-font-sizes',
+			array(
+				array(
+					'name'      => esc_html__( 'Small', 'audioman' ),
+					'shortName' => esc_html__( 'S', 'audioman' ),
+					'size'      => 13,
+					'slug'      => 'small',
+				),
+				array(
+					'name'      => esc_html__( 'Normal', 'audioman' ),
+					'shortName' => esc_html__( 'M', 'audioman' ),
+					'size'      => 18,
+					'slug'      => 'normal',
+				),
+				array(
+					'name'      => esc_html__( 'Large', 'audioman' ),
+					'shortName' => esc_html__( 'L', 'audioman' ),
+					'size'      => 42,
+					'slug'      => 'large',
+				),
+				array(
+					'name'      => esc_html__( 'Huge', 'audioman' ),
+					'shortName' => esc_html__( 'XL', 'audioman' ),
+					'size'      => 64,
+					'slug'      => 'huge',
+				),
+			)
+		);
+
+		// Add support for custom color scheme.
+		add_theme_support( 'editor-color-palette', array(
+			array(
+				'name'  => esc_html__( 'White', 'audioman' ),
+				'slug'  => 'white',
+				'color' => '#ffffff',
+			),
+			array(
+				'name'  => esc_html__( 'Black', 'audioman' ),
+				'slug'  => 'black',
+				'color' => '#000000',
+			),
+			array(
+				'name'  => esc_html__( 'Eighty Black', 'audioman' ),
+				'slug'  => 'eighty-black',
+				'color' => '#151515',
+			),
+			array(
+				'name'  => esc_html__( 'Sixty Five Black', 'audioman' ),
+				'slug'  => 'sixty-five-black',
+				'color' => '#151515',
+			),
+			array(
+				'name'  => esc_html__( 'Gray', 'audioman' ),
+				'slug'  => 'gray',
+				'color' => '#444444',
+			),
+			array(
+				'name'  => esc_html__( 'Medium Gray', 'audioman' ),
+				'slug'  => 'medium-gray',
+				'color' => '#7b7b7b',
+			),
+			array(
+				'name'  => esc_html__( 'Light Gray', 'audioman' ),
+				'slug'  => 'light-gray',
+				'color' => '#f8f8f8',
+			),
+			array(
+				'name'  => esc_html__( 'Dark Pink', 'audioman' ),
+				'slug'  => 'dark-pink',
+				'color' => '#ff5858',
+			),
+			array(
+				'name'  => esc_html__( 'Pink', 'audioman' ),
+				'slug'  => 'pink',
+				'color' => '#f857a6',
+			),
+		) );
 	}
 endif;
 add_action( 'after_setup_theme', 'audioman_setup' );
@@ -413,9 +505,14 @@ add_action( 'wp_head', 'audioman_javascript_detection', 0 );
  * Enqueue scripts and styles.
  */
 function audioman_scripts() {
+	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'audioman-fonts', audioman_fonts_url(), array(), null );
 
+	// Theme stylesheet.
 	wp_enqueue_style( 'audioman-style', get_stylesheet_uri() );
+
+	// Theme block stylesheet.
+	wp_enqueue_style( 'audioman-block-style', get_theme_file_uri( '/assets/css/blocks.css' ), array( 'audioman-style' ), '1.0' );
 
 	wp_enqueue_style( 'font-awesome', trailingslashit( esc_url ( get_template_directory_uri() ) ) . 'assets/css/font-awesome/css/font-awesome.css', array(), '4.7.0', 'all' );
 
@@ -484,6 +581,18 @@ function audioman_scripts() {
 	wp_deregister_style('wp-mediaelement');
 }
 add_action( 'wp_enqueue_scripts', 'audioman_scripts' );
+
+/**
+ * Enqueue editor styles for Gutenberg
+ */
+function audioman_block_editor_styles() {
+	// Block styles.
+	wp_enqueue_style( 'audioman-block-editor-style', get_theme_file_uri( 'assets/css/editor-blocks.css' ) );
+	
+	// Add custom fonts.
+	wp_enqueue_style( 'audioman-fonts', audioman_fonts_url(), array(), null );
+}
+add_action( 'enqueue_block_editor_assets', 'audioman_block_editor_styles' );
 
 if ( ! function_exists( 'audioman_excerpt_length' ) ) :
 	/**

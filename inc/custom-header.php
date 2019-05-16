@@ -272,7 +272,7 @@ if ( ! function_exists( 'audioman_header_media_text' ) ):
 
 			<?php if ( is_front_page() ) :
 				$header_media_url      = get_theme_mod( 'audioman_header_media_url', '#' );
-				$header_media_url_text = get_theme_mod( 'audioman_header_media_url_text', esc_html__( 'More', 'audioman' ) );
+				$header_media_url_text = get_theme_mod( 'audioman_header_media_url_text', esc_html__( 'View More', 'audioman' ) );
 			?>
 
 				<?php if ( $header_media_url_text ) : ?>
@@ -300,7 +300,7 @@ if ( ! function_exists( 'audioman_has_header_media_text' ) ):
 			$header_media_title    = get_theme_mod( 'audioman_header_media_title' );
 			$header_media_text     = get_theme_mod( 'audioman_header_media_text', esc_html__( 'Go to Theme Customizer', 'audioman' ) );
 			$header_media_url      = get_theme_mod( 'audioman_header_media_url', '#' );
-			$header_media_url_text = get_theme_mod( 'audioman_header_media_url_text', esc_html__( 'More', 'audioman' ) );
+			$header_media_url_text = get_theme_mod( 'audioman_header_media_url_text', esc_html__( 'View More', 'audioman' ) );
 
 			if ( ! $header_media_logo && ! $header_media_title && ! $header_media_text && ! $header_media_url && ! $header_media_url_text ) {
 				// Bail early if header media text is disabled

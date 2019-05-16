@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Audioman\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2019-04-01 23:15-0400\n"
+"POT-Creation-Date: 2019-05-16 10:51-0400\n"
 "PO-Revision-Date: 2016-12-07 01:05-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -61,58 +61,126 @@ msgstr ""
 msgid "Footer Social Menu"
 msgstr ""
 
-#: ../functions.php:331
+#: ../functions.php:258
+msgid "Small"
+msgstr ""
+
+#: ../functions.php:259
+msgid "S"
+msgstr ""
+
+#: ../functions.php:264
+msgid "Normal"
+msgstr ""
+
+#: ../functions.php:265
+msgid "M"
+msgstr ""
+
+#: ../functions.php:270
+msgid "Large"
+msgstr ""
+
+#: ../functions.php:271
+msgid "L"
+msgstr ""
+
+#: ../functions.php:276
+msgid "Huge"
+msgstr ""
+
+#: ../functions.php:277
+msgid "XL"
+msgstr ""
+
+#: ../functions.php:287
+msgid "White"
+msgstr ""
+
+#: ../functions.php:292
+msgid "Black"
+msgstr ""
+
+#: ../functions.php:297
+msgid "Eighty Black"
+msgstr ""
+
+#: ../functions.php:302
+msgid "Sixty Five Black"
+msgstr ""
+
+#: ../functions.php:307
+msgid "Gray"
+msgstr ""
+
+#: ../functions.php:312
+msgid "Medium Gray"
+msgstr ""
+
+#: ../functions.php:317
+msgid "Light Gray"
+msgstr ""
+
+#: ../functions.php:322
+msgid "Dark Pink"
+msgstr ""
+
+#: ../functions.php:327
+msgid "Pink"
+msgstr ""
+
+#: ../functions.php:423
 msgid "Sidebar"
 msgstr ""
 
-#: ../functions.php:333
+#: ../functions.php:425
 msgid "Add widgets here."
 msgstr ""
 
-#: ../functions.php:338
+#: ../functions.php:430
 msgid "Footer 1"
 msgstr ""
 
-#: ../functions.php:340 ../functions.php:347 ../functions.php:354
+#: ../functions.php:432 ../functions.php:439 ../functions.php:446
 msgid "Add widgets here to appear in your footer."
 msgstr ""
 
-#: ../functions.php:345
+#: ../functions.php:437
 msgid "Footer 2"
 msgstr ""
 
-#: ../functions.php:352
+#: ../functions.php:444
 msgid "Footer 3"
 msgstr ""
 
-#: ../functions.php:360
+#: ../functions.php:452
 msgid "Instagram"
 msgstr ""
 
-#: ../functions.php:362
+#: ../functions.php:454
 msgid ""
 "Appears above footer. This sidebar is only for Widget from plugin Catch Instagram Feed Gallery "
 "Widget and Catch Instagram Feed Gallery Widget Pro"
 msgstr ""
 
-#: ../functions.php:382
+#: ../functions.php:474
 msgctxt "Roboto: on or off"
 msgid "on"
 msgstr ""
 
-#: ../functions.php:441
+#: ../functions.php:538
 msgid "expand child menu"
 msgstr ""
 
-#: ../functions.php:442
+#: ../functions.php:539
 msgid "collapse child menu"
 msgstr ""
 
-#: ../functions.php:521 ../functions.php:544 ../functions.php:571
+#: ../functions.php:630 ../functions.php:653 ../functions.php:680
 msgid "Continue reading"
 msgstr ""
 
-#: ../header.php:24
+#: ../header.php:27
 msgid "Skip to content"
 msgstr ""
 
@@ -569,7 +637,8 @@ msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
 #: ../inc/custom-header.php:275 ../inc/custom-header.php:303 ../inc/customizer/header-media.php:105
-msgid "More"
+#: ../inc/events.php:74
+msgid "View More"
 msgstr ""
 
 #: ../inc/custom-header.php:301 ../inc/custom-header.php:346 ../inc/customizer/header-media.php:87
@@ -1106,10 +1175,6 @@ msgstr ""
 
 #: ../inc/customizer/upgrade-button/class-customize.php:77
 msgid "Upgrade Now"
-msgstr ""
-
-#: ../inc/events.php:74
-msgid "View More"
 msgstr ""
 
 #: ../inc/featured-slider.php:36 ../template-parts/testimonial/display-testimonial.php:64

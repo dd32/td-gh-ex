@@ -102,7 +102,7 @@ function audioman_header_media_options( $wp_customize ) {
 
 	audioman_register_option( $wp_customize, array(
 			'name'              => 'audioman_header_media_url_text',
-			'default'           => esc_html__( 'More', 'audioman' ),
+			'default'           => esc_html__( 'View More', 'audioman' ),
 			'sanitize_callback' => 'sanitize_text_field',
 			'label'             => esc_html__( 'Header Media Url Text', 'audioman' ),
 			'section'           => 'header_image',

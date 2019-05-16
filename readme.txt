@@ -2,8 +2,8 @@
 Contributors: catchthemes
 Tags: one-column, two-columns, right-sidebar, flexible-header, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, entertainment, photography, portfolio
 Requires at least: 4.8
-Tested up to: 5.1.1
-Stable tag: 1.1.4
+Tested up to: 5.2
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -42,6 +42,19 @@ You can check our Theme Demo at https://catchthemes.com/demo/audioman/
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+2.0 (Released: May 16, 2019) =
+* Added: Theme support for for editor styles
+* Added: Theme support for block styles
+* Added: Theme support for full and wide align images
+* Added: Theme support for responsive embeds
+* Added: Theme support for custom editor font sizes
+* Added: Theme support for custom color scheme
+* Added: Support for wp_body_open action
+* Updated: Header CSS
+* Updated: Animation for social icons in widgets
+* Bug Fixed: Animation issue in media player
+* Bug Fixed: Default value in header media 	url text
 
 = 1.1.4 (Released: April 02, 2019) =
 * Bug Fixed: No sidebar template width alignment issue
