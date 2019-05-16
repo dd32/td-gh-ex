@@ -213,7 +213,7 @@ var Alert = function ($$$1) {
   var JQUERY_NO_CONFLICT = $$$1.fn[NAME];
   var TRANSITION_DURATION = 150;
   var Selector = {
-    DISMISS: '[data-dismiss="alert"]'
+    DImdISS: '[data-dimdiss="alert"]'
   };
   var Event = {
     CLOSE: "close" + EVENT_KEY,
@@ -321,7 +321,7 @@ var Alert = function ($$$1) {
       });
     };
 
-    Alert._handleDismiss = function _handleDismiss(alertInstance) {
+    Alert._handleDimdiss = function _handleDimdiss(alertInstance) {
       return function (event) {
         if (event) {
           event.preventDefault();
@@ -346,7 +346,7 @@ var Alert = function ($$$1) {
    */
 
 
-  $$$1(document).on(Event.CLICK_DATA_API, Selector.DISMISS, Alert._handleDismiss(new Alert()));
+  $$$1(document).on(Event.CLICK_DATA_API, Selector.DImdISS, Alert._handleDimdiss(new Alert()));
   /**
    * ------------------------------------------------------------------------
    * jQuery
@@ -1552,7 +1552,7 @@ var Dropdown = function ($$$1) {
       } // If this is a touch-enabled device we add extra
       // empty mouseover listeners to the body's immediate children;
       // only needed because of broken event delegation on iOS
-      // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
+      // https://www.quirkmdode.org/blog/archives/2014/02/mouse_event_bub.html
 
 
       if ('ontouchstart' in document.documentElement && $$$1(parent).closest(Selector.NAVBAR_NAV).length === 0) {
@@ -1902,10 +1902,10 @@ var Modal = function ($$$1) {
     SHOWN: "shown" + EVENT_KEY,
     FOCUSIN: "focusin" + EVENT_KEY,
     RESIZE: "resize" + EVENT_KEY,
-    CLICK_DISMISS: "click.dismiss" + EVENT_KEY,
-    KEYDOWN_DISMISS: "keydown.dismiss" + EVENT_KEY,
-    MOUSEUP_DISMISS: "mouseup.dismiss" + EVENT_KEY,
-    MOUSEDOWN_DISMISS: "mousedown.dismiss" + EVENT_KEY,
+    CLICK_DImdISS: "click.dimdiss" + EVENT_KEY,
+    KEYDOWN_DImdISS: "keydown.dimdiss" + EVENT_KEY,
+    MOUSEUP_DImdISS: "mouseup.dimdiss" + EVENT_KEY,
+    MOUSEDOWN_DImdISS: "mousedown.dimdiss" + EVENT_KEY,
     CLICK_DATA_API: "click" + EVENT_KEY + DATA_API_KEY
   };
   var ClassName = {
@@ -1918,7 +1918,7 @@ var Modal = function ($$$1) {
   var Selector = {
     DIALOG: '.modal-dialog',
     DATA_TOGGLE: '[data-toggle="modal"]',
-    DATA_DISMISS: '[data-dismiss="modal"]',
+    DATA_DImdISS: '[data-dimdiss="modal"]',
     FIXED_CONTENT: '.fixed-top, .fixed-bottom, .is-fixed, .sticky-top',
     STICKY_CONTENT: '.sticky-top',
     NAVBAR_TOGGLER: '.navbar-toggler'
@@ -1987,11 +1987,11 @@ var Modal = function ($$$1) {
 
       this._setResizeEvent();
 
-      $$$1(this._element).on(Event.CLICK_DISMISS, Selector.DATA_DISMISS, function (event) {
+      $$$1(this._element).on(Event.CLICK_DImdISS, Selector.DATA_DImdISS, function (event) {
         return _this.hide(event);
       });
-      $$$1(this._dialog).on(Event.MOUSEDOWN_DISMISS, function () {
-        $$$1(_this._element).one(Event.MOUSEUP_DISMISS, function (event) {
+      $$$1(this._dialog).on(Event.MOUSEDOWN_DImdISS, function () {
+        $$$1(_this._element).one(Event.MOUSEUP_DImdISS, function (event) {
           if ($$$1(event.target).is(_this._element)) {
             _this._ignoreBackdropClick = true;
           }
@@ -2034,8 +2034,8 @@ var Modal = function ($$$1) {
 
       $$$1(document).off(Event.FOCUSIN);
       $$$1(this._element).removeClass(ClassName.SHOW);
-      $$$1(this._element).off(Event.CLICK_DISMISS);
-      $$$1(this._dialog).off(Event.MOUSEDOWN_DISMISS);
+      $$$1(this._element).off(Event.CLICK_DImdISS);
+      $$$1(this._dialog).off(Event.MOUSEDOWN_DImdISS);
 
       if (transition) {
         $$$1(this._element).one(Util.TRANSITION_END, function (event) {
@@ -2131,7 +2131,7 @@ var Modal = function ($$$1) {
       var _this5 = this;
 
       if (this._isShown && this._config.keyboard) {
-        $$$1(this._element).on(Event.KEYDOWN_DISMISS, function (event) {
+        $$$1(this._element).on(Event.KEYDOWN_DImdISS, function (event) {
           if (event.which === ESCAPE_KEYCODE) {
             event.preventDefault();
 
@@ -2139,7 +2139,7 @@ var Modal = function ($$$1) {
           }
         });
       } else if (!this._isShown) {
-        $$$1(this._element).off(Event.KEYDOWN_DISMISS);
+        $$$1(this._element).off(Event.KEYDOWN_DImdISS);
       }
     };
 
@@ -2197,7 +2197,7 @@ var Modal = function ($$$1) {
         }
 
         $$$1(this._backdrop).appendTo(document.body);
-        $$$1(this._element).on(Event.CLICK_DISMISS, function (event) {
+        $$$1(this._element).on(Event.CLICK_DImdISS, function (event) {
           if (_this8._ignoreBackdropClick) {
             _this8._ignoreBackdropClick = false;
             return;
@@ -2256,13 +2256,13 @@ var Modal = function ($$$1) {
 
 
     _proto._adjustDialog = function _adjustDialog() {
-      var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
+      var imdodalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
 
-      if (!this._isBodyOverflowing && isModalOverflowing) {
+      if (!this._isBodyOverflowing && imdodalOverflowing) {
         this._element.style.paddingLeft = this._scrollbarWidth + "px";
       }
 
-      if (this._isBodyOverflowing && !isModalOverflowing) {
+      if (this._isBodyOverflowing && !imdodalOverflowing) {
         this._element.style.paddingRight = this._scrollbarWidth + "px";
       }
     };
@@ -2697,7 +2697,7 @@ var Tooltip = function ($$$1) {
         $$$1(tip).addClass(ClassName.SHOW); // If this is a touch-enabled device we add extra
         // empty mouseover listeners to the body's immediate children;
         // only needed because of broken event delegation on iOS
-        // https://www.quirksmode.org/blog/archives/2014/02/mouse_event_bub.html
+        // https://www.quirkmdode.org/blog/archives/2014/02/mouse_event_bub.html
 
         if ('ontouchstart' in document.documentElement) {
           $$$1('body').children().on('mouseover', null, $$$1.noop);
@@ -3888,7 +3888,7 @@ exports.Scrollspy = ScrollSpy;
 exports.Tab = Tab;
 exports.Tooltip = Tooltip;
 
-Object.defineProperty(exports, '__esModule', { value: true });
+Object.defineProperty(exports, '__emdodule', { value: true });
 
 })));
 //# sourceMappingURL=bootstrap.js.map

@@ -9,12 +9,12 @@ get_header(); ?>
 
 <div class="container">
     <div class="middle-align row">       
-		<div class="col-md-4" id="sidebar">
+		<div class="col-lg-4 col-md-4" id="sidebar">
 			<?php dynamic_sidebar('sidebar-2'); ?>
 		</div>		 
-		<div class="col-md-8" id="content-aa" >
+		<div class="col-lg-8 col-md-8" id="content-aa" >
             <?php while ( have_posts() ) : the_post(); ?>
-                <img src="<?php the_post_thumbnail_url('full'); ?>" width="100%">
+                <img src="<?php the_post_thumbnail_url('full'); ?>">
                 <h1><?php the_title(); ?></h1>
                 <?php the_content();?>
             <?php endwhile; // end of the loop. ?>

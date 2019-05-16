@@ -4,11 +4,11 @@ Theme URI: https://www.themescaliber.com/themes/free-blog-wordpress-theme/
 Author: ThemesCaliber
 Author URI: https://www.themescaliber.com/
 Description: Advance Blogging is a clean and minimal multipurpose WordPress blog theme for writing variety of blogs like lifestyle blog, food blog, sports blog, technology blog, fashion blog, health blog, travel blog, photography blog, craft blog are just few of them. You can use this theme for building magazine website, landing page and for creating professional portfolio. Though it is essentially a writer’s theme, it can be used for newspaper websites. The theme is readily responsive and cross-browser compatible. It is a highly customizable theme to make changes to its header, footer, logo, background etc. It is SEO-friendly with its code optimized for search engines. It is written in clean and secure codes complying with WordPress standards. The theme is so lightweight that it loads fast on all devices giving a great user experience. With multiple layout options, unlimited colours and various template designs, you can give your site the desired look. It uses banner and large sliders to leave a lasting impression on visitors. With the implementation of clean code, coding has become bug-free and secure.  The theme is made on Bootstrap framework for easy usage. It is an interacting and at the same time attractive theme for bloggers out there. Demo: https://www.themescaliber.com/advance-blogging-pro/
-Version: 0.4
+Version: 0.5
 License: GNU General Public License
 License URI: license.txt
 Text Domain: advance-blogging
-Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout,custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, theme-options, threaded-comments, front-page-post-form, translation-ready, rtl-language-support, blog, e-commerce, news
+Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout,custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, theme-options, post-formats, threaded-comments, front-page-post-form, translation-ready, rtl-language-support, blog, e-commerce, news
 
 Advance Blogging WordPress Theme has been created by ThemesCaliber (ThemesCaliber.com), 2018.
 Advance Blogging WordPress Theme is released under the terms of GNU GPL
@@ -178,7 +178,7 @@ input[type='submit']:hover{
   margin:0;
   padding:0;
 }
-small{
+mdall{
   font-size:14px !important;
 }
 input[type="text"],
@@ -530,7 +530,7 @@ span.entry-comments i,
   margin-right: 10px;
 }
 /* single post end*/
-.smallpostimage {
+.mdallpostimage {
   margin-bottom: 15px;
 }
 /* latest post*/
@@ -578,7 +578,12 @@ hr.metahr {
 .month {
   margin-top: 5px;
 }
-
+.entry-audio audio {
+    width: 100%;
+}
+iframe{
+  width: 100%;
+}
 
 /*latest post end*/    
 /* woocommerce */
@@ -796,7 +801,7 @@ span.woocommerce-input-wrapper,
   margin: 0px !important;
   font-weight: 300;
 }
-.blogbutton-small{
+.blogbutton-mdall{
   background:#f73637;
   padding:6px 25px;
   color:#fff;
@@ -1163,7 +1168,7 @@ span.woocommerce-input-wrapper,
     position:absolute;
     z-index:9999;
     overflow-x:hidden;
-    top: -17em;
+    top: -16em;
     width: 100%;
     right: 0;
     left: 0;

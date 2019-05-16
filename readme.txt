@@ -1,60 +1,45 @@
-/*----------------------------------------------------------------------------*/
-/* Advance Blogging Responsive WordPress Theme */
-/*----------------------------------------------------------------------------*/
+=== Advance Blogging WordPress Theme ===
+Contributors: ThemesCaliber
+Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout,custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, theme-options, post-formats, threaded-comments, front-page-post-form, translation-ready, rtl-language-support, blog, e-commerce, news
+Requires at least: 4.8
+Tested up to: 5.2
+Requires PHP: 7.2.14
+Stable tag: 0.5
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Theme Name      :   Advance Blogging
-Theme URI       :   https://www.themescaliber.com/themes/free-blog-wordpress-theme/
-Version         :   0.4
-Tested up to    :   WP 4.9.8
-Author          :   ThemesCaliber
-Author URI      :   https://www.themescaliber.com
-license         :   GNU General Public License v3.0
-License URI     :   http://www.gnu.org/licenses/gpl.html
+Advance Blogging is a clean and minimal multipurpose WordPress blog theme for writing variety of blogs like lifestyle blog, food blog, sports blog, technology blog, fashion blog, health blog, travel blog, photography blog, craft blog are just few of them. You can use this theme for building magazine website, landing page and for creating professional portfolio. Though it is essentially a writer’s theme, it can be used for newspaper websites. The theme is readily responsive and cross-browser compatible.
 
-/*----------------------------------------------------------------------------*/
-/* About Author - Contact Details */
-/*----------------------------------------------------------------------------*/
+== Description ==
 
-Email       	:   support@themescaliber.com
+Advance Blogging is a clean and minimal multipurpose WordPress blog theme for writing variety of blogs like lifestyle blog, food blog, sports blog, technology blog, fashion blog, health blog, travel blog, photography blog, craft blog are just few of them. You can use this theme for building magazine website, landing page and for creating professional portfolio. Though it is essentially a writer’s theme, it can be used for newspaper websites. The theme is readily responsive and cross-browser compatible. It is a highly customizable theme to make changes to its header, footer, logo, background etc. It is SEO-friendly with its code optimized for search engines. It is written in clean and secure codes complying with WordPress standards. The theme is so lightweight that it loads fast on all devices giving a great user experience. With multiple layout options, unlimited colours and various template designs, you can give your site the desired look. It uses banner and large sliders to leave a lasting impression on visitors. With the implementation of clean code, coding has become bug-free and secure. The theme is made on Bootstrap framework for easy usage. It is an interacting and at the same time attractive theme for bloggers out there.
 
-/*----------------------------------------------------------------------------*/
-/* Home Page Setup Steps*/
-/*----------------------------------------------------------------------------*/
-Below are the steps to setup theme static page.
-=========================================================
+== Changelog ==
 
-	Step 1. Create a page named as "home page" and select the template "Custom Home Page".
+= 0.1 =
+* Initial Version Released.
 
-	Step 2. Go to customizer >> static front page >> check Static page, then select the page which you have added (for example "home page").
+= 0.2 =
+* Changed theme color.
+* Resolved theme audit issues.
+* Done the customization in css file.
+* Added pixabay image urls.
 
-For Slider
-==============
+= 0.3 =
+* Added tgm plugin activation in theme.
+* Updated Woocommerce.
 
-	Step 1. Create a page, add its title, content and featured image then publish it.
+= 0.4 =
+* Removed the plugin comment from the front end.
 
-	Step 2. Go to customizer >> Theme Settings >> Slider settings >> here you can select the page which you have added.
+= 0.5 =
+* Added Post Formats.
+* Changed Screenshot.
+* Added Typography.
+* Updated POT file.
+* Updated readme file.
 
-For Category Post
-======================
-
-	Select Category
-
-	Step 1. Add new Category,  Then add new post add title, content, set featured image then publish it.
-
-	Step 2. Go to customizer >> Theme Settings >> Category Post >> here you can select category to display latest post.
-
-For Latest Post
-======================
-
-	Select Category
-
-	Step 1. Add new Category,  Then add new post add title, content, set featured image then publish it.
-
-	Step 2. Go to customizer >> Theme Settings >> Latest Post >> here you can select category to display latest post.
-
-/*----------------------------------------------------------------------------*/
-/* Theme Resources */
-/*----------------------------------------------------------------------------*/
+== Resources ==
 
 Advance Blogging WordPress Theme, Copyright 2018 ThemesCaliber
 Advance Blogging is distributed under the terms of the GNU GPL
@@ -66,55 +51,7 @@ Theme is Built using the following resource bundles.
 	Roboto font - https://fonts.google.com/specimen/Roboto
 	License: Distributed under the terms of the Apache License, version 2.0 http://www.apache.org/licenses/LICENSE-2.0.html
 
-2 - Pixabay Image,
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/service/terms/
-
-	Slider image, Copyright Daria-Yakovleva
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/raspberry-berry-summer-closeup-2023404/
-
-	Blog image, Copyright SHRAVANKUMAR
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/corvette-car-sports-front-light-1185258/
-
-	Blog image, Copyright Daria-Yakovleva
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/food-kitchen-cook-tomatoes-1932466/
-
-	Blog image, Copyright PublicDomainPictures
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/beach-beverage-caribbean-cocktail-84533/
-
-	Blog image, Copyright Free-Photos
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/coffee-cup-breakfast-cup-of-coffee-336627/
-
-	Gallery image, Copyright alphacreativa
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/pozole-restaurant-food-nachos-2820341/
-
-	Gallery image, Copyright Alexas_Fotos
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/strawberries-delicious-fruit-food-3089148/
-
-	Gallery image, Copyright ulleo
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/raspberries-close-up-background-1495713/
-
-	Gallery image, Copyright MadameYavi
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/cupcake-cake-muffin-candy-pastries-2716298/
-
-	Gallery image, Copyright Bernhard_Staerck  
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://pixabay.com/en/strawberry-red-delicious-fruits-1227174/
-
-	Gallery image, Copyright auntmasako
-	License: CC0 1.0 Universal (CC0 1.0)
-	Source: https://www.pexels.com/photo/adventure-asphalt-california-country-533671/
-
-3	CSS bootstrap.css
+2	CSS bootstrap.css
     -- Copyright 2011-2018 The Bootstrap Authors
     -- https://github.com/twbs/bootstrap/blob/master/LICENSE
     
@@ -126,30 +63,54 @@ Theme is Built using the following resource bundles.
     -- Font Awesome 4.3.0 by @davegandy - http://fontawesome.io - @fontawesome
  	-- License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 
-4  Customizer Licence
-	All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
-	2016 © Justin Tadlock.
+3   Customizer Pro, Copyright 2016 © Justin Tadlock.
+	License: All code, unless otherwise noted, is licensed under the GNU GPL, version 2 or later.
+	Source: https://github.com/justintadlock/trt-customizer-pro
 
-Advance Blogging Free version
-==========================================================
-Advance Blogging Free version is compatible with GPL licensed.
-For any help you can mail us at support[at]themescaliber.com
+4 - Screenshot Images.
+	License: CC0 1.0 Universal (CC0 1.0) 
+	Source: https://stocksnap.io/license
 
-Changelog
------------
+	Slider image, Copyright Jason Blackeye
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://stocksnap.io/photo/EKLWKITXH8
 
-Version 0.1
-	-- Initial Version Released.
+	Post image, Copyright Eneida Nieves
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://stocksnap.io/photo/XOXHIYEDQY
 
-Version 0.2
-	-- Changed theme color.
-	-- Resolved theme audit issues.
-	-- Done the customization in css file.
-	-- Added pixabay image urls.
+	Post image, Copyright Burst
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://stocksnap.io/photo/DWBKKRNQ9X
 
-Version 0.3
-	-- Added tgm plugin activation in theme.
-	-- Updated Woocommerce.
+	Post image, Copyright The Lazy Artist Gallery 
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://stocksnap.io/photo/ZNZZGFVY89
 
-Version 0.4
-	-- Removed the plugin comment from the front end.
+	Post image, Copyright Burst
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://stocksnap.io/photo/XVEL8ZOEW8
+
+	Gallery image, Copyright Sarah Pflug
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://stocksnap.io/photo/BPQSX1BQTF
+
+	Gallery image, Copyright Bernard Spragg
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://stocksnap.io/photo/OQD5HYNC10
+
+	Gallery image, Copyright Burst
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://stocksnap.io/photo/CCEUELWDKW
+
+	Gallery image, Copyright Urban Sanden
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://stocksnap.io/photo/KU7XRFB4RY
+
+	Gallery image, Copyright Tim Sullivan
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://stocksnap.io/photo/2SHBGB4ZCZ
+
+	Gallery image, Copyright Nirzar Pangarkar
+	License: CC0 1.0 Universal (CC0 1.0)
+	Source: https://stocksnap.io/photo/2TUFJQXQ8Q

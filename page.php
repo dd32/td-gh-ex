@@ -9,7 +9,6 @@
  *
  * @package Advance Blogging
  */
-
 get_header(); ?>
 
 <?php do_action( 'advance_blogging_header_page' ); ?>
@@ -18,7 +17,7 @@ get_header(); ?>
     <div class="middle-align">       
         <div id="content-aa">
             <?php while ( have_posts() ) : the_post(); ?>
-                <img src="<?php the_post_thumbnail_url('full'); ?>" width="100%">
+                <img src="<?php the_post_thumbnail_url('full'); ?>">
                 <h1><?php the_title(); ?></h1>
                 <?php the_content();
                 wp_link_pages( array(

@@ -6,7 +6,6 @@
  *
  * @package Advance Blogging
  */
-
 get_header(); ?>
 
 <?php do_action( 'advance_blogging_above_slider' ); ?>
@@ -14,11 +13,11 @@ get_header(); ?>
 <section id="slider">
 	<div class="container-fluid">
 		<div class="row">
-			<div class="col-md-8 p-0">
-				<div class="sliderq">
+			<div class="col-lg-8 col-md-8 p-0">
+				<div class="slider">
 				  	<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
 					    <?php $pages = array();
-					      for ( $count = 1; $count <= 3; $count++ ) {
+					      for ( $count = 1; $count <= 4; $count++ ) {
 					        $mod = intval( get_theme_mod( 'advance_blogging_slider_page' . $count ));
 					        if ( 'page-none-selected' != $mod ) {
 					          $pages[] = $mod;
@@ -33,7 +32,7 @@ get_header(); ?>
 					        $query = new WP_Query( $args );
 					        if ( $query->have_posts() ) :
 					          $i = 1;
-					    ?>     
+					    ?>
 					    <div class="carousel-inner" role="listbox">
 					      <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
 					        <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
@@ -61,7 +60,7 @@ get_header(); ?>
 				  	</div>  	
 				</div>		
 			</div>
-			<div class="col-md-4 p-0">
+			<div class="col-lg-4 col-md-4 p-0">
 				<div class="cat-post">
 					<?php 
 		              $page_query = new WP_Query(array( 'category_name' => esc_html(get_theme_mod('advance_blogging_blogcategory_setting'),'theblog')));?>
@@ -90,12 +89,12 @@ get_header(); ?>
 <section id="latest">
 	<div class="container">	
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-lg-8 col-md-8">
 				<div class="row">
 					<?php 
 		              $page_query = new WP_Query(array( 'category_name' => esc_html(get_theme_mod('advance_blogging_latest_post_setting'),'theblog')));?>
 		              <?php while( $page_query->have_posts() ) : $page_query->the_post(); ?>
-		                 	<div class="col-md-6">
+		                 	<div class="col-lg-6 col-md-6">
 		                 		<div class="post-section">
 				                    <div class="latest-post">
 				                    	<div class="latest-img-box">
@@ -122,7 +121,7 @@ get_header(); ?>
 		            ?>
 	        	</div>
 			</div>
-			<div class="col-md-4">
+			<div class="col-lg-4 col-md-4">
 				<div id="sidebar"><?php dynamic_sidebar('home'); ?></div>
 			</div>
 		</div>

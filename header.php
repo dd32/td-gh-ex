@@ -6,25 +6,21 @@
  *
  * @package Advance Blogging
  */
-
-?><!DOCTYPE html>
-
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
-
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
   <meta name="viewport" content="width=device-width">
   <link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'advance-blogging' ) ); ?>">
   <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?> class="main-bodybox">
   <div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','advance-blogging'); ?></a></div>
-
   <div class="topbar">
     <div class="container">    
       <div class="row">
-        <div class="col-md-11 social-icons ">
+        <div class="col-lg-11 col-md-11 col-8 social-icons ">
           <?php if( get_theme_mod( 'advance_blogging_facebook_url' ) != '') { ?>
             <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
           <?php } ?>
@@ -47,7 +43,7 @@
             <a href="<?php echo esc_url( get_theme_mod( 'advance_blogging_youtube_url','' ) ); ?>"><i class="fab fa-youtube" aria-hidden="true"></i></a>
           <?php } ?>
         </div>
-        <div class="search-box col-md-1 col-sm-1">
+        <div class="search-box col-lg-1 col-md-1 col-4">
           <span class="search-icon"><i class="fas fa-search"></i></span>
         </div>
       </div>  
@@ -60,24 +56,24 @@
     </div>
   </div>
   <div id="header">
-      <div class="logo">
-        <?php if( has_custom_logo() ){ advance_blogging_the_custom_logo();
-           }else{ ?>
-          <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-          <?php $description = get_bloginfo( 'description', 'display' );
-          if ( $description || is_customize_preview() ) : ?> 
-            <p class="site-description"><?php echo esc_html($description); ?></p>       
-        <?php endif; }?>
-      </div>
+    <div class="logo">
+      <?php if( has_custom_logo() ){ advance_blogging_the_custom_logo();
+         }else{ ?>
+        <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+        <?php $description = get_bloginfo( 'description', 'display' );
+        if ( $description || is_customize_preview() ) : ?> 
+          <p class="site-description"><?php echo esc_html($description); ?></p>       
+      <?php endif; }?>
+    </div>
     <div class="container">
       <div class="row menu-cart">
-        <div class="col-md-10 col-sm-10 p-0">
+        <div class="col-lg-10 col-md-10 p-0">
           <div class="menubox nav">
             <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
           </div>
           <div class="clear"></div>
         </div>
-        <div class=" col-md-2 col-sm-2 cart m-0">
+        <div class="col-lg-2 col-md-2 cart m-0">
           <?php if(class_exists('woocommerce')){ ?>
             <span class="cart-box"><i class="fab fa-opencart"></i><?php  esc_html_e( 'CART','advance-blogging' ); ?></span></a> 
             <div class="top-cart-content">

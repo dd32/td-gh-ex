@@ -33,14 +33,14 @@ msgid "Back to Home Page"
 msgstr ""
 
 #: comments.php:22
-msgid "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgid "One thought on &ldquo;%s&rdquo;"
 msgstr ""
 
-#: comments.php:30
+#: comments.php:32
 msgid "comments title"
 msgstr ""
 
-#: comments.php:55
+#: comments.php:57
 msgid "'Comments are closed."
 msgstr ""
 
@@ -48,12 +48,12 @@ msgstr ""
 msgid "Advance Blogging WordPress Theme By"
 msgstr ""
 
-#: header.php:22
+#: header.php:19
 msgid "Menu"
 msgstr ""
 
-#: header.php:51
-msgid "SUBSCRIBE"
+#: header.php:78
+msgid "CART"
 msgstr ""
 
 #: no-results.php:12
@@ -66,6 +66,14 @@ msgstr ""
 
 #: no-results.php:19
 msgid "Sorry, but nothing matched your search terms. Please try again with some different keywords."
+msgstr ""
+
+#: no-results.php:12
+msgid "Dont worry it happens to the best of us."
+msgstr ""
+
+#: no-results.php:12
+msgid "Back to Home Page"
 msgstr ""
 
 #: searchform.php:10
@@ -81,11 +89,11 @@ msgstr ""
 msgid "Submit Button"
 msgstr ""
 
-#: sidebar.php:12
+#: sidebar.php:11
 msgid "Archives"
 msgstr ""
 
-#: sidebar.php:18
+#: sidebar.php:17
 msgid "Meta"
 msgstr ""
 
@@ -235,61 +243,65 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:51
+#: functions.php:59
 msgid "Blog Sidebar"
 msgstr ""
 
-#: functions.php:52
+#: functions.php:60
 msgid "Appears on blog page sidebar"
 msgstr ""
 
-#: functions.php:61
+#: functions.php:69
 msgid "Page Sidebar"
 msgstr ""
 
-#: functions.php:62
-#: functions.php:72
-#: functions.php:122
+#: functions.php:70
+#: functions.php:80
+#: functions.php:130
 msgid "Appears on Page sidebar"
 msgstr ""
 
-#: functions.php:71
+#: functions.php:79
 msgid "Third Column Sidebar"
 msgstr ""
 
-#: functions.php:81
+#: functions.php:89
 msgid "Footer Nav 1"
 msgstr ""
 
-#: functions.php:91
+#: functions.php:99
 msgid "Footer Nav 2"
 msgstr ""
 
-#: functions.php:101
+#: functions.php:109
 msgid "Footer Nav 3"
 msgstr ""
 
-#: functions.php:111
+#: functions.php:119
 msgid "Footer Nav 4"
 msgstr ""
 
-#: functions.php:82
-#: functions.php:92
-#: functions.php:102
-#: functions.php:112
+#: functions.php:90
+#: functions.php:100
+#: functions.php:110
+#: functions.php:120
 msgid "Appears on footer"
 msgstr ""
 
-#: functions.php:121
+#: functions.php:129
 msgid "Home Page Sidebar"
 msgstr ""
 
+#: functions.php:385
+msgid "Blogging WordPress Theme"
+msgstr ""
+
 #: template-parts/grid-layout.php:22
-#: template-parts/content.php:28
+#: template-parts/content.php:29
 msgid "READ MORE"
 msgstr ""
 
-#: page-template/custom-frontpage.php:97
+#: page-template/custom-frontpage.php:115
 msgid 'READ MORE'
 msgstr ""
 
@@ -305,119 +317,230 @@ msgstr ""
 msgid "Theme Layout Settings"
 msgstr ""
 
-#: inc/customizer.php:41
+#: inc/customizer.php:40
 msgid "Do you want this section."
 msgstr ""
 
-#: inc/customizer.php:44
+#: inc/customizer.php:43
 msgid "Left Sidebar"
 msgstr ""
 
-#: inc/customizer.php:45
+#: inc/customizer.php:44
 msgid "Right Sidebar"
 msgstr ""
 
-#: inc/customizer.php:46
+#: inc/customizer.php:45
 msgid "One Column"
 msgstr ""
 
-#: inc/customizer.php:47
+#: inc/customizer.php:46
 msgid "Three Columns"
 msgstr ""
 
-#: inc/customizer.php:48
+#: inc/customizer.php:47
 msgid "Four Columns"
 msgstr ""
 
-#: inc/customizer.php:49
+#: inc/customizer.php:48
 msgid "Grid Layout"
 msgstr ""
 
-#: inc/customizer.php:56
-msgid "Social Icon Section"
-msgstr ""
-
-#: inc/customizer.php:57
-#: inc/customizer.php:
-msgid "Add Header Content here"
-msgstr ""
-
-#: inc/customizer.php:133
-msgid "Add Youtube link"
-msgstr ""
-
-#: inc/customizer.php:67
-msgid "Add Facebook link"
-msgstr ""
-
-#: inc/customizer.php:78
-msgid "Add Twitter link"
-msgstr ""
-
-#: inc/customizer.php:89
-msgid 'Add Google Plus link'
-msgstr ""
-
-#: inc/customizer.php:100
-msgid 'Add Pinterest link'
-msgstr ""
-
-#: inc/customizer.php:111
-msgid 'Add Linkedin link'
-msgstr ""
-
-#: inc/customizer.php:122
-msgid 'Add Instagram link'
-msgstr ""
-
-#: inc/customizer.php:141
-msgid "Slider Settings."
+#: inc/customizer.php:153
+msgid "Theme Settings"
 msgstr ""
 
 #: inc/customizer.php:154
-msgid "Select Slide Image Page"
+msgid 'Description of what this panel does.'
 msgstr ""
 
-#: inc/customizer.php:162
-msgid 'Category Post'
+#: inc/customizer.php:159
+msgid "Color / Font Pallete"
 msgstr ""
 
-#: inc/customizer.php:163
-msgid 'This section will appear below the slider.'
+#: inc/customizer.php:170
+msgid 'Paragraph Color'
 msgstr ""
 
-#: inc/customizer.php:185
-msgid 'Select Category to display Latest Post'
+#: inc/customizer.php:184
+msgid 'Paragraph Fonts'
 msgstr ""
 
-#: inc/customizer.php:191
-msgid 'Latest Post'
+#: inc/customizer.php:195
+msgid 'Paragraph Font Size'
 msgstr ""
 
-#: inc/customizer.php:192
-msgid 'This section will appear below the category post.'
-msgstr ""
-
-#: inc/customizer.php:214
-msgid 'Select Category to display Latest Post'
-msgstr ""
-
-#: inc/customizer.php:220
-msgid 'Footer Text'
+#: inc/customizer.php:207
+msgid '"a" Tag Color'
 msgstr ""
 
 #: inc/customizer.php:221
+msgid '"a" Tag Fonts'
+msgstr ""
+
+#: inc/customizer.php:232
+msgid '"li" Tag Color'
+msgstr ""
+
+#: inc/customizer.php:246
+msgid '"li" Tag Fonts'
+msgstr ""
+
+#: inc/customizer.php:257
+msgid 'H1 Color'
+msgstr ""
+
+#: inc/customizer.php:271
+msgid 'H1 Fonts'
+msgstr ""
+
+#: inc/customizer.php:283
+msgid 'H1 Font Size'
+msgstr ""
+
+#: inc/customizer.php:295
+msgid 'h2 Color'
+msgstr ""
+
+#: inc/customizer.php:309
+msgid 'h2 Fonts'
+msgstr ""
+
+#: inc/customizer.php:321
+msgid 'h2 Font Size'
+msgstr ""
+
+#: inc/customizer.php:333
+msgid 'h3 Color'
+msgstr ""
+
+#: inc/customizer.php:347
+msgid 'h3 Fonts'
+msgstr ""
+
+#: inc/customizer.php:359
+msgid 'h3 Font Size'
+msgstr ""
+
+#: inc/customizer.php:371
+msgid 'h4 Color'
+msgstr ""
+
+#: inc/customizer.php:385
+msgid 'h4 Fonts'
+msgstr ""
+
+#: inc/customizer.php:397
+msgid 'h4 Font Size'
+msgstr ""
+
+#: inc/customizer.php:409
+msgid 'h5 Color'
+msgstr ""
+
+#: inc/customizer.php:423
+msgid 'h5 Fonts'
+msgstr ""
+
+#: inc/customizer.php:435
+msgid 'h5 Font Size'
+msgstr ""
+
+#: inc/customizer.php:447
+msgid 'h6 Color'
+msgstr ""
+
+#: inc/customizer.php:461
+msgid 'h6 Fonts'
+msgstr ""
+
+#: inc/customizer.php:473
+msgid 'h6 Font Size'
+msgstr ""
+
+#: inc/customizer.php:481
+msgid 'Top Header'
+msgstr ""
+
+#: inc/customizer.php:482
+msgid 'Add Header Content here'
+msgstr ""
+
+#: inc/customizer.php:492
+msgid "Add Facebook link"
+msgstr ""
+
+#: inc/customizer.php:503
+msgid "Add Twitter link"
+msgstr ""
+
+#: inc/customizer.php:514
+msgid 'Add Google Plus link'
+msgstr ""
+
+#: inc/customizer.php:525
+msgid 'Add Pinterest link'
+msgstr ""
+
+#: inc/customizer.php:536
+msgid 'Add Linkedin link'
+msgstr ""
+
+#: inc/customizer.php:547
+msgid 'Add Instagram link'
+msgstr ""
+
+#: inc/customizer.php:558
+msgid 'Add Youtube link'
+msgstr ""
+
+#: inc/customizer.php:566
+msgid "Slider Settings."
+msgstr ""
+
+#: inc/customizer.php:579
+msgid "Select Slide Image Page"
+msgstr ""
+
+#: inc/customizer.php:588
+msgid 'Category Post'
+msgstr ""
+
+#: inc/customizer.php:589
+msgid 'This section will appear below the slider.'
+msgstr ""
+
+#: inc/customizer.php:611
+msgid 'Select Category to display Latest Post'
+msgstr ""
+
+#: inc/customizer.php:617
+msgid 'Latest Post'
+msgstr ""
+
+#: inc/customizer.php:618
+msgid 'This section will appear below the category post.'
+msgstr ""
+
+#: inc/customizer.php:640
+msgid 'Select Category to display Latest Post'
+msgstr ""
+
+#: inc/customizer.php:646
+msgid 'Footer Text'
+msgstr ""
+
+#: inc/customizer.php:647
 msgid 'This section will appear in the .'
 msgstr ""
 
-#: inc/customizer.php:230
+#: inc/customizer.php:656
 msgid 'Text'
 msgstr ""
 
-#: inc/customizer.php:314
+#: inc/customizer.php:739
 msgid 'Advance Blogging'
 msgstr ""
 
-#: inc/customizer.php:315
+#: inc/customizer.php:740
 msgid 'Go Pro'
 msgstr ""

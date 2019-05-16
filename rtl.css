@@ -1,5 +1,4 @@
-
-/* Basic Style */
+/* rtl css */
 *{
   margin:0;
   padding:0;
@@ -163,7 +162,7 @@ input[type='submit']:hover{
   margin:0;
   padding:0;
 }
-small{
+mdall{
   font-size:14px !important;
 }
 input[type="text"],
@@ -515,7 +514,7 @@ span.entry-comments i,
   margin-left: 10px;
 }
 /* single post end*/
-.smallpostimage {
+.mdallpostimage {
   margin-bottom: 15px;
 }
 /* latest post*/
@@ -781,7 +780,7 @@ span.woocommerce-input-wrapper,
   margin: 0px !important;
   font-weight: 300;
 }
-.blogbutton-small{
+.blogbutton-mdall{
   background:#f73637;
   padding:6px 25px;
   color:#fff;

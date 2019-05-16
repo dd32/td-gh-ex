@@ -13,8 +13,8 @@ get_header(); ?>
             $left_right = get_theme_mod( 'advance_blogging_theme_options','Right Sidebar');
             if($left_right == 'Left Sidebar'){ ?>
                 <div class="row">
-                    <div class="col-md-4 col-sm-4"><?php get_sidebar();?></div>   
-                    <div class="col-md-8 col-sm-8">
+                    <div class="col-lg-4 col-md-4"><?php get_sidebar();?></div>  
+                    <div class="col-lg-8 col-md-8">
             			<?php while ( have_posts() ) : the_post(); ?>
                             <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                                 <div class="entry-content">
@@ -50,7 +50,7 @@ get_header(); ?>
                 </div>
         <?php }else if($left_right == 'Right Sidebar'){ ?>
             <div class="row">
-                <div class="col-md-8 col-sm-8">
+                <div class="col-lg-8 col-md-8">
                     <?php while ( have_posts() ) : the_post(); ?>    
                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                             <div class="entry-content">
@@ -83,7 +83,7 @@ get_header(); ?>
                         ?>    
                     <?php endwhile; // end of the loop. ?>
                 </div>
-                <div class="col-md-4 col-sm-4"><?php get_sidebar();?></div>
+                <div class="col-lg-4 col-md-4"><?php get_sidebar();?></div>
             </div>
         <?php }else if($left_right == 'One Column'){ ?>
                 <?php while ( have_posts() ) : the_post(); ?>    
@@ -119,8 +119,8 @@ get_header(); ?>
                 <?php endwhile; // end of the loop. ?>
         <?php }else if($left_right == 'Three Columns'){ ?>
             <div class="row">
-                <div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar( 'sidebar-2' ); ?></div>
-                <div class="col-md-6 col-sm-6">
+                <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-2' ); ?></div>
+                <div class="col-lg-6 col-md-6">
                     <?php while ( have_posts() ) : the_post(); ?>    
                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                             <div class="entry-content">
@@ -153,12 +153,12 @@ get_header(); ?>
                         ?>    
                     <?php endwhile; // end of the loop. ?>
                 </div>
-                <div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
+                <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
             </div>
         <?php }else if($left_right == 'Four Columns'){ ?>
             <div class="row">
-                <div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar( 'sidebar-2' ); ?></div>
-                <div class="col-md-3 col-sm-3">
+                <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-2' ); ?></div>
+                <div class="col-lg-3 col-md-3">
                     <?php while ( have_posts() ) : the_post(); ?>    
                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                             <div class="entry-content">
@@ -191,12 +191,12 @@ get_header(); ?>
                         ?>    
                     <?php endwhile; // end of the loop. ?>
                 </div>
-                <div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
-                <div id="sidebar" class="col-md-3 col-sm-3"><?php dynamic_sidebar( 'sidebar-3' ); ?></div>
+                <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
+                <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-3' ); ?></div>
             </div>
         <?php }else if($left_right == 'Grid Layout'){ ?>
             <div class="row">
-                <div class="col-md-8 col-sm-8">
+                <div class="col-lg-8 col-md-8">
                     <?php while ( have_posts() ) : the_post(); ?>    
                         <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                             <div class="entry-content">
@@ -229,7 +229,7 @@ get_header(); ?>
                         ?>    
                     <?php endwhile; // end of the loop. ?>
                 </div>
-                <div class="col-md-4 col-sm-4"><?php get_sidebar();?></div>
+                <div class="col-lg-4 col-md-4"><?php get_sidebar();?></div>
                 <?php } ?>
                 <div class="clear"></div>
             </div>
