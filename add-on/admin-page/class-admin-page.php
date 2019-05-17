@@ -52,7 +52,7 @@ class Admin_Page {
 						<li>%s</li>
 						<li>%s</li>
 						<li>%s<a href="%s">%s</a>%s</li>
-						<li>%s</li>
+						<li>%s<a href="%s">%s</a></li>
 					</ol>
 				<p>%s</p>
 			</div>',
@@ -64,7 +64,9 @@ class Admin_Page {
 			esc_url( 'https://vedathemes.com/bayleaf-pro/documentation/' ),
 			esc_html__( 'quick setup guide', 'bayleaf' ),
 			esc_html__( ' to get started', 'bayleaf' ),
-			esc_html__( 'Contact us at contact@vedathemes.com for any help', 'bayleaf' ),
+			esc_html__( 'Get Support at ', 'bayleaf' ),
+			esc_url( 'https://wordpress.org/support/theme/bayleaf/' ),
+			esc_html__( 'Support Forum', 'bayleaf' ),
 			esc_html__( 'Thank You', 'bayleaf' )
 		);
 

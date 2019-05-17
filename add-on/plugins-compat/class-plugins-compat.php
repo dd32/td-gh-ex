@@ -67,7 +67,7 @@ class Plugins_Compat {
 		}
 
 		// Compatibility to "MailChimp for WordPress" plugin.
-		if ( defined( 'MC4WP_VERSION' ) ) {
+		if ( defined( 'MC4WP_VERSION' ) || defined( 'MAILOPTIN_VERSION_NUMBER' ) ) {
 			add_filter( 'bayleaf_widgetlayer_widget_options', [ self::get_instance(), 'widget_options' ] );
 			add_filter( 'bayleaf_before_widget_content', [ self::get_instance(), 'display_widget_image' ], 10, 2 );
 			add_filter( 'bayleaf_after_widget_content', [ self::get_instance(), 'widget_wrapper_close' ], 10, 2 );
@@ -231,7 +231,7 @@ class Plugins_Compat {
 					'setting' => 'bayleaf_widget_featured_image',
 					'label'   => esc_html__( 'Widget Featured Image', 'bayleaf' ),
 					'type'    => 'image_upload',
-					'id_base' => 'mc4wp_form_widget',
+					'id_base' => [ 'mc4wp_form_widget', 'mo_optin_widgets' ],
 				],
 			]
 		);
@@ -257,8 +257,18 @@ class Plugins_Compat {
 		$instance = $widget_data[2];
 		$id_base  = $widget_data[3];
 
-		// Generate markup for text widget featured image.
+		$widget_img = false;
+
 		if ( 'mc4wp_form_widget' === $id_base && isset( $instance['bayleaf_widget_featured_image'] ) ) {
+			$widget_img = true;
+		}
+
+		if ( 'mo_optin_widgets' === $id_base && isset( $instance['bayleaf_widget_featured_image'] ) ) {
+			$widget_img = true;
+		}
+
+		// Generate markup for text widget featured image.
+		if ( true === $widget_img ) {
 			$image_id = absint( $instance['bayleaf_widget_featured_image'] );
 			if ( $image_id ) {
 				$classes    = [];
@@ -294,8 +304,18 @@ class Plugins_Compat {
 		$instance = $widget_data[2];
 		$id_base  = $widget_data[3];
 
-		// Generate markup for text widget featured image.
+		$widget_img = false;
+
 		if ( 'mc4wp_form_widget' === $id_base && isset( $instance['bayleaf_widget_featured_image'] ) ) {
+			$widget_img = true;
+		}
+
+		if ( 'mo_optin_widgets' === $id_base && isset( $instance['bayleaf_widget_featured_image'] ) ) {
+			$widget_img = true;
+		}
+
+		// Generate markup for text widget featured image.
+		if ( true === $widget_img ) {
 			$image_id = absint( $instance['bayleaf_widget_featured_image'] );
 			if ( $image_id ) {
 

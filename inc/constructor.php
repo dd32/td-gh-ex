@@ -151,10 +151,8 @@ function bayleaf_main_navigation() {
 	}
 
 	printf(
-		'<button aria-expanded="false" class="menu-toggle"><span class="screen-reader-text">%1$s</span>%2$s%3$s</button>',
-		esc_html__( 'Site Navigation', 'bayleaf' ),
-		bayleaf_get_icon( [ 'icon' => 'menu' ] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		bayleaf_get_icon( [ 'icon' => 'close' ] ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		'<button aria-expanded="false" class="menu-toggle"><span class="bar"><span class="screen-reader-text">%s</span></span></button>',
+		esc_html__( 'Site Navigation', 'bayleaf' )
 	);
 
 	bayleaf_nav_menu(
@@ -192,10 +190,8 @@ function bayleaf_user_action_items() {
  */
 function bayleaf_header_widgets() {
 	printf(
-		'<button class="action-toggle"><span class="screen-reader-text">%1$s</span>%2$s%3$s</button>',
-		esc_html__( 'Show secondary sidebar', 'bayleaf' ),
-		bayleaf_get_icon( [ 'icon' => 'more' ] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
-		bayleaf_get_icon( [ 'icon' => 'close' ] ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		'<button class="action-toggle"><span class="bar"><span class="screen-reader-text">%s</span></span></button>',
+		esc_html__( 'Show secondary sidebar', 'bayleaf' )
 	);
 	echo '<div id="header-widget-area" class="header-widget-area">';
 	if ( is_active_sidebar( 'sidebar' ) ) {

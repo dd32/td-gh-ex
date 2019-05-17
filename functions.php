@@ -207,6 +207,7 @@ function bayleaf_setup() {
 			'woocommerce',
 			'plugins-compat',
 			'related-posts',
+			'tgm-activation',
 			'admin-page',
 		)
 	);
