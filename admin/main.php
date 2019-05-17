@@ -204,11 +204,11 @@ function mantra_init_fn(){
 	add_settings_field('mantra_fheader', __('Featured Images as HEADER Images ','mantra') , 'cryout_setting_fheader_fn', 'mantra-page', 'featured_section');
 
 	/*** socials ***/
-	add_settings_field('mantra_socials1', __('Link nr. 1','mantra') , 'cryout_setting_socials1_fn', 'mantra-page', 'socials_section');
-	add_settings_field('mantra_socials2', __('Link nr. 2','mantra') , 'cryout_setting_socials2_fn', 'mantra-page', 'socials_section');
-	add_settings_field('mantra_socials3', __('Link nr. 3','mantra') , 'cryout_setting_socials3_fn', 'mantra-page', 'socials_section');
-	add_settings_field('mantra_socials4', __('Link nr. 4','mantra') , 'cryout_setting_socials4_fn', 'mantra-page', 'socials_section');
-	add_settings_field('mantra_socials5', __('Link nr. 5','mantra') , 'cryout_setting_socials5_fn', 'mantra-page', 'socials_section');
+	add_settings_field('mantra_socials1', __('Link #1','mantra') , 'cryout_setting_socials1_fn', 'mantra-page', 'socials_section');
+	add_settings_field('mantra_socials2', __('Link #2','mantra') , 'cryout_setting_socials2_fn', 'mantra-page', 'socials_section');
+	add_settings_field('mantra_socials3', __('Link #3','mantra') , 'cryout_setting_socials3_fn', 'mantra-page', 'socials_section');
+	add_settings_field('mantra_socials4', __('Link #4','mantra') , 'cryout_setting_socials4_fn', 'mantra-page', 'socials_section');
+	add_settings_field('mantra_socials5', __('Link #5','mantra') , 'cryout_setting_socials5_fn', 'mantra-page', 'socials_section');
 	add_settings_field('mantra_socialshow', __('Socials display','mantra') , 'cryout_setting_socialsdisplay_fn', 'mantra-page', 'socials_section');
 
 	/*** misc ***/

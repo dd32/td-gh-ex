@@ -23,7 +23,7 @@
 	body {
 		font-size: .95em;
 	}
-
+	
 	#content,
 	#frontpage,
 	#frontpage + #container > #content,
@@ -64,6 +64,11 @@
 		min-height: 90px;
 		width: 100%;
 	}
+
+	.mantra-hratio-1 #branding, 
+	.mantra-hratio-1 #bg_image { 
+		min-height: inherit !important; 
+	} 
 
 	#header-container > div {
      	margin-top: 7px;
@@ -110,7 +115,7 @@
 	#primary,
 	#secondary {
 		width: 100%;
-		height: auto;
+		height: auto !important;
 	}
 
 	#slider,

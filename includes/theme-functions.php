@@ -267,7 +267,7 @@ add_filter( 'wp_link_pages_args', 'mantra_nextpage_links' );
 function mantra_site_info() { ?>
 <div style="text-align:center;clear:both;padding-top:4px;" >
 	<a href="<?php echo esc_url( home_url( '/' ) ) ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-		<?php bloginfo( 'name' ); ?></a> | <?php _e('Powered by','mantra')?> <a target="_blank" href="<?php echo 'http://www.cryoutcreations.eu';?>" title="<?php echo 'Mantra Theme by '.
+		<?php bloginfo( 'name' ); ?></a> | <?php _e('Powered by','mantra')?> <a target="_blank" href="<?php echo 'http://www.cryoutcreations.eu/mantra';?>" title="<?php echo 'Mantra Theme by '.
 		'Cryout Creations';?>"><?php echo 'Mantra' ?></a> &amp; <a target="_blank" href="<?php echo esc_url('http://wordpress.org/' ); ?>"
 		title="<?php esc_attr_e('Semantic Personal Publishing Platform', 'mantra'); ?>"> <?php printf(' %s.', 'WordPress' ); ?>
 	</a>
@@ -282,7 +282,7 @@ add_action( 'cryout_footer_hook', 'mantra_site_info', 12 );
 function mantra_copyright() {
 	global $mantra_options; ?>
 	<div id="site-copyright"> 
-		<?php echo $mantra_options['mantra_copyright'] ?>
+		<?php echo wp_kses_post( do_shortcode( $mantra_options['mantra_copyright'] ) ) ?>
 	</div>
 	<?php
 }
@@ -349,5 +349,13 @@ function mantra_fav_icon() {
 }
 
 if ($mantra_options['mantra_favicon']) add_action( 'cryout_header_hook', 'mantra_fav_icon' );
+
+/**
+* WordPress 5.2+ wp_body_open() support
+*/
+function mantra_wp_body_open() {
+	do_action( 'wp_body_open' );
+}
+add_action( 'cryout_body_hook', 'mantra_wp_body_open', 5 );
 
 // FIN

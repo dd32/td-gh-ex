@@ -24,7 +24,7 @@
 				<div class="avatar">
 					<?php echo get_avatar( get_the_author_meta( 'ID' ), apply_filters( 'mantra_status_avatar', '65' ) ); ?>
 				</div>
-				<div class="entry-meta2">
+				<div class="entry-meta entry-meta2">
 					<h3 class="entry-format"><?php _e( 'Status', 'mantra' ); ?></h3>
 					<?php mantra_posted_on(); ?>
 	<?php /* if ( comments_open() && ! post_password_required() ) :*/ ?>

@@ -1,13 +1,50 @@
 <?php
 
-function cryout_optset($var, $val1, $val2='', $val3='', $val4=''){
-	$vals = array( $val1, $val2, $val3, $val4 );
-	if ( in_array($var, $vals) ) {
-		return false;
-	} else {
-		return true;
+function mantra_body_classes($classes) {
+	$options = mantra_get_theme_options();
+
+	$classes[] = sprintf( 'mantra-image-%s', strtolower($options['mantra_image']) );
+	$classes[] = sprintf( 'mantra-caption-%s', preg_replace('/[^a-z0-9]/i', '-', strtolower($options['mantra_caption']) ) );
+	$classes[] = sprintf( 'mantra-hratio-%s', intval($options['mantra_hratio']) );
+
+	// layout classes are for frontend reference only; styling is still below, case dependent
+	switch ($options['mantra_side']):
+		case "1c":   $classes[] = 'mantra-no-sidebar'; break; 
+		case "2cSr": $classes[] = 'mantra-sidebar-right'; break; 
+		case "2cSl": $classes[] = 'mantra-sidebar-left'; break; 
+		case "3cSr": $classes[] = 'mantra-sidebars-right'; break; 
+		case "3cSl": $classes[] = 'mantra-sidebars-left'; break;  
+		case "3cSs": $classes[] = 'mantra-sidebars-sided'; break; 
+	endswitch;
+	
+	$magazine_layout = FALSE;
+	if ($options['mantra_magazinelayout'] == "Enable") {
+		if (is_front_page()) {
+			if ( ($options['mantra_frontpage'] == "Enable") && (($options['mantra_frontposts']) != "Disable") ) { /* not magazine layout */ }
+																													else { $magazine_layout = TRUE; }
+		} else {
+			$magazine_layout = TRUE;
+		}
 	}
-}
+	if ( is_front_page() && ($options['mantra_frontpage'] == "Enable") && (($options['mantra_frontposts']) == "Enable") ) { $magazine_layout = TRUE; }
+	if ($magazine_layout) $classes[] = 'mantra-magazine-layout';
+
+	if ( is_front_page() && ($options['mantra_frontpage'] == "Enable") && (get_option('show_on_front') == 'posts') ) {
+		$classes[] = 'mantra-presentation-page';
+		$classes[] = sprintf( 'mantra-coldisplay-%s', $options['mantra_nrcolumns'] );
+	}
+	
+	switch ($options['mantra_menualign']):
+		case "center": 		$classes[] = 'mantra-menu-center'; break;
+		case "right": 		$classes[] = 'mantra-menu-right'; break;
+		case "rightmulti":	$classes[] = 'mantra-menu-rightmulti'; break;
+		default: 			$classes[] = 'mantra-menu-left'; break;
+	  endswitch;
+
+	return $classes;
+} // mantra_body_classes()
+add_filter( 'body_class', 'mantra_body_classes' );
+
 
 function mantra_custom_styles() {
 	$options = mantra_get_theme_options();
@@ -141,14 +178,14 @@ function mantra_custom_styles() {
 	elseif ($mantra_fontsubheader != "Default") { ?> .entry-content h1, .entry-content h2, .entry-content h3, .entry-content h4,
 													.entry-content h5, .entry-content h6  {font-family:<?php  echo $mantra_fontsubheader ?>; }<?php }
 
-	if ($mantra_caption != "Light") { ?> #content .wp-caption { <?php
+/* 	if ($mantra_caption != "Light") { ?> #content .wp-caption { <?php
 					    if ($mantra_caption == "White") { ?> background-color:#FFF;<?php }
 					elseif ($mantra_caption == "Light Gray") {?> background-color:#EEE;<?php }
 					elseif ($mantra_caption == "Gray") {?> background-color:#CCC;<?php }
 					elseif ($mantra_caption == "Dark Gray") {?> background-color:#444; color:#CCC;<?php }
 					elseif ($mantra_caption == "Black") {?> background-color:#000; color:#CCC;<?php } 
 					?> }
-	<?php }
+	<?php } */
 	if ($mantra_menurounded == "Disable") { ?> #access ul li {border-radius:0;}<?php }
 	if     ($mantra_metaback == "White") { ?> .entry-meta { background:#FFF;} <?php }
 	elseif ($mantra_metaback == "None") { ?> .entry-meta { background:#FFF;border:none;-webkit-box-shadow:none;-moz-box-shadow:none;box-shadow:none;} <?php }
@@ -197,12 +234,6 @@ function mantra_custom_styles() {
 	#footer-widget-area a { color:<?php echo esc_attr( $mantra_footertext ); ?>; }
 	#footer-widget-area a:hover { color:<?php echo esc_attr( $mantra_footerhover ); ?>; } <?php
 
-	switch ($mantra_menualign) {
-		case "center": ?> #access ul { display: table; margin: 0 auto; } <?php break;
-		case "right": ?> #access .menu-header, div.menu { float: right; } <?php break;
-		default: break;
-	} // switch ?>
-
 	#content .wp-caption { background-image:url(<?php echo get_template_directory_uri() . "/resources/images/pins/" . esc_attr($mantra_pin); ?>.png); } <?php
 	if ($mantra_sidebullet != "arrow_white") { ?> .widget-area ul ul li { background-image: url(<?php echo get_template_directory_uri() . "/resources/images/bullets/" . esc_attr($mantra_sidebullet); ?>.png); background-position: left calc(2em / 2 - 4px); } <?php }
 
@@ -223,7 +254,6 @@ function mantra_custom_styles() {
 	if (($mantra_mobile == "Enable") &&  $mantra_hcontain) { ?> #branding { -webkit-background-size: contain !important; -moz-background-size: contain !important; background-size: contain !important; } <?php } ?>
 
 	#branding { height:<?php echo $mantra_hheight; ?>px ;} <?php
-	if ($mantra_hratio) { ?> @media (max-width: 800px) {#branding, #bg_image { min-height:inherit !important; } }<?php }
 
 	return ob_get_clean();
 } // mantra_custom_styles()

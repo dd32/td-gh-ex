@@ -4,8 +4,8 @@ Copyright 2011-19 Cryout Creations
 
 Author: Cryout Creations
 Requires at least: 4.2
-Tested up to: 5.0.3
-Stable tag: 3.1.0
+Tested up to: 5.2
+Stable tag: 3.2.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
 Donate link: https://www.cryoutcreations.eu/donate/
@@ -94,6 +94,15 @@ Turkish - Emre Dalkili�
 
 
 == Changelog ==
+
+= 3.2.0 =
+* Added support for WordPress 5.2 wp_body_open() hook
+* Added shortcodes support in custom footer text
+* Rewrote some styling to use body classes instead of generated inline CSS (menu alignment, caption style, image border style, header image ratio)
+* Extended content image border option to apply to Gutenberg inserted images
+* Fixed left/right social icons overlapped by sidebar widget titles on some screen sizes
+* Fixed featured images sometimes getting cropped due to overflowing their container
+* Fixed sidebars sometimes using absolute height on mobile devices
 
 = 3.1.0 =
 * Added 'mantra_header_image_crop' filter for 'header' image size crop position attribute

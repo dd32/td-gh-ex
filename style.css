@@ -4,7 +4,7 @@ Theme URI: https://www.cryoutcreations.eu/wordpress-themes/mantra
 Description: Mantra is a do-it-yourself WordPress theme, featuring a pack of over 100 customization options and easy to use tweaks capable of tuning WordPress to your very specific needs and likes. With the help of a simple and efficient user interface you can customize everything:the layout (1,2 or 3 columns), total and partial site widths, colors (all texts, links, backgrounds etc.), fonts (over 35 font-families plus all Google Fonts), text and header sizes, post metas, post excerpts, post formats, header and background images, custom menus, 27 social media links and icons, pins, bullets and much much more. With a fully responsive layout,a customizable showcase presentation page, animated slider, magazine and blog layouts, 8 widget areas, modern graphics and an easy and intuitive admin section, you can start creating your dream site right now.
 Author: Cryout Creations
 Author URI: https://www.cryoutcreations.eu
-Version: 3.1.0
+Version: 3.2.0
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, three-columns, right-sidebar, left-sidebar, footer-widgets, grid-layout, custom-background, custom-colors, custom-header, custom-menu, featured-image-header, featured-images, front-page-post-form, full-width-template,  microformats, post-formats, rtl-language-support,  sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, news
@@ -733,8 +733,8 @@ div.menu {
 	margin-bottom: 0;
 }
 
- #access  ul li.current_page_item,
- #access ul li.current-menu-item {
+#access  ul li.current_page_item,
+#access ul li.current-menu-item {
 	background: #fff;
 	box-shadow: none;
 }
@@ -865,6 +865,17 @@ a.continue-reading-link,
 * html #access ul li a:hover {
 	color: #5F5B5B;
 }
+
+.mantra-menu-center #access ul { 
+	display: table; 
+	margin: 0 auto; 
+}
+
+.mantra-menu-right #access .menu-header, 
+.mantra-menu-right div.menu { 
+	float: right; 
+}
+
 
 /* =Menu -SECONDARY
 -------------------------------------------------------------- */
@@ -1531,6 +1542,11 @@ article.format-aside h3.entry-format {
 /* =Images
 -------------------------------------------------------------- */
 
+.post-thumbnail {
+	max-width: 100%;
+	height: auto;
+}
+
 .entry-content img {
 	margin: 0;
 	height: auto;
@@ -1544,21 +1560,24 @@ article.format-aside h3.entry-format {
 img:hover {}
 
 .alignleft,
-img.alignleft {
+img.alignleft,
+.alignleft img {
 	float: left;
 	margin-right: 24px;
 	margin-top: 4px;
 }
 
 .alignright,
-img.alignright {
+img.alignright,
+.alignright img {
 	float: right;
 	margin-top: 4px;
 	margin-left: 24px;
 }
 
 .aligncenter,
-img.aligncenter {
+img.aligncenter,
+.aligncenter img {
 	clear: both;
 	margin-right: auto;
 	margin-left: auto;
@@ -1584,14 +1603,14 @@ img.aligncenter {
 
 .wp-caption img {
 	width: 100%;
-	margin: 0 auto;
+	margin: 0 auto 5px;
 	padding: 0;
 	border: none;
     box-shadow: none;
 }
 
 .wp-caption p.wp-caption-text {
-	padding: 10px;
+	padding: 5px;
 	font-size: .9em;
 	text-align: center;
 	text-indent: 0;
@@ -1611,6 +1630,12 @@ img.aligncenter {
     height: auto;
 }
 
+.mantra-caption-light #content .wp-caption {}
+.mantra-caption-white #content .wp-caption { background-color: #FFF; }
+.mantra-caption-light-gray #content .wp-caption { background-color: #EEE; }
+.mantra-caption-gray #content .wp-caption { background-color: #CCC; }
+.mantra-caption-dark-gray #content .wp-caption {  background-color: #444; color: #CCC; }
+.mantra-caption-black #content .wp-caption {  background-color: #000; color: #CCC; }
 
 /* =Navigation
 -------------------------------------------------------------- */
@@ -1702,7 +1727,7 @@ h3#comments-title {
 	margin: 0 0 10px 0;
 	padding: 0 0px 10px 56px;
 	position: relative;
-	line-height: 24px;
+/* 	line-height: 24px; */
 	list-style: none;
 	background: #FFF;
 	background-image:none;
@@ -1762,12 +1787,13 @@ h3#comments-title {
 .comment-meta {
 	display: block;
 	float: left;
-	margin-bottom: 5px;
+	margin-bottom: 0;
 	margin-left: 10px;
 	font-size: .8em;
 	text-transform: uppercase;
 	opacity: 0.5;
 	letter-spacing: 1px;
+	line-height: 27px;
 }
 
 .comment-meta a:link,
@@ -2399,6 +2425,7 @@ img#wpstats {
 	top: 50%;
 	-webkit-transform: translateY(-50%);
 	transform: translateY(-50%);
+	z-index: 100;
 }
 
 #smenul a,
@@ -2489,15 +2516,24 @@ article.sticky {
 }
 
 /* CUSTOM IMAGE BORDER */
-.entry-content .imageOne,
-.entry-summary .imageOne {
+.mantra-image-none .entry-content img[class*='align'],
+.mantra-image-none .entry-content [class*='wp-block'][class*='align'] img,
+.mantra-image-none .entry-summary img[class*='align'],
+.mantra-image-none .entry-summary [class*='wp-block'][class*='align'] img { }
+
+.mantra-image-one .entry-content img[class*='align'],
+.mantra-image-one .entry-content [class*='wp-block'][class*='align'] img,
+.mantra-image-one .entry-summary img[class*='align'],
+.mantra-image-one .entry-summary [class*='wp-block'][class*='align'] img {
 	height: auto;
 	padding: 3px;
 	border: 1px solid #DDD !important;
 }
 
-.entry-content .imageTwo,
-.entry-summary .imageTwo {
+.mantra-image-two .entry-content img[class*='align'],
+.mantra-image-two .entry-content [class*='wp-block'][class*='align'] img,
+.mantra-image-two .entry-summary img[class*='align'],
+.mantra-image-two .entry-summary [class*='wp-block'][class*='align'] img {
     padding: 3px;
 	border: 1px solid #EEE;
 	background-color: #FFFFFF;
@@ -2505,33 +2541,43 @@ article.sticky {
 	box-shadow: 0 0 4px #CCC;
 }
 
-.entry-content .imageThree,
-.entry-summary .imageThree {
+.mantra-image-three .entry-content img[class*='align'],
+.mantra-image-three .entry-content [class*='wp-block'][class*='align'] img,
+.mantra-image-three .entry-summary img[class*='align'],
+.mantra-image-three .entry-summary [class*='wp-block'][class*='align'] img {
 	padding: 3px;
     border: 6px solid #EEEEEE;
     border-radius: 5px;
 	background-color: #FFFFFF;
 }
 
-.entry-content .imageFour,
-.entry-summary .imageFour {
+.mantra-image-four .entry-content img[class*='align'],
+.mantra-image-four .entry-content [class*='wp-block'][class*='align'] img,
+.mantra-image-four .entry-summary img[class*='align'],
+.mantra-image-four .entry-summary [class*='wp-block'][class*='align'] img {
 	border: 1px solid #666 !important;
 	box-shadow: 0 3px 4px #999;
 }
 
-.entry-content .imageFive,
-.entry-summary .imageFive {
+.mantra-image-five .entry-content img[class*='align'],
+.mantra-image-five .entry-content [class*='wp-block'][class*='align'] img,
+.mantra-image-five .entry-summary img[class*='align'],
+.mantra-image-five .entry-summary [class*='wp-block'][class*='align'] img {
 	border: 3px solid #DDD !important;
 }
 
-.entry-content .imageSix,
-.entry-summary .imageSix {
+.mantra-image-six .entry-content img[class*='align'],
+.mantra-image-six .entry-content [class*='wp-block'][class*='align'] img,
+.mantra-image-six .entry-summary img[class*='align'],
+.mantra-image-six .entry-summary [class*='wp-block'][class*='align'] img {
 	border: 8px solid #BBB !important;
 	box-shadow: 0 0 5px #333;
 }
 
-.entry-content .imageSeven,
-.entry-summary .imageSeven {
+.mantra-image-seven .entry-content img[class*='align'],
+.mantra-image-seven .entry-content [class*='wp-block'][class*='align'] img,
+.mantra-image-seven .entry-summary img[class*='align'],
+.mantra-image-seven .entry-summary [class*='wp-block'][class*='align'] img {
 	padding: 7px;
 	border: 1px solid #CCC;
     background-color: #FFFFFF;

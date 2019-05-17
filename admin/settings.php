@@ -529,7 +529,7 @@ function cryout_setting_fronttext_fn() {
 	<div class='slidebox'>
 		<h4 class='slidetitle'><?php _e("Hide areas","mantra")?> </h4>
 		<div class='slidercontent'>
-			<div style='width:100%;'><?php _e("Choose the areas to hide on the first page.","mantra") ?></div>
+			<div style='width:100%;'><?php _e("Choose the areas to hide on the homepage.","mantra") ?></div>
 			<?php
 			$options = array( "FronHeader", "FrontMenu", "FrontWidget" , "FrontFooter","FrontBack");
 
@@ -1552,8 +1552,7 @@ function cryout_setting_fheader_fn() {
 		echo ">$labels[$id]</option>";
 	}
 	echo "</select>";
-	echo "<div><small>".__("Show featured images on headers. The header will be replaced with a featured image if you selected it as a Featured Image in the post and
-							and if it is bigger or at least equal to the current header size.","mantra")."</small></div>";
+	echo "<div><small>".__("Show featured images on headers. The header will be replaced with a featured image if you selected it as a Featured Image in the post and and if it is bigger or at least equal to the current header size.","mantra")."</small></div>";
 }
 
 
@@ -1602,15 +1601,15 @@ function cryout_setting_socials2_fn() {
 }
 
 function cryout_setting_socials3_fn() {
-cryout_setting_social_master(5);
+	cryout_setting_social_master(5);
 }
 
 function cryout_setting_socials4_fn() {
-cryout_setting_social_master(7);
+	cryout_setting_social_master(7);
 }
 
 function cryout_setting_socials5_fn() {
-cryout_setting_social_master(9);
+	cryout_setting_social_master(9);
 }
 
 function cryout_setting_socialsdisplay_fn() {
