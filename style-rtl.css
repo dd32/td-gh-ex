@@ -4,7 +4,7 @@ Theme URI: https://vedathemes.com/blog/vedaitems/aamla-theme/
 Author: Vedathemes
 Author URI: https://vedathemes.com/
 Description: Aamla is a feature rich, Gutenberg friendly, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla helps you to build your pages even without pagebuilders and make your audios and videos stand out. It is compatible with gutenberg, woocommerce and many other plugins. Aamla is written with clean code and the most current HTML5 conventions. Aamla can be used as a solid base to build beautiful and functional websites.
-Version: 1.2.0
+Version: 1.2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aamla
@@ -2391,6 +2391,33 @@ body.grid:not(.error404) .page-header {
 	width: 100%;
 	margin: 1.3125rem 0 0;
 	text-align: center;
+}
+
+.mo-optin-form-inpost {
+	margin: 3.5rem 0 1.75rem;
+}
+
+.mo-optin-form-inpost .mo-optin-form-wrapper.moEleganceModal {
+	margin: 0 auto !important;
+	border-width: 1px !important;
+	border-radius: 3px !important;
+}
+
+.mo-optin-form-inpost .mo-optin-form-wrapper.moEleganceModal input[type="text"],
+.mo-optin-form-inpost .mo-optin-form-wrapper.moEleganceModal input[type="email"] {
+	font-size: 0.7862rem !important;
+	padding: 0.875em !important;
+	outline: none !important;
+}
+
+.mo-optin-form-inpost .mo-optin-form-wrapper.moEleganceModal a.button,
+.mo-optin-form-inpost .mo-optin-form-wrapper.moEleganceModal button,
+.mo-optin-form-inpost .mo-optin-form-wrapper.moEleganceModal input[type="submit"] {
+	font-size: 0.7862rem !important;
+	padding: 0.875em 1.3125em !important;
+	border-width: 0 !important;
+	border-radius: 3px !important;
+	outline: none !important;
 }
 
 @media only screen and (min-width: 641px) {

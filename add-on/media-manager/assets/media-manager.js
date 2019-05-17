@@ -16,11 +16,16 @@ function aamlaMediaManager() {
 		open.addEventListener( 'click', function(e) {
 			e.preventDefault();
 			e.stopPropagation();
+			aamla.scrollDisable();
 			toggleMedia.bind(this)();
 		}.bind(elems[i]), false );
 		
 		close = elems[i].getElementsByClassName( 'close-media' )[0];
-		close.addEventListener( 'click', toggleMedia.bind(elems[i]), false );
+		close.addEventListener( 'click', function() {
+			console.log(this);
+			aamla.scrollEnable();
+			toggleMedia.bind(this)();
+		}.bind(elems[i]), false );
 	}
 
 	function toggleMedia() {
@@ -41,8 +46,8 @@ function aamlaMediaManager() {
 
 			if ( this.classList.contains( 'makeitvisible' ) ) {
 
-				// If an HTML5 video, play it
-				if ( video && video.tagName.toLowerCase() === 'video' ) {
+				// If an HTML5 video, play it.
+				if ( 'video' === video && video.tagName.toLowerCase() ) {
 					video.play();
 					return;
 				}
@@ -50,6 +55,7 @@ function aamlaMediaManager() {
 				// Create ifrmae src attribute from data-src attribute.
 				if ( video && ! video.src ) {
 					src = video.getAttribute( 'data-src' );
+
 					// Remove any autoplay instructions already present in dataset.
 					src = src.replace('&autoplay=1', '').replace('?autoplay=1', '').replace('&autoplay=0', '').replace('?autoplay=0', '').replace('?autoPlay=1', '').replace('&autoPlay=1', '');
 
@@ -57,6 +63,7 @@ function aamlaMediaManager() {
 					video.src = src ? src + ( src.indexOf('?') < 0 ? '?' : '&') + 'autoplay=1': '';
 					return;
 				} else if ( video ) {
+
 					// Add autoplay instruction to src attribute.
 					video.src = video.src + ( video.src.indexOf('?') < 0 ? '?' : '&') + 'autoplay=1';
 					return;
@@ -71,8 +78,9 @@ function aamlaMediaManager() {
 					}
 				}
 			} else {
+
 				// If an HTML5 video, pause it
-				if ( video && video.tagName.toLowerCase() === 'video' ) {
+				if ( 'video' === video && video.tagName.toLowerCase() ) {
 					video.pause();
 					return;
 				}

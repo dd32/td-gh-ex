@@ -3,8 +3,8 @@
 Contributors: vedathemes
 tags: two-columns, left-sidebar, right-sidebar, grid-layout, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-Commerce
 Requires at least: WordPress 4.7
-Tested up to: WordPress 5.1.1
-Stable tag: 1.2.0
+Tested up to: WordPress 5.2
+Stable tag: 1.2.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +22,14 @@ PHP 5.4+, IE11+, WordPress 4.7+
 Bayleaf WordPress theme uses Google Fonts for your website by default. Fonts and their respective stylesheets are downloaded from google's website. Refer link [ https://developers.google.com/fonts/faq#what_does_using_the_google_fonts_api_mean_for_the_privacy_of_my_users ] for google font's privacy related information. If you do not want to use google fonts for your website, you can disable it from theme customizer (Appearance > Customize > Theme options).
 
 == Changelog ==
+
+= 1.2.1 =
+* Add: Email subscription box support from mailoptin plugin.
+* Add: Script to lock body scroll when modal window open.
+* Modify: Merge media-manager script with main scripts.
+* Modify: Hamburger menu css animation.
+* Modify: Display Header widgets in modal window.
+* Minor CSS improvements.
 
 = 1.2 =
 * Remove - Entry Extra content has been removed.

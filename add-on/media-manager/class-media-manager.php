@@ -292,14 +292,6 @@ class Media_Manager {
 			AAMLA_THEME_VERSION,
 			'all'
 		);
-
-		wp_enqueue_script(
-			'aamla_media_manager_js',
-			get_template_directory_uri() . '/add-on/media-manager/assets/media-manager.js',
-			[],
-			AAMLA_THEME_VERSION,
-			true
-		);
 	}
 }
 

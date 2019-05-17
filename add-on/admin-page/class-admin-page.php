@@ -28,55 +28,9 @@ class Admin_Page {
 	 * @since 1.0.2
 	 */
 	public function init() {
-		global $pagenow;
-
-		// Add Welcome message on Theme activation.
-		if ( is_admin() && 'themes.php' === $pagenow && isset( $_GET['activated'] ) ) {
-			add_action( 'admin_notices', [ $this, 'welcome_theme_notice' ], 99 );
-		}
 
 		// Add Aamla theme help page to Dashboard > appearance.
 		add_action( 'admin_menu', [ $this, 'add_theme_page' ] );
-	}
-
-	/**
-	 * Display Welcome Message on Theme activation.
-	 *
-	 * @since  1.0.2
-	 *
-	 * @return void
-	 */
-	public function welcome_theme_notice() {
-		// Since Manta is not the active theme, let user know Manta Plus will not work.
-		printf(
-			'<div class="updated notice is-dismissible theme-welcome-notice">
-				<p>%s</p><p>%s</p><a href="%s"> %s </a><p>%s</p><p>%s</p>
-			</div>',
-			esc_html__( 'Hi there!', 'aamla' ),
-			esc_html__( 'Thanks for trying Aamla. Just need to inform that Aamla has some unique and powerful features. Knowing them in advance will certainly help to build your site. Use following link to quickly go through these features.', 'aamla' ),
-			esc_url( admin_url( 'themes.php?page=aamla-docs' ) ),
-			esc_html__( 'Getting started with Aamla', 'aamla' ),
-			esc_html__( 'If you cannot read it now, you can find quick documentation later at Appearance > Aamla Docs.', 'aamla' ),
-			esc_html__( 'Thank You', 'aamla' )
-		);
-
-		?>
-		<style type="text/css" media="screen">
-
-			.notice.theme-welcome-notice {
-				padding: 2.5em 5em;
-				background: rgba(0,0,0,.01);
-				border: 1em solid rgba(255,255,255,.85);
-			}
-
-			.notice.theme-welcome-notice p,
-			.notice.theme-welcome-notice a {
-				font-size: 14px;
-			}
-
-		</style>
-
-		<?php
 	}
 
 	/**

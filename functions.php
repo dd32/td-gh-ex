@@ -218,7 +218,7 @@ function aamla_setup() {
 			'woocommerce',
 			'gutenberg',
 			'jetpack',
-			'admin-page',
+			'tgm-activation',
 		)
 	);
 	foreach ( $addons as $addon ) {

@@ -150,16 +150,24 @@ function aamla_user_action_items() {
  */
 function aamla_header_widgets() {
 	printf(
-		'<button aria-expanded="false" class="action-toggle">%1$s<span class="screen-reader-text">%2$s</span></button>',
-		aamla_get_icon( [ 'icon' => 'more' ] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		'<button aria-expanded="false" class="action-toggle"><span class="bar"><span class="screen-reader-text">%1$s</span></span></button>',
 		esc_html__( 'Show possible user actions', 'aamla' )
 	);
-	aamla_widgets(
-		'header-widget-area',
-		'header-widget-area',
-		esc_html__( 'Header Widget Area', 'aamla' ),
-		'header'
-	);
+	echo '<div id="header-widget-area" class="header-widget-area">';
+	if ( is_active_sidebar( 'sidebar' ) ) {
+		aamla_widgets(
+			'header-widget-wrapper',
+			'header-widget-wrapper',
+			esc_html__( 'Header Widget Wrapper', 'aamla' ),
+			'header'
+		);
+	} else {
+		echo '<div id="header-widget-wrapper" class="header-widget-wrapper">';
+		echo '<div class="widget">';
+		get_search_form();
+		echo '</div></div>';
+	}
+	echo '</div>';
 }
 
 /**
