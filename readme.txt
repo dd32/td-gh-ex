@@ -1,8 +1,9 @@
 === Renden ===
 Contributors: thinkupthemes
 Requires at least: 4.6
-Tested up to: 4.9.4
-Version: 1.4.1
+Tested up to: 5.1.1
+Requires PHP: 5.2.4
+Version: 1.4.10
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: black, dark, red, one-column, two-columns, three-columns, four-columns, right-sidebar, left-sidebar, fixed-layout, responsive-layout, fluid-layout, custom-header, custom-menu, full-width-template, theme-options, threaded-comments, featured-images, post-formats, sticky-post, translation-ready, flexible-header, gray, light, white, custom-background, grid-layout, footer-widgets, blog, e-commerce, education, entertainment, news, photography, portfolio
@@ -84,6 +85,37 @@ The following opensource projects, graphics, fonts, API's or other files as list
 
 
 == Changelog ==
+
+= 1.4.10
+- Updated: Fully compatible with hosting platforms that don't support use of ABSPATH for loading styles / scripts.
+
+= 1.4.9
+- Updated: Tested up to version updated to ensure users know full compatibility with WordPress v5.1.1
+
+= 1.4.8
+- Updated: "Requires PHP" information added to readme.txt.
+
+= 1.4.7
+- Updated: Improved escaping of breadcrumbs output in 00.theme-setup.php.
+- Removed: License folder removed and license in style.css linked directly to GPL page.
+
+= 1.4.6
+- Updated: Screenshot updated to comply with latst wordpress.org guidelines to not show descriptive text.
+
+= 1.4.5
+- Updated: All upgrade links changed to point directly to https.
+
+= 1.4.4
+- Updated: Color tags removed from style.css.
+- Updated: Theme and author url's in style.css updated to use https.
+
+= 1.4.3
+- Updated: main-frontend.js updated to be consistent with all themes.
+- Updated: style-shortcodes.css updated to be consistent with all themes.
+
+= 1.4.2
+- Updated: Improved escaping in function thinkup_title_select() to ensure page title displays correctly.
+- Updated: Function thinkup_title_select_cpt() added remove "archive" text from custom post type archive pages.
 
 = 1.4.1
 - Updated: Readme file updated to ensure format is consistent with upcoming wordpress.org update to align themes with plugin directory.
