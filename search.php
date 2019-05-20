@@ -8,21 +8,36 @@
  */
 
 get_header();
+$banner = get_header_image();
 ?>
+
+<div id="custom-header">
+
+				<?php if ( ! empty( $banner ) ) : ?>
+		<img src="<?php echo esc_url( $banner ); ?>" alt="" />
+	<?php endif; ?>
+	
+		<div class="custom-header-content">
+			<div class="container">
+			<?php $header_title = apply_filters( 'arenabiz_filter_title', '' ); ?>
+			<h1 class="page-title"><?php echo esc_html( $header_title ); ?></h1>
+			</div>
+			
+		</div>
+				</div><!-- #custom-header -->
+				
+<div id="content" class="site-content">
+	
+					<div class="container">
+
+					<div class="row">					
 
 	<section id="primary" class="content-area">
 		<main id="main" class="site-main">
 
 		<?php if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title">
-					<?php
-					/* translators: %s: search query. */
-					printf( esc_html__( 'Search Results for: %s', 'arenabiz' ), '<span>' . get_search_query() . '</span>' );
-					?>
-				</h1>
-			</header><!-- .page-header -->
+
 
 			<?php
 			/* Start the Loop */
@@ -51,5 +66,12 @@ get_header();
 	</section><!-- #primary -->
 
 <?php
-get_sidebar();
-get_footer();
+get_sidebar(); ?>
+
+</div><!-- .inner-wrapper -->
+
+			</div><!-- .container -->
+
+	</div><!-- #content -->
+
+<?php get_footer();

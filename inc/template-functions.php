@@ -47,9 +47,11 @@ if ( ! function_exists( 'arenabiz_title' ) ) :
 	 * @return string Modified title.
 	 */
 	function arenabiz_title( $title ) {
-
-		if ( is_home() ) {
-			$title = arenabiz_get_option('arenabiz_blogtitle');
+			$blog_title = get_theme_mod('arenabiz_blog_title');
+		if ( is_home() && $blog_title != NULL) {
+			$title = get_theme_mod('arenabiz_blog_title');
+		} elseif ( is_home() && $blog_title == NULL ) {
+			$title = sprintf( esc_html__( 'Blog', 'arenabiz' ),  get_search_query() );		
 		} elseif ( is_singular() ) {
 			$title = single_post_title( '', false );
 		} elseif ( is_category() || is_tag() ) {

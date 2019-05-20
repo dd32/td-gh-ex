@@ -104,6 +104,25 @@ if ( ! function_exists( 'arenabiz_setup' ) ) :
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
+		
+		// Add support for Custom Header.
+		add_theme_support( 'custom-header', apply_filters( 'arenabiz_custom_header_args', array(
+				'default-image' => get_template_directory_uri() . '/images/default-banner.jpg',
+				'width'         => 1920,
+				'height'        => 500,
+				'flex-height'   => true,
+				'header-text'   => false,
+		) ) );
+
+		// Register default headers.
+		register_default_headers( array(
+			'default-banner' => array(
+				'url'           => '%s/images/default-banner.jpg',
+				'thumbnail_url' => '%s/images/default-banner.jpg',
+				'description'   => esc_html_x( 'Default Banner', 'header image description', 'arenabiz' ),
+			),
+
+		) );		
 
 		/**
 		 * Add support for core custom logo.
@@ -112,7 +131,7 @@ if ( ! function_exists( 'arenabiz_setup' ) ) :
 		 */
 		add_theme_support( 'custom-logo', array(
 			'height'      => 70,
-			'width'       => 200,
+			'width'       => 250,
 			'flex-width'  => true,
 			'flex-height' => true,
 		) );
@@ -241,4 +260,6 @@ if ( is_admin() ) {
 	require_once trailingslashit( get_template_directory() ) . 'admin/about/info.php';
 }
 require_once( trailingslashit( get_template_directory() ) . 'trt-customizer-pro/arenabiz/class-customize.php' );
+require_once trailingslashit( get_template_directory() ) . 'admin/tgm/class-tgm-plugin-activation.php';
+require_once trailingslashit( get_template_directory() ) . 'admin/tgm/tgm.php';
 

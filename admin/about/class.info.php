@@ -196,6 +196,7 @@ if ( ! class_exists( 'arenabiz_Info' ) ) {
 			}
 
 			$current_tab = isset( $_GET['tab'] ) ? wp_unslash( $_GET['tab'] ) : 'getting-started';
+			
 
 			echo '<h2 class="nav-tab-wrapper wp-clearfix">';
 
@@ -229,7 +230,7 @@ if ( ! class_exists( 'arenabiz_Info' ) ) {
 			if ( method_exists( $this, $method ) ) {
 				$this->{$method}();
 			} else {
-				printf( esc_html__( '%s() method does not exist.', 'arenabiz' ), $method );
+				printf( esc_html__( '%s() method does not exist.', 'arenabiz' ), esc_html($method) );
 			}
 		}
 

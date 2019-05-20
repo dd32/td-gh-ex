@@ -1,51 +1,12 @@
 <?php 
-
 /**
  * Template Name: Home Page
  *
  * @package arenabiz
  */
-
-get_header(); ?>
-
-<!-- slider -->
-
-<div class="clear"></div>
-
-	<div class="row">
-	
-		<?php get_template_part( 'element-slider', 'index' ); ?>
 		
-		</div>	
-		
-<div class="clear"></div>
+		get_header(); 
 
-		<?php get_template_part( 'element-sliderbar', 'index' ); ?>
+	do_action( 'zt_arenabiz_sections', false ); 
 
-<!-- slider end -->
-
-<div class="clear"></div>
-	
-	<?php get_template_part( 'element-about', 'index' ); ?>
-		
-		
-	<div class="clear"></div>
-	
-		<?php get_template_part( 'element-portfolio', 'index' ); ?>	
-		
-	
-<div class="clear"></div>
-
-		<?php get_template_part( 'element-cta', 'index' ); ?>
-
-	
-<div class="clear"></div>	
-
-	<div class="container">
-			
-		<?php get_template_part( 'element-testimonial', 'index' ); ?>
-	
-		</div>		
-		
-		<div class="clear"></div>
-<?php get_footer(); ?>
+     get_footer(); 

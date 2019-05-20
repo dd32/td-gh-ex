@@ -3,8 +3,8 @@ Theme Name: arenabiz
 Theme URI: https://themeszen.com/arenabiz-theme/
 Author: Manishg
 Author URI: https://themeszen.com/
-Description: A very neat and clean blue and white business theme. The theme is fully responsive that looks great on any device. The theme supports widgets. And features theme-options, threaded-comments and multi-level dropdown menu. A simple and neat typography. Uses WordPress custom menu, header image, and background. Get free support on https://themeszen.com/?page_id=33
-Version: 1.0.4
+Description: A very neat and clean green and white business theme. The theme is fully responsive that looks great on any device. The theme supports widgets. And features theme-options, threaded-comments and multi-level dropdown menu. A simple and neat typography. Uses WordPress custom menu, header image, and background. Get free support on https://themeszen.com/?page_id=33
+Version: 1.0.5
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
 Text Domain: arenabiz
@@ -1101,17 +1101,52 @@ a.custom-logo-link {
     float: left;
 }
 
-
-.custom-header-content {
-	background: #fafafa;
-	padding: 5px;
-	color: #333;
-	font-size: 15px;
-}
-
 .custom-header-content h1{
 	margin: 5px;
 }
+
+#custom-header {
+    position: relative;
+    z-index: 9;
+    background: #fff;
+}
+
+#custom-header {
+    min-height: 270px;
+	overflow: hidden;
+}
+
+#custom-header img {
+    vertical-align: middle;
+}
+
+#custom-header::after {
+    background: #000000;
+    content: "";
+    display: block;
+    height: 100%;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 888;
+}
+
+.custom-header-content {
+    position: absolute;
+    width: 100%;
+    text-align: center;
+    z-index: 999;
+    padding: 0;
+    bottom: 35%;
+}
+
+.page-title {
+	color: #fff;
+	font-size: 50px;
+	font-weight: 600;
+}
+
 
 /*--------------------------------------------------------------
 # slider bar
@@ -1612,23 +1647,8 @@ h4.themeszen_portfolio_main_desc {
 }
 
 .portfolio-section .entry-header .entry-title { font-weight: 700; margin: 0 0 5px; }
-/*Porttfolio Lightbox*/
-.thumbnail-showcase-overlay {
-	background: rgba(0, 0, 0, 0.7);
-	visibility: hidden;
-	opacity: 0;
-	transition: all 0.4s ease;
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	width: 100%;
-	height: 100%; 
-	border-radius: 0;
-	padding: 1.42857rem;
-}
-.portfolio-section .post .post-thumbnail:hover .thumbnail-showcase-overlay { visibility: visible; opacity: 1; height: 100%; }
+
+
 .portfolio-section .post .post-thumbnail{
 	text-align:center;
 	position:relative;
@@ -1641,40 +1661,6 @@ h4.themeszen_portfolio_main_desc {
 	height:100%;
 	overflow:hidden;
 }
-.portfolio-section .post .post-thumbnail .thumbnail-showcase-icons { margin: -20px 0 0; position: absolute; top: 50%; right: 0; width: 100%; }
-.portfolio-section .post .post-thumbnail .thumbnail-showcase-icons a {
-    font-size: 1.250rem;
-	line-height: 2.1;
-    display: inline-block;
-    margin: 0 0 0 10px;
-    padding: 1px;
-    opacity: 1;
-	text-decoration: none;
-	text-align: center;
-	color: #0f0f16;
-	width: 2.85714rem;
-	height: 2.85714rem;
-	border-radius: 50%;
-	background-color: #fff; 
-    -wekbit-transition: all 0.4s;
-    -moz-transition: all 0.4s;
-    -o-transition: all 0.4s;
-    transition: all 0.4s;
-    -wekbit-transform: translateY(30px);
-    -moz-transform: translateY(30px);
-    -o-transform: translateY(30px);
-    -ms-transform: translateY(30px);
-    transform: translateY(30px);
-}
-.portfolio-section .post .post-thumbnail:hover .thumbnail-showcase-icons a {
-    -wekbit-transform: translateY(0);
-    -moz-transform: translateY(0);
-    -o-transform: translateY(0);
-    -ms-transform: translateY(0);
-    transform: translateY(0);
-}
-.portfolio-section .post .post-thumbnail .thumbnail-showcase-icons a:hover { opacity: 1; }
-
 
 .portfolio-section .portfolio-item {
     width: 25%;
@@ -2338,6 +2324,17 @@ color: #fff !important;
     z-index: 1;
     top: 0;
     opacity: 0.5;
+}
+
+.flexslider .overlay {
+    content:"";
+    display: block;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 0; 
 }
 
 /*--------------------------------------------------------------

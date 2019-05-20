@@ -1,20 +1,15 @@
 === arenabiz ===
 Contributors: manish_gori
 Requires at least: 4.6
-Tested up to: 4.9.4
-Stable tag: 1.0.4
-Requires PHP: 5.2
-Version: 1.0.4
+Tested up to: 5.2
+Requires PHP: 5.6
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: threaded-comments,two-columns,theme-options, blog, portfolio
 
 == Description ==
 
-A very neat and clean blue and white business theme. The theme is fully responsive that looks great on any device. The theme supports widgets. And features theme-options, threaded-comments and multi-level dropdown menu. A simple and neat typography. Uses WordPress custom menu, header image, and background.
+A very neat and clean green and white business theme. The theme is fully responsive that looks great on any device. The theme supports widgets. And features theme-options, threaded-comments and multi-level dropdown menu. A simple and neat typography. Uses WordPress custom menu, header image, and background.
 
-== Support ==
-http://themeszen.com/?page_id=33
 
 == Installation ==
 
@@ -29,9 +24,6 @@ Go to settings - reading and select A static page as option for front page displ
 
 = Footer-sidebar.php, How to add footer widgets =
 Go to appearance - widgets. Drag widgets from left side and drop into First footer widget, second footer widget...and so on..
-
-= Where can I get support for the theme? =
-Support is available at http://themeszen.com/?page_id=33
 
 = How to use menus =
 For Menus: Use WordPress Menu system under Appearance tab.
@@ -88,78 +80,95 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	
 
 
-[1.05] Images: logo.jpg are custom made, not copyrightable.
+[1.05] Images: logo.jpg and quote.png are custom made, not copyrightable.
 
-[1.06] images/pic3.jpg, Copyright 2018 pixabay
+[1.06] images/pic3.jpg, Copyright 2018 stocksnap
 
-	Source: https://www.pexels.com/photo/woman-in-gray-turtleneck-shirt-portrait-41366/
-	License: Free for personal and commercial use.
-	License URI: https://www.pexels.com/creative-commons-images
+	Source: https://stocksnap.io/photo/LFTEMAVW1O
+	License: CC0.
+	License URI: https://creativecommons.org/publicdomain/zero/1.0/
 	
 
 
-[1.07] images/pic1.jpg, Copyright 2018 pixabay
+[1.07] images/pic1.jpg, Copyright 2018 stocksnap
 
-	Source: https://www.pexels.com/photo/woman-in-black-scoop-neck-shirt-smiling-38554/
-	License: Free for personal and commercial use.
-	License URI: https://www.pexels.com/creative-commons-images
+	Source: https://stocksnap.io/photo/MLEPUKHYUU
+	License: CC0.
+	License URI: https://creativecommons.org/publicdomain/zero/1.0/
 	
 
 
-[1.08] images/pic2.jpg, Copyright 2018 pixabay
+[1.08] images/pic2.jpg, Copyright 2018 stocksnap
 
-	Source: https://www.pexels.com/photo/adult-black-background-businessman-casual-262391/
-	License: Free for personal and commercial use.
-	License URI: https://www.pexels.com/creative-commons-images
+	Source: https://stocksnap.io/photo/5BRQF1DZ8W
+	License: CC0.
+	License URI: https://creativecommons.org/publicdomain/zero/1.0/
 	
 
 
-[1.9] images/port3.jpg, Copyright 2018 Kaboompics .com
+[1.9] images/port3.jpg, Copyright 2018 stocksnap
 
-	Source: https://www.pexels.com/photo/black-pencils-and-design-word-6444
-	License: Free for commercial and noncommercial purposes.
-	License URI: https://www.pexels.com/creative-commons-images
+	Source: https://stocksnap.io/photo/INKDH43UE5
+	License: CC0.
+	License URI: https://creativecommons.org/publicdomain/zero/1.0/
 	
 
 
-[1.10] images/port2.jpg, Copyright 2018 Pixabay
+[1.10] images/port2.jpg, Copyright 2018 stocksnap
 
-	Source: https://www.pexels.com/photo/abstract-blackboard-bulb-chalk-355948
-	License: Free for personal and commercial use
-	License URI: https://www.pexels.com/creative-commons-images
+	Source: https://stocksnap.io/photo/TZHYCANBO9
+	License: CC0.
+	License URI: https://creativecommons.org/publicdomain/zero/1.0/
 	
 
 
-[1.11] images/port1.jpg, Copyright 2018 Negative Space 
+[1.11] images/port1.jpg, Copyright 2018 stocksnap 
 
-	Source: https://www.pexels.com/photo/notebook-macbook-pro-designer-technology-34199/
-	License: Free for personal and commercial use
-	License URI: https://www.pexels.com/creative-commons-images
+	Source: https://stocksnap.io/photo/3FOSIEZDTW
+	License: CC0.
+	License URI: https://creativecommons.org/publicdomain/zero/1.0/
 	
 
 
-[1.12] images/slide1.jpg, Copyright 2018 JÉSHOOTS
+[1.12] images/slide1.jpg, Copyright 2018 stocksnap
 
-	Source: https://www.pexels.com/photo/woman-in-black-elbow-sleeve-shirt-and-blue-denim-jeans-sitting-on-the-grey-rock-during-daytime-7442/
-	License: Free for personal and commercial use
-	License URI: https://www.pexels.com/creative-commons-images
+	Source: https://stocksnap.io/photo/Y9UAO6CRX3
+	License: CC0.
+	License URI: https://creativecommons.org/publicdomain/zero/1.0/
 	
 
 
-[1.13] images/slide2.jpg, Copyright 2018 Pixabay
+[1.13] images/slide2.jpg, Copyright 2018 stocksnap
 
-	Source: https://www.pexels.com/photo/business-computer-connection-contemporary-270640/
-	License: Free for personal and commercial use
-	License URI: https://www.pexels.com/creative-commons-images
+	Source: https://stocksnap.io/photo/BUFBDV2NQW
+	License: CC0.
+	License URI: https://creativecommons.org/publicdomain/zero/1.0/
 
 
-[1.14] Bundled Icons (images/quote.png)
+[1.15] images/default-banner.jpg, Copyright 2018 stocksnap
 
- 	Icons, Copyright 2018 WPZOOM
+	Source: https://stocksnap.io/photo/AQNKPDGKR8
+	License: CC0.
+	License URI: https://creativecommons.org/publicdomain/zero/1.0/
 
-	Source: https://www.iconfinder.com/icons/111116/quote_icon
-	License: Free to copy and redistribute the material in any medium or format.
-	License URI: https://creativecommons.org/licenses/by-sa/3.0/
+
+[1.16] normalize.css (C) 2012-2016 Nicolas Gallagher and Jonathan Neal
+
+	Source: http://necolas.github.io/normalize.css/
+	License: MIT
+	License URI: http://opensource.org/licenses/MIT
+
+[1.17] Underscores (C) 2012-2017 Automattic, Inc.
+
+	Source: http://underscores.me/
+	License: GPLv2 or later
+	License URI: https://www.gnu.org/licenses/gpl-2.0.html
+
+[1.18] TGM  (C) 2011 Thomas Griffin
+
+	Source: http://tgmpluginactivation.com/
+	License: GPLv2 or later
+	License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 
 == Changelog ==:
@@ -178,3 +187,6 @@ The following opensource projects, graphics, fonts, API's or other files as list
 = 1.0.4
 - Fixed:   Changes as requested by TRT.
 
+5/20/2019
+= 1.0.5
+- Fixed:   Changes as requested by TRT.

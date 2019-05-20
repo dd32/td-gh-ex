@@ -13,16 +13,23 @@
  */
 
 get_header();
+$banner = get_header_image();
 ?>
+
+<div id="custom-header">
+
+				<?php if ( ! empty( $banner ) ) : ?>
+		<img src="<?php echo esc_url( $banner ); ?>" alt="" />
+	<?php endif; ?>
 
 		<div class="custom-header-content">
 			<div class="container">
 			<?php $header_title = apply_filters( 'arenabiz_filter_title', '' ); ?>
-			<h1><?php echo esc_html( $header_title ); ?></h1>
+			<h1 class="page-title"><?php echo esc_html( $header_title ); ?></h1>
 			</div>
 			
 		</div>
-		
+			</div><!-- #custom-header -->
 
 	<div id="content" class="site-content">
 	

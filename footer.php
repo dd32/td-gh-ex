@@ -21,7 +21,7 @@
 	
 	
 		<div class="site-info">
-			<?php _e( 'Copyright', 'arenabiz' ); ?> <?php echo date_i18n(__('Y','arenabiz')); ?> <?php echo esc_html(arenabiz_get_option('arenabiz_footertext')); ?> | <?php _e( 'Powered by', 'arenabiz' ); ?> <a href="http://www.wordpress.org"><?php _e( 'WordPress', 'arenabiz' ); ?></a> | <?php _e( 'arenabiz theme by', 'arenabiz' ); ?> <a href="https://www.arenabiz.com"><?php _e( 'arenabiz', 'arenabiz' ); ?></a>
+			<?php esc_html_e( 'Copyright', 'arenabiz' ); ?> <?php echo esc_attr(date_i18n(__('Y','arenabiz'))); ?> <?php echo esc_html(get_theme_mod('arenabiz_footer_title')); ?> | <?php esc_html_e( 'Powered by', 'arenabiz' ); ?> <a href="http://www.wordpress.org"><?php esc_html_e( 'WordPress', 'arenabiz' ); ?></a> | <?php esc_html_e( 'arenabiz theme by', 'arenabiz' ); ?> <a href="https://www.themeszen.com"><?php esc_html_e( 'themeszen', 'arenabiz' ); ?></a>
 		</div><!-- .site-info -->
 		
 	</div><!-- .container -->

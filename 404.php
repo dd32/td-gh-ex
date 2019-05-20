@@ -8,15 +8,36 @@
  */
 
 get_header();
+$banner = get_header_image();
 ?>
+
+<div id="custom-header">
+
+				<?php if ( ! empty( $banner ) ) : ?>
+		<img src="<?php echo esc_url( $banner ); ?>" alt="" />
+	<?php endif; ?>
+	
+		<div class="custom-header-content">
+			<div class="container">
+			<?php $header_title = apply_filters( 'arenabiz_filter_title', '' ); ?>
+					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'arenabiz' ); ?></h1>
+			</div>
+			
+		</div>
+				</div><!-- #custom-header -->	
+		
+
+	<div id="content" class="site-content">
+	
+					<div class="container">
+
+					<div class="row">
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
 			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'arenabiz' ); ?></h1>
-				</header><!-- .page-header -->
+
 
 				<div class="page-content">
 					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'arenabiz' ); ?></p>
@@ -24,31 +45,8 @@ get_header();
 					<?php
 					get_search_form();
 
-					the_widget( 'WP_Widget_Recent_Posts' );
 					?>
 
-					<div class="widget widget_categories">
-						<h2 class="widget-title"><?php esc_html_e( 'Most Used Categories', 'arenabiz' ); ?></h2>
-						<ul>
-							<?php
-							wp_list_categories( array(
-								'orderby'    => 'count',
-								'order'      => 'DESC',
-								'show_count' => 1,
-								'title_li'   => '',
-								'number'     => 10,
-							) );
-							?>
-						</ul>
-					</div><!-- .widget -->
-
-					<?php
-					/* translators: %1$s: smiley */
-					$arenabiz_archive_content = '<p>' . sprintf( esc_html__( 'Try looking in the monthly archives. %1$s', 'arenabiz' ), convert_smilies( ':)' ) ) . '</p>';
-					the_widget( 'WP_Widget_Archives', 'dropdown=1', "after_title=</h2>$arenabiz_archive_content" );
-
-					the_widget( 'WP_Widget_Tag_Cloud' );
-					?>
 
 				</div><!-- .page-content -->
 			</section><!-- .error-404 -->
@@ -57,4 +55,15 @@ get_header();
 	</div><!-- #primary -->
 
 <?php
-get_footer();
+get_sidebar(); ?>
+
+
+
+</div><!-- .inner-wrapper -->
+
+			</div><!-- .container -->
+
+	</div><!-- #content -->
+
+
+<?php get_footer();

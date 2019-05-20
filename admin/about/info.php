@@ -23,6 +23,7 @@ if ( ! function_exists( 'arenabiz_info_setup' ) ) :
 			'tabs' => array(
 				'getting-started' => esc_html__( 'Getting Started', 'arenabiz' ),
 				'support'         => esc_html__( 'Support', 'arenabiz' ),
+				'useful-plugins'  => esc_html__( 'Useful Plugins', 'arenabiz' ),				
 				'upgrade-to-pro'  => esc_html__( 'Upgrade to Pro', 'arenabiz' ),
 				),
 
@@ -92,6 +93,11 @@ if ( ! function_exists( 'arenabiz_info_setup' ) ) :
 					'is_new_tab'  => true,
 					),
 				),
+				
+// Useful plugins.
+			'useful_plugins' => array(
+				'description' => esc_html__( 'Theme supports some helpful WordPress plugins to enhance your site.', 'arenabiz' ),
+				),				
 
 			// Upgrade content.
 			'upgrade_to_pro' => array(
