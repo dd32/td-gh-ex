@@ -7,6 +7,6 @@
 		
 		get_header(); 
 
-	do_action( 'zt_arenabiz_sections', false ); 
+	do_action( 'zentoolkit_arenabiz_sections', false ); 
 
      get_footer(); 

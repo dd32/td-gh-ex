@@ -200,7 +200,7 @@ function arenabiz_scripts() {
 	wp_register_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.css' );
 	wp_enqueue_style( 'bootstrap' );
 		
-	wp_enqueue_style( 'arenabiz-font-awesome', get_template_directory_uri() . '/fonts/font-awesome/css/font-awesome' . $min . '.css', '', '4.7.0' );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/fonts/font-awesome/css/font-awesome' . $min . '.css', '', '4.7.0' );
 
 
 	wp_enqueue_script( 'arenabiz-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

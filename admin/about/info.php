@@ -35,7 +35,7 @@ if ( ! function_exists( 'arenabiz_info_setup' ) ) :
 					),
 				'demo_url' => array(
 					'text' => esc_html__( 'View Demo', 'arenabiz' ),
-					'url'  => 'https://demos.themeszen.com/arenabiz/',
+					'url'  => 'https://demos.themeszen.com/arena/',
 					),
 				'documentation_url' => array(
 					'text' => esc_html__( 'View Documentation', 'arenabiz' ),
@@ -75,7 +75,7 @@ if ( ! function_exists( 'arenabiz_info_setup' ) ) :
 					'icon'        => 'dashicons dashicons-arrow-right',
 					'description' => esc_html__( 'Check the theme demo here.', 'arenabiz' ),
 					'button_text' => esc_html__( 'View Demo', 'arenabiz' ),
-					'button_url'  => 'https://demos.themeszen.com/arenabiz/',
+					'button_url'  => 'https://demos.themeszen.com/arena/',
 					'button_type' => 'link',
 					'is_new_tab'  => true,
 					),

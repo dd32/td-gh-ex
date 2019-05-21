@@ -48,6 +48,15 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	License: Licensed under MIT
 	License URI: http://opensource.org/licenses/MIT
 
+Fonts - [SIL OFL 1.1](http://scripts.sil.org/OFL)
+
+[1.01] images used in screenshot.
+
+	source: https://stocksnap.io/photo/Y9UAO6CRX3, https://stocksnap.io/photo/MLEPUKHYUU, https://stocksnap.io/photo/5BRQF1DZ8W, https://stocksnap.io/photo/LFTEMAVW1O
+	License: CC0.
+	License URI: https://creativecommons.org/publicdomain/zero/1.0/
+
+
 [1.01] trt-customizer-pro, Copyright 2016 Justin Tadlock.
 
 	Source: https://github.com/justintadlock/trt-customizer-pro
@@ -171,22 +180,26 @@ The following opensource projects, graphics, fonts, API's or other files as list
 	License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 
-== Changelog ==:
+== Changelog ==
 = 1.0.1
-- Fixed:   Changes as requested by TRT.
+- Fixed: readme.txt validated as per guidelines,element-about.php file moved,upsell button removed from customizer,images changed for credit problems,prefix added to the theme functions,language folder removed,theme slug added to google font handle,Changed date('Y') to date_i18n(__('Y','textdomain')), removed unused files, removed search-form from add_theme_support( 'html5' )
 
 4/15/2019
 = 1.0.2
-- Fixed:   Changes as requested by TRT.
+- Fixed: PHP "headers already send" errors fixed, arenabiz/sidebar-footer.php file changed for global variable issue, prefix removed for bootstrap.css, selectnav.js and jquery.flexslider.js, superfish.js file removed
 
 4/17/2019
 = 1.0.3
-- Fixed:   Changes as requested by TRT.
+- Fixed: header image fixed, jquery console issues fixed.
 
 4/18/2019
 = 1.0.4
-- Fixed:   Changes as requested by TRT.
+- Fixed: credit link provided for trt-customizer-pro.
 
 5/20/2019
 = 1.0.5
-- Fixed:   Changes as requested by TRT.
+- Fixed: image license changed, readme file fixed according to recent guidelines, extra content creation with customizer removed, escaping and sanitizing errors fixed.
+
+5/22/2019
+= 1.0.6
+- Fixed: demo lin fixed for Appearance >> arenabiz info` page, 404.php file fixed for unused variable, readme.txt file fixed for changelog, prefix added for font-awesome, credit link added for font-awesome

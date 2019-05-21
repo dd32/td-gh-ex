@@ -19,7 +19,7 @@ $banner = get_header_image();
 	
 		<div class="custom-header-content">
 			<div class="container">
-			<?php $header_title = apply_filters( 'arenabiz_filter_title', '' ); ?>
+
 					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'arenabiz' ); ?></h1>
 			</div>
 			
