@@ -2,8 +2,8 @@
 Contributors: catchthemes
 Tags: blog, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, flexible-header, front-page-post-form, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
 Requires at least: 4.8
-Tested up to: 5.0.2
-Stable tag: 2.5.6
+Tested up to: 5.2.1
+Stable tag: 2.5.7
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -137,6 +137,10 @@ Number:
     This will initiate Skype to call phone number 14044627491
 
 == Change log ==
+
+= 2.5.7 (Released: May 22, 2019) =
+* Added: Support for wp_body_open action
+* Bug Fixed: Menu issue on mobile devices
 
 = 2.5.6 (Released: December 27, 2018) =
 * Updated: Metabox UI

@@ -41,6 +41,12 @@ Responsive Style
 	text-decoration: none;
 }
 
+.nav-secondary .mobile-menu-anchor a.genericon-menu,
+.nav-secondary .mobile-menu-anchor a.genericon-menu:hover {
+	color: #666;
+	text-decoration: none;
+}
+
 .mobile-header-left-nav-open #mobile-header-left-menu .genericon-menu:before,
 .mobile-secondary-nav-open #mobile-secondary-menu .genericon-menu:before,
 .mobile-header-right-nav-open #mobile-header-right-menu .genericon-menu:before {
@@ -269,37 +275,53 @@ Responsive Style
 	position: relative;
 }
 
-.sidr .menu-item-has-children a:after,
-.sidr .page_item_has_children a:after {
+.sidr .dropdown-toggle:after {
+	font-family: Genericons;
     position: absolute;
     right: 10px;
     top: 18px;
 }
 
-.sidr .menu-item-has-children a.is-open:after,
-.sidr .page_item_has_children a.is-open:after {
+.sidr .menu-item-has-children .dropdown-toggle {
+	background: transparent;
+	border: 0;
+	position: absolute;
+	top: 0;
+	right: 0;
+	padding: 25px;
+	box-shadow: unset;
+} 
+.sidr .menu-item-has-children .dropdown-toggle:focus, .sidr .menu-item-has-children .dropdown-toggle:hover {
+	box-shadow: unset;
+}
+.sidr .sub-menu .menu-item-has-children .dropdown-toggle {
+	padding: 20.5px;
+}
+.sidr .menu-item-has-children {
+	position: relative;
+}
+
+.sidr .dropdown-toggle.toggled-on:after {
     top: 10px;
 }
 
-.sidr .menu-item-has-children a:after,
-.sidr .page_item_has_children a:after,
-.sidr .menu-item-has-children li.menu-item-has-children a:after,
-.sidr .page_item_has_children li.menu-item-has-children a:after,
-.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children a:after,
-.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children a:after,
-.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children li.menu-item-has-children a:after,
-.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children li.menu-item-has-children a:after {
+.sidr .dropdown-toggle:after,
+.sidr .menu-item-has-children li.dropdown-toggle:after,
+.sidr .page_item_has_children li.dropdown-toggle:after,
+.sidr .menu-item-has-children li.menu-item-has-children li.dropdown-toggle:after,
+.sidr .page_item_has_children li.menu-item-has-children li.dropdown-toggle:after,
+.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children li.dropdown-toggle:after,
+.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children li.dropdown-toggle:after {
 	content: "\f502";
 }
 
-.sidr .menu-item-has-children a.is-open:after,
-.sidr .page_item_has_children a.is-open:after,
-.sidr .menu-item-has-children li.menu-item-has-children a.is-open:after,
-.sidr .page_item_has_children li.menu-item-has-children a.is-open:after,
-.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children a.is-open:after,
-.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children a.is-open:after,
-.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children li.menu-item-has-children a.is-open:after,
-.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children li.menu-item-has-children a.is-open:after {
+.sidr .dropdown-toggle.toggled-on:after,
+.sidr .menu-item-has-children li.dropdown-toggle.toggled-on:after,
+.sidr .page_item_has_children li.dropdown-toggle.toggled-on:after,
+.sidr .menu-item-has-children li.menu-item-has-children li.dropdown-toggle .toggled-on:after,
+.sidr .page_item_has_children li.menu-item-has-children li.dropdown-toggle .toggled-on:after,
+.sidr .menu-item-has-children li.menu-item-has-children li.menu-item-has-children li.dropdown-toggle .toggled-on:after,
+.sidr .page_item_has_children li.menu-item-has-children li.menu-item-has-children li.dropdown-toggle .toggled-on:after {
 	content: "\f500";
 }
 
@@ -353,7 +375,7 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-3. x <= 1366px
+4. x <= 1366px
 --------------------------------------------------------------*/
 @media screen and (max-width: 1366px) {
 	.wrapper {
@@ -367,7 +389,7 @@ Responsive Style
 
 
 /*--------------------------------------------------------------
-3. x <= 1280px
+5. x <= 1280px
 --------------------------------------------------------------*/
 @media screen and (max-width: 1280px) {
 	.wrapper {
@@ -402,7 +424,7 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-4. x <= 1152px
+6. x <= 1152px
 --------------------------------------------------------------*/
 @media screen and (max-width: 1152px) {
 	.wrapper {
@@ -450,7 +472,7 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-5. x <= 1100px (iPad Landscape)
+7. x <= 1100px (iPad Landscape)
 --------------------------------------------------------------*/
 @media screen and (max-width: 1100px) {
 	.wrapper {
@@ -484,7 +506,7 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-6. x <= 990px (iPad Portrait)
+8. x <= 990px (iPad Portrait)
 --------------------------------------------------------------*/
 @media screen and (max-width: 990px) {
 	.wrapper {
@@ -705,14 +727,29 @@ Responsive Style
 	.sidebar-header-right .widget-wrap {
 	    float: none;
 	}
+
 	.mobile-header-left-nav-open #fixed-header {
 		left: 260px;
 	}
+
+	.mobile-header-right-nav-open #fixed-header {
+		left:  auto;
+		right: 260px;
+	}
+
 	.nav-primary .menu,
 	.nav-header-right,
-	.nav-secondary,
+	.nav-secondary .menu,
 	.nav-footer {
 		display: none;
+	}
+
+	.nav-secondary .mobile-menu-anchor a.genericon-menu {
+		display: block;
+	}
+
+	.mobile-secondary-nav-open .nav-secondary .mobile-menu-anchor a.genericon-menu {
+		display: inline-block;
 	}
 
 	#site-branding {
@@ -752,8 +789,24 @@ Responsive Style
 	}
 }
 
+@media screen and (min-width:990px) {
+	 .menu-item-has-children .dropdown-toggle {
+		display:none;
+	}
+	.sub-menu .menu-item-has-children > a::after {
+		position:absolute;
+		transform:rotate(270deg);
+		padding-top:10px;
+	}
+	.menu-item-has-children > a::after {
+		content: '\f431';
+		font-family: Genericons;
+		padding-left:10px;
+	}
+}
+
 /*--------------------------------------------------------------
-7. x <= 782px
+9. x <= 782px
 --------------------------------------------------------------*/
 @media screen and (max-width:782px){
 	.admin-bar #fixed-header {
@@ -762,7 +815,7 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-8. x <= 767px
+10. x <= 767px
 --------------------------------------------------------------*/
 @media screen and (max-width: 767px) {
 	.wrapper {
@@ -781,7 +834,7 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-9. x <= 700px
+11. x <= 700px
 --------------------------------------------------------------*/
 @media screen and (max-width: 700px) {
 	.wrapper {
@@ -805,7 +858,7 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-10. x <= 600px (iPhone 5 Landscape)
+12. x <= 600px (iPhone 5 Landscape)
 --------------------------------------------------------------*/
 @media screen and (max-width:600px) {
 	.wrapper {
@@ -879,7 +932,7 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-11. x <= 540px (iPhone 4 Landscape)
+13. x <= 540px (iPhone 4 Landscape)
 --------------------------------------------------------------*/
 @media screen and (max-width: 540px) {
 	.wrapper {
@@ -951,7 +1004,7 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-12. x <= 479px (iPhone Portrait)
+14. x <= 479px (iPhone Portrait)
 --------------------------------------------------------------*/
 @media screen and (max-width: 479px) {
 	.wrapper {
@@ -1009,7 +1062,7 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-13. x <= 400px
+15. x <= 400px
 --------------------------------------------------------------*/
 @media screen and (max-width: 400px) {
 	.wrapper {
@@ -1027,15 +1080,11 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-14. x <= 319px
+16. x <= 319px
 --------------------------------------------------------------*/
 @media screen and (max-width: 319px) {
 	#logo-icon {
 	    width: 55%;
-	}
-
-	#masthead {
-		padding-top: 5px;
 	}
 
 	#site-branding,
@@ -1113,7 +1162,7 @@ Responsive Style
 }
 
 /*--------------------------------------------------------------
-15. Form Zoom Fix
+17. Form Zoom Fix
 --------------------------------------------------------------*/
 @media screen and (-webkit-min-device-pixel-ratio:0) {
 	select:focus,
