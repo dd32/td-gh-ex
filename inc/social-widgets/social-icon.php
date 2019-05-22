@@ -15,8 +15,7 @@ class Advance_Ecommerce_Store_Social_Widget extends WP_Widget {
 			array( 'description' => __( 'Widget for Social icons section', 'advance-ecommerce-store' ), ) 
 		);
 	}
-// Creating widget front-end
-// This is where the action happens
+
 	public function widget( $args, $instance ) {
 		?>
 		<div class="social_widget">
@@ -45,9 +44,7 @@ class Advance_Ecommerce_Store_Social_Widget extends WP_Widget {
 		?>
 		</div>
 		<?php
-		// This is where you run the code and display the output
-		//echo __( 'Hello, World!', 'advance-ecommerce-store' );
-		//echo $args['after_widget'];
+
 	}
 		
 	// Widget Backend 

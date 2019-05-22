@@ -7,8 +7,8 @@
  * @package advance-ecommerce-store
  */
 
-?><!DOCTYPE html>
-
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -16,11 +16,9 @@
   <link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'advance-ecommerce-store' ) ); ?>">
   <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
   <div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','advance-ecommerce-store'); ?></a></div>
   <div class="toggle"><a class="toggleWooMenu" href="#"><?php esc_html_e('Woocommerce Menu','advance-ecommerce-store'); ?></a></div>
-
   <div id="header">   
     <div class="top-menu">
       <div class="container">
@@ -82,3 +80,5 @@
       </div>
     </div>
   </div>
+</body>
+</html>

@@ -21,10 +21,26 @@ function advance_ecommerce_store_customize_register($wp_customize) {
 		'description'    => __('Description of what this panel does.', 'advance-ecommerce-store'),
 	));
 
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'advance_ecommerce_store_theme_color_option', array( 
+		'panel' => 'advance_ecommerce_store_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'advance-ecommerce-store' ) 
+	) );
+
+  	$wp_customize->add_setting( 'advance_ecommerce_store_theme_color', array(
+	    'default' => '#ff6600',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_ecommerce_store_theme_color', array(
+  		'label' => 'Color Option',
+	    'description' => __('One can change complete theme color on just one click.', 'advance-ecommerce-store'),
+	    'section' => 'advance_ecommerce_store_theme_color_option',
+	    'settings' => 'advance_ecommerce_store_theme_color',
+  	)));
+
 	//Layouts
 	$wp_customize->add_section('advance_ecommerce_store_left_right', array(
 		'title'    => __('Layout Settings', 'advance-ecommerce-store'),
-		'priority' => 30,
 		'panel'    => 'advance_ecommerce_store_panel_id',
 	));
 

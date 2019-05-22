@@ -55,7 +55,7 @@ get_header(); ?>
         <div id="slider">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
             <?php $pages = array();
-              for ( $count = 1; $count <= 3; $count++ ) {
+              for ( $count = 1; $count <= 4; $count++ ) {
                 $mod = intval( get_theme_mod( 'advance_ecommerce_store_slider_page' . $count ));
                 if ( 'page-none-selected' != $mod ) {
                   $pages[] = $mod;

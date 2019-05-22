@@ -226,7 +226,7 @@ msgstr ""
 msgid 'Appears on topbar'
 msgstr ""
 
-#: functions.php:417
+#: functions.php:420
 msgid 'Ecommerce Wordpress Theme'
 msgstr ""
 
@@ -324,7 +324,6 @@ msgstr ""
 msgid 'Previous'
 msgstr ""
 
-
 #: page-template/custom-front-page.php:13
 msgid 'CATEGORIES'
 msgstr ""
@@ -348,200 +347,202 @@ msgid 'Theme Settings'
 msgstr ""
 
 #: inc/customizer.php:21
-msgid 'Theme Settings'
+msgid 'Description of what this panel does.'
 msgstr ""
 
 #: inc/customizer.php:26
+msgid 'Theme Color Option'
+msgstr ""
+
+#: inc/customizer.php:35
 msgid 'Layout Settings'
 msgstr ""
 
-#: inc/customizer.php:33 
-#: inc/customizer.php:42
+#: inc/customizer.php:43
+msgid 'Layout Settings'
+msgstr ""
+
+#: inc/customizer.php:50 
+#: inc/customizer.php:59
 msgid 'Right Sidebar'
 msgstr ""
 
-#: inc/customizer.php:38
+#: inc/customizer.php:55
 msgid 'Change Layouts'
 msgstr ""
 
-#: inc/customizer.php:41
+#: inc/customizer.php:58
 msgid 'Left Sidebar'
 msgstr ""
 
-#: inc/customizer.php:43
+#: inc/customizer.php:60
 msgid 'One Column'
 msgstr ""
 
-#: inc/customizer.php:44
+#: inc/customizer.php:61
 msgid 'Three Columns'
 msgstr ""
 
-#: inc/customizer.php:45
+#: inc/customizer.php:62
 msgid 'Four Columns'
 msgstr ""
 
-#: inc/customizer.php:46
+#: inc/customizer.php:63
 msgid 'Grid Layout'
 msgstr ""
 
-#: inc/customizer.php:147
+#: inc/customizer.php:164
 msgid 'Typography'
 msgstr ""
 
-#: inc/customizer.php:158
+#: inc/customizer.php:175
 msgid 'Paragraph Color'
 msgstr ""
 
-#: inc/customizer.php:172
+#: inc/customizer.php:189
 msgid 'Paragraph Fonts'
 msgstr ""
 
-#: inc/customizer.php:183
+#: inc/customizer.php:200
 msgid 'Paragraph Font Size'
 msgstr ""
 
-#: inc/customizer.php:195
+#: inc/customizer.php:212
 msgid '"a" Tag Color'
 msgstr ""
 
-#: inc/customizer.php:209
+#: inc/customizer.php:226
 msgid '"a" Tag Fonts'
 msgstr ""
 
-#: inc/customizer.php:220
+#: inc/customizer.php:237
 msgid '"li" Tag Color'
 msgstr ""
 
-#: inc/customizer.php:234
+#: inc/customizer.php:251
 msgid '"li" Tag Fonts'
 msgstr ""
 
-#: inc/customizer.php:245
+#: inc/customizer.php:262
 msgid 'H1 Color'
 msgstr ""
 
-
-#: inc/customizer.php:259
+#: inc/customizer.php:276
 msgid 'H1 Fonts'
 msgstr ""
 
-#: inc/customizer.php:271
+#: inc/customizer.php:288
 msgid 'H1 Font Size'
 msgstr ""
 
-#: inc/customizer.php:283
+#: inc/customizer.php:300
 msgid 'H2 Color'
 msgstr ""
 
-
-#: inc/customizer.php:297
+#: inc/customizer.php:314
 msgid 'H2 Fonts'
 msgstr ""
 
-#: inc/customizer.php:309
+#: inc/customizer.php:326
 msgid 'H2 Font Size'
 msgstr ""
 
-#: inc/customizer.php:321
+#: inc/customizer.php:338
 msgid 'H3 Color'
 msgstr ""
 
-
-#: inc/customizer.php:335
+#: inc/customizer.php:352
 msgid 'H3 Fonts'
 msgstr ""
 
-#: inc/customizer.php:347
+#: inc/customizer.php:364
 msgid 'H3 Font Size'
 msgstr ""
 
-#: inc/customizer.php:359
+#: inc/customizer.php:376
 msgid 'H4 Color'
 msgstr ""
 
-
-#: inc/customizer.php:373
+#: inc/customizer.php:390
 msgid 'H4 Fonts'
 msgstr ""
 
-#: inc/customizer.php:385
+#: inc/customizer.php:402
 msgid 'H4 Font Size'
 msgstr ""
 
-#: inc/customizer.php:397
+#: inc/customizer.php:414
 msgid 'H5 Color'
 msgstr ""
 
-
-#: inc/customizer.php:411
+#: inc/customizer.php:428
 msgid 'H5 Fonts'
 msgstr ""
 
-#: inc/customizer.php:423
+#: inc/customizer.php:440
 msgid 'H5 Font Size'
 msgstr ""
 
-#: inc/customizer.php:435
+#: inc/customizer.php:452
 msgid 'H6 Color'
 msgstr ""
 
-
-#: inc/customizer.php:449
+#: inc/customizer.php:466
 msgid 'H6 Fonts'
 msgstr ""
 
-#: inc/customizer.php:461
+#: inc/customizer.php:478
 msgid 'H6 Font Size'
 msgstr ""
 
-#: inc/customizer.php:469
+#: inc/customizer.php:486
 msgid 'Slider Settings'
 msgstr ""
 
-#: inc/customizer.php:1480
+#: inc/customizer.php:497
 msgid 'Show / Hide slider'
 msgstr ""
 
-#: inc/customizer.php:492
+#: inc/customizer.php:509
 msgid 'Select Slide Image Page'
 msgstr ""
 
-#: inc/customizer.php:500
+#: inc/customizer.php:517
 msgid 'Product Services'
 msgstr ""
 
-#: inc/customizer.php:524
+#: inc/customizer.php:541
 msgid 'Select Category to display Services'
 msgstr ""
 
-#: inc/customizer.php:530 
+#: inc/customizer.php:547 
 msgid 'New Arrivals'
 msgstr ""
 
-#: inc/customizer.php:540
+#: inc/customizer.php:557
 msgid 'Section Title'
 msgstr ""
 
-#: inc/customizer.php:550
+#: inc/customizer.php:567
 msgid 'Select Page'
 msgstr ""
 
-#: inc/customizer.php:557
+#: inc/customizer.php:574
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:558
+#: inc/customizer.php:575
 msgid 'Add some text for footer like copyright etc'
 msgstr ""
 
-#: inc/customizer.php:568
+#: inc/customizer.php:585
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:650
+#: inc/customizer.php:667
 msgid 'Ecommerce Pro Theme'
 msgstr ""
 
-#: inc/customizer.php:651
+#: inc/customizer.php:668
 msgid 'Go Pro'
 msgstr ""

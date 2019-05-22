@@ -49,7 +49,8 @@ function advance_ecommerce_store_setup() {
 	 * specifically font, colors, icons, and column width.
 	 */
 	add_editor_style(array('css/editor-style.css', advance_ecommerce_store_font_url()));
-// Theme Activation Notice
+
+	// Theme Activation Notice
 	global $pagenow;
 	
 	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
@@ -314,7 +315,6 @@ function advance_ecommerce_store_scripts() {
 	    $advance_ecommerce_store_h6_font_family = get_theme_mod('advance_ecommerce_store_h6_font_family', '');
 	    $advance_ecommerce_store_h6_font_size = get_theme_mod('advance_ecommerce_store_h6_font_size', '');
 
-
 		$custom_css ='
 			p,span{
 			    color:'.esc_html($advance_ecommerce_store_paragraph_color).'!important;
@@ -371,11 +371,13 @@ function advance_ecommerce_store_scripts() {
 
 	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
 
+	require get_parent_theme_file_path( '/inc/color-option.php' );
+	wp_add_inline_style( 'advance-ecommerce-store-basic-style',$custom_css );
+
 	wp_enqueue_style('advance-ecommerce-store-ie', get_template_directory_uri().'/css/ie.css', array('advance-ecommerce-store-basic-style'));
 	wp_style_add_data('advance-ecommerce-store-ie', 'conditional', 'IE');
 }
 add_action('wp_enqueue_scripts', 'advance_ecommerce_store_scripts');
-
 
 function advance_ecommerce_store_sanitize_dropdown_pages($page_id, $setting) {
 	// Ensure $input is an absolute integer.
@@ -403,7 +405,6 @@ function advance_ecommerce_store_string_limit_words($string, $word_limit) {
 	return implode(' ', $words);
 }
 
-
 define('ADVANCE_ECOMMERCE_STORE_BUY_NOW','https://www.themeshopy.com/themes/wordpress-ecommerce-theme/','advance-ecommerce-store');
 define('ADVANCE_ECOMMERCE_STORE_LIVE_DEMO','https://themeshopy.com/advance-ecommerce-store-pro/','advance-ecommerce-store');
 define('ADVANCE_ECOMMERCE_STORE_PRO_DOC','https://themeshopy.com/demo/docs/advance-ecommerce-store-pro/','advance-ecommerce-store');
@@ -414,7 +415,7 @@ define('ADVANCE_ECOMMERCE_STORE_CREDIT', 'https://www.themeshopy.com/themes/free
 
 if (!function_exists('advance_ecommerce_store_credit')) {
 	function advance_ecommerce_store_credit() {
-		echo "<a href=".esc_url(ADVANCE_ECOMMERCE_STORE_CREDIT)." target='_blank'>".esc_html__('Ecommerce Wordpress Theme', 'advance-ecommerce-store')."</a>";
+		echo "<a href=".esc_url(ADVANCE_ECOMMERCE_STORE_CREDIT)." target='_blank'>".esc_html__('Ecommerce WordPress Theme', 'advance-ecommerce-store')."</a>";
 	}
 }
 
