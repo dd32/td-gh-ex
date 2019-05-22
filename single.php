@@ -65,7 +65,6 @@ if ( 2 == cryout_get_option( 'anima_singlenav' ) ) { ?>
 					<?php } ?>
 
 					<?php cryout_singular_before_comments_hook();  ?>
-
 					<?php comments_template( '', true ); ?>
 
 		<?php endwhile; // end of the loop. ?>

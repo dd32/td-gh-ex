@@ -38,4 +38,5 @@ if ( 'posts' == get_option( 'show_on_front' ) ) {
 	</div><!-- #container -->
 
 	<?php get_footer();
+
 } //else !posts

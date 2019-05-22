@@ -48,6 +48,6 @@ function cryout_get_wp_option( $opt_name ) {
 } // cryout_get_wp_option()
 
 // Apply the filter
-if ( cryout_is_demo() ) { add_filter( cryout_sanitize_tnp(_CRYOUT_THEME_NAME) . '_preview_img_src', 'cryout_demo_thumbnail' ); }
+if ( cryout_is_demo() ) { add_filter( _CRYOUT_THEME_SLUG . '_preview_img_src', 'cryout_demo_thumbnail' ); }
 
 // FIN

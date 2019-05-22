@@ -47,6 +47,7 @@ function anima_body_classes( $classes ) {
 		case 0: $classes[] = 'anima-comhide-in-posts'; $classes[] = 'anima-comhide-in-pages'; break;
 	}
 	if ( $options['anima_comlabels'] == 1 ) $classes[] = 'anima-comment-placeholder';
+	if ( $options['anima_comlabels'] == 2 ) $classes[] = 'anima-comment-labels';
 	if ( $options['anima_comdate'] == 1 ) $classes[] = 'anima-comment-date-published';
 
 	if ( anima_header_title_check() ) $classes[] = 'anima-header-titles';
@@ -140,12 +141,12 @@ $sidebarS = absint( $anima_secondarysidebar );
 
 <?php if ( in_array( $anima_siteheader, array( 'logo', 'empty' ) ) ) { ?>
 	#site-text {
-			clip: rect(1px, 1px, 1px, 1px);
-			height: 1px;
-			overflow: hidden;
-			position: absolute !important;
-			width: 1px;
-			word-wrap: normal !important;
+		clip: rect(1px, 1px, 1px, 1px);
+		height: 1px;
+		overflow: hidden;
+		position: absolute !important;
+		width: 1px;
+		word-wrap: normal !important;
 	}
 <?php }
 
@@ -154,7 +155,7 @@ $sidebarS = absint( $anima_secondarysidebar );
 html
 					{ font-family: <?php echo cryout_font_select( $anima_fgeneral, $anima_fgeneralgoogle ) ?>;
 					  font-size: <?php echo esc_html( $anima_fgeneralsize ) ?>; font-weight: <?php echo esc_html( $anima_fgeneralweight ) ?>;
-					  line-height: <?php echo esc_html( (float) $anima_lineheight ) ?>; }
+					  line-height: <?php echo esc_html( floatval($anima_lineheight) ) ?>; }
 
 #site-title 		{ font-family: <?php echo cryout_font_select( $anima_fsitetitle, $anima_fsitetitlegoogle ) ?>;
 					  font-size: <?php echo esc_html( $anima_fsitetitlesize ) ?>; font-weight: <?php echo esc_html( $anima_fsitetitleweight ) ?>; }
@@ -199,7 +200,7 @@ body 										{ color: <?php echo esc_html( $anima_sitetext ) ?>;
 .anima-over-menu .header-fixed#site-header-main, .anima-over-menu .header-fixed#site-header-main #access:after
 											{ background-color: <?php echo esc_html( $anima_menubackground ) ?>; }
 
-#site-header-main 							{ border-bottom-color: rgba(0,0,0,.05);}
+#site-header-main 							{ border-bottom-color: rgba(0,0,0,.05); }
 
 .anima-over-menu .header-fixed#site-header-main #site-title a
 											{ color: <?php echo esc_html( $anima_accent1 ) ?>; }
@@ -212,7 +213,7 @@ body 										{ color: <?php echo esc_html( $anima_sitetext ) ?>;
 #sheader.socials a::before, #access .menu-search-animated .searchform input[type="search"],
 #mobile-menu								{ color: <?php echo esc_html( $anima_menutext ) ?>; }
 .anima-over-menu .header-fixed#site-header-main #sheader.socials a:hover::before,
-#sheader.socials a:hover::before					{ color: <?php echo esc_html( $anima_menubackground ) ?>; }
+#sheader.socials a:hover::before			{ color: <?php echo esc_html( $anima_menubackground ) ?>; }
 
 #access ul.sub-menu li a,
 #access ul.children li a 					{ color: <?php echo esc_html( $anima_submenutext ) ?>; }
@@ -423,7 +424,7 @@ hr											{ background-color: <?php echo esc_html(cryout_hexdiff($anima_conte
 .woocommerce button.button, .woocommerce input.button
 											{ background-color: <?php echo esc_html( $anima_accent1 ) ?>;
 											  color: <?php echo esc_html( $anima_contentbackground ) ?>;
-											  line-height: <?php echo esc_html( (float) $anima_lineheight ) ?>;
+											  line-height: <?php echo esc_html( floatval($anima_lineheight) ) ?>;
 										      border-radius: 4px;}
 .woocommerce #respond input#submit:hover, .woocommerce a.button:hover,
 .woocommerce button.button:hover, .woocommerce input.button:hover
@@ -433,7 +434,7 @@ hr											{ background-color: <?php echo esc_html(cryout_hexdiff($anima_conte
 .woocommerce-page button.button.alt, .woocommerce input.button.alt
 											{ background-color: <?php echo esc_html( $anima_accent2 ) ?>;
 											  color: <?php echo esc_html( $anima_contentbackground ) ?>;
-										  	  line-height: <?php echo esc_html( (float) $anima_lineheight ) ?>;
+										  	  line-height: <?php echo esc_html( floatval($anima_lineheight) ) ?>;
 										      border-radius: 4px;}
 .woocommerce-page #respond input#submit.alt:hover, .woocommerce a.button.alt:hover,
 .woocommerce-page button.button.alt:hover, .woocommerce input.button.alt:hover
@@ -471,7 +472,6 @@ hr											{ background-color: <?php echo esc_html(cryout_hexdiff($anima_conte
 	background: <?php echo esc_html( cryout_hexdiff( $anima_contentbackground, 10 ) ) ?>;
 }
 
-
 /* mobile menu */
 nav#mobile-menu 							{ background-color: <?php echo esc_html( $anima_menubackground ) ?>; }
 #mobile-menu .mobile-arrow 					{ color: <?php echo esc_html( $anima_sitetext ) ?>; }
@@ -481,8 +481,8 @@ nav#mobile-menu 							{ background-color: <?php echo esc_html( $anima_menubackg
 ?>
 .main .entry-content, .main .entry-summary 	{ text-align: <?php echo esc_html( $anima_textalign ) ?>; }
 .main p, .main ul, .main ol, .main dd, .main pre, .main hr
-											{ margin-bottom: <?php echo esc_html( $anima_paragraphspace ) ?>; }
-.main p 									{ text-indent: <?php echo esc_html( $anima_parindent ) ?>;}
+											{ margin-bottom: <?php echo floatval( $anima_paragraphspace ) ?>em; }
+.main p 									{ text-indent: <?php echo floatval( $anima_parindent ) ?>em; }
 .main a.post-featured-image 				{ background-position: <?php echo esc_html( $anima_falign ) ?>; }
 
 #header-widget-area 						{ width: <?php echo esc_html( $anima_headerwidgetwidth ) ?>;
@@ -498,9 +498,10 @@ nav#mobile-menu 							{ background-color: <?php echo esc_html( $anima_menubackg
 											{ border-color: <?php echo esc_html( cryout_hexdiff( $anima_contentbackground, 22 ) ) ?>; }
 
 .anima-clean-table .main th,
-.anima-stripped-table .main tr:nth-child(odd) td,
-.anima-stripped-table .main tr:nth-child(odd) th
+.anima-stripped-table .main tr:nth-child(even) td,
+.anima-stripped-table .main tr:nth-child(even) th
 											{ background-color: <?php echo esc_html( cryout_hexdiff( $anima_contentbackground, 9 ) ) ?>; }
+
 <?php if ( $anima_fpost && ( $anima_fheight > 0 ) ) { ?>
 .anima-cropped-featured .main .post-thumbnail-container
 											{ height: <?php echo esc_html( $anima_fheight ) ?>px; }
@@ -572,7 +573,7 @@ body.woocommerce.woocommerce-page #breadcrumbs-nav,
 <?php }; ?>
 <?php /* if ( ! esc_html( $anima_menuposition ) ) { ?>
 	#header-image-main						{  margin-top: <?php echo intval( $anima_menuheight ) ?>px; }
-<?php };  */?>
+<?php };  */ ?>
 <?php if ( esc_html( $anima_menuposition ) == 0 ) { ?>
 	.anima-fixed-menu #header-image-main	{  margin-top: <?php echo intval( $anima_menuheight ) ?>px; }
 <?php };?>
@@ -702,8 +703,10 @@ body.mce-content-body, .wp-block {
 	max-width: <?php echo esc_html( $content_body ); ?>px;
 	font-family: <?php echo cryout_font_select( $anima_fgeneral, $anima_fgeneralgoogle ) ?>;
 	font-size: <?php echo esc_html( $anima_fgeneralsize ) ?>;
-	line-height: <?php echo esc_html( (float) $anima_lineheight ) ?>;
+	line-height: <?php echo esc_html( floatval($anima_lineheight) ) ?>;
 	color: <?php echo esc_html( $anima_sitetext ); ?>; }
+.block-editor .editor-post-title__block .editor-post-title__input { 
+	color: <?php echo esc_html( $anima_accent2 ) ?>; }
 <?php
 $font_root = 2.6; // headings font size root
 for ( $i = 1; $i <= 6; $i++ ) {
@@ -712,7 +715,8 @@ h<?php echo $i ?> { font-size: <?php echo $size ?>em; } <?php
 } //for ?>
 %%scope%% h1, %%scope%% h2, %%scope%% h3, %%scope%% h4, %%scope%% h5, %%scope%% h6 {
 	font-family: <?php echo cryout_font_select( $anima_fheadings, $anima_fheadingsgoogle ) ?>;
-	font-weight: <?php echo esc_html( $anima_fheadingsweight ) ?>; }
+	font-weight: <?php echo esc_html( $anima_fheadingsweight ) ?>; 
+	color: <?php echo esc_html( $anima_headingstext ) ?>; }
 
 %%scope%% blockquote::before, %%scope%% blockquote::after {
 	color: rgba(<?php echo cryout_hex2rgb( esc_html( $anima_sitetext ) ) ?>,0.1); }
@@ -723,18 +727,18 @@ h<?php echo $i ?> { font-size: <?php echo $size ?>em; } <?php
 %%scope%% code		{ background-color: <?php echo esc_html(cryout_hexdiff( $anima_contentbackground, 17 ) ) ?>; }
 %%scope%% pre		{ border-color: <?php echo esc_html(cryout_hexdiff( $anima_contentbackground, 17 ) ) ?>; }
 
-%%scope%% select, 
-%%scope%% input[type], 
+%%scope%% select,
+%%scope%% input[type],
 %%scope%% textarea {
 	color: <?php echo esc_html( $anima_sitetext ); ?>;
 	background-color: <?php echo esc_html( cryout_hexdiff( $anima_contentbackground, 10 ) ) ?>;
-	border-color: <?php echo esc_html( cryout_hexdiff( $anima_contentbackground, 17 ) ) ?> 
+	border-color: <?php echo esc_html( cryout_hexdiff( $anima_contentbackground, 17 ) ) ?>
 }
 
-%%scope%% p, %%scope%% ul, %%scope%% ol, %%scope%% dd, %%scope%% pre, %%scope%% hr { 
-	margin-bottom: <?php echo esc_html( $anima_paragraphspace ) ?>; 
+%%scope%% p, %%scope%% ul, %%scope%% ol, %%scope%% dd, %%scope%% pre, %%scope%% hr {
+	margin-bottom: <?php echo floatval( $anima_paragraphspace ) ?>em;
 }
-%%scope%% p { text-indent: <?php echo esc_html( $anima_parindent ) ?>;}
+%%scope%% p { text-indent: <?php echo floatval( $anima_parindent ) ?>em; }
 
 <?php // end </style>
 	return apply_filters( 'anima_editor_styles', str_replace( '%%scope%%', $scope, ob_get_clean() ) );
@@ -746,5 +750,14 @@ function anima_editor_styles_output() {
 	echo anima_editor_styles();
 	exit();
 } // anima_editor_styles_output()
+
+
+/* theme identification for the customizer */
+function cryout_customize_theme_identification() {
+	ob_start();
+	?> #customize-theme-controls [id*="cryout-"] h3.accordion-section-title::before { content: "AN"; border: 1px solid #d0422c; color: #d0422c; } <?php
+	return ob_get_clean();
+} // cryout_customize_theme_identification()
+
 
 /* FIN */

@@ -44,5 +44,6 @@ if ( post_password_required() ) {
 	?>
 		<p class="nocomments"><?php _e( 'Comments are closed.', 'anima' ); ?></p>
 	<?php endif; ?>
+
 	<?php if ( comments_open() ) comment_form();  ?>
 </section><!-- #comments -->

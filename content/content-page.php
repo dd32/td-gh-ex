@@ -17,7 +17,7 @@
 		<div class="article-inner">
 			<header>
 				<?php
-					if ( FALSE == cryout_get_option ( 'anima_headertitles_pages' ) ) {
+					if ( FALSE == anima_header_title_check() ) {
 						$anima_heading_tag = ( is_front_page() ) ? 'h2' : 'h1';
 						the_title( '<' . $anima_heading_tag . ' class="entry-title singular-title" ' . cryout_schema_microdata( 'entry-title', 0 ) . '>', '</' . $anima_heading_tag . '>' );
 					}

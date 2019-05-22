@@ -30,24 +30,25 @@ add_action( 'add_meta_boxes', 'anima_add_meta_boxes' );
 function anima_layout_meta_box() {
 	global $post;
     global $anima_big;
-	$option_parameters = $anima_big['options'][0];
+	$options = $anima_big['options'][0];
 	$custom = ( get_post_custom( $post->ID ) ? get_post_custom( $post->ID ) : false );
-	$layout = ( isset( $custom['_anima_layout'][0] ) ? $custom['_anima_layout'][0] : '0' );
+	$layout = ( isset( $custom['_cryout_layout'][0] ) ? $custom['_cryout_layout'][0] : '0' );
+	if ( empty($layout) && isset( $custom['_anima_layout'][0] ) ) $layout = $custom['_anima_layout'][0]; // back compat
     ?>
 	<p>
-    	<label id="anima_layout_default">
-            <input type="radio" name="_anima_layout" <?php checked( '0' == $layout ); ?> value="0" />
-            <span><em><?php _e( 'Default Theme Layout', 'anima' ); ?></em></span>
-        </label>
-    	<?php foreach ($option_parameters['choices'] as $value => $data ) {
-            $data['url'] = esc_url( sprintf( $data['url'], get_template_directory_uri(), get_stylesheet_directory_uri() ) ); ?>
+    	<?php foreach ($options['choices'] as $value => $data ) {
+            $data['url'] = esc_url( sprintf( $data['url'], get_template_directory_uri() ) ); ?>
 
     		<label>
-                <input type="radio" name="_anima_layout" <?php checked( $value == $layout ); ?> value="<?php echo esc_attr( $value ); ?>" />
+                <input type="radio" name="_cryout_layout" <?php checked( $value == $layout ); ?> value="<?php echo esc_attr( $value ); ?>" />
                 <span><img src="<?php echo $data['url'] ?>" alt="<?php echo esc_html(  $data['label'] ) ?>" title="<?php echo esc_html(  $data['label'] ) ?>"/></span>
             </label>
 
     	<?php } ?>
+    	<label id="cryout_layout_default">
+            <input type="radio" name="_cryout_layout" <?php checked( '0' == $layout ); ?> value="0" />
+            <span><img src="<?php echo get_template_directory_uri() ?>/admin/images/0def.png" alt="<?php _e( 'Default Theme Layout', 'anima' ); ?>" title="<?php _e( 'Default Theme Layout', 'anima' ); ?>" /></span>
+        </label>
 	</p>
 	<?php
 } //anima_layout_meta_box()
@@ -74,10 +75,11 @@ function anima_save_custom_post_metadata() {
 
     global $anima_big;
     $valid_layouts = $anima_big['options'][0]['choices'];
-	$layout = ( isset( $_POST['_anima_layout'] ) && array_key_exists( $_POST['_anima_layout'], $valid_layouts ) ? $_POST['_anima_layout'] : '0' );
+	$layout = ( isset( $_POST['_cryout_layout'] ) && array_key_exists( $_POST['_cryout_layout'], $valid_layouts ) ? $_POST['_cryout_layout'] : '0' );
 
 	// Layout - Update
-	update_post_meta( $post->ID, '_anima_layout', $layout );
+	delete_post_meta( $post->ID, '_anima_layout', $layout ); // back compat cleanup
+	update_post_meta( $post->ID, '_cryout_layout', $layout );
 } //anima_save_custom_post_metadata()
 
 // Hook the save post custom meta data into

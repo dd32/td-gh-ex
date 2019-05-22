@@ -5,8 +5,8 @@ https://www.cryoutcreations.eu/
 
 Author: Cryout Creations
 Requires at least: 4.5
-Tested up to: 5.0.2
-Stable tag: 1.3.0.2
+Tested up to: 5.2
+Stable tag: 1.4.0
 Requires PHP: 5.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -86,6 +86,34 @@ The rest of the bundled images are created by Cryout Creations and released with
 
 
 == Changelog ==
+
+= 1.4.0 =
+* Added option to control featured images in the header size enforcement
+* Improved Google Fonts functionality to load all weights for the general font
+* Improved footer widgets responsiveness when set to center align
+* Improved content spacing on single pages/posts when comment form is not displayed
+* Improved page/post meta options support for the block editor
+* Improved block editor styling for dark color schemes
+* Improved header titles checks to avoid displaying the titles a second time in content
+* Optimized layout detection code and moved to the framework
+* Optimized frontend scripts
+* Renamed top and bottom widget areas for clarity
+* Renamed and rearranged some theme options for consistency between themes
+* Fixed normalized tags still having different sizes
+* Fixed editor style option not applying to the block editor styling
+* Fixed deferring functionality applying to some dashboard scripts
+* Fixed $content_width not being defined in the dashboard
+* Fixed comments links missing on full posts in post lists
+* Fixed unexpected space between main navigation and header image on mobile devices when menu is fixed and not on top
+* Multiple fixes for older IEs
+* Disabled featured images on post formats
+* Disabled search form display on the landing page when no posts are available
+* Updated Cryout Framework to 0.8.2:
+	* Activated Select2 functionality on font selector controls
+	* Added Select2 functionality to icon-select controls
+	* Fixed RTL issues with color controls, toggle controls, half/third width selectors, number slider
+	* Switched enable/disable options to use the new toggle control
+	* Switched number options to use the new number slider control
 
 = 1.3.0.2 =
 * Fixed notice about malformed number format in setup.php since 1.3.0

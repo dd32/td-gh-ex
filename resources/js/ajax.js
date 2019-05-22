@@ -49,7 +49,7 @@
                     });
 
                      // If masonry enabled and magazine layout active
-                    if ( ( anima_settings.masonry == 1 ) && ( anima_settings.magazine != 1 ) ) {
+                    if ( ( cryout_theme_settings.masonry == 1 ) && ( cryout_theme_settings.magazine != 1 ) ) {
                         /* Add articles one by one */
         			    $data.each( function() {
                             $( this ).css( 'opacity', '0' ).appendTo( '#content-masonry' );
@@ -57,11 +57,11 @@
 
                         /* Load fitvids, masonry and animate scroll only after images have loaded  */
                         $( '#content-masonry' ).imagesLoaded( function() {
-                            if ( anima_settings.fitvids == 1 ) { $( '#content-masonry' ).fitVids().masonry( 'appended', $data ); }
+                            if ( cryout_theme_settings.fitvids == 1 ) { $( '#content-masonry' ).fitVids().masonry( 'appended', $data ); }
                                 else { $( '#content-masonry' ).masonry( 'appended', $data ); }
 
                             /* If an article animation is set, animate the new articles */
-                            if ( anima_settings.articleanimation ) { animateScroll( $data ) };
+                            if ( cryout_theme_settings.articleanimation ) { animateScroll( $data ) };
 
                             /* Removal of loading gif */
                             $( '#cryout_ajax_more_trigger' ).removeClass( 'cryout_click_loading' );
@@ -72,8 +72,8 @@
                         $data.each( function() {
                             $( this ).css( {'opacity': '1', 'transform': 'none', '-webkit-transform': 'none'} ).appendTo( '#content-masonry' );
                         });
-                        if ( anima_settings.fitvids == 1 ) { $( this ).fitVids(); }
-                        if ( anima_settings.articleanimation ) { animateScroll( $data ) };
+                        if ( cryout_theme_settings.fitvids == 1 ) { $( this ).fitVids(); }
+                        if ( cryout_theme_settings.articleanimation ) { animateScroll( $data ) };
                         $( '#cryout_ajax_more_trigger' ).removeClass( 'cryout_click_loading' );
                     }
 					/* Update page number and next_link. */

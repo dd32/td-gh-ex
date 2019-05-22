@@ -1,12 +1,12 @@
 <?php
 /**
  * @package Cryout Framework
- * @version 0.7.8.5
- * @revision 20181122
+ * @version 0.8.2
+ * @revision 20190425
  * @author Cryout Creations - www.cryoutcreations.eu
  */
 
-define('_CRYOUT_FRAMEWORK_VERSION', '0.7.8.5');
+define('_CRYOUT_FRAMEWORK_VERSION', '0.8.2');
 
 // requirements
 if (!defined('_CRYOUT_THEME_REQUIRED_PHP')) define('_CRYOUT_THEME_REQUIRED_PHP', '5.3');
@@ -24,6 +24,7 @@ elseif ( version_compare( $GLOBALS['wp_version'], _CRYOUT_THEME_REQUIRED_WP, '<'
 
 // Load everything
 require_once(get_template_directory() . "/cryout/prototypes.php");
+require_once(get_template_directory() . "/cryout/controls.php");
 require_once(get_template_directory() . "/cryout/customizer.php");
 require_once(get_template_directory() . "/cryout/ajax.php");
 require_once(get_template_directory() . "/cryout/demo.php");
@@ -37,6 +38,6 @@ if( is_admin() ) {
 // Set up the Theme Customizer settings and controls
 // Needs to be included in both dashboard and frontend
 add_action( 'customize_register', 'cryout_customizer_extras' );
-add_action( 'customize_register', array('Cryout_Customizer', 'register' ) );
+add_action( 'customize_register', array( 'Cryout_Customizer', 'register' ) );
 
 // FIN!

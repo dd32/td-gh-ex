@@ -37,6 +37,17 @@ function anima_get_theme_structure() {
 } // anima_get_theme_structure()
 //endif;
 
+// backwards compatibility filter for some values that changed format
+// this needs to be applied to the options array using WordPress' 'option_{$option}' filter
+function anima_options_back_compat( $options ){
+	if (!empty($options[_CRYOUT_THEME_PREFIX . '_lineheight'])) 		$options[_CRYOUT_THEME_PREFIX . '_lineheight']			= floatval( $options[_CRYOUT_THEME_PREFIX . '_lineheight'] );
+	if (!empty($options[_CRYOUT_THEME_PREFIX . '_paragraphspace'])) 	$options[_CRYOUT_THEME_PREFIX . '_paragraphspace'] 		= floatval( $options[_CRYOUT_THEME_PREFIX . '_paragraphspace'] );
+	if (!empty($options[_CRYOUT_THEME_PREFIX . '_parindent'])) 			$options[_CRYOUT_THEME_PREFIX . '_parindent'] 			= floatval( $options[_CRYOUT_THEME_PREFIX . '_parindent'] );
+	if (!empty($options[_CRYOUT_THEME_PREFIX . '_responsivelimit']))	$options[_CRYOUT_THEME_PREFIX . '_responsivelimit'] 	= intval( $options[_CRYOUT_THEME_PREFIX . '_responsivelimit'] );
+	return $options;
+} // 
+add_filter( 'option_anima_settings', 'anima_options_back_compat' );
+
 // Hooks/Filters
 add_action( 'admin_menu', 'anima_add_page_fn' );
 
@@ -53,7 +64,7 @@ function anima_admin_scripts( $hook ) {
 	$js_admin_options = array(
 		'reset_confirmation' => esc_html( __( 'Reset Anima Settings to Defaults?', 'anima' ) ),
 	);
-	wp_localize_script( 'anima-admin-js', 'anima_admin_settings', $js_admin_options );
+	wp_localize_script( 'anima-admin-js', 'cryout_admin_settings', $js_admin_options );
 	}
 
 // Create admin subpages
@@ -118,13 +129,13 @@ function anima_page_fn() {
 
 		<a class="button" href="customize.php" id="customizer"> <?php printf( __( 'Customize %s', 'anima' ), ucwords(_CRYOUT_THEME_NAME) ); ?> </a>
 
-		<div id="anima-export">
+		<div id="cryout-export">
 			<div>
 
 			<h3 class="hndle"><?php _e( 'Manage Theme Settings', 'anima' ); ?></h3>
 
 				<form action="" method="post" class="third">
-					<input type="hidden" name="anima_reset_defaults" value="true" />
+					<input type="hidden" name="cryout_reset_defaults" value="true" />
 					<input type="submit" class="button" id="anima_reset_defaults" value="<?php _e( 'Reset to Defaults', 'anima' ); ?>" />
 				</form>
 			</div>
@@ -134,32 +145,18 @@ function anima_page_fn() {
 
 
 	<div id="righty">
-		<div id="anima-donate" class="postbox donate">
+		<div id="cryout-donate" class="postbox donate">
 
+			<h3 class="hndle"><?php _e( 'Upgrade to Plus', 'anima' ); ?></h3>
 			<div class="inside">
-				<p>Anima wouldn't normally be available to a mere mortal's WordPress installation. But we risked everything and climbed that freakishly long beanstalk and managed to steal the theme from under the noses of the godlike giants above the clouds.</p>
-				<p>The giants were using it for themselves and, being completely aware of the theme's quality, didn't want to share. We spent some time hiding from them and at a certain point we were even imprisoned but easily managed to escape since their huge prisons weren't equipped for such small creatures like us.</p>
-				<p>However, time passed a lot faster in their world, and upon returning to ours we realized we were quite old. We're now constantly trembling, we forget even the simplest of tasks and take naps every 3 hours. But we'd really like to tell our grandchildren of the great adventures we had above the clouds, if only we could stay awake long enough to do so.</p>
-				<p>So, do you want the new generations to hear our stories?</p>
-
-
-				<div style="display:block;float:none;margin:0 auto;text-align:center;">
-					<form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
-						<input type="hidden" name="cmd" value="_donations">
-						<input type="hidden" name="business" value="KYL26KAN4PJC8">
-						<input type="hidden" name="item_name" value="Cryout Creations - Anima Theme">
-						<input type="hidden" name="currency_code" value="EUR">
-						<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHosted">
-						<input type="image" src="<?php echo get_template_directory_uri() . '/admin/images/coffee.png' ?>" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
-						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
-					</form>
-				</div>
+				<p><?php printf( __('Find out what features you\'re missing out on and how the Plus version of %1$s can improve your site.', 'anima'), cryout_sanitize_tnl(_CRYOUT_THEME_NAME) ); ?></p>
+				<a class="button" href="https://www.cryoutcreations.eu/wordpress-themes/anima" target="_blank" style="display: block;">Upgrade To Plus</a>
 
 			</div><!-- inside -->
 
 		</div><!-- donate -->
 
-		<div id="anima-news" class="postbox news" >
+		<div id="cryout-news" class="postbox news">
 			<h3 class="hndle"><?php _e( 'Theme Updates', 'anima' ); ?></h3>
 			<div class="panel-wrap inside">
 			</div><!-- inside -->

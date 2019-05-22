@@ -8,6 +8,7 @@
 /**
  * Set the content width based on the theme's design and stylesheet.
  */
+add_action( 'after_setup_theme', 'anima_content_width' ); // mostly for dashboard
 add_action( 'template_redirect', 'anima_content_width' );
 
 /** Tell WordPress to run anima_setup() when the 'after_setup_theme' hook is run. */
@@ -39,15 +40,16 @@ function anima_setup() {
 	add_theme_support( 'post-formats', array( 'aside', 'chat', 'gallery', 'image', 'link', 'quote', 'status', 'audio', 'video' ) );
 
 	// Make theme available for translation
+	load_theme_textdomain( 'anima', get_template_directory() . '/cryout/languages' );
 	load_theme_textdomain( 'anima', get_template_directory() . '/languages' );
 	load_textdomain( 'cryout', '' );
 
-	// This theme allows users to set a custom backgrounssd
+	// This theme allows users to set a custom backgrounds
 	add_theme_support( 'custom-background' );
 
 	// This theme supports WordPress 4.5 logos
 	add_theme_support( 'custom-logo', array( 'height' => (int) $options['anima_headerheight'], 'width' => 240, 'flex-height' => true, 'flex-width'  => true ) );
-	add_filter( 'get_custom_logo', 'anima_filter_wp_logo_img' );
+	add_filter( 'get_custom_logo', 'cryout_filter_wp_logo_img' );
 
 	// This theme uses wp_nav_menu() in 3 locations.
 	register_nav_menus( array(
@@ -160,25 +162,25 @@ function anima_setup() {
 		array(
 			'name' => __( 'small', 'cryout' ),
 			'shortName' => __( 'S', 'cryout' ),
-			'size' => intval( intval($options['anima_fgeneralsize']) / 1.6 ),
+			'size' => intval( intval( $options['anima_fgeneralsize'] ) / 1.6 ),
 			'slug' => 'small'
 		),
 		array(
 			'name' => __( 'regular', 'cryout' ),
 			'shortName' => __( 'M', 'cryout' ),
-			'size' => intval( intval($options['anima_fgeneralsize']) * 1.0 ),
+			'size' => intval( intval( $options['anima_fgeneralsize'] ) * 1.0 ),
 			'slug' => 'regular'
 		),
 		array(
 			'name' => __( 'large', 'cryout' ),
 			'shortName' => __( 'L', 'cryout' ),
-			'size' => intval( intval($options['anima_fgeneralsize']) * 1.6 ),
+			'size' => intval( intval( $options['anima_fgeneralsize'] ) * 1.6 ),
 			'slug' => 'large'
 		),
 		array(
 			'name' => __( 'larger', 'cryout' ),
 			'shortName' => __( 'XL', 'cryout' ),
-			'size' => intval( intval($options['anima_fgeneralsize']) * 2.56 ),
+			'size' => intval( intval( $options['anima_fgeneralsize'] ) * 2.56 ),
 			'slug' => 'larger'
 		)
 	) );
@@ -192,6 +194,8 @@ function anima_setup() {
 } // anima_setup()
 
 function anima_gutenberg_editor_styles() {
+	$editorstyles = cryout_get_option('anima_editorstyles');
+	if ( ! $editorstyles ) return;
 	wp_enqueue_style( 'anima-gutenberg-editor-styles', get_theme_file_uri( '/resources/styles/gutenberg-editor.css' ), false, _CRYOUT_THEME_VERSION, 'all' );
 	wp_add_inline_style( 'anima-gutenberg-editor-styles', preg_replace( "/[\n\r\t\s]+/", " ", anima_editor_styles() ) );
 }
@@ -215,13 +219,6 @@ function anima_override_load_textdomain( $override, $domain ) {
 	return $override;
 }
 add_filter( 'override_load_textdomain', 'anima_override_load_textdomain', 10, 2 );
-
-/*
- * Remove inline logo styling
- */
-function anima_filter_wp_logo_img ( $input ) {
-	return preg_replace( '/(height=".*?"|width=".*?")/i', '', $input );
-}
 
 /**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link.
@@ -318,7 +315,6 @@ function anima_socials_menu_right()  { anima_socials_menu( 'sright' );  }
 
 /**
  * Register widgetized areas defined by theme options.
- * Uses cryout_widgets_init() from cryout/widget-areas.php
  */
 function cryout_widgets_init() {
 	$areas = cryout_get_theme_structure( 'widget-areas' );
@@ -361,7 +357,7 @@ function anima_footer_colophon_class() {
 function anima_widget_header() {
 	$headerimage_on_lp = cryout_get_option( 'anima_lpslider' );
 	if ( is_active_sidebar( 'widget-area-header' ) && ( !cryout_on_landingpage() || ( cryout_on_landingpage() && ($headerimage_on_lp == 3) ) ) ) { ?>
-		<aside id="header-widget-area" <?php cryout_schema_microdata( 'sidebar' );?>>
+		<aside id="header-widget-area" <?php cryout_schema_microdata( 'sidebar' ); ?>>
 			<?php dynamic_sidebar( 'widget-area-header' ); ?>
 		</aside><?php
 	}
@@ -369,7 +365,7 @@ function anima_widget_header() {
 
 function anima_widget_before() {
 	if ( is_active_sidebar( 'content-widget-area-before' ) ) { ?>
-		<aside class="content-widget content-widget-before" <?php cryout_schema_microdata( 'sidebar' );?>>
+		<aside class="content-widget content-widget-before" <?php cryout_schema_microdata( 'sidebar' ); ?>>
 			<?php dynamic_sidebar( 'content-widget-area-before' ); ?>
 		</aside><!--content-widget--><?php
 	}
@@ -377,7 +373,7 @@ function anima_widget_before() {
 
 function anima_widget_after() {
 	if ( is_active_sidebar( 'content-widget-area-after' ) ) { ?>
-		<aside class="content-widget content-widget-after" <?php cryout_schema_microdata( 'sidebar' );?>>
+		<aside class="content-widget content-widget-after" <?php cryout_schema_microdata( 'sidebar' ); ?>>
 			<?php dynamic_sidebar( 'content-widget-area-after' ); ?>
 		</aside><!--content-widget--><?php
 	}

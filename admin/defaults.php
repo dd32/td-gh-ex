@@ -12,20 +12,22 @@ function anima_get_option_defaults() {
 	// DEFAULT OPTIONS ARRAY
 	$anima_defaults = array(
 
-	"anima_db" 					=> "0.9",
+	"anima_db" 				=> "0.9",
 
+	// Layout
 	"anima_sitelayout"			=> "2cSr", // two columns, sidebar right
-	"anima_layoutalign"			=> 0, 		// 0=wide, 1=boxed
-	"anima_sitewidth"  			=> 1300, 	// pixels
+	"anima_layoutalign"		=> 0, 		// 0=wide, 1=boxed
+	"anima_sitewidth"  		=> 1300, 	// pixels
 	"anima_primarysidebar"		=> 320, 	// pixels
 	"anima_secondarysidebar"	=> 360, 	// pixels
 	"anima_magazinelayout"		=> 2, 		// two columns
 	"anima_elementpadding" 		=> 0, 		// percent
 	"anima_footercols"			=> 3, 		// 0, 1, 2, 3, 4
-	"anima_footeralign"			=> 0,		// default
+	"anima_footeralign"		=> 0,		// default
 
-	"anima_landingpage"			=> 1, // 1=enabled, 0=disabled
-	"anima_lpposts"				=> 2, // 2=static page, 1=posts, 0=disabled
+	// Landing page
+	"anima_landingpage"		=> 1, // 1=enabled, 0=disabled
+	"anima_lpposts"			=> 2, // 2=static page, 1=posts, 0=disabled
 	"anima_lpposts_more"		=> 'More Posts',
 	"anima_lpslider"			=> 1, // 2=shortcode, 1=static, 0=disabled
 	"anima_lpsliderimage"		=> get_template_directory_uri() . '/resources/images/slider/static.jpg', // static image
@@ -38,11 +40,11 @@ function anima_get_option_defaults() {
 	"anima_lpslidercta2link"	=> '#lp-boxes-1',
 
 	"anima_lpblockmainttitle1"	=> '',
-	"anima_lpblockmaindesc1"		=> '',
-	"anima_lpblockscontent1"		=> 1, // 0=disabled, 1=excerpt, 2=full
+	"anima_lpblockmaindesc1"	=> '',
+	"anima_lpblockscontent1"	=> 1, // 0=disabled, 1=excerpt, 2=full
 	"anima_lpblocksclick1"		=> 0,
 	"anima_lpblocksreadmore1"	=> '',
-	"anima_lpblockone1"			=> $sample_pages[1],
+	"anima_lpblockone1"		=> $sample_pages[1],
 	"anima_lpblockoneicon1"		=> 'users2',
 	"anima_lpblocktwo1"			=> $sample_pages[2],
 	"anima_lpblocktwoicon1"		=> 'map',
@@ -80,6 +82,7 @@ function anima_get_option_defaults() {
 	"anima_lptextthree"			=> $sample_pages[3],
 	"anima_lptextfour"			=> $sample_pages[4],
 
+	// Menu
 	"anima_menuheight"			=> 85, 	// pixels
 	"anima_menustyle"			=> 1, 	// normal, fixed
 	"anima_menuposition"		=> 0, 	// normal, on header image
@@ -93,6 +96,7 @@ function anima_get_option_defaults() {
 	"anima_headerwidgetwidth"	=> "33%", // 25%, 33%, 50%, 60%, 100%
 	"anima_headerwidgetalign"	=> "right", // left, center, right
 
+	// Typography
 	"anima_fgeneral" 			=> 'Raleway/gfont',
 	"anima_fgeneralgoogle" 		=> 'Raleway:400,300,700',
 	"anima_fgeneralsize" 		=> '15px',
@@ -134,6 +138,7 @@ function anima_get_option_defaults() {
 	"anima_paragraphspace"		=> "1.0em",
 	"anima_parindent"			=> "0.0em",
 
+	// Colors
 	"anima_sitebackground" 		=> "#FFF",
 	"anima_sitetext" 			=> "#666",
 	"anima_headingstext" 		=> "#333",
@@ -155,6 +160,7 @@ function anima_get_option_defaults() {
 	"anima_accent1" 			=> "#D0422C",
 	"anima_accent2" 			=> "#777777",
 
+	// General
 	"anima_breadcrumbs"			=> 1,
 	"anima_pagination"			=> 1,
 	"anima_singlenav"			=> 2,
@@ -198,6 +204,7 @@ function anima_get_option_defaults() {
 	"anima_excerptdots"			=> " &hellip;",
 	"anima_excerptcont"			=> "Read more",
 
+	// Post information
 	"anima_fpost" 				=> 1,
 	"anima_fauto" 				=> 0,
 	"anima_fheight"				=> 350,
@@ -212,12 +219,13 @@ function anima_get_option_defaults() {
 
 	"anima_postboxes" 			=> '',
 
+	// Miscellaneous
 	"anima_masonry"				=> 1,
 	"anima_defer"				=> 1,
 	"anima_fitvids"				=> 1,
 	"anima_autoscroll"			=> 1,
+	"anima_headerlimits"		=> 1,
 	"anima_editorstyles"		=> 1,
-
 
 	); // anima_defaults array
 

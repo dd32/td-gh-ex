@@ -176,6 +176,7 @@ if ( ! function_exists( 'anima_posted_tags' ) ) :
 function anima_posted_tags() {
 	if ( 'post' !== get_post_type() ) return;
 	$anima_meta_tag  = cryout_get_option( 'anima_meta_tag' );
+
 	// Retrieves tag list of current post, separated by commas.
 	$tag_list = get_the_tag_list( '', ' / ' );
 	if ( $anima_meta_tag && $tag_list ) { ?>
@@ -192,7 +193,7 @@ endif;
  */
 if ( ! function_exists( 'anima_posted_edit' ) ) :
 function anima_posted_edit() {
-	edit_post_link( sprintf(__( 'Edit %s', 'anima' ), '<em class="screen-reader-text">"' . get_the_title() . '"</em>' ), '<span class="edit-link icon-metas"><i class="icon-edit icon-metas"></i> ', '</span>' );
+	edit_post_link( sprintf( __( 'Edit %s', 'anima' ), '<em class="screen-reader-text">"' . get_the_title() . '"</em>' ), '<span class="edit-link icon-metas"><i class="icon-edit icon-metas"></i> ', '</span>' );
 }; // anima_posted_edit()
 endif;
 
@@ -220,7 +221,8 @@ endif;
 function anima_meta_infos() {
 
 	add_action( 'cryout_featured_hook', 'anima_posted_edit', 50 ); // Edit button
-	add_action( 'cryout_post_excerpt_hook', 'anima_comments_on', 50 ); // Comments
+	add_action( 'cryout_post_excerpt_hook', 'anima_comments_on', 50 ); // Comments on excerpt
+	add_action( 'cryout_post_content_hook', 'anima_comments_on', 50 ); // Comments on full content
 
 	if ( is_single() ) { // If single, metas are shown after the title
 
@@ -303,6 +305,7 @@ function anima_set_featured_srcset_picture() {
 	};
 
 	if ( ! empty( $featured_image[0] ) ) {
+
 		$featured_width = anima_featured_width();
 		?>
 		<div class="post-thumbnail-container"  <?php cryout_schema_microdata( 'image' ); ?>>

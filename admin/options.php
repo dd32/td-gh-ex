@@ -15,7 +15,7 @@ function anima_conditionals( $control ) {
 			'value'	=> 1,
 		),
 		array(
-			'id'	=> 'anima_lpslidershortcode',
+			'id'	=> 'anima_lpslidertitle',
 			'parent'=> 'anima_lpslider',
 			'value'	=> 1,
 		),
@@ -82,10 +82,10 @@ function anima_conditionals( $control ) {
 	);
 
 	foreach ($conditionals as $elem) {
-		if ( $control->id == cryout_sanitize_tn(_CRYOUT_THEME_NAME).'_settings['.$elem['id'].']' && $control->manager->get_setting(cryout_sanitize_tn(_CRYOUT_THEME_NAME).'_settings['.$elem['parent'].']')->value() == $elem['value'] ) return true;
+		if ( $control->id == sprintf( '%1$s_settings[%2$s]', cryout_sanitize_tn(_CRYOUT_THEME_NAME), $elem['id'] ) && $control->manager->get_setting( sprintf( '%1$s_settings[%2$s]', cryout_sanitize_tn(_CRYOUT_THEME_NAME), $elem['parent'] ) )->value() == $elem['value'] ) return true;
 	};
 
-	if ( ($control->id == cryout_sanitize_tn(_CRYOUT_THEME_NAME)."_settings[".cryout_sanitize_tnp(_CRYOUT_THEME_NAME)."_landingpage_notice]") && ('posts' == get_option('show_on_front')) ) return true;
+	if ( ($control->id == sprintf( '%1$s_settings[%2$s_landing_notice]', cryout_sanitize_tn(_CRYOUT_THEME_NAME), _CRYOUT_THEME_PREFIX ) ) && ('posts' == get_option('show_on_front')) ) return true;
 
     return false;
 
@@ -181,6 +181,8 @@ $anima_big = array(
 'panels' => array(
 
 	array('id'=>'anima_siteidentity', 'title'=>__('Site Identity','anima'), 'callback'=>'', 'identifier'=>'cryoutoverride-' ),
+	array('id'=>'anima_layout_section', 'title'=>__('Layout','anima'), 'callback'=>'' ),
+	array('id'=>'anima_header_section', 'title'=>__('Header','anima'), 'callback'=>'' ),
 	array('id'=>'anima_landingpage', 'title'=>__('Landing Page','anima'), 'callback'=>'' ),
 	array('id'=>'anima_general_section', 'title'=>__('General','anima') , 'callback'=>'' ),
 	array('id'=>'anima_colors_section', 'title'=>__('Colors','anima'), 'callback'=>'' ),
@@ -194,9 +196,12 @@ $anima_big = array(
 'sections' => array(
 
 	// layout
-	array('id'=>'anima_layout', 'title'=>__('Layout', 'anima'), 'callback'=>'', 'sid'=>'', 'priority'=>51 ),
+	array('id'=>'anima_generallayout', 'title'=>__('General Layout', 'anima'), 'callback'=>'', 'sid'=>'anima_layout_section', 'priority'=>50 ),
+	array('id'=>'anima_otherlayout', 'title'=>__('Other Layouts', 'anima'), 'callback'=>'', 'sid'=>'anima_layout_section', 'priority'=>60 ),
 	// header
-	array('id'=>'anima_siteheader', 'title'=>__('Header','anima'), 'callback'=>'', 'sid'=> '', 'priority'=>52 ),
+	//array('id'=>'anima_siteheader', 'title'=>__('Header','anima'), 'callback'=>'', 'sid'=> '', 'priority'=>52 ),
+	array('id'=>'anima_headermenu', 'title'=>__('Menu','anima'), 'callback'=>'', 'sid'=> 'anima_header_section', 'priority'=>10 ),
+	array('id'=>'anima_headercontent', 'title'=>__('Content','anima'), 'callback'=>'', 'sid'=> 'anima_header_section', 'priority'=>12 ),
 	// landing page
 	array('id'=>'anima_lpgeneral', 'title'=>__('Settings','anima'), 'callback'=>'', 'sid'=>'anima_landingpage', 'priority' => 10),
 	array('id'=>'anima_lpslider', 'title'=>__('Slider','anima'), 'callback'=>'', 'sid'=>'anima_landingpage', 'priority' => 20),
@@ -208,8 +213,8 @@ $anima_big = array(
 	// text
 	array('id'=>'anima_fontfamily', 'title'=>__('General Font','anima'), 'callback'=>'', 'sid'=> 'anima_text_section'),
 	array('id'=>'anima_fontheader', 'title'=>__('Header Fonts','anima'), 'callback'=>'', 'sid'=> 'anima_text_section'),
-	array('id'=>'anima_fontwidget', 'title'=>__('Widget Fonts','anima'), 'callback'=>'', 'sid'=> 'anima_text_section'),
 	array('id'=>'anima_fontcontent', 'title'=>__('Content Fonts','anima'), 'callback'=>'', 'sid'=> 'anima_text_section'),
+	array('id'=>'anima_fontwidget', 'title'=>__('Widget Fonts','anima'), 'callback'=>'', 'sid'=> 'anima_text_section'),
 	array('id'=>'anima_textformatting', 'title'=>__('Formatting','anima'), 'callback'=>'', 'sid'=> 'anima_text_section'),
 	// general
 	array('id'=>'anima_contentstructure', 'title'=>__('Structure','anima'), 'callback'=>'', 'sid'=> 'anima_general_section'),
@@ -224,12 +229,12 @@ $anima_big = array(
 	array('id'=>'anima_colors_footer', 'title'=>__('Footer','anima'), 'callback'=>'', 'sid'=> 'anima_colors_section'),
 	array('id'=>'anima_colors_lp', 'title'=>__('Landing Page','anima'), 'callback'=>'', 'sid'=> 'anima_colors_section'),
 	// post info
-	array('id'=>'anima_featured', 'title'=>__('Featured Image', 'anima'), 'callback'=>'', 'sid'=>'anima_post_section'),
-	array('id'=>'anima_metas', 'title'=>__('Meta Information','anima'), 'callback'=>'', 'sid'=> 'anima_post_section'),
+	array('id'=>'anima_featured', 'title'=>__('Featured Image', 'anima'), 'callback'=>'', 'sid'=>'anima_post_section', 'priority' => 10),
+	array('id'=>'anima_metas', 'title'=>__('Meta Information','anima'), 'callback'=>'', 'sid'=> 'anima_post_section', 'priority' => 20),
 	array('id'=>'anima_excerpts', 'title'=>__('Excerpts','anima'), 'callback'=>'', 'sid'=> 'anima_post_section', 'priority' => 30),
 	array('id'=>'anima_comments', 'title'=>__('Comments','anima'), 'callback'=>'', 'sid'=> 'anima_post_section', 'priority' => 40),
 	// misc
-	array('id'=>'anima_misc', 'title'=>__('Miscellaneous','anima'), 'callback'=>'', 'sid'=>'', 'priority'=>82 ),
+	array('id'=>'anima_misc', 'title'=>__('Miscellaneous','anima'), 'callback'=>'', 'sid'=>'', 'priority' => 92 ),
 
 	/*** developer options ***/
 	//array('id'=>'anima_developer', 'title'=>__('[ Developer Options ]','anima'), 'callback'=>'', 'sid'=>'', 'priority'=>101 ),
@@ -246,7 +251,7 @@ $anima_big = array(
 'options' => array (
 	//////////////////////////////////////////////////// Layout ////////////////////////////////////////////////////
 	array(
-	// this option needs to always be firstits index is used in the page/post meta option
+	// this option needs to always be first; its index is used in the page/post meta option !!!
 	'id' => 'anima_sitelayout',
 		'type' => 'radioimage',
 		'label' => __('Main Layout','anima'),
@@ -277,7 +282,7 @@ $anima_big = array(
 			),
 		),
 		'desc' => '',
-	'section' => 'anima_layout' ),
+	'section' => 'anima_generallayout' ),
 	array(
 	'id' => 'anima_layoutalign',
 		'type' => 'select',
@@ -285,29 +290,30 @@ $anima_big = array(
 		'values' => array( 0, 1 ),
 		'labels' => array( __('Wide','anima'), __('Boxed','anima') ),
 		'desc' => "",
-	'section' => 'anima_layout' ),
+	'section' => 'anima_generallayout' ),
 	array(
 	'id' => 'anima_sitewidth',
-		'type' => 'slider',
+		'type' => 'numberslider',
 		'label' => __('Site Width','anima'),
 		'min' => 960, 'max' => 1920, 'step' => 10, 'um' => 'px',
 		'desc' => "",
-	'section' => 'anima_layout' ),
+	'section' => 'anima_generallayout' ),
 	array(
 	'id' => 'anima_primarysidebar',
-		'type' => 'slider',
+		'type' => 'numberslider',
 		'label' => __('Left Sidebar Width','anima'),
 		'min' => 200, 'max' => 600, 'step' => 10, 'um' => 'px',
 		'desc' => "",
-	'section' => 'anima_layout' ),
+	'section' => 'anima_generallayout' ),
 	array(
 	'id' => 'anima_secondarysidebar',
-		'type' => 'slider',
+		'type' => 'numberslider',
 		'label' => __('Right Sidebar Width','anima'),
 		'min' => 200, 'max' => 600, 'step' => 10, 'um' => 'px',
 		'desc' => "",
-	'section' => 'anima_layout' ),
+	'section' => 'anima_generallayout' ),
 
+	// the other layouts
 	array(
 	'id' => 'anima_magazinelayout',
 		'type' => 'radioimage',
@@ -327,15 +333,17 @@ $anima_big = array(
 			),
 		),
 		'desc' => '',
-	'section' => 'anima_layout' ),
+	'section' => 'anima_otherlayout' ),
 	array(
 	'id' => 'anima_elementpadding',
-		'type' => 'select',
+		'type' => 'numberslider',
 		'label' => __('Post/page padding','anima'),
-		'values' => cryout_gen_values( 0, 10, 1, array('um'=>'') ),
-		'labels' => cryout_gen_values( 0, 10, 1, array('um'=>'%') ),
+		'min' => 1,
+		'max' => 10,
+		'step' => 1,
+		'um' => '%',
 		'desc' => '',
-	'section' => 'anima_layout' ),
+	'section' => 'anima_otherlayout' ),
 
 	array(
 	'id' => 'anima_footercols',
@@ -350,7 +358,7 @@ $anima_big = array(
 			__('4 Columns','anima')
 		),
 		'desc' => '',
-	'section' => 'anima_layout' ),
+	'section' => 'anima_otherlayout' ),
 	array(
 	'id' => 'anima_footeralign',
 		'type' => 'select',
@@ -358,7 +366,7 @@ $anima_big = array(
 		'labels' => array( __("Default","anima"), __("Center","anima") ),
 		'label' => __('Footer Widgets Alignment','anima'),
 		'desc' => "",
-	'section' => 'anima_layout' ),
+	'section' => 'anima_otherlayout' ),
 
 	// Header-related hint to WP's Site Identity
 	array(
@@ -373,21 +381,22 @@ $anima_big = array(
 
 	// Header
 	array(
-	'id' => 'anima_menuheight',
-		'type' => 'number',
-		'min' => 45,
-		'max' => 200,
-		'label' => __('Header/Menu Height','anima'),
-		'desc' => "",
-	'section' => 'anima_siteheader' ),
-	array(
 	'id' => 'anima_menustyle',
-		'type' => 'select',
+		'type' => 'toggle',
 		'values' => array( 0, 1 ),
-		'labels' => array( __("Disabled","anima"), __("Enabled","anima") ),
 		'label' => __('Fixed Menu','anima'),
 		'desc' => "",
-	'section' => 'anima_siteheader' ),
+	'section' => 'anima_headermenu' ),
+	array(
+	'id' => 'anima_menuheight',
+		'type' => 'numberslider',
+		'min' => 45,
+		'max' => 200,
+		'step' => 1,
+		'um' => 'px',
+		'label' => __('Header/Menu Height','anima'),
+		'desc' => "",
+	'section' => 'anima_headermenu' ),
 	array(
 	'id' => 'anima_menuposition',
 		'type' => 'select',
@@ -395,39 +404,15 @@ $anima_big = array(
 		'labels' => array( __("Normal","anima"), __("Over header image","anima") ),
 		'label' => __('Menu Position','anima'),
 		'desc' => "",
-	'section' => 'anima_siteheader' ),
+	'section' => 'anima_headermenu' ),
 	array(
 	'id' => 'anima_menulayout',
 		'type' => 'select',
 		'values' => array( 0, 1, 2 ),
 		'labels' => array( __("Left", "anima"), __("Right","anima"), __("Center","anima") ),
-		'label' => __('Menu Layout','anima'),
+		'label' => __('Menu Alignment','anima'),
 		'desc' => "",
-	'section' => 'anima_siteheader' ),
-	array(
-	'id' => 'anima_headerheight',
-		'type' => 'number',
-		'min' => 0,
-		'max' => 800,
-		'label' => __('Header Image Height (in pixels)','anima'),
-		'desc' => '',
-	'section' => 'anima_siteheader' ),
-	array(
-	'id' => 'anima_headerheight_notice',
-		'type' => 'notice',
-		'label' => '',
-		'input_attrs' => array( 'class' => 'warning' ),
-		'desc' => __("Changing this value may require to recreate your thumbnails.","anima"),
-		//'active_callback' => 'anima_conditionals',
-	'section' => 'anima_siteheader' ),
-	array(
-	'id' => 'anima_headerresponsive',
-		'type' => 'select',
-		'values' => array( 0, 1 ),
-		'labels' => array( __("Cropped","anima"), __("Contained","anima") ),
-		'label' => __('Header Image Behaviour','anima'),
-		'desc' => "",
-	'section' => 'anima_siteheader' ),
+	'section' => 'anima_headermenu' ),
 	array(
 	'id' => 'anima_siteheader',
 		'type' => 'select',
@@ -435,13 +420,13 @@ $anima_big = array(
 		'values' => array( 'title' , 'logo' , 'both' , 'empty' ),
 		'labels' => array( __("Site Title","anima"), __("Logo","anima"), __("Logo & Site Title","anima"), __("Empty","anima") ),
 		'desc' => '',
-	'section' => 'anima_siteheader' ),
+	'section' => 'anima_headercontent' ),
 	array(
 	'id' => 'anima_sitetagline',
 		'type' => 'checkbox',
 		'label' => __('Show Tagline','anima'),
 		'desc' => '',
-	'section' => 'anima_siteheader' ),
+	'section' => 'anima_headercontent' ),
 	array(
 	'id' => 'anima_logoupload',
 		'type' => 'media-image',
@@ -455,14 +440,39 @@ $anima_big = array(
 		'input_attrs' => array( 'class' => '' ),
 		'label' => '',
 		'desc' => __('Edit the site\'s title, tagline and logo from WordPress\' Site Identity panel.', 'anima'),
-	'section' => 'anima_siteheader' ),
+	'section' => 'anima_headercontent' ),
+	array(
+	'id' => 'anima_headerheight',
+		'type' => 'numberslider',
+		'min' => 0,
+		'max' => 800,
+		'um' => 'px',
+		'label' => __('Header Image Height','anima'),
+		'desc' => '',
+	'section' => 'anima_headercontent' ),
+	array(
+	'id' => 'anima_headerheight_notice',
+		'type' => 'notice',
+		'label' => '',
+		'input_attrs' => array( 'class' => 'warning' ),
+		'desc' => __("Changing this value may require to recreate your thumbnails.","anima"),
+		//'active_callback' => 'anima_conditionals',
+	'section' => 'anima_headercontent' ),
+	array(
+	'id' => 'anima_headerresponsive',
+		'type' => 'select',
+		'values' => array( 0, 1 ),
+		'labels' => array( __("Cropped","anima"), __("Contained","anima") ),
+		'label' => __('Header Image Behaviour','anima'),
+		'desc' => "",
+	'section' => 'anima_headercontent' ),
 	array(
 	'id' => 'anima_headerwidgetwidth',
 		'type' => 'select',
 		'label' => __("Header Widget Width","anima"),
 		'values' => array( "100%" , "60%" , "50%" , "33%" , "25%" ),
 		'desc' => '',
-	'section' => 'anima_siteheader' ),
+	'section' => 'anima_headercontent' ),
 	array(
 	'id' => 'anima_headerwidgetalign',
 		'type' => 'select',
@@ -470,7 +480,7 @@ $anima_big = array(
 		'values' => array( 'left' , 'center' , 'right' ),
 		'labels' => array( __("Left","anima"), __("Center","anima"), __("Right","anima") ),
 		'desc' => '',
-	'section' => 'anima_siteheader' ),
+	'section' => 'anima_headercontent' ),
 
 	//////////////////////////////////////////////////// Landing Page ////////////////////////////////////////////////////
 	array(
@@ -557,6 +567,7 @@ $anima_big = array(
 		'label' => __('Slider Caption','anima'),
 		'desc' => '',
 		'input_attrs' => array( 'placeholder' => __('Title', 'anima') ),
+		'active_callback' => 'anima_conditionals',
 	'section' => 'anima_lpslider' ),
 	array(
 	'id' => 'anima_lpslidertext',
@@ -564,6 +575,7 @@ $anima_big = array(
 		'label' => '',
 		'desc' => '',
 		'input_attrs' => array( 'placeholder' => __('Text', 'anima') ),
+		'active_callback' => 'anima_conditionals',
 	'section' => 'anima_lpslider' ),
 	array(
 	'id' => 'anima_lpslidercta1text',
@@ -571,6 +583,7 @@ $anima_big = array(
 		'label' => __('CTA Button','anima') . ' #1',
 		'desc' => '',
 		'input_attrs' => array( 'placeholder' => __('Text', 'anima') ),
+		'active_callback' => 'anima_conditionals',
 	'section' => 'anima_lpslider' ),
 	array(
 	'id' => 'anima_lpslidercta1link',
@@ -578,6 +591,7 @@ $anima_big = array(
 		'label' => '',
 		'desc' => '',
 		'input_attrs' => array( 'placeholder' => __('Link', 'anima') ),
+		'active_callback' => 'anima_conditionals',
 	'section' => 'anima_lpslider' ),
 	array(
 	'id' => 'anima_lpslidercta2text',
@@ -585,6 +599,7 @@ $anima_big = array(
 		'label' => __('CTA Button','anima') . ' #2',
 		'desc' => '',
 		'input_attrs' => array( 'placeholder' => __('Text', 'anima') ),
+		'active_callback' => 'anima_conditionals',
 	'section' => 'anima_lpslider' ),
 	array(
 	'id' => 'anima_lpslidercta2link',
@@ -592,6 +607,7 @@ $anima_big = array(
 		'label' => '',
 		'desc' => '',
 		'input_attrs' => array( 'placeholder' => __('Link', 'anima') ),
+		'active_callback' => 'anima_conditionals',
 	'section' => 'anima_lpslider' ),
 
 	// blocks
@@ -607,6 +623,11 @@ $anima_big = array(
 		'type' => 'textarea',
 		'label' => __( 'Section Description', 'anima' ),
 		'desc' => '',
+		'priority' => 15,
+	'section' => 'anima_lpblocks#' ),
+	array(
+	'id' => 'anima_lpblockspacer1#',
+		'type' => 'spacer',
 		'priority' => 15,
 	'section' => 'anima_lpblocks#' ),
 	array(
@@ -630,6 +651,11 @@ $anima_big = array(
 		'type' => 'checkbox',
 		'label' => __('Make icons clickable (linking to their respective pages).','anima'),
 		'desc' => '',
+		'priority' => 23,
+	'section' => 'anima_lpblocks#' ),
+	array(
+	'id' => 'anima_lpblockspacer2#',
+		'type' => 'spacer',
 		'priority' => 23,
 	'section' => 'anima_lpblocks#' ),
 	array(
@@ -725,6 +751,11 @@ $anima_big = array(
 		'priority' => 20,
 	'section' => 'anima_lpboxes#' ),
 	array(
+	'id' => 'anima_lpboxspacer1#',
+		'type' => 'spacer',
+		'priority' => 20,
+	'section' => 'anima_lpboxes#' ),
+	array(
 	'id' => 'anima_lpboxcat#',
 		'type' => 'select',
 		'label' => __('Boxes Content','anima'),
@@ -735,7 +766,10 @@ $anima_big = array(
 	'section' => 'anima_lpboxes#' ),
 	array(
 	'id' => 'anima_lpboxcount#',
-		'type' => 'number',
+		'type' => 'numberslider',
+		'min' => 1,
+		'max' => 30,
+		'step' => 1,
 		'input_attrs' => array(
 			'min' => 1,
 			'max' => 100,
@@ -754,13 +788,22 @@ $anima_big = array(
 	'section' => 'anima_lpboxes#' ),
 	array(
 	'id' => 'anima_lpboxheight#',
-		'type' => 'number',
+		'type' => 'numberslider',
+		'min' => 0,
+		'max' => 600,
+		'step' => 1,
+		'um' => 'px',
 		'input_attrs' => array(
 			'min' => 1,
 			'max' => 2000,
 		),
 		'label' => __('Box Height','anima'),
-		'desc' => __("In pixels. The width is a percentage dependent on total site width and number of columns per row.","anima"),
+		'desc' => __("The width is a percentage dependent on total site width and number of columns per row.","anima"),
+		'priority' => 60,
+	'section' => 'anima_lpboxes#' ),
+	array(
+	'id' => 'anima_lpboxspacer2#',
+		'type' => 'spacer',
 		'priority' => 60,
 	'section' => 'anima_lpboxes#' ),
 	array(
@@ -791,6 +834,11 @@ $anima_big = array(
 		'priority' => 90,
 	'section' => 'anima_lpboxes#' ),
 	array(
+	'id' => 'anima_lpboxspacer3#',
+		'type' => 'spacer',
+		'priority' => 91,
+	'section' => 'anima_lpboxes#' ),
+	array(
 	'id' => 'anima_lpboxreadmore#',
 		'type' => 'text',
 		'label' => __('Read More Button','anima'),
@@ -799,11 +847,10 @@ $anima_big = array(
 	'section' => 'anima_lpboxes#' ),
 	array(
 	'id' => 'anima_lpboxlength#',
-		'type' => 'number',
-		'input_attrs' => array(
-			'min' => 1,
-			'max' => 100,
-		),
+		'type' => 'numberslider',
+		'min' => 1,
+		'max' => 100,
+		'step' => 1,
 		'label' => __('Content Length (words)','anima'),
 		'desc' => '',
 		'priority' => 110,
@@ -883,6 +930,10 @@ $anima_big = array(
 		'desc' => '',
 	'section' => 'anima_colors' ),
 	array(
+	'id' => 'anima_colorsspacer1',
+		'type' => 'spacer',
+	'section' => 'anima_colors' ),
+	array(
 	'id' => 'anima_overlaybackground',
 		'type' => 'color',
 		'label' => __('Overlay Color','anima'),
@@ -890,11 +941,32 @@ $anima_big = array(
 	'section' => 'anima_colors' ),
 	array(
 	'id' => 'anima_overlayopacity',
-		'type' => 'slider',
+		'type' => 'numberslider',
+		'min' => 0,
+		'max' => 100,
+		'step' => 1,
+		'um' => '%',
+		'readonly' => true,
 		'label' => __('Overlay Opacity','anima'),
-		'min' => 0, 'max' => 100, 'step' => 5, 'um' => '%',
 		'desc' => "",
 	'section' => 'anima_colors' ),
+	array(
+	'id' => 'anima_colorsspacer2',
+		'type' => 'spacer',
+	'section' => 'anima_colors' ),
+	array(
+	'id' => 'anima_accent1',
+		'type' => 'color',
+		'label' => __('Primary Accent','anima'),
+		'desc' => '',
+	'section' => 'anima_colors' ),
+	array(
+	'id' => 'anima_accent2',
+		'type' => 'color',
+		'label' => __('Secondary Accent','anima'),
+		'desc' => '',
+	'section' => 'anima_colors' ),
+
 	array(
 	'id' => 'anima_menubackground',
 		'type' => 'color',
@@ -940,36 +1012,25 @@ $anima_big = array(
 	array(
 	'id' => 'anima_lpblocksbg',
 		'type' => 'color',
-		'label' => __('Blocks Background','anima'),
+		'label' => __('Blocks','anima'),
 		'desc' => '',
 	'section' => 'anima_colors_lp' ),
 	array(
 	'id' => 'anima_lpboxesbg',
 		'type' => 'color',
-		'label' => __('Boxes Background','anima'),
+		'label' => __('Boxes','anima'),
 		'desc' => '',
 	'section' => 'anima_colors_lp' ),
 	array(
 	'id' => 'anima_lptextsbg',
 		'type' => 'color',
-		'label' => __('Text Areas Background','anima'),
+		'label' => __('Text Areas','anima'),
 		'desc' => '',
 	'section' => 'anima_colors_lp' ),
-	array(
-	'id' => 'anima_accent1',
-		'type' => 'color',
-		'label' => __('Primary Accent','anima'),
-		'desc' => '',
-	'section' => 'anima_colors' ),
-	array(
-	'id' => 'anima_accent2',
-		'type' => 'color',
-		'label' => __('Secondary Accent','anima'),
-		'desc' => '',
-	'section' => 'anima_colors' ),
 
 	//////////////////////////////////////////////////// Fonts ////////////////////////////////////////////////////
-	array( // general font
+	// general font
+	array(
 	'id' => 'anima_fgeneralsize',
 		'type' => 'select',
 		'label' => __('General Font','anima'),
@@ -998,7 +1059,8 @@ $anima_big = array(
 		'input_attrs' => array( 'placeholder' => __('or enter Google Font Identifier','anima') ),
 	'section' => 'anima_fontfamily' ),
 
-	array( // site title font
+	// header fonts
+	array( // site title
 	'id' => 'anima_fsitetitlesize',
 		'type' => 'select',
 		'label' => __('Site Title','anima'),
@@ -1027,7 +1089,7 @@ $anima_big = array(
 		'input_attrs' => array( 'placeholder' => __('or enter Google Font Identifier','anima') ),
 	'section' => 'anima_fontheader' ),
 
-	array( // menu font
+	array( // menu
 	'id' => 'anima_fmenusize',
 		'type' => 'select',
 		'label' => __('Main Menu','anima'),
@@ -1056,7 +1118,8 @@ $anima_big = array(
 		'input_attrs' => array( 'placeholder' => __('or enter Google Font Identifier','anima') ),
 	'section' => 'anima_fontheader' ),
 
-	array( // widget fonts
+	// widget fonts
+	array( // widget title
 	'id' => 'anima_fwtitlesize',
 		'type' => 'select',
 		'label' => __('Widget Title','anima'),
@@ -1114,7 +1177,8 @@ $anima_big = array(
 		'input_attrs' => array( 'placeholder' => __('or enter Google Font Identifier','anima') ),
 	'section' => 'anima_fontwidget' ),
 
-	array( // content fonts
+	// content fonts
+	array( // post/page
 	'id' => 'anima_ftitlessize',
 		'type' => 'select',
 		'label' => __('Post/Page Titles','anima'),
@@ -1143,7 +1207,7 @@ $anima_big = array(
 		'input_attrs' => array( 'placeholder' => __('or enter Google Font Identifier','anima') ),
 	'section' => 'anima_fontcontent' ),
 
-	array( // meta fonts
+	array( // metas
 	'id' => 'anima_metatitlessize',
 		'type' => 'select',
 		'label' => __('Post metas','anima'),
@@ -1172,8 +1236,7 @@ $anima_big = array(
 		'input_attrs' => array( 'placeholder' => __('or enter Google Font Identifier','anima') ),
 	'section' => 'anima_fontcontent' ),
 
-
-	array(
+	array( // headings
 	'id' => 'anima_fheadingssize',
 		'type' => 'select',
 		'label' => __('Headings','anima'),
@@ -1202,11 +1265,12 @@ $anima_big = array(
 		'input_attrs' => array( 'placeholder' => __('or enter Google Font Identifier','anima') ),
 	'section' => 'anima_fontcontent' ),
 
-	array( // formatting
+	// formatting
+	array(
 	'id' => 'anima_lineheight',
-		'type' => 'select',
+		'type' => 'numberslider',
 		'label' => __('Line Height','anima'),
-		'values' => cryout_gen_values( 1.0, 2.4, 0.2, array('um'=>'em') ),
+		'min' => 1.0, 'max' => 2.4, 'step' => 0.2, 'um' => 'em',
 		'desc' => '',
 	'section' => 'anima_textformatting' ),
 	array(
@@ -1219,16 +1283,16 @@ $anima_big = array(
 	'section' => 'anima_textformatting' ),
 	array(
 	'id' => 'anima_paragraphspace',
-		'type' => 'select',
+		'type' => 'numberslider',
 		'label' => __('Paragraph Spacing','anima'),
-		'values' => cryout_gen_values( 0.5, 1.6, 0.1, array('um'=>'em', 'pre'=>array('0.0em') ) ),
+		'min' => 0, 'max' => 2, 'step' => 0.1, 'um' => 'em',
 		'desc' => '',
 	'section' => 'anima_textformatting' ),
 	array(
 	'id' => 'anima_parindent',
-		'type' => 'select',
+		'type' => 'numberslider',
 		'label' => __('Paragraph Indentation','anima'),
-		'values' => cryout_gen_values( 0, 2, 0.5, array('um'=>'em') ),
+		'min' => 0, 'max' => 2, 'step' => 0.1, 'um' => 'em',
 		'desc' => '',
 	'section' => 'anima_textformatting' ),
 
@@ -1236,18 +1300,16 @@ $anima_big = array(
 
 	array(
 	'id' => 'anima_breadcrumbs',
-		'type' => 'select',
+		'type' => 'toggle',
 		'label' => __('Breadcrumbs','anima'),
 		'values' => array( 1, 0 ),
-		'labels' => array( __("Enable","anima"), __("Disable","anima") ),
 		'desc' => '',
 	'section' => 'anima_contentstructure' ),
 	array(
 	'id' => 'anima_pagination',
-		'type' => 'select',
+		'type' => 'toggle',
 		'label' => __('Numbered Pagination','anima'),
 		'values' => array( 1, 0 ),
-		'labels' => array( __("Enable","anima"), __("Disable","anima") ),
 		'desc' => '',
 	'section' => 'anima_contentstructure' ),
 	array(
@@ -1261,7 +1323,7 @@ $anima_big = array(
 	array(
 	'id' => 'anima_contenttitles',
 		'type' => 'select',
-		'label' => __('Page/Category Titles', 'anima'),
+		'label' => __('Page/Category Titles','anima'),
 		'values' => array( 1, 2, 3, 0 ),
 		'labels' => array( __('Always Visible','anima'), __('Hide on Pages','anima'), __('Hide on Categories','anima'), __('Always Hidden','anima') ),
 		'desc' => '',
@@ -1290,7 +1352,7 @@ $anima_big = array(
 		'labels' => array( __("Size Emphasis","anima"), __("Uniform Boxes","anima") ),
 		'desc' => '',
 	'section' => 'anima_contentstructure' ),
-array(
+	array(
 		'id' => 'anima_copyright',
 		'type' => 'textarea',
 		'label' => __( 'Custom Footer Text', 'anima' ),
@@ -1425,7 +1487,8 @@ array(
 	'section' => 'anima_metas' ),
 
 
-	array( // meta
+	// header titles
+	array(
 	'id' => 'anima_headertitles_posts',
 		'type' => 'checkbox',
 		'label' => __("Posts","anima"),
@@ -1450,39 +1513,8 @@ array(
 		'desc' => '',
 	'section' => 'anima_headertitles' ),
 
-
-	array( // comments
-	'id' => 'anima_comclosed',
-		'type' => 'select',
-		'label' => __("'Comments Are Closed' Text",'anima'),
-		'values' => array( 1, 2, 3, 0 ), // "Show" , "Hide in posts", "Hide in pages", "Hide everywhere"
-		'labels' => array( __("Show","anima"), __("Hide in posts","anima"), __("Hide in pages","anima"), __("Hide everywhere","anima") ),
-		'desc' => '',
-	'section' => 'anima_comments' ),
+	// excerpts
 	array(
-	'id' => 'anima_comdate',
-		'type' => 'select',
-		'label' => __('Comment Date Format','anima'),
-		'values' => array( 1, 2 ),
-		'labels' => array( __("Specific","anima"), __("Relative","anima") ),
-		'desc' => '',
-	'section' => 'anima_comments' ),
-	array(
-	'id' => 'anima_comlabels',
-		'type' => 'select',
-		'label' => __('Comment Field Label','anima'),
-		'values' => array( 1, 2 ),
-		'labels' => array( __("Placeholders","anima"), __("Labels","anima") ),
-		'desc' => __("Change to labels for better compatibility with comment-related plugins.","anima"),
-	'section' => 'anima_comments' ),
-	array(
-	'id' => 'anima_comformwidth',
-		'type' => 'number',
-		'label' => __('Comment Form Width (pixels)','anima'),
-		'desc' => '',
-	'section' => 'anima_comments' ),
-
-	array( // excerpts
 	'id' => 'anima_excerpthome',
 		'type' => 'select',
 		'label' => __( 'Standard Posts On Homepage', 'anima' ),
@@ -1508,7 +1540,10 @@ array(
 	'section' => 'anima_excerpts' ),
 	array(
 	'id' => 'anima_excerptlength',
-		'type' => 'number',
+		'type' => 'numberslider',
+		'min' => 0,
+		'max' => 100,
+		'step' => 1,
 		'label' => __( 'Excerpt Length (words)' , 'anima' ),
 		'desc' => '',
 	'section' => 'anima_excerpts' ),
@@ -1525,27 +1560,65 @@ array(
 		'desc' => '',
 	'section' => 'anima_excerpts' ),
 
+	// comments
+	array(
+	'id' => 'anima_comclosed',
+		'type' => 'select',
+		'label' => __("'Comments Are Closed' Text",'anima'),
+		'values' => array( 1, 2, 3, 0 ), // "Show" , "Hide in posts", "Hide in pages", "Hide everywhere"
+		'labels' => array( __("Show","anima"), __("Hide in posts","anima"), __("Hide in pages","anima"), __("Hide everywhere","anima") ),
+		'desc' => '',
+	'section' => 'anima_comments' ),
+	array(
+	'id' => 'anima_comdate',
+		'type' => 'select',
+		'label' => __('Comment Date Format','anima'),
+		'values' => array( 1, 2 ),
+		'labels' => array( __("Specific","anima"), __("Relative","anima") ),
+		'desc' => '',
+	'section' => 'anima_comments' ),
+	array(
+	'id' => 'anima_comlabels',
+		'type' => 'select',
+		'label' => __('Comment Field Label','anima'),
+		'values' => array( 1, 2 ),
+		'labels' => array( __("Placeholders","anima"), __("Labels","anima") ),
+		'desc' => __("Change to labels for better compatibility with comment-related plugins.","anima"),
+	'section' => 'anima_comments' ),
+	array(
+	'id' => 'anima_comformwidth',
+		'type' => 'numberslider',
+		'min' => 0,
+		'max' => 1000,
+		'step' => 10,
+		'um' => 'px',
+		'label' => __('Comment Form Width','anima'),
+		'desc' => '',
+	'section' => 'anima_comments' ),
+
 	//////////////////////////////////////////////////// Featured Images ////////////////////////////////////////////////////
 	array(
 	'id' => 'anima_fpost',
-		'type' => 'select',
+		'type' => 'toggle',
 		'label' => __( 'Featured Images', 'anima' ),
 		'values' => array( 1, 0 ),
-		'labels' => array( __("Enabled","anima"), __("Disabled","anima") ),
 		'desc' => '',
 	'section' => 'anima_featured' ),
 	array(
 	'id' => 'anima_fauto',
-		'type' => 'select',
+		'type' => 'toggle',
 		'label' => __( 'Auto Select Image From Content', 'anima' ),
 		'values' => array( 1, 0 ),
-		'labels' => array( __("Enabled","anima"), __("Disabled","anima") ),
 		'desc' => '',
 	'section' => 'anima_featured' ),
 	array(
 	'id' => 'anima_fheight',
-		'type' => 'number',
-		'label' => __( 'Featured Image Height (in pixels)', 'anima' ),
+		'type' => 'numberslider',
+		'min' => 0,
+		'max' => 800,
+		'step' => 10,
+		'um' => 'px',
+		'label' => __( 'Featured Image Height', 'anima' ),
 		'desc' => __( 'Set to 0 to disable image processing', 'anima' ),
 	'section' => 'anima_featured' ),
 	array(
@@ -1562,7 +1635,7 @@ array(
 		'values' => array( 0 , 1 ),
 		'labels' => array( __("Cropped","anima"), __("Contained","anima") ),
 		'label' => __('Featured Image Behaviour','anima'),
-		'desc' => __("<strong>Contained</strong> will scale depending on the viewed resolution<br><strong>Cropped</strong> will always have the configured height.","anima"),
+		'desc' => __("<strong>Contained</strong> will scale depending on the viewed resolution<br><strong>Cropped</strong> will try to keep the configured height.","anima"),
 	'section' => 'anima_featured' ),
 	array(
 	'id' => 'anima_falign',
@@ -1572,6 +1645,7 @@ array(
 		'labels' => array( __("Left Top","anima"), __("Left Center","anima"), __("Left Bottom","anima"), __("Right Top","anima"), __("Right Center","anima"), __("Right Bottom","anima"), __("Center Top","anima"), __("Center Center","anima"), __("Center Bottom","anima") ),
 		'desc' => '',
 	'section' => 'anima_featured' ),
+
 	array(
 	'id' => 'anima_falign_notice',
 		'type' => 'notice',
@@ -1583,10 +1657,9 @@ array(
 
 	array(
 	'id' => 'anima_fheader',
-		'type' => 'select',
+		'type' => 'toggle',
 		'label' => __('Use Featured Images in Header','anima'),
 		'values' => array( 1, 0 ),
-		'labels' => array( __("Enable","anima"), __("Disable","anima") ),
 		'desc' => '',
 	'section' => 'anima_featured' ),
 
@@ -1621,19 +1694,44 @@ array(
 
 	array(
 	'id' => 'anima_masonry',
-		'type' => 'select',
+		'type' => 'toggle',
 		'label' => __('Masonry','anima'),
 		'values' => array( 1, 0 ),
-		'labels' => array( __("Enable","anima"), __("Disable","anima") ),
 		'desc' => '',
+		'priority' => 3,
 	'section' => 'anima_misc' ),
 	array(
 	'id' => 'anima_defer',
-		'type' => 'select',
+		'type' => 'toggle',
 		'label' => __('JS Defer loading','anima'),
 		'values' => array( 1, 0 ),
-		'labels' => array( __("Enable","anima"), __("Disable","anima") ),
 		'desc' => '',
+		'priority' => 3,
+	'section' => 'anima_misc' ),
+
+	array(
+	'id' => 'anima_autoscroll',
+		'type' => 'toggle',
+		'label' => __('Autoscroll','anima'),
+		'values' => array( 1, 0 ),
+		'desc' => '',
+		'priority' => 4,
+	'section' => 'anima_misc' ),
+	array(
+	'id' => 'anima_headerlimits',
+		'type' => 'toggle',
+		'label' => __('Header image size requirements','anima'),
+		'values' => array( 1, 0 ),
+		'desc' => '',
+		'priority' => 4,
+	'section' => 'anima_misc' ),
+	array(
+	'id' => 'anima_editorstyles',
+		'type' => 'toggle',
+		'label' => __('Editor Styles','anima'),
+		'values' => array( 1, 0 ),
+		'desc' => '',
+		'priority' => 4,
 	'section' => 'anima_misc' ),
 	array(
 	'id' => 'anima_fitvids',
@@ -1641,23 +1739,8 @@ array(
 		'label' => __('FitVids','anima'),
 		'values' => array( 1, 2, 0 ),
 		'labels' => array( __("Enable","anima"), __("Enable on mobiles","anima"), __("Disable","anima") ),
-		'desc' => '',
-	'section' => 'anima_misc' ),
-	array(
-	'id' => 'anima_autoscroll',
-		'type' => 'select',
-		'label' => __('Autoscroll','anima'),
-		'values' => array( 1, 0 ),
-		'labels' => array( __("Enable","anima"), __("Disable","anima") ),
-		'desc' => '',
-	'section' => 'anima_misc' ),
-	array(
-	'id' => 'anima_editorstyles',
-		'type' => 'select',
-		'label' => __('Editor Styles','anima'),
-		'values' => array( 1, 0 ),
-		'labels' => array( __("Enable","anima"), __("Disable","anima") ),
 		'desc' => __("<br>Only use these options to troubleshoot issues.","anima"),
+		'priority' => 6,
 	'section' => 'anima_misc' ),
 	//////////////////////////////////////////////////// !!! DEVELOPER !!! ////////////////////////////////////////////////////
 	// nothing for now
@@ -1770,7 +1853,6 @@ array(
 
 	/*** landing page blocks icons ***/
 	'block-icons' => array(
-		'no-icon' => '&nbsp;',
 		'toggle' => 'e003',
 		'layout' => 'e004',
 		'lock' => 'e007',

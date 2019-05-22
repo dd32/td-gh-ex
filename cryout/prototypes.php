@@ -260,6 +260,24 @@ function cryout_hexdiff($hex,$inc,$f='') {
 } // cryout_hexdiff()
 
 /**
+* Checks the browser agent string for mobile ids and adds "mobile" class to body if true
+* @return array list of classes.
+*/
+function cryout_mobile_body_class( $classes ){
+	$browser = ( ! empty( $_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '');
+	$keys = 'mobile|android|mobi|tablet|ipad|opera mini|series 60|s60|blackberry';
+	if ( preg_match( "/($keys)/i", $browser ) ) : $classes[] = 'mobile'; endif; // mobile browser detected
+	return $classes;
+} // cryout_mobile_body_class()
+
+/**
+ * Normalizes tags widget font
+ */
+function cryout_normalizetags( $tags_html ) {
+	return preg_replace( '/font-size:.*?;/i', '', $tags_html );
+}; // cryout_normalizetags()
+
+/**
  *	Returns the cleaned up Google font name to be displayed in the font list and used in custom styling
  */
 function cryout_clean_gfont( $font, $identifier = '(:\d+)?\/gfont$' ){
@@ -300,6 +318,13 @@ function cryout_gfontclean( $gfont, $weight = '' ) {
 	return esc_attr( $gfont );
 } // cryout_gfontcleanup()
 
+/*
+ * Remove inline logo styling
+ */
+function cryout_filter_wp_logo_img( $input ) {
+	return preg_replace( '/(height=".*?"|width=".*?")/i', '', $input );
+}
+
 /**
  * Returns the first attached post image (or none if images were not uploaded directly to post).
  */
@@ -333,9 +358,9 @@ function cryout_get_picture( $attachment_id, $size = '' ){
 	$image = wp_get_attachment_image_src( $attachment_id, $size );
 	if (!empty($image[0])) return $image;
 						  else return array(
-							0 => apply_filters( cryout_sanitize_tnp(_CRYOUT_THEME_NAME) . '_preview_img_src', ''),
-							1 => apply_filters( cryout_sanitize_tnp(_CRYOUT_THEME_NAME) . '_preview_img_w', ''),
-							2 => apply_filters( cryout_sanitize_tnp(_CRYOUT_THEME_NAME) . '_preview_img_h', ''),
+							0 => apply_filters( _CRYOUT_THEME_SLUG . '_preview_img_src', ''),
+							1 => apply_filters( _CRYOUT_THEME_SLUG . '_preview_img_w', ''),
+							2 => apply_filters( _CRYOUT_THEME_SLUG . '_preview_img_h', ''),
 						  );
 } // cryout_get_picture()
 
@@ -373,12 +398,12 @@ function cryout_get_featured_srcset( $attachment_id, $sizes = array() ) {
 
 } // cryout_get_featured_srcset()
 
-/** 
- * Returns featured image sizes for srcset functionality based on magazine layout option 
+/**
+ * Returns featured image sizes for srcset functionality based on magazine layout option
  */
 function cryout_gen_featured_sizes( $default = 1440, $magazinelayout = false, $landingpage = false ) {
 	if ( $landingpage ) {
-		$magazinelayout = apply_filters( cryout_sanitize_tnp( _CRYOUT_THEME_NAME ) . '_lppostslayout_filter', $magazinelayout );
+		$magazinelayout = apply_filters( _CRYOUT_THEME_SLUG . '_lppostslayout_filter', $magazinelayout );
 	};
 	if ( $magazinelayout > 1 ) {
 		$column =  50;
@@ -389,20 +414,45 @@ function cryout_gen_featured_sizes( $default = 1440, $magazinelayout = false, $l
 } // cryout_gen_featured_sizes()
 
 /**
- * Detects if theme has landing page functionality enabled and active 
+ * Detects if theme has landing page functionality enabled and active
  */
 function cryout_is_landingpage() {
-	$landingpage = cryout_get_option( cryout_sanitize_tnp( _CRYOUT_THEME_NAME ) . '_landingpage');
-	return ( $landingpage && ('page' == get_option( 'show_on_front' )) );
+	$landingpage = cryout_get_option( _CRYOUT_THEME_PREFIX . '_landingpage');
+	return apply_filters( _CRYOUT_THEME_SLUG . '_is_landingpage', ($landingpage && ('page' == get_option( 'show_on_front' )) ) );
 } // cryout_is_landingpage()
 
-/** 
- * Detects if the code currently executed is on the landing page and the landing page is enabled and active 
+/**
+ * Detects if the code currently executed is on the landing page and the landing page is enabled and active
  */
 function cryout_on_landingpage() {
-	$landingpage = cryout_get_option( cryout_sanitize_tnp( _CRYOUT_THEME_NAME ) . '_landingpage');
-	return ( $landingpage && ('page' == get_option( 'show_on_front' )) && is_front_page() );
+	$landingpage = cryout_get_option( _CRYOUT_THEME_PREFIX . '_landingpage');
+	return apply_filters( _CRYOUT_THEME_SLUG . '_on_landingpage', ( $landingpage && ('page' == get_option( 'show_on_front' )) && is_front_page() ) );
 } // cryout_on_landingpage()
+
+/**
+* Retrieves and filters the theme's general layout
+*/
+if ( ! function_exists( 'cryout_get_layout' ) ) :
+function cryout_get_layout( $option_name = '' ) {
+	global $post;
+	if (empty($option_name)) $option_name = _CRYOUT_THEME_PREFIX . '_sitelayout';
+	
+	if ( get_post() && is_singular() ) {
+		$meta_layout = get_post_meta( $post->ID, '_cryout_layout', true );
+		if (empty($meta_layout)) $meta_layout = get_post_meta( $post->ID, '_' . _CRYOUT_THEME_PREFIX . '_layout', true ); // backwards compatibility
+	}
+
+	if ( !empty( $meta_layout ) ) {
+		$theme_layout =  $meta_layout;
+	}
+	else $theme_layout = cryout_get_option( $option_name );
+
+	// allow the layout value to be filtered
+	$theme_layout = apply_filters( _CRYOUT_THEME_SLUG . '_general_layout', $theme_layout );
+
+	return $theme_layout;
+} // cryout_get_layout()
+endif;
 
 /**
  * Outputs inline background image styling
@@ -455,13 +505,13 @@ function cryout_get_gallery_images() {
  */
 function cryout_has_manual_excerpt( $post = null ){
 	if ( empty($post) ) global $post;
-	
+
 	// test manual excerpt
 	if ( !empty( $post->post_excerpt ) ) return apply_filters( 'cryout_has_manual_excerpt', true, $post );
-	
+
 	// test use of more or nextpage tags
 	if ( strpos( $post->post_content, '<!--more-->' ) || strpos( $post->post_content, '<!--nextpage-->' ) ) return apply_filters( 'cryout_has_manual_excerpt', true, $post );
-	
+
 	return apply_filters( 'cryout_has_manual_excerpt', false, $post );
 } // cryout_has_manual_excerpt()
 
@@ -776,7 +826,7 @@ function cryout_breadcrumbs(
 
 	// integrate layout class and microdata in wrapper_pre
 	$wrapper_pre = sprintf( $wrapper_pre, $layout_class, cryout_schema_microdata( 'breadcrumbs', 0 ) );
-	
+
 	// woocommerce sections display their own breadcrumbs
 	if ( function_exists('woocommerce_breadcrumb') && is_woocommerce() ){
 		$args = array(

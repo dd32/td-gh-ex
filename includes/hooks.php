@@ -122,7 +122,12 @@ function cryout_featured_meta_hook() {
 	do_action( 'cryout_featured_meta_hook' );
 }
 
-// Continue reading link hook
+// After content hook on full posts
+function cryout_post_content_hook() {
+	do_action( 'cryout_post_content_hook' );
+}
+
+// After excerpt hook on excerpts
 function cryout_post_excerpt_hook() {
 	do_action( 'cryout_post_excerpt_hook' );
 }

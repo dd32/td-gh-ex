@@ -26,12 +26,20 @@ function anima_enqueue_styles() {
 		$itemw = $item . 'weight';
 		// custom font names
 		if ( ! empty( $options[$itemg] ) && ! preg_match( '/custom\sfont/i', $options[$item] ) ) {
-				$gfonts[] = cryout_gfontclean( $options[$itemg], ":".$options[$itemw] );
+				if ( $item == _CRYOUT_THEME_PREFIX . '_fgeneral' ) { 
+					$gfonts[] = cryout_gfontclean( $options[$itemg], ":100,200,300,400,500,600,700,800,900" ); // include all weights for general font 
+				} else {
+					$gfonts[] = cryout_gfontclean( $options[$itemg], ":".$options[$itemw] );
+				};
 				$roots[] = cryout_gfontclean( $options[$itemg] );
 		}
 		// preset google fonts
 		if ( preg_match('/^(.*)\/gfont$/i', $options[$item], $bits ) ) {
-				$gfonts[] = cryout_gfontclean( $bits[1], ":".$options[$itemw] );
+				if ( $item == _CRYOUT_THEME_PREFIX . '_fgeneral' ) { 
+					$gfonts[] = cryout_gfontclean( $bits[1], ":100,200,300,400,500,600,700,800,900" ); // include all weights for general font 
+				} else {
+					$gfonts[] = cryout_gfontclean( $bits[1], ":".$options[$itemw] );
+				};
 				$roots[] = cryout_gfontclean( $bits[1] );
 		}
 	};
@@ -119,7 +127,7 @@ function anima_scripts_method() {
 	) );
 
 	wp_enqueue_script( 'anima-frontend', get_template_directory_uri() . '/resources/js/frontend.js', array( 'jquery' ), _CRYOUT_THEME_VERSION );
-	wp_localize_script( 'anima-frontend', 'anima_settings', $js_options );
+	wp_localize_script( 'anima-frontend', 'cryout_theme_settings', $js_options );
 	if ($js_options['masonry']) wp_enqueue_script( 'jquery-masonry' );
 
 	if ( is_singular() && get_option( 'thread_comments' ) ) wp_enqueue_script( 'comment-reply' );
@@ -138,7 +146,7 @@ function anima_scripts_filter($tag) {
     }
     return $tag;
 } //anima_scripts_filter()
-add_filter( 'script_loader_tag', 'anima_scripts_filter', 10, 2 );
+if ( ! is_admin() ) add_filter( 'script_loader_tag', 'anima_scripts_filter', 10, 2 );
 
 /**
  * Add responsive meta
@@ -157,9 +165,8 @@ function anima_add_editor_styles() {
 	if ( ! $editorstyles ) return;
 
 	add_editor_style( 'resources/styles/editor-style.css' );
-	add_editor_style( add_query_arg( 'action', 'anima_editor_styles', admin_url( 'admin-ajax.php' ) ) );
-	add_action( 'wp_ajax_anima_editor_styles', 'anima_editor_styles_output' );
-	// add_action( 'wp_ajax_no_priv_anima_editor_styles', 'anima_editor_styles_output' );
+	add_editor_style( add_query_arg( 'action', 'anima_editor_styles_output', admin_url( 'admin-ajax.php' ) ) );
+	add_action( 'wp_ajax_anima_editor_styles_output', 'anima_editor_styles_output' );
 }//anima_add_editor_styles
 anima_add_editor_styles();
 

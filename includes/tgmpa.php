@@ -6,10 +6,10 @@
  */
 
 /* TGM_Plugin_Activation class is included in the framework. */
-add_action( 'tgmpa_register', 'anima_register_required_plugins' );
+add_action( 'tgmpa_register', 'cryout_register_addon_plugins' );
 
 /*This function is hooked into `tgmpa_register`, which is fired on the WP `init` action on priority 10. */
-function anima_register_required_plugins() {
+function cryout_register_addon_plugins() {
 	/*
 	 * Array of plugin arrays. Required keys are name and slug.
 	 * If the source is NOT from the .org repo, then source is also required.
@@ -49,76 +49,76 @@ function anima_register_required_plugins() {
 		'message'      => '',                      // Message to output right before the plugins table
 
 		'strings'      => array(
-			'page_title'                      => __( 'Anima Suggested Plugins', 'anima' ),
-			'menu_title'                      => __( 'Anima Addons', 'anima' ),
+			'page_title'                      => __( 'Anima Suggested Plugins', 'cryout' ),
+			'menu_title'                      => __( 'Anima Addons', 'cryout' ),
 			/* translators: %s: plugin name. */
-			'installing'                      => __( 'Installing Plugin: %s', 'anima' ),
+			'installing'                      => __( 'Installing Plugin: %s', 'cryout' ),
 			/* translators: %s: plugin name. */
-			'updating'                        => __( 'Updating Plugin: %s', 'anima' ),
-			'oops'                            => __( 'Something went wrong with the plugin API.', 'anima' ),
+			'updating'                        => __( 'Updating Plugin: %s', 'cryout' ),
+			'oops'                            => __( 'Something went wrong with the plugin API.', 'cryout' ),
 			'notice_can_install_required'     => _n_noop(
 				/* translators: 1: plugin name(s). */
 				'This theme requires the following plugin: %1$s.',
 				'This theme requires the following plugins: %1$s.',
-				'anima'
+				'cryout'
 			),
 			'notice_can_install_recommended'  => _n_noop(
 				/* translators: 1: plugin name(s). */
 				'This theme recommends the following plugin: %1$s.',
 				'This theme recommends the following plugins: %1$s.',
-				'anima'
+				'cryout'
 			),
 			'notice_ask_to_update'            => _n_noop(
 				/* translators: 1: plugin name(s). */
 				'The following plugin should be updated to its latest version to ensure maximum compatibility with this theme: %1$s.',
 				'The following plugins should be updated to their latest version to ensure maximum compatibility with this theme: %1$s.',
-				'anima'
+				'cryout'
 			),
 			'notice_ask_to_update_maybe'      => _n_noop(
 				/* translators: 1: plugin name(s). */
 				'There is an update available for: %1$s.',
 				'There are updates available for the following plugins: %1$s.',
-				'anima'
+				'cryout'
 			),
 			'notice_can_activate_required'    => _n_noop(
 				/* translators: 1: plugin name(s). */
 				'The following required plugin is currently inactive: %1$s.',
 				'The following required plugins are currently inactive: %1$s.',
-				'anima'
+				'cryout'
 			),
 			'notice_can_activate_recommended' => _n_noop(
 				/* translators: 1: plugin name(s). */
 				'The following recommended plugin is currently inactive: %1$s.',
 				'The following recommended plugins are currently inactive: %1$s.',
-				'anima'
+				'cryout'
 			),
 			'install_link'                    => _n_noop(
 				'Begin installing plugin',
 				'Begin installing plugins',
-				'anima'
+				'cryout'
 			),
 			'update_link' 					  => _n_noop(
 				'Begin updating plugin',
 				'Begin updating plugins',
-				'anima'
+				'cryout'
 			),
 			'activate_link'                   => _n_noop(
 				'Begin activating plugin',
 				'Begin activating plugins',
-				'anima'
+				'cryout'
 			),
-			'return'                          => __( 'Return to Suggested Plugins Installer', 'anima' ),
-			'plugin_activated'                => __( 'Plugin activated successfully.', 'anima' ),
-			'activated_successfully'          => __( 'The following plugin was activated successfully:', 'anima' ),
+			'return'                          => __( 'Return to Suggested Plugins Installer', 'cryout' ),
+			'plugin_activated'                => __( 'Plugin activated successfully.', 'cryout' ),
+			'activated_successfully'          => __( 'The following plugin was activated successfully:', 'cryout' ),
 			/* translators: 1: plugin name. */
-			'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'anima' ),
+			'plugin_already_active'           => __( 'No action taken. Plugin %1$s was already active.', 'cryout' ),
 			/* translators: 1: plugin name. */
-			'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'anima' ),
+			'plugin_needs_higher_version'     => __( 'Plugin not activated. A higher version of %s is needed for this theme. Please update the plugin.', 'cryout' ),
 			/* translators: 1: dashboard link. */
-			'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'anima' ),
-			'dismiss'                         => __( 'Dismiss this notice', 'anima' ),
-			'notice_cannot_install_activate'  => __( 'There are one or more required or recommended plugins to install, update or activate.', 'anima' ),
-			'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'anima' ),
+			'complete'                        => __( 'All plugins installed and activated successfully. %1$s', 'cryout' ),
+			'dismiss'                         => __( 'Dismiss this notice', 'cryout' ),
+			'notice_cannot_install_activate'  => __( 'There are one or more required or recommended plugins to install, update or activate.', 'cryout' ),
+			'contact_admin'                   => __( 'Please contact the administrator of this site for help.', 'cryout' ),
 
 			'nag_type'                        => 'notice-info', // Determines admin notice type - can only be one of the typical WP notice classes, such as 'updated', 'update-nag', 'notice-warning', 'notice-info' or 'error'. Some of which may not work as expected in older WP versions.
 		),

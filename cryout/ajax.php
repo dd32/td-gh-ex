@@ -12,16 +12,16 @@ function cryout_ajax_init() {
 	$identifiers = cryout_get_theme_structure( 'theme_identifiers' );
 	// loading theme settings
 	$options = cryout_get_option( array(
-		cryout_sanitize_tnp(_CRYOUT_THEME_NAME) . '_landingpage',
-		cryout_sanitize_tnp(_CRYOUT_THEME_NAME) . '_lppostscount'
+		_CRYOUT_THEME_PREFIX . '_landingpage',
+		_CRYOUT_THEME_PREFIX . '_lppostscount'
 	) );
 
-	if( is_front_page() && cryout_is_true( $options[cryout_sanitize_tnp(_CRYOUT_THEME_NAME) . '_landingpage'] ) ) {
+	if ( cryout_on_landingpage() ) {
 		$paged = ( get_query_var('paged') ) ? get_query_var('paged') : 1;
 		$the_query = new WP_Query(
 			apply_filters( 'cryout_landingpage_indexquery', 
 				array( 
-					'posts_per_page' => $options[cryout_sanitize_tnp(_CRYOUT_THEME_NAME) . '_lppostscount'], 
+					'posts_per_page' => $options[ _CRYOUT_THEME_PREFIX . '_lppostscount'], 
 					'paged' => $paged 
 				)
 			)

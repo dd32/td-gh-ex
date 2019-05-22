@@ -660,14 +660,13 @@
 .icon-widget-mobile:before { content: "\e996"; }
 .icon-widget-mail:before { content: "\e82e"; }
 .icon-widget-link:before { content: "\e99b"; }
+.icon-widget-opening-hours::before { content: "\e014"; }
 
 /* Contact template icons */
 .icon-template-location:before { content: "\e836"; }
 .icon-template-phone:before { content: "\e839"; }
 .icon-template-mobile:before { content: "\e996"; }
 .icon-template-mail:before { content: "\e99b"; }
-
-
 
 /* Social Icons */
 @font-face {
@@ -942,8 +941,11 @@
 
 [id*="anima_settings"].customize-control-iconselect select,
 [id*="anima_settings"].customize-control-iconselect select option,
+[id*="anima_settings"].customize-control-iconselect .select2-container,
 [id*="anima-plus_settings"].customize-control-iconselect select,
-[id*="anima-plus_settings"].customize-control-iconselect select option {
+[id*="anima-plus_settings"].customize-control-iconselect select option,
+[id*="anima-plus_settings"].customize-control-iconselect .select2-container,
+.select2-container.cryout-iconselect .select2-results__option {
 	font-family: "anima-blocks";
 }
 

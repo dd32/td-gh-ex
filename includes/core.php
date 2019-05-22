@@ -21,7 +21,6 @@ function anima_content_width() {
 	$content_width = 0.98 * (int)$options['anima_sitewidth'];
 
 	switch( $options['anima_sitelayout'] ) {
-
 		case '2cSl': case '3cSl': case '3cSr': case '3cSs': $content_width -= (int)$options['anima_primarysidebar']; // primary sidebar
 		case '2cSr': case '3cSl': case '3cSr': case '3cSs': $content_width -= (int)$options['anima_secondarysidebar']; break; // secondary sidebar
 	}
@@ -33,7 +32,7 @@ function anima_content_width() {
 		return;
    }
 
-   if ( ! is_singular() ) {
+   if ( is_archive() ) {
        switch ( $options['anima_magazinelayout'] ):
            case 2: $content_width = floor($content_width*0.98/2); break; // magazine-two
            case 3: $content_width = floor($content_width*0.96/3); break; // magazine-three
@@ -80,6 +79,7 @@ function anima_featured_width() {
 	};
 
 	return ceil($width);
+	// also used on images registration
 
 } // anima_featured_width()
 endif;
@@ -91,7 +91,9 @@ endif;
   */
 if ( ! function_exists( 'anima_header_image_url' ) ) :
 function anima_header_image_url() {
-	$limit = 0.75;
+	$headerlimits = cryout_get_option('anima_headerlimits');
+	if ($headerlimits) $limit = 0.75; else $limit = 0;
+
 	$anima_fheader = cryout_get_option( 'anima_fheader' );
 	$anima_headerh = floor( cryout_get_option( 'anima_headerheight' ) * $limit );
 	$anima_headerw = floor( cryout_get_option( 'anima_sitewidth' ) * $limit );
@@ -253,13 +255,12 @@ add_action( 'cryout_singular_after_inner_hook', 'cryout_schema_publisher' );
 // cryout_schema_main() located in cryout/prototypes.php
 add_action( 'cryout_after_inner_hook', 'cryout_schema_main' );
 add_action( 'cryout_singular_after_inner_hook', 'cryout_schema_main' );
-/**
- * Anima back to top button
- * Creates div for js
-*/
 
+/**
+ * Back to top button
+*/
 function anima_back_top() {
-	echo '<a id="toTop"> <span class="screen-reader-text">' . __('Back to Top', 'anima') . '</span> <i class="icon-back2top"></i> </a>';
+	echo '<a id="toTop"><span class="screen-reader-text">' . __('Back to Top', 'anima') . '</span><i class="icon-back2top"></i> </a>';
 } // anima_back_top()
 add_action ( 'cryout_footer_hook', 'anima_back_top' );
 
@@ -305,12 +306,12 @@ add_filter( 'wp_link_pages_args', 'anima_nextpage_links' );
  */
 add_action( 'cryout_master_footer_hook', 'anima_master_footer' );
 function anima_master_footer() {
-	$anima_theme = wp_get_theme();
+	$the_theme = wp_get_theme();
 	do_action( 'cryout_footer_hook' );
 	echo '<div id="footer-separator"></div>';
 	echo '<div id="site-copyright">' . do_shortcode( wp_kses_post( cryout_get_option( 'anima_copyright' ) ) ) . '</div>';
 	echo '<div style="display:block;float:right;clear: right;">' . __( "Powered by", "anima" ) .
-		'<a target="_blank" href="' . esc_html( $anima_theme->get( 'ThemeURI' ) ) . '" title="';
+		'<a target="_blank" href="' . esc_html( $the_theme->get( 'ThemeURI' ) ) . '" title="';
 	echo 'Anima WordPress Theme by ' . 'Cryout Creations"> ' . 'Anima' .'</a> &amp; <a target="_blank" href="' . "http://wordpress.org/";
 	echo '" title="' . esc_attr__( "Semantic Personal Publishing Platform", "anima") . '"> ' . sprintf( " %s.", "WordPress" ) . '</a></div>';
 }
@@ -320,14 +321,10 @@ function anima_master_footer() {
 */
 if ( ! function_exists( 'anima_get_sidebar' ) ) :
 function anima_get_sidebar() {
-	global $post;
-	if ( get_post() && is_singular() ) { $anima_meta_layout = get_post_meta( $post->ID, '_anima_layout', true ); }
 
-	if ( isset( $anima_meta_layout ) && $anima_meta_layout ) {
-		$anima_sitelayout =  $anima_meta_layout;
-	}
-	else $anima_sitelayout = cryout_get_option( 'anima_sitelayout' );
-	switch( $anima_sitelayout ) {
+	$layout = cryout_get_layout();
+
+	switch( $layout ) {
 		case '2cSl':
 			get_sidebar( 'left' );
 		break;
@@ -352,38 +349,29 @@ endif;
  */
 if ( ! function_exists( 'anima_get_layout_class' ) ) :
 function anima_get_layout_class() {
-	global $post;
-	if ( get_post() ) { $anima_meta_layout = get_post_meta( $post->ID, '_anima_layout', true ); }
 
-	if ( isset( $anima_meta_layout ) && $anima_meta_layout ) {
-		$anima_sitelayout =  $anima_meta_layout;
-	}
-	else $anima_sitelayout = cryout_get_option( 'anima_sitelayout' );
+	$layout = cryout_get_layout();
 
 	/*  If not, return the general layout */
-	switch( $anima_sitelayout ) {
-		case '2cSl': return "two-columns-left"; break;
-		case '2cSr': return "two-columns-right"; break;
-		case '3cSl': return "three-columns-left"; break;
-		case '3cSr' : return "three-columns-right"; break;
-		case '3cSs' : return "three-columns-sided"; break;
+	switch( $layout ) {
+		case '2cSl': $class = "two-columns-left"; break;
+		case '2cSr': $class = "two-columns-right"; break;
+		case '3cSl': $class = "three-columns-left"; break;
+		case '3cSr' : $class = "three-columns-right"; break;
+		case '3cSs' : $class = "three-columns-sided"; break;
 		case '1c':
 		default: return "one-column"; break;
 	}
+
+	// allow the generated layout class to be filtered
+	return apply_filters( 'anima_general_layout_class', $class, $layout );
 } // anima_get_layout_class()
 endif;
 
 /**
 * Checks the browser agent string for mobile ids and adds "mobile" class to body if true
-* @return array list of classes.
 */
-function anima_mobile_body_class( $classes ){
-	$browser = ( ! empty( $_SERVER['HTTP_USER_AGENT']) ? $_SERVER['HTTP_USER_AGENT'] : '');
-	$keys = 'mobile|android|mobi|tablet|ipad|opera mini|series 60|s60|blackberry';
-	if ( preg_match( "/($keys)/i", $browser ) ) : $classes[] = 'mobile'; endif; // mobile browser detected
-	return $classes;
-} // anima_mobile_body_class()
-add_filter( 'body_class', 'anima_mobile_body_class');
+add_filter( 'body_class', 'cryout_mobile_body_class');
 
 
 /**
@@ -441,11 +429,7 @@ endif;
 /**
  * Normalizes tags widget font when needed
  */
-function anima_normalizetags( $tags_html ) {
-	$anima_normalizetags = cryout_get_option( 'anima_normalizetags' );
-	if ( $anima_normalizetags ) return preg_replace( '/font-size:.*?;/i', '', $tags_html ); else return $tags_html;
-};
-add_filter( 'wp_generate_tag_cloud', 'anima_normalizetags' );
+if ( TRUE === cryout_get_option( 'anima_normalizetags' ) ) add_filter( 'wp_generate_tag_cloud', 'cryout_normalizetags' );
 
 
 /**

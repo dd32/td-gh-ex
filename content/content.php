@@ -11,7 +11,7 @@ $options = cryout_get_option( array( 'anima_excerptarchive', 'anima_excerptstick
 
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'hentry' ); cryout_schema_microdata( 'blogpost' ); ?>>
 
-	<?php cryout_featured_hook(); ?>
+	<?php if ( false == get_post_format() ) { cryout_featured_hook(); } ?>
 	<div class="article-inner">
 		<header class="entry-header">
 			<div class="entry-meta beforetitle-meta">
@@ -39,11 +39,13 @@ $options = cryout_get_option( array( 'anima_excerptarchive', 'anima_excerptstick
 				<div class="entry-content" <?php cryout_schema_microdata( 'entry-content' ); ?>>
 					<?php the_content(); ?>
 					<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'anima' ), 'after' => '</div>' ) ); ?>
+					<?php cryout_post_content_hook(); ?>
 				</div><!-- .entry-content -->
 				<div class="entry-meta entry-utility">
 					<?php cryout_meta_format_hook(); ?>
 					<?php cryout_post_utility_hook(); ?>
 				</div><!-- .entry-utility -->
+				
 
 			<?php break;
 

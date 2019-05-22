@@ -109,8 +109,8 @@ endif;
  */
 if ( ! function_exists( 'anima_lpblocks' ) ):
 function anima_lpblocks( $sid = 1 ) {
-	$maintitle = cryout_get_option('anima_lpblockmaintitle'.$sid );
-	$maindesc = cryout_get_option('anima_lpblockmaindesc'.$sid );
+	$maintitle = cryout_get_option( 'anima_lpblockmaintitle'.$sid );
+	$maindesc = cryout_get_option( 'anima_lpblockmaindesc'.$sid );
 	$pageids = cryout_get_option( apply_filters('anima_blocks_ids', array( 'anima_lpblockone'.$sid, 'anima_lpblocktwo'.$sid, 'anima_lpblockthree'.$sid, 'anima_lpblockfour'.$sid), $sid ) );
 	$icon = cryout_get_option( apply_filters('anima_blocks_icons', array( 'anima_lpblockoneicon'.$sid, 'anima_lpblocktwoicon'.$sid, 'anima_lpblockthreeicon'.$sid, 'anima_lpblockfouricon'.$sid ), $sid ) );
 	$blockscontent = cryout_get_option( 'anima_lpblockscontent'.$sid );
@@ -177,7 +177,6 @@ function anima_lpblock_output( $data ) { ?>
 						<?php if ( ! empty ( $title ) ) { ?><h4 class="lp-block-title"><?php echo do_shortcode( $title ) ?></h4><?php } ?>
 						<?php if ( ! empty ( $text ) ) { ?><div class="lp-block-text"><?php echo do_shortcode( $text ) ?></div><?php } ?>
 						<?php if ( ! empty ( $readmore ) ) { ?><a class="lp-block-readmore" href="<?php echo esc_url( $link ); ?>" <?php echo esc_attr( $target ); ?>> <?php echo do_shortcode( wp_kses_post( $readmore ) ); ?> <em class="screen-reader-text">"<?php echo esc_attr( $title ) ?>"</em> </a><?php } ?>
-
 					</div>
 			</div><!-- lp-block -->
 	<?php
@@ -225,6 +224,7 @@ function anima_lpboxes( $sid = 1 ) {
 	), $options['anima_lpboxcat' . $sid], $sid );
 
     $custom_query->query( $args );
+
     if ( $custom_query->have_posts() ) : ?>
 		<section id="lp-boxes-<?php echo absint( $sid ) ?>" class="lp-boxes lp-boxes-<?php echo absint( $sid ) ?> <?php  echo esc_attr( $animated_class ) ?> lp-boxes-rows-<?php echo absint( $options['anima_lpboxrow' . $sid] ); ?>">
 			<?php if( $options['anima_lpboxmaintitle' . $sid] || $options['anima_lpboxmaindesc' . $sid] ) { ?>
@@ -233,7 +233,7 @@ function anima_lpboxes( $sid = 1 ) {
 					<?php if ( ! empty( $options['anima_lpboxmaindesc' . $sid] ) ) { ?><div class="lp-section-desc"> <?php echo do_shortcode( wp_kses_post( $options['anima_lpboxmaindesc' . $sid] ) ) ?></div><?php } ?>
 				</header>
 			<?php } ?>
-			<div class="<?php if ( $options['anima_lpboxlayout' . $sid] == 2 ) { echo 'lp-boxes-inside'; }?>
+			<div class="<?php if ( $options['anima_lpboxlayout' . $sid] == 2 ) { echo 'lp-boxes-inside'; } else { echo 'lp-boxes-outside'; }?>
 						<?php if ( $options['anima_lpboxmargins' . $sid] == 2 ) { echo 'lp-boxes-margins'; }?>
 						<?php if ( $options['anima_lpboxmargins' . $sid] == 1 ) { echo 'lp-boxes-padding'; }?>">
     		<?php while ( $custom_query->have_posts() ) :
@@ -345,7 +345,7 @@ endif;
 if ( ! function_exists( 'anima_lpindex' ) ):
 function anima_lpindex() {
 
-	$anima_lpposts = cryout_get_option ('anima_lpposts');
+	$anima_lpposts = cryout_get_option('anima_lpposts');
 
 	switch ($anima_lpposts) {
 
@@ -377,7 +377,7 @@ function anima_lpindex() {
 				<?php anima_pagination();
 				wp_reset_postdata();
 			else :
-				get_template_part( 'content/content', 'notfound' );
+				//get_template_part( 'content/content', 'notfound' );
 			endif;
 
 		break;

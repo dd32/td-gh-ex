@@ -14,7 +14,7 @@ function cryout_truncate_words($string,$words=20, $ellipsis=' ...') {
 
 // Get theme RSS
 function cryout_fetch_feed() {
-	$theme_news = fetch_feed( array( 'http://www.cryoutcreations.eu/cat/wordpress-themes/'.cryout_sanitize_tnp(_CRYOUT_THEME_NAME).'/feed/') );
+	$theme_news = fetch_feed( array( 'http://www.cryoutcreations.eu/cat/wordpress-themes/' . _CRYOUT_THEME_SLUG . '/feed/') );
 	$maxitems = 0;
 	if ( ! is_wp_error( $theme_news ) ) {
 			$maxitems = $theme_news->get_item_quantity( 10 );
