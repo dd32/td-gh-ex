@@ -2,8 +2,9 @@
 Contributors: alexvtn
 Tags: blog, custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, news, photography
 Requires at least: 4.0
-Tested up to: 5.0.3
-Stable tag: 1.3.1
+Tested up to: 5.2.1
+Stable tag: 1.3.2
+Requires PHP: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -18,6 +19,11 @@ Nova Lite WordPress Theme, Copyright 2019 ThemeinProgress.
 Nova Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.3.2 =
+Release date - May, 23 - 2019
+
+* Added - New "wp_body_open" WordPress hook
 
 = 1.3.1 =
 Release date - February, 11 - 2019

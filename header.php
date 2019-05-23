@@ -11,6 +11,14 @@
 
 <body <?php body_class(); ?>>
 
+<?php 
+
+if ( function_exists('wp_body_open') ) {
+	wp_body_open();
+}
+
+?>
+
 <div id="wrapper">
     
     <header id="header">
@@ -20,10 +28,10 @@
             <div class="row">
                 
                 <div class="span3" >
-                   
+
                     <div id="logo">
                             
-                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php bloginfo('name') ?>">
+                        <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr(get_bloginfo('name')) ?>">
                                 
                             <?php 
                                             
