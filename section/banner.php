@@ -11,7 +11,7 @@ $banner_btn_url  =$sample_banner['btn_url'];?>
     <div class="container">
       <div class="caption">
         <div class="main-title">
-          <span class="sub-title"><?php esc_html($sample_banner['title']);?></span>
+          <span class="sub-title"><?php echo esc_html($sample_banner['title']);?></span>
           <h1 class="title"><?php echo esc_html($queried_post->post_title);?></h1>
         </div>
         <p><?php echo esc_html($queried_post->post_content);?></p>

@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu,custom-header,featured-images,
 
 Requires at least: 4.9
 Tested up to: 5.1.1
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -58,6 +58,9 @@ Best Charity includes support for Infinite Scroll in Jetpack.
 = 0.5 =
 
 * This version fixes a security related bug.  Upgrade immediately.
+
+= 1.0.1  =
+* escaping add, remove unwanted files
 
 == Credits ==
 

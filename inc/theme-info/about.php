@@ -19,7 +19,7 @@ $config = array(
 	'quick_links' => array(
 		'theme_url' => array(
 			'text' => esc_html__( 'Theme Details','best-charity' ),
-			'url'  => 'https://786themes.com',
+			'url'  => 'http://html5wp.com/downloads/best-charity-wordpress-theme',
 		),
 		'demo_url' => array(
 			'text' => esc_html__( 'View Demo','best-charity' ),
@@ -27,11 +27,11 @@ $config = array(
 		),
 		'documentation_url' => array(
 			'text'   => esc_html__( 'Documentation','best-charity' ),
-			'url'    => 'https://786themes.com',
+			'url'    => 'http://786themes.com/doc/best-charity.pdf',
 		),
 		'upgrade_url' => array(
 			'text'   => esc_html__( 'Upgrade to Pro','best-charity' ),
-			'url'    => 'https://786themes.com',
+			'url'    => 'http://html5wp.com/downloads/best-charity-pro-wordpress-theme',
 			'button' => 'primary'
 		),
 	),
@@ -49,7 +49,7 @@ $config = array(
 			'title'               => esc_html__( 'Theme Documentation', 'best-charity' ),
 			'text'                => esc_html__( 'Find step by step instructions to setup theme easily.', 'best-charity' ),
 			'button_label'        => esc_html__( 'View documentation', 'best-charity' ),
-			'button_link'         => 'https://786themes.com',
+			'button_link'         => 'http://786themes.com/doc/best-charity.pdf',
 			'is_button'           => true,
 			'recommended_actions' => false,
 			'is_new_tab'          => true,
@@ -123,7 +123,7 @@ $config = array(
 			'icon'         => 'dashicons dashicons-sos',
 			'text'         => esc_html__( 'If you have any problem, feel free to create ticket on our dedicated Support forum.', 'best-charity' ),
 			'button_label' => esc_html__( 'Contact Support', 'best-charity' ),
-			'button_link'  => esc_url( 'https://786themes.com/downloads/best-charity-wordpress-theme/' ),
+			'button_link'  => esc_url( 'http://html5wp.com/downloads/best-charity-wordpress-theme' ),
 			'is_button'    => true,
 			'is_new_tab'   => true,
 		),
@@ -132,7 +132,7 @@ $config = array(
 			'icon'         => 'dashicons dashicons-book-alt',
 			'text'         => esc_html__( 'Kindly check our theme documentation for detailed information and video instructions.', 'best-charity' ),
 			'button_label' => esc_html__( 'View Documentation', 'best-charity' ),
-			'button_link'  => 'https://786themes.com',
+			'button_link'  => 'http://786themes.com/doc/best-charity.pdf',
 			'is_button'    => true,
 			'is_new_tab'   => true,
 		),
@@ -141,7 +141,7 @@ $config = array(
 			'icon'         => 'dashicons dashicons-admin-tools',
 			'text'         => esc_html__( 'This is 100% free theme and has premium version.Either Upgrade to Pro or  Feel free to contact us any time if you need any customization service.', 'best-charity' ),
 			'button_label' => esc_html__( 'Upgrade to Pro', 'best-charity' ),
-			'button_link'  => 'https://786themes.com/downloads/best-charity-pro-wordpress-theme/',
+			'button_link'  => 'http://html5wp.com/downloads/best-charity-wordpress-theme',
 			'is_button'    => true,
 			'is_new_tab'   => true,
 		),

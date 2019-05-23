@@ -173,56 +173,8 @@ require get_template_directory() . '/inc/wp-bootstrap-navwalker.php';
 */
 require_once get_template_directory() . '/inc/breadcrumbs.php';
 
-
-/*Bootstrap Pagination Function*/
-
-function best_charity_portfolio_bs_pagination($pages = '', $range = 4)
-{  
-	$showitems = ($range * 2) + 1;  
-	$paged = get_query_var( 'paged');
-
-	if(empty($paged)) $paged = 1;
-	if($pages == '')
-	{
-		global $wp_query; 
-		$pages = $wp_query->max_num_pages;
-		if(!$pages)
-		{
-			$pages = 1;
-		}
-	}   
-
-	if(1 != $pages)
-	{
-		echo '<ul class="pagination">';
-		for ($i=1; $i <= $pages; $i++)
-		{
-			if (1 != $pages &&( !($i >= $paged+$range+1 || $i <= $paged-$range-1) || $pages <= $showitems ))
-			{
-				echo ($paged == $i)? "<li class=\"page-item active\"><a href='".esc_url(get_pagenum_link($i))."' class='page-link'>".esc_html($i)."</a></li>":"<li class='page-item'><a href='".esc_url(get_pagenum_link($i))."' class='page-link'>".esc_html($i)."</a></li>";
-			}
-		}
-
-		if ($paged < $pages ) echo "<li class='page-item next'><a href=\"".esc_url(get_pagenum_link($paged + 1))."\" class='page-link'>".esc_html__('Next Page','best-charity')."</a></li>";  
-		echo "</ul>";
-	}
-}
-
-add_filter( 'post_thumbnail_html', 'remove_thumbnail_dimensions', 10, 3 );
-
-function remove_thumbnail_dimensions( $html, $post_id, $post_image_id ) {
-    $html = preg_replace( '/(width|height)=\"\d*\"\s/', "", $html );
-    return $html;
-}
-
-/*
-* Custom widgets
-*/
-require_once get_template_directory() . '/inc/widgets/widget.php';
-
-
 /**
- * Elementor hello world.
+ * Elementor widgets
  */
 require get_template_directory() . '/elementor-widget/widgets.php';
 

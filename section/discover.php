@@ -25,7 +25,7 @@
         <div class="col-xl-6 col-lg-6">
           <div class="content">
             <div class="main-title">
-              <span class="sub-title"><?php $sample_discover['title'];?></span>
+              <span class="sub-title"><?php echo esc_html($sample_discover['title']);?></span>
               <h1 class="title"><?php echo esc_html($queried_post->post_title);?></h1>
             </div>
             <p><?php echo esc_html($queried_post->post_content);?></p>
