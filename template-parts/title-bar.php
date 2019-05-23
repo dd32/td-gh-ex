@@ -6,10 +6,19 @@
  */
 
 // Get the post meta values.
-$disable_title = get_post_meta( get_the_ID(), 'disable_the_title', true );
+$disable_title_override = get_post_meta( get_the_ID(), 'disable_the_title', true );
+$disable_title_default  = get_theme_mod( 'agncy_disable_the_title' );
+
+if ( empty( $disable_title_override ) && $disable_title_override !== '0' ) {
+	// Make sure to only disable on singular templates.
+	$disable_title = is_singular() ? get_theme_mod( 'agncy_disable_the_title' ) : false;
+} else {
+	// If we have an override value, use that one.
+	$disable_title = (bool) $disable_title_override;
+}
 
 // Disable the while block if disabled option is set.
-if ( empty( $disable_title ) || '1' !== $disable_title ) :
+if ( ! $disable_title ) :
 	/*
 	 * Generate the archive title based on conditionals
 	 *

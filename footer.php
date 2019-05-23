@@ -28,6 +28,7 @@
 						'menu_class'     => 'footer-menu clearfix footer color-secondaryLight--a-hover',
 						'container'      => 'nav',
 						'depth'          => 1,
+						'fallback_cb'    => false,
 					);
 					wp_nav_menu( $args );
 					?>

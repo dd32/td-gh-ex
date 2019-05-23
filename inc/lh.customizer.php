@@ -83,6 +83,12 @@ class AgncyThemeCustomizer
             'priority' => 20,
             'panel'    => 'agncy_settings',
         ) );
+        // The Template Parts section.
+        $wp_customize->add_section( 'agncy_template_parts', array(
+            'title'    => __( 'Template Parts', 'agncy' ),
+            'priority' => 30,
+            'panel'    => 'agncy_settings',
+        ) );
         //
         // SETTINGS
         //
@@ -196,7 +202,6 @@ class AgncyThemeCustomizer
             'section'     => 'agncy_settings_general',
             'settings'    => 'agncy_sticky_sidebar',
             'type'        => 'checkbox',
-            'priority'    => 999,
         ) ) );
         // Header Settings.
         $wp_customize->add_section( 'agncy_header', array(
@@ -231,6 +236,39 @@ class AgncyThemeCustomizer
             'flex_width'  => true,
             'height'      => 94,
             'width'       => 560,
+        ) ) );
+        $wp_customize->add_setting( 'agncy_disable_the_title', array(
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'agncy_sanitize_checkbox',
+        ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'agncy_disable_the_title', array(
+            'label'       => __( 'Disable Post/Page Titles', 'agncy' ),
+            'description' => __( 'Checking this will disable the title on all singular templates like pages & posts.', 'agncy' ),
+            'section'     => 'agncy_settings_general',
+            'settings'    => 'agncy_disable_the_title',
+            'type'        => 'checkbox',
+        ) ) );
+        $wp_customize->add_setting( 'agncy_disable_the_sidebar', array(
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'agncy_sanitize_checkbox',
+        ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'agncy_disable_the_sidebar', array(
+            'label'       => __( 'Disable Sidebars', 'agncy' ),
+            'description' => __( 'Checking this will disable the sidebar globally.', 'agncy' ),
+            'section'     => 'agncy_settings_general',
+            'settings'    => 'agncy_disable_the_sidebar',
+            'type'        => 'checkbox',
+        ) ) );
+        $wp_customize->add_setting( 'agncy_disable_the_thumbnail', array(
+            'capability'        => 'edit_theme_options',
+            'sanitize_callback' => 'agncy_sanitize_checkbox',
+        ) );
+        $wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'agncy_disable_the_thumbnail', array(
+            'label'       => __( 'Disable Post/Page Thumbnail', 'agncy' ),
+            'description' => __( 'Checking this will disable the thumbnail visibility on all singular templates like pages & posts.', 'agncy' ),
+            'section'     => 'agncy_settings_general',
+            'settings'    => 'agncy_disable_the_thumbnail',
+            'type'        => 'checkbox',
         ) ) );
     }
     

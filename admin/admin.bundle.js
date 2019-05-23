@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 175);
+/******/ 	return __webpack_require__(__webpack_require__.s = 178);
 /******/ })
 /************************************************************************/
 /******/ ([
@@ -107,7 +107,33 @@ module.exports = wp;
 /***/ }),
 /* 10 */,
 /* 11 */,
-/* 12 */,
+/* 12 */
+/***/ (function(module, exports) {
+
+/**
+ * A specialized version of `_.map` for arrays without support for iteratee
+ * shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @returns {Array} Returns the new mapped array.
+ */
+function arrayMap(array, iteratee) {
+  var index = -1,
+      length = array == null ? 0 : array.length,
+      result = Array(length);
+
+  while (++index < length) {
+    result[index] = iteratee(array[index], index, array);
+  }
+  return result;
+}
+
+module.exports = arrayMap;
+
+
+/***/ }),
 /* 13 */,
 /* 14 */,
 /* 15 */,
@@ -115,7 +141,8 @@ module.exports = wp;
 /* 17 */,
 /* 18 */,
 /* 19 */,
-/* 20 */
+/* 20 */,
+/* 21 */
 /***/ (function(module, exports) {
 
 /**
@@ -158,7 +185,6 @@ module.exports = eq;
 
 
 /***/ }),
-/* 21 */,
 /* 22 */,
 /* 23 */,
 /* 24 */,
@@ -170,8 +196,21 @@ module.exports = eq;
 /* 30 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsNative = __webpack_require__(31),
-    getValue = __webpack_require__(44);
+var getNative = __webpack_require__(31),
+    root = __webpack_require__(36);
+
+/* Built-in method references that are verified to be native. */
+var Map = getNative(root, 'Map');
+
+module.exports = Map;
+
+
+/***/ }),
+/* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseIsNative = __webpack_require__(32),
+    getValue = __webpack_require__(45);
 
 /**
  * Gets the native function at `key` of `object`.
@@ -190,13 +229,13 @@ module.exports = getNative;
 
 
 /***/ }),
-/* 31 */
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isFunction = __webpack_require__(32),
-    isMasked = __webpack_require__(41),
-    isObject = __webpack_require__(40),
-    toSource = __webpack_require__(43);
+var isFunction = __webpack_require__(33),
+    isMasked = __webpack_require__(42),
+    isObject = __webpack_require__(41),
+    toSource = __webpack_require__(44);
 
 /**
  * Used to match `RegExp`
@@ -243,11 +282,11 @@ module.exports = baseIsNative;
 
 
 /***/ }),
-/* 32 */
+/* 33 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(33),
-    isObject = __webpack_require__(40);
+var baseGetTag = __webpack_require__(34),
+    isObject = __webpack_require__(41);
 
 /** `Object#toString` result references. */
 var asyncTag = '[object AsyncFunction]',
@@ -286,12 +325,12 @@ module.exports = isFunction;
 
 
 /***/ }),
-/* 33 */
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(34),
-    getRawTag = __webpack_require__(38),
-    objectToString = __webpack_require__(39);
+var Symbol = __webpack_require__(35),
+    getRawTag = __webpack_require__(39),
+    objectToString = __webpack_require__(40);
 
 /** `Object#toString` result references. */
 var nullTag = '[object Null]',
@@ -320,10 +359,10 @@ module.exports = baseGetTag;
 
 
 /***/ }),
-/* 34 */
+/* 35 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(35);
+var root = __webpack_require__(36);
 
 /** Built-in value references. */
 var Symbol = root.Symbol;
@@ -332,10 +371,10 @@ module.exports = Symbol;
 
 
 /***/ }),
-/* 35 */
+/* 36 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var freeGlobal = __webpack_require__(36);
+var freeGlobal = __webpack_require__(37);
 
 /** Detect free variable `self`. */
 var freeSelf = typeof self == 'object' && self && self.Object === Object && self;
@@ -347,7 +386,7 @@ module.exports = root;
 
 
 /***/ }),
-/* 36 */
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 /* WEBPACK VAR INJECTION */(function(global) {/** Detect free variable `global` from Node.js. */
@@ -355,10 +394,10 @@ var freeGlobal = typeof global == 'object' && global && global.Object === Object
 
 module.exports = freeGlobal;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(37)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(38)))
 
 /***/ }),
-/* 37 */
+/* 38 */
 /***/ (function(module, exports) {
 
 var g;
@@ -370,7 +409,7 @@ g = (function() {
 
 try {
 	// This works if eval is allowed (see CSP)
-	g = g || Function("return this")() || (1, eval)("this");
+	g = g || new Function("return this")();
 } catch (e) {
 	// This works if the window reference is available
 	if (typeof window === "object") g = window;
@@ -384,10 +423,10 @@ module.exports = g;
 
 
 /***/ }),
-/* 38 */
+/* 39 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var Symbol = __webpack_require__(34);
+var Symbol = __webpack_require__(35);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -436,7 +475,7 @@ module.exports = getRawTag;
 
 
 /***/ }),
-/* 39 */
+/* 40 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -464,7 +503,7 @@ module.exports = objectToString;
 
 
 /***/ }),
-/* 40 */
+/* 41 */
 /***/ (function(module, exports) {
 
 /**
@@ -501,10 +540,10 @@ module.exports = isObject;
 
 
 /***/ }),
-/* 41 */
+/* 42 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var coreJsData = __webpack_require__(42);
+var coreJsData = __webpack_require__(43);
 
 /** Used to detect methods masquerading as native. */
 var maskSrcKey = (function() {
@@ -527,10 +566,10 @@ module.exports = isMasked;
 
 
 /***/ }),
-/* 42 */
+/* 43 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var root = __webpack_require__(35);
+var root = __webpack_require__(36);
 
 /** Used to detect overreaching core-js shims. */
 var coreJsData = root['__core-js_shared__'];
@@ -539,7 +578,7 @@ module.exports = coreJsData;
 
 
 /***/ }),
-/* 43 */
+/* 44 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -571,7 +610,7 @@ module.exports = toSource;
 
 
 /***/ }),
-/* 44 */
+/* 45 */
 /***/ (function(module, exports) {
 
 /**
@@ -590,7 +629,6 @@ module.exports = getValue;
 
 
 /***/ }),
-/* 45 */,
 /* 46 */,
 /* 47 */,
 /* 48 */,
@@ -621,7 +659,8 @@ module.exports = getValue;
 /* 73 */,
 /* 74 */,
 /* 75 */,
-/* 76 */
+/* 76 */,
+/* 77 */
 /***/ (function(module, exports) {
 
 /**
@@ -653,15 +692,15 @@ module.exports = isArray;
 
 
 /***/ }),
-/* 77 */,
 /* 78 */,
 /* 79 */,
-/* 80 */
+/* 80 */,
+/* 81 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var arrayLikeKeys = __webpack_require__(81),
-    baseKeys = __webpack_require__(95),
-    isArrayLike = __webpack_require__(99);
+var arrayLikeKeys = __webpack_require__(82),
+    baseKeys = __webpack_require__(96),
+    isArrayLike = __webpack_require__(100);
 
 /**
  * Creates an array of the own enumerable property names of `object`.
@@ -699,15 +738,15 @@ module.exports = keys;
 
 
 /***/ }),
-/* 81 */
+/* 82 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseTimes = __webpack_require__(82),
-    isArguments = __webpack_require__(83),
-    isArray = __webpack_require__(76),
-    isBuffer = __webpack_require__(86),
-    isIndex = __webpack_require__(89),
-    isTypedArray = __webpack_require__(90);
+var baseTimes = __webpack_require__(83),
+    isArguments = __webpack_require__(84),
+    isArray = __webpack_require__(77),
+    isBuffer = __webpack_require__(87),
+    isIndex = __webpack_require__(90),
+    isTypedArray = __webpack_require__(91);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -754,7 +793,7 @@ module.exports = arrayLikeKeys;
 
 
 /***/ }),
-/* 82 */
+/* 83 */
 /***/ (function(module, exports) {
 
 /**
@@ -780,11 +819,11 @@ module.exports = baseTimes;
 
 
 /***/ }),
-/* 83 */
+/* 84 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsArguments = __webpack_require__(84),
-    isObjectLike = __webpack_require__(85);
+var baseIsArguments = __webpack_require__(85),
+    isObjectLike = __webpack_require__(86);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -822,11 +861,11 @@ module.exports = isArguments;
 
 
 /***/ }),
-/* 84 */
+/* 85 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(33),
-    isObjectLike = __webpack_require__(85);
+var baseGetTag = __webpack_require__(34),
+    isObjectLike = __webpack_require__(86);
 
 /** `Object#toString` result references. */
 var argsTag = '[object Arguments]';
@@ -846,7 +885,7 @@ module.exports = baseIsArguments;
 
 
 /***/ }),
-/* 85 */
+/* 86 */
 /***/ (function(module, exports) {
 
 /**
@@ -881,14 +920,14 @@ module.exports = isObjectLike;
 
 
 /***/ }),
-/* 86 */
+/* 87 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(35),
-    stubFalse = __webpack_require__(88);
+/* WEBPACK VAR INJECTION */(function(module) {var root = __webpack_require__(36),
+    stubFalse = __webpack_require__(89);
 
 /** Detect free variable `exports`. */
-var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
+var freeExports =  true && exports && !exports.nodeType && exports;
 
 /** Detect free variable `module`. */
 var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
@@ -923,10 +962,10 @@ var isBuffer = nativeIsBuffer || stubFalse;
 
 module.exports = isBuffer;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(87)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(88)(module)))
 
 /***/ }),
-/* 87 */
+/* 88 */
 /***/ (function(module, exports) {
 
 module.exports = function(module) {
@@ -954,7 +993,7 @@ module.exports = function(module) {
 
 
 /***/ }),
-/* 88 */
+/* 89 */
 /***/ (function(module, exports) {
 
 /**
@@ -978,7 +1017,7 @@ module.exports = stubFalse;
 
 
 /***/ }),
-/* 89 */
+/* 90 */
 /***/ (function(module, exports) {
 
 /** Used as references for various `Number` constants. */
@@ -1009,12 +1048,12 @@ module.exports = isIndex;
 
 
 /***/ }),
-/* 90 */
+/* 91 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseIsTypedArray = __webpack_require__(91),
-    baseUnary = __webpack_require__(93),
-    nodeUtil = __webpack_require__(94);
+var baseIsTypedArray = __webpack_require__(92),
+    baseUnary = __webpack_require__(94),
+    nodeUtil = __webpack_require__(95);
 
 /* Node.js helper references. */
 var nodeIsTypedArray = nodeUtil && nodeUtil.isTypedArray;
@@ -1042,12 +1081,12 @@ module.exports = isTypedArray;
 
 
 /***/ }),
-/* 91 */
+/* 92 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseGetTag = __webpack_require__(33),
-    isLength = __webpack_require__(92),
-    isObjectLike = __webpack_require__(85);
+var baseGetTag = __webpack_require__(34),
+    isLength = __webpack_require__(93),
+    isObjectLike = __webpack_require__(86);
 
 /** `Object#toString` result references. */
 var argsTag = '[object Arguments]',
@@ -1108,7 +1147,7 @@ module.exports = baseIsTypedArray;
 
 
 /***/ }),
-/* 92 */
+/* 93 */
 /***/ (function(module, exports) {
 
 /** Used as references for various `Number` constants. */
@@ -1149,7 +1188,7 @@ module.exports = isLength;
 
 
 /***/ }),
-/* 93 */
+/* 94 */
 /***/ (function(module, exports) {
 
 /**
@@ -1169,13 +1208,13 @@ module.exports = baseUnary;
 
 
 /***/ }),
-/* 94 */
+/* 95 */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(36);
+/* WEBPACK VAR INJECTION */(function(module) {var freeGlobal = __webpack_require__(37);
 
 /** Detect free variable `exports`. */
-var freeExports = typeof exports == 'object' && exports && !exports.nodeType && exports;
+var freeExports =  true && exports && !exports.nodeType && exports;
 
 /** Detect free variable `module`. */
 var freeModule = freeExports && typeof module == 'object' && module && !module.nodeType && module;
@@ -1189,20 +1228,28 @@ var freeProcess = moduleExports && freeGlobal.process;
 /** Used to access faster Node.js helpers. */
 var nodeUtil = (function() {
   try {
+    // Use `util.types` for Node.js 10+.
+    var types = freeModule && freeModule.require && freeModule.require('util').types;
+
+    if (types) {
+      return types;
+    }
+
+    // Legacy `process.binding('util')` for Node.js < 10.
     return freeProcess && freeProcess.binding && freeProcess.binding('util');
   } catch (e) {}
 }());
 
 module.exports = nodeUtil;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(87)(module)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(88)(module)))
 
 /***/ }),
-/* 95 */
+/* 96 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isPrototype = __webpack_require__(96),
-    nativeKeys = __webpack_require__(97);
+var isPrototype = __webpack_require__(97),
+    nativeKeys = __webpack_require__(98);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -1234,7 +1281,7 @@ module.exports = baseKeys;
 
 
 /***/ }),
-/* 96 */
+/* 97 */
 /***/ (function(module, exports) {
 
 /** Used for built-in method references. */
@@ -1258,10 +1305,10 @@ module.exports = isPrototype;
 
 
 /***/ }),
-/* 97 */
+/* 98 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var overArg = __webpack_require__(98);
+var overArg = __webpack_require__(99);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeKeys = overArg(Object.keys, Object);
@@ -1270,7 +1317,7 @@ module.exports = nativeKeys;
 
 
 /***/ }),
-/* 98 */
+/* 99 */
 /***/ (function(module, exports) {
 
 /**
@@ -1291,11 +1338,11 @@ module.exports = overArg;
 
 
 /***/ }),
-/* 99 */
+/* 100 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var isFunction = __webpack_require__(32),
-    isLength = __webpack_require__(92);
+var isFunction = __webpack_require__(33),
+    isLength = __webpack_require__(93);
 
 /**
  * Checks if `value` is array-like. A value is considered array-like if it's
@@ -1330,12 +1377,122 @@ module.exports = isArrayLike;
 
 
 /***/ }),
-/* 100 */,
-/* 101 */,
-/* 102 */,
-/* 103 */,
-/* 104 */,
-/* 105 */,
+/* 101 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var DataView = __webpack_require__(102),
+    Map = __webpack_require__(30),
+    Promise = __webpack_require__(103),
+    Set = __webpack_require__(104),
+    WeakMap = __webpack_require__(105),
+    baseGetTag = __webpack_require__(34),
+    toSource = __webpack_require__(44);
+
+/** `Object#toString` result references. */
+var mapTag = '[object Map]',
+    objectTag = '[object Object]',
+    promiseTag = '[object Promise]',
+    setTag = '[object Set]',
+    weakMapTag = '[object WeakMap]';
+
+var dataViewTag = '[object DataView]';
+
+/** Used to detect maps, sets, and weakmaps. */
+var dataViewCtorString = toSource(DataView),
+    mapCtorString = toSource(Map),
+    promiseCtorString = toSource(Promise),
+    setCtorString = toSource(Set),
+    weakMapCtorString = toSource(WeakMap);
+
+/**
+ * Gets the `toStringTag` of `value`.
+ *
+ * @private
+ * @param {*} value The value to query.
+ * @returns {string} Returns the `toStringTag`.
+ */
+var getTag = baseGetTag;
+
+// Fallback for data views, maps, sets, and weak maps in IE 11 and promises in Node.js < 6.
+if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag) ||
+    (Map && getTag(new Map) != mapTag) ||
+    (Promise && getTag(Promise.resolve()) != promiseTag) ||
+    (Set && getTag(new Set) != setTag) ||
+    (WeakMap && getTag(new WeakMap) != weakMapTag)) {
+  getTag = function(value) {
+    var result = baseGetTag(value),
+        Ctor = result == objectTag ? value.constructor : undefined,
+        ctorString = Ctor ? toSource(Ctor) : '';
+
+    if (ctorString) {
+      switch (ctorString) {
+        case dataViewCtorString: return dataViewTag;
+        case mapCtorString: return mapTag;
+        case promiseCtorString: return promiseTag;
+        case setCtorString: return setTag;
+        case weakMapCtorString: return weakMapTag;
+      }
+    }
+    return result;
+  };
+}
+
+module.exports = getTag;
+
+
+/***/ }),
+/* 102 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(31),
+    root = __webpack_require__(36);
+
+/* Built-in method references that are verified to be native. */
+var DataView = getNative(root, 'DataView');
+
+module.exports = DataView;
+
+
+/***/ }),
+/* 103 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(31),
+    root = __webpack_require__(36);
+
+/* Built-in method references that are verified to be native. */
+var Promise = getNative(root, 'Promise');
+
+module.exports = Promise;
+
+
+/***/ }),
+/* 104 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(31),
+    root = __webpack_require__(36);
+
+/* Built-in method references that are verified to be native. */
+var Set = getNative(root, 'Set');
+
+module.exports = Set;
+
+
+/***/ }),
+/* 105 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var getNative = __webpack_require__(31),
+    root = __webpack_require__(36);
+
+/* Built-in method references that are verified to be native. */
+var WeakMap = getNative(root, 'WeakMap');
+
+module.exports = WeakMap;
+
+
+/***/ }),
 /* 106 */,
 /* 107 */,
 /* 108 */,
@@ -1344,16 +1501,126 @@ module.exports = isArrayLike;
 /* 111 */,
 /* 112 */,
 /* 113 */,
-/* 114 */,
+/* 114 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseGetTag = __webpack_require__(34),
+    isObjectLike = __webpack_require__(86);
+
+/** `Object#toString` result references. */
+var symbolTag = '[object Symbol]';
+
+/**
+ * Checks if `value` is classified as a `Symbol` primitive or object.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is a symbol, else `false`.
+ * @example
+ *
+ * _.isSymbol(Symbol.iterator);
+ * // => true
+ *
+ * _.isSymbol('abc');
+ * // => false
+ */
+function isSymbol(value) {
+  return typeof value == 'symbol' ||
+    (isObjectLike(value) && baseGetTag(value) == symbolTag);
+}
+
+module.exports = isSymbol;
+
+
+/***/ }),
 /* 115 */,
 /* 116 */,
 /* 117 */,
-/* 118 */,
-/* 119 */,
+/* 118 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseToString = __webpack_require__(119);
+
+/**
+ * Converts `value` to a string. An empty string is returned for `null`
+ * and `undefined` values. The sign of `-0` is preserved.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category Lang
+ * @param {*} value The value to convert.
+ * @returns {string} Returns the converted string.
+ * @example
+ *
+ * _.toString(null);
+ * // => ''
+ *
+ * _.toString(-0);
+ * // => '-0'
+ *
+ * _.toString([1, 2, 3]);
+ * // => '1,2,3'
+ */
+function toString(value) {
+  return value == null ? '' : baseToString(value);
+}
+
+module.exports = toString;
+
+
+/***/ }),
+/* 119 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var Symbol = __webpack_require__(35),
+    arrayMap = __webpack_require__(12),
+    isArray = __webpack_require__(77),
+    isSymbol = __webpack_require__(114);
+
+/** Used as references for various `Number` constants. */
+var INFINITY = 1 / 0;
+
+/** Used to convert symbols to primitives and strings. */
+var symbolProto = Symbol ? Symbol.prototype : undefined,
+    symbolToString = symbolProto ? symbolProto.toString : undefined;
+
+/**
+ * The base implementation of `_.toString` which doesn't convert nullish
+ * values to empty strings.
+ *
+ * @private
+ * @param {*} value The value to process.
+ * @returns {string} Returns the string.
+ */
+function baseToString(value) {
+  // Exit early for strings to avoid a performance hit in some environments.
+  if (typeof value == 'string') {
+    return value;
+  }
+  if (isArray(value)) {
+    // Recursively convert values (susceptible to call stack limits).
+    return arrayMap(value, baseToString) + '';
+  }
+  if (isSymbol(value)) {
+    return symbolToString ? symbolToString.call(value) : '';
+  }
+  var result = (value + '');
+  return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
+}
+
+module.exports = baseToString;
+
+
+/***/ }),
 /* 120 */,
 /* 121 */,
 /* 122 */,
-/* 123 */
+/* 123 */,
+/* 124 */
 /***/ (function(module, exports) {
 
 /**
@@ -1380,7 +1647,6 @@ module.exports = identity;
 
 
 /***/ }),
-/* 124 */,
 /* 125 */,
 /* 126 */,
 /* 127 */,
@@ -1390,32 +1656,666 @@ module.exports = identity;
 /* 131 */,
 /* 132 */,
 /* 133 */,
-/* 134 */,
-/* 135 */,
-/* 136 */,
-/* 137 */,
-/* 138 */,
-/* 139 */,
-/* 140 */,
-/* 141 */,
-/* 142 */,
-/* 143 */,
-/* 144 */,
-/* 145 */,
-/* 146 */,
-/* 147 */,
-/* 148 */,
-/* 149 */,
-/* 150 */,
-/* 151 */,
+/* 134 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var createCompounder = __webpack_require__(135),
+    upperFirst = __webpack_require__(144);
+
+/**
+ * Converts `string` to
+ * [start case](https://en.wikipedia.org/wiki/Letter_case#Stylistic_or_specialised_usage).
+ *
+ * @static
+ * @memberOf _
+ * @since 3.1.0
+ * @category String
+ * @param {string} [string=''] The string to convert.
+ * @returns {string} Returns the start cased string.
+ * @example
+ *
+ * _.startCase('--foo-bar--');
+ * // => 'Foo Bar'
+ *
+ * _.startCase('fooBar');
+ * // => 'Foo Bar'
+ *
+ * _.startCase('__FOO_BAR__');
+ * // => 'FOO BAR'
+ */
+var startCase = createCompounder(function(result, word, index) {
+  return result + (index ? ' ' : '') + upperFirst(word);
+});
+
+module.exports = startCase;
+
+
+/***/ }),
+/* 135 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var arrayReduce = __webpack_require__(136),
+    deburr = __webpack_require__(137),
+    words = __webpack_require__(140);
+
+/** Used to compose unicode capture groups. */
+var rsApos = "['\u2019]";
+
+/** Used to match apostrophes. */
+var reApos = RegExp(rsApos, 'g');
+
+/**
+ * Creates a function like `_.camelCase`.
+ *
+ * @private
+ * @param {Function} callback The function to combine each word.
+ * @returns {Function} Returns the new compounder function.
+ */
+function createCompounder(callback) {
+  return function(string) {
+    return arrayReduce(words(deburr(string).replace(reApos, '')), callback, '');
+  };
+}
+
+module.exports = createCompounder;
+
+
+/***/ }),
+/* 136 */
+/***/ (function(module, exports) {
+
+/**
+ * A specialized version of `_.reduce` for arrays without support for
+ * iteratee shorthands.
+ *
+ * @private
+ * @param {Array} [array] The array to iterate over.
+ * @param {Function} iteratee The function invoked per iteration.
+ * @param {*} [accumulator] The initial value.
+ * @param {boolean} [initAccum] Specify using the first element of `array` as
+ *  the initial value.
+ * @returns {*} Returns the accumulated value.
+ */
+function arrayReduce(array, iteratee, accumulator, initAccum) {
+  var index = -1,
+      length = array == null ? 0 : array.length;
+
+  if (initAccum && length) {
+    accumulator = array[++index];
+  }
+  while (++index < length) {
+    accumulator = iteratee(accumulator, array[index], index, array);
+  }
+  return accumulator;
+}
+
+module.exports = arrayReduce;
+
+
+/***/ }),
+/* 137 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var deburrLetter = __webpack_require__(138),
+    toString = __webpack_require__(118);
+
+/** Used to match Latin Unicode letters (excluding mathematical operators). */
+var reLatin = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g;
+
+/** Used to compose unicode character classes. */
+var rsComboMarksRange = '\\u0300-\\u036f',
+    reComboHalfMarksRange = '\\ufe20-\\ufe2f',
+    rsComboSymbolsRange = '\\u20d0-\\u20ff',
+    rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange;
+
+/** Used to compose unicode capture groups. */
+var rsCombo = '[' + rsComboRange + ']';
+
+/**
+ * Used to match [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks) and
+ * [combining diacritical marks for symbols](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks_for_Symbols).
+ */
+var reComboMark = RegExp(rsCombo, 'g');
+
+/**
+ * Deburrs `string` by converting
+ * [Latin-1 Supplement](https://en.wikipedia.org/wiki/Latin-1_Supplement_(Unicode_block)#Character_table)
+ * and [Latin Extended-A](https://en.wikipedia.org/wiki/Latin_Extended-A)
+ * letters to basic Latin letters and removing
+ * [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks).
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category String
+ * @param {string} [string=''] The string to deburr.
+ * @returns {string} Returns the deburred string.
+ * @example
+ *
+ * _.deburr('déjà vu');
+ * // => 'deja vu'
+ */
+function deburr(string) {
+  string = toString(string);
+  return string && string.replace(reLatin, deburrLetter).replace(reComboMark, '');
+}
+
+module.exports = deburr;
+
+
+/***/ }),
+/* 138 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var basePropertyOf = __webpack_require__(139);
+
+/** Used to map Latin Unicode letters to basic Latin letters. */
+var deburredLetters = {
+  // Latin-1 Supplement block.
+  '\xc0': 'A',  '\xc1': 'A', '\xc2': 'A', '\xc3': 'A', '\xc4': 'A', '\xc5': 'A',
+  '\xe0': 'a',  '\xe1': 'a', '\xe2': 'a', '\xe3': 'a', '\xe4': 'a', '\xe5': 'a',
+  '\xc7': 'C',  '\xe7': 'c',
+  '\xd0': 'D',  '\xf0': 'd',
+  '\xc8': 'E',  '\xc9': 'E', '\xca': 'E', '\xcb': 'E',
+  '\xe8': 'e',  '\xe9': 'e', '\xea': 'e', '\xeb': 'e',
+  '\xcc': 'I',  '\xcd': 'I', '\xce': 'I', '\xcf': 'I',
+  '\xec': 'i',  '\xed': 'i', '\xee': 'i', '\xef': 'i',
+  '\xd1': 'N',  '\xf1': 'n',
+  '\xd2': 'O',  '\xd3': 'O', '\xd4': 'O', '\xd5': 'O', '\xd6': 'O', '\xd8': 'O',
+  '\xf2': 'o',  '\xf3': 'o', '\xf4': 'o', '\xf5': 'o', '\xf6': 'o', '\xf8': 'o',
+  '\xd9': 'U',  '\xda': 'U', '\xdb': 'U', '\xdc': 'U',
+  '\xf9': 'u',  '\xfa': 'u', '\xfb': 'u', '\xfc': 'u',
+  '\xdd': 'Y',  '\xfd': 'y', '\xff': 'y',
+  '\xc6': 'Ae', '\xe6': 'ae',
+  '\xde': 'Th', '\xfe': 'th',
+  '\xdf': 'ss',
+  // Latin Extended-A block.
+  '\u0100': 'A',  '\u0102': 'A', '\u0104': 'A',
+  '\u0101': 'a',  '\u0103': 'a', '\u0105': 'a',
+  '\u0106': 'C',  '\u0108': 'C', '\u010a': 'C', '\u010c': 'C',
+  '\u0107': 'c',  '\u0109': 'c', '\u010b': 'c', '\u010d': 'c',
+  '\u010e': 'D',  '\u0110': 'D', '\u010f': 'd', '\u0111': 'd',
+  '\u0112': 'E',  '\u0114': 'E', '\u0116': 'E', '\u0118': 'E', '\u011a': 'E',
+  '\u0113': 'e',  '\u0115': 'e', '\u0117': 'e', '\u0119': 'e', '\u011b': 'e',
+  '\u011c': 'G',  '\u011e': 'G', '\u0120': 'G', '\u0122': 'G',
+  '\u011d': 'g',  '\u011f': 'g', '\u0121': 'g', '\u0123': 'g',
+  '\u0124': 'H',  '\u0126': 'H', '\u0125': 'h', '\u0127': 'h',
+  '\u0128': 'I',  '\u012a': 'I', '\u012c': 'I', '\u012e': 'I', '\u0130': 'I',
+  '\u0129': 'i',  '\u012b': 'i', '\u012d': 'i', '\u012f': 'i', '\u0131': 'i',
+  '\u0134': 'J',  '\u0135': 'j',
+  '\u0136': 'K',  '\u0137': 'k', '\u0138': 'k',
+  '\u0139': 'L',  '\u013b': 'L', '\u013d': 'L', '\u013f': 'L', '\u0141': 'L',
+  '\u013a': 'l',  '\u013c': 'l', '\u013e': 'l', '\u0140': 'l', '\u0142': 'l',
+  '\u0143': 'N',  '\u0145': 'N', '\u0147': 'N', '\u014a': 'N',
+  '\u0144': 'n',  '\u0146': 'n', '\u0148': 'n', '\u014b': 'n',
+  '\u014c': 'O',  '\u014e': 'O', '\u0150': 'O',
+  '\u014d': 'o',  '\u014f': 'o', '\u0151': 'o',
+  '\u0154': 'R',  '\u0156': 'R', '\u0158': 'R',
+  '\u0155': 'r',  '\u0157': 'r', '\u0159': 'r',
+  '\u015a': 'S',  '\u015c': 'S', '\u015e': 'S', '\u0160': 'S',
+  '\u015b': 's',  '\u015d': 's', '\u015f': 's', '\u0161': 's',
+  '\u0162': 'T',  '\u0164': 'T', '\u0166': 'T',
+  '\u0163': 't',  '\u0165': 't', '\u0167': 't',
+  '\u0168': 'U',  '\u016a': 'U', '\u016c': 'U', '\u016e': 'U', '\u0170': 'U', '\u0172': 'U',
+  '\u0169': 'u',  '\u016b': 'u', '\u016d': 'u', '\u016f': 'u', '\u0171': 'u', '\u0173': 'u',
+  '\u0174': 'W',  '\u0175': 'w',
+  '\u0176': 'Y',  '\u0177': 'y', '\u0178': 'Y',
+  '\u0179': 'Z',  '\u017b': 'Z', '\u017d': 'Z',
+  '\u017a': 'z',  '\u017c': 'z', '\u017e': 'z',
+  '\u0132': 'IJ', '\u0133': 'ij',
+  '\u0152': 'Oe', '\u0153': 'oe',
+  '\u0149': "'n", '\u017f': 's'
+};
+
+/**
+ * Used by `_.deburr` to convert Latin-1 Supplement and Latin Extended-A
+ * letters to basic Latin letters.
+ *
+ * @private
+ * @param {string} letter The matched letter to deburr.
+ * @returns {string} Returns the deburred letter.
+ */
+var deburrLetter = basePropertyOf(deburredLetters);
+
+module.exports = deburrLetter;
+
+
+/***/ }),
+/* 139 */
+/***/ (function(module, exports) {
+
+/**
+ * The base implementation of `_.propertyOf` without support for deep paths.
+ *
+ * @private
+ * @param {Object} object The object to query.
+ * @returns {Function} Returns the new accessor function.
+ */
+function basePropertyOf(object) {
+  return function(key) {
+    return object == null ? undefined : object[key];
+  };
+}
+
+module.exports = basePropertyOf;
+
+
+/***/ }),
+/* 140 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var asciiWords = __webpack_require__(141),
+    hasUnicodeWord = __webpack_require__(142),
+    toString = __webpack_require__(118),
+    unicodeWords = __webpack_require__(143);
+
+/**
+ * Splits `string` into an array of its words.
+ *
+ * @static
+ * @memberOf _
+ * @since 3.0.0
+ * @category String
+ * @param {string} [string=''] The string to inspect.
+ * @param {RegExp|string} [pattern] The pattern to match words.
+ * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
+ * @returns {Array} Returns the words of `string`.
+ * @example
+ *
+ * _.words('fred, barney, & pebbles');
+ * // => ['fred', 'barney', 'pebbles']
+ *
+ * _.words('fred, barney, & pebbles', /[^, ]+/g);
+ * // => ['fred', 'barney', '&', 'pebbles']
+ */
+function words(string, pattern, guard) {
+  string = toString(string);
+  pattern = guard ? undefined : pattern;
+
+  if (pattern === undefined) {
+    return hasUnicodeWord(string) ? unicodeWords(string) : asciiWords(string);
+  }
+  return string.match(pattern) || [];
+}
+
+module.exports = words;
+
+
+/***/ }),
+/* 141 */
+/***/ (function(module, exports) {
+
+/** Used to match words composed of alphanumeric characters. */
+var reAsciiWord = /[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+/g;
+
+/**
+ * Splits an ASCII `string` into an array of its words.
+ *
+ * @private
+ * @param {string} The string to inspect.
+ * @returns {Array} Returns the words of `string`.
+ */
+function asciiWords(string) {
+  return string.match(reAsciiWord) || [];
+}
+
+module.exports = asciiWords;
+
+
+/***/ }),
+/* 142 */
+/***/ (function(module, exports) {
+
+/** Used to detect strings that need a more robust regexp to match words. */
+var reHasUnicodeWord = /[a-z][A-Z]|[A-Z]{2}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/;
+
+/**
+ * Checks if `string` contains a word composed of Unicode symbols.
+ *
+ * @private
+ * @param {string} string The string to inspect.
+ * @returns {boolean} Returns `true` if a word is found, else `false`.
+ */
+function hasUnicodeWord(string) {
+  return reHasUnicodeWord.test(string);
+}
+
+module.exports = hasUnicodeWord;
+
+
+/***/ }),
+/* 143 */
+/***/ (function(module, exports) {
+
+/** Used to compose unicode character classes. */
+var rsAstralRange = '\\ud800-\\udfff',
+    rsComboMarksRange = '\\u0300-\\u036f',
+    reComboHalfMarksRange = '\\ufe20-\\ufe2f',
+    rsComboSymbolsRange = '\\u20d0-\\u20ff',
+    rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange,
+    rsDingbatRange = '\\u2700-\\u27bf',
+    rsLowerRange = 'a-z\\xdf-\\xf6\\xf8-\\xff',
+    rsMathOpRange = '\\xac\\xb1\\xd7\\xf7',
+    rsNonCharRange = '\\x00-\\x2f\\x3a-\\x40\\x5b-\\x60\\x7b-\\xbf',
+    rsPunctuationRange = '\\u2000-\\u206f',
+    rsSpaceRange = ' \\t\\x0b\\f\\xa0\\ufeff\\n\\r\\u2028\\u2029\\u1680\\u180e\\u2000\\u2001\\u2002\\u2003\\u2004\\u2005\\u2006\\u2007\\u2008\\u2009\\u200a\\u202f\\u205f\\u3000',
+    rsUpperRange = 'A-Z\\xc0-\\xd6\\xd8-\\xde',
+    rsVarRange = '\\ufe0e\\ufe0f',
+    rsBreakRange = rsMathOpRange + rsNonCharRange + rsPunctuationRange + rsSpaceRange;
+
+/** Used to compose unicode capture groups. */
+var rsApos = "['\u2019]",
+    rsBreak = '[' + rsBreakRange + ']',
+    rsCombo = '[' + rsComboRange + ']',
+    rsDigits = '\\d+',
+    rsDingbat = '[' + rsDingbatRange + ']',
+    rsLower = '[' + rsLowerRange + ']',
+    rsMisc = '[^' + rsAstralRange + rsBreakRange + rsDigits + rsDingbatRange + rsLowerRange + rsUpperRange + ']',
+    rsFitz = '\\ud83c[\\udffb-\\udfff]',
+    rsModifier = '(?:' + rsCombo + '|' + rsFitz + ')',
+    rsNonAstral = '[^' + rsAstralRange + ']',
+    rsRegional = '(?:\\ud83c[\\udde6-\\uddff]){2}',
+    rsSurrPair = '[\\ud800-\\udbff][\\udc00-\\udfff]',
+    rsUpper = '[' + rsUpperRange + ']',
+    rsZWJ = '\\u200d';
+
+/** Used to compose unicode regexes. */
+var rsMiscLower = '(?:' + rsLower + '|' + rsMisc + ')',
+    rsMiscUpper = '(?:' + rsUpper + '|' + rsMisc + ')',
+    rsOptContrLower = '(?:' + rsApos + '(?:d|ll|m|re|s|t|ve))?',
+    rsOptContrUpper = '(?:' + rsApos + '(?:D|LL|M|RE|S|T|VE))?',
+    reOptMod = rsModifier + '?',
+    rsOptVar = '[' + rsVarRange + ']?',
+    rsOptJoin = '(?:' + rsZWJ + '(?:' + [rsNonAstral, rsRegional, rsSurrPair].join('|') + ')' + rsOptVar + reOptMod + ')*',
+    rsOrdLower = '\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])',
+    rsOrdUpper = '\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])',
+    rsSeq = rsOptVar + reOptMod + rsOptJoin,
+    rsEmoji = '(?:' + [rsDingbat, rsRegional, rsSurrPair].join('|') + ')' + rsSeq;
+
+/** Used to match complex or compound words. */
+var reUnicodeWord = RegExp([
+  rsUpper + '?' + rsLower + '+' + rsOptContrLower + '(?=' + [rsBreak, rsUpper, '$'].join('|') + ')',
+  rsMiscUpper + '+' + rsOptContrUpper + '(?=' + [rsBreak, rsUpper + rsMiscLower, '$'].join('|') + ')',
+  rsUpper + '?' + rsMiscLower + '+' + rsOptContrLower,
+  rsUpper + '+' + rsOptContrUpper,
+  rsOrdUpper,
+  rsOrdLower,
+  rsDigits,
+  rsEmoji
+].join('|'), 'g');
+
+/**
+ * Splits a Unicode `string` into an array of its words.
+ *
+ * @private
+ * @param {string} The string to inspect.
+ * @returns {Array} Returns the words of `string`.
+ */
+function unicodeWords(string) {
+  return string.match(reUnicodeWord) || [];
+}
+
+module.exports = unicodeWords;
+
+
+/***/ }),
+/* 144 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var createCaseFirst = __webpack_require__(145);
+
+/**
+ * Converts the first character of `string` to upper case.
+ *
+ * @static
+ * @memberOf _
+ * @since 4.0.0
+ * @category String
+ * @param {string} [string=''] The string to convert.
+ * @returns {string} Returns the converted string.
+ * @example
+ *
+ * _.upperFirst('fred');
+ * // => 'Fred'
+ *
+ * _.upperFirst('FRED');
+ * // => 'FRED'
+ */
+var upperFirst = createCaseFirst('toUpperCase');
+
+module.exports = upperFirst;
+
+
+/***/ }),
+/* 145 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var castSlice = __webpack_require__(146),
+    hasUnicode = __webpack_require__(148),
+    stringToArray = __webpack_require__(149),
+    toString = __webpack_require__(118);
+
+/**
+ * Creates a function like `_.lowerFirst`.
+ *
+ * @private
+ * @param {string} methodName The name of the `String` case method to use.
+ * @returns {Function} Returns the new case function.
+ */
+function createCaseFirst(methodName) {
+  return function(string) {
+    string = toString(string);
+
+    var strSymbols = hasUnicode(string)
+      ? stringToArray(string)
+      : undefined;
+
+    var chr = strSymbols
+      ? strSymbols[0]
+      : string.charAt(0);
+
+    var trailing = strSymbols
+      ? castSlice(strSymbols, 1).join('')
+      : string.slice(1);
+
+    return chr[methodName]() + trailing;
+  };
+}
+
+module.exports = createCaseFirst;
+
+
+/***/ }),
+/* 146 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseSlice = __webpack_require__(147);
+
+/**
+ * Casts `array` to a slice if it's needed.
+ *
+ * @private
+ * @param {Array} array The array to inspect.
+ * @param {number} start The start position.
+ * @param {number} [end=array.length] The end position.
+ * @returns {Array} Returns the cast slice.
+ */
+function castSlice(array, start, end) {
+  var length = array.length;
+  end = end === undefined ? length : end;
+  return (!start && end >= length) ? array : baseSlice(array, start, end);
+}
+
+module.exports = castSlice;
+
+
+/***/ }),
+/* 147 */
+/***/ (function(module, exports) {
+
+/**
+ * The base implementation of `_.slice` without an iteratee call guard.
+ *
+ * @private
+ * @param {Array} array The array to slice.
+ * @param {number} [start=0] The start position.
+ * @param {number} [end=array.length] The end position.
+ * @returns {Array} Returns the slice of `array`.
+ */
+function baseSlice(array, start, end) {
+  var index = -1,
+      length = array.length;
+
+  if (start < 0) {
+    start = -start > length ? 0 : (length + start);
+  }
+  end = end > length ? length : end;
+  if (end < 0) {
+    end += length;
+  }
+  length = start > end ? 0 : ((end - start) >>> 0);
+  start >>>= 0;
+
+  var result = Array(length);
+  while (++index < length) {
+    result[index] = array[index + start];
+  }
+  return result;
+}
+
+module.exports = baseSlice;
+
+
+/***/ }),
+/* 148 */
+/***/ (function(module, exports) {
+
+/** Used to compose unicode character classes. */
+var rsAstralRange = '\\ud800-\\udfff',
+    rsComboMarksRange = '\\u0300-\\u036f',
+    reComboHalfMarksRange = '\\ufe20-\\ufe2f',
+    rsComboSymbolsRange = '\\u20d0-\\u20ff',
+    rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange,
+    rsVarRange = '\\ufe0e\\ufe0f';
+
+/** Used to compose unicode capture groups. */
+var rsZWJ = '\\u200d';
+
+/** Used to detect strings with [zero-width joiners or code points from the astral planes](http://eev.ee/blog/2015/09/12/dark-corners-of-unicode/). */
+var reHasUnicode = RegExp('[' + rsZWJ + rsAstralRange  + rsComboRange + rsVarRange + ']');
+
+/**
+ * Checks if `string` contains Unicode symbols.
+ *
+ * @private
+ * @param {string} string The string to inspect.
+ * @returns {boolean} Returns `true` if a symbol is found, else `false`.
+ */
+function hasUnicode(string) {
+  return reHasUnicode.test(string);
+}
+
+module.exports = hasUnicode;
+
+
+/***/ }),
+/* 149 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var asciiToArray = __webpack_require__(150),
+    hasUnicode = __webpack_require__(148),
+    unicodeToArray = __webpack_require__(151);
+
+/**
+ * Converts `string` to an array.
+ *
+ * @private
+ * @param {string} string The string to convert.
+ * @returns {Array} Returns the converted array.
+ */
+function stringToArray(string) {
+  return hasUnicode(string)
+    ? unicodeToArray(string)
+    : asciiToArray(string);
+}
+
+module.exports = stringToArray;
+
+
+/***/ }),
+/* 150 */
+/***/ (function(module, exports) {
+
+/**
+ * Converts an ASCII `string` to an array.
+ *
+ * @private
+ * @param {string} string The string to convert.
+ * @returns {Array} Returns the converted array.
+ */
+function asciiToArray(string) {
+  return string.split('');
+}
+
+module.exports = asciiToArray;
+
+
+/***/ }),
+/* 151 */
+/***/ (function(module, exports) {
+
+/** Used to compose unicode character classes. */
+var rsAstralRange = '\\ud800-\\udfff',
+    rsComboMarksRange = '\\u0300-\\u036f',
+    reComboHalfMarksRange = '\\ufe20-\\ufe2f',
+    rsComboSymbolsRange = '\\u20d0-\\u20ff',
+    rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange,
+    rsVarRange = '\\ufe0e\\ufe0f';
+
+/** Used to compose unicode capture groups. */
+var rsAstral = '[' + rsAstralRange + ']',
+    rsCombo = '[' + rsComboRange + ']',
+    rsFitz = '\\ud83c[\\udffb-\\udfff]',
+    rsModifier = '(?:' + rsCombo + '|' + rsFitz + ')',
+    rsNonAstral = '[^' + rsAstralRange + ']',
+    rsRegional = '(?:\\ud83c[\\udde6-\\uddff]){2}',
+    rsSurrPair = '[\\ud800-\\udbff][\\udc00-\\udfff]',
+    rsZWJ = '\\u200d';
+
+/** Used to compose unicode regexes. */
+var reOptMod = rsModifier + '?',
+    rsOptVar = '[' + rsVarRange + ']?',
+    rsOptJoin = '(?:' + rsZWJ + '(?:' + [rsNonAstral, rsRegional, rsSurrPair].join('|') + ')' + rsOptVar + reOptMod + ')*',
+    rsSeq = rsOptVar + reOptMod + rsOptJoin,
+    rsSymbol = '(?:' + [rsNonAstral + rsCombo + '?', rsCombo, rsRegional, rsSurrPair, rsAstral].join('|') + ')';
+
+/** Used to match [string symbols](https://mathiasbynens.be/notes/javascript-unicode). */
+var reUnicode = RegExp(rsFitz + '(?=' + rsFitz + ')|' + rsSymbol + rsSeq, 'g');
+
+/**
+ * Converts a Unicode `string` to an array.
+ *
+ * @private
+ * @param {string} string The string to convert.
+ * @returns {Array} Returns the converted array.
+ */
+function unicodeToArray(string) {
+  return string.match(reUnicode) || [];
+}
+
+module.exports = unicodeToArray;
+
+
+/***/ }),
 /* 152 */,
 /* 153 */,
 /* 154 */,
-/* 155 */
+/* 155 */,
+/* 156 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseAssignValue = __webpack_require__(156),
-    eq = __webpack_require__(20);
+var baseAssignValue = __webpack_require__(157),
+    eq = __webpack_require__(21);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -1445,10 +2345,10 @@ module.exports = assignValue;
 
 
 /***/ }),
-/* 156 */
+/* 157 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var defineProperty = __webpack_require__(157);
+var defineProperty = __webpack_require__(158);
 
 /**
  * The base implementation of `assignValue` and `assignMergeValue` without
@@ -1476,10 +2376,10 @@ module.exports = baseAssignValue;
 
 
 /***/ }),
-/* 157 */
+/* 158 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var getNative = __webpack_require__(30);
+var getNative = __webpack_require__(31);
 
 var defineProperty = (function() {
   try {
@@ -1493,14 +2393,14 @@ module.exports = defineProperty;
 
 
 /***/ }),
-/* 158 */,
 /* 159 */,
 /* 160 */,
 /* 161 */,
-/* 162 */
+/* 162 */,
+/* 163 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var apply = __webpack_require__(163);
+var apply = __webpack_require__(164);
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeMax = Math.max;
@@ -1539,7 +2439,7 @@ module.exports = overRest;
 
 
 /***/ }),
-/* 163 */
+/* 164 */
 /***/ (function(module, exports) {
 
 /**
@@ -1566,11 +2466,11 @@ module.exports = apply;
 
 
 /***/ }),
-/* 164 */
+/* 165 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseSetToString = __webpack_require__(165),
-    shortOut = __webpack_require__(167);
+var baseSetToString = __webpack_require__(166),
+    shortOut = __webpack_require__(168);
 
 /**
  * Sets the `toString` method of `func` to return `string`.
@@ -1586,12 +2486,12 @@ module.exports = setToString;
 
 
 /***/ }),
-/* 165 */
+/* 166 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var constant = __webpack_require__(166),
-    defineProperty = __webpack_require__(157),
-    identity = __webpack_require__(123);
+var constant = __webpack_require__(167),
+    defineProperty = __webpack_require__(158),
+    identity = __webpack_require__(124);
 
 /**
  * The base implementation of `setToString` without support for hot loop shorting.
@@ -1614,7 +2514,7 @@ module.exports = baseSetToString;
 
 
 /***/ }),
-/* 166 */
+/* 167 */
 /***/ (function(module, exports) {
 
 /**
@@ -1646,7 +2546,7 @@ module.exports = constant;
 
 
 /***/ }),
-/* 167 */
+/* 168 */
 /***/ (function(module, exports) {
 
 /** Used to detect hot functions by number of calls within a span of milliseconds. */
@@ -1689,74 +2589,162 @@ module.exports = shortOut;
 
 
 /***/ }),
-/* 168 */,
-/* 169 */,
-/* 170 */,
-/* 171 */,
+/* 169 */
+/***/ (function(module, exports, __webpack_require__) {
+
+var baseKeys = __webpack_require__(96),
+    getTag = __webpack_require__(101),
+    isArguments = __webpack_require__(84),
+    isArray = __webpack_require__(77),
+    isArrayLike = __webpack_require__(100),
+    isBuffer = __webpack_require__(87),
+    isPrototype = __webpack_require__(97),
+    isTypedArray = __webpack_require__(91);
+
+/** `Object#toString` result references. */
+var mapTag = '[object Map]',
+    setTag = '[object Set]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
+/**
+ * Checks if `value` is an empty object, collection, map, or set.
+ *
+ * Objects are considered empty if they have no own enumerable string keyed
+ * properties.
+ *
+ * Array-like values such as `arguments` objects, arrays, buffers, strings, or
+ * jQuery-like collections are considered empty if they have a `length` of `0`.
+ * Similarly, maps and sets are considered empty if they have a `size` of `0`.
+ *
+ * @static
+ * @memberOf _
+ * @since 0.1.0
+ * @category Lang
+ * @param {*} value The value to check.
+ * @returns {boolean} Returns `true` if `value` is empty, else `false`.
+ * @example
+ *
+ * _.isEmpty(null);
+ * // => true
+ *
+ * _.isEmpty(true);
+ * // => true
+ *
+ * _.isEmpty(1);
+ * // => true
+ *
+ * _.isEmpty([1, 2, 3]);
+ * // => false
+ *
+ * _.isEmpty({ 'a': 1 });
+ * // => false
+ */
+function isEmpty(value) {
+  if (value == null) {
+    return true;
+  }
+  if (isArrayLike(value) &&
+      (isArray(value) || typeof value == 'string' || typeof value.splice == 'function' ||
+        isBuffer(value) || isTypedArray(value) || isArguments(value))) {
+    return !value.length;
+  }
+  var tag = getTag(value);
+  if (tag == mapTag || tag == setTag) {
+    return !value.size;
+  }
+  if (isPrototype(value)) {
+    return !baseKeys(value).length;
+  }
+  for (var key in value) {
+    if (hasOwnProperty.call(value, key)) {
+      return false;
+    }
+  }
+  return true;
+}
+
+module.exports = isEmpty;
+
+
+/***/ }),
+/* 170 */
+/***/ (function(module, exports) {
+
+(function() { module.exports = this["wp"]["element"]; }());
+
+/***/ }),
+/* 171 */
+/***/ (function(module, exports) {
+
+module.exports = React;
+
+/***/ }),
 /* 172 */,
 /* 173 */,
 /* 174 */,
-/* 175 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 175 */,
+/* 176 */,
+/* 177 */,
+/* 178 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(wp, jQuery) {
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(wp, jQuery) {/* harmony import */ var _modules_agncy_sidebar__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(179);
 
-var _agncySidebar = __webpack_require__(176);
 
-var _agncySidebar2 = _interopRequireDefault(_agncySidebar);
+if (typeof wp.customize !== 'undefined') {
+  wp.customize('agncy_header_layout', function (setting) {
+    var handleLogoPosOption = function handleLogoPosOption() {
+      wp.customize.control('agncy_header_logo_position', function (control) {
+        var $ = jQuery;
+        var centerLabel = $(control.container).find('label[for="agncy_header_logo_position-center"]');
+        var input = $('input', centerLabel);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+        if (centerLabel.length) {
+          if ('side-by-side' === setting.get()) {
+            input.attr('disabled', true);
+            centerLabel.addClass('disabled');
+          } else {
+            input.attr('disabled', false);
+            centerLabel.removeClass('disabled');
+          }
+        }
+      });
+    }; // init check
 
-if (typeof wp.customize !== "undefined") {
 
-	wp.customize('agncy_header_layout', function (setting) {
-		var handleLogoPosOption = function handleLogoPosOption() {
-			wp.customize.control('agncy_header_logo_position', function (control) {
-				var $ = jQuery;
+    if ('side-by-side' === setting.get()) {
+      handleLogoPosOption();
+    } // bind to change
 
-				var centerLabel = $(control.container).find('label[for="agncy_header_logo_position-center"]');
-				var input = $('input', centerLabel);
 
-				if (centerLabel.length) {
-					if ('side-by-side' === setting.get()) {
-						input.attr('disabled', true);
-						centerLabel.addClass('disabled');
-					} else {
-						input.attr('disabled', false);
-						centerLabel.removeClass('disabled');
-					}
-				}
-			});
-		};
-
-		// init check
-		if ('side-by-side' === setting.get()) {
-			handleLogoPosOption();
-		}
-
-		// bind to change
-		setting.bind(handleLogoPosOption);
-	});
+    setting.bind(handleLogoPosOption);
+  });
 }
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(9), __webpack_require__(1)))
 
 /***/ }),
-/* 176 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 179 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(wp) {
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(wp) {/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(170);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(171);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _sidebar_controls_remove_content_margin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(180);
+/* harmony import */ var _sidebar_controls_disable_title__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(186);
+/* harmony import */ var _sidebar_controls_disable_thumbnail__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(187);
+/* harmony import */ var _sidebar_controls_disable_sidebar__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(188);
 
-var _removeContentMargin = __webpack_require__(177);
 
-var _removeContentMargin2 = _interopRequireDefault(_removeContentMargin);
-
-var _disableTitle = __webpack_require__(183);
-
-var _disableTitle2 = _interopRequireDefault(_disableTitle);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * AGNCY SIDEBAR: The sidebar to control theme settings in Gutenberg
@@ -1774,87 +2762,60 @@ var _wp$editPost = wp.editPost,
     PluginSidebar = _wp$editPost.PluginSidebar,
     PluginSidebarMoreMenuItem = _wp$editPost.PluginSidebarMoreMenuItem;
 var registerPlugin = wp.plugins.registerPlugin;
-
 /**
  * Internal dependencies
  */
 
-var sidebarIcon = React.createElement(
-	'svg',
-	{ width: '20', height: '20' },
-	React.createElement('path', { d: 'M17.1 9.6l.3.5h-.2l-.4-.5zM13.4 7.6l1 1.1.4 1h-.7l-.8-1.3zM12.3 6.4l.2 1.4.8 1.4-.6.1.3 1-.6.2-.5-.2.6-.9V8l-.4-1.1zM15.6 10.8l-.7.4-.3.6-1.2.1-2.9 1.3.4-.6v-.4L12 11l1 .4.9-.4.5.2z' }),
-	React.createElement('path', { d: 'M16.8 8.7l-1.3-.5-3.3-4.7S9.8 6.1 9.5 6.4c-.7-.5-1.6-1.1-1.6-1.1l-5.8 4.9-.6.5 1.5.1-2 2.8 1.1-.4-.4 1.4L4 11.7l1-2.5.5.6.9-2.3 1.5-1.9L9.4 7l-1 2-.4 1.9-.4.8.5-.4-.6 2.1.6-.6-.2 1.3 2.2-4.8-.5.4.2-1.4 1-1.5-.1 1.7.6-1.6 1-2.7 1.3 2 1.5 2.2 1.1.8h.8l1.9 1.4-2.1-1.9z' })
-);
+
+
+
+
+var sidebarIcon = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("svg", {
+  width: "20",
+  height: "20"
+}, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("path", {
+  d: "M17.1 9.6l.3.5h-.2l-.4-.5zM13.4 7.6l1 1.1.4 1h-.7l-.8-1.3zM12.3 6.4l.2 1.4.8 1.4-.6.1.3 1-.6.2-.5-.2.6-.9V8l-.4-1.1zM15.6 10.8l-.7.4-.3.6-1.2.1-2.9 1.3.4-.6v-.4L12 11l1 .4.9-.4.5.2z"
+}), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("path", {
+  d: "M16.8 8.7l-1.3-.5-3.3-4.7S9.8 6.1 9.5 6.4c-.7-.5-1.6-1.1-1.6-1.1l-5.8 4.9-.6.5 1.5.1-2 2.8 1.1-.4-.4 1.4L4 11.7l1-2.5.5.6.9-2.3 1.5-1.9L9.4 7l-1 2-.4 1.9-.4.8.5-.4-.6 2.1.6-.6-.2 1.3 2.2-4.8-.5.4.2-1.4 1-1.5-.1 1.7.6-1.6 1-2.7 1.3 2 1.5 2.2 1.1.8h.8l1.9 1.4-2.1-1.9z"
+}));
 
 var agncySidebar = function agncySidebar() {
-	return React.createElement(
-		Fragment,
-		null,
-		React.createElement(
-			PluginSidebar,
-			{
-				name: 'agncy-sidebar',
-				title: __('AGNCY', 'agncy-js'),
-				icon: sidebarIcon
-			},
-			React.createElement(
-				Panel,
-				null,
-				React.createElement(
-					PanelBody,
-					{ title: __('Layout', 'agncy-js'), initialOpen: true },
-					React.createElement(_removeContentMargin2.default, null)
-				),
-				React.createElement(
-					PanelBody,
-					{ title: __('Title', 'agncy-js'), initialOpen: true },
-					React.createElement(_disableTitle2.default, null)
-				)
-			)
-		),
-		React.createElement(
-			PluginSidebarMoreMenuItem,
-			{
-				target: 'agncy-sidebar'
-			},
-			__('AGNCY', 'agncy-js')
-		)
-	);
+  return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Fragment, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(PluginSidebar, {
+    name: "agncy-sidebar",
+    title: __('AGNCY', 'agncy-js'),
+    icon: sidebarIcon
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Panel, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(PanelBody, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, __('Use this sidebar to customize template items to be shown.', 'agncy-js')), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("p", null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("a", {
+    href: "https://help.wp-munich.com/article/11-agncy-using-the-agncy-editor-sidebar",
+    target: "_blank",
+    rel: "noopener noreferrer"
+  }, __('Help', 'agncy-js'))))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(Panel, null, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(PanelBody, {
+    title: __('Layout', 'agncy-js'),
+    initialOpen: true
+  }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_sidebar_controls_remove_content_margin__WEBPACK_IMPORTED_MODULE_2__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_sidebar_controls_disable_title__WEBPACK_IMPORTED_MODULE_3__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_sidebar_controls_disable_thumbnail__WEBPACK_IMPORTED_MODULE_4__["default"], null), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(_sidebar_controls_disable_sidebar__WEBPACK_IMPORTED_MODULE_5__["default"], null)))), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(PluginSidebarMoreMenuItem, {
+    target: "agncy-sidebar"
+  }, __('AGNCY', 'agncy-js')));
 };
 
 registerPlugin('agncy-sidebar', {
-	render: agncySidebar
+  render: agncySidebar
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(9)))
 
 /***/ }),
-/* 177 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 180 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(wp) {
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(wp) {/* harmony import */ var lodash_assign__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(181);
+/* harmony import */ var lodash_assign__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_assign__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(170);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(171);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_2__);
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
 
-var _assign2 = __webpack_require__(178);
 
-var _assign3 = _interopRequireDefault(_assign2);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-/**
- * SIDEBAR CONTROL: Remove content margin
- * The control to remove the content margin from below the title and below .the_content,
- * for when the user wants to open and close their post with a layout block.
- *
- * @metaValue: remove_content_margin
- */
-
-/**
- * External dependencies
- */
 var __ = wp.i18n.__;
 var _wp$data = wp.data,
     withDispatch = _wp$data.withDispatch,
@@ -1862,56 +2823,52 @@ var _wp$data = wp.data,
 var CheckboxControl = wp.components.CheckboxControl;
 var compose = wp.compose.compose;
 
-
 function RemoveContentMarginControl(_ref) {
-	var meta = _ref.meta,
-	    onUpdateMeta = _ref.onUpdateMeta;
-
-	return [React.createElement(CheckboxControl, {
-		label: React.createElement(
-			'strong',
-			null,
-			' ',
-			__('Remove content margin', 'agncy-js'),
-			' '
-		),
-		help: __('Remove the margins below the title and content to be able to place adjacent blocks.', 'agncy-js'),
-		checked: '1' === meta.remove_content_margin,
-		onChange: function onChange(value) {
-			onUpdateMeta({ remove_content_margin: value ? '1' : '' });
-		}
-	})];
+  var meta = _ref.meta,
+      onUpdateMeta = _ref.onUpdateMeta;
+  return react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement(CheckboxControl, {
+    label: react__WEBPACK_IMPORTED_MODULE_2___default.a.createElement("strong", null, " ", __('Remove content margin', 'agncy-js'), " "),
+    help: __('Remove the margins below the title and content to be able to place adjacent blocks.', 'agncy-js'),
+    checked: '1' === meta.remove_content_margin,
+    onChange: function onChange(value) {
+      onUpdateMeta({
+        remove_content_margin: value ? '1' : ''
+      });
+    }
+  });
 }
 
-exports.default = compose([withSelect(function (select) {
-	var meta = select('core/editor').getEditedPostAttribute('meta');
-	return {
-		meta: meta
-	};
+/* harmony default export */ __webpack_exports__["default"] = (compose([withSelect(function (select) {
+  var meta = select('core/editor').getEditedPostAttribute('meta');
+  return {
+    meta: meta
+  };
 }), withDispatch(function (dispatch, _ref2) {
-	var meta = _ref2.meta;
+  var meta = _ref2.meta;
 
-	var _dispatch = dispatch('core/editor'),
-	    editPost = _dispatch.editPost;
+  var _dispatch = dispatch('core/editor'),
+      editPost = _dispatch.editPost;
 
-	return {
-		onUpdateMeta: function onUpdateMeta(newMeta) {
-			editPost({ meta: (0, _assign3.default)({}, meta, newMeta) });
-		}
-	};
-})])(RemoveContentMarginControl);
+  return {
+    onUpdateMeta: function onUpdateMeta(newMeta) {
+      editPost({
+        meta: lodash_assign__WEBPACK_IMPORTED_MODULE_0___default()({}, meta, newMeta)
+      });
+    }
+  };
+})])(RemoveContentMarginControl));
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(9)))
 
 /***/ }),
-/* 178 */
+/* 181 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assignValue = __webpack_require__(155),
-    copyObject = __webpack_require__(179),
-    createAssigner = __webpack_require__(180),
-    isArrayLike = __webpack_require__(99),
-    isPrototype = __webpack_require__(96),
-    keys = __webpack_require__(80);
+var assignValue = __webpack_require__(156),
+    copyObject = __webpack_require__(182),
+    createAssigner = __webpack_require__(183),
+    isArrayLike = __webpack_require__(100),
+    isPrototype = __webpack_require__(97),
+    keys = __webpack_require__(81);
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;
@@ -1967,11 +2924,11 @@ module.exports = assign;
 
 
 /***/ }),
-/* 179 */
+/* 182 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var assignValue = __webpack_require__(155),
-    baseAssignValue = __webpack_require__(156);
+var assignValue = __webpack_require__(156),
+    baseAssignValue = __webpack_require__(157);
 
 /**
  * Copies properties of `source` to `object`.
@@ -2013,11 +2970,11 @@ module.exports = copyObject;
 
 
 /***/ }),
-/* 180 */
+/* 183 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var baseRest = __webpack_require__(181),
-    isIterateeCall = __webpack_require__(182);
+var baseRest = __webpack_require__(184),
+    isIterateeCall = __webpack_require__(185);
 
 /**
  * Creates a function like `_.assign`.
@@ -2056,12 +3013,12 @@ module.exports = createAssigner;
 
 
 /***/ }),
-/* 181 */
+/* 184 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var identity = __webpack_require__(123),
-    overRest = __webpack_require__(162),
-    setToString = __webpack_require__(164);
+var identity = __webpack_require__(124),
+    overRest = __webpack_require__(163),
+    setToString = __webpack_require__(165);
 
 /**
  * The base implementation of `_.rest` which doesn't validate or coerce arguments.
@@ -2079,13 +3036,13 @@ module.exports = baseRest;
 
 
 /***/ }),
-/* 182 */
+/* 185 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var eq = __webpack_require__(20),
-    isArrayLike = __webpack_require__(99),
-    isIndex = __webpack_require__(89),
-    isObject = __webpack_require__(40);
+var eq = __webpack_require__(21),
+    isArrayLike = __webpack_require__(100),
+    isIndex = __webpack_require__(90),
+    isObject = __webpack_require__(41);
 
 /**
  * Checks if the given arguments are from an iteratee call.
@@ -2115,81 +3072,286 @@ module.exports = isIterateeCall;
 
 
 /***/ }),
-/* 183 */
-/***/ (function(module, exports, __webpack_require__) {
+/* 186 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(wp) {
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(wp) {/* harmony import */ var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(169);
+/* harmony import */ var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_isEmpty__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash_assign__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(181);
+/* harmony import */ var lodash_assign__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_assign__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(170);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(171);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_3__);
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
 
-var _assign2 = __webpack_require__(178);
 
-var _assign3 = _interopRequireDefault(_assign2);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 /**
  * WordPress dependencies
- */
-/**
- * SIDEBAR CONTROL: Remove default title
- * The control to remove the default title, when the user wants to create their
- * own <h1> heading with a custom block.
- *
- * @metaValue: disable_the_title
- */
-
-/**
- * External dependencies
  */
 var __ = wp.i18n.__;
 var _wp$data = wp.data,
     withDispatch = _wp$data.withDispatch,
     withSelect = _wp$data.withSelect;
-var CheckboxControl = wp.components.CheckboxControl;
+var _wp$components = wp.components,
+    BaseControl = _wp$components.BaseControl,
+    ButtonGroup = _wp$components.ButtonGroup,
+    Button = _wp$components.Button;
 var compose = wp.compose.compose;
 
-
 function DisableTitleControl(_ref) {
-	var meta = _ref.meta,
-	    onUpdateMeta = _ref.onUpdateMeta;
-
-	return [React.createElement(CheckboxControl, {
-		label: React.createElement(
-			'strong',
-			null,
-			' ',
-			__('Remove default title', 'agncy-js'),
-			' '
-		),
-		help: __('Removing the default title means you should set a <h1> in your content.', 'agncy-js'),
-		checked: '1' === meta.disable_the_title,
-		onChange: function onChange(value) {
-			onUpdateMeta({ disable_the_title: value ? '1' : '' });
-		}
-	})];
+  var meta = _ref.meta,
+      onUpdateMeta = _ref.onUpdateMeta;
+  return react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(BaseControl, {
+    label: react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement("strong", null, " ", __('Title', 'agncy-js'), " "),
+    help: __('Hiding the default title means you should set a <h1> in your content.', 'agncy-js')
+  }, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(ButtonGroup, null, react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Button, {
+    isSmall: true,
+    isPrimary: '0' === meta.disable_the_title,
+    onClick: function onClick() {
+      onUpdateMeta({
+        disable_the_title: '0'
+      });
+    }
+  }, __('Show', 'agncy-js')), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Button, {
+    isSmall: true,
+    isPrimary: lodash_isEmpty__WEBPACK_IMPORTED_MODULE_0___default()(meta.disable_the_title),
+    onClick: function onClick() {
+      onUpdateMeta({
+        disable_the_title: null
+      });
+    }
+  }, __('Default', 'agncy-js')), react__WEBPACK_IMPORTED_MODULE_3___default.a.createElement(Button, {
+    isSmall: true,
+    isPrimary: '1' === meta.disable_the_title,
+    onClick: function onClick() {
+      onUpdateMeta({
+        disable_the_title: '1'
+      });
+    }
+  }, __('Hide', 'agncy-js'))));
 }
 
-exports.default = compose([withSelect(function (select) {
-	var meta = select('core/editor').getEditedPostAttribute('meta');
-	return {
-		meta: meta
-	};
+/* harmony default export */ __webpack_exports__["default"] = (compose([withSelect(function (select) {
+  var meta = select('core/editor').getEditedPostAttribute('meta');
+  return {
+    meta: meta
+  };
 }), withDispatch(function (dispatch, _ref2) {
-	var meta = _ref2.meta;
+  var meta = _ref2.meta;
 
-	var _dispatch = dispatch('core/editor'),
-	    editPost = _dispatch.editPost;
+  var _dispatch = dispatch('core/editor'),
+      editPost = _dispatch.editPost;
 
-	return {
-		onUpdateMeta: function onUpdateMeta(newMeta) {
-			editPost({ meta: (0, _assign3.default)({}, meta, newMeta) });
-		}
-	};
-})])(DisableTitleControl);
+  return {
+    onUpdateMeta: function onUpdateMeta(newMeta) {
+      editPost({
+        meta: lodash_assign__WEBPACK_IMPORTED_MODULE_1___default()({}, meta, newMeta)
+      });
+    }
+  };
+})])(DisableTitleControl));
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(9)))
+
+/***/ }),
+/* 187 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(wp) {/* harmony import */ var lodash_startCase__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(134);
+/* harmony import */ var lodash_startCase__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_startCase__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(169);
+/* harmony import */ var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_isEmpty__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var lodash_assign__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(181);
+/* harmony import */ var lodash_assign__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_assign__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(170);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(171);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
+/**
+ * WordPress dependencies
+ */
+var _wp$i18n = wp.i18n,
+    __ = _wp$i18n.__,
+    sprintf = _wp$i18n.sprintf;
+var _wp$data = wp.data,
+    withDispatch = _wp$data.withDispatch,
+    withSelect = _wp$data.withSelect;
+var _wp$components = wp.components,
+    BaseControl = _wp$components.BaseControl,
+    ButtonGroup = _wp$components.ButtonGroup,
+    Button = _wp$components.Button;
+var compose = wp.compose.compose;
+
+function DisableThumbnailControl(_ref) {
+  var meta = _ref.meta,
+      onUpdateMeta = _ref.onUpdateMeta,
+      postType = _ref.postType;
+  return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(BaseControl, {
+    label: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("strong", null, " ", __('Thumbnail', 'agncy-js'), " "),
+    help: sprintf(__('Hiding the thumbnail here will only hide it on this %s. It will show up in archives and in the metadata.', 'agncy-js'), lodash_startCase__WEBPACK_IMPORTED_MODULE_0___default()(postType))
+  }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(ButtonGroup, null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(Button, {
+    isSmall: true,
+    isPrimary: '0' === meta.disable_the_thumbnail,
+    onClick: function onClick() {
+      onUpdateMeta({
+        disable_the_thumbnail: '0'
+      });
+    }
+  }, __('Show', 'agncy-js')), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(Button, {
+    isSmall: true,
+    isPrimary: lodash_isEmpty__WEBPACK_IMPORTED_MODULE_1___default()(meta.disable_the_thumbnail),
+    onClick: function onClick() {
+      onUpdateMeta({
+        disable_the_thumbnail: null
+      });
+    }
+  }, __('Default', 'agncy-js')), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(Button, {
+    isSmall: true,
+    isPrimary: '1' === meta.disable_the_thumbnail,
+    onClick: function onClick() {
+      onUpdateMeta({
+        disable_the_thumbnail: '1'
+      });
+    }
+  }, __('Hide', 'agncy-js'))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (compose([withSelect(function (select) {
+  var meta = select('core/editor').getEditedPostAttribute('meta');
+  var postType = select('core/editor').getCurrentPostType();
+  return {
+    meta: meta,
+    postType: postType
+  };
+}), withDispatch(function (dispatch, _ref2) {
+  var meta = _ref2.meta;
+
+  var _dispatch = dispatch('core/editor'),
+      editPost = _dispatch.editPost;
+
+  return {
+    onUpdateMeta: function onUpdateMeta(newMeta) {
+      editPost({
+        meta: lodash_assign__WEBPACK_IMPORTED_MODULE_2___default()({}, meta, newMeta)
+      });
+    }
+  };
+})])(DisableThumbnailControl));
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(9)))
+
+/***/ }),
+/* 188 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(wp) {/* harmony import */ var lodash_startCase__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(134);
+/* harmony import */ var lodash_startCase__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash_startCase__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(169);
+/* harmony import */ var lodash_isEmpty__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_isEmpty__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var lodash_assign__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(181);
+/* harmony import */ var lodash_assign__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(lodash_assign__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(170);
+/* harmony import */ var _wordpress_element__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_wordpress_element__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(171);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_4__);
+
+
+
+
+
+
+/**
+ * WordPress dependencies
+ */
+var _wp$i18n = wp.i18n,
+    __ = _wp$i18n.__,
+    sprintf = _wp$i18n.sprintf;
+var _wp$data = wp.data,
+    withDispatch = _wp$data.withDispatch,
+    withSelect = _wp$data.withSelect;
+var _wp$components = wp.components,
+    BaseControl = _wp$components.BaseControl,
+    ButtonGroup = _wp$components.ButtonGroup,
+    Button = _wp$components.Button;
+var compose = wp.compose.compose;
+
+function DisableThumbnailControl(_ref) {
+  var meta = _ref.meta,
+      onUpdateMeta = _ref.onUpdateMeta,
+      postType = _ref.postType,
+      pageTemplate = _ref.pageTemplate;
+
+  if (pageTemplate === 'page-templates/pt-wide.php') {
+    // Legacy helper, remove in a few versions
+    meta.disable_the_sidebar = '1';
+  }
+
+  return react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(BaseControl, {
+    label: react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement("strong", null, " ", __('Sidebar', 'agncy-js'), " "),
+    help: sprintf(__('Hiding the sidebar here will only hide it on this %s. It will show up in archives and other templates.', 'agncy-js'), lodash_startCase__WEBPACK_IMPORTED_MODULE_0___default()(postType))
+  }, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(ButtonGroup, null, react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(Button, {
+    isSmall: true,
+    isPrimary: '0' === meta.disable_the_sidebar,
+    onClick: function onClick() {
+      onUpdateMeta({
+        disable_the_sidebar: '0'
+      });
+    }
+  }, __('Show', 'agncy-js')), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(Button, {
+    isSmall: true,
+    isPrimary: lodash_isEmpty__WEBPACK_IMPORTED_MODULE_1___default()(meta.disable_the_sidebar),
+    onClick: function onClick() {
+      onUpdateMeta({
+        disable_the_sidebar: null
+      });
+    }
+  }, __('Default', 'agncy-js')), react__WEBPACK_IMPORTED_MODULE_4___default.a.createElement(Button, {
+    isSmall: true,
+    isPrimary: '1' === meta.disable_the_sidebar,
+    onClick: function onClick() {
+      onUpdateMeta({
+        disable_the_sidebar: '1'
+      });
+    }
+  }, __('Hide', 'agncy-js'))));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (compose([withSelect(function (select) {
+  var meta = select('core/editor').getEditedPostAttribute('meta');
+  var postType = select('core/editor').getCurrentPostType();
+  var pageTemplate = select('core/editor').getEditedPostAttribute('template');
+  return {
+    meta: meta,
+    postType: postType,
+    pageTemplate: pageTemplate
+  };
+}), withDispatch(function (dispatch, _ref2) {
+  var meta = _ref2.meta;
+
+  var _dispatch = dispatch('core/editor'),
+      editPost = _dispatch.editPost;
+
+  return {
+    onUpdateMeta: function onUpdateMeta(newMeta) {
+      editPost({
+        meta: lodash_assign__WEBPACK_IMPORTED_MODULE_2___default()({}, meta, newMeta)
+      });
+    }
+  };
+})])(DisableThumbnailControl));
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(9)))
 
 /***/ })

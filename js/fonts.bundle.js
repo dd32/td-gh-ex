@@ -87,62 +87,51 @@
 /******/ ({
 
 /***/ 5:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _font_loader__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(6);
 
-
-var _fontLoader = __webpack_require__(6);
-
-var _fontLoader2 = _interopRequireDefault(_fontLoader);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-(0, _fontLoader2.default)();
+Object(_font_loader__WEBPACK_IMPORTED_MODULE_0__["default"])();
 
 /***/ }),
 
 /***/ 6:
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-exports.default = function () {
-  "use strict";
-  // see https://gist.github.com/hdragomir/8f00ce2581795fd7b1b7
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function () {
+  "use strict"; // see https://gist.github.com/hdragomir/8f00ce2581795fd7b1b7
   // once cached, the css file is stored on the client forever unless
   // the URL below is changed. Any change will invalidate the cache
 
-  var css_href = agncy_i18n.webfont_url;
+  var css_href = agncy_i18n.webfont_url; // a simple event handler wrapper
 
-  // a simple event handler wrapper
   function on(el, ev, callback) {
     if (el.addEventListener) {
       el.addEventListener(ev, callback, false);
     } else if (el.attachEvent) {
       el.attachEvent("on" + ev, callback);
     }
-  }
+  } // if we have the fonts in localStorage or if we've cached them using the native batrowser cache
 
-  // if we have the fonts in localStorage or if we've cached them using the native batrowser cache
+
   if (window.localStorage && localStorage.font_css_cache || document.cookie.indexOf('font_css_cache') > -1) {
     // just use the cached version
     injectFontsStylesheet();
   } else {
     // otherwise, don't block the loading of the page; wait until it's done.
     on(window, "load", injectFontsStylesheet);
-  }
+  } // quick way to determine whether a css file has been cached locally
 
-  // quick way to determine whether a css file has been cached locally
+
   function fileIsCached(href) {
     return window.localStorage && localStorage.font_css_cache && localStorage.font_css_cache_file === href;
-  }
-  // time to get the actual css file
+  } // time to get the actual css file
+
+
   function injectFontsStylesheet() {
     // if this is an older browser
     if (!window.localStorage || !window.XMLHttpRequest) {
@@ -150,49 +139,49 @@ exports.default = function () {
       stylesheet.href = css_href;
       stylesheet.rel = 'stylesheet';
       stylesheet.type = 'text/css';
-      document.getElementsByTagName('head')[0].appendChild(stylesheet);
-      // just use the native browser cache
+      document.getElementsByTagName('head')[0].appendChild(stylesheet); // just use the native browser cache
       // this requires a good expires header on the server
-      document.cookie = "font_css_cache";
 
-      // if this isn't an old browser
+      document.cookie = "font_css_cache"; // if this isn't an old browser
     } else {
       // use the cached version if we already have it
       if (fileIsCached(css_href)) {
-        injectRawStyle(localStorage.font_css_cache);
-        // otherwise, load it with ajax
+        injectRawStyle(localStorage.font_css_cache); // otherwise, load it with ajax
       } else {
         var xhr = new XMLHttpRequest();
-        xhr.open("GET", css_href, true);
-        // cater for IE8 which does not support addEventListener or attachEvent on XMLHttpRequest
+        xhr.open("GET", css_href, true); // cater for IE8 which does not support addEventListener or attachEvent on XMLHttpRequest
+
         xhr.onreadystatechange = function () {
           if (xhr.readyState === 4) {
             // once we have the content, quickly inject the css rules
-            injectRawStyle(xhr.responseText);
-            // and cache the text content for further use
+            injectRawStyle(xhr.responseText); // and cache the text content for further use
             // notice that this overwrites anything that might have already been previously cached
+
             localStorage.font_css_cache = xhr.responseText;
             localStorage.font_css_cache_file = css_href;
           }
         };
+
         xhr.send();
       }
     }
-  }
-  // this is the simple utitily that injects the cached or loaded css text
+  } // this is the simple utitily that injects the cached or loaded css text
+
+
   function injectRawStyle(text) {
-    var style = document.createElement('style');
-    // cater for IE8 which doesn't support style.innerHTML
+    var style = document.createElement('style'); // cater for IE8 which doesn't support style.innerHTML
+
     style.setAttribute("type", "text/css");
+
     if (style.styleSheet) {
       style.styleSheet.cssText = text;
     } else {
       style.innerHTML = text;
     }
+
     document.getElementsByTagName('head')[0].appendChild(style);
   }
-};
-
+});
 ;
 
 /***/ })

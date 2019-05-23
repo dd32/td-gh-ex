@@ -106,5 +106,6 @@ class AgncyThemeFunctions {
 
 		return $defaults;
 	}
+
 }
 $_lh_theme_functions = new AgncyThemeFunctions();

@@ -18,7 +18,7 @@ if ( !defined( 'AGNCY_JS_URL' ) ) {
     define( 'AGNCY_JS_URL', esc_url( get_template_directory_uri() ) );
 }
 if ( !defined( 'AGNCY_VERSION' ) ) {
-    define( 'AGNCY_VERSION', '1.5.4' );
+    define( 'AGNCY_VERSION', '1.6.0' );
 }
 if ( !defined( 'AGNCY_DEFAULT_PRIMARY' ) ) {
     define( 'AGNCY_DEFAULT_PRIMARY', '#225378' );
@@ -56,6 +56,7 @@ function agncy_require_files()
     require_once get_template_directory() . '/inc/lh.theme-functions.php';
     require_once get_template_directory() . '/inc/lh.theme-pages.php';
     require_once get_template_directory() . '/inc/lh.comment-walker-agncy.php';
+    require_once get_template_directory() . '/inc/classNames.php';
     /*
      * Include needed files from the plugin-compatibilities directory
      */
@@ -102,7 +103,7 @@ function agncy_enqueue_scripts()
         'style',
         AGNCY_THEME_URL . '/style.min.css',
         null,
-        '1.5.4',
+        '1.6.0',
         'all'
     );
     wp_enqueue_style( 'style' );
@@ -116,7 +117,7 @@ function agncy_enqueue_scripts()
         'main',
         AGNCY_JS_URL . '/js/script.min.js',
         array( 'jquery' ),
-        '1.5.4',
+        '1.6.0',
         true
     );
     wp_enqueue_script( 'main' );
@@ -136,7 +137,7 @@ function agncy_enqueue_scripts()
         'agncy_font',
         AGNCY_JS_URL . '/js/fonts.min.js',
         null,
-        '1.5.4',
+        '1.6.0',
         false
     );
     wp_enqueue_script( 'agncy_font' );
@@ -175,7 +176,6 @@ function agncy_admin_scripts()
     if ( in_array( $hook_suffix, $scripts_are_needed_in, true ) ) {
         // Make sure our scripts are only loaded, when we actually need them.
         wp_enqueue_style( 'lh_admin_style', AGNCY_THEME_URL . '/admin/admin.min.css' );
-        add_editor_style();
         wp_register_script(
             'admin',
             AGNCY_THEME_URL . '/admin/admin.min.js',
@@ -188,17 +188,20 @@ function agncy_admin_scripts()
             'wp-date',
             'wp-edit-post'
         ),
-            '1.5.4',
+            '1.6.0',
             true
         );
         wp_enqueue_script( 'admin' );
-        
-        if ( function_exists( 'gutenberg_get_jed_locale_data' ) ) {
-            // Prepare Jed locale data.
-            $locale_data = gutenberg_get_jed_locale_data( 'agncy-js' );
-            wp_add_inline_script( 'admin', 'wp.i18n.setLocaleData( ' . json_encode( $locale_data ) . ', \'agncy-js\' );', 'before' );
-        }
-    
+        wp_register_script(
+            'agncy_font',
+            AGNCY_JS_URL . '/js/fonts.min.js',
+            '1.6.0',
+            false
+        );
+        wp_enqueue_script( 'agncy_font' );
+        wp_localize_script( 'agncy_font', 'agncy_i18n', array(
+            'webfont_url' => apply_filters( 'agncy_webfont_url', AGNCY_WEBFONT_URL ),
+        ) );
     }
 
 }
@@ -317,6 +320,8 @@ function agncy_theme_supports()
         'flex-height' => true,
         'flex-width'  => true,
     ) );
+    add_theme_support( 'editor-styles' );
+    add_editor_style( 'editor-style.min.css' );
     /*
     	Color Options
     */
@@ -611,6 +616,18 @@ function agncy_register_meta()
         'single'       => true,
         'type'         => 'string',
     ) );
+    register_meta( 'post', 'disable_the_thumbnail', array(
+        'description'  => __( 'Bool if the thumbnail shall be removed.', 'agncy' ),
+        'show_in_rest' => true,
+        'single'       => true,
+        'type'         => 'string',
+    ) );
+    register_meta( 'post', 'disable_the_sidebar', array(
+        'description'  => __( 'Bool if the sidebar shall be removed.', 'agncy' ),
+        'show_in_rest' => true,
+        'single'       => true,
+        'type'         => 'string',
+    ) );
 }
 
 add_action( 'init', 'agncy_register_meta' );
@@ -677,4 +694,37 @@ if ( !function_exists( 'get_called_class' ) ) {
         return false;
     }
 
+}
+/**
+ * Function to determine if we show the sidebar or not
+ *
+ * @return boolean Weather we want to show the sidebar or not.
+ */
+function agncy_has_sidebar()
+{
+    $disable_sidebar_default = get_theme_mod( 'agncy_disable_the_sidebar' );
+    
+    if ( is_singular() ) {
+        
+        if ( get_page_template_slug( get_the_ID() ) === 'page-templates/pt-wide.php' ) {
+            // This is a legacy helper. We used to store the no-sidebar template as
+            // a page template. To migrate to a meta value, we have to check if the
+            // old page template is selected and if so, update the meta value.
+            update_post_meta( get_the_ID(), '_wp_page_template', '' );
+            update_post_meta( get_the_ID(), 'disable_the_sidebar', 1 );
+        }
+        
+        $disable_sidebar_override = get_post_meta( get_the_ID(), 'disable_the_sidebar', true );
+    } else {
+        $disable_sidebar_override = null;
+    }
+    
+    
+    if ( empty($disable_sidebar_override) && $disable_sidebar_override !== '0' ) {
+        $show_sidebar = !get_theme_mod( 'agncy_disable_the_sidebar' );
+    } else {
+        $show_sidebar = !$disable_sidebar_override;
+    }
+    
+    return ( $show_sidebar ? true : false );
 }

@@ -15,9 +15,37 @@ if ( have_posts() ) :
 			<?php get_template_part( 'template-parts/title-bar' ); ?>
 			<?php get_template_part( 'template-parts/postthumbnail' ); ?>
 
-<article class="container singular_content entry">
-	<div class="row has-sidebar">
-		<div class="col-xs-12 col-md-8 content-wrapper">
+			<?php
+			$article_classes = classNames(
+				array(
+					'container'        => true,
+					'singular_content' => true,
+					'entry'            => true,
+					'wide-content'     => ! agncy_has_sidebar(),
+				)
+			);
+
+			$row_classes = classNames(
+				array(
+					'row'         => true,
+					'has-sidebar' => agncy_has_sidebar(),
+				)
+			);
+
+			$wrapper_classes = classNames(
+				array(
+					'col-xs-12'       => true,
+					'col-md-8'        => true,
+					'content-wrapper' => true,
+					'col-md-offset-2' => ! agncy_has_sidebar(),
+				)
+			);
+
+			?>
+
+<article class="<?php echo esc_attr( $article_classes ); ?>">
+	<div class="<?php echo esc_attr( $row_classes ); ?>">
+		<div class="<?php echo esc_attr( $wrapper_classes ); ?>">
 			<div class="the_content clearfix entry-content">
 				<?php the_content(); ?>
 			</div>
@@ -46,7 +74,7 @@ if ( have_posts() ) :
 				endif;
 				?>
 		</div>
-			<?php get_sidebar( get_post_type() ); ?>
+		<?php get_sidebar( get_post_type() ); ?>
 	</div>
 </article>
 		<?php

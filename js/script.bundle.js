@@ -86,57 +86,52 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(jQuery) {
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(jQuery) {/* harmony import */ var _modules_mobileMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
+/* harmony import */ var sticky_kit_dist_sticky_kit__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
+/* harmony import */ var sticky_kit_dist_sticky_kit__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(sticky_kit_dist_sticky_kit__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var magnific_popup_dist_jquery_magnific_popup__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(4);
+/* harmony import */ var magnific_popup_dist_jquery_magnific_popup__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(magnific_popup_dist_jquery_magnific_popup__WEBPACK_IMPORTED_MODULE_2__);
 
-var _mobileMenu = __webpack_require__(2);
 
-var _mobileMenu2 = _interopRequireDefault(_mobileMenu);
-
-__webpack_require__(3);
-
-__webpack_require__(4);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 jQuery(document).ready(function ($) {
+  new _modules_mobileMenu__WEBPACK_IMPORTED_MODULE_0__["default"]();
+  $(".sidebar-sticky").stick_in_parent({
+    offset_top: 15,
+    parent: '.has-sidebar'
+  }); // Initialization of Magnific Popup
 
-	new _mobileMenu2.default();
+  $("a[href*='.png']").addClass("image-link");
+  $("a[href*='.gif']").addClass("image-link");
+  $("a[href*='.jpg']").addClass("image-link");
+  $("a[href*='.jpeg']").addClass("image-link");
+  $('.image-link').magnificPopup({
+    type: 'image',
+    image: {
+      titleSrc: function titleSrc(item) {
+        return $(item.el).parents(".gallery-item").find(".gallery-caption").text();
+      }
+    },
+    gallery: {
+      enabled: true,
+      // set to true to enable gallery
+      preload: [0, 2],
+      // read about this option in next Lazy-loading section
+      navigateByImgClick: true,
+      arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>',
+      // markup of an arrow button
+      tPrev: agncy_i18n.prev,
+      // title for left button
+      tNext: agncy_i18n.next,
+      // title for right button
+      tCounter: agncy_i18n.counter // markup of counter
 
-	$(".sidebar-sticky").stick_in_parent({
-		offset_top: 15,
-		parent: '.has-sidebar'
-	});
-
-	// Initialization of Magnific Popup
-	$("a[href*='.png']").addClass("image-link");
-	$("a[href*='.gif']").addClass("image-link");
-	$("a[href*='.jpg']").addClass("image-link");
-	$("a[href*='.jpeg']").addClass("image-link");
-
-	$('.image-link').magnificPopup({
-		type: 'image',
-		image: {
-			titleSrc: function titleSrc(item) {
-				return $(item.el).parents(".gallery-item").find(".gallery-caption").text();
-			}
-		},
-		gallery: {
-			enabled: true, // set to true to enable gallery
-
-			preload: [0, 2], // read about this option in next Lazy-loading section
-
-			navigateByImgClick: true,
-
-			arrowMarkup: '<button title="%title%" type="button" class="mfp-arrow mfp-arrow-%dir%"></button>', // markup of an arrow button
-
-			tPrev: agncy_i18n.prev, // title for left button
-			tNext: agncy_i18n.next, // title for right button
-			tCounter: agncy_i18n.counter // markup of counter
-		}
-	});
+    }
+  });
 });
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(1)))
 
@@ -148,155 +143,140 @@ module.exports = jQuery;
 
 /***/ }),
 /* 2 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(jQuery) {
+__webpack_require__.r(__webpack_exports__);
+/* WEBPACK VAR INJECTION */(function(jQuery) {var mobileMenu = function mobileMenu() {
+  var stickypos = 63;
+  var phoneMenuBreakpoint = 768;
+  var $ = jQuery;
 
-Object.defineProperty(exports, "__esModule", {
-	value: true
-});
-var mobileMenu = function mobileMenu() {
-	var stickypos = 63;
-	var phoneMenuBreakpoint = 768;
-	var $ = jQuery;
+  this.init = function () {
+    var that = this;
+    $("a.mobile-nav-trigger").click(function () {
+      if ($("body").hasClass("nav-open")) {
+        that.closeMenu();
+      } else {
+        $("body").addClass("nav-open");
+      }
+    });
+    $(".mobile-header .nav-lightbox").click(function () {
+      that.closeMenu();
+    });
+    $(".header li.menu-item a").click(function () {
+      that.closeMenu();
+    });
+    this.buildSubmenus();
+    this.handleTouchClick();
+    var scrollInterval;
+    $(window).scroll(function () {
+      that.setSticky();
+    });
+    $(window).on('touchmove', function () {
+      scrollInterval = window.setInterval(function () {
+        that.setSticky();
+      }, 100);
+    });
+    $(window).on('touchend', function () {
+      clearInterval(scrollInterval);
+    });
+    var windowWidth;
+    $(window).on("resize", function () {
+      if ($(window).width() != windowWidth) {
+        windowWidth = $(window).width();
 
-	this.init = function () {
-		var that = this;
+        if (that.menuIsSticky() && $("header.header").hasClass("sticky")) {
+          // Preserve the header height
+          console.log("resize");
+          $("header.header").removeClass("sticky");
+          $("header.header").height('');
+          $("header.header").height($("header.header").height());
+          $("header.header").addClass("sticky");
+        }
+      }
+    });
+  };
 
-		$("a.mobile-nav-trigger").click(function () {
-			if ($("body").hasClass("nav-open")) {
-				that.closeMenu();
-			} else {
-				$("body").addClass("nav-open");
-			}
-		});
+  this.setSticky = function () {
+    if (this.menuIsSticky() && !$("header.header").hasClass("sticky")) {
+      // Preserve the header height
+      $("header.header").height($("header.header").height());
+      $("header.header").addClass("sticky");
+    } else if (!this.menuIsSticky() && $("header.header").hasClass("sticky")) {
+      $("header.header").removeClass("sticky");
+      $("header.header").height('');
+    }
+  };
 
-		$(".mobile-header .nav-lightbox").click(function () {
-			that.closeMenu();
-		});
+  this.buildSubmenus = function () {
+    $("ul.menu").each(function () {
+      var $menu = $(this);
+      var $menu_grandparent = $menu.parent().parent();
 
-		$(".header li.menu-item a").click(function () {
-			that.closeMenu();
-		});
+      if (!$menu_grandparent.hasClass("widget")) {
+        $("li.menu-item", $menu).has("ul.sub-menu").each(function () {
+          var $subMenuTrigger = $("<span>").addClass("sub-menu-trigger color-primary--background");
+          var $menuItem = $(this);
+          var $parentMenu = $(this).parent("ul.menu, ul.sub-menu");
+          var $subMenu = $($menuItem).children("ul.sub-menu");
+          var $closeTrigger = $("<li>").addClass("menu-item sub-menu-close").html(agncy_i18n.back);
+          $menuItem.prepend($subMenuTrigger);
+          $subMenu.prepend($closeTrigger);
+          $subMenu.addClass("color-primary--background");
+          $closeTrigger.click(function (e) {
+            e.preventDefault();
+            $subMenu.removeClass("active");
+            $parentMenu.removeClass("active-sub-menu");
+            $($menu).parents(".nav-wrapper").scrollTop(0);
+          });
+          $subMenuTrigger.click(function (e) {
+            e.preventDefault();
+            $subMenu.addClass("active");
+            $parentMenu.addClass("active-sub-menu");
+            $($menu).parents(".nav-wrapper").scrollTop(0);
+          });
+        });
+      }
+    });
+  };
 
-		this.buildSubmenus();
+  this.handleTouchClick = function () {
+    var mobileBreakpoint = 768; // Only fire on touch devices
 
-		this.handleTouchClick();
+    if ('ontouchstart' in window) {
+      $("nav ul li").each(function () {
+        var $menuItem = $(this);
+        $menuItem.on('touchstart', function (e) {
+          if (!$menuItem.hasClass("focus") && $menuItem.hasClass("menu-item-has-children") && $(window).width() > phoneMenuBreakpoint) {
+            e.preventDefault();
+            $menuItem.addClass("focus");
+          } else {
+            $menuItem.removeClass("focus");
+          }
+        });
+      });
+    }
+  };
 
-		var scrollInterval;
-		$(window).scroll(function () {
-			that.setSticky();
-		});
-		$(window).on('touchmove', function () {
-			scrollInterval = window.setInterval(function () {
-				that.setSticky();
-			}, 100);
-		});
+  this.closeMenu = function () {
+    $("body").removeClass("nav-open");
+    $("ul.menu").removeClass("active-sub-menu");
+    $("ul.sub-menu").removeClass("active").removeClass("active-sub-menu");
+  };
 
-		$(window).on('touchend', function () {
-			clearInterval(scrollInterval);
-		});
+  this.menuIsSticky = function () {
+    if ($(window).scrollTop() > stickypos) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
-		var windowWidth;
-		$(window).on("resize", function () {
-			if ($(window).width() != windowWidth) {
-				windowWidth = $(window).width();
-				if (that.menuIsSticky() && $("header.header").hasClass("sticky")) {
-					// Preserve the header height
-					console.log("resize");
-					$("header.header").removeClass("sticky");
-					$("header.header").height('');
-					$("header.header").height($("header.header").height());
-					$("header.header").addClass("sticky");
-				}
-			}
-		});
-	};
-
-	this.setSticky = function () {
-		if (this.menuIsSticky() && !$("header.header").hasClass("sticky")) {
-			// Preserve the header height
-			$("header.header").height($("header.header").height());
-			$("header.header").addClass("sticky");
-		} else if (!this.menuIsSticky() && $("header.header").hasClass("sticky")) {
-			$("header.header").removeClass("sticky");
-			$("header.header").height('');
-		}
-	};
-
-	this.buildSubmenus = function () {
-		$("ul.menu").each(function () {
-			var $menu = $(this);
-			var $menu_grandparent = $menu.parent().parent();
-
-			if (!$menu_grandparent.hasClass("widget")) {
-				$("li.menu-item", $menu).has("ul.sub-menu").each(function () {
-					var $subMenuTrigger = $("<span>").addClass("sub-menu-trigger color-primary--background");
-					var $menuItem = $(this);
-					var $parentMenu = $(this).parent("ul.menu, ul.sub-menu");
-					var $subMenu = $($menuItem).children("ul.sub-menu");
-					var $closeTrigger = $("<li>").addClass("menu-item sub-menu-close").html(agncy_i18n.back);
-
-					$menuItem.prepend($subMenuTrigger);
-					$subMenu.prepend($closeTrigger);
-
-					$subMenu.addClass("color-primary--background");
-
-					$closeTrigger.click(function (e) {
-						e.preventDefault();
-						$subMenu.removeClass("active");
-						$parentMenu.removeClass("active-sub-menu");
-						$($menu).parents(".nav-wrapper").scrollTop(0);
-					});
-
-					$subMenuTrigger.click(function (e) {
-						e.preventDefault();
-						$subMenu.addClass("active");
-						$parentMenu.addClass("active-sub-menu");
-						$($menu).parents(".nav-wrapper").scrollTop(0);
-					});
-				});
-			}
-		});
-	};
-
-	this.handleTouchClick = function () {
-		var mobileBreakpoint = 768;
-		// Only fire on touch devices
-		if ('ontouchstart' in window) {
-			$("nav ul li").each(function () {
-				var $menuItem = $(this);
-				$menuItem.on('touchstart', function (e) {
-					if (!$menuItem.hasClass("focus") && $menuItem.hasClass("menu-item-has-children") && $(window).width() > phoneMenuBreakpoint) {
-						e.preventDefault();
-						$menuItem.addClass("focus");
-					} else {
-						$menuItem.removeClass("focus");
-					}
-				});
-			});
-		}
-	};
-
-	this.closeMenu = function () {
-		$("body").removeClass("nav-open");
-		$("ul.menu").removeClass("active-sub-menu");
-		$("ul.sub-menu").removeClass("active").removeClass("active-sub-menu");
-	};
-
-	this.menuIsSticky = function () {
-		if ($(window).scrollTop() > stickypos) {
-			return true;
-		} else {
-			return false;
-		}
-	};
-
-	this.init(); // Run init in any case
+  this.init(); // Run init in any case
 };
 
-exports.default = mobileMenu;
+/* harmony default export */ __webpack_exports__["default"] = (mobileMenu);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(1)))
 
 /***/ }),

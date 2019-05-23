@@ -82,7 +82,11 @@ if ( post_password_required() ) {
 		<p class="no-comments"><?php esc_html__( 'Comments are closed.', 'agncy' ); ?></p>
 		<?php
 	endif;
-	comment_form();
+	comment_form(
+		array(
+			'class_form' => 'comment-form entry-content',
+		)
+	);
 	?>
 
 </div><!-- #comments -->

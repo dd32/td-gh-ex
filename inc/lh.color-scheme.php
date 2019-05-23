@@ -177,11 +177,11 @@ class AgncyColorScheme {
 		?>
 
 		<?php echo esc_attr( $class_base ); ?>-color {
-			color: <?php echo esc_attr( $color ); ?>;
+			color: <?php echo esc_attr( $color ); ?> !important;
 		}
 
 		<?php echo esc_attr( $class_base ); ?>-background-color {
-			background-color: <?php echo esc_attr( $color ); ?>;
+			background-color: <?php echo esc_attr( $color ); ?> !important;
 		}
 		<?php
 	}
