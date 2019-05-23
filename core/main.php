@@ -271,17 +271,20 @@ if (!function_exists('alhenalite_customize_excerpt_more')) {
 
 		$more = 0;
 
-		if ( $pos=strpos($post->post_content, '<!--more-->') && !has_excerpt( $post->ID )): 
-
-			$content = substr(apply_filters( 'the_content', get_the_content()), 0, -5);
+		if ( 
+			( $pos=strpos($post->post_content, '<!--more-->') ) && 
+			!has_excerpt($post->ID)
+		): 
+			
+			$content = apply_filters( 'the_content', get_the_content());
 		
 		else:
-		
+			
 			$content = $excerpt;
-
+	
 		endif;
 
-		return $content. '<a class="read-more" href="'.get_permalink($post->ID).'" title="More"> <span class="button"> ' . esc_html__( "Read More", "alhena-lite") . ' </span> </a>';
+		return $content. '<a class="read-more" href="'.esc_url(get_permalink($post->ID)).'" title="More"> <span class="button"> ' . esc_html__( "Read More", "alhena-lite") . '</span></a>';
 
 	}
 	
@@ -373,7 +376,9 @@ if (!function_exists('alhenalite_my_gallery_style')) {
 if (!function_exists('alhenalite_getskins')) {
 
 	function alhenalite_getskins($classes) {
-	
+
+		$classes[] = 'custombody';
+
 		if (alhenalite_setting('wip_skins')) :
 		
 			$getskin = explode("_", alhenalite_setting('wip_skins'));

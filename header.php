@@ -3,14 +3,21 @@
 <head>
    
 <meta http-equiv="Content-Type" content="<?php bloginfo('html_type'); ?>; charset=<?php bloginfo('charset'); ?>" />
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.2, user-scalable=yes" />
 
 <?php wp_head(); ?>
 
 </head>
 
-<body <?php body_class('custombody'); ?>>
+<body <?php body_class(); ?>>
+
+<?php
+
+if ( function_exists('wp_body_open') ) {
+	wp_body_open();
+}
+
+?>
 
 <div id="wrapper">
 
@@ -28,14 +35,14 @@
                                             
                             if ( alhenalite_setting('wip_custom_logo') ):
                             
-							    echo '<a href="'.home_url().'" title="'.get_bloginfo('name').'">';
-                                echo "<img src='".alhenalite_setting('wip_custom_logo')."' alt='logo'>"; 
+							    echo '<a href="'.esc_url(home_url('/')).'" title="'.esc_attr(get_bloginfo('name')).'">';
+                                echo "<img src='".esc_url(alhenalite_setting('wip_custom_logo'))."' alt='logo'>"; 
                                 echo '</a>';
                             
 							else: 
                             
-							    echo '<a href="'.home_url().'" class="logo" title="'.get_bloginfo('name').'">';
-                                bloginfo('name');
+							    echo '<a href="'.esc_url(home_url('/')).'" class="logo" title="'.esc_attr(get_bloginfo('name')).'">';
+							    echo esc_attr(get_bloginfo('name'));
                                 echo '</a>';
                             
 							endif; 
