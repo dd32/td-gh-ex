@@ -37,8 +37,8 @@ function best_news_customize_register( $wp_customize ) {
 			'theme_upsell',
 			array(
 				'title'    => esc_html__( 'Go Pro', 'best-news' ),
-				'pro_text' => esc_html__( 'Buy Best News Pro', 'best-news' ),
-				'pro_url'  => esc_url('https://www.postmagthemes.com/downloads/pro-best-news-wordpress-theme/'),
+				'pro_text' => esc_html__( 'Buy Pro Best News', 'best-news' ),
+				'pro_url'  => esc_url('https://www.postmagthemes.com/downloads/pro-best-news-newspaper-wordpress-theme/'),
 				'priority' => 1,
 			)
 		)

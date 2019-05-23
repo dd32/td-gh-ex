@@ -1,5 +1,5 @@
 <!-- News Slider -->
-<?php if(get_theme_mod('best_news_slider_enable','0')):?>
+<?php if(get_theme_mod('best_news_slider_enable','1')):?>
 	<section class="news-slider section">
 		<div class="container">
 			<div class="row">

@@ -29,8 +29,16 @@ Best News includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
-= 1.0 - May 20 2019 =
+= 1.0.1 - May 23 2019 =
+* Pro permalink has been fixed
+
+= 1.0.0 - May 23 2019 =
 * Initial release
+
+== Upgrade Notice ==
+
+= 1.0.1 - MAy 23 2018 =
+* Pro best news link was updated.
 
 == Images Resources ==
 All images are licensed under Creative Commons Zero (CC0) license.

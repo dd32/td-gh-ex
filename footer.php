@@ -10,7 +10,7 @@
  */
 
 ?>
-    <?php if(absint(get_theme_mod('best_news_footer_slider_enable','0'))==1): ?>
+    <?php if(absint(get_theme_mod('best_news_footer_slider_enable','1'))==1): ?>
 	<section>	
 	<div class ="container footer-slider">
 			<div class="mt-5 mb-5">

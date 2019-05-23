@@ -50,7 +50,7 @@ $wp_customize->add_section(
 
 $wp_customize->add_setting( 'best_news_footer_slider_enable',
     array(
-    'default'           => 0,
+    'default'           => 1,
     'sanitize_callback' => 'best_news_sanitize_checkbox',
     )
 );
