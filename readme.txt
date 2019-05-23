@@ -42,13 +42,19 @@ arenabiz is distributed under the terms of the GNU GPL
 The following opensource projects, graphics, fonts, API's or other files as listed have been used in developing this theme. Thanks to the author for the creative work they made. All creative works are licensed as being GPL or GPL compatible.
 
 
-[1.00] font-awesome, Copyright Dave Gandy.
+[1.00] font-awesome fonts, Copyright Dave Gandy.
+
+	Source: http://fontawesome.io/
+	License: SIL OFL 1.1
+	License URI: http://scripts.sil.org/OFL
+
+
+[1.001] font-awesome.css, Copyright Dave Gandy.
 
 	Source: http://fontawesome.io/
 	License: Licensed under MIT
 	License URI: http://opensource.org/licenses/MIT
 
-Fonts - [SIL OFL 1.1](http://scripts.sil.org/OFL)
 
 [1.01] images used in screenshot.
 
@@ -184,22 +190,24 @@ Fonts - [SIL OFL 1.1](http://scripts.sil.org/OFL)
 = 1.0.1
 - Fixed: readme.txt validated as per guidelines,element-about.php file moved,upsell button removed from customizer,images changed for credit problems,prefix added to the theme functions,language folder removed,theme slug added to google font handle,Changed date('Y') to date_i18n(__('Y','textdomain')), removed unused files, removed search-form from add_theme_support( 'html5' )
 
-4/15/2019
+
 = 1.0.2
 - Fixed: PHP "headers already send" errors fixed, arenabiz/sidebar-footer.php file changed for global variable issue, prefix removed for bootstrap.css, selectnav.js and jquery.flexslider.js, superfish.js file removed
 
-4/17/2019
 = 1.0.3
 - Fixed: header image fixed, jquery console issues fixed.
 
-4/18/2019
 = 1.0.4
 - Fixed: credit link provided for trt-customizer-pro.
 
-5/20/2019
 = 1.0.5
 - Fixed: image license changed, readme file fixed according to recent guidelines, extra content creation with customizer removed, escaping and sanitizing errors fixed.
 
-5/22/2019
 = 1.0.6
-- Fixed: demo lin fixed for Appearance >> arenabiz info` page, 404.php file fixed for unused variable, readme.txt file fixed for changelog, prefix added for font-awesome, credit link added for font-awesome
+- Fixed: demo link fixed for Appearance >> arenabiz info` page, 404.php file fixed for unused variable, readme.txt file fixed for changelog, prefix added for font-awesome, credit link added for font-awesome
+
+= 1.0.7
+- Fixed: unused variable removed from header.php, unused functions removed from functions.php and reade.txt file updated.
+
+
+

@@ -2,41 +2,6 @@
 ob_start();
 include_once get_template_directory() . '/admin/customizer.php';
 
-//get the theme option from options array
-function arenabiz_get_option($name, $default = '') {
-//    echo $default;
-    $options = get_option('arenabiz_options');
-    if (isset($options[$name]) && $options[$name] != '') {
-        return $options[$name];
-    } elseif ($default) {
-        if (arenabiz_get_option('arenabiz_dummy_data') == 'on') {
-            return $default;
-        }
-    } else {
-        return false;
-    }
-}
-
-// Save all option in single array
-function arenabiz_save_option($option) {
-    if (!empty($option)) {
-        return update_option('arenabiz_options', $option);
-    }
-}
-
-//update theme option
-function arenabiz_update_option($name, $value) {
-    $options = get_option('arenabiz_options');
-    $options[$name] = $value;
-    return update_option('arenabiz_options', $options);
-}
-
-//delete theme option
-function arenabiz_delete_option($name) {
-    $options = get_option('arenabiz_options');
-    unset($options[$name]);
-    return update_option('arenabiz_options', $options);
-}
 /**
  * arenabiz functions and definitions
  *
