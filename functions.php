@@ -173,7 +173,6 @@ add_action( 'wp_enqueue_scripts', 'avior_scripts' );
  */
 require get_template_directory() . '/inc/template-tags.php';
 
-
 /**
  * Custom functions that act independently of the theme templates.
  */
@@ -183,6 +182,11 @@ require get_template_directory() . '/inc/extras.php';
  * Customizer additions.
  */
 require get_template_directory() . '/inc/customizer.php';
+
+/**
+ * TGM init.
+ */
+require get_template_directory() . '/inc/tgmpa-init.php';
 
 /**
  * Load Jetpack compatibility file.
@@ -208,7 +212,6 @@ if ( ! function_exists( 'avior_the_custom_logo' ) ) :
 		}
 	}
 endif;
-
 
 if ( ! function_exists( 'avior_fonts_url' ) ) :
 	/**

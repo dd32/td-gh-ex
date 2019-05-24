@@ -2,7 +2,7 @@
 Contributors: MotoPress
 Tags: one-column, full-width-template, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, microformats, rtl-language-support, sticky-post, threaded-comments, translation-ready, blog, e-commerce, footer-widgets, custom-logo
 Requires at least: 4.0
-Tested up to: 4.9
+Tested up to: 5.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -20,7 +20,7 @@ With Avior you'll easily take care of a website customization: change footer and
 
 == Copyright ==
 
-Avior WordPress Theme, Copyright (C) 2017, MotoPress
+Avior WordPress Theme, Copyright (C) 2019, MotoPress
 Avior is distributed under the terms of the GNU GPL
 
 == Frequently Asked Questions ==
@@ -30,6 +30,9 @@ Avior is distributed under the terms of the GNU GPL
 To add social icons, navigate to WordPress Customizer > Menus > Add Menu > Add Custom links with the appropriate names (e.g. Twitter, Facebook) and links to your social media accounts. In the Display Location menu choose the "Social" menu and save.
 
 == Changelog ==
+
+= 0.2.3, May 24 2019 =
+* Added recommendation to install Getwid plugin.
 
 = 0.2.2 =
 * Minor bugfixes and improvements.
