@@ -43,7 +43,8 @@ function accesspress_bxsliderscript(){
 				mode: '<?php echo esc_attr($accesspress_slider_transition); ?>',
 				auto : <?php echo esc_attr($accesspress_auto_transition); ?>,
 				pause: '<?php echo esc_attr($accesspress_slider_pause); ?>',
-				speed: '<?php echo esc_attr($accesspress_slider_speed); ?>'
+				speed: '<?php echo esc_attr($accesspress_slider_speed); ?>',
+                touchEnabled: false
 			});				
 		});
     </script>

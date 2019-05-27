@@ -97,6 +97,14 @@ Pattern Images
 ---------------------------------------------
 == Changelog ==
 
+Version 1.34
+ * Fixed Slider Button link issue 
+ * Fixed Dynamic Color issue.
+ * Tetsted with PHP 7.3+ 
+ * Tested with WordPress 5X
+ * Tested with Woocommerce 3.6X
+ * Updates Minor CSS
+
 Version 1.33
  * Added Styles for Guttenberg Compatible
  * Updates Minor CSS

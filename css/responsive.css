@@ -190,6 +190,10 @@
         float: none;
         margin: 0 auto;
         width: 50%;
+        text-align: center;
+    }
+    .cta-banner-title {
+        margin-bottom: 15px;
     }
     .slider-caption .caption-title {
         font-size: 20px;

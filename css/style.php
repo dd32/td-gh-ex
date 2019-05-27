@@ -35,7 +35,15 @@
                 .widget_search button, .oops,
                 .error404 .not_found,
                 .cat-links a:hover, .tags-links a:hover,
-                .contact-info-wrap a, .search-icon a:hover{
+                .contact-info-wrap a, .search-icon a:hover,
+                .woocommerce #respond input#submit.alt, .woocommerce button.button.alt,
+                .woocommerce input.button.alt, .woocommerce #respond input#submit,
+                .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,
+                .woocommerce ul.products li.product .price,
+                .woocommerce div.product p.price, .woocommerce div.product span.price,
+                .woocommerce .woocommerce-message:before,
+                .woocommerce a.button.alt,
+                a{
                     color: {$tpl_color}; 
                 }";
                 
@@ -57,7 +65,13 @@
                 #respond input#submit,
                 .error404 .error-num .num,
                 button, input[type=\"button\"], input[type=\"reset\"], input[type=\"submit\"],
-                .nav-previous a, .nav-next a{
+                .nav-previous a, .nav-next a,
+                .woocommerce span.onsale,
+                .woocommerce #respond input#submit.alt:hover, .woocommerce button.button.alt:hover,
+                .woocommerce input.button.alt:hover, .woocommerce #respond input#submit:hover,
+                .woocommerce a.button:hover, .woocommerce button.button:hover,
+                .woocommerce input.button:hover,
+                .woocommerce a.button.alt:hover{
                     background: {$tpl_color} 
                 }";
                 
@@ -85,7 +99,13 @@
                 .feature-read-more:hover, .info-read-more:hover,
                 .testimonail-content-wrap,
                 .secondary-left .widget, .secondary-right .widget,
-                button, input[type=\"button\"], input[type=\"reset\"], input[type=\"submit\"]{
+                button, input[type=\"button\"], input[type=\"reset\"], input[type=\"submit\"],
+                .woocommerce div.product div.images img, .woocommerce ul.products li.product a img,
+                .woocommerce #respond input#submit.alt, .woocommerce button.button.alt,
+                .woocommerce input.button.alt, .woocommerce #respond input#submit,
+                .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,
+                .woocommerce .woocommerce-message,
+                .woocommerce a.button.alt{
                     border-color: {$tpl_color} 
                 }";
                 
