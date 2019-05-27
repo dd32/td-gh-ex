@@ -689,318 +689,326 @@ msgid "Content Size"
 msgstr ""
 
 #: inc/customizer.php:127
-msgid "Content Color"
+msgid "Meta Text Color"
 msgstr ""
 
 #: inc/customizer.php:134
-msgid "Content Heading Color"
+msgid "Meta Text Link Color"
 msgstr ""
 
-#: inc/customizer.php:140
-msgid "Content Heading 1 Size"
+#: inc/customizer.php:141
+msgid "Content Color"
 msgstr ""
 
 #: inc/customizer.php:148
+msgid "Content Heading Color"
+msgstr ""
+
+#: inc/customizer.php:154
+msgid "Content Heading 1 Size"
+msgstr ""
+
+#: inc/customizer.php:162
 msgid "Content Heading 2 Size"
 msgstr ""
 
-#: inc/customizer.php:156
+#: inc/customizer.php:170
 msgid "Content Heading 3 Size"
 msgstr ""
 
-#: inc/customizer.php:164
+#: inc/customizer.php:178
 msgid "Content Heading 4 Size"
 msgstr ""
 
-#: inc/customizer.php:172
+#: inc/customizer.php:186
 msgid "Content Heading 5 Size"
 msgstr ""
 
-#: inc/customizer.php:180
+#: inc/customizer.php:194
 msgid "Content Heading 6 Size"
 msgstr ""
 
-#: inc/customizer.php:190
+#: inc/customizer.php:204
 msgid "Header Padding"
 msgstr ""
 
-#: inc/customizer.php:198
+#: inc/customizer.php:212
 msgid "Center Logo"
 msgstr ""
 
-#: inc/customizer.php:204
+#: inc/customizer.php:218
 msgid "Content Link Color"
 msgstr ""
 
-#: inc/customizer.php:212
+#: inc/customizer.php:226
 msgid "Remove Link Underline"
 msgstr ""
 
-#: inc/customizer.php:218
+#: inc/customizer.php:232
 msgid "Content Link Hover Color"
 msgstr ""
 
-#: inc/customizer.php:226
+#: inc/customizer.php:240
 msgid "Add Link Underline on Hover"
 msgstr ""
 
-#: inc/customizer.php:235
+#: inc/customizer.php:249
 msgid "Menu Alignment"
 msgstr ""
 
-#: inc/customizer.php:240, inc/customizer.php:686, inc/widgets.php:171
+#: inc/customizer.php:254, inc/customizer.php:700, inc/widgets.php:171
 msgid "Left"
 msgstr ""
 
-#: inc/customizer.php:241, inc/customizer.php:687, inc/widgets.php:172
+#: inc/customizer.php:255, inc/customizer.php:701, inc/widgets.php:172
 msgid "Right"
 msgstr ""
 
-#: inc/customizer.php:242, inc/customizer.php:555, inc/customizer.php:582, inc/customizer.php:617
+#: inc/customizer.php:256, inc/customizer.php:569, inc/customizer.php:596, inc/customizer.php:631
 msgid "Center"
 msgstr ""
 
-#: inc/customizer.php:247, inc/customizer.php:409
+#: inc/customizer.php:261, inc/customizer.php:423
 msgid "Background"
 msgstr ""
 
-#: inc/customizer.php:254, inc/widgets.php:138
+#: inc/customizer.php:268, inc/widgets.php:138
 msgid "Text Color"
 msgstr ""
 
-#: inc/customizer.php:261
+#: inc/customizer.php:275
 msgid "Second Level Background"
 msgstr ""
 
-#: inc/customizer.php:268
+#: inc/customizer.php:282
 msgid "Second Level Text"
 msgstr ""
 
-#: inc/customizer.php:275
+#: inc/customizer.php:289
 msgid "Hover Background"
 msgstr ""
 
-#: inc/customizer.php:283
+#: inc/customizer.php:297
 msgid "Hover Text"
 msgstr ""
 
-#: inc/customizer.php:291
+#: inc/customizer.php:305
 msgid "Second Level Hover"
 msgstr ""
 
-#: inc/customizer.php:299
+#: inc/customizer.php:313
 msgid "Second Level Hover Text"
 msgstr ""
 
-#: inc/customizer.php:307, inc/widgets.php:155
+#: inc/customizer.php:321, inc/widgets.php:155
 msgid "Icon Color"
 msgstr ""
 
-#: inc/customizer.php:314
+#: inc/customizer.php:328
 msgid "Icon Hover Color"
 msgstr ""
 
-#: inc/customizer.php:322
+#: inc/customizer.php:336
 msgid "Current Page Background"
 msgstr ""
 
-#: inc/customizer.php:330
+#: inc/customizer.php:344
 msgid "Current Page Text"
 msgstr ""
 
-#: inc/customizer.php:338
+#: inc/customizer.php:352
 msgid "Search Icon Background"
 msgstr ""
 
-#: inc/customizer.php:345
+#: inc/customizer.php:359
 msgid "Search Icon Color"
 msgstr ""
 
-#: inc/customizer.php:352
+#: inc/customizer.php:366
 msgid "Search Icon Hover Color"
 msgstr ""
 
-#: inc/customizer.php:360
+#: inc/customizer.php:374
 msgid "Search Input Background"
 msgstr ""
 
-#: inc/customizer.php:367
+#: inc/customizer.php:381
 msgid "Search Input Text"
 msgstr ""
 
-#: inc/customizer.php:374
+#: inc/customizer.php:388
 msgid "Menu Item Vertical Padding (px)"
 msgstr ""
 
-#: inc/customizer.php:383
+#: inc/customizer.php:397
 msgid "Menu Item Horizontal Padding (px)"
 msgstr ""
 
-#: inc/customizer.php:391
+#: inc/customizer.php:405
 msgid "Menu Font Size"
 msgstr ""
 
-#: inc/customizer.php:399
+#: inc/customizer.php:413
 msgid "Header Widget Menu Border Color"
 msgstr ""
 
-#: inc/customizer.php:416
+#: inc/customizer.php:430
 msgid "Title Text"
 msgstr ""
 
-#: inc/customizer.php:423
+#: inc/customizer.php:437
 msgid "Title Background"
 msgstr ""
 
-#: inc/customizer.php:430
+#: inc/customizer.php:444
 msgid "Search Background"
 msgstr ""
 
-#: inc/customizer.php:437
+#: inc/customizer.php:451
 msgid "Menu Text"
 msgstr ""
 
-#: inc/customizer.php:444
+#: inc/customizer.php:458
 msgid "Menu Background"
 msgstr ""
 
-#: inc/customizer.php:451
+#: inc/customizer.php:465
 msgid "Menu Border"
 msgstr ""
 
-#: inc/customizer.php:460
+#: inc/customizer.php:474
 msgid "Button Background Color"
 msgstr ""
 
-#: inc/customizer.php:466
+#: inc/customizer.php:480
 msgid "Button Color"
 msgstr ""
 
-#: inc/customizer.php:473
+#: inc/customizer.php:487
 msgid "Button Border Color"
 msgstr ""
 
-#: inc/customizer.php:479
+#: inc/customizer.php:493
 msgid "Button Text Shadow"
 msgstr ""
 
-#: inc/customizer.php:485
+#: inc/customizer.php:499
 msgid "Button Shadow"
 msgstr ""
 
-#: inc/customizer.php:491
+#: inc/customizer.php:505
 msgid "Checkout Button Background Color"
 msgstr ""
 
-#: inc/customizer.php:497
+#: inc/customizer.php:511
 msgid "Checkout Button Color"
 msgstr ""
 
-#: inc/customizer.php:504
+#: inc/customizer.php:518
 msgid "Checkout Button Border Color"
 msgstr ""
 
-#: inc/customizer.php:513
+#: inc/customizer.php:527
 msgid " Masthead Widget Titles"
 msgstr ""
 
-#: inc/customizer.php:520
+#: inc/customizer.php:534
 msgid "Circle Icon Widget Background"
 msgstr ""
 
-#: inc/customizer.php:527
+#: inc/customizer.php:541
 msgid "Circle Icon Widget Icon"
 msgstr ""
 
-#: inc/customizer.php:536
+#: inc/customizer.php:550
 msgid "Masthead Background"
 msgstr ""
 
-#: inc/customizer.php:543
+#: inc/customizer.php:557
 msgid "Masthead Background Image"
 msgstr ""
 
-#: inc/customizer.php:550
+#: inc/customizer.php:564
 msgid "Masthead Background Image Layout"
 msgstr ""
 
-#: inc/customizer.php:554, inc/customizer.php:581, inc/customizer.php:616, inc/settings.php:490
+#: inc/customizer.php:568, inc/customizer.php:595, inc/customizer.php:630, inc/settings.php:490
 msgid "Default"
 msgstr ""
 
-#: inc/customizer.php:556, inc/customizer.php:583, inc/customizer.php:618
+#: inc/customizer.php:570, inc/customizer.php:597, inc/customizer.php:632
 msgid "Tile"
 msgstr ""
 
-#: inc/customizer.php:557, inc/customizer.php:584, inc/customizer.php:619
+#: inc/customizer.php:571, inc/customizer.php:598, inc/customizer.php:633
 msgid "Cover"
 msgstr ""
 
-#: inc/customizer.php:563
+#: inc/customizer.php:577
 msgid "Page Background"
 msgstr ""
 
-#: inc/customizer.php:570
+#: inc/customizer.php:584
 msgid "Page Background Image"
 msgstr ""
 
-#: inc/customizer.php:577
+#: inc/customizer.php:591
 msgid "Page Background Image Layout"
 msgstr ""
 
-#: inc/customizer.php:590
+#: inc/customizer.php:604
 msgid "Image Shadow and Rounding"
 msgstr ""
 
-#: inc/customizer.php:598
+#: inc/customizer.php:612
 msgid "Footer Background"
 msgstr ""
 
-#: inc/customizer.php:605
+#: inc/customizer.php:619
 msgid "Footer Background Image"
 msgstr ""
 
-#: inc/customizer.php:612
+#: inc/customizer.php:626
 msgid "Footer Background Image Layout"
 msgstr ""
 
-#: inc/customizer.php:625
+#: inc/customizer.php:639
 msgid "Widget Titles"
 msgstr ""
 
-#: inc/customizer.php:632, inc/widgets.php:134
+#: inc/customizer.php:646, inc/widgets.php:134
 msgid "Text"
 msgstr ""
 
-#: inc/customizer.php:638
+#: inc/customizer.php:652
 msgid "Link Color"
 msgstr ""
 
-#: inc/customizer.php:645
+#: inc/customizer.php:659
 msgid "Link Hover Color"
 msgstr ""
 
-#: inc/customizer.php:652
+#: inc/customizer.php:666
 msgid "Site Info Text"
 msgstr ""
 
-#: inc/customizer.php:659
+#: inc/customizer.php:673
 msgid "Site Info Link"
 msgstr ""
 
-#: inc/customizer.php:666
+#: inc/customizer.php:680
 msgid "Scroll to Top Color "
 msgstr ""
 
-#: inc/customizer.php:673
+#: inc/customizer.php:687
 msgid "Scroll to Top Background"
 msgstr ""
 
-#: inc/customizer.php:682
+#: inc/customizer.php:696
 msgid "Sidebar Position"
 msgstr ""
 
-#: inc/customizer.php:685, inc/menu.php:72, inc/settings.php:223, inc/widgets.php:144, inc/sliders/sliders.php:8
+#: inc/customizer.php:699, inc/menu.php:72, inc/settings.php:223, inc/widgets.php:144, inc/sliders/sliders.php:8
 msgid "None"
 msgstr ""
 
