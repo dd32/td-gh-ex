@@ -338,6 +338,28 @@ $wp_customize->add_control('better_health_appointment_shortcode_field',
     )
 );
 
+/**
+ *Appointment Text Field
+ */
+$wp_customize->add_setting(
+    'better_health_appointment_text_field',
+    array(
+        'default' => $default['better_health_appointment_text_field'],
+        'sanitize_callback' => 'sanitize_text_field',
+
+    )
+);
+
+$wp_customize->add_control('better_health_appointment_text_field',
+    array(
+        'label' => esc_html__('Make Appointment Text', 'better-health'),
+        'section' => 'better_health_reset_option',
+        'section' => 'better_health_appointment_option',
+        'type' => 'text',
+        'priority' => 10
+    )
+);
+
 
 
 

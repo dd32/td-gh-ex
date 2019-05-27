@@ -16,6 +16,7 @@ $mobile_value = better_health_get_option('better_health_top_header_phone_no');
 $email_icon = better_health_get_option('better_health_email_icon');
 $email_value = better_health_get_option('better_health_top_header_email');
 $appointment_short_code = better_health_get_option('better_health_appointment_shortcode_field');
+$appointment_text = better_health_get_option('better_health_appointment_text_field');
 
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?>>
@@ -131,11 +132,11 @@ $appointment_short_code = better_health_get_option('better_health_appointment_sh
                 ?>
             </div>
            <?php
-             if(!empty($appointment_short_code))
+             if(!empty($appointment_short_code || $appointment_text))
              {
             ?>  
                     <div class="make-booking">
-                            <a data-toggle="modal" href="#appointment" class="btn btn-default makebooking"><?php esc_html_e('Make Appoinment','better-health')?></a>
+                            <a data-toggle="modal" href="#appointment" class="btn btn-default makebooking"><?php esc_html_e($appointment_text);?></a>
                     </div>
                  
                     <!-- Make appointment model -->

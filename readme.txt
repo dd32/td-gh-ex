@@ -2,15 +2,15 @@
 
 Contributors: canyonthemes
 Tags: custom-logo, one-column, two-columns, right-sidebar, left-sidebar, full-width-template, custom-background, custom-colors, custom-menu, featured-images, theme-options, threaded-comments, translation-ready, blog, portfolio, e-commerce, footer-widgets
-Requires at least: 4.4
-Tested up to: 4.8.3
-Stable tag: 0.0.6
+Requires at least: 4.8
+Tested up to: 5.1.1
+Stable tag: 0.0.7
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 #### Description ####
 
-Better Health  is a capable and competent, professional and robust, serious and reliable responsive WordPress multipurpose website theme. Better Health has been developed as a powerful platform for the effortless crafting of feature-rich medical industry websites.
+Better Health  is a capable and competent, professional and robust, serious and reliable responsive WordPress multipurpose website theme. Better Health has been developed as a powerful platform for the effortless crafting of feature-rich medical industry websites. It has one click demo import as well.
 The advanced theme options and available various widgets with drag and drop features will help to customize your site as your need.  Some of the available options are awesome slider section, header options, footer options, layout design options,Color options, widget options, custom copyright options integrated social icons using menu, reset color option and lots of other available options will allow you to create unique website as you want. Medical practices, medical organizations and related businesses find in Better Health a staunch ally in bringing the benefits of their practice to a worldwide audience. Try Better Health today!
  
 Demo: http://demo.canyonthemes.com/better-health
@@ -23,6 +23,14 @@ Demo: http://demo.canyonthemes.com/better-health
 3. Click Activate to use your new theme right away.
 
 #### Changelog ####
+
+## 0.0.7 - May 27 2019 ##
+
+* View More button text added.
+* Book appointment text added.
+* One click demo import added.
+* Checked with latest WordPress version.
+* Fixed minor CSS issues. 
 
 ## 0.0.6 - June 25 2018 ##
 

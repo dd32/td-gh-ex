@@ -7,7 +7,7 @@ if (!class_exists('Better_Health_Recent_Post_Widget')) {
         {
 
             $defaults = array(
-                'cat_id' => -1,
+                'cat_id' => 2,
                 'title' => esc_html__('Recent Posts','better-health'),
                 'sub-title' => '',
 
@@ -30,7 +30,15 @@ if (!class_exists('Better_Health_Recent_Post_Widget')) {
             if (!empty($instance)) {
                 $instance = wp_parse_args( (array ) $instance, $this->defaults() );
                 echo $args['before_widget'];
-                $catid = absint( $instance['cat_id'] );
+                 $a1 =10;
+                  if($a1 == $instance['cat_id'] )
+                {
+                   $instance['cat_id'] = 2;
+                   
+                } 
+               
+               $catid = absint( $instance['cat_id'] );
+              
                 $title = apply_filters('widget_title', !empty($instance['title']) ? esc_html( $instance['title']): '', $instance, $this->id_base);
                 $subtitle =  esc_html( $instance['sub-title'] );
 
@@ -63,7 +71,7 @@ if (!class_exists('Better_Health_Recent_Post_Widget')) {
 
                             $i = 0;
                             $sticky = get_option( 'sticky_posts' );
-                            if ($catid != -1) {
+                            if ($catid != -1 || $catid > 0) {
                                 $home_recent_post_section = array(
                                     'ignore_sticky_posts' => true,
                                     'post__not_in' => $sticky,
@@ -138,7 +146,7 @@ if (!class_exists('Better_Health_Recent_Post_Widget')) {
             $instance['cat_id'] = (isset( $new_instance['cat_id'] ) ) ? absint($new_instance['cat_id']) : '';
             $instance['title'] = sanitize_text_field( $new_instance['title'] );
             $instance['sub-title'] = sanitize_text_field( $new_instance['sub-title'] );
-
+             
             return $instance;
 
         }
@@ -149,6 +157,14 @@ if (!class_exists('Better_Health_Recent_Post_Widget')) {
             $catid = absint( $instance['cat_id'] );
             $title = esc_attr( $instance['title'] );
             $subtitle =  esc_attr( $instance['sub-title'] );
+
+             $a1 = array(10);
+          
+            if($a1 == $instance['cat_id'] )
+             
+              {
+                $instance['cat_id'] = array(2);
+              }
 
             ?>
 

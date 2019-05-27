@@ -15,6 +15,8 @@ if ($better_health_slider_section_option != 'hide') {
 
     $better_health_slider_section_cat_id = better_health_get_option('better_health_slider_cat_id');
 
+    $better_health_slider_view_more_txt = better_health_get_option('better_health_slider_view_more_txt');
+
     $better_health_get_started_text = better_health_get_option('better_health_slider_get_started_txt');
 
     $better_health_get_started_text_link = better_health_get_option('better_health_slider_get_started_link');
@@ -22,29 +24,29 @@ if ($better_health_slider_section_option != 'hide') {
     $better_health_slider_category = get_category($better_health_slider_section_cat_id);
     if(!empty($better_health_slider_section_cat_id))
     {
-        $count = $better_health_slider_category->category_count;
-    $no_of_slider = better_health_get_option('better_health_no_of_slider');
-    if ($count > 0 && $no_of_slider > 0) {
-        ?>
-        <section id="slider" class="slider">
-            <div id="main-slide" class="carousel slide" data-ride="carousel">
-                
-                <!-- Wrapper for carousel items -->
-                <div class="carousel-inner">
-                    <!--1st item start-->
-                    <?php
-                    $i = 0;
-                    if (!empty($better_health_slider_section_cat_id)) {
-                        $better_health_home_slider_section = array('cat' => $better_health_slider_section_cat_id, 'posts_per_page' => $no_of_slider);
-                        $better_health_home_slider_section_query = new WP_Query($better_health_home_slider_section);
-                        if ($better_health_home_slider_section_query->have_posts()) {
+        
+        $no_of_slider = better_health_get_option('better_health_no_of_slider');
+        if ($no_of_slider > 0) {
+            ?>
+            <section id="slider" class="slider">
+                <div id="main-slide" class="carousel slide" data-ride="carousel">
 
-                            while ($better_health_home_slider_section_query->have_posts()) {
-                                $better_health_home_slider_section_query->the_post();
-                                ?>
-                                <div class="item <?php if ($i == 0) {
-                                    echo "active";
-                                } ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url( $post->ID, 'full' ); ?>);">
+                    <!-- Wrapper for carousel items -->
+                    <div class="carousel-inner">
+                        <!--1st item start-->
+                        <?php
+                        $i = 0;
+                        if (!empty($better_health_slider_section_cat_id)) {
+                            $better_health_home_slider_section = array('cat' => $better_health_slider_section_cat_id, 'posts_per_page' => $no_of_slider);
+                            $better_health_home_slider_section_query = new WP_Query($better_health_home_slider_section);
+                            if ($better_health_home_slider_section_query->have_posts()) {
+
+                                while ($better_health_home_slider_section_query->have_posts()) {
+                                    $better_health_home_slider_section_query->the_post();
+                                    ?>
+                                    <div class="item <?php if ($i == 0) {
+                                        echo "active";
+                                    } ?>" style="background-image: url(<?php echo get_the_post_thumbnail_url( $post->ID, 'full' ); ?>);">
                                     
                                     
                                     <div class="slider-content text-center">
@@ -54,15 +56,18 @@ if ($better_health_slider_section_option != 'hide') {
                                             <?php
                                             if (!empty($better_health_get_started_text)) {
                                                 ?>
-                                                 <p class="effect3">
+                                                <p class="effect3">
                                                     <a href="<?php echo esc_url($better_health_get_started_text_link); ?>" class="slider btn btn-primary">
                                                         <?php echo esc_html($better_health_get_started_text) ?>
                                                     </a>
-                                                    <?php } ?>
-                                                    <a href="<?php the_permalink(); ?>" class="slider btn btn-secondary">
-                                                        <?php esc_html_e('View More', 'better-health'); ?>
-                                                    </a>
-                                                </p>
+                                                <?php } ?>
+                                                <?php if(!empty($better_health_slider_view_more_txt)){ ?>
+                                                <a href="<?php the_permalink(); ?>" class="slider btn btn-secondary">
+                                                    <?php  
+                                                        echo esc_html_e($better_health_slider_view_more_txt); ?>
+                                                </a>
+                                                <?php    } ?>
+                                            </p>
                                         </div>
                                         <div class="over-bg"></div>
                                     </div>
@@ -80,7 +85,7 @@ if ($better_health_slider_section_option != 'hide') {
                 <!-- Carousel controls -->
 
                 <?php
-                if ($count > 1 && $no_of_slider > 1) {
+                if ($no_of_slider > 1) {
                     ?>
                     <a class="carousel-control left" href="#main-slide" data-slide="prev">
                         <span class="carousel-arrow">

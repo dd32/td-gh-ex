@@ -7,7 +7,7 @@ if (!class_exists('Better_Health_Testimonial_Widget')) {
         {
 
             $defaults = array(
-                'cat_id' => 0,
+                'cat_id' =>5,
                 'bg_image' => '',
             );
             return $defaults;
@@ -27,14 +27,19 @@ if (!class_exists('Better_Health_Testimonial_Widget')) {
 
             if (!empty($instance)) {
                 $instance = wp_parse_args((array )$instance, $this->defaults());
-                $catid = absint($instance['cat_id']);
-                $bgimage = esc_url($instance['bg_image']);
-                $category = get_category( $catid );
-                $count = $category->category_count;
-                echo $args['before_widget'];
 
-                if ($count > 0) {
-                    ?>
+                $a1 = 9;
+                
+              if($a1 == $instance['cat_id'] )
+                {
+                  $instance['cat_id'] = 5;
+                   
+                } 
+               $catid = absint($instance['cat_id']);
+                $bgimage = esc_url($instance['bg_image']);
+               
+                echo $args['before_widget'];
+                 ?>
                   
 
                     <!-- NEW -->
@@ -94,7 +99,7 @@ if (!class_exists('Better_Health_Testimonial_Widget')) {
                     </section>
 
                     <?php
-                }
+                
                 echo $args['after_widget'];
             }
         }
@@ -112,6 +117,13 @@ if (!class_exists('Better_Health_Testimonial_Widget')) {
             $instance = wp_parse_args((array )$instance, $this->defaults());
             $catid = absint($instance['cat_id']);
             $bgimage = esc_url($instance['bg_image']);
+            $a1 = array(9);
+          
+            if($a1 == $instance['cat_id'] )
+             
+              {
+                $instance['cat_id'] = array(5);
+              }
             ?>
 
             <p>

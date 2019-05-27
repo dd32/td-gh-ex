@@ -98,6 +98,27 @@ $wp_customize->add_control(
     )
 );
 
+/**
+ * Field for Get Started button text
+ *
+ */
+$wp_customize->add_setting(
+    'better_health_slider_view_more_txt',
+    array(
+        'default' => $default['better_health_slider_view_more_txt'],
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+$wp_customize->add_control(
+    'better_health_slider_view_more_txt',
+    array(
+        'type' => 'text',
+        'label' => esc_html__('View More Button', 'better-health'),
+        'section' => 'better_health_slider_section',
+        'priority' => 11
+    )
+);
+
 
 /**
  * Field for Get Started button text

@@ -7,7 +7,7 @@ if( !class_exists( 'Better_Health_Services_Widget') ){
         {
 
             $defaults = array(
-                'cat_id' => 0,
+                'cat_id' => 19,
                 'title' => esc_html__('Service Title','better-health'),
                 'sub-title' => '',
                 'image' => '',

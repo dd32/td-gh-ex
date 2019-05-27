@@ -26,6 +26,7 @@ if ( !function_exists('better_health_get_default_theme_options' ) ) :
         $default['better_health_homepage_feature_option'] = 'hide';
         $default['better_health_hide_top_footer_contact_link_section'] = 'hide';
         $default['better_health_no_of_slider'] = 3;
+        $default['better_health_slider_view_more_txt'] = esc_html__('View More', 'better-health');
         $default['better_health_slider_get_started_txt'] = esc_html__('Get Started!', 'better-health');
         $default['better_health_slider_get_started_link'] = '#';
 
@@ -71,6 +72,7 @@ if ( !function_exists('better_health_get_default_theme_options' ) ) :
         $default['better_health_social_link_hide_option'] = 0;
         $default['better_health_appointment_hide_option'] = 0;
         $default['better_health_appointment_shortcode_field'] = '';
+        $default['better_health_appointment_text_field'] = esc_html__('Make Appointment', 'better-health');
 
          // Font Awesome Icon list for service and offer page
        

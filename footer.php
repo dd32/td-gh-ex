@@ -171,7 +171,7 @@ $contact_subtitle = better_health_get_option('better_health_contact_subtitle_tex
             <div class="container">
                 <div class="row">
                         <?php
-                            $column_class = 'widget-column footer-active-' . absint( $column_count );
+                         
                               for ( $i = 1; $i <= 4 ; $i++ )
                               {
                                   if ( is_active_sidebar( 'footer-' . $i ) )

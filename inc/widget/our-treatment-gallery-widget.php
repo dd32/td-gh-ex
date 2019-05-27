@@ -10,7 +10,7 @@ if (!class_exists('Better_Health_Treatment_Gallery_Widget'))
             $defaults = array(
                 'title' => esc_html__('Our Treatment Gallery', 'better-health'),
                 'better_health_portfolio_filter_all' => esc_html__('All', 'better-health'),
-                'cat_id' => array(),
+                'cat_id' => array(20,17,18),
                 'featured_image_size' => 'full',
                 'post_column' => 3,
                 'post_number' => 6,
@@ -34,6 +34,12 @@ if (!class_exists('Better_Health_Treatment_Gallery_Widget'))
             $instance = wp_parse_args((array)$instance, $this->defaults());
             if (!empty($instance))
              {
+                  $a1 = array(10);
+
+               if($a1 == $instance['cat_id'] )
+                {
+                   $instance['cat_id'] = array(2);
+                } 
                 $post_number = absint($instance['post_number']);
                 $column_number = absint($instance['post_column']);
                 $featured_image = esc_html($instance['featured_image_size']);
@@ -179,6 +185,15 @@ if (!class_exists('Better_Health_Treatment_Gallery_Widget'))
             $title = esc_attr($instance['title']);
             $better_health_ad_title = esc_attr($instance['better_health_portfolio_filter_all']);
             $better_health_selected_cat = '';
+
+            $a1 = array(10);
+          
+            if($a1 == $instance['cat_id'] )
+             
+              {
+                $instance['cat_id'] = array(2);
+              }
+
             if (!empty($instance['cat_id']))
             {
                 $better_health_selected_cat = $instance['cat_id'];
