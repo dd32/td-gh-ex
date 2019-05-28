@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Blogghiamo\n"
-"POT-Creation-Date: 2019-04-30 18:33+0100\n"
-"PO-Revision-Date: 2019-04-30 18:33+0100\n"
+"POT-Creation-Date: 2019-05-28 10:34+0100\n"
+"PO-Revision-Date: 2019-05-28 10:34+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -218,87 +218,87 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:21
+#: header.php:27
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:60
+#: header.php:66
 msgid "Facebook"
 msgstr ""
 
-#: header.php:64
+#: header.php:70
 msgid "Twitter"
 msgstr ""
 
-#: header.php:68
+#: header.php:74
 msgid "Google Plus"
 msgstr ""
 
-#: header.php:72
+#: header.php:78
 msgid "Linkedin"
 msgstr ""
 
-#: header.php:76
+#: header.php:82
 msgid "Instagram"
 msgstr ""
 
-#: header.php:80
+#: header.php:86
 msgid "YouTube"
 msgstr ""
 
-#: header.php:84
+#: header.php:90
 msgid "Pinterest"
 msgstr ""
 
-#: header.php:88
+#: header.php:94
 msgid "Tumblr"
 msgstr ""
 
-#: header.php:92
+#: header.php:98
 msgid "VK"
 msgstr ""
 
-#: header.php:96
+#: header.php:102
 msgid "GitHub"
 msgstr ""
 
-#: header.php:100
+#: header.php:106
 msgid "Vine"
 msgstr ""
 
-#: header.php:104
+#: header.php:110
 msgid "Xing"
 msgstr ""
 
-#: header.php:108
+#: header.php:114
 msgid "Telegram"
 msgstr ""
 
-#: header.php:112
+#: header.php:118
 msgid "Imdb"
 msgstr ""
 
-#: header.php:116
+#: header.php:122
 msgid "Email"
 msgstr ""
 
-#: header.php:120
+#: header.php:126
 msgid "RSS"
 msgstr ""
 
-#: header.php:124
+#: header.php:130
 msgid "Search"
 msgstr ""
 
-#: header.php:131
+#: header.php:137
 msgid "Search for:"
 msgstr ""
 
-#: header.php:132
+#: header.php:138
 msgid "Type here and hit enter..."
 msgstr ""
 
-#: header.php:139
+#: header.php:145
 msgid "Menu"
 msgstr ""
 

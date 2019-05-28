@@ -16,7 +16,13 @@
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<?php 
+if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+} else {
+    do_action( 'wp_body_open' );
+}
+?>
 <div id="page" class="hfeed site">
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'blogghiamo' ); ?></a>
 

@@ -420,15 +420,6 @@ if( ! function_exists('blogghiamo_allowed_html')){
 }
 
 /**
- * Backwards Compatibility for wp_body_open() function in WP 5.2
- */
-if ( ! function_exists( 'wp_body_open' ) ) {
-	function wp_body_open() {
-		do_action( 'wp_body_open' );
-	}
-}
-
-/**
  * Add Custom CSS to Header 
  */
 function blogghiamo_custom_css_styles() { 
