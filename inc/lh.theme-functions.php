@@ -26,7 +26,7 @@ class AgncyThemeFunctions {
 	 * The action dispatcher, that calls needed WordPress actions for this class.
 	 */
 	function action_dispatcher() {
-
+		add_action( 'admin_init', array( $this, 'maybe_fix_child_themes_parent' ), 9 );
 	}
 
 	/**
@@ -105,6 +105,63 @@ class AgncyThemeFunctions {
 		);
 
 		return $defaults;
+	}
+
+	/**
+	 * Fix child theme support
+	 * When the child theme is developed for the non-premium version the slug
+	 * of the child theme is not working when the premium version of the theme
+	 * is installed. This snipped will register the *-premium version of the
+	 * theme and register it as that.
+	 *
+	 * @author Leo Fajardo (@leorw)
+	 * @since 2.2.1
+	 * @return void
+	 */
+	function maybe_fix_child_themes_parent() {
+		global $pagenow;
+
+		if ( 'themes.php' !== $pagenow ) {
+			return;
+		}
+
+		$theme_directories = search_theme_directories();
+		$themes            = array();
+
+		foreach ( $theme_directories as $stylesheet => $theme_root ) {
+			$theme       = new WP_Theme( $stylesheet, $theme_root['theme_root'] );
+			$maybe_error = $theme->errors();
+
+			if ( empty( $maybe_error ) && $theme->parent() ) {
+				continue;
+			}
+
+			$themes[ $stylesheet ] = $theme;
+		}
+
+		foreach ( $themes as $stylesheet => $theme ) {
+
+			if (
+				$theme->get_template() === $stylesheet ||
+				fs_ends_with( $theme->get_template(), '-premium' ) ||
+				! isset( $themes[ $theme->get_template() . '-premium' ] )
+				) {
+				continue;
+			}
+
+			$cache_hash = ( 'theme-' . md5( $theme->get_theme_root() . '/' . $stylesheet ) );
+			$cache      = wp_cache_get( $cache_hash, 'themes' );
+			unset( $cache['errors'] );
+			$cache['template']            = ( $theme->get_template() . '-premium' );
+			$cache['headers']['Template'] = $cache['template'];
+
+			wp_cache_set(
+				$cache_hash,
+				$cache,
+				'themes',
+				1800
+			);
+		}
 	}
 
 }

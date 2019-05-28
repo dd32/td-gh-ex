@@ -3,9 +3,9 @@
 Contributors: wpmunich, freemius
 Tags: one-column, two-columns, right-sidebar, grid-layout, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, block-styles, wide-blocks
 Requires at least: 4.8
-Tested up to: 4.9
+Tested up to: 5.2
 Requires PHP: 5.6
-Stable tag: 1.6.0
+Stable tag: 1.6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -23,6 +23,9 @@ Agncy is a beautiful news and blogging theme that has beautiful typography, powe
 4. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Changelog ==
+
+= 1.6.2 =
+* Fixed a minor issue with handling child themes
 
 = 1.6.1 =
 * Fixed a minor issue with the release workflow
