@@ -33,16 +33,34 @@
 	<div class="container">
 		<!-- Brand and toggle get grouped for better mobile display -->
 		<div class="navbar-header">
-				<?php if($header_setting['text_title'] == 1) { ?>
-				<h1><a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="Appointment">
-				<?php
+				<?php 
+				$logo = $header_setting['upload_image_logo'];
+				$logo_id = attachment_url_to_postid($logo);
+				$logo_alt = get_post_meta( $logo_id, '_wp_attachment_image_alt', true );
+				$logo_title = get_the_title($logo_id);
+				if($header_setting['text_title'] == 1) 
+				{ ?>
+				<h1>
+					<?php if($header_setting['enable_header_logo_text'] == 0) 
+					{?>
+						<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php if($logo != ''){ if(!empty($logo_title)){ echo $logo_title; } else { echo get_bloginfo('name'); } } else { echo get_bloginfo('name'); } ?>">
+					<?php 
+					} 
+					else
+					{ ?>
+						<a class="navbar-brand" href="<?php echo esc_url( home_url( '/' ) ); ?>" >	
+					<?php 
+					} ?>
+
+					<?php
 					 if($header_setting['enable_header_logo_text'] == 1) 
 					{ echo "<div class=appointment_title_head>" . get_bloginfo( ). "</div>"; }
-					elseif($header_setting['upload_image_logo']!='') 
+					elseif($logo!='') 
 					{ ?>
-					<img class="img-responsive" src="<?php echo $header_setting['upload_image_logo']; ?>" style="height:<?php echo $header_setting['height']; ?>px; width:<?php echo $header_setting['width']; ?>px;"/>
-					<?php } else { ?>
-					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bluedark.png">
+						<img class="img-responsive" src="<?php echo $logo; ?>" style="height:<?php echo $header_setting['height']; ?>px; width:<?php echo $header_setting['width']; ?>px;" alt="<?php if(!empty($logo_alt)){ echo $logo_alt; } else { echo get_bloginfo('name'); }?>"/>
+						<?php 
+					} else { ?>
+					<img src="<?php echo get_stylesheet_directory_uri(); ?>/images/bluedark.png" alt="<?php echo bloginfo('name'); ?>">
 					<?php } ?>
 				</a></h1>
 				<?php } ?>	
