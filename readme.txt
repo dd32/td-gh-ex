@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.7.4
+1.Add alt tag on logo.
 @Version 2.7.3
 1.Update string.
 @Version 2.7.2
