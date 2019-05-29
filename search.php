@@ -2,11 +2,9 @@
 /**
  * The template for displaying search results pages
  */
-
 get_header(); ?>
 
 <div class="container">
-
 	<header class="page-header">
 		<?php if ( have_posts() ) : ?>
 			<h1 class="search-title">
@@ -15,7 +13,6 @@ get_header(); ?>
 			<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'aagaz-startup' ); ?></h1>
 		<?php endif; ?>
 	</header>
-	
 	<div class="row">
 		<?php
 		    $layout_setting = get_theme_mod( 'aagaz_startup_layout_settings', __('Right Sidebar','aagaz-startup') );
@@ -26,7 +23,7 @@ get_header(); ?>
 			<div class="col-lg-8 col-md-8">
 				<?php
 				if ( have_posts() ) :
-
+					
 					/* Start the Loop */
 					while ( have_posts() ) : the_post();
 						

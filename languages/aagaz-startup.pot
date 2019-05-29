@@ -1,0 +1,390 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Aagaz Startup\n"
+"Last-Translator: \n"
+"Language-Team: ThemesEye <support@themeseye.com>\n"
+"Language: English\n"
+"MIME-Version: 0.1\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 0.2\n"
+"X-Poedit-KeywordsList: _;gettext;gettext_noop;__;_e\n"
+"X-Poedit-Basepath: .\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+
+#: 404.php:12
+msgid 'Oops! That page can&rsquo;t be found.'
+msgstr ""
+
+#: 404.php:15
+msgid 'It looks like nothing was found at this location. Maybe try a search?'
+msgstr ""
+
+#: archive.php:45
+#: archive.php:74
+#: archive.php:106
+#: archive.php:136
+#: archive.php:169
+#: index.php:46
+#: index.php:77
+#: index.php:110
+#: index.php:141
+#: index.php:176
+#: search.php:46
+#: search.php:77
+#: search.php:111
+#: search.php:143
+#: search.php:178
+msgid 'Previous page'
+msgstr "
+
+#: archive.php:46
+#: archive.php:75
+#: archive.php:107
+#: archive.php:137
+#: archive.php:170
+#: index.php:46
+#: index.php:77
+#: index.php:110
+#: index.php:141
+#: index.php:176
+#: search.php:47
+#: search.php:78
+#: search.php:112
+#: search.php:144
+#: search.php:179
+msgid 'Next page'
+msgstr ""
+
+#: archive.php:47
+#: archive.php:76
+#: archive.php:108
+#: archive.php:138
+#: archive.php:171
+#: index.php:47
+#: index.php:78
+#: index.php:111
+#: index.php:142
+#: index.php:177
+#: search.php:48
+#: search.php:79
+#: search.php:113
+#: search.php:145
+#: search.php:180
+#: single.php:33
+#: single.php:65
+#: single.php:100
+#: single.php:131
+#: single.php:166
+msgid 'Page'
+msgstr ""
+
+#: archive.php:19
+msgid 'Right Sidebar'
+msgstr ""
+
+#: comments.php:24
+msgid 'One Reply to &ldquo;%s&rdquo;'
+msgstr ""
+
+#: comments.php:33
+msgid 'comments title'
+msgstr ""
+
+#: comments.php:61
+msgid 'Comments are closed.'
+msgstr ""
+
+#: template-parts/footer/site-info.php:8
+msgid 'By ThemesEye'
+msgstr ""
+
+#: template-parts/footer/site-info.php:9
+msgid 'Powered By WordPress'
+msgstr ""
+
+#: functions.php:20
+msgid 'Top Menu'
+msgstr ""
+
+#: functions.php:73
+msgid 'Blog Sidebar'
+msgstr ""
+
+#: functions.php:75
+msgid "Add widgets here to appear in your sidebar on blog posts and archive pages."
+msgstr ""
+
+#: functions.php:83
+msgid 'Page Sidebar'
+msgstr ""
+
+#: functions.php:85
+msgid 'Add widgets here to appear in your sidebar on Pages and archive pages.'
+msgstr ""
+
+#: functions.php:93
+msgid "Footer 1"
+msgstr ""
+
+#: functions.php:103
+msgid "Footer 2"
+msgstr ""
+
+#: functions.php:113
+msgid "Footer 3"
+msgstr ""
+
+#: functions.php:123
+msgid "Footer 4"
+msgstr ""
+
+#: functions.php:95
+#: functions.php:105
+#: functions.php:115
+#: functions.php:125
+msgid "Add widgets here to appear in your footer."
+msgstr ""
+
+#: functions.php:161
+msgid 'Expand child menu'
+msgstr ""
+
+#: functions.php:162
+msgid 'Collapse child menu'
+msgstr ""
+
+#: functions.php:219
+msgid 'Startup WordPress Theme'
+msgstr ""
+
+#: index.php:15
+msgid 'Posts'
+msgstr ""
+
+#: index.php:19
+msgid 'Right Sidebar'
+msgstr ""
+
+#: search.php:11
+msgid 'Search Results for: %s'
+msgstr ""
+
+#: search.php:13
+msgid 'Nothing Found'
+msgstr ""
+
+#: search.php:18
+msgid 'Right Sidebar'
+msgstr ""
+
+#: search.php:36
+#: search.php:67
+#: search.php:101
+#: search.php:133
+#: search.php:168
+msgid 'Sorry, but nothing matched your search terms. Please try again with some different keywords.'
+msgstr ""
+
+#: searchform.php:10
+#: searchform.php:12
+msgid 'Search'
+msgstr ""
+
+#: searchform.php:10
+msgid 'placeholder'
+msgstr ""
+
+#: searchform.php:12
+msgid 'submit button'
+msgstr ""
+
+#: sidebar.php:7
+msgid 'Blog Sidebar'
+msgstr ""
+
+#: single.php:29
+#: single.php:61
+#: single.php:96
+#: single.php:127
+#: single.php:162
+msgid 'Pages:'
+msgstr ""
+
+#: single.php:39
+#: single.php:71
+#: single.php:106
+#: single.php:137
+#: single.php:172
+msgid 'Next post'
+msgstr ""
+
+#: single.php:38
+#: single.php:70
+#: single.php:105
+#: single.php:136
+#: single.php:171
+msgid 'Previous post'
+msgstr ""
+
+#: single.php:38
+#: single.php:70
+#: single.php:105
+#: single.php:136
+#: single.php:171
+msgid 'Previous'
+msgstr ""
+
+#: single.php:39
+#: single.php:71
+#: single.php:106
+#: single.php:137
+#: single.php:172
+msgid 'Next'
+msgstr ""
+
+#: template-parts/navigation/navigation-top.php:9
+msgid 'Top Menu'
+msgstr ""
+
+#: template-parts/navigation/navigation-top.php:12
+msgid 'Menu'
+msgstr ""
+
+#: template-parts/post/content-audio.php:42
+#: template-parts/post/content-gallery.php:29
+#: template-parts/post/content-image.php:20
+#: template-parts/post/content-video.php:41
+#: template-parts/post/content.php:22
+#: template-parts/post/grid-layout:23
+msgid 'READ MORE'
+msgstr ""
+
+#: inc/customizer.php:17
+msgid 'Theme Settings'
+msgstr ""
+
+#: inc/customizer.php:18
+msgid 'Description of what this panel does.'
+msgstr ""
+
+#: inc/customizer.php:23
+msgid 'Theme Color Option'
+msgstr ""
+
+#: inc/customizer.php:32
+msgid 'One can change complete theme color on just one click.'
+msgstr ""
+
+#: inc/customizer.php:39
+msgid 'Sidebar Settings'
+msgstr ""
+
+#: inc/customizer.php:46
+#: inc/customizer.php:57
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/customizer.php:52
+msgid 'Theme Sidebar Layouts'
+msgstr ""
+
+#: inc/customizer.php:53
+msgid 'This option work for blog page, blog single page, archive page and search page.'
+msgstr ""
+
+#: inc/customizer.php:56
+msgid "Left Sidebar"
+msgstr ""
+
+#: inc/customizer.php:58
+msgid "Full Width"
+msgstr ""
+
+#: inc/customizer.php:59
+msgid "Grid Layout"
+msgstr ""
+
+#: inc/customizer.php:65
+msgid 'Topbar Section'
+msgstr ""
+
+#: inc/customizer.php:66
+msgid 'Add Header Content here'
+msgstr ""
+
+#: inc/customizer.php:76
+msgid 'Add Phone Number'
+msgstr ""
+
+#: inc/customizer.php:87
+msgid 'Add Email'
+msgstr ""
+
+#: inc/customizer.php:98
+msgid 'Add Facebook link'
+msgstr ""
+
+#: inc/customizer.php:109
+msgid 'Add Twitter link'
+msgstr ""
+
+#: inc/customizer.php:120
+msgid 'Add Linkedin link'
+msgstr ""
+
+#: inc/customizer.php:131
+msgid 'Add Pinterest link'
+msgstr ""
+
+#: inc/customizer.php:142
+msgid 'Add Instagram link'
+msgstr ""
+
+#: inc/customizer.php:153
+msgid 'Add Youtube link'
+msgstr ""
+
+#: inc/customizer.php:161
+msgid 'Slider Settings'
+msgstr ""
+
+#: inc/customizer.php:172
+msgid 'Show / Hide slider'
+msgstr ""
+
+#: inc/customizer.php:184
+msgid 'Select Slide Image Page'
+msgstr ""
+
+#: inc/customizer.php:192
+msgid 'About Us'
+msgstr ""
+
+#: inc/customizer.php:193
+msgid 'Add About Us Section below.'
+msgstr ""
+
+#: inc/customizer.php:202
+msgid 'Section Title'
+msgstr ""
+
+#: inc/customizer.php:213
+msgid 'Select About Page'
+msgstr ""
+
+#: inc/customizer.php:220
+msgid 'Footer Text'
+msgstr ""
+
+#: inc/customizer.php:230
+msgid 'Add Copyright Text'
+msgstr ""
+
+#: inc/customizer.php:360
+msgid 'Aagaz Startup Pro'
+msgstr ""
+
+#: inc/customizer.php:361
+msgid 'Go Pro'
+msgstr ""

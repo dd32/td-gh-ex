@@ -3,7 +3,6 @@
  * Displays top navigation
  */
 ?>
-
 <div class="header-menu">
 	<div class="row m-0">
 		<div class="col-lg-11 col-md-11">

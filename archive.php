@@ -6,7 +6,6 @@
 get_header(); ?>
 
 <div class="container">
-
 	<?php if ( have_posts() ) : ?>
 		<header class="page-header">
 			<?php

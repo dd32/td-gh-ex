@@ -167,6 +167,9 @@ function aagaz_startup_scripts() {
 	
 	wp_enqueue_script( 'bootstrap', get_theme_file_uri( '/assets/js/bootstrap.js' ), array( 'jquery' ), true );
 
+	require get_parent_theme_file_path( '/color-option.php' );
+	wp_add_inline_style( 'aagaz-startup-basic-style',$custom_css );
+
 	wp_localize_script( 'aagaz-startup-skip-link-focus-fix', 'aagaz_startupScreenReaderText', $aagaz_startupScreenReaderText );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
@@ -209,11 +212,11 @@ function aagaz_startup_sanitize_dropdown_pages( $page_id, $setting ) {
 }
 
 //footer Link
-define('AAGAZ_STARTUP_CREDIT','https://www.themeseye.com/','aagaz-startup');
+define('AAGAZ_STARTUP_CREDIT','https://www.themeseye.com/wordpress/free-startup-wordpress-theme/','aagaz-startup');
 
 if ( ! function_exists( 'aagaz_startup_credit' ) ) {
 	function aagaz_startup_credit(){
-		echo "<a href=".esc_url(AAGAZ_STARTUP_CREDIT)." target='_blank'>".esc_html__('Themeseye','aagaz-startup')."</a>";
+		echo "<a href=".esc_url(AAGAZ_STARTUP_CREDIT)." target='_blank'>".esc_html__(' Startup WordPress Theme','aagaz-startup')."</a>";
 	}
 }
 

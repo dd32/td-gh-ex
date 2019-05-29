@@ -18,6 +18,23 @@ function aagaz_startup_customize_register( $wp_customize ) {
 	    'description' => __( 'Description of what this panel does.', 'aagaz-startup' ),
 	) );
 
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'aagaz_startup_theme_color_option', 
+		array( 'panel' => 'aagaz_startup_panel_id', 'title' => esc_html__( 'Theme Color Option', 'aagaz-startup' ) )
+	);
+
+  	$wp_customize->add_setting( 'aagaz_startup_theme_color', array(
+	    'default' => '#9fcd55',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'aagaz_startup_theme_color', array(
+  		'label' => 'Color Option',
+	    'description' => __('One can change complete theme color on just one click.
+', 'aagaz-startup'),
+	    'section' => 'aagaz_startup_theme_color_option',
+	    'settings' => 'aagaz_startup_theme_color',
+  	)));
+
 	$wp_customize->add_section( 'aagaz_startup_general_option', array(
     	'title'      => __( 'Sidebar Settings', 'aagaz-startup' ),
 		'priority'   => 30,

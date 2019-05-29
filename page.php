@@ -2,13 +2,12 @@
 /**
  * The template for displaying all pages
  */
-
 get_header(); ?>
 
 <?php do_action( 'aagaz_startup_page_header' ); ?>
 
 <div class="container">
-
+	
 	<?php
 		while ( have_posts() ) : the_post();?>
             <img src="<?php the_post_thumbnail_url('full'); ?>" width="100%">
