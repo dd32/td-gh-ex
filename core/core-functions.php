@@ -388,8 +388,8 @@ function czr_fn_is_child() {
 */
 if ( ! function_exists( 'czr_fn_is_customize_left_panel' ) ) {
       function czr_fn_is_customize_left_panel() {
-            global $pagenow;
-            return is_admin() && isset( $pagenow ) && 'customize.php' == $pagenow;
+          global $pagenow;
+          return is_admin() && isset( $pagenow ) && 'customize.php' == $pagenow;
       }
 }
 
@@ -429,10 +429,22 @@ if ( ! function_exists( 'czr_fn_doing_customizer_ajax' ) ) {
 */
 if ( ! function_exists( 'czr_fn_is_customizing' ) ) {
     function czr_fn_is_customizing() {
+        global $pagenow;
+        // the check on $pagenow does NOT work on multisite install @see https://github.com/presscustomizr/nimble-builder/issues/240
+        // That's why we also check with other global vars
+        // @see wp-includes/theme.php, _wp_customize_include()
+        $is_customize_php_page = ( is_admin() && 'customize.php' == basename( $_SERVER['PHP_SELF'] ) );
+        $is_customize_admin_page_one = (
+          $is_customize_php_page
+          ||
+          ( isset( $_REQUEST['wp_customize'] ) && 'on' == $_REQUEST['wp_customize'] )
+          ||
+          ( ! empty( $_GET['customize_changeset_uuid'] ) || ! empty( $_POST['customize_changeset_uuid'] ) )
+        );
+        $is_customize_admin_page_two = is_admin() && isset( $pagenow ) && 'customize.php' == $pagenow;
+
         //checks if is customizing : two contexts, admin and front (preview frame)
-        return czr_fn_is_customize_left_panel() ||
-               czr_fn_is_customize_preview_frame() ||
-               czr_fn_doing_customizer_ajax();
+        return $is_customize_admin_page_one || $is_customize_admin_page_two || czr_fn_is_customize_preview_frame() ||  czr_fn_doing_customizer_ajax();
     }
 }
 
@@ -585,10 +597,12 @@ function czr_fn_generate_default_options( $map, $option_group = null ) {
 
       $option_name = $key;
       //write default option in array
-      if( isset($options['default']) )
-        $defaults[$option_name] = ( 'checkbox' == $options['type'] ) ? (bool) $options['default'] : $options['default'];
-      else
+      if( array_key_exists( 'default', $options ) ) {
+          // added check on 'nimblecheck' to fix https://github.com/presscustomizr/customizr/issues/1732
+          $defaults[$option_name] = in_array( $options['type'], array( 'checkbox', 'nimblecheck' ) ) ? (bool)$options['default'] : $options['default'];
+      } else {
         $defaults[$option_name] = null;
+      }
     }//end foreach
 
     return $defaults;
@@ -1429,10 +1443,11 @@ function czr_fn_is_home() {
 *
 */
 function czr_fn_is_real_home() {
-  //get info whether the front page is a list of last posts or a page
+  // Warning : when show_on_front is a page, but no page_on_front has been picked yet, is_home() is true
+  // beware of https://github.com/presscustomizr/nimble-builder/issues/349
   return ( is_home() && ( 'posts' == get_option( 'show_on_front' ) || 'nothing' == get_option( 'show_on_front' ) ) )
-    || ( 0 == get_option( 'page_on_front' ) && 'page' == get_option( 'show_on_front' ) )//<= this is the case when the user want to display a page on home but did not pick a page yet
-    || is_front_page();
+  || ( is_home() && 0 == get_option( 'page_on_front' ) && 'page' == get_option( 'show_on_front' ) )//<= this is the case when the user want to display a page on home but did not pick a page yet
+  || is_front_page();
 }
 
 
@@ -1893,3 +1908,138 @@ if ( ! function_exists( 'czr_fn_text_truncate' ) ):
 
   }
 endif;
+
+
+
+if ( ! function_exists( 'czr_fn_is_home_and_header_transparent_set' ) ):
+  // @return bool
+  function czr_fn_is_home_and_header_transparent_set() {
+      // Conditions to meet are:
+      // 1) option checked
+      // 2) is real home
+      // 3) is the first page of a paginated home see https://github.com/presscustomizr/customizr/issues/1665
+
+      if ( apply_filters( 'czr_header_transparent_disabled_if_not_first_page', true ) ) {
+        global $wp_query;
+
+        $_is_not_first_page = isset( $wp_query->query_vars['paged'] ) && $wp_query->query_vars['paged'] > 1 ||
+                              isset( $wp_query->query_vars['page'] ) && $wp_query->query_vars['page'] > 1;
+
+        $disable_because_not_first_page   = $_is_not_first_page;
+      } else {
+        $disable_because_not_first_page   = false;
+      }
+      return apply_filters( 'czr_header_transparent', ( 1 == esc_attr( czr_fn_opt( 'tc_header_transparent_home' ) ) ) && czr_fn_is_real_home() && ! $disable_because_not_first_page );
+  }
+endif;
+
+
+if ( ! function_exists( 'czr_fn_get_header_skin' ) ):
+  /**
+  * Helper
+  * Returns the header skin string
+  *
+  * @return string
+  *
+  */
+  function czr_fn_get_header_skin() {
+      $skin_color = czr_fn_opt( 'tc_header_skin' );
+      if ( czr_fn_is_home_and_header_transparent_set() ) {
+          $skin_color = czr_fn_opt( 'tc_home_header_skin' );
+      }
+      return $skin_color;
+  }
+endif;
+
+
+
+
+/**
+* HELPER
+* Check whether the plugin is active by checking the active_plugins list.
+* copy of is_plugin_active declared in wp-admin/includes/plugin.php
+*
+* @since 3.3+
+*
+* @param string $plugin Base plugin path from plugins directory.
+* @return bool True, if in the active plugins list. False, not in the list.
+*/
+function czr_fn_is_plugin_active( $plugin ) {
+  return in_array( $plugin, (array) get_option( 'active_plugins', array() ) ) || czr_fn_is_plugin_active_for_network( $plugin );
+}
+
+
+/**
+* HELPER
+* Check whether the plugin is active for the entire network.
+* copy of is_plugin_active_for_network declared in wp-admin/includes/plugin.php
+*
+* @since 3.3+
+*
+* @param string $plugin Base plugin path from plugins directory.
+* @return bool True, if active for the network, otherwise false.
+*/
+function czr_fn_is_plugin_active_for_network( $plugin ) {
+  if ( ! is_multisite() )
+    return false;
+
+  $plugins = get_site_option( 'active_sitewide_plugins');
+  if ( isset($plugins[$plugin]) )
+    return true;
+
+  return false;
+}
+
+// @return string
+function czr_fn_is_full_nimble_tmpl() {
+  $bool = false;
+  if ( function_exists('Nimble\sek_get_locale_template') ) {
+    $tmpl_name = \Nimble\sek_get_locale_template();
+    $tmpl_name = ( !empty( $tmpl_name ) && is_string( $tmpl_name ) ) ? basename( $tmpl_name ) : '';
+
+    // kept for retro-compat.
+    // since Nimble Builder v1.4.0, the 'nimble_full_tmpl_ghf.php' has been deprecated
+    $bool = 'nimble_full_tmpl_ghf.php' === $tmpl_name;
+
+    // "is full Nimble template" when header, footer and content use Nimble templates.
+    if ( function_exists('Nimble\sek_page_uses_nimble_header_footer') ) {
+        $bool = ( 'nimble_template.php' === $tmpl_name || 'nimble-tmpl.php' === $tmpl_name ) && Nimble\sek_page_uses_nimble_header_footer();
+    }
+  }
+  return $bool;
+}
+
+
+/* ------------------------------------------------------------------------- *
+ * Template tags parsing
+/* ------------------------------------------------------------------------- */
+function czr_fn_get_year() {
+    return esc_attr( date('Y') );
+}
+
+function czr_fn_find_pattern_match($matches) {
+    $replace_values = array(
+        'home_url' => 'home_url',
+        'year' => 'czr_fn_get_year',
+        'site_title' => 'get_bloginfo'
+    );
+
+    if ( array_key_exists( $matches[1], $replace_values ) ) {
+      $dyn_content = $replace_values[$matches[1]];
+      if ( function_exists( $dyn_content ) ) {
+        return call_user_func( $dyn_content ); //$dyn_content();//<= @todo handle the case when the callback is a method
+      } else if ( is_string($dyn_content) ) {
+        return $dyn_content;
+      } else {
+        return null;
+      }
+    }
+    return null;
+}
+// fired @filter 'czr_parse_template_tags'
+function czr_fn_parse_template_tags( $val ) {
+    //the pattern could also be '!\{\{(\w+)\}\}!', but adding \s? allows us to allow spaces around the term inside curly braces
+    //see https://stackoverflow.com/questions/959017/php-regex-templating-find-all-occurrences-of-var#comment71815465_959026
+    return is_string( $val ) ? preg_replace_callback( '!\{\{\s?(\w+)\s?\}\}!', 'czr_fn_find_pattern_match', $val) : $val;
+}
+add_filter( 'czr_parse_template_tags', 'czr_fn_parse_template_tags' );

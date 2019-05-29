@@ -11,8 +11,6 @@
 * Defines sections, settings and function of customizer and return and array
 * Also used to get the default options array, in this case $get_default = true and we DISABLE the __get_option (=>infinite loop)
 *
-* @package Customizr
-* @since Customizr 3.0
 */
 function czr_fn_get_customizer_map( $get_default = null,  $what = null ) {
     if ( ! ( defined( 'CZR_IS_MODERN_STYLE' ) && CZR_IS_MODERN_STYLE ) ) {
@@ -127,7 +125,10 @@ function czr_fn_popul_setting_control_map( $_map, $get_default = null ) {
     'czr_fn_placeholders_notice_map',
     'czr_fn_external_resources_option_map',
     'czr_fn_responsive_option_map',
-    'czr_fn_style_option_map'
+    'czr_fn_style_option_map',
+
+    //WOOCOMMERCE OPTIONS
+    'czr_fn_woocommerce_option_map'
   );
 
   $_settings_groups = apply_filters( 'czr_settings_sections', $_settings_groups );
@@ -163,22 +164,13 @@ function czr_fn_popul_setting_control_map( $_map, $get_default = null ) {
 function czr_fn_site_identity_option_map( $get_default = null ) {
   global $wp_version;
   return array(
-          'tc_logo_upload'  => array(
-                            'control'   =>  version_compare( $wp_version, '4.3', '>=' ) ? 'CZR_Customize_Cropped_Image_Control' : 'CZR_Customize_Upload_Control',
-                            'label'     =>  __( 'Logo Upload (supported formats : .jpg, .png, .gif, svg, svgz)' , 'customizr' ),
-                            'title'     => __( 'LOGO' , 'customizr'),
-                            'section'   => 'title_tagline',
-                            'sanitize_callback' => 'czr_fn_sanitize_number',
-                            'priority'  => 12,
-                    //we can define suggested cropping area and allow it to be flexible (def 150x150 and not flexible)
-                            'width'     => 250,
-                            'height'    => 100,
-                            'flex_width' => true,
-                            'flex_height' => true,
-                            //to keep the selected cropped size
-                            'dst_width'  => false,
-                            'dst_height'  => false,
-                            //'notice'    => __( "Uncheck this option to keep your original logo dimensions." , 'customizr')
+          'tc_title_next_logo'  => array(
+                            'default'   =>  czr_fn_user_started_before_version( '4.1.10' , '2.1.7') ? 0 : 1,
+                            'label'     =>  __( 'Display the site title next to the logo' , 'customizr' ),
+                            'control'   =>  'CZR_controls' ,
+                            'section'   =>  'title_tagline' ,
+                            'type'        => 'nimblecheck' ,
+                            'priority'  => 13,
           ),
           //force logo resize 250 * 85
           'tc_logo_resize'  => array(
@@ -186,7 +178,7 @@ function czr_fn_site_identity_option_map( $get_default = null ) {
                             'label'     =>  __( 'Force logo dimensions to max-width:250px and max-height:100px' , 'customizr' ),
                             'control'   =>  'CZR_controls' ,
                             'section'   =>  'title_tagline' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck',
                             'priority'  => 15,
                             'notice'    => __( "Uncheck this option to keep your original logo dimensions." , 'customizr')
           ),
@@ -356,7 +348,7 @@ function czr_fn_formatting_option_map( $get_default = null ) {
                             'control'   => 'CZR_controls' ,
                             'label'       => __( 'Smooth scroll on click' , 'customizr' ),
                             'section'     => 'formatting_sec' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'notice'      => sprintf( '%s<br/><strong>%s</strong> : %s', __( 'If enabled, this option activates a smooth page scroll when clicking on a link to an anchor of the same page.' , 'customizr' ), __( 'Important note' , 'customizr' ), __('this option can create conflicts with some plugins, make sure that your plugins features (if any) are working fine after enabling this option.', 'customizr') )
           ),
           'tc_link_hover_effect'  =>  array(
@@ -364,7 +356,7 @@ function czr_fn_formatting_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls' ,
                             'label'         => CZR_IS_MODERN_STYLE ?  __( 'Animated underline effect on link hover' , 'customizr' ) : __( 'Fade effect on link hover' , 'customizr' ),
                             'section'       => 'formatting_sec' ,
-                            'type'          => 'checkbox' ,
+                            'type'          => 'nimblecheck' ,
                             'transport'   => czr_fn_is_ms() ? 'refresh' : 'postMessage'
           )
   );
@@ -385,7 +377,7 @@ function czr_fn_images_option_map( $get_default = null ) {
                             'control'   => 'CZR_controls' ,
                             'label'       => __( 'Lightbox effect on images' , 'customizr' ),
                             'section'     => 'images_sec' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'priority'    => 1,
                             'notice'    => __( 'If enabled, this option activates a popin window whith a zoom effect when an image is clicked. Note : to enable this effect on the images of your pages and posts, images have to be linked to the Media File.' , 'customizr' ),
           ),
@@ -395,7 +387,7 @@ function czr_fn_images_option_map( $get_default = null ) {
                             'control'   => 'CZR_controls' ,
                             'label'       => __( 'High resolution (Retina) support' , 'customizr' ),
                             'section'     => 'images_sec' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'priority'    => 5,
                             'notice'    => sprintf('%1$s <strong>%2$s</strong> : <a href="%4$splugin-install.php?tab=plugin-information&plugin=regenerate-thumbnails" title="%5$s" target="_blank">%3$s</a>.',
                                 __( 'If enabled, your website will include support for high resolution devices.' , 'customizr' ),
@@ -410,7 +402,7 @@ function czr_fn_images_option_map( $get_default = null ) {
                             'control'   => 'CZR_controls' ,
                             'label'       => __( "Dynamic slider images centering on any devices" , "customizr" ),
                             'section'     => 'images_sec' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'priority'    => 15,
                             //'notice'    => __( 'This option dynamically centers your images on any devices vertically or horizontally (without stretching them) according to their initial dimensions.' , 'customizr' ),
           ),
@@ -419,7 +411,7 @@ function czr_fn_images_option_map( $get_default = null ) {
                             'control'   => 'CZR_controls' ,
                             'label'       => __( "Dynamic thumbnails centering on any devices" , "customizr" ),
                             'section'     => 'images_sec' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'priority'    => 20,
                             'notice'    => __( 'This option dynamically centers your images on any devices, vertically or horizontally according to their initial aspect ratio.' , 'customizr' ),
           )
@@ -432,7 +424,7 @@ function czr_fn_images_option_map( $get_default = null ) {
                             //'title'       => __( 'Responsive settings', 'customizr' ),
                             'label'       => __( "Improve your page speed by loading smaller images for mobile devices" , "customizr" ),
                             'section'     => 'images_sec',
-                            'type'        => 'checkbox',
+                            'type'        => 'nimblecheck',
                             'priority'    => 25,
                             'notice'      => __( 'This feature has been introduced in WordPress v4.4+ (dec-2015), and might have minor side effects on some of your existing images. Check / uncheck this option to safely verify that your images are displayed nicely.' , 'customizr' ),
                             'ubq_section'   => array(
@@ -456,7 +448,7 @@ function czr_fn_sliders_option_map( $get_default = null ) {
                             'control'   => 'CZR_controls' ,
                             'label'       => __( "Sliders : use parallax scrolling" , "customizr" ),
                             'section'     => 'sliders_sec' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'priority'    => 10,
                             'notice'    => __( 'If enabled, your slides scroll slower than the page (parallax effect).' , 'customizr' ),
           )
@@ -476,7 +468,7 @@ function czr_fn_authors_option_map( $get_default = null ) {
                             'control'       => 'CZR_controls' ,
                             'label'         => __( "Display an author box after each single post content" , "customizr" ),
                             'section'       => 'authors_sec',
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 1,
                             'notice'        =>  __( 'Check this option to display an author info block after each single post content. Note : the Biographical info field must be filled out in the user profile.' , 'customizr' ),
           )
@@ -497,7 +489,7 @@ function czr_fn_smoothscroll_option_map( $get_default = null ) {
                             'control'       => 'CZR_controls' ,
                             'label'         => __("Enable Smooth Scroll", "customizr"),
                             'section'       => 'smoothscroll_sec',
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 1,
                             'notice'    => __( 'This option enables a smoother page scroll.' , 'customizr' ),
                             'transport'     => czr_fn_is_ms() ? 'refresh' : 'postMessage'
@@ -541,17 +533,54 @@ function czr_fn_header_design_option_map( $get_default = null ) {
           'tc_header_custom_fg_color'  =>  array(
                             'default'       => '#313131',
                             'control'       => 'CZR_controls' ,
-                            'label'         => __( "Header foreground color", 'customizr'),
+                            'label'         => __( 'Header foreground color', 'customizr'),
                             'type'          =>  'color',
                             'sanitize_callback'    => 'czr_fn_sanitize_hex_color',
                             'sanitize_js_callback' => 'maybe_hash_hex_color',
                             'section'       => 'header_layout_sec' ,
                             'priority'      => 8,
           ),
+          'tc_highlight_contextually_active_menu_items'  =>  array(
+                            'default'       => 0,
+                            'control'       => 'CZR_controls' ,
+                            'label'         => __( ' Highlight contextually active menu items', 'customizr'),
+                            'type'          =>  'nimblecheck',
+                            'section'       => 'header_layout_sec' ,
+                            'priority'      => 8,
+          ),
+          'tc_header_transparent_home'  =>  array(
+                            'default'       => 0,
+                            'control'       => 'CZR_controls' ,
+                            'label'         => __( 'Apply a transparent background to your header on home.', 'customizr'),
+                            'section'       => 'header_layout_sec' ,
+                            'type'          => 'nimblecheck',
+                            'priority'      => 8,
+                            'notice'    => __( 'This option can be used to nicely display your header elements ( site title, menu ) on top of a slider for example.' , 'customizr')
+          ),
+          'tc_home_header_skin'  =>  array(
+                            'default'       => 'dark',
+                            'control'       => 'CZR_controls' ,
+                            'label'         => __( 'Header style for home', 'customizr'),
+                            'choices'       => array(
+                                  'dark'   => __( 'Light text' , 'customizr' ),
+                                  'light'  => __( 'Dark text' , 'customizr'),
+                            ),
+                            'section'       => 'header_layout_sec' ,
+                            'type'          => 'select' ,
+                            'priority'      => 8,
+          ),
+          'tc_header_no_borders'  =>  array(
+                            'default'       => czr_fn_user_started_before_version( '4.1.26', '2.1.16' ) ? false : true,
+                            'control'       => 'CZR_controls' ,
+                            'label'         => __( 'Remove header borders', 'customizr' ),
+                            'section'       => 'header_layout_sec' ,
+                            'type'          => 'nimblecheck',
+                            'priority'      => 8,
+          ),
           'tc_header_show_topbar'  =>  array(
                             'default'       => 'none',
                             'control'       => 'CZR_controls' ,
-                            'label'         => __( "Display a topbar" , "customizr" ),
+                            'label'         => __( 'Display a topbar', 'customizr' ),
                             'section'       => 'header_layout_sec' ,
                             'type'          => 'select' ,
                             'choices'       => array(
@@ -598,7 +627,7 @@ function czr_fn_header_design_option_map( $get_default = null ) {
                             'label'         =>  __( 'Display top border' , 'customizr' ),
                             'control'       =>  'CZR_controls' ,
                             'section'       =>  'header_layout_sec' ,
-                            'type'          =>  'checkbox' ,
+                            'type'          =>  'nimblecheck' ,
                             'notice'        =>  __( 'Uncheck this option to remove the colored top border.' , 'customizr' ),
                             'priority'      => 12
           ),
@@ -607,19 +636,19 @@ function czr_fn_header_design_option_map( $get_default = null ) {
                             'label'     =>  __( 'Underline the site title in the header' , 'customizr' ),
                             'control'   =>  'CZR_controls' ,
                             'section'   =>  'header_layout_sec' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck',//'nimblecheck' ,
                             'priority'  => 15,
                             'ubq_section'   => array(
                                 'section' => 'title_tagline',
                                 'priority' => '10'
-                            )
+                            ),
           ),
           'tc_sticky_transparent_on_scroll'  =>  array(
                             'default'       => 1,
                             'control'       => 'CZR_controls' ,
                             'label'         => __( "Sticky header : semi-transparent on scroll" , "customizr" ),
                             'section'       => 'header_layout_sec' ,
-                            'type'          => 'checkbox' ,
+                            'type'          => 'nimblecheck' ,
                             'priority'      => 67,
                             'transport'     => czr_fn_is_ms() ? 'refresh' : 'postMessage',
           ),
@@ -753,7 +782,7 @@ function czr_fn_header_desktop_option_map() {
                             'control'       => 'CZR_controls' ,
                             'label'         => __( "Sticky header : shrink title / logo" , "customizr" ),
                             'section'       => czr_fn_is_ms() ? 'header_desktop_sec' : 'header_layout_sec',
-                            'type'          => 'checkbox' ,
+                            'type'          => 'nimblecheck' ,
                             'transport'     => czr_fn_is_ms() ? 'refresh' : 'postMessage',
                             'ubq_section'   => array(
                                 'section' => 'title_tagline',
@@ -799,7 +828,7 @@ function czr_fn_header_mobile_option_map() {
                           'control'   =>  'CZR_controls' ,
                           'label'     =>  __( 'Expand submenus on click' , 'customizr' ),
                           'section'   =>  'header_mobile_sec',
-                          'type'      =>  'checkbox',
+                          'type'      =>  'nimblecheck',
                           'priority'  =>  28
         ),
         'tc_header_mobile_tagline'  =>  array(
@@ -807,7 +836,7 @@ function czr_fn_header_mobile_option_map() {
                           'control'       => 'CZR_controls' ,
                           'label'         => sprintf( '%1$s : %2$s', __('Mobile devices', 'customizr' )  , __( 'Display the tagline in the header' , 'customizr' ) ),
                           'section'       => 'header_mobile_sec',
-                          'type'          => 'checkbox' ,
+                          'type'          => 'nimblecheck' ,
                           'priority'      => 28,
                           'ubq_section'   => array(
                                               'section' => 'title_tagline',
@@ -820,7 +849,7 @@ function czr_fn_header_mobile_option_map() {
                           'control'   => 'CZR_controls' ,
                           'section'   => 'header_mobile_sec',
                           'notice'    => __( "WooCommerce: check to display a cart icon showing the number of items in your cart next to your header's tagline.", 'customizr' ),
-                          'type'      => 'checkbox',
+                          'type'      => 'nimblecheck',
                           'priority'  => 28,
                           'active_callback' => apply_filters( 'tc_woocommerce_options_enabled', '__return_false' )
         ),
@@ -876,7 +905,7 @@ function czr_fn_navigation_option_map( $get_default = null ) {
                             'control'       => 'CZR_controls' ,
                             'label'         => __( "Display a secondary (horizontal) menu in the header." , "customizr" ),
                             'section'       => 'nav' ,
-                            'type'          => 'checkbox' ,
+                            'type'          => 'nimblecheck' ,
                             'priority'      => 15,//must be located between the two menus
                             'notice'        => __( 'An horizontal menu can be displayed in the main header with this option. Make sure you have assigned a menu to this location in the menu panel.' , 'customizr' ),
                             //For old customizr < 4.0
@@ -908,7 +937,7 @@ function czr_fn_navigation_option_map( $get_default = null ) {
                             'label'         =>  __( 'Expand submenus on click' , 'customizr' ),
                             'title'         => __( 'Primary (vertical) menu design' , 'customizr'),
                             'section'       =>  'nav' ,
-                            'type'          =>  'checkbox',
+                            'type'          =>  'nimblecheck',
                             'priority'      =>   40
           ),
           'tc_menu_position'  =>  array(
@@ -957,7 +986,7 @@ function czr_fn_navigation_option_map( $get_default = null ) {
                             'control'       => 'CZR_controls' ,
                             'label'         => __( "Reveal the sub-menus blocks with a fade effect" , "customizr" ),
                             'section'       => 'nav' ,
-                            'type'          => 'checkbox' ,
+                            'type'          => 'nimblecheck' ,
                             'priority'      => 70,
                             'transport'     => czr_fn_is_ms() ? 'refresh' : 'postMessage',
           ),
@@ -966,7 +995,7 @@ function czr_fn_navigation_option_map( $get_default = null ) {
                             'control'       => 'CZR_controls' ,
                             'label'         => __( "Hover move effect for the sub menu items" , "customizr" ),
                             'section'       => 'nav' ,
-                            'type'          => 'checkbox' ,
+                            'type'          => 'nimblecheck' ,
                             'priority'      => 80,
                             'transport'     => czr_fn_is_ms() ? 'refresh' : 'postMessage',
           ),
@@ -976,7 +1005,7 @@ function czr_fn_navigation_option_map( $get_default = null ) {
                             'title'         => __( 'Remove all the menus.' , 'customizr'),
                             'label'         => __( "Don't display any menus in the header of your website" , "customizr" ),
                             'section'       => 'nav' ,
-                            'type'          => 'checkbox' ,
+                            'type'          => 'nimblecheck' ,
                             'priority'      => 100,//must be located between the two menus
                             'notice'        => __( 'Use with caution : provide an alternative way to navigate in your website for your users.' , 'customizr' ),
           ),
@@ -1066,7 +1095,7 @@ function czr_fn_front_page_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls' ,
                             'label'         => __( "Display navigation in your home blog" , "customizr" ),
                             'section'       => 'frontpage_sec',
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 1,
                             'transport'     => czr_fn_is_ms() ? 'refresh' : 'postMessage',
           ),
@@ -1097,7 +1126,7 @@ function czr_fn_front_page_option_map( $get_default = null ) {
 
           //select slider
           'tc_front_slider' => array(
-                            'default'     => 'tc_posts_slider' ,
+                            'default'     => CZR_IS_PRO || czr_fn_user_started_before_version( '4.1.8' , '2.0.0', 'free' ) ? 'tc_posts_slider' : '0',
                             'control'     => 'CZR_controls' ,
                             'title'       => __( 'Slider options' , 'customizr' ),
                             'label'       => __( 'Select front page slider' , 'customizr' ),
@@ -1124,7 +1153,7 @@ function czr_fn_front_page_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls',
                             'label'       => __( 'Include only sticky posts' , 'customizr' ),
                             'section'     => 'frontpage_sec' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'priority'    => 23,
                             'notice'      => sprintf('%1$s <a href="https://codex.wordpress.org/Sticky_Posts" target="_blank">%2$s</a>',
                                 __( 'You can choose to display only the sticky posts. If you\'re not sure how to set a sticky post, check', 'customizr' ),
@@ -1137,7 +1166,7 @@ function czr_fn_front_page_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls',
                             'label'       => __( 'Display the title' , 'customizr' ),
                             'section'     => 'frontpage_sec' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'priority'    => 24,
                             'notice'      => __( 'The title will be limited to 80 chars max', 'customizr' ),
           ),
@@ -1146,7 +1175,7 @@ function czr_fn_front_page_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls',
                             'label'       => __( 'Display the excerpt' , 'customizr' ),
                             'section'     => 'frontpage_sec' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'priority'    => 25,
                             'notice'      => __( 'The excerpt will be limited to 80 chars max', 'customizr' ),
           ),
@@ -1179,7 +1208,7 @@ function czr_fn_front_page_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls' ,
                             'label'       => __( 'Full width slider' , 'customizr' ),
                             'section'     => 'frontpage_sec' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'priority'    => 30,
                             'notice'      => __( "When checked, the front page slider occupies the full viewport's width", 'customizr' ),
           ),
@@ -1239,7 +1268,7 @@ function czr_fn_front_page_option_map( $get_default = null ) {
                             'label'       => __( 'Apply this height to all sliders' , 'customizr' ),
                             'control'   =>  'CZR_controls' ,
                             'section'     => 'frontpage_sec' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'priority'       => 53,
           ),
           'tc_slider_change_default_img_size'  =>  array(
@@ -1247,7 +1276,7 @@ function czr_fn_front_page_option_map( $get_default = null ) {
                             'label'       => __( "Replace the default image slider's height" , 'customizr' ),
                             'control'   =>  'CZR_controls' ,
                             'section'     => 'frontpage_sec' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'priority'       => 54,
                             'notice'    => sprintf('%1$s <a href="http://docs.presscustomizr.com/article/74-recommended-plugins-for-the-customizr-wordpress-theme/#images" target="_blank">%2$s</a>',
                                 __( "If this option is checked, your images will be resized with your custom height on upload. This is better for your overall loading performance." , 'customizr' ),
@@ -1257,7 +1286,7 @@ function czr_fn_front_page_option_map( $get_default = null ) {
 
           //Front page widget area
           'tc_show_featured_pages'  => array(
-                            'default'       => 1,
+                            'default'     => CZR_IS_PRO || czr_fn_user_started_before_version( '4.1.8' , '2.0.0', 'free' ) ? 1 : 0,
                             'control'   => 'CZR_controls' ,
                             'title'       => __( 'Featured pages options' , 'customizr' ),
                             'label'       => __( 'Display home featured pages area' , 'customizr' ),
@@ -1276,7 +1305,7 @@ function czr_fn_front_page_option_map( $get_default = null ) {
                             'control'   => 'CZR_controls' ,
                             'label'       => __( 'Show images' , 'customizr' ),
                             'section'     => 'frontpage_sec' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'notice'    => __( 'The images are set with the "featured image" of each pages (in the page edit screen). Uncheck the option above to disable the featured page images.' , 'customizr' ),
                             'priority'      => 60,
           ),
@@ -1320,7 +1349,7 @@ function czr_fn_layout_option_map( $get_default = null ) {
                           'control'     => 'CZR_controls' ,
                           'label'         => __( 'Force default layout everywhere' , 'customizr' ),
                           'section'       => 'post_layout_sec' ,
-                          'type'          => 'checkbox' ,
+                          'type'          => 'nimblecheck' ,
                           'notice'      => __( 'This option will override the specific layouts on all posts/pages, including the front page.' , 'customizr' ),
                           'priority'      => 20
           ),
@@ -1461,7 +1490,7 @@ function czr_fn_post_list_option_map( $get_default = null ) {
                             'title'         => __( 'Thumbnails options' , 'customizr' ),
                             'label'         => __( "Display the post thumbnails" , "customizr" ),
                             'section'       => 'post_lists_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 68,
                             'notice'        => sprintf( '%s %s' , __( 'When this option is checked, the post thumbnails are displayed in all post lists : blog, archives, author page, search pages, ...' , 'customizr' ), __( 'Note : thumbnails are always displayed when the grid layout is choosen.' , 'customizr') )
           ),
@@ -1470,7 +1499,7 @@ function czr_fn_post_list_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls' ,
                             'label'         => __( "If no featured image is set for a post, use the last image attached to this post." , "customizr" ),
                             'section'       => 'post_lists_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 70
           ),
 
@@ -1508,7 +1537,7 @@ function czr_fn_post_list_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls' ,
                             'label'         => __( "Alternate thumbnail/content" , "customizr" ),
                             'section'       => 'post_lists_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 95
           ),
 
@@ -1588,7 +1617,7 @@ function czr_fn_post_list_option_map( $get_default = null ) {
                             'control'       => 'CZR_controls' ,
                             'label'         => __( 'Expand the last sticky post (for home and blog page only)' , "customizr" ),
                             'section'       => 'post_lists_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 47
           ),
 
@@ -1597,7 +1626,7 @@ function czr_fn_post_list_option_map( $get_default = null ) {
                             'control'       => 'CZR_controls' ,
                             'label'         => __( 'Apply a shadow to each grid items' , "customizr" ),
                             'section'       => 'post_lists_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 61,
                             'transport'   => czr_fn_is_ms() ? 'refresh' : 'postMessage'
           ),
@@ -1606,7 +1635,7 @@ function czr_fn_post_list_option_map( $get_default = null ) {
                             'control'       => 'CZR_controls' ,
                             'label'         => __( 'Apply a colored bottom border to each grid items' , "customizr" ),
                             'section'       => 'post_lists_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 62,
                             'transport'   => czr_fn_is_ms() ? 'refresh' : 'postMessage'
           ),
@@ -1630,7 +1659,7 @@ function czr_fn_post_list_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls' ,
                             'label'         => __( "Display thumbnail placeholder if no images available" , "customizr" ),
                             'section'       => 'post_lists_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 99
           ),
 
@@ -1775,7 +1804,7 @@ function czr_fn_breadcrumb_option_map( $get_default = null ) {
                           'label'         => __( 'Display Breadcrumb' , 'customizr' ),
                           'control'     =>  'CZR_controls' ,
                           'section'       => 'breadcrumb_sec' ,
-                          'type'          => 'checkbox' ,
+                          'type'          => 'nimblecheck' ,
                           'priority'      => 1,
           ),
           'tc_show_breadcrumb_home'  =>  array(
@@ -1783,7 +1812,7 @@ function czr_fn_breadcrumb_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls' ,
                             'label'         => __( "Display the breadcrumb on home page" , "customizr" ),
                             'section'       => 'breadcrumb_sec' ,
-                            'type'          => 'checkbox' ,
+                            'type'          => 'nimblecheck' ,
                             'priority'      => 20
           ),
           'tc_show_breadcrumb_in_pages'  =>  array(
@@ -1791,7 +1820,7 @@ function czr_fn_breadcrumb_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls' ,
                             'label'         => __( "Display the breadcrumb in pages" , "customizr" ),
                             'section'       => 'breadcrumb_sec' ,
-                            'type'          => 'checkbox' ,
+                            'type'          => 'nimblecheck' ,
                             'priority'      => 30
 
           ),
@@ -1800,7 +1829,7 @@ function czr_fn_breadcrumb_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls' ,
                             'label'         => __( "Display the breadcrumb in single posts" , "customizr" ),
                             'section'       => 'breadcrumb_sec' ,
-                            'type'          => 'checkbox' ,
+                            'type'          => 'nimblecheck' ,
                             'priority'      => 40
 
           ),
@@ -1809,7 +1838,7 @@ function czr_fn_breadcrumb_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls' ,
                             'label'         => __( "Display the breadcrumb in posts lists : blog page, archives, search results..." , "customizr" ),
                             'section'       => 'breadcrumb_sec' ,
-                            'type'          => 'checkbox' ,
+                            'type'          => 'nimblecheck' ,
                             'priority'      => 50
 
           ),
@@ -1825,7 +1854,7 @@ function czr_fn_breadcrumb_option_map( $get_default = null ) {
                                               esc_attr__("Yoast SEO breadcrumbs settings", "customizr")
                                             )
                                           ),
-                            'type'      => 'checkbox' ,
+                            'type'      => 'nimblecheck' ,
                             'priority'  => 60,
                             'active_callback' => apply_filters( 'tc_yoast_breadcrumbs_option_enabled', '__return_false' )
           ),
@@ -1843,7 +1872,7 @@ function czr_fn_post_metas_option_map( $get_default = null ){
                             'control'     => 'CZR_controls' ,
                             'label'         => __( "Display posts metas" , "customizr" ),
                             'section'       => 'post_metas_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'notice'    => __( 'When this option is checked, the post metas (like taxonomies, date and author) are displayed below the post titles.' , 'customizr' ),
                             'priority'      => 5,
                             'transport'   => czr_fn_is_ms() ? 'refresh' : 'postMessage'
@@ -1854,7 +1883,7 @@ function czr_fn_post_metas_option_map( $get_default = null ){
                             'title'         => __( 'Select the contexts' , 'customizr' ),
                             'label'         => __( "Display posts metas on home" , "customizr" ),
                             'section'       => 'post_metas_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 15,
                             'transport'   => czr_fn_is_ms() ? 'refresh' : 'postMessage'
           ),
@@ -1863,7 +1892,7 @@ function czr_fn_post_metas_option_map( $get_default = null ){
                             'control'     => 'CZR_controls' ,
                             'label'         => __( "Display posts metas for single posts" , "customizr" ),
                             'section'       => 'post_metas_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 20,
                             'transport'   => czr_fn_is_ms() ? 'refresh' : 'postMessage'
           ),
@@ -1872,7 +1901,7 @@ function czr_fn_post_metas_option_map( $get_default = null ){
                             'control'     => 'CZR_controls' ,
                             'label'         => __( "Display posts metas in post lists (archives, blog page)" , "customizr" ),
                             'section'       => 'post_metas_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 25,
                             'transport'   => czr_fn_is_ms() ? 'refresh' : 'postMessage'
           ),
@@ -1883,7 +1912,7 @@ function czr_fn_post_metas_option_map( $get_default = null ){
                             'title'         => __( 'Select the metas to display' , 'customizr' ),
                             'label'         => __( "Display hierarchical taxonomies (like categories)" , "customizr" ),
                             'section'       => 'post_metas_sec',
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 30
           ),
 
@@ -1892,7 +1921,7 @@ function czr_fn_post_metas_option_map( $get_default = null ){
                             'control'     => 'CZR_controls',
                             'label'         => __( "Display non-hierarchical taxonomies (like tags)" , "customizr" ),
                             'section'       => 'post_metas_sec',
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 35
           ),
 
@@ -1901,7 +1930,7 @@ function czr_fn_post_metas_option_map( $get_default = null ){
                             'control'     => 'CZR_controls',
                             'label'         => __( "Display the author" , "customizr" ),
                             'section'       => 'post_metas_sec',
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 40
           ),
           'tc_show_post_metas_publication_date'  =>  array(
@@ -1909,7 +1938,7 @@ function czr_fn_post_metas_option_map( $get_default = null ){
                             'control'     => 'CZR_controls',
                             'label'         => __( "Display the publication date" , "customizr" ),
                             'section'       => 'post_metas_sec',
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 45
           ),
           //Think about displaying this only in singles like hueman does!
@@ -1919,7 +1948,7 @@ function czr_fn_post_metas_option_map( $get_default = null ){
                             'control'     => 'CZR_controls',
                             'label'         => __( "Display the update date" , "customizr" ),
                             'section'       => 'post_metas_sec',
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 50,
           ),
 
@@ -1940,7 +1969,7 @@ function czr_fn_gallery_option_map( $get_default = null ){
                             'control'       => 'CZR_controls' ,
                             'notice'         => __( "Apply Customizr effects to galleries images" , "customizr" ),
                             'section'       => 'galleries_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 1
           ),
           'tc_gallery_fancybox'=>  array(
@@ -1949,7 +1978,7 @@ function czr_fn_gallery_option_map( $get_default = null ){
                             'control'       => 'CZR_controls' ,
                             'notice'         => __( "Apply lightbox effects to galleries images" , "customizr" ),
                             'section'       => 'galleries_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 1
           ),
           'tc_gallery_style'=>  array(
@@ -1958,7 +1987,7 @@ function czr_fn_gallery_option_map( $get_default = null ){
                             'control'       => 'CZR_controls' ,
                             'notice'         => __( "Apply nice on hover expansion effect to the galleries images" , "customizr" ),
                             'section'       => 'galleries_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'transport'     => czr_fn_is_ms() ? 'refresh' : 'postMessage',
                             'priority'      => 1
           )
@@ -1978,7 +2007,7 @@ function czr_fn_comment_option_map( $get_default = null ) {
                             'control'       => 'CZR_controls' ,
                             'label'         => czr_fn_is_ms() ? __( "Display the number of comments below the post titles" , "customizr" ) : __( "Display the number of comments in a bubble next to the post title" , "customizr" ),
                             'section'       => 'comments_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 1
           ),
           'tc_page_comments'  =>  array(
@@ -1987,7 +2016,7 @@ function czr_fn_comment_option_map( $get_default = null ) {
                             'title'       => __( 'Other comments settings' , 'customizr'),
                             'label'       => __( 'Enable comments on pages' , 'customizr' ),
                             'section'     => 'comments_sec',
-                            'type'        => 'checkbox',
+                            'type'        => 'nimblecheck',
                             'priority'    => 40,
                             'notice'      => sprintf('%1$s<br/> %2$s <a href="%3$s" target="_blank">%4$s</a>',
                                 __( 'If checked, this option will enable comments on pages. You can disable comments for a single page in the quick edit mode of the page list screen.' , 'customizr' ),
@@ -2001,7 +2030,7 @@ function czr_fn_comment_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls',
                             'label'       => __( 'Enable comments on posts' , 'customizr' ),
                             'section'     => 'comments_sec',
-                            'type'        => 'checkbox',
+                            'type'        => 'nimblecheck',
                             'priority'    => 45,
                             'notice'      => sprintf('%1$s <a href="%2$s" target="_blank">%3$s<span style="font-size: 17px;" class="dashicons dashicons-external"></span></a>.<br/>%4$s <a href="%5$s" target="_blank">%6$s</a>',
                                 __( 'If checked, this option enables comments on all types of single posts. You can disable comments for a single post in quick edit mode from the' , 'customizr' ),
@@ -2017,7 +2046,7 @@ function czr_fn_comment_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls',
                             'label'       => __( 'Display the comment list' , 'customizr' ),
                             'section'     => 'comments_sec',
-                            'type'        => 'checkbox',
+                            'type'        => 'nimblecheck',
                             'priority'    => 50,
                             'notice'      =>__( 'By default, WordPress displays the past comments, even if comments are disabled in posts or pages. Unchecking this option allows you to not display this comment history.' , 'customizr' )
           )
@@ -2036,7 +2065,7 @@ function czr_fn_post_navigation_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls' ,
                             'label'         => __( "Display posts navigation" , "customizr" ),
                             'section'       => 'post_navigation_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'notice'    => __( 'When this option is checked, the posts navigation is displayed below the posts' , 'customizr' ),
                             'priority'      => 5,
                             'transport'   => czr_fn_is_ms() ? 'refresh' : 'postMessage'
@@ -2048,7 +2077,7 @@ function czr_fn_post_navigation_option_map( $get_default = null ) {
                             'title'         => __( 'Select the contexts' , 'customizr' ),
                             'label'         => __( "Display navigation in pages" , "customizr" ),
                             'section'       => 'post_navigation_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 10,
                             'transport'   => czr_fn_is_ms() ? 'refresh' : 'postMessage'
           ),
@@ -2057,7 +2086,7 @@ function czr_fn_post_navigation_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls' ,
                             'label'         => __( "Display posts navigation in single posts" , "customizr" ),
                             'section'       => 'post_navigation_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 20,
                             'transport'   => czr_fn_is_ms() ? 'refresh' : 'postMessage'
           ),
@@ -2066,7 +2095,7 @@ function czr_fn_post_navigation_option_map( $get_default = null ) {
                             'control'     => 'CZR_controls' ,
                             'label'         => __( "Display posts navigation in post lists (archives, blog page, categories, search results ..)" , "customizr" ),
                             'section'       => 'post_navigation_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 25,
                             'transport'   => czr_fn_is_ms() ? 'refresh' : 'postMessage'
           ),
@@ -2090,7 +2119,7 @@ function czr_fn_sidebars_option_map( $get_default = null ) {
                             'label'       => __( 'Social links in left sidebar' , 'customizr' ),
                             'control'   =>  'CZR_controls' ,
                             'section'     => 'sidebar_socials_sec',
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'priority'       => 20,
                             'ubq_section'   => array(
                                                 'section' => 'socials_sec',
@@ -2103,7 +2132,7 @@ function czr_fn_sidebars_option_map( $get_default = null ) {
                             'label'       => __( 'Social links in right sidebar' , 'customizr' ),
                             'control'   =>  'CZR_controls' ,
                             'section'     => 'sidebar_socials_sec',
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'priority'       => 25,
                             'ubq_section'   => array(
                                                 'section' => 'socials_sec',
@@ -2156,7 +2185,7 @@ function czr_fn_footer_global_settings_option_map( $get_default = null ) {
                             'label'       => __( 'Social links in footer' , 'customizr' ),
                             'control'   =>  'CZR_controls' ,
                             'section'     => 'footer_global_sec' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'priority'       => 1,
                             'ubq_section'  => array(
                                                 'section' => 'socials_sec',
@@ -2168,7 +2197,7 @@ function czr_fn_footer_global_settings_option_map( $get_default = null ) {
                             'control'       => 'CZR_controls' ,
                             'label'         => __( "Stick the footer to the bottom of the page", "customizr" ),
                             'section'       => 'footer_global_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 1,
                             'transport'     => czr_fn_is_ms() ? 'refresh' : 'postMessage',
                             'notice'      =>__( "Enabling this option will glue your footer to the bottom of the screen, when pages are shorter than the viewport's height." , 'customizr' )
@@ -2178,7 +2207,7 @@ function czr_fn_footer_global_settings_option_map( $get_default = null ) {
                             'control'       => 'CZR_controls' ,
                             'label'         => __( "Display a back to top arrow on scroll" , "customizr" ),
                             'section'       => 'footer_global_sec' ,
-                            'type'          => 'checkbox',
+                            'type'          => 'nimblecheck',
                             'priority'      => 5
                         ),
           'tc_back_to_top_position'  =>  array(
@@ -2241,7 +2270,7 @@ function czr_fn_performance_option_map( $get_default = null ) {
                             'control'   => 'CZR_controls' ,
                             'label'       => __( "Performance : use the minified CSS stylesheets", 'customizr' ),
                             'section'     => 'performances_sec' ,
-                            'type'        => 'checkbox' ,
+                            'type'        => 'nimblecheck' ,
                             'notice'    => __( 'Using the minified version of the stylesheets will speed up your webpage load time.' , 'customizr' ),
           ),
           'tc_img_smart_load'  =>  array(
@@ -2249,7 +2278,7 @@ function czr_fn_performance_option_map( $get_default = null ) {
                             'label'       => __( 'Load images on scroll' , 'customizr' ),
                             'control'     =>  'CZR_controls',
                             'section'     => 'performances_sec',
-                            'type'        => 'checkbox',
+                            'type'        => 'nimblecheck',
                             'priority'    => 20,
                             'notice'      => __('Check this option to delay the loading of non visible images. Images below the viewport will be loaded dynamically on scroll. This can boost performances by reducing the weight of long web pages with images.' , 'customizr')
           ),
@@ -2258,7 +2287,7 @@ function czr_fn_performance_option_map( $get_default = null ) {
                             'label'       => __( 'Lazy load the images in sliders' , 'customizr' ),
                             'control'     =>  'CZR_controls',
                             'section'     => 'performances_sec',
-                            'type'        => 'checkbox',
+                            'type'        => 'nimblecheck',
                             'priority'    => 30,
                             'notice'      => __('Check this option to delay the loading of non visible images in sliders. This can greatly improve the speed of your website.' , 'customizr'),
                             'ubq_section'   => array(
@@ -2279,7 +2308,7 @@ function czr_fn_placeholders_notice_map( $get_default = null ) {
                             'control'   => 'CZR_controls',
                             'label'       => __( "Display help notices on front-end for logged in users.", 'customizr' ),
                             'section'     => 'placeholder_sec',
-                            'type'        => 'checkbox',
+                            'type'        => 'nimblecheck',
                             'notice'    => __( 'When this option is enabled, various help notices and some placeholder blocks are displayed on the front-end of your website. They are only visible by logged in users with administration capabilities.' , 'customizr' )
           )
   );
@@ -2295,7 +2324,7 @@ function czr_fn_external_resources_option_map( $get_default = null ) {
                             'control'   => 'CZR_controls',
                             'label'       => __( "Load Font Awesome resources", 'customizr' ),
                             'section'     => 'extresources_sec',
-                            'type'        => 'checkbox',
+                            'type'        => 'nimblecheck',
                             'notice'      => sprintf('<strong>%1$s</strong>. %2$s</br>%3$s',
                                 __( 'Use with caution' , 'customizr'),
                                 __( 'When checked, the Font Awesome icons and CSS will be loaded on front end. You might want to load the Font Awesome icons with a custom code, or let a plugin do it for you.', 'customizr' ),
@@ -2315,12 +2344,15 @@ function czr_fn_external_resources_option_map( $get_default = null ) {
 ------------------------------------------------------------------------------------------------------*/
 function czr_fn_responsive_option_map( $get_default = null ) {
   return array(
+          // Deactivation of modular scale for headings (Hx) by default, since may 2019
+          // because we end up not being able to see the difference between headings and paragraphs on mobile
+          // @see https://github.com/presscustomizr/customizr/issues/1746
           'tc_ms_respond_css'  =>  array(
-                            'default'     => 1,
+                            'default'     => 0,
                             'control'     => 'CZR_controls',
                             'label'       => __( 'Automatically adapt the font size to the width of the devices', 'customizr' ),
                             'section'     => 'responsive_sec',
-                            'type'        => 'checkbox',
+                            'type'        => 'nimblecheck',
                             'notice'    => __( 'When this option is enabled, your font size will automatically resize to be better displayed in mobile devices.' , 'customizr' )
           )
 
@@ -2356,6 +2388,28 @@ function czr_fn_style_option_map( $get_default = null ) {
 
   );
 }
+
+/******************************************************************************************************
+*******************************************************************************************************
+* PANEL : WOOCOMMERCE
+*******************************************************************************************************
+******************************************************************************************************/
+function czr_fn_woocommerce_option_map( $get_default = null ) {
+    return array(
+          'tc_woocommerce_display_product_thumb_before_mw' => array(
+                            // disabled by default because https://github.com/presscustomizr/customizr/issues/1708#issuecomment-475151976
+                            'default'     => 0,
+                            'control'     => 'CZR_controls' ,
+                            'label'         => __( 'Display the product featured image' , 'customizr' ),
+                            'title'         => __( 'Featured Image' , 'customizr' ),
+                            'section'       => 'woocommerce_product_images' ,
+                            'type'      =>  'nimblecheck',
+                            'priority'      => 10,
+                            'active_callback' => apply_filters( 'tc_woocommerce_options_enabled', '__return_false' )
+          )
+    );
+}
+
 
 
 /***************************************************************
@@ -2533,6 +2587,7 @@ function czr_fn_popul_section_map( $_sections ) {
                         //'description' =>  __( 'Set up the font global settings' , 'customizr' ),
                         'panel'   => 'tc-global-panel'
     ),
+    // Since March 2018, this section is registered dynamically
     // 'socials_sec'        => array(
     //                     'title'     =>  __( 'Social links' , 'customizr' ),
     //                     'priority'    =>  $_is_wp_version_before_4_0 ? 9 : 20,
@@ -2742,14 +2797,14 @@ function czr_fn_popul_section_map( $_sections ) {
         -> SECTION : GO-PRO
         ----------------------------------------------------------------------------------------------*/
         'go_pro_sec'   => array(
-                            'title'         => esc_html__( 'Upgrade to Customizr Pro', 'customizr' ),
-                            'pro_subtitle'  => esc_html__( 'Discover the features and benefits' , 'customizr'),
-                            'pro_doc_url'   => sprintf('%scustomizr-pro/?ref=a', CZR_WEBSITE ),
-                            'pro_text'      => esc_html__( 'Go Pro', 'customizr' ),
-                            'pro_url'       => sprintf('%scustomizr-pro/', CZR_WEBSITE ),
-                            'priority'      => 0,
-                            'section_class' => 'CZR_Customize_Section_Pro',
-                            'active_callback' => 'czr_fn_pro_section_active_cb'
+            'title'         => esc_html__( 'Upgrade to Customizr Pro', 'customizr' ),
+            'pro_subtitle'  => esc_html__( 'Discover the features and benefits' , 'customizr'),
+            'pro_doc_url'   => sprintf('%scustomizr-pro/?ref=a&utm_source=usersite&utm_medium=link&utm_campaign=customizr-customizer-btn', CZR_WEBSITE ),
+            'pro_text'      => esc_html__( 'Go Pro', 'customizr' ),
+            'pro_url'       => sprintf('%scustomizr-pro/?ref=a&utm_source=usersite&utm_medium=link&utm_campaign=customizr-customizer-btn', CZR_WEBSITE ),
+            'priority'      => 0,
+            'section_class' => 'CZR_Customize_Section_Pro',
+            'active_callback' => 'czr_fn_pro_section_active_cb'
         ),
     ) );
   }

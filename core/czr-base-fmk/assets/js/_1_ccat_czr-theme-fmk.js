@@ -83,13 +83,13 @@
             /*****************************************************************************
             * ADD PRO BEFORE SPECIFIC SECTIONS AND PANELS
             *****************************************************************************/
-            if ( themeServerControlParams.isPro ) {
+            if ( window.themeServerControlParams && themeServerControlParams.isPro ) {
                   _.each( [
                         //WFC
                         'tc_font_customizer_settings',
 
                         //hueman pro
-                        'header_image_sec',
+                        'contx_header_bg',
                         'content_blog_sec',
                         'static_front_page',
                         'content_single_sec',
@@ -168,7 +168,7 @@ $.extend( CZRMultiplePickerMths , {
                 _select  = this.container.find('select');
 
 
-            _select.select2({
+            _select.czrSelect2({
                   closeOnSelect: false,
                   templateSelection: czrEscapeMarkup
             });
@@ -388,8 +388,8 @@ $.extend( CZRLayoutSelectMths , {
             //destroy selected if set
             //$_select.selecter("destroy");
 
-            //fire select2
-            $_select.select2( {
+            //fire czrSelect2
+            $_select.czrSelect2( {
                   templateResult: addImg,
                   templateSelection: addImg,
                   minimumResultsForSearch: Infinity
@@ -406,14 +406,15 @@ $.extend( CZRLayoutSelectMths , {
       api.CZRUploadControl          = api.Control.extend( CZRUploadMths );
       api.CZRLayoutControl          = api.Control.extend( CZRLayoutSelectMths );
       api.CZRMultiplePickerControl  = api.Control.extend( CZRMultiplePickerMths );
-
+      api.CZRColorAlpha = api.Control.extend({ready: api.ColorControl.prototype.ready});//api.CZRColorAlpha
 
       $.extend( api.controlConstructor, {
             czr_upload     : api.CZRUploadControl,
             //czr_sidebars   : api.CZRWidgetAreasControl,
             //czr_socials    : api.CZRSocialControl,
             czr_multiple_picker : api.CZRMultiplePickerControl,
-            czr_layouts    : api.CZRLayoutControl
+            czr_layouts    : api.CZRLayoutControl,
+            wp_color_alpha : api.CZRColorAlpha,
             //czr_background : api.CZRBackgroundControl
       });
 
@@ -441,23 +442,9 @@ $.extend( CZRLayoutSelectMths , {
       api.bind( 'ready' , function() {
             if ( _.has( api, 'czr_ctrlDependencies') )
               return;
-            if ( serverControlParams.isSkopOn ) {
-                  // If skope is on, we need to wait for the initial setup to be finished
-                  // otherwise, we might refer to not instantiated skopes when processing silent updates further in the code
-                  //Skope is ready when :
-                  //1) the initial skopes collection has been populated
-                  //2) the initial skope has been switched to
-                  if ( 'resolved' != api.czr_skopeReady.state() ) {
-                        api.czr_skopeReady.done( function() {
-                              api.czr_ctrlDependencies = new api.CZR_ctrlDependencies();
-                              api.czr_CrtlDependenciesReady.resolve();
-                        });
-                  }
-            } else {
-                  api.czr_ctrlDependencies = new api.CZR_ctrlDependencies();
-                  api.czr_CrtlDependenciesReady.resolve();
-            }
 
+            api.czr_ctrlDependencies = new api.CZR_ctrlDependencies();
+            api.czr_CrtlDependenciesReady.resolve();
       } );
 
 
@@ -496,25 +483,10 @@ $.extend( CZRLayoutSelectMths , {
                     //    source : section_id from which the request for awaking has been done
                     // }
                     api.bind( 'awaken-section', function( target_source ) {
-                          //if skope on ( serverControlParams.isSkopOn ), then defer the visibility awakening after the silent updates
-                          if ( serverControlParams.isSkopOn && _.has( api ,'czr_skopeBase' ) ) {
-                                api.czr_skopeBase.processSilentUpdates( {
-                                      candidates : {},
-                                      section_id : target_source.target,
-                                      refresh : false
-                                } ).then( function() {
-                                      try {
-                                            self.setServiDependencies( target_source.target, target_source.source );
-                                      } catch( er ) {
-                                            api.errorLog( 'On awaken-section, ctrl deps : ' + er );
-                                      }
-                                });
-                          } else {
-                                try {
-                                      self.setServiDependencies( target_source.target, target_source.source );
-                                } catch( er ) {
-                                      api.errorLog( 'On awaken-section, ctrl deps : ' + er );
-                                }
+                          try {
+                                self.setServiDependencies( target_source.target, target_source.source );
+                          } catch( er ) {
+                                api.errorLog( 'On awaken-section, ctrl deps : ' + er );
                           }
                     });
 
@@ -967,7 +939,7 @@ $.extend( CZRLayoutSelectMths , {
             /* CHECKBOXES */
             api.czrSetupCheckbox = function( controlId, refresh ) {
                   var _ctrl = api.control( controlId );
-                  $('input[type=checkbox]', _ctrl.container ).each( function() {
+                  $('input[type=checkbox]:not(.nimblecheck-input)', _ctrl.container ).each( function() {
                         //Exclude font customizer
                         if ( 'tc_font_customizer_settings' == _ctrl.params.section )
                           return;
@@ -1012,7 +984,6 @@ $.extend( CZRLayoutSelectMths , {
 
             /* NUMBER INPUT */
             api.czrSetupStepper = function( controlId, refresh ) {
-                  //Exclude no-selecter-js
                   var _ctrl = api.control( controlId );
                   $('input[type="number"]', _ctrl.container ).each( function() { $(this).stepper(); });
             };//api.czrSetupStepper()
