@@ -1069,67 +1069,6 @@ ul.wp-block-gallery .blocks-gallery-item figure {
  *
  * @see: https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/columns/
  */
-.wp-block-columns {
-  display: grid;
-  grid-column-gap: 32px;
-}
-.wp-block-columns.has-2-columns {
-  grid-template-columns: repeat(1, 1fr);
-}
-.wp-block-columns.has-3-columns {
-  grid-template-columns: repeat(1, 1fr);
-}
-.wp-block-columns.has-4-columns {
-  grid-template-columns: repeat(1, 1fr);
-}
-.wp-block-columns.has-5-columns {
-  grid-template-columns: repeat(1, 1fr);
-}
-.wp-block-columns.has-6-columns {
-  grid-template-columns: repeat(1, 1fr);
-}
-.wp-block-columns .wp-block-column {
-  margin: 0 !important;
-  min-width: 100%;
-}
-.wide-content .wp-block-columns.alignfull {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-@media (min-width: 768px) {
-  .wp-block-columns.has-2-columns {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .wp-block-columns.has-3-columns {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .wp-block-columns.has-4-columns {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .wp-block-columns.has-5-columns {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .wp-block-columns.has-6-columns {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media (min-width: 992px) {
-  .wp-block-columns.has-2-columns {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .wp-block-columns.has-3-columns {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .wp-block-columns.has-4-columns {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .wp-block-columns.has-5-columns {
-    grid-template-columns: repeat(5, 1fr);
-  }
-  .wp-block-columns.has-6-columns {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
 /**
  * File Block
  * Needed styles to modify the default look of the Gutenberg core block.
@@ -1334,50 +1273,6 @@ img {
 body {
   color: #555;
   background: #fff;
-}
-body .editor-block-list__layout > * {
-  margin-top: 24px;
-  margin-bottom: 24px;
-  min-width: 25%;
-}
-body .editor-block-list__layout > *:first-child {
-  margin-top: 0;
-}
-body .editor-block-list__layout > *:last-child {
-  margin-bottom: 0;
-}
-body .editor-block-list__layout > *.alignleft,
-body .editor-block-list__layout > *.alignright {
-  margin-top: 0;
-  max-width: calc(50% -  32px / 2);
-  z-index: 0;
-}
-body .editor-block-list__layout > *.alignleft {
-  margin-right: 16px;
-}
-body .editor-block-list__layout > *.alignright {
-  margin-left: 16px;
-}
-body .editor-block-list__layout > *.aligncenter {
-  margin-right: auto;
-  margin-left: auto;
-}
-body .editor-block-list__layout > * figcaption {
-  font-size: 0.8rem;
-  line-height: 1.875;
-  margin-top: 12px;
-}
-@media (min-width: 768px) {
-  body .editor-block-list__layout > * {
-    margin-top: 27px;
-    margin-bottom: 27px;
-  }
-  body .editor-block-list__layout > * figcaption {
-    font-size: 0.9rem;
-    line-height: 1.875;
-    margin-top: 13.5px;
-    margin-bottom: 0;
-  }
 }
 /* Main column width */
 .wp-block {

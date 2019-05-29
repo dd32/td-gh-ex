@@ -4,7 +4,7 @@
  * Description: Agncy is a beautiful news and blogging theme that has beautiful typography, powerful color customisation and an elegant, light layout. Customise your theme to the colours you need and upload your own logo. Enjoy reading even long texts with the beautiful font 'Fira' and experience how fast font loading can be with an innovative font loading technique.
  * Author: WP Munich
  * Author URI: http://www.wp-munich.com
- * Version: 1.6.3
+ * Version: 1.6.5
  * Text Domain: agncy
  * Domain Path: /languages
  * License: GPL-2.0+
@@ -4698,67 +4698,6 @@ ul.wp-block-gallery .blocks-gallery-item figure {
  *
  * @see: https://github.com/WordPress/gutenberg/blob/master/packages/block-library/src/columns/
  */
-.wp-block-columns {
-  display: grid;
-  grid-column-gap: 32px;
-}
-.wp-block-columns.has-2-columns {
-  grid-template-columns: repeat(1, 1fr);
-}
-.wp-block-columns.has-3-columns {
-  grid-template-columns: repeat(1, 1fr);
-}
-.wp-block-columns.has-4-columns {
-  grid-template-columns: repeat(1, 1fr);
-}
-.wp-block-columns.has-5-columns {
-  grid-template-columns: repeat(1, 1fr);
-}
-.wp-block-columns.has-6-columns {
-  grid-template-columns: repeat(1, 1fr);
-}
-.wp-block-columns .wp-block-column {
-  margin: 0 !important;
-  min-width: 100%;
-}
-.wide-content .wp-block-columns.alignfull {
-  padding-left: 16px;
-  padding-right: 16px;
-}
-@media (min-width: 768px) {
-  .wp-block-columns.has-2-columns {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .wp-block-columns.has-3-columns {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .wp-block-columns.has-4-columns {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .wp-block-columns.has-5-columns {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .wp-block-columns.has-6-columns {
-    grid-template-columns: repeat(4, 1fr);
-  }
-}
-@media (min-width: 992px) {
-  .wp-block-columns.has-2-columns {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .wp-block-columns.has-3-columns {
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .wp-block-columns.has-4-columns {
-    grid-template-columns: repeat(4, 1fr);
-  }
-  .wp-block-columns.has-5-columns {
-    grid-template-columns: repeat(5, 1fr);
-  }
-  .wp-block-columns.has-6-columns {
-    grid-template-columns: repeat(6, 1fr);
-  }
-}
 /**
  * File Block
  * Needed styles to modify the default look of the Gutenberg core block.
