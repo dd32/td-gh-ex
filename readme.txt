@@ -7,6 +7,8 @@ A Business theme which is ideal for creating a corporate / business website. App
 For any ideas, support and feedback you can access the theme forum.
 
 == Version ==
+= 1.1.2 =
+1. Add alt tag on logo.
 = 1.1.1 =
 1. Update string.
 = 1.1 =
