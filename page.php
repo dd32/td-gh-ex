@@ -21,7 +21,7 @@ endif ; ?>
 	<div class="container">
 		<div class="row">
 				<?php if(get_theme_mod('best_news_blog_archive_layout_settings','right') == 'none'): ?>
-				<div class="col-lg-12 col-12">
+				<div class="col-lg-12 col-12 text-justify">
 						<?php
 						while ( have_posts() ) :
 							the_post();
@@ -38,7 +38,7 @@ endif ; ?>
 						</div>
 				<?php elseif (get_theme_mod('best_news_blog_archive_layout_settings','right') == 'right'): ?>
 					
-					<div class="col-lg-9 col-12">
+					<div class="col-lg-9 col-12  text-justify">
 					<?php
 					while ( have_posts() ) :
 						the_post();

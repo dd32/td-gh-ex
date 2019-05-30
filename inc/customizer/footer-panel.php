@@ -20,7 +20,7 @@ $wp_customize->add_panel(
         'priority'       => 15,
         'capability'     => 'edit_theme_options',
         'theme_supports' => '',
-        'title'          => __( 'Footter settings', "best-news" ),
+        'title'          => __( 'Footer settings', "best-news" ),
     )
 );
 
@@ -139,15 +139,15 @@ $wp_customize->add_setting(
       'footer_contact_info_items',
       array(
         'section' => 'best_news_location_section',              
-        'label'   => __( 'Top Header Contact items', 'best-news' ),
+        'label'   => __( 'Bottom header contact items', 'best-news' ),
         'fields'  => array(
           'icon' => array(
             'type'        => 'font',
-            'label'       => __( 'Font Awesome Icon', 'best-news' ),
+            'label'       => __( 'Font Awesome icon', 'best-news' ),
           ),
           'title' => array(
             'type'        => 'text',
-            'label'       => __( 'Location Title', 'best-news' ),
+            'label'       => __( 'Location title', 'best-news' ),
           )
         ),
         'row_label' => array(

@@ -43,6 +43,85 @@ function best_news_customize_register( $wp_customize ) {
 			)
 		)
 	);
+	$wp_customize->add_section(
+		new Best_News_Customize_Section_Upsell(
+			$wp_customize,
+			'theme_upsell2',
+			array(
+				'title'    => esc_html__( 'View', 'best-news' ),
+				'pro_text' => esc_html__( 'All documents', 'best-news' ),
+				'pro_url'  => esc_url('https://www.postmagthemes.com/docs/documentation-of-best-news-and-pro/'),
+				'priority' => 2,
+				'panel'          => 'best_news_document_panel',
+			)
+		)
+	);
+	$wp_customize->add_section(
+		new Best_News_Customize_Section_Upsell(
+			$wp_customize,
+			'theme_upsell3',
+			array(
+				'title'    => esc_html__( 'Video', 'best-news' ),
+				'pro_text' => esc_html__( 'Setup as newspaper page', 'best-news' ),
+				'pro_url'  => esc_url('https://www.postmagthemes.com/docs/documentation-of-best-news-and-pro/quick-setup-guide-as-per-demo/video-guide-for-best-news-free-version/'),
+				'priority' => 3,
+				'panel'          => 'best_news_document_panel',
+			)
+		)
+	);
+	$wp_customize->add_section(
+		new Best_News_Customize_Section_Upsell(
+			$wp_customize,
+			'theme_upsell4',
+			array(
+				'title'    => esc_html__( 'Text', 'best-news' ),
+				'pro_text' => esc_html__( 'Setup as blog page', 'best-news' ),
+				'pro_url'  => esc_url('https://www.postmagthemes.com/docs/documentation-of-best-news-and-pro/quick-setup-guide-for-setting-your-homepage-as-blog-page/'),
+				'priority' => 4,
+				'panel'          => 'best_news_document_panel',
+			)
+		)
+	);
+	$wp_customize->add_section(
+		new Best_News_Customize_Section_Upsell(
+			$wp_customize,
+			'theme_upsell5',
+			array(
+				'title'    => esc_html__( 'Video', 'best-news' ),
+				'pro_text' => esc_html__( 'One click demo installation', 'best-news' ),
+				'pro_url'  => esc_url('https://www.postmagthemes.com/docs/documentation-of-best-news-and-pro/video-guide-for-one-click-demo-import-for-setting-theme/'),
+				'priority' => 5,
+				'panel'          => 'best_news_document_panel',
+			)
+		)
+	);
+	$wp_customize->add_section(
+		new Best_News_Customize_Section_Upsell(
+			$wp_customize,
+			'theme_upsell6',
+			array(
+				'title'    => esc_html__( 'Video', 'best-news' ),
+				'pro_text' => esc_html__( 'How to buy Pro theme', 'best-news' ),
+				'pro_url'  => esc_url('https://www.postmagthemes.com/docs/documentation-of-best-news-and-pro/how-to-buy-premium-theme-from-postmagthemes-com/'),
+				'priority' => 6,
+				'panel'          => 'best_news_document_panel',
+			)
+		)
+	);
+	$wp_customize->add_section(
+		new Best_News_Customize_Section_Upsell(
+			$wp_customize,
+			'theme_upsell7',
+			array(
+				'title'    => esc_html__( 'Text', 'best-news' ),
+				'pro_text' => esc_html__( 'Brief introduction', 'best-news' ),
+				'pro_url'  => esc_url('https://www.postmagthemes.com/docs/documentation-of-best-news-and-pro/brief-introduction-of-layout-including-widget/'),
+				'priority' => 7,
+				'panel'          => 'best_news_document_panel',
+			)
+		)
+	);
+	
 }
 add_action( 'customize_register', 'best_news_customize_register' );
 

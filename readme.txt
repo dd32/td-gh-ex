@@ -29,6 +29,9 @@ Best News includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.0.2 - May 30 2019 =
+* Footer missed post image alligned, footer spelling fix, footer contact info link changed, text justify added in page
+
 = 1.0.1 - May 23 2019 =
 * Pro permalink has been fixed
 
@@ -37,7 +40,10 @@ Best News includes support for Infinite Scroll in Jetpack.
 
 == Upgrade Notice ==
 
-= 1.0.1 - MAy 23 2018 =
+= 1.0.2 - May 30 2019 =
+* Footer missed post image alligned for mobile view, footer spelling fix, footer contact info link changed, text justify added in page
+
+= 1.0.1 - May 23 2019 =
 * Pro best news link was updated.
 
 == Images Resources ==

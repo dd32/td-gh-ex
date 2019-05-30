@@ -36,12 +36,12 @@ function best_news_general_settings_register( $wp_customize ) {
      * @since 1.0.0
      */
     $wp_customize->add_panel(
-      'best_news_typography_panel',
+      'best_news_document_panel',
       array(
-          'priority'       => 5,
+          'priority'       => 2,
           'capability'     => 'edit_theme_options',
           'theme_supports' => '',
-          'title'          => __( 'Typography', 'best-news' ),
+          'title'          => __( 'Documents', 'best-news' ),
       )
   );
 

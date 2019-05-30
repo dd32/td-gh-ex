@@ -28,7 +28,7 @@
 					/* Start the Loop */
 					while ( $listings->have_posts() ) :
 						$listings->the_post();	
-					?> <div class="col-md-2">
+					?> <div class="col-md-2 col-lg-2 col-6 mb-2 mt-1">
 						<?php
 						if ( has_post_thumbnail() ) {
 							best_news_thumbnail_8();
@@ -94,7 +94,7 @@
 								<span class="sep "> | </span>
 									<?php
 									/* translators: 1: Theme name, 2: Theme author. */
-									printf( esc_html__( 'Theme: %1$s by  %2$s', 'best-news' ), 'Best News', '<a href="https://www.postmagthemes.com/download/best-news-free-wordpress-theme">Postmagthemes</a>' );?>
+									printf( esc_html__( 'Theme: %2$s by  %1$s', 'best-news' ), '<a href="https://www.postmagthemes.com" target="_blank" >Postmagthemes</a>' , '<a href="https://www.postmagthemes.com/downloads/best-news-free-newspaper-wordpress-theme/" target="_blank">Best News Free Newspaper WordPress Theme</a>' );?>
 								</div>
 							<p>
 						</div>
