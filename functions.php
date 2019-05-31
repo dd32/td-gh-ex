@@ -6,6 +6,7 @@ function apelleuno_add_theme_scripts() {
   wp_enqueue_script( 'popper-min', get_template_directory_uri() . '/popper.min.js', array(), '1.0.0', true );
   wp_enqueue_script( 'bootstrap-min', get_template_directory_uri() . '/bootstrap.min.js', array(), '1.0.0', true );
   wp_enqueue_script( 'stickyfill-init', get_template_directory_uri() . '/stickyfill-init.js', array('jquery'), '2.1.1', true );
+  wp_enqueue_script( 'menu', get_template_directory_uri() . '/menu.js', array('jquery'), '1.0.0', false );
   if (is_singular()) {
 	  wp_enqueue_script( "comment-reply" );
   }
@@ -250,8 +251,7 @@ add_filter('walker_nav_menu_start_el', 'apelle_add_description_to_menu', 10, 4);
 add_action( 'after_setup_theme', 'apelleuno_wpse_theme_setup' );
 function apelleuno_wpse_theme_setup() {
 	
-	load_theme_textdomain( 'apelle-uno', get_template_directory() . '/languages' );
-   
+	  
     add_theme_support( 'title-tag' );
 	add_theme_support( 'custom-logo' );
 	add_theme_support( 'automatic-feed-links' );
@@ -318,7 +318,7 @@ function apelleuno_widgets_init() {
 	$args = array(
 		'name'          => __( 'Footer 2', 'apelle-uno' ),
 		'id'            => 'apelleuno-footer-2',    
-		'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelle-uno' ),
+		'description'   => __( 'widgets in this area will be shown in the first footer area on all pages.', 'apelle-uno' ),
 			'class'         => 'list-unstyled text-small',
 		'before_widget' => '<li id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</li>',
@@ -329,7 +329,7 @@ function apelleuno_widgets_init() {
 	$args = array(
 		'name'          => __( 'Footer 3', 'apelle-uno' ),
 		'id'            => 'apelleuno-footer-3',    
-		'description'   => __( 'i widgets in quest\'area verranno mostrati nella prima area footer in tutte le pagine.', 'apelle-uno' ),
+		'description'   => __( 'widgets in this area will be shown in the first footer area on all pages.', 'apelle-uno' ),
 			'class'         => 'list-unstyled text-small',
 		'before_widget' => '<li id="%1$s" class="widget %2$s">',
 		'after_widget'  => '</li>',
@@ -347,3 +347,5 @@ function apelleuno_add_editor_styles() {
     add_editor_style( 'custom-editor-style.css' );
 }
 add_action( 'admin_init', 'apelleuno_add_editor_styles' );
+
+

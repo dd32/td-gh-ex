@@ -1,7 +1,7 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-    <meta charset="utf-8">
+    <meta charset="<?php bloginfo( 'charset' ); ?>">
 <?php 	
 	wp_head(); ?>
     <meta name="viewport" content="width=device-width">
@@ -31,14 +31,14 @@
          <nav class="navbar navbar-expand-md navbar-apelleuno bg-apelleuno " id="stickyMenu"   >
      
 
-                            <div class="c-logo " itemscope="" itemtype="http://schema.org/Organization">
+                            <div class="c-logo " >
                                 <a href="<?php echo esc_url(get_site_url()); ?>" class="navbar-brand" id="logo" itemprop="url">
-                                    <meta itemprop="name" content="Demo">
+                                    
                                     <?php 
 			$custom_logo_id = get_theme_mod( 'custom_logo' );
 			$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
 			if ( has_custom_logo() ) {
-					echo '<img src="'. esc_url( $logo[0] ) .'" alt="Demo logo" class="c-logo__img" itemprop="logo">';
+					echo '<img src="'. esc_url( $logo[0] ) .'" alt=" ' . esc_attr( "Logo" ,'apelle-uno' ) . ' ' . esc_attr(get_bloginfo( 'name' )) . '" class="c-logo__img" itemprop="logo">';
 			} else {
 					echo '<b>'. esc_html(get_bloginfo( 'name' )) .'</b>';
 			}
@@ -114,22 +114,4 @@
             </div>
         </div>
         
-	</header><script type="text/javascript">
-jQuery('.multi-level a.dropdown-toggle').on('click', function(e) {
-	console.log('click');
-  if (!jQuery(this).next().hasClass('show')) {
-	jQuery(this).parents('.apelleuno-menu').first().find('.show').removeClass("show");
-  }
-  var $subMenu = jQuery(this).next(".apelleuno-menu");
-  $subMenu.toggleClass('show');
-
-
-  jQuery(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function(e) {
-	jQuery('.apelleuno-submenu .show').removeClass("show");
-  });
-
-
-  return false;
-});
-    </script>
-    
+	</header>    

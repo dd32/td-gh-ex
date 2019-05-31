@@ -37,7 +37,7 @@ Template Name: Full-Width
 				esc_attr_e( 'Sorry, no posts matched your criteria.', 'apelle-uno' );
 			endif;
           ?>
-          <?php if ( is_singular() && comments_open() ) { ?><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg"><?php esc_attr_e( 'Leave a comment.', 'apelle-uno' ); ?></button>
+          <?php if ( is_singular() && comments_open() ) { ?><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg"><?php esc_html_e( 'Leave a comment.', 'apelle-uno' ); ?></button>
 <?php } ?>
         </div>     
       </div>

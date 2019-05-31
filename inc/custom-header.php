@@ -2,12 +2,6 @@
 /*Custom header*/
 function apelleuno_customize_register( $wp_customize ) {
 	/*bg*/
-	$wp_customize->add_setting( 'header_textcolor' , array(
-    'default'   => '007bff',
-    'transport' => 'refresh',
-    'sanitize_callback' => 'sanitize_hex_color',
-) );
-
 	$wp_customize->add_setting(
         'header_bg_color_setting',
         array(
@@ -66,11 +60,22 @@ add_action( 'customize_register', 'apelleuno_customize_register' );
 add_action( 'wp_enqueue_scripts', 'apelleuno_customizer_css');
 function apelleuno_customizer_css()
 {
-	$header_textcolor	=	 esc_html(get_theme_mod('header_textcolor', '007bff')); 
-	$header_color_setting_rgba	=	 esc_html(get_theme_mod('header_color_setting_rgb', '255,255,255')); 
+	$header_textcolor	=	 '#007bff'; 
+	$header_color_setting_rgba	=	 esc_html(get_theme_mod('header_color_setting_rgb', '255,255,255')); 	
+	$header_text_and_color	=	esc_html(get_theme_mod('header_textcolor'));
+	
+	if(	$header_text_and_color=='blank'	)
+	{
+		$header_text_and_color = 'display:none';
+		}elseif($header_text_and_color!='')
+		{
+			$header_textcolor	=	'#' . $header_text_and_color;
+			}
+	
+	
     $apelle_custom_css = "  .bg-apelleuno { background-color:  ".esc_html(get_theme_mod('header_bg_color_setting', '#343a40')) ." !important; }";
-	$apelle_custom_css .= " .navbar-apelleuno .navbar-brand{color:#".$header_textcolor."}";
-	$apelle_custom_css .= " .navbar-apelleuno .navbar-brand:focus,.navbar-apelleuno .navbar-brand:hover{color:#" . $header_textcolor."; }";
+	$apelle_custom_css .= " .navbar-apelleuno .navbar-brand{color:".$header_textcolor."}";
+	$apelle_custom_css .= " .navbar-apelleuno .navbar-brand:focus,.navbar-apelleuno .navbar-brand:hover{color:" . $header_textcolor."; }";
 	$apelle_custom_css .= " .navbar-apelleuno .navbar-brand:focus,.navbar-apelleuno .navbar-brand:hover b{     opacity: 0.7; }";
 	$apelle_custom_css .= " .navbar-apelleuno .navbar-nav .nav-link{color:rgba(".$header_color_setting_rgba.",.5)}";
 	$apelle_custom_css .= " .navbar-apelleuno .navbar-nav .nav-link:focus,.navbar-apelleuno .navbar-nav .nav-link:hover{color:rgba(" . $header_color_setting_rgba .",.75)}";
@@ -81,5 +86,7 @@ function apelleuno_customizer_css()
 	$apelle_custom_css .= " .navbar-apelleuno .navbar-text{color:rgba(".$header_color_setting_rgba.",.5)}";
 	$apelle_custom_css .= " .navbar-apelleuno .navbar-text a{color:" . $header_textcolor ."}";
 	$apelle_custom_css .= " .navbar-apelleuno .navbar-text a:focus,.navbar-dark .navbar-text a:hover{color:" . $header_textcolor."}";
+	$apelle_custom_css .= " .navbar-apelleuno a#logo b { ".$header_text_and_color."}";
+	
     wp_add_inline_style( 'style', $apelle_custom_css );
 }
