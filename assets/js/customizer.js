@@ -205,4 +205,42 @@ wp.customize( 'arrival_footer_link_color', function( value ) {
 } );
 
 
+//inner page header bottom padding (default layout)
+wp.customize( 'arrival_inner_header_image_padding_btm', function( value ) {
+	value.bind( function( padding ) {
+		if (padding == '') {
+			wp.customize.preview.send( 'refresh' );
+		}
+		if ( padding ) {
+			var dynamicStyle = 'body.arrival-inner-page .site-header,.arrival-breadcrumb-wrapper { padding-bottom: ' + padding + 'px; } ';
+				dynamicStyle += '.arrival-breadcrumb-wrapper { padding-top: '+ padding + 'px; } ';
+			arrival_add_dynamic_css( 'arrival_inner_header_image_padding_btm', dynamicStyle );
+		}
+
+	} );
+} );
+
+
+
+//inner page header bg position
+wp.customize( 'arrival_inner_header_img_position', function( value ) {
+	value.bind( function( position ) {
+		if (position == '') {
+			wp.customize.preview.send( 'refresh' );
+		}
+		if ( position ) {
+			var dynamicStyle = 'body.arrival-inner-page .site-header,.arrival-breadcrumb-wrapper { background-position: ' + position + '; } ';
+			arrival_add_dynamic_css( 'arrival_inner_header_img_position', dynamicStyle );
+		}
+
+	} );
+} );
+
+//header last item button text
+wp.customize('arrival_main_nav_right_btn_txt', function (value) {
+		value.bind(function (to) {
+			$('.header-last-item .header-cta-btn').text(to);
+		});
+	});
+
 })(jQuery);

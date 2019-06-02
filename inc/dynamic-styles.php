@@ -18,7 +18,7 @@ function arrival_dynamic_styles(){
 	?>
 	
 	.top-header-wrapp,.scroll-top-top,.widget h2.widget-title:before,.comment-reply-link, .comment-form .form-submit input,span.tags-links a:hover,.header-last-item.search-wrap.header-btn,.arrival-archive-navigation ul li a:hover,
-	.arrival-archive-navigation ul li.active a,.comment-reply-link, .comment-form .form-submit input,.woocommerce div.product form.cart .button,.woocommerce .products li a.button:hover,.woocommerce #respond input#submit,.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current,.woocommerce div.product form.cart .button, .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce button.button,button, input[type="button"], input[type="reset"], input[type="submit"]{
+	.arrival-archive-navigation ul li.active a,.comment-reply-link, .comment-form .form-submit input,.woocommerce div.product form.cart .button,.woocommerce .products li a.button:hover,.woocommerce #respond input#submit,.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current,.woocommerce div.product form.cart .button, .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce button.button,button, input[type="button"], input[type="reset"], input[type="submit"],header.hover-layout-two .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item>a:before,header.hover-layout-three .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item:before{
 		background: <?php echo  arrival_sanitize_color($_theme_color);?>;
 	}
 
@@ -72,7 +72,7 @@ function arrival_dynamic_styles(){
 	
 	if( $main_nav_menu_color ){ ?>
 
-		.main-navigation ul li > a{
+		.main-navigation ul li > a,.site-title a,.site-description,.main-navigation .header-last-item i{
 			color: <?php echo arrival_sanitize_color($main_nav_menu_color); ?>;
 		}
 		.main-navigation .dropdown-symbol, .arrival-top-navigation .dropdown-symbol{
@@ -134,6 +134,60 @@ function arrival_dynamic_styles(){
 			padding-bottom: <?php echo absint($_nav_bottom_padding); ?>px;
 		}
 	<?php 	
+	}
+
+
+	/**
+	* breadcrumb layout / inner page header layout
+	* 
+	*  
+	*/
+	
+	$_page_header_layout = get_theme_mod('arrival_page_header_layout',$defaults['arrival_page_header_layout']);
+
+	//inner page header bg image
+	$_inner_header_image = get_theme_mod('arrival_inner_header_image');
+	if( $_inner_header_image && $_page_header_layout == 'default' ){ ?>
+		body.arrival-inner-page .site-header{
+			background-image: url(<?php echo esc_url($_inner_header_image); ?>);
+		}
+	<?php 
+	}else{ ?>
+		.arrival-breadcrumb-wrapper{
+			background-image: url(<?php echo esc_url($_inner_header_image); ?>);
+		}
+	<?php 
+	}
+
+	//header padding inner /breadcrumb height
+	$_inner_header_image_padding_btm = get_theme_mod('arrival_inner_header_image_padding_btm',$defaults['arrival_inner_header_image_padding_btm']);
+
+	if( $_inner_header_image_padding_btm && $_page_header_layout == 'default' ){ ?>
+		body.arrival-inner-page .site-header{
+			padding-bottom: <?php echo absint($_inner_header_image_padding_btm); ?>px;
+		}	
+	<?php 
+	}else{ ?>
+		.arrival-breadcrumb-wrapper{
+			padding-top: <?php echo absint($_inner_header_image_padding_btm); ?>px;
+			padding-bottom: <?php echo absint($_inner_header_image_padding_btm); ?>px;
+		}
+	<?php 
+	}
+
+	//inner page header image position
+	$_inner_header_img_position = get_theme_mod('arrival_inner_header_img_position',$defaults['arrival_inner_header_img_position']);
+
+	if( $_inner_header_img_position && $_page_header_layout == 'default' ){ ?>
+		body.arrival-inner-page .site-header{
+			background-position: <?php echo esc_attr($_inner_header_img_position); ?>;
+		}
+	<?php 
+	}else{ ?>
+		.arrival-breadcrumb-wrapper{
+			background-position: <?php echo esc_attr($_inner_header_img_position); ?>;
+		}
+	<?php 
 	}
 
 	//buttons border-radius
@@ -208,6 +262,9 @@ function arrival_dynamic_styles(){
 
 	<?php
 	}
+
+	$hook_css = '';
+	$dynamic_hook = apply_filters('arrival_dynamic_styles_dev',$hook_css);
 
 
 

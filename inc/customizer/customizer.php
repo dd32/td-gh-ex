@@ -45,6 +45,13 @@ function arrival_customize_register( $wp_customize ) {
 	
 
 	require get_template_directory() . '/inc/customizer/arrival-customizer.php';
+
+	$arrival_req_additional = apply_filters('arrival_customizer_additionals_req','__return_false');
+	
+	if( $arrival_req_additional != '__return_false' ){
+		require $arrival_req_additional;	
+	}
+
 }
 add_action( 'customize_register', 'arrival_customize_register' );
 
@@ -116,6 +123,7 @@ if( ! function_exists('arrival_customizer_pro_info')){
 
 	$wp_customize->add_control( new Arrival_Customize_Pro_Info( $wp_customize, $call_back_id, array(
 			'label' 		=> sprintf( __('%1$s Arrival Pro %2$s','arrival'), '<a href="#" target="_blank">', '</a>' ),
+			'priority'		=> 90,
 	        'description'   => esc_html__( 'more options available in', 'arrival' ),
 	        'section'       => $section,
 	      ) ) );

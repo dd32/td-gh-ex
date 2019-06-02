@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arrival\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-04-21 01:46+0000\n"
+"POT-Creation-Date: 2019-06-02 14:45+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -13,9 +13,9 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Generator: Loco https://localise.biz/\n"
-"X-Loco-Version: 2.2.2; wp-5.1.1"
+"X-Loco-Version: 2.2.2; wp-5.2.1"
 
-#: inc/customizer/customizer.php:118
+#: inc/customizer/customizer.php:125
 #, php-format
 msgid "%1$s Arrival Pro %2$s"
 msgstr ""
@@ -37,27 +37,31 @@ msgstr ""
 msgid ", "
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:724
+#: inc/customizer/arrival-customizer.php:747
 msgid "200"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:725
+#: inc/customizer/arrival-customizer.php:748
 msgid "300"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:726
+#: inc/customizer/arrival-customizer.php:749
 msgid "400"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:727
+#: pluggable/breadcrumb.php:220 pluggable/breadcrumb.php:1224
+msgid "404 Not Found"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:750
 msgid "500"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:728
+#: inc/customizer/arrival-customizer.php:751
 msgid "600"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:729
+#: inc/customizer/arrival-customizer.php:752
 msgid "700"
 msgstr ""
 
@@ -65,17 +69,25 @@ msgstr ""
 msgid "Add Profile"
 msgstr ""
 
+#: inc/customizer/arrival-customizer.php:620
+msgid "Add URL for header button"
+msgstr ""
+
 #: functions.php:346 functions.php:356 functions.php:366 functions.php:376
 #: functions.php:386
 msgid "Add widgets here."
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:324
+#: inc/customizer/arrival-customizer.php:326
 msgid "All the settings for theme header."
 msgstr ""
 
 #: functions.php:159
 msgid "Almost black"
+msgstr ""
+
+#: pluggable/breadcrumb.php:221
+msgid "Archives"
 msgstr ""
 
 #. Name of the theme
@@ -95,9 +107,14 @@ msgid ""
 "new WordPress editor."
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:498
-#: inc/customizer/arrival-customizer.php:655
-#: inc/customizer/arrival-customizer.php:846
+#: inc/customizer/arrival-customizer.php:821
+#: inc/customizer/customizer-sanitize.php:118
+msgid "Attached To Navigation"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:500
+#: inc/customizer/arrival-customizer.php:673
+#: inc/customizer/arrival-customizer.php:985
 msgid "Background Color"
 msgstr ""
 
@@ -105,50 +122,82 @@ msgstr ""
 msgid "Background Options"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:309
+#: inc/customizer/arrival-customizer.php:848
+msgid "Background Position"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:311
 msgid "Blog Excerpts"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:290
+#: inc/customizer/arrival-customizer.php:292
 msgid "Blog Layout"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:278
+#: inc/customizer/arrival-customizer.php:280
 msgid "Blog Settings"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:159
+#: inc/customizer/arrival-customizer.php:158
 msgid "Border Radius (px)"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:160
+#: inc/customizer/arrival-customizer.php:159
 msgid "Border radius for all default theme buttons"
 msgstr ""
 
+#: inc/customizer/arrival-customizer.php:852
+#: inc/customizer/customizer-sanitize.php:97
 #: inc/customizer/dimensions/class-control-dimensions.php:199
 #: inc/customizer/dimensions/class-control-dimensions.php:203
 #: inc/customizer/dimensions/class-control-dimensions.php:207
 msgid "Bottom"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:543
+#: inc/customizer/arrival-customizer.php:546
 #: inc/customizer/customizer-sanitize.php:49
 msgid "Boxed"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:575
+#: pluggable/breadcrumb.php:218
+msgctxt "breadcrumbs aria label"
+msgid "Breadcrumbs"
+msgstr ""
+
+#: pluggable/breadcrumb.php:217
+msgid "Browse:"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:580
 msgid "Button"
 msgstr ""
 
-#: inc/hooks/header-hooks.php:176
+#: inc/customizer/arrival-customizer.php:605
+msgid "Button Text"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:619
+msgid "Button URL"
+msgstr ""
+
+#: inc/hooks/header-hooks.php:174
 msgid "Call Us:"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:743
+#: inc/customizer/arrival-customizer.php:853
+#: inc/customizer/customizer-sanitize.php:98
+msgid "Center"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:767
 msgid "Check the box to disable the header box-shadow"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:886
+#: inc/customizer/arrival-customizer.php:888
+msgid "Check the box to enable background overlay"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:1025
 msgid "Check the box to enable top border on copyright section"
 msgstr ""
 
@@ -160,15 +209,15 @@ msgstr ""
 msgid "Choose Icon"
 msgstr ""
 
-#: inc/customizer/repeater-controller/repeater-class.php:323
+#: inc/customizer/repeater-controller/repeater-class.php:329
 msgid "Close"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:112
+#: inc/customizer/arrival-customizer.php:111
 msgid "Color"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:125
+#: inc/customizer/arrival-customizer.php:124
 msgid "Color: Hover"
 msgstr ""
 
@@ -185,8 +234,8 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: inc/customizer/arrival-customizer.php:461
-#: inc/customizer/arrival-customizer.php:827
+#: inc/customizer/arrival-customizer.php:463
+#: inc/customizer/arrival-customizer.php:966
 msgid "Configure Social Icons"
 msgstr ""
 
@@ -198,7 +247,7 @@ msgstr ""
 msgid "Contact Support"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:437
+#: inc/customizer/arrival-customizer.php:439
 msgid "Content Type"
 msgstr ""
 
@@ -216,16 +265,21 @@ msgstr ""
 msgid "Customize"
 msgstr ""
 
+#: pluggable/breadcrumb.php:733 pluggable/breadcrumb.php:1163
+msgctxt "daily archives date format"
+msgid "j"
+msgstr ""
+
 #: functions.php:154
 msgid "Dark sunset"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:295
+#: inc/customizer/arrival-customizer.php:297
 #: inc/customizer/customizer-sanitize.php:80
 msgid "Default"
 msgstr ""
 
-#: inc/customizer/repeater-controller/repeater-class.php:319
+#: inc/customizer/repeater-controller/repeater-class.php:325
 msgid "Delete"
 msgstr ""
 
@@ -237,7 +291,7 @@ msgstr ""
 msgid "Demo Import"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:742
+#: inc/customizer/arrival-customizer.php:765
 msgid "Disable Box-shadow"
 msgstr ""
 
@@ -283,55 +337,59 @@ msgstr ""
 msgid "Education"
 msgstr ""
 
-#: inc/welcome/tgmpa/plugins-config.php:48
+#: inc/welcome/tgmpa/plugins-config.php:44
 msgid "Elementor"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:375
+#: inc/customizer/arrival-customizer.php:377
 msgid "Email"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:576
+#: inc/customizer/arrival-customizer.php:581
 msgid "Empty"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:885
+#: inc/customizer/arrival-customizer.php:1024
 msgid "Enable Copyright Section Top Border"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:812
+#: inc/customizer/arrival-customizer.php:951
 msgid "Enable Footer Social Icons"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:772
+#: inc/customizer/arrival-customizer.php:911
 msgid "Enable Footer Widgets"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:197
+#: inc/customizer/arrival-customizer.php:196
 msgid "Enable Lazyload"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:631
+#: inc/customizer/arrival-customizer.php:648
 msgid "Enable One Page Menu"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:345
+#: inc/customizer/arrival-customizer.php:347
 msgid "Enable or disable top header"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:344
+#: inc/customizer/arrival-customizer.php:887
+msgid "Enable Overlay"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:346
 msgid "Enable Top Header"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:376
+#: inc/customizer/arrival-customizer.php:378
 msgid "Enter email address"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:310
+#: inc/customizer/arrival-customizer.php:312
 msgid "Enter excerpt for blogs in letter count"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:393
+#: inc/customizer/arrival-customizer.php:395
 msgid "Enter phone number"
 msgstr ""
 
@@ -347,7 +405,7 @@ msgstr ""
 msgid "Fix Images Now"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:720
+#: inc/customizer/arrival-customizer.php:743
 msgid "Font Weight"
 msgstr ""
 
@@ -367,11 +425,11 @@ msgstr ""
 msgid "Footer 4"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:795
+#: inc/customizer/arrival-customizer.php:934
 msgid "Footer Copyright Text"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:759
+#: inc/customizer/arrival-customizer.php:898
 msgid "Footer Settings"
 msgstr ""
 
@@ -386,14 +444,14 @@ msgstr ""
 msgid "Free"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:542
+#: inc/customizer/arrival-customizer.php:545
 #: inc/customizer/customizer-sanitize.php:48
 msgid "Full"
 msgstr ""
 
 #: inc/customizer/customizer-tabs/customizer.php:29
-#: inc/customizer/customizer-tabs/customizer.php:74
-#: inc/customizer/customizer-tabs/customizer.php:122
+#: inc/customizer/customizer-tabs/customizer.php:78
+#: inc/customizer/customizer-tabs/customizer.php:130
 msgid "General"
 msgstr ""
 
@@ -401,7 +459,7 @@ msgstr ""
 msgid "General Options"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:182
+#: inc/customizer/arrival-customizer.php:181
 msgid "General Settings"
 msgstr ""
 
@@ -424,12 +482,33 @@ msgid ""
 "ask your query is the dedicated Support forum for the theme."
 msgstr ""
 
+#: inc/customizer/arrival-customizer.php:298
+msgid "Grid"
+msgstr ""
+
 #: inc/config/importer-config.php:54
 msgid "Gym & Fitness"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:323
+#: inc/customizer/arrival-customizer.php:834
+msgid "Header Background Image"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:325
 msgid "Header Settings"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:870
+msgid "Height (px)"
+msgstr ""
+
+#: pluggable/breadcrumb.php:219
+msgid "Home"
+msgstr ""
+
+#: pluggable/breadcrumb.php:715
+msgctxt "hour archives time format"
+msgid "g a"
 msgstr ""
 
 #. %1$s: blog info
@@ -443,7 +522,7 @@ msgid ""
 "Thanks for using our theme!"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:796
+#: inc/customizer/arrival-customizer.php:935
 msgid "HTML allowed on this section"
 msgstr ""
 
@@ -467,6 +546,15 @@ msgstr ""
 msgid ""
 "If you have already images on your site then all image might not align as "
 "expected, to fix this there is handy plugin which will help you"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:854
+#: inc/customizer/customizer-sanitize.php:99
+msgid "Initial"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:805
+msgid "Inner Page Header"
 msgstr ""
 
 #: 404.php:20
@@ -493,12 +581,12 @@ msgstr ""
 msgid "larger"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:569
+#: inc/customizer/arrival-customizer.php:573
 msgid "Last Item Type"
 msgstr ""
 
-#: inc/customizer/repeater-controller/repeater-class.php:166
-#: inc/customizer/repeater-controller/repeater-class.php:293
+#: inc/customizer/repeater-controller/repeater-class.php:172
+#: inc/customizer/repeater-controller/repeater-class.php:299
 msgid "Latest Posts"
 msgstr ""
 
@@ -506,7 +594,7 @@ msgstr ""
 msgid "Lazy-load images"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:198
+#: inc/customizer/arrival-customizer.php:197
 msgid ""
 "Lazy-loading images means images are loaded only when they are in view. "
 "Improves performance, but can result in content jumping around on slower "
@@ -523,6 +611,8 @@ msgstr ""
 msgid "Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
 msgstr ""
 
+#: inc/customizer/arrival-customizer.php:855
+#: inc/customizer/customizer-sanitize.php:100
 #: inc/customizer/dimensions/class-control-dimensions.php:200
 #: inc/customizer/dimensions/class-control-dimensions.php:204
 #: inc/customizer/dimensions/class-control-dimensions.php:208
@@ -533,8 +623,8 @@ msgstr ""
 msgid "Lets first install following plugins to make every thing working."
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:99
-#: inc/customizer/arrival-customizer.php:872
+#: inc/customizer/arrival-customizer.php:98
+#: inc/customizer/arrival-customizer.php:1011
 msgid "Link Color"
 msgstr ""
 
@@ -550,7 +640,7 @@ msgstr ""
 msgid "M"
 msgstr ""
 
-#: inc/hooks/header-hooks.php:164
+#: inc/hooks/header-hooks.php:162
 msgid "Mail Us:"
 msgstr ""
 
@@ -562,15 +652,15 @@ msgstr ""
 msgid "Main menu"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:526
+#: inc/customizer/arrival-customizer.php:528
 msgid "Main Navigation"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:721
+#: inc/customizer/arrival-customizer.php:744
 msgid "Main navigation font weight"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:538
+#: inc/customizer/arrival-customizer.php:540
 msgid "Main Navigation Layout"
 msgstr ""
 
@@ -582,36 +672,61 @@ msgstr ""
 msgid "Manage social icons for the site"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:296
 #: inc/customizer/customizer-sanitize.php:81
 msgid "Masonry"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:667
+#: inc/customizer/arrival-customizer.php:686
 msgid "Menu Color"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:680
+#: inc/customizer/arrival-customizer.php:700
 msgid "Menu Color: Hover"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:557
+#: inc/customizer/arrival-customizer.php:781
+msgid "Menu Hover Styles"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:560
 msgid "Menu Last Item"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:477
+#: inc/customizer/arrival-customizer.php:479
 msgid "Menu Location"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:442
+#: inc/customizer/arrival-customizer.php:444
 msgid "Menus"
 msgstr ""
 
-#: inc/customizer/customizer.php:119
+#. Minute archive title. %s is the minute time format.
+#: pluggable/breadcrumb.php:227
+#, php-format
+msgid "Minute %s"
+msgstr ""
+
+#: pluggable/breadcrumb.php:681
+msgctxt "minute and hour archives time format"
+msgid "g:i a"
+msgstr ""
+
+#: pluggable/breadcrumb.php:698
+msgctxt "minute archives time format"
+msgid "i"
+msgstr ""
+
+#: pluggable/breadcrumb.php:732 pluggable/breadcrumb.php:788
+#: pluggable/breadcrumb.php:1159
+msgctxt "monthly archives date format"
+msgid "F"
+msgstr ""
+
+#: inc/customizer/customizer.php:126
 msgid "more options available in"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:698
+#: inc/customizer/arrival-customizer.php:719
 msgid "Navigation Padding (px)"
 msgstr ""
 
@@ -628,16 +743,16 @@ msgid "Next:"
 msgstr ""
 
 #: inc/customizer/arrival-customizer.php:202
-#: inc/customizer/arrival-customizer.php:349
-#: inc/customizer/arrival-customizer.php:637
-#: inc/customizer/arrival-customizer.php:776
-#: inc/customizer/arrival-customizer.php:816
+#: inc/customizer/arrival-customizer.php:351
+#: inc/customizer/arrival-customizer.php:655
+#: inc/customizer/arrival-customizer.php:915
+#: inc/customizer/arrival-customizer.php:955
 #: inc/customizer/customizer-sanitize.php:30
 #: inc/customizer/customizer-sanitize.php:67
 msgid "No"
 msgstr ""
 
-#: inc/customizer/repeater-controller/repeater-class.php:149
+#: inc/customizer/repeater-controller/repeater-class.php:155
 msgid "No image selected"
 msgstr ""
 
@@ -667,11 +782,21 @@ msgctxt "original post"
 msgid "in %s"
 msgstr ""
 
+#. %s is the page number.
+#: pluggable/breadcrumb.php:225
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:817
+msgid "Page Header Layout"
+msgstr ""
+
 #: template-parts/content-page.php:25 template-parts/content-single.php:58
 msgid "Pages:"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:392
+#: inc/customizer/arrival-customizer.php:394
 msgid "Phone"
 msgstr ""
 
@@ -682,7 +807,7 @@ msgid ""
 msgstr ""
 
 #. %1$s: url open , %2$s: url close
-#: inc/customizer/arrival-customizer.php:633
+#: inc/customizer/arrival-customizer.php:651
 #, php-format
 msgid "Please refer to %1$s documentation %2$s on configuring one page menus"
 msgstr ""
@@ -745,7 +870,7 @@ msgstr ""
 msgid "regular"
 msgstr ""
 
-#: inc/customizer/repeater-controller/repeater-class.php:155
+#: inc/customizer/repeater-controller/repeater-class.php:161
 msgid "Remove"
 msgstr ""
 
@@ -753,6 +878,8 @@ msgstr ""
 msgid "Restaurant"
 msgstr ""
 
+#: inc/customizer/arrival-customizer.php:856
+#: inc/customizer/customizer-sanitize.php:101
 #: inc/customizer/dimensions/class-control-dimensions.php:198
 #: inc/customizer/dimensions/class-control-dimensions.php:202
 #: inc/customizer/dimensions/class-control-dimensions.php:206
@@ -773,11 +900,11 @@ msgstr ""
 msgid "S"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:617
+#: inc/customizer/arrival-customizer.php:633
 msgid "Scrolling Menus"
 msgstr ""
 
-#: searchform.php:20 inc/customizer/arrival-customizer.php:574
+#: searchform.php:20 inc/customizer/arrival-customizer.php:579
 msgid "Search"
 msgstr ""
 
@@ -785,8 +912,15 @@ msgstr ""
 msgid "Search for:"
 msgstr ""
 
+#. %s is the search query. The HTML entities are opening and closing curly quotes.
+#: pluggable/breadcrumb.php:223
+#, php-format
+msgid "Search results for &#8220;%s&#8221;"
+msgstr ""
+
 #. %s: search query.
-#: inc/template-tags.php:65
+#. %s: search term
+#: inc/template-tags.php:65 pluggable/breadcrumb.php:1229
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
@@ -795,64 +929,68 @@ msgstr ""
 msgid "secondary"
 msgstr ""
 
-#: inc/customizer/repeater-controller/repeater-class.php:165
+#: inc/customizer/repeater-controller/repeater-class.php:171
 msgid "Select Category"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:438
+#: inc/customizer/arrival-customizer.php:440
 msgid "Select content type for top right header"
 msgstr ""
 
-#: inc/customizer/repeater-controller/repeater-class.php:156
+#: inc/customizer/repeater-controller/repeater-class.php:162
 msgid "Select Image"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:570
+#: inc/customizer/arrival-customizer.php:575
 msgid "Select last item for menu"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:539
+#: inc/customizer/arrival-customizer.php:541
 msgid "Select layout for main navigation"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:478
+#: inc/customizer/arrival-customizer.php:783
+msgid "Select menu hover styles"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:480
 msgid "Select menu to display on top right header"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:599
-#: inc/customizer/repeater-controller/repeater-class.php:198
+#: inc/customizer/repeater-controller/repeater-class.php:204
 msgid "Select Page"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:600
-msgid "Select page for the button to link"
-msgstr ""
-
-#: inc/customizer/arrival-customizer.php:258
+#: inc/customizer/arrival-customizer.php:260
 msgid "Select sidebar style for the theme."
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:291
+#: inc/customizer/arrival-customizer.php:293
 msgid "Select your blog layout"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:822
+#: inc/customizer/customizer-sanitize.php:119
+msgid "Seperate"
 msgstr ""
 
 #: functions.php:344
 msgid "Sidebar"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:245
+#: inc/customizer/arrival-customizer.php:247
 msgid "Sidebar Display Option"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:231
+#: inc/customizer/arrival-customizer.php:233
 msgid "Sidebar Settings"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:138
+#: inc/customizer/arrival-customizer.php:137
 msgid "Site Buttons"
 msgstr ""
 
-#: header.php:29
+#: header.php:43
 msgid "Skip to content"
 msgstr ""
 
@@ -860,11 +998,11 @@ msgstr ""
 msgid "small"
 msgstr ""
 
-#: inc/welcome/tgmpa/plugins-config.php:55
+#: inc/welcome/tgmpa/plugins-config.php:51
 msgid "Smart Slider 3"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:443
+#: inc/customizer/arrival-customizer.php:445
 #: inc/customizer/repeater-controller/customizer.php:31
 #: inc/customizer/repeater-controller/customizer.php:57
 msgid "Social Icons"
@@ -884,9 +1022,21 @@ msgstr ""
 msgid "Static Front Page"
 msgstr ""
 
-#: inc/customizer/customizer-tabs/customizer.php:45
-#: inc/customizer/customizer-tabs/customizer.php:88
-#: inc/customizer/customizer-tabs/customizer.php:134
+#: inc/customizer/arrival-customizer.php:787
+msgid "Style One"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:789
+msgid "Style Three"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:788
+msgid "Style Two"
+msgstr ""
+
+#: inc/customizer/customizer-tabs/customizer.php:47
+#: inc/customizer/customizer-tabs/customizer.php:94
+#: inc/customizer/customizer-tabs/customizer.php:144
 msgid "Styles"
 msgstr ""
 
@@ -900,9 +1050,13 @@ msgstr ""
 msgid "Tagged With: %1$s"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:510
-#: inc/customizer/arrival-customizer.php:859
+#: inc/customizer/arrival-customizer.php:512
+#: inc/customizer/arrival-customizer.php:998
 msgid "Text Color"
+msgstr ""
+
+#: inc/customizer/arrival-customizer.php:606
+msgid "Text for button"
 msgstr ""
 
 #: inc/customizer/arrival-customizer.php:49
@@ -935,7 +1089,7 @@ msgstr ""
 msgid "This allows to edit general theme settings"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:618
+#: inc/customizer/arrival-customizer.php:635
 msgid "This setting will enable or disable one page parallax scrolling menus"
 msgstr ""
 
@@ -962,21 +1116,23 @@ msgid ""
 " After plugin is activated, visit WPOp Demo Importer menu under Appearance."
 msgstr ""
 
-#: functions.php:63 inc/customizer/dimensions/class-control-dimensions.php:197
+#: functions.php:63 inc/customizer/arrival-customizer.php:857
+#: inc/customizer/customizer-sanitize.php:102
+#: inc/customizer/dimensions/class-control-dimensions.php:197
 #: inc/customizer/dimensions/class-control-dimensions.php:201
 #: inc/customizer/dimensions/class-control-dimensions.php:205
 msgid "Top"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:332
+#: inc/customizer/arrival-customizer.php:334
 msgid "Top Header"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:360
+#: inc/customizer/arrival-customizer.php:362
 msgid "Top Left Options"
 msgstr ""
 
-#: inc/customizer/arrival-customizer.php:418
+#: inc/customizer/arrival-customizer.php:420
 msgid "Top Right Options"
 msgstr ""
 
@@ -984,7 +1140,7 @@ msgstr ""
 msgid "Type and hit enter ..."
 msgstr ""
 
-#: inc/welcome/tgmpa/plugins-config.php:31
+#: inc/welcome/tgmpa/plugins-config.php:30
 msgid "Ultra Companion"
 msgstr ""
 
@@ -998,6 +1154,17 @@ msgstr ""
 
 #: inc/welcome/info.php:45 inc/welcome/info.php:60 inc/welcome/info.php:119
 msgid "View Documentation"
+msgstr ""
+
+#. Weekly archive title. %s is the week date format.
+#: pluggable/breadcrumb.php:229
+#, php-format
+msgid "Week %s"
+msgstr ""
+
+#: pluggable/breadcrumb.php:761
+msgctxt "weekly archives date format"
+msgid "W"
 msgstr ""
 
 #. %s: theme name
@@ -1017,7 +1184,7 @@ msgstr ""
 msgid "WPoperation"
 msgstr ""
 
-#: inc/welcome/tgmpa/plugins-config.php:38
+#: inc/welcome/tgmpa/plugins-config.php:36
 msgid "WPoperation Elementor Addons"
 msgstr ""
 
@@ -1025,11 +1192,18 @@ msgstr ""
 msgid "XL"
 msgstr ""
 
+#: pluggable/breadcrumb.php:731 pluggable/breadcrumb.php:760
+#: pluggable/breadcrumb.php:787 pluggable/breadcrumb.php:814
+#: pluggable/breadcrumb.php:1155
+msgctxt "yearly archives date format"
+msgid "Y"
+msgstr ""
+
 #: inc/customizer/arrival-customizer.php:201
-#: inc/customizer/arrival-customizer.php:348
-#: inc/customizer/arrival-customizer.php:636
-#: inc/customizer/arrival-customizer.php:775
-#: inc/customizer/arrival-customizer.php:815
+#: inc/customizer/arrival-customizer.php:350
+#: inc/customizer/arrival-customizer.php:654
+#: inc/customizer/arrival-customizer.php:914
+#: inc/customizer/arrival-customizer.php:954
 #: inc/customizer/customizer-sanitize.php:29
 #: inc/customizer/customizer-sanitize.php:66
 msgid "Yes"

@@ -50,7 +50,7 @@
 	*
 	*/
 	wp.customize( 'arrival_main_nav_right_content', function( setting ) {
-	            wp.customize.control( 'arrival_main_nav_right_btn', function( control ) {
+	            wp.customize.control( 'arrival_main_nav_right_btn_txt', function( control ) {
 	                var visibility = function() {
 	                    if ( 'button' === setting.get() ) {
 	                        control.container.removeClass( 'arrival-control-hide' );
@@ -63,6 +63,21 @@
 	                setting.bind( visibility );
 	            });
 	});
+
+    wp.customize( 'arrival_main_nav_right_content', function( setting ) {
+                wp.customize.control( 'arrival_main_nav_right_btn_url', function( control ) {
+                    var visibility = function() {
+                        if ( 'button' === setting.get() ) {
+                            control.container.removeClass( 'arrival-control-hide' );
+                        } else {
+                            control.container.addClass( 'arrival-control-hide' );
+                        }
+                    };
+
+                    visibility();
+                    setting.bind( visibility );
+                });
+    });
 
 
     /**

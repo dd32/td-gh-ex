@@ -105,19 +105,17 @@ add_action('arrival_header_cta_btn_info','arrival_header_cta_btn_info');
 if( ! function_exists('arrival_header_cta_btn_info')){
 	function arrival_header_cta_btn_info(){
 		$default = arrival_get_default_theme_options();
-		$arrival_main_nav_right_btn = get_theme_mod('arrival_main_nav_right_btn',$default['arrival_main_nav_right_btn']);
+		$_main_nav_right_btn_txt = get_theme_mod('arrival_main_nav_right_btn_txt',$default['arrival_main_nav_right_btn_txt']);
+		$_main_nav_right_btn_url = get_theme_mod('arrival_main_nav_right_btn_url',$default['arrival_main_nav_right_btn_url']);
 
-		if( empty($arrival_main_nav_right_btn) ){
+		if( empty($_main_nav_right_btn_txt) ){
 			return;
 		}
-		
-		$the_query = new WP_Query( array( 'page_id' => $arrival_main_nav_right_btn ) );
-		while ($the_query -> have_posts()) : $the_query -> the_post();
 		?>
-		<a href="<?php the_permalink();?>" class="header-cta-btn"> <?php the_title(); ?></a>
-		<?php 
-		endwhile;
-		wp_reset_postdata();
+		<a href="<?php echo esc_url($_main_nav_right_btn_url);?>" class="header-cta-btn">
+		 	<?php echo esc_html($_main_nav_right_btn_txt); ?>
+		 </a>
+		<?php
 	}
 }
 /**

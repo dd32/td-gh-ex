@@ -89,6 +89,59 @@ function arrival_sanitize_blog_layout( $input ) {
 }
 
 /**
+* Background Position sanitize
+* 
+*/
+function arrival_sanitize_bg_position( $input ) {
+	$valid = array(
+		'bottom' 	=> esc_html__('Bottom','arrival'),
+        'center' 	=> esc_html__('Center','arrival'),
+        'initial' 	=> esc_html__('Initial','arrival'),
+        'left' 		=> esc_html__('Left','arrival'),
+        'right' 	=> esc_html__('Right','arrival'),
+        'top' 		=> esc_html__('Top','arrival')
+	);
+
+	if ( array_key_exists( $input, $valid ) ) {
+		return $input;
+	}
+
+	return '';
+}
+
+/**
+* Breadcrumb layout sanitize
+*
+*/
+function arrival_sanitize_breadcrumb( $input ) {
+	$valid = array(
+		'default' => esc_html__('Attached To Navigation','arrival'),
+        'layout-two' => esc_html__('Seperate','arrival')
+	);
+
+	if ( array_key_exists( $input, $valid ) ) {
+		return $input;
+	}
+
+	return '';
+}
+
+/**
+* sanitize select
+*
+*/
+function arrival_sanitize_select( $input, $setting ) {
+	// Ensure input is a slug.
+	$input = sanitize_key( $input );
+	
+	// Get list of choices from the control associated with the setting.
+	$choices = $setting->manager->get_control( $setting->id )->choices;
+	
+	// If the input is a valid key, return it; otherwise, return the default.
+	return ( array_key_exists( $input, $choices ) ? $input : $setting->default );
+}
+
+/**
  * Number sanitization callback
  *
  * @since 1.0.1

@@ -28,7 +28,7 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
                         'general' => array(
                             'nicename' => esc_html__( 'General', 'arrival' ),
                             'icon'     => 'cogs',
-                            'controls' => array(
+                            'controls' => apply_filters($prefix.'_header_top_options',array(
                                 
                                 $prefix.'_top_header_enable',
                                 $prefix.'_top_left_options',
@@ -37,18 +37,22 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
                                 $prefix.'_top_right_options',
                                 $prefix.'_top_right_header_content',
                                 $prefix.'_top_social_redirect_btn',
-                                $prefix.'_top_right_header_menus'
+                                $prefix.'_top_right_header_menus',
+
+                                )
                             ),
                         ),
 
                         'styles' => array(
                             'nicename' => esc_html__( 'Styles', 'arrival' ),
                             'icon'     => 'desktop',
-                            'controls' => array(
+                            'controls' => apply_filters($prefix.'_header_top_styles', array(
+
                                 $prefix.'_top_header_bg_color',
                                 $prefix.'_top_header_txt_color',
-                                $prefix.'_top_header_colors_info'
-                                
+                                $prefix.'_top_header_colors_info',
+
+                                )
                             ),
                         ),
                        
@@ -73,30 +77,34 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
                         'general' => array(
                             'nicename' => esc_html__( 'General', 'arrival' ),
                             'icon'     => 'cogs',
-                            'controls' => array(
+                            'controls' => apply_filters($prefix.'_header_options',array(
                                 
                                 $prefix.'_main_nav_layout',
                                 $prefix.'_nav_last_item_sep',
                                 $prefix.'_main_nav_right_content',
-                                $prefix.'_main_nav_right_btn',
+                                $prefix.'_main_nav_right_btn_txt',
+                                $prefix.'_main_nav_right_btn_url',
                                 $prefix.'_single_nav_enable_sep',
-                                $prefix.'_one_page_menus'
-                            ),
+                                $prefix.'_one_page_menus',
+                                
+                            )),
                         ),
 
                         'styles' => array(
                             'nicename' => esc_html__( 'Styles', 'arrival' ),
                             'icon'     => 'desktop',
-                            'controls' => array(
+                            'controls' => apply_filters($prefix.'_header_nav_options_styles',array(
+                                
                                 $prefix.'_main_nav_bg_color',
                                 $prefix.'_main_nav_menu_color',
                                 $prefix.'_main_nav_menu_color_hover',
                                 $prefix.'_nav_header_padding',
                                 $prefix.'_main_header_colors_info',
                                 $prefix.'_nav_font_weight',
-                                $prefix.'_header_box_shadow_disable'
-                                
-                            ),
+                                $prefix.'_header_box_shadow_disable',
+                                $prefix.'_menu_hover_styles',
+
+                            ) ),
                         ),
                        
                     ),
@@ -121,25 +129,29 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
                         'general' => array(
                             'nicename' => esc_html__( 'General', 'arrival' ),
                             'icon'     => 'cogs',
-                            'controls' => array(
+                            'controls' => apply_filters($prefix.'_footer_options',array(
                                 
                                 $prefix.'_footer_widget_enable',
                                 $prefix.'_footer_copyright_text',
                                 $prefix.'_footer_icons_enable',
-                                $prefix.'_footer_social_redirect_btn'
+                                $prefix.'_footer_social_redirect_btn',
+
+                                )
                             ),
                         ),
 
                         'styles' => array(
                             'nicename' => esc_html__( 'Styles', 'arrival' ),
                             'icon'     => 'desktop',
-                            'controls' => array(
+                            'controls' => apply_filters($prefix.'_footer_options_styles', array(
+
                                 $prefix.'_footer_bg_color',
                                 $prefix.'_footer_copyright_border_top',
                                 $prefix.'_footer_settings_info',
                                 $prefix.'_footer_text_color',
-                                $prefix.'_footer_link_color'
-                                
+                                $prefix.'_footer_link_color',
+
+                                )
                             ),
                         ),
                        

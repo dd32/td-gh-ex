@@ -28,16 +28,16 @@ jQuery(document).ready(function ($) {
     * One page navigation
     *
     */
-    var onePageNavigation = function onePageNavigation() {
-        $(".site-header .main-navigation").onePageNav({
-            currentClass: 'current',
-            changeHash: false,
-            scrollSpeed: 850,
-            scrollThreshold: 0.5
-        });
-    };
+    $(".site-header .main-navigation,.plx-nav").onePageNav({
+        currentClass: 'current',
+        changeHash: false,
+        scrollSpeed: 850,
+        scrollThreshold: 0.5,
+        
+    });
+    
 
-    onePageNavigation;
+    
 
     /*
     * Toggle search

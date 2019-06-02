@@ -13,13 +13,25 @@
  */
 function arrival_body_classes( $classes ) {
 	// Adds a class of hfeed to non-singular pages.
-	$default  = arrival_get_default_theme_options();
-    $_blog_layout = get_theme_mod('arrival_blog_layout',$default['arrival_blog_layout']);
-    $_single_post_sidebars = get_theme_mod('arrival_single_post_sidebars',$default['arrival_single_post_sidebars']);
+	$default                = arrival_get_default_theme_options();
+    $_blog_layout           = get_theme_mod('arrival_blog_layout',$default['arrival_blog_layout']);
+    $_single_post_sidebars  = get_theme_mod('arrival_single_post_sidebars',$default['arrival_single_post_sidebars']);
+    $_inner_header_image    = get_theme_mod('arrival_inner_header_image');
 
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
+    if(class_exists('WooCommerce')){
+        $classes[] = 'woocommerce';   
+    }
+
+    if( $_inner_header_image ){
+        $classes[] = 'header-bg-image';   
+    }
+
+    if( !is_page_template('tpl-home.php')){
+        $classes[] = 'arrival-inner-page';   
+    }
 
 	if( is_home() || is_category() || is_search() ){
 		$classes[] = esc_attr($_blog_layout);

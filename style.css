@@ -5,7 +5,7 @@ Author: WPoperation
 Author URI: http://wpoperation.com/
 Description: Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website with easy drag and drop options. The theme is lightweight, fast and fully compatible with elementor builder. The theme comes with fully Gutenberg ready so you are free to edit and publish with new WordPress editor.
 The theme is a combination of power, freedom, and beauty which means there is no limit of anything you need to create a feature website with your own creative ideas.
-Version: 1.0.5
+Version: 1.0.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: arrival
@@ -830,6 +830,9 @@ textarea {
 /*--------------------------------------------------------------
 ## Main navigation menu
 --------------------------------------------------------------*/
+.main-header-wrapp{
+	z-index: 9999!important;
+}
 .main-navigation {
 	/* clear: both; */
 	text-align: right;
@@ -901,7 +904,9 @@ textarea {
 .main-navigation .menu {
 	display: none;
 }
-
+.main-navigation ul li ul .dropdown-symbol{
+	border-color: #333;
+}
 @media screen and (max-width: 37.5em) {
 	.main-navigation.toggled-on .menu {
 		display: block;
@@ -941,10 +946,12 @@ textarea {
 		-webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 		        box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
 		z-index: 1;
-		-webkit-transform: translateY(30px);
-		        transform: translateY(30px);
-		-webkit-transition: all 0.3s ease-in;
-		        transition: all 0.3s ease-in;
+		-webkit-transform: scale(0);
+		        transform: scale(0);
+ -webkit-transform-origin: 0 0;
+  		 transform-origin: 0 0;
+		-webkit-transition: all 0.3s cubic-bezier(0.49, 1.1, 1, 1);
+		        transition: all 0.3s cubic-bezier(0.49, 1.1, 1, 1);
 	}
 
 	.main-navigation ul ul a,
@@ -960,7 +967,7 @@ textarea {
 
 	.main-navigation ul ul li a,
 	.arrival-top-navigation ul li a {
-		width: 218px;
+		width: 175px;
 		background: none;
 	}
 
@@ -969,6 +976,7 @@ textarea {
 		top: 0;
 		left: 100%;
 		min-height: 100%;
+		width: 100%;
 	}
 .arrival-top-navigation ul ul{
 	padding: 0;
@@ -1038,7 +1046,7 @@ textarea {
 	.main-navigation ul ul .dropdown,
 	.main-navigation ul ul button.dropdown-toggle {
 		top: 40%;
-		right: 0.2em;
+		right: 10px;
 	}
 
 	.main-navigation ul ul .dropdown-symbol {
@@ -1061,8 +1069,8 @@ textarea {
 	.arrival-top-navigation li.menu-item-has-children:hover > ul {
 		visibility: visible;
 		opacity: 1;
-		-webkit-transform: translateY(0);
-		        transform: translateY(0);
+		-webkit-transform: scale(1);
+		        transform: scale(1);
 	}
 
 	.arrival-top-navigation li{
@@ -1348,6 +1356,7 @@ textarea {
 .main-header-wrapp.boxed.on .container,
 .main-header-wrapp.full.on{
 	margin-top: -40px;
+	z-index: 999;
 }
 .main-header-wrapp .container:after {
     clear: both;
@@ -1442,17 +1451,18 @@ textarea {
 .arrival-search-form-wrapp form input[type="submit"]{
 	display: none;
 }
-.close {
+.arrival-search-form-wrapp .close {
   position: absolute;
   right: 32px;
   top: 32px;
   width: 32px;
   height: 32px;
 }
-.close:hover {
+.arrival-search-form-wrapp .close:hover {
   cursor: pointer;
 }
-.close:before, .close:after {
+.arrival-search-form-wrapp .close:before,
+.arrival-search-form-wrapp .close:after {
   position: absolute;
   left: 15px;
   content: ' ';
@@ -1460,11 +1470,11 @@ textarea {
   width: 2px;
   background-color: #fff;
 }
-.close:before {
+.arrival-search-form-wrapp .close:before {
   -webkit-transform: rotate(45deg);
           transform: rotate(45deg);
 }
-.close:after {
+.arrival-search-form-wrapp .close:after {
   -webkit-transform: rotate(-45deg);
           transform: rotate(-45deg);
 }
@@ -2270,3 +2280,193 @@ body.masonry-layout .post-content-wrap p{
 	color: #aaa;
 }
 
+/* inner page header bg image */
+body.header-bg-image.arrival-inner-page .site-header,
+body.header-bg-image.arrival-inner-page .site-header .main-header-wrapp,
+body.header-bg-image.arrival-inner-page .site-header .top-header-wrapp {
+    position: relative;
+}
+
+.arrival-breadcrumb-wrapper{
+	position: relative;
+	padding: 50px 0 55px;
+	margin-bottom: 2rem;
+}
+.arrival-bread-wrapp {
+    text-align: center;
+    position: relative;
+}
+.breadcrumb-title h1,
+nav.breadcrumb-trail.breadcrumbs ul li a,
+.arrival-bread-wrapp {
+    color: #fff;
+}
+.breadcrumb-title h1 {
+    margin-bottom: 0;
+}
+ul.trail-items {
+    margin: 0;
+    padding: 0;
+}
+nav.breadcrumb-trail.breadcrumbs ul li a{
+	text-decoration: none;
+}
+nav.breadcrumbs ul.trail-items li:after {
+    position: absolute;
+    content: "";
+    top: 50%;
+    right: 0;
+    height: 18px;
+    width: 2px;
+    background: #fffcfc;
+    -webkit-transform: rotate(20deg) translateY(-50%) translateZ(0);
+    -moz-transform: rotate(20deg) translateY(-50%) translateZ(0);
+    -ms-transform: rotate(20deg) translateY(-50%) translateZ(0);
+    -o-transform: rotate(20deg) translateY(-50%) translateZ(0);
+    transform: rotate(20deg) translateY(-50%) translateZ(0);
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+nav.breadcrumbs ul.trail-items li.trail-end.current:after{
+	content: none;
+}
+nav.breadcrumb-trail.breadcrumbs ul li {
+    list-style: none;
+    display: inline-block;
+    position: relative;
+    padding: 10px;
+}
+.img-overlay
+ {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,.6);
+    z-index: 0;
+}
+body.arrival-inner-page .site-header{
+	margin-bottom: 35px;
+}
+body.arrival-inner-page .site-header.seperate-breadcrumb {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.hdr-breadcrumb .mob-outer-wrapp,
+.hdr-breadcrumb .main-header-wrapp,
+.hdr-breadcrumb .arrival-breadcrumb-wrapper,
+.hdr-breadcrumb .top-header-wrapp{
+	z-index: 1;
+	position: relative;
+}
+/*-----------------
+input type number arrows disable
+---------------------------*/
+.woocommerce .quantity input.input-text[type="number"]::-webkit-outer-spin-button, .woocommerce .quantity input.input-text[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+ 
+.woocommerce .quantity input.input-text[type="number"] {
+    -moz-appearance: textfield;
+}
+/*------------------
+submenu when last and second last
+------------------------------*/
+.main-navigation ul li:last-child ul ul, 
+.main-navigation ul li:nth-last-child(2) ul ul,
+.arrival-top-navigation ul li:last-child ul,
+.arrival-top-navigation ul li:nth-last-child(2) ul {
+    left: -100%;
+    -webkit-transform-origin: top right;
+       -moz-transform-origin: top right;
+        -ms-transform-origin: top right;
+         -o-transform-origin: top right;
+            transform-origin: top right;
+}
+/*----------------
+submenu link hoverable
+---------------------*/
+ul.sub-menu li a:hover:before {
+    width: 15px;
+    display: block;
+}
+ul.sub-menu li a:hover{
+	padding-left: 32px;
+}
+
+ul.sub-menu li a:before {
+	position: absolute;
+    content: '';
+    top: 50%;
+    left: 10px;
+    display: block;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: 0.4s ease-in-out;
+}
+ul.sub-menu li a{
+	position: relative;
+}
+header.hover-layout-two .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item>a{
+	position: relative;
+}
+header.hover-layout-two .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item>a:before{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: #E12454;
+    opacity: 0;
+    transition: 300ms ease-in-out;
+    transform: scale(0);
+}
+header.hover-layout-two .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item:hover>a:before{
+	opacity: 1;
+    transform: scale(1);
+}
+header.hover-layout-three .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item>a{
+	position: relative;
+    transition: 300ms ease-in-out; 
+}
+header.hover-layout-three .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item:before{
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    margin: auto;
+    width: 100%;
+    height: 0;
+    content: '';
+    background: #E12454;
+    visibility: hidden;
+    opacity: 0;
+    transition: all 400ms ease-in-out;
+}
+header.hover-layout-three .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item:hover:before{
+	opacity: 1;
+	visibility: visible;
+    height: 60%;
+}
+header.hover-layout-three .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item:hover>a{
+	color: #fff;
+}
+.main-navigation .dropdown {
+    margin-right: 4px;
+}
+header.hover-layout-three .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item:hover>.dropdown .dropdown-symbol{
+	border-color: #fff;
+}
+section.no-results.not-found {
+    text-align: center;
+    padding-bottom: 30px;
+}

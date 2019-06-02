@@ -25,21 +25,17 @@ function arrival_register_required_plugins() {
             'slug'             => 'operation-demo-importer',
             'source'           => 'https://wordpress.org/plugins/operation-demo-importer/',
             'required'         => false,
-            'version'          => '1.0.7' 
         ),
 		array(
             'name'             => esc_html__( 'Ultra Companion', 'arrival' ),
             'slug'             => 'ultra-companion',
             'source'           => 'https://wordpress.org/plugins/ultra-companion/',
-            'required'         => true,
-            'version'          => '1.0.4' 
+            'required'         => false,
         ),
         array(
             'name'             => esc_html__( 'WPoperation Elementor Addons', 'arrival' ),
             'slug'             => 'wpop-elementor-addons',
-            'required'         => true,
-            'version'          => '1.0.5',
-            'force_deactivation' => true
+            'required'         => false,
         ),
         
 
@@ -47,14 +43,14 @@ function arrival_register_required_plugins() {
 		array(
 			'name'      => esc_html__( 'Elementor', 'arrival' ),
 			'slug'      => 'elementor',
-			'required'  => true,
+			'required'  => false,
 		),
 
 		// Smart Slider
 		array(
 			'name'      => esc_html__( 'Smart Slider 3', 'arrival' ),
 			'slug'      => 'smart-slider-3',
-			'required'  => true,
+			'required'  => false,
 		),
 		
 	);

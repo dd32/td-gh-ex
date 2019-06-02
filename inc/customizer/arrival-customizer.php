@@ -63,12 +63,11 @@ $wp_customize->add_control( new Arrival_Customize_Seperator_Control( $wp_customi
       ) ) );
 
 //default color section
-$wp_customize->remove_section('colors');
 $wp_customize->get_control('background_color')->section = $prefix.'_general_styling_section';
+$wp_customize->get_control('header_textcolor')->section = 'title_tagline';
 $wp_customize->get_control('background_color')->priority = 3;
 
 //default bg section
-$wp_customize->remove_section('background_image');
 $wp_customize->get_control('background_image')->section = $prefix.'_general_styling_section';
 $wp_customize->get_control('background_image')->priority = 4;
 
@@ -197,6 +196,7 @@ $wp_customize->add_control( new Arrival_Customizer_Buttonset_Control( $wp_custom
         'label'         => esc_html__( 'Enable Lazyload', 'arrival' ),
         'description'   => esc_html__( 'Lazy-loading images means images are loaded only when they are in view. Improves performance, but can result in content jumping around on slower connections.', 'arrival' ),
         'section'       => $prefix.'_general_setting_section',
+        'priority'      => 1,
         'choices'       => array(
           'yes'        => esc_html__( 'Yes', 'arrival' ),
           'no'        => esc_html__( 'No', 'arrival' ),
@@ -215,6 +215,7 @@ $wp_customize->add_setting( $prefix.'_main_container_width', array(
 
 $wp_customize->add_control( new Arrival_Customizer_Range_Control( $wp_customize, $prefix.'_main_container_width', array(
   'label'           => esc_html__( 'Main Container Width (px)', 'arrival' ),
+  'priority'        => 2,
   'section'         => $prefix.'_general_setting_section',
     'input_attrs'       => array(
         'min'   => 800,
@@ -222,6 +223,7 @@ $wp_customize->add_control( new Arrival_Customizer_Range_Control( $wp_customize,
         'step'  => 1,
     ),
 ) ) );
+
 
 /**
 * Sidebar settings
@@ -494,7 +496,7 @@ $wp_customize->add_setting($prefix.'_top_header_bg_color', array(
         'transport'         => 'postMessage'
     )
 );
-$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefix.'_top_header_bg_color', array(
+$wp_customize->add_control( new Arrival_Customizer_Color_Control( $wp_customize,$prefix.'_top_header_bg_color', array(
             'label'         => esc_html__( 'Background Color', 'arrival' ),
             'section'       => $prefix.'_top_header_options',
 )));
@@ -537,6 +539,7 @@ $wp_customize->add_setting( $prefix.'_main_nav_layout', array(
 $wp_customize->add_control( new Arrival_Customizer_Buttonset_Control( $wp_customize, $prefix.'_main_nav_layout', array(
         'label'         => esc_html__( 'Main Navigation Layout', 'arrival' ),
         'description' 	=> esc_html__('Select layout for main navigation','arrival'),
+        'priority'      => 5,
         'section'       => $prefix.'_main_header_options_panel',
         'choices'       => array(
           'full'        => esc_html__( 'Full', 'arrival' ),
@@ -555,6 +558,7 @@ $wp_customize->add_setting( $prefix.'_nav_last_item_sep', array(
 
 $wp_customize->add_control( new Arrival_Customize_Seperator_Control( $wp_customize, $prefix.'_nav_last_item_sep', array(
         'label'         => esc_html__( 'Menu Last Item', 'arrival' ),
+        'priority'      => 10,
         'section'       => $prefix.'_main_header_options_panel',
       ) ) );
 
@@ -567,6 +571,7 @@ $wp_customize->add_setting( $prefix.'_main_nav_right_content', array(
 
 $wp_customize->add_control( $prefix.'_main_nav_right_content', array(
         'label'         => esc_html__( 'Last Item Type', 'arrival' ),
+        'priority'      => 15,
         'description' 	=> esc_html__('Select last item for menu','arrival'),
         'section'       => $prefix.'_main_header_options_panel',
         'type'			=> 'select',
@@ -588,25 +593,36 @@ $wp_customize->selective_refresh->add_partial( $prefix.'_main_nav_right_content'
 /**
 * page for cta button
 */
-$wp_customize->add_setting( $prefix.'_main_nav_right_btn', array(
-        'default'             	=> $default[$prefix.'_main_nav_right_btn'],
+$wp_customize->add_setting( $prefix.'_main_nav_right_btn_txt', array(
+        'default'             	=> $default[$prefix.'_main_nav_right_btn_txt'],
         'sanitize_callback'   	=> 'sanitize_text_field',
-        'transport' 			      => 'postMessage'
+        'transport'             => 'postMessage'
       ) );
 
-$wp_customize->add_control( $prefix.'_main_nav_right_btn', array(
-		'type'			=> 'dropdown-pages',
-        'label'         => esc_html__( 'Select Page', 'arrival' ),
-        'description' 	=> esc_html__('Select page for the button to link','arrival'),
+$wp_customize->add_control( $prefix.'_main_nav_right_btn_txt', array(
+		    'type'			   => 'text',
+        'priority'      => 20,
+        'label'         => esc_html__( 'Button Text', 'arrival' ),
+        'description' 	=> esc_html__('Text for button','arrival'),
         'section'       => $prefix.'_main_header_options_panel'
         
       ) );
 
-$wp_customize->selective_refresh->add_partial( $prefix.'_main_nav_right_btn', array(
-          'selector'            => 'a.header-cta-btn',
-          'container_inclusive' => true,
-          'render_callback'     => 'arrival_header_cta_btn_info'
-    ) );
+$wp_customize->add_setting( $prefix.'_main_nav_right_btn_url', array(
+        'default'               => $default[$prefix.'_main_nav_right_btn_url'],
+        'sanitize_callback'     => 'esc_url_raw',
+      ) );
+
+$wp_customize->add_control( $prefix.'_main_nav_right_btn_url', array(
+        'type'         => 'text',
+        'priority'      => 25,
+        'label'         => esc_html__( 'Button URL', 'arrival' ),
+        'description'   => esc_html__('Add URL for header button','arrival'),
+        'section'       => $prefix.'_main_header_options_panel'
+        
+      ) );
+
+
 
 //single page navigation
 $wp_customize->add_setting( $prefix.'_single_nav_enable_sep', array(
@@ -615,6 +631,7 @@ $wp_customize->add_setting( $prefix.'_single_nav_enable_sep', array(
 
 $wp_customize->add_control( new Arrival_Customize_Seperator_Control( $wp_customize, $prefix.'_single_nav_enable_sep', array(
         'label'         => esc_html__( 'Scrolling Menus', 'arrival' ),
+        'priority'      => 30,
         'description'   => esc_html__( 'This setting will enable or disable one page parallax scrolling menus', 'arrival' ),
         'section'       => $prefix.'_main_header_options_panel',
       ) ) );
@@ -629,6 +646,7 @@ $wp_customize->add_setting( $prefix.'_one_page_menus', array(
 $doc_link = '<a href="https://wpoperation.com/wp-documentation/arrival" target="_blank">';
 $wp_customize->add_control( new Arrival_Customizer_Buttonset_Control( $wp_customize, $prefix.'_one_page_menus', array(
         'label'         => esc_html__( 'Enable One Page Menu', 'arrival' ),
+        'priority'      => 35,
         /*  Translators: %1$s: url open , %2$s: url close*/
         'description'   => sprintf(__('Please refer to %1$s documentation %2$s on configuring one page menus','arrival'),$doc_link,'</a>'),
         'section'       => $prefix.'_main_header_options_panel',
@@ -653,6 +671,7 @@ $wp_customize->add_setting($prefix.'_main_nav_bg_color', array(
 
 $wp_customize->add_control( new Arrival_Customizer_Color_Control( $wp_customize, $prefix.'_main_nav_bg_color', array(
         'label'           => esc_html__( 'Background Color', 'arrival' ),
+        'priority'        => 10,
         'section'         => $prefix.'_main_header_options_panel',
       ) ) );
 
@@ -665,6 +684,7 @@ $wp_customize->add_setting($prefix.'_main_nav_menu_color', array(
 );
 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefix.'_main_nav_menu_color', array(
             'label'         => esc_html__( 'Menu Color', 'arrival' ),
+            'priority'      => 15,
             'section'       => $prefix.'_main_header_options_panel',
 )));
 
@@ -678,6 +698,7 @@ $wp_customize->add_setting($prefix.'_main_nav_menu_color_hover', array(
 );
 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefix.'_main_nav_menu_color_hover', array(
             'label'         => esc_html__( 'Menu Color: Hover', 'arrival' ),
+            'priority'      => 20,
             'section'       => $prefix.'_main_header_options_panel',
 )));
 
@@ -695,8 +716,9 @@ $wp_customize->add_setting( $prefix.'_nav_bottom_padding', array(
 ) );
 
 $wp_customize->add_control( new Arrival_Customizer_Dimensions_Control( $wp_customize, $prefix.'_nav_header_padding', array(
-  'label'           => esc_html__( 'Navigation Padding (px)', 'arrival' ),
+  'label'         => esc_html__( 'Navigation Padding (px)', 'arrival' ),
   'section'       => $prefix.'_main_header_options_panel',
+  'priority'      => 25,
   'responsive'    => false,
   'settings'   => array(
           'desktop_top'     => $prefix.'_nav_top_padding',
@@ -717,6 +739,7 @@ $wp_customize->add_setting( $prefix.'_nav_font_weight', array(
 
 $wp_customize->add_control( $prefix.'_nav_font_weight', array(
         'type'          => 'select',
+        'priority'      => 30,
         'label'         => esc_html__( 'Font Weight', 'arrival' ),
         'description'   => esc_html__('Main navigation font weight','arrival'),
         'section'       => $prefix.'_main_header_options_panel',
@@ -739,17 +762,133 @@ $wp_customize->add_setting($prefix.'_header_box_shadow_disable', array(
 );
 
 $wp_customize->add_control( $prefix.'_header_box_shadow_disable',array(
-        'label'      => esc_html__( 'Disable Box-shadow', 'arrival' ),
+        'label'       => esc_html__( 'Disable Box-shadow', 'arrival' ),
+        'priority'    => 35,
         'description' => esc_html__('Check the box to disable the header box-shadow','arrival'),
-        'section'    => $prefix.'_main_header_options_panel',
-        'type'       => 'checkbox',
+        'section'     => $prefix.'_main_header_options_panel',
+        'type'        => 'checkbox',
 
 ));
+
+
+//Menu hover styles
+$wp_customize->add_setting( $prefix.'_menu_hover_styles', array(
+        'default'               => $default[$prefix.'_menu_hover_styles'],
+        'sanitize_callback'     => 'arrival_sanitize_select',
+      ) );
+
+$wp_customize->add_control( $prefix.'_menu_hover_styles', array(
+        'label'         => esc_html__( 'Menu Hover Styles', 'arrival' ),
+        'priority'      => 40,
+        'description'   => esc_html__( 'Select menu hover styles', 'arrival' ),
+        'section'       => $prefix.'_main_header_options_panel',
+        'type'          => 'select',
+        'choices'       => apply_filters( $prefix.'_menu_hover_styles',array(
+          'hover-layout-one'  => esc_html__('Style One','arrival'),
+          'hover-layout-two'  => esc_html__('Style Two','arrival'),
+          'hover-layout-three'  => esc_html__('Style Three','arrival')
+        )),
+        
+  ) );
+
+
 
 if( function_exists('arrival_customizer_pro_info')){
   arrival_customizer_pro_info( $wp_customize, $prefix.'_main_header_colors_info',$prefix.'_main_header_options_panel');
 }
 
+
+/**
+* Breadcrumb Options
+*/
+$wp_customize->add_section( $prefix.'_breadcrumb_potions', array(
+      'title'   => esc_html__( 'Inner Page Header', 'arrival' ),
+      'panel'   => $prefix.'_header_options_panel'
+    )
+  );
+
+//layout
+$wp_customize->add_setting( $prefix.'_page_header_layout', array(
+        'default'               => $default[$prefix.'_page_header_layout'],
+        'sanitize_callback'     => 'arrival_sanitize_breadcrumb',
+      ) );
+
+$wp_customize->add_control( $prefix.'_page_header_layout', array(
+        'label'         => esc_html__( 'Page Header Layout', 'arrival' ),
+        'section'       => $prefix.'_breadcrumb_potions',
+        'type'          => 'select',
+        'choices'       => array(
+          'default'     => esc_html__('Attached To Navigation','arrival'),
+          'layout-two'  => esc_html__('Seperate','arrival')
+        )
+        
+  ) );
+
+//header bg image
+$wp_customize->add_setting( $prefix.'_inner_header_image',array(
+        'sanitize_callback' => 'esc_url_raw'
+    )
+);
+$wp_customize->add_control( new WP_Customize_Image_Control($wp_customize, $prefix.'_inner_header_image',
+      array(
+          'label'       => esc_html__( 'Header Background Image', 'arrival' ),
+            'section'   => $prefix.'_breadcrumb_potions',
+        )
+    )
+);
+
+//background position
+$wp_customize->add_setting( $prefix.'_inner_header_img_position', array(
+        'default'               => $default[$prefix.'_inner_header_img_position'],
+        'sanitize_callback'     => 'arrival_sanitize_bg_position',
+        'transport'             => 'postMessage'
+      ) );
+
+$wp_customize->add_control( $prefix.'_inner_header_img_position', array(
+        'label'         => esc_html__( 'Background Position', 'arrival' ),
+        'section'       => $prefix.'_breadcrumb_potions',
+        'type'      => 'select',
+        'choices' => array(
+          'bottom' => esc_html__('Bottom','arrival'),
+          'center' => esc_html__('Center','arrival'),
+          'initial' => esc_html__('Initial','arrival'),
+          'left' => esc_html__('Left','arrival'),
+          'right' => esc_html__('Right','arrival'),
+          'top' => esc_html__('Top','arrival')
+        )
+        
+  ) );
+
+//background padding
+$wp_customize->add_setting( $prefix.'_inner_header_image_padding_btm', array(
+  'default'             => $default[$prefix.'_inner_header_image_padding_btm'],
+  'sanitize_callback'   => 'arrival_sanitize_number',
+  'transport'           => 'postMessage'
+) );
+
+$wp_customize->add_control( new Arrival_Customizer_Range_Control( $wp_customize, $prefix.'_inner_header_image_padding_btm', array(
+  'label'           => esc_html__( 'Height (px)', 'arrival' ),
+  'section'         => $prefix.'_breadcrumb_potions',
+    'input_attrs'       => array(
+        'min'   => 10,
+        'max'   => 500,
+        'step'  => 1,
+    ),
+) ) );
+
+//disable image overlay
+$wp_customize->add_setting( $prefix.'_breadcrumb_overlay_disable', array(
+  'sanitize_callback'   => 'arrival_sanitize_checkbox',
+  'default'             => $default[$prefix.'_breadcrumb_overlay_disable']
+) );
+
+$wp_customize->add_control( $prefix.'_breadcrumb_overlay_disable', array(
+        'type'          => 'checkbox',
+        'label'         => esc_html__( 'Enable Overlay', 'arrival' ),
+        'description'   => esc_html__('Check the box to enable background overlay','arrival'),
+        'section'       => $prefix.'_breadcrumb_potions'
+        
+      ) );
 
 /**
 * Theme footer settings

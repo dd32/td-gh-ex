@@ -59,6 +59,7 @@ if( class_exists('WP_Customize_Control')):
     	public function render_content() {
 
     		$values = json_decode($this->value());
+    		if( $this->section == 'arrival_social_icons_section' ){
     		?>
     		<span class="customize-control-seperator">
 	           <?php echo esc_html( $this->label ); ?>
@@ -73,6 +74,7 @@ if( class_exists('WP_Customize_Control')):
 	       			</span>  
 	   			<?php endif; ?>
        		</span>
+       		<?php } ?>
 
     		<ul class="operation-repeater-field-control-wrap">
     			<?php
@@ -111,9 +113,13 @@ if( class_exists('WP_Customize_Control')):
 	    			<?php 
 	    				$label = isset($field['label']) ? $field['label'] : '';
 	    				$description = isset($field['description']) ? $field['description'] : '';
+	    				$desc_class = '';
+	    				if( $description ){
+	    					$desc_class = 'has-desc';
+	    				}
 	    				if($field['type'] != 'checkbox'){ ?>
-	    					<span class="customize-control-fields"><?php echo esc_html( $label ); ?></span>
-	    					<span class="description customize-control-description"><?php echo esc_html( $description ); ?></span>
+	    					<span class="customize-control-fields <?php echo esc_attr($desc_class);?>"><?php echo esc_html( $label ); ?></span>
+	    					<span class="description customize-control-description"><?php echo wp_kses_post( $description ); ?></span>
 	    				<?php 
 	    				}
 

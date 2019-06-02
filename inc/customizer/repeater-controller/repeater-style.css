@@ -8,6 +8,14 @@
   border-radius: 2px;
   color: #fff;
 }
+#customize-controls ul.operation-repeater-field-control-wrap span.description.customize-control-description {
+    margin-top: 0;
+    padding: 0 5px;
+    font-size: 12px;
+}
+#customize-controls ul.operation-repeater-field-control-wrap .has-desc{
+  padding-bottom: 0;
+}
 .operation-repeater-field-control{
   background: #FFF;
   margin-bottom: 12px;

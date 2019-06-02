@@ -399,10 +399,11 @@ add_action( 'widgets_init', 'arrival_widgets_init' );
 $file_paths = array(
 	'/inc/enqueue.php',
 	'/inc/image-sizes.php',
-	'/pluggable/custom-header.php',
 	'/inc/template-tags.php',
 	'/inc/template-functions.php',
 	'/inc/customizer/customizer.php',
+	'/pluggable/breadcrumb.php',
+	'/pluggable/custom-header.php',
     '/inc/hooks/header-hooks.php',
     '/inc/hooks/footer-hooks.php',
     '/inc/dynamic-styles.php',

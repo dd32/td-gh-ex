@@ -44,11 +44,8 @@ function arrival_scripts() {
 	wp_enqueue_script( 'arrival-wooButtons', get_theme_file_uri( '/assets/js/wooButtons.js' ), array('jquery'),ARRIVAL_VER, false );
 	wp_enqueue_script( 'slick', get_theme_file_uri( '/assets/lib/slick/slick.min.js' ), ARRIVAL_VER, false );
 	wp_enqueue_script( 'jquery-fitvids', get_theme_file_uri( '/assets/lib/jquery-fitvids/jquery.fitvids.js' ), array('jquery'), ARRIVAL_VER, false );
-	//enqueue onepage nav
-	if( 'yes' == $arrival_one_page_menus ):
 	wp_enqueue_script( 'jquery-nav', get_theme_file_uri( '/assets/lib/onepagenav/jquery.nav.js' ), array('jquery'), ARRIVAL_VER, false );
-	wp_script_add_data( 'jquery-nav', 'async', true );
-	endif;
+	
 
 	//enqueue jarallax script
 	wp_enqueue_script( 'jarallax', get_theme_file_uri( '/assets/lib/jarallax/jarallax.min.js' ), array('jquery'), ARRIVAL_VER, false );
