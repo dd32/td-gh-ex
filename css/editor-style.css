@@ -22,10 +22,10 @@ Description: Used to style the TinyMCE editor.
  */
 
 body {
-    color: #333;
-    font-family: Bitter, Georgia, serif;
-    font-size: 1rem;
-    line-height: 1.667;
+	color: #333;
+	font-family: Lato, Helvetica, sans-serif;
+	font-size: 1rem;
+	line-height: 1.667;
 }
 
 /**
@@ -38,109 +38,114 @@ h3,
 h4,
 h5,
 h6 {
-    clear: both;
-    font-weight: 700;     
+	clear: both;
+	font-weight: 700;     
 }
 
 h1 {
-    font-size: 1.728em;
-    margin: 0 0 0.3596em;
+	font-size: 1.728em;
+	margin: 0 0 0.3596em;
 }
 
 h2 {
-    font-size: 1.728em;
-    margin: 0.3596em 0;
+	font-size: 1.728em;
+	margin: 0.3596em 0;
 }
 
 h3 {
-    font-size: 1.44em;
-    margin: 0.339em 0;
+	font-size: 1.44em;
+	margin: 0.339em 0;
 }
 
 h4 {
-    font-size: 1.2em;
-    margin: 0.720em 0;
+	font-size: 1.2em;
+	margin: 0.720em 0;
 }
 
 h5 {
-    font-size: 1em;
-    margin: 0.898em 0;
+	font-size: 1em;
+	margin: 0.898em 0;
 }
 
 h6 {
-    font-size: 0.833em;
-    margin: 0.898em 0;
+	font-size: 0.833em;
+	margin: 0.898em 0;
+}
+
+.editor-post-title textarea {
+	font-family: 'Arima Madurai', Georgia, serif;
+	color: #004c73;
 }
 
 p {
-    margin: 0 0 1.667em;
+	margin: 0 0 1.667em;
 }
 
 dfn,
 cite,
 em,
 i {
-    font-style: italic;
+	font-style: italic;
 }
 
 blockquote {
-    border: 0 solid #333;
-    border-left-width: 4px;
-    color: #777;
-    font-style: italic;
-    line-height: 1.5;
-    margin: 0 0 1.5em;
-    padding: 0 0 0 1.078667em;
+	border: 0 solid #333;
+	border-left-width: 4px;
+	color: #777;
+	font-style: italic;
+	line-height: 1.5;
+	margin: 0 0 1.5em;
+	padding: 0 0 0 1.078667em;
 }
 
 blockquote,
 q {
-    quotes: none;
+	quotes: none;
 }
 
 blockquote:before,
 blockquote:after,
 q:before,
 q:after {
-    content: "";
+	content: "";
 }
 
 blockquote p {
-    margin-bottom: 1.5em;
+	margin-bottom: 1.5em;
 }
 
 blockquote cite,
 blockquote small {
-    color: #333;
-    display: block;
-    font-size: 0.875em;
-    line-height: 1.5;
-    margin: 0.539em 0 0;
+	color: #333;
+	display: block;
+	font-size: 0.875em;
+	line-height: 1.5;
+	margin: 0.539em 0 0;
 }
 
 blockquote cite:before,
 blockquote small:before {
-    content: "\2014\00a0";
+	content: "\2014\00a0";
 }
 
 blockquote em,
 blockquote i,
 blockquote cite {
-    font-style: normal;
+	font-style: normal;
 }
 
 blockquote strong,
 blockquote b {
-    font-weight: 400;
+	font-weight: 400;
 }
 
 blockquote > :last-child {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 
 address {
-    font-style: italic;
-    margin: 0 0 1.667em;
+	font-style: italic;
+	margin: 0 0 1.667em;
 }
 
 code,
@@ -149,40 +154,40 @@ tt,
 var,
 samp,
 pre {
-    font-family: Inconsolata, monospace;
+	font-family: Inconsolata, monospace;
 }
 
 pre {
-    border: 1px solid #ccc;
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.25;
-    margin: 0 0 1.667em;
-    max-width: 100%;
-    overflow: auto;
-    padding: 1.667em;
-    white-space: pre;
-    white-space: pre-wrap;
-    word-wrap: break-word;
+	border: 1px solid #ccc;
+	font-size: 16px;
+	font-size: 1rem;
+	line-height: 1.25;
+	margin: 0 0 1.667em;
+	max-width: 100%;
+	overflow: auto;
+	padding: 1.667em;
+	white-space: pre;
+	white-space: pre-wrap;
+	word-wrap: break-word;
 }
 
 code {
-    background-color: #ccc;
-    padding: 0.125em 0.25em;
+	background-color: #ccc;
+	padding: 0.125em 0.25em;
 }
 
 abbr,
 acronym {
-    border-bottom: 1px dotted #ccc;
-    cursor: help;
+	border-bottom: 1px dotted #ccc;
+	cursor: help;
 }
 
 mark,
 ins {
-    background: #a83e3e;
-    color: #fafafa;
-    padding: 0.125em 0.25em;
-    text-decoration: none;
+	background: #a83e3e;
+	color: #fafafa;
+	padding: 0.125em 0.25em;
+	text-decoration: none;
 }
 
 big {
@@ -194,129 +199,129 @@ big {
  */
 
 html {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 *,
 *:before,
 *:after {
-    /* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-    box-sizing: inherit;
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	-webkit-box-sizing: inherit;
+	-moz-box-sizing: inherit;
+	box-sizing: inherit;
 }
 
 hr {
-    background-color: #ccc;
-    border: 0;
-    height: 1px;
-    margin-bottom: 1.667em;
+	background-color: #ccc;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.667em;
 }
 
 ul,
 ol {
-    margin: 0 0 1.667em 1.25em;
-    padding: 0;
+	margin: 0 0 1.667em 1.25em;
+	padding: 0;
 }
 
 ul {
-    list-style: disc;
+	list-style: disc;
 }
 
 ol {
-    list-style: decimal;
-    margin-left: 1.5em;
+	list-style: decimal;
+	margin-left: 1.5em;
 }
 
 li > ul,
 li > ol {
-    margin-bottom: 0; 
+	margin-bottom: 0; 
 }
 
 dl {
-    margin: 0 0 1.667em;
+	margin: 0 0 1.667em;
 }
 
 dt {
-    font-weight: 700;
+	font-weight: 700;
 }
 
 dd {
-    margin: 0 0 1.667em;
+	margin: 0 0 1.667em;
 }
 
 img {
-    height: auto;
-    /* Make sure images are scaled correctly. */
-    max-width: 100%;
-    /* Adhere to container width. */
-    vertical-align: middle;
+	height: auto;
+	/* Make sure images are scaled correctly. */
+	max-width: 100%;
+	/* Adhere to container width. */
+	vertical-align: middle;
 }
 
 del {
-    opacity: 0.8;
+	opacity: 0.8;
 }
 
 table,
 th,
 td {
-    border: 1px solid #ccc;
+	border: 1px solid #ccc;
 }
 
 table {
-    border-collapse: separate;
-    border-spacing: 0;
-    border-width: 1px 0 0 1px;
-    margin: 0 0 1.667em;
-    table-layout: fixed;
-    /* Prevents HTML tables from becoming too wide */
-    width: 100%;
+	border-collapse: separate;
+	border-spacing: 0;
+	border-width: 1px 0 0 1px;
+	margin: 0 0 1.667em;
+	table-layout: fixed;
+	/* Prevents HTML tables from becoming too wide */
+	width: 100%;
 }
 
 caption,
 th,
 td {
-    font-weight: normal;
-    text-align: left;
+	font-weight: normal;
+	text-align: left;
 }
 
 th {
-    border-width: 0 1px 1px 0;
-    font-weight: 700;
+	border-width: 0 1px 1px 0;
+	font-weight: 700;
 }
 
 td {
-    border-width: 0 1px 1px 0;
+	border-width: 0 1px 1px 0;
 }
 
 th,
 td {
-    padding: 0.4375em;
+	padding: 0.4375em;
 }
 
 /* Placeholder text color -- selectors need to be separate to work. */
 ::-webkit-input-placeholder {
-    color: #777;
-    font-family: Lato, "Helvetica Neue", sans-serif;
+	color: #777;
+	font-family: Lato, Helvetica, sans-serif;
 }
 
 :-moz-placeholder {
-    color: #777;
-    font-family: Lato, "Helvetica Neue", sans-serif;
+	color: #777;
+	font-family: Lato, Helvetica, sans-serif;
 }
 
 ::-moz-placeholder {
-    color: #777;
-    font-family: Lato, "Helvetica Neue", sans-serif;
-    opacity: 1;
-    /* Since FF19 lowers the opacity of the placeholder by default */
+	color: #777;
+	font-family: Lato, Helvetica, sans-serif;
+	opacity: 1;
+	/* Since FF19 lowers the opacity of the placeholder by default */
 }
 
 :-ms-input-placeholder {
-    color: #777;
-    font-family: Lato, "Helvetica Neue", sans-serif;
+	color: #777;
+	font-family: Lato, Helvetica, sans-serif;
 }
 
 
@@ -325,43 +330,43 @@ td {
  */
 
 .alignleft {
-    float: left;
-    margin: 0.375em 1.667em 1.667em 0;
+	float: left;
+	margin: 0.375em 1.667em 1.667em 0;
 }
 
 .alignright {
-    float: right;
-    margin: 0.375em 0 1.667em 1.667em;
+	float: right;
+	margin: 0.375em 0 1.667em 1.667em;
 }
 
 .aligncenter {
-    clear: both;
-    display: block;
-    margin: 0 auto 1.667em;
+	clear: both;
+	display: block;
+	margin: 0 auto 1.667em;
 }
 
 img.alignleft{
-    float: left;
-    margin: 0.375em 1.667em 1.667em 0;    
+	float: left;
+	margin: 0.375em 1.667em 1.667em 0;    
 }
 
 img.alignright{    
-    float: right;
-    margin: 0.375em 0 1.667em 1.667em;    
+	float: right;
+	margin: 0.375em 0 1.667em 1.667em;    
 }
 
 blockquote.alignleft {
-    width: 40%;
-    margin: 0.315em 1.5em 1.5em 0;
+	width: 40%;
+	margin: 0.315em 1.5em 1.5em 0;
 }
 
 blockquote.alignright {
-    width: 40%;
-    margin: 0.315em 0 1.5em 1.5em;
+	width: 40%;
+	margin: 0.315em 0 1.5em 1.5em;
 }
 
 blockquote.aligncenter {
-    margin-bottom: 1.5em;
+	margin-bottom: 1.5em;
 }
 
 /**
@@ -369,22 +374,22 @@ blockquote.aligncenter {
  */
 
 .wp-caption {
-    margin-bottom: 1.667em;
-    max-width: 100%;
+	margin-bottom: 1.667em;
+	max-width: 100%;
 }
 
 .wp-caption img[class*="wp-image-"] {
-    display: block;
-    margin: 0;
+	display: block;
+	margin: 0;
 }
 
 .wp-caption .wp-caption-text {
-    color: #777;
-    font-size: 13px;
-    font-size: 0.8125rem;
-    font-style: italic;
-    line-height: 1.618;
-    padding-top: 0.539em;
+	color: #777;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-style: italic;
+	line-height: 1.618;
+	padding-top: 0.539em;
 }
 
 /**
@@ -392,69 +397,69 @@ blockquote.aligncenter {
  */
 
 .gallery {
-    margin: 0 -1.1666667% 1.667em;
+	margin: 0 -1.1666667% 1.667em;
 }
 
 .gallery-item {
-    display: inline-block;
-    max-width: 33.33%;
-    padding: 0 1.1400652% 2.2801304%;
-    text-align: center;
-    vertical-align: top;
-    width: 100%;
+	display: inline-block;
+	max-width: 33.33%;
+	padding: 0 1.1400652% 2.2801304%;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
 }
 
 .gallery-columns-1 .gallery-item {
-    max-width: 100%;
+	max-width: 100%;
 }
 
 .gallery-columns-2 .gallery-item {
-    max-width: 50%;
+	max-width: 50%;
 }
 
 .gallery-columns-4 .gallery-item {
-    max-width: 25%;
+	max-width: 25%;
 }
 
 .gallery-columns-5 .gallery-item {
-    max-width: 20%;
+	max-width: 20%;
 }
 
 .gallery-columns-6 .gallery-item {
-    max-width: 16.66%;
+	max-width: 16.66%;
 }
 
 .gallery-columns-7 .gallery-item {
-    max-width: 14.28%;
+	max-width: 14.28%;
 }
 
 .gallery-columns-8 .gallery-item {
-    max-width: 12.5%;
+	max-width: 12.5%;
 }
 
 .gallery-columns-9 .gallery-item {
-    max-width: 11.11%;
+	max-width: 11.11%;
 }
 
 .gallery-icon img {
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 .gallery-caption {
-    color: #777;
-    display: block;
-    font-size: 13px;
-    font-size: 0.8125rem;
-    font-style: italic;
-    line-height: 1.618;
-    padding-top: 0.539em;
+	color: #777;
+	display: block;
+	font-size: 13px;
+	font-size: 0.8125rem;
+	font-style: italic;
+	line-height: 1.618;
+	padding-top: 0.539em;
 }
 
 .gallery-columns-6 .gallery-caption,
 .gallery-columns-7 .gallery-caption,
 .gallery-columns-8 .gallery-caption,
 .gallery-columns-9 .gallery-caption {
-    display: none;
+	display: none;
 }
 
 /**

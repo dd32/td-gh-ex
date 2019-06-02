@@ -2,14 +2,14 @@
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Acuarela 1.0\n"
+"Project-Id-Version: Acuarela 1.0.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/acuarela\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"POT-Creation-Date: 2019-04-24T12:57:07+00:00\n"
+"POT-Creation-Date: 2019-06-02T14:13:33+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.1.0\n"
 "X-Domain: acuarela\n"
@@ -23,7 +23,7 @@ msgid "http://ebyb.eu/themes/acuarela/"
 msgstr ""
 
 #. Description of the theme
-msgid "Acuarela is a fully functional WordPress theme, written with the intention of minimising code. It was designed to be fully responsive by taking the mobile-first approach. Besides a very customizable header, it features the full range of post formats, three menu locations, two sidebars and three footers."
+msgid "Acuarela is a light, fully functional WordPress theme, written with the intention of minimising code. It was designed to be fully responsive by taking the mobile-first approach. Besides a customizable header, it features the full range of post formats, two menu locations, a sidebar widget area and three widget areas in the footer. It is accesibility ready and has Gutenberg support."
 msgstr ""
 
 #. Author of the theme
@@ -55,16 +55,16 @@ msgid "%1$s thought on &ldquo;%2$s&rdquo;"
 msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 
-#: comments.php:57
+#: comments.php:58
 msgid "Reply"
 msgstr ""
 
-#: comments.php:67
+#: comments.php:70
 msgid "Comments are closed."
 msgstr ""
 
 #: footer.php:17
-#: template-parts/headers/header-banner.php:32
+#: template-parts/headers/header-banner.php:34
 msgid "Social Menu "
 msgstr ""
 
@@ -72,86 +72,91 @@ msgstr ""
 msgid "Proudly powered by WordPress"
 msgstr ""
 
-#: functions.php:106
+#: functions.php:105
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:107
+#: functions.php:106
 msgid "Social Links Menu"
 msgstr ""
 
-#: functions.php:175
+#: functions.php:172
 msgid "Sidebar Area"
 msgstr ""
 
-#: functions.php:177
+#: functions.php:174
 msgid "Add widgets here to appear in your sidebar."
 msgstr ""
 
-#: functions.php:184
+#: functions.php:181
 msgid "First Footer Area"
 msgstr ""
 
-#: functions.php:186
+#: functions.php:183
 msgid "Add widgets here to appear in your first footer area."
 msgstr ""
 
-#: functions.php:193
+#: functions.php:190
 msgid "Second Footer Area"
 msgstr ""
 
-#: functions.php:195
+#: functions.php:192
 msgid "Add widgets here to appear in your second footer area."
 msgstr ""
 
-#: functions.php:202
+#: functions.php:199
 msgid "Third Footer Area"
 msgstr ""
 
-#: functions.php:204
+#: functions.php:201
 msgid "Add widgets here to appear in your third footer area."
 msgstr ""
 
-#: functions.php:230
+#: functions.php:227
 msgctxt "Lato font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:238
+#: functions.php:235
 msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:246
+#: functions.php:243
 msgctxt "Source Sans Pro font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:254
+#: functions.php:251
+msgctxt "Source Serif Pro font: on or off"
+msgid "on"
+msgstr ""
+
+#: functions.php:259
 msgctxt "Arima Madurai font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:262
+#: functions.php:267
 msgctxt "Cinzel Decorative font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:270
+#: functions.php:275
 msgctxt "Inconsolata font: on or off"
 msgid "on"
 msgstr ""
 
-#: functions.php:278
+#: functions.php:283
 msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr ""
 
-#: functions.php:324
+#: functions.php:329
 msgid "expand child menu"
 msgstr ""
 
-#: functions.php:325
+#: functions.php:330
 msgid "collapse child menu"
 msgstr ""
 
@@ -169,126 +174,108 @@ msgstr ""
 msgid "Pagination"
 msgstr ""
 
-#: inc/customizer.php:24
-#: inc/customizer.php:222
-msgid "Arima Madurai"
+#: inc/customizer.php:66
+msgid "Hide Site Title"
 msgstr ""
 
-#: inc/customizer.php:25
-#: inc/customizer.php:223
-msgid "Cinzel Decorative"
+#: inc/customizer.php:81
+msgid "Hide Tagline"
 msgstr ""
 
-#: inc/customizer.php:29
-#: inc/customizer.php:224
-msgid "Lato"
+#: inc/customizer.php:98
+msgid "Tagline Text Color"
 msgstr ""
 
-#: inc/customizer.php:30
-#: inc/customizer.php:225
-msgid "Open Sans"
-msgstr ""
-
-#: inc/customizer.php:31
-#: inc/customizer.php:226
-msgid "Source Sans Pro"
-msgstr ""
-
-#: inc/customizer.php:62
-msgid "Display Site Title"
-msgstr ""
-
-#: inc/customizer.php:76
-msgid "Display Tagline"
-msgstr ""
-
-#: inc/customizer.php:86
+#: inc/customizer.php:108
 msgid "Theme Settings"
 msgstr ""
 
-#: inc/customizer.php:87
+#: inc/customizer.php:109
 msgid "In this section you can choose the options to customize your site."
 msgstr ""
 
-#: inc/customizer.php:101
+#: inc/customizer.php:123
 msgid "Choose your preferred mode of navigating between old and new articles in multiple view pages"
 msgstr ""
 
-#: inc/customizer.php:117
+#: inc/customizer.php:139
 msgid "Choose the headings font"
 msgstr ""
 
-#: inc/customizer.php:133
+#: inc/customizer.php:155
 msgid "Choose the text font"
 msgstr ""
 
 #. Translators: used between list items, there is a space after the comma.
-#: inc/template-tags.php:42
-#: template-parts/content-single.php:41
+#: inc/template-tags.php:26
+#: inc/template-tags.php:47
+#: template-parts/content-post.php:38
 #: template-parts/content.php:17
 #: template-parts/headers/header-post.php:4
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:66
+#: inc/template-tags.php:88
 msgid "Next post:"
 msgstr ""
 
-#: inc/template-tags.php:67
+#: inc/template-tags.php:89
 msgid "Previous post:"
 msgstr ""
 
-#: inc/template-tags.php:83
+#: inc/template-tags.php:105
 msgid "Older articles"
 msgstr ""
 
-#: inc/template-tags.php:84
+#: inc/template-tags.php:106
 msgid "Newer articles"
 msgstr ""
 
-#: inc/template-tags.php:88
+#: inc/template-tags.php:110
 msgid "Previous page"
 msgstr ""
 
-#: inc/template-tags.php:89
+#: inc/template-tags.php:111
 msgid "Next page"
 msgstr ""
 
-#: inc/template-tags.php:90
-#: template-parts/content-page.php:25
-#: template-parts/content-single.php:34
+#: inc/template-tags.php:112
+#: template-parts/content-attachment.php:93
+#: template-parts/content-page.php:26
+#: template-parts/content-post.php:31
 msgid "Page"
 msgstr ""
 
-#: inc/template-tags.php:104
+#: inc/template-tags.php:126
 msgid "Older"
 msgstr ""
 
-#: inc/template-tags.php:105
+#: inc/template-tags.php:127
 msgid "Newer"
 msgstr ""
 
 #. Translators: there is a space after "on.
-#: inc/template-tags.php:119
+#: inc/template-tags.php:141
 msgid "No comments on "
 msgstr ""
 
 #. Translators: there is a space after "on.
-#: inc/template-tags.php:121
+#: inc/template-tags.php:143
 msgid "Only one comment on "
 msgstr ""
 
 #. Translators: there is a space after "on.
-#: inc/template-tags.php:123
+#: inc/template-tags.php:145
 msgid "% comments on "
 msgstr ""
 
 #. Translators: %s: Name of current post
-#: inc/template-tags.php:142
+#: inc/template-tags.php:164
 msgid "More"
 msgstr ""
 
-#: inc/template-tags.php:168
+#: inc/template-tags.php:190
+#: template-parts/content-attachment.php:53
 #: template-parts/content.php:51
 #: template-parts/headers/header-page.php:3
 #: template-parts/headers/header-post.php:26
@@ -317,6 +304,42 @@ msgstr ""
 msgid "About "
 msgstr ""
 
+#. Translators: There is a space after "on".
+#: template-parts/content-attachment.php:31
+msgid "Published on "
+msgstr ""
+
+#. Translators: There is a space before and after "in".
+#: template-parts/content-attachment.php:35
+msgid " in "
+msgstr ""
+
+#: template-parts/content-attachment.php:37
+msgid "Return to:"
+msgstr ""
+
+#: template-parts/content-attachment.php:47
+msgid "Link to full-size image"
+msgstr ""
+
+#: template-parts/content-attachment.php:48
+msgid "Full resolution"
+msgstr ""
+
+#: template-parts/content-attachment.php:62
+msgid "Previous"
+msgstr ""
+
+#: template-parts/content-attachment.php:63
+msgid "Next"
+msgstr ""
+
+#: template-parts/content-attachment.php:89
+#: template-parts/content-page.php:22
+#: template-parts/content-post.php:27
+msgid "Pages:"
+msgstr ""
+
 #: template-parts/content-none.php:12
 msgid "Nothing Found"
 msgstr ""
@@ -333,13 +356,8 @@ msgstr ""
 msgid "It seems we can not find what you are looking for. Perhaps searching can help."
 msgstr ""
 
-#: template-parts/content-page.php:21
-#: template-parts/content-single.php:30
-msgid "Pages:"
-msgstr ""
-
 #. Translators: There is a space after "by".
-#: template-parts/content-single.php:46
+#: template-parts/content-post.php:43
 msgid "This article was written by "
 msgstr ""
 
@@ -361,11 +379,11 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: template-parts/headers/header-banner.php:20
+#: template-parts/headers/header-banner.php:22
 msgid "Menu"
 msgstr ""
 
-#: template-parts/headers/header-banner.php:23
+#: template-parts/headers/header-banner.php:25
 msgid "Primary Menu "
 msgstr ""
 

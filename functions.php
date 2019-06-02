@@ -54,7 +54,7 @@ if ( ! function_exists( 'acuarela_setup' ) ) :
 
 		// Add theme support for Custom Header.
 		add_theme_support( 'custom-header', array(
-			'default-text-color' => 'a83e3e',
+			'default-text-color' => '004c73',
 			'width' => 1920,
 			'height' => 300,
 			'header-text' => true,
@@ -64,7 +64,7 @@ if ( ! function_exists( 'acuarela_setup' ) ) :
 		// Add theme support for Custom Background.
 		add_theme_support( 'custom-background', array(
 			'default-color'			=> 'f2f2f2',
-			'default-image'			=> get_theme_file_uri() . '/images/acuarela_1.png',
+			'default-image'			=> get_theme_file_uri() . '/images/acuarela.png',
 			'default-size'			=> 'cover',
 			'default-repeat'		=> 'no-repeat',
 			'default-attachment'	=> 'fixed',
@@ -139,11 +139,9 @@ if ( ! function_exists( 'acuarela_setup' ) ) :
 		 * This theme styles the visual editor to resemble the theme style,
 		 * specifically font, colors, icons, and column width.
 		 */
-		add_editor_style( array(
-			'css/editor-style.css',
-			'genericons/genericons.css',
-			acuarela_fonts_url(),
-		) );
+		add_editor_style( array( 'css/editor-style.css', 'genericons/genericons.css', acuarela_fonts_url(), ) );
+
+		add_theme_support( 'editor-styles' );
 	}
 endif; // acuarela_setup.
 add_action( 'after_setup_theme', 'acuarela_setup' );
@@ -227,7 +225,7 @@ if ( ! function_exists( 'acuarela_fonts_url' ) ) :
 		 * by Lato, translate this to 'off'. Do not translate into your own language.
 		 */
 		if ( 'off' !== _x( 'on', 'Lato font: on or off', 'acuarela' ) ) {
-			$fonts[] = 'Lato:300italic,400italic,700italic,900italic,300,400,700,900';
+			$fonts[] = 'Lato:300italic,400italic,700italic,300,400,700';
 		}
 
 		/*
@@ -235,7 +233,7 @@ if ( ! function_exists( 'acuarela_fonts_url' ) ) :
 		 * by Open Sans, translate this to 'off'. Do not translate into your own language.
 		 */
 		if ( 'off' !== _x( 'on', 'Open Sans font: on or off', 'acuarela' ) ) {
-			$fonts[] = 'Open Sans:300italic,400italic,700italic,900italic,300,400,700,900';
+			$fonts[] = 'Open Sans:300italic,400italic,700italic,300,400,700';
 		}
 
 		/*
@@ -243,7 +241,15 @@ if ( ! function_exists( 'acuarela_fonts_url' ) ) :
 		 * by Source Sans Pro, translate this to 'off'. Do not translate into your own language.
 		 */
 		if ( 'off' !== _x( 'on', 'Source Sans Pro font: on or off', 'acuarela' ) ) {
-			$fonts[] = 'Source Sans Pro:300italic,400italic,700italic,900italic,300,400,700,900';
+			$fonts[] = 'Source Sans Pro:300italic,400italic,700italic,300,400,700';
+		}
+
+		/*
+		 * Translators: If there are characters in your language that are not supported
+		 * by Source Serif Pro, translate this to 'off'. Do not translate into your own language.
+		 */
+		if ( 'off' !== _x( 'on', 'Source Serif Pro font: on or off', 'acuarela' ) ) {
+			$fonts[] = 'Source Serif Pro:400,600,700';
 		}
 
 		/*
@@ -251,7 +257,7 @@ if ( ! function_exists( 'acuarela_fonts_url' ) ) :
 		 * by Arima Madurai, translate this to 'off'. Do not translate into your own language.
 		 */
 		if ( 'off' !== _x( 'on', 'Arima Madurai font: on or off', 'acuarela' ) ) {
-			$fonts[] = 'Arima Madurai:400,500,700,800';
+			$fonts[] = 'Arima Madurai:800,900';
 		}
 
 		/*
@@ -259,7 +265,7 @@ if ( ! function_exists( 'acuarela_fonts_url' ) ) :
 		 * by Cinzel Decorative, translate this to 'off'. Do not translate into your own language.
 		 */
 		if ( 'off' !== _x( 'on', 'Cinzel Decorative font: on or off', 'acuarela' ) ) {
-			$fonts[] = 'Cinzel Decorative:400,700';
+			$fonts[] = 'Cinzel Decorative:700';
 		}
 
 		/*

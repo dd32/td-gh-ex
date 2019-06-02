@@ -21,23 +21,29 @@ function acuarela_customize_register( $wp_customize ) {
 	);
 
 	$google_fonts_headings = array(
-		'Arima Madurai' => __( 'Arima Madurai', 'acuarela' ),
-		'Cinzel Decorative' => __( 'Cinzel Decorative', 'acuarela' ),
+		'Arima Madurai' => 'Arima Madurai',
+		'Cinzel Decorative' => 'Cinzel Decorative',
+		'Open Sans' => 'Open Sans',
 	);
 
 	$google_fonts_text = array(
-		'Lato' => __( 'Lato', 'acuarela' ),
-		'Open Sans' => __( 'Open Sans', 'acuarela' ),
-		'Source Sans Pro' => __( 'Source Sans Pro', 'acuarela' ),
+		'Lato' => 'Lato',
+		'Open Sans' => 'Open Sans',
+		'Source Sans Pro' => 'Source Sans Pro',
+		'Source Serif Pro' => 'Source Serif Pro',
 	);
 
 	$wp_customize->get_setting( 'blogname' )->transport          = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport   = 'postMessage';
+	$wp_customize->get_setting( 'header_textcolor' )->transport  = 'postMessage';
+
+	$wp_customize->get_control( 'header_textcolor' )->priority   = 5;
 
 	$wp_customize->selective_refresh->add_partial( 'blogname', array(
 		'selector' => '.site-title',
 		'render_callback' => 'acuarela_customize_partial_blogname',
 	) );
+
 	$wp_customize->selective_refresh->add_partial( 'blogdescription', array(
 		'selector' => '.site-description',
 		'render_callback' => 'acuarela_customize_partial_blogdescription',
@@ -46,38 +52,53 @@ function acuarela_customize_register( $wp_customize ) {
 	// =============================
 	// ==     Header Settings     ==
 	// =============================
-	// Remove the control for displaying or not the header text.
-	// Adds the posibility of displaying the site title and tagline separately.
-	$wp_customize->remove_control( 'display_header_text' );
-
+	// Adds the posibility of hiding the site title and tagline separately.
 	// ===============================
-	$wp_customize->add_setting( 'acuarela_theme_options[show_site_title]', array(
-		'default'           => 1,
-		'sanitize_callback' => 'absint',
-		'capability'        => 'edit_theme_options',
-		'type'           => 'option',
+	$wp_customize->add_setting( 'acuarela_theme_options[hide_site_title]', array(
+		'default'			=> 0,
+		'sanitize_callback'	=> 'absint',
+		'capability'		=> 'edit_theme_options',
+		'type'				=> 'option',
 	));
 
-	$wp_customize->add_control( 'show_site_title', array(
-		'label'    => __( 'Display Site Title', 'acuarela' ),
+	$wp_customize->add_control( 'hide_site_title', array(
+		'label'    => __( 'Hide Site Title', 'acuarela' ),
+		'settings' => 'acuarela_theme_options[hide_site_title]',
 		'section'  => 'title_tagline',
-		'settings' => 'acuarela_theme_options[show_site_title]',
+		'priority' => 41,
 		'type' => 'checkbox',
 	));
 	// ===============================
-	$wp_customize->add_setting( 'acuarela_theme_options[show_site_description]', array(
-		'default'        => 1,
+	$wp_customize->add_setting( 'acuarela_theme_options[hide_site_description]', array(
+		'default'        => 0,
 		'sanitize_callback' => 'absint',
 		'capability'     => 'edit_theme_options',
 		'type'           => 'option',
 	));
 
-	$wp_customize->add_control( 'show_site_description', array(
-		'label'      => __( 'Display Tagline', 'acuarela' ),
+	$wp_customize->add_control( 'hide_site_description', array(
+		'label'      => __( 'Hide Tagline', 'acuarela' ),
 		'section'    => 'title_tagline',
-		'settings'   => 'acuarela_theme_options[show_site_description]',
+		'settings'   => 'acuarela_theme_options[hide_site_description]',
+		'priority' => 42,
 		'type' => 'checkbox',
 	));
+
+	//===============================
+	$wp_customize->add_setting( 'acuarela_theme_options[site_description_color]', array(
+		'default'			=> '#222222',
+		'sanitize_callback'	=> 'sanitize_hex_color',
+		'capability'		=> 'edit_theme_options',
+		'transport' => 'postMessage',
+		'type'				=> 'option',
+	));
+
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'site_description_color', array(
+		'label'		=> __('Tagline Text Color', 'acuarela'),
+		'section'	=> 'colors',
+		'settings'	=> 'acuarela_theme_options[site_description_color]',
+		'priority' => 9,
+	)));
 
 	// ==============================
 	// ==   Acuarela Custom Settings    ==
@@ -146,10 +167,15 @@ add_action( 'customize_register', 'acuarela_customize_register' );
 function acuarela_theme_custom_styling() {
 	$acuarela_theme_options = acuarela_get_options( 'acuarela_theme_options' );
 
+	$site_description_color = $acuarela_theme_options['site_description_color'];
 	$headings_font = $acuarela_theme_options['headings_font'];
 	$text_font = $acuarela_theme_options['text_font'];
 
 	$css = '';
+
+	if ( $site_description_color ) :
+		$css .= ' .site-description { color: ' . $site_description_color . '}' . "\n";
+	endif;
 
 	if ( $headings_font ) :
 		$css .= '.site-title, .entry-title, .post-title, .widget-title, .posts-navigation .nav-links { font-family: ' . $headings_font . '}' . "\n";
@@ -221,11 +247,12 @@ function acuarela_sanitize_font_style( $value ) {
  */
 function acuarela_font_styles() {
 	$default = array(
-		'Arima Madurai' => __( 'Arima Madurai', 'acuarela' ),
-		'Cinzel Decorative' => __( 'Cinzel Decorative', 'acuarela' ),
-		'Lato' => __( 'Lato', 'acuarela' ),
-		'Open Sans' => __( 'Open Sans', 'acuarela' ),
-		'Source Sans Pro' => __( 'Source Sans Pro', 'acuarela' ),
+		'Arima Madurai' => 'Arima Madurai',
+		'Cinzel Decorative' => 'Cinzel Decorative',
+		'Lato' => 'Lato',
+		'Open Sans' => 'Open Sans',
+		'Source Sans Pro' => 'Source Sans Pro',
+		'Source Serif Pro' => 'Source Serif Pro',
 		);
 	return apply_filters( 'acuarela_font_styles', $default );
 }
@@ -235,11 +262,12 @@ function acuarela_font_styles() {
  */
 function acuarela_get_option_defaults() {
 	$defaults = array(
-		'show_site_title' => 1,
-		'show_site_description' => 1,
+		'site_description_color' => '#222222',
+		'hide_site_title' => 0,
+		'hide_site_description' => 0,
+		'blog_navigation' => 'navigation',
 		'headings_font' => 'Arima Madurai',
 		'text_font' => 'Lato',
-		'blog_navigation' => 'navigation',
 	);
 	return apply_filters( 'acuarela_get_option_defaults', $defaults );
 }
@@ -251,10 +279,7 @@ function acuarela_get_option_defaults() {
  */
 function acuarela_get_options() {
 	// Options API.
-	return wp_parse_args(
-		get_option( 'acuarela_theme_options', array() ),
-		acuarela_get_option_defaults()
-	);
+	return wp_parse_args( get_option( 'acuarela_theme_options', array() ), acuarela_get_option_defaults() );
 }
 
 /**
@@ -285,9 +310,10 @@ function acuarela_customize_partial_blogdescription() {
  * Bind JS handlers to instantly live-preview changes.
  */
 function acuarela_customize_preview_js() {
-	wp_enqueue_script( 'acuarela-customize-preview', get_template_directory_uri( '/js/customize-preview.js' ), array( 'customize-preview' ), '1.0', true );
+	wp_enqueue_script( 'acuarela-customize-preview', get_theme_file_uri( '/js/customize-preview.js' ), array( 'customize-preview' ), '1.0', true );
 }
 add_action( 'customize_preview_init', 'acuarela_customize_preview_js' );
+
 
 
 

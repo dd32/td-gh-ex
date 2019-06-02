@@ -4,7 +4,7 @@ Theme URI: http://ebyb.eu/themes/acuarela/
 Author: acalfieri
 Author URI: http://ebyb.eu
 Description: Acuarela is a light, fully functional WordPress theme, written with the intention of minimising code. It was designed to be fully responsive by taking the mobile-first approach. Besides a customizable header, it features the full range of post formats, two menu locations, a sidebar widget area and three widget areas in the footer. It is accesibility ready and has Gutenberg support.
-Version: 1.0
+Version: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, photography, one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-header, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -857,6 +857,11 @@ a:focus {
 	position: relative;
 }
 
+.primary-navigation li:first-of-type {
+	border-top: 0
+}
+
+
 .primary-navigation a {
 	line-height: 1.3125;
 	padding: 0.84375em 0;
@@ -940,21 +945,21 @@ a:focus {
 }
 
 .toggled-on #navigation {
+	display: block;
 	position: relative; /* changed from absolute */
 	width: 100%;
 	left: 0;
 	top: 0.1em;  /* changed from 4 */
 	background-color: #fdfdfd; 
-	z-index: 2;
-	display: block;
 	box-shadow: 0px 1px 3px -1px #3c4b44;
+	z-index: 2;
 }
 
 #masthead.toggled-on {
 	box-shadow: none;
 }
 
-.toggled-on #site-identity {
+.toggled-on .site-identity {
 	width: 100%;
 }
 
@@ -1313,20 +1318,29 @@ a:focus {
  */
 
 .posts-navigation {
-	margin: 2.121em 0 1.7675em;   
+	margin: 2.121em 0 1.7675em;
+	padding: 0.1em 0;
+	background-color: #f2f2f2;
+	border: 1px solid #ddd;
 }
 
 .posts-navigation .nav-links {
 	font-family: 'Arima Madurai';
-	font-weight: 700;
+	font-weight: 800;
 	text-transform: uppercase;
-	text-align: center;
 }
 
 .posts-navigation .nav-next,
 .posts-navigation .nav-previous {
 	margin: 1em 0;
+	padding-left: 0.5em;
+	text-align: left;
 	box-sizing: border-box;
+}
+
+.posts-navigation .nav-next {
+	padding-right: 0.5em;
+	text-align: right;
 }
 
 .posts-navigation a:hover,
@@ -1542,6 +1556,10 @@ section:after,
 	border: 1px solid #ddd;
 }
 
+.widget-area .widget {
+	margin-bottom: 1em;
+}
+
  /* Calendar Widget */
 
  .widget-area a {
@@ -1574,7 +1592,7 @@ section:after,
 .widget-area .tagcloud a:focus{
 	background-color: #f5f5f5;
 	color: #004c73;
-	box-shadow: 0px 0px 1px 1px rgba(0,76,115,0.8);
+	box-shadow: 0px 0px 1px 1px #3c4b44;
 	text-decoration: none;
 }
 
@@ -1697,22 +1715,30 @@ main {
 
 /*---- Formatting of the logo part -----*/
 
-#site-identity {
+.site-identity {
 	width: 100%;
-	height: 4em;
 	margin: auto;
 }
 
 .home-link {
 	width: 92%;
+	min-height: 4em;
 	margin: auto;
 	text-decoration: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	align-items: center;
+}
+
+.title-description {
+	margin-left: 8px;
 }
 
 .site-title {
 	font-family: 'Arima Madurai', Georgia, serif;
+	font-weight: 900;
 	margin: 0;
-	padding: 0.4em 0 0 0.4em;
 }
 
 .home-link:hover .site-title,
@@ -1732,8 +1758,8 @@ main {
 	letter-spacing: 0.02em;  
 }
 
-#site-identity img {
-	margin: 0.5em 0 0;
+.site-identity img {
+	margin: 0.25em 0;
 	max-height: 48px;
 	max-width: 192px;
 }
@@ -1755,6 +1781,7 @@ main {
 
 .entry-title {
 	font-family: 'Arima Madurai', Georgia, serif;
+	font-weight: 800;
 	color: #004c73;
 	margin: 0;
 	overflow-wrap: anywhere;
@@ -1949,6 +1976,22 @@ main {
 .archive-header,
 .page-header {
 	margin: 0 auto 1em;
+	padding: 1em;
+	background-color: #f2f2f2;
+	border: 1px solid #ddd;
+}
+
+.archive-header h1,
+.page-header h1 {
+	font-family: 'Arima Madurai';
+	font-weight: 800;
+	color: #004c73;
+	margin: 0;
+}
+
+.archive-header p,
+.page-header p {
+	margin: 0;
 }
 
 .error404 .page-header {
@@ -2619,11 +2662,9 @@ p > video {
 
 .wp-block-gallery {
 	margin-left: 0;
+	margin-bottom: 1em;
 }
 
-.wp-block-embed {
-	margin: 0;
-}
 
 .wp-block-embed iframe {
 
@@ -2715,7 +2756,7 @@ h6 {
 	width: auto;
 	margin: auto;
 	padding: 0 5%;
-	align-self:flex-end;
+	align-self: flex-end;
 }
 
 .primary-navigation .menu {
@@ -2734,7 +2775,7 @@ h6 {
 .primary-navigation .menu ul ul {
 	position: absolute;
 	left: -990em;
-	padding-top: 1em;
+	padding-top: 0.5em;
 	background-color: transparent;
 }
 	
@@ -2893,12 +2934,15 @@ header .social-navigation .social-menu {
 .posts-navigation .nav-previous {
 	width: 50%;
 	text-align: left;
+	margin-right: auto;
+	margin-left: 0;
 }
 
 .posts-navigation .nav-next {
 	width: 50%;
 	text-align: right;
-	margin-left: 50%;
+	margin-right: 0;
+	margin-left: auto;
 }
 
 /**
@@ -2910,13 +2954,14 @@ html, body {
 }
   
 .logged-in #container {
-	margin: 0px auto 0;
+	margin: 0 auto 0;
 }
 	
 main {
 	position: relative;
 	display: flex;
 	min-height: calc(100vh - 6em );
+	font-size: 1.0625em;
 }
 
 .inner { 
@@ -2925,11 +2970,10 @@ main {
 }
 
 #main-content {
-	width: 72%;
+	width: 68.75%;
 	box-sizing: border-box;
 	padding: 4em 2% 0 6%;
 	margin: 0;
-	font-size: 1.0625em;
 	/*! letter-spacing:0.02em; */ 
 }
 
@@ -2938,7 +2982,7 @@ main {
 }
 
 .sidebars {
-	width: 28%;
+	width: 31.25%;
 	box-sizing: border-box;
 	margin: 0;
 	padding: 4em 6% 0 2%;
@@ -2980,16 +3024,21 @@ main {
 	border: 1px solid #aaa;
 }
 
+.archive-header,
+.page-header {
+	padding: 1em 4em;
+}
+
 .blog .entry-header {
 	text-align: center;
 }
 
 .featured-image .entry-header {
 	position: absolute;
-	width: 64%;
+	width: 60.75%;
 	margin: auto;	
 	padding: 4em;
-	left: calc(100% - 30%);
+	left: calc(100% - 33.25%);
 	top: 100%;
 	transform: translate(-100%,-100%);
 	background-color: rgba(255,255,255,0.9);
@@ -3050,7 +3099,7 @@ main {
  */
 	
 .logged-in #masthead {
-	top:32px;
+	top: 32px;
 }
 
 #customize-preview iframe #masthead  {
@@ -3059,9 +3108,8 @@ main {
 
 #masthead { /*   Revisar todo */
 	height: auto;
-	position:sticky;  
-	top:0;         /* this two lines, together with the relative position of #container, make the header sticky. */
-	z-index: 999;
+	position: sticky;  
+	top: 0;         /* this two lines, together with the relative position of #container, make the header sticky. */
 	display: flex;
 	flex-direction: column;
 	justify-content: space-around;
@@ -3070,9 +3118,8 @@ main {
 
 .single #masthead.site-header-thumbnail,
 .page #masthead.site-header-thumbnail {
-	position: absolute;
+	position: fixed;
 	background-color: rgba(255,255,255,0.9);
-	top: 0;
 }
 
 header .flex-container {
@@ -3084,19 +3131,22 @@ header .flex-container {
 }
 
 /*---- Formatting of the logo part -----*/
-#site-identity {
-	width: auto;
+.site-identity {
 	height: auto;
 	padding: 0;
 	margin: 0 auto;
+	transition: height 1s ease-in-out 2s;
 }
 
 .home-link {
 	width: initial;
 	text-align: center;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
 }
 
-#site-identity img {
+.site-identity img {
 	margin: 1em 0 0.5em;
 	padding: 0;
 	max-height: 100px;
@@ -3105,6 +3155,7 @@ header .flex-container {
 
 .title-description {
 	display: inline-block;
+	margin: 0;
 }
 
 .site-title {
@@ -3126,8 +3177,41 @@ header .flex-container {
 	letter-spacing: 0.02em;  
 }
 
+#masthead.scrolled {
+	position: fixed;
+	min-height: 2em;
+}
+
 .scrolled .site-identity {
-	position: sticky;
+	height: 0;
+}
+
+.scrolled .home-link {
+	position: absolute;
+	top: 50%;
+	left: 6%;
+	transform: translate(0, -50%);
+	margin: 0;
+	min-height: auto;
+}
+
+.scrolled .site-identity img {
+	max-height: 2em;
+	max-width: 8em;
+	margin: 0;
+}
+
+.scrolled .site-title {
+	font-size: 1.2em;
+	display: none;
+}
+
+.scrolled .site-description {
+	display: none;
+}
+
+.scrolled #navigation {
+	margin: 0 auto;
 }
 
 /**

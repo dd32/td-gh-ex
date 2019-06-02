@@ -33,8 +33,9 @@
 		$format = get_post_format(); // This is used to give a distinct style to every post format.
 		$format_link = get_post_format_link( $format );
 		if ( $format ) :
-			printf( '<a href="%1$s" class="post-format"><span class="genericon genericon-%2$s" aria-hidden="true"></span>%2$s</a>', esc_url( $format_link ) , $format );
+			printf( '<span class="post-format"><span class="genericon genericon-%1$s" aria-hidden="true"></span><a href="%2$s">%1$s</a></span>', esc_html( $format ), esc_url( $format_link ) );
 		endif;
+
 		?>
 			<span class="byline">
 			<?php

@@ -19,25 +19,18 @@ while ( have_posts() ) : the_post();
 	if ( has_post_thumbnail() ) : ?>
 		<div class="featured-image">
 <?php		the_post_thumbnail();
-			if ( is_singular( 'page' ) ):
-				get_template_part('template-parts/headers/header', 'page');
-			else:
-				get_template_part('template-parts/headers/header', 'post');
-			endif;
+			get_template_part('template-parts/headers/header', get_post_type() );
 ?>
 		</div><!-- .page-thumbnail -->
-<?php
-	endif; ?>
+<?php endif; ?>
 
 <main id="main" role="main">
 	<div id="main-content" >
 <?php
 	// Include the page content template.
-	if ( is_singular( 'page' ) ):
-		get_template_part( 'template-parts/content', 'page' );
-	else:
-		get_template_part( 'template-parts/content', 'single' );
-	endif;
+	
+	get_template_part( 'template-parts/content', get_post_type() );
+	
 
 // End of the loop.
 endwhile; ?>

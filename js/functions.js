@@ -64,6 +64,22 @@ function switchScreenReaderText (a, b, c) {
 	}
 }
 
+function shrinkHeader(){
+	var distanceTop = _window.scrollTop();
+	shrinkHeight = 100;
+	if (distanceTop > shrinkHeight) {
+		siteNavigation.addClass('scrolled');
+	} else {
+		if (siteNavigation.hasClass('scrolled')) {
+			siteNavigation.removeClass('scrolled');
+		}
+	}
+}
+
+_window.scroll(function(){
+	shrinkHeader();
+ });
+
 function onResizeARIA() {
 	if ( 881 > _window.width() ) {
 		menuToggle.attr( 'aria-expanded', 'false' );

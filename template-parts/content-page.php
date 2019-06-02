@@ -10,8 +10,9 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <?php 
 if ( ! has_post_thumbnail() ):
-	get_template_part('template-parts/headers/header', 'page');
+	get_template_part('template-parts/headers/header', get_post_type() );
 endif ?>
+
 	<div class="entry-content">
 		<?php the_content(); ?>
 	</div><!-- .entry-content -->

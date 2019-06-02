@@ -10,9 +10,11 @@ if ( has_post_thumbnail() ): ?>
 <?php if ( has_custom_logo() ) :
 		the_custom_logo();
 	else : ?>
-		<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
-			<h1 class="site-title"><?php esc_html( bloginfo( 'name' ) ); ?></h1>
-			<h2 class="site-description"><?php esc_html( bloginfo( 'description' ) ); ?></h2>
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="home-link" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
+			<div class="title-description">
+				<h1 class="site-title"><?php esc_html( bloginfo( 'name' ) ); ?></h1>
+				<h2 class="site-description"><?php esc_html( bloginfo( 'description' ) ); ?></h2>
+			</div>
 		</a> 
 
 <?php endif ?>

@@ -10,15 +10,12 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 <?php
 if ( ! has_post_thumbnail() ):
-	get_template_part('template-parts/headers/header', 'post');
+	get_template_part('template-parts/headers/header', get_post_type() );
 endif;
-if ( ! get_post_format() ) : ?>
+
+if ( has_excerpt() ) : ?>
 	<div class="entry-excerpt">
-<?php
-	if ( has_excerpt() ) {
-		the_excerpt();
-	}
-	?>
+		<?php the_excerpt(); ?>
 	</div>
 <?php endif ?>
 

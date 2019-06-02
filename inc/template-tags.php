@@ -12,7 +12,7 @@
  * @since Acuarela 1.0
  */
 function acuarela_the_custom_logo() {
-	$html = sprintf( '<a href="%1$s" class="custom-logo-link home-link" rel="home" itemprop="url"><img class="custom-logo" src="%2$s" alt="logo"><div class="title-description"><h1 class="site-title">%3$s</h1><h2 class="site-description">%4$s</h2></div></a>',
+	$html = sprintf( '<a href="%1$s" class="custom-logo-link home-link" rel="home" itemprop="url"><div class="logo-box"><img class="custom-logo" src="%2$s" alt="logo"></div><div class="title-description"><h1 class="site-title">%3$s</h1><h2 class="site-description">%4$s</h2></div></a>',
 		esc_url( home_url( '/' ) ),
 		esc_attr( wp_get_attachment_image_url( get_theme_mod( 'custom_logo' ), 'full' ) ),
 		esc_html( get_bloginfo( 'name' ) ) ,
@@ -21,6 +21,11 @@ function acuarela_the_custom_logo() {
 	return $html;
 }
 add_filter( 'get_custom_logo', 'acuarela_the_custom_logo' );
+
+function acuarela_category_list() {
+	get_the_category_list( __( ', ', 'acuarela' ) );
+}
+add_filter( 'get_the_category_list', 'acuarela_category_list' );
 
 /**
  * Prints the entry footer markup in index/archive pages.
@@ -54,6 +59,23 @@ function acuarela_entry_footer() { ?>
 		</div><!-- .entry-meta -->
 	</footer><!-- .entry-footer -->
 <?php }
+
+if ( ! function_exists( 'acuarela_archive_title' ) ) :
+	/**
+	 * Prints the_archive_title() and the_archive_description().
+	 *
+	 * @since Acuarela 1.0
+	 */
+
+	function acuarela_archive_title() { ?>
+		<header class="page-header">
+		<?php
+			the_archive_title( '<h1 class="page-title">', '</h1>' );
+			the_archive_description( '<div class="archive-description">', '</div>' );
+		?>
+		</header><!-- .page-header -->
+<?php }
+endif;
 
 if ( ! function_exists( 'acuarela_post_navigation' ) ) :
 	/**
