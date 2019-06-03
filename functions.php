@@ -44,6 +44,9 @@ if ( ! function_exists( 'airi_setup' ) ) :
 
 		add_image_size( 'airi-720', 720 );
 		add_image_size( 'airi-360-360', 360, 360, true );
+		add_image_size( 'airi-850-485', 850, 485, true );
+		add_image_size( 'airi-390-280', 390, 280, true );
+		add_image_size( 'airi-969-485', 969, 485, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -356,3 +359,8 @@ add_action( 'tgmpa_register', 'airi_register_required_plugins' );
  * Upsell
  */
 require get_template_directory() . '/inc/customizer/upsell/class-customize.php';
+
+/**
+ * Onboarding
+ */
+require get_template_directory() . '/inc/onboarding/class-airi-onboarding.php';
