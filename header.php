@@ -30,6 +30,8 @@
 
 <body <?php body_class(); ?>>
 
+<?php do_action( 'wp_body_open' );  ?>
+
 <div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'simple-catch' ); ?></a>
 <?php 

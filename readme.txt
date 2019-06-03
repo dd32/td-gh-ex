@@ -1,31 +1,41 @@
 === Simple Catch ===
-Simple Catch is a Highly Customizable Simple, Clean and Responsive WordPress Theme for anyone looking to give their website a professional look. It's easy customization through WordPress theme customizer, ultra-readable typography, large thumbnail and featured slider makes it outstanding. It comes with a wide variety of options: like Custom Menu, Custom Widgets, Custom Layouts, Featured Post Slider, Header Logo, Footer Logo, Fav Icon, Header Image, Background Image, Social Icons, Color Schemes, Custom CSS Styles, Excerpt settings and scroll up. This theme is translation ready and also currently translated in Polish, Russian, Finnish, French, Dutch, Greek, Croatian, Chinese, Spanish, German, Italian, Danish, Czech, Hungarian and Brazilian Portuguese languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/simple-catch/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/simplecatch/
-
-== License ==
-Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License Version 3 see file license.txt
-
+Contributors: catchthemes
+Tags: one-column, two-columns, left-sidebar, right-sidebar, grid-layout, custom-menu, featured-images, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce
+Requires at least: 4.8
+Tested up to: 5.2.1
+Stable tag: 3.6.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
-Simple Catch WordPress Theme, Copyright 2012-2017 Catchthemes.com
-Simple Catch is distributed under the terms of the GNU GPL v3
+Simple Catch is a simple yet dynamic multipurpose WordPress theme specially designed to fit perfectly for any kind of website.
 
-Unless otherwise specified, all Images are self shot by Catch Themes
-Copyright: Catch Themes, catchthemes.com
+== Description ==
 
-Scripts used in the site are as below:
-    HTML5-Shiv is Licensed under the MIT and GPL licenses
-    https://github.com/afarkas/html5shiv
+Simple Catch is a Highly Customizable Simple, Clean and Responsive WordPress Theme for anyone looking to give their website a professional look. It's easy customization through WordPress theme customizer, ultra-readable typography, large thumbnail and featured slider makes it outstanding. It comes with a wide variety of options: like Custom Menu, Custom Widgets, Custom Layouts, Featured Post Slider, Header Logo, Footer Logo, Fav Icon, Header Image, Background Image, Social Icons, Color Schemes, Custom CSS Styles, Excerpt settings and scroll up. This theme is translation ready and also currently translated in Polish, Russian, Finnish, French, Dutch, Greek, Croatian, Chinese, Spanish, German, Italian, Danish, Czech, Hungarian and Brazilian Portuguese languages. Check out Theme Instructions at https://catchthemes.com/theme-instructions/simple-catch/, Support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/simplecatch/
 
-    jQuery Cycle is Licensed under the MIT and GPL licenses
-    http://jquery.malsup.com/cycle/
+For more information about Simple Catch Pro please go to https://catchthemes.com/themes/simple-catch/
 
-    fitvids is Licensed under the WTFPL license
-    http://fitvidsjs.com/
+== Installation ==
 
-    jQuery Cookie script is Licensed under the MIT license
-    https://github.com/carhartl/jquery-cookie
+1. In your admin panel, go to Appearance -> Themes and click the 'Add New' button.
+2. Type in Simple Catch in the search form and press the 'Enter' key on your keyboard.
+3. Click on the 'Activate' button to use your new theme right away.
+4. Go to https://catchthemes.com/theme-instructions/simple-catch/ for a guide on how to customize this theme.
+5. Navigate to Appearance -> Customize in your admin panel and customize to taste.
 
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+Theme supports all plugins from catchplugins.com and WooCommerce Plugin.
+
+= Where can I find theme documentation? =
+
+You can check our Theme Instructions at https://catchthemes.com/themes/simple-catch in the Theme Instructions Tab.
+
+= Where can I find theme demo? =
+
+You can check our Theme Demo at https://catchthemes.com/demo/simple-catch/
 
 == UPGRADE to Simple Catch Pro ==
 Simple Catch Pro is an advance version of our popular theme Simple Catch. It is based on HTML5, CSS3 and Responsive Web Design to view in various devices. Some of the additional features includes: Featured Image Slider, Responsive Design, Additional Layout Options, Custom Footer Editor, and Adspace Widget for Advertisement. For more details of Simple Catch Pro theme see this https://catchthemes.com/theme-instructions/simple-catch-pro/
@@ -48,10 +58,20 @@ Added Translation for Czech by Marek Pridal (Email: m.pridal29@gmail.com)
 Added translation for Hungarian by Szentpétery István (Email: szempy@gmail.com)
 Added Translation for Brazilian Portuguese by Giovanna Chinellato (Email: giovanna@chinellato.com.br)
 
+= More FAQ =
+
+For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
+
 == Change Log ==
+
+= 3.6.3 (Released: June 03, 2019) =
+* Added: Support for wp_body_open action
+* Added: Option to disable featured slider
 
 = 3.6.2 (Released: July 12, 2018) =
 * Added: Core Privacy Policy link support in footer
+* Updated: Metabox UI
+* Updated: Readme file as per new requirement
 * Updated: Upgrade to pro button css update
 
 = 3.6.1 (Released: July 30, 2018) =
@@ -478,3 +498,28 @@ Added Translation for Brazilian Portuguese by Giovanna Chinellato (Email: giovan
 * Modified the Continue Reading Link
 * Added Social Icons for Pinterest and Google+
 * Added CSS to Support WP-PageNavi and Contact Form 7 Plugins
+
+== Copyright ==
+
+Simple Catch WordPress Theme, Copyright 2012-2019 Catchthemes.com
+Simple Catch is distributed under the terms of the GNU GPL v3
+
+== Resources ==
+
+* Based on Underscores http://underscores.me/, (C) 2012-2018 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+
+* Unless otherwise specified, all Images are self shot by Catch Themes
+Copyright: Catch Themes, catchthemes.com
+
+* Scripts used in the site are as below:
+    HTML5-Shiv is Licensed under the MIT and GPL licenses
+    https://github.com/afarkas/html5shiv
+
+    jQuery Cycle is Licensed under the MIT and GPL licenses
+    http://jquery.malsup.com/cycle/
+
+    fitvids is Licensed under the WTFPL license
+    http://fitvidsjs.com/
+
+    jQuery Cookie script is Licensed under the MIT license
+    https://github.com/carhartl/jquery-cookie

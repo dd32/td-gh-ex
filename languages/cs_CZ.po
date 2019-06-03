@@ -4,8 +4,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-08-04 10:20+0545\n"
-"PO-Revision-Date: 2018-08-04 10:20+0545\n"
+"POT-Creation-Date: 2019-06-03 16:56-0400\n"
+"PO-Revision-Date: 2019-06-03 16:56-0400\n"
 "Last-Translator: Sakin Shrestha <info@catchthemes.com>\n"
 "Language-Team: Catch Themes Team <info@catchthemes.com>\n"
 "Language: cs\n"
@@ -17,7 +17,7 @@ msgstr ""
 "X-Poedit-KeywordsList: __;_e;_x;_ex;_n;esc_attr_e;esc_attr__\n"
 "X-Poedit-Basepath: .\n"
 "X-Textdomain-Support: yes\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Poedit-SearchPath-0: ..\n"
 
 #: ../404.php:12
@@ -60,17 +60,17 @@ msgstr ""
 "Tento článek mohou kompletně zobrazit pouze vyvolení. Jestli mezi ně "
 "patříte, zadejte heslo."
 
-#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:1000
 #: ../image.php:23 ../page-blog.php:51
 msgid "No Comments"
 msgstr "Žádné komentáře"
 
-#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:1000
 #: ../image.php:23 ../page-blog.php:51
 msgid "1 Comment"
 msgstr "1 komentář"
 
-#: ../comments.php:29 ../content.php:49 ../functions/core.php:998
+#: ../comments.php:29 ../content.php:49 ../functions/core.php:1000
 #: ../image.php:23 ../page-blog.php:51
 msgid "% Comments"
 msgstr "% komentářů"
@@ -79,7 +79,7 @@ msgstr "% komentářů"
 msgid "Comments are closed."
 msgstr "U tohoto článku nemůžete přidávat komentáře."
 
-#: ../content.php:47 ../functions/core.php:996 ../image.php:21
+#: ../content.php:47 ../functions/core.php:998 ../image.php:21
 #: ../page-blog.php:49
 msgid "By"
 msgstr "od"
@@ -95,205 +95,176 @@ msgid ""
 msgstr ""
 "Bohužel jsem v dané kategorii nic nenašel. Zkuste vyhledávat podle štítků."
 
-#: ../functions.php:115 ../functions/core.php:689
+#: ../functions.php:115 ../functions/core.php:691
 msgid "Primary Menu"
 msgstr "Hlavní menu"
 
-#: ../functions/core.php:540
+#: ../functions/core.php:542
 #, php-format
 msgid "%s on Facebook"
 msgstr "%s on Facebook"
 
-#: ../functions/core.php:545
+#: ../functions/core.php:547
 #, php-format
 msgid "%s on Twitter"
 msgstr "%s on Twitter"
 
-#: ../functions/core.php:550
+#: ../functions/core.php:552
 #, php-format
 msgid "%s on Google+"
 msgstr "%s on Google+"
 
-#: ../functions/core.php:555
+#: ../functions/core.php:557
 #, php-format
 msgid "%s on Linkedin"
 msgstr "%s on Linkedin"
 
-#: ../functions/core.php:560
+#: ../functions/core.php:562
 #, php-format
 msgid "%s on Pinterest"
 msgstr "%s on Pinterest"
 
-#: ../functions/core.php:565
+#: ../functions/core.php:567
 #, php-format
 msgid "%s on YouTube"
 msgstr "%s on YouTube"
 
-#: ../functions/core.php:570
+#: ../functions/core.php:572
 #, php-format
 msgid "%s on Vimeo"
 msgstr "%s on Vimeo"
 
-#: ../functions/core.php:575
+#: ../functions/core.php:577
 #, php-format
 msgid "%s on Slideshare"
 msgstr "%s on Slideshare"
 
-#: ../functions/core.php:580
+#: ../functions/core.php:582
 #, php-format
 msgid "%s on Foursquare"
 msgstr "%s on Foursquare"
 
-#: ../functions/core.php:585
+#: ../functions/core.php:587
 #, php-format
 msgid "%s on Flickr"
 msgstr "%s on Flickr"
 
-#: ../functions/core.php:590
+#: ../functions/core.php:592
 #, php-format
 msgid "%s on Tumblr"
 msgstr "%s on Tumblr"
 
-#: ../functions/core.php:595
+#: ../functions/core.php:597
 #, php-format
 msgid "%s on deviantART"
 msgstr "%s on deviantART"
 
-#: ../functions/core.php:600
+#: ../functions/core.php:602
 #, php-format
 msgid "%s on Dribbble"
 msgstr "%s on Dribbble"
 
-#: ../functions/core.php:605
+#: ../functions/core.php:607
 #, php-format
 msgid "%s on MySpace"
 msgstr "%s on MySpace"
 
-#: ../functions/core.php:610
+#: ../functions/core.php:612
 #, php-format
 msgid "%s on WordPress"
 msgstr "%s on WordPress"
 
-#: ../functions/core.php:615
+#: ../functions/core.php:617
 #, php-format
 msgid "%s on RSS"
 msgstr "%s on RSS"
 
-#: ../functions/core.php:620
+#: ../functions/core.php:622
 #, php-format
 msgid "%s on Delicious"
 msgstr "%s on Delicious"
 
-#: ../functions/core.php:625
+#: ../functions/core.php:627
 #, php-format
 msgid "%s on Last.fm"
 msgstr "%s on Last.fm"
 
-#: ../functions/core.php:630
+#: ../functions/core.php:632
 #, php-format
 msgid "%s on Instagram"
 msgstr "%s on Instagram"
 
-#: ../functions/core.php:635
+#: ../functions/core.php:637
 #, php-format
 msgid "%s on GitHub"
 msgstr "%s on GitHub"
 
-#: ../functions/core.php:640
+#: ../functions/core.php:642
 #, php-format
 msgid "%s on Vkontakte"
 msgstr "%s on Vkontakte"
 
-#: ../functions/core.php:645
+#: ../functions/core.php:647
 #, php-format
 msgid "%s on My World"
 msgstr "%s on My World"
 
-#: ../functions/core.php:650
+#: ../functions/core.php:652
 #, php-format
 msgid "%s on Odnoklassniki"
 msgstr "%s on Odnoklassniki"
 
-#: ../functions/core.php:655
+#: ../functions/core.php:657
 #, php-format
 msgid "%s on Goodreads"
 msgstr "%s on Goodreads"
 
-#: ../functions/core.php:660
+#: ../functions/core.php:662
 #, php-format
 msgid "%s on Skype"
 msgstr "%s on Skype"
 
-#: ../functions/core.php:665
+#: ../functions/core.php:667
 #, php-format
 msgid "%s on Soundcloud"
 msgstr "%s on Soundcloud"
 
-#: ../functions/core.php:670
+#: ../functions/core.php:672
 #, php-format
 msgid "%s on Email"
 msgstr "%s on Email"
 
-#: ../functions/core.php:687 ../functions/core.php:1112
+#: ../functions/core.php:689 ../functions/core.php:1114
 msgid "Menu"
 msgstr "Menu"
 
-#: ../functions/core.php:690
+#: ../functions/core.php:692
 msgid "Primary menu"
 msgstr "Primární menu"
 
-#: ../functions/core.php:1019
+#: ../functions/core.php:1021
 msgid "Categories: "
 msgstr "kategorií:"
 
-#: ../functions/core.php:1021
+#: ../functions/core.php:1023
 msgid "Tags"
 msgstr ""
 
-#: ../functions/core.php:1040
+#: ../functions/core.php:1042
 msgid "Name"
 msgstr "Jméno"
 
-#: ../functions/core.php:1040 ../functions/core.php:1041
+#: ../functions/core.php:1042 ../functions/core.php:1043
 msgid "( required )"
 msgstr "( požadovaný )"
 
-#: ../functions/core.php:1041
+#: ../functions/core.php:1043
 msgid "Email"
 msgstr "E-Mail"
 
-#: ../functions/core.php:1042
+#: ../functions/core.php:1044
 msgid "Website"
 msgstr "webové stránky"
-
-#: ../functions/metabox.php:14 ../functions/metabox.php:20
-msgid "Simple Catch Options"
-msgstr ""
-
-#: ../functions/metabox.php:33
-#, php-format
-msgid "Default Layout Set in <a href=\"%s\">Customize</a>"
-msgstr "Default Layout Set in <a href=\"%s\">Customize</a>"
-
-#: ../functions/metabox.php:39
-msgid "No sidebar"
-msgstr "Bez sidebarů"
-
-#: ../functions/metabox.php:45
-msgid "No sidebar, Full Width"
-msgstr "Přes celou šířku, žádné sidebary"
-
-#: ../functions/metabox.php:51
-msgid "Left sidebar"
-msgstr "Levý boční panel"
-
-#: ../functions/metabox.php:57
-msgid "Right sidebar"
-msgstr "Pravý sidebar"
-
-#: ../functions/metabox.php:74
-msgid "Sidebar Layout Options"
-msgstr "Nastavení rozložení sidebaru"
 
 #: ../functions/panel/simplecatch_themeoptions_defaults.php:224
 msgid "Y"
@@ -476,7 +447,7 @@ msgstr ""
 msgid "Displays Social Icons added from Customizer / Theme Options Panel"
 msgstr ""
 
-#: ../header.php:34
+#: ../header.php:36
 msgid "Skip to content"
 msgstr ""
 
@@ -525,6 +496,24 @@ msgstr " "
 #: ../sidebar.php:59
 msgid "Archives"
 msgstr "Archiv"
+
+#~ msgid "Default Layout Set in <a href=\"%s\">Customize</a>"
+#~ msgstr "Default Layout Set in <a href=\"%s\">Customize</a>"
+
+#~ msgid "No sidebar"
+#~ msgstr "Bez sidebarů"
+
+#~ msgid "No sidebar, Full Width"
+#~ msgstr "Přes celou šířku, žádné sidebary"
+
+#~ msgid "Left sidebar"
+#~ msgstr "Levý boční panel"
+
+#~ msgid "Right sidebar"
+#~ msgstr "Pravý sidebar"
+
+#~ msgid "Sidebar Layout Options"
+#~ msgstr "Nastavení rozložení sidebaru"
 
 #~ msgid "%s"
 #~ msgstr "%s"

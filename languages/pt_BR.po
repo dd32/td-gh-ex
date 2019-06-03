@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Simple Catch\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-08-04 10:21+0545\n"
-"PO-Revision-Date: 2018-08-04 10:21+0545\n"
+"POT-Creation-Date: 2019-06-03 16:57-0400\n"
+"PO-Revision-Date: 2019-06-03 16:57-0400\n"
 "Last-Translator: gatinhobranco <giovanna@chinellato.com.br>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
 "Language: pt_BR\n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=n != 1;\n"
-"X-Generator: Poedit 2.1.1\n"
+"X-Generator: Poedit 2.2.3\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-KeywordsList: __;_e;__ngettext:1,2;_n:1,2;__ngettext_noop:1,2;"
 "_n_noop:1,2;_c,_nc:4c,1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2\n"
@@ -63,19 +63,19 @@ msgstr ""
 "Esse post é protegido por senha. Digite a senha para ver os comentários."
 
 # @ simplecatch
-#: comments.php:29 content.php:49 functions/core.php:998 image.php:23
+#: comments.php:29 content.php:49 functions/core.php:1000 image.php:23
 #: page-blog.php:51
 msgid "No Comments"
 msgstr "Nenhum comentário"
 
 # @ simplecatch
-#: comments.php:29 content.php:49 functions/core.php:998 image.php:23
+#: comments.php:29 content.php:49 functions/core.php:1000 image.php:23
 #: page-blog.php:51
 msgid "1 Comment"
 msgstr "1 Comentário"
 
 # @ simplecatch
-#: comments.php:29 content.php:49 functions/core.php:998 image.php:23
+#: comments.php:29 content.php:49 functions/core.php:1000 image.php:23
 #: page-blog.php:51
 msgid "% Comments"
 msgstr "% Comentários"
@@ -86,7 +86,7 @@ msgid "Comments are closed."
 msgstr "Comentários desativados."
 
 # @ simplecatch
-#: content.php:47 functions/core.php:996 image.php:21 page-blog.php:49
+#: content.php:47 functions/core.php:998 image.php:21 page-blog.php:49
 msgid "By"
 msgstr "Por"
 
@@ -109,70 +109,37 @@ msgstr ""
 msgid "Primary Menu"
 msgstr "Menu Principal"
 
-#: functions/core.php:687 functions/core.php:1112
+#: functions/core.php:689 functions/core.php:1114
 msgid "Menu"
 msgstr "Menu"
 
-#: functions/core.php:690
+#: functions/core.php:692
 msgid "Primary menu"
 msgstr "Menu principal"
 
 # @ simplecatch
-#: functions/core.php:1019
+#: functions/core.php:1021
 msgid "Categories: "
 msgstr "Categorias:"
 
-#: functions/core.php:1021
+#: functions/core.php:1023
 msgid "Tags"
 msgstr "Tags"
 
 # @ simplecatch
-#: functions/core.php:1040
+#: functions/core.php:1042
 msgid "Name"
 msgstr "Nome"
 
 # @ simplecatch
-#: functions/core.php:1041
+#: functions/core.php:1043
 msgid "Email"
 msgstr "Email"
 
 # @ simplecatch
-#: functions/core.php:1042
+#: functions/core.php:1044
 msgid "Website"
 msgstr "Site"
-
-#: functions/metabox.php:14 functions/metabox.php:20
-msgid "Simple Catch Options"
-msgstr "Opções Simple Catch"
-
-#: functions/metabox.php:33
-#, php-format
-msgid "Default Layout Set in <a href=\"%s\">Customize</a>"
-msgstr "Layout Padrao em <a href=\"%s\">Customize</a>"
-
-# @ simplecatch
-#: functions/metabox.php:39
-msgid "No sidebar"
-msgstr "Sem barra lateral"
-
-# @ simplecatch
-#: functions/metabox.php:45
-msgid "No sidebar, Full Width"
-msgstr "Sem barra lateral, largura completa"
-
-# @ simplecatch
-#: functions/metabox.php:51
-msgid "Left sidebar"
-msgstr "Barra lateral à esquerda"
-
-# @ simplecatch
-#: functions/metabox.php:57
-msgid "Right sidebar"
-msgstr "Barra lateral à direita"
-
-#: functions/metabox.php:74
-msgid "Sidebar Layout Options"
-msgstr "Opções de Layout da Barra Lateral"
 
 #: functions/panel/simplecatch_themeoptions_defaults.php:224
 msgid "Y"
@@ -371,7 +338,7 @@ msgstr ""
 msgid "Displays Social Icons added from Customizer / Theme Options Panel"
 msgstr ""
 
-#: header.php:34
+#: header.php:36
 msgid "Skip to content"
 msgstr "Ir para o conteúdo"
 
@@ -429,6 +396,31 @@ msgstr "Tente termos menos específicos"
 #: sidebar.php:59
 msgid "Archives"
 msgstr "Arquivos"
+
+#~ msgid "Simple Catch Options"
+#~ msgstr "Opções Simple Catch"
+
+#~ msgid "Default Layout Set in <a href=\"%s\">Customize</a>"
+#~ msgstr "Layout Padrao em <a href=\"%s\">Customize</a>"
+
+# @ simplecatch
+#~ msgid "No sidebar"
+#~ msgstr "Sem barra lateral"
+
+# @ simplecatch
+#~ msgid "No sidebar, Full Width"
+#~ msgstr "Sem barra lateral, largura completa"
+
+# @ simplecatch
+#~ msgid "Left sidebar"
+#~ msgstr "Barra lateral à esquerda"
+
+# @ simplecatch
+#~ msgid "Right sidebar"
+#~ msgstr "Barra lateral à direita"
+
+#~ msgid "Sidebar Layout Options"
+#~ msgstr "Opções de Layout da Barra Lateral"
 
 # @ simplecatch
 #~ msgid "%s"

@@ -17,6 +17,7 @@ if ( ! function_exists( 'simplecatch_slider_display' ) ) :
 
 		// Get theme options
 		$options      = simplecatch_get_options();
+		$enableslider = $options['enable_slider'];
 
 		// Front page displays in Reading Settings
 		$page_for_posts = get_option( 'page_for_posts' );
@@ -27,7 +28,7 @@ if ( ! function_exists( 'simplecatch_slider_display' ) ) :
 		$output = '';
 
 
-		if ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) {
+		if ( 'enable-slider-allpage' == $enableslider || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'enable-slider-homepage' == $enableslider ) ) {
 
 			if ( !$output = get_transient( 'simplecatch_slider_display' ) ) {		
 				$output = '

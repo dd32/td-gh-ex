@@ -394,6 +394,17 @@ function simplecatch_customize_register( $wp_customize ) {
 		),
 
 		//Slider Options
+		'enable_slider' => array(
+			'id' 			=> 'enable_slider',
+			'title' 		=> esc_html__( 'Enable Slider', 'simple-catch' ),
+			'description'	=> '',
+			'field_type' 	=> 'select',
+			'sanitize' 		=> 'simplecatch_sanitize_select',
+			'panel' 		=> 'featured_post_slider',
+			'section' 		=> 'add_slider_options',
+			'default' 		=> $defaults['enable_slider'],
+			'choices'		=> simplecatch_enable_slider_options(),
+		),
 
 		//Featured Post Slider
 		'exclude_slider_post' => array(
@@ -405,6 +416,7 @@ function simplecatch_customize_register( $wp_customize ) {
 			'panel' 			=> 'featured_post_slider',
 			'section' 			=> 'add_slider_options',
 			'default' 			=> $defaults['exclude_slider_post'],
+			'active_callback'	=> 'simplecatch_is_slider_active',
 		),
 
 		'slider_qty' => array(
@@ -421,7 +433,8 @@ function simplecatch_customize_register( $wp_customize ) {
 						            'min'   => 0,
 						            'max'   => 20,
 						            'step'  => 1,
-						        	)
+						        	),
+			'active_callback'	=> 'simplecatch_is_slider_active',
 		),
 
 		'remove_noise_effect' => array(
@@ -1026,6 +1039,8 @@ function simplecatch_customize_register( $wp_customize ) {
 					'input_attrs' => array(
 	        		'style' => 'width: 100px;'
 	    		),
+				'active_callback'	=> 'simplecatch_is_slider_active',
+
 			)
 		);
 	}
@@ -1076,7 +1091,26 @@ function simplecatch_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'simplecatch_customize_register' );
 
+if( ! function_exists( 'simplecatch_is_slider_active' ) ) :
+	/**
+	* Return true if slider is active
+	*
+	* @since  Simple Catch 3.6.2
+	*/
+	function simplecatch_is_slider_active( $control ) {
+		global $wp_query;
 
+		$page_id = $wp_query->get_queried_object_id();
+
+		// Front page display in Reading Settings
+		$page_for_posts = get_option('page_for_posts');
+
+		$enable = $control->manager->get_setting( 'simplecatch_options[enable_slider]' )->value();
+
+		//return true only if previwed page on customizer matches the type of slider option selected
+		return ( 'enable-slider-allpage' == $enable  || ( ( is_front_page() || ( is_home() && $page_for_posts != $page_id ) ) && 'enable-slider-homepage' == $enable  ) );
+	}
+endif;
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously for simplecatch.
  * And flushes out all transient data on preview
