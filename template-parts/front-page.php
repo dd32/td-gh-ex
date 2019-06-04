@@ -163,7 +163,7 @@ if(is_home()){ ?>
                             </div>
                         </div>
                     </div>
-                    <?php $i++; endwhile; ?>
+                    <?php $i++; endwhile; wp_reset_postdata(); ?>
                 </div>
             </div>
         <?php endif; ?>
@@ -208,7 +208,7 @@ if(is_home()){ ?>
                                 </div>
                             </div>
                         </div>                        
-                        <?php endwhile;?>
+                        <?php endwhile; wp_reset_postdata(); ?>
 
                     </div>
                 </div>
@@ -270,7 +270,7 @@ if(is_home()){ ?>
                             </div>
                         </div>
                     </div>
-                    <?php endwhile; ?>
+                    <?php endwhile; wp_reset_postdata(); ?>
                 </div>
             </div>
         <?php endif; ?>

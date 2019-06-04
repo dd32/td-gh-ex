@@ -1,10 +1,10 @@
 == Best Classifieds  ==
 Contributors: Fasterthemes
-Tags: one-column, two-columns,left-sidebar,grid-layout,custom-logo,custom-colors,custom-menu,featured-images,translation-ready,blog,featured-image-header,footer-widgets,full-width-template,theme-options,threaded-comments
+Tags: one-column, two-columns,left-sidebar,grid-layout,custom-logo,custom-colors,custom-menu,featured-images,translation-ready,blog,footer-widgets,full-width-template,theme-options,threaded-comments
 Requires PHP: 5.2.4
 Requires at least: 4.0
 Tested up to: 5.0.0
-Stable tag: 1.0.5
+Stable tag: 1.0.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Short Description : Best Classifieds is a free WordPress theme for launching professional looking classified and ads websites.
@@ -49,9 +49,12 @@ Go to Appearance => Customize menu for logo and other customization needs.
 = 1.0.5 - 13 April 2019 =
 * Misc changes.
 
+= 1.0.6 - 4 June 2019 =
+* Misc changes.
+
 == Upgrade Notice ==
 
-= 1.0.5 - 13 April 2019 =
+= 1.0.6 - 4 June 2019 =
 * Misc changes.
 
 == Resources ==

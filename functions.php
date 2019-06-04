@@ -43,10 +43,10 @@ function best_classifieds_search_form($html) {
 		$html='<form action="<?php echo esc_url(home_url()); ?>" role="search" method="get" id="searchformtop">
             <div class="filter-category">
                 <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12">                           
-                    <input type="search"  placeholder="'.esc_attr(get_theme_mod('search_area_placeholder',esc_html__('What are you looking for?','best-classifieds'))).'" name="s" id="s" required="">                        
+                    <input type="search"  placeholder="'.esc_attr(get_theme_mod('search_area_placeholder',esc_attr__('What are you looking for?','best-classifieds'))).'" name="s" id="s" required="">                        
                 </div>                        
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
-                    <input type="submit" value="'.esc_html(get_theme_mod('search_area_btn_title',esc_html__('Search','best-classifieds'))).'">
+                    <input type="submit" value="'.esc_attr(get_theme_mod('search_area_btn_title',esc_attr__('Search','best-classifieds'))).'">
                 </div>
             </div>
         </form>';

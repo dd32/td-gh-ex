@@ -82,8 +82,8 @@ $divider =2;  ?>
                                     <?php the_posts_pagination( array(
                                         'type'  => 'list',
                                         'screen_reader_text' => ' ',
-                                        'prev_text'          => esc_html__('<i class="fa fa-angle-double-left" aria-hidden="true"></i> Previous','best-classifieds'),
-                                        'next_text'          => esc_html__('Next <i class="fa fa-angle-double-right" aria-hidden="true"></i>','best-classifieds'),
+                                        'prev_text'          => '<i class="fa fa-angle-double-left" aria-hidden="true"></i>'.esc_html__(' Previous','best-classifieds'),
+                                        'next_text'          => esc_html__('Next','best-classifieds').' <i class="fa fa-angle-double-right" aria-hidden="true"></i>',
                                     ) ); ?>       
                                 </div>
                             </div>
