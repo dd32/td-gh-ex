@@ -75,6 +75,16 @@ if ( ! function_exists( 'acmephoto_dynamic_css' ) ) :
                 width: 3px;
                 left:0;
             }
+            .rtl .page-header .page-title:after,
+            .rtl.single .entry-header.border .entry-title:after{
+                background: {$acmephoto_primary_color};
+                content: '';
+                height: 18px;
+                position: absolute;
+                top: 14px;
+                width: 3px;
+                right:0;
+            }
             .page-header .page-title:before,
             .single .entry-header.border .entry-title:before{
                 border-bottom: 7px solid {$acmephoto_primary_color};
@@ -85,6 +95,10 @@ if ( ! function_exists( 'acmephoto_dynamic_css' ) ) :
             }
             .breadcrumb::after {
                 border-left: 5px solid {$acmephoto_primary_color};
+            }
+            .rtl .breadcrumb::after {
+                border-right: 5px solid {$acmephoto_primary_color};
+                border-left: medium none;
             }
             .tagcloud a{
                 border: 1px solid {$acmephoto_primary_color};

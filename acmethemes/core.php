@@ -96,9 +96,11 @@ function acmephoto_scripts() {
 
     /*Font-Awesome-master*/
     wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/library/Font-Awesome/css/font-awesome.min.css', array(), '4.5.0' );
+    wp_style_add_data( 'font-awesome', 'rtl', 'replace' );
 
     /*custom-css*/
     wp_enqueue_style( 'acmephoto-style', get_stylesheet_uri() );
+    wp_style_add_data( 'acmephoto-style', 'rtl', 'replace' );
 
     /*jquery start*/
     /*html5shiv*/

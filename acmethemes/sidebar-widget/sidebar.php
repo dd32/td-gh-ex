@@ -16,6 +16,15 @@ if ( ! function_exists( 'acmephoto_widget_init' ) ) :
             'before_title' => '<h3 class="widget-title"><span>',
             'after_title' => '</span></h3>',
         ));
+	    register_sidebar(array(
+		    'name' => __('Left Sidebar Area', 'acmephoto'),
+		    'id'   => 'acmephoto-sidebar-left',
+		    'description' => __('Displays items on left sidebar.', 'acmephoto'),
+		    'before_widget' => '<aside id="%1$s" class="widget %2$s">',
+		    'after_widget' => '</aside>',
+		    'before_title' => '<h3 class="widget-title"><span>',
+		    'after_title' => '</span></h3>',
+	    ));
         register_sidebar(array(
             'name' => __('Footer Column One', 'acmephoto'),
             'id' => 'footer-top-col-one',

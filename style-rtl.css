@@ -1,44 +1,17 @@
-/*
-Theme Name: AcmePhoto
-Theme URI: https://www.acmethemes.com/themes/acmephoto/
-Author: acmethemes
-Author URI: https://www.acmethemes.com/
-Description: AcmePhoto is one of the best WordPress photography Theme based on masonry layout. Carefully Crafted theme with Creativity for photography, art portfolio, freelancer and other creative photography centric websites. A very flexible theme with dozens of premium features including multiple menu position, control the height of slider/featured section, advanced pagination options and many more. An elegant theme with quality code and based on customizer. A translation ready theme with major browser compatibility. AcmePhoto comes with lots of features including logo options, site layout options, header options, footer options, sidebar options as well as color options too. Related posts, breadcrumb, search options, social icons, custom widgets are also the added features on this theme. This theme packs a lot of premium features which helps you to make your site awesome and well organized. Try yourself today and check it out. Demo-1: http://demo.acmethemes.com/acmephoto, Demo-2: http://www.demo.acmethemes.com/acmephoto/home-1/, Supports: https://www.acmethemes.com/supports/
-Version: 2.0.0
-License: GNU General Public License v2 or later
-License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Text Domain: acmephoto
-Tags: blog, portfolio, photography, grid-layout, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template ,post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, wide-blocks
+.slider-section, .bx-wrapper {
+    direction: ltr;
+}
+/*font awesome*/
+.fa-angle-left::before {
+    content: "\f105";
+}
+.fa-angle-right::before {
+    content: "\f104";
+}
+.fa-angle-double-right::before {
+    content: "\f100";
+}
 
-*/
-
-/*--------------------------------------------------------------
->>> TABLE OF CONTENTS:
-----------------------------------------------------------------
-# Normalize
-# Typography
-# Elements
-# Forms
-# Navigation
-	## Links
-	## Menus
-# Accessibility
-# Alignments
-# Clearings
-# Widgets
-# Content
-    ## Posts and pages
-	## Post Formats
-	## Comments
-# Infinite scroll
-# Media
-	## Captions
-	## Galleries
-#Custom CSS
-
-/*--------------------------------------------------------------
-# Normalize
---------------------------------------------------------------*/
 html{
 	font-family : 'PT Sans', sans-serif;
 	-ms-text-size-adjust : 100%;
@@ -225,20 +198,19 @@ td,th{
 }
 .post .entry-content table th,
 .page .entry-content table th {
-	background: #eee none repeat scroll 0 0;
+	background: #eee none repeat scroll 100% 0;
 	font-weight: normal;
 	padding: 15px 20px;
-	text-align: left;
+	text-align: right;
 }
 .post .entry-content table tbody tr,
 .page .entry-content table tbody tr {
 	border-top: 1px solid #e5e5e5;
 }
 .post .entry-content table td, .page .entry-content table td {
-	background: #fff none repeat scroll 0 0;
+	background: #fff none repeat scroll 100% 0;
 	padding: 1vw 2vw;
 }
-
 /*--------------------------------------------------------------
 # Typography
 --------------------------------------------------------------*/
@@ -310,7 +282,7 @@ ul{
 /*inner page list*/
 #primary .post .entry-content ul,
 #primary .page .entry-content ul {
-	margin: 0 0 30px 15px;
+	margin: 0 15px 30px 0;
 }
 .site-content .post .entry-content ul li::after,
 .site-content .page .entry-content ul li::after {
@@ -321,7 +293,7 @@ figure{
 	margin: 0;
 }
 i.fa{
-	margin-right: 5px;
+	margin-left: 5px;
 }
 .boxed-layout #page {
 	-ms-filter: "progid:DXImageTransform.Microsoft.Shadow(Strength=3, Direction=135, Color=#2D2D2D)";/*IE 8*/
@@ -361,16 +333,16 @@ i.fa{
 # Header and Navigation
 --------------------------------------------------------------*/
 .top-header{
-	left: 0;
-	position: absolute;
 	right: 0;
+	position: absolute;
+	left: 0;
 	text-align: center;
 	top: 0;
 	width: 100%;
 	z-index: 999;
 }
 .sticky-site-identity {
-	float: left;
+	float: right;
 	max-width: 20%;
 	display: none;
 	padding: 7px 0;
@@ -402,7 +374,7 @@ i.fa{
 	border-radius: 4px;
 	color: #ffffff;
 	display: none;
-	float: right;
+	float: left;
 	font-size: 22px;
 	margin: 19px auto;
 	outline: medium none;
@@ -417,13 +389,13 @@ i.fa{
 .main-navigation{
 	text-align: center;
 	z-index: 1;
-	float: left;
+	float: right;
 }
 
 .main-navigation ul {
 	list-style: none;
 	margin: 0;
-	padding-left: 0;
+	padding-right: 0;
 }
 .main-navigation ul.navbar-nav{
 	margin: 0 auto;
@@ -450,21 +422,21 @@ i.fa{
 }
 .main-navigation .menu-item-has-children::after {
 	background-image: none;
-	background-position: 0 0;
+	background-position: 100% 0;
 	background-repeat: repeat;
 	content: "\f107";
 	display: inline;
-	float: right;
+	float: left;
 	font-family: "FontAwesome";
 	height: auto;
 	line-height: normal;
-	margin-left: 8px;
+	margin-right: 8px;
 	margin-top: -30px;
 	text-decoration: inherit;
 	vertical-align: 10%;
 	width: auto;
 	color: #000;
-	padding-right: 5px;
+	padding-left: 5px;
 }
 #menu_wrapper .nav ul li.arrow > a::after, #menu_wrapper div .nav li.arrow > a::after {
 	font-size: 11px;
@@ -472,12 +444,12 @@ i.fa{
 /*submenu*/
 .main-navigation ul ul {
 	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	float: left;
+	float: right;
 	position: absolute;
-	left: -999em;
+	right: -999em;
 	z-index: 99999;
 	background: #fff;
-	text-align: left;
+	text-align: right;
 	top: 62px;
 }
 .main-navigation li .sub-menu li{
@@ -499,10 +471,10 @@ i.fa{
 }
 
 .main-navigation ul li:hover > ul {
-	left: auto;
+	right: auto;
 }
 .main-navigation ul ul li:hover > ul {
-	left: 100%;
+	right: 100%;
 }
 /*** SUB-MENU ***/
 .main-navigation ul ul.sub-menu li{
@@ -523,8 +495,8 @@ i.fa{
 .navbar-small{
 	position: fixed;
 	top: 0;
-	right: 0;
 	left: 0;
+	right: 0;
 	width: 100%;
 }
 @media (min-width:768px){
@@ -534,7 +506,7 @@ i.fa{
 }
 .navbar-small .main-navigation,
 .normal-navigation .main-navigation {
-	float: right;
+	float: left;
 }
 .normal-navigation .sticky-site-identity,
 .navbar-small .sticky-site-identity {
@@ -542,7 +514,7 @@ i.fa{
 }
 .navbar-small .main-navigation ,
 .normal-navigation .main-navigation {
-	float: right;
+	float: left;
 }
 .navbar .socials a {
 	color: #000;
@@ -587,11 +559,11 @@ i.fa{
 		display: block;
 	}
 	.navbar .navbar-toggle i.fa{
-		margin-right: 0;
+		margin-left: 0;
 	}
 	.main-navigation{
 		display: none;
-		text-align: left;
+		text-align: right;
 	}
 	.navbar{
 		margin-bottom: 0;
@@ -609,25 +581,25 @@ i.fa{
 		margin-top: 10px;
 	}
 	.main-navigation ul ul.sub-menu li{
-		padding-left: 10px;
+		padding-right: 10px;
 	}
 	.main-navigation ul.sub-menu li a{
 		padding-top: 10px;
 	}
 	.main-navigation.toggled .nav-menu {
-		background: none repeat scroll 0 0 #2d2d2d;
+		background: none repeat scroll 100% 0 #2d2d2d;
 	}
 
 	.main-navigation ul ul {
 		display: block;
 		float: none;
 		position: static;
-		text-align: left;
+		text-align: right;
 		box-shadow: none;
 	}
 
 	.main-navigation ul ul li{
-		padding-left: 25px;
+		padding-right: 25px;
 	}
 
 	.main-navigation ul ul li a {
@@ -649,15 +621,15 @@ i.fa{
 .comment-navigation .nav-previous,
 .posts-navigation .nav-previous,
 .post-navigation .nav-previous {
-	float: left;
+	float: right;
 	width: 50%;
 }
 
 .comment-navigation .nav-next,
 .posts-navigation .nav-next,
 .post-navigation .nav-next {
-	float: right;
-	text-align: right;
+	float: left;
+	text-align: left;
 	width: 50%;
 }
 .posts-navigation .nav-previous a::before,
@@ -670,13 +642,13 @@ i.fa{
 .post-navigation .nav-previous a::before {
 	color: #2D2D2D;
 	content: "\f177";
-	padding-right: 8px;
+	padding-left: 8px;
 }
 .posts-navigation .nav-next a::after,
 .post-navigation .nav-next a::after {
 	color: #2D2D2D;
 	content: "\f178";
-	padding-left: 8px;
+	padding-right: 8px;
 }
 .posts-navigation .nav-previous a,
 .posts-navigation .nav-next a,
@@ -694,9 +666,9 @@ i.fa{
 /*inner page nav fixed*/
 .at-front-nav{
 	top: 0;
-	left: 0;
-	position: absolute;
 	right: 0;
+	position: absolute;
+	left: 0;
 }
 .at-inner-nav{
 	background-color: #3d3d3d;
@@ -739,7 +711,7 @@ i.fa{
 	font-size: 14px;
 	font-weight: bold;
 	height: auto;
-	left: 5px;
+	right: 5px;
 	line-height: normal;
 	padding: 15px 23px 14px;
 	text-decoration: none;
@@ -753,19 +725,19 @@ i.fa{
 --------------------------------------------------------------*/
 .alignleft {
 	display: inline;
-	float: left;
-	margin-right: 1.5em;
+	float: right;
+	margin-left: 1.5em;
 }
 .alignright {
 	display: inline;
-	float: right;
-	margin-left: 1.5em;
+	float: left;
+	margin-right: 1.5em;
 }
 .aligncenter {
 	clear: both;
 	display: block;
-	margin-left: auto;
 	margin-right: auto;
+	margin-left: auto;
 }
 /*--------------------------------------------------------------
 # Clearings
@@ -839,17 +811,17 @@ i.fa{
 	display: block;
 }
 .at-sticky::before {
-	border-left: 16px solid rgba(0, 0, 0, 0);
-	border-right: 15px solid rgba(155, 97, 97, 0);
+	border-right: 16px solid rgba(0, 0, 0, 0);
+	border-left: 15px solid rgba(155, 97, 97, 0);
 	content: "";
 	height: 0;
-	left: 0;
+	right: 0;
 	position: absolute;
 	top: 26px;
 	width: 0;
 }
 .at-sticky {
-	margin-left: 11px;
+	margin-right: 11px;
 	padding: 2px 9px;
 	position: absolute;
 	top: 0;
@@ -864,7 +836,7 @@ i.fa{
 .single .singe-content-wrapper .byline,
 .group-blog .byline {
 	display: inline;
-	padding-left: 10px;
+	padding-right: 10px;
 }
 
 .page-content,
@@ -923,11 +895,11 @@ i.fa{
 }
 .comment-form-author input,
 .comment-form-email input{
-	float:left;
+	float:right;
 	margin: 0 0 16px;
 }
 .comment-form-author input{
-	margin: 0 29px 16px 0;
+	margin: 0 0 16px 29px;
 }
 .comment-form-url input{
 	clear:both;
@@ -971,8 +943,8 @@ i.fa{
 	padding: 0 0 1px;
 }
 .comment-author img {
-	float: left;
-	margin: 0 20px 0 0;
+	float: right;
+	margin: 0 0 0 20px;
 	border-radius: 50%;
 }
 .comment-list .fn {
@@ -983,7 +955,7 @@ i.fa{
 }
 .comment-list .fa.fa-clock-o {
 	font-size: 14px;
-	margin-right: 3px;
+	margin-left: 3px;
 }
 .bypostauthor {
 	display: block;
@@ -1082,14 +1054,14 @@ object {
 .socials{
 	font-size: 18px;
 	margin : 0;
-	float: right;
+	float: left;
 }
 .socials a{
 	text-align: center;
 	color: #fff;
 }
 .socials span{
-	float: left;
+	float: right;
 }
 .socials span i{
 	display: inline-block;
@@ -1174,7 +1146,7 @@ object {
 	font-size: 20px;
 	height: 25px;
 	position: absolute;
-	right: 7px;
+	left: 7px;
 	top: 3px;
 	width: 25px;
 }
@@ -1215,12 +1187,12 @@ footer.site-footer h3{
 footer.site-footer li{
 	border-bottom: 0;
 	position: relative;
-	padding-left: 15px;
+	padding-right: 15px;
 }
 footer.site-footer li:before{
 	content: "\f105";
 	position: absolute;
-	left: 0;
+	right: 0;
 	color: #ababab;
 	font-family:FontAwesome;
 	font-size: 16px;
@@ -1234,7 +1206,7 @@ footer .font-icon-social-facebook {
     padding: 5px 10px;
 }
 footer .font-icon-social-facebook {
-	background: #3b5998 none repeat scroll 0 0;
+	background: #3b5998 none repeat scroll 100% 0;
 }
 footer .font-icon-social-twitter{
 	background: #1CB7EB;
@@ -1270,12 +1242,12 @@ footer .social a:hover{
 	display: none;
 }*/
 .feature-slider .cat-links {
-	left: 0;
+	right: 0;
 	position: absolute;
 	z-index: 1;
 }
 .slider-section {
-	float: left;
+	float: right;
 	overflow: hidden;
 	position: relative;
 	width: 100%
@@ -1291,12 +1263,12 @@ footer .social a:hover{
 }
 .slider-section .slider-desc {
 	background: rgba(255, 255, 255, 0);
-	left: 50%;
+	right: 50%;
 	padding: 50px;
 	position: absolute;
 	text-align: center;
 	top: 50%;
-	transform: translate(-50%, -50%);
+	transform: translate(50%, -50%);
 	width: 90%;
 }
 .slider-section .slider-desc .entry-header{
@@ -1327,9 +1299,9 @@ footer .social a:hover{
 	color: #ffffff;
 	font-size: 18px;
 	margin-bottom: 30px;
-	margin-left: auto;
 	margin-right: auto;
-	padding-left: 0;
+	margin-left: auto;
+	padding-right: 0;
 	width: 80%;
 }
 .slider-section .read-more{
@@ -1360,7 +1332,7 @@ footer .social a:hover{
 }
 .slider-section .above-slider-details{
 	background: none;
-	padding-left: 0;
+	padding-right: 0;
 }
 .slider-feature-wrap a{
 	color: #000000;
@@ -1379,17 +1351,17 @@ footer .social a:hover{
 	display: block;
 	font-weight: normal;
 	position: absolute;
-	right: 30px;
+	left: 30px;
 	text-align: center;
 	z-index: 999;
 	font-size: 30px;
 }
 .slider-section  .cycle-prev {
-	float: left;
-	margin-right: 36px;
+	float: right;
+	margin-left: 36px;
 }
 .slider-section .cycle-next {
-	float:right;
+	float:left;
 }
 /*slider social section*/
 .slider-section  .banner-social {
@@ -1399,11 +1371,11 @@ footer .social a:hover{
 	display: block;
 	font-weight: normal;
 	position: absolute;
-	left: 30px;
+	right: 30px;
 	text-align: center;
 	z-index: 999;
 	font-size: 30px;
-	float: left;
+	float: right;
 }
 .banner-social .socials a{
 	display: inline-block;
@@ -1436,7 +1408,7 @@ footer .social a:hover{
 	font-size: 27px;
 	height: 42px;
 	position: absolute;
-	right: 8px;
+	left: 8px;
 	top: 3px;
 	width: 60px;
 }
@@ -1505,27 +1477,27 @@ footer .social a:hover{
 	width: 25%;
 }
 .right-sidebar .sidebar {
-	padding-right: 7.5px;
+	padding-left: 7.5px;
 }
 /*** RIGHT-SIDEBAR ***/
 .right-sidebar #primary{
-	float: left;
+	float: right;
 }
 .right-sidebar .secondary-sidebar{
-	float: right;
-	padding-left: 30px;
+	float: left;
+	padding-right: 30px;
 }
 
 /*** LEFT-SIDEBAR ***/
 .left-sidebar #primary{
-	float: right;
+	float: left;
 }
 .left-sidebar .secondary-sidebar{
-	float: left;
-	padding-right: 30px;
+	float: right;
+	padding-left: 30px;
 }
 .left-sidebar .sidebar {
-	padding-left: 7.5px;
+	padding-right: 7.5px;
 }
 /*** NO-SIDEBAR ***/
 .no-sidebar #primary{
@@ -1533,38 +1505,38 @@ footer .social a:hover{
 }
 /*** BOTH-SIDEBAR ***/
 .both-sidebar #primary-wrap{
-	float: left;
+	float: right;
 	width: 73%;
 }
 .both-sidebar #primary-wrap #secondary-left{
-	float: left;
+	float: right;
 	width: 32%;
-	padding-right: 30px;
+	padding-left: 30px;
 }
 .both-sidebar #primary-wrap #primary{
-	float: right;
+	float: left;
 	width: 65%;
 }
 .both-sidebar #secondary-right{
-	float: right;
+	float: left;
 	width:25%;
 }
 .both-sidebar .sidebar {
-	padding-left: 7.5px;
 	padding-right: 7.5px;
+	padding-left: 7.5px;
 }
 .both-sidebar #primary-wrap #secondary-left{
-	float: left;
+	float: right;
 	width: 32%;
 }
 .both-sidebar #primary-wrap #primary{
-	float: right;
+	float: left;
 	width: 65%;
 }
 .both-sidebar #secondary-right{
-	float: right;
+	float: left;
 	width:25%;
-	padding-left: 22px;
+	padding-right: 22px;
 }
 /*** Middle-col ***/
 .middle-col{
@@ -1584,15 +1556,15 @@ footer .social a:hover{
 	font-weight: 500;
 	line-height: 24px;
 	margin-bottom: 15px;
-	padding: 12px 0 0 10px;
+	padding: 12px 10px 0 0;
 	position: relative;
 }
 .single .entry-footer{
-	margin: 0 10px 20px 0;
-	text-align: right;
+	margin: 0 0 20px 10px;
+	text-align: left;
 }
 .single .no-thumbnail .entry-footer{
-	text-align: left;
+	text-align: right;
 }
 
 /*** COMMON WIDGETS ***/
@@ -1602,19 +1574,18 @@ footer .social a:hover{
 	position: absolute;
 	top: 14px;
 	width: 3px;
-	left: 0;
+	right: 0;
 }
 
 .widget-title,
 .widgettitle {
-	padding: 8px 0 8px 10px;
+	padding: 8px 10px 8px 0;
 	position: relative;
 }
 
 .widget-title span{
 	display: block;
 }
-
 .widget .search-block{
 	position: relative;
 }
@@ -1641,7 +1612,7 @@ footer .social a:hover{
 	display: inline-block;
 	font-size: 13px !important;
 	margin-bottom: 8px;
-	margin-right: 4px;
+	margin-left: 4px;
 	padding: 5px;
 }
 /*author*/
@@ -1661,16 +1632,12 @@ footer .social a:hover{
 @media screen and (max-width:767px){
 	/*** SIDEBAR ***/
 	#primary,
-	.both-sidebar #primary,
-	.both-sidebar #primary-wrap #primary,
+	.right-sidebar #primary,
 	.left-sidebar #primary{
 		margin:0 0 20px;
 		width: 100%;
 	}
 	.secondary-sidebar,
-	.both-sidebar #primary-wrap,
-	.both-sidebar #primary-wrap #secondary-left,
-	.both-sidebar #secondary-right,
 	.right-sidebar .secondary-sidebar,
 	.left-sidebar .secondary-sidebar,
 	.no-sidebar .secondary-sidebar,
@@ -1683,16 +1650,16 @@ footer .social a:hover{
 }
 /* column*/
 .acme-col-2 {
-    float: left;
+    float: right;
     width: 50%;
 	position: relative;
 }
 .acme-col-3 {
-	float: left;
+	float: right;
 	width: 33.333%;
 }
 .float-right{
-	float: right;
+	float: left;
 }
 /* different techniques for iPad screening */
 @media screen and (min-width: 482px) and (max-width: 992px) {
@@ -1747,7 +1714,7 @@ footer .social a:hover{
 	position: relative;
 }
 .at-hover-fixed .entry-meta{
-	text-align: left;
+	text-align: right;
 }
 .single .no-thumbnail .entry-data,
 .single .no-thumbnail .entry-footer,
@@ -1776,7 +1743,7 @@ article.post .post-thumb {
 	margin-bottom: 10px;
 }
 .nav-next {
-	float: right;
+	float: left;
 }
 /*** ERROR404 ***/
 .error404 #primary{
@@ -1794,7 +1761,7 @@ article.post .post-thumb {
 
 /*breadcrumbs*/
 .breadcrumbs.clearfix{
-	background: #f1f1f1 none repeat scroll 0 0;
+	background: #f1f1f1 none repeat scroll 100% 0;
 	margin-bottom: 20px;
 	padding: 0;
 }
@@ -1805,25 +1772,25 @@ span.breadcrumb::after {
 	height: 0;
 	margin-top: -3px;
 	position: absolute;
-	right: -5px;
+	left: -5px;
 	top: 50%;
 	width: 0;
 }
 span.breadcrumb {
 	color: #ffffff;
-	float: left;
+	float: right;
 	padding: 5px 10px;
 	position: relative;
-	margin-right: 10px;
+	margin-left: 10px;
 }
 #acmephoto-breadcrumbs{
 	padding: 0;
 }
 #acmephoto-breadcrumbs .breadcrumb-trail li {
 	display: block;
-	float: left;
+	float: right;
 	list-style: outside none none;
-	padding: 5px 0 5px 5px;
+	padding: 5px 5px 5px 0;
 }
 #acmephoto-breadcrumbs .breadcrumb-trail li a{
 	display: inline-block;
@@ -1835,9 +1802,9 @@ span.breadcrumb {
 	display: none;
 }
 #acmephoto-breadcrumbs .breadcrumb-trail li::after {
-	content: "\f101";
+	content: "\f100";
 	font-family: FontAwesome;
-	margin-left: 10px;
+	margin-right: 10px;
 }
 #acmephoto-breadcrumbs .breadcrumb-trail .trail-items {
 	margin: 0;
@@ -2006,7 +1973,7 @@ article.article-ap:hover .at-overlay{
 article.article-ap .at-overlay h2,
 article .at-overlay span {
 	opacity: 0.8;
-	text-shadow: 2px 2px 4px #3d3d3d;
+	text-shadow: -2px 2px 4px #3d3d3d;
 	color: #fff;
 }
 article.article-ap .at-overlay h2:hover,
@@ -2015,7 +1982,7 @@ article.article-ap .at-overlay span:hover {
 }
 article.article-ap .at-overlay span{
 	display: block;
-	text-align: left;
+	text-align: right;
 	line-height: 1.3;
 }
 article.article-ap .entry-title a,

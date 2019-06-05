@@ -122,8 +122,7 @@ endif;
  */
 if ( ! function_exists( 'acmephoto_doctype' ) ) :
     function acmephoto_doctype() {
-        ?>
-        <!DOCTYPE html><html <?php language_attributes(); ?>>
+        ?><!DOCTYPE html><html <?php language_attributes(); ?>>
     <?php
     }
 endif;
@@ -328,6 +327,10 @@ if ( ! function_exists( 'acmephoto_before_content' ) ) :
         if( 1 == $acmephoto_customizer_all_values['acmephoto-show-breadcrumb'] && !is_front_page() ){
             acmephoto_breadcrumbs();
         }
+	    $sidebar_layout = acmephoto_sidebar_selection();
+	    if( 'both-sidebar' == $sidebar_layout ) {
+		    echo '<div id="primary-wrap" class="clearfix">';
+	    }
     }
 endif;
 add_action( 'acmephoto_action_after_header', 'acmephoto_before_content', 10 );

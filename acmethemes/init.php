@@ -48,6 +48,8 @@ require_once acmephoto_file_directory('acmethemes/customizer/customizer.php');
 */
 require_once acmephoto_file_directory('acmethemes/functions.php');
 
+require acmephoto_file_directory('acmethemes/functions/sidebar-selection.php');
+
 /*
 * files for hooks
 */
@@ -93,6 +95,7 @@ require_once acmephoto_file_directory('acmethemes/metabox/metabox.php');
 * file for core functions imported from functions.php while downloading Underscores
 */
 require_once acmephoto_file_directory('acmethemes/core.php');
+require_once acmephoto_file_directory('acmethemes/gutenberg/gutenberg-init.php');
 
 /*themes info*/
 require_once acmephoto_file_directory('acmethemes/at-theme-info/class-at-theme-info.php');

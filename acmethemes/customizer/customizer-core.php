@@ -51,9 +51,11 @@ endif;
 if ( !function_exists('acmephoto_sidebar_layout') ) :
     function acmephoto_sidebar_layout() {
         $acmephoto_sidebar_layout =  array(
-            'right-sidebar' => __( 'Right Sidebar', 'acmephoto' ),
-            'left-sidebar'  => __( 'Left Sidebar' , 'acmephoto' ),
-            'no-sidebar'    => __( 'No Sidebar', 'acmephoto' )
+	        'right-sidebar' => __( 'Right Sidebar', 'acmephoto' ),
+	        'left-sidebar'  => __( 'Left Sidebar' , 'acmephoto' ),
+	        'both-sidebar'  => __( 'Both Sidebar' , 'acmephoto' ),
+	        'no-sidebar'    => __( 'No Sidebar', 'acmephoto' ),
+	        'middle-col'    => __( 'Middle Column', 'acmephoto' ),
         );
         return apply_filters( 'acmephoto_sidebar_layout', $acmephoto_sidebar_layout );
     }

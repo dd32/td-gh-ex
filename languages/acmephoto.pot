@@ -1,12 +1,12 @@
-# Copyright (C) 2016-2018 the Acme Themes
+# Copyright (C) 2016-2019 the Acme Themes
 # This file is distributed under the GNU General Public License v2 or later.
 
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: AcmePhoto\n"
-"POT-Creation-Date: 2018-01-10 08:46+0545\n"
-"PO-Revision-Date: 2018-01-10 08:46+0545\n"
+"POT-Creation-Date: 2019-06-05 23:38+0545\n"
+"PO-Revision-Date: 2019-06-05 23:38+0545\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -574,7 +574,7 @@ msgid ""
 msgstr ""
 
 #: acmethemes/at-theme-info/class-at-theme-info.php:1313
-#: acmethemes/customizer/customizer-core.php:74
+#: acmethemes/customizer/customizer-core.php:76
 msgid "Default"
 msgstr ""
 
@@ -756,11 +756,11 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: acmethemes/core.php:133 acmethemes/hooks/navigation.php:26
+#: acmethemes/core.php:135 acmethemes/hooks/navigation.php:26
 msgid "Show More"
 msgstr ""
 
-#: acmethemes/core.php:134
+#: acmethemes/core.php:136
 msgid "No More"
 msgstr ""
 
@@ -818,79 +818,87 @@ msgid "Left Sidebar"
 msgstr ""
 
 #: acmethemes/customizer/customizer-core.php:56
+msgid "Both Sidebar"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:57
 msgid "No Sidebar"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:75
+#: acmethemes/customizer/customizer-core.php:58
+msgid "Middle Column"
+msgstr ""
+
+#: acmethemes/customizer/customizer-core.php:77
 msgid "Ajax Loading"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:93
+#: acmethemes/customizer/customizer-core.php:95
 msgid "Show Search"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:94
+#: acmethemes/customizer/customizer-core.php:96
 msgid "Show Read More"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:95
+#: acmethemes/customizer/customizer-core.php:97
 msgid "Hide"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:113
+#: acmethemes/customizer/customizer-core.php:115
 msgid "Top Normal"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:114
+#: acmethemes/customizer/customizer-core.php:116
 msgid "Top Fixed"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:115
+#: acmethemes/customizer/customizer-core.php:117
 msgid "Below Feature"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:134
+#: acmethemes/customizer/customizer-core.php:136
 msgid "Do Not Reset"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:135
+#: acmethemes/customizer/customizer-core.php:137
 msgid "Reset Colors Options"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:136
+#: acmethemes/customizer/customizer-core.php:138
 msgid "Reset All"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:154
+#: acmethemes/customizer/customizer-core.php:156
 msgid "Related Posts From Categories"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:155
+#: acmethemes/customizer/customizer-core.php:157
 msgid "Related Posts From Tags"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:166
+#: acmethemes/customizer/customizer-core.php:168
 msgid "No Image"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:171
+#: acmethemes/customizer/customizer-core.php:173
 msgid "full (original)"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:213
+#: acmethemes/customizer/customizer-core.php:215
 msgid "&copy; All Right Reserved 2018"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:243
+#: acmethemes/customizer/customizer-core.php:246
 msgid "Related posts"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:248
+#: acmethemes/customizer/customizer-core.php:251
 #: acmethemes/customizer/options/search.php:7
 msgid "Search"
 msgstr ""
 
-#: acmethemes/customizer/customizer-core.php:253
+#: acmethemes/customizer/customizer-core.php:256
 msgid "You are here"
 msgstr ""
 
@@ -1040,6 +1048,10 @@ msgstr ""
 msgid "Copyright Text"
 msgstr ""
 
+#: acmethemes/customizer/footer-section/footer-section.php:45
+msgid " Enable Theme Name And Powered By Text "
+msgstr ""
+
 #: acmethemes/customizer/header-options/header-logo.php:16
 msgid "Logo"
 msgstr ""
@@ -1166,21 +1178,21 @@ msgstr ""
 msgid "%s Leave a Comment"
 msgstr ""
 
-#: acmethemes/hooks/footer.php:88
+#: acmethemes/hooks/footer.php:90
 msgid "https://wordpress.org/"
-msgstr ""
-
-#: acmethemes/hooks/footer.php:88
-#, php-format
-msgid "Proudly powered by %s"
 msgstr ""
 
 #: acmethemes/hooks/footer.php:90
 #, php-format
+msgid "Proudly powered by %s"
+msgstr ""
+
+#: acmethemes/hooks/footer.php:92
+#, php-format
 msgid "Theme: %1$s by %2$s"
 msgstr ""
 
-#: acmethemes/hooks/header.php:220
+#: acmethemes/hooks/header.php:219
 msgid "Skip to content"
 msgstr ""
 
@@ -1714,19 +1726,19 @@ msgstr ""
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr ""
 
-#: acmethemes/metabox/metabox.php:48 acmethemes/metabox/metabox.php:57
+#: acmethemes/metabox/metabox.php:56 acmethemes/metabox/metabox.php:65
 msgid "Sidebar Layout"
 msgstr ""
 
-#: acmethemes/metabox/metabox.php:114
+#: acmethemes/metabox/metabox.php:122
 msgid "Choose Sidebar Template"
 msgstr ""
 
-#: acmethemes/metabox/metabox.php:133
+#: acmethemes/metabox/metabox.php:141
 msgid "You can set up the sidebar content"
 msgstr ""
 
-#: acmethemes/metabox/metabox.php:133
+#: acmethemes/metabox/metabox.php:141
 msgid "here"
 msgstr ""
 
@@ -1788,20 +1800,28 @@ msgid "Displays items on sidebar"
 msgstr ""
 
 #: acmethemes/sidebar-widget/sidebar.php:20
-msgid "Footer Column One"
+msgid "Left Sidebar Area"
 msgstr ""
 
 #: acmethemes/sidebar-widget/sidebar.php:22
-#: acmethemes/sidebar-widget/sidebar.php:31
-#: acmethemes/sidebar-widget/sidebar.php:40
-msgid "Displays items on footer section."
+msgid "Displays items on left sidebar."
 msgstr ""
 
 #: acmethemes/sidebar-widget/sidebar.php:29
-msgid "Footer Column Two"
+msgid "Footer Column One"
+msgstr ""
+
+#: acmethemes/sidebar-widget/sidebar.php:31
+#: acmethemes/sidebar-widget/sidebar.php:40
+#: acmethemes/sidebar-widget/sidebar.php:49
+msgid "Displays items on footer section."
 msgstr ""
 
 #: acmethemes/sidebar-widget/sidebar.php:38
+msgid "Footer Column Two"
+msgstr ""
+
+#: acmethemes/sidebar-widget/sidebar.php:47
 msgid "Footer Column Three"
 msgstr ""
 
