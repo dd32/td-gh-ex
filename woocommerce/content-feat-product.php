@@ -78,7 +78,7 @@ if ( 0 == $woocommerce_loop['loop'] % $woocommerce_loop['columns'] )
 	</div>
 	<?php 
 		if( function_exists( 'YITH_WCWL' ) ){
-		$url = add_query_arg( 'add_to_wishlist', $product->id );
+		$url = add_query_arg( 'add_to_wishlist', $product->get_id());
 	?>
 		<a class="item-wishlist" href="<?php echo esc_url($url) ?>"><?php esc_html_e('Wishlist','accesspress-store'); ?></a>
 	<?php } ?>

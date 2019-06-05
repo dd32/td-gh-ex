@@ -1,17 +1,17 @@
 <?php
 function unicon_lite_dynamic_styles() {
 
-	$custom_css = '';
+    $custom_css = '';
 
-	$tpl_color = get_theme_mod( 'tpl_color', '#e24545' );
+    $tpl_color = get_theme_mod( 'tpl_color', '#e24545' );
     $tpl_color_lighter = accesspress_store_colour_brightness($tpl_color, 0.8);
     $tpl_color_darker = accesspress_store_colour_brightness($tpl_color, -0.49);
     $tpl_color_rgb = accesspress_store_hex2rgb($tpl_color);
 
-	if( $tpl_color ) {
-	   
+    if( $tpl_color ) {
+       
         /** Background Color **/
-		$custom_css .= "
+        $custom_css .= "
             .ticker-title,
             .headertwo .headertwo-wrap .search-form button.searchsubmit:hover,
             .main-navigation ul ul li a,
@@ -47,10 +47,12 @@ function unicon_lite_dynamic_styles() {
             .content-area .reviews_tab.active:before,
             form.woocommerce-ordering:after,
             .content-area .additional_information_tab.active::before,
+            .woocommerce.single.single-product .entry-summary .show a,
             .search-form button.searchsubmit,
+            .style_one .promo-link-btn,
             .edit-link a{
-    		  background: {$tpl_color};
-    		}";
+              background: {$tpl_color};
+            }";
             
         /** Darker Background Color **/
             $custom_css .= "
@@ -142,6 +144,9 @@ function unicon_lite_dynamic_styles() {
                 .woocommerce.single.single-product .entry-summary form button.button:hover:before,
                 .woocommerce .star-rating span::before, .woocommerce .star-rating::before,
                 .woocommerce.single.single-product .woocommerce-tabs ul.tabs li.active a,
+                .woocommerce.single.single-product .entry-summary .add_to_wishlist:hover,
+                .style_one .promo-link-btn:hover,
+                .blog_desc .entry-header span.cat-name,
                 .site-info a,
                 a{
                    color: {$tpl_color};
@@ -188,7 +193,11 @@ function unicon_lite_dynamic_styles() {
                 .content-area .description_tab.active:after,
                 .content-area .reviews_tab.active:after,
                 .search-form button.searchsubmit,
+                .style_one .promo-link-btn,
+                .style_one .promo-link-btn:hover,
                 .inner_home,
+                .woocommerce.single.single-product .entry-summary .show a:hover,
+                .woocommerce.single.single-product .entry-summary .show a,
                 nav.woocommerce-MyAccount-navigation{
                    border-color: {$tpl_color}; 
                 }";
@@ -245,9 +254,11 @@ function unicon_lite_dynamic_styles() {
                         border-color: {$tpl_color} !important;
                     }
                 }";
-	}
 
-	wp_add_inline_style( 'accesspress-store-style', $custom_css );
+                
+    }
+
+    wp_add_inline_style( 'accesspress-store-style', $custom_css );
 }
 
 add_action( 'wp_enqueue_scripts', 'unicon_lite_dynamic_styles' );
