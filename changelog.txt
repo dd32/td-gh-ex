@@ -1,7 +1,14 @@
 Changelog for Iconic One WordPress Responsive Theme | Visit http://themonic.com/iconic-one/ for latest version
 
--------------- 29 March 2019 ----------------
+-------------- 05 June 2019 ----------------
 
+
+05/06/2019  - Version 2.0.0
+
+- Minor bug fixes
+- Improved mobile responsive styles
+
+-------------- 29 March 2019 ----------------
 
 29/03/2019  - Version 1.9.9
 

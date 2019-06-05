@@ -1,10 +1,10 @@
 /*
 Theme Name: Iconic One
-Theme URI: http://themonic.com/iconic-one/
+Theme URI: https://themonic.com/iconic-one/
 Author: Themonic
-Author URI: http://themonic.com
+Author URI: https://themonic.com
 Description: Iconic One is a premium quality theme with pixel perfect typography and responsiveness and is built for speed with pagespeed score of 95+, Iconic One implements proper SEO so that your content will rank high and is compatible with AIOSEO and Yoast SEO, It makes proper use of Live customizer that allows you to setup the theme in minutes, you can easily upload the logo, modify the background color, footer text, social media urls without touching any line of code. It utilizes latest HTML 5, CSS3 and wordpress native functions for creating the awesomeness that looks good on every browser. Support is free, access the support here http://themonic.com/support/, Report issues and feedback at http://themonic.com/feedback/.
-Version: 1.9.9
+Version: 2.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, one-column, two-columns, right-sidebar, custom-background, custom-menu, custom-logo, full-width-template, rtl-language-support, theme-options, custom-colors, flexible-header, translation-ready, news, e-commerce, sticky-post, featured-images, threaded-comments
@@ -765,8 +765,11 @@ footer[role="contentinfo"] a:hover {
 .entry-summary p,
 .comment-content p,
 .mu_register p {
-	margin: 0 0 20px;
+	margin: 20px 0;
 	line-height: 1.7;
+}
+.entry-content blockquote p {
+    margin: 0;
 }
 .entry-content ol,
 .comment-content ol,
@@ -1676,7 +1679,7 @@ img#wpstats {
 }
 @media screen and (max-width: 440px) {
 .site {
-    padding: 0 10px;
+    padding: 0px;
 }
 .widget-area {
     padding: 0 10px;
@@ -1712,6 +1715,10 @@ img#wpstats {
 .site-wordpress {
     width: 100%;
     text-align: center;
+}
+.below-title-meta {
+    width: 108.2%;
+    margin-left: -4.1%;
 }
 }
 /* Print styles
