@@ -38,7 +38,7 @@
 						 } else { ?>
 							<a class="home-link" href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home">
 								<h1 class="site-title"><?php bloginfo( 'name' ) ?></h1>
-								<p class="site-description"><?php bloginfo( 'description' )  ?></p>
+								<h2 class="site-description"><?php bloginfo( 'description' )  ?></h2>
 							</a>
 						<?php } ?>
 				</div><!--/site-identity-->

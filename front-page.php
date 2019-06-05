@@ -15,34 +15,40 @@ $bassist_theme_options = bassist_get_options();
 
 if ( 'page' == get_option( 'show_on_front' ) ):
 	get_header(); ?>
-	<div id="main-content"> 
+	<div id="main-content">
 		<?php
 			bassist_parallax('1');
-			if ( $bassist_theme_options['hide_about_section'] == 0 ):
+			if ( $bassist_theme_options['hide_about_section'] == 0 ) :
 				get_template_part('template-parts/section', 'about');
 			endif;
 
 			bassist_parallax('2');
 
-			if ( $bassist_theme_options['hide_audio_section'] == 0 ):
+			if ( $bassist_theme_options['hide_audio_section'] == 0 ) :
 				get_template_part('template-parts/section', 'audio');
 			endif;
 
 			bassist_parallax('3');
 
-			if ( $bassist_theme_options['hide_video_section'] == 0 ):
+			if ( $bassist_theme_options['hide_video_section'] == 0 ) :
 				get_template_part('template-parts/section', 'video');
 			endif;
 
 			bassist_parallax('4');
 
-			if ( $bassist_theme_options['hide_image_section'] == 0 ):
+			if ( $bassist_theme_options['hide_image_section'] == 0 ) :
 				get_template_part('template-parts/section', 'image');
+			endif;
+
+			if ( $bassist_theme_options['hide_quote_section'] == 0 ) :
+				get_template_part('template-parts/section', 'quote');
 			endif;
 
 			get_template_part('template-parts/section', 'social');
 
-			get_template_part('template-parts/section', 'contact-form');
+			if( $bassist_theme_options['hide_contact_section'] == 0 ) :
+				get_template_part('template-parts/section', 'contact-form');
+			endif;
 		?>      
 	</div><!--/main-content-->
 

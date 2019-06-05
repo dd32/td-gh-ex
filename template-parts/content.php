@@ -23,18 +23,14 @@
 			?>
 	</div><!-- .entry-meta -->
 	
-	<?php
-		if ( is_single() && ! is_dynamic_sidebar() ) :
-			the_title( '<h1 class="entry-title">', '</h1>' );
-		else :
-			the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
-		endif;
-	?>
+<?php
+	bassist_entry_title();
 
-	<?php if ( is_sticky() && is_home() && ! is_paged() ) {
-			echo '<span class="featured-post"><i class="fa fa-thumb-tack"></i>' . __( 'Featured', 'bassist' ) . '</span>';
-		}
-	?>
+	if ( is_sticky() && is_home() && ! is_paged() ) {
+		echo '<span class="featured-post">
+		<i class="fa fa-thumb-tack"></i> <span class="screen-reader-text">' . __( 'Featured', 'bassist' ) . '</span></span>';
+	}
+?>
 	<div class="entry-meta">
 		<?php
 			// This is used for the styling of post formats.

@@ -9,7 +9,6 @@
  */
 
 get_header(); ?>
-
 <div class="inner flex-container">
     <div id="main-content">
     	<div class="small-section">

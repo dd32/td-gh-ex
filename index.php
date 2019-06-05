@@ -15,7 +15,6 @@
 
 $bassist_theme_options = bassist_get_options( 'bassist_theme_options' );
 
-
 get_header(); ?>
 
 <div class="inner flex-container">
@@ -31,7 +30,7 @@ get_header(); ?>
 				*/
 				if ( 'posts' == get_option( 'show_on_front' ) ):
 					get_template_part( 'template-parts/content', get_post_format() );
-				elseif ( 'page' == get_option( 'show_on_front' ) && ! ( has_post_format( array('audio', 'video') ) ) ):
+				elseif ( 'page' == get_option( 'show_on_front' ) && ! ( has_post_format( array( 'audio', 'image', 'quote', 'video') ) ) ):
 					get_template_part( 'template-parts/content', get_post_format() );
 				endif;
 			// End the Loop.

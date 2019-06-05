@@ -4,7 +4,7 @@ Theme URI: http://ebyb.eu/themes/bassist/
 Author: acalfieri
 Author URI: http://ebyb.eu
 Description: Bassist is a theme developed for musicians and based on Underscores. It has a customizable front page dedicated to show pictures, audios and videos and special styling for other post formats.
-Version: 1.0.5
+Version: 1.0.6.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, full-width-template, post-formats, sticky-post, theme-options, blog, entertainment, portfolio
@@ -359,7 +359,7 @@ h4,
 h5,
 h6 {
 	clear: both;
-	font-weight: 700;   
+	font-weight: 700; 
 }
 
 h1 {
@@ -785,6 +785,10 @@ input[type="search"].search-field {
 	width: 42px;
 }
 
+.front-page .wp-block-image figcaption {
+	color: #ccc;
+}
+
 /**
  * 6.0 - Navigation
  */
@@ -1100,6 +1104,10 @@ footer .social-navigation a:before {
 
 .social-navigation a[href*="youtube.com"]:before {
 	content: "\f167";
+}
+
+.social-navigation a[href*="yelp.com"]:before {
+	content: "\f1e9";
 }
 
 .social-navigation a[href^="mailto:"]:before {
@@ -1631,7 +1639,7 @@ main {
 	max-width: 960px;
 }
 
-.archive .post:last-child {
+.archive .post:last-of-type {
 	border: 0
 }
 
@@ -1713,12 +1721,14 @@ main {
 	position: absolute;
 	top: 1em;
 	right: 0;
+	padding: 0.35em 0.6em 0.2em 0.8em;
 }
 
 .featured-post .fa {
 	margin-right: 0.5em;
 	position: relative;
 	top: 1px;
+	margin-right: 0;
 }
 
 .featured-image {
@@ -1910,7 +1920,7 @@ main {
 
 .contributor .avatar-container {
 	float: left;
-	padding: 0 2em 1em 0;
+	padding: 0 1.5em 0 0;
 }
 .author-info h1 {
 	display: inline-block;
@@ -1984,15 +1994,6 @@ main {
 
 .format-status .entry-format a:before {
 	content: '\f105';
-}
-
-.format-video iframe {
-	max-height: 180px;
-}
-
-.format-video .entry-content p {
-	/*! text-align: center; */
-   
 }
 
 .format-video .entry-format a:before {
@@ -2362,8 +2363,8 @@ main {
 
 .section-title {
 	text-align: center;
-	margin-top: 0;
-	font-size: 2.774em;
+	margin: 0;
+	font-size: 2.414em;
 }
 
 .contact-section .section-title {
@@ -2393,14 +2394,16 @@ main {
 .audio-format-section,
 .video-format-section,
 .image-format-section,
+.quote-format-section,
 .contact-section {
 	position: relative;
 	padding: 2em 0;
 }
 
-.audio-format-section .post:last-child,
-.video-format-section .post:last-child {
-	border: 0;
+.contact-section {
+	background-attachment: scroll;
+	background-position: center center;
+	background-size: cover ;
 }
 
 .social-section {
@@ -2448,7 +2451,6 @@ main {
 .contact-section {
 	position: relative;
 	padding: 5em 0 4em;
-	color: #fafafa;
 }
 
 .contact-form {
@@ -2720,6 +2722,15 @@ p > video {
 	display: none;
 }
 
+.wp-block-gallery {
+	margin: 0;
+}
+
+.wp-block-audio audio {
+	min-width: initial;
+	max-width: 100%;
+}
+
 /*-------------------------------------------------------*/
 /*--------------------- MEDIA QUERIES -------------------*/
 /*-------------------------------------------------------*/
@@ -2914,7 +2925,7 @@ h6 {
 .nav-menu li { 
 	position:relative;
 	border-top: 1px solid #ddd;
-	background-color: rgba(250, 250, 250, 0.9);  
+	background-color: rgba(240, 240, 240, 1);  
 	height: auto;
 	padding: 0;
 }
@@ -3074,9 +3085,9 @@ main {
 
 }
 	
-	.no-sidebar.blog #main-content {
-		padding: 4em;
-	}
+.no-sidebar.blog #main-content {
+	padding: 4em;
+}
 
 #primary-sidebar,
 .sidebar {
@@ -3180,6 +3191,10 @@ main {
 	right: 0;
 	z-index: 2
 }
+
+.featured-post .screen-reader-text {
+	position: relative !important;
+}
 	
 .single .featured-image img {
 	width: 100%;
@@ -3188,7 +3203,6 @@ main {
 .flex-container {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: space-around;
 }
 	
 .contributors {
@@ -3237,15 +3251,12 @@ main {
 }
 
 .format-video iframe {
-	max-height: 420px;
-	padding: 0;    
-}
-	
-.no-sidebar .format-video iframe {
 	max-height: 600px;
+	padding: 0;
 }
 
-.front-page .format-video iframe{
+.front-page .format-video iframe,
+.front-page .format-video .wp-block-embed__wrapper {
 	max-height: 300px;
 }
 
@@ -3255,19 +3266,24 @@ main {
 	left: 0%;
 }
 
-.audio-posts .format-audio {
-	width: 40%;
+.front-page .post {
+	width: 46%;
+}
 
+.front-page .post:nth-child(2n-1) {
+	margin-right: 4%;
 }
-.audio-posts .format-audio .entry-content {
-	width: 100%;
+
+.front-page .post:nth-child(2n) {
+	margin-left: 4%;
 }
-	
-.video-posts .post,
-.image-posts .post {
-	width: 50%;
+
+.front-page .post:nth-last-of-type(2) {
 	border: 0;
-	padding: 0 1em;
+}
+
+.front-page .post:nth-last-of-type(2):nth-child(2n) {
+	border-bottom: 2px solid;
 }
 
 .format-chat .entry-content {
@@ -3447,12 +3463,9 @@ main {
 .audio-format-section,
 .video-format-section,
 .image-format-section,
+.quote-format-section,
 .contact-section {
 	padding: 5em 0 4em;
-}
-
-.audio-format-section .post:nth-last-child(2) {
-	border: 0;
 }
 
 .social-section .social-navigation {
@@ -3470,11 +3483,9 @@ main {
 
 .contact-section {
 	padding: 9em 0 7em;
-	position: relative;
 	background-attachment: fixed;
 	background-position: center center;
 	background-size: cover ;
-	
 }
 
 .contact-form {
@@ -3502,13 +3513,102 @@ div.wpcf7 {
 	
 }
 
-
 }
 
 @media (min-width: 881px) and (max-width: 1500px) {
-	.inner {
-		width: 78.5%;
-	}
+.inner {
+	width: 78.5%;
+}
+
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape) {
+.parallax .bg__1,
+.parallax .bg__2,
+.parallax .bg__3,
+.parallax .bg__4 {
+	height: 80vh;
+	background-attachment: scroll;
+}
+
+.contact-section {
+	background-attachment: scroll;
+}
+
+.inner {
+	width: 88%
+}
+
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.front-page .post {
+	width: 46%;
+}
+
+.front-page .post:nth-child(2n-1) {
+	margin-right: 4%;
+}
+
+.front-page .post:nth-child(2n) {
+	margin-left: 4%;
+}
+
+.front-page .post:nth-last-of-type(2) {
+	border: 0;
+}
+
+.front-page .post:nth-last-of-type(2):nth-child(2n) {
+	border-bottom: 2px solid;
+}
+
+}
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+.inner {
+	width: 88%
+}
+.parallax .bg__1,
+.parallax .bg__2,
+.parallax .bg__3,
+.parallax .bg__4 {
+	height: 80vh;
+	background-attachment: scroll;
+}
+
+.contact-section {
+	background-attachment: scroll;
+}
+
+.flex-container {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+
+.front-page .post {
+	width: 46%;
+}
+
+.front-page .post:nth-child(2n-1) {
+	margin-right: 4%;
+}
+
+.front-page .post:nth-child(2n) {
+	margin-left: 4%;
+}
+
+.front-page .post:nth-last-of-type(2) {
+	border: 0;
+}
+
+.front-page .post:nth-last-of-type(2):nth-child(2n) {
+	border-bottom: 2px solid;
+}
+
 
 }
 

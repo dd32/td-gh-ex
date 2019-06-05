@@ -72,37 +72,19 @@ function bassist_header_style() {
 	
 
 <?php endif;
-			if ( empty( $header_image ) ) :
-		?>
-			.home-link {
-				min-height: 7em;
-			}
 
-			@media (max-width: 767px) {
-			.home-link  {
-				min-height: 0;
-
-			}
-		}
-		@media (max-width: 359px) {
-			.home-link  {
-				min-height: 0;
-			}
-		}
-<?php endif;
-
-		// If the user has set a custom color for the text, use that.
-		if ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) : ?>
-		.site-title, #nav-button {
-			color: #<?php echo esc_attr( $text_color ); ?>;
-		}
+// If the user has set a custom color for the text, use that.
+if ( $text_color != get_theme_support( 'custom-header', 'default-text-color' ) ) : ?>
+.site-title, #nav-button {
+	color: #<?php echo esc_html( $text_color ); ?>;
+}
 
 <?php endif;
 
 if( $bassist_theme_options['site_description_color'] ) : ?>
 
 	.site-description {
-		color: <?php echo esc_attr( $bassist_theme_options['site_description_color'] ) ?>;
+		color: <?php echo esc_html( $bassist_theme_options['site_description_color'] ) ?>;
 	}
 
 <?php endif; ?>

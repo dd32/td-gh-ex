@@ -42,6 +42,9 @@ function bassist_setup() {
 	 */
 	add_theme_support( 'title-tag' );
 
+	add_theme_support( 'wp-block-styles' );
+	add_theme_support( 'responsive-embeds' );
+
 	/*
 	 * Enable support for Post Thumbnails on posts and pages.
 	 *
@@ -152,8 +155,8 @@ add_action( 'widgets_init', 'bassist_widgets_init' );
 function bassist_scripts() {
 	// Add custom fonts, used in the main stylesheet.
 	wp_enqueue_style( 'bassist-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css');
-	wp_enqueue_script( 'bassist-scripts', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20151215', true );
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css' );
+	wp_enqueue_script( 'bassist-scripts', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20190515', true );
 	
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

@@ -12,7 +12,6 @@ $audio_section_title = $bassist_theme_options['audio_section_title'];
 
 <section id="music" class="audio-format-section">
 	<div class="inner">
-
 <?php
 	$args = array(  'posts_per_page' => 6,
 					'tax_query' => array(
@@ -28,9 +27,8 @@ $audio_section_title = $bassist_theme_options['audio_section_title'];
 					);
 	$query = new WP_Query($args);
 
-		if ( $query->have_posts() ) :?>
+		if ( $query->have_posts() ) : ?>
 			<h2 class="section-title"><?php printf( esc_html( $audio_section_title ) ) ?></h2>
-			
 			<div class="flex-container audio-posts">
 			<?php
 				// Start the Loop again.
@@ -41,15 +39,14 @@ $audio_section_title = $bassist_theme_options['audio_section_title'];
 					* (where ___ is the post format) and that will be used instead.
 					*/
 					get_template_part( 'template-parts/content', get_post_format() );
-
 				endwhile;
 				wp_reset_postdata();
 			?>
 			</div> 
-<?php 	elseif ( is_customize_preview() ):
+<?php 	elseif ( is_customize_preview() ) :
 			printf( '<h1>%1$s</h1><p>%2$s</p>',
 					__('This is the audio section', 'bassist'),
-					__('To fill up this section you have to create some posts, choose the format "audio" in Format and save. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose "Hide Audio Section" in the Customizer.', 'bassist') );
+					__('To fill up this section you have to create some posts, choose the format "audio" in Post Format and save. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose "Hide Audio Section" in the Customizer.', 'bassist') );
 
 		endif; ?>
 	</div><!--/inner-->

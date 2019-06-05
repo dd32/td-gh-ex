@@ -60,6 +60,23 @@ function bassist_entry_footer() { ?>
 <?php }
 endif;
 
+if ( ! function_exists( 'bassist_entry_title' ) ) :
+/**
+ * Prints the entry title markup according to the page (single, front page, all others.
+ *
+ * @since Bassist 1.0.0
+ */
+function bassist_entry_title() {
+	if ( is_single() && ! is_dynamic_sidebar() ) :
+		the_title( '<h1 class="entry-title">', '</h1>' );
+	elseif ( is_front_page() ) :
+		the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' );
+	else :
+		the_title( sprintf( '<h2 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h2>' );
+	endif;
+}
+endif;
+
 if ( ! function_exists( 'bassist_comments_popup_link') ):
 /**
  * Prints the markup for the navigation between posts and changes the default strings of the_post_navigation().
@@ -224,7 +241,6 @@ function bassist_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'bassist_excerpt_more' );
 endif;
 
-
 /**
  * Filter the except length to 20 characters.
  *
@@ -248,6 +264,4 @@ function bassist_edit_comment_link() {
     	);
 }
 add_filter( 'edit_comment_link', 'bassist_edit_comment_link'  );
-
-
 

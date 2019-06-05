@@ -48,7 +48,7 @@ $image_section_title = $bassist_theme_options['image_section_title'];
 <?php 	elseif ( is_customize_preview() ):
 			printf( '<h1>%1$s</h1><p>%2$s</p>',
 					__('This is the image section', 'bassist'),
-					__('To fill up this section you have to create some posts, choose the format "image" in Format and save. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose "Hide Image Section" in the Customizer.', 'bassist') );
+					__('To fill up this section you have to create some posts, choose the format "image" in Post Format and save. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose "Hide Image Section" in the Customizer.', 'bassist') );
 
 		endif; ?>
 	</div><!--/inner-->

@@ -1,16 +1,38 @@
-# Copyright (C) 2017 acalfieri
+# Copyright (C) 2019 acalfieri
 # This file is distributed under the GNU General Public License v2 or later.
 msgid ""
 msgstr ""
-"Project-Id-Version: Bassist 1.0.4\n"
+"Project-Id-Version: Bassist 1.0.6\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/bassist\n"
-"POT-Creation-Date: 2017-04-02 14:32:31+00:00\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2017-MO-DA HO:MI+ZONE\n"
-"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
-"Language-Team: LANGUAGE <LL@li.org>\n"
+"POT-Creation-Date: 2019-06-05T21:24:47+00:00\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"X-Generator: WP-CLI 2.1.0\n"
+"X-Domain: bassist\n"
+
+#. Theme Name of the theme
+msgid "Bassist"
+msgstr ""
+
+#. Theme URI of the theme
+msgid "http://ebyb.eu/themes/bassist/"
+msgstr ""
+
+#. Description of the theme
+msgid "Bassist is a theme developed for musicians and based on Underscores. It has a customizable front page dedicated to show pictures, audios and videos and special styling for other post formats."
+msgstr ""
+
+#. Author of the theme
+msgid "acalfieri"
+msgstr ""
+
+#. Author URI of the theme
+msgid "http://ebyb.eu"
+msgstr ""
 
 #: 404.php:14
 msgid "Oops! That page can not be found."
@@ -20,21 +42,28 @@ msgstr ""
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
-#: comments.php:26
-msgid "One thought on"
-msgid_plural "%1$s thoughts on"
-msgstr[0] ""
-msgstr[1] ""
+#. translators: %s: post title
+#: comments.php:29
+msgctxt "comments title"
+msgid "One thought on &ldquo;%s&rdquo;"
+msgstr ""
 
-#: comments.php:42
+#. translators: 1: number of comments, 2: post title
+#: comments.php:33
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] ""
+
+#: comments.php:57
 msgid "Reply"
 msgstr ""
 
-#: comments.php:52
+#: comments.php:67
 msgid "Comments are closed."
 msgstr ""
 
-#: comments.php:57
+#: comments.php:72
 msgid "Cancel Reply"
 msgstr ""
 
@@ -50,23 +79,24 @@ msgstr ""
 msgid "Proudly powered by WordPress"
 msgstr ""
 
-#: footer.php:24 template-parts/section-social.php:12
+#: footer.php:24
+#: template-parts/section-social.php:12
 msgid "Social Menu "
 msgstr ""
 
-#: functions.php:54
+#: functions.php:57
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:55
+#: functions.php:58
 msgid "Social Links Menu"
 msgstr ""
 
-#: functions.php:133
+#: functions.php:141
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:143
 msgid "Add widgets here."
 msgstr ""
 
@@ -83,19 +113,16 @@ msgid "Menus"
 msgstr ""
 
 #. Translators: There is a space after "on".
-
 #: image.php:34
 msgid "Published on "
 msgstr ""
 
 #. Translators: There is a space before and after "in".
-
 #: image.php:38
 msgid " in "
 msgstr ""
 
 #. Translators: There is a space after "Return to:".
-
 #: image.php:43
 msgid "Return to: "
 msgstr ""
@@ -108,13 +135,20 @@ msgstr ""
 msgid "Full resolution"
 msgstr ""
 
-#: image.php:57 inc/template-tags.php:247 template-parts/content-aside.php:47
-#: template-parts/content-audio.php:47 template-parts/content-chat.php:47
-#: template-parts/content-image.php:45 template-parts/content-link.php:45
-#: template-parts/content-page.php:15 template-parts/content-quote.php:35
-#: template-parts/content-search.php:58 template-parts/content-single.php:52
-#: template-parts/content-status.php:47 template-parts/content-video.php:47
-#: template-parts/content.php:58
+#: image.php:57
+#: inc/template-tags.php:263
+#: template-parts/content-aside.php:42
+#: template-parts/content-audio.php:42
+#: template-parts/content-chat.php:42
+#: template-parts/content-image.php:40
+#: template-parts/content-link.php:45
+#: template-parts/content-page.php:15
+#: template-parts/content-quote.php:30
+#: template-parts/content-search.php:58
+#: template-parts/content-single.php:52
+#: template-parts/content-status.php:42
+#: template-parts/content-video.php:42
+#: template-parts/content.php:54
 msgid "Edit"
 msgstr ""
 
@@ -126,18 +160,23 @@ msgstr ""
 msgid "Next"
 msgstr ""
 
-#: image.php:92 template-parts/content-page.php:34
+#: image.php:92
+#: template-parts/content-page.php:34
 #: template-parts/content-single.php:76
 msgid "Pages:"
 msgstr ""
 
-#: image.php:96 inc/template-tags.php:99
+#: image.php:96
+#: inc/template-tags.php:116
 #: page-templates/no-sidebar-full-width.php:33
-#: template-parts/content-page.php:38 template-parts/content-single.php:80
+#: template-parts/content-page.php:38
+#: template-parts/content-single.php:80
 msgid "Page"
 msgstr ""
 
-#: inc/back-compat.php:40 inc/back-compat.php:52 inc/back-compat.php:67
+#: inc/back-compat.php:40
+#: inc/back-compat.php:52
+#: inc/back-compat.php:67
 msgid "Bassist requires at least WordPress version 4.5. You are running version %s. Please upgrade and try again."
 msgstr ""
 
@@ -178,272 +217,319 @@ msgid "In this section you can choose several settings of the About Section."
 msgstr ""
 
 #: inc/customizer.php:103
-msgid "Slug of your About Page"
+msgid "Your About Page"
 msgstr ""
 
 #: inc/customizer.php:104
-msgid "Create a page with an introduction about yourself and write the slug of the page below."
+msgid "Create a page with an introduction about yourself and select it with the dropdown."
 msgstr ""
 
-#: inc/customizer.php:118
+#: inc/customizer.php:120
 msgid "Font Size of the About Section"
 msgstr ""
 
-#: inc/customizer.php:119
+#: inc/customizer.php:121
 msgid "Choose the font size in px or em (Ex.: 16px, 1em)."
 msgstr ""
 
-#: inc/customizer.php:133
+#: inc/customizer.php:135
 msgid "About Section Background Color"
 msgstr ""
 
-#: inc/customizer.php:147
+#: inc/customizer.php:149
 msgid "Hide About Section"
 msgstr ""
 
-#: inc/customizer.php:157
+#: inc/customizer.php:159
 msgid "Audio Section Settings"
 msgstr ""
 
-#: inc/customizer.php:158
+#: inc/customizer.php:160
 msgid "In this section you can choose several settings of the Audio Section."
 msgstr ""
 
-#: inc/customizer.php:171
+#: inc/customizer.php:173
 msgid "Title of the Audio Section"
 msgstr ""
 
-#: inc/customizer.php:172
+#: inc/customizer.php:174
 msgid "This section shows your posts with format audio."
 msgstr ""
 
-#: inc/customizer.php:186
+#: inc/customizer.php:188
 msgid "Audio Section Background Color"
 msgstr ""
 
-#: inc/customizer.php:200
+#: inc/customizer.php:202
 msgid "Hide Audio Section"
 msgstr ""
 
-#: inc/customizer.php:210
+#: inc/customizer.php:212
 msgid "Video Section Settings"
 msgstr ""
 
-#: inc/customizer.php:211
+#: inc/customizer.php:213
 msgid "In this section you can choose several settings of the Video Section."
 msgstr ""
 
-#: inc/customizer.php:224
+#: inc/customizer.php:226
 msgid "Title of the Video Section"
 msgstr ""
 
-#: inc/customizer.php:225
+#: inc/customizer.php:227
 msgid "This section shows your posts with format video."
 msgstr ""
 
-#: inc/customizer.php:239
+#: inc/customizer.php:241
 msgid "Video Section Background Color"
 msgstr ""
 
-#: inc/customizer.php:253
+#: inc/customizer.php:255
 msgid "Hide Video Section"
 msgstr ""
 
-#: inc/customizer.php:263
+#: inc/customizer.php:265
 msgid "Image Section Settings"
 msgstr ""
 
-#: inc/customizer.php:264
+#: inc/customizer.php:266
 msgid "In this section you can choose several settings of the Image Section."
 msgstr ""
 
-#: inc/customizer.php:277
+#: inc/customizer.php:279
 msgid "Title of the Image Section"
 msgstr ""
 
-#: inc/customizer.php:278
+#: inc/customizer.php:280
 msgid "This section shows your posts with format image."
 msgstr ""
 
-#: inc/customizer.php:292
+#: inc/customizer.php:294
 msgid "Image Section Background Color"
 msgstr ""
 
-#: inc/customizer.php:306
+#: inc/customizer.php:308
 msgid "Hide Image Section"
 msgstr ""
 
-#: inc/customizer.php:316
+#: inc/customizer.php:318
+msgid "Quotes Section Settings"
+msgstr ""
+
+#: inc/customizer.php:319
+msgid "In this section you can choose several settings of the Quotes Section."
+msgstr ""
+
+#: inc/customizer.php:332
+msgid "Title of the Quotes Section"
+msgstr ""
+
+#: inc/customizer.php:333
+msgid "This section shows your posts with format quote."
+msgstr ""
+
+#: inc/customizer.php:347
+msgid "Quotes Section Background Color"
+msgstr ""
+
+#: inc/customizer.php:361
+msgid "Hide Quotes Section"
+msgstr ""
+
+#: inc/customizer.php:371
 msgid "Parallax Settings"
 msgstr ""
 
-#: inc/customizer.php:318
+#: inc/customizer.php:372
 msgid "In this section you can add four parallax image blocks to the Front Page. If the image is left empty, no parallax block is created."
 msgstr ""
 
-#: inc/customizer.php:331
+#: inc/customizer.php:385
 msgid "Parallax 1 Background Image"
 msgstr ""
 
-#: inc/customizer.php:345
+#: inc/customizer.php:399
 msgid "Parallax 2 Background Image"
 msgstr ""
 
-#: inc/customizer.php:359
+#: inc/customizer.php:413
 msgid "Parallax 3 Background Image"
 msgstr ""
 
-#: inc/customizer.php:373
+#: inc/customizer.php:427
 msgid "Parallax 4 Background Image"
 msgstr ""
 
-#: inc/customizer.php:382
+#: inc/customizer.php:436
 msgid "Contact Section Settings"
 msgstr ""
 
-#: inc/customizer.php:396
+#: inc/customizer.php:449
+msgid "Your Contact Page"
+msgstr ""
+
+#: inc/customizer.php:450
+msgid "Install the contact plugin of your preference. Create a page with a title like Contact or Contact me, write the shortcode given by the Contact plugin in the content of the page and select it with the dropdown."
+msgstr ""
+
+#: inc/customizer.php:466
 msgid "Contact Section Background Color"
 msgstr ""
 
-#: inc/customizer.php:410
+#: inc/customizer.php:480
 msgid "Contact Section Background Image"
 msgstr ""
 
-#: inc/customizer.php:424
-msgid "Slug of your Contact Page"
+#: inc/customizer.php:494
+msgid "Contact Section Text Color"
 msgstr ""
 
-#: inc/customizer.php:425
-msgid "Install the contact plugin of your preference. Create a page with a title like Contact or Contact me, write the shortcode given by the Contact plugin in the content of the page and write the slug of the page below."
+#: inc/customizer.php:509
+msgid "Hide Contact Section"
 msgstr ""
 
-#: inc/customizer.php:434
+#: inc/customizer.php:519
 msgid "Other Theme Options"
 msgstr ""
 
-#: inc/customizer.php:444
+#: inc/customizer.php:529
 msgid "Special Pages"
 msgstr ""
 
-#: inc/customizer.php:446
-msgid "This section saves the slug (i.e. its URL valid name) of the pages made with the special page templates, so they can be used across the theme. Write the pages slug here."
+#: inc/customizer.php:530
+msgid "In this section you can select the pages made with the special page templates, so they can be used across the theme. Select the pages with the dropdown menu."
 msgstr ""
 
-#: inc/customizer.php:458
-msgid "Slug of your Contributors Page"
+#: inc/customizer.php:542
+msgid "Your Contributors Page"
 msgstr ""
 
-#: inc/customizer.php:472
-msgid "Slug of your Featured Articles Page"
+#: inc/customizer.php:558
+msgid "Your Featured Articles Page"
 msgstr ""
 
-#: inc/customizer.php:481
+#: inc/customizer.php:569
 msgid "Blog Settings"
 msgstr ""
 
-#: inc/customizer.php:483
+#: inc/customizer.php:570
 msgid "In this section you can choose several blog options."
 msgstr ""
 
-#: inc/customizer.php:497
+#: inc/customizer.php:584
 msgid "Hide the post meta information on the front page."
 msgstr ""
 
-#: inc/customizer.php:512
+#: inc/customizer.php:599
 msgid "Hide the post meta information on the blog page."
 msgstr ""
 
-#: inc/customizer.php:521
+#: inc/customizer.php:608
 msgid "Navigation Settings"
 msgstr ""
 
-#: inc/customizer.php:523
+#: inc/customizer.php:609
 msgid "In this section you can choose between navigation or pagination in multiple view pages."
 msgstr ""
 
-#: inc/customizer.php:537
+#: inc/customizer.php:623
 msgid "Choose your preferred mode of navigating between old and new articles"
 msgstr ""
 
 #. Translators: used between list items, there is a space after the comma.
-
-#: inc/template-tags.php:46 template-parts/content-search.php:19
-#: template-parts/content-single.php:16 template-parts/content-single.php:91
+#: inc/template-tags.php:46
+#: template-parts/content-search.php:19
+#: template-parts/content-single.php:16
+#: template-parts/content-single.php:91
 #: template-parts/content.php:19
 msgid ", "
 msgstr ""
 
 #. Translators: there is a space after "on.
-
-#: inc/template-tags.php:72
+#: inc/template-tags.php:89
 msgid "No comments on "
 msgstr ""
 
 #. Translators: there is a space after "on.
-
-#: inc/template-tags.php:74
+#: inc/template-tags.php:91
 msgid "Only one comment on "
 msgstr ""
 
 #. Translators: there is a space after "on.
-
-#: inc/template-tags.php:76
+#: inc/template-tags.php:93
 msgid "% comments on "
 msgstr ""
 
-#: inc/template-tags.php:92
+#: inc/template-tags.php:109
 msgid "Older articles"
 msgstr ""
 
-#: inc/template-tags.php:93
+#: inc/template-tags.php:110
 msgid "Newer articles"
 msgstr ""
 
-#: inc/template-tags.php:97 page-templates/no-sidebar-full-width.php:31
+#: inc/template-tags.php:114
+#: page-templates/no-sidebar-full-width.php:31
 msgid "Previous page"
 msgstr ""
 
-#: inc/template-tags.php:98 page-templates/no-sidebar-full-width.php:32
+#: inc/template-tags.php:115
+#: page-templates/no-sidebar-full-width.php:32
 msgid "Next page"
 msgstr ""
 
-#: inc/template-tags.php:113
+#: inc/template-tags.php:130
 msgid "Next post:"
 msgstr ""
 
-#: inc/template-tags.php:117
+#: inc/template-tags.php:134
 msgid "Previous post:"
 msgstr ""
 
-#: inc/template-tags.php:131
+#: inc/template-tags.php:148
 msgid "Older"
 msgstr ""
 
-#: inc/template-tags.php:132
+#: inc/template-tags.php:149
 msgid "Newer"
 msgstr ""
 
-#: inc/template-tags.php:193
+#: inc/template-tags.php:210
 msgid "Standard"
 msgstr ""
 
 #. Translators: %s: Name of current post
-
-#: inc/template-tags.php:215
+#: inc/template-tags.php:232
 msgid "More"
 msgstr ""
 
-#: page-templates/contributors_template.php:45
+#. Template Name of the theme
+msgid "List of contributors"
+msgstr ""
+
+#: page-templates/contributors-template.php:41
 msgid "%s Article"
 msgid_plural "%s Articles"
 msgstr[0] ""
-msgstr[1] ""
+
+#. Template Name of the theme
+msgid "Featured Articles"
+msgstr ""
+
+#. Template Name of the theme
+msgid "Full Width, No Sidebar"
+msgstr ""
+
+#. Template Name of the theme
+msgid "No Sidebar"
+msgstr ""
 
 #: search.php:17
 msgid "Search Results for:"
 msgstr ""
 
-#: searchform.php:12 searchform.php:13
+#: searchform.php:12
+#: searchform.php:13
 msgctxt "label"
 msgid "Search for:"
 msgstr ""
@@ -459,30 +545,40 @@ msgid "Search"
 msgstr ""
 
 #. Translators: there is a space after "About".
-
-#: template-parts/author-bio.php:25 template-parts/author-bio.php:28
+#: template-parts/author-bio.php:25
+#: template-parts/author-bio.php:28
 msgid "About "
 msgstr ""
 
-#: template-parts/content-aside.php:24 template-parts/content-audio.php:24
-#: template-parts/content-chat.php:24 template-parts/content-image.php:21
-#: template-parts/content-link.php:22 template-parts/content-quote.php:24
-#: template-parts/content-search.php:35 template-parts/content-status.php:24
-#: template-parts/content-video.php:24 template-parts/content.php:35
+#: template-parts/content-aside.php:19
+#: template-parts/content-audio.php:19
+#: template-parts/content-chat.php:19
+#: template-parts/content-image.php:17
+#: template-parts/content-link.php:22
+#: template-parts/content-quote.php:19
+#: template-parts/content-search.php:35
+#: template-parts/content-status.php:19
+#: template-parts/content-video.php:19
+#: template-parts/content.php:31
 msgid "Featured"
 msgstr ""
 
 #. Translators: there is a space after "By".
-
-#: template-parts/content-aside.php:40 template-parts/content-audio.php:40
-#: template-parts/content-chat.php:40 template-parts/content-image.php:38
-#: template-parts/content-link.php:38 template-parts/content-search.php:51
-#: template-parts/content-single.php:28 template-parts/content-status.php:40
-#: template-parts/content-video.php:40 template-parts/content.php:51
+#: template-parts/content-aside.php:35
+#: template-parts/content-audio.php:35
+#: template-parts/content-chat.php:35
+#: template-parts/content-image.php:33
+#: template-parts/content-link.php:38
+#: template-parts/content-search.php:51
+#: template-parts/content-single.php:28
+#: template-parts/content-status.php:35
+#: template-parts/content-video.php:35
+#: template-parts/content.php:47
 msgid "By "
 msgstr ""
 
-#: template-parts/content-chat.php:67 template-parts/content.php:75
+#: template-parts/content-chat.php:62
+#: template-parts/content.php:71
 msgid "Continue reading"
 msgstr ""
 
@@ -518,28 +614,28 @@ msgstr ""
 msgid "This article was written by %s."
 msgstr ""
 
-#: template-parts/section-about.php:29
+#: template-parts/section-about.php:33
 msgid "This is the about section"
 msgstr ""
 
-#: template-parts/section-about.php:30
-msgid "To fill up this section, create a page with the title \"About\", \"About me\" or something similar and write the slug of the page in the Customizer. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose \"Hide About Section\" in the Customizer."
+#: template-parts/section-about.php:34
+msgid "To fill up this section, create a page with the title \"About\", \"About me\" or something similar and select the page with the dropdown selector in the Customizer. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose \"Hide About Section\" in the Customizer."
 msgstr ""
 
-#: template-parts/section-audio.php:51
+#: template-parts/section-audio.php:48
 msgid "This is the audio section"
 msgstr ""
 
-#: template-parts/section-audio.php:52
-msgid "To fill up this section you have to create some posts, choose the format \"audio\" in Format and save. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose \"Hide Audio Section\" in the Customizer."
-msgstr ""
-
-#: template-parts/section-contact-form.php:27
-msgid "This is the contact section"
+#: template-parts/section-audio.php:49
+msgid "To fill up this section you have to create some posts, choose the format \"audio\" in Post Format and save. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose \"Hide Audio Section\" in the Customizer."
 msgstr ""
 
 #: template-parts/section-contact-form.php:28
-msgid "To fill up this section, create a page with the title \"Contact\", \"Contact me\" or something similar and write the shortcode of your preferred contact plugin in the content of the page. You can also add some text before the shortcode. Go to Contact Section Settings in the Customizer and write the slug of the page. This section can have a background picture."
+msgid "This is the contact section"
+msgstr ""
+
+#: template-parts/section-contact-form.php:29
+msgid "To fill up this section, create a page with the title \"Contact\", \"Contact me\" or something similar and write the shortcode of your preferred contact plugin in the content of the page. You can also add some text before the shortcode. Go to Contact Section Settings in the Customizer and select the page. This section can have a background picture."
 msgstr ""
 
 #: template-parts/section-image.php:50
@@ -547,7 +643,15 @@ msgid "This is the image section"
 msgstr ""
 
 #: template-parts/section-image.php:51
-msgid "To fill up this section you have to create some posts, choose the format \"image\" in Format and save. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose \"Hide Image Section\" in the Customizer."
+msgid "To fill up this section you have to create some posts, choose the format \"image\" in Post Format and save. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose \"Hide Image Section\" in the Customizer."
+msgstr ""
+
+#: template-parts/section-quote.php:48
+msgid "This is the quote section"
+msgstr ""
+
+#: template-parts/section-quote.php:49
+msgid "To fill up this section you have to create some posts, choose the format \"quote\" in Post Format and save. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose \"Hide Quote Section\" in the Customizer."
 msgstr ""
 
 #: template-parts/section-social.php:28
@@ -558,45 +662,10 @@ msgstr ""
 msgid "To fill up this section you have to create a menu with your social links. The same menu will show in the footer."
 msgstr ""
 
-#: template-parts/section-video.php:50
+#: template-parts/section-video.php:49
 msgid "This is the video section"
 msgstr ""
 
-#: template-parts/section-video.php:51
-msgid "To fill up this section you have to create some posts, choose the format \"video\" in Format and save. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose \"Hide Video Section\" in the Customizer."
-msgstr ""
-#. Theme Name of the plugin/theme
-msgid "Bassist"
-msgstr ""
-
-#. Theme URI of the plugin/theme
-msgid "http://ebyb.eu/themes/bassist/"
-msgstr ""
-
-#. Description of the plugin/theme
-msgid "Bassist is a theme developed for musicians and based on Underscores. It has a customizable front page dedicated to show pictures, audios and videos and special styling for other post formats."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "acalfieri"
-msgstr ""
-
-#. Author URI of the plugin/theme
-msgid "http://ebyb.eu"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "List of contributors"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Featured Articles"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "Full Width, No Sidebar"
-msgstr ""
-
-#. Template Name of the plugin/theme
-msgid "No Sidebar"
+#: template-parts/section-video.php:50
+msgid "To fill up this section you have to create some posts, choose the format \"video\" in Post Format and save. To put a picture before this section, use the parallax settings in the Customizer. To completely hide this section, choose \"Hide Video Section\" in the Customizer."
 msgstr ""
