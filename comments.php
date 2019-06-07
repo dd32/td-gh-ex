@@ -32,7 +32,7 @@ if ( post_password_required() ) {
 			if ( '1' === $apelleuno_comment_count ) {
 				printf(
 					
-					esc_html_e( 'One thought on &ldquo;%1$s&rdquo;', 'apelle-uno' ),
+					esc_html__( 'One thought on &ldquo;%1$s&rdquo;', 'apelle-uno' ),
 					'<span>' . esc_html(get_the_title()) . '</span>'
 				);
 			} else {

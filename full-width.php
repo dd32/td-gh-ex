@@ -34,7 +34,7 @@ Template Name: Full-Width
 			?></div><?php
 			endwhile;
 			else :
-				esc_attr_e( 'Sorry, no posts matched your criteria.', 'apelle-uno' );
+				esc_html_e( 'Sorry, no posts matched your criteria.', 'apelle-uno' );
 			endif;
           ?>
           <?php if ( is_singular() && comments_open() ) { ?><button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg"><?php esc_html_e( 'Leave a comment.', 'apelle-uno' ); ?></button>
@@ -45,12 +45,9 @@ Template Name: Full-Width
     <div class="container">
         <div><?php the_posts_navigation() ?>
             <?php wp_link_pages(); ?>
-        </div>
-        
-    </div>
-    
+        </div>        
+    </div>    
 </div>
-
 
 <!-- Large modal -->
 
@@ -66,17 +63,13 @@ Template Name: Full-Width
         <div class="modal-body">
         	<?php
 			 comments_template(); 
-			?>
-	
-    
+			?>    
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal" ><?php esc_html_e('Close', 'apelle-uno' );?></button>
-        </div>
-      
+        </div>      
     </div>
   </div>
 </div>
-
 <!-- FINE Large modal -->
 <?php get_footer(); ?>

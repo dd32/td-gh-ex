@@ -2,15 +2,10 @@
 <html <?php language_attributes(); ?>>
 <head>
     <meta charset="<?php bloginfo( 'charset' ); ?>">
-<?php 	
-	wp_head(); ?>
-    <meta name="viewport" content="width=device-width">
-    
+	<?php wp_head(); ?>
+    <meta name="viewport" content="width=device-width">    
 </head>
-
 <body <?php body_class(); ?> >
-
-
 <div class="page-wrapper page-wrapper page-wrapper">
     <header id="main-header" class="l-header  l-header--concierge" role="banner" aria-hidden="false">
         <?php if ( has_header_image() ) { ?>
@@ -24,60 +19,47 @@
         <?php } ?>
 		<div class="l-header__top-strip">
 			<div class="l-top-strip js-topStrip ">
-				<div class="l-top-strip__cta-list">	
-                <?php if ( has_nav_menu( 'header-home-menu' ) ) {
-					?>
-                <!-------- MENU TOP HOME --------------->
-         <nav class="navbar navbar-expand-md navbar-apelleuno bg-apelleuno " id="stickyMenu"   >
-     
-
+				<div class="l-top-strip__cta-list">	                
+         			<nav class="navbar navbar-expand-md navbar-apelleuno bg-apelleuno " id="stickyMenu"   >
                             <div class="c-logo " >
-                                <a href="<?php echo esc_url(get_site_url()); ?>" class="navbar-brand" id="logo" itemprop="url">
-                                    
-                                    <?php 
-			$custom_logo_id = get_theme_mod( 'custom_logo' );
-			$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
-			if ( has_custom_logo() ) {
-					echo '<img src="'. esc_url( $logo[0] ) .'" alt=" ' . esc_attr( "Logo" ,'apelle-uno' ) . ' ' . esc_attr(get_bloginfo( 'name' )) . '" class="c-logo__img" itemprop="logo">';
-			} else {
-					echo '<b>'. esc_html(get_bloginfo( 'name' )) .'</b>';
-			}
-			?>
-                                </a>
+                                <a href="<?php echo esc_url(get_site_url()); ?>" class="navbar-brand" id="logo" itemprop="url"><?php 
+					$custom_logo_id = get_theme_mod( 'custom_logo' );
+					$logo = wp_get_attachment_image_src( $custom_logo_id , 'full' );
+					if ( has_custom_logo() ) {
+							echo '<img src="'. esc_url( $logo[0] ) .'" alt=" ' . esc_attr( "Logo" ,'apelle-uno' ) . ' ' . esc_attr(get_bloginfo( 'name' )) . '" class="c-logo__img" itemprop="logo">';
+					} else {
+							echo '<b>'. esc_html(get_bloginfo( 'name' )) .'</b>';
+					}
+								?></a>
                             </div>
 
-					
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topHomeMenu" aria-controls="topHomeMenu" aria-expanded="false" aria-label="<?php esc_attr_e( "Toggle navigation" ,'apelle-uno' ); ?>">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-
-                <?php 
-                    wp_nav_menu(
-                      array(
-                        'theme_location' => 'header-home-menu',
-                        'container' => 'div',
-                        'container_id' => 'topHomeMenu',
-                        'container_class' => 'collapse navbar-collapse ',
-                        'menu_class'=>'nav navbar-nav multi-level',
-                        'link_before' => '',
-                        'link_after' => '',
-						'items_wrap'=>'<ul id="%1$s" class="%2$s multi-level ">%3$s</ul>',
-						'depth'=>'11',
-						'walker'=> new apelleuno_Apelle_Walker_Nav_Menu()
-                      )
-                    );
+					<?php 
+					if ( has_nav_menu( 'header-home-menu' ) ) {
+					?><!-------- MENU TOP HOME --------------->
+                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#topHomeMenu" aria-controls="topHomeMenu" aria-expanded="false" aria-label="<?php esc_attr_e( "Toggle navigation" ,'apelle-uno' ); ?>">
+                            	<span class="navbar-toggler-icon"></span>
+                            </button><?php 
+						wp_nav_menu(
+						  array(
+							'theme_location' => 'header-home-menu',
+							'container' => 'div',
+							'container_id' => 'topHomeMenu',
+							'container_class' => 'collapse navbar-collapse ',
+							'menu_class'=>'nav navbar-nav multi-level',
+							'link_before' => '',
+							'link_after' => '',
+							'items_wrap'=>'<ul id="%1$s" class="%2$s multi-level ">%3$s</ul>',
+							'depth'=>'11',
+							'walker'=> new apelleuno_Apelle_Walker_Nav_Menu()
+						  )
+						);                   
                     
-                    
-                    ?>
-           
-</nav>  
-                <!-------- FINE MENU TOP HOME ---------->
-<?php } ?>
+                    ?><!-------- FINE MENU TOP HOME ----------><?php 
+					} ?>
+                    </nav>             
 				</div>
             </div>
-		</div>
-        
+		</div>        
         <div class="l-header__inner"  >
 			<div class="l-header__top-banner">
 				<div class="l-top-banner" >
@@ -102,9 +84,7 @@
 								'walker'=> new apelleuno_Apelle_Walker_Nav_Menu_primary()
                               )
                             );
-                            
-                            
-                            ?>
+							?>
                             </nav>
                         </div>
                         <!-------- PRIMARY TOP MENU ---------->
@@ -112,6 +92,5 @@
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div>        
 	</header>    
