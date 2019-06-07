@@ -2,8 +2,8 @@
 <section class="news-style1 category section off-white">
 	<div class="container">
 		<div class="row">
-			<div class="col-lg-9 col-12">
-				<div class="row">
+			<div class="col-lg-9 col-12 ">
+				<div class="row  blog-head">
 					<?php
 					if ( have_posts() ) :
 					/* Start the Loop */

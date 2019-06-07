@@ -12,7 +12,7 @@ Version: 1.0
 		================================*/ 	
 		$('.menu').slicknav({
 			prependTo:".mobile-nav",
-			label: 'nav',
+			label: '',
 			duration: 500,
 			easingOpen: "easeOutBounce",
 		});
@@ -178,8 +178,5 @@ Version: 1.0
 		$(".comments").click(function(){
 			 $("#popular").removeClass("active");
 			 $(".custom-widget-comments").addClass("active");
-		});
-
-		 $('.menu-item-has-children a').append('<i class="fa fa-angle-down"></i>');
-		 $('.menu-item-has-children .dropdown a i').removeClass('fa-angle-down');
+		});		 
 })(jQuery);

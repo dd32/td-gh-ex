@@ -29,6 +29,9 @@ Best News includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.0.3 - June 7 2019 =
+* Menu bug fix, text jusity add, site title bug fix, hyper link in adv add.
+
 = 1.0.2 - May 30 2019 =
 * Footer missed post image alligned, footer spelling fix, footer contact info link changed, text justify added in page
 
@@ -39,6 +42,10 @@ Best News includes support for Infinite Scroll in Jetpack.
 * Initial release
 
 == Upgrade Notice ==
+
+
+= 1.0.3 - June 7 2019 =
+* Menu bug fix with arrow mark, text jusity added in page , site title bug fix, hyper link in adv add.
 
 = 1.0.2 - May 30 2019 =
 * Footer missed post image alligned for mobile view, footer spelling fix, footer contact info link changed, text justify added in page

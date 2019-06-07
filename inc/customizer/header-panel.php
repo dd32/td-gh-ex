@@ -289,7 +289,22 @@ function best_news_header_settings_register( $wp_customize ) {
         'settings'          => 'best_news_top_header_ads_image',
       )));
 
-
+      /*banner_advertisement_section_url*/
+      $wp_customize->add_setting('best_news_top_header_ads_image_url',
+      array(
+          
+          'capability' => 'edit_theme_options',
+          'sanitize_callback' => 'esc_url_raw',
+      )
+      );
+      $wp_customize->add_control('best_news_top_header_ads_image_url',
+      array(
+          'label' => esc_html__('URL Link', 'best-news'),
+          'section' => 'best_news_top_header_ads_section',
+          'type' => 'text',
+          'priority' => 90,
+      )
+      );  
       /*----------------------------------------------------------------------------------------------------------------------------------------*/
       /**
        * Hot News section

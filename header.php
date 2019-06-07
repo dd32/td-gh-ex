@@ -70,7 +70,7 @@
 		<div class="header-inner">
 			<div class="container">
 				<div class="row">
-					<div class="col-lg-3 col-md-3 col-12">
+					<div class="col-lg-4 col-md-12 col-12">
 						<div class="logo">
 							<div class="text-logo">
 								<?php 
@@ -78,9 +78,13 @@
 									the_custom_logo();
 								else:    
 									?>
-									<h1 class="site-title"><a href="<?php echo esc_url(home_url());?>" class="navbar-brand"><?php bloginfo('title');?></a></h1>
-									<p class="site-description"><?php echo get_bloginfo( 'description', 'display' ); /* WPCS: xss ok. */ ?></p>
-
+									<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+									<?php
+									$new_blog_description = get_bloginfo( 'description', 'display' );
+									if ( $new_blog_description || is_customize_preview() ) :
+									?>
+										<p class="site-description pb-5"><?php echo $new_blog_description; /* WPCS: xss ok. */ ?></p>
+									<?php endif; ?>
 								<?php endif;?>
 							</div>
 						</div>
@@ -90,9 +94,10 @@
 					<?php if(get_theme_mod('best_news_top_header_ads_enable')):
 						$ads_img_url = get_theme_mod('best_news_top_header_ads_image');	
 						?>
-						<div class="col-lg-9 col-md-9 col-12">
+						<div class="col-lg-8 col-md-12 col-12">
 							<div class="advertise right">
-								<img src="<?php echo esc_url($ads_img_url);?>">
+							<?php $test = get_theme_mod('best_news_top_header_ads_image_url') ; ?>
+							<a href="<?php echo esc_url(get_theme_mod('best_news_top_header_ads_image_url'))?>" target = "_blank"><img src="<?php echo esc_url($ads_img_url);?>" ></a>
 							</div>
 						</div>
 					<?php endif;?>

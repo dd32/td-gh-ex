@@ -61,7 +61,7 @@ endif ; ?>
 						<div class="col-lg-3 col-12">
 							<?php get_sidebar();?>
 						</div>
-						<div class="col-lg-9 col-12">
+						<div class="col-lg-9 col-12 text-justify">
 						<?php
 						while ( have_posts() ) :
 							the_post();
