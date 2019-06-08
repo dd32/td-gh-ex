@@ -174,7 +174,7 @@ if ( isset( $wp_customize ) && ! weaverx_getopt( '_disable_customizer' ) ) {
 
 
 		$local = array(
-			'wp_vers'  => $wp_vers,
+			'wp_vers'  => $cur_vers,
 			'starting' => esc_html__( 'Start Here', 'weaver-xtreme' ),
 			'intro'    => esc_html__( 'Theme Introduction', 'weaver-xtreme' ),
 			'subtheme' => esc_html__( 'Select Subthemes', 'weaver-xtreme' ),

@@ -51,7 +51,8 @@ if ( current_user_can( 'edit_posts' ) ) {
 	}
 
 // callback for admin_print_styles in add_admin above
-	function weaverx_admin_scripts() {
+	function weaverx_admin_scripts( ) {
+
 		/* called only on the admin page, enqueue our special style sheet here ( for tabbed pages ) */
 		wp_enqueue_style( 'wvrxaStylesheet', get_template_directory_uri() . WEAVERX_ADMIN_DIR . '/assets/css/admin-style.css' );
 		if ( is_rtl() ) {

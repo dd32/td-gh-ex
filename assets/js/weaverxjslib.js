@@ -2,7 +2,7 @@
  * Weaver Xtreme JavaScript support Library
  *
  * Author: WeaverTheme - www.weavertheme.com
- * @version 3.1.12
+ * @version 4.1
  * @license GNU Lesser General Public License, http://www.gnu.org/copyleft/lesser.html
  * @author  Bruce Wampler
  *
@@ -27,7 +27,7 @@ var agent = navigator.userAgent;
 // *********************************** >>>  weaverxBrowserWidth <<< *******************************************
 function weaverxBrowserWidth() {
     // This is a cross-browser way to get the window width. We will use it in all script
-    // tht need the width to endure consistent treatement of the width.
+    // that need the width to endure consistent treatement of the width.
     var width = 768;
     if (typeof(window.innerWidth) == 'number') {
         width = window.innerWidth; //Non-IE
@@ -301,21 +301,6 @@ if (!Object.create) { // IE8 shim for Object.create
             // User resizeX lib to handle menu resizing
 
             $('#wrapper').resizeX(function() { menu.toggleMobile(); });
-
-            /* original resizer via timer
-
-            // Throttle the resize event.
-            $(window).on('resize', function() {
-            	if ( doCallback ) {
-            		doCallback = false;
-
-            		setTimeout( function() {
-            			menu.toggleMobile();
-            			doCallback = true;
-            		}, 150 );
-            	}
-            });
-            */
         },
 
         /**
@@ -442,7 +427,7 @@ if (!Object.create) { // IE8 shim for Object.create
 /* ------------------------------------------------------
  Fix drop-down menus for Android devices
 
-Credits: Based on:Marco Chiesi - Black Studio Touch Dropedown Menu plugin - www.blackstudio.it
+Credits: Based on:Marco Chiesi - Black Studio Touch Dropdown Menu plugin - www.blackstudio.it
 	Originally partially inspired by the one from Ross McKay found here
 http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-devices/
 */
@@ -515,11 +500,21 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
 
         var addHeight = 0;
 		var adjust = 1;
+		var topMenu = '#nav-secondary .wvrx-fixedtop';
+		var botMenu = '#nav-primary .wvrx-fixedtop';
+
+        if ( typeof wvrxOpts !== 'undefined' &&  (wvrxOpts.primaryMove == '1'|| wvrxOpts.secondaryMove == '1') ) {
+            botMenu = '#nav-secondary .wvrx-fixedtop';
+            topMenu = '#nav-primary .wvrx-fixedtop';
+        }
+
+
         if ($('body').hasClass('admin-bar')) { // fix on wide screens only, will be overlap on mobile
             addHeight = $('#wpadminbar').outerHeight();
         }
 
         // built-in fixed-top items, by priority: #inject_fixedtop, #nav-secondary, #nav-primary, #header-widget-area
+        // adjusted for primaryMove
         var multiTop = 0;
         var curHeight = $('#inject_fixedtop.wvrx-fixedtop').outerHeight() - 1; // put #inject_fixedtop first
         if (addHeight > 0) {
@@ -527,9 +522,9 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
         }
         multiTop = curHeight;
 
-		curHeight = $('#nav-secondary .wvrx-fixedtop').outerHeight() - adjust;
+		curHeight = $(topMenu).outerHeight() - adjust;
         if (curHeight > 0) {
-            $('#nav-secondary .wvrx-fixedtop').css('top', addHeight + multiTop);
+            $(topMenu).css('top', addHeight + multiTop);
         }
         multiTop = multiTop + curHeight;
 
@@ -543,15 +538,15 @@ http://snippets.webaware.com.au/snippets/make-css-drop-down-menus-work-on-touch-
         multiTop = multiTop + curHeight;
 
 
-        curHeight = $('#nav-primary .wvrx-fixedtop').outerHeight() - adjust;
+        curHeight = $(botMenu).outerHeight() - adjust;
         if (curHeight > 0) {
-            $('#nav-primary .wvrx-fixedtop').css('top', addHeight + multiTop );
+            $(botMenu).css('top', addHeight + multiTop );
         }
         multiTop = multiTop + curHeight;
 
 
         if (multiTop > 0) {
-            $('body').css('margin-top', multiTop - adjust); // now maker room for the top fixed areas
+            $('body').css('margin-top', multiTop - adjust); // now make room for the top fixed areas
         } else { // none of the built-in fixed top items used, so see if user added own wvrx-fixed top class to anyting
 
             var fixedHeight = $('.wvrx-fixedtop').outerHeight();

@@ -535,12 +535,17 @@ function weaverx_enqueue_scripts() {    // action definition
 		weaverx_set_cur_page_id( get_the_ID() );
 	}            // this must go before weaverx_get_video_render() call
 
+	$primary_move = weaverx_getopt( 'm_primary_move') ? '1' : '0';
+	$secondary_move = weaverx_getopt( 'm_secondary_move') ? '1' : '0';
+
 	$local = array(
 		'useSmartMenus'    => $useSM,
 		'menuAltswitch'    => $altsw,
 		'mobileAltLabel'   => $altLabel,
 		'primaryScroll'    => weaverx_getopt( 'm_primary_fixedtop' ),
+		'primaryMove'      => $primary_move,
 		'secondaryScroll'  => weaverx_getopt( 'm_secondary_fixedtop' ),
+		'secondaryMove'      => $secondary_move,
 		'headerVideoClass' => weaverx_get_video_render(),
 	);
 

@@ -8,8 +8,8 @@ fixed-width, three-columns, two-columns, black, blue, brown, green, orange, red,
 translation-ready, rtl-language-support, editor-style
 Copyright: Weaver Xtreme Theme - Copyright 2014-1017 Bruce E Wampler
 Requires at least: 4.9
-Tested up to: 5.1
-Stable tag: 4.3.1.4
+Tested up to: 5.2
+Stable tag: 4.3.1.5
 
 == Description ==
 
@@ -616,3 +616,6 @@ Fix: hide post date broken
 
 = Version 4.3.1.4 =
 Fix: hide post author
+
+= Version 4.3.1.5 =
+Fix: Primary and Secondary display order to match move options for fixed to top

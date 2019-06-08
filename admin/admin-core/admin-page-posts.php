@@ -59,7 +59,13 @@ function weaverx_pp_post_extras_pt() {
 
 add_action( 'admin_enqueue_scripts', 'weaverx_pp_enqueue_admin_scripts' );
 
-function weaverx_pp_enqueue_admin_scripts() {
+function weaverx_pp_enqueue_admin_scripts( $hook ) {
+	//weaverx_alert(' enqueue hook: ' . $hook);
+
+	if ( $hook != 'appearance_page_weaverxplus' && $hook != 'post.php' && $hook != 'post-new.php') {     // only load script if on my admin page or page/post editor
+		return;
+	}
+
 	wp_enqueue_script( 'weaverxYetii', get_template_directory_uri() . '/admin/admin-core/assets/js/yetii/yetii.js', false, WEAVERX_VERSION );
 	wp_enqueue_style( 'weaverxYetiiCSS', get_template_directory_uri() . '/admin/admin-core/assets/js/yetii/yetii-weaver' . WEAVERX_MINIFY . '.css', false, WEAVERX_VERSION );
 }

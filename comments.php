@@ -38,7 +38,7 @@ if ( post_password_required() ) { ?>
 
 <?php
 $c_counts = get_comment_count( get_the_ID() );
-$c_count  = $c_counts['approved'];
+$c_count = $c_counts['approved'];
 if ( comments_open() || ( $c_count > 0 && ! weaverx_getopt_checked( 'hide_old_comments' ) ) ) {
 	echo( "\t\t<hr class='comments-hr' />\n" );
 
