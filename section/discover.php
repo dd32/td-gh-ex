@@ -30,7 +30,7 @@
             </div>
             <p><?php echo esc_html($queried_post->post_content);?></p>
             <?php wp_reset_postdata(); ?>
-            <a href="<?php echo esc_html($discover_btn_url['url']);?>" class="btn btn-lg"><?php echo esc_html($discover_btn_title);?></a>
+            <a href="<?php echo esc_url($discover_btn_url['url']);?>" class="btn btn-lg"><?php echo esc_html($discover_btn_title);?></a>
           </div>
         </div>
 

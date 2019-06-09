@@ -46,7 +46,7 @@ if ( 'yes' === $sample_about['about_enable'] ):
                     <div class="percentagem-num"><?php echo esc_html($brand['item_percentage']);?></div>
                   </div>
                   <div class="progressBar">
-                    <div class="percentagem" style="width: <?php echo esc_html($brand['item_percentage']);?>;"></div>
+                    <div class="percentagem" style="width: <?php echo esc_attr($brand['item_percentage']);?>;"></div>
                   </div>
                 </div>
               </div>

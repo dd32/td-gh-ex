@@ -12,7 +12,6 @@ function register_elementor_widgets() {
 		require_once( get_template_directory() . '/elementor-widget/widgets/cfund.php' );
 		require_once( get_template_directory() . '/elementor-widget/widgets/services.php' );
 		require_once( get_template_directory() . '/elementor-widget/widgets/numbering.php' );
-		require_once( get_template_directory() . '/elementor-widget/widgets/join.php' );
 		require_once( get_template_directory() . '/elementor-widget/widgets/blog.php' );
 		require_once( get_template_directory() . '/elementor-widget/widgets/testimonial.php' );
 		require_once( get_template_directory() . '/elementor-widget/widgets/query.php' );

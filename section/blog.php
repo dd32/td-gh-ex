@@ -1,15 +1,15 @@
 <?php
 if ( 'yes' === $sample_blog['blog_enable'] ):
 
-  $blog_title = $sample_blog['title'];
-  $blog_tagline = $sample_blog['sub_title'];
-  $blog_more_detail_text = $sample_blog['more_detail_btn_text'];
+  $blogTitle = $sample_blog['title'];
+  $blogTagline = $sample_blog['sub_title'];
+  $blogMoreDetailText = $sample_blog['more_detail_btn_text'];
   ?>
   <section class="afund mgb-lg">
     <div class="container">
       <div class="main-title">
-        <span class="sub-title"><?php echo esc_html( $blog_tagline );?></span>
-        <h1 class="title"><?php echo esc_html($blog_title);?></h1>
+        <span class="sub-title"><?php echo esc_html( $blogTagline );?></span>
+        <h1 class="title"><?php echo esc_html($blogTitle);?></h1>
       </div>
       <div class="row">
 
@@ -48,7 +48,7 @@ if ( 'yes' === $sample_blog['blog_enable'] ):
               <?php the_excerpt();?>
             </div>
             <div class="card-footer">
-              <a href="<?php the_permalink();?>" class="more-detail"><?php echo esc_html( $blog_more_detail_text );?></a>
+              <a href="<?php the_permalink();?>" class="more-detail"><?php echo esc_html( $blogMoreDetailText );?></a>
               <span class="cmnt"><span class="fa fa-comment-o" aria-hidden="true"></span><?php echo esc_html(get_comments_number());?><?php esc_html_e( 'comments', 'best-charity' );?></span>
             </div>
           </div>

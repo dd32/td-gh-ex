@@ -54,7 +54,7 @@ if( ! function_exists('top_header_contact_info_items')):
 		if( $contact_items  ){ 
 			foreach( $contact_items as $contact ){ ?>
 				<li>
-					<a href="#"><span class="<?php echo esc_attr($contact['icon']);?>" aria-hidden="true"></span><?php echo esc_attr($contact['title']);?></a>
+					<a href="#"><span class="<?php echo esc_attr($contact['icon']);?>" aria-hidden="true"></span><?php echo esc_html($contact['title']);?></a>
 				</li>
 				<?php
 			}
@@ -90,7 +90,7 @@ if( !function_exists( 'best_charity_about_brand_items' )):
 							<div class="percentagem-num"><?php echo esc_html($brand['percentage']);?></div>
 						</div>
 						<div class="progressBar">
-							<div class="percentagem" style="width: <?php echo esc_html($brand['percentage']);?>;"></div>
+							<div class="percentagem" style="width: <?php echo esc_attr($brand['percentage']);?>;"></div>
 						</div>
 					</div>
 				</div>

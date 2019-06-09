@@ -35,8 +35,6 @@ function best_charity_scripts() {
 	// Slick Nav JS
 	wp_enqueue_script( 'slick', get_template_directory_uri() . '/assets/js/slick.min.js', array('jquery'), '1.9.0', true );
 
-	wp_enqueue_script( 'magnific-popup', get_template_directory_uri() . '/assets/js/jquery.magnific-popup.min.js', array('jquery'), '1.0.0', true );
-
 	// myjquery JS
 	wp_enqueue_script( 'best-charity-main', get_template_directory_uri() . '/assets/js/myjquery.min.js', array('jquery'), '1.0.0', true );
 	wp_enqueue_script( 'best-charity-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );

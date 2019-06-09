@@ -5,14 +5,14 @@ Tags: custom-background, custom-logo, custom-menu,custom-header,featured-images,
 
 Requires at least: 4.9
 Tested up to: 5.1.1
-Stable tag: 1.0.1
+Stable tag: 1.0.2
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
 
 == Description ==
 
-Best Charity is a simple, clean, responsive and user-friendly  charity WordPress theme specially designed for charity, NGO, trust, donation camp, foundations or a non-profit organisation. It can be used by those who often organise fundraising events, blood donation camps, welfare activities, campaigns etc.  It has all the features which make it a perfect charity wordpress theme but it can be used for multiple purposes as to write a blog on charity activities and welfare related things or as a portfolio. It has a fully responsive layout and cross-browser compatibility.The NGO theme is written in clean and secure codes. It is SEO-friendly which makes it rank higher in search engine results.It has a testimonial section where people can express their views on your charity work.
+Best Charity is a simple, clean, responsive and user-friendly  charity WordPress theme specially designed for charity, NGO, trust, donation camp, foundations or a non-profit organisation. It can be used by those who often organise fundraising events, blood donation camps, welfare activities, campaigns etc.  It has all the features which make it a perfect charity wordPress theme but it can be used for multiple purposes as to write a blog on charity activities and welfare related things or as a portfolio. It has a fully responsive layout and cross-browser compatibility.The NGO theme is written in clean and secure codes. It is SEO-friendly which makes it rank higher in search engine results.It has a testimonial section where people can express their views on your charity work.
 
 == Installation ==
 
@@ -62,13 +62,15 @@ Best Charity includes support for Infinite Scroll in Jetpack.
 = 1.0.1  =
 * escaping add, remove unwanted files
 
+= 1.0.1  =
+* escaping correction, remove unwanted files and bug fixes
+
 == Credits ==
 
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
 
 * Bootstrap v4.1.0 (https://getbootstrap.com/), Copyright 2011-2018 The Bootstrap Authors, Copyright 2011-2018 Twitter, Inc. Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
-
 
 * Lightbox v2.10.0, by Lokesh Dhakar, More info:http://lokeshdhakar.com/projects/lightbox2/, Copyright 2007, 2018 Lokesh Dhakar, Released under the MIT license, https://github.com/lokesh/lightbox2/blob/master/LICENSE, @preserve
 
@@ -80,9 +82,11 @@ Best Charity includes support for Infinite Scroll in Jetpack.
 
 * Font Awesome 4.7.0 by @davegandy - http://fontawesome.io - @fontawesome, License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
 
+* BreadcrumbTrail, v1.0.0, Justin Tadlock <justin@justintadlock.com> (Copyright (c) 2008 - 2015, Justin Tadlock),  http://themehybrid.com/plugins/breadcrumb-trail, http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
 
 == image used in screenshot ==
 
-All images used in the theme under Pexels License (https://www.pexels.com/photo-license/)
+All images used in the theme under CCO License (https://pxhere.com/en/license)
 
-https://www.pexels.com/photo/adult-beanie-crisis-despair-220365/
+https://pxhere.com/en/photo/373298
