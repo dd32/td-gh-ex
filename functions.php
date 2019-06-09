@@ -179,7 +179,7 @@ function best_commerce_scripts() {
 
 	wp_enqueue_style( 'jquery-slick', get_template_directory_uri() . '/vendors/slick/slick' . $min . '.css', '', '1.5.9' );
 
-	wp_enqueue_style( 'best-commerce-style', get_stylesheet_uri(), array(), '2.0.1' );
+	wp_enqueue_style( 'best-commerce-style', get_stylesheet_uri(), array(), '2.0.2' );
 
 	wp_enqueue_script( 'best-commerce-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix' . $min . '.js', array(), '20130115', true );
 
@@ -187,7 +187,7 @@ function best_commerce_scripts() {
 
 	wp_enqueue_script( 'jquery-slick', get_template_directory_uri() . '/vendors/slick/slick' . $min . '.js', array( 'jquery' ), '1.5.9', true );
 
-	wp_enqueue_script( 'best-commerce-custom', get_template_directory_uri() . '/js/custom' . $min . '.js', array( 'jquery' ), '2.0.1', true );
+	wp_enqueue_script( 'best-commerce-custom', get_template_directory_uri() . '/js/custom' . $min . '.js', array( 'jquery' ), '2.0.2', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );

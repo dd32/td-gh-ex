@@ -126,8 +126,8 @@ function best_commerce_customize_controls_register_scripts() {
 
 	$min = defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ? '' : '.min';
 
-	wp_enqueue_style( 'best-commerce-customize-controls', get_template_directory_uri() . '/css/customize-controls' . $min . '.css', array(), '2.0.1' );
-	wp_enqueue_script( 'best-commerce-customize-controls', get_template_directory_uri() . '/js/customize-controls' . $min . '.js', array( 'jquery', 'customize-controls' ), '2.0.1', true );
+	wp_enqueue_style( 'best-commerce-customize-controls', get_template_directory_uri() . '/css/customize-controls' . $min . '.css', array(), '2.0.2' );
+	wp_enqueue_script( 'best-commerce-customize-controls', get_template_directory_uri() . '/js/customize-controls' . $min . '.js', array( 'jquery', 'customize-controls' ), '2.0.2', true );
 }
 
 add_action( 'customize_controls_enqueue_scripts', 'best_commerce_customize_controls_register_scripts', 0 );
