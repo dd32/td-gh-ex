@@ -1,10 +1,13 @@
 === AT Business ===
 
 Contributors: axlethemes
-Requires PHP: 5.2
 Requires at least: 4.7
-Tested up to: 5.1.1
-Stable tag: 1.0.1
+Requires PHP: 5.2
+Tested up to: 5.2.1
+Stable tag: 2.0.1
+License: GPLv3
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Copyright: (c) 2019 Axle Themes
 
 == Description ==
 
@@ -25,6 +28,9 @@ AT Business WordPress Theme is child theme of Business Key WordPress Theme, Copy
 Business Key WordPress Theme is distributed under the terms of the GNU GPL
 
 == Changelog ==
+
+= 2.0.1 - Jun 09 2019 =
+* Readme file updated
 
 = 1.0.1 - Apr 29 2019 =
 * Minor updates
