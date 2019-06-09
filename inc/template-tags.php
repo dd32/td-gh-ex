@@ -313,7 +313,7 @@ if( ! function_exists('arrival_post_view')){
 		<span class="post-view">
 			<i class="fa fa-eye" aria-hidden="true"></i>
 			<span class="count">
-			<?php echo getPostViews(absint(get_the_ID())); ?>
+			<?php echo ultra_companion_get_post_views(absint(get_the_ID())); ?>
 			</span>
 		</span>
 		<?php 

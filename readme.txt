@@ -93,6 +93,27 @@ Slick Slider
 * https://github.com/kenwheeler/slick/blob/master/LICENSE
 
 
+----------------------------------------
+
+Credits
+
+-----------------------------------------
+Some of the modules on this theme is inspird from some other resources here we have listed them all
+
+
+Kirki
+https://github.com/aristath/kirki
+https://opensource.org/licenses/MIT
+
+
+Jetpack
+https://github.com/Automattic/jetpack/blob/master/modules/lazy-images/lazy-images.php
+
+
+WP Rig
+https://github.com/wprig/wprig/
+https://github.com/wprig/wprig/blob/master/LICENSE
+
 
 ---------------------
 == Changelog ==

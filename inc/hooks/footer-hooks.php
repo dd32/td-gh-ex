@@ -47,6 +47,7 @@ if(! function_exists('arrival_btm_footer')){
 		$_footer_copyright_border_top = get_theme_mod('arrival_footer_copyright_border_top',$defaults['arrival_footer_copyright_border_top']);
 		
 		$footer_border = ($_footer_copyright_border_top == true) ? 'border-enable' : '';
+		$ftr_def_text_value = apply_filters('arrival_footer_credit_texts','__return_true' );
 	?>
 	<div class="footer-btm <?php echo esc_attr($footer_border);?>">
 		<div class="site-info">
@@ -59,12 +60,18 @@ if(! function_exists('arrival_btm_footer')){
 				printf( esc_html__( 'Proudly powered by %s', 'arrival' ), 'WordPress' );
 				?>
 			</a>
-			<?php } ?>
+			<?php } 
+			
+			if( $ftr_def_text_value == true ): ?>
+
 			<span class="sep"> | </span>
 			<?php echo esc_html__('Theme: Arrival by','arrival'); ?>
 			<a href="<?php echo esc_url( __('https://wpoperation.com/','arrival') )?>">
 				<?php echo esc_html__('WPoperation','arrival'); ?>
 			</a>
+
+			<?php endif; ?>
+
 		</div><!-- .site-info -->
 		
 		<?php if( $_footer_icons_enable == 'yes' ){ ?>

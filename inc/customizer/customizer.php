@@ -46,10 +46,22 @@ function arrival_customize_register( $wp_customize ) {
 
 	require get_template_directory() . '/inc/customizer/arrival-customizer.php';
 
+	/**
+	* Hook to pass additional customizer settings from child themes
+	* the hook accepts array or single file
+	*/
 	$arrival_req_additional = apply_filters('arrival_customizer_additionals_req','__return_false');
 	
 	if( $arrival_req_additional != '__return_false' ){
-		require $arrival_req_additional;	
+
+		if( is_array($arrival_req_additional) ){
+			foreach ( $arrival_req_additional as $arrival_req ){
+				require $arrival_req;
+			}
+		}else{
+			require $arrival_req_additional;		
+		}
+		
 	}
 
 }
@@ -103,7 +115,7 @@ add_action('customize_controls_enqueue_scripts','arrival_customizer_scripts');
 * @return text for premium version
 */
 
-
+add_filter('arrival_customizer_text_pro','__return_false');
 if( ! function_exists('arrival_customizer_pro_info')){
 	function arrival_customizer_pro_info($wp_customize,$call_back_id, $section){
 

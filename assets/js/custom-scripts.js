@@ -28,13 +28,17 @@ jQuery(document).ready(function ($) {
     * One page navigation
     *
     */
-    $(".site-header .main-navigation,.plx-nav").onePageNav({
-        currentClass: 'current',
-        changeHash: false,
-        scrollSpeed: 850,
-        scrollThreshold: 0.5,
-        
-    });
+    var enableOnepageMenu = arrival_loc_script.onepagenav;
+
+    if( 'yes' == enableOnepageMenu ){
+        $(".site-header .main-navigation,.plx-nav").onePageNav({
+            currentClass: 'current',
+            changeHash: false,
+            scrollSpeed: 850,
+            scrollThreshold: 0.5,
+            
+        });
+    }
     
 
     
@@ -56,7 +60,7 @@ jQuery(document).ready(function ($) {
 */   
  $('body').on('click','.toggle-wrapp', function(){
 
- 	$('.site-header').toggleClass('toggled-on');
+    $('.site-header').toggleClass('toggled-on');
  });
 
 //close sidemenu on click outside it's container

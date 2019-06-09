@@ -44,7 +44,10 @@ function arrival_scripts() {
 	wp_enqueue_script( 'arrival-wooButtons', get_theme_file_uri( '/assets/js/wooButtons.js' ), array('jquery'),ARRIVAL_VER, false );
 	wp_enqueue_script( 'slick', get_theme_file_uri( '/assets/lib/slick/slick.min.js' ), ARRIVAL_VER, false );
 	wp_enqueue_script( 'jquery-fitvids', get_theme_file_uri( '/assets/lib/jquery-fitvids/jquery.fitvids.js' ), array('jquery'), ARRIVAL_VER, false );
-	wp_enqueue_script( 'jquery-nav', get_theme_file_uri( '/assets/lib/onepagenav/jquery.nav.js' ), array('jquery'), ARRIVAL_VER, false );
+
+	if( $arrival_one_page_menus == 'yes' ){
+		wp_enqueue_script( 'jquery-nav', get_theme_file_uri( '/assets/lib/onepagenav/jquery.nav.js' ), array('jquery'), ARRIVAL_VER, false );
+	}
 	
 
 	//enqueue jarallax script
@@ -56,7 +59,13 @@ function arrival_scripts() {
 	wp_enqueue_script( 'arrival-skip-link-focus-fix', get_theme_file_uri( '/assets/js/skip-link-focus-fix.js' ), array('jquery'), ARRIVAL_VER, false );
 	wp_script_add_data( 'arrival-skip-link-focus-fix', 'defer', true );
 
-	wp_enqueue_script( 'arrival-scripts', get_theme_file_uri( '/assets/js/custom-scripts.js' ), array('jquery'), ARRIVAL_VER, false );
+	wp_register_script( 'arrival-scripts', get_theme_file_uri( '/assets/js/custom-scripts.js' ), array('jquery'), ARRIVAL_VER, false );
+
+	$script_vals = array(
+		'onepagenav' => $arrival_one_page_menus
+	);
+	wp_localize_script('arrival-scripts','arrival_loc_script',$script_vals );
+	wp_enqueue_script('arrival-scripts');
 
 	// Enqueue comment script on singular post/page views only.
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

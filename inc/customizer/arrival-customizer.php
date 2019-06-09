@@ -732,6 +732,9 @@ $wp_customize->add_control( new Arrival_Customizer_Dimensions_Control( $wp_custo
 ) ) );
 
 //menu item font-weight
+$arrival_free_font_weight = apply_filters('arrival_free_nav_font_weight','__return_true' );
+if( $arrival_free_font_weight == true ){
+
 $wp_customize->add_setting( $prefix.'_nav_font_weight', array(
   'sanitize_callback'   => 'arrival_sanitize_number',
   'default'             => $default[$prefix.'_nav_font_weight'],
@@ -753,6 +756,7 @@ $wp_customize->add_control( $prefix.'_nav_font_weight', array(
         )
         
       ) );
+}
 
 //disable header box-shadow
 $wp_customize->add_setting($prefix.'_header_box_shadow_disable', array(
