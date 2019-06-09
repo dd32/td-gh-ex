@@ -2,8 +2,9 @@
 
 Contributors: axlethemes
 Requires at least: 4.7
-Tested up to: 5.1.1
-Stable tag: 2.0.1
+Requires PHP: 5.2
+Tested up to: 5.2.1
+Stable tag: 2.0.2
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Copyright: (c) 2019 Axle Themes
@@ -21,6 +22,11 @@ Best Business is a modern and trendy, useful and resourceful, versatile and flex
 3. Click Activate to use your new theme right away.
 
 == Changelog ==
+
+= 2.0.2 - Jun 09 2019 =
+* Demo content updated
+* Theme info page updated
+* Readme info updated
 
 = 2.0.1 - May 06 2019 =
 * Frontpage template added

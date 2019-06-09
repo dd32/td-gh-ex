@@ -65,7 +65,7 @@
 }
 
 .at-wrap .feature-section {
-	padding: 40px 0 0;
+	padding: 0px;
 }
 
 .at-wrap .feature-section .col {
@@ -120,10 +120,9 @@
 .at-wrap .upgrade-to-pro {
 	height: auto;
 	overflow: hidden;
-	padding-top: 60px;
+	padding-top: 40px;
 }
 
-.at-wrap .upgrade-to-pro div,
-.at-wrap .upgrade-to-pro .button {
+.at-wrap .upgrade-to-pro div {
 	margin-bottom: 20px;
 }

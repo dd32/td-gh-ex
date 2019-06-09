@@ -19,7 +19,7 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 		 *
 		 * @var string $version Version.
 		 */
-		private $version = '2.0.1';
+		private $version = '2.0.2';
 
 		/**
 		 * Page configuration.
@@ -445,8 +445,8 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 				wp_enqueue_script( 'plugin-install' );
 				wp_enqueue_script( 'updates' );
 
-				wp_enqueue_style( 'best-business-about', get_template_directory_uri() . '/vendors/about/css/about' . $min . '.css', array(), '2.0.1' );
-				wp_enqueue_script( 'best-business-about', get_template_directory_uri() . '/vendors/about/js/about' . $min . '.js', array( 'jquery' ), '2.0.1' );
+				wp_enqueue_style( 'best-business-about', get_template_directory_uri() . '/vendors/about/css/about' . $min . '.css', array(), '2.0.2' );
+				wp_enqueue_script( 'best-business-about', get_template_directory_uri() . '/vendors/about/js/about' . $min . '.js', array( 'jquery' ), '2.0.2' );
 				$js_vars = array(
 					'ajaxurl' => esc_url( admin_url( 'admin-ajax.php' ) ),
 				);
@@ -466,11 +466,11 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 
 				if ( ! empty( $getting_started ) ) {
 
-					echo '<div class="feature-section three-col">';
+					echo '<div class="feature-section has-3-columns alignleft">';
 
 					foreach ( $getting_started as $getting_started_item ) {
 
-						echo '<div class="col card">';
+						echo '<div class="card">';
 
 						if ( ! empty( $getting_started_item['title'] ) ) {
 							echo '<h3>' . esc_html( $getting_started_item['title'] ) . '</h3>';
@@ -526,7 +526,7 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 
 			if ( ! empty( $recommended_actions ) ) {
 
-				echo '<div class="about-tab-wrapper feature-section action-recommended" id="plugin-filter1">';
+				echo '<div class="about-tab-wrapper feature-section action-recommended has-1-columns alignleft" id="plugin-filter1">';
 
 				$actions = array();
 
@@ -554,7 +554,7 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 
 						$complete_class = ( true === $complete ) ? 'complete': '';
 
-						echo '<div class="action-recommended-box ' . esc_attr( $complete_class ) . '">';
+						echo '<div class="card is-fullwidth action-recommended-box ' . esc_attr( $complete_class ) . '">';
 
 						if ( isset( $action_value['id'] ) ) {
 							$nonce = 'action-' . $action_value['id'];
@@ -625,10 +625,10 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 		public function demo_content() {
 			$demo_content = ( isset( $this->config['demo_content'] ) ) ? $this->config['demo_content'] : array();
 
-			echo '<div class="feature-section demo-content">';
+			echo '<div class="feature-section demo-content has-1-columns alignleft">';
 
 			if ( isset( $demo_content['description'] ) && ! empty( $demo_content['description'] ) ) {
-				echo '<div>' . wp_kses_post( $demo_content['description'] ) . '</div>';
+				echo '<div class="card is-fullwidth"><p>' . wp_kses_post( $demo_content['description'] ) . '</p></div>';
 			}
 
 			echo '</div>';
@@ -643,7 +643,9 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 		public function upgrade_to_pro() {
 			$upgrade_to_pro = ( isset( $this->config['upgrade_to_pro'] ) ) ? $this->config['upgrade_to_pro'] : array();
 
-			echo '<div class="feature-section upgrade-to-pro">';
+			echo '<div class="feature-section upgrade-to-pro has-1-columns alignleft">';
+
+			echo '<div class="card is-fullwidth">';
 
 			if ( isset( $upgrade_to_pro['description'] ) && ! empty( $upgrade_to_pro['description'] ) ) {
 				echo '<div>' . wp_kses_post( $upgrade_to_pro['description'] ) . '</div>';
@@ -666,6 +668,8 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 
 			echo '</div>';
 
+			echo '</div>';
+
 		}
 
 		/**
@@ -674,7 +678,9 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 		 * @since 1.0.0
 		 */
 		public function useful_plugins() {
-			echo '<div class="feature-section useful-plugins">';
+			echo '<div class="feature-section useful-plugins has-1-columns alignleft">';
+
+			echo '<div class="card is-fullwidth">';
 
 			global $tgmpa;
 
@@ -709,6 +715,8 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 				}
 			}
 
+			echo '</div>';
+
 			echo '</div><!-- .useful-plugins -->';
 		}
 
@@ -718,7 +726,7 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 		 * @since 1.0.0
 		 */
 		public function support() {
-			echo '<div class="feature-section three-col">';
+			echo '<div class="feature-section has-3-columns alignleft">';
 
 			if ( ! empty( $this->config['support_content'] ) ) {
 
@@ -728,7 +736,7 @@ if ( ! class_exists( 'Best_Business_About' ) ) {
 
 					foreach ( $support_steps as $support_step ) {
 
-						echo '<div class="col card">';
+						echo '<div class="card">';
 
 						if ( ! empty( $support_step['title'] ) ) {
 							echo '<h3>';
