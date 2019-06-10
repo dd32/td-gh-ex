@@ -54,6 +54,19 @@ function best_classifieds_search_form($html) {
  return $html;
 }
 
+add_action( 'admin_menu', 'best_classifieds_admin_menu');
+function best_classifieds_admin_menu( ) {
+    add_theme_page( esc_html__('Pro Feature','best-classifieds'), esc_html__('Best Classifieds Pro','best-classifieds'), 'manage_options', 'best-classifieds-pro-buynow', 'best_classifieds_pro_buy_now', 300 );   
+}
+function best_classifieds_pro_buy_now(){ ?>
+<div class="best_classifieds_pro_version">
+  <a href="<?php echo esc_url('https://cipherthemes.com/wordpress-themes/best-classifieds-pro/'); ?>" target="_blank">
+    <img src ="<?php echo esc_url( get_template_directory_uri().'/assets/images/best-classifieds-pro-features.png' ); ?>" width="70%" height="auto" />
+  </a>
+</div>
+<?php
+}
+
 include get_template_directory().'/inc/breadcumbs.php';
 include get_template_directory().'/inc/fontawasome.php';
 include get_template_directory().'/inc/template-setup.php';

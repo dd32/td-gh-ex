@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Best Classifieds\n"
-"POT-Creation-Date: 2019-06-07 17:06+0530\n"
+"POT-Creation-Date: 2019-06-10 17:29+0530\n"
 "PO-Revision-Date: 2019-06-04 00:22+0530\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -91,6 +91,14 @@ msgstr ""
 
 #: functions.php:49 inc/theme-customization.php:227
 msgid "Search"
+msgstr ""
+
+#: functions.php:59
+msgid "Pro Feature"
+msgstr ""
+
+#: functions.php:59
+msgid "Best Classifieds Pro"
 msgstr ""
 
 #: inc/breadcumbs.php:19 inc/template-setup.php:67 inc/template-setup.php:68
