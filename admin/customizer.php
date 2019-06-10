@@ -747,18 +747,3 @@ class themeszen_Customizer {
 
 // Setup the Theme Customizer settings and controls...
 add_action('customize_register', array('themeszen_Customizer', 'themeszen_Register'));
-
-function themeszen_registers() {
-    wp_register_script('themeszen_jquery_ui', '//code.jquery.com/ui/1.11.0/jquery-ui.js', array("jquery"), true);
-    wp_register_script('themeszen_customizer_script', get_template_directory_uri() . '/admin/js/themeszen_customizer.js', array("jquery", "themeszen_jquery_ui"), true);
-    wp_enqueue_script('themeszen_customizer_script');
-    wp_localize_script('themeszen_customizer_script', 'zen_advert', array(
-        'pro' => __('View PRO version', 'discover'),
-        'url' => esc_url('http://www.themeszen.com/?page_id=73'),
-        'support_text' => __('Need Help!', 'discover'),
-        'support_url' => esc_url('http://www.themeszen.com/?page_id=33'),
-            )
-    );
-}
-
-add_action('customize_controls_enqueue_scripts', 'themeszen_registers');

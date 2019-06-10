@@ -1,6 +1,7 @@
 <?php
 ob_start();
 include_once get_template_directory() . '/admin/customizer.php';
+require_once( trailingslashit( get_template_directory() ) . 'trt-customizer-pro/discover/class-customize.php' );
 
 //get the theme option from options array
 function themeszen_get_option($name, $default = '') {

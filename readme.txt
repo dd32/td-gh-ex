@@ -37,3 +37,21 @@ Appearance/Header
 
 Thanks for downloading the discover theme.
 
+== Copyright ==
+
+discover WordPress Theme, Copyright 2018 Manish Gori
+discover is distributed under the terms of the GNU GPL
+
+The following opensource projects, graphics, fonts, API's or other files as listed have been used in developing this theme. Thanks to the author for the creative work they made. All creative works are licensed as being GPL or GPL compatible.
+
+
+[1.01] trt-customizer-pro, Copyright 2016 Justin Tadlock.
+
+	Source: https://github.com/justintadlock/trt-customizer-pro
+	License:  Licensed under the GNU GPL, version 2 or later.
+	License URI: http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+
+== Changelog ==
+= 1.7.32
+- Fixed: customizer.php file
