@@ -571,23 +571,16 @@ let library = {
 	 * @since 1.3.5
 	 *
 	 * @param {object} elem
+	 * @param {int} time
 	 */
-	slideDown(elems) {
+	slideDown(elems, time) {
 
+		let speed = time || 400;
 		this.eachElement(elems, elem => {
 			elem.style.cssText = 'display: block; overflow: auto';
-			const comStyle = window.getComputedStyle(elem);
 			const height = Math.max(elem.offsetHeight, elem.scrollHeight);
-			const pTop = comStyle.paddingTop;
-			const pBottom = comStyle.paddingBottom;
-			const mTop = comStyle.marginTop;
-			const mBottom = comStyle.marginBottom;
-			elem.style.cssText = 'display: block; overflow: hidden; height: 0; padding-top: 0; padding-bottom: 0; margin-top: 0; margin-bottom: 0';
-			this.animate(elem, 0, height, 400, (elem, value) => { elem.style.height = value + 'px' } );
-			this.animate(elem, 0, pTop, 400, (elem, value) => { elem.style.paddingTop = value } );
-			this.animate(elem, 0, pBottom, 400, (elem, value) => { elem.style.paddingBottom = value } );
-			this.animate(elem, 0, mTop, 400, (elem, value) => { elem.style.marginTop = value } );
-			this.animate(elem, 0, mBottom, 400, (elem, value) => { elem.style.marginBottom = value }, elem => { elem.style.cssText = 'display: block'; } );
+			elem.style.cssText = 'display: block; overflow: hidden; height: 0;';
+			this.animate(elem, 0, height, speed, (elem, value) => { elem.style.height = value + 'px' }, elem => { elem.style.cssText = 'display: block'; } );
 		} );
 	},
 
@@ -597,23 +590,16 @@ let library = {
 	 * @since 1.3.5
 	 *
 	 * @param {object} elem
+	 * @param {int} time
 	 */
-	slideUp(elems) {
+	slideUp(elems, time) {
 
+		let speed = time || 400;
 		this.eachElement(elems, elem => {
 			elem.style.cssText = 'display: block; overflow: auto';
-			const comStyle = window.getComputedStyle(elem);
 			const height = Math.max(elem.offsetHeight, elem.scrollHeight);
-			const pTop = comStyle.paddingTop;
-			const pBottom = comStyle.paddingBottom;
-			const mTop = comStyle.marginTop;
-			const mBottom = comStyle.marginBottom;
-			elem.style.cssText = 'display: block; overflow: hidden; height: 0; padding-top: 0; padding-bottom: 0; margin-top: 0; margin-bottom: 0';
-			this.animate(elem, height, 0, 400, (elem, value) => { elem.style.height = value + 'px' } );
-			this.animate(elem, pTop, 0, 400, (elem, value) => { elem.style.paddingTop = value } );
-			this.animate(elem, pBottom, 0, 400, (elem, value) => { elem.style.paddingBottom = value } );
-			this.animate(elem, mTop, 0, 400, (elem, value) => { elem.style.marginTop = value } );
-			this.animate(elem, mBottom, 0, 400, (elem, value) => { elem.style.marginBottom = value }, elem => { elem.style.cssText = 'display: none'; } );
+			elem.style.cssText = 'display: block; overflow: hidden; height: 0;';
+			this.animate(elem, height, 0, speed, (elem, value) => { elem.style.height = value + 'px' }, elem => { elem.style.cssText = 'display: none'; } );
 		} );
 	}
 }

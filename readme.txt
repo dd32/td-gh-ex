@@ -4,7 +4,7 @@ Contributors: vedathemes
 tags: Tags: grid-layout, custom-header, custom-colors, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, block-styles, wide-blocks, food-and-drink
 Requires at least: 4.7
 Tested up to: 5.2
-Stable tag: 1.3.7
+Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +22,12 @@ PHP 5.4+, IE11+, WordPress 4.7+
 Bayleaf WordPress theme uses Google Fonts for your website by default. Fonts and their respective stylesheets are downloaded from google's website. Refer link [ https://developers.google.com/fonts/faq#what_does_using_the_google_fonts_api_mean_for_the_privacy_of_my_users ] for google font's privacy related information. If you do not want to use google fonts for your website, you can disable it from theme customizer (Appearance > Customize > Theme options).
 
 == Changelog ==
+
+= 1.3.8 =
+* Error Fix: Broken search layout if WooCommerce products are also in search results.
+* Error Fix: Email icon name correction in social sharing icons.
+* Add: Object-fit polyfill.
+* Add: Navigation sub-menu toggle functionality on smaller-screens.
 
 = 1.3.7 =
 * Add: mailoptin plugin support.

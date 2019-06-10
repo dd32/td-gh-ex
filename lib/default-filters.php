@@ -29,6 +29,35 @@ function bayleaf_dropdown_icon_to_menu_link( $title, $item, $args, $depth ) {
 add_filter( 'nav_menu_item_title', 'bayleaf_dropdown_icon_to_menu_link', 10, 4 );
 
 /**
+ * Add dropdown icon if primary menu item has children.
+ *
+ * @param  string  $item_output The menu item output.
+ * @param  WP_Post $item        Menu item object.
+ * @param  int     $depth       Depth of the menu.
+ * @param  array   $args        wp_nav_menu() arguments.
+ * @return string  $item_output The menu item output with social icon.
+ */
+function bayleaf_dropdown_btn_to_menu_item( $item_output, $item, $depth, $args ) {
+	$button = sprintf(
+		'<button aria-expanded="false" class="sub-menu-toggle"><span class="screen-reader-text">%1$s</span>%2$s%3$s</button>',
+		esc_html__( 'Submenu Toggle', 'bayleaf' ),
+		bayleaf_get_icon( [ 'icon' => 'angle-down' ] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		bayleaf_get_icon( [ 'icon' => 'angle-up' ] ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	);
+
+	if ( 'primary' === $args->theme_location ) {
+		foreach ( $item->classes as $value ) {
+			if ( 'menu-item-has-children' === $value || 'page_item_has_children' === $value ) {
+				$item_output .= $button;
+			}
+		}
+	}
+
+	return $item_output;
+}
+add_filter( 'walker_nav_menu_start_el', 'bayleaf_dropdown_btn_to_menu_item', 10, 4 );
+
+/**
  * Get our wp_nav_menu() fallback, wp_page_menu(), to show a home link and add
  * some custom markup to match style with wp_nav_menu().
  *
@@ -128,7 +157,7 @@ function bayleaf_nav_menu_social_icons( $item_output, $item, $depth, $args ) {
 			'github.com'      => 'github',
 			'instagram.com'   => 'instagram',
 			'linkedin.com'    => 'linkedin',
-			'mailto:'         => 'envelope-o',
+			'mailto:'         => 'email',
 			'medium.com'      => 'medium',
 			'pinterest.com'   => 'pinterest-p',
 			'pscp.tv'         => 'periscope',

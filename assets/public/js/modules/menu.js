@@ -15,6 +15,7 @@ class Menu {
 		this.nav        = lib.get(elems.mianNav);
 		this.menu       = lib.get(`#${conf.global.menu}`);
 		this.menuToggle = lib.get(elems.menuToggle, this.header);
+		this.subToggle  = lib.get(elems.subMenuTog, this.menu);
 		this.items      = lib.get(elems.menuItems, this.menu);
 		this.links      = lib.get(elems.menuLinks, this.menu);
 		this.dLinks     = lib.get(elems.dirLinks, this.menu);
@@ -30,6 +31,7 @@ class Menu {
 	events() {
 
 		lib.on('click', this.menuToggle, this.toggleMenu.bind(this));
+		lib.on('click', this.subToggle, this.toggleSubMenu);
 		lib.on('mouseenter, mouseleave', this.items, this.toggleItem );
 		lib.on('focus, blur', this.links, this.toggleLinkItems);
 		lib.on('touchstart', lib.body, this.resetMenu.bind(this));
@@ -45,10 +47,22 @@ class Menu {
 
 		lib.toggleClass(this.menuToggle, conf.cls.toggler);
 		lib.toggleClass(this.nav, conf.cls.toggled);
-		if (lib.hasClass(this.menuToggle, conf.cls.toggler)) {
-			lib.slideDown(this.nav[0]);
+	}
+
+	/**
+	 * Toggle navigation menu.
+	 * 
+	 * @since 1.3.5
+	 */
+	toggleSubMenu() {
+
+		let subMenu = this.nextElementSibling;
+		lib.toggleClass(this, conf.cls.toggler);
+		lib.toggleClass(subMenu, conf.cls.toggled);
+		if (lib.hasClass(this, conf.cls.toggler)) {
+			lib.slideDown(subMenu, 200);
 		} else {
-			lib.slideUp(this.nav[0]);
+			lib.slideUp(subMenu, 200);
 		}
 	}
 

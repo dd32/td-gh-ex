@@ -8,6 +8,7 @@ let config = {
 		main         : '#main',
 		eContent     : '.entry-content',
 		mianNav      : '#site-navigation',
+		subMenuTog   : '.sub-menu-toggle',
 		menuToggle   : '.menu-toggle',
 		menuItems    : '.menu-item-has-children, .page_item_has_children',
 		menuLinks    : '.menu-item-has-children a, .page_item_has_children a',

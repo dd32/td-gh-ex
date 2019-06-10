@@ -59,7 +59,7 @@ function bayleaf_post_classes( $classes ) {
 	// Adds a class for posts.
 	$classes[] = 'entry';
 
-	if ( ! ( is_singular() || in_array( 'product', $classes, true ) ) ) {
+	if ( ! ( is_singular() || in_array( 'product', $classes, true ) ) || is_search() ) {
 		$classes[] = 'fw-tab-6 fw-tabr-4';
 	}
 

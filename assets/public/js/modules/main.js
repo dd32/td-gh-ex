@@ -5,6 +5,7 @@ import Styling from './styling';
 import ResVid from './resvid';
 import Hwidget from './hwidget';
 import Comments from './comments';
+import PolyFill from './polyfill';
 
 class Main {
 
@@ -43,6 +44,9 @@ class Main {
 
 		// Add header widget toggle functionality.
 		this.headerWidgetToggle();
+
+		// Include required polyfills.
+		this.polyfill();
 
 		// Add reveal on scroll functionality to brick elements.
 		lib.addRosObject('.brick', 'fadeInUp');
@@ -109,6 +113,16 @@ class Main {
 	responsiveStyling() {
 
 		new Styling();
+	}
+
+	/**
+	 * Include required polyfills.
+	 * 
+	 * @since 1.3.8
+	 */
+	polyfill() {
+
+		new PolyFill();
 	}
 }
 
