@@ -58,8 +58,8 @@ function annina_posted_on() {
 	if ( 'post' == get_post_type() && is_single() ) {
 		/* translators: used between list items, there is a space after the comma */
 		$categories_list = get_the_category_list( esc_html__( ' / ', 'annina' ) );
-		if ( $categories_list && annina_categorized_blog() ) {
-			printf( '<span class="cat-links"><i class="fa fa-folder-open-o spaceLeftRight" aria-hidden="true"></i>' . $categories_list . '</span>'); // WPCS: XSS OK.
+		if ( $categories_list ) {
+			echo '<span class="cat-links"><i class="fa fa-folder-open-o spaceLeftRight" aria-hidden="true"></i>' . $categories_list . '</span>';
 		}
 	}
 	
@@ -82,48 +82,9 @@ function annina_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ' / ', 'annina' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>' . $tags_list . '</span>'); // WPCS: XSS OK.
+			echo '<span class="tags-links"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>' . $tags_list . '</span>';
 		}
 	}
 	edit_post_link( esc_html__( 'Edit', 'annina' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight" aria-hidden="true"></i>', '</span>' );
 }
 endif;
-
-/**
- * Returns true if a blog has more than 1 category.
- *
- * @return bool
- */
-function annina_categorized_blog() {
-	$all_the_cool_cats = get_transient( 'annina_categories' );
-	
-	if ( false === $all_the_cool_cats ) {
-		// Create an array of all the categories that are attached to posts.
-		$categories = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
-
-		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $categories );
-
-		set_transient( 'annina_categories', $all_the_cool_cats );
-	}
-	
-	return $all_the_cool_cats > 1;
-}
-
-/**
- * Flush out the transients used in annina_categorized_blog.
- */
-function annina_category_transient_flusher() {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
-	// Like, beat it. Dig?
-	delete_transient( 'annina_categories' );
-}
-add_action( 'edit_category', 'annina_category_transient_flusher' );
-add_action( 'save_post',     'annina_category_transient_flusher' );
