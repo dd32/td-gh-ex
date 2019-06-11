@@ -140,17 +140,25 @@
 			public function accesspressparallax_activation_admin_notice() {
 				global $pagenow;
 
-				if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
-					?>
+	            if( is_admin() && ('themes.php' == $pagenow) && (isset($_GET['activated'])) ) {
+					    
+	             add_action( 'admin_notices', array( $this,'accesspressparallax_welcome_admin_notice_display') );
+	             }
+			}
+			
+			public function accesspressparallax_welcome_admin_notice_display(){
+                 ?>
 					<div class="notice notice-success is-dismissible">
-						<p><?php 
-						/* translators: 1 - Welcome Page link 2 - Theme Name */
-						printf( wp_kses_post( 'Welcome! Thank you for choosing %1$s! Please make sure you visit our <a href="%2$s">Welcome page</a> to get started with %1$s.', 'accesspress-parallax' ), esc_html($this->theme_name), esc_url(admin_url( 'themes.php?page=accesspressparallax-welcome' ))  ); ?></p>
+						<p>
+							<?php
+								printf( '%1$s %2$s %3$s <a href="%4$s">%5$s</a> %6$s', esc_html__( 'Welcome! Thank you for choosing', 'accesspress-parallax' ), esc_html($this->theme_name), esc_html__( 'Please make sure you visit our', 'accesspress-parallax' ), esc_url( admin_url( 'themes.php?page=accesspressparallax-welcome' ) ), esc_html__( 'Welcome Page', 'accesspress-parallax' ), esc_html__( 'to get started.', 'accesspress-parallax' ) );
+							?>
+						</p>
 						<p><a class="button" href="<?php echo esc_url(admin_url( 'themes.php?page=accesspressparallax-welcome' )) ?>"><?php esc_html_e( 'Lets Get Started', 'accesspress-parallax' ); ?></a></p>
 					</div>
 					<?php
-				}
-			}
+				
+            }
 
 			/** Register Menu for Welcome Page **/
 			public function accesspressparallax_welcome_register_menu() {

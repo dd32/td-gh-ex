@@ -30,10 +30,10 @@ JS Files
     jQuery Easing: Open source under the BSD License. 
     https://github.com/gdsmith/jquery.easing
 
-    jQuery Easing: Released under the WTFPL license
+    jQuery FitVids: Released under the WTFPL license
     https://github.com/davatron5000/FitVids.js
 
-    jQuery Easing: MIT Licenses
+    jQuery scrollTo: MIT Licenses
     https://github.com/flesler/jquery.scrollTo
 
     Parallax JS: MIT and GPL licenses
@@ -88,6 +88,10 @@ Images
 
 ---------------------------------------------
 == Changelog ==
+
+Version 1.71
+ * Minor issues Fixed 
+
 Version 1.70
  * Added Styles for Guttenberg Compatible
  * Updates Minor CSS
