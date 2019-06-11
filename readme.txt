@@ -42,6 +42,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.1.6 =
+* bug fix: animations appearing effect
+
 = 1.1.5 =
 * improve footer with a copyright background color
 
