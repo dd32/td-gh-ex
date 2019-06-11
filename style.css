@@ -3,8 +3,8 @@ Theme Name: ArticlePress
 Theme URI: https://item.themeasia.net/articlepress/
 Author: ThemeAsia
 Author URI: https://themeasia.net
-Description: ArticlePress is Blog Theme
-Version: 1.0.2
+Description: ArticlePress WordPress Blog Theme
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: articlepress
@@ -1039,7 +1039,7 @@ header.header {
     background-color: #7660ff;
     padding: 6px 0;
 }
-.menu-main-menu-container ul#menu-main-menu li a {
+.menu-main-menu-container ul.articlepress-menu li a {
     color: #fff;
     font-weight: 500;
     font-size: 17px;
@@ -1048,17 +1048,17 @@ header.header {
     text-transform: uppercase;
     transition: .3s;
 }
-.menu-main-menu-container ul#menu-main-menu li {
+.menu-main-menu-container ul.articlepress-menu li {
     margin-left: 26px;
 }
 
-.menu-main-menu-container ul#menu-main-menu li:first-child {
+.menu-main-menu-container ul.articlepress-menu li:first-child {
     margin-left: 0;
 }
 
 .menu-main-menu-container {margin-left: auto !important;}
 
-.menu-main-menu-container ul#menu-main-menu li a:hover {
+.menu-main-menu-container ul.articlepress-menu li a:hover {
     color: #5bd5e8;
 }
 a.articlepress-logo-text {
