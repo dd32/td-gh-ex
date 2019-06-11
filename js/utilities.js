@@ -50,7 +50,7 @@ jQuery( document ).ready(function() {
 		
 			if (relY < 36) {
 			
-				jQuery('ul:first-child', this).toggle(400);
+				jQuery('ul:first-child', this).toggle(400).parent().toggleClass('mobile-menu-expanded');
 			}
 		}
 	});
@@ -124,71 +124,71 @@ function ayaspirit_IsLargeResolution() {
 
 function ayaspirit_init_loading_effects() {
 
-    jQuery('#header-logo').addClass("hidden").viewportChecker({
+    jQuery('#header-logo').addClass("animations-hidden").viewportChecker({
             classToAdd: 'animated bounce',
             offset: 1
           });
 
     
 
-    jQuery('#page-header').addClass("hidden").viewportChecker({
+    jQuery('#page-header').addClass("animations-hidden").viewportChecker({
             classToAdd: 'animated bounceInUp',
             offset: 1
           });
 
     jQuery('#main-content-wrapper h2, #main-content-wrapper h3')
-            .addClass("hidden").viewportChecker({
+            .addClass("animations-hidden").viewportChecker({
             classToAdd: 'animated bounceInUp',
             offset: 1
           });
 
-    jQuery('article img, .instagram-pics img, .products img').addClass("hidden").viewportChecker({
+    jQuery('article img, .instagram-pics img, .products img').addClass("animations-hidden").viewportChecker({
             classToAdd: 'animated zoomIn',
             offset: 1
           });
 
-    jQuery('#sidebar').addClass("hidden").viewportChecker({
+    jQuery('#sidebar').addClass("animations-hidden").viewportChecker({
             classToAdd: 'animated zoomIn',
             offset: 1
           });
 
-    jQuery('.before-content, .after-content').addClass("hidden").viewportChecker({
+    jQuery('.before-content, .after-content').addClass("animations-hidden").viewportChecker({
             classToAdd: 'animated bounce',
             offset: 1
           });
 
     jQuery('.header-social-widget')
-        .addClass("hidden").viewportChecker({
+        .addClass("animations-hidden").viewportChecker({
             classToAdd: 'animated bounceInLeft',
             offset: 1
           });
 
     jQuery('article, article p, article li')
-        .addClass("hidden").viewportChecker({
+        .addClass("animations-hidden").viewportChecker({
             classToAdd: 'animated zoomIn',
             offset: 1
           });
 
     jQuery('#footer-main h1, #footer-main h2, #footer-main h3')
-        .addClass("hidden").viewportChecker({
+        .addClass("animations-hidden").viewportChecker({
             classToAdd: 'animated bounceInUp',
             offset: 1
           });
 
     jQuery('#footer-main p, #footer-main ul, #footer-main li, .footer-title, .col3a, .col3b, .col3c')
-        .addClass("hidden").viewportChecker({
+        .addClass("animations-hidden").viewportChecker({
             classToAdd: 'animated zoomIn',
             offset: 1
           });
 
     jQuery('.footer-social-widget')
-        .addClass("hidden").viewportChecker({
+        .addClass("animations-hidden").viewportChecker({
             classToAdd: 'animated rubberBand',
             offset: 1
           });
 
     jQuery('#footer-menu')
-        .addClass("hidden").viewportChecker({
+        .addClass("animations-hidden").viewportChecker({
             classToAdd: 'animated bounceInDown',
             offset: 1
           });
