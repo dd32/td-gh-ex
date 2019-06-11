@@ -1,10 +1,10 @@
 <?php get_header(); ?>
 
     <!-- Main Content -->
-    <div id="content" class="container">
+    <div class="container">
         <div class="content">
             <div class="columns">
-                <div class="column">
+                <div class="column is-three-quarters">
 					<?php 
 					if (have_posts()) : while (have_posts()) : the_post();
 						get_template_part('content', get_post_format());
@@ -20,15 +20,9 @@
 					?>
                 </div>
 
-				<?php 
-				if (is_active_sidebar('custom-side-bar')) :
-				?>
-				<div class="column is-one-quarter">
+				<div class="column">
 					<?php get_sidebar(); ?>
 				</div>
-				<?php
-				endif; 
-				?>
 			</div>
         </div>
 	</div>

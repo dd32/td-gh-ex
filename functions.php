@@ -74,7 +74,7 @@ function atreus_get_search_form($form)
                 <input class="input" type="text" value="' . get_search_query() . '" name="s" id="s" placeholder="'. __('Search this site', 'atreus') .'">
             </div>
             <div class="control">
-                <input type="submit" class="button '. esc_attr(get_theme_mod('atreus_theme_colour_setting')) . '" id="searchsubmit" value="'. __('Search', 'atreus') .'">
+                <input type="submit" class="button '. get_theme_mod('atreus_theme_colour_setting') . '" id="searchsubmit" value="'. __('Search', 'atreus') .'">
             </div>
         </div>
     </form>';
@@ -94,15 +94,9 @@ function atreus_comment_form_before()
 
 add_action( 'comment_form_before', 'atreus_comment_form_before' );
 
-function atreus_enqueue_scripts() 
-{
-    wp_enqueue_script('fontawesome', get_template_directory_uri() . '/js/fontawesome.js', false, '5.9.0', 'all');
-    wp_enqueue_style('bulma', get_template_directory_uri() . '/css/bulma.min.css', false, '0.7.4', 'all');
-    wp_enqueue_style('atreus_style', get_stylesheet_uri());
-    wp_enqueue_script('atreus_main', get_template_directory_uri() . '/js/main.js', false, '1.0', 'all');
-}
 
-add_action( 'wp_enqueue_scripts', 'atreus_enqueue_scripts' );
+
+add_action( 'customize_register', 'atreus_customize_register' );
 
 function atreus_customize_register($wp_customize) 
 {
@@ -116,8 +110,7 @@ function atreus_customize_register($wp_customize)
     $wp_customize -> add_setting('atreus_theme_colour_setting', array(
         'default'    => 'is-link',
         'type'       => 'theme_mod',
-        'capability' => 'edit_theme_options',
-        'sanitize_callback' => 'esc_html'
+        'capability' => 'edit_theme_options'
     ));
 
     $wp_customize -> add_control(new WP_Customize_Control($wp_customize, 'atreus_them_colour_control', array(
@@ -137,4 +130,9 @@ function atreus_customize_register($wp_customize)
    )));
 }
 
-add_action( 'customize_register', 'atreus_customize_register' );
+function atreus_the_post_thumbnail()
+{
+    
+}
+
+add_action( 'the_post_thumbnail', 'atreus_the_post_thumbnail' );

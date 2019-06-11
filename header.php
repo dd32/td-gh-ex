@@ -2,35 +2,32 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-    <meta name="description" content="<?php bloginfo('description'); ?>">
+    <meta name="description" content="<?php echo esc_html(get_bloginfo('description')); ?>">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="<?php bloginfo('charset'); ?>" />
+    <meta charset="utf-8" />
+    <?php wp_enqueue_style('fontawesome', get_template_directory_uri() . '/js/fontawesome.js', false, '5.3.1', 'all') ?>
+    <?php wp_enqueue_style('bulma', get_template_directory_uri() . '/css/bulma.min.css', false, '0.7.4', 'all') ?>
+    <?php wp_enqueue_style('style', get_stylesheet_uri()); ?>
 	
 	<?php wp_head(); ?> 
 </head>
 
 <body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>
-    <a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'atreus' ); ?></a>
     <!-- Header -->
     <section class="hero <?php if(get_theme_mod('atreus_theme_colour_setting')==false){echo esc_html('is-link');}else{echo esc_html(get_theme_mod('atreus_theme_colour_setting'));} ?>">
         <div class="hero-head">
             <nav class="navbar">
                 <div class="container">
                     <div class="navbar-brand">
-                        <a class="navbar-item" href="<?php echo esc_url(home_url());?>">
+                        <a class="navbar-item" href="<?php echo esc_url(site_url());?>">
                             <?php
                                 $custom_logo_id = get_theme_mod('custom_logo');
                                 $logo = wp_get_attachment_image_src($custom_logo_id , 'full');
 
                                 if (has_custom_logo()) 
                                 {
-                            ?>
-
-                            <img src="<?php echo esc_url($logo[0]); ?>" alt="<?php echo esc_html(get_bloginfo('name')); ?>">
-
-                            <?php
+                                    echo '<img src="' . esc_url($logo[0]) . '" alt="' . esc_html(get_bloginfo('name')) . '">';
                                 } 
                                 else 
                                 {
