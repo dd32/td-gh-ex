@@ -4,7 +4,7 @@ Description: AyaGeek is fully Responsive WordPress Theme with Built-in Homepage 
 Author: ayatemplates
 Author URI: https://ayatemplates.com
 Theme URI: https://ayatemplates.com/product/ayageek
-Version: 1.1.1
+Version: 1.1.2
 Text Domain: ayageek
 Tags: blog, news, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -378,6 +378,11 @@ aside {
 	word-wrap: break-word;
 }
 
+article,
+.additional-content {
+	clear:both;
+}
+
 /* main content */
 #main-content,
 #main-content-full,
@@ -557,7 +562,7 @@ article ul > li:before {
 #copyright {
 	clear:both;
 	text-align:center;
-	margin:10px 0;
+	padding:10px 0;
 }
 
 .social-widget,
@@ -1984,6 +1989,15 @@ blockquote {
 	position: absolute;
 }
 
+.grid-item {
+	width:48%;
+	margin-right:2%;
+}
+
+.grid-item:nth-child(2n) {
+	margin-right:0;
+}
+
 /* Large Resolution */
 @media screen and (min-width: 800px) {
 	
@@ -2149,18 +2163,6 @@ blockquote {
 		top:9px;
 		font-size:12px;
 		line-height:14px;
-	}
-
-	body.blog article,
-	body.archive article {
-	    float: left;
-	    margin-right: 3%;
-	    width: 45%;
-	}
-
-	body.blog article:nth-child(odd),
-	body.archive article:nth-child(odd) {
-	    clear:both;
 	}
 	
 	/* columns */
@@ -2434,7 +2436,10 @@ blockquote {
 	#navmain {
 		cursor:pointer;
 		float:left;
-		margin-top:0;
+	}
+	
+	#navmain div.mobile-menu-expanded:before {
+		content:"\f00d" !important;
 	}
 	
 	#navmain div:first-of-type:before {

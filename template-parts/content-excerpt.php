@@ -8,7 +8,18 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+<article id="post-<?php the_ID(); ?>" 
+
+	<?php
+		  /**
+		   * Add 'grid-item' for articles in index, search, archive pages
+		   * In this way, the masonry package JS library will convert them into grid
+		   */
+		  if ( ! is_single() ) : ?>
+			<?php post_class('grid-item'); ?>
+	<?php else : ?>
+			<?php post_class(); ?>
+	<?php endif; ?>>
 
 	<strong class="entry-title">
 		<a href="<?php echo esc_url( get_permalink() ); ?>" rel="bookmark" title="<?php the_title_attribute(); ?>"><?php the_title(); ?></a>

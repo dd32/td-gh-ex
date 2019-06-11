@@ -45,6 +45,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.1.2 =
+* bug fix: animations appearing effect
+* display posts in two columns using masonry grid
+
 = 1.1.1 =
 * improve footer with a copyright background color
 

@@ -133,7 +133,7 @@ if ( ! function_exists( 'ayageek_load_scripts' ) ) :
 
 		wp_enqueue_script( 'ayageek-utilities',
 			get_template_directory_uri() . '/js/utilities.js',
-			array( 'jquery', 'viewportchecker', 'bxslider' ) );
+			array( 'jquery', 'viewportchecker', 'bxslider', 'masonry' ) );
 
 		$data = array(
     		'loading_effect' => ( get_theme_mod('ayageek_animations_display', 1) == 1 ),

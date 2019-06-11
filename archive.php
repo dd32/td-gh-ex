@@ -23,6 +23,7 @@ get_header(); ?>
 
 	<?php if ( have_posts() ) : ?>
 
+			<div class="grid">
 				<?php
 				// starts the loop
 				while ( have_posts() ) :
@@ -34,8 +35,9 @@ get_header(); ?>
 					 */
 					get_template_part( 'template-parts/content' );
 
-				endwhile;
-
+				endwhile; ?>
+			</div>
+			<?php
 				the_posts_pagination( array(
 		                        'prev_next' => '',
 		                    ) );
