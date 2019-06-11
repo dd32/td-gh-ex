@@ -4,7 +4,7 @@ Description: AyaAirPort is Fully Responsive WordPress Theme, a perfect choice fo
 Theme URI: https://ayatemplates.com/product/ayaairport
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.0.8
+Version: 1.0.9
 Text Domain: ayaairport
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2.0
@@ -1802,13 +1802,20 @@ dt.gallery-icon > a:before,
 	}
 	
 	#header-logo {
-		margin-left:5px;
-	}
+   		margin-left:50px;
+    }
+
+    #navmain {
+   		margin-top: -35px;
+    }
 
 	#navmain {
 		cursor:pointer;
 		float:left;
-		margin-top:0;
+	}
+	
+	#navmain div.mobile-menu-expanded:before {
+		content:"\f00d" !important;
 	}
 	
 	#navmain div:first-of-type:before {
@@ -2637,8 +2644,12 @@ dt.gallery-icon > a:before,
 	}
 	
 	#header-logo {
-		margin-left:5px;
-	}
+   		margin-left:50px;
+    }
+
+    #navmain {
+   		margin-top: -35px;
+    }
 	
 	#header-title {
 		float:left;
@@ -2668,7 +2679,10 @@ dt.gallery-icon > a:before,
 	#navmain {
 		cursor:pointer;
 		float:left;
-		margin-top:0;
+	}
+	
+	#navmain div.mobile-menu-expanded:before {
+		content:"\f00d" !important;
 	}
 	
 	#navmain div:first-of-type:before {
