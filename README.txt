@@ -68,6 +68,12 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.18
+* Style tweaks/fixes
+* Added setting to adjust Primary Navigation Font size
+* Updated language .pot file
+Premium: Updated Page Layouts to Import section
+
 #### 1.1.17
 * WooCommerce style tweaks/fixes
 * Added code to remove Slider Posts from the Categories Widget

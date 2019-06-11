@@ -495,6 +495,23 @@ function customizer_library_avant_build_styles() {
 		) );
 
 	}
+	$setting = 'avant-nav-font-size';
+	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );
+
+	if ( $mod !== customizer_library_get_default( $setting ) ) {
+
+		$nav_font_size = esc_attr( $mod );
+
+		Customizer_Library_Styles()->add( array(
+			'selectors' => array(
+				'.main-navigation li a,
+				.header-cart'
+			),
+			'declarations' => array(
+				'font-size' => $nav_font_size . 'px'
+			)
+		) );
+	}
 	// Sidebar Widegt Title Size
 	$setting = 'avant-blog-widget-title-size';
 	$mod = get_theme_mod( $setting, customizer_library_get_default( $setting ) );

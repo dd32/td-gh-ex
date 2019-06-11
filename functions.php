@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.17' );
+define( 'AVANT_THEME_VERSION' , '1.1.18' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -241,7 +241,8 @@ add_action( 'wp_head', 'avant_pingback_header' );
  * Enqueue admin styling.
  */
 function avant_load_admin_script() {
-    wp_enqueue_style( 'avant-admin-css', get_template_directory_uri() . '/upgrade/css/admin-css.css', array(), AVANT_THEME_VERSION );
+	wp_enqueue_style( 'avant-admin-css', get_template_directory_uri() . '/upgrade/css/admin-css.css', array(), AVANT_THEME_VERSION );
+	wp_enqueue_script( 'avant-admin-js', get_template_directory_uri() . "/upgrade/js/admin.js", array( 'jquery' ), AVANT_THEME_VERSION, true );
 }
 add_action( 'admin_enqueue_scripts', 'avant_load_admin_script' );
 
@@ -454,29 +455,6 @@ function avant_cat_columns_array_push_after( $src, $avant_cat_in, $pos ) {
     }
     return $R;
 }
-
-/*
- * Notice for Page Layouts
- */
-function avant_page_layouts_notice() {
-	global $current_user;
-	$user_id = $current_user->ID;
-	
-	if (!get_user_meta($user_id, 'avant_page_layouts_notice_ignore')) {
-		echo '<div class="updated notice avant-notice-layouts"><p>'. __( 'Avant Premium now offers Elementor Page Layouts to import!<br /><br />Use the code <b><i>5_dollar_less</i></b> to <a href="https://kairaweb.com/go/avant/" target="_blank">get $5 off the premium theme now</a>... Sale Ends 4nd May', 'avant' ) .' <a href="?avant-layouts-notice-ignore" class="avant-noticemiss">Dismiss</a></p></div>';
-	}
-}
-add_action('admin_notices', 'avant_page_layouts_notice');
-
-function avant_page_layouts_notice_ignore() {
-	global $current_user;
-	
-	$user_id = $current_user->ID;
-	if (isset($_GET['avant-layouts-notice-ignore'])) {
-		add_user_meta($user_id, 'avant_page_layouts_notice_ignore', 'true', true);
-	}
-}
-add_action('admin_init', 'avant_page_layouts_notice_ignore');
 
 /**
  * Adjust the Recent Posts widget query if avant-slider-cats is set

@@ -203,6 +203,18 @@ function customizer_library_avant_options() {
         'section' => $section,
         'type'    => 'checkbox',
     );
+    $options['avant-nav-font-size'] = array(
+        'id' => 'avant-nav-font-size',
+        'label'   => __( 'Navigation Font Size', 'avant' ),
+        'section' => $section,
+        'type'    => 'range',
+        'input_attrs' => array(
+            'min'   => 10,
+            'max'   => 16,
+            'step'  => 1,
+        ),
+        'default' => 11
+    );
     $options['avant-noteon-nav-style'] = array(
         'id' => 'avant-noteon-nav-style',
         'section' => $section,
