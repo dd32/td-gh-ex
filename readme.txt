@@ -41,6 +41,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.1.8 =
+* bug fix: animations appearing effect
+
 = 1.1.7 =
 * improve footer with a copyright background color
 
