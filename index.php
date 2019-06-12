@@ -18,9 +18,10 @@ get_header(); ?>
 	<div id="main-content">
 	<?php
 	if ( have_posts() ) :
-		if (is_archive() ) :
+		if ( is_archive() ) :
 			acuarela_archive_title();
 		endif;
+
 		// Start the Loop.
 		while ( have_posts() ) : the_post();
 			/*

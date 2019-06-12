@@ -44,7 +44,6 @@ function acuarela_header_style() {
 					clip: rect(1px, 1px, 1px, 1px);
 				}
 			}
-
 <?php 	endif;
 
 		// Have both the title and the tagline been hidden?

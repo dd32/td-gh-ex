@@ -91,7 +91,6 @@ if ( ! function_exists( 'acuarela_post_navigation' ) ) :
 	}
 endif;
 
-
 if ( ! function_exists( 'acuarela_blog_navigation' ) ) :
 	/**
 	 * Applies the user's choice for navigation/pagination and changes the default strings in the_posts_navigation() and the_posts_pagination().
@@ -185,10 +184,11 @@ add_filter( 'excerpt_length', 'acuarela_excerpt_length', 999 );
  * Filters the edit comment link.
  */
 function acuarela_edit_comment_link() {
-	printf( '<span class="edit-link"><a href="%1$s" class="comment-edit-link"><span class="genericon genericon-edit" aria-hidden="true"></span>%2$s</a></span>',
+	printf( '<span class="edit-link"><span class="genericon genericon-edit" aria-hidden="true"></span><a href="%1$s" class="comment-edit-link">%2$s</a></span>',
 		esc_url( get_edit_comment_link() ),
 		esc_html( __( 'Edit', 'acuarela' ) )
 	);
 }
 add_filter( 'edit_comment_link', 'acuarela_edit_comment_link' );
+
 
