@@ -46,6 +46,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.6 =
+* fix issue with Animations display
+
 = 1.2.5 =
 * add background color at footer bottom
 
