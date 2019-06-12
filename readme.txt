@@ -1,91 +1,72 @@
-----------------------------------
-Awesome
-----------------------------------
-Version: 	1.5
-Developer: 	D5 Creation
-Author URI: 	https://d5creation.com
+=== Awesome ===
 
-Donation Link: 	https://d5creation.com/donate/
+Contributors: D5 Creation
+Tags: two-columns, right-sidebar, footer-widgets, blog, portfolio, e-commerce, left-sidebar, custom-background, custom-menu, threaded-comments, sticky-post, front-page-post-form, full-width-template, theme-options
+Requires at least: 4.0
+Tested up to: 5.2.2-alpha-45482
+Stable tag: 1.7
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright: 	D5 Creation
-License: 		GNU General Public License v2 or later
-License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+Awesome Responsive Personal and Corporate Theme
 
-This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same License (GPL) of the Theme or Compatible  Licenses.
+== Description ==
 
-slideback1.jpg:
-CC0 Public Domain by StockSnap  - https://pixabay.com/en/ipad-table-technology-tumblr-2618187
+Awesome is CSS3 Powered and WordPress Latest Version Ready Responsive Theme. Super Elegant and Professional Awesome Theme will be adjusted automatically with all smart devices if the Responsive Layout be selected.  Full Wide Template can be used for showing showcase or other pages. Featured Boxes, Portfolio and Staff Boxes can represent your company to the world.
 
+== Frequently Asked Questions ==
 
-slideback2.jpg and screenshot.png:
-CC0 Public Domain by FirmBee  -https://pixabay.com/en/imac-apple-mockup-app-ipad-mouse-606765
-
-slideback3.jpg:
-CC0 Public Domain by StartupStockPhotos  -  https://pixabay.com/en/student-typing-keyboard-text-woman-849825
+= What to do after Theme Installation ? =
+After installing the Theme Please go to Appearance > Customize. You can set the Slide Images, About  Heading, Social Links there. Featured Boxes will come from the last 03 Sticky Posts in Free Version. Slider, About Section and Featured Boxes will be available when you will set a Page for the Front Page from Settings > Reading.
 
 
-jQuery OwlCarousel v1.3.3:  Copyright (c) 2013 Bartosz Wojciechowski, Licensed under MIT, https://github.com/OwlFonk/OwlCarousel
- 
+= Why is Awesome? =
+Awesome is for Personal and Corporate Web Sites
 
-FontAwesome		: GPL Friendly Licenses, http://fortawesome.github.io/Font-Awesome
+= Can it be used for Personal or Company Websites? =
+You can use for Personal to Corporate Sites
 
-Font Awesome 4.5.0 by @davegandy - http://fontawesome.io - @fontawesome,  License - http://fontawesome.io/license (Font: SIL OFL 1.1, CSS: MIT License)
-
-HTML5 Shiv 3.7.3 | @afarkas @jdalton @jon_neal @rem | MIT/GPL2 Licensed, https://github.com/aFarkas/html5shiv
-
-
-All other images and scripts are Lincenced Under GNU GPL and Copyrighted to D5 Creation
-
-Limitations: Site Title/ Logo, Top Menu and Main Menu width are fixed. So you should design those considering these limitations so that they can fit within the container. You should use Featured Images with Posts
-
-Instructions:
-- You can set the Slide Images, About  Heading, Featured Boxes Texts, Social Links from Appearance > Customize
-- Featured Boxes will come from the last 03 Sticky Posts in Free Version
-- Slider, About Section and Featured Boxes will be available when you will set a Page for the Front Page from Settings > Reading
+= Is it only for Blogs ? =
+No, It is for Blogs, Company, Personal Websites etc.
 
 
-Changelog
-============
+== Changelog ==
 
-Version 1.5
-______________
-- Style Improvement
+= 1.7 =
+* New Readme File Added
+* Images Change
 
-Version 1.3
-______________
-- Code Cleanup
-- Some Image Change
+= 1.5 =
+* Style Improvement
 
-Version 1.2.4
-______________
-- Code Cleanup
+= 1.3 =
+* Code Cleanup
+* Some Image Change
 
-Version 1.2.3
-______________
-- Image Update
-- RTL Stylesheet Added
+= 1.2.4 =
+* Code Cleanup
 
-Version 1.2.1
-______________
-- Code Cleanup
-- Featured Boxs from Sticky Posts
+= 1.2.3 =
+* Image Update
+* RTL Stylesheet Added
 
+= 1.2.1 =
+* Code Cleanup
+* Featured Boxs from Sticky Posts
 
-Version 1.2
-______________
-- Code Cleanup
-- WordPress TRT Requirement checks and correction 
+= 1.2 =
+* Code Cleanup
+* WordPress TRT Requirement checks and correction
 
-Version 1.1
-______________
-- Removed Extra Links from Customizer except one link suggested
-- Removed D5 Themes Page from Dashboard
+= 1.1 =
+* Removed Extra Links from Customizer except one link suggested
+* Removed D5 Themes Page from Dashboard
 
+== Resources ==
+* html5.js: https://github.com/aFarkas/html5shiv, MIT/GPL2
+* FontAwesome: http://fortawesome.github.io/Font-Awesome, GPL Friendly Licenses
+* jQuery OwlCarousel v1.3.3: https://github.com/OwlFonk/OwlCarousel, MIT
 
-
-
-
-
-
-
-
+* slideback1.jpg: https://stocksnap.io/photo/39LQYJSLI0
+* slideback2.jpg: https://stocksnap.io/photo/70JMTNDBJI
+* slideback3.jpg: https://stocksnap.io/photo/H5Y00D4OFT
