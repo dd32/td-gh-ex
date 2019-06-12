@@ -42,6 +42,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.1.8 =
+* fix issue with hidden class for animations
+
 = 1.1.7 =
 * update footer bottom background color
 
