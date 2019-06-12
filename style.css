@@ -5,7 +5,7 @@ Theme URI: https://tishonator.com/product/fgymm
 Author: tishonator
 Author URI: https://tishonator.com
 Text Domain: fgymm
-Version: 1.8.1
+Version: 1.8.2
 Tags: blog, entertainment, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, front-page-post-form
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -2083,11 +2083,11 @@ form.cart {
 .product_list_widget input.button,
 a.wc-forward,
 a.live-preview-button {
-    background:#f7f6f7;
-	background:-webkit-gradient(linear,left top,left bottom,from(#f7f6f7),to(#e0dadf)) !important;
-	background:-webkit-linear-gradient(#f7f6f7,#e0dadf) !important;
-	background:-moz-linear-gradient(center top,#f7f6f7 0,#e0dadf 100%) !important;
-	background:-moz-gradient(center top,#f7f6f7 0,#e0dadf 100%) !important;
+	background-image:-webkit-gradient(linear,left top,left bottom,from(#f7f6f7),to(#e0dadf));
+	background-image:-webkit-linear-gradient(#f7f6f7,#e0dadf);
+	background-image:-moz-linear-gradient(center top,#f7f6f7 0,#e0dadf 100%);
+	background-image:-moz-gradient(center top,#f7f6f7 0,#e0dadf 100%);
+	background-image: linear-gradient(top, #f7f6f7 0%, #e0dadf 100%);
     border: 1px solid #c8bfc6;
     border-radius: 2px;
     box-shadow: 0 -1px 0 rgba(0, 0, 0, 0.075) inset, 0 1px 0 rgba(255, 255, 255, 0.3) inset, 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -2591,13 +2591,20 @@ mark {
 	}
 	
 	#header-logo {
-		margin-left:5px;
-	}
+   		margin-left:50px;
+    }
+
+    #navmain {
+   		margin-top: -35px;
+    }
 
 	#navmain {
 		cursor:pointer;
 		float:left;
-		margin-top:0;
+	}
+	
+	#navmain div.mobile-menu-expanded:before {
+		content:"\f00d" !important;
 	}
 	
 	#navmain div:first-of-type:before {
