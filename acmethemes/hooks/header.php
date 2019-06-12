@@ -29,8 +29,7 @@ add_action( 'beauty_studio_action_before_head', 'beauty_studio_set_global', 0 );
  */
 if ( ! function_exists( 'beauty_studio_doctype' ) ) :
     function beauty_studio_doctype() {
-        ?>
-        <!DOCTYPE html><html <?php language_attributes(); ?>>
+        ?><!DOCTYPE html><html <?php language_attributes(); ?>>
         <?php
     }
 endif;

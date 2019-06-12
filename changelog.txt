@@ -1,5 +1,11 @@
 == Change log ==
 
+= 2.0.0 - June 13 2019 =
+* Added : Gutenberg Ready
+* Fixed : RTL CSS
+* Fixed : count function issue on PHP 7 or later
+* Fixed : Space before DOCTYPE
+
 = 1.0.2 =
 * content_number name fixed from esc_url to esc_attr
 

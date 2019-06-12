@@ -118,6 +118,7 @@ require beauty_studio_file_directory('acmethemes/metabox/metabox-defaults.php');
 * file for core functions imported from functions.php while downloading Underscores
 */
 require beauty_studio_file_directory('acmethemes/core.php');
+require beauty_studio_file_directory('acmethemes/gutenberg/gutenberg-init.php');
 
 /*themes info*/
 require beauty_studio_file_directory('acmethemes/at-theme-info/class-at-theme-info.php');

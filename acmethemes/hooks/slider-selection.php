@@ -68,7 +68,7 @@ function beauty_studio_slider_from_page(){
 		}
 	}
 
-	if( !empty( $post_in )) :
+	if( !empty( $post_in ) && is_array( $post_in )) :
 		$beauty_studio_child_page_args = array(
 			'post__in'          => $post_in,
 			'orderby'           => 'post__in',

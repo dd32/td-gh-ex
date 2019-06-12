@@ -375,8 +375,10 @@ address {
         top: 0;
     }
 }
-.admin-bar .at-sticky{
-    top: 32px;
+@media (min-width: 768px){
+    .admin-bar .at-sticky{
+        top: 32px;
+    }
 }
 
 /*transparent header*/
@@ -3127,6 +3129,9 @@ article.page .post-thumb a{
     font-weight: 600;
     font-size: 18px;
 }
+#beauty-studio-breadcrumbs .breadcrumb-trail li a{
+    display: inline-block;
+}
 #beauty-studio-breadcrumbs a {
     color:#fff;
     position: relative;
@@ -3155,7 +3160,7 @@ article.page .post-thumb a{
 }
 #beauty-studio-breadcrumbs .breadcrumb-trail li::after {
     color: #ddd;
-    content: "\f105";
+    content: "\f104";
     font-family: FontAwesome;
     margin-right: 10px;
     margin-left: 10px;

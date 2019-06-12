@@ -1,13 +1,12 @@
-# Copyright (C) 2016-2018 the Acme Themes
+# Copyright (C) 2016-2019 the Acme Themes
 # This file is distributed under the GNU General Public License v2 or later.
 
-#, fuzzy
 msgid ""
 msgstr ""
 "Plural-Forms: nplurals=INTEGER; plural=EXPRESSION;\n"
 "Project-Id-Version: Beauty Studio\n"
-"POT-Creation-Date: 2018-06-01 23:02+0545\n"
-"PO-Revision-Date: 2018-06-01 23:02+0545\n"
+"POT-Creation-Date: 2019-06-13 00:55+0545\n"
+"PO-Revision-Date: 2019-06-13 00:55+0545\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
@@ -1771,7 +1770,7 @@ msgstr ""
 msgid "Recent posts"
 msgstr ""
 
-#: acmethemes/hooks/header.php:137
+#: acmethemes/hooks/header.php:136
 msgid "Skip to content"
 msgstr ""
 
@@ -2566,7 +2565,7 @@ msgid "Learn More"
 msgstr ""
 
 #: acmethemes/sidebar-widget/acme-parallax.php:34
-msgid "AT Feature Section"
+msgid "AT Parallax Section"
 msgstr ""
 
 #: acmethemes/sidebar-widget/acme-parallax.php:37

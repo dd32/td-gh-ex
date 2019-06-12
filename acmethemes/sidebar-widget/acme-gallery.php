@@ -60,7 +60,7 @@ if ( ! class_exists( 'Beauty_Studio_Gallery' ) ) {
             <div class="at-repeater">
 		        <?php
 		        $total_repeater = 0;
-		        if  (count($at_all_page_items) > 0 && is_array($at_all_page_items) ){
+		        if  ( is_array($at_all_page_items) && count($at_all_page_items) > 0 ){
 			        foreach ($at_all_page_items as $about){
 				        $repeater_id  = $this->get_field_id( 'at_all_page_items') .$total_repeater.'page_id';
 				        $repeater_name  = $this->get_field_name( 'at_all_page_items' ).'['.$total_repeater.']['.'page_id'.']';
@@ -214,7 +214,7 @@ if ( ! class_exists( 'Beauty_Studio_Gallery' ) ) {
 	        $page_ids = array();
 	        if( isset($new_instance['at_all_page_items'] )){
 		        $at_all_page_items      = $new_instance['at_all_page_items'];
-		        if  (count($at_all_page_items) > 0 && is_array($at_all_page_items) ){
+		        if  ( is_array($at_all_page_items) && count($at_all_page_items) > 0 ){
 			        foreach ($at_all_page_items as $key=>$about ){
 				        $page_ids[$key]['page_id'] = beauty_studio_sanitize_page( $about['page_id'] );
 			        }
@@ -272,7 +272,7 @@ if ( ! class_exists( 'Beauty_Studio_Gallery' ) ) {
                     }
 
                     $post_in = array();
-                    if  (count($at_all_page_items) > 0 && is_array($at_all_page_items) ){
+                    if  ( is_array($at_all_page_items) && count($at_all_page_items) > 0 ){
 	                    foreach ( $at_all_page_items as $about ){
 		                    if( isset( $about['page_id'] ) && !empty( $about['page_id'] ) ){
 			                    $post_in[] = $about['page_id'];

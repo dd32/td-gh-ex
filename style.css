@@ -4,11 +4,12 @@ Theme URI: https://www.acmethemes.com/themes/beauty-studio
 Author: acmethemes
 Author URI: https://www.acmethemes.com/
 Description: Beauty Studio is a WordPress theme made for Beauty, Spa, Saloon particularly beauty based business. Its trendy layout design and extraordinary features make it a perfect theme for glamour world and can promptly grab the attention of its viewers. Fully Customizer based theme and widget options let you design your site from only Customizer screen. ie: Appearance => Customize. It has good compatibility with Site Origin Page Builder. Thus, it's very user-friendly and anyone can customize the pages of the theme easily without the need of coding knowledge. Having integrated with WooCommerce, it offers its user create an online store. For instance, a beauty shop owner can display their cosmetic products and sell them via online. Besides that, much wide range of features such as Custom Widgets, Responsive, Responsive Slider Image, Awesome Featured Section, Custom Sidebar Areas, Social Media Integration, Theme Options, Translation Ready, Browser Compatibility etc. Furthermore, its a multi-purpose theme and can be used for different purposes. Overall, a great theme to showcase your brand, beauty services and promote your business. Demo: http://demo.acmethemes.com/beauty-studio
-Version: 1.0.2
+Version: 2.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: beauty-studio
-Tags: one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, custom-logo, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, blog, entertainment, e-commerce, rtl-language-support
+Tags: blog, e-commerce, portfolio, one-column, two-columns, three-columns, four-columns, left-sidebar, right-sidebar, custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, full-width-template ,post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, wide-blocks
+
 */
 
 /*--------------------------------------------------------------
@@ -386,8 +387,10 @@ address {
 		top: 0;
 	}
 }
-.admin-bar .at-sticky{
-	top: 32px;
+@media (min-width: 768px){
+    .admin-bar .at-sticky{
+        top: 32px;
+    }
 }
 
 /*transparent header*/
@@ -3136,6 +3139,9 @@ article.page .post-thumb a{
 	color: #fff;
 	font-weight: 600;
 	font-size: 18px;
+}
+#beauty-studio-breadcrumbs .breadcrumb-trail li a{
+	display: inline-block;
 }
 #beauty-studio-breadcrumbs a {
 	color:#fff;
