@@ -2,10 +2,10 @@
 Contributors: bigjaymalcolm
 Requires at least: 5.2
 Tested up to: 5.2.1
-Stable tag: 1.1.3
+Stable tag: 1.1.5
 Requires PHP: 7.0
 
-Version 1.1.3
+Version 1.1.5
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: two-columns, right-sidebar, theme-options
@@ -21,7 +21,7 @@ Atreus is a simple WordPress blog theme created based on the Bulma framework.
 
 == Changelog ==
 
-= 1.0 =
+= 1.0.0 =
 * Initial Release.
 
 = 1.0.1 =
@@ -41,3 +41,9 @@ Atreus is a simple WordPress blog theme created based on the Bulma framework.
 
 = 1.1.2 =
 * Made fixes requested in theme approval.
+
+= 1.1.4 =
+* Updated README.md
+
+= 1.1.5 =
+* Updated screenshot.png

@@ -3,10 +3,10 @@
 **Contributors:** bigjaymalcolm
 **Requires at least:** 5.2
 **Tested up to:** 5.2.1
-**Stable tag:** 1.1.4
+**Stable tag:** 1.1.5
 **Requires PHP:** 7.0
 
-**Version:** 1.1.4
+**Version:** 1.1.5
 **License:** GNU General Public License v3 or later
 **License URI:** https://www.gnu.org/licenses/gpl-3.0.en.html
 **Tags:** two-columns, right-sidebar, theme-options
@@ -56,3 +56,6 @@ Atreus bundles the following third-party resources:
 
 ### 1.1.4
 * Updated README.md
+
+### 1.1.5
+* Updated screenshot.png
