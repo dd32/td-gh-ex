@@ -7,7 +7,7 @@ Author URI: https://d5creation.com
 
 Description: Beauty and Spa is a CSS3 Powered and WordPress Latest Version Ready Theme for Beauty Salon and Massage Parlors. It can also be used in any Small Business to Corporate Business. Beauty and Spa Theme is E-Commerce Ready by WooCommerce
 
-Version: 1.7
+Version: 1.9
 
 Tags: two-columns, right-sidebar, custom-header, featured-images, entertainment, holiday, custom-background, custom-menu, threaded-comments, sticky-post, rtl-language-support, portfolio, full-width-template, theme-options 
 
@@ -382,7 +382,7 @@ ul.page-numbers { list-style: none; margin: 0; }
 .author-image .avatar { border: 5px solid #ffffff; border-radius: 150px; }
 .author-name { color: #fb4baa;  }
 .author-description { margin-left: 15px; }
-.nf404 { width: 45%; min-width: 250px; height: auto; margin: 20px auto; display: block; position: relative; }
+.nf404 { width: 75%; min-width: 250px; height: auto; margin: 20px auto; display: block; position: relative; }
 .searchinfo { display: block; margin: 0 auto; width: auto; }
 .searchinfo h1.page-title { margin-bottom: 10px; }
 .error404 .searchinfo { display: table;  } 

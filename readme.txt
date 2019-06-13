@@ -1,56 +1,66 @@
-----------------------------------
-Beauty and Spa
-----------------------------------
-Version: 	1.7
-Developer: 	D5 Creation
-Author URI: 	https://d5creation.com
+=== Beauty and Spa ===
 
-Donation Link: 	https://d5creation.com/donate
+Contributors: D5 Creation
+Tags: two-columns, right-sidebar, custom-header, featured-images, entertainment, holiday, custom-background, custom-menu, threaded-comments, sticky-post, rtl-language-support, portfolio, full-width-template, theme-options
+Requires at least: 4.0
+Tested up to: 5.2.2-RC1-45523
+Stable tag: 1.9
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright: 	D5 Creation
-License: 		GNU General Public License v2 or later
-License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+Beauty and Spa Responsive Theme
 
-This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same License of the Theme.
+== Description ==
 
-slide-image1.jpg	: CC0 Public Domain - https://pixabay.com/en/woman-model-retro-beauty-beautiful-594116, https://pixabay.com/en/model-woman-portrait-woman-model-1082219
+Beauty and Spa is a CSS3 Powered and WordPress Latest Version Ready Theme for Beauty Salon and Massage Parlors. It can also be used in any Small Business to Corporate Business. Beauty and Spa Theme is E-Commerce Ready by WooCommerce.
 
-slide-image2.jpg	: CC0 Public Domain -  https://pixabay.com/en/mannequin-figure-deco-advertising-968523, https://pixabay.com/en/seductive-hot-glamour-portrait-1504982
+== Frequently Asked Questions ==
 
-slide-image3.jpg	: CC0 Public Domain -  https://pixabay.com/en/woman-tattoos-female-model-fashion-1210061
-
-
-logo.png		: CC0 Public Domain - https://pixabay.com/en/beauty-woman-girl-pink-abstract-153892
-fimage.jpg	: CC0 Public Domain - https://pixabay.com/en/wellness-beauty-flower-deco-plant-1382475
-
-404.png		: CC0 Public Domain - https://pixabay.com/en/error-404-page-was-not-found-news-1349562
-
-featured-image1.png	: CC0 Public Domain -  https://pixabay.com/en/drawing-female-girl-human-person-1297764
-
-featured-image2.png	: CC0 Public Domain -  https://pixabay.com/en/woman-model-blue-eyes-person-1472798
-
-featured-image3.png	: CC0 Public Domain - https://pixabay.com/en/girl-girls-inking-painting-1295453
-
-featured-image3.png	: CC0 Public Domain - https://pixabay.com/en/woman-artist-watercolor-beauty-550588
+= What to do after Theme Installation ? =
+After installing the Theme Please go to Appearance > Customize. You can set the Slide Images, About  Heading, Social Links there. Featured Boxes will come from the last 03 Sticky Posts in Free Version. Slider, About Section and Featured Boxes will be available when you will set a Page for the Front Page from Settings > Reading.
 
 
-featured-image1.jpg	: CC0 Public Domain -  https://pixabay.com/en/portrait-photography-girls-woman-828401
+= Why is Awesome? =
+Awesome is for Personal and Corporate Web Sites
 
-featured-image2.jpg	: CC0 Public Domain -  https://pixabay.com/en/girl-hyacinth-flowers-nature-1532733
+= Can it be used for Personal or Company Websites? =
+You can use for Personal to Corporate Sites
 
-featured-image3.jpg	: CC0 Public Domain - https://pixabay.com/en/girl-mov-flowers-iris-blue-eyes-1361807
+= Is it only for Blogs ? =
+No, It is for Blogs, Company, Personal Websites etc.
 
-featured-image3.jpg	: CC0 Public Domain - https://pixabay.com/en/seductive-hot-glamour-portrait-1504982
 
-FontAwesome 	: GPL Friendly Licenses, Source -  http://fortawesome.github.io/Font-Awesome
-html5.js		: MIT/GPL2 Licensed, https://github.com/aFarkas/html5shiv
-jquery.skitter.js	: Dual licensed under the MIT or GPL Version 2 licenses, http://thiagosf.net
+== Changelog ==
 
-Changelog 1.7
------------------------
-- Style Change
+= 1.9 =
+* New Readme File Added
+* Images Change
 
-Changelog 1.5
------------------------
-- Code Cleanup
-- Some Styling Change
+= 1.7 =
+* Style Improvement
+
+= 1.5 =
+* Code Cleanup
+* Some Styling Change
+
+== Resources ==
+* html5.js: https://github.com/aFarkas/html5shiv, MIT/GPL2
+* FontAwesome: http://fortawesome.github.io/Font-Awesome, GPL Friendly Licenses
+* jquery.skitter.js: http://thiagosf.net, MIT/GPL2
+
+* slide-image1.jpg: https://stocksnap.io/photo/OKG3OV0B05, https://stocksnap.io/photo/736GZC9YHU
+* slide-image2.jpg: https://stocksnap.io/photo/121CFQQ5ZM, https://stocksnap.io/photo/4D181PL4BO
+* slide-image3.jpg: https://stocksnap.io/photo/GCCXOL1RI4, http://pickupimage.com/free-photos/Closeup-of-a-Beautiful-Woman-Getting-Spa-Treatment-Massage/2337112
+
+* fimage.jpg: https://stocksnap.io/photo/QSIK3XHZ2P
+* 404.png: http://pickupimage.com/free-photos/Beautiful-Thai-woman-smile-with-short-black-hair/2321746
+
+* featured-image1.png: https://stocksnap.io/photo/ZL2KWPMLLI
+* featured-image2.png: https://stocksnap.io/photo/OWJB5WGPME
+* featured-image3.png: https://stocksnap.io/photo/PXW980LFT5
+* featured-image4.png: https://stocksnap.io/photo/NHF0EI3YZ4
+
+* featured-image1.jpg: https://stocksnap.io/photo/KZWJEPAZOC
+* featured-image2.jpg: https://stocksnap.io/photo/HQD1NOJK6I
+* featured-image3.jpg: http://pickupimage.com/free-photos/Beautiful-Indian-Woman/2332104
+* featured-image4.jpg: http://pickupimage.com/free-photos/Retro-portrait-of-beautiful-woman-Vintage-style/2329530
