@@ -1,7 +1,29 @@
+Website: https://accesspressthemes.com
+Email: support@accesspressthemes.com
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Tags: custom-background, custom-colors, custom-header, custom-menu, featured-images, one-column, right-sidebar, theme-options, threaded-comments, translation-ready, two-columns, grid-layout, footer-widgets, blog, photography, portfolio
+Contributors: access-keys
+Requires at least: WordPress 4.7
+Tested up to: 5.2.1
+Requires PHP: 5.4
+
+== Description ==
+AccessPress Parallax is beautiful WordPress theme with Parallax effect design. It is probably the 1st Parallax WP free theme and still #1 and most downloaded and installed Parallax theme. The theme is perfect for individual, creative agency, corporates and online store and almost any other type of websites. The theme is regularly updated with many features added in every release, currently the theme has a beautiful design, a parallax home page with many useful sections like multiple image-text sliders, features, portfolio gallery, beautiful team section, testimonials, latest blogs, CTA text and button, WooCommerce product listing, Contact form/text and map along with detailed footer. The theme is highly optimized for speed and Search Engines. It has many features from the theme manager panel and is translation ready, RTL support, custom CSS/JS support, deep WooCommerce integrated, bbPress Compatible and fully support multi language via POLYLANG plugin. 
+
+Demo: https://accesspressthemes.com/theme-demos/?theme=accesspress-parallax 
+
+Support forum: https://accesspressthemes.com/support/ 
+
+Premium version: https://accesspressthemes.com/wordpress-themes/accesspress-parallax-pro/
+
+
+
 AccessPress Parallax WordPress Theme, Copyright 2014 AccessPress Themes
 AccessPress Parallax is distributed under the terms of the GNU GPL v3
+
+AccessPress Parallax is based on Underscores http://underscores.me/, (C) 2012-2014 Automattic, Inc.
+
 
 
 Install Steps:
@@ -88,6 +110,10 @@ Images
 
 ---------------------------------------------
 == Changelog ==
+
+Version 1.72
+ * Updated readme.txt file headers
+ * Minor issues Fixed 
 
 Version 1.71
  * Minor issues Fixed 
