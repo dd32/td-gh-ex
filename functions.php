@@ -127,7 +127,7 @@ function audioman_mejs_add_container_class() {
 
 					// add a click toggle event
 					.click(function() {
-						jQuery( '#' + player.id ).parent().find( '.wp-playlist-previous').trigger('click');
+						jQuery( '#' + player.id ).parent().find( '.wp-playlist-prev').trigger('click');
 					});
 				}
 			}
