@@ -70,6 +70,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.20
+* Styling fixes/tweaks
+* Updated language .pot file
+
 #### 1.3.19
 * Removed old/deprecated code
 * Neatened up code/comments

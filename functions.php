@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.19' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.20' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -334,3 +334,26 @@ function topshop_cat_columns_array_push_after( $src, $topshop_cat_in, $pos ) {
     }
     return $R;
 }
+
+/*
+ * Notice for Page Layouts
+ */
+function topshop_flash_notice() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	
+	if ( !get_user_meta($user_id, 'topshop_flash_notice_ignore') ) {
+		echo '<div class="updated notice topshop-notice-layouts"><p>'. __( 'TopShop Premium is now on a <a href="https://kairaweb.com/theme/topshop/#purchase-premium" target="_blank">Flash Sale</a> for only $15', 'topshop' ) .' <a href="?topshop-flash-notice-ignore" class="topshop-noticemiss">Dismiss</a></p></div>';
+	}
+}
+add_action('admin_notices', 'topshop_flash_notice');
+
+function topshop_flash_notice_ignore() {
+	global $current_user;
+	
+	$user_id = $current_user->ID;
+	if (isset($_GET['topshop-flash-notice-ignore'])) {
+		add_user_meta($user_id, 'topshop_flash_notice_ignore', 'true', true);
+	}
+}
+add_action('admin_init', 'topshop_flash_notice_ignore');
