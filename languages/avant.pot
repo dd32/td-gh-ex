@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Avant\n"
-"POT-Creation-Date: 2019-06-11 15:43+0200\n"
+"POT-Creation-Date: 2019-06-14 16:57+0200\n"
 "PO-Revision-Date: 2016-08-27 13:55+0200\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -1242,6 +1242,12 @@ msgstr ""
 
 #: functions.php:376
 msgid "Meta Slider"
+msgstr ""
+
+#: functions.php:518
+msgid ""
+"Avant Premium is now on a <a href=\"https://kairaweb.com/theme/avant/"
+"#purchase-premium\" target=\"_blank\">Flash Sale</a> for only $15"
 msgstr ""
 
 #: includes/avant-pro/class-customize.php:76

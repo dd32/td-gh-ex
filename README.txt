@@ -68,6 +68,10 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.19
+* Style tweaks/fixes
+* Updated language .pot file
+
 #### 1.1.18
 * Style tweaks/fixes
 * Added setting to adjust Primary Navigation Font size

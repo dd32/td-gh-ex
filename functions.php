@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.18' );
+define( 'AVANT_THEME_VERSION' , '1.1.19' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -506,3 +506,26 @@ function avant_set_widget_categories_dropdown_arg($args){
 	return $args;
 }
 add_filter( 'widget_categories_dropdown_args', 'avant_set_widget_categories_dropdown_arg' );
+
+/*
+ * Notice for Page Layouts
+ */
+function avant_flash_notice() {
+	global $current_user;
+	$user_id = $current_user->ID;
+	
+	if ( !get_user_meta($user_id, 'avant_flash_notice_ignore') ) {
+		echo '<div class="updated notice avant-notice-layouts"><p>'. __( 'Avant Premium is now on a <a href="https://kairaweb.com/theme/avant/#purchase-premium" target="_blank">Flash Sale</a> for only $17', 'avant' ) .' <a href="?avant-flash-notice-ignore" class="avant-noticemiss">Dismiss</a></p></div>';
+	}
+}
+add_action('admin_notices', 'avant_flash_notice');
+
+function avant_flash_notice_ignore() {
+	global $current_user;
+	
+	$user_id = $current_user->ID;
+	if (isset($_GET['avant-flash-notice-ignore'])) {
+		add_user_meta($user_id, 'avant_flash_notice_ignore', 'true', true);
+	}
+}
+add_action('admin_init', 'avant_flash_notice_ignore');
