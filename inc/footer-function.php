@@ -178,7 +178,23 @@ $bevro_bottom_footer_col3_set= get_theme_mod( 'bevro_bottom_footer_col3_set','te
 <div class="bottom-footer">
 		 	<div class="bottom-footer-bar <?php echo esc_attr($bevro_bottom_footer_layout);?>">
 		       <div class="container">
-			      <div class="bottom-footer-container">
+            <?php if(bevro_pro_activation_class()==''){?>
+			        <div class="bottom-footer-container">
+               
+                 <div class="bottom-footer-col1">
+                 <?php bloginfo('name'); ?> | 
+                 <?php
+                 /* translators: %s: WordPress. */
+                  printf( __( 'Powered by %s.', 'bevro' ), 'WordPress' );
+                 ?>
+            <a href="<?php echo esc_url( __( 'https://themehunk.com/product/bevro-wordpress-theme/', 'bevro' ) ); ?>" target="_blank">
+               <?php printf( __( 'Designed by %s', 'bevro' ), 'Themehunk' ); ?>
+                    </a> 
+                </div>
+     
+		          </div>
+               <?php }else{ ?>
+              <div class="bottom-footer-container">
               <?php if($bevro_bottom_footer_layout=='ft-btm-one'):?>  
                  <div class="bottom-footer-col1">
                   <?php bevro_bottom_footer_conetnt_col1($bevro_bottom_footer_col1_set); ?>
@@ -201,7 +217,9 @@ $bevro_bottom_footer_col3_set= get_theme_mod( 'bevro_bottom_footer_col3_set','te
                     <?php bevro_bottom_footer_conetnt_col3($bevro_bottom_footer_col3_set); ?>
                   </div>
               <?php endif;?>
-		           </div>
+               </div>
+
+               <?php } ?>
 		       </div>
 		    </div>
 </div>

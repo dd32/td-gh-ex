@@ -32,7 +32,9 @@ require BEVRO_THEME_DIR . 'customizer/section/layout/scroll-to-top.php';
 //footer option
 require BEVRO_THEME_DIR . 'customizer/section/layout/above-footer.php';
 require BEVRO_THEME_DIR . 'customizer/section/layout/widget-footer.php';
+if(bevro_pro_activation_class()!==''){
 require BEVRO_THEME_DIR . 'customizer/section/layout/bottom-footer.php';
+}
 //Button
 require BEVRO_THEME_DIR . 'customizer/section/layout/button.php';
 //Loader
