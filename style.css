@@ -4,7 +4,7 @@ Theme URI: http://ebyb.eu/themes/acuarela/
 Author: acalfieri
 Author URI: http://ebyb.eu
 Description: Acuarela is a light, fully functional WordPress theme, written with the intention of minimising code. It was designed to be fully responsive by taking the mobile-first approach. Besides a customizable header, it features the full range of post formats, two menu locations, a sidebar widget area and three widget areas in the footer. It is accesibility ready and has Gutenberg support.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: blog, photography, one-column, two-columns, right-sidebar, accessibility-ready, custom-background, custom-header, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready
@@ -814,12 +814,13 @@ input[type="search"].search-field {
 	background-color: transparent;
 	color: #004c73;
 	text-decoration: dotted underline;
-	border-bottom: 1px dotted;
+	border-bottom: 1px dotted transparent;
 }
 
 a:hover,
 a:focus {
 	color: #067f64;
+	border-bottom: 1px dotted;
 }
 
 /**
@@ -1611,7 +1612,6 @@ section:after,
 
  .widget-area a {
 	color: #004c73;
-	border: 0;
  }
 
 .widget-area a:hover,
@@ -2244,10 +2244,55 @@ main {
 
 .comment-list .reply,
 .comment-metadata {
-	font-size: 12px;
+	color: #555;
+	font-size: 0.75em;
 	line-height: 2;
+	letter-spacing: 0.008em;
 	text-transform: uppercase;
 }
+
+.comment-list .reply a,
+.comment-metadata a {
+	color: #656565;
+	text-decoration: none;
+	border: 0;
+}
+
+.comment-list .reply a:hover,
+.comment-list .reply a:focus,
+.comment-metadata a:hover,
+.comment-metadata a:focus {
+	color: #000;
+	text-decoration: underline;
+}
+
+/*
+
+.entry-meta {
+	clear: both;
+	color: #555;
+	font-size: 0.75em;
+	font-weight: 400;
+	letter-spacing: 0.008em;
+	text-transform: uppercase;
+}
+
+.entry-meta > span {
+}
+
+.entry-meta a {
+	color: #656565;
+	text-decoration: none;
+	border: 0;
+}
+
+.entry-meta a:hover,
+.entry-meta a:focus {
+	color: #000;
+	text-decoration: underline;
+}
+
+*/
 
 .comment-list .reply {
 	margin-top: 1em;
@@ -2270,8 +2315,7 @@ main {
 
 .comment-author a:hover,
 .comment-list .pingback a:hover,
-.comment-list .trackback a:hover,
-.comment-metadata a:hover {
+.comment-list .trackback a:hover {
 	color: #004c73;
 }
 
@@ -2315,15 +2359,16 @@ main {
 	margin-left: 10px;
 }
 
-.comment a {
+.comment-content a {
 	color: #004c73;
-	text-decoration: none;
-	border: 0;
+	text-decoration: dotted underline;
+	border: 1px dotted transparent;
 }
-.comment a:hover,
-.comment a:focus {
+.comment-content a:hover,
+.comment-content a:focus {
 	color: #067f64;
-	text-decoration: underline;
+	text-decoration: dotted underline;
+	border: 1px dotted;
 }
 
 .comment-reply-link:before,

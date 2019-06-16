@@ -100,7 +100,7 @@ if ( ! function_exists( 'acuarela_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 		set_post_thumbnail_size( 960, 540, true );
 
-		// This theme uses wp_nav_menu() in three locations.
+		// This theme uses wp_nav_menu() in two locations.
 		register_nav_menus( array(
 			'primary' 	=> __( 'Primary Menu', 'acuarela' ),
 			'social' 	=> __( 'Social Links Menu', 'acuarela' ),
@@ -139,9 +139,9 @@ if ( ! function_exists( 'acuarela_setup' ) ) :
 		 * This theme styles the visual editor to resemble the theme style,
 		 * specifically font, colors, icons, and column width.
 		 */
+		add_theme_support( 'editor-styles' );
 		add_editor_style( array( 'css/editor-style.css', 'genericons/genericons.css', acuarela_fonts_url(), ) );
 
-		add_theme_support( 'editor-styles' );
 	}
 endif; // acuarela_setup.
 add_action( 'after_setup_theme', 'acuarela_setup' );

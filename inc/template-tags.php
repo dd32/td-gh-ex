@@ -184,10 +184,12 @@ add_filter( 'excerpt_length', 'acuarela_excerpt_length', 999 );
  * Filters the edit comment link.
  */
 function acuarela_edit_comment_link() {
-	printf( '<span class="edit-link"><span class="genericon genericon-edit" aria-hidden="true"></span><a href="%1$s" class="comment-edit-link">%2$s</a></span>',
+	$link = sprintf( '<a href="%1$s" class="comment-edit-link"><span class="genericon genericon-edit" aria-hidden="true"></span>%2$s</a>',
 		esc_url( get_edit_comment_link() ),
 		esc_html( __( 'Edit', 'acuarela' ) )
 	);
+
+	return $link;
 }
 add_filter( 'edit_comment_link', 'acuarela_edit_comment_link' );
 
