@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.5
+* @version   1.3.6
 */
 
 /* TABLE OF CONTENT
@@ -451,8 +451,28 @@ function avik_customizer_css() {
 
   }
 </style>
-<?php endif; ?>
+<?php endif; 
 
+/* ------------------------------------------------------------------------- *
+##  Font Family */
+/* ------------------------------------------------------------------------- */
+
+?>
+
+<style>
+/* Font Family Title */
+ h1,h2,h3,h4,h5,h6{
+	font-family:'<?php echo esc_html(get_theme_mod('avik_title_font','Montserrat')); ?>';
+ }
+
+ /*Font Family Subtitle */
+ p,span,li{
+	font-family:'<?php echo esc_html(get_theme_mod('avik_subtitle_font','Montserrat')); ?>';
+ }
+
+
+
+</style>
 
 <?php
 }

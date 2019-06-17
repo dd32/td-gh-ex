@@ -4,7 +4,7 @@
 *
 * @author    Denis Franchi
 * @package   Avik
-* @version   1.3.5
+* @version   1.3.6
 */
 
 /* TABLE OF CONTENT
@@ -24,7 +24,7 @@
 2.12 - Back to Top
 2.13 - Social
 2.14 - Go Pro
-
+2.15 - Google Font
 */
 /**
 *
@@ -3459,6 +3459,97 @@ function avik_customize_register( $wp_customize ) {
 																														      'section' => 'avik_section_settings_go_pro'
 																														   )
 																														) );
+
+
+
+
+$avikFont = new Avik_WP_Customize_Panel( $wp_customize, 'avik_font', array(
+	'title'    => __('Font Family','avik'),
+	'priority' => 1,
+));
+
+$wp_customize->add_panel( $avikFont );
+
+// Font Family
+$wp_customize->add_section(
+	'avik_font_family_section',
+	array(
+		'title'      => __('Font Family Settings','avik'),
+		'priority'   => 560,
+		'capability' => 'edit_theme_options',
+		'panel'      => 'avik_font',
+));
+
+// Title
+$wp_customize->add_setting( 'avik_title_font' , array(
+	'default'           => 'Montserrat',
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'wp_strip_all_tags',
+
+) );
+
+$wp_customize->add_control(
+	'avik_title_font' ,
+	array(
+		'label'                  => __( 'Font Family Title', 'avik' ),
+		'description'            =>__('h1,h2,h3,h4,h5,h6','avik'),
+		'section'                => 'avik_font_family_section',
+		'settings'               => 'avik_title_font',
+		'priority'   => 10,
+		'type'                   => 'select',
+		'choices'                => array(
+				'Montserrat'           => __('Montserrat','avik'),
+				'Lato '                => __('Lato','avik'),
+				'Roboto'               => __('Robot','avik'),
+				'Text Me One'          => __('Text Me One','avik'),
+				'Ubuntu'               => __('Ubuntu','avik'),
+				'Titillium Web'        => __('Titillium Web','avik'),
+				'Inconsolata'          => __('Inconsolata','avik'),
+				'Indie Flower'         => __('Indie Flower','avik'),
+				'Dancing Script'       => __('Dancing Script','avik'),
+				'Rajdhani'             => __('Rajdhani','avik'),
+				'Sarala'               => __('Sarala','avik'),
+				'Covered By Your Grace'=> __('Covered By Your Grace','avik'),
+				'Aldrich'              => __('Aldrich','avik'),
+				'Nanum Gothic Coding'  => __('Nanum Gothic Coding','avik'),
+				'Carme'                => __('Carme','avik')
+) ) );
+
+// Subtitle
+$wp_customize->add_setting( 'avik_subtitle_font' , array(
+	'default'           => 'Montserrat',
+	'transport'         => 'refresh',
+	'sanitize_callback' => 'wp_strip_all_tags',
+
+) );
+
+$wp_customize->add_control(
+	'avik_subtitle_font' ,
+	array(
+		'label'                  => __('Font Family Subtitle', 'avik' ),
+		'description'            =>__('p,span,li','avik'),
+		'section'                => 'avik_font_family_section',
+		'settings'               => 'avik_subtitle_font',
+		'priority'   => 20,
+		'type'                   => 'select',
+		'choices'                => array(
+				'Montserrat'           => __('Montserrat','avik'),
+				'Lato '                => __('Lato','avik'),
+				'Roboto'               => __('Robot','avik'),
+				'Text Me One'          => __('Text Me One','avik'),
+				'Ubuntu'               => __('Ubuntu','avik'),
+				'Titillium Web'        => __('Titillium Web','avik'),
+				'Inconsolata'          => __('Inconsolata','avik'),
+				'Indie Flower'         => __('Indie Flower','avik'),
+				'Dancing Script'       => __('Dancing Script','avik'),
+				'Rajdhani'             => __('Rajdhani','avik'),
+				'Sarala'               => __('Sarala','avik'),
+				'Covered By Your Grace'=> __('Covered By Your Grace','avik'),
+				'Aldrich'              => __('Aldrich','avik'),
+				'Nanum Gothic Coding'  => __('Nanum Gothic Coding','avik'),
+				'Carme'                => __('Carme','avik')
+) ) );
+													
 
 																													}
 																													add_action( 'customize_register', 'avik_customize_register' );

@@ -4,7 +4,7 @@
  *
  * @author    Denis Franchi
  * @package   Avik
- * @version   1.3.5
+ * @version   1.3.6
  */
 
 /* TABLE OF CONTENT
@@ -27,6 +27,7 @@
 16 - Add additional templates
 17 - Include Plugin
 18 - Multipost Thumbnails Plugin
+19 - Google Font
 */
 
 
@@ -787,3 +788,12 @@ if ( class_exists( 'MultiPostThumbnails' )) {
         )
     );
 }
+
+
+/* 19 Google Font
+-------------------------------------------------------- */
+
+function avik_custom_add_google_fonts() {
+	wp_enqueue_style( 'avik-custom-google-fonts', 'https://fonts.googleapis.com/css?family=Aldrich:200,300,400,500,600,700,800,900|Carme:200,300,400,500,600,700,800,900|Covered+By+Your+Grace:200,300,400,500,600,700,800,900|Dancing+Script:200,300,400,500,600,700,800,900|Inconsolata:200,300,400,500,600,700,800,900|Indie+Flower:200,300,400,500,600,700,800,900|Lato:200,300,400,500,600,700,800,900|Montserrat:200,300,400,500,600,700,800,900|Nanum+Gothic+Coding:200,300,400,500,600,700,800,900|Rajdhani:200,300,400,500,600,700,800,900|Roboto:200,300,400,500,600,700,800,900|Sarala:200,300,400,500,600,700,800,900|Text+Me+One:200,300,400,500,600,700,800,900|Titillium+Web:200,300,400,700,900|Ubuntu:200,300,400,500,600,700,800,900',false );
+	}
+	add_action( 'wp_enqueue_scripts', 'avik_custom_add_google_fonts' );

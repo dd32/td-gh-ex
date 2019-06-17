@@ -8,7 +8,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"PO-Revision-Date: 2018-12-07 15:25+0100\n"
+"PO-Revision-Date: 2019-06-17 21:53+0200\n"
 "Language-Team: \n"
 "X-Generator: Poedit 2.0.7\n"
 "Last-Translator: \n"
@@ -523,6 +523,90 @@ msgstr "Inserisci api key..."
 #: inc/customizer.php:2704
 msgid "Enable/Disable copyright Site."
 msgstr "Abilita/Disabilita il Copyright del Sito."
+
+#: inc/customizer.php:3467
+msgid "Font Family"
+msgstr "Font Family"
+
+#: inc/customizer.php:3477
+msgid "Font Family Settings"
+msgstr "Font Family Settings"
+
+#: inc/customizer.php:3494
+msgid "Font Family Title"
+msgstr "Font Family Titoli"
+
+#: inc/customizer.php:3495
+msgid "h1,h2,h3,h4,h5,h6"
+msgstr "h1,h2,h3,h4,h5,h6"
+
+#: inc/customizer.php:3501
+msgid "Montserrat"
+msgstr "Montserrat"
+
+#: inc/customizer.php:3502
+msgid "Lato"
+msgstr "Lato"
+
+#: inc/customizer.php:3503
+msgid "Robot"
+msgstr "Robot"
+
+#: inc/customizer.php:3504
+msgid "Text Me One"
+msgstr "Text Me One"
+
+#: inc/customizer.php:3505
+msgid "Ubuntu"
+msgstr "Ubuntu"
+
+#: inc/customizer.php:3506
+msgid "Titillium Web"
+msgstr "Titillium Web"
+
+#: inc/customizer.php:3507
+msgid "Inconsolata"
+msgstr "Inconsolata"
+
+#: inc/customizer.php:3508
+msgid "Indie Flower"
+msgstr "Indie Flowe"
+
+#: inc/customizer.php:3509
+msgid "Dancing Script"
+msgstr "Dancing Script"
+
+#: inc/customizer.php:3510
+msgid "Rajdhani"
+msgstr "Rajdhani"
+
+#: inc/customizer.php:3511
+msgid "Sarala"
+msgstr "Sarala"
+
+#: inc/customizer.php:3512
+msgid "Covered By Your Grace"
+msgstr "Covered By Your Grace"
+
+#: inc/customizer.php:3513
+msgid "Aldrich"
+msgstr "Aldrich"
+
+#: inc/customizer.php:3514
+msgid "Nanum Gothic Coding"
+msgstr "Nanum Gothic Coding"
+
+#: inc/customizer.php:3515
+msgid "Carme"
+msgstr "Carme"
+
+#: inc/customizer.php:3529
+msgid "Font Family Subtitle"
+msgstr "Font Family Sottotitoli"
+
+#: inc/customizer.php:3530
+msgid "p,span,li"
+msgstr "p,span,li"
 
 # Color scheme
 #: inc/color-scheme.php:36
