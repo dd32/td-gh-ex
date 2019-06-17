@@ -2,33 +2,10 @@
 	$hide_show_service= get_theme_mod('hide_show_service','on'); 
 	$service_title= get_theme_mod('service_title'); 
 	$service_description= get_theme_mod('service_description');
-	
 	if($hide_show_service == 'on') :
 ?>
-
-<?php 
-	for($service =1; $service<4; $service++) 
-	{
-		if( get_theme_mod('service-page'.$service)) 
-		{
-			$service_query = new WP_query('page_id='.get_theme_mod('service-page'.$service,true));
-			while( $service_query->have_posts() ) 
-			{ 
-				$service_query->the_post();
-				$image = wp_get_attachment_url( get_post_thumbnail_id($post->ID));
-				$img_arr[] = $image;
-				$id_arr[] = $post->ID;
-			}    
-		}
-	}
-?>
-
-<?php if(!empty($id_arr))
-{ ?>
 	<section class="service-version-one">
-		
 		<div class="container">
-		
 			<div class="row text-center padding-top-60 padding-bottom-30">
 				<div class="col-sm-12">
 				<?php if ($service_title) : ?>
@@ -40,9 +17,25 @@
 				<?php endif; ?>
 				</div>
 			</div>
-
 			<div class="row text-center padding-bottom-60">
-				
+				<?php 
+					for($service =1; $service<4; $service++) 
+					{
+						if( get_theme_mod('service-page'.$service)) 
+						{
+							$service_query = new WP_query('page_id='.get_theme_mod('service-page'.$service,true));
+							while( $service_query->have_posts() ) 
+							{ 
+								$service_query->the_post();
+								$image = wp_get_attachment_url( get_post_thumbnail_id($post->ID));
+								$img_arr[] = $image;
+								$id_arr[] = $post->ID;
+							}    
+						}
+					}
+				?>
+				<?php if(!empty($id_arr))
+				{ ?>
 				<?php 
 					$i=1;
 					foreach($id_arr as $id)
@@ -57,7 +50,6 @@
 				<div class="col-md-4 col-sm-4 margin-bottom-30">
 					<div class="service-box wow fadeInUp">
 						<div class="service-icon-box">
-							
 							<?php 
 								$image = wp_get_attachment_url( get_post_thumbnail_id($post->ID));
 								$thumbnail_id = get_post_thumbnail_id( $post->ID );
@@ -81,12 +73,12 @@
 						<div class="service-description"><p> <?php echo $content; ?> </p></div>
 					</div>
 				</div>
-				
+				<?php } wp_reset_postdata(); ?>
 				<?php $i++; 
 				}  ?>
 			</div>
 		</div>
 	</section>
 <div class="clearfix"></div>
-<?php } wp_reset_postdata(); endif; ?>
+<?php endif; ?>
 
