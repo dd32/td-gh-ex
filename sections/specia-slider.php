@@ -2,7 +2,6 @@
 	$hide_show_slider= get_theme_mod('hide_show_slider','on');
 	if( $hide_show_slider == 'on' ): 
 ?>
-
 <?php 
 	for($slide =1; $slide<3; $slide++) 
 	{
@@ -19,7 +18,6 @@
 		}
 	}
 ?>
-
 <?php if(!empty($id_arr))
 { ?>
 	<section class="slider-version">
@@ -37,9 +35,7 @@
 					$content = apply_filters('the_content', $content);
 					$content = str_replace(']]>', ']]>', $content);
 			?>  
-			
 			<div class="item">
-			
 				<figure>
 					<?php
 						$image = wp_get_attachment_url( get_post_thumbnail_id($post->ID));
@@ -48,7 +44,6 @@
 					?>
 					<img src="<?php echo esc_url($image);?>" alt="<?php echo esc_attr($alt); ?>">
 				</figure>
-
 				<div class="specia-slider">
 					<div class="container inner-table">
 						<div class="inner-table-cell">
@@ -68,12 +63,8 @@
 					</div>
 				</div>
 			</div>
-		
 			<?php $i++; } ?>  
-			
 		</div>
 	</section>
-
 	<div class="clearfix"></div>
-
 <?php } wp_reset_postdata(); endif; ?>

@@ -21,7 +21,6 @@
 ?>
     <div class="features-overlay">
         <div class="container">
-            
             <div class="row text-center padding-top-60 padding-bottom-30">
                 <div class="col-sm-12">
 					<?php if ($features_title)  : ?>
@@ -33,7 +32,6 @@
 					<?php endif; ?>
                 </div>
             </div>
-			
 			<?php 
 				if( is_active_sidebar('specia_feature_widget') ) :
 					echo '<div class="row padding-bottom-30">';
@@ -41,7 +39,6 @@
 					echo '</div>';
 				endif;
 			?>
-		
 		</div>
     </div>
 </section>

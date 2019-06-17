@@ -3,7 +3,6 @@
         float: none !important;
         text-align: center;
     }
-   
     .navbar > .container .navbar-brand {
         margin: 0 auto;
     }
@@ -16,8 +15,7 @@
 	ul.payment-icon {
 		text-align: left;
 	}
-	
-    /*---------------------------------------
+	/*---------------------------------------
     Home Slider
     -----------------------------------------*/
    .slider-version-one .caption {
@@ -30,8 +28,7 @@
         line-height: 20px;
 		text-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
     }
-
-    .slider-version-one .caption p {
+	.slider-version-one .caption p {
         font-weight: normal;
         font-size: 13px;
 		text-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
@@ -93,8 +90,7 @@
         line-height: 20px;
 		text-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
     }
-
-    .slider-version-one .caption p {
+	.slider-version-one .caption p {
         font-weight: normal;
         font-size: 13px;
 		text-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
@@ -143,8 +139,7 @@
         line-height: 30px;
 		text-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
     }
-
-    .slider-version-one .caption p {
+	.slider-version-one .caption p {
         font-weight: normal;
         font-size: 13px;
 		text-shadow: 0 3px 3px rgba(0, 0, 0, 0.5);
@@ -156,8 +151,7 @@
         min-height: 250px;
         background-size: 
     }
-    
-    .specia-btn-1{
+   .specia-btn-1{
     background: transparent;
     color: #ffffff;
     font-size: 13px;
