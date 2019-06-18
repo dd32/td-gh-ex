@@ -1,7 +1,7 @@
 ﻿=================
 WPFANZONE THEME
 =================
-Copyright (c) 2014 by Hostmarks (http://hostmarks.com/)
+Copyright (c) 2019 by WP Dev Shed (http://wpdevshed.com/)
 This Theme is distributed under the terms of the GNU GPL.
 
 ===========
@@ -15,7 +15,7 @@ All the image graphics and icons bundled with this theme are created by the auth
 
 Supported browsers: Firefox, Opera, Chrome, Safari and IE9+ (Some css3 styles like shadows, rounder corners and 2D transform are not supported by IE8 and below).
 
-For free themes support, please contact us http://hostmarks.com/contact/
+For free themes support, please contact us http://wpdevshed.com/contact/
 
 
 ============================================
@@ -87,10 +87,10 @@ This theme uses Bootstrap as a design tool
  * Copyright (c) 2011-2014 Twitter, Inc
  * Licensed under https://github.com/twbs/bootstrap/blob/master/LICENSE
 
-Version 2.4
-fixed style.css errors
-fixed functions.php errors
-fixed content files errors
+Version 3.0
+updated style.css, widget.php, template-tags.php, functions.php
+removed extras.php
+WP Dev Shed has taken over reponsibility for these theme
 
 Version 2.3
 fixes below files that cause bug base on validator.w3.org

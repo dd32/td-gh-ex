@@ -25,9 +25,8 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 		<h2 class="comments-title">
 			<?php
-				printf( _nx( 'This article has %d Comment', 'This article has %1$s Comments', get_comments_number(), 'comments title', 'wp-fanzone' ),
+				printf( _nx( 'This article has 1 Comment', 'This article has %1$s Comments', get_comments_number(), 'comments title', 'wp-fanzone' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
-
 			?>
 		</h2>
 

@@ -45,12 +45,6 @@ if ( ! function_exists( 'wp_fanzone_header_style' ) ) :
 function wp_fanzone_header_style() {
 	$header_text_color = get_header_textcolor();
 
-	// If no custom options for text are set, let's bail
-	// get_header_textcolor() options: HEADER_TEXTCOLOR is default, hide text (returns 'blank') or any hex value
-	if ( empty( $header_text_color ) ) {
-		return;
-	}
-
 	// If we get this far, we have custom styles. Let's do this.
 	?>
 	<style type="text/css">
