@@ -18,11 +18,11 @@ if ( !function_exists('aeonblog_slider') ) :
   function aeonblog_slider() { 
   	
   	global $aeonblog_theme_options;
-	$blog_meta = absint($aeonblog_theme_options['aeonblog-enable-slider']);
+	$enable_slider = absint($aeonblog_theme_options['aeonblog-enable-slider']);
 	$slider_cat_id = absint($aeonblog_theme_options['aeonblog-slider-category']);
 	$slider_number = absint($aeonblog_theme_options['aeonblog-slider-number']);
 
-	if ( 1 === $blog_meta ) : 
+	if ( 1 === $enable_slider && is_home() || is_front_page() ) : 
 ?> 			
 <div class="slider-section">
 		<!-- Container -->

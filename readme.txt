@@ -1,0 +1,67 @@
+=== AeonBlog ===
+/**
+ * File AeonBlog.
+ * @package   AeonBlog
+ * @author    Aeon Theme <info@aeontheme.com>
+ * @copyright Copyright (c) 2019, Aeon Theme
+ * @link      http://www.aeontheme.com/themes/aeonblog
+ * @license   http://www.gnu.org/licenses/gpl-2.0.html
+*/
+
+Contributors: aeontheme
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, accessibility-ready, blog, news
+
+Requires at least: 4.8
+Tested up to: 4.9.8
+Stable tag: 1.1.0
+License: GNU General Public License v2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+
+== Description ==
+Simple and Clean Blog Theme.
+
+
+== Installation ==
+
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+AeonBlog includes support for Infinite Scroll in Jetpack.
+
+== Changelog ==
+= 1.0.0 - June 18 2019 =
+* Fixed Design Issues
+* Managed Sections 
+* Accessibility Tag added
+
+= 0.0.1 - May 25 2019 =
+* Initial release
+
+== Theme License ==
+AeonBlog WordPress Theme, Copyright 2019 Aeon Theme
+AeonBlog is distributed under the terms of the GNU General Public License v2
+
+== Credits ==
+
+* Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+* Google Fonts - Apache License, version 2.0
+* Font-Awesome https://github.com/FortAwesome/Font-Awesome FontAwesome 4.6.3 Copyright 2012 Dave Gandy Font License: SIL OFL 1.1 Code License: MIT License http://fontawesome.io/license/
+* Bootstrap http://getbootstrap.com/ [MIT](http://opensource.org/licenses/MIT) Copyright 2011-2015 Twitter, Inc.
+* Bootsnav Copyright (c) 2016 adamnurdin01 https://github.com/adamnurdin01/bootsnav/blob/master/LICENSE [MIT](https://opensource.org/licenses/MIT)
+* WP Bootstrap Navwalker - GNU GENERAL PUBLIC LICENSE https://github.com/wp-bootstrap/wp-bootstrap-navwalker/blob/master/LICENSE.txt
+* Animate CSS - Copyright (c) 2013 Daniel Eden http://daneden.me/animate [ Licensed under the MIT license ]
+* theia-sticky-sidebar https://github.com/WeCodePixels/theia-sticky-sidebar [MIT](http://opensource.org/licenses/MIT)
+* BreadcrumbTrail Copyright (c) 2008 - 2017, Justin Tadlock https://themehybrid.com/plugins/breadcrumb-trail http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
+
+
+== Image License == 
+https://pxhere.com/en/photo/1445341 [Creative Commons Zero (CC0) License]
+https://pxhere.com/en/photo/1427193 [Creative Commons Zero (CC0) License]
+https://pxhere.com/en/photo/1560073 [Creative Commons Zero (CC0) License]

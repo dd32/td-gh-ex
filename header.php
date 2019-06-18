@@ -27,48 +27,16 @@ global $aeonblog_theme_options;
 
 	<?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
+
+<?php
+//wp_body_open hook from WordPress 5.2
+	if ( function_exists( 'wp_body_open' ) ) {
+		wp_body_open();
+	}
+	?>
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'aeonblog' ); ?></a>
 	<header id="masthead" class="site-header">
-		
-		<?php if ( has_nav_menu('top')) { ?>
-			<div class="container">
-				<div class="top-header">
-					<ul class="navbar-menu empty-menu top-menu">
-						<?php
-						wp_nav_menu( array( 
-							'theme_location' => 'top', 	
-							'menu_class' => 'nav navbar-nav navbar-left',
-						));
-						?>
-					</ul>
-				</div>
-			</div>
-		<?php } ?>
-
-		<?php if( 1 == $aeonblog_theme_options['aeonblog-social-icons']){ ?>
-			<div class="container">
-				<div class="top-header-social">				
-					<nav class="menu-social-container">
-						<ul class="menu-social aeonblog-menu-social">
-							<li class="social-link">
-								<?php 
-									wp_nav_menu( array(
-										'theme_location'    => 'social',
-										'menu_class'        => 'aeonblog-menu-social',
-										'depth'             => 0,
-										'fallback_cb'		=> false
-									)
-								);
-								?>
-							</li>
-						</ul>
-					</nav>
-				</div>
-			</div>
-		<?php } ?>
-
 		<div class="container">
 			<!-- Start Header Navigation -->
 			<div class="navbar-header site-branding">
@@ -119,18 +87,15 @@ global $aeonblog_theme_options;
 </header><!-- #masthead -->	
 <?php if(has_header_image() || is_front_page () ){ ?>
 	<div class="row">
-	<?php aeonblog_header_image(); ?>
+		<?php aeonblog_header_image(); ?>
 	</div>
-<?php }else{ ?> 
+<?php } ?> 
 <div class="row">
 	<!-- Slider Section -->
 	<?php 
-	if(is_home() || is_front_page () && !is_paged() ) {
-		do_action('aeonblog_slider_hook'); 
-	}?> 
+	do_action('aeonblog_slider_hook'); 
+	?> 
 </div>
-<?php } ?>
-
 <?php if( !is_page_template('elementor_header_footer') ){ ?>
 	<div id="content" class="blog-wrapper">
 		<div class="container">

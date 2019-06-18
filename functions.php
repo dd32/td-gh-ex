@@ -52,7 +52,6 @@ if ( ! function_exists( 'aeonblog_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'primary' => esc_html__( 'Primary Menu', 'aeonblog' ),
-			'top' => esc_html__( 'Top Menu', 'aeonblog' ),
 			'social' => esc_html__( 'Social Menu', 'aeonblog' ),
 		) );
 

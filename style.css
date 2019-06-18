@@ -3,12 +3,12 @@ Theme Name: AeonBlog
 Theme URI: 
 Author: aeontheme
 Author URI: 
-Description: Simple and Clean Blog Theme.
-Version: 0.0.1
+Description: Simple and Clean Accessibility Ready Blog Theme.
+Version: 1.0.0
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aeonblog
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, blog, news
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, accessibility-ready, blog, news
 
 This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
@@ -605,6 +605,16 @@ img {
 	max-width: 100%;
 	/* Adhere to container width. */
 }
+
+.carousel-inner .item img, .carousel-inner .item .active img {
+	max-width: 100%;
+	min-width: 100%;
+	height: auto;
+}
+
+/*.slider-caption .carousel-caption {
+	width: 100%;
+}*/
 
 figure {
 	margin: 1em 0;
@@ -1583,7 +1593,8 @@ object {
 	padding: 0;
 	left: auto;
 	right: 0;
-	width: 55.47%;
+	/*width: 55.47%;*/
+	width: 100%;
 	height: 100%;
 	bottom: 0;
 	text-shadow: none;

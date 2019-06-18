@@ -11,7 +11,6 @@
  *
  * @package AeonBlog
  */
-
 /**
  * AeonBlog Theme Customizer
  *

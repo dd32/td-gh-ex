@@ -56,7 +56,7 @@ $copyright = wp_kses_post($aeonblog_theme_options['aeonblog-copyright-text']);
 			</a>
 				<?php
 				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'aeonblog' ), 'AeonBlog', '<a href="https://www.aeontheme.com">Aeon
+				printf( esc_html__( 'Theme: %1$s by %2$s.', 'aeonblog' ), 'AeonBlog', '<a href="#">Aeon
 					Theme</a>' );
 				?>
 		</div><!-- .site-info -->
