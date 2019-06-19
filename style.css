@@ -1,0 +1,339 @@
+/*
+Theme Name:   Aerobics
+Theme URI:    https://mysterythemes.com/wp-themes/aerobics/
+Author:       Mystery Themes
+Author URI:   https://mysterythemes.com/
+Description:  Aerobics is a child theme of SwipeWp which is awesome free WordPress Business Theme comes up with plenty of powerful features that allow you to create a business website in any niche. It is integrated with WooCommerce and other popular plugins that offers full flexibility to use all its features. It has a promising design and exemplary features like Testimonials, Customization option, Optimized for SEO, Amazing support and documentation that makes no trouble while using the theme. Demo: http://demo.mysterythemes.com/swipe-demos/
+Version:      1.0.0
+License:      GNU General Public License v3 or later
+License URI:  http://www.gnu.org/licenses/gpl-3.0.html
+Template:     swipewp
+Text Domain:  aerobics
+Tags:         blog, portfolio, e-commerce, left-sidebar, right-sidebar, custom-background, custom-logo, custom-menu, featured-images, theme-options, translation-ready
+
+*/
+.post-title,
+.site-title a, 
+.banner-description,
+#section-testimonials .post-title,
+.custom-header .custom-header-wrapper .entry-title,
+.custom-header .custom-header-wrapper .page-title,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Merriweather', serif;
+}
+
+
+#wp-custom-header::after {
+	display: none;
+}
+
+.banner-btn-wrap a:hover{
+	color: red;
+}
+
+.home.bg-transparent-layout #masthead {
+	top: auto;
+}
+
+.edit-link .post-edit-link{
+  background: none;
+}
+
+/*layout two*/
+
+#section-service .section-title-wrapper {
+  margin-bottom: 50px;
+}
+
+#section-service .cat-posts-wrapper,
+#section-service .section-title-wrapper {
+	width: 100%;
+	float: none;
+}
+
+#section-service .section-title-wrapper{
+  text-align: center;
+}
+
+.section-title::after,
+#section-service .category-title::after {
+	left: 50%;
+	-webkit-transform:translateX(-50%);
+  -ms-transform:translateX(-50%) ;
+  -o-transform: translateX(-50%);
+  transform: translateX(-50%);
+}
+
+#section-service .section-description{
+  font-size: 20px;
+  color: #4e4e4e;
+  width: 75%;
+  margin: 40px auto 50px auto;
+  font-weight: 700;
+}
+
+#section-service .single-post-wrap {
+  width: 30.33%;
+}
+
+#section-service .single-post-wrap{
+  box-shadow: 2px 2px 7px rgba(0,0,0,0.05);
+  padding: 20px;
+  -webkit-transform: translateY(0%);
+  -ms-transform: translateY(0%);
+  -o-transform: translateY(0%);
+  transform: translateY(0%);
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  text-align: center;
+}
+
+#section-service .single-post-wrap:hover{
+  -webkit-transform: translateY(-3%);
+  -ms-transform: translateY(-3%);
+  -o-transform: translateY(-3%);
+  transform: translateY(-3%);
+  box-shadow: 3px 3px 12px rgba(0,0,0,0.08);
+}
+
+
+#section-service .post-more-btn::after{
+  display: none;
+}
+
+#section-service .sec-post-title {
+  margin-top: 10px;
+}
+
+#section-service .sec-post-title a{
+  position: relative;
+}
+
+#section-service. .sec-post-title a::after {
+  position: absolute;
+  bottom: -10px;
+  left: 35%;
+  content: "";
+  background: #777;
+  height: 1px;
+  width: 30%;
+}
+
+#section-service .post-details,
+#section-service .post-thumb {
+  width: 100%;
+}
+
+#section-service .post-thumb {
+  margin:20px 0;
+}
+
+#section-service .post-more-btn-wrap {
+  margin-bottom: 10px;
+}
+
+.home #section-service .post-content,
+.home #section-service .post-more-btn-wrap{
+  display: none;
+}
+
+#section-team .team-section-hover-wrapper::after {
+  background: rgba(0,0,0,0.1);
+}
+
+/***************************************************
+testimonial section
+***************************************************/
+#section-testimonials .mt-column-wrapper {
+  margin-left: 0%;
+}
+
+#section-testimonials .single-post-wrapper.mt-column-2{
+  margin-left: 0%;
+  text-align: center;
+  margin-bottom: 60px;
+  padding: 0 80px;
+}
+
+#section-testimonials .lSAction > a{
+  color: #333;
+  font-size: 28px;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  opacity: 1;
+}
+
+#section-testimonials .lSAction > .lSPrev {
+  left: 0px;
+}
+
+#section-testimonials .lSAction > .lSNext{
+  right: -14px;
+}
+
+#section-testimonials .post-title {
+  margin-top: 24px;
+  margin-bottom: 10px;
+}
+
+#section-testimonials .image-wrap {
+  width: auto;
+  float: none;
+}
+
+#section-testimonials .testimonials-posts-wrapper{
+  height: auto !important;
+}
+
+#section-testimonials .image-wrap img{
+  border-radius: 50% !important;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+  padding: 5px;
+  margin: 10px;
+  margin: 20px auto 0 auto;
+  float: inherit;
+  width: 20%;
+}
+
+#section-testimonials .post-info-wrap {
+  width: 100%;
+  float: inherit;
+  text-align: center;
+}
+
+#section-testimonials .post-title::after {
+  display: none;
+}
+
+/************************************************
+sponser section
+************************************************/
+#section-sponsors .sponser-column-4 {
+  float: left;
+  width: 18%;
+  margin-left: 2%;
+}
+
+#section-sponsors .sponsors-posts-wrapper {
+  overflow: auto;
+  margin-left: -2%;
+}
+
+
+/*****************************************************************
+Responsive 
+*******************************************************************/
+/*------------------------------------------
+Reponsive css for max width 980px
+--------------------------------------------*/
+@media only screen and (max-width: 900px) {
+#section-cta .section-title {
+  font-size: 32px;
+}
+
+#section-testimonials .post-title {
+  margin-top: 20px;
+  margin-bottom: 0;
+}
+
+.bg-transparent-layout #masthead .site-title a::after, 
+.bg-transparent-layout #masthead #primary-menu li a, 
+.bg-transparent-layout #masthead .cart-contents span, 
+.bg-transparent-layout #masthead .cart-contents .count::before, 
+.bg-transparent-layout #masthead .cart-contents .amount::before {
+  color: #333;
+}
+}
+
+/*------------------------------------------
+Reponsive css for max width 768px
+--------------------------------------------*/
+@media only screen and (max-width: 768px) {
+#section-team .post-info-wrap {
+  padding: 0;
+}
+
+#section-blog .post-info-wrap {
+  padding: 0 10px;
+}
+
+#section-testimonials .single-post-wrapper.mt-column-2 {
+  margin-left: 0%;
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 0 60px;
+}
+
+#section-portfolio .portfolio-posts-wrapper {
+  overflow: inherit;
+}
+}
+
+@media only screen and (max-width: 600px) {
+#section-service .single-post-wrap {
+  width: 47%;
+}
+
+#section-testimonials .image-wrap img {
+  width: 50%;
+}
+}
+
+@media only screen and (max-width: 480px) {
+.banner-caption {
+  width: 100%;
+}
+
+.custom-logo-link {
+  margin: 10px 0;
+}
+
+#section-service .single-post-wrap {
+  width: 97%;
+}
+
+.banner-title {
+  margin-bottom: 8px;
+}
+
+.custom-logo-link {
+  margin: 0;
+}
+
+#masthead .menu-wrapper{
+  margin:0;
+  padding: 0;
+}
+
+.sponsors-posts-wrapper {
+  margin-bottom: 0;
+}
+
+.custom-logo-link {
+  margin: 10px 0;
+}
+
+#section-sponsors .sponser-column-4 {
+  width: 97%;
+  margin-bottom: 8%;
+}
+
+#section-sponsors .sponsors-posts-wrapper {
+  overflow: inherit;
+}
+
+}
+
+@media only screen and (max-width: 360px) {
+.caption-wrap {
+  width: 100%;
+  line-height: 1.3;
+}
+}
