@@ -65,6 +65,10 @@ Atlas Concern is distributed under the terms of the GNU GPL
 = 3.1 ( 1/December/2018 ) =
 * Files edited
 
+= 3.2 ( 19/June/2019 ) =
+* Files edited
+
+
 
 == Credits ==
 
