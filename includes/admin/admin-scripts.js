@@ -12,6 +12,13 @@ $(document).ready(function() {
 			$('#grid_settings_metabox').slideUp();
 		}
     });
+	$('body').on( 'change', '#pageparentdiv #page_template', function() {
+		if ( $(this).val() == 'grid.php' ) {
+			$('#grid_settings_metabox').slideDown();
+		} else {
+			$('#grid_settings_metabox').slideUp();
+		}
+    });
 	
 	
 	// Reveal extended page header settings when the respective checkbox is active

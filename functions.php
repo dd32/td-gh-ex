@@ -8,7 +8,7 @@ function bento_theme_setup() {
 	
 	// Features
 	add_theme_support( 'title-tag' );
-	add_theme_support( 'post-thumbnails', array( 'post', 'page', 'project', 'product' ) );
+	add_theme_support( 'post-thumbnails' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'customize-selective-refresh-widgets' );
 	add_theme_support( 'post-formats', array( 'aside', 'gallery', 'quote', 'link', 'image' ) );
@@ -123,7 +123,7 @@ function bento_admin_scripts() {
 	$screen = get_current_screen();
 	$edit_screens = array( 'post', 'page', 'project', 'product' );
 	if ( in_array( $screen->id, $edit_screens ) ) {
-		wp_enqueue_script( 'bento-admin-scripts', get_template_directory_uri().'/includes/admin/admin-scripts.js' );
+		wp_enqueue_script( 'bento-admin-scripts', get_template_directory_uri().'/includes/admin/admin-scripts.js', array('jquery'), false, true );
 	}
 	$old_options = get_option( 'satori_options', 'none' );
 	if ( $old_options != 'none' ) {

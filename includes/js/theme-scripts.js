@@ -306,21 +306,25 @@ $str(window).load(function () {
 	// Same-page menu links
 	var bento_op_menu = bentoOnePage();
 	if ( ! $str.isEmptyObject(bento_op_menu) ) {
-		$str('.primary-menu li, .primary-mobile-menu li').removeClass('current-menu-item');
-		$str.each( bento_op_menu, function( ind, val ) {
-			$str('.'+ind+' > a').click(function(e) {
-				if ( $str('body').hasClass('mobile-menu-open') ) {
-					$str('body').removeClass('mobile-menu-open');
-				}
-				e.stopPropagation();
-				e.preventDefault();
-				$str('html, body').animate( { scrollTop: val }, 500, function() {
-					$str('.mobile-menu-shadow').fadeOut(500);
-					$str('#nav-mobile').css("left", '-100%');
-				});
-			});
-		});
+		$str('.primary-menu li, .primary-mobile-menu li').removeClass('current-menu-item');		
 	}
+	$str('.primary-menu li a[href*=#]').click(function(e) {
+		e.stopPropagation();
+		e.preventDefault();
+		if ( $str('body').hasClass('mobile-menu-open') ) {
+			$str('body').removeClass('mobile-menu-open');
+		}
+		var headerHeight = 0;
+		if ( bentoThemeVars.fixed_menu == 1 ) {
+			headerHeight = $str('.site-header').outerHeight(true);
+		}
+		var hash = $str(this).attr('href').substring($str(this).attr('href').indexOf('#')+1);
+		var itemPos = $str('#' + hash).offset().top - headerHeight - 10;
+		$str('html, body').animate( { scrollTop: itemPos }, 500, function() {
+			$str('.mobile-menu-shadow').fadeOut(500);
+			$str('#nav-mobile').css("left", '-100%');
+		});
+	});
 
 
 });

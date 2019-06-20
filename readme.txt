@@ -4,8 +4,8 @@ Contributors: satoristudio
 Tags: one-column, two-columns, right-sidebar, left-sidebar, grid-layout, custom-background, custom-colors, custom-menu, custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-commerce, portfolio
 
 Requires at least: 4.0
-Tested up to: 5.1.1
-Stable tag: 2.1
+Tested up to: 5.2.2
+Stable tag: 2.1.1
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -29,6 +29,11 @@ For support and feature requests, please visit https://wordpress.org/support/the
 
 
 ___ CHANGELOG
+
+* 2.1.1 / 20 June 2019
+Improved thumbnail support for custom post types registered by third-party plugins.
+Fixed scroll position for same-page menu links with active full-height page header.
+Fixed the Grid settings animation for classic editor mode.
 
 * 2.1 / 26 March 2019
 Fixed compatibility issues with the Gutenberg editor.
