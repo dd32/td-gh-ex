@@ -10,14 +10,16 @@
   <h3 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h3>  
   <div class="box-image">
     <?php
-      if ( ! is_single() ) {
-        // If not a single post, highlight the gallery.
-        if ( get_post_gallery() ) {
-          echo '<div class="entry-gallery">';
-          echo get_post_gallery();
-          echo '</div>';
-        };
-      };
+          if ( ! is_single() ) {
+
+            // If not a single post, highlight the gallery.
+            if ( get_post_gallery() ) {
+              echo '<div class="entry-gallery">';
+              echo get_post_gallery();
+              echo '</div>';
+            };
+
+          };
     ?> 
   </div>
   <div class="new-text">

@@ -359,6 +359,7 @@ function automobile_car_dealer_scripts() {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
+
 add_action( 'wp_enqueue_scripts', 'automobile_car_dealer_scripts' );
 
 function automobile_car_dealer_ie_stylesheet(){
@@ -366,8 +367,8 @@ function automobile_car_dealer_ie_stylesheet(){
 	wp_enqueue_style('automobile-car-dealer-ie', get_template_directory_uri().'/css/ie.css', array('automobile-car-dealer-style'));
 	wp_style_add_data( 'automobile-car-dealer-ie', 'conditional', 'IE' );
 }
-add_action('wp_enqueue_scripts','automobile_car_dealer_ie_stylesheet');
 
+add_action('wp_enqueue_scripts','automobile_car_dealer_ie_stylesheet');
 define('AUTOMOBILE_CAR_DEALER_LIVE_DEMO','https://buywptemplates.com/automobile-car-dealer-pro/','automobile-car-dealer');
 define('AUTOMOBILE_CAR_DEALER_BUY_PRO','https://www.buywptemplates.com/themes/premium-automotive-wordpress-theme/','automobile-car-dealer');
 define('AUTOMOBILE_CAR_DEALER_PRO_DOC','https://buywptemplates.com/demo/docs/automobile-car-dealer-pro/','automobile-car-dealer');

@@ -20,3 +20,11 @@
     font-size: 16px;
     font-weight: bold !important;
 }
+/* ---------Excerpt & Logo --------- */
+input#_customize-input-automobile_car_dealer_excerpt_number,
+input#_customize-input-logo_size, 
+input#_customize-input-automobile_car_dealer_slider_excerpt_number,
+input#_customize-input-automobile_car_dealer_about_excerpt_number,
+input#_customize-input-automobile_car_dealer_slider_opacity_color {
+    width: 100%;
+}

@@ -7,6 +7,7 @@ get_header(); ?>
 
 <?php do_action( 'automobile_car_dealer_above_slider' ); ?>
 
+<?php /** slider section **/ ?>
 <?php if( get_theme_mod('automobile_car_dealer_slider_hide') != ''){ ?>
   <section id="slider">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
@@ -28,21 +29,22 @@ get_header(); ?>
             $i = 1;
       ?>     
       <div class="carousel-inner" role="listbox">
-        <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
-        <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-          <img src="<?php the_post_thumbnail_url('full'); ?>"/>
-          <div class="carousel-caption">
-            <div class="inner_carousel">
-              <h2><?php the_title();?></h2>
-              <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt,20 ) ); ?></p>
-              <div class="slide-button">
-                <a class="read-more" href="<?php the_permalink(); ?>"><i class="fas fa-long-arrow-alt-right"></i><?php esc_html_e( 'READ MORE','automobile-car-dealer' ); ?></a>
+          <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
+          <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
+              <img src="<?php the_post_thumbnail_url('full'); ?>"/>
+              <div class="carousel-caption">
+                <div class="inner_carousel">
+                    <h2><?php the_title();?></h2>
+                    <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_slider_excerpt_number','30')))); ?></p>
+                   <div class="slide-button">
+                      <a class="read-more" href="<?php the_permalink(); ?>"><i class="fas fa-long-arrow-alt-right"></i><?php esc_html_e( 'READ MORE','automobile-car-dealer' ); ?></a>
+                    </div>              
+                    
+                </div>
               </div>
-            </div>
           </div>
-        </div>
-        <?php $i++; endwhile; 
-        wp_reset_postdata();?>
+          <?php $i++; endwhile; 
+          wp_reset_postdata();?>
       </div>
       <?php else : ?>
       <div class="no-postfound"></div>
@@ -60,7 +62,7 @@ get_header(); ?>
 <?php }?>
 
 <?php do_action( 'automobile_car_dealer_above_project' ); ?>
-
+<?php /** project Us section **/ ?>
 <?php if( get_theme_mod('automobile_car_dealer_sec_title') != '' || get_theme_mod( 'automobile_car_dealer_project_single_post' )!= '' ||get_theme_mod('automobile_car_dealer_project_category') != ''){ ?>
   <section id="project">
     <div class="container">
@@ -77,7 +79,7 @@ get_header(); ?>
           if ( $query->have_posts() ) :
             while ( $query->have_posts() ) : $query->the_post(); ?>
               <div class="mainbox">
-               <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt,20 ) ); ?></p>
+               <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_about_excerpt_number','30')))); ?></p>
                 <a href="<?php the_permalink(); ?>"><img src="<?php the_post_thumbnail_url(); ?>"></a>
               </div>
             <?php endwhile; 
@@ -100,7 +102,7 @@ get_header(); ?>
                 </div>
                 <div class="col-md-8 col-sm-8">
                   <a href="<?php the_permalink(); ?>"><h4><?php the_title(); ?></h4></a>
-                  <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt,10 ) ); ?></p>
+                  <p><?php $excerpt = get_the_excerpt(); echo esc_html( automobile_car_dealer_string_limit_words( $excerpt, esc_attr(get_theme_mod('automobile_car_dealer_category_excerpt_number','30')))); ?></p>
                 </div>
               </div>
             <?php endwhile;

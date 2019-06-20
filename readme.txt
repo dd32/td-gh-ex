@@ -2,12 +2,11 @@
 Contributors: Buywptemplates
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, theme-options, threaded-comments, post-formats , translation-ready, rtl-language-support, blog, portfolio, e-commerce
 Requires at least: 4.7
-Tested up to: 5.2
+Tested up to: 5.2.1
 Requires PHP: 7.2.14
-Stable tag: 0.3.4
+Stable tag: 0.3.5
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
-
 Automobile car dealer theme is a responsive WordPress theme that is created by the team of professionals with optimized codes and interactive designs to make it secure and stunning at the same time.
 
 == Description ==
@@ -56,6 +55,10 @@ Automobile car dealer theme is a responsive WordPress theme that is created by t
 * Changed image urls.
 * Updated readme.txt.
 * Added footer layout.
+
+= 0.3.5 =
+  * Added content limit.
+  * Updated POT file.
 
 == Resources ==
 
@@ -106,13 +109,13 @@ Theme is Built using the following resource bundles.
   License: CC0 1.0 Universal (CC0 1.0)
   Source: https://stocksnap.io/license
 
-  Header Image, Copyright Evgeny Remy_Loz
+  Header Image, Copyright Evgeny Tchebotarev
   License: CC0 1.0 Universal (CC0 1.0)
-  Source: https://stocksnap.io/photo/W63VV8AK4E
+  Source: https://stocksnap.io/photo/O5SWVS90WZ
 
-  Our Product Image, Copyright Lance Asper
+  Our Product Image, Copyright Mike Birdy
   License: CC0 1.0 Universal (CC0 1.0)
-  Source: https://stocksnap.io/photo/K2SW4CJR55
+  Source: https://stocksnap.io/photo/4JQNHSXUDH
 
   Post Image, Copyright Dietmar Becker
   License: CC0 1.0 Universal (CC0 1.0)

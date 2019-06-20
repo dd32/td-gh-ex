@@ -584,6 +584,26 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		) );
 	}
 
+	//Slider excerpt
+	$wp_customize->add_setting( 'automobile_car_dealer_slider_excerpt_number', array(
+		'default'              => 30,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'automobile_car_dealer_slider_excerpt_number', array(
+		'label'       => esc_html__( 'Slider Content Limit','automobile-car-dealer' ),
+		'section'     => 'automobile_car_dealer_slidersettings',
+		'type'        => 'number',
+		'settings'    => 'automobile_car_dealer_slider_excerpt_number',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
 	//About
 	$wp_customize->add_section('automobile_car_dealer_project',array(
 		'title'	=> __('Our Project Section','automobile-car-dealer'),
@@ -643,6 +663,46 @@ function automobile_car_dealer_customize_register( $wp_customize ) {
 		'label' => __('Select Category to display Latest Post','automobile-car-dealer'),
 		'section' => 'automobile_car_dealer_project',
 	));
+
+	//About excerpt
+	$wp_customize->add_setting( 'automobile_car_dealer_about_excerpt_number', array(
+		'default'              => 30,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'automobile_car_dealer_about_excerpt_number', array(
+		'label'       => esc_html__( 'Project Content Limit','automobile-car-dealer' ),
+		'section'     => 'automobile_car_dealer_project',
+		'type'        => 'number',
+		'settings'    => 'automobile_car_dealer_about_excerpt_number',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
+
+	//Category excerpt
+	$wp_customize->add_setting( 'automobile_car_dealer_category_excerpt_number', array(
+		'default'              => 30,
+		'type'                 => 'theme_mod',
+		'transport' 		   => 'refresh',
+		'sanitize_callback'    => 'absint',
+		'sanitize_js_callback' => 'absint',
+	) );
+	$wp_customize->add_control( 'automobile_car_dealer_category_excerpt_number', array(
+		'label'       => esc_html__( 'Category Content Limit','automobile-car-dealer' ),
+		'section'     => 'automobile_car_dealer_project',
+		'type'        => 'number',
+		'settings'    => 'automobile_car_dealer_category_excerpt_number',
+		'input_attrs' => array(
+			'step'             => 2,
+			'min'              => 0,
+			'max'              => 50,
+		),
+	) );
 	
 	//footer text
 	$wp_customize->add_section('automobile_car_dealer_footer_section',array(

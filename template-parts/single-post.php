@@ -16,7 +16,7 @@
 <?php if(has_post_thumbnail()) { ?>
 	<hr>
 	<div class="feature-box">	
-		<img src="<?php the_post_thumbnail_url('full'); ?>">
+		<img src="<?php the_post_thumbnail_url('full'); ?>"">
 	</div>
 	<hr>					
 <?php } 

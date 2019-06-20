@@ -495,70 +495,78 @@ msgstr ""
 msgid 'Select Slide Image Page'
 msgstr ""
 
-#: inc/customizer.php:589
+#: inc/customizer.php:596
+msgid 'Slider Content Limit'
+msgstr ""
+
+#: inc/customizer.php:609
 msgid "Our Project Section"
 msgstr ""
 
-#: inc/customizer.php:590
+#: inc/customizer.php:610
 msgid "Add Our Project sections below."
 msgstr ""
 
-#: inc/customizer.php:600
+#: inc/customizer.php:620
 msgid "Title"
 msgstr ""
 
-#: inc/customizer.php:620
+#: inc/customizer.php:640
 msgid "Select post"
 msgstr ""
 
-#: inc/customizer.php:643
+#: inc/customizer.php:663
 msgid "Select Category to display Latest Post"
 msgstr ""
 
-#: inc/customizer.php:649
+#: inc/customizer.php:676
+msgid "Project Content Limit"
+msgstr ""
+
+#: inc/customizer.php:689
 msgid "Footer Text"
 msgstr ""
 
-#: inc/customizer.php:659
+#: inc/customizer.php:699
 msgid "Footer widget area"
 msgstr ""
 
-#: inc/customizer.php:661
+#: inc/customizer.php:701
 msgid "Select the number of widget areas you want in the footer. After that, go to Appearance > Widgets and add your widgets"
 msgstr ""
 
-#: inc/customizer.php:663
-#: inc/customizer.php:784
+#: inc/customizer.php:703
+#: inc/customizer.php:824
 msgid "One"
 msgstr ""
 
-#: inc/customizer.php:664
-#: inc/customizer.php:785
+#: inc/customizer.php:704
+#: inc/customizer.php:825
 msgid "Two"
 msgstr ""
 
-#: inc/customizer.php:665
-#: inc/customizer.php:786
+#: inc/customizer.php:705
+#: inc/customizer.php:826
 msgid "Three"
 msgstr ""
 
-#: inc/customizer.php:666
-#: inc/customizer.php:787
+#: inc/customizer.php:706
+#: inc/customizer.php:827
 msgid "Four"
 msgstr ""
 
-#: inc/customizer.php:675
+#: inc/customizer.php:715
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/customizer.php:677
+#: inc/customizer.php:717
 msgid "Add some text for footer like copyright etc."
 msgstr ""
 
-#: inc/customizer.php:758
+#: inc/customizer.php:798
 msgid "Automobile Pro"
 msgstr ""
 
-#: inc/customizer.php:759
+#: inc/customizer.php:799
 msgid "Go Pro"
 msgstr ""
