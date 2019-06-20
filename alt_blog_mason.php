@@ -17,11 +17,11 @@ get_header(); ?>
 
         	<?php
 				if ( get_query_var('paged') ) {
-                        $paged = get_query_var('paged');
+                        $h_paged = get_query_var('paged');
                 } elseif ( get_query_var('page') ) {
-                        $paged = get_query_var('page');
+                        $h_paged = get_query_var('page');
                 } else {
-                        $paged = 1;
+                        $h_paged = 1;
                 }
 				
 				$temp = $wp_query;
@@ -29,7 +29,7 @@ get_header(); ?>
 				$wp_query = new WP_Query();
 				$wp_query->query( array(
 					'post_type' => 'post',
-					'paged' => $paged
+					'paged' => $h_paged
 				));
 			?>
 

@@ -15,7 +15,6 @@
 	</div><!-- .entry-summary -->
 	<?php else : ?>
 	<div class="entry-content post-content">
-    	<?php global $more; $more = 0; ?>
 		<?php the_content( __( 'Continue reading <span class="meta-nav">&rarr;</span>', 'hostmarks' ) ); ?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-link">' . __( 'Pages:', 'hostmarks' ), 'after' => '</div>' ) ); ?>
 	</div><!-- .entry-content -->

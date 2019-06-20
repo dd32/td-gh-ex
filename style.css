@@ -1,10 +1,11 @@
 /*
 Theme Name: Hostmarks
-Theme URI: http://hostmarks.com/theme/
-Author: Hostmarks.com
-Author URI: http://hostmarks.com/
+Theme URI: https://wpdevshed.com/hostmarks-theme/
+Author: WP Dev Shed
+Author URI: https://wpdevshed.com/
 Description: Hostmarks is a very clean and simple blog theme. It features a clean layout with contemporary typography, and the ability to customize all the principle theme colors right from the customization menu. Of course it is fully responsive, supports custom menus and widgets and comes with an alternative blog page template as well as a plain full page template for static content.
-Version: 1.2
+Version: 1.3
+Text Domain: hostmarks
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats
@@ -577,7 +578,7 @@ TEXT SELECTION STYLES
 
 
 /******************************************************************
-WORDPRESS BODY CLASSES
+BODY CLASSES
 want to style a page via body class? go ahead
 ******************************************************************/
 

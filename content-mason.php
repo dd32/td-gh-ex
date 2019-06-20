@@ -35,13 +35,13 @@
     
 		<?php 
         $gallery = get_post_gallery( $post, false );
-        $ids = explode( ",", $gallery['ids'] );
+        $h_ids = explode( ",", $gallery['ids'] );
         $total_images = 0;
-        foreach( $ids as $id ) {
-            $title = get_post_field('post_title', $id);
-            $meta = get_post_field('post_excerpt', $id);
-            $link = wp_get_attachment_url( $id );
-            $image  = wp_get_attachment_image( $id, 'medium');
+        foreach( $h_ids as $h_id ) {
+            $h_title = get_post_field('post_title', $h_id);
+            $meta = get_post_field('post_excerpt', $h_id);
+            $h_link = wp_get_attachment_url( $h_id );
+            $image  = wp_get_attachment_image( $h_id, 'medium');
             $total_images++;
             
             if ($total_images == 1) {

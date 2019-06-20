@@ -82,6 +82,9 @@ function hostmarks_setup() {
 			'chat' /* A chat transcript */
 		)
 	);
+
+	add_theme_support( 'title-tag' );
+	add_theme_support( 'custom-logo' );
 }
 endif;
 add_action( 'after_setup_theme', 'hostmarks_setup' );
@@ -99,76 +102,12 @@ endif;
 add_action( 'after_setup_theme', 'hostmarks_content_width' );
 
 
-/**
- * Title filter 
- */
-if ( ! function_exists( 'hostmarks_filter_wp_title' ) ) :
-	function hostmarks_filter_wp_title( $old_title, $sep, $sep_location ) {
-		
-		if ( is_feed() ) return $old_title;
-	
-		$site_name = get_bloginfo( 'name' );
-		$site_description = get_bloginfo( 'description' );
-		// add padding to the sep
-		$ssep = ' ' . $sep . ' ';
-		
-		if ( $site_description && ( is_home() || is_front_page() ) ) {
-			return $site_name . ' | ' . $site_description;
-		} else {
-			// find the type of index page this is
-			if( is_category() ) $insert = $ssep . __( 'Category', 'hostmarks' );
-			elseif( is_tag() ) $insert = $ssep . __( 'Tag', 'hostmarks' );
-			elseif( is_author() ) $insert = $ssep . __( 'Author', 'hostmarks' );
-			elseif( is_year() || is_month() || is_day() ) $insert = $ssep . __( 'Archives', 'hostmarks' );
-			else $insert = NULL;
-			 
-			// get the page number we're on (index)
-			if( get_query_var( 'paged' ) )
-			$num = $ssep . __( 'Page ', 'hostmarks' ) . get_query_var( 'paged' );
-			 
-			// get the page number we're on (multipage post)
-			elseif( get_query_var( 'page' ) )
-			$num = $ssep . __( 'Page ', 'hostmarks' ) . get_query_var( 'page' );
-			 
-			// else
-			else $num = NULL;
-			 
-			// concoct and return new title
-			return $site_name . $insert . $old_title . $num;
-			
-		}
-	
-	}
-endif;
-// call our custom wp_title filter, with normal (10) priority, and 3 args
-add_filter( 'wp_title', 'hostmarks_filter_wp_title', 10, 3 );
-
-
 /*******************************************************************
 * These are settings for the Theme Customizer in the admin panel. 
 *******************************************************************/
 if ( ! function_exists( 'hostmarks_theme_customizer' ) ) :
 	function hostmarks_theme_customizer( $wp_customize ) {
 		
-		$wp_customize->remove_section( 'title_tagline');
-
-		
-		/* logo option */
-		$wp_customize->add_section( 'hostmarks_logo_section' , array(
-			'title'       => __( 'Site Logo', 'hostmarks' ),
-			'priority'    => 31,
-			'description' => __( 'Upload a logo to replace the default site name in the header', 'hostmarks' ),
-		) );
-		
-		$wp_customize->add_setting( 'hostmarks_logo', array(
-		'sanitize_callback' => 'esc_url_raw',) );
-			
-		
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hostmarks_logo', array(
-			'label'    => __( 'Choose your logo (ideal width is 100-300px and ideal height is 40-100px)', 'hostmarks' ),
-			'section'  => 'hostmarks_logo_section',
-			'settings' => 'hostmarks_logo',
-		) ) );
 		
 		/* header background color option */
 		$wp_customize->add_setting( 'hostmarks_header_bg', array (
@@ -519,7 +458,7 @@ function hostmarks_comment( $comment, $args, $depth ) {
 			<footer class="clearfix comment-head">
 				<div class="comment-author vcard">
 					<?php echo get_avatar( $comment, 67 ); ?>
-					<?php printf( __( '%s', 'hostmarks' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( '%s', sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author .vcard -->
 				<?php if ( $comment->comment_approved == '0' ) : ?>
 					<em><?php _e( 'Your comment is awaiting moderation.', 'hostmarks' ); ?></em>

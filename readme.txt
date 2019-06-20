@@ -1,7 +1,7 @@
 ﻿================
 HOSTMARKS THEME
 ================
-Copyright (c) 2013 by Hostmarks (http://hostmarks.com/)
+Copyright (c) 2013 by WP Dev Shed (https://wpdevshed.com/)
 This Theme is distributed under the terms of the GNU GPL.
 
 ===========
@@ -15,7 +15,7 @@ All the image graphics and icons bundled with this theme are created by the auth
 
 Supported browsers: Firefox, Opera, Chrome, Safari and IE8+
 
-For free themes support, please contact us http://hostmarks.com/contact/
+For free themes support, please contact us https://wpdevshed.com/contact/
 
 
 ============================================
@@ -46,6 +46,10 @@ This theme is bundled with Modernizr
 =================================
 CHANGELOG
 =================================
+
+verion 1.3
+ * fixed style.css, alt_blog_mason.php, functions.php, footer.php, header.php, alt_blog_template.php, content-alt_blog.php, content-mason.php
+ * updated logo customizer
 
 verion 1.2
  * fixes on function.php
