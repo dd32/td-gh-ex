@@ -994,6 +994,7 @@ function ashe_customize_register( $wp_customize ) {
 		'reddit-square' 		=> 'Reddit 3',
 		'dribbble' 				=> 'Dribbble',
 		'vk' 					=> 'vKontakte',
+		'odnoklassniki' 		=> 'Odnoklassniki',
 		'skype' 				=> 'Skype',
 		'film' 					=> 'Film',
 		'youtube-play' 			=> 'Youtube 1',
