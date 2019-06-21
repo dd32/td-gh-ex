@@ -1,7 +1,7 @@
 ﻿=================
 HARDPRESSED THEME
 =================
-Copyright (c) 2014 by Hostmarks (http://hostmarks.com/)
+Copyright (c) 2014 by WP Dev Shed (http://wpdevshed.com/)
 This Theme is distributed under the terms of the GNU GPL.
 
 ===========
@@ -15,7 +15,7 @@ All the image graphics and icons bundled with this theme are created by the auth
 
 Supported browsers: Firefox, Opera, Chrome, Safari and IE9+ (Some css3 styles like shadows, rounder corners and 2D transform are not supported by IE8 and below).
 
-For free themes support, please contact us http://hostmarks.com/contact/
+For free themes support, please contact us http://wpdevshed.com/contact/
 
 
 ============================================
@@ -61,6 +61,10 @@ This theme is bundled with Modernizr
 =================================
 CHANGELOG
 =================================
+Version 1.1
+ * updated header.php, content-gallery.php, functions.php, footer.php, style.css
+ * updated logo customizer
+
 Version 1.0.2
  * Fixed css display issues on the archives/search title and comments section
  * Modified the way the theme include google fonts - used wp_enqueue_style() instead of importing it from style.css

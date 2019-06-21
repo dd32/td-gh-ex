@@ -12,14 +12,14 @@
 			$gallery = get_post_gallery( $post, false );
 			if ( !empty($gallery['ids']) ) {
 				$check_thumb = 1;
-				$ids = explode( ",", $gallery['ids'] );
+				$h_ids = explode( ",", $gallery['ids'] );
 				$total_images = 0;
-				foreach( $ids as $id ) {
+				foreach( $h_ids as $h_id ) {
 					
-					$title = get_post_field('post_title', $id);
-					$meta = get_post_field('post_excerpt', $id);
-					$link = wp_get_attachment_url( $id );
-					$image  = wp_get_attachment_image( $id, array(640, 480));
+					$h_title = get_post_field('post_title', $h_id);
+					$h_meta = get_post_field('post_excerpt', $h_id);
+					$h_link = wp_get_attachment_url( $h_id );
+					$image  = wp_get_attachment_image( $h_id, array(640, 480));
 					$total_images++;
 					
 					if ($total_images == 1) {
@@ -70,14 +70,14 @@
 			$gallery = get_post_gallery( $post, false );
 			if ( !empty($gallery['ids']) ) {
 				$check_thumb = 1;
-				$ids = explode( ",", $gallery['ids'] );
+				$h_ids = explode( ",", $gallery['ids'] );
 				$total_images = 0;
-				foreach( $ids as $id ) {
+				foreach( $h_ids as $h_id ) {
 					
-					$title = get_post_field('post_title', $id);
-					$meta = get_post_field('post_excerpt', $id);
-					$link = wp_get_attachment_url( $id );
-					$image  = wp_get_attachment_image( $id, array(640, 480));
+					$h_title = get_post_field('post_title', $h_id);
+					$h_meta = get_post_field('post_excerpt', $h_id);
+					$h_link = wp_get_attachment_url( $h_id );
+					$image  = wp_get_attachment_image( $h_id, array(640, 480));
 					$total_images++;
 					
 					if ($total_images == 1) {

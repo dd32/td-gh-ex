@@ -232,11 +232,11 @@ msgid " and "
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\hardpressed/footer.php:14
-msgid "http://hostmarks.com/"
+msgid "http://wpdevshed.com/"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\hardpressed/footer.php:14
-msgid "Hostmarks"
+msgid "WP Dev Shed"
 msgstr ""
 
 #: C:\xampp\htdocs\wordpress\wp-content\themes\hardpressed/functions.php:33

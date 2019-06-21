@@ -1,10 +1,11 @@
 /*
 Theme Name: Hardpressed
-Theme URI: http://hostmarks.com/hardpressed-theme/
-Author: Hostmarks
-Author URI: http://hostmarks.com/
+Theme URI: https://wpdevshed.com/hardpressed-theme/
+Author: WP Dev Shed
+Author URI: http://wpdevshed.com/
 Description: Hardpressed is an extremely versatile blogging style theme that uses featured images to highlite content and also gives you lots of control over the theme’s color scheme with no coding required. We’ve paid attention to content styles and it also has the usual support for custom menus and widgets as well as some handy features for linking to your social media profiles and optionally displaying author bios for each post.
-Version: 1.0.2
+Version: 1.1
+Text Domain: Hardpressed
 License: GNU General Public License v2.0
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: custom-menu, sticky-post, microformats, rtl-language-support, translation-ready, full-width-template, post-formats
@@ -592,7 +593,7 @@ TEXT SELECTION STYLES
 
 
 /******************************************************************
-WORDPRESS BODY CLASSES
+BODY CLASSES
 want to style a page via body class? go ahead
 ******************************************************************/
 

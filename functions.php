@@ -64,6 +64,9 @@ function hardpressed_setup() {
 			'chat' /* A chat transcript */
 		)
 	);
+
+	add_theme_support( "title-tag" );
+	add_theme_support( "custom-logo" );
 }
 endif;
 add_action( 'after_setup_theme', 'hardpressed_setup' );
@@ -88,7 +91,7 @@ if ( ! function_exists( 'hardpressed_theme_customizer' ) ) :
 
 	function hardpressed_theme_customizer( $wp_customize ) {
 		
-		$wp_customize->remove_section( 'title_tagline');
+		
 		
 		/* site title color option */
 		$wp_customize->add_setting( 'hardpressed_site_title_color', array (
@@ -205,23 +208,6 @@ if ( ! function_exists( 'hardpressed_theme_customizer' ) ) :
 			'priority' => 109,
 		) ) );
 		
-		
-		/* logo option */
-		$wp_customize->add_section( 'hardpressed_logo_section' , array(
-			'title'       => __( 'Site Logo', 'hardpressed' ),
-			'priority'    => 31,
-			'description' => __( 'Upload a logo to replace the default site name in the header', 'hardpressed' ),
-		) );
-		
-		$wp_customize->add_setting( 'hardpressed_logo', array (
-			'sanitize_callback' => 'esc_url_raw',
-		) );
-		
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'hardpressed_logo', array(
-			'label'    => __( 'Choose your logo (ideal width is 100-300px and ideal height is 40-100px)', 'hardpressed' ),
-			'section'  => 'hardpressed_logo_section',
-			'settings' => 'hardpressed_logo',
-		) ) );
 	
 		
 		/* social media option */
@@ -657,7 +643,7 @@ if ( ! function_exists( 'hardpressed_comment' ) ) :
  * Template for comments and pingbacks.
  */
 function hardpressed_comment( $comment, $args, $depth ) {
-	$GLOBALS['comment'] = $comment;
+	
 	switch ( $comment->comment_type ) :
 		case 'pingback' :
 		case 'trackback' :
@@ -673,7 +659,7 @@ function hardpressed_comment( $comment, $args, $depth ) {
 			<footer class="clearfix comment-head">
 				<div class="comment-author vcard">
 					<?php echo get_avatar( $comment, 72 ); ?>
-					<?php printf( __( '%s', 'hardpressed' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( '%s', sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author .vcard -->
 
 				<div class="comment-meta commentmetadata">

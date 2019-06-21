@@ -3,7 +3,6 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title><?php wp_title('|', true, 'left'); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 
@@ -20,8 +19,10 @@
       <div id="inner-header" class="clearfix">
       
 		<div id="site-heading">
-			<?php if ( get_theme_mod( 'hardpressed_logo' ) ) : ?>
-            <div id="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'hardpressed_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a></div>
+            <?php if ( get_theme_mod( 'custom_logo' ) ) : 
+            $custom_logo_id = get_theme_mod( 'custom_logo' );
+            $custom_logo_url = wp_get_attachment_image_url( $custom_logo_id , 'full' ); ?>
+            <div id="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( $custom_logo_url ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" /></a></div>
             <?php else : ?>
             <div id="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></div>
             <?php endif; ?>
@@ -78,7 +79,7 @@
             <?php endif; ?>
             
             <?php if ( get_theme_mod( 'hardpressed_email' ) ) : ?>
-            <a href="<?php _e('mailto:', 'harpdpressed'); echo sanitize_email( get_theme_mod( 'hardpressed_email' ) ); ?>" class="social-em" title="<?php _e('mailto:', 'harpdpressed'); echo sanitize_email( get_theme_mod( 'hardpressed_email' ) ); ?>"><?php _e('Email', 'hardpressed') ?></a>
+            <a href="<?php _e('mailto:', 'hardpressed'); echo sanitize_email( get_theme_mod( 'hardpressed_email' ) ); ?>" class="social-em" title="<?php _e('mailto:', 'hardpressed'); echo sanitize_email( get_theme_mod( 'hardpressed_email' ) ); ?>"><?php _e('Email', 'hardpressed') ?></a>
             <?php endif; ?> 
             
          </div>
@@ -90,7 +91,7 @@
     <nav id="access" role="navigation">
         <h1 class="assistive-text section-heading"><?php _e( 'Main menu', 'hardpressed' ); ?></h1>
         <div class="skip-link screen-reader-text"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'hardpressed' ); ?>"><?php _e( 'Skip to content', 'hardpressed' ); ?></a></div>
-        <?php hardpressed_main_nav(); // Adjust using Menus in Wordpress Admin ?>
+        <?php hardpressed_main_nav(); // Adjust using Menus in WordPress Admin ?>
         
     </nav><!-- #access -->
 

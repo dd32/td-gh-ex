@@ -10,8 +10,7 @@
 
         <?php echo __('&copy; ', 'hardpressed') . esc_attr( get_bloginfo( 'name', 'display' ) );  ?>
         <?php if ( is_front_page() && ! is_paged() ) : ?>
-        <?php _e('- Powered by ', 'hardpressed'); ?><a href="<?php echo esc_url( __( 'http://wordpress.org/', 'hardpressed' ) ); ?>" title="<?php esc_attr_e( 'Semantic Personal Publishing Platform', 'hardpressed' ); ?>"><?php _e('WordPress' ,'hardpressed'); ?></a>
-        <?php _e(' and ', 'hardpressed'); ?><a href="<?php echo esc_url( __( 'http://hostmarks.com/', 'hardpressed' ) ); ?>"><?php _e('Hostmarks', 'hardpressed'); ?></a>
+        <?php echo __(' - Built with','hardpressed'); ?> <a href="<?php echo esc_url( __( 'https://wordpress.org/', 'hardpressed' ) ); ?>" target="_blank"><?php printf( esc_html( '%s', 'hardpressed' ), 'WordPress' ); ?></a><span><?php esc_html_e(' and ','hardpressed'); ?></span><a href="<?php echo esc_url( __( 'https://wpdevshed.com/hardpressed-theme/', 'hardpressed' ) ); ?>" target="_blank"><?php printf( esc_html( '%s', 'hardpressed' ), 'Hardpressed' ); ?></a>
         <?php endif; ?>
         <?php hardpressed_footer_nav(); ?>
         
