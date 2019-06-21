@@ -13,8 +13,9 @@ if ( version_compare( $GLOBALS['wp_version'], '4.7-alpha', '<' ) ) {
 }
 
 function akhada_fitness_gym_setup() {
+
+	load_theme_textdomain( 'akhada-fitness-gym', get_template_directory() . '/languages' );
 	
-	load_theme_textdomain( 'akhada-fitness-gym' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'title-tag' );
@@ -56,6 +57,13 @@ function akhada_fitness_gym_setup() {
 
 	// Add theme support for selective refresh for widgets.
 	add_theme_support( 'customize-selective-refresh-widgets' );
+
+	/*
+	* Enable support for Post Formats.
+	*
+	* See: https://codex.wordpress.org/Post_Formats
+	*/
+	add_theme_support( 'post-formats', array('image','video','gallery','audio',) );
 
 	/*
 	 * This theme styles the visual editor to resemble the theme style,
@@ -219,11 +227,11 @@ function akhada_fitness_gym_sanitize_choices( $input, $setting ) {
 }
 
 //footer Link
-define('AKHADA_FITNESS_GYM_CREDIT','https://www.luzuk.com/','akhada-fitness-gym');
+define('AKHADA_FITNESS_GYM_CREDIT','https://www.luzuk.com/themes/free-fitness-wordpress-theme/','akhada-fitness-gym');
 
 if ( ! function_exists( 'akhada_fitness_gym_credit' ) ) {
 	function akhada_fitness_gym_credit(){
-		echo "<a href=".esc_url(AKHADA_FITNESS_GYM_CREDIT)." target='_blank'>".esc_html__('Luzuk','akhada-fitness-gym')."</a>";
+		echo "<a href=".esc_url(AKHADA_FITNESS_GYM_CREDIT)." target='_blank'>".esc_html__('Akhada Fitness WordPress Theme','akhada-fitness-gym')."</a>";
 	}
 }
 

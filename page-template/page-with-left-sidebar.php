@@ -9,11 +9,11 @@ get_header(); ?>
 	<div class="content-area" >
 		<main id="main" class="site-main" role="main">
 			<div class="row">
-				<div id="sidebar" class="col-md-4">
+				<div id="sidebar" class="col-lg-4 col-md-4">
 					<?php dynamic_sidebar('sidebar-2'); ?>
 		            <div class="clearfix"></div>  
 				</div>
-				<div class="col-md-8 content_area">
+				<div class="col-lg-8 col-md-8 content_area">
 					<?php while ( have_posts() ) : the_post();
 						get_template_part( 'template-parts/page/content', 'page' );
 

@@ -7,8 +7,8 @@
  * @since 1.0
  * @version 0.3
  */
-
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
 	<meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -41,7 +41,7 @@
 	<div class="container">
 		<div class="main-top">
 			<div class="row padd0">
-				<div class="col-md-4">
+				<div class="col-lg-4 col-md-4">
 					<div class="logo">
 				        <?php if( has_custom_logo() ){ akhada_fitness_gym_the_custom_logo();
 				           }else{ ?>
@@ -52,7 +52,7 @@
 				        <?php endif; }?>
 				    </div>
 				</div>
-				<div class="nav col-md-8">
+				<div class="nav col-lg-8 col-md-8">
 					<?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>	
 				</div>
 			</div>

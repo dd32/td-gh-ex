@@ -21,212 +21,212 @@ get_header(); ?>
 
 	<div class="content-area">
 		<main id="main" class="site-main" role="main">
-		<?php
-	    $layout_option = get_theme_mod( 'akhada_fitness_gym_theme_options','Right Sidebar');
-	    if($layout_option == 'Left Sidebar'){ ?>
-	    	<div class="row">
-	        <div id="sidebar" class="col-md-4 col-sm-4"><?php dynamic_sidebar('sidebar-1'); ?></div>
-		        <div id="" class="content_area col-md-8 col-sm-8">
-			    	<section id="post_section" class="">
-						<?php
-						if ( have_posts() ) : ?>
+			<?php
+		    $layout_option = get_theme_mod( 'akhada_fitness_gym_theme_options','Right Sidebar');
+		    if($layout_option == 'Left Sidebar'){ ?>
+		    	<div class="row">
+			        <div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-1'); ?></div>
+			        <div id="" class="content_area col-lg-8 col-md-8">
+				    	<section id="post_section" class="">
 							<?php
-							while ( have_posts() ) : the_post();
+							if ( have_posts() ) : ?>
+								<?php
+								while ( have_posts() ) : the_post();
+									
+									get_template_part( 'template-parts/post/content', get_post_format() );
+
+								endwhile;
+
+								else :
+
+									get_template_part( 'template-parts/post/content', 'none' );
+
+								endif; 
+							?>
+							<div class="navigation">
+				                <?php
+				                    the_posts_pagination( array(
+				                        'prev_text'          => __( 'Previous page', 'akhada-fitness-gym' ),
+				                        'next_text'          => __( 'Next page', 'akhada-fitness-gym' ),
+				                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'akhada-fitness-gym' ) . ' </span>',
+				                    ) );
+				                ?>
+				                <div class="clearfix"></div>
+				            </div>
+						</section>
+					</div>
+				</div>
+				<div class="clearfix"></div>
+			<?php }else if($layout_option == 'Right Sidebar'){ ?>
+				<div class="row">
+					<div id="" class="content_area col-lg-8 col-md-8">
+						<section id="post_section" class="">
+							<?php
+							if ( have_posts() ) : ?>
+								<?php
+								while ( have_posts() ) : the_post();
+
+									get_template_part( 'template-parts/post/content', get_post_format() );
+
+								endwhile;
+
+								else :
+
+									get_template_part( 'template-parts/post/content', 'none' );
+
+								endif; 
+							?>
+							<div class="navigation">
+				                <?php
+				                    the_posts_pagination( array(
+				                        'prev_text'          => __( 'Previous page', 'akhada-fitness-gym' ),
+				                        'next_text'          => __( 'Next page', 'akhada-fitness-gym' ),
+				                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'akhada-fitness-gym' ) . ' </span>',
+				                    ) );
+				                ?>
+				                <div class="clearfix"></div>
+				            </div>
+						</section>
+					</div>
+					<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-1'); ?></div>
+				</div>
+			<?php }else if($layout_option == 'One Column'){ ?>
+				<div class="row">
+					<div id="" class="content_area col-lg-12 col-md-12">
+						<section id="post_section" class="">
+							<?php
+							if ( have_posts() ) : ?>
+								<?php
+								while ( have_posts() ) : the_post();
+
+									get_template_part( 'template-parts/post/content', get_post_format() );
+
+								endwhile;
+
+								else :
+
+									get_template_part( 'template-parts/post/content', 'none' );
+
+								endif; 
+							?>
+							<div class="navigation">
+				                <?php
+				                    the_posts_pagination( array(
+				                        'prev_text'          => __( 'Previous page', 'akhada-fitness-gym' ),
+				                        'next_text'          => __( 'Next page', 'akhada-fitness-gym' ),
+				                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'akhada-fitness-gym' ) . ' </span>',
+				                    ) );
+				                ?>
+				                <div class="clearfix"></div>
+				            </div>
+						</section>
+					</div>
+				</div>
+			<?php }else if($layout_option == 'Three Columns'){ ?>	
+				<div class="row">
+					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>	
+					<div id="" class="content_area col-lg-6 col-md-6">
+						<section id="post_section" class="">
+							<?php
+							if ( have_posts() ) : ?>
+								<?php
+								while ( have_posts() ) : the_post();
+
+									get_template_part( 'template-parts/post/content', get_post_format() );
+
+								endwhile;
 								
-								get_template_part( 'template-parts/post/content' );
+								else :
 
-							endwhile;
+									get_template_part( 'template-parts/post/content', 'none' );
 
-							else :
-
-								get_template_part( 'template-parts/post/content', 'none' );
-
-							endif; 
-						?>
-						<div class="navigation">
-			                <?php
-			                    the_posts_pagination( array(
-			                        'prev_text'          => __( 'Previous page', 'akhada-fitness-gym' ),
-			                        'next_text'          => __( 'Next page', 'akhada-fitness-gym' ),
-			                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'akhada-fitness-gym' ) . ' </span>',
-			                    ) );
-			                ?>
-			                <div class="clearfix"></div>
-			            </div>
-					</section>
+								endif;
+							?>
+							<div class="navigation">
+				                <?php
+				                    the_posts_pagination( array(
+				                        'prev_text'          => __( 'Previous page', 'akhada-fitness-gym' ),
+				                        'next_text'          => __( 'Next page', 'akhada-fitness-gym' ),
+				                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'akhada-fitness-gym' ) . ' </span>',
+				                    ) );
+				                ?>
+				                <div class="clearfix"></div>
+				            </div>
+						</section>
+					</div>
+					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
 				</div>
-			</div>
-			<div class="clearfix"></div>
-		<?php }else if($layout_option == 'Right Sidebar'){ ?>
-			<div class="row">
-				<div id="" class="content_area col-md-8 col-sm-8">
-				<section id="post_section" class="">
-					<?php
-					if ( have_posts() ) : ?>
-						<?php
-						while ( have_posts() ) : the_post();
+			<?php }else if($layout_option == 'Four Columns'){ ?>
+				<div class="row">
+					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
+					<div id="" class="content_area col-lg-3 col-md-3">
+						<section id="post_section" class="">
+							<?php
+							if ( have_posts() ) : ?>
+								<?php
+								while ( have_posts() ) : the_post();
 
-							get_template_part( 'template-parts/post/content' );
+									get_template_part( 'template-parts/post/content', get_post_format() );
 
-						endwhile;
+								endwhile;
 
-						else :
+								else :
 
-							get_template_part( 'template-parts/post/content', 'none' );
+									get_template_part( 'template-parts/post/content', 'none' );
 
-						endif; 
-					?>
-					<div class="navigation">
-		                <?php
-		                    the_posts_pagination( array(
-		                        'prev_text'          => __( 'Previous page', 'akhada-fitness-gym' ),
-		                        'next_text'          => __( 'Next page', 'akhada-fitness-gym' ),
-		                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'akhada-fitness-gym' ) . ' </span>',
-		                    ) );
-		                ?>
-		                <div class="clearfix"></div>
-		            </div>
-				</section>
-				</div>
-				<div id="sidebar" class="col-md-4 col-sm-4"><?php dynamic_sidebar('sidebar-1'); ?></div>
-			</div>
-		<?php }else if($layout_option == 'One Column'){ ?>
-			<div class="row">
-			<div id="" class="content_area col-md-12 col-sm-12">
-			<section id="post_section" class="">
-				<?php
-				if ( have_posts() ) : ?>
-					<?php
-					while ( have_posts() ) : the_post();
+								endif; 
+							?>
+							<div class="navigation">
+				                <?php
+				                    the_posts_pagination( array(
+				                        'prev_text'          => __( 'Previous page', 'akhada-fitness-gym' ),
+				                        'next_text'          => __( 'Next page', 'akhada-fitness-gym' ),
+				                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'akhada-fitness-gym' ) . ' </span>',
+				                    ) );
+				                ?>
+				                <div class="clearfix"></div>
+				            </div>
+						</section>
+					</div>
+					<div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
+			        <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-3'); ?></div>
+		        </div>
+		    <?php }else if($layout_option == 'Grid Layout'){ ?>
+		    	<div class="row">
+			    	<div id="" class="content_area col-lg-8 col-md-8">
+						<section id="post_section" class="">
+							<div class="row">
+								<?php
+								if ( have_posts() ) : ?>
+									<?php
+									while ( have_posts() ) : the_post();
 
-						get_template_part( 'template-parts/post/content' );
+										get_template_part( 'template-parts/post/grid-layout' );
 
-					endwhile;
+									endwhile;
 
-					else :
+									else :
 
-						get_template_part( 'template-parts/post/content', 'none' );
+										get_template_part( 'template-parts/post/grid-layout', 'none' );
 
-					endif; 
-				?>
-				<div class="navigation">
-	                <?php
-	                    the_posts_pagination( array(
-	                        'prev_text'          => __( 'Previous page', 'akhada-fitness-gym' ),
-	                        'next_text'          => __( 'Next page', 'akhada-fitness-gym' ),
-	                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'akhada-fitness-gym' ) . ' </span>',
-	                    ) );
-	                ?>
-	                <div class="clearfix"></div>
-	            </div>
-			</section>
-			</div>
-			</div>
-		<?php }else if($layout_option == 'Three Columns'){ ?>	
-			<div class="row">
-			<div id="sidebar" class="col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>	
-			<div id="" class="content_area col-md-6 col-sm-6">
-			<section id="post_section" class="">
-				<?php
-				if ( have_posts() ) : ?>
-					<?php
-					while ( have_posts() ) : the_post();
-
-						get_template_part( 'template-parts/post/content' );
-
-					endwhile;
-					
-					else :
-
-						get_template_part( 'template-parts/post/content', 'none' );
-
-					endif;
-				?>
-				<div class="navigation">
-	                <?php
-	                    the_posts_pagination( array(
-	                        'prev_text'          => __( 'Previous page', 'akhada-fitness-gym' ),
-	                        'next_text'          => __( 'Next page', 'akhada-fitness-gym' ),
-	                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'akhada-fitness-gym' ) . ' </span>',
-	                    ) );
-	                ?>
-	                <div class="clearfix"></div>
-	            </div>
-			</section>
-			</div>
-			<div id="sidebar" class="col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
-			</div>
-		<?php }else if($layout_option == 'Four Columns'){ ?>
-		<div class="row">
-		<div id="sidebar" class="col-md-3"><?php dynamic_sidebar('sidebar-1'); ?></div>
-		<div id="" class="content_area col-md-3">
-		<section id="post_section" class="">
-			<?php
-			if ( have_posts() ) : ?>
-				<?php
-				while ( have_posts() ) : the_post();
-
-					get_template_part( 'template-parts/post/content' );
-
-				endwhile;
-
-				else :
-
-					get_template_part( 'template-parts/post/content', 'none' );
-
-				endif; 
-			?>
-			<div class="navigation">
-                <?php
-                    the_posts_pagination( array(
-                        'prev_text'          => __( 'Previous page', 'akhada-fitness-gym' ),
-                        'next_text'          => __( 'Next page', 'akhada-fitness-gym' ),
-                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'akhada-fitness-gym' ) . ' </span>',
-                    ) );
-                ?>
-                <div class="clearfix"></div>
-            </div>
-		</section>
-		</div>
-		<div id="sidebar" class="col-md-3"><?php dynamic_sidebar('sidebar-2'); ?></div>
-        <div id="sidebar" class="col-md-3"><?php dynamic_sidebar('sidebar-3'); ?></div>
-        </div>
-    <?php }else if($layout_option == 'Grid Layout'){ ?>
-    	<div class="row">
-    	<div id="" class="content_area col-md-8 col-sm-8">
-		<section id="post_section" class="">
-		<div class="row">
-			<?php
-			if ( have_posts() ) : ?>
-				<?php
-				while ( have_posts() ) : the_post();
-
-					get_template_part( 'template-parts/post/grid-layout' );
-
-				endwhile;
-
-				else :
-
-					get_template_part( 'template-parts/post/grid-layout', 'none' );
-
-				endif; 
-			?>
-			<div class="navigation">
-                <?php
-                    the_posts_pagination( array(
-                        'prev_text'          => __( 'Previous page', 'akhada-fitness-gym' ),
-                        'next_text'          => __( 'Next page', 'akhada-fitness-gym' ),
-                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'akhada-fitness-gym' ) . ' </span>',
-                    ) );
-                ?>
-                <div class="clearfix"></div>
-            </div>
-		</div>
-		</section>
-		</div>
-		<div id="sidebar" class="col-md-4 col-sm-4"><?php dynamic_sidebar('sidebar-1'); ?></div>	
-		</div>	
-		<?php } ?>
+									endif; 
+								?>
+								<div class="navigation">
+					                <?php
+					                    the_posts_pagination( array(
+					                        'prev_text'          => __( 'Previous page', 'akhada-fitness-gym' ),
+					                        'next_text'          => __( 'Next page', 'akhada-fitness-gym' ),
+					                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'akhada-fitness-gym' ) . ' </span>',
+					                    ) );
+					                ?>
+					                <div class="clearfix"></div>
+					            </div>
+							</div>
+						</section>
+					</div>
+					<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-1'); ?></div>	
+				</div>	
+			<?php } ?>
 		</main>
 	</div>
 </div>

@@ -291,7 +291,7 @@ final class Akhada_Fitness_Gym_Customize {
 				'example_1',
 				array(
 					'priority' => 9,
-					'title'    => esc_html__( 'Akhada Fitness Pro', 'akhada-fitness-gym' ),
+					'title'    => esc_html__( 'Akhada Fitness Pro Theme', 'akhada-fitness-gym' ),
 					'pro_text' => esc_html__( 'Go Pro',         'akhada-fitness-gym' ),
 					'pro_url'  => esc_url( 'https://www.luzuk.com/themes/akhada-fitness-wordpress-theme/' ),
 				)

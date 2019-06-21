@@ -9,7 +9,7 @@ get_header(); ?>
 	<div class="content-area">
 		<main id="main" class="site-main" role="main">
 			<div class="row">
-				<div class="content_area col-md-8">	
+				<div class="content_area col-lg-8 col-md-8">	
 					<?php while ( have_posts() ) : the_post();
 
 						get_template_part( 'template-parts/page/content', 'page' );
@@ -21,7 +21,7 @@ get_header(); ?>
 
 					endwhile; // End of the loop.	?>
 				</div>
-				<div id="sidebar" class="col-md-4">
+				<div id="sidebar" class="col-lg-4 col-md-4">
 					<?php dynamic_sidebar('sidebar-2'); ?> 
 				</div>
 			</div>
