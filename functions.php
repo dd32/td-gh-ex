@@ -60,6 +60,9 @@ function bard_setup() {
 		'caption',
 	) );
 
+	// Gutenberg Embeds
+	add_theme_support( 'responsive-embeds' ); 
+
 	// WooCommerce
 	add_theme_support( 'woocommerce' );
 	add_theme_support( 'wc-product-gallery-zoom' );
@@ -510,6 +513,7 @@ if ( ! function_exists( 'bard_social_media' ) ) {
 			'reddit-square',
 			'dribbble',
 			'vk',
+			'odnoklassniki',
 			'skype',
 			'youtube',
 			'youtube-square',

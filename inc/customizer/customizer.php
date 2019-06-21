@@ -884,6 +884,7 @@ function bard_customize_register( $wp_customize ) {
 		'reddit-square' 		=> 'Reddit 3',
 		'dribbble' 				=> 'Dribbble',
 		'vk' 					=> 'vKontakte',
+		'odnoklassniki' 		=> 'Odnoklassniki',
 		'skype' 				=> 'Skype',
 		'film' 					=> 'Film',
 		'youtube' 				=> 'Youtube 1',
