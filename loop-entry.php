@@ -13,7 +13,7 @@
                     <div class="post_box_inner">               
                         <p class="post_desc"><?php echo wp_newsstream_excerpt('30'); ?></p>                    
                         <div class="col-md-4">
-                            <a href="<?php the_permalink('') ?>" class="btn btn-info"><?php _e( 'Read More', 'wp-newsstream' ); ?></a>
+                            <a href="<?php the_permalink('') ?>" class="btn btn-info"><?php _e( 'Read More', 'wp-news-stream' ); ?></a>
                         </div>
                         <div class="col-md-8">
                         	<ul class="meta-info">

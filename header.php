@@ -10,7 +10,6 @@
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title><?php wp_title('|', true, 'left'); ?></title>
 <link rel="profile" href="http://gmpg.org/xfn/11" />
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
 <?php wp_head(); ?>
@@ -22,7 +21,7 @@
             <div class="row">    
                 <div class="col-md-12 fan-sociel-media">  
 					<?php if ( get_theme_mod( 'wp_newsstream_email' ) ) : ?>    
-                        <a href="<?php _e('mailto:', 'wp-newsstream'); echo sanitize_email( get_theme_mod( 'wp_newsstream_email' ) ); ?>" class="btn" title="Email"><span class="fa fa-envelope"></span></a>    
+                        <a href="<?php _e('mailto:', 'wp-news-stream'); echo sanitize_email( get_theme_mod( 'wp_newsstream_email' ) ); ?>" class="btn" title="Email"><span class="fa fa-envelope"></span></a>    
                     <?php endif; ?>
                     <?php if ( get_theme_mod( 'wp_newsstream_rss' ) ) : ?>    
                         <a href="<?php echo esc_url( get_theme_mod( 'wp_newsstream_rss' ) ); ?>" class="btn" title="RSS"><span class="fa fa-rss"></span></a>    
@@ -66,9 +65,11 @@
             	<div class="row">
                 	<div class="col-md-12">
                     	<div class="logo">
-                        	<?php if ( get_theme_mod( 'wp_newsstream_logo' ) ) : ?>
-                                <div id="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( get_theme_mod( 'wp_newsstream_logo' ) ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" /></a></div>
-                                <?php else : ?>
+                            <?php if ( get_theme_mod( 'custom_logo' ) ) : 
+                            $custom_logo_id = get_theme_mod( 'custom_logo' );
+                            $custom_logo_url = wp_get_attachment_image_url( $custom_logo_id , 'full' ); ?>
+                            <div id="site-logo"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><img src="<?php echo esc_url( $custom_logo_url ); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name' ) ); ?>" /></a></div>
+                            <?php else : ?>
                                 <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
                                 <p id="description"><?php bloginfo('description'); ?></p>
                            <?php endif; ?>
@@ -80,7 +81,7 @@
          <div class="nav_container">
             <nav id="site-navigation" class="main-navigation" role="navigation">
                   <button class="menu-toggle navbar-toggle" aria-controls="menu" aria-expanded="false">
-                  	<span class="sr-only"><?php _e( 'Toggle navigation', 'wp-newsstream' ); ?></span>            
+                  	<span class="sr-only"><?php _e( 'Toggle navigation', 'wp-news-stream' ); ?></span>            
                     <span class="icon-bar"></span>            
                     <span class="icon-bar"></span>            
                     <span class="icon-bar"></span>

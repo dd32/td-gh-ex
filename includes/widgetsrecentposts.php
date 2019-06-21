@@ -58,7 +58,7 @@ class wp_newsstream_recent_posts extends WP_Widget {
 	/** Widget control update */
 	function update( $new_instance, $old_instance ) {
 		$instance    = $old_instance;		
-		//Let's turn that array into something the Wordpress database can store
+		//Let's turn that array into something the WordPress database can store
 		$instance['title']  = esc_html( $new_instance['title'] );
 		$instance['types'] = ( in_array( $new['types'], array( 'posts', 'pages' ) ) ) ? $new['types'] : 'posts';
 		$instance['number'] = absint( $new_instance['number'] );

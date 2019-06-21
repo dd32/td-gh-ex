@@ -7,7 +7,7 @@
 
 	<div id="comments">
 	<?php if ( post_password_required() ) : ?>    
-		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'wp-newsstream' ); ?></p>
+		<p class="nopassword"><?php _e( 'This post is password protected. Enter the password to view any comments.', 'wp-news-stream' ); ?></p>
 	</div>
 	<?php
 			return;
@@ -18,7 +18,7 @@
 		<div id="comments-title">
         	<h3>
 			<?php
-				printf( _n( 'This article has 1 comment', 'This article has %1$s comments', get_comments_number(), 'wp-newsstream' ),
+				printf( _n( 'This article has 1 comment', 'This article has %1$s comments', get_comments_number(), 'wp-news-stream' ),
 					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
 			?>
             </h3>
@@ -32,9 +32,9 @@
 		</ol>
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-below">
-			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'wp-newsstream' ); ?></h1>
-			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'wp-newsstream' ) ); ?></div>
-			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'wp-newsstream' ) ); ?></div>
+			<h1 class="assistive-text section-heading"><?php _e( 'Comment navigation', 'wp-news-stream' ); ?></h1>
+			<div class="nav-previous"><?php previous_comments_link( __( '&larr; Older Comments', 'wp-news-stream' ) ); ?></div>
+			<div class="nav-next"><?php next_comments_link( __( 'Newer Comments &rarr;', 'wp-news-stream' ) ); ?></div>
 		</nav>
 		<?php endif; // check for comment navigation ?>
 	<?php endif; // have_comments() ?>
@@ -42,7 +42,7 @@
 		// If comments are closed and there are no comments, let's leave a little note, shall we?
 		if ( ! comments_open() && '0' != get_comments_number() && post_type_supports( get_post_type(), 'comments' ) ) :
 	?>
-		<p class="nocomments"><?php _e( 'Comments are closed.', 'wp-newsstream' ); ?></p>
+		<p class="nocomments"><?php _e( 'Comments are closed.', 'wp-news-stream' ); ?></p>
 	<?php endif; ?>    
 <?php comment_form(array('comment_notes_after' => '')); ?>	
 </div><!-- #comments -->

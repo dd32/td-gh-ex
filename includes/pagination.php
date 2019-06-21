@@ -15,8 +15,8 @@ if ( ! function_exists( 'wp_newsstream_pagination' ) ) :
 			  'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),  
 			  'current' => $current_page,  
 			  'total' => $total_pages,  
-			  'prev_text' => __('<span class="fa fa-chevron-left"></span>', 'wp-newsstream'),  
-			  'next_text' => __('<span class="fa fa-chevron-right"></span>', 'wp-newsstream')  
+			  'prev_text' => __('<span class="fa fa-chevron-left"></span>', 'wp-news-stream'),  
+			  'next_text' => __('<span class="fa fa-chevron-right"></span>', 'wp-news-stream')  
 			));		  
 		  echo '</div>';			
 		}	

@@ -13,13 +13,16 @@ add_action('after_setup_theme', 'wp_newsstream_theme_setup');
 if ( ! function_exists( 'wp_newsstream_theme_setup' ) ) :
 	function wp_newsstream_theme_setup(){
 		global $content_width;
-		load_theme_textdomain('wp-newsstream', get_template_directory() . '/languages');		
+		load_theme_textdomain('wp-news-stream', get_template_directory() . '/languages');		
 		add_editor_style();
 		add_theme_support( "title-tag" );
 		add_theme_support( 'automatic-feed-links' );
 		add_theme_support( 'custom-background') ;
 		add_theme_support( 'post-thumbnails' );
-		add_theme_support( 'content-width', 550 );		
+		add_theme_support( 'content-width', 550 );	
+		add_theme_support( 'custom-header' );	
+		add_theme_support( 'title-tag' );
+		add_theme_support( 'custom-logo' ); 
 		add_image_size( 'widget-post-thumb',  70, 70, true );
 		add_image_size( 'post-thumb',  905, 380 , true );
 		add_image_size( 'slide-small-thumb',  130, 135 , true );
@@ -28,7 +31,7 @@ if ( ! function_exists( 'wp_newsstream_theme_setup' ) ) :
 		
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
-			'primary' => __( 'Primary Menu', 'wp-newsstream' ),
+			'primary' => __( 'Primary Menu', 'wp-news-stream' ),
 		) );
 	}
 endif;
@@ -72,7 +75,7 @@ if ( !function_exists( 'wp_newsstream_menu' ) ){
 if ( !function_exists( 'wp_newsstream_widgets_init' ) ){
 	function wp_newsstream_widgets_init() {
 		register_sidebar( array(
-			'name' => __( 'Homepage Sidebar', 'wp-newsstream' ),
+			'name' => __( 'Homepage Sidebar', 'wp-news-stream' ),
 			'id' => 'defaul-sidebar',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
@@ -80,7 +83,7 @@ if ( !function_exists( 'wp_newsstream_widgets_init' ) ){
 			'after_title' => '</h4></div>',
 		) );		
 		register_sidebar( array(
-			'name' => __( 'Post Sidebar', 'wp-newsstream' ),
+			'name' => __( 'Post Sidebar', 'wp-news-stream' ),
 			'id' => 'post-sidebar',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
@@ -88,7 +91,7 @@ if ( !function_exists( 'wp_newsstream_widgets_init' ) ){
 			'after_title' => '</h4></div>',
 		) );		
 		register_sidebar( array(
-			'name' => __( 'Page Sidebar', 'wp-newsstream' ),
+			'name' => __( 'Page Sidebar', 'wp-news-stream' ),
 			'id' => 'page-sidebar',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
@@ -96,7 +99,7 @@ if ( !function_exists( 'wp_newsstream_widgets_init' ) ){
 			'after_title' => '</h4></div>',
 		) );		
 		register_sidebar( array(
-			'name' => __( 'Archives Sidebar', 'wp-newsstream' ),
+			'name' => __( 'Archives Sidebar', 'wp-news-stream' ),
 			'id' => 'archives-sidebar',
 			'before_widget' => '<aside id="%1$s" class="widget %2$s">',
 			'after_widget' => "</aside>",
@@ -104,7 +107,7 @@ if ( !function_exists( 'wp_newsstream_widgets_init' ) ){
 			'after_title' => '</h4></div>',
 		) );		
 		register_sidebar( array(
-			'name' => __( 'Banner Widget', 'wp-newsstream' ),
+			'name' => __( 'Banner Widget', 'wp-news-stream' ),
 			'description' => 'Enter your banner code into this text widget.',
 			'id' => 'top-right-widget',
 			'before_widget' => '<div id="top-widget">',
@@ -113,7 +116,7 @@ if ( !function_exists( 'wp_newsstream_widgets_init' ) ){
 			'after_title' => '',
 		) );		
 		register_sidebar( array(
-			'name' => __( 'Footer 1', 'wp-newsstream' ),
+			'name' => __( 'Footer 1', 'wp-news-stream' ),
 			'id' => 'footer-one',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => "</div>",
@@ -121,7 +124,7 @@ if ( !function_exists( 'wp_newsstream_widgets_init' ) ){
 			'after_title' => '</h3></div>',
 		) );		
 		register_sidebar( array(
-			'name' => __( 'Footer 2', 'wp-newsstream' ),
+			'name' => __( 'Footer 2', 'wp-news-stream' ),
 			'id' => 'footer-two',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => "</div>",
@@ -129,7 +132,7 @@ if ( !function_exists( 'wp_newsstream_widgets_init' ) ){
 			'after_title' => '</h3></div>',
 		) );		
 		register_sidebar( array(
-			'name' => __( 'Footer 3', 'wp-newsstream' ),
+			'name' => __( 'Footer 3', 'wp-news-stream' ),
 			'id' => 'footer-three',
 			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget' => "</div>",
@@ -149,7 +152,7 @@ function wp_newsstream_comment( $comment, $args, $depth ) {
 		case 'trackback' :
 	?>
 	<li class="post pingback">
-		<p><?php _e( 'Pingback:', 'wp-newsstream' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'wp-newsstream' ), ' ' ); ?></p>
+		<p><?php _e( 'Pingback:', 'wp-news-stream' ); ?> <?php comment_author_link(); ?><?php edit_comment_link( __( '(Edit)', 'wp-news-stream' ), ' ' ); ?></p>
 	<?php
 			break;
 		default :
@@ -160,14 +163,14 @@ function wp_newsstream_comment( $comment, $args, $depth ) {
             
 				<div class="comment-author vcard">
 					<?php echo get_avatar( $comment, 50 ); ?>
-					<?php printf( __( '%s', 'wp-newsstream' ), sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
+					<?php printf( '%s', sprintf( '<cite class="fn">%s</cite>', get_comment_author_link() ) ); ?>
 				</div><!-- .comment-author .vcard -->
 
 				<div class="comment-meta commentmetadata">
 					<a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ); ?>"><time pubdate datetime="<?php comment_time( 'c' ); ?>">
 					<?php
 						/* translators: 1: date, 2: time */
-						printf( __( '%1$s at %2$s', 'wp-newsstream' ), get_comment_date(), get_comment_time() ); ?>
+						printf( __( '%1$s at %2$s', 'wp-news-stream' ), get_comment_date(), get_comment_time() ); ?>
 					</time></a>
                     
 				</div><!-- .comment-meta .commentmetadata -->
@@ -175,14 +178,14 @@ function wp_newsstream_comment( $comment, $args, $depth ) {
 
 			<div class="comment-content">
             	<?php if ( $comment->comment_approved == '0' ) : ?>
-					<h6><em><?php _e( 'Your comment is awaiting moderation.', 'wp-newsstream' ); ?></em></h6>
+					<h6><em><?php _e( 'Your comment is awaiting moderation.', 'wp-news-stream' ); ?></em></h6>
 					<br />
 				<?php endif; ?>
 				<?php comment_text(); ?>
                 <span class="reply">
 						<?php comment_reply_link( array_merge( $args, array( 'depth' => $depth, 'max_depth' => $args['max_depth'] ) ) ); ?>
                     </span><!-- .reply -->
-					<?php edit_comment_link( __( '(Edit)', 'wp-newsstream' ), ' ' );?>
+					<?php edit_comment_link( __( '(Edit)', 'wp-news-stream' ), ' ' );?>
             </div>			
 		</article><!-- #comment-## -->
 	<?php

@@ -6,28 +6,14 @@
 
 if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 	function wp_newsstream_theme_customizer( $wp_customize ) {		
-		$wp_customize->remove_section( 'title_tagline');
-		/* logo option */
-		$wp_customize->add_section( 'wp_newsstream_logo_section' , array(
-			'title'       => __( 'Site Logo', 'wp-newsstream' ),
-			'priority'    => 29,
-			'description' => __( 'Upload a logo to replace the default site name in the header', 'wp-newsstream' ),
-		) );		
-		$wp_customize->add_setting( 'wp_newsstream_logo', array (
-			'sanitize_callback' => 'esc_url_raw',
-		) );		
-		$wp_customize->add_control( new WP_Customize_Image_Control( $wp_customize, 'wp_newsstream_logo', array(
-			'label'    => __( 'Choose your logo (ideal width is 100-300px and ideal height is 40-100px)', 'wp-newsstream' ),
-			'section'  => 'wp_newsstream_logo_section',
-			'settings' => 'wp_newsstream_logo',
-		) ) );	
+			
 		/* color theme */
 		$wp_customize->add_setting( 'wp_newsstream_theme_color', array (
 			'default' => '#ff3333',
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );		
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'wp_newsstream_theme_color', array(
-			'label'    => __( 'Theme Color Option', 'wp-newsstream' ),
+			'label'    => __( 'Theme Color Option', 'wp-news-stream' ),
 			'section'  => 'colors',
 			'settings' => 'wp_newsstream_theme_color',
 			'priority' => 31,
@@ -37,22 +23,22 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 			'sanitize_callback' => 'sanitize_hex_color',
 		) );		
 		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'wp_newsstream_theme_border_color', array(
-			'label'    => __( 'Theme Border Color Option', 'wp-newsstream' ),
+			'label'    => __( 'Theme Border Color Option', 'wp-news-stream' ),
 			'section'  => 'colors',
 			'settings' => 'wp_newsstream_theme_border_color',
 			'priority' => 32,
 		) ) );		
 		/* social media option */
 		$wp_customize->add_section( 'wp_newsstream_social_section' , array(
-			'title'       => __( 'Social Media Icons', 'wp-newsstream' ),
+			'title'       => __( 'Social Media Icons', 'wp-news-stream' ),
 			'priority'    => 33,
-			'description' => __( 'Optional social media buttons in the header', 'wp-newsstream' ),
+			'description' => __( 'Optional social media buttons in the header', 'wp-news-stream' ),
 		) );		
 		$wp_customize->add_setting( 'wp_newsstream_facebook', array (
 			'sanitize_callback' => 'esc_url_raw',
 		) );		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_newsstream_facebook', array(
-			'label'    => __( 'Enter your Facebook url', 'wp-newsstream' ),
+			'label'    => __( 'Enter your Facebook url', 'wp-news-stream' ),
 			'section'  => 'wp_newsstream_social_section',
 			'settings' => 'wp_newsstream_facebook',
 			'priority'    => 101,
@@ -61,7 +47,7 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 			'sanitize_callback' => 'esc_url_raw',
 		) );		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_newsstream_twitter', array(
-			'label'    => __( 'Enter your Twitter url', 'wp-newsstream' ),
+			'label'    => __( 'Enter your Twitter url', 'wp-news-stream' ),
 			'section'  => 'wp_newsstream_social_section',
 			'settings' => 'wp_newsstream_twitter',
 			'priority'    => 102,
@@ -70,7 +56,7 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 			'sanitize_callback' => 'esc_url_raw',
 		) );		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_newsstream_google', array(
-			'label'    => __( 'Enter your Google+ url', 'wp-newsstream' ),
+			'label'    => __( 'Enter your Google+ url', 'wp-news-stream' ),
 			'section'  => 'wp_newsstream_social_section',
 			'settings' => 'wp_newsstream_google',
 			'priority'    => 103,
@@ -79,7 +65,7 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 			'sanitize_callback' => 'esc_url_raw',
 		) );		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_newsstream_pinterest', array(
-			'label'    => __( 'Enter your Pinterest url', 'wp-newsstream' ),
+			'label'    => __( 'Enter your Pinterest url', 'wp-news-stream' ),
 			'section'  => 'wp_newsstream_social_section',
 			'settings' => 'wp_newsstream_pinterest',
 			'priority'    => 104,
@@ -88,7 +74,7 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 			'sanitize_callback' => 'esc_url_raw',
 		) );		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_newsstream_linkedin', array(
-			'label'    => __( 'Enter your Linkedin url', 'wp-newsstream' ),
+			'label'    => __( 'Enter your Linkedin url', 'wp-news-stream' ),
 			'section'  => 'wp_newsstream_social_section',
 			'settings' => 'wp_newsstream_linkedin',
 			'priority'    => 105,
@@ -97,7 +83,7 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 			'sanitize_callback' => 'esc_url_raw',
 		) );		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_newsstream_youtube', array(
-			'label'    => __( 'Enter your Youtube url', 'wp-newsstream' ),
+			'label'    => __( 'Enter your Youtube url', 'wp-news-stream' ),
 			'section'  => 'wp_newsstream_social_section',
 			'settings' => 'wp_newsstream_youtube',
 			'priority'    => 106,
@@ -106,7 +92,7 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 			'sanitize_callback' => 'esc_url_raw',
 		) );		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_newsstream_tumblr', array(
-			'label'    => __( 'Enter your Tumblr url', 'wp-newsstream' ),
+			'label'    => __( 'Enter your Tumblr url', 'wp-news-stream' ),
 			'section'  => 'wp_newsstream_social_section',
 			'settings' => 'wp_newsstream_tumblr',
 			'priority'    => 107,
@@ -115,7 +101,7 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 			'sanitize_callback' => 'esc_url_raw',
 		) );		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_newsstream_instagram', array(
-			'label'    => __( 'Enter your Instagram url', 'wp-newsstream' ),
+			'label'    => __( 'Enter your Instagram url', 'wp-news-stream' ),
 			'section'  => 'wp_newsstream_social_section',
 			'settings' => 'wp_newsstream_instagram',
 			'priority'    => 108,
@@ -124,7 +110,7 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 			'sanitize_callback' => 'esc_url_raw',
 		) );		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_newsstream_flickr', array(
-			'label'    => __( 'Enter your Flickr url', 'wp-newsstream' ),
+			'label'    => __( 'Enter your Flickr url', 'wp-news-stream' ),
 			'section'  => 'wp_newsstream_social_section',
 			'settings' => 'wp_newsstream_flickr',
 			'priority'    => 109,
@@ -133,7 +119,7 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 			'sanitize_callback' => 'esc_url_raw',
 		) );		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_newsstream_vimeo', array(
-			'label'    => __( 'Enter your Vimeo url', 'wp-newsstream' ),
+			'label'    => __( 'Enter your Vimeo url', 'wp-news-stream' ),
 			'section'  => 'wp_newsstream_social_section',
 			'settings' => 'wp_newsstream_vimeo',
 			'priority'    => 110,
@@ -142,7 +128,7 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 			'sanitize_callback' => 'esc_url_raw',
 		) );		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_newsstream_rss', array(
-			'label'    => __( 'Enter your RSS url', 'wp-newsstream' ),
+			'label'    => __( 'Enter your RSS url', 'wp-news-stream' ),
 			'section'  => 'wp_newsstream_social_section',
 			'settings' => 'wp_newsstream_rss',
 			'priority'    => 111,
@@ -151,16 +137,16 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 			'sanitize_callback' => 'sanitize_email',
 		) );		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_newsstream_email', array(
-			'label'    => __( 'Enter your email address', 'wp-newsstream' ),
+			'label'    => __( 'Enter your email address', 'wp-news-stream' ),
 			'section'  => 'wp_newsstream_social_section',
 			'settings' => 'wp_newsstream_email',
 			'priority'    => 112,
 		) ) );		
 		// author bio in posts option 
 		$wp_customize->add_section( 'wp_newsstream_author_bio_section' , array(
-			'title'       => __( 'Display Author Bio', 'wp-newsstream' ),
+			'title'       => __( 'Display Author Bio', 'wp-news-stream' ),
 			'priority'    => 113,
-			'description' => __( 'Option to show/hide the author bio in the posts.', 'wp-newsstream' ),
+			'description' => __( 'Option to show/hide the author bio in the posts.', 'wp-news-stream' ),
 		) );		
 		$wp_customize->add_setting( 'wp_newsstream_author_bio', array (
 			'default'        => '1',
@@ -168,7 +154,7 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 		) );		
 		 $wp_customize->add_control('author_bio', array(
 			'settings' => 'wp_newsstream_author_bio',
-			'label' => __('Show the author bio in posts?', 'wp-newsstream'),
+			'label' => __('Show the author bio in posts?', 'wp-news-stream'),
 			'section' => 'wp_newsstream_author_bio_section',
 			'type' => 'checkbox',
 		));		
@@ -188,7 +174,7 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 		//  Select Box               
 		//  =============================
 		$wp_customize->add_section('wp_newsstream_slider', array(
-        'title'    => __('Slider Option', 'wp-newsstream'),
+        'title'    => __('Slider Option', 'wp-news-stream'),
         'priority' => 114,
 		));	 
 		
@@ -213,7 +199,7 @@ if ( ! function_exists( 'wp_newsstream_theme_customizer' ) ) :
 		) );		
 		$wp_customize->add_control( new WP_Customize_Control( $wp_customize, 'wp_newsstream_slider_speed', array(
 			'default' => 6000,
-			'label'    => __( 'Slider Speed (milliseconds)', 'wp-newsstream' ),
+			'label'    => __( 'Slider Speed (milliseconds)', 'wp-news-stream' ),
 			'section'  => 'wp_newsstream_slider',
 			'settings' => 'wp_newsstream_slider_speed',
 			'priority'    => 115,

@@ -19,7 +19,7 @@
                                     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 									query_posts($query_string .'&posts_per_page=10&paged=' . $paged);
                                 ?>
-                         	<div id="page-heading"><h1 class="post_title"><?php _e( 'Search Results For: ', 'wp-newsstream' ); ?><?php the_search_query(); ?></h1></div>
+                         	<div id="page-heading"><h1 class="post_title"><?php _e( 'Search Results For: ', 'wp-news-stream' ); ?><?php the_search_query(); ?></h1></div>
                             <div id="post" class="row">                             
 								<?php if (have_posts()) : ?>
                                 	<?php get_template_part( 'loop', 'entry' ); ?>                               	
@@ -27,7 +27,7 @@
                                     <!-- END page-heading -->
                                     <div class="post_box" >
                                     <div id="post" class="post clearfix">
-                                    <div class="col-md-12"><h3><?php _e('No results found for that query.', 'wp-newsstream'); ?></h3></div>
+                                    <div class="col-md-12"><h3><?php _e('No results found for that query.', 'wp-news-stream'); ?></h3></div>
                                     </div>
                                     <!-- END post  -->
                                      </div>
