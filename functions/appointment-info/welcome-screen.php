@@ -196,9 +196,9 @@ class appointment_screen {
 	 */
 	public function appointment_welcome_screen() {
 
-		get_template_part( ABSPATH . 'wp-load.php' );
-		get_template_part( ABSPATH . 'wp-admin/admin.php' );
-		get_template_part( ABSPATH . 'wp-admin/admin-header.php' );
+		require_once( ABSPATH . 'wp-load.php' );
+		require_once( ABSPATH . 'wp-admin/admin.php' );
+		require_once( ABSPATH . 'wp-admin/admin-header.php' );
 		?>
 		<div class="container-fluid">
 		<div class="row">
@@ -228,7 +228,7 @@ class appointment_screen {
 	 *
 	 */
 	public function appointment_getting_started() {
-		get_template_part( get_template_directory() . '/functions/appointment-info/sections/getting-started.php' );
+		require_once( get_template_directory() . '/functions/appointment-info/sections/getting-started.php' );
 	}
 
 	
@@ -237,7 +237,7 @@ class appointment_screen {
 	 *
 	 */
 	public function appointment_action_required() {
-		get_template_part( get_template_directory() . '/functions/appointment-info/sections/actions-required.php' );
+		require_once( get_template_directory() . '/functions/appointment-info/sections/actions-required.php' );
 	}
 	
 	/**
@@ -245,7 +245,7 @@ class appointment_screen {
 	 *
 	 */
 	public function appointment_child_themes() {
-		get_template_part( get_template_directory() . '/functions/appointment-info/sections/child-themes.php' );
+		require_once( get_template_directory() . '/functions/appointment-info/sections/child-themes.php' );
 	}
 
 	/**
@@ -253,7 +253,7 @@ class appointment_screen {
 	 *
 	 */
 	public function appointment_github() {
-		get_template_part( get_template_directory() . '/functions/appointment-info/sections/github.php' );
+		require_once( get_template_directory() . '/functions/appointment-info/sections/github.php' );
 	}
 
 
@@ -262,7 +262,7 @@ class appointment_screen {
 	 * 
 	 */
 	public function appointment_welcome_free_pro() {
-		get_template_part( get_template_directory() . '/functions/appointment-info/sections/free_pro.php' );
+		require_once( get_template_directory() . '/functions/appointment-info/sections/free_pro.php' );
 	}
 	
 	
