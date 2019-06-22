@@ -1,5 +1,8 @@
 == Changelog ==
 
+ =  1.1.7 =
+* Responsive issue fixed 
+
  =  1.1.6 =
 * default sidebar added
 
