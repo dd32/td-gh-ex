@@ -60,30 +60,23 @@ global $aeonblog_theme_options;
 		<!-- End Header Navigation -->
 	</div>
 
+	<?php if ( has_nav_menu('primary')) { ?>
+
 	<!-- Main Menu -->
 	<nav class="main-menu navbar navbar-default bootsnav">
 		<div class="container">
 			<div id="navbar-menu" class="collapse navbar-collapse">
 				<?php
-				if ( has_nav_menu('primary'))
-				{
 					wp_nav_menu( array( 
 						'theme_location' => 'primary',
 						'depth'             => 2, 
 						'menu_class' => 'nav navbar-nav',
 					));
-				}else { ?>
-					<ul class="navbar-menu empty-menu">
-						<li class="nav navbar-nav navbar-right">
-							<a href="<?php echo esc_url(admin_url( 'nav-menus.php' )); ?> "> <?php esc_html_e('Add a menu','aeonblog'); ?></a>
-						</li>
-					</ul>
-				<?php }	
 				?>
-
 			</div><!-- /.navbar-collapse -->
 		</div>
 	</nav>
+<?php } ?>
 </header><!-- #masthead -->	
 <?php if(has_header_image() || is_front_page () ){ ?>
 	<div class="row">

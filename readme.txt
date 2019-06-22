@@ -1,26 +1,16 @@
-=== AeonBlog ===
-/**
- * File AeonBlog.
- * @package   AeonBlog
- * @author    Aeon Theme <info@aeontheme.com>
- * @copyright Copyright (c) 2019, Aeon Theme
- * @link      http://www.aeontheme.com/themes/aeonblog
- * @license   http://www.gnu.org/licenses/gpl-2.0.html
-*/
+=== Aeon Blog ===
 
 Contributors: aeontheme
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, accessibility-ready, blog, news
-
-Requires at least: 4.8
-Tested up to: 4.9.8
-Stable tag: 1.1.0
-License: GNU General Public License v2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
+Requires at least: 4.5
+Tested up to: 5.2.1
+Requires PHP: 5.2.4
+Stable tag: 1.0.0
+License:      GNU General Public License v2 or later
+License URI:  http://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
-Simple and Clean Blog Theme.
-
+Simple and Clean Accessibility Ready Blog Theme. It comes with custom widget for author, amazing slider, easy to use customizer based theme options, copyright text, post templates, sidebar options, meta options, featured image option, excerpt length option, read more text, sticky sidebar and many more. This is a complete WordPress theme for bloggers. 
 
 == Installation ==
 
@@ -35,6 +25,9 @@ Simple and Clean Blog Theme.
 AeonBlog includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+= 1.0.1 - June 22 2019 =
+* Reviewer Issues Fixed
+
 = 1.0.0 - June 18 2019 =
 * Fixed Design Issues
 * Managed Sections 
