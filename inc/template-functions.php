@@ -100,3 +100,27 @@ if( ! function_exists('best_news_top_header_social_links_items')):
 	}
 endif;
 
+// Top Header Social Links
+if( ! function_exists('best_news_top_footer_social_links_items')):
+	function best_news_top_footer_social_links_items(){
+		$defaults =  array(
+			array(
+				'font' => 'fa fa-facebook',
+				'link' => '#',                       
+			),
+			array(
+				'font' => 'fa fa-twitter',
+				'link' => '#',
+			),
+			
+		);
+		$social_items = get_theme_mod( 'footer_social_links_items', $defaults );
+		if( $social_items  ){ 
+			foreach( $social_items as $social ){ ?>
+				<li><a href="<?php echo $social['link'];?>"><i class="<?php echo $social['font'];?>"></i></a></li>
+				<?php
+			}
+		}
+	}
+endif;
+

@@ -29,6 +29,9 @@ Best News includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
 
+= 1.0.4 - June 23 2019 =
+* Footer special link bug fixed, sidebar widget CSS adjusted
+
 = 1.0.3 - June 7 2019 =
 * Menu bug fix, text jusity add, site title bug fix, hyper link in adv add.
 
@@ -43,6 +46,8 @@ Best News includes support for Infinite Scroll in Jetpack.
 
 == Upgrade Notice ==
 
+= 1.0.4 - June 23 2019 =
+* Footer special link bug fixed, sidebar widget CSS adjusted
 
 = 1.0.3 - June 7 2019 =
 * Menu bug fix with arrow mark, text jusity added in page , site title bug fix, hyper link in adv add.

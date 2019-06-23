@@ -63,7 +63,7 @@
 							
 							<!-- Social -->
 							<ul class="social float-none mt-5">
-								<?php best_news_top_header_social_links_items();?>
+								<?php best_news_top_footer_social_links_items();?>
 							</ul>
 							<!-- End Social -->
 						</div>

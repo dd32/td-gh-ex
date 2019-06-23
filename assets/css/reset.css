@@ -1,6 +1,209 @@
 /*==================================
 	Reset CSS
 ====================================*/ 
+aside .col-lg-2,
+aside .col-lg-3,
+aside .col-lg-4,
+aside .col-lg-5,
+aside .col-lg-6,
+aside .col-lg-7,
+aside .col-lg-8,
+aside .col-md-2,
+aside .col-md-3,
+aside .col-md-4,
+aside .col-md-5,
+aside .col-md-6,
+aside .col-md-7,
+aside .col-md-8
+ {
+	max-width: 100%;
+	flex: 0 0 100%;
+}
+
+aside .news-tabs .nav-main .nav-tabs {
+	top: -5px;
+	position: initial;
+}
+
+aside .news-grid .single-news.main .news-head {
+	margin-bottom: 30px;
+}
+
+aside .carousel-slider .content p {
+display: none;
+}
+
+aside .news-carousel .owl-controls .owl-nav div {
+	bottom: -22%;
+}
+aside .all-news-tabs .news-head {
+	width: auto;
+	float: none;
+}
+aside .all-news-tabs .content {
+	width: auto;
+	float: none;
+	margin-left: 0;
+}
+aside.blog-sidebar .single-sidebar h2 {
+	margin-top: 15px !important;
+}
+aside .news-style2 .news-head {
+	width: auto;
+}
+
+aside .news-style2 .content {
+	width: 87%;
+	margin: 10px 0 0 20px
+}
+aside .news-style2 .single-news.main {
+	padding-bottom: 20px;
+}
+aside .news-grid .grid-news-right .single-news {
+	margin-top: 20px;
+}
+
+/* adjust bottom color bar for sidebar */
+aside .news-big .small-post .col-12 .single-post:before,
+aside .news-column .single-post:before {
+	width: 36%;
+}
+aside .news-tabs .tab-others .single-news:before {
+	width: 25%;
+}
+
+aside .news-column .small-post .single-post {
+	min-height: 130px;
+}
+
+aside .news-column .single-post {
+	padding: 25px 0 0 0 ;
+}
+aside .news-tabs .tab-others .news-head img {
+width: 100%;
+
+}
+aside .news-tabs .tab-others .news-head {
+	width: 100%;
+	float: initial;
+}
+aside .news-tabs .tab-others .content {
+	padding-left: 15px;
+}
+footer.footer .footer-top .widget section .col-lg-2,
+footer.footer .footer-top .widget section .col-lg-3,
+footer.footer .footer-top .widget .single-footer .col-lg-3,
+footer.footer .footer-top .widget section .col-lg-4,
+footer.footer .footer-top .widget section .col-lg-5,
+footer.footer .footer-top .widget section .col-lg-6,
+footer.footer .footer-top .widget section .col-lg-7,
+footer.footer .footer-top .widget section .col-lg-8,
+footer.footer .footer-top .widget section .col-lg-9,
+footer.footer .footer-top .widget section .col-lg-10,
+footer.footer .footer-top .widget section .col-md-2,
+footer.footer .footer-top .widget section .col-md-3,
+footer.footer .footer-top .widget .single-footer .col-md-3,
+footer.footer .footer-top .widget section .col-md-4,
+footer.footer .footer-top .widget section .col-md-5,
+footer.footer .footer-top .widget section .col-md-6,
+footer.footer .footer-top .widget section .col-md-7,
+footer.footer .footer-top .widget section .col-md-8,
+footer.footer .footer-top .widget section .col-md-9,
+footer.footer .footer-top .widget section .col-md-10
+ {
+	max-width: 100%;
+	flex: 0 0 100%;
+} 
+
+footer.footer .footer-top .widget section .offset-lg-1 {
+	margin-left: 0%;
+}
+
+footer.footer .footer-top .widget section.news-grid .single-news.main .news-head {
+	margin-bottom: 30px;
+}
+
+footer.footer .footer-top .widget section.news-column .news-head,
+footer.footer .footer-top .widget section.news-column .single-news .content p {
+	display: none;
+}
+footer.footer .footer-top .widget section.news-column .small-post .content {
+	padding-left: 0;
+}
+
+footer.footer .footer-top .widget section .owl-item p, 
+footer.footer .footer-top .widget section .owl-item .post-categories {
+ display: none;
+}
+
+footer.footer .footer-top .widget section.news-carousel .owl-controls .owl-nav div.owl-prev {
+	left: -50px;
+}
+
+footer.footer .footer-top .widget section.news-carousel .owl-controls .owl-nav div.owl-next {
+	right: -50px;
+}
+footer.footer .footer-top .widget section.news-carousel .owl-controls .owl-nav div {
+	border: none;
+}
+
+footer.footer .footer-top .widget section.news-big .small-post .news-head {
+	display: none;
+}
+
+footer.footer .footer-top .widget section.news-big .small-post .content {
+	padding-left: 0;
+}
+footer.footer .footer-top .widget section.news-big .small-post .col-12 .single-post {
+	min-height: 90px
+}
+footer.footer .footer-top .widget section.all-news-tabs .single-news .news-head,
+footer.footer .footer-top .widget section.all-news-tabs .single-news .content p {
+	display: none;
+}
+
+footer.footer .footer-top .widget section.all-news-tabs .single-news .content {
+	width: initial;
+	margin-left: 0;
+}
+
+footer.footer .footer-top .widget section.single-column .single-news img {
+	display: none;
+}
+
+footer.footer .footer-top .widget section.single-column .news-content {
+	padding-left: initial;
+}
+footer.footer .footer-top .widget section.single-column .news-content {
+	min-height: 90px;
+}
+footer.footer .footer-top .widget section.news-style2 .single-news .news-head {
+	width: initial;
+}
+footer.footer .footer-top .widget section.news-style2 .single-news .content {
+	width: initial;
+	margin: 10px;
+}
+footer.footer .footer-top .widget section.news-tabs .tab-main .tab-pane p,
+footer.footer .footer-top .widget section.news-tabs .tab-main .tab-pane .tab-others .news-head img{
+	display: none;
+}
+footer.footer .footer-top .widget section.news-tabs .tab-main .tab-pane .tab-others .content {
+	padding-left: initial;
+}
+
+footer.footer .footer-top .widget section.news-grid .grid-news-right .single-news {
+	margin-top: 20px;
+}
+/* adjust bottom color bar for footer */
+footer.footer .footer-top .widget section.news-big .small-post .col-12 .single-post:before,
+footer.footer .footer-top .widget section.news-column .single-post:before {
+	width: 36%;
+}
+footer.footer .footer-top .widget section.news-tabs .tab-others .single-news:before {
+	width: 30%;
+}
+
 .nav-links .page-numbers {
 	color: #4DB2EC;
 	padding-left: 10px;

@@ -204,8 +204,6 @@
 			$button_enable = $button_enable_check ? 'true' : 'false';
 			echo $args[ 'before_widget' ];
 			if($layout_enable =='true'):
-			echo $args[ 'before_widget' ];
-
 			?>
 			<section class="news-tabs section">
 				<div class="container">
