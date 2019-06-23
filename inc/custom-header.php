@@ -12,14 +12,21 @@
  */
 
 function actinia_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'actinia_custom_header_args', array(
-		'default-image'          => '',
-		'default-text-color'     => '000000',
-                'flex-height'            => true,
-                'flex-width'             => true,
-                'height'                 => 200,
-		'wp-head-callback'       => 'actinia_header_style',
-	) ) );
+	add_theme_support(
+		'custom-header',
+		apply_filters(
+			'actinia_custom_header_args',
+			array(
+				'default-image'       => '',
+				'default-text-color'  => '000000',
+				'width'               => 1500,
+				'flex-width'          => true,
+				'height'              => 200,
+				'flex-height'         => true,
+				'wp-head-callback'    => 'actinia_header_style',
+			)
+		)
+	);
 }
 add_action( 'after_setup_theme', 'actinia_custom_header_setup' );
 
@@ -45,9 +52,9 @@ function actinia_header_style() {
 	<?php
 		// If the user has set a custom color for the text use that.
 		else :
-	?>      .site-title {
-                    border-color: #<?php echo esc_attr( $header_text_color ); ?>;
-                }
+	?>	.site-title {
+			border-color: #<?php echo esc_attr( $header_text_color ); ?>;
+		}
 		.site-title a:link, .site-title a:visited {
 			color: #<?php echo esc_attr( $header_text_color ); ?>;
 		}

@@ -2899,6 +2899,7 @@ object {
     /* prevent article and navigation from overflowing the screen in the single page view */
     /*grid*/
     grid-column: 2/3;
+    margin-right: initial;
   }
   .left-sidebar #secondary {
     /*fallback*/

@@ -12,23 +12,28 @@
 ?>
 
 	</div><!-- #content -->
-        
-        <?php if ( is_active_sidebar( 'footer-widget-area' ) && ! ( is_404() ) ): ?>
-            <aside id="footer-widget-area" class="widget-area-2">
-                <?php dynamic_sidebar( 'footer-widget-area' ); ?>
-            </aside><!-- #secondary -->
-        <?php endif; ?>
+		
+	<?php if ( is_active_sidebar( 'footer-widget-area' ) && ! ( is_404() ) ): ?>
+		<aside id="footer-widget-area" class="widget-area-2">
+			<?php dynamic_sidebar( 'footer-widget-area' ); ?>
+		</aside><!-- #secondary -->
+	<?php endif; ?>
 
 	<footer id="colophon" class="site-footer">
-	    <div class="site-info">
-                <?php /* translators: %s: WordPress */ ?>
-		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'actinia' ) ); ?>"><?php printf( esc_html__( 'Proudly powered by %s', 'actinia' ), 'WordPress' ); ?></a>
-		<span class="sep"> | </span>
-                <?php /* translators: theme name */ ?>
-		<?php printf( esc_html__( 'Theme: %1$s by %2$s.', 'actinia' ), 'actinia', 'green_onion' ); ?>
-	    </div><!-- .site-info -->
+		<div class="site-info">
+			<?php /* translators: %s: WordPress */ ?>
+			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'actinia' ) ); ?>">
+				<?php printf( esc_html__( 'Proudly powered by %s', 'actinia' ), 'WordPress' ); ?>
+			</a>
+			<span class="sep"> | </span>
+			<?php /* translators: theme name */
+			printf( esc_html__( 'Theme: %1$s by %2$s.', 'actinia' ), 'actinia', 'green_onion' );
+			?>
+		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
+
+<a href="#masthead" class="anchor hidden"></a>
 
 <?php wp_footer(); ?>
 

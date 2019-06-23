@@ -23,22 +23,22 @@ function actinia_body_classes( $classes ) {
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
-        
-        if ( 'left' === esc_attr( get_theme_mod( 'actinia_sidebar_position', 'right' ) ) && is_active_sidebar('sidebar-primary') ) {
-            $classes[] = 'left-sidebar';
-        }
-        
-        if ( 'top' === esc_attr( get_theme_mod( 'actinia_post_meta_position', 'left' ) ) ) {
-            $classes[] = 'top-meta';
-        }    
-        
-        if ( 'side' === esc_attr( get_theme_mod( 'actinia_navbar_position', 'top' ) ) ) {
-            $classes[] = 'navbar-side';
-        }
-        
-        if ( 'remove-header' != esc_attr( get_theme_mod( 'header_image') ) ) {
-            $classes[] = 'header-img';
-        }
+	
+	if ( 'left' === esc_attr( get_theme_mod( 'actinia_sidebar_position', 'right' ) ) && is_active_sidebar( 'sidebar-primary' ) ) {
+		$classes[] = 'left-sidebar';
+	}
+	
+	if ( 'top' === esc_attr( get_theme_mod( 'actinia_post_meta_position', 'left' ) ) ) {
+		$classes[] = 'top-meta';
+	}
+	
+	if ( 'side' === esc_attr( get_theme_mod( 'actinia_navbar_position', 'top' ) ) ) {
+		$classes[] = 'navbar-side';
+	}
+	
+	if ( 'remove-header' != esc_attr( get_theme_mod( 'header_image') ) ) {
+		$classes[] = 'header-img';
+	}
 
 	return $classes;
 }
