@@ -10,7 +10,7 @@
 /**
  * Define constants
  */
-define( 'AWESOMEPRESS_VERSION', '1.0.3' );
+define( 'AWESOMEPRESS_VERSION', '1.0.4' );
 define( 'AWESOMEPRESS_URI', get_template_directory_uri() );
 define( 'AWESOMEPRESS_DIR', get_template_directory() );
 define( 'AWESOMEPRESS_SUPPORT_FONTAWESOME', true );

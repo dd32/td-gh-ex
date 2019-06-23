@@ -68,11 +68,14 @@ if ( ! function_exists( 'awesomepress_the_archive_title' ) ) :
 	 */
 	function awesomepress_the_archive_title() {
 
+		// vl( get_the_author_meta('ID') );
+		// wp_die();
+
 		$icons = array(
 			'tag'      => ( AWESOMEPRESS_SUPPORT_FONTAWESOME ) ? '<i class="fa fa-tag" aria-hidden="true"></i>' : '',
 			'category' => ( AWESOMEPRESS_SUPPORT_FONTAWESOME ) ? '<i class="fa fa-folder" aria-hidden="true"></i>' : '',
 			'date'     => ( AWESOMEPRESS_SUPPORT_FONTAWESOME ) ? '<i class="fa fa-calendar" aria-hidden="true"></i>' : '',
-			'author'   => get_avatar( esc_url( get_the_author_meta( 'ID' ) ), 50 ),
+			'author'   => get_avatar( get_the_author_meta( 'ID' ), 50 ),
 		);
 
 		if ( is_tag() ) {
@@ -190,13 +193,14 @@ endif;
  */
 if ( ! function_exists( 'the_awesomepress_meta_author' ) ) :
 	function the_awesomepress_meta_author() {
+		global $post;
 		?>
 		<span class="meta-author">
             <span class="byline">
                 <span class="author vcard">
                     <?php _ex( 'By ', 'Article written by', 'awesomepress' ); ?>
-                    <a class="url fn n" href="<?php echo esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ); ?>">
-                        <?php echo get_avatar( esc_url( get_the_author_meta( 'ID' ) ), 35 ); ?>
+                    <a class="url fn n" href="<?php echo esc_url( get_author_posts_url( $post->post_author ) ); ?>">
+                        <?php echo get_avatar( $post->post_author, 35 ); ?>
                         <?php echo esc_html( get_the_author() ); ?>
                     </a>
                 </span>
