@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Zenzero\n"
-"POT-Creation-Date: 2019-05-03 17:15+0100\n"
-"PO-Revision-Date: 2019-05-03 17:15+0100\n"
+"POT-Creation-Date: 2019-06-24 10:35+0100\n"
+"PO-Revision-Date: 2019-06-24 10:35+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -155,11 +155,11 @@ msgstr ""
 msgid "WordPress Theme: %1$s by %2$s."
 msgstr ""
 
-#: footer.php:37
+#: footer.php:38
 msgid "Type here and hit enter..."
 msgstr ""
 
-#: footer.php:39
+#: footer.php:40
 msgid "Close"
 msgstr ""
 
@@ -203,7 +203,7 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:44
+#: header.php:50
 msgid "Main Menu"
 msgstr ""
 

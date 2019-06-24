@@ -85,7 +85,7 @@ function zenzero_posted_on() {
 	
 	if ( 'post' == get_post_type() ) {
 		$categories_list = get_the_category_list( ' / ' );
-		if ( $categories_list && zenzero_categorized_blog() ) {
+		if ( $categories_list ) {
 			printf( '<span class="cat-links"><i class="fa fa-folder-open-o spaceLeftRight" aria-hidden="true"></i>' . $categories_list . '</span>'); // WPCS: XSS OK.
 		}
 	}
@@ -115,42 +115,3 @@ function zenzero_entry_footer() {
 	edit_post_link( esc_html__( 'Edit', 'zenzero' ), '<span class="edit-link"><i class="fa fa-wrench spaceRight" aria-hidden="true"></i>', '</span>' );
 }
 endif;
-
-/**
- * Returns true if a blog has more than 1 category.
- *
- * @return bool
- */
-function zenzero_categorized_blog() {
-	$all_the_cool_cats = get_transient( 'zenzero_categories' );
-	
-	if ( false === $all_the_cool_cats ) {
-		// Create an array of all the categories that are attached to posts.
-		$categories = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
-
-		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $categories );
-
-		set_transient( 'zenzero_categories', $all_the_cool_cats );
-	}
-	
-	return $all_the_cool_cats > 1;
-}
-
-/**
- * Flush out the transients used in zenzero_categorized_blog.
- */
-function zenzero_category_transient_flusher() {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
-	// Like, beat it. Dig?
-	delete_transient( 'zenzero_categories' );
-}
-add_action( 'edit_category', 'zenzero_category_transient_flusher' );
-add_action( 'save_post',     'zenzero_category_transient_flusher' );

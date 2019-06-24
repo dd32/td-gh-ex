@@ -156,6 +156,14 @@ function zenzero_gutenberg_scripts() {
 add_action( 'enqueue_block_editor_assets', 'zenzero_gutenberg_scripts' );
 
 /**
+ * Register all Elementor locations
+ */
+function zenzero_register_elementor_locations( $elementor_theme_manager ) {
+	$elementor_theme_manager->register_all_core_location();
+}
+add_action( 'elementor/theme/register_locations', 'zenzero_register_elementor_locations' );
+
+/**
  * Custom template tags for this theme.
  */
 require get_template_directory() . '/inc/template-tags.php';
