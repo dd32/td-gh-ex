@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-automobile-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, mechanic, car repairing centre, motorbike showroom, bike garage, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements. It has smart use of call to action (CTA) buttons and a welcoming homepage slider which can be full screen, full width or boxed. This automobile WordPress theme has 100% fluid layout and loads seamlessly on all browsing platforms. It can be translated to many other languages; supports RTL writing as well. It is packed with social media icons to easily promote your services and SEO is well taken care. This automobile theme has super smooth navigation with sliders and parallax scrolling. The thoroughly explained documentation will help you install, configure and make small changes to the theme. Demo: https://themeshopy.com/advance-automobile-pro/
-Version: 0.2
+Version: 0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-automobile
@@ -951,10 +951,10 @@ a.showcoupon,
   margin: 0 !important;
 }
 h2.woocommerce-loop-product__title{
-  color: #999;
+  color: #50a65d;
   letter-spacing: 1px;
   font-weight: 500;
-  font-size: 15px !important;
+  font-size: 22px !important;
 }
 .woocommerce ul.products li.product .price,
 .woocommerce div.product p.price, .woocommerce div.product span.price {
@@ -1006,6 +1006,9 @@ span.woocommerce-input-wrapper,
 }
 .woocommerce-product-gallery__image{
   padding: 2px;
+}
+.woocommerce ul.products li.product .price{
+  font-size: 16px;
 }
 /*------------- Sidebar -------------*/
 #sidebar {
@@ -1286,7 +1289,7 @@ iframe {
 		overflow-x:hidden;
 		width: 100%;
 		left: 0;
-		top:-104px;
+		top:-68px;
 	}
 	#header .nav ul{
 		width:100%;

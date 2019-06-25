@@ -7,8 +7,8 @@
  * @package Advance Automobile
  */
 
-?><!DOCTYPE html>
-
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -52,20 +52,22 @@
         <div class="col-lg-2 col-md-3">
           <div class="book-btn">
             <?php if ( get_theme_mod('advance_automobile_book1','') != "" ) {?>
-               <a href="<?php echo esc_html(get_theme_mod('advance_automobile_book')); ?>"><?php echo esc_html(get_theme_mod('advance_automobile_book1','')); ?></a>
+              <a href="<?php echo esc_html(get_theme_mod('advance_automobile_book')); ?>"><?php echo esc_html(get_theme_mod('advance_automobile_book1','')); ?></a>
             <?php }?>
           </div>
         </div>
       </div>
     </div>
   </div>
-  <div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','advance-automobile'); ?></a></div>
+  <div class="toggle">
+    <a class="toggleMenu" href="#"><?php esc_html_e('Menu','advance-automobile'); ?></a>
+  </div>
   <div class="main-menu">
     <div class="container">
       <div class="row">
         <div class="col-lg-3 col-md-4">
           <div class="logo">
-             <?php if( has_custom_logo() ){ advance_automobile_the_custom_logo();
+            <?php if( has_custom_logo() ){ advance_automobile_the_custom_logo();
              }else{ ?>
               <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
               <?php $description = get_bloginfo( 'description', 'display' );

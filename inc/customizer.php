@@ -21,6 +21,32 @@ function advance_automobile_customize_register($wp_customize) {
 		'description'    => __('Description of what this panel does.', 'advance-automobile'),
 	));	
 
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'advance_automobile_theme_color_option', 
+		array( 'panel' => 'advance_automobile_panel_id', 'title' => esc_html__( 'Theme Color Option', 'advance-automobile' ) )
+	);
+  	$wp_customize->add_setting( 'advance_automobile_theme_color_first', array(
+	    'default' => '#50a65d',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_automobile_theme_color_first', array(
+  		'label' => 'First Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'advance-automobile'),
+	    'section' => 'advance_automobile_theme_color_option',
+	    'settings' => 'advance_automobile_theme_color_first',
+  	)));
+  	$wp_customize->add_setting( 'advance_automobile_theme_color_second', array(
+	    'default' => '#06393a',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_automobile_theme_color_second', array(
+  		'label' => 'Second Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'advance-automobile'),
+	    'section' => 'advance_automobile_theme_color_option',
+	    'settings' => 'advance_automobile_theme_color_second',
+  	)));
+
+// font array
 	$font_array = array(
         '' => 'No Fonts',
         'Abril Fatface' => 'Abril Fatface',

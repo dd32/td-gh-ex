@@ -94,10 +94,10 @@ get_header(); ?>
             </div>
             <div class="col-lg-10 col-md-9">
               <?php if( get_theme_mod('advance_automobile_time') != ''){ ?>
-                  <p class="address-font"><?php echo esc_html( get_theme_mod('advance_automobile_time','')); ?></p>
-                <?php } ?>
-                <?php if( get_theme_mod('advance_automobile_time1') != ''){ ?>
-                  <p><?php echo esc_html( get_theme_mod('advance_automobile_time1','')); ?></p>
+                <p class="address-font"><?php echo esc_html( get_theme_mod('advance_automobile_time','')); ?></p>
+              <?php } ?>
+              <?php if( get_theme_mod('advance_automobile_time1') != ''){ ?>
+                <p><?php echo esc_html( get_theme_mod('advance_automobile_time1','')); ?></p>
               <?php } ?>
             </div>
           </div>
@@ -133,7 +133,7 @@ get_header(); ?>
   <section id="category">
     <div class="container">
       <?php if( get_theme_mod('advance_automobile_our_services_title') != ''){ ?>
-        <h3><?php echo esc_html(get_theme_mod('advance_automobile_our_services_title','')); ?></h3>
+      <h3><?php echo esc_html(get_theme_mod('advance_automobile_our_services_title','')); ?></h3>
       <?php }?>
       <div class="row owl-carousel m-0">
         <?php 
@@ -157,7 +157,6 @@ get_header(); ?>
               </div>
             </div>
           </div>
-            
           <?php endwhile; 
           wp_reset_postdata();
         }

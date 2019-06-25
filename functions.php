@@ -35,7 +35,6 @@ function advance_automobile_setup() {
 		'default-color' => 'f1f1f1',
 	));
 
-
 	/*
 	* Enable support for Post Formats.
 	*
@@ -48,6 +47,7 @@ function advance_automobile_setup() {
 	 * specifically font, colors, icons, and column width.
 	 */
 	add_editor_style(array('css/editor-style.css', advance_automobile_font_url()));
+	
 	// Theme Activation Notice
 	global $pagenow;
 	
@@ -341,7 +341,6 @@ function advance_automobile_scripts() {
 	    $advance_automobile_h6_font_family = get_theme_mod('advance_automobile_h6_font_family', '');
 	    $advance_automobile_h6_font_size = get_theme_mod('advance_automobile_h6_font_size', '');
 
-
 		$custom_css ='
 			p,span{
 			    color:'.esc_html($advance_automobile_paragraph_color).'!important;
@@ -388,12 +387,16 @@ function advance_automobile_scripts() {
 			}
 
 			';
-		wp_add_inline_style( 'advance-automobile-basic-style',$custom_css );
+	wp_add_inline_style( 'advance-automobile-basic-style',$custom_css );
 
 	wp_enqueue_script( 'owl-carousel-script', get_template_directory_uri() . '/js/owl.carousel.js', array('jquery'), '', true);
 	wp_enqueue_script('SmoothScroll', get_template_directory_uri().'/js/SmoothScroll.js', array('jquery'));
 	wp_enqueue_script('advance-automobile-customscripts-jquery', get_template_directory_uri().'/js/custom.js', array('jquery'));
 	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
+
+	require get_parent_theme_file_path( '/inc/color-option.php' );
+	wp_add_inline_style( 'advance-automobile-basic-style',$custom_css );
+
 	wp_enqueue_style('advance-automobile-ie', get_template_directory_uri().'/css/ie.css', array('advance-automobile-basic-style'));
 	wp_style_add_data('advance-automobile-ie', 'conditional', 'IE');
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
