@@ -149,63 +149,63 @@ msgstr ""
 msgid 'Copyright 2018 -'
 msgstr ""
 
-#: functions.php:30
+#: functions.php:31
 msgid 'Primary Menu'
 msgstr ""
 
-#: functions.php:69
+#: functions.php:70
 msgid 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.'
 msgstr ""
 
-#: functions.php:70
+#: functions.php:71
 msgid 'Click here...'
 msgstr ""
 
-#: functions.php:77
+#: functions.php:78
 msgid 'Blog Sidebar'
 msgstr ""
 
-#: functions.php:78
+#: functions.php:79
 msgid 'Appears on blog page sidebar'
 msgstr ""
 
-#: functions.php:87
+#: functions.php:88
 msgid 'page sidebar'
 msgstr ""
 
-#: functions.php:88
-#: functions.php:98
+#: functions.php:89
+#: functions.php:99
 msgid 'Appears on page sidebar'
 msgstr ""
 
-#: functions.php:97
+#: functions.php:98
 msgid 'Third Column Sidebar'
 msgstr ""
 
-#: functions.php:107
+#: functions.php:108
 msgid 'Footer Navigation 1'
 msgstr ""
 
-#: functions.php:108
-#: functions.php:118
-#: functions.php:128
-#: functions.php:138
+#: functions.php:109
+#: functions.php:119
+#: functions.php:129
+#: functions.php:139
 msgid 'Appears on footer'
 msgstr ""
 
-#: functions.php:117
+#: functions.php:118
 msgid 'Footer Navigation 2'
 msgstr ""
 
-#: functions.php:127
+#: functions.php:128
 msgid 'Footer Navigation 3'
 msgstr ""
 
-#: functions.php:137
+#: functions.php:138
 msgid 'Footer Navigation 4'
 msgstr ""
 
-#: functions.php:217
+#: functions.php:403
 msgid 'Business Wordpress Theme'
 msgstr ""
 
@@ -321,12 +321,20 @@ msgstr ""
 msgid 'Description of what this panel does.'
 msgstr ""
 
-#: inc/customizer.php:26
+#: inc/customizer.php:28
+msgid 'Theme Color Option'
+msgstr ""
+
+#: inc/customizer.php:55
 msgid 'Layout Settings'
 msgstr ""
 
-#: inc/customizer.php:33 
-#: inc/customizer.php:42
+#: inc/customizer.php:38
+msgid 'Change Layouts'
+msgstr ""
+
+#: inc/customizer.php:50 
+#: inc/customizer.php:59
 msgid 'Right Sidebar'
 msgstr ""
 
@@ -334,106 +342,210 @@ msgstr ""
 msgid 'Change Layouts'
 msgstr ""
 
-#: inc/customizer.php:41
+#: inc/customizer.php:58
 msgid 'Left Sidebar'
 msgstr ""
 
-#: inc/customizer.php:43
+#: inc/customizer.php:60
 msgid 'One Column'
 msgstr ""
 
-#: inc/customizer.php:44
+#: inc/customizer.php:61
 msgid 'Three Columns'
 msgstr ""
 
-#: inc/customizer.php:45
+#: inc/customizer.php:62
 msgid 'Four Columns'
 msgstr ""
 
-#: inc/customizer.php:46
+#: inc/customizer.php:63
 msgid 'Grid Layout'
 msgstr ""
 
-#: inc/customizer.php:52
-msgid 'Slider Settings'
-msgstr ""
-
-#: inc/customizer.php:63
-msgid 'Show / Hide slider'
-msgstr ""
-
-#: inc/customizer.php:75
-msgid 'Select Slide Image Page'
-msgstr ""
-
-#: inc/customizer.php:83
-msgid 'Contact Detail Section'
-msgstr ""
-
-#: inc/customizer.php:84
-msgid 'Add Content here'
-msgstr ""
-
-#: inc/customizer.php:94
-msgid 'Add location'
-msgstr ""
-
-#: inc/customizer.php:105
-msgid 'Title For Location'
-msgstr ""
-
-#: inc/customizer.php:115
-msgid 'Add Email'
-msgstr ""
-
-#: inc/customizer.php:126
-msgid 'Title For Email Address'
-msgstr ""
-
-#: inc/customizer.php:136
-msgid 'Add Phone Number'
-msgstr ""
-
-#: inc/customizer.php:146
-msgid 'Title For Phone Number'
-msgstr ""
-
-#: inc/customizer.php:153
-msgid 'Latest Projects Section'
-msgstr ""
-
-#: inc/customizer.php:154
-msgid 'Add Latest Projects section below.'
-msgstr ""
-
 #: inc/customizer.php:163
-msgid 'Section Title'
+msgid 'Typography'
 msgstr ""
 
-#: inc/customizer.php:187
-msgid 'Select Category to display post'
+#: inc/customizer.php:174
+msgid 'Paragraph Color'
 msgstr ""
 
 #: inc/customizer.php:188
-msgid 'Size of image should be 268 x 250'
+msgid 'Paragraph Fonts'
 msgstr ""
 
-#: inc/customizer.php:194
-msgid 'Footer Text'
+#: inc/customizer.php:199
+msgid 'Paragraph Font Size'
 msgstr ""
 
-#: inc/customizer.php:195
-msgid 'Add some text for footer like copyright etc'
+#: inc/customizer.php:211
+msgid '"a" Tag Color'
 msgstr ""
 
-#: inc/customizer.php:205
-msgid 'Copyright Text'
+#: inc/customizer.php:225
+msgid '"a" Tag Fonts'
+msgstr ""
+
+#: inc/customizer.php:236
+msgid '"li" Tag Color'
+msgstr ""
+
+#: inc/customizer.php:250
+msgid '"li" Tag Fonts'
+msgstr ""
+
+#: inc/customizer.php:261
+msgid 'H1 Color'
+msgstr ""
+
+#: inc/customizer.php:275
+msgid 'H1 Fonts'
 msgstr ""
 
 #: inc/customizer.php:287
+msgid 'H1 Font Size'
+msgstr ""
+
+#: inc/customizer.php:299
+msgid 'H2 Color'
+msgstr ""
+
+#: inc/customizer.php:313
+msgid 'H2 Fonts'
+msgstr ""
+
+#: inc/customizer.php:325
+msgid 'H2 Font Size'
+msgstr ""
+
+#: inc/customizer.php:337
+msgid 'H3 Color'
+msgstr ""
+
+#: inc/customizer.php:351
+msgid 'H3 Fonts'
+msgstr ""
+
+#: inc/customizer.php:363
+msgid 'H3 Font Size'
+msgstr ""
+
+#: inc/customizer.php:375
+msgid 'H4 Color'
+msgstr ""
+
+#: inc/customizer.php:389
+msgid 'H4 Fonts'
+msgstr ""
+
+#: inc/customizer.php:401
+msgid 'H4 Font Size'
+msgstr ""
+
+#: inc/customizer.php:413
+msgid 'H5 Color'
+msgstr ""
+
+#: inc/customizer.php:427
+msgid 'H5 Fonts'
+msgstr ""
+
+#: inc/customizer.php:439
+msgid 'H5 Font Size'
+msgstr ""
+
+#: inc/customizer.php:451
+msgid 'H6 Color'
+msgstr ""
+
+#: inc/customizer.php:465
+msgid 'H6 Fonts'
+msgstr ""
+
+#: inc/customizer.php:477
+msgid 'H6 Font Size'
+msgstr ""
+
+#: inc/customizer.php:485
+msgid 'Slider Settings'
+msgstr ""
+
+#: inc/customizer.php:496
+msgid 'Show / Hide slider'
+msgstr ""
+
+#: inc/customizer.php:508
+msgid 'Select Slide Image Page'
+msgstr ""
+
+#: inc/customizer.php:516
+msgid 'Contact Detail Section'
+msgstr ""
+
+#: inc/customizer.php:517
+msgid 'Add Content here'
+msgstr ""
+
+#: inc/customizer.php:527
+msgid 'Add location'
+msgstr ""
+
+#: inc/customizer.php:538
+msgid 'Title For Location'
+msgstr ""
+
+#: inc/customizer.php:548
+msgid 'Add Email'
+msgstr ""
+
+#: inc/customizer.php:559
+msgid 'Title For Email Address'
+msgstr ""
+
+#: inc/customizer.php:559
+msgid 'Add Phone Number'
+msgstr ""
+
+#: inc/customizer.php:579
+msgid 'Title For Phone Number'
+msgstr ""
+
+#: inc/customizer.php:586
+msgid 'Latest Projects Section'
+msgstr ""
+
+#: inc/customizer.php:587
+msgid 'Add Latest Projects section below.'
+msgstr ""
+
+#: inc/customizer.php:596
+msgid 'Section Title'
+msgstr ""
+
+#: inc/customizer.php:620
+msgid 'Select Category to display post'
+msgstr ""
+
+#: inc/customizer.php:621
+msgid 'Size of image should be 268 x 250'
+msgstr ""
+
+#: inc/customizer.php:627
+msgid 'Footer Text'
+msgstr ""
+
+#: inc/customizer.php:628
+msgid 'Add some text for footer like copyright etc'
+msgstr ""
+
+#: inc/customizer.php:638
+msgid 'Copyright Text'
+msgstr ""
+
+#: inc/customizer.php:720
 msgid 'Business Pro Theme'
 msgstr ""
 
-#: inc/customizer.php:288
+#: inc/customizer.php:721
 msgid 'Go Pro'
 msgstr ""

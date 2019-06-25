@@ -69,7 +69,7 @@ get_header(); ?>
                                     'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-business' ) . ' </span>',
                                 ) );
                             ?>
-                         </div> 
+                        </div> 
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <?php get_sidebar();?>
@@ -235,8 +235,8 @@ get_header(); ?>
                     </div>
                 </div>
             <?php }?>
-          <div class="clearfix"></div>
-      </div>
+            <div class="clearfix"></div>
+        </div>
     </div>
 </section>
 

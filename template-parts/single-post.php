@@ -36,7 +36,7 @@ if ( is_singular( 'attachment' ) ) {
 	the_post_navigation( array(
 		'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'advance-business' ),
 	) );
-} elseif ( is_singular( 'post' ) ) {
+} 	elseif ( is_singular( 'post' ) ) {
 	// Previous/next post navigation.
 	the_post_navigation( array(
 		'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'advance-business' ) . '</span> ' .
