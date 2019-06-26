@@ -208,7 +208,13 @@ label ~ span.required {
 	text-align: left;
 	padding-right: 0;
 }
-
+.io-title-description {
+    float: right;
+    padding-right: 20px;
+}
+.below-title-meta {
+    margin-right: -3.18%;
+}
 /* =Media queries
 -------------------------------------------------------------- */
 @media screen and (max-width: 768px) {
@@ -218,7 +224,11 @@ label ~ span.required {
 	.widget-area {
 		width:96%;
 	}
+	.site-content {
+    border-left: none;
+	}
 }
+
 /* Minimum width of 600 pixels. */
 @media screen and (min-width: 600px) {
 	.site-content,
@@ -270,4 +280,55 @@ label ~ span.required {
 		margin-right: 3.428571429rem;
 		margin-left: auto;
 	}
+}
+@media screen and (max-width: 440px) {
+.site {
+    padding: 0px;
+}
+.widget-area {
+    padding: 0 10px;
+}
+.entry-header {
+    margin-bottom: 10px;
+}
+.entry-header .entry-title {
+    margin-bottom: 10px;
+}
+.alignleft.wp-post-image {
+    width: auto;
+	float:none;
+}
+.entry-summary {
+	text-align:center;
+}
+.entry-summary p{
+	text-align:right;
+}
+.footercopy {
+    float: none;
+	padding-right: 20px;
+    text-align: center;
+}
+.footercredit {
+    float: none;
+    margin-left: 0;
+	margin-top:10px;
+    padding: 0 20px;
+    text-align: center;
+}
+.site-wordpress {
+    width: 99%;
+    text-align: center;
+}
+.below-title-meta {
+    width: 105.2%;
+    margin-left: -2.6%;
+}
+.widget-area {
+    width: 95%;
+}
+.io-title-description {
+    float: none;
+    padding-right: 0;
+}
 }

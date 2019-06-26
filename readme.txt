@@ -23,6 +23,10 @@ Live demo: https://demo.themonic.com/io/
 
 == Changelog ==
 
+= 2.1=
+* Released: June 20, 2019
+* Fix: RTL language style fixes
+
 = 2.0.1 =
 * Released: June 9, 2019
 * Fix: Updated Readme.txt file as per WordPress guidelines
