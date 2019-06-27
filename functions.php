@@ -387,6 +387,10 @@ function advance_pet_care_scripts() {
 	wp_enqueue_script('SmoothScroll', get_template_directory_uri().'/js/SmoothScroll.js', array('jquery'));
 	wp_enqueue_script('advance-pet-care-customscripts-jquery', get_template_directory_uri().'/js/custom.js', array('jquery'));
 	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
+	
+	require get_parent_theme_file_path( '/inc/color-option.php' );
+	wp_add_inline_style( 'advance-pet-care-basic-style',$custom_css );
+
 	wp_enqueue_style('advance-pet-care-ie', get_template_directory_uri().'/css/ie.css', array('advance-pet-care-basic-style'));
 	wp_style_add_data('advance-pet-care-ie', 'conditional', 'IE');
 	if (is_singular() && comments_open() && get_option('thread_comments')) {

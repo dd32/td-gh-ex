@@ -7,8 +7,8 @@
  * @package advance-pet-care
  */
 
-?><!DOCTYPE html>
-
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -40,20 +40,20 @@
         <div class="col-lg-4 col-md-4">
           <div class="social-icons">
             <?php if( get_theme_mod( 'advance_pet_care_facebook_url') != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_pet_care_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
+              <a href="<?php echo esc_url( get_theme_mod( 'advance_pet_care_facebook_url','' ) ); ?>"><i class="fab fa-facebook-f" aria-hidden="true"></i></a>
               <?php } ?>
               <?php if( get_theme_mod( 'advance_pet_care_twitter_url') != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_pet_care_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i></a>
+              <a href="<?php echo esc_url( get_theme_mod( 'advance_pet_care_twitter_url','' ) ); ?>"><i class="fab fa-twitter"></i></a>
               <?php } ?>
               <?php if( get_theme_mod( 'advance_pet_care_youtube_url') != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_pet_care_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i></a>
+              <a href="<?php echo esc_url( get_theme_mod( 'advance_pet_care_youtube_url','' ) ); ?>"><i class="fab fa-youtube"></i></a>
               <?php } ?>
               <?php if( get_theme_mod( 'advance_pet_care_google_plus_url') != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_pet_care_google_plus_url','' ) ); ?>"><i class="fab fa-google-plus-g"></i></a>
+              <a href="<?php echo esc_url( get_theme_mod( 'advance_pet_care_google_plus_url','' ) ); ?>"><i class="fab fa-google-plus-g"></i></a>
               <?php } ?>
               <?php if( get_theme_mod( 'advance_pet_care_insta_url') != '') { ?>
-                <a href="<?php echo esc_url( get_theme_mod( 'advance_pet_care_insta_url','' ) ); ?>"><i class="fab fa-instagram"></i></a>
-              <?php } ?>                
+              <a href="<?php echo esc_url( get_theme_mod( 'advance_pet_care_insta_url','' ) ); ?>"><i class="fab fa-instagram"></i></a>
+            <?php } ?>                
           </div>  
         </div>
       </div>
@@ -83,13 +83,13 @@
         </div>
         <div class="col-lg-4 col-md-4">
           <div class="logo">
-             <?php if( has_custom_logo() ){ advance_pet_care_the_custom_logo();
-             }else{ ?>
-              <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-              <?php $description = get_bloginfo( 'description', 'display' );
-                if ( $description || is_customize_preview() ) : ?> 
-                <p class="site-description"><?php echo esc_html($description); ?></p>       
-              <?php endif; }?>
+            <?php if( has_custom_logo() ){ advance_pet_care_the_custom_logo();
+            }else{ ?>
+            <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+            <?php $description = get_bloginfo( 'description', 'display' );
+              if ( $description || is_customize_preview() ) : ?> 
+              <p class="site-description"><?php echo esc_html($description); ?></p>       
+            <?php endif; }?>
           </div>
         </div>
         <div class="col-lg-4 col-md-4">
@@ -137,7 +137,7 @@
       <div class="serach_outer">
         <div class="closepop"><i class="far fa-window-close"></i></div>
         <div class="serach_inner">
-         <?php get_search_form(); ?>
+          <?php get_search_form(); ?>
         </div>
       </div>
     </div>

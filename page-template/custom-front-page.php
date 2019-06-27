@@ -66,29 +66,29 @@ get_header(); ?>
 <?php if( get_theme_mod( 'advance_pet_care_welcome_setting') != '') { ?>
   <section id="welcome">
     <div class="container">
-       <div class="row content-sec">
-         <?php
-              $args = array( 'name' => get_theme_mod('advance_pet_care_welcome_setting',''));
-              $query = new WP_Query( $args );
-              if ( $query->have_posts() ) :
-                while ( $query->have_posts() ) : $query->the_post(); ?>
-                  <div class="col-lg-5 col-md-5">
-                    <img src="<?php the_post_thumbnail_url('full'); ?>"/>                  
-                  </div>
-                  <div class="col-lg-7 col-md-7">
-                      <h3><?php the_title(); ?></h3>
-                      <p><?php the_excerpt(); ?></p>            
-                      <div class ="discover-btn">
-                        <a href="<?php the_permalink(); ?>"><span><?php echo esc_html(get_theme_mod('advance_pet_care_about_name',__('DISCOVER MORE','advance-pet-care'))); ?></span></a>
-                      </div>                
-                  </div>
-            <?php endwhile; 
-            wp_reset_postdata();?>
-            <?php else : ?>
-              <div class="no-postfound"></div>
-            <?php
-          endif; ?>
-       </div>
+      <div class="row content-sec">
+       <?php
+        $args = array( 'name' => get_theme_mod('advance_pet_care_welcome_setting',''));
+        $query = new WP_Query( $args );
+        if ( $query->have_posts() ) :
+          while ( $query->have_posts() ) : $query->the_post(); ?>
+            <div class="col-lg-5 col-md-5">
+              <img src="<?php the_post_thumbnail_url('full'); ?>"/>                  
+            </div>
+            <div class="col-lg-7 col-md-7">
+              <h3><?php the_title(); ?></h3>
+              <p><?php the_excerpt(); ?></p>            
+              <div class ="discover-btn">
+                <a href="<?php the_permalink(); ?>"><span><?php echo esc_html(get_theme_mod('advance_pet_care_about_name',__('DISCOVER MORE','advance-pet-care'))); ?></span></a>
+              </div>                
+            </div>
+          <?php endwhile; 
+          wp_reset_postdata();?>
+          <?php else : ?>
+            <div class="no-postfound"></div>
+          <?php
+        endif; ?>
+      </div>
     </div>
   </section>
 <?php }?>

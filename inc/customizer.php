@@ -21,6 +21,31 @@ function advance_pet_care_customize_register($wp_customize) {
 		'description'    => __('Description of what this panel does.', 'advance-pet-care'),
 	));	
 
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'advance_pet_care_theme_color_option', 
+		array( 'panel' => 'advance_pet_care_panel_id', 'title' => esc_html__( 'Theme Color Option', 'advance-pet-care' ) )
+	);
+  	$wp_customize->add_setting( 'advance_pet_care_theme_color_first', array(
+	    'default' => '#ff896d',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_pet_care_theme_color_first', array(
+  		'label' => 'First Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'advance-pet-care'),
+	    'section' => 'advance_pet_care_theme_color_option',
+	    'settings' => 'advance_pet_care_theme_color_first',
+  	)));
+  	$wp_customize->add_setting( 'advance_pet_care_theme_color_second', array(
+	    'default' => '#4bd6c5',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_pet_care_theme_color_second', array(
+  		'label' => 'Second Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'advance-pet-care'),
+	    'section' => 'advance_pet_care_theme_color_option',
+	    'settings' => 'advance_pet_care_theme_color_second',
+  	)));
+
 	$font_array = array(
         '' => 'No Fonts',
         'Abril Fatface' => 'Abril Fatface',

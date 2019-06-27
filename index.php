@@ -41,7 +41,7 @@ get_header(); ?>
                       'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-pet-care' ) . ' </span>',
                   ) );
                 ?>
-               </div> 
+              </div> 
       	    </div>
           </div>
         <?php }else if($left_right == 'Right Sidebar'){ ?>
@@ -65,7 +65,7 @@ get_header(); ?>
                       'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-pet-care' ) . ' </span>',
                   ) );
                 ?>
-               </div> 
+              </div> 
             </div>
         	  <div class="col-lg-4 col-md-4">
         			<?php get_sidebar();?>
@@ -91,7 +91,7 @@ get_header(); ?>
                     'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-pet-care' ) . ' </span>',
                 ) );
               ?>
-             </div> 
+            </div> 
           </div>
         <?php }else if($left_right == 'Grid Layout'){ ?>
           <div id="post-<?php the_ID(); ?>" <?php post_class('row'); ?>>
@@ -113,7 +113,7 @@ get_header(); ?>
                     'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-pet-care' ) . ' </span>',
                 ) );
               ?>
-             </div> 
+            </div> 
           </div>
         <?php } else { ?>
           <div class="row">
@@ -136,7 +136,7 @@ get_header(); ?>
                       'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-pet-care' ) . ' </span>',
                   ) );
                 ?>
-               </div> 
+              </div> 
             </div>
             <div class="col-lg-4 col-md-4">
               <?php get_sidebar();?>
