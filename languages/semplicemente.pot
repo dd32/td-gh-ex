@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Semplicemente\n"
-"POT-Creation-Date: 2019-05-06 13:40+0100\n"
-"PO-Revision-Date: 2019-05-06 13:40+0100\n"
+"POT-Creation-Date: 2019-06-27 18:18+0100\n"
+"PO-Revision-Date: 2019-06-27 18:19+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: it\n"
@@ -219,51 +219,51 @@ msgstr ""
 msgid "Sidebar"
 msgstr ""
 
-#: header.php:57
+#: header.php:63
 msgid "Facebook"
 msgstr ""
 
-#: header.php:61
+#: header.php:67
 msgid "Twitter"
 msgstr ""
 
-#: header.php:65
+#: header.php:71
 msgid "Google Plus"
 msgstr ""
 
-#: header.php:69
+#: header.php:75
 msgid "Linkedin"
 msgstr ""
 
-#: header.php:73
+#: header.php:79
 msgid "Instagram"
 msgstr ""
 
-#: header.php:77
+#: header.php:83
 msgid "YouTube"
 msgstr ""
 
-#: header.php:81
+#: header.php:87
 msgid "Pinterest"
 msgstr ""
 
-#: header.php:85
+#: header.php:91
 msgid "Tumblr"
 msgstr ""
 
-#: header.php:89
+#: header.php:95
 msgid "VK"
 msgstr ""
 
-#: header.php:93
+#: header.php:99
 msgid "Xing"
 msgstr ""
 
-#: header.php:97
+#: header.php:103
 msgid "Email"
 msgstr ""
 
-#: header.php:113
+#: header.php:119
 msgid "Menu"
 msgstr ""
 
