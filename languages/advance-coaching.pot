@@ -148,59 +148,59 @@ msgstr ""
 msgid 'Primary Menu'
 msgstr ""
 
-#: functions.php:55
+#: functions.php:61
 msgid 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.'
 msgstr ""
 
-#: functions.php:56
+#: functions.php:62
 msgid 'Click here...'
 msgstr ""
 
-#: functions.php:63
+#: functions.php:69
 msgid 'Blog Sidebar'
 msgstr ""
 
-#: functions.php:64
+#: functions.php:70
 msgid 'Appears on blog page sidebar'
 msgstr ""
 
-#: functions.php:73
+#: functions.php:79
 msgid 'page sidebar'
 msgstr ""
 
-#: functions.php:74 
-#: functions.php:84
+#: functions.php:80 
+#: functions.php:90
 msgid 'Appears on page sidebar'
 msgstr ""
 
-#: functions.php:83
+#: functions.php:89
 msgid 'Third Column Sidebar'
 msgstr ""
 
-#: functions.php:93
+#: functions.php:99
 msgid 'Footer Navigation 1'
 msgstr ""
 
-#: functions.php:94 
-#: functions.php:104 
-#: functions.php:114 
-#: functions.php:124
+#: functions.php:100 
+#: functions.php:110 
+#: functions.php:120 
+#: functions.php:130
 msgid 'Appears on footer'
 msgstr ""
 
-#: functions.php:103
+#: functions.php:109
 msgid 'Footer Navigation 2'
 msgstr ""
 
-#: functions.php:113
+#: functions.php:119
 msgid 'Footer Navigation 3'
 msgstr ""
 
-#: functions.php:123
+#: functions.php:129
 msgid 'Footer Navigation 4'
 msgstr ""
 
-#: functions.php:417
+#: functions.php:391
 msgid 'Coaching WordPress Theme'
 msgstr ""
 
@@ -340,253 +340,256 @@ msgstr ""
 msgid 'Description of what this panel does.'
 msgstr ""
 
-#: inc/customizer.php:26
-msgid 'Layout Settings'
+#: inc/customizer.php:27
+msgid 'Theme Color Option'
 msgstr ""
 
-#: inc/customizer.php:33 
-#: inc/customizer.php:42
-msgid 'Right Sidebar'
-msgstr ""
-
-#: inc/customizer.php:38
-msgid 'Change Layouts'
-msgstr ""
-
-#: inc/customizer.php:41
-msgid 'Left Sidebar'
+#: inc/customizer.php:36
+msgid 'One can change complete theme color on just one click.'
 msgstr ""
 
 #: inc/customizer.php:43
+msgid 'Layout Settings'
+msgstr ""
+
+#: inc/customizer.php:50 
+#: inc/customizer.php:59
+msgid 'Right Sidebar'
+msgstr ""
+
+#: inc/customizer.php:55
+msgid 'Change Layouts'
+msgstr ""
+
+#: inc/customizer.php:58
+msgid 'Left Sidebar'
+msgstr ""
+
+#: inc/customizer.php:60
 msgid 'One Column'
 msgstr ""
 
-#: inc/customizer.php:44
+#: inc/customizer.php:61
 msgid 'Three Columns'
 msgstr ""
 
-#: inc/customizer.php:45
+#: inc/customizer.php:62
 msgid 'Four Columns'
 msgstr ""
 
-#: inc/customizer.php:46
+#: inc/customizer.php:63
 msgid 'Grid Layout'
 msgstr ""
 
-#: inc/customizer.php:146
+#: inc/customizer.php:163
 msgid 'Typography'
 msgstr ""
 
-#: inc/customizer.php:157
+#: inc/customizer.php:174
 msgid 'Paragraph Color'
 msgstr ""
 
-#: inc/customizer.php:171
+#: inc/customizer.php:188
 msgid 'Paragraph Fonts'
 msgstr ""
 
-#: inc/customizer.php:182
+#: inc/customizer.php:199
 msgid 'Paragraph Font Size'
 msgstr ""
 
-#: inc/customizer.php:194
+#: inc/customizer.php:211
 msgid '"a" Tag Color'
 msgstr ""
 
-#: inc/customizer.php:208
+#: inc/customizer.php:225
 msgid '"a" Tag Fonts'
 msgstr ""
 
-#: inc/customizer.php:219
+#: inc/customizer.php:236
 msgid '"li" Tag Color'
 msgstr ""
 
-#: inc/customizer.php:233
+#: inc/customizer.php:250
 msgid '"li" Tag Fonts'
 msgstr ""
 
-#: inc/customizer.php:244
+#: inc/customizer.php:261
 msgid 'H1 Color'
 msgstr ""
 
-
-#: inc/customizer.php:258
+#: inc/customizer.php:275
 msgid 'H1 Fonts'
 msgstr ""
 
-#: inc/customizer.php:270
+#: inc/customizer.php:287
 msgid 'H1 Font Size'
 msgstr ""
 
-#: inc/customizer.php:282
+#: inc/customizer.php:299
 msgid 'H2 Color'
 msgstr ""
 
-
-#: inc/customizer.php:296
+#: inc/customizer.php:313
 msgid 'H2 Fonts'
 msgstr ""
 
-#: inc/customizer.php:308
+#: inc/customizer.php:325
 msgid 'H2 Font Size'
 msgstr ""
 
-#: inc/customizer.php:320
+#: inc/customizer.php:337
 msgid 'H3 Color'
 msgstr ""
 
-
-#: inc/customizer.php:334
+#: inc/customizer.php:351
 msgid 'H3 Fonts'
 msgstr ""
 
-#: inc/customizer.php:346
+#: inc/customizer.php:363
 msgid 'H3 Font Size'
 msgstr ""
 
-#: inc/customizer.php:358
+#: inc/customizer.php:375
 msgid 'H4 Color'
 msgstr ""
 
-
-#: inc/customizer.php:372
+#: inc/customizer.php:389
 msgid 'H4 Fonts'
 msgstr ""
 
-#: inc/customizer.php:384
+#: inc/customizer.php:401
 msgid 'H4 Font Size'
 msgstr ""
 
-#: inc/customizer.php:396
+#: inc/customizer.php:413
 msgid 'H5 Color'
 msgstr ""
 
-
-#: inc/customizer.php:410
+#: inc/customizer.php:427
 msgid 'H5 Fonts'
 msgstr ""
 
-#: inc/customizer.php:422
+#: inc/customizer.php:439
 msgid 'H5 Font Size'
 msgstr ""
 
-#: inc/customizer.php:434
+#: inc/customizer.php:451
 msgid 'H6 Color'
 msgstr ""
 
-#: inc/customizer.php:448
+#: inc/customizer.php:465
 msgid 'H6 Fonts'
 msgstr ""
 
-#: inc/customizer.php:460
+#: inc/customizer.php:477
 msgid 'H6 Font Size'
 msgstr ""
 
-#: inc/customizer.php:468
+#: inc/customizer.php:485
 msgid 'Topbar Section'
 msgstr ""
 
-#: inc/customizer.php:469
-#: inc/customizer.php:519
+#: inc/customizer.php:486
+#: inc/customizer.php:536
 msgid 'Add Content here'
 msgstr ""
 
-#: inc/customizer.php:479
+#: inc/customizer.php:496
 msgid 'Timing'
 msgstr ""
 
-#: inc/customizer.php:489
+#: inc/customizer.php:506
 msgid 'Welcome Text'
 msgstr ""
 
-#: inc/customizer.php:499
+#: inc/customizer.php:516
 msgid 'Button text'
 msgstr ""
 
-#: inc/customizer.php:509
+#: inc/customizer.php:526
 msgid 'Add Link'
 msgstr ""
 
-#: inc/customizer.php:518
+#: inc/customizer.php:535
 msgid 'Contact Section'
 msgstr ""
 
-#: inc/customizer.php:529
+#: inc/customizer.php:546
 msgid 'Email Text'
 msgstr ""
 
-#: inc/customizer.php:539
+#: inc/customizer.php:556
 msgid 'Mail Address'
 msgstr ""
 
-#: inc/customizer.php:549
+#: inc/customizer.php:566
 msgid 'Phone Number Text'
 msgstr ""
 
-#: inc/customizer.php:560
+#: inc/customizer.php:576
 msgid 'Phone Number'
 msgstr ""
 
-#: inc/customizer.php:569
+#: inc/customizer.php:586
 msgid 'Address Text'
 msgstr ""
 
-#: inc/customizer.php:579
+#: inc/customizer.php:596
 msgid 'Address'
 msgstr ""
 
-#: inc/customizer.php:585
+#: inc/customizer.php:603
 msgid 'Slider Settings'
 msgstr ""
 
-#: inc/customizer.php:597
+#: inc/customizer.php:614
 msgid 'Show / Hide slider'
 msgstr ""
 
-#: inc/customizer.php:609
+#: inc/customizer.php:626
 msgid 'Select Slide Image Page'
 msgstr ""
 
-#: inc/customizer.php:610
+#: inc/customizer.php:627
 msgid 'Size of image should be 1600 x 680'
 msgstr ""
 
-#: inc/customizer.php:618
+#: inc/customizer.php:635
 msgid 'Service Services'
 msgstr ""
 
-#: inc/customizer.php:619
+#: inc/customizer.php:636
 msgid 'Add  section below.'
 msgstr ""
 
-#: inc/customizer.php:628
+#: inc/customizer.php:645
 msgid 'Section Title'
 msgstr ""
 
-#: inc/customizer.php:652
+#: inc/customizer.php:669
 msgid 'Select Category to display post'
 msgstr ""
 
-#: inc/customizer.php:653
+#: inc/customizer.php:670
 msgid 'Size of image should be 370 x 240'
 msgstr ""
 
-#: inc/customizer.php:659
+#: inc/customizer.php:676
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:660
+#: inc/customizer.php:677
 msgid 'Add some text for footer like copyright etc'
 msgstr ""
 
-#: inc/customizer.php:670
+#: inc/customizer.php:687
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:752
+#: inc/customizer.php:769
 msgid 'Coaching Pro Theme'
 msgstr ""
 
-#: inc/customizer.php:753
+#: inc/customizer.php:770
 msgid 'Go Pro'
 msgstr ""

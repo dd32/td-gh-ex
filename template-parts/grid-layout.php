@@ -13,10 +13,10 @@
         <?php 
           if(has_post_thumbnail()) {?>
             <div class="box-image">
-              <?php the_post_thumbnail(); ?>
+                <?php the_post_thumbnail(); ?>
             </div>
         <div class="date-color">
-        <span class="entry-date"><i class="fas fa-calendar-alt"></i><?php echo esc_html( get_the_date() ); ?></span>  
+            <span class="entry-date"><i class="fas fa-calendar-alt"></i><?php echo esc_html( get_the_date() ); ?></span>  
         </div>
         <?php } ?>
         <div class="new-text">

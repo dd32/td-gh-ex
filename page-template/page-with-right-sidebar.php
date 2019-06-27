@@ -9,7 +9,7 @@ get_header(); ?>
 
 <div class="container">
     <div class="middle-align row">
-        <div class="col-md-8 col-sm-8">
+        <div class="col-lh-8 col-md-8">
             <?php while ( have_posts() ) : the_post(); ?>
                 <img src="<?php the_post_thumbnail_url('full'); ?>" >
                 <h1><?php the_title(); ?></h1>

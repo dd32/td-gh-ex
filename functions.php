@@ -45,7 +45,8 @@ function advance_coaching_setup() {
 	 * specifically font, colors, icons, and column width.
 	 */
 	add_editor_style(array('css/editor-style.css', advance_coaching_font_url()));
-// Theme Activation Notice
+
+	// Theme Activation Notice
 	global $pagenow;
 	
 	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
@@ -290,7 +291,6 @@ function advance_coaching_scripts() {
 	    $advance_coaching_h6_font_family = get_theme_mod('advance_coaching_h6_font_family', '');
 	    $advance_coaching_h6_font_size = get_theme_mod('advance_coaching_h6_font_size', '');
 
-
 		$custom_css ='
 			p,span{
 			    color:'.esc_html($advance_coaching_paragraph_color).'!important;
@@ -342,6 +342,9 @@ function advance_coaching_scripts() {
 	wp_enqueue_script('SmoothScroll', get_template_directory_uri().'/js/SmoothScroll.js', array('jquery'));
 	wp_enqueue_script('advance-coaching-customscripts-jquery', get_template_directory_uri().'/js/custom.js', array('jquery'));
 	wp_enqueue_script('bootstrap', get_template_directory_uri().'/js/bootstrap.js', array('jquery'));
+	require get_parent_theme_file_path( '/inc/color-option.php' );
+	wp_add_inline_style( 'advance-coaching-basic-style',$custom_css );
+
 	wp_enqueue_style('advance-coaching-ie', get_template_directory_uri().'/css/ie.css', array('advance-coaching-basic-style'));
 	wp_style_add_data('advance-coaching-ie', 'conditional', 'IE');
 	if (is_singular() && comments_open() && get_option('thread_comments')) {

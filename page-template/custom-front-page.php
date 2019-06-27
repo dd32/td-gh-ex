@@ -28,24 +28,24 @@ get_header(); ?>
               $i = 1;
         ?>     
         <div class="carousel-inner" role="listbox">
-            <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
-              <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-                <img src="<?php the_post_thumbnail_url('full'); ?>"/>
-                <div class="carousel-caption">
-                  <div class="inner_carousel">
-                    <h2><?php the_title(); ?></h2>
-                    <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_coaching_string_limit_words( $excerpt,20 ) ); ?></p>
-                    <div class="read-btn">
-                      <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-coaching'); ?><i class="fas fa-angle-right"></i></a>
-                    </div>
+          <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
+            <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
+              <img src="<?php the_post_thumbnail_url('full'); ?>"/>
+              <div class="carousel-caption">
+                <div class="inner_carousel">
+                  <h2><?php the_title(); ?></h2>
+                  <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_coaching_string_limit_words( $excerpt,20 ) ); ?></p>
+                  <div class="read-btn">
+                    <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-coaching'); ?><i class="fas fa-angle-right"></i></a>
                   </div>
                 </div>
               </div>
-            <?php $i++; endwhile; 
-            wp_reset_postdata();?>
+            </div>
+          <?php $i++; endwhile; 
+          wp_reset_postdata();?>
         </div>
         <?php else : ?>
-            <div class="no-postfound"></div>
+          <div class="no-postfound"></div>
         <?php endif;
         endif;?>
         <div class="slider-nex-pre">

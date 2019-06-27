@@ -1,10 +1,11 @@
 === Advance Coaching ===
+
 Contributors: Themeshopy
 Tags:left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, post-formats, theme-options, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, education
 Requires at least: 4.7
-Tested up to: 5.1.1
+Tested up to: 5.2.2
 Requires PHP: 7.2.14
-Stable tag: 0.2
+Stable tag: 0.3
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -26,6 +27,10 @@ Advance Coaching is an elegant, resourceful, versatile and polished WordPress ed
   * Added typography.
   * Added language folder in theme.
   * Added Post Formats.
+
+= 0.3 =
+  * Added Theme Color Option.
+  * Updated POT file.
 
 == Resources ==
 

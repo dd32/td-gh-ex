@@ -21,6 +21,23 @@ function advance_coaching_customize_register($wp_customize) {
 		'description'    => __('Description of what this panel does.', 'advance-coaching'),
 	));
 
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'advance_coaching_theme_color_option', array( 
+		'panel' => 'advance_coaching_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'advance-coaching' ) 
+	) );
+
+  	$wp_customize->add_setting( 'advance_coaching_theme_color', array(
+	    'default' => '#2379d2',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_coaching_theme_color', array(
+  		'label' => 'Color Option',
+	    'description' => __('One can change complete theme color on just one click.', 'advance-coaching'),
+	    'section' => 'advance_coaching_theme_color_option',
+	    'settings' => 'advance_coaching_theme_color',
+  	)));
+
 	//Layouts
 	$wp_customize->add_section('advance_coaching_left_right', array(
 		'title'    => __('Layout Settings', 'advance-coaching'),

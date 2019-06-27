@@ -40,15 +40,15 @@
         </div>
         <div class="col-lg-6 col-md-6">
           <div class="welcome-text">
-          <?php if( get_theme_mod('advance_coaching_welcome_text') != ''){ ?>
-            <p><?php echo esc_html( get_theme_mod('advance_coaching_welcome_text','' )); ?></p>
-          <?php } ?>
+            <?php if( get_theme_mod('advance_coaching_welcome_text') != ''){ ?>
+              <p><?php echo esc_html( get_theme_mod('advance_coaching_welcome_text','' )); ?></p>
+            <?php } ?>
           </div>
         </div>
         <div class="col-lg-3 col-md-3">
           <div class="request-btn">
             <?php if ( get_theme_mod('advance_coaching_course1','') != "" ) {?>
-               <span><a href="<?php echo esc_html(get_theme_mod('advance_coaching_course')); ?>"><?php echo esc_html(get_theme_mod('advance_coaching_course1','')); ?> <i class="fas fa-angle-right"></i></a></span>
+              <span><a href="<?php echo esc_html(get_theme_mod('advance_coaching_course')); ?>"><?php echo esc_html(get_theme_mod('advance_coaching_course1','')); ?> <i class="fas fa-angle-right"></i></a></span>
             <?php }?>
           </div>
         </div>
@@ -61,13 +61,13 @@
         <div class="row">
           <div class="col-lg-3 col-md-3 logo_bar p-0">
             <div class="logo">
-                 <?php if( has_custom_logo() ){ advance_coaching_the_custom_logo();
-                 }else{ ?>
-                <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-                <?php $description = get_bloginfo( 'description', 'display' );
-                if ( $description || is_customize_preview() ) : ?> 
-                  <p class="site-description"><?php echo esc_html($description); ?></p>       
-                <?php endif; }?>
+              <?php if( has_custom_logo() ){ advance_coaching_the_custom_logo();
+               }else{ ?>
+              <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+              <?php $description = get_bloginfo( 'description', 'display' );
+              if ( $description || is_customize_preview() ) : ?> 
+                <p class="site-description"><?php echo esc_html($description); ?></p>       
+              <?php endif; }?>
             </div>
           </div>         
           <div class="col-lg-9 col-md-9 p-0">
@@ -83,15 +83,15 @@
                   </div>
                 </div>
                 <div class="col-lg-1 col-md-1 p-0">
-                   <div class="search-box">
-                      <i class="fas fa-search"></i>
-                   </div>
+                  <div class="search-box">
+                    <i class="fas fa-search"></i>
+                  </div>
                 </div>
               </div>
               <div class="serach_outer">
                 <div class="closepop"><i class="far fa-window-close"></i></div>
                 <div class="serach_inner">
-                 <?php get_search_form(); ?>
+                  <?php get_search_form(); ?>
                 </div>
               </div>
               <div class="contact_data row m-0">
