@@ -5,10 +5,10 @@
  * @package Agency_Ecommerce
  */
 
-if (is_active_sidebar('footer-1') ||
-    is_active_sidebar('footer-2') ||
-    is_active_sidebar('footer-3') ||
-    is_active_sidebar('footer-4')) :
+if (is_active_sidebar('top-footer-1') ||
+    is_active_sidebar('top-footer-2') ||
+    is_active_sidebar('top-footer-3') ||
+    is_active_sidebar('top-footer-4')) :
 
 
     /**
@@ -29,20 +29,20 @@ if (is_active_sidebar('footer-1') ||
                 }
             }
             ?>
-            <div class="inner-wrapper">
+            <div class="ae-inner">
                 <?php
-                $column_class = 'widget-column footer-active-' . absint($column_count);
+                $column_class = 'widget-column top-footer-' . absint($column_count);
                 for ($i = 1; $i <= 4; $i++) {
-                    if (is_active_sidebar('footer-' . $i)) {
+                    if (is_active_sidebar('top-footer-' . $i)) {
                         ?>
                         <div class="<?php echo $column_class; ?>">
-                            <?php dynamic_sidebar('footer-' . $i); ?>
+                            <?php dynamic_sidebar('top-footer-' . $i); ?>
                         </div>
                         <?php
                     }
                 }
                 ?>
-            </div><!-- .inner-wrapper -->
+            </div><!-- .ae-inner -->
         </div><!-- .container -->
     </aside><!-- #footer-widgets -->
 

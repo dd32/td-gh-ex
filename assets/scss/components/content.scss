@@ -45,7 +45,7 @@
   height: 15px;
   margin-right: 6px;
   content: "";
-  color: #6c50fb;
+  color: $primary_color;
 }
 
 .entry-meta .byline .author.vcard {
@@ -269,7 +269,7 @@ ol.comment-list {
 }
 
 .comment .comment-body {
-  background-color: #ffffff;
+  background-color: $white_color;
   border: 1px solid #dddddd;
   border-radius: 0;
   clear: both;
@@ -320,7 +320,7 @@ ol.comment-list {
 }
 
 .comment-reply-link {
-  color: #ffffff;
+  color: $white_color;
   display: inline-block;
   float: none;
   font-size: 15px;
@@ -331,7 +331,7 @@ ol.comment-list {
 }
 
 a.comment-reply-link:hover {
-  color: #fff;
+  color: $white_color;
 }
 
 .form-allowed-tags code {
@@ -364,10 +364,10 @@ a.comment-reply-link:hover {
   }
   input[type="submit"] {
     line-height: 1.1;
-    border: 1px solid #6c50fb;
+    border: 1px solid $primary_color;
     &:hover {
       background: transparent;
-      color: #6c50fb;
+      color: $primary_color;
     }
   }
 }

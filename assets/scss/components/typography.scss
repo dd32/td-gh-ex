@@ -5,12 +5,12 @@ button, input, select, textarea {
 }
 
 body {
-  background-color: #fff;
+  background-color: $white_color;
   color: #707070;
   font-size: 15px;
   line-height: 26px;
   margin: 0;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Open Sans', sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, p {
@@ -19,7 +19,7 @@ h1, h2, h3, h4, h5, h6, p {
 
 h1, h2, h3, h4, h5, h6 {
   color: #515151;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 600;
 }
 

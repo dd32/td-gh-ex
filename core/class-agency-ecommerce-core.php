@@ -78,7 +78,7 @@ if (!class_exists('Agency_Ecommerce_Core')) :
             require_once AGENCY_ECOMMERCE_THEME_DIR . '/core/customizer/core.php';
 
             // Load helper functions.
-            require_once AGENCY_ECOMMERCE_THEME_DIR . '/core/helpers.php';
+            require_once AGENCY_ECOMMERCE_THEME_DIR . '/core/helper/helper-main.php';
 
             // Custom template tags for this theme.
             require_once AGENCY_ECOMMERCE_THEME_DIR . '/core/template-tags.php';
@@ -87,13 +87,10 @@ if (!class_exists('Agency_Ecommerce_Core')) :
             require_once AGENCY_ECOMMERCE_THEME_DIR . '/core/template-functions.php';
 
             // Load widgets.
-            require_once AGENCY_ECOMMERCE_THEME_DIR . '/core/widgets/widgets.php';
+            require_once AGENCY_ECOMMERCE_THEME_DIR . '/core/class-agency-ecommerce-widgets.php';
 
             // Load hooks.
             require_once AGENCY_ECOMMERCE_THEME_DIR . '/core/class-agency-ecommerce-hooks.php';
-
-            // Load woo-commerce overrides.
-            require_once AGENCY_ECOMMERCE_THEME_DIR . '/core/woo-overrides.php';
 
             // Load dynamic css.
             require_once AGENCY_ECOMMERCE_THEME_DIR . '/core/dynamic.php';
@@ -137,9 +134,8 @@ if (!class_exists('Agency_Ecommerce_Core')) :
 
             // Register navigation menu locations.
             register_nav_menus(array(
-                'top' => esc_html__('Top Header Menu', 'agency-ecommerce'),
-                'primary' => esc_html__('Primary Menu', 'agency-ecommerce'),
-                'social' => esc_html__('Social Links', 'agency-ecommerce'),
+                'top-header-menu' => esc_html__('Top Header Menu', 'agency-ecommerce'),
+                'primary-menu' => esc_html__('Primary Menu', 'agency-ecommerce'),
                 'special-menu' => esc_html__('Special Menu( Display Beside Primary Menu)', 'agency-ecommerce'),
             ));
 

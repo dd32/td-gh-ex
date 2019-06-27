@@ -1,0 +1,30 @@
+.woocommerce-account {
+
+  nav.woocommerce-MyAccount-navigation {
+    ul {
+      li {
+        list-style: none;
+        &.is-active {
+          a {
+            color: $secondary_color;
+          }
+        }
+      }
+    }
+  }
+
+  #respond input#submit, a.button, button.button, input.button {
+
+    background: $primary_color;
+    border-radius: 0;
+    color: $white_color;
+    border: none;
+    float: right;
+    margin: 10px 0;
+    &:hover {
+      background: $secondary_color;
+      color: $white_color;
+    }
+  }
+
+}

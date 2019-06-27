@@ -1,11 +1,11 @@
 button, .comment-reply-link, a.button {
-  background: #6c50fb none repeat scroll 0 0;
-  color: #fff;
-  font-size: 18px;
+  background: $primary_color none repeat scroll 0 0;
+  color: $white_color;
+  font-size: 15px;
   line-height: 1;
   padding: 13px 35px;
   display: inline-block;
-  font-family: 'Barlow', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   border-radius: 0px;
   font-weight: 600;
   text-transform: uppercase;
@@ -13,13 +13,13 @@ button, .comment-reply-link, a.button {
 
 input {
   &[type="button"], &[type="reset"], &[type="submit"] {
-    background: #6c50fb none repeat scroll 0 0;
-    color: #fff;
-    font-size: 18px;
+    background: $primary_color none repeat scroll 0 0;
+    color: $white_color;
+    font-size: 15px;
     line-height: 1;
     padding: 13px 35px;
     display: inline-block;
-    font-family: 'Barlow', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     border-radius: 0px;
     font-weight: 600;
     text-transform: uppercase;
@@ -59,14 +59,14 @@ input {
 }
 
 button:hover, .comment-reply-link, a.button:hover {
-  background-color: #2e2e2e;
-  color: #fff;
+  background-color: $alternative_color;
+  color: $white_color;
 }
 
 input {
   &[type="button"]:hover, &[type="reset"]:hover, &[type="submit"]:hover {
-    background-color: #2e2e2e;
-    color: #fff;
+    background-color: $alternative_color;
+    color: $white_color;
   }
 }
 

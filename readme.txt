@@ -2,11 +2,11 @@
 
 Contributors: mantrabrain
 Requires at least:  WordPress 4.5
-Tested up to:       WordPress 5.1.1
+Tested up to:       WordPress 5.2.2
 Requires PHP:       5.4
-Tested up to:       5.1.1
-Version:            1.0.3
-Stable tag:         1.0.3
+Tested up to:       5.2.2
+Version:            2.0
+Stable tag:         2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -69,6 +69,10 @@ Elegant Themes (https://github.com/pprince/etlinefont-bower), [GPLv2 or later](h
 - https://pxhere.com/en/photo/1448349
 - https://pxhere.com/en/photo/1418560
 - https://pxhere.com/en/photo/1427193
+- https://pxhere.com/en/photo/1424075
+- https://pxhere.com/en/photo/1418997
+- https://pxhere.com/en/photo/1418247
+- https://pxhere.com/en/photo/1388108
 - WooCommerce product images
 
 
@@ -78,21 +82,6 @@ Elegant Themes (https://github.com/pprince/etlinefont-bower), [GPLv2 or later](h
 
 == Changelog ==
 
-= 1.0.3 | 2019/05/01 =
-* Fixed - Minor issue fixed
 
-= 1.0.2 | 2019/04/25 =
-* Fixed - Minor widget related issue fixed
-* Fixed - Design issue fixed
-* Fixed - Validation issue fixed
-* Fixed - Image picker issue fixed
-
-= 1.0.1 | 2019/04/13 =
-* Fixed - Widget option issue
-* Fixed - Slider background option updated
-* Fixed - Readme validation and other minor issue fixed
-* Added - Hooks for premium themes
-* Fixed - Product carousel lazy load issue
-
-= 1.0.0 | 2019/03/22 =
+= 2.0 | 2019/06/27 =
 * Initial release

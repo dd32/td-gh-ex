@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Agency Ecommerce 1.0.2\n"
+"Project-Id-Version: Agency Ecommerce 1.0.3\n"
 "Report-Msgid-Bugs-To: mantrabrain@gmail.com\n"
-"POT-Creation-Date: 2019-05-01 14:36:00+00:00\n"
+"POT-Creation-Date: 2019-06-27 08:43:41+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -13,15 +13,15 @@ msgstr ""
 "Language-Team: LANGUAGE <EMAIL@ADDRESS>\n"
 "X-Generator: grunt-wp-i18n 1.0.3\n"
 
-#: core/customizer/options/shop.php:71
+#: core/customizer/sections/shop-page-options.php:65
 msgid "2"
 msgstr ""
 
-#: core/customizer/options/shop.php:72
+#: core/customizer/sections/shop-page-options.php:66
 msgid "3"
 msgstr ""
 
-#: core/customizer/options/shop.php:73
+#: core/customizer/sections/shop-page-options.php:67
 msgid "4"
 msgstr ""
 
@@ -51,40 +51,83 @@ msgstr ""
 msgid "Comments are closed."
 msgstr ""
 
-#: core/class-agency-ecommerce-core.php:140
+#: core/class-agency-ecommerce-core.php:137
 msgid "Top Header Menu"
 msgstr ""
 
-#: core/class-agency-ecommerce-core.php:141
+#: core/class-agency-ecommerce-core.php:138
 msgid "Primary Menu"
 msgstr ""
 
-#: core/class-agency-ecommerce-core.php:142
-msgid "Social Links"
-msgstr ""
-
-#: core/class-agency-ecommerce-core.php:143
+#: core/class-agency-ecommerce-core.php:139
 msgid "Special Menu( Display Beside Primary Menu)"
 msgstr ""
 
-#: core/customizer/core.php:65
+#: core/class-agency-ecommerce-widgets.php:18
+msgid "Blog Sidebar"
+msgstr ""
+
+#: core/class-agency-ecommerce-widgets.php:20
+msgid "Add widgets here to appear in Sidebar."
+msgstr ""
+
+#: core/class-agency-ecommerce-widgets.php:30
+#: core/customizer/sections/shop-page-options.php:20
+msgid "Shop Sidebar"
+msgstr ""
+
+#: core/class-agency-ecommerce-widgets.php:32
+msgid "Widgets added here will appear in sidebar of shop pages only."
+msgstr ""
+
+#: core/class-agency-ecommerce-widgets.php:42
+msgid "Slider Widget Area"
+msgstr ""
+
+#: core/class-agency-ecommerce-widgets.php:44
+msgid "Featured slider below navigation"
+msgstr ""
+
+#: core/class-agency-ecommerce-widgets.php:51
+msgid "Homepage Widget Area"
+msgstr ""
+
+#: core/class-agency-ecommerce-widgets.php:53
+msgid "Add widgets here to appear in Home Page Widget Area."
+msgstr ""
+
+#: core/class-agency-ecommerce-widgets.php:60
+msgid "Homepage Sidebar Widget Area"
+msgstr ""
+
+#: core/class-agency-ecommerce-widgets.php:62
+msgid "Add widgets here to appear in Home Page Sidebar Widget Area."
+msgstr ""
+
+#: core/class-agency-ecommerce-widgets.php:69
+#: core/class-agency-ecommerce-widgets.php:77
+#: core/class-agency-ecommerce-widgets.php:85
+#: core/class-agency-ecommerce-widgets.php:93
+msgid "Top Footer %d"
+msgstr ""
+
+#: core/customizer/core.php:67
 msgid "Login / Register"
 msgstr ""
 
-#: core/customizer/core.php:72
+#: core/customizer/core.php:74
 msgid "Search Products ..."
 msgstr ""
 
-#: core/customizer/core.php:73
-#: core/hooks/class-agency-ecommerce-header-hooks.php:249
+#: core/customizer/core.php:75 core/helper/helper-main.php:257
 msgid "Select Category"
 msgstr ""
 
-#: core/customizer/core.php:79
+#: core/customizer/core.php:92
 msgid "Read More"
 msgstr ""
 
-#: core/customizer/core.php:91
+#: core/customizer/core.php:104
 msgid "Copyright &copy; All rights reserved."
 msgstr ""
 
@@ -92,374 +135,321 @@ msgstr ""
 msgid "Home"
 msgstr ""
 
-#: core/customizer/core.php:100 core/customizer/core.php:101
-#: core/customizer/core.php:102 core/customizer/core.php:103
-#: core/customizer/core.php:104 core/customizer/options/slider.php:117
+#: core/customizer/core.php:113 core/customizer/core.php:114
+#: core/customizer/core.php:115 core/customizer/core.php:116
+#: core/customizer/core.php:117
+#: core/widgets/agency-ecommerce-featured-slider-widget.php:72
 msgid "Shop Now"
 msgstr ""
 
-#: core/customizer/options/blog.php:11
-msgid "Layout Options"
+#: core/customizer/sections/bottom-header-options.php:7
+msgid "Bottom Header Options"
 msgstr ""
 
-#: core/customizer/options/blog.php:26
-msgid "Enable Sticky Sidebar"
+#: core/customizer/sections/bottom-header-options.php:23
+msgid "Show Bottom Header"
 msgstr ""
 
-#: core/customizer/options/blog.php:42
-msgid "Global Layout"
-msgstr ""
-
-#: core/customizer/options/blog.php:47 core/customizer/options/shop.php:31
-msgid "Left Sidebar"
-msgstr ""
-
-#: core/customizer/options/blog.php:48 core/customizer/options/shop.php:32
-msgid "Right Sidebar"
-msgstr ""
-
-#: core/customizer/options/blog.php:49 core/customizer/options/shop.php:33
-msgid "No Sidebar"
-msgstr ""
-
-#: core/customizer/options/blog.php:63
-msgid "Excerpt Length"
-msgstr ""
-
-#: core/customizer/options/blog.php:64
-msgid "in words"
-msgstr ""
-
-#: core/customizer/options/blog.php:81
-msgid "Read More Text"
-msgstr ""
-
-#: core/customizer/options/breadcrumb.php:11
-msgid "Breadcrumb Options"
-msgstr ""
-
-#: core/customizer/options/breadcrumb.php:26
-msgid "Breadcrumb Type"
-msgstr ""
-
-#: core/customizer/options/breadcrumb.php:31
-msgid "Disable"
-msgstr ""
-
-#: core/customizer/options/breadcrumb.php:32
-msgid "Simple"
-msgstr ""
-
-#: core/customizer/options/breadcrumb.php:46
-msgid "Breadcrumb Home Text"
-msgstr ""
-
-#: core/customizer/options/footer.php:11
-msgid "Footer Options"
-msgstr ""
-
-#: core/customizer/options/footer.php:26
-msgid "Copyright Text"
-msgstr ""
-
-#: core/customizer/options/header.php:19
+#: core/customizer/sections/bottom-header-options.php:41
 msgid "Logo Options"
 msgstr ""
 
-#: core/customizer/options/header.php:22
+#: core/customizer/sections/bottom-header-options.php:42
+msgid "This options works for bottom header section."
+msgstr ""
+
+#: core/customizer/sections/bottom-header-options.php:45
+#: core/customizer/sections/mid-header-options.php:44
 msgid "Logo Only"
 msgstr ""
 
-#: core/customizer/options/header.php:23
+#: core/customizer/sections/bottom-header-options.php:46
+#: core/customizer/sections/mid-header-options.php:45
 msgid "Title + Tagline"
 msgstr ""
 
-#: core/customizer/options/header.php:24
+#: core/customizer/sections/bottom-header-options.php:47
+#: core/customizer/sections/mid-header-options.php:46
 msgid "Logo + Tagline"
 msgstr ""
 
-#: core/customizer/options/header.php:32
-msgid "Top Header Options"
+#: core/customizer/sections/bottom-header-options.php:48
+msgid "Category Menu"
 msgstr ""
 
-#: core/customizer/options/header.php:47
-msgid "Show Top Header"
+#: core/customizer/sections/bottom-header-options.php:64
+msgid "Category Menu Max Height (px)"
 msgstr ""
 
-#: core/customizer/options/header.php:66
-msgid "Left Section"
+#: core/customizer/sections/bottom-header-options.php:65
+msgid "Maximum height for category menu. Default: 433 and 0 for auto height.)"
 msgstr ""
 
-#: core/customizer/options/header.php:83
-msgid "Left Section Options"
+#: core/customizer/sections/breadcrumb-options.php:6
+msgid "Breadcrumb Options"
 msgstr ""
 
-#: core/customizer/options/header.php:88
-msgid "Store Information"
+#: core/customizer/sections/breadcrumb-options.php:21
+msgid "Breadcrumb Type"
 msgstr ""
 
-#: core/customizer/options/header.php:89
-msgid "Current Date"
+#: core/customizer/sections/breadcrumb-options.php:26
+msgid "Disable"
 msgstr ""
 
-#: core/customizer/options/header.php:90
-msgid "Menu"
+#: core/customizer/sections/breadcrumb-options.php:27
+msgid "Simple"
 msgstr ""
 
-#: core/customizer/options/header.php:91
-msgid "Social Icons"
+#: core/customizer/sections/breadcrumb-options.php:41
+msgid "Breadcrumb Home Text"
 msgstr ""
 
-#: core/customizer/options/header.php:105
-msgid "Address/Location"
+#: core/customizer/sections/footer-options.php:5
+msgid "Footer Options"
 msgstr ""
 
-#: core/customizer/options/header.php:121
-msgid "Phone Number"
+#: core/customizer/sections/footer-options.php:19
+msgid "Copyright Text"
 msgstr ""
 
-#: core/customizer/options/header.php:137
-msgid "Email"
+#: core/customizer/sections/layout-options.php:5
+msgid "Layout Options"
 msgstr ""
 
-#: core/customizer/options/header.php:157
-msgid "Right Section"
+#: core/customizer/sections/layout-options.php:20
+msgid "Enable Sticky Sidebar"
 msgstr ""
 
-#: core/customizer/options/header.php:174
-msgid "Show Social Icons"
+#: core/customizer/sections/layout-options.php:36
+msgid "Global Layout"
 msgstr ""
 
-#: core/customizer/options/header.php:175
-msgid "(Go to Appearance >> Menus, create menu and assign it to Social Links)"
+#: core/customizer/sections/layout-options.php:41
+#: core/customizer/sections/shop-page-options.php:25
+msgid "Left Sidebar"
 msgstr ""
 
-#: core/customizer/options/header.php:192
-msgid "Show Login/Register"
+#: core/customizer/sections/layout-options.php:42
+#: core/customizer/sections/shop-page-options.php:26
+msgid "Right Sidebar"
 msgstr ""
 
-#: core/customizer/options/header.php:209
-msgid "Login/Register Icon"
+#: core/customizer/sections/layout-options.php:43
+#: core/customizer/sections/shop-page-options.php:27
+msgid "No Sidebar"
 msgstr ""
 
-#: core/customizer/options/header.php:210
-#: core/customizer/options/header.php:264
-#: core/customizer/options/header.php:299
-msgid "Fontawesome icons are only supported."
+#: core/customizer/sections/layout-options.php:57
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:53
+msgid "Excerpt Length"
 msgstr ""
 
-#: core/customizer/options/header.php:227
-msgid "Login/Register Text"
+#: core/customizer/sections/layout-options.php:58
+msgid "in words"
 msgstr ""
 
-#: core/customizer/options/header.php:246
+#: core/customizer/sections/layout-options.php:75
+msgid "Read More Text"
+msgstr ""
+
+#: core/customizer/sections/mid-header-options.php:7
+msgid "Mid Header Options"
+msgstr ""
+
+#: core/customizer/sections/mid-header-options.php:23
+msgid "Show Mid Header"
+msgstr ""
+
+#: core/customizer/sections/mid-header-options.php:41
+msgid "Mid Header Branding Options"
+msgstr ""
+
+#: core/customizer/sections/mid-header-options.php:65
+#: core/customizer/sections/top-header-options.php:219
 msgid "Show Cart Icon"
 msgstr ""
 
-#: core/customizer/options/header.php:263
+#: core/customizer/sections/mid-header-options.php:82
+#: core/customizer/sections/top-header-options.php:236
 msgid "Cart Icon"
 msgstr ""
 
-#: core/customizer/options/header.php:281
+#: core/customizer/sections/mid-header-options.php:83
+#: core/customizer/sections/mid-header-options.php:118
+#: core/customizer/sections/top-header-options.php:182
+#: core/customizer/sections/top-header-options.php:237
+#: core/customizer/sections/top-header-options.php:272
+msgid "Fontawesome icons are only supported."
+msgstr ""
+
+#: core/customizer/sections/mid-header-options.php:100
+#: core/customizer/sections/top-header-options.php:254
 msgid "Show Wishlist Icon (Works if YITH Wishlist plugin is activated)"
 msgstr ""
 
-#: core/customizer/options/header.php:298
+#: core/customizer/sections/mid-header-options.php:117
+#: core/customizer/sections/top-header-options.php:271
 msgid "Wishlist Icon"
 msgstr ""
 
-#: core/customizer/options/header.php:310
-msgid "Product Search Options"
-msgstr ""
-
-#: core/customizer/options/header.php:325
-msgid "Show Product Search (at Top Header)"
-msgstr ""
-
-#: core/customizer/options/header.php:341
-msgid "Search Products Text"
-msgstr ""
-
-#: core/customizer/options/header.php:358
-msgid "Select Category Text"
-msgstr ""
-
-#: core/customizer/options/options.php:26
+#: core/customizer/sections/other-extra-options.php:16
 msgid "Primary Color"
 msgstr ""
 
-#: core/customizer/options/options.php:27
+#: core/customizer/sections/other-extra-options.php:17
 msgid "Applied to main color of site."
 msgstr ""
 
-#: core/customizer/options/options.php:36
-msgid "Theme Options"
+#: core/customizer/sections/product-search-options.php:4
+msgid "Product Search Options"
 msgstr ""
 
-#: core/customizer/options/shop.php:11
+#: core/customizer/sections/product-search-options.php:19
+msgid "Show Product Search (at Top Header)"
+msgstr ""
+
+#: core/customizer/sections/product-search-options.php:35
+msgid "Search Products Text"
+msgstr ""
+
+#: core/customizer/sections/product-search-options.php:52
+msgid "Select Category Text"
+msgstr ""
+
+#: core/customizer/sections/shop-page-options.php:5
 msgid "Shop Page Options"
 msgstr ""
 
-#: core/customizer/options/shop.php:26 core/widgets/widgets.php:121
-msgid "Shop Sidebar"
-msgstr ""
-
-#: core/customizer/options/shop.php:47
+#: core/customizer/sections/shop-page-options.php:41
 msgid "Products Per Page"
 msgstr ""
 
-#: core/customizer/options/shop.php:48
+#: core/customizer/sections/shop-page-options.php:42
 msgid "Total number of products shown per page"
 msgstr ""
 
-#: core/customizer/options/shop.php:65
+#: core/customizer/sections/shop-page-options.php:59
 msgid "Products Per Row"
 msgstr ""
 
-#: core/customizer/options/shop.php:66
+#: core/customizer/sections/shop-page-options.php:60
 msgid "Number of products shown per row"
 msgstr ""
 
-#: core/customizer/options/shop.php:87
+#: core/customizer/sections/shop-page-options.php:81
 msgid "Disable Product Sorting Option"
 msgstr ""
 
-#: core/customizer/options/shop.php:103
+#: core/customizer/sections/shop-page-options.php:97
 msgid "Enable View Detail Icon at Product Pages"
 msgstr ""
 
-#: core/customizer/options/shop.php:119
+#: core/customizer/sections/shop-page-options.php:113
 msgid "Enable Image Zoom at Product Detail Page"
 msgstr ""
 
-#: core/customizer/options/shop.php:135
+#: core/customizer/sections/shop-page-options.php:129
 msgid "Disable Related Products at Product Detail Page"
 msgstr ""
 
-#: core/customizer/options/slider.php:14
-msgid "Featured Slider Options"
+#: core/customizer/sections/social-options.php:5
+msgid "Social Options"
 msgstr ""
 
-#: core/customizer/options/slider.php:29
-msgid "Enable/Disable Slider"
+#: core/customizer/sections/social-options.php:45
+msgid "Please enter font awesome icon text here."
 msgstr ""
 
-#: core/customizer/options/slider.php:45
-msgid "Make full width slider?"
+#: core/customizer/sections/top-header-options.php:5
+msgid "Top Header Options"
 msgstr ""
 
-#: core/customizer/options/slider.php:46
-msgid "This option allows you to make slider full width."
+#: core/customizer/sections/top-header-options.php:20
+msgid "Show Top Header"
 msgstr ""
 
-#: core/customizer/options/slider.php:69
-msgid "Slide "
+#: core/customizer/sections/top-header-options.php:39
+msgid "Left Section"
 msgstr ""
 
-#: core/customizer/options/slider.php:84
-msgid "Select Page"
+#: core/customizer/sections/top-header-options.php:56
+msgid "Left Section Options"
 msgstr ""
 
-#: core/customizer/options/slider.php:101
-msgid "Caption Position"
+#: core/customizer/sections/top-header-options.php:61
+msgid "Store Information"
 msgstr ""
 
-#: core/customizer/options/slider.php:105
-#: core/widgets/ae-advertisement-widget.php:352
-#: core/widgets/ae-cta-widget.php:335
-msgid "Left"
+#: core/customizer/sections/top-header-options.php:62
+msgid "Current Date"
 msgstr ""
 
-#: core/customizer/options/slider.php:106
-#: core/widgets/ae-advertisement-widget.php:353
-#: core/widgets/ae-cta-widget.php:336
-msgid "Right"
+#: core/customizer/sections/top-header-options.php:63
+msgid "Navigation Menu"
 msgstr ""
 
-#: core/customizer/options/slider.php:107
-#: core/widgets/ae-advertisement-widget.php:354
-#: core/widgets/ae-cta-widget.php:337
-msgid "Center"
+#: core/customizer/sections/top-header-options.php:77
+msgid "Address/Location"
 msgstr ""
 
-#: core/customizer/options/slider.php:123
-msgid "Button Text"
+#: core/customizer/sections/top-header-options.php:93
+msgid "Phone Number"
 msgstr ""
 
-#: core/customizer/options/slider.php:140
-msgid "Button Link"
+#: core/customizer/sections/top-header-options.php:109
+msgid "Email"
 msgstr ""
 
-#: core/customizer/options/slider.php:160
-msgid "Transition Effect"
+#: core/customizer/sections/top-header-options.php:129
+msgid "Right Section"
 msgstr ""
 
-#: core/customizer/options/slider.php:164
-msgid "Fade"
+#: core/customizer/sections/top-header-options.php:146
+msgid "Show Social Icons"
 msgstr ""
 
-#: core/customizer/options/slider.php:165
-msgid "Scroll"
+#: core/customizer/sections/top-header-options.php:147
+msgid ""
+"(Go to Appearance >> Customize >>  Social Options and add your social links "
+"there.)"
 msgstr ""
 
-#: core/customizer/options/slider.php:179
-msgid "Transition Delay"
+#: core/customizer/sections/top-header-options.php:164
+msgid "Show Login/Register"
 msgstr ""
 
-#: core/customizer/options/slider.php:180
-msgid "in seconds"
+#: core/customizer/sections/top-header-options.php:181
+msgid "Login/Register Icon"
 msgstr ""
 
-#: core/customizer/options/slider.php:197
-msgid "Adaptive Height"
+#: core/customizer/sections/top-header-options.php:199
+msgid "Login/Register Text"
 msgstr ""
 
-#: core/customizer/options/slider.php:212
-msgid "Show Pager"
+#: core/customizer/sections.php:17
+msgid "Theme Options"
 msgstr ""
 
-#: core/customizer/options/slider.php:227
-msgid "Enable Autoplay"
-msgstr ""
-
-#: core/helpers.php:198
+#: core/helper/helper-main.php:203
 msgid "%1$s page does not contain %2$s shortcode."
 msgstr ""
 
-#: core/helpers.php:201
+#: core/helper/helper-main.php:206
 msgid "%s page is not set."
 msgstr ""
 
-#: core/hooks/class-agency-ecommerce-header-hooks.php:151
-msgid "Log Out"
+#: core/helper/helper-main.php:403
+#. translators: 1: link to WP admin new post page.
+msgid "<a href=\"%1$s\">Get started here</a>."
 msgstr ""
 
-#: core/hooks/hooks.php:127
+#: core/hooks/class-agency-ecommerce-miscellaneous-hooks.php:81
 msgid "%1$s by %2$s"
 msgstr ""
 
-#: core/template-functions.php:249
-msgid "WooCommerce"
-msgstr ""
-
-#: core/template-functions.php:254
-msgid "One Click Demo Import"
-msgstr ""
-
-#: core/template-functions.php:259
-msgid "MailChimp for WordPress"
-msgstr ""
-
-#: core/template-functions.php:264
-msgid "Contact Form 7"
-msgstr ""
-
-#: core/template-functions.php:269
-msgid "YITH WooCommerce Wishlist"
-msgstr ""
-
-#: core/template-functions.php:274
-msgid "Video Tab For WooCommerce"
+#: core/hooks/class-agency-ecommerce-top-header-hooks.php:130
+msgid "Log Out"
 msgstr ""
 
 #: core/template-tags.php:57
@@ -505,383 +495,437 @@ msgstr ""
 msgid "Week %s"
 msgstr ""
 
-#: core/widgets/ae-advertisement-widget.php:25
-msgid ""
-"Widget to display advertisement. Recommended to use in Advertisement Below "
-"Slider area"
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:21
+msgid "Widget to dispaly posts with thumbnail."
 msgstr ""
 
-#: core/widgets/ae-advertisement-widget.php:27
-msgid "AE: Advertisement"
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:24
+msgid " Advance Posts"
 msgstr ""
 
-#: core/widgets/ae-advertisement-widget.php:229
-#: core/widgets/ae-cta-widget.php:196
-msgid "50%"
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:33
+#: core/widgets/agency-ecommerce-contact-widget.php:32
+#: core/widgets/agency-ecommerce-cta-widget.php:50
+#: core/widgets/agency-ecommerce-woo-categories-widget.php:37
+#: core/widgets/agency-ecommerce-woo-products-widget.php:40
+msgid "Title"
 msgstr ""
 
-#: core/widgets/ae-advertisement-widget.php:230
-#: core/widgets/ae-cta-widget.php:197
-msgid "OFF"
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:35
+msgid "Advance Posts"
 msgstr ""
 
-#: core/widgets/ae-advertisement-widget.php:231
-msgid "Start Shopping"
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:38
+msgid "Post Category"
 msgstr ""
 
-#: core/widgets/ae-advertisement-widget.php:268
-#: core/widgets/ae-contact-widget.php:204 core/widgets/ae-cta-widget.php:234
-#: core/widgets/ae-featured-categories-widget.php:222
-#: core/widgets/ae-features-widget.php:205
-#: core/widgets/ae-features-widget.php:228
-#: core/widgets/ae-features-widget.php:251
-#: core/widgets/ae-latest-news-widget.php:160
-#: core/widgets/ae-latest-products-widget.php:209
-#: core/widgets/ae-newsletter-widget.php:146
-#: core/widgets/ae-social-links-widget.php:94
-msgid "Title:"
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:47
+msgid "Exclude Categories"
 msgstr ""
 
-#: core/widgets/ae-advertisement-widget.php:272
-#: core/widgets/ae-cta-widget.php:240 core/widgets/ae-newsletter-widget.php:152
-msgid "Sub Title:"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:276
-#: core/widgets/ae-cta-widget.php:246
-msgid "Offer Percent:"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:280
-#: core/widgets/ae-cta-widget.php:252
-msgid "Offer Text:"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:285
-#: core/widgets/ae-cta-widget.php:281
-msgid "Primary Button Text:"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:289
-#: core/widgets/ae-cta-widget.php:287
-msgid "Primary Button URL:"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:294
-#: core/widgets/ae-cta-widget.php:258
-msgid "Content Position:"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:306
-#: core/widgets/ae-cta-widget.php:270
-msgid "Content style:"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:319
-#: core/widgets/ae-cta-widget.php:295
-msgid "Background Image:"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:324
-#: core/widgets/ae-cta-widget.php:304
-msgid "Preview"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:326
-#: core/widgets/ae-cta-widget.php:307
-msgid "Upload"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:326
-#: core/widgets/ae-cta-widget.php:308
-msgid "Select Background Image"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:326
-#: core/widgets/ae-cta-widget.php:309
-msgid "Choose Image"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:332
-#: core/widgets/ae-cta-widget.php:318
-msgid "Enable parallax background"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:336
-msgid "Disable overlay of the image"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:382
-#: core/widgets/ae-cta-widget.php:366
-msgid "Style One"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:383
-#: core/widgets/ae-cta-widget.php:367
-msgid "Style Two"
-msgstr ""
-
-#: core/widgets/ae-contact-widget.php:20
-msgid ""
-"Widget to display contact informations like address, email and phone with "
-"icon. Recommended to use in footer or sidebar only"
-msgstr ""
-
-#: core/widgets/ae-contact-widget.php:22
-msgid "AE: Contact"
-msgstr ""
-
-#: core/widgets/ae-contact-widget.php:211
-#: core/widgets/ae-features-widget.php:190
-msgid ""
-"ET-LINE icons are used for icon of each blocks. You can find icon code "
-"%1$shere%2$s."
-msgstr ""
-
-#: core/widgets/ae-contact-widget.php:216
-msgid "Block #1"
-msgstr ""
-
-#: core/widgets/ae-contact-widget.php:220
-#: core/widgets/ae-contact-widget.php:236
-#: core/widgets/ae-contact-widget.php:252
-#: core/widgets/ae-contact-widget.php:268
-#: core/widgets/ae-features-widget.php:199
-#: core/widgets/ae-features-widget.php:222
-#: core/widgets/ae-features-widget.php:245
-msgid "Icon:"
-msgstr ""
-
-#: core/widgets/ae-contact-widget.php:226
-#: core/widgets/ae-contact-widget.php:242
-#: core/widgets/ae-contact-widget.php:258
-#: core/widgets/ae-contact-widget.php:274
-msgid "Text:"
-msgstr ""
-
-#: core/widgets/ae-contact-widget.php:232
-msgid "Block #2"
-msgstr ""
-
-#: core/widgets/ae-contact-widget.php:248
-msgid "Block #3"
-msgstr ""
-
-#: core/widgets/ae-contact-widget.php:264
-msgid "Block #4"
-msgstr ""
-
-#: core/widgets/ae-cta-widget.php:27
-msgid "Call To Action Widget"
-msgstr ""
-
-#: core/widgets/ae-cta-widget.php:29
-msgid "AE: CTA"
-msgstr ""
-
-#: core/widgets/ae-cta-widget.php:200
-msgid "Purchase Now"
-msgstr ""
-
-#: core/widgets/ae-featured-categories-widget.php:22
-msgid "Widget to display featured categories of WooCommerce with carousel"
-msgstr ""
-
-#: core/widgets/ae-featured-categories-widget.php:25
-msgid "AE: Featured Categories"
-msgstr ""
-
-#: core/widgets/ae-featured-categories-widget.php:211
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:50
+#: core/widgets/agency-ecommerce-woo-categories-widget.php:55
 msgid "View Details"
 msgstr ""
 
-#: core/widgets/ae-featured-categories-widget.php:229
-#: core/widgets/ae-latest-news-widget.php:164
-#: core/widgets/ae-latest-products-widget.php:214
-msgid "Select Category:"
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:58
+msgid "Disable Date"
 msgstr ""
 
-#: core/widgets/ae-featured-categories-widget.php:268
-msgid "No product categories found"
+#: core/widgets/agency-ecommerce-advertisement-widget.php:27
+msgid "Widget to display advertisement."
 msgstr ""
 
-#: core/widgets/ae-featured-categories-widget.php:274
-msgid "Categories selected here will be used as featured category at frontend."
+#: core/widgets/agency-ecommerce-advertisement-widget.php:29
+msgid " Advertisement"
 msgstr ""
 
-#: core/widgets/ae-featured-categories-widget.php:279
-msgid "View Detail Text:"
+#: core/widgets/agency-ecommerce-advertisement-widget.php:38
+#: core/widgets/agency-ecommerce-advertisement-widget.php:40
+msgid "Title One"
 msgstr ""
 
-#: core/widgets/ae-featured-categories-widget.php:289
-msgid "Show Product Counts"
+#: core/widgets/agency-ecommerce-advertisement-widget.php:44
+msgid "Image One"
 msgstr ""
 
-#: core/widgets/ae-featured-categories-widget.php:296
-#: core/widgets/ae-latest-products-widget.php:251
-msgid "Disable Carousel Mode"
+#: core/widgets/agency-ecommerce-advertisement-widget.php:49
+msgid "Link One"
 msgstr ""
 
-#: core/widgets/ae-featured-categories-widget.php:299
-#: core/widgets/ae-latest-products-widget.php:254
-#: core/widgets/ae-newsletter-widget.php:167
-msgid "Background Color"
+#: core/widgets/agency-ecommerce-advertisement-widget.php:54
+#: core/widgets/agency-ecommerce-advertisement-widget.php:56
+msgid "Title Two"
 msgstr ""
 
-#: core/widgets/ae-features-widget.php:19
+#: core/widgets/agency-ecommerce-advertisement-widget.php:60
+msgid "Image Two"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-advertisement-widget.php:65
+msgid "Link Two"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-advertisement-widget.php:70
+#: core/widgets/agency-ecommerce-advertisement-widget.php:72
+msgid "Title Three"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-advertisement-widget.php:76
+msgid "Image Three"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-advertisement-widget.php:80
+msgid "Link Three"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-contact-widget.php:22
 msgid ""
-"Widget to display features with icon and description including one main "
-"image."
+"Widget to display contact informations. This widgets is for footer or "
+"sidebar only"
 msgstr ""
 
-#: core/widgets/ae-features-widget.php:21
-msgid "AE: Features"
+#: core/widgets/agency-ecommerce-contact-widget.php:24
+msgid " Contact"
 msgstr ""
 
-#: core/widgets/ae-features-widget.php:195
-msgid "Feature #1"
+#: core/widgets/agency-ecommerce-contact-widget.php:34
+msgid "Contact Us"
 msgstr ""
 
-#: core/widgets/ae-features-widget.php:212
-#: core/widgets/ae-features-widget.php:235
-#: core/widgets/ae-features-widget.php:258
-msgid "Short Description:"
+#: core/widgets/agency-ecommerce-contact-widget.php:38
+msgid "Icon one"
 msgstr ""
 
-#: core/widgets/ae-features-widget.php:218
-msgid "Feature #2"
+#: core/widgets/agency-ecommerce-contact-widget.php:43
+msgid "Text one"
 msgstr ""
 
-#: core/widgets/ae-features-widget.php:241
-msgid "Feature #3"
+#: core/widgets/agency-ecommerce-contact-widget.php:45
+msgid "Your contact location"
 msgstr ""
 
-#: core/widgets/ae-latest-news-widget.php:19
+#: core/widgets/agency-ecommerce-contact-widget.php:48
+msgid "Icon two"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-contact-widget.php:53
+msgid "Text two"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-contact-widget.php:58
+msgid "Icon three"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-contact-widget.php:63
+msgid "Text three"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-contact-widget.php:68
+msgid "Icon four"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-contact-widget.php:73
+msgid "Text four"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-contact-widget.php:75
+msgid "Your text four here."
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:27
+msgid "Call To Action Widget"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:29
+msgid " Call To Action"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:37
+msgid "Left"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:38
+msgid "Right"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:39
+msgid "Center"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:43
+msgid "Style 1"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:44
+msgid "Style 2"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:45
+msgid "Style 3"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:52
+msgid "CTA title"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:55
+#: core/widgets/agency-ecommerce-newsletter-widget.php:43
+msgid "Sub Title"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:59
+msgid "Discount"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:64
+msgid "Offer Text"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:66
+msgid "OFF"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:69
+msgid "Content Position"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:75
+msgid "Content Style"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:81
+msgid "Button Text"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:83
+msgid "Buy Now"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:86
+msgid "Button URL"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:91
+msgid "Background Image"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-cta-widget.php:95
+msgid "Parallax Background"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-featured-slider-widget.php:22
 msgid ""
-"Widget to dispaly latest posts with thumbnail, title, short content and "
-"read more link"
+"This widget will show slider on your website and it is compatible with "
+"Slider Widget Area"
 msgstr ""
 
-#: core/widgets/ae-latest-news-widget.php:22
-msgid "AE: Latest News"
+#: core/widgets/agency-ecommerce-featured-slider-widget.php:25
+msgid " Featured Slider"
 msgstr ""
 
-#: core/widgets/ae-latest-news-widget.php:174
-#: core/widgets/ae-latest-products-widget.php:224
-msgid "All Categories"
-msgstr ""
-
-#: core/widgets/ae-latest-news-widget.php:180
-msgid "Exclude Categories:"
-msgstr ""
-
-#: core/widgets/ae-latest-news-widget.php:183
-msgid ""
-"Enter category id seperated with comma. Posts from these categories will be "
-"excluded from latest post listing."
-msgstr ""
-
-#: core/widgets/ae-latest-news-widget.php:189
-msgid "Excerpt Length:"
-msgstr ""
-
-#: core/widgets/ae-latest-news-widget.php:196
-msgid "Hide Posted Date"
-msgstr ""
-
-#: core/widgets/ae-latest-products-widget.php:20
-msgid ""
-"Widget to display latest product or featured products of Woo-Commerce with "
-"carousel"
-msgstr ""
-
-#: core/widgets/ae-latest-products-widget.php:23
-msgid "AE: Products Carousel"
-msgstr ""
-
-#: core/widgets/ae-latest-products-widget.php:231
-msgid "Product Type:"
-msgstr ""
-
-#: core/widgets/ae-latest-products-widget.php:244
-msgid "Number of Products:"
-msgstr ""
-
-#: core/widgets/ae-latest-products-widget.php:275
+#: core/widgets/agency-ecommerce-featured-slider-widget.php:34
+#: core/widgets/agency-ecommerce-woo-products-widget.php:34
 msgid "Latest"
 msgstr ""
 
-#: core/widgets/ae-latest-products-widget.php:276
+#: core/widgets/agency-ecommerce-featured-slider-widget.php:35
+#: core/widgets/agency-ecommerce-woo-products-widget.php:35
 msgid "Featured"
 msgstr ""
 
-#: core/widgets/ae-newsletter-widget.php:26
+#: core/widgets/agency-ecommerce-featured-slider-widget.php:40
+msgid "Product Category for Left Slider"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-featured-slider-widget.php:50
+msgid "Number of products for Left Slider"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-featured-slider-widget.php:55
+msgid "Product Category for Right Slider"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-featured-slider-widget.php:65
+msgid "Number of products for Right Slider"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-featured-slider-widget.php:70
+msgid "Shop Now Text"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-featured-slider-widget.php:75
+msgid "Disable Slider Mode"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-featured-slider-widget.php:240
+msgid "Slider Title"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:21
+msgid "Widget to display features with icon (font awesome) and description."
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:23
+msgid " Features"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:31
+msgid "Icon One"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:37
+msgid "Feature One"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:39
+msgid "FREE SHIPPING & RETURN"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:43
+msgid "Description One"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:45
+msgid "Free shipping on all orders over $99"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:50
+msgid "Icon Two"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:56
+msgid "Feature Two"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:58
+msgid "MONEY BACK GUARANTEE"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:63
+msgid "Description Two"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:65
+msgid "100% money back guarantee"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:70
+msgid "Icon Three"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:76
+msgid "Feature Three"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:78
+msgid "ONLINE SUPPORT 24/7"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:83
+msgid "Description Three"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-features-widget.php:85
+msgid "Lorem ipsum dolor sit amet."
+msgstr ""
+
+#: core/widgets/agency-ecommerce-newsletter-widget.php:26
 msgid "Newsletter Widget"
 msgstr ""
 
-#: core/widgets/ae-newsletter-widget.php:28
-msgid "AE: Newsletter"
+#: core/widgets/agency-ecommerce-newsletter-widget.php:28
+msgid " Newsletter"
 msgstr ""
 
-#: core/widgets/ae-newsletter-widget.php:62
+#: core/widgets/agency-ecommerce-newsletter-widget.php:38
+msgid "Widget Title"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-newsletter-widget.php:48
+msgid "Shortcode"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-newsletter-widget.php:53
+#: core/widgets/agency-ecommerce-woo-categories-widget.php:66
+#: core/widgets/agency-ecommerce-woo-products-widget.php:70
+msgid "Background Color"
+msgstr ""
+
+#: core/widgets/agency-ecommerce-newsletter-widget.php:102
 msgid "newsletter"
 msgstr ""
 
-#: core/widgets/ae-newsletter-widget.php:158
-msgid "Newsletter Shortcode:"
+#: core/widgets/agency-ecommerce-woo-categories-widget.php:22
+msgid "Widget to display categories of WooCommerce."
 msgstr ""
 
-#: core/widgets/ae-newsletter-widget.php:163
-msgid "Shortcode of MailChimp or other mailing applications can be used."
+#: core/widgets/agency-ecommerce-woo-categories-widget.php:25
+msgid "WOO Categories"
 msgstr ""
 
-#: core/widgets/ae-social-links-widget.php:25
-msgid "Social Icons Widget"
+#: core/widgets/agency-ecommerce-woo-categories-widget.php:39
+#: core/widgets/agency-ecommerce-woo-categories-widget.php:42
+#: core/widgets/agency-ecommerce-woo-products-widget.php:45
+msgid "Product Category"
 msgstr ""
 
-#: core/widgets/ae-social-links-widget.php:27
-msgid "AE: Social"
+#: core/widgets/agency-ecommerce-woo-categories-widget.php:53
+msgid "View Details Text"
 msgstr ""
 
-#: core/widgets/ae-social-links-widget.php:100
-msgid ""
-"Social menu is not set. Please create menu and assign it to Social Theme "
-"Location."
+#: core/widgets/agency-ecommerce-woo-categories-widget.php:58
+msgid "Show Counts"
 msgstr ""
 
-#: core/widgets/widgets.php:109
-msgid "Blog Sidebar"
+#: core/widgets/agency-ecommerce-woo-categories-widget.php:62
+#: core/widgets/agency-ecommerce-woo-products-widget.php:66
+msgid "Disable Carousel"
 msgstr ""
 
-#: core/widgets/widgets.php:111
-msgid "Add widgets here to appear in Sidebar."
+#: core/widgets/agency-ecommerce-woo-products-widget.php:22
+msgid "Widget to display WooCommerce products with advance options."
 msgstr ""
 
-#: core/widgets/widgets.php:123
-msgid "Widgets added here will appear in sidebar of shop pages only."
+#: core/widgets/agency-ecommerce-woo-products-widget.php:25
+msgid " WOO Products"
 msgstr ""
 
-#: core/widgets/widgets.php:133
-msgid "Advertisement (Below Slider)"
+#: core/widgets/agency-ecommerce-woo-products-widget.php:42
+msgid "Products"
 msgstr ""
 
-#: core/widgets/widgets.php:135
-msgid ""
-"Add widgets here to appear in advertisement area below main slider of home "
-"page"
+#: core/widgets/agency-ecommerce-woo-products-widget.php:55
+msgid "Product Type"
 msgstr ""
 
-#: core/widgets/widgets.php:142
-msgid "Homepage Widget Area"
+#: core/widgets/agency-ecommerce-woo-products-widget.php:61
+msgid "Number of products "
 msgstr ""
 
-#: core/widgets/widgets.php:144
-msgid "Add widgets here to appear in Home Page Widget Area."
+#: core/widgets/agency-ecommerce-woo-products-widget.php:75
+msgid "Show category tab"
 msgstr ""
 
-#: core/widgets/widgets.php:151 core/widgets/widgets.php:159
-#: core/widgets/widgets.php:167 core/widgets/widgets.php:175
-msgid "Footer %d"
+#: core/widgets/agency-ecommerce-woo-products-widget.php:77
+msgid "This option will work only if you disable carousel for this widget."
+msgstr ""
+
+#: core/widgets/agency-ecommerce-woo-products-widget.php:292
+#: core/widgets/class-agency-ecommerce-widget-base.php:185
+msgid "All Categories"
+msgstr ""
+
+#: core/widgets/class-agency-ecommerce-widget-base.php:226
+msgid "Choose an image"
+msgstr ""
+
+#: core/widgets/class-agency-ecommerce-widget-base.php:227
+msgid "Use image"
+msgstr ""
+
+#: core/widgets/class-agency-ecommerce-widget-base.php:228
+msgid "Select an Image"
 msgstr ""
 
 #: template-parts/content-none.php:14
@@ -924,17 +968,6 @@ msgstr ""
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
 
-#: template-parts/home-widgets.php:26
-#. translators: 1: link to WP admin new post page.
-msgid ""
-"No widgets found. Please add widgets to Home Page Widget Area. <a "
-"href=\"%1$s\">Get started here</a>."
-msgstr ""
-
-#: template-parts/home-widgets.php:39
-msgid "No widgets found. Please add widgets to Home Page Widget Area."
-msgstr ""
-
 #. Theme Name of the plugin/theme
 msgid "Agency Ecommerce"
 msgstr ""
@@ -967,14 +1000,15 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/helpers.php:58
+#: core/helper/helper-main.php:61
 #. translators: If there are characters in your language that are not supported
-#. by Barlow, translate this to 'off'. Do not translate into your own language.
-msgctxt "Barlow font: on or off"
+#. by Open Sans, translate this to 'off'. Do not translate into your own
+#. language.
+msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: core/helpers.php:63
+#: core/helper/helper-main.php:66
 #. translators: If there are characters in your language that are not supported
 #. by Playfair Display, translate this to 'off'. Do not translate into your own
 #. language.
@@ -982,32 +1016,32 @@ msgctxt "Playfair Display font: on or off"
 msgid "on"
 msgstr ""
 
-#: core/helpers.php:90
+#: core/helper/helper-main.php:93
 msgctxt "page setting"
 msgid "Shop base"
 msgstr ""
 
-#: core/helpers.php:94
+#: core/helper/helper-main.php:97
 msgctxt "page setting"
 msgid "Cart"
 msgstr ""
 
-#: core/helpers.php:98
+#: core/helper/helper-main.php:101
 msgctxt "page setting"
 msgid "Checkout"
 msgstr ""
 
-#: core/helpers.php:102
+#: core/helper/helper-main.php:105
 msgctxt "page setting"
 msgid "My account"
 msgstr ""
 
-#: core/hooks/class-agency-ecommerce-header-hooks.php:237
+#: core/helper/helper-main.php:245
 msgctxt "placeholder"
 msgid "Search Products &hellip;"
 msgstr ""
 
-#: core/hooks/class-agency-ecommerce-header-hooks.php:285
+#: core/helper/helper-main.php:296
 msgctxt "submit button"
 msgid "Search"
 msgstr ""
@@ -1063,10 +1097,4 @@ msgstr ""
 #: core/vendor/breadcrumbs/breadcrumbs.php:788
 msgctxt "weekly archives date format"
 msgid "W"
-msgstr ""
-
-#: core/widgets/ae-advertisement-widget.php:327
-#: core/widgets/ae-cta-widget.php:310
-msgctxt "Remove Button"
-msgid "X"
 msgstr ""

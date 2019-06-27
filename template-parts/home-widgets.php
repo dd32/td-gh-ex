@@ -6,43 +6,64 @@
  */
 
 // Bail if not home page.
-if ( ! is_page_template( 'templates/home-template.php' )  ) {
-	return;
+if (!is_page_template('templates/home-template.php')) {
+    return;
 }
 ?>
 
-<div id="home-page-widget-area" class="widget-area">
-	
-		<?php if ( is_active_sidebar( 'home-page-widget-area' ) ) : ?>
-			<?php dynamic_sidebar( 'home-page-widget-area' ); ?>
-		<?php else: ?>
-			<div class="container">
-				<?php
-				if ( current_user_can( 'edit_theme_options' ) ) { ?>
-					<p><?php
-						printf(
-							wp_kses(
-								/* translators: 1: link to WP admin new post page. */
-								__( 'No widgets found. Please add widgets to Home Page Widget Area. <a href="%1$s">Get started here</a>.', 'agency-ecommerce' ),
-								array(
-									'a' => array(
-										'href' => array(),
-									),
-								)
-							),
-							esc_url( admin_url( 'widgets.php' ) )
-						);
-					?></p>
-					<?php
-				}else{ ?>
+<div class="ae-homepage-wrap widget-area">
+    <?php
+    $site_identity = agency_ecommerce_get_option('site_identity');
+    $show_bottom_header = (boolean)agency_ecommerce_get_option('show_bottom_header');
 
-					<p><?php esc_html_e( 'No widgets found. Please add widgets to Home Page Widget Area.', 'agency-ecommerce' ); ?></p>
+    $class = 'feature-slider-widget-area';
 
-					<?php
+    $class .= 'category-menu' == $site_identity && $show_bottom_header ? ' has-category-menu' : '';
+    ?>
+    <div class="<?php echo esc_attr($class); ?>">
+        <div class="container">
+            <?php if (is_active_sidebar('woo-featured-slider')) {
+                dynamic_sidebar('woo-featured-slider');
+            } else {
+                agency_ecommerce_widget_not_found_message('No widgets found. Please add widgets to Featured Slider Widget Area.');
 
-				} ?>
-			</div>
-		<?php endif; ?>
-	
-</div><!-- #home-page-widget-area -->
+            } ?>
+        </div>
+    </div>
+    <?php
+    $homepage_main_class = is_active_sidebar('home-page-sidebar-widget-area') ? 'mb-homepage-main has-sidebar' : 'mb-homepage-main';
+    ?>
+    <div class="<?php echo esc_attr($homepage_main_class); ?>">
+
+        <div class="container">
+
+            <?php
+
+            // HomePage Sidebar
+            if (is_active_sidebar('home-page-sidebar-widget-area')) {
+
+                echo '<div class="homepage-sidebar">';
+
+                dynamic_sidebar('home-page-sidebar-widget-area');
+
+                echo '</div>';
+            }
+
+
+            // Home Page Widget Area
+            if (is_active_sidebar('home-page-widget-area')) {
+
+                echo '<div class="homepage-widgets">';
+
+                dynamic_sidebar('home-page-widget-area');
+
+                echo '</div>';
+            } else {
+                agency_ecommerce_widget_not_found_message('No widgets found. Please add widgets to Home Page Widget Area.');
+            }
+            ?>
+        </div>
+    </div>
+
+</div><!-- .ae-homepage-wrap -->
 

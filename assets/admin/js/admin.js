@@ -1,110 +1,121 @@
-var agency_ecommerce_file_frame;
+var file_frame;
+;(function ($) {
 
-jQuery(function ($) {
-    ////////////////////////////////
+    var AgencyEcommerceAdmin = {
 
-    // Uploads
+        init: function () {
 
-    jQuery(document).on('click', 'input.select-img', function (event) {
+            this.initEvent();
+        },
+        initEvent: function () {
 
-        var $this = $(this);
+            var $this = this;
+            $(document).on('click', 'button.media_upload', function (event) {
+                event.preventDefault();
+                $this.initWPImageUploader($(this));
+            });
+            $('#widgets-right .widget:has(.color-picker)').each(function () {
+                $this.initColorPicker($(this));
+            });
+            $(document).on('widget-added widget-updated', function (event, widget) {
 
-        event.preventDefault();
+                $this.formUpdate($this, widget);
+            });
 
-        var agencyEcommerceImage = wp.media.controller.Library.extend({
-            defaults: _.defaults({
-                id: 'agency-ecommerce-insert-image',
-                title: $this.data('uploader_title'),
-                allowLocalEdits: false,
-                displaySettings: true,
-                displayUserSettings: false,
-                multiple: false,
-                library: wp.media.query({type: 'image'})
-            }, wp.media.controller.Library.prototype.defaults)
-        });
 
-        // Create the media frame.
-        agency_ecommerce_file_frame = wp.media.frames.agency_ecommerce_file_frame = wp.media({
-            button: {
-                text: jQuery(this).data('uploader_button_text')
-            },
-            state: 'agency-ecommerce-insert-image',
-            states: [
-                new agencyEcommerceImage()
-            ],
-            multiple: false  // Set to true to allow multiple files to be selected
-        });
+            $(document).on('click', '.custom_media_preview button.remove', function (e) {
+                e.preventDefault();
+                $this.removeImage($(this));
+            });
 
-        // When an image is selected, run a callback.
-        agency_ecommerce_file_frame.on('select', function () {
+            $(document).on('click', '.ae-icon-picker-wrapper .toggle-icon', function (e) {
+                e.preventDefault();
+                $this.initIconPicker($(this));
+            });
 
-            var state = agency_ecommerce_file_frame.state('agency-ecommerce-insert-image');
-            var selection = state.get('selection');
-            var display = state.display(selection.first()).toJSON();
-            var obj_attachment = selection.first().toJSON();
-            display = wp.media.string.props(display, obj_attachment);
+            $(document).on('click', '.ae-icon-picker-wrapper .ae-icon-list li.icon', function (e) {
+                $this.pickIcon($(this));
+            });
+        },
+        initWPImageUploader: function ($this) {
 
-            var image_field = $this.siblings('.img');
-            var imgurl = display.src;
+            var file_target_input = $this.parent().find('.custom_media_input');
+            var file_target_preview = $this.parent().find('.media_preview_image');
+            var remove_btn = $this.parent().find('.remove');
 
-            // Copy image URL
-            image_field.val(imgurl);
+            var agencyEcommerceImage = wp.media.controller.Library.extend({
+                defaults: _.defaults({
+                    id: 'agency-ecommerce-insert-image',
+                    title: $this.data('uploader_title'),
+                    allowLocalEdits: false,
+                    displaySettings: true,
+                    displayUserSettings: false,
+                    multiple: false,
+                    library: wp.media.query({type: 'image'})
+                }, wp.media.controller.Library.prototype.defaults)
+            });
+
+            // Create the media frame.
+            file_frame = wp.media.frames.file_frame = wp.media({
+                button: {
+                    text: jQuery(this).data('uploader_button_text')
+                },
+                state: 'agency-ecommerce-insert-image',
+                states: [
+                    new agencyEcommerceImage()
+                ],
+                multiple: false  // Set to true to allow multiple files to be selected
+            });
+
+            // When an image is selected, run a callback.
+            file_frame.on('select', function () {
+
+                // Get the attachment from the modal frame.
+                var attachment = file_frame.state().get('selection').first().toJSON();
+                // Initialize input and preview change.
+                file_target_input.val(attachment.url).trigger('change');
+                file_target_preview.css({display: 'none'});
+                file_target_preview.attr('src', attachment.url).css({display: 'block'});
+                remove_btn.show();
+
+            });
+
+            // Finally, open the modal
+            file_frame.open();
+
+        },
+        initColorPicker: function (widget) {
+            widget.find('.color-picker').wpColorPicker({
+                change: _.throttle(function () { // For Customizer
+                    $(this).trigger('change');
+                }, 3000)
+            });
+        },
+        removeImage: function ($this) {
+            var image_field = $this.parent().find('.custom_media_input');
+            image_field.val('');
+            $this.parent().find('.media_preview_image').css({display: 'none'});
             image_field.trigger('change');
-            // Show in preview.
-            var image_preview_wrap = $this.siblings('.agency-ecommerce-preview-wrap');
-            image_preview_wrap.hide();
-            if (imgurl !== '') {
+            $this.hide();
+        },
+        formUpdate: function ($this, widget) {
+            $this.initColorPicker(widget);
+        },
+        initIconPicker($this) {
+            $this.closest('.ae-icon-picker-wrapper').find('.ae-icon-list').slideToggle("slow");
 
-                image_preview_wrap.find('img').attr('src', imgurl);
-                image_preview_wrap.show();
-            }
-            //var image_html = '<img src="' + imgurl+ '" alt="" style="max-width:100%;max-height:150px;" />';
-            //image_preview_wrap.html(image_html);
-            // Show Remove button.
-            var image_remove_button = $this.siblings('.btn-image-remove');
-            image_remove_button.css('display', 'inline-block');
+        },
+        pickIcon: function ($this) {
+            var wrapper = $this.closest('.ae-icon-picker-wrapper');
+            wrapper.find('.ae-icon-list ul li.active').removeClass('active');
+            var value = $this.attr('data-icon');
+            var old_value = wrapper.find('input.widefat').val();
+            wrapper.find('input.widefat').val(value).trigger('change');
+            wrapper.find('.selected-icon').removeClass('fa').removeClass(old_value).addClass('fa ' + value);
+            $this.addClass('active');
+        }
+    };
 
-        });
+    AgencyEcommerceAdmin.init();
 
-        // Finally, open the modal
-        agency_ecommerce_file_frame.open();
-    });
-
-    // Remove image.
-    jQuery(document).on('click', 'input.btn-image-remove', function (e) {
-
-        e.preventDefault();
-        var $this = $(this);
-        var image_field = $this.siblings('.img');
-        image_field.val('');
-        var image_preview_wrap = $this.siblings('.agency-ecommerce-preview-wrap');
-        image_preview_wrap.html('');
-        $this.css('display', 'none');
-        image_field.trigger('change');
-
-    });
-
-    // Color Picker
-
-    function initColorPicker(widget) {
-        widget.find('.color-picker').wpColorPicker({
-            change: _.throttle(function () { // For Customizer
-                $(this).trigger('change');
-            }, 3000)
-        });
-    }
-
-    function onFormUpdate(event, widget) {
-        initColorPicker(widget);
-    }
-
-    $(document).on('widget-added widget-updated', onFormUpdate);
-
-    $(document).ready(function () {
-        $('#widgets-right .widget:has(.color-picker)').each(function () {
-            initColorPicker($(this));
-        });
-    });
-
-    ////////////////////////////////
-});
+})(jQuery);

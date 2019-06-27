@@ -32,10 +32,10 @@ function agency_ecommerce_customize_register( $wp_customize ) {
 	require_once trailingslashit( get_template_directory() ) . '/core/customizer/sanitize.php';
 
 	// Active callback.
-	require_once trailingslashit( get_template_directory() ) . '/core/customizer/active.php';
+	require_once trailingslashit( get_template_directory() ) . '/core/customizer/customizer-helper.php';
 
 	// Load options.
-	require_once trailingslashit( get_template_directory() ) . '/core/customizer/options/options.php';
+	require_once trailingslashit( get_template_directory() ) . '/core/customizer/sections.php';
 
 
 }

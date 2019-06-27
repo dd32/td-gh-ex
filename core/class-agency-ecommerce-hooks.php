@@ -30,7 +30,7 @@ final class Agency_Ecommerce_Hooks
      *
      * @since 1.0.0
      * @static
-     * @see mb_aec_addons()
+     * @see mb_ae_addons()
      * @return Agency_Ecommerce_Hooks - Main instance.
      */
     public static function instance()
@@ -48,9 +48,12 @@ final class Agency_Ecommerce_Hooks
      */
     public function includes()
     {
-
-        include_once AGENCY_ECOMMERCE_THEME_DIR . 'core/hooks/class-agency-ecommerce-header-hooks.php';
-        include_once AGENCY_ECOMMERCE_THEME_DIR . 'core/hooks/hooks.php';
+        include_once AGENCY_ECOMMERCE_THEME_DIR . 'core/hooks/class-agency-ecommerce-head-hooks.php';
+        include_once AGENCY_ECOMMERCE_THEME_DIR . 'core/hooks/class-agency-ecommerce-top-header-hooks.php';
+        include_once AGENCY_ECOMMERCE_THEME_DIR . 'core/hooks/class-agency-ecommerce-mid-header-hooks.php';
+        include_once AGENCY_ECOMMERCE_THEME_DIR . 'core/hooks/class-agency-ecommerce-bottom-header-hooks.php';
+        include_once AGENCY_ECOMMERCE_THEME_DIR . 'core/hooks/class-agency-ecommerce-woocommerce-hooks.php';
+        include_once AGENCY_ECOMMERCE_THEME_DIR . 'core/hooks/class-agency-ecommerce-miscellaneous-hooks.php';
 
 
     }

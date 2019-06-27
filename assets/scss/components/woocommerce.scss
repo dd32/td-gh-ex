@@ -1,0 +1,100 @@
+.ae-cart-wrapper {
+  float: left;
+  padding: 15px;
+  line-height: 1;
+  position: relative;
+  .ae-icon-wrap {
+    position: relative;
+    a {
+      padding-right: 10px;
+    }
+    .cart-value {
+      background: $primary_color;
+      position: absolute;
+      height: 17px;
+      width: 17px;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 1.5;
+      color: $white_color;
+      font-size: 12px;
+      top: -10px;
+      right: -4px;
+    }
+  }
+  a i {
+    color: $white_color;
+  }
+  .ae-cart-content {
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 115%;
+    right: 0px;
+    width: 300px;
+    background: $primary_color;
+    z-index: 9999;
+    padding: 20px;
+  }
+  &:hover .ae-cart-content {
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    opacity: 1;
+    visibility: visible;
+    top: 100%;
+    .woocommerce-mini-cart li {
+      a, span {
+        color: $white_color;
+      }
+    }
+    .woocommerce-mini-cart__total.total, .widget_shopping_cart_content .woocommerce-mini-cart__empty-message {
+      color: $white_color;
+    }
+    .woocommerce-mini-cart li {
+      a {
+        font-size: 17px;
+        font-weight: 400;
+      }
+      span {
+        font-size: 15px;
+      }
+    }
+    .woocommerce-mini-cart__total.total strong {
+      font-weight: 500;
+    }
+    p.woocommerce-mini-cart__buttons {
+      margin-bottom: 0px;
+      &.buttons a {
+        margin: 5px;
+        border-radius: 0;
+        font-size: 15px;
+        font-weight: normal;
+        color: $primary_color;
+      }
+    }
+    .widget_shopping_cart_content .woocommerce-mini-cart__empty-message {
+      margin-bottom: 0px;
+    }
+    .woocommerce-mini-cart li {
+      padding-bottom: 10px;
+      border-bottom: 1px solid #f9f9f9;
+      margin-top: 10px;
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+  span {
+    display: inline-block;
+  }
+}
+
+.ae-cart-content .widget_shopping_cart .widgettitle {
+  color: $white_color;
+}

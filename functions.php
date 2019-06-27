@@ -9,14 +9,11 @@
  * @since 1.0.0
  */
 
-
-define('AGENCY_ECOMMERCE_THEME_VERSION', '1.0.3');
+define('AGENCY_ECOMMERCE_THEME_VERSION', '2.0');
 define('AGENCY_ECOMMERCE_THEME_SETTINGS', 'agency-ecommerce-settings');
 
 define('AGENCY_ECOMMERCE_THEME_DIR', trailingslashit(get_template_directory()));
 define('AGENCY_ECOMMERCE_THEME_URI', trailingslashit(esc_url(get_template_directory_uri())));
-
-
 // Theme Core file init
 require_once AGENCY_ECOMMERCE_THEME_DIR . 'core/class-agency-ecommerce-core.php';
 

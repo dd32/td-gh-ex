@@ -9,7 +9,7 @@
 
 ?>
 
-<aside id="sidebar-primary" class="widget-area sidebar" role="complementary">
+<aside id="sidebar-primary" class="widget-area sidebar primary-sidebar" role="complementary">
 	<?php 
 
 	if( class_exists( 'WooCommerce' ) && is_woocommerce() ){

@@ -5,7 +5,7 @@
  * @package Agency_Ecommerce
  */
 
-if ( ! function_exists( 'agency_ecommerce_get_option' ) ) :
+if (!function_exists('agency_ecommerce_get_option')) :
 
     /**
      * Get theme option.
@@ -15,9 +15,10 @@ if ( ! function_exists( 'agency_ecommerce_get_option' ) ) :
      * @param string $key Option key.
      * @return mixed Option value.
      */
-    function agency_ecommerce_get_option( $key ) {
+    function agency_ecommerce_get_option($key)
+    {
 
-        if ( empty( $key ) ) {
+        if (empty($key)) {
 
             return;
 
@@ -25,13 +26,13 @@ if ( ! function_exists( 'agency_ecommerce_get_option' ) ) :
 
         $agency_ecommerce_default = agency_ecommerce_get_default_theme_options();
 
-        $default = ( isset( $agency_ecommerce_default[ $key ] ) ) ? $agency_ecommerce_default[ $key ] : '';
-        $theme_options = get_theme_mod( 'theme_options', $agency_ecommerce_default );
-        $theme_options = array_merge( $agency_ecommerce_default, $theme_options );
+        $default = (isset($agency_ecommerce_default[$key])) ? $agency_ecommerce_default[$key] : '';
+        $theme_options = get_theme_mod('agency_ecommerce_theme_options', $agency_ecommerce_default);
+        $theme_options = array_merge($agency_ecommerce_default, $theme_options);
         $value = '';
 
-        if ( isset( $theme_options[ $key ] ) ) {
-            $value = $theme_options[ $key ];
+        if (isset($theme_options[$key])) {
+            $value = $theme_options[$key];
         }
 
         return $value;
@@ -40,7 +41,7 @@ if ( ! function_exists( 'agency_ecommerce_get_option' ) ) :
 
 endif;
 
-if ( ! function_exists( 'agency_ecommerce_get_default_theme_options' ) ) :
+if (!function_exists('agency_ecommerce_get_default_theme_options')) :
 
     /**
      * Get default theme options.
@@ -49,72 +50,98 @@ if ( ! function_exists( 'agency_ecommerce_get_default_theme_options' ) ) :
      *
      * @return array Default theme options.
      */
-    function agency_ecommerce_get_default_theme_options() {
+    function agency_ecommerce_get_default_theme_options()
+    {
 
         $defaults = array();
 
         //primary color
-        $defaults['primary_color']      = '#6c50fb';
+        $defaults['primary_color'] = '#0188cc';
 
         // Header.
-        $defaults['site_identity']      = 'title-text';
-        $defaults['show_top_header']    = false;
-        $defaults['top_left_type']      = 'store-info';
-        $defaults['show_social_icons']  = false;
-        $defaults['show_login_logout']  = true;
-        $defaults['login_text']         = esc_html__( 'Login / Register', 'agency-ecommerce' );
-        $defaults['login_icon']         = 'fa-user-o';
-        $defaults['show_cart']          = true;
-        $defaults['cart_icon']          = 'fa-shopping-cart';
-        $defaults['show_wishlist']      = false;
-        $defaults['wishlist_icon']      = 'fa-heart';
-        $defaults['show_top_search']    = true;
-        $defaults['search_products_text']  = esc_html__( 'Search Products ...', 'agency-ecommerce' );
-        $defaults['select_category_text']  = esc_html__( 'Select Category', 'agency-ecommerce' );
+        $defaults['site_identity'] = 'category-menu';
+        $defaults['show_top_header'] = true;
+        $defaults['top_left_type'] = 'store-info';
+        $defaults['show_social_icons'] = false;
+        $defaults['show_login_logout'] = true;
+        $defaults['login_text'] = esc_html__('Login / Register', 'agency-ecommerce');
+        $defaults['login_icon'] = 'fa-user-o';
+        $defaults['show_cart'] = true;
+        $defaults['cart_icon'] = 'fa-shopping-cart';
+        $defaults['show_wishlist'] = false;
+        $defaults['wishlist_icon'] = 'fa-heart';
+        $defaults['show_top_search'] = true;
+        $defaults['search_products_text'] = esc_html__('Search Products ...', 'agency-ecommerce');
+        $defaults['select_category_text'] = esc_html__('Select Category', 'agency-ecommerce');
 
+        // Mid Header
+        $defaults['show_mid_header'] = true;
+        $defaults['show_mid_header_cart'] = true;
+        $defaults['mid_header_cart_icon'] = 'fa-shopping-cart';
+        $defaults['show_mid_header_wishlist'] = true;
+        $defaults['mid_header_wishlist_icon'] = 'fa-heart';
+        $defaults['mid_header_site_identity'] = 'title-text';
+
+        // Bottom Header
+        $defaults['show_bottom_header'] = true;
+        $defaults['category_menu_max_height'] = 433;
         // Layout.
-        $defaults['enable_sticky_sidebar']  = true;
-        $defaults['global_layout']          = 'right-sidebar';
-        $defaults['excerpt_length']         = 40;
-        $defaults['readmore_text']          = esc_html__( 'Read More', 'agency-ecommerce' );
+        $defaults['enable_sticky_sidebar'] = true;
+        $defaults['global_layout'] = 'right-sidebar';
+        $defaults['excerpt_length'] = 40;
+        $defaults['readmore_text'] = esc_html__('Read More', 'agency-ecommerce');
 
         // Shop page
-        $defaults['shop_layout']            = 'right-sidebar';
-        $defaults['product_per_page']       = 9;
-        $defaults['product_number']         = 3;
-        $defaults['hide_product_sorting']   = false;
-        $defaults['enable_gallery_zoom']    = false;
-        $defaults['show_detail_icon']       = false;
-        $defaults['disable_related_products']= false;
-        
+        $defaults['shop_layout'] = 'right-sidebar';
+        $defaults['product_per_page'] = 9;
+        $defaults['product_number'] = 3;
+        $defaults['hide_product_sorting'] = false;
+        $defaults['enable_gallery_zoom'] = false;
+        $defaults['show_detail_icon'] = false;
+        $defaults['disable_related_products'] = false;
+
         // Footer.
-        $defaults['copyright_text']     = esc_html__( 'Copyright &copy; All rights reserved.', 'agency-ecommerce' );
+        $defaults['copyright_text'] = esc_html__('Copyright &copy; All rights reserved.', 'agency-ecommerce');
 
         // Breadcrumb.
-        $defaults['breadcrumb_type']    = 'simple';
-        $defaults['breadcrumb_text']    = esc_html__( 'Home', 'agency-ecommerce' );
+        $defaults['breadcrumb_type'] = 'simple';
+        $defaults['breadcrumb_text'] = esc_html__('Home', 'agency-ecommerce');
 
         // Slider.
-        $defaults['slider_status']                  = false;
-        $defaults['enable_fullwidth_slider']        = true;
-        $defaults['button_text_1']                  = esc_html__( 'Shop Now', 'agency-ecommerce' );
-        $defaults['button_text_2']                  = esc_html__( 'Shop Now', 'agency-ecommerce' );
-        $defaults['button_text_3']                  = esc_html__( 'Shop Now', 'agency-ecommerce' );
-        $defaults['button_text_4']                  = esc_html__( 'Shop Now', 'agency-ecommerce' );
-        $defaults['button_text_5']                  = esc_html__( 'Shop Now', 'agency-ecommerce' );
-        $defaults['caption_position_1']             = 'left';
-        $defaults['caption_position_2']             = 'left';
-        $defaults['caption_position_3']             = 'left';
-        $defaults['caption_position_4']             = 'left';
-        $defaults['caption_position_5']             = 'left';
-        $defaults['slider_autoplay_status']         = true;
-        $defaults['slider_adaptive_height']         = false;
-        $defaults['slider_pager_status']            = true;
-        $defaults['slider_transition_effect']       = 'fade';
-        $defaults['slider_transition_delay']        = 3;
-        $defaults['special_menu']        =  false;
+        $defaults['slider_status'] = false;
+        $defaults['enable_fullwidth_slider'] = true;
+        $defaults['button_text_1'] = esc_html__('Shop Now', 'agency-ecommerce');
+        $defaults['button_text_2'] = esc_html__('Shop Now', 'agency-ecommerce');
+        $defaults['button_text_3'] = esc_html__('Shop Now', 'agency-ecommerce');
+        $defaults['button_text_4'] = esc_html__('Shop Now', 'agency-ecommerce');
+        $defaults['button_text_5'] = esc_html__('Shop Now', 'agency-ecommerce');
+        $defaults['caption_position_1'] = 'left';
+        $defaults['caption_position_2'] = 'left';
+        $defaults['caption_position_3'] = 'left';
+        $defaults['caption_position_4'] = 'left';
+        $defaults['caption_position_5'] = 'left';
+        $defaults['slider_autoplay_status'] = true;
+        $defaults['slider_adaptive_height'] = false;
+        $defaults['slider_pager_status'] = true;
+        $defaults['slider_transition_effect'] = 'fade';
+        $defaults['slider_transition_delay'] = 3;
+        $defaults['special_menu'] = false;
 
-        return apply_filters ('agency_ecommerce_default_theme_options', $defaults);
+
+        $font_awesome_icons = array_keys(agency_ecommerce_font_awesome_icon_list());
+
+        $number_of_social_icon = agency_ecommerce_number_of_social_icon();
+        // Social Options //
+        for ($num_icon = 1; $num_icon <= $number_of_social_icon; $num_icon++) {
+
+            $defaults['social_icon_link_' . $num_icon] = "https://mantrabrain.com";
+
+            $defaults['social_icon_' . $num_icon] = $font_awesome_icons[$num_icon];
+        }
+
+        // End of social optiosn
+
+        return apply_filters('agency_ecommerce_default_theme_options', $defaults);
     }
 
 endif;
@@ -122,7 +149,7 @@ endif;
 //=============================================================
 // Get all options in array
 //=============================================================
-if ( ! function_exists( 'agency_ecommerce_get_options' ) ) :
+if (!function_exists('agency_ecommerce_get_options')) :
 
     /**
      * Get all theme options in array.
@@ -131,7 +158,8 @@ if ( ! function_exists( 'agency_ecommerce_get_options' ) ) :
      *
      * @return array Theme options.
      */
-    function agency_ecommerce_get_options() {
+    function agency_ecommerce_get_options()
+    {
 
         $value = array();
 

@@ -1,0 +1,42 @@
+#breadcrumb {
+  float: left;
+  width: 100%;
+  /* background: $primary_color; */
+  padding: 15px 0px;
+  /* color: $white_color; */
+
+  .container > div {
+    overflow: hidden;
+  }
+  padding-bottom: 0;
+}
+
+.breadcrumb-trail {
+  background: #f8f8f8 none repeat scroll 0 0;
+  margin: 20px 0 30px;
+  padding: 10px 20px;
+  li {
+    display: block;
+    float: left;
+    list-style: outside none none;
+    padding-right: 10px;
+    &.trail-item.trail-end::after {
+      display: none;
+    }
+    &::after {
+      content: "/";
+      margin-left: 10px;
+      color: #777;
+    }
+    a {
+      color: #aaa5a5;
+      &:hover {
+        color: $primary_color;
+      }
+    }
+  }
+  .trail-items {
+    margin: 0;
+    padding: 0;
+  }
+}

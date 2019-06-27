@@ -1,0 +1,35 @@
+
+.button.add_to_cart_button, a.button.add_to_cart_button, .woocommerce ul.products li.product .button, .button.add_to_cart_button:hover {
+  -webkit-transition: 0.4s ease-in-out;
+  -moz-transition: 0.4s ease-in-out;
+  -o-transition: 0.4s ease-in-out;
+  transition: 0.4s ease-in-out;
+}
+
+.woocommerce ul.products li.product .button {
+  &:hover, &.added {
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+  }
+}
+
+li.product {
+  &:hover .view-detail-wishlist-wrap, .view-detail-wishlist-wrap {
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+  }
+}
+
+body {
+  &.woocommerce-cart .top-cart-content, &.woocommerce-checkout .top-cart-content {
+    background: transparent;
+  }
+}
+
+#add_payment_method .wc-proceed-to-checkout, .woocommerce-cart .wc-proceed-to-checkout, .woocommerce-checkout .wc-proceed-to-checkout {
+  float: right;
+}

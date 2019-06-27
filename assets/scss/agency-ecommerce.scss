@@ -1,3 +1,4 @@
+@import "components/mixin";
 @import "components/normalize";
 @import "components/typography";
 @import "components/elements";
@@ -6,10 +7,23 @@
 @import "components/accessibility";
 @import "components/alignments";
 @import "components/clearings";
-@import "components/widgets";
-@import "components/content";
 @import "components/infinite-scroll";
+@import "components/content";
+@import "components/widgets";
+
+
 @import "components/media";
 @import "components/custom";
+// WooCommerce Styling //
+@import "components/woocommerce";
+@import "components/woocommerce/woo-main";
+@import "components/woocommerce/woo-single";
+@import "components/woocommerce/woo-checkout";
+@import "components/woocommerce/woo-account";
+@import "components/woocommerce/woo-wishlist";
+// End of WooCommerce Styling
+@import "components/special-menu";
 @import "components/compatibility";
-
+@import "components/sidebars";
+@import "components/responsive";
+@import "components/woocommerce/woo-responsive";

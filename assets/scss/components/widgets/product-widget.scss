@@ -1,0 +1,21 @@
+.widget.agency_ecommerce_woo_products_widget {
+  ul.ae-product-cat-tab {
+    display: inline-block;
+    float: right;
+     padding-right: 3px;
+    li {
+      float: left;
+      background: $white_color;
+      padding: 0 10px;
+      margin: 1px;
+      text-align: center;
+      display: block;
+      cursor: pointer;
+      border: 1px solid #ddd;
+      &.ae-active, &:hover {
+        background: #ddd;
+      }
+    }
+  }
+
+}

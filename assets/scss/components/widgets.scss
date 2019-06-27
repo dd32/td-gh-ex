@@ -1,8 +1,6 @@
 .widget {
-  margin: 30px 0 0;
-  &:first-child {
-    margin: 0;
-  }
+  margin: 5px 0 5px 0;
+
   select {
     max-width: 100%;
   }
@@ -42,7 +40,7 @@
       }
     }
     i {
-      color: #6c50fb;
+      color: $primary_color;
       font-size: 20px;
       font-family: "FontAwesome";
       padding: 5px 15px;
@@ -51,28 +49,22 @@
   }
 }
 
-#home-page-widget-area {
-  section {
-    padding: 80px 0px;
-    margin: 0;
-    float: left;
-    width: 100%;
-  }
+.ae-homepage-wrap {
+
   .widget-title {
     color: #0a0b0c;
     display: block;
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
-    margin-bottom: 35px;
+    padding: 40px 0 15px 0;
     overflow: hidden;
-    padding-left: 0px;
     text-align: center;
     text-transform: uppercase;
-    line-height: 1;
+    line-height: 1em;
     span {
       position: relative;
       &::before {
-        background-color: #fff;
+        background-color: $white_color;
         content: "";
         height: 1px;
         position: absolute;
@@ -83,7 +75,7 @@
         top: 46%;
       }
       &::after {
-        background-color: #fff;
+        background-color: $white_color;
         content: "";
         height: 1px;
         position: absolute;
@@ -97,7 +89,16 @@
   }
   .bg_enabled .widget-title span {
     &::before, &::after {
-      background-color: #6c50fb;
+      background-color: $primary_color;
     }
   }
 }
+
+@import "widgets/default-widgets";
+@import "widgets/featured-slider";
+@import "widgets/advertisement-widget";
+@import "widgets/cta-widget";
+@import "widgets/product-widget";
+@import "widgets/feature-widget";
+@import "widgets/contact-widget";
+@import "widgets/woo-category-widget";

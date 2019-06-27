@@ -40,7 +40,7 @@
   }
 }
 
-#home-page-widget-area {
+.ae-homepage-wrap {
   &::after, &::before {
     content: "";
     display: table;

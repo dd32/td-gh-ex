@@ -58,11 +58,17 @@ if (!class_exists('Agency_Ecommerce_Assets')) :
 
         function admin_scripts($hook){
 
+            if( is_admin() ) {
+                wp_enqueue_style( 'wp-color-picker' );
+                wp_enqueue_script( 'wp-color-picker' );
+            }
             if( 'widgets.php' === $hook ){
 
                 wp_enqueue_script('underscore');
 
                 wp_enqueue_style( 'agency-ecommerce-admin', get_template_directory_uri() . '/assets/admin/css/admin.css', array(), AGENCY_ECOMMERCE_THEME_VERSION );
+
+                wp_enqueue_style( 'agency-ecommerce-admin-font-awesome', get_template_directory_uri() . '/assets/lib/font-awesome/css/font-awesome.css', array(), AGENCY_ECOMMERCE_THEME_VERSION );
 
                 wp_enqueue_media();
 
@@ -70,10 +76,7 @@ if (!class_exists('Agency_Ecommerce_Assets')) :
 
             }
 
-            if( is_admin() ) {
-                wp_enqueue_style( 'wp-color-picker' );
-                wp_enqueue_script( 'wp-color-picker' );
-            }
+
         }
         function scripts()
         {
@@ -108,7 +111,7 @@ if (!class_exists('Agency_Ecommerce_Assets')) :
 
             }
 
-            wp_enqueue_script( 'agency-ecommerce-custom', get_template_directory_uri() . '/assets/js/custom.js', array( 'jquery' ), AGENCY_ECOMMERCE_THEME_VERSION, true );
+            wp_enqueue_script( 'agency-ecommerce-main', get_template_directory_uri() . '/assets/js/agency-ecommerce.js', array( 'jquery' ), AGENCY_ECOMMERCE_THEME_VERSION, true );
 
             if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
                 wp_enqueue_script( 'comment-reply' );

@@ -3,10 +3,10 @@
 --------------------------------------------------------------*/
 
 a {
-  color: #6c50fb;
+  color: $primary_color;
   text-decoration: inherit;
   &:visited, &:hover, &:focus, &:active {
-    color: #6c50fb;
+    color: $primary_color;
   }
   &:focus {
     outline: inherit;
@@ -42,7 +42,7 @@ a {
     margin: 0;
     padding: 0;
     ul {
-      background-color: #ffffff;
+      background-color: $white_color;
       left: -9999px;
       margin: 0;
       min-width: 200px;
@@ -60,8 +60,28 @@ a {
   li {
     position: relative;
     display: inline-block;
-    margin-bottom: 0;
     float: left;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    &.fa {
+      line-height: inherit;
+      &:before {
+        position: inherit;
+        line-height: inherit;
+        display: inline-block;
+        float: left;
+        padding: 21px 0 21px 20px;
+      }
+      a {
+        padding-left: 10px;
+      }
+    }
+    &:hover {
+      &.fa:before {
+        color: $primary_color;
+      }
+    }
   }
   ul {
     > li:hover > ul {
@@ -95,11 +115,10 @@ a {
       }
       a {
         color: #11101d;
-        display: block;
-        font-family: 'Barlow', sans-serif;
+        display: inline-block;
+        font-family: 'Open Sans', sans-serif;
         font-size: 15px;
-        font-weight: normal;
-        padding: 35px 20px;
+        padding: 21px 20px;
         position: relative;
         z-index: 99;
         font-weight: 600;
@@ -117,18 +136,37 @@ a {
       width: 100%;
     }
     li {
-      &.menu-item-has-children ul.sub-menu li a {
-        color: #515151;
-        &:hover {
-          color: #6c50fb;
+      &.menu-item-has-children ul.sub-menu li {
+        a {
+
+          color: #515151;
+          &:hover {
+            color: $primary_color;
+          }
+        }
+        &.fa {
+          a {
+            padding-left: 30px;
+          }
+          &:before {
+            line-height: inherit;
+            display: inline-block;
+            float: left;
+            padding: 10px 0 21px 0;
+            top: 0;
+            margin-right: 0;
+            position: absolute;
+            left: 10px;
+
+          }
         }
       }
       &.current-menu-item a, a:hover {
-        color: #6c50fb;
+        color: $primary_color;
       }
       &.menu-item-has-children {
         ul.sub-menu li.current-menu-item a {
-          color: #6c50fb;
+          color: $primary_color;
         }
         > a::after {
           content: "\f107";
@@ -175,6 +213,7 @@ a {
   .menu-toggle, .dropdown-toggle {
     display: none;
   }
+
 }
 
 #mobile-trigger, #mobile-menu {
@@ -203,12 +242,12 @@ a {
     padding: 0px;
     width: auto;
     line-height: 1.5;
-    background: #6c50fb;
+    background: $primary_color;
     font-size: 1.5;
     font-size: 15px;
-    color: #fff;
+    color: $white_color;
     &:hover {
-      background: #6c50fb;
+      background: $primary_color;
     }
   }
   margin-bottom: 20px;
@@ -271,19 +310,19 @@ a {
   }
   .nav-previous a:hover, .nav-next a:hover {
     background: transparent;
-    color: #6c50fb;
+    color: $primary_color;
   }
 }
 
 .comment-navigation {
   .nav-next a:hover:after, .nav-previous a:hover:before {
-    color: #6c50fb;
+    color: $primary_color;
   }
 }
 
 .nav-links {
   .nav-previous a:hover:before, .nav-next a:hover:after {
-    color: #6c50fb;
+    color: $primary_color;
   }
   border-top: medium none;
   margin-bottom: 20px;
@@ -293,15 +332,15 @@ a {
     border: 1px solid;
     padding: 5px 10px;
     &.current {
-      background: #6c50fb none repeat scroll 0 0;
-      border-color: #6c50fb;
-      color: #ffffff;
+      background: $primary_color none repeat scroll 0 0;
+      border-color: $primary_color;
+      color: $white_color;
     }
   }
   a.page-numbers:hover {
-    background: #6c50fb none repeat scroll 0 0;
-    border-color: #6c50fb;
-    color: #ffffff;
+    background: $primary_color none repeat scroll 0 0;
+    border-color: $primary_color;
+    color: $white_color;
   }
   .page-numbers.dots {
     border: none;

@@ -1,0 +1,32 @@
+.widget.woocommerce.widget_products, .widget.woocommerce.widget_recently_viewed_products {
+
+  .product_list_widget {
+    del span {
+      color: #9d9d9d;
+      margin-right: 5px;
+    }
+    ins {
+      background: none;
+      span {
+        color: $primary_color;
+        background: none;
+      }
+    }
+    .product-title {
+      font-weight: 600;
+    }
+    li {
+      list-style: none;
+      padding: 5px 0;
+      &:before {
+        content: none;
+      }
+    }
+    a {
+      color: #515151;
+      &:hover {
+        color: $primary_color;
+      }
+    }
+  }
+}
