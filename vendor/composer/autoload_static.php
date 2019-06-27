@@ -4,15 +4,61 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit434c6c5e03bc95c0cce9eab8b3167661
+class ComposerStaticInit367d772d3bece1cdc5b29f26db4169ab
 {
     public static $files = array (
-        '0e93c7e34f4dbefc26d54d74abab75f1' => __DIR__ . '/..' . '/benlumia007/backdrop-core/framework.php',
+        '3cb25d838d17e888ff9c0f436747c1e2' => __DIR__ . '/../..' . '/framework/framework.php',
+        'ed4956e90d7e1912f5ab226c42f5d3c4' => __DIR__ . '/../..' . '/framework/functions-filters.php',
+        '60881509ffb29491cf7dc93690a16d46' => __DIR__ . '/../..' . '/framework/functions-scripts.php',
+        'f6f746805878a2137e61200cb750c785' => __DIR__ . '/../..' . '/framework/functions-setup.php',
+    );
+
+    public static $prefixLengthsPsr4 = array (
+        'S' => 
+        array (
+            'SilverQuantum\\' => 14,
+        ),
+        'B' => 
+        array (
+            'Benlumia007\\Backdrop\\' => 21,
+        ),
+    );
+
+    public static $prefixDirsPsr4 = array (
+        'SilverQuantum\\' => 
+        array (
+            0 => __DIR__ . '/../..' . '/framework',
+        ),
+        'Benlumia007\\Backdrop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/benlumia007/backdrop-core/src',
+        ),
+    );
+
+    public static $classMap = array (
+        'Benlumia007\\Backdrop\\Contracts\\Admin\\Admin' => __DIR__ . '/..' . '/benlumia007/backdrop-core/src/Contracts/Admin/Admin.php',
+        'Benlumia007\\Backdrop\\Contracts\\Customize\\Customize' => __DIR__ . '/..' . '/benlumia007/backdrop-core/src/Contracts/Customize/Customize.php',
+        'Benlumia007\\Backdrop\\Contracts\\Displayable' => __DIR__ . '/..' . '/benlumia007/backdrop-core/src/Contracts/Displayable.php',
+        'Benlumia007\\Backdrop\\Contracts\\Renderable' => __DIR__ . '/..' . '/benlumia007/backdrop-core/src/Contracts/Renderable.php',
+        'Benlumia007\\Backdrop\\Contracts\\Viewable' => __DIR__ . '/..' . '/benlumia007/backdrop-core/src/Contracts/Viewable.php',
+        'Benlumia007\\Backdrop\\Entry\\Entry' => __DIR__ . '/..' . '/benlumia007/backdrop-core/src/Entry/Entry.php',
+        'Benlumia007\\Backdrop\\Framework' => __DIR__ . '/..' . '/benlumia007/backdrop-core/src/Framework.php',
+        'Benlumia007\\Backdrop\\Helpers\\Sanitize' => __DIR__ . '/..' . '/benlumia007/backdrop-core/src/Helpers/Sanitize.php',
+        'Benlumia007\\Backdrop\\Menu\\Menu' => __DIR__ . '/..' . '/benlumia007/backdrop-core/src/Menu/Menu.php',
+        'Benlumia007\\Backdrop\\Sidebar\\Sidebar' => __DIR__ . '/..' . '/benlumia007/backdrop-core/src/Sidebar/Sidebar.php',
+        'Benlumia007\\Backdrop\\Site\\Site' => __DIR__ . '/..' . '/benlumia007/backdrop-core/src/Site/Site.php',
+        'Benlumia007\\Backdrop\\View\\View' => __DIR__ . '/..' . '/benlumia007/backdrop-core/src/View/View.php',
+        'SilverQuantum\\Component\\Admin' => __DIR__ . '/../..' . '/framework/Component/Admin.php',
+        'SilverQuantum\\Component\\Customize' => __DIR__ . '/../..' . '/framework/Component/Customize.php',
+        'SilverQuantum\\Control\\ImageRadio' => __DIR__ . '/../..' . '/framework/Control/ImageRadio.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
+            $loader->prefixLengthsPsr4 = ComposerStaticInit367d772d3bece1cdc5b29f26db4169ab::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit367d772d3bece1cdc5b29f26db4169ab::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit367d772d3bece1cdc5b29f26db4169ab::$classMap;
 
         }, null, ClassLoader::class);
     }

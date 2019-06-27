@@ -41,6 +41,9 @@ Not Available at this time
 I would recommended to upgrade at this time. Silver Quantum has been modified where is now using a framework to display its content. Starting at 1.0.0 is the major update. Please note that  I have removed the previous Changlog and starting from 1.0.3 because of the new Framework.
 
 == Changelog ==
+Version: 1.0.6
+- Major update
+
 Version: 1.0.5
 - Fixed 404.php for primary sidebar
 - update blog custom query display
@@ -70,7 +73,5 @@ Designer: Carrois Apostrophe
 License: Sil Open Font License
 Source: https://fonts.google.com/specimen/Fira+Sans
 
-Dimhou (https://pixabay.com/en/users/Dimhou-5987327/)
-Source: https://pixabay.com/en/sea-water-quiet-horizon-landscape-3652697/
-License: https://pixabay.com/en/service/terms/#usage
-===========================================================================================================
+== Screenshot ==
+Header Image - CCO (Benjamin Lu)

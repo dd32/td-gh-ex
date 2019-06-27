@@ -6,5 +6,8 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    '0e93c7e34f4dbefc26d54d74abab75f1' => $vendorDir . '/benlumia007/backdrop-core/framework.php',
+    '3cb25d838d17e888ff9c0f436747c1e2' => $baseDir . '/framework/framework.php',
+    'ed4956e90d7e1912f5ab226c42f5d3c4' => $baseDir . '/framework/functions-filters.php',
+    '60881509ffb29491cf7dc93690a16d46' => $baseDir . '/framework/functions-scripts.php',
+    'f6f746805878a2137e61200cb750c785' => $baseDir . '/framework/functions-setup.php',
 );

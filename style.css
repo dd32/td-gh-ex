@@ -1,94 +1,569 @@
 /**
- * Silver Quantum - style.css
- ************************************************************************************************************************
- * Theme Name:      Silver Quantum
- * Theme URI:       https://benjlu.com/portfolio/silver-quantum
- * Author:          Benjamin Lu
- * Author URI:      https://benjlu.com
- * Description:     Silver Quantum has been converted into a responsive theme that looks great on smartphones and tablets. This theme offers several features such as custom header, left and right sidebars, featured images and more. The Mobile Menu is slightly different from other themes. The mobile menu has been created at the bottom left 
-corner that helps users to navigation easier.
- * License:         GNU General Public License v2.0 or later
- * License URI:     https://www.gnu.org/licenses/gpl-2.0.html
- * Tags:            grid-layout, left-sidebar, one-column, right-sidebar, two-columns, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
- * Version:         1.0.5
- * Text Domain:     silver-quantum
- ************************************************************************************************************************
+ * Theme Name:     Silver Quantum
+ * Theme URI:      https://github.com/benlumia007/initiator
+ * Author:         Benjamin Lu
+ * Author URI:     https://github.com/benlumia007
+ * Description:    Initiator is a starter theme that uses backdrop-core that automatically loads your theme with all the features needed.
+ * License:        GNU General Public License v2.0 or later
+ * License URI:    https://www.gnu.org/licenses/gpl-2.0.html
+ * Tags:           grid-layout, left-sidebar, one-column, right-sidebar, two-columns, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
+ * Version:        1.0.6
+ * Text Domain:    silver-quantum
  */
 
 /**
- ************************************************************************************************************************
  * Danger Zone
- ************************************************************************************************************************
+ *
  * Please do not make any modifications directly to this file nor any files within the theme, you will lose all modifications
  * when the theme is next updated. Please consider using a child theme based on this theme so that all of your modifications
  * wil be saved when the theme is updated. This theme's styles will automatically loaded for you when you activate this theme.
- ************************************************************************************************************************
  */
 
 /**
- ************************************************************************************************************************
  *  Table of Content
- ************************************************************************************************************************
- *  1.0 - Typography
- *  2.0 - Elements
- *  3.0 - Forms
- *  4.0 - Clearings
- *  5.0 - Navigation (Primary)
- *  6.0 - Navigation (Secondary)
- *  7.0 - Navigation (Pagination)
- *  8.0 - Navigation (Social)
- *  9.0 - Basic Strucutre (Header)
- * 10.0 - Basic Structure (Content)
- * 11.0 - Basic Structure (Aside)
- * 12.0 - Basic Structure (Footer)
- * 13.0 - Content (Posts and Pages)
- * 14.0 - Content (Comments)
- * 15.0 - Content (Archives)
- * 16.0 - Content (Search and 404)
- * 17.0 - Content (Post Formats)
- * 18.0 - Widgets
- * 19.0 - Grid Systems
- * 20.0 - Media Queries (Mobile Small 30em (480px))
- * 21.0 - Media Queries (Mobile Small 37.5em (600px))
- * 22.0 - Media Queries (Mobile Medium 48.688em (667px))
- * 23.0 - Media Queries (Mobile Large 46em (736px))
- * 24.0 - Media Queries (Tablet Small 48em (768px))
- * 25.0 - Media Queries (Tablet Large 64em (1024px))
- * 26.0 - Media Queries (Desktop 73.125em 1170px))
- ************************************************************************************************************************
+ *
+ *  1.0 - Normalize Reset
+ *  2.0 - Typography
+ *  3.0 - Elements
+ *  4.0 - Forms
+ *  5.0 - Alignments
+ *  6.0 - Accessibility
+ *  7.0 - Clearings
+ *  8.0 - Navigation ( Links )
+ *  9.0 - Navigation ( Primary )
+ * 10.0 - Navigation ( Secondary )
+ * 11.0 - Navigation ( Pagination )
+ * 12.0 - Navigation ( Social )
+ * 13.0 - Basic Strucutre ( Header )
+ * 14.0 - Basic Structure ( Content )
+ * 15.0 - Basic Structure ( Aside )
+ * 16.0 - Basic Structure ( Footer )
+ * 17.0 - Content ( Posts and Pages )
+ * 18.0 - Content ( Comments )
+ * 19.0 - Content ( Archives )
+ * 20.0 - Content ( Search and 404 )
+ * 21.0 - Content ( Post Formats )
+ * 22.0 - Widgets
+ * 23.0 - Captions
+ * 24.0 - Galleries
+ * 25.0 - Media Queries (Mobile Small 30em ( 480px ) )
+ * 26.0 - Media Queries (Mobile Small 37.5em ( 600px ) )
+ * 27.0 - Media Queries (Mobile Medium 48.688em ( 667px ) )
+ * 28.0 - Media Queries (Mobile Large 46em ( 736px ) )
+ * 29.0 - Media Queries (Tablet Small 48em ( 768px ) )
+ * 30.0 - Media Queries (Tablet Large 64em ( 1024px ) )
+ * 31.0 - Media Queries (Desktop 73.125em ( 1170px ) )
  */
 
- /**
- ************************************************************************************************************************
- *  1.0 - Typography
- ************************************************************************************************************************
+/**
+ *  1.0 - Normalize Reset
+ */
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+
+/* Document
+   ========================================================================== */
+
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
  */
 
- /**
- ************************************************************************************************************************
- *  2.0 - Elements
- ************************************************************************************************************************
- */
- body {
-     background: #cccccc;
- }
+ html {
+	line-height: 1.15; /* 1 */
+	-webkit-text-size-adjust: 100%; /* 2 */
+  }
+  
+  /* Sections
+	 ========================================================================== */
+  
+  /**
+   * Remove the margin in all browsers.
+   */
+  
+  body {
+	margin: 0;
+  }
+  
+  /**
+   * Render the `main` element consistently in IE.
+   */
+  
+  main {
+	display: block;
+  }
+  
+  /**
+   * Correct the font size and margin on `h1` elements within `section` and
+   * `article` contexts in Chrome, Firefox, and Safari.
+   */
+  
+  h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+  }
+  
+  /* Grouping content
+	 ========================================================================== */
+  
+  /**
+   * 1. Add the correct box sizing in Firefox.
+   * 2. Show the overflow in Edge and IE.
+   */
+  
+  hr {
+	box-sizing: content-box; /* 1 */
+	height: 0; /* 1 */
+	overflow: visible; /* 2 */
+  }
+  
+  /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+  
+  pre {
+	font-family: monospace, monospace; /* 1 */
+	font-size: 1em; /* 2 */
+  }
+  
+  /* Text-level semantics
+	 ========================================================================== */
+  
+  /**
+   * Remove the gray background on active links in IE 10.
+   */
+  
+  a {
+	background-color: transparent;
+  }
+  
+  /**
+   * 1. Remove the bottom border in Chrome 57-
+   * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+   */
+  
+  abbr[title] {
+	border-bottom: none; /* 1 */
+	text-decoration: underline; /* 2 */
+	text-decoration: underline dotted; /* 2 */
+  }
+  
+  /**
+   * Add the correct font weight in Chrome, Edge, and Safari.
+   */
+  
+  b,
+  strong {
+	font-weight: bolder;
+  }
+  
+  /**
+   * 1. Correct the inheritance and scaling of font size in all browsers.
+   * 2. Correct the odd `em` font sizing in all browsers.
+   */
+  
+  code,
+  kbd,
+  samp {
+	font-family: monospace, monospace; /* 1 */
+	font-size: 1em; /* 2 */
+  }
+  
+  /**
+   * Add the correct font size in all browsers.
+   */
+  
+  small {
+	font-size: 80%;
+  }
+  
+  /**
+   * Prevent `sub` and `sup` elements from affecting the line height in
+   * all browsers.
+   */
+  
+  sub,
+  sup {
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
+  }
+  
+  sub {
+	bottom: -0.25em;
+  }
+  
+  sup {
+	top: -0.5em;
+  }
+  
+  /* Embedded content
+	 ========================================================================== */
+  
+  /**
+   * Remove the border on images inside links in IE 10.
+   */
+  
+  img {
+	border-style: none;
+  }
+  
+  /* Forms
+	 ========================================================================== */
+  
+  /**
+   * 1. Change the font styles in all browsers.
+   * 2. Remove the margin in Firefox and Safari.
+   */
+  
+  button,
+  input,
+  optgroup,
+  select,
+  textarea {
+	font-family: inherit; /* 1 */
+	font-size: 100%; /* 1 */
+	line-height: 1.15; /* 1 */
+	margin: 0; /* 2 */
+  }
+  
+  /**
+   * Show the overflow in IE.
+   * 1. Show the overflow in Edge.
+   */
+  
+  button,
+  input { /* 1 */
+	overflow: visible;
+  }
+  
+  /**
+   * Remove the inheritance of text transform in Edge, Firefox, and IE.
+   * 1. Remove the inheritance of text transform in Firefox.
+   */
+  
+  button,
+  select { /* 1 */
+	text-transform: none;
+  }
+  
+  /**
+   * Correct the inability to style clickable types in iOS and Safari.
+   */
+  
+  button,
+  [type="button"],
+  [type="reset"],
+  [type="submit"] {
+	-webkit-appearance: button;
+  }
+  
+  /**
+   * Remove the inner border and padding in Firefox.
+   */
+  
+  button::-moz-focus-inner,
+  [type="button"]::-moz-focus-inner,
+  [type="reset"]::-moz-focus-inner,
+  [type="submit"]::-moz-focus-inner {
+	border-style: none;
+	padding: 0;
+  }
+  
+  /**
+   * Restore the focus styles unset by the previous rule.
+   */
+  
+  button:-moz-focusring,
+  [type="button"]:-moz-focusring,
+  [type="reset"]:-moz-focusring,
+  [type="submit"]:-moz-focusring {
+	outline: 1px dotted ButtonText;
+  }
+  
+  /**
+   * Correct the padding in Firefox.
+   */
+  
+  fieldset {
+	padding: 0.35em 0.75em 0.625em;
+  }
+  
+  /**
+   * 1. Correct the text wrapping in Edge and IE.
+   * 2. Correct the color inheritance from `fieldset` elements in IE.
+   * 3. Remove the padding so developers are not caught out when they zero out
+   *    `fieldset` elements in all browsers.
+   */
+  
+  legend {
+	box-sizing: border-box; /* 1 */
+	color: inherit; /* 2 */
+	display: table; /* 1 */
+	max-width: 100%; /* 1 */
+	padding: 0; /* 3 */
+	white-space: normal; /* 1 */
+  }
+  
+  /**
+   * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+   */
+  
+  progress {
+	vertical-align: baseline;
+  }
+  
+  /**
+   * Remove the default vertical scrollbar in IE 10+.
+   */
+  
+  textarea {
+	overflow: auto;
+  }
+  
+  /**
+   * 1. Add the correct box sizing in IE 10.
+   * 2. Remove the padding in IE 10.
+   */
+  
+  [type="checkbox"],
+  [type="radio"] {
+	box-sizing: border-box; /* 1 */
+	padding: 0; /* 2 */
+  }
+  
+  /**
+   * Correct the cursor style of increment and decrement buttons in Chrome.
+   */
+  
+  [type="number"]::-webkit-inner-spin-button,
+  [type="number"]::-webkit-outer-spin-button {
+	height: auto;
+  }
+  
+  /**
+   * 1. Correct the odd appearance in Chrome and Safari.
+   * 2. Correct the outline style in Safari.
+   */
+  
+  [type="search"] {
+	-webkit-appearance: textfield; /* 1 */
+	outline-offset: -2px; /* 2 */
+  }
+  
+  /**
+   * Remove the inner padding in Chrome and Safari on macOS.
+   */
+  
+  [type="search"]::-webkit-search-decoration {
+	-webkit-appearance: none;
+  }
+  
+  /**
+   * 1. Correct the inability to style clickable types in iOS and Safari.
+   * 2. Change font properties to `inherit` in Safari.
+   */
+  
+  ::-webkit-file-upload-button {
+	-webkit-appearance: button; /* 1 */
+	font: inherit; /* 2 */
+  }
+  
+  /* Interactive
+	 ========================================================================== */
+  
+  /*
+   * Add the correct display in Edge, IE 10+, and Firefox.
+   */
+  
+  details {
+	display: block;
+  }
+  
+  /*
+   * Add the correct display in all browsers.
+   */
+  
+  summary {
+	display: list-item;
+  }
+  
+  /* Misc
+	 ========================================================================== */
+  
+  /**
+   * Add the correct display in IE 10+.
+   */
+  
+  template {
+	display: none;
+  }
+  
+  /**
+   * Add the correct display in IE 10.
+   */
+  
+  [hidden] {
+	display: none;
+  }
 
- /**
- ************************************************************************************************************************
- *  3.0 - Forms
- ************************************************************************************************************************
+/**
+ *  2.0 - Typography
+ */
+h1 {
+	display: block;
+	font-family: 'Fira Sans', serif;
+	font-size: 2em;
+	font-weight: 700;
+	margin: 0.67em 0;
+}
+
+h2 {
+	display: block;
+	font-family: 'Fira Sans', serif;
+	font-size: 1.5em;
+	font-weight: 700;
+	margin: 0.83em 0;
+}
+
+h3 {
+	display: block;
+	font-family: 'Fira Sans', serif;
+	font-size: 1.17em;
+	font-weight: 700;
+	margin: 1em 0;
+}
+
+h4 {
+	display: block;
+	font-family: 'Fira Sans', serif;
+	font-size: 1em;
+	font-weight: 700;
+	margin: 1.33em 0;
+}
+
+h5 {
+	display: block;
+	font-family: 'Fira Sans', serif;
+	font-size: .83em;
+	font-weight: 700;
+	margin: 1.67em 0;
+}
+
+h6 {
+	display: block;
+	font-family: 'Fira Sans', serif;
+	font-size: .67em;
+	font-weight: 700;
+	margin: 2.33em 0;
+}
+
+	
+/**
+ *  3.0 - Elements
+ */
+html {
+	box-sizing: border-box;
+}
+
+*,
+*:before,
+*:after {
+	box-sizing: inherit;
+}
+
+body {
+	background: #cccccc;
+	font-family: 'Merriweather', serif;
+}
+
+img {
+	height: auto;
+	max-width: 100%;
+}
+
+figure {
+    margin: 0;
+}
+
+
+/**
+ *  4.0 - Forms
  */
 
- /**
- ************************************************************************************************************************
- *  4.0 - Clearings
- ************************************************************************************************************************
+/**
+ *  5.0 - Alignments
  */
+.alignleft {
+	float: left;
+	margin-right: 1.5em;
+}
 
- /**
- ************************************************************************************************************************
- *  5.0 - Navigation (Primary)
- ************************************************************************************************************************
+.alignright {
+	float: right;
+	margin-left: 1.5em;
+}
+
+.aligncenter {
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+/**
+ *  6.0 - Accessibility
+ */
+.screen-reader-text {
+	clip: rect(0.063em, 0.063em, 0.063em, 0.063em);
+	height: 0.063em;
+	overflow: hidden;
+	position: absolute !important;
+	width: 0.063em;
+}
+
+.screen-reader-text:focus {
+	background: #f1f1f1;
+	border-radius: 0.188em;
+	box-shadow: 0 0 0.125em 0.125em;
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 0.875em;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 0.938em 1.5em 0.938em;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+}
+
+/**
+ *  7.0 - Clearings
+ */
+.site-container:before,
+.site-container:after,
+.site-content:before,
+.site-content:after {
+	clear: both;
+	content: "";
+	display: table;
+}
+
+/**
+ *  8.0 - Navigation (Links)
+ */
+a {
+	color: #111111;
+	text-decoration: none;
+}
+
+/**
+ *  9.0 - Navigation (Primary)
  */
  .primary-navigation {
     display: block;
@@ -164,11 +639,11 @@ corner that helps users to navigation easier.
 .dropdown-toggle {
     background: #000000;
     border: 0.063em solid #ffffff;
-	-webkit-box-sizing: content-box;
-	-moz-box-sizing: content-box;
-	box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
     color: #ffffff;
-    font-family: 'fontawesome';
+    font-family: 'Font Awesome 5 Free';
     height: 2em;
     padding: 0;
     position: absolute;
@@ -251,207 +726,340 @@ corner that helps users to navigation easier.
 	text-decoration: underline;
 }
 
-
- /**
- ************************************************************************************************************************
- *  6.0 - Navigation (Secondary)
- ************************************************************************************************************************
+/**
+ * 10.0 - Navigation (Secondary)
  */
 
- /**
- ************************************************************************************************************************
- *  7.0 - Navigation (Pagination)
- ************************************************************************************************************************
+/**
+ * 11.0 - Navigation (Pagination)
  */
+ .pagination {
+    text-align: center;
+}
 
- /**
- ************************************************************************************************************************
- *  8.0 - Navigation (Social)
- ************************************************************************************************************************
+.page-numbers {
+    border: 0.063em solid #c3c3c3;
+    color: #333333;
+	display: inline-block;
+	padding: 0.5em 1em;
+	text-decoration: none;
+}
+
+.page-numbers:hover {
+	background: #eeeeee;
+	color: #000000;
+	border-color: #cccccc;
+}
+
+.page-number:hover a {
+    color: #ffffff;
+}
+
+.page-numbers.current {
+    background: #eeeeee;
+    color: #000000;
+}
+
+.page-links {
+	margin: 1.125em 0;
+	text-align: center;
+}
+
+.page-links > .post-page-numbers.current {
+	background: #eeeeee;
+	border: 0.063em solid #cccccc;
+	color: #000000;
+	padding: 0.5em 1em;
+}
+
+.page-links > .post-page-numbers {
+	background: #ffffff;
+	border: 0.063em solid #cccccc;
+	color: #000000;
+	padding: 0.5em 1em;
+}
+
+.page-links > .post-page-numbers:hover {
+	background: #eeeeee;
+	border: 0.063em solid #cccccc;
+	color: #000000;
+	padding: 0.5em 1em;
+}
+
+
+.posts-navigation,
+.post-navigation {
+    background: #ffffff;
+    clear: both;
+}
+
+.posts-navigation .nav-links .nav-previous,
+.post-navigation .nav-links .nav-previous {
+    float: left;
+    margin: 0.5em 0;
+}
+
+.posts-navigation .nav-links .nav-next,
+.post-navigation .nav-links .nav-next {
+    float: right;
+    margin: 0.5em 0;
+}
+
+.posts-navigation .nav-links .nav-previous .post-previous,
+.post-navigation .nav-links .nav-previous .post-previous {
+    display: block;
+    font-size: 0.9375em;
+    font-weight: 700;
+    text-align: left;
+}
+
+.posts-navigation .nav-links .nav-next .post-next,
+.post-navigation .nav-links .nav-next .post-next {
+    display: block;
+    font-size: 0.9375em;
+    font-weight: 700;
+    text-align: right
+}
+
+.posts-navigation .nav-links .nav-previous .post-title,
+.post-navigation .nav-links .nav-previous .post-title {
+    font-size: 0.813em;
+}
+
+.posts-navigation .nav-links .nav-next .post-title,
+.post-navigation .nav-links .nav-next .post-title {
+    font-size: 0.813em;
+}
+
+.link-pages {
+    text-align: center; 
+}
+
+/**
+ * 12.0 - Navigation (Social)
  */
+ .site-social {
+	margin: 0.5em 0 0 0;
+	padding: 0.5em 0 0 0;
+}
 
- /**
- ************************************************************************************************************************
- *  9.0 - Basic Strucutre (Header)
- ************************************************************************************************************************
+.menu-social ul {
+    text-align: center;
+    list-style: none;
+}
+
+.menu-social ul li {
+    position: relative;
+    display:  inline-block;
+}
+
+.menu-social li a:before {
+    color: #999999;
+    content: '\f08e';
+    display: inline-block;
+	font-family: 'Font Awesome 5 Brands';
+    font-size: 1.250em;
+    padding: 0 0.250em;
+    vertical-align: top;
+    -webkit-font-smoothing: antialiased;
+}
+
+.menu-social li a[href*="dribbble.com"]::before { content: '\f17d'; }
+.menu-social li a[href*="facebook.com"]::before { content: '\f082'; }
+.menu-social li a[href*="flickr.com"]::before { content: '\f16e'; }
+.menu-social li a[href*="foursquare.com"]::before { content: '\f180'; }
+.menu-social li a[href*="github.com"]::before { content: '\f09b'; }
+.menu-social li a[href*="plus.google.com"]::before { content: '\f0d5'; }
+.menu-social li a[href*="instagram.com"]::before { content: '\f16d'; }
+.menu-social li a[href*="jsfiddle.com"]::before { content: '\f1cc'; }
+.menu-social li a[href*="linkedin.com"]::before { content: '\f0e1'; }
+.menu-social li a[href*="pinterest.com"]::before { content: '\f0d2'; }
+.menu-social li a[href*="reddit.com"]::before { content: '\f1a1'; }
+.menu-social li a[href*="soundcloud.com"]::before { content: '\f1be'; }
+.menu-social li a[href*="stackoverflow.com"]::before { content: '\f16c'; }
+.menu-social li a[href*="tumblr.com"]::before { content: '\f173'; }
+.menu-social li a[href*="twitter.com"]::before { content: '\f099'; }
+.menu-social li a[href*="vimeo.com"]::before { content: '\f194'; }
+.menu-social li a[href*="vine.co"]::before { content: '\f1ca'; }
+.menu-social li a[href*="yelp.com"]::before { content: '\f1e9'; }
+.menu-social li a[href*="youtube.com"]::before { content: '\f167'; }
+.menu-social li a[href*="wordpress.org"]::before { content: '\f19a'; }
+
+.menu-items {
+	margin: 0;
+	padding: 0;
+}
+ 
+/**
+ * 13.0 - Basic Strucutre (Header)
  */
  .site-container {
-    background: #ffffff;
-    border-left: 0.063em solid #999999;
-    border-right: 0.063em solid #999999;
-    margin: 0 auto;
-    max-width: 73.125em;
- }
+	background: #ffffff;
+	margin: 0 auto;
+	max-width: 73.125em;
+}
 
- .site-branding {
-     text-align: center;
- }
+.site-header {
+	padding: 1.125em;
+	text-align: center;
+}
 
- .site-branding .site-title,
- .site-branding .site-description {
-    margin: 0;
-    padding: 0;
- }
+.site-header .site-branding .site-title,
+.site-header .site-branding .site-description {
+	margin: 0;
+	padding: 0;
+}
 
- .site-branding .site-title a {
-    color: #ffffff;
-    font-size: 1.313em;
- }
+.site-header .site-branding .site-title a {
+	color: #ffffff;
+	font-size: 1.250em;
+	text-decoration: none;
+	text-shadow: 2px 2px #000000;
+}
 
- .site-branding .site-description {
-     color: #ffffff;
- }
+.site-header .site-branding .site-description {
+	color: #ffffff;
+	text-shadow: 2px 2px #000000;
+}
 
- .site-content {
-     margin: 1.125em;
- }
+.site-content {
+	padding: 1.125em;
+}
 
- /**
- ************************************************************************************************************************
- * 10.0 - Basic Structure (Content)
- ************************************************************************************************************************
+/**
+ * 14.0 - Basic Structure (Content)
  */
- .left-sidebar .content-area {
-    float: right;
-    width: 71.604938272%;
+.left-sidebar .content-area {
+	float: right;
+	width: 69.230769231%;
 }
 
 .right-sidebar .content-area {
-    float: left;
-    width: 71.604938272%;
+	float: left;
+	width: 69.230769231%;
 }
 
- /**
- ************************************************************************************************************************
- * 11.0 - Basic Structure (Aside)
- ************************************************************************************************************************
+/**
+ * 15.0 - Basic Structure (Aside)
  */
- .left-sidebar .widget-area {
-    float: left;
-    width: 25.485008818%;
+.left-sidebar .widget-area {
+	float: left;
+	width: 29.230769231%
 }
 
 .right-sidebar .widget-area {
-    float: right;
-    width: 25.485008818%;
+	float: right;
+	width: 29.230769231%
 }
 
- /**
- ************************************************************************************************************************
- * 12.0 - Basic Structure (Footer)
- ************************************************************************************************************************
+/**
+ * 16.0 - Basic Structure (Footer)
  */
  .site-footer {
-    padding: 0.5em;
-    text-align: center;
+	line-height: 1.5em;
+	padding: 1.125em;
+	text-align: center;
 }
 
-.site-info {
-    font-size: 0.875em;
-    line-height: 1.5em;
+.site-footer .site-info {
+	color: #111111;
 }
 
- /**
- ************************************************************************************************************************
- * 13.0 - Content (Posts and Pages)
- ************************************************************************************************************************
+.site-footer .site-info a {
+	color: #111111;
+}
+
+
+/**
+ * 17.0 - Content (Posts and Pages)
  */
- .content-area .post:after {
-    border: 0.063em solid #eeeeee;
-    content: "";
+ .content-area .post .entry-header .sticky-post {
+	font-weight: bold;
+}
+
+.content-area .post {
+	margin-bottom: 1.125em;
+}
+
+.content-area .post .entry-header {
+	text-align: center;
+}
+
+.content-area .post .entry-header .entry-title {
+	color: #000000;
+	margin: 0 0 0.125em 0;
+	padding: 0;
+}
+
+.content-area .post .entry-header .entry-metadata .fa-user {
+	color: #111111;
+	padding-right: 0.313em;
+}
+
+.content-area .post .entry-header .entry-metadata .fa-calendar-alt,
+.content-area .post .entry-header .entry-metadata .fa-comment {
+	color: #111111;
+	padding: 0 0.313em 0 0.688em;
+}
+
+
+.content-area .post .entry-header .entry-metadata .by-author a,
+.content-area .post .entry-header .entry-metadata .entry-comments a {
+	color: #111111;
+}
+
+.content-area .post .entry-header .entry-metadata .by-author a:hover,
+.content-area .post .entry-header .entry-metadata .entry-comments a:hover {
+	color: #000000;
+	transition: ease-in-out 0.5s;
+}
+
+.content-area .post .entry-taxonomies .cat-link,
+.content-area .post .entry-taxonomies .tag-link {
     display: block;
-    margin: 2.250em  auto;
-    width: 300px;
- }
+    font-size: 14px;
+    margin-bottom: 5px;
+}
 
- .content-area .post .entry-header,
- .content-area .page .entry-header {
-     text-align: center;
- }
+.content-area .post .entry-taxonomies {
+	text-align: center;
+}
 
- .content-area .post .entry-header .entry-title {
-     margin: 0;
-     padding: 0;
- }
+.content-area .post .entry-taxonomies .tag-list,
+.content-area .post .entry-taxonomies .cat-list {
+    font-size: 12px;
+}
 
- .content-area .post .entry-content,
- .content-area .post .entry-excerpt,
- .content-area .page .entry-content,
- .content-area .page .entry-excerpt {
-     line-height: 1.7em;
- }
- 
- .content-area .post .entry-metadata,
- .content-area .attachment .entry-metadata {
-     background: #eeeeee;
-     border-left: 5px solid #21759b;
-     margin: 1.250em 0;
-     padding: 1em;
-     text-align: center;
- }
- 
- .content-area .post .entry-metadata .avatar,
- .content-area .attachment .entry-metadata .avatar {
-     border: 0.500em solid #cccccc;
-     border-radius: 50%;
-     display: block;
-     margin: 0 auto;
- }
- 
- .content-area .post .entry-metadata .by-author,
- .content-area .attachment .entry-metadata .by-author {
-     display: block;
-     font-size: 1.250em;
- }
- 
- .content-area .post .entry-metadata .published,
- .content-area .post .entry-metadata .entry-comments,
- .content-area .attachment .entry-metadata .published,
- .content-area .attachment .entry-metadata .entry-comments {
-     display: block;
-     padding: 0.063em 0;
-     font-size: 12px;
- }
- .content-area .post .entry-taxonomies {
-     margin: 1.125em 0;
- }
- .content-area .post .entry-taxonomies .cat-link,
- .content-area .post .entry-taxonomies .tag-link {
-     display: block;
-     font-size: 14px;
-     margin-bottom: 5px;
- }
- 
- .content-area .post .entry-taxonomies .tag-link .fa-tags {
-     margin: 0;
- }
- 
- .content-area .post .entry-taxonomies .tag-list,
- .content-area .post .entry-taxonomies .cat-list {
-     font-size: 12px;
- }
- 
- .content-area .post .entry-timestamp .updated:not(.published) {
-     display: none;
- }
- 
- .content-area .sticky:before {
-    content: "\f08d";
-    font-family: 'FontAwesome';
- }
+.content-area .entry-content,
+.content-area .entry-excerpt {
+	line-height: 1.8em;
+}
 
- /**
- ************************************************************************************************************************
- * 14.0 - Content (Comments)
- ************************************************************************************************************************
+.content-area .entry-content a,
+.content-area .entry-excerpt a {
+	color: #000080;
+}
+
+.content-area .entry-content .read-more,
+.content-area .entry-excerpt .read-more {
+	color: #000080;
+	font-style: italic;
+}
+
+.sticky {
+	
+}
+
+/**
+ * 18.0 - Content (Comments)
  */
  .comments-area {
-    margin: 1.125em 0;    
+    margin: 0.938em 0;  
 }
 
 .comments-title {
-    margin: 1.125em;
-    text-align: center;
+	margin-top: 0;
+	text-align: center;
 }
 
 .comment-list {
@@ -478,7 +1086,7 @@ corner that helps users to navigation easier.
 }
 
 .comment-author .fn {
-    font-size: 1.313em;
+    font-size: 1em;
     margin: 0;
     font-weight: bold;
     font-style: normal;
@@ -486,14 +1094,15 @@ corner that helps users to navigation easier.
     padding: 0;
 }
 
-.comment-meta {
-    font-size: 12px;
+.comment-metadata {
+	font-size: 0.750em;
 }
 
 .comment-content {
-    display: block;
-    line-height: 1.7em;
-    margin: 2.625em 0.5em 0 0.5em;
+	display: block;
+	font-size: 0.938em;
+	line-height: 1.7em;
+	margin-top: 1.5em;
 }
 
 
@@ -502,7 +1111,7 @@ corner that helps users to navigation easier.
 }
 
 .reply {
-	margin-bottom: 1.5em;
+	font-size: 0.875em;
 	text-align: right;
 }
 
@@ -552,7 +1161,8 @@ ol.children {
 }
 
 .bypostauthor > .comment-body {
-    background: #f0f0f0; 
+	background: #cccccc;
+	color: #000000; 
     padding: 0.625em;
     position: relative;
 }
@@ -565,6 +1175,10 @@ ol.children {
 
 .comment-form p {
     margin: 0 0 1.5em 0;
+}
+
+.comment-form .logged-in-as {
+	font-size: 0.813em;
 }
 
 .required {
@@ -590,7 +1204,7 @@ ol.children {
 }
 
 .comment-form .comment-form-author:before {
-    font-family: 'fontawesome';
+    font-family: 'Font Awesome 5 Free';
     content: "\f007";
     float: left;
     margin-left: 0.063em;
@@ -603,7 +1217,7 @@ ol.children {
 }
 
 .comment-form .comment-form-email:before {
-    font-family: 'fontawesome';
+    font-family: 'Font Awesome 5 Free';
     content: "\f0e0";
     float: left;
     margin-left: 0.063em;
@@ -612,12 +1226,13 @@ ol.children {
 
 
 .comment-form .comment-form-url {
+	clear: both;
     margin-bottom: 1.3em;
     width: 100%;
 }
 
 .comment-form .comment-form-url:before {
-    font-family: 'fontawesome';
+    font-family: 'Font Awesome 5 Free';
     content: "\f0ac";
     float: left;
     margin-left: 0.063em;
@@ -634,7 +1249,7 @@ ol.children {
 }
 
 .comment-form .comment-form-comment:before {
-    font-family: 'fontawesome';
+    font-family: 'Font Awesome 5 Free';
     content: "\f075";
     float: left;
     margin-left: 0.063em;
@@ -645,7 +1260,8 @@ ol.children {
     border: 0.063em solid #cccccc;
     font-family: 'Merriewather', serif;
     font-size: 1em;
-    min-height: 12.375em;
+	min-height: 12.375em;
+	padding: 0.5em;
     width: 100%;
 }
 
@@ -655,7 +1271,7 @@ ol.children {
     font-family: 'Merriewather', serif;
     font-size: 1em;
     padding: 0.6em;
-    width: 23em;
+    width: 20.625em;
 }
 
 .comment-form .comment-form-url input[type="url"] {
@@ -688,44 +1304,35 @@ p.comment-awaiting-moderation {
     margin-right: 0.250em;
 }
 
- /**
- ************************************************************************************************************************
- * 15.0 - Content (Archives)
- ************************************************************************************************************************
+/**
+ * 19.0 - Content (Archives)
  */
  .archive-header {
-    text-align: center;
- }
+	text-align: center;
+}
 
- .archive-header:after {
-    border: 0.063em solid #eeeeee;
-    content: "";
-    display: block;
-    margin: 2em auto 2.250em  auto;
-    width: 300px;
- }
+.archive-header .archive-title {
+	display: block;
+	margin-top: 0;
+}
 
- .archive-header .archive-title {
-    margin : 0;
-    padding: 0;
- }
+.archive-header .archive-description {
+	display: block;
+	font-family: 'Merriweather', serif;
+	font-size: 0.5em;
+	font-weight: normal;
+}
 
- /**
- ************************************************************************************************************************
- * 16.0 - Content (Search and 404)
- ************************************************************************************************************************
+/**
+ * 20.0 - Content (Search and 404)
  */
 
- /**
- ************************************************************************************************************************
- * 17.0 - Content (Post Formats)
- ************************************************************************************************************************
+/**
+ * 21.0 - Content (Post Formats)
  */
 
- /**
- ************************************************************************************************************************
- * 18.0 - Widgets
- ************************************************************************************************************************
+/**
+ * 22.0 - Widgets
  */
  .widget-area .search-form:before,
 .widget-area .search-form:after {
@@ -763,6 +1370,7 @@ p.comment-awaiting-moderation {
 }
 
 .widget-area .widget {
+	line-height: 1.5em;
     margin-bottom: 2.250em;
     font-size: 0.875em;
 }
@@ -892,141 +1500,55 @@ p.comment-awaiting-moderation {
 }
 
 /**
- ************************************************************************************************************************
- * 19.0 - Grid Systems
- ************************************************************************************************************************
+ * 23.0 - Captions
  */
- .custom-blog {
-     display: grid;
-     grid-template-columns: 1fr 1fr;
-     grid-gap: 1.125em;
- }
-
- .blog-header {
-     text-align: center;
- }
-
- .blog-header .blog-title {
-     margin: 0;
-     padding: 0;
- }
-
- .blog-items .entry-excerpt {
-     line-height: 1.7em;
- }
-
- /**
- ************************************************************************************************************************
- * 20.0 - Media Queries (Mobile Small 30em (480px))
- ************************************************************************************************************************
- */
- @media screen and (max-width: 30em) {
-    .site-branding .site-title a {
-        font-size: 1em;
-    }
-
-    .menu-toggle,
-    .primary-navigation.toggled ul {
-        display: block;
-    }
-    
-	.primary-navigation ul {
-		display: none;
-	}
-    
-    .primary-navigation.toggled {
-        padding: 0.1em;
-    }
-    
-    .nav-menu {
-        margin-bottom: 3.6em;
-    }
-    
-    .primary-navigation .nav-menu {
-        display: none;
-    }
-    
-    .primary-navigation.toggled .nav-menu {
-        display: block;
-        margin: 1em 1em 3.6em 1em;
-    }
-    
-    .left-sidebar .content-area,
-    .right-sidebar .content-area {
-        float: none;
-        width: 100%;
-    }
-
-    .left-sidebar .widget-area,
-    .right-sidebar .widget-area {
-        float: none;
-        width: 100%;
-    }
+ .wp-caption {
+    max-width: 100%;
+    margin-bottom: 1.5em;
 }
 
- /**
- ************************************************************************************************************************
- * 21.0 - Media Queries (Mobile Small 37.5em (600px))
- ************************************************************************************************************************
- */
- @media screen and (min-height: 30.063em) and (max-width: 37.50em) {
-    .menu-toggle,
-    .primary-navigation.toggled ul {
-        display: block;
-    }
-    
-	.primary-navigation ul {
-		display: none;
-	}
-    
-    .primary-navigation.toggled {
-        padding: 0.1em;
-    }
-    
-    .nav-menu {
-        margin-bottom: 3.6em;
-    }
-    
-    .primary-navigation .nav-menu {
-        display: none;
-    }
-    
-    .primary-navigation.toggled .nav-menu {
-        display: block;
-        margin: 1em 1em 3.6em 1em;
-    }
-    
-    .left-sidebar .content-area,
-    .right-sidebar .content-area {
-        float: none;
-        width: 100%;
-    }
+.wp-caption img[class*="wp-image-"] {
+    display: block;
+    margin: 0 auto;
+    width: 100%;
+}
 
-    .left-sidebar .widget-area,
-    .right-sidebar .widget-area {
-        float: none;
-        width: 100%;
-    }
+.wp-caption-text {
+    text-align: center;
+}
+
+.wp-caption .wp-caption-text,
+.gallery-caption {
+    background: #eeeeee;
+    font-size: 0.938em;
+    padding: 0.313em;
+    text-align: center;
+}
+
+.wp-caption p {
+    margin: 0;
+    padding: 0;
 }
 
 /**
- ************************************************************************************************************************
- * 22.0 - Media Queries (Mobile Medium 48.688em (667px))
- ************************************************************************************************************************
+ * 24.0 - Galleries
  */
 
- /**
- ************************************************************************************************************************
- * 23.0 - Media Queries (Mobile Large 46em (736px))
- ************************************************************************************************************************
+/**
+ * 25.0 - Media Queries (Mobile Small 30em (480px))
  */
+@media screen and ( max-width: 30em ) {
+	.site-container {
+		margin: 0;
+		padding: 0;
+	}
 
- /**
- ************************************************************************************************************************
- * 24.0 - Media Queries (Tablet Small 48em (768px))
- ************************************************************************************************************************
- */
- @media screen and (min-width: 601px) and (max-width: 48em) {
+	.site-header .branding-navigation {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 0;
+	}
+
     .menu-toggle,
     .primary-navigation.toggled ul {
         display: block;
@@ -1051,240 +1573,553 @@ p.comment-awaiting-moderation {
     .primary-navigation.toggled .nav-menu {
         display: block;
         margin: 1em 1em 3.6em 1em;
-    }
-    
-    .left-sidebar .content-area,
-    .right-sidebar .content-area {
-        float: none;
-        width: 100%;
-    }
-    
-    .left-sidebar .widget-area,
-    .right-sidebar .widget-area {
-        float: none;
-        width: 100%;
-    }
+	}
+	
+	.left-sidebar .content-area,
+	.right-sidebar .content-area {
+		float: none;
+		width: 100%;
+	}
 
-    .widget-area {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        grid-gap: 1.125em;
-        margin: 2.250em 0;
-    }
+	.left-sidebar .widget-area,
+	.right-sidebar .widget-area {
+		float: none;
+		display: grid;
+		grid-template-columns: 1fr;
+		margin-top: 2.250em;
+		width: 100%;
+	}
+
+	.no-sidebar .widget-area {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 2.250em;
+		margin-top: 2.250em;
+	}
 }
 
- /**
- ************************************************************************************************************************
- * 25.0 - Media Queries (Tablet Large 64em (1024px))
- ************************************************************************************************************************
+/**
+ * 26.0 - Media Queries (Mobile Small 37.5em (600px))
  */
- @media screen and (min-width: 769px) and (max-width: 64em) {
-    .primary-navigation {
-        clear: none;
-        float: left;
-        width: 100%;
-    }
-    
-	/* Position the menu in the header */
-	.primary-navigation,
-	.primary-navigation.toggled {
-		position: relative;
-		max-width: 100%;
-		margin: 0 auto;
+ @media screen and ( min-width: 30.063em ) and ( max-width: 37.500em ) {
+	.site-container {
+		margin: 0;
 		padding: 0;
 	}
+
+	.site-header .branding-navigation {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 0;
+	}
+
+    .menu-toggle,
+    .primary-navigation.toggled ul {
+        display: block;
+    }
+    
+	.primary-navigation ul {
+		display: none;
+	}
+    
+    .primary-navigation.toggled {
+        padding: 0.1em;
+    }
+    
+    .nav-menu {
+        margin-bottom: 3.6em;
+    }
+    
+    .primary-navigation .nav-menu {
+        display: none;
+    }
+    
+    .primary-navigation.toggled .nav-menu {
+        display: block;
+        margin: 1em 1em 3.6em 1em;
+	}
 	
-	.primary-navigation ul,
-	.primary-navigation.toggled ul {
-		max-height: none;
-		padding-left: 0;
+	.left-sidebar .content-area,
+	.right-sidebar .content-area {
+		float: none;
+		width: 100%;
+	}
+
+	.left-sidebar .widget-area,
+	.right-sidebar .widget-area {
+		float: none;
+		display: grid;
+		grid-template-columns: 1fr;
+		margin-top: 2.250em;
+		width: 100%;
+	}
+
+	.no-sidebar .widget-area {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 2.250em;
+		margin-top: 2.250em;
+	}
+}
+
+/**
+ * 27.0 - Media Queries (Mobile Medium 48.688em (667px))
+ */
+ @media screen and (min-width: 37.563em) and (max-width: 41.688em) {
+	.site-container {
+		margin: 0;
+		padding: 0;
+	}
+
+	.site-header .branding-navigation {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 0;
+	}
+
+    .menu-toggle,
+    .primary-navigation.toggled ul {
+        display: block;
+    }
+    
+	.primary-navigation ul {
+		display: none;
+	}
+    
+    .primary-navigation.toggled {
+        padding: 0.1em;
+    }
+    
+    .nav-menu {
+        margin-bottom: 3.6em;
+    }
+    
+    .primary-navigation .nav-menu {
+        display: none;
+    }
+    
+    .primary-navigation.toggled .nav-menu {
+        display: block;
+        margin: 1em 1em 3.6em 1em;
+	}
+	
+	.left-sidebar .content-area,
+	.right-sidebar .content-area {
+		float: none;
+		width: 100%;
+	}
+
+	.left-sidebar .widget-area,
+	.right-sidebar .widget-area {
+		float: none;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 2.250em;
+		margin-top: 2.250em;
+		width: 100%;
+	}
+
+	.no-sidebar .widget-area {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 2.250em;
+		margin-top: 2.250em;
+	}
+}
+
+/**
+ * 28.0 - Media Queries (Mobile Large 46em (736px))
+ */
+ @media screen and (min-width: 41.750em) and (max-width: 46em) {
+	.site-container {
+		margin: 0;
+		padding: 0;
+	}
+
+	.site-header .branding-navigation {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 0;
+	}
+
+    .menu-toggle,
+    .primary-navigation.toggled ul {
+        display: block;
+    }
+    
+	.primary-navigation ul {
+		display: none;
+	}
+    
+    .primary-navigation.toggled {
+        padding: 0.1em;
+    }
+    
+    .nav-menu {
+        margin-bottom: 3.6em;
+    }
+    
+    .primary-navigation .nav-menu {
+        display: none;
+    }
+    
+    .primary-navigation.toggled .nav-menu {
+        display: block;
+        margin: 1em 1em 3.6em 1em;
+	}
+	
+	.left-sidebar .content-area,
+	.right-sidebar .content-area {
+		float: none;
+		width: 100%;
+	}
+
+	.left-sidebar .widget-area,
+	.right-sidebar .widget-area {
+		float: none;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 2.250em;
+		margin-top: 2.250em;
+		width: 100%;
+	}
+
+	.no-sidebar .widget-area {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 2.250em;
+		margin-top: 2.250em;
+	}
+}
+
+/**
+ * 29.0 - Media Queries (Tablet Small 48em (768px))
+ */
+ @media screen and (min-width: 46.063em) and (max-width: 48em) {
+	.site-container {
+		margin: 0;
+		padding: 0;
+	}
+
+	.site-header .branding-navigation {
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-gap: 0;
+	}
+
+    .menu-toggle,
+    .primary-navigation.toggled ul {
+        display: block;
+    }
+    
+	.primary-navigation ul {
+		display: none;
+	}
+    
+    .primary-navigation.toggled {
+        padding: 0.1em;
+    }
+    
+    .nav-menu {
+        margin-bottom: 3.6em;
+    }
+    
+    .primary-navigation .nav-menu {
+        display: none;
+    }
+    
+    .primary-navigation.toggled .nav-menu {
+        display: block;
+        margin: 1em 1em 3.6em 1em;
+	}
+	
+	.left-sidebar .content-area,
+	.right-sidebar .content-area {
+		float: none;
+		width: 100%;
+	}
+
+	.left-sidebar .widget-area,
+	.right-sidebar .widget-area {
+		float: none;
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 2.250em;
+		margin-top: 2.250em;
+		width: 100%;
+	}
+
+	.no-sidebar .widget-area {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 2.250em;
+		margin-top: 2.250em;
+	}
+}
+
+/**
+ * 30.0 - Media Queries (Tablet Large 64em (1024px))
+ */
+ @media screen and (min-width: 48.063em) and (max-width: 64em) {
+	.main-navigation {
+		background: #666666;
+		border-bottom: 0.063em solid #ffffff;
+		padding: 0.250em;
+	}
+
+		.primary-navigation {
+		width: 100%;
+	}
+
+		.primary-navigation ul,
+		.primary-navigation li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+		.primary-navigation ul {
+		background: transparent;
 		text-align: center;
-        
 	}
-	
-	.primary-navigation.toggled ul {
-		overflow-y: visible;
-	}
-	
-	/* Display the menu items in a horizontal order */
-	.primary-navigation li {
+
+		.primary-navigation li {
+		border-top: none;
+		border-top: none;
 		display: inline-block;
-		border: none;
 	}
-	
-	/* Add an outline to the drop-down menus */
-	.primary-navigation ul ul {
-		outline: 1px solid #333;
-	}
-	
-	/* Left-align drop-down menu items */
-	.primary-navigation li li {
+
+		.primary-navigation a {
+		color: #ffffff;
 		display: block;
+		padding: 0.5em 1em;
+	}
+
+		.primary-navigation a:hover,
+		.primary-navigation a:focus {
+		background: transparent;
+		color: #ffffff;
+		display: block;
+		padding: 0.5em 1em;
+	}
+
+		.primary-navigation ul ul {
+		background: #000000;
+		float: left;
+		display: none;
+		left: -0.5em;
+		padding: 0;
+		position: absolute;
 		text-align: left;
+		z-index: 99999;
 	}
-    
-    .primary-navigation a {
-        padding: 0.5em 1em;
-    }
-	
-	.primary-navigation a,
-	.primary-navigation ul ul li:last-child a {
-		border-bottom: none;
+
+		.primary-navigation ul ul a {
+		color: #ffffff;
+		width: 17em;
 	}
-    
-    .primary-navigation ul ul li a {
-        color: #ffffff;
-    }
-	
-	/* Add an outline on hovered and focused menu items */
+
+		.primary-navigation ul li:hover > ul {
+		border: 0.063em solid #666666;
+		display: block;
+		padding-left: 0;
+	}
+
+		.primary-navigation ul ul :hover > a {
+		background: #ffffff;
+		color: #000000;
+		transition: ease-in-out 0.4s;
+	}
+
+		.primary-navigation .menu-item-has-children > a, .primary-navigation .page_item_has_children > a {
+		padding-right: 1em;
+	}
+
+		.dropdown-toggle {
+		display: none
+	}
+
+	.no-sidebar .widget-area {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr;
+		grid-gap: 2.250em;
+		margin-top: 2.250em;
+	}
+}
+
+@media screen and ( min-width: 64.063em ) and ( max-width: 73.063em ) {
+	.main-navigation {
+		background: #666666;
+		border-bottom: 0.063em solid #ffffff;
+		padding: 0.250em;
+	}
+
+	.primary-navigation {
+		width: 100%;
+	}
+
+	.primary-navigation ul,
+	.primary-navigation li {
+		list-style: none;
+		margin: 0;
+		padding: 0;
+	}
+
+	.primary-navigation ul {
+		background: transparent;
+		text-align: center;
+	}
+
+	.primary-navigation li {
+		border-top: none;
+		border-top: none;
+		display: inline-block;
+	}
+
+	.primary-navigation a {
+		color: #ffffff;
+		display: block;
+		padding: 0.5em 1em;
+	}
+
 	.primary-navigation a:hover,
 	.primary-navigation a:focus {
 		background: transparent;
 		color: #ffffff;
-		text-decoration: underline;
-		outline: solid 1px #b3b3b3;
-	}
-	
-	/* Create hover and focus contrast on drop-down items */
-	.primary-navigation li li a:hover,
-	.primary-navigation li li a:focus {
-		background: #eee;
-		color: #000;
-		text-decoration: none;
-	}
-	
-	/* Position drop-down menus absolutely */
-	.primary-navigation ul ul.toggled-on {
-        background: #000000;
 		display: block;
-		margin-left: 0;
+		padding: 0.5em 1em;
+	}
+
+	.primary-navigation ul ul {
+		background: #000000;
+		float: left;
+		display: none;
+		left: -0.5em;
+		padding: 0;
 		position: absolute;
-        right: 0;
+		text-align: left;
+		z-index: 99999;
+	}
+
+	.primary-navigation ul ul a {
+		color: #ffffff;
 		width: 17em;
-		z-index: 10;
 	}
-	
-	.primary-navigation ul ul ul.toggled-on {
-		right: 0;
-        padding-left: 1em;
-        position: relative;
+
+	.primary-navigation ul li:hover > ul {
+		border: 0.063em solid #666666;
+		display: block;
+		padding-left: 0;
 	}
-	
-	/* Indent 3rd level drop-down menus */
-	.primary-navigation ul ul ul a {
-		padding-left: 2em;
+
+	.primary-navigation ul ul :hover > a {
+		background: #ffffff;
+		color: #000000;
+		transition: ease-in-out 0.4s;
 	}
-    
-    .nav-menu {
-        padding: 0.4em;
-    }
+
+	.primary-navigation .menu-item-has-children > a, .primary-navigation .page_item_has_children > a {
+		padding-right: 1em;
+	}
+
+	.dropdown-toggle {
+		display: none
+	}
+
+	.no-sidebar .widget-area {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-gap: 2.250em;
+		margin-top: 2.250em;
+	}
 }
 
- /**
- ************************************************************************************************************************
- * 26.0 - Media Queries (Desktop 73.125em 1170px))
- ************************************************************************************************************************
+/**
+ * 31.0 - Media Queries (Desktop 73.125em 1170px))
  */
  @media screen and (min-width: 73.125em) {
+    .main-navigation {
+      background: #666666;
+      border-bottom: 0.063em solid #ffffff;
+      padding: 0.250em;
+    }
+
     .primary-navigation {
-        clear: none;
-        float: left;
-        width: 100%;
+      width: 100%;
     }
-    
-	/* Position the menu in the header */
-	.primary-navigation,
-	.primary-navigation.toggled {
-		position: relative;
-		max-width: 100%;
-		margin: 0 auto;
-		padding: 0;
-	}
-	
-	.primary-navigation ul,
-	.primary-navigation.toggled ul {
-		max-height: none;
-		padding-left: 0;
-		text-align: center;
-        
-	}
-	
-	.primary-navigation.toggled ul {
-		overflow-y: visible;
-	}
-	
-	/* Display the menu items in a horizontal order */
-	.primary-navigation li {
-		display: inline-block;
-		border: none;
-	}
-	
-	/* Add an outline to the drop-down menus */
-	.primary-navigation ul ul {
-		outline: 1px solid #333;
-	}
-	
-	/* Left-align drop-down menu items */
-	.primary-navigation li li {
-		display: block;
-		text-align: left;
-	}
-    
+
+    .primary-navigation ul,
+    .primary-navigation li {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .primary-navigation ul {
+      background: transparent;
+      text-align: center;
+    }
+
+    .primary-navigation li {
+      border-top: none;
+      border-top: none;
+      display: inline-block;
+    }
+
     .primary-navigation a {
-        padding: 0.5em 1em;
+      color: #ffffff;
+      display: block;
+      padding: 0.5em 1em;
     }
-	
-	.primary-navigation a,
-	.primary-navigation ul ul li:last-child a {
-		border-bottom: none;
-	}
-    
-    .primary-navigation ul ul li a {
-        color: #ffffff;
+
+    .primary-navigation a:hover,
+    .primary-navigation a:focus {
+      background: transparent;
+      color: #ffffff;
+      display: block;
+      padding: 0.5em 1em;
     }
-	
-	/* Add an outline on hovered and focused menu items */
-	.primary-navigation a:hover,
-	.primary-navigation a:focus {
-		background: transparent;
-		color: #ffffff;
-		text-decoration: underline;
-		outline: solid 1px #b3b3b3;
-	}
-	
-	/* Create hover and focus contrast on drop-down items */
-	.primary-navigation li li a:hover,
-	.primary-navigation li li a:focus {
-		background: #eee;
-		color: #000;
-		text-decoration: none;
-	}
-	
-	/* Position drop-down menus absolutely */
-	.primary-navigation ul ul.toggled-on {
-        background: #000000;
-		display: block;
-		margin-left: 0;
-		position: absolute;
-        right: 0;
-		width: 17em;
-		z-index: 10;
-	}
-	
-	.primary-navigation ul ul ul.toggled-on {
-		right: 0;
-        padding-left: 1em;
-        position: relative;
-	}
-	
-	/* Indent 3rd level drop-down menus */
-	.primary-navigation ul ul ul a {
-		padding-left: 2em;
-	}
-    
-    .nav-menu {
-        background: #666666;
-        border-bottom: 0.063em solid #ffffff;
-        padding: 0.250em;
+
+    .primary-navigation ul ul {
+      background: #000000;
+      float: left;
+      display: none;
+      left: -0.5em;
+      padding: 0;
+      position: absolute;
+      text-align: left;
+      z-index: 99999;
     }
+
+    .primary-navigation ul ul a {
+      color: #ffffff;
+      width: 17em;
+    }
+
+    .primary-navigation ul li:hover > ul {
+      border: 0.063em solid #666666;
+      display: block;
+      padding-left: 0;
+    }
+
+    .primary-navigation ul ul :hover > a {
+      background: #ffffff;
+      color: #000000;
+      transition: ease-in-out 0.4s;
+    }
+
+    .primary-navigation .menu-item-has-children > a, .primary-navigation .page_item_has_children > a {
+      padding-right: 1em;
+    }
+
+    .dropdown-toggle {
+      display: none
+	}
+	
+	.no-sidebar .widget-area {
+		display: grid;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-gap: 2.250em;
+		margin-top: 2.250em;
+	}
 }

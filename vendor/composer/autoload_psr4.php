@@ -6,4 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
+    'SilverQuantum\\' => array($baseDir . '/framework'),
+    'Benlumia007\\Backdrop\\' => array($vendorDir . '/benlumia007/backdrop-core/src'),
 );
