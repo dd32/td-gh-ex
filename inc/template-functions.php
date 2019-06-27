@@ -2,7 +2,7 @@
 /**
  * Functions which enhance the theme by hooking into WordPress
  *
- * @package atlas-concern
+ * @package atlas_concern
  */
 
 /**
@@ -18,7 +18,7 @@ function atlas_concern_body_classes( $classes ) {
 	}
 
 	// Adds a class of no-sidebar when there is no sidebar present.
-	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+	if ( ! is_active_sidebar( 'right_sidebar' ) ) {
 		$classes[] = 'no-sidebar';
 	}
 
@@ -31,7 +31,7 @@ add_filter( 'body_class', 'atlas_concern_body_classes' );
  */
 function atlas_concern_pingback_header() {
 	if ( is_singular() && pings_open() ) {
-		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
+		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
 	}
 }
 add_action( 'wp_head', 'atlas_concern_pingback_header' );

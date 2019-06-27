@@ -4,12 +4,12 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package atlas-concern
+ * @package atlas_concern
  */
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('article'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header">
 		<?php
 		if ( is_singular() ) :

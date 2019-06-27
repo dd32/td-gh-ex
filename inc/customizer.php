@@ -1,8 +1,8 @@
 <?php
 /**
- * atlas-concern Theme Customizer
+ * atlas_concern Theme Customizer
  *
- * @package atlas-concern
+ * @package atlas_concern
  */
 
 /**

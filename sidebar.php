@@ -4,15 +4,15 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
  *
- * @package atlas-concern
+ * @package atlas_concern
  */
 
-if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+if ( ! is_active_sidebar( 'right_sidebar' ) ) {
 	return;
 }
 ?>
 <div class="col-md-4">
 <aside id="secondary" class="widget-area">
-	<?php dynamic_sidebar( 'sidebar-1' ); ?>
+	<?php dynamic_sidebar( 'right_sidebar' ); ?>
 </aside><!-- #secondary -->
 </div>

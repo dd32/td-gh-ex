@@ -4,18 +4,24 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
- * @package atlas-concern
+ * @package atlas_concern
  */
 
 get_header();
 ?>
 
-
-<div class="container">
-  <div class="row">
-   <div class="col-md-8">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+<div class="page-banner">
+	<div class="container">
+		<div class="row">
+		  <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h3><?php the_title(); ?></h3>
+		 </div>
+        </div>
+   </div>
+</div>
+	<div class="container">
+		<div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 
 		<?php
 		while ( have_posts() ) :
@@ -33,11 +39,10 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
-  </div>
-  <?php get_sidebar(); ?>
- </div>
-</div>
+        </div>
+		<?php get_sidebar(); ?>
+      </div>
+   </div>
+
 <?php
 get_footer();

@@ -1,9 +1,9 @@
 <?php
 /**
- * Template for displaying search forms in atlas-concern
+ * Template for displaying search forms in atlas_concern
  *
  * @package WordPress
- * @subpackage atlas-concern
+ * @subpackage atlas_concern
  * @since 1.0
  * @version 1.0
  */

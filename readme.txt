@@ -3,7 +3,8 @@
 Contributors: Atlas Concern
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments
 
-Requires at least: 4.0
+Requires at least: 4.8.0
+Requires PHP: 5.4
 Tested up to: 5.1
 Stable tag: 1.0.0
 License: GNU General Public License v2 or later
@@ -68,6 +69,9 @@ Atlas Concern is distributed under the terms of the GNU GPL
 = 3.2 ( 19/June/2019 ) =
 * Files edited
 
+= 3.3 ( 26/Jun/2019 ) =
+* Files edited
+
 
 
 == Credits ==
@@ -84,11 +88,14 @@ License: [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 Source: https://github.com/angular-ui/bootstrap/blob/master/LICENSE
 License: MIT License
 
+- Jquery
+Source: https://github.com/jquery/jquery/blob/master/LICENSE.txt
+License: MIT License
 
-- Font Awesome: 
-Source: http://fontawesome.io/, (C) Dave Gandy 
-License: (CSS)[MIT](http://opensource.org/licenses/MIT), (Fonts)[SIL OFL 1.1](http://scripts.sil.org/OFL)
 
+Themify Icons font licensed under: http://scripts.sil.org/OFL
+Code licensed under: http://opensource.org/licenses/mit-license.html
+All brand icons are copyright/trademarks of their respective owners.
 
 - Nav Walker
 Source: https://github.com/wp-bootstrap/wp-bootstrap-navwalker/blob/master/LICENSE.txt

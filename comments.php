@@ -7,7 +7,7 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package atlas-concern
+ * @package atlas_concern
  */
 
 /*

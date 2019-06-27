@@ -9,27 +9,31 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
- * @package atlas-concern
+ * @package atlas_concern
  */
 
 get_header();
 ?>
+<div class="page-banner">
+	<div class="container">
+		<div class="row">
+		  <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h3><?php esc_html_e('Recent Post','atlas-concern'); ?></h3>
+		 </div>
+       </div>
+   </div>
+</div>
 
-
-<div class="container">
-  <div class="row">
-   <div class="col-md-8">
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<div class="container">
+		<div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 
 		<?php
 		if ( have_posts() ) :
 
 			if ( is_home() && ! is_front_page() ) :
 				?>
-				<header>
-					<h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
-				</header>
+
 				<?php
 			endif;
 
@@ -55,11 +59,12 @@ get_header();
 		endif;
 		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		
+	     </div>
+		 <?php get_sidebar(); ?>
+	  </div>
    </div>
-   <?php get_sidebar(); ?>
-  </div>
- </div>
+>
+
 <?php
 get_footer();

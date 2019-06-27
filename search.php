@@ -4,26 +4,29 @@
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#search-result
  *
- * @package atlas-concern
+ * @package atlas_concern
  */
 
 get_header();
 ?>
 
+<div class="page-banner">
+	<div class="container">
+		<div class="row">
+		  <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <h3><?php
+					/* translators: %s: search query. */
+					printf( esc_html__( 'Search Results for: %s', 'atlas-concern' ), '<span>' . get_search_query() . '</span>' );
+					?></h3>
 
+		 </div>
+        </div>
+   </div>
+</div>
+	<div class="container">
+		<div class="row">
+		  <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8">
 
-<div class="container">
-  <div class="row">
-   <div class="col-md-8">
-		<main id="main" class="site-main">
-
-		 <h1 class="page-title">
-				 <?php
-					  /* translators: %s: search query. */
-					   printf( esc_html__( 'Search Results for: %s', 'atlas-concern' ), '<span>' . get_search_query() . '</span>' );
-				 ?>
-		 </h1>
-		
 		<?php if ( have_posts() ) : ?>
 
 			<?php
@@ -48,12 +51,10 @@ get_header();
 
 		endif;
 		?>
-
-		</main><!-- #main -->
-	</div>
-	<?php get_sidebar(); ?>
-  </div>
-</div>
+        </div>
+		<?php get_sidebar(); ?>
+     </div>
+   </div>
 
 <?php
 get_footer();

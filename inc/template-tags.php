@@ -4,7 +4,7 @@
  *
  * Eventually, some of the functionality here could be replaced by core features.
  *
- * @package atlas-concern
+ * @package atlas_concern
  */
 
 if ( ! function_exists( 'atlas_concern_posted_on' ) ) :
@@ -62,14 +62,14 @@ if ( ! function_exists( 'atlas_concern_entry_footer' ) ) :
 			$categories_list = get_the_category_list( esc_html__( ', ', 'atlas-concern' ) );
 			if ( $categories_list ) {
 				/* translators: 1: list of categories. */
-				printf( '<span class="cat-links">' . esc_html__( 'Posted in %1$s', 'atlas-concern' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+				printf( '<span class="cat-links">' . esc_html__( 'Posted in : %1$s', 'atlas-concern' ) . '</span>', $categories_list ); // WPCS: XSS OK.
 			}
 
 			/* translators: used between list items, there is a space after the comma */
 			$tags_list = get_the_tag_list( '', esc_html_x( ', ', 'list item separator', 'atlas-concern' ) );
 			if ( $tags_list ) {
 				/* translators: 1: list of tags. */
-				printf( '<span class="tags-links">' . esc_html__( 'Tagged %1$s', 'atlas-concern' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+				printf( '<span class="tags-links">' . esc_html__( 'Tagged : %1$s', 'atlas-concern' ) . '</span>', $tags_list ); // WPCS: XSS OK.
 			}
 		}
 
@@ -79,7 +79,7 @@ if ( ! function_exists( 'atlas_concern_entry_footer' ) ) :
 				sprintf(
 					wp_kses(
 						/* translators: %s: post title */
-						__( 'Leave a Comment<span class="screen-reader-text"> on %s</span>', 'atlas-concern' ),
+						__( ' Leave a Comment<span class="screen-reader-text"> on %s</span>', 'atlas-concern' ),
 						array(
 							'span' => array(
 								'class' => array(),

@@ -3,12 +3,10 @@
  * Template Name: Fullwidth
 */
 get_header();
-
 ?>
 <div class="page-builder">
 	<div class="container">
 		<div class="row">
-
 			<div class="col-md-12">
 			<?php if( $post->post_content != "" )
 			{ ?>

@@ -3,13 +3,13 @@
  * The template part for displaying single posts
  *
  * @package WordPress
- * @subpackage atlas-concern
- * @since atlas-concern
+ * @subpackage atlas_concern
+ * @since atlas_concern
  */
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class('article'); ?>>
-     <h1><?php the_title(); ?></h1>
+
 	<div class="entry-meta">
 			<?php atlas_concern_posted_on(); ?>
 		</div><!-- .entry-meta -->
@@ -31,9 +31,10 @@
 		?>
 	</div><!-- .entry-content -->
 
-	<div class="entry-footer">
+	<footer class="entry-footer">
 	
 		<?php
+	
 			edit_post_link(
 				sprintf(
 					/* translators: %s: Name of current post */
@@ -44,5 +45,5 @@
 				'</span>'
 			);
 		?>
-	</div><!-- .entry-footer -->
+	</footer><!-- .entry-footer -->
 </article><!-- #post-## -->
