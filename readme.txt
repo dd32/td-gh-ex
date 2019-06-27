@@ -2,7 +2,7 @@
 Contributors: benlumia007
 Requires at least: 4.9.6
 Tested up to WordPress.4.9.8
-Version: 1.0.4
+Version: 1.0.7
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: grid-layout, left-sidebar, one-column, right-sidebar, two-columns, custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog
@@ -41,6 +41,9 @@ Not Available at this time
 I would recommended to upgrade at this time. Silver Quantum has been modified where is now using a framework to display its content. Starting at 1.0.0 is the major update. Please note that  I have removed the previous Changlog and starting from 1.0.3 because of the new Framework.
 
 == Changelog ==
+Version: 1.0.7
+- Update Description
+
 Version: 1.0.6
 - Major update
 
