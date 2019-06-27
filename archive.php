@@ -19,11 +19,6 @@ get_header();
 				the_archive_description();
 				?>
 			</h3>
-		    <div class="breadcrumb">
-			   <ul>
-			   <li><?php if ( function_exists( 'breadcrumb_trail' ) ) breadcrumb_trail(); ?></li>
-			   </ul>
-			</div>	
          </div>
         </div>
    </div>

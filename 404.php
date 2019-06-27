@@ -14,11 +14,6 @@ get_header();
 		<div class="row">
 		  <div class="text-center col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <h3><?php esc_html_e('Error !','atlas-concern'); ?></h3>
-			 <div class="breadcrumb">
-			   <ul>
-			   <li><?php if ( function_exists( 'breadcrumb_trail' ) ) breadcrumb_trail(); ?></li>
-			   </ul>
-			 </div>
          </div>
         </div>
    </div>

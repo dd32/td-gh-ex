@@ -2,7 +2,7 @@
 		    <div class="container-fluid">
 		          <div class="row">
 				     <div class="col-md-10 hidden-xs">
-		               <p><?php echo esc_html( get_theme_mod( 'social_section_text' ) ); ?></p>
+		               <p><?php echo esc_html( get_theme_mod( 'social_section_text_1', 'Welcome Concern Site' )); ?></p>
 		             </div> 
 		             <div class="col-md-2 text-center">
                       <?php if( get_theme_mod( 'social_section_facebook_url' ) ) : ?>

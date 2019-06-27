@@ -1,10 +1,10 @@
 /*
 Theme Name:atlas concern
-Theme URI: 
+Theme URI: https://www.atlasresponsivetasarim.com/product/concern-3-3v/
 Author: atlas
 Author URI: http://www.atlasresponsivetasarim.com/
 Description: It is a company wordpress theme arranged according to business requirements. redux framework and management panel. All the features provided in this section .Theme is a company theme that can be used in multipurpose places. This theme is compatible with all plugins. Supports all browsers. Translators are ready for you. Responsive wordpress theme compatible with all devices
-Version: 3.3
+Version: 3.4
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: atlas-concern
@@ -1923,5 +1923,15 @@ object {
 }
 .site-info a{
     font-size:16px;
+	letter-spacing:2px;
+}
+.not-found-header h1{
+	padding-top:60px;
+	font-weight:600;
+	letter-spacing:1px;
+	color:#000;
+}
+.page-content{
+	font-size:16px;
 	letter-spacing:2px;
 }

@@ -1,0 +1,324 @@
+msgid ""
+msgstr ""
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Project-Id-Version: atlas concern\n"
+"POT-Creation-Date: 2019-06-27 17:38+0300\n"
+"PO-Revision-Date: 2019-06-27 17:51+0300\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 2.0.6\n"
+"X-Poedit-Basepath: ..\n"
+"X-Poedit-Flags-xgettext: --add-comments=translators:\n"
+"X-Poedit-WPHeader: style.css\n"
+"X-Poedit-SourceCharset: UTF-8\n"
+"X-Poedit-KeywordsList: __;_e;_n:1,2;_x:1,2c;_ex:1,2c;_nx:4c,1,2;esc_attr__;"
+"esc_attr_e;esc_attr_x:1,2c;esc_html__;esc_html_e;esc_html_x:1,2c;_n_noop:1,2;"
+"_nx_noop:3c,1,2;__ngettext_noop:1,2\n"
+"Last-Translator: \n"
+"Language: tr_TR\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: *.js\n"
+
+#: 404.php:16
+msgid "Error !"
+msgstr "Hata !"
+
+#: 404.php:31
+msgid "Oops! That page can&rsquo;t be found."
+msgstr "Eyvah ! Bu Sayfa Bulunamadı"
+
+#: 404.php:32
+msgid ""
+"It looks like nothing was found at this location. Maybe try one of the links "
+"below or a search?"
+msgstr ""
+"Bu konumda hiçbir şey bulunamadı gibi görünüyor. Belki aşağıdaki linklerden "
+"birini ya da bir arama yapmayı deneyin?"
+
+#: 404.php:35
+msgid "Return to Homepage"
+msgstr "Anasayfa Dön"
+
+#. translators: 1: title.
+#: comments.php:34
+#, php-format
+msgid "One thought on &ldquo;%1$s&rdquo;"
+msgstr "&ldquo;%1$s&rdquo; bir yorum"
+
+#. translators: 1: comment count number, 2: title.
+#: comments.php:40
+#, php-format
+msgctxt "comments title"
+msgid "%1$s thought on &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+msgstr[0] "&ldquo;%2$s&rdquo; %1$s üzerinde yorum"
+msgstr[1] "&ldquo;%2$s&rdquo; %1$s üzerinde yorumlar"
+
+#: comments.php:63
+msgid "Comments are closed."
+msgstr "Yorumlar Kapalı"
+
+#: footer.php:21
+msgid "https://wordpress.org/"
+msgstr ""
+
+#. translators: %s: CMS name, i.e. WordPress.
+#: footer.php:25
+#, php-format
+msgid "Proudly powered by %s"
+msgstr "%s Gururla tarafından desteklenmektedir "
+
+#. translators: 1: Theme name, 2: Theme author.
+#: footer.php:32
+#, php-format
+msgid "Power %1$s by %2$s."
+msgstr "  %1$s %2$s. tarafından "
+
+#: functions.php:46
+msgid "Primary Menu"
+msgstr "Ana Menü"
+
+#: functions.php:112
+msgid "Top Lİne Layout"
+msgstr "Üst Çizgi Düzeni"
+
+#: functions.php:124
+msgid "İnfo"
+msgstr "Bilgi"
+
+#: functions.php:137
+msgid "Facebook Url"
+msgstr ""
+
+#: functions.php:149
+msgid "Twitter Url"
+msgstr ""
+
+#: functions.php:161
+msgid "Linkedin Url"
+msgstr ""
+
+#: functions.php:173
+msgid "Youtube Url"
+msgstr ""
+
+#: functions.php:185
+msgid "Google Url"
+msgstr ""
+
+#: functions.php:195
+msgid "Mesaage Layout"
+msgstr "Mesaj Düzeni"
+
+#: functions.php:206
+msgid "İcon"
+msgstr "İkon"
+
+#: functions.php:208
+msgid ""
+"Themify icons for code <a href=\"https://themify.me/themify-icons\" target="
+"\"_blank\">click here</a> "
+msgstr ""
+"Themify ikon kodları için <a href=\"https://themify.me/themify-icons\" "
+"target=\"_blank\">buraya tıklayın </a> "
+
+#: functions.php:219
+msgid "Message Title"
+msgstr "Mesaj Title"
+
+#: functions.php:231
+msgid "Message Description"
+msgstr "Mesaj Açıklaması"
+
+#: functions.php:240
+msgid "Button Layout"
+msgstr "Buton Düzeni"
+
+#: functions.php:252
+msgid "Button Text"
+msgstr "Buton Metni"
+
+#: functions.php:264
+msgid "Button Url"
+msgstr "Buton Url"
+
+#: functions.php:290
+msgid "Right Sidebar"
+msgstr "Sağ Sidebar"
+
+#: functions.php:292 functions.php:302 functions.php:312 functions.php:322
+#: functions.php:332
+msgid "Add widgets here."
+msgstr "Buraya widget ekleyin."
+
+#: functions.php:300
+msgid "Footer Widget 1"
+msgstr "Alt Bilgi Alanı 1"
+
+#: functions.php:310
+msgid "Footer Widget 2"
+msgstr "Alt Bilgi Alanı 2"
+
+#: functions.php:320
+msgid "Footer Widget 3"
+msgstr "Alt Bilgi Alanı 3"
+
+#: functions.php:330
+msgid "Footer Widget 4"
+msgstr "Alt Bilgi Alanı 4"
+
+#: header.php:27
+msgid "Skip to content"
+msgstr "İçeriğe geç"
+
+#. translators: %s: post date.
+#: inc/template-tags.php:29
+#, php-format
+msgctxt "post date"
+msgid "Posted on %s"
+msgstr " %s yayınlandı"
+
+#. translators: %s: post author.
+#: inc/template-tags.php:45
+#, php-format
+msgctxt "post author"
+msgid "by %s"
+msgstr "%s tarafından"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:62
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of categories.
+#: inc/template-tags.php:65
+#, php-format
+msgid "Posted in : %1$s"
+msgstr "Kategori  : %1$s"
+
+#. translators: used between list items, there is a space after the comma
+#: inc/template-tags.php:69
+msgctxt "list item separator"
+msgid ", "
+msgstr ""
+
+#. translators: 1: list of tags.
+#: inc/template-tags.php:72
+#, php-format
+msgid "Tagged : %1$s"
+msgstr "Etiket  : %1$s"
+
+#. translators: %s: post title
+#: inc/template-tags.php:82
+#, php-format
+msgid " Leave a Comment<span class=\"screen-reader-text\"> on %s</span>"
+msgstr "Yorum yapın <span class=\"screen-reader-text\"> %s üzerinde </span>"
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: inc/template-tags.php:99 template-parts/content-page.php:34
+#, php-format
+msgid "Edit <span class=\"screen-reader-text\">%s</span>"
+msgstr "Düzenle <span class=\"screen-reader-text\">%s</span>"
+
+#: index.php:21
+msgid "Recent Post"
+msgstr "Son Gönderiler"
+
+#. translators: %s: search query.
+#: search.php:19
+#, php-format
+msgid "Search Results for: %s"
+msgstr "Arama sonuçları için : %s"
+
+#: searchform.php:15
+msgid "Search for:"
+msgstr "Ara"
+
+#: searchform.php:16
+msgctxt "placeholder"
+msgid "Search &hellip;"
+msgstr "Ara"
+
+#: searchform.php:18
+msgid "Search"
+msgstr "Ara"
+
+#: template-parts/content-none.php:14
+msgid "Nothing Found"
+msgstr "Hiçbirşey Bulunamadı"
+
+#. translators: 1: link to WP admin new post page.
+#: template-parts/content-none.php:24
+#, php-format
+msgid ""
+"Ready to publish your first post? <a href=\"%1$s\">Get started here</a>."
+msgstr ""
+"İlk paylaşımını yapmak için hazır mısın? <a href=\"%1$s\">Buradan başla</a>."
+
+#: template-parts/content-none.php:37
+msgid ""
+"Sorry, but nothing matched your search terms. Please try again with some "
+"different keywords."
+msgstr ""
+"Üzgünüz, arama terimlerinizle hiçbir şey eşleşmedi. Lütfen farklı anahtar "
+"kelimelerle tekrar deneyin."
+
+#: template-parts/content-none.php:44
+msgid ""
+"It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps "
+"searching can help."
+msgstr ""
+"Görünüşe göre aradığınızı bulamıyoruz. Belki de arama yardımcı olabilir."
+
+#: template-parts/content-page.php:21 template-parts/content-single.php:22
+#: template-parts/content.php:50
+msgid "Pages:"
+msgstr "Sayfalar"
+
+#: template-parts/content-single.php:26
+msgid "Page"
+msgstr "Sayfa"
+
+#. translators: %s: Name of current post
+#: template-parts/content-single.php:41
+#, php-format
+msgid "Edit<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Düzenle <span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#. translators: %s: Name of current post. Only visible to screen readers
+#: template-parts/content.php:39
+#, php-format
+msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
+msgstr "Devamını oku <span class=\"screen-reader-text\"> \"%s\"</span>"
+
+#. Theme Name of the plugin/theme
+msgid "atlas concern"
+msgstr ""
+
+#. Theme URI of the plugin/theme
+msgid "https://www.atlasresponsivetasarim.com/product/concern-3-3v/"
+msgstr ""
+
+#. Description of the plugin/theme
+msgid ""
+"It is a company wordpress theme arranged according to business requirements. "
+"redux framework and management panel. All the features provided in this "
+"section .Theme is a company theme that can be used in multipurpose places. "
+"This theme is compatible with all plugins. Supports all browsers. "
+"Translators are ready for you. Responsive wordpress theme compatible with "
+"all devices"
+msgstr ""
+"İş gereksinimlerine göre düzenlenmiş bir şirket wordpress temasıdır..Bu çok "
+"amaçlı yerlerde kullanılabilecek bir şirket temasıdır. Bu tema tüm "
+"eklentilerle uyumludur. Tüm tarayıcıları destekler. Çevirmenler sizin için "
+"hazır. Tüm cihazlarla uyumlu duyarlı wordpress teması"
+
+#. Author of the plugin/theme
+msgid "atlas"
+msgstr ""
+
+#. Author URI of the plugin/theme
+msgid "http://www.atlasresponsivetasarim.com/"
+msgstr ""

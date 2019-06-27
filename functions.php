@@ -113,13 +113,14 @@ function atlas_concern_customize_register( $wp_customize ) {
     ));
 
 
-    $wp_customize->add_setting( 'social_section_text', array(
+    $wp_customize->add_setting( 'social_section_text_1', array(
         'type' => 'theme_mod',
-		 'capability' => 'edit_theme_options',
+		'default' => 'Welcome Concern Site',
+		'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field'
     ));
 
-    $wp_customize->add_control( 'social_section_text', array(
+    $wp_customize->add_control( 'social_section_text_1', array(
         'label' => __( 'İnfo', 'atlas-concern' ),
         'type' => 'text',
         'section' => 'social_section'
@@ -204,6 +205,7 @@ function atlas_concern_customize_register( $wp_customize ) {
     $wp_customize->add_control( 'message_section_icon', array(
         'label' => __( 'İcon', 'atlas-concern' ),
         'type' => 'text',
+		'description' => __( 'Themify icons for code <a href="https://themify.me/themify-icons" target="_blank">click here</a> ', 'atlas-concern' ),
         'section' => 'message_section'
     ));
 
@@ -239,13 +241,14 @@ function atlas_concern_customize_register( $wp_customize ) {
     ));
 
 
-	$wp_customize->add_setting( 'btn_section_text', array(
+	$wp_customize->add_setting( 'btn_section_text_1', array(
         'type' => 'theme_mod',
+		'default' => 'Contact Us',
 		'capability' => 'edit_theme_options',
         'sanitize_callback' => 'sanitize_text_field'
     ));
 
-    $wp_customize->add_control( 'btn_section_text', array(
+    $wp_customize->add_control( 'btn_section_text_1', array(
         'label' => __( 'Button Text', 'atlas-concern' ),
         'type' => 'text',
         'section' => 'btn_section'
@@ -268,6 +271,7 @@ function atlas_concern_customize_register( $wp_customize ) {
 }
 add_action( 'customize_register', 'atlas_concern_customize_register' );
 endif;// atlas_concern_customize_register
+
 
 
 
@@ -342,7 +346,6 @@ if ( ! function_exists( 'atlas_concern_enqueue_scripts' ) ) :
 
      /* Js */
 
-    wp_enqueue_script( 'jquery-1.12.4.min', get_template_directory_uri() . '/js/jquery-1.12.4.min.js', array('jquery'), '20151215', true );
     wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '20151215', true );
     wp_enqueue_script( 'bootsnav', get_template_directory_uri() . '/js/bootsnav.js', array('jquery'), '20151215', true );
 	wp_enqueue_script( 'concern-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true );

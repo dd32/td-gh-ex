@@ -39,7 +39,7 @@
                     <div class="attr-nav"> 
                         <ul> 
                             <li class="quote-btn">
-                                <a href="<?php echo esc_html( get_theme_mod( 'btn_section_url' ) ); ?>"><?php echo esc_html( get_theme_mod( 'btn_section_text' ) ); ?></a>
+                                <a href="<?php echo esc_html( get_theme_mod( 'btn_section_url' ) ); ?>"><?php echo esc_html( get_theme_mod( 'btn_section_text_1', 'Contact Us' )); ?></a>
                             </li>                             
                         </ul>                         
                         </div>                     
