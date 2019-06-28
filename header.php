@@ -11,7 +11,15 @@
 
 <body <?php body_class(); ?>>
 
-<?php do_action( 'anna_lite_mobile_menu' ); ?>
+<?php 
+
+if ( function_exists('wp_body_open') ) {
+	wp_body_open();
+}
+
+do_action( 'anna_lite_mobile_menu' );
+
+?>
 
 <div id="wrapper">
         
@@ -70,7 +78,7 @@
     
 		<?php
             
-            if ( function_exists( 'the_custom_logo' ) && get_theme_mod( 'custom_logo' ) ) {
+            if ( get_theme_mod( 'custom_logo' ) ) {
                     
                 echo the_custom_logo();
                     

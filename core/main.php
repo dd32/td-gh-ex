@@ -541,10 +541,12 @@ if (!function_exists('anna_lite_customize_excerpt_more')) {
 	
 			endif;
 
-			if ( $pos=strpos($post->post_content, '<!--more-->') && !has_excerpt( $post->ID )): 
+			if ( 
+				( $pos=strpos($post->post_content, '<!--more-->') ) && 
+				!has_excerpt($post->ID)
+			): 
 			
-				$content = substr(apply_filters( 'the_content', get_the_content()), 0, -5);
-			
+				$content = apply_filters( 'the_content', get_the_content());
 			else:
 			
 				$content = $excerpt;
@@ -652,9 +654,16 @@ if (!function_exists('anna_lite_scripts_styles')) {
 		wp_enqueue_style('anna-lite-template', get_template_directory_uri() . '/assets/css/anna-lite-template.css', array(), '1.0.0' );
 		wp_enqueue_style('anna-lite-woocommerce', get_template_directory_uri() . '/assets/css/anna-lite-woocommerce.css', array(), '1.0.0' );
 
-		if ( get_theme_mod('anna_lite_skin') ) 
-			wp_enqueue_style( 'anna-lite-' . get_theme_mod('anna_lite_skin') , get_template_directory_uri() . '/assets/skins/' . get_theme_mod('anna_lite_skin') . '.css', array( 'anna-lite-template' ), '1.0.0' ); 
-
+		if ( get_theme_mod('anna_lite_skin') ) {
+			
+			wp_enqueue_style(
+				'anna-lite-' . get_theme_mod('anna_lite_skin'),
+				get_template_directory_uri() . '/assets/skins/' . get_theme_mod('anna_lite_skin') . '.css',
+				array( 'anna-lite-template' ), '1.0.0'
+			); 
+		
+		}
+		
 		wp_enqueue_script( 'jquery-easing', get_template_directory_uri() . '/assets/js/jquery.easing.js' , array('jquery'), '1.3', TRUE ); 
 		wp_enqueue_script( 'jquery-nicescroll', get_template_directory_uri() . '/assets/js/jquery.nicescroll.js' , array('jquery'), '3.7.6', TRUE ); 
 		wp_enqueue_script( 'prettyPhoto', get_template_directory_uri() . '/assets/js/prettyPhoto.js' , array('jquery'), '3.1.4', TRUE ); 
@@ -664,10 +673,10 @@ if (!function_exists('anna_lite_scripts_styles')) {
 
 		if ( is_singular() ) wp_enqueue_script( 'comment-reply' );
 		
-		wp_enqueue_script('anna-lite-html5shiv', get_template_directory_uri().'/assets/scripts/html5shiv.js', FALSE, '3.7.3');
-		wp_script_add_data('anna-lite-html5shiv', 'conditional', 'IE 8' );
-		wp_enqueue_script('anna-lite-selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr.js', FALSE, '1.0.3b');
-		wp_script_add_data('anna-lite-selectivizr', 'conditional', 'IE 8' );
+		wp_enqueue_script('html5shiv', get_template_directory_uri().'/assets/scripts/html5shiv.js', FALSE, '3.7.3');
+		wp_script_add_data('html5shiv', 'conditional', 'IE 8' );
+		wp_enqueue_script('selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr.js', FALSE, '1.0.3b');
+		wp_script_add_data('selectivizr', 'conditional', 'IE 8' );
 
 	}
 
