@@ -225,7 +225,7 @@ get_header(); ?>
                 </div>
             <?php }?>
           <div class="clearfix"></div>
-      </div>
+        </div>
     </div>
 </section>
 

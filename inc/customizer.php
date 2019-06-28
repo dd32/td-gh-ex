@@ -157,7 +157,6 @@ function advance_ecommerce_store_customize_register($wp_customize) {
         'Yanone Kaffeesatz' =>'Yanone Kaffeesatz'
     );
 
-
 	//Typography
 	$wp_customize->add_section( 'advance_ecommerce_store_typography', array(
     	'title'      => __( 'Typography', 'advance-ecommerce-store' ),

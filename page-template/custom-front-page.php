@@ -48,9 +48,7 @@ get_header(); ?>
         <?php }?>
       </div>
       <div class="col-lg-9 col-md-9">
-
         <?php do_action( 'advance_ecommerce_store_before_slider' ); ?>
-
         <?php if( get_theme_mod( 'advance_ecommerce_store_slider_hide') != '') { ?>
         <div id="slider">
           <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
@@ -122,14 +120,11 @@ get_header(); ?>
             ?>
           </div>
         </div>
-
         <?php do_action( 'advance_ecommerce_store_after_slider' ); ?>
-
       </div>
     </div>
   </div>
 </div>
-
   <div class="sidebar-products">
     <div class="container">
       <div class="row">
@@ -137,9 +132,7 @@ get_header(); ?>
           <?php dynamic_sidebar('homepage-sidebar'); ?>
         </div>
         <div class="col-lg-9 col-md-9">
-
           <?php do_action( 'advance_ecommerce_store_before_product_section' ); ?>
-
           <?php if( get_theme_mod('advance_ecommerce_store_section_title') != '' || get_theme_mod('advance_ecommerce_store_product_page') != ''){ ?>
             <div class="product-page">
               <?php if( get_theme_mod('advance_ecommerce_store_section_title') != ''){ ?>
@@ -170,9 +163,7 @@ get_header(); ?>
               ?>
             </div>
           <?php }?>
-
           <?php do_action( 'advance_ecommerce_store_after_product_section' ); ?>
-
           <div id="content-ts">
             <?php while ( have_posts() ) : the_post(); ?>
               <?php the_content(); ?>
