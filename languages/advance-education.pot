@@ -124,54 +124,55 @@ msgstr ""
 msgid 'Primary Menu'
 msgstr ""
 
-#: functions.php:58
-msgid 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.'
-msgstr ""
-
-#: functions.php:59
-msgid 'Click here...'
-msgstr ""
-
-#: functions.php:68
+#: functions.php:57
 msgid 'Blog Sidebar'
+msgstr ""
+
+#: functions.php:58
+#: functions.php:68
+msgid 'Appears on blog page sidebar'
+msgstr ""
+
+#: functions.php:67
+msgid 'Page Sidebar'
 msgstr ""
 
 #: functions.php:69
 msgid 'Appears on blog page sidebar'
 msgstr ""
 
-#: functions.php:78
+#: functions.php:77
 msgid 'Third Column Sidebar'
 msgstr ""
 
-#: functions.php:79
+#: functions.php:78
 msgid 'Appears on page sidebar'
 msgstr ""
 
-#: functions.php:88
+#: functions.php:87
 msgid 'Footer Navigation 1'
 msgstr ""
 
-#: functions.php:89
-#: functions.php:99 
-#: functions.php:109
-#: functions.php:119
+#: functions.php:88
+#: functions.php:98 
+#: functions.php:108
+#: functions.php:118
 msgid 'Appears on footer'
 msgstr ""
 
-#: functions.php:98
+#: functions.php:97
 msgid 'Footer Navigation 2'
 msgstr ""
 
-#: functions.php:108
+#: functions.php:107
 msgid 'Footer Navigation 3'
 msgstr ""
 
-#: functions.php:118
+#: functions.php:117
 msgid 'Footer Navigation 4'
 msgstr ""
 
-#: functions.php:174
+#: functions.php:269
 msgid 'Education WordPress Theme.'
 msgstr ""
 
@@ -304,103 +305,215 @@ msgstr ""
 msgid 'Description of what this panel does.'
 msgstr ""
 
-#: inc/customizer.php:26
-msgid 'Topbar Section'
-msgstr ""
-
 #: inc/customizer.php:27
-msgid 'Add topbar content'
+msgid 'Theme Color Option'
 msgstr ""
 
-#: inc/customizer.php:37
-msgid 'Mail Address'
+#: inc/customizer.php:36
+msgid 'One can change complete theme color on just one click.'
 msgstr ""
 
-#: inc/customizer.php:47
-msgid 'Phone Number'
+#: inc/customizer.php:43
+msgid 'Typography'
 msgstr ""
 
-#: inc/customizer.php:57
-msgid 'Timing Text'
+#: inc/customizer.php:54
+msgid 'Paragraph Color'
 msgstr ""
 
-#: inc/customizer.php:64
-msgid 'Slider Settings'
+#: inc/customizer.php:68
+msgid 'Paragraph Fonts'
 msgstr ""
 
-#: inc/customizer.php:75
-msgid 'Show / Hide slider'
+#: inc/customizer.php:79
+msgid 'Paragraph Font Size'
 msgstr ""
 
-#: inc/customizer.php:87
-msgid 'Select Slide Image Page'
+#: inc/customizer.php:91
+msgid '"a" Tag Color'
 msgstr ""
 
-#: inc/customizer.php:88
-msgid 'Size of image should be 1600 x 633'
+#: inc/customizer.php:105
+msgid '"a" Tag Fonts'
 msgstr ""
 
-#: inc/customizer.php:96
-msgid 'Popular Courses'
-msgstr ""
-
-#: inc/customizer.php:97
-msgid 'Add section below.'
-msgstr ""
-
-#: inc/customizer.php:106
-msgid 'Section Title'
+#: inc/customizer.php:116
+msgid '"li" Tag Color'
 msgstr ""
 
 #: inc/customizer.php:130
-msgid 'Select Category to display post'
+msgid '"li" Tag Fonts'
 msgstr ""
 
-#: inc/customizer.php:131
-msgid 'Size of image should be 370 x 240'
-msgstr ""
-
-#: inc/customizer.php:137
-msgid 'Footer Text'
-msgstr ""
-
-#: inc/customizer.php:138
-msgid 'Add some text for footer like copyright etc'
-msgstr ""
-
-#: inc/customizer.php:148
-msgid 'Copyright Text'
+#: inc/customizer.php:141
+msgid 'H1 Color'
 msgstr ""
 
 #: inc/customizer.php:155
-msgid 'Sidebar Layout Settings'
-msgstr ""
-
-#: inc/customizer.php:162
-#: inc/customizer.php:170
-msgid 'Right Sidebar'
+msgid 'H1 Fonts'
 msgstr ""
 
 #: inc/customizer.php:167
-msgid 'Change Layouts'
+msgid 'H1 Font Size'
 msgstr ""
 
-#: inc/customizer.php:171
-msgid 'Left Sidebar'
+#: inc/customizer.php:179
+msgid 'H2 Color'
 msgstr ""
 
-#: inc/customizer.php:172
-msgid 'One Column'
+#: inc/customizer.php:193
+msgid 'H2 Fonts'
 msgstr ""
 
-#: inc/customizer.php:173
-msgid 'Grid Layout'
+#: inc/customizer.php:205
+msgid 'H2 Font Size'
 msgstr ""
 
-#: inc/customizer.php:254
-msgid ''Education Pro Theme' 
+#: inc/customizer.php:217
+msgid 'H3 Color'
+msgstr ""
+
+#: inc/customizer.php:231
+msgid 'H3 Fonts'
+msgstr ""
+
+#: inc/customizer.php:243
+msgid 'H3 Font Size'
 msgstr ""
 
 #: inc/customizer.php:255
+msgid 'H4 Color'
+msgstr ""
+
+#: inc/customizer.php:269
+msgid 'H4 Fonts'
+msgstr ""
+
+#: inc/customizer.php:281
+msgid 'H4 Font Size'
+msgstr ""
+
+#: inc/customizer.php:293
+msgid 'H5 Color'
+msgstr ""
+
+#: inc/customizer.php:307
+msgid 'H5 Fonts'
+msgstr ""
+
+#: inc/customizer.php:319
+msgid 'H5 Font Size'
+msgstr ""
+
+#: inc/customizer.php:331
+msgid 'H6 Color'
+msgstr ""
+
+#: inc/customizer.php:345
+msgid 'H6 Fonts'
+msgstr ""
+
+#: inc/customizer.php:357
+msgid 'H6 Font Size'
+msgstr ""
+
+#: inc/customizer.php:365
+msgid 'Topbar Section'
+msgstr ""
+
+#: inc/customizer.php:366
+msgid 'Add topbar content'
+msgstr ""
+
+#: inc/customizer.php:376
+msgid 'Mail Address'
+msgstr ""
+
+#: inc/customizer.php:386
+msgid 'Phone Number'
+msgstr ""
+
+#: inc/customizer.php:396
+msgid 'Timing Text'
+msgstr ""
+
+#: inc/customizer.php:403
+msgid 'Slider Settings'
+msgstr ""
+
+#: inc/customizer.php:414
+msgid 'Show / Hide slider'
+msgstr ""
+
+#: inc/customizer.php:426
+msgid 'Select Slide Image Page'
+msgstr ""
+
+#: inc/customizer.php:427
+msgid 'Size of image should be 1600 x 633'
+msgstr ""
+
+#: inc/customizer.php:435
+msgid 'Popular Courses'
+msgstr ""
+
+#: inc/customizer.php:436
+msgid 'Add section below.'
+msgstr ""
+
+#: inc/customizer.php:445
+msgid 'Section Title'
+msgstr ""
+
+#: inc/customizer.php:469
+msgid 'Select Category to display post'
+msgstr ""
+
+#: inc/customizer.php:470
+msgid 'Size of image should be 370 x 240'
+msgstr ""
+
+#: inc/customizer.php:476
+msgid 'Footer Text'
+msgstr ""
+
+#: inc/customizer.php:477
+msgid 'Add some text for footer like copyright etc'
+msgstr ""
+
+#: inc/customizer.php:487
+msgid 'Copyright Text'
+msgstr ""
+
+#: inc/customizer.php:494
+msgid 'Sidebar Layout Settings'
+msgstr ""
+
+#: inc/customizer.php:501
+#: inc/customizer.php:510
+msgid 'Right Sidebar'
+msgstr ""
+
+#: inc/customizer.php:506
+msgid 'Change Layouts'
+msgstr ""
+
+#: inc/customizer.php:509
+msgid 'Left Sidebar'
+msgstr ""
+
+#: inc/customizer.php:511
+msgid 'One Column'
+msgstr ""
+
+#: inc/customizer.php:512
+msgid 'Grid Layout'
+msgstr ""
+
+#: inc/customizer.php:593
+msgid ''Education Pro Theme' 
+msgstr ""
+
+#: inc/customizer.php:594
 msgid 'Go Pro'
 msgstr ""

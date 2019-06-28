@@ -11,7 +11,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-3">
-                <?php dynamic_sidebar('footer-1');?>
+                    <?php dynamic_sidebar('footer-1');?>
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <?php dynamic_sidebar('footer-2');?>
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="copyright">
-        <p><?php echo esc_html(get_theme_mod('advance_education_footer_copy', __('Copyright 2019 -', 'advance-education')));?> <?php advance_education_credit();?></p>
+        <p><?php echo esc_html(get_theme_mod('advance_education_footer_copy', __('Copyright 2019', 'advance-education')));?> <?php advance_education_credit();?></p>
     </div>
     <?php wp_footer();?>
     </body>

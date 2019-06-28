@@ -2,9 +2,9 @@
 Contributors: Themeshopy
 Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, full-width-template, theme-options, post-formats, translation-ready, rtl-language-support, threaded-comments, blog, e-commerce, education
 Requires at least: 4.3
-Tested up to: 5.1.1
+Tested up to: 5.2.2
 Requires PHP: 7.2.14
-Stable tag: 0.2
+Stable tag: 0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,6 +24,11 @@ Advance Education is a fresh, engaging, visually appealing and elegant education
 * Updated woocommerce.
 * Added Post Formats.
 * Changed screenshot.
+
+= 0.3 =
+* Added Theme color option.
+* Added Typography.
+* Updated POT file.
 
 == Resources ==
 

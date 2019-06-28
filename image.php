@@ -68,7 +68,7 @@ get_header(); ?>
                                     'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-education' ) . ' </span>',
                                 ) );
                             ?>
-                         </div> 
+                        </div> 
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <?php get_sidebar();?>
@@ -156,7 +156,7 @@ get_header(); ?>
                                     'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-education' ) . ' </span>',
                                 ) );
                             ?>
-                         </div> 
+                        </div> 
                     </div>
                     <div class="col-lg-4 col-md-4">
                         <?php get_sidebar();?>

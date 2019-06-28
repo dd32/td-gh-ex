@@ -21,6 +21,345 @@ function advance_education_customize_register($wp_customize) {
 		'description'    => __('Description of what this panel does.', 'advance-education'),
 	));	
 
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'advance_education_theme_color_option', array( 
+		'panel' => 'advance_education_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'advance-education' ) 
+	) );
+
+  	$wp_customize->add_setting( 'advance_education_theme_color', array(
+	    'default' => '#cc3333',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_theme_color', array(
+  		'label' => 'Color Option',
+	    'description' => __('One can change complete theme color on just one click.', 'advance-education'),
+	    'section' => 'advance_education_theme_color_option',
+	    'settings' => 'advance_education_theme_color',
+  	)));
+
+	//Typography
+	$wp_customize->add_section( 'advance_education_typography', array(
+    	'title'      => __( 'Typography', 'advance-education' ),
+		'priority'   => 30,
+		'panel' => 'advance_education_panel_id'
+	) );
+	
+	// This is Paragraph Color picker setting
+	$wp_customize->add_setting( 'advance_education_paragraph_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_paragraph_color', array(
+		'label' => __('Paragraph Color', 'advance-education'),
+		'section' => 'advance_education_typography',
+		'settings' => 'advance_education_paragraph_color',
+	)));
+
+	//This is Paragraph FontFamily picker setting
+	$wp_customize->add_setting('advance_education_paragraph_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_education_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_education_paragraph_font_family', array(
+	    'section'  => 'advance_education_typography',
+	    'label'    => __( 'Paragraph Fonts','advance-education'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	$wp_customize->add_setting('advance_education_paragraph_font_size',array(
+		'default'	=> '12px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_education_paragraph_font_size',array(
+		'label'	=> __('Paragraph Font Size','advance-education'),
+		'section'	=> 'advance_education_typography',
+		'setting'	=> 'advance_education_paragraph_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is "a" Tag Color picker setting
+	$wp_customize->add_setting( 'advance_education_atag_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_atag_color', array(
+		'label' => __('"a" Tag Color', 'advance-education'),
+		'section' => 'advance_education_typography',
+		'settings' => 'advance_education_atag_color',
+	)));
+
+	//This is "a" Tag FontFamily picker setting
+	$wp_customize->add_setting('advance_education_atag_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_education_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_education_atag_font_family', array(
+	    'section'  => 'advance_education_typography',
+	    'label'    => __( '"a" Tag Fonts','advance-education'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	// This is "a" Tag Color picker setting
+	$wp_customize->add_setting( 'advance_education_li_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_li_color', array(
+		'label' => __('"li" Tag Color', 'advance-education'),
+		'section' => 'advance_education_typography',
+		'settings' => 'advance_education_li_color',
+	)));
+
+	//This is "li" Tag FontFamily picker setting
+	$wp_customize->add_setting('advance_education_li_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_education_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_education_li_font_family', array(
+	    'section'  => 'advance_education_typography',
+	    'label'    => __( '"li" Tag Fonts','advance-education'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	// This is H1 Color picker setting
+	$wp_customize->add_setting( 'advance_education_h1_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_h1_color', array(
+		'label' => __('H1 Color', 'advance-education'),
+		'section' => 'advance_education_typography',
+		'settings' => 'advance_education_h1_color',
+	)));
+
+	//This is H1 FontFamily picker setting
+	$wp_customize->add_setting('advance_education_h1_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_education_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_education_h1_font_family', array(
+	    'section'  => 'advance_education_typography',
+	    'label'    => __( 'H1 Fonts','advance-education'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H1 FontSize setting
+	$wp_customize->add_setting('advance_education_h1_font_size',array(
+		'default'	=> '50px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_education_h1_font_size',array(
+		'label'	=> __('H1 Font Size','advance-education'),
+		'section'	=> 'advance_education_typography',
+		'setting'	=> 'advance_education_h1_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H2 Color picker setting
+	$wp_customize->add_setting( 'advance_education_h2_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_h2_color', array(
+		'label' => __('H2 Color', 'advance-education'),
+		'section' => 'advance_education_typography',
+		'settings' => 'advance_education_h2_color',
+	)));
+
+	//This is H2 FontFamily picker setting
+	$wp_customize->add_setting('advance_education_h2_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_education_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_education_h2_font_family', array(
+	    'section'  => 'advance_education_typography',
+	    'label'    => __( 'H2 Fonts','advance-education'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H2 FontSize setting
+	$wp_customize->add_setting('advance_education_h2_font_size',array(
+		'default'	=> '45px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_education_h2_font_size',array(
+		'label'	=> __('H2 Font Size','advance-education'),
+		'section'	=> 'advance_education_typography',
+		'setting'	=> 'advance_education_h2_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H3 Color picker setting
+	$wp_customize->add_setting( 'advance_education_h3_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_h3_color', array(
+		'label' => __('H3 Color', 'advance-education'),
+		'section' => 'advance_education_typography',
+		'settings' => 'advance_education_h3_color',
+	)));
+
+	//This is H3 FontFamily picker setting
+	$wp_customize->add_setting('advance_education_h3_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_education_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_education_h3_font_family', array(
+	    'section'  => 'advance_education_typography',
+	    'label'    => __( 'H3 Fonts','advance-education'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H3 FontSize setting
+	$wp_customize->add_setting('advance_education_h3_font_size',array(
+		'default'	=> '36px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_education_h3_font_size',array(
+		'label'	=> __('H3 Font Size','advance-education'),
+		'section'	=> 'advance_education_typography',
+		'setting'	=> 'advance_education_h3_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H4 Color picker setting
+	$wp_customize->add_setting( 'advance_education_h4_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_h4_color', array(
+		'label' => __('H4 Color', 'advance-education'),
+		'section' => 'advance_education_typography',
+		'settings' => 'advance_education_h4_color',
+	)));
+
+	//This is H4 FontFamily picker setting
+	$wp_customize->add_setting('advance_education_h4_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_education_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_education_h4_font_family', array(
+	    'section'  => 'advance_education_typography',
+	    'label'    => __( 'H4 Fonts','advance-education'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H4 FontSize setting
+	$wp_customize->add_setting('advance_education_h4_font_size',array(
+		'default'	=> '30px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_education_h4_font_size',array(
+		'label'	=> __('H4 Font Size','advance-education'),
+		'section'	=> 'advance_education_typography',
+		'setting'	=> 'advance_education_h4_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H5 Color picker setting
+	$wp_customize->add_setting( 'advance_education_h5_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_h5_color', array(
+		'label' => __('H5 Color', 'advance-education'),
+		'section' => 'advance_education_typography',
+		'settings' => 'advance_education_h5_color',
+	)));
+
+	//This is H5 FontFamily picker setting
+	$wp_customize->add_setting('advance_education_h5_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_education_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_education_h5_font_family', array(
+	    'section'  => 'advance_education_typography',
+	    'label'    => __( 'H5 Fonts','advance-education'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H5 FontSize setting
+	$wp_customize->add_setting('advance_education_h5_font_size',array(
+		'default'	=> '25px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_education_h5_font_size',array(
+		'label'	=> __('H5 Font Size','advance-education'),
+		'section'	=> 'advance_education_typography',
+		'setting'	=> 'advance_education_h5_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H6 Color picker setting
+	$wp_customize->add_setting( 'advance_education_h6_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_education_h6_color', array(
+		'label' => __('H6 Color', 'advance-education'),
+		'section' => 'advance_education_typography',
+		'settings' => 'advance_education_h6_color',
+	)));
+
+	//This is H6 FontFamily picker setting
+	$wp_customize->add_setting('advance_education_h6_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_education_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_education_h6_font_family', array(
+	    'section'  => 'advance_education_typography',
+	    'label'    => __( 'H6 Fonts','advance-education'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H6 FontSize setting
+	$wp_customize->add_setting('advance_education_h6_font_size',array(
+		'default'	=> '18px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_education_h6_font_size',array(
+		'label'	=> __('H6 Font Size','advance-education'),
+		'section'	=> 'advance_education_typography',
+		'setting'	=> 'advance_education_h6_font_size',
+		'type'	=> 'text'
+	));
+
 	//Top Bar
 	$wp_customize->add_section('advance_education_topbar',array(
 		'title'	=> __('Topbar Section','advance-education'),
