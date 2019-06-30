@@ -21,6 +21,31 @@ function advance_portfolio_customize_register($wp_customize) {
 			'description'    => __('Description of what this panel does.', 'advance-portfolio'),
 		));
 
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'advance_portfolio_theme_color_option', 
+		array( 'panel' => 'advance_portfolio_panel_id', 'title' => esc_html__( 'Theme Color Option', 'advance-portfolio' ) )
+	);
+  	$wp_customize->add_setting( 'advance_portfolio_theme_color_first', array(
+	    'default' => '#f54ea2',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_portfolio_theme_color_first', array(
+  		'label' => 'First Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'advance-portfolio'),
+	    'section' => 'advance_portfolio_theme_color_option',
+	    'settings' => 'advance_portfolio_theme_color_first',
+  	)));
+  	$wp_customize->add_setting( 'advance_portfolio_theme_color_second', array(
+	    'default' => '#ffdd65',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_portfolio_theme_color_second', array(
+  		'label' => 'Second Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'advance-portfolio'),
+	    'section' => 'advance_portfolio_theme_color_option',
+	    'settings' => 'advance_portfolio_theme_color_second',
+  	)));
+
 	//Layouts
 	$wp_customize->add_section('advance_portfolio_left_right', array(
 			'title'    => __('Layout Settings', 'advance-portfolio'),
@@ -746,7 +771,7 @@ final class Advance_Portfolio_Customize {
 				'example_1',
 				array(
 					'priority' => 9,
-					'title'    => esc_html__('Portfolio Pro Theme', 'advance-portfolio'),
+					'title'    => esc_html__('Portfolio Pro', 'advance-portfolio'),
 					'pro_text' => esc_html__('Go Pro', 'advance-portfolio'),
 					'pro_url'  => esc_url('https://www.themeshopy.com/themes/wordpress-portfolio-theme/'),
 				)

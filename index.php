@@ -41,7 +41,7 @@ get_header(); ?>
                       'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-portfolio' ) . ' </span>',
                   ) );
                 ?>
-               </div> 
+              </div> 
       	    </div>
           </div>
         <?php }else if($left_right == 'Right Sidebar'){ ?>
@@ -65,7 +65,7 @@ get_header(); ?>
                       'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-portfolio' ) . ' </span>',
                   ) );
                 ?>
-               </div> 
+              </div> 
             </div>
         	  <div class="col-lg-4 col-md-4">
         			<?php get_sidebar();?>
@@ -91,7 +91,7 @@ get_header(); ?>
                     'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-portfolio' ) . ' </span>',
                 ) );
               ?>
-             </div> 
+            </div> 
           </div>
         <?php }else if($left_right == 'Three Columns'){ ?>
           <div class="row">
@@ -115,7 +115,7 @@ get_header(); ?>
                       'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-portfolio' ) . ' </span>',
                   ) );
                 ?>
-               </div> 
+              </div> 
             </div>
             <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
           </div>
@@ -141,7 +141,7 @@ get_header(); ?>
                       'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-portfolio' ) . ' </span>',
                   ) );
                 ?>
-               </div> 
+              </div> 
             </div>
             <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-2');?></div>
             <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar('sidebar-3');?></div>
@@ -166,7 +166,7 @@ get_header(); ?>
                     'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-portfolio' ) . ' </span>',
                 ) );
               ?>
-             </div> 
+            </div> 
           </div>
         <?php } else {?> 
           <div class="row">
@@ -189,7 +189,7 @@ get_header(); ?>
                       'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-portfolio' ) . ' </span>',
                   ) );
                 ?>
-               </div> 
+              </div> 
             </div>
             <div class="col-lg-4 col-md-4">
               <?php get_sidebar();?>
