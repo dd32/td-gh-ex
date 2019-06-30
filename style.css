@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-fitness-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Fitness Gym is a bold, impactful, intuitive and dynamic fitness WordPress theme for gyms, fitness clubs, yoga classes, weight loss centres, personal trainers, aerobics classes, healthcare centres, spa, workout studios, zumba classes, physiotherapists, health consultants and all the fitness freaks who are on a mission to make people healthy and fit. This multipurpose theme has an inviting design to make people turn their heads towards your website at least once. The Bootstrap framework gives a strong base with responsive layout yielding a beautiful look on different sizes of mobiles, tablets and desktops. Facility for customization is provided right at your fingertips, through theme customizer, without requiring any coding knowledge. Advance Fitness Gym loads on all browsers and can be translated into numerous local and international languages. It is optimized for search engines and integrated with social media icons. It offers interactive features and animated transitions to make the site stand apart among others. With multiple layouts for header, footer and sidebars, you can style your website to suit your brand. It comes with thorough documentation that will let you make the most of your website irrespective of your skills. Demo: https://themeshopy.com/advance-fitness-gym-pro/
-Version: 0.2
+Version: 0.3
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-fitness-gym
@@ -606,6 +606,9 @@ section .innerlightbox{
   padding-top: 15%;
   padding-bottom: 5%;
 }
+h3.widget-title a {
+    color: #fe5e24;
+}
 .tagcloud a {
   color: #fff;
 }
@@ -1055,9 +1058,9 @@ h1.page-title {
 
 /* Pagination */
 .nav-previous {
-    float: left;
-    width: 50%;
-    font-size: 15px;
+  float: left;
+  width: 50%;
+  font-size: 15px;
 }
 .nav-next {
     float: right;
@@ -1075,35 +1078,34 @@ h1.page-title {
 .pagination span,
 .pagination a {
 	display:block;
-    float:left;
-    margin: 2px 2px 2px 0;
-    padding:10px 15px;
-    text-decoration:none;
-    width:auto;
-    color:#fff;
-    background: #000 ;
-    -webkit-transition: background .15s ease-in-out;
-    -moz-transition: background .15s ease-in-out;
-    -ms-transition: background .15s ease-in-out;
-    -o-transition: background .15s ease-in-out;
-    transition: background .15s ease-in-out;
+  float:left;
+  margin: 2px 2px 2px 0;
+  padding:10px 15px;
+  text-decoration:none;
+  width:auto;
+  color:#fff;
+  background: #000 ;
+  -webkit-transition: background .15s ease-in-out;
+  -moz-transition: background .15s ease-in-out;
+  -ms-transition: background .15s ease-in-out;
+  -o-transition: background .15s ease-in-out;
+  transition: background .15s ease-in-out;
 }
 .pagination a:hover{
 	color:#000;
-    background: #fe5e24;
+  background: #fe5e24;
 }
 .pagination .current{
 	padding:10px 15px;
-    background: #fe5e24;
-    color:#000;
+  background: #fe5e24;
+  color:#000;
 	font-weight:bold;
 }
-
 iframe{
   width: 100%;
 }
 .entry-audio audio {
-    width: 100%;
+  width: 100%;
 }
 
 /* Media */

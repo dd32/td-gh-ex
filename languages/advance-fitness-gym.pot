@@ -14,7 +14,7 @@ msgstr ""
 "__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
 "attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
 "Language: en_US\n"
-"X-Poedit-SearchPath-0: ../../advance-ecommerce-store\n"
+"X-Poedit-SearchPath-0: ../../advance-fitness-gym\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: grunt-wp-i18n1.0.0\n"
 
@@ -213,8 +213,8 @@ msgstr ""
 msgid 'Appears on home page'
 msgstr ""
 
-#: functions.php:221
-msgid 'Advance Fitness Theme'
+#: functions.php:418
+msgid 'Fitness WordPress Theme'
 msgstr ""
 
 #: header.php:21
@@ -330,131 +330,242 @@ msgid 'Description of what this panel does.'
 msgstr ""
 
 #: inc/customizer.php:26
+msgid 'Theme Color Option'
+msgstr ""
+
+#: inc/customizer.php:35
+msgid 'One can change complete theme color on just one click.'
+msgstr ""
+
+#: inc/customizer.php:42
 msgid 'Layout Settings'
 msgstr ""
 
-#: inc/customizer.php:33 
-#: inc/customizer.php:42
+#: inc/customizer.php:49 
+#: inc/customizer.php:58
 msgid 'Right Sidebar'
 msgstr ""
 
-#: inc/customizer.php:38
+#: inc/customizer.php:54
 msgid 'Change Layouts'
 msgstr ""
 
-#: inc/customizer.php:41
+#: inc/customizer.php:57
 msgid 'Left Sidebar'
 msgstr ""
 
-#: inc/customizer.php:43
+#: inc/customizer.php:59
 msgid 'One Column'
 msgstr ""
 
-#: inc/customizer.php:44
+#: inc/customizer.php:60
 msgid 'Three Columns'
 msgstr ""
 
-#: inc/customizer.php:45
+#: inc/customizer.php:61
 msgid 'Four Columns'
 msgstr ""
 
-#: inc/customizer.php:46
+#: inc/customizer.php:62
 msgid 'Grid Layout'
 msgstr ""
 
-#: inc/customizer.php:52
+#: inc/customizer.php:162
+msgid 'Typography'
+msgstr ""
+
+#: inc/customizer.php:173
+msgid 'Paragraph Color'
+msgstr ""
+
+#: inc/customizer.php:187
+msgid 'Paragraph Fonts'
+msgstr ""
+
+#: inc/customizer.php:198
+msgid 'Paragraph Font Size'
+msgstr ""
+
+#: inc/customizer.php:210
+msgid '"a" Tag Color'
+msgstr ""
+
+#: inc/customizer.php:224
+msgid '"a" Tag Fonts'
+msgstr ""
+
+#: inc/customizer.php:235
+msgid '"li" Tag Color'
+msgstr ""
+
+#: inc/customizer.php:249
+msgid '"li" Tag Fonts'
+msgstr ""
+
+#: inc/customizer.php:260
+msgid 'H1 Color'
+msgstr ""
+
+#: inc/customizer.php:274
+msgid 'H1 Fonts'
+msgstr ""
+
+#: inc/customizer.php:286
+msgid 'H1 Font Size'
+msgstr ""
+
+#: inc/customizer.php:298
+msgid 'H2 Color'
+msgstr ""
+
+#: inc/customizer.php:312
+msgid 'H2 Fonts'
+msgstr ""
+
+#: inc/customizer.php:324
+msgid 'H2 Font Size'
+msgstr ""
+
+#: inc/customizer.php:336
+msgid 'H3 Color'
+msgstr ""
+
+#: inc/customizer.php:350
+msgid 'H3 Fonts'
+msgstr ""
+
+#: inc/customizer.php:362
+msgid 'H3 Font Size'
+msgstr ""
+
+#: inc/customizer.php:374
+msgid 'H4 Color'
+msgstr ""
+
+#: inc/customizer.php:388
+msgid 'H4 Fonts'
+msgstr ""
+
+#: inc/customizer.php:400
+msgid 'H4 Font Size'
+msgstr ""
+
+#: inc/customizer.php:412
+msgid 'H5 Color'
+msgstr ""
+
+#: inc/customizer.php:426
+msgid 'H5 Fonts'
+msgstr ""
+
+#: inc/customizer.php:438
+msgid 'H5 Font Size'
+msgstr ""
+
+#: inc/customizer.php:450
+msgid 'H6 Color'
+msgstr ""
+
+#: inc/customizer.php:464
+msgid 'H6 Fonts'
+msgstr ""
+
+#: inc/customizer.php:476
+msgid 'H6 Font Size'
+msgstr ""
+
+#: inc/customizer.php:484
 msgid 'Topbar Section'
 msgstr ""
 
-#: inc/customizer.php:53
+#: inc/customizer.php:485
 msgid 'Add Header Content here'
 msgstr ""
 
-#: inc/customizer.php:63
+#: inc/customizer.php:495
 msgid 'Add Phone Number'
 msgstr ""
 
-#: inc/customizer.php:74
+#: inc/customizer.php:506
 msgid 'Add Email'
 msgstr ""
 
-#: inc/customizer.php:82
+#: inc/customizer.php:514
 msgid 'Social Icon Section'
 msgstr ""
 
-#: inc/customizer.php:83
+#: inc/customizer.php:515
 msgid 'Add Social Link here'
 msgstr ""
 
-#: inc/customizer.php:93
+#: inc/customizer.php:525
 msgid 'Add Facebook link'
 msgstr ""
 
-#: inc/customizer.php:104
+#: inc/customizer.php:536
 msgid 'Add Twitter link'
 msgstr ""
 
-#: inc/customizer.php:115
+#: inc/customizer.php:547
 msgid 'Add Google Plus link'
 msgstr ""
 
-
-#: inc/customizer.php:126
+#: inc/customizer.php:558
 msgid 'Add Instagram link'
 msgstr ""
 
-#: inc/customizer.php:137
+#: inc/customizer.php:569
 msgid 'Add Linkedin link'
 msgstr ""
 
-#: inc/customizer.php:145
+#: inc/customizer.php:577
 msgid 'Slider Settings'
 msgstr ""
 
-#: inc/customizer.php:156
+#: inc/customizer.php:588
 msgid 'Show / Hide slider'
 msgstr ""
 
-#: inc/customizer.php:168
+#: inc/customizer.php:600
 msgid 'Select Slide Image Page'
 msgstr ""
 
-#: inc/customizer.php:176
+#: inc/customizer.php:608
 msgid 'Services'
 msgstr ""
 
-#: inc/customizer.php:200
+#: inc/customizer.php:632
 msgid 'Select Category to display Services'
 msgstr ""
 
-#: inc/customizer.php:206
+#: inc/customizer.php:638
 msgid 'Welcome Section'
 msgstr ""
 
-#: inc/customizer.php:207
+#: inc/customizer.php:639
 msgid 'Add Welcome sections below.'
 msgstr ""
 
-#: inc/customizer.php:223
+#: inc/customizer.php:655
 msgid 'Select Post'
 msgstr ""
 
-#: inc/customizer.php:229
+#: inc/customizer.php:661
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:230
+#: inc/customizer.php:662
 msgid 'Add some text for footer like copyright etc'
 msgstr ""
 
-#: inc/customizer.php:240
+#: inc/customizer.php:672
 msgid 'Copyright Text'
 msgstr ""
 
-#: inc/customizer.php:356
-msgid 'Fitness Pro Theme'
+#: inc/customizer.php:788
+msgid 'Fitness WordPress Theme'
 msgstr ""
 
-#: inc/customizer.php:357
+#: inc/customizer.php:789
 msgid 'Go Pro'
 msgstr ""

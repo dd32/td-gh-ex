@@ -21,6 +21,22 @@ function advance_fitness_gym_customize_register($wp_customize) {
 		'description'    => __('Description of what this panel does.', 'advance-fitness-gym'),
 	));
 
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'advance_fitness_gym_theme_color_option', array( 
+		'panel' => 'advance_fitness_gym_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'advance-fitness-gym' ) 
+	) );
+  	$wp_customize->add_setting( 'advance_fitness_gym_theme_color', array(
+	    'default' => '#fe5e24',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_fitness_gym_theme_color', array(
+  		'label' => 'Color Option',
+	    'description' => __('One can change complete theme color on just one click.', 'advance-fitness-gym'),
+	    'section' => 'advance_fitness_gym_theme_color_option',
+	    'settings' => 'advance_fitness_gym_theme_color',
+  	)));
+
 	//Layouts
 	$wp_customize->add_section('advance_fitness_gym_left_right', array(
 		'title'    => __('Layout Settings', 'advance-fitness-gym'),
@@ -47,6 +63,422 @@ function advance_fitness_gym_customize_register($wp_customize) {
 		),
 	));
 
+	$font_array = array(
+        '' =>'No Fonts',
+        'Abril Fatface' => 'Abril Fatface',
+        'Acme' =>'Acme', 
+        'Anton' => 'Anton', 
+        'Architects Daughter' =>'Architects Daughter',
+        'Arimo' => 'Arimo', 
+        'Arsenal' =>'Arsenal',
+        'Arvo' =>'Arvo',
+        'Alegreya' =>'Alegreya',
+        'Alfa Slab One' =>'Alfa Slab One',
+        'Averia Serif Libre' =>'Averia Serif Libre', 
+        'Bangers' =>'Bangers', 
+        'Boogaloo' =>'Boogaloo', 
+        'Bad Script' =>'Bad Script',
+        'Bitter' =>'Bitter', 
+        'Bree Serif' =>'Bree Serif', 
+        'BenchNine' =>'BenchNine',
+        'Cabin' =>'Cabin',
+        'Cardo' =>'Cardo', 
+        'Courgette' =>'Courgette', 
+        'Cherry Swash' =>'Cherry Swash',
+        'Cormorant Garamond' =>'Cormorant Garamond', 
+        'Crimson Text' =>'Crimson Text',
+        'Cuprum' =>'Cuprum', 
+        'Cookie' =>'Cookie',
+        'Chewy' =>'Chewy',
+        'Days One' =>'Days One',
+        'Dosis' =>'Dosis',
+        'Droid Sans' =>'Droid Sans', 
+        'Economica' =>'Economica', 
+        'Fredoka One' =>'Fredoka One',
+        'Fjalla One' =>'Fjalla One',
+        'Francois One' =>'Francois One', 
+        'Frank Ruhl Libre' => 'Frank Ruhl Libre', 
+        'Gloria Hallelujah' =>'Gloria Hallelujah',
+        'Great Vibes' =>'Great Vibes', 
+        'Handlee' =>'Handlee', 
+        'Hammersmith One' =>'Hammersmith One',
+        'Inconsolata' =>'Inconsolata',
+        'Indie Flower' =>'Indie Flower', 
+        'IM Fell English SC' =>'IM Fell English SC',
+        'Julius Sans One' =>'Julius Sans One',
+        'Josefin Slab' =>'Josefin Slab',
+        'Josefin Sans' =>'Josefin Sans',
+        'Kanit' =>'Kanit',
+        'Lobster' =>'Lobster',
+        'Lato' => 'Lato',
+        'Lora' =>'Lora', 
+        'Libre Baskerville' =>'Libre Baskerville',
+        'Lobster Two' => 'Lobster Two',
+        'Merriweather' =>'Merriweather',
+        'Monda' =>'Monda',
+        'Montserrat' =>'Montserrat',
+        'Muli' =>'Muli',
+        'Marck Script' =>'Marck Script',
+        'Noto Serif' =>'Noto Serif',
+        'Open Sans' =>'Open Sans',
+        'Overpass' => 'Overpass', 
+        'Overpass Mono' =>'Overpass Mono',
+        'Oxygen' =>'Oxygen',
+        'Orbitron' =>'Orbitron',
+        'Patua One' =>'Patua One',
+        'Pacifico' =>'Pacifico',
+        'Padauk' =>'Padauk',
+        'Playball' =>'Playball',
+        'Playfair Display' =>'Playfair Display',
+        'PT Sans' =>'PT Sans',
+        'Philosopher' =>'Philosopher',
+        'Permanent Marker' =>'Permanent Marker',
+        'Poiret One' =>'Poiret One',
+        'Quicksand' =>'Quicksand',
+        'Quattrocento Sans' =>'Quattrocento Sans',
+        'Raleway' =>'Raleway',
+        'Rubik' =>'Rubik',
+        'Rokkitt' =>'Rokkitt',
+        'Russo One' => 'Russo One', 
+        'Righteous' =>'Righteous', 
+        'Slabo' =>'Slabo', 
+        'Source Sans Pro' =>'Source Sans Pro',
+        'Shadows Into Light Two' =>'Shadows Into Light Two',
+        'Shadows Into Light' =>  'Shadows Into Light',
+        'Sacramento' =>'Sacramento',
+        'Shrikhand' =>'Shrikhand',
+        'Tangerine' => 'Tangerine',
+        'Ubuntu' =>'Ubuntu',
+        'VT323' =>'VT323',
+        'Varela Round' =>'Varela Round',
+        'Vampiro One' =>'Vampiro One',
+        'Vollkorn' => 'Vollkorn',
+        'Volkhov' =>'Volkhov',
+        'Yanone Kaffeesatz' =>'Yanone Kaffeesatz'
+    );
+
+	//Typography
+	$wp_customize->add_section( 'advance_fitness_gym_typography', array(
+    	'title'      => __( 'Typography', 'advance-fitness-gym' ),
+		'priority'   => 30,
+		'panel' => 'advance_fitness_gym_panel_id'
+	) );
+	
+	// This is Paragraph Color picker setting
+	$wp_customize->add_setting( 'advance_fitness_gym_paragraph_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_fitness_gym_paragraph_color', array(
+		'label' => __('Paragraph Color', 'advance-fitness-gym'),
+		'section' => 'advance_fitness_gym_typography',
+		'settings' => 'advance_fitness_gym_paragraph_color',
+	)));
+
+	//This is Paragraph FontFamily picker setting
+	$wp_customize->add_setting('advance_fitness_gym_paragraph_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_fitness_gym_paragraph_font_family', array(
+	    'section'  => 'advance_fitness_gym_typography',
+	    'label'    => __( 'Paragraph Fonts','advance-fitness-gym'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	$wp_customize->add_setting('advance_fitness_gym_paragraph_font_size',array(
+		'default'	=> '12px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_fitness_gym_paragraph_font_size',array(
+		'label'	=> __('Paragraph Font Size','advance-fitness-gym'),
+		'section'	=> 'advance_fitness_gym_typography',
+		'setting'	=> 'advance_fitness_gym_paragraph_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is "a" Tag Color picker setting
+	$wp_customize->add_setting( 'advance_fitness_gym_atag_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_fitness_gym_atag_color', array(
+		'label' => __('"a" Tag Color', 'advance-fitness-gym'),
+		'section' => 'advance_fitness_gym_typography',
+		'settings' => 'advance_fitness_gym_atag_color',
+	)));
+
+	//This is "a" Tag FontFamily picker setting
+	$wp_customize->add_setting('advance_fitness_gym_atag_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_fitness_gym_atag_font_family', array(
+	    'section'  => 'advance_fitness_gym_typography',
+	    'label'    => __( '"a" Tag Fonts','advance-fitness-gym'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	// This is "a" Tag Color picker setting
+	$wp_customize->add_setting( 'advance_fitness_gym_li_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_fitness_gym_li_color', array(
+		'label' => __('"li" Tag Color', 'advance-fitness-gym'),
+		'section' => 'advance_fitness_gym_typography',
+		'settings' => 'advance_fitness_gym_li_color',
+	)));
+
+	//This is "li" Tag FontFamily picker setting
+	$wp_customize->add_setting('advance_fitness_gym_li_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_fitness_gym_li_font_family', array(
+	    'section'  => 'advance_fitness_gym_typography',
+	    'label'    => __( '"li" Tag Fonts','advance-fitness-gym'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	// This is H1 Color picker setting
+	$wp_customize->add_setting( 'advance_fitness_gym_h1_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_fitness_gym_h1_color', array(
+		'label' => __('H1 Color', 'advance-fitness-gym'),
+		'section' => 'advance_fitness_gym_typography',
+		'settings' => 'advance_fitness_gym_h1_color',
+	)));
+
+	//This is H1 FontFamily picker setting
+	$wp_customize->add_setting('advance_fitness_gym_h1_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_fitness_gym_h1_font_family', array(
+	    'section'  => 'advance_fitness_gym_typography',
+	    'label'    => __( 'H1 Fonts','advance-fitness-gym'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H1 FontSize setting
+	$wp_customize->add_setting('advance_fitness_gym_h1_font_size',array(
+		'default'	=> '50px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_fitness_gym_h1_font_size',array(
+		'label'	=> __('H1 Font Size','advance-fitness-gym'),
+		'section'	=> 'advance_fitness_gym_typography',
+		'setting'	=> 'advance_fitness_gym_h1_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H2 Color picker setting
+	$wp_customize->add_setting( 'advance_fitness_gym_h2_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_fitness_gym_h2_color', array(
+		'label' => __('H2 Color', 'advance-fitness-gym'),
+		'section' => 'advance_fitness_gym_typography',
+		'settings' => 'advance_fitness_gym_h2_color',
+	)));
+
+	//This is H2 FontFamily picker setting
+	$wp_customize->add_setting('advance_fitness_gym_h2_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_fitness_gym_h2_font_family', array(
+	    'section'  => 'advance_fitness_gym_typography',
+	    'label'    => __( 'H2 Fonts','advance-fitness-gym'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H2 FontSize setting
+	$wp_customize->add_setting('advance_fitness_gym_h2_font_size',array(
+		'default'	=> '45px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_fitness_gym_h2_font_size',array(
+		'label'	=> __('H2 Font Size','advance-fitness-gym'),
+		'section'	=> 'advance_fitness_gym_typography',
+		'setting'	=> 'advance_fitness_gym_h2_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H3 Color picker setting
+	$wp_customize->add_setting( 'advance_fitness_gym_h3_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_fitness_gym_h3_color', array(
+		'label' => __('H3 Color', 'advance-fitness-gym'),
+		'section' => 'advance_fitness_gym_typography',
+		'settings' => 'advance_fitness_gym_h3_color',
+	)));
+
+	//This is H3 FontFamily picker setting
+	$wp_customize->add_setting('advance_fitness_gym_h3_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_fitness_gym_h3_font_family', array(
+	    'section'  => 'advance_fitness_gym_typography',
+	    'label'    => __( 'H3 Fonts','advance-fitness-gym'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H3 FontSize setting
+	$wp_customize->add_setting('advance_fitness_gym_h3_font_size',array(
+		'default'	=> '36px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_fitness_gym_h3_font_size',array(
+		'label'	=> __('H3 Font Size','advance-fitness-gym'),
+		'section'	=> 'advance_fitness_gym_typography',
+		'setting'	=> 'advance_fitness_gym_h3_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H4 Color picker setting
+	$wp_customize->add_setting( 'advance_fitness_gym_h4_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_fitness_gym_h4_color', array(
+		'label' => __('H4 Color', 'advance-fitness-gym'),
+		'section' => 'advance_fitness_gym_typography',
+		'settings' => 'advance_fitness_gym_h4_color',
+	)));
+
+	//This is H4 FontFamily picker setting
+	$wp_customize->add_setting('advance_fitness_gym_h4_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_fitness_gym_h4_font_family', array(
+	    'section'  => 'advance_fitness_gym_typography',
+	    'label'    => __( 'H4 Fonts','advance-fitness-gym'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H4 FontSize setting
+	$wp_customize->add_setting('advance_fitness_gym_h4_font_size',array(
+		'default'	=> '30px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_fitness_gym_h4_font_size',array(
+		'label'	=> __('H4 Font Size','advance-fitness-gym'),
+		'section'	=> 'advance_fitness_gym_typography',
+		'setting'	=> 'advance_fitness_gym_h4_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H5 Color picker setting
+	$wp_customize->add_setting( 'advance_fitness_gym_h5_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_fitness_gym_h5_color', array(
+		'label' => __('H5 Color', 'advance-fitness-gym'),
+		'section' => 'advance_fitness_gym_typography',
+		'settings' => 'advance_fitness_gym_h5_color',
+	)));
+
+	//This is H5 FontFamily picker setting
+	$wp_customize->add_setting('advance_fitness_gym_h5_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_fitness_gym_h5_font_family', array(
+	    'section'  => 'advance_fitness_gym_typography',
+	    'label'    => __( 'H5 Fonts','advance-fitness-gym'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H5 FontSize setting
+	$wp_customize->add_setting('advance_fitness_gym_h5_font_size',array(
+		'default'	=> '25px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_fitness_gym_h5_font_size',array(
+		'label'	=> __('H5 Font Size','advance-fitness-gym'),
+		'section'	=> 'advance_fitness_gym_typography',
+		'setting'	=> 'advance_fitness_gym_h5_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H6 Color picker setting
+	$wp_customize->add_setting( 'advance_fitness_gym_h6_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_fitness_gym_h6_color', array(
+		'label' => __('H6 Color', 'advance-fitness-gym'),
+		'section' => 'advance_fitness_gym_typography',
+		'settings' => 'advance_fitness_gym_h6_color',
+	)));
+
+	//This is H6 FontFamily picker setting
+	$wp_customize->add_setting('advance_fitness_gym_h6_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_fitness_gym_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_fitness_gym_h6_font_family', array(
+	    'section'  => 'advance_fitness_gym_typography',
+	    'label'    => __( 'H6 Fonts','advance-fitness-gym'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H6 FontSize setting
+	$wp_customize->add_setting('advance_fitness_gym_h6_font_size',array(
+		'default'	=> '18px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_fitness_gym_h6_font_size',array(
+		'label'	=> __('H6 Font Size','advance-fitness-gym'),
+		'section'	=> 'advance_fitness_gym_typography',
+		'setting'	=> 'advance_fitness_gym_h6_font_size',
+		'type'	=> 'text'
+	));
+	
 	//Topbar section
 	$wp_customize->add_section('advance_fitness_gym_topbar',array(
 		'title'	=> __('Topbar Section','advance-fitness-gym'),
@@ -353,7 +785,7 @@ final class Advance_Fitness_Gym_Customize {
 				'example_1',
 				array(
 					'priority' => 9,
-					'title'    => esc_html__('Fitness Pro Theme', 'advance-fitness-gym'),
+					'title'    => esc_html__('Fitness Gym Pro', 'advance-fitness-gym'),
 					'pro_text' => esc_html__('Go Pro', 'advance-fitness-gym'),
 					'pro_url'  => esc_url('https://www.themeshopy.com/themes/wordpress-fitness-theme/'),
 				)

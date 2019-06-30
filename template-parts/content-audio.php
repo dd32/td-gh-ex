@@ -38,10 +38,10 @@
     ?>
   </div>
   <div class="new-text">
-      <p><?php the_excerpt();?></p>
-      <div class="second-border">
-        <a href="<?php echo esc_url( get_permalink() );?>" title="<?php esc_attr_e( 'Read More', 'advance-fitness-gym' ); ?>"><?php esc_html_e('Read More','advance-fitness-gym'); ?></a>
-      </div>
+    <p><?php the_excerpt();?></p>
+    <div class="second-border">
+      <a href="<?php echo esc_url( get_permalink() );?>" title="<?php esc_attr_e( 'Read More', 'advance-fitness-gym' ); ?>"><?php esc_html_e('Read More','advance-fitness-gym'); ?></a>
+    </div>
   </div>
   <div class="clearfix"></div>
 </div>

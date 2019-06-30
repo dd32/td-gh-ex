@@ -7,8 +7,8 @@
  * @package advance-fitness-gym
  */
 
-?><!DOCTYPE html>
-
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -26,14 +26,14 @@
       <div class="row">
         <div class="top-contact col-lg-6 col-md-8 p-0">
           <span class="contact">
-          <?php if( get_theme_mod( 'advance_fitness_gym_contact','' ) != '') { ?>
+            <?php if( get_theme_mod( 'advance_fitness_gym_contact','' ) != '') { ?>
             <i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_contact','' )); ?>
            <?php } ?>
           </span>
-         <span class="mail">
-          <?php if( get_theme_mod( 'advance_fitness_gym_email','' ) != '') { ?>
+          <span class="mail">
+            <?php if( get_theme_mod( 'advance_fitness_gym_email','' ) != '') { ?>
             <i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('advance_fitness_gym_email','') ); ?>
-          <?php } ?>
+            <?php } ?>
           </span>
         </div>
         <div class="col-lg-6 col-md-4 socialbox">
@@ -66,11 +66,11 @@
           <h1><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
           <?php $description = get_bloginfo( 'description', 'display' );
           if ( $description || is_customize_preview() ) : ?> 
-            <p class="site-description"><?php echo esc_html($description); ?></p>       
+          <p class="site-description"><?php echo esc_html($description); ?></p>       
           <?php endif; }?>
         </div>
         <div class="col-lg-9 col-md-9">
-           <div class="main-menu">
+          <div class="main-menu">
             <div class="container">
               <div class="nav">
                 <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
