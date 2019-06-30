@@ -20,6 +20,449 @@ function advance_startup_customize_register($wp_customize) {
 		'title'          => __('Theme Settings', 'advance-startup'),
 	));	
 
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'advance_startup_theme_color_option', 
+		array( 'panel' => 'advance_startup_panel_id', 'title' => esc_html__( 'Theme Color Option', 'advance-startup' ) )
+	);
+  	$wp_customize->add_setting( 'advance_startup_theme_color_first', array(
+	    'default' => '#e9413a',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_theme_color_first', array(
+  		'label' => 'First Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'advance-startup'),
+	    'section' => 'advance_startup_theme_color_option',
+	    'settings' => 'advance_startup_theme_color_first',
+  	)));
+
+  	$wp_customize->add_setting( 'advance_startup_theme_color_second', array(
+	    'default' => '#fcc012',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_theme_color_second', array(
+  		'label' => 'Second Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'advance-startup'),
+	    'section' => 'advance_startup_theme_color_option',
+	    'settings' => 'advance_startup_theme_color_second',
+  	)));
+
+  	// font array
+	$font_array = array(
+        '' => 'No Fonts',
+        'Abril Fatface' => 'Abril Fatface',
+        'Acme' => 'Acme',
+        'Anton' => 'Anton',
+        'Architects Daughter' => 'Architects Daughter',
+        'Arimo' => 'Arimo',
+        'Arsenal' => 'Arsenal', 
+        'Arvo' => 'Arvo',
+        'Alegreya' => 'Alegreya',
+        'Alfa Slab One' => 'Alfa Slab One',
+        'Averia Serif Libre' => 'Averia Serif Libre',
+        'Bangers' => 'Bangers', 
+        'Boogaloo' => 'Boogaloo',
+        'Bad Script' => 'Bad Script',
+        'Bitter' => 'Bitter',
+        'Bree Serif' => 'Bree Serif',
+        'BenchNine' => 'BenchNine', 
+        'Cabin' => 'Cabin', 
+        'Cardo' => 'Cardo',
+        'Courgette' => 'Courgette',
+        'Cherry Swash' => 'Cherry Swash',
+        'Cormorant Garamond' => 'Cormorant Garamond',
+        'Crimson Text' => 'Crimson Text',
+        'Cuprum' => 'Cuprum', 
+        'Cookie' => 'Cookie', 
+        'Chewy' => 'Chewy', 
+        'Days One' => 'Days One', 
+        'Dosis' => 'Dosis',
+        'Droid Sans' => 'Droid Sans',
+        'Economica' => 'Economica',
+        'Fredoka One' => 'Fredoka One',
+        'Fjalla One' => 'Fjalla One',
+        'Francois One' => 'Francois One',
+        'Frank Ruhl Libre' => 'Frank Ruhl Libre',
+        'Gloria Hallelujah' => 'Gloria Hallelujah',
+        'Great Vibes' => 'Great Vibes',
+        'Handlee' => 'Handlee', 
+        'Hammersmith One' => 'Hammersmith One',
+        'Inconsolata' => 'Inconsolata', 
+        'Indie Flower' => 'Indie Flower', 
+        'IM Fell English SC' => 'IM Fell English SC', 
+        'Julius Sans One' => 'Julius Sans One',
+        'Josefin Slab' => 'Josefin Slab', 
+        'Josefin Sans' => 'Josefin Sans', 
+        'Kanit' => 'Kanit', 
+        'Lobster' => 'Lobster', 
+        'Lato' => 'Lato',
+        'Lora' => 'Lora', 
+        'Libre Baskerville' =>'Libre Baskerville',
+        'Lobster Two' => 'Lobster Two',
+        'Merriweather' =>'Merriweather', 
+        'Monda' => 'Monda',
+        'Montserrat' => 'Montserrat',
+        'Muli' => 'Muli', 
+        'Marck Script' => 'Marck Script',
+        'Noto Serif' => 'Noto Serif',
+        'Open Sans' => 'Open Sans', 
+        'Overpass' => 'Overpass',
+        'Overpass Mono' => 'Overpass Mono',
+        'Oxygen' => 'Oxygen', 
+        'Orbitron' => 'Orbitron', 
+        'Patua One' => 'Patua One', 
+        'Pacifico' => 'Pacifico',
+        'Padauk' => 'Padauk', 
+        'Playball' => 'Playball',
+        'Playfair Display' => 'Playfair Display', 
+        'PT Sans' => 'PT Sans',
+        'Philosopher' => 'Philosopher',
+        'Permanent Marker' => 'Permanent Marker',
+        'Poiret One' => 'Poiret One', 
+        'Quicksand' => 'Quicksand', 
+        'Quattrocento Sans' => 'Quattrocento Sans', 
+        'Raleway' => 'Raleway', 
+        'Rubik' => 'Rubik', 
+        'Rokkitt' => 'Rokkitt', 
+        'Russo One' => 'Russo One', 
+        'Righteous' => 'Righteous', 
+        'Slabo' => 'Slabo', 
+        'Source Sans Pro' => 'Source Sans Pro', 
+        'Shadows Into Light Two' =>'Shadows Into Light Two', 
+        'Shadows Into Light' => 'Shadows Into Light', 
+        'Sacramento' => 'Sacramento', 
+        'Shrikhand' => 'Shrikhand', 
+        'Tangerine' => 'Tangerine',
+        'Ubuntu' => 'Ubuntu', 
+        'VT323' => 'VT323', 
+        'Varela Round' => 'Varela Round', 
+        'Vampiro One' => 'Vampiro One',
+        'Vollkorn' => 'Vollkorn',
+        'Volkhov' => 'Volkhov', 
+        'Yanone Kaffeesatz' => 'Yanone Kaffeesatz',
+    );
+
+	//Typography
+	$wp_customize->add_section( 'advance_startup_typography', array(
+    	'title'      => __( 'Typography', 'advance-startup' ),
+		'priority'   => 30,
+		'panel' => 'advance_startup_panel_id'
+	) );
+	
+	// This is Paragraph Color picker setting
+	$wp_customize->add_setting( 'advance_startup_paragraph_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_paragraph_color', array(
+		'label' => __('Paragraph Color', 'advance-startup'),
+		'section' => 'advance_startup_typography',
+		'settings' => 'advance_startup_paragraph_color',
+	)));
+
+	//This is Paragraph FontFamily picker setting
+	$wp_customize->add_setting('advance_startup_paragraph_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_startup_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_startup_paragraph_font_family', array(
+	    'section'  => 'advance_startup_typography',
+	    'label'    => __( 'Paragraph Fonts','advance-startup'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	$wp_customize->add_setting('advance_startup_paragraph_font_size',array(
+		'default'	=> '12px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_startup_paragraph_font_size',array(
+		'label'	=> __('Paragraph Font Size','advance-startup'),
+		'section'	=> 'advance_startup_typography',
+		'setting'	=> 'advance_startup_paragraph_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is "a" Tag Color picker setting
+	$wp_customize->add_setting( 'advance_startup_atag_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_atag_color', array(
+		'label' => __('"a" Tag Color', 'advance-startup'),
+		'section' => 'advance_startup_typography',
+		'settings' => 'advance_startup_atag_color',
+	)));
+
+	//This is "a" Tag FontFamily picker setting
+	$wp_customize->add_setting('advance_startup_atag_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_startup_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_startup_atag_font_family', array(
+	    'section'  => 'advance_startup_typography',
+	    'label'    => __( '"a" Tag Fonts','advance-startup'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	// This is "a" Tag Color picker setting
+	$wp_customize->add_setting( 'advance_startup_li_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_li_color', array(
+		'label' => __('"li" Tag Color', 'advance-startup'),
+		'section' => 'advance_startup_typography',
+		'settings' => 'advance_startup_li_color',
+	)));
+
+	//This is "li" Tag FontFamily picker setting
+	$wp_customize->add_setting('advance_startup_li_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_startup_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_startup_li_font_family', array(
+	    'section'  => 'advance_startup_typography',
+	    'label'    => __( '"li" Tag Fonts','advance-startup'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	// This is H1 Color picker setting
+	$wp_customize->add_setting( 'advance_startup_h1_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_h1_color', array(
+		'label' => __('H1 Color', 'advance-startup'),
+		'section' => 'advance_startup_typography',
+		'settings' => 'advance_startup_h1_color',
+	)));
+
+	//This is H1 FontFamily picker setting
+	$wp_customize->add_setting('advance_startup_h1_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_startup_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_startup_h1_font_family', array(
+	    'section'  => 'advance_startup_typography',
+	    'label'    => __( 'H1 Fonts','advance-startup'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H1 FontSize setting
+	$wp_customize->add_setting('advance_startup_h1_font_size',array(
+		'default'	=> '50px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_startup_h1_font_size',array(
+		'label'	=> __('H1 Font Size','advance-startup'),
+		'section'	=> 'advance_startup_typography',
+		'setting'	=> 'advance_startup_h1_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H2 Color picker setting
+	$wp_customize->add_setting( 'advance_startup_h2_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_h2_color', array(
+		'label' => __('h2 Color', 'advance-startup'),
+		'section' => 'advance_startup_typography',
+		'settings' => 'advance_startup_h2_color',
+	)));
+
+	//This is H2 FontFamily picker setting
+	$wp_customize->add_setting('advance_startup_h2_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_startup_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_startup_h2_font_family', array(
+	    'section'  => 'advance_startup_typography',
+	    'label'    => __( 'h2 Fonts','advance-startup'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H2 FontSize setting
+	$wp_customize->add_setting('advance_startup_h2_font_size',array(
+		'default'	=> '45px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_startup_h2_font_size',array(
+		'label'	=> __('h2 Font Size','advance-startup'),
+		'section'	=> 'advance_startup_typography',
+		'setting'	=> 'advance_startup_h2_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H3 Color picker setting
+	$wp_customize->add_setting( 'advance_startup_h3_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_h3_color', array(
+		'label' => __('h3 Color', 'advance-startup'),
+		'section' => 'advance_startup_typography',
+		'settings' => 'advance_startup_h3_color',
+	)));
+
+	//This is H3 FontFamily picker setting
+	$wp_customize->add_setting('advance_startup_h3_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_startup_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_startup_h3_font_family', array(
+	    'section'  => 'advance_startup_typography',
+	    'label'    => __( 'h3 Fonts','advance-startup'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H3 FontSize setting
+	$wp_customize->add_setting('advance_startup_h3_font_size',array(
+		'default'	=> '36px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_startup_h3_font_size',array(
+		'label'	=> __('h3 Font Size','advance-startup'),
+		'section'	=> 'advance_startup_typography',
+		'setting'	=> 'advance_startup_h3_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H4 Color picker setting
+	$wp_customize->add_setting( 'advance_startup_h4_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_h4_color', array(
+		'label' => __('h4 Color', 'advance-startup'),
+		'section' => 'advance_startup_typography',
+		'settings' => 'advance_startup_h4_color',
+	)));
+
+	//This is H4 FontFamily picker setting
+	$wp_customize->add_setting('advance_startup_h4_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_startup_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_startup_h4_font_family', array(
+	    'section'  => 'advance_startup_typography',
+	    'label'    => __( 'h4 Fonts','advance-startup'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H4 FontSize setting
+	$wp_customize->add_setting('advance_startup_h4_font_size',array(
+		'default'	=> '30px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_startup_h4_font_size',array(
+		'label'	=> __('h4 Font Size','advance-startup'),
+		'section'	=> 'advance_startup_typography',
+		'setting'	=> 'advance_startup_h4_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H5 Color picker setting
+	$wp_customize->add_setting( 'advance_startup_h5_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_h5_color', array(
+		'label' => __('h5 Color', 'advance-startup'),
+		'section' => 'advance_startup_typography',
+		'settings' => 'advance_startup_h5_color',
+	)));
+
+	//This is H5 FontFamily picker setting
+	$wp_customize->add_setting('advance_startup_h5_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_startup_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_startup_h5_font_family', array(
+	    'section'  => 'advance_startup_typography',
+	    'label'    => __( 'h5 Fonts','advance-startup'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H5 FontSize setting
+	$wp_customize->add_setting('advance_startup_h5_font_size',array(
+		'default'	=> '25px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_startup_h5_font_size',array(
+		'label'	=> __('h5 Font Size','advance-startup'),
+		'section'	=> 'advance_startup_typography',
+		'setting'	=> 'advance_startup_h5_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is H6 Color picker setting
+	$wp_customize->add_setting( 'advance_startup_h6_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_startup_h6_color', array(
+		'label' => __('h6 Color', 'advance-startup'),
+		'section' => 'advance_startup_typography',
+		'settings' => 'advance_startup_h6_color',
+	)));
+
+	//This is H6 FontFamily picker setting
+	$wp_customize->add_setting('advance_startup_h6_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'advance_startup_sanitize_choices'
+	));
+	$wp_customize->add_control(
+	    'advance_startup_h6_font_family', array(
+	    'section'  => 'advance_startup_typography',
+	    'label'    => __( 'h6 Fonts','advance-startup'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is H6 FontSize setting
+	$wp_customize->add_setting('advance_startup_h6_font_size',array(
+		'default'	=> '18px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('advance_startup_h6_font_size',array(
+		'label'	=> __('h6 Font Size','advance-startup'),
+		'section'	=> 'advance_startup_typography',
+		'setting'	=> 'advance_startup_h6_font_size',
+		'type'	=> 'text'
+	));
+
 	//Top Bar
 	$wp_customize->add_section('advance_startup_topbar',array(
 		'title'	=> __('Topbar Section','advance-startup'),

@@ -7,8 +7,8 @@
  * @package advance-startup
  */
 
-?><!DOCTYPE html>
-
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -19,7 +19,6 @@
 
 <body <?php body_class(); ?>>
  
-
 <div class="top-header">
   <div class="container">
     <div class="row m-0">

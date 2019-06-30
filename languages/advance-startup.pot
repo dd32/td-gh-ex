@@ -14,7 +14,7 @@ msgstr ""
 "__;_e;_x:1,2c;_ex:1,2c;_n:1,2;_nx:1,2,4c;_n_noop:1,2;_nx_noop:1,2,3c;esc_"
 "attr__;esc_html__;esc_attr_e;esc_html_e;esc_attr_x:1,2c;esc_html_x:1,2c;\n"
 "Language: en_US\n"
-"X-Poedit-SearchPath-0: ../../advance-automobile\n"
+"X-Poedit-SearchPath-0: ../../advance-startup\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: grunt-wp-i18n1.0.0\n"
 
@@ -168,7 +168,7 @@ msgstr ""
 msgid 'Footer Navigation 4'
 msgstr ""
 
-#: functions.php:171
+#: functions.php:268
 msgid 'Startup WordPress Theme'
 msgstr ""
 
@@ -298,142 +298,251 @@ msgid 'Theme Settings'
 msgstr ""
 
 #: inc/customizer.php:25
-msgid 'Topbar Section'
+msgid 'Theme Color Option'
 msgstr ""
 
-#: inc/customizer.php:26
-msgid 'Add topbar content'
+#: inc/customizer.php:33
+#: inc/customizer.php:43
+msgid 'One can change complete theme color on just one click.'
 msgstr ""
 
-#: inc/customizer.php:36
-msgid 'Mail Address'
+#: inc/customizer.php:146
+msgid 'Typography'
 msgstr ""
 
-#: inc/customizer.php:46
-msgid 'Phone Number'
+#: inc/customizer.php:157
+msgid 'Paragraph Color'
 msgstr ""
 
-#: inc/customizer.php:56
-msgid 'Timing Text'
+#: inc/customizer.php:171
+msgid 'Paragraph Fonts'
 msgstr ""
 
-#: inc/customizer.php:66
-msgid 'Button Text'
+#: inc/customizer.php:184
+msgid 'Paragraph Font Size'
 msgstr ""
 
-#: inc/customizer.php:76
-msgid 'Add Link'
+#: inc/customizer.php:194
+msgid '"a" Tag Color'
 msgstr ""
 
-#: inc/customizer.php:84
-msgid 'Social Icons'
-msgstr ""
-
-#: inc/customizer.php:85
-msgid 'Add topbar content'
-msgstr ""
-
-#: inc/customizer.php:95
-msgid 'Add Facebook link'
-msgstr ""
-
-#: inc/customizer.php:106
-msgid 'Add Twitter link'
-msgstr ""
-
-#: inc/customizer.php:117
-msgid 'Add Youtube link'
-msgstr ""
-
-#: inc/customizer.php:128
-msgid 'Add Google Plus link'
-msgstr ""
-
-#: inc/customizer.php:139
-msgid 'Add Linkedin link'
-msgstr ""
-
-#: inc/customizer.php:147
-msgid 'Slider Settings'
-msgstr ""
-
-#: inc/customizer.php:158
-msgid 'Show / Hide slider'
-msgstr ""
-
-#: inc/customizer.php:169
-msgid 'Select Slide Image Page'
-msgstr ""
-
-#: inc/customizer.php:170
-msgid 'Size of image should be 1500 x 600'
-msgstr ""
-
-#: inc/customizer.php:178
-msgid 'What We Provide Section'
-msgstr ""
-
-#: inc/customizer.php:179
-msgid 'Add  section below.'
-msgstr ""
-
-#: inc/customizer.php:188
-msgid 'Section Title'
-msgstr ""
-
-#: inc/customizer.php:188
-msgid 'Select post'
-msgstr ""
-
-#: inc/customizer.php:212
-msgid 'Select Category to display Latest Post'
-msgstr ""
-
-#: inc/customizer.php:213
-msgid 'Size of image should be 370 x 240'
+#: inc/customizer.php:208
+msgid '"a" Tag Fonts'
 msgstr ""
 
 #: inc/customizer.php:219
-msgid 'Footer Text'
+msgid '"li" Tag Color'
 msgstr ""
 
-#: inc/customizer.php:220
-msgid 'Add some text for footer like copyright etc'
-msgstr ""
-
-#: inc/customizer.php:230
-msgid 'Copyright Text'
-msgstr ""
-
-#: inc/customizer.php:237
-msgid 'Sidebar Layout Settings'
+#: inc/customizer.php:233
+msgid '"li" Tag Fonts'
 msgstr ""
 
 #: inc/customizer.php:244
-#: inc/customizer.php:253
+msgid 'H1 Color'
+msgstr ""
+
+#: inc/customizer.php:258
+msgid 'H1 Fonts'
+msgstr ""
+
+#: inc/customizer.php:270
+msgid 'H1 Font Size'
+msgstr ""
+
+#: inc/customizer.php:282
+msgid 'H2 Color'
+msgstr ""
+
+#: inc/customizer.php:296
+msgid 'H2 Fonts'
+msgstr ""
+
+#: inc/customizer.php:308
+msgid 'H2 Font Size'
+msgstr ""
+
+#: inc/customizer.php:320
+msgid 'H3 Color'
+msgstr ""
+
+#: inc/customizer.php:334
+msgid 'H3 Fonts'
+msgstr ""
+
+#: inc/customizer.php:346
+msgid 'H3 Font Size'
+msgstr ""
+
+#: inc/customizer.php:358
+msgid 'H4 Color'
+msgstr ""
+
+#: inc/customizer.php:372
+msgid 'H4 Fonts'
+msgstr ""
+
+#: inc/customizer.php:384
+msgid 'H4 Font Size'
+msgstr ""
+
+#: inc/customizer.php:396
+msgid 'H5 Color'
+msgstr ""
+
+#: inc/customizer.php:410
+msgid 'H5 Fonts'
+msgstr ""
+
+#: inc/customizer.php:422
+msgid 'H5 Font Size'
+msgstr ""
+
+#: inc/customizer.php:434
+msgid 'H6 Color'
+msgstr ""
+
+#: inc/customizer.php:448
+msgid 'H6 Fonts'
+msgstr ""
+
+#: inc/customizer.php:460
+msgid 'H6 Font Size'
+msgstr ""
+
+#: inc/customizer.php:468
+msgid 'Topbar Section'
+msgstr ""
+
+#: inc/customizer.php:469
+msgid 'Add topbar content'
+msgstr ""
+
+#: inc/customizer.php:479
+msgid 'Mail Address'
+msgstr ""
+
+#: inc/customizer.php:489
+msgid 'Phone Number'
+msgstr ""
+
+#: inc/customizer.php:499
+msgid 'Timing Text'
+msgstr ""
+
+#: inc/customizer.php:509
+msgid 'Button Text'
+msgstr ""
+
+#: inc/customizer.php:519
+msgid 'Add Link'
+msgstr ""
+
+#: inc/customizer.php:527
+msgid 'Social Icons'
+msgstr ""
+
+#: inc/customizer.php:528
+msgid 'Add topbar content'
+msgstr ""
+
+#: inc/customizer.php:538
+msgid 'Add Facebook link'
+msgstr ""
+
+#: inc/customizer.php:549
+msgid 'Add Twitter link'
+msgstr ""
+
+#: inc/customizer.php:560
+msgid 'Add Youtube link'
+msgstr ""
+
+#: inc/customizer.php:571
+msgid 'Add Google Plus link'
+msgstr ""
+
+#: inc/customizer.php:582
+msgid 'Add Linkedin link'
+msgstr ""
+
+#: inc/customizer.php:590
+msgid 'Slider Settings'
+msgstr ""
+
+#: inc/customizer.php:601
+msgid 'Show / Hide slider'
+msgstr ""
+
+#: inc/customizer.php:612
+msgid 'Select Slide Image Page'
+msgstr ""
+
+#: inc/customizer.php:613
+msgid 'Size of image should be 1500 x 600'
+msgstr ""
+
+#: inc/customizer.php:621
+msgid 'What We Provide Section'
+msgstr ""
+
+#: inc/customizer.php:622
+msgid 'Add  section below.'
+msgstr ""
+
+#: inc/customizer.php:631
+msgid 'Section Title'
+msgstr ""
+
+#: inc/customizer.php:655
+msgid 'Select Category to display Latest Post'
+msgstr ""
+
+#: inc/customizer.php:656
+msgid 'Size of image should be 370 x 240'
+msgstr ""
+
+#: inc/customizer.php:662
+msgid 'Footer Text'
+msgstr ""
+
+#: inc/customizer.php:663
+msgid 'Add some text for footer like copyright etc'
+msgstr ""
+
+#: inc/customizer.php:673
+msgid 'Copyright Text'
+msgstr ""
+
+#: inc/customizer.php:680
+msgid 'Sidebar Layout Settings'
+msgstr ""
+
+#: inc/customizer.php:687
+#: inc/customizer.php:696
 msgid 'Right Sidebar'
 msgstr ""
 
-#: inc/customizer.php:249
+#: inc/customizer.php:692
 msgid 'Change Layouts'
 msgstr ""
 
-#: inc/customizer.php:252
+#: inc/customizer.php:695
 msgid 'Left Sidebar'
 msgstr ""
 
-#: inc/customizer.php:254
+#: inc/customizer.php:697
 msgid 'One Column'
 msgstr ""
 
-#: inc/customizer.php:255
+#: inc/customizer.php:698
 msgid 'Grid Layout'
 msgstr ""
 
-#: inc/customizer.php:336
+#: inc/customizer.php:779
 msgid 'Startup Pro Theme'
 msgstr ""
 
-#: inc/customizer.php:337
+#: inc/customizer.php:780
 msgid 'Go Pro'
 msgstr ""
