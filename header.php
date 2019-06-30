@@ -7,8 +7,8 @@
  * @package advance-it-company
  */
 
-?><!DOCTYPE html>
-
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -16,7 +16,6 @@
   <link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'advance-it-company' ) ); ?>">
   <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
 <div id="header">
   <div class="container-fluid">
@@ -110,25 +109,25 @@
             </div>
           </div>
         </div>
-          <div class="main-menu">
-            <div class="row m-0 ">
-              <div class="col-lg-10 col-md-11 p-0">
-                <div class="nav">
-                  <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
-                </div>
-              </div>
-              <div class="col-lg-1 col-lg-offset-1 col-md-1 search-box">
-                <i class="fas fa-search"></i>
+        <div class="main-menu">
+          <div class="row m-0 ">
+            <div class="col-lg-10 col-md-11 p-0">
+              <div class="nav">
+                <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
               </div>
             </div>
-            <div class="serach_outer">
-              <div class="closepop"><i class="far fa-window-close"></i></div>
-              <div class="serach_inner">
-               <?php get_search_form(); ?>
-              </div>
+            <div class="col-lg-1 col-lg-offset-1 col-md-1 search-box">
+              <i class="fas fa-search"></i>
             </div>
           </div>
-          <div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','advance-it-company'); ?></a></div>
+          <div class="serach_outer">
+            <div class="closepop"><i class="far fa-window-close"></i></div>
+            <div class="serach_inner">
+             <?php get_search_form(); ?>
+            </div>
+          </div>
+        </div>
+        <div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','advance-it-company'); ?></a></div>
       </div>
     </div>
   </div>
