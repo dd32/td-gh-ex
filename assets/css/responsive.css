@@ -10,7 +10,10 @@
 	.navigation-wrapper .logo-brand {
 		margin-top: 8px;
 	}
- 
+	.navigation-wrapper .menu-collapser {
+		color: transparent;
+		background-color: transparent;
+	}
 	.navigation-wrapper .collapse-button {
 		background-color: transparent;
 	}
@@ -34,9 +37,25 @@
 		background-color: #fff;
 		z-index: 444;
 	}
- 
- 
- 
+	.navigation-wrapper #navigation-menu li a {
+		padding: 10px 30px 10px 15px;
+		color: #040722;
+	}
+	#navigation-menu li.has-submenu a {
+		padding: 10px 30px 10px 15px;
+		color: #040722;
+	}
+	#navigation-menu li.has-submenu ul {
+		position: relative;
+	}
+	#navigation-menu li .sub-toggle {
+		background: #fff;
+		width: 45px;
+		height: 46px;
+	}
+	#navigation-menu li .sub-toggle i:before {
+		color: #7e37ff;
+	}
 	.slider-content {
 		width: 100%;
 	}
@@ -139,9 +158,46 @@ section.signature-area .inner-title, section.themeix-hosting-area .inner-title {
 	.navigation-wrapper .logo-brand {
 		margin: 8px;
 	}
-	 
- 
-	 
+	.navigation-wrapper .menu-collapser {
+		color: transparent;
+		background-color: transparent;
+	}
+	.navigation-wrapper .collapse-button {
+		background-color: transparent;
+	}
+	.navigation-wrapper .collapse-button .icon-bar {
+		width: 25px;
+		margin: 5px 0;
+		background-color: #F5F5F5;
+	}
+	.navigation-wrapper #navigation-menu {
+		position: absolute;
+		left: 0;
+		margin-top: 20px;
+		right: 0;
+		background-color: #fff;
+		z-index: 444;
+	}
+	.navigation-wrapper #navigation-menu li a {
+		padding: 10px 30px 10px 15px;
+		color: #040722;
+	}
+	#navigation-menu li.has-submenu a {
+		padding: 10px 30px 10px 15px;
+		color: #040722;
+	}
+	#navigation-menu li.has-submenu ul {
+		position: relative;
+	}
+	#navigation-menu li .sub-toggle {
+
+		width: 45px;
+		height: 46px;
+	}
+	#navigation-menu li .sub-toggle i:before {
+		color: #7e37ff;
+		    margin-top: -10px;
+	}
 	.nivo-directionNav {
 		display: none;
 	}
@@ -372,15 +428,6 @@ section.signature-area .inner-title, section.themeix-hosting-area .inner-title {
 		box-shadow: 0px 0px 21px 5px rgba(24, 38, 127, 0.08);
 		margin-bottom: 30px;
 	}
-	.sidebar-widget {
-		padding:0
-	}
-	nav.navigation.pagination {
-    padding-bottom: 30px;
-}
-.space-top {
-    padding-top: 60px;
-}
 }
 
 

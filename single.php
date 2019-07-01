@@ -10,17 +10,17 @@
       </section>
       
       <!-- End Post Title  Area -->
-      <div id="content" class="blog-area section-spacing">
+      <div class="blog-area section-spacing">
          <div class="blog-wrapper">
             <div class="container">
                <div class="row">
-                  <?php do_action( 'axiohost_full_post_column' ); ?>  
+                  <div class="col-md-7 col-lg-8">   
                      <div id="post-<?php the_ID(); ?>" <?php post_class();?>>
                             <?php 
                                  get_template_part('template-parts/content', 'content'); 
                                  get_template_part('template-parts/tags-share', 'tags-share'); 
                                  get_template_part('template-parts/single-admin', 'single-admin'); 
-                                 get_template_part('template-parts/pagination-links', 'pagination-links'); 
+                                 get_template_part('template-parts/page-links', 'page-links'); 
                                  get_template_part('template-parts/comments-template', 'comments-template');
                             ?>  
                      </div>

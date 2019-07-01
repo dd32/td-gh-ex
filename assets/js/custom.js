@@ -121,13 +121,50 @@ jQuery('.shop-product-slider').slick({
     }
   ]
 });
+    
+    /* ==========================================
+          2.    Modal Popup   
+    ========================================== */
+	jQuery('#cart-popup').apFullscreenModal({
+		openSelector: '#cart-popup-open',
+		backgroundColor: '#fafafa',
+		closeSelector: '.close-modal, #send',
+	});
+
+    /* ==========================================
+          2.    Scollup   
+    ========================================== */
+    var offset = 300,
+    offset_opacity = 1200,
+    scroll_top_duration = 1000,
+    $back_to_top = jQuery('#scrollUp');
+    $back_to_top.on('click', function(event) {
+    event.preventDefault();
+    jQuery('body,html').animate({
+        scrollTop: 0,
+    }, scroll_top_duration);
+});
 
 
+   /* ==========================================
+             6.    Show Hide
+     ========================================== */
+
+
+	jQuery(".hide-shop-close").on("click", function(){
+		
+		jQuery(this).parents(".hide-shop-item").fadeOut();
+	});
     /*=============================================
         8. Paralax Active JS
     ===============================================*/
    
-    
+    jQuery('.slimmenu').slimmenu({
+        resizeWidth: '992',
+        collapserTitle: 'Main Menu',
+        animSpeed: 'medium',
+        indentChildren: true,
+    });  
   
 	/*=============================================
         8. Active WoW JS
@@ -216,4 +253,25 @@ var previewSliderOptions = {
 
 })(jQuery);
 
- 
+(function($) { 
+  jQuery(document).ready(function() {
+
+    // initialise plugin
+    var example = jQuery('#example').superfish({
+      //add options here if required					
+    }).supposition();
+
+  });
+  
+    jQuery('.collapse-button').on('click', function(){
+        jQuery('.collapse-button').toggleClass('navigation-close-icon');
+    });
+    
+     /* Demo purposes only */
+  jQuery("figure").mouseleave(
+    function() {
+      jQuery(this).removeClass("hoer");
+    }
+  );
+    
+})(jQuery);

@@ -4,57 +4,42 @@
 <head>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />     
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+	<?php if(!empty($axiohost['fb-pexel-code'])){ echo wp_kses_post($axiohost['fb-pexel-code']); } ?>
+     <?php if(!empty($axiohost['google-analytics-code'])){ echo wp_kses_post($axiohost['google-analytics-code']); } ?>
+     
+     
 	<?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
-    <?php wp_body_open(); ?>
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e ( 'Skip to content', 'axiohost' ); ?></a>
-    <header id="masthead" class="site-header header-area" role="banner">	
+    
+    <header class="header-area">
         <div class="container">
             <div class="navigation-wrapper">
-				<div class="navigation-brand">				
-					<?php if (has_custom_logo()): ?>
-						<div class="site-logo"><?php the_custom_logo(); ?></div>
-					<?php
-				endif; ?>
-					<?php $blog_info = get_bloginfo('name'); ?>
-					<?php if (!empty($blog_info) && display_header_text()): ?>
-				 
-							<h1 class="site-title"><a href="<?php echo esc_url(home_url('/')); ?>" rel="home"><?php bloginfo('name'); ?></a></h1>
-				<?php
-					$description = get_bloginfo('description', 'display');
-					if ($description || is_customize_preview()):
-				?>
-							<p class="site-description">
-								<?php echo esc_html($description); ?>
-							</p>
-					<?php
-					endif; ?>	
-					<?php
-				endif; ?>
-				</div>
+                <div class="navigation-brand">
+                    <?php 
+                        $axiohost_description = get_bloginfo( 'description', 'display' );
+                        $custom_logo = get_custom_logo();
+                        if ( !empty($custom_logo) ){
+                            the_custom_logo();
+                        }
+                        else{
+                            ?>
+                            <h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+                            <p class="site-description"><?php echo esc_html($axiohost_description); /* WPCS: xss ok. */ ?></p>
+                            <?php
+                        }
+                    ?>
+                </div>
                 <div class="navigation-main">
                     
                         <a href="#" class="search-popup-icon"><img src="<?php echo esc_url(AXIOHOST_IMG_URL.'/search-icon.png'); ?>" alt="<?php esc_attr__('nav search', 'axiohost'); ?> "></a> 
-						
-						<button id="menu-toggle" class="menu-toggle"><?php _e( 'Menu', 'axiohost' ); ?></button>
-						<div id="site-header-menu" class="site-header-menu">
-						<?php if ( has_nav_menu( 'primary' ) ) : ?>
-							<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Primary Menu', 'axiohost' ); ?>">
-								<?php
-									wp_nav_menu(
-										array(
-											'theme_location' => 'primary',
-											'menu_class' => 'primary-menu',
-										)
-									);
-								?>
-							</nav><!-- .main-navigation -->
-						<?php endif; ?>
-
-					</div><!-- .site-header-menu -->					
-
+                    <?php
+                       get_template_part('template-parts/primary-menu', 'primary-menu'); 
+                       get_template_part('template-parts/responsive-menu', 'mobile-menu'); 
+                    
+                    ?>
                 </div>
             </div>
         </div>
@@ -62,7 +47,7 @@
             <div class="seachBoxContainer">
                <div class="container">
                   <span class="searchClose"></span>
-                  <?php axiohost_get_search_form(); ?>
+                  <?php get_axiohost_search_form(); ?>
                </div>
             </div>
          </div>

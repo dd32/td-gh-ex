@@ -10,11 +10,11 @@
       </section>
       
       <!-- End Post Title  Area -->
-      <div id="content"  class="blog-area space-top">
+      <div class="blog-area space-top">
          <div class="blog-wrapper">
             <div class="container">
                <div class="row">
-                   <?php get_template_part('template-parts/blog-list', 'blog-list'); ?>
+                   <?php get_template_part('template-parts/blog-list', 'blog-gird'); ?>
                </div>
             </div>
          </div>

@@ -3,13 +3,13 @@
             while(have_posts()) : the_post();
                  if(has_post_thumbnail()){?>
                     <div class="single-img">
-                       <?php the_post_thumbnail('full'); ?>
+                       <?php the_post_thumbnail('axiohost-featured-image'); ?>
                     </div>
                 <?php
                }
               ?>
                 
-                <div class="single-content entry-content">
+                <div class="single-content">
                      <?php 
                        the_content();
                        wp_link_pages( array(

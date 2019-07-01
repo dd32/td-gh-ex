@@ -1,10 +1,10 @@
 <?php 
 /*
-    Template Name: Page with Right Sidebar
+    Template Name: Page with Full Width
 */
 
 get_header(); 
-     $bg_image = $axiohost['header-bg-image']['url'];
+    $bg_image = $axiohost['header-bg-image']['url'];
      $bg_color = $axiohost['header-bg-color'];
      $bg = $axiohost['_page'];
 ?>
@@ -17,37 +17,20 @@ get_header();
          </div>
          <div id="post-title-shape"></div>
       </section>
+      
       <!-- End Post Title  Area -->
-      <div class="blog-area section-spacing">
+      <div class="blog-area">
          <div class="blog-wrapper">
             <div class="container">
                <div class="row">
-                    <?php 
-                         if(class_exists('ReduxFrameworkPlugin')){
-                              if($axiohost['page-layout'] == '2'){
-                                   get_sidebar();   
-                              }
-                          }
-                    ?>
-                  <div class="col-md-<?php if($axiohost['page-layout'] == '1' && class_exists('ReduxFrameworkPlugin')){echo '12 col-md-12'; }elseif(!is_active_sidebar('axiohost-sidebar')){echo '12 col-md-12';}else{echo '8 col-md-7'; }?>">   
-                     <div id="post-<?php the_ID(); ?>" <?php post_class('single-post');?>>
+                  <div class="col-md-12">   
+                     <div id="post-<?php the_ID(); ?>">
                             <?php 
                                  get_template_part('template-parts/content', 'content'); 
                                  get_template_part('template-parts/comments-template', 'comments-template');
                             ?>  
                      </div>
                   </div>
-                  
-                  <?php 
-                      if(class_exists('ReduxFrameworkPlugin')){
-                          if($axiohost['page-layout'] == '3'){
-                               get_sidebar();   
-                          }
-                      }
-                      else{
-                          get_sidebar();
-                      }
-                ?>
 
                </div>
             </div>

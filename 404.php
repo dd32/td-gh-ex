@@ -10,10 +10,10 @@
       </section>
      
       <!-- End Post Title Area -->
-      <section id="content" class="blog-area section-spacing bg-color1">
+      <section class="blog-area section-spacing bg-color1">
          <div class="container">
             <div class="error-content">
-                <div class="error-logo"><img src="<?php echo esc_url(AXIOHOST_IMG_URL.'/404.png'); ?>" alt="<?php esc_attr_e('404', 'axiohost'); ?>" /></div>
+                <div class="error-logo"><img src="<?php echo esc_url(AXIOHOST_IMG_URL.'/404.png'); ?>" alt="<?php esc_attr_e('404 img', 'axiohost'); ?>" /></div>
 				<h4 class="heading-4"><?php echo wp_kses_post($axiohost['error-text']); ?></h4>
 				<a href="<?php echo esc_url(site_url()); ?>" class="error-btn btn btn-primary"><?php echo esc_html('Back to Home', 'axiohost'); ?></a>
             </div>
