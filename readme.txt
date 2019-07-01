@@ -1,10 +1,10 @@
 == Arise ==
 Contributors: themefreesia
 Tags: threaded-comments, left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, sticky-post, theme-options, translation-ready, post-formats, footer-widgets, blog, e-commerce, education, entertainment, news, portfolio
-Requires at least: 4.9
-Tested up to: 4.9.8
-Requires PHP: 7.0
-Stable tag: 2.1.3.7
+Requires at least: 5.0
+Tested up to: 5.2.2
+Requires PHP: 5.6
+Stable tag: 2.1.3.8
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -117,6 +117,12 @@ All the theme files and other un-specified scripts are licensed under GNU Genera
 =================================================================================
 
 == CHANGE LOG ==
+== 2.1.3.8 =
+	- New - Gutenberg responsive embeds added
+			- Adding new function wp_body_open() and backward Compatibility
+			- Welcome notice added
+	- Fix - Archives title dynamic added
+
 == 2.1.3.7 =
 	- Update - Requires PHP field added
 				- Missing license key added

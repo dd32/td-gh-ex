@@ -18,6 +18,12 @@ $arise_settings = arise_get_theme_options(); ?>
 <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+	<?php 
+	if ( function_exists( 'wp_body_open' ) ) {
+
+		wp_body_open();
+
+	} ?>
 <div id="page" class="hfeed site">
 <!-- Masthead ============================================= -->
 <header id="masthead" class="site-header">

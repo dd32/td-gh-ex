@@ -183,7 +183,7 @@ function arise_header_title() {
   		elseif ( class_exists('bbPress') && is_bbpress()) :
   			$arise_header_title = get_the_title();
 		else :
-			$arise_header_title = __( 'Archives', 'arise' );
+			$arise_header_title = get_the_archive_title();
 		endif;
 	} elseif (is_home()){
 		$arise_header_title = get_the_title( get_option( 'page_for_posts' ) );

@@ -65,6 +65,16 @@ function arise_setup() {
 		'comment-form', 'comment-list', 'gallery', 'caption',
 	) );
 
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+		add_theme_support( 'gutenberg', array(
+			'colors' => array(
+				'#2b9b9b',
+			),
+		) );
+	add_theme_support( 'align-wide' );
+
 	/**
 	 * Add support for the Aside Post Formats
 	 */
@@ -105,6 +115,12 @@ if(!function_exists('arise_get_theme_options')):
 	    return wp_parse_args(  get_option( 'arise_theme_options', array() ),  arise_get_option_defaults_values() );
 	}
 endif;
+
+if (!is_child_theme()){
+
+	require get_template_directory() . '/inc/welcome-notice.php';
+
+}
 
 /***************************************************************************************/
 require get_template_directory() . '/inc/customizer/arise-default-values.php';
