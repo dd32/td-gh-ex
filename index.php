@@ -20,6 +20,8 @@
 		if ( ( is_archive() || is_search() ) && 1 < $wp_query->max_num_pages ) {
 			$archive_subtitle = sprintf( __( 'Page %1$s of %2$s', 'fukasawa' ), $paged, $wp_query->max_num_pages );
 		}
+
+		$archive_description = get_the_archive_description();
 	
 		if ( $archive_title ) : ?>
 
@@ -27,7 +29,7 @@
 				
 				<div class="section-inner">
 		
-					<h4>
+					<h4 class="archive-title">
 						<?php 
 						echo $archive_title;
 						
@@ -39,6 +41,14 @@
 						<div class="clear"></div>
 						
 					</h4>
+
+					<?php if ( $archive_description ) : ?>
+
+						<div class="archive-description">
+							<?php echo wp_kses_post( wpautop( $archive_description ) ); ?>
+						</div><!-- .archive-description -->
+
+					<?php endif; ?>
 							
 				</div><!-- .section-inner -->
 				

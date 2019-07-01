@@ -2,7 +2,7 @@
 Contributors: Anlino
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_donations&business=anders%40andersnoren%2ese&lc=US&item_name=Free%20WordPress%20Themes%20from%20Anders%20Noren&currency_code=USD&bn=PP%2dDonationsBF%3abtn_donateCC_LG%2egif%3aNonHosted
 Requires at least: 4.4
-Tested up to: 5.0
+Tested up to: 5.2
 Stable tag: trunk
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
@@ -63,6 +63,18 @@ The rest of the content...
 
 
 == Changelog ==
+
+Version 1.26 (2019-07-01)
+-------------------------
+- Changed the incorrect "block-style" theme tag to the correct "block-styles"
+
+Version 1.25 (2019-07-01)
+-------------------------
+- Updated "Tested up to" to 5.2
+- Fixed the margin of the last gallery item in Block: Gallery
+- Added theme tags for "block-style" and "wide-blocks"
+- Expanded a ternary to be full-length
+- Added output of `get_the_archive_description()` to index.php
 
 Version 1.24 (2019-04-07)
 -------------------------
