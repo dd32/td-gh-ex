@@ -1419,12 +1419,12 @@ table.cart td.actions .coupon {
     padding: 1em 0;
 }
 
-form.woocommerce-ordering {
-    text-align: right;
-}
-
 .woocommerce-cart .container--card-content {padding:0;}
 
     .woocommerce ul.products li.product .price .from{
       color:inherit !important;
     }
+
+.woocommerce .woocommerce-ordering {
+    margin: 0 !important;
+}

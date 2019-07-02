@@ -490,3 +490,46 @@ class Bellini_Woo_recently_viewed_product_Widget extends WC_Widget_Recently_View
     }
 
 }
+
+
+
+/**
+ * Modify the default WooCommerce orderby dropdown labels in the mini-bar.
+ */
+if ( ! function_exists( 'bellini_woocommerce_catalog_orderby_labels' ) ) {
+    function bellini_woocommerce_catalog_orderby_labels( $orderby ) {
+        $orderby['menu_order'] = esc_html__( 'All', 'bellini' );
+        $orderby['popularity'] = esc_html__( 'Popularity', 'bellini' );
+        $orderby['rating']     = esc_html__( 'Rating', 'bellini' );
+        $orderby['date']       = esc_html__( 'Newest', 'bellini' );
+        $orderby['price']      = esc_html__( 'Price: Low to High', 'bellini' );
+        $orderby['price-desc'] = esc_html__( 'Price: High to Low', 'bellini' );
+
+        return $orderby;
+    }
+}
+
+
+
+/**
+* Reset Filters for Premmerce WooCommerce Product Filter Pro
+*/
+if ( !function_exists( 'bellini_premmerce_active_filters_widget' ) ) {
+    function bellini_premmerce_active_filters_widget() {
+
+        if ( function_exists( 'premmerce_pwpf_fs' ) ) {
+            ob_start();
+            the_widget( 'Premmerce\\Filter\\Widget\\ActiveFilterWidget' );
+            $widget = ob_get_clean();
+
+            if ( trim( strip_tags( $widget ) ) != '' ) : ?>
+                <div class="content__row content__row--sm">
+                    <div class="pc-active-filter pc-active-filter--hor">
+                        <?php echo $widget; ?>
+                    </div>
+                </div>
+            <?php
+            endif;
+        }
+    }
+}

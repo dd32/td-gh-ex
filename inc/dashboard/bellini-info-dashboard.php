@@ -65,16 +65,12 @@ if ( ! function_exists( 'bellini_getting_started' ) ) {
 					<h2 class="theme-names"><?php esc_html_e( 'Welcome to ', 'bellini' ); ?>
 						<span class="name-bold"><?php esc_html_e( 'Bellini ', 'bellini' ); ?></span>
 					</h2>
-					<span class="theme-ver"><?php echo $theme['Version'];?></span>
-					<p class="theme-sub-msg">
-						Congratulations! You are about to use the most easy to use and felxible WordPress theme built for launching an online store.
-					</p>
 
 					<div class="club-discount">
-						<p><strong><?php esc_html_e( 'Exclusive 20% Discount!', 'bellini' ); ?></strong></p>
+						<p><strong><?php esc_html_e( 'Exclusive 20% Discount! Only $36', 'bellini' ); ?></strong></p>
 						<p><?php
 								$themes_link = '<code><strong>BELLINI20</strong></code>';
-								printf( __( 'Use the code %s to get 20&#37; off when you purchase Bellini Pro!. For limited period only.', 'bellini' ), $themes_link );
+								printf( __( 'Use the code %s to get 20&#37; off when you purchase Bellini Pro!. Get Bellini Pro for only $36. For limited period only.', 'bellini' ), $themes_link );
 							?>
 						</p>
 					</div>

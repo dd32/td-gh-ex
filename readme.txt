@@ -2,7 +2,7 @@
 Contributors: Pangolin Themes
 Requires at least: WordPress 4.7
 Tested up to: WordPress 4.9-trunk
-Version: 1.45.0
+Version: 1.45.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: e-commerce, blog, entertainment, one-column, two-columns, right-sidebar, flexible-header, accessibility-ready, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready
@@ -97,6 +97,10 @@ Bellini bundles the following third-party resources:
 
 
 == Changelog ==
+
+= 1.45.1 =
+
+Released: July 2, 2019
 
 = 1.45.0 =
 

@@ -167,3 +167,8 @@ if ( class_exists( 'WC_Gallery_Display_Class' ) ) :
 	endif;
 
 endif;
+
+
+
+add_filter( 'woocommerce_catalog_orderby', 'bellini_woocommerce_catalog_orderby_labels', 20 );
+add_action( 'woocommerce_before_shop_loop', 'bellini_premmerce_active_filters_widget', 40 );
