@@ -292,13 +292,15 @@ function bakery_shop_category_transient_flusher() {
 }
 
 
-if ( ! function_exists( 'bakery_shop_excerpt_more' ) && ! is_admin() ) :
+if ( ! function_exists( 'bakery_shop_excerpt_more' ) ) :
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... * 
  */
-function bakery_shop_excerpt_more() {
+function bakery_shop_excerpt_more( $more ) {
 	if ( ! is_admin() ){
 		return ' &hellip; ';
+	}else{
+		return $more;
 	}
 }
 endif;
