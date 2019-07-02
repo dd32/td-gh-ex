@@ -14,22 +14,37 @@ if( ! function_exists('arrival_theme_footer_widgets')){
 		if( $arrival_footer_widget_enable == 'no' ){
 			return;
 		}
-	?>
-		<div class="footer-widget-wrapper clearfix">
-			<div class="footer-1 ftr-widget">
-			<?php dynamic_sidebar( 'footer-1' ); ?>
-			</div>
-			<div class="footer-2 ftr-widget">
-			<?php dynamic_sidebar( 'footer-2' ); ?>
-			</div>
-			<div class="footer-3 ftr-widget">
-			<?php dynamic_sidebar( 'footer-3' ); ?>
-			</div>
-			<div class="footer-4 ftr-widget">
-			<?php dynamic_sidebar( 'footer-4' ); ?>
-			</div>
+
+		if ( is_active_sidebar( 'footer-4' ) ) {
+			$widget_columns = apply_filters( 'arrival_footer_widget_regions', 4 );
+		}
+		elseif ( is_active_sidebar( 'footer-3' ) ) {
+			$widget_columns = apply_filters( 'arrival_footer_widget_regions', 3 );
+		} elseif ( is_active_sidebar( 'footer-2' ) ) {
+			$widget_columns = apply_filters( 'arrival_footer_widget_regions', 2 );
+		} elseif ( is_active_sidebar( 'footer-1' ) ) {
+			$widget_columns = apply_filters( 'arrival_footer_widget_regions', 1 );
+		} else {
+			$widget_columns = apply_filters( 'arrival_footer_widget_regions', 0 );
+		}
+
+
+	if ( $widget_columns > 0 ) : ?>
+		<div class="footer-widget-wrapper clearfix col-<?php echo esc_attr($widget_columns);?>">
+			<?php 
+			$i = 0; 
+			while ( $i < $widget_columns ) : 
+			$i++;  
+			if ( is_active_sidebar( 'footer-' . $i ) ) : ?>		
+				<div class=" ftr-widget footer-<?php echo intval( $i ); ?>">
+		        	<?php dynamic_sidebar( 'footer-' . intval( $i ) ); ?>
+				</div>		
+		    <?php endif; ?>		
+			<?php endwhile; ?>
 		</div>
 	<?php
+	endif;
+
 	}
 }
 
@@ -52,7 +67,7 @@ if(! function_exists('arrival_btm_footer')){
 	<div class="footer-btm <?php echo esc_attr($footer_border);?>">
 		<div class="site-info">
 			<?php if($_footer_copyright_text){ ?>
-				<span class="cppyright-text"><?php echo wp_kses_post($_footer_copyright_text); ?></span>
+				<span class="cppyright-text"><?php echo wp_kses_post(do_shortcode($_footer_copyright_text)); ?></span>
 			<?php }else{ ?>
 			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'arrival' ) ); ?>">
 				<?php

@@ -28,6 +28,7 @@ function arrival_add_dynamic_css( control, style ) {
 			$('.site-title a').text(to);
 		});
 	});
+
 	wp.customize('blogdescription', function (value) {
 		value.bind(function (to) {
 			$('.site-description').text(to);
@@ -54,6 +55,14 @@ function arrival_add_dynamic_css( control, style ) {
 		});
 	});
 
+/**
+* Top header left text
+*/
+wp.customize('arrival_top_header_txt', function (value) {
+		value.bind(function (to) {
+			$('.top-header-wrapp .text-wrap').text(to);
+		});
+	});
 //top header bg color
 wp.customize( 'arrival_top_header_bg_color', function( value ) {
 	value.bind( function( color ) {
@@ -75,7 +84,7 @@ wp.customize( 'arrival_top_header_txt_color', function( value ) {
 			wp.customize.preview.send( 'refresh' );
 		}
 		if ( color ) {
-			var dynamicStyle = '.top-header-wrapp a, .top-header-wrapp { color: ' + color + '; } ';
+			var dynamicStyle = '.top-header-wrapp a, .top-header-wrapp,header .cart-wrapper a { color: ' + color + '; } ';
 				dynamicStyle += '.top-header-wrapp .phone-wrap:before{ background: '+ color + '; } ';
 			arrival_add_dynamic_css( 'arrival_top_header_txt_color', dynamicStyle );
 		}
@@ -105,7 +114,7 @@ wp.customize( 'arrival_main_nav_menu_color', function( value ) {
 			wp.customize.preview.send( 'refresh' );
 		}
 		if ( color ) {
-			var dynamicStyle = '.main-navigation ul li > a { color: ' + color + '; } ';
+			var dynamicStyle = '.main-navigation ul li > a,.site-title a,.site-description,.header-last-item .search-wrap i { color: ' + color + '; } ';
 				dynamicStyle += '.main-navigation .dropdown-symbol, .arrival-top-navigation .dropdown-symbol{ border-color:'+color+';}';
 			arrival_add_dynamic_css( 'arrival_main_nav_menu_color', dynamicStyle );
 		}
@@ -242,5 +251,101 @@ wp.customize('arrival_main_nav_right_btn_txt', function (value) {
 			$('.header-last-item .header-cta-btn').text(to);
 		});
 	});
+
+/**
+* After top header
+*
+*/
+//bg color
+wp.customize( 'arrival_after_top_header_bg_color', function( value ) {
+	value.bind( function( color ) {
+		if (color == '') {
+			wp.customize.preview.send( 'refresh' );
+		}
+		if ( color ) {
+			var dynamicStyle = '.after-top-header-wrapp { background: ' + color + '; } ';
+			arrival_add_dynamic_css( 'arrival_after_top_header_bg_color', dynamicStyle );
+		}
+
+	} );
+} );
+
+//text color
+wp.customize( 'arrival_after_top_header_txt_color', function( value ) {
+	value.bind( function( color ) {
+		if (color == '') {
+			wp.customize.preview.send( 'refresh' );
+		}
+		if ( color ) {
+			var dynamicStyle = '.after-top-header-wrapp,.after-top-header-wrapp .site-title a,.after-top-header-wrapp .site-description { color: ' + color + '; } ';
+			arrival_add_dynamic_css( 'arrival_after_top_header_txt_color', dynamicStyle );
+		}
+
+	} );
+} );
+
+//icon color
+wp.customize( 'arrival_after_top_header_icon_color', function( value ) {
+	value.bind( function( color ) {
+		if (color == '') {
+			wp.customize.preview.send( 'refresh' );
+		}
+		if ( color ) {
+			var dynamicStyle = '.after-top-header-wrapp .icon-wrap i { color: ' + color + '; } ';
+			arrival_add_dynamic_css( 'arrival_after_top_header_icon_color', dynamicStyle );
+		}
+
+	} );
+} );
+
+//border color
+wp.customize( 'arrival_after_top_header_border_color', function( value ) {
+	value.bind( function( color ) {
+		if (color == '') {
+			wp.customize.preview.send( 'refresh' );
+		}
+		if ( color ) {
+			var dynamicStyle = '.after-top-header-wrapp { border-color: ' + color + '; } ';
+			arrival_add_dynamic_css( 'arrival_after_top_header_border_color', dynamicStyle );
+		}
+
+	} );
+} );
+
+/**
+* After top header paddings
+*
+*/
+
+//top padding
+wp.customize( 'arrival_after_top_hdr_top_padding', function( value ) {
+	value.bind( function( val ) {
+		if (val == '') {
+			wp.customize.preview.send( 'refresh' );
+		}
+		if ( val ) {
+			var dynamicStyle = '.after-top-header-wrapp { padding-top: ' + val + 'px; } ';
+			arrival_add_dynamic_css( 'arrival_after_top_hdr_top_padding', dynamicStyle );
+		}
+
+	} );
+} );
+
+//bottom padding
+wp.customize( 'arrival_after_top_hdr_btm_padding', function( value ) {
+	value.bind( function( val ) {
+		if (val == '') {
+			wp.customize.preview.send( 'refresh' );
+		}
+		if ( val ) {
+			var dynamicStyle = '.after-top-header-wrapp { padding-bottom: ' + val + 'px; } ';
+			arrival_add_dynamic_css( 'arrival_after_top_hdr_btm_padding', dynamicStyle );
+		}
+
+	} );
+} );
+
+
+
 
 })(jQuery);

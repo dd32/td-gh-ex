@@ -53,3 +53,32 @@ if( ! function_exists('arrival_woo_shop_header_wrapp_end')):
 <?php 
 	}
 endif;
+
+
+
+/**
+* Header Shopping Cart function 
+*/
+if ( ! function_exists( 'arrival_header_cart' ) ) {
+   function arrival_header_cart(){ ?>
+   
+        <a class="cart-contentsone" href="<?php echo esc_url( wc_get_cart_url() ); ?>" title="<?php esc_attr_e( 'View your shopping cart', 'arrival' ); ?>">
+               <i class="fa fa-shopping-bag"></i>
+               <span class="cart-count"><?php echo wp_kses_data( sprintf(  WC()->cart->get_cart_contents_count() ) ); ?></span>
+       </a>
+     
+   <?php
+   }
+}
+
+if ( ! function_exists( 'arrival_cart_fragments' ) ) {
+
+    function arrival_cart_fragments( $fragments ) {
+        global $woocommerce;
+        ob_start();
+        arrival_header_cart();
+        $fragments['a.cart-contentsone'] = ob_get_clean();
+        return $fragments;
+    }
+}
+add_filter( 'woocommerce_add_to_cart_fragments', 'arrival_cart_fragments' );

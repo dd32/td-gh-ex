@@ -9,6 +9,39 @@
 	wp.customize.bind('ready', function () {
 
 		
+        /**
+        * Top header
+        * top right content type
+        */
+
+        wp.customize( 'arrival_top_left_content_type', function( setting ) {
+            wp.customize.control( 'arrival_top_header_email', function( control ) {
+                var visibility = function() {
+                    if ( 'contacts' === setting.get() ) {
+                        control.container.removeClass( 'arrival-control-hide' );
+                    } else {
+                        control.container.addClass( 'arrival-control-hide' );
+                    }
+                };
+
+                visibility();
+                setting.bind( visibility );
+            });
+
+            wp.customize.control( 'arrival_top_header_phone', function( control ) {
+                var visibility = function() {
+                    if ( 'contacts' === setting.get() ) {
+                        control.container.removeClass( 'arrival-control-hide' );
+                    } else {
+                        control.container.addClass( 'arrival-control-hide' );
+                    }
+                };
+
+                visibility();
+                setting.bind( visibility );
+            });
+
+        });
 
 
 		/* 

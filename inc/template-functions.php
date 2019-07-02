@@ -17,7 +17,11 @@ function arrival_body_classes( $classes ) {
     $_blog_layout           = get_theme_mod('arrival_blog_layout',$default['arrival_blog_layout']);
     $_single_post_sidebars  = get_theme_mod('arrival_single_post_sidebars',$default['arrival_single_post_sidebars']);
     $_inner_header_image    = get_theme_mod('arrival_inner_header_image');
+    $_main_nav_menu_align   = get_theme_mod('arrival_main_nav_menu_align',$default['arrival_main_nav_menu_align']);
 
+    $classes[] = $_main_nav_menu_align;
+
+    
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
@@ -29,7 +33,7 @@ function arrival_body_classes( $classes ) {
         $classes[] = 'header-bg-image';   
     }
 
-    if( !is_page_template('tpl-home.php')){
+    if( !is_front_page() ){
         $classes[] = 'arrival-inner-page';   
     }
 

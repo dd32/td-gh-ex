@@ -7,7 +7,7 @@ License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Tags: translation-ready,right-sidebar,custom-menu, featured-images, threaded-comments,custom-logo, footer-widgets,blog,post-formats,sticky-post,theme-options,news,editor-style,custom-background,custom-header
 Requires at least: WordPress 4.7
-Tested up to: 5.1.1
+Tested up to: 5.2.2
 Requires PHP: 5.4
 Stable tag: 1.0.3
 
@@ -55,6 +55,18 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 * https://github.com/FortAwesome/Font-Awesome
 * https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
 * http://scripts.sil.org/OFL
+
+
+-------------------------------------------------------
+ = IonIcons = 
+-------------------------------------------------------
+* IonIcons
+* License : Licensed under MIT
+* https://github.com/ionic-team/ionicons
+* https://github.com/ionic-team/ionicons/blob/master/LICENSE
+* https://ionicons.com/
+
+
 
 
 -------------------------------------------------------

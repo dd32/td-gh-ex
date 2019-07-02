@@ -7,9 +7,16 @@
 */
 
 
+
 add_action( 'arrival_main_nav','arrival_site_logo',5 );
 if( ! function_exists('arrival_site_logo')){
 	function arrival_site_logo(){
+		$default 				= arrival_get_default_theme_options();
+		$_main_nav_disable_logo = get_theme_mod('arrival_main_nav_disable_logo',$default['arrival_main_nav_disable_logo']);
+
+		if( 'yes' == $_main_nav_disable_logo ){
+			return;
+		}
 	?>
 	<div class="site-branding">
 		<?php the_custom_logo(); ?>
@@ -65,19 +72,34 @@ if( ! function_exists('arrival_main_nav')){
 						)
 					);
 
+					
 					?>
-					<?php if( 'search' == $arrival_main_nav_right_content ){ ?>
-						<div class="header-last-item search-wrap">
-							<i class="fa fa-search"></i>
-						</div>
-					<?php }elseif( 'button' == $arrival_main_nav_right_content){ ?>
-						<div class="header-last-item search-wrap header-btn">
-							<?php do_action('arrival_header_cta_btn_info'); ?>
-						</div>
-					<?php } ?>
 				</div>
 			</nav><!-- #site-navigation -->
-<?php 
+			<?php 
+
+			/**
+			* menu last item
+			*
+			*/
+			if( 'search' == $arrival_main_nav_right_content ){ ?>
+				<div class="header-last-item search-wrap">
+					<div class="search-wrap">
+						<i class="fa fa-search"></i>
+					</div>
+					
+				</div>
+			<?php }elseif( 'button' == $arrival_main_nav_right_content){ ?>
+				<div class="header-last-item search-wrap header-btn">
+					<?php do_action('arrival_header_cta_btn_info'); ?>
+
+				</div>
+			<?php }else{ ?>
+				<div class="arrival-custom-element">
+					<?php $custom_item = apply_filters('arrival_custom_item_reserve','__return_false'); ?>
+				</div>
+			<?php }
+			
 	}
 }
 
@@ -126,22 +148,27 @@ if( ! function_exists('arrival_top_header')){
 		$prefix = 'arrival';
 		$default = arrival_get_default_theme_options();
 		$arrival_top_header_enable = get_theme_mod($prefix.'_top_header_enable',$default[$prefix.'_top_header_enable']);
-		
-		if( 'off' == $arrival_top_header_enable ){
-			return;
-		}
-	?>
-	<div class="top-header-wrapp">
+		$_after_top_header_enable = get_theme_mod('arrival_after_top_header_enable',$default['arrival_after_top_header_enable']);
+
+	if( 'on' == $arrival_top_header_enable ){ ?>
+	
+	<div class="top-header-wrapp <?php echo esc_attr($_after_top_header_enable);?>">
 		<div class="container op-grid-two">
 		<div class="top-left-wrapp">
 			<?php arrival_top_header_left(); ?>
 		</div>
 		<div class="top-right-wrapp">
 			<?php arrival_top_header_right(); ?>
+			<?php if( class_exists('woocommerce')) { ?>
+				<div class="cart-wrapper"><?php arrival_header_cart(); ?></div>
+			<?php } ?>
 		</div>
 		</div>
 	</div>
 	<?php
+	}
+	
+	arrival_after_top_header(); //after top header contents
 	}
 }
 
@@ -150,11 +177,15 @@ add_action('arrival_top_header','arrival_top_header_left',10);
 if( ! function_exists('arrival_top_header_left')){
 	function arrival_top_header_left(){
 
-		$prefix = 'arrival';
-		$default = arrival_get_default_theme_options();
-		$arrival_top_header_email = get_theme_mod($prefix.'_top_header_email',$default[$prefix.'_top_header_email']);
-		$arrival_top_header_phone = get_theme_mod($prefix.'_top_header_phone',$default[$prefix.'_top_header_phone']);
-		
+		$prefix 					= 'arrival';
+		$default 					= arrival_get_default_theme_options();
+		$_top_left_content_type 	= get_theme_mod($prefix.'_top_left_content_type',$default[$prefix.'_top_left_content_type']);
+		$arrival_top_header_email 	= get_theme_mod($prefix.'_top_header_email',$default[$prefix.'_top_header_email']);
+		$arrival_top_header_phone 	= get_theme_mod($prefix.'_top_header_phone',$default[$prefix.'_top_header_phone']);
+		$_top_header_txt 			= get_theme_mod($prefix.'_top_header_txt',$default[$prefix.'_top_header_txt']);
+
+		if( 'contacts' == $_top_left_content_type ){
+
 			if( $arrival_top_header_email ): ?>
 				<div class="email-wrap">
 					<i class="fa fa-envelope"></i>
@@ -178,7 +209,10 @@ if( ! function_exists('arrival_top_header_left')){
 				</a>
 			</div>
 			<?php endif;
-
+		}else if( 'text' == $_top_left_content_type ){ ?>
+			<div class="text-wrap"><?php echo esc_html($_top_header_txt);?></div>
+		<?php 
+		}
 	}
 }
 
@@ -202,7 +236,6 @@ if( ! function_exists('arrival_top_header_right')){
 							'menu_id'        => 'top-header-menu',
 							'container'      => 'ul',
 							'menu_class'	 => 'arrival-top-navigation',
-							'fallback_cb'	 =>	false	 
 						)
 					);
 				 ?>
@@ -211,6 +244,29 @@ if( ! function_exists('arrival_top_header_right')){
 		}else{
 			do_action('arrival_social_icons');
 		}
+	}
+}
+
+/**
+* After top header
+* @since 1.0.8
+*
+*/
+apply_filters('arrival_after_top_header','arrival_after_top_header');
+
+if(! function_exists('arrival_after_top_header')){
+	function arrival_after_top_header(){
+		$default = arrival_get_default_theme_options();
+		$_after_top_header_enable = get_theme_mod('arrival_after_top_header_enable',$default['arrival_after_top_header_enable']);
+
+		if( 'no' == $_after_top_header_enable ){
+			return;
+		}
+		?>
+		<div class="after-top-header-wrapp">
+			<?php dynamic_sidebar( 'top-header-after' ); ?>
+		</div>
+		<?php 
 	}
 }
 
@@ -248,5 +304,76 @@ if(! function_exists('arrival_mob_nav')){
 		</div>
 	</div>
 <?php
+	}
+}
+
+/**
+* All header wrapp inside a function
+*
+*/
+add_action('arrival_main_header_wrapp','arrival_main_header_wrapp');
+if( ! function_exists('arrival_main_header_wrapp')){
+	function arrival_main_header_wrapp(){
+		$default 					= arrival_get_default_theme_options();
+		$_page_header_layout 		= get_theme_mod('arrival_page_header_layout',$default['arrival_page_header_layout']);
+		$arrival_top_header_enable 	= get_theme_mod('arrival_top_header_enable',$default['arrival_top_header_enable']);
+		$arrival_main_nav_layout 	= get_theme_mod('arrival_main_nav_layout',$default['arrival_main_nav_layout']);
+		$_menu_hover_styles 		= get_theme_mod('arrival_menu_hover_styles',$default['arrival_menu_hover_styles']);
+		$_main_nav_disable_logo 	= get_theme_mod('arrival_main_nav_disable_logo',$default['arrival_main_nav_disable_logo']);
+		$arrival_main_nav_right_content = get_theme_mod('arrival_main_nav_right_content',$default['arrival_main_nav_right_content']);
+
+		$hdr_class = 'seperate-breadcrumb';
+		if( $_page_header_layout == 'default' ){
+			$hdr_class = 'hdr-breadcrumb';
+		}
+
+		if( 'empty' == $arrival_main_nav_right_content ){
+			$arrival_main_nav_right_content = 'yes';
+		}
+
+		$enabled_settings = array(
+			$_main_nav_disable_logo,
+			$arrival_main_nav_right_content,
+		);
+		
+		$grid_class = 'op-grid-three';
+		if( ('yes' == $_main_nav_disable_logo)  && ('empty' == $arrival_main_nav_right_content) ){
+			$grid_class = 'op-grid-one';
+		}elseif( ('yes' == $_main_nav_disable_logo) && ('empty' != $arrival_main_nav_right_content) ){
+			$grid_class = 'op-grid-two';
+		}elseif( ('yes' == $_main_nav_disable_logo) || ('empty' == $arrival_main_nav_right_content) ) {
+			$grid_class = 'op-grid-two';
+		}
+		
+
+		?>
+		<header id="masthead" class="site-header <?php echo esc_attr($hdr_class.' '.$_menu_hover_styles);?>">
+			
+			<?php if( function_exists('arrival_top_header')):
+				arrival_top_header();
+			endif; ?>
+			
+			<?php if ( has_header_image() ) : ?>
+				<figure class="header-image">
+					<?php the_header_image_tag(); ?>
+				</figure>
+			<?php endif; ?>
+
+			
+
+			<div class="main-header-wrapp <?php echo esc_attr($arrival_main_nav_layout.' '.$arrival_top_header_enable)?>">
+				<div class="container <?php echo esc_attr($grid_class);?>">
+				<?php do_action('arrival_main_nav'); ?>
+				</div>
+			</div>
+
+			<?php if( $_page_header_layout == 'default' ){
+				
+				arrival_header_title_display();
+
+			}?>
+			<?php do_action('arrival_mob_nav'); ?>
+		</header><!-- #masthead -->
+		<?php 
 	}
 }

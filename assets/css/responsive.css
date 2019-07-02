@@ -4,6 +4,13 @@
 .menu-toggle {
 		display: none;
 	}
+
+@media only screen and (max-width: 1024px){
+
+    .container,.site {
+        padding: 0 20px;
+    }
+}
 @media only screen and (max-width: 768px){
 
     .container,.site {
@@ -25,9 +32,36 @@
         display: block;
         margin: 0 auto;
     }
+    header .after-top-header-wrapp{
+        padding-bottom: 0;
+    }
+    .after-top-header-wrapp .phone-info .text-wrapper{
+            padding-left: 11px;
+    }
+
+    .site-footer .col-4 .ftr-widget,
+    .site-footer .col-3 .ftr-widget,
+    .site-footer .col-2 .ftr-widget{
+        width: 48%;
+    }
 
 }
 @media only screen and (max-width: 640px){
+     header .after-top-header-wrapp{
+        padding-top: 0;
+    }
+    .after-top-header-wrapp .widget_arrival_info .contact-info-wrapp .info-wrap{
+        width: 100%;
+    }
+    .after-top-header-wrapp .site-branding{
+        width: 100%;
+        text-align: center;
+        margin-bottom: 30px;
+    }
+    .after-top-header-wrapp .site-branding .site-title{
+        font-size: 40px;
+    }
+
     .widget h2.widget-title{
         font-size: 18px;
     }
@@ -43,11 +77,34 @@
 }
 
 @media only screen and (max-width: 500px){
+    .top-header-wrapp .op-grid-two{
+        display: block;
+    }
+    .top-header-wrapp .top-right-wrapp {
+        text-align: left;
+        padding-top: 20px;
+    }
+    header ul.social, header .top-nav-wrap {
+        margin: 0;
+        padding: 0;
+    }
     .site-title{
         font-size: 22px;
     }
     .site-description{
         font-size: 13px;
+    }
+    .after-top-header-wrapp .site-branding .site-title{
+        font-size: 40px;
+    }
+    .after-top-header-wrapp .contact-info-wrapp .info-wrap .contact-info{
+        width: 34%;
+        margin-left: 40px;
+    }
+    .after-top-header-wrapp .contact-info-wrapp .info-wrap .contact-info:last-child {
+        width: 100%;
+        margin-left: 140px;
+        margin-top: 10px;
     }
     .site-footer .ftr-widget {
         width: 48%;
@@ -58,6 +115,22 @@
     }
     form.wpcf7-form .form-groups label{
         margin: 0;
+    }
+    .site-footer .col-4 .ftr-widget,
+    .site-footer .col-3 .ftr-widget,
+    .site-footer .col-2 .ftr-widget,
+    .site-footer .col-1 .ftr-widget {
+        width: 100%;
+    }
+    .site-footer .ftr-widget:not(:last-child) {
+        margin-right: 0;
+    }
+    .footer-btm{
+        display: block;
+    }
+    .footer-btm .social-icons-wrapp{
+        text-align: left;
+        margin-top: 10px;
     }
 }
 
@@ -86,8 +159,14 @@
         width: 100%;
     }
    
+   .after-top-header-wrapp .contact-info-wrapp .info-wrap .contact-info,
+   .after-top-header-wrapp .contact-info-wrapp .info-wrap .contact-info:last-child{
+       width: 100%;
+        margin-left: 25%;
+   }
+   .after-top-header-wrapp .contact-info-wrapp .info-wrap .contact-info:not(:last-child){
+       margin-bottom: 20px;
+   }
 
 
 }
-
-

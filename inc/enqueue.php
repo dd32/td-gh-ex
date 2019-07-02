@@ -15,6 +15,8 @@ function arrival_styles() {
 	//fontawesome
 	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/lib/font-awesome/css/font-awesome.min.css' ), array(), ARRIVAL_VER );
 
+	wp_enqueue_style( 'ionicons', get_theme_file_uri( '/assets/lib/ionicons/css/ionicons.min.css' ), array(), ARRIVAL_VER );
+
 	// Enqueue main stylesheet.
 	wp_enqueue_style( 'arrival-base-style', get_stylesheet_uri(), array(), ARRIVAL_VER );
 

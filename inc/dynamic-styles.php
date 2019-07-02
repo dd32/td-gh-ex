@@ -17,16 +17,16 @@ function arrival_dynamic_styles(){
 	$_theme_color = get_theme_mod('arrival_theme_color',$defaults['arrival_theme_color']);
 	?>
 	
-	.top-header-wrapp,.scroll-top-top,.widget h2.widget-title:before,.comment-reply-link, .comment-form .form-submit input,span.tags-links a:hover,.header-last-item.search-wrap.header-btn,.arrival-archive-navigation ul li a:hover,
-	.arrival-archive-navigation ul li.active a,.comment-reply-link, .comment-form .form-submit input,.woocommerce div.product form.cart .button,.woocommerce .products li a.button:hover,.woocommerce #respond input#submit,.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current,.woocommerce div.product form.cart .button, .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce button.button,button, input[type="button"], input[type="reset"], input[type="submit"],header.hover-layout-two .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item>a:before,header.hover-layout-three .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item:before{
+	.top-header-wrapp,.scroll-top-top,.widget h2.widget-title:before,.comment-reply-link, .comment-form .form-submit input,span.tags-links a:hover,.header-last-item.search-wrap.header-btn a.header-cta-btn,.arrival-archive-navigation ul li a:hover,
+	.arrival-archive-navigation ul li.active a,.comment-reply-link, .comment-form .form-submit input,.woocommerce div.product form.cart .button,.woocommerce .products li a.button:hover,.woocommerce #respond input#submit,.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current,.woocommerce div.product form.cart .button, .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce button.button,button, input[type="button"], input[type="reset"], input[type="submit"],header.hover-layout-two .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item>a:before,header.hover-layout-three .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item:before,header span.cart-count{
 		background: <?php echo  arrival_sanitize_color($_theme_color);?>;
 	}
 
-	.main-navigation a:hover, .main-navigation a:focus, .arrival-top-navigation ul a:hover, .arrival-top-navigation ul a:focus,.main-navigation ul li a:hover,.header-last-item.search-wrap:hover,.widget ul li a:hover,.site-footer a:hover,.site-main a:hover,.entry-meta > span:hover,.main-navigation a:hover,footer .widget_pages a:hover::before, footer .widget_pages a:focus::before, footer .widget_nav_menu a:hover::before, footer .widget_nav_menu a:focus::before,nav.navigation.post-navigation .nav-links a:hover::after,.site-main .entry-content a{
+	.main-navigation a:hover, .main-navigation a:focus, .arrival-top-navigation ul a:hover, .arrival-top-navigation ul a:focus,.main-navigation ul li a:hover,.header-last-item.search-wrap:hover,.widget ul li a:hover,.site-footer a:hover,.site-main a:hover,.entry-meta > span:hover,.main-navigation a:hover,footer .widget_pages a:hover::before, footer .widget_pages a:focus::before, footer .widget_nav_menu a:hover::before, footer .widget_nav_menu a:focus::before,nav.navigation.post-navigation .nav-links a:hover::after,.site-main .entry-content a,.main-navigation .current-menu-item a{
 		color:	<?php echo  arrival_sanitize_color($_theme_color);?>;
 	}
 	
-	.scroll-top-top,.comment-reply-link, .comment-form .form-submit input,span.tags-links a:hover,.arrival-archive-navigation ul li a:hover,.arrival-archive-navigation ul li.active a,.header-last-item.search-wrap.header-btn,.comment-reply-link, .comment-form .form-submit input{
+	.scroll-top-top,.comment-reply-link, .comment-form .form-submit input,span.tags-links a:hover,.arrival-archive-navigation ul li a:hover,.arrival-archive-navigation ul li.active a,.header-last-item.search-wrap.header-btn a.header-cta-btn,.comment-reply-link, .comment-form .form-submit input{
 		border-color: <?php echo  arrival_sanitize_color($_theme_color);?>;
 	}
 
@@ -47,7 +47,7 @@ function arrival_dynamic_styles(){
 	//top header text color
 	$_top_header_txt_color = get_theme_mod('arrival_top_header_txt_color',$defaults['arrival_top_header_txt_color']);
 	if($_top_header_txt_color){ ?>
-		.top-header-wrapp a, .top-header-wrapp{
+		.top-header-wrapp a, .top-header-wrapp,header .cart-wrapper a{
 			color: <?php echo arrival_sanitize_color($_top_header_txt_color); ?>;
 		}
 		.top-header-wrapp .phone-wrap:before{
@@ -72,7 +72,7 @@ function arrival_dynamic_styles(){
 	
 	if( $main_nav_menu_color ){ ?>
 
-		.main-navigation ul li > a,.site-title a,.site-description,.main-navigation .header-last-item i{
+		.main-navigation ul li > a,.site-title a,.site-description,.header-last-item .search-wrap i{
 			color: <?php echo arrival_sanitize_color($main_nav_menu_color); ?>;
 		}
 		.main-navigation .dropdown-symbol, .arrival-top-navigation .dropdown-symbol{
@@ -87,11 +87,15 @@ function arrival_dynamic_styles(){
 
 	if( $main_nav_menu_color_hover != '#e12454' ){ ?>
 
-		.main-navigation ul li a:hover{
+		.main-navigation ul li a:hover,.main-navigation .current-menu-item a{
 			color: <?php echo arrival_sanitize_color($main_nav_menu_color_hover); ?>;
 		}
-		.main-navigation .dropdown-symbol:hover, .arrival-top-navigation .dropdown-symbol:hover{
+		.main-navigation ul li:hover .dropdown-symbol, .arrival-top-navigation ul li:hover.dropdown-symbol:hover{
 			border-color: <?php echo arrival_sanitize_color($main_nav_menu_color_hover); ?>;
+		}
+
+		header.hover-layout-two .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item>a:before{
+			background: <?php echo arrival_sanitize_color($main_nav_menu_color_hover); ?>;
 		}
 
 	<?php 
@@ -107,6 +111,15 @@ function arrival_dynamic_styles(){
 		}
 	<?php 
 	}
+
+	//menu last item text align
+	$_main_nav_last_item_align = get_theme_mod('arrival_main_nav_last_item_align',$defaults['arrival_main_nav_last_item_align']);
+
+	?>
+	.header-last-item{
+		text-align: <?php echo esc_attr($_main_nav_last_item_align); ?>;
+	}
+	<?php 
 
 	//container width
 	$main_container_width = get_theme_mod('arrival_main_container_width',$defaults['arrival_main_container_width']);
@@ -136,6 +149,52 @@ function arrival_dynamic_styles(){
 	<?php 	
 	}
 
+	/**
+	* After top header height
+	*
+	*/
+	$_after_top_hdr_top_padding = get_theme_mod('arrival_after_top_hdr_top_padding');
+	$_after_top_hdr_btm_padding = get_theme_mod('arrival_after_top_hdr_btm_padding');
+	?>
+	.after-top-header-wrapp{
+			padding-top: <?php echo absint($_after_top_hdr_top_padding); ?>px;
+			padding-bottom: <?php echo absint($_after_top_hdr_btm_padding); ?>px;
+		}
+	<?php 
+
+	/**
+	* After top header border top
+	*/
+	$_after_top_header_top_border_show = get_theme_mod('arrival_after_top_header_top_border_show',$defaults['arrival_after_top_header_top_border_show']);
+	$_after_top_header_border_color = get_theme_mod('arrival_after_top_header_border_color',$defaults['arrival_after_top_header_border_color']);
+
+	if( $_after_top_header_top_border_show ){ ?>
+		.after-top-header-wrapp{
+			border-top: 1px solid <?php  echo arrival_sanitize_color($_after_top_header_border_color);?>;
+		}
+	<?php 
+	}
+
+	/**
+	* After top header colors
+	*
+	*/
+	$_after_top_header_bg_color = get_theme_mod('arrival_after_top_header_bg_color',$defaults['arrival_after_top_header_bg_color']);
+	$_after_top_header_txt_color = get_theme_mod('arrival_after_top_header_txt_color',$defaults['arrival_after_top_header_txt_color']);
+	$_after_top_header_icon_color = get_theme_mod('arrival_after_top_header_icon_color',$defaults['arrival_after_top_header_icon_color']);
+
+	?>
+	
+	.after-top-header-wrapp{
+		background: <?php  echo arrival_sanitize_color($_after_top_header_bg_color);?>;
+		color: 		<?php  echo arrival_sanitize_color($_after_top_header_txt_color);?>;
+	}
+	
+
+	.after-top-header-wrapp .icon-wrap i{
+		color: 		<?php  echo arrival_sanitize_color($_after_top_header_icon_color);?>;
+	}
+	<?php 
 
 	/**
 	* breadcrumb layout / inner page header layout
@@ -208,7 +267,7 @@ function arrival_dynamic_styles(){
 	//navigation font-weight
 	$_nav_font_weight = get_theme_mod('arrival_nav_font_weight',$defaults['arrival_nav_font_weight']);
 	?>
-	.main-navigation a{
+	.main-navigation a,.header-last-item.search-wrap.header-btn a.header-cta-btn{
 		font-weight: <?php echo absint($_nav_font_weight); ?>;
 	}
 

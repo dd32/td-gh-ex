@@ -23,7 +23,7 @@
 .customize-control-seperator .customizer-desc-wrapp {
     font-size: 10px;
     text-transform: none;
-    font-weight: 600;
+    font-weight: 400;
     position: relative;
     display: block;
 }
@@ -42,8 +42,8 @@
     left: 85px;
     padding: 3px 7px;
     color: #fff;
-    line-height: 1.4;
-    background: rgb(0, 142, 194);
+    line-height: 1.8;
+    background: #333;
     -webkit-box-shadow: -1px 0px 7px 0px rgba(152, 150, 150, 0.5);
     box-shadow: -1px 0px 7px 0px rgba(152, 150, 150, 0.5);
     -webkit-transition: all 0.3s ease-in;

@@ -32,26 +32,7 @@ function arrival_register_required_plugins() {
             'source'           => 'https://wordpress.org/plugins/ultra-companion/',
             'required'         => false,
         ),
-        array(
-            'name'             => esc_html__( 'WPoperation Elementor Addons', 'arrival' ),
-            'slug'             => 'wpop-elementor-addons',
-            'required'         => false,
-        ),
-        
-
-		//elementor
-		array(
-			'name'      => esc_html__( 'Elementor', 'arrival' ),
-			'slug'      => 'elementor',
-			'required'  => false,
-		),
-
-		// Smart Slider
-		array(
-			'name'      => esc_html__( 'Smart Slider 3', 'arrival' ),
-			'slug'      => 'smart-slider-3',
-			'required'  => false,
-		),
+       
 		
 	);
 

@@ -13,54 +13,6 @@ if ( class_exists( 'Arrival_Customize_Control_Tabs' ) ) {
 
 $prefix = 'arrival';
 		
-/**
-* Top header tabs
-*
-*/
-$wp_customize->add_setting( $prefix.'_top_header_tabs', array(
-                'sanitize_callback' => 'sanitize_text_field',
-            ));
-
-$wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $prefix.'_top_header_tabs', array(
-                    'section' => $prefix.'_top_header_options',
-                    'tabs'    => array(
-
-                        'general' => array(
-                            'nicename' => esc_html__( 'General', 'arrival' ),
-                            'icon'     => 'cogs',
-                            'controls' => apply_filters($prefix.'_header_top_options',array(
-                                
-                                $prefix.'_top_header_enable',
-                                $prefix.'_top_left_options',
-                                $prefix.'_top_header_email',
-                                $prefix.'_top_header_phone',
-                                $prefix.'_top_right_options',
-                                $prefix.'_top_right_header_content',
-                                $prefix.'_top_social_redirect_btn',
-                                $prefix.'_top_right_header_menus',
-
-                                )
-                            ),
-                        ),
-
-                        'styles' => array(
-                            'nicename' => esc_html__( 'Styles', 'arrival' ),
-                            'icon'     => 'desktop',
-                            'controls' => apply_filters($prefix.'_header_top_styles', array(
-
-                                $prefix.'_top_header_bg_color',
-                                $prefix.'_top_header_txt_color',
-                                $prefix.'_top_header_colors_info',
-
-                                )
-                            ),
-                        ),
-                       
-                    ),
-                )
-            )
-        );
-
 
 /**
 * main navigation header tabs
@@ -75,34 +27,66 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
                     'tabs'    => array(
 
                         'general' => array(
-                            'nicename' => esc_html__( 'General', 'arrival' ),
-                            'icon'     => 'cogs',
+                            'nicename' => esc_html__( 'Main Bar', 'arrival' ),
                             'controls' => apply_filters($prefix.'_header_options',array(
                                 
                                 $prefix.'_main_nav_layout',
+                                $prefix.'_main_nav_disable_logo',
+                                $prefix.'_main_nav_menu_align',
                                 $prefix.'_nav_last_item_sep',
                                 $prefix.'_main_nav_right_content',
                                 $prefix.'_main_nav_right_btn_txt',
                                 $prefix.'_main_nav_right_btn_url',
+                                $prefix.'_main_nav_last_item_align',
                                 $prefix.'_single_nav_enable_sep',
                                 $prefix.'_one_page_menus',
                                 
                             )),
                         ),
 
+                        'top' => array(
+                            'nicename' => esc_html__( 'Top Bar', 'arrival' ),
+                            'controls' => apply_filters($prefix.'_header_top_options',array(
+                                
+                                $prefix.'_top_header_enable',
+                                $prefix.'_top_left_options',
+                                $prefix.'_top_left_content_type',
+                                $prefix.'_top_header_email',
+                                $prefix.'_top_header_phone',
+                                $prefix.'_top_header_txt',
+                                $prefix.'_top_right_options',
+                                $prefix.'_top_right_header_content',
+                                $prefix.'_top_social_redirect_btn',
+                                $prefix.'_top_right_header_menus',
+                                $prefix.'_top_header_after_seperator',
+                                $prefix.'_after_top_header_enable',
+                                $prefix.'_after_top_hdr_padding',
+                                $prefix.'_after_top_header_top_border_show',
+                                
+                            )),
+                        ),
+
                         'styles' => array(
                             'nicename' => esc_html__( 'Styles', 'arrival' ),
-                            'icon'     => 'desktop',
                             'controls' => apply_filters($prefix.'_header_nav_options_styles',array(
                                 
                                 $prefix.'_main_nav_bg_color',
                                 $prefix.'_main_nav_menu_color',
                                 $prefix.'_main_nav_menu_color_hover',
                                 $prefix.'_nav_header_padding',
-                                $prefix.'_main_header_colors_info',
                                 $prefix.'_nav_font_weight',
                                 $prefix.'_header_box_shadow_disable',
                                 $prefix.'_menu_hover_styles',
+                                
+                                $prefix.'_top_hdr_styles_seperatpr',
+                                $prefix.'_top_header_bg_color',
+                                $prefix.'_top_header_txt_color',
+                                $prefix.'_after_top_hdr_styles_seperatpr',
+                                $prefix.'_after_top_header_bg_color',
+                                $prefix.'_after_top_header_txt_color',
+                                $prefix.'_after_top_header_border_color',
+                                $prefix.'_after_top_header_icon_color',
+                                
 
                             ) ),
                         ),

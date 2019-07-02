@@ -5,7 +5,7 @@ Author: WPoperation
 Author URI: http://wpoperation.com/
 Description: Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website with easy drag and drop options. The theme is lightweight, fast and fully compatible with elementor builder. The theme comes with fully Gutenberg ready so you are free to edit and publish with new WordPress editor.
 The theme is a combination of power, freedom, and beauty which means there is no limit of anything you need to create a feature website with your own creative ideas.
-Version: 1.0.7
+Version: 1.0.8
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: arrival
@@ -768,7 +768,7 @@ textarea {
 
 .site-header {
 	padding-bottom: 2em;
-	z-index: 9;
+	z-index: 99;
     position: relative
 }
 
@@ -866,7 +866,8 @@ textarea {
 .main-navigation a:hover,
 .main-navigation a:focus,
 .arrival-top-navigation ul a:hover,
-.arrival-top-navigation ul a:focus
+.arrival-top-navigation ul a:focus,
+.main-navigation .current-menu-item a
  {
 	text-decoration: none;
 	color: #E12454;
@@ -1240,11 +1241,38 @@ textarea {
     color: #fff;
 }
 
-.ftr-widget{
+.site-footer .ftr-widget{
 	float: left;
+    
+}
+.site-footer .ftr-widget:not(:last-child){
+	margin-right: 2%;
+}
+.site-footer .col-4 .ftr-widget{
 	width: 23%;
-    margin-right: 2%;
 	
+}
+
+.site-footer .col-3 .ftr-widget{
+	width: 32%;
+}
+
+
+.site-footer .col-2 .ftr-widget{
+	width: 49%;
+}
+
+.site-footer .col-1 .ftr-widget{
+	width: 100%;
+	
+}
+.site-footer .col-1 .ftr-widget .widget_media_image{
+	text-align: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    display: flex;
 }
 
 .footer-btm {
@@ -1375,27 +1403,26 @@ textarea {
 .header-last-item.search-wrap:hover {
     color: #E12454;
 }
-.header-last-item.search-wrap.header-btn {
+.header-last-item.search-wrap.header-btn a.header-cta-btn{
     background: #E12454;
     font-size: inherit;
     border: 2px solid #E12454;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
-.header-last-item.search-wrap.header-btn a {
+.header-last-item.search-wrap.header-btn a.header-cta-btn {
     line-height: 10px;
     padding: 13px 19px;
     color: #fff;
     -webkit-transition: all 0.3s;
     transition: all 0.3s;
 }
-.header-last-item.search-wrap.header-btn:hover {
+.header-last-item.search-wrap.header-btn a.header-cta-btn:hover {
     background: #223645;
     border-color: #223645;
+    color: #FFF;
 }
-.header-last-item.search-wrap.header-btn:hover a{
-	color: #fff;
-}
+
 
 
 .op-grid-two{
@@ -1414,7 +1441,7 @@ textarea {
     left: 0;
     right: 0;
     background: rgba(41, 40, 40,0.96);
-    z-index: 9;
+    z-index: 999;
     text-align: center;
     opacity: 0;
     overflow: hidden;
@@ -2393,7 +2420,7 @@ submenu when last and second last
 /*----------------
 submenu link hoverable
 ---------------------*/
-ul.sub-menu li a:hover:before {
+/* ul.sub-menu li a:hover:before {
     width: 15px;
     display: block;
 }
@@ -2411,7 +2438,7 @@ ul.sub-menu li a:before {
     height: 2px;
     background-color: #000;
     transition: 0.4s ease-in-out;
-}
+} */
 ul.sub-menu li a{
 	position: relative;
 }
@@ -2471,4 +2498,128 @@ header.hover-layout-three .main-header-wrapp nav.main-navigation ul.arrival-main
 section.no-results.not-found {
     text-align: center;
     padding-bottom: 30px;
+}
+
+/* center header menu */
+ body.center-menu header.site-header .primary-menu-container{
+	text-align: left;	
+} 
+.op-grid-three{
+	display: grid;
+	grid-template-columns: auto auto auto;
+}
+.header-last-item{
+	line-height: 70px;
+	padding: .4em 0.5em;
+}
+.header-last-item.search-wrap.header-btn a.header-cta-btn {
+    text-decoration: none;
+}
+
+/* after top header section */
+.after-top-header-wrapp {
+	background: #FFF;
+	padding-top: 30px;
+	padding-bottom: 75px;
+}
+.after-top-header-wrapp .widget_arrival_info .contact-info-wrapp .info-wrap{
+	float: right;
+    width: 75%;
+}
+.after-top-header-wrapp .contact-info-wrapp .info-wrap .contact-info {
+    float: left;
+    width: 33.33%;
+}
+
+
+.after-top-header-wrapp .icon-wrap {
+    float: left;
+    display: inline-block;
+    height: auto;
+    margin-right: 0;
+    position: relative;
+    text-align: center;
+    top: 5px;
+    width: auto;
+    line-height: 35px;
+}
+
+.after-top-header-wrapp .text-wrapper {
+    margin-left: 20px;
+    padding-left: 25px;
+}
+.after-top-header-wrapp .title-text {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.5;
+}
+.after-top-header-wrapp .contact-vfy {
+    font-size: 14px;
+}
+.after-top-header-wrapp .icon-wrap i {
+    font-size: 40px;
+    font-weight: 200;
+}
+
+.after-top-header-wrapp .site-branding{
+	float: left;
+	width: 25%;
+	padding-top: 0;
+}
+
+.top-header-wrapp.yes{
+	padding-bottom: 0;
+}
+
+/* header cart */
+header .cart-wrapper a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+    
+}
+header .cart-wrapper a i{
+	font-size: 20px;
+}
+header span.cart-count {
+    background: #E12454;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    font-style: normal;
+    top: 0;
+    right: 0;
+    font-size: 12px;
+    width: 18px;
+    height: 18px;
+    text-align: center;
+    line-height: 18px;
+    margin-right: -12px;
+    margin-top: -8px;
+    -webkit-box-shadow: -1px 1px 18px 0px rgba(0,0,0,0.3);
+            box-shadow: -1px 1px 18px 0px rgba(0,0,0,0.3);
+}
+
+header .cart-wrapper{
+	display: inline-block;
+	padding-left: 20px;
+}
+header ul.social,header .top-nav-wrap{
+	display: inline-block;
+}
+
+.header-last-item.search-wrap .search-wrap i:hover {
+    cursor: pointer;
+}
+.header-last-item.search-wrap .search-wrap{
+	display: inline-block;
+}
+a:focus {
+    outline: none;
+}
+
+.contact-info-wrapp.logo-only .container .site-branding {
+    text-align: center;
+    float: none;
+    width: auto;
 }

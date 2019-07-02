@@ -29,13 +29,7 @@ if( 'gallery' == $post_format ){
 		arrival_edit_post_link();
 		?>
 	</div><!-- .entry-meta -->
-	<div class="post-content-wrap">
-		<?php 
-		
-		the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
-		?>
-		
-	</div>
+	
 	<div class="entry-content">
 		<?php
 		the_content(

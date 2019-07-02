@@ -24,7 +24,7 @@ get_header(); ?>
 		//wp_print_styles( array( 'arrival-content' ) ); // Note: If this was already done it will be skipped.
 
 		/* Display the appropriate header when required. */
-		arrival_index_header();
+		
 
 		/* Start the Loop. */
 		while ( have_posts() ) :

@@ -46,7 +46,7 @@ jQuery(document).ready(function ($) {
     /*
     * Toggle search
     */
-    $('body').on('click', '.header-last-item.search-wrap', function () {
+    $('body').on('click', '.header-last-item .search-wrap', function () {
         $('.arrival-search-form-wrapp').addClass('active');
     });
 

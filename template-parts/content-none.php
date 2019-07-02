@@ -11,9 +11,7 @@
 
 <section class="no-results not-found">
 	<div class="entry-content">
-	<header class="page-header">
-		<h1 class="page-title"><?php esc_html_e( 'Nothing Found', 'arrival' ); ?></h1>
-	</header><!-- .page-header -->
+	
 
 	<div class="page-content">
 		<?php

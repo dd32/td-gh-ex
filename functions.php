@@ -334,84 +334,27 @@ function arrival_add_editor_styles() {
 }
 add_action( 'admin_init', 'arrival_add_editor_styles' );
 
-/**
- * Register widget area.
- *
- * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
- */
-function arrival_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'arrival' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'arrival' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 1', 'arrival' ),
-		'id'            => 'footer-1',
-		'description'   => esc_html__( 'Add widgets here.', 'arrival' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 2', 'arrival' ),
-		'id'            => 'footer-2',
-		'description'   => esc_html__( 'Add widgets here.', 'arrival' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 3', 'arrival' ),
-		'id'            => 'footer-3',
-		'description'   => esc_html__( 'Add widgets here.', 'arrival' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Footer 4', 'arrival' ),
-		'id'            => 'footer-4',
-		'description'   => esc_html__( 'Add widgets here.', 'arrival' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-}
-add_action( 'widgets_init', 'arrival_widgets_init' );
-
 
 
 
 /* Require theme files*/
 $file_paths = array(
-	'/inc/enqueue.php',
-	'/inc/image-sizes.php',
-	'/inc/template-tags.php',
-	'/inc/template-functions.php',
-	'/inc/customizer/customizer.php',
-	'/pluggable/breadcrumb.php',
-	'/pluggable/custom-header.php',
-    '/inc/hooks/header-hooks.php',
-    '/inc/hooks/footer-hooks.php',
-    '/inc/dynamic-styles.php',
-    '/inc/config/importer-config.php',
+	'/inc/enqueue',
+	'/inc/image-sizes',
+	'/inc/template-tags',
+	'/inc/template-functions',
+	'/inc/customizer/customizer',
+	'/pluggable/breadcrumb',
+	'/pluggable/custom-header',
+    '/inc/hooks/header-hooks',
+    '/inc/hooks/footer-hooks',
+    '/inc/dynamic-styles',
+    '/inc/widgets/widgets-init',
+    '/inc/arrival-contents'
 );
 
 foreach ($file_paths as $file_path) {
-	require get_parent_theme_file_path() . $file_path;
+	require get_parent_theme_file_path() . $file_path.'.php';
 }
 
 /**

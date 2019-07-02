@@ -1,3 +1,10 @@
+
+=== v1.0.8 ===
+- Minor bugs fixed
+- Ion icons added
+- Removed XML files
+- Refined theme with more hooks & filters
+
 === v1.0.7 ===
 - Minor bugs fixed
 
