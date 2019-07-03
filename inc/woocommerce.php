@@ -171,20 +171,21 @@ if ( ! function_exists( 'acoustics_woocommerce_wrapper_before' ) ) {
 	 * @return void
 	 */
   function acoustics_woocommerce_wrapper_before() {
-		$layout = get_theme_mod( 'acoustics_archive_layout', 'no-sidebar' );
+		$layout = get_theme_mod( 'acoustics_archive_layout', 'left-sidebar' );
 		$class = 'col-md-12 col-sm-12 col-xs-12';
-		if( is_shop() || is_product_category() ): switch ( $layout ) {
+		if( is_shop() || is_product_category() ):
+			switch ( $layout ) {
 			    case 'left-sidebar':
 			       	$class = 'col-md-9 col-sm-9 col-xs-12 pull-right';
-  break;
+  					break;
 			    case 'no-sidebar': $class = 'col-md-12 col-sm-12 col-xs-12';
-  break;
+  					break;
 			    case 'right-sidebar': $class = 'col-md-9 col-sm-9 col-xs-12 pull-left';
-  break;
+  					break;
 			    default: $class = 'col-md-12 col-sm-12 col-xs-12';
-}
+			}
 
-endif;
+		endif;
 		?>
 		<div class="section-default section--woocommerce-template">
 			<div class="container">

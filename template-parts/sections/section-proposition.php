@@ -22,7 +22,7 @@
 		              <div class="proposition-item">
 						  	<?php if( !empty( $acoustics_proposition_icon ) ): ?>
 			                    <div class="proposition--item-thumb">
-			                      <img width="40" class="proposition--item-icon" src="<?php echo esc_url( $acoustics_proposition_icon ); ?>" alt="<?php echo $acoustics_proposition_title; ?>">
+			                      <img width="40" class="proposition--item-icon" src="<?php echo esc_url( $acoustics_proposition_icon ); ?>" alt="<?php echo esc_html( $acoustics_proposition_title ); ?>">
 			                    </div>
 							<?php endif; ?>
 							<?php if( !empty( $acoustics_proposition_title ) || !empty( $acoustics_proposition_content ) ): ?>

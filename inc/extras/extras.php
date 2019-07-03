@@ -21,16 +21,16 @@ function acoustics_scripts() {
   $acoustics_font = 'family=Rubik:300,400,500,700|Material+Icons';
     wp_enqueue_style( 'acoustics-google-fonts', '//fonts.googleapis.com/css?'.$acoustics_font, false );
 
-	wp_enqueue_style( 'acoustics-bootstrap-style', get_template_directory_uri() . '/assets/lib/bootstrap/css/bootstrap.css' );
-	wp_enqueue_style( 'acoustics-fontawesome-style', get_template_directory_uri() . '/assets/lib/fontawesome/css/font-awesome.css' );
-	wp_enqueue_style( 'acoustics-owl-style', get_template_directory_uri() . '/assets/lib/owlslider/css/owl.carousel.css' );
+	wp_enqueue_style( 'acoustics-bootstrap-style', get_template_directory_uri() . '/assets/lib/bootstrap/css/bootstrap.css', array(), '3.4.1' );
+	wp_enqueue_style( 'acoustics-fontawesome-style', get_template_directory_uri() . '/assets/lib/fontawesome/css/font-awesome.css',  array(), '4.7.0' );
+	wp_enqueue_style( 'acoustics-owl-style', get_template_directory_uri() . '/assets/lib/owlslider/css/owl.carousel.css' , array(), '2.3.4' );
 	wp_enqueue_style( 'acoustics-style', get_stylesheet_uri() );
-	wp_enqueue_style( 'acoustics-theme-style', get_template_directory_uri() . '/assets/frontend/css/style.css' );
+	wp_enqueue_style( 'acoustics-theme-style', get_template_directory_uri() . '/assets/frontend/css/style.css', array(), '1.0.0' );
 
 	wp_enqueue_script( 'acoustics-navigation', get_template_directory_uri() . '/assets/lib/navigation/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'acoustics-skip-link-focus-fix', get_template_directory_uri() . '/assets/lib/automattic/js/skip-link-focus-fix.js', array(), '20151215', true );
-    wp_enqueue_script( 'acoustics-bootstrap-scripts', get_template_directory_uri() . '/assets/lib/bootstrap/js/bootstrap.js', array('jquery'), '20151215', true );
-	wp_enqueue_script( 'acoustics-owl-scripts', get_template_directory_uri() . '/assets/lib/owlslider/js/owl.carousel.js', array('jquery'), '20151215', true );
+    wp_enqueue_script( 'acoustics-bootstrap-scripts', get_template_directory_uri() . '/assets/lib/bootstrap/js/bootstrap.js', array('jquery'), '3.4.1', true );
+	wp_enqueue_script( 'acoustics-owl-scripts', get_template_directory_uri() . '/assets/lib/owlslider/js/owl.carousel.js', array('jquery'), '2.3.4', true );
 	wp_enqueue_script( 'acoustics-theme-scripts', get_template_directory_uri() . '/assets/frontend/js/theme.js', array('jquery'), '1.0.0', true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

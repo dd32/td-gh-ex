@@ -12,7 +12,7 @@
  */
 
 get_header();
-$acoustics_layout = get_theme_mod( 'acoustics_post_layout', 'left-sidebar' );
+$acoustics_layout = get_theme_mod( 'acoustics_archive_layout', 'left-sidebar' );
 $acoustics_class = acoustics_layout_classes( $acoustics_layout );
 ?>
 <header class="section-page-header">

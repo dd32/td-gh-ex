@@ -1,7 +1,13 @@
 /*
-Theme Name: Acoustics
+Theme Name: Acoustic
 
 WooCommerce styles override
+*/
+/**
+ * WooCommerce color variables
+ */
+                                  /**
+* Imports
 */
 /*--------------------------------------------------------------
 ##Sass Mixins
@@ -143,6 +149,13 @@ table.shop_table_responsive tr td {
     list-style: none;
     position: relative;
     margin-bottom: 2em; }
+    .products .product:nth-child(3n+1) {
+      clear: left; }
+    @media screen and (max-width: 767px) {
+      .products .product:nth-child(3n+1) {
+        clear: none; }
+      .products .product:nth-child(2n+1) {
+        clear: left; } }
     .products .product .product-inner {
       background-color: #fff;
       position: relative;
@@ -186,7 +199,7 @@ table.shop_table_responsive tr td {
       display: block; }
     .products .product .button {
       display: block; }
-      @media screen and (max-width: 572px) {
+      @media screen and (max-width: 768px) {
         .products .product .button {
           font-size: 12px; } }
     .products .product .onsale {
