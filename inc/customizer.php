@@ -160,6 +160,17 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'priority'   => 30,
 		'panel' => 'advance_blogging_panel_id'
 	) );
+
+	// Add the Theme Color Option section.
+	$wp_customize->add_setting( 'advance_blogging_theme_color', array(
+	    'default' => '#f73637',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'advance_blogging_theme_color', array(
+  		'label' => 'Theme Color Option',
+	    'section' => 'advance_blogging_typography',
+	    'settings' => 'advance_blogging_theme_color',
+  	)));
 	
 	// This is Paragraph Color picker setting
 	$wp_customize->add_setting( 'advance_blogging_paragraph_color', array(
@@ -475,7 +486,7 @@ function advance_blogging_customize_register( $wp_customize ) {
 		'setting'	=> 'advance_blogging_h6_font_size',
 		'type'	=> 'text'
 	));
-	
+  	
 	//Top Header
 	$wp_customize->add_section('advance_blogging_topbar_header',array(
 		'title'	=> __('Top Header','advance-blogging'),

@@ -30,7 +30,6 @@
               echo '</div><!-- .entry-audio -->';
             }
           }
-
         };
       ?>
     </div>

@@ -585,7 +585,7 @@ pre code {
   }
 }
 
-.container-fluid {
+.container {
   width: 100%;
   padding-right: 15px;
   padding-left: 15px;
@@ -3950,7 +3950,7 @@ tbody.collapse.show {
 }
 
 .navbar > .container,
-.navbar > .container-fluid {
+.navbar > .container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -4047,7 +4047,7 @@ tbody.collapse.show {
 
 @media (max-width: 575.98px) {
   .navbar-expand-md > .container,
-  .navbar-expand-md > .container-fluid {
+  .navbar-expand-md > .container {
     padding-right: 0;
     padding-left: 0;
   }
@@ -4081,7 +4081,7 @@ tbody.collapse.show {
     padding-left: 0.5rem;
   }
   .navbar-expand-md > .container,
-  .navbar-expand-md > .container-fluid {
+  .navbar-expand-md > .container{
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
   }
@@ -4103,7 +4103,7 @@ tbody.collapse.show {
 
 @media (max-width: 767.98px) {
   .navbar-expand-md > .container,
-  .navbar-expand-md > .container-fluid {
+  .navbar-expand-md > .container {
     padding-right: 0;
     padding-left: 0;
   }
@@ -4137,7 +4137,7 @@ tbody.collapse.show {
     padding-left: 0.5rem;
   }
   .navbar-expand-md > .container,
-  .navbar-expand-md > .container-fluid {
+  .navbar-expand-md > .container {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
   }
@@ -4159,7 +4159,7 @@ tbody.collapse.show {
 
 @media (max-width: 991.98px) {
   .navbar-expand-lg > .container,
-  .navbar-expand-lg > .container-fluid {
+  .navbar-expand-lg > .container {
     padding-right: 0;
     padding-left: 0;
   }
@@ -4193,7 +4193,7 @@ tbody.collapse.show {
     padding-left: 0.5rem;
   }
   .navbar-expand-lg > .container,
-  .navbar-expand-lg > .container-fluid {
+  .navbar-expand-lg > .container {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
   }
@@ -4215,7 +4215,7 @@ tbody.collapse.show {
 
 @media (max-width: 1199.98px) {
   .navbar-expand-xl > .container,
-  .navbar-expand-xl > .container-fluid {
+  .navbar-expand-xl > .container {
     padding-right: 0;
     padding-left: 0;
   }
@@ -4249,7 +4249,7 @@ tbody.collapse.show {
     padding-left: 0.5rem;
   }
   .navbar-expand-xl > .container,
-  .navbar-expand-xl > .container-fluid {
+  .navbar-expand-xl > .container {
     -ms-flex-wrap: nowrap;
     flex-wrap: nowrap;
   }
@@ -4280,7 +4280,7 @@ tbody.collapse.show {
 }
 
 .navbar-expand > .container,
-.navbar-expand > .container-fluid {
+.navbar-expand > .container {
   padding-right: 0;
   padding-left: 0;
 }
@@ -4307,7 +4307,7 @@ tbody.collapse.show {
 }
 
 .navbar-expand > .container,
-.navbar-expand > .container-fluid {
+.navbar-expand > .container {
   -ms-flex-wrap: nowrap;
   flex-wrap: nowrap;
 }

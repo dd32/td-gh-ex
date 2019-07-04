@@ -47,7 +47,7 @@
           <span class="search-icon"><i class="fas fa-search"></i></span>
         </div>
       </div>  
-       <div class="serach_outer">
+      <div class="serach_outer">
         <div class="closepop"><i class="far fa-window-close"></i></div>
         <div class="serach_inner">
           <?php get_search_form(); ?>
@@ -77,10 +77,11 @@
           <?php if(class_exists('woocommerce')){ ?>
             <span class="cart-box"><i class="fab fa-opencart"></i><?php  esc_html_e( 'CART','advance-blogging' ); ?></span></a> 
             <div class="top-cart-content">
-               <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
+              <?php the_widget( 'WC_Widget_Cart', 'title=' ); ?>
             </div>
           <?php } ?>      
         </div> 
       </div> 
     </div>
   </div>
+</body>

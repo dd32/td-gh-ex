@@ -243,56 +243,56 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:59
+#: functions.php:58
 msgid "Blog Sidebar"
 msgstr ""
 
-#: functions.php:60
+#: functions.php:59
 msgid "Appears on blog page sidebar"
 msgstr ""
 
-#: functions.php:69
+#: functions.php:68
 msgid "Page Sidebar"
 msgstr ""
 
-#: functions.php:70
-#: functions.php:80
-#: functions.php:130
+#: functions.php:69
+#: functions.php:79
+#: functions.php:129
 msgid "Appears on Page sidebar"
 msgstr ""
 
-#: functions.php:79
+#: functions.php:78
 msgid "Third Column Sidebar"
 msgstr ""
 
-#: functions.php:89
+#: functions.php:88
 msgid "Footer Nav 1"
 msgstr ""
 
-#: functions.php:99
+#: functions.php:98
 msgid "Footer Nav 2"
 msgstr ""
 
-#: functions.php:109
+#: functions.php:108
 msgid "Footer Nav 3"
 msgstr ""
 
-#: functions.php:119
+#: functions.php:118
 msgid "Footer Nav 4"
 msgstr ""
 
-#: functions.php:90
-#: functions.php:100
-#: functions.php:110
-#: functions.php:120
+#: functions.php:89
+#: functions.php:99
+#: functions.php:109
+#: functions.php:119
 msgid "Appears on footer"
 msgstr ""
 
-#: functions.php:129
+#: functions.php:128
 msgid "Home Page Sidebar"
 msgstr ""
 
-#: functions.php:385
+#: functions.php:400
 msgid "Blogging WordPress Theme"
 msgstr ""
 
@@ -457,75 +457,75 @@ msgstr ""
 msgid 'h6 Font Size'
 msgstr ""
 
-#: inc/customizer.php:481
+#: inc/customizer.php:492
 msgid 'Top Header'
 msgstr ""
 
-#: inc/customizer.php:482
+#: inc/customizer.php:493
 msgid 'Add Header Content here'
 msgstr ""
 
-#: inc/customizer.php:492
+#: inc/customizer.php:503
 msgid "Add Facebook link"
 msgstr ""
 
-#: inc/customizer.php:503
+#: inc/customizer.php:514
 msgid "Add Twitter link"
 msgstr ""
 
-#: inc/customizer.php:514
+#: inc/customizer.php:525
 msgid 'Add Google Plus link'
 msgstr ""
 
-#: inc/customizer.php:525
+#: inc/customizer.php:536
 msgid 'Add Pinterest link'
 msgstr ""
 
-#: inc/customizer.php:536
+#: inc/customizer.php:547
 msgid 'Add Linkedin link'
 msgstr ""
 
-#: inc/customizer.php:547
+#: inc/customizer.php:558
 msgid 'Add Instagram link'
 msgstr ""
 
-#: inc/customizer.php:558
+#: inc/customizer.php:569
 msgid 'Add Youtube link'
 msgstr ""
 
-#: inc/customizer.php:566
+#: inc/customizer.php:577
 msgid "Slider Settings."
 msgstr ""
 
-#: inc/customizer.php:579
+#: inc/customizer.php:590
 msgid "Select Slide Image Page"
 msgstr ""
 
-#: inc/customizer.php:588
+#: inc/customizer.php:599
 msgid 'Category Post'
 msgstr ""
 
-#: inc/customizer.php:589
+#: inc/customizer.php:600
 msgid 'This section will appear below the slider.'
 msgstr ""
 
-#: inc/customizer.php:611
+#: inc/customizer.php:622
 msgid 'Select Category to display Latest Post'
 msgstr ""
 
-#: inc/customizer.php:617
+#: inc/customizer.php:628
 msgid 'Latest Post'
 msgstr ""
 
-#: inc/customizer.php:618
+#: inc/customizer.php:629
 msgid 'This section will appear below the category post.'
 msgstr ""
 
-#: inc/customizer.php:640
+#: inc/customizer.php:651
 msgid 'Select Category to display Latest Post'
 msgstr ""
 
-#: inc/customizer.php:646
+#: inc/customizer.php:657
 msgid 'Footer Text'
 msgstr ""
 
@@ -533,14 +533,14 @@ msgstr ""
 msgid 'This section will appear in the .'
 msgstr ""
 
-#: inc/customizer.php:656
+#: inc/customizer.php:667
 msgid 'Text'
 msgstr ""
 
-#: inc/customizer.php:739
+#: inc/customizer.php:750
 msgid 'Advance Blogging'
 msgstr ""
 
-#: inc/customizer.php:740
+#: inc/customizer.php:751
 msgid 'Go Pro'
 msgstr ""

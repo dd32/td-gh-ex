@@ -37,12 +37,12 @@ get_header(); ?>
 					      <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
 					        <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
 					          <img src="<?php the_post_thumbnail_url('full'); ?>"/>	          
-					          <div class="carousel-caption">
-					            <div class="inner_carousel">
-					              <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
-					              <p><?php the_excerpt(); ?></p>
-					            </div>
-					          </div>
+						        <div class="carousel-caption">
+						            <div class="inner_carousel">
+						              <a href="<?php the_permalink(); ?>"><h2><?php the_title(); ?></h2></a>
+						              <p><?php the_excerpt(); ?></p>
+						            </div>
+						        </div>
 					        </div>
 					      <?php $i++; endwhile; 
 					      wp_reset_postdata();?>

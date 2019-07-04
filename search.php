@@ -79,33 +79,33 @@ get_header(); ?>
                 <div class="col-lg-4 col-md-4"><?php get_sidebar(); ?></div>
             </div>
         <?php }else if($left_right == 'One Column'){ ?>            
-                <h1 class="entry-title"><?php /* translators: %s: search term */ printf( esc_html('Results For: %s', 'advance-blogging' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
-                <?php if ( have_posts() ) :
-                    /* Start the Loop */
-                      
-                    while ( have_posts() ) : the_post();
+            <h1 class="entry-title"><?php /* translators: %s: search term */ printf( esc_html('Results For: %s', 'advance-blogging' ), '<span>' . esc_html( get_search_query() ) . '</span>' ); ?></h1>
+            <?php if ( have_posts() ) :
+                /* Start the Loop */
+                  
+                while ( have_posts() ) : the_post();
 
-                        get_template_part( 'template-parts/content',get_post_format() ); 
-                      
-                    endwhile;
-                    wp_reset_postdata();
-                    else :
+                    get_template_part( 'template-parts/content',get_post_format() ); 
+                  
+                endwhile;
+                wp_reset_postdata();
+                else :
 
-                        get_template_part( 'no-results' ); 
+                    get_template_part( 'no-results' ); 
 
-                    endif; 
+                endif; 
+            ?>
+            <div class="navigation">
+                <?php
+                    // Previous/next page navigation.
+                    the_posts_pagination( array(
+                        'prev_text'          => __( 'Previous page', 'advance-blogging' ),
+                        'next_text'          => __( 'Next page', 'advance-blogging' ),
+                        'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-blogging' ) . ' </span>',
+                    ) );
                 ?>
-                <div class="navigation">
-                    <?php
-                        // Previous/next page navigation.
-                        the_posts_pagination( array(
-                            'prev_text'          => __( 'Previous page', 'advance-blogging' ),
-                            'next_text'          => __( 'Next page', 'advance-blogging' ),
-                            'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-blogging' ) . ' </span>',
-                        ) );
-                    ?>
-                    <div class="clearfix"></div>
-                </div>
+                <div class="clearfix"></div>
+            </div>
         <?php }else if($left_right == 'Three Columns'){ ?>
             <div class="row">
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>
@@ -135,11 +135,13 @@ get_header(); ?>
                                 'before_page_number' => '<span class="meta-nav screen-reader-text">' . __( 'Page', 'advance-blogging' ) . ' </span>',
                             ) );
                         ?>
-                        <div class="clearfix"></div>
                     </div>
-                </section>
-                <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-2' ); ?></div>
+                </div>
             </div>
+        <div class="clearfix"></div>
+    
+        <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-2' ); ?></div>
+            
         <?php }else if($left_right == 'Four Columns'){ ?>
             <div class="row">
                 <div id="sidebar" class="col-lg-3 col-md-3"><?php dynamic_sidebar( 'sidebar-1' ); ?></div>

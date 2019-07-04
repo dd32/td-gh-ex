@@ -43,7 +43,6 @@ function advance_blogging_setup() {
 	*/
 	add_theme_support( 'post-formats', array('image','video','gallery','audio',) );
 
-
 	/*
 	 * This theme styles the visual editor to resemble the theme style,
 	 * specifically font, colors, icons, and column width.
@@ -290,6 +289,8 @@ function advance_blogging_scripts() {
 	    $advance_blogging_h6_font_family = get_theme_mod('advance_blogging_h6_font_family', '');
 	    $advance_blogging_h6_font_size = get_theme_mod('advance_blogging_h6_font_size', '');
 
+		$advance_blogging_theme_color = get_theme_mod('advance_blogging_theme_color', '');
+
 		$custom_css ='
 			p,span{
 			    color:'.esc_html($advance_blogging_paragraph_color).'!important;
@@ -334,10 +335,25 @@ function advance_blogging_scripts() {
 			    font-family: '.esc_html($advance_blogging_h6_font_family).'!important;
 			    font-size: '.esc_html($advance_blogging_h6_font_size).'!important;
 			}
+			.menubox.nav, .footertown .tagcloud a:hover, .metabox, .cat-post::-webkit-scrollbar-thumb, .button-post a, .woocommerce span.onsale, woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt, nav.woocommerce-MyAccount-navigation ul li, .footertown input[type="submit"], #comments input[type="submit"].submit, .pagination span,.pagination a, input[type="submit"], .social-icons a:hover, .search-icon, #header .nav ul li:hover > ul li:hover, .blogbutton-mdall, #footer, #header .nav ul.sub-menu li a:hover,#sidebar .tagcloud a:hover{
+			    background-color:'.esc_html($advance_blogging_theme_color).'!important;
+			}
+			.logo h1 a, .logo p, .cart-box, .cart-box i, .footertown .widget h3, p.logged-in-as a, .nav-previous a span, a{
+			    color:'.esc_html($advance_blogging_theme_color).';
+			}
+			.cat-border, #slider .inner_carousel{
+			    border-left-color:'.esc_html($advance_blogging_theme_color).'!important;
+			}
+			#sidebar h3{
+			    border-bottom-color:'.esc_html($advance_blogging_theme_color).'!important;
+			}
+			.footertown input.search-field, .footertown input[type="submit"],.footertown input.search-field{
+			    border-color:'.esc_html($advance_blogging_theme_color).'!important;
+			}
 
 			';
-		wp_add_inline_style( 'advance-blogging-basic-style',$custom_css );
-	
+
+	wp_add_inline_style( 'advance-blogging-basic-style',$custom_css );
 	wp_enqueue_script( 'advance-blogging-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
