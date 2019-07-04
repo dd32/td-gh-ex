@@ -7,8 +7,6 @@
 	</footer>
 	
 	<?php wp_footer(); ?>
-
-    <?php wp_enqueue_style('main', get_template_directory_uri() . '/js/main.js', false, '1.0', 'all') ?>
 </body>
 
 </html>

@@ -4,7 +4,7 @@ Theme URI: http://sitesbyjam.co.uk/dev/atreus/
 Author: Jamie Malcolm
 Author URI: http://sitesbyJAM.co.uk/
 Description: A simplistic, yet beautiful, blog theme created using the Bulma framework.
-Version: 1.1.5
+Version: 1.1.6
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Tags: two-columns, right-sidebar, theme-options
@@ -72,6 +72,42 @@ Text Domain: atreus
 .pagination li
 {
     list-style: none;
+}
+
+.column
+{
+    overflow: hidden;
+}
+
+.post h1
+{
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.post-single h1
+{
+    -ms-word-wrap: break-word;
+    word-wrap: break-word;
+}
+
+.post-img
+{
+    background-size: cover;
+    background-position: center;
+}
+
+.post-single-img
+{
+    min-height: 250px;
+    max-height: 750px;
+    background-size: cover;
+    background-position: center;
+}
+
+.single-margin
+{
+    margin-top: 25px;
 }
 
 /* =WordPress Core

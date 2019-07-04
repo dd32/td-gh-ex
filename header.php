@@ -2,13 +2,10 @@
 <html <?php language_attributes(); ?>>
 
 <head>
-    <meta name="description" content="<?php echo esc_html(get_bloginfo('description')); ?>">
+    <meta name="description" content="<?php bloginfo('description'); ?>">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8" />
-    <?php wp_enqueue_style('fontawesome', get_template_directory_uri() . '/js/fontawesome.js', false, '5.3.1', 'all') ?>
-    <?php wp_enqueue_style('bulma', get_template_directory_uri() . '/css/bulma.min.css', false, '0.7.4', 'all') ?>
-    <?php wp_enqueue_style('style', get_stylesheet_uri()); ?>
 	
 	<?php wp_head(); ?> 
 </head>

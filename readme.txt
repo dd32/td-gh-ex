@@ -5,7 +5,7 @@ Tested up to: 5.2.1
 Stable tag: 1.1.5
 Requires PHP: 7.0
 
-Version 1.1.5
+Version 1.1.6
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: two-columns, right-sidebar, theme-options
@@ -47,3 +47,15 @@ Atreus is a simple WordPress blog theme created based on the Bulma framework.
 
 = 1.1.5 =
 * Updated screenshot.png
+
+= 1.1.6 =
+* Removed empty function.
+* Hidden sidebar if it's not being used.
+* Added wp_enqueue_scripts usage.
+* Fixed edge case for multiple tags.
+* Added permalink to post date for posts without a title.
+* Added word wrap to post titles for long ones.
+* Added thicker border to distinguish stickied posts.
+* Removed some inline styling.
+* Fixed author links.
+* Removed echo from meta description tag.
