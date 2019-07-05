@@ -38,9 +38,11 @@
                 </div>
             </div>  
         <?php endif; ?>
-        
+        <?php
+        $footer_layout_setting = get_theme_mod('footer_layout_setting','layout1');
+        ?>
 		<div class="site-info">
-            <div class="ap-container clearfix">
+            <div class="ap-container clearfix <?php echo esc_attr($footer_layout_setting);?>">
                 <div class="copyright-info">
                     Copyright &copy; <?php the_date( 'Y' ); ?> <a href="<?php get_home_url(); ?>">
                         <?php 

@@ -4,7 +4,7 @@ Theme URI: https://8degreethemes.com/wordpress-themes/aglee-lite/
 Author: 8Degree Themes
 Author URI: https://8degreethemes.com/
 Description: Aglee Lite is a simple, basic & clean.  It is beautifully designed responsive free WordPress business theme. It has useful features to setup your website fast and make your website operate smoothly. It doesn't have much features which you probably won't use at all! Full width and boxed layout, featured slider, featured posts, services/features/projects layout, testimonial layout, blog layout, social media integration, call to action and many other page layouts. Fully responsive, bbPress compatible, translation ready, cross-browser compatible, SEO friendly, RTL support. Aglee Lite is multi-purpose and is suitable for any type of business. Highest level of compatibility with mostly used WP plugins.  Great customer support via online chat, email. View full demo here: http://8degreethemes.com/demo/aglee-lite/ support: support@8degreethemes.com
-Version: 1.0.26
+Version: 1.0.27
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: aglee-lite
@@ -2631,6 +2631,11 @@ aside.widget.widget_aglee_lite_services .service-post-wrap {
 Footer CSS
 --------------------------------------------------------------*/
 
+footer p {
+    color: #bababa;
+}
+
+
 /*TWITTER FEEDS STYLE*/
 
 .aptf-single-tweet-wrapper{
@@ -2801,6 +2806,14 @@ Footer CSS
     float: right;
     text-align: right;
     vertical-align: middle;
+}
+.site-footer .ap-container.layout2 .footer-socials,
+.site-footer .ap-container.layout2 .copyright-info {
+    display: block;
+    float: none;
+    text-align: center;
+    vertical-align: middle;
+    margin-bottom: 10px;
 }
 
 .footer-socials .widget{

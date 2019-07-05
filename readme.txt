@@ -1,9 +1,11 @@
 === Aglee Lite ===
 
+Contributors: 8degreethemes
+Tags: custom-menu, one-column, two-columns, three-columns, left-sidebar, right-sidebar, custom-background, theme-options, threaded-comments, featured-images, custom-header, translation-ready, rtl-language-support
 Requires at least: 4.0
-Tested up to: 4.7
-Aglee lite WordPress Theme, Copyright 2015 8degree Themes
-Aglee lite is distributed under the terms of the GNU GPL v3
+Tested up to: 5.2.2
+Requires PHP: 5.6
+Stable tag: 1.0.27
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -60,6 +62,9 @@ License: CC0 Public Domain
 License url: https://creativecommons.org/publicdomain/zero/1.0/deed.en
 
 == Changelog ==
+= 1.0.27 - 5th July, 2019 =
+* Added new footer layout.
+
 = 1.0.26 - 24th February, 2019 =
 * RTL Compatibility added.
 
