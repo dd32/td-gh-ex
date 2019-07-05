@@ -566,7 +566,7 @@ if ( ! function_exists( 'ashe_post_sharing' ) ) {
 		<?php endif; ?>
 
 		<?php if ( ashe_options( 'blog_page_show_twitter' ) ) : 
-		$twitter_src = 'https://twitter.com/home?status=Check%20out%20this%20article:%20'.get_the_title().'%20-%20'.esc_url( get_the_permalink() ); ?>
+		$twitter_src = 'https://twitter.com/intent/tweet?url='. esc_url( get_the_permalink() ); ?>
 		<a class="twitter-share" target="_blank" href="<?php echo esc_url ( $twitter_src ); ?>">
 			<i class="fa fa-twitter"></i>
 		</a>
