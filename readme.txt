@@ -2,11 +2,11 @@
 Contributors: VWthemes
 Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, full-width-template, theme-options, translation-ready, threaded-comments, post-formats, rtl-language-support, blog, portfolio, e-commerce
 Requires at least: 4.8
-Tested up to: 5.2
+Tested up to: 5.2.2
 Requires PHP: 7.2.14
-Stable tag: 0.1
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Stable tag: 0.2
+License: GPLv3.0 or later
+License URI: http://www.gnu.org/licenses/gpl-v3.0.html
 
 Our Automotive WordPress Theme is designed to be stylish and classy, much like all our beloved cars. This exclusive theme is developed especially for car dealership, Motorhome, Travel Trailer, Lifts, Trators, Forklift, Campers, Lift Trucks, MotoSnow, Snow Motorcycle, Motorbike Motor Full, Agriculture Equipment and similar businesses. We aid this multi-purpose responsive theme while keeping the motor-heads in mind and what will appeal to the people the most.
 
@@ -18,6 +18,19 @@ Our Automotive WordPress Theme is designed to be stylish and classy, much like a
 
 = 0.1 =
 * Initial version released.
+
+= 0.2 =
+*  Updated language folder
+*  Add footer layout option in customizer
+*  Add width layout option in customizer
+*  Add Show / hide Author, comment and post date option in customizer
+*  Add top to scroll with alignment option in customizer
+*  Add slider content layout option in customizer
+*  Add slider excerpt length option in customizer
+*  Add slider image opacity option in customizer
+*  Add logo resizer option in customizer
+*  Add get started
+*  Add post formats
 
 == Resources ==
 
@@ -64,4 +77,4 @@ Source: https://stocksnap.io/photo/976MFYVN56
 http://genericons.com/
 
 == Theme Documentation ==
-Documentation : https://www.vwthemesdemo.com/docs/free-automotive-centre/
+Documentation : https://www.vwthemesdemo.com/docs/free-automotive/

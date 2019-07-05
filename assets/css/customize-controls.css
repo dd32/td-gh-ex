@@ -11,6 +11,36 @@
 	margin-left:  0;
 	margin-right: 8px;
 }
+/* ---------Customizer--------- */
+.control-section-automotive-centre h3.accordion-section-title {
+    font-size: 14px !important;
+    color: #fff !important;
+    background: #88d055 !important;
+}
+a.button.button-secondary.alignright {
+    color: #fff;
+    box-shadow: none;
+    font-weight: bold;
+    padding: 1px 10px;
+    background: #010203;
+    height: 32px;   
+    font-size: 12px !important;
+    border-radius: 0;
+}
+a.button.button-secondary.alignright:hover {
+    background: #fff;
+    color: #010203;
+}
+.customize-control-title {
+  display: -webkit-inline-box;
+  font-size: 12px;
+  line-height: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  background: #0085ba;
+  padding: 0px 15px;
+  color: #fff;
+}
 .customize-control input[type=number], 
 .customize-control input[type=search], 
 .customize-control input[type=tel], 
@@ -20,16 +50,6 @@
 .customize-control input[type=email],
 .customize-control select{
 	border: none;
-}
-.customize-control-title {
-    display: -webkit-inline-box;
-    font-size: 12px;
-    line-height: 25px;
-    font-weight: 600;
-    margin-bottom: 10px;
-    background: #0085ba;
-    padding: 0px 15px;
-    color: #fff;
 }
 
 /*------- Typogarphy ----------*/
@@ -61,32 +81,28 @@ input.typography-font-color {
     border-bottom: solid 1px #999;
     padding-bottom: 12px;
 }
-#customize-control-h1_typography,
-#customize-control-h2_typography,
-#customize-control-h3_typography,
-#customize-control-h4_typography,
-#customize-control-h5_typography{
-   border-bottom: solid 2px #1e1e1e1e;
-   padding-bottom: 12px;
+li#customize-control-automotive_centre_h1_typography,
+li#customize-control-automotive_centre_h2_typography,
+li#customize-control-automotive_centre_h3_typography,
+li#customize-control-automotive_centre_h4_typography,
+li#customize-control-automotive_centre_h5_typography,
+li#customize-control-automotive_centre_p_typography {
+  border-bottom: solid 2px #1e1e1e1e;
+  padding-bottom: 12px;
 }
-
-/* ---------Customizer--------- */
-.control-section-automotive-centre h3.accordion-section-title {
-    font-size: 14px !important;
-    color: #fff !important;
-    background: #88d055 !important;
+/* ---------Image Toggle --------- */
+img.automotive-centre-radio-img-img {
+ width: 80px;
+ margin-right: 3px;
 }
-a.button.button-secondary.alignright {
-    color: #fff;
-    box-shadow: none;
-    font-weight: bold;
-    padding: 1px 10px;
-    background: #010203;
-    height: 32px;   
-    font-size: 12px !important;
-    border-radius: 0;
+img.automotive-centre-radio-img-selected {
+  border: solid 2px #0085ba;
 }
-a.button.button-secondary.alignright:hover {
-	background: #fff;
-	color: #010203;
+/* ---------Excerpt & Logo --------- */
+input#_customize-input-automotive_centre_excerpt_number,
+input#_customize-input-logo_size, 
+input#_customize-input-automotive_centre_slider_excerpt_number,
+input#_customize-input-automotive_centre_about_excerpt_number,
+input#_customize-input-automotive_centre_slider_opacity_color {
+  width: 100%;
 }

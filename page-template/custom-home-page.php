@@ -7,7 +7,7 @@ get_header(); ?>
 
 <?php do_action( 'automotive_centre_before_slider' ); ?>
 
-<?php if( get_theme_mod( 'automotive_centre_slider_arrows') != '') { ?>
+<?php if( get_theme_mod( 'automotive_centre_slider_hide_show') != '') { ?>
 
 <section id="slider">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
@@ -35,7 +35,7 @@ get_header(); ?>
           <div class="carousel-caption">
             <div class="inner_carousel">
               <h2><?php the_title(); ?></h2>
-              <p><?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt,25 ) ); ?></p>
+              <p><?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt, esc_attr(get_theme_mod('automotive_centre_slider_excerpt_number','30')))); ?></p>
               <div class="slider-btn">
                 <a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e( 'LEARN MORE', 'automotive-centre' ); ?></a>
               </div>
@@ -89,7 +89,7 @@ get_header(); ?>
               <div class="col-lg-7 col-md-7">
                 <h3><?php the_title(); ?></h3>
                 <hr>
-                <p><?php the_excerpt(); ?></p>
+                <p><?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt, esc_attr(get_theme_mod('automotive_centre_about_excerpt_number','30')))); ?></p>
                 <div class="more-btn">
                   <a href="<?php the_permalink(); ?>"><?php esc_html_e('LEARN MORE','automotive-centre'); ?></a>
                 </div>

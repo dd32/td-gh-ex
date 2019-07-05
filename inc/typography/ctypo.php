@@ -24,7 +24,7 @@ function automotive_centre_typography_customize_register( $wp_customize ) {
 	$wp_customize->register_control_type( 'Automotive_Centre_Control_Typography' );
 
 	// Add the typography panel.
-	$wp_customize->add_panel( 'automotive_centre_typography', array( 'priority' => 10, 'title' => esc_html__( 'Theme Typography', 'automotive-centre' ) ) );
+	$wp_customize->add_panel( 'automotive_centre_typography', array( 'priority' => 5, 'title' => esc_html__( 'Theme Typography', 'automotive-centre' ) ) );
 
 	// Add the `<p>` typography section.
 	$wp_customize->add_section( 'automotive_centre_p_typography',

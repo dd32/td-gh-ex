@@ -20,7 +20,7 @@
 	        </div>
 	        <h3 class="section-title"><?php the_title();?></h3>
 	        <div class="new-text">
-	        	<p><?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt,20 ) ); ?></p>
+	        	<p><?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt, esc_attr(get_theme_mod('automotive_centre_excerpt_number','30')))); ?></p>
 	        </div>
 	        <div class="more-btn">
             	<a href="<?php echo esc_url(get_permalink()); ?>"><?php esc_html_e( 'READ MORE', 'automotive-centre' ); ?></a>

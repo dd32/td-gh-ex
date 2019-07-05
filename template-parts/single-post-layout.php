@@ -10,9 +10,17 @@
 
 <div id="post-<?php the_ID(); ?>" <?php post_class('inner-service'); ?>>
     <div class="post-info">
-        <span class="entry-date"><?php the_date(); ?></span><span>|</span>
-        <span class="entry-author"> <?php the_author(); ?></span><span>|</span>
-        <span class="entry-comments"><?php comments_number( __('0 Comment', 'automotive-centre'), __('0 Comments', 'automotive-centre'), __('% Comments', 'automotive-centre') ); ?> </span>
+        <?php if(get_theme_mod('automotive_centre_toggle_postdate',true)==1){ ?>
+          <span class="entry-date"><?php echo esc_html( get_the_date() ); ?></span><span>|</span>
+        <?php } ?>
+
+        <?php if(get_theme_mod('automotive_centre_toggle_author',true)==1){ ?>
+          <span class="entry-author"><?php the_author(); ?></span><span>|</span>
+        <?php } ?>
+
+        <?php if(get_theme_mod('automotive_centre_toggle_comments',true)==1){ ?>
+          <span class="entry-comments"><?php comments_number( __('0 Comment', 'automotive-centre'), __('0 Comments', 'automotive-centre'), __('% Comments', 'automotive-centre') ); ?> </span>
+        <?php } ?>
     </div>
     <h2><?php the_title(); ?></h2>
     <?php if(has_post_thumbnail()) { ?>

@@ -18,7 +18,7 @@
 
             <?php if ( has_excerpt() ) : ?>
                 <div class="entry-caption">
-                    <?php the_excerpt(); ?>
+                    <p><?php $excerpt = get_the_excerpt(); echo esc_html( automotive_centre_string_limit_words( $excerpt, esc_attr(get_theme_mod('automotive_centre_excerpt_number','30')))); ?></p>
                 </div>
             <?php endif; ?>
         </div>    

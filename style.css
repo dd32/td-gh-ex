@@ -4,7 +4,7 @@ Theme URI: https://www.vwthemes.com/themes/free-automotive-wordpress-theme/
 Author: VW Themes
 Author URI: https://www.vwthemes.com/
 Description: Our Automotive WordPress Theme is designed to be stylish and classy, much like all our beloved cars. This exclusive theme is developed especially for car dealership, Motorhome, Travel Trailer, Lifts, Trators, Forklift, Campers, Lift Trucks, MotoSnow, Snow Motorcycle, Motorbike Motor Full, Agriculture Equipment and similar businesses. We aid this multi-purpose responsive theme while keeping the motor-heads in mind and what will appeal to the people the most. Our WordPress theme makes the use of secure and clean codes, you can easily customize our theme as per your wishes. You can even add or remove anything that you may or may not like. With ample of personalization options, optimized codes, call to action button (CTA), beautiful banners, useful shortcodes, numerous styling options, it is the best professional WordPress theme to grab. You will get an interactive demo, responsive slider, display options, SEO friendly features, social media icons, and a bunch of other phenomenal features with this supreme theme. Furthermore, built on Bootstrap framework, the theme will ease the web development. No matter what kind of automobile industry or services you offer, our Automobile theme is made for the gear-heads like you. Whether you sell used car, deal in motorbikes, motorcycles, small cars, trucks, cab service, automobile blogger, own a car review website, run a garage, repair service, own a showroom, run a driving school and etc., this highly interactive, WooCommerce compatible, user-friendly, and multipurpose ecommerce theme will fit perfectly for you. Demo at: https://www.vwthemes.net/vw-automotive-pro/
-Version:  0.1
+Version:  0.2
 License: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: automotive-centre
@@ -31,6 +31,7 @@ body{
   font-size: 14px; 
   color: #b1b6b9;
   font-family: 'Roboto', sans-serif;
+  overflow-x: hidden;
 }
 img{
   margin:0;
@@ -642,19 +643,6 @@ iframe,
   text-align:center;
   padding:20px 0;
 }
-.scrollup i {
-  width: 50px;
-  height: 50px;
-  position: fixed;
-  bottom: 70px;
-  right: 100px;
-  font-size: 25px;
-  padding: 10px;
-  display: none;
-  border: solid 2px #88d055;
-  border-radius: 50%;
-  color: #88d055;
-}
 /* --------- Blog Page ------- */
 #our-services iframe{
   width: 100%;
@@ -1223,6 +1211,12 @@ h2.woocommerce-loop-product__title,
 .col-1,.col-2 {
   max-width: 100%;
 }
+.woocommerce .col2-set .col-1 {
+   max-width: 100%;
+}
+.woocommerce .col2-set .col-2 {
+   max-width: 100%;
+}
 nav.woocommerce-MyAccount-navigation ul {
   list-style: none;
 }
@@ -1444,9 +1438,28 @@ span.posted_in {
     right: 10px;
   }
 }
-
 /* safari */
 a[href^=tel] {
   color:inherit;
   text-decoration: none;
+}
+/* Footer Section */
+.scrollup i {
+  width: 40px;
+  height: 40px;
+  position: fixed;
+  bottom: 50px;
+  right: 100px;
+  font-size: 20px;
+  display: none;
+  color: #fff !important;
+  padding: 10px;
+  background: #88d055;
+}
+.scrollup.left i{
+  left: 100px;
+}
+.scrollup.center i{
+  left: 50%;
+  right: 50%;
 }

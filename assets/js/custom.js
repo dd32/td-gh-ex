@@ -54,6 +54,7 @@
 	});	
 
 	$(document).ready(function () {
+
 		$(window).scroll(function () {
 		    if ($(this).scrollTop() > 100) {
 		        $('.scrollup i').fadeIn();
@@ -68,6 +69,7 @@
 		    }, 600);
 		    return false;
 		});
+
 	});
 
 })( jQuery );
