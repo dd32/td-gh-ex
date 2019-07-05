@@ -379,3 +379,28 @@ function avid_magazine_numeric_posts_nav() {
     echo '</ul></div>' . "\n";
  
 }
+
+
+function avid_magazine_get_headline() {
+	$category_id = get_theme_mod( 'theme_headline_category' );
+	$title = get_theme_mod( 'headline_title' );
+	$posts_per_page = get_theme_mod( 'number_of_headline_posts', 5 );
+	$layout = get_theme_mod( 'avid_magazine_headline_layouts', 'one' );	
+
+	$args = array(
+		'cat' => absint( $category_id ),
+		'posts_per_page' => $posts_per_page,
+		'ignore_sticky_posts' => 1
+	);
+	$query = new WP_Query( $args );
+
+	if( $query->have_posts() && $posts_per_page ) {
+
+		set_query_var( 'query', $query );
+		set_query_var( 'title', $title );
+
+		if( $layout == 'one' ) {
+			get_template_part( 'layouts/headline/headline-layout', 'one' );
+		}
+	}
+}

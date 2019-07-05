@@ -52,26 +52,14 @@ function avid_magazine_register_required_plugins() {
             'name'      => esc_html__( 'WooCommerce', 'avid-magazine' ),
             'slug'      => 'woocommerce',
             'required'  => false,
-        ),
-
-        array(
-            'name'      => esc_html__( 'BlossomThemes Instagram Feed', 'avid-magazine' ),
-            'slug'      => 'blossomthemes-instagram-feed',
-            'required'  => false,
-        ),
+        ),        
 
         array(
             'name'      => esc_html__( 'BlossomThemes Toolkit', 'avid-magazine' ),
             'slug'      => 'blossomthemes-toolkit',
             'required'  => false,
         ),
-
-        array(
-            'name'      => esc_html__( 'BlossomThemes Email Newsletter', 'avid-magazine' ),
-            'slug'      => 'blossomthemes-email-newsletter',
-            'required'  => false,
-        ),
-
+        
         array(
             'name'      => esc_html__( 'One Click Demo Import', 'avid-magazine' ),
             'slug'      => 'one-click-demo-import',

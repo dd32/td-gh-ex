@@ -14,7 +14,7 @@
 	</div>
 	</footer>
 		<div class="copyright text-center spacer">
-			<?php esc_html_e( "Powered by", 'avid-magazine' ); ?> <a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>"><?php esc_html_e( "WordPress", 'avid-magazine' ); ?></a> | <a href="<?php echo esc_url( 'https://avidthemes.com/downloads/free-avid-magazine-wordpress-theme/' ); ?>" target="_blank"><?php esc_html_e( 'Avid Magazine by Avidthemes','avid-magazine' ); ?></a>
+			<?php esc_html_e( "Powered by", 'avid-magazine' ); ?> <a href="<?php echo esc_url( 'http://wordpress.org/' ); ?>"><?php esc_html_e( "WordPress", 'avid-magazine' ); ?></a> | <a href="<?php echo esc_url( 'https://avidthemes.com/downloads/free-avid-magazine-wordpress-theme/' ); ?>" target="_blank"  rel="nofollow"><?php esc_html_e( 'Avid Magazine by Avidthemes','avid-magazine' ); ?></a>
 		</div>
 		<div class="scroll-top-wrapper"> <span class="scroll-top-inner"><i class="fa fa-2x fa-angle-up"></i></span></div> 
 		

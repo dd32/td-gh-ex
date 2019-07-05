@@ -1,9 +1,10 @@
 ﻿=== avid-magazine ===
 Contributors: avidthemes
 Tags: right-sidebar, portfolio, e-commerce, theme-options, featured-images, rtl-language-support, grid-layout, editor-style, custom-header, threaded-comments, custom-background, custom-colors, blog, footer-widgets
-Requires at least: 4.5
+Requires at least: 4.9.6
 Tested up to: 5.0.0
-Stable tag: 1.0.0
+Stable tag: 1.0.3
+Requires PHP: 5.2.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -24,7 +25,14 @@ Avid Magazine WordPress Theme is very lightweight, easy to use, SEO friendly and
 
 	
 
-= Changelog =
+== Changelog ==
+
+
+	= 1.0.3 =
+
+		* Release Date: July 5, 2019
+			i)   Updated least required PHP version
+			ii)	 Updated least required WordPress version
 
 
 	= 1.0.2 =
@@ -56,8 +64,8 @@ Avid Magazine WordPress Theme is very lightweight, easy to use, SEO friendly and
 5. Create categories, pages and post
 6. Select category needed for the homepage
 
-Avid Magazine Pro WordPress Theme, Copyright 2018 Avidthemes
-Avid Magazine Pro is distributed under the terms of the GNU GPL
+Avid Magazine WordPress Theme, Copyright 2018 Avidthemes
+Avid Magazine is distributed under the terms of the GNU GPL
 
 
 == Resources ==

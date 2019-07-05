@@ -113,15 +113,7 @@
 
 	</section>
 
-
-	<?php
-		$layout = get_theme_mod( 'avid_magazine_headline_layouts', 'one' );
-
-		if( $layout == 'one' ) {
-			get_template_part( 'layouts/headline/headline-layout', 'one' );
-		}
-		
-	?>
+	<?php get_template_part( 'template-parts/headline', '' ); ?>
 
 </header>
 
