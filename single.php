@@ -124,7 +124,7 @@ get_header(); ?>
 				<div id="sidebar" class="col-lg-4 col-md-4"><?php dynamic_sidebar('sidebar-2'); ?></div>
 			</div>
 		<?php }?>
-	        <div class="clearfix"></div>
+	    <div class="clearfix"></div>
     </div>
 </div>
 

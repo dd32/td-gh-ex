@@ -80,8 +80,8 @@ get_header(); ?>
 					          	<div class="carousel-caption">
 						            <div class="inner_carousel">
 						              	<h2><?php the_title();?></h2>
-						              	<div class="more-btn">              
-				                        <a href="<?php the_permalink(); ?>"><?php esc_html_e('SHOP NOW','bb-ecommerce-store'); ?></a>
+						              	<div class="more-btn">            
+				                        	<a href="<?php the_permalink(); ?>"><?php esc_html_e('SHOP NOW','bb-ecommerce-store'); ?></a>
 				                      </div>		            
 						            </div>
 					          	</div>

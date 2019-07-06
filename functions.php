@@ -348,6 +348,8 @@ function bb_ecommerce_store_scripts() {
 		wp_add_inline_style( 'bb-ecommerce-store-basic-style',$custom_css );
 	wp_enqueue_script( 'bb-ecommerce-store-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') );
+	require get_parent_theme_file_path( '/inc/color-option.php' );
+	wp_add_inline_style( 'bb-ecommerce-store-basic-style',$custom_css );
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

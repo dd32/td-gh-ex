@@ -6,29 +6,29 @@
  *
  * @package Ecommerce Store
  */
-?><!DOCTYPE html>
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
-<meta charset="<?php bloginfo( 'charset' ); ?>">
-<meta name="viewport" content="width=device-width">
-<link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'bb-ecommerce-store' ) ); ?>">
-<?php wp_head(); ?>
+  <meta charset="<?php bloginfo( 'charset' ); ?>">
+  <meta name="viewport" content="width=device-width">
+  <link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'bb-ecommerce-store' ) ); ?>">
+  <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
   <div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','bb-ecommerce-store'); ?></a></div>
-
   <div class="topbar">
     <div class="container">
       <div class="row">
         <div class="top-contact col-lg-3 col-md-3">
           <?php if( get_theme_mod( 'bb_ecommerce_store_contact','' ) != '') { ?>
-            <span class="call"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_contact',__('(518) 356-5373','bb-ecommerce-store') )); ?></span>
+          <span class="call"><i class="fa fa-phone" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_contact',__('(518) 356-5373','bb-ecommerce-store') )); ?></span>
            <?php } ?>
         </div>
         <div class="top-contact col-lg-3 col-md-3">
           <?php if( get_theme_mod( 'bb_ecommerce_store_email','' ) != '') { ?>
-            <span class="email"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_email',__('support@123.com','bb-ecommerce-store')) ); ?></span>
+          <span class="email"><i class="fa fa-envelope" aria-hidden="true"></i><?php echo esc_html( get_theme_mod('bb_ecommerce_store_email',__('support@123.com','bb-ecommerce-store')) ); ?></span>
           <?php } ?>
         </div>
         <div class="social-media col-lg-6 col-md-6">
@@ -52,7 +52,6 @@
     </div>
     <div class="clearfix"></div>
   </div>
-
   <div class="header">
     <div class="container">
       <div class="row">
@@ -62,7 +61,7 @@
           <?php
           $description = get_bloginfo( 'description', 'display' );
           if ( $description || is_customize_preview() ) : ?>
-              <p class="site-description"><?php echo esc_html( $description ); ?></p>
+            <p class="site-description"><?php echo esc_html( $description ); ?></p>
           <?php endif; ?>
         </div>      
         <div class="side_search  col-lg-6 col-md-6">
@@ -75,7 +74,6 @@
         </div>
       </div>
     </div>
-
     <div class="nav">
       <div class="container">
         <div class="row">

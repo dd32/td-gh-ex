@@ -21,6 +21,21 @@ function bb_ecommerce_store_customize_register( $wp_customize ) {
 	    'description' => __( 'Description of what this panel does.', 'bb-ecommerce-store' ),
 	) );
 	
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'bb_ecommerce_store_theme_color_option', 
+		array( 'panel' => 'bb_ecommerce_store_panel_id', 'title' => esc_html__( 'Theme Color Option', 'bb-ecommerce-store' ) )
+	);
+  	$wp_customize->add_setting( 'bb_ecommerce_store_theme_color', array(
+	    'default' => '#e22626',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_ecommerce_store_theme_color', array(
+  		'label' => 'Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'bb-ecommerce-store'),
+	    'section' => 'bb_ecommerce_store_theme_color_option',
+	    'settings' => 'bb_ecommerce_store_theme_color',
+  	)));
+ 
 	//Layouts
 	$wp_customize->add_section( 'bb_ecommerce_store_left_right', array(
     	'title'      => __( 'Layout Settings', 'bb-ecommerce-store' ),

@@ -42,7 +42,6 @@ if ( post_password_required() )
                         esc_html (number_format_i18n( $comments_number ) ),
                         get_the_title()
                     );
-
                 }
             ?>
         </h2>

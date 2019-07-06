@@ -7,7 +7,6 @@
  * @package Ecommerce Store
  */
 
-
 if ( ! function_exists( 'bb_ecommerce_store_the_attached_image' ) ) :
 /**
  * Prints the attached image with a link to the next attached image.
