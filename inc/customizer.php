@@ -21,6 +21,23 @@ function bb_mobile_application_customize_register( $wp_customize ) {
 	    'description' => __( 'Description of what this panel does.', 'bb-mobile-application' ),
 	) );
 
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'bb_mobile_application_theme_color_option', array( 
+		'panel' => 'bb_mobile_application_panel_id', 
+		'title' => esc_html__( 'Theme Color Option', 'bb-mobile-application' ) 
+	) );
+
+  	$wp_customize->add_setting( 'bb_mobile_application_theme_color', array(
+	    'default' => '#00A885',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_mobile_application_theme_color', array(
+  		'label' => 'Color Option',
+	    'description' => __('One can change complete theme color on just one click.', 'bb-mobile-application'),
+	    'section' => 'bb_mobile_application_theme_color_option',
+	    'settings' => 'bb_mobile_application_theme_color',
+  	)));
+
 	//Layouts
 	$wp_customize->add_section( 'bb_mobile_application_left_right', array(
     	'title'      => __( 'General Settings', 'bb-mobile-application' ),

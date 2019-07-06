@@ -21,7 +21,7 @@ if ( post_password_required() )
 
 <div id="comments" class="comments-area">
 	<?php if ( have_comments() ) : ?>
-		  <h2 class="comments-title">
+		    <h2 class="comments-title">
 				<?php
 					$comments_number = get_comments_number();
 					if ( '1' === $comments_number ) {

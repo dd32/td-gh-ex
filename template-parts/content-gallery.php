@@ -10,17 +10,16 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class(''); ?>> 
   <div class="page-box">
     <div class="box-image">
-       <?php
-          if ( ! is_single() ) {
-            // If not a single post, highlight the gallery.
-            if ( get_post_gallery() ) {
-              echo '<div class="entry-gallery">';
-                echo ( get_post_gallery() );
-              echo '</div>';
-            };
-
+     <?php
+        if ( ! is_single() ) {
+          // If not a single post, highlight the gallery.
+          if ( get_post_gallery() ) {
+            echo '<div class="entry-gallery">';
+              echo ( get_post_gallery() );
+            echo '</div>';
           };
-        ?>
+        };
+      ?>
     </div>
     <div class="new-text"<?php if(has_post_thumbnail()) { ?><?php } ?>>
       <h4><?php the_title();?></h4>

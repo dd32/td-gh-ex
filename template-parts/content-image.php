@@ -11,9 +11,9 @@
   <div class="page-box">
     <div class="box-image">
       <?php 
-          if(has_post_thumbnail()) { 
-            the_post_thumbnail(); 
-          }
+        if(has_post_thumbnail()) { 
+          the_post_thumbnail(); 
+        }
       ?>
     </div>
     <div class="new-text"<?php if(has_post_thumbnail()) { ?><?php } ?>>
