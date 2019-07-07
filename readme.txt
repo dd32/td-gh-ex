@@ -1,65 +1,48 @@
-----------------------------------
-Small Business
-----------------------------------
-Version: 	3.1
-Developer: 	D5 Creation
-Author URI: 	https://d5creation.com
+=== Small Business ===
 
-Donation Link: 	https://d5creation.com/donate/
+Contributors: D5 Creation
+Tags: two-columns, right-sidebar, blog, portfolio, education, custom-header, custom-background, custom-menu, threaded-comments, sticky-post, rtl-language-support, full-width-template, theme-options
+Requires at least: 4.0
+Tested up to: 5.2.3-alpha
+Stable tag: 3.3
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
-Copyright: 	D5 Creation
-License: 	GNU General Public License v2 or later
-License URI: 	http://www.gnu.org/licenses/gpl-2.0.html
+Professional Small Business WP Theme
 
-This Product is provided "as is" with no warranty or liabilities of D5 Creation. All the PHP Code, Images and other particulars included with this product are licensed under the same License of the Theme.
+== Description ==
 
-Basic jQuery Slider: License: GNU General Public License, version 3 (GPL-3.0), http://www.basic-slider.com
+Small Business is a Theme for Business. It can be used for Small to Large Business Sites.  Small Business Theme is Super Elegant and Professional Theme which will create the business widely expressed. The Built-in Slider will show the Featured Contents from the posts automatically.  Front Page, Right and Footer Sidebar will be usable for showing the widgets and Plugins items. Full Wide Page Template can be used for showing showcase or other pages. Small Business Extend has come with Exciting Post Options, Theme Options and Hundreds of Advanced Features. You can find the Theme Page and Demo Here: https://d5creation.com/theme/smallbusiness/
 
-themefeatures.png - FontAwesome Icons' Image, http://fortsmall-business.github.io/Font-Awesome/
-screenshot.png - https://pixabay.com/en/girl-woman-joy-of-life-jump-free-2940655
+== Frequently Asked Questions ==
 
-All other images: License: GPL-2.0+, Copyright: D5 Creation
+= What to do after Theme Installation ? =
+After installing the Theme Please go to Appearance > Customize. You can set the Featured Boxes, Logo, Social Links etc. there
 
+= Why is Small Business? =
+Small Business is one of the most popular Business Themes
 
-Instructions:
-__________________
+= Can it be used for Personal or Company Websites? =
+Yes, Of Course
 
-- You Can Change/Set the Front Page Elements from Appearance > Customize
-
-Version 3.1
-====================================
-- Some Styling Change
-
-Version 2.7
-====================================
-- Some Styling Change
-- Image Change
-
-Version 2.7
-====================================
-- Code Cleanup
-
-Version 2.5
-====================================
-The 2.5 Version is a Major Version
-- Added Customize for Theme Options
-- Removed Options Framework
-- Translation Ready
+= Is it only for Business ? =
+No, It is for Business, Companies, Blogs, Corporates, Personal Websites etc.
 
 
+== Changelog ==
 
-Changelog 2.0
-----------------------------------
-Unnecessary Image Files deleted
+= 3.3 =
+* Adding new readme.txt
+* Style Improvement
+* Image Change
+* Code Cleanup
 
+= 1.0 =
+* Initial Release
 
-Changelog 1.9
-----------------------------------
-Options Framework Updated
+== Resources ==
+* html5.js: https://github.com/aFarkas/html5shiv, MIT/GPL2
+*slider.js: http://www.basic-slider.com, GPL3
+* themefeatures.png: FontAwesome Icons' Image, http://fortawesome.github.io/Font-Awesome
 
-
-Changelog 1.7
-----------------------------------
-Blog Page Index showing at front-page.php
-html5.js added to the header.php again
-Some styling change 
+* featured-image.png: http://pickupimage.com/free-photos/Business-Women-Working/2346222
