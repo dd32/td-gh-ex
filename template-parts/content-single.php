@@ -1,29 +1,25 @@
 <?php
 /**
  * File aeonblog.
+ *
  * @package   AeonBlog
- * @author    Aeon Theme <info@aeontheme.com>
- * @copyright Copyright (c) 2019, Aeon Theme
- * @link      http://www.aeontheme.com/themes/aeonblog
+ * @author    AeonWP <info@aeonwp.com>
+ * @copyright Copyright (c) 2019, AeonWP
+ * @link      https://aeonwp.com/aeonblog
  * @license   http://www.gnu.org/licenses/gpl-2.0.html
  *
  * Template part for displaying posts
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package AeonBlog
  */
+
 ?>
-<article id="post-<?php the_ID(); ?>" <?php post_class('post-wrapper'); ?>>
+<article id="post-<?php the_ID(); ?>" <?php post_class( 'post-wrapper' ); ?>>
 	<div class="entry-header">
 		<ul class="entry-meta list-inline clearfix">
-			<li>
-				<span class="author vcard"><i class="fa fa-user"></i> <?php aeonblog_posted_by(); ?></span>
-			</li>
-			<li>
-				<i class="fa fa-clock-o"></i><?php aeonblog_posted_on(); ?>
-			</li>
-		</ul>			
+			<li><span class="author vcard"><i class="fa fa-user"></i> <?php aeonblog_posted_by(); ?></span></li>
+			<li><i class="fa fa-clock-o"></i><?php aeonblog_posted_on(); ?></li>
+		</ul>
 		<?php
 		if ( is_singular() ) :
 			the_title( '<h2 class="entry-title">', '</h2>' );
@@ -40,8 +36,8 @@
 					<?php
 					$categories = get_the_category();
 					if ( ! empty( $categories ) ) {
-						echo '<a href="'.esc_url( get_category_link( $categories[0]->term_id ) ).'"rel="category tag">'.esc_html( $categories[0]->name ).'</a>';
-					}                                 
+						echo '<a href="' . esc_url( get_category_link( $categories[0]->term_id ) ) . '"rel="category tag">'.esc_html( $categories[0]->name ) . '</a>';
+					}
 					?>
 				</span>
 			</li>
@@ -55,15 +51,21 @@
 
 	<div class="blog-content">
 		<div class="entry-content">
-			<?php the_content(); ?>
+			<?php
+			the_content();
+			wp_link_pages(
+				array(
+					'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'aeonblog' ),
+					'after'  => '</div>',
+				)
+			);
+			?>
 		</div><!-- .entry-content -->
 
-		<?php if(has_tag()) { ?>
+		<?php if ( has_tag() ) { ?>
 			<footer class="entry-footer">
 				<ul class="entry-meta list-inline clearfix">
-					<li>
-						<?php the_tags(); ?>
-					</li>
+					<li><?php the_tags(); ?></li>
 				</ul>
 			</footer><!-- .entry-footer -->
 		<?php } ?>

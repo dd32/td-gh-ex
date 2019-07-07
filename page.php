@@ -1,10 +1,11 @@
 <?php
 /**
  * File aeonblog.
+ *
  * @package   AeonBlog
- * @author    Aeon Theme <info@aeontheme.com>
- * @copyright Copyright (c) 2019, Aeon Theme
- * @link      http://www.aeontheme.com/themes/aeonblog
+ * @author    AeonWP <info@aeonwp.com>
+ * @copyright Copyright (c) 2019, AeonWP
+ * @link      https://aeonwp.com/aeonblog
  * @license   http://www.gnu.org/licenses/gpl-2.0.html
  *
  * The template for displaying all pages
@@ -15,20 +16,18 @@
  * different template.
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package AeonBlog
  */
+
 get_header();
 ?>
-		
+
 	<div class="breadcrumb">
 		<div class="container">
-			<?php do_action('aeonblog_breadcrumb_hook'); ?>
+			<?php do_action( 'aeonblog_breadcrumb_hook' ); ?>
 		</div>
 	</div>
-	
 	<div id="primary" class="col-md-8 col-sm-8">
-		<div class="content-area">
+		<div class="content-area" role="main">
 			<header class="page-header">
 				<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
 			</header><!-- .entry-header -->

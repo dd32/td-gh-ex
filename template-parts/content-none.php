@@ -1,17 +1,16 @@
 <?php
 /**
  * File aeonblog.
+ *
  * @package   AeonBlog
- * @author    Aeon Theme <info@aeontheme.com>
- * @copyright Copyright (c) 2019, Aeon Theme
- * @link      http://www.aeontheme.com/themes/aeonblog
+ * @author    AeonWP <info@aeonwp.com>
+ * @copyright Copyright (c) 2019, AeonWP
+ * @link      https://aeonwp.com/aeonblog
  * @license   http://www.gnu.org/licenses/gpl-2.0.html
  *
  * Template part for displaying a message that posts cannot be found
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package AeonBlog
  */
 
 ?>

@@ -1,16 +1,15 @@
 <?php
-/*
+/**
  * File aeonblog.
+ *
  * @package   AeonBlog
- * @author    Aeon Theme <info@aeontheme.com>
- * @copyright Copyright (c) 2019, Aeon Theme
- * @link      http://www.aeontheme.com/themes/aeonblog
+ * @author    AeonWP <info@aeonwp.com>
+ * @copyright Copyright (c) 2019, AeonWP
+ * @link      https://aeonwp.com/aeonblog
  * @license   http://www.gnu.org/licenses/gpl-2.0.html
  * Custom template tags for this theme
  *
  * Eventually, some of the functionality here could be replaced by core features.
- *
- * @package AeonBlog
  */
 
 if ( ! function_exists( 'aeonblog_posted_on' ) ) :
@@ -140,11 +139,16 @@ if ( ! function_exists( 'aeonblog_post_thumbnail' ) ) :
 
 		<a class="post-thumbnail" href="<?php the_permalink(); ?>" aria-hidden="true">
 			<?php
-			the_post_thumbnail( 'post-thumbnail', array(
-				'alt' => the_title_attribute( array(
-					'echo' => false,
-				) ),
-			) );
+			the_post_thumbnail(
+				'post-thumbnail',
+				array(
+					'alt' => the_title_attribute(
+						array(
+							'echo' => false,
+						)
+					),
+				)
+			);
 			?>
 		</a>
 

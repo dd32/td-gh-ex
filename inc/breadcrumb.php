@@ -2,9 +2,9 @@
 /**
  * File aeonblog.
  * @package   AeonBlog
- * @author    Aeon Theme <info@aeontheme.com>
- * @copyright Copyright (c) 2019, Aeon Theme
- * @link      http://www.aeontheme.com/themes/aeonblog
+ * @author    AeonWP <info@aeonwp.com>
+ * @copyright Copyright (c) 2019, AeonWP
+ * @link      https://aeonwp.com/aeonblog
  * @license   http://www.gnu.org/licenses/gpl-2.0.html
  * Breadcrumb Trail - A breadcrumb menu script for WordPress.
  *
@@ -27,6 +27,7 @@
  * @link      https://themehybrid.com/plugins/breadcrumb-trail
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html
  */
+
 /**
  * Shows a breadcrumb for all types of pages.  This is a wrapper function for the Breadcrumb_Trail class,
  * which should be used in theme templates.
@@ -59,7 +60,7 @@ class Breadcrumb_Trail {
 	 */
 	public $items = array();
 	/**
-		* Arguments used to build the breadcrumb trail.
+	 * Arguments used to build the breadcrumb trail.
 	 *
 	 * @since  0.1.0
 	 * @access public
@@ -75,700 +76,318 @@ class Breadcrumb_Trail {
 	 */
 	public $labels = array();
 
-
-
 	/**
-
 	 * Array of post types (key) and taxonomies (value) to use for single post views.
-
 	 *
-
 	 * @since  1.0.0
-
 	 * @access public
-
 	 * @var    array
-
 	 */
 
 	public $post_taxonomy = array();
-
-
-
 	/* ====== Magic Methods ====== */
-
-
-
 	/**
-
 	 * Magic method to use in case someone tries to output the layout object as a string.
-
 	 * We'll just return the trail HTML.
-
 	 *
-
 	 * @since  1.0.0
-
 	 * @access public
-
 	 * @return string
-
 	 */
 
 	public function __toString() {
-
 		return $this->trail();
-
 	}
 
-
-
 	/**
-
 	 * Sets up the breadcrumb trail properties.  Calls the `Breadcrumb_Trail::add_items()` method
-
 	 * to creat the array of breadcrumb items.
-
 	 *
-
 	 * @since  0.6.0
-
 	 * @access public
-
 	 * @param array $args {.
-
 	 *     @type string    $container      Container HTML element. nav|div
-
 	 *     @type string    $before         String to output before breadcrumb menu.
-
 	 *     @type string    $after          String to output after breadcrumb menu.
-
 	 *     @type string    $browse_tag     The HTML tag to use to wrap the "Browse" header text.
-
 	 *     @type string    $list_tag       The HTML tag to use for the list wrapper.
-
 	 *     @type string    $item_tag       The HTML tag to use for the item wrapper.
-
 	 *     @type bool      $show_on_front  Whether to show when `is_front_page()`.
-
 	 *     @type bool      $network        Whether to link to the network main site (multisite only).
-
 	 *     @type bool      $show_title     Whether to show the title (last item) in the trail.
-
 	 *     @type bool      $show_browse    Whether to show the breadcrumb menu header.
-
 	 *     @type array     $labels         Text labels. @see Breadcrumb_Trail::set_labels()
-
 	 *     @type array     $post_taxonomy  Taxonomies to use for post types. @see Breadcrumb_Trail::set_post_taxonomy()
-
 	 *     @type bool      $echo           Whether to print or return the breadcrumbs.
-
 	 * }
-
 	 * @return void
-
 	 */
-
 	public function __construct( $args = array() ) {
-
-
-
 		$defaults = array(
-
 			'container'     => 'nav',
-
 			'before'        => '',
-
 			'after'         => '',
-
 			'browse_tag'    => 'false',
-
 			'list_tag'      => 'ul',
-
 			'item_tag'      => 'li',
-
 			'show_on_front' => true,
-
 			'network'       => false,
-
 			'show_title'    => true,
-
 			'show_browse'   => true,
-
 			'labels'        => array(),
-
 			'post_taxonomy' => array(),
-
 			'echo'          => true,
-
 		);
-
-
 
 		// Parse the arguments with the deaults.
-
 		$this->args = apply_filters( 'breadcrumb_trail_args', wp_parse_args( $args, $defaults ) );
-
-
-
 		// Set the labels and post taxonomy properties.
-
 		$this->set_labels();
-
 		$this->set_post_taxonomy();
-
-
-
 		// Let's find some items to add to the trail!
-
 		$this->add_items();
-
 	}
-
-
 
 	/* ====== Public Methods ====== */
-
-
-
 	/**
-
 	 * Formats the HTML output for the breadcrumb trail.
-
 	 *
-
 	 * @since  0.6.0
-
 	 * @access public
-
 	 * @return string
-
 	 */
-
 	public function trail() {
-
-
-
 		// Set up variables that we'll need.
-
 		$breadcrumb    = '';
-
 		$item_count    = count( $this->items );
-
 		$item_position = 0;
-
-
-
 		// Connect the breadcrumb trail if there are items in the trail.
-
 		if ( 0 < $item_count ) {
-
-
-
 			// Add 'browse' label if it should be shown.
-
 			if ( true === $this->args['show_browse'] ) {
-
-
-
 				$breadcrumb .= sprintf(
-
 					'<%1$s class="trail-browse">%2$s</%1$s>',
-
 					tag_escape( $this->args['browse_tag'] ),
-
 					$this->labels['browse']
-
 				);
-
 			}
-
-
 
 			// Open the unordered list.
-
 			$breadcrumb .= sprintf(
-
 				'<%s class="trail-items" itemscope itemtype="http://schema.org/BreadcrumbList">',
-
 				tag_escape( $this->args['list_tag'] )
-
 			);
-
-
 
 			// Add the number of items and item list order schema.
-
 			$breadcrumb .= sprintf( '<meta name="numberOfItems" content="%d" />', absint( $item_count ) );
-
 			$breadcrumb .= '<meta name="itemListOrder" content="Ascending" />';
-
-
-
 			// Loop through the items and add them to the list.
-
 			foreach ( $this->items as $item ) {
-
-
-
 				// Iterate the item position.
-
 				++$item_position;
-
-
-
 				// Check if the item is linked.
-
 				preg_match( '/(<a.*?>)(.*?)(<\/a>)/i', $item, $matches );
-
-
-
 				// Wrap the item text with appropriate itemprop.
-
 				$item = ! empty( $matches ) ? sprintf( '%s<span itemprop="name">%s</span>%s', $matches[1], $matches[2], $matches[3] ) : sprintf( '<span itemprop="name">%s</span>', $item );
-
-
-
 				// Wrap the item with its itemprop.
-
 				$item = ! empty( $matches )
-
 					? preg_replace( '/(<a.*?)([\'"])>/i', '$1$2 itemprop=$2item$2>', $item )
-
 					: sprintf( '<span itemprop="item">%s</span>', $item );
-
-
-
 				// Add list item classes.
-
 				$item_class = 'trail-item';
-
-
-
 				if ( 1 === $item_position && 1 < $item_count ) {
-
 					$item_class .= ' trail-begin';
-
 				} elseif ( $item_count === $item_position ) {
-
 					$item_class .= ' trail-end';
-
 				}
-
 				// Create list item attributes.
-
 				$attributes = 'itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem" class="' . $item_class . '"';
-
-
-
 				// Build the meta position HTML.
-
 				$meta = sprintf( '<meta itemprop="position" content="%s" />', absint( $item_position ) );
-
-
-
 				// Build the list item.
-
 				$breadcrumb .= sprintf( '<%1$s %2$s>%3$s%4$s</%1$s>', tag_escape( $this->args['item_tag'] ), $attributes, $item, $meta );
-
 			}
-
-
-
 			// Close the unordered list.
-
 			$breadcrumb .= sprintf( '</%s>', tag_escape( $this->args['list_tag'] ) );
-
-
-
 			// Wrap the breadcrumb trail.
-
 			$breadcrumb = sprintf(
-
 				'<%1$s role="navigation" aria-label="%2$s" class="breadcrumb-trail breadcrumbs" itemprop="breadcrumb">%3$s%4$s%5$s</%1$s>',
-
 				tag_escape( $this->args['container'] ),
-
 				esc_attr( $this->labels['aria_label'] ),
-
 				$this->args['before'],
-
 				$breadcrumb,
-
 				$this->args['after']
-
 			);
-
 		}
-
-
 
 		// Allow developers to filter the breadcrumb trail HTML.
-
 		$breadcrumb = apply_filters( 'breadcrumb_trail', $breadcrumb, $this->args );
-
-
-
 		if ( false === $this->args['echo'] ) {
-
 			return $breadcrumb;
-
 		}
-
-
-
 		echo $breadcrumb; // WPCS xss ok.
-
 	}
-
-
 
 	/* ====== Protected Methods ====== */
-
-
-
 	/**
-
 	 * Sets the labels property.  Parses the inputted labels array with the defaults.
-
 	 *
-
 	 * @since  1.0.0
-
 	 * @access protected
-
 	 * @return void
-
 	 */
-
 	protected function set_labels() {
-
-
-
 		$defaults = array(
-
 			'browse'              => '',
-
 			'aria_label'          => esc_attr_x( 'Breadcrumbs', 'breadcrumbs aria label', 'aeonblog' ),
-
 			'home'                => esc_html__( 'Home', 'aeonblog' ),
-
 			'error_404'           => esc_html__( '404 Not Found', 'aeonblog' ),
-
 			'archives'            => esc_html__( 'Archives', 'aeonblog' ),
-
 			// Translators: %s is the search query.
-
 			'search'              => esc_html__( 'Search results for: %s', 'aeonblog' ),
-
 			// Translators: %s is the page number.
-
 			'paged'               => esc_html__( 'Page %s', 'aeonblog' ),
-
 			// Translators: %s is the page number.
-
 			'paged_comments'      => esc_html__( 'Comment Page %s', 'aeonblog' ),
-
 			// Translators: Minute archive title. %s is the minute time format.
-
 			'archive_minute'      => esc_html__( 'Minute %s', 'aeonblog' ),
-
 			// Translators: Weekly archive title. %s is the week date format.
-
 			'archive_week'        => esc_html__( 'Week %s', 'aeonblog' ),
-
-
-
 			// "%s" is replaced with the translated date/time format.
-
 			'archive_minute_hour' => '%s',
-
 			'archive_hour'        => '%s',
-
 			'archive_day'         => '%s',
-
 			'archive_month'       => '%s',
-
 			'archive_year'        => '%s',
-
 		);
-
-
-
 		$this->labels = apply_filters( 'breadcrumb_trail_labels', wp_parse_args( $this->args['labels'], $defaults ) );
-
 	}
-
-
-
 	/**
-
 	 * Sets the `$post_taxonomy` property.  This is an array of post types (key) and taxonomies (value).
-
 	 * The taxonomy's terms are shown on the singular post view if set.
-
 	 *
-
 	 * @since  1.0.0
-
 	 * @access protected
-
 	 * @return void
-
 	 */
 
 	protected function set_post_taxonomy() {
-
-
-
 		$defaults = array();
-
-
-
 		// If post permalink is set to `%postname%`, use the `category` taxonomy.
-
 		if ( '%postname%' === trim( get_option( 'permalink_structure' ), '/' ) ) {
-
 			$defaults['post'] = 'category';
 		}
 		$this->post_taxonomy = apply_filters( 'breadcrumb_trail_post_taxonomy', wp_parse_args( $this->args['post_taxonomy'], $defaults ) );
 	}
 	/**
-
 	 * Runs through the various WordPress conditional tags to check the current page being viewed.  Once
-
 	 * a condition is met, a specific method is launched to add items to the `$items` array.
-
 	 *
-
 	 * @since  1.0.0
-
 	 * @access protected
-
 	 * @return void
-
 	 */
 
 	protected function add_items() {
-
-
-
 		// If viewing the front page.
-
 		if ( is_front_page() ) {
-
 			$this->add_front_page_items();
-
 		} else { // If not viewing the front page.
-
-
-
 			// Add the network and site home links.
-
 			$this->add_network_home_link();
-
 			$this->add_site_home_link();
-
-
-
 			// If viewing the home/blog page.
-
 			if ( is_home() ) {
-
 				$this->add_blog_items();
-
 			} elseif ( is_singular() ) { // If not viewing the front page.
-
 				$this->add_singular_items();
-
 			} elseif ( is_archive() ) { // If viewing an archive page.
-
-
-
 				if ( is_post_type_archive() ) {
-
 					$this->add_post_type_archive_items();
-
 				} elseif ( is_category() || is_tag() || is_tax() ) {
-
 					$this->add_term_archive_items();
-
 				} elseif ( is_author() ) {
-
 					$this->add_user_archive_items();
-
 				} elseif ( get_query_var( 'minute' ) && get_query_var( 'hour' ) ) {
-
 					$this->add_minute_hour_archive_items();
-
 				} elseif ( get_query_var( 'minute' ) ) {
-
 					$this->add_minute_archive_items();
-
 				} elseif ( get_query_var( 'hour' ) ) {
-
 					$this->add_hour_archive_items();
-
 				} elseif ( is_day() ) {
-
 					$this->add_day_archive_items();
-
 				} elseif ( get_query_var( 'w' ) ) {
-
 					$this->add_week_archive_items();
-
 				} elseif ( is_month() ) {
-
 					$this->add_month_archive_items();
-
 				} elseif ( is_year() ) {
-
 					$this->add_year_archive_items();
-
 				} else {
-
 					$this->add_default_archive_items();
-
 				}
-
 			} elseif ( is_search() ) { // If viewing a search results page.
-
 				$this->add_search_items();
-
 			} elseif ( is_404() ) { // If viewing the 404 page.
-
 				$this->add_404_items();
-
 			}
-
 		}
-
-
-
 		// Add paged items if they exist.
-
 		$this->add_paged_items();
-
-
-
 		// Allow developers to overwrite the items for the breadcrumb trail.
-
 		$this->items = array_unique( apply_filters( 'breadcrumb_trail_items', $this->items, $this->args ) );
-
 	}
-
-
-
 	/**
-
 	 * Gets front items based on $wp_rewrite->front.
-
 	 *
-
 	 * @since  1.0.0
-
 	 * @access protected
-
 	 * @return void
-
 	 */
-
 	protected function add_rewrite_front_items() {
-
 		global $wp_rewrite;
-
-
-
 		if ( $wp_rewrite->front ) {
-
 			$this->add_path_parents( $wp_rewrite->front );
-
 		}
-
 	}
 
-
-
 	/**
-
 	 * Adds the page/paged number to the items array.
-
 	 *
-
 	 * @since  1.0.0
-
 	 * @access protected
-
 	 * @return void
-
 	 */
-
 	protected function add_paged_items() {
-
-
-
 		// If viewing a paged singular post.
-
 		if ( is_singular() && 1 < get_query_var( 'page' ) && true === $this->args['show_title'] ) {
-
 			$this->items[] = sprintf( $this->labels['paged'], number_format_i18n( absint( get_query_var( 'page' ) ) ) );
-
 		} elseif ( is_singular() && get_option( 'page_comments' ) && 1 < get_query_var( 'cpage' ) ) { // If viewing a singular post with paged comments.
-
 			$this->items[] = sprintf( $this->labels['paged_comments'], number_format_i18n( absint( get_query_var( 'cpage' ) ) ) );
-
 		} elseif ( is_paged() && true === $this->args['show_title'] ) { // If viewing a paged archive-type page.
-
 			$this->items[] = sprintf( $this->labels['paged'], number_format_i18n( absint( get_query_var( 'paged' ) ) ) );
-
 		}
-
 	}
 
-
-
 	/**
-
 	 * Adds the network (all sites) home page link to the items array.
-
 	 *
-
 	 * @since  1.0.0
-
 	 * @access protected
-
 	 * @return void
-
 	 */
-
 	protected function add_network_home_link() {
-
-
-
 		if ( is_multisite() && ! is_main_site() && true === $this->args['network'] ) {
-
 			$this->items[] = sprintf( '<a href="%s" rel="home">%s</a>', esc_url( network_home_url() ), $this->labels['home'] );
-
 		}
-
 	}
 
-
-
 	/**
-
 	 * Adds the current site's home page link to the items array.
-
 	 *
-
 	 * @since  1.0.0
-
 	 * @access protected
-
 	 * @return void
-
 	 */
-
 	protected function add_site_home_link() {
 
 

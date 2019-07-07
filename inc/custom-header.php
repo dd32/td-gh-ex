@@ -1,20 +1,18 @@
 <?php
 /**
  * File aeonblog.
+ *
  * @package   AeonBlog
- * @author    Aeon Theme <info@aeontheme.com>
- * @copyright Copyright (c) 2019, Aeon Theme
- * @link      http://www.aeontheme.com/themes/aeonblog
+ * @author    AeonWP <info@aeonwp.com>
+ * @copyright Copyright (c) 2019, AeonWP
+ * @link      https://aeonwp.com/aeonblog
  * @license   http://www.gnu.org/licenses/gpl-2.0.html
  *
  * Sample implementation of the Custom Header feature
  *
  * You can add an optional custom header image to header.php like so ...
  *
- *
  * @link https://developer.wordpress.org/themes/functionality/custom-headers/
- *
- * @package AeonBlog
  */
 
 /**
@@ -23,14 +21,20 @@
  * @uses aeonblog_header_style()
  */
 function aeonblog_custom_header_setup() {
-	add_theme_support( 'custom-header', apply_filters( 'aeonblog_custom_header_args', array(
-		'default-image'          => '',
-		'default-text-color'     => '#4ea371',
-		'width'                  => 1900,
-		'height'                 => 450,
-		'flex-height'            => true,
-		'wp-head-callback'       => 'aeonblog_header_style',
-	) ) );
+	add_theme_support(
+		'custom-header',
+		apply_filters(
+			'aeonblog_custom_header_args',
+			array(
+				'default-image'      => '',
+				'default-text-color' => '#000',
+				'width'              => 2200,
+				'height'             => 450,
+				'flex-height'        => true,
+				'wp-head-callback'   => 'aeonblog_header_style',
+			)
+		)
+	);
 }
 add_action( 'after_setup_theme', 'aeonblog_custom_header_setup' );
 
@@ -63,8 +67,8 @@ if ( ! function_exists( 'aeonblog_header_style' ) ) :
 				position: absolute;
 				clip: rect(1px, 1px, 1px, 1px);
 			}
-		<?php
-		// If the user has set a custom color for the text use that.
+			<?php
+			// If the user has set a custom color for the text use that.
 		else :
 			?>
 			.site-title a,

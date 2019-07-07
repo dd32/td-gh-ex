@@ -1,20 +1,19 @@
 <?php
 /**
  * File aeonblog.
+ *
  * @package   AeonBlog
- * @author    Aeon Theme <info@aeontheme.com>
- * @copyright Copyright (c) 2019, Aeon Theme
- * @link      http://www.aeontheme.com/themes/aeonblog
+ * @author    AeonWP <info@aeonwp.com>
+ * @copyright Copyright (c) 2019, AeonWP
+ * @link      https://aeonwp.com/aeonblog
  * @license   http://www.gnu.org/licenses/gpl-2.0.html
  *
  * AeonBlog functions and definitions
  *
  * @link https://developer.wordpress.org/themes/basics/theme-functions/
- *
- * @package AeonBlog
  */
 
-if ( ! function_exists( 'aeonblog_setup' ) ) :
+if ( ! function_exists( 'aeonblog_setup' ) ) {
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
 	 *
@@ -50,28 +49,38 @@ if ( ! function_exists( 'aeonblog_setup' ) ) :
 		add_theme_support( 'post-thumbnails' );
 
 		// This theme uses wp_nav_menu() in one location.
-		register_nav_menus( array(
-			'primary' => esc_html__( 'Primary Menu', 'aeonblog' ),
-			'social' => esc_html__( 'Social Menu', 'aeonblog' ),
-		) );
+		register_nav_menus(
+			array(
+				'primary' => esc_html__( 'Primary Menu', 'aeonblog' ),
+				'social' => esc_html__( 'Social Menu', 'aeonblog' ),
+			)
+		);
 
 		/*
 		 * Switch default core markup for search form, comment form, and comments
 		 * to output valid HTML5.
 		 */
-		add_theme_support( 'html5', array(
-			'search-form',
-			'comment-form',
-			'comment-list',
-			'gallery',
-			'caption',
-		) );
+		add_theme_support(
+			'html5', array(
+				'search-form',
+				'comment-form',
+				'comment-list',
+				'gallery',
+				'caption',
+			)
+		);
 
 		// Set up the WordPress core custom background feature.
-		add_theme_support( 'custom-background', apply_filters( 'aeonblog_custom_background_args', array(
-			'default-color' => 'ffffff',
-			'default-image' => '',
-		) ) );
+		add_theme_support(
+			'custom-background',
+			apply_filters(
+				'aeonblog_custom_background_args',
+				array(
+					'default-color' => 'f1f5f5',
+					'default-image' => '',
+				)
+			)
+		);
 
 		// Add theme support for selective refresh for widgets.
 		add_theme_support( 'customize-selective-refresh-widgets' );
@@ -81,14 +90,17 @@ if ( ! function_exists( 'aeonblog_setup' ) ) :
 		 *
 		 * @link https://codex.wordpress.org/Theme_Logo
 		 */
-		add_theme_support( 'custom-logo', array(
-			'height'      => 250,
-			'width'       => 250,
-			'flex-width'  => true,
-			'flex-height' => true,
-		) );
+		add_theme_support(
+			'custom-logo',
+			array(
+				'height'      => 250,
+				'width'       => 250,
+				'flex-width'  => true,
+				'flex-height' => true,
+			)
+		);
 	}
-endif;
+}
 add_action( 'after_setup_theme', 'aeonblog_setup' );
 
 /**
@@ -112,25 +124,17 @@ add_action( 'after_setup_theme', 'aeonblog_content_width', 0 );
  * @link https://developer.wordpress.org/themes/functionality/sidebars/#registering-a-sidebar
  */
 function aeonblog_widgets_init() {
-	register_sidebar( array(
-		'name'          => esc_html__( 'Sidebar', 'aeonblog' ),
-		'id'            => 'sidebar-1',
-		'description'   => esc_html__( 'Add widgets here.', 'aeonblog' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
-
-	register_sidebar( array(
-		'name'          => esc_html__( 'Off Canvas Sidebar', 'aeonblog' ),
-		'id'            => 'sidebar-2',
-		'description'   => esc_html__( 'Add widgets here.', 'aeonblog' ),
-		'before_widget' => '<section id="%1$s" class="widget %2$s">',
-		'after_widget'  => '</section>',
-		'before_title'  => '<h2 class="widget-title">',
-		'after_title'   => '</h2>',
-	) );
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Sidebar', 'aeonblog' ),
+			'id'            => 'sidebar-1',
+			'description'   => esc_html__( 'Add widgets here.', 'aeonblog' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
 }
 add_action( 'widgets_init', 'aeonblog_widgets_init' );
 
@@ -143,40 +147,34 @@ function aeonblog_scripts() {
 	global $aeonblog_theme_options;
 	$aeonblog_name_font_url   = esc_url( $aeonblog_theme_options['aeonblog-font-url'] );
 
-	if($aeonblog_name_font_url != ''):
-		wp_enqueue_style('aeonblog-googleapis',$aeonblog_name_font_url , null, false, 'all');
-	endif;
+	if ( $aeonblog_name_font_url != '' ) {
+		wp_enqueue_style( 'aeonblog-googleapis', $aeonblog_name_font_url, null, false, 'all' );
+	}
 
-    wp_enqueue_style( 'googleapis', '//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800', array(), null );
-	
-	//*Font-Awesome-master*/
-    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.5.0' );
-	
+	wp_enqueue_style( 'googleapis', '//fonts.googleapis.com/css?family=Open+Sans:400,600,700,800', array(), null );
+
+	/*Font-Awesome-master*/
+	wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.min.css', array(), '4.5.0' );
+
 	/*Bootstrap CSS*/
-    wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '4.5.0' );
-    /*Animited CSS*/
-    wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css', array(), '4.5.0' );
-    
-    wp_enqueue_style( 'bootsnav', get_template_directory_uri() . '/css/bootsnav.css', array(), '4.5.0' );
-    
+	wp_enqueue_style( 'bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '4.5.0' );
+
+	/*Animited CSS*/
+	wp_enqueue_style( 'animate', get_template_directory_uri() . '/css/animate.css', array(), '4.5.0' );
 	wp_enqueue_style( 'aeonblog-style', get_stylesheet_uri() );
 
-
-	/*Bootstrap JS*/
-    wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '4.6.0', true );
-    wp_enqueue_script( 'aeonblog-bootsnav', get_template_directory_uri() . '/js/bootsnav.js', array('jquery'), '4.5.0', true );
-
-	wp_enqueue_script( 'aeonblog-main', get_template_directory_uri() . '/js/main.js', array('jquery'), '4.5.0', true );
-	
-	wp_enqueue_script( 'aeonblog-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true 	);
+	wp_enqueue_style( 'aeonblog-menu-style', get_template_directory_uri() . '/css/menu.css');
+	wp_enqueue_script( 'aeonblog-navigation', get_template_directory_uri() . '/js/navigation.js', array( 'jquery' ), '4.6.0', true );
+	wp_enqueue_script( 'aeonblog-main', get_template_directory_uri() . '/js/main.js', array( 'jquery' ), '4.5.0', true );
+	wp_enqueue_script( 'aeonblog-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
 	global $aeonblog_theme_options;
-	$sticky_sidebar = absint($aeonblog_theme_options['aeonblog-sticky-sidebar']); 
-		if($sticky_sidebar == 1 ){
-			wp_enqueue_script( 'theia-sticky-sidebar', get_template_directory_uri() . '/js/theia-sticky-sidebar.js', array(), '20151215', true );		
-			wp_enqueue_script( 'aeonblog-sticky-sidebar', get_template_directory_uri() . '/js/sticky-sidebar.js', array(), '20151215', true );
-}
-	
+	$sticky_sidebar = absint( $aeonblog_theme_options['aeonblog-sticky-sidebar'] );
+	if ( $sticky_sidebar == 1 ) {
+		wp_enqueue_script( 'theia-sticky-sidebar', get_template_directory_uri() . '/js/theia-sticky-sidebar.js', array(), '20151215', true );
+		wp_enqueue_script( 'aeonblog-sticky-sidebar', get_template_directory_uri() . '/js/sticky-sidebar.js', array(), '20151215', true );
+	}
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
@@ -209,25 +207,18 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/custom-functions.php';
 
 /**
- * Custom Author Widget
- */
-require get_template_directory() . '/inc/custom-author-widget.php';
-
-/**
  * Load Jetpack compatibility file.
  */
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
-require get_template_directory() . '/inc/wp_bootstrap_navwalker.php';	
-
 /**
  * Loading breadcrumbs File.
  */
-if (!function_exists('aeonblog_breadcrumb_trail') ) {
+if ( ! function_exists( 'aeonblog_breadcrumb_trail' ) ) {
 	require get_template_directory() . '/inc/breadcrumb.php';
-}							
+}
 
 /**
  * Load category dropdown functions

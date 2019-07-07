@@ -1,14 +1,13 @@
 <?php
 /**
  * File aeonblog.
+ *
  * @package   AeonBlog
- * @author    Aeon Theme <info@aeontheme.com>
- * @copyright Copyright (c) 2019, Aeon Theme
- * @link      http://www.aeontheme.com/themes/aeonblog
+ * @author    AeonWP <info@aeonwp.com>
+ * @copyright Copyright (c) 2019, AeonWP
+ * @link      https://aeonwp.com/aeonblog
  * @license   http://www.gnu.org/licenses/gpl-2.0.html
  * Functions which enhance the theme by hooking into WordPress
- *
- * @package AeonBlog
  */
 
 /**
@@ -23,10 +22,10 @@ function aeonblog_body_classes( $classes ) {
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 
-	}else{
+	} else {
 		$classes[] = get_theme_mod( 'aeonblog_sidebar_options', 'right-sidebar' );
 	}
-	 return $classes;
+	return $classes;
 }
 add_filter( 'body_class', 'aeonblog_body_classes' );
 

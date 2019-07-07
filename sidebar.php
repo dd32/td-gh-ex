@@ -1,17 +1,15 @@
 <?php
 /**
  * File aeonblog.
+ *
  * @package   AeonBlog
- * @author    Aeon Theme <info@aeontheme.com>
+ * @author    AeonWP <info@aeonwp.com>
  * @copyright Copyright (c) 2019, AeonBlog Theme
- * @link      http://www.aeontheme.com/themes/aeonblog
+ * @link      https://aeonwp.com/aeonblog
  * @license   http://www.gnu.org/licenses/gpl-2.0.html
- 
  * The sidebar containing the main widget area
  *
  * @link https://developer.wordpress.org/themes/basics/template-files/#template-partials
- *
- * @package AeonBlog
  */
 
 if ( ! is_active_sidebar( 'sidebar-1' ) ) {
@@ -19,8 +17,11 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 }
 ?>
 
-<aside id="secondary" class="col-md-4 col-sm-4">
+<aside id="secondary" class="col-md-4 col-sm-4" role="complementary">
 	<div class="widget-area">
-		<?php dynamic_sidebar( 'sidebar-1' ); ?>
+		<?php
+		aeonblog_about_user();
+		dynamic_sidebar( 'sidebar-1' );
+		?>
 	</div>
 </aside><!-- #secondary -->

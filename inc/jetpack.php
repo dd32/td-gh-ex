@@ -1,17 +1,16 @@
 <?php
 /**
  * File aeonblog.
+ *
  * @package   AeonBlog
- * @author    Aeon Theme <info@aeontheme.com>
- * @copyright Copyright (c) 2019, Aeon Theme
- * @link      http://www.aeontheme.com/themes/aeonblog
+ * @author    AeonWP <info@aeonwp.com>
+ * @copyright Copyright (c) 2019, AeonWP
+ * @link      https://aeonwp.com/aeonblog
  * @license   http://www.gnu.org/licenses/gpl-2.0.html
- * 
+ *
  * Jetpack Compatibility File
  *
  * @link https://jetpack.com/
- *
- * @package AeonBlog
  */
 
 /**
@@ -23,11 +22,14 @@
  */
 function aeonblog_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
-	add_theme_support( 'infinite-scroll', array(
-		'container' => 'main',
-		'render'    => 'aeonblog_infinite_scroll_render',
-		'footer'    => 'page',
-	) );
+	add_theme_support(
+		'infinite-scroll',
+		array(
+			'container' => 'main',
+			'render'    => 'aeonblog_infinite_scroll_render',
+			'footer'    => 'page',
+		)
+	);
 
 	// Add theme support for Responsive Videos.
 	add_theme_support( 'jetpack-responsive-videos' );

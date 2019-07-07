@@ -1408,13 +1408,13 @@ textarea {
 }
 
 a {
-    color: #337ab7;
+    color: #666;
     text-decoration: none
 }
 
 a:focus,
 a:hover {
-    color: #23527c;
+    color: #666;
     text-decoration: underline
 }
 
@@ -1688,7 +1688,7 @@ mark {
 }
 
 .text-primary {
-    color: #337ab7
+    color: #545353
 }
 
 a.text-primary:focus,
@@ -4138,7 +4138,7 @@ fieldset[disabled] .btn-link {
 
 .btn-link:focus,
 .btn-link:hover {
-    color: #23527c;
+    color: #666;
     text-decoration: underline;
     background-color: transparent
 }
@@ -5691,7 +5691,7 @@ fieldset[disabled] .navbar-inverse .btn-link:hover {
 .pagination>li>span:focus,
 .pagination>li>span:hover {
     z-index: 2;
-    color: #23527c;
+    color: #666;
     background-color: #eee;
     border-color: #ddd
 }
