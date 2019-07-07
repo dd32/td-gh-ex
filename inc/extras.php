@@ -50,24 +50,24 @@ function avrilly_slider() {
 				}
 
 				echo '<div><div class="mz-slider-item">';
-echo '<a href="' . esc_url(get_permalink()) . '">';
+				echo '<a href="' . esc_url(get_permalink()) . '">';
 				if ( (function_exists( 'has_post_thumbnail' )) && ( has_post_thumbnail() ) ) :
 					echo get_the_post_thumbnail( get_the_ID(), 'avrilly-slider-thumbnail' );
 				endif;
 
 				echo '<div class="mz-slide-title">';
 				if ( get_the_title() != '' ) {
-					echo '<h2 class="entry-title">'. get_the_title().'</h2>';
+					echo '<h2 class="entry-title">'. esc_html(get_the_title()).'</h2>';
 					echo '<div class="post-meta">';
 					echo '<span><i class="fa fa-clock-o"></i>'. get_the_date(). '</span>';
 					if ( ! post_password_required() && ( comments_open() || '0' != get_comments_number() ) ) :
-						echo '<span><i class="fa fa-comment-o"></i>'.$write_comments.'</span>';
+						echo '<span><i class="fa fa-comment-o"></i>'.esc_html($write_comments).'</span>';
 					endif;
 					echo '</div>';
 
 				}
 				echo '</div>'; // .mz-slide-title
-echo '</a>';
+				echo '</a>';
 				echo '</div>'; // .mz-slider-item
 				echo '</div>';
 				$active_slide = "";

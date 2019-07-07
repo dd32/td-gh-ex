@@ -1,10 +1,11 @@
 ﻿== Avrilly == 
 
-Contributors: MOOZ Themes
+Contributors: moozthemes
 Tags: blog, news, entertainment, one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, custom-logo, featured-images, full-width-template, theme-options, threaded-comments, footer-widgets
 Requires at least: 4.0
 Tested up to: 5.2
-Stable tag: 1.0.0
+Requires PHP: 5.2.4
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -85,3 +86,5 @@ Drag and drop these widgets to above two widget areas and arrange them as you li
 
 = 1.0.0 =
 * released
+= 1.0.1 =
+* Fixed issues with escaping

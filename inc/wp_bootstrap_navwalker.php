@@ -371,7 +371,7 @@ if ( ! class_exists( 'avrilly_bootstrap_navwalker' ) ) {
 
 				// if $args has 'echo' key and it's true echo, otherwise return.
 				if ( array_key_exists( 'echo', $args ) && $args['echo'] ) {
-					echo $fallback_output; // WPCS: XSS OK.
+					echo esc_html($fallback_output); // WPCS: XSS OK.
 				} else {
 					return $fallback_output;
 				}
