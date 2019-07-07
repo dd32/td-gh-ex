@@ -16,7 +16,7 @@
 	</div>
 	<div class="blog-content">
 		<h4 class="blog-info">
-			<i class="fas fa-user"></i> <?php esc_html__( articlepress_posted_by(), 'articlepress' ) ?>  <i class="far fa-calendar-alt"></i> 
+			<i class="fas fa-user"></i> <?php articlepress_posted_by(); ?>  <i class="far fa-calendar-alt"></i> 
 			<?php esc_html_e( 'Updated', 'articlepress' ); ?> : <?php the_time( 'M d, Y' ); ?> <?php esc_html_e( 'in', 'articlepress' ) ?>  <i class="far fa-list-alt"></i>
 		<?php 
 			// Show the First Category Name Only
@@ -44,7 +44,7 @@
 			?>
 		</p>
 		<div class="blog-btn">
-			<a href="<?php esc_url( the_permalink() ); ?>" class="btn btn-blog"> <?php esc_html_e( 'Continue reading', 'themeasia' ) ?> <i class="fas fa-arrow-right"></i></a>
+			<a href="<?php esc_url( the_permalink() ); ?>" class="btn btn-blog"> <?php esc_html_e( 'Continue reading', 'articlepress' ) ?> <i class="fas fa-arrow-right"></i></a>
 		</div>
 	</div>
 </div>
