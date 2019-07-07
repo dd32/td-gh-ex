@@ -45,9 +45,3 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see .
 
 
-== Credits ==
-
-= Images Credits: Images and Gradient used in theme Demos and Screenshots are created by theme author & licensed under the GPL, so feel free to copy it and use it for any purpose, make something awesome! =
-
-* Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)

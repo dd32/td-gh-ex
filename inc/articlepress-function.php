@@ -22,7 +22,7 @@ add_filter( 'get_custom_logo', 'articlepress_change_logo_class' );
 function articlepress_filter_comment_form_submit_button( $submit_button, $args ) {
     // make filter magic happen here...
     $submit_before = '<div class="form-button">';
-    $submit_button = '<button class="btn btn-blog form-btn" name="submit" type="submit" id="submit" >'.__('Post Comment', 'articlepress').' <i class="fas fa-arrow-right"></i></button>';
+    $submit_button = '<button class="btn btn-blog form-btn" name="submit" type="submit" id="submit" >'.esc_html__('Post Comment', 'articlepress').' <i class="fas fa-arrow-right"></i></button>';
     $submit_after = '</div>';
     return $submit_before . $submit_button . $submit_after;
 };
@@ -80,7 +80,7 @@ add_filter( 'comment_form_field_comment', 'articlepress_comment_form_field_comme
 function articlepress_search_form( $form ) {
     $form = '<form role="search" method="get" class="search-form" action="' . esc_url( home_url( '/' ) ) . '" >
         <div class="form-grop">
-	    	<input class="search-input" type="search" value="' . get_search_query() . '" name="s" class="search-field" placeholder="' . esc_attr( __( 'Search Here', 'articlepress' ) ) . '" required />
+	    	<input class="search-input" type="search" value="' . get_search_query() . '" name="s" class="search-field" placeholder="' . esc_attr__( 'Search Here', 'articlepress' ) . '" required />
             <button type="submit" id="search-submit" class="articlepress-search-form search"></button>
         </div>
     </form>';

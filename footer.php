@@ -26,7 +26,7 @@
 								?>
 							</a>
 							<span class="sep"> | </span>
-								&copy; 2019 <?php esc_html( bloginfo( 'title' ) ) ;?> <?php _e('Designed by', 'articlepress') ?> <a href="<?php esc_url( __( 'https://themeasia.net', 'articlepress' ) ); ?>">ThemeAsia</a>
+								&copy; 2019 <?php esc_html( bloginfo( 'title' ) ) ;?> <?php esc_html_e('Designed by', 'articlepress') ?> <a href="<?php esc_url( __( 'https://themeasia.net', 'articlepress' ) ); ?>">ThemeAsia</a>
 						</p>
 					</div>
 

@@ -14,7 +14,7 @@ function articlepress_customize_register( $wp_customize ) {
 
 	// Footer Social Icon
 	$wp_customize->add_section( 'footer_socail_icon', array(
-		'title'		=> __( 'Footer Socail Icon', 'articlepress' ),
+		'title'		=> esc_html__( 'Footer Socail Icon', 'articlepress' ),
 		'priority'	=> '30'
 	));
 
@@ -22,11 +22,11 @@ function articlepress_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'footer_socail_icon_show_hide', array(
 		'default'  	=>	1,
 		'transport'	=>	'refresh',
-		'sanitize_callback'  => 'esc_attr'
+		'sanitize_callback'  => 'esc_url_raw'
 	));
 	$wp_customize->add_control( 'footer_socail_icon_show_hide', array(
 		'section'	=> 	'footer_socail_icon',
-		'label'		=>	__( 'Icon Show / Hide', 'articlepress' ),
+		'label'		=>	esc_html__( 'Icon Show / Hide', 'articlepress' ),
 		'type'		=>	'checkbox'
 	));
 
@@ -34,11 +34,11 @@ function articlepress_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'footer_socail_icon_facebook', array(
 		'default'  	=>	'http://',
 		'transport'	=>	'refresh',
-		'sanitize_callback'  => 'esc_attr'
+		'sanitize_callback'  => 'esc_url_raw'
 	));
 	$wp_customize->add_control( 'footer_socail_icon_facebook', array(
 		'section'	=> 	'footer_socail_icon',
-		'label'		=>	'Facebook',
+		'label'		=>	esc_html__( 'Facebook', 'articlepress' ),
 		'type'		=>	'text'
 	));
 
@@ -47,11 +47,11 @@ function articlepress_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'footer_socail_icon_twitter', array(
 		'default'  	=>	'http://',
 		'transport'	=>	'refresh',
-		'sanitize_callback'  => 'esc_attr'
+		'sanitize_callback'  => 'esc_url_raw'
 	));
 	$wp_customize->add_control( 'footer_socail_icon_twitter', array(
 		'section'	=> 	'footer_socail_icon',
-		'label'		=>	__( 'Twitter', 'articlepress' ),
+		'label'		=>	esc_html__( 'Twitter', 'articlepress' ),
 		'type'		=>	'url'
 	));
 
@@ -60,11 +60,11 @@ function articlepress_customize_register( $wp_customize ) {
 	$wp_customize->add_setting( 'footer_socail_icon_pinterest', array(
 		'default'  	=>	'http://',
 		'transport'	=>	'refresh',
-		'sanitize_callback'  => 'esc_attr'
+		'sanitize_callback'  => 'esc_url_raw'
 	));
 	$wp_customize->add_control( 'footer_socail_icon_pinterest', array(
 		'section'	=> 	'footer_socail_icon',
-		'label'		=>	__( 'Pinterest', 'articlepress' ),
+		'label'		=>	esc_html__( 'Pinterest', 'articlepress' ),
 		'type'		=>	'url'
 	));
 
