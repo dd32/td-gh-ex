@@ -1,6 +1,6 @@
-@import '../../../dev/library/sass/utilities/variables';
-@import '../../../dev/library/sass/utilities/functions';
-@import '../../../dev/library/sass/objects/typeSize';
+@import '../../../assets/public/css/modules/utilities/variables';
+@import '../../../assets/public/css/modules/utilities/functions';
+@import '../../../assets/public/css/modules/objects/typeSize';
 
 /* block Editor Styles */
 
@@ -1046,24 +1046,60 @@ figure.wp-block-audio {
 }
 
 ul.wp-block-gallery {
+	display: block;
 	width: calc( 100% + 4px );
 	margin-left: -2px;
-	& > li.blocks-gallery-item,
-	& > li.blocks-gallery-item:first-child {
+	li.blocks-gallery-image,
+	li.blocks-gallery-image:first-child,
+	li.blocks-gallery-item,
+	li.blocks-gallery-item:first-child {
+		float: left;
 		margin: 0;
 		padding: 2px;
 		border-top-width: 0;
-		&.has-add-item-button {
-			width: 100%;
+	}
+	.widget & {
+		margin-bottom: mrem();
+	}
+	&.alignwide {
+		@media only screen and (min-width: $tablet__rotate) {
+			width: calc( #{1.272 * $line__length} + 4px );
+			margin-left: 0;
 		}
 	}
-	&.alignwide,
 	&.alignfull {
 		@media only screen and (min-width: $tablet__rotate) {
-			max-width: none;
-			width: calc( 100% + 4px );
-			margin-left: -2px;
+			width: 100vw;
+			margin-left: 0;
 		}
+	}
+	li.blocks-gallery-item figure,
+	li.blocks-gallery-image figure {
+		position: relative;
+		a,
+		img {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+		}
+		img {
+			object-fit: cover;
+		}
+		&:after {
+			content: '';
+			display: block;
+			width: 100%;
+			padding-top: 66.666%;
+		}
+	}
+	&:after {
+		display: table;
+		content: '';
+		clear: both;
 	}
 }
 

@@ -1,13 +1,40 @@
 .widget-options-section {
 	display: none;
-	padding: 15px;
-	margin-bottom: 15px;
-	border: 1px solid #e5e5e5;
+	margin: 25px 0;
 }
 
 h4.widget-options-title {
-	font-size: 1.125em;
-	margin: 0 0 20px;
+	position: relative;
+	width: auto;
+	padding: 15px;
+	margin: 0;
+	text-align: left;
+	color: #333;
+	background-color: #f5f5dc;
+	border: 1px solid #e6e6e6;
+	cursor: pointer;
+}
+
+h4.widget-options-title:after {
+	font: normal 20px/1 dashicons;
+	position: absolute;
+	top: 50%;
+	right: 15px;
+	display: block;
+	content: '\f140';
+	-webkit-transform: translateY(-50%);
+	transform: translateY(-50%);
+}
+
+h4.widget-options-title.toggle-active:after {
+	content: '\f142';
+}
+
+.widget-options-content {
+	padding: 20px;
+	border: 1px solid rgba(0,0,0,0.08);
+	border-top-width: 0;
+	display: none;
 }
 
 [id^=home-widgetlayer-] .widget-options-section,

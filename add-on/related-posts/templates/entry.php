@@ -28,10 +28,10 @@
 			if ( get_the_title() ) {
 				the_title(
 					sprintf(
-						'<div class="dp-title"><a class="dp-title-link" href="%s" rel="bookmark">',
+						'<h2 class="dp-title"><a class="dp-title-link" href="%s" rel="bookmark">',
 						esc_url( get_permalink() )
 					),
-					'</a></div>'
+					'</a></h2>'
 				);
 			}
 			?>

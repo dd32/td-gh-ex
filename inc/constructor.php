@@ -26,12 +26,12 @@
 bayleaf_add_markup_for( 'skip_link', 'inside_header', 0 );
 bayleaf_add_markup_for( 'header_items', 'inside_header' );
 bayleaf_add_markup_for( 'header_image_area', 'after_header' );
-bayleaf_add_markup_for( 'page_entry_header', 'after_header' );
 bayleaf_add_markup_for( 'home_above_content_area', 'after_header' );
 
 // Display primary site content.
 bayleaf_add_markup_for( 'blog_title', 'before_main_content' );
 bayleaf_add_markup_for( 'page_header', 'inside_main_content' );
+bayleaf_add_markup_for( 'page_entry_header', 'inside_main_content' );
 bayleaf_add_markup_for( 'main_loop', 'inside_main_content' );
 bayleaf_add_markup_for( 'hentry', 'inside_entry' );
 
@@ -41,6 +41,7 @@ bayleaf_add_markup_for( 'image_navigation', 'inside_entry' );
 bayleaf_add_markup_for( 'comments_toggle', 'before_comments' );
 bayleaf_add_markup_for( 'post_navigation', 'inside_main_content' );
 bayleaf_add_markup_for( 'post_pagination', 'after_main_content' );
+bayleaf_add_markup_for( 'sidebar', 'inside_sidebar' );
 bayleaf_add_markup_for( 'home_below_content_area', 'after_site_content' );
 
 // Display site footer items.
@@ -178,6 +179,7 @@ function bayleaf_user_action_items() {
 	bayleaf_markup(
 		'header-widgets',
 		[
+			'bayleaf_header_search',
 			'bayleaf_header_widgets',
 		]
 	);
@@ -188,26 +190,69 @@ function bayleaf_user_action_items() {
  *
  * @since 1.0.0
  */
+function bayleaf_header_search() {
+	if ( ! bayleaf_get_mod( 'bayleaf_header_search', 'none' ) ) {
+		return;
+	}
+
+	printf(
+		'<button class="search-toggle"><span class="screen-reader-text">%s</span>%s%s</button>',
+		esc_html__( 'Show secondary sidebar', 'bayleaf' ),
+		bayleaf_get_icon( [ 'icon' => 'search' ] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		bayleaf_get_icon( [ 'icon' => 'close' ] ) // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	);
+	echo '<div id="header-search-wrapper" class="header-search-wrapper">';
+	echo '<div class="header-search-container">';
+	get_search_form();
+	echo '</div></div>';
+}
+
+/**
+ * Sidebar widgets wrapper markup.
+ *
+ * @since 1.0.0
+ */
 function bayleaf_header_widgets() {
+	if ( ! is_active_sidebar( 'sidebar' ) ) {
+		return;
+	}
 	printf(
 		'<button class="action-toggle"><span class="bar"><span class="screen-reader-text">%s</span></span></button>',
 		esc_html__( 'Show secondary sidebar', 'bayleaf' )
 	);
 	echo '<div id="header-widget-area" class="header-widget-area">';
-	if ( is_active_sidebar( 'sidebar' ) ) {
-		bayleaf_widgets(
-			'header-widget-wrapper',
-			'header-widget-wrapper',
-			esc_html__( 'Header Widget Wrapper', 'bayleaf' ),
-			'sidebar'
-		);
-	} else {
-		echo '<div id="header-widget-wrapper" class="header-widget-wrapper">';
-		echo '<div class="widget">';
-		get_search_form();
-		echo '</div></div>';
-	}
+	bayleaf_widgets(
+		'header-widget-wrapper',
+		'header-widget-wrapper',
+		esc_html__( 'Header Widget Wrapper', 'bayleaf' ),
+		'sidebar'
+	);
 	echo '</div>';
+}
+
+/**
+ * Display sidebar widgets.
+ *
+ * @since 1.0.0
+ */
+function bayleaf_sidebar() {
+	if ( is_singular( [ 'post', 'page' ] ) ) {
+
+		if ( is_single() && 'no-sidebar' === bayleaf_get_mod( 'bayleaf_post_sidebar', 'none' ) ) {
+			return;
+		}
+
+		if ( is_page() && 'no-sidebar' === bayleaf_get_mod( 'bayleaf_page_sidebar', 'none' ) ) {
+			return;
+		}
+
+		bayleaf_widgets(
+			'sidebar-widget-area',
+			'sidebar-widget-area',
+			esc_html__( 'Sidebar Widget Area', 'bayleaf' ),
+			'sidebar-1'
+		);
+	}
 }
 
 /**
@@ -335,7 +380,7 @@ function bayleaf_blog_title() {
 		$blog_title = explode( '-', $blog_title );
 		?>
 		<div class="title-wrapper wrapper">
-			<div class="blog-title">
+			<h2 class="blog-title">
 				<?php
 				if ( isset( $blog_title[0] ) ) {
 					printf( '<span class="bt-1">%s</span>', esc_html( trim( $blog_title[0] ) ) );
@@ -344,7 +389,7 @@ function bayleaf_blog_title() {
 					printf( '<span class="bt-2">%s</span>', esc_html( trim( $blog_title[1] ) ) );
 				}
 				?>
-			</div>
+			</h2>
 		</div>
 		<?php
 	}

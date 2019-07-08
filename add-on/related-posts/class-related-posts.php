@@ -52,7 +52,7 @@ class Related_Posts {
 	 */
 	public static function init() {
 
-		add_action( 'bayleaf_after_main_content', [ self::get_instance(), 'related_posts' ] );
+		add_action( 'bayleaf_after_site_content', [ self::get_instance(), 'related_posts' ] );
 		add_action( 'bayleaf_inside_main_content', [ self::get_instance(), 'remove_nav' ], 9 );
 	}
 
@@ -178,6 +178,7 @@ class Related_Posts {
 	 */
 	public function display_posts( $query ) {
 
+		echo '<div class="entry-related-posts">';
 		echo '<div class="wrapper"><h3 class="related-posts-title">';
 		esc_html_e( 'You may also like', 'bayleaf' );
 		echo '</h3></div>';
@@ -187,7 +188,7 @@ class Related_Posts {
 			$query->the_post();
 			bayleaf_get_template_partial( 'add-on/related-posts/templates', 'entry' );
 		endwhile;
-		echo '</div>';
+		echo '</div></div>';
 	}
 
 	/**

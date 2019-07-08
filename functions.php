@@ -282,8 +282,12 @@ function bayleaf_widgets_init() {
 		'bayleaf_register_sidebar',
 		array(
 			array(
-				'name' => esc_html__( 'Sidebar Widgets', 'bayleaf' ),
+				'name' => esc_html__( 'Header Toggle Widgets', 'bayleaf' ),
 				'id'   => 'sidebar',
+			),
+			array(
+				'name' => esc_html__( 'Sidebar Widgets', 'bayleaf' ),
+				'id'   => 'sidebar-1',
 			),
 			array(
 				'name'          => esc_html__( 'Homepage Above Content', 'bayleaf' ),

@@ -48,6 +48,11 @@ function bayleaf_get_theme_sections( $sections = [] ) {
 				'title' => esc_html__( 'General Settings', 'bayleaf' ),
 				'panel' => 'bayleaf_theme_panel',
 			],
+			'bayleaf_layout_section'  =>
+			[
+				'title' => esc_html__( 'Layout Settings', 'bayleaf' ),
+				'panel' => 'bayleaf_theme_panel',
+			],
 		]
 	);
 }
@@ -100,6 +105,12 @@ function bayleaf_get_theme_controls( $controls = [] ) {
 				'type'    => 'checkbox',
 			],
 			[
+				'label'   => esc_html__( 'Display Header Search', 'bayleaf' ),
+				'section' => 'bayleaf_general_section',
+				'setting' => 'bayleaf_header_search',
+				'type'    => 'checkbox',
+			],
+			[
 				'label'   => esc_html__( 'Display related posts after post content', 'bayleaf' ),
 				'section' => 'bayleaf_general_section',
 				'setting' => 'bayleaf_related_posts',
@@ -116,6 +127,28 @@ function bayleaf_get_theme_controls( $controls = [] ) {
 				'section' => 'bayleaf_general_section',
 				'setting' => 'bayleaf_blog_title',
 				'type'    => 'text',
+			],
+			[
+				'label'   => esc_html__( 'Page Sidebar Layout', 'bayleaf' ),
+				'section' => 'bayleaf_layout_section',
+				'setting' => 'bayleaf_page_sidebar',
+				'type'    => 'select',
+				'choices' => [
+					'sidebar-left'  => esc_html__( 'Sidebar-Content', 'bayleaf' ),
+					'sidebar-right' => esc_html__( 'Content-Sidebar', 'bayleaf' ),
+					'no-sidebar'    => esc_html__( 'Only Content- No Sidebar', 'bayleaf' ),
+				],
+			],
+			[
+				'label'   => esc_html__( 'Post Sidebar Layout', 'bayleaf' ),
+				'section' => 'bayleaf_layout_section',
+				'setting' => 'bayleaf_post_sidebar',
+				'type'    => 'select',
+				'choices' => [
+					'sidebar-left'  => esc_html__( 'Sidebar-Content', 'bayleaf' ),
+					'sidebar-right' => esc_html__( 'Content-Sidebar', 'bayleaf' ),
+					'no-sidebar'    => esc_html__( 'Only Content- No Sidebar', 'bayleaf' ),
+				],
 			],
 			[
 				'label'       => esc_html__( 'Footer Text', 'bayleaf' ),
@@ -145,8 +178,11 @@ function bayleaf_get_theme_defaults( $defaults = [] ) {
 			'bayleaf_display_site_desc'     => 1,
 			'bayleaf_use_google_fonts'      => 1,
 			'bayleaf_primary_nav'           => 1,
+			'bayleaf_header_search'         => 1,
 			'bayleaf_related_posts'         => 1,
 			'bayleaf_thumbnail_placeholder' => 1,
+			'bayleaf_page_sidebar'          => 'sidebar-right',
+			'bayleaf_post_sidebar'          => 'sidebar-right',
 			'bayleaf_blog_title'            => esc_html__( 'Latest from - The Blog', 'bayleaf' ),
 			'bayleaf_footer_text'           => '[site_title] [copy_symbol] [current_year] &middot; ' . esc_html__( 'All rights reserved', 'bayleaf' ), // Note: Translation friendly instructions for using footer text placeholders has been given in customizer control description.
 		]

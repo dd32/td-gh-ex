@@ -72,6 +72,12 @@ class Plugins_Compat {
 			add_filter( 'bayleaf_before_widget_content', [ self::get_instance(), 'display_widget_image' ], 10, 2 );
 			add_filter( 'bayleaf_after_widget_content', [ self::get_instance(), 'widget_wrapper_close' ], 10, 2 );
 		}
+
+		// Compatibility to "MailChimp for WordPress" plugin.
+		if ( defined( 'SIMPLIFIED_FONT_MANAGER_VERSION' ) ) {
+			add_filter( 'simplified_font_manager_theme_options', [ self::get_instance(), 'font_options' ] );
+			add_filter( 'bayleaf_fonts', '__return_empty_array' );
+		}
 	}
 
 	/**
@@ -324,6 +330,36 @@ class Plugins_Compat {
 		}
 
 		return $markup;
+	}
+
+	/**
+	 * Submit theme default options for simplified font manager.
+	 *
+	 * @return array Array of theme default font options.
+	 */
+	public function font_options() {
+		return array(
+			array(
+				'family'    => array(
+					'montserrat',
+					'Montserrat',
+					'goo-sans-serif',
+					'Montserrat',
+				),
+				'weights'   => array( '400', '400italic', '700', '700italic' ),
+				'selectors' => 'body',
+			),
+			array(
+				'family'    => array(
+					'poppins',
+					'Poppins',
+					'goo-serif',
+					'Poppins',
+				),
+				'weights'   => array( '400', '600', '700', '400italic', '700italic' ),
+				'selectors' => 'h1,h2,h3,h4,h5,h6,.site-title',
+			),
+		);
 	}
 }
 Plugins_Compat::init();

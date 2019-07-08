@@ -36,6 +36,15 @@ class Display_Posts_Widget extends \WP_Widget {
 	protected $orderby = [];
 
 	/**
+	 * Holds image cropping options.
+	 *
+	 * @since  1.0.0
+	 * @access protected
+	 * @var    array
+	 */
+	protected $imagecrop = [];
+
+	/**
 	 * Holds widget settings defaults, populated in constructor.
 	 *
 	 * @since  1.0.0
@@ -52,17 +61,17 @@ class Display_Posts_Widget extends \WP_Widget {
 	public function __construct() {
 		// Set widget instance settings default values.
 		$this->defaults = [
-			'title'        => '',
-			'post_type'    => '',
-			'taxonomy'     => '',
-			'terms'        => [],
-			'post_ids'     => '',
-			'pages'        => [],
-			'number'       => 5,
-			'orderby'      => 'date',
-			'order'        => 'DESC',
-			'styles'       => 'grid-view1',
-			'grid_columns' => 1,
+			'title'      => '',
+			'post_type'  => '',
+			'taxonomy'   => '',
+			'terms'      => [],
+			'post_ids'   => '',
+			'pages'      => [],
+			'number'     => 5,
+			'orderby'    => 'date',
+			'order'      => 'DESC',
+			'styles'     => 'grid-view1',
+			'image_crop' => 'centercrop',
 		];
 
 		// Set the options for orderby.
@@ -73,6 +82,14 @@ class Display_Posts_Widget extends \WP_Widget {
 			'author'        => esc_html__( 'Author', 'bayleaf' ),
 			'comment_count' => esc_html__( 'Comment Count', 'bayleaf' ),
 			'rand'          => esc_html__( 'Random', 'bayleaf' ),
+		];
+
+		$this->imagecrop = [
+			'topleftcrop'      => esc_html__( 'Top Left Cropping', 'bayleaf' ),
+			'topcentercrop'    => esc_html__( 'Top Center Cropping', 'bayleaf' ),
+			'centercrop'       => esc_html__( 'Center Cropping', 'bayleaf' ),
+			'bottomleftcrop'   => esc_html__( 'Bottom Left Cropping', 'bayleaf' ),
+			'bottomcentercrop' => esc_html__( 'Bottom Center Cropping', 'bayleaf' ),
 		];
 
 		// Set the widget options.
@@ -162,6 +179,15 @@ class Display_Posts_Widget extends \WP_Widget {
 				'instance' => $instance,
 				'query'    => $post_query,
 			];
+
+			/**
+			 * Fires before display posts wrapper.
+			 *
+			 * @since 1.0.0
+			 *
+			 * @param array $action_args Settings & args for the current widget instance..
+			 */
+			do_action( 'bayleaf_before_dp_wrapper', $action_args );
 			?>
 			<div class="dp-wrapper <?php echo join( ' ', $wrapper_class ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
 
@@ -201,6 +227,15 @@ class Display_Posts_Widget extends \WP_Widget {
 
 			// Reset the global $the_post as this query will have stomped on it.
 			wp_reset_postdata();
+
+			/**
+			 * Fires after display posts wrapper.
+			 *
+			 * @since 1.0.0
+			 *
+			 * @param array $action_args Settings & args for the current widget instance..
+			 */
+			do_action( 'bayleaf_after_dp_wrapper', $action_args );
 		endif;
 
 		echo $args['after_widget']; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
@@ -281,29 +316,23 @@ class Display_Posts_Widget extends \WP_Widget {
 		</div><!-- .post-panel -->
 
 		<div class="posts-styles" <?php echo $instance['post_type'] ? '' : ' style="display:none;"'; ?>>
-			<?php
-			$this->label( 'styles', esc_html__( 'Display Style', 'bayleaf' ) );
-			$styles = apply_filters( 'bayleaf_dp_styles', '', $instance );
-			$this->select( 'styles', $styles, $instance['styles'] );
-			?>
-		</div><!-- .posts-styles -->
-		<?php
-		$hide_grid_columns = true;
+			<p class="posts-dstyle">
+				<?php
+				$this->label( 'styles', esc_html__( 'Display Style', 'bayleaf' ) );
+				$styles = apply_filters( 'bayleaf_dp_styles', '', $instance );
+				$this->select( 'styles', $styles, $instance['styles'] );
+				?>
+			</p>
 
-		?>
-		<div class="posts-styles-grid" <?php echo $hide_grid_columns ? ' style="display:none;"' : ''; ?>>
-			<?php
-			$this->label( 'grid_columns', esc_html__( 'Grid Columns', 'bayleaf' ) );
-			$columns = [
-				1 => esc_html__( '1', 'bayleaf' ),
-				2 => esc_html__( '2', 'bayleaf' ),
-				3 => esc_html__( '3', 'bayleaf' ),
-				4 => esc_html__( '4', 'bayleaf' ),
-			];
-			$this->select( 'grid_columns', $columns, $instance['grid_columns'] );
-			?>
+			<p class="posts-imgcrop">
+				<?php
+				$this->label( 'image_crop', esc_html__( 'Image Cropping Position', 'bayleaf' ) );
+				$this->select( 'image_crop', $this->imagecrop, $instance['image_crop'] );
+				?>
+			</p>
 		</div><!-- .posts-styles -->
 		<?php
+		do_action( 'bayleaf_dp_widget_extend', $this, $instance );
 	}
 
 	/**
@@ -373,6 +402,8 @@ class Display_Posts_Widget extends \WP_Widget {
 		$instance['orderby'] = ( array_key_exists( $new_instance['orderby'], $this->orderby ) ) ? $new_instance['orderby'] : 'date';
 
 		$instance['order'] = ( 'DESC' === $new_instance['order'] ) ? 'DESC' : 'ASC';
+
+		$instance['image_crop'] = ( array_key_exists( $new_instance['image_crop'], $this->imagecrop ) ) ? $new_instance['image_crop'] : 'centercrop';
 
 		$valid_styles       = apply_filters( 'bayleaf_dp_styles', '', $new_instance );
 		$instance['styles'] = array_key_exists( $new_instance['styles'], $valid_styles ) ? $new_instance['styles'] : '';

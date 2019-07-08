@@ -44,49 +44,7 @@ class Admin_Page {
 	 * @return void
 	 */
 	public function welcome_theme_notice() {
-		// Since Manta is not the active theme, let user know Manta Plus will not work.
-		printf(
-			'<div class="updated notice is-dismissible theme-welcome-notice">
-				<p>%s</p><p>%s</p>
-					<ol class="bayleaf-admin-tips">
-						<li>%s</li>
-						<li>%s</li>
-						<li>%s<a href="%s">%s</a>%s</li>
-						<li>%s<a href="%s">%s</a></li>
-					</ol>
-				<p>%s</p>
-			</div>',
-			esc_html__( 'Hi there!', 'bayleaf' ),
-			esc_html__( 'Thanks for trying Bayleaf. Here are some quick tips to get you started.', 'bayleaf' ),
-			esc_html__( 'Use "Display Posts" widget from Appearance > Widgets to create various posts layout.', 'bayleaf' ),
-			esc_html__( 'Use "Blank Widget" widget from Appearance > Widgets to create vertical gaps between widgets.', 'bayleaf' ),
-			esc_html__( 'Visit ', 'bayleaf' ),
-			esc_url( 'https://vedathemes.com/bayleaf-pro/documentation/' ),
-			esc_html__( 'quick setup guide', 'bayleaf' ),
-			esc_html__( ' to get started', 'bayleaf' ),
-			esc_html__( 'Get Support at ', 'bayleaf' ),
-			esc_url( 'https://wordpress.org/support/theme/bayleaf/' ),
-			esc_html__( 'Support Forum', 'bayleaf' ),
-			esc_html__( 'Thank You', 'bayleaf' )
-		);
-
-		?>
-		<style type="text/css" media="screen">
-
-			.notice.theme-welcome-notice {
-				padding: 2.5em 5em;
-				background: rgba(0,0,0,.01);
-				border: 1em solid rgba(255,255,255,.85);
-			}
-
-			.notice.theme-welcome-notice p,
-			.notice.theme-welcome-notice a {
-				font-size: 14px;
-			}
-
-		</style>
-
-		<?php
+		bayleaf_get_template_partial( 'add-on/admin-page', 'template' );
 	}
 }
 

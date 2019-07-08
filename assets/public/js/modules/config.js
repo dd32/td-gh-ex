@@ -15,6 +15,8 @@ let config = {
 		dirLinks     : '.menu-item-has-children > a, .page_item_has_children > a',
 		headWidToggle: '.action-toggle',
 		headWid      : '#header-widget-area',
+		hSearchToggle: '.search-toggle',
+		headSearch   : '#header-search-wrapper',
 		scrlTop      : '.scrl-to-top',
 		comments     : '.comments-area',
 		cToggle      : '.comments-toggle',

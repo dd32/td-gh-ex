@@ -44,4 +44,10 @@
 		$( this ).next( '.bayleaf-widget-img-id' ).val( '' ).trigger('change');
 		$( this ).addClass( 'bayleaf-hidden' );
 	});
+
+	$document.on( 'click', '.widget-options-title', function( event ) {
+		var _this = $( this );
+		_this.next( '.widget-options-content' ).slideToggle('fast');
+		_this.toggleClass( 'toggle-active' );
+	});
 } ) ( jQuery );

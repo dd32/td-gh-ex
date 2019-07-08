@@ -19,13 +19,16 @@ function bayleaf_body_classes( $classes ) {
 	if ( is_singular() ) {
 		$classes[] = 'singular-view';
 
-		if ( is_singular( [ 'post', 'page' ] ) ) {
-
-			if ( ! is_front_page() && ! has_post_thumbnail() ) {
-				$classes[] = 'no-post-thumbnail';
-			}
+		if ( ! is_active_sidebar( 'sidebar-1' ) ) {
+			$classes[] = 'no-sidebar';
 		} else {
-			$classes[] = 'no-post-thumbnail';
+			if ( is_single() ) {
+				$classes[] = bayleaf_get_mod( 'bayleaf_post_sidebar', 'attr' );
+			}
+
+			if ( is_page() ) {
+				$classes[] = bayleaf_get_mod( 'bayleaf_page_sidebar', 'attr' );
+			}
 		}
 	} else {
 		$classes[] = 'index-view';
@@ -82,7 +85,22 @@ function bayleaf_primary_wrapper( $attr ) {
 add_filter( 'bayleaf_get_attr_header_items', 'bayleaf_primary_wrapper' );
 add_filter( 'bayleaf_get_attr_footer_items', 'bayleaf_primary_wrapper' );
 add_filter( 'bayleaf_get_attr_secondary_items', 'bayleaf_primary_wrapper' );
-add_filter( 'bayleaf_get_attr_page_entry_header', 'bayleaf_primary_wrapper' );
+
+/**
+ * Adds a wrapper class to appropriate site content.
+ *
+ * @since 1.0.0
+ *
+ * @param array $attr attribute values array.
+ * @return array
+ */
+function bayleaf_content_wrapper( $attr ) {
+	if ( is_singular() || ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) ) {
+		$attr['class'] .= ' wrapper';
+	}
+	return $attr;
+}
+add_filter( 'bayleaf_get_attr_site_content', 'bayleaf_content_wrapper' );
 
 /**
  * Adds a flex wrapper class to appropriate site elements.
@@ -93,9 +111,7 @@ add_filter( 'bayleaf_get_attr_page_entry_header', 'bayleaf_primary_wrapper' );
  * @return array
  */
 function bayleaf_flex_wrapper( $attr ) {
-	if ( is_singular() ) {
-		$attr['class'] .= ' wrapper';
-	} else {
+	if ( ! is_singular() && ! ( function_exists( 'is_woocommerce' ) && is_woocommerce() ) ) {
 		$attr['class'] .= ' flex-wrapper';
 	}
 	return $attr;

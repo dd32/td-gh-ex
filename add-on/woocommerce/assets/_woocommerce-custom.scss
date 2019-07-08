@@ -1,7 +1,7 @@
-@import '../../../dev/library/sass/utilities/variables';
-@import '../../../dev/library/sass/utilities/functions';
-@import '../../../dev/library/sass/objects/typeSize';
-@import '../../../dev/library/sass/objects/mdShadows';
+@import '../../../assets/public/css/modules/utilities/variables';
+@import '../../../assets/public/css/modules/utilities/functions';
+@import '../../../assets/public/css/modules/objects/typeSize';
+@import '../../../assets/public/css/modules/objects/mdShadows';
 @import 'variables';
 
 .wc-cart-toggle {
@@ -291,7 +291,7 @@ ul.products {
 .woocommerce-loop-product__title.woocommerce-loop-product__title {
 	@include ts(4);
 	margin: 0;
-	padding: 0;
+	padding: 0 10px;
 	color: $primary-text-color;
 }
 
@@ -399,20 +399,6 @@ a.woocommerce-loop-product__link {
 					color: rgba( $secondary-text-color, 0.5 );
 				}
 			}
-		}
-	}
-}
-
-.woocommerce {
-	.site-header {
-		margin-bottom: 0;
-	}
-	.site-content {
-		margin-top: 0;
-	}
-	&:not(.singular-view) {
-		.content-area {
-			padding-top: mrem(2);
 		}
 	}
 }

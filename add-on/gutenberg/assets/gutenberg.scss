@@ -1,5 +1,5 @@
-@import '../../../dev/library/sass/utilities/variables';
-@import '../../../dev/library/sass/utilities/functions';
+@import '../../../assets/public/css/modules/utilities/variables';
+@import '../../../assets/public/css/modules/utilities/functions';
 
 .alignleft {
 	.wp-block-image & {
@@ -10,7 +10,12 @@
 			margin: mrem(0.25) mrem() mrem(0.5) 0;
 		}
 		@media only screen and (min-width: $tablet__rotate) {
-			margin-left: -1 * 0.272 * $line__length / 2;
+			.no-sidebar & {
+				margin-left: -13.6%;
+			}
+		}
+		@media only screen and (min-width: $laptop) {
+			margin-left: -7%;
 		}
 		img {
 			max-width: 100%;
@@ -23,12 +28,17 @@
 		margin: 0 0 mrem();
 		@media only screen and (min-width: $tablet) {
 			float: left;
-			width: calc( 60% - #{mrem()} );
+			width: calc( 50% - #{mrem()} );
 			margin: mrem(0.25) mrem() mrem(0.5) 0;
 		}
 		@media only screen and (min-width: $tablet__rotate) {
-			margin-left: -1 * 0.272 * $line__length / 2;
 			max-width: none;
+			.no-sidebar & {
+				margin-left: -13.6%;
+			}
+		}
+		@media only screen and (min-width: $laptop) {
+			margin-left: -7%;
 		}
 	}
 }
@@ -42,8 +52,14 @@
 			margin: mrem(0.25) 0 mrem(0.5) mrem();
 		}
 		@media only screen and (min-width: $tablet__rotate) {
-			margin-right: -1 * 0.272 * $line__length / 2;
+			.no-sidebar & {
+				margin-right: -13.6%;
+			}
 		}
+		@media only screen and (min-width: $laptop) {
+			margin-right: -7%;
+		}
+		
 		img {
 			max-width: 100%;
 		}
@@ -53,12 +69,17 @@
 		margin: 0 0 mrem();
 		@media only screen and (min-width: $tablet) {
 			float: right;
-			width: calc( 60% - #{mrem()} );
+			width: calc( 50% - #{mrem()} );
 			margin: mrem(0.25) 0 mrem(0.5) mrem();
 		}
 		@media only screen and (min-width: $tablet__rotate) {
-			margin-right: -1 * 0.272 * $line__length / 2;
 			max-width: none;
+			.no-sidebar & {
+				margin-right: -13.6%;
+			}
+		}
+		@media only screen and (min-width: $laptop) {
+			margin-right: -7%;
 		}
 	}
 }
@@ -77,14 +98,28 @@
 .alignfull {
 	max-width: none;
 	width: 100vw;
-	
+	@media only screen and (min-width: $tablet__rotate) {
+		width: 100%;
+		.no-sidebar & {
+			max-width: none;
+			width: 100vw;
+		}
+	}
+	@media only screen and (min-width: $laptop) {
+		width: 114%;
+	}
 }
 
 .alignwide {
 	max-width: 100%;
 	@media only screen and (min-width: $tablet__rotate) {
-		width: 1.272 * $line__length;
 		max-width: none;
+		.no-sidebar & {
+			width: 1.272 * $line__length;
+		}
+	}
+	@media only screen and (min-width: $laptop) {
+		width: 114%;
 	}
 }
 
@@ -112,28 +147,78 @@
 }
 
 ul.wp-block-gallery {
+	display: block;
 	width: calc( 100% + 4px );
 	margin-left: -2px;
-	& > li.blocks-gallery-item,
-	& > li.blocks-gallery-item:first-child {
+	li.blocks-gallery-image,
+	li.blocks-gallery-image:first-child,
+	li.blocks-gallery-item,
+	li.blocks-gallery-item:first-child {
+		float: left;
 		margin: 0;
 		padding: 2px;
 		border-top-width: 0;
+	}
+	li.blocks-gallery-image,
+	li.blocks-gallery-item {
+		width: 50%;
+	}
+	&.columns-1 .blocks-gallery-image,
+	&.columns-1 .blocks-gallery-item {
+		width: 100%;
 	}
 	.widget & {
 		margin-bottom: mrem();
 	}
 	&.alignwide {
 		@media only screen and (min-width: $tablet__rotate) {
-			width: calc( #{1.272 * $line__length} + 4px );
 			margin-left: 0;
+			.no-sidebar & {
+				width: calc( #{1.272 * $line__length} + 4px );
+			}
+		}
+		@media only screen and (min-width: $laptop) {
+			width: calc( 114% + 4px );
 		}
 	}
 	&.alignfull {
 		@media only screen and (min-width: $tablet__rotate) {
-			width: 100vw;
-			margin-left: 0;
+			.no-sidebar & {
+				width: 100vw;
+				margin-left: 0;
+			}
 		}
+		@media only screen and (min-width: $tablet__rotate) {
+			width: 114%;
+		}
+	}
+	li.blocks-gallery-item figure,
+	li.blocks-gallery-image figure {
+		position: relative;
+		a,
+		img {
+			position: absolute;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			width: 100%;
+			height: 100%;
+		}
+		img {
+			object-fit: cover;
+		}
+		&:after {
+			content: '';
+			display: block;
+			width: 100%;
+			padding-top: 66.666%;
+		}
+	}
+	&:after {
+		display: table;
+		content: '';
+		clear: both;
 	}
 }
 

@@ -7,6 +7,10 @@
 	$('#widgets-right').on('change', 'select.bayleaf-taxonomy', function() {
 		showTerms( $(this) );
 	});
+
+	$('#widgets-right').on('change', 'select.bayleaf-styles', function() {
+		showSlider( $(this) );
+	});
 	
 	function showPosttypeContent( pType ) {
 		var postType  = pType.val(),
@@ -14,7 +18,7 @@
 			taxSelec  = parent.nextAll( '.post-panel' ).find( 'select.bayleaf-taxonomy' );
 
 		if ( ! postType ) {
-			parent.nextAll( '.post-panel, .page-panel, .posts-styles, .posts-styles-grid' ).hide();
+			parent.nextAll( '.post-panel, .page-panel, .posts-styles' ).hide();
 		} else if ( 'page' === postType ) {
 			parent.nextAll( '.post-panel' ).hide();
 			parent.nextAll( '.page-panel, .posts-styles' ).show();
@@ -37,6 +41,16 @@
 			taxonomy.parent().next('.terms-panel').find( '.terms-checklist .' + taxonomy.val() ).show();
 		} else {
 			taxonomy.parent().next('.terms-panel').hide();
+		}
+	}
+
+	function showSlider( style ) {
+		var dpStyle = style.val();
+		var parent  = style.parent();
+		if ( -1 !== dpStyle.indexOf('slider') || 'vt-grid-4' === dpStyle || 'vt-grid-1' === dpStyle || 'vt-grid-1a' === dpStyle ) {
+			parent.nextAll('.dp-slider-option').hide();
+		} else {
+			parent.nextAll('.dp-slider-option').show();
 		}
 	}
 }( jQuery ) );

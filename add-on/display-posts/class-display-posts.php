@@ -117,14 +117,17 @@ class Display_Posts {
 
 		if ( false !== strpos( $instance['styles'], 'grid' ) ) {
 			$classes[] = 'flex-wrapper dp-grid';
-		} else {
+		} elseif ( false !== strpos( $instance['styles'], 'list' ) ) {
 			$classes[] = 'dp-list';
 		}
 
-		if ( false !== strpos( $instance['styles'], 'slider' ) ) {
+		if ( in_array( $instance['styles'], [ 'slider1', 'slider2' ], true ) ) {
 			$classes[] = 'slider-wrapper';
 			$classes[] = 'widescreen';
+			$classes[] = 'dp-list';
 		}
+
+		$classes[] = $instance['image_crop'];
 
 		return $classes;
 	}
@@ -161,6 +164,10 @@ class Display_Posts {
 		$display = $this->get_style_args( $instance['styles'] );
 		if ( ! empty( $display ) ) {
 			if ( false !== strpos( $instance['styles'], 'grid' ) ) {
+				echo '<div class="entry-index-wrapper">';
+				$this->dp_display_entry( $display, $instance['styles'] );
+				echo '</div>';
+			} elseif ( false !== strpos( $instance['styles'], 'vt-slider' ) ) {
 				echo '<div class="entry-index-wrapper">';
 				$this->dp_display_entry( $display, $instance['styles'] );
 				echo '</div>';
@@ -328,10 +335,10 @@ class Display_Posts {
 		if ( get_the_title() ) {
 			the_title(
 				sprintf(
-					'<div class="dp-title"><a class="dp-title-link" href="%s" rel="bookmark">',
+					'<h2 class="dp-title"><a class="dp-title-link" href="%s" rel="bookmark">',
 					esc_url( get_permalink() )
 				),
-				'</a></div>'
+				'</a></h2>'
 			);
 		}
 	}
@@ -391,7 +398,7 @@ class Display_Posts {
 	public function featured( $size, $style = '' ) {
 		if ( bayleaf_get_mod( 'bayleaf_thumbnail_placeholder', 'none' ) || has_post_thumbnail() ) {
 
-			if ( $style && in_array( $style, [ 'slider1', 'slider2' ], true ) ) {
+			if ( $style && false !== strpos( $style, 'slider' ) ) {
 				$featured_content = [
 					[ [ $this, 'thumbnail' ], $size ],
 				];
@@ -418,8 +425,19 @@ class Display_Posts {
 			return;
 		}
 
+		$class   = '';
+		$id      = get_post_thumbnail_id();
+		$imgmeta = wp_get_attachment_metadata( $id );
+		if ( isset( $imgmeta['width'] ) && isset( $imgmeta['height'] ) ) {
+			if ( $imgmeta['width'] > $imgmeta['height'] ) {
+				$class = 'landscape';
+			} else {
+				$class = 'portrait';
+			}
+		}
+
 		if ( $size ) {
-			echo '<div class="dp-thumbnail">';
+			echo '<div class="dp-thumbnail ' . esc_attr( $class ) . '">';
 			the_post_thumbnail( $size );
 			echo '</div>';
 		}
@@ -547,7 +565,7 @@ class Display_Posts {
 			return;
 		}
 
-		if ( false === strpos( $instance['styles'], 'slider' ) ) {
+		if ( ! in_array( $instance['styles'], [ 'slider1', 'slider2' ], true ) ) {
 			return;
 		}
 

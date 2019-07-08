@@ -31,14 +31,21 @@ class PolyFill {
 		];
 
 		if (false === 'objectFit' in document.documentElement.style) {
-			container = document.querySelectorAll(selectors.join(','));
-			for (i = 0; i < container.length; i++) {
-				imageSource = container[i].querySelector('img').src;
-				container[i].querySelector('img').style.visibility = 'hidden';
-				container[i].style.backgroundSize = 'cover';
-				container[i].style.backgroundImage = 'url(' + imageSource + ')';
-				container[i].style.backgroundPosition = 'center center';
-			}
+			const elems = document.querySelectorAll(selectors.join(','));
+			const elemsArr = Array.from(elems);
+			elemsArr.forEach(elem => {
+				const image  = elem.getElementsByTagName('img');
+				const imgsrc = image.length ? image[0].src : '';
+				if (!imgsrc) return;
+				image.style.visibility     = 'hidden';
+				elem.style.backgroundImage = 'url(' + imgsrc + ')';
+				elem.style.backgroundSize  = 'cover';
+				
+				// Position for display posts will be handled by css.
+				if (! elem.classList.contains('dp-thumbnail')) {
+					elem.style.backgroundPosition = 'center center';
+				}
+			});
 		}
 	}
 }

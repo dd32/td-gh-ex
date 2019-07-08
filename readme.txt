@@ -12,7 +12,7 @@ A WordPress blog theme optimized for sharing your food receipes or personal view
 
 == Description ==
 
-Bayleaf is designed for cooking or food blog with elegant visual look and feel. This is a modern & minimalist theme with color scheme customizer options and home page widget areas. This theme offers full width single column layout on single pages for distraction free display of your food recipe. Bayleaf is also compatible with Gutenberg.
+Bayleaf is designed for cooking or food blog with elegant visual look and feel. This is a modern & minimalist theme with color scheme customizer options and home page widget areas. This theme also offers full width single column layout on single pages for distraction free display of your food recipe. Bayleaf is also compatible with Gutenberg.
 
 == Frequently Asked Questions ==
 = What are the minimum requirmens for using this theme? =
@@ -22,6 +22,17 @@ PHP 5.4+, IE11+, WordPress 4.7+
 Bayleaf WordPress theme uses Google Fonts for your website by default. Fonts and their respective stylesheets are downloaded from google's website. Refer link [ https://developers.google.com/fonts/faq#what_does_using_the_google_fonts_api_mean_for_the_privacy_of_my_users ] for google font's privacy related information. If you do not want to use google fonts for your website, you can disable it from theme customizer (Appearance > Customize > Theme options).
 
 == Changelog ==
+
+= 1.3.9 =
+* Add: Search Button in Site header areas
+* Add: Content/Sidebar, Sidebar/Content or full content layouts for single pages and posts.
+* Add: Image crop positioning options in display posts widget.
+* Add: Support for Simplified Fonts Manager plugin.
+* Modify: Minor styling improvement for WooCommerce shop and single pages.
+* Modify: Rename 'Sidebar Widgets' to 'Header Toggle Widgets' to avoid confusion.
+* Modify: Hide 'Header toggle widgets' hamburger menu, if no widgets are assigned to it.
+* Modify: Make 'Theme Specific Styling Options' hidden(can be toggled) to declutter widget display
+* Modify: Drop down menu styling improvements.
 
 = 1.3.8 =
 * Error Fix: Broken search layout if WooCommerce products are also in search results.
