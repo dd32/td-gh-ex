@@ -4,8 +4,8 @@ Contributors: specia
 Requires at least: WordPress 4.4
 Tested up to: WordPress 5.2.2
 Requires PHP: 5.6
-Stable tag: 1.0.44
-Version: 1.0.44
+Stable tag: 1.0.45
+Version: 1.0.45
 License: GPLv3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 Tags: one-column, two-columns, left-sidebar, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-menu,  custom-logo, featured-image-header, featured-images, footer-widgets, full-width-template, sticky-post, theme-options, threaded-comments, translation-ready, editor-style, blog, photography, portfolio, grid-layout
@@ -81,6 +81,9 @@ License: CC0 Public Domain
 
 
 ##Changelog
+version 1.0.45
+* Fixed Style Issue
+
 version 1.0.44
 * Feature Image Changed
 
