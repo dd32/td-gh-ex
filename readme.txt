@@ -6,7 +6,7 @@ translation-ready, sticky-post, theme-options, footer-widgets, full-width-templa
 front-page-post-form
 Requires at least: 4.8.0
 Tested up to: 4.9.6
-Requires PHP: 5.2.4
+Requires PHP: 5.6.0
 Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -45,6 +45,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.2.7 =
+* add css code for Blocks
+* update PHP min version required to 5.6.0
 
 = 1.2.6 =
 * fix issue with Animations display
@@ -145,7 +149,8 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 
 == Resources ==
-* Font-Awesome https://github.com/FortAwesome/Font-Awesome FontAwesome 4.6.3 Copyright 2012 Dave Gandy Font License: SIL OFL 1.1 Code License: MIT License http://fontawesome.io/license/
+* FontAwesome 4.6.3 © 2012 Dave Gandy https://github.com/FortAwesome/Font-Awesome, SIL OFL 1.1, MIT
+* Twenty Nineteen 1.4 (Code Block CSS), © 2018 - 2019 wordpressdotorg, GNU v2.0
 * Code examples and snippet library, © 2018 WordPress Theme Review Team https://github.com/WPTRT/code-examples/, GPL-2.0
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * js/camera.min.js, © 2012 Manuel Masia, MIT
