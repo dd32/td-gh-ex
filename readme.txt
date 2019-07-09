@@ -5,7 +5,7 @@ custom-menu, featured-images, threaded-comments, translation-ready, sticky-post,
 theme-options, footer-widgets, full-width-template, editor-style
 Requires at least: 4.8.0
 Tested up to: 4.9.5a
-Requires PHP: 5.2.4
+Requires PHP: 5.6.0
 Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -39,6 +39,10 @@ Installation using 'Add New Theme'
 2. See Appearance -> Customize to change theme specific options
 
 == Changelog ==
+
+= 1.1.1 =
+* define css code blocks
+* PHP 5.6.0 min version
 
 = 1.1.0 =
 * bug fix: animations appearing effect
@@ -76,7 +80,8 @@ Installation using 'Add New Theme'
 * Initial Release
 
 == Resources ==
-* Font-Awesome https://github.com/FortAwesome/Font-Awesome FontAwesome 4.6.3 Copyright 2012 Dave Gandy Font License: SIL OFL 1.1 Code License: MIT License http://fontawesome.io/license/
+* FontAwesome 4.6.3 © 2012 Dave Gandy https://github.com/FortAwesome/Font-Awesome, SIL OFL 1.1, MIT
+* Twenty Nineteen 1.4 (Code Block CSS), © 2018 - 2019 wordpressdotorg, GNU v2.0
 * Code examples and snippet library, © 2018 WordPress Theme Review Team https://github.com/WPTRT/code-examples/, GPL-2.0
 * Customizer "Pro" theme section example, © 2016 Justin Tadlock, GNU v2.0
 * css/animate.css, © 2017 Daniel Eden, MIT
