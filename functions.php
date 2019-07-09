@@ -5,6 +5,55 @@
  * @package ayagreen
  */
 
+/**
+ * Set a constant that holds the theme's minimum supported PHP version.
+ */
+define( 'AYAGREEN_MIN_PHP_VERSION', '5.6' );
+
+/**
+ * Immediately after theme switch is fired we we want to check php version and
+ * revert to previously active theme if version is below our minimum.
+ */
+add_action( 'after_switch_theme', 'ayagreen_test_for_min_php' );
+
+/**
+ * Switches back to the previous theme if the minimum PHP version is not met.
+ */
+function ayagreen_test_for_min_php() {
+
+	// Compare versions.
+	if ( version_compare( PHP_VERSION, AYAGREEN_MIN_PHP_VERSION, '<' ) ) {
+		// Site doesn't meet themes min php requirements, add notice...
+		add_action( 'admin_notices', 'ayagreen_min_php_not_met_notice' );
+		// ... and switch back to previous theme.
+		switch_theme( get_option( 'theme_switched' ) );
+		return false;
+
+	};
+}
+
+/**
+ * An error notice that can be displayed if the Minimum PHP version is not met.
+ */
+function ayagreen_min_php_not_met_notice() {
+	?>
+	<div class="notice notice-error is_dismissable">
+		<p>
+			<?php esc_html_e( 'You need to update your PHP version to run this theme.', 'ayagreen' ); ?> <br />
+			<?php
+			printf(
+				/* translators: 1 is the current PHP version string, 2 is the minmum supported php version string of the theme */
+				esc_html__( 'Actual version is: %1$s, required version is: %2$s.', 'ayagreen' ),
+				PHP_VERSION,
+				AYAGREEN_MIN_PHP_VERSION
+			); // phpcs: XSS ok.
+			?>
+		</p>
+	</div>
+	<?php
+}
+
+
 
 
 if ( ! function_exists( 'ayagreen_load_css_and_scripts' ) ) :
