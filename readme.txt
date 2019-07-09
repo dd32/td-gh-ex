@@ -3,7 +3,7 @@ Contributors: ayatemplates
 Tags: blog, entertainment, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 Requires at least: 4.9.5
 Tested up to: 4.9.8
-Requires PHP: 5.2.4
+Requires PHP: 5.6.0
 Stable tag: 1.0.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -39,6 +39,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.1.8 =
+* define css code blocks
+* PHP 5.6.0 min version
 
 = 1.1.7 =
 * bug fix: animations appearing effect
