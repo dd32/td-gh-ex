@@ -4,7 +4,7 @@ Description: AyaCoffeeShopPro is a fully responsive WordPress Theme. Features in
 Theme URI: https://ayatemplates.com/product/ayacoffeeshop
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.1.0
+Version: 1.1.1
 Text Domain: ayacoffeeshop
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2.0
@@ -382,6 +382,7 @@ ul {
 	top:18px;
 	z-index:5000;
 	background-color:#ffffff;
+	color:#000000;
 	padding:10px !important;
 	border:1px solid #f5f5f5;
 }
@@ -2108,6 +2109,1007 @@ blockquote {
     width: 40%;
 }
 
+/* Blocks */
+/* !Block styles */
+article > *,
+.entry .entry-summary > * {
+  margin: 32px 0;
+  max-width: 100%;
+}
+
+
+@media only screen and (min-width: 768px) {
+  article > *,
+  .entry .entry-summary > * {
+    margin: 32px 0;
+  }
+}
+
+article > * > *:first-child,
+.entry .entry-summary > * > *:first-child {
+  margin-top: 0;
+}
+
+article > * > *:last-child,
+.entry .entry-summary > * > *:last-child {
+  margin-bottom: 0;
+}
+
+article > *.alignwide,
+.entry .entry-summary > *.alignwide {
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+}
+
+@media only screen and (min-width: 768px) {
+  article > *.alignwide,
+  .entry .entry-summary > *.alignwide {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+article > *.alignfull,
+.entry .entry-summary > *.alignfull {
+  position: relative;
+  left: -1rem;
+  width: calc( 100% + (2 * 1rem));
+  max-width: calc( 100% + (2 * 1rem));
+  clear: both;
+}
+
+@media only screen and (min-width: 768px) {
+  article > *.alignfull,
+  .entry .entry-summary > *.alignfull {
+    margin-top: calc(2 * 1rem);
+    margin-bottom: calc(2 * 1rem);
+    left: calc( -12.5% - 75px);
+    width: calc( 125% + 150px);
+    max-width: calc( 125% + 150px);
+  }
+}
+
+article > *.alignleft,
+.entry .entry-summary > *.alignleft {
+  /*rtl:ignore*/
+  float: left;
+  max-width: calc(5 * (100vw / 12));
+  margin-top: 0;
+  margin-left: 0;
+  /*rtl:ignore*/
+  margin-right: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  article > *.alignleft,
+  .entry .entry-summary > *.alignleft {
+    max-width: calc(4 * (100vw / 12));
+    /*rtl:ignore*/
+    margin-right: calc(2 * 1rem);
+  }
+}
+
+article > *.alignright,
+.entry .entry-summary > *.alignright {
+  /*rtl:ignore*/
+  float: right;
+  max-width: calc(5 * (100vw / 12));
+  margin-top: 0;
+  margin-right: 0;
+  /*rtl:ignore*/
+  margin-left: 1rem;
+}
+
+@media only screen and (min-width: 768px) {
+  article > *.alignright,
+  .entry .entry-summary > *.alignright {
+    max-width: calc(4 * (100vw / 12));
+    margin-right: 0;
+    /*rtl:ignore*/
+    margin-left: calc(2 * 1rem);
+  }
+}
+
+article > *.aligncenter,
+.entry .entry-summary > *.aligncenter {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media only screen and (min-width: 768px) {
+  article > *.aligncenter,
+  .entry .entry-summary > *.aligncenter {
+    max-width: calc(8 * (100vw / 12) - 28px);
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  article > *.aligncenter,
+  .entry .entry-summary > *.aligncenter {
+    max-width: calc(6 * (100vw / 12) - 28px);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  article > *.aligncenter,
+  .entry .entry-summary > *.aligncenter {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+/*
+ * Unset nested content selector styles
+ * - Prevents layout styles from cascading too deeply
+ * - helps with plugin compatibility
+ */
+article .entry-content,
+article .entry-summary,
+article .entry,
+.entry .entry-summary .entry-content,
+.entry .entry-summary .entry-summary,
+.entry .entry-summary .entry {
+  margin: inherit;
+  max-width: inherit;
+  padding: inherit;
+}
+
+@media only screen and (min-width: 768px) {
+  article .entry-content,
+  article .entry-summary,
+  article .entry,
+  .entry .entry-summary .entry-content,
+  .entry .entry-summary .entry-summary,
+  .entry .entry-summary .entry {
+    margin: inherit;
+    max-width: inherit;
+    padding: inherit;
+  }
+}
+
+article p.has-background {
+  padding: 20px 30px;
+}
+
+article .wp-block-audio {
+  width: 100%;
+}
+
+article .wp-block-audio audio {
+  width: 100%;
+}
+
+article .wp-block-audio.alignleft audio,
+article .wp-block-audio.alignright audio {
+  max-width: 198px;
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-audio.alignleft audio,
+  article .wp-block-audio.alignright audio {
+    max-width: 384px;
+  }
+}
+
+@media only screen and (min-width: 1379px) {
+  article .wp-block-audio.alignleft audio,
+  article .wp-block-audio.alignright audio {
+    max-width: 385.44px;
+  }
+}
+
+article .wp-block-video video {
+  width: 100%;
+}
+
+article .wp-block-button .wp-block-button__link {
+  transition: background 150ms ease-in-out;
+  border: none;
+  font-size: 0.88889em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.2;
+  box-sizing: border-box;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 0.76rem 1rem;
+  outline: none;
+  outline: none;
+}
+
+article .wp-block-button .wp-block-button__link:not(.has-background) {
+  background-color: #0073aa;
+}
+
+article .wp-block-button .wp-block-button__link:not(.has-text-color) {
+  color: white;
+}
+
+article .wp-block-button .wp-block-button__link:hover {
+  color: white;
+  background: #111;
+  cursor: pointer;
+}
+
+article .wp-block-button .wp-block-button__link:focus {
+  color: white;
+  background: #111;
+  outline: thin dotted;
+  outline-offset: -4px;
+}
+
+article .wp-block-button:not(.is-style-squared) .wp-block-button__link {
+  border-radius: 5px;
+}
+
+article .wp-block-button.is-style-outline .wp-block-button__link,
+article .wp-block-button.is-style-outline .wp-block-button__link:focus,
+article .wp-block-button.is-style-outline .wp-block-button__link:active {
+  transition: all 150ms ease-in-out;
+  border-width: 2px;
+  border-style: solid;
+}
+
+article .wp-block-button.is-style-outline .wp-block-button__link:not(.has-background),
+article .wp-block-button.is-style-outline .wp-block-button__link:focus:not(.has-background),
+article .wp-block-button.is-style-outline .wp-block-button__link:active:not(.has-background) {
+  background: transparent;
+}
+
+article .wp-block-button.is-style-outline .wp-block-button__link:not(.has-text-color),
+article .wp-block-button.is-style-outline .wp-block-button__link:focus:not(.has-text-color),
+article .wp-block-button.is-style-outline .wp-block-button__link:active:not(.has-text-color) {
+  color: #0073aa;
+  border-color: currentColor;
+}
+
+article .wp-block-button.is-style-outline .wp-block-button__link:hover {
+  color: white;
+  border-color: #111;
+}
+
+article .wp-block-button.is-style-outline .wp-block-button__link:hover:not(.has-background) {
+  color: #111;
+}
+
+article .wp-block-archives,
+article .wp-block-categories,
+article .wp-block-latest-posts {
+  padding: 0;
+  list-style: none;
+}
+
+article .wp-block-archives li,
+article .wp-block-categories li,
+article .wp-block-latest-posts li {
+  color: #767676;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: calc(22px * 1.125);
+  font-weight: bold;
+  line-height: 1.2;
+  padding-bottom: 0.75rem;
+}
+
+article .wp-block-archives li.menu-item-has-children, article .wp-block-archives li:last-child,
+article .wp-block-categories li.menu-item-has-children,
+article .wp-block-categories li:last-child,
+article .wp-block-latest-posts li.menu-item-has-children,
+article .wp-block-latest-posts li:last-child {
+  padding-bottom: 0;
+}
+
+article .wp-block-archives li a,
+article .wp-block-categories li a,
+article .wp-block-latest-posts li a {
+  text-decoration: none;
+}
+
+article .wp-block-archives.aligncenter,
+article .wp-block-categories.aligncenter {
+  text-align: center;
+}
+
+article .wp-block-categories ul {
+  padding-top: 0.75rem;
+}
+
+article .wp-block-categories li ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+article .wp-block-categories ul {
+  counter-reset: submenu;
+}
+
+article .wp-block-categories ul > li > a::before {
+  font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-weight: normal;
+  content: "– " counters(submenu, "– ", none);
+  counter-increment: submenu;
+}
+
+article .wp-block-latest-posts.is-grid li {
+  border-top: 2px solid #ccc;
+  padding-top: 1rem;
+  margin-bottom: 2rem;
+}
+
+article .wp-block-latest-posts.is-grid li a:after {
+  content: '';
+}
+
+article .wp-block-latest-posts.is-grid li:last-child {
+  margin-bottom: auto;
+}
+
+article .wp-block-latest-posts.is-grid li:last-child a:after {
+  content: '';
+}
+
+article .wp-block-preformatted {
+  font-size: 0.71111em;
+  line-height: 1.8;
+  padding: 1rem;
+}
+
+article .wp-block-verse {
+  font-family: "NonBreakingSpaceOverride", "Hoefler Text", "Baskerville Old Face", Garamond, "Times New Roman", serif;
+  font-size: 22px;
+  line-height: 1.8;
+}
+
+article .has-drop-cap:not(:focus):first-letter {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 3.375em;
+  line-height: 1;
+  font-weight: bold;
+  margin: 0 0.25em 0 0;
+}
+
+article .wp-block-pullquote {
+  border-color: transparent;
+  border-width: 2px;
+  padding: 1rem;
+}
+
+article .wp-block-pullquote blockquote {
+  color: #111;
+  border: none;
+  margin-top: calc(4 * 1rem);
+  margin-bottom: calc(4.33 * 1rem);
+  margin-right: 0;
+  padding-left: 0;
+}
+
+article .wp-block-pullquote p {
+  font-size: 1.6875em;
+  font-style: italic;
+  line-height: 1.3;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+article .wp-block-pullquote p em {
+  font-style: normal;
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-pullquote p {
+    font-size: 2.25em;
+  }
+}
+
+article .wp-block-pullquote cite {
+  display: inline-block;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  text-transform: none;
+  color: #767676;
+  /*
+			 * This requires a rem-based font size calculation instead of our normal em-based one,
+			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
+			 */
+  font-size: calc(1rem / (1.25 * 1.125));
+}
+
+article .wp-block-pullquote.alignleft, article .wp-block-pullquote.alignright {
+  width: 100%;
+  padding: 0;
+}
+
+article .wp-block-pullquote.alignleft blockquote, article .wp-block-pullquote.alignright blockquote {
+  margin: 1rem 0;
+  padding: 0;
+  text-align: left;
+  max-width: 100%;
+}
+
+article .wp-block-pullquote.alignleft blockquote p:first-child, article .wp-block-pullquote.alignright blockquote p:first-child {
+  margin-top: 0;
+}
+
+article .wp-block-pullquote.is-style-solid-color {
+  background-color: #0073aa;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-pullquote.is-style-solid-color {
+    padding-left: 10%;
+    padding-right: 10%;
+  }
+}
+
+article .wp-block-pullquote.is-style-solid-color p {
+  font-size: 1.6875em;
+  line-height: 1.3;
+  margin-bottom: 0.5em;
+  margin-top: 0.5em;
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-pullquote.is-style-solid-color p {
+    font-size: 2.25em;
+  }
+}
+
+article .wp-block-pullquote.is-style-solid-color a {
+  color: #fff;
+}
+
+article .wp-block-pullquote.is-style-solid-color cite {
+  color: inherit;
+}
+
+article .wp-block-pullquote.is-style-solid-color blockquote {
+  max-width: 100%;
+  color: #fff;
+  padding-left: 0;
+  margin-left: 1rem;
+  margin-right: 1rem;
+}
+
+article .wp-block-pullquote.is-style-solid-color blockquote.has-text-color p,
+article .wp-block-pullquote.is-style-solid-color blockquote.has-text-color a, article .wp-block-pullquote.is-style-solid-color blockquote.has-primary-color, article .wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color, article .wp-block-pullquote.is-style-solid-color blockquote.has-dark-gray-color, article .wp-block-pullquote.is-style-solid-color blockquote.has-light-gray-color, article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
+  color: inherit;
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-pullquote.is-style-solid-color blockquote {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-pullquote.is-style-solid-color.alignright, article .wp-block-pullquote.is-style-solid-color.alignleft {
+    padding: 1rem calc(2 * 1rem);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-pullquote.is-style-solid-color.alignfull {
+    padding-left: calc(10% + 58px + (2 * 1rem));
+    padding-right: calc(10% + 58px + (2 * 1rem));
+  }
+}
+
+article .wp-block-quote:not(.is-large), article .wp-block-quote:not(.is-style-large) {
+  border-width: 2px;
+  border-color: #0073aa;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+article .wp-block-quote p {
+  font-size: 1em;
+  font-style: normal;
+  line-height: 1.8;
+}
+
+article .wp-block-quote cite {
+  /*
+			 * This requires a rem-based font size calculation instead of our normal em-based one,
+			 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
+			 */
+  font-size: calc(1rem / (1.25 * 1.125));
+}
+
+article .wp-block-quote.is-large, article .wp-block-quote.is-style-large {
+  margin: 1rem 0;
+  padding: 0;
+  border-left: none;
+}
+
+article .wp-block-quote.is-large p, article .wp-block-quote.is-style-large p {
+  font-size: 1.6875em;
+  line-height: 1.4;
+  font-style: italic;
+}
+
+article .wp-block-quote.is-large cite,
+article .wp-block-quote.is-large footer, article .wp-block-quote.is-style-large cite,
+article .wp-block-quote.is-style-large footer {
+  /*
+				 * This requires a rem-based font size calculation instead of our normal em-based one,
+				 * because the cite tag sometimes gets wrapped in a p tag. This is equivalent to $font-size_xs.
+				 */
+  font-size: calc(1rem / (1.25 * 1.125));
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-quote.is-large, article .wp-block-quote.is-style-large {
+    margin: 1rem 0;
+    padding: 1rem 0;
+  }
+  article .wp-block-quote.is-large p, article .wp-block-quote.is-style-large p {
+    font-size: 1.6875em;
+  }
+}
+
+article .wp-block-image {
+  max-width: 100%;
+}
+
+article .wp-block-image img {
+  display: block;
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-image .aligncenter {
+    max-width: calc(8 * (100vw / 12) - 28px);
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  article .wp-block-image .aligncenter {
+    max-width: calc(6 * (100vw / 12) - 28px);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-image .aligncenter {
+    margin: 0;
+    width: calc(8 * (100vw / 12) - 28px);
+  }
+  article .wp-block-image .aligncenter img {
+    margin: 0 auto;
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  article .wp-block-image .aligncenter {
+    width: calc(6 * (100vw / 12) - 28px);
+  }
+  article .wp-block-image .aligncenter img {
+    margin: 0 auto;
+  }
+}
+
+article .wp-block-image.alignfull img {
+  width: 100vw;
+  max-width: calc( 100% + (2 * 1rem));
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-image.alignfull img {
+    max-width: calc( 125% + 150px);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+article .wp-block-cover-image,
+article .wp-block-cover {
+  position: relative;
+  min-height: 430px;
+  padding: 1rem;
+}
+
+
+
+article .wp-block-cover-image .wp-block-cover-image-text,
+article .wp-block-cover-image .wp-block-cover-text,
+article .wp-block-cover-image h2,
+article .wp-block-cover .wp-block-cover-image-text,
+article .wp-block-cover .wp-block-cover-text,
+article .wp-block-cover h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-size: 1.6875em;
+  font-weight: bold;
+  line-height: 1.25;
+  padding: 0;
+  color: #fff;
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-cover-image .wp-block-cover-image-text,
+  article .wp-block-cover-image .wp-block-cover-text,
+  article .wp-block-cover-image h2,
+  article .wp-block-cover .wp-block-cover-image-text,
+  article .wp-block-cover .wp-block-cover-text,
+  article .wp-block-cover h2 {
+    font-size: 2.25em;
+    max-width: 100%;
+  }
+}
+
+article .wp-block-cover-image.alignleft, article .wp-block-cover-image.alignright,
+article .wp-block-cover.alignleft,
+article .wp-block-cover.alignright {
+  width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-cover-image.alignleft, article .wp-block-cover-image.alignright,
+  article .wp-block-cover.alignleft,
+  article .wp-block-cover.alignright {
+    padding: 1rem calc(2 * 1rem);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-cover-image.alignfull .wp-block-cover-image-text,
+  article .wp-block-cover-image.alignfull .wp-block-cover-text,
+  article .wp-block-cover-image.alignfull h2,
+  article .wp-block-cover.alignfull .wp-block-cover-image-text,
+  article .wp-block-cover.alignfull .wp-block-cover-text,
+  article .wp-block-cover.alignfull h2 {
+    max-width: calc(8 * (100vw / 12) - 28px);
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  article .wp-block-cover-image.alignfull .wp-block-cover-image-text,
+  article .wp-block-cover-image.alignfull .wp-block-cover-text,
+  article .wp-block-cover-image.alignfull h2,
+  article .wp-block-cover.alignfull .wp-block-cover-image-text,
+  article .wp-block-cover.alignfull .wp-block-cover-text,
+  article .wp-block-cover.alignfull h2 {
+    max-width: calc(6 * (100vw / 12) - 28px);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-cover-image.alignfull,
+  article .wp-block-cover.alignfull {
+    padding-left: calc(10% + 58px + (2 * 1rem));
+    padding-right: calc(10% + 58px + (2 * 1rem));
+  }
+  article .wp-block-cover-image.alignfull .wp-block-cover-image-text,
+  article .wp-block-cover-image.alignfull .wp-block-cover-text,
+  article .wp-block-cover-image.alignfull h2,
+  article .wp-block-cover.alignfull .wp-block-cover-image-text,
+  article .wp-block-cover.alignfull .wp-block-cover-text,
+  article .wp-block-cover.alignfull h2 {
+    padding: 0;
+  }
+}
+
+article .wp-block-gallery {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+article .wp-block-gallery .blocks-gallery-image:last-child,
+article .wp-block-gallery .blocks-gallery-item:last-child {
+  margin-bottom: 16px;
+}
+
+article .blocks-gallery-item:before {
+	content:'';
+}
+
+article .wp-block-gallery figcaption a {
+  color: #fff;
+}
+
+article .wp-block-audio figcaption,
+article .wp-block-video figcaption,
+article .wp-block-image figcaption,
+article .wp-block-gallery .blocks-gallery-image figcaption,
+article .wp-block-gallery .blocks-gallery-item figcaption {
+  font-size: 0.71111em;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0.5rem;
+  text-align: center;
+}
+
+article .wp-block-separator,
+article hr {
+  background-color: #767676;
+  border: 0;
+  height: 2px;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  max-width: 2.25em;
+  text-align: left;
+  /* Remove duplicate rule-line when a separator
+		 * is followed by an H1, or H2 */
+}
+
+article .wp-block-separator.is-style-wide,
+article hr.is-style-wide {
+  max-width: 100%;
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-separator.is-style-wide,
+  article hr.is-style-wide {
+    max-width: calc(8 * (100vw / 12) - 28px);
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  article .wp-block-separator.is-style-wide,
+  article hr.is-style-wide {
+    max-width: calc(6 * (100vw / 12) - 28px);
+  }
+}
+
+article .wp-block-separator.is-style-dots,
+article hr.is-style-dots {
+  max-width: 100%;
+  background-color: inherit;
+  border: inherit;
+  height: inherit;
+  text-align: center;
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-separator.is-style-dots,
+  article hr.is-style-dots {
+    max-width: calc(8 * (100vw / 12) - 28px);
+  }
+}
+
+@media only screen and (min-width: 1168px) {
+  article .wp-block-separator.is-style-dots,
+  article hr.is-style-dots {
+    max-width: calc(6 * (100vw / 12) - 28px);
+  }
+}
+
+article .wp-block-separator.is-style-dots:before,
+article hr.is-style-dots:before {
+  color: #767676;
+  font-size: 1.6875em;
+  letter-spacing: 0.88889em;
+  padding-left: 0.88889em;
+}
+
+article .wp-block-separator + h1:before,
+article .wp-block-separator + h2:before,
+article hr + h1:before,
+article hr + h2:before {
+  display: none;
+}
+
+article .wp-block-embed-twitter {
+  word-break: break-word;
+}
+
+article .wp-block-table th,
+article .wp-block-table td {
+  border-color: #767676;
+}
+
+article .wp-block-file {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+article .wp-block-file .wp-block-file__button {
+  display: table;
+  transition: background 150ms ease-in-out;
+  border: none;
+  border-radius: 5px;
+  background: #0073aa;
+  font-size: 22px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  line-height: 1.2;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  color: #fff;
+  margin-left: 0;
+  margin-top: calc(0.75 * 1rem);
+}
+
+@media only screen and (min-width: 1168px) {
+  article .wp-block-file .wp-block-file__button {
+    font-size: 22px;
+    padding: 0.875rem 1.5rem;
+  }
+}
+
+article .wp-block-file .wp-block-file__button:hover {
+  background: #111;
+  cursor: pointer;
+}
+
+article .wp-block-file .wp-block-file__button:focus {
+  background: #111;
+  outline: thin dotted;
+  outline-offset: -4px;
+}
+
+article .wp-block-code {
+  border-radius: 0;
+}
+
+article .wp-block-code code {
+  font-size: 1.125em;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+article .wp-block-columns .wp-block-column > *:first-child {
+  margin-top: 0;
+}
+
+article .wp-block-columns .wp-block-column > *:last-child {
+  margin-bottom: 0;
+}
+
+@media only screen and (min-width: 768px) {
+  article .wp-block-columns {
+    flex-wrap: nowrap;
+  }
+  article .wp-block-columns .wp-block-column:not(:first-child) {
+    margin-left: 32px;
+  }
+}
+
+article .wp-block-latest-comments .wp-block-latest-comments__comment-meta {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-weight: bold;
+}
+
+article .wp-block-latest-comments .wp-block-latest-comments__comment-meta .wp-block-latest-comments__comment-date {
+  font-weight: normal;
+}
+
+article .wp-block-latest-comments .wp-block-latest-comments__comment,
+article .wp-block-latest-comments .wp-block-latest-comments__comment-date,
+article .wp-block-latest-comments .wp-block-latest-comments__comment-excerpt p {
+  font-size: inherit;
+}
+
+article .wp-block-latest-comments.has-dates .wp-block-latest-comments__comment-date {
+  font-size: 0.71111em;
+}
+
+article .has-small-font-size {
+  font-size: 0.88889em;
+}
+
+article .has-normal-font-size {
+  font-size: 1.125em;
+}
+
+article .has-large-font-size {
+  font-size: 1.6875em;
+}
+
+article .has-huge-font-size {
+  font-size: 2.25em;
+}
+
+article .has-primary-background-color,
+article .has-secondary-background-color,
+article .has-dark-gray-background-color,
+article .has-light-gray-background-color {
+  color: #fff;
+}
+
+article .has-primary-background-color > p,
+article .has-primary-background-color > h1,
+article .has-primary-background-color > h2,
+article .has-primary-background-color > h3,
+article .has-primary-background-color > h4,
+article .has-primary-background-color > h5,
+article .has-primary-background-color > h6,
+article .has-primary-background-color > a,
+article .has-secondary-background-color > p,
+article .has-secondary-background-color > h1,
+article .has-secondary-background-color > h2,
+article .has-secondary-background-color > h3,
+article .has-secondary-background-color > h4,
+article .has-secondary-background-color > h5,
+article .has-secondary-background-color > h6,
+article .has-secondary-background-color > a,
+article .has-dark-gray-background-color > p,
+article .has-dark-gray-background-color > h1,
+article .has-dark-gray-background-color > h2,
+article .has-dark-gray-background-color > h3,
+article .has-dark-gray-background-color > h4,
+article .has-dark-gray-background-color > h5,
+article .has-dark-gray-background-color > h6,
+article .has-dark-gray-background-color > a,
+article .has-light-gray-background-color > p,
+article .has-light-gray-background-color > h1,
+article .has-light-gray-background-color > h2,
+article .has-light-gray-background-color > h3,
+article .has-light-gray-background-color > h4,
+article .has-light-gray-background-color > h5,
+article .has-light-gray-background-color > h6,
+article .has-light-gray-background-color > a {
+  color: #fff;
+}
+
+article .has-white-background-color {
+  color: #111;
+}
+
+article .has-white-background-color > p,
+article .has-white-background-color > h1,
+article .has-white-background-color > h2,
+article .has-white-background-color > h3,
+article .has-white-background-color > h4,
+article .has-white-background-color > h5,
+article .has-white-background-color > h6,
+article .has-white-background-color > a {
+  color: #111;
+}
+
+article .has-primary-background-color,
+article .wp-block-pullquote.is-style-solid-color.has-primary-background-color {
+  background-color: #0073aa;
+}
+
+article .has-secondary-background-color,
+article .wp-block-pullquote.is-style-solid-color.has-secondary-background-color {
+  background-color: #005177;
+}
+
+article .has-dark-gray-background-color,
+article .wp-block-pullquote.is-style-solid-color.has-dark-gray-background-color {
+  background-color: #111;
+}
+
+article .has-light-gray-background-color,
+article .wp-block-pullquote.is-style-solid-color.has-light-gray-background-color {
+  background-color: #767676;
+}
+
+article .has-white-background-color,
+article .wp-block-pullquote.is-style-solid-color.has-white-background-color {
+  background-color: #FFF;
+}
+
+article .has-primary-color,
+article .wp-block-pullquote.is-style-solid-color blockquote.has-primary-color,
+article .wp-block-pullquote.is-style-solid-color blockquote.has-primary-color > p {
+  color: #0073aa;
+}
+
+article .has-secondary-color,
+article .wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color,
+article .wp-block-pullquote.is-style-solid-color blockquote.has-secondary-color > p {
+  color: #005177;
+}
+
+article .has-dark-gray-color,
+article .wp-block-pullquote.is-style-solid-color blockquote.has-dark-gray-color,
+article .wp-block-pullquote.is-style-solid-color blockquote.has-dark-gray-color > p {
+  color: #111;
+}
+
+article .has-light-gray-color,
+article .wp-block-pullquote.is-style-solid-color blockquote.has-light-gray-color,
+article .wp-block-pullquote.is-style-solid-color blockquote.has-light-gray-color > p {
+  color: #767676;
+}
+
+article .has-white-color,
+article .wp-block-pullquote.is-style-solid-color blockquote.has-white-color {
+  color: #FFF;
+}
+
 .fb_iframe_widget span {
 	display: block !important;
 }
@@ -2556,8 +3558,12 @@ blockquote {
 	}
 	
 	#header-logo {
-		margin-left:5px;
-	}
+   		margin-left:50px;
+    }
+
+    #navmain {
+   		margin-top: -35px;
+    }
 	
 	#header-title {
 		float:left;
@@ -2594,6 +3600,10 @@ blockquote {
 	
 	#navmain > div > ul > li a {
 		color: #65810f;
+	}
+	
+	#navmain div.mobile-menu-expanded:before {
+		content:"\f00d" !important;
 	}
 	
 	#navmain div:first-of-type:before {
