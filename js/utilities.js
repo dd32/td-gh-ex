@@ -74,7 +74,7 @@
 			
 				if (relY < 36) {
 				
-					$('ul:first-child', this).toggle(400);
+					$('ul:first-child', this).toggle(400).parent().toggleClass('mobile-menu-expanded');
 				}
 			}
 		});
