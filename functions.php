@@ -85,11 +85,6 @@ function catcheverest_setup() {
 	require( get_template_directory() . '/inc/panel/catcheverest-theme-options-defaults.php' );
 
 	/**
-	 * Custom Theme Options
-	 */
-	require( get_template_directory() . '/inc/panel/theme-options.php' );
-
-	/**
 	 * Custom functions that act independently of the theme templates
 	 */
 	require( get_template_directory() . '/inc/catcheverest-functions.php' );
@@ -161,6 +156,83 @@ function catcheverest_setup() {
 			)
 		);
 	}
+
+	// Add support for Block Styles.
+	add_theme_support( 'wp-block-styles' );
+
+	// Add support for full and wide align images.
+	add_theme_support( 'align-wide' );
+
+	// Add support for editor styles.
+	add_theme_support( 'editor-styles' );
+
+	// Add support for responsive embeds.
+	add_theme_support( 'responsive-embeds' );
+
+	// Add custom editor font sizes.
+	add_theme_support(
+		'editor-font-sizes',
+		array(
+			array(
+				'name'      => esc_html__( 'Small', 'catch-everest' ),
+				'shortName' => esc_html__( 'S', 'catch-everest' ),
+				'size'      => 13,
+				'slug'      => 'small',
+			),
+			array(
+				'name'      => esc_html__( 'Normal', 'catch-everest' ),
+				'shortName' => esc_html__( 'M', 'catch-everest' ),
+				'size'      => 16,
+				'slug'      => 'normal',
+			),
+			array(
+				'name'      => esc_html__( 'Large', 'catch-everest' ),
+				'shortName' => esc_html__( 'L', 'catch-everest' ),
+				'size'      => 24,
+				'slug'      => 'large',
+			),
+			array(
+				'name'      => esc_html__( 'Huge', 'catch-everest' ),
+				'shortName' => esc_html__( 'XL', 'catch-everest' ),
+				'size'      => 30,
+				'slug'      => 'huge',
+			),
+		)
+	);
+
+	// Add support for custom color scheme.
+	add_theme_support( 'editor-color-palette', array(
+		array(
+			'name'  => esc_html__( 'White', 'catch-everest' ),
+			'slug'  => 'white',
+			'color' => '#ffffff',
+		),
+		array(
+			'name'  => esc_html__( 'Black', 'catch-everest' ),
+			'slug'  => 'black',
+			'color' => '#000000',
+		),
+		array(
+			'name'  => esc_html__( 'Dark Gray', 'catch-everest' ),
+			'slug'  => 'dark-gray',
+			'color' => '#3a3d41',
+		),
+		array(
+			'name'  => esc_html__( 'Medium Gray', 'catch-everest' ),
+			'slug'  => 'medium-gray',
+			'color' => '#757575',
+		),
+		array(
+			'name'  => esc_html__( 'Light Gray', 'catch-everest' ),
+			'slug'  => 'light-gray',
+			'color' => '#eeeeee',
+		),
+		array(
+			'name'  => esc_html__( 'Blue', 'catch-everest' ),
+			'slug'  => 'blue',
+			'color' => '#0088cc',
+		),
+	) );
 
 }
 endif; // catcheverest_setup

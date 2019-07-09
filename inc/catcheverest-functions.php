@@ -30,6 +30,9 @@ function catcheverest_scripts() {
 	 */
 	wp_enqueue_style( 'catcheverest-style', get_stylesheet_uri() );
 
+	// Theme block stylesheet.
+	wp_enqueue_style( 'catcheverest-block-style', get_theme_file_uri( '/css/blocks.css' ), array( 'catcheverest-style' ), '1.0' );
+
 	/**
 	 * Add Genericons font, used in the main stylesheet.
 	 */

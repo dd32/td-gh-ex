@@ -1274,10 +1274,102 @@ function catcheverest_customize_scripts() {
 }
 add_action( 'customize_controls_enqueue_scripts', 'catcheverest_customize_scripts' );
 
+/*
+ * Clearing the cache if any changes in Admin Theme Option
+ */
+function catcheverest_themeoption_invalidate_caches(){
+    delete_transient( 'catcheverest_post_sliders' ); // featured post slider
+    delete_transient( 'catcheverest_homepage_headline' ); // Homepage Headline Message
+    delete_transient( 'catcheverest_homepage_featured_content' ); // Homepage Featured Content
+    delete_transient( 'catcheverest_social_networks' ); // Social Networks
+    delete_transient( 'catcheverest_webmaster' ); // scripts which loads on header
+    delete_transient( 'catcheverest_footercode' ); // scripts which loads on footer
+    delete_transient( 'catcheverest_inline_css' ); // Custom Inline CSS
+    delete_transient( 'catcheverest_scrollup' ); // Scroll up Navigation
+    delete_transient( 'catcheverest_featured_image' );//Header image
+}
+
+
+/*
+ * Clearing the cache if any changes in post or page
+ */
+function catcheverest_post_invalidate_caches(){
+    delete_transient( 'catcheverest_post_sliders' );
+}
+//Add action hook here save post
+add_action( 'save_post', 'catcheverest_post_invalidate_caches' );
+
+
+/**
+ * Function to display the current year.
+ *
+ * @uses date() Gets the current year.
+ * @return string
+ */
+function catcheverest_the_year() {
+    return esc_attr( date_i18n( __( 'Y', 'catch-everest' ) ) );
+}
+
+
+/**
+ * Function to display a link back to the site.
+ *
+ * @uses get_bloginfo() Gets the site link
+ * @return string
+ */
+function catcheverest_site_link() {
+    return '<a href="' . esc_url( home_url( '/' ) ) . '" title="' . esc_attr( get_bloginfo( 'name', 'display' ) ) . '" ><span>' . get_bloginfo( 'name', 'display' ) . '</span></a>';
+}
+
+
+/**
+ * Function to display a link to WordPress.org.
+ *
+ * @return string
+ */
+function catcheverest_wp_link() {
+    return '<a href="http://wordpress.org" target="_blank" title="' . esc_attr__( 'WordPress', 'catch-everest' ) . '"><span>' . __( 'WordPress', 'catch-everest' ) . '</span></a>';
+}
+
+
+/**
+ * Function to display a link to Theme Link.
+ *
+ * @return string
+ */
+function catcheverest_theme_name() {
+    return '<span class="theme-name">' . __( 'Catch Everest Theme by ', 'catch-everest' ) . '</span>';
+}
+/**
+ * Function to display a link to Theme Link.
+ *
+ * @return string
+ */
+function catcheverest_theme_author() {
+
+    return '<span class="theme-author"><a href="' . esc_url( 'https://catchthemes.com/' ) . '" target="_blank" title="' . esc_attr__( 'Catch Themes', 'catch-everest' ) . '">' . __( 'Catch Themes', 'catch-everest' ) . '</a></span>';
+
+}
+
+
+/**
+ * Function to display Catch Everest assets
+ *
+ * @return string
+ */
+function catcheverest_assets(){
+    $catcheverest_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-everest' ) . ' &copy; '. catcheverest_the_year() . ' ' . catcheverest_site_link() . ' ' . esc_attr__( 'All Rights Reserved', 'catch-everest' ) . '.</div><div class="powered">'. catcheverest_theme_name() . catcheverest_theme_author() . '</div>';
+
+    if ( function_exists( 'get_the_privacy_policy_link' ) ) {
+		 $catcheverest_content = '<div class="copyright">'. esc_attr__( 'Copyright', 'catch-everest' ) . ' &copy; '. catcheverest_the_year() . ' ' . catcheverest_site_link() . ' ' . esc_attr__( 'All Rights Reserved.  ', 'catch-everest' ) . ' '. get_the_privacy_policy_link() . '</div><div class="powered">'. catcheverest_theme_name() . catcheverest_theme_author() . '</div>';
+	}
+    return $catcheverest_content;
+}
+
 
 //Active callbacks for customizer
 require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-active-callbacks.php';
-
+  
 //Sanitize functions for customizer
 require trailingslashit( get_template_directory() ) . 'inc/panel/customizer/customizer-sanitize-functions.php';
 
