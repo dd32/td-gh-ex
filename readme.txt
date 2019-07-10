@@ -3,7 +3,7 @@ Contributors: CrestaProject
 Tags: two-columns, right-sidebar, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, accessibility-ready, blog, news
 Requires at least: 4.5
 Tested up to: 5.2
-Stable tag: 1.7.3
+Stable tag: 1.7.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Blogghiamo WordPress Theme, Copyright 2018 Rizzo Andrea
@@ -258,3 +258,6 @@ Blogghiamo includes support for Infinite Scroll in Jetpack.
 
 = Version 1.7.3 =
 * Minor bug fixes
+
+= Version 1.7.4 =
+* Improved compatibility with Elementor PRO
