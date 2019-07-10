@@ -5,7 +5,7 @@ Tags: translation-ready, custom-background, theme-options, custom-menu, threaded
 
 Requires at least: 4.7
 Tested up to: 5.0.3
-Stable tag: 1.0.6
+Stable tag: 1.0.7
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -79,6 +79,13 @@ https://pxhere.com/en/photo/182634
 
 Unless otherwise specified, all the theme images are created by us and licensed under the same license as the theme is.
 
+
+== Language Contributor ==
+
+https://demo.hamyarwp.com/archie/
+
+
+
 == Frequently Asked Questions ==
 
 = Does this theme support any plugins? =
@@ -94,6 +101,10 @@ Unless otherwise specified, all the theme images are created by us and licensed 
 
 == Changelog ==
 
+
+= 1.0.7 - July 10 2019 =
+* Updated Language Contributor 
+* Minor css update
 
 = 1.0.6 - Jan 15 2019 =
 * Updated Breadcrumb licence url
