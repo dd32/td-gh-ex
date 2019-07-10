@@ -7,8 +7,8 @@
  * @package bb wedding bliss
  */
 
-?><!DOCTYPE html>
-
+?>
+<!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 <head>
   <meta charset="<?php bloginfo( 'charset' ); ?>">
@@ -19,12 +19,12 @@
 
 <body <?php body_class(); ?>>
   
-  <div id="header">
-    <div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','bb-wedding-bliss'); ?></a></div>
-    <div class="container">
-        <div class="nav">
-		      <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
-        </div>
+<div id="header">
+  <div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','bb-wedding-bliss'); ?></a></div>
+  <div class="container">
+    <div class="nav">
+      <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
     </div>
   </div>
-  <div class="clearfix"></div>
+</div>
+<div class="clearfix"></div>

@@ -25,6 +25,7 @@ function bb_wedding_bliss_setup() {
 		'width'       => 240,
 		'flex-height' => true,
 	) );
+	
 	add_image_size('bb-wedding-bliss-homepage-thumb',240,145,true);
     register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'bb-wedding-bliss' ),
@@ -341,6 +342,10 @@ function bb_wedding_bliss_scripts() {
 
 	wp_enqueue_script( 'bb-wedding-bliss-customscripts', get_template_directory_uri() . '/js/custom.js', array('jquery') );
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/js/bootstrap.js', array('jquery') );
+	
+	require get_parent_theme_file_path( '/inc/color-option.php' );
+	wp_add_inline_style( 'bb-wedding-bliss-basic-style',$custom_css );
+
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}

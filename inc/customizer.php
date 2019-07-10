@@ -21,6 +21,31 @@ function bb_wedding_bliss_customize_register( $wp_customize ) {
 	    'description' => __( 'Description of what this panel does.', 'bb-wedding-bliss' ),
 	) );
 
+	// Add the Theme Color Option section.
+	$wp_customize->add_section( 'bb_wedding_bliss_theme_color_option', 
+		array( 'panel' => 'bb_wedding_bliss_panel_id', 'title' => esc_html__( 'Theme Color Option', 'bb-wedding-bliss' ) )
+	);
+  	$wp_customize->add_setting( 'bb_wedding_bliss_theme_color_first', array(
+	    'default' => '#b79338',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_wedding_bliss_theme_color_first', array(
+  		'label' => 'First Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'bb-wedding-bliss'),
+	    'section' => 'bb_wedding_bliss_theme_color_option',
+	    'settings' => 'bb_wedding_bliss_theme_color_first',
+  	)));
+  	$wp_customize->add_setting( 'bb_wedding_bliss_theme_color_second', array(
+	    'default' => '#151c27',
+	    'sanitize_callback' => 'sanitize_hex_color'
+  	));
+  	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'bb_wedding_bliss_theme_color_second', array(
+  		'label' => 'Second Color Option',
+  		'description' => __('One can change complete theme color on just one click.', 'bb-wedding-bliss'),
+	    'section' => 'bb_wedding_bliss_theme_color_option',
+	    'settings' => 'bb_wedding_bliss_theme_color_second',
+  	)));
+  	
 	//Layouts
 	$wp_customize->add_section( 'bb_wedding_bliss_left_right', array(
     	'title'      => __( 'Layout Settings', 'bb-wedding-bliss' ),
