@@ -78,16 +78,7 @@ jQuery(document).ready(function ($) {
 		$('.sc_tabs a').click(function (e) {e.preventDefault(); $(this).tab('show'); });
 		
 		$(".videofit").fitVids();
-		// Lightbox
-			$.extend(true, $.magnificPopup.defaults, {
-			tClose: '',
-			image: {
-				titleSrc: function(item) {
-					return item.el.find('img').attr('alt');
-					}
-				}
-		});
-			$('.collapse-next').click(function (e) {
+		$('.collapse-next').click(function (e) {
 			//e.preventDefault();
 		    var $target = $(this).siblings('.sf-dropdown-menu');
 		     if($target.hasClass('in') ) {
@@ -97,90 +88,6 @@ jQuery(document).ready(function ($) {
 		    	$target.collapse('toggle');
 		    	$(this).addClass('toggle-active');
 		    }
-		});
-		/**
-		 * Checks href targets to see if a given anchor is linking to an image.
-		 *
-		 * @since  0.1.0
-		 * @return mixed
-		 */
-		function kt_check_images( index, element ) {
-			return /(png|jpg|jpeg|gif|tiff|bmp)$/.test(
-				$( element ).attr( 'href' ).toLowerCase().split( '?' )[0].split( '#' )[0]
-			);
-		}
-
-		function kt_find_images() {
-			$( 'a[href]' ).filter( kt_check_images ).attr( 'data-rel', 'lightbox' );
-		}
-		kt_find_images();
-		$("a[rel^='lightbox']").magnificPopup({type:'image'});
-	    $("a[data-rel^='lightbox']").magnificPopup({type:'image'});
-			$('.kad-light-gallery').each(function(){
-				$(this).find('a[rel^="lightbox"]').magnificPopup({
-					type: 'image',
-					gallery: {
-						enabled:true
-						},
-						image: {
-							titleSrc: 'title'
-						}
-					});
-			});
-	    $('.kad-light-gallery').each(function(){
-	      $(this).find("a[data-rel^='lightbox']").magnificPopup({
-	        type: 'image',
-	        gallery: {
-	          enabled:true
-	          },
-	          image: {
-	            titleSrc: 'title'
-	          }
-	        });
-	    });
-			$('.kad-light-wp-gallery').each(function(){
-				$(this).find('a[rel^="lightbox"]').magnificPopup({
-					type: 'image',
-					gallery: {
-						enabled:true
-						},
-						image: {
-							titleSrc: function(item) {
-							return item.el.find('img').attr('alt');
-							}
-						}
-					});
-			});
-	    $('.kad-light-wp-gallery').each(function(){
-	      $(this).find("a[data-rel^='lightbox']").magnificPopup({
-	        type: 'image',
-	        gallery: {
-	          enabled:true
-	          },
-	          image: {
-	            titleSrc: function(item) {
-	            return item.el.find('img').attr('alt');
-	            }
-	          }
-	        });
-	    });
-	    // Gutenberg Gallery
-		$('.wp-block-gallery').each(function(){
-			$(this).find('a[data-rel^="lightbox"]:not(".kt-no-lightbox")').magnificPopup({
-				type: 'image',
-				gallery: {
-					enabled:true
-				},
-				image: {
-					titleSrc: function(item) {
-						if ( item.el.parents('.blocks-gallery-item').find('figcaption').length ) {
-							return item.el.parents('.blocks-gallery-item').find('figcaption').html();
-						} else {
-							return item.el.find('img').attr('alt');
-						}
-					}
-				},
-			});
 		});
 
 		//Superfish Menu

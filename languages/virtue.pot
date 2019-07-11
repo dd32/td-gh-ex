@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Virtue Theme\n"
-"POT-Creation-Date: 2019-02-20 15:20-0700\n"
+"POT-Creation-Date: 2019-04-19 09:31-0600\n"
 "PO-Revision-Date: 2015-05-26 17:23-0700\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -3088,7 +3088,7 @@ msgstr ""
 msgid "Expand"
 msgstr ""
 
-#: woocommerce/loop/rating.php:28
+#: woocommerce/loop/rating.php:31
 msgid "not rated"
 msgstr ""
 
@@ -3105,11 +3105,11 @@ msgstr ""
 msgid "Shop"
 msgstr ""
 
-#: woocommerce/single-product/add-to-cart/variable.php:26
+#: woocommerce/single-product/add-to-cart/variable.php:28
 msgid "This product is currently out of stock and unavailable."
 msgstr ""
 
-#: woocommerce/single-product/add-to-cart/variable.php:38
+#: woocommerce/single-product/add-to-cart/variable.php:40
 msgid "Clear selection"
 msgstr ""
 

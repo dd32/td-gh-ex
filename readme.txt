@@ -30,6 +30,12 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.3.5 | 11th July 2019 = 
+* Fix: Image Grid widget Bug.
+* Remove: Custom styling for Toolkit Notice.
+* Fix: Possible Logo overlaping issue.
+* Update: Tweek some JS files.
+
 = Version 3.3.4 | 16th April 2019 = 
 * Update: WC 3.6 support.
 * Add: WP Body Open support. 

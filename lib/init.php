@@ -18,7 +18,7 @@ function virtue_setup() {
 		'footer_navigation'    => __( 'Footer Navigation', 'virtue' ),
 	));
 
-	define( 'VIRTUE_VERSION', '3.3.4' );
+	define( 'VIRTUE_VERSION', '3.3.5' );
 
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );

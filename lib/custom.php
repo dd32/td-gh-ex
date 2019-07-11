@@ -4,14 +4,6 @@
  */
 
 
-function virtue_lightbox_off() {
-	global $virtue; 
-	if( isset( $virtue[ 'kadence_lightbox'] ) && $virtue[ 'kadence_lightbox' ] == 1 ) {
-		echo  '<script type="text/javascript">jQuery(document).ready(function ($) {var magnificPopupEnabled = false;$.extend(true, $.magnificPopup.defaults, {disableOn: function() {return false;}});});</script>';
-	}
-}
-add_action( 'wp_footer', 'virtue_lightbox_off' );
-
 add_action( 'virtue_after_body', 'virtue_skip_link', 1 );
 function virtue_skip_link() {
 	echo '<div id="kt-skip-link"><a href="#content">Skip to Main Content</a></div>';

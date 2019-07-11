@@ -16,7 +16,8 @@ function virtue_scripts() {
 	} else {
 		$skin = 'default.css';
 	}
-	wp_enqueue_style( 'virtue_skin', get_template_directory_uri() . '/assets/css/skins/' . $skin, false, VIRTUE_VERSION );
+	$skin_stylesheet_path = apply_filters( 'virtue_skin_style_path_output', get_template_directory_uri() . '/assets/css/skins/' );
+	wp_enqueue_style( 'virtue_skin', $skin_stylesheet_path . $skin, false, VIRTUE_VERSION );
 	if ( is_rtl() ) {
 		wp_enqueue_style( 'kadence_rtl', get_template_directory_uri() . '/assets/css/rtl.css', false, VIRTUE_VERSION );
 	}
@@ -32,6 +33,33 @@ function virtue_scripts() {
 	}
 	wp_enqueue_script( 'bootstrap', get_template_directory_uri() . '/assets/js/min/bootstrap-min.js', array( 'jquery' ), VIRTUE_VERSION, true );
 	wp_enqueue_script( 'virtue_plugins', get_template_directory_uri() . '/assets/js/min/plugins-min.js', array( 'jquery', 'hoverIntent', 'masonry' ), VIRTUE_VERSION, true );
+
+	if ( isset( $virtue['kadence_lightbox'] ) && '1' != $virtue['kadence_lightbox'] ) {
+		wp_register_script( 'magnific-popup-js', get_template_directory_uri() . '/assets/js/min/magnific-popup-min.js', array( 'jquery' ), VIRTUE_VERSION, true );
+		wp_enqueue_script( 'virtue-lightbox-init', get_template_directory_uri() . '/assets/js/min/virtue-lightbox-init-min.js', array( 'jquery', 'magnific-popup-js' ), VIRTUE_VERSION, true );
+		// Localize the script with new data.
+		$lightbox_translation_array = array(
+			'loading' => __( 'Loading...', 'virtue' ),
+			'of'      => '%curr% ' . __( 'of', 'virtue' ) . ' %total%',
+			'error'   => __( 'The Image could not be loaded.', 'virtue' ),
+		);
+		wp_localize_script( 'virtue-lightbox-init', 'virtue_lightbox', $lightbox_translation_array );
+	}
+
+	if ( isset( $virtue['google_map_api'] ) && ! empty( $virtue['google_map_api'] ) ) {
+		$gmap_api = $virtue['google_map_api'];
+	} else {
+		$gmap_api = '';
+	}
+	wp_register_script( 'virtue_google_map_api', 'https://maps.googleapis.com/maps/api/js?key=' . esc_attr( $gmap_api ), array( 'jquery' ), VIRTUE_VERSION, true );
+	wp_register_script( 'virtue_gmap', get_template_directory_uri() . '/assets/js/min/virtue-gmap-min.js', array( 'jquery' ), VIRTUE_VERSION, true );
+	wp_register_script( 'virtue_contact_validation', get_template_directory_uri() . '/assets/js/min/virtue-contact-validation-min.js', array( 'jquery' ), VIRTUE_VERSION, true );
+	// Localize the script with new data.
+	$contact_translation_array = array(
+		'required' => __( 'This field is required.', 'virtue' ),
+		'email'    => __( 'Please enter a valid email address.', 'virtue' ),
+	);
+	wp_localize_script( 'virtue_contact_validation', 'virtue_contact', $contact_translation_array );
 	wp_enqueue_script( 'virtue_main', get_template_directory_uri() . '/assets/js/min/main-min.js', array( 'jquery', 'hoverIntent', 'masonry' ), VIRTUE_VERSION, true );
 
 	if ( class_exists( 'woocommerce' ) ) {

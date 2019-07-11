@@ -630,7 +630,6 @@ class Kadence_Image_Grid_Widget extends WP_Widget {
 				endif;
 			break;
 			case "post" :
-			echo $instance['thecat'];
 				$r = new WP_Query( apply_filters( 'widget_posts_args', array( 
 					'posts_per_page' => $number, 
 					'category_name' => $instance['thecat'], 
@@ -744,7 +743,7 @@ class Simple_About_With_Image extends WP_Widget {
         } else if(empty($instance['image_link_open']) || $instance['image_link_open'] == "lightbox") {
           $uselink = true;
           $link = esc_url($instance['image_uri']);
-          $linktype = 'rel="lightbox"';
+          $linktype = 'data-rel="lightbox"';
         } else if($instance['image_link_open'] == "_blank") {
           $uselink = true;
           if(!empty($instance['image_link'])) {$link = $instance['image_link'];} else {$link = esc_url($instance['image_uri']);}

@@ -40,12 +40,13 @@ function virtue_kadence_toolkit_notice() {
 	$activate_nonce  = wp_create_nonce( 'activate-plugin_virtue-toolkit/virtue_toolkit.php' );
 	$activation_link = self_admin_url( 'plugins.php?_wpnonce=' . $activate_nonce . '&action=activate&plugin=virtue-toolkit%2Fvirtue_toolkit.php' );
 	?>
-	<div id="message" class="updated kt-plugin-install-notice-wrapper">
+	<div id="message" class="is-dismissible notice updated kt-plugin-install-notice-wrapper">
 		<h3 class="kt-notice-title"><?php echo esc_html__( 'Thanks for choosing the Virtue Theme', 'virtue' ); ?></h3>
 		<p class="kt-notice-description"><?php /* translators: %s: <strong> */ printf( esc_html__( 'To take full advantage of the Virtue Theme please install the %1$sKadence Toolkit%2$s, this adds extra settings and features.', 'virtue' ), '<strong>', '</strong>' ); ?></p>
 		<p class="submit">
 			<a class="button button-primary kt-install-toolkit-btn" data-redirect-url="<?php echo esc_url( admin_url( 'themes.php?page=kadence_welcome_page' ) ); ?>" data-activating-label="<?php echo esc_attr__( 'Activating...', 'virtue' ); ?>" data-activated-label="<?php echo esc_attr__( 'Activated', 'virtue' ); ?>" data-installing-label="<?php echo esc_attr__( 'Installing...', 'virtue' ); ?>" data-installed-label="<?php echo esc_attr__( 'Installed', 'virtue' ); ?>" data-action="<?php echo esc_attr( $data_action ); ?>" data-install-url="<?php echo esc_attr( $install_link ); ?>" data-activate-url="<?php echo esc_attr( $activation_link ); ?>"><?php echo esc_html( $button_label ); ?></a>
-			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'virtue-kadence-toolkit-plugin-notice', 'install' ), 'virtue_toolkit_hide_notices_nonce', '_notice_nonce' ) ); ?>" class="notice-dismiss kt-close-notice"><span class="screen-reader-text"><?php esc_html_e( 'Skip', 'virtue' ); ?></span></a>
+			<a href="<?php echo esc_url( wp_nonce_url( add_query_arg( 'virtue-kadence-toolkit-plugin-notice', 'install' ), 'virtue_toolkit_hide_notices_nonce', '_notice_nonce' ) ); ?>" class="notice-dismiss kt-close-notice"><span class="screen-reader-text"><?php esc_html_e( 'Dismiss this notice.', 'virtue' ); ?></span></a>
+			<button type="button" class="notice-dismiss"><span class="screen-reader-text">Dismiss this notice.</span></button>
 		</p>
 	</div>
 	<?php

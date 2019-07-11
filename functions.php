@@ -70,3 +70,4 @@ require_once trailingslashit( get_template_directory() ) . 'lib/custom-css.php';
  * Note: Do not add any custom code here. Please use a custom plugin or child theme so that your customizations aren't lost during updates.
  * https://www.kadencethemes.com/child-themes/
  */
+
