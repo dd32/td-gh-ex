@@ -4,12 +4,23 @@ if ( has_post_thumbnail() )
 {
 ?>
 <div class="columns">
-<div class="column is-3 post-img" style="background-image:url(<?php
+<div id="post-<?php the_ID(); ?>-thumb" class="column is-3 post-img">
+
+<?php
 $large_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
-if (!empty($large_image_url[0])) {
-	printf('%1$s', esc_url( $large_image_url[0]));
+
+if (!empty($large_image_url[0])) 
+{
+?>
+
+<script type="text/javascript">
+document.getElementById('post-<?php the_ID(); ?>-thumb').style.backgroundImage = "url('<?php echo esc_url($large_image_url[0]); ?>')"; 
+</script>
+
+<?php		
 }
-?>);">
+?>
+
 </div>
 <div class="column">
 <?php

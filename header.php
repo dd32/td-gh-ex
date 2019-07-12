@@ -24,7 +24,11 @@
 
                                 if (has_custom_logo()) 
                                 {
-                                    echo '<img src="' . esc_url($logo[0]) . '" alt="' . esc_html(get_bloginfo('name')) . '">';
+                            ?>
+
+                            <img src="<?php echo esc_url($logo[0]); ?>" alt="<?php echo esc_html(get_bloginfo('name')); ?>">
+
+                            <?php
                                 } 
                                 else 
                                 {

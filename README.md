@@ -3,10 +3,10 @@
 **Contributors:** bigjaymalcolm
 **Requires at least:** 5.2
 **Tested up to:** 5.2.1
-**Stable tag:** 1.1.6
+**Stable tag:** 1.1.7
 **Requires PHP:** 7.0
 
-**Version:** 1.1.6
+**Version:** 1.1.7
 **License:** GNU General Public License v3 or later
 **License URI:** https://www.gnu.org/licenses/gpl-3.0.en.html
 **Tags:** two-columns, right-sidebar, theme-options
@@ -71,3 +71,9 @@ Atreus bundles the following third-party resources:
 * Removed some inline styling.
 * Fixed author links.
 * Removed echo from meta description tag.
+
+### 1.1.7
+* Updated Fontawesome to version 5.9.0.
+* Changed wp_enqueue_style to wp_enqueue_script js files.
+* Fixed echo'ing of a html tag in header.php.
+* Removed inline styling.

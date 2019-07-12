@@ -94,15 +94,15 @@ function atreus_comment_form_before()
 
 add_action( 'comment_form_before', 'atreus_comment_form_before' );
 
-function atreus_enqueue_style() 
+function atreus_enqueue_scripts() 
 {
-    wp_enqueue_style('fontawesome', get_template_directory_uri() . '/js/fontawesome.js', false, '5.3.1', 'all');
+    wp_enqueue_script('fontawesome', get_template_directory_uri() . '/js/fontawesome.js', false, '5.9.0', 'all');
     wp_enqueue_style('bulma', get_template_directory_uri() . '/css/bulma.min.css', false, '0.7.4', 'all');
     wp_enqueue_style('style', get_stylesheet_uri());
-    wp_enqueue_style('main', get_template_directory_uri() . '/js/main.js', false, '1.0', 'all');
+    wp_enqueue_script('main', get_template_directory_uri() . '/js/main.js', false, '1.0', 'all');
 }
 
-add_action( 'wp_enqueue_scripts', 'atreus_enqueue_style' );
+add_action( 'wp_enqueue_scripts', 'atreus_enqueue_scripts' );
 
 function atreus_customize_register($wp_customize) 
 {
