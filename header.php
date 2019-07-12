@@ -8,4 +8,5 @@
 		<?php wp_head(); ?>
 	</head>
 	<body id="blog" <?php body_class(); ?>>
+        <?php wp_body_open(); ?>
 		<?php get_template_part( 'template-parts/template-part', 'topnav' ); ?>

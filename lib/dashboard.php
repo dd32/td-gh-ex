@@ -43,7 +43,7 @@ function balanced_blog_admin_notice() {
 	$theme_data	 = wp_get_theme();
 	if ( !get_user_meta( $user_id, esc_html( $theme_data->get( 'TextDomain' ) ) . '_notice_ignore' ) ) {
 		?>
-		<div class="notice balanced-blog-notice">
+		<div class="notice notice-success balanced-blog-notice">
 
 			<h1>
 				<?php

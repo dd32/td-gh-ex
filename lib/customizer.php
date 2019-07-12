@@ -7,8 +7,8 @@
 
 $balanced_blog_sections = array( 'info' );
 
-foreach( $balanced_blog_sections as $s ){
-    require get_template_directory() . '/lib/customizer/' . $s . '.php';
+foreach( $balanced_blog_sections as $sec ){
+    require get_template_directory() . '/lib/customizer/' . $sec . '.php';
 }
 
 function balanced_blog_customizer_scripts() {
