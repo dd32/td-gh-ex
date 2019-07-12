@@ -48,7 +48,7 @@ jQuery(document).ready(function ($) {
 					},
 					image: {
 						titleSrc: function(item) {
-							return item.el.find('img').attr('data-caption');
+							return item.el.find('img').attr('alt');
 						}
 					}
 				});

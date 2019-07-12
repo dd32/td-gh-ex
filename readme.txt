@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.3.6 | 12th July 2019 = 
+* Fix: Gallery Caption issue.
+
 = Version 3.3.5 | 11th July 2019 = 
 * Fix: Image Grid widget Bug.
 * Remove: Custom styling for Toolkit Notice.

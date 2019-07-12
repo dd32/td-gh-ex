@@ -35,8 +35,8 @@ function virtue_scripts() {
 	wp_enqueue_script( 'virtue_plugins', get_template_directory_uri() . '/assets/js/min/plugins-min.js', array( 'jquery', 'hoverIntent', 'masonry' ), VIRTUE_VERSION, true );
 
 	if ( isset( $virtue['kadence_lightbox'] ) && '1' != $virtue['kadence_lightbox'] ) {
-		wp_register_script( 'magnific-popup-js', get_template_directory_uri() . '/assets/js/min/magnific-popup-min.js', array( 'jquery' ), VIRTUE_VERSION, true );
-		wp_enqueue_script( 'virtue-lightbox-init', get_template_directory_uri() . '/assets/js/min/virtue-lightbox-init-min.js', array( 'jquery', 'magnific-popup-js' ), VIRTUE_VERSION, true );
+		wp_register_script( 'magnific-popup', get_template_directory_uri() . '/assets/js/min/magnific-popup-min.js', array( 'jquery' ), VIRTUE_VERSION, true );
+		wp_enqueue_script( 'virtue-lightbox-init', get_template_directory_uri() . '/assets/js/min/virtue-lightbox-init-min.js', array( 'jquery', 'magnific-popup' ), VIRTUE_VERSION, true );
 		// Localize the script with new data.
 		$lightbox_translation_array = array(
 			'loading' => __( 'Loading...', 'virtue' ),

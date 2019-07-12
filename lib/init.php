@@ -10,15 +10,15 @@
  */
 function virtue_setup() {
 
-	register_nav_menus(array(
+	register_nav_menus( array(
 		'primary_navigation'   => __( 'Primary Navigation', 'virtue' ),
 		'secondary_navigation' => __( 'Secondary Navigation', 'virtue' ),
 		'mobile_navigation'    => __( 'Mobile Navigation', 'virtue' ),
 		'topbar_navigation'    => __( 'Topbar Navigation', 'virtue' ),
 		'footer_navigation'    => __( 'Footer Navigation', 'virtue' ),
-	));
+	) );
 
-	define( 'VIRTUE_VERSION', '3.3.5' );
+	define( 'VIRTUE_VERSION', '3.3.6' );
 
 	add_theme_support( 'title-tag' );
 	add_theme_support( 'post-thumbnails' );
