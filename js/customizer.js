@@ -5,8 +5,8 @@
  *
  * Contains handlers to make Theme Customizer preview reload changes asynchronously.
  */
-
 ( function( $ ) {
+	
 	var api = wp.customize;
 		
 	// Site title and description.
@@ -66,7 +66,9 @@
 				$( 'body' ).addClass( 'left-sidebar' );
 			} else {
 				$( 'body' ).removeClass( 'left-sidebar' );
+				
 			}
+			actinia.updateDropdownDirection();
 		} );
 	} );
 	
@@ -87,9 +89,10 @@
 			} else {
 				$( 'body' ).removeClass( 'navbar-side' );
 			}
+			actinia.updateDropdownDirection();
 		} );
 	} );
-	
+
 	api = parent.wp.customize;
 		
 	//CS constructor

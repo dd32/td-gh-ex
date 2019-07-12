@@ -30,9 +30,11 @@
 		<?php endif; ?>
 		
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle-btn" aria-expanded="false" aria-controls="primary-menu"><?php esc_html_e( 'Menu', 'actinia' ); ?></button>
 			<?php
 			if ( has_nav_menu( 'primary' ) && ! is_404() ) :
+				?>
+				<button class="menu-toggle-btn" aria-expanded="false" aria-controls="primary-menu"><?php esc_html_e( 'Menu', 'actinia' ); ?></button>
+				<?php
 				wp_nav_menu(
 					array(
 					'theme_location' => 'primary',

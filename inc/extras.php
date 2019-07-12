@@ -13,6 +13,7 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
+
 function actinia_body_classes( $classes ) {
 	// Adds a class of group-blog to blogs with more than 1 published author.
 	if ( is_multi_author() ) {
@@ -23,21 +24,33 @@ function actinia_body_classes( $classes ) {
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
+
+	if ( get_header_image() !== false ) {
+		$classes[] = 'header-img';
+	}
+
+	if ( ! actinia_has_navbar() ) {
+		$classes[] = 'no-menu';
+	}
 	
-	if ( 'left' === esc_attr( get_theme_mod( 'actinia_sidebar_position', 'right' ) ) && is_active_sidebar( 'sidebar-primary' ) ) {
+	if ( 'left' === esc_attr( get_theme_mod( 'actinia_sidebar_position', 'right' ) ) && is_active_sidebar( 'sidebar-primary' ) && actinia_has_widgets() ) {
 		$classes[] = 'left-sidebar';
+	}
+
+	if ( ! actinia_has_widgets() ) {
+		$classes[] = 'actinia-no-sidebar';
 	}
 	
 	if ( 'top' === esc_attr( get_theme_mod( 'actinia_post_meta_position', 'left' ) ) ) {
 		$classes[] = 'top-meta';
 	}
 	
-	if ( 'side' === esc_attr( get_theme_mod( 'actinia_navbar_position', 'top' ) ) ) {
+	if ( 'side' === esc_attr( get_theme_mod( 'actinia_navbar_position', 'top' ) ) && actinia_has_navbar() ) {
 		$classes[] = 'navbar-side';
 	}
-	
-	if ( 'remove-header' != esc_attr( get_theme_mod( 'header_image') ) ) {
-		$classes[] = 'header-img';
+
+	if ( empty( get_option( 'blogdescription' ) ) ) {
+		$classes[] = 'actinia-no-tagline';
 	}
 
 	return $classes;

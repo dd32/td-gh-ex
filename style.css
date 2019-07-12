@@ -3,7 +3,7 @@
 Theme Name: Actinia
 Author: green_onion
 Description: Actinia is a multi-purpose fully responsive WordPress theme with a simple and clean design. It comes with a number of useful theme options. They allow you to customize the look of your website according to your preferences modifying the theme layout and the theme colors.
-Version: 2.0.0 
+Version: 2.0.1 
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: actinia
@@ -28,6 +28,7 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 # Layout
  ## Content-sidebar
  ## Theme Options
+ ## IE11
 # Navigation
 	## Links
 	## Menus
@@ -422,7 +423,7 @@ h6 {
 
   .site-description {
     flex-basis: 30%;
-    padding: 0;
+    padding: 0 1.5em 0 0;
   }
 
   .entry-title {
@@ -622,70 +623,40 @@ figure.entry-attachment {
   margin: 0.4em 0 0;
 }
 
-#primary .table-wrapper {
-  margin-bottom: 2em;
-  overflow-x: auto;
-}
 #primary table {
   margin: 0 0 1.5em;
   width: 100%;
   text-align: left;
+  border: none;
+  border-top: 0.08em solid #ccc;
 }
-#primary table .headRow {
-  font-size: 1.1em;
-  text-transform: uppercase;
-  border-bottom: none;
-}
-#primary table th,
-#primary table td {
+#primary table td,
+#primary table th {
   padding: 1.2em 1em;
+  border: none;
+}
+#primary table th {
+  text-align: left;
+}
+#primary table td:empty {
+  display: none;
 }
 #primary tr {
   border-top: 0.08em solid #ccc;
   border-bottom: 0.08em solid #ccc;
 }
-@media only screen and (max-width: 600px) {
-  #primary table {
-    border: none;
-  }
-  #primary table .headRow {
-    display: none;
-  }
-  #primary table .thVertical {
-    background-color: #eee;
-    font-size: 1.1em;
-    border-top: none;
-    font-weight: 400;
-  }
-  #primary table .thVertical a:link,
-#primary table .thVertical a:visited {
-    font-size: 1.1em;
-    text-transform: uppercase;
-  }
-  #primary table td,
-#primary table th {
-    display: block;
-    text-align: center;
+#primary .table-wrapper {
+  margin-bottom: 2em;
+  overflow-x: auto;
+}
+
+@media only screen and (min-width: 600px) {
+  #primary table th,
+#primary table td {
     border-bottom: 0.08em solid #ccc;
   }
-  #primary table td:before,
-#primary table th:before {
-    content: attr(data-th);
-    display: block;
-    text-align: center;
-    font-size: 1.1em;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-  #primary table td:empty {
-    display: none;
-  }
-  #primary table td:last-child {
-    border-bottom: none;
-  }
-  #primary .table-wrapper .tableWithoutHeader td, #primary .table-wrapper .tableWithoutHeader th {
-    display: table-cell;
-    text-align: initial;
+  #primary tr {
+    border: none;
   }
 }
 @media only screen and (min-width: 768px) {
@@ -698,7 +669,6 @@ figure.entry-attachment {
     margin-bottom: 1em;
   }
 }
-
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
@@ -891,7 +861,6 @@ input[type=search], input[type=search]:focus {
   min-width: 9em;
 }
 header .search-form {
-  position: relative;
   display: none;
   width: 90%;
   max-width: 13em;
@@ -919,17 +888,12 @@ header .search-form {
 
 @media only screen and (min-width: 480px) {
   header .search-form {
-    position: absolute;
-    left: 7.5%;
-    /*align with the header (header: flex-basis 85% or grid-template-columns 42.5% 42.5%, rest 15%/2)*/
     display: inline-block;
     width: auto;
   }
 }
 @media only screen and (min-width: 768px) {
   header .search-form {
-    position: relative;
-    left: 0;
     margin-right: 100%;
     min-width: 12.3em;
   }
@@ -1198,10 +1162,6 @@ a#cancel-comment-reply-link {
 }
 .main-navigation .dropdown-toggle {
   background-color: transparent;
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 2.5em;
   margin: 0;
 }
 .main-navigation .dropdown-toggle:after {
@@ -1367,6 +1327,9 @@ a#cancel-comment-reply-link {
     -webkit-transform: translateY(0.5em);
     transform: translateY(0.5em);
   }
+  .main-navigation #primary-menu > li:hover > .sub-menu > li {
+    width: 100%;
+  }
   .main-navigation #primary-menu > li.menu-item-has-children:hover > a {
     box-shadow: 0.5em 0 0.5em #8a8a8a;
     -webkit-transform: none;
@@ -1400,10 +1363,13 @@ a#cancel-comment-reply-link {
     -webkit-transition: -webkit-transform 1s;
     transition: transform 1s;
     min-width: 100%;
+    max-width: 15em;
+    display: inline-block;
   }
   .main-navigation ul ul ul {
     top: 0;
     margin-left: 0;
+    width: 100%;
   }
   .main-navigation ul ul li {
     width: 100%;
@@ -1421,7 +1387,6 @@ a#cancel-comment-reply-link {
     -webkit-transition: none;
     transition: none;
     box-shadow: none;
-    white-space: nowrap;
   }
   .main-navigation ul ul a .dropdown-toggle:after {
     color: #8a8a8a;
@@ -1433,6 +1398,7 @@ a#cancel-comment-reply-link {
 .main-navigation ul .dropdown-left.focus > ul {
     right: 0;
     /* override left: auto and right align the sub-menu */
+    left: auto;
     margin-right: 2em;
   }
   .main-navigation ul .dropdown-left ul li:hover > ul, .main-navigation ul .dropdown-left ul li.focus > ul {
@@ -1440,6 +1406,7 @@ a#cancel-comment-reply-link {
     /* override left: 100% */
   }
   .main-navigation ul .dropdown-left ul li > a > .dropdown-toggle {
+    position: absolute;
     left: 0;
     -webkit-transform: rotate(90deg);
     /* arrow-left */
@@ -1449,7 +1416,7 @@ a#cancel-comment-reply-link {
     border-bottom: none;
   }
   .main-navigation li:hover > ul, .main-navigation li.focus > ul {
-    left: auto;
+    left: 0;
     -webkit-transform: translateY(0.5em);
     transform: translateY(0.5em);
   }
@@ -1457,15 +1424,16 @@ a#cancel-comment-reply-link {
     content: "";
   }
   .main-navigation .dropdown-toggle {
-    left: auto;
-    right: 0.5em;
-    height: 3.1em;
-    width: 3.1em;
+    position: relative;
     transition: transform 1s;
+    padding: 0;
+    transform: scale(1.1);
   }
   .main-navigation .dropdown-toggle:after {
     color: #fff;
     position: static;
+    padding: 0 1.2em 0;
+    font-size: 1em;
   }
   .main-navigation a {
     padding: 0.8em 2em;
@@ -1474,10 +1442,14 @@ a#cancel-comment-reply-link {
     border-radius: 0.4em;
     transition: transform 1s;
     box-shadow: 0.2em 0.2em 0.5em #8a8a8a, 0 0.5em 0.5em #e7e7e7;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
   }
   .main-navigation .menu-item-has-children > a {
-    padding-right: 3em;
-    /* extra space for arrow */
+    display: flex;
+    padding-right: 0;
+    justify-content: space-between;
   }
   .main-navigation .menu-item-has-children > a:after {
     content: none;
@@ -1488,6 +1460,13 @@ a#cancel-comment-reply-link {
     padding-right: 2em;
     padding-left: 3em;
     /* extra space for arrow on the opposite side */
+  }
+
+  .link-text {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: auto;
   }
 
   .site-main .comment-navigation,
@@ -1526,6 +1505,10 @@ a#cancel-comment-reply-link {
   }
 }
 @media only screen and (min-width: 1024px) {
+  .main-navigation ul ul {
+    max-width: 18em;
+  }
+
   .actinia-no-sidebar .comment-navigation,
 .actinia-no-sidebar .posts-navigation,
 .actinia-no-sidebar .post-navigation,
@@ -2661,7 +2644,6 @@ object {
   flex: 1 1 100%;
   /*IE11: make sure the block absorbs all the available space*/
   /*grid*/
-  margin-top: 0.5em;
   grid-row: 3/4;
   grid-column: 1/3;
 }
@@ -2771,6 +2753,7 @@ object {
     grid-column: 2/3;
     display: grid;
     grid-template-columns: 2fr 1fr;
+    grid-column-gap: 5.5em;
     grid-column-gap: 8%;
     margin-top: 3em;
   }
@@ -2808,6 +2791,7 @@ object {
   .site-content {
     margin-top: 5em;
     grid-template-columns: 2.5fr 1fr;
+    grid-gap: 7.5em;
     grid-gap: 10%;
   }
 
@@ -2847,10 +2831,31 @@ object {
   padding: 1.25em 1.52em 0.5em;
   /*20px 24.32px 8px*/
 }
+.header-img.no-menu header {
+  grid-template-rows: auto auto;
+}
+.header-img.no-menu .site-branding {
+  grid-row: 2/3;
+}
 
 @media only screen and (min-width: 480px) {
   .header-img .site-header {
     grid-row-gap: 0.5em;
+  }
+  .header-img .site-header .site-branding {
+    margin: 0;
+  }
+  .header-img.no-menu header .search-form {
+    position: relative;
+    left: 0;
+  }
+  .header-img.no-menu .site-branding {
+    margin-bottom: 0;
+  }
+
+  .no-menu .site-header {
+    grid-template-rows: 2.5em auto auto;
+    /* prevent absolutely positioned search-form and site-title from overlapping */
   }
 }
 @media only screen and (min-width: 600px) {
@@ -2859,14 +2864,37 @@ object {
   }
 }
 @media only screen and (min-width: 768px) {
+  .no-menu .site-header {
+    grid-template-rows: auto auto auto;
+  }
+  .no-menu .site-branding {
+    margin-top: 0.5em;
+  }
+
   .header-img #page {
-    grid-row-gap: 1.5em;
+    grid-row-gap: 0;
   }
   .header-img .site-header {
-    grid-row-gap: 2em;
+    grid-row-gap: 0;
+  }
+  .header-img .site-header .site-branding {
+    margin-top: 2em;
+    padding: 0 0 1.5em;
   }
   .header-img #primary-menu {
     padding-bottom: 0;
+  }
+  .header-img.no-menu #page {
+    grid-row-gap: 1.5em;
+  }
+  .header-img.no-menu .site-branding {
+    margin-top: 0;
+  }
+  .header-img.no-menu .site-header {
+    grid-row-gap: 1em;
+  }
+  .header-img.no-menu .site-content {
+    margin-top: 0;
   }
 
   .actinia-no-sidebar .site-content {
@@ -2874,8 +2902,14 @@ object {
   }
 }
 @media only screen and (min-width: 1024px) {
-  .header-img #page {
+  .header-img.no-menu #page {
     grid-row-gap: 2.5em;
+  }
+  .header-img .site-branding {
+    padding-right: 2em;
+  }
+  .header-img.no-menu header .search-form {
+    left: 0;
   }
 
   .actinia-no-sidebar .site-content {
@@ -2899,6 +2933,7 @@ object {
     /* prevent article and navigation from overflowing the screen in the single page view */
     /*grid*/
     grid-column: 2/3;
+    margin-right: initial;
   }
   .left-sidebar #secondary {
     /*fallback*/
@@ -2961,10 +2996,13 @@ object {
     /*grid*/
     display: grid;
     /* overwrite flexbox */
+    grid-template-columns: 100%;
+    /*prevent long menu items from overflowing the containing block */
   }
   .navbar-side .site-header .main-navigation #primary-menu {
     margin: 0;
     flex-basis: 20%;
+    max-width: 100%;
   }
   .navbar-side .site-header .site-branding {
     margin-bottom: 4em;
@@ -2987,6 +3025,18 @@ object {
     -webkit-transform: none;
     transform: none;
   }
+  .navbar-side .main-navigation .link-text {
+    max-width: 80%;
+  }
+  .navbar-side .main-navigation ul .dropdown-left ul li > a > .dropdown-toggle {
+    left: 1em;
+  }
+  .navbar-side .main-navigation ul ul {
+    width: 110%;
+  }
+  .navbar-side .main-navigation ul ul .link-text {
+    max-width: 85%;
+  }
   .navbar-side .main-navigation li {
     width: 100%;
     /* for Safari, otherwise menu items are only as long as their names */
@@ -2996,12 +3046,17 @@ object {
   }
   .navbar-side .main-navigation a {
     display: block;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
   }
-  .navbar-side .main-navigation .dropdown-toggle {
-    right: 0.8em;
+  .navbar-side .main-navigation .menu-item-has-children > a {
+    display: flex;
+    justify-content: flex-start;
+    white-space: nowrap;
+  }
+  .navbar-side .main-navigation .dropdown-left ul .link-text {
+    max-width: 100%;
+  }
+  .navbar-side .main-navigation .dropdown-toggle::after {
+    padding: 0;
   }
   .navbar-side .site-content {
     margin-top: 0;
@@ -3065,6 +3120,10 @@ object {
   .navbar-side.actinia-no-sidebar #page {
     grid-template-columns: 6% 88% 6%;
   }
+  .navbar-side.actinia-no-sidebar header .search-form {
+    grid-column-start: 1;
+    left: 2em;
+  }
   .navbar-side.actinia-no-sidebar .site-header {
     flex-basis: 88%;
     grid-template-columns: 6% 25% 8% 55% 6%;
@@ -3105,6 +3164,10 @@ object {
   }
 }
 @media only screen and (min-width: 1224px) {
+  .header-img.no-menu #page {
+    grid-row-gap: 2.5em;
+  }
+
   .left-sidebar .site-content {
     grid-template-columns: 1fr 2.5fr;
   }
@@ -3145,12 +3208,22 @@ object {
   }
 }
 @media only screen and (min-width: 1824px) {
+  .header-img .site-header .site-branding {
+    margin-top: 4em;
+  }
+  .header-img.no-menu .site-header .site-branding {
+    margin: 1em 0 4em;
+  }
+
   .navbar-side .site-header .site-branding {
     margin-top: 5em;
     margin-bottom: 7em;
   }
   .navbar-side .site-header .main-navigation {
     margin-top: 0;
+  }
+  .navbar-side .site-header .main-navigation .link-text {
+    max-width: 90%;
   }
 
   .actinia-no-tagline .site-branding {
@@ -3174,6 +3247,98 @@ object {
     padding-left: 4.444em;
     /* 64px, same as .entry-content */
     padding-right: 4.444em;
+  }
+}
+/*--------------------------------------------------------------
+# IE11
+--------------------------------------------------------------*/
+_:-ms-fullscreen header, :root header {
+  justify-content: flex-start;
+}
+_:-ms-fullscreen header .search-form, :root header .search-form {
+  position: absolute;
+}
+_:-ms-fullscreen .site-header .searchform-toggle, :root .site-header .searchform-toggle {
+  position: absolute;
+}
+_:-ms-fullscreen .site-header .site-branding, :root .site-header .site-branding {
+  margin-top: 0.5em;
+}
+_:-ms-fullscreen .no-menu header .search-form, :root .no-menu header .search-form {
+  position: relative;
+}
+_:-ms-fullscreen .no-menu .site-header .searchform-toggle, :root .no-menu .site-header .searchform-toggle {
+  position: relative;
+}
+_:-ms-fullscreen .no-menu .site-header .site-branding, :root .no-menu .site-header .site-branding {
+  margin-top: 0;
+}
+_:-ms-fullscreen .header-img.no-menu header, :root .header-img.no-menu header {
+  justify-content: center;
+}
+_:-ms-fullscreen .header-img.no-menu .site-header .searchform-toggle, :root .header-img.no-menu .site-header .searchform-toggle {
+  position: relative;
+}
+
+@media only screen and (min-width: 480px) {
+  _:-ms-fullscreen .header-img .site-header .site-branding, :root .header-img .site-header .site-branding {
+    margin: 0.5em 0 1em;
+  }
+  _:-ms-fullscreen .no-menu .site-header .site-branding, :root .no-menu .site-header .site-branding {
+    margin-top: 0.5em;
+  }
+}
+@media only screen and (min-width: 768px) {
+  _:-ms-fullscreen header .search-form, :root header .search-form {
+    position: relative;
+  }
+  _:-ms-fullscreen .site-header .site-branding, :root .site-header .site-branding {
+    margin-top: 2em;
+  }
+  _:-ms-fullscreen .no-menu .site-header .site-branding, :root .no-menu .site-header .site-branding {
+    margin-top: 0;
+  }
+  _:-ms-fullscreen .header-img .site-header .site-branding, :root .header-img .site-header .site-branding {
+    margin-top: 2em;
+  }
+  _:-ms-fullscreen .header-img.no-menu .site-branding, :root .header-img.no-menu .site-branding {
+    margin-top: 1em;
+  }
+  _:-ms-fullscreen .header-img.no-menu .site-content, :root .header-img.no-menu .site-content {
+    margin-top: 2.5em;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  _:-ms-fullscreen .header-img.actinia-no-sidebar.navbar-side header .search-form, :root .header-img.actinia-no-sidebar.navbar-side header .search-form {
+    position: absolute;
+  }
+  _:-ms-fullscreen .header-img.no-menu.no-menu .site-content, :root .header-img.no-menu.no-menu .site-content {
+    margin-top: 3em;
+  }
+  _:-ms-fullscreen .header-img.navbar-side header .search-form, :root .header-img.navbar-side header .search-form {
+    position: absolute;
+  }
+  _:-ms-fullscreen .header-img.navbar-side .site-header .site-branding, :root .header-img.navbar-side .site-header .site-branding {
+    margin-top: 3.3em;
+    /*because of the absolute positioning of search-form */
+    margin-bottom: 2em;
+  }
+  _:-ms-fullscreen .no-menu .site-header .site-branding, :root .no-menu .site-header .site-branding {
+    margin-top: 1em;
+  }
+}
+@media only screen and (min-width: 1224px) {
+  _:-ms-fullscreen .header-img .site-header .site-branding, :root .header-img .site-header .site-branding {
+    margin-bottom: 0;
+  }
+  _:-ms-fullscreen .header-img.no-menu .site-header .site-branding, :root .header-img.no-menu .site-header .site-branding {
+    margin-bottom: 2em;
+  }
+  _:-ms-fullscreen .header-img.no-menu .site-content, :root .header-img.no-menu .site-content {
+    margin-top: 5em;
+  }
+  _:-ms-fullscreen .header-img.navbar-side .site-header .site-branding, :root .header-img.navbar-side .site-header .site-branding {
+    margin-bottom: 3.5em;
   }
 }
 

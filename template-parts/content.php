@@ -37,7 +37,6 @@
 		<?php endif; ?>
 
 		<div class="entry-content">
-			<!--Post Thumbnail Linking to large Image Size:-->
 			<?php
 			if ( has_post_thumbnail() ) :
 				the_post_thumbnail();
