@@ -5,12 +5,13 @@
     <meta name="description" content="<?php bloginfo('description'); ?>">
     <meta name="author" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta charset="utf-8" />
+    <meta charset="<?php bloginfo('charset'); ?>" />
 	
 	<?php wp_head(); ?> 
 </head>
 
 <body <?php body_class(); ?>>
+    <?php wp_body_open(); ?>
     <!-- Header -->
     <section class="hero <?php if(get_theme_mod('atreus_theme_colour_setting')==false){echo esc_html('is-link');}else{echo esc_html(get_theme_mod('atreus_theme_colour_setting'));} ?>">
         <div class="hero-head">

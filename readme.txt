@@ -2,10 +2,10 @@
 Contributors: bigjaymalcolm
 Requires at least: 5.2
 Tested up to: 5.2.1
-Stable tag: 1.1.7
+Stable tag: 1.1.8
 Requires PHP: 7.0
 
-Version 1.1.7
+Version 1.1.8
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: two-columns, right-sidebar, theme-options
@@ -14,10 +14,12 @@ Atreus is a simple WordPress blog theme created based on the Bulma framework.
 
 == Description ==
 Atreus is a simple WordPress blog theme created based on the Bulma framework.
+No multilevel menu support.
 
 == Resources ==
 * bulma.css © 2019 Jeremy Thomas, MIT. Source: http://bulma.io/
 * fontawesome.js © 2018 fontawesome, MIT, SIL OFL, and CC BY. Source: http://fontawesome.io/
+* Screenshot image of Weymouth Harbour © 2019 Jamie Malcolm, All rights reserved. Source: https://www.flickr.com/photos/158065006@N03/46485397414
 
 == Changelog ==
 
@@ -65,3 +67,12 @@ Atreus is a simple WordPress blog theme created based on the Bulma framework.
 * Changed wp_enqueue_style to wp_enqueue_script js files.
 * Fixed echo'ing of a html tag in header.php.
 * Removed inline styling.
+
+= 1.1.8 =
+* Fixed hardcoded charset.
+* Removed Theme URI.
+* Added missing wp_body_open.
+* Added escape to comments.php line 31.
+* Added no multilevel menu support to description.
+* Fixed singular instance on comments.php.
+* Added copyright and license for screenshot image.
