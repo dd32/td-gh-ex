@@ -21,7 +21,10 @@ if ( post_password_required() ) {
 	<?php if ( have_comments() ) : ?>
 
 	<h2 class="comments-title">
-		<?php printf ( esc_html__('Only %1$s registered %2$s users can comment.','avrilly'), '<a href="'.esc_url( wp_login_url( get_permalink() ) ).'">', '</a>' ); ?>
+		<?php
+		/* translators: %1$s and %2$s is replaced with "<a href>" and "</a>" link to registration section */
+		printf ( esc_html__('Only %1$s registered %2$s users can comment.','avrilly'), '<a href="'.esc_url( wp_login_url( get_permalink() ) ).'">', '</a>' );
+		?>
 	</h2>
 
 	<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : ?>

@@ -67,10 +67,14 @@ function avrilly_setup() {
 	) );
 
 	// Setup the WordPress core custom background feature.
-	add_theme_support( 'custom-background', apply_filters( 'avrilly_custom_background_args', array(
-		'default-color' => 'FFFFFF',
-		'default-image' => '',
-	) ) );
+	add_theme_support( 'custom-background', array(
+		'default-color' => 'ffffff'
+	) );
+		// Add support for editor styles.
+		add_theme_support( 'editor-styles' );
+
+		// Enqueue editor styles.
+		add_editor_style( 'editor-style.css' );
 
 	/*
 	* Let WordPress manage the document title.
@@ -83,6 +87,7 @@ function avrilly_setup() {
 	add_theme_support( 'custom-logo', array(
 		'height'      => 77,
 		'width'       => 240,
+		'flex-width'  => false,
 		'flex-height' => true,
 	) );
 
@@ -91,27 +96,19 @@ endif; // avrilly_setup
 add_action( 'after_setup_theme', 'avrilly_setup' );
 
 
+if ( ! function_exists( 'avrilly_the_custom_logo' ) ) :
 /**
  * Displays the optional custom logo.
  *
  * Does nothing if the custom logo is not available.
  *
  */
-if ( ! function_exists( 'avrilly_the_custom_logo' ) ) :
 function avrilly_the_custom_logo() {
-	// Try to retrieve the Custom Logo
-	$output = '';
-	if ((function_exists('get_custom_logo'))&&(has_custom_logo())) {
-		echo get_custom_logo();
-
-		// Nothing in the output: Custom Logo is not supported, or there is no selected logo
-		// In both cases we display the site's name
-	} else {
-		echo '<hgroup><h1><a href="' . esc_url(home_url('/')) . '" rel="home">' . esc_attr(get_bloginfo('name')) . '</a></h1></hgroup>';
+	if ( function_exists( 'the_custom_logo' ) ) {
+		the_custom_logo();
 	}
 }
-endif; // sanremo_custom_logo
-
+endif;
 
 /*
  * Add Bootstrap classes to the main-content-area wrapper.
@@ -331,11 +328,12 @@ function avrilly_footer_credits() {
 	?>
 	<div class="site-info">
 	<?php if ($avrilly_footer_text == '') { ?>
-	&copy; <?php echo date_i18n( __( 'Y', 'avrilly' ) ); ?> <?php bloginfo( 'name' ); ?><?php esc_html_e('. All rights reserved.', 'avrilly'); ?>
+	&copy; <?php bloginfo( 'name' ); ?><?php esc_html_e('. All rights reserved.', 'avrilly'); ?>
 	<?php } else { echo esc_html( $avrilly_footer_text ); } ?>
 	</div><!-- .site-info -->
 
 	<?php
+	/* translators: %1$s and %2$s is replaced with links to developer website and WordPress.org website */
 	printf( esc_html__( 'Theme by %1$s Powered by %2$s', 'avrilly' ) , '<a href="https://moozthemes.com/" target="_blank">MOOZ Themes</a>', '<a href="http://wordpress.org/" target="_blank">WordPress</a>');
 }
 add_action( 'avrilly_footer', 'avrilly_footer_credits' );

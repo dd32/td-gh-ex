@@ -1,8 +1,8 @@
 <?php get_header(); ?>
 		
 	<div id="primary" class="content-area">
-		<?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
-		<main id="main" class="site-main <?php echo "page-".$paged;?>" role="main">
+		<?php $avrilly_paged = (get_query_var('paged')) ? get_query_var('paged') : 1; ?>
+		<main id="main" class="site-main <?php echo "page-".esc_html($avrilly_paged);?>" role="main">
 		
 			<?php if ( have_posts() ) : ?>
 

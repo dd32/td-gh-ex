@@ -68,9 +68,9 @@
 								<!-- tags -->
 								<div class="entry-tags">
 									<?php
-										$tags = get_the_tags(get_the_ID());
-										foreach($tags as $tag){
-											echo '<a href="'.esc_url(get_tag_link($tag->term_id)).'"><i class="fa fa-tags"></i>'.esc_html($tag->name).'</a> ';
+										$etags = get_the_tags(get_the_ID());
+										foreach($etags as $etag){
+											echo '<a href="'.esc_url(get_tag_link($etag->term_id)).'"><i class="fa fa-tags"></i>'.esc_html($etag->name).'</a> ';
 										}
 									?>
 
