@@ -1,20 +1,20 @@
 var actinia = ( function() {
-	var navbar = document.getElementById( 'site-navigation' );
-	var menu = document.getElementById( 'primary-menu' );
-	var menuItemsWithChildren = navbar.querySelectorAll( '#primary-menu > .menu-item-has-children' );
-	var parentLinks = navbar.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' );
-	var menuToggler = navbar.getElementsByClassName( 'menu-toggle-btn' )[ 0 ];//toggles navbar on small screens
+	var navbar = document.getElementById( 'site-navigation' ) || undefined;
+	var menu = document.getElementById( 'primary-menu' ) || undefined;
+	var menuItemsWithChildren = navbar.querySelectorAll( '#primary-menu > .menu-item-has-children' ) || undefined;
+	var parentLinks = navbar.querySelectorAll( '.menu-item-has-children > a, .page_item_has_children > a' ) || undefined;
+	var menuToggler = navbar.getElementsByClassName( 'menu-toggle-btn' )[ 0 ] || undefined;//toggles navbar on small screens
 	if ( menu ) {
-		var toggleButtons = menu.getElementsByClassName( 'dropdown-toggle' );//toggles submenus
+		var toggleButtons = menu.getElementsByClassName( 'dropdown-toggle' ) || undefined;//toggles submenus
 	}
 	var windowWidth = document.documentElement.clientWidth;
 	var hasVerticalNavbar = document.body.classList.contains( 'navbar-side' );
 	var hasLeftSidebar = document.body.classList.contains( 'left-sidebar' );
 	var searchFormToggler = document.getElementsByClassName( 'searchform-toggle' )[ 0 ];
 	var searchForm = document.getElementsByClassName( 'search-form' )[ 0 ];
-	var closeLink = document.getElementsByClassName( 'hide-form-btn' )[ 0 ];
+	var closeLink = document.getElementsByClassName( 'hide-form-btn' )[ 0 ] || undefined;
 	var scrollButton = document.querySelector( '.anchor' );
-	var tables = document.getElementById('primary').getElementsByTagName( 'table' );
+	var tables = document.getElementById('primary').getElementsByTagName( 'table' ) || undefined;
 	var _forEach = Array.prototype.forEach;
 	var resized;
 

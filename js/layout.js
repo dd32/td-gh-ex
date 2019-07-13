@@ -27,12 +27,6 @@
 	//hide or show scroll to top button
 	window.addEventListener( 'scroll', handleScroll );
 
-	//remove header-img class in wp theme directory preview
-	if ( document.getElementsByClassName('site-branding')[0].style.backgroundImage === '' 
-		&& document.body.classList.contains( 'header-img' ) ) {
-			document.body.classList.remove( 'header-img' );
-	}
-
 	//wrap tables in div to allow scrolling
 	if ( tables ) {
 		wrapTables();

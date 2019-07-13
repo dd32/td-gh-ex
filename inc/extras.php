@@ -25,7 +25,7 @@ function actinia_body_classes( $classes ) {
 		$classes[] = 'hfeed';
 	}
 
-	if ( get_header_image() !== false ) {
+	if ( has_header_image() !== false ) {
 		$classes[] = 'header-img';
 	}
 
