@@ -4,7 +4,7 @@ Description: AyaWild is a fully responsive WordPress Theme. Features include a B
 Theme URI: https://ayatemplates.com/product/ayawild
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.1.1
+Version: 1.1.2
 Text Domain: ayawild
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets, full-width-template, editor-style
 License: GNU General Public License v2.0
@@ -2089,20 +2089,7 @@ blockquote {
 }
 
 /* Blocks */
-/* !Block styles */
-article > *,
-.entry .entry-summary > * {
-  margin: 32px 0;
-  max-width: 100%;
-}
 
-
-@media only screen and (min-width: 768px) {
-  article > *,
-  .entry .entry-summary > * {
-    margin: 32px 0;
-  }
-}
 
 article > * > *:first-child,
 .entry .entry-summary > * > *:first-child {
