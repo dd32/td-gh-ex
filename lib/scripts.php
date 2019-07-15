@@ -52,7 +52,7 @@ function virtue_scripts() {
 		$gmap_api = '';
 	}
 	wp_register_script( 'virtue_google_map_api', 'https://maps.googleapis.com/maps/api/js?key=' . esc_attr( $gmap_api ), array( 'jquery' ), VIRTUE_VERSION, true );
-	wp_register_script( 'virtue_gmap', get_template_directory_uri() . '/assets/js/min/virtue-gmap-min.js', array( 'jquery' ), VIRTUE_VERSION, true );
+	wp_register_script( 'virtue_gmap', get_template_directory_uri() . '/assets/js/min/virtue-gmap-min.js', array( 'jquery', 'virtue_google_map_api' ), VIRTUE_VERSION, true );
 	wp_register_script( 'virtue_contact_validation', get_template_directory_uri() . '/assets/js/min/virtue-contact-validation-min.js', array( 'jquery' ), VIRTUE_VERSION, true );
 	// Localize the script with new data.
 	$contact_translation_array = array(

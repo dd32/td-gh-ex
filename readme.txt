@@ -30,6 +30,9 @@ Yes, go here: https://wordpress.org/support/theme/virtue
 
 = Theme Name: Virtue =
 
+= Version 3.3.7 | 15th July 2019 = 
+* Fix: Google Map Issue.
+
 = Version 3.3.6 | 12th July 2019 = 
 * Fix: Gallery Caption issue.
 
