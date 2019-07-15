@@ -22,7 +22,7 @@ if ( post_password_required() ) {
 			if ( '1' === $comments_number ) {
 				/* translators: %s: post title */
 				printf( esc_html__( 'One Reply to &ldquo;%s&rdquo;', 'aagaz-startup' ), get_the_title() );
-			} else {
+			} 	else {
 				printf(
 				    esc_html(
 					    /* translators: 1: number of comments, 2: post title */

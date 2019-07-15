@@ -268,6 +268,110 @@ msgstr ""
 msgid 'Description of what this panel does.'
 msgstr ""
 
+#: inc/customizer.php:118
+msgid 'Typography'
+msgstr ""
+
+#: inc/customizer.php:129
+msgid 'Paragraph Color'
+msgstr ""
+
+#: inc/customizer.php:143
+msgid 'Paragraph Fonts'
+msgstr ""
+
+#: inc/customizer.php:153
+msgid 'Paragraph Font Size'
+msgstr ""
+
+#: inc/customizer.php:165
+msgid '"a" Tag Color'
+msgstr ""
+
+#: inc/customizer.php:179
+msgid '"a" Tag Fonts'
+msgstr ""
+
+#: inc/customizer.php:190
+msgid '"li" Tag Color'
+msgstr ""
+
+#: inc/customizer.php:204
+msgid '"li" Tag Fonts'
+msgstr ""
+
+#: inc/customizer.php:215
+msgid 'h1 Color'
+msgstr ""
+
+#: inc/customizer.php:229
+msgid 'h1 Fonts'
+msgstr ""
+
+#: inc/customizer.php:40
+msgid 'h1 Font Size'
+msgstr ""
+
+#: inc/customizer.php:252
+msgid 'h2 Color'
+msgstr ""
+
+#: inc/customizer.php:266
+msgid 'h2 Fonts'
+msgstr ""
+
+#: inc/customizer.php:277
+msgid 'h2 Font Size'
+msgstr ""
+
+#: inc/customizer.php:289
+msgid 'h3 Color'
+msgstr ""
+
+#: inc/customizer.php:303
+msgid 'h3 Fonts'
+msgstr ""
+
+#: inc/customizer.php:314
+msgid 'h3 Font Size'
+msgstr ""
+
+#: inc/customizer.php:326
+msgid 'h4 Color'
+msgstr ""
+
+#: inc/customizer.php:340
+msgid 'h4 Fonts'
+msgstr ""
+
+#: inc/customizer.php:351
+msgid 'h4 Font Size'
+msgstr ""
+
+#: inc/customizer.php:363
+msgid 'h5 Color'
+msgstr ""
+
+#: inc/customizer.php:377
+msgid 'h5 Fonts'
+msgstr ""
+
+#: inc/customizer.php:388
+msgid 'h5 Font Size'
+msgstr ""
+
+#: inc/customizer.php:400
+msgid 'h6 Color'
+msgstr ""
+
+#: inc/customizer.php:414
+msgid 'h6 Fonts'
+msgstr ""
+
+#: inc/customizer.php:425
+msgid 'h6 Font Size'
+msgstr ""
+
 #: inc/customizer.php:23
 msgid 'Theme Color Option'
 msgstr ""

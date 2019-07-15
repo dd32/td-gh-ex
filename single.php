@@ -41,7 +41,7 @@ get_header(); ?>
 
 				endwhile; // End of the loop.
 
-				the_tags(); s
+				the_tags(); 
 
 				?>
 			</div>

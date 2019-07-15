@@ -14,7 +14,6 @@ get_header(); ?>
                 <?php dynamic_sidebar('sidebox-2'); ?>
             </div>
     		<div class="col-lg-8 col-md-8" id="main-content">
-
     			<?php while ( have_posts() ) : the_post(); ?>	
                     
                     <h1><?php the_title();?></h1>

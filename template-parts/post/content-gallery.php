@@ -14,7 +14,6 @@
               echo ( get_post_gallery() );
             echo '</div>';
           };
-
         };
       ?>
     </div>

@@ -16,9 +16,8 @@
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <div class="blogger">
     <div class="post-image">
-        <?php
+      <?php
         if ( ! is_single() ) {
-
           // If not a single post, highlight the video file.
           if ( ! empty( $video ) ) {
             foreach ( $video as $video_html ) {

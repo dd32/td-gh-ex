@@ -12,13 +12,11 @@
     $audio = get_media_embedded_in_content( $content, array( 'audio' ) );
   }
 ?>
-
 <div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <div class="blogger">
     <div class="post-image">
       <?php
         if ( ! is_single() ) {
-
           // If not a single post, highlight the audio file.
           if ( ! empty( $audio ) ) {
             foreach ( $audio as $audio_html ) {
@@ -27,7 +25,6 @@
               echo '</div><!-- .entry-audio -->';
             }
           };
-
         };
       ?>
     </div>
