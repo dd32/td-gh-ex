@@ -42,6 +42,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.0.6 =
+* fix issue with posts and pages title space
+
 = 1.0.5 =
 * define css code blocks
 * PHP 5.6.0 min version
