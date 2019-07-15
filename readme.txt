@@ -40,6 +40,9 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.1.0 =
+* fix issue with posts and pages title space
+
 = 1.0.9 =
 * define css code blocks
 * PHP 5.6.0 min version

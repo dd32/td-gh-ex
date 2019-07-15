@@ -4,7 +4,7 @@ Description: AyaHandmade is Fully Responsive WordPress Theme, suitable for handm
 Theme URI: https://ayatemplates.com/product/ayahandmade
 Author: ayatemplates
 Author URI: https://ayatemplates.com
-Version: 1.0.9
+Version: 1.1.0
 Text Domain: ayahandmade
 Tags: blog, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, full-width-template, editor-style
 License: GNU General Public License v2.0
@@ -1469,20 +1469,7 @@ dt.gallery-icon > a:before,
 }
 
 /* Blocks */
-/* !Block styles */
-article > *,
-.entry .entry-summary > * {
-  margin: 32px 0;
-  max-width: 100%;
-}
 
-
-@media only screen and (min-width: 768px) {
-  article > *,
-  .entry .entry-summary > * {
-    margin: 32px 0;
-  }
-}
 
 article > * > *:first-child,
 .entry .entry-summary > * > *:first-child {
