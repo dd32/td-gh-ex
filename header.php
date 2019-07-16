@@ -34,19 +34,39 @@ if( ! defined( 'ABSPATH' ) ) {
 
 </head>
 
-<body <?php body_class('stretched'); ?>>
+<body <?php body_class(); ?>>
 
 <!-- Main Wrapper Start -->
-<div id="main-wrapper">
+<div id="agama-main-wrapper" class="<?php Agama::main_wrapper_class(); ?>">
+    
+    <?php
+    /**
+     * Before Header Wrapper
+     *
+     * Attach custom functions before header wrapper.
+     *
+     * @since 1.4.4
+     */
+    do_action( 'agama/before_header_wrapper' ); ?>
 	
 	<!-- Header Start -->
-	<header id="masthead" class="site-header <?php Agama::header_class(); ?> clearfix" role="banner">
+	<header id="masthead" class="site-header <?php Agama::header_class(); ?>" itemscope itemtype="http://schema.org/WPHeader" role="banner">
 		
 		<?php Agama_Helper::get_header(); ?>
 		
-		<?php Agama_Helper::get_header_image(); ?>
-		
 	</header><!-- Header End -->
+    
+    <?php
+    /**
+     * After Header Wrapper
+     *
+     * Attach custom functions after header wrapper.
+     *
+     * @since 1.4.4
+     */
+    do_action( 'agama/after_header_wrapper' ); ?>
+    
+    <?php Agama_Helper::get_header_image(); ?>
 	
 	<?php Agama_Helper::get_slider(); ?>
 	
@@ -54,7 +74,7 @@ if( ! defined( 'ABSPATH' ) ) {
 
 	<div id="page" class="hfeed site">
 		<div id="main" class="wrapper"> 
-			<div class="vision-row clearfix">
+			<div class="vision-row tv-row">
 
                 <?php do_action( 'agama_customize_build_page_action_start' ); ?>
 

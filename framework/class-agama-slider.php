@@ -71,9 +71,9 @@ class Agama_Slider {
 						echo '<div data-src="'. $slide['1']['img'] .'" data-alt="'. $slide['1']['title'] .'">';
 							echo '<div class="slide-content slide-1">';
 								echo '<div class="slide-content-cell">';
-									echo '<div class="container">';
-										echo '<div class="row">';
-											echo '<div class="col-md-12 col-sm-12 col-xs-12">';
+									echo '<div class="tv-container">';
+										echo '<div class="tv-row">';
+											echo '<div class="tv-col-md-12 tv-col-sm-12 tv-col-xs-12">';
 												if( $slide['1']['title'] ) {
 													echo '<h2 class="slide-title animated '. $slide['1']['animate'] .'" style="color:'. $slide['1']['title_color'] .';">';
 														echo $slide['1']['title'];
@@ -95,9 +95,9 @@ class Agama_Slider {
 						echo '<div data-src="'. $slide['2']['img'] .'" data-alt="'. $slide['2']['title'] .'">';
 							echo '<div class="slide-content slide-2">';
 								echo '<div class="slide-content-cell">';
-									echo '<div class="container">';
-										echo '<div class="row">';
-											echo '<div class="col-md-12 col-sm-12 col-xs-12">';
+									echo '<div class="tv-container">';
+										echo '<div class="tv-row">';
+											echo '<div class="tv-col-md-12 tv-col-sm-12 tv-col-xs-12">';
 												if( $slide['2']['title'] ) {
 													echo '<h2 class="slide-title animated '. $slide['2']['animate'] .'" style="color:'. $slide['2']['title_color'] .';">';
 														echo $slide['2']['title'];

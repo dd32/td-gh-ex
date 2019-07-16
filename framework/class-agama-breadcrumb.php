@@ -193,12 +193,18 @@ class Agama_Breadcrumb {
 		if( $enabled ) {
 			echo '<!-- Breadcrumb -->';
 			echo '<section id="page-title"'. $style .'">';
-				echo '<div class="container clearfix">';
-					echo $heading; 
-					echo '<ol class="breadcrumb">';
-						echo '<li><a href="'. esc_url( home_url( '/' ) ) .'"><i class="fa fa-home"></i></a></li>';
-							echo $title;
-					echo '</ol>';
+				echo '<div class="tv-container clearfix">';
+                    echo '<div class="tv-row">';
+                        echo '<div class="tv-col-md-6">';
+                            echo $heading;
+                        echo '</div>';
+                        echo '<div class="tv-col-md-6 tv-d-flex tv-flex-row-reverse">';
+                            echo '<ol class="breadcrumb tv-d-flex">';
+                                echo '<li><a href="'. esc_url( home_url( '/' ) ) .'"><i class="fa fa-home"></i></a></li>';
+                                    echo $title;
+                            echo '</ol>';
+                        echo '</div>';
+                    echo '</div>';
 				echo '</div>';
 			echo '</section><!-- / Breadcrumb -->';
 		}

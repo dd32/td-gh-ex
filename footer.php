@@ -29,48 +29,47 @@ if( ! defined( 'ABSPATH' ) ) {
 	  ): ?>
 	<!-- Footer Widgets Start -->
 	<div class="footer-widgets">
-		<div class="container">
-			
-			<?php if( is_active_sidebar( 'footer-widget-1' ) ): ?>
-			<div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
-				<?php dynamic_sidebar( 'footer-widget-1' ); ?>
-			</div>
-			<?php endif; ?>
-			
-			<?php if( is_active_sidebar( 'footer-widget-2' ) ): ?>
-			<div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
-				<?php dynamic_sidebar( 'footer-widget-2' ); ?>
-			</div>
-			<?php endif; ?>
-			
-			<?php if( is_active_sidebar( 'footer-widget-3' ) ): ?>
-			<div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
-				<?php dynamic_sidebar( 'footer-widget-3' ); ?>
-			</div>
-			<?php endif; ?>
-			
-			<?php if( is_active_sidebar( 'footer-widget-4' ) ): ?>
-			<div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
-				<?php dynamic_sidebar( 'footer-widget-4' ); ?>
-			</div>
-			<?php endif; ?>
-			
-		</div>
+        <div class="tv-row">
+
+            <?php if( is_active_sidebar( 'footer-widget-1' ) ): ?>
+            <div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
+                <?php dynamic_sidebar( 'footer-widget-1' ); ?>
+            </div>
+            <?php endif; ?>
+
+            <?php if( is_active_sidebar( 'footer-widget-2' ) ): ?>
+            <div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
+                <?php dynamic_sidebar( 'footer-widget-2' ); ?>
+            </div>
+            <?php endif; ?>
+
+            <?php if( is_active_sidebar( 'footer-widget-3' ) ): ?>
+            <div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
+                <?php dynamic_sidebar( 'footer-widget-3' ); ?>
+            </div>
+            <?php endif; ?>
+
+            <?php if( is_active_sidebar( 'footer-widget-4' ) ): ?>
+            <div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
+                <?php dynamic_sidebar( 'footer-widget-4' ); ?>
+            </div>
+            <?php endif; ?>
+
+        </div>
 	</div><!-- Footer Widgets End -->
 	<?php endif; ?>
 	
 	<!-- Footer Start -->
-	<footer id="colophon" class="clear" role="contentinfo">
-		<div class="footer-sub-wrapper clear">
-			<div class="site-info col-md-6">
+	<footer id="agama-footer" class="tv-d-block" role="contentinfo">
+		<div class="tv-container tv-p-0 tv-d-flex tv-justify-content-between tv-align-items-center">
+			
+            <div class="site-info">
 				<?php do_action('agama_credits'); ?>
-			</div><!-- .site-info -->
+			</div>
 			
 			<?php if( get_theme_mod('agama_footer_social', true) ): ?>
-			<div class="social col-md-6">
-				
+			<div class="social">
 				<?php Agama::social_icons('top'); ?>
-				
 			</div>
 			<?php endif; ?>
 			

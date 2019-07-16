@@ -71,7 +71,7 @@ input[type="reset"]:active {
     border: 1px solid #5e5e5e;
 }
 
-#main-wrapper,
+#agama-main-wrapper,
 .site {
 	background-color: #363636;
 }
@@ -84,7 +84,10 @@ input[type="reset"]:active {
 
 /* Frontpage Boxes
 -----------------------------------------------------------------*/
-#frontpage-boxes h2 { color: #8F8F8F; }
+#frontpage-boxes h1,
+#frontpage-boxes h2 { 
+    color: #8F8F8F; 
+}
 
 /* Author */
 .author-info {
@@ -158,14 +161,21 @@ article.sticky .featured-post {
 .entry-meta a:hover {
 	color: #aaa9a9;
 }
+
+.si-share {
+    border-top: 1px solid #545454;
+    border-bottom: 1px solid #545454;
+}
+
 nav.nav-single {
     border-top-color: #545454;
 }
+
 nav.nav-single a {
     color: #555;
 }
 
-footer[role="contentinfo"] {
+#agama-footer {
 	border-top-color: #545454;
 	color: #b8b8b8;
 }

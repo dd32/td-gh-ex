@@ -14,6 +14,10 @@ if( ! defined( 'ABSPATH' ) ) {
 
 get_header(); ?>
 
+    <?php if( 'left' == agama_sidebar_position() ): ?>
+        <?php get_sidebar(); ?>
+    <?php endif; ?>
+
 	<div id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
 		<div id="content" role="main"<?php Agama_Helper::get_blog_isotope_class(); ?>>
             
@@ -62,5 +66,8 @@ get_header(); ?>
         
 	</div>
 
-<?php get_sidebar(); ?>
+    <?php if( 'right' == agama_sidebar_position() ): ?>
+        <?php get_sidebar(); ?>
+    <?php endif; ?>
+
 <?php get_footer(); ?>

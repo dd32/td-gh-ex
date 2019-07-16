@@ -3,6 +3,21 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.4.4 - 16 July 2019 =
+* Added "agama/before_header_wrapper" action hook.
+* Added "agama/after_header_wrapper" action hook.
+* Updated Bootstrap from 3.x to 4.x
+* Updated Kirki framework to the latest version.
+* Updated superfish jQuery plugin.
+* Updated hoverIntent jQuery plugin.
+* Updated theme translation files.
+* Improved body font switching without customize refresh.
+* Improved layout style switching without customize refresh.
+* Improved breadcrumb color switching without customize refresh.
+* Fixed PHP notice (Notice: Trying to get property of non-object) in agama-actions.php
+* Fixed customize page builder go to selected page bug.
+* Removed enable/disable header shrinking setting.
+
 = 1.4.3 - 06 May 2019 =
 * Updated theme translation files.
 * Removed Forrst social icon.

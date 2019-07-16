@@ -14,7 +14,7 @@ class Agama_Partial_Refresh {
      */
     function preview_top_navigation() {
         if( get_theme_mod( 'agama_top_navigation', true ) ) {
-            return Agama::menu( 'top', 'top-nav-menu' );
+            return Agama::menu( 'top', 'agama-navigation' );
         }
     }
     

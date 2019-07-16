@@ -41,7 +41,7 @@ class Agama_Helper {
 	 * @since 1.2.9.2
 	 */
 	public static function get_mobile_menu_toggle_icon() {
-		echo '<!-- Mobile Navigation Toggle -->';
+		echo '<!-- Mobile Toggle -->';
 		echo '<button class="mobile-menu-toggle toggle--elastic" type="button" aria-label="'. __( 'Menu', 'agama' ) .'" aria-controls="navigation" aria-expanded="true/false">';
 			echo '<span class="mobile-menu-toggle-box">';
 				echo '<span class="mobile-menu-toggle-inner"></span>';
@@ -51,8 +51,7 @@ class Agama_Helper {
 					echo esc_html( get_theme_mod( 'agama_nav_mobile_icon_title', false ) );
 				echo '</span>';
 			}
-		echo '</button>';
-		echo '<!-- Mobile Navigation Toggle End -->';
+		echo '</button><!-- Mobile Toggle End -->';
 	}
 	
 	/**
@@ -173,16 +172,16 @@ class Agama_Helper {
 		}
 		switch( $count ) {
 			case '1':
-				echo esc_attr( 'col-md-12' );
+				echo esc_attr( 'tv-col-md-12' );
 			break;
 			case '2':
-				echo esc_attr( 'col-md-6' );
+				echo esc_attr( 'tv-col-md-6' );
 			break;
 			case '3':
-				echo esc_attr( 'col-md-4' );
+				echo esc_attr( 'tv-col-md-4' );
 			break;
 			case '4':
-				echo esc_attr( 'col-md-3' );
+				echo esc_attr( 'tv-col-md-6 tv-col-lg-3' );
 			break;
 		}
 	}

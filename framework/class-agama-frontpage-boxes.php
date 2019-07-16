@@ -57,15 +57,15 @@ class Agama_Front_Page_Boxes {
 				$box['count']++;
 			switch( $box['count'] ) {
 				case '1':
-					$box['class'] = esc_attr( 'col-md-12' );
+					$box['class'] = esc_attr( 'tv-col-md-12' );
 				break;
 				case '2':
-					$box['class'] = esc_attr( 'col-md-6' );
+					$box['class'] = esc_attr( 'tv-col-md-6' );
 				break;
 				case '3':
-					$box['class'] = esc_attr( 'col-md-4' );
+					$box['class'] = esc_attr( 'tv-col-md-4' );
 				break;
-				default: $box['class'] = esc_attr( 'col-md-3' );
+				default: $box['class'] = esc_attr( 'tv-col-md-6 tv-col-lg-3' );
 			}
 			
 			$box[1]['title'] 		= esc_html( get_theme_mod( 'agama_frontpage_box_1_title', 'Responsive Layout' ) );
@@ -138,122 +138,124 @@ class Agama_Front_Page_Boxes {
 			$enabled && $boxes['enabled'] && $boxes['visibility'] == 'frontpage' && is_front_page() || 
 			$enabled && $boxes['enabled'] && $boxes['visibility'] == 'allpages' 
 		) {
-			echo '<div id="frontpage-boxes" class="clearfix">';
+			echo '<div id="frontpage-boxes" class="tv-row">';
                 if( $boxes['heading'] ) {
-                    echo '<h1>'. $boxes['heading'] .'</h1>';
+                    echo '<div class="tv-col-md-12">';
+                        echo '<h1>'. $boxes['heading'] .'</h1>';
+                    echo '</div>';
                 }
-				if( $box[1]['enable'] ) {
-					echo '<!-- Frontpage Box 1 -->';
-					echo '<div class="'. $box['class'] .' fbox-1"'. $box[1]['data-animated'] .'>';
-						if( $box[1]['iurl'] ) {
-							echo '<a href="'. $box[1]['iurl'] .'">';
-						}
-						if( $box[1]['img'] ) {
+                if( $box[1]['enable'] ) {
+                    echo '<!-- Frontpage Box 1 -->';
+                    echo '<div class="'. $box['class'] .' fbox-1"'. $box[1]['data-animated'] .'>';
+                        if( $box[1]['iurl'] ) {
+                            echo '<a href="'. $box[1]['iurl'] .'">';
+                        }
+                        if( $box[1]['img'] ) {
                             echo '<img src="'. $box[1]['img'] .'" alt="'. $box[1]['title'] .'">';
-						} else {
+                        } else {
                             if( is_customize_preview() ) { 
                                 echo '<span class="fbox-icon" style="display:block;text-align:center;">';
                                     echo '<i class="fa '. $box[1]['icon'] .'"></i>';
                                 echo '</span>';
                             } else {
-				                echo '<i class="fa '. $box[1]['icon'] .'"></i>';
+                                echo '<i class="fa '. $box[1]['icon'] .'"></i>';
                             }
-						}
-						if( $box[1]['iurl'] ) {
-							echo '</a>';
-						}
-						if( $box[1]['title'] ) {
-							echo '<h2>'. $box[1]['title'] .'</h2>';
-						}
-						if( $box[1]['desc'] ) {
-							echo '<p>'. $box[1]['desc'] .'</p>';
-						}
-					echo '</div><!-- End Frontpage Box 1 -->';
-				}
-				if( $box[2]['enable'] ) {
-					echo '<!-- Frontpage Box 2 -->';
-					echo '<div class="'. $box['class'] .' fbox-2"'. $box[2]['data-animated'] .'>';
-						if( $box[2]['iurl'] ) {
-							echo '<a href="'. $box[2]['iurl'] .'">';
-						}
-						if( $box[2]['img'] ) {
+                        }
+                        if( $box[1]['iurl'] ) {
+                            echo '</a>';
+                        }
+                        if( $box[1]['title'] ) {
+                            echo '<h2>'. $box[1]['title'] .'</h2>';
+                        }
+                        if( $box[1]['desc'] ) {
+                            echo '<p>'. $box[1]['desc'] .'</p>';
+                        }
+                    echo '</div><!-- End Frontpage Box 1 -->';
+                }
+                if( $box[2]['enable'] ) {
+                    echo '<!-- Frontpage Box 2 -->';
+                    echo '<div class="'. $box['class'] .' fbox-2"'. $box[2]['data-animated'] .'>';
+                        if( $box[2]['iurl'] ) {
+                            echo '<a href="'. $box[2]['iurl'] .'">';
+                        }
+                        if( $box[2]['img'] ) {
                             echo '<img src="'. $box[2]['img'] .'" alt="'. $box[2]['title'] .'">';
-						} else {
-							if( is_customize_preview() ) { 
+                        } else {
+                            if( is_customize_preview() ) { 
                                 echo '<span class="fbox-icon" style="display:block;text-align:center;">';
                                     echo '<i class="fa '. $box[2]['icon'] .'"></i>';
                                 echo '</span>';
                             } else {
-				                echo '<i class="fa '. $box[2]['icon'] .'"></i>';
+                                echo '<i class="fa '. $box[2]['icon'] .'"></i>';
                             }
-						}
-						if( $box[2]['iurl'] ) {
-							echo '</a>';
-						}
-						if( $box[2]['title'] ) {
-							echo '<h2>'. $box[2]['title'] .'</h2>';
-						}
-						if( $box[2]['desc'] ) {
-							echo '<p>'. $box[2]['desc'] .'</p>';
-						}
-					echo '</div><!-- End Frontpage Box 2 -->';
-				}
-				if( $box[3]['enable'] ) {
-					echo '<!-- Frontpage Box 3 -->';
-					echo '<div class="'. $box['class'] .' fbox-3"'. $box[3]['data-animated'] .'>';
-						if( $box[3]['iurl'] ) {
-							echo '<a href="'. $box[3]['iurl'] .'">';
-						}
-						if( $box[3]['img'] ) {
-							echo '<img src="'. $box[3]['img'] .'" alt="'. $box[3]['title'] .'">';
-						} else {
-							if( is_customize_preview() ) { 
+                        }
+                        if( $box[2]['iurl'] ) {
+                            echo '</a>';
+                        }
+                        if( $box[2]['title'] ) {
+                            echo '<h2>'. $box[2]['title'] .'</h2>';
+                        }
+                        if( $box[2]['desc'] ) {
+                            echo '<p>'. $box[2]['desc'] .'</p>';
+                        }
+                    echo '</div><!-- End Frontpage Box 2 -->';
+                }
+                if( $box[3]['enable'] ) {
+                    echo '<!-- Frontpage Box 3 -->';
+                    echo '<div class="'. $box['class'] .' fbox-3"'. $box[3]['data-animated'] .'>';
+                        if( $box[3]['iurl'] ) {
+                            echo '<a href="'. $box[3]['iurl'] .'">';
+                        }
+                        if( $box[3]['img'] ) {
+                            echo '<img src="'. $box[3]['img'] .'" alt="'. $box[3]['title'] .'">';
+                        } else {
+                            if( is_customize_preview() ) { 
                                 echo '<span class="fbox-icon" style="display:block;text-align:center;">';
                                     echo '<i class="fa '. $box[3]['icon'] .'"></i>';
                                 echo '</span>';
                             } else {
-				                echo '<i class="fa '. $box[3]['icon'] .'"></i>';
+                                echo '<i class="fa '. $box[3]['icon'] .'"></i>';
                             }
-						}
-						if( $box[3]['iurl'] ) {
-							echo '</a>';
-						}
-						if( $box[3]['title'] ) {
-							echo '<h2>'. $box[3]['title'] .'</h2>';
-						}
-						if( $box[3]['desc'] ) {
-							echo '<p>'. $box[3]['desc'] .'</p>';
-						}
-					echo '</div><!-- End Frontpage Box 3 -->';
-				}
-				if( $box[4]['enable'] ) {
-					echo '<!-- Frontpage Box 4 -->';
-					echo '<div class="'. $box['class'] .' fbox-4"'. $box[4]['data-animated'] .'>';
-						if( $box[4]['iurl'] ) {
-							echo '<a href="'. $box[4]['iurl'] .'">';
-						}
-						if( $box[4]['img'] ) {
-							echo '<img src="'. $box[4]['img'] .'" alt="'. $box[4]['title'] .'">';
-						} else {
-							if( is_customize_preview() ) { 
+                        }
+                        if( $box[3]['iurl'] ) {
+                            echo '</a>';
+                        }
+                        if( $box[3]['title'] ) {
+                            echo '<h2>'. $box[3]['title'] .'</h2>';
+                        }
+                        if( $box[3]['desc'] ) {
+                            echo '<p>'. $box[3]['desc'] .'</p>';
+                        }
+                    echo '</div><!-- End Frontpage Box 3 -->';
+                }
+                if( $box[4]['enable'] ) {
+                    echo '<!-- Frontpage Box 4 -->';
+                    echo '<div class="'. $box['class'] .' fbox-4"'. $box[4]['data-animated'] .'>';
+                        if( $box[4]['iurl'] ) {
+                            echo '<a href="'. $box[4]['iurl'] .'">';
+                        }
+                        if( $box[4]['img'] ) {
+                            echo '<img src="'. $box[4]['img'] .'" alt="'. $box[4]['title'] .'">';
+                        } else {
+                            if( is_customize_preview() ) { 
                                 echo '<span class="fbox-icon" style="display:block;text-align:center;">';
                                     echo '<i class="fa '. $box[4]['icon'] .'"></i>';
                                 echo '</span>';
                             } else {
-				                echo '<i class="fa '. $box[4]['icon'] .'"></i>';
+                                echo '<i class="fa '. $box[4]['icon'] .'"></i>';
                             }
-						}
-						if( $box[4]['iurl'] ) {
-							echo '</a>';
-						}
-						if( $box[4]['title'] ) {
-							echo '<h2>'. $box[4]['title'] .'</h2>';
-						}
-						if( $box[4]['desc'] ) {
-							echo '<p>'. $box[4]['desc'] .'</p>';
-						}
-					echo '</div><!-- End Frontpage Box 4 -->';
-				}
+                        }
+                        if( $box[4]['iurl'] ) {
+                            echo '</a>';
+                        }
+                        if( $box[4]['title'] ) {
+                            echo '<h2>'. $box[4]['title'] .'</h2>';
+                        }
+                        if( $box[4]['desc'] ) {
+                            echo '<p>'. $box[4]['desc'] .'</p>';
+                        }
+                    echo '</div><!-- End Frontpage Box 4 -->';
+                }
 			echo '</div>';
 		}
 	}

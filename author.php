@@ -16,13 +16,17 @@ if( ! defined( 'ABSPATH' ) ) {
 
 get_header(); ?>
     
+    <?php if( 'left' == agama_sidebar_position() ): ?>
+        <?php get_sidebar(); ?>
+    <?php endif; ?>
+
     <!-- Primary -->
 	<section id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
 	
 		
 		
-		<?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' ) { ?>
-			<?php
+		<?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' ) {
+                
 				/* Queue the first post, that way we know
 				 * what author we're dealing with (if that is the case).
 				 *
@@ -30,23 +34,15 @@ get_header(); ?>
 				 * properly with a call to rewind_posts().
 				 */
 				the_post();
-			?>
-
-			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Author Archives: %s', 'agama' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
-			</header><!-- .archive-header -->
-
-			<?php
+                
 				/* Since we called the_post() above, we need to
 				 * rewind the loop back to the beginning that way
 				 * we can run the loop properly, in full.
 				 */
 				rewind_posts();
-			?>
-
-			<?php agama_content_nav( 'nav-above' ); ?>
-
-			<?php
+                
+                agama_content_nav( 'nav-above' );
+                
 			// If a user has filled out their description, show a bio on their entries.
 			if ( get_the_author_meta( 'description' ) ) : ?>
 			<div class="author-info">
@@ -74,8 +70,8 @@ get_header(); ?>
         <!-- Content -->
 		<div id="content" role="main" <?php if( get_theme_mod('agama_blog_layout', 'list') == 'grid' && ! is_singular() ): ?>class="js-isotope"  data-isotope-options='{ "itemSelector": ".article-wrapper" }'<?php endif; ?>>
 		<?php if ( have_posts() ) : ?>
-			<?php if( get_theme_mod('agama_blog_layout', 'list') != 'grid' ) { ?>
-			<?php
+			<?php if( get_theme_mod('agama_blog_layout', 'list') != 'grid' ) { 
+                
 				/* Queue the first post, that way we know
 				 * what author we're dealing with (if that is the case).
 				 *
@@ -83,23 +79,15 @@ get_header(); ?>
 				 * properly with a call to rewind_posts().
 				 */
 				the_post();
-			?>
-
-			<header class="archive-header">
-				<h1 class="archive-title"><?php printf( __( 'Author Archives: %s', 'agama' ), '<span class="vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '" title="' . esc_attr( get_the_author() ) . '" rel="me">' . get_the_author() . '</a></span>' ); ?></h1>
-			</header><!-- .archive-header -->
-
-			<?php
+                
 				/* Since we called the_post() above, we need to
 				 * rewind the loop back to the beginning that way
 				 * we can run the loop properly, in full.
 				 */
 				rewind_posts();
-			?>
-
-			<?php agama_content_nav( 'nav-above' ); ?>
-
-			<?php
+    
+                agama_content_nav( 'nav-above' );
+                
 			// If a user has filled out their description, show a bio on their entries.
 			if ( get_the_author_meta( 'description' ) ) : ?>
 			<div class="author-info">
@@ -138,6 +126,8 @@ get_header(); ?>
         
 	</section><!-- Primary End -->
 
-<?php get_sidebar(); ?>
+    <?php if( 'right' == agama_sidebar_position() ): ?>
+        <?php get_sidebar(); ?>
+    <?php endif; ?>
 
 <?php get_footer(); ?>

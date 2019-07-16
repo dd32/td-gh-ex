@@ -65,11 +65,12 @@ if( ! class_exists( 'Agama_Page_Builder' ) ) {
          */
         function customize_preview() {
             $strings = array(
-                'skin_url' => esc_url( get_stylesheet_directory_uri() . '/assets/css/skins/' )
+                'skin_url' => AGAMA_CSS . 'skins/',
+                'layout_style' => esc_attr( get_theme_mod( 'agama_layout_style', 'fullwidth' ) )
             );
             
-            wp_register_script( 'agama-customize-preview', $this->url_path . 'assets/js/customize-preview.min.js', [ 'jquery', 'customize-preview' ], agama_version, true );
-            wp_localize_script( 'agama-customize-preview', 'agama', $strings );
+            wp_register_script( 'agama-customize-preview', AGAMA_JS . 'min/customize-preview.min.js', [ 'jquery', 'customize-preview' ], agama_version, true );
+            wp_localize_script( 'agama-customize-preview', '_AgamaPreviewData', $strings );
             wp_enqueue_script( 'agama-customize-preview' );
             
             wp_register_style( 'agama-partial-refresh', $this->url_path . '/assets/css/partial-refresh.css', array(), agama_version );
@@ -96,12 +97,12 @@ if( ! class_exists( 'Agama_Page_Builder' ) ) {
             );
             
             // Enqueue Page Builder Script
-            wp_register_script( 'agama-page-builder', $this->url_path . 'assets/js/page-builder.min.js', ['jquery'], agama_version );
+            wp_register_script( 'agama-page-builder', AGAMA_JS . 'min/customize-controls.min.js', [ 'jquery' ], agama_version );
             wp_localize_script( 'agama-page-builder', 'agama_builder', $strings );
             wp_enqueue_script( 'agama-page-builder' );
             
             // Enqueue Page Builder Stylesheet
-            wp_register_style( 'agama-page-builder', $this->url_path . 'assets/css/page-builder.css', array(), agama_version );
+            wp_register_style( 'agama-page-builder', $this->url_path . 'assets/css/page-builder.css', [], agama_version );
             wp_enqueue_style( 'agama-page-builder' );
         }
         

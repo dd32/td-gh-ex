@@ -7,44 +7,53 @@ if( ! defined( 'ABSPATH' ) ) {
 
 global $top_nav, $social_icons; ?>
 
-<!-- Top Navigation Wrapper -->
-<div class="top-nav-wrapper">
-    <div class="top-nav-sub-wrapper">
-        
-        <?php if( $top_nav ): ?>
-        <!-- Top Navigation -->
-        <nav id="vision-top-nav" class="top-navigation pull-left" role="navigation">
-            <?php echo Agama::menu( 'top', 'top-nav-menu' ); ?>
-        </nav><!-- Top Navigation End -->
-        <?php endif; ?>
-        
-        <?php if( $social_icons ): ?>
-        <!-- Social Icons -->
-        <div id="top-social" class="pull-right">
-            <?php if( get_theme_mod( 'agama_top_nav_social', true ) ): ?>
-                <?php Agama::social_icons( false, 'animated' ); ?>
+<div class="agama-header-overlay">
+
+    <!-- Top Nav Wrapper -->
+    <div class="agama-top-nav-wrapper">
+        <div class="tv-container tv-d-flex tv-justify-content-between tv-align-items-center">
+
+            <?php if( $top_nav ): ?>
+            <nav id="agama-top-nav" class="tv-d-none tv-d-lg-block" role="navigation">
+                <?php echo Agama::menu( 'top', 'agama-navigation' ); ?>
+            </nav>
             <?php endif; ?>
-        </div><!-- Social Icons End -->
-        <?php endif; ?>
 
-    </div>
-</div><!-- Top Navigation Wrapper End -->
+            <?php if( $social_icons ): ?>
+            <div id="agama-top-social">
+                <?php if( get_theme_mod( 'agama_top_nav_social', true ) ): ?>
+                    <?php Agama::social_icons( false, 'animated' ); ?>
+                <?php endif; ?>
+            </div>
+            <?php endif; ?>
 
-<!-- Logo -->
-<hgroup id="agama-logo">
+        </div>
+    </div><!-- Top Nav Wrapper End -->
 
-    <?php agama_logo(); ?>
+    <!-- Logo -->
+    <hgroup id="agama-logo" class="tv-d-block">
+        <div class="tv-container tv-d-flex tv-justify-content-between tv-align-items-center">
+            <div class="tv-d-block">
+                <?php agama_logo(); ?>
+            </div>
+            <div class="tv-d-md-block tv-d-lg-none">
+                <?php Agama_Helper::get_mobile_menu_toggle_icon(); ?>
+            </div>
+        </div>
+    </hgroup><!-- Logo End -->
 
-    <?php Agama_Helper::get_mobile_menu_toggle_icon(); ?>
+    <!-- Primary Nav -->
+    <nav id="agama-primary-nav" class="tv-d-none tv-d-lg-block" role="navigation">
+        <div class="tv-container">
+            <div class="tv-row">
+                <?php echo Agama::menu( 'primary', 'agama-navigation' ); ?>
+            </div>
+        </div>
+    </nav><!-- Primary Nav End -->
 
-</hgroup><!-- Logo End -->
-
-<!-- Primary Navigation -->
-<nav id="vision-primary-nav" class="main-navigation" role="navigation">
-    <?php echo Agama::menu( 'primary', 'nav-menu' ); ?>
-</nav><!-- Primary Navigation End -->
-
-<!-- Mobile Navigation -->
-<nav id="vision-mobile-nav" class="mobile-menu collapse" role="navigation">
-    <?php echo Agama::menu( 'primary', 'menu' ); ?>
-</nav><!-- Mobile Navigation End -->
+    <!-- Mobile Nav -->
+    <nav id="agama-mobile-nav" class="mobile-menu tv-collapse" role="navigation">
+        <?php echo Agama::menu( 'primary', 'menu' ); ?>
+    </nav><!-- Mobile Nav End -->
+    
+</div>

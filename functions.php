@@ -43,7 +43,7 @@ final class Agama_WP_Theme extends Agama_Core {
     function __construct() {
         
         // Theme Version
-        parent::$version = '1.4.3';
+        parent::$version = '1.4.4';
         
         // Development Mode
         parent::$development = false;

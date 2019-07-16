@@ -144,22 +144,17 @@ if( ! class_exists( 'Agama_Core' ) ) {
              * FontAwesome Icons
              */
             wp_enqueue_style( 'agama-font-awesome', AGAMA_CSS . 'font-awesome.min.css', array(), '4.7.0' );
-
-            /**
-             * WooCommerce Stylesheet
-             */
-            if( class_exists('Woocommerce') ) {
-                wp_register_style( 'agama-woocommerce', AGAMA_CSS . 'woocommerce.css', array(), self::$version );
-                wp_enqueue_style( 'agama-woocommerce' );
-            }
+            
+            // Bootstrap 4.1.3
+            wp_enqueue_style( 'agama-bootstrap', AGAMA_CSS . 'bootstrap.min.css', [], '4.1.3' );
             
             /**
              * Child Theme Stylesheet
              */ 
-            $deps = false;
+            $deps = [];
             if( is_child_theme() ) {
                 
-                $deps = array( 'agama-parent-style' );
+                $deps = [ 'agama-parent-style' ];
                 
                 // Load Agama stylesheet if child theme active
                 wp_enqueue_style( 
@@ -168,7 +163,7 @@ if( ! class_exists( 'Agama_Core' ) ) {
                     false, 
                     self::$version 
                 );
-            }
+            } 
 
             /**
              * Agama || Child Theme Stylesheet

@@ -16,17 +16,6 @@ blockquote {
 	border-left: 0 none;
 }
 
-/* =Repeatable patterns
--------------------------------------------------------------- */
-
-/* Sticky Header */
-.sticky-header .col-md-4 {
-	float: right;
-}
-.site-header .sticky-header h1 {
-	float: right;
-}
-
 /* Top Navigation */
 #top-nav-social {
 	text-align: left;
@@ -38,13 +27,6 @@ blockquote {
 .top-navigation ul.top-nav-menu, 
 .top-navigation div.top-nav-menu > ul {
 	text-align: right;
-}
-
-/* Sticky Navigation */
-.sticky-nav > li:first-child, 
-.sticky-nav > ul > li:first-child {
-	border-left: 0 none;
-	border-right: 1px solid #ededed;
 }
 
 /* Images */
@@ -249,24 +231,6 @@ footer[role="contentinfo"] .social {
 		float: left;
 		margin: 0 24px 0;
 		margin: 0 1.714285714rem 0;
-	}
-	.main-navigation ul.nav-menu,
- 	.main-navigation div.nav-menu > ul {
-		text-align: right;
-	}
-	.main-navigation li {
-		margin-left: 40px;
-		margin-left: 2.857142857rem;
-		margin-right: auto;
-	}
-	.main-navigation li ul ul {
-		margin-right: 0;
-		right: 100%;
-		left: auto;
-	}
-	.main-navigation ul li:hover > ul {
-		border-right: 0;
-		border-left: none;
 	}
 	.commentlist .children {
 		margin-right: 48px;

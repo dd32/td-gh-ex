@@ -112,6 +112,28 @@ if( ! class_exists( 'Agama' ) ) {
 
 			return $classes;
 		}
+        
+        /**
+         * Main Wrapper Class
+         *
+         * Output main wrapper class.
+         *
+         * @since 1.4.4
+         * @access public
+         * @return string
+         */
+        static function main_wrapper_class() {
+            $layout = esc_attr( get_theme_mod( 'agama_layout_style', 'fullwidth' ) );
+            switch( $layout ) {
+                case 'boxed' :
+                    $class = 'tv-container tv-p-0';
+                break;
+                case 'fullwidth' :
+                    $class = 'is-full-width';
+                break;
+            }
+            echo esc_attr( $class );
+        }
 		
 		/**
 		 * Header Style Class
@@ -158,9 +180,9 @@ if( ! class_exists( 'Agama' ) ) {
 		 */
 		static function bs_class() {
 			if( is_active_sidebar( 'sidebar-1' ) ) {
-				$class = 'col-md-9';
+				$class = 'tv-col-md-9';
 			} else {
-				$class = 'col-md-12';
+				$class = 'tv-col-md-12';
 			}
 			return esc_attr( $class );
 		}

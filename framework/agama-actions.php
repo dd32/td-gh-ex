@@ -6,6 +6,21 @@ if( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
+ * Header Distance
+ *
+ * Output header distance element after header wrapper.
+ *
+ * @since 1.4.4
+ */
+function agama_header_distance() {
+    $header = esc_attr( get_theme_mod( 'agama_header_style', 'transparent' ) );
+    if( 'transparent' == $header || 'sticky' == $header ) {
+        echo '<div id="agama-header-distance" class="tv-d-none tv-d-sm-block"></div>';
+    }
+}
+add_action( 'agama/after_header_wrapper', 'agama_header_distance' );
+
+/**
  * Build Page Action Start
  *
  * @since 1.3.8
@@ -14,11 +29,15 @@ if( ! function_exists( 'agama_customize_build_page_action_start' ) ) {
     function agama_customize_build_page_action_start() {
         global $post;
         
-        $widget = 'page-widget-'. esc_attr( $post->ID );
+        if( is_object( $post ) ) {
+            $widget = 'page-widget-'. esc_attr( $post->ID );
+        } else {
+            $widget = '';
+        }
         
         if( is_customize_preview() && is_page() && ! is_active_sidebar( $widget ) ) {
             
-            $html  = '<div class="agama-build-page-wrapper clearfix">';
+            $html  = '<div class="agama-build-page-wrapper tv-row">';
                 $html .= '<div class="agama-build-page-action" data-id="sidebar-widgets-page-widget-'. esc_attr( $post->ID ) .'">';
                     $html .= esc_html__( 'You can replace this page with Agama Widgets.', 'agama' );
                     $html .= '<a class="add-new-widget">'. esc_html__( 'Add Widgets', 'agama' ) .'</a>';
@@ -40,7 +59,11 @@ if( ! function_exists( 'agama_customize_build_page_action_end' ) ) {
     function agama_customize_build_page_action_end() {
         global $post;
         
-        $widget = 'page-widget-'. esc_attr( $post->ID );
+        if( is_object( $post ) ) {
+            $widget = 'page-widget-'. esc_attr( $post->ID );
+        } else {
+            $widget = '';
+        }
         
         if( is_customize_preview() && is_page() && ! is_active_sidebar( $widget ) ) {
             
@@ -145,17 +168,17 @@ if( ! function_exists( 'agama_social_share' ) ) {
                     // Set Parameters
                     switch( $icon ) {
                         case 'facebook':
-                            $url    = sprintf( 'https://www.facebook.com/sharer/sharer.php?u=%s', get_permalink() );
+                            $url = sprintf( 'https://www.facebook.com/sharer/sharer.php?u=%s', get_permalink() );
                         break;
                         case 'twitter':
-                            $url    = sprintf( 'https://twitter.com/intent/tweet?url=%s', get_permalink() );
+                            $url = sprintf( 'https://twitter.com/intent/tweet?url=%s', get_permalink() );
                         break;
                         case 'pinterest':
-                            $url    = sprintf( 
-                                            'http://pinterest.com/pin/create/button/?url=%s&media=%s', 
-                                            get_permalink(), 
-                                            get_the_post_thumbnail_url() 
-                                        );
+                            $url = sprintf( 
+                                        'http://pinterest.com/pin/create/button/?url=%s&media=%s', 
+                                        get_permalink(), 
+                                        get_the_post_thumbnail_url() 
+                                    );
                         break;
                         case 'linkedin':
                             $url    = sprintf( 'http://www.linkedin.com/shareArticle?mini=true&url=%s', get_permalink() );
@@ -252,7 +275,7 @@ add_action( 'agama_blog_post_meta', 'agama_render_blog_post_meta', 10 );
  */
 if( ! function_exists( 'agama_render_credits' ) ) {
 	function agama_render_credits() {
-		echo html_entity_decode( get_theme_mod( 'agama_footer_copyright', sprintf( __( '2015 &copy; Powered by %s.', 'agama' ), '<a href="http://www.theme-vision.com" target="_blank">Theme-Vision</a>' ) ) );
+		echo html_entity_decode( get_theme_mod( 'agama_footer_copyright', sprintf( __( '2015 - 2019 &copy; Powered by %s.', 'agama' ), '<a href="http://www.theme-vision.com" target="_blank">Theme-Vision</a>' ) ) );
 	}
 }
 add_action( 'agama_credits', 'agama_render_credits' );

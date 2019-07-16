@@ -13,6 +13,10 @@ if( ! defined( 'ABSPATH' ) ) {
 }
 
 get_header(); ?>
+
+    <?php if( 'left' == agama_sidebar_position() ): ?>
+        <?php get_sidebar(); ?>
+    <?php endif; ?>
     
     <!-- Primary -->
 	<div id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
@@ -33,6 +37,8 @@ get_header(); ?>
 		</div>
 	</div><!-- Primary End -->
 
-<?php get_sidebar(); ?>
+    <?php if( 'right' == agama_sidebar_position() ): ?>
+        <?php get_sidebar(); ?>
+    <?php endif; ?>
 
 <?php get_footer(); ?>

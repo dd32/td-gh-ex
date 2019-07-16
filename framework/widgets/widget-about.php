@@ -75,7 +75,7 @@ class Agama_Widget_About extends WP_Widget {
             echo '<div class="about-inner-wrapper">';
         
                 if( is_page_template( 'page-templates/for-page-builders.php' ) ) {
-                    echo '<div class="container">';
+                    echo '<div class="tv-container">';
                 }
                 
                     // Sub Title
