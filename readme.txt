@@ -1,14 +1,14 @@
 === Architectwp === 
 
 Contributors: Afrothemes
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: one-column, grid-layout, custom-background, custom-logo, custom-menu, featured-images, footer-widgets, threaded-comments, translation-ready, portfolio, blog , photography, news
 Requires at least: 4.5
-Tested up to: 4.9
+Tested up to: 5.2
 Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-Aperture Real Estate is a simple WordPress theme for realtors & real estate companies
+ArchitectWP is a WordPress theme built for artchitecture, interior design and real estate management
 
 == Description ==
 
