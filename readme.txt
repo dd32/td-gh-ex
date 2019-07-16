@@ -49,6 +49,9 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 2.0.3 =
+* fix issue with title space
+
 = 2.0.2 =
 * add css code for Blocks
 * update PHP min version required to 5.6.0
