@@ -1,10 +1,12 @@
 === BEGONIA LITE ===
-Contributors: pixelgrade, babbardel, raduconstantin, ilincaroman6, robertdghetau
-Requires at least: WordPress 4.7
-Tested up to: WordPress 4.7
+Contributors: pixelgrade, babbardel, raduconstantin, robertdghetau
+Requires at least: 4.9.9
+Tested up to: 5.2.2
+Stable tag: 1.1.3
+Requires PHP: 5.3.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-Tags: grid-layout, blog, photography
+Tags: grid-layout, blog, photography, custom-menu, threaded-comments
 
 == Description ==
 
@@ -24,26 +26,15 @@ No, you just need to install the theme, activate it and start adding your posts.
 
 == Changelog ==
 
+= 1.1.3 - July 16th 2019 =
+* Compatibility tests with the latest WordPress version.
+
 = 1.0 - May 20th 2017 =
 * Initial release
 
-== Copyright ==
+== Credits ==
 
-Begonia Lite WordPress Theme, (C) 2017 Pixelgrade.com
-
-Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-
-Noah Lite is distributed under the terms of the GNU GPL
-
-This program is free software: you can redistribute it and/or modify
-it under the terms of the GNU General Public License as published by
-the Free Software Foundation, either version 2 of the License, or
-(at your option) any later version.
-
-This program is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
-GNU General Public License for more details.
+Unless otherwise specified, all the theme files, scripts and images are licensed under GNU General Public License.
 
 Begonia Lite bundles the following third-party resources:
 
@@ -57,6 +48,6 @@ Source: https://www.pexels.com/photo/green-cover-book-on-round-end-table-beside-
 
 FitText.js
 License: WTFPL
-Sourse: http://fittextjs.com/
+Source: http://fittextjs.com/
 
-Images used throughout the theme demo (not bundled with the theme): [Breather](https://unsplash.com/@breather), [Atilla Taskiran](https://unsplash.com/@atilla), [Sophia Baboolal](https://unsplash.com/@sophiababoolal). All licensed under [CC0](http://creativecommons.org/choose/zero/).
+* Images: screenshot image from PxHere - [Source](https://pxhere.com/en/photo/141941) licensed under CC0 Public Domain.
