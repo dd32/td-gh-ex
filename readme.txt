@@ -1,9 +1,10 @@
 === Aquarius === 
 
 Contributors: Afrothemes
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+Tags: grid-layout, custom-background, custom-menu, custom-logo, featured-images, translation-ready, blog, portfolio, photography
 Requires at least: 4.5
-Tested up to: 4.9
+Tested up to: 5.2
+Requires PHP: 5.2.4
 Stable tag: 1.0.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
