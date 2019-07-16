@@ -2,8 +2,8 @@
 Contributors: catchthemes
 Tags: dark, light, blue, white, black, gray, one-column, two-columns, left-sidebar, right-sidebar, fixed-width, flexible-width, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-image-header, featured-images, full-width-template, microformats, post-formats, rtl-language-support, sticky-post, theme-options, translation-ready
 Requires at least: 4.8
-Tested up to: 5.0.3
-Stable tag: 4.8.2
+Tested up to: 5.2.2
+Stable tag: 4.8.3
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -83,6 +83,10 @@ Because Gutenberg ( Block editor from WordPress version 5.0 or onwards ) automat
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Change Log ==
+
+= 4.8.3 (Released: July 15, 2019) =
+* Added: Support for wp_body_open action
+* Bug Fixed: Embed css
 
 = 4.8.2 (Released: January 22, 2019) =
 * Bug Fixed: Add block icon position issue (Reported by: naoko-kaku)
@@ -781,7 +785,7 @@ For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Copyright ==
 
-Catch Box WordPress Theme, Copyright 2012-2018 Catchthemes.com
+Catch Box WordPress Theme, Copyright 2012-2019 Catchthemes.com
 Catch Box is distributed under the terms of the GNU GPL
 
 == Resources ==
