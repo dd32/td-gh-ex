@@ -83,6 +83,7 @@
 			'vk_link' =>"#",
 			'qq_link' => "#",
 			'whatsapp_link' => "#",
+			'footer_widgets' => "1",
 			
 			'email_id' => 'example@mymail.com',
 			'phone_no' => '0159753586',
@@ -478,38 +479,39 @@ if (is_admin()) {
 	require_once('core/admin/admin-themes.php');
 }
 
-/* Notice dismissable */
-
-if ( is_admin() && isset($_GET['activated'])  && $pagenow == "themes.php" ) {
+if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
 	add_action( 'admin_notices', 'enigma_activation_notice' );
 }
-add_action( 'admin_notices', 'enigma_activation_notice' );
+
 function enigma_activation_notice(){
-	wp_enqueue_style('enigma-font-awesome', get_template_directory_uri() . '/css/font-awesome-5.8.1/css/all.min.css');
-	wp_enqueue_style('admin',  get_template_directory_uri() .'/core/admin/admin-themes.css');
-	$wl_th_info = wp_get_theme(); 
-	$currentversion = str_replace('.','',(esc_html( $wl_th_info->get('Version') )));
-	$isitdismissed = 'enigma_notice_dismissed'.$currentversion;
-	if ( !get_user_meta( get_current_user_id() , $isitdismissed ) ) { ?>
-			<!---our-product-features--->	 
-		<div class="notice notice-success">					
-		<p class="notice-text">
-		<?php $theme_info = wp_get_theme();
-			  printf( esc_html__('Thank you for installing %1$s ¬ Version %2$s ,', 'enigma'), esc_html( $theme_info->Name ), esc_html( $theme_info->Version ) );		
-			  echo esc_html__( 'For More info  about Premium Products & offers, Do visit our welcome page.', 'enigma' ); ?>
-		</p>
-		<p class="notic-gif"><a class="pro" target="_self" href="<?php echo admin_url('/themes.php?page=enigma') ?>"><img src="<?php echo get_template_directory_uri(); ?>/images/wlcm.gif"></a></p>
-		<a class="dismiss" href="?-notice-dismissed<?php echo $currentversion;?>"><i class="fa fa-times" ></i></strong></a>
-		</div>	
-<?php } } 
-function enigma_notice_dismissed() {
-	$wl_th_info = wp_get_theme(); 
-	$currentversion = str_replace('.','',(esc_html( $wl_th_info->get('Version') )));
-	$dismissurl = '-notice-dismissed'.$currentversion;
-	$isitdismissed = 'enigma_notice_dismissed'.$currentversion;
-    $user_id = get_current_user_id();
-    if ( isset( $_GET[$dismissurl] ) )
-        add_user_meta( $user_id, $isitdismissed, 'true', true );
-}
-add_action( 'admin_init', 'enigma_notice_dismissed' );
+$my_theme = wp_get_theme();	
 ?>
+   <style>
+   .notice .hello-elementor-notice-inner .hello-elementor-notice-icon, .notice .hello-elementor-notice-inner .hello-elementor-notice-content{
+		display: table-cell;
+		vertical-align: middle;
+	}
+	.notice h3 {
+		margin: 0 0 5px;
+	}
+	.notice.updated.is-dismissible {
+		padding: 15px;
+	}
+	.notice p {
+		padding: 0;
+		margin: 0;
+	}
+   </style>
+   <div class="notice updated is-dismissible">
+		<div class="hello-elementor-notice-inner">
+			<div class="hello-elementor-notice-icon">
+				<img src="<?php echo get_template_directory_uri() . '/images/admin-logo.png'; ?>" alt="Enigma Logo" />
+			</div>
+
+			<div class="hello-elementor-notice-content">
+				<h3> <?php _e('Thank you for installing '.$my_theme->get( 'Name' ), 'enigma'); ?></h3>
+				<p><?php _e( 'For More info about theme visit our', 'enigma' ); ?> <a class="pro" target="_self" href="<?php echo admin_url('/themes.php?page=enigma') ?>"><?php _e( 'welcome page', 'enigma' ); ?></a></p>
+			</div>
+		</div>
+	</div>
+<?php } ?>

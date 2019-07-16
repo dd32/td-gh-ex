@@ -2,8 +2,8 @@
 Contributors: weblizar
 Tags: left-sidebar, two-columns, three-columns, four-columns, custom-menu, right-sidebar, custom-background, featured-image-header, sticky-post, theme-options, threaded-comments, featured-images, flexible-header, translation-ready ,  custom-logo , news
 Requires at least: 4.0
-Tested up to: 5.0.3
-Stable tag: 5.1
+Tested up to: 5.2.2
+Stable tag: 5.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -21,13 +21,15 @@ Please drop your issues here <a href="https://wordpress.org/support/theme/enigma
 
 == Changelog ==
 
+= 5.2 =
+* Footer widget enable/disable option added.
+* Changes in admin notification.
+
 = 5.1 =
 * Minor Fix.
 
-
 = 4.9.6 =
 * Minor Fix.
-
 
 = 4.9.5 =
 * Integrated font awesome 5.8.1
@@ -42,7 +44,6 @@ Please drop your issues here <a href="https://wordpress.org/support/theme/enigma
 = 4.9.2 =
 * Tested with 5.0.2 
 * Minor CSS Update.
-
 
 = 4.9.1 =
 * Tested with 5.0.1

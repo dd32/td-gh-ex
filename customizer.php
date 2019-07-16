@@ -1488,6 +1488,21 @@ $wp_customize->add_section(
 	'capability'=>'edit_theme_options',
     'priority' => 35
 	));
+	
+	$wp_customize->add_setting(	'enigma_options[footer_widgets]', array(
+			'type'    => 'option',
+			'default'=>$wl_theme_options['footer_widgets'],
+			'sanitize_callback'=>'enigma_sanitize_checkbox',
+			'capability'        => 'edit_theme_options',
+		)
+	);
+	$wp_customize->add_control( 'enigma_footer_widgets', array(
+		'label'        => __( 'Show/Hide Footer Widgets', 'enigma' ),
+		'type'=>'checkbox',
+		'section'    => 'footer_section',
+		'settings'   => 'enigma_options[footer_widgets]',
+	) );
+	
 	$wp_customize->add_setting(
 	'enigma_options[footer_customizations]',
 		array(
