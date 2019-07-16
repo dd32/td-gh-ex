@@ -4,7 +4,7 @@ Description: fMuzz is Fully Responsive and Easy to use e-Commerce WordPress Them
 Author: tishonator
 Author URI: https://tishonator.com
 Theme URI: https://tishonator.com/product/fmuzz
-Version: 1.5.0
+Version: 1.5.1
 Text Domain: fmuzz
 Tags: blog, news, e-commerce, two-columns, right-sidebar, custom-logo, custom-background, custom-header, custom-menu, featured-images, threaded-comments, translation-ready, sticky-post, theme-options, footer-widgets
 License: GNU General Public License v2.0
@@ -96,7 +96,7 @@ h1, h2, h3, h4, h5, h6{
 	
 h1 {
 	font-size:24px;
-	padding:10px 0 3px 0;
+	padding:7px 0 3px 0;
 }
 
 h2 {
@@ -1975,20 +1975,7 @@ blockquote {
 }
 
 /* Blocks */
-/* !Block styles */
-article > *,
-.entry .entry-summary > * {
-  margin: 32px 0;
-  max-width: 100%;
-}
 
-
-@media only screen and (min-width: 768px) {
-  article > *,
-  .entry .entry-summary > * {
-    margin: 32px 0;
-  }
-}
 
 article > * > *:first-child,
 .entry .entry-summary > * > *:first-child {
