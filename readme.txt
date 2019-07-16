@@ -37,6 +37,9 @@ This theme uses Bootstrap as a design tool
 
 == Changelog ==
 
+= 0.2 =
+* ticket issue fixed, https://themes.trac.wordpress.org/ticket/70354
+
 = 0.1 =
 * New theme
 

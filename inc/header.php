@@ -44,7 +44,7 @@ if ( ! function_exists( 'astral_page_start' ) ) :
 		<div class="container">
 			<div class="row"> 
 				<div class="col-md-6 col-sm-6 email">
-					<p> <i class="fa fa-envelope"></i> <a href="mailto:<?php echo esc_attr( $fanciful_email ); ?>"> <?php echo esc_attr( $astral_email ); ?></a> | <i class="fa fa-phone"></i> <?php echo esc_attr( $astral_phoneno ); ?> </p>
+					<p> <i class="fa fa-envelope"></i> <a href="mailto:<?php echo esc_attr( $astral_email ); ?>"> <?php echo esc_attr( $astral_email ); ?></a> | <i class="fa fa-phone"></i> <?php echo esc_attr( $astral_phoneno ); ?> </p>
 				</div>
 				<div class="col-md-6 col-sm-6 phone">
 					<p> <i class="fa fa-location-arrow"> </i> <?php echo esc_attr( $astral_address ); ?> </p>

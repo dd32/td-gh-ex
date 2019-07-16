@@ -4,11 +4,11 @@
 .slider-info h3 {
     font-size: 3em !important;
 }
-li#accordion-panel-fanciful_theme_option h3.accordion-section-title {
-    background: linear-gradient(to right, #d80c89, #5919cc);
+li#accordion-panel-astral_theme_option h3.accordion-section-title {
+    background: linear-gradient(to right, #153e4d, #153e4d);
     color: #fff;
 }
-li#accordion-panel-fanciful_theme_option:hover .accordion-section-title {
-    background: linear-gradient(to right, #d80c89, #5919cc) !important;
+li#accordion-panel-astral_theme_option:hover .accordion-section-title {
+    background: linear-gradient(to right, #153e4d, #153e4d) !important;
     color: #fff !important;
 }
