@@ -14,7 +14,13 @@
 	require( WL_TEMPLATE_DIR_CORE . '/comment-function.php' );	
 	require(dirname(__FILE__).'/customizer.php');
 	require get_template_directory() . '/core/custom-header.php';
-		require( get_template_directory() . '/class-tgm-plugin-activation.php' );
+	require( get_template_directory() . '/class-tgm-plugin-activation.php' );
+	
+	
+	define('enigma_THEME_URL','https://weblizar.com/themes/enigma-premium/');
+	define('enigma_THEME_AUTHOR_URL','https://weblizar.com/');
+	define('enigma_THEME_REVIEW_URL','https://wordpress.org/support/theme/enigma/');
+	
 	//Sane Defaults
 	function weblizar_default_settings()
 {
@@ -65,6 +71,10 @@
 			'slider_anim'=>'',
 			'animate_type_title'=>'',
 			'animate_type_desc'=>'',
+			'service_1_youtube'=>'',
+			'service_2_youtube'=>'',
+			'service_3_youtube'=>'',
+			
 			// Footer Call-Out
 			'fc_home'=>'1',			
 			'fc_title' => __('Lorem Ipsum is simply dummy text of the printing and typesetting industry. ', 'enigma' ),
@@ -479,7 +489,11 @@ if (is_admin()) {
 	require_once('core/admin/admin-themes.php');
 }
 
-if ( is_admin() && isset($_GET['activated'] ) && $pagenow == "themes.php" ) {
+/**
+* display notice 
+**/
+
+if ( $pagenow == 'index.php' || $pagenow == 'themes.php' ) {
 	add_action( 'admin_notices', 'enigma_activation_notice' );
 }
 
@@ -509,8 +523,22 @@ $my_theme = wp_get_theme();
 			</div>
 
 			<div class="hello-elementor-notice-content">
-				<h3> <?php _e('Thank you for installing '.$my_theme->get( 'Name' ), 'enigma'); ?></h3>
-				<p><?php _e( 'For More info about theme visit our', 'enigma' ); ?> <a class="pro" target="_self" href="<?php echo admin_url('/themes.php?page=enigma') ?>"><?php _e( 'welcome page', 'enigma' ); ?></a></p>
+			<h3> <?php _e('Thank you for installing', 'enigma'); ?> <?php echo $my_theme->get( 'Name' ); ?></h3>
+			<?php $msg = sprintf('<p> %1$s %2$s <span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span> %3$s <span style="color:red">&hearts;</span>  %4$s <a href=%5$s target="_blank"  style="text-decoration: none; margin-left:10px;" class="button button-primary"> %6$s </a>
+			 	<a href=%7$s target="_blank"  style="text-decoration: none; margin-left:10px;" class="button button-primary">%8$s</a>
+			 	<a href=%9$s target="_blank"  style="text-decoration: none; margin-left:10px;" class="button button-primary">%10$s</a>
+			 	</p>',
+				esc_html__(' If you like this ','enigma'),
+				esc_html__(' theme, please leave us a ','enigma'),
+				esc_html__(' Rating ','enigma'),
+				esc_html__(' Big thanks in advance. ','enigma'),
+				esc_url(enigma_THEME_REVIEW_URL),
+				esc_html__('Rate','enigma'),				
+				esc_url(enigma_THEME_URL),
+				esc_html__('Go Pro Version','enigma'),
+				esc_url(admin_url('/themes.php?page=enigma')),	
+				esc_html__('About Enigma','enigma') ); 
+				echo wp_kses_post($msg); ?>
 			</div>
 		</div>
 	</div>

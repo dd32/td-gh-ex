@@ -801,8 +801,21 @@ $wp_customize->add_section(
 		'section'    => 'service_section',
 		'settings'   => 'enigma_options[service_1_link]'
 	) );
-		$wp_customize->add_control(
-    new enigma_Customize_Misc_Control(
+	$wp_customize->add_setting(	'enigma_options[service_1_youtube]',
+		array(
+		'default'				=>esc_attr($wl_theme_options['service_1_youtube']),
+		'type'					=>	'option',
+		'capability'			=>	'edit_theme_options',
+		'sanitize_callback'		=>	'esc_url_raw',
+	));
+
+	$wp_customize->add_control( 'service_1_youtube', array(
+			'label'      => __( 'Service One Embed Youtube URL', 'enigma' ),
+			'type'		 =>'url',
+			'section'    => 'service_section',
+			'settings'   => 'enigma_options[service_1_youtube]'
+	));
+	$wp_customize->add_control( new enigma_Customize_Misc_Control(
         $wp_customize,
         'service_options2-line',
         array(
@@ -842,6 +855,22 @@ $wp_customize->add_section(
 		'section'    => 'service_section',
 		'settings'   => 'enigma_options[service_2_link]'
 	) );
+	
+	$wp_customize->add_setting(
+	'enigma_options[service_2_youtube]',
+		array(
+		'default'				=>esc_attr($wl_theme_options['service_2_youtube']),
+		'type'					=>	'option',
+		'capability'			=>	'edit_theme_options',
+		'sanitize_callback'		=>	'esc_url_raw',
+	));
+
+	$wp_customize->add_control( 'service_2_youtube', array(
+			'label'      => __( 'Service Two Embed Youtube URL', 'enigma' ),
+			'type'		 =>'url',
+			'section'    => 'service_section',
+			'settings'   => 'enigma_options[service_2_youtube]'
+	));
 		$wp_customize->add_control(new enigma_Customize_Misc_Control(
         $wp_customize, 'enigma_service_options3-line',
         array(
@@ -880,6 +909,23 @@ $wp_customize->add_section(
 		'section'    => 'service_section',
 		'settings'   => 'enigma_options[service_3_link]'
 	) );
+	
+	
+	$wp_customize->add_setting(
+	'enigma_options[service_3_youtube]',
+		array(
+		'default'				=>esc_attr($wl_theme_options['service_3_youtube']),
+		'type'					=>	'option',
+		'capability'			=>	'edit_theme_options',
+		'sanitize_callback'		=>	'esc_url_raw',
+	));
+
+	$wp_customize->add_control( 'service_3_youtube', array(
+			'label'      => __( 'Service Three Embed Youtube URL', 'enigma' ),
+			'type'		 =>'url',
+			'section'    => 'service_section',
+			'settings'   => 'enigma_options[service_3_youtube]'
+	));
 /* Portfolio Section */
 	$wp_customize->add_section(
         'portfolio_section',
