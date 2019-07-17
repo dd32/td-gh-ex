@@ -79,40 +79,29 @@ $config = array(
 		'content' => array(
 			'front-page' => array(
 				'title'       => esc_html__( 'Setting Static Front Page','best-charity' ),
-				'description' => esc_html__( 'Create a new page to display on front page ( Ex: Home ) and assign "Home" template. Select A static page then Front page and Posts page to display front page specific sections. Note: Static page will be set automatically when you import demo content.', 'best-charity' ),
+				'description' => esc_html__( 'Create a new page to display on front page ( Ex: Home ) and assign "Home" template. Select A static page then Front page and Posts page to display front page specific sections. Note: Static page will be set automatically.', 'best-charity' ),
 				'id'          => 'front-page',
 				'check'       => ( 'page' === get_option( 'show_on_front' ) ) ? true : false,
 				'help'        => '<a href="' . esc_url( wp_customize_url() ) . '?autofocus[section]=static_front_page" class="button button-secondary">' . esc_html__( 'Static Front Page', 'best-charity' ) . '</a>',
 			),
 			'contact-form-7' => array(
 				'title'       => esc_html__( 'Contact Form 7', 'best-charity' ),
-				'description' => esc_html__( 'Please install the Contact Form 7 plugin Before Importing Demo.', 'best-charity' ),
-				'check'       => class_exists( 'OCDI_Plugin' ),
+				'description' => esc_html__( 'Please install the Contact Form 7 plugin.', 'best-charity' ),
 				'plugin_slug' => 'contact-form-7',
 				'id'          => 'contact-form-7',
 			),
 			'elementor' => array(
 				'title'       => esc_html__( 'Elementor Page Builder', 'best-charity' ),
-				'description' => esc_html__( 'Please install the Elementor Page Builder Plugin Before Importing Demo.', 'best-charity' ),
-				'check'       => class_exists( 'OCDI_Plugin' ),
+				'description' => esc_html__( 'Please install the Elementor Page Builder Plugin.', 'best-charity' ),
 				'plugin_slug' => 'elementor',
 				'id'          => 'elementor',
 			),
 			'newsletter' => array(
 				'title'       => esc_html__( 'NewsLetter Plugin', 'best-charity' ),
-				'description' => esc_html__( 'Please install the Newsletter Plugin Before Importing Demo.', 'best-charity' ),
-				'check'       => class_exists( 'OCDI_Plugin' ),
+				'description' => esc_html__( 'Please install the Newsletter Plugin.', 'best-charity' ),
 				'plugin_slug' => 'newsletter',
 				'id'          => 'newsletter',
-			),
-			'one-click-demo-import' => array(
-				'title'       => esc_html__( 'One Click Demo Import', 'best-charity' ),
-				'description' => esc_html__( 'Please install the One Click Demo Import plugin to import the demo content. After activation go to Appearance >> Import Demo Data and import it.', 'best-charity' ),
-				'check'       => class_exists( 'OCDI_Plugin' ),
-				'plugin_slug' => 'one-click-demo-import',
-				'id'          => 'one-click-demo-import',
-			),
-
+			)
 		),
 	),
 

@@ -905,7 +905,7 @@ msgid "Contact Form 7"
 msgstr ""
 
 #: inc/theme-info/about.php:89
-msgid "Please install the Contact Form 7 plugin Before Importing Demo."
+msgid "Please install the Contact Form 7 plugin."
 msgstr ""
 
 #: inc/theme-info/about.php:95
@@ -913,7 +913,7 @@ msgid "Elementor Page Builder"
 msgstr ""
 
 #: inc/theme-info/about.php:96
-msgid "Please install the Elementor Page Builder Plugin Before Importing Demo."
+msgid "Please install the Elementor Page Builder Plugin."
 msgstr ""
 
 #: inc/theme-info/about.php:102
@@ -921,17 +921,11 @@ msgid "NewsLetter Plugin"
 msgstr ""
 
 #: inc/theme-info/about.php:103
-msgid "Please install the Newsletter Plugin Before Importing Demo."
+msgid "Please install the Newsletter Plugin."
 msgstr ""
 
 #: inc/theme-info/about.php:109
 msgid "One Click Demo Import"
-msgstr ""
-
-#: inc/theme-info/about.php:110
-msgid ""
-"Please install the One Click Demo Import plugin to import the demo content. "
-"After activation go to Appearance >> Import Demo Data and import it."
 msgstr ""
 
 #: inc/theme-info/about.php:122 inc/theme-info/about.php:125

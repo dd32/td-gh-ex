@@ -4,8 +4,8 @@ Contributors: html5wp
 Tags: custom-background, custom-logo, custom-menu,custom-header,featured-images, threaded-comments, translation-ready, grid-layout,one-column, two-columns, left-sidebar, right-sidebar,footer-widgets,front-page-posting,theme-options,blog
 
 Requires at least: 4.9
-Tested up to: 5.1.1
-Stable tag: 1.0.2
+Tested up to: 5.1.2
+Stable tag: 1.0.3
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -62,8 +62,11 @@ Best Charity includes support for Infinite Scroll in Jetpack.
 = 1.0.1  =
 * escaping add, remove unwanted files
 
-= 1.0.1  =
+= 1.0.2  =
 * escaping correction, remove unwanted files and bug fixes
+
+= 1.0.3  =
+* remove one click demo files
 
 == Credits ==
 
