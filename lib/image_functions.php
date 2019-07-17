@@ -5,9 +5,6 @@ if ( ! defined( 'ABSPATH' ) ) {
 
 function ascend_lazy_load_filter() {
   	$lazy = false;
-  	if(function_exists( 'get_rocket_option' ) && get_rocket_option( 'lazyload') ) {
-    	$lazy = true;
-  	}
   	return apply_filters('ascend_lazy_load', $lazy);
 }
 

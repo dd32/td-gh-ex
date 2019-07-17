@@ -28,6 +28,11 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.4.1 | 17th July 2019 =
+* Fix: Gutenberg Image issue.
+* Fix: Slider php notice.
+* Remove: Plugin notice css.
+
 = Version 1.4.0 | 16th April 2019 =
 * Update: WC 3.6 support.
 

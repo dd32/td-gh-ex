@@ -7,7 +7,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  */
 class Ascend_Nav_Walker extends Walker_Nav_Menu {
 
-	function start_lvl(&$output, $depth = 0, $args = array()) {
+	function start_lvl( &$output, $depth = 0, $args = array() ) {
 		$output .= "\n<ul class=\"sub-menu sf-dropdown-menu dropdown\">\n";
 	}
 
@@ -16,39 +16,39 @@ class Ascend_Nav_Walker extends Walker_Nav_Menu {
 /**
  * Remove the id="" on nav menu items
  */
-add_filter('nav_menu_item_id', '__return_null');
+add_filter( 'nav_menu_item_id', '__return_null' );
 
 /**
  * add span around text in links, add icon, add description.
  */
 function ascend_menu_nav_args($args, $item, $depth) {
 	$ascend_iconmenu = get_post_meta($item->ID, '_menu_item_kticonmenu', true);
-	$args->link_before = ! empty( $ascend_iconmenu) ? '<i class="'.esc_attr( $ascend_iconmenu).'"></i>' : '';
-	if($depth == 0) {
-		$args->after = ! empty( $item->description ) ? '<span class="sf-description">'.esc_attr( $item->description ).'</span>' : '';
+	$args->link_before = ! empty( $ascend_iconmenu) ? '<i class="' . esc_attr( $ascend_iconmenu ) .'"></i>' : '';
+	if ( $depth == 0 ) {
+		$args->after = ! empty( $item->description ) ? '<span class="sf-description">' . esc_attr( $item->description ) . '</span>' : '';
 	}
 	return $args;
 }
-add_filter('nav_menu_item_args', 'ascend_menu_nav_args', 20, 3);
+add_filter( 'nav_menu_item_args', 'ascend_menu_nav_args', 20, 3 );
 
 /**
 * add classes
 */
-function ascend_menu_nav_li_css_classes($classes, $item, $args, $depth) {
-	if ($ascend_lgmenu = get_post_meta($item->ID, '_menu_item_ktlgmenu', true)) {
-        $classes[] = 'kt-lgmenu';
-        if ($ascend_columnmenu = get_post_meta($item->ID, '_menu_item_ktcolumnmenu', true)) {
-          $classes[] = 'kt-menu-column-'.$ascend_columnmenu;
-        }
-    }
-    if(in_array('menu-item-has-children', $classes)) {
-		if ($depth === 0) {
+function ascend_menu_nav_li_css_classes( $classes, $item, $args, $depth = null ) {
+	if ( $ascend_lgmenu = get_post_meta( $item->ID, '_menu_item_ktlgmenu', true ) ) {
+		$classes[] = 'kt-lgmenu';
+		if ( $ascend_columnmenu = get_post_meta( $item->ID, '_menu_item_ktcolumnmenu', true ) ) {
+			$classes[] = 'kt-menu-column-' . $ascend_columnmenu;
+		}
+	}
+    if ( in_array( 'menu-item-has-children', $classes ) ) {
+		if ( $depth === 0 ) {
 		    $classes[] = 'sf-dropdown';
-		} elseif ($depth === 1) {
+		} elseif ( $depth === 1 ) {
 		    $classes[] = 'sf-dropdown-submenu';
-		} elseif ($depth === 2) {
+		} elseif ( $depth === 2 ) {
 		    $classes[] = 'sf-dropdown-submenu';
-		} elseif ($depth === 3) {
+		} elseif ( $depth === 3 ) {
 		    $classes[] = 'sf-dropdown-submenu';
 		}
 	}

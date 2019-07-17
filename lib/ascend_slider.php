@@ -22,7 +22,7 @@ if(!function_exists('ascend_build_slider_home')) {
         	$class .= ' kt-image-carousel';
         }
         if(!empty($slides)) :
-            echo '<div id="'.esc_attr($id).'" class="slick-slider kad-light-gallery kt-slickslider titleclass loading '.esc_attr($class).'" data-slider-speed="'.esc_attr($speed).'" data-slider-anim-speed="'.esc_attr($fade_speed).'" data-slider-fade="'.esc_attr($fade).'" data-slider-type="'.esc_attr($stype).'" data-slider-auto="'.esc_attr($auto).'" data-slider-thumbid="#'.esc_attr($id).'-thumbs" data-slider-arrows="'.esc_attr($arrows).'" data-slider-thumbs-showing="'.esc_attr(ceil($width/80)).'" style="max-width:'.esc_attr($width).'px;">';
+            echo '<div id="'.esc_attr($id).'" class="slick-slider kad-light-gallery kt-slickslider titleclass loading '.esc_attr($class).'" data-slider-speed="' . esc_attr( $speed ) . '" data-slider-anim-speed="' . esc_attr( $fade_speed).'" data-slider-fade="'.esc_attr($fade).'" data-slider-type="'.esc_attr($stype) .'" data-slider-auto="'.esc_attr($auto).'" data-slider-thumbid="#'.esc_attr($id).'-thumbs" data-slider-arrows="'.esc_attr( $arrows ) . '" data-slider-thumbs-showing="' . ( is_numeric( $width ) ? esc_attr( ceil( $width / 80 ) ) : '' ) .'" style="max-width:' . ( is_numeric( $width ) ? esc_attr( $width ) : '' ) . 'px;">';
                     foreach ($slides as $slide) {
                     	if(!empty($slide['attachment_id'])) {
 	                        $alt = get_post_meta($slide['attachment_id'], '_wp_attachment_image_alt', true);
