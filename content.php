@@ -16,7 +16,7 @@ if( ! defined( 'ABSPATH' ) ) {
 
 $blog_layout = esc_attr( get_theme_mod('agama_blog_layout', 'list') ); ?>
 
-<div class="article-wrapper <?php agama_article_wrapper_class(); ?> clearfix"<?php Agama_Helper::get_data_animated(); ?>>
+<div class="article-wrapper <?php agama_article_wrapper_class(); ?> tv-d-flex"<?php Agama_Helper::get_data_animated(); ?>>
 	<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php
 	/**

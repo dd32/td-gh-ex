@@ -2702,7 +2702,7 @@ function agama_customize_css() { ?>
 	}
 	<?php endif; ?>
         
-    <?php if( is_page_template( 'page-templates/for-page-builders.php' ) ): ?>
+    <?php if( is_page_template( 'page-templates/template-fluid.php' ) ): ?>
     div#page { padding: 0; }
     .vision-row { max-width: 100%; }
     <?php endif; ?>

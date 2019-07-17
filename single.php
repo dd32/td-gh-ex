@@ -56,7 +56,7 @@ get_header(); ?>
 						
                         <?php if( get_the_tags() ): ?>
 						<!-- Tags -->
-						<div class="tagcloud clearfix bottommargin">
+						<div class="tagcloud tv-d-flex bottommargin">
 							<i class="fa fa-tags"></i> <?php the_tags( false, false, false ); ?>
 						</div><!-- Tags End -->
                         <?php endif; ?>

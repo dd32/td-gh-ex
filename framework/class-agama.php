@@ -87,16 +87,19 @@ if( ! class_exists( 'Agama' ) ) {
 			}
 			
 			// Apply template full-width class.
-			if ( is_page_template( 'page-templates/full-width.php' ) ) { 
-				$classes[] = 'full-width'; 
+			if( is_page_template( 'page-templates/template-full-width.php' ) ) { 
+				$classes[] = 'template-full-width'; 
 			}
-			
-			// Apply front page class.
-			if ( is_page_template( 'page-templates/front-page.php' ) ) {
-				$classes[] = 'template-front-page';
-				if ( has_post_thumbnail() )
-					$classes[] = 'has-post-thumbnail';
+            
+            // Apply template fluid class.
+            if( is_page_template( 'page-templates/template-fluid.php' ) ) { 
+				$classes[] = 'template-fluid'; 
 			}
+            
+            // Apply template empty class.
+            if( is_page_template( 'page-templates/template-empty.php' ) ) {
+                $classes[] = 'template-empty';
+            }
 			
 			// Apply empty background class.
 			if ( empty( $background_image ) ) {

@@ -29,32 +29,34 @@ if( ! defined( 'ABSPATH' ) ) {
 	  ): ?>
 	<!-- Footer Widgets Start -->
 	<div class="footer-widgets">
-        <div class="tv-row">
+        <div class="tv-container">
+            <div class="tv-row">
 
-            <?php if( is_active_sidebar( 'footer-widget-1' ) ): ?>
-            <div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
-                <?php dynamic_sidebar( 'footer-widget-1' ); ?>
+                <?php if( is_active_sidebar( 'footer-widget-1' ) ): ?>
+                <div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
+                    <?php dynamic_sidebar( 'footer-widget-1' ); ?>
+                </div>
+                <?php endif; ?>
+
+                <?php if( is_active_sidebar( 'footer-widget-2' ) ): ?>
+                <div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
+                    <?php dynamic_sidebar( 'footer-widget-2' ); ?>
+                </div>
+                <?php endif; ?>
+
+                <?php if( is_active_sidebar( 'footer-widget-3' ) ): ?>
+                <div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
+                    <?php dynamic_sidebar( 'footer-widget-3' ); ?>
+                </div>
+                <?php endif; ?>
+
+                <?php if( is_active_sidebar( 'footer-widget-4' ) ): ?>
+                <div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
+                    <?php dynamic_sidebar( 'footer-widget-4' ); ?>
+                </div>
+                <?php endif; ?>
+
             </div>
-            <?php endif; ?>
-
-            <?php if( is_active_sidebar( 'footer-widget-2' ) ): ?>
-            <div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
-                <?php dynamic_sidebar( 'footer-widget-2' ); ?>
-            </div>
-            <?php endif; ?>
-
-            <?php if( is_active_sidebar( 'footer-widget-3' ) ): ?>
-            <div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
-                <?php dynamic_sidebar( 'footer-widget-3' ); ?>
-            </div>
-            <?php endif; ?>
-
-            <?php if( is_active_sidebar( 'footer-widget-4' ) ): ?>
-            <div class="<?php Agama_Helper::get_fwidgets_bs_class(); ?>">
-                <?php dynamic_sidebar( 'footer-widget-4' ); ?>
-            </div>
-            <?php endif; ?>
-
         </div>
 	</div><!-- Footer Widgets End -->
 	<?php endif; ?>

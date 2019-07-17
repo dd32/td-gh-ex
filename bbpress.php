@@ -18,7 +18,7 @@ get_header(); ?>
 	<div id="primary" class="site-content <?php echo Agama::bs_class(); ?>">
 		<div id="content" role="main">
 		
-			<?php if(have_posts()): the_post(); ?>
+			<?php if( have_posts() ): the_post(); ?>
 			
 				<div id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 				

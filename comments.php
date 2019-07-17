@@ -44,7 +44,7 @@ if ( post_password_required() )
 			?>
 		</h2>
 
-		<ol class="commentlist clearfix">
+		<ol class="commentlist">
 			<?php wp_list_comments( array( 'callback' => 'agama_comment', 'style' => 'ol' ) ); ?>
 		</ol>
 

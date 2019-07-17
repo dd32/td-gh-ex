@@ -175,6 +175,10 @@ nav.nav-single a {
     color: #555;
 }
 
+#nav-below a {
+    color: #8F8F8F;
+}
+
 #agama-footer {
 	border-top-color: #545454;
 	color: #b8b8b8;

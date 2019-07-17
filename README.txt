@@ -3,6 +3,18 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.4.5 - 17 July 2019 =
+* Added "Template Empty" page template.
+* Added tv-container wrapper to footer widgets.
+* Updated dark skin with more styling details.
+* Updated template full width.
+* Updated and renamed template "For Page Builders" to "Template Fluid".
+* Fixed WooCommerce sidebar below content bug.
+* Fixed blog "Small Thumbs" layout minor bugs.
+* Fixed blog "Grid" layout minor bugs.
+* Fixed sidebar search input display issues on 404.php page.
+* Fixed breadcrumb minor aligment issues.
+
 = 1.4.4 - 16 July 2019 =
 * Added "agama/before_header_wrapper" action hook.
 * Added "agama/after_header_wrapper" action hook.

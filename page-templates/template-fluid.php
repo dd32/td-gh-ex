@@ -1,15 +1,20 @@
 <?php
 /**
- * Template Name: Full-width Page
+ * Template Name: Template Fluid
  *
- * @package ThemeVision
+ * @package Theme Vision
  * @subpackage Agama
- * @since 1.0
+ * @since 1.3.8
  */
 
-get_header(); ?>
-	
-	<div id="primary" class="site-content">
+// No direct access allowed.
+if( ! defined( 'ABSPATH' ) ) {
+    exit;
+} ?>
+
+<?php get_header(); ?>
+
+    <div id="primary" class="site-content tv-container-fluid">
 		<div id="content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); $widget = 'page-widget-' . esc_attr( get_the_ID() ); ?>
@@ -23,7 +28,10 @@ get_header(); ?>
                 <?php else: ?>
 				    
                     <?php get_template_part( 'content', 'page' ); ?>
-				    <?php comments_template( '', true ); ?>
+                    
+                    <?php if( comments_open() ) : ?>
+				        <?php comments_template( '', true ); ?>
+                    <?php endif; ?>
             
                 <?php endif; ?>
             

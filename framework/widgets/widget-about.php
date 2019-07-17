@@ -74,7 +74,7 @@ class Agama_Widget_About extends WP_Widget {
             // Inner Wrapper
             echo '<div class="about-inner-wrapper">';
         
-                if( is_page_template( 'page-templates/for-page-builders.php' ) ) {
+                if( is_page_template( 'page-templates/template-fluid.php' ) ) {
                     echo '<div class="tv-container">';
                 }
                 
@@ -103,7 +103,7 @@ class Agama_Widget_About extends WP_Widget {
                         echo '</div>';
                     }
         
-                if( is_page_template( 'page-templates/for-page-builders.php' ) ) {
+                if( is_page_template( 'page-templates/template-fluid.php' ) ) {
                     echo '</div>';   
                 }
         

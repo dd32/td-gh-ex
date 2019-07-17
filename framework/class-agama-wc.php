@@ -42,7 +42,7 @@ if( ! class_exists( 'Agama_WC' ) && class_exists( 'Woocommerce' ) ) {
 		 * @since 1.0.0
 		 */
 		function agama_wrapper_start() {
-			echo '<div id="primary" class="site-content col-md-9">';
+			echo '<div id="primary" class="site-content tv-col-md-9">';
 				echo '<div id="content" role="main">';
 		}
 		

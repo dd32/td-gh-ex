@@ -12,7 +12,7 @@ $has_post_thumbnail     = has_post_thumbnail() && ! is_search() ||
 <!-- Small Thumbs -->
 <div class="small-thumbs">
 
-	 <div class="entry clearfix">
+	 <div class="entry">
 		
 		<?php if( $has_post_thumbnail ): ?>
 		<div class="entry-image">
@@ -37,7 +37,7 @@ $has_post_thumbnail     = has_post_thumbnail() && ! is_search() ||
 			
 			<?php if( get_theme_mod( 'agama_blog_post_meta', true ) ): ?>
 			<!-- Entry Meta -->
-			<ul class="entry-meta clearfix">
+			<ul class="entry-meta tv-d-flex">
 				
 				<?php if( get_theme_mod( 'agama_blog_post_author', true ) ): ?>
 				<li><a href="<?php the_author_link(); ?>"><i class="fa fa-user"></i> <?php the_author(); ?></a></li>
