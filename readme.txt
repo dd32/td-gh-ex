@@ -1,0 +1,41 @@
+=== Attesa ===
+Contributors: AttesaWP
+Tags: two-columns, right-sidebar, custom-colors, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, e-commerce, footer-widgets, custom-logo
+Requires at least: 4.5
+Tested up to: 5.2
+Stable tag: 1.0.0
+License: GPLv2 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Attesa WordPress Theme, Copyright 2019 Rizzo Andrea
+Attesa is distributed under the terms of the GNU GPL
+
+== Description ==
+
+Attesa is an extremely versatile and customizable multipurpose WordPress theme. You can use it to create a simple blog but also for more complex websites or even an e-commerce using WooCommerce. You can customize many graphic aspects to create the website that best suits your target. Attesa theme is compatible with the most famous page builders as Elementor, SiteOrigin, Beaver Builder, etc... Responsive, RTL ready, WPML ready, SEO oriented and with many available demos.
+
+== Installation ==
+
+1. In your admin panel, go to Appearance > Themes and click the Add New button.
+2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
+3. Click Activate to use your new theme right away.
+
+== Frequently Asked Questions ==
+
+= Does this theme support any plugins? =
+
+Attesa includes support for Infinite Scroll in Jetpack, WooCommerce, Easy Digital Downlods and WPML.
+
+== Credits ==
+
+* Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+* FontAwesome http://fontawesome.io/ Font licensed under SIL OFL 1.1 and Code lisensed under MIT
+* nanoScrollerJS https://github.com/jamesflorentino/nanoScrollerJS licensed under MIT
+* SmoothScroll https://github.com/galambalazs/smoothscroll-for-websites licensed under MIT
+* "Pro" theme section examples for the customizer https://github.com/justintadlock/trt-customizer-pro licensed under GNU General Public License v2.0
+* Image used in Theme Screenshot https://www.pexels.com/photo/person-typing-on-macbook-pro-1548999/ Pexels Free photos for commercial and personal works
+
+== Changelog ==
+
+= 1.0.0 =
+* Initial release
