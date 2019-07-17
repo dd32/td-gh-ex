@@ -27,11 +27,11 @@ global $wp_query; ?>
     </div>
 
     <div class="container container-blog clear-bottommargin clearfix">
-        <div id="content" class="row">
+        <div id="content" class="tv-row">
 
             <?php if ( have_posts() ): while ( have_posts() ): the_post(); ?>
 
-                    <div class="article-wrapper col-md-3 col-sm-6 bottommargin">
+                    <div class="article-wrapper tv-col-md-3 tv-col-sm-6 bottommargin">
                         <div class="ipost clearfix">
 
                             <?php if( has_post_thumbnail() ): ?>
@@ -55,7 +55,7 @@ global $wp_query; ?>
                 <?php endwhile; ?>
 
                 <?php if( $wp_query->max_num_pages > 1 ): ?>
-                    <nav id="nav-below" class="navigation col-md-12" role="navigation">
+                    <nav id="nav-below" class="navigation tv-col-md-12" role="navigation">
                         <h2 class="assistive-text"><?php esc_html_e( 'Post navigation', 'agama' ); ?></h2>
                         <div class="nav-previous">
                             <?php next_posts_link( __( '<span class="meta-nav">&larr;</span> Older posts', 'agama-blue' ) ); ?>

@@ -20,6 +20,10 @@ Image used on screenshot:
  
 ## Changelog
 
+= 1.1.1 - 17 July 2019 =
+* Updated classes to be compatible with newest Agama Bootstrap 4 framework.
+* Updated style.css with minor change.
+
 = 1.1.0 - 25 August 2018 =
 * Added home page blog section pagination feature.
 * Removed "agama_blue_enqueue_scripts" function. (Agama theme handles automatically child styles).

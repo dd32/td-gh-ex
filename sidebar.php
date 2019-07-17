@@ -15,7 +15,7 @@ if( ! defined( 'ABSPATH' ) ) {
 } ?>
 
 <?php if ( is_active_sidebar( 'sidebar-1' ) && ! is_home() ) : ?>
-    <div id="secondary" class="widget-area col-md-3" role="complementary">
+    <div id="secondary" class="widget-area tv-col-md-3" role="complementary">
         <?php dynamic_sidebar( 'sidebar-1' ); ?>
     </div>
 <?php endif; ?>
