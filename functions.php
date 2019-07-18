@@ -222,6 +222,14 @@ function ansia_gutenberg_scripts() {
 add_action( 'enqueue_block_editor_assets', 'ansia_gutenberg_scripts' );
 
 /**
+ * Register all Elementor locations
+ */
+function ansia_register_elementor_locations( $elementor_theme_manager ) {
+	$elementor_theme_manager->register_all_core_location();
+}
+add_action( 'elementor/theme/register_locations', 'ansia_register_elementor_locations' );
+
+/**
  * WooCommerce Support
  */
 if ( ! function_exists( 'ansia_woocommerce_support' ) ) :

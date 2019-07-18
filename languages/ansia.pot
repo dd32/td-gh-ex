@@ -1,11 +1,11 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Ansia\n"
-"POT-Creation-Date: 2019-04-24 13:11+0100\n"
-"PO-Revision-Date: 2019-04-24 13:11+0100\n"
+"POT-Creation-Date: 2019-07-18 10:32+0100\n"
+"PO-Revision-Date: 2019-07-18 10:32+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
-"Language: it\n"
+"Language: en\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -34,11 +34,11 @@ msgstr ""
 msgid "Try looking in the monthly archives. %1$s"
 msgstr ""
 
-#: archive.php:39 index.php:44 search.php:39
+#: archive.php:41 index.php:46 search.php:41
 msgid "Previous"
 msgstr ""
 
-#: archive.php:40 index.php:45 search.php:40
+#: archive.php:42 index.php:47 search.php:42
 msgid "Next"
 msgstr ""
 
@@ -192,7 +192,7 @@ msgstr ""
 msgid "Skip to content"
 msgstr ""
 
-#: header.php:56
+#: header.php:57
 msgid "Menu"
 msgstr ""
 
@@ -736,7 +736,7 @@ msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
 #. translators: %s: search query.
-#: search.php:21
+#: search.php:23
 #, php-format
 msgid "Search Results for: %s"
 msgstr ""
