@@ -205,7 +205,7 @@ function aari_scripts() {
     wp_enqueue_style('aari-bootstrap-style', get_template_directory_uri() . '/css/plugins/bootstrap.min.css');
     wp_enqueue_style('aari-jam-icons', get_template_directory_uri() . '/css/plugins/jam-icons.min.css');
     wp_enqueue_style('aari-animate', get_template_directory_uri() . '/css/plugins/animate.css');
-    wp_enqueue_style('aari-main-style', get_template_directory_uri() . '/css/style.css');
+    wp_enqueue_style('aari-main-style', get_template_directory_uri() . '/css/main-style.css');
     wp_enqueue_style('aari-fonts', aari_fonts_url());
     wp_enqueue_script('aari-bootstrap', get_template_directory_uri() . '/js/bootstrap.min.js', array('jquery'), '4.0.0', true);
     wp_enqueue_script('aari-sticky', get_template_directory_uri() . '/js/sticky-sidebar.min.js', array('jquery'), '3.3.1', true);

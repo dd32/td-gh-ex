@@ -39,6 +39,9 @@ Not for now.
 = 1.0.0 - June 18 2019 =
 * Initial release
 
+= 1.0.1 - June 18 2019 =
+* Fix the error Tags: is either empty or missing in style.css header.
+
 == Credits ==
 Aari bundles the following third-party resources:
 
