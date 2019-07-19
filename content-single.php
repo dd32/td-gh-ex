@@ -27,16 +27,11 @@ $large_image_url = wp_get_attachment_image_src(get_post_thumbnail_id(), 'full');
 
 if (!empty($large_image_url[0])) 
 {
-?>
-
-<script type="text/javascript">
-document.getElementById('post-<?php the_ID(); ?>-feature').style.backgroundImage = "url('<?php echo esc_url($large_image_url[0]); ?>')"; 
-</script>
-
-<?php		
+    ?>
+        <img src="<?php echo esc_url($large_image_url[0]) ?>" />
+    <?php
 }
 ?>
-
 </div>
 </div>
 <?php

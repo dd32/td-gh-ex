@@ -2,10 +2,10 @@
 Contributors: bigjaymalcolm
 Requires at least: 5.2
 Tested up to: 5.2.1
-Stable tag: 1.1.8
+Stable tag: 1.1.9
 Requires PHP: 7.0
 
-Version 1.1.8
+Version 1.1.9
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl-3.0.en.html
 Tags: two-columns, right-sidebar, theme-options
@@ -76,3 +76,6 @@ No multilevel menu support.
 * Added no multilevel menu support to description.
 * Fixed singular instance on comments.php.
 * Added copyright and license for screenshot image.
+
+= 1.1.9 =
+* Removed script from content and content-single.
