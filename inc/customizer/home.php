@@ -4,6 +4,7 @@
  *
  * @package App_Landing_Page
  */
+if ( ! function_exists( 'app_landing_page_customize_register_home' ) ) :
  
 function app_landing_page_customize_register_home( $wp_customize ) {
 
@@ -11,14 +12,13 @@ function app_landing_page_customize_register_home( $wp_customize ) {
     $wp_customize->add_panel( 
         'app_landing_page_home_page_settings',
          array(
-            'priority' => 20,
-            'capability' => 'edit_theme_options',
-            'title' => __( 'Home Page Settings', 'app-landing-page' ),
+            'priority'    => 20,
+            'capability'  => 'edit_theme_options',
+            'title'       => __( 'Home Page Settings', 'app-landing-page' ),
             'description' => __( 'Customize Home Page Settings', 'app-landing-page' ),
         ) 
     );
-        
     /** Home Page Settings Ends */
-
 }
+endif;
 add_action( 'customize_register', 'app_landing_page_customize_register_home' );

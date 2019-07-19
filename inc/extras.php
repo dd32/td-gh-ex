@@ -7,25 +7,18 @@
  * @package App_Landing_Page
  */
  
- 
-
 if ( ! function_exists( 'app_landing_page_author_posted_on' ) ) :
 /**
  * Prints HTML with meta information for the current post-date/time and author.
  */
 function app_landing_page_author_posted_on() {
 
-
 	$time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
-	
-
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),
 		esc_html( get_the_date() )
 	);
-    
 	echo '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
-
 }
 endif;
 
@@ -129,10 +122,7 @@ function app_landing_page_categorized_blog() {
  * @link https://codex.wordpress.org/Function_Reference/wp_list_comments 
  */
  
- function app_landing_page_comment($comment, $args, $depth) {
-	$GLOBALS['comment'] = $comment;
-	extract($args, EXTR_SKIP);
-
+ function app_landing_page_comment($comment, $args, $depth){
 	if ( 'div' == $args['style'] ) {
 		$tag = 'div';
 		$add_below = 'comment';
@@ -290,4 +280,17 @@ if( ! function_exists( 'app_landing_page_ed_section') ):
         return $en_sec;
     }
 
+endif;
+
+if( ! function_exists( 'wp_body_open' ) ) :
+/**
+ * Fire the wp_body_open action.
+ * Added for backwards compatibility to support pre 5.2.0 WordPress versions.
+*/
+function wp_body_open() {
+	/**
+	 * Triggered after the opening <body> tag.
+    */
+	do_action( 'wp_body_open' );
+}
 endif;

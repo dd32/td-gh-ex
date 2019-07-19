@@ -22,7 +22,7 @@ if( $app_landing_page_stats_page){
             while( $stats_qry->have_posts() ){
             	$stats_qry->the_post();
 ?>
-                <section class="count-down" id="stats"  <?php if( has_post_thumbnail() ){ ?> style="background: url(' <?php the_post_thumbnail_url() ;?> ')no-repeat; background-size: cover; background-position: center; " <?php } ?> >
+                <section class="count-down" id="stats" <?php if( has_post_thumbnail() ){ ?> style="background: url(' <?php the_post_thumbnail_url() ;?> ')no-repeat; background-size: cover; background-position: center; " <?php } ?> >
                     <div class="container">
 						<header class="header wow fadeInUp">
 						<?php 

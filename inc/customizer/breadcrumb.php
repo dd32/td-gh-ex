@@ -4,11 +4,10 @@
  *
  * @package App_Landing_Page
  */
+if ( ! function_exists( 'app_landing_page_customize_register_breadcrumbs' ) ) :
  
 function app_landing_page_customize_register_breadcrumbs( $wp_customize ) {
-
     /** BreadCrumb Settings */
-    
     $wp_customize->add_section(
         'app_landing_page_breadcrumb_settings',
         array(
@@ -90,6 +89,6 @@ function app_landing_page_customize_register_breadcrumbs( $wp_customize ) {
         )
     );
     /** BreadCrumb Settings Ends */
-    
-    }
+}
+endif;
 add_action( 'customize_register', 'app_landing_page_customize_register_breadcrumbs' );

@@ -64,13 +64,12 @@ function app_landing_page_setup() {
 	// Custom Image Size
 	add_image_size( 'app-landing-page-banner', 1366, 750, true );
 	add_image_size( 'app-landing-page-featured', 170, 170, true );
-    add_image_size( 'app-landing-page-with-sidebar', 750, 340, true );
-    add_image_size( 'app-landing-page-without-sidebar', 1140, 437, true );
-    add_image_size( 'app-landing-page-features-image-small', 110, 110, true );
-    add_image_size( 'app-landing-page-video-image', 795, 450 , true );
-    add_image_size( 'app-landing-page-featured-post', 170, 170, true );
-    add_image_size( 'app-landing-page-recent-post', 78, 58, true );
-
+  add_image_size( 'app-landing-page-with-sidebar', 750, 340, true );
+  add_image_size( 'app-landing-page-without-sidebar', 1140, 437, true );
+  add_image_size( 'app-landing-page-features-image-small', 110, 110, true );
+  add_image_size( 'app-landing-page-video-image', 795, 450 , true );
+  add_image_size( 'app-landing-page-featured-post', 170, 170, true );
+  add_image_size( 'app-landing-page-recent-post', 78, 58, true );
 
     /* Custom Logo */
     add_theme_support( 'custom-logo', array(    	
@@ -91,51 +90,45 @@ function app_landing_page_content_width() {
 	$GLOBALS['content_width'] = apply_filters( 'app_landing_page_content_width', 750 );
 }
 
-
 /**
 * Adjust content_width value according to template.
-*
-* @return void
 */
 function app_landing_page_template_redirect_content_width() {
-
 	// Full Width in the absence of sidebar.
 	if( is_page() ){
 	   $sidebar_layout = app_landing_page_sidebar_layout();
-       if( ( $sidebar_layout == 'no-sidebar' ) || ! ( is_active_sidebar( 'right-sidebar' ) ) ) $GLOBALS['content_width'] = 1140;
-        
+       if( ( $sidebar_layout == 'no-sidebar' ) || ! ( is_active_sidebar( 'right-sidebar' ) )) $GLOBALS['content_width'] = 1140;
 	}elseif ( ! ( is_active_sidebar( 'right-sidebar' ) ) ) {
 		$GLOBALS['content_width'] = 1170;
 	}
-
 }
-
 
 /**
  * Enqueue scripts and styles.
  */
 function app_landing_page_scripts() {
+    // Use minified libraries if SCRIPT_DEBUG is false
+    $build               = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '/build' : '';
+    $suffix              = ( defined( 'SCRIPT_DEBUG' ) && SCRIPT_DEBUG ) ? '' : '.min';
 
-	$app_landing_page_query_args = array(
-		'family' => 'Lato:400,400italic,700,900,300',
-	);
+  	$app_landing_page_query_args = array(
+  		'family' => 'Lato:400,400italic,700,900,300',
+  	);
 
     wp_enqueue_style( 'app-landing-page-google-fonts', add_query_arg( $app_landing_page_query_args, "//fonts.googleapis.com/css" ) );
-    wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/css/font-awesome.css' );
-    wp_enqueue_style( 'jquery.sidr.light', get_template_directory_uri() . '/css/jquery.sidr.light.css' );
-    wp_enqueue_style( 'animate.light', get_template_directory_uri() . '/css/animate.css' );
+    wp_enqueue_style( 'animate.light', get_template_directory_uri() . '/css' . $build . '/animate' . $suffix . '.css' );
     wp_enqueue_style( 'app-landing-page-style', get_stylesheet_uri(), array(), APP_LANDING_PAGE_THEME_VERSION );
     
-	wp_enqueue_script( 'jquery-ui-datepicker' );
+    wp_enqueue_script( 'jquery-ui-datepicker' );
 
-    wp_enqueue_script( 'jquery-sidr', get_template_directory_uri() . '/js/jquery.sidr.js', array('jquery'), '2.2.1', true );
-    wp_enqueue_script( 'wow', get_template_directory_uri() . '/js/wow.js', array('jquery'), '1.1.2', true );
-    wp_enqueue_script( 'jquery-countdown', get_template_directory_uri() . '/js/jquery.countdown.js', array('jquery'), '2.1.0', true );
-	wp_enqueue_script( 'equal-height', get_template_directory_uri() . '/js/equal-height.js', array('jquery'), '0.7.0', true );
-	wp_enqueue_script( 'nice-scroll', get_template_directory_uri() . '/js/nice-scroll.js', array('jquery'), '3.6.6', true );
-    wp_enqueue_script( 'app-landing-page-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'), APP_LANDING_PAGE_THEME_VERSION, true );
-
-
+    wp_enqueue_script( 'all', get_template_directory_uri() . '/js' . $build . '/all' . $suffix . '.js', array( 'jquery' ), '5.6.3', true );
+    wp_enqueue_script( 'v4-shims', get_template_directory_uri() . '/js' . $build . '/v4-shims' . $suffix . '.js', array( 'jquery' ), '5.6.3', true );
+    
+    wp_enqueue_script( 'wow', get_template_directory_uri() . '/js' . $build . '/wow' . $suffix . '.js', array('jquery'), '1.1.2', true );
+    wp_enqueue_script( 'jquery-countdown', get_template_directory_uri() . '/js' . $build . '/jquery.countdown' . $suffix . '.js', array('jquery'), '2.1.0', true );
+    wp_enqueue_script( 'equal-height', get_template_directory_uri() . '/js' . $build . '/equal-height' . $suffix . '.js', array('jquery'), '0.7.0', true );
+    wp_enqueue_script( 'nice-scroll', get_template_directory_uri() . '/js' . $build . '/nice-scroll' . $suffix . '.js', array('jquery'), '3.6.6', true );
+    wp_enqueue_script( 'app-landing-page-custom', get_template_directory_uri() . '/js' . $build . '/custom' . $suffix . '.js', array('jquery'), APP_LANDING_PAGE_THEME_VERSION, true );
 
     $app_landing_page_year = get_theme_mod( 'app_landing_page_date_year', date('Y') );
     $app_landing_page_month = get_theme_mod( 'app_landing_page_date_month', date('m') );
@@ -145,19 +138,19 @@ function app_landing_page_scripts() {
     $app_landing_page_date_noleap = get_theme_mod( 'app_landing_page_date_day_noleap', date('j') );
     $app_landing_page_year_modified = $app_landing_page_year + date('Y') - 1 ;
 
-    if( ( $app_landing_page_year && $app_landing_page_month) && ( $app_landing_page_date_odd || $app_landing_page_date_even || $app_landing_page_date_leap || $app_landing_page_date_noleap ) ) {
-
-	if( ( true == $app_landing_page_date_even ) && ( ( ( ( $app_landing_page_month % 2 ) == 0 ) && ( $app_landing_page_month < 8 )  ) || ( ( ( $app_landing_page_month % 2 ) != 0 ) && ( $app_landing_page_month > 7 ) ) ) && ( $app_landing_page_month != 2 ) && ( true == $app_landing_page_year ) ){ $app_landing_page_date_modified = $app_landing_page_date_even; }
-	elseif( ( true == $app_landing_page_date_leap ) && ( $app_landing_page_month == 2 ) && ( ( ( $app_landing_page_year - 1 ) % 4 ) == 0 ) ){ $app_landing_page_date_modified = $app_landing_page_date_leap; }
-	elseif( ( true == $app_landing_page_date_noleap ) && ( $app_landing_page_month == 2 ) && ( ( ( $app_landing_page_year - 1 ) % 4 ) != 0 ) ){  $app_landing_page_date_modified = $app_landing_page_date_noleap; }
-	else{ $app_landing_page_date_modified = $app_landing_page_date_odd; }
-
-	if( $app_landing_page_date_modified ){
-		$app_landing_page_date =  $app_landing_page_year_modified .'/'. $app_landing_page_month .'/'. $app_landing_page_date_modified;
-	
-	}else{
- 	  $app_landing_page_date = date( 'Y/m/d');
-	}
+     if( ( $app_landing_page_year && $app_landing_page_month) && ( $app_landing_page_date_odd || $app_landing_page_date_even || $app_landing_page_date_leap || $app_landing_page_date_noleap ) ) {
+     
+     if( ( true == $app_landing_page_date_even ) && ( ( ( ( $app_landing_page_month % 2 ) == 0 ) && ( $app_landing_page_month < 8 )  ) || ( ( ( $app_landing_page_month % 2 ) != 0 ) && ( $app_landing_page_month > 7 ) ) ) && ( $app_landing_page_month != 2 ) && ( true == $app_landing_page_year ) ){ $app_landing_page_date_modified = $app_landing_page_date_even; }
+     elseif( ( true == $app_landing_page_date_leap ) && ( $app_landing_page_month == 2 ) && ( ( ( $app_landing_page_year - 1 ) % 4 ) == 0 ) ){ $app_landing_page_date_modified = $app_landing_page_date_leap; }
+     elseif( ( true == $app_landing_page_date_noleap ) && ( $app_landing_page_month == 2 ) && ( ( ( $app_landing_page_year - 1 ) % 4 ) != 0 ) ){  $app_landing_page_date_modified = $app_landing_page_date_noleap; }
+     else{ $app_landing_page_date_modified = $app_landing_page_date_odd; }
+     
+     if( $app_landing_page_date_modified ){
+     $app_landing_page_date =  $app_landing_page_year_modified .'/'. $app_landing_page_month .'/'. $app_landing_page_date_modified;
+     
+     }else{
+     $app_landing_page_date = date( 'Y/m/d');
+     }
 
 
     $app_landing_page_array = array(
@@ -168,9 +161,9 @@ function app_landing_page_scripts() {
     wp_localize_script( 'app-landing-page-custom', 'app_landing_page_data', $app_landing_page_array );
     }
  
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
-		wp_enqueue_script( 'comment-reply' );
-	}
+  	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+  		wp_enqueue_script( 'comment-reply' );
+  	}
 }
 
 
@@ -264,12 +257,12 @@ function app_landing_page_change_comment_form_defaults( $defaults ){
 endif;
 add_filter( 'comment_form_defaults', 'app_landing_page_change_comment_form_defaults' );
 
-if ( ! function_exists( 'app_landing_page_excerpt_more' ) && ! is_admin() ) :
+if ( ! function_exists( 'app_landing_page_excerpt_more' ) ) :
 /**
  * Replaces "[...]" (appended to automatically generated excerpts) with ... * 
  */
-function app_landing_page_excerpt_more() {
-	return ' &hellip; ';
+function app_landing_page_excerpt_more( $more ) {
+	return is_admin() ? $more : ' &hellip; ';
 }
 
 endif;
@@ -282,49 +275,3 @@ function app_landing_page_excerpt_length( $length ) {
 	return 40;
 }
 endif;
-
-
-/**
- * Register the required plugins for this theme.
- */
-function app_landing_page_register_required_plugins() {
-    /*
-     * Array of plugin arrays. Required keys are name and slug.
-     * If the source is NOT from the .org repo, then source is also required.
-     */
-    $plugins = array(
-
-        // This is an example of how to include a plugin from the WordPress Plugin Repository.
-        array(
-            'name'      => __( 'Newsletter', 'app-landing-page' ),
-            'slug'      => 'newsletter',
-            'required'  => false,
-        ),
-   
-    );
-
-    /*
-     * Array of configuration settings. Amend each line as needed.
-     *
-     * TGMPA will start providing localized text strings soon. If you already have translations of our standard
-     * strings available, please help us make TGMPA even better by giving us access to these translations or by
-     * sending in a pull-request with .po file(s) with the translations.
-     *
-     * Only uncomment the strings in the config array if you want to customize the strings.
-     */
-    $config = array(
-        'id'           => 'app-landing-page',    // Unique ID for hashing notices for multiple instances of TGMPA.
-        'default_path' => '',                      // Default absolute path to bundled plugins.
-        'menu'         => 'tgmpa-install-plugins', // Menu slug.
-        'parent_slug'  => 'themes.php',            // Parent menu slug.
-        'capability'   => 'edit_theme_options',    // Capability needed to view plugin install page, should be a capability associated with the parent menu used.
-        'has_notices'  => true,                    // Show admin notices or not.
-        'dismissable'  => true,                    // If false, a user cannot dismiss the nag message.
-        'dismiss_msg'  => '',                      // If 'dismissable' is false, this message will be output at top of nag.
-        'is_automatic' => false,                   // Automatically activate plugins after installation or not.
-        'message'      => '',                      // Message to output right before the plugins table.
-
-    );
-
-    tgmpa( $plugins, $config );
-}

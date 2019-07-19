@@ -4,7 +4,7 @@
  *
  * @package App_Landing_Page
  */
-
+if ( ! function_exists( 'app_landing_page_customize_register_features' ) ) :
 
 function app_landing_page_customize_register_features( $wp_customize ) {
 
@@ -172,6 +172,6 @@ function app_landing_page_customize_register_features( $wp_customize ) {
         )
     );
     /** Features Section Ends */
-
 }
+endif;
 add_action( 'customize_register', 'app_landing_page_customize_register_features' );

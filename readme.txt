@@ -1,19 +1,17 @@
 === App Landing Page ===
 
-Author: Rara Theme (http://raratheme.com)
-Tags: one-column, two-columns, right-sidebar, custom-logo, footer-widgets, full-width-template, custom-menu, custom-background, featured-images, sticky-post, threaded-comments, translation-ready, theme-options, blog, portfolio
-
-Requires at least: 4.7
-Tested up to: 5.1.1
-Stable tag: 1.0.9
+Contributors: raratheme
+Requires at least: WordPress 4.7
+Requires PHP: 5.6
+Tested up to: WordPress 5.2.2
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
-A starter theme called App Landing Page, or underscores.
+Tags: one-column, two-columns, right-sidebar, custom-logo, footer-widgets, full-width-template, custom-menu, custom-background, featured-images, sticky-post, threaded-comments, translation-ready, theme-options, blog, portfolio
 
 == Description ==
 
-App Landing Page is a WordPress theme from Rara Theme. It will help you to showcase your latest app in a creative and appealing way. The theme offers several features to delight your audience with app snapshots, video demo, links to download from Apple Store and Google Store. The theme is mobile responsive and translation ready. Get free support here: http://raratheme.com/support-forum/, check demo here: http://demo.raratheme.com/app-landing-page/ and documentation at https://raratheme.com/documentation/app-landing-page/
+App Landing Page is a WordPress theme from Rara Theme. It will help you to showcase your latest app in a creative and appealing way. The theme offers several features to delight your audience with app snapshots, video demo, links to download from Apple Store and Google Store. The theme is mobile responsive and translation ready. Get free support here: https://rarathemes.com/support-forum/, check demo here: https://demo.rarathemes.com/app-landing-page/ and documentation at https://rarathemes.com/documentation/app-landing-page/
 
 == Installation ==
 	
@@ -141,7 +139,7 @@ J. Social Settings:
 
 
 For more documentation settings, please visit the link below.
-https://raratheme.com/documentation/app-landing-page/
+https://rarathemes.com/documentation/app-landing-page/
 
 
 == Copyrights and License ==
@@ -183,7 +181,7 @@ wow.js, https://github.com/matthieua/WOW, (C) Matthieu Aussaguel, https://www.gn
 All other resources and theme elements are licensed under the GPLv2 or later
 
 
-App Landing Page, Copyright Rara Theme 2015, Raratheme.com
+App Landing Page, Copyright Rara Theme 2015, rarathemes.com
 App Landing Page WordPress Theme is distributed under the terms of the GPLv2 or later
 
 
@@ -193,6 +191,13 @@ App Landing Page WordPress Theme is distributed under the terms of the GPLv2 or 
    GNU General Public License for more details.
 
 == Change Log ==
+    1.1.0
+    * Added wp_body_open action.
+    * Changed raratheme.com to rarathemes.com.
+    * Removed zip file link from customizer.
+    * Validated readme.txt.
+    * Fixed social links fontawesome issues.
+
     1.0.9
     * Made footer link no-follow.
     

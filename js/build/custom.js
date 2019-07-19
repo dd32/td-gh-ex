@@ -1,4 +1,3 @@
-
 jQuery(document).ready(function($){
 
 	$("body").niceScroll({
@@ -22,12 +21,6 @@ jQuery(document).ready(function($){
     /* Date Picker */
     $( "#datepicker" ).datepicker();
 
-	$('#responsive-menu-button').sidr({
-    	name: 'sidr-main',
-    	source: '#site-navigation',
-    	side: 'right'
-    });
-
 	var date_in = app_landing_page_data.date;
 
    	$('#days').countdown( date_in, function(event) {
@@ -46,5 +39,29 @@ jQuery(document).ready(function($){
 	//Event CountDown------------
 	new WOW().init();
 
-	
+    //mobile-menu
+    var winWidth = $(window).width();
+
+    if(winWidth < 1025){
+        $('.mobile-menu-opener').click(function(){
+            $('body').addClass('menu-open');
+
+            $('.btn-close-menu').click(function(){
+                $('body').removeClass('menu-open');
+            });
+        });
+
+        $('.overlay').click(function(){
+            $('body').removeClass('menu-open');
+        });
+
+        $('.main-navigation').prepend('<div class="btn-close-menu">Close Menu</div>');
+
+        $('.main-navigation ul .menu-item-has-children').append('<div class="angle-down"></div>');
+
+        $('.main-navigation ul li .angle-down').click(function(){
+            $(this).prev().slideToggle();
+            $(this).toggleClass('active');
+        });
+    };
 });

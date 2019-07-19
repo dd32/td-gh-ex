@@ -4,6 +4,7 @@
  *
  * @package App_Landing_Page
  */
+if ( ! function_exists( 'app_landing_page_customize_register_service' ) ) :
 
 function app_landing_page_customize_register_service( $wp_customize ) {
 
@@ -282,4 +283,5 @@ function app_landing_page_customize_register_service( $wp_customize ) {
     /** Service Section Ends */
 
 }
+endif;
 add_action( 'customize_register', 'app_landing_page_customize_register_service' );

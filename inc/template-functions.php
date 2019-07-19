@@ -77,8 +77,10 @@ function app_landing_page_header_cb(){
                     </div>  
             </div><!-- .site-branding -->
             
-            <div id="mobile-header">
-                <a id="responsive-menu-button" href="#sidr-main"><span class="fa fa-navicon"></span></a>
+            <div class="mobile-menu-opener">
+              <span></span>
+              <span></span>
+              <span></span>
             </div>
             
             <nav id="site-navigation" class="main-navigation" role="navigation">
@@ -469,7 +471,7 @@ function app_landing_page_footer_credit(){
       echo ' &nbsp;<a href="' . esc_url( home_url( '/' ) ) . '">' . esc_html( get_bloginfo( 'name' ) ) . '</a>.&nbsp;';
     }
     esc_html_e( 'App Landing Page | Developed By ', 'app-landing-page' );
-    echo '<a href="'. esc_url( 'https://raratheme.com/' ) .'" rel="nofollow" target="_blank">'. esc_html__( 'Rara Theme', 'app-landing-page' ) . '</a>. ';
+    echo '<a href="'. esc_url( 'https://rarathemes.com/' ) .'" rel="nofollow" target="_blank">'. esc_html__( 'Rara Theme', 'app-landing-page' ) . '</a>. ';
     printf( esc_html__( 'Powered by %s', 'app-landing-page' ), '<a href="'. esc_url( 'https://wordpress.org/', 'app-landing-page' ) .'" target="_blank">'. esc_html__( 'WordPress', 'app-landing-page' ) . '</a>. ' );
     if ( function_exists( 'the_privacy_policy_link' ) ) {
         the_privacy_policy_link();
@@ -487,6 +489,7 @@ if( ! function_exists( 'app_landing_page_footer_end' ) ) :
 function app_landing_page_footer_end(){
     echo '</div>';
     echo '</footer>'; // #colophon 
+    echo '<div class="overlay"></div>';
 }
 endif;
 

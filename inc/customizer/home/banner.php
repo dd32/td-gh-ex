@@ -4,6 +4,7 @@
  *
  * @package App_Landing_Page
  */
+if ( ! function_exists( 'app_landing_page_customize_register_banner' ) ) :
 
 function app_landing_page_customize_register_banner( $wp_customize ) {
 
@@ -150,4 +151,5 @@ function app_landing_page_customize_register_banner( $wp_customize ) {
     
     /** Banner Section Ends */
 }
+endif;
 add_action( 'customize_register', 'app_landing_page_customize_register_banner' );

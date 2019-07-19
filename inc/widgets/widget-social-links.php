@@ -51,17 +51,17 @@ class App_Landing_Page_Social_Links extends WP_Widget {
         ?>
             <ul class="social-networks">
 				<?php if( $facebook ){ ?>
-                <li><a href="<?php echo esc_url( $facebook ); ?>" title="<?php esc_attr_e( 'Facebook', 'app-landing-page' ); ?>" class="fa fa-facebook"></a></li>
+                <li><a href="<?php echo esc_url( $facebook ); ?>" title="<?php esc_attr_e( 'Facebook', 'app-landing-page' ); ?>"><i class="fa fa-facebook"></i></a></li>
 				<?php } if( $instagram ){ ?>
-                <li><a href="<?php echo esc_url( $instagram ); ?>" title="<?php esc_attr_e( 'Instagram', 'app-landing-page' ); ?>" class="fa fa-instagram"></a></li>
+                <li><a href="<?php echo esc_url( $instagram ); ?>" title="<?php esc_attr_e( 'Instagram', 'app-landing-page' ); ?>"><i class="fa fa-instagram"></i></a></li>
                 <?php } if( $twitter ){ ?>
-                <li><a href="<?php echo esc_url( $twitter ); ?>" title="<?php esc_attr_e( 'Twitter', 'app-landing-page' ); ?>" class="fa fa-twitter"></a></li>
+                <li><a href="<?php echo esc_url( $twitter ); ?>" title="<?php esc_attr_e( 'Twitter', 'app-landing-page' ); ?>" ><i class="fa fa-twitter"></i></a></li>
 				<?php } if( $pinterest ){ ?>
-                <li><a href="<?php echo esc_url( $pinterest ); ?>"  title="<?php esc_attr_e( 'Pinterest', 'app-landing-page' ); ?>" class="fa fa-pinterest-p"></a></li>
+                <li><a href="<?php echo esc_url( $pinterest ); ?>"  title="<?php esc_attr_e( 'Pinterest', 'app-landing-page' ); ?>"><i class="fa fa-pinterest-p"></i></a></li>
 				<?php } if( $linkedin ){ ?>
-                <li><a href="<?php echo esc_url( $linkedin ); ?>" title="<?php esc_attr_e( 'Linkedin', 'app-landing-page' ); ?>" class="fa fa-linkedin"></a></li>
+                <li><a href="<?php echo esc_url( $linkedin ); ?>" title="<?php esc_attr_e( 'Linkedin', 'app-landing-page' ); ?>"><i class="fa fa-linkedin"></i></a></li>
 				<?php } if( $youtube ){ ?>
-                <li><a href="<?php echo esc_url( $youtube ); ?>" title="<?php esc_attr_e( 'YouTube', 'app-landing-page' ); ?>" class="fa fa-youtube"></a></li>
+                <li><a href="<?php echo esc_url( $youtube ); ?>" title="<?php esc_attr_e( 'YouTube', 'app-landing-page' ); ?>" ><i class="fa fa-youtube"></i></a></li>
                 <?php } ?>
 			</ul>
         <?php

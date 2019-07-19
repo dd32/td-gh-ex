@@ -4,6 +4,7 @@
  *
  * @package App_Landing_Page
  */
+if ( ! function_exists( 'app_landing_page_customize_register_social' ) ) :
  
  function app_landing_page_customize_register_social( $wp_customize ) {
     
@@ -11,10 +12,10 @@
     $wp_customize->add_section(
         'app_landing_page_social_settings',
         array(
-            'title' => __( 'Social Settings', 'app-landing-page' ),
+            'title'       => __( 'Social Settings', 'app-landing-page' ),
             'description' => __( 'Leave blank if you do not want to show the social link.', 'app-landing-page' ),
-            'priority' => 90,
-            'panel' => 'app_landing_page_home_page_settings',
+            'priority'    => 90,
+            'panel'       => 'app_landing_page_home_page_settings',
         )
     );
     
@@ -22,7 +23,7 @@
     $wp_customize->add_setting(
         'app_landing_page_ed_social',
         array(
-            'default' => '',
+            'default'           => '',
             'sanitize_callback' => 'app_landing_page_sanitize_checkbox',
         )
     );
@@ -30,9 +31,9 @@
     $wp_customize->add_control(
         'app_landing_page_ed_social',
         array(
-            'label' => __( 'Enable Social Links', 'app-landing-page' ),
+            'label'   => __( 'Enable Social Links', 'app-landing-page' ),
             'section' => 'app_landing_page_social_settings',
-            'type' => 'checkbox',
+            'type'    => 'checkbox',
         )
     );
     
@@ -40,7 +41,7 @@
     $wp_customize->add_setting(
         'app_landing_page_facebook',
         array(
-            'default' => '',
+            'default'           => '',
             'sanitize_callback' => 'esc_url_raw',
         )
     );
@@ -48,9 +49,9 @@
     $wp_customize->add_control(
         'app_landing_page_facebook',
         array(
-            'label' => __( 'Facebook', 'app-landing-page' ),
+            'label'   => __( 'Facebook', 'app-landing-page' ),
             'section' => 'app_landing_page_social_settings',
-            'type' => 'text',
+            'type'    => 'text',
         )
     );
     
@@ -59,7 +60,7 @@
     $wp_customize->add_setting(
         'app_landing_page_twitter',
         array(
-            'default' => '',
+            'default'           => '',
             'sanitize_callback' => 'esc_url_raw',
         )
     );
@@ -67,9 +68,9 @@
     $wp_customize->add_control(
         'app_landing_page_twitter',
         array(
-            'label' => __( 'Twitter', 'app-landing-page' ),
+            'label'   => __( 'Twitter', 'app-landing-page' ),
             'section' => 'app_landing_page_social_settings',
-            'type' => 'text',
+            'type'    => 'text',
         )
     );
     
@@ -77,7 +78,7 @@
     $wp_customize->add_setting(
         'app_landing_page_pinterest',
         array(
-            'default' => '',
+            'default'           => '',
             'sanitize_callback' => 'esc_url_raw',
         )
     );
@@ -85,9 +86,9 @@
     $wp_customize->add_control(
         'app_landing_page_pinterest',
         array(
-            'label' => __( 'Pinterest', 'app-landing-page' ),
+            'label'   => __( 'Pinterest', 'app-landing-page' ),
             'section' => 'app_landing_page_social_settings',
-            'type' => 'text',
+            'type'    => 'text',
         )
     );
     
@@ -95,7 +96,7 @@
     $wp_customize->add_setting(
         'app_landing_page_linkedin',
         array(
-            'default' => '',
+            'default'           => '',
             'sanitize_callback' => 'esc_url_raw',
         )
     );
@@ -103,9 +104,9 @@
     $wp_customize->add_control(
         'app_landing_page_linkedin',
         array(
-            'label' => __( 'LinkedIn', 'app-landing-page' ),
+            'label'   => __( 'LinkedIn', 'app-landing-page' ),
             'section' => 'app_landing_page_social_settings',
-            'type' => 'text',
+            'type'    => 'text',
         )
     );
     
@@ -113,7 +114,7 @@
     $wp_customize->add_setting(
         'app_landing_page_instagram',
         array(
-            'default' => '',
+            'default'           => '',
             'sanitize_callback' => 'esc_url_raw',
         )
     );
@@ -121,9 +122,9 @@
     $wp_customize->add_control(
         'app_landing_page_instagram',
         array(
-            'label' => __( 'Instagram', 'app-landing-page' ),
+            'label'   => __( 'Instagram', 'app-landing-page' ),
             'section' => 'app_landing_page_social_settings',
-            'type' => 'text',
+            'type'    => 'text',
         )
     );
 
@@ -131,7 +132,7 @@
     $wp_customize->add_setting(
         'app_landing_page_youtube',
         array(
-            'default' => '',
+            'default'           => '',
             'sanitize_callback' => 'esc_url_raw',
         )
     );
@@ -139,12 +140,13 @@
     $wp_customize->add_control(
         'app_landing_page_youtube',
         array(
-            'label' => __( 'YouTube', 'app-landing-page' ),
+            'label'   => __( 'YouTube', 'app-landing-page' ),
             'section' => 'app_landing_page_social_settings',
-            'type' => 'text',
+            'type'    => 'text',
         )
     );
     /** Social Settings Ends */
     
  }
+endif;
  add_action( 'customize_register', 'app_landing_page_customize_register_social' );

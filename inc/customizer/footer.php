@@ -4,6 +4,7 @@
  *
  * @package App Landing page
  */
+if ( ! function_exists( 'app_landing_page_customize_footer_settings' ) ) :
  
 function app_landing_page_customize_footer_settings( $wp_customize ) {
 
@@ -11,7 +12,7 @@ function app_landing_page_customize_footer_settings( $wp_customize ) {
     $wp_customize->add_section(
         'app_landing_page_footer_section',
         array(
-            'title' => __( 'Footer Settings', 'app-landing-page' ),
+            'title'    => __( 'Footer Settings', 'app-landing-page' ),
             'priority' => 70,
         )
     );
@@ -20,7 +21,7 @@ function app_landing_page_customize_footer_settings( $wp_customize ) {
     $wp_customize->add_setting(
         'app_landing_page_footer_copyright_text',
         array(
-            'default' => '',
+            'default'           => '',
             'sanitize_callback' => 'wp_kses_post',
         )
     );
@@ -28,13 +29,12 @@ function app_landing_page_customize_footer_settings( $wp_customize ) {
     $wp_customize->add_control(
         'app_landing_page_footer_copyright_text',
         array(
-            'label' => __( 'Copyright Info', 'app-landing-page' ),
+            'label'   => __( 'Copyright Info', 'app-landing-page' ),
             'section' => 'app_landing_page_footer_section',
-            'type' => 'textarea',
+            'type'    => 'textarea',
         )
     );
-
 }
-
+endif;
 add_action( 'customize_register', 'app_landing_page_customize_footer_settings' );
  

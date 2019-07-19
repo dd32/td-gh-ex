@@ -4,19 +4,16 @@
  * 
  * @package App_Landing_Page
  */
-
-$app_landing_page_banner_button_one = get_theme_mod( 'app_landing_page_banner_button_one' );
+$app_landing_page_banner_button_one     = get_theme_mod( 'app_landing_page_banner_button_one' );
 $app_landing_page_banner_button_one_url = get_theme_mod( 'app_landing_page_banner_button_one_url' );
-$app_landing_page_banner_button_two = get_theme_mod( 'app_landing_page_banner_button_two' );
+$app_landing_page_banner_button_two     = get_theme_mod( 'app_landing_page_banner_button_two' );
 $app_landing_page_banner_button_two_url = get_theme_mod( 'app_landing_page_banner_button_two_url' );
-$app_landing_page_banner_button_text = get_theme_mod( 'app_landing_page_banner_button_text', __( 'Download Now', 'app-landing-page' ) );
-$app_landing_page_banner_button_url = get_theme_mod( 'app_landing_page_banner_button_url', '#' );
-
-
+$app_landing_page_banner_button_text    = get_theme_mod( 'app_landing_page_banner_button_text', __( 'Download Now', 'app-landing-page' ) );
+$app_landing_page_banner_button_url     = get_theme_mod( 'app_landing_page_banner_button_url', '#' );
 if( have_posts() ){                
     while( have_posts() ){
 ?>
-	<section class="banner" id="banner" <?php if( has_post_thumbnail() ){ ?> style="background: url(' <?php the_post_thumbnail_url() ;?> ')no-repeat; background-size: cover; background-position: center; " <?php } ?> >
+	<section class="banner" id="banner" <?php if( has_post_thumbnail() ){ ?> style="background: url(' <?php the_post_thumbnail_url(); ?> ')no-repeat; background-size: cover; background-position: center;" <?php } ?> >
 		<div class="container">
 			<div class="banner-text">
 				<?php 

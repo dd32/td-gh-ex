@@ -4,11 +4,11 @@
  *
  * @package App_Landing_Page
  */
+if ( ! function_exists( 'app_landing_page_customize_register_vedio' ) ) :
 
 function app_landing_page_customize_register_vedio( $wp_customize ) {
     
     global $app_landing_page_options_pages;
-
     /** Video Section */
     $wp_customize->add_section(
         'app_landing_page_vedio_settings',
@@ -109,8 +109,7 @@ function app_landing_page_customize_register_vedio( $wp_customize ) {
             'type' => 'text',
         )
     );
-    
     /** Video Section Ends */
-
 }
+endif;
 add_action( 'customize_register', 'app_landing_page_customize_register_vedio' );

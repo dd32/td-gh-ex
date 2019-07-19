@@ -4,7 +4,7 @@
  *
  * @package App_Landing_Page
  */
-
+if ( ! function_exists( 'app_landing_page_customize_register_featured' ) ) :
 
 function app_landing_page_customize_register_featured( $wp_customize ) {
     
@@ -74,6 +74,6 @@ global $app_landing_page_option_categories;
             'choices' => $app_landing_page_option_categories,
         )
     );
-    
 }
+endif;
 add_action( 'customize_register', 'app_landing_page_customize_register_featured' );

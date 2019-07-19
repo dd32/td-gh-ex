@@ -17,22 +17,21 @@ $youtube = get_theme_mod( 'app_landing_page_youtube' );
 
 if( ( app_landing_page_newsletter_activated() && is_active_sidebar( 'bottom-widget' ) && $subscribe_section ) || ( $social && ( $facebook || $twitter || $pinterest || $linkedin || $instagram || $youtube ) ) ) {
 	?>
-	<section class="stay-tuned">
+	<section class="stay-tuned" id="stay-tuned">
 		<div class="container">	
 		<?php 
 			if( is_active_sidebar( 'bottom-widget' ) ) { 
 					dynamic_sidebar( 'bottom-widget' ); 
 			} 
 			if( $facebook || $twitter || $pinterest || $linkedin || $instagram || $youtube ){ 
-		  		echo '<ul class="social-networks wow fadeInUp">'; 
+		  		echo '<ul class="social-networks wow fadeInUp" id="social-networks">'; 
                 
-		  			if( $facebook ) echo'<li><a href="' . esc_url( $facebook ) . '" class="fa fa-facebook"></a></li>';
-		  			if( $twitter ) echo'<li><a href="' . esc_url( $twitter ) . '" class="fa fa-twitter"></a></li>';
-		  			if( $pinterest ) echo'<li><a href="' . esc_url( $pinterest ) . '" class="fa fa-pinterest-p"></a></li>';
-		  			if( $linkedin ) echo'<li><a href="' . esc_url( $linkedin ) . '" class="fa fa-linkedin"></a></li>';
-		  			if( $instagram ) echo'<li><a href="' . esc_url( $instagram ) . '" class="fa fa-instagram"></a></li>';
-		  			if( $youtube ) echo'<li><a href="' . esc_url( $youtube ) . '" class="fa fa-youtube"></a></li>';
-		  		
+		  			if( $facebook ) echo'<li><a href="' . esc_url( $facebook ) . '"><i class="fa fa-facebook"></i></a></li>';
+		  			if( $twitter ) echo'<li><a href="' . esc_url( $twitter ) . '"><i class="fa fa-twitter"></i></a></li>';
+		  			if( $pinterest ) echo'<li><a href="' . esc_url( $pinterest ) . '"><i class="fa fa-pinterest-p"></i></a></li>';
+		  			if( $linkedin ) echo'<li><a href="' . esc_url( $linkedin ) . '"><i class="fa fa-linkedin"></i></a></li>';
+		  			if( $instagram ) echo'<li><a href="' . esc_url( $instagram ) . '"><i class="fa fa-instagram"></i></a></li>';
+		  			if( $youtube ) echo'<li><a href="' . esc_url( $youtube ) . '"><i class="fa fa-youtube"></i></a></li>';
                 echo '</ul>';
 			}
 		?>

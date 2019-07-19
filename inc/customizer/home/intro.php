@@ -4,6 +4,7 @@
  *
  * @package App_Landing_Page
  */
+if ( ! function_exists( 'app_landing_page_customize_register_intro' ) ) :
 
 function app_landing_page_customize_register_intro( $wp_customize ) {
 
@@ -55,8 +56,7 @@ function app_landing_page_customize_register_intro( $wp_customize ) {
             'choices' => $app_landing_page_options_pages,
         )
     );
-
     /** Intro Section Ends */
-
 }
+endif;
 add_action( 'customize_register', 'app_landing_page_customize_register_intro' );
