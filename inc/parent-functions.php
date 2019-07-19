@@ -138,12 +138,12 @@ function book_landing_page_customizer_theme_info( $wp_customize ) {
     $theme_info = '<p>';
 
     /* translators: 1: string, 2: preview url, 3: string */
-    $theme_info .= sprintf( '%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__( 'Demo Link : ', 'author-landing-page' ), esc_url( __( 'https://demo.raratheme.com/author-landing-page/', 'author-landing-page' ) ), esc_html__( 'Click here.', 'author-landing-page' ) );
+    $theme_info .= sprintf( '%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__( 'Demo Link : ', 'author-landing-page' ), esc_url( __( 'https://demo.rarathemes.com/author-landing-page/', 'author-landing-page' ) ), esc_html__( 'Click here.', 'author-landing-page' ) );
 
     $theme_info .= '</p><p>';
 
     /* translators: 1: string, 2: documentation url, 3: string */
-    $theme_info .= sprintf( '%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__( 'Documentation Link : ', 'author-landing-page' ), esc_url( 'https://raratheme.com/documentation/author-landing-page/' ), esc_html__( 'Click here.', 'author-landing-page' ) );
+    $theme_info .= sprintf( '%1$s<a href="%2$s" target="_blank">%3$s</a>', esc_html__( 'Documentation Link : ', 'author-landing-page' ), esc_url( 'https://rarathemes.com/documentation/author-landing-page/' ), esc_html__( 'Click here.', 'author-landing-page' ) );
 
     $theme_info .= '</p>';
 
@@ -175,7 +175,7 @@ function book_landing_page_footer_credit(){
     }
     echo "</span>";
     echo esc_html__( 'Author Landing Page | Developed By ', 'author-landing-page' );
-    echo '<span class="author-link"><a href="' . esc_url( 'https://raratheme.com/' ) .'" rel="nofollow" target="_blank">' . esc_html__( 'Rara Theme ', 'author-landing-page' ) . '</a>';
+    echo '<span class="author-link"><a href="' . esc_url( 'https://rarathemes.com/' ) .'" rel="nofollow" target="_blank">' . esc_html__( 'Rara Theme ', 'author-landing-page' ) . '</a>';
     printf( esc_html__( 'Powered by %s ', 'author-landing-page' ), '<span class="wp-link"><a href="'. esc_url( __( 'https://wordpress.org/', 'author-landing-page' ) ) .'" target="_blank">WordPress.</a></span>' );
     if ( function_exists( 'the_privacy_policy_link' ) ) {
         the_privacy_policy_link();
