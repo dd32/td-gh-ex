@@ -3,7 +3,7 @@ Contributors: emtiaz51921
 Requires at least: 4.0
 Tested up to: 5.2
 Requires PHP: 5.2
-Stable tag: 1.0.0
+Stable tag: 1.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: translation-ready
@@ -41,6 +41,9 @@ Not for now.
 
 = 1.0.1 - June 18 2019 =
 * Fix the error Tags: is either empty or missing in style.css header.
+
+= 1.0.2 - June 19 2019 =
+* Change the theme URL
 
 == Credits ==
 Aari bundles the following third-party resources:
