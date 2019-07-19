@@ -42,7 +42,7 @@ $community_post_four     = get_theme_mod( 'benevolent_community_post_four' );
                             if( has_excerpt() ){ 
 				                the_excerpt();                                
                             }else{
-                                echo wpautop( benevolent_excerpt( get_the_content(), 25, '.', false, false ) );    
+                                echo wpautop( wp_kses_post( wp_trim_words( strip_shortcodes( get_the_content() ), 3, '.' ) ) );    
                             } ?>
                             </div>
                         </div>
@@ -57,7 +57,7 @@ $community_post_four     = get_theme_mod( 'benevolent_community_post_four' );
                                 if( has_excerpt() ){ 
     				                the_excerpt();
                                 }else{
-                                    echo wpautop( benevolent_excerpt( get_the_content(), 25, '...', false, false ) );    
+                                    echo wpautop( wp_kses_post( wp_trim_words( strip_shortcodes( get_the_content() ), 3, '&hellip;' ) ) );    
                                 } ?>
 				                <div class="btn-holder">
                                     <a href="<?php the_permalink(); ?>"><span class="fa fa-angle-right"></span></a>
@@ -67,7 +67,7 @@ $community_post_four     = get_theme_mod( 'benevolent_community_post_four' );
                                     if( has_excerpt() ){
                                         the_excerpt();     
                                     }else{
-                                        echo wpautop( benevolent_excerpt( get_the_content(), 150, '...', false, false ) );
+                                        echo wpautop( wp_kses_post( wp_trim_words( strip_shortcodes( get_the_content() ), 20, '&hellip;' ) ) );
                                     }
                                 ?>
                                 </div>

@@ -21,8 +21,8 @@
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
-<div id="page" class="site">
-	
+<?php wp_body_open(); ?>
+<div id="page" class="site">	
     <div class="mobile-header">
         <div class="container">
             <?php 

@@ -1,18 +1,17 @@
 === Benevolent ===
-Author: Rara Theme (https://raratheme.com)
 
-Tags: Blog, two-columns, right-sidebar, footer-widgets, education, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options
-
-Requires at least: 4.7
-Tested up to: 5.0.3
+Contributors: raratheme
+Requires at least: WordPress 4.7
+Requires PHP: 5.6
+Tested up to: WordPress 5.0.3
 Stable tag: 1.2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
-
+Tags: Blog, two-columns, right-sidebar, footer-widgets, education, custom-background, custom-menu, featured-image-header, featured-images, post-formats, threaded-comments, translation-ready, full-width-template, theme-options
 
 == Description ==
 
-Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. Check the demo at https://demo.raratheme.com/benevolent/, documentation at https://raratheme.com/documentation/benevolent/ and get support at https://raratheme.com/support-forum/.
+Benevolent is an easy to use, clean modern and  flexible multipurpose theme.   Although the theme was designed with nonprofit organizations in mind , the theme is very versatile and can be used by any business websites, digital agency, consultancy, corporate business, freelancers, and bloggers. The theme is SEO friendly with optimized codes, which  make it easy for your site to rank on Google and other search engines. Benevolent comes with several features to make user-friendly, interactive and visually stunning website. Such features include custom menu with Call to Action Button, advance full width slider,  community section, Stats counter,  Client Section, Banner with Call to Action Button  (CTA),  and social media. It has four footer area and a right sidebar and includes  four custom widgets for the recent posts, popular posts, social media and the featured post. The theme is rigorously tested and optimized for speed and faster page load time and has a secure and clean code. The theme is also translation ready. Designed with visitor engagement in mind, Benevolent helps you to easily and intuitively create professional and appealing websites. Check the demo at https://demo.rarathemes.com/benevolent/, documentation at https://rarathemes.com/documentation/benevolent/ and get support at https://rarathemes.com/support-forum/.
 
 
 == Installation ==
@@ -145,7 +144,7 @@ https://github.com/imakewebthings/waypoints/blob/master/licenses.txt
 All other resources and theme elements are licensed under the GPLv2 or later
 
 
-Benevolent WordPress Theme, Copyright Rara Theme 2015, Raratheme.com
+Benevolent WordPress Theme, Copyright Rara Theme 2015, rarathemes.com
 Benevolent WordPress Theme is distributed under the terms of the GPLv2 or later
 
 
@@ -156,7 +155,11 @@ Benevolent WordPress Theme is distributed under the terms of the GPLv2 or later
    
    
 == Changelog ==
-    
+    1.2.1
+    * Added wp_body_open action.
+    * Validated readme.txt file.
+    * Changed raratheme.com to rarathemes.com.
+
     1.2.0
     * Added feature to open link on new tab in homepage intro section.
     * Added fallback image for homepage blog section.

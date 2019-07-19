@@ -19,15 +19,9 @@ function benevolent_posted_on() {
 		esc_html( get_the_date() )
 	);
 
-	$posted_on = sprintf(
-		esc_html_x( '%s', 'post date', 'benevolent' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
-	$byline = sprintf(
-		esc_html_x( '%s', 'post author', 'benevolent' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
+	$byline = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline" itemprop="author" itemscope itemtype="https://schema.org/Person"> ' . $byline . '</span>'; // WPCS: XSS OK.
     

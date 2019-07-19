@@ -39,7 +39,7 @@ if ( ! class_exists('Benevolent_Featured_Post') ) {
 		public function widget( $args, $instance ) {
 			
 			$read_more      = ! empty( $instance['readmore'] ) ? strip_tags( $instance['readmore'] ) : __( 'Read More', 'benevolent' );
-			$excerpt_char   = ! empty( $instance['excerpt_char'] ) ? absint( $instance['excerpt_char'] ) : 200 ;
+			$excerpt_char   = ! empty( $instance['excerpt_char'] ) ? absint( $instance['excerpt_char'] ) : 20 ;
 			$show_thumbnail = ! empty( $instance['show_thumbnail'] ) ? esc_attr( $instance['show_thumbnail'] ) : '';
 			$post_id        = ! empty( $instance['post_list'] ) ? esc_attr( $instance['post_list'] ) : 1 ;
 			
@@ -62,7 +62,7 @@ if ( ! class_exists('Benevolent_Featured_Post') ) {
 					</div>    				
 					<?php } ?>
 					<div class="text-holder">
-						<?php echo wpautop( benevolent_excerpt( get_the_content(), $excerpt_char, '...', false, false ) );?>
+						<?php echo wpautop( wp_kses_post( wp_trim_words( strip_shortcodes( get_the_content() ), $excerpt_char, '&hellip;' ) ) ); ?>
 						<a href="<?php the_permalink();?>" class="readmore"><?php echo esc_attr( $read_more );?></a>
 					</div>        
 				<?php    
@@ -96,7 +96,7 @@ if ( ! class_exists('Benevolent_Featured_Post') ) {
 			}
 			
 			$read_more      = ! empty( $instance['readmore'] ) ? strip_tags( $instance['readmore'] ) : __( 'Read More', 'benevolent' );
-			$excerpt_char   = ! empty( $instance['excerpt_char'] ) ? absint( $instance['excerpt_char'] ) : 200 ;
+			$excerpt_char   = ! empty( $instance['excerpt_char'] ) ? absint( $instance['excerpt_char'] ) : 20 ;
 			$show_thumbnail = ! empty( $instance['show_thumbnail'] ) ? esc_attr( $instance['show_thumbnail'] ) : '';
 			$post_list      = ! empty( $instance['post_list'] ) ? esc_attr( $instance['post_list'] ) : 1 ;
 			
@@ -116,7 +116,7 @@ if ( ! class_exists('Benevolent_Featured_Post') ) {
 				<input class="widefat" id="<?php echo $this->get_field_id( 'readmore' ); ?>" name="<?php echo $this->get_field_name( 'readmore' ); ?>" type="text" value="<?php echo esc_attr( $read_more ); ?>" />
 			</p>
 			<p>
-				<label for="<?php echo $this->get_field_id( 'excerpt_char' ); ?>"><?php esc_html_e( 'Excerpt Character', 'benevolent' ); ?></label> 
+				<label for="<?php echo $this->get_field_id( 'excerpt_char' ); ?>"><?php esc_html_e( 'Excerpt Word Count', 'benevolent' ); ?></label> 
 				<input class="widefat" id="<?php echo $this->get_field_id( 'excerpt_char' ); ?>" name="<?php echo $this->get_field_name( 'excerpt_char' ); ?>" type="text" value="<?php echo esc_attr( $excerpt_char ); ?>" />
 			</p>
 			
@@ -143,7 +143,7 @@ if ( ! class_exists('Benevolent_Featured_Post') ) {
 			$instance = array();
 			
 			$instance['readmore']       = ! empty( $new_instance['readmore'] ) ? strip_tags( $new_instance['readmore'] ) : __( 'Read More', 'benevolent' );
-			$instance['excerpt_char']   = ! empty( $new_instance['excerpt_char'] ) ? absint( $new_instance['excerpt_char'] ) : 200 ;
+			$instance['excerpt_char']   = ! empty( $new_instance['excerpt_char'] ) ? absint( $new_instance['excerpt_char'] ) : 20 ;
 			$instance['post_list']      = ! empty( $new_instance['post_list'] ) ? esc_attr( $new_instance['post_list'] ) : 1;
 			$instance['show_thumbnail'] = ! empty( $new_instance['show_thumbnail'] ) ? esc_attr( $new_instance['show_thumbnail'] ) : '';
 			

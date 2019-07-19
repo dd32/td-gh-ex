@@ -1,33 +1,35 @@
 jQuery(document).ready(function($){
    
-   /** Variables from Customizer for Slider settings */
+    var slider_auto, slider_loop, slider_control, rtl, slider_animation;
+    
+    /** Variables from Customizer for Slider settings */
     if( benevolent_data.auto == '1' ){
-        var slider_auto = true;
+        slider_auto = true;
     }else{
-        var slider_auto = false;
+        slider_auto = false;
     }
     
     if( benevolent_data.loop == '1' ){
-        var slider_loop = true;
+        slider_loop = true;
     }else{
-        var slider_loop = false;
+        slider_loop = false;
     }
     
     if( benevolent_data.pager == '1' ){
-        var slider_control = true;
+        slider_control = true;
     }else{
-        var slider_control = false;
+        slider_control = false;
     }
     if( benevolent_data.rtl == '1' ){
-        var rtl = true;
+        rtl = true;
     }else{
-        var rtl = false;
+        rtl = false;
     }
 
     if( benevolent_data.animation == 'slide' ){
-        var slider_animation = '';
+        slider_animation = '';
     }else{
-        var slider_animation = 'fadeOut';
+        slider_animation = 'fadeOut';
     }
     
     /** Home Page Slider */

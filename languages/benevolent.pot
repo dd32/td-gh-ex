@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Benevolent 1.2.0\n"
+"Project-Id-Version: Benevolent 1.2.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/benevolent\n"
-"POT-Creation-Date: 2019-02-13 06:03:14+00:00\n"
+"POT-Creation-Date: 2019-07-19 05:01:13+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -29,7 +29,7 @@ msgstr ""
 msgid "Return to Homepage"
 msgstr ""
 
-#: archive.php:40 inc/extras.php:267 index.php:46 search.php:42
+#: archive.php:40 inc/extras.php:158 index.php:46 search.php:42
 msgid "Page"
 msgstr ""
 
@@ -161,7 +161,7 @@ msgstr ""
 msgid "Animation Speed"
 msgstr ""
 
-#: inc/customizer.php:271 inc/extras.php:414
+#: inc/customizer.php:271 inc/extras.php:301
 msgid "Learn More"
 msgstr ""
 
@@ -439,7 +439,7 @@ msgstr ""
 msgid "Show current"
 msgstr ""
 
-#: inc/customizer.php:1482 inc/extras.php:176
+#: inc/customizer.php:1482 inc/extras.php:67
 msgid "Home"
 msgstr ""
 
@@ -447,7 +447,7 @@ msgstr ""
 msgid "Breadcrumb Home Text"
 msgstr ""
 
-#: inc/customizer.php:1500 inc/extras.php:175
+#: inc/customizer.php:1500 inc/extras.php:66
 msgid ">"
 msgstr ""
 
@@ -467,36 +467,36 @@ msgstr ""
 msgid "Enable Social Icons in Header"
 msgstr ""
 
-#: inc/customizer.php:1556 inc/extras.php:295 inc/widget-social-links.php:56
+#: inc/customizer.php:1556 inc/extras.php:186 inc/widget-social-links.php:56
 #: inc/widget-social-links.php:102
 msgid "Facebook"
 msgstr ""
 
-#: inc/customizer.php:1574 inc/extras.php:297 inc/widget-social-links.php:58
+#: inc/customizer.php:1574 inc/extras.php:188 inc/widget-social-links.php:58
 #: inc/widget-social-links.php:107
 msgid "Twitter"
 msgstr ""
 
-#: inc/customizer.php:1592 inc/extras.php:299 inc/widget-social-links.php:60
+#: inc/customizer.php:1592 inc/extras.php:190 inc/widget-social-links.php:60
 #: inc/widget-social-links.php:112
 msgid "Pinterest"
 msgstr ""
 
-#: inc/customizer.php:1610 inc/extras.php:301 inc/widget-social-links.php:117
+#: inc/customizer.php:1610 inc/extras.php:192 inc/widget-social-links.php:117
 msgid "LinkedIn"
 msgstr ""
 
-#: inc/customizer.php:1628 inc/extras.php:303 inc/widget-social-links.php:64
+#: inc/customizer.php:1628 inc/extras.php:194 inc/widget-social-links.php:64
 #: inc/widget-social-links.php:122
 msgid "Google Plus"
 msgstr ""
 
-#: inc/customizer.php:1646 inc/extras.php:305 inc/widget-social-links.php:66
+#: inc/customizer.php:1646 inc/extras.php:196 inc/widget-social-links.php:66
 #: inc/widget-social-links.php:127
 msgid "Instagram"
 msgstr ""
 
-#: inc/customizer.php:1664 inc/extras.php:307 inc/widget-social-links.php:68
+#: inc/customizer.php:1664 inc/extras.php:198 inc/widget-social-links.php:68
 #: inc/widget-social-links.php:132
 msgid "YouTube"
 msgstr ""
@@ -525,62 +525,61 @@ msgstr ""
 msgid "Static Front Page"
 msgstr ""
 
-#: inc/extras.php:198
+#: inc/extras.php:89
 msgid "Search Result"
 msgstr ""
 
-#: inc/extras.php:341
+#: inc/extras.php:229
 msgid ""
 "<b class=\"fn\" itemprop=\"creator\" itemscope "
 "itemtype=\"http://schema.org/Person\">%s</b>"
 msgstr ""
 
-#: inc/extras.php:344
+#: inc/extras.php:232
 msgid "Your comment is awaiting moderation."
 msgstr ""
 
-#: inc/extras.php:351
-#. translators: 1: date, 2: time
-msgid "%s"
-msgstr ""
-
-#: inc/extras.php:351
+#: inc/extras.php:238
 msgid "(Edit)"
 msgstr ""
 
-#: inc/extras.php:596
+#: inc/extras.php:483
 msgid "&copy; "
 msgstr ""
 
-#: inc/extras.php:596
+#: inc/extras.php:483
 msgid "Y"
 msgstr ""
 
-#: inc/extras.php:604
-msgid "Benevolent by Rara Theme"
+#: inc/extras.php:491
+msgid "Benevolent | Developed By "
 msgstr ""
 
-#: inc/extras.php:605
+#. Author of the plugin/theme
+msgid "Rara Theme"
+msgstr ""
+
+#: inc/extras.php:493
 msgid "Powered by %s"
 msgstr ""
 
-#: inc/extras.php:605
+#: inc/extras.php:493
 msgid "https://wordpress.org/"
 msgstr ""
 
-#: inc/extras.php:746
+#: inc/extras.php:634
 msgid "Name*"
 msgstr ""
 
-#: inc/extras.php:748
+#: inc/extras.php:636
 msgid "Email*"
 msgstr ""
 
-#: inc/extras.php:750
+#: inc/extras.php:638
 msgid "Website"
 msgstr ""
 
-#: inc/extras.php:763
+#: inc/extras.php:651
 msgid "Comment"
 msgstr ""
 
@@ -640,32 +639,32 @@ msgstr ""
 msgid "Choose Sidebar Template"
 msgstr ""
 
-#: inc/template-tags.php:36
+#: inc/template-tags.php:30
 msgid "Leave a comment"
 msgstr ""
 
-#: inc/template-tags.php:36
+#: inc/template-tags.php:30
 msgid "1 Comment"
 msgstr ""
 
-#: inc/template-tags.php:36
+#: inc/template-tags.php:30
 msgid "% Comments"
 msgstr ""
 
-#: inc/template-tags.php:50 inc/template-tags.php:56
+#: inc/template-tags.php:44 inc/template-tags.php:50
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:52
+#: inc/template-tags.php:46
 msgid "Posted in %1$s"
 msgstr ""
 
-#: inc/template-tags.php:58
+#: inc/template-tags.php:52
 msgid "Tagged %1$s"
 msgstr ""
 
-#: inc/template-tags.php:65 template-parts/content-page.php:46
+#: inc/template-tags.php:59 template-parts/content-page.php:46
 #. translators: %s: Name of current post
 msgid "Edit %s"
 msgstr ""
@@ -1045,7 +1044,7 @@ msgid "Read More Text"
 msgstr ""
 
 #: inc/widget-featured-post.php:119
-msgid "Excerpt Character"
+msgid "Excerpt Word Count"
 msgstr ""
 
 #: inc/widget-featured-post.php:125 inc/widget-popular-post.php:119
@@ -1064,10 +1063,6 @@ msgstr ""
 #: inc/widget-popular-post.php:41 inc/widget-popular-post.php:100
 #: inc/widget-popular-post.php:143
 msgid "Popular Posts"
-msgstr ""
-
-#: inc/widget-popular-post.php:74 inc/widget-recent-post.php:74
-msgid "%1$s"
 msgstr ""
 
 #: inc/widget-popular-post.php:108 inc/widget-recent-post.php:108
@@ -1155,7 +1150,7 @@ msgid "Benevolent"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://raratheme.com/wordpress-themes/benevolent/"
+msgid "https://rarathemes.com/wordpress-themes/benevolent/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -1176,31 +1171,17 @@ msgid ""
 "faster page load time and has a secure and clean code. The theme is also "
 "translation ready. Designed with visitor engagement in mind, Benevolent "
 "helps you to easily and intuitively create professional and appealing "
-"websites. Check the demo at https://demo.raratheme.com/benevolent/, "
-"documentation at https://raratheme.com/documentation/benevolent/ and get "
-"support at https://raratheme.com/support-forum/."
-msgstr ""
-
-#. Author of the plugin/theme
-msgid "Rara Theme"
+"websites. Check the demo at https://demo.rarathemes.com/benevolent/, "
+"documentation at https://rarathemes.com/documentation/benevolent/ and get "
+"support at https://rarathemes.com/support-forum/."
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://raratheme.com/"
+msgid "https://rarathemes.com/"
 msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Home Page"
-msgstr ""
-
-#: inc/template-tags.php:23
-msgctxt "post date"
-msgid "%s"
-msgstr ""
-
-#: inc/template-tags.php:28
-msgctxt "post author"
-msgid "%s"
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:1121

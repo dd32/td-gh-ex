@@ -71,7 +71,7 @@ if ( ! class_exists('Benevolent_Recent_Post') ) {
 									<div class="entry-meta">
 										<span class="posted-on">
 											<a href="<?php the_permalink(); ?>">
-												<time><?php printf( __( '%1$s', 'benevolent' ), get_the_date() ); ?></time>
+												<time><?php echo get_the_date(); ?></time>
 											</a>                                    
 										</span>
 									</div>
