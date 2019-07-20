@@ -96,19 +96,24 @@ endif; // avrilly_setup
 add_action( 'after_setup_theme', 'avrilly_setup' );
 
 
-if ( ! function_exists( 'avrilly_the_custom_logo' ) ) :
 /**
  * Displays the optional custom logo.
  *
  * Does nothing if the custom logo is not available.
  *
  */
+if ( ! function_exists( 'avrilly_the_custom_logo' ) ) :
 function avrilly_the_custom_logo() {
-	if ( function_exists( 'the_custom_logo' ) ) {
+	// Try to retrieve the Custom Logo
+	if ((function_exists('the_custom_logo'))&&(has_custom_logo())) {
 		the_custom_logo();
+	} else {
+		// Nothing in the output: Custom Logo is not supported, or there is no selected logo
+		// In both cases we display the site's name
+		echo '<hgroup><h1><a href="' . esc_url(home_url('/')) . '" rel="home">' . esc_html(get_bloginfo('name')) . '</a></h1><div class="description">'.esc_html(get_bloginfo('description')).'</div></hgroup>';
 	}
 }
-endif;
+endif; // neila_custom_logo
 
 /*
  * Add Bootstrap classes to the main-content-area wrapper.

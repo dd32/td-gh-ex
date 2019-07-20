@@ -1,8 +1,8 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Barletta Theme\n"
-"POT-Creation-Date: 2017-10-06 03:51+0300\n"
+"Project-Id-Version: Avrilly Theme\n"
+"POT-Creation-Date: 2019-07-20 13:30+0300\n"
 "PO-Revision-Date: 2015-04-04 15:03+0200\n"
 "Last-Translator: Aigars Silkalns <a.silkalns@gmail.com>\n"
 "Language-Team: MOOZ Themes <info@moozthemes.com>\n"
@@ -21,24 +21,24 @@ msgstr ""
 msgid "Page not found"
 msgstr ""
 
-#: ../comments.php:24
+#: ../comments.php:26
 #, php-format
 msgid "Only %1$s registered %2$s users can comment."
 msgstr ""
 
-#: ../comments.php:29 ../comments.php:47
+#: ../comments.php:32 ../comments.php:50
 msgid "Comment navigation"
 msgstr ""
 
-#: ../comments.php:30 ../comments.php:48
+#: ../comments.php:33 ../comments.php:51
 msgid "&larr; Older Comments"
 msgstr ""
 
-#: ../comments.php:31 ../comments.php:49
+#: ../comments.php:34 ../comments.php:52
 msgid "Newer Comments &rarr;"
 msgstr ""
 
-#: ../comments.php:54
+#: ../comments.php:57
 msgid "Comments are closed."
 msgstr ""
 
@@ -55,20 +55,16 @@ msgstr ""
 msgid "Page"
 msgstr ""
 
-#: ../content-single.php:35 ../content.php:37
+#: ../content-single.php:35
 msgid "0 Comments"
 msgstr ""
 
-#: ../content-single.php:35 ../content.php:37 ../inc/extras.php:45
+#: ../content-single.php:35 ../inc/extras.php:45
 msgid "1 Comment"
 msgstr ""
 
-#: ../content-single.php:35 ../content.php:37
+#: ../content-single.php:35
 msgid "% Comments"
-msgstr ""
-
-#: ../content.php:44
-msgid "Continue Reading"
 msgstr ""
 
 #: ../functions.php:9
@@ -99,27 +95,23 @@ msgstr ""
 msgid "Primary Menu"
 msgstr ""
 
-#: ../functions.php:135
+#: ../functions.php:136
 msgid "All"
 msgstr ""
 
-#: ../functions.php:316
+#: ../functions.php:312
 msgid "Primary Sidebar"
 msgstr ""
 
-#: ../functions.php:318
+#: ../functions.php:314
 msgid "Main sidebar that appears on the left."
 msgstr ""
 
-#: ../functions.php:340
-msgid "Y"
-msgstr ""
-
-#: ../functions.php:340
+#: ../functions.php:336
 msgid ". All rights reserved."
 msgstr ""
 
-#: ../functions.php:345
+#: ../functions.php:342
 #, php-format
 msgid "Theme by %1$s Powered by %2$s"
 msgstr ""
@@ -180,7 +172,7 @@ msgstr ""
 msgid "Comments are off for this post."
 msgstr ""
 
-#: ../inc/wp_bootstrap_navwalker.php:196
+#: ../inc/wp_bootstrap_navwalker.php:366
 msgid "Add a menu"
 msgstr ""
 
@@ -211,7 +203,7 @@ msgctxt "submit button"
 msgid "Search"
 msgstr ""
 
-#: ../sidebar.php:41
+#: ../sidebar.php:36
 msgid "Archives"
 msgstr ""
 

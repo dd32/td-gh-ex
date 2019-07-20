@@ -4,7 +4,7 @@ Theme URI: https://moozthemes.com/avrilly-wordpress-theme
 Author: MOOZ Themes
 Author URI: https://moozthemes.com/
 Description: Avrilly is a feminine looking WordPress theme designed to suit those who are looking to create a lifestyle, editorial, fashion, family or a stylish travel site. Our goal with this pretty blog theme was to get rid of all the unnecessary on-site elements aiming to deliver an clean, easy to use and fast loading theme for creative bloggers. Featuring sidebar and full-width layouts, including various post layouts, as well as a number of sidebar and footer widgets, Avrilly WordPress theme truly is showcasing your content in a slick and trendy way to deliver your sites identity to viewers as soon as they visit your website. Avrilly will let you enjoy the blogging part again!
-Version: 1.0.2
+Version: 1.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: avrilly
@@ -376,17 +376,26 @@ dd {
 	margin: 10px 0;
 	text-align: center;
 }
+
 hgroup {
-	margin: 26px 30px 26px 0px;
+	margin: 15px 30px 15px 0px;
 }
+
 .navbar-header h1 {
 	font-family: 'Muli', sans-serif;
 	font-size: 20px;
 	font-weight: 800;
 	letter-spacing: -0.5px;
+	margin-bottom: 3px;
 }
+
 .navbar-header h1 a {
 	color: #e83737;
+}
+
+.navbar-header p {
+	font-size: 13px;
+	line-height: 100%;
 }
 
 .logo {
