@@ -3,6 +3,9 @@ Agama is distributed under the terms of the GNU GPL2
 
 ####################### Changelog ######################
 
+= 1.4.51 - 20 July 2019 =
+* Fixed sidebar below content bug on Safari browsers.
+
 = 1.4.5 - 17 July 2019 =
 * Added "Template Empty" page template.
 * Added tv-container wrapper to footer widgets.
