@@ -1,7 +1,10 @@
 === Bandana ===
-Contributors: DesignOrbital.com
-Requires at least: WordPress 4.7
-Tested up to: WordPress 4.9.7
+Contributors: DesignOrbital
+Tags: left-sidebar, right-sidebar, custom-background, custom-colors, custom-header, custom-menu, editor-style, featured-images, flexible-header, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news
+Requires at least: WordPress 5.0
+Tested up to: WordPress 5.2.2
+Requires PHP: 5.6
+Stable tag: 1.3.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -90,6 +93,13 @@ Licensed under the terms of CC0
 Source: https://unsplash.com/
 
 == Changelog ==
+
+= 1.3.3 =
+Released: July 20, 2019
+
+* New `wp_body_open` theme hook added.
+* Code improvements.
+* Readme file updated.
 
 = 1.3.2 =
 Released: July 30, 2018
