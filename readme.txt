@@ -53,8 +53,10 @@ Site Title and its description in not shown on home page besides this both are u
 	
 Support
 -------
-
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 2.0.3
+1. Fixed mobile menu issue.
+2. Remove header image and color setting.
 @version 2.0.2
 1. Fixed service section image issue.
 @version 2.0.1

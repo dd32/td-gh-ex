@@ -128,10 +128,27 @@
 }
 .dropdown-menu > li > a:hover,
 .dropdown-menu > li > a:focus {
-	background-color: #559ddb;
+	background-color: #559ddb !important;
     text-decoration: none;
 	color: #ffffff;
 }
+.dropdown-menu > li > a {
+    background-color: #458bc7 !important;
+}
+
+@media only screen and (max-width: 1100px) and (min-width: 200px){
+.dropdown-menu {
+    position: initial !important;
+    float: none !important;
+}}
+@media (max-width: 1100px){
+.caret {
+    position: absolute;
+    right: 0;
+    margin-top: 10px;
+    margin-right: 10px;
+}}
+
 .dropdown-submenu { position:relative; }
 .dropdown-submenu > .dropdown-menu {
     top:0;
@@ -142,7 +159,8 @@
     -moz-border-radius:0px 0px 0px 0px;
     border-radius:0px 0px 0px 0px;
 }
-.dropdown-submenu:hover > .dropdown-menu { display:block; }
+@media (min-width: 1100px) {
+.dropdown-submenu:hover > .dropdown-menu { display:block; }}
 .dropdown-submenu .pull-left{ float:none; }
 .dropdown-submenu.pull-left > .dropdown-menu{
     left:-100%;
@@ -166,7 +184,7 @@
 }
 
 /*Start Toggle Menu Css*/
-@media (min-width: 991px) {
+@media (min-width: 1100px) {
   .navbar-toggle { display: none !important; }
 }
 @media (min-width: 991px) and (max-width: 1024px) { 
@@ -176,7 +194,7 @@
 	.navbar-default .navbar-nav > li > a { font-size: 13px; padding: 10px; }	
 	.dropdown-menu > li > a { font-size: 13px; line-height: 18px; }
 }
-@media (min-width: 768px) and (max-width: 990px) {
+@media (min-width: 768px) and (max-width: 1100px) {
 	.navbar-nav .open .dropdown-menu {
 		position: static;
 		float: none;
@@ -202,10 +220,10 @@
 	.navbar-default .navbar-nav > li > a { font-size: 13px; padding: 15px; }
 	.dropdown-menu > li > a { font-size: 13px; line-height: 18px; }
 	
-	.navbar-default .navbar-nav .open .dropdown-menu > li > a { color: #777; }
+	.navbar-default .navbar-nav .open .dropdown-menu > li > a { color: #fff; }
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover,
 	.navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
-		color: #333;
+		color: #fff;
 		background-color: transparent;
 	}
   
