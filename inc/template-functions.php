@@ -122,7 +122,7 @@ if( ! function_exists( 'bc_business_consulting_blog_layout_main_start' ) ) :
 	*
 	*/
 	function bc_business_consulting_blog_layout_main_start() {
-		echo '<main class="site-main page-spacing">';
+		echo '<main class="site-main page-spacing" id="main-content">';
 	}
 	add_action( 'bc_business_consulting_blog_layout_start', 'bc_business_consulting_blog_layout_main_start',10 );
 endif;

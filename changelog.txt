@@ -1,5 +1,8 @@
 == Changelog ==
 
+ =  1.1.8 =
+* skip-link  added 
+
  =  1.1.7 =
 * Responsive issue fixed 
 

@@ -5,7 +5,7 @@ Author: athemeart
 Author URI: https://athemeart.com/
 Description: BC Business Consulting Multipurpose One page WordPress Theme BC Business Consulting is a clean, super flexible and fully responsive Multipurpose One page WordPress Theme for any project, business, agency , personal or web studio. Its equipped with the latest technologies and designed with user in mind to ensure endless freedom to create and customize your site like a pro and without any coding. This versatile, multi-purpose theme is perfect for beginners, while also feature rich and extendable for developers, freelancers and growing businesses. We built this theme on Visual Composer, a very convenient drag-n-drop PageBuilder for WordPress. It should provide you with the smoothest experience while creating your website with our theme. The colorful widgets will help anyone to customize according to their branding colors. This theme is very well commented and also have proper help documentation too.
 
-Version: 1.1.7
+Version: 1.1.8
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: bc-business-consulting
@@ -1985,4 +1985,47 @@ a.btn:active{
 .container.page .entry-block {
 	padding:0px;
 	border:none;	
+}
+
+/* Accessibility */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  right: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#main-content[tabindex="-1"]:focus {
+  outline: 0;
 }
