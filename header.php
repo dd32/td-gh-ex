@@ -18,6 +18,8 @@
 			wp_body_open(); 
 		}
 		?>
+
+		<a class="skip-link button" href="#site-content"><?php _e( 'Skip to the content', 'fukasawa' ); ?></a>
 	
 		<div class="mobile-navigation">
 	
@@ -124,4 +126,4 @@
 							
 		</div><!-- .sidebar -->
 	
-		<div class="wrapper" id="wrapper">
+		<main class="wrapper" id="site-content">

@@ -64,6 +64,14 @@ The rest of the content...
 
 == Changelog ==
 
+Version 1.27 (2019-07-21)
+-------------------------
+- Added content to search pages without results
+- Added skip link
+- Don't show comments if the post is password protected
+- Don't show the post thumbnail if the post is password protected
+- Fixed font issues in the block editor styles
+
 Version 1.26 (2019-07-01)
 -------------------------
 - Changed the incorrect "block-style" theme tag to the correct "block-styles"

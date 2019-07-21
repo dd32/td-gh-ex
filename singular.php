@@ -15,51 +15,55 @@
 				<?php
 				
 				$post_format = get_post_format(); 
+
+				if ( ! post_password_required() ) :
 				
-				if ( $post_format == 'video' ) :
+					if ( $post_format == 'video' ) :
+					
+						if ( $pos = strpos( $post->post_content, '<!--more-->' ) ) : ?>
 				
-					if ( $pos = strpos( $post->post_content, '<!--more-->' ) ) : ?>
-			
-						<div class="featured-media">
+							<div class="featured-media">
+							
+								<?php
+										
+								// Fetch post content
+								$content = get_post_field( 'post_content', get_the_ID() );
+								
+								// Get content parts
+								$content_parts = get_extended( $content );
+								
+								// oEmbed part before <!--more--> tag
+								$embed_code = wp_oembed_get( $content_parts['main'] );
+								
+								echo $embed_code;
+								
+								?>
+							
+							</div><!-- .featured-media -->
 						
 							<?php
-									
-							// Fetch post content
-							$content = get_post_field( 'post_content', get_the_ID() );
-							
-							// Get content parts
-							$content_parts = get_extended( $content );
-							
-							// oEmbed part before <!--more--> tag
-							$embed_code = wp_oembed_get( $content_parts['main'] );
-							
-							echo $embed_code;
-							
-							?>
+						endif;
 						
-						</div><!-- .featured-media -->
+					elseif ( $post_format == 'gallery' ) : ?>
 					
-						<?php
-					endif;
-					
-				elseif ( $post_format == 'gallery' ) : ?>
-				
-					<div class="featured-media">	
-		
-						<?php fukasawa_flexslider( 'post-image' ); ?>
-						
-						<div class="clear"></div>
-						
-					</div><!-- .featured-media -->
-								
-				<?php elseif ( has_post_thumbnail() ) : ?>
-						
-					<div class="featured-media">
+						<div class="featured-media">	
 			
-						<?php the_post_thumbnail( 'post-image' ); ?>
-						
-					</div><!-- .featured-media -->
-						
+							<?php fukasawa_flexslider( 'post-image' ); ?>
+							
+							<div class="clear"></div>
+							
+						</div><!-- .featured-media -->
+									
+					<?php elseif ( has_post_thumbnail() ) : ?>
+							
+						<div class="featured-media">
+				
+							<?php the_post_thumbnail( 'post-image' ); ?>
+							
+						</div><!-- .featured-media -->
+							
+					<?php endif; ?>
+
 				<?php endif; ?>
 				
 				<div class="post-inner">
@@ -166,9 +170,12 @@
 					
 					</div><!-- .post-navigation -->
 
-				<?php endif; ?>
+				<?php endif;
 
-				<?php if ( is_single() || comments_open() ) : ?>
+				$post_type = get_post_type();
+				
+				// Output comments wrapper if it's a post, or if comments are open, or if there's a comment number – and check for password
+				if ( ( $post_type == 'post' || comments_open() || get_comments_number() ) && ! post_password_required() ) : ?>
 									
 					<?php comments_template( '', true ); ?>
 
