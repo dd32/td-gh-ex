@@ -64,6 +64,10 @@ The rest of the content...
 
 == Changelog ==
 
+Version 1.28 (2019-07-21)
+-------------------------
+- Fixed password protection issue
+
 Version 1.27 (2019-07-21)
 -------------------------
 - Added content to search pages without results

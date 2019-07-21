@@ -6,7 +6,7 @@
 
 		$post_format = get_post_format();
 
-		if ( post_password_required() ) :
+		if ( ! post_password_required() ) :
 		
 			// Video format specific featured media
 			if ( $post_format == 'video' && strpos( $post->post_content, '<!--more-->' ) ) : ?>
