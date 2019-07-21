@@ -141,7 +141,7 @@ function multishop_sort_by_page($count) {
  
 add_action( 'admin_menu', 'multishop_admin_menu');
 function multishop_admin_menu( ) {
-    add_theme_page( __('Pro Feature','multishop'), __('Multishop Pro','good-news-lite'), 'manage_options', 'multishop-pro-buynow', 'multishop_pro_buy_now', 300 );   
+    add_theme_page( __('Pro Feature','multishop'), __('Multishop Pro','multishop'), 'manage_options', 'multishop-pro-buynow', 'multishop_pro_buy_now', 300 );   
 }
 function multishop_pro_buy_now(){ ?>
 <div class="multishop_pro_version">

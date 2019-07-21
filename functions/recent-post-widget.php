@@ -57,4 +57,10 @@ while ( $multishop_single_post->have_posts() ) { $multishop_single_post->the_pos
 echo $after_widget;
 }
 }
-add_action( 'widgets_init', create_function('', 'return register_widget("multishop_randompostwidget");') ); ?>
+add_action( 
+    'widgets_init', 
+    function () { 
+        return register_widget("multishop_randompostwidget");
+    }
+);
+?>
