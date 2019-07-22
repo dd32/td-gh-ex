@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.7.6
+1.Fixed mobile menu issue.
 @Version 2.7.5
 1.Content of tabs in About Appointment Theme is now visible.
 @Version 2.7.4

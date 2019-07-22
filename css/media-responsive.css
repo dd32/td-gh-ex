@@ -8,7 +8,7 @@
 
 /* This Media screen css called for All Appointment Theme Pages-------------------------------------------------*/
 
-@media only screen and (min-width: 960px) and (max-width: 1200px) {
+@media only screen and (min-width: 1100px) and (max-width: 1200px) {
 /*Menus*/
 .navbar .navbar-right { float: left !important; }
 /*Flexslider*/
@@ -22,11 +22,11 @@
 
 }
 
-@media only screen and (min-width: 768px) and (max-width: 959px) {
+@media only screen and (min-width: 768px) and (max-width: 1100px) {
 /*Menus*/
 .navbar .navbar-right { float: left !important; }
 .navbar-collapse.in { overflow: hidden; }
-.navbar-default .navbar-nav .open .dropdown-menu > li > a { color: #1b1b1b; }
+
 /*FlexSlider*/
 .slide-caption { width: 80%; }
 .slide-text-bg1 { margin: 0 0 13px; }
@@ -57,14 +57,9 @@
 
 }	
 
+
 @media only screen and (min-width: 480px) and (max-width: 767px) {
-/*Menus*/
-.navbar-default .navbar-nav .open .dropdown-menu > li > a { color: #1b1b1b;	transition: all 0.3s ease-in-out 0s; }
-.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover { color: #ee591f; }
-.container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse { margin-left: 0px; margin-right: 0px; }
-.navbar-nav { width: 100%; }
-.navbar-nav > li { border-right: 0px none; }
-.navbar-toggle {
+    .navbar-toggle {
     color: #FFFFFF;
     display: block;
     float: right;
@@ -73,7 +68,17 @@
     margin: 13px auto;
     padding: 9px 17px;
     text-transform: uppercase;
-}
+}}
+
+@media only screen and (max-width: 1100px) and (min-width: 768px){
+.navbar-toggle {
+    margin: 0px auto;
+    }}
+@media only screen and (min-width: 480px) and (max-width: 1100px) {
+/*Menus*/
+.container > .navbar-header, .container-fluid > .navbar-header, .container > .navbar-collapse, .container-fluid > .navbar-collapse { margin-left: 0px; margin-right: 0px; }
+.navbar-nav { width: 100%; }
+.navbar-nav > li { border-right: 0px none; }
 /*Header Contact Info*/
 .head-contact-social { float: none; text-align: center; margin: 17px 0 17px; }
 .head-contact-info { float: none; text-align: center; margin: 10px 0 17px; }
@@ -131,7 +136,7 @@
 	
 } 
 
-@media only screen and (min-width: 200px) and (max-width: 480px) {
+@media only screen and (min-width: 200px) and (max-width: 768px) {
 /*Logo*/
 .navbar-brand { display: block; float: none; margin-right: 0; padding: 10px 15px; }
 .navbar-brand img { display: block; margin: 0 auto; text-align: center; }
