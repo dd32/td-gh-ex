@@ -4,7 +4,7 @@ Theme URI: https://vedathemes.com/blog/vedaitems/aamla-theme/
 Author: Vedathemes
 Author URI: https://vedathemes.com/
 Description: Aamla is a feature rich, Gutenberg friendly, lightweight and mobile first WordPress theme that is flexible and easy to use. It is built with special focus on blog, business and e-commerce websites. Aamla helps you to build your pages even without pagebuilders and make your audios and videos stand out. It is compatible with gutenberg, woocommerce and many other plugins. Aamla is written with clean code and the most current HTML5 conventions. Aamla can be used as a solid base to build beautiful and functional websites.
-Version: 1.2.1
+Version: 1.2.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aamla
@@ -1138,6 +1138,9 @@ button.search-submit:focus {
 	-webkit-box-flex: 0;
 	-ms-flex: 0 0 100%;
 	    flex: 0 0 100%;
+	-webkit-box-ordinal-group: 2;
+	-ms-flex-order: 1;
+	order: 1;
 }
 
 .header-items .search-form ::-webkit-input-placeholder {
@@ -1210,7 +1213,7 @@ button.search-submit:focus {
 	font-size: 20px;
 	position: relative;
 	z-index: 299;
-	right: -15px;
+	right: -10px;
 	width: 40px;
 	height: 40px;
 	margin-left: 2px;
@@ -1705,8 +1708,17 @@ body.grid:not(.error404) .page-header {
 	padding: 20px 20px 50px;
 }
 
+.index-view.grid .tgrid .entry-main-content {
+	padding: 20px;
+}
+
 .entry-header {
 	position: relative;
+}
+
+.index-view .tgrid .entry-header > a {
+	font-size: 0.851rem;
+	line-height: 2.0564;
 }
 
 .entry-header-title-area {
@@ -1732,6 +1744,12 @@ body.grid:not(.error404) .page-header {
 .index-view .entry-header-title a:hover,
 .index-view .entry-header-title a:focus {
 	color: #757575;
+}
+
+.index-view .tgrid .entry-header-title {
+	font-size: 1rem;
+	line-height: 1.75;
+	margin-bottom: 0;
 }
 
 .single .entry-header-title {
@@ -2479,9 +2497,14 @@ body.grid:not(.error404) .page-header {
 .sidebar-widget-area .widget-title,
 .header-widget-area .widget-title,
 .footer-widget-area .widget-title {
-	font-size: 1rem;
-	line-height: 1.75;
+	font-family: PT Sans, sans-serif;
+	font-size: 0.851rem;
+	line-height: 2.0564;
 	margin-bottom: 1.3125rem;
+	padding-bottom: 0.4375rem;
+	letter-spacing: 1px;
+	text-transform: uppercase;
+	border-bottom: 1px solid #e6e6e6;
 }
 
 .widget a.button {
@@ -2524,6 +2547,21 @@ body.grid:not(.error404) .page-header {
 	border-width: 0 !important;
 	border-radius: 3px !important;
 	outline: none !important;
+}
+
+.aml-related-posts {
+	padding: 40px 20px;
+	border-top: 1px solid #e6e6e6;
+}
+
+.aml-related-posts .dp-title {
+	font-size: 1rem;
+	line-height: 1.75;
+}
+
+.aml-related-posts .dp-categories {
+	font-size: 0.851rem;
+	line-height: 2.0564;
 }
 
 @media only screen and (min-width: 641px) {
@@ -2628,7 +2666,7 @@ body.grid:not(.error404) .page-header {
 		padding-top: 100%;
 	}
 	.grid .entry-featured-content:after {
-		padding-top: 56.25%;
+		padding-top: 60%;
 	}
 	.list .entry-featured-content {
 		min-height: 260px;
@@ -2736,9 +2774,6 @@ body.grid:not(.error404) .page-header {
 		line-height: 2.01149;
 		margin-bottom: 7%;
 	}
-	.pagination {
-		margin-bottom: 60px;
-	}
 	.pagination .nav-links {
 		display: block;
 	}
@@ -2826,6 +2861,16 @@ body.grid:not(.error404) .page-header {
 	.footer-items .credit-text:before {
 		margin-right: 0.25em;
 		content: "\00b7";
+	}
+	.aml-related-posts {
+		padding: 40px 20px;
+	}
+	.aml-related-posts-title {
+		padding: 0 20px;
+	}
+	.aml-related-posts-content.dp-grid {
+		margin-right: 0;
+		margin-left: 0;
 	}
 }
 
@@ -2940,10 +2985,6 @@ body.grid:not(.error404) .page-header {
 		font-size: 2.315rem;
 		line-height: 1.51188;
 	}
-	.pagination {
-		padding-top: 60px;
-		border-top: 1px solid #e6e6e6;
-	}
 	.comment-respond,
 	.entry-comments,
 	.comment-body {
@@ -3027,6 +3068,9 @@ body.grid:not(.error404) .page-header {
 	.page-entry-header-items {
 		max-width: 900px;
 	}
+	.pagination {
+		margin-bottom: 60px;
+	}
 	.footer-widget-area .widget {
 		margin-right: 60px;
 	}
@@ -3035,6 +3079,12 @@ body.grid:not(.error404) .page-header {
 	}
 	.widget {
 		margin-bottom: 50px;
+	}
+	.aml-related-posts {
+		padding: 60px 30px;
+	}
+	.aml-related-posts-title {
+		padding: 0 30px;
 	}
 }
 

@@ -21,7 +21,15 @@ function aamla_body_classes( $classes ) {
 	} else {
 		$classes[] = 'index-view';
 		// Adds a class for posts layout on index page.
-		$classes[] = is_search() ? 'list' : aamla_get_mod( 'aamla_index_layout', 'attr' ); // Value Escaped.
+		if ( is_search() ) {
+			$classes[] = 'list';
+		} else {
+			if ( false !== strpos( aamla_get_mod( 'aamla_index_layout', 'none' ), 'grid' ) ) {
+				$classes[] = 'grid';
+			} else {
+				$classes[] = 'list';
+			}
+		}
 	}
 
 	// Adds a class to know primary sidebar layout.
@@ -58,6 +66,7 @@ add_filter( 'body_class', 'aamla_body_classes' );
 function aamla_post_classes( $classes ) {
 	// Adds a class for posts.
 	$classes[] = 'entry';
+	$classes[] = aamla_get_mod( 'aamla_index_layout', 'attr' );
 
 	return $classes;
 }

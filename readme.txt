@@ -4,7 +4,7 @@ Contributors: vedathemes
 tags: two-columns, left-sidebar, right-sidebar, grid-layout, custom-menu, custom-logo, editor-style, featured-images, footer-widgets, post-formats, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, e-Commerce
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.2
-Stable tag: 1.2.1
+Requires PHP: 5.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -22,6 +22,17 @@ PHP 5.4+, IE11+, WordPress 4.7+
 Bayleaf WordPress theme uses Google Fonts for your website by default. Fonts and their respective stylesheets are downloaded from google's website. Refer link [ https://developers.google.com/fonts/faq#what_does_using_the_google_fonts_api_mean_for_the_privacy_of_my_users ] for google font's privacy related information. If you do not want to use google fonts for your website, you can disable it from theme customizer (Appearance > Customize > Theme options).
 
 == Changelog ==
+
+= 1.2.2 =
+* Add: Option to add related posts at the end of single posts.
+* Add: Two additional widget areas for home page.
+* Add: wp_body_open hook has been added.
+* Add: One additional archive posts layout.
+* Error Fix: Display of WooCommerce Cart icon on smaller devices.
+* Error Fix: Display WooCommerce filter sidebar even if main sidebar is hidden on archives.
+* Error Fix: WP attachment metadata template error fix.
+* Error Fix: Hide Blank Widget Horizontal line on mobile devices.
+* Modify: Minor styling improvements.
 
 = 1.2.1 =
 * Add: Email subscription box support from mailoptin plugin.
@@ -167,12 +178,11 @@ Bayleaf WordPress theme uses Google Fonts for your website by default. Fonts and
 * Font Awesome SVG icons http://fontawesome.io/, (C) Dave Gandy, [CC BY 4.0](https://fontawesome.com/license/free)
 * Icomoon SVG icons https://icomoon.io, (C) Roonas, [GPL / CC BY 4.0](https://icomoon.io/icons-icomoon.html)
 * Feather SVG icons https://github.com/feathericons/feather, (C) Colebemis, [MIT](http://opensource.org/licenses/MIT)
-* Image in screenshot https://pixabay.com/en/guitar-country-girl-acoustic-guitar-944261/, (C) langll, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-* Image in screenshot https://pixabay.com/en/santorini-oia-greece-people-person-1663658/, (C) Mariamichelle, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-* Image in screenshot https://pixabay.com/en/raspberry-berry-summer-closeup-2023404/, (C) Daria-Yakovleva, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-* Image in screenshot https://pixabay.com/en/evening-sky-colorful-sunset-1777352/, (C) sbtlneet, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-* Image in screenshot https://pixabay.com/en/harp-musical-instrument-classical-384557/, (C) Skitterphoto, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
-* Image in screenshot https://pixabay.com/en/musician-performer-keyboard-1031110/, (C) Free-Photos, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image in screenshot https://pxhere.com/en/photo/479333, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image in screenshot https://pxhere.com/en/photo/1542243, (C) Ken Lane, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image in screenshot https://pxhere.com/en/photo/1542257, (C) Ken Lane, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image in screenshot https://pxhere.com/en/photo/1460159, (C) CHESVISUAL, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
+* Image in screenshot https://pxhere.com/en/photo/1592870, (C) Lê Tuấn Hùng, [CC0](https://creativecommons.org/publicdomain/zero/1.0/)
 * Incorporates code from Twenty Fifteen WordPress Theme, (C) Automattic & WordPress.org, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * Incorporates code from Twenty Seventeen WordPress Theme, (C) Automattic & WordPress.org, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * Incorporates code from Stargazer WordPress Theme, (C) Justin Tadlock, [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)

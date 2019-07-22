@@ -30,6 +30,8 @@
 
 <body<?php aamla_attr( 'body', false ); ?> <?php body_class(); ?>>
 
+	<?php wp_body_open(); ?>
+
 	<header id="masthead"<?php aamla_attr( 'site-header' ); ?>>
 
 		<?php

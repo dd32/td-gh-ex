@@ -219,6 +219,7 @@ function aamla_setup() {
 			'gutenberg',
 			'jetpack',
 			'tgm-activation',
+			'related-posts',
 		)
 	);
 	foreach ( $addons as $addon ) {
@@ -294,6 +295,16 @@ function aamla_widgets_init() {
 			array(
 				'name' => esc_html__( 'Sidebar Widgets', 'aamla' ),
 				'id'   => 'sidebar',
+			),
+			array(
+				'name'          => esc_html__( 'Above Home Page Content', 'aamla' ),
+				'id'            => 'home-above',
+				'before_widget' => '<section id="%1$s" class="widget brick %2$s">',
+			),
+			array(
+				'name'          => esc_html__( 'Below Home Page Content', 'aamla' ),
+				'id'            => 'home-below',
+				'before_widget' => '<section id="%1$s" class="widget brick %2$s">',
 			),
 			array(
 				'name' => esc_html__( 'Action Widgets', 'aamla' ),

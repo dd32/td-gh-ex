@@ -60,6 +60,7 @@ class WooCommerce {
 		add_action( 'after_setup_theme', [ self::get_instance(), 'add_woo_support' ] );
 		add_filter( 'aamla_register_sidebar', [ self::get_instance(), 'register_widget_areas' ] );
 		add_filter( 'aamla_widgets_secondary', [ self::get_instance(), 'display_sidebar' ] );
+		add_filter( 'aamla_inside_sidebar', [ self::get_instance(), 'display_sidebar_conditional' ] );
 		add_filter( 'aamla_markup_header_widgets', [ self::get_instance(), 'header_widgets' ] );
 		add_filter( 'aamla_markup_header_items', [ self::get_instance(), 'header_cart_icon' ] );
 		add_filter( 'woocommerce_add_to_cart_fragments', [ self::get_instance(), 'update_cart_on_ajax' ] );
@@ -163,6 +164,27 @@ class WooCommerce {
 			return true;
 		}
 		return $return;
+	}
+
+	/**
+	 * Didplay wooCommerce Sidebar even if main sidebar is not available.
+	 *
+	 * @since 1.2.2
+	 */
+	public function display_sidebar_conditional() {
+		if ( 'no-sidebar' !== aamla_get_mod( 'aamla_archive_sidebar_layout', 'none' ) ) {
+			return;
+		}
+
+		// Replace default sidebar with Filters sidebar on Product archive pages.
+		if ( is_shop() || is_product_taxonomy() ) {
+			aamla_widgets(
+				'wc-archive-filters',
+				'wc-archive-filters sidebar-widget-area',
+				esc_html__( 'WooCommerce - Procuct Archive Filters', 'aamla' ),
+				'wc-archive-filters'
+			);
+		}
 	}
 
 	/**

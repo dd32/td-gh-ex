@@ -120,8 +120,9 @@ function aamla_get_theme_controls( $controls = [] ) {
 				'setting'     => 'aamla_index_layout',
 				'type'        => 'select',
 				'choices'     => [
-					'list' => esc_html__( 'List View', 'aamla' ),
-					'grid' => esc_html__( 'Responsive Grid View', 'aamla' ),
+					'list'  => esc_html__( 'List View', 'aamla' ),
+					'grid'  => esc_html__( 'Responsive Grid View', 'aamla' ),
+					'tgrid' => esc_html__( 'Responsive Grid - Title Only', 'aamla' ),
 				],
 				'description' => esc_html__( 'Posts on search page will always be displayed in list view as it is quick to scan.', 'aamla' ),
 			],
@@ -142,6 +143,12 @@ function aamla_get_theme_controls( $controls = [] ) {
 				'label'   => esc_html__( 'Show Header Search', 'aamla' ),
 				'section' => 'aamla_general_section',
 				'setting' => 'aamla_header_search',
+				'type'    => 'checkbox',
+			],
+			[
+				'label'   => esc_html__( 'Display related posts after post content', 'aamla' ),
+				'section' => 'aamla_general_section',
+				'setting' => 'aamla_related_posts',
 				'type'    => 'checkbox',
 			],
 			[
@@ -203,6 +210,7 @@ function aamla_get_theme_defaults( $defaults = [] ) {
 			'aamla_index_layout'                     => 'grid',
 			'aamla_primary_nav'                      => 1,
 			'aamla_header_search'                    => 1,
+			'aamla_related_posts'                    => 1,
 			'aamla_thumbnail_placeholder'            => 1,
 			'aamla_thumbnail_on_single'              => 1,
 			'aamla_print_post_icon'                  => 1,

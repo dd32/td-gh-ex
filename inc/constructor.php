@@ -28,6 +28,7 @@ aamla_add_markup_for( 'header_items', 'inside_header' );
 aamla_add_markup_for( 'contact_information', 'inside_header' );
 aamla_add_markup_for( 'main_navigation', 'inside_header' );
 aamla_add_markup_for( 'page_entry_header', 'after_header' );
+aamla_add_markup_for( 'home_above_content_area', 'after_header' );
 
 // Display primary site content.
 aamla_add_markup_for( 'breadcrumb', 'inside_main_content' );
@@ -42,6 +43,7 @@ aamla_add_markup_for( 'image_navigation', 'inside_entry' );
 aamla_add_markup_for( 'post_navigation', 'inside_main_content' );
 aamla_add_markup_for( 'post_pagination', 'after_main_content' );
 aamla_add_markup_for( 'sidebar_widgets', 'inside_sidebar' );
+aamla_add_markup_for( 'home_below_content_area', 'after_site_content' );
 
 // Display site footer items.
 aamla_add_markup_for( 'footer_widgets', 'inside_footer' );
@@ -221,6 +223,42 @@ function aamla_main_navigation() {
 }
 
 /**
+ * Display Homepage widgets 1 (widget area).
+ *
+ * @since 1.0.0
+ */
+function aamla_home_above_content_area() {
+	if ( ! is_front_page() || is_paged() ) {
+		return;
+	}
+
+	aamla_widgets(
+		'home-content-area-above',
+		'home-content-area-above widgetlayer wrapper',
+		esc_html__( 'Homepage Above Content Widget Area', 'aamla' ),
+		'home-above'
+	);
+}
+
+/**
+ * Display Homepage widgets 1 (widget area).
+ *
+ * @since 1.0.0
+ */
+function aamla_home_below_content_area() {
+	if ( ! is_front_page() || is_paged() ) {
+		return;
+	}
+
+	aamla_widgets(
+		'home-content-area-below',
+		'home-content-area-below widgetlayer wrapper',
+		esc_html__( 'Homepage Below Content Widget Area', 'aamla' ),
+		'home-below'
+	);
+}
+
+/**
  * Page Entry header wrapper markup.
  *
  * @since 1.0.0
@@ -320,8 +358,15 @@ function aamla_entry_header_wrapper() {
 		if ( is_singular( 'page' ) && has_post_thumbnail() ) {
 			return;
 		}
-		// Display entry title on index and single ('page' & 'attachment' post-types) pages.
-		$entry_header = [ [ 'aamla_get_template_partial', 'template-parts/post', 'entry-title' ] ];
+
+		if ( ! is_singular() && 'tgrid' === aamla_get_mod( 'aamla_index_layout', 'none' ) ) {
+			$entry_header = [
+				[ 'the_category', ', ' ],
+				[ 'aamla_get_template_partial', 'template-parts/post', 'entry-title' ],
+			];
+		} else {
+			$entry_header = [ [ 'aamla_get_template_partial', 'template-parts/post', 'entry-title' ] ];
+		}
 	}
 
 	aamla_markup( 'entry-header', $entry_header );
@@ -518,6 +563,9 @@ function aamla_entry_content() {
 	if ( is_singular() ) {
 		aamla_get_template_partial( 'template-parts/post', 'entry-content' );
 	} else {
+		if ( 'tgrid' === aamla_get_mod( 'aamla_index_layout', 'none' ) ) {
+			return;
+		}
 		the_excerpt();
 		aamla_get_template_partial( 'template-parts/meta', 'meta-author' );
 	}

@@ -67,8 +67,8 @@ aamla = {
 			return;
 		}
 
-		aamla.scrollingElem.classList.remove( 'no-scroll' );
 		aamla.scrollingElem.scrollTop = aamla.scrollPosition;
+		aamla.scrollingElem.classList.remove( 'no-scroll' );
 		aamla.bodyScrollDisabled = false;
 	},
 

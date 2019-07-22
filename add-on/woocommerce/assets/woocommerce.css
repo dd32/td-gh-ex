@@ -2425,10 +2425,11 @@ button.pswp__button--zoom:hover {
 	font-size: 20px;
 	position: relative;
 	position: relative;
-	right: -15px;
+	right: -10px;
 	width: 40px;
 	height: 40px;
 	padding: 0;
+	vertical-align: bottom;
 	color: #363636;
 	outline-offset: -0.05em;
 	background-color: transparent;
@@ -2437,8 +2438,7 @@ button.pswp__button--zoom:hover {
 .wc-cart-toggle:hover,
 .wc-cart-toggle:focus,
 .wc-cart-toggle.toggled-btn {
-	outline: none;
-	background-color: #f0f0f0;
+	background-color: transparent;
 }
 
 .wc-cart-items {

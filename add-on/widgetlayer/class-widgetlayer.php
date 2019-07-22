@@ -92,7 +92,7 @@ class WidgetLayer {
 	 */
 	public function enqueue_front() {
 
-		if ( ! $this->active_widgetlayer_pageid() ) {
+		if ( ! ( $this->active_widgetlayer_pageid() || is_home() || is_front_page() ) ) {
 			return;
 		}
 		wp_enqueue_style(

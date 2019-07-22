@@ -12,6 +12,9 @@ if ( ! is_attachment() || ! wp_attachment_is_image() ) {
 
 // Retrieve attachment metadata.
 $aamla_metadata = wp_get_attachment_metadata();
+if ( false === $aamla_metadata ) {
+	return;
+}
 printf(
 	'<span%1$s"><a href="%2$s" title="%3$s">%4$s (%5$s &times; %6$s)</a></span>',
 	aamla_get_attr( 'attachment-meta', [ 'class' => 'full-size-link' ] ), // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped

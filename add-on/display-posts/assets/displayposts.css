@@ -70,7 +70,9 @@
 
 .dp-featured-content {
 	position: relative;
+	overflow: hidden;
 	margin-bottom: 20px;
+	border-radius: 3px;
 	background: linear-gradient(45deg, #0052a4 0%, #06c 25%, #66c7d6 100%);
 }
 
@@ -205,9 +207,10 @@
 }
 
 .dp-meta {
-	font-size: 0.87rem;
-	line-height: 2.01149;
+	font-size: 0.8rem;
+	line-height: 2.1875;
 	letter-spacing: 0.5px;
+	color: #757575;
 }
 
 .dp-meta > span:before {
@@ -218,6 +221,10 @@
 .dp-meta > span:first-child:before,
 .dp-meta .modified-entry-date {
 	display: none;
+}
+
+.dp-author {
+	text-transform: capitalize;
 }
 
 .dp-content > *:last-child {
