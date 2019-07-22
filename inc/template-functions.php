@@ -905,7 +905,7 @@ if ( ! function_exists( 'attesa_get_schema_markup' ) ) {
 /* Output of the schema marktup */
 if ( ! function_exists( 'attesa_schema_markup' ) ) {
 	function attesa_schema_markup( $position ) {
-		echo attesa_get_schema_markup( $position );
+		echo attesa_get_schema_markup( $position ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 }
 /* Output of Yoast breadcrumb */

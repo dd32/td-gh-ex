@@ -1,8 +1,8 @@
-#customize-controls .control-section-attesaProVersion .accordion-section-title:hover,
-#customize-controls .control-section-attesaProVersion .accordion-section-title:focus {
+#customize-controls .control-section-wptrt-button .accordion-section-title:hover,
+#customize-controls .control-section-wptrt-button .accordion-section-title:focus {
 	background-color: #fff;
 }
-.control-section-attesaProVersion .accordion-section-title .button {
+.control-section-wptrt-button .accordion-section-title .button {
 	margin-top:  -4px;
 	font-weight: 400;
 	font-size: 80%;
@@ -21,7 +21,7 @@
     float: right;
 	font-size: 150%;
 }
-#customize-controls .current-panel .control-section-attesaProVersion>h3.accordion-section-title {
+#customize-controls .current-panel .control-section-wptrt-button>h3.accordion-section-title {
     padding-right: 10px;
 }
 #accordion-section-manager_attesa_buy_pro h3 {

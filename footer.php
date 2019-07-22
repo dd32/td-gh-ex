@@ -31,7 +31,7 @@
 <?php get_sidebar('push'); ?>
 <?php 
 	if (attesa_options('_social_float', '')) {
-		echo attesa_show_social_network('float');
+		echo attesa_show_social_network('float'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 	if (attesa_options('_show_scrolltotop', '1')):
 		$attesa_scrolltotopIcon = attesa_options('_scrolltotop_icon', 'fa fa-angle-up');

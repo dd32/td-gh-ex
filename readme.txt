@@ -1,9 +1,9 @@
 === Attesa ===
-Contributors: AttesaWP
+Contributors: CrestaProject
 Tags: two-columns, right-sidebar, custom-colors, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, e-commerce, footer-widgets, custom-logo
 Requires at least: 4.5
 Tested up to: 5.2
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Attesa WordPress Theme, Copyright 2019 Rizzo Andrea
@@ -25,17 +25,20 @@ Attesa is an extremely versatile and customizable multipurpose WordPress theme. 
 
 Attesa includes support for Infinite Scroll in Jetpack, WooCommerce, Easy Digital Downlods and WPML.
 
-== Credits ==
-
+== Resources ==
 * Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
 * FontAwesome http://fontawesome.io/ Font licensed under SIL OFL 1.1 and Code lisensed under MIT
 * nanoScrollerJS https://github.com/jamesflorentino/nanoScrollerJS licensed under MIT
 * SmoothScroll https://github.com/galambalazs/smoothscroll-for-websites licensed under MIT
-* "Pro" theme section examples for the customizer https://github.com/justintadlock/trt-customizer-pro licensed under GNU General Public License v2.0
+* Customize section button https://github.com/WPTRT/customize-section-button licensed under the GNU GPL, version 2 or later
 * Image used in Theme Screenshot https://www.pexels.com/photo/person-typing-on-macbook-pro-1548999/ Pexels Free photos for commercial and personal works
 
 == Changelog ==
 
-= 1.0.0 =
+= Version 1.0.1 =
+* Fixed a bug with Elementor PRO
+* Minor bug fixes
+
+= Version 1.0.0 =
 * Initial release

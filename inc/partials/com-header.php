@@ -56,7 +56,7 @@ function attesa_get_top_bar() {
 					<?php endif; ?>
 					<?php 
 						if ($showInTopNav == 1) {
-							echo attesa_show_social_network('top');
+							echo attesa_show_social_network('top'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 						}
 					?>
 				</div>
@@ -160,7 +160,7 @@ function attesa_get_header() {
 									$attesa_description = get_bloginfo( 'description', 'display' );
 									if ( $attesa_description || is_customize_preview() ) :
 										?>
-										<p class="site-description smallText"><?php echo $attesa_description; /* WPCS: xss ok. */ ?></p>
+										<p class="site-description smallText"><?php echo $attesa_description; /* // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?></p>
 									<?php endif; ?>
 								<?php endif; ?>
 							</div>
@@ -198,7 +198,7 @@ function attesa_get_header() {
 						<?php 
 							if ($showInHeader == 1 ) {
 								echo '<div class="attesa-social-header-desktop">';
-								echo attesa_show_social_network('header');
+								echo attesa_show_social_network('header'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 								echo '</div>';
 							}
 						?>
@@ -233,7 +233,7 @@ function attesa_get_header() {
 							<?php 
 								if ($showInHeader == 1) {
 									echo '<div class="attesa-social-header-mobile">';
-									echo attesa_show_social_network('header');
+									echo attesa_show_social_network('header'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									echo '</div>';
 								}
 								if ($showSearchButton && $showTopBar) {
@@ -258,7 +258,7 @@ function attesa_get_header() {
 						<?php 
 							if ($showInHeader == 1) {
 								echo '<div class="attesa-social-header-desktop">';
-								echo attesa_show_social_network('header');
+								echo attesa_show_social_network('header'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 								echo '</div>';
 							}
 						?>
@@ -289,7 +289,7 @@ function attesa_get_header() {
 									$attesa_description = get_bloginfo( 'description', 'display' );
 									if ( $attesa_description || is_customize_preview() ) :
 										?>
-										<p class="site-description smallText"><?php echo $attesa_description; /* WPCS: xss ok. */ ?></p>
+										<p class="site-description smallText"><?php echo $attesa_description; /* // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?></p>
 									<?php endif; ?>
 								<?php endif; ?>
 							</div>
@@ -359,7 +359,7 @@ function attesa_get_header() {
 							<?php 
 								if ($showInHeader == 1) {
 									echo '<div class="attesa-social-header-mobile">';
-									echo attesa_show_social_network('header');
+									echo attesa_show_social_network('header'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									echo '</div>';
 								}
 								if ($showSearchButton && $showTopBar) {
@@ -401,7 +401,7 @@ function attesa_get_header() {
 									$attesa_description = get_bloginfo( 'description', 'display' );
 									if ( $attesa_description || is_customize_preview() ) :
 										?>
-										<p class="site-description smallText"><?php echo $attesa_description; /* WPCS: xss ok. */ ?></p>
+										<p class="site-description smallText"><?php echo $attesa_description; /* // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?></p>
 									<?php endif; ?>
 								<?php endif; ?>
 							</div>
@@ -482,7 +482,7 @@ function attesa_get_header() {
 										}
 										if ($showInHeader == 1) {
 											echo '<div class="attesa-social-header-popup">';
-											echo attesa_show_social_network('header');
+											echo attesa_show_social_network('header'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 											echo '</div>';
 										}
 									?>

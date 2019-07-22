@@ -5,6 +5,7 @@
  * @since  1.0.0
  * @access public
  */
+use WPTRT\Customize\Section\Button;
 final class Attesa_Updgrade_Pro_Button {
 
 	/**
@@ -60,38 +61,29 @@ final class Attesa_Updgrade_Pro_Button {
 	 * @return void
 	 */
 	public function sections( $manager ) {
+		
+		require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/Button.php' );
 
-		// Load custom sections.
-		require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/section-pro.php' );
+		$manager->register_section_type( Button::class );
 
-		// Register custom section types.
-		$manager->register_section_type( 'Attesa_Updgrade_Section_Pro' );
-
-		// Register sections.
 		$manager->add_section(
-			new Attesa_Updgrade_Section_Pro(
-				$manager,
-				'manager_attesa_buy_pro',
-				array(
-					'priority' => 1,
-					'title'    => esc_html__( 'Attesa PRO Addon', 'attesa' ),
-					'pro_text' => esc_html__( 'More Info',         'attesa' ),
-					'pro_url'  => 'https://attesawp.com/attesa-pro/',
-				)
-			)
+			new Button( $manager, 'manager_attesa_buy_pro', [
+				'title'       => __( 'Attesa PRO Addon', 'attesa' ),
+				'button_text' => __( 'More Info',        'attesa' ),
+				'button_url'  => 'https://attesawp.com/attesa-pro/',
+				'priority' => 1,
+			] )
 		);
+		
 		$manager->add_section(
-			new Attesa_Updgrade_Section_Pro(
-				$manager,
-				'manager_attesa_documentation',
-				array(
-					'priority' => 999,
-					'title'    => esc_html__( 'Need help?', 'attesa' ),
-					'pro_text' => esc_html__( 'Theme Documentation',         'attesa' ),
-					'pro_url'  => 'https://attesawp.com/docs/',
-				)
-			)
+			new Button( $manager, 'manager_attesa_documentation', [
+				'title'       => __( 'Need help?', 'attesa' ),
+				'button_text' => __( 'Theme Documentation',        'attesa' ),
+				'button_url'  => 'https://attesawp.com/docs/',
+				'priority' => 999,
+			] )
 		);
+		
 	}
 
 	/**
