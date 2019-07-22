@@ -5,6 +5,7 @@
  * @since  1.0.0
  * @access public
  */
+use WPTRT\Customize\Section\Button;
 final class Semplicemente_Updgrade_Pro_Button {
 
 	/**
@@ -60,25 +61,18 @@ final class Semplicemente_Updgrade_Pro_Button {
 	 * @return void
 	 */
 	public function sections( $manager ) {
+		
+		require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/Button.php' );
 
-		// Load custom sections.
-		require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/section-pro.php' );
+		$manager->register_section_type( Button::class );
 
-		// Register custom section types.
-		$manager->register_section_type( 'Semplicemente_Updgrade_Section_Pro' );
-
-		// Register sections.
 		$manager->add_section(
-			new Semplicemente_Updgrade_Section_Pro(
-				$manager,
-				'cresta_semplicemente_buy_pro',
-				array(
-					'priority' => 9,
-					'title'    => esc_html__( 'Semplicemente PRO', 'semplicemente' ),
-					'pro_text' => esc_html__( 'More Info',         'semplicemente' ),
-					'pro_url'  => 'https://crestaproject.com/downloads/semplicemente/'
-				)
-			)
+			new Button( $manager, 'cresta_semplicemente_buy_pro', [
+				'title'       => __( 'Semplicemente PRO', 'semplicemente' ),
+				'button_text' => __( 'More Info',        'semplicemente' ),
+				'pro_url'  => 'https://crestaproject.com/downloads/semplicemente/',
+				'priority' => 10,
+			] )
 		);
 	}
 

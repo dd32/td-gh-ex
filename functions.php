@@ -200,7 +200,8 @@ require get_template_directory() . '/inc/semplicemente-dynamic.php';
 /**
  * Load PRO Button in the customizer
  */
-require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/class-customize.php' );
+require get_template_directory() . '/inc/pro-button/class-customize.php';
+
 
 /* Calling in the admin area for the Welcome Page */
 if ( is_admin() ) {

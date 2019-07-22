@@ -37,7 +37,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 				endif;
 				$semplicemente_description = get_bloginfo( 'description', 'display' );
 				if ( $semplicemente_description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $semplicemente_description; /* WPCS: xss ok. */ ?></p>
+					<p class="site-description"><?php echo $semplicemente_description; /* // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?></p>
 				<?php
 				endif; ?>
 			</div>
