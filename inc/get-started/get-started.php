@@ -2,29 +2,15 @@
 //about theme info
 add_action( 'admin_menu', 'academic_education_gettingstarted' );
 function academic_education_gettingstarted() {    	
-	add_theme_page( esc_html__('Get Started: Hotel Theme', 'academic-education'), esc_html__('Get Started', 'academic-education'), 'edit_theme_options', 'academic_education_guide', 'academic_education_mostrar_guide');   
+	add_theme_page( esc_html__('Get Started: Education Theme', 'academic-education'), esc_html__('Get Started', 'academic-education'), 'edit_theme_options', 'academic_education_guide', 'academic_education_mostrar_guide');   
 }
 
 // Add a Custom CSS file to WP Admin Area
 function academic_education_admin_theme_style() {
-   wp_enqueue_style( 'academic-education-font', academic_education_admin_font_url(), array() );
    wp_enqueue_style('custom-admin-style', get_template_directory_uri() . '/inc/get-started/get-started.css');
    //wp_enqueue_script('tabs', get_template_directory_uri() . '/inc/getting-started/js/tab.js');
 }
 add_action('admin_enqueue_scripts', 'academic_education_admin_theme_style');
-
-// Theme Font URL
-function academic_education_admin_font_url() {
-	$font_url = '';
-	$font_family = array();
-	$font_family[] = 'Montserrat:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i';
-
-	$query_args = array(
-		'family'	=> urlencode(implode('|',$font_family)),
-	);
-	$font_url = add_query_arg($query_args,'//fonts.googleapis.com/css');
-	return $font_url;
-}
 
 //guidline for about theme
 function academic_education_mostrar_guide() { 
@@ -49,7 +35,6 @@ function academic_education_mostrar_guide() {
 			<a href="<?php echo esc_url( ACADEMIC_EDUCATION_FREE_THEME_DOC ); ?>" target="_blank"> <?php esc_html_e( 'Documentation', 'academic-education' ); ?></a>
 			<a target="_blank" href="<?php echo esc_url( admin_url('customize.php') ); ?>"><?php esc_html_e('Customizing', 'academic-education'); ?></a>
 			<a href="<?php echo esc_url( ACADEMIC_EDUCATION_SUPPORT ); ?>" target="_blank"><?php esc_html_e('Support Forum', 'academic-education'); ?></a>
-			<a href="<?php echo esc_url( ACADEMIC_EDUCATION_DEMO_DATA ); ?>" target="_blank"><?php esc_html_e('Demo Data', 'academic-education'); ?></a>
 			<a class="get-pro" href="<?php echo esc_url( ACADEMIC_EDUCATION_BUY_NOW ); ?>" target="_blank"><?php esc_html_e('Get Pro', 'academic-education'); ?></a>
 		</div>
 	</div>

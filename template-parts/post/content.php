@@ -14,7 +14,7 @@
         <i class="fas fa-user"></i><span class="entry-author"> <?php the_author(); ?> </span>
         <i class="fas fa-comments"></i><span class="entry-comments"><?php comments_number( __('0 Comments','academic-education'), __('0 Comments','academic-education'), __('0 % Comments','academic-education')); ?>
         </span>
-        <i class="far fa-calendar-alt"></i></i><span> <?php the_date(); ?> </span>
+        <i class="far fa-calendar-alt"></i><span> <?php the_date(); ?> </span>
       </div>
       <div class="new-text">
         <?php the_excerpt();?>

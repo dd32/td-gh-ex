@@ -6,7 +6,7 @@
  * @since 1.0
  */
 ?>
-<div class="col-sm-4">
+<div class="col-lg-4 col-md-4">
   <div class="post-wrap">
     <div class="box-image">
       <?php 

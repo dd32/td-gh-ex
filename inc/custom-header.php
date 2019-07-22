@@ -22,20 +22,16 @@ if ( ! function_exists( 'academic_education_header_style' ) ) :
  *
  * @see academic_education_custom_header_setup().
  */
+add_action( 'wp_enqueue_scripts', 'academic_education_header_style' );
 function academic_education_header_style() {
-	$header_text_color = get_header_textcolor();
-	?>
-	<style type="text/css">
-	<?php
-		//Check if user has defined any header image.
-		if ( get_header_image() ) :
-	?>
-		.header{
-			background: url(<?php echo esc_url(get_header_image()); ?>) no-repeat;
+	//Check if user has defined any header image.
+	if ( get_header_image() ) :
+	$custom_css = "
+        .headerbox{
+			background-image:url('".esc_url(get_header_image())."');
 			background-position: center top;
-		}
-	<?php endif; ?>	
-	</style>
-	<?php
+		}";
+	   	wp_add_inline_style( 'academic-education-basic-style', $custom_css );
+	endif;
 }
 endif; // academic_education_header_style

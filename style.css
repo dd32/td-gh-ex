@@ -3,12 +3,12 @@ Theme Name: Academic Education
 Theme URI: https://www.logicalthemes.com/themes/free-academic-education-wordpress-theme/
 Author: LogicalThemes
 Author URI: https://www.logicalthemes.com
-Description: Academic Education theme is suitable for college, School, university, LMS, Training Center, Academy, Primary School, High School and Kindergarten and various educational websites. and hey you can even put it use for tuition classes, coaching classes, personal, blogging and any small business, we are not leaving anything behind. .A highly flexible, versatile yet multipurpose theme that can be used to build business and corporate websites. This theme comprises of news, added filter feature, personalization options with a clean professional design that is user friendly. Not only that you can also find useful sections such as testimonial section, Banner with Call to Action Button (CTA),social media links and so on. An excellent option for the educational institutions and businesses. The SEO optimization with unique and secure coding ensures safety of your data along with the SEO activities, web crawlers will love it. A lovely theme for your lovely university. lastly , we would like to talk about the insane customization viability in regards to add on features tools and short codes that we provide. Demo: https://logicalthemes.com/academic-education-pro/
-Version: 0.2.3
+Description: Academic Education theme is suitable for college, School, university, LMS, Training Center, Academy, Primary School, High School and Kindergarten and various educational websites. and hey you can even put it use for tuition classes, coaching classes, personal, blogging and any small business, we are not leaving anything behind. A highly flexible, versatile yet multipurpose theme that can be used to build business and corporate websites. This theme comprises of news, added filter feature, personalization options with a clean professional design that is user friendly. Not only that you can also find useful sections such as testimonial section, Banner with Call to Action Button (CTA),social media links and so on. An excellent option for the educational institutions and businesses. The SEO optimization with unique and secure coding ensures safety of your data along with the SEO activities, web crawlers will love it. A lovely theme for your lovely university. lastly , we would like to talk about the insane customization viability in regards to add on features tools and short codes that we provide. Demo: https://logicalthemes.com/academic-education-pro/
+Version: 0.2.4
 License: GNU General Public License
 License URI: license.txt
 Text Domain: academic-education
-Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, post-formats, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, education, news
+Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-columns, grid-layout, custom-colors, custom-background, custom-logo, custom-menu, custom-header, editor-style, featured-images, footer-widgets, sticky-post, post-formats, full-width-template, theme-options, threaded-comments, translation-ready, rtl-language-support, blog, education, e-commerce
 
 Academic Education WordPress Theme has been created by LogicalThemes(logicalthemes.com), 2017.
 Academic Education WordPress Theme is released under the terms of GNU GPL
@@ -25,7 +25,6 @@ body{
   -ms-word-wrap:break-word;
   word-wrap:break-word;
   background-color:#fff;
-  font:12px/22px arial;
   color:#5b5b5b;
   font-family: 'Karla', sans-serif;
 }
@@ -50,6 +49,7 @@ h5,
 h6{ 
   margin:0;
   padding:0 0 15px;
+  font-family: 'Montserrat', sans-serif;
 }
 p{ 
   margin:0;
@@ -193,7 +193,7 @@ h2.section-title {
 .header{
   background: #22272b;
 }
-.headertemplate .header{
+/*.headertemplate .header{
   z-index: 999;
   width: 100%;
   height: auto;
@@ -211,7 +211,7 @@ h2.section-title {
 }
 .headertemplate .header .nav{
   margin:0;
-}
+}*/
 .header .nav{
   padding:0;
   text-align:left;
@@ -231,16 +231,17 @@ h2.section-title {
   color:#ffffff;
   padding:10px 10px;
   display:block;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 1px;
 }
 .header .nav ul li a:hover{
-  background: #ffbf43;
-  text-decoration:none;
+  text-decoration: none;
   color: #333;
+  background: #ffbf43;
 }
 .social-media {
   text-align: right;
+}
+i.fab.fa-facebook-f {
+  border-left: 1px solid;
 }
 .social-media i {
   color: #fff;
@@ -252,10 +253,11 @@ h2.section-title {
   background: #ffbf43;
 }
 .timebox span {
-  font-size: 14px;
+  font-size: 12px;
   letter-spacing: 1px;
   color: #333;
   margin-left: 8px;
+  font-weight: 600;
 }
 .timebox i {
   font-size: 15px;
@@ -264,7 +266,11 @@ h2.section-title {
 .timebox {
   padding: 4px 0;
 }
-.call,
+.call {
+  border-right: 1px solid;
+  margin: 20px 0;
+  padding: 0 10px;
+}
 .email {
   padding: 16px 0;
 }
@@ -285,13 +291,11 @@ p.infotext {
   font-style: italic;
 }
 .logo {
-  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   padding: 8px 0;
   color: #333;
 }
 .logo h1 {
-  font-family: 'Montserrat', sans-serif;
   font-weight: bold;
   padding: 0;  
 }
@@ -303,81 +307,120 @@ p.infotext {
 .read-moresec {
   margin: 30px 0;
 }
-/* --------- SLIDER--------- */
+/*-------slider-----*/
 #slider{ 
-  max-width:100%;
-  margin:auto;
+  max-width:100%; 
+  margin:auto; 
   padding:0;
-  position:relative;
+  background: #000;
 }
-.slide-cap h2 {
-  font-family: 'Montserrat', sans-serif;
+#slider img {
+  width: 100%;
+  opacity: 0.7;
+}
+#slider .carousel-item-next,#slider .carousel-item-prev,#slider .carousel-item.active {
+  display: block !important;
+}
+#slider .carousel-control-prev-icon, #slider .carousel-control-next-icon{
+  background-image: none;
+  font-size: 20px;
+  background: transparent;
+  color: #fff;
+  padding: 0px 10px;
+}
+#slider .carousel-control-next, #slider .carousel-control-prev{
+  opacity: 1;
+  width: 12%;
+}
+.carousel-control-next-icon, .carousel-control-prev-icon{
+  width: auto;
+  height: auto;
+}
+#slider .carousel-caption {
+  top: 50%;
+  transform: translateY(-50%);
+  left: 25%;
+  right: 25%;
+}
+#slider .inner_carousel h2 {
   font-size: 40px;
   font-weight: bold;
   color: #ffbf43;
+  text-transform: capitalize;
+  letter-spacing: 1px;
 }
-.slide-cap {
-  padding: 0 18em;
-}
-.slide-cap p {
+#slider .inner_carousel p{
   color: #fff;
   font-size: 15px;
+  line-height: 2;
 }
-.read-more {
-  margin: 10px 0;
-  -webkit-transform: skew(-25deg);
-  -moz-transform: skew(20deg);
-  -o-transform: skew(20deg);
-}
-.read-more a:hover {
-  background: #333;
-  color: #fff;
-}
-.read-more a {
-  font-size: 18px;
+.more-btn a {
+  font-size: 14px;
   background: #ffbf43;
-  color: #333;
   padding: 10px;
+  font-weight: 600;
+}
+.more-btn a span{
+  padding: 10px;
+  display: inline-block;
+  color: #333;
+  transform: skew(25deg);
+  -webkit-transform: skew(25deg);
+  -moz-transform: skew(25deg);
+  -o-transform: skew(25deg);
+}
+.more-btn {
+  margin: 20px 0;
+  transform: skew(-25deg);
+  -webkit-transform: skew(-25deg);
+  -moz-transform: skew(-25deg);
+  -o-transform: skew(-25deg);
 }
 /* --------- Courses --------- */
-.borderbox{
-  position: absolute;
-  z-index: -1;
-  top: 10px;
-  border: 2px solid #ffbf43;
-  height: 100%;
-  left: 25px;
-  right: 5px;
-}
 #courses {
   padding: 3% 0;
 }
+.course-box img {
+  margin-top: -10px;
+  margin-left: -6px;
+  margin-bottom: 6px;
+  width: 100%;
+}
 .course-box {
   margin-bottom: 3em;
+  border: 2px solid #ffbf43;
 }
 .single-layout h3 {
   color: #000;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 400;
-  letter-spacing: 1px;
+  font-weight: 500;
 }
 .single-layout p {
   font-size: 13px;
   color: #6e6e6e;
   line-height: 2;
-  letter-spacing: 1px;
+  text-align: justify;
 }
-.button a {
-  font-size: 20px;
+.single-layout .button a {
   background: #ffbf43;
-  color: #333;
+  font-weight: 600;
   padding: 10px 30px;
+  font-size: 15px;
 }
-.button {
-  margin-top: 5em;
-  -webkit-transform: skew(-20deg);
+.single-layout .button a span{
+  
+  color: #333;
+  display: inline-block;
+  transform: skew(20deg);
+  -webkit-transform: skew(20deg);
   -moz-transform: skew(20deg);
   -o-transform: skew(20deg);
+}
+.single-layout .button {
+  margin-top: 1em;
+  transform: skew(-20deg);
+  -webkit-transform: skew(-20deg);
+  -moz-transform: skew(-20deg);
+  -o-transform: skew(-20deg);
 }
 /* --------- Homepage --------- */
 #firstbox {
@@ -399,7 +442,6 @@ span.entry-date {
 }
 .post-wrap h3 {
   font-size: 25px;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 600;
   padding: 0;
 }
@@ -432,7 +474,6 @@ span.entry-date {
 .post-wrap p {
   font-size: 15px;
   color: #999;
-  font-family: 'Montserrat', sans-serif;
   font-weight: 100;
 }
 .continue-read a {
@@ -563,8 +604,83 @@ span.post-title {
   float:left;
 }
 
-/* Sidebar */
+/* Woocommerce */
+.woocommerce span.onsale{
+  background: #ffbf43;
+  padding: 0;
+}
+.products li {
+  border: solid 1px #dcdcdc;
+  padding: 10px !important;
+  text-align: center;
+}
+h2.woocommerce-loop-product__title,
+.woocommerce div.product .product_title {
+  color: #000;
+  letter-spacing: 1px;
+  font-weight: 500;
+  text-transform: capitalize;
+  background: none;
+}
+.woocommerce .summary.entry-summary h1 {
+  text-align: left;
+}
+.woocommerce div.product div.images img{
+  margin-bottom: 10px;
+}
+.woocommerce ul.products li.product .price,
+.woocommerce div.product p.price, .woocommerce div.product span.price {
+  color: #000;
+}
+.woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price{
+  margin-bottom: 5px;
+}
 
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
+  background: #ffbf43;
+  color: #fff;
+  border-radius: 0;
+}
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
+  background: #000;
+  color: #fff;
+}
+.woocommerce .quantity .qty {
+  width: 5em;
+  padding: 5px;
+  border-radius: 0;
+  border: solid 1px #000;
+  color: #000;
+}
+.col-1,.col-2 {
+  max-width: 100%;
+}
+nav.woocommerce-MyAccount-navigation ul {
+  list-style: none;
+}
+nav.woocommerce-MyAccount-navigation ul li {
+  background: #ffbf43;
+  padding: 12px !important;
+  margin-bottom: 10px !important;
+  list-style-type: none !important;
+}
+nav.woocommerce-MyAccount-navigation ul li a{
+  color: #fff;
+}
+span.posted_in {
+  display: block;
+}
+span.woocommerce-input-wrapper {
+  width: 100%;
+}
+form.woocommerce-ordering {
+  margin: 1em 0 !important;
+}
+
+/* Sidebar */
+.blog #sidebar {
+  padding: 13% 0;
+}
 #sidebar h3 {
   color: #000;
   font-size: 25px !important;
@@ -657,6 +773,7 @@ div#sidebar p,
   border-bottom: solid 1px #eee;
   margin-top: 0;
   padding: 9px 0;
+  color: #999999;
 }
 #sidebar .tagcloud a{
   background:#eeeeee;
@@ -671,9 +788,9 @@ div#sidebar p,
 }
 
 /* Main Content Css */
-#main-content {
+/*#main-content {
   font-family: 'Karla', sans-serif;
-}
+}*/
 #main-content p{
   font-size: 16px;
   margin:0 0 20px 0;
@@ -798,30 +915,36 @@ div#sidebar p,
 }
 
 /*copyright css*/
+.footersec aside p{
+  color: #fff;
+}
 .footersec aside.widget {
   margin-bottom: 30px;
   margin-top: 10%;
 }
+.footersec label{
+  width: 70%;
+}
 .footersec input[type="submit"] {
   margin-top: 0;
   padding: 5px 10px;
-  background: #ccc;
-  color: #000;
+  background: #ffbf43;
+  color: #fff;
 }
 .tagcloud a {
-  color: #6e6e6e;
-  border: solid 1px #6e6e6e;
+  color: #fff;
+  border: solid 1px #fff;
   font-size: 15px !important;
   padding: 5px 18px;
   margin: 0 0px 5px;
   display: inline-block;
 }
 .footersec td#prev a {
-  color: #6e6e6e;
+  color: #fff;
 }
 .footersec caption {
   font-weight: bold;
-  color: #6e6e6e;
+  color: #fff;
   font-size: 20px;
 }
 .footersec table,.footersec th,.footersec td {
@@ -829,35 +952,35 @@ div#sidebar p,
   text-align: center;
 }
 .footersec td {
-  padding: 10px;
-  color: #6e6e6e;
+  padding: 8px;
+  color: #fff;
 }
 .footersec th {
   text-align: center;
   padding: 10px;
-  color: #6e6e6e;
+  color: #fff;
 }
 .footersec select {
   padding: 8px 5px;
 }
 .widget li a,aside#categories-5 li a {
-  color: #6e6e6e;
+  color: #fff;
   font-size: 16px;
 }
 .widget li {
   list-style: none !important;
   margin-top: 3%;
-  color: #6e6e6e;
+  color: #fff;
 }
 .textwidget strong,
 .textwidget p {
-  color: #6e6e6e;
+  color: #fff;
 }
 .footersec {
   background: #22272b;
 }
 h3.widget-title {
-  color: #fff;
+  color: #ffbf43;
   font-size: 25px !important;
   font-style: italic;
   font-weight: 800;
@@ -868,7 +991,7 @@ h3.widget-title {
 }
 .copyright {
   color: #fff;
-  font-size: 18px;
+  font-size: 15px;
   font-weight: normal;
   margin: auto;
   text-align: center;
@@ -1008,6 +1131,7 @@ input.search-field,
 .post-password-form input[type=password]{
   border:1px #eee solid;
   padding:4px;
+  width: 100%;
 }
 input.search-submit,
 .post-password-form input[type=submit]{
@@ -1068,8 +1192,9 @@ nav.post-navigation{
 }
 /*responsive menu*/
 @media screen and (max-width: 720px) and (min-width: 320px){
-  .logo img{
-    position: relative;
+  #slider .inner_carousel h2,
+  #slider .inner_carousel p{
+    display: none;
   }
   .call, .email,
   .social-media,
@@ -1077,7 +1202,9 @@ nav.post-navigation{
   .logo {
     text-align: center;
   }
-  .social-media i{
+  .social-media i,
+  i.fab.fa-facebook-f,
+  .call{
     border: none;
   }
   ol.children {
@@ -1090,6 +1217,9 @@ nav.post-navigation{
   #main-content #comments ol li {
     padding: 10% 0 0 2% !important;
   }
+  #courses{
+    padding: 6% 0 ;
+  }
 }
 @media screen and (max-width:720px) {
   .toggle{
@@ -1100,8 +1230,8 @@ nav.post-navigation{
   }
   .toggle a{
     width:100%;
-    color:#999999;
-    background:url('assets/images/mobile_nav_right.png') no-repeat right center #eee;
+    color:#fff;
+    background:url('assets/images/mobile_nav_right.png') no-repeat right center #000;
     padding:10px 10px;
    font-size:16px;
   }
@@ -1122,7 +1252,7 @@ nav.post-navigation{
     overflow-x:hidden;
     width: 100%;
     left: 0;
-    top: 32px;
+    top: 5em;
   }
   .header .nav ul{ 
     width:100%;
@@ -1179,7 +1309,6 @@ nav.post-navigation{
 @media screen and (min-width:720px){
   .header .nav ul li ul{
     display:none;
-    z-index:2;
     font-weight:normal;
     margin: 5% 0 0 0;
   }
@@ -1188,7 +1317,7 @@ nav.post-navigation{
     width:200px;
     background: #eee;
     position:absolute;
-    top:42px;
+    top:35px;
     left:0;
     text-align:left;
     padding:10px 0;
@@ -1209,13 +1338,13 @@ nav.post-navigation{
     display:block;
     position:absolute;
     left:200px;
-    top:-20px;
+    top:-16px;
   }  
   .header .nav ul.sub-menu{
     margin-top:6px;
   }
   .header .nav ul.sub-menu li a:hover{
-    background:#fb6e21;
+    background:#ffbf43;
     color:#fff;
   }
   .header .nav ul {
@@ -1225,9 +1354,11 @@ nav.post-navigation{
     color:#fff;
     padding:14px 15px;
     display:block;
+    font-weight: 600;
+    text-transform: uppercase;
   }
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 1000px) and (max-width: 1024px) {
   #header #header-inner .nav ul li ul li{
     display:block;
     position:relative;
@@ -1240,10 +1371,19 @@ nav.post-navigation{
     padding-bottom:10px;
     border-bottom:1px #313131 solid;
   }
+  .footersec th{
+    padding: 8px;
+  }
+  .footersec td{
+    padding: 5px;
+  }
 }
-@media print{
-  .nav *
-    {
-      display: none !important;
-    }
+@media screen and (min-width: 720px) and (max-width: 768px){
+  .call{
+    padding: 0;
+  }
+  #slider .carousel-caption{
+    left: 15%;
+    right: 15%;
+  }
 }

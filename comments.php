@@ -19,7 +19,7 @@ if ( post_password_required() )
 					 printf(
 					/* translators: 1: number of comments, 2: post title */
 
-					    esc_html(
+					    esc_html( _nx(
 
 					        '%1$s thought on &ldquo;%2$s&rdquo;',
 					        '%1$s thoughts on &ldquo;%2$s&rdquo;',
@@ -27,7 +27,7 @@ if ( post_password_required() )
 					        'comments title',
 					        'academic-education'
 
-					     ),
+					    ) ),
 					    esc_html (number_format_i18n( $comments_number ) ),
 					    get_the_title()
 

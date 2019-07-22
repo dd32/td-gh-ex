@@ -27,7 +27,7 @@ function academic_education_customize_register( $wp_customize ) {
 
 	// Add Settings and Controls for Layout
 	$wp_customize->add_setting('academic_education_theme_options',array(
-        'default' => __( 'Right Sidebar', 'academic-education' ),
+        'default' => __( 'One Column', 'academic-education' ),
         'sanitize_callback' => 'academic_education_sanitize_choices'	        
 	));
 
@@ -46,100 +46,100 @@ function academic_education_customize_register( $wp_customize ) {
 	        ),
 	));
 
-	$font_array = array(
-    '' => __( 'No Fonts', 'academic-education' ),
-    'Abril Fatface' => __( 'Abril Fatface', 'academic-education' ),
-    'Acme' => __( 'Acme', 'academic-education' ),
-    'Anton' => __( 'Anton', 'academic-education' ),
-    'Architects Daughter' => __( 'Architects Daughter', 'academic-education' ),
-    'Arimo' => __( 'Arimo', 'academic-education' ),
-    'Arsenal' => __( 'Arsenal', 'academic-education' ),
-    'Arvo' => __( 'Arvo', 'academic-education' ),
-    'Alegreya' => __( 'Alegreya', 'academic-education' ),
-    'Alfa Slab One' => __( 'Alfa Slab One', 'academic-education' ),
-    'Averia Serif Libre' => __( 'Averia Serif Libre', 'academic-education' ),
-    'Bangers' => __( 'Bangers', 'academic-education' ),
-    'Boogaloo' => __( 'Boogaloo', 'academic-education' ),
-    'Bad Script' => __( 'Bad Script', 'academic-education' ),
-    'Bitter' => __( 'Bitter', 'academic-education' ),
-    'Bree Serif' => __( 'Bree Serif', 'academic-education' ),
-    'BenchNine' => __( 'BenchNine', 'academic-education' ),
-    'Cabin' => __( 'Cabin', 'academic-education' ),
-    'Cardo' => __( 'Cardo', 'academic-education' ),
-    'Courgette' => __( 'Courgette', 'academic-education' ),
-    'Cherry Swash' => __( 'Cherry Swash', 'academic-education' ),
-    'Cormorant Garamond' => __( 'Cormorant Garamond', 'academic-education' ),
-    'Crimson Text' => __( 'Crimson Text', 'academic-education' ),
-    'Cuprum' => __( 'Cuprum', 'academic-education' ),
-    'Cookie' => __( 'Cookie', 'academic-education' ),
-    'Chewy' => __( 'Chewy', 'academic-education' ),
-    'Days One' => __( 'Days One', 'academic-education' ),
-    'Dosis' => __( 'Dosis', 'academic-education' ),
-    'Droid Sans' => __( 'Droid Sans', 'academic-education' ),
-    'Economica' => __( 'Economica', 'academic-education' ),
-	'Fredoka One' => __( 'Fredoka One', 'academic-education' ),
-    'Fjalla One' => __( 'Fjalla One', 'academic-education' ),
-    'Francois One' => __( 'Francois One', 'academic-education' ),
-    'Frank Ruhl Libre' => __( 'Frank Ruhl Libre', 'academic-education' ),
-    'Gloria Hallelujah' => __( 'Gloria Hallelujah', 'academic-education' ),
-    'Great Vibes' => __( 'Great Vibes', 'academic-education' ),
-    'Handlee' => __( 'Handlee', 'academic-education' ),
-    'Hammersmith One' => __( 'Hammersmith One', 'academic-education' ),
-    'Inconsolata' => __( 'Inconsolata', 'academic-education' ),
-    'Indie Flower' => __( 'Indie Flower', 'academic-education' ),
-    'IM Fell English SC' => __( 'IM Fell English SC', 'academic-education' ),
-    'Julius Sans One' => __( 'Julius Sans One', 'academic-education' ),
-    'Josefin Slab' => __( 'Josefin Slab', 'academic-education' ),
-    'Josefin Sans' => __( 'Josefin Sans', 'academic-education' ),
-    'Kanit' => __( 'Kanit', 'academic-education' ),
-    'Lobster' => __( 'Lobster', 'academic-education' ),
-    'Lato' => __( 'Lato', 'academic-education' ),
-    'Lora' => __( 'Lora', 'academic-education' ),
-    'Libre Baskerville' => __( 'Libre Baskerville', 'academic-education' ),
-    'Lobster Two' => __( 'Lobster Two', 'academic-education' ),
-    'Merriweather' => __( 'Merriweather', 'academic-education' ),
-    'Monda' => __( 'Monda', 'academic-education' ),
-    'Montserrat' => __( 'Montserrat', 'academic-education' ),
-    'Muli' => __( 'Muli', 'academic-education' ),
-    'Marck Script' => __( 'Marck Script', 'academic-education' ),
-    'Noto Serif' => __( 'Noto Serif', 'academic-education' ),
-    'Open Sans' => __( 'Open Sans', 'academic-education' ),
-    'Overpass' => __( 'Overpass', 'academic-education' ),
-    'Overpass Mono' => __( 'Overpass Mono', 'academic-education' ),
-    'Oxygen' => __( 'Oxygen', 'academic-education' ),
-    'Orbitron' => __( 'Orbitron', 'academic-education' ),
-    'Patua One' => __( 'Patua One', 'academic-education' ),
-    'Pacifico' => __( 'Pacifico', 'academic-education' ),
-    'Padauk' => __( 'Padauk', 'academic-education' ),
-    'Playball' => __( 'Playball', 'academic-education' ),
-    'Playfair Display' => __( 'Playfair Display', 'academic-education' ),
-    'PT Sans' => __( 'PT Sans', 'academic-education' ),
-    'Philosopher' => __( 'Philosopher', 'academic-education' ),
-    'Permanent Marker' => __( 'Permanent Marker', 'academic-education' ),
-    'Poiret One' => __( 'Poiret One', 'academic-education' ),
-    'Quicksand' => __( 'Quicksand', 'academic-education' ),
-    'Quattrocento Sans' => __( 'Quattrocento Sans', 'academic-education' ),
-    'Raleway' => __( 'Raleway', 'academic-education' ),
-    'Rubik' => __( 'Rubik', 'academic-education' ),
-    'Rokkitt' => __( 'Rokkitt', 'academic-education' ),
-    'Russo One' => __( 'Russo One', 'academic-education' ),
-    'Righteous' => __( 'Righteous', 'academic-education' ),
-    'Slabo' => __( 'Slabo', 'academic-education' ),
-    'Source Sans Pro' => __( 'Source Sans Pro', 'academic-education' ),
-    'Shadows Into Light Two' => __( 'Shadows Into Light Two', 'academic-education'),
-    'Shadows Into Light' => __( 'Shadows Into Light', 'academic-education' ),
-    'Sacramento' => __( 'Sacramento', 'academic-education' ),
-    'Shrikhand' => __( 'Shrikhand', 'academic-education' ),
-    'Tangerine' => __( 'Tangerine', 'academic-education' ),
-    'Ubuntu' => __( 'Ubuntu', 'academic-education' ),
-    'VT323' => __( 'VT323', 'academic-education' ),
-    'Varela Round' => __( 'Varela Round', 'academic-education' ),
-    'Vampiro One' => __( 'Vampiro One','academic-education' ),
-    'Vollkorn' => __( 'Vollkorn', 'academic-education' ),
-    'Volkhov' => __( 'Volkhov','academic-education' ),
-    'Yanone Kaffeesatz' => __( 'Yanone Kaffeesatz','academic-education' )
+    $font_array = array(
+        '' =>'No Fonts',
+        'Abril Fatface' => 'Abril Fatface',
+        'Acme' =>'Acme', 
+        'Anton' => 'Anton', 
+        'Architects Daughter' =>'Architects Daughter',
+        'Arimo' => 'Arimo', 
+        'Arsenal' =>'Arsenal',
+        'Arvo' =>'Arvo',
+        'Alegreya' =>'Alegreya',
+        'Alfa Slab One' =>'Alfa Slab One',
+        'Averia Serif Libre' =>'Averia Serif Libre', 
+        'Bangers' =>'Bangers', 
+        'Boogaloo' =>'Boogaloo', 
+        'Bad Script' =>'Bad Script',
+        'Bitter' =>'Bitter', 
+        'Bree Serif' =>'Bree Serif', 
+        'BenchNine' =>'BenchNine',
+        'Cabin' =>'Cabin',
+        'Cardo' =>'Cardo', 
+        'Courgette' =>'Courgette', 
+        'Cherry Swash' =>'Cherry Swash',
+        'Cormorant Garamond' =>'Cormorant Garamond', 
+        'Crimson Text' =>'Crimson Text',
+        'Cuprum' =>'Cuprum', 
+        'Cookie' =>'Cookie',
+        'Chewy' =>'Chewy',
+        'Days One' =>'Days One',
+        'Dosis' =>'Dosis',
+        'Droid Sans' =>'Droid Sans', 
+        'Economica' =>'Economica', 
+        'Fredoka One' =>'Fredoka One',
+        'Fjalla One' =>'Fjalla One',
+        'Francois One' =>'Francois One', 
+        'Frank Ruhl Libre' => 'Frank Ruhl Libre', 
+        'Gloria Hallelujah' =>'Gloria Hallelujah',
+        'Great Vibes' =>'Great Vibes', 
+        'Handlee' =>'Handlee', 
+        'Hammersmith One' =>'Hammersmith One',
+        'Inconsolata' =>'Inconsolata',
+        'Indie Flower' =>'Indie Flower', 
+        'IM Fell English SC' =>'IM Fell English SC',
+        'Julius Sans One' =>'Julius Sans One',
+        'Josefin Slab' =>'Josefin Slab',
+        'Josefin Sans' =>'Josefin Sans',
+        'Kanit' =>'Kanit',
+        'Lobster' =>'Lobster',
+        'Lato' => 'Lato',
+        'Lora' =>'Lora', 
+        'Libre Baskerville' =>'Libre Baskerville',
+        'Lobster Two' => 'Lobster Two',
+        'Merriweather' =>'Merriweather',
+        'Monda' =>'Monda',
+        'Montserrat' =>'Montserrat',
+        'Muli' =>'Muli',
+        'Marck Script' =>'Marck Script',
+        'Noto Serif' =>'Noto Serif',
+        'Open Sans' =>'Open Sans',
+        'Overpass' => 'Overpass', 
+        'Overpass Mono' =>'Overpass Mono',
+        'Oxygen' =>'Oxygen',
+        'Orbitron' =>'Orbitron',
+        'Patua One' =>'Patua One',
+        'Pacifico' =>'Pacifico',
+        'Padauk' =>'Padauk',
+        'Playball' =>'Playball',
+        'Playfair Display' =>'Playfair Display',
+        'PT Sans' =>'PT Sans',
+        'Philosopher' =>'Philosopher',
+        'Permanent Marker' =>'Permanent Marker',
+        'Poiret One' =>'Poiret One',
+        'Quicksand' =>'Quicksand',
+        'Quattrocento Sans' =>'Quattrocento Sans',
+        'Raleway' =>'Raleway',
+        'Rubik' =>'Rubik',
+        'Rokkitt' =>'Rokkitt',
+        'Russo One' => 'Russo One', 
+        'Righteous' =>'Righteous', 
+        'Slabo' =>'Slabo', 
+        'Source Sans Pro' =>'Source Sans Pro',
+        'Shadows Into Light Two' =>'Shadows Into Light Two',
+        'Shadows Into Light' =>  'Shadows Into Light',
+        'Sacramento' =>'Sacramento',
+        'Shrikhand' =>'Shrikhand',
+        'Tangerine' => 'Tangerine',
+        'Ubuntu' =>'Ubuntu',
+        'VT323' =>'VT323',
+        'Varela Round' =>'Varela Round',
+        'Vampiro One' =>'Vampiro One',
+        'Vollkorn' => 'Vollkorn',
+        'Volkhov' =>'Volkhov',
+        'Kavoon' =>'Kavoon',
+        'Yanone Kaffeesatz' =>'Yanone Kaffeesatz'
     );
-
 	//Topbar section
 	$wp_customize->add_section('academic_education_topbar',array(
 		'title'	=> __('Topbar','academic-education'),
@@ -401,122 +401,131 @@ function academic_education_customize_register( $wp_customize ) {
 	//home page slider
 	$wp_customize->add_section( 'academic_education_slidersettings' , array(
     	'title'      => __( 'Slider Settings', 'academic-education' ),
-		'priority'   => 30,
+		'priority'   => null,
 		'panel' => 'academic_education_panel_id'
 	) );
 
+	$wp_customize->add_setting('academic_education_slider_hide',array(
+	   'default' => 'false',
+	   'sanitize_callback'  => 'sanitize_text_field'
+	));
+	$wp_customize->add_control('academic_education_slider_hide',array(
+	   'type' => 'checkbox',
+	   'label' => __('Show / Hide slider','academic-education'),
+	   'section' => 'academic_education_slidersettings',
+	));
+
 	for ( $count = 1; $count <= 4; $count++ ) {
 
-		// Add color scheme setting and control.
-		$wp_customize->add_setting( 'academic_education_slidersettings-page-' . $count, array(
+		$wp_customize->add_setting( 'academic_education_slidersettings_page' . $count, array(
 			'default'           => '',
-			'sanitize_callback' => 'absint'
+			'sanitize_callback' => 'academic_education_sanitize_dropdown_pages'
 		) );
 
-		$wp_customize->add_control( 'academic_education_slidersettings-page-' . $count, array(
+		$wp_customize->add_control( 'academic_education_slidersettings_page' . $count, array(
 			'label'    => __( 'Select Slide Image Page', 'academic-education' ),
 			'section'  => 'academic_education_slidersettings',
 			'type'     => 'dropdown-pages'
 		) );
 
-		// This is Title Color picker setting
-		$wp_customize->add_setting( 'academic_education_slider_heading_color', array(
-			'default' => '',
-			'sanitize_callback'	=> 'sanitize_hex_color'
-		));
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'academic_education_slider_heading_color', array(
-			'label' => __('Title Color', 'academic-education'),
-			'section' => 'academic_education_slidersettings',
-			'settings' => 'academic_education_slider_heading_color',
-		)));
-
-		//This is Title FontFamily picker setting
-		$wp_customize->add_setting('academic_education_slider_heading_font_family',array(
-		  'default' => '',
-		  'capability' => 'edit_theme_options',
-		  'sanitize_callback' => 'academic_education_sanitize_choices'
-		));
-		$wp_customize->add_control('academic_education_slider_heading_font_family', array(
-		    'section'  => 'academic_education_slidersettings',
-		    'label'    => __( 'Title Fonts','academic-education'),
-		    'type'     => 'select',
-		    'choices'  => $font_array,
-		));
-
-		//This is Title FontSize setting
-		$wp_customize->add_setting('academic_education_slider_heading_font_size',array(
-			'default'	=> '45px',
-			'sanitize_callback'	=> 'sanitize_text_field'
-		));
-		
-		$wp_customize->add_control('academic_education_slider_heading_font_size',array(
-			'label'	=> __('Title Font Size','academic-education'),
-			'section'	=> 'academic_education_slidersettings',
-			'setting'	=> 'academic_education_slider_heading_font_size',
-			'type'	=> 'text'
-		));
-		
-		// This is content Color picker setting
-		$wp_customize->add_setting( 'academic_education_slider_paragraph_color', array(
-			'default' => '',
-			'sanitize_callback'	=> 'sanitize_hex_color'
-		));
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'academic_education_slider_paragraph_color', array(
-			'label' => __('Content Color', 'academic-education'),
-			'section' => 'academic_education_slidersettings',
-			'settings' => 'academic_education_slider_paragraph_color',
-		)));
-
-		//This is content FontFamily picker setting
-		$wp_customize->add_setting('academic_education_slider_paragraph_font_family',array(
-		  'default' => '',
-		  'capability' => 'edit_theme_options',
-		  'sanitize_callback' => 'academic_education_sanitize_choices'
-		));
-		$wp_customize->add_control('academic_education_slider_paragraph_font_family', array(
-		    'section'  => 'academic_education_slidersettings',
-		    'label'    => __( 'Content Fonts','academic-education'),
-		    'type'     => 'select',
-		    'choices'  => $font_array,
-		));
-
-		$wp_customize->add_setting('academic_education_slider_paragraph_font_size',array(
-			'default'	=> '12px',
-			'sanitize_callback'	=> 'sanitize_text_field'
-		));
-		
-		$wp_customize->add_control('academic_education_slider_paragraph_font_size',array(
-			'label'	=> __('Content Font Size','academic-education'),
-			'section'	=> 'academic_education_slidersettings',
-			'setting'	=> 'academic_education_slider_paragraph_font_size',
-			'type'	=> 'text'
-		));
-
-		// This is Button color picker setting
-		$wp_customize->add_setting( 'academic_education_slider_atag_color', array(
-			'default' => '',
-			'sanitize_callback'	=> 'sanitize_hex_color'
-		));
-		$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'academic_education_slider_atag_color', array(
-			'label' => __('Button color', 'academic-education'),
-			'section' => 'academic_education_slidersettings',
-			'settings' => 'academic_education_slider_atag_color',
-		)));
-
-		//This is Button FontFamily picker setting
-		$wp_customize->add_setting('academic_education_slider_atag_font_family',array(
-		  'default' => '',
-		  'capability' => 'edit_theme_options',
-		  'sanitize_callback' => 'academic_education_sanitize_choices'
-		));
-		$wp_customize->add_control('academic_education_slider_atag_font_family', array(
-		    'section'  => 'academic_education_slidersettings',
-		    'label'    => __( 'Button Font','academic-education'),
-		    'type'     => 'select',
-		    'choices'  => $font_array,
-		));
-
 	}
+
+	// This is Title Color picker setting
+	$wp_customize->add_setting( 'academic_education_slider_heading_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'academic_education_slider_heading_color', array(
+		'label' => __('Title Color', 'academic-education'),
+		'section' => 'academic_education_slidersettings',
+		'settings' => 'academic_education_slider_heading_color',
+	)));
+
+	//This is Title FontFamily picker setting
+	$wp_customize->add_setting('academic_education_slider_heading_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'academic_education_sanitize_choices'
+	));
+	$wp_customize->add_control('academic_education_slider_heading_font_family', array(
+	    'section'  => 'academic_education_slidersettings',
+	    'label'    => __( 'Title Fonts','academic-education'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	//This is Title FontSize setting
+	$wp_customize->add_setting('academic_education_slider_heading_font_size',array(
+		'default'	=> '45px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('academic_education_slider_heading_font_size',array(
+		'label'	=> __('Title Font Size','academic-education'),
+		'section'	=> 'academic_education_slidersettings',
+		'setting'	=> 'academic_education_slider_heading_font_size',
+		'type'	=> 'text'
+	));
+	
+	// This is content Color picker setting
+	$wp_customize->add_setting( 'academic_education_slider_paragraph_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'academic_education_slider_paragraph_color', array(
+		'label' => __('Content Color', 'academic-education'),
+		'section' => 'academic_education_slidersettings',
+		'settings' => 'academic_education_slider_paragraph_color',
+	)));
+
+	//This is content FontFamily picker setting
+	$wp_customize->add_setting('academic_education_slider_paragraph_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'academic_education_sanitize_choices'
+	));
+	$wp_customize->add_control('academic_education_slider_paragraph_font_family', array(
+	    'section'  => 'academic_education_slidersettings',
+	    'label'    => __( 'Content Fonts','academic-education'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
+
+	$wp_customize->add_setting('academic_education_slider_paragraph_font_size',array(
+		'default'	=> '12px',
+		'sanitize_callback'	=> 'sanitize_text_field'
+	));
+	
+	$wp_customize->add_control('academic_education_slider_paragraph_font_size',array(
+		'label'	=> __('Content Font Size','academic-education'),
+		'section'	=> 'academic_education_slidersettings',
+		'setting'	=> 'academic_education_slider_paragraph_font_size',
+		'type'	=> 'text'
+	));
+
+	// This is Button color picker setting
+	$wp_customize->add_setting( 'academic_education_slider_atag_color', array(
+		'default' => '',
+		'sanitize_callback'	=> 'sanitize_hex_color'
+	));
+	$wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize, 'academic_education_slider_atag_color', array(
+		'label' => __('Button color', 'academic-education'),
+		'section' => 'academic_education_slidersettings',
+		'settings' => 'academic_education_slider_atag_color',
+	)));
+
+	//This is Button FontFamily picker setting
+	$wp_customize->add_setting('academic_education_slider_atag_font_family',array(
+	  'default' => '',
+	  'capability' => 'edit_theme_options',
+	  'sanitize_callback' => 'academic_education_sanitize_choices'
+	));
+	$wp_customize->add_control('academic_education_slider_atag_font_family', array(
+	    'section'  => 'academic_education_slidersettings',
+	    'label'    => __( 'Button Font','academic-education'),
+	    'type'     => 'select',
+	    'choices'  => $font_array,
+	));
 
 	//Courses
 	$wp_customize->add_section('academic_education_about',array(
@@ -527,9 +536,14 @@ function academic_education_customize_register( $wp_customize ) {
 
 	$post_list = get_posts();
 	$i = 0;
+	$pst[]='Select';
 	foreach($post_list as $post){
-		$posts[$post->post_title] = $post->post_title;
+		$pst[$post->post_title] = $post->post_title;
 	}
+	
+	$wp_customize->add_setting('academic_education_single_post',array(
+		'sanitize_callback' => 'academic_education_sanitize_choices',
+	));	
 
 	$wp_customize->add_setting('academic_education_single_post',array(
 		'sanitize_callback' => 'academic_education_sanitize_choices',
@@ -537,20 +551,21 @@ function academic_education_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control('academic_education_single_post',array(
 		'type'    => 'select',
-		'choices' => $posts,
+		'choices' => $pst,
 		'label' => __('Select post','academic-education'),
 		'section' => 'academic_education_about',
 	));
 
 	$categories = get_categories();
-	$cats = array();
-	$i = 0;
+	$cat_post = array();
+	$cat_post[]= 'select';
+	$i = 0;	
 	foreach($categories as $category){
-	if($i==0){
-	$default = $category->slug;
-	$i++;
-	}
-	$cats[$category->slug] = $category->name;
+		if($i==0){
+			$default = $category->slug;
+			$i++;
+		}
+		$cat_post[$category->slug] = $category->name;
 	}
 
 	$wp_customize->add_setting('academic_education_category',array(
@@ -560,7 +575,7 @@ function academic_education_customize_register( $wp_customize ) {
 
 	$wp_customize->add_control('academic_education_category',array(
 		'type'    => 'select',
-		'choices' => $cats,
+		'choices' => $cat_post,
 		'label' => __('Select Category','academic-education'),
 		'section' => 'academic_education_about',
 	));
@@ -771,7 +786,7 @@ final class Academic_Education_Customize {
 				array(
 					'priority' => 9,
 					'title'    => esc_html__( 'Academic Education Pro', 'academic-education' ),
-					'pro_text' => esc_html__( 'Go Pro',         'academic-education' ),
+					'pro_text' => esc_html__( 'Go Pro','academic-education' ),
 					'pro_url'  => esc_url('https://www.logicalthemes.com/themes/premium-academic-education-wordpress-theme'),
 				)
 			)

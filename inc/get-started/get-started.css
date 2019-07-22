@@ -1,7 +1,6 @@
 /*About theme*/
 #wpwrap{
 	background: #fff;
-  font-family: 'Montserrat';
 }
 .wrapper-info {
   margin: 20px;
@@ -207,26 +206,4 @@ table.tablebox {
 td.update-link a {
   color: #fff;    
   text-decoration: none;
-}
-
-/* Thank you CSS*/
-.welcomepage{
-  background: #eee;
-  text-align: center;
-  padding: 30px 0;
-  border: solid 5px #ddd;
-}
-.welcomepage p {
-  padding: 0 8em;
-  color: #000;
-  font-size: 15px;
-  margin: 1em 0;
-}
-.welcomepage h3 {
-  color: #006799;
-  font-size: 22px;
-  font-weight: bold;
-}
-.wp-core-ui .button-primary{
-  font-weight: bold;
 }

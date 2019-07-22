@@ -9,10 +9,10 @@ get_header(); ?>
 
 <div class="container">
     <div class="wrapper row">       
-		<div id="sidebar" class="col-md-4 col-sm-4">
+		<div id="sidebar" class="col-lg-4 col-md-4">
 			<?php dynamic_sidebar('sidebar-2'); ?>
 		</div>		 
-		<div class="col-md-8 col-sm-8" id="main-content" >
+		<div class="col-lg-8 col-md-8" id="main-content" >
 			<?php while ( have_posts() ) : the_post(); ?>                
                 <h1><?php the_title();?></h1>
                 <img src="<?php the_post_thumbnail_url(); ?>" width="100%">

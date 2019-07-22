@@ -33,7 +33,7 @@
 				};
 			};
 		?>
-      <span class="entry-date"><?php the_date(); ?></span>
+    <span class="entry-date"><?php the_date(); ?></span>
     </div>    
     <div class="post-main">
       <h3 class="section-title"><a href="<?php echo esc_url( get_permalink() ); ?>" title="<?php the_title_attribute(); ?>"><?php the_title();?></a></h3>

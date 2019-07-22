@@ -25,7 +25,6 @@ msgid "Looks like you have taken a wrong turn"
 msgstr ""
 
 #: 404.php:14
-#: no-results.php:18
 msgid "Don't worry &hellip it happens to the best of us."
 msgstr ""
 
@@ -33,8 +32,7 @@ msgstr ""
 msgid 'Return to Home Page'
 msgstr ""
 
-#: comments.php:17
-#: comments.php:28
+#: comments.php:27
 msgid 'comments title'
 msgstr ""
 
@@ -46,68 +44,67 @@ msgstr ""
 msgid 'Comments are closed.'
 msgstr ""
 
-
-#: functions.php:25
+#: functions.php:27
 msgid "Primary Menu"
 msgstr ""
 
-#: functions.php:60
+#: functions.php:62
 msgid 'Warm Greetings to you!!'
 msgstr ""
 
-#: functions.php:61
+#: functions.php:63
 msgid ' Our sincere thanks for choosing our academic education theme. We assure you a high performing theme for your academic business. Please proceed towards welcome section to start an amazing journey with us. '
 msgstr ""
 
-#: functions.php:62
+#: functions.php:64
 msgid 'Welcome...'
 msgstr ""
 
-#: functions.php:94
+#: functions.php:78
+msgid 'Education WordPress Theme'
+msgstr ""
+
+#: functions.php:119
 msgid "Blog Sidebar"
 msgstr ""
 
-#: functions.php:95
+#: functions.php:120
 msgid 'Appears on blog page sidebar'
 msgstr ""
 
-#: functions.php:105
-#: functions.php:115
+#: functions.php:130
+#: functions.php:140
 msgid "Appears on posts and pages"
 msgstr ""
 
-#: functions.php:104
+#: functions.php:129
 msgid "Posts and Pages Sidebar"
 msgstr ""
 
-#: functions.php:114
+#: functions.php:139
 msgid 'Sidebar 3'
 msgstr ""
 
-#: functions.php:76
-msgid 'Logical Themes'
-msgstr ""
-
-#: functions.php:125
+#: functions.php:149
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:135
+#: functions.php:159
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:145
+#: functions.php:169
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:155
+#: functions.php:179
 msgid "Footer 4"
 msgstr ""
 
-#: functions.php:126
-#: functions.php:136
-#: functions.php:146
-#: functions.php:155
+#: functions.php:150
+#: functions.php:160
+#: functions.php:170
+#: functions.php:180
 msgid "Appears on footer"
 msgstr ""
 
@@ -115,22 +112,12 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: single.php:34
-#: single.php:91
-#: single.php:150
-#: single.php:209
-#: single.php:268
-#: single.php:325
+#: template-parts/single-post.php:25
 #: page.php:18
 msgid "Pages:"
 msgstr ""
 
-#: single.php:67
-#: single.php:124
-#: single.php:183
-#: single.php:242
-#: single.php:301
-#: single.php:358
+#: template-parts/single-post.php:58
 msgid "Edit"
 msgstr ""
 
@@ -140,24 +127,22 @@ msgstr ""
 #: archive.php:146
 #: archive.php:182
 #: archive.php:217
+#: archive.php:250
 #: index.php:38
 #: index.php:70
 #: index.php:103
 #: index.php:136
 #: index.php:169
 #: index.php:202
+#: index.php:233
 #: search.php:44
 #: search.php:82
 #: search.php:121
 #: search.php:160
 #: search.php:199
 #: search.php:237
-#: single.php:53
-#: single.php:110
-#: single.php:169
-#: single.php:228
-#: single.php:287
-#: single.php:344
+#: search.php:273
+#: template-parts/single-post.php:44
 msgid "Previous page"
 msgstr ""
 
@@ -167,24 +152,22 @@ msgstr ""
 #: archive.php:147
 #: archive.php:183
 #: archive.php:218
+#: archive.php:251
 #: index.php:39
 #: index.php:71
 #: index.php:104
 #: index.php:137
 #: index.php:170
 #: index.php:203
+#: index.php:234
 #: search.php:45
 #: search.php:83
 #: search.php:122
 #: search.php:161
 #: search.php:200
 #: search.php:238
-#: single.php:50
-#: single.php:107
-#: single.php:166
-#: single.php:225
-#: single.php:284
-#: single.php:341
+#: search.php:274
+#: template-parts/single-post.php:41
 msgid "Next page"
 msgstr ""
 
@@ -194,24 +177,22 @@ msgstr ""
 #: archive.php:148
 #: archive.php:184
 #: archive.php:219
+#: archive.php:252
 #: index.php:40
 #: index.php:72
 #: index.php:105
 #: index.php:138
 #: index.php:171
 #: index.php:204
+#: index.php:235
 #: search.php:46
 #: search.php:84
 #: search.php:123
 #: search.php:162
 #: search.php:201
 #: search.php:239
-#: single.php:38
-#: single.php:95
-#: single.php:154
-#: single.php:213
-#: single.php:272
-#: single.php:329
+#: search.php:275
+#: template-parts/single-post.php:29
 msgid "page"
 msgstr ""
 
@@ -221,10 +202,17 @@ msgstr ""
 #: search.php:135
 #: search.php:174
 #: search.php:210
+#: search.php:248
 msgid 'Search Results for: %s'
 msgstr ""
 
 #: search.php:34
+#: search.php:72
+#: search.php:111
+#: search.php:150
+#: search.php:189
+#: search.php:226
+#: search.php:263
 msgid 'Sorry, but nothing matched your search terms. Please try again with some different keywords.'
 msgstr ""
 
@@ -234,6 +222,7 @@ msgstr ""
 #: search.php:138
 #: search.php:176
 #: search.php:212
+#: search.php:250
 msgid 'Nothing Found'
 msgstr ""
 
@@ -258,30 +247,15 @@ msgstr ""
 msgid "Meta"
 msgstr ""
 
-#: single.php:51
-#: single.php:108
-#: single.php:167
-#: single.php:226
-#: single.php:285
-#: single.php:342
+#: template-parts/single-post.php:42
 msgid "Next post:"
 msgstr ""
 
-#: single.php:54
-#: single.php:111
-#: single.php:170
-#: single.php:229
-#: single.php:288
-#: single.php:345
+#: template-parts/single-post.php:45
 msgid "Previous post:"
 msgstr ""
 
-#: single.php:22
-#: single.php:79
-#: single.php:138
-#: single.php:197
-#: single.php:256
-#: single.php:313
+#: template-parts/single-post.php:13
 #: template-parts/content-audio.php:42
 #: template-parts/content-gallery.php:29
 #: template-parts/content-image.php:23
@@ -291,13 +265,29 @@ msgstr ""
 msgid '0 Comments'
 msgstr ""
 
-#: single.php:45
-#: single.php:102
-#: single.php:161
-#: single.php:220
-#: single.php:279
-#: single.php:336
+#: template-parts/single-post.php:36
 msgid 'Parent post link'
+msgstr ""
+
+#: page-template/home-custom.php:41
+msgid "LEARN MORE"
+msgstr ""
+
+#: page-template/home-custom.php:97
+msgid "SEE COURSE"
+msgstr ""
+
+#: template-parts/footer/site-info.php:10
+msgid 'Copyright 2017 -'
+msgstr ""
+
+#: template-parts/content-audio.php:50
+#: template-parts/content-gallery.php:37
+#: template-parts/content-image.php:30
+#: template-parts/content-video.php:49
+#: template-parts/content.php:23
+#: template-parts/grid-layout.php:30
+msgid 'READ MORE...'
 msgstr ""
 
 #: inc/customizer.php:18
@@ -312,19 +302,11 @@ msgstr ""
 msgid "General Settings"
 msgstr ""
 
-#: inc/customizer.php:44
-msgid "Left Sidebar"
-msgstr ""
-
 #: inc/customizer.php:37
 msgid 'Do you want this section'
 msgstr ""
 
 #: inc/customizer.php:30
-#: inc/customizer.php:43
-msgid "Right Sidebar"
-msgstr ""
-
 #: inc/customizer.php:40
 msgid "One Column"
 msgstr ""
@@ -335,6 +317,14 @@ msgstr ""
 
 #: inc/customizer.php:42
 msgid "Four Columns"
+msgstr ""
+
+#: inc/customizer.php:43
+msgid "Right Sidebar"
+msgstr ""
+
+#: inc/customizer.php:44
+msgid "Left Sidebar"
 msgstr ""
 
 #: inc/customizer.php:45
@@ -441,123 +431,90 @@ msgstr ""
 msgid 'Slider Settings'
 msgstr ""
 
-#: inc/customizer.php:417
+#: inc/customizer.php:414
+msgid 'Show / Hide slider'
+msgstr ""
+
+#: inc/customizer.php:427
 msgid 'Select Slide Image Page'
 msgstr ""
 
-#: inc/customizer.php:428
-#: inc/customizer.php:574
+#: inc/customizer.php:438
+#: inc/customizer.php:590
 msgid 'Title Color'
 msgstr ""
 
-#: inc/customizer.php:441
-#: inc/customizer.php:587
+#: inc/customizer.php:451
+#: inc/customizer.php:603
 msgid 'Title Fonts'
 msgstr ""
 
-#: inc/customizer.php:453
-#: inc/customizer.php:599
+#: inc/customizer.php:463
+#: inc/customizer.php:615
 msgid 'Title Font Size'
 msgstr ""
 
-#: inc/customizer.php:465
-#: inc/customizer.php:611
+#: inc/customizer.php:475
+#: inc/customizer.php:627
 msgid 'Content Color'
 msgstr ""
 
-#: inc/customizer.php:478
-#: inc/customizer.php:624
+#: inc/customizer.php:488
+#: inc/customizer.php:640
 msgid 'Content Fonts'
 msgstr ""
 
-#: inc/customizer.php:489
-#: inc/customizer.php:635
+#: inc/customizer.php:499
+#: inc/customizer.php:651
 msgid 'Content Font Size'
 msgstr ""
 
-#: inc/customizer.php:501
-#: inc/customizer.php:647
+#: inc/customizer.php:511
+#: inc/customizer.php:663
 msgid 'Button color'
 msgstr ""
 
-#: inc/customizer.php:514
-#: inc/customizer.php:660
+#: inc/customizer.php:524
+#: inc/customizer.php:676
 msgid 'Button Font'
 msgstr ""
 
-#: inc/customizer.php:523
+#: inc/customizer.php:533
 msgid 'Courses Section'
 msgstr ""
 
-#: inc/customizer.php:524
+#: inc/customizer.php:534
 msgid 'This section will appear below the slider.'
 msgstr ""
 
-#: inc/customizer.php:541
+#: inc/customizer.php:556
 msgid 'Select post'
 msgstr ""
 
-#: inc/customizer.php:564
+#: inc/customizer.php:580
 msgid 'Select Category'
 msgstr ""
 
-#: inc/customizer.php:671
+#: inc/customizer.php:687
 msgid 'Button Font Size'
 msgstr ""
 
-#: inc/customizer.php:679
+#: inc/customizer.php:695
 msgid 'Footer Text'
 msgstr ""
 
-#: inc/customizer.php:690
-msgid 'Copyright Text'
-msgstr ""
-
-#: inc/customizer.php:680
+#: inc/customizer.php:696
 msgid 'Add some text for footer like copyright etc.'
 msgstr ""
 
-#: inc/customizer.php:773
+#: inc/customizer.php:706
+msgid 'Copyright Text'
+msgstr ""
+
+#: inc/customizer.php:789
 msgid 'Academic Education Pro'
 msgstr ""
 
-#: inc/customizer.php:774
+#: inc/customizer.php:790
 msgid 'Go Pro'
-msgstr ""
-
-#: page-template/custom-home-page.php:56
-msgid "Read More"
-msgstr ""
-
-#: page-template/custom-home-page.php:108
-msgid "More"
-msgstr ""
-
-#: template-parts/footer/site-info.php:10
-msgid 'Education WordPress Theme By'
-msgstr ""
-
-#: template-parts/site-branding.php:26
-msgid 'Have Any Questions?'
-msgstr ""
-
-#: template-parts/site-branding.php:35
-msgid 'Free Support'
-msgstr ""
-
-#: template-parts/site-branding.php:36
-msgid 'info@example.com'
-msgstr ""
-
-#: template-parts/top-bar.php:13
-msgid 'Monday - Friday: 10:00-17:00 Saturday - Sunday'
-msgstr ""
-
-#: template-parts/content-audio.php:50
-#: template-parts/content-gallery.php:37
-#: template-parts/content-image.php:30
-#: template-parts/content-video.php:49
-#: template-parts/content.php:23
-#: template-parts/grid-layout.php:30
-msgid 'READ MORE...'
 msgstr ""
