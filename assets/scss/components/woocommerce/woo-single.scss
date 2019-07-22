@@ -45,7 +45,6 @@
         color: $primary_color;
         display: block;
         width: 100%;
-        font-size: 20px;
         font-weight: normal;
         margin-bottom: 15px;
 
@@ -70,7 +69,7 @@
         font-weight: 600;
         display: inline-block;
         border: 1px solid #dae2e6;
-        background:$primary_color;
+        background: $primary_color;
         &:hover {
           background: $secondary_color;
         }
@@ -88,13 +87,13 @@
             background: $primary_color;
             a {
               font-weight: 400;
-              color:$white_color;
+              color: $white_color;
             }
             &.active {
-              background:$white_color;
+              background: $white_color;
               a {
                 font-weight: 600;
-                color:$primary_color;
+                color: $primary_color;
               }
             }
           }
@@ -142,5 +141,155 @@
       padding: 0px 5px;
     }
 
+  }
+}
+
+@-webkit-keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@-webkit-keyframes slideOutUp {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+@keyframes slideOutUp {
+  from {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+  to {
+    visibility: hidden;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+  }
+}
+
+.ae-sticky-add-to-cart {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .ae-sticky-add-to-cart {
+    background: #fff;
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 99998;
+    -webkit-transform: translate3d(0, -100%, 0);
+    transform: translate3d(0, -100%, 0);
+    padding: 1em;
+    overflow: hidden;
+    zoom: 1;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, .2);
+    -webkit-animation-duration: .5s;
+    animation-duration: .5s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    &.bottom {
+      bottom: 0;
+      top: unset;
+      border-top: 1px solid #ddd;
+    }
+  }
+
+  .ae-sticky-add-to-cart--slideInDown {
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
+  }
+  .ae-sticky-add-to-cart--slideOutUp {
+    -webkit-animation-name: slideOutUp;
+    animation-name: slideOutUp;
+  }
+  .ae-sticky-add-to-cart__content {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    align-items: center;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    justify-content: center;
+  }
+  .ae-sticky-add-to-cart__content-title {
+    display: block;
+  }
+  .ae-sticky-add-to-cart__content-price {
+    margin-right: 0.875em;
+    opacity: 0.5;
+    ins {
+      color: $primary_color;
+      background: none;
+      font-weight: bold;
+    }
+  }
+  .ae-sticky-add-to-cart__content-product-info {
+    margin-right: 40px;
+  }
+  .woocommerce a.ae-sticky-add-to-cart__content-button.button,
+  .woocommerce a.ae-sticky-add-to-cart__content-button.button.alt {
+    padding: 10px;
+    font-size: 13px;
+    font-weight: 600;
+    display: inline-block;
+    -webkit-transition: 0.4s ease-in-out;
+    -moz-transition: 0.4s ease-in-out;
+    -o-transition: 0.4s ease-in-out;
+    transition: 0.4s ease-in-out;
+    background: transparent;
+    border: 1px solid #bdbaba;
+    color: #515151;
+    &:hover {
+      background: $alternative_color;
+      border-color: $alternative_color;
+      color: #fff;
+    }
+  }
+  .ae-sticky-add-to-cart img {
+    max-width: 3.706325903em;
+    margin: 0 1.41575em 0 0;
+    padding: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .ae-sticky-add-to-cart .star-rating {
+    display: inline-block;
+    margin: 0;
+    vertical-align: bottom;
+  }
+  .admin-bar .top.ae-sticky-add-to-cart--slideInDown {
+    top: 32px;
+  }
+  .admin-bar .bottom.ae-sticky-add-to-cart--slideInDown {
+    top: unset;
   }
 }

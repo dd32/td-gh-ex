@@ -11,232 +11,264 @@
  * @param array $classes Classes for the body element.
  * @return array
  */
-function agency_ecommerce_body_classes( $classes ) {
-	// Adds a class of hfeed to non-singular pages.
-	if ( ! is_singular() ) {
-		$classes[] = 'hfeed';
-	}
+function agency_ecommerce_body_classes($classes)
+{
+    // Adds a class of hfeed to non-singular pages.
+    if (!is_singular()) {
+        $classes[] = 'hfeed';
+    }
 
-	if( class_exists( 'WooCommerce' ) && is_woocommerce() ){
+    if (class_exists('WooCommerce') && is_woocommerce()) {
 
-		// Add class for global layout on woocommerce pages.
-		$shop_layout 	= agency_ecommerce_get_option( 'shop_layout' );
-		$shop_layout 	= apply_filters( 'agency_ecommerce_filter_theme_global_layout', $shop_layout );
-		$classes[] = 'global-layout-' . esc_attr( $shop_layout );
+        // Add class for global layout on woocommerce pages.
+        $shop_layout = agency_ecommerce_get_option('shop_layout');
+        $shop_layout = apply_filters('agency_ecommerce_filter_theme_global_layout', $shop_layout);
+        $classes[] = 'global-layout-' . esc_attr($shop_layout);
 
-	}else{
+    } else {
 
-		// Add class for global layout.
-		$global_layout = agency_ecommerce_get_option( 'global_layout' );
-		$global_layout = apply_filters( 'agency_ecommerce_filter_theme_global_layout', $global_layout );
-		$classes[] = 'global-layout-' . esc_attr( $global_layout );
+        // Add class for global layout.
+        $global_layout = agency_ecommerce_get_option('global_layout');
+        $global_layout = apply_filters('agency_ecommerce_filter_theme_global_layout', $global_layout);
+        $classes[] = 'global-layout-' . esc_attr($global_layout);
 
-	}
+    }
 
-	//Add woocommerce class if woocommerce is active
-	if ( class_exists( 'WooCommerce' ) && is_page_template( 'templates/home-template.php' ) ) {
-		$classes[] = 'woocommerce';
-	}
+    //Add woocommerce class if woocommerce is active
+    if (class_exists('WooCommerce') && is_page_template('templates/home-template.php')) {
+        $classes[] = 'woocommerce';
+    }
 
-	//Add column class in body for woocommerce
-	$product_number = agency_ecommerce_get_option( 'product_number' );
+    //Add column class in body for woocommerce
+    $product_number = agency_ecommerce_get_option('product_number');
 
-	if(  2 === $product_number || 3 === $product_number || 4 === $product_number ){
+    if (2 === $product_number || 3 === $product_number || 4 === $product_number) {
 
-		$classes[] = 'columns-'.absint( $product_number );
+        $classes[] = 'columns-' . absint($product_number);
 
-	}else{
+    } else {
 
-		$classes[] = 'columns-3';
+        $classes[] = 'columns-3';
 
-	}
+    }
 
-	// Add class for sticky sidebar.
-	$sticky_sidebar = agency_ecommerce_get_option( 'enable_sticky_sidebar' );
+    // Add class for sticky sidebar.
+    $sticky_sidebar = agency_ecommerce_get_option('enable_sticky_sidebar');
 
-	if( 1 == $sticky_sidebar ){
+    if (1 == $sticky_sidebar) {
 
-		$classes[] = 'global-sticky-sidebar';
+        $classes[] = 'global-sticky-sidebar';
 
-	}
+    }
 
-	return $classes;
+    return $classes;
 }
-add_filter( 'body_class', 'agency_ecommerce_body_classes' );
+
+add_filter('body_class', 'agency_ecommerce_body_classes');
 
 /**
  * Add a pingback url auto-discovery header for singularly identifiable articles.
  */
-function agency_ecommerce_pingback_header() {
-	if ( is_singular() && pings_open() ) {
-		echo '<link rel="pingback" href="', esc_url( get_bloginfo( 'pingback_url' ) ), '">';
-	}
+function agency_ecommerce_pingback_header()
+{
+    if (is_singular() && pings_open()) {
+        echo '<link rel="pingback" href="', esc_url(get_bloginfo('pingback_url')), '">';
+    }
 }
-add_action( 'wp_head', 'agency_ecommerce_pingback_header' );
+
+add_action('wp_head', 'agency_ecommerce_pingback_header');
 
 /**
  * Display custom logo
  */
-if ( ! function_exists( 'agency_ecommerce_the_custom_logo' ) ) :
+if (!function_exists('agency_ecommerce_the_custom_logo')) :
 
-	/**
-	 * Displays custom logo.
-	 *
-	 * @since 1.0.0
-	 */
-	function agency_ecommerce_the_custom_logo() {
-		if ( function_exists( 'the_custom_logo' ) ) {
-			the_custom_logo();
-		}
-	}
+    /**
+     * Displays custom logo.
+     *
+     * @since 1.0.0
+     */
+    function agency_ecommerce_the_custom_logo()
+    {
+        if (function_exists('the_custom_logo')) {
+            the_custom_logo();
+        }
+    }
 endif;
 
 /**
  * Add go to top
  */
-if ( ! function_exists( 'agency_ecommerce_footer_goto_top' ) ) :
+if (!function_exists('agency_ecommerce_footer_goto_top')) :
 
-	/**
-	 * Add Go to top.
-	 *
-	 * @since 1.0.0
-	 */
-	function agency_ecommerce_footer_goto_top() {
-		echo '<a href="#page" class="scrollup" id="btn-scrollup"></a>';
-	}
+    /**
+     * Add Go to top.
+     *
+     * @since 1.0.0
+     */
+    function agency_ecommerce_footer_goto_top()
+    {
+        echo '<a href="#page" class="scrollup" id="btn-scrollup"></a>';
+    }
 endif;
-add_action( 'wp_footer', 'agency_ecommerce_footer_goto_top' );
+add_action('wp_footer', 'agency_ecommerce_footer_goto_top');
 
-if ( ! function_exists( 'agency_ecommerce_implement_excerpt_length' ) ) :
+if (!function_exists('agency_ecommerce_implement_excerpt_length')) :
 
-	/**
-	 * Implement excerpt length.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param int $length The number of words.
-	 * @return int Excerpt length.
-	 */
-	function agency_ecommerce_implement_excerpt_length( $length ) {
+    /**
+     * Implement excerpt length.
+     *
+     * @since 1.0.0
+     *
+     * @param int $length The number of words.
+     * @return int Excerpt length.
+     */
+    function agency_ecommerce_implement_excerpt_length($length)
+    {
 
-		$excerpt_length = agency_ecommerce_get_option( 'excerpt_length' );
-		
-		if ( absint( $excerpt_length ) > 0 ) {
+        $excerpt_length = agency_ecommerce_get_option('excerpt_length');
 
-			$length = absint( $excerpt_length );
+        if (absint($excerpt_length) > 0) {
 
-		}
+            $length = absint($excerpt_length);
 
-		return $length;
+        }
 
-	}
-endif;
+        return $length;
 
-if ( ! function_exists( 'agency_ecommerce_content_more_link' ) ) :
-
-	/**
-	 * Implement read more in content.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param string $more_link Read More link element.
-	 * @param string $more_link_text Read More text.
-	 * @return string Link.
-	 */
-	function agency_ecommerce_content_more_link( $more_link, $more_link_text ) {
-
-		$read_more_text = agency_ecommerce_get_option( 'readmore_text' );
-		if ( ! empty( $read_more_text ) ) {
-			$more_link = str_replace( $more_link_text, esc_html( $read_more_text ), $more_link );
-		}
-		return $more_link;
-
-	}
-
+    }
 endif;
 
-if ( ! function_exists( 'agency_ecommerce_implement_read_more' ) ) :
+if (!function_exists('agency_ecommerce_content_more_link')) :
 
-	/**
-	 * Implement read more in excerpt.
-	 *
-	 * @since 1.0.0
-	 *
-	 * @param string $more The string shown within the more link.
-	 * @return string The excerpt.
-	 */
-	function agency_ecommerce_implement_read_more( $more ) {
+    /**
+     * Implement read more in content.
+     *
+     * @since 1.0.0
+     *
+     * @param string $more_link Read More link element.
+     * @param string $more_link_text Read More text.
+     * @return string Link.
+     */
+    function agency_ecommerce_content_more_link($more_link, $more_link_text)
+    {
 
-		$output = $more;
+        $read_more_text = agency_ecommerce_get_option('readmore_text');
+        if (!empty($read_more_text)) {
+            $more_link = str_replace($more_link_text, esc_html($read_more_text), $more_link);
+        }
+        return $more_link;
 
-		$read_more_text = agency_ecommerce_get_option( 'readmore_text' );
+    }
 
-		if ( ! empty( $read_more_text ) ) {
-
-			$output = '&hellip;<p><a href="' . esc_url( get_permalink() ) . '" class="button btn-continue">' . esc_html( $read_more_text ) . '</a></p>';
-
-		}
-
-		return $output;
-
-	}
 endif;
 
-if ( ! function_exists( 'agency_ecommerce_hook_read_more_filters' ) ) :
+if (!function_exists('agency_ecommerce_implement_read_more')) :
 
-	/**
-	 * Hook read more and excerpt length filters.
-	 *
-	 * @since 1.0.0
-	 */
-	function agency_ecommerce_hook_read_more_filters() {
-		if ( is_home() || is_category() || is_tag() || is_author() || is_date() || is_search() ) {
+    /**
+     * Implement read more in excerpt.
+     *
+     * @since 1.0.0
+     *
+     * @param string $more The string shown within the more link.
+     * @return string The excerpt.
+     */
+    function agency_ecommerce_implement_read_more($more)
+    {
 
-			add_filter( 'excerpt_length', 'agency_ecommerce_implement_excerpt_length', 999 );
-			add_filter( 'the_content_more_link', 'agency_ecommerce_content_more_link', 10, 2 );
-			add_filter( 'excerpt_more', 'agency_ecommerce_implement_read_more' );
+        $output = $more;
 
-		}
-	}
+        $read_more_text = agency_ecommerce_get_option('readmore_text');
+
+        if (!empty($read_more_text)) {
+
+            $output = '&hellip;<p><a href="' . esc_url(get_permalink()) . '" class="button btn-continue">' . esc_html($read_more_text) . '</a></p>';
+
+        }
+
+        return $output;
+
+    }
 endif;
-add_action( 'wp', 'agency_ecommerce_hook_read_more_filters' );
 
-if ( ! function_exists( 'agency_ecommerce_add_sidebar' ) ) :
+if (!function_exists('agency_ecommerce_hook_read_more_filters')) :
 
-	/**
-	 * Add sidebar.
-	 *
-	 * @since 1.0.0
-	 */
-	function agency_ecommerce_add_sidebar() {
+    /**
+     * Hook read more and excerpt length filters.
+     *
+     * @since 1.0.0
+     */
+    function agency_ecommerce_hook_read_more_filters()
+    {
+        if (is_home() || is_category() || is_tag() || is_author() || is_date() || is_search()) {
 
-		$global_layout = agency_ecommerce_get_option( 'global_layout' );
-		$global_layout = apply_filters( 'agency_ecommerce_filter_theme_global_layout', $global_layout );
+            add_filter('excerpt_length', 'agency_ecommerce_implement_excerpt_length', 999);
+            add_filter('the_content_more_link', 'agency_ecommerce_content_more_link', 10, 2);
+            add_filter('excerpt_more', 'agency_ecommerce_implement_read_more');
 
-		// Include sidebar.
-		if ( 'no-sidebar' !== $global_layout ) {
-			get_sidebar();
-		}
-
-	}
+        }
+    }
 endif;
-add_action( 'agency_ecommerce_action_sidebar', 'agency_ecommerce_add_sidebar' );
+add_action('wp', 'agency_ecommerce_hook_read_more_filters');
+
+if (!function_exists('agency_ecommerce_add_sidebar')) :
+
+    /**
+     * Add sidebar.
+     *
+     * @since 1.0.0
+     */
+    function agency_ecommerce_add_sidebar()
+    {
+
+        $global_layout = agency_ecommerce_get_option('global_layout');
+        $global_layout = apply_filters('agency_ecommerce_filter_theme_global_layout', $global_layout);
+
+        // Include sidebar.
+        if ('no-sidebar' !== $global_layout) {
+            get_sidebar();
+        }
+
+    }
+endif;
+add_action('agency_ecommerce_action_sidebar', 'agency_ecommerce_add_sidebar');
 
 //=============================================================
 // Check selected category on product search
 //=============================================================
-if ( ! function_exists( 'agency_ecommerce_selected_category' ) ) {
+if (!function_exists('agency_ecommerce_selected_category')) {
 
-    function agency_ecommerce_selected_category( $catname ) {
+    function agency_ecommerce_selected_category($catname)
+    {
 
-        $q_var = ( isset( $_GET['product_cat'] ) ) ? esc_html( $_GET['product_cat'] ) : '';
+        $q_var = (isset($_GET['product_cat'])) ? esc_html($_GET['product_cat']) : '';
 
-        if ( $q_var === $catname ) {
+        if ($q_var === $catname) {
 
             return 'selected="selected"';
         }
 
         return false;
+    }
+
+}
+
+// Fallback Main Menu
+
+if (!function_exists('agency_ecommerce_primary_navigation_fallback')) {
+    function agency_ecommerce_primary_navigation_fallback()
+    {
+
+        $home_url = esc_url(home_url('/'));
+        $fallback_menu = '<ul id="main-menu" class="menu">';
+        $fallback_menu .= '<li><a href="' . $home_url . '" rel="home">' . esc_html__('Home', 'agency-ecommerce') . '</a></li>';
+        $fallback_menu .= '<li><a target="_blank" href="https://demo.mantrabrain.com/agency-ecommerce/" rel="home">' . esc_html__('Demo', 'agency-ecommerce') . '</a></li>';
+        $fallback_menu .= '<li><a target="_blank" href="https://mantrabrain.com/docs/" rel="home">' . esc_html__('Docs', 'agency-ecommerce') . '</a></li>';
+        $fallback_menu .= '<li><a target="_blank" href="https://mantrabrain.com/support-forum/" rel="home">' . esc_html__('Support', 'agency-ecommerce') . '</a></li>';
+        $fallback_menu .= '</ul>';
+
+        echo $fallback_menu;
+
     }
 
 }

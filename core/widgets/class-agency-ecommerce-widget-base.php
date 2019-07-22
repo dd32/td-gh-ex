@@ -194,8 +194,14 @@ if (!class_exists('Agency_Ecommerce_Widget_Base')) {
                                     for="<?php echo esc_attr($this->get_field_id($field_key)); ?>"><?php echo esc_html($field['title']); ?>
                                 :</label>
                             <?php
-                            $output = wp_dropdown_categories($cat_args);
-                            echo $this->wp_dropdown_cats_multiple($output, $cat_args);
+                            $taxonomy = isset($cat_args['taxonomy']) ? $cat_args['taxonomy'] : '';
+
+                            if (taxonomy_exists($taxonomy)) {
+                                $output = wp_dropdown_categories($cat_args);
+                                echo $this->wp_dropdown_cats_multiple($output, $cat_args);
+                            } else {
+                                echo '<h4>' . sprintf(__('Taxonomy (%s) not found', 'agency-ecommerce'), $taxonomy) . '</h4>';
+                            }
                             $this->description($field) ?>
                         </p>
                         <?php

@@ -36,11 +36,11 @@
           background: $secondary_color;
         }
       }
-
       ul {
         transition: all 0.3s linear;
         -webkit-transition: all 0.3s linear;
         &.special-sub-menu {
+          z-index: 999;
           max-height: 433px;
           overflow: hidden;
           display: none;
@@ -85,7 +85,7 @@
             text-transform: uppercase;
             a {
               padding: 15px 15px;
-              display:inline-block;
+              display: inline-block;
               color: $secondary_color;
               font-family: Open Sans;
               font-size: 14px;
@@ -166,8 +166,10 @@
 
   .special-menu-container {
 
-    .special-sub-menu {
-      display: block;
+    &:not( .onhover ) {
+      .special-sub-menu {
+        display: block;
+      }
     }
   }
 }

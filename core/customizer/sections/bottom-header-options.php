@@ -5,7 +5,7 @@
 $wp_customize->add_section('section_bottom_header',
     array(
         'title' => esc_html__('Bottom Header Options', 'agency-ecommerce'),
-        'priority' => 100,
+        'priority' => 30,
         'panel' => 'agency_ecommerce_theme_option_panel',
     )
 );
@@ -23,7 +23,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[show_bottom_header]',
         'label' => esc_html__('Show Bottom Header', 'agency-ecommerce'),
         'section' => 'section_bottom_header',
         'type' => 'checkbox',
-        'priority' => 100,
+        'priority' => 10,
     )
 );
 
@@ -45,27 +45,67 @@ $wp_customize->add_control('agency_ecommerce_theme_options[site_identity]',
             'logo-only' => esc_html__('Logo Only', 'agency-ecommerce'),
             'title-text' => esc_html__('Title + Tagline', 'agency-ecommerce'),
             'logo-desc' => esc_html__('Logo + Tagline', 'agency-ecommerce'),
-            'category-menu' => esc_html__('Category Menu', 'agency-ecommerce')
+            'special-menu' => esc_html__('Special Menu', 'agency-ecommerce')
         ),
-        'priority' => 101,
+        'priority' => 20,
 
     )
 );
 
-// category_menu_max_height
-$wp_customize->add_setting('agency_ecommerce_theme_options[category_menu_max_height]',
+// special_menu_max_height
+$wp_customize->add_setting('agency_ecommerce_theme_options[special_menu_text]',
     array(
-        'default' => $default['category_menu_max_height'],
+        'default' => $default['special_menu_text'],
+        'sanitize_callback' => 'sanitize_text_field',
+    )
+);
+$wp_customize->add_control('agency_ecommerce_theme_options[special_menu_text]',
+    array(
+        'label' => esc_html__('Special Menu Text', 'agency-ecommerce'),
+        'description' => esc_html__('Special menu text', 'agency-ecommerce'),
+        'section' => 'section_bottom_header',
+        'type' => 'text',
+        'default' => $default['special_menu_text'],
+        'priority' => 30,
+        'active_callback' => 'agency_ecommerce_is_special_menu_enabled'
+    )
+);
+
+
+// special_menu_max_height
+$wp_customize->add_setting('agency_ecommerce_theme_options[special_menu_max_height]',
+    array(
+        'default' => $default['special_menu_max_height'],
         'sanitize_callback' => 'absint',
     )
 );
-$wp_customize->add_control('agency_ecommerce_theme_options[category_menu_max_height]',
+$wp_customize->add_control('agency_ecommerce_theme_options[special_menu_max_height]',
     array(
-        'label' => esc_html__('Category Menu Max Height (px)', 'agency-ecommerce'),
-        'description' => esc_html__('Maximum height for category menu. Default: 433 and 0 for auto height.)', 'agency-ecommerce'),
+        'label' => esc_html__('Special Menu Max Height (px)', 'agency-ecommerce'),
+        'description' => esc_html__('Maximum height for special menu. Default: 433 and 0 for auto height.)', 'agency-ecommerce'),
         'section' => 'section_bottom_header',
         'type' => 'number',
-        'default' => 433,
-        'priority' => 102,
+        'default' => $default['special_menu_max_height'],
+        'priority' => 40,
+        'active_callback' => 'agency_ecommerce_is_special_menu_enabled'
+    )
+);
+
+// special_menu_show_only_on_hover
+$wp_customize->add_setting('agency_ecommerce_theme_options[special_menu_show_only_on_hover]',
+    array(
+        'default' => $default['special_menu_show_only_on_hover'],
+        'sanitize_callback' => 'agency_ecommerce_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control('agency_ecommerce_theme_options[special_menu_show_only_on_hover]',
+    array(
+        'label' => esc_html__('Show Special Menu only on hover on homepage.', 'agency-ecommerce'),
+        'description' => esc_html__('Show only on hover on homepage. If you uncheck this, special menu will show always on homepage.', 'agency-ecommerce'),
+        'section' => 'section_bottom_header',
+        'type' => 'checkbox',
+        'default' => $default['special_menu_show_only_on_hover'],
+        'priority' => 50,
+        'active_callback' => 'agency_ecommerce_is_special_menu_enabled'
     )
 );

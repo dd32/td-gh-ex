@@ -27,7 +27,7 @@ for ($num = 1; $num <= $number_of_icon; $num++) {
             'label' => esc_html('Social Icon Link - ' . $num),
             'section' => 'section_social',
             'type' => 'url',
-            'priority' => 100 + $num,
+            'priority' => 10 + $num,
         )
 
     );
@@ -44,7 +44,7 @@ for ($num = 1; $num <= $number_of_icon; $num++) {
             'section' => 'section_social',
             'description' => esc_html__('Please enter font awesome icon text here.', 'agency-ecommerce'),
             'type' => 'text',
-            'priority' => 100 + $num,
+            'priority' => 10 + $num,
         )
 
     );

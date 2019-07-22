@@ -3,7 +3,7 @@
 $wp_customize->add_section('section_header',
     array(
         'title' => esc_html__('Top Header Options', 'agency-ecommerce'),
-        'priority' => 100,
+        'priority' => 10,
         'panel' => 'agency_ecommerce_theme_option_panel',
     )
 );
@@ -20,7 +20,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[show_top_header]',
         'label' => esc_html__('Show Top Header', 'agency-ecommerce'),
         'section' => 'section_header',
         'type' => 'checkbox',
-        'priority' => 100,
+        'priority' => 10,
     )
 );
 
@@ -38,7 +38,7 @@ $wp_customize->add_control(
         array(
             'label' => esc_html__('Left Section', 'agency-ecommerce'),
             'section' => 'section_header',
-            'priority' => 100,
+            'priority' => 20,
             'active_callback' => 'agency_ecommerce_is_top_header_active',
         )
     )
@@ -56,7 +56,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[top_left_type]',
         'label' => esc_html__('Left Section Options', 'agency-ecommerce'),
         'section' => 'section_header',
         'type' => 'select',
-        'priority' => 100,
+        'priority' => 30,
         'choices' => array(
             'store-info' => esc_html__('Store Information', 'agency-ecommerce'),
             'current-date' => esc_html__('Current Date', 'agency-ecommerce'),
@@ -77,7 +77,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[top_address]',
         'label' => esc_html__('Address/Location', 'agency-ecommerce'),
         'section' => 'section_header',
         'type' => 'text',
-        'priority' => 100,
+        'priority' => 40,
         'active_callback' => 'agency_ecommerce_is_top_header_information_active',
     )
 );
@@ -93,7 +93,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[top_phone]',
         'label' => esc_html__('Phone Number', 'agency-ecommerce'),
         'section' => 'section_header',
         'type' => 'text',
-        'priority' => 100,
+        'priority' => 50,
         'active_callback' => 'agency_ecommerce_is_top_header_information_active',
     )
 );
@@ -109,7 +109,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[top_email]',
         'label' => esc_html__('Email', 'agency-ecommerce'),
         'section' => 'section_header',
         'type' => 'text',
-        'priority' => 100,
+        'priority' => 60,
         'active_callback' => 'agency_ecommerce_is_top_header_information_active',
     )
 );
@@ -128,7 +128,7 @@ $wp_customize->add_control(
         array(
             'label' => esc_html__('Right Section', 'agency-ecommerce'),
             'section' => 'section_header',
-            'priority' => 100,
+            'priority' => 70,
             'active_callback' => 'agency_ecommerce_is_top_header_active',
         )
     )
@@ -147,7 +147,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[show_social_icons]',
         'description' => esc_html__('(Go to Appearance >> Customize >>  Social Options and add your social links there.)', 'agency-ecommerce'),
         'section' => 'section_header',
         'type' => 'checkbox',
-        'priority' => 100,
+        'priority' => 80,
         'active_callback' => 'agency_ecommerce_is_top_header_active',
     )
 );
@@ -164,7 +164,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[show_login_logout]',
         'label' => esc_html__('Show Login/Register', 'agency-ecommerce'),
         'section' => 'section_header',
         'type' => 'checkbox',
-        'priority' => 100,
+        'priority' => 90,
         'active_callback' => 'agency_ecommerce_is_top_header_active',
     )
 );
@@ -199,7 +199,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[login_text]',
         'label' => esc_html__('Login/Register Text', 'agency-ecommerce'),
         'section' => 'section_header',
         'type' => 'text',
-        'priority' => 100,
+        'priority' => 110,
         'active_callback' => 'agency_ecommerce_is_top_login_logout_active',
     )
 );

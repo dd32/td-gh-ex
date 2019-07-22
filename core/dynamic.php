@@ -16,7 +16,7 @@ if (!function_exists('agency_ecommerce_dynamic_options')) :
 
         $primary_color = agency_ecommerce_get_option('primary_color');
 
-        $category_menu_max_height = agency_ecommerce_get_option('category_menu_max_height');
+        $special_menu_max_height = agency_ecommerce_get_option('special_menu_max_height');
 
 
         ?>
@@ -144,9 +144,9 @@ if (!function_exists('agency_ecommerce_dynamic_options')) :
             }
 
             <?php }
-            if( (int)$category_menu_max_height != 433 && (int)$category_menu_max_height>=0 && !empty($category_menu_max_height)) { ?>
+            if( (int)$special_menu_max_height != 433 && (int)$special_menu_max_height>=0 && !empty($special_menu_max_height)) { ?>
             .special-menu-container ul.special-menu-wrapper ul.special-sub-menu {
-                max-height: <?php echo (int)$category_menu_max_height == 0 ? 'unset;': (int)$category_menu_max_height.'px;'; ?>
+                max-height: <?php echo (int)$special_menu_max_height == 0 ? 'unset;': (int)$special_menu_max_height.'px;'; ?>
             }
 
             <?php } ?>

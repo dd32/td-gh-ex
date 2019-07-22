@@ -72,6 +72,30 @@ class Agency_Ecommerce_WooCommerce_Hooks
         add_filter('woocommerce_add_to_cart_fragments', array($this, 'header_add_to_cart_fragment'));
 
 
+        $hide_list_grid_view = (boolean)agency_ecommerce_get_option('hide_list_grid_view');
+
+
+        // Shop List View and Grid View
+        if (!$hide_list_grid_view) {
+            add_filter('woocommerce_before_shop_loop', array($this, 'before_shop_loop'), 35);
+        }
+
+        $show_product_excerpt = (boolean)agency_ecommerce_get_option('show_product_excerpt');
+
+        // Show excerpt or not
+        if (!$hide_list_grid_view || $show_product_excerpt) {
+
+            add_filter('woocommerce_after_shop_loop_item', array($this, 'before_shop_loop_item'), 15);
+
+        }
+
+        $is_sticky_add_to_cart = (boolean)agency_ecommerce_get_option('sticky_add_to_cart');
+
+        if ($is_sticky_add_to_cart) {
+            add_action('agency_ecommerce_after_footer', array($this, 'sticky_single_add_to_cart'), 15);
+
+        }
+
     }
 
 
@@ -149,6 +173,99 @@ class Agency_Ecommerce_WooCommerce_Hooks
         return $fragments;
 
     }
+
+    public function before_shop_loop()
+    {
+        echo '<div class="ae-list-grid-switcher">';
+
+        echo '<a title="' . esc_attr('Grid View', 'agency-ecommerce') . '" href="#" data-type="grid" class="ae-grid-view selected"><i class="fa fa-th"></i></a>';
+
+        echo '<a title="' . esc_attr('List View', 'agency-ecommerce') . '" href="#" data-type="list" class="ae-list-view"><i class="fa fa-bars"></i></a>';
+
+        echo '</div>';
+
+    }
+
+
+    public function before_shop_loop_item()
+    {
+
+        if (is_shop()) {
+
+            $show_product_excerpt = (boolean)agency_ecommerce_get_option('show_product_excerpt');
+
+            $woo_shop_excerpt_length = (int)agency_ecommerce_get_option('woo_shop_excerpt_length');
+
+            $style = 'style="display:none;"';
+
+            if ($show_product_excerpt) {
+
+                $style = '';
+            }
+
+            echo '<div class="ae-product-excerpt" ' . $style . '><p>' . agency_ecommerce_get_the_excerpt($woo_shop_excerpt_length) . '</p></div>';
+
+        }
+
+    }
+
+    function sticky_single_add_to_cart()
+    {
+        global $product;
+
+        if (!class_exists('WooCommerce')) {
+            return;
+        }
+
+        if (!is_product()) {
+            return;
+        }
+
+        $show = false;
+
+        if ($product->is_purchasable() && $product->is_in_stock()) {
+            $show = true;
+        } else if ($product->is_type('external')) {
+            $show = true;
+        }
+
+        if (!$show) {
+            return;
+        }
+
+        $params = apply_filters(
+            'ae_sticky_add_to_cart_params', array(
+                'trigger_class' => 'entry-summary',
+            )
+        );
+
+        wp_localize_script('ae-sticky-add-to-cart', 'ae_sticky_add_to_cart_params', $params);
+
+        wp_enqueue_script('ae-sticky-add-to-cart');
+
+        $sticky_add_to_cart_position = agency_ecommerce_get_option('sticky_add_to_cart_position');
+
+        ?>
+        <section class="ae-sticky-add-to-cart <?php echo esc_attr($sticky_add_to_cart_position) ?>">
+            <div class="container">
+                <div class="ae-sticky-add-to-cart__content">
+                    <?php echo wp_kses_post(woocommerce_get_product_thumbnail()); ?>
+                    <div class="ae-sticky-add-to-cart__content-product-info">
+                        <span class="ae-sticky-add-to-cart__content-title"><?php esc_attr_e('You\'re viewing:', 'agency-ecommerce'); ?>
+                            <strong><?php the_title(); ?></strong></span>
+                        <span class="ae-sticky-add-to-cart__content-price"><?php echo wp_kses_post($product->get_price_html()); ?></span>
+                        <?php echo wp_kses_post(wc_get_rating_html($product->get_average_rating())); ?>
+                    </div>
+                    <a href="<?php echo esc_url($product->add_to_cart_url()); ?>"
+                       class="ae-sticky-add-to-cart__content-button button alt">
+                        <?php echo esc_attr($product->add_to_cart_text()); ?>
+                    </a>
+                </div>
+            </div>
+        </section><!-- .ae-sticky-add-to-cart -->
+        <?php
+    }
+
 
 }
 

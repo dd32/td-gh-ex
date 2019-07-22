@@ -31,8 +31,16 @@ do_action('agency_ecommerce_doctype');
     </head>
 
 <body <?php body_class(); ?>>
+<?php
+if (function_exists('wp_body_open')) {
 
-    <div id="page" class="site">
+    wp_body_open();
+}
+?>
+<div id="page" class="site">
+    <a class="skip-link screen-reader-text" href="#content">
+        <?php _e('Skip to content', 'agency-ecommerce'); ?></a>
+
 <?php
 
 do_action('agency_ecommerce_before_top_header');

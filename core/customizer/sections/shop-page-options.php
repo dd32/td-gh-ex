@@ -3,7 +3,7 @@
 $wp_customize->add_section('section_shop',
     array(
         'title' => esc_html__('Shop Page Options', 'agency-ecommerce'),
-        'priority' => 100,
+        'priority' => 70,
         'panel' => 'agency_ecommerce_theme_option_panel',
     )
 );
@@ -20,7 +20,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[shop_layout]',
         'label' => esc_html__('Shop Sidebar', 'agency-ecommerce'),
         'section' => 'section_shop',
         'type' => 'radio',
-        'priority' => 100,
+        'priority' => 10,
         'choices' => array(
             'left-sidebar' => esc_html__('Left Sidebar', 'agency-ecommerce'),
             'right-sidebar' => esc_html__('Right Sidebar', 'agency-ecommerce'),
@@ -42,7 +42,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[product_per_page]',
         'description' => esc_html__('Total number of products shown per page', 'agency-ecommerce'),
         'section' => 'section_shop',
         'type' => 'number',
-        'priority' => 100,
+        'priority' => 20,
         'input_attrs' => array('min' => 4, 'max' => 20),
     )
 );
@@ -60,7 +60,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[product_number]',
         'description' => esc_html__('Number of products shown per row', 'agency-ecommerce'),
         'section' => 'section_shop',
         'type' => 'select',
-        'priority' => 100,
+        'priority' => 30,
         'choices' => array(
             '2' => esc_html__('2', 'agency-ecommerce'),
             '3' => esc_html__('3', 'agency-ecommerce'),
@@ -81,7 +81,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[hide_product_sorting]
         'label' => esc_html__('Disable Product Sorting Option', 'agency-ecommerce'),
         'section' => 'section_shop',
         'type' => 'checkbox',
-        'priority' => 100,
+        'priority' => 40,
     )
 );
 
@@ -97,7 +97,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[show_detail_icon]',
         'label' => esc_html__('Enable View Detail Icon at Product Pages', 'agency-ecommerce'),
         'section' => 'section_shop',
         'type' => 'checkbox',
-        'priority' => 100,
+        'priority' => 50,
     )
 );
 
@@ -113,7 +113,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[enable_gallery_zoom]'
         'label' => esc_html__('Enable Image Zoom at Product Detail Page', 'agency-ecommerce'),
         'section' => 'section_shop',
         'type' => 'checkbox',
-        'priority' => 100,
+        'priority' => 60,
     )
 );
 
@@ -129,6 +129,59 @@ $wp_customize->add_control('agency_ecommerce_theme_options[disable_related_produ
         'label' => esc_html__('Disable Related Products at Product Detail Page', 'agency-ecommerce'),
         'section' => 'section_shop',
         'type' => 'checkbox',
+        'priority' => 70,
+    )
+);
+
+
+// Setting hide_list_grid_view.
+$wp_customize->add_setting('agency_ecommerce_theme_options[hide_list_grid_view]',
+    array(
+        'default' => $default['hide_list_grid_view'],
+        'sanitize_callback' => 'agency_ecommerce_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control('agency_ecommerce_theme_options[hide_list_grid_view]',
+    array(
+        'label' => esc_html__('Hide List/Grid View', 'agency-ecommerce'),
+        'section' => 'section_shop',
+        'type' => 'checkbox',
         'priority' => 100,
     )
 );
+
+// Setting show_product_excerpt.
+$wp_customize->add_setting('agency_ecommerce_theme_options[show_product_excerpt]',
+    array(
+        'default' => $default['show_product_excerpt'],
+        'sanitize_callback' => 'agency_ecommerce_sanitize_checkbox',
+    )
+);
+$wp_customize->add_control('agency_ecommerce_theme_options[show_product_excerpt]',
+    array(
+        'label' => esc_html__('Show Product Excerpt', 'agency-ecommerce'),
+        'section' => 'section_shop',
+        'type' => 'checkbox',
+        'priority' => 80,
+    )
+);
+
+// Setting woo_shop_excerpt_length.
+$wp_customize->add_setting('agency_ecommerce_theme_options[woo_shop_excerpt_length]',
+    array(
+        'default' => $default['woo_shop_excerpt_length'],
+        'sanitize_callback' => 'absint',
+    )
+);
+$wp_customize->add_control('agency_ecommerce_theme_options[woo_shop_excerpt_length]',
+    array(
+        'label' => esc_html__('Product excerpt length', 'agency-ecommerce'),
+        'section' => 'section_shop',
+        'type' => 'number',
+        'priority' => 90,
+        'active_callback' => 'agency_ecommerce_is_show_product_excerpt_on_shop'
+
+    )
+);
+
+

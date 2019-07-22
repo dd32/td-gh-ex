@@ -30,14 +30,14 @@
                             arrows: true,
                             prevArrow: '<i class="prev fa fa-angle-up"></i>',
                             nextArrow: '<i class="next fa fa-angle-down"></i>',
-                            adaptiveHeight: false
+                            adaptiveHeight: true
                         });
                     }
                 });
 
                 $.each($('.ae-list-items'), function () {
                     var $this_element = $(this);
-                    if ($this_element.attr('data-slick-attr')!==undefined) {
+                    if ($this_element.attr('data-slick-attr') !== undefined) {
                         var attr = $this_element.attr("data-slick-attr");
                         var attr_json = JSON.parse(attr);
 
@@ -88,6 +88,34 @@
             $(window).resize(function ($) {
                 $this.cartHover();
                 $this.searchHolderHeight();
+            });
+            $this.listGridView();
+        },
+
+        listGridView: function () {
+
+            var wrapper = $('.ae-list-grid-switcher');
+            var class_name = '';
+            wrapper.find('a').on('click', function () {
+                var type = $(this).attr('data-type');
+
+                switch (type) {
+                    case "list":
+                        class_name = "ae-list-view";
+                        break;
+                    case "grid":
+                        class_name = "ae-grid-view";
+                        break;
+                    default:
+                        class_name = "ae-grid-view";
+                        break;
+                }
+                if (class_name != '') {
+
+                    $(this).closest('#shop-wrap').attr('class', '').addClass(class_name);
+                    $(this).closest('.ae-list-grid-switcher').find('a').removeClass('selected');
+                    $(this).addClass('selected');
+                }
             });
         },
         initScrollToTop: function () {

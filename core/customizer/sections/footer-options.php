@@ -3,7 +3,7 @@
 $wp_customize->add_section('section_footer',
     array(
         'title' => esc_html__('Footer Options', 'agency-ecommerce'),
-        'priority' => 100,
+        'priority' => 120,
         'panel' => 'agency_ecommerce_theme_option_panel',
     )
 );

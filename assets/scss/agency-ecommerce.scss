@@ -10,18 +10,20 @@
 @import "components/infinite-scroll";
 @import "components/content";
 @import "components/widgets";
-
-
 @import "components/media";
 @import "components/custom";
 // WooCommerce Styling //
 @import "components/woocommerce";
 @import "components/woocommerce/woo-main";
+@import "components/woocommerce/woo-shop";
 @import "components/woocommerce/woo-single";
 @import "components/woocommerce/woo-checkout";
 @import "components/woocommerce/woo-account";
 @import "components/woocommerce/woo-wishlist";
 // End of WooCommerce Styling
+// Compatibility //
+@import "components/compatibility/elementor";
+// End of Compatibility //
 @import "components/special-menu";
 @import "components/compatibility";
 @import "components/sidebars";

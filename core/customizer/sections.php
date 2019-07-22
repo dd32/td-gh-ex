@@ -36,6 +36,8 @@ if (class_exists('WooCommerce')) {
     require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/product-search-options.php';
 
     require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/shop-page-options.php';
+
+    require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/product-single-page-options.php';
 }
 require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/social-options.php';
 

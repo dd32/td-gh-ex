@@ -1380,7 +1380,6 @@ p, li {
 }
 
 .ae-homepage-wrap .widget.agency_ecommerce_widget_advance_posts {
-  padding-top: 80px;
   padding-bottom: 50px;
   background: $white_color;
   margin-top: 0px;
@@ -1457,10 +1456,13 @@ p, li {
     margin-top: 0px;
   }
   h3, h2, h3 a, h2 a {
-    color: #0a0b0c;
+    color: $secondary_color;
     font-size: 22px;
     font-weight: 400;
     margin-bottom: 20px;
+    &:hover {
+      color: $primary_color;
+    }
   }
   p {
     margin-bottom: 0px;
@@ -1703,7 +1705,10 @@ p, li {
 }
 
 .sidebar a {
-  color: #515151;
+  color: $alternative_color;
+  &:hover {
+    color: $primary_color;
+  }
 }
 
 .widget-area ul ul ul ul ul > li {

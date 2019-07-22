@@ -30,7 +30,7 @@
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="container">
 			<div class="site-footer-wrap">
-				<?php 
+				<?php
 
 				$copyright_text = agency_ecommerce_get_option( 'copyright_text' );
 
@@ -42,9 +42,9 @@
 
 					</div><!-- .copyright -->
 
-					<?php 
+					<?php
 
-				endif; 
+				endif;
 
 				do_action( 'agency_ecommerce_credit' );
 
@@ -53,12 +53,14 @@
 		</div><!-- .container -->
 	</footer><!-- #colophon -->
 <?php
-    /**
-     * Hook - agency_ecommerce_after_footer_copyright_area.
-     *
-     * @hooked agency_ecommerce_after_footer_copyright_area_action - 10
-     */
-    do_action('agency_ecommerce_after_footer_copyright_area');
+/**
+ * Hook - agency_ecommerce_after_footer.
+ *
+ * @hooked agency_ecommerce_after_footer - 10
+ */
+
+do_action('agency_ecommerce_after_footer');
+
 ?>
 </div><!-- #page -->
 <?php wp_footer(); ?>

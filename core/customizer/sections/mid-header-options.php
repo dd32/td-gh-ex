@@ -5,7 +5,7 @@
 $wp_customize->add_section('section_mid_header',
     array(
         'title' => esc_html__('Mid Header Options', 'agency-ecommerce'),
-        'priority' => 100,
+        'priority' => 20,
         'panel' => 'agency_ecommerce_theme_option_panel',
     )
 );
@@ -23,7 +23,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[show_mid_header]',
         'label' => esc_html__('Show Mid Header', 'agency-ecommerce'),
         'section' => 'section_mid_header',
         'type' => 'checkbox',
-        'priority' => 100,
+        'priority' => 10,
     )
 );
 
@@ -45,7 +45,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[mid_header_site_ident
             'title-text' => esc_html__('Title + Tagline', 'agency-ecommerce'),
             'logo-desc' => esc_html__('Logo + Tagline', 'agency-ecommerce')
         ),
-        'priority' => 100,
+        'priority' => 20,
 
     )
 );
@@ -65,7 +65,7 @@ if (class_exists('WooCommerce')) {
             'label' => esc_html__('Show Cart Icon', 'agency-ecommerce'),
             'section' => 'section_mid_header',
             'type' => 'checkbox',
-            'priority' => 100,
+            'priority' => 30,
             'active_callback' => 'agency_ecommerce_is_top_header_active',
         )
     );
@@ -83,7 +83,7 @@ if (class_exists('WooCommerce')) {
             'description' => esc_html__('Fontawesome icons are only supported.', 'agency-ecommerce'),
             'section' => 'section_mid_header',
             'type' => 'text',
-            'priority' => 100,
+            'priority' => 40,
             'active_callback' => 'agency_ecommerce_is_top_cart_active',
         )
     );
@@ -100,7 +100,7 @@ if (class_exists('WooCommerce')) {
             'label' => esc_html__('Show Wishlist Icon (Works if YITH Wishlist plugin is activated)', 'agency-ecommerce'),
             'section' => 'section_mid_header',
             'type' => 'checkbox',
-            'priority' => 100,
+            'priority' => 50,
             'active_callback' => 'agency_ecommerce_is_top_header_active',
         )
     );
@@ -118,7 +118,7 @@ if (class_exists('WooCommerce')) {
             'description' => esc_html__('Fontawesome icons are only supported.', 'agency-ecommerce'),
             'section' => 'section_mid_header',
             'type' => 'text',
-            'priority' => 100,
+            'priority' => 60,
             'active_callback' => 'agency_ecommerce_is_top_wishlist_active',
         )
     );

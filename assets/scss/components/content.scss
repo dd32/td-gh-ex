@@ -31,8 +31,24 @@
 }
 
 .entry-meta > span a, .single-post-meta > span a, .entry-footer > span a {
-  color: #707070;
+  color: $secondary_color;
   font-style: normal;
+  &:hover {
+    color: $primary_color;
+  }
+}
+
+a.button {
+  background: $primary_color;
+}
+
+.posted-on, .byline, .cat-links {
+  &:hover {
+    color: $primary_color;
+    &:before {
+      color: $primary_color;
+    }
+  }
 }
 
 .page-content, .entry-content, .entry-summary {
@@ -45,7 +61,7 @@
   height: 15px;
   margin-right: 6px;
   content: "";
-  color: $primary_color;
+  color: $secondary_color;
 }
 
 .entry-meta .byline .author.vcard {

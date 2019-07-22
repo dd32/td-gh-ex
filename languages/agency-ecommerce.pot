@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Agency Ecommerce 1.0.3\n"
+"Project-Id-Version: Agency Ecommerce 2.0.1\n"
 "Report-Msgid-Bugs-To: mantrabrain@gmail.com\n"
-"POT-Creation-Date: 2019-06-27 08:43:41+00:00\n"
+"POT-Creation-Date: 2019-07-22 12:42:33+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -123,21 +123,26 @@ msgstr ""
 msgid "Select Category"
 msgstr ""
 
-#: core/customizer/core.php:92
+#: core/customizer/core.php:89
+msgid "Categories"
+msgstr ""
+
+#: core/customizer/core.php:94
 msgid "Read More"
 msgstr ""
 
-#: core/customizer/core.php:104
+#: core/customizer/core.php:114
 msgid "Copyright &copy; All rights reserved."
 msgstr ""
 
-#. Template Name of the plugin/theme
+#: core/customizer/core.php:118 core/template-functions.php:264
+#: core/vendor/breadcrumbs/breadcrumbs.php:246
 msgid "Home"
 msgstr ""
 
-#: core/customizer/core.php:113 core/customizer/core.php:114
-#: core/customizer/core.php:115 core/customizer/core.php:116
-#: core/customizer/core.php:117
+#: core/customizer/core.php:123 core/customizer/core.php:124
+#: core/customizer/core.php:125 core/customizer/core.php:126
+#: core/customizer/core.php:127
 #: core/widgets/agency-ecommerce-featured-slider-widget.php:72
 msgid "Shop Now"
 msgstr ""
@@ -174,15 +179,33 @@ msgid "Logo + Tagline"
 msgstr ""
 
 #: core/customizer/sections/bottom-header-options.php:48
-msgid "Category Menu"
+msgid "Special Menu"
 msgstr ""
 
 #: core/customizer/sections/bottom-header-options.php:64
-msgid "Category Menu Max Height (px)"
+msgid "Special Menu Text"
 msgstr ""
 
 #: core/customizer/sections/bottom-header-options.php:65
-msgid "Maximum height for category menu. Default: 433 and 0 for auto height.)"
+msgid "Special menu text"
+msgstr ""
+
+#: core/customizer/sections/bottom-header-options.php:84
+msgid "Special Menu Max Height (px)"
+msgstr ""
+
+#: core/customizer/sections/bottom-header-options.php:85
+msgid "Maximum height for special menu. Default: 433 and 0 for auto height.)"
+msgstr ""
+
+#: core/customizer/sections/bottom-header-options.php:103
+msgid "Show Special Menu only on hover on homepage."
+msgstr ""
+
+#: core/customizer/sections/bottom-header-options.php:104
+msgid ""
+"Show only on hover on homepage. If you uncheck this, special menu will show "
+"always on homepage."
 msgstr ""
 
 #: core/customizer/sections/breadcrumb-options.php:6
@@ -317,6 +340,36 @@ msgstr ""
 msgid "Select Category Text"
 msgstr ""
 
+#: core/customizer/sections/product-single-page-options.php:5
+msgid "Product Single Page Options"
+msgstr ""
+
+#: core/customizer/sections/product-single-page-options.php:20
+msgid "Sticky add to cart"
+msgstr ""
+
+#: core/customizer/sections/product-single-page-options.php:21
+msgid ""
+"This option allows you to show/hide sticky add to cart on product single "
+"page."
+msgstr ""
+
+#: core/customizer/sections/product-single-page-options.php:38
+msgid "Sticky add to cart position"
+msgstr ""
+
+#: core/customizer/sections/product-single-page-options.php:39
+msgid "This option allows you to change the sticky add to cart position."
+msgstr ""
+
+#: core/customizer/sections/product-single-page-options.php:44
+msgid "Top"
+msgstr ""
+
+#: core/customizer/sections/product-single-page-options.php:45
+msgid "Bottom"
+msgstr ""
+
 #: core/customizer/sections/shop-page-options.php:5
 msgid "Shop Page Options"
 msgstr ""
@@ -351,6 +404,18 @@ msgstr ""
 
 #: core/customizer/sections/shop-page-options.php:129
 msgid "Disable Related Products at Product Detail Page"
+msgstr ""
+
+#: core/customizer/sections/shop-page-options.php:146
+msgid "Hide List/Grid View"
+msgstr ""
+
+#: core/customizer/sections/shop-page-options.php:162
+msgid "Show Product Excerpt"
+msgstr ""
+
+#: core/customizer/sections/shop-page-options.php:178
+msgid "Product excerpt length"
 msgstr ""
 
 #: core/customizer/sections/social-options.php:5
@@ -450,6 +515,22 @@ msgstr ""
 
 #: core/hooks/class-agency-ecommerce-top-header-hooks.php:130
 msgid "Log Out"
+msgstr ""
+
+#: core/hooks/class-agency-ecommerce-woocommerce-hooks.php:254
+msgid "You're viewing:"
+msgstr ""
+
+#: core/template-functions.php:265
+msgid "Demo"
+msgstr ""
+
+#: core/template-functions.php:266
+msgid "Docs"
+msgstr ""
+
+#: core/template-functions.php:267
+msgid "Support"
 msgstr ""
 
 #: core/template-tags.php:57
@@ -916,16 +997,20 @@ msgstr ""
 msgid "All Categories"
 msgstr ""
 
-#: core/widgets/class-agency-ecommerce-widget-base.php:226
+#: core/widgets/class-agency-ecommerce-widget-base.php:232
 msgid "Choose an image"
 msgstr ""
 
-#: core/widgets/class-agency-ecommerce-widget-base.php:227
+#: core/widgets/class-agency-ecommerce-widget-base.php:233
 msgid "Use image"
 msgstr ""
 
-#: core/widgets/class-agency-ecommerce-widget-base.php:228
+#: core/widgets/class-agency-ecommerce-widget-base.php:234
 msgid "Select an Image"
+msgstr ""
+
+#: header.php:42
+msgid "Skip to content"
 msgstr ""
 
 #: template-parts/content-none.php:14
@@ -990,6 +1075,10 @@ msgstr ""
 
 #. Author URI of the plugin/theme
 msgid "https://www.mantrabrain.com/"
+msgstr ""
+
+#. Template Name of the plugin/theme
+msgid "Home Page Template"
 msgstr ""
 
 #: comments.php:32

@@ -2,7 +2,7 @@
 $wp_customize->add_section('section_product_search',
     array(
         'title' => esc_html__('Product Search Options', 'agency-ecommerce'),
-        'priority' => 100,
+        'priority' => 60,
         'panel' => 'agency_ecommerce_theme_option_panel',
     )
 );
@@ -19,7 +19,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[show_top_search]',
         'label' => esc_html__('Show Product Search (at Top Header)', 'agency-ecommerce'),
         'section' => 'section_product_search',
         'type' => 'checkbox',
-        'priority' => 100,
+        'priority' => 10,
     )
 );
 
@@ -35,7 +35,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[search_products_text]
         'label' => esc_html__('Search Products Text', 'agency-ecommerce'),
         'section' => 'section_product_search',
         'type' => 'text',
-        'priority' => 100,
+        'priority' => 20,
         'active_callback' => 'agency_ecommerce_is_top_product_search_active',
     )
 );
@@ -52,7 +52,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[select_category_text]
         'label' => esc_html__('Select Category Text', 'agency-ecommerce'),
         'section' => 'section_product_search',
         'type' => 'text',
-        'priority' => 100,
+        'priority' => 30,
         'active_callback' => 'agency_ecommerce_is_top_product_search_active',
     )
 );

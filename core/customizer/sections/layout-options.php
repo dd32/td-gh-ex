@@ -3,7 +3,7 @@
 $wp_customize->add_section('section_layout',
     array(
         'title' => esc_html__('Layout Options', 'agency-ecommerce'),
-        'priority' => 100,
+        'priority' => 50,
         'panel' => 'agency_ecommerce_theme_option_panel',
     )
 );
@@ -20,7 +20,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[enable_sticky_sidebar
         'label' => esc_html__('Enable Sticky Sidebar', 'agency-ecommerce'),
         'section' => 'section_layout',
         'type' => 'checkbox',
-        'priority' => 100,
+        'priority' => 10,
     )
 );
 
@@ -36,7 +36,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[global_layout]',
         'label' => esc_html__('Global Layout', 'agency-ecommerce'),
         'section' => 'section_layout',
         'type' => 'radio',
-        'priority' => 100,
+        'priority' => 20,
         'choices' => array(
             'left-sidebar' => esc_html__('Left Sidebar', 'agency-ecommerce'),
             'right-sidebar' => esc_html__('Right Sidebar', 'agency-ecommerce'),
@@ -58,7 +58,7 @@ $wp_customize->add_control('agency_ecommerce_theme_options[excerpt_length]',
         'description' => esc_html__('in words', 'agency-ecommerce'),
         'section' => 'section_layout',
         'type' => 'number',
-        'priority' => 100,
+        'priority' => 30,
         'input_attrs' => array('min' => 1, 'max' => 200, 'style' => 'width: 55px;'),
     )
 );
@@ -75,6 +75,6 @@ $wp_customize->add_control('agency_ecommerce_theme_options[readmore_text]',
         'label' => esc_html__('Read More Text', 'agency-ecommerce'),
         'section' => 'section_layout',
         'type' => 'text',
-        'priority' => 100,
+        'priority' => 40,
     )
 );

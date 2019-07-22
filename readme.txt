@@ -5,8 +5,8 @@ Requires at least:  WordPress 4.5
 Tested up to:       WordPress 5.2.2
 Requires PHP:       5.4
 Tested up to:       5.2.2
-Version:            2.0
-Stable tag:         2.0
+Version:            2.0.1
+Stable tag:         2.0.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -81,6 +81,12 @@ Elegant Themes (https://github.com/pprince/etlinefont-bower), [GPLv2 or later](h
 
 
 == Changelog ==
+
+
+= 2.0.1 | 2019/07/19 =
+* Issue fixed
+* Single product sticky add to cart option added
+* Grid/List view on shop page
 
 
 = 2.0 | 2019/06/27 =

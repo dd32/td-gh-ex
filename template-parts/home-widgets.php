@@ -18,7 +18,9 @@ if (!is_page_template('templates/home-template.php')) {
 
     $class = 'feature-slider-widget-area';
 
-    $class .= 'category-menu' == $site_identity && $show_bottom_header ? ' has-category-menu' : '';
+    $special_menu_show_only_on_hover = (boolean)agency_ecommerce_get_option('special_menu_show_only_on_hover');
+
+    $class .= 'special-menu' == $site_identity && $show_bottom_header && !$special_menu_show_only_on_hover ? ' has-special-menu' : '';
     ?>
     <div class="<?php echo esc_attr($class); ?>">
         <div class="container">

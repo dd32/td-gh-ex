@@ -59,7 +59,7 @@ if (!function_exists('agency_ecommerce_get_default_theme_options')) :
         $defaults['primary_color'] = '#0188cc';
 
         // Header.
-        $defaults['site_identity'] = 'category-menu';
+        $defaults['site_identity'] = 'special-menu';
         $defaults['show_top_header'] = true;
         $defaults['top_left_type'] = 'store-info';
         $defaults['show_social_icons'] = false;
@@ -84,7 +84,9 @@ if (!function_exists('agency_ecommerce_get_default_theme_options')) :
 
         // Bottom Header
         $defaults['show_bottom_header'] = true;
-        $defaults['category_menu_max_height'] = 433;
+        $defaults['special_menu_max_height'] = 433;
+        $defaults['special_menu_show_only_on_hover'] = false;
+        $defaults['special_menu_text'] = esc_html__('Categories', 'agency-ecommerce');
         // Layout.
         $defaults['enable_sticky_sidebar'] = true;
         $defaults['global_layout'] = 'right-sidebar';
@@ -99,6 +101,14 @@ if (!function_exists('agency_ecommerce_get_default_theme_options')) :
         $defaults['enable_gallery_zoom'] = false;
         $defaults['show_detail_icon'] = false;
         $defaults['disable_related_products'] = false;
+        $defaults['show_product_excerpt'] = false;
+        $defaults['woo_shop_excerpt_length'] = 50;
+        $defaults['hide_list_grid_view'] = false;
+
+
+        // Product Single
+        $defaults['sticky_add_to_cart'] = true;
+        $defaults['sticky_add_to_cart_position'] = 'top';
 
         // Footer.
         $defaults['copyright_text'] = esc_html__('Copyright &copy; All rights reserved.', 'agency-ecommerce');
@@ -125,7 +135,6 @@ if (!function_exists('agency_ecommerce_get_default_theme_options')) :
         $defaults['slider_pager_status'] = true;
         $defaults['slider_transition_effect'] = 'fade';
         $defaults['slider_transition_delay'] = 3;
-        $defaults['special_menu'] = false;
 
 
         $font_awesome_icons = array_keys(agency_ecommerce_font_awesome_icon_list());

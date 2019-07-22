@@ -51,11 +51,6 @@ class Agency_Ecommerce_Bottom_Header_Hooks
             add_action('agency_ecommerce_bottom_header', array($this, 'agency_ecommerce_bottom_header_action'), 10);
             add_action('agency_ecommerce_after_bottom_header', array($this, 'agency_ecommerce_after_bottom_header_action'), 10);
         }
-        $special_menu = agency_ecommerce_get_option('special_menu');
-
-        if ($special_menu) {
-            add_action('agency_ecommerce_main_content', array($this, 'agency_ecommerce_special_menu_action'), 10);
-        }
 
     }
 
@@ -76,8 +71,16 @@ class Agency_Ecommerce_Bottom_Header_Hooks
 
             $branding_class = 'site-branding';
 
-            if ('category-menu' == $site_identity) {
+            if ('special-menu' == $site_identity) {
+
                 $branding_class = 'special-menu-container';
+
+                $special_menu_show_only_on_hover = (boolean)agency_ecommerce_get_option('special_menu_show_only_on_hover');
+
+                if ($special_menu_show_only_on_hover) {
+
+                    $branding_class .= ' onhover';
+                }
             }
             ?>
 
@@ -102,9 +105,9 @@ class Agency_Ecommerce_Bottom_Header_Hooks
                     <?php
                     endif;
 
-                } elseif ('category-menu' == $site_identity) {
+                } elseif ('special-menu' == $site_identity) {
 
-                    agency_ecommerce_category_menu();
+                    agency_ecommerce_special_menu();
 
                 } else { ?>
 
@@ -147,31 +150,6 @@ class Agency_Ecommerce_Bottom_Header_Hooks
 
         ?></div><!-- .container --></header><!-- #masthead -->
         <?php
-    }
-
-    public function agency_ecommerce_special_menu_action()
-    {
-
-        $special_menu_text = 'Special Menu';
-
-        ?>
-        <nav class="container special-menu-container">
-        <ul class="menu special-menu-wrapper">
-            <li class="menu-item menu-item-has-children">
-                <?php
-                if (has_nav_menu('special-menu')) {
-                    wp_nav_menu(array(
-                        'theme_location' => 'special-menu',
-                        'menu_class' => 'sub-menu special-sub-menu',
-                        'container' => false
-                    ));
-                }
-                ?>
-                <div class="responsive-special-sub-menu clearfix"></div>
-            </li>
-        </ul>
-        </nav><?php
-
     }
 
 

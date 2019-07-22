@@ -65,7 +65,7 @@ if (!class_exists('Agency_Ecommerce_Woo_Categories_Widget')) :
                     'name' => 'background_color',
                     'title' => esc_html__('Background Color', 'agency-ecommerce'),
                     'type' => 'color',
-                    'default' => '#e6e9ec'
+                    'default' => '#ffffff'
                 )
 
 

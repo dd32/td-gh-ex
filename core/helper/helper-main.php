@@ -356,18 +356,18 @@ if (!function_exists('agency_ecommerce_wishlist')) {
     <?php }
 }
 
-if (!function_exists('agency_ecommerce_category_menu')) {
+if (!function_exists('agency_ecommerce_special_menu')) {
 
-    function agency_ecommerce_category_menu()
+    function agency_ecommerce_special_menu()
     {
+        $special_menu_text = agency_ecommerce_get_option('special_menu_text');
 
-        $special_menu = 'Categories'
         ?>
         <ul class="menu special-menu-wrapper">
             <li class="menu-item menu-item-has-children">
                 <i class="fa fa-angle-down angle-down"></i>
                 <a href="javascript:void(0)" class="special-menu">
-                    <i class="fa fa-navicon toggle"></i><?php echo esc_html($special_menu); ?>
+                    <i class="fa fa-navicon toggle"></i><?php echo esc_html($special_menu_text); ?>
                 </a>
                 <?php
                 if (has_nav_menu('special-menu')) {
