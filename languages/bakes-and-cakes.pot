@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Bakes And Cakes 1.1.8\n"
+"Project-Id-Version: Bakes And Cakes 1.1.9\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/support/theme/bakes-and-cakes\n"
-"POT-Creation-Date: 2019-05-06 08:06:49+00:00\n"
+"POT-Creation-Date: 2019-07-22 08:32:48+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -500,20 +500,12 @@ msgstr ""
 msgid "Choose Sidebar Template"
 msgstr ""
 
-#: inc/template-tags.php:35 inc/template-tags.php:51
+#: inc/template-tags.php:29 inc/template-tags.php:45
 #. translators: used between list items, there is a space after the comma
 msgid ", "
 msgstr ""
 
-#: inc/template-tags.php:37
-msgid " %1$s"
-msgstr ""
-
-#: inc/template-tags.php:53
-msgid " %1$s "
-msgstr ""
-
-#: inc/template-tags.php:60 template-parts/content-page.php:40
+#: inc/template-tags.php:54 template-parts/content-page.php:40
 #. translators: %s: Name of current post
 msgid "Edit %s"
 msgstr ""
@@ -889,11 +881,6 @@ msgstr ""
 msgid "Most Viewed"
 msgstr ""
 
-#: inc/widget-popular-post.php:72 inc/widget-popular-post.php:73
-#: inc/widget-recent-post.php:75 inc/widget-recent-post.php:76
-msgid "%1$s"
-msgstr ""
-
 #: inc/widget-popular-post.php:105 inc/widget-recent-post.php:110
 #: inc/widget-social-links.php:120
 msgid "Title"
@@ -1031,7 +1018,7 @@ msgid "Bakes And Cakes"
 msgstr ""
 
 #. Theme URI of the plugin/theme
-msgid "https://raratheme.com/wordpress-themes/bakes-and-cakes/"
+msgid "https://rarathemes.com/wordpress-themes/bakes-and-cakes/"
 msgstr ""
 
 #. Description of the plugin/theme
@@ -1042,33 +1029,23 @@ msgid ""
 "comes with several features to make user-friendly, interactive and visually "
 "stunning website. It has various useful section such as testimonial "
 "section, Product section, about section, team section, banner, and Call to "
-"action section etc.  The theme is Woocommerce compatible. The theme is "
+"action section etc. The theme is Woocommerce compatible. The theme is "
 "rigorously tested and optimized for speed and faster page load time and has "
 "a secure and clean code. The theme is also translation ready. Designed with "
 "visitor engagement in mind, Bakes and Cakes helps you to easily and "
 "intuitively create professional and appealing websites for your bakery, "
 "restaurant and cafe. Check the demo at "
-"https://demo.raratheme.com/bakes-and-cakes/ , video documentation at "
-"https://raratheme.com/documentation/bakes-cakes/ and get support at "
-"http://raratheme.com/support-ticket/"
+"https://demo.rarathemes.com/bakes-and-cakes/, documentation at "
+"https://rarathemes.com/documentation/bakes-and-cakes/ and get support at "
+"http://rarathemes.com/support-ticket/."
 msgstr ""
 
 #. Author URI of the plugin/theme
-msgid "https://raratheme.com/"
+msgid "https://rarathemes.com/"
 msgstr ""
 
 #. Template Name of the plugin/theme
 msgid "Home Page"
-msgstr ""
-
-#: inc/template-tags.php:24
-msgctxt "post date"
-msgid " %s"
-msgstr ""
-
-#: inc/template-tags.php:29
-msgctxt "post author"
-msgid " %s"
 msgstr ""
 
 #: inc/tgmpa/class-tgm-plugin-activation.php:1121

@@ -20,21 +20,15 @@ function bakes_and_cakes_posted_on() {
 
 	);
 
-	$posted_on = sprintf(
-		esc_html_x( ' %s', 'post date', 'bakes-and-cakes' ),
-		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
-	);
+	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 
-	$byline = sprintf(
-		esc_html_x( ' %s', 'post author', 'bakes-and-cakes' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
-	);
+	$byline = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
     
         $categories_list = get_the_category_list( esc_html__( ', ', 'bakes-and-cakes' ) );
 		if ( $categories_list && bakes_and_cakes_categorized_blog() ) {
-			printf( '<span class="tags">' . esc_html__( ' %1$s', 'bakes-and-cakes' ) . '</span>', $categories_list ); // WPCS: XSS OK.
+			echo '<span class="tags">' . $categories_list . '</span>'; // WPCS: XSS OK.
 		}
 }
 endif;
@@ -50,7 +44,7 @@ function bakes_and_cakes_entry_footer() {
 		/* translators: used between list items, there is a space after the comma */
 		$tags_list = get_the_tag_list( '', esc_html__( ', ', 'bakes-and-cakes' ) );
 		if ( $tags_list ) {
-			printf( '<span class="tags-links"><i class="fa fa-tags" aria-hidden="true"></i>' . esc_html__( ' %1$s ', 'bakes-and-cakes' ) . '</span>', $tags_list ); // WPCS: XSS OK.
+			echo '<span class="tags-links"><i class="fa fa-tags" aria-hidden="true"></i>' . $tags_list . '</span>'; // WPCS: XSS OK.
 		}
 	}
 
@@ -108,3 +102,16 @@ function bakes_and_cakes_category_transient_flusher() {
 }
 add_action( 'edit_category', 'bakes_and_cakes_category_transient_flusher' );
 add_action( 'save_post',     'bakes_and_cakes_category_transient_flusher' );
+
+if( ! function_exists( 'wp_body_open' ) ) :
+/**
+ * Fire the wp_body_open action.
+ * Added for backwards compatibility to support pre 5.2.0 WordPress versions.
+*/
+function wp_body_open() {
+	/**
+	 * Triggered after the opening <body> tag.
+    */
+	do_action( 'wp_body_open' );
+}
+endif;

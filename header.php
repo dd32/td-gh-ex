@@ -21,6 +21,7 @@
 </head>
 
 <body <?php body_class(); ?> itemscope itemtype="http://schema.org/WebPage">
+<?php wp_body_open(); ?>
 <div id="page" class="site">
 	
 	<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">

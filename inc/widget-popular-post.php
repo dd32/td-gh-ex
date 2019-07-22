@@ -69,8 +69,8 @@ class bakes_and_cakes_Popular_Post extends WP_Widget {
 							<h3 class="entry-title"><a href="<?php the_permalink(); ?>"><?php the_title();?></a></h3>
 							<?php if( $show_postdate ) {?>
                                     <span class="posted-on"><a href="<?php the_permalink(); ?>">
-                                        <time datetime="<?php printf( __( '%1$s', 'bakes-and-cakes' ), esc_html(get_the_date('Y-m-d')) ); ?>">
-                                        <?php printf( __( '%1$s', 'bakes-and-cakes' ), esc_html( get_the_date('Y/m/d') ) ); ?></time></a>
+                                        <time datetime="<?php echo esc_html( get_the_date('Y-m-d') ); ?>">
+                                        <?php echo esc_html( get_the_date('Y/m/d') ); ?></time></a>
                                     </span>
                             <?php  } ?>
 						</div>                        

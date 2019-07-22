@@ -1,33 +1,34 @@
 jQuery(document).ready(function($) {
 
-    /** Variables from Customizer for Slider settings */
+    var slider_auto, slider_loop, slider_control, rtl, animation;
+    
     if (bakes_and_cakes_data.auto == '1') {
-        var slider_auto = true;
+        slider_auto = true;
     } else {
-        var slider_auto = false;
+        slider_auto = false;
     }
 
     if (bakes_and_cakes_data.loop == '1') {
-        var slider_loop = true;
+        slider_loop = true;
     } else {
-        var slider_loop = false;
+        slider_loop = false;
     }
 
     if (bakes_and_cakes_data.pager == '1') {
-        var slider_control = true;
+        slider_control = true;
     } else {
-        var slider_control = false;
+        slider_control = false;
     }
 
     if (bakes_and_cakes_data.rtl == '1') {
-        var rtl = true;
+        rtl = true;
     } else {
-        var rtl = false;
+        rtl = false;
     }
     if (bakes_and_cakes_data.animation == 'slide') {
-        var animation = '';
+        animation = '';
     } else if (bakes_and_cakes_data.animation == 'fade') {
-        var animation = 'fadeOut';
+        animation = 'fadeOut';
     }
 
     /** Home Page Slider */

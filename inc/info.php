@@ -38,10 +38,10 @@ function bakes_and_cakes_customizer_theme_info( $wp_customize ) {
 		));
     
     $theme_info = '';
-	$theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Video Tutorial', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://raratheme.com/documentation/bakes-cakes/' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
-    $theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Theme Demo', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://raratheme.com/previews/?theme=bakes-and-cakes' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
-    $theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Support Ticket', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://raratheme.com/support-ticket/' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
-	$theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Rate this theme', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://wordpress.org/support/theme/bakes-and-cakes/reviews' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
+	$theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Video Tutorial', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://rarathemes.com/documentation/bakes-and-cakes/' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
+    $theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Theme Demo', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://demo.rarathemes.com/bakes-and-cakes/' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
+    $theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Support Ticket', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://rarathemes.com/support-ticket/' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
+	$theme_info .= '<span class="sticky_info_row"><label class="row-element">' . __( 'Rate this theme', 'bakes-and-cakes' ) . ': </label><a href="' . esc_url( 'https://wordpress.org/support/theme/bakes-and-cakes/reviews/' ) . '" target="_blank">' . __( 'here', 'bakes-and-cakes' ) . '</a></span><br />';
 
 
 	$wp_customize->add_control( 
@@ -174,7 +174,7 @@ function bakes_and_cakes_sections_pro( $manager ) {
 				'title'    => esc_html__( 'Pro Available', 'bakes-and-cakes' ),
                 'priority' => 5, 
 				'pro_text' => esc_html__( 'VIEW PRO THEME', 'bakes-and-cakes' ),
-				'pro_url'  => 'https://raratheme.com/wordpress-themes/bakes-and-cakes-pro/'
+				'pro_url'  => 'https://rarathemes.com/wordpress-themes/bakes-and-cakes-pro/'
 			)
 		)
 	);

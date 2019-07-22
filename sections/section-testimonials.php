@@ -50,9 +50,9 @@
 			      $testimonial_qry->the_post(); $j++; ?>
 				<li>
 					<a href="#tab<?php echo $j; ?>" <?php if($j%3 == 0 ){ echo 'class="active"'; } ?>>
-					<?php $id = get_the_ID();
-					      $image = wp_get_attachment_url(get_post_thumbnail_id($id)); ?>
-						<img src="<?php echo esc_url($image); ?>" height="98" width="98" alt="">
+					<?php 
+                        $image = wp_get_attachment_image_url( get_post_thumbnail_id( get_the_ID() ) ); ?>						
+                        <img src="<?php echo esc_url( $image ); ?>" alt="<?php the_title_attribute(); ?>">
 						<span class="text-holder">
 							<strong class="name"><?php the_title(); ?></strong>
 							<?php if(has_excerpt()){ ?>
@@ -61,7 +61,8 @@
 						</span>
 					</a>
 				</li>
-			<?php } ?>
+			<?php }
+            wp_reset_postdata(); ?>
 			</ul>
 	<?php } } 
 	echo '</div>'; ?>

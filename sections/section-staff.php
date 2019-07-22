@@ -1,4 +1,3 @@
-
 <?php 
 
     $staff_section_cat  = get_theme_mod('bakes_and_cakes_staff_section_cat');

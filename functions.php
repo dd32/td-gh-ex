@@ -385,4 +385,3 @@ require get_template_directory() . '/inc/info.php';
  * Demo Content Section
  */
 require get_template_directory() . '/inc/demo-content.php';
-
