@@ -18,21 +18,19 @@ class Banner extends Widget_Base {
 	
 	protected function _register_controls() {
 		$this->start_controls_section(
-			'section_banner', // Section key
+			'section_banner',
 			array(
-				'label' => __( 'Banner Section', 'best-charity' ), // Section display name
+				'label' => __( 'Banner Section', 'best-charity' ),
 				'type' => Controls_Manager::SECTION, 
-				'tab' => Controls_Manager::TAB_CONTENT, // Which tab to display the section in.
+				'tab' => Controls_Manager::TAB_CONTENT,
 			)
 		);
-		/*
-		 * After you start the section, you can put as many controls inside the section as you want.
-		 */
+		
 		$this->add_control(
-			'banner_enable', // Control key
+			'banner_enable',
 			array(
-				'label' => __( 'Enable/Disable Banner Section', 'best-charity' ), // Control label
-				'type' => Controls_Manager::SWITCHER, // Type of control
+				'label' => __( 'Enable/Disable Banner Section', 'best-charity' ), 
+				'type' => Controls_Manager::SWITCHER, 
 				'label_on' => __( 'Show', 'best-charity' ),
 				'label_off' => __( 'Hide', 'best-charity' ),
 				'return_value' => 'yes',
@@ -41,43 +39,43 @@ class Banner extends Widget_Base {
 		);
 
 		$this->add_control(
-			'title', // Control key
+			'title',
 			array(
-				'label' => __( 'Banner Tagline', 'best-charity' ), // Control label
-				'type' => Controls_Manager::TEXT, // Type of control
-				'default' => '', // Default value for control
+				'label' => __( 'Banner Tagline', 'best-charity' ), 
+				'type' => Controls_Manager::TEXT, 
+				'default' => '', 
 			)
 		);
 		
 		$this->add_control(
-			'banner_page_id', // Control key
+			'banner_page_id', 
 			array(
-				'label' => __( 'Select Page For Banner', 'best-charity' ), // Control label
-				'description' => __( 'It\'s display page title, description and featured image for banner heading, description and image', 'best-charity' ), // Control label
-				'type' => Controls_Manager::SELECT2, // Type of control
+				'label' => __( 'Select Page For Banner', 'best-charity' ), 
+				'description' => __( 'It\'s display page title, description and featured image for banner heading, description and image', 'best-charity' ), 
+				'type' => Controls_Manager::SELECT2, 
 				'options'=>$this->getTermsForSelect(),
-				'default' => '', // Default value for control
+				'default' => '', 
 			)
 		);
 		
 		$this->add_control(
-			'btn_title', // Control key
+			'btn_title', 
 			array(
-				'label' => __( 'Button Text', 'best-charity' ), // Control label
-				'type' => Controls_Manager::TEXT, // Type of control
-				'default' => '', // Default value for control
+				'label' => __( 'Button Text', 'best-charity' ), 
+				'type' => Controls_Manager::TEXT, 
+				'default' => '', 
 			)
 		);
 
 		$this->add_control(
-			'btn_url', // Control key
+			'btn_url', 
 			array(
-				'label' => __( 'Button Url', 'best-charity' ), // Control label
-				'type' => Controls_Manager::URL, // Type of control
-				'placeholder' => 'https://example.com', // Default value for control
+				'label' => __( 'Button Url', 'best-charity' ), 
+				'type' => Controls_Manager::URL, 
+				'placeholder' => 'https://example.com', 
 			)
 		);
-		// Ends the controls section
+		
 		$this->end_controls_section();
 	}
 	
@@ -104,5 +102,5 @@ class Banner extends Widget_Base {
         return $select_posts;
     }
 }
-// After the Banner class is defined, I must register the new widget class with Elementor:
+
 Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Banner() );

@@ -1,10 +1,9 @@
 <?php
-// Load the theme's custom Widgets so that they appear in the Elementor element panel.
-add_action( 'elementor/widgets/widgets_registered', 'register_elementor_widgets' );
-function register_elementor_widgets() {
-	// We check if the Elementor plugin has been installed / activated.
-	if ( defined( 'ELEMENTOR_PATH' ) && class_exists('Elementor\Widget_Base') ) {
-		
+
+add_action( 'elementor/widgets/widgets_registered', 'best_charity_register_elementor_widgets' );
+function best_charity_register_elementor_widgets() {
+	
+	if ( defined( 'ELEMENTOR_PATH' ) && class_exists('Elementor\Widget_Base') ) {	
 		require_once( get_template_directory() . '/elementor-widget/widgets/banner.php' );
 		require_once( get_template_directory() . '/elementor-widget/widgets/top-service.php' );
 		require_once( get_template_directory() . '/elementor-widget/widgets/discover.php' );
@@ -20,8 +19,7 @@ function register_elementor_widgets() {
 
  	}
 }
-// Add a custom 'mld' category for to the Elementor element panel so that 
-// our theme's widgets have their own category.
+
 add_action( 'elementor/init', function() {
 	\Elementor\Plugin::$instance->elements_manager->add_category( 
 		'best_charity',

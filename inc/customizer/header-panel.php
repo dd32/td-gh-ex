@@ -15,11 +15,6 @@ function best_charity_header_settings_register( $wp_customize ) {
   $wp_customize->get_section( 'header_image' )->title    = __( 'Header Image', 'best-charity' );
   $wp_customize->get_section( 'header_image' )->panel    = 'best_charity_header_settings_panel';
 
-	/**
-     * Add Header Settings Panel
-     *
-     * @since 1.0.0
-     */
     $wp_customize->add_panel(
      'best_charity_header_settings_panel',
      array(
@@ -30,12 +25,7 @@ function best_charity_header_settings_register( $wp_customize ) {
      )
  );
 
-    /*----------------------------------------------------------------------------------------------------------------------------------------*/
-	/**
-     * Top Header section
-     *
-     * @since 1.0.0
-     */
+
     $wp_customize->add_section(
         'best_charity_top_header_section',
         array(
@@ -48,12 +38,6 @@ function best_charity_header_settings_register( $wp_customize ) {
         )
     );
 
-    /*----------------------------------------------------------------------------------------------------------------------------------------*/
-    /**
-     *Enable/Disable Top Header section
-     *
-     * @since 1.0.0
-     */
     $wp_customize->add_setting(
         'best_charity_top_header_enable',
         array(
@@ -71,8 +55,7 @@ function best_charity_header_settings_register( $wp_customize ) {
         )       
     );
 
-   
-    /** Enable/Disable Top Header Search Form*/
+  
     $wp_customize->add_setting(
         'best_charity_top_header_search_form_enable',
         array(
@@ -90,7 +73,6 @@ function best_charity_header_settings_register( $wp_customize ) {
         )       
     );
 
-    /** Top Header Contact info */
     $wp_customize->add_setting( 
         new Best_Charity_Repeater_Setting( 
             $wp_customize, 
@@ -99,7 +81,7 @@ function best_charity_header_settings_register( $wp_customize ) {
                 'default' => array(
                     array(
                         'icon' => 'fa fa-phone',
-                        'title' => ' + (123) 456 7890',
+                        'title' => esc_html__('+ (123) 456 7890', 'best-charity'),
                     ),
                     array(
                         'icon' => 'fa fa-envelope',

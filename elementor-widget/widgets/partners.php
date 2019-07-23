@@ -18,21 +18,19 @@ class Partners extends Widget_Base {
 	
 	protected function _register_controls() {
 		$this->start_controls_section(
-			'section_partners', // Section key
+			'section_partners',
 			array(
-				'label' => __( 'Partners Section', 'best-charity' ), // Section display name
+				'label' => __( 'Partners Section', 'best-charity' ),
 				'type' => Controls_Manager::SECTION, 
-				'tab' => Controls_Manager::TAB_CONTENT, // Which tab to display the section in.
+				'tab' => Controls_Manager::TAB_CONTENT,
 			)
 		);
-		/*
-		 * After you start the section, you can put as many controls inside the section as you want.
-		 */
+		
 		$this->add_control(
 			'partners_enable', // Control key
 			array(
-				'label' => __( 'Enable/Disable Partners Section', 'best-charity' ), // Control label
-				'type' => Controls_Manager::SWITCHER, // Type of control
+				'label' => __( 'Enable/Disable Partners Section', 'best-charity' ),
+				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Show', 'best-charity' ),
 				'label_off' => __( 'Hide', 'best-charity' ),
 				'return_value' => 'yes',
@@ -60,12 +58,11 @@ class Partners extends Widget_Base {
 						),
 					)
 				),
-				// Which subfield's value is shown when the repeater field is collapsed
+				
 				'title_field' => '{{{ name }}}',
 			)
 		);
 
-		// Ends the controls section
 		$this->end_controls_section();
 	}
 	
@@ -93,5 +90,5 @@ class Partners extends Widget_Base {
         return $select_posts;
     }
 }
-// After the Partners class is defined, I must register the new widget class with Elementor:
+
 Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Partners() );

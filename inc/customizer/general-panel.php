@@ -16,12 +16,7 @@ function best_charity_general_settings_register( $wp_customize ) {
     $wp_customize->get_section( 'colors' )->priority = '10';
     $wp_customize->get_section( 'background_image' )->panel = 'best_charity_general_settings_panel';
     $wp_customize->get_section( 'background_image' )->priority = '15';
-
-    /**
-     * Add General Settings Panel
-     *
-     * @since 1.0.0
-     */
+    
     $wp_customize->add_panel(
         'best_charity_general_settings_panel',
         array(

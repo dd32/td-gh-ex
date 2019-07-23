@@ -9,12 +9,6 @@
  *
  * @package Best_Charity
  */
-
-/*
- * If the current post is protected by a password and
- * the visitor has not yet entered the password we will
- * return early without loading the comments.
- */
 if ( post_password_required() ) {
 	return;
 }
@@ -23,7 +17,6 @@ if ( post_password_required() ) {
 <div id="comments" class="comments-area">
 
 	<?php
-	// You can start editing here -- including this comment!
 	if ( have_comments() ) :
 		?>
 		<h2 class="comments-title">
@@ -67,9 +60,7 @@ if ( post_password_required() ) {
 			<?php
 		endif;
 
-	endif; // Check for have_comments().
-
+	endif; 
 	comment_form();
 	?>
-
-</div><!-- #comments -->
+</div>

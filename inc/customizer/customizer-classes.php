@@ -5,18 +5,10 @@
  * @package Best_Charity
  * @since 1.0.0
  */
-/*----------------------------------------------------------------------------------------------------------------------------------------*/
-/**
- * Switch button customize control.
- *
- * @since 1.0.3
- * @access public
- */
+
+
 if( class_exists( 'WP_Customize_Control' ) ) {
 
-/**
- * Class Best_Charity_Customize_Dropdown_Taxonomies_Control
- */
 class Best_Charity_Customize_Dropdown_Taxonomies_Control extends WP_Customize_Control {
 
   public $type = 'dropdown-taxonomies';

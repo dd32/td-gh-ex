@@ -18,21 +18,19 @@ class Query extends Widget_Base {
 	
 	protected function _register_controls() {
 		$this->start_controls_section(
-			'section_query', // Section key
+			'section_query',
 			array(
-				'label' => __( 'Query Section', 'best-charity' ), // Section display name
+				'label' => __( 'Query Section', 'best-charity' ),
 				'type' => Controls_Manager::SECTION, 
-				'tab' => Controls_Manager::TAB_CONTENT, // Which tab to display the section in.
+				'tab' => Controls_Manager::TAB_CONTENT,
 			)
 		);
-		/*
-		 * After you start the section, you can put as many controls inside the section as you want.
-		 */
+	
 		$this->add_control(
-			'query_enable', // Control key
+			'query_enable',
 			array(
-				'label' => __( 'Enable/Disable Query Section', 'best-charity' ), // Control label
-				'type' => Controls_Manager::SWITCHER, // Type of control
+				'label' => __( 'Enable/Disable Query Section', 'best-charity' ),
+				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Show', 'best-charity' ),
 				'label_off' => __( 'Hide', 'best-charity' ),
 				'return_value' => 'yes',
@@ -41,37 +39,36 @@ class Query extends Widget_Base {
 		);
 
 		$this->add_control(
-			'title', // Control key
+			'title',
 			array(
-				'label' => __( 'Query Tagline', 'best-charity' ), // Control label
-				'type' => Controls_Manager::TEXT, // Type of control
-				'default' => '', // Default value for control
+				'label' => __( 'Query Tagline', 'best-charity' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => '',
 			)
 		);
 		
 		$this->add_control(
-			'query_page_id', // Control key
+			'query_page_id',
 			array(
-				'label' => __( 'Select Page For Query', 'best-charity' ), // Control label
+				'label' => __( 'Select Page For Query', 'best-charity' ),
 				  /* translators: %s: Description */ 
-				'description' => __( 'It\'s display page title, description and featured image for query heading, description and image', 'best-charity' ), // Control label
-				'type' => Controls_Manager::SELECT2, // Type of control
+				'description' => __( 'It\'s display page title, description and featured image for query heading, description and image', 'best-charity' ),
+				'type' => Controls_Manager::SELECT2,
 				'options'=>$this->getTermsForSelect(),
-				'default' => '', // Default value for control
+				'default' => '',
 			)
 		);
 		
 		$this->add_control(
-			'contact_shortcode', // Control key
+			'contact_shortcode',
 			array(
-				'label' => __( 'Contact Form shortcode', 'best-charity' ), // Control label
+				'label' => __( 'Contact Form shortcode', 'best-charity' ),
 				'description'           => sprintf( __( 'Use Contact Form 7 Plugins shortcode: Eg: %1$s. %2$s See more here %3$s', 'best-charity' ), '[contact-form-7 id="108" title="Contact form 1"]','<a href="'.esc_url('https://wordpress.org/plugins/contact-form-7/').'" target="_blank">','</a>' ),
-				'type' => Controls_Manager::TEXT, // Type of control
-				'default' => '', // Default value for control
+				'type' => Controls_Manager::TEXT,
+				'default' => '',
 			)
 		);
 
-		// Ends the controls section
 		$this->end_controls_section();
 	}
 	
@@ -99,5 +96,5 @@ class Query extends Widget_Base {
         return $select_posts;
     }
 }
-// After the Query class is defined, I must register the new widget class with Elementor:
+
 Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Query() );

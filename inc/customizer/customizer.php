@@ -4,12 +4,8 @@
  *
  * @package Best_Charity
  */
+use WPTRT\Customize\Section\Button;
 
-/**
- * Add postMessage support for site title and description for the Theme Customizer.
- *
- * @param WP_Customize_Manager $wp_customize Theme Customizer object.
- */
 function best_charity_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'blogname' )->transport         = 'postMessage';
 	$wp_customize->get_setting( 'blogdescription' )->transport  = 'postMessage';
@@ -26,73 +22,65 @@ function best_charity_customize_register( $wp_customize ) {
 		) );
 	}
 
-	//Upgrade to Pro
-	// Register custom section types.
-	$wp_customize->register_section_type( 'Best_Charity_Customize_Section_Upsell' );
 
-	// Register sections.
+	$wp_customize->register_section_type( Button::class );
+
 	$wp_customize->add_section(
-		new Best_Charity_Customize_Section_Upsell(
-			$wp_customize,
-			'theme_upsell',
-			array(
-				'title'    => esc_html__( 'Go Pro', 'best-charity' ),
-				'pro_text' => esc_html__( 'Buy Best Charity Pro', 'best-charity' ),
-				'pro_url'  => 'http://html5wp.com/downloads/best-charity-pro-wordpress-theme/',
-				'priority' => 1,
-			)
-		)
+		new Button( $wp_customize, 'best_charity_pro', [
+			'title'       => __( 'Buy Best Charity Pro', 'best-charity' ),
+			'button_text' => __( 'Go Pro', 'best-charity' ),
+			'button_url'  => 'http://html5wp.com/downloads/best-charity-pro-wordpress-theme/'
+		] )
 	);
 
 }
 add_action( 'customize_register', 'best_charity_customize_register' );
 
-/**
- * Render the site title for the selective refresh partial.
- *
- * @return void
- */
 function best_charity_customize_partial_blogname() {
 	bloginfo( 'name' );
 }
 
-/**
- * Render the site tagline for the selective refresh partial.
- *
- * @return void
- */
 function best_charity_customize_partial_blogdescription() {
 	bloginfo( 'description' );
 }
 
-/**
- * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
- */
 function best_charity_customize_preview_js() {
 	wp_enqueue_script( 'best-charity-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), '20151215', true );
 }
 add_action( 'customize_preview_init', 'best_charity_customize_preview_js' );
 
 
-/**
- * Enqueue required scripts/styles for customizer panel
- *
- * @since 1.0.0
- */
 function best_charity_customize_backend_scripts() {
-	wp_enqueue_script( 'best_charity-customize-controls', get_template_directory_uri() . '/inc/upgrade-to-pro/pro.js', array( 'customize-controls' ) );
-	wp_enqueue_style( 'best_charity-customize-controls', get_template_directory_uri() . '/inc/upgrade-to-pro/pro.css' );
+	$version = wp_get_theme()->get( 'Version' );
+
+	wp_enqueue_script(
+		'best-charity-customize-section-button',
+		get_theme_file_uri( 'inc/upgrade-to-pro/public/js/customize-controls.js' ),
+		[ 'customize-controls' ],
+		$version,
+		true
+	);
+
+	wp_enqueue_style(
+		'best-charity-customize-section-button',
+		get_theme_file_uri( 'inc/upgrade-to-pro/public/css/customize-controls.css' ),
+		[ 'customize-controls' ],
+ 		$version
+	);
 }
 add_action( 'customize_controls_enqueue_scripts', 'best_charity_customize_backend_scripts', 10 );
 
-/*----------------------------------------------------------------------------------------------------------------------------------------*/
-/**
- * Load customizer required panels.
- */
-
 require get_template_directory() . '/inc/customizer/general-panel.php';
-require_once trailingslashit( get_template_directory() ) . '/inc/upgrade-to-pro/control.php';
 require get_template_directory() . '/inc/customizer/header-panel.php';
 
 require get_template_directory() . '/inc/customizer/customizer-sanitize.php';
 require get_template_directory() . '/inc/customizer/customizer-classes.php';
+
+// Autoloader
+include get_theme_file_path( 'inc/upgrade-to-pro/src/Loader.php' );
+
+$loader = new \WPTRT\Autoload\Loader();
+
+$loader->add( 'WPTRT\\Customize\\Section', get_theme_file_path( 'inc/upgrade-to-pro/src' ) );
+
+$loader->register();

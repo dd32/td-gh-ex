@@ -18,21 +18,19 @@ class Cfund extends Widget_Base {
 	
 	protected function _register_controls() {
 		$this->start_controls_section(
-			'section_cfund', // Section key
+			'section_cfund', 
 			array(
-				'label' => __( 'Cfund Section', 'best-charity' ), // Section display name
+				'label' => __( 'Cfund Section', 'best-charity' ),
 				'type' => Controls_Manager::SECTION, 
-				'tab' => Controls_Manager::TAB_CONTENT, // Which tab to display the section in.
+				'tab' => Controls_Manager::TAB_CONTENT,
 			)
 		);
-		/*
-		 * After you start the section, you can put as many controls inside the section as you want.
-		 */
+	
 		$this->add_control(
-			'cfund_enable', // Control key
+			'cfund_enable',
 			array(
-				'label' => __( 'Enable/Disable Cfund Section', 'best-charity' ), // Control label
-				'type' => Controls_Manager::SWITCHER, // Type of control
+				'label' => __( 'Enable/Disable Cfund Section', 'best-charity' ),
+				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Show', 'best-charity' ),
 				'label_off' => __( 'Hide', 'best-charity' ),
 				'return_value' => 'yes',
@@ -40,46 +38,44 @@ class Cfund extends Widget_Base {
 			)
 		);
 		$this->add_control(
-			'title', // Control key
+			'title',
 			array(
-				'label' => __( 'Cfund Title', 'best-charity' ), // Control label
-				'type' => Controls_Manager::TEXT, // Type of control
-				'default' => '', // Default value for control
+				'label' => __( 'Cfund Title', 'best-charity' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => '',
 			)
 		);
 
 		$this->add_control(
-			'sub_title', // Control key
+			'sub_title',
 			array(
-				'label' => __( 'Cfund Tagline', 'best-charity' ), // Control label
-				'type' => Controls_Manager::TEXT, // Type of control
-				'default' => '', // Default value for control
+				'label' => __( 'Cfund Tagline', 'best-charity' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => '',
 			)
 		);
 		
 		$this->add_control(
-			'cfund_cat_id', // Control key
+			'cfund_cat_id',
 			[
-				'label' => __( 'Select Category For Cfund', 'best-charity' ), // Control label
-				'type' => Controls_Manager::SELECT2, // Type of control
+				'label' => __( 'Select Category For Cfund', 'best-charity' ),
+				'type' => Controls_Manager::SELECT2,
 				'options'=>$this->getCategoryForSelect(),
-				'default' => '', // Default value for control
+				'default' => '',
 			]
 		);
 		
 		
 		$this->add_control(
-			'no_of_post', // Control key
+			'no_of_post',
 			array(
-				'label' => __( 'Number of post', 'best-charity' ), // Control label
+				'label' => __( 'Number of post', 'best-charity' ),
 				'description' => __('such as 1, 2, 3....','best-charity'),
-				'type' => Controls_Manager::NUMBER, // Type of control
-				'default' => '', // Default value for control
+				'type' => Controls_Manager::NUMBER,
+				'default' => '',
 			)
 		);
 
-
-		// Ends the controls section
 		$this->end_controls_section();
 	}
 	
@@ -106,5 +102,5 @@ class Cfund extends Widget_Base {
         return $select_cats;
     }
 }
-// After the Cfund class is defined, I must register the new widget class with Elementor:
+
 Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Cfund() );

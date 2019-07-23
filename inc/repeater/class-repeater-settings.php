@@ -1,30 +1,14 @@
 <?php
-/**
- * Repeater Customizer Setting.
- */
 
-// Exit if accessed directly.
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
 if ( ! class_exists( 'Best_Charity_Repeater_Setting' ) ) {
 
-	/**
-	 * Repeater Settings.
-	 */
+	
 	class Best_Charity_Repeater_Setting extends WP_Customize_Setting {
 
-		/**
-		 * Constructor.
-		 *
-		 * Any supplied $args override class property defaults.
-		 *
-		 * @access public
-		 * @param WP_Customize_Manager $manager The WordPress WP_Customize_Manager object.
-		 * @param string               $id       A specific ID of the setting. Can be a theme mod or option name.
-		 * @param array                $args     Setting arguments.
-		 */
 		public function __construct( $manager, $id, $args = array() ) {
 			parent::__construct( $manager, $id, $args );
 
@@ -32,12 +16,7 @@ if ( ! class_exists( 'Best_Charity_Repeater_Setting' ) ) {
 			add_filter( "customize_sanitize_{$this->id}", array( $this, 'sanitize_repeater_setting' ), 10, 1 );
 		}
 
-		/**
-		 * Fetch the value of the setting.
-		 *
-		 * @access public
-		 * @return mixed The value.
-		 */
+	
 		public function value() {
 			$value = parent::value();
 			if ( ! is_array( $value ) ) {
@@ -47,13 +26,7 @@ if ( ! class_exists( 'Best_Charity_Repeater_Setting' ) ) {
 			return $value;
 		}
 
-		/**
-		 * Convert the JSON encoded setting coming from Customizer to an Array.
-		 *
-		 * @access public
-		 * @param string $value URL Encoded JSON Value.
-		 * @return array
-		 */
+		
 		public static function sanitize_repeater_setting( $value ) {
             
             if ( ! is_array( $value ) ) {
@@ -70,7 +43,6 @@ if ( ! class_exists( 'Best_Charity_Repeater_Setting' ) ) {
 				}
 			}
 
-			// Reindex array.
 			$sanitized = array_values( $sanitized );
 
 			return $sanitized;

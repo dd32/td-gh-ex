@@ -18,21 +18,19 @@ class Newsletter extends Widget_Base {
 	
 	protected function _register_controls() {
 		$this->start_controls_section(
-			'section_newsletter', // Section key
+			'section_newsletter',
 			array(
-				'label' => __( 'Newsletter Title', 'best-charity' ), // Section display name
+				'label' => __( 'Newsletter Title', 'best-charity' ),
 				'type' => Controls_Manager::SECTION, 
-				'tab' => Controls_Manager::TAB_CONTENT, // Which tab to display the section in.
+				'tab' => Controls_Manager::TAB_CONTENT,
 			)
 		);
-		/*
-		 * After you start the section, you can put as many controls inside the section as you want.
-		 */
+		
 		$this->add_control(
-			'newsletter_enable', // Control key
+			'newsletter_enable',
 			array(
-				'label' => __( 'Enable/Disable Newsletter Section', 'best-charity' ), // Control label
-				'type' => Controls_Manager::SWITCHER, // Type of control
+				'label' => __( 'Enable/Disable Newsletter Section', 'best-charity' ),
+				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Show', 'best-charity' ),
 				'label_off' => __( 'Hide', 'best-charity' ),
 				'return_value' => 'yes',
@@ -41,25 +39,25 @@ class Newsletter extends Widget_Base {
 		);
 
 		$this->add_control(
-			'title', // Control key
+			'title',
 			array(
-				'label' => __( 'Newsletter Tagline', 'best-charity' ), // Control label
-				'type' => Controls_Manager::TEXT, // Type of control
-				'default' => '', // Default value for control
+				'label' => __( 'Newsletter Tagline', 'best-charity' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => '', 
 			)
 		);
 		
 		$this->add_control(
-			'newsletter_shortcode', // Control key
+			'newsletter_shortcode',
 			array(
-				'label' => __( 'Newsletter Plugins shortcode', 'best-charity' ), // Control label
+				'label' => __( 'Newsletter Plugins shortcode', 'best-charity' ),
 				/* translators: %s: Description */ 
   				'description'           => sprintf( __( 'Use Newsletter Plugins shortcode: Eg: %1$s. %2$s See more here %3$s', 'best-charity' ), '[newsletter_form type="minimal"]','<a href="'.esc_url('https://wordpress.org/plugins/newsletter/').'" target="_blank">','</a>' ),
-				'type' => Controls_Manager::TEXT, // Type of control
-				'default' => '', // Default value for control
+				'type' => Controls_Manager::TEXT,
+				'default' => '', 
 			)
 		);
-		// Ends the controls section
+	
 		$this->end_controls_section();
 	}
 	

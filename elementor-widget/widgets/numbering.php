@@ -18,21 +18,19 @@ class Numbering extends Widget_Base {
 	
 	protected function _register_controls() {
 		$this->start_controls_section(
-			'section_numbering', // Section key
+			'section_numbering',
 			array(
-				'label' => __( 'Numbering Section', 'best-charity' ), // Section display name
+				'label' => __( 'Numbering Section', 'best-charity' ),
 				'type' => Controls_Manager::SECTION, 
-				'tab' => Controls_Manager::TAB_CONTENT, // Which tab to display the section in.
+				'tab' => Controls_Manager::TAB_CONTENT, 
 			)
 		);
-		/*
-		 * After you start the section, you can put as many controls inside the section as you want.
-		 */
+	
 		$this->add_control(
-			'numbering_enable', // Control key
+			'numbering_enable',
 			array(
-				'label' => __( 'Enable/Disable Numbering Section', 'best-charity' ), // Control label
-				'type' => Controls_Manager::SWITCHER, // Type of control
+				'label' => __( 'Enable/Disable Numbering Section', 'best-charity' ),
+				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Show', 'best-charity' ),
 				'label_off' => __( 'Hide', 'best-charity' ),
 				'return_value' => 'yes',
@@ -43,38 +41,38 @@ class Numbering extends Widget_Base {
 		$this->add_control(
 			'title', // Control key
 			array(
-				'label' => __( 'Numbering Tagline', 'best-charity' ), // Control label
-				'type' => Controls_Manager::TEXT, // Type of control
-				'default' => '', // Default value for control
+				'label' => __( 'Numbering Tagline', 'best-charity' ),
+				'type' => Controls_Manager::TEXT, 
+				'default' => '',
 			)
 		);
 		
 		$this->add_control(
-			'numbering_page_id', // Control key
+			'numbering_page_id',
 			array(
 				'label' => __( 'Select Page For Numbering', 'best-charity' ), // Control label
 				'description' => __( 'It\'s display page title and description for numbering heading and description', 'best-charity' ), // Control label
-				'type' => Controls_Manager::SELECT2, // Type of control
+				'type' => Controls_Manager::SELECT2,
 				'options'=>$this->getTermsForSelect(),
-				'default' => '', // Default value for control
+				'default' => '', 
 			)
 		);
 		
 		$this->add_control(
 			'btn_title', // Control key
 			array(
-				'label' => __( 'Button Text', 'best-charity' ), // Control label
-				'type' => Controls_Manager::TEXT, // Type of control
-				'default' => '', // Default value for control
+				'label' => __( 'Button Text', 'best-charity' ),
+				'type' => Controls_Manager::TEXT,
+				'default' => '',
 			)
 		);
 
 		$this->add_control(
 			'btn_url', // Control key
 			array(
-				'label' => __( 'Button Url', 'best-charity' ), // Control label
-				'type' => Controls_Manager::URL, // Type of control
-				'placeholder' => 'https://example.com', // Default value for control
+				'label' => __( 'Button Url', 'best-charity' ),
+				'type' => Controls_Manager::URL,
+				'placeholder' => '',
 			)
 		);
 
@@ -94,22 +92,22 @@ class Numbering extends Widget_Base {
 				'fields' => array(
 					array(
 						'name' => 'numbering_no',
-						'label' => __( 'Numbering Number', 'best-charity' ), // Control label
-						'type' => Controls_Manager::NUMBER, // Type of control
+						'label' => __( 'Numbering Number', 'best-charity' ),
+						'type' => Controls_Manager::NUMBER,
 						'label_block' => true,	
 					),
 					array(
 						'name' => 'numbering_title',
-						'label' => __( 'Numbering Title', 'best-charity' ), // Control label
-						'type' => Controls_Manager::TEXT, // Type of control
+						'label' => __( 'Numbering Title', 'best-charity' ),
+						'type' => Controls_Manager::TEXT,
 						'label_block' => true,
 					),
 				),
-				// Which subfield's value is shown when the repeater field is collapsed
+		
 				'title_field' => '{{{ name }}}',
 			)
 		);
-		// Ends the controls section
+		
 		$this->end_controls_section();
 	}
 	
@@ -137,5 +135,5 @@ class Numbering extends Widget_Base {
         return $select_posts;
     }
 }
-// After the Numbering class is defined, I must register the new widget class with Elementor:
+
 Plugin::instance()->widgets_manager->register_widget_type( new \Elementor\Numbering() );

@@ -5,19 +5,12 @@
  * @package Best_Charity
  */
 
-/**
- * Adds custom classes to the array of body classes.
- *
- * @param array $classes Classes for the body element.
- * @return array
- */
 function best_charity_body_classes( $classes ) {
-	// Adds a class of hfeed to non-singular pages.
+
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
 
-	// Adds a class of no-sidebar when there is no sidebar present.
 	if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 		$classes[] = 'no-sidebar';
 	}
@@ -26,9 +19,6 @@ function best_charity_body_classes( $classes ) {
 }
 add_filter( 'body_class', 'best_charity_body_classes' );
 
-/**
- * Add a pingback url auto-discovery header for single posts, pages, or attachments.
- */
 function best_charity_pingback_header() {
 	if ( is_singular() && pings_open() ) {
 		printf( '<link rel="pingback" href="%s">', esc_url( get_bloginfo( 'pingback_url' ) ) );
@@ -37,7 +27,6 @@ function best_charity_pingback_header() {
 add_action( 'wp_head', 'best_charity_pingback_header' );
 
 
-// Top Header Contact Info
 if( ! function_exists('top_header_contact_info_items')):
 	function top_header_contact_info_items(){
 		$defaults =  array(
@@ -61,8 +50,6 @@ if( ! function_exists('top_header_contact_info_items')):
 		}
 	}
 endif;
-
-//About Brand Title
 
 if( !function_exists( 'best_charity_about_brand_items' )):
 	function best_charity_about_brand_items(){
@@ -100,7 +87,6 @@ if( !function_exists( 'best_charity_about_brand_items' )):
 	}
 endif;	
 
-// Numbering items
 if( !function_exists( 'best_charity_numbering_items' )):
 	function best_charity_numbering_items(){
 		$defaults =  array(

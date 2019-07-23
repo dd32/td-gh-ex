@@ -18,21 +18,19 @@ class Testimonial extends Widget_Base {
 	
 	protected function _register_controls() {
 		$this->start_controls_section(
-			'section_testimonial', // Section key
+			'section_testimonial',
 			array(
-				'label' => __( 'Testimonial Section', 'best-charity' ), // Section display name
+				'label' => __( 'Testimonial Section', 'best-charity' ),
 				'type' => Controls_Manager::SECTION, 
-				'tab' => Controls_Manager::TAB_CONTENT, // Which tab to display the section in.
+				'tab' => Controls_Manager::TAB_CONTENT,
 			)
 		);
-		/*
-		 * After you start the section, you can put as many controls inside the section as you want.
-		 */
+		
 		$this->add_control(
-			'testimonial_enable', // Control key
+			'testimonial_enable',
 			array(
-				'label' => __( 'Enable/Disable Testimonial Section', 'best-charity' ), // Control label
-				'type' => Controls_Manager::SWITCHER, // Type of control
+				'label' => __( 'Enable/Disable Testimonial Section', 'best-charity' ),
+				'type' => Controls_Manager::SWITCHER,
 				'label_on' => __( 'Show', 'best-charity' ),
 				'label_off' => __( 'Hide', 'best-charity' ),
 				'return_value' => 'yes',
@@ -43,8 +41,8 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'title', // Control key
 			[
-				'label' => __( 'Testimonial Title', 'best-charity' ), // Control label
-				'type' => Controls_Manager::TEXT, // Type of control
+				'label' => __( 'Testimonial Title', 'best-charity' ),
+				'type' => Controls_Manager::TEXT,
 				'default' => '', // Default value for control
 			]
 		);
@@ -53,8 +51,8 @@ class Testimonial extends Widget_Base {
 		$this->add_control(
 			'sub_title', // Control key
 			array(
-				'label' => __( 'Testimonial Tagline', 'best-charity' ), // Control label
-				'type' => Controls_Manager::TEXT, // Type of control
+				'label' => __( 'Testimonial Tagline', 'best-charity' ),
+				'type' => Controls_Manager::TEXT,
 				'default' => '', // Default value for control
 			)
 		);
@@ -80,20 +78,17 @@ class Testimonial extends Widget_Base {
 					),
 					array(
 						'name' => 'testimonial_position',
-						'label' => __( 'Position', 'best-charity' ), // Control label
+						'label' => __( 'Position', 'best-charity' ),
 						'description' => __('Eg:- Developer, Designer','best-charity'),
-						'type' => Controls_Manager::TEXT, // Type of control
+						'type' => Controls_Manager::TEXT,
 						'label_block' => true,
 					),
 				),
-				// Which subfield's value is shown when the repeater field is collapsed
+				
 				'title_field' => '{{{ name }}}',
 			)
 		);
 		
-		
-
-		// Ends the controls section
 		$this->end_controls_section();
 	}
 	

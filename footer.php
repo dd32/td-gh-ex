@@ -8,7 +8,6 @@
  *
  * @package Best_Charity
  */
-
 ?>
 <footer>
   <div class="container">

@@ -21,22 +21,20 @@ get_header();
 
 					the_post_navigation();
 
-			// If comments are open or we have at least one comment, load up the comment template.
 					if ( comments_open() || get_comments_number() ) :
 						comments_template();
-				endif;
+					endif;
 
-		endwhile; // End of the loop.
-		?>
-
-	</div>
-	<div class="col-xl-3 col-lg-4">
-		<div class="sidebar">
-			<?php get_sidebar();?>
+				endwhile; 
+				?>
+			</div>
+			<div class="col-xl-3 col-lg-4">
+				<div class="sidebar">
+					<?php get_sidebar();?>
+				</div>
+			</div>
 		</div>
 	</div>
-</div>
-</div>
 </section>
 
 <?php
