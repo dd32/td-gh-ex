@@ -5,6 +5,7 @@
  * @since  1.0.0
  * @access public
  */
+use WPTRT\Customize\Section\Button;
 final class Annina_Updgrade_Pro_Button {
 
 	/**
@@ -61,25 +62,19 @@ final class Annina_Updgrade_Pro_Button {
 	 */
 	public function sections( $manager ) {
 
-		// Load custom sections.
-		require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/section-pro.php' );
+		require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/Button.php' );
 
-		// Register custom section types.
-		$manager->register_section_type( 'Annina_Updgrade_Section_Pro' );
+		$manager->register_section_type( Button::class );
 
-		// Register sections.
 		$manager->add_section(
-			new Annina_Updgrade_Section_Pro(
-				$manager,
-				'cresta_annina_buy_pro',
-				array(
-					'priority' => 1,
-					'title'    => esc_html__( 'Annina PRO Theme', 'annina' ),
-					'pro_text' => esc_html__( 'More Info',         'annina' ),
-					'pro_url'  => 'https://crestaproject.com/downloads/annina/'
-				)
-			)
+			new Button( $manager, 'cresta_annina_buy_pro', [
+				'title'       => __( 'Annina PRO', 'annina' ),
+				'button_text' => __( 'More Info',        'annina' ),
+				'button_url'  => 'https://crestaproject.com/downloads/annina/',
+				'priority' => 1,
+			] )
 		);
+		
 	}
 
 	/**

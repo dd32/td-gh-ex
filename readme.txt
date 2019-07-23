@@ -3,7 +3,7 @@ Contributors: CrestaProject
 Tags: two-columns, right-sidebar, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, editor-style, full-width-template, rtl-language-support, blog, news
 Requires at least: 4.5
 Tested up to: 5.2
-Stable tag: 1.6.8
+Stable tag: 1.6.9
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Annina WordPress Theme, Copyright 2018 Rizzo Andrea
@@ -24,7 +24,7 @@ Annina is clean & fresh responsive WordPress Blog Theme, full width and masonry 
 * Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * FontAwesome (http://fontawesome.io/) Font licensed under SIL OFL 1.1 and Code lisensed under MIT
-* "Pro" theme section examples for the customizer (https://github.com/justintadlock/trt-customizer-pro) licensed under the GNU GPL, version 2 or later.
+* Customize section button https://github.com/WPTRT/customize-section-button licensed under the GNU GPL, version 2 or later
 * Smooth Scroll script (https://gist.github.com/galambalazs/6477177/) licensed under MIT
 * imagesLoaded script (http://imagesloaded.desandro.com/) licensed under MIT
 * Images used in Theme Screenshot
@@ -37,6 +37,9 @@ Annina is clean & fresh responsive WordPress Blog Theme, full width and masonry 
 	7. Pixabay (http://pixabay.com/it/iphone-modello-mockup-mock-up-500291/) Free photos for commercial and personal works
 
 == Changelog ==
+= Version 1.6.9 =
+* Minor bug fixes
+
 = Version 1.6.8 =
 * Minor bug fixes
 

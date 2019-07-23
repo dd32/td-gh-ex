@@ -67,7 +67,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 			endif;
 			$annina_description = get_bloginfo( 'description', 'display' );
 			if ( $annina_description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $annina_description; /* WPCS: xss ok. */ ?></p>
+				<p class="site-description"><?php echo $annina_description; /* // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?></p>
 			<?php
 			endif; ?>
 		</div>

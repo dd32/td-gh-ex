@@ -194,4 +194,4 @@ if ( is_admin() ) {
 /**
  * Load PRO Button in the customizer
  */
-require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/class-customize.php' );
+require get_template_directory() . '/inc/pro-button/class-customize.php';
