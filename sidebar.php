@@ -10,11 +10,21 @@
  */
 ?>
 <div class="event-right1">
-	<div id="sidebar-primary" class="sidebar">
-		<?php if ( is_active_sidebar( 'primary' ) ) : 
-		
-			dynamic_sidebar( 'primary' ); 
-			
-		endif; ?>
-	</div>
+    <div id="sidebar-primary" class="sidebar">
+		<?php if ( is_active_sidebar( 'sidebar-primary' ) ) :
+
+			dynamic_sidebar( 'sidebar-primary' );
+
+		else :
+			$args = array(
+				'before_widget' => '<div id="%1$s" class="mwa_widget mb-4 p-sm-4 p-3 border">',
+				'after_widget'  => '</div>',
+				'before_title'  => '<h3 class="courses-title">',
+				'after_title'   => '</h3>'
+			);
+			the_widget( 'WP_Widget_Pages', null, $args );
+			the_widget( 'WP_Widget_Categories' );
+		endif;
+		?>
+    </div>
 </div>

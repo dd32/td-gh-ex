@@ -1,4 +1,4 @@
-<?php 
+<?php
 /**
  * astral functions and code
  *
@@ -6,11 +6,11 @@
  * @subpackage astral
  * @since 0.1
  *
-*/
- 
+ */
+
 /**
-* Define constants
-*/
+ * Define constants
+ */
 define( 'astral_PARENT_DIR', get_template_directory() );
 define( 'astral_PARENT_URI', get_template_directory_uri() );
 define( 'astral_PARENT_INC_DIR', astral_PARENT_DIR . '/inc' );
@@ -31,7 +31,7 @@ require astral_PARENT_INC_DIR . '/core/class-astral-blog-section.php';
 /* 
  * customizer class
 */
-require(dirname(__FILE__).'/inc/core/class-astral-customizer.php'); 
+require( dirname( __FILE__ ) . '/inc/core/class-astral-customizer.php' );
 
 /*
  * Load hooks.

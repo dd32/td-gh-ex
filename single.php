@@ -8,16 +8,16 @@
  * @subpackage astral
  * @since 0.1
  */
-get_header(); 
+get_header();
 ?>
 
-<?php 
+<?php
 /* 
 * Functions hooked into astral_top_banner action
 * 
 * @hooked astral_inner_banner
 */
-do_action( 'astral_top_banner' ); 
+do_action( 'astral_top_banner' );
 ?>
 
 <?php
@@ -26,49 +26,49 @@ do_action( 'astral_top_banner' );
 * 
 * @hooked astral_breadcrumb
 */
-do_action( 'astral_breadcrumb_area' ); 
-?>  
+do_action( 'astral_breadcrumb_area' );
+?>
 
-<section class="align-blog" id="blog">
-    <div class="container">
-        <div class="row">
-            <!-- left side -->
-			<div class="col-lg-8 single-left mt-lg-0 mt-4">
+    <section class="align-blog" id="blog">
+        <div class="container">
+            <div class="row">
+                <!-- left side -->
+                <div class="col-lg-8 single-left mt-lg-0 mt-4">
 
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
-				
-					get_template_part( 'post','content' ); 
-					
-				endwhile;
-				endif;
-				?>
-				
-				<?php 
-				
-				/* 
-				* Functions hooked into astral_pagination action
-				*
-				* @hooked astral_navigation
-				*/
-				do_action( 'astral_single_blog_navigation' );
-					
-				if ( comments_open() || get_comments_number() ) :
-					comments_template(); 						
-				endif;
-				
-				?>
-				
+					<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+
+						get_template_part( 'post', 'content' );
+
+					endwhile;
+					endif;
+					?>
+
+					<?php
+
+					/*
+					* Functions hooked into astral_pagination action
+					*
+					* @hooked astral_navigation
+					*/
+					do_action( 'astral_single_blog_navigation' );
+
+					if ( comments_open() || get_comments_number() ) :
+						comments_template();
+					endif;
+
+					?>
+
+                </div>
+                <!-- right side -->
+                <div class="col-lg-4 event-right">
+
+					<?php get_sidebar(); ?>
+
+                </div>
             </div>
-			<!-- right side -->
-            <div class="col-lg-4 event-right">
-                
-                <?php get_sidebar(); ?>
-                
-            </div>    
         </div>
-    </div>
-</section>
+    </section>
 
-<?php 
+<?php
 get_footer();
 ?>

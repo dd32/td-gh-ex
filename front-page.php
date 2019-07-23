@@ -7,13 +7,12 @@
  * @since 0.1
  */
 get_header();
-if( is_home() ) {
+if ( is_home() ) {
 
-	get_template_part( 'index' ); 
+	get_template_part( 'index' );
 
-}
-elseif( is_front_page() ) {
-	 
+} elseif ( is_front_page() ) {
+
 	/* 
 	* Functions hooked into astral_slider_area action
 	* 
@@ -21,8 +20,8 @@ elseif( is_front_page() ) {
 	*/
 	do_action( 'astral_slider_area' );
 	?>
-	
-	<?php 
+
+	<?php
 	/* 
 	* Functions hooked into astral_callout_area action
 	* 
@@ -30,8 +29,8 @@ elseif( is_front_page() ) {
 	*/
 	do_action( 'astral_callout_area' );
 	?>
-	
-	<?php 
+
+	<?php
 	/* 
 	* Functions hooked into astral_service_area action
 	* 
@@ -39,8 +38,8 @@ elseif( is_front_page() ) {
 	*/
 	do_action( 'astral_service_area' );
 	?>
-	
-	<?php 
+
+	<?php
 	/* 
 	* Functions hooked into astral_contact_area action
 	* 
@@ -48,14 +47,14 @@ elseif( is_front_page() ) {
 	*/
 	do_action( 'astral_contact_area' );
 	?>
-	
-	<?php 
+
+	<?php
 	/* 
 	* Functions hooked into astral_blog_area action
 	* 
 	* @hooked astral_blog
 	*/
 	do_action( 'astral_blog_area' );
-	
+
 }
 get_footer();

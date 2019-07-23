@@ -2,16 +2,16 @@
 /* 
 * search template 
 */
-get_header(); 
+get_header();
 ?>
 
-<?php 
+<?php
 /* 
 * Functions hooked into astral_top_banner action
 * 
 * @hooked astral_inner_banner
 */
-do_action( 'astral_top_banner' ); 
+do_action( 'astral_top_banner' );
 ?>
 
 <?php
@@ -20,34 +20,34 @@ do_action( 'astral_top_banner' );
 * 
 * @hooked astral_breadcrumb_area
 */
-do_action( 'astral_breadcrumb_area' ); 
+do_action( 'astral_breadcrumb_area' );
 ?>
 
-<section class="align-blog" id="blog">
-    <div class="container">
-        <div class="row">
-            <!-- left side -->
-			<div class="col-lg-8 single-left mt-lg-0 mt-4">
-                    
-				<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
-				
-					get_template_part( 'post','content' ); 
-					
+    <section class="align-blog" id="blog">
+        <div class="container">
+            <div class="row">
+                <!-- left side -->
+                <div class="col-lg-8 single-left mt-lg-0 mt-4">
+
+					<?php if ( have_posts() ) : while ( have_posts() ) : the_post();
+
+						get_template_part( 'post', 'content' );
+
 					endwhile;
 					endif;
 					?>
-                    
-            </div>
-			<!-- right side -->
-            <div class="col-lg-4 event-right">
-                
-                <?php get_sidebar(); ?>
-                
-            </div>    
-        </div>
-    </div>
-</section>
 
-<?php 
+                </div>
+                <!-- right side -->
+                <div class="col-lg-4 event-right">
+
+					<?php get_sidebar(); ?>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+<?php
 get_footer();
 ?>
