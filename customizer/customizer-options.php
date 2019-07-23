@@ -85,6 +85,14 @@ function customizer_library_avant_options() {
         'panel' => $panel
 	);
     
+    $options['avant-disable-default-fonts-only'] = array(
+        'id' => 'avant-disable-default-fonts-only',
+        'label'   => __( 'Disable the default Google Fonts only', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+        'description' => __( 'Disable only the default fonts if you have selected to use different Google Fonts', 'avant' ),
+    );
     $options['avant-disable-google-fonts'] = array(
         'id' => 'avant-disable-google-fonts',
         'label'   => __( 'Disable Google Fonts', 'avant' ),
@@ -567,7 +575,7 @@ function customizer_library_avant_options() {
 
     $options['avant-remove-single-pag'] = array(
         'id' => 'avant-remove-single-pag',
-        'label'   => __( 'Remove Next & Premious posts', 'avant' ),
+        'label'   => __( 'Remove Next & Previous Post Navigation', 'avant' ),
         'section' => $section,
         'type'    => 'checkbox',
         'default' => 0,
@@ -601,6 +609,13 @@ function customizer_library_avant_options() {
         'default' => 'avant-single-page-fimage-size-medium'
     );
 
+    $options['avant-post-add-modified-date'] = array(
+        'id' => 'avant-post-add-modified-date',
+        'label'   => __( 'Add in the Post Modified Date', 'avant' ),
+        'section' => $section,
+        'type'    => 'checkbox',
+        'default' => 0,
+    );
     $options['avant-single-remove-meta'] = array(
         'id' => 'avant-single-remove-meta',
         'label'   => __( 'Remove Meta Info', 'avant' ),

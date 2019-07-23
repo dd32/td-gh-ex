@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.19' );
+define( 'AVANT_THEME_VERSION' , '1.1.20' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -150,9 +150,11 @@ add_filter( 'dynamic_sidebar_params', 'kaira_change_widget_titles', 20 );
  */
 function avant_scripts() {
 	if ( !get_theme_mod( 'avant-disable-google-fonts', customizer_library_get_default( 'avant-disable-google-fonts' ) ) ) {
-		wp_enqueue_style( 'avant-title-font', '//fonts.googleapis.com/css?family=Parisienne', array(), AVANT_THEME_VERSION );
-		wp_enqueue_style( 'avant-body-font-default', '//fonts.googleapis.com/css?family=Open+Sans', array(), AVANT_THEME_VERSION );
-		wp_enqueue_style( 'avant-heading-font-default', 'https://fonts.googleapis.com/css?family=Poppins', array(), AVANT_THEME_VERSION );
+		if ( !get_theme_mod( 'avant-disable-default-fonts-only', customizer_library_get_default( 'avant-disable-default-fonts-only' ) ) ) {
+			wp_enqueue_style( 'avant-title-font', '//fonts.googleapis.com/css?family=Parisienne', array(), AVANT_THEME_VERSION );
+			wp_enqueue_style( 'avant-body-font-default', '//fonts.googleapis.com/css?family=Open+Sans', array(), AVANT_THEME_VERSION );
+			wp_enqueue_style( 'avant-heading-font-default', 'https://fonts.googleapis.com/css?family=Poppins', array(), AVANT_THEME_VERSION );
+		}
 	}
 
 	wp_enqueue_style( 'avant-font-awesome', get_template_directory_uri().'/includes/font-awesome/css/all.min.css', array(), '5.5.0' );
@@ -464,7 +466,7 @@ function avant_filter_recent_posts_widget_parameters( $params ) {
     $slider_type 	   = get_theme_mod( 'avant-slider-type', customizer_library_get_default( 'avant-slider-type' ) );
 	
 	if ( $slider_categories && $slider_type == 'avant-slider-default' ) {
-		if ( count( $slider_categories ) > 0 ) {
+		if ( !empty( $slider_categories ) ) { // if ( count( $slider_categories ) > 0 ) {
 			// do not alter the query on wp-admin pages and only alter it if it's the main query
 			$params['category__not_in'] = $slider_categories;
 		}
@@ -507,25 +509,107 @@ function avant_set_widget_categories_dropdown_arg($args){
 }
 add_filter( 'widget_categories_dropdown_args', 'avant_set_widget_categories_dropdown_arg' );
 
-/*
- * Notice for Page Layouts
- */
-function avant_flash_notice() {
-	global $current_user;
-	$user_id = $current_user->ID;
-	
-	if ( !get_user_meta($user_id, 'avant_flash_notice_ignore') ) {
-		echo '<div class="updated notice avant-notice-layouts"><p>'. __( 'Avant Premium is now on a <a href="https://kairaweb.com/theme/avant/#purchase-premium" target="_blank">Flash Sale</a> for only $17', 'avant' ) .' <a href="?avant-flash-notice-ignore" class="avant-noticemiss">Dismiss</a></p></div>';
-	}
-}
-add_action('admin_notices', 'avant_flash_notice');
 
-function avant_flash_notice_ignore() {
+
+
+
+
+
+
+
+
+
+/**
+ * Admin notice to enter a purchase license
+ */
+function avant_add_license_notice() {
 	global $current_user;
-	
-	$user_id = $current_user->ID;
-	if (isset($_GET['avant-flash-notice-ignore'])) {
-		add_user_meta($user_id, 'avant_flash_notice_ignore', 'true', true);
-	}
+	$avant_user_id = $current_user->ID;
+
+	if ( !get_user_meta( $avant_user_id, 'avant_flash_notice_ignore' ) ) : ?>
+		<div class="notice notice-info avant-admin-notice avant-notice-add">
+			<h4>
+				<?php esc_html_e( 'Thank you for trying out Avant!', 'avant' ); ?> -
+				<span>
+					<?php
+					/* translators: %s: 'Recommended Resources' */
+					printf( esc_html__( 'Premium is currently on a %1$s for only $17', 'avant' ), wp_kses( __( '<a href="https://kairaweb.com/go/notice-purchase/" target="_blank">flash sale</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+					?>
+				</span>
+			</h4>
+			<p><?php esc_html_e( 'We\'re here to help... Please read through our help notes below on getting started with Avant:', 'avant' ); ?></p>
+			<div class="avant-admin-notice-blocks">
+				<div class="avant-admin-notice-block">
+					<h5><?php esc_html_e( 'About Avant:', 'avant' ); ?></h5>
+					<p>
+						<?php esc_html_e( 'Avant is a widely used and loved WordPress theme which gives you 7 header layouts, multiple blog and footer layouts, and lots of customization settings... so you can easily change the look of your site any time.', 'avant' ); ?>
+					</p>
+					<p>
+						<?php
+						/* translators: %s: 'Recommended Resources' */
+						printf( esc_html__( 'Read through our %1$s and %2$s and we\'ll help you build a professional website easily.', 'avant' ), wp_kses( __( '<a href="https://kairaweb.com/go/recommended-resources/" target="_blank">Recommended Resources</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/documentation/" target="_blank">Kaira Documentation</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+						?>
+					</p>
+					<a href="<?php echo esc_url( admin_url( 'themes.php?page=avant_theme_info' ) ) ?>" class="avant-admin-notice-btn">
+						<?php esc_html_e( 'Read More About Avant', 'avant' ); ?>
+					</a>
+				</div>
+				<div class="avant-admin-notice-block">
+					<h5><?php esc_html_e( 'Using Avant:', 'avant' ); ?></h5>
+					<p>
+						<?php
+						/* translators: %s: 'set up your site in WordPress' */
+						printf( esc_html__( 'See our recommended %1$s and how to get ready before you start building your website after you\'ve %2$s.', 'avant' ), wp_kses( __( '<a href="https://kairaweb.com/documentation/our-recommended-wordpress-basic-setup/" target="_blank">WordPress basic setup</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-hosting/" target="_blank">setup WordPress Hosting</a>', 'avant' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+						?>
+					</p>
+					<a href="<?php echo esc_url( 'https://kairaweb.com/go/recommended-resources/' ) ?>" class="avant-admin-notice-btn-in" target="_blank">
+						<?php esc_html_e( 'Recommended Resources', 'avant' ); ?>
+					</a>
+					<p>
+						<?php esc_html_e( 'We\'ve neatly built most of the Avant settings into the WordPress Customizer so you can see all your changes happen as you built your site.', 'avant' ); ?>
+					</p>
+					<a href="<?php echo esc_url( admin_url( 'customize.php' ) ) ?>" class="avant-admin-notice-btn-grey">
+						<?php esc_html_e( 'Start Customizing Your Website', 'avant' ); ?>
+					</a>
+				</div>
+				<div class="avant-admin-notice-block avant-nomargin">
+					<h5><?php esc_html_e( 'Popular FAQ\'s:', 'avant' ); ?></h5>
+					<p>
+					<?php esc_html_e( 'See our list of popular help links for building your website and/or any issues you may have.', 'avant' ); ?>
+					</p>
+					<ul>
+						<li>
+							<a href="https://kairaweb.com/documentation/setting-up-the-default-slider/" target="_blank"><?php esc_html_e( 'Setup the Avant default slider', 'avant' ); ?></a>
+						</li>
+						<li>
+							<a href="https://kairaweb.com/documentation/adding-custom-css-to-wordpress/" target="_blank"><?php esc_html_e( 'Adding Custom CSS to WordPress', 'avant' ); ?></a>
+						</li>
+						<li>
+							<a href="https://kairaweb.com/documentation/mobile-menu-not-working/" target="_blank"><?php esc_html_e( 'Mobile Menu is not working', 'avant' ); ?></a>
+						</li>
+						<li>
+							<a href="https://kairaweb.com/go/what-premium-offers-notice/" target="_blank"><?php esc_html_e( 'What does Avant Premium offer extra', 'avant' ); ?></a>
+						</li>
+					</ul>
+					<a href="<?php echo esc_url( 'https://kairaweb.com/documentation/' ) ?>" class="avant-admin-notice-btn-grey" target="_blank">
+						<?php esc_html_e( 'See More Documentation', 'avant' ); ?>
+					</a>
+				</div>
+			</div>
+			<a href="?avant_add_license_notice_ignore=" class="avant-notice-close"><?php esc_html_e( 'Dismiss Notice', 'avant' ); ?></a>
+		</div><?php
+	endif;
 }
-add_action('admin_init', 'avant_flash_notice_ignore');
+add_action( 'admin_notices', 'avant_add_license_notice' );
+/**
+ * Admin notice save dismiss to wp transient
+ */
+function avant_add_license_notice_ignore() {
+    global $current_user;
+	$avant_user_id = $current_user->ID;
+
+    if ( isset( $_GET['avant_add_license_notice_ignore'] ) ) {
+		update_user_meta( $avant_user_id, 'avant_flash_notice_ignore', true );
+    }
+}
+add_action( 'admin_init', 'avant_add_license_notice_ignore' );

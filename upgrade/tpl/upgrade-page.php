@@ -9,16 +9,16 @@
         <div class="upgrade-page-top">
             
             <div class="upgrade-order-number-info-btns-link">
-                <a href="https://kairaweb.com/go/avant/" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
-                    <?php printf( __( '<span>Avant Premium </span><em>$29</em>', 'avant' ) ); ?>
+                <a href="https://kairaweb.com/go/page-purchase/" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
+                    <?php printf( __( '<span>Avant Premium </span><em>$17</em>', 'avant' ) ); ?>
                 </a>
                 <div class="upgrade-order-offer">
-                    <?php _e( '<b>Time limited offer, only advertised here</b>... Get Avant Premium now for a <b><a href="https://kairaweb.com/go/avant/" target="_blank">once off payment of $29 for lifetime updates</a></b>', 'avant' ); ?>
+                    <?php _e( '<b>Time limited offer, only advertised here</b>... Get Avant Premium now for a <b><a href="https://kairaweb.com/go/page-purchase/" target="_blank">once off payment of $17 for lifetime updates</a></b>', 'avant' ); ?>
                 </div>
             </div>
             
             <p class="avant-upgrade-p">
-                <?php printf( __( 'Read more here on  <strong><a href="%s" target="_blank">what is included in premium</a></strong> or see <a href="%2" target="_blank"><b>how to install premium</b></a>', 'avant' ), 'https://kairaweb.com/theme/avant/#premium-features', 'https://kairaweb.com/support/install-the-premium-theme/' ); ?>
+                <?php printf( __( 'Read more here on  <strong><a href="%s" target="_blank">what is included in premium</a></strong> or see <a href="%2" target="_blank"><b>how to install premium</b></a>', 'avant' ), 'https://kairaweb.com/go/what-premium-offers-page/', 'https://kairaweb.com/documentation/install-the-premium-theme/' ); ?>
             </p>
             <p class="avant-upgrade-p">
                 <?php printf( __( '<strong>All settings for Avant</strong> are neatly built into the <a href="%s">WordPress Customizer</a> so you can change and edit settings to view what happens before saving and making any of the changes live', 'avant' ) , admin_url( 'customize.php' ) ); ?>
@@ -31,7 +31,7 @@
             
             <div class="avant-upgrade-page-inner-wrap">
                 
-                <h3><?php _e( 'Avant Premium is a once off payment for lifetime update right now!', 'avant' ); ?></h3>
+                <h3><?php _e( 'Avant Premium is a once off payment!', 'avant' ); ?></h3>
                 
                 <div class="avant-upgrade-block avant-upgrade-block-layouts">
                     <div class="upgrade-page-right-box-img">
@@ -63,8 +63,19 @@
                         </a>
                     </div>
                 </div>
-                
+
                 <div class="avant-upgrade-block">
+                    <div class="avant-upgrade-block-left">
+                        <?php _e( 'See what we suggest when building your website.', 'avant' ); ?><br />
+                    </div>
+                    <div class="avant-upgrade-block-right">
+                        <a href="<?php echo esc_url( 'https://kairaweb.com/go/recommended-resources/' ) ?>" target="_blank" class="avant-upgrade-result-button">
+                            <?php _e( 'Recommended Resources', 'avant' ); ?>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="avant-upgrade-block avant-upgrade-block-alt">
                     <div class="avant-upgrade-block-left">
                         <?php _e( 'We have on-growing documentation on setting up your website with the Avant theme', 'avant' ); ?>
                     </div>
@@ -75,7 +86,7 @@
                     </div>
                 </div>
                 
-                <div class="avant-upgrade-block avant-upgrade-block-alt">
+                <div class="avant-upgrade-block">
                     <div class="avant-upgrade-block-left">
                         <?php _e( 'Have you enjoyed using Avant?', 'avant' ); ?><br />
                         <?php printf( __( 'Please help by giving us a rating on WordPress.org :)', 'avant' ) , 'https://kairaweb.com/' ); ?>

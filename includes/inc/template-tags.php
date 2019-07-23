@@ -29,12 +29,20 @@ function avant_posted_on() {
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
 
+	$post_modified = '';
+	if ( get_theme_mod( 'avant-post-add-modified-date', customizer_library_get_default( 'avant-post-add-modified-date' ) ) ) :
+		$post_modified = sprintf(
+			esc_html_x( ', Last modified on %s', 'post modified', 'avant' ),
+			'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . esc_attr( get_the_modified_date() ) . '</a>'
+		);
+	endif;
+
 	$byline = sprintf(
 		esc_html_x( 'by %s', 'post author', 'avant' ),
 		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
-	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK
+	echo '<span class="posted-on">' . $posted_on . $post_modified . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK
 
 }
 endif;

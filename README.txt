@@ -68,6 +68,16 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.1.20
+* Style tweaks/fixes
+* Updated Theme URI
+* WooCommerce styling fixes
+* Added setting to show blog post last updated date
+* Added php 7.2 fix for slider setting
+* Added setting to disable only the default theme fonts
+* Updated language .pot file
+Premium: Added setting to remove Product Single Page Related Products
+
 #### 1.1.19
 * Style tweaks/fixes
 * Updated language .pot file
