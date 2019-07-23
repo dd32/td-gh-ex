@@ -4,7 +4,7 @@
  *
  * This file demonstrates how to define sanitization callback functions for various data types.
  * 
- * @package   Specia
+ * @package   Avira
  * @copyright Copyright (c) 2015, WordPress Theme Review Team
  * @license   http://www.gnu.org/licenses/old-licenses/gpl-2.0.html GNU General Public License, v2 (or newer)
  */
