@@ -1,20 +1,20 @@
 <?php
-
 include_once get_template_directory() . '/functions/inkthemes-functions.php';
 $functions_path = get_template_directory() . '/functions/';
 /* These files build out the options interface.  Likely won't need to edit these. */
 require_once ($functions_path . 'themes-page.php');  // InkThmes Theme Page 
 require_once ($functions_path . 'customizer.php');  // InkThmes Theme Page 
-add_theme_support( "custom-header");
-add_theme_support( "custom-background");
+add_theme_support("custom-header");
+add_theme_support("custom-background");
 
 /**
  * Registers an editor stylesheet for the theme.
  */
 function wpdocs_theme_add_editor_styles() {
-    add_editor_style( 'custom-editor-style.css' );
+    add_editor_style('custom-editor-style.css');
 }
-add_action( 'admin_init', 'wpdocs_theme_add_editor_styles' );
+
+add_action('admin_init', 'wpdocs_theme_add_editor_styles');
 
 /* ----------------------------------------------------------------------------------- */
 /* jQuery Enqueue */
@@ -24,22 +24,20 @@ function appointway_wp_enqueue_scripts() {
     if (!is_admin()) {
         wp_enqueue_script('appointway-ddsmoothmenu', get_template_directory_uri() . '/js/ddsmoothmenu.js', array('jquery'));
         wp_enqueue_script('appointway-custom', get_template_directory_uri() . '/js/custom.js', array('jquery'));
-    } elseif (is_admin()) {
-        
     }
 }
 
 add_action('wp_enqueue_scripts', 'appointway_wp_enqueue_scripts');
 
-
 function wpse218049_enqueue_comments_reply() {
 
-    if( is_singular() && comments_open() && ( get_option( 'thread_comments' ) == 1) ) {
+    if (is_singular() && comments_open() && ( get_option('thread_comments') == 1)) {
         // Load comment-reply.js (into footer)
-        wp_enqueue_script( 'comment-reply', 'wp-includes/js/comment-reply', array(), false, true );
+        wp_enqueue_script('comment-reply', 'wp-includes/js/comment-reply', array(), false, true);
     }
 }
-add_action(  'wp_enqueue_scripts', 'wpse218049_enqueue_comments_reply' );
+
+add_action('wp_enqueue_scripts', 'wpse218049_enqueue_comments_reply');
 
 /* ----------------------------------------------------------------------------------- */
 /* Custom Jqueries Enqueue */
@@ -239,5 +237,13 @@ function appointway_tracking_admin_notice() {
 
 add_action('admin_notices', 'appointway_tracking_admin_notice');
 
+/**
+ * Include welcome page
+ */
+require_once get_template_directory() . '/includes/features/feature-about-page.php';
 
-?>
+/*
+ * Redirect to about us page.
+ */
+if (is_admin() && isset($_GET['activated']) && $pagenow == "themes.php")
+    wp_redirect('themes.php?page=appointway-welcome');

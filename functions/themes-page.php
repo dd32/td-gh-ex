@@ -80,18 +80,18 @@ function inkthemes_page_init() {
             </div>
 
             <div class="theme-image">
-                <a href="<?php echo esc_url('http://www.inkthemes.com/wp-themes/blackbird-responsive-wordpress-theme/'); ?>" target="_blank"><img src="<?php echo $root; ?>/functions/images/blackbird-thumb.png" /></a>
+                <a href="<?php echo esc_url('http://www.inkthemes.com/wp-themes/appointway-responsive-wordpress-theme/'); ?>" target="_blank"><img src="<?php echo $root; ?>/functions/images/appointway-thumb.png" /></a>
             </div>
             <div class="theme-desc">
-                <div class="theme-title"><a href="<?php echo esc_url('http://www.inkthemes.com/wp-themes/blackbird-responsive-wordpress-theme/'); ?>" target="_blank">Black Bird Theme</a></div>
+                <div class="theme-title"><a href="<?php echo esc_url('http://www.inkthemes.com/wp-themes/appointway-responsive-wordpress-theme/'); ?>" target="_blank">Black Bird Theme</a></div>
                 <br/>
-                Blackbird Theme is a very clean and elegantly designed Responsive WordPress Theme. Its created with the aim to make your business website look professional to your visitors. 
-                <br/>
-                <br/>
-                Starting from the top header area, the Blackbird WordPress Theme allows you to upload your own Custom Logo and had a space on the top right to enter your contact details. This details are useful for the first time visitors as they can clearly see your contact details right on top.  
+                Appointway Theme is a very clean and elegantly designed Responsive WordPress Theme. Its created with the aim to make your business website look professional to your visitors. 
                 <br/>
                 <br/>
-                <div class="buy"><a href="<?php echo esc_url('http://www.inkthemes.com/wp-themes/blackbird-responsive-wordpress-theme/'); ?>" target="_blank">Buy Black Bird Theme</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="<?php echo esc_url('http://wordpress.org/extend/themes/bizway'); ?>" target="_blank">Try Black Bird Lite for FREE</a></div>
+                Starting from the top header area, the Appointway WordPress Theme allows you to upload your own Custom Logo and had a space on the top right to enter your contact details. This details are useful for the first time visitors as they can clearly see your contact details right on top.  
+                <br/>
+                <br/>
+                <div class="buy"><a href="<?php echo esc_url('http://www.inkthemes.com/wp-themes/appointway-responsive-wordpress-theme/'); ?>" target="_blank">Buy Black Bird Theme</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="<?php echo esc_url('http://wordpress.org/extend/themes/bizway'); ?>" target="_blank">Try Black Bird Lite for FREE</a></div>
             </div><br />
 
             <div class="theme-image">
@@ -115,7 +115,7 @@ function inkthemes_page_init() {
                 <br />
                 Business website designs are best powered by Premium Ecommerce WordPress themes.  WordPress will become a boon if you are developing a website for your business. It will be really powerful and an affordable website design technique.  Building entrepreneurs are especially benefited from the most of this. 
                 <br/><br/>
-                There are several hundreds and thousands of customizable eCommerce wordpress themes available to download from various websites. Figero is one of the best eCommerce wordpress theme, It&#39;s easy to use and simple to maintain. If you want to sell your digital items using paypal, It&#39;s one of the easiest and the quickest way to go online.  Just put your few steps and you are ready to sell your item using paypal.
+                There are several hundreds and thousands of customizable eCommerce WordPress themes available to download from various websites. Figero is one of the best eCommerce WordPress theme, It&#39;s easy to use and simple to maintain. If you want to sell your digital items using paypal, It&#39;s one of the easiest and the quickest way to go online.  Just put your few steps and you are ready to sell your item using paypal.
                 <br /> <br />
                 <div class="buy"><a href="<?php echo esc_url('http://www.inkthemes.com/wp-themes/figero-wordpress-theme/'); ?>" target="_blank">Buy Figero Theme</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a target="_blank" href="<?php echo esc_url('http://wordpress.org/extend/themes/figero'); ?>">Try Figero Lite for FREE</a></div>
             </div>
@@ -125,7 +125,7 @@ function inkthemes_page_init() {
             <div class="theme-desc">
                 <div class="theme-title"><a href="<?php echo esc_url('http://www.inkthemes.com/wp-themes/poloray-responsive-wordpress-theme/'); ?>" target="_blank">Poloray Theme</a></div>
                 <br />
-                Poloray is a unique fully responsive wordpress theme, perfect for creative people and business agencies. By emphasizing your photos and content, it showcases your work in an amazing way. Easy to manage using Themes Options Panel, it comes also with a gallery, blog, Contact Page and other custom page templates to spice up your website.
+                Poloray is a unique fully responsive WordPress theme, perfect for creative people and business agencies. By emphasizing your photos and content, it showcases your work in an amazing way. Easy to manage using Themes Options Panel, it comes also with a gallery, blog, Contact Page and other custom page templates to spice up your website.
                 <br /><br />
                 Poloray  Theme is a responsive theme and is perfect for quick and easy site with a clean and modern interface and tons of features. The layout does not distract from your content, which is vital for a site devoted to business & blogging. <br /><br />
                 <div class="buy"><a href="<?php echo esc_url('http://www.inkthemes.com/wp-themes/poloray-responsive-wordpress-theme/'); ?>" target="_blank">Buy Poloray Theme</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;<a href="<?php echo esc_url('http://wordpress.org/extend/themes/poloray'); ?>" target="_blank">Try Poloray Theme Lite for FREE</a></div>

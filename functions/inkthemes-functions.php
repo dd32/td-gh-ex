@@ -68,7 +68,8 @@ function inkthemes_main_image() {
     if (isset($matches [1] [0])) {
         $first_img = $matches [1] [0];
     }
-    if (empty($first_img)) { //Defines a default image  
+    if (empty($first_img)) { //Defines a default image
+        echo '';
     } else {
         print "<a href='$permalink'><img src='$first_img' width='250px' height='160px' class='postimg wp-post-image' alt='$the_title' /></a>";
     }
