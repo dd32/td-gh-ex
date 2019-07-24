@@ -84,22 +84,16 @@ add_action( 'after_setup_theme', 'bard_setup' );
 ** Notice after Theme Activation.
 */
 function bard_activation_notice() {
-
 	$theme_data	 = wp_get_theme();
 
-	echo '<div class="notice notice-success is-dismissible bard-activation-notice">';
-
-		echo '<h1>';
-			/* translators: %s theme name */
-			printf( esc_html__( 'Welcome to %s', 'bard' ), esc_html( $theme_data->Name ) );
-		echo '</h1>';
+	echo '<div class="updated notice notice-success is-dismissible bard-activation-notice">';
 
 		echo '<p>';
 			/* translators: %1$s: theme name, %2$s link */
 			printf( __( 'Thank you for choosing %1$s! To fully take advantage of the best our theme can offer please make sure you visit our <a href="%2$s">Welcome page</a>', 'bard' ), esc_html( $theme_data->Name ), esc_url( admin_url( 'themes.php?page=about-bard' ) ) );
 		echo '</p>';
 
-		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=about-bard' ) ) .'" class="button button-primary button-hero">';
+		echo '<p><a href="'. esc_url( admin_url( 'themes.php?page=about-bard' ) ) .'" class="button button-primary">';
 			/* translators: %s theme name */
 			printf( esc_html__( 'Get started with %s', 'bard' ), esc_html( $theme_data->Name ) );
 		echo '</a></p>';
