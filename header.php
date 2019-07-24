@@ -36,7 +36,7 @@ if ( function_exists( 'wp_body_open' ) ) {
 				endif;
 				$zenzero_description = get_bloginfo( 'description', 'display' );
 				if ( $zenzero_description || is_customize_preview() ) : ?>
-					<p class="site-description"><?php echo $zenzero_description; /* WPCS: xss ok. */ ?></p>
+					<p class="site-description"><?php echo $zenzero_description; /* // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?></p>
 				<?php
 				endif; ?>
 			</div>

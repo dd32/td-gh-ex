@@ -1,8 +1,8 @@
-#customize-controls .control-section-zenzeroProVersion .accordion-section-title:hover,
-#customize-controls .control-section-zenzeroProVersion .accordion-section-title:focus {
+#customize-controls .control-section-wptrt-button .accordion-section-title:hover,
+#customize-controls .control-section-wptrt-button .accordion-section-title:focus {
 	background-color: #fff;
 }
-.control-section-zenzeroProVersion .accordion-section-title .button {
+.control-section-wptrt-button .accordion-section-title .button {
 	margin-top:  -4px;
 	font-weight: 400;
 	background: #689e5b;
