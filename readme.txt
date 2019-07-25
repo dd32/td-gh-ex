@@ -4,7 +4,7 @@ Tags: left-sidebar, right-sidebar, one-column, two-columns, three-columns, four-
 Requires at least: 4.8
 Tested up to: 5.2.2
 Requires PHP: 7.2.14
-Stable tag: 0.2
+Stable tag: 0.3
 License: GPLv3.0 or later
 License URI: http://www.gnu.org/licenses/gpl-v3.0.html
 
@@ -24,13 +24,18 @@ Our Automotive WordPress Theme is designed to be stylish and classy, much like a
 *  Add footer layout option in customizer
 *  Add width layout option in customizer
 *  Add Show / hide Author, comment and post date option in customizer
-*  Add top to scroll with alignment option in customizer
+*  Add scroll to top with alignment option in customizer
+*  Add Global color option in customizer
 *  Add slider content layout option in customizer
 *  Add slider excerpt length option in customizer
 *  Add slider image opacity option in customizer
 *  Add logo resizer option in customizer
 *  Add get started
 *  Add post formats
+
+= 0.3 =
+*  Add show / hide scroll to top option in customizer
+*  Upadte language folder
 
 == Resources ==
 

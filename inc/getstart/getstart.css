@@ -215,8 +215,6 @@ td.update-link a {
 #free_pro .dashicons {
     margin-right: 5px;
 }
-
-
 .row-box1 {
     float: left;
     width: 52%;
@@ -238,20 +236,8 @@ td.update-link a {
 .row-box a {
     text-decoration: none;
 }
-
 /*welcome */
-.welcome-notice {
-   border: solid 5px #eee;
-   text-align: center;
-   padding: 15px 0;
-}
-.welcome-notice p {
-   padding: 0 10em;
-   color: #333;
-   font-size: 15px;
-}
 .welcome-notice h3 {
-   font-size: 24px;
-   font-weight: bold;
-   color: #0073aa;
+	margin: 0;
+	padding-top: 5px;
 }

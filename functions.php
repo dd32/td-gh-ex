@@ -45,16 +45,16 @@ function automotive_centre_setup() {
 endif;
 
 // Theme Activation Notice
-global $pagenow;
+	global $pagenow;
 
-if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
-add_action( 'admin_notices', 'automotive_centre_activation_notice' );
-}
+	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+	add_action( 'admin_notices', 'automotive_centre_activation_notice' );
+	}
 
-add_action( 'after_setup_theme', 'automotive_centre_setup' );
+	add_action( 'after_setup_theme', 'automotive_centre_setup' );
 
-// Notice after Theme Activation
-function automotive_centre_activation_notice() {
+	// Notice after Theme Activation
+	function automotive_centre_activation_notice() {
 	echo '<div class="notice notice-success is-dismissible welcome-notice">';
 	echo '<h3>'. esc_html__( 'Warm Greetings to you!!', 'automotive-centre' ) .'</h3>';
 	echo '<p>'. esc_html__( 'Thank you for choosing Automotive Centre Theme. Would like to have you on our Welcome page so that you can reap all the benefits of our Automotive Centre Theme.', 'automotive-centre' ) .'</p>';

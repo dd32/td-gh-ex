@@ -7,7 +7,7 @@ get_header(); ?>
 
 <?php do_action( 'automotive_centre_before_slider' ); ?>
 
-<?php if( get_theme_mod( 'automotive_centre_slider_hide_show') != '') { ?>
+<?php if( get_theme_mod( 'automotive_centre_slider_hide_show',true) != '') { ?>
 
 <section id="slider">
   <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 

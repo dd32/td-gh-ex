@@ -238,7 +238,7 @@ function automotive_centre_customize_register( $wp_customize ) {
 		'type'        => 'range',
 		'settings'    => 'automotive_centre_slider_excerpt_number',
 		'input_attrs' => array(
-			'step'             => 2,
+			'step'             => 5,
 			'min'              => 0,
 			'max'              => 50,
 		),
@@ -313,7 +313,7 @@ function automotive_centre_customize_register( $wp_customize ) {
 		'type'        => 'range',
 		'settings'    => 'automotive_centre_about_excerpt_number',
 		'input_attrs' => array(
-			'step'             => 2,
+			'step'             => 5,
 			'min'              => 0,
 			'max'              => 50,
 		),
@@ -368,7 +368,7 @@ function automotive_centre_customize_register( $wp_customize ) {
 		'type'        => 'range',
 		'settings'    => 'automotive_centre_excerpt_number',
 		'input_attrs' => array(
-			'step'             => 2,
+			'step'             => 5,
 			'min'              => 0,
 			'max'              => 50,
 		),
@@ -414,6 +414,16 @@ function automotive_centre_customize_register( $wp_customize ) {
 		'section'=> 'automotive_centre_footer',
 		'type'=> 'text'
 	));	
+
+	$wp_customize->add_setting( 'automotive_centre_hide_show_scroll',array(
+    	'default' => 1,
+      	'transport' => 'refresh',
+      	'sanitize_callback' => 'automotive_centre_switch_sanitization'
+    ));  
+    $wp_customize->add_control( new Automotive_Centre_Toggle_Switch_Custom_Control( $wp_customize, 'automotive_centre_hide_show_scroll',array(
+      	'label' => esc_html__( 'Show / Hide Scroll To Top','automotive-centre' ),
+      	'section' => 'automotive_centre_footer'
+    )));
 
 	$wp_customize->add_setting('automotive_centre_scroll_top_alignment',array(
         'default' => __('Right','automotive-centre'),
@@ -512,10 +522,10 @@ final class Automotive_Centre_Customize {
 		)));
 
 		$manager->add_section(new Automotive_Centre_Customize_Section_Pro($manager,'example_2',array(
-			'priority'   => 1,
-			'title'    => esc_html__( 'DOCUMENATATION', 'automotive-centre' ),
-			'pro_text' => esc_html__( 'DOCS', 'automotive-centre' ),
-			'pro_url'  => admin_url('themes.php?page=automotive_centre_guide'),
+				'priority'   => 1,
+				'title'    => esc_html__( 'DOCUMENATATION', 'automotive-centre' ),
+				'pro_text' => esc_html__( 'DOCS', 'automotive-centre' ),
+				'pro_url'  => admin_url('themes.php?page=automotive_centre_guide'),
 		)));
 	}
 

@@ -716,22 +716,26 @@ msgid 'Copyright 2019, .....'
 msgstr ""
 
 #: inc/customizer.php:424
+msgid 'Show / Hide Scroll To Top'
+msgstr ""
+
+#: inc/customizer.php:434
 msgid 'Scroll To Top'
 msgstr ""
 
-#: inc/customizer.php:509
+#: inc/customizer.php:519
 msgid 'AUTOMOTIVE PRO'
 msgstr ""
 
-#: inc/customizer.php:510
+#: inc/customizer.php:520
 msgid 'UPGRADE PRO'
 msgstr ""
 
-#: inc/customizer.php:516
+#: inc/customizer.php:526
 msgid 'DOCUMENATATION'
 msgstr ""
 
-#: inc/customizer.php:517
+#: inc/customizer.php:527
 msgid 'DOCS'
 msgstr ""
 
