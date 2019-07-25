@@ -5,7 +5,7 @@ class CPO_Theme {
 	private $path;
 	private $plugins;
 	private $actions;
-	
+
 	function __construct() {
 
 		$this->path = get_template_directory() . '/includes/';
@@ -13,10 +13,9 @@ class CPO_Theme {
 
 		// Recomended Plugins
 		$this->plugins = array(
-			'wpforms-lite'               => array( 'recommended' => true ),
-			'shortpixel-image-optimiser' => array( 'recommended' => true ),
+			'kali-forms'                 => array( 'recommended' => true ),
+			'modula-best-grid-gallery'   => array( 'recommended' => true ),
 			'simple-author-box'          => array( 'recommended' => true ),
-			'kiwi-social-share'          => array( 'recommended' => false ),
 			'uber-nocaptcha-recaptcha'   => array( 'recommended' => false ),
 		);
 
@@ -43,14 +42,21 @@ class CPO_Theme {
 				"check"       => CPOTheme_Notify_System::has_plugin( 'modula-best-grid-gallery' ),
 				"plugin_slug" => 'modula-best-grid-gallery',
 			),
+			array(
+				'id'          => 'affluent-req-ac-install-kali-forms',
+				'title'       => CPOTheme_Notify_System::create_plugin_requirement_title( __( 'Install: Kaliforms', 'affluent' ), __( 'Activate: Kaliforms', 'affluent' ), 'kali-forms' ),
+				'description' => __( 'It is highly recommended that you install the Kaliforms plugin.', 'affluent' ),
+				'check'       => CPOTheme_Notify_System::has_plugin( 'kali-forms' ),
+				'plugin_slug' => 'kali-forms',
+			),
 		);
-		
+
 		$this->init_epsilon();
 		$this->init_welcome_screen();
 
 
-		add_filter( 'cpo_companion_content', array( $this, 'content_path' ), 99 );
-		add_filter( 'cpo_companion_widgets', array( $this, 'widgets_path' ), 99 );
+		add_filter( 'cpo_theme_have_content', '__return_true' );
+		add_filter( 'cpo_theme_have_widgets', '__return_true' );
 		add_filter( 'cpo_companion_import_option', array( $this, 'import_option' ), 99 );
 
 		add_action( 'customize_register', array( $this, 'customizer' ) );
@@ -122,8 +128,9 @@ class CPO_Theme {
 		);
 
 		$import_plugins = array(
-			'cpo-companion' => esc_html__( 'CPO Companion', 'affluent' ),
+			'cpo-companion'            => esc_html__( 'CPO Companion', 'affluent' ),
 			'modula-best-grid-gallery' => esc_html__( 'Modula Gallery', 'affluent' ),
+			'kali-forms'               => esc_html__( 'Kali Forms', 'affluent' ),
 		);
 
 		$plugins_html = '';
@@ -135,7 +142,7 @@ class CPO_Theme {
 			$html  = '<p><a class="button button-primary cpo-import-button epsilon-ajax-button" data-action="import_demo" id="add_default_sections" href="#">' . __( 'Import Demo Content', 'affluent' ) . '</a>';
 			$html .= '<a class="button epsilon-hidden-content-toggler" href="#welcome-hidden-content">' . __( 'Advanced', 'affluent' ) . '</a></p>';
 			$html .= '<div class="import-content-container" id="welcome-hidden-content">';
-			
+
 			foreach ( $import_plugins as $id => $label ) {
 				if ( ! CPOTheme_Notify_System::has_plugin( $id ) ) {
 					$plugins_html .= $this->generate_checkbox( $id, $label, 'plugins', true );
@@ -150,7 +157,7 @@ class CPO_Theme {
 				$html .= '</div>';
 				$html .= '</div>';
 			}
-			
+
 			$html .= '<div class="demo-content-container">';
 			$html .= '<h4>' . __( 'Demo Content', 'affluent' ) . '</h4>';
 			$html .= '<div class="checkbox-group">';
@@ -169,15 +176,6 @@ class CPO_Theme {
 	private function generate_checkbox( $id, $label, $name = 'options', $block = false ) {
 		$string = '<label><input checked type="checkbox" name="%1$s" class="demo-checkboxes"' . ( $block ? ' disabled ' : ' ' ) . 'value="%2$s">%3$s</label>';
 		return sprintf( $string, $name, $id, $label );
-	}
-
-	// Path to demo content
-	public function content_path() {
-		return get_template_directory() . '/demo/content.xml';
-	}
-
-	public function widgets_path() {
-		return get_template_directory() . '/demo/widgets.wie';
 	}
 
 	public function import_option() {
