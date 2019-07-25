@@ -3,7 +3,7 @@ Contributors: CrestaProject
 Tags: two-columns, right-sidebar, custom-background, custom-menu, custom-colors, sticky-post, featured-images, theme-options, translation-ready, accessibility-ready, blog, news
 Requires at least: 4.5
 Tested up to: 5.2
-Stable tag: 1.7.4
+Stable tag: 1.7.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Blogghiamo WordPress Theme, Copyright 2018 Rizzo Andrea
@@ -25,12 +25,11 @@ Simple and Minimal WordPress Theme ideal for a blog, with two columns, unlimited
 
 Blogghiamo includes support for Infinite Scroll in Jetpack.
 
-== Credits ==
-
+== Resources ==
 * Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
 * FontAwesome (http://fontawesome.io/) Font licensed under SIL OFL 1.1 and Code lisensed under MIT
-* "Pro" theme section examples for the customizer (https://github.com/justintadlock/trt-customizer-pro) licensed under the GNU GPL, version 2 or later.
+* Customize section button https://github.com/WPTRT/customize-section-button licensed under the GNU GPL, version 2 or later
 * Smooth Scroll script (https://github.com/galambalazs/smoothscroll-for-websites) licensed under MIT
 * Image used in Theme Screenshot (http://picjumbo.com/lonely-road-in-the-middle-of-fields/) Picjumbo Free photos for commercial and personal works
 
@@ -261,3 +260,8 @@ Blogghiamo includes support for Infinite Scroll in Jetpack.
 
 = Version 1.7.4 =
 * Improved compatibility with Elementor PRO
+
+= Version 1.7.5 =
+* Fixed a bug with Elementor PRO
+* Minify skip-link-focus-fix.js
+* Minor bug fixes

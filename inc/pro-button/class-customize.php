@@ -5,6 +5,7 @@
  * @since  1.0.0
  * @access public
  */
+use WPTRT\Customize\Section\Button;
 final class Blogghiamo_Updgrade_Pro_Button {
 
 	/**
@@ -60,26 +61,20 @@ final class Blogghiamo_Updgrade_Pro_Button {
 	 * @return void
 	 */
 	public function sections( $manager ) {
+		
+		require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/Button.php' );
 
-		// Load custom sections.
-		require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/section-pro.php' );
+		$manager->register_section_type( Button::class );
 
-		// Register custom section types.
-		$manager->register_section_type( 'Blogghiamo_Updgrade_Section_Pro' );
-
-		// Register sections.
 		$manager->add_section(
-			new Blogghiamo_Updgrade_Section_Pro(
-				$manager,
-				'cresta_blogghiamo_buy_pro',
-				array(
-					'priority' => 1,
-					'title'    => esc_html__( 'Blogghiamo PRO Theme', 'blogghiamo' ),
-					'pro_text' => esc_html__( 'More Info',         'blogghiamo' ),
-					'pro_url'  => 'https://crestaproject.com/downloads/blogghiamo/'
-				)
-			)
+			new Button( $manager, 'cresta_blogghiamo_buy_pro', [
+				'title'       => __( 'Blogghiamo PRO Theme', 'blogghiamo' ),
+				'button_text' => __( 'More Info',        'blogghiamo' ),
+				'button_url'  => 'https://crestaproject.com/downloads/blogghiamo/',
+				'priority' => 1,
+			] )
 		);
+
 	}
 
 	/**
