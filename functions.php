@@ -201,4 +201,4 @@ require get_template_directory() . '/inc/storto-dynamic.php';
 /**
  * Load PRO Button in the customizer
  */
-require_once( trailingslashit( get_template_directory() ) . 'inc/pro-button/class-customize.php' );
+require get_template_directory() . '/inc/pro-button/class-customize.php';

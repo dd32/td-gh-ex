@@ -20,6 +20,7 @@ Licensed under GPLv2 or later
 Scripts used in the site are as below:
 	1. Font Awesome (http://fontawesome.io/) licensed under SIL OFL 1.1
 	2. Theia Sticky Sidebar script (https://github.com/WeCodePixels/theia-sticky-sidebar) licensed under MIT
+	3. Customize section button https://github.com/WPTRT/customize-section-button licensed under the GNU GPL, version 2 or later
 
 Image used in Theme Screenshot
 	1. Picjumbo (http://picjumbo.com/morning-musli/) Free photos for commercial and personal works
@@ -172,4 +173,7 @@ two-columns, right-sidebar, fixed-layout, responsive-layout, custom-header, cust
 = Version 1.5.6 =
 * Added support wp_body_open() for WordPress 5.2
 * Minify jquery.storto.js
+* Minor bug fixes
+
+= Version 1.5.7 =
 * Minor bug fixes

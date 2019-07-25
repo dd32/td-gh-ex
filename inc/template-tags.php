@@ -81,7 +81,7 @@ function storto_posted_on() {
 	$posted_on = '<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>';
 	$byline = '<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>';
 
-	echo '<span class="posted-on"><i class="fa fa-clock-o spaceRight" aria-hidden="true"></i>' . $posted_on . '</span><span class="byline"><i class="fa fa-user spaceRight" aria-hidden="true"></i>' . $byline . '</span>'; // WPCS: XSS OK.
+	echo '<span class="posted-on"><i class="fa fa-clock-o spaceRight" aria-hidden="true"></i>' . $posted_on . '</span><span class="byline"><i class="fa fa-user spaceRight" aria-hidden="true"></i>' . $byline . '</span>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 
 }
 endif;
@@ -93,54 +93,15 @@ if ( ! function_exists( 'storto_entry_footer' ) ) :
 function storto_entry_footer() {
 	if ( 'post' == get_post_type() ) {
 		$categories_list = get_the_category_list( ' ' );
-		if ( $categories_list && storto_categorized_blog() ) {
-			echo '<div class="dataBottom cat-links"><i class="fa spaceRight fa-folder-open-o" aria-hidden="true"></i>' . $categories_list . '</div>';
+		if ( $categories_list ) {
+			echo '<div class="dataBottom cat-links"><i class="fa spaceRight fa-folder-open-o" aria-hidden="true"></i>' . $categories_list . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 		$tags_list = get_the_tag_list( '', ' ' );
 		if ( $tags_list ) {
-			echo '<div class="dataBottom tags-links"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>' . $tags_list . '</div>';
+			echo '<div class="dataBottom tags-links"><i class="fa fa-tags spaceRight" aria-hidden="true"></i>' . $tags_list . '</div>'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}
 	}
 
 	edit_post_link( esc_html__( 'Edit', 'storto' ), '<span class="edit-link spaceRight"><i class="fa fa-pencil-square-o spaceRight" aria-hidden="true"></i>', '</span>' );
 }
 endif;
-
-/**
- * Returns true if a blog has more than 1 category.
- *
- * @return bool
- */
-function storto_categorized_blog() {
-	$all_the_cool_cats = get_transient( 'storto_categories' );
-	
-	if ( false === $all_the_cool_cats ) {
-		// Create an array of all the categories that are attached to posts.
-		$categories = get_categories( array(
-			'fields'     => 'ids',
-			'hide_empty' => 1,
-			// We only need to know if there is more than one category.
-			'number'     => 2,
-		) );
-
-		// Count the number of categories that are attached to the posts.
-		$all_the_cool_cats = count( $categories );
-
-		set_transient( 'storto_categories', $all_the_cool_cats );
-	}
-	
-	return $all_the_cool_cats > 1;
-}
-
-/**
- * Flush out the transients used in storto_categorized_blog.
- */
-function storto_category_transient_flusher() {
-	if ( defined( 'DOING_AUTOSAVE' ) && DOING_AUTOSAVE ) {
-		return;
-	}
-	// Like, beat it. Dig?
-	delete_transient( 'storto_categories' );
-}
-add_action( 'edit_category', 'storto_category_transient_flusher' );
-add_action( 'save_post',     'storto_category_transient_flusher' );

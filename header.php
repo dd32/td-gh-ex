@@ -17,7 +17,13 @@
 </head>
 
 <body <?php body_class(); ?>>
-<?php wp_body_open(); ?>
+<?php 
+if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+} else {
+    do_action( 'wp_body_open' );
+}
+?>
 <div id="page" class="hfeed site">
 
 	<header id="masthead" class="site-header">
@@ -31,7 +37,7 @@
 			endif;
 			$storto_description = get_bloginfo( 'description', 'display' );
 			if ( $storto_description || is_customize_preview() ) : ?>
-				<p class="site-description"><?php echo $storto_description; /* WPCS: xss ok. */ ?></p>
+				<p class="site-description"><?php echo $storto_description; /* // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped */ ?></p>
 			<?php
 			endif; ?>
 		</div>
