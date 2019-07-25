@@ -18,13 +18,17 @@ Astral is a free version  WordPress theme. It is a multi-purpose theme for blog,
 
 ==Screenshots==
 ============================================
-Theme uses Image from https://pixabay.com/
+Theme uses Image from https://stocksnap.io/
 ============================================
-https://pixabay.com/photos/city-street-urban-town-road-731296/
-https://pixabay.com/photos/melbourne-city-cityscape-tower-sky-2262238/
+https://stocksnap.io/photo/0GZ83DHBCE
+https://stocksnap.io/photo/RRLLIP25F3
+StockSnap uses is the Creative Commons CC0 license.
 
 
 == Changelog ==
+
+= 0.4 =
+* screenshot update, https://themes.trac.wordpress.org/ticket/71918
 
 = 0.3 =
 * ticket issue fixed, https://themes.trac.wordpress.org/ticket/70354
