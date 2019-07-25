@@ -29,25 +29,3 @@
     /* Above WP toolbar. */
   }
 }
-
-a:focus,
-button:focus,
-input[type="text"]:focus,
-input[type="email"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
-input[type="search"]:focus,
-textarea:focus,
-input[type="button"]:focus,
-input[type="reset"]:focus,
-input[type="submit"]:focus,
-.slick-slider .slick-slide:focus,
-.search-box .product-search-wrapper form select:focus {
-  outline: auto !important;
-  outline-style: dotted !important;
-  outline-width: thin !important;
-  outline-color: rgb(30, 222, 121) !important;
-  -webkit-focus-ring-color: rgb(30, 222, 121) !important;
-  -moz-outline-radius: inherit !important;
-
-}

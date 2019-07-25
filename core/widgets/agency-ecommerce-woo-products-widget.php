@@ -86,7 +86,6 @@ if (!class_exists('Agency_Ecommerce_Woo_Products_Widget')) :
 
         function widget($args, $instance)
         {
-
             $valid_widget_instance = Agency_Ecommerce_Widget_Validation::instance()->validate($instance, $this->widget_fields());
 
             $title = apply_filters('widget_title', empty($valid_widget_instance['title']) ? '' : $valid_widget_instance['title'], $valid_widget_instance, $this->id_base);
@@ -100,14 +99,12 @@ if (!class_exists('Agency_Ecommerce_Woo_Products_Widget')) :
             $args['before_widget'] = str_replace('class="', 'style="background:' . $background_color . ' " class="', $args['before_widget']);
 
             echo $args['before_widget'];
-
             ?>
 
             <div class="ae-woo-product-wrapper">
 
                 <?php
 
-                agency_ecommerce_widget_before($args);
 
                 if ($title) {
 
@@ -242,10 +239,7 @@ if (!class_exists('Agency_Ecommerce_Woo_Products_Widget')) :
 
                     </div>
 
-                <?php endif;
-                agency_ecommerce_widget_after($args);
-
-                ?>
+                <?php endif; ?>
 
             </div><!-- .advance-posts-widget -->
 
@@ -280,7 +274,7 @@ if (!class_exists('Agency_Ecommerce_Woo_Products_Widget')) :
 
                     $term = get_term_by('id', $cat_id, 'product_cat');
 
-                    if (count($term) > 0 && is_array($term)) {
+                    if (count($term) > 0) {
 
                         array_push($categories, $term);
                     }
@@ -295,7 +289,7 @@ if (!class_exists('Agency_Ecommerce_Woo_Products_Widget')) :
 
             echo '<ul class="ae-product-cat-tab">';
 
-            echo '<li data-cat-id="0" class="ae-active"><span>' . esc_html__('All Categories', 'agency-ecommerce') . '</span></li>';
+            echo '<li data-cat-id="0" class="ae-active"><span>' . __('All Categories', 'agency-ecommerce') . '</span></li>';
 
             foreach ($categories as $product_cat) {
 
@@ -303,11 +297,11 @@ if (!class_exists('Agency_Ecommerce_Woo_Products_Widget')) :
 
                 if ($count >= $valid_widget_instance['number_of_products']) {
 
-                    echo '<li data-cat-id="' . absint($product_cat->term_id) . '">';
+                    echo '<li data-cat-id="' . $product_cat->term_id . '">';
 
-                    echo '<a href="' . esc_url(get_term_link($product_cat->term_id, 'product_cat')) . '" target="_blank">';
+                    echo '<a href="' . get_term_link($product_cat->term_id, 'product_cat') . '" target="_blank">';
 
-                    echo esc_html($product_cat->name) . ' (' . absint($product_cat->count) . ')';
+                    echo $product_cat->name . ' (' . $product_cat->count . ')';
 
                     echo '</a>';
 

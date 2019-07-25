@@ -48,15 +48,6 @@ class Agency_Ecommerce_Widgets
             'after_title' => '</h3>',
         ));
         register_sidebar(array(
-            'name' => esc_html__('Homepage Full Width (Before HomePage Widget Area)', 'agency-ecommerce'),
-            'id' => 'home-page-fullwidth-before-widget-area',
-            'description' => esc_html__('Add widgets here to appear (full width )in before Home Page Widget Area. Some Specific widget will support full widget.', 'agency-ecommerce'),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget' => '</section>',
-            'before_title' => '<h3 class="widget-title">',
-            'after_title' => '</h3>',
-        ));
-        register_sidebar(array(
             'name' => esc_html__('Homepage Widget Area', 'agency-ecommerce'),
             'id' => 'home-page-widget-area',
             'description' => esc_html__('Add widgets here to appear in Home Page Widget Area.', 'agency-ecommerce'),
@@ -75,16 +66,6 @@ class Agency_Ecommerce_Widgets
             'after_title' => '</h3>',
         ));
         register_sidebar(array(
-            'name' => esc_html__('Homepage Full Width (After HomePage Sidebar.', 'agency-ecommerce'),
-            'id' => 'home-page-fullwidth-after-widget-area',
-            'description' => esc_html__('Add widgets here to appear (full width )in after Home Page Sidebar widget area. Some Specific widget will support full widget.', 'agency-ecommerce'),
-            'before_widget' => '<section id="%1$s" class="widget %2$s">',
-            'after_widget' => '</section>',
-            'before_title' => '<h3 class="widget-title">',
-            'after_title' => '</h3>',
-        ));
-        register_sidebar(array(
-            /* translators: 1: footer id */
             'name' => sprintf(esc_html__('Top Footer %d', 'agency-ecommerce'), 1),
             'id' => 'top-footer-1',
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -93,7 +74,6 @@ class Agency_Ecommerce_Widgets
             'after_title' => '</h4>',
         ));
         register_sidebar(array(
-            /* translators: 1: footer id */
             'name' => sprintf(esc_html__('Top Footer %d', 'agency-ecommerce'), 2),
             'id' => 'top-footer-2',
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -102,7 +82,6 @@ class Agency_Ecommerce_Widgets
             'after_title' => '</h4>',
         ));
         register_sidebar(array(
-            /* translators: 1: footer id */
             'name' => sprintf(esc_html__('Top Footer %d', 'agency-ecommerce'), 3),
             'id' => 'top-footer-3',
             'before_widget' => '<section id="%1$s" class="widget %2$s">',
@@ -111,7 +90,6 @@ class Agency_Ecommerce_Widgets
             'after_title' => '</h4>',
         ));
         register_sidebar(array(
-            /* translators: 1: footer id */
             'name' => sprintf(esc_html__('Top Footer %d', 'agency-ecommerce'), 4),
             'id' => 'top-footer-4',
             'before_widget' => '<section id="%1$s" class="widget %2$s">',

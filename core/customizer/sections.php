@@ -33,21 +33,13 @@ require_once trailingslashit(get_template_directory()) . '/core/customizer/secti
 
 if (class_exists('WooCommerce')) {
 
-    require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/search-text-options.php';
+    require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/product-search-options.php';
 
     require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/shop-page-options.php';
 
     require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/product-single-page-options.php';
-
-    require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/woo-checkout-options.php';
-
-    require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/woo-cart-options.php';
 }
 require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/social-options.php';
-
-require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/404-options.php';
-
-require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/accessibility-options.php';
 
 require_once trailingslashit(get_template_directory()) . '/core/customizer/sections/footer-options.php';
 

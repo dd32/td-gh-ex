@@ -1,34 +1,3 @@
-.mb-repeator {
-    display: block;
-    padding: 10px;
-    border: 1px solid #aaa;
-    margin: 5px 0;
-    background: #f9f9f9;
-    position: relative;
-}
-
-.mb-repeator-tmpl {
-    display: none;
-}
-
-.mb-repeator .action-btn,
-.mb-repeator-tmpl .action-btn {
-    position: absolute;
-    top: 0;
-    right: 0;
-    border-radius: 0;
-}
-
-.mb-repeator .action-btn.add .dashicons::before,
-.mb-repeator-tmpl .action-btn.add .dashicons::before {
-    content: "\f132";
-}
-
-.mb-repeator .action-btn.remove .dashicons::before,
-.mb-repeator-tmpl .action-btn.remove .dashicons::before {
-    content: "\f158";
-}
-
 .agency-ecommerce-preview-wrap {
     margin-top: 10px;
 }
@@ -155,21 +124,21 @@ input.select-img.button.button-primary {
 }
 
 div[id*="agency-ecommerce"].widget .widget-top {
-/ / position: relative;
+    //position: relative;
 }
 
 div[id*="agency-ecommerce"].widget .widget-top:after {
-    /* content: '';
-     width: 8px;
-     height: 100%;
-     background: #0188cc;
-     position: absolute;
-     top: 0;*/
+   /* content: '';
+    width: 8px;
+    height: 100%;
+    background: #0188cc;
+    position: absolute;
+    top: 0;*/
 }
 
 div[id*="agency-ecommerce"].widget h3 {
 
-    /* background: #d2cbfd;
-     color: #000;*/
+   /* background: #d2cbfd;
+    color: #000;*/
 
 }

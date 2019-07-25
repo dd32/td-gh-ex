@@ -26,6 +26,13 @@
     margin-bottom: 10px;
   }
 }
+
+@media only screen and (max-width: 550px) {
+  .woocommerce span.onsale {
+    right: 0 !important;
+  }
+}
+
 @media only screen and (max-width: 479px) {
   .woocommerce ul.products li.product {
     width: 100%;

@@ -207,41 +207,6 @@ $wp_customize->add_control('agency_ecommerce_theme_options[login_text]',
 
 if (class_exists('WooCommerce')) {
 
-
-    // Setting show_wishlist.
-    $wp_customize->add_setting('agency_ecommerce_theme_options[show_wishlist]',
-        array(
-            'default' => $default['show_wishlist'],
-            'sanitize_callback' => 'agency_ecommerce_sanitize_checkbox',
-        )
-    );
-    $wp_customize->add_control('agency_ecommerce_theme_options[show_wishlist]',
-        array(
-            'label' => esc_html__('Show Wishlist Icon (Works if YITH Wishlist plugin is activated)', 'agency-ecommerce'),
-            'section' => 'section_header',
-            'type' => 'checkbox',
-            'priority' => 120,
-            'active_callback' => 'agency_ecommerce_is_top_header_active',
-        )
-    );
-
-    // Setting wishlist icon.
-    $wp_customize->add_setting('agency_ecommerce_theme_options[wishlist_icon]',
-        array(
-            'default' => $default['wishlist_icon'],
-            'sanitize_callback' => 'sanitize_text_field',
-        )
-    );
-    $wp_customize->add_control('agency_ecommerce_theme_options[wishlist_icon]',
-        array(
-            'label' => esc_html__('Wishlist Icon', 'agency-ecommerce'),
-            'description' => esc_html__('Fontawesome icons are only supported.', 'agency-ecommerce'),
-            'section' => 'section_header',
-            'type' => 'text',
-            'priority' => 130,
-            'active_callback' => 'agency_ecommerce_is_top_wishlist_active',
-        )
-    );
     // Setting show_cart.
     $wp_customize->add_setting('agency_ecommerce_theme_options[show_cart]',
         array(
@@ -254,7 +219,7 @@ if (class_exists('WooCommerce')) {
             'label' => esc_html__('Show Cart Icon', 'agency-ecommerce'),
             'section' => 'section_header',
             'type' => 'checkbox',
-            'priority' => 140,
+            'priority' => 100,
             'active_callback' => 'agency_ecommerce_is_top_header_active',
         )
     );
@@ -272,25 +237,43 @@ if (class_exists('WooCommerce')) {
             'description' => esc_html__('Fontawesome icons are only supported.', 'agency-ecommerce'),
             'section' => 'section_header',
             'type' => 'text',
-            'priority' => 150,
+            'priority' => 100,
             'active_callback' => 'agency_ecommerce_is_top_cart_active',
         )
     );
 
-    // Setting show_top_search.
-    $wp_customize->add_setting('agency_ecommerce_theme_options[show_top_search]',
+    // Setting show_wishlist.
+    $wp_customize->add_setting('agency_ecommerce_theme_options[show_wishlist]',
         array(
-            'default' => $default['show_top_search'],
+            'default' => $default['show_wishlist'],
             'sanitize_callback' => 'agency_ecommerce_sanitize_checkbox',
         )
     );
-    $wp_customize->add_control('agency_ecommerce_theme_options[show_top_search]',
+    $wp_customize->add_control('agency_ecommerce_theme_options[show_wishlist]',
         array(
-            'label' => esc_html__('Show Product Search', 'agency-ecommerce'),
-            'description' => esc_html__('You can change search text from Customizing ▸ Theme Options ▸Search Text Options', 'agency-ecommerce'),
+            'label' => esc_html__('Show Wishlist Icon (Works if YITH Wishlist plugin is activated)', 'agency-ecommerce'),
             'section' => 'section_header',
             'type' => 'checkbox',
-            'priority' => 160,
+            'priority' => 100,
+            'active_callback' => 'agency_ecommerce_is_top_header_active',
+        )
+    );
+
+    // Setting wishlist icon.
+    $wp_customize->add_setting('agency_ecommerce_theme_options[wishlist_icon]',
+        array(
+            'default' => $default['wishlist_icon'],
+            'sanitize_callback' => 'sanitize_text_field',
+        )
+    );
+    $wp_customize->add_control('agency_ecommerce_theme_options[wishlist_icon]',
+        array(
+            'label' => esc_html__('Wishlist Icon', 'agency-ecommerce'),
+            'description' => esc_html__('Fontawesome icons are only supported.', 'agency-ecommerce'),
+            'section' => 'section_header',
+            'type' => 'text',
+            'priority' => 100,
+            'active_callback' => 'agency_ecommerce_is_top_wishlist_active',
         )
     );
 

@@ -92,7 +92,6 @@
     .ae-list-grid {
       margin: 0;
       padding: 0;
-      padding-top: 25px;
       li.product {
         margin: 0;
         padding: 0;
@@ -100,16 +99,13 @@
         float: none;
         list-style: none;
         max-width: 100%;
-        margin-bottom: 10px;
-        &:last-child {
-          margin-bottom: 0;
-        }
 
       }
     }
     .ae-list-items {
       li.product {
-        padding-top: 5px;
+
+        padding-top: 25px;
         width: 100%;
         &:not(.slick-slide) {
           display: none;
@@ -117,7 +113,7 @@
             display: block;
           }
         }
-        .span.onsale {
+        span.onsale {
           left: 0;
           top: 0;
         }
@@ -126,6 +122,7 @@
     .ae-product-cat-tab {
       li {
         margin: 0 0 10px 0;
+        padding: 0;
         list-style: none;
         padding: 0 5px;
         &:before {
@@ -711,19 +708,5 @@
     max-width: 100%;
     padding-left: 0;
     padding-right: 0;
-  }
- /* .mb-homepage-main.has-sidebar .homepage-sidebar .widget.agency_ecommerce_woo_products_widget .ae-list-grid li.product {
-    width: 50%;
-  }*/
-}
-
-.homepage-fullwidth-widget-area .widget {
-  margin-bottom: 0;
-  margin-top: 0;
-  &:last-child {
-    margin-bottom: 10px;
-  }
-  &:first-child {
-    margin-top: 5px;
   }
 }

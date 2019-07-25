@@ -1,4 +1,33 @@
 <?php
+/**
+ * Functions for active_callback.
+ *
+ * @package Agency_Ecommerce
+ */
+
+if (!function_exists('agency_ecommerce_is_featured_slider_active')) :
+
+    /**
+     * Check if featured slider is active.
+     *
+     * @since 1.0.0
+     *
+     * @param WP_Customize_Control $control WP_Customize_Control instance.
+     *
+     * @return bool Whether the control is active to the current preview.
+     */
+    function agency_ecommerce_is_featured_slider_active($control)
+    {
+
+        if (true == $control->manager->get_setting('agency_ecommerce_theme_options[slider_status]')->value()) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+
+endif;
 
 
 if (!function_exists('agency_ecommerce_is_top_header_active')) :
@@ -159,7 +188,7 @@ if (!function_exists('agency_ecommerce_is_breadcrumb_active')) :
     function agency_ecommerce_is_breadcrumb_active($control)
     {
 
-        if ('disable' != $control->manager->get_setting('agency_ecommerce_theme_options[breadcrumb_type]')->value()) {
+        if ('simple' == $control->manager->get_setting('agency_ecommerce_theme_options[breadcrumb_type]')->value()) {
             return true;
         } else {
             return false;
@@ -231,27 +260,6 @@ if (!function_exists('agency_ecommerce_is_sticky_add_to_cart_enable')) :
     {
 
         return (boolean)$control->manager->get_setting('agency_ecommerce_theme_options[sticky_add_to_cart]')->value();
-
-    }
-
-endif;
-
-
-if (!function_exists('agency_ecommerce_is_advance_breadcrumb_active')) :
-
-    /**
-     * Check if advance breadcrumb enable/disable
-     *
-     * @since 1.0.0
-     *
-     * @param WP_Customize_Control $control WP_Customize_Control instance.
-     *
-     * @return bool Whether the control is active to the current preview.
-     */
-    function agency_ecommerce_is_advance_breadcrumb_active($control)
-    {
-
-        return 'advanced' == $control->manager->get_setting('agency_ecommerce_theme_options[breadcrumb_type]')->value();
 
     }
 

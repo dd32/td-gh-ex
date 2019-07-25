@@ -4,6 +4,7 @@
 @import "components/elements";
 @import "components/forms";
 @import "components/navigation";
+@import "components/accessibility";
 @import "components/alignments";
 @import "components/clearings";
 @import "components/infinite-scroll";
@@ -11,17 +12,12 @@
 @import "components/widgets";
 @import "components/media";
 @import "components/custom";
-@import "components/gutenberg";
-@import "components/accessibility";
-
-
 // WooCommerce Styling //
 @import "components/woocommerce";
 @import "components/woocommerce/woo-main";
 @import "components/woocommerce/woo-shop";
 @import "components/woocommerce/woo-single";
 @import "components/woocommerce/woo-checkout";
-@import "components/woocommerce/woo-cart";
 @import "components/woocommerce/woo-account";
 @import "components/woocommerce/woo-wishlist";
 // End of WooCommerce Styling

@@ -18,40 +18,25 @@ function agency_ecommerce_body_classes($classes)
         $classes[] = 'hfeed';
     }
 
-    $current_layout = agency_ecommerce_get_current_layout();
+    if (class_exists('WooCommerce') && is_woocommerce()) {
 
-    $classes[] = 'global-layout-' . esc_attr($current_layout);
+        // Add class for global layout on woocommerce pages.
+        $shop_layout = agency_ecommerce_get_option('shop_layout');
+        $shop_layout = apply_filters('agency_ecommerce_filter_theme_global_layout', $shop_layout);
+        $classes[] = 'global-layout-' . esc_attr($shop_layout);
 
+    } else {
 
-    if (class_exists('WooCommerce')) {
+        // Add class for global layout.
+        $global_layout = agency_ecommerce_get_option('global_layout');
+        $global_layout = apply_filters('agency_ecommerce_filter_theme_global_layout', $global_layout);
+        $classes[] = 'global-layout-' . esc_attr($global_layout);
 
-        if (!in_array('woocommerce', $classes) || is_page_template('templates/home-template.php')) {
+    }
 
-            $classes[] = 'woocommerce';
-        }
-
-        if (is_checkout()) {
-
-            $woo_checkout_template = agency_ecommerce_get_option('woo_checkout_template');
-
-            if (!empty($woo_checkout_template)) {
-
-                $classes[] = esc_attr($woo_checkout_template);
-
-            }
-        }
-
-        if (is_cart()) {
-
-            $woo_cart_template = agency_ecommerce_get_option('woo_cart_template');
-
-            if (!empty($woo_cart_template)) {
-
-                $classes[] = esc_attr($woo_cart_template);
-
-            }
-        }
-
+    //Add woocommerce class if woocommerce is active
+    if (class_exists('WooCommerce') && is_page_template('templates/home-template.php')) {
+        $classes[] = 'woocommerce';
     }
 
     //Add column class in body for woocommerce
@@ -65,15 +50,6 @@ function agency_ecommerce_body_classes($classes)
 
         $classes[] = 'columns-3';
 
-    }
-
-    $breadcrumb_type = agency_ecommerce_get_option('breadcrumb_type');
-
-    $show_page_title_on_breadcrumb = (boolean)agency_ecommerce_get_option('show_page_title_on_breadcrumb');
-
-    if ($show_page_title_on_breadcrumb && $breadcrumb_type == 'advanced') {
-
-        $classes[] = 'ae-hide-page-title';
     }
 
     // Add class for sticky sidebar.
@@ -150,11 +126,6 @@ if (!function_exists('agency_ecommerce_implement_excerpt_length')) :
     function agency_ecommerce_implement_excerpt_length($length)
     {
 
-        if (is_admin()) {
-
-            return $length;
-        }
-
         $excerpt_length = agency_ecommerce_get_option('excerpt_length');
 
         if (absint($excerpt_length) > 0) {
@@ -182,11 +153,6 @@ if (!function_exists('agency_ecommerce_content_more_link')) :
     function agency_ecommerce_content_more_link($more_link, $more_link_text)
     {
 
-        if (is_admin()) {
-
-            return $more_link;
-        }
-
         $read_more_text = agency_ecommerce_get_option('readmore_text');
         if (!empty($read_more_text)) {
             $more_link = str_replace($more_link_text, esc_html($read_more_text), $more_link);
@@ -209,10 +175,6 @@ if (!function_exists('agency_ecommerce_implement_read_more')) :
      */
     function agency_ecommerce_implement_read_more($more)
     {
-        if (is_admin()) {
-
-            return $more;
-        }
 
         $output = $more;
 
@@ -238,10 +200,9 @@ if (!function_exists('agency_ecommerce_hook_read_more_filters')) :
      */
     function agency_ecommerce_hook_read_more_filters()
     {
-
         if (is_home() || is_category() || is_tag() || is_author() || is_date() || is_search()) {
 
-            add_filter('excerpt_length', 'agency_ecommerce_implement_excerpt_length', 10);
+            add_filter('excerpt_length', 'agency_ecommerce_implement_excerpt_length', 999);
             add_filter('the_content_more_link', 'agency_ecommerce_content_more_link', 10, 2);
             add_filter('excerpt_more', 'agency_ecommerce_implement_read_more');
 
@@ -260,10 +221,11 @@ if (!function_exists('agency_ecommerce_add_sidebar')) :
     function agency_ecommerce_add_sidebar()
     {
 
-        $current_layout = agency_ecommerce_get_current_layout();
+        $global_layout = agency_ecommerce_get_option('global_layout');
+        $global_layout = apply_filters('agency_ecommerce_filter_theme_global_layout', $global_layout);
 
         // Include sidebar.
-        if ('no-sidebar' !== $current_layout) {
+        if ('no-sidebar' !== $global_layout) {
             get_sidebar();
         }
 
@@ -279,7 +241,7 @@ if (!function_exists('agency_ecommerce_selected_category')) {
     function agency_ecommerce_selected_category($catname)
     {
 
-        $q_var = (isset($_GET['product_cat'])) ? esc_html(wp_unslash($_GET['product_cat'])) : '';
+        $q_var = (isset($_GET['product_cat'])) ? esc_html($_GET['product_cat']) : '';
 
         if ($q_var === $catname) {
 
@@ -318,7 +280,7 @@ if (!function_exists('agency_ecommerce_special_navigation_fallback')) {
     {
 
         $home_url = esc_url(home_url('/'));
-        $fallback_menu = '<ul id="special-menu" class="sub-menu special-sub-menu">';
+        $fallback_menu = '<ul id="special-menu" class="sub-menu special-sub-menu" style="overflow-y: scroll;">';
         $fallback_menu .= '<li><a href="' . $home_url . '" rel="home">' . esc_html__('Home', 'agency-ecommerce') . '</a></li>';
         $fallback_menu .= '<li><a target="_blank" href="#" rel="demo">' . esc_html__('Demo', 'agency-ecommerce') . '</a></li>';
         $fallback_menu .= '<li><a target="_blank" href="#" rel="docs">' . esc_html__('Docs', 'agency-ecommerce') . '</a></li>';
@@ -367,87 +329,4 @@ if (!function_exists('agency_ecommerce_sass_lighten')) :
         return $color;
     }
 
-endif;
-
-
-if (!function_exists('agency_ecommerce_is_advance_breadcrumb')) :
-
-    function agency_ecommerce_is_advance_breadcrumb()
-    {
-        $show_page_title_on_breadcrumb = (boolean)agency_ecommerce_get_option('show_page_title_on_breadcrumb');
-
-        $breadcrumb_type = agency_ecommerce_get_option('breadcrumb_type');
-
-        if ($show_page_title_on_breadcrumb && $breadcrumb_type == 'advanced') {
-
-
-            return true;
-        }
-
-        return false;
-    }
-
-endif;
-
-
-if (!function_exists('agency_ecommerce_404_page_title')) :
-
-    function agency_ecommerce_404_page_title()
-    {
-        return agency_ecommerce_get_option('404_page_title');
-    }
-
-endif;
-
-if (!function_exists('agency_ecommerce_404_page_content')) :
-
-    function agency_ecommerce_404_page_content()
-    {
-        return agency_ecommerce_get_option('404_page_content');
-    }
-
-endif;
-
-if (!function_exists('agency_ecommerce_get_current_layout')) :
-
-    /**
-     * Add sidebar.
-     *
-     * @since 1.0.0
-     */
-    function agency_ecommerce_get_current_layout()
-    {
-
-        $current_layout = agency_ecommerce_get_option('global_layout');
-
-        $current_layout = apply_filters('agency_ecommerce_filter_theme_global_layout', $current_layout);
-
-        if (class_exists('WooCommerce')) {
-
-            $woo_cart_sidebar = agency_ecommerce_get_option('woo_cart_sidebar');
-
-            if (function_exists('is_cart') && is_cart()) {
-
-                $current_layout = $woo_cart_sidebar;
-            }
-
-            $woo_checkout_sidebar = agency_ecommerce_get_option('woo_checkout_sidebar');
-
-            if (function_exists('is_checkout') && is_checkout()) {
-
-                $current_layout = $woo_checkout_sidebar;
-            }
-
-            $shop_layout = agency_ecommerce_get_option('shop_layout');
-
-            if (function_exists('is_shop') && is_shop()) {
-
-                $current_layout = $shop_layout;
-            }
-        }
-
-        return apply_filters('agency_ecommerce_filter_current_layout', $current_layout);
-
-
-    }
 endif;

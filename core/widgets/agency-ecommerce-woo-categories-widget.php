@@ -52,7 +52,7 @@ if (!class_exists('Agency_Ecommerce_Woo_Categories_Widget')) :
                     'name' => 'view_details',
                     'title' => esc_html__('View Details Text', 'agency-ecommerce'),
                     'type' => 'text',
-                    'default' => esc_html__('View Details', 'agency-ecommerce')
+                    'default' => __('View Details', 'agency-ecommerce')
                 ), 'show_counts' => array(
                     'name' => 'show_counts',
                     'title' => esc_html__('Show Counts', 'agency-ecommerce'),
@@ -104,13 +104,11 @@ if (!class_exists('Agency_Ecommerce_Woo_Categories_Widget')) :
 
             $background_color = $valid_widget_instance['background_color'];
 
-            $args['before_widget'] = str_replace('class="', 'style="background:' . esc_attr($background_color) . ' " class="', $args['before_widget']);
+            $args['before_widget'] = str_replace('class="', 'style="background:' . $background_color . ' " class="', $args['before_widget']);
 
             echo $args['before_widget']; ?>
 
             <div class="ae-woo-product-wrapper ae-advance-categories-wrapper">
-
-                <?php agency_ecommerce_widget_before($args); ?>
 
                 <?php
 
@@ -209,7 +207,7 @@ if (!class_exists('Agency_Ecommerce_Woo_Categories_Widget')) :
                                             <div class="product-thumb-wrap">
                                                 <img src="<?php echo esc_url($lazy_image) ?>"
                                                     <?php echo (1 != $disable_carousel) ? 'data-lazy="' . esc_url($cat_image) . '"' : ''; ?>
-                                                     alt="<?php echo esc_attr($term_title); ?>">
+                                                     alt="<?php echo esc_html($term_title); ?>">
 
 
                                             </div>
@@ -238,8 +236,6 @@ if (!class_exists('Agency_Ecommerce_Woo_Categories_Widget')) :
                     </div>
 
                 </div>
-
-                <?php agency_ecommerce_widget_after($args); ?>
 
             </div><!-- .advance-posts-widget -->
 

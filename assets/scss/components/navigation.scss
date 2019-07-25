@@ -61,7 +61,6 @@ a {
         top: 0;
       }
     }
-
   }
   li {
     position: relative;
@@ -90,29 +89,23 @@ a {
     }
   }
   ul {
-    > li:hover > ul,
-    > li a:focus ~ ul,
-    > li.focus > ul.sub-menu {
+    > li:hover > ul {
       opacity: 1;
-      left: 100%;
+      left: 0;
       z-index: 9999;
     }
     ul {
-
+      ul {
+        ul {
+          display: none;
+        }
+        li:hover > ul {
+          display: block;
+        }
+      }
       li:hover > ul {
         opacity: 1;
         left: 100%;
-      }
-    }
-  }
-  ul.menu > li {
-
-    > ul.sub-menu {
-      left: -10000px;
-    }
-    &:hover, &.focus {
-      > ul.sub-menu {
-        left: 0;
       }
     }
   }
@@ -120,13 +113,11 @@ a {
     float: none;
     display: block;
   }
-
   ul {
     li {
       li:first-child > a {
         border-left: none;
       }
-
       a {
         color: #11101d;
         display: inline-block;
@@ -354,7 +345,7 @@ a {
   a.page-numbers:hover {
     background: #fff;
     border-color: $primary_color;
-    color: $primary_color;
+    color:$primary_color;
   }
   .page-numbers.dots {
     border: none;

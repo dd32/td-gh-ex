@@ -14,10 +14,8 @@ var file_frame;
                 event.preventDefault();
                 $this.initWPImageUploader($(this));
             });
-            $(document).ready(function () {
-                $('#widgets-right .widget:has(.color-picker)').each(function () {
-                    $this.initColorPicker($(this));
-                });
+            $('#widgets-right .widget:has(.color-picker)').each(function () {
+                $this.initColorPicker($(this));
             });
             $(document).on('widget-added widget-updated', function (event, widget) {
 
@@ -38,8 +36,6 @@ var file_frame;
             $(document).on('click', '.ae-icon-picker-wrapper .ae-icon-list li.icon', function (e) {
                 $this.pickIcon($(this));
             });
-
-            $this.repeatorInit();
         },
         initWPImageUploader: function ($this) {
 
@@ -117,58 +113,9 @@ var file_frame;
             wrapper.find('input.widefat').val(value).trigger('change');
             wrapper.find('.selected-icon').removeClass('fa').removeClass(old_value).addClass('fa ' + value);
             $this.addClass('active');
-        },
-        repeatorInit: function () {
-
-            $(document).on('click', '.mb-repeator .action-btn', function (e) {
-
-
-                var container = $(this).closest('.mb-repeator-container');
-
-                var number_of_repeator = container.data('repeator-num');
-
-                var len = container.find('.mb-repeator').length;
-
-                if ($(this).hasClass('add')) {
-
-                    if (number_of_repeator > len) {
-
-                        var repeator_tmpl_clone = container.find('.mb-repeator-tmpl').clone();
-
-                        var repeator_tmpl_clone_html = repeator_tmpl_clone.html();
-
-                        repeator_tmpl_clone_html = repeator_tmpl_clone_html.replace(/__mb_index__/ig, len);
-
-                        container.append('<div class="mb-repeator">' + repeator_tmpl_clone_html + "</div>");
-
-                    } else {
-                        alert('Maximm repeator exceed');
-                    }
-
-                } else if ($(this).hasClass('remove')) {
-
-                    if (len > 1) {
-
-                        $(this).closest('.mb-repeator').remove();
-                    }
-                }
-                container.find('.mb-repeator:not(:last-child)').find('.action-btn').removeClass('add').addClass('remove');
-
-                if (number_of_repeator <= len) {
-                    container.find('.mb-repeator:last-child').find('.action-btn').removeClass('add').addClass('remove');
-                } else {
-                    container.find('.mb-repeator:last-child').find('.action-btn').removeClass('remove').addClass('add');
-
-                }
-
-                container.find('input').trigger('change');
-
-
-            });
         }
     };
 
     AgencyEcommerceAdmin.init();
-
 
 })(jQuery);

@@ -123,23 +123,5 @@ if (class_exists('WooCommerce')) {
         )
     );
 
-    // Setting show_top_search.
-    $wp_customize->add_setting('agency_ecommerce_theme_options[show_mid_search]',
-        array(
-            'default' => $default['show_mid_search'],
-            'sanitize_callback' => 'agency_ecommerce_sanitize_checkbox',
-        )
-    );
-    $wp_customize->add_control('agency_ecommerce_theme_options[show_mid_search]',
-        array(
-            'label' => esc_html__('Show Product Search', 'agency-ecommerce'),
-            'description' => esc_html__('You can change search text from Customizing ▸ Theme Options ▸Search Text Options', 'agency-ecommerce'),
-            'section' => 'section_mid_header',
-            'type' => 'checkbox',
-            'priority' => 70,
-
-        )
-    );
-
 
 }

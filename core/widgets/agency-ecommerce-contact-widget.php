@@ -52,7 +52,7 @@ if (!class_exists('Agency_Ecommerce_Contact_Widget')) :
                     'name' => 'text_two',
                     'title' => esc_html__('Text two', 'agency-ecommerce'),
                     'type' => 'text',
-                    'default' => 'contact@yourdomain.com',
+                    'default' => 'mantrabrain@gmail.com',
                 ), 'icon_three' => array(
                     'name' => 'icon_three',
                     'title' => esc_html__('Icon three', 'agency-ecommerce'),
@@ -106,8 +106,6 @@ if (!class_exists('Agency_Ecommerce_Contact_Widget')) :
 
             <div class="contact-list">
 
-                <?php agency_ecommerce_widget_before($args); ?>
-
                 <?php
 
                 if ($title) {
@@ -123,7 +121,7 @@ if (!class_exists('Agency_Ecommerce_Contact_Widget')) :
                                 <?php
                                 if (!empty($icon_one)) { ?>
                                     <span class="contact-icon">
-										<span class="fa <?php echo esc_attr($icon_one); ?>"></span>
+										<span class="fa <?php echo esc_html($icon_one); ?>"></span>
 									</span>
                                     <?php
                                 } ?>
@@ -145,7 +143,7 @@ if (!class_exists('Agency_Ecommerce_Contact_Widget')) :
                                 <?php
                                 if (!empty($icon_two)) { ?>
                                     <span class="contact-icon">
-										<span class="fa <?php echo esc_attr($icon_two); ?>"></span>
+										<span class="fa <?php echo esc_html($icon_two); ?>"></span>
 									</span>
                                     <?php
                                 } ?>
@@ -167,7 +165,7 @@ if (!class_exists('Agency_Ecommerce_Contact_Widget')) :
                                 <?php
                                 if (!empty($icon_three)) { ?>
                                     <span class="contact-icon">
-										<span class="fa <?php echo esc_attr($icon_three); ?>"></span>
+										<span class="fa <?php echo esc_html($icon_three); ?>"></span>
 									</span>
                                     <?php
                                 } ?>
@@ -189,7 +187,7 @@ if (!class_exists('Agency_Ecommerce_Contact_Widget')) :
                                 <?php
                                 if (!empty($icon_four)) { ?>
                                     <span class="contact-icon">
-										<span class="fa <?php echo esc_attr($icon_four); ?>"></span>
+										<span class="fa <?php echo esc_html($icon_four); ?>"></span>
 									</span>
                                     <?php
                                 } ?>
@@ -206,9 +204,6 @@ if (!class_exists('Agency_Ecommerce_Contact_Widget')) :
                     <?php } ?>
 
                 </div>
-
-                <?php agency_ecommerce_widget_after($args); ?>
-
 
             </div><!-- .features-list -->
 

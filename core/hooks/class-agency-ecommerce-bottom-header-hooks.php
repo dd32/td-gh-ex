@@ -136,11 +136,11 @@ class Agency_Ecommerce_Bottom_Header_Hooks
                     <div class="wrap-menu-content">
                         <?php
                         wp_nav_menu(
-                            apply_filters('agency_ecommerce_primary_nav_args', array(
+                            array(
                                 'theme_location' => 'primary-menu',
                                 'menu_id' => 'primary-menu',
                                 'fallback_cb' => 'agency_ecommerce_primary_navigation_fallback',
-                            ))
+                            )
                         );
                         ?>
                     </div><!-- .menu-content -->

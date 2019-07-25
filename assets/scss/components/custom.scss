@@ -154,6 +154,10 @@ p, li {
   }
 }
 
+.slick-slider .slick-slide:focus {
+  outline: none;
+}
+
 /*--------------------------------------------------------------
  ##  Header Style
  --------------------------------------------------------------*/
@@ -192,12 +196,12 @@ p, li {
 }
 
 .site-title {
-  color: $alternative_color;
+  color: #11101d;
   font-size: 28px;
   margin-bottom: 0;
   font-family: 'Open Sans', sans-serif;
   > a {
-    color: $alternative_color;
+    color: #11101d;
     line-height: 1.3;
   }
 }
@@ -530,6 +534,7 @@ p, li {
   font-size: 15px;
   float: left;
   padding: 15px 20px;
+  border-right: 1px solid #22202e;
   a {
     color: $white_color;
   }
@@ -675,8 +680,7 @@ p, li {
     clear: both;
   }
   .ae-cart-wrapper {
-    padding: 14px 10px;
-    line-height: inherit;
+    padding: 17px 10px;
   }
   .ae-wishlist-wrapper {
     padding: 14px 10px;
@@ -773,7 +777,6 @@ p, li {
   color: $white_color;
   line-height: 1;
   font-size: 13px;
-  display: block;
 }
 
 .top-account-wrapper a i {
@@ -851,7 +854,7 @@ p, li {
       background: #f9f9f9;
       border: 1px solid $primary_color;
       input[type="text"], select {
-        float: left;
+        float: right;
         padding: 10px 11px;
         background: #f9f9f9;
         border: 0;
@@ -862,6 +865,9 @@ p, li {
       input[type="text"] {
         border-left: 1px solid $primary_color;
         width: 325px;
+      }
+      select:focus {
+        outline: none;
       }
       button[type="submit"] {
         padding: 0;
@@ -1320,6 +1326,7 @@ p, li {
  --------------------------------------------------------------*/
 
 .agency_ecommerce_widget_newsletter {
+  float: left;
   width: 100%;
   .newsletter-content-holder {
     float: left;
@@ -1495,19 +1502,13 @@ p, li {
 /*--------------------------------------------------------------
  ## Sidebar Style
  --------------------------------------------------------------*/
+
 .sidebar {
   width: 30%;
   padding-left: 15px;
   padding-right: 0;
   .widget-title {
     padding-bottom: 15px;
-  }
-}
-
-body.global-layout-left-sidebar {
-  .sidebar {
-    padding-right: 15px;
-    padding-left: 0;
   }
 }
 
@@ -1573,7 +1574,7 @@ body.global-layout-left-sidebar {
 
 .woocommerce-product-search input.search-field, .search-form input.search-field {
   background: #f9f9f9;
-  padding: 4px 9% 11px 10px;
+  padding: 10px 9% 11px 10px;
   width: 100%;
   height: auto;
   box-sizing: border-box;
@@ -1610,7 +1611,7 @@ body.global-layout-left-sidebar {
 }
 
 .woocommerce-product-search input.search-field, .sidebar .search-form input.search-field {
-  padding: 11px 4% 12px 10px;
+  padding: 12px 4% 12px 10px;
   width: 100%;
   margin: 0;
   height: auto;
@@ -1653,11 +1654,10 @@ body.global-layout-left-sidebar {
   background: $primary_color none repeat scroll 0 0;
   color: $white_color;
   padding: 5px;
-
 }
 
 .sidebar .widget-title, .entry-title {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 3px double;
   padding-bottom: 15px;
 }
 
@@ -1691,7 +1691,7 @@ body.global-layout-left-sidebar {
 #colophon {
   clear: both;
   color: $white_color;
-  padding: 20px 0;
+  padding-bottom: 35px;
   text-align: center;
   &.site-footer {
     background: $alternative_color;
@@ -1803,15 +1803,7 @@ body.global-layout-left-sidebar {
 
 .site-footer-wrap {
   width: 100%;
-  padding-top: 10px;
-  &.ae-footer-payment{
-    .copyright,.site-info{
-      float:left;
-    }
-    .payment-image{
-      float:right;
-    }
-  }
+  padding-top: 30px;
 }
 
 #footer-navigation li {
@@ -2163,7 +2155,7 @@ div.wpcf7 {
   display: block;
   width: 100%;
   font-weight: 500;
-  line-height: 1.2;
+  line-height: 1;
 }
 
 .primary-sidebar .widget {
@@ -2218,6 +2210,8 @@ div.wpcf7 {
   bottom: -3px;
 }*/
 
+
+
 .search-results #primary article .entry-title {
   margin-bottom: 5px;
 }
@@ -2239,7 +2233,7 @@ div.wpcf7 {
     line-height: 1;
   }
   .page .entry-content ul li i {
-    //margin-right: 10px;
+    margin-right: 10px;
   }
 }
 
@@ -2247,7 +2241,7 @@ div.wpcf7 {
   padding: 10px 0px;
   border-bottom: 1px dashed #ddd;
   position: relative;
-  //padding-left: 20px;
+  padding-left: 20px;
 
   &:last-child {
     border-bottom: 0;
@@ -2260,6 +2254,7 @@ div.wpcf7 {
 /*--------------------------------------------------------------
  # Post navigation  Styles
  --------------------------------------------------------------*/
+
 
 #primary .entry-footer .byline::before {
   content: "\f2c0";
@@ -2335,7 +2330,7 @@ blockquote {
   .nav-next {
     float: right;
     a {
-    }
+     }
   }
 }
 
@@ -2505,7 +2500,7 @@ blockquote {
   padding: .5em;
   line-height: 1;
   border: 1px solid $primary_color;
-  margin-right: 3px;
+  margin-right: 6px;
   float: left;
   &.current {
     background: transparent;
@@ -2600,7 +2595,6 @@ a.button.btn-view-details:hover {
       color: #808080;
     }
   }
-
 }
 
 /*--------------------------------------------------------------

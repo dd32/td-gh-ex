@@ -71,9 +71,9 @@ if (!class_exists('Agency_Ecommerce_Featured_Slider_Widget')) :
                     'type' => 'select',
                     'default' => 'two',
                     'options' => array(
-                        'one' => esc_html__('One', 'agency-ecommerce'),
-                        'two' => esc_html__('Two', 'agency-ecommerce'),
-                        'three' => esc_html__('Three', 'agency-ecommerce')
+                        'one' => __('One', 'agency-ecommerce'),
+                        'two' => __('Two', 'agency-ecommerce'),
+                        'three' => __('Three', 'agency-ecommerce')
                     )
                 ), 'shop_now_text' => array(
                     'name' => 'shop_now_text',
@@ -151,8 +151,6 @@ if (!class_exists('Agency_Ecommerce_Featured_Slider_Widget')) :
             echo $args['before_widget'];
             ?>
             <div class="<?php echo esc_attr($feature_slider_wrap_class); ?>">
-                <?php agency_ecommerce_widget_before($args); ?>
-
                 <div class="main-slider-wrap">
                     <div class="main-slider" data-disable="<?php echo $disable_slider_mode ? true : false ?>">
 
@@ -199,7 +197,6 @@ if (!class_exists('Agency_Ecommerce_Featured_Slider_Widget')) :
                         </div>
                     </div>
                 <?php } ?>
-                <?php agency_ecommerce_widget_after($args); ?>
 
             </div>
 
@@ -261,23 +258,23 @@ if (!class_exists('Agency_Ecommerce_Featured_Slider_Widget')) :
             }
             $image_url = empty($image_url) ? get_template_directory_uri() . '/assets/images/placeholder/agency-ecommerce-1400-653.jpg' : $image_url;
 
-            $bg_image_style = 'background-image:url(' . (esc_url($image_url)) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
+            $bg_image_style = 'background-image:url(' . ($image_url) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
             ?>
             <div class="slide-item" style="<?php echo $bg_image_style; ?>">
                 <a class="ae-overlay"
                    href="<?php the_permalink() ?>"
-                   title="<?php the_title_attribute() ?>"></a>
+                   title="<?php the_title() ?>"></a>
                 <div class="slider-desc">
                     <div class="slider-details">
                         <div class="slide-title">
                             <a href="<?php the_permalink() ?>"
-                               title="<?php the_title_attribute() ?>">
+                               title="<?php the_title() ?>">
                                 <?php the_title() ?></a>
                         </div>
                     </div>
                     <div class="slider-buttons">
                         <a href="<?php the_permalink() ?>"
-                           class="slider-button primary" title="<?php the_title_attribute() ?>">
+                           class="slider-button primary" title="<?php the_title() ?>">
                             <?php echo esc_html($valid_widget_instance['shop_now_text']) ?></a>
                     </div>
                 </div>
@@ -288,7 +285,7 @@ if (!class_exists('Agency_Ecommerce_Featured_Slider_Widget')) :
         public function default_slider_item($valid_widget_instance)
         {
             $image_url = get_template_directory_uri() . '/assets/images/placeholder/agency-ecommerce-1400-653.jpg';
-            $bg_image_style = 'background-image:url(' . esc_url($image_url) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
+            $bg_image_style = 'background-image:url(' . ($image_url) . ');background-repeat:no-repeat;background-size:cover;background-position:center;';
 
             ?>
             <div class="slide-item" style="<?php echo $bg_image_style; ?>">
@@ -297,7 +294,7 @@ if (!class_exists('Agency_Ecommerce_Featured_Slider_Widget')) :
                 <div class="slider-desc">
                     <div class="slider-details">
                         <div class="slide-title">
-                            <a href="#"><?php echo esc_html__('Slider Title', 'agency-ecommerce'); ?></a>
+                            <a href="#"><?php echo __('Slider Title', 'agency-ecommerce'); ?></a>
                         </div>
                     </div>
                     <div class="slider-buttons">

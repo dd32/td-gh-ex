@@ -110,12 +110,14 @@ textarea, select {
 input {
   &[type="text"]:focus, &[type="email"]:focus, &[type="url"]:focus, &[type="password"]:focus, &[type="search"]:focus {
     color: #111;
+    outline: none;
   }
 }
 
 textarea:focus {
   color: #111;
- }
+  outline: none;
+}
 
 input {
   &[type="text"], &[type="email"], &[type="url"], &[type="password"], &[type="search"] {

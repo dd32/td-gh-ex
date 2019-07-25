@@ -51,12 +51,21 @@ class Agency_Ecommerce_Miscellaneous_Hooks
         add_action('agency_ecommerce_before_content', array($this, 'agency_ecommerce_before_content'));
         add_action('agency_ecommerce_after_content', array($this, 'agency_ecommerce_after_content'));
         add_action('agency_ecommerce_credit', array($this, 'agency_ecommerce_credit'));
-        $footer_payment_image = agency_ecommerce_get_option('footer_payment_image');
-        if(!empty($footer_payment_image)) {
-            add_action('agency_ecommerce_credit', array($this, 'agency_ecommerce_payment_option'));
-        }
+        add_filter('body_class', array($this, 'body_class'));
     }
 
+    public function body_class($class)
+    {
+        if (class_exists('WooCommerce')) {
+
+            if (!in_array('woocommerce', $class)) {
+                $class[] = 'woocommerce';
+            }
+        }
+
+        return $class;
+
+    }
 
     public function agency_ecommerce_breadcrumb()
     {
@@ -83,23 +92,11 @@ class Agency_Ecommerce_Miscellaneous_Hooks
         ?>
 
         <div class="site-info">
-            <?php
-            /* translators: 1: theme name, 2: author link*/
-            printf(esc_html__('%1$s by %2$s', 'agency-ecommerce'), 'Agency Ecommerce', '<a href="https://www.mantrabrain.com/" rel="designer">mantrabrain</a>'); ?>
+            <?php printf(esc_html__('%1$s by %2$s', 'agency-ecommerce'), 'Agency Ecommerce', '<a href="https://www.mantrabrain.com/" rel="designer">mantrabrain</a>'); ?>
         </div><!-- .site-info -->
 
         <?php
 
-    }
-
-    public function agency_ecommerce_payment_option()
-    {
-        $footer_payment_image = agency_ecommerce_get_option('footer_payment_image');
-        ?>
-        <div class="payment-image">
-            <img src="<?php echo esc_attr($footer_payment_image); ?>"/>
-        </div>
-        <?php
     }
 
 

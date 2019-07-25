@@ -45,7 +45,6 @@ class Agency_Ecommerce_WooCommerce_Hooks
 
     public function hooks()
     {
-
         // Remove actions
         remove_action('woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_rating', 5);
         remove_action('woocommerce_after_single_product_summary', 'woocommerce_upsell_display', 15);
@@ -71,7 +70,6 @@ class Agency_Ecommerce_WooCommerce_Hooks
         add_action('woocommerce_sidebar', array($this, 'woocommerce_sidebar'), 10);
         add_filter('loop_shop_per_page', array($this, 'new_loop_shop_per_page'), 20);
         add_filter('woocommerce_add_to_cart_fragments', array($this, 'header_add_to_cart_fragment'));
-        add_filter('woocommerce_cross_sells_columns', array($this, 'woocommerce_cross_sells_columns'));
 
 
         $hide_list_grid_view = (boolean)agency_ecommerce_get_option('hide_list_grid_view');
@@ -79,7 +77,7 @@ class Agency_Ecommerce_WooCommerce_Hooks
 
         // Shop List View and Grid View
         if (!$hide_list_grid_view) {
-            add_action('woocommerce_before_shop_loop', array($this, 'before_shop_loop'), 35);
+            add_filter('woocommerce_before_shop_loop', array($this, 'before_shop_loop'), 35);
         }
 
         $show_product_excerpt = (boolean)agency_ecommerce_get_option('show_product_excerpt');
@@ -87,7 +85,7 @@ class Agency_Ecommerce_WooCommerce_Hooks
         // Show excerpt or not
         if (!$hide_list_grid_view || $show_product_excerpt) {
 
-            add_action('woocommerce_after_shop_loop_item', array($this, 'after_shop_loop_item'), 15);
+            add_filter('woocommerce_after_shop_loop_item', array($this, 'before_shop_loop_item'), 15);
 
         }
 
@@ -98,48 +96,8 @@ class Agency_Ecommerce_WooCommerce_Hooks
 
         }
 
-        add_action('woocommerce_proceed_to_checkout', array($this, 'woocommerce_continue_shopping'), 25);
-
-        // Category Listig Wrapper
-
-        add_action('woocommerce_before_subcategory', array($this, 'before_subcategory'), 1);
-        add_action('woocommerce_after_subcategory', array($this, 'after_subcategory'), 25);
-
-
     }
 
-    public function before_subcategory()
-    {
-
-        echo '<div class="ae-woo-block-wrap ae-woo-catalog">';
-    }
-
-    public function after_subcategory()
-    {
-
-        echo '</div>';
-    }
-
-    public function woocommerce_cross_sells_columns()
-    {
-        return 3;
-    }
-
-    public function woocommerce_continue_shopping()
-    {
-        $woo_continue_shopping_text = agency_ecommerce_get_option('woo_continue_shopping_text');
-
-        if (!empty($woo_continue_shopping_text)) {
-
-            $shop_page_url = get_permalink(wc_get_page_id('shop'));
-
-            echo '<a href="' . esc_url($shop_page_url) . '" class="button continue-shopping">';
-
-            echo esc_html($woo_continue_shopping_text);
-
-            echo '</a>';
-        }
-    }
 
     public function product_columns()
     {
@@ -172,7 +130,7 @@ class Agency_Ecommerce_WooCommerce_Hooks
 
     public function woocommerce_template_loop_product_title()
     {
-        echo '<h2 class="woocommerce-loop-product__title">' . esc_html(get_the_title()) . '</h2>';
+        echo '<h2 class="woocommerce-loop-product__title">' . get_the_title() . '</h2>';
         echo '</a>';
     }
 
@@ -220,16 +178,16 @@ class Agency_Ecommerce_WooCommerce_Hooks
     {
         echo '<div class="ae-list-grid-switcher">';
 
-        echo '<a title="' . esc_attr__('Grid View', 'agency-ecommerce') . '" href="#" data-type="grid" class="ae-grid-view selected"><i class="fa fa-th"></i></a>';
+        echo '<a title="' . esc_attr('Grid View', 'agency-ecommerce') . '" href="#" data-type="grid" class="ae-grid-view selected"><i class="fa fa-th"></i></a>';
 
-        echo '<a title="' . esc_attr__('List View', 'agency-ecommerce') . '" href="#" data-type="list" class="ae-list-view"><i class="fa fa-bars"></i></a>';
+        echo '<a title="' . esc_attr('List View', 'agency-ecommerce') . '" href="#" data-type="list" class="ae-list-view"><i class="fa fa-bars"></i></a>';
 
         echo '</div>';
 
     }
 
 
-    public function after_shop_loop_item()
+    public function before_shop_loop_item()
     {
 
         if (is_shop()) {
@@ -245,10 +203,7 @@ class Agency_Ecommerce_WooCommerce_Hooks
                 $style = '';
             }
 
-            $excerpt = wp_trim_words(agency_ecommerce_get_the_excerpt(), $woo_shop_excerpt_length);
-
-            echo '<div class="ae-product-excerpt" ' . $style . '><p>' . esc_html($excerpt) . '</p></div>';
-
+            echo '<div class="ae-product-excerpt" ' . $style . '><p>' . agency_ecommerce_get_the_excerpt($woo_shop_excerpt_length) . '</p></div>';
 
         }
 
@@ -296,14 +251,14 @@ class Agency_Ecommerce_WooCommerce_Hooks
                 <div class="ae-sticky-add-to-cart__content">
                     <?php echo wp_kses_post(woocommerce_get_product_thumbnail()); ?>
                     <div class="ae-sticky-add-to-cart__content-product-info">
-                        <span class="ae-sticky-add-to-cart__content-title"><?php esc_html_e('You&rsquo; re viewing:', 'agency-ecommerce'); ?>
+                        <span class="ae-sticky-add-to-cart__content-title"><?php esc_attr_e('You\'re viewing:', 'agency-ecommerce'); ?>
                             <strong><?php the_title(); ?></strong></span>
                         <span class="ae-sticky-add-to-cart__content-price"><?php echo wp_kses_post($product->get_price_html()); ?></span>
                         <?php echo wp_kses_post(wc_get_rating_html($product->get_average_rating())); ?>
                     </div>
                     <a href="<?php echo esc_url($product->add_to_cart_url()); ?>"
                        class="ae-sticky-add-to-cart__content-button button alt">
-                        <?php echo esc_html($product->add_to_cart_text()); ?>
+                        <?php echo esc_attr($product->add_to_cart_text()); ?>
                     </a>
                 </div>
             </div>
