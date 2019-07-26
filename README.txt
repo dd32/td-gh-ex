@@ -1,6 +1,6 @@
 === TopShop ===
 Contributors: Kaira
-Donate link: 
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=PFZGBM92T8XSE&source=url
 Tags: two-columns, three-columns, four-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, theme-options, threaded-comments, translation-ready, blog, e-commerce, entertainment
 Requires at least: 4.7
 License: GPLv2 or later
@@ -69,6 +69,13 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1100 wide and 420 high.
 
 == Changelog ==
+
+#### 1.3.21
+* Styling fixes/tweaks
+* Updated Theme URI
+* Removed old/deprecated code
+* Updated language .pot file
+Premium: Added functionlaity to import Elementor Layouts
 
 #### 1.3.20
 * Styling fixes/tweaks

@@ -4,7 +4,7 @@
  *
  * @package topshop
  */
-define( 'TOPSHOP_THEME_VERSION' , '1.3.20' );
+define( 'TOPSHOP_THEME_VERSION' , '1.3.21' );
 
 // Upgrade / Order Premium page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -154,11 +154,11 @@ function topshop_theme_scripts() {
     wp_enqueue_style( 'topshop-woocommerce-style', get_template_directory_uri().'/templates/css/topshop-woocommerce-style.css', array(), TOPSHOP_THEME_VERSION );
 	
 	if ( get_theme_mod( 'topshop-header-layout' ) == 'topshop-header-layout-three' ) :
-		wp_enqueue_style( 'topshop-header-three-style', get_template_directory_uri().'/templates/css/topshop-header-three.css', array(), TOPSHOP_THEME_VERSION );
+		wp_enqueue_style( 'topshop-header-style', get_template_directory_uri().'/templates/css/topshop-header-three.css', array(), TOPSHOP_THEME_VERSION );
 	elseif ( get_theme_mod( 'topshop-header-layout' ) == 'topshop-header-layout-centered' ) :
-		wp_enqueue_style( 'topshop-header-centered-style', get_template_directory_uri().'/templates/css/topshop-header-centered.css', array(), TOPSHOP_THEME_VERSION );
+		wp_enqueue_style( 'topshop-header-style', get_template_directory_uri().'/templates/css/topshop-header-centered.css', array(), TOPSHOP_THEME_VERSION );
 	else :
-		wp_enqueue_style( 'topshop-header-standard-style', get_template_directory_uri().'/templates/css/topshop-header-standard.css', array(), TOPSHOP_THEME_VERSION );
+		wp_enqueue_style( 'topshop-header-style', get_template_directory_uri().'/templates/css/topshop-header-standard.css', array(), TOPSHOP_THEME_VERSION );
 	endif;
 
 	wp_enqueue_script( 'topshop-navigation', get_template_directory_uri() . '/js/navigation.js', array(), TOPSHOP_THEME_VERSION, true );
@@ -209,6 +209,7 @@ add_action( 'customize_controls_enqueue_scripts', 'topshop_load_customizer_scrip
  */
 function topshop_load_admin_script() {
     wp_enqueue_style( 'topshop-admin-css', get_template_directory_uri() . '/upgrade/css/admin-css.css' );
+	wp_enqueue_script( 'topshop-admin-js', get_template_directory_uri() . '/upgrade/js/admin.js', array('jquery'), TOPSHOP_THEME_VERSION );
 }
 add_action( 'admin_enqueue_scripts', 'topshop_load_admin_script' );
 
@@ -335,25 +336,97 @@ function topshop_cat_columns_array_push_after( $src, $topshop_cat_in, $pos ) {
     return $R;
 }
 
-/*
- * Notice for Page Layouts
+/**
+ * Admin notice to enter a purchase license
  */
-function topshop_flash_notice() {
+function topshop_add_license_notice() {
 	global $current_user;
-	$user_id = $current_user->ID;
-	
-	if ( !get_user_meta($user_id, 'topshop_flash_notice_ignore') ) {
-		echo '<div class="updated notice topshop-notice-layouts"><p>'. __( 'TopShop Premium is now on a <a href="https://kairaweb.com/theme/topshop/#purchase-premium" target="_blank">Flash Sale</a> for only $15', 'topshop' ) .' <a href="?topshop-flash-notice-ignore" class="topshop-noticemiss">Dismiss</a></p></div>';
-	}
-}
-add_action('admin_notices', 'topshop_flash_notice');
+	$topshop_user_id = $current_user->ID;
 
-function topshop_flash_notice_ignore() {
-	global $current_user;
-	
-	$user_id = $current_user->ID;
-	if (isset($_GET['topshop-flash-notice-ignore'])) {
-		add_user_meta($user_id, 'topshop_flash_notice_ignore', 'true', true);
-	}
+	if ( !get_user_meta( $topshop_user_id, 'topshop_flash_notice_ignore' ) ) : ?>
+		<div class="notice notice-info topshop-admin-notice topshop-notice-add">
+			<h4>
+				<?php esc_html_e( 'Thank you for trying out TopShop!', 'topshop' ); ?> -
+				<span>
+					<?php
+					/* translators: %s: 'Recommended Resources' */
+					printf( esc_html__( 'Premium now includes Page Layouts to import & is currently on a %1$s for only $15', 'topshop' ), wp_kses( __( '<a href="https://kairaweb.com/go/purchase-topshop/" target="_blank">flash sale</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+					?>
+				</span>
+			</h4>
+			<p><?php esc_html_e( 'We\'re here to help... Please read through our help notes below on getting started with TopShop:', 'topshop' ); ?></p>
+			<div class="topshop-admin-notice-blocks">
+				<div class="topshop-admin-notice-block">
+					<h5><?php esc_html_e( 'About TopShop:', 'topshop' ); ?></h5>
+					<p>
+						<?php esc_html_e( 'TopShop is a widely used and much loved WordPress theme which gives you lots of different customization settings... so you can easily change the look of your site any time.', 'topshop' ); ?>
+					</p>
+					<p>
+						<?php
+						/* translators: %s: 'Recommended Resources' */
+						printf( esc_html__( 'Read through our %1$s and %2$s and we\'ll help you build a professional website easily.', 'topshop' ), wp_kses( __( '<a href="https://kairaweb.com/go/topshop-recommended-resources/" target="_blank">Recommended Resources</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/documentation/" target="_blank">Kaira Documentation</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+						?>
+					</p>
+					<a href="<?php echo esc_url( admin_url( 'themes.php?page=theme_info' ) ) ?>" class="topshop-admin-notice-btn">
+						<?php esc_html_e( 'Read More About TopShop', 'topshop' ); ?>
+					</a>
+				</div>
+				<div class="topshop-admin-notice-block">
+					<h5><?php esc_html_e( 'Using TopShop:', 'topshop' ); ?></h5>
+					<p>
+						<?php
+						/* translators: %s: 'set up your site in WordPress' */
+						printf( esc_html__( 'See our recommended %1$s and how to get ready before you start building your website after you\'ve %2$s.', 'topshop' ), wp_kses( __( '<a href="https://kairaweb.com/documentation/our-recommended-wordpress-basic-setup/" target="_blank">WordPress basic setup</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-hosting/" target="_blank">setup WordPress Hosting</a>', 'topshop' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+						?>
+					</p>
+					<a href="<?php echo esc_url( 'https://kairaweb.com/go/topshop-recommended-resources/' ) ?>" class="topshop-admin-notice-btn-in" target="_blank">
+						<?php esc_html_e( 'Recommended Resources', 'topshop' ); ?>
+					</a>
+					<p>
+						<?php esc_html_e( 'We\'ve neatly built most of the TopShop settings into the WordPress Customizer so you can see all your changes happen as you built your site.', 'topshop' ); ?>
+					</p>
+					<a href="<?php echo esc_url( admin_url( 'customize.php' ) ) ?>" class="topshop-admin-notice-btn-grey">
+						<?php esc_html_e( 'Start Customizing Your Website', 'topshop' ); ?>
+					</a>
+				</div>
+				<div class="topshop-admin-notice-block topshop-nomargin">
+					<h5><?php esc_html_e( 'Popular FAQ\'s:', 'topshop' ); ?></h5>
+					<p>
+					<?php esc_html_e( 'See our list of popular help links for building your website and/or any issues you may have.', 'topshop' ); ?>
+					</p>
+					<ul>
+						<li>
+							<a href="https://kairaweb.com/documentation/setting-up-the-default-slider/" target="_blank"><?php esc_html_e( 'Setup the TopShop default slider', 'topshop' ); ?></a>
+						</li>
+						<li>
+							<a href="https://kairaweb.com/documentation/adding-custom-css-to-wordpress/" target="_blank"><?php esc_html_e( 'Adding Custom CSS to WordPress', 'topshop' ); ?></a>
+						</li>
+						<li>
+							<a href="https://kairaweb.com/documentation/mobile-menu-not-working/" target="_blank"><?php esc_html_e( 'Mobile Menu is not working', 'topshop' ); ?></a>
+						</li>
+						<li>
+							<a href="https://kairaweb.com/go/what-topshop-premium-offers/" target="_blank"><?php esc_html_e( 'What does TopShop Premium offer extra', 'topshop' ); ?></a>
+						</li>
+					</ul>
+					<a href="<?php echo esc_url( 'https://kairaweb.com/documentation/' ) ?>" class="topshop-admin-notice-btn-grey" target="_blank">
+						<?php esc_html_e( 'See More Documentation', 'topshop' ); ?>
+					</a>
+				</div>
+			</div>
+			<a href="?topshop_add_license_notice_ignore=" class="topshop-notice-close"><?php esc_html_e( 'Dismiss Notice', 'topshop' ); ?></a>
+		</div><?php
+	endif;
 }
-add_action('admin_init', 'topshop_flash_notice_ignore');
+add_action( 'admin_notices', 'topshop_add_license_notice' );
+/**
+ * Admin notice save dismiss to wp transient
+ */
+function topshop_add_license_notice_ignore() {
+    global $current_user;
+	$topshop_user_id = $current_user->ID;
+
+    if ( isset( $_GET['topshop_add_license_notice_ignore'] ) ) {
+		update_user_meta( $topshop_user_id, 'topshop_flash_notice_ignore', true );
+    }
+}
+add_action( 'admin_init', 'topshop_add_license_notice_ignore' );

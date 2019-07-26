@@ -9,7 +9,7 @@
         <div class="upgrade-page-top">
             
             <div class="upgrade-order-number-info-btns-link">
-                <a href="https://kairaweb.com/theme/topshop/#purchase-premium" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
+                <a href="https://kairaweb.com/go/topshop-purchase/" class="upgrade-page-link" id="upgrade-purchase-link" target="_blank">
                     <?php printf( __( '<span>TopShop Premium </span><em>$25</em>', 'topshop' ) ); ?>
                 </a>
             </div>
@@ -18,7 +18,7 @@
                 <?php printf( __( '<strong>All settings for TopShop</strong> are neatly built into the <a href="%s">WordPress Customizer</a> so you can change and edit settings to view what happens before saving and making any of the changes live', 'topshop' ) , admin_url( 'customize.php' ) ); ?>
             </p>
             <p class="topshop-upgrade-p">
-                <?php printf( __( 'Help on how to <strong><a href="%s" target="_blank">install the premium theme</a></strong>', 'topshop' ) , 'https://kairaweb.com/support/install-the-premium-theme/' ); ?>
+                <?php printf( __( 'Help on how to <strong><a href="%s" target="_blank">install the premium theme</a></strong>', 'topshop' ) , 'https://kairaweb.com/documentation/install-the-premium-theme/' ); ?>
             </p>
 
             <h3><?php _e( 'Latest Features added to TopShop Premium', 'topshop' ); ?></h3>
@@ -35,7 +35,15 @@
             
             <div class="topshop-upgrade-page-inner-wrap">
                 
-                <h3><?php _e( 'TopShop Premium is a once off payment of $25 for lifetime updates<span>This is a <b>time limited special offer now available</b> on all our themes</span>', 'topshop' ); ?></h3>
+                <h3><?php _e( 'TopShop Premium is a once off payment of $25<span>', 'topshop' ); ?></h3>
+
+                <div class="topshop-upgrade-block topshop-upgrade-block-layouts">
+                    <div class="upgrade-page-right-box-img">
+                        <h4><?php _e( 'Page Layouts', 'topshop' ); ?></h4>
+                        <?php _e( 'TopShop Premium offers a bunch on Elementor Page layouts built into the theme<br />so you can simply import page layouts to use.', 'topshop' ); ?>
+                        <div class="upgrade-page-right-box-image"></div>
+                    </div>
+                </div>
                 
                 <div class="topshop-upgrade-block">
                     <div class="topshop-upgrade-block-left">

@@ -24,6 +24,26 @@
 	text-align: center;
 }
 
+.upgrade-page-right-box-img {
+	text-align: center;
+	color: #a5a5a5;
+	margin: 0 0 -12px;
+}
+.upgrade-page-right-box-img h4 {
+	margin: 0 0 8px;
+    padding: 0;
+	font-size: 20px;
+	color: #424242;
+}
+.upgrade-page-right-box-image {
+	background-image: url(../images/page-layouts-img.png);
+    background-repeat: no-repeat;
+    background-position: right 0;
+    background-size: 100% auto;
+	height: 132px;
+	margin: 10px 0 0;
+}
+
 a.upgrade-btn {
 	display: inline-block;
 	vertical-align: middle;
@@ -171,6 +191,9 @@ a.upgrade-page-link:hover {
 .topshop-upgrade-block {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 	padding: 20px;
+}
+.topshop-upgrade-block-layouts {
+	padding: 20px 10px 0;
 }
 .topshop-upgrade-block-alt {
 	background-color: #f3f3f3;

@@ -34,3 +34,179 @@ span.premium-link {
 .column-cat_id {
     width: 15%;
 }
+
+/* ---- Dashboard Notice ---- */
+.topshop-admin-notice {
+    position: relative;
+    padding: 20px 15px 25px;
+    border-left-color: #006CC9;
+}
+.topshop-notice-renew {
+    background-position: right 55px;
+}
+.topshop-notice-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #ababab;
+    font-size: 11px;
+    text-decoration: none;
+}
+.topshop-notice-close::after {
+    background: 0 0;
+    color: #72777c;
+    content: "\f153";
+    font: 400 16px/20px dashicons;
+    height: 20px;
+    text-align: center;
+    position: relative;
+    top: 4px;
+    margin: 0 0 0 4px;
+    width: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.topshop-notice-close:hover::after {
+    color: #c00;
+}
+.topshop-admin-notice h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #212121;
+}
+.topshop-admin-notice h4 span {
+    margin: 0 0 0 10px;
+    color: #00b83f;
+    font-size: 18px;
+}
+.topshop-admin-notice h4 b {
+    font-weight: normal;
+    color: #006CC9;
+}
+.topshop-admin-notice p {
+    font-size: 15px;
+    margin: 4px 0 0;
+    color: #72777c;
+}
+.topshop-admin-notice-blocks::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+.topshop-admin-notice-block h5 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #212121;
+}
+.topshop-admin-notice-blocks {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    margin: 20px 0 0px;
+    padding: 24px 10px 5px;
+}
+.topshop-admin-notice-block {
+    width: 29%;
+    max-width: 350px;
+    float: left;
+    margin: 0 5% 0 0;
+}
+.topshop-nomargin {
+    margin: 0 0 0 2%;
+    width: 30%;
+}
+.topshop-admin-notice-block ul {
+    margin: 0 0 20px;
+    padding: 0;
+}
+.topshop-admin-notice-block ul li {
+    margin: 0 0 12px;
+    padding: 0;
+    font-size: 15px;
+}
+.topshop-admin-notice-block img {
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    max-width: 100%;
+    height: auto;
+}
+.topshop-admin-notice-block p {
+    font-size: 14px;
+    margin: 0 0 15px;
+    padding: 0;
+    color: #444;
+}
+.topshop-admin-notice-btn,
+.topshop-admin-notice-btn-in {
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset !important;
+    background-color: #006CC9;
+    color: #FFF !important;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 20px 0 0;
+    padding: 12px 20px 13px;
+    text-decoration: none;
+}
+.topshop-admin-notice-btn-in {
+    margin: 0 0 15px;
+}
+.topshop-admin-notice-btn-grey {
+    display: inline-block;
+    border-radius: 3px;
+    color: #555;
+    border: 1px solid #ccc;
+    background: #f7f7f7;
+    box-shadow: 0 1px 0 #ccc;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 10px 0 20px;
+    padding: 12px 20px 13px;
+    text-decoration: none;
+}
+.topshop-admin-notice-btn:hover {
+	background-color: #0952A9;
+}
+.topshop-admin-notice-btn-grey:hover {
+    background-color: #f2f2f2;
+    border: 1px solid #a8a8a8;
+    color: #222;
+}
+.topshop-notice-renew .topshop-admin-notice-btn {
+    margin: 15px 0 0;
+}
+.topshop-admin-notice p.topshop-note {
+    margin: 10px 0 -5px;
+    font-size: 12px;
+}
+.topshop-admin-notice p.topshop-note b {
+    color: #006CC9;
+}
+
+@media only screen and (max-width: 1024px) {
+    .topshop-admin-notice-block {
+        width: 45%;
+    }
+    .topshop-admin-notice-block.topshop-nomargin {
+        display: none;
+    }
+    .topshop-arrow {
+        background-image: none;
+    }
+}
+@media only screen and (max-width: 870px) {
+    .topshop-admin-notice-block {
+        width: 100%;
+        margin: 0 0 30px;
+    }
+    .topshop-admin-notice-btn {
+        margin: 0 0 10px;
+    }
+    .topshop-admin-notice-btn-grey {
+        margin: 0 0 -20px;
+    }
+}
