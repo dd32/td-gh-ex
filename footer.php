@@ -53,7 +53,7 @@
 		?>
 		<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'star' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'star' ), 'WordPress' ); ?></a>
 		<span class="sep"> | </span>
-		<a href="<?php echo esc_url( __( 'https://theme.tips', 'star' ) ); ?>" rel="nofollow"><?php printf( __( 'Theme: %1$s by Carolina', 'star' ), 'Star' ); ?></a>
+		<a href="<?php echo esc_url( __( 'https://themesbycarolina.com', 'star' ) ); ?>" rel="nofollow"><?php printf( __( 'Theme: %1$s by Carolina', 'star' ), 'Star' ); ?></a>
 	</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

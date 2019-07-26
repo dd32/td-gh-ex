@@ -1,5 +1,5 @@
 === Star ===
-Contributors: Poena
+Contributors: poena
 Requires at least: 5.0
 Tested up to: 5.2
 Requires PHP: 5.6
@@ -12,12 +12,15 @@ Copyright 2011-2019 Carolina Nymark
 Important
 The header area with the Site title, Slogan, logo, header image or icon is only visible on your front page.
 The header menu and the social menu is optional. Sub menus are not shown on smaller screens.
-You can change te visiblity of your sidebars, menu site title and menu search area under the Advanced Settings panel in the customizer.
+You can change the visiblity of your sidebars, menu site title and menu search area under the Advanced Settings panel in the customizer.
 You can also hide the Call to Action in the customzier.
 The category list only shows parent categories, not child categories.
 At 1100px width, the sidebar widgets will display in 3 columns below your post content.
 
 == Change log ==
+
+Version: 1.14 2019-07-26
+Updated author URI.
 
 Version: 1.13 2019-05-09
 Updated readme.
