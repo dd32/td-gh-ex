@@ -39,7 +39,7 @@ if( !class_exists( 'avventura_lite_customize' ) ) {
 				wp_enqueue_script( 'avventura-lite-script', $file_dir . 'js/panel.js', array('jquery', 'jquery-ui-core', 'jquery-ui-tabs'),'1.0.0', TRUE ); 
 			}
 			
-			if ( !get_user_meta( get_current_user_id(), 'AvventuraLite_AdminID_Notice_' . get_current_user_id(), TRUE ) ) {
+			if ( !get_option( 'avventura-lite-dismissed-notice') ) {
 				wp_enqueue_style ( 'avventura-lite-notice',  $file_dir . 'css/notice.css', array(), '1.0.0' ); 
 			}
 
@@ -437,7 +437,6 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
                 
                     <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/'.get_stylesheet().'#postform' ); ?>" title="<?php esc_attr_e('Rate this Theme','avventura-lite');?>" target="_blank"><?php esc_html_e('Rate this Theme','avventura-lite');?></a></li>
                     <li><a class="button" href="<?php echo esc_url( 'https://www.themeinprogress.com/reserved-area/' ); ?>" title="<?php esc_attr_e('Subscribe our newsletter','avventura-lite');?>" target="_blank"><?php esc_html_e('Subscribe our newsletter','avventura-lite');?></a></li>
-                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/themes/author/alexvtn/' ); ?>" title="<?php esc_attr_e('Download our free WordPress themes','avventura-lite');?>" target="_blank"><?php esc_html_e('Download our free WordPress themes','avventura-lite');?></a></li>
                 
                 </ul>
     

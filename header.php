@@ -17,10 +17,12 @@ if ( function_exists('wp_body_open') ) {
 	wp_body_open();
 }
 
-do_action( 'avventura_lite_mobile_menu' );
-
 ?>
-        
+
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'avventura-lite' ); ?></a>
+
+<?php do_action( 'avventura_lite_mobile_menu' ); ?>
+
 <div id="overlay-body"></div>
 <div id="wrapper">
 				
