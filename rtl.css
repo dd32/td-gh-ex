@@ -1969,16 +1969,16 @@ table#wp-calendar,
 
 .wp-block-media-text,
 .wp-block-button {
-    margin-bottom: 1.5em;
+	margin-bottom: 1.5em;
 }
 
 .wp-block-button__link {
-    text-decoration: underline;
+	text-decoration: underline;
 }
 
 .wp-block-button__link:hover,
 .wp-block-button__link:focus {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .wp-block-column {
@@ -1986,12 +1986,14 @@ table#wp-calendar,
 }
 
 .wp-block-media-text .wp-block-media-text__content {
-    padding: 8%;
+	padding: 8%;
 }
 
 /* Increase text color contrast */
+.wp-block-video figcaption,
+.wp-block-latest-posts__post-date,
 .wp-block-latest-comments__comment-date {
-	color: #333; 
+	color: #333;
 }
 
 .wp-block-audio figcaption {

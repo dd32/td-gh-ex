@@ -28,6 +28,12 @@ Please note that changing the colors of the theme can affect accessibility.
 
 == Change log ==
 
+Version 4.2, 2019-07-27
+Added wp_body_open to the blank template.
+Minor improvements to the color contrast.
+Minor changes to the documentation page.
+Changed author URI.
+
 Version 4.1, 2019-05-08
 Fixed a problem with a broken link to font awesome in style.css and rtl.css
 Added support for wp_body_open.

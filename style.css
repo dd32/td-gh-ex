@@ -1,10 +1,10 @@
 /*
 Theme Name: Aaron
-Theme URI: https://aaron.theme.tips
+Theme URI: 
 Author: Carolina Nymark
-Author URI: https://theme.tips
-Description: Aaron is a responsive, accessible multi-purpose theme. Features includes Call to action and front page Highlights that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu), logo upload, six page templates and three widget areas that will hold any number of widgets. Do you want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. I recommend that you install the Jetpack plugin to make full use of supported features like Testimonials and social sharing. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Aaron also works well with WooCommerce and bbPress.
-Version: 4.1
+Author URI: https://themesbycarolina.com
+Description: Aaron is a responsive and accessible theme. Features includes a Call to action and front page Highlights that will grab your visitors attention and help you feature different parts of your website. The theme has two optional menus (including a social menu), logo upload, six page templates and three widget areas that will hold any number of widgets. Do you want to run Aaron on a company website rather than a blog? No problem, just hide the meta, the sidebars, and turn off your comments. I recommend that you install the Jetpack plugin to make full use of supported features like Testimonials and social sharing. To create a portfolio, install Jetpack and create your projects, all the templates are already shipped with the theme. Aaron also works well with WooCommerce and bbPress.
+Version: 4.2
 License: GNU General Public License v2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Copyright: Carolina Nymark 2015-2019
@@ -1991,8 +1991,10 @@ table#wp-calendar,
 }
 
 /* Increase text color contrast */
+.wp-block-video figcaption,
+.wp-block-latest-posts__post-date,
 .wp-block-latest-comments__comment-date {
-	color: #333; 
+	color: #333;
 }
 
 .wp-block-audio figcaption {
