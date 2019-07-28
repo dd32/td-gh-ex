@@ -1,4 +1,4 @@
-# Copyright (C) 2018 origami
+# Copyright (C) 2019 origami
 # This file is distributed under the same license as the origami package.
 msgid ""
 msgstr ""
@@ -124,6 +124,10 @@ msgstr ""
 msgid "Columns"
 msgstr ""
 
+#: header.php:24
+msgid "Skip to content"
+msgstr ""
+
 #: home-panels.php:3, template-notitle.php:3
 msgid "Without Page Title"
 msgstr ""
@@ -144,7 +148,7 @@ msgstr ""
 msgid "<strong>%u</strong> Comments"
 msgstr ""
 
-#: loop.php:54
+#: loop.php:54, page.php:16
 msgid "Pages:"
 msgstr ""
 
