@@ -11,15 +11,17 @@
 
 <body <?php body_class(); ?>>
 
-<?php 
+<?php
 
 if ( function_exists('wp_body_open') ) {
 	wp_body_open();
 }
 
-do_action( 'anna_lite_mobile_menu' );
-
 ?>
+
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'anna-lite' ); ?></a>
+
+<?php do_action( 'anna_lite_mobile_menu' ); ?>
 
 <div id="wrapper">
         

@@ -28,7 +28,6 @@
   // globals
   var domfocus = false,
     mousefocus = false,
-    tabindexcounter = 0,
     ascrailcounter = 2000,
     globalmaxzindex = 0;
 
@@ -1819,9 +1818,6 @@
         }
 
         if (!self.ispage && !cap.cantouch && !(/HTML|^BODY/.test(self.win[0].nodeName))) {
-          if (!self.win.attr("tabindex")) self.win.attr({
-            "tabindex": ++tabindexcounter
-          });
 
           self.bind(self.win, "focus", function (e) {  // better using native events
             domfocus = (self.getTarget(e)).id || self.getTarget(e) || false;
