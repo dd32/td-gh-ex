@@ -20,9 +20,29 @@ class alhenalite_customize {
 	public function __construct( $fields = array() ) {
 
 		$this->theme_fields = $fields;
-
+		
+		add_action ('admin_init' , array( &$this, 'admin_scripts' ) );
 		add_action ('customize_register' , array( &$this, 'customize_panel' ) );
 		add_action ('customize_controls_enqueue_scripts' , array( &$this, 'customize_scripts' ) );
+
+	}
+	
+	public function admin_scripts() {
+	
+		global $wp_version, $pagenow;
+	
+		$file_dir = get_template_directory_uri()."/core/admin/assets/";
+			
+		if ( $pagenow == 'post.php' || $pagenow == 'post-new.php' || $pagenow == 'edit.php' ) {
+			wp_enqueue_style('alhena-lite-style', $file_dir.'css/theme.css' ); 
+			wp_enqueue_script('alhena-lite-script', $file_dir.'js/theme.js',array('jquery'),'',TRUE ); 
+			wp_enqueue_script( "jquery-ui-core", array('jquery'));
+			wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
+		}
+
+		if ( !get_option( 'alhena-lite-dismissed-notice') ) {
+			wp_enqueue_style ( 'alhena-lite-notice',  $file_dir . 'css/notice.css', array(), '1.0.0' ); 
+		}
 
 	}
 
@@ -330,7 +350,6 @@ if ( class_exists( 'WP_Customize_Control' ) ) {
                 
                     <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/'.get_stylesheet().'#postform' ); ?>" title="<?php esc_attr_e('Rate this Theme','alhena-lite');?>" target="_blank"><?php esc_html_e('Rate this Theme','alhena-lite');?></a></li>
                     <li><a class="button" href="<?php echo esc_url( 'https://www.themeinprogress.com/reserved-area/' ); ?>" title="<?php esc_attr_e('Subscribe our newsletter','alhena-lite');?>" target="_blank"><?php esc_html_e('Subscribe our newsletter','alhena-lite');?></a></li>
-                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/themes/author/alexvtn/' ); ?>" title="<?php esc_attr_e('Download our free WordPress themes','alhena-lite');?>" target="_blank"><?php esc_html_e('Download our free WordPress themes','alhena-lite');?></a></li>
                 
                 </ul>
     

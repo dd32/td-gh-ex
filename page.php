@@ -9,7 +9,7 @@
 
 <!-- START CONTENT -->
 
-<div class="container main-content page">
+<div id="content" class="container main-content page">
 
 	<div class="row" >
         

@@ -1,6 +1,6 @@
 <?php if ( have_posts() ) : ?>
 
-<div class="container main-content blog">
+<div id="content" class="container main-content blog">
 
 	<div class="row" id="blog" >
     

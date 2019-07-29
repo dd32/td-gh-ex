@@ -8,6 +8,54 @@
  * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
+ 
+define( 'ALHENA_LITE_MIN_PHP_VERSION', '5.3' );
+
+/*-----------------------------------------------------------------------------------*/
+/* Switches back to the previous theme if the minimum PHP version is not met */
+/*-----------------------------------------------------------------------------------*/ 
+
+if ( ! function_exists( 'alhena_lite_check_php_version' ) ) {
+
+	function alhena_lite_check_php_version() {
+	
+		if ( version_compare( PHP_VERSION, ALHENA_LITE_MIN_PHP_VERSION, '<' ) ) {
+			add_action( 'admin_notices', 'alhena_lite_min_php_not_met_notice' );
+			switch_theme( get_option( 'theme_switched' ));
+			return false;
+	
+		};
+	}
+
+	add_action( 'after_switch_theme', 'alhena_lite_check_php_version' );
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* An error notice that can be displayed if the Minimum PHP version is not met */
+/*-----------------------------------------------------------------------------------*/ 
+
+if ( ! function_exists( 'alhena_lite_min_php_not_met_notice' ) ) {
+
+	function alhena_lite_min_php_not_met_notice() {
+		?>
+		<div class="notice notice-error is_dismissable">
+			<p>
+				<?php esc_html_e('You need to update your PHP version to run this theme.', 'alhena-lite' ); ?><br />
+				<?php
+				printf(
+					esc_html__( 'Actual version is: %1$s, required version is: %2$s.', 'alhena-lite' ),
+					PHP_VERSION,
+					ALHENA_LITE_MIN_PHP_VERSION
+				);
+				?>
+			</p>
+		</div>
+		<?php
+	
+	}
+	
+}
 
 /*-----------------------------------------------------------------------------------*/
 /* Theme settings */
@@ -617,7 +665,6 @@ if (!function_exists('alhenalite_setup')) {
 		require_once( trailingslashit( get_template_directory() ) . '/core/classes/class-notice.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/classes/class-plugin-activation.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/admin/customize/customize.php' );
-		require_once( trailingslashit( get_template_directory() ) . '/core/admin/customize/general.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/functions/masonry_script.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/functions/required_plugins.php' );
 		require_once( trailingslashit( get_template_directory() ) . '/core/functions/style.php' );
