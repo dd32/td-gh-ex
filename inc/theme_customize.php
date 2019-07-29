@@ -298,7 +298,7 @@ function theme_get_customizer_css() {
     $layout_color = get_theme_mod( 'layout_color', '' );
     if ( ! empty( $layout_color ) ) {
       ?>
-	#content, aside, .meta, article, article a, .wp-caption-text, .pagenav a, aside ul, aside a, #content table, pre, code, footer span, footer span a, h4.page-title, figcaption, .comment-body a, .comment-reply-title a, .logged-in-as a, #respond p.form-submit input, .woocommerce-Price-amount
+	#content, aside, .meta, article, article a, .wp-caption-text, .pagenav a, aside ul, aside a, #content table, pre, code, footer span, footer span a, h4.page-title, figcaption, .comment-body a, .comment-reply-title a, .logged-in-as a, #respond p.form-submit input, .woocommerce-Price-amount, time
 	{
 		color:<?php echo $layout_color; ?>!important;
 	}

@@ -1,10 +1,10 @@
 /*
 Theme Name: Northern-Web-Coders
-Theme URI: https://www.northern-web-coders.de/blog/2019/02/northern-web-coders-3-1/
-Description: Northern-Web-Coders 3.1 is a responsive HTML5/CSS3 theme. It supports custom headers and background. It uses an Roboto font and a CSS-only responsive multi-level navigation menu. Translation, Gutenberg and WooCommerce ready. Northern-Web-Coders support the theme-customization for colors and backgrounds: Initial color, layout background, layout color, storytitle & aside-title border color, Hamburger color, Hamburger checked color, menu background, menu color, submenu background, submenu color, menuborder color, submenuborder color, arrow color, second-level arrow color, mobile arrowbox background, mobile arrow color, mobile second arrowbox background, mobile second arrow color.
+Theme URI: https://www.northern-web-coders.de/blog/2019/07/northern-web-coders-3-2/
+Description: Northern-Web-Coders 3.2 is a responsive HTML5/CSS3 theme. It supports custom headers and background. It uses an Roboto font and a CSS-only responsive multi-level navigation menu. Translation, Gutenberg and WooCommerce ready. Northern-Web-Coders support the theme-customization for colors and backgrounds: Initial color, layout background, layout color, storytitle & aside-title border color, Hamburger color, Hamburger checked color, menu background, menu color, submenu background, submenu color, menuborder color, submenuborder color, arrow color, second-level arrow color, mobile arrowbox background, mobile arrow color, mobile second arrowbox background, mobile second arrow color.
 Author: Kai Ackermann
 Author URI: http://www.design-coding.de
-Version: 3.1
+Version: 3.2
 Tags: one-column, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, flexible-header, full-width-template, sticky-post, threaded-comments, translation-ready, wide-blocks 
 Text Domain: northern-web-coders
 License: GNU/GPL Version 2 or later
@@ -164,6 +164,7 @@ aside
 {
    padding: 2% 3% 0% 3%;
 }
+
 
 #content ol
 {
@@ -437,7 +438,7 @@ nav.woocommerce-pagination ul.page-numbers li a
 
 
 /*footer*/
-footer
+footer#footer
 {
    margin-left  : calc( -80vw / 2 + 100% / 2 );
    margin-right : calc( -80vw / 2 + 100% / 2 );
@@ -449,26 +450,26 @@ footer
    background: transparent
 }
 
-footer p
+footer#footer p
 {
    color: #544E55;
    font-size: 16px;
    padding: 20px;
 }
 
-footer p a
+footer#footer p a
 {
    color: #544E55;
    text-decoration: none;
    font-weight: bold;
 }
 
-footer p span#left
+footer#footer p span#left
 {
    float: left;
 }
 
-footer p span#left
+footer#footer p span#left
 {
    float: right;
 }
@@ -782,11 +783,6 @@ p.form-allowed-tags
    clear: both;
 }
 
-.commentlink span
-{
-   display: block;
-}
-
 p.form-allowed-tags code
 {
    margin: 10px 0;
@@ -838,6 +834,43 @@ span.required
 {
    display: inline;
 }
+
+
+
+
+
+
+li.wp-block-latest-comments__comment
+{
+margin: 0 0 0 0;
+}
+
+li.wp-block-latest-comments__comment img.avatar
+{
+float: left;
+margin: 0 0 -90px 0;
+}
+
+ol.wp-block-latest-comments article
+{
+   clear: both
+}
+
+ol.wp-block-latest-comments p 
+{
+   display: block;
+   clear: both
+}
+
+ol.wp-block-latest-comments footer
+{
+   margin: -10px 0 0 0;
+}
+
+
+
+
+
 
 
 /*aside*/
@@ -1270,3 +1303,4 @@ aside
    margin-right : calc( -80vw / 2 + 100% / 2 );
    width: 80vw;
 }} 
+
