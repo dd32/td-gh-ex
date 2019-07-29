@@ -1,11 +1,12 @@
 === Arouse ===
 
-Tags: grid-layout,right-sidebar,two-columns,custom-logo,custom-background,custom-menu,editor-style,featured-images,footer-widgets,full-width-template,theme-options,threaded-comments,translation-ready,news,blog,entertainment
+Contributors: Pubudu Malalasekara
 Requires at least: 4.0
-Tested up to: 4.7.3
-Stable tag: 1.1.7
-License: GPLv2 or later
-License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Tested up to: 5.2.2
+Requires PHP: 5.3
+Stable tag: 1.1.8
+License: GNU General Public License v2 or later
+License URI: https://www.gnu.org/licenses/gpl-2.0.html
 
 == Description ==
 
@@ -30,63 +31,42 @@ Arouse supports woocommerce plugin.
 
 == Changelog ==
 
-= 1.0.0 - Oct 26 2016 =
-* Initial release
+= 1.1.8 =
+* Added wp_body_open() into header.php
+* Changed readme.txt as per WPTRT requirements.
 
-= 1.0.1 - Dec 02 2016 =
-* Added right to left language support.
-* Added an editor stylesheet.
-* Added a theme-info page.
-* Added custom logo support.
-* Removed custom css panel.
-* Added some license information to the readme.txt
-* Added translations files.
+= 1.1.7 =
+* Declared RTL language support
+* Added youtube icon to the social media widget.
+* Fixed email icon issue on the social media widget.
 
-= 1.0.2 - Dec 02 2016 =
-* Added wp_reset_postdata() for slider.
-* Fixed title and description issue.
-* Fixed some RTL issues.
+= 1.1.6 =
+* Added slider page template.
 
-= 1.0.3 - Dec 04 2016 =
-* Fixed some styling issues.
-* Fixed some styling issues in rtl.css
+= 1.1.5 =
+* Added theme support for woocommerce 3.0+
 
-= 1.0.4 - Dec 06 2016 =
-* Removed arouse_sanitize_css() function from customizer.php since it has been not used.
-* Added primary color support.
-* Changed some panel and section arrangements in customizer.
-* Removed unwanted stylings from style.css
-* Edited translation files.
+= 1.1.4 =
+* Added Arouse_Featured_Content class.
+* Added arouse_hide_featured_posts function to extras.php
+* Added sticky posts support to featured content boxes.
+* Modified translation files.
 
-= 1.0.5 - Dec 20 2016 =
-* Changed Screenshot of the theme.
-* Updated image copyright information.
-* Removed by default slider appearance on homepage.
-* Removed by default featured content appearance on homepage.
-* Changed slider.
-* Changed featured content.
-* Added woocommerce support.
-* Updated translation file.
+= 1.1.3 = 
+* Fixed customizer color option issues.
 
-= 1.0.6 - Jan 1 2017 =
-* Fixed some styling issues in 404.php file.
+= 1.1.2 = 
+* removed front-page.php
+* removed template-slider.php
+* added template-featured.php
+* Updated translation files.
 
-= 1.0.7 - Jan 4 2017 =
-* Changed screenshot.
-* Updated Image licenses.
-* Fixed a small issue in extras.php 
+= 1.1.1 =
+* Changed a sanitization method category-posts-widget.php.
+* Changed sanitization methods in social-links-widget.php.
+* Fixed a issue in featured section.
 
-= 1.0.8 - Jan 5 2017 =
-* Removed entertainment theme tag from the style.css file
-* Removed theme-info.php, admin.css files and related functions.
-* Fixed escaping issue in category-posts-widget.php
-* escaped custom styles output in arouse_custom_styles() function.
-* Removed default.po and default.mo files and added arouse.pot file
-
-= 1.0.9 - Jan 5 2017 =
-* Fixed escaping issue in arouse_custom_styles function.
-
-= 1.1.0 - Mar 8 2017 =
+= 1.1.0 =
 * Fixed handle name issue on functions.php
 * Modified arouse_excerpt_length() and arouse_excerpt_more() functions.
 * Fixed a issue on comments.php
@@ -100,46 +80,68 @@ Arouse supports woocommerce plugin.
 * Removed arouse-scripts.js file.
 * Fixed an issue in slider.
 
-= 1.1.1 - Mar 12 2017 =
-* Changed a sanitization method category-posts-widget.php.
-* Changed sanitization methods in social-links-widget.php.
-* Fixed a issue in featured section.
+= 1.0.9 =
+* Fixed escaping issue in arouse_custom_styles function.
 
-= 1.1.2 - Mar 14 2017 = 
-* removed front-page.php
-* removed template-slider.php
-* added template-featured.php
-* Updated translation files.
+= 1.0.8 =
+* Removed entertainment theme tag from the style.css file
+* Removed theme-info.php, admin.css files and related functions.
+* Fixed escaping issue in category-posts-widget.php
+* escaped custom styles output in arouse_custom_styles() function.
+* Removed default.po and default.mo files and added arouse.pot file
 
-= 1.1.3 - Mar 19 2017 = 
-* Fixed customizer color option issues.
+= 1.0.7 =
+* Changed screenshot.
+* Updated Image licenses.
+* Fixed a small issue in extras.php 
 
-= 1.1.4 - Mar 22 2017 =
-* Added Arouse_Featured_Content class.
-* Added arouse_hide_featured_posts function to extras.php
-* Added sticky posts support to featured content boxes.
-* Modified translation files.
+= 1.0.6 =
+* Fixed some styling issues in 404.php file.
 
-= 1.1.5 - Apr 18 2017 =
-* Added theme support for woocommerce 3.0+
+= 1.0.5 =
+* Changed Screenshot of the theme.
+* Updated image copyright information.
+* Removed by default slider appearance on homepage.
+* Removed by default featured content appearance on homepage.
+* Changed slider.
+* Changed featured content.
+* Added woocommerce support.
+* Updated translation file.
 
-= 1.1.6 - May 30 2017 =
-* Added slider page template.
+= 1.0.4 =
+* Removed arouse_sanitize_css() function from customizer.php since it has been not used.
+* Added primary color support.
+* Changed some panel and section arrangements in customizer.
+* Removed unwanted stylings from style.css
+* Edited translation files.
 
-= 1.1.7 - July 11 2017 =
-* Declared RTL language support
-* Added youtube icon to the social media widget.
-* Fixed email icon issue on the social media widget.
+= 1.0.3 =
+* Fixed some styling issues.
+* Fixed some styling issues in rtl.css
+
+= 1.0.2 =
+* Added wp_reset_postdata() for slider.
+* Fixed title and description issue.
+* Fixed some RTL issues.
+
+= 1.0.1 =
+* Added right to left language support.
+* Added an editor stylesheet.
+* Added a theme-info page.
+* Added custom logo support.
+* Removed custom css panel.
+* Added some license information to the readme.txt
+* Added translations files.
+
+= 1.0.0 =
+* Initial release
+
+
 
 == Credits ==
 
 * Based on Underscores http://underscores.me/, (C) 2012-2016 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 * normalize.css http://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](http://opensource.org/licenses/MIT)
-
-
-== COPYRIGHT AND LICENSE == 
-
-External resources linked to the theme. 
 * Open Sans Font by Steve Matteson http://www.google.com/fonts/specimen/Open+Sans
   Licensed under Apache License, version 2.0, http://www.apache.org/licenses/LICENSE-2.0.html
   
