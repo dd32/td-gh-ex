@@ -208,7 +208,7 @@ if ( ! function_exists( 'architectonic_site_navigation' ) ) :
 
         		$defaults = array(
         			'theme_location' => 'primary',
-        			'container' => false,
+        			'container' => 'div',
         			'menu_class' => 'menu nav-menu',
         			'menu_id' => 'primary-menu',
         			'echo' => true,
