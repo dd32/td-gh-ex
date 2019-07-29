@@ -104,6 +104,9 @@ if (!class_exists('Agency_Ecommerce_Features_Widget')) :
 
             <div class="features-list">
 
+                <?php agency_ecommerce_widget_before($args); ?>
+
+
                 <div class="features-wrapper">
                     <?php
 
@@ -115,6 +118,7 @@ if (!class_exists('Agency_Ecommerce_Features_Widget')) :
                     ?>
 
                 </div>
+                <?php agency_ecommerce_widget_after($args); ?>
 
             </div><!-- .features-list -->
 

@@ -4,8 +4,8 @@ Contributors: mantrabrain
 Requires at least:  WordPress 4.5
 Tested up to:       WordPress 5.2.2
 Requires PHP:       5.4
-Version:            2.0.2
-Stable tag:         2.0.2
+Version:            2.0.3
+Stable tag:         2.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -81,6 +81,12 @@ Elegant Themes (https://github.com/pprince/etlinefont-bower), [GPLv2 or later](h
 
 == Changelog ==
 
+
+= 2.0.3 | 2019/07/29 =
+
+* Minor design issue fixed
+* Widget full/width issue fixed
+* Cart/Checkout template added
 
 = 2.0.2 | 2019/07/25 =
 

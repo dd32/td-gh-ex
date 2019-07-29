@@ -110,6 +110,8 @@ if (!class_exists('Agency_Ecommerce_Woo_Categories_Widget')) :
 
             <div class="ae-woo-product-wrapper ae-advance-categories-wrapper">
 
+                <?php agency_ecommerce_widget_before($args); ?>
+
                 <?php
 
                 if ($title) {
@@ -236,6 +238,8 @@ if (!class_exists('Agency_Ecommerce_Woo_Categories_Widget')) :
                     </div>
 
                 </div>
+
+                <?php agency_ecommerce_widget_after($args); ?>
 
             </div><!-- .advance-posts-widget -->
 

@@ -71,16 +71,18 @@ if (!function_exists('agency_ecommerce_get_default_theme_options')) :
         $defaults['show_wishlist'] = false;
         $defaults['wishlist_icon'] = 'fa-heart';
         $defaults['show_top_search'] = true;
-        $defaults['search_products_text'] = esc_html__('Search Products ...', 'agency-ecommerce');
+        $defaults['search_products_text'] = esc_html__('Search Products', 'agency-ecommerce');
         $defaults['select_category_text'] = esc_html__('Select Category', 'agency-ecommerce');
 
         // Mid Header
+
         $defaults['show_mid_header'] = true;
         $defaults['show_mid_header_cart'] = true;
         $defaults['mid_header_cart_icon'] = 'fa-shopping-cart';
         $defaults['show_mid_header_wishlist'] = true;
         $defaults['mid_header_wishlist_icon'] = 'fa-heart';
         $defaults['mid_header_site_identity'] = 'title-text';
+        $defaults['show_mid_search'] = true;
 
         // Bottom Header
         $defaults['show_bottom_header'] = true;
@@ -111,31 +113,33 @@ if (!function_exists('agency_ecommerce_get_default_theme_options')) :
         $defaults['sticky_add_to_cart'] = true;
         $defaults['sticky_add_to_cart_position'] = 'top';
 
+        // Checkout options
+        $defaults['woo_checkout_template'] = 'ae-checkout-tmpl-1';
+        $defaults['woo_checkout_sidebar'] = 'no-sidebar';
+
+
+        // Cart options
+        $defaults['woo_cart_template'] = 'ae-cart-tmpl-1';
+        $defaults['woo_cart_sidebar'] = 'no-sidebar';
+        $defaults['woo_continue_shopping_text'] = esc_html__('Continue Shopping', 'agency-ecommerce');
+
         // Footer.
         $defaults['copyright_text'] = esc_html__('Copyright &copy; All rights reserved.', 'agency-ecommerce');
 
         // Breadcrumb.
-        $defaults['breadcrumb_type'] = 'simple';
+        $defaults['breadcrumb_type'] = 'advanced';
+        $defaults['show_page_title_on_breadcrumb'] = true;
         $defaults['breadcrumb_text'] = esc_html__('Home', 'agency-ecommerce');
+        $defaults['breadcrumb_background_image'] = '';
+        $defaults['override_background_by_featured_image'] = true;
+        $defaults['make_parallax_background_breadcrumb'] = true;
 
-        // Slider.
-        $defaults['slider_status'] = false;
-        $defaults['enable_fullwidth_slider'] = true;
-        $defaults['button_text_1'] = esc_html__('Shop Now', 'agency-ecommerce');
-        $defaults['button_text_2'] = esc_html__('Shop Now', 'agency-ecommerce');
-        $defaults['button_text_3'] = esc_html__('Shop Now', 'agency-ecommerce');
-        $defaults['button_text_4'] = esc_html__('Shop Now', 'agency-ecommerce');
-        $defaults['button_text_5'] = esc_html__('Shop Now', 'agency-ecommerce');
-        $defaults['caption_position_1'] = 'left';
-        $defaults['caption_position_2'] = 'left';
-        $defaults['caption_position_3'] = 'left';
-        $defaults['caption_position_4'] = 'left';
-        $defaults['caption_position_5'] = 'left';
-        $defaults['slider_autoplay_status'] = true;
-        $defaults['slider_adaptive_height'] = false;
-        $defaults['slider_pager_status'] = true;
-        $defaults['slider_transition_effect'] = 'fade';
-        $defaults['slider_transition_delay'] = 3;
+
+        // 404
+
+        $defaults['404_page_title'] = esc_html__('Oops! That page can&rsquo;t be found.', 'agency-ecommerce');
+
+        $defaults['404_page_content'] = esc_html__('It looks like nothing was found at this location. Maybe try a search?', 'agency-ecommerce');
 
 
         $font_awesome_icons = array_keys(agency_ecommerce_font_awesome_icon_list());

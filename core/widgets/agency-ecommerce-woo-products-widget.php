@@ -86,6 +86,7 @@ if (!class_exists('Agency_Ecommerce_Woo_Products_Widget')) :
 
         function widget($args, $instance)
         {
+
             $valid_widget_instance = Agency_Ecommerce_Widget_Validation::instance()->validate($instance, $this->widget_fields());
 
             $title = apply_filters('widget_title', empty($valid_widget_instance['title']) ? '' : $valid_widget_instance['title'], $valid_widget_instance, $this->id_base);
@@ -99,12 +100,14 @@ if (!class_exists('Agency_Ecommerce_Woo_Products_Widget')) :
             $args['before_widget'] = str_replace('class="', 'style="background:' . $background_color . ' " class="', $args['before_widget']);
 
             echo $args['before_widget'];
+
             ?>
 
             <div class="ae-woo-product-wrapper">
 
                 <?php
 
+                agency_ecommerce_widget_before($args);
 
                 if ($title) {
 
@@ -239,7 +242,10 @@ if (!class_exists('Agency_Ecommerce_Woo_Products_Widget')) :
 
                     </div>
 
-                <?php endif; ?>
+                <?php endif;
+                agency_ecommerce_widget_after($args);
+
+                ?>
 
             </div><!-- .advance-posts-widget -->
 

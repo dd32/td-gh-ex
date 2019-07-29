@@ -28,7 +28,7 @@
   }
 }
 
-.woocommerce, .woocommerce-page, .elementor-page {
+.woocommerce, .woocommerce-page, .elementor-page, .woocommerce .woocommerce {
   .woocommerce-breadcrumb {
     display: none;
   }
@@ -36,7 +36,7 @@
   .products,
   .widget.agency_ecommerce_woo_products_widget .ae-list-main,
   .widget.agency_ecommerce_widget_woo_categories .ae-list-main {
-    margin-top: 20px;
+    padding-top: 20px;
     display: block;
     margin-left: 0;
     margin-right: 0;
@@ -57,21 +57,10 @@
         img {
           width: 100%;
         }
-        &:before {
-          background: rgba(0, 0, 0, 0.4);
-          content: "";
-          position: absolute;
-          top: 0;
-          left: 0;
-          height: 100%;
-          width: 100%;
-          opacity: 0;
-        }
       }
       .product-info-wrap {
         background: #fbfbfb;
         padding: 15px 10px;
-        position: relative;
         text-align: center;
       }
       .view-detail-wishlist-wrap {
@@ -112,6 +101,8 @@
 
       .view-detail-wishlist-wrap {
         .add-to-wishlist-wrap {
+
+          display: none;
           height: 30px;
           width: 30px;
           text-align: center;
@@ -119,11 +110,10 @@
           line-height: 30px;
           padding: 0;
           position: absolute;
-          top: 1px;
-          right: 1px;
-          border: 1px solid #ddd;
-          border-radius: 0;
-          display: inline-block;
+          top: 15px;
+          right: 13px;
+          background: #fff;
+          border: none;
           i.fa {
             margin: 0;
             padding: 0;
@@ -142,7 +132,8 @@
         }
       }
 
-      .yith-wcqv-button {
+      .button.yith-wcqv-button, .yith-wcqv-button {
+        display: none;
         height: 30px;
         width: 30px;
         font-size: 0;
@@ -150,13 +141,15 @@
         border: 0;
         overflow: hidden;
         position: absolute;
-        top: 33px;
-        right: 1px;
+        top: 50px;
+        right: 13px;
         border-radius: 0;
-        color: $primary_color;
-        border: 1px solid #ddd;
+        color: #0188cc;
+        border: none;
         background: none;
         font-weight: normal;
+        line-height: 1;
+        background: #ffff;
         &:after {
           content: "\f06e";
           display: block;
@@ -170,6 +163,7 @@
         &:hover {
           background: $primary_color;
           color: $white_color;
+          border-color: #ddd;
         }
       }
 
@@ -187,6 +181,26 @@
           transition: 0.4s ease-in-out;
         }
       }
+      &:before {
+
+      }
+      .ae-product-link {
+        height: 100%;
+        width: 100%;
+        background: rgba(0, 0, 0, 0.4);
+        position: absolute;
+        display: none;
+        font-size: 0;
+      }
+      &:hover {
+        .button.yith-wcqv-button, .yith-wcqv-button, .view-detail-wishlist-wrap .add-to-wishlist-wrap {
+          display: block;
+        }
+        .ae-product-link {
+          display: block;
+        }
+      }
+
     }
   }
   .related.products > h2 {
@@ -226,12 +240,36 @@
       padding: 0.5em;
     }
   }
-  span.onsale {
-    padding: 0;
-    font-size: 12px;
-    font-weight: normal;
+  ul.products li.product .onsale, span.onsale {
+    padding: 0 8px;
+    //font-size: 12px;
+    // font-weight: normal;
     background: $primary_color;
-    box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.5);
+    //box-shadow: 2px 2px 2px 0px rgba(0, 0, 0, 0.5);
+    font-weight: normal;
+    font-size: 10px;
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    display: block;
+    position: absolute;
+    border-radius: 0;
+    margin: 0;
+    top: -9px;
+    right: unset;
+    left: 0;
+    &:after {
+      width: 0;
+      height: 0;
+      content: '';
+      top: 0;
+      position: absolute;
+      border-left: 10px solid #565955;
+      border-top: 10px solid transparent;
+      border-right: unset;
+      right: -10px;
+      left: unset;
+    }
   }
   table.shop_table th {
 
@@ -275,7 +313,7 @@
     color: $white_color;
   }
   #content table.cart td.actions .input-text, table.cart td.actions .input-text {
-    width: 110px;
+    width: 150px;
   }
 
   .woocommerce-message, .woocommerce-info {
@@ -333,6 +371,7 @@
     &:focus {
       outline: none;
     }
+
   }
   nav.woocommerce-pagination {
     float: left;
@@ -346,7 +385,7 @@
           color: $white_color;
           line-height: 1;
           border: 1px solid $primary_color;
-          margin-right: 6px;
+          margin-right: 3px;
         }
         a {
           &:focus, &:hover {
@@ -462,4 +501,27 @@
     background: $secondary_color;
     color: #fff;
   }
+}
+
+.return-to-shop {
+  a.wc-backward {
+    color: #fff;
+  }
+}
+
+.woocommerce .woocommerce-message {
+  a.wc-forward {
+    color: #fff;
+  }
+}
+
+.woocommerce form.checkout_coupon button[name="apply_coupon"].button {
+  color: #fff;
+  &:hover {
+    background: $alternative_color;
+  }
+}
+
+.ae-cart-wrapper:hover .ae-cart-content p.woocommerce-mini-cart__buttons.buttons a:hover {
+  color: #fff;
 }

@@ -207,40 +207,6 @@ $wp_customize->add_control('agency_ecommerce_theme_options[login_text]',
 
 if (class_exists('WooCommerce')) {
 
-    // Setting show_cart.
-    $wp_customize->add_setting('agency_ecommerce_theme_options[show_cart]',
-        array(
-            'default' => $default['show_cart'],
-            'sanitize_callback' => 'agency_ecommerce_sanitize_checkbox',
-        )
-    );
-    $wp_customize->add_control('agency_ecommerce_theme_options[show_cart]',
-        array(
-            'label' => esc_html__('Show Cart Icon', 'agency-ecommerce'),
-            'section' => 'section_header',
-            'type' => 'checkbox',
-            'priority' => 100,
-            'active_callback' => 'agency_ecommerce_is_top_header_active',
-        )
-    );
-
-    // Setting cart text.
-    $wp_customize->add_setting('agency_ecommerce_theme_options[cart_icon]',
-        array(
-            'default' => $default['cart_icon'],
-            'sanitize_callback' => 'sanitize_text_field',
-        )
-    );
-    $wp_customize->add_control('agency_ecommerce_theme_options[cart_icon]',
-        array(
-            'label' => esc_html__('Cart Icon', 'agency-ecommerce'),
-            'description' => esc_html__('Fontawesome icons are only supported.', 'agency-ecommerce'),
-            'section' => 'section_header',
-            'type' => 'text',
-            'priority' => 100,
-            'active_callback' => 'agency_ecommerce_is_top_cart_active',
-        )
-    );
 
     // Setting show_wishlist.
     $wp_customize->add_setting('agency_ecommerce_theme_options[show_wishlist]',
@@ -254,7 +220,7 @@ if (class_exists('WooCommerce')) {
             'label' => esc_html__('Show Wishlist Icon (Works if YITH Wishlist plugin is activated)', 'agency-ecommerce'),
             'section' => 'section_header',
             'type' => 'checkbox',
-            'priority' => 100,
+            'priority' => 120,
             'active_callback' => 'agency_ecommerce_is_top_header_active',
         )
     );
@@ -272,8 +238,59 @@ if (class_exists('WooCommerce')) {
             'description' => esc_html__('Fontawesome icons are only supported.', 'agency-ecommerce'),
             'section' => 'section_header',
             'type' => 'text',
-            'priority' => 100,
+            'priority' => 130,
             'active_callback' => 'agency_ecommerce_is_top_wishlist_active',
+        )
+    );
+    // Setting show_cart.
+    $wp_customize->add_setting('agency_ecommerce_theme_options[show_cart]',
+        array(
+            'default' => $default['show_cart'],
+            'sanitize_callback' => 'agency_ecommerce_sanitize_checkbox',
+        )
+    );
+    $wp_customize->add_control('agency_ecommerce_theme_options[show_cart]',
+        array(
+            'label' => esc_html__('Show Cart Icon', 'agency-ecommerce'),
+            'section' => 'section_header',
+            'type' => 'checkbox',
+            'priority' => 140,
+            'active_callback' => 'agency_ecommerce_is_top_header_active',
+        )
+    );
+
+    // Setting cart text.
+    $wp_customize->add_setting('agency_ecommerce_theme_options[cart_icon]',
+        array(
+            'default' => $default['cart_icon'],
+            'sanitize_callback' => 'sanitize_text_field',
+        )
+    );
+    $wp_customize->add_control('agency_ecommerce_theme_options[cart_icon]',
+        array(
+            'label' => esc_html__('Cart Icon', 'agency-ecommerce'),
+            'description' => esc_html__('Fontawesome icons are only supported.', 'agency-ecommerce'),
+            'section' => 'section_header',
+            'type' => 'text',
+            'priority' => 150,
+            'active_callback' => 'agency_ecommerce_is_top_cart_active',
+        )
+    );
+
+    // Setting show_top_search.
+    $wp_customize->add_setting('agency_ecommerce_theme_options[show_top_search]',
+        array(
+            'default' => $default['show_top_search'],
+            'sanitize_callback' => 'agency_ecommerce_sanitize_checkbox',
+        )
+    );
+    $wp_customize->add_control('agency_ecommerce_theme_options[show_top_search]',
+        array(
+            'label' => esc_html__('Show Product Search', 'agency-ecommerce'),
+            'description' => esc_html__('You can change search text from Customizing ▸ Theme Options ▸Search Text Options', 'agency-ecommerce'),
+            'section' => 'section_header',
+            'type' => 'checkbox',
+            'priority' => 160,
         )
     );
 

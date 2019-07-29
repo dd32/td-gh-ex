@@ -86,6 +86,8 @@ if (!class_exists('Agency_Ecommerce_Advance_Posts_Widget')) :
 
             <div class="<?php echo esc_attr($class); ?>">
                 <?php
+                agency_ecommerce_widget_before($args);
+
                 if ($title) {
 
                     echo $args['before_title'] . esc_html($title) . $args['after_title'];
@@ -139,7 +141,7 @@ if (!class_exists('Agency_Ecommerce_Advance_Posts_Widget')) :
                                                     <?php the_post_thumbnail('agency-ecommerce-common'); ?>
                                                 <?php else:
                                                     $placeholder = get_template_directory_uri() . '/assets/images/placeholder/agency-ecommerce-300-300.png';
-                                                    echo '<img src="'.$placeholder.'"/>';
+                                                    echo '<img src="' . $placeholder . '"/>';
 
                                                 endif; ?>
                                             </a>
@@ -181,7 +183,7 @@ if (!class_exists('Agency_Ecommerce_Advance_Posts_Widget')) :
                     <?php endif; ?>
 
                 </div>
-
+                <?php agency_ecommerce_widget_after($args); ?>
             </div><!-- .advance-posts-widget -->
 
             <?php

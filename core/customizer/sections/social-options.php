@@ -3,7 +3,7 @@
 $wp_customize->add_section('section_social',
     array(
         'title' => esc_html__('Social Options', 'agency-ecommerce'),
-        'priority' => 100,
+        'priority' => 110,
         'panel' => 'agency_ecommerce_theme_option_panel',
     )
 );

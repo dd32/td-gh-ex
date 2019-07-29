@@ -196,12 +196,12 @@ p, li {
 }
 
 .site-title {
-  color: #11101d;
+  color: $alternative_color;
   font-size: 28px;
   margin-bottom: 0;
   font-family: 'Open Sans', sans-serif;
   > a {
-    color: #11101d;
+    color: $alternative_color;
     line-height: 1.3;
   }
 }
@@ -534,7 +534,6 @@ p, li {
   font-size: 15px;
   float: left;
   padding: 15px 20px;
-  border-right: 1px solid #22202e;
   a {
     color: $white_color;
   }
@@ -1326,7 +1325,6 @@ p, li {
  --------------------------------------------------------------*/
 
 .agency_ecommerce_widget_newsletter {
-  float: left;
   width: 100%;
   .newsletter-content-holder {
     float: left;
@@ -1502,13 +1500,19 @@ p, li {
 /*--------------------------------------------------------------
  ## Sidebar Style
  --------------------------------------------------------------*/
-
 .sidebar {
   width: 30%;
   padding-left: 15px;
   padding-right: 0;
   .widget-title {
     padding-bottom: 15px;
+  }
+}
+
+body.global-layout-left-sidebar {
+  .sidebar {
+    padding-right: 15px;
+    padding-left: 0;
   }
 }
 
@@ -2210,8 +2214,6 @@ div.wpcf7 {
   bottom: -3px;
 }*/
 
-
-
 .search-results #primary article .entry-title {
   margin-bottom: 5px;
 }
@@ -2233,7 +2235,7 @@ div.wpcf7 {
     line-height: 1;
   }
   .page .entry-content ul li i {
-    margin-right: 10px;
+    //margin-right: 10px;
   }
 }
 
@@ -2254,7 +2256,6 @@ div.wpcf7 {
 /*--------------------------------------------------------------
  # Post navigation  Styles
  --------------------------------------------------------------*/
-
 
 #primary .entry-footer .byline::before {
   content: "\f2c0";
@@ -2330,7 +2331,7 @@ blockquote {
   .nav-next {
     float: right;
     a {
-     }
+    }
   }
 }
 
@@ -2500,7 +2501,7 @@ blockquote {
   padding: .5em;
   line-height: 1;
   border: 1px solid $primary_color;
-  margin-right: 6px;
+  margin-right: 3px;
   float: left;
   &.current {
     background: transparent;

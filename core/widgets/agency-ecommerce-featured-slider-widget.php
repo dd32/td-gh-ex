@@ -151,6 +151,8 @@ if (!class_exists('Agency_Ecommerce_Featured_Slider_Widget')) :
             echo $args['before_widget'];
             ?>
             <div class="<?php echo esc_attr($feature_slider_wrap_class); ?>">
+                <?php agency_ecommerce_widget_before($args); ?>
+
                 <div class="main-slider-wrap">
                     <div class="main-slider" data-disable="<?php echo $disable_slider_mode ? true : false ?>">
 
@@ -197,6 +199,7 @@ if (!class_exists('Agency_Ecommerce_Featured_Slider_Widget')) :
                         </div>
                     </div>
                 <?php } ?>
+                <?php agency_ecommerce_widget_after($args); ?>
 
             </div>
 

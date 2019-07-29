@@ -106,6 +106,8 @@ if (!class_exists('Agency_Ecommerce_Contact_Widget')) :
 
             <div class="contact-list">
 
+                <?php agency_ecommerce_widget_before($args); ?>
+
                 <?php
 
                 if ($title) {
@@ -204,6 +206,9 @@ if (!class_exists('Agency_Ecommerce_Contact_Widget')) :
                     <?php } ?>
 
                 </div>
+
+                <?php agency_ecommerce_widget_after($args); ?>
+
 
             </div><!-- .features-list -->
 

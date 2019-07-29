@@ -18,25 +18,40 @@ function agency_ecommerce_body_classes($classes)
         $classes[] = 'hfeed';
     }
 
-    if (class_exists('WooCommerce') && is_woocommerce()) {
+    $current_layout = agency_ecommerce_get_current_layout();
 
-        // Add class for global layout on woocommerce pages.
-        $shop_layout = agency_ecommerce_get_option('shop_layout');
-        $shop_layout = apply_filters('agency_ecommerce_filter_theme_global_layout', $shop_layout);
-        $classes[] = 'global-layout-' . esc_attr($shop_layout);
+    $classes[] = 'global-layout-' . esc_attr($current_layout);
 
-    } else {
 
-        // Add class for global layout.
-        $global_layout = agency_ecommerce_get_option('global_layout');
-        $global_layout = apply_filters('agency_ecommerce_filter_theme_global_layout', $global_layout);
-        $classes[] = 'global-layout-' . esc_attr($global_layout);
+    if (class_exists('WooCommerce')) {
 
-    }
+        if (!in_array('woocommerce', $classes) || is_page_template('templates/home-template.php')) {
 
-    //Add woocommerce class if woocommerce is active
-    if (class_exists('WooCommerce') && is_page_template('templates/home-template.php')) {
-        $classes[] = 'woocommerce';
+            $classes[] = 'woocommerce';
+        }
+
+        if (is_checkout()) {
+
+            $woo_checkout_template = agency_ecommerce_get_option('woo_checkout_template');
+
+            if (!empty($woo_checkout_template)) {
+
+                $classes[] = esc_attr($woo_checkout_template);
+
+            }
+        }
+
+        if (is_cart()) {
+
+            $woo_cart_template = agency_ecommerce_get_option('woo_cart_template');
+
+            if (!empty($woo_cart_template)) {
+
+                $classes[] = esc_attr($woo_cart_template);
+
+            }
+        }
+
     }
 
     //Add column class in body for woocommerce
@@ -50,6 +65,15 @@ function agency_ecommerce_body_classes($classes)
 
         $classes[] = 'columns-3';
 
+    }
+
+    $breadcrumb_type = agency_ecommerce_get_option('breadcrumb_type');
+
+    $show_page_title_on_breadcrumb = (boolean)agency_ecommerce_get_option('show_page_title_on_breadcrumb');
+
+    if ($show_page_title_on_breadcrumb && $breadcrumb_type == 'advanced') {
+
+        $classes[] = 'ae-hide-page-title';
     }
 
     // Add class for sticky sidebar.
@@ -221,11 +245,10 @@ if (!function_exists('agency_ecommerce_add_sidebar')) :
     function agency_ecommerce_add_sidebar()
     {
 
-        $global_layout = agency_ecommerce_get_option('global_layout');
-        $global_layout = apply_filters('agency_ecommerce_filter_theme_global_layout', $global_layout);
+        $current_layout = agency_ecommerce_get_current_layout();
 
         // Include sidebar.
-        if ('no-sidebar' !== $global_layout) {
+        if ('no-sidebar' !== $current_layout) {
             get_sidebar();
         }
 
@@ -329,4 +352,87 @@ if (!function_exists('agency_ecommerce_sass_lighten')) :
         return $color;
     }
 
+endif;
+
+
+if (!function_exists('agency_ecommerce_is_advance_breadcrumb')) :
+
+    function agency_ecommerce_is_advance_breadcrumb()
+    {
+        $show_page_title_on_breadcrumb = (boolean)agency_ecommerce_get_option('show_page_title_on_breadcrumb');
+
+        $breadcrumb_type = agency_ecommerce_get_option('breadcrumb_type');
+
+        if ($show_page_title_on_breadcrumb && $breadcrumb_type == 'advanced') {
+
+
+            return true;
+        }
+
+        return false;
+    }
+
+endif;
+
+
+if (!function_exists('agency_ecommerce_404_page_title')) :
+
+    function agency_ecommerce_404_page_title()
+    {
+        return agency_ecommerce_get_option('404_page_title');
+    }
+
+endif;
+
+if (!function_exists('agency_ecommerce_404_page_content')) :
+
+    function agency_ecommerce_404_page_content()
+    {
+        return agency_ecommerce_get_option('404_page_content');
+    }
+
+endif;
+
+if (!function_exists('agency_ecommerce_get_current_layout')) :
+
+    /**
+     * Add sidebar.
+     *
+     * @since 1.0.0
+     */
+    function agency_ecommerce_get_current_layout()
+    {
+
+        $current_layout = agency_ecommerce_get_option('global_layout');
+
+        $current_layout = apply_filters('agency_ecommerce_filter_theme_global_layout', $current_layout);
+
+        if (class_exists('WooCommerce')) {
+
+            $woo_cart_sidebar = agency_ecommerce_get_option('woo_cart_sidebar');
+
+            if (function_exists('is_cart') && is_cart()) {
+
+                $current_layout = $woo_cart_sidebar;
+            }
+
+            $woo_checkout_sidebar = agency_ecommerce_get_option('woo_checkout_sidebar');
+
+            if (function_exists('is_checkout') && is_checkout()) {
+
+                $current_layout = $woo_checkout_sidebar;
+            }
+
+            $shop_layout = agency_ecommerce_get_option('shop_layout');
+
+            if (function_exists('is_shop') && is_shop()) {
+
+                $current_layout = $shop_layout;
+            }
+        }
+
+        return apply_filters('agency_ecommerce_filter_current_layout', $current_layout);
+
+
+    }
 endif;

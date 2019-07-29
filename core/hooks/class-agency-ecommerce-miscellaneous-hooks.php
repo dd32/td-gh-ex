@@ -51,20 +51,6 @@ class Agency_Ecommerce_Miscellaneous_Hooks
         add_action('agency_ecommerce_before_content', array($this, 'agency_ecommerce_before_content'));
         add_action('agency_ecommerce_after_content', array($this, 'agency_ecommerce_after_content'));
         add_action('agency_ecommerce_credit', array($this, 'agency_ecommerce_credit'));
-        add_filter('body_class', array($this, 'body_class'));
-    }
-
-    public function body_class($class)
-    {
-        if (class_exists('WooCommerce')) {
-
-            if (!in_array('woocommerce', $class)) {
-                $class[] = 'woocommerce';
-            }
-        }
-
-        return $class;
-
     }
 
     public function agency_ecommerce_breadcrumb()

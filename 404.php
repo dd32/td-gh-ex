@@ -9,24 +9,28 @@
 
 get_header(); ?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
 
-			<section class="error-404 not-found">
-				<header class="page-header">
-					<h1 class="page-title"><?php esc_html_e( 'Oops! That page can&rsquo;t be found.', 'agency-ecommerce' ); ?></h1>
-				</header><!-- .page-header -->
+            <section class="error-404 not-found">
+                <?php if (!agency_ecommerce_is_advance_breadcrumb()) { ?>
 
-				<div class="page-content">
-					<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try a search?', 'agency-ecommerce' ); ?></p>
+                    <header class="page-header">
+                        <h1 class="page-title"><?php echo esc_html(agency_ecommerce_404_page_title()); ?></h1>
+                    </header><!-- .page-header -->
 
-					<?php get_search_form(); ?>
+                <?php } ?>
 
-				</div><!-- .page-content -->
-			</section><!-- .error-404 -->
+                <div class="page-content">
+                    <p><?php echo esc_html(agency_ecommerce_404_page_content()) ?></p>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+                    <?php get_search_form(); ?>
+
+                </div><!-- .page-content -->
+            </section><!-- .error-404 -->
+
+        </main><!-- #main -->
+    </div><!-- #primary -->
 
 <?php
 get_footer();

@@ -9,32 +9,36 @@
 get_header();
 ?>
 
-<div id="primary" class="content-area">
-    <main id="main" class="site-main" role="main">
-        <header>
-            <?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
-        </header>
-        <?php if (have_posts()) : ?>
+    <div id="primary" class="content-area">
+        <main id="main" class="site-main" role="main">
+            <?php if (!agency_ecommerce_is_advance_breadcrumb()) { ?>
 
-            <?php
-            /* Start the Loop */
-            while (have_posts()) : the_post();
+                <header>
+                    <?php the_archive_title('<h1 class="page-title">', '</h1>'); ?>
+                </header>
+                <?php
+            }
+            if (have_posts()) : ?>
 
-                get_template_part('template-parts/content');
+                <?php
+                /* Start the Loop */
+                while (have_posts()) : the_post();
 
-            endwhile;
+                    get_template_part('template-parts/content');
 
-            the_posts_pagination();
+                endwhile;
 
-        else :
+                the_posts_pagination();
 
-            get_template_part('template-parts/content', 'none');
+            else :
 
-        endif;
-        ?>
+                get_template_part('template-parts/content', 'none');
 
-    </main><!-- #main -->
-</div><!-- #primary -->
+            endif;
+            ?>
+
+        </main><!-- #main -->
+    </div><!-- #primary -->
 
 <?php
 do_action('agency_ecommerce_action_sidebar');

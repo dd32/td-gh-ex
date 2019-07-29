@@ -111,7 +111,10 @@ class Agency_Ecommerce_Mid_Header_Hooks
 
         <div class="ae-search-holder">
             <?php
-            agency_ecommerce_product_searchbox();
+            $show_mid_search = (boolean)agency_ecommerce_get_option('show_mid_search');
+            if($show_mid_search){
+                agency_ecommerce_product_searchbox();
+            }
             ?>
         </div>
         <div class="ae-cart-wishlist">

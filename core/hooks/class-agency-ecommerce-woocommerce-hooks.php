@@ -96,8 +96,26 @@ class Agency_Ecommerce_WooCommerce_Hooks
 
         }
 
+        add_action('woocommerce_proceed_to_checkout', array($this, 'woocommerce_continue_shopping'), 25);
+
+
     }
 
+    public function woocommerce_continue_shopping()
+    {
+        $woo_continue_shopping_text = agency_ecommerce_get_option('woo_continue_shopping_text');
+
+        if (!empty($woo_continue_shopping_text)) {
+
+            $shop_page_url = get_permalink(wc_get_page_id('shop'));
+
+            echo '<a href="' . esc_url($shop_page_url) . '" class="button continue-shopping">';
+
+            echo esc_html($woo_continue_shopping_text);
+
+            echo '</a>';
+        }
+    }
 
     public function product_columns()
     {

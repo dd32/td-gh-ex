@@ -135,7 +135,10 @@ if (!class_exists('Agency_Ecommerce_CTA_Widget')) :
 
             echo $args['before_widget']; ?>
 
+            <?php agency_ecommerce_widget_before($args) ?>
+
             <div class="cta-content-holder cta-widget position-<?php echo esc_attr($valid_widget_instance["content_position"]);
+
             echo ' ' . esc_attr($valid_widget_instance["content_style"]); ?>">
 
                 <div class="content-wrap">
@@ -204,6 +207,7 @@ if (!class_exists('Agency_Ecommerce_CTA_Widget')) :
                 </div>
 
             </div><!-- .cta-widget -->
+            <?php agency_ecommerce_widget_after($args) ?>
 
             <?php
             echo $args['after_widget'];

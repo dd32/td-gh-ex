@@ -52,7 +52,7 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
                     'name' => 'background_color',
                     'title' => esc_html__('Background Color', 'agency-ecommerce'),
                     'type' => 'color',
-                    'default' => '#0b1f41',
+                    'default' => '#0188cc',
                 )
 
 
@@ -78,7 +78,7 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
 
             $sub_title = esc_html($valid_widget_instance['sub_title']);
 
-            $shortcode = esc_html($valid_widget_instance['shortcode']);
+            $shortcode = ($valid_widget_instance['shortcode']);
 
             $background_color = sanitize_hex_color($valid_widget_instance['background_color']);
 
@@ -88,6 +88,8 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
             ?>
 
             <div class="newsletter-content-holder newsletter-widget">
+
+                <?php agency_ecommerce_widget_before($args) ?>
 
                 <div class="content-wrap">
 
@@ -123,7 +125,7 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
 
                             <div class="newsletter-form">
 
-                                <?php echo do_shortcode(wp_kses_post($shortcode)); ?>
+                                <?php echo do_shortcode($shortcode); ?>
 
                             </div>
 
@@ -132,6 +134,9 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
                     </div><!-- .newsletter-wrapper -->
 
                 </div>
+
+                <?php agency_ecommerce_widget_after($args) ?>
+
 
             </div><!-- .newsletter-widget -->
 
