@@ -1,0 +1,179 @@
+/**
+ * --------------------------------------------------------------------------------
+ * General Style
+ * --------------------------------------------------------------------------------
+*/
+
+a {
+    color: $secondary-color;
+    text-decoration: none;
+
+    &:hover {
+        color: $primary-color;
+    }
+}
+
+/* Navigation */
+
+.main-nav {
+    li a {
+        color: $white-color;
+        @extend .pre-font-family-1;
+    }
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    @extend .pre-font-family-2;
+}
+
+.ct-portfolio,
+.ct-title-excerpt,
+.ct-tm-details,
+.ct-single-testimonial {
+    h2 {
+        @extend .pre-font-family-2;
+        font-size: $font-size*1.5;
+        font-weight: 500;
+        margin-bottom: .6rem;
+    }
+
+    p {
+        margin-bottom: .6rem;
+    }
+}
+
+.ct-section-title {
+    &::after {
+        content: '';
+        display: block;
+        margin: 0 auto;
+        margin-top: 1.2rem;
+
+        width: 10rem;
+        height: .4rem;
+
+        @include gradient(45deg, $secondary-color, 0%, $primary-color, 70%);
+    }
+}
+
+.ct-st-left {
+    &::after {
+        width: 8rem;
+        margin: 0;
+        margin-top: 1.2rem;
+    }
+}
+
+.ct-read-more {
+    &::after {
+        content: '\f105';
+        font-family: 'FontAwesome';
+        vertical-align: middle;
+        margin-left: 0.3rem;
+        opacity: 0;
+        @include transition( all .2s ease-in-out );
+    }
+
+    &:hover {
+        &::after {
+            margin-left: .8rem;
+            opacity: 1;
+        }
+    }
+}
+
+.slick-prev::before,
+.slick-next::before {
+    color: $secondary-color;
+}
+
+.content-none {
+    margin-top: $base-margin;
+    margin-bottom: $base-margin;
+}
+
+.says,
+.edit-link .screen-reader-text,
+.search-form .screen-reader-text,
+.error-content .screen-reader-text,
+.pagination .screen-reader-text {
+  clip: rect(1px, 1px, 1px, 1px);
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
+.search-form {
+    widows: 80%;
+    label {
+        display: inline-block;
+        width: 80%;
+
+        .search-field {
+            width: 100%;
+        }
+    }
+
+    .search-submit {
+        width: 19%;
+    }
+}
+
+
+/* unit test fix css */
+
+code {
+   white-space: pre-wrap;
+}
+
+figure {
+    margin: 0;
+}
+.gallery-item {
+    display: inline-block;
+    text-align: center;
+    vertical-align: top;
+    max-width: 33.33%;
+    width: 100%;
+
+    .gallery-caption {
+        font-size: 14px;
+    }
+}
+
+iframe {
+
+    max-width: 100%;
+}
+
+/* Main index page */
+
+.ct-main-home-card {
+
+    background: white;
+    border-radius: 4px;
+    box-shadow: 0px 20px 50px #D9DBDF;
+    margin-bottom: $base-margin;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+
+    img {
+      width: 100%;
+      height: auto;
+
+    }
+
+    .ct-main-home-content {
+      margin: auto;
+      text-align: left;
+      padding: 20px;
+    }
+}

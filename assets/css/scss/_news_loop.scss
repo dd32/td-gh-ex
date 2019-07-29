@@ -1,0 +1,109 @@
+/**
+ * --------------------------------------------------------------------------------
+ * News Loop
+ * --------------------------------------------------------------------------------
+*/
+.ct-blog-card {
+    background-color: $light-white-color;
+    position: relative;
+    transition: all .3s ease-in-out;
+
+    h2 {
+        display: inline-block;
+    }
+
+    .ct-card-content {
+        padding: 3rem 3rem 1.5rem 3rem;
+    }
+
+    .ct-author-content {
+        width: 100%;
+        display: inline-block;
+        padding: 1.2rem 3rem 1rem 3rem;
+
+        .ct-author-details {
+            position: relative;
+            float: left;
+
+            .ct-author-img {
+                position: absolute;
+                top: -8px;
+                img{
+                    width: 54px;
+                    height: 54px;
+                    border-radius: 50%;
+                }
+            }
+
+            .ct-author-name {
+                font-size: 14px;
+                background: $white-color;
+                padding: 8px;
+                border-radius: 20px;
+                 span{
+                    margin-left: 6rem;
+                    margin-right: 1rem;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+
+.ct-card-image {
+    position: relative;
+}
+.ct-date-right{
+    position: absolute;
+    bottom: -2rem;
+    right: 0;
+
+    width: 50%;
+    float: left;
+    padding: 8px;
+    background: $white-color;
+
+    span {
+        font-size: 14px;
+    }
+}
+
+.ct-date-time {
+    position: absolute;
+    bottom: -2rem;
+    left: unset;
+
+    width: 50%;
+    float: left;
+    padding: 8px;
+    background: $white-color;
+
+    span {
+        font-size: 14px;
+    }
+}
+
+.ct-corner {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border-top: 50px solid $secondary-color;
+    border-right: 50px solid transparent;
+    z-index: 1;
+
+    span {
+        position: absolute;
+        top: -44px;
+        left: 9px;
+        font-size: 15px;
+        color: $white-color;
+    }
+}
+
+.ct-blog-card:hover {
+    transform: translate3d(0,-6px,0);
+    transition: all .3s ease-in-out;
+    -webkit-box-shadow: 5px 8.66px 30px 0 rgba(31,35,37,.078);
+    -moz-box-shadow: 5px 8.66px 30px 0 rgba(31,35,37,.078);
+    box-shadow: 5px 8.66px 30px 0 rgba(31,35,37,.078);
+}

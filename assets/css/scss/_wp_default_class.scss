@@ -1,0 +1,97 @@
+/**
+ * --------------------------------------------------------------------------------
+ * Wordpress Default class
+ * --------------------------------------------------------------------------------
+*/
+#comments ol {
+    list-style-type: none;
+}
+.block{
+    background-color: #fff;
+    box-shadow: 0 2px 21px 3px rgba(0, 0, 0, 0.2);
+    margin-bottom: $base-margin;
+    padding: 25px;
+
+    #comments ol {
+        list-style-type: none;
+    }
+
+.comment-author{
+
+    img {
+        float: left;
+        border-radius: 50%;
+        margin-right: 2rem;
+    }
+    .comment-content{
+        p{
+            margin-top: 0;
+            font-weight: 400;
+            font-size: 1.6rem;
+        }
+    }
+
+}
+    .reply {
+        display: block;
+        text-align: right;
+    }
+
+    .comment-body {
+        border-bottom: 1px solid #d8cdcd;
+        padding: 25px;
+    }
+
+
+
+    input, textarea, select, fieldset {
+        margin-bottom: 1.5rem;
+        width: 100%;
+    }
+    .comment-form-cookies-consent label{
+        display: inline-block;
+    }
+
+    input[type="checkbox"] {
+            height: 1.6rem;
+            width: 16px;
+            margin-right: 5px;
+        }
+}
+
+/* Larger than mobile */
+@media (min-width: 400px) {
+    .admin-bar{
+        .nav-parent{
+            margin-top: 46px;
+        }
+        .menubar-close {
+            top: 1.4rem;
+            right: 4.2rem;
+        }
+    }
+}
+
+/* Larger than phablet */
+@media (min-width: 550px) {
+    .admin-bar{
+        .nav-parent{
+            margin-top: 46px;
+        }
+        .menubar-close {
+            top: 1.4rem;
+            right: 4.2rem;
+        }
+    }
+}
+
+/* Larger than tablet */
+@media (min-width: 750px) {
+    .admin-bar{
+        .nav-parent{
+            margin-top: 32px;
+        }
+
+    }
+}
+
