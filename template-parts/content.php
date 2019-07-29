@@ -35,7 +35,7 @@
 		<?php endif; ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-summary">
+	<div class="entry-summary clearfix">
 		<?php
 		the_excerpt();
 

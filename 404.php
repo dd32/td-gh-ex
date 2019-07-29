@@ -28,9 +28,10 @@ get_header();
 								<h1 class="page-title"><?php esc_html_e( 'Error!', 'acoustics' ); ?></h1>
 							</header><!-- .page-header -->
 							<p class="content"><?php esc_html_e( 'Sorry! Page not Found', 'acoustics' ); ?></p>
-							<a href="<?php echo get_site_url(); ?>" class="btn btn-primary"><?php esc_html_e( 'Return to Home', 'acoustics' ); ?></a>
+							<a href="<?php echo esc_url( home_url( '/' ) ); ?>" class="btn btn-primary"><?php esc_html_e( 'Return to Home', 'acoustics' ); ?></a>
 						</div><!-- .page-content -->
 					</section><!-- .error-404 -->
+					<?php get_search_form(); ?>
 
 				</main><!-- #main -->
 			</div><!-- #primary -->

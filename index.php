@@ -12,12 +12,12 @@
  * @author      CodeGearThemes
  * @category    WordPress
  * @package     Acoustics
- * @version     1.0.0 
+ * @version     1.0.0
  *
  */
 
 get_header();
-$acoustics_layout = get_theme_mod( 'acoustics_archive_layout', 'right-sidebar' );
+$acoustics_layout = get_theme_mod( 'acoustics_archive_layout', 'left-sidebar' );
 $acoustics_class = acoustics_layout_classes( $acoustics_layout );
 ?>
 <div class="section-default section--default-template">

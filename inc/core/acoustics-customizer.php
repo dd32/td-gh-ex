@@ -9,6 +9,18 @@
  *
  */
 
+ /*-------------------------------------
+   #Color
+ ---------------------------------------*/
+ $wp_customize->add_panel( 'acoustics_general_panel', array(
+    'title' => esc_html__( 'General Setting', 'acoustics' ),
+    'description' => esc_html__( 'Theme global settings', 'acoustics' ),
+    'priority' => 5,
+ 	)
+ );
+ $wp_customize->get_section( 'static_front_page' )->panel     = 'acoustics_general_panel';
+ $wp_customize->get_section( 'static_front_page' )->priority = 0;
+
 /*-------------------------------------
   #Color
 ---------------------------------------*/
@@ -445,10 +457,6 @@ for( $i = 0; $i < 4; $i++) {
 		)
 	);
 }
-
-$wp_customize->get_section( 'static_front_page' )->panel     = 'acoustics_landing_panel';
-$wp_customize->get_section( 'static_front_page' )->title     = __( 'Landing Page', 'acoustics' );
-$wp_customize->get_section( 'static_front_page' )->priority = 0;
 
 /*-------------------------------------
   #Footer
