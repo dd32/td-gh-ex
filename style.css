@@ -4,7 +4,7 @@ Theme URI: https://themepalace.com/downloads/academic/
 Author: Theme Palace
 Author URI: https://themepalace.com/
 Description: A clean, modern, engaging and responsive WordPress education theme ideal for educational institutions and agencies. Features including full width and boxed layout with slider, focused content, slick effects, posts/features/courses showcasing.  It is loaded with theme options and provides several features to make user-friendly, interactive and visually stunning website with implementation of all features of latest WordPress like partial refresh and validation. It is compatible with top WordPress plugins such as JetPack and Contact Form 7. A special accent is made on its cross-browser compatibility, mobile friendly design and responsive features.
-Version: 1.7
+Version: 1.8
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 Text Domain: academic
@@ -118,8 +118,7 @@ a {
 }
 
 a:active,
-a:hover,
-a:focus {
+a:hover {
 	outline: 0;
 }
 
@@ -446,7 +445,7 @@ ol {
 }
 
 ul {
-	list-style: none;
+	list-style: disc;
 }
 ol {
 	list-style: decimal;
@@ -533,7 +532,6 @@ textarea {
 	color: #333;
 	border: 1px solid #ccc;
 	border-radius: 0;
-	outline: none;
 	text-indent: 10px;
 	height: 40px;
 	width: 100%;
@@ -571,7 +569,6 @@ textarea {
     background-color: transparent;
     border: none;
     box-shadow: none;
-    outline: none;
 }
 .widget_search input[type="search"] {
     padding-right: 30px;
@@ -607,7 +604,6 @@ body.search .page-content form button[type="submit"] {
     background-color: transparent;
     border: none;
     box-shadow: none;
-    outline: none;
     bottom: 0;
 }
 #colophon {
@@ -691,18 +687,8 @@ body.search .page-content form button[type="submit"] {
 a {
 	color: royalblue;
 	text-decoration: none;
-	outline: none;
 }
 
-/*a:visited {
-	color: #347FE1;
-}*/
-
-/*a:hover,
-a:focus,
-a:active {
-	color: #347FE1;;
-}*/
 .entry-content a:hover, 
 .entry-content a:focus {
    color: #000;
@@ -714,7 +700,6 @@ a:active {
 }
 
 a:hover,
-a:focus,
 a:active {
 	outline: none;
 }
@@ -810,6 +795,7 @@ a:active {
 .main-navigation .current-menu-item > a,
 .main-navigation .current_page_ancestor > a,
 .main-navigation .current-menu-ancestor > a {
+    color: #ffe800;
 }
 
 /* Small menu. */
@@ -851,6 +837,7 @@ a:active {
 #top-bar .address-block {
     padding: 0;
     margin: 0;
+    list-style: none;
 }
 #top-bar .address-block li {
     float: left;
@@ -1086,7 +1073,6 @@ a:active {
 #search button[type="submit"] {
     background-color: transparent;
     border: none;
-    outline: none;
     float: right;
     margin-top: -32px;
     margin-right: 10px;
@@ -1213,7 +1199,6 @@ a:active {
     border: none;
     background-color: transparent;
     color: #fff;
-    outline: none;
 }
 .sidr-class-fa-search:before {
     content: "\f002";
@@ -1979,6 +1964,7 @@ header.entry-header {
 }
 #upcoming-events .address-block {
     margin-bottom: 20px;
+    list-style: none;
 }
 .course-contents-wrapper {
     padding: 35px;
@@ -2952,7 +2938,6 @@ header.entry-header {
     font-family: 'Raleway', sans-serif;
     width: 400px;
     float: left;
-    outline: none;
 }
 #subscribe-form input[type="email"] {
 	width: 320px;
@@ -3264,7 +3249,6 @@ ul.portfolio {
 }
 .wpcf7-form input {
     width: 50%;
-    outline: none;
     border-radius: 0;
     height: 40px;
     margin-top: 5px;
@@ -3272,7 +3256,6 @@ ul.portfolio {
 .wpcf7-form input,
 .wpcf7-form textarea {
     width: 100%;
-    outline: none;
     border-radius: 0;
     height: 40px;
     margin-top: 5px;
@@ -3567,7 +3550,6 @@ ul.tabs li.active .fa {
 	margin-bottom: 35px;
 }
 .course-category select {
-    outline: none;
     border: none;
     text-transform: uppercase;
     font-size: 14px;
@@ -3763,7 +3745,6 @@ ul.trail-items li:last-child:after {
   display: block;
   width: 35px;
   height: 35px;
-  outline: none;
   text-align: center;
   line-height: 35px;
   font-size: 14px;
@@ -4202,7 +4183,6 @@ li .wide {
 	    background-color: transparent;
 	    box-shadow: none;
 	    border: none;
-	    outline: none;
 	    z-index: 30;
 	    width: 30px;
 	    height: 30px;
