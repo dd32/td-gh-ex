@@ -29,6 +29,9 @@ do_action( 'best_learner_action_head' );
 </head>
 
 <body <?php body_class(); ?>>
+
+<?php do_action( 'wp_body_open' ); ?>
+
 <?php
 
 /**

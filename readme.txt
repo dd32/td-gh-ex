@@ -4,8 +4,9 @@ Contributors: creativthemes
 Tags: translation-ready, custom-background, theme-options, custom-menu, threaded-comments, featured-images, footer-widgets, left-sidebar, editor-style, right-sidebar, full-width-template, two-columns, three-columns, grid-layout, custom-colors, custom-header, custom-logo, featured-image-header, blog, entertainment
 
 Requires at least: 4.7
-Tested up to: 4.9.8
-Stable tag: 1.2
+Tested up to: 5.2.2
+Requires PHP: 5.6
+Stable tag: 1.3
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -66,6 +67,9 @@ Unless otherwise specified, all the theme images are created by us and licensed 
 
 == Changelog ==
 
+= 1.3 - July 30, 2019 =
+* Added Accessibility
+
 = 1.2 - Nov 13, 2018 =
 * Updated submenu alignment
 
@@ -76,6 +80,9 @@ Unless otherwise specified, all the theme images are created by us and licensed 
 * Initial release
 
 == Upgrade Notice ==
+
+= 1.3 =
+* Added Accessibility
 
 = 1.2 =
 * Description updated in readme.txt and style.css
