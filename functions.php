@@ -379,7 +379,7 @@ add_action( 'wp_enqueue_scripts', 'awaken_font_styles' );
  */
 function awaken_block_editor_styles() {
 	// Block styles.
-	wp_enqueue_style( 'awaken-block-editor-style', get_theme_file_uri( '/css/editor-blocks.css' ) );
+	wp_enqueue_style( 'awaken-block-editor-style', get_template_directory_uri() . '/css/editor-blocks.css' );
 	// Add custom fonts.
 	wp_enqueue_style( 'awaken-fonts', awaken_fonts_url(), array(), null );
 }

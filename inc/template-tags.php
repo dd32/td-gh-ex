@@ -49,7 +49,7 @@ function awaken_paging_nav() {
 
 	?>
 	<nav class="navigation paging-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Posts navigation', 'awaken' ); ?></h1>
+		<h2 class="screen-reader-text"><?php _e( 'Posts navigation', 'awaken' ); ?></h2>
 			<?php echo $links; ?>
 	</nav><!-- .navigation -->
 	<?php
@@ -71,7 +71,7 @@ function awaken_post_nav() {
 	}
 	?>
 	<nav class="navigation post-navigation" role="navigation">
-		<h1 class="screen-reader-text"><?php _e( 'Post navigation', 'awaken' ); ?></h1>
+		<h2 class="screen-reader-text"><?php _e( 'Post navigation', 'awaken' ); ?></h2>
 		<div class="nav-links">
 			<?php
 				previous_post_link( '<div class="nav-previous">%link</div>', _x( '%title', 'Previous post link', 'awaken' ) );
