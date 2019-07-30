@@ -225,6 +225,12 @@ a.bg-light:focus, a.bg-light:hover {
 	.navbar .nav .dropdown-item:hover {
 		background-color: transparent;
 	}
+	.navbar .nav .dropdown-menu ul.dropdown-menu {
+        top: auto !important;
+    }
+    .navbar.header-fixed-top .nav .dropdown-menu ul.dropdown-menu {
+        top: auto !important;
+    }
 		
 }
 

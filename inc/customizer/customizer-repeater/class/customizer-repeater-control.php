@@ -562,22 +562,22 @@ class ArileWP_Repeater extends WP_Customize_Control {
 	}
 	
 	
-	private function slide_format($value='customizer_repeater_slide_format_standard'){?>
+	private function slide_format($value='left'){?>
 	
 	<span class="customize-control-title">
 	<?php esc_html_e('Slide Content Format','arilewp'); ?>
 	</span>
 	<select class="customizer-repeater-slide-format">
-		<option value="customizer_repeater_slide_format_standard" <?php selected($value,'customizer_repeater_slide_format_standard');?>>
-		<?php esc_html_e('Standard','arilewp') ?>
+		<option value="left" <?php selected($value,'left');?>>
+		<?php esc_html_e('Left','arilewp') ?>
 		</option>
 		
-		<option value="customizer_repeater_slide_format_aside" <?php selected($value,'customizer_repeater_slide_format_aside');?>>
-		<?php esc_html_e('Aside','arilewp') ?>
+		<option value="right" <?php selected($value,'right');?>>
+		<?php esc_html_e('Right','arilewp') ?>
 		</option>
 		
-		<option value="customizer_repeater_slide_format_quote" <?php selected($value,'customizer_repeater_slide_format_quote');?>>
-		<?php esc_html_e('Quote','arilewp') ?>
+		<option value="center" <?php selected($value,'center');?>>
+		<?php esc_html_e('Center','arilewp') ?>
 		</option>
 		
 	</select>

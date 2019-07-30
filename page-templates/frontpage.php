@@ -6,7 +6,6 @@
  *
  * @package arilewp
  */
-get_header(); 
 ?>
 
 <?php

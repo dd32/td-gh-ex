@@ -4,8 +4,8 @@ Author: ThemeArile
 Requires at least: WordPress 4.7
 Tested up to: WordPress 5.2.2
 Requires PHP: 5.6
-Stable tag: 0.1
-Version: 0.1
+Stable tag: 0.2
+Version: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns ,right-sidebar, flexible-header, accessibility-ready, custom-background, custom-header, custom-menu, editor-style, featured-images, footer-widgets, post-formats, theme-options, threaded-comments, rtl-language-support, translation-ready, full-width-template, custom-logo, blog, e-commerce, portfolio
@@ -48,10 +48,13 @@ License: GNU GPL license v3
 * SmartMenus - Copyright (c) Vasil Dinkov, Vadikom Web Ltd. - http://www.smartmenus.org/
 License: MIT (http://opensource.org/licenses/MIT)
 
-* Screenshot Banner Image - https://pikwizard.com/photo/working-typing-macbook/b50062f5411f870fd7c2b4c5ecd37a00
-License: CCO (https://pikwizard.com/cc0-license)
+* Screenshot Banner Image - https://pxhere.com/en/photo/1446003
+License: CC0 Public Domain
 
 == Changelog ==
+
+= Version 0.2
+* Update screenshot.
 
 = Version 0.1
 * Initial release.

@@ -159,6 +159,7 @@ function arilewp_scripts() {
 	wp_enqueue_script('bootstrap-js', get_template_directory_uri() . '/assets/js/bootstrap.min.js', array('jquery'));	 
 	// Theme JavaScript.
 	wp_enqueue_script('arilewp-smartmenus-js', get_template_directory_uri() . '/assets/js/smartmenus/jquery.smartmenus.js');
+	wp_enqueue_script( 'arilewp-skip-link-focus-fix', get_template_directory_uri() . '/assets/js/skip-link-focus-fix.js', array(), '20151215', true );
 	wp_enqueue_script('arilewp-custom-js', get_template_directory_uri() . '/assets/js/custom.js', array('jquery'));
 	wp_enqueue_script('bootstrap-smartmenus-js', get_template_directory_uri() . '/assets/js/smartmenus/bootstrap-smartmenus.js');
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

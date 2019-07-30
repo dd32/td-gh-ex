@@ -4,7 +4,7 @@ Theme URI: https://themearile.com/themes/arilewp/
 Author: ThemeArile
 Author URI: https://themearile.com
 Description: ArileWP is a powerful, modern and professional multipurpose WordPress theme with pixel perfect design and outstanding functionality. As well as sophisticated plus it has some exotic features like customization and clean code, advanced typography, sticky menu, logo upload, header image, Bootstrap 4 framework, built with SEO in mind, and theme info area besides being Mobile ready, translation ready (WPML, Polylang) and it's built to be beautiful on all screen sizes. The theme perfectly suited for business, consultant, finance, corporate, freelancer, agency, business promotion, electrician, industries, education, SEO, construction, fashion, online shop, health & medical, Beauty & spa salons, wedding, photography, gym, cafe, music, architecture, lawyer, restaurant, hotel, blog, magazine, travel agency and many other websites compatible. This theme supports the best Elementor page builder to create, edit and updates page designs as per the requirement. ArileWP also supports popular free and premium WordPress plugins such as Elementor, Yoast SEO, WooCommerce, Contact Form 7, Jetpack, Google Analytics and much more.
-Version: 0.1
+Version: 0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arilewp
@@ -1730,6 +1730,25 @@ a:hover, a:active { color: #01012f; outline: 0; }
 .wp-block-gallery {
    margin: 0;
 }
+.blocks-gallery-item figure { position: relative; overflow: hidden; margin: 0; }
+.blocks-gallery-item figure img { width: 100%; opacity: 1; }
+.blocks-gallery-item figure img {
+   -webkit-transition: transform 1s, filter 1.2s ease-in-out;
+   -moz-transition: transform 1s, filter 1.2s ease-in-out;
+   -o-transition: transform 1s, filter 1.2s ease-in-out;
+   -ms-transition: transform 1s, filter 1.2s ease-in-out;
+   transition: transform 1s, filter 1.2s ease-in-out;
+   transform-origin: center center;
+}
+.blocks-gallery-item:hover figure img {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+    transform: scale(1.15,1.15);
+   -webkit-transform: scale(1.15,1.15);
+   -moz-transform: scale(1.15,1.15);
+   -ms-transform: scale(1.15,1.15);
+   -o-transform: scale(1.15,1.15);
+}
 /*Address*/
 address i { 
 	width: 1.563rem;
@@ -1867,35 +1886,48 @@ body.page-template-default .theme-blog .post .post-content { overflow: hidden; }
 =>> Text meant only for screen readers
 --------------------------------------------------*/
 
+/* Accessibility */
+/* Text meant only for screen readers. */
 .screen-reader-text {
-    border: 0;
-    clip: rect(1px, 1px, 1px, 1px);
-    clip-path: inset(50%);
-    height: 1px;
-    margin: -1px;
-    overflow: hidden;
-    padding: 0;
-    position: absolute !important;
-    width: 1px;
-    word-wrap: normal !important; 
-}
-.screen-reader-text:focus {
-    background-color: #e9e9e9;
-    clip: auto !important;
-    clip-path: none;
-    color: #444;
-    display: block;
-    font-size: 1em;
-    height: auto;
-    left: 5px;
-    line-height: normal;
-    padding: 15px 23px 14px;
-    text-decoration: none;
-    top: 5px;
-    width: auto;
-    z-index: 100000;
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important;
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  right: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#content[tabindex="-1"]:focus {
+  outline: 0;
+}
 
 /*--------------------------------------------------
 =>> Page builder template 
@@ -2492,6 +2524,18 @@ body.page-template-default .theme-blog .post .post-content { overflow: hidden; }
 .woocommerce.widget_product_search button[type="submit"] {
     border-radius: 0px;
 	letter-spacing: .1em;
+}
+.woocommerce.widget .woocommerce-mini-cart__total {
+    padding-top: 0.938rem;
+    padding-left: 1rem;
+   padding-right: 1rem;
+   padding-bottom: 1rem;
+}
+.woocommerce.widget .woocommerce-mini-cart__buttons.buttons {
+    padding-top: 0.938rem;
+    padding-left: 1rem;
+   padding-right: 1rem;
+   padding-bottom: 1rem;
 }
 .woocommerce-MyAccount-navigation ul { list-style: none; margin: 0; }
 

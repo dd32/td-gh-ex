@@ -323,7 +323,7 @@ jQuery(document).ready(function () {
 				field.find('.customizer-repeater-designation-control').val('');
 				
 				/*Set the default value in slide format*/
-                field.find('.customizer-repeater-slide-format').val('customizer_repeater_slide_format_standard');
+                field.find('.customizer-repeater-slide-format').val('left');
 
                 /*Remove value from link field*/
                 field.find('.customizer-repeater-link-control').val('');

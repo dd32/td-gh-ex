@@ -190,7 +190,7 @@ function arilewp_recommended_plugin_section( $manager ) {
 				'title'    => esc_html__( 'Ready for more?', 'arilewp' ),
                 'priority' => 1000, 
 				'plugin_text' => esc_html__( 'Get ArileWP Pro', 'arilewp' ),
-				'plugin_url'  => '#'
+				'plugin_url'  => 'https://themearile.com/arilewp-pro-theme/'
 			)
 		)
 	);
