@@ -94,6 +94,9 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.7.7
+1.Remove lock section
+2.Fixed dropdown mobile menu issue in customizer.
 @Version 2.7.6
 1.Fixed mobile menu issue.
 @Version 2.7.5

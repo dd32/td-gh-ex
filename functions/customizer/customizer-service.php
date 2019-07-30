@@ -442,41 +442,8 @@ $wp_customize->add_control(
         'type' => 'text',
     )
 );
-class WP_service_Customize_Control extends WP_Customize_Control {
-    public $type = 'new_menu';
-    /**
-    * Render the control's content.
-    */
-    public function render_content() {
-    ?>
-      <div class="pro-box">
-		<a href="<?php echo 'http://webriti.com/appointment/';?>" target="_blank" class="button button-primary" id="review_pro"><?php _e('Add more services. Get Pro.','appointment' ); ?></a>
-	 
-	<div>
-    <?php
-    }
-}
-//Pro service section
-$wp_customize->add_section( 'service_section_pro' , array(
-		'title'      => __('Add more services', 'appointment'),
-		'panel'  => 'appointment_service_options',
-		'priority'   => 700,
-   	) );
 
 
-$wp_customize->add_setting(
-     'appointment_options[service_pro]',
-    array(
-		'capability'     => 'edit_theme_options',
-		'sanitize_callback' => 'sanitize_text_field',
-		'type' => 'option',
-    )	
-);
-$wp_customize->add_control( new WP_service_Customize_Control( $wp_customize, 'appointment_options[service_pro]', array(	
-		'section' => 'service_section_pro',
-		'setting' => 'appointment_options[service_pro]',
-    ))
-);
 
 function appointment_service_sanitize_html( $input ) {
     return force_balance_tags( $input );

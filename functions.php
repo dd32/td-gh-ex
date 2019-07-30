@@ -15,7 +15,7 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/breadcrumbs/breadcrumbs.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php');
 	//Customizer
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_theme_style.php');
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro-feature.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-callout.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-slider.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-copyright.php');
@@ -23,11 +23,6 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-news.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-service.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-project.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-testimonial.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-client.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-footer-callout.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-template.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-emailcourse.php');
 	
 	// Appointment Info Page
@@ -35,6 +30,13 @@
 	
 	// Custom Category control 
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/custom-controls/select/category-dropdown-custom-control.php');
+
+	add_action( 'admin_init', 'appointment_customizer_css' );
+	function appointment_customizer_css() {
+		wp_enqueue_style( 'appointment-customizer-info', WEBRITI_TEMPLATE_DIR_URI . '/css/pro-feature.css' );
+	}
+
+
 	/* Theme Setup Function */
 	add_action( 'after_setup_theme', 'appointment_setup' );
 	
