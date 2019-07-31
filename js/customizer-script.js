@@ -12,7 +12,7 @@
 			$(this).next().slideToggle();
 		});
 		// Multiple checkbox control
-		$( 'ul.toShowClassic li.attesaToShow input[type="checkbox"], ul.toShowPush li.attesaToShow input[type="checkbox"], ul.toShowFooter li.attesaToShow input[type="checkbox"], ul.toShowShare li.attesaToShow input[type="checkbox"], ul.toShowFooterCallout li.attesaToShow input[type="checkbox"]' ).on( 'change', function() {
+		$( 'ul.toShowClassic li.attesaToShow input[type="checkbox"], ul.toShowPush li.attesaToShow input[type="checkbox"], ul.toShowFooter li.attesaToShow input[type="checkbox"], ul.toShowShare li.attesaToShow input[type="checkbox"], ul.toShowFooterCallout li.attesaToShow input[type="checkbox"], ul.toShowContact li.attesaToShow input[type="checkbox"]' ).on( 'change', function() {
 			var checkbox_values = $( this ).parents( '.customize-control' ).find( 'input[type="checkbox"]:checked' ).map(
 				function() {
 					return this.value;
@@ -67,6 +67,22 @@
 		} else {
 			$('ul.toShowFooter .isentire input').attr('disabled', false);
 			$('ul.toShowFooter .isentire').removeClass('opa');
+		}
+		$('ul.toShowContact li.attesaToShow.entire input').on('click', function(){
+			if ( $(this).is(':checked') ) {
+				$('ul.toShowContact .isentire input').attr('disabled', true);
+				$('ul.toShowContact .isentire').addClass('opa');
+			} else {
+				$('ul.toShowContact .isentire input').attr('disabled', false);
+				$('ul.toShowContact .isentire').removeClass('opa');
+			}
+		});
+		if ( $('ul.toShowContact li.attesaToShow.entire input').hasClass('active') ) {
+			$('ul.toShowContact .isentire input').attr('disabled', true);
+			$('ul.toShowContact .isentire').addClass('opa');
+		} else {
+			$('ul.toShowContact .isentire input').attr('disabled', false);
+			$('ul.toShowContact .isentire').removeClass('opa');
 		}
 		$('body').on('click', '.customize-control-title.attesatab', function(){
 			$(this).nextAll('.attesa-multiple-checkbox').slideToggle();

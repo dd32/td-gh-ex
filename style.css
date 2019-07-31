@@ -4,7 +4,7 @@ Theme URI: https://attesawp.com/
 Author: AttesaWP
 Author URI: https://attesawp.com/about/
 Description: Attesa is an extremely versatile and customizable multipurpose WordPress theme. You can use it to create a simple blog but also for more complex websites or even an e-commerce using WooCommerce. You can customize many graphic aspects to create the website that best suits your target. Attesa theme is compatible with the most famous page builders as Elementor, SiteOrigin, Beaver Builder, etc... Responsive, RTL ready, WPML ready, SEO oriented and with many available demos, take a look: https://attesawp.com/demos/
-Version: 1.0.1
+Version: 1.0.2
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: attesa
@@ -903,12 +903,14 @@ a:hover, a:active {
 	font-family: "Font Awesome 5 Free";
 	margin: 0 0 0 7px;
 	line-height: 1;
+	font-weight: 900;
 }
 .main-navigation ul ul li a:not(:last-child):after {
 	content: "\f105";
 	margin: 0 0 0 7px;
 	float: right;
 	line-height: inherit;
+	font-weight: 900;
 }
 
 .main-navigation ul ul {
@@ -1607,6 +1609,7 @@ aside ul.product-categories li a:before {
 	content: "\f1db";
     padding-right: 0.5em;
     float: left;
+	font-weight: 900;
 }
 aside ul.product-categories li.current-cat a:before {
 	content: "\f111";
@@ -2078,6 +2081,13 @@ body.format_featuredtitle .attesa-text-logo p {
 }
 .nav-top .container.fullwidth {
 	max-width: 100%;
+}
+.nav-middle {
+	-webkit-transition: background-color .25s ease-in-out;
+    -moz-transition: background-color .25s ease-in-out;
+    -o-transition: background-color .25s ease-in-out;
+    -ms-transition: background-color .25s ease-in-out;
+    transition: background-color .25s ease-in-out;
 }
 .nav-middle .container {
 	padding: 0.8em 1em;
@@ -2849,6 +2859,7 @@ body.attesa-blog-nogrid .sticky .entry-header .entry-title:before {
 	position: absolute;
 	left: 0;
 	line-height: 1.5;
+	font-weight: 900;
 }
 
 .hentry {
@@ -3399,6 +3410,7 @@ object {
     content: "\f00d";
     font-family: "Font Awesome 5 Free";
     margin-right: 10px;
+	font-weight: 900;
 }
 .woocommerce-store-notice a:not(.woocommerce-store-notice__dismiss-link) {
 	border-bottom: 1px dotted;
@@ -3990,6 +4002,7 @@ ul.products.columns-6 > li:nth-child(6n+1) {
     content: "\f00c";
 	font-weight: 700;
     margin-left: .53em;
+	font-weight: 900;
 }
 
 .woocommerce #respond input#submit.loading:after,

@@ -21,7 +21,11 @@
 				
 					<?php do_action('attesa_footer_widgets'); ?>
 					
-					<?php do_action('attesa_sub_footer'); ?>
+					<?php 
+					if (attesa_options('_show_subfooter', '1')) {
+						do_action('attesa_sub_footer');
+					}
+					?>
 					
 				</div>
 			<?php endif; ?>

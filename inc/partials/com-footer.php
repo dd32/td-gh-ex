@@ -90,7 +90,7 @@ function attesa_get_sub_footer() {
 			</div><!-- .site-info -->
 			<div class="site-social">
 				<?php 
-				$showInFooter =  attesa_options('_social_footer', '1');
+				$showInFooter = attesa_options('_social_footer', '1');
 				if ($showInFooter == 1) {
 					echo attesa_show_social_network('footer'); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 				} ?>

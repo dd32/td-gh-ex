@@ -113,6 +113,19 @@ if ( ! function_exists( 'attesa_setup' ) ) :
 			'flex-height' => true,
 			'header-text' => array( 'site-title', 'site-description' ),
 		) );
+		
+		/**
+		 * Call all theme options
+		 */
+		if( ! function_exists('attesa_options')){
+			function attesa_options($name, $default = false) {
+				$options = ( get_option( 'attesa_theme_options' ) ) ? get_option( 'attesa_theme_options' ) : null;
+				if ( isset( $options[ $name ] ) ) {
+					return apply_filters( "attesa_theme_options_{$name}", $options[ $name ] );
+				}
+				return apply_filters( "attesa_theme_options_{$name}", $default );
+			}
+		}
 	}
 endif;
 add_action( 'after_setup_theme', 'attesa_setup' );
@@ -204,10 +217,10 @@ function attesa_scripts() {
 	if (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_four') {
 		wp_enqueue_style( 'font-awesome-4', get_template_directory_uri() .'/css/font-awesome'.$min.'.css', array(), '4.7.0');
 	} elseif (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_five') {
-		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all'.$min.'.css', array(), '5.9.0');
+		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all'.$min.'.css', array(), '5.10.0');
 	} elseif (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_five_comp') {
-		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all'.$min.'.css', array(), '5.9.0');
-		wp_enqueue_style( 'font-awesome-4-shim', get_template_directory_uri() .'/css/v4-shims'.$min.'.css', array(), '5.9.0');
+		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all'.$min.'.css', array(), '5.10.0');
+		wp_enqueue_style( 'font-awesome-4-shim', get_template_directory_uri() .'/css/v4-shims'.$min.'.css', array(), '5.10.0');
 	}
 	
 	$disableGoogleFonts = attesa_options('_disable_google_fonts', '');
@@ -244,19 +257,6 @@ function attesa_scripts() {
 	}
 }
 add_action( 'wp_enqueue_scripts', 'attesa_scripts' );
-
-/**
- * Call all theme options
- */
-if( ! function_exists('attesa_options')){
-	function attesa_options($name, $default = false) {
-		$options = ( get_option( 'attesa_theme_options' ) ) ? get_option( 'attesa_theme_options' ) : null;
-		if ( isset( $options[ $name ] ) ) {
-			return apply_filters( "attesa_theme_options_{$name}", $options[ $name ] );
-		}
-		return apply_filters( "attesa_theme_options_{$name}", $default );
-	}
-}
 
 /**
  * Register all Elementor locations

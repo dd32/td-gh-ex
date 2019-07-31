@@ -19,10 +19,10 @@ function attesa_customizer_script() {
 	if (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_four') {
 		wp_enqueue_style( 'font-awesome-4', get_template_directory_uri() .'/css/font-awesome.min.css', array(), '4.7.0');
 	} elseif (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_five') {
-		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all.min.css', array(), '5.9.0');
+		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all.min.css', array(), '5.10.0');
 	} elseif (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_five_comp') {
-		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all.min.css', array(), '5.9.0');
-		wp_enqueue_style( 'font-awesome-4-shim', get_template_directory_uri() .'/css/v4-shims.min.css', array(), '5.9.0');
+		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all.min.css', array(), '5.10.0');
+		wp_enqueue_style( 'font-awesome-4-shim', get_template_directory_uri() .'/css/v4-shims.min.css', array(), '5.10.0');
 	}
 	
 }
@@ -171,7 +171,7 @@ function attesa_customize_register( $wp_customize ) {
     ) );
 	/* Choose icon pack */
 	$wp_customize->add_setting('attesa_theme_options[_choose_icon_pack]', array(
-        'default'    => 'font_awesome_four',
+        'default'    => 'font_awesome_five_comp',
         'type'       => 'option',
         'capability' => 'edit_theme_options',
 		'sanitize_callback' => 'attesa_sanitize_select'
@@ -2734,6 +2734,20 @@ function attesa_customize_register( $wp_customize ) {
 			'priority' => 3,
 		))
 	);
+	/* Show sub-footer */
+	$wp_customize->add_setting('attesa_theme_options[_show_subfooter]', array(
+        'default'    => '1',
+        'type'       => 'option',
+        'capability' => 'edit_theme_options',
+		'sanitize_callback' => 'attesa_sanitize_checkbox'
+    ) );
+	$wp_customize->add_control('attesa_theme_options[_show_subfooter]', array(
+        'label'      => __( 'Show sub-footer', 'attesa' ),
+        'section'    => 'section_attesa_theme_options_footer',
+        'settings'   => 'attesa_theme_options[_show_subfooter]',
+        'type'       => 'checkbox',
+		'priority' => 4,
+    ) );
 	/* Show footer navigation menu */
 	$wp_customize->add_setting('attesa_theme_options[_show_footer_menu]', array(
         'default'    => '1',
@@ -2745,6 +2759,7 @@ function attesa_customize_register( $wp_customize ) {
         'label'      => __( 'Show footer navigation menu (if set)', 'attesa' ),
         'section'    => 'section_attesa_theme_options_footer',
         'settings'   => 'attesa_theme_options[_show_footer_menu]',
+		'active_callback' => 'attesa_is_subfooter_active',
         'type'       => 'checkbox',
 		'priority' => 4,
     ) );
@@ -2759,6 +2774,7 @@ function attesa_customize_register( $wp_customize ) {
         'label'      => __( 'Show social network in footer', 'attesa' ),
         'section'    => 'section_attesa_theme_options_footer',
         'settings'   => 'attesa_theme_options[_social_footer]',
+		'active_callback' => 'attesa_is_subfooter_active',
         'type'       => 'checkbox',
 		'priority' => 5,
     ) );
@@ -2775,6 +2791,7 @@ function attesa_customize_register( $wp_customize ) {
 		'description' => __( 'Get the PRO version to remove AttesaWP credits', 'attesa' ),
 		'section'    => 'section_attesa_theme_options_footer',
 		'settings'   => 'attesa_theme_options[_copyright_text]',
+		'active_callback' => 'attesa_is_subfooter_active',
 		'type'       => 'text',
 		'priority' => 6,
 	) );
@@ -3078,6 +3095,14 @@ function attesa_is_menu_not_popup_and_dropdown() {
 		return false;
 	}
 	return true;
+}
+
+function attesa_is_subfooter_active() {
+	$showSubfooter = attesa_options('_show_subfooter','1');
+	if ($showSubfooter == '1') {
+		return true;
+	}
+	return false;
 }
 
 function attesa_is_customfooter_active() {

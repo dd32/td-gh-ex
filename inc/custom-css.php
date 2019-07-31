@@ -1640,33 +1640,35 @@ if ( ! function_exists( 'attesa_custom_css_styles' ) ) {
 					background-color: '.esc_html($footerBorderColor).';
 				}';
 			}
-		/* Choose sub-footer link color */
-		$subfooterLinkColor = apply_filters( 'attesa_subfooter_link_color', attesa_options('_subfooter_link_color', '#9a9a9a') );
-		$attesa_custom_css .='
-		.footer-bottom-area a {
-			color: '.esc_html($subfooterLinkColor).';
-		}
-		.footer-bottom-area .attesaMenuButton {
-			background-color: '.esc_html($subfooterLinkColor).';
-		}';
-		/* Choose sub-footer text color */
-		$subfooterTextColor = apply_filters( 'attesa_subfooter_text_color', attesa_options('_subfooter_text_color', '#ffffff') );
-		$attesa_custom_css .='
-		.footer-bottom-area,
-		.footer-bottom-area a:hover,
-		.footer-bottom-area a:focus,
-		.footer-bottom-area a:active {
-			color: '.esc_html($subfooterTextColor).';
-		}';
-		/* Choose sub-footer background color */
-		$subfooterBackgroundColor = apply_filters( 'attesa_subfooter_background_color', attesa_options('_subfooter_background_color', '#181818') );
-		$attesa_custom_css .='
-		.footer-bottom-area {
-			background-color: '.esc_html($subfooterBackgroundColor).';
-		}
-		.second-navigation li.attesaMenuButton a {
-			color: '.esc_html($subfooterBackgroundColor).';
-		}';
+			if (attesa_options('_show_subfooter', '1')) {
+				/* Choose sub-footer link color */
+				$subfooterLinkColor = apply_filters( 'attesa_subfooter_link_color', attesa_options('_subfooter_link_color', '#9a9a9a') );
+				$attesa_custom_css .='
+				.footer-bottom-area a {
+					color: '.esc_html($subfooterLinkColor).';
+				}
+				.footer-bottom-area .attesaMenuButton {
+					background-color: '.esc_html($subfooterLinkColor).';
+				}';
+				/* Choose sub-footer text color */
+				$subfooterTextColor = apply_filters( 'attesa_subfooter_text_color', attesa_options('_subfooter_text_color', '#ffffff') );
+				$attesa_custom_css .='
+				.footer-bottom-area,
+				.footer-bottom-area a:hover,
+				.footer-bottom-area a:focus,
+				.footer-bottom-area a:active {
+					color: '.esc_html($subfooterTextColor).';
+				}';
+				/* Choose sub-footer background color */
+				$subfooterBackgroundColor = apply_filters( 'attesa_subfooter_background_color', attesa_options('_subfooter_background_color', '#181818') );
+				$attesa_custom_css .='
+				.footer-bottom-area {
+					background-color: '.esc_html($subfooterBackgroundColor).';
+				}
+				.second-navigation li.attesaMenuButton a {
+					color: '.esc_html($subfooterBackgroundColor).';
+				}';
+			}
 		$attesa_css_output = attesa_minify_css(apply_filters( 'attesa_custom_css_style_filter', $attesa_custom_css ));
 		wp_add_inline_style( 'attesa-style', $attesa_css_output );
 	}

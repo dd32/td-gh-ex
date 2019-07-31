@@ -791,6 +791,8 @@ if ( ! function_exists( 'attesa_get_fontawesome_icons' ) ) {
 				$current_icon = 'fa fa-star-o';
 			} elseif ('circle' == $icon) {
 				$current_icon = 'fa fa-circle-o-notch';
+			} elseif ('facebook_messenger' == $icon) {
+				$current_icon = 'fa fa-facebook';
 			}
 		} else {
 			if ('calendar' == $icon) {
@@ -821,6 +823,8 @@ if ( ! function_exists( 'attesa_get_fontawesome_icons' ) ) {
 				$current_icon = 'far fa-star';
 			} elseif ('circle' == $icon) {
 				$current_icon = 'fas fa-circle-notch';
+			} elseif ('facebook_messenger' == $icon) {
+				$current_icon = 'fab fa-facebook-messenger';
 			}
 		}
 		return apply_filters( 'attesa_fontawesome_icons_filter', $current_icon );
