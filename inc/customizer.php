@@ -60,6 +60,43 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
 		<?php }
 	}
 
+	/***** Tracks Pro Control *****/
+	class ct_tracks_pro_ad extends WP_Customize_Control {
+		public function render_content() {
+			$link = 'https://www.competethemes.com/tracks-pro/';
+			echo "<a href='" . $link . "' target='_blank'><img src='" . get_template_directory_uri() . "/assets/images/tracks-pro.gif' /></a>";
+			echo "<p class='bold'>" . sprintf( __('<a target="_blank" href="%1$s">%2$s Pro</a> is the plugin that makes advanced customization simple - and fun too!', 'tracks'), $link, wp_get_theme( get_template() ) ) . "</p>";
+			echo "<p>" . sprintf( __('%s Pro adds the following features to Tracks:', 'tracks'), wp_get_theme( get_template() ) ) . "</p>";
+			echo "<ul>
+					<li>" . __('Custom Colors', 'tracks') . "</li>
+					<li>" . __('4 New layouts', 'tracks') . "</li>
+					<li>" . __('Featured Videos', 'tracks') . "</li>
+					<li>" . __('+ 5 more features', 'tracks') . "</li>
+				  </ul>";
+			echo "<p class='button-wrapper'><a target=\"_blank\" class='tracks-pro-button' href='" . $link . "'>" . sprintf( __('View %s Pro', 'tracks'), wp_get_theme( get_template() ) ) . "</a></p>";
+		}
+	}
+	/***** Tracks Pro Section *****/
+	// don't add if Tracks Pro is active
+	if ( !function_exists( 'ct_tracks_pro_init' ) ) {
+		// section
+		$wp_customize->add_section( 'ct_tracks_pro', array(
+			'title'    => sprintf( __( '%s Pro', 'tracks' ), wp_get_theme( get_template() ) ),
+			'priority' => 1
+		) );
+		// Upload - setting
+		$wp_customize->add_setting( 'tracks_pro', array(
+			'sanitize_callback' => 'absint'
+		) );
+		// Upload - control
+		$wp_customize->add_control( new ct_tracks_pro_ad(
+			$wp_customize, 'tracks_pro', array(
+				'section'  => 'ct_tracks_pro',
+				'settings' => 'tracks_pro'
+			)
+		) );
+	}
+
 	/***** Tagline Display *****/
 
 	// section
@@ -406,115 +443,122 @@ function ct_tracks_add_customizer_content( $wp_customize ) {
 		) );
 	}
 
-	/***** Premium Layout *****/
+	//----------------------------------------------------------------------------------
+	//	Premium Layouts
+	//	Upsell sections no longer allowed on wp.org. Leaving code to ensure compatibility with
+	//	Tracks Pro customers and not break their sites, but not outputting the code unless Pro is active.
+	//----------------------------------------------------------------------------------
 
-	// set the available templates to just the standard layout
-	$available_templates = array( 'standard' => 'Standard' );
+	if ( defined( 'TRACKS_PRO_FILE' ) ) {
 
-	// query database to get layout license statuses
-	$full_width        = trim( get_option( 'ct_tracks_full_width_license_key_status' ) );
-	$full_width_images = trim( get_option( 'ct_tracks_full_width_images_license_key_status' ) );
-	$two_column        = trim( get_option( 'ct_tracks_two_column_license_key_status' ) );
-	$two_column_images = trim( get_option( 'ct_tracks_two_column_images_license_key_status' ) );
+		// set the available templates to just the standard layout
+		$available_templates = array( 'standard' => 'Standard' );
 
-	// check if any layout statuses are valid, and add to available layouts if they are
-	if ( $full_width == 'valid' ) {
-		$available_templates['full-width'] = 'Full-width';
+		// query database to get layout license statuses
+		$full_width        = trim( get_option( 'ct_tracks_full_width_license_key_status' ) );
+		$full_width_images = trim( get_option( 'ct_tracks_full_width_images_license_key_status' ) );
+		$two_column        = trim( get_option( 'ct_tracks_two_column_license_key_status' ) );
+		$two_column_images = trim( get_option( 'ct_tracks_two_column_images_license_key_status' ) );
+
+		// check if any layout statuses are valid, and add to available layouts if they are
+		if ( $full_width == 'valid' ) {
+			$available_templates['full-width'] = 'Full-width';
+		}
+		if ( $full_width_images == 'valid' ) {
+			$available_templates['full-width-images'] = 'Full-width Images';
+		}
+		if ( $two_column == 'valid' ) {
+			$available_templates['two-column'] = 'Two-Column';
+		}
+		if ( $two_column_images == 'valid' ) {
+			$available_templates['two-column-images'] = 'Two-Column Images';
+		}
+
+		// section
+		$wp_customize->add_section( 'ct_tracks_premium_layouts', array(
+			'title'    => __( 'Premium Layouts', 'tracks' ),
+			'priority' => 85
+		) );
+		// setting - layout select
+		$wp_customize->add_setting( 'premium_layouts_setting', array(
+			'default'           => 'standard',
+			'sanitize_callback' => 'ct_tracks_sanitize_premium_layouts'
+		) );
+
+		// control - layout select
+		$wp_customize->add_control( 'premium_layouts_setting', array(
+			'type'        => 'select',
+			'label'       => sprintf( __( 'Choose the layout for %s', 'tracks' ), wp_get_theme( get_template() ) ),
+			'description' => sprintf( __( 'Want more layouts? Check out the <a target="_blank" href="%1$s">%2$s Pro Plugin</a>.', 'tracks' ), 'https://www.competethemes.com/tracks-pro/', wp_get_theme( get_template() ) ),
+			'section'     => 'ct_tracks_premium_layouts',
+			'setting'     => 'premium_layouts_setting',
+			'choices'     => $available_templates, // no i18n b/c product names
+		) );
+		// setting - full-width image height
+		$wp_customize->add_setting( 'premium_layouts_full_width_image_height', array(
+			'default'           => 'image',
+			'sanitize_callback' => 'ct_tracks_sanitize_premium_layouts_image_height'
+		) );
+		// control - full-width image height
+		$wp_customize->add_control( 'premium_layouts_full_width_image_height', array(
+			'type'    => 'radio',
+			'label'   => __( 'Image size on Blog', 'tracks' ),
+			'section' => 'ct_tracks_premium_layouts',
+			'setting' => 'premium_layouts_setting',
+			'choices' => array(
+				'image'     => _x( 'size based on image size', 'size of the featured image', 'tracks' ),
+				'2:1-ratio' => _x( '2:1 width/height ratio like posts', 'size of the featured image', 'tracks' )
+			),
+		) );
+		// setting - full-width image height post
+		$wp_customize->add_setting( 'premium_layouts_full_width_image_height_post', array(
+			'default'           => 'image',
+			'sanitize_callback' => 'ct_tracks_sanitize_premium_layouts_image_height'
+		) );
+		// control - full-width image height
+		$wp_customize->add_control( 'premium_layouts_full_width_image_height_post', array(
+			'type'    => 'radio',
+			'label'   => __( 'Image size on Posts', 'tracks' ),
+			'section' => 'ct_tracks_premium_layouts',
+			'setting' => 'premium_layouts_setting',
+			'choices' => array(
+				'image'     => _x( 'size based on image size', 'size of the featured image', 'tracks' ),
+				'2:1-ratio' => _x( '2:1 width/height ratio like posts', 'size of the featured image', 'tracks' )
+			),
+		) );
+		// setting - full-width image style
+		$wp_customize->add_setting( 'premium_layouts_full_width_image_style', array(
+			'default'           => 'overlay',
+			'sanitize_callback' => 'ct_tracks_sanitize_premium_layouts_image_style'
+		) );
+		// control - full-width image style
+		$wp_customize->add_control( 'premium_layouts_full_width_image_style', array(
+			'type'    => 'radio',
+			'label'   => _x( 'Style', 'noun: pick a style', 'tracks' ),
+			'section' => 'ct_tracks_premium_layouts',
+			'setting' => 'premium_layouts_setting',
+			'choices' => array(
+				'overlay' => _x( 'Overlay', 'noun: the overlay style', 'tracks' ),
+				'title'   => __( 'Title below', 'tracks' )
+			),
+		) );
+		// setting - full-width full post
+		$wp_customize->add_setting( 'premium_layouts_full_width_full_post', array(
+			'default'           => 'no',
+			'sanitize_callback' => 'ct_tracks_all_yes_no_setting_sanitization'
+		) );
+		// control - full-width full post
+		$wp_customize->add_control( 'premium_layouts_full_width_full_post', array(
+			'type'    => 'radio',
+			'label'   => __( 'Show full posts on Blog/Archives?', 'tracks' ),
+			'section' => 'ct_tracks_premium_layouts',
+			'setting' => 'premium_layouts_full_width_full_post',
+			'choices' => array(
+				'yes' => __( 'Yes', 'tracks' ),
+				'no'  => __( 'No', 'tracks' )
+			),
+		) );
 	}
-	if ( $full_width_images == 'valid' ) {
-		$available_templates['full-width-images'] = 'Full-width Images';
-	}
-	if ( $two_column == 'valid' ) {
-		$available_templates['two-column'] = 'Two-Column';
-	}
-	if ( $two_column_images == 'valid' ) {
-		$available_templates['two-column-images'] = 'Two-Column Images';
-	}
-
-	// section
-	$wp_customize->add_section( 'ct_tracks_premium_layouts', array(
-		'title'    => __( 'Premium Layouts', 'tracks' ),
-		'priority' => 85
-	) );
-	// setting - layout select
-	$wp_customize->add_setting( 'premium_layouts_setting', array(
-		'default'           => 'standard',
-		'sanitize_callback' => 'ct_tracks_sanitize_premium_layouts'
-	) );
-
-	// control - layout select
-	$wp_customize->add_control( 'premium_layouts_setting', array(
-		'type'        => 'select',
-		'label'       => sprintf( __( 'Choose the layout for %s', 'tracks' ), wp_get_theme( get_template() ) ),
-		'description' => sprintf( __( 'Want more layouts? Check out the <a target="_blank" href="%1$s">%2$s Pro Plugin</a>.', 'tracks' ), 'https://www.competethemes.com/tracks-pro/', wp_get_theme( get_template() ) ),
-		'section'     => 'ct_tracks_premium_layouts',
-		'setting'     => 'premium_layouts_setting',
-		'choices'     => $available_templates, // no i18n b/c product names
-	) );
-	// setting - full-width image height
-	$wp_customize->add_setting( 'premium_layouts_full_width_image_height', array(
-		'default'           => 'image',
-		'sanitize_callback' => 'ct_tracks_sanitize_premium_layouts_image_height'
-	) );
-	// control - full-width image height
-	$wp_customize->add_control( 'premium_layouts_full_width_image_height', array(
-		'type'    => 'radio',
-		'label'   => __( 'Image size on Blog', 'tracks' ),
-		'section' => 'ct_tracks_premium_layouts',
-		'setting' => 'premium_layouts_setting',
-		'choices' => array(
-			'image'     => _x( 'size based on image size', 'size of the featured image', 'tracks' ),
-			'2:1-ratio' => _x( '2:1 width/height ratio like posts', 'size of the featured image', 'tracks' )
-		),
-	) );
-	// setting - full-width image height post
-	$wp_customize->add_setting( 'premium_layouts_full_width_image_height_post', array(
-		'default'           => 'image',
-		'sanitize_callback' => 'ct_tracks_sanitize_premium_layouts_image_height'
-	) );
-	// control - full-width image height
-	$wp_customize->add_control( 'premium_layouts_full_width_image_height_post', array(
-		'type'    => 'radio',
-		'label'   => __( 'Image size on Posts', 'tracks' ),
-		'section' => 'ct_tracks_premium_layouts',
-		'setting' => 'premium_layouts_setting',
-		'choices' => array(
-			'image'     => _x( 'size based on image size', 'size of the featured image', 'tracks' ),
-			'2:1-ratio' => _x( '2:1 width/height ratio like posts', 'size of the featured image', 'tracks' )
-		),
-	) );
-	// setting - full-width image style
-	$wp_customize->add_setting( 'premium_layouts_full_width_image_style', array(
-		'default'           => 'overlay',
-		'sanitize_callback' => 'ct_tracks_sanitize_premium_layouts_image_style'
-	) );
-	// control - full-width image style
-	$wp_customize->add_control( 'premium_layouts_full_width_image_style', array(
-		'type'    => 'radio',
-		'label'   => _x( 'Style', 'noun: pick a style', 'tracks' ),
-		'section' => 'ct_tracks_premium_layouts',
-		'setting' => 'premium_layouts_setting',
-		'choices' => array(
-			'overlay' => _x( 'Overlay', 'noun: the overlay style', 'tracks' ),
-			'title'   => __( 'Title below', 'tracks' )
-		),
-	) );
-	// setting - full-width full post
-	$wp_customize->add_setting( 'premium_layouts_full_width_full_post', array(
-		'default'           => 'no',
-		'sanitize_callback' => 'ct_tracks_all_yes_no_setting_sanitization'
-	) );
-	// control - full-width full post
-	$wp_customize->add_control( 'premium_layouts_full_width_full_post', array(
-		'type'    => 'radio',
-		'label'   => __( 'Show full posts on Blog/Archives?', 'tracks' ),
-		'section' => 'ct_tracks_premium_layouts',
-		'setting' => 'premium_layouts_full_width_full_post',
-		'choices' => array(
-			'yes' => __( 'Yes', 'tracks' ),
-			'no'  => __( 'No', 'tracks' )
-		),
-	) );
 
 	/***** Additional Options *****/
 
@@ -1006,12 +1050,3 @@ function ct_tracks_sanitize_phone( $input ) {
 		return '';
 	}
 }
-
-function ct_tracks_customize_preview_js() {
-	if ( !function_exists( 'ct_tracks_pro_init' ) ) {
-		$url = 'https://www.competethemes.com/tracks-pro/?utm_source=wp-dashboard&utm_medium=Customizer&utm_campaign=Tracks%20Pro%20-%20Customizer';
-		$content = "<script>jQuery('#customize-info').prepend('<div class=\"upgrades-ad\"><a href=\"". $url ."\" target=\"_blank\">Get New Layouts with Tracks Pro <span>&rarr;</span></a></div>')</script>";
-		echo apply_filters('ct_tracks_customizer_ad', $content);
-	}
-}
-add_action('customize_controls_print_footer_scripts', 'ct_tracks_customize_preview_js');
