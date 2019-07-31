@@ -1,8 +1,19 @@
 <?php
- 
-if( !class_exists( 'lookilite_admin_notice' ) ) {
 
-	class lookilite_admin_notice {
+/**
+ * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+} // Exit if accessed directly
+
+if( !class_exists( 'looki_lite_admin_notice' ) ) {
+
+	class looki_lite_admin_notice {
 	
 		/**
 		 * Constructor
@@ -10,23 +21,16 @@ if( !class_exists( 'lookilite_admin_notice' ) ) {
 		 
 		public function __construct( $fields = array() ) {
 
-			if ( !get_user_meta( get_current_user_id(), 'lookilite_userID_notice_' . get_current_user_id() , TRUE ) ) {
+			if ( 
+				!get_option( 'looki-lite-dismissed-notice') &&
+				version_compare( PHP_VERSION, LOOKI_LITE_MIN_PHP_VERSION, '>=' )
+			) {
 
 				add_action( 'admin_notices', array(&$this, 'admin_notice') );
 				add_action( 'admin_head', array( $this, 'dismiss' ) );
 			
 			}
 
-			add_action( 'switch_theme', array( $this, 'update_dismiss' ) );
-
-		}
-
-		/**
-		 * Update notice.
-		 */
-
-		public function update_dismiss() {
-			delete_metadata( 'user', null, 'lookilite_userID_notice_' . get_current_user_id(), null, true );
 		}
 
 		/**
@@ -34,10 +38,10 @@ if( !class_exists( 'lookilite_admin_notice' ) ) {
 		 */
 		
 		public function dismiss() {
+
+			if ( isset( $_GET['looki-lite-dismiss'] ) && check_admin_referer( 'looki-lite-dismiss-action' ) ) {
 		
-			if ( isset( $_GET['lookilite-dismiss'] ) ) {
-		
-				update_user_meta( get_current_user_id(), 'lookilite_userID_notice_' . get_current_user_id() , $_GET['lookilite-dismiss'] );
+				update_option( 'looki-lite-dismissed-notice', intval($_GET['looki-lite-dismiss']) );
 				remove_action( 'admin_notices', array(&$this, 'admin_notice') );
 				
 			} 
@@ -52,15 +56,25 @@ if( !class_exists( 'lookilite_admin_notice' ) ) {
 			
 		?>
 			
-            <div class="update-nag notice lookilite-notice">
+            <div class="update-nag notice looki_lite-notice">
             
-            	<div class="lookilite-noticedescription">
+            	<div class="looki_lite-noticedescription">
+					
                     <strong><?php _e( 'Upgrade to the premium version of Looki to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'lookilite' ); ?></strong><br/>
 
-					<?php printf( __('<a href="%1$s" class="dismiss-notice">Dismiss this notice</a>','lookilite'), esc_url( '?lookilite-dismiss=1' ) ); ?>
+					<?php 
+					
+						printf( 
+							'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'looki-lite' ) . '</a>', 
+							esc_url( wp_nonce_url( add_query_arg( 'looki-lite-dismiss', '1' ), 'looki-lite-dismiss-action'))
+						);
+					
+					?>
+                
                 </div>
                 
                 <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/looki/?ref=2&campaign=looki-notice' ); ?>" class="button"><?php _e( 'Upgrade to Looki Premium', 'lookilite' ); ?></a>
+                
                 <div class="clear"></div>
 
             </div>
@@ -73,6 +87,6 @@ if( !class_exists( 'lookilite_admin_notice' ) ) {
 
 }
 
-new lookilite_admin_notice();
+new looki_lite_admin_notice();
 
 ?>

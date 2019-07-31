@@ -13,6 +13,16 @@
 
 <body <?php body_class(); ?>>
 
+<?php
+
+if ( function_exists('wp_body_open') ) {
+	wp_body_open();
+}
+
+?>
+
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'looki-lite' ); ?></a>
+
 <?php get_sidebar(); ?>
 
 <div id="body-wrapper">

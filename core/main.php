@@ -7,48 +7,52 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
+define( 'LOOKI_LITE_MIN_PHP_VERSION', '5.3' );
+
 /*-----------------------------------------------------------------------------------*/
-/* TAG TITLE */
-/*-----------------------------------------------------------------------------------*/  
+/* Switches back to the previous theme if the minimum PHP version is not met */
+/*-----------------------------------------------------------------------------------*/ 
 
-if ( ! function_exists( '_wp_render_title_tag' ) ) {
+if ( ! function_exists( 'looki_lite_check_php_version' ) ) {
 
-	function lookilite_title( $title, $sep ) {
-		
-		global $paged, $page;
+	function looki_lite_check_php_version() {
 	
-		if ( is_feed() )
-			
-			return $title;
+		if ( version_compare( PHP_VERSION, LOOKI_LITE_MIN_PHP_VERSION, '<' ) ) {
+			add_action( 'admin_notices', 'looki_lite_min_php_not_met_notice' );
+			switch_theme( get_option( 'theme_switched' ));
+			return false;
 	
-		$title .= get_bloginfo( 'name' );
-	
-		$site_description = get_bloginfo( 'description', 'display' );
-		
-		if ( $site_description && ( is_home() || is_front_page() ) )
-			$title = "$title $sep $site_description";
-	
-		if ( $paged >= 2 || $page >= 2 )
-			$title = "$title $sep " . sprintf( __( 'Page %s', 'lookilite' ), max( $paged, $page ) );
-	
-		return $title;
-		
+		};
 	}
 
-	add_filter( 'wp_title', 'lookilite_title', 10, 2 );
+	add_action( 'after_switch_theme', 'looki_lite_check_php_version' );
 
-	function lookilite_add_title() {
-		
-?>
+}
 
-	<title><?php wp_title( '|', true, 'right' ); ?></title>ggg
+/*-----------------------------------------------------------------------------------*/
+/* An error notice that can be displayed if the Minimum PHP version is not met */
+/*-----------------------------------------------------------------------------------*/ 
 
-<?php
+if ( ! function_exists( 'looki_lite_min_php_not_met_notice' ) ) {
 
+	function looki_lite_min_php_not_met_notice() {
+		?>
+		<div class="notice notice-error is_dismissable">
+			<p>
+				<?php esc_html_e('You need to update your PHP version to run this theme.', 'looki-lite' ); ?><br />
+				<?php
+				printf(
+					esc_html__( 'Actual version is: %1$s, required version is: %2$s.', 'looki-lite' ),
+					PHP_VERSION,
+					LOOKI_LITE_MIN_PHP_VERSION
+				);
+				?>
+			</p>
+		</div>
+		<?php
+	
 	}
-
-	add_action( 'wp_head', 'lookilite_add_title' );
-
+	
 }
 
 /*-----------------------------------------------------------------------------------*/
@@ -541,10 +545,10 @@ if (!function_exists('lookilite_scripts_styles')) {
 		
 		lookilite_enqueue_script('/assets/js');
 
-		wp_enqueue_script('looki-lite-html5shiv', get_template_directory_uri().'/assets/scripts/html5shiv.js', FALSE, '3.7.0');
-		wp_script_add_data('looki-lite-html5shiv', 'conditional', 'IE 8' );
-		wp_enqueue_script('looki-lite-selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr.js', FALSE, '1.0.3b');
-		wp_script_add_data('looki-lite-selectivizr', 'conditional', 'IE 8' );
+		wp_enqueue_script('html5shiv', get_template_directory_uri().'/assets/scripts/html5shiv.js', FALSE, '3.7.0');
+		wp_script_add_data('html5shiv', 'conditional', 'IE 8' );
+		wp_enqueue_script('selectivizr', get_template_directory_uri().'/assets/scripts/selectivizr.js', FALSE, '1.0.3b');
+		wp_script_add_data('selectivizr', 'conditional', 'IE 8' );
 
 	}
 	
