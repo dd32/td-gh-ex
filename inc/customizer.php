@@ -20,7 +20,7 @@ function articlepress_customize_register( $wp_customize ) {
 
 	// Icon show hide
 	$wp_customize->add_setting( 'footer_socail_icon_show_hide', array(
-		'default'  	=>	1,
+		'default'  	=>	0,
 		'transport'	=>	'refresh',
 		'sanitize_callback'  => 'esc_url_raw'
 	));
@@ -39,7 +39,7 @@ function articlepress_customize_register( $wp_customize ) {
 	$wp_customize->add_control( 'footer_socail_icon_facebook', array(
 		'section'	=> 	'footer_socail_icon',
 		'label'		=>	esc_html__( 'Facebook', 'articlepress' ),
-		'type'		=>	'text'
+		'type'		=>	'url'
 	));
 
 

@@ -1,19 +1,22 @@
 === ArticlePress ===
 
 Contributors: ThemeAsia
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
-
-Requires at least: 4.5
-Tested up to: 4.8
+Requires at least: 4.9
+Tested up to: 5.2.1
 Stable tag: 1.0.0
+Requires PHP: 5.6.2
 License: GNU General Public License v2 or later
-License URI: LICENSE
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 A starter theme called ArticlePress.
+ArticlePress WordPress Theme, Copyright 2019 ThemeAsia
+ArticlePress is distributed under the terms of the GNU GPL
+
 
 == Description ==
 
-ArticlePress is Blog Theme
+ArticlePress is a top notch music WordPress theme. Suitable for Blogging,Information Website. The theme design is creative and follows the latest design trends. Checkout demo: https://item.themeasia.net/articlepress/
+
 
 == Installation ==
 
@@ -21,16 +24,56 @@ ArticlePress is Blog Theme
 2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
 3. Click Activate to use your new theme right away.
 
+
 == Frequently Asked Questions ==
 
 = Does this theme support any plugins? =
 
 ArticlePress includes support for Infinite Scroll in Jetpack.
 
+
 == Changelog ==
 
-= 1.0 - May 12 2015 =
+= 1.0.0 - 06/11/2019 =
 * Initial release
+
+= 1.0.4 - 06/26/2019 =
+* Fixed WP reviewer request
+
+= 1.0.5 - 07/07/2019 =
+* Fixed WP reviewer request
+
+= 1.0.7 - 07/07/2019 =
+* Fixed WP reviewer request
+
+= 1.0.8 - 07/31/2019 =
+* Fixed WP reviewer request
+
+
+== Upgrade Notice ==
+= 1.0.0 =
+First release the Theme
+
+= 1.0.4 =
+* Fixed WP reviewer request
+
+= 1.0.5 =
+* Fixed WP reviewer request
+
+= 1.0.7 =
+* Fixed WP reviewer request
+
+= 1.0.8 =
+* Fixed WP reviewer request
+Disable the footer social icons in default.
+GPL license URL Add
+Remove rtl.css file
+Remove readme.md file
+add //wp_body_open hook from WordPress 5.2
+remove the layout folder and language
+Validate your readme file
+Remove wp_enqueue_script( 'jquery' );
+
 
 == Copyright ==
 

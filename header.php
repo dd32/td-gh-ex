@@ -21,8 +21,15 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page" class="site">
 
+<?php 
+    //wp_body_open hook from WordPress 5.2
+    if ( function_exists( 'wp_body_open' ) ) {
+        wp_body_open();
+    }
+?>
+
+<div id="page" class="site">
 
     <!--====== Header Start ======-->
     <header class="header">

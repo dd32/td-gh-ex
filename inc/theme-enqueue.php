@@ -28,9 +28,6 @@ function articlepress_scripts(){
 	wp_enqueue_script( 'modernizr', get_template_directory_uri() . '/assets/js/vendor/modernizr-2.8.3.min.js' );
 
 
-	// jQuery Script
-	wp_enqueue_script( 'jquery' );
-
 	// Popper Script
 	wp_enqueue_script( 'articlepress-popper', get_template_directory_uri() . '/assets/js/popper.min.js', 'jQuery', '1.14.3', true );
 
