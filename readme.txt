@@ -1,13 +1,13 @@
 ﻿=== arina ===
-Contributors: rashid87
+Contributors: mariacloud
 Tags:one-column, two-columns, right-sidebar, custom-header, custom-menu, editor-style, featured-images, sticky-post, translation-ready, microformats
 Requires at least: 4.9
 Tested up to: 5.2.1
 Requires PHP: 5.6
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.htm
-Copyright: Mahfuzur Rashid 2019.
+Copyright: Maria Kibtia 2019.
 
 == Description ==
 This is arina Business WordPress Theme
@@ -38,14 +38,22 @@ The theme has one menus. The menu supports 3 levels.
 
 == Changelog ==
 
-= 1.0.0- May 6 2019 =
+= 1.0.0- July 20 2019 =
 * Initial release
 
 == Upgrade Notice ==
+No Upgrade Yet
 
+
+== Screenshots ==
+
+Pexels Images
+	License: CC0 1.0 Universal (CC0 1.0) 
+	Source: https://www.pexels.com/photo-license/
+	
 == Resources ==
 
-arina WordPress Theme, Copyright (C) 2019, Mahfuzur Rashid
+arina WordPress Theme, Copyright (C) 2019, Maria Kibtia
 arina is distributed under the terms of the GNU GPL
 
 arina bundles the following third-party resources:

@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: \n"
-"POT-Creation-Date: 2019-06-19 23:47+0600\n"
+"POT-Creation-Date: 2019-07-31 09:00+0600\n"
 "PO-Revision-Date: 2019-01-20 02:32+0600\n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -15,38 +15,15 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-KeywordsList: __;_e\n"
 "X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPath-1: .\n"
 "X-Poedit-SearchPathExcluded-0: assets\n"
 
 #: footer.php:38
 msgid "Y"
 msgstr ""
 
-#: inc/custom-functions.php:58 inc/custom-functions.php:110
+#: inc/custom-functions.php:37 inc/custom-functions.php:89
 msgid "<span style=\"margin-left: 5px;\" class=\"lnr lnr-pencil\"></span> Edit"
-msgstr ""
-
-#: inc/customizer/customizer.php:32
-msgid "Header Background Color"
-msgstr ""
-
-#: inc/customizer/customizer.php:53
-msgid "Main Menu Color"
-msgstr ""
-
-#: inc/customizer/customizer.php:73
-msgid "Bread Title Color"
-msgstr ""
-
-#: inc/customizer/customizer.php:95
-msgid "Bread BG Color"
-msgstr ""
-
-#: inc/customizer/customizer.php:106
-msgid "Footer"
-msgstr ""
-
-#: inc/customizer/customizer.php:118
-msgid "Footer Copyright Text"
 msgstr ""
 
 #: template-parts/content-none.php:22
@@ -59,7 +36,7 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
-#: template-parts/content-search.php:33 template-parts/content.php:45
+#: template-parts/content-search.php:33 template-parts/content.php:42
 #, php-format
 msgid "Continue reading<span class=\"screen-reader-text\"> \"%s\"</span>"
 msgstr ""
