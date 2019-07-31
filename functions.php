@@ -4,7 +4,7 @@
  *
  * @package Avant
  */
-define( 'AVANT_THEME_VERSION' , '1.1.20' );
+define( 'AVANT_THEME_VERSION' , '1.1.21' );
 
 // Include Avant Upgrade page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -157,7 +157,7 @@ function avant_scripts() {
 		}
 	}
 
-	wp_enqueue_style( 'avant-font-awesome', get_template_directory_uri().'/includes/font-awesome/css/all.min.css', array(), '5.5.0' );
+	wp_enqueue_style( 'avant-font-awesome', get_template_directory_uri().'/includes/font-awesome/css/all.min.css', array(), '5.9.0' );
 	wp_enqueue_style( 'avant-style', get_stylesheet_uri(), array(), AVANT_THEME_VERSION );
 
 	if ( get_theme_mod( 'avant-header-layout' ) == 'avant-header-layout-seven' ) :
@@ -508,16 +508,6 @@ function avant_set_widget_categories_dropdown_arg($args){
 	return $args;
 }
 add_filter( 'widget_categories_dropdown_args', 'avant_set_widget_categories_dropdown_arg' );
-
-
-
-
-
-
-
-
-
-
 
 /**
  * Admin notice to enter a purchase license

@@ -175,6 +175,10 @@ a.upgrade-page-link:hover {
 .avant-upgrade-result-button:hover {
 	background-color: #0952A9;
 }
+.upgrade-page-right-box-img .avant-upgrade-result-button {
+	padding: 4px 10px 5px;
+    font-size: 13px;
+}
 
 .avant-upgrade-block {
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);

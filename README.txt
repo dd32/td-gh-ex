@@ -29,7 +29,7 @@ All Javascript is located in /js/ with license headers where appropriate.
 jQuery carouFredSel v6.2.1, https://github.com/Codeinwp/carouFredSel-jQuery
 Copyright (c) 2012, Dev7studios, GPL License, https://github.com/Codeinwp/carouFredSel-jQuery/blob/master/license.txt
 
-FontAwesome v4.7.0, http://fontawesome.io/
+FontAwesome v5.9.0, http://fontawesome.io/
 Copyright 2017, Dave Gandy, SIL OFL 1.1 - Font License, http://fontawesome.io/license/
 Copyright 2017, Dave Gandy, MIT License - Code License, http://fontawesome.io/license/
 
@@ -67,6 +67,11 @@ View the theme settings under "Appearance" -> Customize.
 1. Featured Images work best at a minimum of 1400 wide and 700 high.
 
 == Changelog ==
+
+#### 1.1.21
+* Updated Font Awesome - v5.9.0
+* Added dashboard help links
+* Updated language .pot file
 
 #### 1.1.20
 * Style tweaks/fixes
