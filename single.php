@@ -17,7 +17,7 @@
 
 <!-- start content -->
 
-<div class="container content">
+<div id="content" class="container content">
 	
     <div class="row">
        

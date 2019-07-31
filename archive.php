@@ -38,7 +38,7 @@
     </div>
 </section>
 
-<div class="container content">
+<div id="content" class="container content">
 	
     <div class="row">
 

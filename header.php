@@ -19,6 +19,8 @@ if ( function_exists('wp_body_open') ) {
 
 ?>
 
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'nova-lite' ); ?></a>
+
 <div id="wrapper">
     
     <header id="header">

@@ -9,6 +9,54 @@
  * It is also available at this URL: http://www.gnu.org/licenses/gpl-3.0.txt
  */
 
+define( 'NOVA_LITE_MIN_PHP_VERSION', '5.3' );
+
+/*-----------------------------------------------------------------------------------*/
+/* Switches back to the previous theme if the minimum PHP version is not met */
+/*-----------------------------------------------------------------------------------*/ 
+
+if ( ! function_exists( 'nova_lite_check_php_version' ) ) {
+
+	function nova_lite_check_php_version() {
+	
+		if ( version_compare( PHP_VERSION, NOVA_LITE_MIN_PHP_VERSION, '<' ) ) {
+			add_action( 'admin_notices', 'nova_lite_min_php_not_met_notice' );
+			switch_theme( get_option( 'theme_switched' ));
+			return false;
+	
+		};
+	}
+
+	add_action( 'after_switch_theme', 'nova_lite_check_php_version' );
+
+}
+
+/*-----------------------------------------------------------------------------------*/
+/* An error notice that can be displayed if the Minimum PHP version is not met */
+/*-----------------------------------------------------------------------------------*/ 
+
+if ( ! function_exists( 'nova_lite_min_php_not_met_notice' ) ) {
+
+	function nova_lite_min_php_not_met_notice() {
+		?>
+		<div class="notice notice-error is_dismissable">
+			<p>
+				<?php esc_html_e('You need to update your PHP version to run this theme.', 'nova-lite' ); ?><br />
+				<?php
+				printf(
+					esc_html__( 'Actual version is: %1$s, required version is: %2$s.', 'nova-lite' ),
+					PHP_VERSION,
+					NOVA_LITE_MIN_PHP_VERSION
+				);
+				?>
+			</p>
+		</div>
+		<?php
+	
+	}
+	
+}
+
 /*-----------------------------------------------------------------------------------*/
 /* THEME SETTINGS */
 /*-----------------------------------------------------------------------------------*/ 
@@ -327,7 +375,6 @@ if (!function_exists('novalite_setup')) {
 		require_once( trailingslashit( get_template_directory() ) . 'core/classes/class-metaboxes.php' );
 		require_once( trailingslashit( get_template_directory() ) . 'core/classes/class-notice.php' );
 		require_once( trailingslashit( get_template_directory() ) . 'core/admin/customize/customize.php' );
-		require_once( trailingslashit( get_template_directory() ) . 'core/admin/customize/general.php' );
 		require_once( trailingslashit( get_template_directory() ) . 'core/functions/style.php' );
 		require_once( trailingslashit( get_template_directory() ) . 'core/functions/widgets.php' );
 		require_once( trailingslashit( get_template_directory() ) . 'core/templates/after-content.php' );
