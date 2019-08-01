@@ -43,15 +43,15 @@ function digital_customize_register( $wp_customize ) {
          $important_links = array(
 		 
             'theme-info' => array(
-               'link' => esc_url('http://www.insertcart.com/product/digital-wordpress-theme/'),
+               'link' => esc_url('https://www.insertcart.com/product/digital-wordpress-theme/'),
                'text' => __('Digital Pro', 'digital'),
             ),
             'support' => array(
-               'link' => esc_url('http://www.insertcart.com/contact-us/'),
+               'link' => esc_url('https://www.insertcart.com/contact-us/'),
                'text' => __('Contact us', 'digital'),
             ),         
 			'Documentation' => array(
-               'link' => esc_url('http://www.insertcart.com/digital-wordpress-theme-setup-and-documentation/'),
+               'link' => esc_url('https://www.insertcart.com/digital-wordpress-theme-setup-and-documentation/'),
                'text' => __('Documentation', 'digital'),
             ),			 
          );

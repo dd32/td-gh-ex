@@ -4,7 +4,7 @@ function digital_backg() {
 	?>
 	<style type="text/css">
 	<?php if ( get_header_image() ) : ?>	
-		#header{background-image:url("<?php esc_url(header_image());?>"); display: flex;background-repeat: round;}
+		#header{background-image:url("<?php esc_url(header_image());?>"); display: flex;background-repeat: no-repeat;}
 		<?php endif; ?>
 		
 		<?php if(of_get_option('digital_thumbadj')=='off'){ ?>

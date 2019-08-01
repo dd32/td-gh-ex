@@ -130,7 +130,7 @@ $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s<
 
 	$byline = sprintf(
 		esc_html_x( '%s', 'post author', 'digital' ),
-		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '"><i class="fa fa-user"></i>' . esc_html( get_the_author() ) . '</a></span>'
+		'<span class="author vcard"><a class="url fn n" href="' . esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ) . '">' . esc_html( get_the_author() ) . '</a></span>'
 	);
 
 	echo '<span class="posted-on">' . $posted_on . '</span><span class="byline"> ' . $byline . '</span>'; // WPCS: XSS OK.
@@ -193,7 +193,7 @@ function digital_search_form( $form ) {
 	$form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
 	<div><label class="screen-reader-text" for="s">' . __( 'Search for:','digital' ) . '</label>
 	<input type="text" value="' . get_search_query() . '" name="s" id="s" />
-	<input type="submit" id="searchsubmit" value="'. esc_attr__( 'Go','digital' ) .'" />
+	<input type="submit" id="searchsubmit" value="'. esc_attr__( 'Go','digital' ) .'" ><i class="fa fa-search" aria-hidden="true"></i></input>
 	</div>
 	</form>';
 
@@ -240,7 +240,7 @@ function digital_comment_form_fields( $fields ) {
     $html5    = current_theme_supports( 'html5', 'comment-form' ) ? 1 : 0;
     
     $fields   =  array(
-        'author' => '<div class="large-6 columns"><div class="row collapse prefix-radius"><div class="small-3 columns">' . '<span class="prefix"><i class="fa fa-user"></i>' . __( 'Name','digital' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</span> </div>' .
+        'author' => '<div class="large-6 columns"><div class="row collapse prefix-radius"><div class="small-3 columns">' . '<span class="prefix">' . __( 'Name','digital' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</span> </div>' .
                     '<div class="small-9 columns"><input class="form-control" id="author" name="author" type="text" value="' . esc_attr( $commenter['comment_author'] ) . '" size="20"' . $aria_req . ' /></div></div></div>',
         'email'  => '<div class="large-6 columns"><div class="row collapse prefix-radius"><div class="small-3 columns">' . '<span class="prefix"><i class="fa fa-envelope-o"></i>' . __( 'Email','digital' ) . ( $req ? ' <span class="required">*</span>' : '' ) . '</span></div> ' .
                     '<div class="small-9 columns"><input class="form-control" id="email" name="email" ' . ( $html5 ? 'type="email"' : 'type="text"' ) . ' value="' . esc_attr(  $commenter['comment_author_email'] ) . '" size="20"' . $aria_req . ' /></div></div></div>',

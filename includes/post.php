@@ -6,7 +6,7 @@
 		elseif (of_get_option( 'digital_defaulthumb')) { 
 		echo'<img src="' . of_get_option( 'digital_defaulthumb').'" />' ; }
 		else { 
-		echo '<img src="'.get_template_directory_uri().'/images/thumb.jpg" />'. "\n"; }
+		echo '<img src="'.get_template_directory_uri().'/images/thumb.png" />'. "\n"; }
 	  ?></a>
 
 
@@ -22,7 +22,7 @@
 		elseif (of_get_option( 'digital_defaulthumb')) { 
 		echo'<img src="' . of_get_option( 'digital_defaulthumb').'" />' ; }
 		else { 
-		echo '<img src="'.get_template_directory_uri().'/images/thumb.jpg" />'. "\n"; }
+		echo '<img src="'.get_template_directory_uri().'/images/thumb.png" />'. "\n"; }
 	  ?></a>
 
  </a> <a href="<?php the_permalink(); ?>"><div class="info"></div></a>  </div>

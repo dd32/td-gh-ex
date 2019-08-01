@@ -30,11 +30,13 @@
 
 	<!-- END HEADER -->
 
-	<!-- BEGIN TOP NAVIGATION -->		
+	<!-- BEGIN TOP NAVIGATION -->
+<button class="tootleeff" onclick="toggleeffect()"><i class="fa fa-bars" aria-hidden="true"></i> <?php _e('Menu', 'digital'); ?></button>	
+<div id="mobview">	
 <div id="navigation" class="nav"> 
     <div id="navigation-inner" class="clearfix secondary">
 		<?php	wp_nav_menu(array('container' => '', 'theme_location' => 'digital-navigation', 'fallback_cb' => 'digital_hdmenu'));?>
-		<div id="search"><?php get_search_form(); ?></div></div>   </div>
+		<div id="search"><?php get_search_form(); ?></div></div>   </div></div>
 	
 	
 	<?php if ( (function_exists( 'of_get_option' )) && (of_get_option('slidetitle4',true) !=1) ) {
