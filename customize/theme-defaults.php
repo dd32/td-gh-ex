@@ -87,40 +87,25 @@ $ariel_defaults['ariel_custom_header'] = esc_url( get_template_directory_uri() .
 $ariel_defaults['ariel-slider-fw'][] = esc_url( get_template_directory_uri() . '/sample/images/1170x550-1.jpg' );
 $ariel_defaults['ariel-slider-fw'][] = esc_url( get_template_directory_uri() . '/sample/images/1170x550-2.jpg' );
 $ariel_defaults['ariel-slider-fw'][] = esc_url( get_template_directory_uri() . '/sample/images/1170x550-3.jpg' );
-$ariel_defaults['ariel-slider-fw'][] = esc_url( get_template_directory_uri() . '/sample/images/1170x550-4.jpg' );
-$ariel_defaults['ariel-slider-fw'][] = esc_url( get_template_directory_uri() . '/sample/images/1170x550-5.jpg' );
-$ariel_defaults['ariel-slider-fw'][] = esc_url( get_template_directory_uri() . '/sample/images/1170x550-6.jpg' );
 
 /* slider - with thumbnails: 870, 550 and 110, 110 */
 
 $ariel_defaults['ariel-slider-sm'][] = esc_url( get_template_directory_uri() . '/sample/images/870x550-1.jpg' );
 $ariel_defaults['ariel-slider-sm'][] = esc_url( get_template_directory_uri() . '/sample/images/870x550-2.jpg' );
 $ariel_defaults['ariel-slider-sm'][] = esc_url( get_template_directory_uri() . '/sample/images/870x550-3.jpg' );
-$ariel_defaults['ariel-slider-sm'][] = esc_url( get_template_directory_uri() . '/sample/images/870x550-4.jpg' );
-$ariel_defaults['ariel-slider-sm'][] = esc_url( get_template_directory_uri() . '/sample/images/870x550-5.jpg' );
-$ariel_defaults['ariel-slider-sm'][] = esc_url( get_template_directory_uri() . '/sample/images/870x550-6.jpg' );
 
 $ariel_defaults['ariel-recent'][] = esc_url( get_template_directory_uri() . '/sample/images/110x110-1.jpg' );
 $ariel_defaults['ariel-recent'][] = esc_url( get_template_directory_uri() . '/sample/images/110x110-2.jpg' );
 $ariel_defaults['ariel-recent'][] = esc_url( get_template_directory_uri() . '/sample/images/110x110-3.jpg' );
-$ariel_defaults['ariel-recent'][] = esc_url( get_template_directory_uri() . '/sample/images/110x110-4.jpg' );
-$ariel_defaults['ariel-recent'][] = esc_url( get_template_directory_uri() . '/sample/images/110x110-5.jpg' );
-$ariel_defaults['ariel-recent'][] = esc_url( get_template_directory_uri() . '/sample/images/110x110-6.jpg' );
 
 /* featured posts: 540, 540 */
 
 $ariel_defaults['ariel-featured'][] = esc_url( get_template_directory_uri() . '/sample/images/540x540-1.jpg' );
 $ariel_defaults['ariel-featured'][] = esc_url( get_template_directory_uri() . '/sample/images/540x540-2.jpg' );
 $ariel_defaults['ariel-featured'][] = esc_url( get_template_directory_uri() . '/sample/images/540x540-3.jpg' );
-$ariel_defaults['ariel-featured'][] = esc_url( get_template_directory_uri() . '/sample/images/540x540-4.jpg' );
-$ariel_defaults['ariel-featured'][] = esc_url( get_template_directory_uri() . '/sample/images/540x540-5.jpg' );
-$ariel_defaults['ariel-featured'][] = esc_url( get_template_directory_uri() . '/sample/images/540x540-6.jpg' );
 
 /* blog feed - grid: 840, 500 */
 
 $ariel_defaults['ariel-grid'][] = esc_url( get_template_directory_uri() . '/sample/images/840x500-1.jpg' );
 $ariel_defaults['ariel-grid'][] = esc_url( get_template_directory_uri() . '/sample/images/840x500-2.jpg' );
 $ariel_defaults['ariel-grid'][] = esc_url( get_template_directory_uri() . '/sample/images/840x500-3.jpg' );
-$ariel_defaults['ariel-grid'][] = esc_url( get_template_directory_uri() . '/sample/images/840x500-4.jpg' );
-$ariel_defaults['ariel-grid'][] = esc_url( get_template_directory_uri() . '/sample/images/840x500-5.jpg' );
-$ariel_defaults['ariel-grid'][] = esc_url( get_template_directory_uri() . '/sample/images/840x500-6.jpg' );

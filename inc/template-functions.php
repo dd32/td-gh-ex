@@ -71,7 +71,6 @@ function ariel_archive_title( $title ) {
 	} elseif ( is_home() ) {
 		$title = ariel_get_option( 'ariel_blog_feed_label' );
 	}
-    $title = esc_html( $title );
 	return $title;
 }
 add_filter( 'get_the_archive_title', 'ariel_archive_title' );

@@ -1,5 +1,13 @@
 == Changelog ==
 
+1.2
+7/28/2019
+* Updated: Sample images 
+* Updated: Bootstrap to latest 3.x version 3.4.1
+* Updated: Typography for page content
+* Updated: Styling for default widgets
+* Fixed: Archive description was showing HTML tags
+
 1.1.1
 12/10
 * Fixed pagination
