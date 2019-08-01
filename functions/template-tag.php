@@ -27,25 +27,29 @@ function spasalon_page_banner_strip(){
 		$h1              = $current_options['banner_title_one_404'];
 		$h2              = $current_options['banner_title_two_404'];
 		$bd              = $current_options['banner_description_404'];
-		$my_meta['banner_enable']=true;
+		//$my_meta['banner_enable']=true;
+		$my_meta=true;
 	}
 	elseif( is_category() ){
 		$h1              = $current_options['banner_title_one_category'];
 		$h2              = $current_options['banner_title_two_category'];
 		$bd              = $current_options['banner_description_category'];
-		$my_meta['banner_enable']=true;
+		//$my_meta['banner_enable']=true;
+		$my_meta=true;
 	}
 	elseif( is_search() ){
 		$h1              = $current_options['banner_title_one_search'];
 		$h2              = $current_options['banner_title_two_search'];
 		$bd              = $current_options['banner_description_search'];
-		$my_meta['banner_enable']=true;
+		//$my_meta['banner_enable']=true;
+		$my_meta=true;
 	}
 	elseif( is_tag() ){
 		$h1              = $current_options['banner_title_one_tag'];
 		$h2              = $current_options['banner_title_two_tag'];
 		$bd              = $current_options['banner_description_tag'];
-		$my_meta['banner_enable']=true;
+		//$my_meta['banner_enable']=true;
+		$my_meta=true;
 	}
 	elseif( is_archive() ){
 		
@@ -60,7 +64,8 @@ function spasalon_page_banner_strip(){
 			$bd              = $current_options['banner_description_author'];
 		}
 		
-		$my_meta['banner_enable']=true;
+		//$my_meta['banner_enable']=true;
+		$my_meta=true;
 	}
 	else{
 		
@@ -70,7 +75,8 @@ function spasalon_page_banner_strip(){
 					$h1              = $current_options['banner_title_one_woo'];
 					$h2              = $current_options['banner_title_two_woo'];
 					$bd              = $current_options['banner_description_woo'];
-					$my_meta['banner_enable']=true;
+					//$my_meta['banner_enable']=true;
+					$my_meta=true;
 				}
 				else{
 					
@@ -80,7 +86,8 @@ function spasalon_page_banner_strip(){
 						$bd              = ( array_key_exists("banner_description",$my_meta) ? $my_meta['banner_description'] : '' );
 						}
 						else{
-							$my_meta['banner_enable']=false;
+							//$my_meta['banner_enable']=false;
+							$my_meta=true;
 						}
 				}
 				
@@ -92,7 +99,8 @@ function spasalon_page_banner_strip(){
 						$bd              = ( array_key_exists("banner_description",$my_meta) ? $my_meta['banner_description'] : '' );
 						}
 						else{
-							$my_meta['banner_enable']=false;
+							//$my_meta['banner_enable']=false;
+							$my_meta=true;
 						}
 				}
 		
@@ -100,8 +108,8 @@ function spasalon_page_banner_strip(){
 	
 	if( $current_options['spa_bannerstrip_enable']=='yes' )
 	{
-		if( isset($my_meta['banner_enable'])==true && ( $h1 != '' || $h2 != '' ) ) {
-		
+		//if( isset($my_meta['banner_enable'])==true && ( $h1 != '' || $h2 != '' ) ) {
+	if( $my_meta ==true && ( $h1 != '' || $h2 != '' ) ) {
 		echo '<section id="spa-page-header">';
 			echo '<div class="container">';
 			
