@@ -8,8 +8,28 @@ class diarjolite_customize {
 
 		$this->theme_fields = $fields;
 
+		add_action ('admin_init' , array( &$this, 'admin_scripts' ) );
 		add_action ('customize_register' , array( &$this, 'customize_panel' ) );
 		add_action ('customize_controls_enqueue_scripts' , array( &$this, 'customize_scripts' ) );
+
+	}
+
+	public function admin_scripts() {
+	
+		global $wp_version, $pagenow;
+
+		$file_dir = get_template_directory_uri()."/core/admin/assets/";
+			
+		if ( $pagenow == 'post.php' || $pagenow == 'post-new.php' || $pagenow == 'edit.php' ) {
+			wp_enqueue_style ( 'diarjo-lite-style', $file_dir.'css/theme.css' ); 
+			wp_enqueue_script( 'diarjo-lite-script', $file_dir.'js/theme.js',array('jquery'),'',TRUE ); 
+			wp_enqueue_script( "jquery-ui-core", array('jquery'));
+			wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
+		}
+			
+		if ( !get_option( 'diarjo-lite-dismissed-notice') ) {
+			wp_enqueue_style ( 'diarjo-lite-notice',  $file_dir . 'css/notice.css', array(), '1.0.0' ); 
+		}
 
 	}
 

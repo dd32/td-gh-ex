@@ -2,8 +2,9 @@
 Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, blog,  news, photography
 Requires at least: 4.0
-Tested up to: 5.0.2
-Stable tag: 1.2.1
+Tested up to: 5.2.2
+Stable tag: 1.2.2
+Requires PHP: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -19,6 +20,13 @@ Diarjo Lite WordPress Theme, Copyright 2019 ThemeinProgress.
 Diarjo Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.2.2 =
+Release date - August, 01 - 2019
+
+* Added - Skip links button
+* Added - New "wp_body_open" WordPress hook
+* Edit - Code optimized
 
 = 1.2.1 =
 Release date - February, 12 - 2019

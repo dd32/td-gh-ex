@@ -18,7 +18,7 @@
     
 </section>
 
-<div class="container">
+<div id="content" class="container">
 
 	<div class="row" id="blog" >
 		

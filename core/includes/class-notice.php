@@ -1,8 +1,19 @@
 <?php
- 
-if( !class_exists( 'diarjolite_admin_notice' ) ) {
 
-	class diarjolite_admin_notice {
+/**
+ * This source file is subject to the GNU GENERAL PUBLIC LICENSE (GPL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://www.gnu.org/licenses/gpl-3.0.txt
+ */
+
+if ( ! defined( 'ABSPATH' ) ) {
+    exit;
+} // Exit if accessed directly
+
+if( !class_exists( 'diarjo_lite_admin_notice' ) ) {
+
+	class diarjo_lite_admin_notice {
 	
 		/**
 		 * Constructor
@@ -10,23 +21,16 @@ if( !class_exists( 'diarjolite_admin_notice' ) ) {
 		 
 		public function __construct( $fields = array() ) {
 
-			if ( !get_user_meta( get_current_user_id(), 'diarjolite_userID_notice_' . get_current_user_id() , TRUE ) ) {
+			if ( 
+				!get_option( 'diarjo-lite-dismissed-notice') &&
+				version_compare( PHP_VERSION, DIARJO_LITE_MIN_PHP_VERSION, '>=' )
+			) {
 
 				add_action( 'admin_notices', array(&$this, 'admin_notice') );
 				add_action( 'admin_head', array( $this, 'dismiss' ) );
 			
 			}
 
-			add_action( 'switch_theme', array( $this, 'update_dismiss' ) );
-
-		}
-
-		/**
-		 * Update notice.
-		 */
-
-		public function update_dismiss() {
-			delete_metadata( 'user', null, 'diarjolite_userID_notice_' . get_current_user_id(), null, true );
 		}
 
 		/**
@@ -34,10 +38,10 @@ if( !class_exists( 'diarjolite_admin_notice' ) ) {
 		 */
 		
 		public function dismiss() {
+
+			if ( isset( $_GET['diarjo-lite-dismiss'] ) && check_admin_referer( 'diarjo-lite-dismiss-action' ) ) {
 		
-			if ( isset( $_GET['diarjolite-dismiss'] ) ) {
-		
-				update_user_meta( get_current_user_id(), 'diarjolite_userID_notice_' . get_current_user_id() , $_GET['diarjolite-dismiss'] );
+				update_option( 'diarjo-lite-dismissed-notice', intval($_GET['diarjo-lite-dismiss']) );
 				remove_action( 'admin_notices', array(&$this, 'admin_notice') );
 				
 			} 
@@ -52,15 +56,25 @@ if( !class_exists( 'diarjolite_admin_notice' ) ) {
 			
 		?>
 			
-            <div class="update-nag notice diarjolite-notice">
+            <div class="update-nag notice diarjo_lite-notice">
             
-            	<div class="diarjolite-noticedescription">
+            	<div class="diarjo_lite-noticedescription">
+					
                     <strong><?php _e( 'Upgrade to the premium version of Diarjo to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'diarjo-lite' ); ?></strong><br/>
 
-					<?php printf( __('<a href="%1$s" class="dismiss-notice">Dismiss this notice</a>','diarjo-lite'), esc_url( '?diarjolite-dismiss=1' ) ); ?>
+					<?php 
+					
+						printf( 
+							'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'diarjo-lite' ) . '</a>', 
+							esc_url( wp_nonce_url( add_query_arg( 'diarjo-lite-dismiss', '1' ), 'diarjo-lite-dismiss-action'))
+						);
+					
+					?>
+                
                 </div>
                 
                 <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/diarjo-free-creative-minimal-wordpress-theme/?ref=2&campaign=diarjonotice' ); ?>" class="button"><?php _e( 'Upgrade to Diarjo Premium', 'diarjo-lite' ); ?></a>
+                
                 <div class="clear"></div>
 
             </div>
@@ -73,6 +87,6 @@ if( !class_exists( 'diarjolite_admin_notice' ) ) {
 
 }
 
-new diarjolite_admin_notice();
+new diarjo_lite_admin_notice();
 
 ?>
