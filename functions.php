@@ -348,6 +348,7 @@ $file_paths = array(
 	'/pluggable/custom-header',
     '/inc/hooks/header-hooks',
     '/inc/hooks/footer-hooks',
+    '/inc/hooks/metabox-controllers',
     '/inc/dynamic-styles',
     '/inc/widgets/widgets-init',
     '/inc/arrival-contents'

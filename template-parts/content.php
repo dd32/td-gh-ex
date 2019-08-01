@@ -6,6 +6,7 @@
  *
  * @package Arrival
  */
+
 $defaults 		= arrival_get_default_theme_options();
 $_blog_excerpts = get_theme_mod('arrival_blog_excerpts',$defaults['arrival_blog_excerpts']);
 $_blog_layout 	= get_theme_mod('arrival_blog_layout',$defaults['arrival_blog_layout']);

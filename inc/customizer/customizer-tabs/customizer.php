@@ -62,6 +62,7 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
                                 $prefix.'_after_top_header_enable',
                                 $prefix.'_after_top_hdr_padding',
                                 $prefix.'_after_top_header_top_border_show',
+                                $prefix.'_after_top_header_align_center',
                                 
                             )),
                         ),

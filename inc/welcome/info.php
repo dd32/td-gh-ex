@@ -134,7 +134,7 @@ if ( ! function_exists( 'arrival_details_setup' ) ) :
 
             //Useful plugins.
             'useful_plugins' => array(
-                'description' => esc_html__( 'Lets first install following plugins to make every thing working.', 'arrival' ),
+                'description' => esc_html__( 'Lets first install & activate following plugins to make every thing working smoothly.', 'arrival' ),
             ),
 
             //Demo content.

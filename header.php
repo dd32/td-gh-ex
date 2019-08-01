@@ -27,6 +27,10 @@
 <body <?php body_class(); ?>>
 
 <?php 
+//wp_body_open hook from WordPress 5.2
+if ( function_exists( 'wp_body_open' ) ) {
+    wp_body_open();
+}
 
 $default 					= arrival_get_default_theme_options();
 $_page_header_layout 		= get_theme_mod('arrival_page_header_layout',$default['arrival_page_header_layout']);

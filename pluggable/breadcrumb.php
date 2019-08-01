@@ -1185,7 +1185,47 @@ class Arrival_Breadcrumb_Trail {
 
 
 /******************************************************************************/
+/**
+* Function control for breadcrumb title
+*
+*/
+add_action('arrival_breadcrumb_header_titles','arrival_breadcrumb_header_titles');
+if( ! function_exists('arrival_breadcrumb_header_titles')){
+    function arrival_breadcrumb_header_titles(){
 
+         $hook_show = apply_filters( 'arrival_header_bcm_title','__return_true' );
+
+        if( false == $hook_show ){
+            return;
+        }
+
+        ?>
+        <div class="breadcrumb-title">
+            <?php if(is_archive()) : ?>
+                <?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+            <?php elseif( is_home()) : ?>
+                 <h1 class="page-title"><?php single_post_title(); ?></h1>          
+            
+            <?php elseif(is_front_page()) : ?>
+                <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+            <?php elseif(is_404()) : ?>
+                <h1 class="page-title"> <?php esc_html_e('404 Not Found','arrival'); ?> </h1>
+            <?php elseif(is_category()) : ?>
+                <?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
+            <?php elseif(is_search()) : 
+            /* translators: %s: search term */?>
+                <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'arrival' ), get_search_query() ); ?></h1>
+            <?php elseif(is_page()) : ?>
+                <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+            <?php elseif(is_single()): ?>
+                <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
+
+            <?php endif;
+            wp_reset_postdata();?>
+        </div>
+        <?php 
+    }
+}
 
 if( ! function_exists('arrival_header_title_display') ){
     function arrival_header_title_display(){
@@ -1201,6 +1241,14 @@ if( ! function_exists('arrival_header_title_display') ){
         if( $_breadcrumb_overlay_disable == true  ){
             $overlay_div = '<div class="img-overlay"></div>';
         }
+
+        $hook_show          = apply_filters( 'arrival_header_banner_control','__return_true' );
+        $breadcrumbs_show   = apply_filters( 'arrival_header_breadcrumb_links','__return_true' );
+
+        if( false == $hook_show ){
+            return;
+        }
+
         ?> 
         <div class="arrival-breadcrumb-wrapper ">
 
@@ -1210,35 +1258,17 @@ if( ! function_exists('arrival_header_title_display') ){
                 }
                  ?>
                 <div class="arrival-bread-wrapp container">
-                        <div class="breadcrumb-title">
-                            <?php //wp_reset_postdata(); ?>
 
-                            <?php if(is_archive()) : ?>
-                                <?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
-                            <?php elseif( is_home()) : ?>
-                                 <h1 class="page-title"><?php single_post_title(); ?></h1>          
-                            
-                            <?php elseif(is_front_page()) : ?>
-                                <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-                            <?php elseif(is_404()) : ?>
-                                <h1 class="page-title"> <?php esc_html_e('404 Not Found','arrival'); ?> </h1>
-                            <?php elseif(is_category()) : ?>
-                                <?php the_archive_title( '<h1 class="page-title">', '</h1>' ); ?>
-                            <?php elseif(is_search()) : 
-                            /* translators: %s: search term */?>
-                                <h1 class="page-title"><?php printf( esc_html__( 'Search Results for: %s', 'arrival' ), get_search_query() ); ?></h1>
-                            <?php elseif(is_page()) : ?>
-                                <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-                            <?php elseif(is_single()): ?>
-                                <?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-
-                            <?php endif;
-                            wp_reset_postdata();?>
-                        </div>
-                        
+                    <?php do_action('arrival_breadcrumb_header_titles'); 
+                    
+                    if( true == $breadcrumbs_show ){ ?>
+                    
                         <div class="arrival-breadcrumb">
                             <?php arrival_breadcrumbs(); ?>    
                         </div>
+                    
+                    <?php } ?>
+
                 </div>
         </div>
     <?php 

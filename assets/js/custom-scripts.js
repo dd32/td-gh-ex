@@ -109,7 +109,12 @@ $('.gallery-post-format').slick({
     arrows: true
 });
 
-
-
+var smoothScrollEnable = arrival_loc_script.smoothscroll;
+if( 'yes' == smoothScrollEnable ){
+    SmoothScroll({
+         animationTime    : 1000, // [ms]
+         stepSize         : 100, // [px]
+      })
+}
 
 });

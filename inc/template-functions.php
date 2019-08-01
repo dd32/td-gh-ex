@@ -16,12 +16,17 @@ function arrival_body_classes( $classes ) {
 	$default                = arrival_get_default_theme_options();
     $_blog_layout           = get_theme_mod('arrival_blog_layout',$default['arrival_blog_layout']);
     $_single_post_sidebars  = get_theme_mod('arrival_single_post_sidebars',$default['arrival_single_post_sidebars']);
+    $ultra_sidebar_layout   = arrival_get_post_meta('ultra_sidebar_layout','default');
     $_inner_header_image    = get_theme_mod('arrival_inner_header_image');
     $_main_nav_menu_align   = get_theme_mod('arrival_main_nav_menu_align',$default['arrival_main_nav_menu_align']);
+    $_after_top_header_align_center = get_theme_mod('arrival_after_top_header_align_center',$default['arrival_after_top_header_align_center']);
+
 
     $classes[] = $_main_nav_menu_align;
 
-    
+    if( true == $_after_top_header_align_center ){
+        $classes[] = 'menu-middle-center';
+    }    
 	if ( ! is_singular() ) {
 		$classes[] = 'hfeed';
 	}
@@ -43,16 +48,10 @@ function arrival_body_classes( $classes ) {
 
 	$classes[] = 'active-arrival';
 
-	if ( ! is_front_page() || ! is_404() || ! is_page_template('tpl-home.php') ) {
-		if( is_active_sidebar( 'sidebar-1')  && ($_single_post_sidebars != 'no_sidebar') ){
-			global $template;
-			if ( 'front-page.php' !== basename( $template ) ) {
-				$classes[] = 'has-sidebar';
-			}
-		}
-	}
 
-    
+    if( ('no_sidebar' != $_single_post_sidebars) &&  ('default' == $ultra_sidebar_layout) ){
+        $classes[] = 'has-sidebar';
+    }
 	
 
 	return $classes;
@@ -473,10 +472,56 @@ if( ! function_exists('arrival_post_format_display')){
         }else{
         	arrival_post_thumbnail($img_size);
         }
-		
-
-		
 
 	}
 }
 
+
+/**
+* Retrieve post meta and default value of metabox
+* @since 1.0.9
+*/
+function arrival_get_post_meta( $key, $defaults = '' ){
+  global $post;
+
+  if(! $post )
+    return;
+    
+    $default = $defaults;
+    $meta_val =  get_post_meta( $post->ID, $key , true ); 
+
+    if( empty($meta_val) && ($defaults != '') ){
+        $meta_val = $default;
+    }
+
+    return $meta_val;
+
+}
+
+
+/**
+ * Count number of widgets in a specific sidebar area
+ * 
+ * @since 1.0.9
+ */
+if( ! function_exists('arrival_count_widgets') ):
+    function arrival_count_widgets( $sidebar_id ) {
+      
+        global $_wp_sidebars_widgets;
+
+        if ( empty( $_wp_sidebars_widgets ) ) :
+            $_wp_sidebars_widgets = get_option( 'sidebars_widgets', array() );
+        endif;
+        
+        $sidebars_widgets_count = $_wp_sidebars_widgets;
+        
+        if ( isset( $sidebars_widgets_count[ $sidebar_id ] ) ) :
+
+            $widget_count   = count( $sidebars_widgets_count[ $sidebar_id ] );
+            $widget_classes = 'col-' . count( $sidebars_widgets_count[ $sidebar_id ] );
+            
+            return $widget_classes;
+
+        endif;
+    }
+endif;

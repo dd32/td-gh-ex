@@ -126,7 +126,7 @@ if ( ! class_exists( 'Arrival_Welcome_Info' ) ) {
 			$this->page_slug     = $this->theme_slug . '-details';
 			$this->page_url     = admin_url( 'themes.php?page=' . $this->page_slug );
 			/* translators: %s: theme name */
-			$this->notice        = '<p>' . sprintf( esc_html__( 'Welcome! Thank you for choosing %1$s. To fully take advantage of the best our theme can offer please make sure you visit theme installation page.', 'arrival' ), esc_html( $this->theme_name ) ) . '</p><p><a href="' . esc_url( $this->page_url ) . '" class="button button-primary">' . sprintf( esc_html__( 'Get started with %1$s', 'arrival' ), $this->theme_name ) . '</a><a href="#" class="btn-dismiss" data-userid="' . esc_attr( get_current_user_id() ) . '" data-nonce="' . esc_attr( wp_create_nonce( 'arrival_dismiss_nonce' ) ) . '">' . esc_html__( 'Dismiss this notice', 'arrival' ) . '</a></p>';
+			$this->notice        = '<a href="#" class="btn-dismiss" data-userid="' . esc_attr( get_current_user_id() ) . '" data-nonce="' . esc_attr( wp_create_nonce( 'arrival_dismiss_nonce' ) ) . '"></a><p>' . sprintf( __( 'Welcome! Thank you for choosing <strong>%1$s</strong>. To fully take advantage of the best our theme can offer please make sure you visit theme installation page.', 'arrival' ), esc_html( $this->theme_name ) ) . '</p><p><a href="' . esc_url( $this->page_url ) . '&tab=useful_plugins" class="button button-primary">' . sprintf( esc_html__( 'Get started with %1$s', 'arrival' ), $this->theme_name ) . '</a></p>';
 		}
 
 		/**
@@ -487,7 +487,7 @@ if ( ! class_exists( 'Arrival_Welcome_Info' ) ) {
 		 */
 		public function admin_notice() {
 
-			add_action( 'admin_notices', array( $this, 'display_admin_notice' ), 99 );
+			add_action( 'admin_notices', array( $this, 'display_admin_notice' ),99 );
 		}
 
 		/**
@@ -525,7 +525,7 @@ if ( ! class_exists( 'Arrival_Welcome_Info' ) ) {
 			$dismiss_status = get_user_meta( $user_id, 'arrival_dismiss_status', true );
 			?>
 			<?php if ( current_user_can( 'edit_theme_options' ) && 'themes' === $screen_id && 1 !== absint( $dismiss_status ) ) : ?>
-				<div class="wpopinfo-notice notice notice-info">
+				<div class="wpopinfo-notice notice notice-info is-dismissible">
 					<?php $this->render_notice(); ?>
 				</div><!-- .wpopinfo-notice -->
 			<?php endif; ?>

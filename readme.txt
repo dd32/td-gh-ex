@@ -105,6 +105,16 @@ Slick Slider
 * https://github.com/kenwheeler/slick/blob/master/LICENSE
 
 
+-------------------------------------------------------
+Smooth Scroll For Websites
+-------------------------------------------------------
+* Smooth Scroll For Websites
+* License: Licensed under MIT
+* https://github.com/gblazex/smoothscroll-for-websites
+* https://github.com/gblazex/smoothscroll-for-websites/blob/master/LICENSE
+
+
+
 ----------------------------------------
 
 Credits

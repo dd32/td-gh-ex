@@ -205,6 +205,24 @@ $wp_customize->add_control( new Arrival_Customizer_Buttonset_Control( $wp_custom
 
 }
 
+$wp_customize->add_setting( $prefix.'_smooth_scroll_enable', array(
+        'default'             => $default[$prefix.'_smooth_scroll_enable'],
+        'sanitize_callback'   => 'arrival_sanitize_switch',
+        
+      ) );
+
+$wp_customize->add_control( new Arrival_Customizer_Buttonset_Control( $wp_customize, $prefix.'_smooth_scroll_enable', array(
+        'label'         => esc_html__( 'Enable Smooth Scroll', 'arrival' ),
+        'description'   => esc_html__( 'This will enable or disable smooth scrolling behaviour on your browser.', 'arrival' ),
+        'section'       => $prefix.'_general_setting_section',
+        'priority'      => 1,
+        'choices'       => array(
+          'yes'        => esc_html__( 'Yes', 'arrival' ),
+          'no'        => esc_html__( 'No', 'arrival' ),
+        )
+      ) ) );
+
+
 /**
 * Main Container Width
 */
@@ -538,7 +556,7 @@ $wp_customize->add_setting( $prefix.'_top_header_after_seperator', array(
 
 $wp_customize->add_control( new Arrival_Customize_Seperator_Control( $wp_customize, $prefix.'_top_header_after_seperator', array(
         'label'         => esc_html__( 'After Top Header', 'arrival' ),
-        'description'   => esc_html__( 'Display option just below top header', 'arrival' ),
+        'description'   => esc_html__( 'This section will display contents from widget area "After Top Header"', 'arrival' ),
         'section'       => $prefix.'_main_header_options_panel',
       ) ) );
 
@@ -551,7 +569,7 @@ $wp_customize->add_setting( $prefix.'_after_top_header_enable', array(
 
 $wp_customize->add_control( new Arrival_Customizer_Buttonset_Control( $wp_customize, $prefix.'_after_top_header_enable', array(
         'label'         => esc_html__( 'Enable After Top Header Section', 'arrival' ),
-        'description'   => esc_html__( 'This section will display contents from widget area "After Top Header"', 'arrival' ),
+        'description'   => esc_html__( 'Show or hide after top header section', 'arrival' ),
         'section'       => $prefix.'_main_header_options_panel',
         'choices'       => array(
           'yes'         => esc_html__( 'Yes', 'arrival' ),
@@ -597,6 +615,21 @@ $wp_customize->add_setting($prefix.'_after_top_header_top_border_show', array(
 $wp_customize->add_control( $prefix.'_after_top_header_top_border_show',array(
         'label'       => esc_html__( 'Show Top Border ?', 'arrival' ),
         'description' => esc_html__('Check the box to enable top border','arrival'),
+        'section'     => $prefix.'_main_header_options_panel',
+        'type'        => 'checkbox',
+
+));
+
+
+$wp_customize->add_setting($prefix.'_after_top_header_align_center', array(
+        'default'           => $default[$prefix.'_after_top_header_align_center'],
+        'sanitize_callback' => 'arrival_sanitize_checkbox',
+    )
+);
+
+$wp_customize->add_control( $prefix.'_after_top_header_align_center',array(
+        'label'       => esc_html__( 'Center Align Item?', 'arrival' ),
+        'description' => esc_html__('Check the box to align single widget to center of header.','arrival'),
         'section'     => $prefix.'_main_header_options_panel',
         'type'        => 'checkbox',
 

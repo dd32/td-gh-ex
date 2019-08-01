@@ -262,9 +262,12 @@ if(! function_exists('arrival_after_top_header')){
 		if( 'no' == $_after_top_header_enable ){
 			return;
 		}
+		$sidebar_count = arrival_count_widgets('top-header-after');
 		?>
-		<div class="after-top-header-wrapp">
-			<?php dynamic_sidebar( 'top-header-after' ); ?>
+		<div class="after-top-header-wrapp <?php echo esc_attr($sidebar_count);?>">
+			<div class="container">
+				<?php dynamic_sidebar( 'top-header-after' ); ?>
+			</div>
 		</div>
 		<?php 
 	}
@@ -377,3 +380,4 @@ if( ! function_exists('arrival_main_header_wrapp')){
 		<?php 
 	}
 }
+

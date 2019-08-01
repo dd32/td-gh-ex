@@ -34,6 +34,7 @@ function arrival_get_default_theme_options() {
     $defaults[$prefix.'_footer_widget_enable']              = 'yes';
     $defaults[$prefix.'_footer_icons_enable']               = 'yes';
     $defaults[$prefix.'_lazyload_image_enable']             = 'yes';
+    $defaults[$prefix.'_smooth_scroll_enable']              = 'no';
     $defaults[$prefix.'_top_header_bg_color']               = '#E12454';
     $defaults[$prefix.'_main_nav_bg_color']                 = '#fafafa';
     $defaults[$prefix.'_footer_bg_color']                   = '#223645';
@@ -63,6 +64,7 @@ function arrival_get_default_theme_options() {
     $defaults[$prefix.'_after_top_hdr_top_padding']         = 30;
     $defaults[$prefix.'_after_top_hdr_btm_padding']         = 75;
     $defaults[$prefix.'_after_top_header_top_border_show']  = false;
+    $defaults[$prefix.'_after_top_header_align_center']     = false;
     $defaults[$prefix.'_after_top_header_bg_color']         = '#fff';
     $defaults[$prefix.'_after_top_header_txt_color']        = '#333';
     $defaults[$prefix.'_after_top_header_border_color']     = '#f1f1f1';

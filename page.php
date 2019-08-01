@@ -31,5 +31,8 @@ get_header();
 
 </main><!-- #main -->
 <?php
-get_sidebar();
+if( function_exists('arrival_mb_single_posts_sidebar')){
+	arrival_mb_single_posts_sidebar();	
+}
+
 get_footer();
