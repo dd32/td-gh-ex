@@ -250,6 +250,10 @@ input[type="submit"]:active {
 	border: 2px solid #6ea81a;
 }
 
+.bg-sticky {
+    background: #6ea81a;
+}
+
 /* --------------------------------------
 =========================================
     Secondary Color
