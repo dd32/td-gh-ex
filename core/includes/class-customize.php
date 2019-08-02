@@ -41,21 +41,6 @@ class lookilite_customize {
 			array(), 
 			''
 		);
-
-		wp_enqueue_script( 
-			  'customizer-preview',
-			  get_template_directory_uri().'/core/admin/includes/js/customizer-preview.js',
-			  array( 'jquery' ),
-			  '1.0.0', 
-			  true
-		);
-
-		$lookilite_details = array(
-			'label' => __( 'Upgrade to Looki Premium', 'lookilite' ),
-			'url' => esc_url('https://www.themeinprogress.com/looki/')
-		);
-	
-		wp_localize_script( 'customizer-preview', 'lookilite_details', $lookilite_details );
 	  
    }
 	
@@ -244,7 +229,27 @@ class lookilite_customize {
 					) );
 							
 				break;
+
+				case 'looki-lite-customize-info' :
 	
+					$wp_customize->add_section( $element['id'], array(
+						
+						'title' => $element['title'],
+						'priority' => $element['priority'],
+						'capability' => 'edit_theme_options',
+	
+					));
+	
+					$wp_customize->add_setting(  $element['id'], array(
+						'sanitize_callback' => 'esc_url_raw'
+					));
+						 
+					$wp_customize->add_control( new Lookilite_Customize_Info_Control( $wp_customize,  $element['id'] , array(
+						'section' => $element['section'],
+					)));		
+											
+				break;
+
 			}
 			
 		}
@@ -290,6 +295,51 @@ class lookilite_customize {
 
 		endif;
 
+	}
+
+}
+
+if ( class_exists( 'WP_Customize_Control' ) ) {
+
+	class Lookilite_Customize_Info_Control extends WP_Customize_Control {
+
+		public $type = "looki-lite-customize-info";
+
+		public function render_content() { ?>
+
+            <div class="inside">
+
+				<h2><?php esc_html_e('Looki premium version','looki-lite');?></h2> 
+
+                <p><?php esc_html_e("Upgrade to the premium version of Looki, to enable 600+ Google Fonts, unlimited widget areas, portfolio section and much more.","looki-lite");?></p>
+
+                <ul>
+                
+                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/looki/?ref=2&campaign=looki-lite-panel' ); ?>" title="<?php esc_attr_e('Upgrade to Looki premium','looki-lite');?>" target="_blank"><?php esc_html_e('Upgrade to Looki premium','looki-lite');?></a></li>
+                
+                </ul>
+
+            </div>
+            
+            <div class="inside">
+
+                <h2><?php esc_html_e('Become a supporter','looki-lite');?></h2> 
+
+                <p><?php esc_html_e("If you like this theme and support, I'd appreciate any of the following:","looki-lite");?></p>
+
+                <ul>
+                
+                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/'.get_stylesheet().'#postform' ); ?>" title="<?php esc_attr_e('Rate this Theme','looki-lite');?>" target="_blank"><?php esc_html_e('Rate this Theme','looki-lite');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'https://www.themeinprogress.com/reserved-area/' ); ?>" title="<?php esc_attr_e('Subscribe our newsletter','looki-lite');?>" target="_blank"><?php esc_html_e('Subscribe our newsletter','looki-lite');?></a></li>
+                
+                </ul>
+    
+            </div>
+    
+		<?php
+
+		}
+	
 	}
 
 }

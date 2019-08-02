@@ -462,7 +462,7 @@ if (!function_exists('lookilite_customize_excerpt_more')) {
 	
 			endif;
 	
-			return $content. '<a class="'. wp_kses($class, $allowed) . '" href="' . esc_url(get_permalink($post->ID)) . '" title="'.esc_html__('Read More','lookilite').'">' . $button . '</a>';
+			return $content. '<a class="'. wp_kses($class, $allowed) . '" href="' . esc_url(get_permalink($post->ID)) . '" title="'.esc_html__('Read More','looki-lite').'">' . $button . '</a>';
 
 		endif;
 		
@@ -580,7 +580,7 @@ if (!function_exists('lookilite_setup')) {
 	
 		register_nav_menu( 'main-menu', 'Main menu' );
 	
-		load_theme_textdomain('lookilite', get_template_directory() . '/languages');
+		load_theme_textdomain('looki-lite', get_template_directory() . '/languages');
 	
 		if ( ! isset( $content_width ) )
 			$content_width = 1170;

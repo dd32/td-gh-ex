@@ -6,9 +6,9 @@ if (!function_exists('lookilite_add_widgets')) {
 	
 		register_sidebar(array(
 		
-			'name' => __('Sidebar','lookilite') ,
+			'name' => __('Sidebar','looki-lite') ,
 			'id'   => 'side-sidebar-area',
-			'description' => __('This sidebar will be shown after the content','lookilite') ,
+			'description' => __('This sidebar will be shown after the content','looki-lite') ,
 			'before_widget' => '<div class="post-article">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="title">',
@@ -18,9 +18,9 @@ if (!function_exists('lookilite_add_widgets')) {
 	
 		register_sidebar(array(
 	
-			'name' => __('Home Sidebar','lookilite') ,
+			'name' => __('Home Sidebar','looki-lite') ,
 			'id'   => 'home-sidebar-area',
-			'description' => __('This sidebar will be shown in the homepage','lookilite') ,
+			'description' => __('This sidebar will be shown in the homepage','looki-lite') ,
 			'before_widget' => '<div class="post-article">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="title">',
@@ -30,9 +30,9 @@ if (!function_exists('lookilite_add_widgets')) {
 	
 		register_sidebar(array(
 	
-			'name' => __('Category Sidebar','lookilite') ,
+			'name' => __('Category Sidebar','looki-lite') ,
 			'id'   => 'category-sidebar-area',
-			'description' => __('This sidebar will be shown at the side of content','lookilite') ,
+			'description' => __('This sidebar will be shown at the side of content','looki-lite') ,
 			'before_widget' => '<div class="post-article">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="title">',
@@ -42,9 +42,9 @@ if (!function_exists('lookilite_add_widgets')) {
 	
 		register_sidebar(array(
 	
-			'name' => __('Search Sidebar','lookilite') ,
+			'name' => __('Search Sidebar','looki-lite') ,
 			'id'   => 'search-sidebar-area',
-			'description' => __('This sidebar will be shown in the search page.','lookilite') ,
+			'description' => __('This sidebar will be shown in the search page.','looki-lite') ,
 			'before_widget' => '<div class="post-article">',
 			'after_widget'  => '</div>',
 			'before_title'  => '<h3 class="title">',

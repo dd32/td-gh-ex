@@ -5,7 +5,7 @@ if ( have_comments() ) : ?>
 	<div class='post-container col-md-12 comments-container'>
     	
         <div class='comments-title'>
-        	<h3><?php _e('Comments','lookilite') ?></h3>
+        	<h3><?php _e('Comments','looki-lite') ?></h3>
         </div>
 		
 		<?php wp_list_comments('type=comment&callback=lookilite_comment'); ?>
@@ -30,17 +30,17 @@ function lookilite_comment ($comment, $args, $depth) {
             
             <header class="comment-author">
                 
-                <span class="author"><?php printf(__('<cite>%s</cite>','lookilite'), get_comment_author_link()) ?></span>
+                <span class="author"><?php printf(__('<cite>%s</cite>','looki-lite'), get_comment_author_link()) ?></span>
                 <time datetime="<?php echo get_comment_date("c")?>" class="comment-date">  
-                <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s at %2$s','lookilite'), get_comment_date(),  get_comment_time()) ?></a> - 
+                <a href="<?php echo esc_url( get_comment_link( $comment->comment_ID ) ) ?>"><?php printf(__('%1$s at %2$s','looki-lite'), get_comment_date(),  get_comment_time()) ?></a> - 
                 <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
-                <?php edit_comment_link(__('(Edit)','lookilite')) ?>
+                <?php edit_comment_link(__('(Edit)','looki-lite')) ?>
                 </time>
                 
             </header>
     
             <?php if ($comment->comment_approved == '0') : ?>
-                <br /><em><?php _e('Your comment is awaiting approval.','lookilite') ?></em>
+                <br /><em><?php _e('Your comment is awaiting approval.','looki-lite') ?></em>
             <?php endif; ?>
           
             <?php comment_text() ?>
@@ -59,8 +59,8 @@ function lookilite_comment ($comment, $args, $depth) {
     
         <div class="wp-pagenavi">
         
-             <div class="left"><?php previous_comments_link(__('&laquo;','lookilite')) ?></div>
-             <div class="right"><?php next_comments_link(__('&raquo;','lookilite')) ?></div>
+             <div class="left"><?php previous_comments_link(__('&laquo;','looki-lite')) ?></div>
+             <div class="right"><?php next_comments_link(__('&raquo;','looki-lite')) ?></div>
              
             <div class="clear"></div>
         </div>
@@ -73,6 +73,6 @@ function lookilite_comment ($comment, $args, $depth) {
 
 <section class="col-md-12">
 	
-	<?php comment_form(array('label_submit' =>  __('Leave a reply','lookilite')) ); ?>
+	<?php comment_form(array('label_submit' =>  __('Leave a reply','looki-lite')) ); ?>
 
 </section>

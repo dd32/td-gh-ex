@@ -29,7 +29,7 @@ function lookilite_after_content_function() {
 		the_content();
 
 		if ( get_post_format() )  {
-			echo '<footer class="line"><strong>'.__( 'Post type',"lookilite").':</strong> '.ucfirst(get_post_format()).'</footer>';
+			echo '<footer class="line"><strong>'.__( 'Post type',"looki-lite").':</strong> '.ucfirst(get_post_format()).'</footer>';
 		} 
 
 		if (get_post_type() == "post") { 

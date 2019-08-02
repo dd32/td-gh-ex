@@ -16,10 +16,10 @@
                         <?php if (lookilite_setting('lookilite_copyright_text')): ?>
                            <?php echo stripslashes(lookilite_setting('lookilite_copyright_text')); ?>
                         <?php else: ?>
-                          <?php _e('Copyright','lookilite'); ?> <?php echo get_bloginfo("name"); ?> <?php echo date("Y"); ?> 
+                          <?php _e('Copyright','looki-lite'); ?> <?php echo get_bloginfo("name"); ?> <?php echo date("Y"); ?> 
                         <?php endif; ?> 
-                        | <?php _e('Theme by','lookilite'); ?> <a href="<?php echo esc_url('http://www.themeinprogress.com/'); ?>" target="_blank">Theme in Progress</a> |
-                        <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'lookilite' ) ); ?>" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'lookilite' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'lookilite' ), 'WordPress' ); ?></a>
+                        | <?php _e('Theme by','looki-lite'); ?> <a href="<?php echo esc_url('http://www.themeinprogress.com/'); ?>" target="_blank">Theme in Progress</a> |
+                        <a href="<?php echo esc_url( __( 'http://wordpress.org/', 'looki-lite' ) ); ?>" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'looki-lite' ); ?>" rel="generator"><?php printf( __( 'Proudly powered by %s', 'looki-lite' ), 'WordPress' ); ?></a>
                     
                     </p>
 

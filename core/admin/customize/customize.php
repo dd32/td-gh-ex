@@ -6,18 +6,30 @@ if (!function_exists('lookilite_customize_panel_function')) {
 		
 		$theme_panel = array ( 
 
+			/* Support section */ 
+	
+			array(
+			
+				'title' => esc_html__( 'Upgrade to Looki Premium','looki-lite'),
+				'id' => 'looki-lite-customize-info',
+				'type' => 'looki-lite-customize-info',
+				'section' => 'looki-lite-customize-info',
+				'priority' => '08',
+	
+			),
+
 			/* FULL IMAGE BACKGROUND */ 
 
 			array(
 				
-				"label" => __( "Full Image Background",'lookilite'),
-				"description" => __( "Do you want to set a full background image? (After the upload, check 'Fixed', from the Background Attachment section)",'lookilite'),
+				"label" => __( "Full Image Background",'looki-lite'),
+				"description" => __( "Do you want to set a full background image? (After the upload, check 'Fixed', from the Background Attachment section)",'looki-lite'),
 				"id" => "lookilite_full_image_background",
 				"type" => "select",
 				"section" => "background_image",
 				"options" => array (
-				   "off" => __( "No",'lookilite'),
-				   "on" => __( "Yes",'lookilite'),
+				   "off" => __( "No",'looki-lite'),
+				   "on" => __( "Yes",'looki-lite'),
 				),
 				
 				"std" => "off",
@@ -28,8 +40,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 				
-				"title" => __( "General",'lookilite'),
-				"description" => __( "General",'lookilite'),
+				"title" => __( "General",'looki-lite'),
+				"description" => __( "General",'looki-lite'),
 				"type" => "panel",
 				"id" => "general_panel",
 				"priority" => "10",
@@ -38,7 +50,7 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Load system",'lookilite'),
+				"title" => __( "Load system",'looki-lite'),
 				"type" => "section",
 				"id" => "loadsystem_section",
 				"panel" => "general_panel",
@@ -48,14 +60,14 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array(
 				
-				"label" => __( "Choose a load system",'lookilite'),
-				"description" => __( "Select a load system, if you've some problems with the theme (for example a blank page).",'lookilite'),
+				"label" => __( "Choose a load system",'looki-lite'),
+				"description" => __( "Select a load system, if you've some problems with the theme (for example a blank page).",'looki-lite'),
 				"id" => "lookilite_skins",
 				"type" => "select",
 				"section" => "loadsystem_section",
 				"options" => array (
-				   "mode_a" => __( "Mode a",'lookilite'),
-				   "mode_b" => __( "Mode b",'lookilite'),
+				   "mode_a" => __( "Mode a",'looki-lite'),
+				   "mode_b" => __( "Mode b",'looki-lite'),
 				),
 				
 				"std" => "mode_a",
@@ -66,7 +78,7 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Color Scheme",'lookilite'),
+				"title" => __( "Color Scheme",'looki-lite'),
 				"type" => "section",
 				"panel" => "general_panel",
 				"priority" => "11",
@@ -76,26 +88,26 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array(
 				
-				"label" => __( "Predefined Color Schemes",'lookilite'),
-				"description" => __( "Choose your Color Scheme",'lookilite'),
+				"label" => __( "Predefined Color Schemes",'looki-lite'),
+				"description" => __( "Choose your Color Scheme",'looki-lite'),
 				"id" => "lookilite_skin",
 				"type" => "select",
 				"section" => "colorscheme_section",
 				"options" => array (
-				   "turquoise" => __( "Turquoise",'lookilite'),
-				   "orange" => __( "Orange",'lookilite'),
-				   "blue" => __( "Blue",'lookilite'),
-				   "red" => __( "Red",'lookilite'),
-				   "purple" => __( "Purple",'lookilite'),
-				   "yellow" => __( "Yellow",'lookilite'),
-				   "green" => __( "Green",'lookilite'),
-				   "light_turquoise" => __( "White & Turquoise",'lookilite'),
-				   "light_orange" => __( "White & Orange",'lookilite'),
-				   "light_blue" => __( "White & Blue",'lookilite'),
-				   "light_red" => __( "White & Red",'lookilite'),
-				   "light_purple" => __( "White & Purple",'lookilite'),
-				   "light_yellow" => __( "White & Yellow",'lookilite'),
-				   "light_green" => __( "White & Green",'lookilite'),
+				   "turquoise" => __( "Turquoise",'looki-lite'),
+				   "orange" => __( "Orange",'looki-lite'),
+				   "blue" => __( "Blue",'looki-lite'),
+				   "red" => __( "Red",'looki-lite'),
+				   "purple" => __( "Purple",'looki-lite'),
+				   "yellow" => __( "Yellow",'looki-lite'),
+				   "green" => __( "Green",'looki-lite'),
+				   "light_turquoise" => __( "White & Turquoise",'looki-lite'),
+				   "light_orange" => __( "White & Orange",'looki-lite'),
+				   "light_blue" => __( "White & Blue",'looki-lite'),
+				   "light_red" => __( "White & Red",'looki-lite'),
+				   "light_purple" => __( "White & Purple",'looki-lite'),
+				   "light_yellow" => __( "White & Yellow",'looki-lite'),
+				   "light_green" => __( "White & Green",'looki-lite'),
 				),
 				
 				"std" => "turquoise",
@@ -104,7 +116,7 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Styles",'lookilite'),
+				"title" => __( "Styles",'looki-lite'),
 				"type" => "section",
 				"id" => "styles_section",
 				"panel" => "general_panel",
@@ -114,8 +126,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Custom css",'lookilite'),
-				"description" => __( "Insert your custom css code.",'lookilite'),
+				"label" => __( "Custom css",'looki-lite'),
+				"description" => __( "Insert your custom css code.",'looki-lite'),
 				"id" => "lookilite_custom_css_code",
 				"type" => "custom_css",
 				"section" => "styles_section",
@@ -127,7 +139,7 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Login Area",'lookilite'),
+				"title" => __( "Login Area",'looki-lite'),
 				"type" => "section",
 				"id" => "login_area_section",
 				"panel" => "general_panel",
@@ -137,8 +149,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Custom Logo",'lookilite'),
-				"description" => __( "Upload your custom logo, for the admin area.( Max 320px as width )",'lookilite'),
+				"label" => __( "Custom Logo",'looki-lite'),
+				"description" => __( "Upload your custom logo, for the admin area.( Max 320px as width )",'looki-lite'),
 				"id" => "lookilite_login_logo",
 				"type" => "upload",
 				"section" => "login_area_section",
@@ -149,8 +161,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Height",'lookilite'),
-				"description" => __( "Insert the height of your custom logo, without 'px' (for example 550 and not 550px).",'lookilite'),
+				"label" => __( "Height",'looki-lite'),
+				"description" => __( "Insert the height of your custom logo, without 'px' (for example 550 and not 550px).",'looki-lite'),
 				"id" => "lookilite_login_logo_height",
 				"type" => "text",
 				"section" => "login_area_section",
@@ -162,7 +174,7 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Header",'lookilite'),
+				"title" => __( "Header",'looki-lite'),
 				"type" => "section",
 				"id" => "header_section",
 				"panel" => "general_panel",
@@ -172,8 +184,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Custom Logo",'lookilite'),
-				"description" => __( "Upload your custom logo",'lookilite'),
+				"label" => __( "Custom Logo",'looki-lite'),
+				"description" => __( "Upload your custom logo",'looki-lite'),
 				"id" => "lookilite_custom_logo",
 				"type" => "upload",
 				"section" => "header_section",
@@ -185,7 +197,7 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Footer",'lookilite'),
+				"title" => __( "Footer",'looki-lite'),
 				"type" => "section",
 				"id" => "footer_section",
 				"panel" => "general_panel",
@@ -195,8 +207,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Copyright Text",'lookilite'),
-				"description" => __( "Insert your copyright text.",'lookilite'),
+				"label" => __( "Copyright Text",'looki-lite'),
+				"description" => __( "Insert your copyright text.",'looki-lite'),
 				"id" => "lookilite_copyright_text",
 				"type" => "textarea",
 				"section" => "footer_section",
@@ -206,8 +218,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Facebook Url",'lookilite'),
-				"description" => __( "Insert Facebook Url (empty if you want to hide the button)",'lookilite'),
+				"label" => __( "Facebook Url",'looki-lite'),
+				"description" => __( "Insert Facebook Url (empty if you want to hide the button)",'looki-lite'),
 				"id" => "lookilite_footer_facebook_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -217,8 +229,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Twitter Url",'lookilite'),
-				"description" => __( "Insert Twitter Url (empty if you want to hide the button)",'lookilite'),
+				"label" => __( "Twitter Url",'looki-lite'),
+				"description" => __( "Insert Twitter Url (empty if you want to hide the button)",'looki-lite'),
 				"id" => "lookilite_footer_twitter_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -228,8 +240,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Flickr Url",'lookilite'),
-				"description" => __( "Insert Flickr Url (empty if you want to hide the button)",'lookilite'),
+				"label" => __( "Flickr Url",'looki-lite'),
+				"description" => __( "Insert Flickr Url (empty if you want to hide the button)",'looki-lite'),
 				"id" => "lookilite_footer_flickr_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -239,8 +251,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Google Url",'lookilite'),
-				"description" => __( "Insert Google Url (empty if you want to hide the button)",'lookilite'),
+				"label" => __( "Google Url",'looki-lite'),
+				"description" => __( "Insert Google Url (empty if you want to hide the button)",'looki-lite'),
 				"id" => "lookilite_footer_google_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -250,8 +262,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Linkedin Url",'lookilite'),
-				"description" => __( "Insert Linkedin Url (empty if you want to hide the button)",'lookilite'),
+				"label" => __( "Linkedin Url",'looki-lite'),
+				"description" => __( "Insert Linkedin Url (empty if you want to hide the button)",'looki-lite'),
 				"id" => "lookilite_footer_linkedin_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -261,8 +273,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Pinterest Url",'lookilite'),
-				"description" => __( "Insert Pinterest Url (empty if you want to hide the button)",'lookilite'),
+				"label" => __( "Pinterest Url",'looki-lite'),
+				"description" => __( "Insert Pinterest Url (empty if you want to hide the button)",'looki-lite'),
 				"id" => "lookilite_footer_pinterest_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -272,8 +284,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Tumblr Url",'lookilite'),
-				"description" => __( "Insert Tumblr Url (empty if you want to hide the button)",'lookilite'),
+				"label" => __( "Tumblr Url",'looki-lite'),
+				"description" => __( "Insert Tumblr Url (empty if you want to hide the button)",'looki-lite'),
 				"id" => "lookilite_footer_tumblr_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -283,8 +295,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Youtube Url",'lookilite'),
-				"description" => __( "Insert Youtube Url (empty if you want to hide the button)",'lookilite'),
+				"label" => __( "Youtube Url",'looki-lite'),
+				"description" => __( "Insert Youtube Url (empty if you want to hide the button)",'looki-lite'),
 				"id" => "lookilite_footer_youtube_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -294,8 +306,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Skype Url",'lookilite'),
-				"description" => __( "Insert Skype ID (empty if you want to hide the button)",'lookilite'),
+				"label" => __( "Skype Url",'looki-lite'),
+				"description" => __( "Insert Skype ID (empty if you want to hide the button)",'looki-lite'),
 				"id" => "lookilite_footer_skype_button",
 				"type" => "button",
 				"section" => "footer_section",
@@ -305,8 +317,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Instagram Url",'lookilite'),
-				"description" => __( "Insert Instagram Url (empty if you want to hide the button)",'lookilite'),
+				"label" => __( "Instagram Url",'looki-lite'),
+				"description" => __( "Insert Instagram Url (empty if you want to hide the button)",'looki-lite'),
 				"id" => "lookilite_footer_instagram_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -316,8 +328,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Github Url",'lookilite'),
-				"description" => __( "Insert Github Url (empty if you want to hide the button)",'lookilite'),
+				"label" => __( "Github Url",'looki-lite'),
+				"description" => __( "Insert Github Url (empty if you want to hide the button)",'looki-lite'),
 				"id" => "lookilite_footer_github_button",
 				"type" => "url",
 				"section" => "footer_section",
@@ -327,8 +339,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Email Address",'lookilite'),
-				"description" => __( "Insert Email Address (empty if you want to hide the button)",'lookilite'),
+				"label" => __( "Email Address",'looki-lite'),
+				"description" => __( "Insert Email Address (empty if you want to hide the button)",'looki-lite'),
 				"id" => "lookilite_footer_email_button",
 				"type" => "button",
 				"section" => "footer_section",
@@ -338,14 +350,14 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array(
 				
-				"label" => __( "Feed Rss Button",'lookilite'),
-				"description" => __( "Do you want to display the Feed Rss button?",'lookilite'),
+				"label" => __( "Feed Rss Button",'looki-lite'),
+				"description" => __( "Do you want to display the Feed Rss button?",'looki-lite'),
 				"id" => "lookilite_footer_rss_button",
 				"type" => "select",
 				"section" => "footer_section",
 				"options" => array (
-				   "off" => __( "No",'lookilite'),
-				   "on" => __( "Yes",'lookilite'),
+				   "off" => __( "No",'looki-lite'),
+				   "on" => __( "Yes",'looki-lite'),
 				),
 				
 				"std" => "off",
@@ -356,8 +368,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 				
-				"title" => __( "Typography",'lookilite'),
-				"description" => __( "Typography",'lookilite'),
+				"title" => __( "Typography",'looki-lite'),
+				"description" => __( "Typography",'looki-lite'),
 				"type" => "panel",
 				"id" => "typography_panel",
 				"priority" => "11",
@@ -368,7 +380,7 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Menu",'lookilite'),
+				"title" => __( "Menu",'looki-lite'),
 				"type" => "section",
 				"id" => "menu_section",
 				"panel" => "typography_panel",
@@ -378,8 +390,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Font size",'lookilite'),
-				"description" => __( "Insert a size, for menu font (For example, 14px) ",'lookilite'),
+				"label" => __( "Font size",'looki-lite'),
+				"description" => __( "Insert a size, for menu font (For example, 14px) ",'looki-lite'),
 				"id" => "lookilite_menu_font_size",
 				"type" => "text",
 				"section" => "menu_section",
@@ -391,7 +403,7 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Content",'lookilite'),
+				"title" => __( "Content",'looki-lite'),
 				"type" => "section",
 				"id" => "content_section",
 				"panel" => "typography_panel",
@@ -401,8 +413,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "Font size",'lookilite'),
-				"description" => __( "Insert a size, for content font (For example, 14px) ",'lookilite'),
+				"label" => __( "Font size",'looki-lite'),
+				"description" => __( "Insert a size, for content font (For example, 14px) ",'looki-lite'),
 				"id" => "lookilite_content_font_size",
 				"type" => "text",
 				"section" => "content_section",
@@ -415,7 +427,7 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"title" => __( "Headlines",'lookilite'),
+				"title" => __( "Headlines",'looki-lite'),
 				"type" => "section",
 				"id" => "headlines_section",
 				"panel" => "typography_panel",
@@ -425,8 +437,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "H1 headline",'lookilite'),
-				"description" => __( "Insert a size, for for H1 elements (For example, 24px) ",'lookilite'),
+				"label" => __( "H1 headline",'looki-lite'),
+				"description" => __( "Insert a size, for for H1 elements (For example, 24px) ",'looki-lite'),
 				"id" => "lookilite_h1_font_size",
 				"type" => "text",
 				"section" => "headlines_section",
@@ -436,8 +448,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "H2 headline",'lookilite'),
-				"description" => __( "Insert a size, for for H2 elements (For example, 22px) ",'lookilite'),
+				"label" => __( "H2 headline",'looki-lite'),
+				"description" => __( "Insert a size, for for H2 elements (For example, 22px) ",'looki-lite'),
 				"id" => "lookilite_h2_font_size",
 				"type" => "text",
 				"section" => "headlines_section",
@@ -447,8 +459,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "H3 headline",'lookilite'),
-				"description" => __( "Insert a size, for for H3 elements (For example, 20px) ",'lookilite'),
+				"label" => __( "H3 headline",'looki-lite'),
+				"description" => __( "Insert a size, for for H3 elements (For example, 20px) ",'looki-lite'),
 				"id" => "lookilite_h3_font_size",
 				"type" => "text",
 				"section" => "headlines_section",
@@ -458,8 +470,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "H4 headline",'lookilite'),
-				"description" => __( "Insert a size, for for H4 elements (For example, 18px) ",'lookilite'),
+				"label" => __( "H4 headline",'looki-lite'),
+				"description" => __( "Insert a size, for for H4 elements (For example, 18px) ",'looki-lite'),
 				"id" => "lookilite_h4_font_size",
 				"type" => "text",
 				"section" => "headlines_section",
@@ -469,8 +481,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "H5 headline",'lookilite'),
-				"description" => __( "Insert a size, for for H5 elements (For example, 16px) ",'lookilite'),
+				"label" => __( "H5 headline",'looki-lite'),
+				"description" => __( "Insert a size, for for H5 elements (For example, 16px) ",'looki-lite'),
 				"id" => "lookilite_h5_font_size",
 				"type" => "text",
 				"section" => "headlines_section",
@@ -480,8 +492,8 @@ if (!function_exists('lookilite_customize_panel_function')) {
 
 			array( 
 
-				"label" => __( "H6 headline",'lookilite'),
-				"description" => __( "Insert a size, for for H6 elements (For example, 14px) ",'lookilite'),
+				"label" => __( "H6 headline",'looki-lite'),
+				"description" => __( "Insert a size, for for H6 elements (For example, 14px) ",'looki-lite'),
 				"id" => "lookilite_h6_font_size",
 				"type" => "text",
 				"section" => "headlines_section",

@@ -60,7 +60,7 @@ if( !class_exists( 'looki_lite_admin_notice' ) ) {
             
             	<div class="looki_lite-noticedescription">
 					
-                    <strong><?php _e( 'Upgrade to the premium version of Looki to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'lookilite' ); ?></strong><br/>
+                    <strong><?php _e( 'Upgrade to the premium version of Looki to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'looki-lite' ); ?></strong><br/>
 
 					<?php 
 					
@@ -73,7 +73,7 @@ if( !class_exists( 'looki_lite_admin_notice' ) ) {
                 
                 </div>
                 
-                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/looki/?ref=2&campaign=looki-notice' ); ?>" class="button"><?php _e( 'Upgrade to Looki Premium', 'lookilite' ); ?></a>
+                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/looki/?ref=2&campaign=looki-notice' ); ?>" class="button"><?php _e( 'Upgrade to Looki Premium', 'looki-lite' ); ?></a>
                 
                 <div class="clear"></div>
 
