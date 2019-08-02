@@ -148,7 +148,7 @@ class Agency_Ecommerce_WooCommerce_Hooks
 
     public function woocommerce_template_loop_product_title()
     {
-        echo '<h2 class="woocommerce-loop-product__title">' . get_the_title() . '</h2>';
+        echo '<h2 class="woocommerce-loop-product__title">' . esc_html(get_the_title()) . '</h2>';
         echo '</a>';
     }
 
@@ -196,9 +196,9 @@ class Agency_Ecommerce_WooCommerce_Hooks
     {
         echo '<div class="ae-list-grid-switcher">';
 
-        echo '<a title="' . esc_attr('Grid View', 'agency-ecommerce') . '" href="#" data-type="grid" class="ae-grid-view selected"><i class="fa fa-th"></i></a>';
+        echo '<a title="' . esc_attr__('Grid View', 'agency-ecommerce') . '" href="#" data-type="grid" class="ae-grid-view selected"><i class="fa fa-th"></i></a>';
 
-        echo '<a title="' . esc_attr('List View', 'agency-ecommerce') . '" href="#" data-type="list" class="ae-list-view"><i class="fa fa-bars"></i></a>';
+        echo '<a title="' . esc_attr__('List View', 'agency-ecommerce') . '" href="#" data-type="list" class="ae-list-view"><i class="fa fa-bars"></i></a>';
 
         echo '</div>';
 
@@ -221,7 +221,7 @@ class Agency_Ecommerce_WooCommerce_Hooks
                 $style = '';
             }
 
-            echo '<div class="ae-product-excerpt" ' . $style . '><p>' . agency_ecommerce_get_the_excerpt($woo_shop_excerpt_length) . '</p></div>';
+            echo '<div class="ae-product-excerpt" ' . $style . '><p>' . esc_html(agency_ecommerce_get_the_excerpt($woo_shop_excerpt_length)) . '</p></div>';
 
         }
 
@@ -269,14 +269,14 @@ class Agency_Ecommerce_WooCommerce_Hooks
                 <div class="ae-sticky-add-to-cart__content">
                     <?php echo wp_kses_post(woocommerce_get_product_thumbnail()); ?>
                     <div class="ae-sticky-add-to-cart__content-product-info">
-                        <span class="ae-sticky-add-to-cart__content-title"><?php esc_attr_e('You\'re viewing:', 'agency-ecommerce'); ?>
+                        <span class="ae-sticky-add-to-cart__content-title"><?php esc_html_e('You&rsquo; re viewing:', 'agency-ecommerce'); ?>
                             <strong><?php the_title(); ?></strong></span>
                         <span class="ae-sticky-add-to-cart__content-price"><?php echo wp_kses_post($product->get_price_html()); ?></span>
                         <?php echo wp_kses_post(wc_get_rating_html($product->get_average_rating())); ?>
                     </div>
                     <a href="<?php echo esc_url($product->add_to_cart_url()); ?>"
                        class="ae-sticky-add-to-cart__content-button button alt">
-                        <?php echo esc_attr($product->add_to_cart_text()); ?>
+                        <?php echo esc_html($product->add_to_cart_text()); ?>
                     </a>
                 </div>
             </div>

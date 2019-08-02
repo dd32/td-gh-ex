@@ -21,4 +21,4 @@ $wp_customize->add_control('agency_ecommerce_theme_options[copyright_text]',
         'type' => 'text',
         'priority' => 100,
     )
-); ?>
+);

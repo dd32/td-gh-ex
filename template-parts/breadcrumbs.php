@@ -74,9 +74,11 @@ $breadcrumb_class .= (boolean)agency_ecommerce_get_option('make_parallax_backgro
 
             if (agency_ecommerce_is_advance_breadcrumb()) {
 
-                $page_title = agency_ecommerce_get_page_title_for_breadcrumb();
+                echo '<h1 class="heading-title page-title entry-title">' . wp_kses(agency_ecommerce_get_page_title_for_breadcrumb(), array(
 
-                echo '<h1 class="heading-title page-title entry-title">' . ($page_title) . '</h1>';
+                        'span' => 'class'
+
+                    )) . '</h1>';
             }
 
             agency_ecommerce_breadcrumb_trail($breadcrumb_args);

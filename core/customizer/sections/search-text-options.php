@@ -41,4 +41,3 @@ $wp_customize->add_control('agency_ecommerce_theme_options[select_category_text]
         'active_callback' => 'agency_ecommerce_is_top_product_search_active',
     )
 );
-?>

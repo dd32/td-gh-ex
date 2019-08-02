@@ -32,7 +32,7 @@ if (!is_page_template('templates/home-template.php')) {
             <?php if (is_active_sidebar('woo-featured-slider')) {
                 dynamic_sidebar('woo-featured-slider');
             } else {
-                agency_ecommerce_widget_not_found_message('No widgets found. Please add feature slider widget to Featured Slider Widget Area.');
+                agency_ecommerce_widget_not_found_message(esc_html__('No widgets found. Please add feature slider widget to Featured Slider Widget Area.', 'agency-ecommerce'));
 
             } ?>
         </div>
@@ -69,7 +69,7 @@ if (!is_page_template('templates/home-template.php')) {
                 echo '</div>';
             } else {
                 if (is_admin()) {
-                    agency_ecommerce_widget_not_found_message('No widgets found. Please add widgets to Home Page Widget Area.');
+                    agency_ecommerce_widget_not_found_message(esc_html__('No widgets found. Please add widgets to Home Page Widget Area.', 'agency-ecommerce'));
                 }
             }
 

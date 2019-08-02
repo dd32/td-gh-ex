@@ -45,9 +45,9 @@ if (!class_exists('Agency_Ecommerce_Advance_Posts_Widget')) :
                 ), 'exclude_categories' => array(
                     'name' => 'exclude_categories',
                     'title' => esc_html__('Exclude Categories', 'agency-ecommerce'),
-                    'description' => 'Enter category id seperated with comma. Posts from these categories will be excluded from latest post listing.',
+                    'description' => esc_html__('Enter category id seperated with comma. Posts from these categories will be excluded from latest post listing.', 'agency-ecommerce'),
                     'type' => 'text',
-                    'default' => __('View Details', 'agency-ecommerce')
+                    'default' => esc_html__('View Details', 'agency-ecommerce')
                 ), 'excerpt_length' => array(
                     'name' => 'excerpt_length',
                     'title' => esc_html__('Excerpt Length', 'agency-ecommerce'),
@@ -141,7 +141,7 @@ if (!class_exists('Agency_Ecommerce_Advance_Posts_Widget')) :
                                                     <?php the_post_thumbnail('agency-ecommerce-common'); ?>
                                                 <?php else:
                                                     $placeholder = get_template_directory_uri() . '/assets/images/placeholder/agency-ecommerce-300-300.png';
-                                                    echo '<img src="' . $placeholder . '"/>';
+                                                    echo '<img src="' . esc_url($placeholder) . '"/>';
 
                                                 endif; ?>
                                             </a>

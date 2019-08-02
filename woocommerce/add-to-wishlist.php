@@ -14,7 +14,7 @@ if ( ! defined( 'YITH_WCWL' ) ) {
 global $product;
 ?>
 
-<div class="yith-wcwl-add-to-wishlist add-to-wishlist-<?php echo $product_id ?>">
+<div class="yith-wcwl-add-to-wishlist add-to-wishlist-<?php echo esc_attr($product_id) ?>">
 	<?php if( ! ( $disable_wishlist && ! is_user_logged_in() ) ): ?>
 	    <div class="yith-wcwl-add-button <?php echo ( $exists && ! $available_multi_wishlist ) ? 'hide': 'show' ?>" style="display:<?php echo ( $exists && ! $available_multi_wishlist ) ? 'none': 'block' ?>">
 

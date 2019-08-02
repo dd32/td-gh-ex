@@ -295,7 +295,7 @@ if (!class_exists('Agency_Ecommerce_Woo_Products_Widget')) :
 
             echo '<ul class="ae-product-cat-tab">';
 
-            echo '<li data-cat-id="0" class="ae-active"><span>' . __('All Categories', 'agency-ecommerce') . '</span></li>';
+            echo '<li data-cat-id="0" class="ae-active"><span>' . esc_html__('All Categories', 'agency-ecommerce') . '</span></li>';
 
             foreach ($categories as $product_cat) {
 
@@ -303,11 +303,11 @@ if (!class_exists('Agency_Ecommerce_Woo_Products_Widget')) :
 
                 if ($count >= $valid_widget_instance['number_of_products']) {
 
-                    echo '<li data-cat-id="' . $product_cat->term_id . '">';
+                    echo '<li data-cat-id="' . absint($product_cat->term_id) . '">';
 
-                    echo '<a href="' . get_term_link($product_cat->term_id, 'product_cat') . '" target="_blank">';
+                    echo '<a href="' . esc_url(get_term_link($product_cat->term_id, 'product_cat')) . '" target="_blank">';
 
-                    echo $product_cat->name . ' (' . $product_cat->count . ')';
+                    echo esc_html($product_cat->name) . ' (' . absint($product_cat->count) . ')';
 
                     echo '</a>';
 

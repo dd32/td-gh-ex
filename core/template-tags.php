@@ -163,6 +163,12 @@ if (!function_exists('agency_ecommerce_get_page_title_for_breadcrumb')) {
             if (is_shop()) {
 
                 $title = woocommerce_page_title(false);
+
+                if (empty($title)) {
+
+                    $title = get_the_archive_title();
+                }
+
             }
 
         }

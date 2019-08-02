@@ -149,6 +149,10 @@ if (!function_exists('agency_ecommerce_implement_excerpt_length')) :
      */
     function agency_ecommerce_implement_excerpt_length($length)
     {
+        if (is_admin()) {
+
+            return $length;
+        }
 
         $excerpt_length = agency_ecommerce_get_option('excerpt_length');
 
@@ -177,6 +181,11 @@ if (!function_exists('agency_ecommerce_content_more_link')) :
     function agency_ecommerce_content_more_link($more_link, $more_link_text)
     {
 
+        if (is_admin()) {
+
+            return $more_link;
+        }
+
         $read_more_text = agency_ecommerce_get_option('readmore_text');
         if (!empty($read_more_text)) {
             $more_link = str_replace($more_link_text, esc_html($read_more_text), $more_link);
@@ -199,6 +208,10 @@ if (!function_exists('agency_ecommerce_implement_read_more')) :
      */
     function agency_ecommerce_implement_read_more($more)
     {
+        if (is_admin()) {
+
+            return $more;
+        }
 
         $output = $more;
 

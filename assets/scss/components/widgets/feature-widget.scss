@@ -5,7 +5,9 @@
   }
 }
 
-.feature-slider-widget-area .feature-item, .homepage-widgets .feature-item {
+.feature-slider-widget-area .feature-item,
+.homepage-widgets .feature-item,
+.homepage-fullwidth-widget-area .feature-item {
   float: left;
   width: 33.33%;
 }
@@ -33,6 +35,6 @@
   color: #2d2d2d;
   h4 {
     margin: 0;
-    font-size:16px;
+    font-size: 16px;
   }
 }

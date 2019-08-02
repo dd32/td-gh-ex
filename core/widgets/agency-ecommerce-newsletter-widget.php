@@ -100,7 +100,7 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
                             <div class="newsletter-text">
 
                                 <span class="newsletter-icon">
-                                    <img src="<?php echo get_template_directory_uri(); ?>/assets/images/envelope.png"
+                                    <img src="<?php echo esc_url(get_template_directory_uri() . '/assets/images/envelope.png'); ?>"
                                          alt="<?php esc_attr_e('newsletter', 'agency-ecommerce'); ?>">
                                 </span>
 

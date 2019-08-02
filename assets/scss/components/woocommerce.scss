@@ -1,21 +1,24 @@
+
 .ae-cart-wrapper {
   float: left;
   padding: 15px;
-  line-height: 1;
+
   position: relative;
   .ae-icon-wrap {
     position: relative;
+    line-height: inherit;
+
     a {
       padding-right: 10px;
     }
     .cart-value {
-      background: $primary_color;
       position: absolute;
+      background: $primary_color;
       height: 17px;
       width: 17px;
       border-radius: 50%;
       text-align: center;
-      line-height: 1.5;
+      line-height: 17px;
       color: $white_color;
       font-size: 12px;
       top: -10px;
@@ -76,6 +79,7 @@
         font-size: 15px;
         font-weight: normal;
         color: $primary_color;
+        display: inline-block;
       }
     }
     .widget_shopping_cart_content .woocommerce-mini-cart__empty-message {
@@ -92,6 +96,13 @@
   }
   span {
     display: inline-block;
+  }
+}
+
+.top-header .ae-cart-wrapper {
+  line-height: 1em;
+  .cart-value {
+    background: $secondary_color;
   }
 }
 

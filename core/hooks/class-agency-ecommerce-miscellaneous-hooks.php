@@ -78,7 +78,10 @@ class Agency_Ecommerce_Miscellaneous_Hooks
         ?>
 
         <div class="site-info">
-            <?php printf(esc_html__('%1$s by %2$s', 'agency-ecommerce'), 'Agency Ecommerce', '<a href="https://www.mantrabrain.com/" rel="designer">mantrabrain</a>'); ?>
+            <?php
+            /* translators: 1: theme name, 2: author link*/
+
+            printf(esc_html__('%1$s by %2$s', 'agency-ecommerce'), 'Agency Ecommerce', '<a href="https://www.mantrabrain.com/" rel="designer">mantrabrain</a>'); ?>
         </div><!-- .site-info -->
 
         <?php

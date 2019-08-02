@@ -148,7 +148,7 @@ if (!class_exists('Agency_Ecommerce_Advertisement_Widget')) :
                              alt="<?php echo esc_attr($title) ?>"></figure>
                     <span class="thumb-hover">
 							<span class="thumb-title-wrapper">
-								<span class="thumb-title"><?php echo esc_attr($title) ?></span>
+								<span class="thumb-title"><?php echo esc_html($title) ?></span>
  							</span>
 						</span> <!-- thumb-hover end -->
                 </a>

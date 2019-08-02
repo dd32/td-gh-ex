@@ -92,7 +92,7 @@ $product_category_class = count($term_ids) > 0 ? ' ae-cat-id-' . join(' ae-cat-i
 
                 $show_detail_icon = agency_ecommerce_get_option('show_detail_icon');
 
-                if ((true === $show_detail_icon) || (class_exists('YITH_WCWL'))) { ?>
+                if ((true === $show_detail_icon) && (class_exists('YITH_WCWL'))) { ?>
                     <div class="view-detail-wishlist-wrap">
                         <div class="view-detail-wishlist-inner">
                             <?php

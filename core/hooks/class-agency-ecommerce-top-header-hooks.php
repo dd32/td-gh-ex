@@ -246,7 +246,7 @@ class Agency_Ecommerce_Top_Header_Hooks
     {
         ?>
 
-        <div class="top-date-holder"><span><?php echo date(get_option('date_format')); ?></span></div>
+        <div class="top-date-holder"><span><?php echo esc_html(date_i18n(get_option('date_format'))); ?></span></div>
 
         <?php
     }

@@ -679,7 +679,8 @@ p, li {
     clear: both;
   }
   .ae-cart-wrapper {
-    padding: 17px 10px;
+    padding: 14px 10px;
+    line-height: inherit;
   }
   .ae-wishlist-wrapper {
     padding: 14px 10px;
@@ -776,6 +777,7 @@ p, li {
   color: $white_color;
   line-height: 1;
   font-size: 13px;
+  display: block;
 }
 
 .top-account-wrapper a i {

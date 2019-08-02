@@ -200,7 +200,9 @@ if (!class_exists('Agency_Ecommerce_Widget_Base')) {
                                 $output = wp_dropdown_categories($cat_args);
                                 echo $this->wp_dropdown_cats_multiple($output, $cat_args);
                             } else {
-                                echo '<h4>' . sprintf(__('Taxonomy (%s) not found', 'agency-ecommerce'), $taxonomy) . '</h4>';
+                                /* translators: 1: taxonomy */
+
+                                echo '<h4>' . sprintf(esc_html__('Taxonomy (%s) not found', 'agency-ecommerce'), $taxonomy) . '</h4>';
                             }
                             $this->description($field) ?>
                         </p>

@@ -105,7 +105,7 @@ if (!function_exists('agency_ecommerce_get_default_theme_options')) :
         $defaults['show_detail_icon'] = false;
         $defaults['disable_related_products'] = false;
         $defaults['show_product_excerpt'] = false;
-        $defaults['woo_shop_excerpt_length'] = 50;
+        $defaults['woo_shop_excerpt_length'] = 40;
         $defaults['hide_list_grid_view'] = false;
 
 

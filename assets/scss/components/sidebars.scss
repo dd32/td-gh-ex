@@ -713,3 +713,14 @@
     padding-right: 0;
   }
 }
+
+.homepage-fullwidth-widget-area .widget {
+  margin-bottom: 0;
+  margin-top: 0;
+  &:last-child {
+    margin-bottom: 10px;
+  }
+  &:first-child {
+    margin-top: 5px;
+  }
+}
