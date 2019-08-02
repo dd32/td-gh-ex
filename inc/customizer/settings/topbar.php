@@ -64,6 +64,31 @@ if ( ! class_exists( 'Bam_TopBar_Customizer' ) ) :
                 )
             );
 
+            // Topbar Inner width
+            $wp_customize->add_setting(
+                'bam_topbar_inner_width',
+                array(
+                    'default'			=> 'contained',
+                    'type'				=> 'theme_mod',
+                    'capability'		=> 'edit_theme_options',
+                    'sanitize_callback'	=> 'bam_sanitize_select'
+                )
+            );
+            $wp_customize->add_control(
+                'bam_topbar_inner_width',
+                array(
+                    'settings'		=> 'bam_topbar_inner_width',
+                    'section'		=> 'bam_topbar_general_section',
+                    'type'			=> 'select',
+                    'label'			=> esc_html__( 'Top Bar Width', 'bam' ),
+                    'choices'		=> array(
+                        'contained'	=> esc_html__( 'Contained', 'bam' ),
+                        'full' 		=> esc_html__( 'Full Width', 'bam' )
+                    ),
+                    'active_callback'	=> 'bam_is_topbar_active'
+                )
+            );
+
             // Display Top Bar Date?
             $wp_customize->add_setting(
                 'bam_show_topbar_date',

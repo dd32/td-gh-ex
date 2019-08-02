@@ -924,7 +924,7 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
             // max logo height - tablet
             if ( ! empty( $logo_max_height_tablet ) ) {
                 $css .= '
-                    @media( max-height: 767px ) {
+                    @media( max-width: 767px ) {
                         .site-logo-image img {
                             max-height: '. $logo_max_height_tablet .'px;
                         }
@@ -935,7 +935,7 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
             // max logo height - mobile
             if ( ! empty( $logo_max_height_mobile ) ) {
                 $css .= '
-                    @media( max-height: 480px ) {
+                    @media( max-width: 480px ) {
                         .site-logo-image img {
                             max-height: '. $logo_max_height_mobile .'px;
                         }
@@ -949,7 +949,8 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
                 if ( 50 != $menu_height ) {
                     $css .= '
                         .site-header.default-style .main-navigation ul li a, .site-header.default-style .bam-search-button-icon, .site-header.default-style .menu-toggle { line-height: '. $menu_height .'px; }
-                        .site-header.default-style .main-navigation ul ul a { line-height: 1.3; }
+                        .site-header.default-style .main-navigation ul ul li a { line-height: 1.3; }
+                        .site-header.default-style .bam-search-box-container { top: '. $menu_height .'px }
                     ';
                 }
 
@@ -1001,7 +1002,7 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
 
                 if( ! empty( $dropdown_link_color ) && '#eeeeee' != $dropdown_link_color ) {
                     $css .= '
-                        .site-header.default-style .main-navigation ul ul a {
+                        .site-header.default-style .main-navigation ul ul li a {
                             color: '. $dropdown_link_color .';
                         }
                     ';
@@ -1009,7 +1010,7 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
 
                 if( ! empty( $dropdown_link_color_hover ) && '#ffffff' != $dropdown_link_color_hover ) {
                     $css .= '
-                        .site-header.default-style .main-navigation ul ul a:hover {
+                        .site-header.default-style .main-navigation ul ul li a:hover {
                             color: '. $dropdown_link_color_hover .';
                         }
                     ';
@@ -1017,7 +1018,7 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
 
                 if( ! empty( $dropdown_link_bg_color ) ) {
                     $css .= '
-                        .site-header.default-style .main-navigation ul ul a {
+                        .site-header.default-style .main-navigation ul ul li a {
                             background-color: '. $dropdown_link_bg_color .';
                         }
                     ';
@@ -1025,7 +1026,7 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
 
                 if( ! empty( $dropdown_link_bg_color_hover ) && '#ff4f4f' != $dropdown_link_bg_color_hover ) {
                     $css .= '
-                        .site-header.default-style .main-navigation ul ul a:hover {
+                        .site-header.default-style .main-navigation ul ul li a:hover {
                             background-color: '. $dropdown_link_bg_color_hover .';
                         }
                     ';
@@ -1058,7 +1059,8 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
                     $css .= '
                         .site-header.horizontal-style .site-branding-inner { height: '. $header_height .'px; }
                         .site-header.horizontal-style .main-navigation ul li a, .site-header.horizontal-style .bam-search-button-icon, .site-header.horizontal-style .menu-toggle { line-height: '. $header_height .'px; }
-                        .site-header.horizontal-style .main-navigation ul ul a { line-height: 1.3; }
+                        .site-header.horizontal-style .main-navigation ul ul li a { line-height: 1.3; }
+                        .site-header.horizontal-style .bam-search-box-container { top: '. $header_height .'px; }
                     ';
                 }
 
@@ -1110,7 +1112,7 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
 
                 if( ! empty( $dropdown_link_color ) && '#eeeeee' != $dropdown_link_color ) {
                     $css .= '
-                        .site-header.horizontal-style .main-navigation ul ul a {
+                        .site-header.horizontal-style .main-navigation ul ul li a {
                             color: '. $dropdown_link_color .';
                         }
                     ';
@@ -1118,7 +1120,7 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
 
                 if( ! empty( $dropdown_link_color_hover ) && '#ff4f4f' != $dropdown_link_color_hover ) {
                     $css .= '
-                        .site-header.horizontal-style .main-navigation ul ul a:hover {
+                        .site-header.horizontal-style .main-navigation ul ul li a:hover {
                             color: '. $dropdown_link_color_hover .';
                         }
                     ';
@@ -1126,15 +1128,15 @@ if ( ! class_exists( 'Bam_Header_Customizer' ) ) :
 
                 if( ! empty( $dropdown_link_bg_color ) && '#ffffff' != $dropdown_link_bg_color ) {
                     $css .= '
-                        .site-header.horizontal-style .main-navigation ul ul a {
+                        .site-header.horizontal-style .main-navigation ul ul li a {
                             background-color: '. $dropdown_link_bg_color .';
                         }
                     ';
                 }
 
-                if( ! empty( $dropdown_link_bg_color_hover ) && '#ffffff' != $dropdown_link_bg_color_hover ) {
+                if( ! empty( $dropdown_link_bg_color_hover ) && '#ff4f4f' != $dropdown_link_bg_color_hover ) {
                     $css .= '
-                        .site-header.horizontal-style .main-navigation ul ul a:hover {
+                        .site-header.horizontal-style .main-navigation ul ul li a:hover {
                             background-color: '. $dropdown_link_bg_color_hover .';
                         }
                     ';

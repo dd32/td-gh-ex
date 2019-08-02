@@ -39,7 +39,7 @@ if ( ! class_exists( 'Bam_Typography_Customizer' ) ) :
 
                 'headings'  => array(
                     'title'     => esc_html__( 'All Headings', 'bam' ),
-                    'target'    => 'h1, h2, h3, h4, h5, h6, .bam-entry .entry-title a, .widget-title, .entry-title, .related-section-title, .related-post-title a, .single .entry-title',
+                    'target'    => 'h1, h2, h3, h4, h5, h6, .site-title, .bam-entry .entry-title a, .widget-title, .entry-title, .related-section-title, .related-post-title a, .single .entry-title, .archive .page-title',
                     'defaults'  => array(
                         'line-height'   => 1.3,
                         'color'         => '#000000'
@@ -183,7 +183,7 @@ if ( ! class_exists( 'Bam_Typography_Customizer' ) ) :
                     'target'    => '.widget-title',
                     'defaults'  => array(
                         'font-size'     => array(
-                            'desktop'   => '22px'
+                            'desktop'   => '21px'
                         ),
                         'line-height'   => 1.3,
                         'color'         => '#000000'

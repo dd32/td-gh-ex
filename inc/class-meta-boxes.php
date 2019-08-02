@@ -61,7 +61,7 @@ class Bam_Metaboxes {
             return $post_id;
         }
  
-        $nonce = $_POST['bam_layout_metabox_nonce'];
+        $nonce = sanitize_key( $_POST['bam_layout_metabox_nonce'] );
  
         // Verify that the nonce is valid.
         if ( ! wp_verify_nonce( $nonce, 'bam_layout_metabox' ) ) {
@@ -77,7 +77,7 @@ class Bam_Metaboxes {
         }
  
         // Check the user's permissions.
-        if ( 'page' == $_POST['post_type'] ) {
+        if ( isset( $_POST['post_type'] ) && 'page' == $_POST['post_type'] ) {
             if ( ! current_user_can( 'edit_page', $post_id ) ) {
                 return $post_id;
             }
@@ -89,11 +89,17 @@ class Bam_Metaboxes {
  
         /* OK, it's safe for us to save the data now. */
  
-        // Sanitize the user input.
-        $selected_layout = sanitize_text_field( $_POST['bam_layout'] );
- 
-        // Update the meta field.
-        update_post_meta( $post_id, '_bam_layout_meta', $selected_layout );
+        if ( isset( $_POST['bam_layout'] ) ) {
+            
+            // Sanitize the user input.
+            $selected_layout = sanitize_text_field( wp_unslash( $_POST['bam_layout'] ) );
+    
+            // Update the meta field.
+            update_post_meta( $post_id, '_bam_layout_meta', $selected_layout );
+
+        } else {
+            return $post_id;
+        }
     }
  
  

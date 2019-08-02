@@ -1,3 +1,7 @@
+body {
+    background: #ffffff;
+}
+
 body.boxed-layout {
     background: #dddddd;
 
@@ -9,6 +13,7 @@ body.boxed-layout {
 
     .container {
         width: auto;
+        max-width: 94.286%;
     }
 
     .container-fluid {

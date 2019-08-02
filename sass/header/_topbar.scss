@@ -74,6 +74,30 @@
         color: #d32323;
     }
 
+    .bam-social-link.skype i { 
+        color: #00aff0;
+    }
+
+    .bam-social-link.vk i { 
+        color: #45668e;
+    }
+
+    .bam-social-link.email i { 
+        color: #e4b872;
+    }
+
+    .bam-social-link.vine i { 
+        color: #00b488;
+    }
+
+    .bam-social-link.tripadvisor i { 
+        color: #00af87;
+    }
+
+    .bam-social-link.rss i { 
+        color: #f26522;
+    }
+
     .bam-social-link i:hover {
         color: #222222;
     }
@@ -96,6 +120,30 @@
 
     .bam-social-link i {
         color: #dddddd;
+    }
+
+    .bam-social-link.tripadvisor i:hover { 
+        color: #00af87;
+    }
+
+    .bam-social-link.rss i:hover { 
+        color: #f26522;
+    }
+
+    .bam-social-link.vine i:hover { 
+        color: #00b488;
+    }
+
+    .bam-social-link.email i:hover { 
+        color: #e4b872;
+    }
+
+    .bam-social-link.vk i:hover { 
+        color: #45668e;
+    }
+
+    .bam-social-link.skype i:hover { 
+        color: #00aff0;
     }
 
     .bam-social-link.facebook i:hover  {

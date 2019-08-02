@@ -174,30 +174,6 @@ body.separate-containers {
 	.site-content {
 		background: #eeeeee; 
 	}
-
-	.bam-entry {
-		//box-shadow: 0 1px 3px 0 rgba(0,0,0,.1);
-	}
-	// .bam-single-post {
-	// 	padding: 25px;
-	// 	background: #ffffff;
-	// }
-	// .site-main .comment-navigation, .site-main .posts-navigation, .site-main .post-navigation {
-	// 	padding: 25px;
-	// 	background: #ffffff;
-	// }
-	// .bam-authorbox {
-	// 	background: #ffffff;
-	// 	border: none;
-	// }
-	// .bam-related-posts {
-	// 	padding: 25px;
-	// 	background: #ffffff;
-	// }
-	// .comments-area {
-	// 	padding: 25px;
-	// 	background: #ffffff;		
-	// }
 }
 
 body.separate-containers.single .site-main,
@@ -453,6 +429,17 @@ body.separate-containers.single .post-thumbnail {
 	margin: 0;
 }
 
+.archive .page-title {
+	color: #000000;
+    font-size: 22px;
+    font-size: 1.375rem;
+    text-transform: uppercase;
+    line-height: 1.3;
+    border-bottom: 1px solid #dddddd;
+    margin: 0;
+    padding-bottom: 3px;
+}
+
 .archive-description {
-	margin-top: 10px;
+	margin-top: 15px;
 }

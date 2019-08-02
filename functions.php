@@ -50,6 +50,8 @@ final class Bam_Theme {
 		require_once( $dir . 'customizer/customizer.php' );
 		require_once( $dir . 'class-bam-admin.php' );
 		require_once( $dir . 'class-bam-gutenberg.php' );
+		require_once( $dir . 'widgets/class-tabs-widget.php' );
+		require_once( $dir . 'widgets/class-sidebar-posts.php' );
 
 		if ( defined( 'JETPACK__VERSION' ) ) {
 			require_once( $dir . 'jetpack.php' );
@@ -116,6 +118,7 @@ final class Bam_Theme {
 		add_image_size( 'bam-featured', 890, 530, true );
 		add_image_size( 'bam-list', 700, 465, true );
 		add_image_size( 'bam-thumb', 445, 265, true );
+		add_image_size( 'bam-small', 120, 85, true );
 
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
@@ -245,6 +248,8 @@ final class Bam_Theme {
 		wp_enqueue_style( 'font-awesome', $dir_uri .'css/font-awesome.min.css', false, '4.7.0' );
 
 		wp_enqueue_style( 'bam-style', get_stylesheet_uri() );
+
+		wp_enqueue_script( 'bam-scripts', $dir_uri . 'js/scripts.js', array( 'jquery' ), '', true );
 
 		wp_enqueue_script( 'bam-navigation', $dir_uri . 'js/mobile-navigation.js', array( 'jquery' ), '', true );
 

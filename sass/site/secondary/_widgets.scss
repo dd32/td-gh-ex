@@ -6,6 +6,14 @@
 		max-width: 100%;
 	}
 
+	a {
+		color: #000000;
+
+		&:hover {
+			color: #ff4f4f;
+		}
+	}
+
 	ul {
 		list-style: none;
 		margin: 0;
@@ -35,7 +43,7 @@ body.separate-containers #secondary {
 
 .widget-title {
 	color: #000000;
-	@include font-size(1.375);
+	@include font-size(1.3125);
 	text-transform: uppercase;
 	line-height: 1.3;
 	border-bottom: 1px solid #dddddd;
@@ -45,6 +53,7 @@ body.separate-containers #secondary {
 
 .footer-widget-area {
 	background: #222222;
+	overflow: hidden;
 
 	.widget {
 		color: #dddddd;
@@ -139,4 +148,165 @@ body.separate-containers #secondary {
   
 .search-form .search-submit:hover {
 	background: #222;
+}
+
+/* Small Posts */
+
+.bms-posts {
+	margin-left: 0;
+	margin-right: 0;
+	width: 47.3469387755102%;
+	float: left;
+
+	@media (max-width: 768px) {
+		width: 100%;
+		margin-left: 0;
+		margin-right: 0;
+		float: none;
+	}	
+}
+
+.bms-thumb {
+	float: left;
+	margin-right: 15px; 
+
+	img {
+		max-width: 120px;
+		vertical-align: top;
+	}
+}
+
+.bms-details {
+	overflow: hidden;
+}
+
+.bms-title {
+	@include font-size(1.125);
+	margin: 0 0 8px;
+	-ms-word-wrap: break-word;
+	word-wrap: break-word;
+	line-height: 1.27;
+
+	a {
+		color: #000000;
+		
+		&:hover {
+			color: #ff4f4f;
+		}
+	}	
+}
+
+.bms-post {
+    margin-bottom: 30px;
+}
+
+
+/* Tab Widget */
+
+ul.bm-tab-nav {
+	overflow: hidden;
+	margin: 0 0 25px 0;
+	list-style: none;
+	padding: 0;
+}
+
+li.bm-tab {
+	float: left;
+	padding: 0 !important;
+	text-align: center;
+	width: 25%;
+	
+	a {
+		width: 100%;
+		border-bottom: 1px solid #dddddd;
+	}
+
+}   
+
+li.bm-tab.ui-state-active a{
+	border-bottom: 1px solid #ff4f4f;
+	outline: 0;
+}
+
+.bm-tabs-wdt {
+
+	.bm-tab-anchor {
+		font-size: 15px;
+		padding: 10px 20px;
+		line-height: 40px;
+		display: inline-block;
+		font-weight: bold;
+		line-height: 1.3;
+		color: #333;
+
+		&:focus {
+			outline: none;
+		}
+
+		&:hover {
+
+		}
+
+		@media ( max-width: 1199px ) {
+			padding: 10px 15px;
+			font-size: 14px;
+		}
+	}
+
+	#bam-comments,
+	#bam-tags {
+		display: none;
+	}
+
+}
+
+.bmw-comment {
+	overflow: hidden;
+	margin: 0 0 1em;
+}
+
+.bmw-comment-author,
+.bam_comment_post {
+	font-weight: 600;
+}
+
+.bmw-comment {
+	@include font-size(1);
+	margin-top: 5px;
+}
+
+.bmw_avatar {
+	float: left;
+	margin: 0 1em 0 0;
+	img {
+		height: 50px;
+		width: 50px;
+		border-radius: 50%;
+	}
+}
+
+.bmw-comm-content {
+	overflow: hidden;
+}
+
+
+/* Tags Cloud */
+#bam-tags a, .widget_tag_cloud .tagcloud a {
+    display: block;
+    float: left;
+    padding: 4px 10px;
+    font-weight: normal;
+    background: #ff4f4f;
+    color: #ffffff;
+    margin: 0 1px 1px 0;
+    font-size: 14px;
+}
+
+#bam-tags a:hover,
+.widget_tag_cloud .tagcloud a:hover {
+  background: #222222;
+}
+
+.widget_sidebar_posts .widget-title {
+	margin-bottom: 25px;
 }

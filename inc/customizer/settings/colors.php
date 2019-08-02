@@ -395,7 +395,7 @@ if ( ! class_exists( 'Bam_Color_Customizer' ) ) :
             $boxed_separate_outer_bg_color      = get_theme_mod( 'bam_boxed_separate_outer_bg_color', '#dddddd' );
             $boxed_separate_inner_bg_color      = get_theme_mod( 'bam_boxed_separate_inner_bg_color', '#eeeeee' );
             $wide_separate_bg_color             = get_theme_mod( 'bam_wide_separate_bg_color', '#eeeeee' );
-            $separate_content_bg_color          = get_theme_mod( 'bam_separate_content_bg_color', '#eeeeee' );
+            $separate_content_bg_color          = get_theme_mod( 'bam_separate_content_bg_color', '#ffffff' );
             $article_meta_color                 = get_theme_mod( 'bam_article_meta_color', '#999999' );
             $article_meta_color_hover           = get_theme_mod( 'bam_article_meta_color_hover', '#ff4f4f' );
 
@@ -427,7 +427,7 @@ if ( ! class_exists( 'Bam_Color_Customizer' ) ) :
                         color: '. $primary_color .';
                     }
 
-                    .site-header.default-style .main-navigation ul ul a:hover {
+                    .site-header.default-style .main-navigation ul ul li a:hover {
                         background: '. $primary_color .';
                     }
 
@@ -442,7 +442,7 @@ if ( ! class_exists( 'Bam_Color_Customizer' ) ) :
                         color: '. $primary_color .';
                     }
 
-                    .site-header.horizontal-style .main-navigation ul ul a:hover {
+                    .site-header.horizontal-style .main-navigation ul ul li a:hover {
                         background: '. $primary_color .';
                     }
 
@@ -474,11 +474,20 @@ if ( ! class_exists( 'Bam_Color_Customizer' ) ) :
                         border: 1px solid '. $primary_color .';
                     }
 
+                    .widget a:hover,
                     .widget ul li a:hover {
                         color: '. $primary_color .';
                     }
 
+                    li.bm-tab.ui-state-active a {
+                        border-bottom: 1px solid '. $primary_color .';
+                    }
+
                     .footer-widget-area .widget a:hover {
+                        color: '. $primary_color .';
+                    }
+
+                    .bms-title a:hover {
                         color: '. $primary_color .';
                     }
 
@@ -553,6 +562,10 @@ if ( ! class_exists( 'Bam_Color_Customizer' ) ) :
 
                     .site-info a:hover {
                         color: '. $primary_color .';
+                    }
+
+                    #bam-tags a, .widget_tag_cloud .tagcloud a {
+                        background: '. $primary_color .';
                     }
 
                 ';
@@ -678,6 +691,7 @@ if ( ! class_exists( 'Bam_Color_Customizer' ) ) :
                 $css .= '
                     body.separate-containers .blog-entry-inner,
                     body.separate-containers.single .site-main,
+                    body.separate-containers.page .site-main,
                     body.separate-containers #secondary .widget {
                         background: '. $separate_content_bg_color .';
                     }

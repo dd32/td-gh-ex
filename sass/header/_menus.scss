@@ -126,16 +126,20 @@
 				padding: 10px;
 				background: #333333;
 
-				a {
-					color: #eeeeee;
-					padding-top: 10px;
-					padding-bottom: 10px;
-					line-height: 1.3;
+				li {
 
-					&:hover {
-						color: #ffffff;
-						background: $color__primary;
+					a {
+						color: #eeeeee;
+						padding-top: 10px;
+						padding-bottom: 10px;
+						line-height: 1.3;
+
+						&:hover {
+							color: #ffffff;
+							background: $color__primary;
+						}
 					}
+
 				}
 			}
 		}
@@ -195,16 +199,20 @@
 				padding: 10px;
 				background: #333333;
 
-				a {
-					color: #ffffff;
-					padding-top: 10px;
-					padding-bottom: 10px;
-					line-height: 1.3;
+				li {
 
-					&:hover {
+					a {
 						color: #ffffff;
-						background: $color__primary;
+						padding-top: 10px;
+						padding-bottom: 10px;
+						line-height: 1.3;
+
+						&:hover {
+							color: #ffffff;
+							background: $color__primary;
+						}
 					}
+
 				}
 			}
 		}

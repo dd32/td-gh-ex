@@ -276,7 +276,7 @@ if ( ! function_exists( 'bam_social_options' ) ) {
 			),
 			'email' => array(
 				'label'			=> esc_html__( 'Email', 'bam' ),
-				'icon_class'	=> 'fa fa-email'
+				'icon_class'	=> 'fa fa-envelope'
 			),
 		) );
 	}

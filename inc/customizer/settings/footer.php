@@ -353,7 +353,7 @@ if ( ! class_exists( 'Bam_Footer_Customizer' ) ) :
             }
 
             // widget area link hover color
-            if ( ! empty( $widget_area_link_color_hover ) && '#eeeeee' != $widget_area_link_color_hover ) {
+            if ( ! empty( $widget_area_link_color_hover ) && '#ff4f4f' != $widget_area_link_color_hover ) {
                 $css .= '
                     .footer-widget-area .widget a:hover {
                         color: '. $widget_area_link_color_hover .';
@@ -399,7 +399,7 @@ if ( ! class_exists( 'Bam_Footer_Customizer' ) ) :
 
             // Return CSS
             if ( ! empty( $css ) ) {
-                $output .= '/* Color CSS */'. $css;
+                $output .= '/* Footer CSS */'. $css;
             }
 
             // Return output css

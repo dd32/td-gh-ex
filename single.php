@@ -42,7 +42,7 @@ get_header();
 
 				// Author Box.
 				if ( true == get_theme_mod( 'bam_show_authorbox', true ) ) {
-					get_template_part( 'partials/single/author-box' );
+					get_template_part( 'partials/single/authorbox' );
 				}
 
 				// Related Posts.

@@ -17,6 +17,7 @@
 function bam_jetpack_setup() {
 	// Add theme support for Infinite Scroll.
 	add_theme_support( 'infinite-scroll', array(
+		'type'		=> 'click',
 		'container' => 'main',
 		'render'    => 'bam_infinite_scroll_render',
 		'footer'    => 'page',
@@ -47,13 +48,22 @@ add_action( 'after_setup_theme', 'bam_jetpack_setup' );
 /**
  * Custom render function for Infinite Scroll.
  */
-function bam_infinite_scroll_render() {
-	while ( have_posts() ) {
-		the_post();
-		if ( is_search() ) :
-			get_template_part( 'template-parts/content', 'search' );
-		else :
-			get_template_part( 'template-parts/content', get_post_type() );
-		endif;
-	}
+function bam_infinite_scroll_render() { ?>
+
+	<div id="blog-entries" class="<?php bam_blog_wrapper_classes(); ?>">
+
+	<?php
+		while ( have_posts() ) {
+			the_post();
+			if ( is_search() ) :
+				get_template_part( 'template-parts/content', 'search' );
+			else :
+				get_template_part( 'template-parts/content', get_post_type() );
+			endif;
+		} 
+	?>
+
+	</div><!-- #blog-entries -->
+
+	<?php
 }

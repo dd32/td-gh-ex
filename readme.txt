@@ -1,7 +1,7 @@
 === Bam ===
 
 Contributors: pubudu-malalasekara
-Requires at least: 4.0
+Requires at least: 4.5
 Tested up to: 5.2.2
 Requires PHP: 5.2
 License: GPLv2 or later
@@ -11,7 +11,7 @@ Bam is a simple yet a very customizable WordPress theme.
 
 == Description ==
 
-Bam is a great flexible theme for blogging sites. 
+Bam is a great flexible theme for blogging sites.
 
 == Installation ==
 
@@ -29,6 +29,18 @@ Bam supports all the major plugins.
 
 = 1.0.0 =
 * Initial release
+
+= 1.0.1 =
+* Added sidebar posts widget.
+* Added tabbed content widget.
+* Added an option to open social links in a new browser tab.
+* Added wp_body_open() function to the header.
+* Added an option to change top bar content width.
+* Fixed escaping and sanitization issues.
+* Changed function name bam_header_style() to bam_custom_header_style() on custom-header.php
+* Fixed few customizer setting issues.
+* Fixed top bar skype, email issue.
+* Changed author-box.php to authorbox.php
 
 == Resources ==
 

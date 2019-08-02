@@ -14,7 +14,7 @@
 /**
  * Set up the WordPress core custom header feature.
  *
- * @uses bam_header_style()
+ * @uses bam_custom_header_style()
  */
 function bam_custom_header_setup() {
 	add_theme_support( 'custom-header', apply_filters( 'bam_custom_header_args', array(
@@ -24,18 +24,18 @@ function bam_custom_header_setup() {
 		'height'                 => 550,
 		'flex-height'            => true,
 		'flex-width'			 => true,
-		'wp-head-callback'       => 'bam_header_style',
+		'wp-head-callback'       => 'bam_custom_header_style',
 	) ) );
 }
 add_action( 'after_setup_theme', 'bam_custom_header_setup' );
 
-if ( ! function_exists( 'bam_header_style' ) ) :
+if ( ! function_exists( 'bam_custom_header_style' ) ) :
 	/**
 	 * Styles the header image and text displayed on the blog.
 	 *
 	 * @see bam_custom_header_setup().
 	 */
-	function bam_header_style() {
+	function bam_custom_header_style() {
 		$header_text_color = get_header_textcolor();
 
 		/*

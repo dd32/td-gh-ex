@@ -22,6 +22,12 @@
 
 <body <?php body_class(); ?>>
 
+<?php
+if ( function_exists( 'wp_body_open' ) ) {
+	wp_body_open();
+}
+?>
+
 <?php do_action( 'bam_body_top' ); ?>
 
 <div id="page" class="site">

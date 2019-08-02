@@ -3,9 +3,9 @@
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: Bam 1.0.0\n"
+"Project-Id-Version: Bam 1.0.1\n"
 "Report-Msgid-Bugs-To: https://wordpress.org/tags/_s\n"
-"POT-Creation-Date: 2019-07-11 19:36+0530\n"
+"POT-Creation-Date: 2019-08-02 20:38+0530\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -51,44 +51,44 @@ msgstr ""
 msgid "Powered by %1$s and %2$s."
 msgstr ""
 
-#: functions.php:122 inc/customizer/settings/typography.php:111
+#: functions.php:125 inc/customizer/settings/typography.php:111
 msgid "Main Menu"
 msgstr ""
 
-#: functions.php:123
+#: functions.php:126
 msgid "Top Bar Menu"
 msgstr ""
 
-#: functions.php:173
+#: functions.php:176
 msgid "Sidebar"
 msgstr ""
 
-#: functions.php:175 functions.php:184 functions.php:193 functions.php:202
-#: functions.php:211 functions.php:220
+#: functions.php:178 functions.php:187 functions.php:196 functions.php:205
+#: functions.php:214 functions.php:223
 msgid "Add widgets here."
 msgstr ""
 
-#: functions.php:182
+#: functions.php:185
 msgid "Header Sidebar"
 msgstr ""
 
-#: functions.php:191
+#: functions.php:194
 msgid "Footer 1"
 msgstr ""
 
-#: functions.php:200
+#: functions.php:203
 msgid "Footer 2"
 msgstr ""
 
-#: functions.php:209
+#: functions.php:212
 msgid "Footer 3"
 msgstr ""
 
-#: functions.php:218
+#: functions.php:221
 msgid "Footer 4"
 msgstr ""
 
-#: header.php:28
+#: header.php:34
 msgid "Skip to content"
 msgstr ""
 
@@ -96,24 +96,24 @@ msgstr ""
 msgid "Select Layout"
 msgstr ""
 
-#: inc/class-meta-boxes.php:118
+#: inc/class-meta-boxes.php:124
 msgid "Default Layout"
 msgstr ""
 
-#: inc/class-meta-boxes.php:121
+#: inc/class-meta-boxes.php:127
 msgid "Right Sidebar"
 msgstr ""
 
-#: inc/class-meta-boxes.php:124
+#: inc/class-meta-boxes.php:130
 msgid "Left Sidebar"
 msgstr ""
 
-#: inc/class-meta-boxes.php:127 inc/customizer/settings/header.php:180
-#: inc/customizer/settings/header.php:493
+#: inc/class-meta-boxes.php:133 inc/customizer/settings/header.php:180
+#: inc/customizer/settings/header.php:493 inc/customizer/settings/topbar.php:86
 msgid "Full Width"
 msgstr ""
 
-#: inc/class-meta-boxes.php:130
+#: inc/class-meta-boxes.php:136
 msgid "Full Width Content Centered."
 msgstr ""
 
@@ -223,7 +223,7 @@ msgid "Display Author Image Icon"
 msgstr ""
 
 #: inc/customizer/settings/blog.php:272 inc/customizer/settings/blog.php:481
-#: inc/customizer/settings/topbar.php:83
+#: inc/customizer/settings/topbar.php:108
 msgid "Display Date"
 msgstr ""
 
@@ -312,7 +312,7 @@ msgid "Outer Background Color"
 msgstr ""
 
 #: inc/customizer/settings/colors.php:162 inc/customizer/settings/footer.php:234
-#: inc/customizer/settings/topbar.php:106
+#: inc/customizer/settings/topbar.php:131
 msgid "Background Color"
 msgstr ""
 
@@ -396,12 +396,12 @@ msgstr ""
 msgid "Copyright Text"
 msgstr ""
 
-#: inc/customizer/settings/footer.php:257 inc/customizer/settings/topbar.php:130
+#: inc/customizer/settings/footer.php:257 inc/customizer/settings/topbar.php:155
 msgid "Text Color"
 msgstr ""
 
 #: inc/customizer/settings/footer.php:280 inc/customizer/settings/header.php:635
-#: inc/customizer/settings/topbar.php:154
+#: inc/customizer/settings/topbar.php:179
 msgid "Link Color"
 msgstr ""
 
@@ -487,6 +487,7 @@ msgid "Header Width"
 msgstr ""
 
 #: inc/customizer/settings/header.php:179 inc/customizer/settings/header.php:492
+#: inc/customizer/settings/topbar.php:85
 msgid "Contained"
 msgstr ""
 
@@ -586,7 +587,7 @@ msgstr ""
 msgid "Menu Background Color"
 msgstr ""
 
-#: inc/customizer/settings/header.php:657 inc/customizer/settings/topbar.php:178
+#: inc/customizer/settings/header.php:657 inc/customizer/settings/topbar.php:203
 msgid "Link Color: Hover"
 msgstr ""
 
@@ -622,6 +623,10 @@ msgstr ""
 msgid "Social Media"
 msgstr ""
 
+#: inc/customizer/settings/social.php:50
+msgid "Open social link in new Window?"
+msgstr ""
+
 #: inc/customizer/settings/topbar.php:32
 msgid "Top Bar"
 msgstr ""
@@ -630,40 +635,44 @@ msgstr ""
 msgid "Display Top Bar"
 msgstr ""
 
-#: inc/customizer/settings/topbar.php:202
+#: inc/customizer/settings/topbar.php:83
+msgid "Top Bar Width"
+msgstr ""
+
+#: inc/customizer/settings/topbar.php:227
 msgid "Border Color"
 msgstr ""
 
-#: inc/customizer/settings/topbar.php:214
+#: inc/customizer/settings/topbar.php:239
 msgid "Social"
 msgstr ""
 
-#: inc/customizer/settings/topbar.php:236
+#: inc/customizer/settings/topbar.php:261
 msgid "Display Social Media Icons"
 msgstr ""
 
-#: inc/customizer/settings/topbar.php:256
+#: inc/customizer/settings/topbar.php:281
 msgid "Social Link Style"
 msgstr ""
 
-#: inc/customizer/settings/topbar.php:258
+#: inc/customizer/settings/topbar.php:283
 msgid "Colored"
 msgstr ""
 
-#: inc/customizer/settings/topbar.php:259
+#: inc/customizer/settings/topbar.php:284
 msgid "Dark"
 msgstr ""
 
-#: inc/customizer/settings/topbar.php:260
+#: inc/customizer/settings/topbar.php:285
 msgid "Light"
 msgstr ""
 
-#: inc/customizer/settings/topbar.php:284 inc/customizer/settings/topbar.php:332
+#: inc/customizer/settings/topbar.php:309 inc/customizer/settings/topbar.php:357
 msgid "Social Links Color"
 msgstr ""
 
-#: inc/customizer/settings/topbar.php:308 inc/customizer/settings/topbar.php:356
-#: inc/customizer/settings/topbar.php:380
+#: inc/customizer/settings/topbar.php:333 inc/customizer/settings/topbar.php:381
+#: inc/customizer/settings/topbar.php:405
 msgid "Social Links Color: Hover"
 msgstr ""
 
@@ -936,6 +945,60 @@ msgstr ""
 msgid "Edit <span class=\"screen-reader-text\">%s</span>"
 msgstr ""
 
+#: inc/widgets/class-sidebar-posts.php:14
+msgid "Bam: Sidebar Posts"
+msgstr ""
+
+#: inc/widgets/class-sidebar-posts.php:15
+msgid ""
+"Displays latest posts or posts from a choosen category.Use this widget in the "
+"main sidebars."
+msgstr ""
+
+#: inc/widgets/class-sidebar-posts.php:29
+msgid "Latest Posts"
+msgstr ""
+
+#: inc/widgets/class-sidebar-posts.php:39
+msgid "Title:"
+msgstr ""
+
+#: inc/widgets/class-sidebar-posts.php:43
+msgid "Select a post category"
+msgstr ""
+
+#: inc/widgets/class-sidebar-posts.php:47
+msgid "Number of posts:"
+msgstr ""
+
+#: inc/widgets/class-sidebar-posts.php:52
+msgid "Ignore sticky posts."
+msgstr ""
+
+#: inc/widgets/class-tabs-widget.php:14
+msgid "Bam: Popular, Recent, Tags, Comments"
+msgstr ""
+
+#: inc/widgets/class-tabs-widget.php:15
+msgid "Displays popular posts, recent posts comments, tags in a tabbed pane."
+msgstr ""
+
+#: inc/widgets/class-tabs-widget.php:32
+msgid "Number of popular posts:"
+msgstr ""
+
+#: inc/widgets/class-tabs-widget.php:36
+msgid "Number of comments:"
+msgstr ""
+
+#: inc/widgets/class-tabs-widget.php:169
+msgid "No comments found."
+msgstr ""
+
+#: inc/widgets/class-tabs-widget.php:183
+msgid "No tags created."
+msgstr ""
+
 #: partials/content-none.php:14
 msgid "Nothing Found"
 msgstr ""
@@ -965,12 +1028,12 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: partials/single/author-box.php:9
+#: partials/single/authorbox.php:9
 #, php-format
 msgid "About %s"
 msgstr ""
 
-#: partials/single/author-box.php:14
+#: partials/single/authorbox.php:14
 #, php-format
 msgid "View all posts by %s &rarr;"
 msgstr ""

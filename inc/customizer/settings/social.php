@@ -31,6 +31,26 @@ if ( ! class_exists( 'Bam_Social_Customizer' ) ) :
                 )
             );
 
+            // Open social link in new window?
+            $wp_customize->add_setting(
+                'bam_social_new_window',
+                array(
+                    'default'			=> true,
+                    'type'				=> 'theme_mod',
+                    'capability'		=> 'edit_theme_options',
+                    'sanitize_callback'	=> 'bam_sanitize_checkbox'
+                )
+            );
+            $wp_customize->add_control(
+                'bam_social_new_window',
+                array(
+                    'settings'		=> 'bam_social_new_window',
+                    'section'		=> 'bam_social_section',
+                    'type'			=> 'checkbox',
+                    'label'			=> esc_html__( 'Open social link in new Window?', 'bam' ),
+                )
+            );
+
             $social_options = bam_social_options();
 
             foreach ( $social_options as $key => $value ) {
