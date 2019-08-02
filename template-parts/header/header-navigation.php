@@ -22,9 +22,9 @@
           </div>
         </div>
         <div class="col-lg-8 col-md-7">
-          <div class="nav">
+          <nav class="nav" role="navigation">
             <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
-          </div>
+          </nav>
         </div>
         <div class="col-lg-1 col-md-1">
           <div class="search-box">
@@ -35,7 +35,7 @@
       <div class="serach_outer">
         <div class="closepop"><i class="far fa-window-close"></i></div>
         <div class="serach_inner">
-         <?php get_search_form(); ?>
+          <?php get_search_form(); ?>
         </div>
       </div>
     </div>

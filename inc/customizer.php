@@ -67,14 +67,13 @@ function advance_education_customize_register($wp_customize) {
 	    'section'  => 'advance_education_typography',
 	    'label'    => __( 'Paragraph Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => 'font_array',
 	));
 
 	$wp_customize->add_setting('advance_education_paragraph_font_size',array(
 		'default'	=> '12px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_education_paragraph_font_size',array(
 		'label'	=> __('Paragraph Font Size','advance-education'),
 		'section'	=> 'advance_education_typography',
@@ -104,7 +103,7 @@ function advance_education_customize_register($wp_customize) {
 	    'section'  => 'advance_education_typography',
 	    'label'    => __( '"a" Tag Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => 'font_array',
 	));
 
 	// This is "a" Tag Color picker setting
@@ -129,7 +128,7 @@ function advance_education_customize_register($wp_customize) {
 	    'section'  => 'advance_education_typography',
 	    'label'    => __( '"li" Tag Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => 'font_array',
 	));
 
 	// This is H1 Color picker setting
@@ -154,7 +153,7 @@ function advance_education_customize_register($wp_customize) {
 	    'section'  => 'advance_education_typography',
 	    'label'    => __( 'H1 Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => 'font_array',
 	));
 
 	//This is H1 FontSize setting
@@ -162,7 +161,6 @@ function advance_education_customize_register($wp_customize) {
 		'default'	=> '50px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_education_h1_font_size',array(
 		'label'	=> __('H1 Font Size','advance-education'),
 		'section'	=> 'advance_education_typography',
@@ -192,7 +190,7 @@ function advance_education_customize_register($wp_customize) {
 	    'section'  => 'advance_education_typography',
 	    'label'    => __( 'H2 Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => 'font_array',
 	));
 
 	//This is H2 FontSize setting
@@ -200,7 +198,6 @@ function advance_education_customize_register($wp_customize) {
 		'default'	=> '45px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_education_h2_font_size',array(
 		'label'	=> __('H2 Font Size','advance-education'),
 		'section'	=> 'advance_education_typography',
@@ -230,7 +227,7 @@ function advance_education_customize_register($wp_customize) {
 	    'section'  => 'advance_education_typography',
 	    'label'    => __( 'H3 Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => 'font_array',
 	));
 
 	//This is H3 FontSize setting
@@ -238,7 +235,6 @@ function advance_education_customize_register($wp_customize) {
 		'default'	=> '36px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_education_h3_font_size',array(
 		'label'	=> __('H3 Font Size','advance-education'),
 		'section'	=> 'advance_education_typography',
@@ -268,7 +264,7 @@ function advance_education_customize_register($wp_customize) {
 	    'section'  => 'advance_education_typography',
 	    'label'    => __( 'H4 Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => 'font_array',
 	));
 
 	//This is H4 FontSize setting
@@ -276,7 +272,6 @@ function advance_education_customize_register($wp_customize) {
 		'default'	=> '30px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_education_h4_font_size',array(
 		'label'	=> __('H4 Font Size','advance-education'),
 		'section'	=> 'advance_education_typography',
@@ -306,7 +301,7 @@ function advance_education_customize_register($wp_customize) {
 	    'section'  => 'advance_education_typography',
 	    'label'    => __( 'H5 Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => 'font_array',
 	));
 
 	//This is H5 FontSize setting
@@ -314,7 +309,6 @@ function advance_education_customize_register($wp_customize) {
 		'default'	=> '25px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_education_h5_font_size',array(
 		'label'	=> __('H5 Font Size','advance-education'),
 		'section'	=> 'advance_education_typography',
@@ -344,7 +338,7 @@ function advance_education_customize_register($wp_customize) {
 	    'section'  => 'advance_education_typography',
 	    'label'    => __( 'H6 Fonts','advance-education'),
 	    'type'     => 'select',
-	    'choices'  => $font_array,
+	    'choices'  => 'font_array',
 	));
 
 	//This is H6 FontSize setting
@@ -352,7 +346,6 @@ function advance_education_customize_register($wp_customize) {
 		'default'	=> '18px',
 		'sanitize_callback'	=> 'sanitize_text_field'
 	));
-	
 	$wp_customize->add_control('advance_education_h6_font_size',array(
 		'label'	=> __('H6 Font Size','advance-education'),
 		'section'	=> 'advance_education_typography',

@@ -7,6 +7,7 @@
  * @package advance-education
  */
 ?>
+<footer role="contentinfo">
     <div id="footer" class="copyright-wrapper">
         <div class="container">
             <div class="row">
@@ -28,6 +29,7 @@
     <div class="copyright">
         <p><?php echo esc_html(get_theme_mod('advance_education_footer_copy', __('Copyright 2019', 'advance-education')));?> <?php advance_education_credit();?></p>
     </div>
-    <?php wp_footer();?>
-    </body>
+</footer>
+<?php wp_footer();?>
+</body>
 </html>

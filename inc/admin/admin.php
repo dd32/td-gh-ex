@@ -22,21 +22,21 @@ function advance_education_mostrar_guide() {
 	 	<h2><?php esc_html_e('Welcome to Advance Education Theme', 'advance-education'); ?></h2>
  		<p><?php esc_html_e('Most of our outstanding theme is elegant, responsive, multifunctional, SEO friendly has amazing features and functionalities that make them highly demanding for designers and bloggers, who ought to excel in web development domain. Our Themeshopy has got everything that an individual and group need to be successful in their venture.', 'advance-education'); ?></p>
 		<div class="main-button">
-			<a href="<?php echo esc_url( ADVANCE_EDUCATION_BUY_NOW ); ?>" target="_blank"><?php esc_html_e('Buy Now', 'advance-education'); ?></a>
+			<a href="<?php echo esc_url( ADVANCE_EDUCATION_BUY_NOW ); ?>"><?php esc_html_e('Buy Now', 'advance-education'); ?></a>
 			<a href="<?php echo esc_url( ADVANCE_EDUCATION_LIVE_DEMO ); ?>"><?php esc_html_e('Live Demo', 'advance-education'); ?></a>
-			<a href="<?php echo esc_url( ADVANCE_EDUCATION_PRO_DOC ); ?>" target="_blank"><?php esc_html_e('Pro Documentation', 'advance-education'); ?></a>
+			<a href="<?php echo esc_url( ADVANCE_EDUCATION_PRO_DOC ); ?>"><?php esc_html_e('Pro Documentation', 'advance-education'); ?></a>
 		</div>
 	</div>
 	<div class="button-bg">
-	<button class="tablink" onclick="openPage('Home', this, '')"><?php esc_html_e('Lite Theme Setup', 'advance-education'); ?></button>
-	<button class="tablink" onclick="openPage('Contact', this, '')"><?php esc_html_e('Premium Theme info', 'advance-education'); ?></button>
+	<button role="tab" class="tablink" onclick="openPage('Home', this, '')"><?php esc_html_e('Lite Theme Setup', 'advance-education'); ?></button>
+	<button role="tab" class="tablink" onclick="openPage('Contact', this, '')"><?php esc_html_e('Premium Theme info', 'advance-education'); ?></button>
 	</div>
 	<div id="Home" class="tabcontent tab1">
 	  	<h3><?php esc_html_e('How to set up homepage', 'advance-education'); ?></h3>
 	  	<div class="sec-button">
-			<a href="<?php echo esc_url( ADVANCE_EDUCATION_FREE_DOC ); ?>" target="_blank"><?php esc_html_e('Documentation', 'advance-education'); ?></a>
+			<a href="<?php echo esc_url( ADVANCE_EDUCATION_FREE_DOC ); ?>"><?php esc_html_e('Documentation', 'advance-education'); ?></a>
 			<a href="<?php echo esc_url( ADVANCE_EDUCATION_CONTACT ); ?>"><?php esc_html_e('Support', 'advance-education'); ?></a>
-			<a target="_blank" href="<?php echo esc_url( admin_url('customize.php') ); ?>"><?php esc_html_e('Start Customizing', 'advance-education'); ?></a>
+			<a href="<?php echo esc_url( admin_url('customize.php') ); ?>"><?php esc_html_e('Start Customizing', 'advance-education'); ?></a>
 		</div>
 	  	<div class="documentation">
 		  	<div class="image-docs">
@@ -64,9 +64,9 @@ function advance_education_mostrar_guide() {
 	<div id="Contact" class="tabcontent">
 	 	<h3><?php esc_html_e('Premium Theme Info', 'advance-education'); ?></h3>
 	  	<div class="sec-button">
-			<a href="<?php echo esc_url( ADVANCE_EDUCATION_BUY_NOW ); ?>" target="_blank"><?php esc_html_e('Buy Now', 'advance-education'); ?></a>
+			<a href="<?php echo esc_url( ADVANCE_EDUCATION_BUY_NOW ); ?>"><?php esc_html_e('Buy Now', 'advance-education'); ?></a>
 			<a href="<?php echo esc_url( ADVANCE_EDUCATION_LIVE_DEMO ); ?>"><?php esc_html_e('Live Demo', 'advance-education'); ?></a>
-			<a href="<?php echo esc_url( ADVANCE_EDUCATION_PRO_DOC ); ?>" target="_blank"><?php esc_html_e('Pro Documentation', 'advance-education'); ?></a>
+			<a href="<?php echo esc_url( ADVANCE_EDUCATION_PRO_DOC ); ?>"><?php esc_html_e('Pro Documentation', 'advance-education'); ?></a>
 		</div>
 	  	<div class="features-section">
 	  		<div class="col-4">

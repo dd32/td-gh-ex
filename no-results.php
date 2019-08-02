@@ -7,7 +7,7 @@
  * @package advance-education
  */
 ?>
-<header>
+<header role="banner">
 	<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'advance-education' ); ?></h1>
 </header>
 
@@ -20,6 +20,6 @@
 	<?php else : ?>
 		<p><?php esc_html_e( 'Dont worry&hellip it happens to the best of us.', 'advance-education' ); ?></p><br />
 		<div class="read-moresec">
-			<a href="<?php echo esc_url(home_url()); ?>" class="button"><?php esc_html_e( 'Return to Home Page', 'advance-education' ); ?></a>
+			<a href="<?php echo esc_url(home_url()); ?>" class="button"><?php esc_html_e( 'Return to Home Page', 'advance-education' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Back to Home Page', 'advance-education' ); ?></span></a>
 		</div>
 <?php endif; ?>
