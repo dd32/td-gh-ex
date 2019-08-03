@@ -112,7 +112,7 @@ $files = get_children('post_parent='.get_the_ID().'&post_type=attachment
 function digital_post_meta_data() {
 $time_string = '<time class="entry-date published updated" datetime="%1$s">%2$s</time>';
 	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) ) {
-		$time_string = '<time class="entry-date updated" datetime="%3$s"><i class="fa fa-clock-o"></i>%4$s</time>';
+		$time_string = '<time class="entry-date updated" datetime="%3$s">%4$s</time>';
 	}
 
 	$time_string = sprintf( $time_string,
@@ -148,6 +148,7 @@ function digital_theme_setup() {
 		add_image_size( 'defaultthumb', 390, 210, true);
 		add_image_size( 'popularpost', 75, 75, true );
 		add_image_size( 'latestpost', 125, 120, true );
+		set_post_thumbnail_size( 390, 210, true  );
 	    load_theme_textdomain('digital', get_template_directory() . '/languages');
 		add_theme_support( 'custom-logo', array(
    'height'      => 90,
@@ -183,6 +184,7 @@ function digital_theme_setup() {
 		}
 		//woocommerce theme support
 		add_theme_support( 'woocommerce' );
+		add_theme_support( 'html5', array( 'search-form' ) );
 		
 	}
 add_action( 'after_setup_theme', 'digital_theme_setup' );
@@ -190,12 +192,16 @@ add_action( 'after_setup_theme', 'digital_theme_setup' );
 // Digital search form
 	
 function digital_search_form( $form ) {
-	$form = '<form role="search" method="get" id="searchform" class="searchform" action="' . home_url( '/' ) . '" >
-	<div><label class="screen-reader-text" for="s">' . __( 'Search for:','digital' ) . '</label>
-	<input type="text" value="' . get_search_query() . '" name="s" id="s" />
-	<input type="submit" id="searchsubmit" value="'. esc_attr__( 'Go','digital' ) .'" ><i class="fa fa-search" aria-hidden="true"></i></input>
-	</div>
-	</form>';
+	$form = '<form role="search" method="get" id="searchform"  class="searchform" action="'. home_url( '/' ).'">
+    <label>
+        <span class="screen-reader-text">'. _x( 'Search for:', 'digital' ).'</span>
+        <input type="search" class="search-field"
+            placeholder="'. esc_attr_x( 'Search …', 'digital' ).'"
+            value="'. get_search_query().'" name="s" id="s"
+            title="'. esc_attr_x( 'Search for:', 'digital' ).'" />
+    </label>
+    <input style="font-family: FontAwesome" value="&#xf002;" type="submit" id="searchsubmit"  class="search-submit" />
+</form>';
 
 	return $form;
 }
@@ -433,4 +439,19 @@ function digital_site_description() {
 	endif;
 }
 endif;
+
+
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+	global $woocommerce;
+
+	ob_start();
+
+	?>
+	<a class="cart-flotingcarte" href="<?php echo esc_url(wc_get_cart_url()); ?>" title="<?php _e('View your shopping cart', 'woothemes'); ?>"><i class="fa fa-shopping-cart" aria-hidden="true"></i> <?php echo sprintf(_n('%d item', '%d items', $woocommerce->cart->cart_contents_count, 'woothemes'), $woocommerce->cart->cart_contents_count);?> - <?php echo $woocommerce->cart->get_cart_total(); ?></a>
+	<?php
+	$fragments['a.cart-flotingcarte'] = ob_get_clean();
+	return $fragments;
+}
 ?>

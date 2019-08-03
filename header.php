@@ -17,11 +17,12 @@
 		</div>  </div>
 	<div id="header">
 		<div id="logo">
+		<?php the_custom_logo(); ?>
 <?php if (of_get_option( 'digital_logo' )): ?>
 			<a href="<?php echo esc_url( home_url( '/' ) ); ?>"><img src="<?php echo of_get_option( 'digital_logo' ); ?>" max-height="100px" max-width="450px" alt="<?php bloginfo( 'name' ); ?>"/></a>
       			<?php else : ?>        
            	<?php digital_site_title(); ?>
-					<?php digital_site_description(); ?>
+			<?php digital_site_description(); ?>
           <?php endif; ?>		
 		</div>		
 		<div id="banner-top"><?php echo of_get_option( 'banner_top'); ?>

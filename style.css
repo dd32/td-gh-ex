@@ -2,7 +2,7 @@
 Theme Name: Digital
 Theme URI: https://www.insertcart.com/product/digital-wp-theme/
 Description: Digital Responsive Multi-Purpose Theme is best WordPress theme design for personal and business uses support WooCommerce plugin supported with full inbuilt Slider features and SEO Optimize. Theme comes with lots of customization and connect social media like Facebook, Google+, twitter, YouTube and Adsense ready It supports all the awesome WordPress features completely free theme for blogging. This is a eCommerce theme to make sure run best online store with your website and start selling products. Demo https://www.insertcart.com/themes-demo?theme=Digital
-Version: 1.9
+Version: 2.0
 Author: insertcart.com
 Author URI: https://www.insertcart.com/
 Tags: custom-logo, custom-menu, custom-header, custom-background, custom-colors, one-column, two-columns, right-sidebar, theme-options, threaded-comments, translation-ready, featured-images, footer-widgets, sticky-post, blog, photography, news, featured-image-header, rtl-language-support, grid-layout, post-formats, buddypress 
@@ -18,7 +18,6 @@ Digital WordPress theme is licensed under the GPL.
 
 
 /*===================== reset ===================== */
-
 .clearfix:after { 
 	clear: both;
 	content: ' ';
@@ -447,9 +446,12 @@ float: left;
 }
 #navigation .secondary ul a{
 	height: 48px;
-	color: white;
-	font-size: 110%;
-	margin-bottom: -3px;
+    color: white;
+    font-size: 14px;
+    margin-bottom: -3px;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    letter-spacing: 0.5px;
 }
 	 
 #navigation  ul li{
@@ -696,7 +698,7 @@ border-right: none;}
     z-index: 100;
     margin: 0 auto;
     overflow: hidden;
-    min-height: 180px;
+    min-height: 100px;
     margin-left: -10px;
     margin-right: -10px;
     padding: 10px;
@@ -746,14 +748,16 @@ background: #333;
 #single-nav-left{
 	float:left;
 	background: #F04124;
-	padding: 4px 8px;
+	padding: 6px 8px;
+	border-radius: 3px;
 	color: #fff;
 	max-width: 48%;
 }
 #single-nav-right{
 background: #F04124;
+border-radius: 3px;
 float: right;
-padding: 4px 8px;
+padding: 6px 8px;
 color: #fff;
 max-width: 48%;
 }
@@ -848,23 +852,19 @@ div#search i.fa.fa-search {
     color: #fff;
 }
 #searchsubmit {
-	cursor: pointer;
-	background: #F04124;
-	height: 35px;
-	width: 48px;
-	border: none;
-	font-weight: bold;
-	    color: #f04124;
+    cursor: pointer;
+    background: #F04124;
+    height: 35px;
+    width: 48px;
+    border: none;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: 16px;
 }
 form#searchform input#s {
 	padding: 0px 0px 0px 9px;
 	width: 204px;
 	float: left;
-}
-#searchform label {
-	position:absolute;
-	top:-1500px;
-    left:-1500px;
 }
 /*slider*/
 .slider-wrapper {
@@ -895,7 +895,6 @@ margin-left: -10px;
 }
 #crumbs a{
 color: #f7f7f7;
-
 }
 /* ===================== content  ===================== */
 
@@ -1151,8 +1150,8 @@ float: left;
 margin-right: 8px;
 padding: 0px;
 text-align: center;
--webkit-box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.8);
-box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.8);
+-webkit-box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.8);
+box-shadow: 0px 1px 1px 0px rgba(0,0,0,0.8);
 -moz-transition: all 0.6s ease-in-out;
 -webkit-transition: all 0.6s ease-in-out;
 -o-transition: all 0.6s ease-in-out;
@@ -1200,7 +1199,7 @@ margin-left: 3px;
 color:#1CCF80;}
 .popularpost a {
 	float: none;
-font-size: 14px;
+font-size: 16px;
 color: #555;
 font-weight: bold;
 }
@@ -1349,7 +1348,6 @@ margin-bottom: 16px;
 
 div > span > span.byline > span > a, div > span > span.posted-on > a {
     font-size: 0.7rem !important;
-    color: #717171;
 }
 	
 .posted-on a::before {
@@ -1470,12 +1468,15 @@ border-width: 21px 19px 21px 0px;
 margin-top: -14px}
 
 #sidebar h4, #sidebar h4 a {
-text-transform: uppercase;
-color: #FFF;
-background: #F04124;
-font-weight: bold;
-font-size: 17px;
-padding: 15px 0px 15px 13px;
+    color: #FFF;
+    background: #F04124;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 15px 0px 15px 13px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 7px 2px 5px 0px #a9a9a9;
 }
 #sidebar h4 a:hover {
 	text-decoration: none;
@@ -2151,17 +2152,52 @@ div.summary.entry-summary > div.product_meta > span:before{
 .woocommerce div.product .woocommerce-tabs ul.tabs .reviews_tab:before{
     content: "\f0e5";
     font: normal normal normal 14px/1 FontAwesome;
-    left: 11px;
+    left: 9px;
     top: 11px;
     font-size: 1rem;
 }
 .woocommerce div.product .woocommerce-tabs ul.tabs .description_tab:before{
     content: "\f0c9";
 	font: normal normal normal 14px/1 FontAwesome;
-	  left: 14px;
+	  left: 12px;
   top: 13px;
 }
-
+section.related.products > h2 {
+    display: inline-block;
+    color: #FFF;
+    background: #F04124;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 10px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    box-shadow: 4px 5px 3px 0px #a9a9a9;
+}
+section.related.products > h2:before {
+   content: "\f074";
+	font-family:FontAwesome;
+	    padding: 5px;
+}
+a.cart-flotingcarte {
+    position: fixed;
+    z-index: 9999999;
+    transform: translateX(-100%);
+    bottom: 0;
+    color: #fff;
+    border-radius: 7px 7px 0 0;
+    background: #f04124;
+    padding-right: 6px;
+    font-size: 13px;
+}
+a.cart-flotingcarte i {
+    background: #fff;
+    color: #333;
+    padding: 10px;
+    position: relative;
+    font-size: 20px;
+    border-radius: 5px 0px 0px 0px;
+    border: 1px solid #ddd;
+}
 /* Text meant only for screen readers. */
 .screen-reader-text {
 	clip: rect(1px, 1px, 1px, 1px);
@@ -2260,4 +2296,9 @@ display:none;}
 #bottom-menu-1, #bottom-menu-2, #bottom-menu-4{
 	width:100%
 }
+#pagecont{
+	width: 96%;
+}
+
+a.cart-flotingcarte{    transform: translateX(100%);}
 }
