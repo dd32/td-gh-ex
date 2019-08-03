@@ -5,7 +5,7 @@ Tags: custom-background, custom-logo, custom-menu,custom-header,featured-images,
 
 Requires at least: 4.9
 Tested up to: 5.1.2
-Stable tag: 1.0.4
+Stable tag: 1.0.5
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
@@ -70,6 +70,9 @@ Best Charity includes support for Infinite Scroll in Jetpack.
 
 = 1.0.4  =
 * remove theme info folder, add wp_body_open, added customize upsell and remove unwanted comment
+
+= 1.0.5  =
+* add theme info, recommended plugins and documentation Link
 
 == Credits ==
 

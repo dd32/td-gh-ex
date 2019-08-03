@@ -106,6 +106,12 @@ require_once get_template_directory() . '/inc/breadcrumbs.php';
 
 require get_template_directory() . '/elementor-widget/widgets.php';
 
+if ( is_admin() ) {
+	// Load about.
+	require_once trailingslashit( get_template_directory() ) . 'inc/theme-info/class-about.php';
+	require_once trailingslashit( get_template_directory() ) . 'inc/theme-info/about.php';
+}
+
 if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
