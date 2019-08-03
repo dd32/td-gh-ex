@@ -94,6 +94,8 @@ Source: http://fontawesome.io
 
 # --- EOF --- #
 ============================Change Log================================
+@Version 2.7.8
+1.Move Trustworthy Websites setting from customizer to About Appointment Theme option
 @Version 2.7.7
 1.Remove lock section
 2.Fixed dropdown mobile menu issue in customizer.

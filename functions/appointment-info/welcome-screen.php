@@ -27,6 +27,7 @@ class appointment_screen {
 		add_action( 'appointment_info_screen', array( $this, 'appointment_child_themes' ), 30 );
 		add_action( 'appointment_info_screen', array( $this, 'appointment_github' ), 40 );
 		add_action( 'appointment_info_screen', array( $this, 'appointment_welcome_free_pro' ), 50 );
+		add_action( 'appointment_info_screen', array( $this, 'appointment_email_course' ), 51 );
 
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_appointment_dismiss_required_action', array( $this, 'appointment_dismiss_required_action_callback') );
@@ -209,6 +210,8 @@ class appointment_screen {
 			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Why Upgrade to Pro?','appointment'); ?></a></li>
 			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free vs PRO','appointment'); ?></a></li>
 			<li role="presentation"><a href="#child_themes" aria-controls="child_themes" role="tab" data-toggle="tab"><?php esc_html_e( 'Child Themes','appointment'); ?></a></li>
+			<li role="presentation"><a href="#trustworthy_website" aria-controls="trustworthy_website" role="tab" data-toggle="tab"><?php esc_html_e( 'CREATE TRUSTWORTHY WEBSITES','appointment'); ?></a></li>
+
 			
 		</ul>
 		</div>
@@ -263,6 +266,15 @@ class appointment_screen {
 	 */
 	public function appointment_welcome_free_pro() {
 		require_once( get_template_directory() . '/functions/appointment-info/sections/free_pro.php' );
+	}
+
+
+	/**
+	 * Email Courses
+	 * 
+	 */
+	public function appointment_email_course() {
+		require_once( get_template_directory() . '/functions/appointment-info/sections/emailcourse.php' );
 	}
 	
 	

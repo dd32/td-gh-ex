@@ -23,7 +23,6 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-news.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-service.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-emailcourse.php');
 	
 	// Appointment Info Page
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/appointment-info/welcome-screen.php');
