@@ -1,5 +1,6 @@
 /* welcome page */
-ody {
+.spaceX { padding-right : 160 px;}
+body {
   color: #919191;
   font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
   font-size: 16px;
@@ -273,7 +274,7 @@ img.web_logo {
 }
 .update_pro {
     border: 1px dashed #ccc;
-    padding: 26px 50px 76px;
+    padding: 19px 40px 30px;
 }
 a.demo {
     background: #5C4B51;

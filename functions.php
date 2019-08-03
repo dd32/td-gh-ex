@@ -504,6 +504,7 @@ $my_theme = wp_get_theme();
    .notice .hello-elementor-notice-inner .hello-elementor-notice-icon, .notice .hello-elementor-notice-inner .hello-elementor-notice-content{
 		display: table-cell;
 		vertical-align: middle;
+		padding-right : 160px;
 	}
 	.notice h3 {
 		margin: 0 0 5px;
@@ -515,18 +516,15 @@ $my_theme = wp_get_theme();
 		padding: 0;
 		margin: 0;
 	}
+	
    </style>
    <div class="notice updated is-dismissible">
 		<div class="hello-elementor-notice-inner">
-			<div class="hello-elementor-notice-icon">
-				<img src="<?php echo get_template_directory_uri() . '/images/admin-logo.png'; ?>" alt="Enigma Logo" />
-			</div>
-
 			<div class="hello-elementor-notice-content">
 			<h3> <?php _e('Thank you for installing', 'enigma'); ?> <?php echo $my_theme->get( 'Name' ); ?></h3>
 			<?php $msg = sprintf('<p> %1$s %2$s <span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span><span style="color:#f8aa30">&#9733;</span> %3$s <span style="color:red">&hearts;</span>  %4$s <a href=%5$s target="_blank"  style="text-decoration: none; margin-left:10px;" class="button button-primary"> %6$s </a>
 			 	<a href=%7$s target="_blank"  style="text-decoration: none; margin-left:10px;" class="button button-primary">%8$s</a>
-			 	<a href=%9$s target="_blank"  style="text-decoration: none; margin-left:10px;" class="button button-primary">%10$s</a>
+			 	<a href=%9$s   style="text-decoration: none; margin-left:10px;" class="button button-primary">%10$s</a>
 			 	</p>',
 				esc_html__(' If you like this ','enigma'),
 				esc_html__(' theme, please leave us a ','enigma'),
@@ -539,6 +537,9 @@ $my_theme = wp_get_theme();
 				esc_url(admin_url('/themes.php?page=enigma')),	
 				esc_html__('About Enigma','enigma') ); 
 				echo wp_kses_post($msg); ?>
+			</div>
+			<div class="hello-elementor-notice-icon"><h3><?php _e('Current WPORG Rating', 'enigma'); ?></h3>
+				<img src="<?php echo get_template_directory_uri() . '/images/admin-logo.png'; ?>" alt="Enigma Logo" />
 			</div>
 		</div>
 	</div>
