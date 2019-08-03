@@ -4,7 +4,7 @@ Theme URI: https://item.themeasia.net/articlepress/
 Author: ThemeAsia
 Author URI: https://themeasia.net
 Description: ArticlePress WordPress Blog Theme
-Version: 1.0.9
+Version: 1.1.0
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html 
 Text Domain: articlepress
@@ -1096,6 +1096,9 @@ section.blog-section {
 .blog-single-left {
     box-shadow: 0 0 19px -2px #e2e2e2;
     padding-bottom: 26px;
+}
+.blog-section .blog {
+    margin-bottom: 30px;
 }
 /*
 	Comments area
