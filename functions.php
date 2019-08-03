@@ -70,7 +70,11 @@ function ashe_setup() {
 	add_theme_support( 'wc-product-gallery-slider' );
 
 	// Theme Activation Notice
-	add_action( 'admin_notices', 'ashe_activation_notice' );
+	global $pagenow;
+	
+	if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+		add_action( 'admin_notices', 'ashe_activation_notice' );
+	}
 	
 }
 add_action( 'after_setup_theme', 'ashe_setup' );
