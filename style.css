@@ -5,7 +5,7 @@ Author: WPoperation
 Author URI: http://wpoperation.com/
 Description: Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website with easy drag and drop options. The theme is lightweight, fast and fully compatible with elementor builder. The theme comes with fully Gutenberg ready so you are free to edit and publish with new WordPress editor.
 The theme is a combination of power, freedom, and beauty which means there is no limit of anything you need to create a feature website with your own creative ideas.
-Version: 1.0.9
+Version: 1.1.0
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: arrival
@@ -478,6 +478,7 @@ template {
 		min-width: 0;
 		background: #FFF;
 		padding: 1.25rem 1.25rem;
+		display: inline-block;
 	}
 
 	.primary-sidebar {
@@ -2564,7 +2565,7 @@ section.no-results.not-found {
       -ms-flex-pack: center;
           justify-content: center;
 }
-.after-top-header-wrapp.col-1 .container {
+.after-top-header-wrapp.col-1 > .container {
      display: block; 
 }
 .after-top-header-wrapp {
@@ -2692,4 +2693,9 @@ a:focus {
 }
 .fa.fa-facebook:before{
 	content: "\f09a";
+}
+
+header .header-last-item span.cart-count{
+	-webkit-box-shadow: none;
+	        box-shadow: none;
 }

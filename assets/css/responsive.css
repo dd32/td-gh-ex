@@ -132,6 +132,12 @@
         text-align: left;
         margin-top: 10px;
     }
+    .after-top-header-wrapp .container {
+        display: block;
+    }
+    .after-top-header-wrapp .contact-info-wrapp .info-wrap .contact-info{
+        width: 100%;
+    }
 }
 
 @media only screen and (max-width: 400px){

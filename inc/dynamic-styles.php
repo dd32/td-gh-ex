@@ -72,12 +72,13 @@ function arrival_dynamic_styles(){
 	
 	if( $main_nav_menu_color ){ ?>
 
-		.main-navigation ul li > a,.site-title a,.site-description,.header-last-item .search-wrap i{
+		.main-navigation ul li > a,.site-title a,.site-description,.header-last-item .search-wrap i,header .header-last-item .cart-wrapper a{
 			color: <?php echo arrival_sanitize_color($main_nav_menu_color); ?>;
 		}
 		.main-navigation .dropdown-symbol, .arrival-top-navigation .dropdown-symbol{
 			border-color: <?php echo arrival_sanitize_color($main_nav_menu_color); ?>;
 		}
+
 
 	<?php 
 	}

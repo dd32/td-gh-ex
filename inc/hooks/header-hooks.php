@@ -40,7 +40,7 @@ if( ! function_exists('arrival_main_nav')){
 	function arrival_main_nav(){
 		$default = arrival_get_default_theme_options();
 		$arrival_main_nav_right_content = get_theme_mod('arrival_main_nav_right_content',$default['arrival_main_nav_right_content']);
-		
+		$_cart_display_position 	= get_theme_mod('arrival_cart_display_position',$default['arrival_cart_display_position']);
 
 	?>
 		<nav id="site-navigation" class="main-navigation" aria-label="<?php esc_attr_e( 'Main menu', 'arrival' ); ?>"
@@ -87,18 +87,24 @@ if( ! function_exists('arrival_main_nav')){
 					<div class="search-wrap">
 						<i class="fa fa-search"></i>
 					</div>
-					
+					<?php if( 'main' == $_cart_display_position ){
+						do_action('arrival_header_cart_disp');
+					} ?>
 				</div>
 			<?php }elseif( 'button' == $arrival_main_nav_right_content){ ?>
 				<div class="header-last-item search-wrap header-btn">
 					<?php do_action('arrival_header_cta_btn_info'); ?>
-
+				<?php if( 'main' == $_cart_display_position ){
+						do_action('arrival_header_cart_disp');
+					} ?>
 				</div>
 			<?php }else{ ?>
 				<div class="arrival-custom-element">
 					<?php $custom_item = apply_filters('arrival_custom_item_reserve','__return_false'); ?>
 				</div>
 			<?php }
+
+			
 			
 	}
 }
@@ -149,6 +155,7 @@ if( ! function_exists('arrival_top_header')){
 		$default = arrival_get_default_theme_options();
 		$arrival_top_header_enable = get_theme_mod($prefix.'_top_header_enable',$default[$prefix.'_top_header_enable']);
 		$_after_top_header_enable = get_theme_mod('arrival_after_top_header_enable',$default['arrival_after_top_header_enable']);
+		$_cart_display_position 	= get_theme_mod('arrival_cart_display_position',$default['arrival_cart_display_position']);
 
 	if( 'on' == $arrival_top_header_enable ){ ?>
 	
@@ -159,8 +166,8 @@ if( ! function_exists('arrival_top_header')){
 		</div>
 		<div class="top-right-wrapp">
 			<?php arrival_top_header_right(); ?>
-			<?php if( class_exists('woocommerce')) { ?>
-				<div class="cart-wrapper"><?php arrival_header_cart(); ?></div>
+			<?php if( 'top' == $_cart_display_position ) { ?>
+				<?php do_action('arrival_header_cart_disp'); ?>
 			<?php } ?>
 		</div>
 		</div>
@@ -381,3 +388,21 @@ if( ! function_exists('arrival_main_header_wrapp')){
 	}
 }
 
+
+/**
+* Header cart icon
+* @since 1.1.0
+*/
+add_action('arrival_header_cart_disp','arrival_header_cart_disp');
+function arrival_header_cart_disp(){
+	$default 					= arrival_get_default_theme_options();
+	$_cart_display_position 	= get_theme_mod('arrival_cart_display_position',$default['arrival_cart_display_position']);
+
+	if( 'none' == $_cart_display_position ){
+		return;
+	}
+
+	if( class_exists('woocommerce') ) { ?>
+		<div class="cart-wrapper"><?php arrival_header_cart(); ?></div>
+	<?php }
+}

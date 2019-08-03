@@ -34,12 +34,12 @@ if( ! function_exists('arrival_meta_headers_hooks') ){
 
 		//remove header
 	
-		if( ('default' != $mb_header) && ( ! is_404() ) ){
+		if( ('default' != $mb_header) && ( ! is_404() ) && ( ! is_search() ) ){
 			remove_action('arrival_main_header_wrapp','arrival_main_header_wrapp');
 		}
 
 		//remove footer
-		if( ('default' != $mb_footer) && ( ! is_404() ) ){
+		if( ('default' != $mb_footer) && ( ! is_404() ) && ( ! is_search() ) ){
 			remove_action('arrival_footer_contents','arrival_footer_contents',10);
 		}
 		

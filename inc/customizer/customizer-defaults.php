@@ -69,6 +69,7 @@ function arrival_get_default_theme_options() {
     $defaults[$prefix.'_after_top_header_txt_color']        = '#333';
     $defaults[$prefix.'_after_top_header_border_color']     = '#f1f1f1';
     $defaults[$prefix.'_after_top_header_icon_color']       = '#333';
+    $defaults[$prefix.'_cart_display_position']             = 'top';
     
    
 

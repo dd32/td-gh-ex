@@ -33,6 +33,7 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
                                 $prefix.'_main_nav_layout',
                                 $prefix.'_main_nav_disable_logo',
                                 $prefix.'_main_nav_menu_align',
+                                $prefix.'_cart_display_position',
                                 $prefix.'_nav_last_item_sep',
                                 $prefix.'_main_nav_right_content',
                                 $prefix.'_main_nav_right_btn_txt',

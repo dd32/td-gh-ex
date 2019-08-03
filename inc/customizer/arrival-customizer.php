@@ -709,6 +709,32 @@ $wp_customize->add_control( $prefix.'_main_nav_menu_align', array(
       ) );
 
 /**
+* Cart location option
+* @since 1.1.0
+*/
+if( class_exists('woocommerce') ){
+  
+$wp_customize->add_setting( $prefix.'_cart_display_position', array(
+        'default'             => $default[$prefix.'_cart_display_position'],
+        'sanitize_callback'   => 'arrival_sanitize_switch_cart',
+        
+      ) );
+
+$wp_customize->add_control( new Arrival_Customizer_Buttonset_Control( $wp_customize, $prefix.'_cart_display_position', array(
+        'label'         => esc_html__( 'Cart Display Option', 'arrival' ),
+        'description'   => sprintf(__('Choose cart display option to %1$s top menu %2$s or %1$s main navigation menu  %2$s , OR disable it','arrival'),'<strong>','</strong>'),
+        'priority'      => 10,
+        'section'       => $prefix.'_main_header_options_panel',
+        'choices'       => array(
+          'none'        => esc_html__( 'Disable', 'arrival' ),
+          'top'         => esc_html__( 'Top', 'arrival' ),
+          'main'        => esc_html__( 'Main', 'arrival' ),
+        )
+      ) ) );
+
+}
+
+/**
 * main navigation menu last item
 */
 

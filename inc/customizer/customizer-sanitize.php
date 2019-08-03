@@ -74,6 +74,25 @@ function arrival_sanitize_switch( $input ) {
 	return '';
 }
 
+/**
+* Sanitize cart display order
+* @since 1.1.0
+*/
+function arrival_sanitize_switch_cart( $input ) {
+	$valid = array(
+		'none'        => esc_html__( 'Disable', 'arrival' ),
+        'top'         => esc_html__( 'Top', 'arrival' ),
+        'main'        => esc_html__( 'Main', 'arrival' ),
+	);
+
+	if ( array_key_exists( $input, $valid ) ) {
+		return $input;
+	}
+
+	return '';
+}
+
+
 //blog layout sanitize
 function arrival_sanitize_blog_layout( $input ) {
 	$valid = array(

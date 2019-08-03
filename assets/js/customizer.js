@@ -114,7 +114,7 @@ wp.customize( 'arrival_main_nav_menu_color', function( value ) {
 			wp.customize.preview.send( 'refresh' );
 		}
 		if ( color ) {
-			var dynamicStyle = '.main-navigation ul li > a,.site-title a,.site-description,.header-last-item .search-wrap i { color: ' + color + '; } ';
+			var dynamicStyle = '.main-navigation ul li > a,.site-title a,.site-description,.header-last-item .search-wrap i,header .header-last-item .cart-wrapper a { color: ' + color + '; } ';
 				dynamicStyle += '.main-navigation .dropdown-symbol, .arrival-top-navigation .dropdown-symbol{ border-color:'+color+';}';
 			arrival_add_dynamic_css( 'arrival_main_nav_menu_color', dynamicStyle );
 		}
