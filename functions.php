@@ -18,15 +18,11 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/font/font.php');
 	
 	//Customizer 
+	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro-feature.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-slider.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-service.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-home.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-project.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-testimonial.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-layout-manager.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_template_settings.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-client.php');
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-contact.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-blog.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-copyright.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-pro.php');
@@ -35,11 +31,13 @@
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_theme_style.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer_header.php');
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer.php' );
-	require( WEBRITI_THEME_FUNCTIONS_PATH . '/customizer/customizer-emailcourse.php' );
 	
 	// Elitepress Info Page
 	require( WEBRITI_THEME_FUNCTIONS_PATH . '/elitepress-info/welcome-screen.php');
-	
+	add_action( 'admin_init', 'elitepress_customizer_css' );
+	function elitepress_customizer_css() {
+		wp_enqueue_style( 'elitepress-customizer-info', WEBRITI_TEMPLATE_DIR_URI . '/css/pro-feature.css' );
+	}
 	//wp title tag starts here
 	function elitepress_head( $title, $sep ) {
 	        global $paged, $page;

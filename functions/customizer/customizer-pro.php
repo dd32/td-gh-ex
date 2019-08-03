@@ -15,7 +15,7 @@ class WP_Pro_Customize_Control extends WP_Customize_Control {
     }
 }
 $wp_customize->add_section( 'elitepress_pro_section' , array(
-		'title'      => __('UPGRADE TO PRO', 'elitepress'),
+		'title'      => __('Important Links', 'elitepress'),
 		'priority'   => 1000,
    	) );
 

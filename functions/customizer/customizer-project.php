@@ -217,31 +217,8 @@
     /**
     * Render the control's content.
     */
-		public function render_content() {
-		?>
-			 <div class="pro-version">
-			 <p><?php _e('To add more projects click to upgrade to pro','elitepress');?></p>
-			 </div>
-			  <div class="pro-box">
-			 <a href="<?php echo esc_url('http://webriti.com/elitepress/');?>" class="service" id="review_pro" target="_blank"><?php _e( 'Upgrade to Pro','elitepress' ); ?></a>
-			 <div>
-			<?php
-		}
     }
 
-	$wp_customize->add_setting(
-		'slider_upgrade',
-		array(
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-		)	
-	);
-	$wp_customize->add_control( new WP_slider_pro_Customize_Control( $wp_customize, 'slider_upgrade', array(	
-			'section' => 'portfolio_section_settings',
-			'setting' => 'slider_upgrade',
-			'priority' => 1,
-	
-	)));
 }		
 	add_action( 'customize_register', 'elitepress_portfolio_customizer' );
 ?>

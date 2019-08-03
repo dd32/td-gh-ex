@@ -25,6 +25,7 @@ class elitepress_screen {
 		add_action( 'elitepress_info_screen', array( $this, 'elitepress_getting_started' ), 10 );
 		add_action( 'elitepress_info_screen', array( $this, 'elitepress_github' ), 40 );
 		add_action( 'elitepress_info_screen', array( $this, 'elitepress_welcome_free_pro' ), 50 );
+		add_action( 'elitepress_info_screen', array( $this, 'elitepress_email_course' ), 60 );
 
 		/* ajax callback for dismissable required actions */
 		add_action( 'wp_ajax_elitepress_dismiss_required_action', array( $this, 'elitepress_dismiss_required_action_callback') );
@@ -206,6 +207,7 @@ class elitepress_screen {
 			
 			<li role="presentation"><a href="#github" aria-controls="github" role="tab" data-toggle="tab"><?php esc_html_e( 'Why Upgrade to Pro?','elitepress'); ?></a></li>
 			<li role="presentation"><a href="#free_pro" aria-controls="free_pro" role="tab" data-toggle="tab"><?php esc_html_e( 'Free vs PRO','elitepress'); ?></a></li>
+			<li role="presentation"><a href="#email_course" aria-controls="email_course" role="tab" data-toggle="tab"><?php esc_html_e( 'CREATE TRUSTWORTHY WEBSITES','elitepress'); ?></a></li>
 			
 		</ul>
 		</div>
@@ -246,6 +248,14 @@ class elitepress_screen {
 	 */
 	public function elitepress_welcome_free_pro() {
 		require_once( get_template_directory() . '/functions/elitepress-info/sections/free_pro.php' );
+	}
+
+
+	/** Email Course
+	 * 
+	 */
+	public function elitepress_email_course() {
+		require_once( get_template_directory() . '/functions/elitepress-info/sections/email-course.php' );
 	}
 	
 	

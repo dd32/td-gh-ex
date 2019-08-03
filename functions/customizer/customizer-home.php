@@ -267,36 +267,6 @@ class Elitepress_Customize_Control_Radio_Image extends WP_Customize_Control {
     )
 	);
 	
-	if ( class_exists( 'Elitepress_Customize_Control_Radio_Image' ) ) {
-		$wp_customize->add_setting(
-			'logo_alignment', array(
-				'default'           => 'left',
-				'sanitize_callback' => 'elitepress_sanitize_radio',
-			)
-		);
-
-		$wp_customize->add_control(
-			new Elitepress_Customize_Control_Radio_Image(
-				$wp_customize, 'logo_alignment', array(
-					'label'    => esc_html__('Header Layout', 'elitepress' ),
-					'priority' => 411,
-					'section' => 'header_logo',
-					'choices' => array(
-						'left' => array(
-							'url' => trailingslashit( get_template_directory_uri() ) . 'images/left.png',
-						),
-						'center' => array(
-							'url' => trailingslashit( get_template_directory_uri() ) . 'images/center.png',
-						),
-						'right' => array(
-							'url' => trailingslashit( get_template_directory_uri() ) . 'images/right.png',
-						),
-					),
-				)
-			)
-		);
-	}
-	
     $wp_customize->add_setting(
 	'elitepress_lite_options[google_analytics]', array(
 		'capability'     => 'edit_theme_options',
@@ -369,32 +339,7 @@ class Elitepress_Customize_Control_Radio_Image extends WP_Customize_Control {
     /**
     * Render the control's content.
     */
-		public function render_content() {
-		?>
-			 <div class="pro-version">
-			 <p><?php _e('To want use more below header options click to upgrade to pro','elitepress');?></p>
-			 </div>
-			  <div class="pro-box">
-			 <a href="<?php echo esc_url('http://webriti.com/elitepress/');?>" class="service" id="review_pro" target="_blank"><?php _e( 'Upgrade to Pro','elitepress' ); ?></a>
-			 <div>
-			<?php
-		}
     }
-
-	$wp_customize->add_setting(
-		'header_upgrade',
-		array(
-			'capability'     => 'edit_theme_options',
-			'sanitize_callback' => 'sanitize_text_field',
-		)	
-	);
-	$wp_customize->add_control( new WP_Header_pro_Customize_Control( $wp_customize, 'header_upgrade', array(	
-			'section' => 'header_logo',
-			'setting' => 'header_upgrade',
-			'priority' => 410,
-	
-	)));
-
 	
 	}
 	add_action( 'customize_register', 'elitepress_header_customizer' );

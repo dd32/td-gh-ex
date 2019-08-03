@@ -70,7 +70,7 @@ font-size:14px !important;
   }
   .pro-vesrion p{line-height:20px;} 
   
- li#accordion-section-elitepress_pro_section h3.accordion-section-title { background-color:#31a3dd; color:#fff;}
+
  #customize-control-elitepress_lite_options-webriti_stylesheet input[type="radio"] {display:none !important;}
  #customize-control-elitepress_lite_options-webriti_stylesheet img{height:45px; 
  width:120px !important;}
@@ -113,6 +113,7 @@ font-size:14px !important;
     text-decoration: none;
 }
 
+li#accordion-section-elitepress_pro_section h3.accordion-section-title { background-color:#31a3dd; color:#fff;}
 #accordion-section-elitepress_email_course_section h3{ font-size: 14px;font-weight: 700;}
 
 #accordion-section-testimonial_setting .accordion-section-title:after {content: "\f160";}

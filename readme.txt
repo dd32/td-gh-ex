@@ -56,6 +56,12 @@ Site Title and its description in not shown on home page besides this both are u
 Support
 -------
 Do you enjoy this theme? Send your ideas - issues - on the theme formn . Thank you!
+@version 1.8.3
+1. Move Trustworthy Websites setting from customizer to About Elitepress Theme option.
+@version 1.8.2
+1. Update list of features mentioned in View PRO details tab.
+@version 1.8.1
+1. Remove Lock Icons
 @version 1.8
 1. Upadte customizer and added upgrade to pro links.
 @version 1.7.9.1
