@@ -18,7 +18,7 @@ msgstr ""
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Generator: grunt-wp-i18n1.0.0\n"
 
-#: 404.php:13  
+#: 404.php:13
 msgid '404'
 msgstr ""
 
@@ -129,15 +129,15 @@ msgstr ""
 #: search.php:146 
 #: search.php:174
 #: search.php:203
-#: template-parts/single-post.php:30 
+#: template-parts/single-post.php:32
 msgid 'page'
 msgstr ""
 
 #: comments.php:28
-msgid 'comments title'
+msgid 'One thought on &ldquo;%s&rdquo;'
 msgstr ""
 
-#: comments.php:37
+#: comments.php:38
 msgid 'comments title'
 msgstr ""
 
@@ -145,7 +145,7 @@ msgstr ""
 msgid 'Comments are closed'
 msgstr ""
 
-#: footer.php:29
+#: footer.php:30
 msgid 'Copyright 2018 -'
 msgstr ""
 
@@ -158,83 +158,91 @@ msgstr ""
 msgid 'Woocommerce Menu'
 msgstr ""
 
-#: functions.php:65
+#: functions.php:66
 msgid 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.'
 msgstr ""
 
-#: functions.php:66
+#: functions.php:67
 msgid 'Click here...'
 msgstr ""
 
-#: functions.php:73
+#: functions.php:74
 msgid 'Blog Sidebar'
 msgstr ""
 
-#: functions.php:74
+#: functions.php:75
 msgid 'Appears on blog page sidebar'
 msgstr ""
 
-#: functions.php:83
+#: functions.php:84
 msgid 'page sidebar'
 msgstr ""
 
-#: functions.php:84 
-#: functions.php:94
+#: functions.php:85 
+#: functions.php:95
 msgid 'Appears on page sidebar'
 msgstr ""
 
-#: functions.php:93
+#: functions.php:94
 msgid 'Third Column Sidebar'
 msgstr ""
 
-#: functions.php:103
+#: functions.php:104
 msgid 'Footer Navigation 1'
 msgstr ""
 
-#: functions.php:104 
-#: functions.php:114 
-#: functions.php:124 
-#: functions.php:134
+#: functions.php:105 
+#: functions.php:115
+#: functions.php:125
+#: functions.php:135
 msgid 'Appears on footer'
 msgstr ""
 
-#: functions.php:113
+#: functions.php:114
 msgid 'Footer Navigation 2'
 msgstr ""
 
-#: functions.php:123
+#: functions.php:124
 msgid 'Footer Navigation 3'
 msgstr ""
 
-#: functions.php:133
+#: functions.php:134
 msgid 'Footer Navigation 4'
 msgstr ""
 
-#: functions.php:143
+#: functions.php:144
 msgid 'Home Page Sidebar'
 msgstr ""
 
-#: functions.php:144
+#: functions.php:145
 msgid 'Appears on home page'
 msgstr ""
 
-#: functions.php:153
+#: functions.php:154
 msgid 'Social Media Widget'
 msgstr ""
 
-#: functions.php:154
+#: functions.php:155
 msgid 'Appears on topbar'
 msgstr ""
 
-#: functions.php:420
+#: functions.php:417
 msgid 'Ecommerce Wordpress Theme'
+msgstr ""
+
+#: header.php:21
+msgid 'Skip to content'
 msgstr ""
 
 #: header.php:21
 msgid 'Menu'
 msgstr ""
 
-#: header.php:70
+#: header.php:43
+msgid 'Home link'
+msgstr ""
+
+#: header.php:68
 msgid 'SHOPPING CART'
 msgstr ""
 
@@ -264,34 +272,34 @@ msgstr ""
 msgid 'Results For: %s'
 msgstr ""
 
-#: searchform.php:10 
 #: searchform.php:12
+#: searchform.php:14
 msgid 'Search'
 msgstr ""
 
-#: searchform.php:10
+#: searchform.php:12
 msgid 'placeholder'
 msgstr ""
 
-#: searchform.php:12
+#: searchform.php:14
 msgid 'submit button'
 msgstr ""
 
-#: sidebar.php:12
+#: sidebar.php:11
 msgid 'Archives'
 msgstr ""
 
-#: sidebar.php:18
+#: sidebar.php:17
 msgid 'Meta'
 msgstr ""
 
-#: template-parts/single-post.php:14
+#: template-parts/single-post.php:15
 #: template-parts/content.php:15
 #: template-parts/grid-layout.php:16
-#: template-parts/content-audio.php:25
+#: template-parts/content-audio.php:24
 #: template-parts/content-gallery.php:15
-#: template-parts/content-image.php:24
-#: template-parts/content-video.php:24
+#: template-parts/content-image.php:15
+#: template-parts/content-video.php:23
 msgid '0 Comment'
 msgstr ""
 

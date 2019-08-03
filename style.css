@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-ecommerce-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Ecommerce Store is a stylish, intuitive, engaging and robust WordPress theme for all types of shops be it an offline store striving to establish itself in the online world or an eCommerce shop extending its scope of products day-by-day. This theme is for book store, mobile and gadgets store, fashion and apparel store, cosmetics shop, jewellery shop or any website dealing with the business of selling products over the internet. This multipurpose eCommerce theme can be used for sports, technology, fashion, furniture, pharmacy etc. It has various options which make designing website an easy breezy task with no coding knowledge required. Sliders can be used to showcase your best deals, offers and best-selling products. The Advance Ecommerce Store theme is readily responsive, cross-browser compatible and translation ready. For an ecommerce shop SEO is very important, which is well looked-after in this theme to rank high in search engine results. Through social media icons, you can allow sharing products on various networking site. Its smart placement of call to action button is important to lead your customers. The theme allows deep customization of wide range of elements. Showcase your best products in the ornate gallery to attract visitor’s attention. Demo: https://themeshopy.com/advance-ecommerce-store-pro/
-Version: 0.4.1
+Version: 0.4.2
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-ecommerce-store
@@ -73,6 +73,10 @@ a:focus,
 a:hover{
 	text-decoration:none !important;
 }
+a:focus{
+  outline: 1px dotted #000;
+  border-bottom: 1px solid #000;
+}
 ul{
 	margin:0 0 0 15px;
 	padding:0;
@@ -129,6 +133,35 @@ input[type='submit']:hover{
 	top:-9999em;
 	left:-9999em;
 }
+/* Text meant only for screen readers. */
+.screen-reader-text {
+border: 0;
+clip: rect(1px, 1px, 1px, 1px);
+clip-path: inset(50%);
+height: 1px;
+margin: -1px;
+overflow: hidden;
+padding: 0;
+position: absolute;
+width: 1px;
+word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+background-color: #eee;
+clip: auto !important;
+clip-path: none;
+color: #444;
+display: block;
+font-size: 1em;
+height: auto;
+left: 5px;
+line-height: normal;
+padding: 15px 23px 14px;
+text-decoration: none;
+top: 5px;
+width: auto;
+z-index: 100000; /* Above WP toolbar. */
+}
 .sticky{
 	margin:0;
 	padding:0;
@@ -175,10 +208,17 @@ input[type='submit']:hover{
 #respond{
 	clear:both;
 }
-.toggleMenu,
+.toggle,
 .toggleWooMenu{
  	display:none;
 }
+.toggle{
+    width:100%;
+    color:#fff;
+    background:url('images/mobile_nav_right.png') no-repeat right center #ff6600;
+    /*padding:10px 10px;*/
+    font-size:16px;
+  }
 .bypostauthor{
 	margin:0;
 	padding:0;
@@ -230,7 +270,7 @@ a.button{
   background: #ff6600;
 }
 .top-menu .nav {
-  text-align: right;
+  text-align: left;
   display: block;
 }
 .social_widget i {  
@@ -257,6 +297,7 @@ a.button{
 }
 .logo a{
   color: #000;
+  font-size: 30px;
 }
 .logo p{
   font-size:12px;
@@ -313,7 +354,7 @@ span.cart-value {
   font-size: 12px;
   font-weight: bold;
   position: relative;
-  color: #fff;
+  color: #000;
 }
 
 /* --------- Main Menu--------- */
@@ -336,8 +377,14 @@ span.cart-value {
 .menu-woocommerce-menu-container ul li{
   padding: 6px 0;
 }
-.menu-woocommerce-menu-container ul li:last-child a{
+.woocommerce .menu-woocommerce-menu-container ul li:last-child a{
   border: none;
+}
+.woocommerce form .form-row .required{
+  color: #000;
+}
+.woocommerce .woocommerce-breadcrumb, .woocommerce .woocommerce-breadcrumb a{
+ color: #000;
 }
 
 /* ---------HEADER--------- */
@@ -392,7 +439,7 @@ span.cart-value {
   margin-right: 10px;
 }
 .categry-title span {
-  color: #fff;
+  color: #000;
   font-size: 15px;
   font-weight: bold;
 }
@@ -494,7 +541,7 @@ hr.slidehr {
 }
 .more-btn a {
   background: #ff6600;
-  color: #fff;
+  color: #000;
   padding: 12px;
   font-weight: bold;
   font-size: 12px;
@@ -509,13 +556,13 @@ hr.slidehr {
   text-align: center;
 }
 .product-service a h4 {
-  color: #fff;
+  color: #000;
   font-size: 15px;
   font-weight: 700;
 }
 .product-service p {
   font-size: 14px;
-  color: #fff;
+  color: #000;
   margin: 0;
   padding-bottom: 10px;
 }
@@ -532,7 +579,9 @@ hr.slidehr {
   margin-bottom: 3%;
   padding: 0;
 }
-
+div#sidebar {
+  margin-top: 20px;
+}
 /*----------------- Homepage ----------------*/
 .page-box {
   padding: 10px;
@@ -547,7 +596,7 @@ hr.slidehr {
 	font-size:15px;
 	margin:10px 0;
 	line-height: 25px;
-	color: #999;
+	color: #5b5b5b;
 }
 .box-image{
 	margin:0;
@@ -556,10 +605,10 @@ hr.slidehr {
 	width:100%;
 	opacity: 0.7;
 }
-#our-services img{
+.our-services img{
 	width:100%;
 }
-#our-services .services-box{
+.our-services .services-box{
 	margin:40px 0 20px 0;
 }
 .second-border a {
@@ -666,6 +715,9 @@ section .innerlightbox{
 table#wp-calendar {
   width: 100%;
 }
+table#wp-calendar td a {
+  color: #fff;
+}
 #footer caption,
 #sideabr caption {
   font-weight: bold;
@@ -744,11 +796,11 @@ table#wp-calendar {
 }
 .copyright p {
   font-size: 15px !important;
-  color: #fff;
+  color: #000;
   margin-bottom: 0;
 }
 .copyright p a{
-  color: #fff;
+  color: #000;
 }
 .copyright {
   background: #ff6600;
@@ -835,14 +887,14 @@ table#wp-calendar {
   font-weight:bold;
   font-size:12px;
 }
-#content-ts #comments ol li{
+.content-ts #comments ol li{
   width:100%;
   background:none;list-style:none;
   margin: 0 0 20px;
   background:#eee;
   display:inline-block;
 }  
-#content-ts #comments ul{
+.content-ts #comments ul{
   margin:0 0 0 40px;
 }
 #comments .reply{
@@ -876,20 +928,20 @@ table#wp-calendar {
 }
 a.showcoupon,
 .woocommerce-message::before{
-	color: #ff6600;
+	color: #000;
 }
 .woocommerce-message {
   border-top-color: #ff6600;
 }
 .woocommerce span.onsale {
   background: #ff6600;
-  color: #fff;
+  color: #000;
   padding: 0;
   border-radius: 0;
   margin: 0 !important;
 }
 h2.woocommerce-loop-product__title{
-  color: #999;
+  color: #000;
   letter-spacing: 1px;
   font-weight: 500;
   font-size: 15px !important;
@@ -903,12 +955,12 @@ h2.woocommerce-loop-product__title{
 }
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
 	background: #ff6600;
-	color: #fff;
+	color: #000 !important;
 	border-radius: 0;
 }
 .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
 	background: #000;
-	color: #fff;
+	color: #fff !important;
 }
 .woocommerce .quantity .qty {
   width: 5em;
@@ -929,7 +981,7 @@ nav.woocommerce-MyAccount-navigation ul li {
   margin-bottom: 10px;
 }
 nav.woocommerce-MyAccount-navigation ul li a{
-  color: #fff;
+  color: #000;
   font-weight: bold;
 }
 .posted_in {
@@ -941,6 +993,9 @@ nav.woocommerce-MyAccount-navigation ul li a{
 span.woocommerce-input-wrapper,
 .woocommerce label {
  width: 100%;
+}
+.woocommerce a.remove{
+  color: #000 !important;
 }
 /*------------- Sidebar -------------*/
 #sidebar caption{
@@ -955,7 +1010,7 @@ span.woocommerce-input-wrapper,
   font-weight: bold;
   font-size: 20px;
   text-transform: uppercase;
-  color: #fff;
+  color: #000;
   background: #ff6600;
   padding: 10px;
 }
@@ -1025,21 +1080,21 @@ h1.entry-title,
 h1.page-title {
   text-align: left;
   margin-bottom: 10px;
-  color: #ff6600;
+  color: #000;
 }
-#content-ts p{
+.content-ts p{
 	text-align:justify;
 	line-height: 25px;
 	font-size: 16px;
 	margin:0 0 20px 0;
 }
-#content-ts hr{
+.content-ts hr{
 	border:none;
 	border-bottom:2px dotted #7e7e7e;
 	margin:35px 0;
 	clear:both;
 }
-#content-ts h2{
+.content-ts h2{
 	font-size:32px;
 	font-weight:normal;
 	margin:0;
@@ -1047,7 +1102,7 @@ h1.page-title {
 	color:#000;
 	margin:0 0 25px;
 }
-#content-ts h3{
+.content-ts h3{
 	font-size:36px;
 	font-weight:normal;
 	margin:0;
@@ -1055,7 +1110,7 @@ h1.page-title {
 	color:#000;
 	margin:0 0 25px;
 }
-#content-ts h4{
+.content-ts h4{
 	font-size:20px;
 	font-weight:bold;
 	margin:0;
@@ -1063,24 +1118,27 @@ h1.page-title {
 	color:#333;
 	margin:0 0 25px;
 }
-#content-ts ul{list-style:none;
+.content-ts ul{list-style:none;
 	margin:0 0 0 10px;
 	padding:10px 0 0;
 	font-size:16px;
 }
-#content-ts ul li{
+.content-ts ul li{
 	padding:0;
 	margin:0 0 20px 0;
 	line-height:25px;
 }
-#content-ts ol{list-style: none;
+.content-ts ol{list-style: none;
 	padding:10px 0 0 0;
 	font-size:16px;
 	counter-reset: myCounter;
 }
-#content-ts ol li{
+.content-ts ol li{
 	padding:0 0 0 0;
 	margin:0 0 20px 0;
+}
+.entry-content a {
+  text-decoration: underline;
 }
 
 /* Pagination */
@@ -1181,7 +1239,7 @@ iframe{
 	section .innerlightbox {
 		padding: 0;
 	}
-	#our-services{
+	.our-services{
 		margin-top: 0;
 	}
 	.toggleMenu,
@@ -1200,7 +1258,7 @@ iframe{
 	 	display:none;
 	}
   .top-menu .nav{
-    top: -39px !important;
+    top: 347px !important;
     display: none;
   }
 	#header .nav{
@@ -1211,7 +1269,7 @@ iframe{
 		overflow-x:hidden;
 		width: 100%;
 		left: 0;
-		top: 90px;
+		top: 346px;
 	}
 	#header .nav ul{
 		width:100%;
@@ -1317,7 +1375,7 @@ iframe{
 		margin-top:10px;
 	}
 	#header .nav ul li a{
-	  color: #fff;
+	  color: #000;
     padding: 10px 12px;
     display: block;
     letter-spacing: 1px;
@@ -1325,6 +1383,9 @@ iframe{
     font-size: 13px;
     text-transform: none;
 	}
+  #header .nav ul li a:hover{
+    color: #fff;
+  }
 	#footer input[type="submit"]{
 		width: 100%;
 		float: none;

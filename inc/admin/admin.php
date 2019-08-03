@@ -18,7 +18,7 @@ function advance_ecommerce_store_mostrar_guide() {
 ?>
  <div class="wrapper-info">
 	 <div class="header">
-	 	<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/logo.png" alt="" />
+	 	<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/logo.png" alt="" />
 	 	<h2><?php esc_html_e('Welcome to Advance Ecommerce Store Theme', 'advance-ecommerce-store'); ?></h2>
  		<p><?php esc_html_e('Most of our outstanding theme is elegant, responsive, multifunctional, SEO friendly has amazing features and functionalities that make them highly demanding for designers and bloggers, who ought to excel in web development domain. Our Themeshopy has got everything that an individual and group need to be successful in their venture.', 'advance-ecommerce-store'); ?></p>
 		<div class="main-button">
@@ -28,8 +28,8 @@ function advance_ecommerce_store_mostrar_guide() {
 		</div>
 	</div>
 	<div class="button-bg">
-	<button class="tablink" onclick="openPage('Home', this, '')"><?php esc_html_e('Lite Theme Setup', 'advance-ecommerce-store'); ?></button>
-	<button class="tablink" onclick="openPage('Contact', this, '')"><?php esc_html_e('Premium Theme info', 'advance-ecommerce-store'); ?></button>
+	<button role="tab" class="tablink" onclick="openPage('Home', this, '')"><?php esc_html_e('Lite Theme Setup', 'advance-ecommerce-store'); ?></button>
+	<button role="tab" class="tablink" onclick="openPage('Contact', this, '')"><?php esc_html_e('Premium Theme info', 'advance-ecommerce-store'); ?></button>
 	</div>
 	<div id="Home" class="tabcontent tab1">
 	  	<h3><?php esc_html_e('How to set up homepage', 'advance-ecommerce-store'); ?></h3>
@@ -46,11 +46,11 @@ function advance_ecommerce_store_mostrar_guide() {
 				</ul>
 		  	</div>
 		  	<div class="doc-image">
-		  		<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/home-page-template.png" alt="" />	
+		  		<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/home-page-template.png" alt="" />	
 		  	</div>
 		  	<div class="clearfixed">
 				<div class="doc-image1">
-					<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/set-front-page.png" alt="" />	
+					<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/set-front-page.png" alt="" />	
 			    </div>
 			    <div class="image-docs1">
 				    <ul>
@@ -70,7 +70,7 @@ function advance_ecommerce_store_mostrar_guide() {
 		</div>
 	  	<div class="features-section">
 	  		<div class="col-4">
-	  			<img src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/screenshot.png" alt="" />
+	  			<img role="img" src="<?php echo esc_url(get_template_directory_uri()); ?>/inc/admin/images/screenshot.png" alt="" />
 	  			<p><?php esc_html_e( 'The WordPress ecommerce theme is robust, reliable, stylish and engaging with seamless use for all types of online stores and ecommerce shops. It does not matter whether you have a small onsite shop or a giant retail online chain, this theme can serve you to its fullest with its ambitious design and amazing layouts. Its dynamic nature can be guessed from the vast variety of layout designs it offers that let you fulfil the requirements of any online trading business without having to write a single line of code. With banners and sliders, impress your visitors by presenting a larger than life image. All the needs of an ecommerce shop are meticulously fulfilled giving a great experience to users. This WordPress ecommerce theme has a friendly and interactive frontend and backend interface to help use the site to its maximum potential.', 'advance-ecommerce-store' ); ?></p>
 	  		</div>
 	  		<div class="col-4">
