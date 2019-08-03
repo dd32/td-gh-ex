@@ -19,7 +19,7 @@ get_template_part('template-parts/site','breadcrumb');
 						<h2 class="error-title">4<b>0</b>4</h2>
 						<h3 class="error-sub-title"><?php esc_html_e("OOPS, SORRY WE CAN'T FIND THAT PAGE !",'arilewp');?></h3>
 						<div class="mx-auto pt-4">
-							<a href="<?php echo esc_url(site_url());?>" class="btn-small btn-border"><i class="fa fa-arrow-left pr-2"></i><?php esc_html_e('Go Back Now','arilewp');?></a>
+							<a href="<?php echo esc_url(home_url());?>" class="btn-small btn-border"><i class="fa fa-arrow-left pr-2"></i><?php esc_html_e('Go Back Now','arilewp');?></a>
 						</div>
 					</div>
 				</div>

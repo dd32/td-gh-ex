@@ -142,21 +142,6 @@ function arilewp_theme_page_header_title(){
 	}
 }
 
-// theme page header Url functions
-function arilewp_page_url() {
-	$page_url = 'http';
-	if ( key_exists("HTTPS", $_SERVER) && ( $_SERVER["HTTPS"] == "on" ) ){
-		$page_url .= "s";
-	}
-	$page_url .= "://";
-	if ($_SERVER["SERVER_PORT"] != "80") {
-		$page_url .= $_SERVER["SERVER_NAME"].":".$_SERVER["SERVER_PORT"].$_SERVER["REQUEST_URI"];
-	} else {
-		$page_url .= $_SERVER["SERVER_NAME"].$_SERVER["REQUEST_URI"];
- }
- return $page_url;
-}
-
 // theme page header breadcrumbs functions
 if( !function_exists('arilewp_page_header_breadcrumbs') ):
 	function arilewp_page_header_breadcrumbs() { 	
@@ -169,16 +154,16 @@ if( !function_exists('arilewp_page_header_breadcrumbs') ):
 			else:
 				echo '<li><a href="'.esc_url( $home_Link ).'">'.esc_html__('Home','arilewp').'</a></li>';
 				if ( is_category() ) {
-				    echo '<li class="active"><a href="'. esc_url( arilewp_page_url() ).'">' . esc_html__('Archive by category','arilewp').' "' . single_cat_title('', false) . '"</a></li>';
+				    echo '<li class="active">' . esc_html__('Archive by category','arilewp').' "' . single_cat_title('', false) . '"</li>';
 				} elseif ( is_day() ) {
 					echo '<li class="active"><a href="'. esc_url( get_year_link(get_the_time('Y')) ) . '">'. esc_html ( get_the_time('Y') ).'</a>';
 					echo '<li class="active"><a href="'. esc_url( get_month_link(get_the_time('Y'),get_the_time('m')) ) .'">'.esc_html ( get_the_time('F') ).'</a>';
-					echo '<li class="active"><a href="'. esc_url( arilewp_page_url() ) .'">'. esc_html ( get_the_time('d') ).'</a></li>';
+					echo '<li class="active">'. esc_html ( get_the_time('d') ).'</li>';
 				} elseif ( is_month() ) {
 					echo '<li class="active"><a href="' . esc_url( get_year_link(get_the_time('Y')) ) . '">' . esc_html ( get_the_time('Y') ). '</a>';
-					echo '<li class="active"><a href="'. esc_url( arilewp_page_url() ) .'">'. esc_html ( get_the_time('F') ) .'</a></li>';
+					echo '<li class="active">'. esc_html ( get_the_time('F') ) .'</li>';
 				} elseif ( is_year() ) {
-				    echo '<li class="active"><a href="'. esc_url( arilewp_page_url() ) .'">'. esc_html ( get_the_time('Y') ) .'</a></li>';
+				    echo '<li class="active">'. esc_html ( get_the_time('Y') ) .'</li>';
 				} elseif ( is_single() && !is_attachment() && is_page('single-product') ) {					
 				if ( get_post_type() != 'post' ) {
 					$cat = get_the_category(); 
@@ -186,7 +171,7 @@ if( !function_exists('arilewp_page_header_breadcrumbs') ):
 					echo '<li>';
 					echo esc_html ( get_category_parents($cat, TRUE, '') );
 					echo '</li>';
-					echo '<li class="active"><a href="' . esc_url( arilewp_page_url() ) . '">'. wp_title( '',false ) .'</a></li>';
+					echo '<li class="active">'. wp_title( '',false ) .'</li>';
 				} }  
 					elseif ( is_page() && $post->post_parent ) {
 				    $parent_id  = $post->post_parent;
@@ -198,18 +183,18 @@ if( !function_exists('arilewp_page_header_breadcrumbs') ):
 					}
 					$breadcrumbs = array_reverse($breadcrumbs);
 					foreach ($breadcrumbs as $crumb) echo esc_html( $crumb );
-					    echo '<li class="active"><a href="' . esc_url( arilewp_page_url() ) . '">'. esc_html( get_the_title() ) .'</a></li>';
+					    echo '<li class="active">'. esc_html( get_the_title() ) .'</li>';
                     }
 					elseif( is_search() )
 					{
-					    echo '<li class="active"><a href="' . esc_url( arilewp_page_url() ). '">'. get_search_query() .'</a></li>';
+					    echo '<li class="active">'. get_search_query() .'</li>';
 					}
 					elseif( is_404() )
 					{
-						echo '<li class="active"><a href="' . esc_url( arilewp_page_url() ). '">'.esc_html__('Error 404','arilewp').'</a></li>';
+						echo '<li class="active">'.esc_html__('Error 404','arilewp').'</li>';
 					}
 					else { 
-					    echo '<li class="active"><a href="' . esc_url( arilewp_page_url() ) . '">'. esc_html( get_the_title() ) .'</a></li>';
+					    echo '<li class="active">'. esc_html( get_the_title() ) .'</li>';
 					}
 				endif;
 		    echo '</ul>';

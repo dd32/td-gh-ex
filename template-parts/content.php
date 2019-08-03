@@ -39,7 +39,7 @@ $blog_content_ordering = get_theme_mod( 'arilewp_general_blog_arcive_single_cont
 					</span>
 					<span class="posted-on">
 					<a href="<?php echo esc_url(get_month_link(get_post_time('Y'),get_post_time('m'))); ?>"><time>
-					<?php echo esc_html(get_the_date('M j, Y')); ?></time></a>
+					<?php echo esc_html(get_the_date()); ?></time></a>
 					</span>
 				</div>	
 			<?php  endif; endforeach; ?>	

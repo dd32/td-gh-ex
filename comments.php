@@ -45,7 +45,7 @@
 	<?php if ( get_option('comment_registration') && !$user_ID ) : ?>
 		<p><?php 
 		/* translators: %1$s %2$s: logged in */
-		echo sprintf( esc_html__( 'You must be <a href="%s">logged in</a> to post a comment','arilewp' ), esc_url(site_url( 'wp-login.php' ) . '?redirect_to=' .  urlencode(get_permalink()))); ?></p>
+		echo sprintf( esc_html__( 'You must be <a href="%s">logged in</a> to post a comment','arilewp' ), esc_url(home_url( 'wp-login.php' ) . '?redirect_to=' .  urlencode(get_permalink()))); ?></p>
 </p>
 <?php else : ?>
 	<article class="theme-comment-form">

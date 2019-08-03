@@ -29,7 +29,7 @@ class ArileWP_Customize_Upgrade_Control extends ArileWP_Customize_Base_Control {
 	 * @return void
 	 */
 	protected function content_template() {
-		$upgrade_to_pro_link = 'http://themearile.com/arilewp-pro/';
+		$upgrade_to_pro_link = 'https://themearile.com/arilewp-pro-theme/';
 		?>
 
 		<div class="arilewp-upgrade-pro-message" style="display:none;";>

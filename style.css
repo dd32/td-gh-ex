@@ -1,10 +1,10 @@
 /*!
 Theme Name: ArileWP
-Theme URI: https://themearile.com/themes/arilewp/
+Theme URI: https://themearile.com/arilewp-theme/
 Author: ThemeArile
 Author URI: https://themearile.com
 Description: ArileWP is a powerful, modern and professional multipurpose WordPress theme with pixel perfect design and outstanding functionality. As well as sophisticated plus it has some exotic features like customization and clean code, advanced typography, sticky menu, logo upload, header image, Bootstrap 4 framework, built with SEO in mind, and theme info area besides being Mobile ready, translation ready (WPML, Polylang) and it's built to be beautiful on all screen sizes. The theme perfectly suited for business, consultant, finance, corporate, freelancer, agency, business promotion, electrician, industries, education, SEO, construction, fashion, online shop, health & medical, Beauty & spa salons, wedding, photography, gym, cafe, music, architecture, lawyer, restaurant, hotel, blog, magazine, travel agency and many other websites compatible. This theme supports the best Elementor page builder to create, edit and updates page designs as per the requirement. ArileWP also supports popular free and premium WordPress plugins such as Elementor, Yoast SEO, WooCommerce, Contact Form 7, Jetpack, Google Analytics and much more.
-Version: 0.2
+Version: 0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: arilewp
@@ -1196,14 +1196,8 @@ a:hover, a:active { color: #01012f; outline: 0; }
     font-size: 1.875rem;
 }
 .theme-blog.theme-blog-large .post .more-link {
-    font-size: 0.938rem;
-    background: #ffffff;
-    color: #01012f;
     padding: 0.600rem 1.6rem 0.600rem;
-    border-radius: 50px;
-    display: inline-block;
     line-height: 1.2;
-	box-shadow: none;
 }
 .theme-blog.theme-blog-large .post .more-link:hover, 
 .theme-blog.theme-blog-large .post .more-link:focus {
@@ -1277,7 +1271,12 @@ a:hover, a:active { color: #01012f; outline: 0; }
 .more-link {
 	font-size: 0.938rem;
 	font-weight: 700;
-	color: #01012f !important;
+	background: #ffffff;
+    color: #01012f !important;
+    padding: 0.550rem 1.3rem 0.550rem;
+    border-radius: 50px;
+    display: inline-block;
+    line-height: 1;
 	box-shadow: none !important;
 }
 .more-link:hover, .more-link:focus {

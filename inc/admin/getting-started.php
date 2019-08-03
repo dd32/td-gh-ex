@@ -144,94 +144,39 @@ function arilewp_getting_started_page() { ?>
 }
 endif;
 
-// Adding Getting Started Page in admin menu
-if( ! function_exists( 'arilewp_admin_notice' ) ) :
-function arilewp_admin_notice() {
-    global $pagenow;
-    global $current_user ;
-    $theme_args      = wp_get_theme();
-    $meta            = get_option( 'arilewp-update-notice' );
-    $name            = $theme_args->__get( 'Name' );
-    $current_screen  = get_current_screen();
-    if ( is_admin() && 'themes.php' == $pagenow && !$meta ) {   
-        if( $current_screen->id !== 'dashboard' && $current_screen->id !== 'themes' ) {
-            return;
-        }
-        if ( is_network_admin() ) {
-            return;
-        }
 
-        if ( ! current_user_can( 'manage_options' ) ) {
-            return;
-        } ?>
-        <div class="welcome-message notice notice-info">
-            <div class="notice-wrapper">
-                <div class="notice-text">
-                    <h3><?php 
-					/* translators: %1$s %2$s: welcome message */
-					printf( esc_html__( 'Welcome to %1$s', 'arilewp' ) , esc_html( $name )); ?></h3>
-					<p><?php 
-					/* translators: %1$s %2$s: welcome message */	
-					printf( __( 'Thank you for choosing %1$s theme. To take full advantage of the complete features of the theme, you have to go to our <a href="%2$s">Welcome page</a>', 'arilewp' ),  esc_html( $name ), esc_url( admin_url( 'themes.php?page=arilewp-getting-started' ) )  ); ?></p>
-                    <p><a href="<?php echo esc_url( admin_url( 'themes.php?page=arilewp-getting-started' ) ); ?>" class="button button-primary" style="text-decoration: none;"><?php esc_html_e( 'Get started with ArileWP.', 'arilewp' ); ?></a></p>
-                    <p class="dismiss-link"><strong><a href="?arilewp-update-notice=1"><?php esc_html_e( 'Dismiss','arilewp' ); ?></a></strong></p>
-                </div>
-            </div>
-            <style>
-                .notice-info .notice-text {
-                  position: relative;
-                   text-align: center;
-               }
-                .notice-text h3 {
-                    font-size: 18px;
-                    margin-top: 0;
-                }
-                .notice p {
-                    font-size: 15px;
-                    margin: 0 0 1rem;
-                }    
-                .notice-text p:nth-child(3n) {
-                    margin: 0;
-                }    
-               .notice-text p.dismiss-link {
-                  position: absolute;
-                  top: 0;
-                  right: 0;
-                  margin: 0;
-                  padding: 0;
-                }
-                .wrap .welcome-message {
-                    padding: 35px 20px;
-                }
-				.wrap .welcome-message .notice-text h3 {
-                    font-size: 22px;
-                }				
-				.wp-core-ui p .button {
-					padding: 6px 18px 6px;
-					height: auto;
-					font-weight: 500;font-size: 15px;
-				}
-            </style>
-        </div>
-    <?php }
-}
-endif;
-add_action( 'admin_notices', 'arilewp_admin_notice' );
+/**
+ * Admin notice 
+ */
+class arilewp_screen {
+ 	public function __construct() {
+		/* notice  Lines*/
+		add_action( 'load-themes.php', array( $this, 'arilewp_activation_admin_notice' ) );
+	}
+	public function arilewp_activation_admin_notice() {
+		global $pagenow;
 
-// Adding Getting Started Page in admin menu
-if( ! function_exists( 'arilewp_admin_notice_update' ) ) :
-function arilewp_admin_notice_update(){
-    if ( isset( $_GET['arilewp-update-notice'] ) && $_GET['arilewp-update-notice'] = '1' ) {
-        update_option( 'arilewp-update-notice', true );
-    }
+		if ( is_admin() && ('themes.php' == $pagenow) && isset( $_GET['activated'] ) ) {
+			add_action( 'admin_notices', array( $this, 'arilewp_admin_notice' ), 99 );
+		}
+	}
+	/**
+	 * Display an admin notice linking to the welcome screen
+	 * @sfunctionse 1.8.2.4
+	 */
+	public function arilewp_admin_notice() {
+		?>			
+		<div class="updated notice is-dismissible arilewp-notice">
+			<h1><?php
+			$theme_info = wp_get_theme();
+			printf( esc_html__('Congratulations, Welcome to %1$s Theme', 'arilewp'), esc_html( $theme_info->Name ), esc_html( $theme_info->Version ) ); ?>
+			</h1>
+			<p><?php echo sprintf( esc_html__("Thank you for choosing ArileWP theme. To take full advantage of the complete features of the theme, you have to go to our %1\$s welcome page %2\$s.", "arilewp"), '<a href="' . esc_url( admin_url( 'themes.php?page=arilewp-getting-started' ) ) . '">', '</a>' ); ?></p>
+			
+			<p><a href="<?php echo esc_url( admin_url( 'themes.php?page=arilewp-getting-started' ) ); ?>" class="button button-blue-secondary button_info" style="text-decoration: none;"><?php echo esc_html__('Get started with ArileWP','arilewp'); ?></a></p>
+		</div>
+		<?php
+	}
+	
 }
-endif;
-add_action( 'admin_init', 'arilewp_admin_notice_update' );
-
-// Adding Getting Started Page in admin menu
-if( ! function_exists( 'arilewp_admin_notice_display' ) ) :
-function arilewp_admin_notice_display(){
-    update_option( 'arilewp-update-notice', false );
-}
-endif;
-add_action( 'after_switch_theme', 'arilewp_admin_notice_display' );
+$GLOBALS['arilewp_screen'] = new arilewp_screen();

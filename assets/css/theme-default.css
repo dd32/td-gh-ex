@@ -192,15 +192,6 @@ td a {
 =>> Theme Blog Sidebar 
 --------------------------------------------------*/
 
-.theme-blog.theme-blog-large .post .more-link {
-    border: 2px solid #007bff;
-}
-.theme-blog.theme-blog-large .post .more-link:hover, 
-.theme-blog.theme-blog-large .post .more-link:focus {
-    border: 2px solid #007bff;
-    background: #007bff;
-	color: #fff !important;
-}
 .entry-content a { 
 	color: #007bff;  
 }
@@ -222,11 +213,14 @@ td a {
     border: 1px solid #007bff;
 }
 .more-link {
-	border-bottom: 2px solid #007bff;
+	border: 2px solid #007bff;
 }
 .more-link:hover, .more-link:focus {
-	color: #007bff !important;
+	border: 2px solid #007bff;
+    background: #007bff;
+	color: #fff !important;
 }
+
 .pagination a:hover, 
 .pagination a.active { 
 	background-color: #007bff; 

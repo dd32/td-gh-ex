@@ -15,8 +15,11 @@
 	$class='theme-wide';
 ?>
 <body <?php body_class(esc_attr($class)); ?> >
+
+<?php 
+  if ( function_exists( 'wp_body_open' ) )
+    wp_body_open();
+?>
+<a class="screen-reader-text skip-link" href="#wp-toolbar"><?php esc_html_e( 'Skip to content', 'arilewp' ); ?></a>
 <div id="wrapper">
-	<!-- Skip to content link start -->
-	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'arilewp' ); ?></a>
-	<!-- Skip to content link end -->
     <?php get_template_part('template-parts/site','navbar'); ?>
