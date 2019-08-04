@@ -7,11 +7,12 @@
  * @package advance-coaching
  */
 ?>
+<footer role="contentinfo">
     <div id="footer" class="copyright-wrapper">
         <div class="container">
             <div class="row">
                 <div class="col-lg-3 col-md-3">
-                <?php dynamic_sidebar('footer-1');?>
+                    <?php dynamic_sidebar('footer-1');?>
                 </div>
                 <div class="col-lg-3 col-md-3">
                     <?php dynamic_sidebar('footer-2');?>
@@ -28,6 +29,7 @@
     <div class="copyright">
         <p><?php echo esc_html(get_theme_mod('advance_coaching_footer_copy', __('Copyright 2018 -', 'advance-coaching')));?> <?php advance_coaching_credit();?></p>
     </div>
-    <?php wp_footer();?>
-    </body>
+</footer>
+<?php wp_footer();?>
+</body>
 </html>

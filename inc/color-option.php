@@ -10,7 +10,7 @@
 		$custom_css .='}';
 	}
 	if($advance_coaching_theme_color != false){
-		$custom_css .='input[type="submit"], .contact_data .mail i, .search-box i, #footer h3, #footer a.rsswidget, a.showcoupon,.woocommerce-message::before, h1.entry-title,h1.page-title, h2.woocommerce-loop-product__title{';
+		$custom_css .='input[type="submit"], .contact_data .mail i, .search-box i, #footer h3, #footer a.rsswidget,.woocommerce-message::before, h1.entry-title,h1.page-title, h2.woocommerce-loop-product__title{';
 			$custom_css .='color: '.esc_html($advance_coaching_theme_color).';';
 		$custom_css .='}';
 	}

@@ -29,27 +29,28 @@
             ) );
         ?>
     </div>    
-    <?php edit_post_link( __( 'Edit', 'advance-coaching' ), '<footer class="entry-meta"><span class="edit-link">', '</span></footer>' ); ?>
-</article>    
-<?php
-    // If comments are open or we have at least one comment, load up the comment template
-    if ( comments_open() || '0' != get_comments_number() )
-        comments_template();
+    <?php edit_post_link( __( 'Edit', 'advance-coaching' ), '<footer class="entry-meta" role="contentinfo"><span class="edit-link">', '</span></footer>' ); ?>
+ 
+    <?php
+        // If comments are open or we have at least one comment, load up the comment template
+        if ( comments_open() || '0' != get_comments_number() )
+            comments_template();
 
-    if ( is_singular( 'attachment' ) ) {
-        // Parent post navigation.
-        the_post_navigation( array(
-            'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'advance-coaching' ),
-        ) );
-    } elseif ( is_singular( 'post' ) ) {
-        // Previous/next post navigation.
-        the_post_navigation( array(
-            'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'advance-coaching' ) . '</span> ' .
-                '<span class="screen-reader-text">' . __( 'Next post:', 'advance-coaching' ) . '</span> ' .
-                '<span class="post-title">%title</span>',
-            'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'advance-coaching' ) . '</span> ' .
-                '<span class="screen-reader-text">' . __( 'Previous post:', 'advance-coaching' ) . '</span> ' .
-                '<span class="post-title">%title</span>',
-        ) );
-    }
-?>
+        if ( is_singular( 'attachment' ) ) {
+            // Parent post navigation.
+            the_post_navigation( array(
+                'prev_text' => _x( '<span class="meta-nav">Published in</span><span class="post-title">%title</span>', 'Parent post link', 'advance-coaching' ),
+            ) );
+        }   elseif ( is_singular( 'post' ) ) {
+            // Previous/next post navigation.
+            the_post_navigation( array(
+                'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'advance-coaching' ) . '</span> ' .
+                    '<span class="screen-reader-text">' . __( 'Next post:', 'advance-coaching' ) . '</span> ' .
+                    '<span class="post-title">%title</span>',
+                'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'advance-coaching' ) . '</span> ' .
+                    '<span class="screen-reader-text">' . __( 'Previous post:', 'advance-coaching' ) . '</span> ' .
+                    '<span class="post-title">%title</span>',
+            ) );
+        }
+    ?>
+</article>   

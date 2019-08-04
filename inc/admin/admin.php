@@ -28,15 +28,15 @@ function advance_coaching_mostrar_guide() {
 		</div>
 	</div>
 	<div class="button-bg">
-	<button class="tablink" onclick="openPage('Home', this, '')"><?php esc_html_e('Lite Theme Setup', 'advance-coaching'); ?></button>
-	<button class="tablink" onclick="openPage('Contact', this, '')"><?php esc_html_e('Premium Theme info', 'advance-coaching'); ?></button>
+	<button  role="tab" class="tablink" onclick="openPage('Home', this, '')"><?php esc_html_e('Lite Theme Setup', 'advance-coaching'); ?></button>
+	<button role="tab" class="tablink" onclick="openPage('Contact', this, '')"><?php esc_html_e('Premium Theme info', 'advance-coaching'); ?></button>
 	</div>
 	<div id="Home" class="tabcontent tab1">
 	  	<h3><?php esc_html_e('How to set up homepage', 'advance-coaching'); ?></h3>
 	  	<div class="sec-button">
-			<a href="<?php echo esc_url( ADVANCE_COACHING_FREE_DOC ); ?>" target="_blank"><?php esc_html_e('Documentation', 'advance-coaching'); ?></a>
+			<a href="<?php echo esc_url( ADVANCE_COACHING_FREE_DOC ); ?>"><?php esc_html_e('Documentation', 'advance-coaching'); ?></a>
 			<a href="<?php echo esc_url( ADVANCE_COACHING_CONTACT ); ?>"><?php esc_html_e('Support', 'advance-coaching'); ?></a>
-			<a target="_blank" href="<?php echo esc_url( admin_url('customize.php') ); ?>"><?php esc_html_e('Start Customizing', 'advance-coaching'); ?></a>
+			<a href="<?php echo esc_url( admin_url('customize.php') ); ?>"><?php esc_html_e('Start Customizing', 'advance-coaching'); ?></a>
 		</div>
 	  	<div class="documentation">
 		  	<div class="image-docs">
@@ -66,7 +66,7 @@ function advance_coaching_mostrar_guide() {
 	  	<div class="sec-button">
 			<a href="<?php echo esc_url( ADVANCE_COACHING_BUY_NOW ); ?>" target="_blank"><?php esc_html_e('Buy Now', 'advance-coaching'); ?></a>
 			<a href="<?php echo esc_url( ADVANCE_COACHING_LIVE_DEMO ); ?>"><?php esc_html_e('Live Demo', 'advance-coaching'); ?></a>
-			<a href="<?php echo esc_url( ADVANCE_COACHING_PRO_DOC ); ?>" target="_blank"><?php esc_html_e('Pro Documentation', 'advance-coaching'); ?></a>
+			<a href="<?php echo esc_url( ADVANCE_COACHING_PRO_DOC ); ?>"><?php esc_html_e('Pro Documentation', 'advance-coaching'); ?></a>
 		</div>
 	  	<div class="features-section">
 	  		<div class="col-4">

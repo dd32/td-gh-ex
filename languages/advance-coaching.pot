@@ -132,7 +132,7 @@ msgstr ""
 msgid 'comments title'
 msgstr ""
 
-#: comments.php:37
+#: comments.php:38
 msgid 'comments title'
 msgstr ""
 
@@ -140,7 +140,7 @@ msgstr ""
 msgid 'Comments are closed'
 msgstr ""
 
-#: footer.php:29
+#: footer.php:30
 msgid 'Copyright 2018 -'
 msgstr ""
 
@@ -148,11 +148,11 @@ msgstr ""
 msgid 'Primary Menu'
 msgstr ""
 
-#: functions.php:61
+#: functions.php:62
 msgid 'Thank you for choosing ThemeShopy. We are sincerely obliged to offer our best services to you. Please proceed towards welcome page and give us the privilege to serve you.'
 msgstr ""
 
-#: functions.php:62
+#: functions.php:63
 msgid 'Click here...'
 msgstr ""
 
@@ -169,7 +169,7 @@ msgid 'page sidebar'
 msgstr ""
 
 #: functions.php:80 
-#: functions.php:90
+#: functions.php:91
 msgid 'Appears on page sidebar'
 msgstr ""
 
@@ -177,26 +177,26 @@ msgstr ""
 msgid 'Third Column Sidebar'
 msgstr ""
 
-#: functions.php:99
+#: functions.php:100
 msgid 'Footer Navigation 1'
 msgstr ""
 
-#: functions.php:100 
-#: functions.php:110 
-#: functions.php:120 
-#: functions.php:130
+#: functions.php:101 
+#: functions.php:111
+#: functions.php:121
+#: functions.php:131
 msgid 'Appears on footer'
 msgstr ""
 
-#: functions.php:109
+#: functions.php:110
 msgid 'Footer Navigation 2'
 msgstr ""
 
-#: functions.php:119
+#: functions.php:120
 msgid 'Footer Navigation 3'
 msgstr ""
 
-#: functions.php:129
+#: functions.php:130
 msgid 'Footer Navigation 4'
 msgstr ""
 
@@ -204,7 +204,15 @@ msgstr ""
 msgid 'Coaching WordPress Theme'
 msgstr ""
 
-#: header.php:22
+#: header.php:21
+msgid 'Skip to content'
+msgstr ""
+
+#: header.php:50
+msgid 'Requestbtn'
+msgstr ""
+
+#: header.php:57
 msgid 'Menu'
 msgstr ""
 
@@ -247,18 +255,18 @@ msgstr ""
 msgid 'submit button'
 msgstr ""
 
-#: sidebar.php:12
+#: sidebar.php:11
 msgid 'Archives'
 msgstr ""
 
-#: sidebar.php:18
+#: sidebar.php:17
 msgid 'Meta'
 msgstr ""
 
-#: template-parts/content-audio.php:45
-#: template-parts/content-gallery.php:35
-#: template-parts/content-image.php:25
-#: template-parts/content-video.php:45
+#: template-parts/content-audio.php:43
+#: template-parts/content-gallery.php:33
+#: template-parts/content-image.php:29
+#: template-parts/content-video.php:46
 #: template-parts/content-single.php:25
 #: template-parts/content.php:29
 #: template-parts/grid-layout.php:29
