@@ -348,7 +348,7 @@ function advance_business_scripts() {
 			}
 
 			';
-		wp_add_inline_style( 'advance-business-basic-style',$custom_css );
+	wp_add_inline_style( 'advance-business-basic-style',$custom_css );
 
 	wp_enqueue_script('SmoothScroll', get_template_directory_uri().'/js/SmoothScroll.js', array('jquery'));
 	wp_enqueue_script('advance-business-customscripts-jquery', get_template_directory_uri().'/js/custom.js', array('jquery'));

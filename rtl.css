@@ -1,4 +1,4 @@
-/* RTL Style */
+/* RTL CSS */
 
 *{
   margin:0;
@@ -110,6 +110,35 @@ input[type='submit']:hover{
   top:-9999em;
   right:-9999em;
 }
+/* Text meant only for screen readers. */
+.screen-reader-text {
+border: 0;
+clip: rect(1px, 1px, 1px, 1px);
+clip-path: inset(50%);
+height: 1px;
+margin: -1px;
+overflow: hidden;
+padding: 0;
+position: absolute;
+width: 1px;
+word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+background-color: #eee;
+clip: auto !important;
+clip-path: none;
+color: #444;
+display: block;
+font-size: 1em;
+height: auto;
+right: 5px;
+line-height: normal;
+padding: 15px 23px 14px;
+text-decoration: none;
+top: 5px;
+width: auto;
+z-index: 100000; /* Above WP toolbar. */
+}
 .sticky{
   margin:0;
   padding:0;
@@ -156,7 +185,7 @@ input[type='submit']:hover{
 #respond{
   clear:both;
 }
-.toggleMenu{
+.toggle{
   display:none;
 }
 .bypostauthor{
@@ -241,7 +270,7 @@ a.button{
   width: 100%
 }
 #header {
-  background: #fe8e1e52;
+  background: #f3f3f3;
 }
 #header .nav {
   margin: 0;
@@ -467,7 +496,7 @@ input.search-field {
   margin: 2% 0;
 }
 .contact p.heading-line {
-  color: #9c9c9c;
+  color: #010101;
   font-size: 16px;
   margin: 15px 0 0 0;
 }
@@ -541,15 +570,18 @@ hr.project-hr {
   font-size:15px;
   margin:10px 0;
   line-height: 25px;
-  color: #999;
+  color: #5b5b5b;
+}
+article.new-text.col-lg-6.col-md-6 {
+    max-width: 100%;
 }
 .box-image{
   margin:0;
 }
-#our-services img{
+.our-services img{
   width:100%;
 }
-#our-services .services-box{
+.our-services .services-box{
   margin:40px 0 20px 0;
 }
 .second-border a {
@@ -656,11 +688,17 @@ section .innerlightbox{
 table#wp-calendar {
   width: 100%;
 }
+table#wp-calendar td a {
+  color: #ffffff;
+}
 #footer caption,
 #sideabr caption {
   font-weight: bold;
   color: #fff;
   font-size: 20px;
+}
+div#sidebar {
+  margin-top: 19px;
 }
 #footer table,#footer th,#footer td,
 #sidebar table,#sidebar th,#sidebar td {
@@ -691,6 +729,9 @@ table#wp-calendar {
 #footer li a {
   color: #fff;
   font-size: 12px;
+}
+#footer li a:hover{
+  color: #fe8e1e;
 }
 #footer ul li {
   list-style: none;
@@ -733,12 +774,12 @@ table#wp-calendar {
   margin-top: -38px;
 }
 .copyright p {
-  font-size: 15px;
-  color: #fff;
+  font-size: 18px;
+  color: #010101;
   margin-bottom: 0;
 }
 .copyright p a{
-  color: #fff;
+  color: #010101;
 }
 .copyright {
   background: #fe8e1e;
@@ -825,14 +866,14 @@ table#wp-calendar {
   font-weight:bold;
   font-size:12px;
 }
-#content-ts #comments ol li{
+.content-ts #comments ol li{
   width:100%;
   background:none;list-style:none;
   margin: 0 0 20px;
   background:#eee;
   display:inline-block;
 }  
-#content-ts #comments ul{
+.content-ts #comments ul{
   margin:0 40px 0 0;
 }
 #comments .reply{
@@ -857,7 +898,7 @@ table#wp-calendar {
 }
 /*------------- Woocommerce --------------*/
 .woocommerce .products li {
-  width: 30% !important;
+  width: 29% !important;
   text-align: center;
   margin: 0px 0 20px 22px !important;
 }
@@ -866,23 +907,23 @@ table#wp-calendar {
 }
 a.showcoupon,
 .woocommerce-message::before{
-  color: #fe8e1e;
+  color: #000;
 }
 .woocommerce-message {
   border-top-color: #fe8e1e;
 }
 .woocommerce span.onsale {
   background: #fe8e1e;
-  color: #fff;
+  color: #000;
   padding: 0;
   border-radius: 0;
   margin: 0 !important;
 }
 h2.woocommerce-loop-product__title{
-  color: #999;
+  color: #000;
   letter-spacing: 1px;
   font-weight: 500;
-  font-size: 15px !important;
+  font-size: 25px !important;
 }
 .woocommerce ul.products li.product .price,
 .woocommerce div.product p.price, .woocommerce div.product span.price {
@@ -891,10 +932,16 @@ h2.woocommerce-loop-product__title{
 .woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price{
   margin-bottom: 5px;
 }
-.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
+.woocommerce #respond input#submit,.woocommerce a.button, .woocommerce a.button.alt, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
   background: #fe8e1e;
-  color: #fff;
+  color: #000;
   border-radius: 0;
+}
+.woocommerce a.remove{
+  color: #000 !important;
+}
+.woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{
+  color: #000;
 }
 .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
   background: #000;
@@ -919,7 +966,7 @@ nav.woocommerce-MyAccount-navigation ul li {
   margin-bottom: 10px !important;
 }
 nav.woocommerce-MyAccount-navigation ul li a{
-  color: #fff;
+  color: #000;
   font-weight: bold;
 }
 .posted_in {
@@ -937,6 +984,16 @@ span.woocommerce-input-wrapper,
     float: right;
     padding: 9.7px;
 }
+.woocommerce ul.products li.product .price{
+  font-size: 17px;
+}
+.woocommerce form .form-row .required {
+  color: #000;
+}
+.woocommerce nav.woocommerce-breadcrumb, .woocommerce .woocommerce-breadcrumb a{
+  color: #5c5757 !important;
+}
+
 /*------------- Sidebar -------------*/
 #sidebar caption{
   color: #000;
@@ -950,7 +1007,7 @@ span.woocommerce-input-wrapper,
   font-weight: bold;
   font-size: 20px;
   text-transform: uppercase;
-  color: #fff;
+  color: #000;
   background: #fe8e1e;
   padding: 10px;
 }
@@ -1020,21 +1077,21 @@ h1.entry-title,
 h1.page-title {
   text-align: right;
   margin-bottom: 10px;
-  color: #fe8e1e;
+  color: #000;
 }
-#content-ts p{
+.content-ts p{
   text-align:justify;
   line-height: 25px;
   font-size: 16px;
   margin:0 0 20px 0;
 }
-#content-ts hr{
+.content-ts hr{
   border:none;
   border-bottom:2px dotted #7e7e7e;
   margin:35px 0;
   clear:both;
 }
-#content-ts h2{
+.content-ts h2{
   font-size:32px;
   font-weight:normal;
   margin:0;
@@ -1042,7 +1099,7 @@ h1.page-title {
   color:#000;
   margin:0 0 25px;
 }
-#content-ts h3{
+.content-ts h3{
   font-size:36px;
   font-weight:normal;
   margin:0;
@@ -1050,7 +1107,7 @@ h1.page-title {
   color:#000;
   margin:0 0 25px;
 }
-#content-ts h4{
+.content-ts h4{
   font-size:20px;
   font-weight:bold;
   margin:0;
@@ -1058,22 +1115,22 @@ h1.page-title {
   color:#333;
   margin:0 0 25px;
 }
-#content-ts ul{list-style:none;
+.content-ts ul{list-style:none;
   margin:0 10px 0 0;
   padding:10px 0 0;
   font-size:16px;
 }
-#content-ts ul li{
+.content-ts ul li{
   padding:0;
   margin:0 0 20px 0;
   line-height:25px;
 }
-#content-ts ol{list-style: none;
+.content-ts ol{list-style: none;
   padding:10px 0 0 0;
   font-size:16px;
   counter-reset: myCounter;
 }
-#content-ts ol li{
+.content-ts ol li{
   padding:0 0 0 0;
   margin:0 0 20px 0;
 }
@@ -1125,6 +1182,9 @@ h1.page-title {
 }
 iframe{
   width: 100%;
+}
+.entry-audio audio {
+    width: 100%;
 }
 
 /* Media */
@@ -1214,17 +1274,17 @@ iframe{
   section .innerlightbox {
     padding: 0;
   }
-  #our-services{
+  .our-services{
     margin-top: 0;
   }
-  .toggleMenu{
+  .toggle{
     display:block;
   }
   .toggle a{
     width:100%;
     color:#fff;
     background:url('images/mobile_nav_right.png') no-repeat left center #000;
-    padding:10px 10px;
+    padding:10px 136px;
     font-size:16px;
   }
   .nav{
@@ -1324,7 +1384,7 @@ iframe{
     margin-top:10px;
   }
   #header .nav ul li a{
-   color: #010101;
+    color: #010101;
     padding: 10px 12px;
     display: block;
     letter-spacing: 1px;

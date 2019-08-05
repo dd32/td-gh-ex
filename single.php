@@ -8,7 +8,7 @@
 get_header(); ?>
 
 <div class="container">
-    <div class="middle-align">
+    <main role="main" id="maincontent" class="middle-align">
     	<?php
             $left_right = get_theme_mod( 'advance_business_layout_options','Right Sidebar');
             if($left_right == 'Left Sidebar'){ ?>
@@ -95,7 +95,7 @@ get_header(); ?>
 			</div>
 		<?php }?>
 	    <div class="clearfix"></div>
-    </div>
+    </main>
 </div>
 
 <?php get_footer(); ?>

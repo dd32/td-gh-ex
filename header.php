@@ -16,9 +16,11 @@
   <link rel="profile" href="<?php echo esc_url( __( 'http://gmpg.org/xfn/11', 'advance-business' ) ); ?>">
   <?php wp_head(); ?>
 </head>
-
 <body <?php body_class(); ?>>
-  <div class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','advance-business'); ?></a></div>
+
+<header role="banner">
+  <button role="tab" class="toggle"><a class="toggleMenu" href="#"><?php esc_html_e('Menu','advance-business'); ?></a></button>
+  <a class="screen-reader-text skip-link" href="#maincontent"><?php esc_html_e( 'Skip to content', 'advance-business' ); ?></a>
   <div id="header"> 
     <div class="container">
       <div class="menu-bar">
@@ -35,9 +37,9 @@
           <div class="col-lg-8 col-md-8">
             <div class="main-menu">
               <div class="container">
-                <div class="nav">
+                <nav class="nav"role="navigation">
                   <?php wp_nav_menu( array('theme_location'  => 'primary') ); ?>
-                </div>
+                </nav>
               </div>
             </div>
           </div>
@@ -50,10 +52,12 @@
         <div class="serach_outer">
           <div class="closepop"><i class="far fa-window-close"></i></div>
           <div class="serach_inner">
-           <?php get_search_form(); ?>
+            <?php get_search_form(); ?>
           </div>
         </div>
       </div>
     </div>
   </div>
+</header>
+
 </body>

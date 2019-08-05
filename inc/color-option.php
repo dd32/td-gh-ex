@@ -10,7 +10,7 @@
 		$custom_css .='}';
 	}
 	if($advance_business_theme_color != false){
-		$custom_css .='input[type="submit"],#slider .inner_carousel h2, .contact i, #footer h3, a.showcoupon,.woocommerce-message::before, h1.entry-title,h1.page-title, h3.widget-title a, h2.woocommerce-loop-product__title{';
+		$custom_css .='input[type="submit"],.contact i, #footer h3,.woocommerce-message::before, h3.widget-title a, #footer li a:hover{';
 			$custom_css .='color: '.esc_html($advance_business_theme_color).';';
 		$custom_css .='}';
 	}

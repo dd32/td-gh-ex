@@ -8,19 +8,20 @@ get_header(); ?>
 <?php do_action( 'advance_business_above_slider' ); ?>
 
 <?php if( get_theme_mod( 'advance_business_slider_hide') != '') { ?>
+<main role="main" id="maincontent">
   <section id="slider">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
-      <?php $pages = array();
+      <?php $slider_pages = array();
         for ( $count = 1; $count <= 4; $count++ ) {
           $mod = intval( get_theme_mod( 'advance_business_slider_page' . $count ));
           if ( 'page-none-selected' != $mod ) {
-            $pages[] = $mod;
+            $slider_pages[] = $mod;
           }
         }
-        if( !empty($pages) ) :
+        if( !empty($slider_pages) ) :
           $args = array(
             'post_type' => 'page',
-            'post__in' => $pages,
+            'post__in' => $slider_pages,
             'orderby' => 'post__in'
           );
           $query = new WP_Query( $args );
@@ -30,13 +31,13 @@ get_header(); ?>
       <div class="carousel-inner" role="listbox">
         <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
           <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-            <img src="<?php the_post_thumbnail_url('full'); ?>"/>
+            <img role="img" src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image">
             <div class="carousel-caption">
               <div class="inner_carousel">
                 <h2><?php the_title(); ?></h2>
                 <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_business_string_limit_words( $excerpt,20 ) ); ?></p>
                 <div class="know-btn">
-                  <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-business'); ?><i class="fas fa-long-arrow-alt-right"></i></a>
+                  <a href="<?php the_permalink(); ?>"> <?php echo esc_html_e('READ MORE','advance-business'); ?><i class="fas fa-long-arrow-alt-right"></i><span class="screen-reader-text"><?php the_title(); ?></span></a>
                 </div>
               </div>
             </div>
@@ -45,18 +46,21 @@ get_header(); ?>
         wp_reset_postdata();?>
       </div>
       <?php else : ?>
-          <div class="no-postfound"></div>
+        <div class="no-postfound"></div>
       <?php endif;
       endif;?>
       <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
         <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+        <span class="screen-reader-text"><?php esc_html_e( 'Previous','advance-business' );?></span>
       </a>
       <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
         <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+        <span class="screen-reader-text"><?php esc_html_e( 'Next','advance-business' );?></span>
       </a>
     </div>
     <div class="clearfix"></div>
   </section>
+</main>
 <?php } ?>
 
 <?php do_action( 'advance_business_below_slider' ); ?>
@@ -142,7 +146,7 @@ get_header(); ?>
                 </div>
                 <div class="col-lg-6 col-md-6 p-0">
                   <div class="project_content">
-                    <a href="<?php the_permalink(); ?>" class="" ><h4><?php the_title(); ?></h4></a>
+                    <a href="<?php the_permalink(); ?>" class="screen-reader-text" ><h4><?php the_title(); ?></h4><span class="screen-reader-text"><?php the_title(); ?></span></a>
                     <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_business_string_limit_words( $excerpt,12 ) ); ?></p>
                     <div class="know-btn">
                       <a href="<?php echo esc_url( get_permalink() );?>" class="blogbutton-small" title="<?php esc_attr_e( 'Know More', 'advance-business' ); ?>"><?php esc_html_e('Read More','advance-business'); ?><i class="fas fa-angle-double-right"></i>
@@ -160,6 +164,7 @@ get_header(); ?>
       </div>
     </div>
   </section>
+</main>
 <?php }?>
 
 <?php do_action( 'advance_business_below_latest_projects' ); ?>

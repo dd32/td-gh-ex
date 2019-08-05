@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-wordpress-theme-for-business/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Business is a powerful, bold, flexible, dynamic and neatly-structured business WordPress theme suitable for corporate companies, IT firms and start-ups, small and medium sized businesses, online businesses, commercial websites, ad agencies, digital agencies and other business websites. The theme is best suited for marketing businesses, investment agencies, promotional firms, crypto currency businesses, bitcoin share business, sales targeting company and anything related to business. Give it a twist and use it as a blog giving business tips. This business theme provides all the modern website essentials under one roof. It is responsive with a mobile-first approach, cross-browser compatible, translation ready, RTL writing enabled and speed optimized. For a business to grow faster, it is important to reach maximum people which can be easily achieved through the social media icons embedded in it. The theme is readily customizable to change it according to your brand. This business WordPress theme is capable to give you a good traffic influx with higher rank of website in search engine results. With proper use of call to action buttons, lead visitors to your area of interest. Advance Business is compatible with WooCommerce plugin to easily set up an online store. For a business website, it is important to have a bug-free and secure coding structure which is provided by this theme. Demo: https://themeshopy.com/advance-business-pro/
-Version: 0.3
+Version: 0.3.1
 license: GNU General Public License v3.0
 License URI: http://www.gnu.org/licenses/gpl.html
 Text Domain: advance-business
@@ -31,6 +31,7 @@ body{
 	font-size: 15px;
 	color:#5b5b5b;
 	font-family: Roboto;
+  overflow-x: hidden;
 }
 img{
 	margin:0;
@@ -55,7 +56,7 @@ h6{
 p{
 	margin:0 0 15px;
 	padding:0;
-	font-size:14px;
+	font-size:16px;
 	line-height:normal;
 	font-weight:normal;
 }
@@ -67,9 +68,13 @@ a:hover{
 	text-decoration:none;
 	color:#666;
 }
-a:focus,
 a:hover{
 	text-decoration:none !important;
+}
+a:focus{
+  outline: 1px dotted #000;
+  border-bottom: 1px solid #000;
+  text-decoration:none !important;
 }
 ul{
 	margin:0 0 0 15px;
@@ -127,6 +132,35 @@ input[type='submit']:hover{
 	top:-9999em;
 	left:-9999em;
 }
+/* Text meant only for screen readers. */
+.screen-reader-text {
+border: 0;
+clip: rect(1px, 1px, 1px, 1px);
+clip-path: inset(50%);
+height: 1px;
+margin: -1px;
+overflow: hidden;
+padding: 0;
+position: absolute;
+width: 1px;
+word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+background-color: #eee;
+clip: auto !important;
+clip-path: none;
+color: #444;
+display: block;
+font-size: 1em;
+height: auto;
+left: 5px;
+line-height: normal;
+padding: 15px 23px 14px;
+text-decoration: none;
+top: 5px;
+width: auto;
+z-index: 100000; /* Above WP toolbar. */
+}
 .sticky{
 	margin:0;
 	padding:0;
@@ -173,7 +207,7 @@ input[type='submit']:hover{
 #respond{
 	clear:both;
 }
-.toggleMenu{
+.toggle{
  	display:none;
 }
 .bypostauthor{
@@ -228,7 +262,7 @@ a.button{
   padding: 0px 27px;
 }
 .logo h1{
-  font-size:20px;
+  font-size:30px;
   font-weight:bold;
   text-align:left;
 }
@@ -258,7 +292,7 @@ a.button{
   width: 100%
 }
 #header {
-  background: #fe8e1e52;
+  background: #f3f3f3;
 }
 #header .nav {
   margin: 0;
@@ -283,20 +317,7 @@ a.button{
 	padding:10px;
 	display:block;
 }
-/*#header ul.sub-menu:before {
-  content: "";
-  display: block;
-  position: absolute;
-  border-bottom: 7px solid;
-  border-bottom-color: #000;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
-  top: -7px;
-  left: 15%;
-  width: 0;
-  height: 0;
-  margin-left: -5px;
-}*/
+
 /*-----------------Search pop up----------------*/
 .search-image {
  background: url(images/searchicon.png);
@@ -436,7 +457,7 @@ input.search-field {
   margin: 0;
   font-size: 40px;
   letter-spacing: 1px;
-  color: #fe8e1e;
+  color: #000;
   text-align: left;
   font-weight: 700;
 }
@@ -484,7 +505,7 @@ input.search-field {
   margin: 2% 0;
 }
 .contact p.heading-line {
-  color: #9c9c9c;
+  color: #010101;
   font-size: 16px;
   margin: 15px 0 0 0;
 }
@@ -558,15 +579,18 @@ hr.project-hr {
 	font-size:15px;
 	margin:10px 0;
 	line-height: 25px;
-	color: #999;
+	color: #5b5b5b;
+}
+article.new-text.col-lg-6.col-md-6 {
+    max-width: 100%;
 }
 .box-image{
 	margin:0;
 }
-#our-services img{
+.our-services img{
 	width:100%;
 }
-#our-services .services-box{
+.our-services .services-box{
 	margin:40px 0 20px 0;
 }
 .second-border a {
@@ -673,11 +697,17 @@ section .innerlightbox{
 table#wp-calendar {
   width: 100%;
 }
+table#wp-calendar td a {
+  color: #ffffff;
+}
 #footer caption,
 #sideabr caption {
   font-weight: bold;
   color: #fff;
   font-size: 20px;
+}
+div#sidebar {
+  margin-top: 19px;
 }
 #footer table,#footer th,#footer td,
 #sidebar table,#sidebar th,#sidebar td {
@@ -708,6 +738,9 @@ table#wp-calendar {
 #footer li a {
   color: #fff;
   font-size: 12px;
+}
+#footer li a:hover{
+  color: #fe8e1e;
 }
 #footer ul li {
   list-style: none;
@@ -751,11 +784,11 @@ table#wp-calendar {
 }
 .copyright p {
   font-size: 18px;
-  color: #fff;
+  color: #010101;
   margin-bottom: 0;
 }
 .copyright p a{
-  color: #fff;
+  color: #010101;
 }
 .copyright {
   background: #fe8e1e;
@@ -842,14 +875,14 @@ table#wp-calendar {
   font-weight:bold;
   font-size:12px;
 }
-#content-ts #comments ol li{
+.content-ts #comments ol li{
   width:100%;
   background:none;list-style:none;
   margin: 0 0 20px;
   background:#eee;
   display:inline-block;
 }  
-#content-ts #comments ul{
+.content-ts #comments ul{
   margin:0 0 0 40px;
 }
 #comments .reply{
@@ -874,7 +907,7 @@ table#wp-calendar {
 }
 /*------------- Woocommerce --------------*/
 .woocommerce .products li {
-  width: 30% !important;
+  width: 29% !important;
   text-align: center;
   margin: 0px 22px 20px 0 !important;
 }
@@ -883,20 +916,20 @@ table#wp-calendar {
 }
 a.showcoupon,
 .woocommerce-message::before{
-	color: #fe8e1e;
+	color: #000;
 }
 .woocommerce-message {
   border-top-color: #fe8e1e;
 }
 .woocommerce span.onsale {
   background: #fe8e1e;
-  color: #fff;
+  color: #000;
   padding: 0;
   border-radius: 0;
   margin: 0 !important;
 }
 h2.woocommerce-loop-product__title{
-  color: #fe8e1e;
+  color: #000;
   letter-spacing: 1px;
   font-weight: 500;
   font-size: 25px !important;
@@ -908,10 +941,16 @@ h2.woocommerce-loop-product__title{
 .woocommerce div.product .product_title,.woocommerce div.product p.price, .woocommerce div.product span.price{
 	margin-bottom: 5px;
 }
-.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
+.woocommerce #respond input#submit,.woocommerce a.button, .woocommerce a.button.alt, .woocommerce button.button, .woocommerce input.button,.woocommerce #respond input#submit.alt, .woocommerce button.button.alt, .woocommerce input.button.alt{
 	background: #fe8e1e;
-	color: #fff;
+	color: #000;
 	border-radius: 0;
+}
+.woocommerce a.remove{
+  color: #000 !important;
+}
+.woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{
+  color: #000;
 }
 .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,.woocommerce #respond input#submit.alt:hover, .woocommerce a.button.alt:hover, .woocommerce button.button.alt:hover, .woocommerce input.button.alt:hover{
 	background: #000;
@@ -936,7 +975,7 @@ nav.woocommerce-MyAccount-navigation ul li {
   margin-bottom: 10px !important;
 }
 nav.woocommerce-MyAccount-navigation ul li a{
-  color: #fff;
+  color: #000;
   font-weight: bold;
 }
 .posted_in {
@@ -957,6 +996,13 @@ span.woocommerce-input-wrapper,
 .woocommerce ul.products li.product .price{
   font-size: 17px;
 }
+.woocommerce form .form-row .required {
+  color: #000;
+}
+.woocommerce nav.woocommerce-breadcrumb, .woocommerce .woocommerce-breadcrumb a{
+  color: #5c5757 !important;
+}
+
 /*------------- Sidebar -------------*/
 #sidebar caption{
 	color: #000;
@@ -970,7 +1016,7 @@ span.woocommerce-input-wrapper,
   font-weight: bold;
   font-size: 20px;
   text-transform: uppercase;
-  color: #fff;
+  color: #000;
   background: #fe8e1e;
   padding: 10px;
 }
@@ -1040,21 +1086,21 @@ h1.entry-title,
 h1.page-title {
   text-align: left;
   margin-bottom: 10px;
-  color: #fe8e1e;
+  color: #000;
 }
-#content-ts p{
+.content-ts p{
 	text-align:justify;
 	line-height: 25px;
 	font-size: 16px;
 	margin:0 0 20px 0;
 }
-#content-ts hr{
+.content-ts hr{
 	border:none;
 	border-bottom:2px dotted #7e7e7e;
 	margin:35px 0;
 	clear:both;
 }
-#content-ts h2{
+.content-ts h2{
 	font-size:32px;
 	font-weight:normal;
 	margin:0;
@@ -1062,7 +1108,7 @@ h1.page-title {
 	color:#000;
 	margin:0 0 25px;
 }
-#content-ts h3{
+.content-ts h3{
 	font-size:36px;
 	font-weight:normal;
 	margin:0;
@@ -1070,7 +1116,7 @@ h1.page-title {
 	color:#000;
 	margin:0 0 25px;
 }
-#content-ts h4{
+.content-ts h4{
 	font-size:20px;
 	font-weight:bold;
 	margin:0;
@@ -1078,24 +1124,27 @@ h1.page-title {
 	color:#333;
 	margin:0 0 25px;
 }
-#content-ts ul{list-style:none;
+.content-ts ul{list-style:none;
 	margin:0 0 0 10px;
 	padding:10px 0 0;
 	font-size:16px;
 }
-#content-ts ul li{
+.content-ts ul li{
 	padding:0;
 	margin:0 0 20px 0;
 	line-height:25px;
 }
-#content-ts ol{list-style: none;
+.content-ts ol{list-style: none;
 	padding:10px 0 0 0;
 	font-size:16px;
 	counter-reset: myCounter;
 }
-#content-ts ol li{
+.content-ts ol li{
 	padding:0 0 0 0;
 	margin:0 0 20px 0;
+}
+.entry-content a {
+  text-decoration: underline;
 }
 
 /* Pagination */
@@ -1237,17 +1286,17 @@ iframe{
 	section .innerlightbox {
 		padding: 0;
 	}
-	#our-services{
+	.our-services{
 		margin-top: 0;
 	}
-	.toggleMenu{
+	.toggle{
  		display:block;
 	}
 	.toggle a{
 		width:100%;
 		color:#fff;
 		background:url('images/mobile_nav_right.png') no-repeat right center #000;
-		padding:10px 10px;
+		padding:10px 136px;
 		font-size:16px;
 	}
 	.nav{
@@ -1347,7 +1396,7 @@ iframe{
 		margin-top:10px;
 	}
 	#header .nav ul li a{
-	 color: #010101;
+	  color: #010101;
     padding: 10px 12px;
     display: block;
     letter-spacing: 1px;
