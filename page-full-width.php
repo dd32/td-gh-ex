@@ -3,7 +3,8 @@
  * Template Name: Full Width Page
  *
  *
- * @package ascent
+ * @package Ascent
+ * @since 1.0.0 
  */
 
 get_header(); ?>

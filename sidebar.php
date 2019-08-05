@@ -2,7 +2,8 @@
 /**
  * The sidebar containing the main widget area
  *
- * @package ascent
+ * @package Ascent
+ * @since 1.0.0
  */
 ?>
 

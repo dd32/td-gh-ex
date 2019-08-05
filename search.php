@@ -2,7 +2,8 @@
 /**
  * The template for displaying Search Results pages.
  *
- * @package ascent
+ * @package Ascent
+ * @since 1.0.0
  */
 get_header(); ?>
 

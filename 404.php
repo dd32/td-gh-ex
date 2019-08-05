@@ -2,7 +2,8 @@
 /**
  * The template for displaying 404 pages (Not Found).
  *
- * @package ascent
+ * @package Ascent
+ * @since 1.0.0 
  */
 
 get_header(); ?>

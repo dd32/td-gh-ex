@@ -4,8 +4,24 @@
  *
  * Eventually, some of the functionality here could be replaced by core features
  *
- * @package ascent
+ * @package Ascent
+ * @since 1.0.0 
  */
+
+ if ( ! function_exists( 'ascent_the_custom_logo' ) ) {
+ /**
+  * Displays the optional custom logo.
+  *
+  * Does nothing if the custom logo is not available.
+  *
+  * @since Twenty Sixteen 1.2
+  */
+   function ascent_the_custom_logo() {
+   	if ( function_exists( 'the_custom_logo' ) ) {
+   		the_custom_logo();
+   	}
+   }
+}
 
 if ( ! function_exists( 'ascent_content_nav' ) ) :
 /**

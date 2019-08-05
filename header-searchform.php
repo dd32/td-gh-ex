@@ -1,3 +1,9 @@
+<?php 
+/**
+ * @package Ascent
+ * @since 1.0.0 
+ */
+?>
 <?php //if( get_setting( 'search_disable', false ) ) return; ?>
 <div id="header-search-form-wrap" class="header-search-form-wrap">
    <div class="container">

@@ -3,7 +3,8 @@
  * Template Name: Left Sidebar Page
  *
  *
- * @package ascent
+ * @package Ascent
+ * @since 1.0.0
  */
 
 get_header(); ?>

@@ -4,7 +4,8 @@
  *
  * Learn more: http://codex.wordpress.org/Template_Hierarchy
  *
- * @package ascent
+ * @package Ascent
+ * @since 1.0.0 
  */
 
 get_header(); ?>

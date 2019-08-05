@@ -2,7 +2,8 @@
 /**
  * The template for displaying search forms in ascent
  *
- * @package ascent
+ * @package Ascent
+ * @since 1.0.0
  */
 ?>
 <form role="search" method="get" class="search-form" action="<?php echo esc_url( home_url( '/' ) ); ?>">

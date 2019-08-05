@@ -444,7 +444,7 @@ ul.social-icons li.social-icon a {
     background: #F4F4F4;
     border: 1px solid #DDD;
     color: #BABEC4;
-    padding: 5px 10px;
+    padding: 5px 12px;
     font-size: 18px;
     margin-left: 5px;
     border-radius: 50px;
@@ -825,6 +825,40 @@ article.attachment .entry-header #image-navigation .nav-next {
 ul.wp-block-gallery {
   list-style: none;
   padding-left: 0;
+}
+
+
+
+/* =WooCommerce Style
+---------------------------------------------------------------------------------- */
+
+.woocommerce div.product form.cart .button {
+    padding: 10px 30px;
+    line-height: 1.42857143;
+}
+
+.woocommerce #respond input#submit, 
+.woocommerce a.button, 
+.woocommerce button.button, 
+.woocommerce input.button,
+.woocommerce #respond input#submit.alt, 
+.woocommerce a.button.alt, 
+.woocommerce button.button.alt, 
+.woocommerce input.button.alt {
+    background-color: #1ABC9C;
+    color: #FFF;
+    font-weight: normal;
+}
+.woocommerce #respond input#submit:hover, 
+.woocommerce a.button:hover, 
+.woocommerce button.button:hover, 
+.woocommerce input.button:hover,
+.woocommerce #respond input#submit.alt:hover, 
+.woocommerce a.button.alt:hover, 
+.woocommerce button.button.alt:hover, 
+.woocommerce input.button.alt:hover {
+    background-color: #262932;
+    color: #FFF;
 }
 
 /* =Footer

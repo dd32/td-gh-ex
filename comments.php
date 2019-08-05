@@ -7,7 +7,8 @@
  * handled by a callback to ascent_comment() which is
  * located in the includes/template-tags.php file.
  *
- * @package ascent
+ * @package Ascent
+ * @since 1.0.0 
  */
 
 /*

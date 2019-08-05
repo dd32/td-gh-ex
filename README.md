@@ -1,10 +1,16 @@
 == Ascent ==
 
 Tags: one-column, two-columns, left-sidebar, right-sidebar, custom-background, custom-menu, featured-images, post-formats, theme-options, translation-ready
-Tested up to: 4.9.8
+Tested up to: 5.2.2
 Stable tag: 3.6
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
+
+
+Reference themes: 
+http://demo.roadthemes.com/makalidemo/
+http://demo.uix.store/sober/home-page-2/?header_text_color=light&topbar_enable=1&topbar_left=switchers&topbar_color=dark&utm_source=landing
+https://flatsome3.uxthemes.com/demos/shop-demos/classic-shop/
 
 == Bundled Resources ==
 * Font Awesome: http://fortawesome.github.io/Font-Awesome/
@@ -14,17 +20,15 @@ License URI: http://www.gnu.org/licenses/gpl-2.0.html
 * SwipeBox: http://github.com/brutaldesign/swipebox
 * MeanMenu: https://github.com/meanthemes/meanMenu
 * jQueryAppear: https://github.com/morr/jquery.appear/
-* SmoothScrolljs: https://gist.github.com/galambalazs/6477177/
 
 == Description ==
 
-Ascent Theme is a fully responsive WordPress theme that looks elegant on any devices. It is simple, clean and lightweight WordPress theme based on the most modern technologies like HTML5 and CSS3. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10.
-If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Ascent is your perfect find. You can check out the demo at https://ascenttheme.com/ and get premium support: https://www.nettantra.com/wordpress-maintenance/.
+Ascent is a fully responsive WordPress theme that looks elegant on any devices. It is suitable for blogs, business, and personal portfolio websites. This fully customizable and lighting fast theme is built with SEO in mind. The theme support all modern browsers like Firefox, Chrome, Safari, Opera and Internet Explorer 8, 9 and 10.
+If you are looking for a clean professional space, which accommodates your visuals and yet provides you with ample amount of textual area, Ascent is your perfect find. You can check out the demo at https://ascenttheme.com/ and get pro version at: https://zetamatic.com/downloads/ascent-pro/.
 
 
 * Fully Bootstrap Power
 * FontAwesome implementation
-* jQuery smoothScroll
 * jQuery SwipeBox
 * Setup jQuery MeanMenu and Velocity for beautiful responsive animated menu.
 * Implement jQuery appear for tracking element's appearance in browser viewport.
@@ -89,6 +93,10 @@ Yes! You can choose your color scheme under Appearance -> Theme Options -> Styli
 
 
 = Changelog =
+
+### Version 3.4
+- Chnaged Theme options to Customizer
+- Removed jQuery smoothScroll
 
 ### Version 3.3
 - Fixed: Sidebar issue and theme option issue
