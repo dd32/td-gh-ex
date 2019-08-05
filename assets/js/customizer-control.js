@@ -146,6 +146,85 @@
 
 	});
 
+/**
+* Header Type control script
+* @since 1.1.1
+*/
+wp.customize( 'arrival_site_header_type', function( setting ) {
+
+    var headerSettings = ['arrival_main_nav_layout','arrival_single_nav_enable_sep','arrival_one_page_menus','arrival_main_nav_disable_logo','arrival_cart_display_position','arrival_main_nav_menu_align','arrival_nav_last_item_sep','arrival_main_nav_right_content','arrival_main_nav_last_item_align'];
+    $.each(headerSettings, function( index, value ) {
+        
+        wp.customize.control( value, function( control ) {
+            var visibility = function() {
+                if ( 'custom' === setting.get() ) {
+                    control.container.addClass( 'arrival-control-hide' );
+                } else {
+                    control.container.removeClass( 'arrival-control-hide' );
+                }
+            };
+
+            visibility();
+            setting.bind( visibility );
+        });
+
+    });
+
+    wp.customize.control( 'arrival_site_header_custom_template', function( control ) {
+        var visibility = function() {
+            if ( 'default' === setting.get() ) {
+                control.container.addClass( 'arrival-control-hide' );
+            } else {
+                control.container.removeClass( 'arrival-control-hide' );
+            }
+        };
+
+        visibility();
+        setting.bind( visibility );
+    });
+
+
+});
+
+/**
+* Footer Type control script
+* @since 1.1.1
+*/
+wp.customize( 'arrival_site_footer_type', function( setting ) {
+     var footerSettings = ['arrival_footer_widget_enable','arrival_footer_copyright_text','arrival_footer_icons_enable','arrival_footer_social_redirect_btn'];
+    $.each(footerSettings, function( index, value ) {
+        
+        wp.customize.control( value, function( control ) {
+            var visibility = function() {
+                if ( 'custom' === setting.get() ) {
+                    control.container.addClass( 'arrival-control-hide' );
+                } else {
+                    control.container.removeClass( 'arrival-control-hide' );
+                }
+            };
+
+            visibility();
+            setting.bind( visibility );
+        });
+
+    });
+
+    wp.customize.control( 'arrival_site_footer_custom_template', function( control ) {
+        var visibility = function() {
+            if ( 'default' === setting.get() ) {
+                control.container.addClass( 'arrival-control-hide' );
+            } else {
+                control.container.removeClass( 'arrival-control-hide' );
+            }
+        };
+
+        visibility();
+        setting.bind( visibility );
+    });
+
+
+});
+
 
 
 })(jQuery);

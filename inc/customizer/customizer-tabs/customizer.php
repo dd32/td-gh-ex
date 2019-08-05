@@ -30,6 +30,8 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
                             'nicename' => esc_html__( 'Main Bar', 'arrival' ),
                             'controls' => apply_filters($prefix.'_header_options',array(
                                 
+                                $prefix.'_site_header_type',
+                                $prefix.'_site_header_custom_template',
                                 $prefix.'_main_nav_layout',
                                 $prefix.'_main_nav_disable_logo',
                                 $prefix.'_main_nav_menu_align',
@@ -117,6 +119,8 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
                             'icon'     => 'cogs',
                             'controls' => apply_filters($prefix.'_footer_options',array(
                                 
+                                $prefix.'_site_footer_type',
+                                $prefix.'_site_footer_custom_template',
                                 $prefix.'_footer_widget_enable',
                                 $prefix.'_footer_copyright_text',
                                 $prefix.'_footer_icons_enable',

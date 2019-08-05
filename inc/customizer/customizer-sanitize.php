@@ -107,6 +107,19 @@ function arrival_sanitize_blog_layout( $input ) {
 	return '';
 }
 
+function arrival_sanitize_header_type( $input ) {
+	$valid = array(
+		'default'     => esc_html__( 'Default', 'arrival' ),
+        'custom'      => esc_html__( 'Custom', 'arrival' ),
+	);
+
+	if ( array_key_exists( $input, $valid ) ) {
+		return $input;
+	}
+
+	return '';
+}
+
 /**
 * Background Position sanitize
 * 

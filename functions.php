@@ -379,6 +379,5 @@ if( class_exists('woocommerce')){
  * Load welcome section to admin.
  */
 if ( is_admin() ) {
-    require get_template_directory().'/inc/welcome/class.info.php';
-    require get_template_directory().'/inc/welcome/info.php';
+    require get_template_directory().'/inc/welcome/welcome-config.php';
 }

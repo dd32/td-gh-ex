@@ -1,3 +1,8 @@
+=== v1.1.1 ===
+- Added custom header option
+- Added custom footer option
+- Minor bugs fixed
+
 === v1.1.0 ===
 - Added cart position control option 
 - Minor CSS improvements

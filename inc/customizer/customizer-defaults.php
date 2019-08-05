@@ -70,6 +70,10 @@ function arrival_get_default_theme_options() {
     $defaults[$prefix.'_after_top_header_border_color']     = '#f1f1f1';
     $defaults[$prefix.'_after_top_header_icon_color']       = '#333';
     $defaults[$prefix.'_cart_display_position']             = 'top';
+    $defaults[$prefix.'_site_header_type']                  = 'default';
+    $defaults[$prefix.'_site_header_custom_template']       = 0;
+    $defaults[$prefix.'_site_footer_type']                  = 'default';
+    $defaults[$prefix.'_site_footer_custom_template']       = 0;
     
    
 

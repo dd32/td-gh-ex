@@ -14,7 +14,9 @@
 * @since 1.0.9
 *
 */
-if( ! class_exists('Ultra_Companion') ){
+if( ! class_exists('Ultra_Companion')  ){
+	return;
+}else if( ! class_exists('Elementor\Plugin') ){
 	return;
 }
 	
@@ -23,33 +25,49 @@ add_action( 'wp_head', 'arrival_meta_headers_hooks' );
 
 if( ! function_exists('arrival_meta_headers_hooks') ){
 	function arrival_meta_headers_hooks(){
-			
-		$mb_header 					= arrival_get_post_meta('ultra_page_header','default');
-		$mb_footer 					= arrival_get_post_meta('ultra_page_footer','default');
-		$mb_hdr_temp 				= arrival_get_post_meta('ultra_page_custom_header');
-		$ultra_page_title_banner 	= arrival_get_post_meta('ultra_page_title_banner','on' );
-		$ultra_page_custom_title 	= arrival_get_post_meta('ultra_page_custom_title');
-		$ultra_page_breadcrumb_show = arrival_get_post_meta('ultra_page_breadcrumb_show','on');
+		$default 						= arrival_get_default_theme_options();
+		$_site_header_type 				= get_theme_mod('arrival_site_header_type',$default['arrival_site_header_type']);
+		$_site_header_custom_template 	= get_theme_mod('arrival_site_header_custom_template',$default['arrival_site_header_custom_template']);
+
+		$_site_footer_type 				= get_theme_mod('arrival_site_footer_type',$default['arrival_site_footer_type']);
+		$_site_footer_custom_template 	= get_theme_mod('arrival_site_footer_custom_template',$default['arrival_site_footer_custom_template']);
+
+		$mb_header 						= arrival_get_post_meta('ultra_page_header','default');
+		$mb_footer 						= arrival_get_post_meta('ultra_page_footer','default');
+		$mb_hdr_temp 					= arrival_get_post_meta('ultra_page_custom_header');
+		$ultra_page_title_banner 		= arrival_get_post_meta('ultra_page_title_banner','on' );
+		$ultra_page_custom_title 		= arrival_get_post_meta('ultra_page_custom_title');
+		$ultra_page_breadcrumb_show 	= arrival_get_post_meta('ultra_page_breadcrumb_show','on');
 
 
 		//remove header
 	
 		if( ('default' != $mb_header) && ( ! is_404() ) && ( ! is_search() ) ){
 			remove_action('arrival_main_header_wrapp','arrival_main_header_wrapp');
+		}else if( ('custom' == $_site_header_type)  && $_site_header_custom_template  ){
+			remove_action('arrival_main_header_wrapp','arrival_main_header_wrapp');
 		}
 
 		//remove footer
 		if( ('default' != $mb_footer) && ( ! is_404() ) && ( ! is_search() ) ){
+			remove_action('arrival_footer_contents','arrival_footer_contents',10);
+		}else if( ('custom' == $_site_footer_type)  && $_site_footer_custom_template  ){
 			remove_action('arrival_footer_contents','arrival_footer_contents',10);
 		}
 		
 		//custom header options
 		if( 'custom' == $mb_header ){
 			echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($mb_hdr_temp);
+
+		}else if( ('custom' == $_site_header_type)  && $_site_header_custom_template ){
+			//custom header from customizer
+			echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($_site_header_custom_template);
 		}
 
 		//custom footer
 		if( 'custom' == $mb_footer ){
+			add_action('arrival_footer_contents','arrival_mb_footer_temp',15);
+		}else if( ('custom' == $_site_footer_type)  && $_site_footer_custom_template ){
 			add_action('arrival_footer_contents','arrival_mb_footer_temp',15);
 		}
 
@@ -82,12 +100,19 @@ if( ! function_exists('arrival_meta_headers_hooks') ){
 if( ! function_exists('arrival_mb_footer_temp')){
 	function arrival_mb_footer_temp(){
 
+		$default 						= arrival_get_default_theme_options();
+		$_site_footer_type 				= get_theme_mod('arrival_site_footer_type',$default['arrival_site_footer_type']);
+		$_site_footer_custom_template 	= get_theme_mod('arrival_site_footer_custom_template',$default['arrival_site_footer_custom_template']);
+
 		$mb_ftr_temp 	= arrival_get_post_meta('ultra_page_custom_footer');
 		$mb_footer 		= arrival_get_post_meta('ultra_page_footer','default');
 
 		//custom footer options
 		if( 'custom' == $mb_footer ){
 			echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($mb_ftr_temp);
+		}else if( ('custom' == $_site_footer_type)  && $_site_footer_custom_template ){
+			echo \Elementor\Plugin::instance()->frontend->get_builder_content_for_display($_site_footer_custom_template);
+			
 		}
 
 	}

@@ -525,3 +525,26 @@ if( ! function_exists('arrival_count_widgets') ):
         endif;
     }
 endif;
+
+/**
+* Get all elementor page templates
+* @since 1.1.1
+*/
+function arrival_get_elementor_templates() {
+    $args = [
+        'post_type' => 'elementor_library',
+        'posts_per_page' => -1,
+    ];
+
+    $page_templates = get_posts( $args );
+
+    $options = array();
+
+    if ( !empty( $page_templates ) && !is_wp_error( $page_templates ) ) {
+        $options['0'] = esc_html__('Select Template','arrival');
+        foreach ( $page_templates as $post ) {
+            $options[ $post->ID ] = $post->post_title;
+        }
+    }
+    return $options;
+}

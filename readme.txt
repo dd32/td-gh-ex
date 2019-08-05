@@ -33,9 +33,11 @@ Arrival is distributed under the terms of the GNU GPL
 == Screenshots ==
 -------------------------------------------------------
 
-All images shown on the screenshot are designed by WPoperation
+
+All the images shown on the screenshot are designed by WPoperation
 
 Image License: GNU General Public License, version 3 (GPLv3) 
+
 
 
 -------------------------------------------------------

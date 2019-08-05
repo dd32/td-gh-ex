@@ -7,10 +7,10 @@ $wp_customize->register_control_type( 'Arrival_Customizer_Dimensions_Control');
 
 
 
-$prefix   = 'arrival';
-$default  = arrival_get_default_theme_options();
-$menus    = get_registered_nav_menus();
-
+$prefix               = 'arrival';
+$default              = arrival_get_default_theme_options();
+$menus                = get_registered_nav_menus();
+$elementor_templates  = arrival_get_elementor_templates();
 
 /**
 * General settings for the theme
@@ -646,6 +646,45 @@ $wp_customize->add_section( $prefix.'_main_header_options_panel', array(
 		)
 	);
 
+
+/**
+* Header type
+* @since 1.1.1
+*/
+$wp_customize->add_setting( $prefix.'_site_header_type', array(
+        'default'             => $default[$prefix.'_site_header_type'],
+        'sanitize_callback'   => 'arrival_sanitize_header_type',
+        
+      ) );
+
+$wp_customize->add_control( new Arrival_Customizer_Buttonset_Control( $wp_customize, $prefix.'_site_header_type', array(
+        'label'         => esc_html__( 'Header Type', 'arrival' ),
+        'description'   => sprintf(__('Select site header type, %1$s Note: %2$s If you choose custom header you will have to seperately design your header using elementor.','arrival'),'<strong>','</strong>'),
+        'priority'      => 1,
+        'section'       => $prefix.'_main_header_options_panel',
+        'choices'       => array(
+          'default'     => esc_html__( 'Default', 'arrival' ),
+          'custom'      => esc_html__( 'Custom', 'arrival' ),
+        )
+      ) ) );
+
+$wp_customize->add_setting( $prefix.'_site_header_custom_template', array(
+        'default'               => $default[$prefix.'_site_header_custom_template'],
+        'sanitize_callback'     => 'absint',
+      ) );
+
+$wp_customize->add_control( $prefix.'_site_header_custom_template', array(
+        'label'         => esc_html__( 'Select Elementor Template', 'arrival' ),
+        'priority'      => 2,
+        'description'   => esc_html__('Select elementor template to display as header.','arrival'),
+        'section'       => $prefix.'_main_header_options_panel',
+        'type'          => 'select',
+        'choices'       => $elementor_templates,
+        
+      ) );
+
+
+
 $wp_customize->add_setting( $prefix.'_main_nav_layout', array(
         'default'             => $default[$prefix.'_main_nav_layout'],
         'sanitize_callback'   => 'arrival_sanitize_main_nav',
@@ -1212,6 +1251,47 @@ $wp_customize->add_section( $prefix.'_footer_settings', array(
       'priority'  => 50
     )
   );
+
+
+
+/**
+* Footer type
+* @since 1.1.1
+*/
+$wp_customize->add_setting( $prefix.'_site_footer_type', array(
+        'default'             => $default[$prefix.'_site_footer_type'],
+        'sanitize_callback'   => 'arrival_sanitize_header_type',
+        
+      ) );
+
+$wp_customize->add_control( new Arrival_Customizer_Buttonset_Control( $wp_customize, $prefix.'_site_footer_type', array(
+        'label'         => esc_html__( 'Footer Type', 'arrival' ),
+        'description'   => sprintf(__('Select site footer type, %1$s Note: %2$s If you choose custom footer you will have to seperately design your footer using elementor.','arrival'),'<strong>','</strong>'),
+        'priority'      => 1,
+        'section'       => $prefix.'_footer_settings',
+        'choices'       => array(
+          'default'     => esc_html__( 'Default', 'arrival' ),
+          'custom'      => esc_html__( 'Custom', 'arrival' ),
+        )
+      ) ) );
+
+$wp_customize->add_setting( $prefix.'_site_footer_custom_template', array(
+        'default'               => $default[$prefix.'_site_footer_custom_template'],
+        'sanitize_callback'     => 'absint',
+      ) );
+
+$wp_customize->add_control( $prefix.'_site_footer_custom_template', array(
+        'label'         => esc_html__( 'Select Elementor Template', 'arrival' ),
+        'priority'      => 2,
+        'description'   => esc_html__('Select elementor template to display as footer.','arrival'),
+        'section'       => $prefix.'_footer_settings',
+        'type'          => 'select',
+        'choices'       => $elementor_templates,
+        
+      ) );
+
+
+
 
 //enable or disable footer widgets section
 $wp_customize->add_setting( $prefix.'_footer_widget_enable', array(
