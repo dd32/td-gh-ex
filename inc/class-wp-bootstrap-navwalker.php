@@ -2,8 +2,7 @@
 /**
  * WP Bootstrap Navwalker
  */
-/* Check if Class Exists. */
-/* Check if Class Exists. */
+
 if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 	/**
 	 * WP_Bootstrap_Navwalker class.
@@ -42,7 +41,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			 * @param stdClass $args    An object of `wp_nav_menu()` arguments.
 			 * @param int      $depth   Depth of menu item. Used for padding.
 			 */
-			$class_names = join( ' ', apply_filters( 'nav_menu_submenu_css_class', $classes, $args, $depth ) );
+			$class_names = join( ' ', apply_filters( 'aari_nav_menu_submenu_css_class', $classes, $args, $depth ) );
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
 			/**
 			 * The `.dropdown-menu` container needs to have a labelledby
@@ -83,7 +82,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				$t = "\t";
 				$n = "\n";
 			}
-			$indent = ( $depth ) ? str_repeat( $t, $depth ) : '';
+			$indent  = ( $depth ) ? str_repeat( $t, $depth ) : '';
 			$classes = empty( $item->classes ) ? array() : (array) $item->classes;
 			// Initialize some holder variables to store specially handled item
 			// wrappers and icons.
@@ -107,7 +106,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			 * @param WP_Post  $item  Menu item data object.
 			 * @param int      $depth Depth of menu item. Used for padding.
 			 */
-			$args = apply_filters( 'nav_menu_item_args', $args, $item, $depth );
+			$args = apply_filters( 'aari_nav_menu_item_args', $args, $item, $depth );
 			// Add .dropdown or .active classes where they are needed.
 			if ( isset( $args->has_children ) && $args->has_children ) {
 				$classes[] = 'dropdown';
@@ -119,7 +118,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			$classes[] = 'menu-item-' . $item->ID;
 			$classes[] = 'nav-item';
 			// Allow filtering the classes.
-			$classes = apply_filters( 'nav_menu_css_class', array_filter( $classes ), $item, $args, $depth );
+			$classes = apply_filters( 'aari_nav_menu_css_class', array_filter( $classes ), $item, $args, $depth );
 			// Form a string of classes in format: class="class_names".
 			$class_names = join( ' ', $classes );
 			$class_names = $class_names ? ' class="' . esc_attr( $class_names ) . '"' : '';
@@ -134,15 +133,15 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			 * @param stdClass $args    An object of wp_nav_menu() arguments.
 			 * @param int      $depth   Depth of menu item. Used for padding.
 			 */
-			$id = apply_filters( 'nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth );
-			$id = $id ? ' id="' . esc_attr( $id ) . '"' : '';
+			$id      = apply_filters( 'aari_nav_menu_item_id', 'menu-item-' . $item->ID, $item, $args, $depth );
+			$id      = $id ? ' id="' . esc_attr( $id ) . '"' : '';
 			$output .= $indent . '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement"' . $id . $class_names . '>';
 			// initialize array for holding the $atts for the link item.
 			$atts = array();
 			// Set title from item to the $atts array - if title is empty then
 			// default to item title.
 			if ( empty( $item->attr_title ) ) {
-				$atts['title'] = ! empty( $item->title ) ? strip_tags( $item->title ) : '';
+				$atts['title'] = ! empty( $item->title ) ? wp_strip_all_tags( $item->title ) : '';
 			} else {
 				$atts['title'] = $item->attr_title;
 			}
@@ -168,7 +167,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			// update atts of this item based on any custom linkmod classes.
 			$atts = self::update_atts_for_linkmod_type( $atts, $linkmod_classes );
 			// Allow filtering of the $atts array before using it.
-			$atts = apply_filters( 'nav_menu_link_attributes', $atts, $item, $args, $depth );
+			$atts = apply_filters( 'aari_nav_menu_link_attributes', $atts, $item, $args, $depth );
 			// Build a string of html containing all the atts for the item.
 			$attributes = '';
 			foreach ( $atts as $attr => $value ) {
@@ -207,7 +206,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				$icon_html = '<i class="' . esc_attr( $icon_class_string ) . '" aria-hidden="true"></i> ';
 			}
 			/** This filter is documented in wp-includes/post-template.php */
-			$title = apply_filters( 'the_title', $item->title, $item->ID );
+			$title = apply_filters( 'aari_the_title', $item->title, $item->ID );
 			/**
 			 * Filters a menu item's title.
 			 *
@@ -218,13 +217,13 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			 * @param stdClass $args  An object of wp_nav_menu() arguments.
 			 * @param int      $depth Depth of menu item. Used for padding.
 			 */
-			$title = apply_filters( 'nav_menu_item_title', $title, $item, $args, $depth );
+			$title = apply_filters( 'aari_nav_menu_item_title', $title, $item, $args, $depth );
 			/**
 			 * If the .sr-only class was set apply to the nav items text only.
 			 */
 			if ( in_array( 'sr-only', $linkmod_classes, true ) ) {
 				$title         = self::wrap_for_screen_reader( $title );
-				$keys_to_unset = array_keys( $linkmod_classes, 'sr-only' );
+				$keys_to_unset = array_keys( $linkmod_classes, 'sr-only', true );
 				foreach ( $keys_to_unset as $k ) {
 					unset( $linkmod_classes[ $k ] );
 				}
@@ -246,7 +245,7 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 			/**
 			 * END appending the internal item contents to the output.
 			 */
-			$output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
+			$output .= apply_filters( 'aari_walker_nav_menu_start_el', $item_output, $item, $depth, $args );
 		}
 		/**
 		 * Traverse elements to create list from elements.
@@ -321,9 +320,9 @@ if ( ! class_exists( 'WP_Bootstrap_Navwalker' ) ) {
 				}
 				// if $args has 'echo' key and it's true echo, otherwise return.
 				if ( array_key_exists( 'echo', $args ) && $args['echo'] ) {
-					echo $fallback_output; // WPCS: XSS OK.
+					echo wp_kses_post( $fallback_output ); // WPCS: XSS OK.
 				} else {
-					return $fallback_output;
+					return wp_kses_post( $fallback_output );
 				}
 			}
 		}

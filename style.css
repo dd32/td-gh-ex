@@ -1,10 +1,10 @@
 /*
 Theme Name: Aari
-Theme URI: https://imtiazshamim.com/aari
+Theme URI: https://aari.imtiazshamim.com
 Author: Imtiaz Shamim
 Author URI: https://imtiazshamim.com
 Description: Theme aari is a fully functional personal blogging theme. The feature includes full-width template, sidebar template, controlling each element on the blog page. Make your custom background color, custom menu, and the site icon.
-Version: 1.0.2
+Version: 2.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 Text Domain: aari
@@ -28,18 +28,18 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 # Elements
 # Forms
 # Navigation
-        ## Links
-        ## Menus
+		## Links
+		## Menus
 # Accessibility
 # Alignments
 # Widgets
 # Content
-        ## Posts and pages
-        ## Comments
+		## Posts and pages
+		## Comments
 # Infinite scroll
 # Media
-        ## Captions
-        ## Galleries
+		## Captions
+		## Galleries
 --------------------------------------------------------------*/
 
 /*--------------------------------------------------------------
@@ -47,12 +47,12 @@ Nicolas Gallagher and Jonathan Neal http://necolas.github.io/normalize.css/
 --------------------------------------------------------------*/
 
 html {
-    font-family: sans-serif;
-    -webkit-text-size-adjust: 100%;
-    -ms-text-size-adjust: 100%;
+	font-family: sans-serif;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
 }
 body {
-    margin: 0;
+	margin: 0;
 }
 article,
 aside,
@@ -66,172 +66,172 @@ menu,
 nav,
 section,
 summary {
-    display: block;
+	display: block;
 }
 audio,
 canvas,
 progress,
 video {
-    display: inline-block;
-    vertical-align: baseline;
+	display: inline-block;
+	vertical-align: baseline;
 }
 audio:not([controls]) {
-    display: none;
-    height: 0;
+	display: none;
+	height: 0;
 }
 [hidden],
 template {
-    display: none;
+	display: none;
 }
 a {
-    background-color: transparent;
-    color: #fd4145;
+	background-color: transparent;
+	color: #fd4145;
 }
 a:active,
 a:hover {
-    outline: 0;
+	outline: 0;
 }
 abbr[title] {
-    border-bottom: 1px dotted;
+	border-bottom: 1px dotted;
 }
 dfn {
-    font-style: italic;
+	font-style: italic;
 }
 mark {
-    background: #ff0;
-    color: #000;
+	background: #ff0;
+	color: #000;
 }
 small {
-    font-size: 80%;
+	font-size: 80%;
 }
 sub,
 sup {
-    font-size: 75%;
-    line-height: 0;
-    position: relative;
-    vertical-align: baseline;
+	font-size: 75%;
+	line-height: 0;
+	position: relative;
+	vertical-align: baseline;
 }
 sup {
-    top: -0.5em;
+	top: -0.5em;
 }
 sub {
-    bottom: -0.25em;
+	bottom: -0.25em;
 }
 img {
-    border: 0;
+	border: 0;
 }
 svg:not(:root) {
-    overflow: hidden;
+	overflow: hidden;
 }
 figure {
-    margin: 1em 40px;
+	margin: 1em 40px;
 }
 hr {
-    box-sizing: content-box;
-    height: 0;
+	box-sizing: content-box;
+	height: 0;
 }
 pre {
-    overflow: auto;
+	overflow: auto;
 }
 code,
 kbd,
 pre,
 samp {
-    font-family: monospace, monospace;
-    font-size: 1em;
+	font-family: monospace, monospace;
+	font-size: 1em;
 }
 button,
 input,
 optgroup,
 select,
 textarea {
-    color: inherit;
-    font: inherit;
-    margin: 0;
+	color: inherit;
+	font: inherit;
+	margin: 0;
 }
 button {
-    overflow: visible;
+	overflow: visible;
 }
 button,
 select {
-    text-transform: none;
+	text-transform: none;
 }
 button,
 html input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    -webkit-appearance: button;
-    cursor: pointer;
+	-webkit-appearance: button;
+	cursor: pointer;
 }
 button[disabled],
 html input[disabled] {
-    cursor: default;
+	cursor: default;
 }
 button::-moz-focus-inner,
 input::-moz-focus-inner {
-    border: 0;
-    padding: 0;
+	border: 0;
+	padding: 0;
 }
 input {
-    line-height: normal;
+	line-height: normal;
 }
 input[type="checkbox"],
 input[type="radio"] {
-    box-sizing: border-box;
-    padding: 0;
+	box-sizing: border-box;
+	padding: 0;
 }
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
-    height: auto;
+	height: auto;
 }
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
-    -webkit-appearance: none;
+	-webkit-appearance: none;
 }
 fieldset {
-    border: 1px solid #c0c0c0;
-    margin: 0 2px;
-    padding: 0.35em 0.625em 0.75em;
+	border: 1px solid #c0c0c0;
+	margin: 0 2px;
+	padding: 0.35em 0.625em 0.75em;
 }
 legend {
-    border: 0;
-    padding: 0;
+	border: 0;
+	padding: 0;
 }
 textarea {
-    overflow: auto;
+	overflow: auto;
 }
 optgroup {
-    font-weight: bold;
+	font-weight: bold;
 }
 ul,
 ol {
-    margin: 0 0 28px 0;
-    padding: 0;
+	margin: 0 0 28px 0;
+	padding: 0;
 }
 ul {
-    list-style: disc;
+	list-style: disc;
 }
 ol {
-    list-style: decimal;
+	list-style: decimal;
 }
 li > ul,
 li > ol {
-    margin: 0 0 0 23px;
+	margin: 0 0 0 23px;
 }
 .entry-content li,
 .comment-content li,
 .mu_register li {
-    margin: 0 0 0 36px;
-    margin: 0 0 0 2.571428571rem;
+	margin: 0 0 0 36px;
+	margin: 0 0 0 2.571428571rem;
 }
 .entry-content ol,
 .comment-content ol,
 .entry-content ul,
 .comment-content ul,
 .mu_register ul {
-    margin: 0 0 24px;
-    margin: 0 0 1.714rem;
-    line-height: 1.714285714;
+	margin: 0 0 24px;
+	margin: 0 0 1.714rem;
+	line-height: 1.714285714;
 }
 .entry-content ul ul,
 .comment-content ul ul,
@@ -241,56 +241,56 @@ li > ol {
 .comment-content ul ol,
 .entry-content ol ul,
 .comment-content ol ul {
-    margin-bottom: 0;
+	margin-bottom: 0;
 }
 table {
-    border-collapse: collapse;
-    border-spacing: 0;
-    margin-bottom: 20px;
+	border-collapse: collapse;
+	border-spacing: 0;
+	margin-bottom: 20px;
 }
 td,
 th {
-    padding: 0;
+	padding: 0;
 }
 td,
 th {
-    border: 1px solid #ddd;
-    padding: 8px;
+	border: 1px solid #ddd;
+	padding: 8px;
 }
 tr:nth-child(even) {
-    background-color: #f2f2f2;
+	background-color: #f2f2f2;
 }
 tr:hover {
-    background-color: #ddd;
+	background-color: #ddd;
 }
 th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
+	padding-top: 12px;
+	padding-bottom: 12px;
+	text-align: left;
 }
 .entry-content dl,
 .comment-content dl {
-    margin: 0 24px;
-    margin: 0 1.714285714rem;
+	margin: 0 24px;
+	margin: 0 1.714285714rem;
 }
 .entry-content dt,
 .comment-content dt {
-    font-weight: bold;
-    line-height: 1.714285714;
+	font-weight: bold;
+	line-height: 1.714285714;
 }
 .entry-content dd,
 .comment-content dd {
-    line-height: 1.714285714;
-    margin-bottom: 24px;
-    margin-bottom: 1.714285714rem;
+	line-height: 1.714285714;
+	margin-bottom: 24px;
+	margin-bottom: 1.714285714rem;
 }
 .entry-content address,
 .comment-content address {
-    display: block;
-    line-height: 1.714285714;
-    margin: 0 0 24px;
-    margin: 0 0 1.714285714rem;
-    font-style: italic;
+	display: block;
+	line-height: 1.714285714;
+	margin: 0 0 24px;
+	margin: 0 0 1.714285714rem;
+	font-style: italic;
 }
 .entry-content abbr,
 .comment-content abbr,
@@ -298,15 +298,15 @@ th {
 .comment-content dfn,
 .entry-content acronym,
 .comment-content acronym {
-    border-bottom: 1px dotted #666 !important;
-    cursor: help;
+	border-bottom: 1px dotted #666 !important;
+	cursor: help;
 }
 .entry-content del {
-    text-decoration: line-through !important;
+	text-decoration: line-through !important;
 }
 ins {
-    background: #fff9c0;
-    text-decoration: none;
+	background: #fff9c0;
+	text-decoration: none;
 }
 .entry-content img {}
 /*--------------------------------------------------------------
@@ -317,21 +317,21 @@ button,
 input[type="button"],
 input[type="reset"],
 input[type="submit"] {
-    border: 1px solid;
-    border-color: #ccc #ccc #bbb;
-    border-radius: 3px;
-    background: #e6e6e6;
-    color: rgba(0, 0, 0, 0.8);
-    font-size: 12px;
-    font-size: 0.75rem;
-    line-height: 1;
-    padding: .6em 1em .4em;
+	border: 1px solid;
+	border-color: #ccc #ccc #bbb;
+	border-radius: 3px;
+	background: #e6e6e6;
+	color: rgba(0, 0, 0, 0.8);
+	font-size: 12px;
+	font-size: 0.75rem;
+	line-height: 1;
+	padding: .6em 1em .4em;
 }
 button:hover,
 input[type="button"]:hover,
 input[type="reset"]:hover,
 input[type="submit"]:hover {
-    border-color: #ccc #bbb #aaa;
+	border-color: #ccc #bbb #aaa;
 }
 button:active,
 button:focus,
@@ -341,7 +341,7 @@ input[type="reset"]:active,
 input[type="reset"]:focus,
 input[type="submit"]:active,
 input[type="submit"]:focus {
-    border-color: #aaa #bbb #bbb;
+	border-color: #aaa #bbb #bbb;
 }
 input[type="text"],
 input[type="email"],
@@ -359,10 +359,10 @@ input[type="datetime"],
 input[type="datetime-local"],
 input[type="color"],
 textarea {
-    color: #666;
-    border: 1px solid #ccc;
-    border-radius: 3px;
-    padding: 3px;
+	color: #666;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 3px;
 }
 input[type="text"]:focus,
 input[type="email"]:focus,
@@ -380,13 +380,13 @@ input[type="datetime"]:focus,
 input[type="datetime-local"]:focus,
 input[type="color"]:focus,
 textarea:focus {
-    color: #111;
+	color: #111;
 }
 select {
-    border: 1px solid #ccc;
+	border: 1px solid #ccc;
 }
 textarea {
-    width: 100%;
+	width: 100%;
 }
 /*--------------------------------------------------------------
 # Accessibility
@@ -395,85 +395,85 @@ textarea {
 /* Text meant only for screen readers. */
 
 .screen-reader-text {
-    clip: rect(1px, 1px, 1px, 1px);
-    position: absolute !important;
-    height: 1px;
-    width: 1px;
-    overflow: hidden;
-    word-wrap: normal !important;
-    /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+	clip: rect(1px, 1px, 1px, 1px);
+	position: absolute !important;
+	height: 1px;
+	width: 1px;
+	overflow: hidden;
+	word-wrap: normal !important;
+	/* Many screen reader and browser combinations announce broken words as they would appear visually. */
 }
 .screen-reader-text:focus {
-    background-color: #f1f1f1;
-    border-radius: 3px;
-    box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
-    clip: auto !important;
-    color: #21759b;
-    display: block;
-    font-size: 14px;
-    font-size: 0.875rem;
-    font-weight: bold;
-    height: auto;
-    left: 5px;
-    line-height: normal;
-    padding: 15px 23px 14px;
-    text-decoration: none;
-    top: 5px;
-    width: auto;
-    z-index: 100000;
-    /* Above WP toolbar. */
+	background-color: #f1f1f1;
+	border-radius: 3px;
+	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+	clip: auto !important;
+	color: #21759b;
+	display: block;
+	font-size: 14px;
+	font-size: 0.875rem;
+	font-weight: bold;
+	height: auto;
+	left: 5px;
+	line-height: normal;
+	padding: 15px 23px 14px;
+	text-decoration: none;
+	top: 5px;
+	width: auto;
+	z-index: 100000;
+	/* Above WP toolbar. */
 }
 /* Do not show the outline on the skip link target. */
 
 #primary[tabindex="-1"]:focus {
-    outline: 0;
+	outline: 0;
 }
 /*--------------------------------------------------------------
 # Alignments
 --------------------------------------------------------------*/
 
 .alignleft {
-    float: left;
-    margin: 7px 28px 28px 0;
+	float: left;
+	margin: 7px 28px 28px 0;
 }
 .alignright {
-    float: right;
-    margin: 7px 0 28px 28px;
+	float: right;
+	margin: 7px 0 28px 28px;
 }
 .aligncenter {
-    clear: both;
-    display: block;
-    margin: 7px auto;
+	clear: both;
+	display: block;
+	margin: 7px auto;
 }
 .alignleft,
 .alignright {
-    max-width: 636px;
-    /* Let's work to make this !important unnecessary */
+	max-width: 636px;
+	/* Let's work to make this !important unnecessary */
 }
 .alignleft figcaption {
-    clear: left;
+	clear: left;
 }
 .alignright figcaption {
-    clear: right;
+	clear: right;
 }
 .alignleft img,
 .alignleft figcaption {
-    float: left;
-    margin-right: 1.5em;
+	float: left;
+	margin-right: 1.5em;
 }
 .alignright img {
-    float: right;
-    margin-left: 1.5em;
+	float: right;
+	margin-left: 1.5em;
 }
 .alignright figcaption {
-    float: none;
-    padding-top: 5px;
+	float: none;
+	padding-top: 5px;
 }
 .aligncenter {
-    clear: both;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+	clear: both;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 .entry-content img,
 .comment-content img,
@@ -481,53 +481,53 @@ textarea {
 img.header-image,
 .author-avatar img,
 img.wp-post-image {
-    border-radius: 3px;
-    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+	border-radius: 3px;
+	box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
 }
 .entry-content img {
-    height: auto;
-    width: auto;
+	height: auto;
+	width: auto;
 }
 img.alignleft,
 .wp-caption.alignleft {
-    margin: 12px 24px 12px 0;
-    margin: 0.857142857rem 1.714285714rem 0.857142857rem 0;
+	margin: 12px 24px 12px 0;
+	margin: 0.857142857rem 1.714285714rem 0.857142857rem 0;
 }
 article.format-aside .aside {
-    padding: 24px 24px 0;
-    padding: 1.714285714rem;
-    background: #d2e0f9;
-    border-left: 22px solid #a8bfe8;
+	padding: 24px 24px 0;
+	padding: 1.714285714rem;
+	background: #d2e0f9;
+	border-left: 22px solid #a8bfe8;
 }
 .sidebar .menu {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
 }
 .sidebar .menu ul {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
 }
 .sidebar .menu li {
-    list-style: none;
-    margin: 0px;
-    padding: 0px;
-    line-height: 1.6em;
+	list-style: none;
+	margin: 0px;
+	padding: 0px;
+	line-height: 1.6em;
 }
 /*--------------------------------------------------------------
 # Widgets
 --------------------------------------------------------------*/
 
 .widget-area {
-    width: 25%;
+	width: 25%;
 }
 .widget {
-    margin: 0 0 1.5em;
-    /* Make sure select elements fit in widgets. */
+	margin: 0 0 1.5em;
+	/* Make sure select elements fit in widgets. */
 }
 .widget select {
-    max-width: 100%;
+	max-width: 100%;
 }
 /*--------------------------------------------------------------
 # Infinite scroll
@@ -537,13 +537,13 @@ article.format-aside .aside {
 
 .infinite-scroll .posts-navigation,
 .infinite-scroll.neverending .site-footer {
-    /* Theme Footer (when set to scrolling) */
-    display: none;
+	/* Theme Footer (when set to scrolling) */
+	display: none;
 }
 /* When Infinite Scroll has reached its end we need to re-display elements that were hidden (via .neverending) before. */
 
 .infinity-end.neverending .site-footer {
-    display: block;
+	display: block;
 }
 /*--------------------------------------------------------------
 # Media
@@ -552,117 +552,117 @@ article.format-aside .aside {
 .page-content .wp-smiley,
 .entry-content .wp-smiley,
 .comment-content .wp-smiley {
-    border: none;
-    margin-bottom: 0;
-    margin-top: 0;
-    padding: 0;
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
 }
 /* Make sure embeds and iframes fit their containers. */
 
 embed,
 iframe,
 object {
-    max-width: 100%;
+	max-width: 100%;
 }
 /* Make sure logo link wraps around logo image. */
 
 .custom-logo-link {
-    display: inline-block;
+	display: inline-block;
 }
 /*--------------------------------------------------------------
 ## Captions
 --------------------------------------------------------------*/
 
 .wp-caption {
-    margin-bottom: 1.5em;
-    max-width: 100%;
+	margin-bottom: 1.5em;
+	max-width: 100%;
 }
 .wp-caption img[class*="wp-image-"] {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
 }
 .wp-caption .wp-caption-text {
-    margin: 0.8075em 0;
-    font-size: 14px;
-    color: #797979;
+	margin: 0.8075em 0;
+	font-size: 14px;
+	color: #797979;
 }
 .wp-caption-text {
-    text-align: center;
+	text-align: center;
 }
 /*--------------------------------------------------------------
 ## Galleries
 --------------------------------------------------------------*/
 
 .gallery {
-    margin-bottom: 1.5em;
+	margin-bottom: 1.5em;
 }
 .gallery-item {
-    display: inline-block;
-    text-align: center;
-    vertical-align: top;
-    width: 100%;
+	display: inline-block;
+	text-align: center;
+	vertical-align: top;
+	width: 100%;
 }
 .gallery .gallery-icon img {
-    height: auto;
-    max-width: 100%;
-    width: 90%
+	height: auto;
+	max-width: 100%;
+	width: 90%
 }
 .gallery .gallery-icon a {
-    width: 100%
+	width: 100%
 }
 .gallery-caption {} .gallery-columns-2 .gallery-item {
-    max-width: 50%;
+	max-width: 50%;
 }
 .gallery-columns-3 .gallery-item {
-    max-width: 33.3333333333%;
+	max-width: 33.3333333333%;
 }
 .gallery-columns-4 .gallery-item {
-    max-width: 25%;
+	max-width: 25%;
 }
 .gallery-columns-5 .gallery-item {
-    max-width: 20%;
+	max-width: 20%;
 }
 .gallery-columns-6 .gallery-item {
-    max-width: 16.6666666667%;
+	max-width: 16.6666666667%;
 }
 .gallery-columns-7 .gallery-item {
-    max-width: 14.2857142857%;
+	max-width: 14.2857142857%;
 }
 .gallery-columns-8 .gallery-item {
-    max-width: 12.5%;
+	max-width: 12.5%;
 }
 .gallery-columns-9 .gallery-item {
-    max-width: 11.1111111111%;
+	max-width: 11.1111111111%;
 }
 .gallery-caption {
-    display: block;
+	display: block;
 }
 /* =Single audio/video attachment view
 -------------------------------------------------------------- */
 
 .attachment .entry-content .mejs-audio {
-    max-width: 400px;
+	max-width: 400px;
 }
 .attachment .entry-content .mejs-container {
-    margin-bottom: 24px;
+	margin-bottom: 24px;
 }
 .mejs-container {
-    width: 650px !important;
+	width: 650px !important;
 }
 /*--------------------------------------------------------------
 # Others
 --------------------------------------------------------------*/
 
 .main_p .entry_header_small .tagcloud span.namee {
-    font-weight: 500;
-    font-size: 14px;
+	font-weight: 500;
+	font-size: 14px;
 }
 .main_p .entry_header_small .catloud {
-    margin-bottom: 10px;
+	margin-bottom: 10px;
 }
 figure {
-    width: auto !important;
+	width: auto !important;
 }
 .bypostauthor {
 	-webkit-font-smoothing: antialiased;
