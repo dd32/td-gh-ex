@@ -4,15 +4,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Catch Box\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2019-07-15 23:29-0700\n"
-"PO-Revision-Date: 2019-07-15 23:29-0700\n"
+"POT-Creation-Date: 2019-08-05 17:57-0700\n"
+"PO-Revision-Date: 2019-08-05 17:57-0700\n"
 "Last-Translator: Johnny Eriksson <info@johnnysblogg.se>\n"
 "Language-Team: Johnny Eriksson <info@johnnysblogg.se>\n"
 "Language: sv\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__\n"
+"X-Poedit-KeywordsList: __;_e;_x:1,2c;_ex:1,2c;_n:1,2;esc_attr_e;esc_attr__;"
+"_x;esc_html_e;esc_html__;_nx:4c,1,2;_nx_noop:4c,1,2;__ngttext_noop:1,2;_c,"
+"_nc:4c,1,2;esc_html_x\n"
 "X-Poedit-Basepath: .\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
@@ -21,11 +23,11 @@ msgstr ""
 
 #: ../404.php:14
 msgid "Error 404 - Page Not Found."
-msgstr "Fel 404 - Sidan kunde inte hittas"
+msgstr "Fel 404 - Sidan kunde inte hittas."
 
 #: ../404.php:18
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for."
-msgstr "Det du s&ouml;ker kunde inte hittas"
+msgstr "Det du s&ouml;ker kunde inte hittas."
 
 #: ../404.php:19
 msgid "This might be because:"
@@ -52,18 +54,18 @@ msgstr ""
 "knappen i webbl&auml;saren eller anv&auml;nd s&ouml;k-f&auml;ltet nedan."
 
 #: ../archive.php:46 ../author.php:69 ../category.php:45 ../index.php:32
-#: ../search.php:39 ../tag.php:45
+#: ../page-blog.php:67 ../search.php:39 ../tag.php:45
 msgid "Nothing Found"
 msgstr "Hittade inget"
 
 #: ../archive.php:50 ../author.php:73 ../category.php:49 ../index.php:36
-#: ../tag.php:49
+#: ../page-blog.php:71 ../tag.php:49
 msgid ""
 "Apologies, but no results were found for the requested archive. Perhaps "
 "searching will help find a related post."
 msgstr ""
 "Tyv&auml;rr hittades inget i efterfr&aring;at arkiv. Prova att g&ouml;ra en "
-"s&ouml;kning i st&auml;llet "
+"s&ouml;kning i st&auml;llet."
 
 #: ../author.php:25
 #, php-format
@@ -88,12 +90,18 @@ msgstr ""
 "senordet f&ouml;r att se eventuella kommentarer."
 
 #: ../comments.php:36
-#, fuzzy, php-format
-#| msgid "One thought on &ldquo;%2$s&rdquo;"
-#| msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
+#, php-format
 msgctxt "comments title"
 msgid "One Reply to &ldquo;%s&rdquo;"
-msgstr "En tanke om &ldquo;%2$s&rdquo;"
+msgstr "Ett svar till &ldquo;%s&rdquo;"
+
+#: ../comments.php:41
+#, php-format
+msgctxt "comments title"
+msgid "%1$s Reply to &ldquo;%2$s&rdquo;"
+msgid_plural "%1$s Replies to &ldquo;%2$s&rdquo;"
+msgstr[0] "Ett svar till &ldquo;%2$s&rdquo;"
+msgstr[1] "%1$ svar till &ldquo;%2$s&rdquo;"
 
 #: ../comments.php:56 ../comments.php:76
 msgid "Comment navigation"
@@ -109,7 +117,7 @@ msgstr "Nyare kommentarer &rarr;"
 
 #: ../comments.php:88
 msgid "Comments are closed."
-msgstr "Kommentarer &auml;r avst&auml;ngda"
+msgstr "Kommentarer &auml;r avst&auml;ngda."
 
 #: ../content-aside.php:15 ../content-featured.php:14 ../content-gallery.php:15
 #: ../content-gallery.php:46 ../content-image.php:14 ../content-link.php:15
@@ -218,8 +226,8 @@ msgstr "L&auml;s hela inl&auml;gget <span class=\"meta-nav\">&rarr;</span>"
 #, php-format
 msgid "This gallery contains <a %1$s>%2$s photo</a>."
 msgid_plural "This gallery contains <a %1$s>%2$s photos</a>."
-msgstr[0] "Detta album inneh&aring;ller <a %1$s>%2$s bild</a>"
-msgstr[1] "Detta album inneh&aring;ller <a %1$s>%2$s bilder</a>"
+msgstr[0] "Detta album inneh&aring;ller <a %1$s>%2$s bild</a>."
+msgstr[1] "Detta album inneh&aring;ller <a %1$s>%2$s bilder</a>."
 
 #: ../content-gallery.php:70 ../content-image.php:54 ../content-quote.php:52
 #: ../content.php:81
@@ -323,47 +331,73 @@ msgstr "Presenterad"
 msgid "Primary Menu"
 msgstr "Huvudmeny"
 
-#: ../functions.php:143 ../inc/catchbox-menus.php:126
+#: ../functions.php:143 ../inc/catchbox-menus.php:92
+#: ../inc/catchbox-menus.php:126
 msgid "Secondary Menu"
 msgstr "Sidomeny"
 
-#: ../functions.php:144 ../inc/catchbox-menus.php:172
+#: ../functions.php:144 ../inc/catchbox-menus.php:163
+#: ../inc/catchbox-menus.php:172
 msgid "Footer Menu"
 msgstr "Sidfots meny"
 
 #: ../functions.php:209
 msgid "Small"
-msgstr ""
+msgstr "Liten"
 
 #: ../functions.php:210
 msgid "S"
-msgstr ""
+msgstr "S"
 
 #: ../functions.php:215
 msgid "Normal"
-msgstr ""
+msgstr "Normal"
 
 #: ../functions.php:216
 msgid "M"
-msgstr ""
+msgstr "M"
 
 #: ../functions.php:221
 msgid "Large"
-msgstr ""
+msgstr "Stor"
 
 #: ../functions.php:222
 msgid "L"
-msgstr ""
+msgstr "L"
 
 #: ../functions.php:227
 msgid "Huge"
-msgstr ""
+msgstr "Större"
 
 #: ../functions.php:228
 msgid "XL"
-msgstr ""
+msgstr "XL"
 
-#: ../functions.php:417 ../functions.php:446
+#: ../functions.php:238
+msgid "White"
+msgstr "Vit"
+
+#: ../functions.php:243
+msgid "Black"
+msgstr "Svart"
+
+#: ../functions.php:248
+msgid "Dark Gray"
+msgstr "M&ouml;rk gr&aring;"
+
+#: ../functions.php:253
+msgid "Medium Gray"
+msgstr "Mellangr&aring;"
+
+#: ../functions.php:258
+msgid "Light Gray"
+msgstr "Ljus gr&aring;"
+
+#: ../functions.php:263 ../inc/default-options.php:39
+msgid "Blue"
+msgstr "Bl&aring;"
+
+#: ../functions.php:417 ../functions.php:446 ../page-blog.php:44
 msgid "Post navigation"
 msgstr "Inl&auml;ggsnavigering"
 
@@ -416,11 +450,20 @@ msgstr ""
 msgid "ID"
 msgstr "ID"
 
+#: ../functions.php:713
+msgid "expand child menu"
+msgstr "&Ouml;ppna undermeny"
+
+#: ../functions.php:714
+msgid "collapse child menu"
+msgstr "st&auml;ng undermeny"
+
 #: ../functions.php:803
 msgid "Name"
 msgstr "Namn"
 
 #: ../functions.php:805 ../functions.php:955
+#: ../inc/customizer/customizer.php:612
 msgid "Email"
 msgstr "E-post"
 
@@ -428,11 +471,11 @@ msgstr "E-post"
 msgid "Footer Social Links Menu"
 msgstr "Sociala l&auml;nkar i sidfot"
 
-#: ../functions.php:865
+#: ../functions.php:865 ../inc/customizer/customizer.php:432
 msgid "Facebook"
 msgstr "Facebook"
 
-#: ../functions.php:870
+#: ../functions.php:870 ../inc/customizer/customizer.php:442
 msgid "Twitter"
 msgstr "Twitter"
 
@@ -444,7 +487,7 @@ msgstr "Google Plus"
 msgid "Linkedin"
 msgstr "Linkedin"
 
-#: ../functions.php:885
+#: ../functions.php:885 ../inc/customizer/customizer.php:472
 msgid "Pinterest"
 msgstr "Pinterest"
 
@@ -460,19 +503,19 @@ msgstr "RSS Feed"
 msgid "Deviantart"
 msgstr "Deviantart"
 
-#: ../functions.php:905
+#: ../functions.php:905 ../inc/customizer/customizer.php:512
 msgid "Tumblr"
 msgstr "Tumblr"
 
-#: ../functions.php:910
+#: ../functions.php:910 ../inc/customizer/customizer.php:522
 msgid "Vimeo"
 msgstr "Vimeo"
 
-#: ../functions.php:915
+#: ../functions.php:915 ../inc/customizer/customizer.php:532
 msgid "Dribbble"
 msgstr "Dribbble"
 
-#: ../functions.php:920
+#: ../functions.php:920 ../inc/customizer/customizer.php:542
 msgid "MySpace"
 msgstr "MySpace"
 
@@ -480,49 +523,58 @@ msgstr "MySpace"
 msgid "AIM"
 msgstr "AIM"
 
-#: ../functions.php:930
+#: ../functions.php:930 ../inc/customizer/customizer.php:562
 msgid "Flickr"
 msgstr "Flickr"
 
-#: ../functions.php:935
+#: ../functions.php:935 ../inc/customizer/customizer.php:572
 msgid "Slideshare"
 msgstr "Slideshare"
 
-#: ../functions.php:940
+#: ../functions.php:940 ../inc/customizer/customizer.php:582
+#: ../inc/widgets.php:64
 msgid "Instagram"
 msgstr "Instagram"
 
-#: ../functions.php:945
+#: ../functions.php:945 ../inc/customizer/customizer.php:592
 msgid "Skype"
 msgstr "Skype"
 
-#: ../functions.php:950
+#: ../functions.php:950 ../inc/customizer/customizer.php:602
 msgid "Soundcloud"
 msgstr "Soundcloud"
 
-#: ../functions.php:960
+#: ../functions.php:960 ../inc/customizer/customizer.php:622
 msgid "Xing"
 msgstr "Xing"
 
-#: ../functions.php:965
+#: ../functions.php:965 ../inc/customizer/customizer.php:632
 msgid "Meetup"
 msgstr "Meetup"
 
-#: ../functions.php:971
+#: ../functions.php:971 ../inc/customizer/customizer.php:642
 msgid "Goodreads"
-msgstr ""
+msgstr "Goodreads"
 
-#: ../functions.php:977
+#: ../functions.php:977 ../inc/customizer/customizer.php:652
 msgid "Github"
-msgstr ""
+msgstr "Github"
 
-#: ../functions.php:983
+#: ../functions.php:983 ../inc/customizer/customizer.php:662
 msgid "VK"
-msgstr ""
+msgstr "VK"
 
-#: ../functions.php:988
+#: ../functions.php:988 ../inc/customizer/customizer.php:672
 msgid "Spotify"
-msgstr ""
+msgstr "Spotify"
+
+#: ../functions.php:1069
+msgid "Scroll Up"
+msgstr "Scroll Up"
+
+#: ../functions.php:1103
+msgid "Skip to content"
+msgstr "G&aring; till huvudsakligt inneh&aring;ll"
 
 #: ../image.php:15
 msgid "Image navigation"
@@ -550,13 +602,45 @@ msgstr ""
 "&times; %5$s</a> i <a href=\"%6$s\" title=\"Tillbaka till %7$s\" rel="
 "\"gallery\">%8$s</a>"
 
+#: ../inc/catchbox-menus.php:82
+msgid "Menu"
+msgstr "Meny"
+
 #: ../inc/catchbox-menus.php:104
 msgid "Primary menu"
 msgstr "Huvudmeny"
 
+#: ../inc/catchbox-menus.php:127
+msgid "Secondary menu"
+msgstr "Sidomeny"
+
 #: ../inc/catchbox-menus.php:173
 msgid "Footer menu"
 msgstr "Sidfots meny"
+
+#: ../inc/catchbox-metabox.php:16 ../inc/catchbox-metabox.php:23
+msgid "Catch Box Options"
+msgstr "Catch Box-inst&auml;llningar"
+
+#: ../inc/catchbox-metabox.php:42
+msgid "Default"
+msgstr "F&ouml;rvald"
+
+#: ../inc/catchbox-metabox.php:47
+msgid "Right sidebar"
+msgstr "Sidof&auml;lt till h&ouml;ger"
+
+#: ../inc/catchbox-metabox.php:52
+msgid "Left sidebar"
+msgstr "Sidof&auml;lt till v&auml;nster"
+
+#: ../inc/catchbox-metabox.php:57
+msgid "No Sidebar, One Column"
+msgstr "En kolumn - inget sidof&auml;lt"
+
+#: ../inc/catchbox-metabox.php:65
+msgid "Sidebar Layout Options"
+msgstr "Inst&auml;llningar f&auml;r sidof&auml;lts layout"
 
 #: ../inc/custom-header.php:31
 msgid "Garden"
@@ -590,6 +674,318 @@ msgstr "Ge ett bidrag nu"
 msgid "Review"
 msgstr "Recension"
 
+#: ../inc/customizer/customizer.php:31
+msgid "Theme Options"
+msgstr "Temainst&auml;llningar"
+
+#: ../inc/customizer/customizer.php:32
+msgid "Basic theme Options"
+msgstr "Grundlauml;ggande temainst&auml;llningar"
+
+#: ../inc/customizer/customizer.php:36 ../inc/customizer/customizer.php:229
+msgid "Default Layout"
+msgstr "F&ouml;rvald layout"
+
+#: ../inc/customizer/customizer.php:41 ../inc/customizer/customizer.php:240
+msgid "Content Layout"
+msgstr "Inneh&aring;llslayout"
+
+#: ../inc/customizer/customizer.php:46 ../inc/customizer/customizer.php:252
+msgid "Excerpt Length in Words"
+msgstr "L&auml;ngd p&aring; inl&auml;ggsinledningar (antal ord)"
+
+#: ../inc/customizer/customizer.php:51
+msgid "Feed Redirect URL"
+msgstr "URL till feed-omdirigering"
+
+#: ../inc/customizer/customizer.php:56
+msgid "Search Text Settings"
+msgstr "S&ouml;ktextinst&auml;llningar"
+
+#: ../inc/customizer/customizer.php:61
+msgid "Disable Search in Header"
+msgstr "Avaktivera s&ouml;krutan i sidhuvudet"
+
+#: ../inc/customizer/customizer.php:66
+msgid "Mobile Menu Options"
+msgstr "Inst&auml;llningar f&ouml;r huvudmeny f&ouml;r mobiler"
+
+#: ../inc/customizer/customizer.php:71 ../inc/customizer/customizer.php:326
+msgid "Custom CSS Styles"
+msgstr "Anpassad CSS-stil"
+
+#: ../inc/customizer/customizer.php:76
+msgid "Scroll Up Options"
+msgstr "Inst&auml;llningar f&ouml;r Scroll Up"
+
+#: ../inc/customizer/customizer.php:84 ../inc/customizer/customizer.php:85
+msgid "Featured Slider"
+msgstr "Framh&auml;vt bildspel"
+
+#: ../inc/customizer/customizer.php:89
+msgid "Slider Options"
+msgstr "Inst&auml;llningar f&ouml;r bildspel"
+
+#: ../inc/customizer/customizer.php:94
+msgid "Slider Effect Options"
+msgstr "Inst&auml;llningar f&ouml;r bildspelseffekt"
+
+#: ../inc/customizer/customizer.php:102
+msgid "Colors"
+msgstr "F&auml;rger"
+
+#: ../inc/customizer/customizer.php:108
+msgid "Basic Colors"
+msgstr "Grundl&auml;ggande f&auml;rger"
+
+#: ../inc/customizer/customizer.php:113
+msgid "Custom Color Options"
+msgstr "Inst&auml;llningar f&ouml;r valbara f&auml;rger"
+
+#: ../inc/customizer/customizer.php:121
+msgid "Social Links"
+msgstr "Sociala l&auml;nkar"
+
+#: ../inc/customizer/customizer.php:122
+msgid "Add your social links here"
+msgstr "L&auml;gg till dina sociala l&auml;nkar h&auml;r"
+
+#: ../inc/customizer/customizer.php:126
+msgid "Predefined Social Icons"
+msgstr "F&ouml;rdefinierade sociala ikoner"
+
+#: ../inc/customizer/customizer.php:133 ../inc/customizer/customizer.php:138
+msgid "Webmaster Tools"
+msgstr "Webbmaster-verktyg"
+
+#: ../inc/customizer/customizer.php:134 ../inc/customizer/customizer.php:139
+#, php-format
+msgid ""
+"Webmaster Tools falls under Plugins Territory according to Theme Review "
+"Guidelines in WordPress.org. This feature will be depreciated in future "
+"versions from Catch Box free version. If you want this feature, then you can "
+"add <a href=\"%s\">Catch Web Tools</a>  plugin."
+msgstr ""
+"Webmaster Tools faller under Plugins Territory enligt Theme Review "
+"Guidelines p&aring; WordPress.org. Dessa verktyg kommer att tas bort ur "
+"framtida versioner av Catch Box gratis-versioner. Om du vill beh&aring;lla "
+"dessa verktyg kan du installera till&auml;gget <a href=\"%s\">Catch Web "
+"Tools</a>."
+
+#: ../inc/customizer/customizer.php:208
+msgid "Color Scheme"
+msgstr "F&auml;rgschema"
+
+#: ../inc/customizer/customizer.php:219
+msgid "Link Color"
+msgstr "L&auml;nkf&auml;rg"
+
+#: ../inc/customizer/customizer.php:268
+msgid "Feed Redirect url"
+msgstr "URL till feed-omdirigering"
+
+#: ../inc/customizer/customizer.php:279
+msgid "Check to move above the Header/Logo Image"
+msgstr "Markera f&ouml;r att flytta ovanf&ouml;r sidhuvudsbild/-logotyp"
+
+#: ../inc/customizer/customizer.php:287
+msgid "Default Display Text in Search"
+msgstr "F&ouml;rvald text i s&ouml;kf&auml;lt"
+
+#: ../inc/customizer/customizer.php:297
+msgid "Check to Disable"
+msgstr "Markera f&ouml;r att avaktivera"
+
+#: ../inc/customizer/customizer.php:306
+msgid "Check to enable secondary mobile menu"
+msgstr "Markera f&ouml;r att aktivera sidomeny i mobiler"
+
+#: ../inc/customizer/customizer.php:316
+msgid "Check to enable footer mobile menu"
+msgstr "Markera f&ouml;r att aktivera sidfotsmeny i mobiler"
+
+#: ../inc/customizer/customizer.php:338
+msgid "Check to disable scroll up"
+msgstr "Markera f&ouml;r att avaktivera scroll up"
+
+#: ../inc/customizer/customizer.php:350
+msgid "Check to Exclude Slider posts from Homepage posts"
+msgstr ""
+"Markera f&ouml;r att utel&auml;mna bildspelsinl&auml;gg fr&aring;n f&ouml;"
+"rstasidans inl&auml;gg"
+
+#: ../inc/customizer/customizer.php:359
+msgid "Number of Slides"
+msgstr "Antal bilder"
+
+#: ../inc/customizer/customizer.php:360
+msgid ""
+"Customizer page needs to be refreshed after saving if number of slides is "
+"changed"
+msgstr ""
+"Inst&auml;llningssidan m&aring;ste uppdateras efter att ha sparats om "
+"antalet bilder har &auml;ndrats"
+
+#: ../inc/customizer/customizer.php:375
+msgid "Transition Effect"
+msgstr "&Ouml;verg&aring;seffekt"
+
+#: ../inc/customizer/customizer.php:383
+msgid "fade"
+msgstr "tona bort"
+
+#: ../inc/customizer/customizer.php:384
+msgid "wipe"
+msgstr "sudda"
+
+#: ../inc/customizer/customizer.php:385
+msgid "scrollUp"
+msgstr "bl&auml;ddra upp"
+
+#: ../inc/customizer/customizer.php:386
+msgid "scrollDown"
+msgstr "bl&auml;ddra ner"
+
+#: ../inc/customizer/customizer.php:387
+msgid "scrollLeft"
+msgstr "bl&auml;ddra v&auml;nster"
+
+#: ../inc/customizer/customizer.php:388
+msgid "scrollRight"
+msgstr "bl&auml;ddra h&ouml;ger"
+
+#: ../inc/customizer/customizer.php:389
+msgid "blindX"
+msgstr "blindX"
+
+#: ../inc/customizer/customizer.php:390
+msgid "blindY"
+msgstr "blindY"
+
+#: ../inc/customizer/customizer.php:391
+msgid "blindZ"
+msgstr "blindZ"
+
+#: ../inc/customizer/customizer.php:392
+msgid "cover"
+msgstr "t&auml;ck &ouml;ver"
+
+#: ../inc/customizer/customizer.php:393
+msgid "shuffle"
+msgstr "skyffla"
+
+#: ../inc/customizer/customizer.php:398
+msgid "Transition Delay (in seconds)"
+msgstr "&Ouml;verg&aring;ngs f&ouml;rdr&ouml;jning (i sekunder)"
+
+#: ../inc/customizer/customizer.php:414
+msgid "Transition Length"
+msgstr "&Ouml;verg&aring;ngsl&auml;ngd"
+
+#: ../inc/customizer/customizer.php:452
+msgid "Google+"
+msgstr "Google+"
+
+#: ../inc/customizer/customizer.php:462
+msgid "LinkedIn"
+msgstr "LinkedIn"
+
+#: ../inc/customizer/customizer.php:482
+msgid "Youtube"
+msgstr "Youtube"
+
+#: ../inc/customizer/customizer.php:492
+msgid "RSS"
+msgstr "RSS"
+
+#: ../inc/customizer/customizer.php:502
+msgid "deviantART"
+msgstr "deviantART"
+
+#: ../inc/customizer/customizer.php:552
+msgid "Aim"
+msgstr "Aim"
+
+#: ../inc/customizer/customizer.php:684
+msgid "Code to display on Header"
+msgstr "Kod som ska visas i sidhuvudet"
+
+#: ../inc/customizer/customizer.php:685
+msgid ""
+"Here you can put scripts from Google, Facebook etc. which will load on Header"
+msgstr ""
+"Hauml;r placerar du script fr&aring;n Google, Facebook m fl som ska k&ouml; "
+"i sidhuvudet"
+
+#: ../inc/customizer/customizer.php:695
+msgid "Code to display on Footer"
+msgstr "Kod som ska visas i sidfoten"
+
+#: ../inc/customizer/customizer.php:696
+msgid ""
+"Here you can put scripts from Google, Facebook etc. which will load on Footer"
+msgstr ""
+"Hauml;r placerar du script fr&aring;n Google, Facebook m fl som ska k&ouml; "
+"i sidfoten"
+
+#: ../inc/customizer/customizer.php:712
+msgid "Header Image Location"
+msgstr "Placering av bild f&ouml; sidhuvud"
+
+#: ../inc/customizer/customizer.php:719
+msgid "Above Header Content"
+msgstr "Inneh&aring;ll ovanf&ouml;r sidhuvudet"
+
+#: ../inc/customizer/customizer.php:720
+msgid "Between Site Title-Logo"
+msgstr "Mellan webbplatsens titel och logo"
+
+#: ../inc/customizer/customizer.php:721
+msgid "Below Header Content"
+msgstr "Inneh&aring;ll under sidhuvudet"
+
+#: ../inc/customizer/customizer.php:861
+#, php-format
+msgid "#%s Featured Post ID"
+msgstr "#%s Framh&auml;vd post ID"
+
+#: ../inc/customizer/customizer.php:876
+msgid ""
+"Caution: Reset all settings to default. Refresh the page after save to view "
+"full effects."
+msgstr ""
+"Varning: &Aring;terst&auml;ll alla inst&auml;llningar till f&ouml;rvalda "
+"v&auml;rden. Uppdatera sidan efter att ha sparat f&ouml;r att se alla &auml;"
+"ndringar."
+
+#: ../inc/customizer/customizer.php:878
+msgid "Reset all settings"
+msgstr "&Aring;terst&auml;ll alla inst&auml;llningar"
+
+#: ../inc/customizer/customizer.php:888
+msgid "Check to reset all settings to default"
+msgstr ""
+"Markera f&ouml;r att &aring;terst&auml;lla alla inst&auml;llningar till "
+"f&ouml;rvalda v&auml;rden"
+
+#: ../inc/customizer/customizer.php:898 ../inc/customizer/customizer.php:909
+msgid "Important Links"
+msgstr "Viktiga l&auml;nkar"
+
+#: ../inc/customizer/customizer.php:942
+msgid "Refresh the customizer page after saving to view reset effects"
+msgstr ""
+"Uppdatera inst&auml;llningspanelen efter att ha tryckt p&aring; spara f&ouml;"
+"r att kunna se effekten"
+
+#: ../inc/customizer/upgrade-button/class-customize.php:76
+msgid "Catch Box Pro"
+msgstr "Catch Box Pro"
+
+#: ../inc/customizer/upgrade-button/class-customize.php:77
+msgid "Upgrade Now"
+msgstr "Uppgradera nu"
+
 #: ../inc/default-options.php:29
 msgid "Light"
 msgstr "Ljus"
@@ -597,10 +993,6 @@ msgstr "Ljus"
 #: ../inc/default-options.php:34
 msgid "Dark"
 msgstr "M&ouml;rk"
-
-#: ../inc/default-options.php:39
-msgid "Blue"
-msgstr "Bl&aring;"
 
 #: ../inc/default-options.php:44
 msgid "Green"
@@ -617,6 +1009,30 @@ msgstr "Brun"
 #: ../inc/default-options.php:59
 msgid "Orange"
 msgstr "Orange"
+
+#: ../inc/default-options.php:78
+msgid "Content on left"
+msgstr "Inneh&aring;ll till v&auml;nster"
+
+#: ../inc/default-options.php:83
+msgid "Content on right"
+msgstr "Inneh&aring;ll till h&ouml;ger"
+
+#: ../inc/default-options.php:88
+msgid "One-column, no sidebar"
+msgstr "En kolumn utan sidof&auml;lt"
+
+#: ../inc/default-options.php:105
+msgid "Show excerpt"
+msgstr "Visa inl&auml;ggsinledningar"
+
+#: ../inc/default-options.php:109
+msgid "Show full content"
+msgstr "Visa hela inl&auml;gg"
+
+#: ../inc/default-options.php:134
+msgid "Search"
+msgstr "S&ouml;k"
 
 #: ../inc/default-options.php:183
 msgid "Y"
@@ -639,10 +1055,8 @@ msgid "Copyright"
 msgstr "Copyright"
 
 #: ../inc/default-options.php:236 ../inc/default-options.php:239
-#, fuzzy
-#| msgid "All Rights Reserved"
 msgid "All Rights Reserved."
-msgstr "Alla r&auml;ttigheter f&ouml;rbeh&aring;lls / All Rights Reserved"
+msgstr "Alla r&auml;ttigheter f&ouml;rbeh&aring;lls / All Rights Reserved."
 
 #: ../inc/widgets.php:23
 msgid "Main Sidebar"
@@ -664,6 +1078,15 @@ msgstr "Sidfotsomr&aring;de 2"
 msgid "Footer Area Three"
 msgstr "Sidfotsomr&aring;de 3"
 
+#: ../inc/widgets.php:66
+msgid ""
+"Appears above footer. This sidebar is only for Widget from plugin Catch "
+"Instagram Feed Gallery Widget and Catch Instagram Feed Gallery Widget Pro"
+msgstr ""
+"Visas ovanf&ouml;r sidfoten. Detta sidof&auml;lt &auml;r endast f&ouml;r "
+"widgetar fr&aring;n plugin Catch Instagram Feed Gallery Widget och Catch "
+"Instagram Feed Gallery Widget Pro"
+
 #: ../inc/widgets.php:86
 msgid "CT: Adspace Widget"
 msgstr "CT: Adspace Widget"
@@ -672,7 +1095,7 @@ msgstr "CT: Adspace Widget"
 msgid "Use this widget to add any type of Ad as a widget. "
 msgstr ""
 "Anv&auml;nd den h&auml;r widgeten f&ouml;r att l&auml;gga till valfri annons "
-"som en widget"
+"som en widget "
 
 #: ../inc/widgets.php:105
 msgid "Title (optional):"
@@ -705,7 +1128,11 @@ msgid ""
 "different keywords."
 msgstr ""
 "Tyv&auml;rr - din s&ouml;kning gav inga tr&auml;ffar. F&ouml;rs&ouml;k igen "
-"med andra s&ouml;kord "
+"med andra s&ouml;kord."
+
+#: ../searchform.php:14
+msgid "Search for:"
+msgstr "S&ouml;k efter:"
 
 #: ../searchform.php:17
 msgctxt "submit button"
@@ -722,7 +1149,7 @@ msgid ""
 "layout option."
 msgstr ""
 "Detta &auml;r widgetomr&aring;det i prim&auml;ra sidomenyn om du anv&auml;"
-"nder tv&aring;kolumners layout"
+"nder tv&aring;kolumners layout."
 
 #: ../sidebar.php:32
 #, php-format
@@ -733,61 +1160,32 @@ msgid ""
 msgstr ""
 "Som grund kommer S&ouml;k och Arkiv widgetarna placeras enligt vad som visas "
 "nedan. Du kan &auml;ndra widgetar p&aring; detta omr&aring;de genom att "
-"g&aring; till <a href=\"%s\">Widgets Panel</a> "
+"g&aring; till <a href=\"%s\">Widgets Panel</a>."
 
 #: ../sidebar.php:38
 msgid "Archives"
 msgstr "Arkiv"
 
 #: ../single.php:26
-#, fuzzy
-#| msgid "Next <span class=\"meta-nav\">&rarr;</span>"
 msgid "Next <span class=\"nav-icon\">&rarr;</span>"
 msgstr "Senare <span class=\"meta-nav\">&rarr;</span>"
 
 #: ../single.php:27
 msgid "Next post:"
-msgstr ""
+msgstr "N&auml;sta &rarr;:"
 
 #: ../single.php:29
-#, fuzzy
-#| msgid "<span class=\"meta-nav\">&larr;</span> Previous"
 msgid "<span class=\"nav-icon\">&larr;</span> Previous"
 msgstr "<span class=\"meta-nav\">&larr;</span> Tidigare"
 
 #: ../single.php:30
 msgid "Previous post:"
-msgstr ""
+msgstr "&larr; F&ouml;reg&aring;ende:"
 
 #: ../tag.php:16
 #, php-format
 msgid "Tag Archives: %s"
 msgstr "Etikett-arkiv: %s"
-
-#~ msgid "Content on left"
-#~ msgstr "Inneh&aring;ll till v&auml;nster"
-
-#~ msgid "Content on right"
-#~ msgstr "Inneh&aring;ll till h&ouml;ger"
-
-#~ msgid "One-column, no sidebar"
-#~ msgstr "En kolumn utan sidof&auml;lt"
-
-#~ msgid "Show excerpt"
-#~ msgstr "Visa inl&auml;ggsinledningar"
-
-#~ msgid "Show full content"
-#~ msgstr "Visa hela inl&auml;gg"
-
-#~ msgctxt "label"
-#~ msgid "Search for:"
-#~ msgstr "S&ouml;k efter:"
-
-#~ msgid "Theme Options"
-#~ msgstr "Temainst&auml;llningar"
-
-#~ msgid "Basic theme Options"
-#~ msgstr "Grundlauml;ggande temainst&auml;llningar"
 
 #~ msgid "Favicon"
 #~ msgstr "Favicon"
@@ -804,200 +1202,11 @@ msgstr "Etikett-arkiv: %s"
 #~ "och h&ouml;jd 144px, vilket kommer att st&ouml;dja h&ouml;guppl&ouml;sta "
 #~ "enheter som iPad Retina"
 
-#~ msgid "Default Layout"
-#~ msgstr "F&ouml;rvald layout"
-
-#~ msgid "Content Layout"
-#~ msgstr "Inneh&aring;llslayout"
-
-#~ msgid "Excerpt Length in Words"
-#~ msgstr "L&auml;ngd p&aring; inl&auml;ggsinledningar (antal ord)"
-
-#~ msgid "Feed Redirect URL"
-#~ msgstr "URL till feed-omdirigering"
-
-#~ msgid "Custom CSS Styles"
-#~ msgstr "Anpassad CSS-stil"
-
-#~ msgid "Scroll Up Options"
-#~ msgstr "Inst&auml;llningar f&ouml;r Scroll Up"
-
-#~ msgid "Featured Slider"
-#~ msgstr "Framh&auml;vt bildspel"
-
-#~ msgid "Slider Options"
-#~ msgstr "Inst&auml;llningar f&ouml;r bildspel"
-
-#~ msgid "Slider Effect Options"
-#~ msgstr "Inst&auml;llningar f&ouml;r bildspelseffekt"
-
-#~ msgid "Social Links"
-#~ msgstr "Sociala l&auml;nkar"
-
-#~ msgid "Add your social links here"
-#~ msgstr "L&auml;gg till dina sociala l&auml;nkar h&auml;r"
-
-#~ msgid "Predefined Social Icons"
-#~ msgstr "F&ouml;rdefinierade sociala ikoner"
-
-#~ msgid "Webmaster Tools"
-#~ msgstr "Webbmaster-verktyg"
-
-#~ msgid ""
-#~ "Webmaster Tools falls under Plugins Territory according to Theme Review "
-#~ "Guidelines in WordPress.org. This feature will be depreciated in future "
-#~ "versions from Catch Box free version. If you want this feature, then you "
-#~ "can add <a href=\"%s\">Catch Web Tools</a>  plugin."
-#~ msgstr ""
-#~ "Webmaster Tools faller under Plugins Territory enligt Theme Review "
-#~ "Guidelines p&aring; WordPress.org. Dessa verktyg kommer att tas bort ur "
-#~ "framtida versioner av Catch Box gratis-versioner. Om du vill beh&aring;"
-#~ "lla dessa verktyg kan du installera till&auml;gget <a href=\"%s\">Catch "
-#~ "Web Tools</a>"
-
-#~ msgid "Color Scheme"
-#~ msgstr "F&auml;rgschema"
-
-#~ msgid "Link Color"
-#~ msgstr "L&auml;nkf&auml;rg"
-
-#~ msgid "Feed Redirect url"
-#~ msgstr "URL till feed-omdirigering"
-
-#~ msgid "Check to move above the Header/Logo Image"
-#~ msgstr "Markera f&ouml;r att flytta ovanf&ouml;r sidhuvudsbild/-logotyp"
-
-#~ msgid "Default Display Text in Search"
-#~ msgstr "F&ouml;rvald text i s&ouml;kf&auml;lt"
-
-#~ msgid "Check to Disable"
-#~ msgstr "Markera f&ouml;r att avaktivera"
-
-#~ msgid "Check to disable scroll up"
-#~ msgstr "Markera f&ouml;r att avaktivera scroll up"
-
-#~ msgid "Check to Exclude Slider posts from Homepage posts"
-#~ msgstr ""
-#~ "Markera f&ouml;r att utel&auml;mna bildspelsinl&auml;gg fr&aring;n f&ouml;"
-#~ "rstasidans inl&auml;gg:"
-
-#~ msgid "Number of Slides"
-#~ msgstr "Antal bilder"
-
-#~ msgid ""
-#~ "Customizer page needs to be refreshed after saving if number of slides is "
-#~ "changed"
-#~ msgstr ""
-#~ "Inst&auml;llningssidan m&aring;ste uppdateras efter att ha sparats om "
-#~ "antalet bilder har &auml;ndrats"
-
-#~ msgid "Transition Effect"
-#~ msgstr "&Ouml;verg&aring;seffekt"
-
-#~ msgid "fade"
-#~ msgstr "tona bort"
-
-#~ msgid "wipe"
-#~ msgstr "sudda"
-
-#~ msgid "scrollUp"
-#~ msgstr "Bl&auml;ddra upp"
-
-#~ msgid "scrollDown"
-#~ msgstr "Bl&auml;ddra ner"
-
-#~ msgid "scrollLeft"
-#~ msgstr "Bl&auml;ddra v&auml;nster"
-
-#~ msgid "scrollRight"
-#~ msgstr "Bl&auml;ddra h&ouml;ger"
-
-#~ msgid "blindX"
-#~ msgstr "blindX"
-
-#~ msgid "blindY"
-#~ msgstr "blindY"
-
-#~ msgid "blindZ"
-#~ msgstr "blindZ"
-
-#~ msgid "cover"
-#~ msgstr "T&auml;ck &ouml;ver"
-
-#~ msgid "shuffle"
-#~ msgstr "Skyffla"
-
-#~ msgid "Transition Delay (in seconds)"
-#~ msgstr "&Ouml;verg&aring;ngs f&ouml;rdr&ouml;jning (i sekunder)"
-
-#~ msgid "Transition Length"
-#~ msgstr "&Ouml;verg&aring;ngsl&auml;ngd"
-
-#~ msgid "Google+"
-#~ msgstr "Google+"
-
-#~ msgid "LinkedIn"
-#~ msgstr "LinkedIn"
-
-#~ msgid "Youtube"
-#~ msgstr "Youtube"
-
-#~ msgid "RSS"
-#~ msgstr "RSS"
-
-#~ msgid "deviantART"
-#~ msgstr "deviantART"
-
-#~ msgid "Aim"
-#~ msgstr "Aim"
-
-#~ msgid "Code to display on Header"
-#~ msgstr "Kod som ska visas i sidhuvudet"
-
-#~ msgid ""
-#~ "Here you can put scripts from Google, Facebook etc. which will load on "
-#~ "Header"
-#~ msgstr ""
-#~ "Hauml;r placerar du script fr&aring;n Google, Facebook m fl som ska "
-#~ "k&ouml; i sidhuvudet "
-
-#~ msgid "Code to display on Footer"
-#~ msgstr "Kod som ska visas i sidfoten"
-
-#~ msgid ""
-#~ "Here you can put scripts from Google, Facebook etc. which will load on "
-#~ "Footer"
-#~ msgstr ""
-#~ "Hauml;r placerar du script fr&aring;n Google, Facebook m fl som ska "
-#~ "k&ouml; i sidfoten"
-
 #~ msgid "Fav Icon"
 #~ msgstr "Fav Icon"
 
 #~ msgid "Web Clip Icon"
 #~ msgstr "Web Clip Icon"
-
-#~ msgid "#%s Featured Post ID"
-#~ msgstr "#%s Framh&auml;vd post ID"
-
-#~ msgid ""
-#~ "Caution: Reset all settings to default. Refresh the page after save to "
-#~ "view full effects."
-#~ msgstr ""
-#~ "Varning: &Aring;terst&auml;ll alla inst&auml;llningar till f&ouml;rvalda "
-#~ "v&auml;rden. Uppdatera sidan efter att ha sparat f&ouml;r att se alla "
-#~ "&auml;ndringar"
-
-#~ msgid "Reset all settings"
-#~ msgstr "&Aring;terst&auml;ll alla inst&auml;llningar"
-
-#~ msgid "Check to reset all settings to default"
-#~ msgstr ""
-#~ "Markera f&ouml;r att &aring;terst&auml;lla alla inst&auml;llningar till "
-#~ "f&ouml;rvalda v&auml;rden"
-
-#~ msgid "Important Links"
-#~ msgstr "Viktiga l&auml;nkar"
 
 #~ msgid "Favicon URL"
 #~ msgstr "Favicon URL"
@@ -1010,9 +1219,6 @@ msgstr "Etikett-arkiv: %s"
 
 #~ msgid "Move Site Title and Tagline?"
 #~ msgstr "Flytta sidans titel och slogan?"
-
-#~ msgid "Scroll Up"
-#~ msgstr "Scroll Up"
 
 #~ msgid "Insert as Favicon"
 #~ msgstr "L&auml;gg till som Favicon"
@@ -1179,34 +1385,14 @@ msgstr "Etikett-arkiv: %s"
 #~ "Anm&auml;rkning: H&auml;r kan du l&auml;gga script fr&aring; Google, "
 #~ "Facebook etc som ska k&ouml;ras i sidfoten"
 
-#~ msgid "Secondary menu"
-#~ msgstr "Sidomeny"
-
-#~ msgid "Menu"
-#~ msgstr "Meny"
-
 #~ msgid "Primary Mobile Menu"
 #~ msgstr "Huvudmeny f&ouml;r mobiler"
 
 #~ msgid "Secondary Mobile Menu"
 #~ msgstr "Sidomeny f&ouml;r mobiler"
 
-#~ msgid "Disable Search in Header?"
-#~ msgstr "Avaktivera s&ouml;krutan i sidhuvudet?"
-
 #~ msgid "Enable Secondary & Footer Menu in Mobile Devices?"
 #~ msgstr "Aktivera sidomeny och sidfotsmeny f&ouml;r mobila enheter?"
-
-#~ msgid "Search"
-#~ msgstr "S&ouml;k"
-
-#, fuzzy
-#~ msgid "Catch Box Pro"
-#~ msgstr "Uppgradera till Catch Box Pro"
-
-#, fuzzy
-#~ msgid "Upgrade Now"
-#~ msgstr "Uppgradera till Pro"
 
 #, fuzzy
 #~ msgid "Catch Box"
@@ -1248,9 +1434,6 @@ msgstr "Etikett-arkiv: %s"
 
 #~ msgid "Blog Archives"
 #~ msgstr "Bloggarkiv"
-
-#~ msgid "Skip to primary content"
-#~ msgstr "G&aring; till huvudsakligt inneh&aring;ll"
 
 #~ msgid "Skip to secondary content"
 #~ msgstr "G&aring; till sekund&auml;rt inneh&aring;ll"
