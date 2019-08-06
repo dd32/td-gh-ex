@@ -42,6 +42,10 @@ Installation using 'Add New Theme'
 
 == Changelog ==
 
+= 1.1.9 =
+* screen readers: Add Skip Link
+* add highlighting of form fields, submit buttons and text links
+
 = 1.1.8 =
 * fix issue with posts and pages title space
 
