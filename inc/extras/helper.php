@@ -40,7 +40,7 @@ if( ! function_exists( 'acoustics_footer_social' ) ):
 	    $acoustics_youtube_link = get_theme_mod( 'acoustics_youtube_url', '' );
 	    $classes = 'round-icon';
 		?>
-	   <ul class="social-icons clearfix <?php echo $classes; ?>">
+	   <ul class="social-icons clearfix <?php echo esc_attr( $classes ); ?>">
 		   <?php
 		    if( ! empty( $acoustics_twitter_link ) ): ?>
 		        <li class="text-center"><a href="<?php echo esc_url( $acoustics_twitter_link ); ?>" target="_blank"> <span class="fa fa-twitter"></span></a></li>

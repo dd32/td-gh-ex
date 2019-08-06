@@ -18,12 +18,12 @@ $acoustics_copyright = get_theme_mod( 'acoustics_footer_copyright', '')
 		 	 <?php if( !empty( $acoustics_copyright ) ): ?>
 				<small><?php echo wp_kses_post( $acoustics_copyright ); ?></small>
 			 <?php else: ?>
-				 <small><?php printf( __( '&copy; %1$s %2$s Powered by WordPress', 'acoustics' ), date('Y'), get_bloginfo( 'name' ) ); ?></small>
+				 <small><?php printf( __( '&copy; %1$s %2$s', 'acoustics' ), esc_attr( date_i18n( __( 'Y', 'acoustics' ) ) ), esc_attr( get_bloginfo( 'name' ) ) ); ?></small>
 			 <?php endif; ?>
 			<small class="copyright-credit">
 				<span><?php esc_html_e( 'Designed by', 'acoustics' ); ?></span>
-				<a  title="<?php echo esc_html_e('Free WordPress Theme','acoustics'); ?>" href="<?php echo esc_url( AUTHOR_URI ); ?>">
-					<?php echo esc_html_e('CodeGearThemes','acoustics');?>
+				<a  title="<?php esc_html_e('Free WordPress Theme','acoustics'); ?>" href="<?php echo esc_url( AUTHOR_URI ); ?>">
+					<?php esc_html_e('CodeGearThemes','acoustics');?>
 				</a>
 			</small>
 		 </div><!-- .site-info -->

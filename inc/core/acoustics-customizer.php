@@ -9,35 +9,6 @@
  *
  */
 
- /*-------------------------------------
-   #Color
- ---------------------------------------*/
- $wp_customize->add_panel( 'acoustics_general_panel', array(
-    'title' => esc_html__( 'General Setting', 'acoustics' ),
-    'description' => esc_html__( 'Theme global settings', 'acoustics' ),
-    'priority' => 5,
- 	)
- );
- $wp_customize->get_section( 'static_front_page' )->panel     = 'acoustics_general_panel';
- $wp_customize->get_section( 'static_front_page' )->priority = 0;
-
-/*-------------------------------------
-  #Color
----------------------------------------*/
-$wp_customize->add_panel( 'acoustics_color_panel', array(
-   'title' => esc_html__( 'Color Schema', 'acoustics' ),
-   'description' => esc_html__( 'Color schema settings', 'acoustics' ),
-   'priority' => 5,
-	)
-);
-
-$wp_customize->get_section( 'colors' )->panel  = 'acoustics_color_panel';
-$wp_customize->get_section( 'colors' )->title  = esc_html__( 'Header Color', 'acoustics' );
-$wp_customize->get_section( 'background_image' )->panel     = 'acoustics_color_panel';
-$wp_customize->get_control( 'background_color' )->section   = 'background_image';
-$wp_customize->get_section( 'background_image' )->title     = esc_html__( 'Body Color', 'acoustics' );
-
-
 /*-------------------------------------
  #Social
 ---------------------------------------*/
@@ -69,18 +40,6 @@ foreach( $social_icons as $icon) {
 	'section'       => 'acoustics_social_section',
   ));
 }
-
-/*-------------------------------------
-  #Header
----------------------------------------*/
-$wp_customize->add_panel( 'acoustics_header_panel', array(
-	 'title' => esc_html__( 'Header Settings', 'acoustics' ),
-	 'description' => esc_html__( 'Header section & settings', 'acoustics' ),
-	 'priority' => 20,
-	)
-);
-
-$wp_customize->get_section('title_tagline')->panel = 'acoustics_header_panel';
 
 /*-------------------------------------
   #Landing Page
@@ -561,7 +520,7 @@ $wp_customize->add_section( 'acoustics_post_section', array(
 );
 
 $wp_customize->add_setting('acoustics_post_layout', array(
-  'default'  =>      'no-sidebar',
+  'default'  =>      'right-sidebar',
   'sanitize_callback' => 'acoustics_sanitize_radioimage'
   )
 );

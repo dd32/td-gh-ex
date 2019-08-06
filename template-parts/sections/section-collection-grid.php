@@ -63,10 +63,10 @@ if(! class_exists('Woocommerce')) {
 				if( $acoustics_product_category > 0 ){
 					if( $acoustics_term && ! empty( $acoustics_image ) ){
 					?>
-						<div class="<?php echo $classes; ?> text-center">
+						<div class="<?php echo esc_attr( $classes ); ?> text-center">
 							<figure class="collection-image">
 								<a href="<?php echo esc_url( $acoustics_link ); ?>">
-			                        <img width="<?php echo $width; ?>" src="<?php echo esc_url( $acoustics_image ); ?>" title="<?php echo esc_html( $acoustics_term->name ); ?>" alt="<?php echo esc_html( $acoustics_term->name ); ?>" />
+			                        <img width="<?php echo esc_attr( $width ); ?>" src="<?php echo esc_url( $acoustics_image ); ?>" title="<?php echo esc_html( $acoustics_term->name ); ?>" alt="<?php echo esc_html( $acoustics_term->name ); ?>" />
 			                    </a>
 								<figcaption class="caption">
 									<h2 class="h4 title"><?php echo esc_html( $acoustics_term->name ); ?></h2>

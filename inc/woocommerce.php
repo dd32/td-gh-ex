@@ -190,7 +190,7 @@ if ( ! function_exists( 'acoustics_woocommerce_wrapper_before' ) ) {
 		<div class="section-default section--woocommerce-template">
 			<div class="container">
 				<div class="row">
-					<section id="primary" class="content-area <?php echo $class; ?>" >
+					<section id="primary" class="content-area <?php echo esc_attr( $class ); ?>" >
 						<main id="main" class="site-main" role="main">
 			<?php
 }
@@ -375,8 +375,9 @@ function acoustics_change_breadcrumb_delimiter( $defaults ) {
 	return $defaults;
 }
 
-add_filter( 'woocommerce_single_product_carousel_options', function( $options ) {
-$options['directionNav'] = false;
-  	$options['direction'] = "vertical";
-	return $options;
-} );
+add_filter( 'woocommerce_single_product_carousel_options', 'acoustic_single_product_carousel_options' );
+function acoustic_single_product_carousel_options( $options ) {
+	$options['directionNav'] = false;
+	  	$options['direction'] = "vertical";
+		return $options;
+}

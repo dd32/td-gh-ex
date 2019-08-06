@@ -42,7 +42,7 @@ if ( ! function_exists( 'acoustics_header_style' ) ) :
 	 * @see acoustics_custom_header_setup().
 	 */
 	function acoustics_header_style() {
-  $header_text_color = get_header_textcolor();
+  	    $header_text_color = get_header_textcolor();
 
 		/*
 		 * If no custom options for text are set, let's bail.

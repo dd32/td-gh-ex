@@ -20,12 +20,12 @@
 			 		 the_custom_logo();
 			 		 if ( is_front_page() || is_home() ) : ?>
 			 		   <h1 class="site-title <?php if( ! $acoustics_description ){ echo 'no-tagline'; } ?>">
-			 			 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			 			 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_attr( bloginfo( 'name' ) ); ?></a>
 			 		   </h1>
 			 		 <?php
 			 		 else : ?>
 			 		   <div class="site-title <?php if( ! $acoustics_description ){ echo 'no-tagline'; } ?>">
-			 			 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
+			 			 <a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php esc_attr( bloginfo( 'name' ) ); ?></a>
 			 		   </div>
 			 		 <?php
 			 		 endif;

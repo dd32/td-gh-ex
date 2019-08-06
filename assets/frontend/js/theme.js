@@ -14,7 +14,7 @@
   $selector.append('<span class="item-toggle"><i class="fa fa-angle-down"></i></span>');
 
 			$('.item-toggle').on('click', function(){
-				$(this).siblings('.sub-menu').toggleClass('active');
+				$(this).siblings('.sub-menu, .children').toggleClass('active');
 });
 		}
     };

@@ -17,13 +17,13 @@
  */
 
 get_header();
-$acoustics_layout = get_theme_mod( 'acoustics_archive_layout', 'left-sidebar' );
+$acoustics_layout = get_theme_mod( 'acoustics_post_layout', 'right-sidebar' );
 $acoustics_class = acoustics_layout_classes( $acoustics_layout );
 ?>
 <div class="section-default section--default-template">
 	<div class="container">
 		<div class="row">
-			<section id="primary" class="section-primary <?php echo $acoustics_class; ?>  col-xs-12 content-area">
+			<section id="primary" class="section-primary <?php echo esc_attr( $acoustics_class ); ?>  col-xs-12 content-area">
 				<main id="main" class="site-main">
 
 				<?php

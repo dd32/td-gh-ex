@@ -18,7 +18,7 @@ $acoustics_class = acoustics_layout_classes( $acoustics_layout );
 <div class="section-default section--search-template">
 	<div class="container">
 		<div class="row">
-			<section id="primary" class="<?php echo $acoustics_class; ?> col-xs-12 content-area">
+			<section id="primary" class="<?php echo esc_attr( $acoustics_class ); ?> col-xs-12 content-area">
 				<main id="main" class="site-main">
 
 				<?php if ( have_posts() ) : ?>
