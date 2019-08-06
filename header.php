@@ -18,6 +18,9 @@
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
+		<a class="skip-link screen-reader-text" href="#main-content-wrapper">
+			<?php _e( 'Skip to content', 'ayabiostorelite' ); ?>
+		</a>
 		<div id="body-content-wrapper">
 			
 			<header id="header-main-fixed">
