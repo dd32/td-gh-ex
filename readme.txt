@@ -6,7 +6,7 @@ full-width-template, editor-style
 Requires at least: 4.9.0
 Tested up to: 4.9.8
 Requires PHP: 5.6.0
-Stable tag: 1.0.1
+Stable tag: 1.0.5
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -62,6 +62,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 2.6. Save Changes
 
 == Changelog ==
+
+= 1.0.5 =
+* screen readers: Add Skip Link
+* add highlighting of form fields, submit buttons and text links
 
 = 1.0.4 =
 * fix issue with posts and pages title space
