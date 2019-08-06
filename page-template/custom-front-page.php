@@ -8,6 +8,7 @@ get_header(); ?>
 <?php do_action( 'advance_automobile_above_slider' ); ?>
 
 <?php if( get_theme_mod( 'advance_automobile_slider_hide') != '') { ?>
+<main role="main" id="maincontent">
   <section id="slider">
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel"> 
       <?php $pages = array();
@@ -30,13 +31,13 @@ get_header(); ?>
       <div class="carousel-inner" role="listbox">
         <?php  while ( $query->have_posts() ) : $query->the_post(); ?>
           <div <?php if($i == 1){echo 'class="carousel-item active"';} else{ echo 'class="carousel-item"';}?>>
-            <img src="<?php the_post_thumbnail_url('full'); ?>"/>
+            <img role="img" src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image">
             <div class="carousel-caption">
               <div class="inner_carousel">
                 <h2><?php the_title(); ?></h2>
                 <p><?php $excerpt = get_the_excerpt(); echo esc_html( advance_automobile_string_limit_words( $excerpt,20 ) ); ?></p>
                 <div class="read-btn">
-                  <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-automobile'); ?></a>
+                  <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('READ MORE','advance-automobile'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','advance-automobile' );?></span></a>
                 </div>
               </div>
             </div>
@@ -51,14 +52,17 @@ get_header(); ?>
       <div class="slider-nex-pre">
         <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
           <span class="carousel-control-prev-icon" aria-hidden="true"><i class="fas fa-chevron-left"></i></span>
+          <span class="screen-reader-text"><?php esc_html_e( 'Previous','advance-automobile' );?></span>
         </a>
         <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
           <span class="carousel-control-next-icon" aria-hidden="true"><i class="fas fa-chevron-right"></i></span>
+          <span class="screen-reader-text"><?php esc_html_e( 'Next','advance-automobile' );?></span>
         </a>
       </div>
     </div>
     <div class="clearfix"></div>
   </section>
+</main>
 <?php } ?>
 
 <?php do_action( 'advance_automobile_below_slider' ); ?>
@@ -147,13 +151,15 @@ get_header(); ?>
                 <h4><?php the_title(); ?></h4>
                 <p><?php the_excerpt(); ?></p>
                 <div class="explore-btn">
-                  <a href="<?php the_permalink(); ?>"><?php echo esc_html_e('EXPLORE MORE','advance-automobile'); ?></a>
+                  <a href="<?php echo esc_url(get_permalink()); ?>"><?php echo esc_html_e('EXPLORE MORE','advance-automobile'); ?>
+                    <span class="screen-reader-text"><?php esc_html_e( 'EXPLORE MORE','advance-automobile' );?></span></a>
                 </div>
               </div>
             </div>
             <div class="col-lg-6 col-md-6">
               <div class="imagebox">
-                <a href="<?php the_permalink(); ?>"><?php if(has_post_thumbnail()) { ?><?php the_post_thumbnail(); ?><?php } ?></a>
+                <a href="<?php the_permalink(); ?>"><img role="img" src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image">
+                </a>
               </div>
             </div>
           </div>
@@ -164,8 +170,9 @@ get_header(); ?>
       </div>
     </div>
   </section>
-<?php }?>
 
+<?php }?>
+<
 <?php do_action( 'advance_automobile_below_our_services_section' ); ?>
 
 <div id="content">

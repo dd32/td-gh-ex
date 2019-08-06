@@ -8,7 +8,7 @@
 get_header(); ?>
 
 <div class="container">
-    <div class="middle-align">
+    <main role="main" id="maincontent" class="middle-align">
     	<?php
             $left_right = get_theme_mod( 'advance_automobile_layout_options','Right Sidebar');
             if($left_right == 'Left Sidebar'){ ?>
@@ -16,7 +16,7 @@ get_header(); ?>
 		    	<div id="sidebar" class="col-lg-4 col-md-4">
 					<?php dynamic_sidebar('sidebar-1'); ?>
 				</div>
-				<div class="col-lg-8 col-md-8" id="content-ts">
+				<div class="col-lg-8 col-md-8" class="content-ts">
 					<?php
 						/* Start the Loop */
 						while ( have_posts() ) : the_post();
@@ -43,7 +43,7 @@ get_header(); ?>
 		    </div>
 	    <?php }else if($left_right == 'Right Sidebar'){ ?>
 	    	<div class="row">
-		       	<div class="col-lg-8 col-md-8" id="content-ts">
+		       	<div class="col-lg-8 col-md-8" class="content-ts">
 					<?php
 						/* Start the Loop */
 						while ( have_posts() ) : the_post();
@@ -72,7 +72,7 @@ get_header(); ?>
 				</div>
 			</div>
 		<?php }else if($left_right == 'One Column'){ ?>
-			<div id="content-ts">
+			<div class="content-ts">
 				<?php
 					/* Start the Loop */
 					while ( have_posts() ) : the_post();
@@ -98,7 +98,7 @@ get_header(); ?>
 	       	</div>
 	    <?php }else if($left_right == 'Grid Layout'){ ?>
 			<div class="row">
-				<div class="col-lg-8 col-md-8" id="content-ts">
+				<div class="col-lg-8 col-md-8" class="content-ts">
 					<?php
 						/* Start the Loop */
 						while ( have_posts() ) : the_post();
@@ -128,7 +128,7 @@ get_header(); ?>
 			</div>
 		<?php } else { ?>
 			<div class="row">
-		       	<div class="col-lg-8 col-md-8" id="content-ts">
+		       	<div class="col-lg-8 col-md-8" class="content-ts">
 					<?php
 						/* Start the Loop */
 						while ( have_posts() ) : the_post();
@@ -158,7 +158,7 @@ get_header(); ?>
 			</div>
 		<?php }?>
 	    <div class="clearfix"></div>
-    </div>
+    </main>
 </div>
 
 <?php get_footer(); ?>

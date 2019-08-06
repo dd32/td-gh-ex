@@ -285,7 +285,7 @@ define('ADVANCE_AUTOMOBILE_CREDIT', 'https://www.themeshopy.com/themes/free-auto
 
 if (!function_exists('advance_automobile_credit')) {
 	function advance_automobile_credit() {
-		echo "<a href=".esc_url(ADVANCE_AUTOMOBILE_CREDIT)." target='_blank'>".esc_html__('Automobile WordPress Theme.', 'advance-automobile')."</a>";
+		echo "<a href=".esc_url(ADVANCE_AUTOMOBILE_CREDIT)." target='_blank''>".esc_html__('Automobile WordPress Theme', 'advance-automobile')."</a>";
 	}
 }
 

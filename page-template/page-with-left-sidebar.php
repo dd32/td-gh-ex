@@ -2,7 +2,6 @@
 /**
  * Template Name: Page with Left Sidebar
  */
-
 get_header(); ?>
 
 <?php do_action( 'advance_automobile_pageleft_header' ); ?>
@@ -14,7 +13,7 @@ get_header(); ?>
     	</div>
         <div class="col-lg-8 col-md-8">
             <?php while ( have_posts() ) : the_post(); ?>
-                <img src="<?php the_post_thumbnail_url('full'); ?>" >
+                <img role="img" src="<?php the_post_thumbnail_url('full'); ?>" alt="<?php the_title(); ?> post thumbnail image">
                 <h1><?php the_title(); ?></h1>
                 <?php the_content();?>
             <?php endwhile; // end of the loop. ?>

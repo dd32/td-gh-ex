@@ -4,7 +4,7 @@ Tags:left-sidebar, right-sidebar, one-column, two-columns, grid-layout, custom-c
 Requires at least: 4.8
 Tested up to: 5.2.2
 Requires PHP: 7.2.14
-Stable tag: 0.3
+Stable tag: 0.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -31,6 +31,11 @@ Advance Automobile is a stylish, versatile, modern and resourceful automobile Wo
 * Added theme color option.
 * Updated POT file.
 * Resolved theme issue.
+
+= 0.3.1 =
+* Updated POT file.
+* Resolved theme error.
+* Changed dashboard notice design.
 
 == Resources ==
 

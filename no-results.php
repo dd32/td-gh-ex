@@ -7,7 +7,7 @@
  * @package Advance Automobile
  */
 ?>
-<header>
+<header role="banner">
 	<h1 class="entry-title"><?php esc_html_e( 'Nothing Found', 'advance-automobile' ); ?></h1>
 </header>
 
@@ -20,6 +20,6 @@
 	<?php else : ?>
 		<p><?php esc_html_e( 'Dont worry&hellip it happens to the best of us.', 'advance-automobile' ); ?></p><br />
 		<div class="read-moresec">
-			<a href="<?php echo esc_url(home_url()); ?>" class="button"><?php esc_html_e( 'Return to Home Page', 'advance-automobile' ); ?></a>
+			<a href="<?php echo esc_url(home_url()); ?>" class="button"> <?php esc_html_e( 'Return to Home Page', 'advance-automobile' ); ?><span class="screen-reader-text"><?php esc_html_e( 'Go Back', 'advance-automobile' ); ?></span></a>
 		</div>
 <?php endif; ?>

@@ -4,7 +4,7 @@ Theme URI: https://www.themeshopy.com/themes/free-automobile-wordpress-theme/
 Author: Themeshopy
 Author URI: https://www.themeshopy.com/
 Description: Advance Automobile is a stylish, versatile, modern and resourceful automobile WordPress theme for car showroom, automobile garage, second hand car selling company, car dealership, rental cars, mechanic, car repairing centre, motorbike showroom, bike garage, cab service and other such websites and businesses. It gives perfect skin for automotive sector websites whether it is a blog, portfolio or any other website. It is a customizable theme which can perfectly fit your imagination with its easily changeable elements. It has smart use of call to action (CTA) buttons and a welcoming homepage slider which can be full screen, full width or boxed. This automobile WordPress theme has 100% fluid layout and loads seamlessly on all browsing platforms. It can be translated to many other languages; supports RTL writing as well. It is packed with social media icons to easily promote your services and SEO is well taken care. This automobile theme has super smooth navigation with sliders and parallax scrolling. The thoroughly explained documentation will help you install, configure and make small changes to the theme. Demo: https://themeshopy.com/advance-automobile-pro/
-Version: 0.3
+Version: 0.3.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: advance-automobile
@@ -28,7 +28,7 @@ body{
 	-ms-word-wrap:break-word;
 	word-wrap:break-word;
 	background-color:#fff;
-	color: #aeb4b9;
+	color: #474a4d;
   font-family: 'Noto Sans', sans-serif;
   letter-spacing: 1px;
 	
@@ -70,6 +70,10 @@ a:hover{
 a:focus,
 a:hover{
 	text-decoration:none !important;
+}
+a:focus{
+  outline: 1px dotted #000;
+  border-bottom: 1px solid #000;
 }
 ul{
 	margin:0 0 0 15px;
@@ -127,6 +131,35 @@ input[type='submit']:hover{
 	top:-9999em;
 	left:-9999em;
 }
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+  word-wrap: normal !important;
+}
+.screen-reader-text:focus {
+  background-color: #eee;
+  clip: auto !important;
+  clip-path: none;
+  color: #444;
+  display: block;
+  font-size: 1em;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000; /* Above WP toolbar. */
+}
 .sticky{
 	margin:0;
 	padding:0;
@@ -173,12 +206,15 @@ input[type='submit']:hover{
 #respond{
 	clear:both;
 }
-.toggleMenu{
+.toggle{
  	display:none;
 }
 .bypostauthor{
 	margin:0;
 	padding:0;
+}
+span.post-title, p.logged-in-as a{
+  color: #06393a !important;
 }
 small{
 	font-size:14px !important;
@@ -210,6 +246,12 @@ input[type="submit"] {
 	background: #50a65d;
 	font-weight:bold;
 	color:#06393a;
+}
+.entry-content a {
+  text-decoration: underline;
+}
+.entry-content p a{
+  color: #000 !important;
 }
 
 /* ---------Buttons--------- */
@@ -276,7 +318,7 @@ input[type="submit"] {
   text-align: center;
 }
 .mail{
-  color: #fff;
+  color: #000000;
   font-size: 13px;
 }
 .mail i{
@@ -455,7 +497,7 @@ input.search-field {
   text-align: left;
 }
 #slider .inner_carousel .read-btn a {
-  color: #fff;
+  color: #000000;
   padding: 12px 25px;
   border-radius: 5px;
   background: #50a65d;
@@ -464,7 +506,8 @@ input.search-field {
   font-weight: bold;
 }
 #slider .inner_carousel .read-btn a:hover{
-  background: #06393a
+  background: #06393a;
+  color: #ffffff;
 }
 #slider .inner_carousel .read-btn {
   margin-top: 23px;
@@ -489,13 +532,15 @@ a.carousel-control-next, a.carousel-control-prev{
 }
 .time{
   background: #06393a;
-  padding: 30px 10px;
+  padding: 16px 10px;
   border-radius: 5px;
 }
-.address p,
+.address p{
+  color: #000000;
+  margin-bottom: 0px;
+}
 .time p{
   color: #fff;
-  margin-bottom: 0px;
 }
 .address i,
 .time i{
@@ -569,16 +614,16 @@ p.address-font{
 }
 
 #category .text-content h4 {
-  color: #50a65d;
+  color: #06393a;
   font-size: 22px;
   padding-bottom: 0px;
 }
 #category .text-content p {
-  color: #8ca5a7;
+  color: #2f3637;
   line-height: 2;
 }
 #category .explore-btn a {
-  color: #fff;
+  color: #000000;
   padding: 12px 25px;
   border-radius: 5px;
   background: #50a65d;
@@ -587,7 +632,8 @@ p.address-font{
   font-weight: bold;
 }
 #category .explore-btn a:hover{
-  background: #06393a
+  background: #06393a;
+  color: #fff;
 }
 #category .explore-btn {
   margin-top: 23px;
@@ -604,7 +650,7 @@ p.address-font{
 }
 .page-box h4{
 	text-transform: capitalize;
-  color: #50a65d;
+  color: #06393a;
   padding: 0;
   font-size: 22px;
 }
@@ -613,34 +659,37 @@ p.address-font{
   padding:10px;
   text-align: center;
 }
+.new-text h4 a {
+  color: #06393a;
+}
 .page-box p,
 .page-box-single p{
 	font-size:15px !important;
 	margin:10px 0 !important;
 	line-height:2 !important;
-	color: #aeb4b9 !important;
+	color: #2f3637 !important;
   text-align: center;
 }
 .page-box-single img{
 	width: 100%;
 }
-#our-services img{
+.our-services img{
 	width:100%;
 }
-#our-services .services-box{
+.our-services .services-box{
 	margin:40px 0 20px 0;
 }
 .read-more-btn a {
   color: #fff;
   padding: 12px 25px;
   border-radius: 5px;
-  background: #50a65d;
+  background: #06393a;
   font-size: 12px;
   letter-spacing: 1px;
   font-weight: bold;
 }
 .read-more-btn a:hover{
-  background: #06393a;
+  background:#50a65d;
 }
 .read-more-btn {
   margin: 20px 0;
@@ -659,6 +708,9 @@ p.address-font{
 }
 .metabox i {
   margin-right: 5px;
+}
+article.new-text.col-lg-6.col-md-6 {
+    max-width: 100%;
 }
 /* --------- content-single  Page ------- */
 .page-box-single h3{
@@ -747,6 +799,9 @@ section .innerlightbox{
 table#wp-calendar {
   width: 100%;
 }
+table#wp-calendar td a {
+  color: #fff;
+}
 #footer caption,
 #sideabr caption {
   font-weight: bold;
@@ -781,6 +836,10 @@ table#wp-calendar {
 }
 #footer li a {
   color: #fff;
+  font-size: 12px;
+}
+#footer li a:hover {
+  color: #50a65d;
   font-size: 12px;
 }
 #footer ul li {
@@ -826,11 +885,11 @@ table#wp-calendar {
 }
 .copyright p {
   font-size: 15px;
-  color: #fff;
+  color: #000000;
   margin-bottom: 0;
 }
 .copyright p a{
-  color: #fff;
+  color: #000000;
 }
 .copyright {
   background: #50a65d;
@@ -897,14 +956,14 @@ table#wp-calendar {
   font-weight:bold;
   font-size:12px;
 }
-#content-ts #comments ol li{
+.content-ts #comments ol li{
   width:100%;
   background:none;list-style:none;
   margin: 0 0 20px;
   background:#eee;
   display:inline-block;
 }  
-#content-ts #comments ul{
+.content-ts #comments ul{
   margin:0 0 0 40px;
 }
 #comments .reply{
@@ -1010,6 +1069,31 @@ span.woocommerce-input-wrapper,
 .woocommerce ul.products li.product .price{
   font-size: 16px;
 }
+.woocommerce form .form-row .required{
+  color: #6c757d;
+}
+.woocommerce .woocommerce-privacy-policy-text p a{
+  color: #474a4d;
+}
+.woocommerce-MyAccount-content p a{
+  color: #474a4d;
+}
+.woocommerce ul.products li.product .price, .woocommerce ul.products li.product .price, .woocommerce div.product span.price, .woocommerce div.product p.price {
+    color: #515151;
+}
+.woocommerce ul.products li.product .woocommerce-loop-product__title, .woocommerce form.woocommerce-shipping-calculator a{
+  color: #303330 !important;
+}
+.woocommerce span.posted_in a, .woocommerce tr.woocommerce-cart-form__cart-item.cart_item td a{
+  color:#515352; 
+}
+.woocommerce .woocommerce-breadcrumb, .woocommerce .woocommerce-breadcrumb a{
+  color: #515151 !important;
+}
+.woocommerce button.button:disabled, .woocommerce button.button:disabled[disabled]{
+  color: #fff;
+}
+
 /*------------- Sidebar -------------*/
 #sidebar {
   margin-top: 2em;
@@ -1127,15 +1211,15 @@ h1.page-title {
   margin-bottom: 10px;
   color: #06393a;
 }
-#content-ts p{
+.content-ts p{
 	line-height: 25px;
 	font-size: 16px;
 	margin:0 0 20px 0;
 }
-#content-ts hr{
+.content-ts hr{
 	clear:both;
 }
-#content-ts h2{
+.content-ts h2{
 	font-size:32px;
 	font-weight:normal;
 	margin:0;
@@ -1143,7 +1227,7 @@ h1.page-title {
 	color:#50a65d;
 	margin:0 0 25px;
 }
-#content-ts h3{
+.content-ts h3{
 	font-size:36px;
 	font-weight:normal;
 	margin:0;
@@ -1151,7 +1235,7 @@ h1.page-title {
 	color:#50a65d;
 	margin:0 0 25px;
 }
-#content-ts h4{
+.content-ts h4{
 	font-size:20px;
 	font-weight:bold;
 	margin:0;
@@ -1159,22 +1243,22 @@ h1.page-title {
 	color:#333;
 	margin:0 0 25px;
 }
-#content-ts ul{list-style:none;
+.content-ts ul{list-style:none;
 	margin:0 0 0 10px;
 	padding:10px 0 0;
 	font-size:16px;
 }
-#content-ts ul li{
+.content-ts ul li{
 	padding:0;
 	margin:0 0 10px 0;
 	line-height:25px;
 }
-#content-ts ol{list-style: none;
+.content-ts ol{list-style: none;
 	padding:10px 0 0 0;
 	font-size:16px;
 	counter-reset: myCounter;
 }
-#content-ts ol li{
+.content-ts ol li{
 	padding:0 0 0 0;
 	margin:0 0 20px 0;
 }
@@ -1205,7 +1289,7 @@ h1.page-title {
   padding:10px 15px;
   text-decoration:none;
   width:auto;
-  color:#50a65d;
+  color:#000;
   -webkit-transition: background .15s ease-in-out;
   -moz-transition: background .15s ease-in-out;
   -ms-transition: background .15s ease-in-out;
@@ -1213,13 +1297,13 @@ h1.page-title {
   transition: background .15s ease-in-out;
 }
 .pagination a:hover{
-	color:#50a65d;
+	color:#fff;
     background: #06393a;
 }
 .pagination .current{
 	padding:10px 15px;
     background: #06393a;
-    color:#50a65d;
+    color:#fff;
 	font-weight:bold;
 }
 iframe {
@@ -1271,7 +1355,7 @@ iframe {
 	.toggleMenu{
  		display:block;
 	}
-	.toggle a{
+	.toggle{
 		width:100%;
 		color:#fff;
 		background:url('images/mobile_nav_right.png') no-repeat right center #06393a;
@@ -1505,6 +1589,9 @@ iframe {
   #contact-details{
     margin:10px;
   }
+  .woocommerce .products li {
+    width: 44% !important;
+  }
 }
 @media screen and (min-width: 1000px) and (max-width: 1024px){
   #slider .carousel-control-prev {
@@ -1512,6 +1599,9 @@ iframe {
   }
   #slider .carousel-caption {
     top: 50%;
+  }
+  .woocommerce .products li {
+    width: 29% !important;
   }
 }
 @media screen and (min-width: 1025px){

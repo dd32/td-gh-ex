@@ -5,19 +5,20 @@
  * @package Advance Automobile
  */
 ?>
+
 <div id="sidebar">    
     <?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
-        <aside id="archives" class="widget">
-            <h3 class="widget-title"><?php esc_html_e( 'Archives', 'advance-automobile' ); ?></h3>
+        <aside role="complementary" aria-labelledby="comp1" id="archives" class="widget">
+            <h2 class="widget-title"><?php esc_html_e( 'Archives', 'advance-automobile' ); ?></h2>
             <ul>
                 <?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
             </ul>
         </aside>
-        <aside id="meta" class="widget">
-            <h3 class="widget-title"><?php esc_html_e( 'Meta', 'advance-automobile' ); ?></h3>
+        <aside role="complementary" aria-labelledby="comp2" id="meta" class="widget">
+            <h2 class="widget-title"><?php esc_html_e( 'Meta', 'advance-automobile' ); ?></h2>
             <ul>
                 <?php wp_register(); ?>
-                <li><?php wp_loginout(); ?></li>
+                    <li><?php wp_loginout(); ?></li>
                 <?php wp_meta(); ?>
             </ul>
         </aside>
