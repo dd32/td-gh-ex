@@ -23,6 +23,13 @@ SuevaFree is distributed under the terms of the GNU GPLv3.
 
 == Changelog ==
 
+= 3.1.0 =
+Release date - August, 06 - 2019
+
+* Added - New "wp_body_open" WordPress hook
+* Added - Skip links button
+* Edit - Code optimized
+
 = 3.0.9 =
 Release date - February, 15 - 2019
 

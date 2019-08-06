@@ -12,4 +12,14 @@
 
 <body <?php body_class(); ?>>
 
+<?php
+
+if ( function_exists('wp_body_open') ) {
+	wp_body_open();
+}
+
+?>
+
+<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'sneak-lite' ); ?></a>
+
 <?php do_action( 'suevafree_' . esc_attr(suevafree_setting( 'sneaklite_header_layout', 'header_layout_3')), 'main-menu', 'default-menu' ); ?>
