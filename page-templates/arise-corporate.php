@@ -10,7 +10,7 @@
  */
 get_header();
 $arise_settings = arise_get_theme_options();
-	echo '<div id="main">';
+	echo '<main id="main" role="main">';
 	if($arise_settings['arise_disable_features'] != 1){
 		echo '<!-- Front Page Features ============================================= -->';
 		$arise_features = '';
@@ -80,6 +80,6 @@ $arise_settings = arise_get_theme_options();
    if( is_active_sidebar( 'arise_corporate_page_sidebar' ) ) {
 			dynamic_sidebar( 'arise_corporate_page_sidebar' );
 	} ?>
-</div>
+</main>
 <!-- end #main -->
 <?php get_footer();

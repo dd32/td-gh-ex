@@ -28,7 +28,7 @@ get_header();
 <div id="primary">
 	<?php }
 	}?>
-	<div id="main">
+	<main id="main" role="main">
 	<?php
 	if( have_posts() ) {
 		while( have_posts() ) {
@@ -50,7 +50,7 @@ get_header();
 	<h2 class="entry-title"> <?php _e( 'No Posts Found.', 'arise' ); ?> </h2>
 	<?php
 	} ?>
-	</div> <!-- end #main -->
+	</main> <!-- end #main -->
 	<?php  if( 'default' == $layout ) { //Settings from customizer
 	if(($arise_settings['arise_sidebar_layout_options'] != 'nosidebar') && ($arise_settings['arise_sidebar_layout_options'] != 'fullwidth')): ?>
 </div> <!-- #primary -->
@@ -63,11 +63,11 @@ get_header();
 <?php 
 if( 'default' == $layout ) { //Settings from customizer
 	if(($arise_settings['arise_sidebar_layout_options'] != 'nosidebar') && ($arise_settings['arise_sidebar_layout_options'] != 'fullwidth')){ ?>
-<div id="secondary">
+<aside id="secondary" role="complementary">
 <?php }
 }else{ // for page/ post
 		if(($layout != 'no-sidebar') && ($layout != 'full-width')){ ?>
-<div id="secondary">
+<aside id="secondary" role="complementary">
 	<?php }
 	}
 	if ( is_active_sidebar( 'arise_contact_page_sidebar' ) ) :
@@ -76,11 +76,11 @@ if( 'default' == $layout ) { //Settings from customizer
 	<?php 
 	if( 'default' == $layout ) { //Settings from customizer
 		if(($arise_settings['arise_sidebar_layout_options'] != 'nosidebar') && ($arise_settings['arise_sidebar_layout_options'] != 'fullwidth')): ?>
-</div> <!-- #secondary -->
+</aside> <!-- #secondary -->
 <?php endif;
 	}else{ // for page/post
 		if(($layout != 'no-sidebar') && ($layout != 'full-width')){
-			echo '</div><!-- #secondary -->';
+			echo '</aside><!-- #secondary -->';
 		} 
 	}
 ?>

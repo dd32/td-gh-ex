@@ -18,7 +18,7 @@ if (!is_page_template('page-templates/arise-corporate.php') ){
 </div>
 <!-- end #content -->
 <!-- Footer Start ============================================= -->
-<footer id="colophon" class="site-footer clearfix">
+<footer id="colophon" class="site-footer clearfix" role="contentinfo">
 	<?php
 				$footer_column = $arise_settings['arise_footer_column_section'];
 					if( is_active_sidebar( 'arise_footer_1' ) || is_active_sidebar( 'arise_footer_2' ) || is_active_sidebar( 'arise_footer_3' ) || is_active_sidebar( 'arise_footer_4' )) { ?>
@@ -62,7 +62,7 @@ if (!is_page_template('page-templates/arise-corporate.php') ){
 					'container'      => '',
 					'items_wrap'     => '<ul>%3$s</ul>',
 				);
-				echo '<nav id="footer-navigation" role="navigation">';
+				echo '<nav id="footer-navigation" role="navigation" aria-label="'.esc_attr__('Footer Menu','arise'),'">';
 				wp_nav_menu($args);
 				echo '</nav><!-- end #footer-navigation -->';
 			endif; ?>

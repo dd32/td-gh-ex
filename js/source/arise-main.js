@@ -54,6 +54,16 @@ jQuery( function() {
 			}, 3000);
 		}); 
 
+		/* allow keyboard access for portfolio link */
+		var portfolioLink = jQuery('.widget_portfolio .three-column-full-width, .widget_portfolio .three-column-full-width .slide-caption h3, .widget_portfolio .three-column-full-width .slide-caption p').children('a');
+
+		    portfolioLink.on( 'focus', function(){
+		        jQuery(this).parents('.widget_portfolio .three-column-full-width').addClass('focus');
+		    });
+		    portfolioLink.on( 'focusout', function(){
+		        jQuery(this).parents('.widget_portfolio .three-column-full-width').removeClass('focus');
+		    });
+
 		// Go to top button.
 		jQuery(document).ready(function(){
 

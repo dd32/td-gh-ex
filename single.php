@@ -25,7 +25,7 @@ get_header();
 <div id="primary">
 	<?php }
 	}?>
-	<div id="main">
+	<main id="main" role="main">
 	<?php global $arise_settings;
 	if( have_posts() ) {
 		while( have_posts() ) {
@@ -112,7 +112,7 @@ get_header();
 	else { ?>
 	<h1 class="entry-title"> <?php _e( 'No Posts Found.', 'arise' ); ?> </h1>
 	<?php } ?>
-	</div> <!-- #main -->
+	</main> <!-- #main -->
 	<?php 
 	if( 'default' == $layout ) { //Settings from customizer
 		if(($arise_settings['arise_sidebar_layout_options'] != 'nosidebar') && ($arise_settings['arise_sidebar_layout_options'] != 'fullwidth')): ?>

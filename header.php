@@ -25,8 +25,9 @@ $arise_settings = arise_get_theme_options(); ?>
 
 	} ?>
 <div id="page" class="hfeed site">
+	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e('Skip to content','arise');?></a>
 <!-- Masthead ============================================= -->
-<header id="masthead" class="site-header">
+<header id="masthead" class="site-header" role="banner">
 	<?php
 			$arise_top_bar = $arise_settings['arise_top_bar'];
 			if (( has_nav_menu( 'social-link' ) || has_nav_menu( 'topmenu' ) || is_active_sidebar( 'arise_header_info' )) && $arise_top_bar ==0):
@@ -41,9 +42,9 @@ $arise_settings = arise_get_theme_options(); ?>
 									'container'      => '',
 									'items_wrap'     => '<ul>%3$s</ul>',
 								);
-								echo '<div class="min-nav clearfix">';
+								echo '<nav class="min-nav clearfix" role="navigation" aria-label="'. esc_attr__('Top Menu','arise').'">';
 								wp_nav_menu($args);
-								echo '</div>'.'<!-- end .min-nav -->';
+								echo '</nav>'.'<!-- end .min-nav -->';
 							endif;
 							if(has_nav_menu('social-link') && $arise_settings['arise_top_social_icons'] == 0):
 								echo '<div class="header-social-block">';
@@ -77,19 +78,19 @@ $arise_settings = arise_get_theme_options(); ?>
 			'container'      => '',
 			'items_wrap'     => '<ul id="primary-menu" class="menu nav-menu">%3$s</ul>',
 			); ?>
-		<nav id="site-navigation" class="main-navigation clearfix">
+		<nav id="site-navigation" class="main-navigation clearfix" role="navigation" aria-label="'.esc_attr__('Main Menu','arise').'">
 			<button class="menu-toggle-2" aria-controls="primary-menu" aria-expanded="false"> </button> <!-- end .menu-toggle -->
 			<?php wp_nav_menu($args);//extract the content from apperance-> nav menu ?>
 		</nav> <!-- end #site-navigation -->
 		<?php } else {// extract the content from page menu only ?>
-		<nav id="site-navigation" class="main-navigation clearfix">
+		<nav id="site-navigation" class="main-navigation clearfix" role="navigation" aria-label="'.esc_attr__('Main Menu','arise').'">
 		<button class="menu-toggle-2" aria-controls="primary-menu" aria-expanded="false"> </button> <!-- end .menu-toggle -->
 			<?php	wp_page_menu(array('menu_class' => 'menu', 'items_wrap'     => '<ul id="primary-menu" class="menu nav-menu">%3$s</ul>')); ?>
 		</nav> <!-- end #site-navigation -->
 		<?php }
 			$search_form = $arise_settings['arise_search_custom_header'];
 			if (1 != $search_form) { ?>
-			<div id="search-toggle" class="header-search"></div>
+			<button id="search-toggle" class="header-search" type="button"></button>
 			<div id="search-box" class="clearfix">
 				<?php get_search_form();?>
 			</div>  <!-- end #search-box -->

@@ -21,7 +21,7 @@ get_header();
 <div id="primary">
 	<?php }
 	}?>
-	<div id="main">
+	<main id="main" role="main">
 	<?php
 	if( have_posts() ) {
 		while( have_posts() ) {
@@ -37,7 +37,7 @@ get_header();
 	</h2>
 	<?php
 	} ?>
-	</div> <!-- #content -->
+	</main> <!-- #main -->
 	<?php get_template_part( 'navigation', 'none' );
 if( 'default' == $layout ) { //Settings from customizer
 	if(($arise_settings['arise_sidebar_layout_options'] != 'nosidebar') && ($arise_settings['arise_sidebar_layout_options'] != 'fullwidth')): ?>

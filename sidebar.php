@@ -18,22 +18,22 @@
 if( 'default' == $layout ) { //Settings from customizer
 	if(($arise_settings['arise_sidebar_layout_options'] != 'nosidebar') && ($arise_settings['arise_sidebar_layout_options'] != 'fullwidth')){ ?>
 
-<div id="secondary">
+<aside id="secondary" role="complementary">
 <?php }
 }else{ // for page/ post
 		if(($layout != 'no-sidebar') && ($layout != 'full-width')){ ?>
-<div id="secondary">
+<aside id="secondary" role="complementary">
   <?php }
 	}?>
   <?php 
 	if( 'default' == $layout ) { //Settings from customizer
 		if(($arise_settings['arise_sidebar_layout_options'] != 'nosidebar') && ($arise_settings['arise_sidebar_layout_options'] != 'fullwidth')): ?>
   <?php dynamic_sidebar( 'arise_main_sidebar' ); ?>
-</div> <!-- #secondary -->
+</aside> <!-- #secondary -->
 <?php endif;
 	}else{ // for page/post
 		if(($layout != 'no-sidebar') && ($layout != 'full-width')){
 			dynamic_sidebar( 'arise_main_sidebar' );
-			echo '</div><!-- #secondary -->';
+			echo '</aside><!-- #secondary -->';
 		}
 	}

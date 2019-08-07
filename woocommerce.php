@@ -22,9 +22,9 @@ get_header();
 <div id="primary">
 	<?php }
 	}?>
-	<div id="main">
+	<main id="main" role="main">
 		<?php woocommerce_content(); ?>
-	</div> <!-- #main -->
+	</main> <!-- #main -->
 	<?php 
 	if( 'default' == $layout ) { //Settings from customizer
 		if(($arise_settings['arise_sidebar_layout_options'] != 'nosidebar') && ($arise_settings['arise_sidebar_layout_options'] != 'fullwidth')): ?>
@@ -34,13 +34,13 @@ get_header();
 <?php 
 if( 'default' == $layout ) { //Settings from customizer
 	if(($arise_settings['arise_sidebar_layout_options'] != 'nosidebar') && ($arise_settings['arise_sidebar_layout_options'] != 'fullwidth')){ ?>
-<div id="secondary">
+<aside id="secondary" role="complementary">
 	<?php }
 } 
 	if( 'default' == $layout ) { //Settings from customizer
 		if(($arise_settings['arise_sidebar_layout_options'] != 'nosidebar') && ($arise_settings['arise_sidebar_layout_options'] != 'fullwidth')): ?>
 		<?php dynamic_sidebar( 'arise_woocommerce_sidebar' ); ?>
-</div> <!-- #secondary -->
+</aside> <!-- #secondary -->
 <?php endif;
 	}
 get_footer(); ?>

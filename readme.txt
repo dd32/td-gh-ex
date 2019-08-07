@@ -4,7 +4,7 @@ Tags: threaded-comments, left-sidebar, right-sidebar, custom-background, custom-
 Requires at least: 5.0
 Tested up to: 5.2.2
 Requires PHP: 5.6
-Stable tag: 2.1.3.8
+Stable tag: 2.1.3.9
 License: GNU General Public License version 3.0
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -81,6 +81,9 @@ License URI: http://www.gnu.org/licenses/gpl-3.0.html
 		navigation.js
 		Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
 
+		skip-link-focus-fix.js
+		Based on Underscores http://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
+
 	-Images
 		Screenshot Images: 
 		https://pixabay.com/en/suit-man-dapper-work-male-869380/
@@ -117,6 +120,9 @@ All the theme files and other un-specified scripts are licensed under GNU Genera
 =================================================================================
 
 == CHANGE LOG ==
+== 2.1.3.9 =
+	- New - Accessibility Added
+
 == 2.1.3.8 =
 	- New - Gutenberg responsive embeds added
 			- Adding new function wp_body_open() and backward Compatibility

@@ -213,7 +213,7 @@ function arise_page_sliders() {
 			wp_reset_postdata();
 			$arise_page_sliders_display .= '</div>	  <!-- end .layer-slider -->
 					<a class="slider-prev" id="prev2" href="#"></a> <a class="slider-next" id="next2" href="#"></a>
-  <nav class="slider-button"> </nav>
+  <nav class="slider-button" role="navigation" aria-label="'.esc_attr__('Slider Nav','arise').'"> </nav>
   <!-- end .slider-button -->
 </div>
 <!-- end .main-slider -->';
@@ -238,6 +238,7 @@ function arise_scripts() {
 	endif;
 	wp_enqueue_script('arise-navigation', get_template_directory_uri().'/js/navigation.js', array('jquery'), false, true);
 	wp_enqueue_script('arise-quote-slider', get_template_directory_uri().'/js/arise-quote-slider.js', array('jquery'),'4.2.2', true);
+	wp_enqueue_script('arise-skip-link-focus-fix', get_template_directory_uri().'/js/skip-link-focus-fix.js', array('jquery'), false, true);
 	wp_enqueue_style( 'arise_google_fonts' );
 	wp_enqueue_style( 'genericons', get_template_directory_uri() . '/genericons/genericons.css', array(), '3.4.1' );
 
