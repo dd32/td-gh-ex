@@ -3,7 +3,7 @@
 Template Name: Page Fullwidth
 **/
 get_header();
-get_template_part('sections/specia','breadcrumb'); ?>
+?>
 
 <section class="page-wrapper">
 	<div class="container">
