@@ -42,6 +42,10 @@ Reference: https://codex.wordpress.org/Creating_a_Static_Front_Page
 
 == Changelog ==
 
+= 1.2.1 =
+* Add Skip to Main Content for Screen Readers
+* add highlighting of form fields, submit buttons and text links
+
 = 1.2.0 =
 * bug fix: posts and pages title space
 
