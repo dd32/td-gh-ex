@@ -17,13 +17,11 @@
 
 global $aeonblog_theme_options;
 $copyright = wp_kses_post( $aeonblog_theme_options['aeonblog-copyright-text'] );
-
-if ( ! is_page_template( 'elementor_header_footer' ) ) {
-	?>
+?>
 		</div><!-- #row -->
 	</div><!-- #container -->
 </div><!-- #content -->
-	<?php } ?>
+
 <footer id="colophon" class="site-footer" role="contentinfo">
 	<div class="container">
 	<?php
@@ -38,6 +36,8 @@ if ( ! is_page_template( 'elementor_header_footer' ) ) {
 							array(
 								'theme_location' => 'social',
 								'menu_class'     => 'aeonblog-menu-social',
+								'link_before'    => '<span class="screen-reader-text">',
+								'link_after'     => '</span>',
 								'depth'          => 0,
 								'fallback_cb'    => false,
 							)
@@ -63,7 +63,7 @@ if ( ! is_page_template( 'elementor_header_footer' ) ) {
 
 			<?php
 			/* translators: 1: Theme name, 2: Theme author. */
-			printf( esc_html__( 'Theme: %1$s by %2$s.', 'aeonblog' ), 'AeonBlog', '<a href="#">AeonWP</a>' );
+			printf( esc_html__( 'Theme: %1$s by %2$s.', 'aeonblog' ), 'AeonBlog', '<a href="https://aeonwp.com/">AeonWP</a>' );
 			?>
 		</div><!-- .site-info -->
 		<?php

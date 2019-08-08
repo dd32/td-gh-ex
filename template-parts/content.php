@@ -15,9 +15,9 @@
 
 global $aeonblog_theme_options;
 $read_more           = esc_html( $aeonblog_theme_options['aeonblog-read-more-text'] );
-$blog_meta           = absint( $aeonblog_theme_options['aeonblog-blog-meta'] );
-$blog_featured_image = absint( $aeonblog_theme_options['aeonblog-blog-image'] );
-$featured_image_full = absint( $aeonblog_theme_options['aeonblog-blog-full-image'] );
+$blog_meta           = $aeonblog_theme_options['aeonblog-blog-meta'];
+$blog_featured_image = $aeonblog_theme_options['aeonblog-blog-image'];
+$featured_image_full = $aeonblog_theme_options['aeonblog-blog-full-image'];
 $blog_full_image     = ( $featured_image_full == 0 ) ? '' : 'blog-full-image';
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-wrapper' ); ?>>
@@ -26,8 +26,8 @@ $blog_full_image     = ( $featured_image_full == 0 ) ? '' : 'blog-full-image';
 			if ( $blog_meta == 1 ) {
 				?>
 				<ul class="entry-meta list-inline clearfix">
-					<li><i class="fa fa-clock-o"></i><?php aeonblog_posted_on(); ?></li>
-					<li><span class="post-comments"><i class="fa fa-comments"></i> <?php comments_number(); ?></span></li>
+					<li><i class="fa fa-clock-o" aria-hidden="true"></i><?php aeonblog_posted_on(); ?></li>
+					<li><span class="post-comments"><i class="fa fa-comments" aria-hidden="true"></i> <?php comments_number(); ?></span></li>
 				</ul>
 				<?php
 			}
@@ -54,17 +54,23 @@ $blog_full_image     = ( $featured_image_full == 0 ) ? '' : 'blog-full-image';
 				</ul>
 			<?php } ?>
 		</div><!-- .entry-header -->
-		<header class="featured-wrapper <?php echo esc_attr( $blog_full_image ); ?>">
-			<div class="post-thumbnail">
-                <a href="<?php the_permalink(); ?>">
-                    <?php
-                    if ( $blog_featured_image == 1 ) {
-                        the_post_thumbnail( 'small' );
-                    }
-                    ?>
-                </a>
+		<?php
+		if ( has_post_thumbnail() ) {
+			?>
+			<div class="featured-wrapper <?php echo esc_attr( $blog_full_image ); ?>">
+				<div class="post-thumbnail">
+					<a href="<?php the_permalink(); ?>">
+						<?php
+						if ( $blog_featured_image == 1 ) {
+							the_post_thumbnail( 'small' );
+						}
+						?>
+					</a>
+				</div>
 			</div>
-		</header>
+			<?php
+		}
+		?>
 		<div class="blog-content">
 			<div class="entry-content">
 				<?php the_excerpt(); ?>

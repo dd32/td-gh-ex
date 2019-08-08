@@ -17,12 +17,12 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class( 'post-wrapper' ); ?>>
 	<div class="entry-header">
 		<ul class="entry-meta list-inline clearfix">
-			<li><span class="author vcard"><i class="fa fa-user"></i> <?php aeonblog_posted_by(); ?></span></li>
-			<li><i class="fa fa-clock-o"></i><?php aeonblog_posted_on(); ?></li>
+			<li><span class="author vcard"><i class="fa fa-user" aria-hidden="true"></i> <?php aeonblog_posted_by(); ?></span></li>
+			<li><i class="fa fa-clock-o" aria-hidden="true"></i><?php aeonblog_posted_on(); ?></li>
 		</ul>
 		<?php
 		if ( is_singular() ) :
-			the_title( '<h2 class="entry-title">', '</h2>' );
+			the_title( '<h1 class="entry-title">', '</h1>' );
 		else :
 			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
 		endif;
@@ -43,12 +43,17 @@
 			</li>
 		</ul>
 	</div>
-	<header class="featured-wrapper">
-		<div class="post-thumbnail">
-			<?php the_post_thumbnail( 'small' ); ?>
-		</div>
-	</header><!-- .entry-header -->
-
+	<?php
+	if ( has_post_thumbnail() ) {
+		?>
+		<div class="featured-wrapper">
+			<div class="post-thumbnail">
+				<?php the_post_thumbnail( 'small' ); ?>
+			</div>
+		</div><!-- .entry-header -->
+		<?php
+	}
+	?>
 	<div class="blog-content">
 		<div class="entry-content">
 			<?php

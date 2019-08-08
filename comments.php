@@ -30,7 +30,7 @@ if ( post_password_required() ) {
 
 	<?php
 	// You can start editing here -- including this comment!
-	if ( have_comments() ) :
+	if ( have_comments() ) {
 		?>
 		<h2 class="comments-title">
 			<?php
@@ -75,7 +75,9 @@ if ( post_password_required() ) {
 			<?php
 		endif;
 
-	endif; // Check for have_comments().
+	} else {
+		echo '<h2 class="comments-title">' . esc_html__( 'Be the first to reply', 'aeonblog' ) . '</h2>';
+	} // Check for have_comments().
 
 	comment_form();
 	?>

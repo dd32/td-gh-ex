@@ -20,7 +20,8 @@ get_header();
 <div class="error-page-wrapper">
 	<div class="container">
 			<div class="error-message text-center">
-				<h2 class="page-title"><?php esc_html_e( '404', 'aeonblog' ); ?></h2>
+				<h1 class="page-title"><?php esc_html_e( '404', 'aeonblog' ); ?></h1>
+				<br><br>
 				<p><?php esc_html_e( 'It looks like nothing was found at this location. Maybe try one of the links below or a search?', 'aeonblog' ); ?></p>	
 			</div><!-- .page-content -->
 			</section><!-- .error-404 -->

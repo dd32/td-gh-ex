@@ -221,11 +221,6 @@ if ( ! function_exists( 'aeonblog_breadcrumb_trail' ) ) {
 }
 
 /**
- * Load category dropdown functions
- */
-require get_template_directory() . '/inc/customizer-category-control.php';
-
-/**
  * Load dynamic css file
  */
 require get_template_directory() . '/inc/functions/dynamic-css.php';

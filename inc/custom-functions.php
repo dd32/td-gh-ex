@@ -191,19 +191,12 @@ if ( ! function_exists( 'aeonblog_posts_navigation' ) ) {
 		$aeonblog_pagination_option = $aeonblog_theme_options['aeonblog-pagination-type'];
 		if ( 'default' == $aeonblog_pagination_option ) {
 			the_posts_navigation();
-		}
-		else{
+		} else {
 			echo "<div class='aeonblog-pagination'>";
-			global $wp_query;
-			$big = 999999999; // Need an unlikely integer.
-			echo paginate_links(
+			the_posts_pagination(
 				array(
-					'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
-					'format'    => '?paged=%#%',
-					'current'   => max( 1, get_query_var( 'paged' ) ),
-					'total'     => $wp_query->max_num_pages,
-					'prev_text' => __( '&laquo; Prev', 'aeonblog' ),
-					'next_text' => __( 'Next &raquo;', 'aeonblog' ),
+				'prev_text' => __( '&laquo; Prev', 'aeonblog' ),
+				'next_text' => __( 'Next &raquo;', 'aeonblog' ),
 				)
 			);
 			echo '</div>';

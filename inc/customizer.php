@@ -165,7 +165,6 @@ function aeonblog_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'aeonblog_blog_section',
 		array(
-			'priority'       => 10,
 			'capability'     => 'edit_theme_options',
 			'theme_supports' => '',
 			'title'          => __( 'Blog Section Options', 'aeonblog' ),
@@ -219,7 +218,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'section'     => 'aeonblog_blog_section',
 			'settings'    => 'aeonblog_theme_options[aeonblog-read-more-text]',
 			'type'        => 'text',
-			'priority'    => 10,
 		)
 	);
 
@@ -242,7 +240,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'section'     => 'aeonblog_blog_section',
 			'settings'    => 'aeonblog_theme_options[aeonblog-blog-meta]',
 			'type'        => 'checkbox',
-			'priority'    => 10,
 		)
 	);
 
@@ -265,7 +262,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'section'     => 'aeonblog_blog_section',
 			'settings'    => 'aeonblog_theme_options[aeonblog-blog-image]',
 			'type'        => 'checkbox',
-			'priority'    => 10,
 		)
 	);
 
@@ -288,7 +284,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'section'     => 'aeonblog_blog_section',
 			'settings'    => 'aeonblog_theme_options[aeonblog-blog-full-image]',
 			'type'        => 'checkbox',
-			'priority'   => 10,
 		)
 	);
 
@@ -311,7 +306,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'section'     => 'aeonblog_blog_section',
 			'settings'    => 'aeonblog_theme_options[aeonblog-blog-excerpt]',
 			'type'        => 'number',
-			'priority'    => 10,
 			'input_attrs' => array(
 				'min'     => -1,
 				'max'     => 50,
@@ -339,7 +333,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'section'     => 'aeonblog_blog_section',
 			'settings'    => 'aeonblog_theme_options[aeonblog-sticky-sidebar]',
 			'type'        => 'checkbox',
-			'priority'    => 10,
 		)
 	);
 
@@ -348,7 +341,6 @@ function aeonblog_customize_register( $wp_customize ) {
 		'aeonblog_typography_section',
 		array(
 			'title'    => __( 'Typography Options', 'aeonblog' ),
-			'priority' => 10,
 			'panel'    => 'aeonblog_panel',
 		)
 	);
@@ -482,7 +474,6 @@ function aeonblog_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'aeonblog_footer_section',
 		array(
-			'priority'       => 10,
 			'capability'     => 'edit_theme_options',
 			'theme_supports' => '',
 			'title'          => __( 'Footer Options', 'aeonblog' ),
@@ -509,7 +500,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'section'     => 'aeonblog_footer_section',
 			'settings'  => 'aeonblog_theme_options[aeonblog-copyright-text]',
 			'type'      => 'text',
-			'priority'  => 10,
 		)
 	);
 
@@ -532,7 +522,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'section'     => 'aeonblog_footer_section',
 			'settings'    => 'aeonblog_theme_options[aeonblog-go-to-top]',
 			'type'        => 'checkbox',
-			'priority'    => 11,
 		)
 	);
 
@@ -540,7 +529,6 @@ function aeonblog_customize_register( $wp_customize ) {
 	$wp_customize->add_section(
 		'aeonblog_extra_section',
 		array(
-			'priority'       => 10,
 			'capability'     => 'edit_theme_options',
 			'theme_supports' => '',
 			'title'          => __( 'Extra Options', 'aeonblog' ),
@@ -567,7 +555,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'section'   => 'aeonblog_extra_section',
 			'settings'  => 'aeonblog_theme_options[aeonblog-breadcrumb-option]',
 			'type'      => 'checkbox',
-			'priority'  => 10,
 		)
 	);
 
@@ -615,7 +602,6 @@ function aeonblog_customize_register( $wp_customize ) {
 			'section'     => 'aeonblog_extra_section',
 			'settings'    => 'aeonblog_theme_options[aeonblog-related-post]',
 			'type'        => 'checkbox',
-			'priority'    => 10,
 		)
 	);
 

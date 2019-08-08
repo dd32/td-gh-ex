@@ -90,11 +90,8 @@ if ( has_header_image() || is_front_page() ) {
 	</div>
 	<?php
 }
-
-if ( ! is_page_template( 'elementor_header_footer' ) ) {
-	?>
+?>
 	<div id="content" class="blog-wrapper">
 		<div class="container">
 			<div class="row">
-	<?php
-}
+

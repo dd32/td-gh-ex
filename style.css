@@ -2,9 +2,9 @@
 Theme Name: AeonBlog
 Theme URI: 
 Author: aeontheme
-Author URI: 
+Author URI: https://aeonwp.com/
 Description: Simple and Clean Accessibility Ready Blog Theme. It comes with easy to use customizer based theme options, copyright text, post templates, sidebar options, meta options, featured image option, excerpt length option, read more text, sticky sidebar and many more. This is a complete WordPress theme for bloggers.
-Version: 1.0.2
+Version: 1.0.3
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: aeonblog
@@ -778,8 +778,8 @@ a:active {
 	clip-path: none;
 	color: #21759b;
 	display: block;
-	font-size: 14px;
-	font-size: 0.875rem;
+	font-size: 16px;
+	font-size: 0.8em;
 	font-weight: bold;
 	height: auto;
 	left: 5px;
@@ -1419,7 +1419,7 @@ object {
 	padding: 50px;
 }
 
-.error-message h2 {
+.error-message h1 {
 	color: #4ea371;
 	font-size: 90px;
 	line-height: 90px;
@@ -2184,14 +2184,13 @@ p[class*='comment-form-'] {
 }
 
 .aeonblog-menu-social li a {
-	background-color: #b08653;
 	border: medium none;
 	display: table-cell;
 	float: left;
 	font-weight: normal !important;
 	height: 30px;
 	line-height: 1.7;
-	margin-right: 5px;
+	margin-right: 9px;
 	padding: 0;
 	text-align: center;
 	vertical-align: middle;
@@ -2223,7 +2222,15 @@ p[class*='comment-form-'] {
 
 .aeonblog-menu-social li a:hover {
 	opacity: 0.7;
+	outline: 1px solid #fff;
+	outline-offset: 4px;
 }
+
+.aeonblog-menu-social li a:focus {
+	outline: 1px solid #fff;
+	outline-offset: 4px;
+}
+
 
 .aeonblog-menu-social li a:hover:before {
 	color: #fff;

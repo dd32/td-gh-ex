@@ -28,9 +28,9 @@ get_header();
 	</div>
 	<div id="primary" class="col-md-8 col-sm-8">
 		<div class="content-area" role="main">
-			<header class="page-header">
+			<div class="page-header">
 				<?php the_title( '<h1 class="page-title">', '</h1>' ); ?>
-			</header><!-- .entry-header -->
+			</div><!-- .entry-header -->
 			<?php
 			while ( have_posts() ) :
 				the_post();

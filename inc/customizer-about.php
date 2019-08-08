@@ -39,7 +39,6 @@ $wp_customize->add_control(
 		'label'       => __( 'Check this box to enable the About section.', 'aeonblog' ),
 		'description' => __( 'This section is displayed at the top of the sidebar. It shows the users gravatar and Biographical Info. The content is generated from the users settings.', 'aeonblog' ),
 		'section'     => 'aeonblog_about',
-		'priority'    => 10,
 	)
 );
 

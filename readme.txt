@@ -1,10 +1,8 @@
 === Aeon Blog ===
-
 Contributors: aeontheme
-Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready, accessibility-ready, blog, news
 Requires at least: 4.5
 Tested up to: 5.2.1
-Requires PHP: 5.2.4
+Requires PHP: 5.6
 Stable tag: 1.0.0
 License:      GNU General Public License v2 or later
 License URI:  http://www.gnu.org/licenses/gpl-2.0.html
@@ -25,6 +23,9 @@ Simple and Clean Accessibility Ready Blog Theme. It comes with easy to use custo
 AeonBlog includes support for Infinite Scroll in Jetpack.
 
 == Changelog ==
+= 1.0.3 - August 08 2019 =
+* Reviewer Issues Fixed
+
 = 1.0.2 - July 07 2019 =
 * Reviewer Issues Fixed
 * Slider Removed
