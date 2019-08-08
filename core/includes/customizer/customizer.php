@@ -16,7 +16,6 @@ function responsive_customize_register( $wp_customize ) {
 	$wp_customize->get_setting( 'header_image' )->transport    = 'refresh';
 	$wp_customize->get_setting( 'custom_logo' )->transport     = 'refresh';
 
-
 	/*
 	--------------------------------------------------------------
 	// CSS Styles
@@ -227,6 +226,8 @@ function register_options() {
 		'class-responsive-links-customizer',
 		'class-responsive-footer-customizer',
 		'class-responsive-footer-copyrights-customizer',
+		'class-responsive-menu-customizer',
+		'class-responsive-sidebar-customizer',
 	);
 
 	foreach ( $files as $key ) {
@@ -258,6 +259,7 @@ function custom_controls( $wp_customize ) {
 	require_once $dir . 'sortable/class-responsive-customizer-sortable-control.php';
 	require_once $dir . 'text/class-responsive-customizer-text-control.php';
 	require_once $dir . 'typography/class-responsive-customizer-typography-control.php';
+	require_once $dir . 'dimensions/class-responsive-customizer-dimensions-control.php';
 
 	// Register JS control types.
 	$wp_customize->register_control_type( 'Responsive_Customizer_Color_Control' );
@@ -266,6 +268,7 @@ function custom_controls( $wp_customize ) {
 	$wp_customize->register_control_type( 'Responsive_Customizer_Sortable_Control' );
 	$wp_customize->register_control_type( 'Responsive_Customizer_Text_Control' );
 	$wp_customize->register_control_type( 'Responsive_Customizer_Typography_Control' );
+	$wp_customize->register_control_type( 'Responsive_Customizer_Dimensions_Control' );
 
 }
 add_action( 'customize_register', 'custom_controls' );

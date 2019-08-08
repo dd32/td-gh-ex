@@ -69,8 +69,8 @@ if ( ! class_exists( 'Responsive_Layout_Customizer' ) ) :
 					'type'     => 'select',
 					'choices'  => array(
 						'default-layout'    => __( 'Default', 'responsive' ),
-						'full-width-layout' => __( 'Full Width Layout', 'responsive' ),
-						'full-width-no-box' => __( 'Full Width Without boxes', 'responsive' ),
+						'full-width-layout' => __( 'Full Width Boxed Layout', 'responsive' ),
+						'full-width-no-box' => __( 'Full Width Without Boxes', 'responsive' ),
 					),
 				)
 			);
@@ -360,8 +360,29 @@ if ( ! class_exists( 'Responsive_Layout_Customizer' ) ) :
 
 				)
 			);
+			$wp_customize->add_setting(
+				'responsive_fullwidth_header_color',
+				array(
+					'type'              => 'theme_mod',
+					'sanitize_callback' => 'responsive_sanitize_color',
+					'transport'         => 'refresh',
+					'default'           => '#585858',
+				)
+			);
+			$wp_customize->add_control(
+				new Responsive_Customizer_Color_Control(
+					$wp_customize,
+					'responsive_fullwidth_header_color',
+					array(
+						'label'           => esc_html__( 'Header Color', 'responsive' ),
+						'section'         => 'responsive_layout_section',
+						'settings'        => 'responsive_fullwidth_header_color',
+						'priority'        => 10,
+						'active_callback' => 'responsive_check_layout_type',
+					)
+				)
+			);
 		}
-
 
 	}
 
