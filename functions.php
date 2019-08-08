@@ -217,10 +217,10 @@ function attesa_scripts() {
 	if (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_four') {
 		wp_enqueue_style( 'font-awesome-4', get_template_directory_uri() .'/css/font-awesome'.$min.'.css', array(), '4.7.0');
 	} elseif (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_five') {
-		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all'.$min.'.css', array(), '5.10.0');
+		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all'.$min.'.css', array(), '5.10.1');
 	} elseif (attesa_options('_choose_icon_pack', 'font_awesome_four') == 'font_awesome_five_comp') {
-		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all'.$min.'.css', array(), '5.10.0');
-		wp_enqueue_style( 'font-awesome-4-shim', get_template_directory_uri() .'/css/v4-shims'.$min.'.css', array(), '5.10.0');
+		wp_enqueue_style( 'font-awesome-5-all', get_template_directory_uri() .'/css/all'.$min.'.css', array(), '5.10.1');
+		wp_enqueue_style( 'font-awesome-4-shim', get_template_directory_uri() .'/css/v4-shims'.$min.'.css', array(), '5.10.1');
 	}
 	
 	$disableGoogleFonts = attesa_options('_disable_google_fonts', '');
@@ -320,6 +320,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 require get_template_directory() . '/inc/pro-button/class-customize.php';
 
+/* Calling the welcome notice only if user is admin and Attesa Extra plugin is not installed */
+if ( is_admin() && !class_exists( 'Attesa_extra' ) ) {
+	require get_template_directory() . '/inc/attesa-notice.php';
+}
 /**
  * TGM Plugin Activation
  */

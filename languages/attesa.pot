@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Attesa\n"
-"POT-Creation-Date: 2019-07-31 15:34+0100\n"
-"PO-Revision-Date: 2019-07-31 15:34+0100\n"
+"POT-Creation-Date: 2019-08-08 11:30+0100\n"
+"PO-Revision-Date: 2019-08-08 11:30+0100\n"
 "Last-Translator: \n"
 "Language-Team: \n"
 "Language: en\n"
@@ -188,6 +188,29 @@ msgstr ""
 
 #: header.php:38
 msgid "Skip to content"
+msgstr ""
+
+#: inc/attesa-notice.php:52
+msgid "Action failed. Please refresh the page and retry."
+msgstr ""
+
+#: inc/attesa-notice.php:56
+msgid "Cheatin&#8217; huh?"
+msgstr ""
+
+#: inc/attesa-notice.php:70
+msgid "Dismiss"
+msgstr ""
+
+#: inc/attesa-notice.php:72
+msgid ""
+"Welcome! Thank you for choosing Attesa theme! To fully take advantage of the "
+"best our theme can offer please make sure you have installed the \"Attesa "
+"Extra\" plugin"
+msgstr ""
+
+#: inc/attesa-notice.php:75
+msgid "Install Attesa Extra Plugin"
 msgstr ""
 
 #: inc/class-tgm-plugin-activation.php:327
@@ -1678,11 +1701,19 @@ msgstr ""
 msgid "More Info"
 msgstr ""
 
-#: inc/pro-button/class-customize.php:80
+#: inc/pro-button/class-customize.php:81
+msgid "Free Attesa Extra plugin"
+msgstr ""
+
+#: inc/pro-button/class-customize.php:82
+msgid "Get Attesa Extra"
+msgstr ""
+
+#: inc/pro-button/class-customize.php:91
 msgid "Need help?"
 msgstr ""
 
-#: inc/pro-button/class-customize.php:81
+#: inc/pro-button/class-customize.php:92
 msgid "Theme Documentation"
 msgstr ""
 

@@ -3,7 +3,7 @@ Contributors: CrestaProject
 Tags: two-columns, right-sidebar, custom-colors, custom-menu, featured-images, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, e-commerce, footer-widgets, custom-logo
 Requires at least: 4.5
 Tested up to: 5.2
-Stable tag: 1.0.2
+Stable tag: 1.0.3
 Requires PHP: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -40,6 +40,10 @@ License: Pexels.com CC0 license https://www.pexels.com/creative-commons-images/
 Image Source: https://www.pexels.com/photo/person-typing-on-macbook-pro-1548999/
 
 == Changelog ==
+
+= Version 1.0.3 =
+* Updated FontAwesome to 5.10.1 version
+* Minor bug fixes
 
 = Version 1.0.2 =
 * Added the possibility to show/hide the sub-footer (thanks to Marco Montanari)

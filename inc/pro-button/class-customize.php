@@ -75,6 +75,17 @@ final class Attesa_Updgrade_Pro_Button {
 			] )
 		);
 		
+		if ( !class_exists( 'Attesa_extra' ) ) {
+			$manager->add_section(
+				new Button( $manager, 'manager_attesa_get_extra', [
+					'title'       => __( 'Free Attesa Extra plugin', 'attesa' ),
+					'button_text' => __( 'Get Attesa Extra',        'attesa' ),
+					'button_url'  => admin_url( add_query_arg( array( 's' => 'attesa+extra', 'tab' => 'search', 'type' => 'term' ), 'plugin-install.php' ) ),
+					'priority' => 999,
+				] )
+			);
+		}
+		
 		$manager->add_section(
 			new Button( $manager, 'manager_attesa_documentation', [
 				'title'       => __( 'Need help?', 'attesa' ),
