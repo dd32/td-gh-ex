@@ -1660,10 +1660,11 @@ body.global-layout-left-sidebar {
   background: $primary_color none repeat scroll 0 0;
   color: $white_color;
   padding: 5px;
+
 }
 
 .sidebar .widget-title, .entry-title {
-  border-bottom: 3px double;
+  border-bottom: 1px solid #ddd;
   padding-bottom: 15px;
 }
 

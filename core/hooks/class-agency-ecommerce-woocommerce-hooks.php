@@ -77,7 +77,7 @@ class Agency_Ecommerce_WooCommerce_Hooks
 
         // Shop List View and Grid View
         if (!$hide_list_grid_view) {
-            add_filter('woocommerce_before_shop_loop', array($this, 'before_shop_loop'), 35);
+            add_action('woocommerce_before_shop_loop', array($this, 'before_shop_loop'), 35);
         }
 
         $show_product_excerpt = (boolean)agency_ecommerce_get_option('show_product_excerpt');
@@ -85,7 +85,7 @@ class Agency_Ecommerce_WooCommerce_Hooks
         // Show excerpt or not
         if (!$hide_list_grid_view || $show_product_excerpt) {
 
-            add_filter('woocommerce_after_shop_loop_item', array($this, 'before_shop_loop_item'), 15);
+            add_action('woocommerce_after_shop_loop_item', array($this, 'after_shop_loop_item'), 15);
 
         }
 
@@ -205,7 +205,7 @@ class Agency_Ecommerce_WooCommerce_Hooks
     }
 
 
-    public function before_shop_loop_item()
+    public function after_shop_loop_item()
     {
 
         if (is_shop()) {
@@ -221,7 +221,10 @@ class Agency_Ecommerce_WooCommerce_Hooks
                 $style = '';
             }
 
-            echo '<div class="ae-product-excerpt" ' . $style . '><p>' . esc_html(agency_ecommerce_get_the_excerpt($woo_shop_excerpt_length)) . '</p></div>';
+            $excerpt = wp_trim_words(agency_ecommerce_get_the_excerpt(), $woo_shop_excerpt_length);
+
+            echo '<div class="ae-product-excerpt" ' . $style . '><p>' . esc_html($excerpt) . '</p></div>';
+
 
         }
 

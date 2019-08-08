@@ -149,6 +149,7 @@ if (!function_exists('agency_ecommerce_implement_excerpt_length')) :
      */
     function agency_ecommerce_implement_excerpt_length($length)
     {
+
         if (is_admin()) {
 
             return $length;
@@ -237,9 +238,10 @@ if (!function_exists('agency_ecommerce_hook_read_more_filters')) :
      */
     function agency_ecommerce_hook_read_more_filters()
     {
+
         if (is_home() || is_category() || is_tag() || is_author() || is_date() || is_search()) {
 
-            add_filter('excerpt_length', 'agency_ecommerce_implement_excerpt_length', 999);
+            add_filter('excerpt_length', 'agency_ecommerce_implement_excerpt_length', 10);
             add_filter('the_content_more_link', 'agency_ecommerce_content_more_link', 10, 2);
             add_filter('excerpt_more', 'agency_ecommerce_implement_read_more');
 

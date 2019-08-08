@@ -47,8 +47,9 @@ $product_category_class = count($term_ids) > 0 ? ' ae-cat-id-' . join(' ae-cat-i
     ?>
 
     <div class="ae-woo-block-wrap<?php echo esc_attr($product_category_class); ?>">
-        <div class="<?php echo $product_wrap ?>">
-            <a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>" class="ae-product-link"><?php echo the_title() ?></a>
+        <div class="<?php echo esc_attr($product_wrap) ?>">
+            <a href="<?php echo esc_url(get_permalink(get_the_ID())); ?>"
+               class="ae-product-link"><?php echo the_title() ?></a>
             <?php
             /**
              * woocommerce_before_shop_loop_item_title hook.
@@ -90,9 +91,7 @@ $product_category_class = count($term_ids) > 0 ? ' ae-cat-id-' . join(' ae-cat-i
             <div class="add-to-cart-wrap">
                 <?php
 
-                $show_detail_icon = agency_ecommerce_get_option('show_detail_icon');
-
-                if ((true === $show_detail_icon) && (class_exists('YITH_WCWL'))) { ?>
+                if (class_exists('YITH_WCWL')) { ?>
                     <div class="view-detail-wishlist-wrap">
                         <div class="view-detail-wishlist-inner">
                             <?php
@@ -101,7 +100,12 @@ $product_category_class = count($term_ids) > 0 ? ' ae-cat-id-' . join(' ae-cat-i
 
                             if (class_exists('YITH_WCWL') && (absint($wishlist_page_id) > 0)) { ?>
                                 <div class="add-to-wishlist-wrap">
-                                    <?php echo do_shortcode('[yith_wcwl_add_to_wishlist]'); ?>
+                                    <?php
+
+                                    echo do_shortcode('[yith_wcwl_add_to_wishlist]');
+
+
+                                    ?>
                                 </div>
                                 <?php
                             }

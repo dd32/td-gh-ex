@@ -2,9 +2,9 @@
 # This file is distributed under the GNU General Public License v2 or later.=!>
 msgid ""
 msgstr ""
-"Project-Id-Version: Agency Ecommerce 2.0.3\n"
+"Project-Id-Version: Agency Ecommerce 2.0.4\n"
 "Report-Msgid-Bugs-To: mantrabrain@gmail.com\n"
-"POT-Creation-Date: 2019-08-01 17:37:39+00:00\n"
+"POT-Creation-Date: 2019-08-08 06:01:35+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -114,10 +114,11 @@ msgid ""
 "area. Some Specific widget will support full widget."
 msgstr ""
 
-#: core/class-agency-ecommerce-widgets.php:87
-#: core/class-agency-ecommerce-widgets.php:95
-#: core/class-agency-ecommerce-widgets.php:103
-#: core/class-agency-ecommerce-widgets.php:111
+#: core/class-agency-ecommerce-widgets.php:88
+#: core/class-agency-ecommerce-widgets.php:97
+#: core/class-agency-ecommerce-widgets.php:106
+#: core/class-agency-ecommerce-widgets.php:115
+#. translators: 1: footer id
 msgid "Top Footer %d"
 msgstr ""
 
@@ -129,7 +130,7 @@ msgstr ""
 msgid "Search Products"
 msgstr ""
 
-#: core/customizer/core.php:75 core/helper/helper-main.php:263
+#: core/customizer/core.php:75 core/helper/helper-main.php:246
 msgid "Select Category"
 msgstr ""
 
@@ -142,24 +143,24 @@ msgstr ""
 msgid "Read More"
 msgstr ""
 
-#: core/customizer/core.php:124
+#: core/customizer/core.php:123
 msgid "Continue Shopping"
 msgstr ""
 
-#: core/customizer/core.php:127
+#: core/customizer/core.php:126
 msgid "Copyright &copy; All rights reserved."
 msgstr ""
 
-#: core/customizer/core.php:132 core/template-functions.php:300
-#: core/template-functions.php:320 core/vendor/breadcrumbs/breadcrumbs.php:266
+#: core/customizer/core.php:131 core/template-functions.php:302
+#: core/template-functions.php:322 core/vendor/breadcrumbs/breadcrumbs.php:266
 msgid "Home"
 msgstr ""
 
-#: core/customizer/core.php:140
+#: core/customizer/core.php:139
 msgid "Oops! That page can&rsquo;t be found."
 msgstr ""
 
-#: core/customizer/core.php:142
+#: core/customizer/core.php:141
 msgid "It looks like nothing was found at this location. Maybe try a search?"
 msgstr ""
 
@@ -346,7 +347,7 @@ msgid "No Sidebar"
 msgstr ""
 
 #: core/customizer/sections/layout-options.php:57
-#: core/widgets/agency-ecommerce-advance-posts-widget.php:53
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:54
 msgid "Excerpt Length"
 msgstr ""
 
@@ -448,6 +449,14 @@ msgstr ""
 msgid "Bottom"
 msgstr ""
 
+#: core/customizer/sections/product-single-page-options.php:61
+msgid "Disable Related Products at Product Detail Page"
+msgstr ""
+
+#: core/customizer/sections/product-single-page-options.php:78
+msgid "Enable Image Zoom at Product Detail Page"
+msgstr ""
+
 #: core/customizer/sections/search-text-options.php:4
 msgid "Search Text Options"
 msgstr ""
@@ -485,26 +494,14 @@ msgid "Disable Product Sorting Option"
 msgstr ""
 
 #: core/customizer/sections/shop-page-options.php:97
-msgid "Enable View Detail Icon at Product Pages"
-msgstr ""
-
-#: core/customizer/sections/shop-page-options.php:113
-msgid "Enable Image Zoom at Product Detail Page"
-msgstr ""
-
-#: core/customizer/sections/shop-page-options.php:129
-msgid "Disable Related Products at Product Detail Page"
-msgstr ""
-
-#: core/customizer/sections/shop-page-options.php:146
 msgid "Hide List/Grid View"
 msgstr ""
 
-#: core/customizer/sections/shop-page-options.php:162
+#: core/customizer/sections/shop-page-options.php:113
 msgid "Show Product Excerpt"
 msgstr ""
 
-#: core/customizer/sections/shop-page-options.php:178
+#: core/customizer/sections/shop-page-options.php:129
 msgid "Product excerpt length"
 msgstr ""
 
@@ -512,15 +509,17 @@ msgstr ""
 msgid "Social Options"
 msgstr ""
 
-#: core/customizer/sections/social-options.php:27
+#: core/customizer/sections/social-options.php:28
+#. translators: 1: Social icon link id
 msgid "Social Icon Link - %d"
 msgstr ""
 
-#: core/customizer/sections/social-options.php:43
+#: core/customizer/sections/social-options.php:45
+#. translators: 1: Icon text id
 msgid "Icon Text - %d"
 msgstr ""
 
-#: core/customizer/sections/social-options.php:45
+#: core/customizer/sections/social-options.php:47
 msgid "Please enter font awesome icon text here."
 msgstr ""
 
@@ -632,21 +631,21 @@ msgstr ""
 msgid "Theme Options"
 msgstr ""
 
-#: core/helper/helper-main.php:207
+#: core/helper/helper-main.php:190
 #. translators: 1: page name, 2: shortcode
 msgid "%1$s page does not contain %2$s shortcode."
 msgstr ""
 
-#: core/helper/helper-main.php:212
+#: core/helper/helper-main.php:195
 #. translators: 1: page name
 msgid "%s page is not set."
 msgstr ""
 
-#: core/helper/helper-main.php:399
+#: core/helper/helper-main.php:382
 msgid "No widgets found. Please add widgets to this widget area."
 msgstr ""
 
-#: core/helper/helper-main.php:409
+#: core/helper/helper-main.php:392
 #. translators: 1: link to WP admin new post page.
 msgid "<a href=\"%1$s\">Get started here</a>."
 msgstr ""
@@ -668,19 +667,19 @@ msgstr ""
 msgid "List View"
 msgstr ""
 
-#: core/hooks/class-agency-ecommerce-woocommerce-hooks.php:272
+#: core/hooks/class-agency-ecommerce-woocommerce-hooks.php:275
 msgid "You&rsquo; re viewing:"
 msgstr ""
 
-#: core/template-functions.php:301 core/template-functions.php:321
+#: core/template-functions.php:303 core/template-functions.php:323
 msgid "Demo"
 msgstr ""
 
-#: core/template-functions.php:302 core/template-functions.php:322
+#: core/template-functions.php:304 core/template-functions.php:324
 msgid "Docs"
 msgstr ""
 
-#: core/template-functions.php:303 core/template-functions.php:323
+#: core/template-functions.php:305 core/template-functions.php:325
 msgid "Support"
 msgstr ""
 
@@ -1114,15 +1113,15 @@ msgstr ""
 msgid "Week %s"
 msgstr ""
 
-#: core/widgets/agency-ecommerce-advance-posts-widget.php:21
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:22
 msgid "Widget to dispaly posts with thumbnail."
 msgstr ""
 
-#: core/widgets/agency-ecommerce-advance-posts-widget.php:24
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:25
 msgid "AE - Advance Posts"
 msgstr ""
 
-#: core/widgets/agency-ecommerce-advance-posts-widget.php:33
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:34
 #: core/widgets/agency-ecommerce-contact-widget.php:32
 #: core/widgets/agency-ecommerce-cta-widget.php:50
 #: core/widgets/agency-ecommerce-woo-categories-widget.php:37
@@ -1130,30 +1129,30 @@ msgstr ""
 msgid "Title"
 msgstr ""
 
-#: core/widgets/agency-ecommerce-advance-posts-widget.php:35
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:36
 msgid "Advance Posts"
 msgstr ""
 
-#: core/widgets/agency-ecommerce-advance-posts-widget.php:38
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:39
 msgid "Post Category"
 msgstr ""
 
-#: core/widgets/agency-ecommerce-advance-posts-widget.php:47
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:48
 msgid "Exclude Categories"
 msgstr ""
 
-#: core/widgets/agency-ecommerce-advance-posts-widget.php:48
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:49
 msgid ""
 "Enter category id seperated with comma. Posts from these categories will be "
 "excluded from latest post listing."
 msgstr ""
 
-#: core/widgets/agency-ecommerce-advance-posts-widget.php:50
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:51
 #: core/widgets/agency-ecommerce-woo-categories-widget.php:55
 msgid "View Details"
 msgstr ""
 
-#: core/widgets/agency-ecommerce-advance-posts-widget.php:58
+#: core/widgets/agency-ecommerce-advance-posts-widget.php:59
 msgid "Disable Date"
 msgstr ""
 
@@ -1645,7 +1644,21 @@ msgstr ""
 #. Description of the plugin/theme
 msgid ""
 "Agency Ecommerce is a powerful, dynamic and highly customized WordPress "
-"multipurpose e-commerce theme."
+"multipurpose WooCommerce compatible e-commerce theme. This theme is fully "
+"compatible with most popular WordPress ecommerce plugin WooCommerce and it "
+"is widget based theme and have many advanced widgets for online store. "
+"Sticky sidebars, header navigation, flexible header and footer, flexible "
+"sidebar options, WooCommerce cart and checkout template, advance slider "
+"widget, WooCommerce product and category widget are main feature of this "
+"theme. Besides that this theme is fully mobile responsive and fully "
+"translation ready with  a lot of customization options . You can make "
+"different type of online store using this theme, for example: fashion "
+"store, sport shop, baby store, jewelry store, kitchen online shop, food "
+"selling website, different type of toy store, digital product store, "
+"affiliate store and any kind of product selling site. You can check theme "
+"details and demo from here. "
+"https://mantrabrain.com/downloads/agency-ecommerce-wordpress-woocommerce-"
+"theme/, https://demo.mantrabrain.com/agency-ecommerce/"
 msgstr ""
 
 #. Author of the plugin/theme
@@ -1668,7 +1681,7 @@ msgid_plural "%1$s thoughts on &ldquo;%2$s&rdquo;"
 msgstr[0] ""
 msgstr[1] ""
 
-#: core/helper/helper-main.php:61
+#: core/helper/helper-main.php:44
 #. translators: If there are characters in your language that are not supported
 #. by Open Sans, translate this to 'off'. Do not translate into your own
 #. language.
@@ -1676,7 +1689,7 @@ msgctxt "Open Sans font: on or off"
 msgid "on"
 msgstr ""
 
-#: core/helper/helper-main.php:66
+#: core/helper/helper-main.php:49
 #. translators: If there are characters in your language that are not supported
 #. by Playfair Display, translate this to 'off'. Do not translate into your own
 #. language.
@@ -1684,32 +1697,32 @@ msgctxt "Playfair Display font: on or off"
 msgid "on"
 msgstr ""
 
-#: core/helper/helper-main.php:93
+#: core/helper/helper-main.php:76
 msgctxt "page setting"
 msgid "Shop base"
 msgstr ""
 
-#: core/helper/helper-main.php:97
+#: core/helper/helper-main.php:80
 msgctxt "page setting"
 msgid "Cart"
 msgstr ""
 
-#: core/helper/helper-main.php:101
+#: core/helper/helper-main.php:84
 msgctxt "page setting"
 msgid "Checkout"
 msgstr ""
 
-#: core/helper/helper-main.php:105
+#: core/helper/helper-main.php:88
 msgctxt "page setting"
 msgid "My account"
 msgstr ""
 
-#: core/helper/helper-main.php:251
+#: core/helper/helper-main.php:234
 msgctxt "placeholder"
 msgid "Search Products &hellip;"
 msgstr ""
 
-#: core/helper/helper-main.php:302
+#: core/helper/helper-main.php:285
 msgctxt "submit button"
 msgid "Search"
 msgstr ""

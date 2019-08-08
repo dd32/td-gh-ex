@@ -266,18 +266,18 @@ if (!class_exists('Agency_Ecommerce_Featured_Slider_Widget')) :
             <div class="slide-item" style="<?php echo $bg_image_style; ?>">
                 <a class="ae-overlay"
                    href="<?php the_permalink() ?>"
-                   title="<?php the_title() ?>"></a>
+                   title="<?php the_title_attribute() ?>"></a>
                 <div class="slider-desc">
                     <div class="slider-details">
                         <div class="slide-title">
                             <a href="<?php the_permalink() ?>"
-                               title="<?php the_title() ?>">
+                               title="<?php the_title_attribute() ?>">
                                 <?php the_title() ?></a>
                         </div>
                     </div>
                     <div class="slider-buttons">
                         <a href="<?php the_permalink() ?>"
-                           class="slider-button primary" title="<?php the_title() ?>">
+                           class="slider-button primary" title="<?php the_title_attribute() ?>">
                             <?php echo esc_html($valid_widget_instance['shop_now_text']) ?></a>
                     </div>
                 </div>

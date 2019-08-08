@@ -104,7 +104,7 @@ if (!class_exists('Agency_Ecommerce_Woo_Categories_Widget')) :
 
             $background_color = $valid_widget_instance['background_color'];
 
-            $args['before_widget'] = str_replace('class="', 'style="background:' . $background_color . ' " class="', $args['before_widget']);
+            $args['before_widget'] = str_replace('class="', 'style="background:' . esc_attr($background_color) . ' " class="', $args['before_widget']);
 
             echo $args['before_widget']; ?>
 

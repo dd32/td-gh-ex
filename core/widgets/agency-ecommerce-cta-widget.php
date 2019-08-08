@@ -85,7 +85,7 @@ if (!class_exists('Agency_Ecommerce_CTA_Widget')) :
                     'name' => 'button_url',
                     'title' => esc_html__('Button URL', 'agency-ecommerce'),
                     'type' => 'text',
-                    'default' => 'https://mantrabrain.com/'
+                    'default' => '#'
                 ), 'background_image' => array(
                     'name' => 'background_image',
                     'title' => esc_html__('Background Image', 'agency-ecommerce'),

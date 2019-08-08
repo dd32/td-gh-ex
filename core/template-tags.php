@@ -186,6 +186,10 @@ if (!function_exists('agency_ecommerce_get_page_title_for_breadcrumb')) {
 
             $title = esc_html(agency_ecommerce_404_page_title());
         }
+        if (is_search()) {
+
+            $title = 'Search results for: ' . get_search_query();
+        }
 
 
         return $title;

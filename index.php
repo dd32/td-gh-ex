@@ -23,6 +23,7 @@ get_header(); ?>
             if (have_posts()) :
 
                 if (is_home() && !is_front_page()) :
+
                     if (!agency_ecommerce_is_advance_breadcrumb()) { ?>
 
                         <header>

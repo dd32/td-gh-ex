@@ -180,8 +180,8 @@ if (!class_exists('Agency_Ecommerce_Widget_Base')) {
                             'class' => 'widefat',
                             'taxonomy' => 'category',
                             'selected' => is_array($value) ? implode(",", $value) : $value,
-                            'name' => $this->get_field_name($field_key),
-                            'id' => $this->get_field_id($field_key),
+                            'name' => esc_attr($this->get_field_name($field_key)),
+                            'id' => esc_attr($this->get_field_id($field_key)),
                             'show_option_all' => esc_html__('All Categories', 'agency-ecommerce'),
                             'echo' => false,
                             'multiple' => false

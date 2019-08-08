@@ -80,7 +80,7 @@ if (!class_exists('Agency_Ecommerce_Newsletter_Widget')) :
 
             $shortcode = ($valid_widget_instance['shortcode']);
 
-            $background_color = sanitize_hex_color($valid_widget_instance['background_color']);
+            $background_color = esc_attr($valid_widget_instance['background_color']);
 
             $args['before_widget'] = str_replace('class="', 'style="background:' . $background_color . ' " class="', $args['before_widget']);
 

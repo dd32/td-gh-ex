@@ -52,7 +52,7 @@ if (!class_exists('Agency_Ecommerce_Contact_Widget')) :
                     'name' => 'text_two',
                     'title' => esc_html__('Text two', 'agency-ecommerce'),
                     'type' => 'text',
-                    'default' => 'contact@mantrabrain.com',
+                    'default' => 'contact@yourdomain.com',
                 ), 'icon_three' => array(
                     'name' => 'icon_three',
                     'title' => esc_html__('Icon three', 'agency-ecommerce'),

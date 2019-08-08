@@ -13,6 +13,7 @@ if (!class_exists('Agency_Ecommerce_Advance_Posts_Widget')) :
      */
     class Agency_Ecommerce_Advance_Posts_Widget extends Agency_Ecommerce_Widget_Base
     {
+        public $excerpt_length;
 
         function __construct()
         {
@@ -161,9 +162,15 @@ if (!class_exists('Agency_Ecommerce_Advance_Posts_Widget')) :
                                             <div class="entry-content">
                                                 <h2><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
                                                 <?php
-                                                $content = agency_ecommerce_get_the_excerpt(absint($valid_widget_instance['excerpt_length']));
+                                                $this->excerpt_length = $valid_widget_instance['excerpt_length'];
+
+                                                add_filter('excerpt_length', array($this, 'excerpt_length'), 11);
+
+                                                $content = agency_ecommerce_get_the_excerpt();
 
                                                 echo $content ? wpautop(wp_kses_post($content)) : '';
+
+                                                remove_filter('excerpt_length', array($this, 'excerpt_length'));
                                                 ?>
                                             </div>
 
@@ -188,6 +195,12 @@ if (!class_exists('Agency_Ecommerce_Advance_Posts_Widget')) :
 
             <?php
             echo $args['after_widget'];
+        }
+
+        function excerpt_length($length)
+        {
+
+            return $this->excerpt_length;
         }
 
 

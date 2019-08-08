@@ -18,29 +18,12 @@ if (!function_exists('agency_ecommerce_get_the_excerpt')) :
      * @param WP_Post $post_object The post object.
      * @return string Post excerpt.
      */
-    function agency_ecommerce_get_the_excerpt($length = 0, $post_object = null)
+    function agency_ecommerce_get_the_excerpt()
     {
-        global $post;
+        $agency_excerpt = get_the_excerpt();
 
-        if (is_null($post_object)) {
-            $post_object = $post;
-        }
+        return apply_filters ('agency_ecommerce_excerpt', $agency_excerpt);
 
-        $length = absint($length);
-        if (0 === $length) {
-            return;
-        }
-
-
-        $source_content = $post_object->post_content;
-
-        if (!empty($post_object->post_excerpt)) {
-            $source_content = $post_object->post_excerpt;
-        }
-
-        $source_content = strip_shortcodes($source_content);
-        $trimmed_content = wp_trim_words($source_content, $length, '...');
-        return $trimmed_content;
     }
 
 endif;
