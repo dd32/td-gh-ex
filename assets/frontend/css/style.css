@@ -1624,7 +1624,9 @@ a {
       left: 0;
       background: rgba(0, 0, 0, 0.25);
       position: absolute;
-      z-index: -0; }
+      z-index: -0;
+	  pointer-events: none;
+  }
   .section-featured figcaption {
     position: absolute;
     top: 50%;
@@ -1651,7 +1653,9 @@ a {
       background: #fff;
       border-color: transparent; }
   .section-featured .block-featured-item {
-    height: 275px; }
+    height: 275px;
+	min-height: 100px;
+	}
     .section-featured .block-featured-item:first-child {
       margin-bottom: 30px; }
     @media screen and (max-width: 767px) {

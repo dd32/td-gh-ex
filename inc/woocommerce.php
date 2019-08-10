@@ -336,7 +336,7 @@ $class = '';
 
 if( ! function_exists('acoustics_product_categories')):
 	function acoustics_product_categories() {
-$category_list = array();
+		$category_list = array();
 	    $categories = get_categories(
 	            array(
 	                'hide_empty' => 0,
@@ -345,11 +345,11 @@ $category_list = array();
 	            )
 	    );
 	    $category_list[0] = esc_html__('Select Category', 'acoustics');
-	    foreach ($categories as $category): $category_list[$category->term_id] = $category->name;
-endforeach;
+	    foreach ($categories as $category):
+			$category_list[$category->term_id] = $category->name;
+		endforeach;
 	    return $category_list;
 }
-
 endif;
 
 add_filter('woocommerce_sale_flash', 'acoustics_change_sale_content', 10, 3);

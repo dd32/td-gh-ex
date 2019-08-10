@@ -78,3 +78,19 @@ if ( ! function_exists( 'acoustics_custom_excerpt_more' ) ) :
 	}
 endif;
 add_filter( 'get_the_excerpt', 'acoustics_custom_excerpt_more' );
+
+if( ! function_exists('acoustics_categories')):
+	function acoustics_categories() {
+		$category_list = array();
+	    $categories = get_categories(
+	            array(
+	                'hide_empty' => 0,
+	            )
+	    );
+	    $category_list[0] = esc_html__('Select Category', 'acoustics');
+	    foreach ($categories as $category):
+			$category_list[$category->term_id] = $category->name;
+		endforeach;
+	    return $category_list;
+}
+endif;

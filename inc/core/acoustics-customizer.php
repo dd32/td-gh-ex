@@ -86,7 +86,7 @@ $wp_customize->add_control( 'acoustics_hero_section_title',
 );
 
 $wp_customize->add_setting( 'acoustics_hero_section_details', array(
-	 'sanitize_callback' => 'sanitize_textarea_field'
+	 'sanitize_callback' => 'sanitize_text_field'
 	)
 );
 
@@ -94,7 +94,7 @@ $wp_customize->add_control( 'acoustics_hero_section_details', array(
         'label'    => esc_html__( 'Caption Details', 'acoustics' ),
         'section'  => 'header_image',
         'settings' => 'acoustics_hero_section_details',
-        'type'     => 'textarea',
+        'type'     => 'text',
 		'priority'      => 20,
     )
 );
@@ -136,85 +136,71 @@ $wp_customize->add_control( 'acoustics_featured_section_enable' , array(
 	)
 );
 
-for( $i = 0; $i < 3; $i++) {
-  $wp_customize->add_setting( 'acoustics_featured_image_'.$i, array(
-			'transport' 		  => 'refresh',
-			'sanitize_callback'   => 'esc_url_raw',
-		)
-	);
-
-	$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'acoustics_featured_image_'.$i,
-	       array(
-	           'label'      => esc_html__( 'Upload image', 'acoustics' ),
-	           'section'    => 'acoustics_featured_section',
-	           'settings'   => 'acoustics_featured_image_'.$i,
-	       )
-	   )
-	);
-
-	$wp_customize->add_setting( 'acoustics_featured_title_'.$i, array(
-		  'sanitize_callback' => 'sanitize_text_field',
-		)
-	);
-
-	$wp_customize->add_control( 'acoustics_featured_title_'.$i, array(
-		  'label'     => esc_html__( 'Title', 'acoustics' ),
-		  'type'      => 'text',
-		  'section'   => 'acoustics_featured_section',
-		)
-	);
-
-	$wp_customize->add_setting( 'acoustics_featured_details_'.$i, array(
-		  'sanitize_callback' => 'sanitize_textarea_field',
-		)
-	);
-
-	$wp_customize->add_control( 'acoustics_featured_details_'.$i, array(
-		  'label'     => esc_html__( 'Content', 'acoustics' ),
-		  'type'      => 'textarea',
-		  'section'   => 'acoustics_featured_section',
-		)
-	);
-
-	$wp_customize->add_setting( 'acoustics_featured_link_'.$i, array(
-		 'sanitize_callback' => 'esc_url_raw'
-		)
-	);
-
-	$wp_customize->add_control( 'acoustics_featured_link_'.$i,
-	    array(
-	        'label'    => esc_html__( 'Button Link', 'acoustics' ),
-	        'section'  => 'acoustics_featured_section',
-	        'type'     => 'url',
-	    )
-	);
-}
-
+$acoustic_woocommerce = false;
 if( class_exists( 'WooCommerce' ) ):
+	$acoustic_woocommerce = true;
 	$acoustics_product_collections = acoustics_product_categories();
+endif;
 
-	$wp_customize->add_section( 'acoustics_newarrival_section', array(
-			'title'      =>  esc_html__('New Arrivals', 'acoustics'),
-			'priority'   =>  10,
-			'panel' 	 => 'acoustics_landing_panel'
-		)
-	);
+if( $acoustic_woocommerce ):
+	for( $i = 0; $i < 3; $i++) {
 
-	$wp_customize->add_setting( 'acoustics_newarrival_section_enable', array(
-			'default'             => false,
-			'sanitize_callback'   => 'acoustics_sanitize_checkbox',
-		)
-	);
+		$wp_customize->add_setting( 'acoustics_featured_categories_'.$i , array(
+				'default'     		=> 0,
+				'transport' => 'refresh',
+				'sanitize_callback' => 'absint',
+			)
+		);
 
-	$wp_customize->add_control( 'acoustics_newarrival_section_enable' , array(
-			'label'         => esc_html__( 'Enable Section', 'acoustics' ),
-			'type'			=> 'checkbox',
-			'section'       => 'acoustics_newarrival_section',
-			'priority'      => 5,
-		)
-	);
+		$wp_customize->add_control( 'acoustics_featured_categories_'.$i , array(
+				'label'       => esc_html__('Category', 'acoustics'),
+				'description' => esc_html__('Display product category with link.', 'acoustics'),
+				'section'     => 'acoustics_featured_section',
+				'type'        => 'select',
+				'choices'     => $acoustics_product_collections,
+			)
+		);
 
+	}
+else:
 
+  $wp_customize->add_setting( 'acoustics_featured_info', array(
+	    'sanitize_callback'    => 'sanitize_text_field'
+	  )
+  );
+
+  $wp_customize->add_control( new Acoustics_Customize_Control_Information( $wp_customize,'acoustics_featured_info', array(
+	    'label'           => esc_html__('Information','acoustics'),
+	    'description'     => esc_html__('Install WooCommerce Plugin to list more options.','acoustics'),
+		'section'         => 'acoustics_featured_section',
+	  )
+	)
+  );
+
+endif;
+
+$wp_customize->add_section( 'acoustics_newarrival_section', array(
+		'title'      =>  esc_html__('New Arrivals', 'acoustics'),
+		'priority'   =>  10,
+		'panel' 	 => 'acoustics_landing_panel'
+	)
+);
+
+$wp_customize->add_setting( 'acoustics_newarrival_section_enable', array(
+		'default'             => false,
+		'sanitize_callback'   => 'acoustics_sanitize_checkbox',
+	)
+);
+
+$wp_customize->add_control( 'acoustics_newarrival_section_enable' , array(
+		'label'         => esc_html__( 'Enable Section', 'acoustics' ),
+		'type'			=> 'checkbox',
+		'section'       => 'acoustics_newarrival_section',
+		'priority'      => 5,
+	)
+);
+
+if( $acoustic_woocommerce ):
 	$wp_customize->add_setting( 'acoustics_newarrival_collection' , array(
 			'default'     => 0,
 			'sanitize_callback' => 'absint',
@@ -229,31 +215,48 @@ if( class_exists( 'WooCommerce' ) ):
 			'choices'     => $acoustics_product_collections,
 		)
 	);
+else:
 
-	$wp_customize->add_section( 'acoustics_product_category_section', array(
-			'title'      =>  esc_html__('Featured Category', 'acoustics'),
-			'priority'   =>  15,
-			'panel' 	 => 'acoustics_landing_panel'
-		)
-	);
+	$wp_customize->add_setting( 'acoustics_newarrival_info', array(
+   	   'sanitize_callback'    => 'sanitize_text_field'
+   	 )
+    );
 
-	$wp_customize->add_setting( 'acoustics_product_category_section_enable', array(
-			'default'             => false,
-			'transport' 		  => 'refresh',
-			'sanitize_callback'   => 'acoustics_sanitize_checkbox',
-		)
-	);
+    $wp_customize->add_control( new Acoustics_Customize_Control_Information( $wp_customize,'acoustics_newarrival_info', array(
+   	   'label'           => esc_html__('Information','acoustics'),
+   	   'description'     => esc_html__('Install WooCommerce Plugin to list more options.','acoustics'),
+   	   'section'         => 'acoustics_newarrival_section',
+   	 )
+      )
+    );
 
-	$wp_customize->add_control( 'acoustics_product_category_section_enable' , array(
-			'label'         => esc_html__( 'Enable Section', 'acoustics' ),
-			'type'			=> 'checkbox',
-			'section'       => 'acoustics_product_category_section',
-			'priority'      => 5,
-		)
-	);
+endif;
 
+$wp_customize->add_section( 'acoustics_product_category_section', array(
+		'title'      =>  esc_html__('Featured Category', 'acoustics'),
+		'priority'   =>  15,
+		'panel' 	 => 'acoustics_landing_panel'
+	)
+);
+
+$wp_customize->add_setting( 'acoustics_product_category_section_enable', array(
+		'default'             => false,
+		'transport' 		  => 'refresh',
+		'sanitize_callback'   => 'acoustics_sanitize_checkbox',
+	)
+);
+
+$wp_customize->add_control( 'acoustics_product_category_section_enable' , array(
+		'label'         => esc_html__( 'Enable Section', 'acoustics' ),
+		'type'			=> 'checkbox',
+		'section'       => 'acoustics_product_category_section',
+		'priority'      => 5,
+	)
+);
+
+if( $acoustic_woocommerce ):
 	for( $i = 0; $i < 4; $i++) {
-  $wp_customize->add_setting( 'acoustics_product_categories_'.$i , array(
+  		$wp_customize->add_setting( 'acoustics_product_categories_'.$i , array(
 				'default'     		=> 0,
 				'transport' => 'refresh',
 				'sanitize_callback' => 'absint',
@@ -268,30 +271,46 @@ if( class_exists( 'WooCommerce' ) ):
 				'choices'     => $acoustics_product_collections,
 			)
 		);
-}
+	}
+else:
 
-	$wp_customize->add_section( 'acoustics_bestseller_section', array(
-			'title'      =>  esc_html__('Best Sellers', 'acoustics'),
-			'priority'   =>  20,
-			'panel' 	 => 'acoustics_landing_panel'
-		)
-	);
+	$wp_customize->add_setting( 'acoustics_product_categories_info', array(
+   	   'sanitize_callback'    => 'sanitize_text_field'
+   	 )
+    );
 
-	$wp_customize->add_setting( 'acoustics_bestseller_section_enable', array(
-			'default'             => false,
-			'sanitize_callback'   => 'acoustics_sanitize_checkbox',
-		)
-	);
+    $wp_customize->add_control( new Acoustics_Customize_Control_Information( $wp_customize,'acoustics_product_categories_info', array(
+   	   'label'           => esc_html__('Information','acoustics'),
+   	   'description'     => esc_html__('Install WooCommerce Plugin to list more options.','acoustics'),
+   	   'section'         => 'acoustics_product_category_section',
+   	 )
+      )
+    );
 
-	$wp_customize->add_control( 'acoustics_bestseller_section_enable' , array(
-			'label'         => esc_html__( 'Enable Section', 'acoustics' ),
-			'type'			=> 'checkbox',
-			'section'       => 'acoustics_bestseller_section',
-			'priority'      => 5,
-		)
-	);
+endif;
 
+$wp_customize->add_section( 'acoustics_bestseller_section', array(
+		'title'      =>  esc_html__('Best Sellers', 'acoustics'),
+		'priority'   =>  20,
+		'panel' 	 => 'acoustics_landing_panel'
+	)
+);
 
+$wp_customize->add_setting( 'acoustics_bestseller_section_enable', array(
+		'default'             => false,
+		'sanitize_callback'   => 'acoustics_sanitize_checkbox',
+	)
+);
+
+$wp_customize->add_control( 'acoustics_bestseller_section_enable' , array(
+		'label'         => esc_html__( 'Enable Section', 'acoustics' ),
+		'type'			=> 'checkbox',
+		'section'       => 'acoustics_bestseller_section',
+		'priority'      => 5,
+	)
+);
+
+if( $acoustic_woocommerce ):
 	$wp_customize->add_setting( 'acoustics_bestseller_collection' , array(
 			'default'     => 0,
 			'sanitize_callback' => 'absint',
@@ -306,32 +325,47 @@ if( class_exists( 'WooCommerce' ) ):
 			'choices'     => $acoustics_product_collections,
 		)
 	);
+else:
+	$wp_customize->add_setting( 'acoustics_bestseller_info', array(
+  	 'sanitize_callback'    => 'sanitize_text_field'
+     )
+    );
 
-	$wp_customize->add_section( 'acoustics_product_category_grid_section', array(
-			'title'      =>  esc_html__('Category Grid', 'acoustics'),
-			'priority'   =>  20,
-			'panel' 	 => 'acoustics_landing_panel'
-		)
-	);
+    $wp_customize->add_control( new Acoustics_Customize_Control_Information( $wp_customize,'acoustics_bestseller_info', array(
+	  	 'label'           => esc_html__('Information','acoustics'),
+	  	 'description'     => esc_html__('Install WooCommerce Plugin to list more options.','acoustics'),
+	  	 'section'         => 'acoustics_bestseller_section',
+	    )
+	  )
+    );
+endif;
 
-	$wp_customize->add_setting( 'acoustics_product_category_grid_section_enable', array(
-			'default'             => false,
-			'transport' 		  => 'refresh',
-			'sanitize_callback'   => 'acoustics_sanitize_checkbox',
-		)
-	);
+$wp_customize->add_section( 'acoustics_product_category_grid_section', array(
+		'title'      =>  esc_html__('Category Grid', 'acoustics'),
+		'priority'   =>  20,
+		'panel' 	 => 'acoustics_landing_panel'
+	)
+);
 
-	$wp_customize->add_control( 'acoustics_product_category_grid_section_enable' , array(
-			'label'         => esc_html__( 'Enable Section', 'acoustics' ),
-			'type'			=> 'checkbox',
-			'section'       => 'acoustics_product_category_grid_section',
-			'priority'      => 5,
-		)
-	);
+$wp_customize->add_setting( 'acoustics_product_category_grid_section_enable', array(
+		'default'             => false,
+		'transport' 		  => 'refresh',
+		'sanitize_callback'   => 'acoustics_sanitize_checkbox',
+	)
+);
 
-	$collection = 6;
-	for( $i = 0; $i < $collection; $i++) {
-  $wp_customize->add_setting( 'acoustics_product_categories_grid_'.$i , array(
+$wp_customize->add_control( 'acoustics_product_category_grid_section_enable' , array(
+		'label'         => esc_html__( 'Enable Section', 'acoustics' ),
+		'type'			=> 'checkbox',
+		'section'       => 'acoustics_product_category_grid_section',
+		'priority'      => 5,
+	)
+);
+
+if( $acoustic_woocommerce ):
+  $collection = 6;
+  for( $i = 0; $i < $collection; $i++) {
+       $wp_customize->add_setting( 'acoustics_product_categories_grid_'.$i , array(
 				'default'     		=> 0,
 				'transport' => 'refresh',
 				'sanitize_callback' => 'absint',
@@ -346,9 +380,22 @@ if( class_exists( 'WooCommerce' ) ):
 				'choices'     => $acoustics_product_collections,
 			)
 		);
-}
+	}
+else:
+	$wp_customize->add_setting( 'acoustics_category_grid_info', array(
+  	 'sanitize_callback'    => 'sanitize_text_field'
+     )
+    );
 
+    $wp_customize->add_control( new Acoustics_Customize_Control_Information( $wp_customize,'acoustics_category_grid_info', array(
+	  	 'label'           => esc_html__('Information','acoustics'),
+	  	 'description'     => esc_html__('Install WooCommerce Plugin to list more options.','acoustics'),
+	  	 'section'         => 'acoustics_product_category_grid_section',
+	    )
+	  )
+    );
 endif;
+
 
 $wp_customize->add_section( 'acoustics_values_section', array(
 		'title'      =>  esc_html__('Proposition', 'acoustics'),
@@ -372,50 +419,23 @@ $wp_customize->add_control( 'acoustics_values_section_enable' , array(
 	)
 );
 
-for( $i = 0; $i < 4; $i++) {
-  $count = 10 + $i;
-	$wp_customize->add_setting( 'acoustics_values_section_image_'.$i, array(
-			'transport' 		  => 'refresh',
-			'sanitize_callback'   => 'esc_url_raw',
-		)
-	);
+$acoustics_collections = acoustics_categories();
+$wp_customize->add_setting( 'acoustics_values_category' , array(
+		'default'     		=> 0,
+		'transport' => 'refresh',
+		'sanitize_callback' => 'absint',
+	)
+);
 
-	$wp_customize->add_control(new WP_Customize_Image_Control( $wp_customize, 'acoustics_values_section_image_'.$i,
-	       array(
-	           'label'      => esc_html__( 'Upload image', 'acoustics' ),
-	           'section'    => 'acoustics_values_section',
-	           'settings'   => 'acoustics_values_section_image_'.$i,
-			   'priority'      => $count,
-	       )
-	   )
-	);
+$wp_customize->add_control( 'acoustics_values_category', array(
+		'label'       => esc_html__('Select Category', 'acoustics'),
+		'description' => esc_html__('Selected cateogry post will be shown as value section content & image.', 'acoustics'),
+		'section'     => 'acoustics_values_section',
+		'type'        => 'select',
+		'choices'     => $acoustics_collections,
+	)
+);
 
-	$wp_customize->add_setting( 'acoustics_values_section_title_'.$i, array(
-		  'sanitize_callback' => 'sanitize_text_field',
-		)
-	);
-
-	$wp_customize->add_control( 'acoustics_values_section_title_'.$i, array(
-		  'label'     => esc_html__( 'Title', 'acoustics' ),
-		  'type'      => 'text',
-		  'section'   => 'acoustics_values_section',
-		  'priority'      => $count,
-		)
-	);
-
-	$wp_customize->add_setting( 'acoustics_values_section_details_'.$i, array(
-		  'sanitize_callback' => 'sanitize_textarea_field',
-		)
-	);
-
-	$wp_customize->add_control( 'acoustics_values_section_details_'.$i, array(
-		  'label'     => esc_html__( 'Content', 'acoustics' ),
-		  'type'      => 'textarea',
-		  'section'   => 'acoustics_values_section',
-		  'priority'      => $count,
-		)
-	);
-}
 
 /*-------------------------------------
   #Footer
@@ -436,12 +456,12 @@ $wp_customize->add_section( 'acoustics_footer_section', array(
 ));
 
 $wp_customize->add_setting( 'acoustics_footer_copyright', array(
-  'sanitize_callback' => 'sanitize_textarea_field',
+  'sanitize_callback' => 'sanitize_text_field',
 ));
 
 $wp_customize->add_control( 'acoustics_footer_copyright', array(
   'label'     => esc_html__( 'Copyright Text', 'acoustics' ),
-  'type'      => 'textarea',
+  'type'      => 'text',
   'section'   => 'acoustics_footer_section'
 ));
 
