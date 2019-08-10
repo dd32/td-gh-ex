@@ -1,18 +1,17 @@
 
 === Cherish ===
 Contributors: Poena
-Tags: custom-colors, threaded-comments, custom-menu, translation-ready, custom-header, flexible-header, one-column, editor-style, featured-images, responsive-layout, accessibility-ready, blog
 License: Dual license: GNU General Public License v2 or later, and MIT License
 License URI: https://www.gnu.org/licenses/gpl-2.0.html, https://opensource.org/licenses/MIT
-Requires at least: WordPress 4.7
-Tested up to: WordPress 5.0.3
-Requires PHP: 5.2
+Requires at least: 5.0
+Tested up to: 5.2
+Requires PHP: 5.6
 Copyright 2014-2019 Carolina Nymark
 
-Cherish is an accessible, full width responsive theme with a fixed top menu. 
+Cherish is an accessibility ready, full width responsive theme with a fixed top menu. 
 
 = Description ==
-Cherish is an accessible, full width, responsive theme with a fixed top menu.
+Cherish is an accessibility ready, full width, responsive theme with a fixed top menu.
 It has 3 widget areas in the footer and you can change the background color,
 title and link color of your posts and pages. Edit or disable your Call to Action area in the customizer,
 where you can also change colors, fonts, hide your post meta and upload your own logo.
@@ -26,6 +25,12 @@ where you can also change colors, fonts, hide your post meta and upload your own
 -It's recommended not to use a font-size larger than 4em for the Call to Action area.
 
 == Changelog ==
+
+=1.6 2019-08-10=
+Added support for wp_body_open
+Updated author URI.
+Removed google plus since this service has been discontinued.
+
 
 =1.5 2019-01-11=
 Code style changes to better comply with WordPress coding standards. Improved escaping.

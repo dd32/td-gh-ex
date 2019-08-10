@@ -181,7 +181,6 @@ function cherish_social_links_icons() {
 		'facebook.com'    => 'facebook',
 		'flickr.com'      => 'flickr',
 		'foursquare.com'  => 'foursquare',
-		'plus.google.com' => 'google-plus',
 		'github.com'      => 'github',
 		'instagram.com'   => 'instagram',
 		'linkedin.com'    => 'linkedin',

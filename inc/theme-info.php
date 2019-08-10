@@ -122,7 +122,7 @@ function cherish_docs() {
 	<div class="notice notice-info inline"><?php esc_html_e( 'Troubleshooting: If your link or icon is not showing up, try using lower case letters.', 'cherish' ); ?></div>
 	<b><?php esc_html_e( 'Available icons:', 'cherish' ); ?></b><br>
 	<i style="display:block; max-width:340px;">
-	<?php esc_html_e( 'amazon, bandcamp, behance, deviantart, codepen, digg, dribbble, dropbox, facebook, flickr, foursquare, ghost, github, google plus, instagram, linkedin, mixcloud, medium, pinterest, pocket, reddit, skype, slack, slideshare, spotify, soundcloud, stumbleupon, tumblr, twitch, twitter, wordpress, yelp, vimeo, vine, vk, youtube ', 'cherish' ); ?>
+	<?php esc_html_e( 'amazon, bandcamp, behance, deviantart, codepen, digg, dribbble, dropbox, facebook, flickr, foursquare, ghost, github, instagram, linkedin, mixcloud, medium, pinterest, pocket, reddit, skype, slack, slideshare, spotify, soundcloud, stumbleupon, tumblr, twitch, twitter, wordpress, yelp, vimeo, vine, vk, youtube ', 'cherish' ); ?>
 	</i>
 	<h3 id="widgets"><?php esc_html_e( 'Widgets', 'cherish' ); ?></h3>
 	<?php esc_html_e( 'The theme has three widget areas in the footer. All widget areas have room for any number of widgets. The widgets are shown in 3 column rows, which narrows down to 1 column rows on smaller screen widths.', 'cherish' ); ?>
@@ -161,7 +161,7 @@ function cherish_docs() {
 	<h2><?php esc_html_e( 'Support & Customization', 'cherish' ); ?></h2>
 	<?php esc_html_e( 'If you have questions, if you wish to purchase customizations or if something is not working as expected, you can also email me to check my availability and I will reply as soon as I can.', 'cherish' ); ?>
 	<br>
-	<a class="button button-medium button-hero load-customize" href="mailto:carolina@theme.tips"><?php esc_html_e( 'Contact', 'cherish' ); ?></a>
+	<a class="button button-medium button-hero load-customize" href="mailto:carolina@themesbycarolina.com"><?php esc_html_e( 'Contact', 'cherish' ); ?></a>
 	<br><br>
 	<?php
 	printf(

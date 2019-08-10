@@ -48,7 +48,7 @@
 		?>
 		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a><span class="sep"> | </span>
 		<a href="https://wordpress.org/"><?php esc_html_e( 'Proudly powered by WordPress', 'cherish' ); ?></a><span class="sep"> | </span>
-		<a href="<?php echo esc_url( 'https://theme.tips' ); ?>" rel="nofollow"><?php esc_html_e( 'Theme: Cherish by Carolina', 'cherish' ); ?></a>
+		<a href="<?php echo esc_url( 'https://themesbycarolina.com' ); ?>" rel="nofollow"><?php esc_html_e( 'Theme: Cherish by Carolina', 'cherish' ); ?></a>
 		<?php
 	}
 	?>
