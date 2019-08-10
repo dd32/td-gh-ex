@@ -149,6 +149,15 @@ ul.wp-block-gallery li.blocks-gallery-image figure:after {
 	content: '';
 }
 
+ul.wp-block-gallery:not(.is-cropped) li.blocks-gallery-item a,
+ul.wp-block-gallery:not(.is-cropped) li.blocks-gallery-item img {
+	position: static;
+}
+
+ul.wp-block-gallery:not(.is-cropped) li.blocks-gallery-item figure:after {
+	display: none;
+}
+
 ul.wp-block-gallery:after {
 	display: table;
 	clear: both;

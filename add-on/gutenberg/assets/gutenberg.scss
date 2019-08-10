@@ -215,6 +215,19 @@ ul.wp-block-gallery {
 			padding-top: 66.666%;
 		}
 	}
+	&:not(.is-cropped) {
+		li.blocks-gallery-item {
+			a,
+			img {
+				position: static;
+			}
+			figure {
+				&:after {
+					display: none;
+				}
+			}
+		}
+	}
 	&:after {
 		display: table;
 		content: '';

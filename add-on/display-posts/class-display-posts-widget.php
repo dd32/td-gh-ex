@@ -122,7 +122,7 @@ class Display_Posts_Widget extends \WP_Widget {
 		/** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
 		$title = apply_filters( 'widget_title', $title, $instance, $this->id_base );
 
-		$wrapper_class = apply_filters( 'bayleaf_dp_wrapper_classes', [ $instance['styles'] ], $instance, $this );
+		$wrapper_class = apply_filters( 'bayleaf_dp_wrapper_classes', [ $instance['styles'] ], $instance );
 		$wrapper_class = array_map( 'esc_attr', $wrapper_class );
 
 		$after_title = apply_filters( 'bayleaf_after_dp_widget_title', $args['after_title'], $instance );
@@ -171,7 +171,7 @@ class Display_Posts_Widget extends \WP_Widget {
 			}
 		}
 
-		$query_args = apply_filters( 'bayleaf_display_posts_args', $query_args, $instance, $this );
+		$query_args = apply_filters( 'bayleaf_display_posts_args', $query_args, $instance );
 		$post_query = new \WP_Query( $query_args );
 
 		if ( $post_query->have_posts() ) :
@@ -203,11 +203,11 @@ class Display_Posts_Widget extends \WP_Widget {
 
 			while ( $post_query->have_posts() ) :
 				$post_query->the_post();
-				$entry_class = apply_filters( 'bayleaf_dp_entry_classes', [], $instance, $this );
+				$entry_class = apply_filters( 'bayleaf_dp_entry_classes', [], $instance );
 				$entry_class = array_map( 'esc_attr', $entry_class );
 				?>
 				<div class="dp-entry <?php echo join( ' ', $entry_class ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>">
-					<?php do_action( 'bayleaf_dp_entry', $args, $instance, $this ); ?>
+					<?php do_action( 'bayleaf_dp_entry', $args, $instance ); ?>
 				</div><!-- .dp-entry -->
 				<?php
 			endwhile;

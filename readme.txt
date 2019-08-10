@@ -18,10 +18,11 @@ Bayleaf is designed for cooking or food blog with elegant visual look and feel. 
 = What are the minimum requirmens for using this theme? =
 PHP 5.4+, IE11+, WordPress 4.7+
 
-= How to disable google fonts? =
-Bayleaf WordPress theme uses Google Fonts for your website by default. Fonts and their respective stylesheets are downloaded from google's website. Refer link [ https://developers.google.com/fonts/faq#what_does_using_the_google_fonts_api_mean_for_the_privacy_of_my_users ] for google font's privacy related information. If you do not want to use google fonts for your website, you can disable it from theme customizer (Appearance > Customize > Theme options).
-
 == Changelog ==
+
+= 1.4.0 =
+* Error Fix: Respect block editor gallery crop toggle.
+* Modify: Minor css improvements.
 
 = 1.3.9 =
 * Add: Search Button in Site header areas

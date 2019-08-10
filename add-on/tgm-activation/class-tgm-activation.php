@@ -64,6 +64,16 @@ class TGM_Activation {
 	public static function register_recommended_plugins() {
 		$plugins = [
 			[
+				'name'     => 'Simplified Font Manager',
+				'slug'     => 'simplified-font-manager',
+				'required' => false,
+			],
+			[
+				'name'     => 'WP Gallery Enhancer',
+				'slug'     => 'wp-gallery-enhancer',
+				'required' => false,
+			],
+			[
 				'name'     => 'MailOptin - Lite',
 				'slug'     => 'mailoptin',
 				'required' => false,

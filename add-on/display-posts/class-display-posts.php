@@ -52,15 +52,15 @@ class Display_Posts {
 	 */
 	public static function init() {
 		add_filter( 'bayleaf_widget_custom_classes', [ self::get_instance(), 'widget_classes' ], 10, 2 );
-		add_filter( 'bayleaf_dp_wrapper_classes', [ self::get_instance(), 'wrapper_classes' ], 10, 3 );
-		add_filter( 'bayleaf_dp_entry_classes', [ self::get_instance(), 'entry_classes' ], 10, 3 );
+		add_filter( 'bayleaf_dp_wrapper_classes', [ self::get_instance(), 'wrapper_classes' ], 10, 2 );
+		add_filter( 'bayleaf_dp_entry_classes', [ self::get_instance(), 'entry_classes' ], 10, 2 );
 		add_filter( 'bayleaf_dp_styles', [ self::get_instance(), 'dp_styles' ], 10, 2 );
 		add_filter( 'bayleaf_after_dp_widget_title', [ self::get_instance(), 'dp_wid_title' ], 10, 2 );
 		add_filter( 'bayleaf_dp_excerpt_length', [ self::get_instance(), 'excerpt_length' ], 10, 2 );
 		add_filter( 'bayleaf_dp_excerpt_more', [ self::get_instance(), 'excerpt_more' ], 10, 2 );
 		add_action( 'widgets_init', [ self::get_instance(), 'register_custom_widget' ] );
 		add_action( 'admin_enqueue_scripts', [ self::get_instance(), 'enqueue_admin' ] );
-		add_action( 'bayleaf_dp_entry', [ self::get_instance(), 'dp_entry' ], 10, 3 );
+		add_action( 'bayleaf_dp_entry', [ self::get_instance(), 'dp_entry' ], 10, 2 );
 		add_action( 'bayleaf_after_dp_loop', [ self::get_instance(), 'navigate' ] );
 	}
 
@@ -107,12 +107,11 @@ class Display_Posts {
 	/**
 	 * Register widget display posts entry wrapper classes.
 	 *
-	 * @param str    $classes  Comma separated entry posts classes.
-	 * @param array  $instance Settings for the current widget instance.
-	 * @param Object $widget   The widget instance.
+	 * @param str   $classes  Comma separated entry posts classes.
+	 * @param array $instance Settings for the current widget instance.
 	 * @return array Entry posts classes.
 	 */
-	public function wrapper_classes( $classes, $instance, $widget ) {
+	public function wrapper_classes( $classes, $instance ) {
 		$classes[] = 'index-view';
 
 		if ( false !== strpos( $instance['styles'], 'grid' ) ) {
@@ -135,12 +134,11 @@ class Display_Posts {
 	/**
 	 * Register widget display posts entry classes.
 	 *
-	 * @param str    $classes  Comma separated entry posts classes.
-	 * @param array  $instance Settings for the current widget instance.
-	 * @param Object $widget   The widget instance.
+	 * @param str   $classes  Comma separated entry posts classes.
+	 * @param array $instance Settings for the current widget instance.
 	 * @return str Entry posts classes.
 	 */
-	public function entry_classes( $classes, $instance, $widget ) {
+	public function entry_classes( $classes, $instance ) {
 
 		if ( false !== strpos( $instance['styles'], 'grid' ) ) {
 			if ( 'grid-view2' === $instance['styles'] ) {
@@ -156,11 +154,10 @@ class Display_Posts {
 	/**
 	 * Display widget content to front-end.
 	 *
-	 * @param array  $args     Widget display arguments.
-	 * @param array  $instance Settings for the current widget instance.
-	 * @param Object $widget   The widget instance.
+	 * @param array $args     Widget display arguments.
+	 * @param array $instance Settings for the current widget instance.
 	 */
-	public function dp_entry( $args, $instance, $widget ) {
+	public function dp_entry( $args, $instance ) {
 		$display = $this->get_style_args( $instance['styles'] );
 		if ( ! empty( $display ) ) {
 			if ( false !== strpos( $instance['styles'], 'grid' ) ) {

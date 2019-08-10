@@ -61,7 +61,7 @@ class Plugins_Compat {
 			add_filter( 'bayleaf_markup_entry_main_content', [ self::get_instance(), 'remove_header' ] );
 			add_filter( 'bayleaf_display_posts_excerpt', [ self::get_instance(), 'modify_dp_excerpts' ], 10, 2 );
 			add_filter( 'bayleaf_dp_style_args', [ self::get_instance(), 'modify_dp_items' ], 10, 2 );
-			add_filter( 'bayleaf_dp_entry_classes', [ self::get_instance(), 'entry_classes' ], 12, 3 );
+			add_filter( 'bayleaf_dp_entry_classes', [ self::get_instance(), 'entry_classes' ], 12, 2 );
 			add_filter( 'bayleaf_after_dp_widget_title', [ self::get_instance(), 'dp_wid_title' ], 10, 2 );
 			add_action( 'bayleaf_display_dp_item', [ self::get_instance(), 'display_dp_item' ] );
 		}
@@ -187,12 +187,11 @@ class Plugins_Compat {
 	/**
 	 * Register widget display posts entry classes.
 	 *
-	 * @param str    $classes  Comma separated entry posts classes.
-	 * @param array  $instance Settings for the current widget instance.
-	 * @param Object $widget   The widget instance.
+	 * @param str   $classes  Comma separated entry posts classes.
+	 * @param array $instance Settings for the current widget instance.
 	 * @return str Entry posts classes.
 	 */
-	public function entry_classes( $classes, $instance, $widget ) {
+	public function entry_classes( $classes, $instance ) {
 		if ( 'tribe_events' === get_post_type() ) {
 			$classes[] = 'dp-event no-zig';
 		}
