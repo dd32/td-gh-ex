@@ -20,28 +20,29 @@ get_header(); ?>
     		<h1><?php the_title();?></h1>
     	</div>
     </div>
-
-    <div id="content-ts" class="container">
-        <div class="middle-align">
-                <img src="<?php the_post_thumbnail_url(); ?>">
-                <?php the_content();
-                wp_link_pages( array(
-                    'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bb-mobile-application' ) . '</span>',
-                    'after'       => '</div>',
-                    'link_before' => '<span>',
-                    'link_after'  => '</span>',
-                    'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'bb-mobile-application' ) . ' </span>%',
-                    'separator'   => '<span class="screen-reader-text">, </span>',
-                ) ); ?>
-            <div class="clear"></div>    
+    <main id="maincontent" class="content-ts">
+        <div class="container">
+            <div class="middle-align">
+                    <?php the_post_thumbnail(); ?>
+                    <?php the_content();
+                    wp_link_pages( array(
+                        'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'bb-mobile-application' ) . '</span>',
+                        'after'       => '</div>',
+                        'link_before' => '<span>',
+                        'link_after'  => '</span>',
+                        'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'bb-mobile-application' ) . ' </span>%',
+                        'separator'   => '<span class="screen-reader-text">, </span>',
+                    ) ); ?>
+                <div class="clear"></div>    
+            </div>
+            <?php
+                // If comments are open or we have at least one comment, load up the comment template.
+                if ( comments_open() || get_comments_number() ) {
+                    comments_template();
+                }
+            ?>
         </div>
-        <?php
-            // If comments are open or we have at least one comment, load up the comment template.
-            if ( comments_open() || get_comments_number() ) {
-                comments_template();
-            }
-        ?>
-    </div>
+    </main>
 <?php endwhile; // end of the loop. ?>
 
 <?php do_action( 'bb_mobile_application_page_footer' ); ?>

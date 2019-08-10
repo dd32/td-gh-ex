@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-<div class="content-area">
+<main id="maincontent" class="content-area">
     <div class="middle-align content_sidebar">
         <div class="container">
             <?php
@@ -436,6 +436,6 @@ get_header(); ?>
             <div class="clear"></div>
         </div>
     </div>
-</div>
+</main>
 
 <?php get_footer(); ?>

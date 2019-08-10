@@ -114,11 +114,11 @@ msgstr ""
 msgid 'Comments are closed'
 msgstr ""
 
-#: footer.php:29
-msgid 'Mobile Application WordPress Theme By'
+#: footer.php:30
+msgid 'Copyright 2016'
 msgstr ""
 
-#: functions.php:33
+#: functions.php:32
 msgid 'Primary Menu'
 msgstr ""
 
@@ -188,7 +188,7 @@ msgstr ""
 msgid 'Mobile App WordPress Theme'
 msgstr ""
 
-#: header.php:24
+#: header.php:25
 msgid 'Menu'
 msgstr ""
 
@@ -262,10 +262,10 @@ msgstr ""
 msgid 'KNOW MORE'
 msgstr ""
 
-#: template-parts/content-audio.php:40
-#: template-parts/content-gallery.php:28 
+#: template-parts/content-audio.php:39
+#: template-parts/content-gallery.php:27
 #: template-parts/content-image.php:22 
-#: template-parts/content-video.php:39 
+#: template-parts/content-video.php:38
 #: template-parts/content.php:22
 msgid 'Read More'
 msgstr ""
@@ -280,32 +280,32 @@ msgstr ""
 msgid 'Search Results for'
 msgstr ""
 
-#: searchform.php:10 
-#: searchform.php:12
+#: searchform.php:11
+#: searchform.php:13
 msgid 'Search'
 msgstr ""
 
-#: searchform.php:10
+#: searchform.php:11
 msgid 'placeholder'
 msgstr ""
 
-#: searchform.php:12
+#: searchform.php:13
 msgid 'submit button'
 msgstr ""
 
-#: sidebar.php:12
+#: sidebar.php:11
 msgid 'Archives'
 msgstr ""
 
-#: sidebar.php:18
+#: sidebar.php:17
 msgid 'Meta'
 msgstr ""
 
-#: single-post.php:16
+#: single-post.php:17
 msgid '0 Comment'
 msgstr ""
 
-#: single-post.php:39
+#: single-post.php:40
 msgid 'Parent post link'
 msgstr ""
 

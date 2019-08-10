@@ -365,7 +365,7 @@ define('BB_MOBILE_APPLICATION_CREDIT','https://www.themeshopy.com/free/wp-bb-mob
 
 if ( ! function_exists( 'bb_mobile_application_credit' ) ) {
 	function bb_mobile_application_credit(){
-		echo "<a href=".esc_url(BB_MOBILE_APPLICATION_CREDIT)." target='_blank'>". esc_html__('Mobile App WordPress Theme','bb-mobile-application')."</a>";
+		echo "<a href=".esc_url(BB_MOBILE_APPLICATION_CREDIT)." target='_blank' alt='".esc_html__('Mobile App WordPress Theme','bb-mobile-application')."''>". esc_html__('Mobile App WordPress Theme','bb-mobile-application')."</a>";
 	}
 }
 

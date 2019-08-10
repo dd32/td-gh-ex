@@ -11,13 +11,12 @@
 <?php
   $content = apply_filters( 'the_content', get_the_content() );
   $video = false;
-
   // Only get video from the content if a playlist isn't present.
   if ( false === strpos( $content, 'wp-playlist-script' ) ) {
     $video = get_media_embedded_in_content( $content, array( 'video', 'object', 'embed', 'iframe' ) );
   }
 ?> 
-<div id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>  
+<article id="post-<?php the_ID(); ?>" <?php post_class(''); ?>>  
   <div class="page-box">
     <div class="box-image">
       <?php
@@ -36,8 +35,8 @@
     <div class="new-text"<?php if(has_post_thumbnail()) { ?><?php } ?>>
       <h4><?php the_title();?></h4>
       <p><?php the_excerpt();?></p>
-      <a href="<?php the_permalink(); ?>" class="read-more-box" title="<?php esc_attr_e('Read More','bb-mobile-application'); ?>"><?php esc_html_e('Read More','bb-mobile-application'); ?></a> 
+      <a href="<?php the_permalink(); ?>" alt="<?php esc_html_e( 'READ MORE','bb-mobile-application' );?>" class="read-more-box" title="<?php esc_attr_e('Read More','bb-mobile-application'); ?>"><?php esc_html_e('Read More','bb-mobile-application'); ?><span class="screen-reader-text"><?php esc_html_e( 'READ MORE','bb-mobile-application' );?></span></a> 
     </div>
     <div class="clearfix"></div>
   </div>
-</div>
+</article>
