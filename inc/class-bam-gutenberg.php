@@ -44,12 +44,6 @@ if ( ! class_exists( 'Bam_Gutenberg' ) ) {
             $headings_font = get_theme_mod( 'bam_headings_font_family', '' );
             if( ! empty( $headings_font ) ) {
                 $css .= '
-                    h1, 
-                    h2, 
-                    h3, 
-                    h4, 
-                    h5, 
-                    h6,
                     .edit-post-visual-editor h1,
                     .edit-post-visual-editor h2,
                     .edit-post-visual-editor h3,

@@ -42,10 +42,17 @@ Bam supports all the major plugins.
 * Fixed top bar skype, email issue.
 * Changed author-box.php to authorbox.php
 
+= 1.0.2 =
+* Fixed focus links not showing issue on main navigation.
+* Fixed licensing issues.
+* Removed woocommmerce.css and sass shop folder.
+
 == Resources ==
 
 * Based on Underscores, (C) 2012-2017 Automattic, Inc., GPLv2 or later
 * normalize.css, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, MIT
 * Font Awesome CSS, (C) 2018 Dave Gandy, MIT
 * Font Awesome Fonts, (C) 2018 Dave Gandy, SIL OFL 1.1
+* main-navigation.js based on Twenty Seventeen theme, (C) 2016 WordPress.org, GPLv2 or later
+* Slider Control slider.js based on Kirki Customizer Framework, (C) 2019 Ari Stathopoulos, MIT
 * All images shown in the screenshot.png, (C) 2019 Stocksnap.io, CC0

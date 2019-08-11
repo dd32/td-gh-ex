@@ -251,7 +251,7 @@ final class Bam_Theme {
 
 		wp_enqueue_script( 'bam-scripts', $dir_uri . 'js/scripts.js', array( 'jquery' ), '', true );
 
-		wp_enqueue_script( 'bam-navigation', $dir_uri . 'js/mobile-navigation.js', array( 'jquery' ), '', true );
+		wp_enqueue_script( 'bam-main-navigation', $dir_uri . 'js/main-navigation.js', array( 'jquery' ), '', true );
 
 		wp_enqueue_script( 'bam-skip-link-focus-fix', $dir_uri . 'js/skip-link-focus-fix.js', array(), '20151215', true );
 

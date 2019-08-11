@@ -33,7 +33,7 @@
 	masthead       = $( '#masthead' );
 	menuToggle     = masthead.find( '.menu-toggle' );
 	siteNavContain = masthead.find( '.mobile-navigation' );
-	siteNavigation = masthead.find( '.main-navigation > div > ul' );
+	siteNavigation = masthead.find( '.main-navigation > div > div > ul' );
 
 	// Enable menuToggle.
 	(function() {
