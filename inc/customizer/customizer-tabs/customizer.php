@@ -116,7 +116,6 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
 
                         'general' => array(
                             'nicename' => esc_html__( 'General', 'arrival' ),
-                            'icon'     => 'cogs',
                             'controls' => apply_filters($prefix.'_footer_options',array(
                                 
                                 $prefix.'_site_footer_type',
@@ -132,7 +131,6 @@ $wp_customize->add_control( new Arrival_Customize_Control_Tabs( $wp_customize, $
 
                         'styles' => array(
                             'nicename' => esc_html__( 'Styles', 'arrival' ),
-                            'icon'     => 'desktop',
                             'controls' => apply_filters($prefix.'_footer_options_styles', array(
 
                                 $prefix.'_footer_bg_color',

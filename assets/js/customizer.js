@@ -86,6 +86,8 @@ wp.customize( 'arrival_top_header_txt_color', function( value ) {
 		if ( color ) {
 			var dynamicStyle = '.top-header-wrapp a, .top-header-wrapp,header .cart-wrapper a { color: ' + color + '; } ';
 				dynamicStyle += '.top-header-wrapp .phone-wrap:before{ background: '+ color + '; } ';
+				dynamicStyle += '.top-header-wrapp ul.social li a svg{ fill: '+ color + '; } ';
+				dynamicStyle += '.top-header-wrapp .site-header-cart svg{ stroke: '+ color + '; } ';
 			arrival_add_dynamic_css( 'arrival_top_header_txt_color', dynamicStyle );
 		}
 
@@ -116,6 +118,7 @@ wp.customize( 'arrival_main_nav_menu_color', function( value ) {
 		if ( color ) {
 			var dynamicStyle = '.main-navigation ul li > a,.site-title a,.site-description,.header-last-item .search-wrap i,header .header-last-item .cart-wrapper a { color: ' + color + '; } ';
 				dynamicStyle += '.main-navigation .dropdown-symbol, .arrival-top-navigation .dropdown-symbol{ border-color:'+color+';}';
+				dynamicStyle += '.header-last-item.search-wrap .search-wrap svg{ fill:'+color+';}';
 			arrival_add_dynamic_css( 'arrival_main_nav_menu_color', dynamicStyle );
 		}
 
@@ -193,6 +196,7 @@ wp.customize( 'arrival_footer_text_color', function( value ) {
 		}
 		if ( color ) {
 			var dynamicStyle = '.site-footer h2.widget-title,.site-footer { color: ' + color + '; } ';
+				dynamicStyle += '.site-footer svg{fill:'+ color +';}';
 			arrival_add_dynamic_css( 'arrival_footer_text_color', dynamicStyle );
 		}
 

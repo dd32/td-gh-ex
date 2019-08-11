@@ -366,6 +366,13 @@ foreach ($file_paths as $file_path) {
 require get_template_directory() . '/pluggable/lazyload/lazyload.php';
 
 /**
+* SVG icons 
+*
+*/
+require get_template_directory() . '/pluggable/svg-icons/arrival-svg-icons.php';
+
+
+/**
 * WooCommerce functions
 *
 *

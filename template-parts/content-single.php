@@ -30,7 +30,7 @@ if( 'gallery' == $post_format ){
 		?>
 	</div><!-- .entry-meta -->
 	
-	<div class="entry-content">
+	<div class="entry-content clearfix">
 		<?php
 		the_content(
 			sprintf(

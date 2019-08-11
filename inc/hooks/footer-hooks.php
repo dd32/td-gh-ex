@@ -126,7 +126,7 @@ if( ! function_exists('arrival_scroll_to_top')){
 	function arrival_scroll_to_top(){
 	?>
 	<div class="scroll-top-top">
-		<span class="fa fa-angle-double-up"></span>
+		<?php echo arrival_get_icon_svg('angle_up'); ?>
 	</div>
 	<?php 
 	}

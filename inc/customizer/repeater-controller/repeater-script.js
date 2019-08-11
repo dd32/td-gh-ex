@@ -172,9 +172,10 @@ jQuery(document).ready(function ($) {
         return false;
     });
     $('body').on('click', '.operation-icon-list li', function () {
-        var icon_class = $(this).find('i').attr('class');
+        var icon_class  = $(this).attr('data-value');
+        var iconSVG     = $(this).html(); 
         $(this).addClass('icon-active').siblings().removeClass('icon-active');
-        $(this).parent('.operation-icon-list').prev('.operation-selected-icon').children('i').attr('class', '').addClass(icon_class);
+        $(this).parent('.operation-icon-list').prev('.operation-selected-icon').children('.icon-preview').html(iconSVG);
         $(this).parent('.operation-icon-list').next('input').val(icon_class).trigger('change');
         arrival_refresh_repeater_values();
     });

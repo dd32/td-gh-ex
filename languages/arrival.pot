@@ -3,7 +3,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Arrival\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-08-05 17:25+0000\n"
+"POT-Creation-Date: 2019-08-07 16:50+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: \n"
@@ -579,6 +579,7 @@ msgstr ""
 msgid "Header Background Image"
 msgstr ""
 
+#: inc/customizer/arrival-customizer.php:644
 #: inc/welcome/sections/getting_started.php:17
 msgid "Header Options"
 msgstr ""
@@ -859,10 +860,6 @@ msgstr ""
 
 #: inc/customizer/customizer.php:139
 msgid "more options available in"
-msgstr ""
-
-#: inc/customizer/arrival-customizer.php:644
-msgid "Navigation Options"
 msgstr ""
 
 #: inc/customizer/arrival-customizer.php:962

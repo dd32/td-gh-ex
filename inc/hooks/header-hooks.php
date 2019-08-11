@@ -85,7 +85,7 @@ if( ! function_exists('arrival_main_nav')){
 			if( 'search' == $arrival_main_nav_right_content ){ ?>
 				<div class="header-last-item search-wrap">
 					<div class="search-wrap">
-						<i class="fa fa-search"></i>
+						<?php echo arrival_get_icon_svg('search'); ?>
 					</div>
 					<?php if( 'main' == $_cart_display_position ){
 						do_action('arrival_header_cart_disp');
@@ -195,7 +195,7 @@ if( ! function_exists('arrival_top_header_left')){
 
 			if( $arrival_top_header_email ): ?>
 				<div class="email-wrap">
-					<i class="fa fa-envelope"></i>
+					<?php echo arrival_get_icon_svg('email',14); ?>
 					<span>
 						<?php esc_html_e('Mail Us:','arrival'); ?>
 						<a href="mailto:<?php echo sanitize_email($arrival_top_header_email)?>">
@@ -207,7 +207,7 @@ if( ! function_exists('arrival_top_header_left')){
 
 			<?php if( $arrival_top_header_phone ): ?>
 			<div class="phone-wrap">
-				<i class="fa fa-phone"></i>
+				<?php echo arrival_get_icon_svg('phone',14); ?>
 				<span>
 					<?php esc_html_e('Call Us:','arrival'); ?>
 				</span>

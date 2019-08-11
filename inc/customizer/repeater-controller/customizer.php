@@ -13,7 +13,6 @@
   function arrival_enqueue_repeater_scripts() {
     wp_enqueue_script( 'arrival-repeater-script', ARRIVAL_URI . '/inc/customizer/repeater-controller/repeater-script.js',array( 'jquery','jquery-ui-sortable'));
     wp_enqueue_style('arrival-repeater-style',ARRIVAL_URI . '/inc/customizer/repeater-controller/repeater-style.css');
-    wp_enqueue_style( 'fontawesome', ARRIVAL_LIB_URI. '/font-awesome/css/font-awesome.min.css', array(), ARRIVAL_VER );
 
 } add_action( 'customize_controls_enqueue_scripts', 'arrival_enqueue_repeater_scripts');
 

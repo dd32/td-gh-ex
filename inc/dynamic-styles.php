@@ -18,7 +18,7 @@ function arrival_dynamic_styles(){
 	?>
 	
 	.top-header-wrapp,.scroll-top-top,.widget h2.widget-title:before,.comment-reply-link, .comment-form .form-submit input,span.tags-links a:hover,.header-last-item.search-wrap.header-btn a.header-cta-btn,.arrival-archive-navigation ul li a:hover,
-	.arrival-archive-navigation ul li.active a,.comment-reply-link, .comment-form .form-submit input,.woocommerce div.product form.cart .button,.woocommerce .products li a.button:hover,.woocommerce #respond input#submit,.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current,.woocommerce div.product form.cart .button, .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce button.button,button, input[type="button"], input[type="reset"], input[type="submit"],header.hover-layout-two .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item>a:before,header.hover-layout-three .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item:before,header span.cart-count{
+	.arrival-archive-navigation ul li.active a,.comment-reply-link, .comment-form .form-submit input,.woocommerce div.product form.cart .button,.woocommerce .products li a.button:hover,.woocommerce #respond input#submit,.woocommerce nav.woocommerce-pagination ul li a:focus, .woocommerce nav.woocommerce-pagination ul li a:hover, .woocommerce nav.woocommerce-pagination ul li span.current,.woocommerce div.product form.cart .button, .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce button.button,button, input[type="button"], input[type="reset"], input[type="submit"],header.hover-layout-two .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item>a:before,header.hover-layout-three .main-header-wrapp nav.main-navigation ul.arrival-main-navigation>li.menu-item:before,header span.cart-count,.site-main .entry-content a.button.wc-backward,.woocommerce div.product form.cart .button, .woocommerce .cart .button, .woocommerce .cart input.button, .woocommerce button.button, .content-area .product a.compare.button, .content-area .product .yith-wcwl-wishlistexistsbrowse.show a, .woocommerce .widget_shopping_cart .buttons a, .woocommerce.widget_shopping_cart .buttons a, .site-main .entry-content a.button.wc-backward,.arrival-cart-wrapper{
 		background: <?php echo  arrival_sanitize_color($_theme_color);?>;
 	}
 
@@ -28,6 +28,10 @@ function arrival_dynamic_styles(){
 	
 	.scroll-top-top,.comment-reply-link, .comment-form .form-submit input,span.tags-links a:hover,.arrival-archive-navigation ul li a:hover,.arrival-archive-navigation ul li.active a,.header-last-item.search-wrap.header-btn a.header-cta-btn,.comment-reply-link, .comment-form .form-submit input{
 		border-color: <?php echo  arrival_sanitize_color($_theme_color);?>;
+	}
+	
+	p.woocommerce-mini-cart__buttons.buttons a:hover{
+		background: <?php echo  arrival_hex2rgba($_theme_color,0.8);?>;
 	}
 
 
@@ -52,6 +56,12 @@ function arrival_dynamic_styles(){
 		}
 		.top-header-wrapp .phone-wrap:before{
 			background: <?php echo arrival_sanitize_color($_top_header_txt_color); ?>;
+		}
+		.top-header-wrapp ul.social li a svg{
+			fill: <?php echo arrival_sanitize_color($_top_header_txt_color); ?>;
+		}
+		.top-header-wrapp .site-header-cart svg{
+			stroke: <?php echo arrival_sanitize_color($_top_header_txt_color); ?>;
 		}
 	<?php }
 
@@ -79,6 +89,9 @@ function arrival_dynamic_styles(){
 			border-color: <?php echo arrival_sanitize_color($main_nav_menu_color); ?>;
 		}
 
+		.header-last-item.search-wrap .search-wrap svg{
+			fill: <?php echo arrival_sanitize_color($main_nav_menu_color); ?>!important;
+		}
 
 	<?php 
 	}
@@ -207,18 +220,12 @@ function arrival_dynamic_styles(){
 
 	//inner page header bg image
 	$_inner_header_image = get_theme_mod('arrival_inner_header_image');
-	if( $_inner_header_image && $_page_header_layout == 'default' ){ ?>
-		body.arrival-inner-page .site-header{
-			background-image: url(<?php echo esc_url($_inner_header_image); ?>);
-		}
-	<?php 
-	}else{ ?>
+	?>
 		.arrival-breadcrumb-wrapper{
 			background-image: url(<?php echo esc_url($_inner_header_image); ?>);
 		}
+		
 	<?php 
-	}
-
 	//header padding inner /breadcrumb height
 	$_inner_header_image_padding_btm = get_theme_mod('arrival_inner_header_image_padding_btm',$defaults['arrival_inner_header_image_padding_btm']);
 
@@ -313,6 +320,10 @@ function arrival_dynamic_styles(){
 
 		.site-footer h2.widget-title,.site-footer{
 			color: <?php echo arrival_sanitize_color($_footer_text_color);?>;
+		}
+
+		.site-footer svg{
+			fill: <?php echo arrival_sanitize_color($_footer_text_color);?>;
 		}
 
 	<?php

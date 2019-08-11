@@ -98,9 +98,9 @@ if( class_exists('WP_Customize_Control')):
     		<h3 class="operation-repeater-field-title">
     			<?php echo esc_html( $this->arrival_box_label ); ?>
     			<span class="field-value">
-    			<?php if( isset($values[0]->social_icons) ){ ?>
-    				<i class="<?php echo esc_attr($value->social_icons); ?>"></i>
-    			<?php } ?>
+    			<?php if( isset($values[0]->social_icons) ){ 
+    				echo arrival_get_social_icon_svg($value->social_icons,19);
+    			} ?>
     			</span>
     		</h3>
     		
@@ -266,7 +266,7 @@ if( class_exists('WP_Customize_Control')):
 	    					case 'icon':
 	    						echo '<div class="operation-selected-icon">';
 	    						echo '<i class="'.esc_attr($new_value).'"></i>';
-	    						echo '<span><i class="fa fa-chevron-down"></i></span>';
+	    						echo '<span><i class="dashicons dashicons-arrow-down-alt2"></i></span>';
 	    						echo '</div>';
 	    						echo '<ul class="operation-icon-list clearfix">';
 	    						$arrival_icons_array = arrival_icons_array();
@@ -280,14 +280,16 @@ if( class_exists('WP_Customize_Control')):
 
 	    					case 'social_icon':
 	    						echo '<div class="operation-selected-icon clr">';
-	    						echo '<i class="'.esc_attr($new_value).'"></i>';
-	    						echo '<span><i class="fa fa-angle-down"></i></span>';
+	    						echo '<span class="icon-preview '.esc_attr($new_value).'">'.arrival_get_social_icon_svg($new_value,19).'</span>';
+	    						echo '<span><i class="dashicons dashicons-arrow-down-alt2"></i></span>';
 	    						echo '</div>';
 	    						echo '<ul class="operation-icon-list clearfix">';
-	    						$arrival_icons_array = arrival_social_icons_arrays();
-	    						foreach ($arrival_icons_array as $arrival_font_awesome_icon) {
-	    							$icon_class = $new_value == $arrival_font_awesome_icon['icon'] ? 'icon-active' : '';
-	    							echo '<li class='.esc_attr($icon_class).'><i class="fa '.esc_attr($arrival_font_awesome_icon['icon']).'"></i></li>';
+	    						$arrival_icons_array = Arrival_SVG_Icons::$social_icons;
+	    						foreach ($arrival_icons_array as $index => $arrival_icons ) {
+
+	    							$new_value == $index;
+	    							echo '<li  data-value="'.$index.'">'. arrival_get_social_icon_svg($index,19).'</li>';
+
 	    						}
 	    						echo '</ul>';
 	    						echo '<input data-default="'.esc_attr($default).'" type="hidden" value="'.esc_attr($new_value).'" data-name="'.esc_attr($key).'"/>';
@@ -321,11 +323,11 @@ if( class_exists('WP_Customize_Control')):
     			<div class="clr operation-repeater-footer">
     				<div class="alignright">
     				<a class="operation-repeater-field-remove" href="#remove">
-    					<i class="fa fa-trash-o" aria-hidden="true"></i>
+    					<i class="dashicons dashicons-trash" aria-hidden="true"></i>
     					<?php esc_html_e('Delete', 'arrival') ?>
     				</a>
     				<a class="operation-repeater-field-close" href="#close">
-    					<i class="fa fa-angle-up" aria-hidden="true"></i>
+    					<i class="dashicons dashicons-arrow-up-alt2" aria-hidden="true"></i>
     					<?php esc_html_e('Close', 'arrival') ?>
     				</a>
     				</div>

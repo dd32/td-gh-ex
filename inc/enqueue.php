@@ -15,8 +15,7 @@ function arrival_styles() {
 	wp_enqueue_style( 'slick-theme', get_theme_file_uri( '/assets/lib/slick/slick-theme.css' ), array(), ARRIVAL_VER );
 	//jarallax
 	wp_enqueue_style( 'jquery-jarallax', get_theme_file_uri( '/assets/lib/jarallax/jarallax.css' ), array(), ARRIVAL_VER );
-	//fontawesome
-	wp_enqueue_style( 'fontawesome', get_theme_file_uri( '/assets/lib/font-awesome/css/font-awesome.min.css' ), array(), ARRIVAL_VER );
+	
 
 	wp_enqueue_style( 'ionicons', get_theme_file_uri( '/assets/lib/ionicons/css/ionicons.min.css' ), array(), ARRIVAL_VER );
 

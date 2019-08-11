@@ -5,11 +5,11 @@ Author: WPoperation
 Author URI: http://wpoperation.com/
 Description: Arrival is complete multipurpose WordPress theme. The theme can be used to create any type of website with easy drag and drop options. The theme is lightweight, fast and fully compatible with elementor builder. The theme comes with fully Gutenberg ready so you are free to edit and publish with new WordPress editor.
 The theme is a combination of power, freedom, and beauty which means there is no limit of anything you need to create a feature website with your own creative ideas.
-Version: 1.1.1
+Version: 1.1.2
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
 Text Domain: arrival
-Tags: translation-ready,right-sidebar,custom-menu, featured-images, threaded-comments,custom-logo, footer-widgets,blog,post-formats,sticky-post,theme-options,news,editor-style,custom-background,custom-header
+Tags: translation-ready,right-sidebar,custom-menu, featured-images, threaded-comments,custom-logo, footer-widgets,blog,post-formats,sticky-post,theme-options,news,editor-style,custom-background,custom-header,left-sidebar,rtl-language-support,block-styles,wide-blocks
 
 Arrival is a WordPress Theme, 
 Copyright (C) 2019, WPoperation
@@ -466,6 +466,23 @@ template {
 		    -ms-flex-pack: center;
 		        justify-content: center;
 	}
+	.has-sidebar.leftsidebar .site{
+		 display: -ms-grid;
+    	display: grid;
+		-ms-grid-columns: 1fr 2rem 3fr;
+		grid-template-columns: 1fr 3fr;
+		grid-gap: 2rem;
+		-webkit-box-pack: center;
+		    -ms-flex-pack: center;
+		        justify-content: center;
+		    grid-template-areas: "column-1 column-2";
+	}
+	.has-sidebar.leftsidebar .left-sidebar{
+		    grid-area: column-1;
+	}
+	.has-sidebar.leftsidebar .site-main{
+		    grid-area: column-2;
+	}
 
 	.site-header {
 		-ms-grid-column-span: 2;
@@ -478,8 +495,10 @@ template {
 		min-width: 0;
 		background: #FFF;
 		padding: 1.25rem 1.25rem;
-		display: inline-block;
 	}
+	/* .blog.masonry-layout .site-main{
+		display: inline-block;
+	} */
 
 	.primary-sidebar {
 		-ms-grid-column: 2;
@@ -1185,7 +1204,7 @@ textarea {
 .site-main .post-navigation {
 	border-bottom: 1px solid #eee;
 	margin: 0 auto 2em;
-	max-width: 720px;
+	/* max-width: 720px; */
 	overflow: hidden;
 	padding-bottom: 2em;
 	font-family: 'Roboto Condensed', sans-serif;
@@ -1234,12 +1253,15 @@ textarea {
 .site-footer a,
 .site-footer
 {
-	color: 	rgba(255,255,255,0.5)
+	color: 	rgba(255,255,255,0.5);
+}
+.site-footer svg{
+	fill:rgba(255,255,255,0.5);
 }
 .site-footer a{
 	text-decoration: none;
 	-webkit-transition: all 0.3s ease-in;
-	transition: all 0.3s ease-in
+	transition: all 0.3s ease-in;
 }
 .site-footer a:hover{
 	color: #E12454;
@@ -1375,6 +1397,11 @@ textarea {
 .top-header-wrapp .phone-wrap{
 	position: relative;
 	padding-right: 12px;
+}
+.top-header-wrapp .phone-wrap svg,
+.top-header-wrapp .email-wrap svg {
+    vertical-align: middle;
+    fill: #fff;
 }
 .top-header-wrapp .phone-wrap:before {
     content: "";
@@ -1569,7 +1596,6 @@ ul.social li a i {
     left: 15px;
     width: 40px;
     height: 70px;
-    color: #ffffff;
     font-size: 24px;
     text-transform: uppercase;
     line-height: 65px;
@@ -1585,12 +1611,16 @@ ul.social li a i {
     -webkit-transition: all 300ms ease;
     transition: all 300ms ease;
 }
-.scroll-top-top span{
+.scroll-top-top svg{
 	-webkit-transition: all 0.3s;
 	        transition: all 0.3s;
 }
+.scroll-top-top svg{
+    fill: #ffffff;
+	
+}
 
-.scroll-top-top:hover span {
+.scroll-top-top:hover svg {
     -webkit-transform: translateY(-10px);
             transform: translateY(-10px);
 }
@@ -1989,13 +2019,6 @@ footer .widget_nav_menu a{
 }
 
 /* blog element */
-.elementor-widget-opstore-blog .row.news-wrap .post {
-    float: right;
-    width: 31%;
-}
-.elementor-widget-opstore-blog .row.news-wrap .post:not(:first-child){
-    margin-right: 3.5%;
-}
 .elementor-widget-opstore-blog .row.news-wrap .post .post-info {
     color: #878787;
     font-size: 13px;
@@ -2412,6 +2435,7 @@ body.arrival-inner-page .site-header.seperate-breadcrumb {
 .hdr-breadcrumb .top-header-wrapp{
 	z-index: 1;
 	position: relative;
+	margin-bottom: 20px;
 }
 
 .hdr-breadcrumb h3.page-subtitle {
@@ -2632,39 +2656,7 @@ section.no-results.not-found {
 	padding-bottom: 0;
 }
 
-/* header cart */
-header .cart-wrapper a {
-    text-decoration: none;
-    color: #fff;
-    position: relative;
-    
-}
-header .cart-wrapper a i{
-	font-size: 20px;
-}
-header span.cart-count {
-    background: #E12454;
-    color: #fff;
-    border-radius: 50%;
-    position: absolute;
-    font-style: normal;
-    top: 0;
-    left: 0;
-    font-size: 12px;
-    width: 18px;
-    height: 18px;
-    text-align: center;
-    line-height: 18px;
-    margin-left: -12px;
-    margin-top: -8px;
-    -webkit-box-shadow: 1px 1px 18px 0px rgba(0,0,0,0.3);
-            box-shadow: 1px 1px 18px 0px rgba(0,0,0,0.3);
-}
 
-header .cart-wrapper{
-	display: inline-block;
-	padding-right: 20px;
-}
 header ul.social,header .top-nav-wrap{
 	display: inline-block;
 }
@@ -2675,10 +2667,13 @@ header ul.social,header .top-nav-wrap{
 .header-last-item.search-wrap .search-wrap{
 	display: inline-block;
 }
-a:focus {
+.header-last-item.search-wrap .search-wrap:hover{
+	cursor: pointer;
+}
+/* a:focus {
     outline: none;
 }
-
+ */
 .contact-info-wrapp.logo-only .container .site-branding {
     text-align: center;
     float: none;

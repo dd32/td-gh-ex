@@ -288,3 +288,10 @@ h3.operation-repeater-field-title span.field-value {
 .operation-icon-list::-webkit-thumb:window-inactive{ 
     background-color: #fff !important; 
 }
+span.icon-preview {
+    float: none;
+    background: #fff;
+    padding: 8px;
+    display: inline-block;
+    border-radius: 50%;
+}

@@ -1252,28 +1252,30 @@ if( ! function_exists('arrival_header_title_display') ){
         ?> 
         <div class="arrival-breadcrumb-wrapper ">
 
-                <?php 
-                if( $_page_header_layout == 'layout-two' ){
-                    echo $overlay_div;    
-                }
-                 ?>
-                <div class="arrival-bread-wrapp container">
+            <?php 
+            if( $_page_header_layout == 'layout-two' ){
+                echo $overlay_div;    
+            }
+             ?>
+            <div class="arrival-bread-wrapp container">
 
-                    <?php do_action('arrival_breadcrumb_header_titles'); 
-                    
-                    if( true == $breadcrumbs_show ){ ?>
-                    
-                        <div class="arrival-breadcrumb">
-                            <?php arrival_breadcrumbs(); ?>    
-                        </div>
-                    
-                    <?php } ?>
+                <?php do_action('arrival_breadcrumb_header_titles'); 
+                
+                if( true == $breadcrumbs_show ){ ?>
+                
+                    <div class="arrival-breadcrumb">
+                        <?php arrival_breadcrumbs(); ?>    
+                    </div>
+                
+                <?php } ?>
 
-                </div>
+            </div>
+            <?php 
+            if( $_page_header_layout == 'default' ){
+                echo $overlay_div;    
+            } ?>
         </div>
     <?php 
-    if( $_page_header_layout == 'default' ){
-        echo $overlay_div;    
-    }
+    
     }
 }

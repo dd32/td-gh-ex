@@ -611,6 +611,7 @@ span.edit-link i{
 .entry-meta a
  {
     color: #777;
+    padding-left: 5px;
 }
 .post-content-wrap p {
     margin-top: 4px;
@@ -773,3 +774,7 @@ nav.navigation.post-navigation .nav-links a:hover::after{
 }
 
 
+.entry-meta svg {
+    vertical-align: middle;
+    fill: #777;
+}

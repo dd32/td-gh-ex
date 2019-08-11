@@ -101,8 +101,8 @@ function arrival_posted_on() {
 		esc_html( '%s'),
 		'<a href="' . esc_url( get_permalink() ) . '" rel="bookmark">' . $time_string . '</a>'
 	);
-
-	echo '<span class="posted-on"><i class="fa fa-clock-o" aria-hidden="true"></i>' . $posted_on . ' </span>'; // WPCS: XSS OK.
+	$icon = arrival_get_icon_svg('watch',14);
+	echo '<span class="posted-on">'.$icon . $posted_on . ' </span>'; // WPCS: XSS OK.
 
 }
 
@@ -160,8 +160,9 @@ function arrival_post_tags() {
  * Prints comments link when comments are enabled.
  */
 function arrival_comments_link() {
+	$icon = arrival_get_icon_svg('comment',14);
 	if ( ! is_single() && ! post_password_required() && ( comments_open() || get_comments_number() ) ) {
-		echo '<span class="comments-link"><i class="fa fa-comments-o" aria-hidden="true"></i>';
+		echo '<span class="comments-link">'.$icon;
 		comments_popup_link(
 			sprintf(
 				wp_kses(
@@ -184,6 +185,7 @@ function arrival_comments_link() {
  * Prints edit post/page link when a user with sufficient priveleges is logged in.
  */
 function arrival_edit_post_link() {
+	$icon = arrival_get_icon_svg('edit',14);
 	edit_post_link(
 		sprintf(
 			wp_kses(
@@ -197,7 +199,7 @@ function arrival_edit_post_link() {
 			),
 			get_the_title()
 		),
-		'<span class="edit-link"><i class="fa fa-pencil-square-o" aria-hidden="true"></i>',
+		'<span class="edit-link">'.$icon,
 		' </span>'
 	);
 }
@@ -308,10 +310,11 @@ function arrival_the_attachment_navigation() {
 */
 if( ! function_exists('arrival_post_view')){
 	function arrival_post_view(){
+		
 		if( class_exists('Ultra_Companion')){
 		?>
 		<span class="post-view">
-			<i class="fa fa-eye" aria-hidden="true"></i>
+			<?php echo arrival_get_icon_svg('eye',14); ?>
 			<span class="count">
 			<?php echo ultra_companion_get_post_views(absint(get_the_ID())); ?>
 			</span>

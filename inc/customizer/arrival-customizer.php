@@ -641,7 +641,7 @@ $wp_customize->add_control( $prefix.'_after_top_header_align_center',array(
 */
 
 $wp_customize->add_section( $prefix.'_main_header_options_panel', array(
-			'title'		=> esc_html__( 'Navigation Options', 'arrival' ),
+			'title'		=> esc_html__( 'Header Options', 'arrival' ),
 			'panel'		=> $prefix.'_header_options_panel'
 		)
 	);
@@ -1075,7 +1075,7 @@ $wp_customize->add_setting($prefix.'_top_header_txt_color', array(
 );
 $wp_customize->add_control( new WP_Customize_Color_Control( $wp_customize,$prefix.'_top_header_txt_color', array(
             'label'         => esc_html__( 'Text Color', 'arrival' ),
-            'priority'      => 55,
+            'priority'      => 50,
             'section'       => $prefix.'_main_header_options_panel',
 )));
 

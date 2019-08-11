@@ -227,8 +227,8 @@ add_action('arrival_social_icons','arrival_social_icons');
 if( ! function_exists('arrival_social_icons')){
 	function arrival_social_icons(){
 
-		$arrival_icons_value =  get_theme_mod('arrival_social_icons');
-	    $arrival_icons = json_decode($arrival_icons_value);
+		$arrival_icons_value       =  get_theme_mod('arrival_social_icons');
+	    $arrival_icons             = json_decode($arrival_icons_value);
 	    ?>
 	    <ul class="social">
 	    	<?php 
@@ -238,7 +238,7 @@ if( ! function_exists('arrival_social_icons')){
 	    		$social_icon = $arrival_icon->social_icons; ?>
 		        <li>
 		        	<a href="<?php echo esc_url($social_link);?>">
-		        		<i class="<?php echo esc_attr($social_icon);?>"></i>
+		        		<?php echo arrival_get_social_icon_svg($social_icon); ?>
 		        	</a>
 		        </li>
 	        <?php }
@@ -547,4 +547,39 @@ function arrival_get_elementor_templates() {
         }
     }
     return $options;
+}
+
+/**
+* Convert HEX to RGBA
+* @since 1.1.2
+*/
+function arrival_hex2rgba($color, $opacity = false) {
+     $default = 'rgb(0,0,0)';
+     //Return default if no color provided
+     if(empty($color))
+           return $default;
+     //Sanitize $color if "#" is provided
+        if ($color[0] == '#' ) {
+         $color = substr( $color, 1 );
+        }
+        //Check if color has 6 or 3 characters and get values
+        if (strlen($color) == 6) {
+                $hex = array( $color[0] . $color[1], $color[2] . $color[3], $color[4] . $color[5] );
+        } elseif ( strlen( $color ) == 3 ) {
+                $hex = array( $color[0] . $color[0], $color[1] . $color[1], $color[2] . $color[2] );
+        } else {
+                return $default;
+        }
+        //Convert hexadec to rgb
+        $rgb =  array_map('hexdec', $hex);
+        //Check if opacity is set(rgba or rgb)
+        if($opacity){
+         if(abs($opacity) > 1)
+         $opacity = 1.0;
+         $output = 'rgba('.implode(",",$rgb).','.$opacity.')';
+        } else {
+         $output = 'rgb('.implode(",",$rgb).')';
+        }
+        //Return rgb(a) color string
+        return $output;
 }

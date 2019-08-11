@@ -5,7 +5,7 @@ Website: https://wpoperation.com/
 Email: support@wpoperation.com
 License: GNU General Public License, version 3 (GPLv3)
 License URI: http://www.gnu.org/licenses/gpl-3.0.txt
-Tags: translation-ready,right-sidebar,custom-menu, featured-images, threaded-comments,custom-logo, footer-widgets,blog,post-formats,sticky-post,theme-options,news,editor-style,custom-background,custom-header
+Tags: translation-ready,right-sidebar,custom-menu, featured-images, threaded-comments,custom-logo, footer-widgets,blog,post-formats,sticky-post,theme-options,news,editor-style,custom-background,custom-header,left-sidebar,rtl-language-support,block-styles,wide-blocks
 Requires at least: WordPress 4.7
 Tested up to: 5.2.2
 Requires PHP: 5.4
@@ -46,17 +46,6 @@ Normalizing styles
 Normalizing styles have been helped along thanks to the fine work of.
 Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
 
-
-
--------------------------------------------------------
- = FontAwesome = 
--------------------------------------------------------
-* Font Awesome
-* License For CSS: Licensed under MIT
-* License For Fonts: SIL OFL 1.1
-* https://github.com/FortAwesome/Font-Awesome
-* https://github.com/FortAwesome/Font-Awesome/blob/master/LICENSE.txt
-* http://scripts.sil.org/OFL
 
 
 -------------------------------------------------------
@@ -137,6 +126,10 @@ https://github.com/Automattic/jetpack/blob/master/modules/lazy-images/lazy-image
 WP Rig
 https://github.com/wprig/wprig/
 https://github.com/wprig/wprig/blob/master/LICENSE
+
+
+Twenty Nineteen(WordPress Theme)
+https://github.com/WordPress/twentynineteen
 
 
 ---------------------

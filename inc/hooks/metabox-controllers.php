@@ -133,6 +133,10 @@ if( ! function_exists('arrival_mb_sidebar_class')){
 		if( 'nosidebar' == $ultra_sidebar_layout ){
 			$ultra_sidebar_layout = 'no-sidebar';
 		}
+
+		if( ('nosidebar' != $ultra_sidebar_layout) &&  ('default' != $ultra_sidebar_layout) &&  ( ! is_404() ) && ( ! is_search() ) ){
+        	$classes[] = 'has-sidebar';
+    	}
 	
 
 		$classes[] = $ultra_sidebar_layout;
@@ -148,7 +152,7 @@ if( ! function_exists('arrival_mb_sidebar_class')){
 */
 if( ! function_exists('arrival_mb_single_posts_sidebar')){
 	function arrival_mb_single_posts_sidebar(){
-		$ultra_sidebar_layout = arrival_get_post_meta('ultra_sidebar_layout','default');
+		$ultra_sidebar_layout 	= arrival_get_post_meta('ultra_sidebar_layout','default');
 
 		if( 'leftsidebar' == $ultra_sidebar_layout ){
 			get_sidebar('left');
