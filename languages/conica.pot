@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Conica\n"
-"POT-Creation-Date: 2018-11-29 13:15+0200\n"
+"POT-Creation-Date: 2019-08-12 11:41+0200\n"
 "PO-Revision-Date: 2016-11-02 11:42+0200\n"
 "Last-Translator: \n"
 "Language-Team: Kaira\n"
@@ -466,7 +466,7 @@ msgid ""
 "added to the footer"
 msgstr ""
 
-#: customizer/customizer-options.php:457 functions.php:312
+#: customizer/customizer-options.php:457 functions.php:323
 msgid "WooCommerce"
 msgstr ""
 
@@ -800,20 +800,139 @@ msgstr ""
 msgid "Conica Standard Footer"
 msgstr ""
 
-#: functions.php:307
+#: functions.php:317
 msgid "Elementor Page Builder"
 msgstr ""
 
-#: functions.php:317
-msgid "Contact Form by WPForms"
-msgstr ""
-
-#: functions.php:322
+#: functions.php:328
 msgid "Breadcrumb NavXT"
 msgstr ""
 
-#: functions.php:327
-msgid "Meta Slider"
+#: functions.php:387
+msgid "Thank you for trying out Conica!"
+msgstr ""
+
+#: functions.php:391
+#, php-format
+msgid "Conica Premium is currently on a %1$s"
+msgstr ""
+
+#: functions.php:391
+#, php-format
+msgid ""
+"<a href=\"https://kairaweb.com/wordpress-theme/conica/#purchase-premium\" "
+"target=\"_blank\">40% sale</a>"
+msgstr ""
+
+#: functions.php:395
+msgid ""
+"We're here to help... Please read through our help notes below on getting "
+"started with Conica:"
+msgstr ""
+
+#: functions.php:398
+msgid "About Conica:"
+msgstr ""
+
+#: functions.php:400
+msgid ""
+"Conica is a widely used and much loved WordPress theme which gives you lots "
+"of different customization settings... so you can easily change the look of "
+"your site any time."
+msgstr ""
+
+#: functions.php:405
+#, php-format
+msgid ""
+"Read through our %1$s and %2$s and we'll help you build a professional "
+"website easily."
+msgstr ""
+
+#: functions.php:405
+msgid ""
+"<a href=\"https://kairaweb.com/support/wordpress-recommended-resources/\" "
+"target=\"_blank\">Recommended Resources</a>"
+msgstr ""
+
+#: functions.php:405
+msgid ""
+"<a href=\"https://kairaweb.com/documentation/\" target=\"_blank\">Kaira "
+"Documentation</a>"
+msgstr ""
+
+#: functions.php:409
+msgid "Read More About Conica"
+msgstr ""
+
+#: functions.php:413
+msgid "Using Conica:"
+msgstr ""
+
+#: functions.php:417
+#, php-format
+msgid ""
+"See our recommended %1$s and how to get ready before you start building your "
+"website after you've %2$s."
+msgstr ""
+
+#: functions.php:417
+msgid ""
+"<a href=\"https://kairaweb.com/documentation/our-recommended-wordpress-basic-"
+"setup/\" target=\"_blank\">WordPress basic setup</a>"
+msgstr ""
+
+#: functions.php:417
+msgid ""
+"<a href=\"https://kairaweb.com/wordpress-hosting/\" target=\"_blank\">setup "
+"WordPress Hosting</a>"
+msgstr ""
+
+#: functions.php:421
+msgid "Recommended Resources"
+msgstr ""
+
+#: functions.php:424
+msgid ""
+"We've neatly built most of the Conica settings into the WordPress Customizer "
+"so you can see all your changes happen as you built your site."
+msgstr ""
+
+#: functions.php:427
+msgid "Start Customizing Your Website"
+msgstr ""
+
+#: functions.php:431
+msgid "Popular FAQ's:"
+msgstr ""
+
+#: functions.php:433
+msgid ""
+"See our list of popular help links for building your website and/or any "
+"issues you may have."
+msgstr ""
+
+#: functions.php:437
+msgid "Setup the Conica default slider"
+msgstr ""
+
+#: functions.php:440
+msgid "Adding Custom CSS to WordPress"
+msgstr ""
+
+#: functions.php:443
+msgid "Mobile Menu is not working"
+msgstr ""
+
+#: functions.php:446
+msgid "What does Conica Premium offer extra"
+msgstr ""
+
+#: functions.php:450
+msgid "See More Documentation"
+msgstr ""
+
+#: functions.php:454
+msgid "Dismiss Notice"
 msgstr ""
 
 #: includes/conica-pro/class-customize.php:76
@@ -925,10 +1044,6 @@ msgstr ""
 msgid ""
 "The remote plugin package consists of more than one file, but the files are "
 "not packaged in a folder."
-msgstr ""
-
-#: includes/inc/class-tgm-plugin-activation.php:1092
-msgid "See more on using the Conica theme"
 msgstr ""
 
 #: includes/inc/class-tgm-plugin-activation.php:1121

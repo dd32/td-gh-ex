@@ -51,4 +51,178 @@ body.conica-footer-layout-standard.widgets-php #conica-site-footer-standard {
     box-shadow: 0 1px 1px rgba(0,0,0,.04);
 }
 
+/* ---- Dashboard Notice ---- */
+.conica-admin-notice {
+    position: relative;
+    padding: 20px 15px 25px;
+    border-left-color: #006CC9;
+}
+.conica-notice-renew {
+    background-position: right 55px;
+}
+.conica-notice-close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    color: #ababab;
+    font-size: 11px;
+    text-decoration: none;
+}
+.conica-notice-close::after {
+    background: 0 0;
+    color: #72777c;
+    content: "\f153";
+    font: 400 16px/20px dashicons;
+    height: 20px;
+    text-align: center;
+    position: relative;
+    top: 4px;
+    margin: 0 0 0 4px;
+    width: 20px;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+.conica-notice-close:hover::after {
+    color: #c00;
+}
+.conica-admin-notice h4 {
+    margin: 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #212121;
+}
+.conica-admin-notice h4 span {
+    margin: 0 0 0 20px;
+    color: #00b83f;
+    font-size: 18px;
+}
+.conica-admin-notice h4 b {
+    font-weight: normal;
+    color: #006CC9;
+}
+.conica-admin-notice p {
+    font-size: 15px;
+    margin: 4px 0 0;
+    color: #72777c;
+}
+.conica-admin-notice-blocks::after {
+    display: block;
+    content: '';
+    clear: both;
+}
+.conica-admin-notice-block h5 {
+    margin: 0 0 8px;
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.2;
+    color: #212121;
+}
+.conica-admin-notice-blocks {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    margin: 20px 0 0px;
+    padding: 24px 10px 5px;
+}
+.conica-admin-notice-block {
+    width: 29%;
+    max-width: 350px;
+    float: left;
+    margin: 0 5% 0 0;
+}
+.conica-nomargin {
+    margin: 0 0 0 2%;
+    width: 30%;
+}
+.conica-admin-notice-block ul {
+    margin: 0 0 20px;
+    padding: 0;
+}
+.conica-admin-notice-block ul li {
+    margin: 0 0 12px;
+    padding: 0;
+    font-size: 15px;
+}
+.conica-admin-notice-block img {
+    box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    max-width: 100%;
+    height: auto;
+}
+.conica-admin-notice-block p {
+    font-size: 14px;
+    margin: 0 0 15px;
+    padding: 0;
+    color: #444;
+}
+.conica-admin-notice-btn,
+.conica-admin-notice-btn-in {
+    display: inline-block;
+    border-radius: 3px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: 0 1px 0 rgba(255, 255, 255, 0.4) inset !important;
+    background-color: #006CC9;
+    color: #FFF !important;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 20px 0 0;
+    padding: 12px 20px 13px;
+    text-decoration: none;
+}
+.conica-admin-notice-btn-in {
+    margin: 0 0 15px;
+}
+.conica-admin-notice-btn-grey {
+    display: inline-block;
+    border-radius: 3px;
+    color: #555;
+    border: 1px solid #ccc;
+    background: #f7f7f7;
+    box-shadow: 0 1px 0 #ccc;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 10px 0 20px;
+    padding: 12px 20px 13px;
+    text-decoration: none;
+}
+.conica-admin-notice-btn:hover {
+	background-color: #0952A9;
+}
+.conica-admin-notice-btn-grey:hover {
+    background-color: #f2f2f2;
+    border: 1px solid #a8a8a8;
+    color: #222;
+}
+.conica-notice-renew .conica-admin-notice-btn {
+    margin: 15px 0 0;
+}
+.conica-admin-notice p.conica-note {
+    margin: 10px 0 -5px;
+    font-size: 12px;
+}
+.conica-admin-notice p.conica-note b {
+    color: #006CC9;
+}
 
+@media only screen and (max-width: 1024px) {
+    .conica-admin-notice-block {
+        width: 45%;
+    }
+    .conica-admin-notice-block.conica-nomargin {
+        display: none;
+    }
+    .conica-arrow {
+        background-image: none;
+    }
+}
+@media only screen and (max-width: 870px) {
+    .conica-admin-notice-block {
+        width: 100%;
+        margin: 0 0 30px;
+    }
+    .conica-admin-notice-btn {
+        margin: 0 0 10px;
+    }
+    .conica-admin-notice-btn-grey {
+        margin: 0 0 -20px;
+    }
+}

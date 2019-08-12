@@ -79,6 +79,13 @@ View the theme settings under "Appearance" -> Customize.
 
 == Changelog ==
 
+#### 1.3.16
+* Style tweaks/fixes
+* Updated Theme URI
+* Remove old deprecated code
+* Updated the language .pot file
+Premium: Added Elementor Page Builder Layouts page to import page layouts
+
 #### 1.3.15
 * Change/Update pingback_url function
 * Remove old deprecated code

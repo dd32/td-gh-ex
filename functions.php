@@ -5,7 +5,7 @@
  * @package Conica
  */
 
-define( 'CONICA_THEME_VERSION' , '1.3.15' );
+define( 'CONICA_THEME_VERSION' , '1.3.16' );
 
 // Get help / Premium Page
 require get_template_directory() . '/upgrade/upgrade.php';
@@ -325,20 +325,10 @@ function conica_register_required_plugins() {
 			'required'  => false,
 		),
 		array(
-			'name'      => __( 'Contact Form by WPForms', 'conica' ),
-			'slug'      => 'wpforms-lite',
-			'required'  => false,
-		),
-		array(
 			'name'      => __( 'Breadcrumb NavXT', 'conica' ),
 			'slug'      => 'breadcrumb-navxt',
 			'required'  => false,
 		),
-		array(
-			'name'      => __( 'Meta Slider', 'conica' ),
-			'slug'      => 'ml-slider',
-			'required'  => false,
-		)
 	);
 	$config = array(
 		'id'           => 'conica',
@@ -385,40 +375,96 @@ function conica_cat_columns_array_push_after( $src, $conica_cat_in, $pos ) {
 }
 
 /**
- * Insert dismissable admin notices
+ * Dismissable Admin notice with Conica setup/general help
  */
-function conica_admin_notice() {
-	$user_id = get_current_user_id();
-	
-	$response = wp_remote_get( 'https://kairaweb.com/wp-json/wp/v2/themes/conica/' );
-	
-	if ( is_wp_error( $response ) ) {
-		return;
-	}
-	
-	$posts = json_decode( wp_remote_retrieve_body( $response ) );
-	
-	if ( empty( $posts ) ) {
-		return;
-	} else {
-		$message_id = trim( $posts[0]->free_notification_id );
-		$message 	= trim( $posts[0]->free_notification );
-		
-		if ( !empty( $message ) && !get_user_meta( $user_id, 'conica_admin_notice_' .$message_id. '_dismissed' ) ) {
-			$class = 'notice notice-success is-dismissible';
-			printf( '<div class="%1$s"><p>%2$s</p><p><a href="?conica-admin-notice-dismissed&conica-admin-notice-id=%3$s">Dismiss this notice</a></p></div>', esc_attr( $class ), $message, $message_id );
-		}
-	}
+function conica_add_license_notice() {
+	global $current_user;
+	$conica_user_id = $current_user->ID;
+
+	if ( !get_user_meta( $conica_user_id, 'conica_flash_notice_ignore' ) ) : ?>
+		<div class="notice notice-info conica-admin-notice conica-notice-add">
+			<h4>
+				<?php esc_html_e( 'Thank you for trying out Conica!', 'conica' ); ?> -
+				<span>
+					<?php
+					/* translators: %s: 'Recommended Resources' */
+					printf( esc_html__( 'Conica Premium is currently on a %1$s', 'conica' ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-theme/conica/#purchase-premium" target="_blank">40% sale</a>', 'conica' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+					?>
+				</span>
+			</h4>
+			<p><?php esc_html_e( 'We\'re here to help... Please read through our help notes below on getting started with Conica:', 'conica' ); ?></p>
+			<div class="conica-admin-notice-blocks">
+				<div class="conica-admin-notice-block">
+					<h5><?php esc_html_e( 'About Conica:', 'conica' ); ?></h5>
+					<p>
+						<?php esc_html_e( 'Conica is a widely used and much loved WordPress theme which gives you lots of different customization settings... so you can easily change the look of your site any time.', 'conica' ); ?>
+					</p>
+					<p>
+						<?php
+						/* translators: %s: 'Recommended Resources' */
+						printf( esc_html__( 'Read through our %1$s and %2$s and we\'ll help you build a professional website easily.', 'conica' ), wp_kses( __( '<a href="https://kairaweb.com/support/wordpress-recommended-resources/" target="_blank">Recommended Resources</a>', 'conica' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/documentation/" target="_blank">Kaira Documentation</a>', 'conica' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+						?>
+					</p>
+					<a href="<?php echo esc_url( admin_url( 'themes.php?page=theme_info' ) ) ?>" class="conica-admin-notice-btn">
+						<?php esc_html_e( 'Read More About Conica', 'conica' ); ?>
+					</a>
+				</div>
+				<div class="conica-admin-notice-block">
+					<h5><?php esc_html_e( 'Using Conica:', 'conica' ); ?></h5>
+					<p>
+						<?php
+						/* translators: %s: 'set up your site in WordPress' */
+						printf( esc_html__( 'See our recommended %1$s and how to get ready before you start building your website after you\'ve %2$s.', 'conica' ), wp_kses( __( '<a href="https://kairaweb.com/documentation/our-recommended-wordpress-basic-setup/" target="_blank">WordPress basic setup</a>', 'conica' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ), wp_kses( __( '<a href="https://kairaweb.com/wordpress-hosting/" target="_blank">setup WordPress Hosting</a>', 'conica' ), array( 'a' => array( 'href' => array(), 'target' => array() ) ) ) );
+						?>
+					</p>
+					<a href="<?php echo esc_url( 'https://kairaweb.com/support/wordpress-recommended-resources/' ) ?>" class="conica-admin-notice-btn-in" target="_blank">
+						<?php esc_html_e( 'Recommended Resources', 'conica' ); ?>
+					</a>
+					<p>
+						<?php esc_html_e( 'We\'ve neatly built most of the Conica settings into the WordPress Customizer so you can see all your changes happen as you built your site.', 'conica' ); ?>
+					</p>
+					<a href="<?php echo esc_url( admin_url( 'customize.php' ) ) ?>" class="conica-admin-notice-btn-grey">
+						<?php esc_html_e( 'Start Customizing Your Website', 'conica' ); ?>
+					</a>
+				</div>
+				<div class="conica-admin-notice-block conica-nomargin">
+					<h5><?php esc_html_e( 'Popular FAQ\'s:', 'conica' ); ?></h5>
+					<p>
+					<?php esc_html_e( 'See our list of popular help links for building your website and/or any issues you may have.', 'conica' ); ?>
+					</p>
+					<ul>
+						<li>
+							<a href="https://kairaweb.com/documentation/setting-up-the-default-slider/" target="_blank"><?php esc_html_e( 'Setup the Conica default slider', 'conica' ); ?></a>
+						</li>
+						<li>
+							<a href="https://kairaweb.com/documentation/adding-custom-css-to-wordpress/" target="_blank"><?php esc_html_e( 'Adding Custom CSS to WordPress', 'conica' ); ?></a>
+						</li>
+						<li>
+							<a href="https://kairaweb.com/documentation/mobile-menu-not-working/" target="_blank"><?php esc_html_e( 'Mobile Menu is not working', 'conica' ); ?></a>
+						</li>
+						<li>
+							<a href="https://kairaweb.com/wordpress-theme/conica/#premium-features" target="_blank"><?php esc_html_e( 'What does Conica Premium offer extra', 'conica' ); ?></a>
+						</li>
+					</ul>
+					<a href="<?php echo esc_url( 'https://kairaweb.com/documentation/' ) ?>" class="conica-admin-notice-btn-grey" target="_blank">
+						<?php esc_html_e( 'See More Documentation', 'conica' ); ?>
+					</a>
+				</div>
+			</div>
+			<a href="?conica_add_license_notice_ignore=" class="conica-notice-close"><?php esc_html_e( 'Dismiss Notice', 'conica' ); ?></a>
+		</div><?php
+	endif;
 }
-add_action( 'admin_notices', 'conica_admin_notice' );
+add_action( 'admin_notices', 'conica_add_license_notice' );
 /**
- * Dismiss admin notices
+ * Admin notice save dismiss to wp transient
  */
-function conica_admin_notice_dismissed() {
-    $user_id = get_current_user_id();
-    if ( isset( $_GET['conica-admin-notice-dismissed'] ) ) {
-    	$conica_admin_notice_id = $_GET['conica-admin-notice-id'];
-		add_user_meta( $user_id, 'conica_admin_notice_' .$conica_admin_notice_id. '_dismissed', 'true', true );
-	}
+function conica_add_license_notice_ignore() {
+    global $current_user;
+	$conica_user_id = $current_user->ID;
+
+    if ( isset( $_GET['conica_add_license_notice_ignore'] ) ) {
+		update_user_meta( $conica_user_id, 'conica_flash_notice_ignore', true );
+    }
 }
-add_action( 'admin_init', 'conica_admin_notice_dismissed' );
+add_action( 'admin_init', 'conica_add_license_notice_ignore' );

@@ -18,7 +18,7 @@
                 <?php printf( __( '<strong>All settings for Conica</strong> are neatly built into the <a href="%s">WordPress Customizer</a> so you can change and edit settings to view what happens before saving and making any of the changes live', 'conica' ) , admin_url( 'customize.php' ) ); ?>
             </p>
             <p class="conica-upgrade-p">
-                <?php printf( __( 'Help on how to <strong><a href="%s" target="_blank">install the premium theme</a></strong>', 'conica' ) , 'https://kairaweb.com/support/install-the-premium-theme/' ); ?>
+                <?php printf( __( 'Help on how to <strong><a href="%s" target="_blank">install the premium theme</a></strong>', 'conica' ) , 'https://kairaweb.com/documentation/install-the-premium-theme/' ); ?>
             </p>
             
         </div>
