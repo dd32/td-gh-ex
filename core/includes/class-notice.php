@@ -56,26 +56,32 @@ if( !class_exists( 'diarjo_lite_admin_notice' ) ) {
 			
 		?>
 			
-            <div class="update-nag notice diarjo_lite-notice">
+            <div class="notice notice-warning is-dismissible">
             
-            	<div class="diarjo_lite-noticedescription">
-					
-                    <strong><?php _e( 'Upgrade to the premium version of Diarjo to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.', 'diarjo-lite' ); ?></strong><br/>
+            	<p>
+            
+            		<strong>
 
-					<?php 
-					
-						printf( 
-							'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'diarjo-lite' ) . '</a>', 
-							esc_url( wp_nonce_url( add_query_arg( 'diarjo-lite-dismiss', '1' ), 'diarjo-lite-dismiss-action'))
-						);
-					
-					?>
+						<?php
+                        
+                            esc_html_e( 'Upgrade to the premium version of Diarjo to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more. ', 'diarjo-lite' );
+							
+							printf( 
+								'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'diarjo-lite' ) . '</a>', 
+								esc_url( wp_nonce_url( add_query_arg( 'diarjo-lite-dismiss', '1' ), 'diarjo-lite-dismiss-action'))
+							);
+                            
+                        ?>
+                    
+                    </strong>
+                    
+            	</p>
+                    
+            	<p>
+            		
+					<a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/diarjo-free-creative-minimal-wordpress-theme/?ref=2&campaign=diarjonotice' ); ?>" class="button button-primary"><?php _e( 'Upgrade to Diarjo Premium', 'diarjo-lite' ); ?></a>
                 
-                </div>
-                
-                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/diarjo-free-creative-minimal-wordpress-theme/?ref=2&campaign=diarjonotice' ); ?>" class="button"><?php _e( 'Upgrade to Diarjo Premium', 'diarjo-lite' ); ?></a>
-                
-                <div class="clear"></div>
+            	</p>
 
             </div>
 		

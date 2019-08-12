@@ -3,7 +3,7 @@ Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-logo, custom-menu, featured-images, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, blog,  news, photography
 Requires at least: 4.0
 Tested up to: 5.2.2
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 Requires PHP: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -20,6 +20,12 @@ Diarjo Lite WordPress Theme, Copyright 2019 ThemeinProgress.
 Diarjo Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.2.3 =
+Release date - August, 12 - 2019
+
+* Updated - Italian translation file
+* Edit - Code optimized
 
 = 1.2.2 =
 Release date - August, 01 - 2019
@@ -138,6 +144,9 @@ HTML5 Shiv By @afarkas @jdalton @jon_neal @rem - https://github.com/aFarkas/html
 selectivizr By Keith Clark - https://github.com/keithclark/selectivizr
 * selectivizr.js v1.0.3b - Licensed under MIT license ( Applies to selectivizr-min.js file in /diarjo-lite/assets/scripts/ )
 
+TGM Plugin Activation By Thomas Griffin, Gary Jones, Juliette Reinders Folmer - http://tgmpluginactivation.com
+* class-plugin-activation.php v2.6.1 - Licensed under GPL2 license ( Applies to class-plugin-activation.php file in /denves-lite/core/includes/ )
+
 The following scripts and styles are coded by me and they are released under MIT license
 
 * /diarjo-lite/assets/skins/blue.css
@@ -163,6 +172,9 @@ The following scripts and styles are coded by me and they are released under MIT
 * /diarjo-lite/assets/skins/white_yellow.css
 * /diarjo-lite/assets/css/template.css
 * /diarjo-lite/assets/js/template.js
+* /diarjo-lite/core/admin/assets/css/customize.css
+* /diarjo-lite/core/admin/assets/css/theme.css
+* /diarjo-lite/core/admin/assets/js/theme.js
 
 The following images are created by me and they are released under CC0 license
 

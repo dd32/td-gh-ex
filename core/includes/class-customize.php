@@ -27,35 +27,16 @@ class diarjolite_customize {
 			wp_enqueue_script( "jquery-ui-tabs", array('jquery'));
 		}
 			
-		if ( !get_option( 'diarjo-lite-dismissed-notice') ) {
-			wp_enqueue_style ( 'diarjo-lite-notice',  $file_dir . 'css/notice.css', array(), '1.0.0' ); 
-		}
-
 	}
 
     public function customize_scripts() {
 
 		wp_enqueue_style ( 
-			'diarjolite_panel', 
+			'diarjo-lite-customizer', 
 			get_template_directory_uri() . '/core/admin/assets/css/customize.css', 
 			array(), 
 			''
 		);
-
-		wp_enqueue_script( 
-			  'customizer-preview',
-			  get_template_directory_uri().'/core/admin/assets/js/customizer-preview.js',
-			  array( 'jquery' ),
-			  '1.0.0', 
-			  true
-		);
-
-		$diarjolite_details = array(
-			'label' => __( 'Upgrade to Diarjo Premium', 'diarjo-lite' ),
-			'url' => esc_url('https://www.themeinprogress.com/diarjo-free-creative-minimal-wordpress-theme/')
-		);
-	
-		wp_localize_script( 'customizer-preview', 'diarjolite_details', $diarjolite_details );
 	  
    }
 	
@@ -244,7 +225,27 @@ class diarjolite_customize {
 					) );
 							
 				break;
+
+				case 'diarjo-lite-customize-info' :
 	
+					$wp_customize->add_section( $element['id'], array(
+						
+						'title' => $element['title'],
+						'priority' => $element['priority'],
+						'capability' => 'edit_theme_options',
+	
+					));
+	
+					$wp_customize->add_setting(  $element['id'], array(
+						'sanitize_callback' => 'esc_url_raw'
+					));
+						 
+					$wp_customize->add_control( new Diarjolite_Customize_Info_Control( $wp_customize,  $element['id'] , array(
+						'section' => $element['section'],
+					)));		
+											
+				break;
+
 			}
 			
 		}
@@ -295,6 +296,51 @@ class diarjolite_customize {
 	
 		}
 
+	}
+
+}
+
+if ( class_exists( 'WP_Customize_Control' ) ) {
+
+	class Diarjolite_Customize_Info_Control extends WP_Customize_Control {
+
+		public $type = "diarjo-lite-customize-info";
+
+		public function render_content() { ?>
+
+            <div class="inside">
+
+				<h2><?php esc_html_e('Diarjo premium version','diarjo-lite');?></h2> 
+
+                <p><?php esc_html_e("Upgrade to the premium version of Diarjo to enable an extensive option panel, 600+ Google Fonts, unlimited sidebars, portfolio and much more.","diarjo-lite");?></p>
+
+                <ul>
+                
+                    <li><a class="button purchase-button" href="<?php echo esc_url( 'https://www.themeinprogress.com/diarjo-free-creative-minimal-wordpress-theme/?ref=2&campaign=diarjo-lite-panel' ); ?>" title="<?php esc_attr_e('Upgrade to Diarjo premium','diarjo-lite');?>" target="_blank"><?php esc_html_e('Upgrade to Diarjo premium','diarjo-lite');?></a></li>
+                
+                </ul>
+
+            </div>
+            
+            <div class="inside">
+
+                <h2><?php esc_html_e('Become a supporter','diarjo-lite');?></h2> 
+
+                <p><?php esc_html_e("If you like this theme and support, I'd appreciate any of the following:","diarjo-lite");?></p>
+
+                <ul>
+                
+                    <li><a class="button" href="<?php echo esc_url( 'https://wordpress.org/support/view/theme-reviews/'.get_stylesheet().'#postform' ); ?>" title="<?php esc_attr_e('Rate this Theme','diarjo-lite');?>" target="_blank"><?php esc_html_e('Rate this Theme','diarjo-lite');?></a></li>
+                    <li><a class="button" href="<?php echo esc_url( 'https://www.themeinprogress.com/reserved-area/' ); ?>" title="<?php esc_attr_e('Subscribe our newsletter','diarjo-lite');?>" target="_blank"><?php esc_html_e('Subscribe our newsletter','diarjo-lite');?></a></li>
+                
+                </ul>
+    
+            </div>
+    
+		<?php
+
+		}
+	
 	}
 
 }

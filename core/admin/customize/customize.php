@@ -6,6 +6,18 @@ if (!function_exists('diarjolite_customize_panel_function')) {
 		
 		$theme_panel = array ( 
 
+			/* Support section */ 
+
+			array(
+			
+				'title' => esc_html__( 'Upgrade to Diarjo Premium','diarjo-lite'),
+				'id' => 'diarjo-lite-customize-info',
+				'type' => 'diarjo-lite-customize-info',
+				'section' => 'diarjo-lite-customize-info',
+				'priority' => '08',
+
+			),
+
 			/* FULL IMAGE BACKGROUND */ 
 
 			array(
