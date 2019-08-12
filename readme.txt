@@ -3,7 +3,7 @@ Contributors: alexvtn
 Tags: custom-background, custom-colors, custom-header, custom-logo, custom-menu, featured-images, flexible-header, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, blog, e-commerce, news
 Requires at least: 4.0
 Tested up to: 5.2.2
-Stable tag: 1.5.9
+Stable tag: 1.6.0
 Requires PHP: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,12 @@ Bazaar Lite WordPress Theme, Copyright 2019 ThemeinProgress.
 Bazaar Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 1.6.0 =
+Release date - August, 12 - 2019
+
+* Updated - Italian translation file
+* Edit - Code optimized
 
 = 1.5.9 =
 Release date - July, 29 - 2019
@@ -340,3 +346,6 @@ The following scripts and styles are self created and they are released under MI
 * /bazaar-lite/assets/css/template.css
 * /bazaar-lite/assets/css/minimal_layout.css
 * /bazaar-lite/assets/js/template.js
+* /bazaar-lite/core/admin/assets/css/customize.css
+* /bazaar-lite/core/admin/assets/css/theme.css
+* /bazaar-lite/core/admin/assets/js/panel.js
