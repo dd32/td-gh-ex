@@ -3,7 +3,7 @@ Contributors: alexvtn
 Tags: blog, custom-background, custom-colors, custom-header, custom-logo, custom-menu, e-commerce, featured-images, flexible-header, footer-widgets, post-formats, right-sidebar, sticky-post, theme-options, threaded-comments, translation-ready, one-column, two-columns, three-columns, grid-layout, news
 Requires at least: 4.0
 Tested up to: 5.2.2
-Stable tag: 2.4.0
+Stable tag: 2.4.1
 Requires PHP: 5.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
@@ -19,6 +19,12 @@ Alhena Lite WordPress Theme, Copyright 2019 ThemeinProgress.
 Alhena Lite is distributed under the terms of the GPLv2 or later
 
 == Changelog ==
+
+= 2.4.1 =
+Release date - August, 12 - 2019
+
+* Updated - Italian translation file
+* Edit - Code optimized
 
 = 2.4.0 =
 Release date - July, 29 - 2019
@@ -91,6 +97,9 @@ HTML5 Shiv By @afarkas @jdalton @jon_neal @rem - https://github.com/aFarkas/html
 selectivizr By Keith Clark - https://github.com/keithclark/selectivizr
 * selectivizr.js v1.0.3b - Licensed under MIT license ( Applies to selectivizr.js file in /alhena-lite/assets/scripts/ )
 
+TGM Plugin Activation By Thomas Griffin, Gary Jones, Juliette Reinders Folmer - http://tgmpluginactivation.com
+* class-plugin-activation.php v2.6.1 - Licensed under GPL2 license ( Applies to class-plugin-activation.php file in /alhena-lite/core/includes/ )
+
 The following scripts and styles are coded by me and they are released under MIT license
 
 * /alhena-lite/assets/skins/blue.css
@@ -120,6 +129,9 @@ The following scripts and styles are coded by me and they are released under MIT
 * /alhena-lite/assets/css/woocommerce.css
 * /alhena-lite/assets/css/template.css
 * /alhena-lite/assets/js/template.js
+* /alhena-lite/core/admin/assets/css/customize.css
+* /alhena-lite/core/admin/assets/css/panel.css
+* /alhena-lite/core/admin/assets/js/panel.js
 
 The following images are created by me and they are released under CC0 license
 

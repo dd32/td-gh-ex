@@ -181,8 +181,8 @@ if (!function_exists('alhenalite_customize_panel_function')) {
 				'type' => 'select',
 				'section' => 'settings_section',
 				'options' => array (
-				   'off' => esc_html__( 'No','suevafree'),
-				   'on' => esc_html__( 'Yes','suevafree'),
+				   'off' => esc_html__( 'No','alhena-lite'),
+				   'on' => esc_html__( 'Yes','alhena-lite'),
 				),
 				
 				'std' => 'off',

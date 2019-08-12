@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WIP\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-03-05 12:07+0100\n"
-"PO-Revision-Date: 2019-03-05 12:10+0100\n"
+"POT-Creation-Date: 2019-08-12 14:53+0200\n"
+"PO-Revision-Date: 2019-08-12 14:53+0200\n"
 "Last-Translator: Alessandro Vellutini <vellutini@hotmail.it>\n"
 "Language-Team: \n"
 "Language: it_IT\n"
@@ -67,7 +67,7 @@ msgstr "&raquo;"
 msgid "Comment"
 msgstr "Commenta"
 
-#: core/admin/customize/customize.php:13 core/classes/class-notice.php:62
+#: core/admin/customize/customize.php:13 core/classes/class-notice.php:82
 msgid "Upgrade to Alhena Premium"
 msgstr "Aggiorna a Alhena Pro"
 
@@ -677,11 +677,11 @@ msgstr "Scegli uno spessore per il font dei titoli"
 msgid "Do you want to display an uppercase title?."
 msgstr "Vuoi visualizzare i titoli in maiuscolo?"
 
-#: core/classes/class-customize.php:311
+#: core/classes/class-customize.php:327
 msgid "Alhena premium version"
 msgstr "Versione premium Alhena"
 
-#: core/classes/class-customize.php:313
+#: core/classes/class-customize.php:329
 msgid ""
 "Upgrade to the premium version of Alhena, to enable 600+ Google Fonts, "
 "unlimited sidebars, portfolio section and much more."
@@ -689,42 +689,38 @@ msgstr ""
 "Aggiorna alla versione premium di Alhena, per attivare oltre 600 Google "
 "Fonts, barre laterali illimitate, sezione Portfolio e molto altro."
 
-#: core/classes/class-customize.php:317
+#: core/classes/class-customize.php:333
 msgid "Upgrade to Alhena premium"
 msgstr "Aggiorna ad Alhena premium"
 
-#: core/classes/class-customize.php:325
+#: core/classes/class-customize.php:341
 msgid "Become a supporter"
 msgstr "Diventa un supporter"
 
-#: core/classes/class-customize.php:327
+#: core/classes/class-customize.php:343
 msgid ""
 "If you like this theme and support, I'd appreciate any of the following:"
 msgstr ""
 "Se ti piace il tema oppure il servizio di supporto, è gradita una delle "
 "seguenti azioni:"
 
-#: core/classes/class-customize.php:331
+#: core/classes/class-customize.php:347
 msgid "Rate this Theme"
 msgstr "Valuta questo tema."
 
-#: core/classes/class-customize.php:332
+#: core/classes/class-customize.php:348
 msgid "Subscribe our newsletter"
 msgstr "Registrati alla nostra newsletter."
 
-#: core/classes/class-customize.php:333
-msgid "Download our free WordPress themes"
-msgstr "Scarica i nostri temi gratuiti per WordPress"
-
-#: core/classes/class-notice.php:58
+#: core/classes/class-notice.php:67
 msgid ""
 "Upgrade to the premium version of Alhena, to enable 600+ Google Fonts, "
-"Unlimited sidebars, Portfolio section and much more."
+"Unlimited sidebars, Portfolio section and much more. "
 msgstr ""
 "Aggiorna alla versione premium di Alhena, per attivare oltre 600 Google "
-"Fonts, barre laterali illimitate, sezione Portfolio e molto altro."
+"Fonts, barre laterali illimitate, sezione Portfolio e molto altro. "
 
-#: core/classes/class-notice.php:59
+#: core/classes/class-notice.php:70
 #: core/classes/class-plugin-activation.php:395
 msgid "Dismiss this notice"
 msgstr "Chiudi questa notifica"
@@ -802,14 +798,14 @@ msgid "Return to Required Plugins Installer"
 msgstr "Ritorna all'installer dei plugin richiesti"
 
 #: core/classes/class-plugin-activation.php:386
-#: core/classes/class-plugin-activation.php:827
-#: core/classes/class-plugin-activation.php:2535
-#: core/classes/class-plugin-activation.php:3582
+#: core/classes/class-plugin-activation.php:830
+#: core/classes/class-plugin-activation.php:2538
+#: core/classes/class-plugin-activation.php:3585
 msgid "Return to the Dashboard"
 msgstr "Ritorna alla dashboard."
 
 #: core/classes/class-plugin-activation.php:387
-#: core/classes/class-plugin-activation.php:3161
+#: core/classes/class-plugin-activation.php:3164
 msgid "Plugin activated successfully."
 msgstr "Plugin attivato con successo."
 
@@ -850,11 +846,11 @@ msgstr ""
 "Si prega di contattare l’amministratore di questo sito per richiedere "
 "assistenza."
 
-#: core/classes/class-plugin-activation.php:523
+#: core/classes/class-plugin-activation.php:526
 msgid "Update Required"
 msgstr "Aggiornamento richiesto."
 
-#: core/classes/class-plugin-activation.php:934
+#: core/classes/class-plugin-activation.php:937
 msgid ""
 "The remote plugin package does not contain a folder with the desired slug "
 "and renaming did not work."
@@ -862,8 +858,8 @@ msgstr ""
 "Il pacchetto di plug-in remoto non contiene una cartella con lo slum "
 "desiderato ed il comando rinomina non ha funzionato."
 
-#: core/classes/class-plugin-activation.php:934
 #: core/classes/class-plugin-activation.php:937
+#: core/classes/class-plugin-activation.php:940
 msgid ""
 "Please contact the plugin provider and ask them to package their plugin "
 "according to the WordPress guidelines."
@@ -871,7 +867,7 @@ msgstr ""
 "Si prega di contattare lo sviluppatore del plugin e richiedere di sviluppare "
 "il plugin seguendo le linee guida di WordPress."
 
-#: core/classes/class-plugin-activation.php:937
+#: core/classes/class-plugin-activation.php:940
 msgid ""
 "The remote plugin package consists of more than one file, but the files are "
 "not packaged in a folder."
@@ -879,176 +875,176 @@ msgstr ""
 "Il pacchetto di plugin è costituito da più di un file, ma i file non sono "
 "confezionati in una cartella."
 
-#: core/classes/class-plugin-activation.php:1122
-#: core/classes/class-plugin-activation.php:2950
+#: core/classes/class-plugin-activation.php:1125
+#: core/classes/class-plugin-activation.php:2953
 msgctxt "plugin A *and* plugin B"
 msgid "and"
 msgstr ""
 
-#: core/classes/class-plugin-activation.php:1984
+#: core/classes/class-plugin-activation.php:1987
 #, php-format
 msgid "TGMPA v%s"
 msgstr "TGMPA v%s"
 
-#: core/classes/class-plugin-activation.php:2275
+#: core/classes/class-plugin-activation.php:2278
 msgid "Required"
 msgstr "Richiesto"
 
-#: core/classes/class-plugin-activation.php:2278
+#: core/classes/class-plugin-activation.php:2281
 msgid "Recommended"
 msgstr "Raccomandato"
 
-#: core/classes/class-plugin-activation.php:2294
+#: core/classes/class-plugin-activation.php:2297
 msgid "WordPress Repository"
 msgstr "WordPress Repository"
 
-#: core/classes/class-plugin-activation.php:2297
+#: core/classes/class-plugin-activation.php:2300
 msgid "External Source"
 msgstr "Risorse esterne"
 
-#: core/classes/class-plugin-activation.php:2300
+#: core/classes/class-plugin-activation.php:2303
 msgid "Pre-Packaged"
 msgstr "Pre-confezionati"
 
-#: core/classes/class-plugin-activation.php:2317
+#: core/classes/class-plugin-activation.php:2320
 msgid "Not Installed"
 msgstr "Non installato"
 
-#: core/classes/class-plugin-activation.php:2321
+#: core/classes/class-plugin-activation.php:2324
 msgid "Installed But Not Activated"
 msgstr "Installato ma non attivato"
 
-#: core/classes/class-plugin-activation.php:2323
+#: core/classes/class-plugin-activation.php:2326
 msgid "Active"
 msgstr "Attivo"
 
-#: core/classes/class-plugin-activation.php:2329
+#: core/classes/class-plugin-activation.php:2332
 msgid "Required Update not Available"
 msgstr "L’aggiornamento richiesto non è disponibile."
 
-#: core/classes/class-plugin-activation.php:2332
+#: core/classes/class-plugin-activation.php:2335
 msgid "Requires Update"
 msgstr "È richiesto l’aggiornamento."
 
-#: core/classes/class-plugin-activation.php:2335
+#: core/classes/class-plugin-activation.php:2338
 msgid "Update recommended"
 msgstr "Aggiornamento raccomandato"
 
-#: core/classes/class-plugin-activation.php:2492
+#: core/classes/class-plugin-activation.php:2495
 msgid "Installed version:"
 msgstr "Versione installata:"
 
-#: core/classes/class-plugin-activation.php:2500
+#: core/classes/class-plugin-activation.php:2503
 msgid "Minimum required version:"
 msgstr "Versione minima richiesta:"
 
-#: core/classes/class-plugin-activation.php:2512
+#: core/classes/class-plugin-activation.php:2515
 msgid "Available version:"
 msgstr "Versione disponibile"
 
-#: core/classes/class-plugin-activation.php:2535
+#: core/classes/class-plugin-activation.php:2538
 msgid "No plugins to install, update or activate."
 msgstr "Nessun plugin da installare, aggiornare o attivare."
 
-#: core/classes/class-plugin-activation.php:2549
+#: core/classes/class-plugin-activation.php:2552
 msgid "Plugin"
 msgstr "Plugin"
 
-#: core/classes/class-plugin-activation.php:2550
+#: core/classes/class-plugin-activation.php:2553
 msgid "Source"
 msgstr "Fonte"
 
-#: core/classes/class-plugin-activation.php:2551
+#: core/classes/class-plugin-activation.php:2554
 msgid "Type"
 msgstr "Tipo"
 
-#: core/classes/class-plugin-activation.php:2555
+#: core/classes/class-plugin-activation.php:2558
 msgid "Version"
 msgstr "Versione"
 
-#: core/classes/class-plugin-activation.php:2556
+#: core/classes/class-plugin-activation.php:2559
 msgid "Status"
 msgstr "Stato"
 
-#: core/classes/class-plugin-activation.php:2605
+#: core/classes/class-plugin-activation.php:2608
 #, php-format
 msgid "Install %2$s"
 msgstr "Installa %2$s"
 
-#: core/classes/class-plugin-activation.php:2610
+#: core/classes/class-plugin-activation.php:2613
 #, php-format
 msgid "Update %2$s"
 msgstr "Aggiorna %2$s"
 
-#: core/classes/class-plugin-activation.php:2616
+#: core/classes/class-plugin-activation.php:2619
 #, php-format
 msgid "Activate %2$s"
 msgstr "Attiva %2$s"
 
-#: core/classes/class-plugin-activation.php:2686
+#: core/classes/class-plugin-activation.php:2689
 msgid "Upgrade message from the plugin author:"
 msgstr "Messaggio di aggiornamento dall’autore del plugin:"
 
-#: core/classes/class-plugin-activation.php:2719
+#: core/classes/class-plugin-activation.php:2722
 msgid "Install"
 msgstr "Installa"
 
-#: core/classes/class-plugin-activation.php:2725
+#: core/classes/class-plugin-activation.php:2728
 msgid "Update"
 msgstr "Aggiornamento"
 
-#: core/classes/class-plugin-activation.php:2728
+#: core/classes/class-plugin-activation.php:2731
 msgid "Activate"
 msgstr "Attiva"
 
-#: core/classes/class-plugin-activation.php:2759
+#: core/classes/class-plugin-activation.php:2762
 msgid "No plugins were selected to be installed. No action taken."
 msgstr "Nessun plugin selezionato per essere installato. Nessuna risposta."
 
-#: core/classes/class-plugin-activation.php:2761
+#: core/classes/class-plugin-activation.php:2764
 msgid "No plugins were selected to be updated. No action taken."
 msgstr "Nessun plugin selezionato per essere aggiornato. Nessuna risposta."
 
-#: core/classes/class-plugin-activation.php:2802
+#: core/classes/class-plugin-activation.php:2805
 msgid "No plugins are available to be installed at this time."
 msgstr "Nessun plugin è disponibile per essere installato in questo momento."
 
-#: core/classes/class-plugin-activation.php:2804
+#: core/classes/class-plugin-activation.php:2807
 msgid "No plugins are available to be updated at this time."
 msgstr "Nessun plugin è disponibile per essere aggiornato in questo momento."
 
-#: core/classes/class-plugin-activation.php:2910
+#: core/classes/class-plugin-activation.php:2913
 msgid "No plugins were selected to be activated. No action taken."
 msgstr ""
 "Nessun plugin sono stati selezionati per essere attivati. Nessuna azione "
 "intrapresa."
 
-#: core/classes/class-plugin-activation.php:2936
+#: core/classes/class-plugin-activation.php:2939
 msgid "No plugins are available to be activated at this time."
 msgstr "Nessun plugin è disponibile per essere attivato in questo momento."
 
-#: core/classes/class-plugin-activation.php:3160
+#: core/classes/class-plugin-activation.php:3163
 msgid "Plugin activation failed."
 msgstr "Attivazione plugin fallita."
 
-#: core/classes/class-plugin-activation.php:3500
+#: core/classes/class-plugin-activation.php:3503
 #, php-format
 msgid "Updating Plugin %1$s (%2$d/%3$d)"
 msgstr "Aggiornamento plugin %1$s (%2$d/%3$d)"
 
-#: core/classes/class-plugin-activation.php:3503
+#: core/classes/class-plugin-activation.php:3506
 #, php-format
 msgid "An error occurred while installing %1$s: <strong>%2$s</strong>."
 msgstr ""
 "Si è verificato un errore durante l'installazione %1$s: <strong>%2$s</"
 "strong>."
 
-#: core/classes/class-plugin-activation.php:3505
+#: core/classes/class-plugin-activation.php:3508
 #, php-format
 msgid "The installation of %1$s failed."
 msgstr "L'installazione di %1$s è fallita."
 
-#: core/classes/class-plugin-activation.php:3509
+#: core/classes/class-plugin-activation.php:3512
 msgid ""
 "The installation and activation process is starting. This process may take a "
 "while on some hosts, so please be patient."
@@ -1056,31 +1052,31 @@ msgstr ""
 "Il processo di installazione e attivazione è iniziato. Questo processo può "
 "richiedere un pò di tempo, per favore siate pazienti."
 
-#: core/classes/class-plugin-activation.php:3511
+#: core/classes/class-plugin-activation.php:3514
 #, php-format
 msgid "%1$s installed and activated successfully."
 msgstr "%1$s installato ed attivato con successo."
 
-#: core/classes/class-plugin-activation.php:3511
-#: core/classes/class-plugin-activation.php:3519
+#: core/classes/class-plugin-activation.php:3514
+#: core/classes/class-plugin-activation.php:3522
 msgid "Show Details"
 msgstr "Visualizza dettagli"
 
-#: core/classes/class-plugin-activation.php:3511
-#: core/classes/class-plugin-activation.php:3519
+#: core/classes/class-plugin-activation.php:3514
+#: core/classes/class-plugin-activation.php:3522
 msgid "Hide Details"
 msgstr "Nascondi dettagli"
 
-#: core/classes/class-plugin-activation.php:3512
+#: core/classes/class-plugin-activation.php:3515
 msgid "All installations and activations have been completed."
 msgstr "Tutte le installazioni e attivazioni sono state completate."
 
-#: core/classes/class-plugin-activation.php:3514
+#: core/classes/class-plugin-activation.php:3517
 #, php-format
 msgid "Installing and Activating Plugin %1$s (%2$d/%3$d)"
 msgstr "Installazione e attivazione Plugin %1$s (%2$d/%3$d)"
 
-#: core/classes/class-plugin-activation.php:3517
+#: core/classes/class-plugin-activation.php:3520
 msgid ""
 "The installation process is starting. This process may take a while on some "
 "hosts, so please be patient."
@@ -1088,16 +1084,16 @@ msgstr ""
 "Il processo d'installazione è avviato. Questo processo può richiedere un pò "
 "di tempo, per favore siate pazienti."
 
-#: core/classes/class-plugin-activation.php:3519
+#: core/classes/class-plugin-activation.php:3522
 #, php-format
 msgid "%1$s installed successfully."
 msgstr "%1$s installato con successo."
 
-#: core/classes/class-plugin-activation.php:3520
+#: core/classes/class-plugin-activation.php:3523
 msgid "All installations have been completed."
 msgstr "Tutte le installazioni sono state completate."
 
-#: core/classes/class-plugin-activation.php:3522
+#: core/classes/class-plugin-activation.php:3525
 #, php-format
 msgid "Installing Plugin %1$s (%2$d/%3$d)"
 msgstr "Installazione Plugin %1$s (%2$d/%3$d)"
@@ -1122,111 +1118,120 @@ msgstr "Questa sidebar verrà visualizzata a lato del blog"
 msgid "This sidebar will be shown after the content"
 msgstr "Questa sidebar verrà visualizzata dopo il contenuto della pagina"
 
-#: core/main.php:97
+#: core/main.php:44
+msgid "You need to update your PHP version to run this theme."
+msgstr "È necessario aggiornare la versione PHP per attivare questo tema."
+
+#: core/main.php:47
+#, php-format
+msgid "Actual version is: %1$s, required version is: %2$s."
+msgstr "La versione attuale è:%1$s, la versione richiesta è:%2$s."
+
+#: core/main.php:145
 #, php-format
 msgid "Category: %s"
 msgstr "Categoria: %s"
 
-#: core/main.php:99
+#: core/main.php:147
 #, php-format
 msgid "Tag: %s"
 msgstr "Tag: %s"
 
-#: core/main.php:101
+#: core/main.php:149
 #, php-format
 msgid "Author: %s"
 msgstr "Autore: %s"
 
-#: core/main.php:103
+#: core/main.php:151
 #, php-format
 msgid "Year: %s"
 msgstr "Anno: %s"
 
-#: core/main.php:103
+#: core/main.php:151
 msgctxt "yearly archives date format"
 msgid "Y"
 msgstr "Y"
 
-#: core/main.php:105
+#: core/main.php:153
 #, php-format
 msgid "Month: %s"
 msgstr "Mese: %s"
 
-#: core/main.php:105
+#: core/main.php:153
 msgctxt "monthly archives date format"
 msgid "F Y"
 msgstr "F Y"
 
-#: core/main.php:107
+#: core/main.php:155
 #, php-format
 msgid "Day: %s"
 msgstr "Giorno: %s"
 
-#: core/main.php:107
+#: core/main.php:155
 msgctxt "daily archives date format"
 msgid "F j, Y"
 msgstr "F j, Y"
 
-#: core/main.php:110
+#: core/main.php:158
 msgctxt "post format archive title"
 msgid "Asides"
 msgstr "Digressione"
 
-#: core/main.php:112
+#: core/main.php:160
 msgctxt "post format archive title"
 msgid "Galleries"
 msgstr "Gallerie"
 
-#: core/main.php:114
+#: core/main.php:162
 msgctxt "post format archive title"
 msgid "Images"
 msgstr "Immagini"
 
-#: core/main.php:116
+#: core/main.php:164
 msgctxt "post format archive title"
 msgid "Videos"
 msgstr "Video"
 
-#: core/main.php:118
+#: core/main.php:166
 msgctxt "post format archive title"
 msgid "Quotes"
 msgstr "Citazioni"
 
-#: core/main.php:120
+#: core/main.php:168
 msgctxt "post format archive title"
 msgid "Links"
 msgstr "Links"
 
-#: core/main.php:122
+#: core/main.php:170
 msgctxt "post format archive title"
 msgid "Statuses"
 msgstr "Stati"
 
-#: core/main.php:124
+#: core/main.php:172
 msgctxt "post format archive title"
 msgid "Audio"
 msgstr "Audio"
 
-#: core/main.php:126
+#: core/main.php:174
 msgctxt "post format archive title"
 msgid "Chats"
 msgstr "Chats"
 
-#: core/main.php:129
+#: core/main.php:177
 #, php-format
 msgid "Archives: %s"
 msgstr "Archivi: %s"
 
-#: core/main.php:132
+#: core/main.php:180
 #, php-format
 msgid "%1$s: %2$s"
 msgstr "%1$s: %2$s"
 
-#: core/main.php:191
+#: core/main.php:239
 msgid "Article"
 msgstr "Articolo"
 
-#: core/main.php:284
+#: core/main.php:335
 msgid "Read More"
 msgstr "Continua"
 
@@ -1290,6 +1295,10 @@ msgstr "Una piattaforma di editoria personale semantica"
 #, php-format
 msgid "Proudly powered by %s"
 msgstr "Proudly powered by %s"
+
+#: header.php:22
+msgid "Skip to content"
+msgstr "Salta al contenuto"
 
 #: layouts/category-default.php:83 layouts/home-default.php:83 sidebar.php:18
 msgid "Calendar"
@@ -1381,78 +1390,78 @@ msgstr "Se disponi di un codice promozionale, inseriscilo di seguito."
 msgid "Apply coupon"
 msgstr "Applica sconto"
 
-#: woocommerce/single-product-reviews.php:37
+#: woocommerce/single-product-reviews.php:36
 msgid "Reviews"
 msgstr "Recensioni"
 
-#: woocommerce/single-product-reviews.php:59
+#: woocommerce/single-product-reviews.php:58
 msgid "There are no reviews yet."
 msgstr "Non ci sono ancora recensioni"
 
-#: woocommerce/single-product-reviews.php:72
+#: woocommerce/single-product-reviews.php:71
 msgid "Add a review"
 msgstr "Aggiungi una recensione"
 
-#: woocommerce/single-product-reviews.php:72
+#: woocommerce/single-product-reviews.php:71
 #, php-format
 msgid "Be the first to review &ldquo;%s&rdquo;"
 msgstr "Sii il primo a recensire &ldquo;%s&rdquo;"
 
-#: woocommerce/single-product-reviews.php:73
+#: woocommerce/single-product-reviews.php:72
 #, php-format
 msgid "Leave a Reply to %s"
 msgstr "Rispondi a %s"
 
-#: woocommerce/single-product-reviews.php:76
+#: woocommerce/single-product-reviews.php:75
 msgid "Name"
 msgstr "Nome"
 
-#: woocommerce/single-product-reviews.php:78
+#: woocommerce/single-product-reviews.php:77
 msgid "Email"
 msgstr "Email"
 
-#: woocommerce/single-product-reviews.php:81
+#: woocommerce/single-product-reviews.php:80
 msgid "Submit"
 msgstr "Invia"
 
-#: woocommerce/single-product-reviews.php:87
+#: woocommerce/single-product-reviews.php:86
 #, php-format
 msgid "You must be <a href=\"%s\">logged in</a> to post a review."
 msgstr "Devi essere <a href=“%s”>loggato</a> per lasciare il tuo voto."
 
-#: woocommerce/single-product-reviews.php:91
+#: woocommerce/single-product-reviews.php:90
 msgid "Your Rating"
 msgstr "La tua valutazione"
 
-#: woocommerce/single-product-reviews.php:92
+#: woocommerce/single-product-reviews.php:91
 msgid "Rate&hellip;"
 msgstr "Valutazione&hellip;"
 
-#: woocommerce/single-product-reviews.php:93
+#: woocommerce/single-product-reviews.php:92
 msgid "Perfect"
 msgstr "Perfetto"
 
-#: woocommerce/single-product-reviews.php:94
+#: woocommerce/single-product-reviews.php:93
 msgid "Good"
 msgstr "Ottimo"
 
-#: woocommerce/single-product-reviews.php:95
+#: woocommerce/single-product-reviews.php:94
 msgid "Average"
 msgstr "Media"
 
-#: woocommerce/single-product-reviews.php:96
+#: woocommerce/single-product-reviews.php:95
 msgid "Not that bad"
 msgstr "Non così male"
 
-#: woocommerce/single-product-reviews.php:97
+#: woocommerce/single-product-reviews.php:96
 msgid "Very Poor"
 msgstr "Molto povero"
 
-#: woocommerce/single-product-reviews.php:101
+#: woocommerce/single-product-reviews.php:100
 msgid "Your review"
 msgstr "La tua recensione"
 
-#: woocommerce/single-product-reviews.php:109
+#: woocommerce/single-product-reviews.php:108
 msgid ""
 "Only logged in customers who have purchased this product may leave a review."
 msgstr ""
@@ -1482,6 +1491,16 @@ msgstr "Proprietario verificato"
 #: woocommerce/single-product/up-sells.php:32
 msgid "You may also like&hellip;"
 msgstr "Ti potrebbe anche interessare&hellip;"
+
+#~ msgid "Download our free WordPress themes"
+#~ msgstr "Scarica i nostri temi gratuiti per WordPress"
+
+#~ msgid ""
+#~ "Upgrade to the premium version of Alhena, to enable 600+ Google Fonts, "
+#~ "Unlimited sidebars, Portfolio section and much more."
+#~ msgstr ""
+#~ "Aggiorna alla versione premium di Alhena, per attivare oltre 600 Google "
+#~ "Fonts, barre laterali illimitate, sezione Portfolio e molto altro."
 
 #~ msgid "Get support"
 #~ msgstr "Ottieni supporto."

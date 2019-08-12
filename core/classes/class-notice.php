@@ -56,26 +56,32 @@ if( !class_exists( 'alhena_lite_admin_notice' ) ) {
 			
 		?>
 			
-            <div class="update-nag notice alhena_lite-notice">
+            <div class="notice notice-warning is-dismissible">
             
-            	<div class="alhena_lite-noticedescription">
-					
-					<strong><?php esc_html_e( 'Upgrade to the premium version of Alhena, to enable 600+ Google Fonts, Unlimited sidebars, Portfolio section and much more.', 'alhena-lite' ); ?></strong><br/>
+            	<p>
+            
+            		<strong>
 
-					<?php 
-					
-						printf( 
-							'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'alhena-lite' ) . '</a>', 
-							esc_url( wp_nonce_url( add_query_arg( 'alhena-lite-dismiss', '1' ), 'alhena-lite-dismiss-action'))
-						);
-					
-					?>
+						<?php
+                        
+                            esc_html_e( 'Upgrade to the premium version of Alhena, to enable 600+ Google Fonts, Unlimited sidebars, Portfolio section and much more. ', 'alhena-lite' ); 
+                            
+							printf( 
+								'<a href="%1$s" class="dismiss-notice">' . esc_html__( 'Dismiss this notice', 'alhena-lite' ) . '</a>', 
+								esc_url( wp_nonce_url( add_query_arg( 'alhena-lite-dismiss', '1' ), 'alhena-lite-dismiss-action'))
+							);
+                            
+                        ?>
+                    
+                    </strong>
+                    
+            	</p>
+                    
+            	<p>
+            		
+                    <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/alhena-free-responsive-corporate-wordpress-theme/?ref=2&campaign=alhena-notice' ); ?>" class="button button-primary"><?php esc_html_e( 'Upgrade to Alhena Premium', 'alhena-lite' ); ?></a>
                 
-                </div>
-                
-                <a target="_blank" href="<?php echo esc_url( 'https://www.themeinprogress.com/alhena-free-responsive-corporate-wordpress-theme/?ref=2&campaign=alhena-notice' ); ?>" class="button"><?php esc_html_e( 'Upgrade to Alhena Premium', 'alhena-lite' ); ?></a>
-                
-                <div class="clear"></div>
+            	</p>
 
             </div>
 		
