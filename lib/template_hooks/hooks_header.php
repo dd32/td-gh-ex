@@ -25,7 +25,7 @@ add_action('ascend_header_left', 'ascend_the_custom_logo', 20);
 function ascend_the_custom_logo() {
 	$ascend = ascend_get_options();
 	echo '<div id="logo" class="logocase kad-header-height">';
-		echo '<a class="brand logofont" href="'.esc_url(apply_filters('ascend_logo_link', home_url())).'">';
+		echo '<a class="brand logofont" href="' . esc_url( apply_filters( 'ascend_logo_link', home_url() ) ) . '">';
 		$liu = '';
 		$logo = get_theme_mod( 'custom_logo' );
 		if(isset($logo) && !empty($logo) ) {

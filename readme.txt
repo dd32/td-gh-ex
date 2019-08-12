@@ -28,6 +28,10 @@ Yes, go here: https://www.kadencethemes.com/kadence-themes-demo-content/
 
 = Theme Name: Ascend =
 
+= Version 1.4.2 | 12th August 2019 =
+* Update: WC 3.7
+* Fix: Gallery Block Lightbox.
+
 = Version 1.4.1 | 17th July 2019 =
 * Fix: Gutenberg Image issue.
 * Fix: Slider php notice.

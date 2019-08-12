@@ -2086,6 +2086,12 @@ html .postlist article.sticky {
   display: table;
   content: '';
 }
+#content .gallery.kt-image-carousel {
+  margin: 0;
+}
+.carousel-outer-container {
+  overflow: hidden;
+}
 .home-padding {
   padding: 20px 0;
 }
